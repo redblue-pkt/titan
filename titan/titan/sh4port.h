@@ -676,7 +676,7 @@ void sighandler(int sig, struct sigcontext ctx)
 			err("got signal %d (%s), programm counter reg: 0x%lx,  procedure reg: 0x%lx", sig, strsignal(sig), ctx.sc_pc, ctx.sc_pr);
 
 			if(getconfigint("saverun", NULL) == 1 && status.longjumpbuf != NULL)
-				siglongjmp(status.longjumpbuf, 1);
+				siglongjmp(status.longjumpbuf, 999);
 			else
 				exit(100);
 			break;

@@ -209,7 +209,7 @@ void sighandler(int sig, struct sigcontext ctx)
 			err("got signal %d (%s), fault address 0x%lx from 0x%lx", sig, strsignal(sig), ctx.cr2, ctx.eip);
 
 			if(getconfigint("saverun", NULL) == 1 && status.longjumpbuf != NULL)
-				siglongjmp(status.longjumpbuf, 1);
+				siglongjmp(status.longjumpbuf, 999);
 			else
 				exit(100);
 			break;
