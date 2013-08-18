@@ -2426,7 +2426,11 @@ void debugstack(int sig, void* address, void* address1)
 				mkdir(tmplogdir, 0777);
 		}
 		free(logdir); logdir = NULL;
-	} 
+	}
+	
+	//del file if greater 100KB
+	if(getfilesize(getconfig("tracelog", NULL)) > 102400)
+		unlink(getconfig("tracelog", NULL)); 
 			
 	fd = fopen(getconfig("tracelog", NULL), "a");
 	if(fd != NULL)
