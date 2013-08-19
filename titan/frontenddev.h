@@ -913,7 +913,18 @@ void fesetunicable(struct dvbdev* node)
 
 	debug(200, "unicabletune %04X", unicabletune);
 	
-	sleep(5);
+	if(status.firstunicablewait == 0)
+	{
+		status.firstunicablewait = getconfigint("firstunicablewait", NULL);
+		if(status.firstunicablewait == 0)
+			status.firstunicablewait = 1000;
+	}		
+	
+	if(status.firstunicablewait > 0)
+	{
+		usleep(status.firstunicablewait * 1000);
+		status.firstunicablewait = -1;
+	}
 	
 	fesetvoltage(node, SEC_VOLTAGE_13, 15);
 	fesetvoltage(node, SEC_VOLTAGE_18, 15);

@@ -1459,6 +1459,7 @@ struct status
 	int tuxtxt;
 	//on some fat32 hdd it takes very long to get free size
 	int showrecfreesize;
+	int firstunicablewait;
 } status;
 
 struct fb
