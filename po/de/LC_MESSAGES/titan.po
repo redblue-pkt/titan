@@ -4034,3 +4034,9 @@ msgstr "Verzeichnis konnte nicht erstellt werden !"
 
 msgid "Can't remove file/dir !"
 msgstr "Datei/Verzeichnis konnte nicht gelöscht werden !"
+
+msgid "stable"
+msgstr "Stabil"
+
+msgid "unstable"
+msgstr "Unstabil"
