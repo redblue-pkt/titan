@@ -4,7 +4,7 @@
 void screensystem_update(int mode)
 {
 	debug(50, "(start) mode=%d", mode);
-	int rcret = 0;
+	int rcret = 0, imgtype = 0;
 
 	status.hangtime = 99999;
 	struct skin* load = getscreen("loading");
@@ -20,13 +20,19 @@ void screensystem_update(int mode)
 		
 	char* auth = NULL;
 	auth = ostrcat(auth, " aUtzhFRTzuDFa", 1, 0);
-	auth = ostrcat(auth, " JNHZbghnjuz", 1, 0);	
+	auth = ostrcat(auth, " JNHZbghnjuz", 1, 0);
+	
+	if(file_exist("/etc/.beta")) imgtype = 1;	
 
 	if (mode == 0)
 	{	
 		char* cmd = NULL;
 		cmd = ostrcat(cmd, "/sbin/update.sh getfilelist", 1, 0);
-		cmd = ostrcat(cmd, auth, 1, 0);	
+		cmd = ostrcat(cmd, auth, 1, 0);
+		if(imgtype == 1)
+			cmd = ostrcat(cmd, " dev", 1, 0);
+		else
+			cmd = ostrcat(cmd, " release", 1, 0);		
 		system(cmd);
 		free(cmd),cmd = NULL;
 
@@ -46,7 +52,11 @@ void screensystem_update(int mode)
 	{
 		char* cmd = NULL;
 		cmd = ostrcat(cmd, "/sbin/update.sh getfilelist", 1, 0);
-		cmd = ostrcat(cmd, auth, 1, 0);	
+		cmd = ostrcat(cmd, auth, 1, 0);
+		if(imgtype == 1)
+			cmd = ostrcat(cmd, " dev", 1, 0);
+		else
+			cmd = ostrcat(cmd, " release", 1, 0);	
 		system(cmd);
 		free(cmd),cmd = NULL;
 		skinname = "systemupdate_usb_online_menu";
@@ -66,6 +76,12 @@ void screensystem_update(int mode)
 	struct skin* filelistpath = getscreennode(systemupdate, "filelistpath");
 	struct skin* filelist = getscreennode(systemupdate, "filelist");
 	struct skin* device = getscreennode(systemupdate, "device");
+	struct skin* b6 = getscreennode(systemupdate, "b6");
+	
+	if(imgtype == 1)
+		changetext(b6, "stable");
+	else
+		changetext(b6, "unstable");
 
 	if(mode == 2 || mode == 3)
 	{
@@ -154,7 +170,45 @@ void screensystem_update(int mode)
 
 				drawscreen(load, 0, 0);
 				cmd = ostrcat(cmd, "/sbin/update.sh getfilelist", 1, 0);
-				cmd = ostrcat(cmd, auth, 1, 0);	
+				cmd = ostrcat(cmd, auth, 1, 0);
+				if(imgtype == 1)
+					cmd = ostrcat(cmd, " dev", 1, 0);
+				else
+					cmd = ostrcat(cmd, " release", 1, 0);	
+				system(cmd);
+				free(cmd),cmd = NULL;
+				clearscreen(load);
+			}
+
+			drawscreen(systemupdate, 0, 0);
+			getfilelist(systemupdate, filelistpath, filelist, filepath, filemask, 0, NULL);
+			addscreenrc(systemupdate, filelist);
+			continue;
+		}
+		else if(rcret == getrcconfigint("rcblue", NULL))
+		{
+			if (mode == 0 || mode == 2)
+			{
+				if(imgtype == 0)
+				{
+					imgtype = 1;
+					changetext(b6, "stable");
+				}
+				else
+				{
+					imgtype = 0;
+					changetext(b6, "unstable");
+				}
+			
+				char* cmd = NULL;
+
+				drawscreen(load, 0, 0);
+				cmd = ostrcat(cmd, "/sbin/update.sh getfilelist", 1, 0);
+				cmd = ostrcat(cmd, auth, 1, 0);
+				if(imgtype == 1)
+					cmd = ostrcat(cmd, " dev", 1, 0);
+				else
+					cmd = ostrcat(cmd, " release", 1, 0);	
 				system(cmd);
 				free(cmd),cmd = NULL;
 				clearscreen(load);
@@ -190,6 +244,10 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, "kernel ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, auth, 1, 0);
+						if(imgtype == 1)
+							cmd = ostrcat(cmd, " dev", 1, 0);
+						else
+							cmd = ostrcat(cmd, " release", 1, 0);
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Kernel Update ?"), 1, 0);
 					}
@@ -198,6 +256,10 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, "fw ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, auth, 1, 0);
+						if(imgtype == 1)
+							cmd = ostrcat(cmd, " dev", 1, 0);
+						else
+							cmd = ostrcat(cmd, " release", 1, 0);
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Fw Update ?"), 1, 0);
 					}
@@ -206,6 +268,10 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, "root ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, auth, 1, 0);
+						if(imgtype == 1)
+							cmd = ostrcat(cmd, " dev", 1, 0);
+						else
+							cmd = ostrcat(cmd, " release", 1, 0);
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Root Update ?"), 1, 0);
 					}
@@ -214,6 +280,10 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, "var ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, auth, 1, 0);
+						if(imgtype == 1)
+							cmd = ostrcat(cmd, " dev", 1, 0);
+						else
+							cmd = ostrcat(cmd, " release", 1, 0);
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Var Update ?"), 1, 0);
 					}
@@ -222,6 +292,10 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, "full ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, auth, 1, 0);
+						if(imgtype == 1)
+							cmd = ostrcat(cmd, " dev", 1, 0);
+						else
+							cmd = ostrcat(cmd, " release", 1, 0);
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Full Update ?"), 1, 0);
 					}
@@ -232,6 +306,10 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, " ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, auth, 1, 0);
+						if(imgtype == 1)
+							cmd = ostrcat(cmd, " dev", 1, 0);
+						else
+							cmd = ostrcat(cmd, " release", 1, 0);
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Usb Update ?"), 1, 0);
 					}
@@ -242,6 +320,10 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, " ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, auth, 1, 0);
+						if(imgtype == 1)
+							cmd = ostrcat(cmd, " dev", 1, 0);
+						else
+							cmd = ostrcat(cmd, " release", 1, 0);
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Fullusb Update ?"), 1, 0);
 					}
@@ -252,6 +334,10 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, " ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, auth, 1, 0);
+						if(imgtype == 1)
+							cmd = ostrcat(cmd, " dev", 1, 0);
+						else
+							cmd = ostrcat(cmd, " release", 1, 0);
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Usb (unknown release grp) Update ?"), 1, 0);
 					}
@@ -265,6 +351,10 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, "kernel ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, auth, 1, 0);
+						if(imgtype == 1)
+							cmd = ostrcat(cmd, " dev", 1, 0);
+						else
+							cmd = ostrcat(cmd, " release", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Kernel Update ?"), 1, 0);
 					}
 					else if(ostrstr(filelist->select->text, "_FW_") != NULL && file_exist("/etc/.beta"))
@@ -272,6 +362,10 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, "fw ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, auth, 1, 0);
+						if(imgtype == 1)
+							cmd = ostrcat(cmd, " dev", 1, 0);
+						else
+							cmd = ostrcat(cmd, " release", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Fw Update ?"), 1, 0);
 					}
 					else if(ostrstr(filelist->select->text, "_ROOT_") != NULL && file_exist("/etc/.beta"))
@@ -279,6 +373,10 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, "root ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, auth, 1, 0);
+						if(imgtype == 1)
+							cmd = ostrcat(cmd, " dev", 1, 0);
+						else
+							cmd = ostrcat(cmd, " release", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Root Update starten ?"), 1, 0);
 					}
 					else if(ostrstr(filelist->select->text, "_VAR_") != NULL && file_exist("/etc/.beta"))
@@ -286,6 +384,10 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, "var ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, auth, 1, 0);
+						if(imgtype == 1)
+							cmd = ostrcat(cmd, " dev", 1, 0);
+						else
+							cmd = ostrcat(cmd, " release", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Var Update ?"), 1, 0);
 					}
 					else if(ostrstr(filelist->select->text, "_FULL_") != NULL)
@@ -293,6 +395,10 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, "full ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, auth, 1, 0);
+						if(imgtype == 1)
+							cmd = ostrcat(cmd, " dev", 1, 0);
+						else
+							cmd = ostrcat(cmd, " release", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Full Update ?"), 1, 0);
 					}
 					else if(ostrstr(filelist->select->text, "_USB_") != NULL)
@@ -302,6 +408,10 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, " ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, auth, 1, 0);
+						if(imgtype == 1)
+							cmd = ostrcat(cmd, " dev", 1, 0);
+						else
+							cmd = ostrcat(cmd, " release", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Usb Update ?"), 1, 0);
 					}
 					else if(ostrstr(filelist->select->text, "_FULLUSB_") != NULL)
@@ -311,6 +421,10 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, " ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, auth, 1, 0);
+						if(imgtype == 1)
+							cmd = ostrcat(cmd, " dev", 1, 0);
+						else
+							cmd = ostrcat(cmd, " release", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Fullusb Update ?"), 1, 0);
 					}
 					else if(ostrstr(filelist->select->text, ".tar.gz") != NULL)
@@ -320,6 +434,10 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, " ", 1, 0);
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, auth, 1, 0);
+						if(imgtype == 1)
+							cmd = ostrcat(cmd, " dev", 1, 0);
+						else
+							cmd = ostrcat(cmd, " release", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Usb (unknown release grp) Update ?"), 1, 0);
 					}
 				}
