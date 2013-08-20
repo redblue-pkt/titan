@@ -82,6 +82,8 @@ void screensystem_update(int mode)
 		changetext(b6, "stable");
 	else
 		changetext(b6, "unstable");
+		
+	if(!file_exist("/etc/.beta")) b6->hidden;
 
 	if(mode == 2 || mode == 3)
 	{
@@ -191,8 +193,16 @@ void screensystem_update(int mode)
 			{
 				if(imgtype == 0)
 				{
-					imgtype = 1;
-					changetext(b6, "stable");
+					int pinret = 0;
+					
+					if(!file_exist("/etc/.beta"))
+						pinret = screenpincheck(3, NULL);
+					
+					if(pinret == 0)
+					{
+						imgtype = 1;
+						changetext(b6, "stable");
+					}
 				}
 				else
 				{

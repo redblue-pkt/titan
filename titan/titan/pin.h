@@ -4,6 +4,7 @@
 //type = 0 (allways)
 //type = 1 (only if channelprotect yes)
 //type = 2 (only if menuprotect yes)
+//type = 3 (fix pin code)
 int screenpincheck(int type, char* pin)
 {
 	int oldaktpage = -1;
@@ -44,6 +45,11 @@ int screenpincheck(int type, char* pin)
 					status.protecttime = time(NULL) + (getconfigint("protecttime", NULL) * 60);
 					ret = 0;
 				}
+			}
+			else if(type == 3)
+			{
+			  if(ostrcmp(pincheck->ret, "9898") == 0)
+					ret = 0;
 			}
 			else
 			{
