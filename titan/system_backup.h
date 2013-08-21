@@ -14,7 +14,7 @@ void screensystem_backup()
 	struct skin* tmp = NULL;
 	char* tmpstr = NULL, *infotext = NULL;
 
-	infotext = "You find this Backup with timestamp on /tmp\nConnecting per ftp and copy this backup to your Pc !\nPlease Waiting 2 Min ... and relax\n \nNext infos on LCD Display!";
+	infotext = "Backup to /tmp or /var/backup. If the free memory too small can a usb device will never use.\nThere must be a folder backup.";
 
 	changetext(info, _(infotext));
 	changetext(b_red, _("Cancel"));
@@ -25,10 +25,12 @@ void screensystem_backup()
 
 	addscreenrc(backup, listbox);
 
-	if(checkbox("UFS912"))
-		changeinput(listfield, "kernel\nfw\nroot\nfull");
-	else
-		changeinput(listfield, "kernel\nvar\nroot\nfull");
+//	if(checkbox("UFS912"))
+//		changeinput(listfield, "kernel\nfw\nroot\nfull");
+//	else
+//		changeinput(listfield, "kernel\nvar\nroot\nfull");
+
+	changeinput(listfield, "full");
 
 	drawscreen(backup, 0, 0);
 	tmp = listbox->select;
