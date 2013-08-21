@@ -2757,7 +2757,7 @@ int tpkgetindex(int flag)
 		{
 			if(ostrcmp("97.74.32.10", ip) == 0 && !file_exist("/etc/.beta"))
 				ip = "atemio.dyndns.tv";
-			else
+			else if(ostrcmp("97.74.32.10", ip) == 0)
 				ip = "titannit.dyndns.tv";
 
 			tmpstr1 = ostrcat(tmpstr1, path, 1, 0);
@@ -2862,7 +2862,7 @@ int tpkgetpackage(char* package, char* url)
 
 		if(ostrcmp("97.74.32.10", ip) == 0 && !file_exist("/etc/.beta"))
 			ip = "atemio.dyndns.tv";
-		else
+		else if(ostrcmp("97.74.32.10", ip) == 0)
 			ip = "titannit.dyndns.tv";
 
     debug(130, "get http://%s/%s -> %s", ip, tmpstr1, tmpstr2);
