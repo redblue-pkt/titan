@@ -781,6 +781,7 @@ void screennetwork_wlan()
 						if(ret == 0)
 						{
 							net = getinetworkfirstwlan();
+							net->type = 1; //dhcp
 							if(net != NULL) screennetwork_adapterext(0, net->device);
 						}
 					}
