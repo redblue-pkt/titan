@@ -21,7 +21,7 @@ void screensystem_update(int mode)
 	char* auth = NULL;
 	auth = ostrcat(auth, " aUtzhFRTzuDFa", 1, 0);
 	auth = ostrcat(auth, " JNHZbghnjuz", 1, 0);
-	
+			
 	if(file_exist("/etc/.beta")) imgtype = 1;	
 
 	if (mode == 0)
@@ -30,9 +30,9 @@ void screensystem_update(int mode)
 		cmd = ostrcat(cmd, "/sbin/update.sh getfilelist", 1, 0);
 		cmd = ostrcat(cmd, auth, 1, 0);
 		if(imgtype == 1)
-			cmd = ostrcat(cmd, " dev", 1, 0);
+			cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
 		else
-			cmd = ostrcat(cmd, " release", 1, 0);		
+			cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);		
 		system(cmd);
 		free(cmd),cmd = NULL;
 
@@ -54,9 +54,9 @@ void screensystem_update(int mode)
 		cmd = ostrcat(cmd, "/sbin/update.sh getfilelist", 1, 0);
 		cmd = ostrcat(cmd, auth, 1, 0);
 		if(imgtype == 1)
-			cmd = ostrcat(cmd, " dev", 1, 0);
+			cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
 		else
-			cmd = ostrcat(cmd, " release", 1, 0);	
+			cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);	
 		system(cmd);
 		free(cmd),cmd = NULL;
 		skinname = "systemupdate_usb_online_menu";
@@ -174,9 +174,9 @@ void screensystem_update(int mode)
 				cmd = ostrcat(cmd, "/sbin/update.sh getfilelist", 1, 0);
 				cmd = ostrcat(cmd, auth, 1, 0);
 				if(imgtype == 1)
-					cmd = ostrcat(cmd, " dev", 1, 0);
+					cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
 				else
-					cmd = ostrcat(cmd, " release", 1, 0);	
+					cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);	
 				system(cmd);
 				free(cmd),cmd = NULL;
 				clearscreen(load);
@@ -216,9 +216,9 @@ void screensystem_update(int mode)
 				cmd = ostrcat(cmd, "/sbin/update.sh getfilelist", 1, 0);
 				cmd = ostrcat(cmd, auth, 1, 0);
 				if(imgtype == 1)
-					cmd = ostrcat(cmd, " dev", 1, 0);
+					cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
 				else
-					cmd = ostrcat(cmd, " release", 1, 0);	
+					cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);	
 				system(cmd);
 				free(cmd),cmd = NULL;
 				clearscreen(load);
@@ -255,9 +255,9 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, auth, 1, 0);
 						if(imgtype == 1)
-							cmd = ostrcat(cmd, " dev", 1, 0);
+							cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
 						else
-							cmd = ostrcat(cmd, " release", 1, 0);
+							cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Kernel Update ?"), 1, 0);
 					}
@@ -267,9 +267,9 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, auth, 1, 0);
 						if(imgtype == 1)
-							cmd = ostrcat(cmd, " dev", 1, 0);
+							cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
 						else
-							cmd = ostrcat(cmd, " release", 1, 0);
+							cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Fw Update ?"), 1, 0);
 					}
@@ -279,9 +279,9 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, auth, 1, 0);
 						if(imgtype == 1)
-							cmd = ostrcat(cmd, " dev", 1, 0);
+							cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
 						else
-							cmd = ostrcat(cmd, " release", 1, 0);
+							cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Root Update ?"), 1, 0);
 					}
@@ -291,9 +291,9 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, auth, 1, 0);
 						if(imgtype == 1)
-							cmd = ostrcat(cmd, " dev", 1, 0);
+							cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
 						else
-							cmd = ostrcat(cmd, " release", 1, 0);
+							cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Var Update ?"), 1, 0);
 					}
@@ -303,9 +303,9 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, auth, 1, 0);
 						if(imgtype == 1)
-							cmd = ostrcat(cmd, " dev", 1, 0);
+							cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
 						else
-							cmd = ostrcat(cmd, " release", 1, 0);
+							cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Full Update ?"), 1, 0);
 					}
@@ -317,9 +317,9 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, auth, 1, 0);
 						if(imgtype == 1)
-							cmd = ostrcat(cmd, " dev", 1, 0);
+							cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
 						else
-							cmd = ostrcat(cmd, " release", 1, 0);
+							cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Usb Update ?"), 1, 0);
 					}
@@ -331,9 +331,9 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, auth, 1, 0);
 						if(imgtype == 1)
-							cmd = ostrcat(cmd, " dev", 1, 0);
+							cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
 						else
-							cmd = ostrcat(cmd, " release", 1, 0);
+							cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Fullusb Update ?"), 1, 0);
 					}
@@ -345,9 +345,9 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, auth, 1, 0);
 						if(imgtype == 1)
-							cmd = ostrcat(cmd, " dev", 1, 0);
+							cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
 						else
-							cmd = ostrcat(cmd, " release", 1, 0);
+							cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
 						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Usb (unknown release grp) Update ?"), 1, 0);
 					}
@@ -362,9 +362,9 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, auth, 1, 0);
 						if(imgtype == 1)
-							cmd = ostrcat(cmd, " dev", 1, 0);
+							cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
 						else
-							cmd = ostrcat(cmd, " release", 1, 0);
+							cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Kernel Update ?"), 1, 0);
 					}
 					else if(ostrstr(filelist->select->text, "_FW_") != NULL && file_exist("/etc/.beta"))
@@ -373,9 +373,9 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, auth, 1, 0);
 						if(imgtype == 1)
-							cmd = ostrcat(cmd, " dev", 1, 0);
+							cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
 						else
-							cmd = ostrcat(cmd, " release", 1, 0);
+							cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Fw Update ?"), 1, 0);
 					}
 					else if(ostrstr(filelist->select->text, "_ROOT_") != NULL && file_exist("/etc/.beta"))
@@ -384,9 +384,9 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, auth, 1, 0);
 						if(imgtype == 1)
-							cmd = ostrcat(cmd, " dev", 1, 0);
+							cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
 						else
-							cmd = ostrcat(cmd, " release", 1, 0);
+							cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Root Update starten ?"), 1, 0);
 					}
 					else if(ostrstr(filelist->select->text, "_VAR_") != NULL && file_exist("/etc/.beta"))
@@ -395,9 +395,9 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, auth, 1, 0);
 						if(imgtype == 1)
-							cmd = ostrcat(cmd, " dev", 1, 0);
+							cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
 						else
-							cmd = ostrcat(cmd, " release", 1, 0);
+							cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Var Update ?"), 1, 0);
 					}
 					else if(ostrstr(filelist->select->text, "_FULL_") != NULL)
@@ -406,9 +406,9 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, auth, 1, 0);
 						if(imgtype == 1)
-							cmd = ostrcat(cmd, " dev", 1, 0);
+							cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
 						else
-							cmd = ostrcat(cmd, " release", 1, 0);
+							cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Full Update ?"), 1, 0);
 					}
 					else if(ostrstr(filelist->select->text, "_USB_") != NULL)
@@ -419,9 +419,9 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, auth, 1, 0);
 						if(imgtype == 1)
-							cmd = ostrcat(cmd, " dev", 1, 0);
+							cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
 						else
-							cmd = ostrcat(cmd, " release", 1, 0);
+							cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Usb Update ?"), 1, 0);
 					}
 					else if(ostrstr(filelist->select->text, "_FULLUSB_") != NULL)
@@ -432,9 +432,9 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, auth, 1, 0);
 						if(imgtype == 1)
-							cmd = ostrcat(cmd, " dev", 1, 0);
+							cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
 						else
-							cmd = ostrcat(cmd, " release", 1, 0);
+							cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Fullusb Update ?"), 1, 0);
 					}
 					else if(ostrstr(filelist->select->text, ".tar.gz") != NULL)
@@ -445,9 +445,9 @@ void screensystem_update(int mode)
 						cmd = ostrcat(cmd, tmpstr, 1, 0);
 						cmd = ostrcat(cmd, auth, 1, 0);
 						if(imgtype == 1)
-							cmd = ostrcat(cmd, " dev", 1, 0);
+							cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
 						else
-							cmd = ostrcat(cmd, " release", 1, 0);
+							cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
 						msgtxt = ostrcat(msgtxt, _("starting Usb (unknown release grp) Update ?"), 1, 0);
 					}
 				}
