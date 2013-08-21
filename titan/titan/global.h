@@ -1556,12 +1556,13 @@ void setskinnodeslocked(int flag)
 			if(checkbox("ATEMIO510") == 1)
 			{
 				if(ostrcmp("vfdisplay", child->name) == 0) child->locked = 1;
-				if(ostrcmp("system_backup", child->name) == 0) child->locked = 1;
+//				if(ostrcmp("system_backup", child->name) == 0) child->locked = 1;
 			}
 
-			if(checkbox("UFS910") == 0)
+//			if(checkbox("UFS910") == 0)
+			if(file_exist("/etc/.beta"))
 			{
-				if(ostrcmp("system_backup", child->name) == 0) child->locked = 1;
+				if(ostrcmp("system_backup", child->name) == 0) child->locked = 0;
 			}
 		
 			if(checkbox("UFS910") == 1)
