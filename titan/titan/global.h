@@ -1440,6 +1440,8 @@ int checkemu()
 		ret = checkdirext("/var/swap/etc", ".emu");
 		if(ret == 0)
 			ret = checkdirext("/mnt/config", ".emu");
+		if(ret == 0)
+			ret = checkdirext("/mnt/swapextensions/etc", ".emu");
 	}
 
 	return ret;
