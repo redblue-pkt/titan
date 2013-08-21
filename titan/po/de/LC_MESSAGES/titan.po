@@ -2535,8 +2535,8 @@ msgstr "Kein Backup Verzeichnis gefunden"
 msgid "A record hdd or a swapstick must be mounted!\n\nAborting backup..."
 msgstr "Kein Backup Verzeichnis gefunden"
 
-msgid "You find this Backup with timestamp on /tmp\nConnecting per ftp and copy this backup to your Pc !\nPlease Waiting 2 Min ... and relax\n \nNext infos on LCD Display!"
-msgstr "Datensicherung wird in /tmp abgelegt\nBitte per FTP-Client kopieren und anschliessend löschen"
+msgid "Backup to /tmp or /var/backup. If the free memory too small can a usb device will never use.\nThere must be a folder backup."
+msgstr "Sicherung wird in /tmp oder /var/backup abgelegt. Fals der interne Speicher nicht ausreicht kann\nsie auch auf einem USB Stick/HDD gespeichert werden.\nEs muß ein Ordner backup auf dem Gerät sein."
 
 msgid "Some plugins needs restart.\nIf the plugin is not active\nreboot the box."
 msgstr "Einige Erweiterungen benötigen einen Neustart.\nWenn das Plugin nicht verfügbar ist, bitte Neustarten"
