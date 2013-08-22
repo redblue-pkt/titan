@@ -234,7 +234,7 @@ void screenmoduleadjust()
 
 	struct skin* tmp = NULL;
 
-	if(checkbox("ATEMIO7600") == 1 || checkbox("ATEMIO510") == 1 || checkbox("ATEVIO700") == 1 || checkbox("ATEVIO7000") == 1)
+	if(checkbox("ATEMIO7600") == 1 || checkbox("ATEMIO510") == 1 || checkbox("ATEVIO700") == 1 || checkbox("ATEVIO7000") == 1 || checkbox("WHITEBOX") == 1 || checkbox("ATEMIO520") == 1)
 		extmoduldetect->hidden = NO;
 	else
 		extmoduldetect->hidden = YES;
