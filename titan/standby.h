@@ -110,6 +110,10 @@ void screenstandby()
 	
 	//set waittime for unicable new
 	status.firstunicablewait = 0;
+	status.standby = 0;
+	status.startmode = 1;
+	sleep(1);
+	status.rcowner = NULL;
 
 	if(status.aktservice->channel != NULL)
 	{
@@ -130,10 +134,6 @@ void screenstandby()
 	free(tmpstr); tmpstr = NULL;
 
 	subtitlepause(0);
-	status.standby = 0;
-	status.startmode = 1;
-	sleep(1);
-	status.rcowner = NULL;
 }
 
 #endif
