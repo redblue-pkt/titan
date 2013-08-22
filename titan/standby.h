@@ -107,6 +107,9 @@ void screenstandby()
 		system(tmpstr);
 		free(tmpstr); tmpstr=NULL;
 	}
+	
+	//set waittime for unicable new
+	status.firstunicablewait = 0;
 
 	if(status.aktservice->channel != NULL)
 	{
