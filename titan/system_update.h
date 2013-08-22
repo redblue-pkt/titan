@@ -83,7 +83,7 @@ void screensystem_update(int mode)
 	else
 		changetext(b6, "unstable");
 		
-	if(!file_exist("/etc/.beta")) b6->hidden;
+	if(!file_exist("/etc/.beta")) b6->hidden = YES;
 
 	if(mode == 2 || mode == 3)
 	{
