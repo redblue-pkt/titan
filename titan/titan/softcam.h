@@ -348,9 +348,17 @@ void screensoftcam()
 		}
 		if(listbox->select != NULL && rcret == getrcconfigint("rcred", NULL))
 		{
-			// deactivate emu
+			// deactivate or stop emu
 			drawscreen(loading, 0, 0);
-			deactivate(listbox->select->name);
+			
+			// check if cam is active
+			char* cmd = string_quote(listbox->select->name);
+			cmd = ostrcat("emu.sh active ", cmd, 0, 1);
+			if(ostrcmp(listbox->select->name, string_newline(command(cmd))) == 0)
+				deactivate(listbox->select->name);
+			else
+				stopcam(listbox->select->name);
+			free(cmd); cmd = NULL;
 		}
 		if(listbox->select != NULL && rcret == getrcconfigint("rcgreen", NULL))
 		{
