@@ -57,7 +57,7 @@ void screenstandby()
 	}
 
 	status.protecttime = 0;
-	status.rcowner = standbyscreen;
+	status.rcstandby = standbyscreen;
 	
 	setcecstandby(1);
 	system("vdstandby -a");
@@ -112,8 +112,7 @@ void screenstandby()
 	status.firstunicablewait = 0;
 	status.standby = 0;
 	status.startmode = 1;
-	sleep(1);
-	status.rcowner = NULL;
+	status.rcstandby = NULL;
 
 	if(status.aktservice->channel != NULL)
 	{

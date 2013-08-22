@@ -1374,6 +1374,7 @@ struct status
 	int playing;
 	// if set to a skin (screenpointer) only this screen has rc
 	struct skin* rcowner;
+	struct skin* rcstandby;
 	// timerstuktur fuer autores
 	struct stimerthread* restimer;
 	// spindown USB/HDD

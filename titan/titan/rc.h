@@ -250,10 +250,13 @@ int waitrcext(struct skin* owner, unsigned int timeout, int screencalc, int file
 			ret = TEMP_FAILURE_RETRY(select(status.fdrc + 1, &rfds, NULL, NULL, &tv));
 			if(fromthread == 0) m_lock(&status.waitrcmutex, 24);
 
-			if(status.rcowner != NULL && status.rcowner != owner)
+			if((status.rcowner != NULL && status.rcowner != owner) || (status.rcstandby != NULL && status.rcstandby != owner)) 
 			{
-				usleep(100000);
-				continue;
+				if(status.rcstandby == NULL || status.rcstandby != owner)
+				{
+					usleep(100000);
+					continue;
+				}
 			}
 		}
 		if(fromthread == 0) status.sec = time(NULL);
