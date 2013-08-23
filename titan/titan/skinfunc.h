@@ -66,45 +66,45 @@ char* getplaypic(struct skin* node, char* path)
 	else if(status.playspeed == 1)
 		tmpstr = ostrcat("forward1.png", NULL, 0, 0);
 	else if(status.playspeed == 2)
-		tmpstr = ostrcat("forward2.png", NULL, 0, 0);
+		tmpstr = ostrcat("forward1.png", NULL, 0, 0);
 	else if(status.playspeed == 3)
-		tmpstr = ostrcat("forward3.png", NULL, 0, 0);
+		tmpstr = ostrcat("forward1.png", NULL, 0, 0);
 	else if(status.playspeed == 4)
-		tmpstr = ostrcat("forward4.png", NULL, 0, 0);
+		tmpstr = ostrcat("forward1.png", NULL, 0, 0);
 	else if(status.playspeed == 5)
-		tmpstr = ostrcat("forward5.png", NULL, 0, 0);
+		tmpstr = ostrcat("forward1.png", NULL, 0, 0);
 	else if(status.playspeed == 6)
-		tmpstr = ostrcat("forward6.png", NULL, 0, 0);
+		tmpstr = ostrcat("forward1.png", NULL, 0, 0);
 	else if(status.playspeed == 7)
-		tmpstr = ostrcat("forward7.png", NULL, 0, 0);
+		tmpstr = ostrcat("forward1.png", NULL, 0, 0);
 	else if(status.playspeed == -1)
 		tmpstr = ostrcat("rewind1.png", NULL, 0, 0);
 	else if(status.playspeed == -2)
-		tmpstr = ostrcat("rewind2.png", NULL, 0, 0);
+		tmpstr = ostrcat("rewind1.png", NULL, 0, 0);
 	else if(status.playspeed == -3)
-		tmpstr = ostrcat("rewind3.png", NULL, 0, 0);
+		tmpstr = ostrcat("rewind1.png", NULL, 0, 0);
 	else if(status.playspeed == -4)
-		tmpstr = ostrcat("rewind4.png", NULL, 0, 0);
+		tmpstr = ostrcat("rewind1.png", NULL, 0, 0);
 	else if(status.playspeed == -5)
-		tmpstr = ostrcat("rewind5.png", NULL, 0, 0);
+		tmpstr = ostrcat("rewind1.png", NULL, 0, 0);
 	else if(status.playspeed == -6)
-		tmpstr = ostrcat("rewind6.png", NULL, 0, 0);
+		tmpstr = ostrcat("rewind1.png", NULL, 0, 0);
 	else if(status.playspeed == -7)
-		tmpstr = ostrcat("rewind7.png", NULL, 0, 0);
+		tmpstr = ostrcat("rewind1.png", NULL, 0, 0);
 	else if(status.slowspeed == 1)
 		tmpstr = ostrcat("slow1.png", NULL, 0, 0);
 	else if(status.slowspeed == 2)
-		tmpstr = ostrcat("slow2.png", NULL, 0, 0);
+		tmpstr = ostrcat("slow1.png", NULL, 0, 0);
 	else if(status.slowspeed == 3)
-		tmpstr = ostrcat("slow3.png", NULL, 0, 0);
+		tmpstr = ostrcat("slow1.png", NULL, 0, 0);
 	else if(status.slowspeed == 4)
-	 tmpstr = ostrcat("slow4.png", NULL, 0, 0);
+		tmpstr = ostrcat("slow1.png", NULL, 0, 0);
 	else if(status.slowspeed == 5)
-		tmpstr = ostrcat("slow5.png", NULL, 0, 0);
+		tmpstr = ostrcat("slow1.png", NULL, 0, 0);
 	else if(status.slowspeed == 6)
-		tmpstr = ostrcat("slow6.png", NULL, 0, 0);
+		tmpstr = ostrcat("slow1.png", NULL, 0, 0);
 	else if(status.slowspeed == 7)
-		tmpstr = ostrcat("slow7.png", NULL, 0, 0);
+		tmpstr = ostrcat("slow1.png", NULL, 0, 0);
 
 	if(tmpstr != NULL)
 	{

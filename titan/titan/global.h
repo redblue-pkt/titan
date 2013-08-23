@@ -2741,6 +2741,29 @@ char* getfilenameext(char* filename)
 	return NULL;
 }
 
+char* getfilenamepng(char* filename)
+{
+	char* tmpstr = NULL;
+
+	if(filename == NULL) return NULL;
+	
+	if(!filelistflt(".avi .dat .divx .flv .mkv .m4v .mp4 .mov .mpg .mpeg .mts .m2ts .trp .ts .vdr .vob .wmv .rm", filename))
+		tmpstr = ostrcat("movie", NULL, 0, 0);
+	else if(!filelistflt(".mp3 .flac .ogg .wma .ra .wav", filename))
+		tmpstr = ostrcat("musik", NULL, 0, 0);
+	else if(!filelistflt(".jpg .png", filename))
+		tmpstr = ostrcat("picture", NULL, 0, 0);
+	else
+		tmpstr = ostrcat(filename, NULL, 0, 0);
+
+	if(tmpstr != NULL)
+	{
+		return tmpstr
+	}
+
+	return NULL;
+}
+
 char* getcurrentdir(char* path)
 {
 	char* zeichen = NULL;

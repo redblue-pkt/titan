@@ -630,7 +630,8 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 					else
 					{
 						tmpstr = ostrcat(tmpstr, "skin/ext_", 1, 0);
-						tmpstr = ostrcat(tmpstr, string_tolower(getfilenameext(filelist[i]->d_name)), 1, 1);
+//						tmpstr = ostrcat(tmpstr, string_tolower(getfilenameext(filelist[i]->d_name)), 1, 1);
+						tmpstr = ostrcat(tmpstr, string_tolower(getfilenamepng(filelist[i]->d_name)), 1, 1);
 						tmpstr = ostrcat(tmpstr, ".png", 1, 0);
 						debug(913, "picpath: %s", tmpstr);
 						if(tmpstr != NULL)
