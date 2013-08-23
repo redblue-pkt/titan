@@ -156,7 +156,7 @@ void screeninfobar()
 			}
 			if(rcret == getrcconfigint("rcplay", NULL))
 			{
-				if(status.playing == 0 || (status.playspeed == 0 && status.slowspeed == 0))
+				if(status.playing == 0 || (status.playspeed == 0 && status.slowspeed == 0 && status.pause == 0))
 				{
 					subtitlepause(1);
 					status.infobar = 0;
