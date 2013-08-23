@@ -518,6 +518,7 @@ void getfilelist(struct skin* input, struct skin* filelistpath, struct skin* fil
 int createfilelist(struct skin* screen, struct skin* node, int view);
 void getfilelistmax(struct skin* filelist, int* maxdirs, int* maxfiles);
 struct skin* getfilelistrandom(struct skin* filelist, int maxdirs, int maxfiles);
+int filelistflt(char* filter, char* name);
 
 //plugin.h
 struct skin* getplugin(char* pluginname);
