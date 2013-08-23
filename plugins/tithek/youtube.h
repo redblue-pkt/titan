@@ -132,9 +132,10 @@ char* youtube(char* link, char* url, char* name, int flag)
 							else
 							{
 								debug(99, "(%d) title: %s streamurl: %s\n", i, title, streamurl);																									
-								addmenulist(&mlist, title, streamurl, NULL, 0, 0);
+								addmenulist(&mlist, title, streamurl, pic, 0, 0);
 							}
-							free(title), title = NULL;					
+							free(title), title = NULL;
+							free(pic), pic = NULL;
 							free(streamurl), streamurl = NULL;
 						  
 						}
