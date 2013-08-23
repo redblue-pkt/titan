@@ -203,8 +203,8 @@ struct menulist* menulistboxext(struct menulist* mlist, char* paramskinname, cha
 					tmp->height = 170;
 				}
 
-printf("mlist->pic: %s\n",mlist->pic)
-printf("mlist->name: %s\n",mlist->name)
+printf("mlist->pic: %s\n",mlist->pic);
+printf("mlist->name: %s\n",mlist->name);
 
 				if(mlist->pic == NULL)
 				{
