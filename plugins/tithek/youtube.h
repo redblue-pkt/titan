@@ -6,7 +6,7 @@
 char* youtube(char* link, char* url, char* name, int flag)
 {
 	debug(99, "link(%d): %s", flag, link);
-	char* ip = NULL, *pos = NULL, *path = NULL, *streamurl = NULL, *title = NULL, *tmpstr = NULL, *murl = NULL, *sig = NULL;
+	char* ip = NULL, *pos = NULL, *path = NULL, *streamurl = NULL, *title = NULL, *tmpstr = NULL, *murl = NULL, *sig = NULL, *pic = NULL;
 		
 	ip = string_replace("http://", "", (char*)link, 0);
 
@@ -53,43 +53,85 @@ char* youtube(char* link, char* url, char* name, int flag)
 							streamurl = string_decode(streamurl,0);
 															
 							if(ostrstr(ret1[i].part, "itag=85") != NULL)
+							{
 								title = ostrcat("MP4 520p H.264 3D", NULL, 0, 0);
+								pic = ostrcat("mp4.png", NULL, 0, 0);
+							}
 							else if(ostrstr(ret1[i].part, "itag=84") != NULL)
+							{
 								title = ostrcat("MP4 720p H.264 3D", NULL, 0, 0);
+								pic = ostrcat("mp4.png", NULL, 0, 0);
+							}
 							else if(ostrstr(ret1[i].part, "itag=83") != NULL)
+							{
 								title = ostrcat("MP4 240p H.264 3D", NULL, 0, 0);
+								pic = ostrcat("mp4.png", NULL, 0, 0);
+							}
 							else if(ostrstr(ret1[i].part, "itag=82") != NULL)
+							{
 								title = ostrcat("MP4 360p H.264 3D", NULL, 0, 0);
+								pic = ostrcat("mp4.png", NULL, 0, 0);
+							}
 							else if(ostrstr(ret1[i].part, "itag=38") != NULL)
+							{
 								title = ostrcat("MP4 3072p H.264 High", NULL, 0, 0);
+								pic = ostrcat("mp4.png", NULL, 0, 0);
+							}
 							else if(ostrstr(ret1[i].part, "itag=37") != NULL)
+							{
 								title = ostrcat("MP4 1080p H.264 High", NULL, 0, 0);
+								pic = ostrcat("mp4.png", NULL, 0, 0);
+							}
 							else if(ostrstr(ret1[i].part, "itag=22") != NULL)
+							{
 								title = ostrcat("MP4 720p H.264 High", NULL, 0, 0);
+								pic = ostrcat("mp4.png", NULL, 0, 0);
+							}
 							else if(ostrstr(ret1[i].part, "itag=18") != NULL)
+							{
 								title = ostrcat("MP4 360p H.264 Baseline", NULL, 0, 0);												
+								pic = ostrcat("mp4.png", NULL, 0, 0);
+							}
 							else if(ostrstr(ret1[i].part, "itag=6") != NULL)
+							{
 								title = ostrcat("FLV 270p Sorenson H.263", NULL, 0, 0);
+								pic = ostrcat("flv.png", NULL, 0, 0);
+							}
 							else if(ostrstr(ret1[i].part, "itag=5") != NULL)
+							{
 								title = ostrcat("FLV 240p Sorenson H.263", NULL, 0, 0);
+								pic = ostrcat("flv.png", NULL, 0, 0);
+							}
 							else if(ostrstr(ret1[i].part, "itag=35") != NULL)
+							{
 								title = ostrcat("FLV 480p H.264 Main", NULL, 0, 0);
+								pic = ostrcat("flv.png", NULL, 0, 0);
+							}
 							else if(ostrstr(ret1[i].part, "itag=34") != NULL)
+							{
 								title = ostrcat("FLV 360p H.264 Main", NULL, 0, 0);														
+								pic = ostrcat("3gp.png", NULL, 0, 0);
+							}
 							else if(ostrstr(ret1[i].part, "itag=36") != NULL)
+							{
 								title = ostrcat("3GP 240p MPEG-4 Visual Simple", NULL, 0, 0);
+								pic = ostrcat("3gp.png", NULL, 0, 0);
+							}
 							else if(ostrstr(ret1[i].part, "itag=17") != NULL)
+							{
 								title = ostrcat("3GP 144p MPEG-4 Visual Simple", NULL, 0, 0);
-							
+								pic = ostrcat("3gp.png", NULL, 0, 0);
+							}
+														
 							if(title == NULL)
 							{
 								title = ostrcat(_("unknown"), NULL, 0, 0);
-								debug(99, "(%d) title == NULL streamurl %s\n",i, streamurl);
+								debug(99, "(%d) title: %s streamurl: %s\n", i, title, streamurl);
 								debug(99, "(%d) ret1 %s\n",i, (ret1[i]).part);
 							}
 							else
 							{
-								debug(99, "(%d) title == NULL streamurl %s\n",i, streamurl);																									
+								debug(99, "(%d) title: %s streamurl: %s\n", i, title, streamurl);																									
 								addmenulist(&mlist, title, streamurl, NULL, 0, 0);
 							}
 							free(title), title = NULL;					
