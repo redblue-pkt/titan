@@ -203,16 +203,13 @@ struct menulist* menulistboxext(struct menulist* mlist, char* paramskinname, cha
 					tmp->height = 170;
 				}
 
-printf("mlist->pic: %s\n",mlist->pic);
-printf("mlist->name: %s\n",mlist->name);
-
 				if(mlist->pic == NULL)
 				{
-					if(ostrstr(mlist->name, "flv_") != NULL)
+					if(ostrstr(mlist->name, "FLV_") != NULL)
 						mlist->pic = ostrcat("flv.png", NULL, 0, 0);
-					else if(ostrstr(mlist->name, "3gp_") != NULL)
+					else if(ostrstr(mlist->name, "3GP_") != NULL)
 						mlist->pic = ostrcat("3gp.png", NULL, 0, 0);
-					else if(ostrstr(mlist->name, "mp4_") != NULL)
+					else if(ostrstr(mlist->name, "MP4_") != NULL)
 						mlist->pic = ostrcat("mp4.png", NULL, 0, 0);
 					else
 						mlist->pic = ostrcat(mlist->name, ".png", 0, 0);	

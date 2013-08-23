@@ -3136,7 +3136,7 @@ msgid "Here you can make for your selected network interface settings. Use to na
 msgstr "Hier können Sie für Ihre ausgewählte Netzwerkschnittstelle Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
 msgid "Here you can make for your wireless network settings. 1. Use Search button and select Your SSID (apoint / router) and Press ok 2. Make settings Type / Key confirm with ok and Note the following instructions 3. Disable Lan Yes, Activate Wlan Yes and use DHCP for easy setup."
-msgstr "Hier können Sie Ihre WLAN Einstellungen vornehmen.\n1. Suche starten, die eigene SSID (apoint / router) mit ok übernehmen.\n2. Schlüssel und Typ anpassen, mit ok bestätigen, Beachten Sie folgende Hinweise.\n3. Deaktiviere LAN ja, Aktiviere Wlan und DHCP für einfache Einrichtung."
+msgstr "Hier können Sie Ihre WLAN Einstellungen vornehmen.\n1. Suche starten, die eigene SSID (apoint / router) mit ok übernehmen.\n2. Schlüssel und Typ anpassen und mit ok bestätigen (speichern).\n3. Deaktiviere LAN ja, Aktiviere Wlan und DHCP für einfache Einrichtung."
 
 msgid "Here you can test your network. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
 msgstr "Hier können Sie Ihr Netzwerk testen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
