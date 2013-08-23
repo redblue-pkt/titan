@@ -2758,7 +2758,7 @@ char* getfilenamepng(char* filename)
 
 	if(tmpstr != NULL)
 	{
-		return tmpstr
+		return tmpstr;
 	}
 
 	return NULL;
