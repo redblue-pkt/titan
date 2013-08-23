@@ -2754,7 +2754,7 @@ char* getfilenamepng(char* filename)
 	else if(!filelistflt(".jpg .png", filename))
 		tmpstr = ostrcat("picture", NULL, 0, 0);
 	else
-		tmpstr = ostrcat(filename, NULL, 0, 0);
+		tmpstr = ostrcat(getfilenameext(filename), NULL, 1, 0);
 
 	if(tmpstr != NULL)
 	{
