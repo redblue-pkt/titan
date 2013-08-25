@@ -1464,7 +1464,10 @@ playerstart:
 					playrcfr(file, showname, &playinfobarstatus, &playinfobarcount, playertype, flag);
 
 				if(rcret == getrcconfigint("rcpause", NULL) || (checkbox("ATEMIO520") == 1 && rcret == getrcconfigint("rcplay", NULL) && status.pause == 0 && status.slowspeed == 0 && status.playspeed == 0))
+				{	
 					playrcpause(file, showname, &playinfobarstatus, &playinfobarcount, playertype, flag);
+					continue;
+				}
 
 				if(rcret == getrcconfigint("rcplay", NULL))
 					playrcplay(file, showname, &playinfobarstatus, &playinfobarcount, playertype, flag);
