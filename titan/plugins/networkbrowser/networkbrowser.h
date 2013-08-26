@@ -960,6 +960,7 @@ void  getnetworkbrowser_nfs(struct menulist** mlist, char* s, char* r)
 				struct menulist* tmpmlist = addmenulist(mlist, tmpstr, NULL, "netbrowser_nfs.png", 0, 0);
 				tmpstr1 = nfsInfo[i].share;
 				if(tmpstr1 != NULL && strlen(tmpstr1) > 0) tmpstr1++;
+				delspezchar(tmpstr1, 3);
 				changemenulistparam(tmpmlist, tmpstr1, NULL);
 				free(tmpstr); tmpstr = NULL;
 			}
