@@ -2256,6 +2256,7 @@ size_t writelengthfield(unsigned char * buf, unsigned int len)
 //flag 0: del non alpha/num
 //flag 1: change all /
 //flag 2: change all non filename conform chars
+//flag 3: replace non alpha/num with _
 void delspezchar(char* text, int flag)
 {
 	char* tmpstr = text;
@@ -2287,6 +2288,11 @@ void delspezchar(char* text, int flag)
 				if(tmpstr[0] == ';') tmpstr[0] = '-';
 				if(tmpstr[0] == '~') tmpstr[0] = '-';
 			}
+		}
+		else if(flag == 3)
+		{
+			if(!isalnum(tmpstr[0]) && tmpstr[0] != '-')
+				tmpstr[0] = '_';
 		}
 		else
 		{
