@@ -494,7 +494,17 @@ echo "[titan]--------------------------------------------------------"
 echo "[titan] Make TPK Binary"
 echo "[titan]--------------------------------------------------------"
 
+rm -rf "$HOME"/flashimg/source.titan/tpk/tpk
 "$HOME"/flashimg/source.titan/tpk/make.sh
+
+if [ ! -e "$HOME"/flashimg/source.titan/tpk/tpk ]; then
+	echo "[titan]--------------------------------------------------------"
+	echo "[titan] building error !!!"
+	echo "[titan] check your src"
+	echo "[titan]--------------------------------------------------------"
+	touch "$HOME"/flashimg/.ipk-build-error
+	exit 1
+fi
 
 echo "[titan]--------------------------------------------------------"
 echo "[titan] TPK done"
