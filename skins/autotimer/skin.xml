@@ -1,11 +1,20 @@
 <screen name="autotimer" title="AutoTimer Settings" titlealign=center fontcol=fontcol valign=bottom fontsize=30 posx=center posy=center width=50% height=70% bordercol=bordercol bordersize=2 bgcol=bgcol>
-<node bordercol=bordercol scrollbar=auto type=listbox posy=center posx=center name=listbox width=85% height=70%>
+<node bordercol=bordercol scrollbar=auto type=listbox posy=center posx=center name=listbox width=85% height=85%>
+<node name=akt type=choicebox parent=listbox valign=middle posx=0 text="Timer1 activ" bordercol=bordercol bordersize=2 width=100% height=25>
 <node name=channel type=inputbox parent=listbox valign=middle posx=0 text="channel (EPG=Current channel)" bordercol=bordercol bordersize=2 width=100% height=25>
 <node name=search type=inputbox parent=listbox valign=middle posx=0 text="search string" bordercol=bordercol bordersize=2 width=100% height=25>	
 <node name=begin type=inputboxnum parent=listbox valign=middle posx=0 text="begin search" bordercol=bordercol bordersize=2 width=100% height=25>
 <node name=end type=inputboxnum parent=listbox valign=middle posx=0 text="end search" bordercol=bordercol bordersize=2 width=100% height=25>
 <node name=event type=choicebox parent=listbox valign=middle posx=0 text="event" bordercol=bordercol bordersize=2 width=100% height=25>
 <node name=afterevent type=choicebox parent=listbox valign=middle posx=0 text="afterevent" bordercol=bordercol bordersize=2 width=100% height=25>
+<node name=s1 type=inputbox parent=listbox valign=middle posx=0 text=" " bordercol=bordercol bordersize=2 width=100% height=15>
+<node name=akt2 type=choicebox parent=listbox valign=middle posx=0 text="Timer2 activ" bordercol=bordercol bordersize=2 width=100% height=25>
+<node name=channel2 type=inputbox parent=listbox valign=middle posx=0 text="channel (EPG=Current channel)" bordercol=bordercol bordersize=2 width=100% height=25>
+<node name=search2 type=inputbox parent=listbox valign=middle posx=0 text="search string" bordercol=bordercol bordersize=2 width=100% height=25>	
+<node name=begin2 type=inputboxnum parent=listbox valign=middle posx=0 text="begin search" bordercol=bordercol bordersize=2 width=100% height=25>
+<node name=end2 type=inputboxnum parent=listbox valign=middle posx=0 text="end search" bordercol=bordercol bordersize=2 width=100% height=25>
+<node name=event2 type=choicebox parent=listbox valign=middle posx=0 text="event" bordercol=bordercol bordersize=2 width=100% height=25>
+<node name=afterevent2 type=choicebox parent=listbox valign=middle posx=0 text="afterevent" bordercol=bordercol bordersize=2 width=100% height=25>
 <node name=b1 text=SAVE halign=center valign=middle bordercol=green bordersize=2 bordertype=2 posx=0 posy=0 width=150 height=30/>
 <node name=b2 text=EXIT halign=center valign=middle bordercol=exitcol bordersize=2 bordertype=2 posx=160 posy=0 width=150 height=30/>
 <node name=blue text=START halign=center valign=middle bordercol=blue bordersize=2 bordertype=2 posx=400 posy=0 width=200 height=30/>
