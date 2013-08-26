@@ -913,6 +913,8 @@ void getnetworkbrowser_cifs(struct menulist** mlist, char* s, char* r, char* u, 
 			debug(70, "comment: %s", sInfo[i].comment);
 			debug(70, "rech: %s", r);
 			debug(70, "rechip: %s", s);
+			
+			delspezchar(sInfo[i].sharename, 3);
 			tmpstr = ostrcat(tmpstr , "(cifs) ", 1, 0);
 			tmpstr = ostrcat(tmpstr , strstrip(s), 1, 0);
 			tmpstr = ostrcat(tmpstr , ": /", 1, 0);
