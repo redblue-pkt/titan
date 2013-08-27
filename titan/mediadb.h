@@ -2358,7 +2358,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 									writesysint("/proc/sys/vm/drop_caches", 3, 0);
 
 									debug(777, "imdb id %s", timestamp);
-									cmediadb = createmediadb(node, timestamp, type, shortname, NULL, NULL, NULL, NULL, NULL, NULL, NULL, plot, poster, NULL, NULL, shortpath, file, shortname, fileinfo, 0, backdrop);
+									if(cmediadb == NULL) cmediadb = createmediadb(node, timestamp, type, shortname, NULL, NULL, NULL, NULL, NULL, NULL, NULL, plot, poster, NULL, NULL, shortpath, file, shortname, fileinfo, 0, backdrop);
 								}	
 							}
 						}
@@ -2410,35 +2410,38 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 
 			debugimdbnode(imdb);
 			
-			debug(777, "add video: %s/%s", shortpath, file);
-			if(imdb != NULL)
+			if(cmediadb == NULL)
 			{
-				debug(777, "imdb id %s", imdb->id);
-				cmediadb = createmediadb(node, imdb->id, type, imdb->title, imdb->year, imdb->released, imdb->runtime, imdb->genre, imdb->director, imdb->writer, imdb->actors, imdb->plot, imdb->id, imdb->rating, imdb->votes, shortpath, file, shortname, fileinfo, 0, backdrop);
-				if(tmpid != NULL)
+				debug(777, "add video: %s/%s", shortpath, file);
+				if(imdb != NULL)
 				{
-					char* tmpstr = NULL;
-					tmpstr = ostrcat(tmpstr, _("file"), 1, 0);
-					tmpstr = ostrcat(tmpstr, ": ", 1, 0);
-					tmpstr = ostrcat(tmpstr, file, 1, 0);							
-					tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-					tmpstr = ostrcat(tmpstr, _("path"), 1, 0);
-					tmpstr = ostrcat(tmpstr, ": ", 1, 0);
-					tmpstr = ostrcat(tmpstr, path, 1, 0);							
-					tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-					tmpstr = ostrcat(tmpstr, _("title"), 1, 0);
-					tmpstr = ostrcat(tmpstr, ": ", 1, 0);
-					tmpstr = ostrcat(tmpstr, imdb->title, 1, 0);							
-					tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-					tmpstr = ostrcat(tmpstr, _("imdbid"), 1, 0);
-					tmpstr = ostrcat(tmpstr, ": ", 1, 0);
-					tmpstr = ostrcat(tmpstr, id, 1, 0);																										
-					textbox(_("Add iMDB manuel"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 500, 10, 0);
-					free(tmpstr); tmpstr = NULL;
+					debug(777, "imdb id %s", imdb->id);
+					cmediadb = createmediadb(node, imdb->id, type, imdb->title, imdb->year, imdb->released, imdb->runtime, imdb->genre, imdb->director, imdb->writer, imdb->actors, imdb->plot, imdb->id, imdb->rating, imdb->votes, shortpath, file, shortname, fileinfo, 0, backdrop);
+					if(tmpid != NULL)
+					{
+						char* tmpstr = NULL;
+						tmpstr = ostrcat(tmpstr, _("file"), 1, 0);
+						tmpstr = ostrcat(tmpstr, ": ", 1, 0);
+						tmpstr = ostrcat(tmpstr, file, 1, 0);							
+						tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+						tmpstr = ostrcat(tmpstr, _("path"), 1, 0);
+						tmpstr = ostrcat(tmpstr, ": ", 1, 0);
+						tmpstr = ostrcat(tmpstr, path, 1, 0);							
+						tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+						tmpstr = ostrcat(tmpstr, _("title"), 1, 0);
+						tmpstr = ostrcat(tmpstr, ": ", 1, 0);
+						tmpstr = ostrcat(tmpstr, imdb->title, 1, 0);							
+						tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+						tmpstr = ostrcat(tmpstr, _("imdbid"), 1, 0);
+						tmpstr = ostrcat(tmpstr, ": ", 1, 0);
+						tmpstr = ostrcat(tmpstr, id, 1, 0);																										
+						textbox(_("Add iMDB manuel"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 500, 10, 0);
+						free(tmpstr); tmpstr = NULL;
+					}
 				}
+				else
+					cmediadb = createmediadb(node, NULL, type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, shortpath, file, shortname, fileinfo, 0, 0);
 			}
-			else
-				cmediadb = createmediadb(node, NULL, type, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, shortpath, file, shortname, fileinfo, 0, 0);
 
 			debug(777, "shortname: %s", shortname);
 			debug(133, "shortname: %s", shortname);
