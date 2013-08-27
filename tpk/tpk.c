@@ -18,6 +18,7 @@ char* strstrip(char *text);
 char* oitoa(int value);
 
 short debug_level = 10;
+#define _(x) gettext(x)
 #define MINMALLOC 4096
 #define PROGNAME "tpk"
 
