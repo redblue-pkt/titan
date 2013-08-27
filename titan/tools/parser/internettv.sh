@@ -25,7 +25,8 @@ count=0
 icount=0
 
 count=`expr $count + 1`	
-$wgetbin "https://gitorious.org/~max10/neutrino-mp/max10s-neutrino-mp/blobs/raw/master/data/webtv/webtv.xml" -O cache.mainfile
+#$wgetbin "https://gitorious.org/~max10/neutrino-mp/max10s-neutrino-mp/blobs/raw/master/data/webtv/webtv.xml" -O cache.mainfile
+$wgetbin "http://gitorious.org/neutrino-mp/max10s-neutrino-mp/raw/787e39155fc72e6df89dc01d502f457fc10f92a8:data/webtv/webtv.xml" -O cache.mainfile
 
 id_list="`cat cache.mainfile | tr '\n' ' ' | sed 's/ \+/ /g' | sed 's/<webtv/\n\n<webtv/g' | grep ^"<webtv" | tr ' ' '~'`"
 
