@@ -588,6 +588,7 @@ unsigned char* readpng(const char* filename, unsigned long* width, unsigned long
 void delmarkedscreennodes(struct skin* node, int mark);
 void clearscreen(struct skin* node);
 struct skin* getscreennode(struct skin *node, char* nodename);
+struct skin* checkscreennode(struct skin *node, char* nodename);
 struct skin* getscreen(char* screenname);
 int calcrheight(struct skin* node, struct skin* parent);
 int drawscreen(struct skin* node, int screencalc, int flag);

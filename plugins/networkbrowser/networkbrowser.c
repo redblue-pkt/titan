@@ -27,7 +27,7 @@ void init(void)
 	if(networkmenu == NULL || listbox == NULL)
 		return;
 
-	child = getscreennode(networkmenu, "networkbrowser");
+	child = checkscreennode(networkmenu, "networkbrowser");
 	if(child != NULL)
 		changeinput(child, "start");
 	pluginmenu = child;
