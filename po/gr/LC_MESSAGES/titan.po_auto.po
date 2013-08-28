@@ -90,15 +90,24 @@
 #: moduleconfig.h:243 moduleconfig.h:251 moduleconfig.h:255 moduleconfig.h:259
 #: moduleconfig.h:263 scan.h:1714 scan.h:2177 scan.h:2181 scan.h:2185
 #: scan.h:2189 scan.h:2193 skinadjust.h:53 tithek_settings.h:33
-#: tithek_settings.h:37 tithek_settings.h:41
+#: tithek_settings.h:37 tithek_settings.h:41 adjust.h:65 adjust.h:80
+#: adjust.h:84 adjust.h:89 adjust.h:114 adjust.h:144 adjust.h:154 adjust.h:158
+#: adjust.h:175 adjust.h:179 adjust.h:187 adjust.h:191 adjust.h:195
+#: adjust.h:201 adjust.h:205 adjust.h:209 adjust.h:213 adjust.h:217
+#: adjust.h:243 avsettings.h:123 avsettings.h:144 avsettings.h:148
+#: blindscanadjust.h:153 blindscanadjust.h:157 blindscanadjust.h:161
+#: blindscanadjust.h:190 blindscanadjust.h:194 networkbrowser.h:1422
+#: networkbrowser.h:1426 networkbrowser.h:1430 networkbrowser.h:1434
+#: networkbrowser.h:1438 networkbrowser.h:1464 pin.h:104 pin.h:176 pin.h:180
+#: pin.h:194
 msgid "no"
 msgstr ""
 
-#: adjust.h:50 adjust.h:51 adjust.h:65
+#: adjust.h:50 adjust.h:51 adjust.h:65 adjust.h:66
 msgid "infobar"
 msgstr ""
 
-#: adjust.h:51 adjust.h:52 adjust.h:66
+#: adjust.h:51 adjust.h:52 adjust.h:66 adjust.h:67
 msgid "epg"
 msgstr ""
 
@@ -187,11 +196,19 @@ msgstr ""
 #: tmc.h:536 epgsettings.h:132 epgsettings.h:185 epgsettings.h:194
 #: moduleconfig.h:252 moduleconfig.h:256 moduleconfig.h:260 moduleconfig.h:264
 #: scan.h:1715 scan.h:2178 scan.h:2182 scan.h:2186 scan.h:2190 scan.h:2194
-#: tithek_settings.h:34 tithek_settings.h:38 tithek_settings.h:42
+#: tithek_settings.h:34 tithek_settings.h:38 tithek_settings.h:42 adjust.h:81
+#: adjust.h:90 adjust.h:115 adjust.h:145 adjust.h:155 adjust.h:176
+#: adjust.h:180 adjust.h:188 adjust.h:192 adjust.h:196 adjust.h:202
+#: adjust.h:206 adjust.h:210 adjust.h:214 adjust.h:218 avsettings.h:124
+#: avsettings.h:145 blindscanadjust.h:154 blindscanadjust.h:158
+#: blindscanadjust.h:162 blindscanadjust.h:191 blindscanadjust.h:195
+#: networkbrowser.h:1423 networkbrowser.h:1427 networkbrowser.h:1431
+#: networkbrowser.h:1435 networkbrowser.h:1439 networkbrowser.h:1465 pin.h:105
+#: pin.h:177 pin.h:195
 msgid "yes"
 msgstr ""
 
-#: adjust.h:68 adjust.h:69 adjust.h:84
+#: adjust.h:68 adjust.h:69 adjust.h:84 adjust.h:85
 msgid "medium"
 msgstr ""
 
@@ -202,7 +219,7 @@ msgstr ""
 #: mc_videoplayer_settings.h:24 adjust.h:85 adjust.h:164
 #: mc_audioplayer_settings.h:35 mc_pictureplayer_settings.h:50
 #: mc_videoplayer_settings.h:31 moduleconfig.h:238 plugins_mc_skin.xml.h:23
-#: skins_mc_skin.xml.h:23 moduleconfig.h:248
+#: skins_mc_skin.xml.h:23 moduleconfig.h:248 adjust.h:86 adjust.h:165
 msgid "fast"
 msgstr ""
 
@@ -211,6 +228,7 @@ msgstr ""
 #: mc_pictureplayer_settings.h:30 adjust.h:77 adjust.h:92
 #: mc_audioplayer_settings.h:27 mc_pictureplayer_settings.h:42
 #: mc_videoplayer_settings.h:23 plugins_mc_skin.xml.h:7 skins_mc_skin.xml.h:7
+#: adjust.h:93
 msgid "alpha"
 msgstr ""
 
@@ -220,7 +238,7 @@ msgstr ""
 #: plugins_mc_skin.xml.h:38 skins_mc_skin.xml.h:38 adjust.h:78 adjust.h:93
 #: mc_audioplayer_settings.h:28 mc_pictureplayer_settings.h:43
 #: mc_videoplayer_settings.h:24 plugins_mc_skin.xml.h:48
-#: skins_mc_skin.xml.h:48
+#: skins_mc_skin.xml.h:48 adjust.h:94
 msgid "reverse alpha"
 msgstr ""
 
@@ -230,7 +248,7 @@ msgstr ""
 #: mc_pictureplayer_settings.h:32 plugins_mc_skin.xml.h:44
 #: skins_mc_skin.xml.h:44 adjust.h:79 adjust.h:94 mc_audioplayer_settings.h:29
 #: mc_pictureplayer_settings.h:44 mc_videoplayer_settings.h:25
-#: plugins_mc_skin.xml.h:54 skins_mc_skin.xml.h:54
+#: plugins_mc_skin.xml.h:54 skins_mc_skin.xml.h:54 adjust.h:95
 msgid "size"
 msgstr ""
 
@@ -240,7 +258,7 @@ msgstr ""
 #: plugins_mc_skin.xml.h:40 skins_mc_skin.xml.h:40 adjust.h:80 adjust.h:95
 #: mc_audioplayer_settings.h:30 mc_pictureplayer_settings.h:45
 #: mc_videoplayer_settings.h:26 plugins_mc_skin.xml.h:50
-#: skins_mc_skin.xml.h:50
+#: skins_mc_skin.xml.h:50 adjust.h:96
 msgid "reverse size"
 msgstr ""
 
@@ -249,7 +267,7 @@ msgstr ""
 #: skins_mc_skin.xml.h:12 mc_pictureplayer_settings.h:34 adjust.h:81
 #: adjust.h:96 mc_audioplayer_settings.h:31 mc_pictureplayer_settings.h:46
 #: mc_videoplayer_settings.h:27 plugins_mc_skin.xml.h:16
-#: skins_mc_skin.xml.h:16 vfdisplay.h:46
+#: skins_mc_skin.xml.h:16 vfdisplay.h:46 adjust.h:97
 msgid "date"
 msgstr ""
 
@@ -259,11 +277,11 @@ msgstr ""
 #: plugins_mc_skin.xml.h:39 skins_mc_skin.xml.h:39 adjust.h:82 adjust.h:97
 #: mc_audioplayer_settings.h:32 mc_pictureplayer_settings.h:47
 #: mc_videoplayer_settings.h:28 plugins_mc_skin.xml.h:49
-#: skins_mc_skin.xml.h:49
+#: skins_mc_skin.xml.h:49 adjust.h:98
 msgid "reverse date"
 msgstr ""
 
-#: adjust.h:84 adjust.h:85 adjust.h:100
+#: adjust.h:84 adjust.h:85 adjust.h:100 adjust.h:101
 msgid "Power Menu"
 msgstr ""
 
@@ -272,7 +290,7 @@ msgstr ""
 #: skin_default_skin.xml.h:317 skin_default_skin.xml.h:318
 #: skin_default_skin.xml.h:319 skin_default_skin.xml.h:325
 #: skin_default_skin.xml.h:326 skin_default_skin.xml.h:327
-#: skin_default_skin.xml.h:328 adjust.h:86 adjust.h:101
+#: skin_default_skin.xml.h:328 adjust.h:86 adjust.h:101 adjust.h:102
 msgid "Power Off"
 msgstr ""
 
@@ -283,7 +301,7 @@ msgstr ""
 #: skin_default_skin.xml.h:404 skin_default_skin.xml.h:406
 #: skin_default_skin.xml.h:412 skin_default_skin.xml.h:413
 #: skin_default_skin.xml.h:414 skin_default_skin.xml.h:415 adjust.h:87
-#: adjust.h:102 powerofftimer.h:118
+#: adjust.h:102 powerofftimer.h:118 adjust.h:103
 msgid "Standby"
 msgstr ""
 
@@ -294,54 +312,57 @@ msgstr ""
 #: skin_default_skin.xml.h:347 skin_default_skin.xml.h:348
 #: skin_default_skin.xml.h:354 skin_default_skin.xml.h:355
 #: skin_default_skin.xml.h:356 skin_default_skin.xml.h:357 adjust.h:88
-#: adjust.h:103 softcam.h:291
+#: adjust.h:103 softcam.h:291 adjust.h:104
 msgid "Restart"
 msgstr ""
 
-#: adjust.h:88 adjust.h:89 adjust.h:104
+#: adjust.h:88 adjust.h:89 adjust.h:104 adjust.h:105
 msgid "Gui Restart"
 msgstr ""
 
 #: adjust.h:91 adjust.h:101 epgsettings.h:41 epgsettings.h:48
 #: epgsettings.h:129 epgsettings.h:136 adjust.h:92 adjust.h:102 adjust.h:107
 #: adjust.h:117 epgsettings.h:134 epgsettings.h:140 network.h:594
-#: epgsettings.h:144 epgsettings.h:150
+#: epgsettings.h:144 epgsettings.h:150 adjust.h:108 adjust.h:118
 msgid "deaktiv"
 msgstr ""
 
-#: adjust.h:92 adjust.h:93 adjust.h:108
+#: adjust.h:92 adjust.h:93 adjust.h:108 adjust.h:109
 msgid "1 sec"
 msgstr ""
 
 #: adjust.h:93 avsettings.h:71 adjust.h:94 adjust.h:109 avsettings.h:74
+#: adjust.h:110 avsettings.h:75
 msgid "2 sec"
 msgstr ""
 
-#: adjust.h:94 pin.h:165 adjust.h:95 adjust.h:110
+#: adjust.h:94 pin.h:165 adjust.h:95 adjust.h:110 adjust.h:111 pin.h:188
 msgid "endless"
 msgstr ""
 
-#: adjust.h:102 adjust.h:103 adjust.h:118
+#: adjust.h:102 adjust.h:103 adjust.h:118 adjust.h:119
 msgid "1 GB"
 msgstr ""
 
-#: adjust.h:103 adjust.h:104 adjust.h:119
+#: adjust.h:103 adjust.h:104 adjust.h:119 adjust.h:120
 msgid "2 GB"
 msgstr ""
 
-#: adjust.h:104 adjust.h:105 adjust.h:120
+#: adjust.h:104 adjust.h:105 adjust.h:120 adjust.h:121
 msgid "3 GB"
 msgstr ""
 
-#: adjust.h:105 adjust.h:106 adjust.h:121
+#: adjust.h:105 adjust.h:106 adjust.h:121 adjust.h:122
 msgid "4 GB"
 msgstr ""
 
 #: adjust.h:123 adjust.h:124 adjust.h:139 adjust.h:233 httpdsettings.h:43
+#: adjust.h:140 adjust.h:234
 msgid "extern"
 msgstr ""
 
 #: adjust.h:124 adjust.h:125 adjust.h:140 adjust.h:234 httpdsettings.h:42
+#: adjust.h:141 adjust.h:235
 msgid "intern"
 msgstr ""
 
@@ -359,21 +380,22 @@ msgstr ""
 #: transponder.h:267 transponder.h:293 transponder.h:318 transponder.h:336
 #: transponder.h:362 transponder.h:371 transponder.h:377 transponder.h:384
 #: transponder.h:416 transponder.h:426 transponder.h:475 transponder.h:511
+#: adjust.h:148 avsettings.h:66
 msgid "auto"
 msgstr ""
 
 #: adjust.h:136 rectimer.h:995 rectimer.h:1000 adjust.h:137 adjust.h:148
-#: epgsettings.h:202 rectimer.h:1171 epgsettings.h:212
+#: epgsettings.h:202 rectimer.h:1171 epgsettings.h:212 adjust.h:149
 msgid "nothing"
 msgstr ""
 
 #: adjust.h:137 rectimer.h:996 rectimer.h:1001 adjust.h:138 adjust.h:149
-#: rectimer.h:1172
+#: rectimer.h:1172 adjust.h:150
 msgid "standby"
 msgstr ""
 
 #: adjust.h:138 rectimer.h:997 rectimer.h:1002 adjust.h:139 adjust.h:150
-#: rectimer.h:1173
+#: rectimer.h:1173 adjust.h:151
 msgid "power off"
 msgstr ""
 
@@ -389,38 +411,39 @@ msgstr ""
 msgid "never del file"
 msgstr ""
 
-#: adjust.h:151 adjust.h:152 adjust.h:158
+#: adjust.h:151 adjust.h:152 adjust.h:158 adjust.h:159
 msgid "anim. width"
 msgstr ""
 
-#: adjust.h:152 adjust.h:153 adjust.h:159
+#: adjust.h:152 adjust.h:153 adjust.h:159 adjust.h:160
 msgid "anim. height"
 msgstr ""
 
-#: adjust.h:153 adjust.h:154 adjust.h:160
+#: adjust.h:153 adjust.h:154 adjust.h:160 adjust.h:161
 msgid "anim. both"
 msgstr ""
 
-#: adjust.h:156 adjust.h:157 adjust.h:163
+#: adjust.h:156 adjust.h:157 adjust.h:163 adjust.h:164
 msgid "very fast"
 msgstr ""
 
 #: adjust.h:158 panel_settings_autostart.h:58 adjust.h:159 adjust.h:165
-#: timeshiftsettings.h:49 tmc.h:557
+#: timeshiftsettings.h:49 tmc.h:557 adjust.h:166
 msgid "normal"
 msgstr ""
 
 #: adjust.h:159 adjust.h:160 adjust.h:166 moduleconfig.h:236 tmc.h:556
-#: moduleconfig.h:246
+#: moduleconfig.h:246 adjust.h:167
 msgid "slow"
 msgstr ""
 
-#: adjust.h:160 adjust.h:161 adjust.h:167
+#: adjust.h:160 adjust.h:161 adjust.h:167 adjust.h:168
 msgid "very slow"
 msgstr ""
 
 #: audiotrack.h:48 play.h:155 rectimer.h:1283 subtitle.h:1612 rectimer.h:1288
 #: subtitle.h:1614 play.h:160 play.h:247 rectimer.h:1490 subtitle.h:1615
+#: audiotrack.h:50
 msgid "running"
 msgstr ""
 
@@ -444,7 +467,7 @@ msgstr ""
 #: panel_settings_autostart.h:61 panel_settings_overclocking.h:276
 #: readerconfig.h:358 transponder.h:255 transponder.h:263 transponder.h:414
 #: transponder.h:422 tunerconfig.h:671 vfdisplay.h:42 vfdisplay.h:50
-#: harddisk.h:731
+#: harddisk.h:731 avsettings.h:65 avsettings.h:81 harddisk.h:755
 msgid "off"
 msgstr ""
 
@@ -468,19 +491,19 @@ msgstr ""
 msgid "1080i"
 msgstr ""
 
-#: avsettings.h:72 avsettings.h:75
+#: avsettings.h:72 avsettings.h:75 avsettings.h:76
 msgid "4 sec"
 msgstr ""
 
-#: avsettings.h:73 avsettings.h:76
+#: avsettings.h:73 avsettings.h:76 avsettings.h:77
 msgid "6 sec"
 msgstr ""
 
-#: avsettings.h:74 avsettings.h:77
+#: avsettings.h:74 avsettings.h:77 avsettings.h:78
 msgid "8 sec"
 msgstr ""
 
-#: avsettings.h:75 avsettings.h:78
+#: avsettings.h:75 avsettings.h:78 avsettings.h:79
 msgid "10 sec"
 msgstr ""
 
@@ -490,7 +513,7 @@ msgstr ""
 #: mc_pictureplayer_settings.h:27 avsettings.h:81
 #: mc_pictureplayer_settings.h:35 mc_pictureplayer_settings.h:39
 #: readerconfig.h:361 transponder.h:256 transponder.h:265 transponder.h:415
-#: transponder.h:424
+#: transponder.h:424 avsettings.h:82
 msgid "on"
 msgstr ""
 
@@ -652,12 +675,23 @@ msgstr ""
 #: hwtest.h:523 hwtest.h:532 hwtest.h:541 hwtest.h:550 hwtest.h:599
 #: hwtest.h:601 hwtest.h:603 hwtest.h:504 hwtest.h:520 hwtest.h:529
 #: hwtest.h:538 hwtest.h:547 hwtest.h:505 hwtest.h:521 hwtest.h:530
-#: hwtest.h:539 hwtest.h:548
+#: hwtest.h:539 hwtest.h:548 avsettings.h:222 bgdownload.h:176
+#: blindscanadjust.h:26 channellist.h:930 channellist.h:932 channellist.h:1016
+#: global.h:6209 harddisk.h:621 harddisk.h:635 harddisk.h:643 harddisk.h:648
+#: harddisk.h:650 harddisk.h:652 harddisk.h:704 hwtest.h:80 hwtest.h:85
+#: hwtest.h:90 hwtest.h:95 hwtest.h:100 hwtest.h:105 hwtest.h:197 hwtest.h:379
+#: hwtest.h:400 hwtest.h:445 hwtest.h:481 hwtest.h:553 hwtest.h:555
+#: hwtest.h:569 hwtest.h:578 hwtest.h:587 hwtest.h:643 hwtest.h:645
+#: hwtest.h:647 hwtest.h:649 networkbrowser.h:1553 networkbrowser.h:1560
+#: networkbrowser.h:1565 networkbrowser.h:1661 network.h:805 network.h:859
+#: play.h:1172 play.h:1358 softcam.h:403 spinner.h:19 system_backup.h:63
+#: system_update.h:458 system_update.h:464 system_update.h:470 tpk.h:2751
+#: youtube.h:176
 msgid "Message"
 msgstr ""
 
 #: avsettings.h:199 videomode.h:53 videomode.h:60 videomode.h:61
-#: avsettings.h:221
+#: avsettings.h:221 avsettings.h:222
 msgid "Is this Videomode ok ?"
 msgstr ""
 
@@ -857,7 +891,20 @@ msgstr ""
 #: hwtest.h:523 hwtest.h:532 hwtest.h:541 hwtest.h:550 hwtest.h:599
 #: hwtest.h:601 hwtest.h:603 hwtest.h:504 hwtest.h:520 hwtest.h:529
 #: hwtest.h:538 hwtest.h:547 hwtest.h:505 hwtest.h:521 hwtest.h:530
-#: hwtest.h:539 hwtest.h:548
+#: hwtest.h:539 hwtest.h:548 avsettings.h:222 bgdownload.h:176
+#: blindscanadjust.h:26 channellist.h:930 channellist.h:932 channellist.h:1016
+#: global.h:6209 harddisk.h:347 harddisk.h:379 harddisk.h:383 harddisk.h:435
+#: harddisk.h:621 harddisk.h:635 harddisk.h:643 harddisk.h:648 harddisk.h:650
+#: harddisk.h:652 harddisk.h:704 httpdfunc.h:3036 hwtest.h:80 hwtest.h:85
+#: hwtest.h:90 hwtest.h:95 hwtest.h:100 hwtest.h:105 hwtest.h:197 hwtest.h:379
+#: hwtest.h:400 hwtest.h:445 hwtest.h:481 hwtest.h:553 hwtest.h:555
+#: hwtest.h:569 hwtest.h:578 hwtest.h:587 hwtest.h:643 hwtest.h:645
+#: hwtest.h:647 hwtest.h:649 mediadb.h:2438 networkbrowser.h:1553
+#: networkbrowser.h:1560 networkbrowser.h:1565 networkbrowser.h:1661
+#: network.h:805 network.h:859 network.h:866 network.h:888 play.h:1157
+#: play.h:1163 play.h:1172 play.h:1173 play.h:1358 softcam.h:403 spinner.h:19
+#: system_backup.h:63 system_update.h:458 system_update.h:464
+#: system_update.h:470 tpk.h:2751 youtube.h:176
 msgid "OK"
 msgstr ""
 
@@ -1062,7 +1109,20 @@ msgstr ""
 #: hwtest.h:532 hwtest.h:541 hwtest.h:550 hwtest.h:599 hwtest.h:601
 #: hwtest.h:603 hwtest.h:504 hwtest.h:520 hwtest.h:529 hwtest.h:538
 #: hwtest.h:547 hwtest.h:505 hwtest.h:521 hwtest.h:530 hwtest.h:539
-#: hwtest.h:548
+#: hwtest.h:548 avsettings.h:222 bgdownload.h:176 blindscanadjust.h:26
+#: channellist.h:930 channellist.h:932 channellist.h:1016 global.h:6209
+#: harddisk.h:347 harddisk.h:379 harddisk.h:383 harddisk.h:435 harddisk.h:621
+#: harddisk.h:635 harddisk.h:643 harddisk.h:648 harddisk.h:650 harddisk.h:652
+#: harddisk.h:704 httpdfunc.h:3036 hwtest.h:80 hwtest.h:85 hwtest.h:90
+#: hwtest.h:95 hwtest.h:100 hwtest.h:105 hwtest.h:197 hwtest.h:379
+#: hwtest.h:400 hwtest.h:445 hwtest.h:481 hwtest.h:553 hwtest.h:555
+#: hwtest.h:569 hwtest.h:578 hwtest.h:587 hwtest.h:643 hwtest.h:645
+#: hwtest.h:647 hwtest.h:649 mediadb.h:2438 networkbrowser.h:1553
+#: networkbrowser.h:1560 networkbrowser.h:1565 networkbrowser.h:1661
+#: network.h:805 network.h:859 network.h:866 network.h:888 play.h:1157
+#: play.h:1163 play.h:1172 play.h:1173 play.h:1358 softcam.h:403 spinner.h:19
+#: system_backup.h:63 system_update.h:458 system_update.h:464
+#: system_update.h:470 tpk.h:2751 youtube.h:176
 msgid "EXIT"
 msgstr ""
 
@@ -1177,7 +1237,8 @@ msgstr ""
 #: channellist.h:1009 channellist.h:1210 channellist.h:1018 channellist.h:1219
 #: channellist.h:1027 channellist.h:1228 channellist.h:1254 channellist.h:577
 #: channellist.h:1061 channellist.h:1262 channellist.h:702 channellist.h:1220
-#: channellist.h:1221 channellist.h:1433
+#: channellist.h:1221 channellist.h:1433 channellist.h:719 channellist.h:1237
+#: channellist.h:1238 channellist.h:1450
 msgid "Bouquets"
 msgstr ""
 
@@ -1194,7 +1255,7 @@ msgstr ""
 #: channellist.h:1297 channellist.h:577 channellist.h:1304 channellist.h:582
 #: channellist.h:1309 channellist.h:1346 channellist.h:1355 channellist.h:1364
 #: channellist.h:1390 channellist.h:590 channellist.h:1398 channellist.h:719
-#: channellist.h:1573
+#: channellist.h:1573 channellist.h:736 channellist.h:1590
 msgid "Channel"
 msgstr ""
 
@@ -1211,7 +1272,8 @@ msgstr ""
 #: channellist.h:1039 channellist.h:1282 channellist.h:1048 channellist.h:1291
 #: channellist.h:1057 channellist.h:1300 channellist.h:1083 channellist.h:1326
 #: channellist.h:602 channellist.h:1091 channellist.h:1334 channellist.h:735
-#: channellist.h:1254 channellist.h:1255 channellist.h:1507
+#: channellist.h:1254 channellist.h:1255 channellist.h:1507 channellist.h:752
+#: channellist.h:1271 channellist.h:1272 channellist.h:1524
 msgid "Satellites"
 msgstr ""
 
@@ -1229,6 +1291,7 @@ msgstr ""
 #: channellist.h:1427 channellist.h:1117 channellist.h:1436 channellist.h:1143
 #: channellist.h:1462 channellist.h:615 channellist.h:1151 channellist.h:1470
 #: channellist.h:752 channellist.h:1322 channellist.h:1323 channellist.h:1647
+#: channellist.h:769 channellist.h:1339 channellist.h:1340 channellist.h:1664
 msgid "Provider"
 msgstr ""
 
@@ -1241,6 +1304,7 @@ msgstr ""
 #: channellist.h:620 channellist.h:960 channellist.h:997 channellist.h:1006
 #: channellist.h:1015 channellist.h:1041 channellist.h:628 channellist.h:1049
 #: channellist.h:771 channellist.h:772 channellist.h:1204 channellist.h:1205
+#: channellist.h:788 channellist.h:789 channellist.h:1221 channellist.h:1222
 msgid "All Channels"
 msgstr ""
 
@@ -1248,6 +1312,7 @@ msgstr ""
 #: channellist.h:771 channellist.h:790 channellist.h:821 channellist.h:822
 #: channellist.h:823 channellist.h:824 channellist.h:825 channellist.h:826
 #: channellist.h:833 channellist.h:838 channellist.h:846 channellist.h:999
+#: channellist.h:1016
 msgid "Can't remove akive Service"
 msgstr ""
 
@@ -1256,7 +1321,7 @@ msgstr ""
 #: channellist.h:1017 channellist.h:1018 channellist.h:1019 channellist.h:1020
 #: channellist.h:1027 channellist.h:1032 channellist.h:1069 channellist.h:1078
 #: channellist.h:1087 channellist.h:1113 channellist.h:1121 channellist.h:1288
-#: channellist.h:1289
+#: channellist.h:1289 channellist.h:1305 channellist.h:1306
 msgid "Channels A-Z"
 msgstr ""
 
@@ -1268,51 +1333,51 @@ msgstr ""
 #: skin_default_skin.xml.h:70 dir.h:73 dir.h:79 dir.h:85 dir.h:91
 #: plugins_lcdpearl1_skin.xml.h:2 skins_lcdpearl1_skin.xml.h:2 dir.h:80
 #: dir.h:98 dir.h:107 plugins_lcdsamsung_skin.xml.h:2
-#: skins_lcdsamsung_skin.xml.h:2
+#: skins_lcdsamsung_skin.xml.h:2 dir.h:100 dir.h:109
 msgid "---"
 msgstr ""
 
-#: diseqcconfig.h:9 diseqcconfig.h:16
+#: diseqcconfig.h:9 diseqcconfig.h:16 diseqcconfig.h:10 diseqcconfig.h:17
 msgid "committed, toneburst"
 msgstr ""
 
-#: diseqcconfig.h:10 diseqcconfig.h:17
+#: diseqcconfig.h:10 diseqcconfig.h:17 diseqcconfig.h:11 diseqcconfig.h:18
 msgid "toneburst, committed"
 msgstr ""
 
-#: diseqcconfig.h:18
+#: diseqcconfig.h:18 diseqcconfig.h:19
 msgid "committed, uncommitted, toneburst"
 msgstr ""
 
-#: diseqcconfig.h:19
+#: diseqcconfig.h:19 diseqcconfig.h:20
 msgid "toneburst, committed, uncommitted"
 msgstr ""
 
-#: diseqcconfig.h:20
+#: diseqcconfig.h:20 diseqcconfig.h:21
 msgid "uncommitted, committed, toneburst"
 msgstr ""
 
-#: diseqcconfig.h:21
+#: diseqcconfig.h:21 diseqcconfig.h:22
 msgid "toneburst, uncommitted, committed"
 msgstr ""
 
-#: diseqcconfig.h:128
+#: diseqcconfig.h:128 diseqcconfig.h:132
 msgid "DiSEqC 1.0"
 msgstr ""
 
-#: diseqcconfig.h:129
+#: diseqcconfig.h:129 diseqcconfig.h:133
 msgid "DiSEqC 1.1"
 msgstr ""
 
-#: diseqcconfig.h:130
+#: diseqcconfig.h:130 diseqcconfig.h:134
 msgid "DiSEqC 1.2"
 msgstr ""
 
-#: diseqcconfig.h:131
+#: diseqcconfig.h:131 diseqcconfig.h:135
 msgid "DiSEqC 1.3 (USALS)"
 msgstr ""
 
-#: diseqcconfig.h:132
+#: diseqcconfig.h:132 diseqcconfig.h:136
 msgid "Tonburst A/B"
 msgstr ""
 
@@ -1320,101 +1385,101 @@ msgstr ""
 #: transponder.h:263 transponder.h:287 transponder.h:293 transponder.h:257
 #: transponder.h:272 transponder.h:296 transponder.h:302 transponder.h:221
 #: transponder.h:231 transponder.h:328 transponder.h:346 transponder.h:373
-#: transponder.h:379
+#: transponder.h:379 diseqcconfig.h:139 diseqcconfig.h:144 diseqcconfig.h:163
 msgid "none"
 msgstr ""
 
 #: diseqcconfig.h:136 skin_default_skin.xml.h:99 skin_default_skin.xml.h:100
 #: skin_default_skin.xml.h:101 skin_default_skin.xml.h:102
 #: skin_default_skin.xml.h:103 skin_default_skin.xml.h:104
-#: skin_default_skin.xml.h:105
+#: skin_default_skin.xml.h:105 diseqcconfig.h:140
 msgid "A"
 msgstr ""
 
 #: diseqcconfig.h:137 skin_default_skin.xml.h:126 skin_default_skin.xml.h:127
 #: skin_default_skin.xml.h:128 skin_default_skin.xml.h:129
 #: skin_default_skin.xml.h:130 skin_default_skin.xml.h:131
-#: skin_default_skin.xml.h:132 skin_default_skin.xml.h:133
+#: skin_default_skin.xml.h:132 skin_default_skin.xml.h:133 diseqcconfig.h:141
 msgid "B"
 msgstr ""
 
-#: diseqcconfig.h:141 diseqcconfig.h:160
+#: diseqcconfig.h:141 diseqcconfig.h:160 diseqcconfig.h:145 diseqcconfig.h:164
 msgid "Input 1"
 msgstr ""
 
-#: diseqcconfig.h:142 diseqcconfig.h:161
+#: diseqcconfig.h:142 diseqcconfig.h:161 diseqcconfig.h:146 diseqcconfig.h:165
 msgid "Input 2"
 msgstr ""
 
-#: diseqcconfig.h:143 diseqcconfig.h:162
+#: diseqcconfig.h:143 diseqcconfig.h:162 diseqcconfig.h:147 diseqcconfig.h:166
 msgid "Input 3"
 msgstr ""
 
-#: diseqcconfig.h:144 diseqcconfig.h:163
+#: diseqcconfig.h:144 diseqcconfig.h:163 diseqcconfig.h:148 diseqcconfig.h:167
 msgid "Input 4"
 msgstr ""
 
-#: diseqcconfig.h:145 diseqcconfig.h:164
+#: diseqcconfig.h:145 diseqcconfig.h:164 diseqcconfig.h:149 diseqcconfig.h:168
 msgid "Input 5"
 msgstr ""
 
-#: diseqcconfig.h:146 diseqcconfig.h:165
+#: diseqcconfig.h:146 diseqcconfig.h:165 diseqcconfig.h:150 diseqcconfig.h:169
 msgid "Input 6"
 msgstr ""
 
-#: diseqcconfig.h:147 diseqcconfig.h:166
+#: diseqcconfig.h:147 diseqcconfig.h:166 diseqcconfig.h:151 diseqcconfig.h:170
 msgid "Input 7"
 msgstr ""
 
-#: diseqcconfig.h:148 diseqcconfig.h:167
+#: diseqcconfig.h:148 diseqcconfig.h:167 diseqcconfig.h:152 diseqcconfig.h:171
 msgid "Input 8"
 msgstr ""
 
-#: diseqcconfig.h:149 diseqcconfig.h:168
+#: diseqcconfig.h:149 diseqcconfig.h:168 diseqcconfig.h:153 diseqcconfig.h:172
 msgid "Input 9"
 msgstr ""
 
-#: diseqcconfig.h:150 diseqcconfig.h:169
+#: diseqcconfig.h:150 diseqcconfig.h:169 diseqcconfig.h:154 diseqcconfig.h:173
 msgid "Input 10"
 msgstr ""
 
-#: diseqcconfig.h:151 diseqcconfig.h:170
+#: diseqcconfig.h:151 diseqcconfig.h:170 diseqcconfig.h:155 diseqcconfig.h:174
 msgid "Input 11"
 msgstr ""
 
-#: diseqcconfig.h:152 diseqcconfig.h:171
+#: diseqcconfig.h:152 diseqcconfig.h:171 diseqcconfig.h:156 diseqcconfig.h:175
 msgid "Input 12"
 msgstr ""
 
-#: diseqcconfig.h:153 diseqcconfig.h:172
+#: diseqcconfig.h:153 diseqcconfig.h:172 diseqcconfig.h:157 diseqcconfig.h:176
 msgid "Input 13"
 msgstr ""
 
-#: diseqcconfig.h:154 diseqcconfig.h:173
+#: diseqcconfig.h:154 diseqcconfig.h:173 diseqcconfig.h:158 diseqcconfig.h:177
 msgid "Input 14"
 msgstr ""
 
-#: diseqcconfig.h:155 diseqcconfig.h:174
+#: diseqcconfig.h:155 diseqcconfig.h:174 diseqcconfig.h:159 diseqcconfig.h:178
 msgid "Input 15"
 msgstr ""
 
-#: diseqcconfig.h:156 diseqcconfig.h:175
+#: diseqcconfig.h:156 diseqcconfig.h:175 diseqcconfig.h:160 diseqcconfig.h:179
 msgid "Input 16"
 msgstr ""
 
-#: diseqcconfig.h:257 diseqcconfig.h:254
+#: diseqcconfig.h:257 diseqcconfig.h:254 diseqcconfig.h:259
 msgid "north"
 msgstr ""
 
-#: diseqcconfig.h:258 diseqcconfig.h:255
+#: diseqcconfig.h:258 diseqcconfig.h:255 diseqcconfig.h:260
 msgid "south"
 msgstr ""
 
-#: diseqcconfig.h:262 diseqcconfig.h:259
+#: diseqcconfig.h:262 diseqcconfig.h:259 diseqcconfig.h:264
 msgid "east"
 msgstr ""
 
-#: diseqcconfig.h:263 diseqcconfig.h:260
+#: diseqcconfig.h:263 diseqcconfig.h:260 diseqcconfig.h:265
 msgid "west"
 msgstr ""
 
@@ -1432,7 +1497,7 @@ msgid "Multi (EPG)"
 msgstr ""
 
 #: epgsettings.h:32 epgsettings.h:120 adjust.h:67 epgsettings.h:125
-#: epgsettings.h:135
+#: epgsettings.h:135 adjust.h:68
 msgid "Channel EPG"
 msgstr ""
 
@@ -1529,7 +1594,7 @@ msgstr ""
 #: global.h:4522 global.h:4536 global.h:4551 global.h:4586 global.h:4587
 #: global.h:4602 global.h:4606 global.h:4607 global.h:4614 global.h:4639
 #: global.h:4634 global.h:4645 global.h:6121 keyactions.h:216 global.h:6109
-#: global.h:6153 global.h:6159
+#: global.h:6153 global.h:6159 global.h:6209
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -1558,51 +1623,56 @@ msgstr ""
 msgid "GRAPHIC MULTI EPG - All Channels"
 msgstr ""
 
-#: harddisk.h:178 harddisk.h:190 harddisk.h:191 harddisk.h:192
+#: harddisk.h:178 harddisk.h:190 harddisk.h:191 harddisk.h:192 harddisk.h:215
+#: harddisk.h:216
 msgid "Harddisk Configure"
 msgstr ""
 
-#: harddisk.h:188 harddisk.h:202 harddisk.h:203 harddisk.h:619
+#: harddisk.h:188 harddisk.h:202 harddisk.h:203 harddisk.h:619 harddisk.h:227
+#: harddisk.h:643
 msgid "use medium for record"
 msgstr ""
 
-#: harddisk.h:193 harddisk.h:212 harddisk.h:213 harddisk.h:624
+#: harddisk.h:193 harddisk.h:212 harddisk.h:213 harddisk.h:624 harddisk.h:237
+#: harddisk.h:648
 msgid "use medium for extension"
 msgstr ""
 
-#: harddisk.h:198 harddisk.h:222 harddisk.h:223 harddisk.h:626
+#: harddisk.h:198 harddisk.h:222 harddisk.h:223 harddisk.h:626 harddisk.h:247
+#: harddisk.h:650
 msgid "use medium for swap"
 msgstr ""
 
-#: harddisk.h:203 harddisk.h:232 harddisk.h:233 harddisk.h:628
+#: harddisk.h:203 harddisk.h:232 harddisk.h:233 harddisk.h:628 harddisk.h:257
+#: harddisk.h:652
 msgid "use medium for backup"
 msgstr ""
 
-#: harddisk.h:208 harddisk.h:207
+#: harddisk.h:208 harddisk.h:207 harddisk.h:232
 msgid "del medium for record"
 msgstr ""
 
-#: harddisk.h:213 harddisk.h:217 harddisk.h:218
+#: harddisk.h:213 harddisk.h:217 harddisk.h:218 harddisk.h:242
 msgid "del medium for extension"
 msgstr ""
 
-#: harddisk.h:218 harddisk.h:227 harddisk.h:228
+#: harddisk.h:218 harddisk.h:227 harddisk.h:228 harddisk.h:252
 msgid "del medium for swap"
 msgstr ""
 
-#: harddisk.h:223 harddisk.h:237 harddisk.h:238
+#: harddisk.h:223 harddisk.h:237 harddisk.h:238 harddisk.h:262
 msgid "del medium for backup"
 msgstr ""
 
-#: harddisk.h:309 harddisk.h:322 harddisk.h:323
+#: harddisk.h:309 harddisk.h:322 harddisk.h:323 harddisk.h:347
 msgid "Are you sure you want to delete this directory?"
 msgstr ""
 
-#: harddisk.h:319 harddisk.h:332 harddisk.h:355
+#: harddisk.h:319 harddisk.h:332 harddisk.h:355 harddisk.h:379
 msgid "can't create or delete directory"
 msgstr ""
 
-#: harddisk.h:323 harddisk.h:336 harddisk.h:359
+#: harddisk.h:323 harddisk.h:336 harddisk.h:359 harddisk.h:383
 msgid "succesfull create or delelete directory"
 msgstr ""
 
@@ -1615,64 +1685,69 @@ msgstr ""
 #: skin_default_skin.xml.h:224 skin_default_skin.xml.h:15
 #: skin_default_skin.xml.h:225 skin_default_skin.xml.h:226
 #: skin_default_skin.xml.h:227 skin_default_skin.xml.h:228 harddisk.h:366
-#: harddisk.h:411
+#: harddisk.h:411 harddisk.h:435
 msgid "Harddisk"
 msgstr ""
 
-#: harddisk.h:352 harddisk.h:366 harddisk.h:411
+#: harddisk.h:352 harddisk.h:366 harddisk.h:411 harddisk.h:435
 msgid "sorry found no harddisk"
 msgstr ""
 
 #: harddisk.h:359 harddisk.h:374 harddisk.h:375 harddisk.h:419 harddisk.h:420
+#: harddisk.h:443 harddisk.h:444
 msgid "Harddisk Format - List Devices"
 msgstr ""
 
 #: harddisk.h:361 harddisk.h:379 harddisk.h:380 harddisk.h:424 harddisk.h:425
+#: harddisk.h:448 harddisk.h:449
 msgid "Harddisk Fsck - List Devices"
 msgstr ""
 
 #: harddisk.h:363 harddisk.h:384 harddisk.h:385 harddisk.h:429 harddisk.h:430
+#: harddisk.h:453 harddisk.h:454
 msgid "Harddisk Configure - List Devices"
 msgstr ""
 
-#: harddisk.h:380 harddisk.h:403 harddisk.h:448
+#: harddisk.h:380 harddisk.h:403 harddisk.h:448 harddisk.h:472
 msgid "HDD "
 msgstr ""
 
-#: harddisk.h:386 harddisk.h:409 harddisk.h:454
+#: harddisk.h:386 harddisk.h:409 harddisk.h:454 harddisk.h:478
 msgid "STICK "
 msgstr ""
 
-#: harddisk.h:405 harddisk.h:428 harddisk.h:473
+#: harddisk.h:405 harddisk.h:428 harddisk.h:473 harddisk.h:497
 msgid "ext"
 msgstr ""
 
 #: harddisk.h:417 panel_settings_autostart.h:59 harddisk.h:440 harddisk.h:485
+#: harddisk.h:509
 msgid "swap"
 msgstr ""
 
-#: harddisk.h:429 harddisk.h:452 harddisk.h:497
+#: harddisk.h:429 harddisk.h:452 harddisk.h:497 harddisk.h:521
 msgid "backup"
 msgstr ""
 
 #: harddisk.h:441 rectimer.h:862 harddisk.h:464 rectimer.h:1033 harddisk.h:509
+#: harddisk.h:533
 msgid "record"
 msgstr ""
 
-#: harddisk.h:526 harddisk.h:549 harddisk.h:597
+#: harddisk.h:526 harddisk.h:549 harddisk.h:597 harddisk.h:621
 msgid ""
 "Are you sure you want to remove all Partitions\n"
 "on this device and create a new Partition 1?\n"
 "Box reboots after format"
 msgstr ""
 
-#: harddisk.h:540 harddisk.h:563 harddisk.h:611
+#: harddisk.h:540 harddisk.h:563 harddisk.h:611 harddisk.h:635
 msgid ""
 "Are you sure you want to format this Partition?\n"
 "Box reboots after format"
 msgstr ""
 
-#: harddisk.h:568 harddisk.h:591 harddisk.h:680
+#: harddisk.h:568 harddisk.h:591 harddisk.h:680 harddisk.h:704
 msgid ""
 "Are you sure you want to check this Partition?\n"
 "Box reboots after check"
@@ -1684,23 +1759,23 @@ msgstr ""
 #: skin_default_skin.xml.h:436 skin_default_skin.xml.h:438
 #: skin_default_skin.xml.h:440 skin_default_skin.xml.h:450
 #: skin_default_skin.xml.h:451 skin_default_skin.xml.h:452
-#: skin_default_skin.xml.h:453 harddisk.h:644 harddisk.h:730
+#: skin_default_skin.xml.h:453 harddisk.h:644 harddisk.h:730 harddisk.h:754
 msgid "Time to sleep"
 msgstr ""
 
-#: harddisk.h:616 harddisk.h:646 harddisk.h:732
+#: harddisk.h:616 harddisk.h:646 harddisk.h:732 harddisk.h:756
 msgid "5 min"
 msgstr ""
 
-#: harddisk.h:616 harddisk.h:646 harddisk.h:732
+#: harddisk.h:616 harddisk.h:646 harddisk.h:732 harddisk.h:756
 msgid "10 min"
 msgstr ""
 
-#: harddisk.h:617 harddisk.h:647 harddisk.h:733
+#: harddisk.h:617 harddisk.h:647 harddisk.h:733 harddisk.h:757
 msgid "15 min"
 msgstr ""
 
-#: harddisk.h:617 harddisk.h:647 harddisk.h:733
+#: harddisk.h:617 harddisk.h:647 harddisk.h:733 harddisk.h:757
 msgid "60 min"
 msgstr ""
 
@@ -1708,13 +1783,13 @@ msgstr ""
 msgid "Imdb Suche"
 msgstr ""
 
-#: ipkg.h:362 ipkg.h:363 ipkg.h:364 ipkg.h:358 tpk.h:2753
+#: ipkg.h:362 ipkg.h:363 ipkg.h:364 ipkg.h:358 tpk.h:2753 tpk.h:2751
 msgid "check your Secret Feed !"
 msgstr ""
 
 #: ipkg.h:701 ipkg.h:702 ipkg.h:467 ipkg.h:733 ipkg.h:525 ipkg.h:804
 #: ipkg.h:519 ipkg.h:798 ipkg.h:524 ipkg.h:528 ipkg.h:549 tpk.h:2984
-#: tpk.h:2987
+#: tpk.h:2987 tpk.h:2992
 msgid "no description found"
 msgstr ""
 
@@ -1864,7 +1939,7 @@ msgstr ""
 #: dvdplay.h:62 mc_audioplayer.h:595 mc_audioplayer.h:698 mc_global.h:765
 #: mc_global.h:1010 mc_pictureplayer.h:95 mc_pictureplayer.h:232
 #: mc_pictureplayer.h:358 mc_pictureplayer.h:451 mc_videoplayer.h:734
-#: mc_videoplayer.h:870 play.h:1350
+#: mc_videoplayer.h:870 play.h:1350 play.h:1358
 msgid "Can't start playback !"
 msgstr ""
 
@@ -1873,7 +1948,7 @@ msgstr ""
 #: plugins_panel_skin.xml.h:34 skins_mc_skin.xml.h:14
 #: skins_panel_skin.xml.h:34 mc_audioplayer_settings.h:32
 #: mc_pictureplayer_settings.h:41 mc_videoplayer_settings.h:27 harddisk.h:143
-#: plugins_mc_skin.xml.h:18 skins_mc_skin.xml.h:18
+#: plugins_mc_skin.xml.h:18 skins_mc_skin.xml.h:18 harddisk.h:167
 msgid "default"
 msgstr ""
 
@@ -1975,7 +2050,8 @@ msgstr ""
 #: skins_tmdb_skin.xml.h:11 skins_weather_skin.xml.h:4
 #: skins_zapback_skin.xml.h:7 plugins_autotimer_skin.xml.h:11
 #: plugins_tithek_skin.xml.h:15 skins_autotimer_skin.xml.h:11
-#: skins_tithek_skin.xml.h:15
+#: skins_tithek_skin.xml.h:15 dirsort.h:24 plugins_autotimer_skin.xml.h:13
+#: skins_autotimer_skin.xml.h:13
 msgid ""
 msgstr ""
 
@@ -2049,7 +2125,7 @@ msgid "skin (picmem jpg)"
 msgstr ""
 
 #: moduleconfig.h:30 moduleconfig.h:328 hwtest.h:412 moduleconfig.h:338
-#: scconfig.h:30 hwtest.h:418 scconfig.h:31
+#: scconfig.h:30 hwtest.h:418 scconfig.h:31 hwtest.h:461
 msgid "Slot "
 msgstr ""
 
@@ -2070,7 +2146,9 @@ msgstr ""
 #: transponder.h:294 transponder.h:329 transponder.h:347 transponder.h:363
 #: transponder.h:417 transponder.h:450 transponder.h:479 transponder.h:492
 #: transponder.h:503 transponder.h:573 youtube.h:86 hwtest.h:418
-#: moduleconfig.h:345 bgdownload.h:95 hwtest.h:424
+#: moduleconfig.h:345 bgdownload.h:95 hwtest.h:424 bgdownload.h:97
+#: bgdownload.h:155 httpdfunc.h:2653 httpdfunc.h:2665 hwtest.h:467
+#: youtube.h:128
 msgid "unknown"
 msgstr ""
 
@@ -2121,21 +2199,22 @@ msgstr ""
 #: networkbrowser.h:23 networkbrowser.h:25 networkbrowser.h:788
 #: networkbrowser.h:806 networkbrowser.h:811 networkbrowser.h:838
 #: networkbrowser.h:840 networkbrowser.h:836 networkbrowser.h:854
-#: networkbrowser.h:984 networkbrowser.h:985
+#: networkbrowser.h:984 networkbrowser.h:985 networkbrowser.h:987
+#: networkbrowser.h:988
 msgid "Scanning Network Shares, please wait !!"
 msgstr ""
 
 #: networkbrowser.h:30 networkbrowser.h:34 networkbrowser.h:806
 #: networkbrowser.h:824 networkbrowser.h:829 networkbrowser.h:856
 #: networkbrowser.h:858 networkbrowser.h:854 networkbrowser.h:872
-#: networkbrowser.h:1005
+#: networkbrowser.h:1005 networkbrowser.h:1008
 msgid "Networkbrowser - show scanned DNS-Shares"
 msgstr ""
 
 #: networkbrowser.h:47 networkbrowser.h:56 networkbrowser.h:813
 #: networkbrowser.h:831 networkbrowser.h:836 networkbrowser.h:863
 #: networkbrowser.h:865 networkbrowser.h:861 networkbrowser.h:879
-#: networkbrowser.h:1026
+#: networkbrowser.h:1026 networkbrowser.h:1029
 msgid "Networkbrowser - show scanned cifs/nfs-Shares"
 msgstr ""
 
@@ -2147,7 +2226,7 @@ msgstr ""
 #: networkbrowser.h:437 networkbrowser.h:434 networkbrowser.h:442
 #: networkbrowser.h:1117 networkbrowser.h:1089 networkbrowser.h:1094
 #: networkbrowser.h:1143 networkbrowser.h:1145 networkbrowser.h:1144
-#: networkbrowser.h:1159 networkbrowser.h:1372
+#: networkbrowser.h:1159 networkbrowser.h:1372 networkbrowser.h:1375
 msgid "cifs"
 msgstr ""
 
@@ -2155,7 +2234,7 @@ msgstr ""
 #: networkbrowser.h:438 networkbrowser.h:435 networkbrowser.h:443
 #: networkbrowser.h:1118 networkbrowser.h:1090 networkbrowser.h:1095
 #: networkbrowser.h:1144 networkbrowser.h:1146 networkbrowser.h:1145
-#: networkbrowser.h:1160 networkbrowser.h:1373
+#: networkbrowser.h:1160 networkbrowser.h:1373 networkbrowser.h:1376
 msgid "nfs"
 msgstr ""
 
@@ -2163,7 +2242,7 @@ msgstr ""
 #: networkbrowser.h:439 networkbrowser.h:436 networkbrowser.h:444
 #: networkbrowser.h:1119 networkbrowser.h:1091 networkbrowser.h:1096
 #: networkbrowser.h:1145 networkbrowser.h:1147 networkbrowser.h:1146
-#: networkbrowser.h:1161 networkbrowser.h:1374
+#: networkbrowser.h:1161 networkbrowser.h:1374 networkbrowser.h:1377
 msgid "ftpfs"
 msgstr ""
 
@@ -2171,7 +2250,7 @@ msgstr ""
 #: networkbrowser.h:477 networkbrowser.h:474 networkbrowser.h:482
 #: networkbrowser.h:1152 networkbrowser.h:1124 networkbrowser.h:1129
 #: networkbrowser.h:1178 networkbrowser.h:1180 networkbrowser.h:1179
-#: networkbrowser.h:1194 networkbrowser.h:1409
+#: networkbrowser.h:1194 networkbrowser.h:1409 networkbrowser.h:1412
 msgid "ssl_try"
 msgstr ""
 
@@ -2179,7 +2258,7 @@ msgstr ""
 #: networkbrowser.h:478 networkbrowser.h:475 networkbrowser.h:483
 #: networkbrowser.h:1153 networkbrowser.h:1125 networkbrowser.h:1130
 #: networkbrowser.h:1179 networkbrowser.h:1181 networkbrowser.h:1180
-#: networkbrowser.h:1195 networkbrowser.h:1410
+#: networkbrowser.h:1195 networkbrowser.h:1410 networkbrowser.h:1413
 msgid "ssl_control"
 msgstr ""
 
@@ -2192,7 +2271,7 @@ msgstr ""
 #: plugins_networkbrowser_skin.xml.h:22 skins_networkbrowser_skin.xml.h:22
 #: networkbrowser.h:1182 networkbrowser.h:1181 networkbrowser.h:1196
 #: networkbrowser.h:1411 plugins_networkbrowser_skin.xml.h:24
-#: skins_networkbrowser_skin.xml.h:24
+#: skins_networkbrowser_skin.xml.h:24 networkbrowser.h:1414
 msgid "ssl"
 msgstr ""
 
@@ -2200,7 +2279,7 @@ msgstr ""
 #: networkbrowser.h:482 networkbrowser.h:479 networkbrowser.h:487
 #: networkbrowser.h:1157 networkbrowser.h:1129 networkbrowser.h:1134
 #: networkbrowser.h:1183 networkbrowser.h:1185 networkbrowser.h:1184
-#: networkbrowser.h:1199 networkbrowser.h:1414
+#: networkbrowser.h:1199 networkbrowser.h:1414 networkbrowser.h:1417
 msgid "socks5"
 msgstr ""
 
@@ -2208,7 +2287,7 @@ msgstr ""
 #: networkbrowser.h:483 networkbrowser.h:480 networkbrowser.h:488
 #: networkbrowser.h:1158 networkbrowser.h:1130 networkbrowser.h:1135
 #: networkbrowser.h:1184 networkbrowser.h:1186 networkbrowser.h:1185
-#: networkbrowser.h:1200 networkbrowser.h:1415
+#: networkbrowser.h:1200 networkbrowser.h:1415 networkbrowser.h:1418
 msgid "socks4"
 msgstr ""
 
@@ -2216,7 +2295,7 @@ msgstr ""
 #: networkbrowser.h:484 networkbrowser.h:481 networkbrowser.h:489
 #: networkbrowser.h:1159 networkbrowser.h:1131 networkbrowser.h:1136
 #: networkbrowser.h:1185 networkbrowser.h:1187 networkbrowser.h:1186
-#: networkbrowser.h:1201 networkbrowser.h:1416
+#: networkbrowser.h:1201 networkbrowser.h:1416 networkbrowser.h:1419
 msgid "html"
 msgstr ""
 
@@ -2224,7 +2303,7 @@ msgstr ""
 #: networkbrowser.h:531 networkbrowser.h:528 networkbrowser.h:536
 #: networkbrowser.h:1205 networkbrowser.h:1177 networkbrowser.h:1182
 #: networkbrowser.h:1231 networkbrowser.h:1233 networkbrowser.h:1232
-#: networkbrowser.h:1247 networkbrowser.h:1466
+#: networkbrowser.h:1247 networkbrowser.h:1466 networkbrowser.h:1469
 msgid "udp"
 msgstr ""
 
@@ -2232,7 +2311,7 @@ msgstr ""
 #: networkbrowser.h:532 networkbrowser.h:529 networkbrowser.h:537
 #: networkbrowser.h:1206 networkbrowser.h:1178 networkbrowser.h:1183
 #: networkbrowser.h:1232 networkbrowser.h:1234 networkbrowser.h:1233
-#: networkbrowser.h:1248 networkbrowser.h:1467
+#: networkbrowser.h:1248 networkbrowser.h:1467 networkbrowser.h:1470
 msgid "tcp"
 msgstr ""
 
@@ -2263,6 +2342,7 @@ msgstr ""
 #: networkbrowser.h:797 networkbrowser.h:956 networkbrowser.h:919
 #: networkbrowser.h:924 networkbrowser.h:967 networkbrowser.h:969
 #: networkbrowser.h:965 networkbrowser.h:983 networkbrowser.h:1153
+#: networkbrowser.h:1156
 msgid "Add Cifs Network Share"
 msgstr ""
 
@@ -2272,7 +2352,7 @@ msgstr ""
 #: networkbrowser.h:818 networkbrowser.h:582 networkbrowser.h:826
 #: networkbrowser.h:983 networkbrowser.h:955 networkbrowser.h:960
 #: networkbrowser.h:1003 networkbrowser.h:1005 networkbrowser.h:1002
-#: networkbrowser.h:1019 networkbrowser.h:1203
+#: networkbrowser.h:1019 networkbrowser.h:1203 networkbrowser.h:1206
 msgid "Add Nfs Network Share"
 msgstr ""
 
@@ -2282,7 +2362,7 @@ msgstr ""
 #: networkbrowser.h:603 networkbrowser.h:847 networkbrowser.h:611
 #: networkbrowser.h:855 networkbrowser.h:1010 networkbrowser.h:982
 #: networkbrowser.h:987 networkbrowser.h:1030 networkbrowser.h:1032
-#: networkbrowser.h:1046 networkbrowser.h:1243
+#: networkbrowser.h:1046 networkbrowser.h:1243 networkbrowser.h:1246
 msgid "Add Ftpfs Network Share"
 msgstr ""
 
@@ -2291,6 +2371,7 @@ msgstr ""
 #: networkbrowser.h:1016 networkbrowser.h:1282 networkbrowser.h:1254
 #: networkbrowser.h:1259 networkbrowser.h:1322 networkbrowser.h:1324
 #: networkbrowser.h:1323 networkbrowser.h:1338 networkbrowser.h:1562
+#: networkbrowser.h:1565
 msgid "Are you sure you want to save this network mount?"
 msgstr ""
 
@@ -2331,7 +2412,7 @@ msgstr ""
 #: networkbrowser.h:1267 networkbrowser.h:1364 networkbrowser.h:1336
 #: networkbrowser.h:1341 networkbrowser.h:1404 networkbrowser.h:1406
 #: networkbrowser.h:1419 networkbrowser.h:1415 networkbrowser.h:1416
-#: networkbrowser.h:1431 networkbrowser.h:1658
+#: networkbrowser.h:1431 networkbrowser.h:1658 networkbrowser.h:1661
 msgid "Are you sure you want remove this share?"
 msgstr ""
 
@@ -2891,49 +2972,49 @@ msgid ""
 "The Box will reboot and the Wizard will be started!"
 msgstr ""
 
-#: panel_system.h:138 system_update.h:99
+#: panel_system.h:138 system_update.h:99 system_update.h:117
 msgid "non-version"
 msgstr ""
 
 #: panel_system.h:227 panel_system.h:291 system_update.h:194
-#: system_update.h:268
+#: system_update.h:268 system_update.h:262 system_update.h:368
 msgid "starting Kernel Update ?"
 msgstr ""
 
 #: panel_system.h:235 panel_system.h:298 system_update.h:202
-#: system_update.h:275
+#: system_update.h:275 system_update.h:274 system_update.h:379
 msgid "starting Fw Update ?"
 msgstr ""
 
-#: panel_system.h:243 system_update.h:210
+#: panel_system.h:243 system_update.h:210 system_update.h:286
 msgid "starting Root Update ?"
 msgstr ""
 
 #: panel_system.h:251 panel_system.h:312 system_update.h:218
-#: system_update.h:289
+#: system_update.h:289 system_update.h:298 system_update.h:401
 msgid "starting Var Update ?"
 msgstr ""
 
 #: panel_system.h:259 panel_system.h:319 system_update.h:226
-#: system_update.h:296
+#: system_update.h:296 system_update.h:310 system_update.h:412
 msgid "starting Full Update ?"
 msgstr ""
 
 #: panel_system.h:269 panel_system.h:328 system_update.h:236
-#: system_update.h:305
+#: system_update.h:305 system_update.h:324 system_update.h:425
 msgid "starting Usb Update ?"
 msgstr ""
 
 #: panel_system.h:279 panel_system.h:337 system_update.h:246
-#: system_update.h:314
+#: system_update.h:314 system_update.h:338 system_update.h:438
 msgid "starting Fullusb Update ?"
 msgstr ""
 
-#: panel_system.h:305 system_update.h:282
+#: panel_system.h:305 system_update.h:282 system_update.h:390
 msgid "starting Root Update starten ?"
 msgstr ""
 
-#: panel_system.h:343 system_update.h:330
+#: panel_system.h:343 system_update.h:330 system_update.h:458
 msgid "Error file not supported"
 msgstr ""
 
@@ -3001,17 +3082,18 @@ msgid ""
 "Aborting backup..."
 msgstr ""
 
-#: pin.h:83 adjust.h:164 adjust.h:170
+#: pin.h:83 adjust.h:164 adjust.h:170 adjust.h:171 pin.h:106
 msgid "hidden"
 msgstr ""
 
 #: play.h:551 play.h:557 play.h:563 play.h:587 play.h:593 play.h:590
 #: play.h:596 play.h:1149 play.h:1155 plugins_tmc_skin.xml.h:1
-#: skins_tmc_skin.xml.h:1
+#: skins_tmc_skin.xml.h:1 play.h:1157 play.h:1163
 msgid "EPG Info"
 msgstr ""
 
 #: play.h:559 play.h:565 play.h:571 play.h:601 play.h:604 play.h:1165
+#: play.h:1173
 msgid "Realy Delete ?"
 msgstr ""
 
@@ -3025,13 +3107,13 @@ msgstr ""
 #: skin_default_skin.xml.h:164 skin_default_skin.xml.h:165
 #: plugins_stock_skin.xml.h:4 plugins_weather_skin.xml.h:3
 #: skins_stock_skin.xml.h:4 skins_weather_skin.xml.h:3 play.h:1283
-#: plugins_weather_skin.xml.h:2 skins_weather_skin.xml.h:2
+#: plugins_weather_skin.xml.h:2 skins_weather_skin.xml.h:2 play.h:1291
 msgid "DEL"
 msgstr ""
 
 #: play.h:633 play.h:639 play.h:645 play.h:675 play.h:676 dvdplay.h:27
 #: play.h:679 dvdplay.h:29 plugins_dlna_skin.xml.h:10 skins_dlna_skin.xml.h:10
-#: play.h:1283
+#: play.h:1283 play.h:1291
 msgid "SELECT"
 msgstr ""
 
@@ -3284,7 +3366,7 @@ msgid "Datei Browser"
 msgstr ""
 
 #: plugins_mc_skin.xml.h:18 skins_mc_skin.xml.h:18 mediadb.h:2421
-#: plugins_mc_skin.xml.h:24 skins_mc_skin.xml.h:24
+#: plugins_mc_skin.xml.h:24 skins_mc_skin.xml.h:24 mediadb.h:2423
 msgid "file"
 msgstr ""
 
@@ -4212,10 +4294,12 @@ msgid "Can't restore settings"
 msgstr ""
 
 #: scan.h:306 scan.h:308 channellist.h:694 channellist.h:1752 scan.h:532
+#: channellist.h:711 channellist.h:1769
 msgid "TV"
 msgstr ""
 
 #: scan.h:308 scan.h:310 channellist.h:689 channellist.h:1757 scan.h:534
+#: channellist.h:706 channellist.h:1774
 msgid "Radio"
 msgstr ""
 
@@ -4224,7 +4308,7 @@ msgid "Data"
 msgstr ""
 
 #: scan.h:729 scan.h:818 scan.h:838 scan.h:863 scan.h:886 scan.h:882
-#: blindscanadjust.h:13
+#: blindscanadjust.h:13 blindscanadjust.h:14
 msgid "Sat: "
 msgstr ""
 
@@ -7942,7 +8026,7 @@ msgid ""
 "Can't chage to selected skin."
 msgstr ""
 
-#: spinner.h:18
+#: spinner.h:18 spinner.h:19
 msgid ""
 "Detect hanging System !!!\n"
 "\n"
@@ -7950,11 +8034,11 @@ msgid ""
 "BOOT = Power"
 msgstr ""
 
-#: spinner.h:18
+#: spinner.h:18 spinner.h:19
 msgid "KILL"
 msgstr ""
 
-#: spinner.h:18
+#: spinner.h:18 spinner.h:19
 msgid "BOOT"
 msgstr ""
 
@@ -8205,7 +8289,7 @@ msgstr ""
 
 #: network.h:554 network.h:637 network.h:643 network.h:667 network.h:669
 #: network.h:672 network.h:681 network.h:692 network.h:698 network.h:699
-#: network.h:797
+#: network.h:797 network.h:801
 msgid ""
 "WLAN started.\n"
 " You can now configure the new interface."
@@ -8213,7 +8297,7 @@ msgstr ""
 
 #: network.h:556 network.h:639 network.h:645 network.h:669 network.h:671
 #: network.h:674 network.h:683 network.h:694 network.h:700 network.h:701
-#: network.h:801
+#: network.h:801 network.h:805
 msgid ""
 "WLAN not started,\n"
 "Please check your config."
@@ -8221,13 +8305,13 @@ msgstr ""
 
 #: network.h:576 network.h:659 network.h:665 network.h:689 network.h:692
 #: network.h:696 network.h:705 network.h:716 network.h:722 network.h:723
-#: network.h:824
+#: network.h:824 network.h:828
 msgid "searching..."
 msgstr ""
 
 #: network.h:604 network.h:687 network.h:693 network.h:717 network.h:720
 #: network.h:721 network.h:725 network.h:734 network.h:745 network.h:751
-#: network.h:752 network.h:855
+#: network.h:752 network.h:855 network.h:859
 msgid "WLAN now stopped"
 msgstr ""
 
@@ -8326,7 +8410,7 @@ msgid "Blindscan"
 msgstr ""
 
 #: network.h:728 network.h:732 network.h:741 network.h:752 network.h:758
-#: network.h:759 network.h:862
+#: network.h:759 network.h:862 network.h:866
 msgid "WLAN LOG"
 msgstr ""
 
@@ -8561,25 +8645,25 @@ msgstr ""
 
 #: networkbrowser.h:1209 networkbrowser.h:1181 networkbrowser.h:1186
 #: networkbrowser.h:1235 networkbrowser.h:1237 networkbrowser.h:1236
-#: networkbrowser.h:1251 networkbrowser.h:1470
+#: networkbrowser.h:1251 networkbrowser.h:1470 networkbrowser.h:1473
 msgid "rw"
 msgstr ""
 
 #: networkbrowser.h:1210 networkbrowser.h:1182 networkbrowser.h:1187
 #: networkbrowser.h:1236 networkbrowser.h:1238 networkbrowser.h:1237
-#: networkbrowser.h:1252 networkbrowser.h:1471
+#: networkbrowser.h:1252 networkbrowser.h:1471 networkbrowser.h:1474
 msgid "ro"
 msgstr ""
 
 #: networkbrowser.h:1259 networkbrowser.h:1231 networkbrowser.h:1236
 #: networkbrowser.h:1310 networkbrowser.h:1312 networkbrowser.h:1311
-#: networkbrowser.h:1326 networkbrowser.h:1550
+#: networkbrowser.h:1326 networkbrowser.h:1550 networkbrowser.h:1553
 msgid "Sharename can't be empty!"
 msgstr ""
 
 #: networkbrowser.h:1270 networkbrowser.h:1242 networkbrowser.h:1247
 #: networkbrowser.h:1317 networkbrowser.h:1319 networkbrowser.h:1318
-#: networkbrowser.h:1333 networkbrowser.h:1557
+#: networkbrowser.h:1333 networkbrowser.h:1557 networkbrowser.h:1560
 msgid "A mount entry with this name already exists!"
 msgstr ""
 
@@ -8829,26 +8913,31 @@ msgstr ""
 
 #: channellist.h:425 channellist.h:452 channellist.h:426 channellist.h:430
 #: channellist.h:440 channellist.h:463 channellist.h:467 channellist.h:578
+#: channellist.h:593
 msgid "Move mode"
 msgstr ""
 
 #: channellist.h:431 channellist.h:458 channellist.h:432 channellist.h:436
 #: channellist.h:446 channellist.h:470 channellist.h:475 channellist.h:587
+#: channellist.h:602
 msgid "Remove mode"
 msgstr ""
 
 #: channellist.h:437 channellist.h:464 channellist.h:438 channellist.h:442
 #: channellist.h:452 channellist.h:477 channellist.h:483 channellist.h:596
+#: channellist.h:611
 msgid "Copy mode"
 msgstr ""
 
 #: channellist.h:443 channellist.h:470 channellist.h:444 channellist.h:448
 #: channellist.h:458 channellist.h:484 channellist.h:491 channellist.h:605
+#: channellist.h:620
 msgid "Protect mode"
 msgstr ""
 
 #: channellist.h:449 channellist.h:476 channellist.h:450 channellist.h:454
 #: channellist.h:464 channellist.h:491 channellist.h:499 channellist.h:614
+#: channellist.h:629
 msgid "Edit mode"
 msgstr ""
 
@@ -8878,7 +8967,7 @@ msgstr ""
 msgid "Channellist view"
 msgstr ""
 
-#: adjust.h:165 adjust.h:171
+#: adjust.h:165 adjust.h:171 adjust.h:172
 msgid "deactive"
 msgstr ""
 
@@ -8893,51 +8982,51 @@ msgstr ""
 msgid "Wettervorhersage"
 msgstr ""
 
-#: adjust.h:182
+#: adjust.h:182 adjust.h:183
 msgid "channel-movie"
 msgstr ""
 
-#: adjust.h:183
+#: adjust.h:183 adjust.h:184
 msgid "movie-channel"
 msgstr ""
 
-#: adjust.h:197
+#: adjust.h:197 adjust.h:198
 msgid "expert (11)"
 msgstr ""
 
-#: avsettings.h:66
+#: avsettings.h:66 avsettings.h:67
 msgid "redKey"
 msgstr ""
 
-#: bgdownload.h:159 bgdownload.h:174
+#: bgdownload.h:159 bgdownload.h:174 bgdownload.h:176
 msgid "Realy stop download ?"
 msgstr ""
 
-#: blindscanadjust.h:17
+#: blindscanadjust.h:17 blindscanadjust.h:18
 msgid "Cable: "
 msgstr ""
 
-#: blindscanadjust.h:21
+#: blindscanadjust.h:21 blindscanadjust.h:22
 msgid "Terrestrial: "
 msgstr ""
 
-#: blindscanadjust.h:120
+#: blindscanadjust.h:120 blindscanadjust.h:123
 msgid "Sat"
 msgstr ""
 
-#: blindscanadjust.h:121 tunerconfig.h:339
+#: blindscanadjust.h:121 tunerconfig.h:339 blindscanadjust.h:124
 msgid "Cable"
 msgstr ""
 
-#: blindscanadjust.h:122
+#: blindscanadjust.h:122 blindscanadjust.h:125
 msgid "Terrestrial"
 msgstr ""
 
-#: channellist.h:913
+#: channellist.h:913 channellist.h:930
 msgid "Copy providerlist successfull"
 msgstr ""
 
-#: channellist.h:915
+#: channellist.h:915 channellist.h:932
 msgid "Copy providerlist not ok"
 msgstr ""
 
@@ -9126,11 +9215,12 @@ msgstr ""
 msgid "Wait for connect or press EXIT"
 msgstr ""
 
-#: harddisk.h:111 harddisk.h:112
+#: harddisk.h:111 harddisk.h:112 harddisk.h:130 harddisk.h:131
 msgid "Harddisk Format - Filesystem"
 msgstr ""
 
-#: harddisk.h:637 harddisk.h:638 harddisk.h:723 harddisk.h:724
+#: harddisk.h:637 harddisk.h:638 harddisk.h:723 harddisk.h:724 harddisk.h:747
+#: harddisk.h:748
 msgid "Harddisk Sleep"
 msgstr ""
 
@@ -9277,19 +9367,19 @@ msgstr ""
 msgid "MediaDB scan finished"
 msgstr ""
 
-#: mediadb.h:2425
+#: mediadb.h:2425 mediadb.h:2427
 msgid "path"
 msgstr ""
 
-#: mediadb.h:2429
+#: mediadb.h:2429 mediadb.h:2431
 msgid "title"
 msgstr ""
 
-#: mediadb.h:2433
+#: mediadb.h:2433 mediadb.h:2435
 msgid "imdbid"
 msgstr ""
 
-#: mediadb.h:2436
+#: mediadb.h:2436 mediadb.h:2438
 msgid "Add iMDB manuel"
 msgstr ""
 
@@ -9391,21 +9481,21 @@ msgstr ""
 msgid "Start Wlan ?"
 msgstr ""
 
-#: network.h:873
+#: network.h:873 network.h:877
 msgid "Found Wlan Stick and driver for: "
 msgstr ""
 
-#: network.h:878
+#: network.h:878 network.h:882
 msgid ""
 "Found Wlan Stick but no driver\n"
 "Please install driver: "
 msgstr ""
 
-#: network.h:881
+#: network.h:881 network.h:885
 msgid "Wlan Stick not found"
 msgstr ""
 
-#: network.h:884
+#: network.h:884 network.h:888
 msgid "WLAN Info"
 msgstr ""
 
@@ -9446,11 +9536,11 @@ msgstr ""
 msgid "iD3Tag"
 msgstr ""
 
-#: play.h:1075
+#: play.h:1075 play.h:1079
 msgid "Jump To (min)"
 msgstr ""
 
-#: play.h:1164
+#: play.h:1164 play.h:1172
 msgid "Record in progress"
 msgstr ""
 
@@ -9936,11 +10026,11 @@ msgstr ""
 msgid "Emu not found"
 msgstr ""
 
-#: softcam.h:395
+#: softcam.h:395 softcam.h:403
 msgid "Reader Config Plugin not installed !"
 msgstr ""
 
-#: system_backup.h:61
+#: system_backup.h:61 system_backup.h:63
 msgid "Backup failed"
 msgstr ""
 
@@ -9968,11 +10058,12 @@ msgstr ""
 msgid "USB Info"
 msgstr ""
 
-#: system_update.h:256 system_update.h:323
+#: system_update.h:256 system_update.h:323 system_update.h:352
+#: system_update.h:451
 msgid "starting Usb (unknown release grp) Update ?"
 msgstr ""
 
-#: system_update.h:342
+#: system_update.h:342 system_update.h:470
 msgid ""
 "Can't start system update\n"
 "Please remove Stick/HDD and try again"
@@ -10130,7 +10221,7 @@ msgstr ""
 msgid "Delete selected entry ?"
 msgstr ""
 
-#: tmc.h:702 hwtest.h:264 hwtest.h:267
+#: tmc.h:702 hwtest.h:264 hwtest.h:267 hwtest.h:270
 msgid "RED"
 msgstr ""
 
@@ -10273,31 +10364,31 @@ msgstr ""
 msgid "blink star"
 msgstr ""
 
-#: hwtest.h:82
+#: hwtest.h:82 hwtest.h:80
 msgid "testtransponder not found"
 msgstr ""
 
-#: hwtest.h:87
+#: hwtest.h:87 hwtest.h:85
 msgid "testtransponder entry not ok"
 msgstr ""
 
-#: hwtest.h:92
+#: hwtest.h:92 hwtest.h:90
 msgid "can't create new transponer"
 msgstr ""
 
-#: hwtest.h:97
+#: hwtest.h:97 hwtest.h:95
 msgid "testchannel not found"
 msgstr ""
 
-#: hwtest.h:102
+#: hwtest.h:102 hwtest.h:100
 msgid "testchannel entry not ok"
 msgstr ""
 
-#: hwtest.h:107
+#: hwtest.h:107 hwtest.h:105
 msgid "can't create new channel"
 msgstr ""
 
-#: hwtest.h:232 hwtest.h:235
+#: hwtest.h:232 hwtest.h:235 hwtest.h:236
 msgid "Press Front Key"
 msgstr ""
 
@@ -10305,19 +10396,19 @@ msgstr ""
 msgid "Got Keycode: "
 msgstr ""
 
-#: hwtest.h:269 hwtest.h:272
+#: hwtest.h:269 hwtest.h:272 hwtest.h:275
 msgid "GREEN"
 msgstr ""
 
-#: hwtest.h:274 hwtest.h:277
+#: hwtest.h:274 hwtest.h:277 hwtest.h:280
 msgid "BLUE"
 msgstr ""
 
-#: hwtest.h:339 hwtest.h:345
+#: hwtest.h:339 hwtest.h:345 hwtest.h:375
 msgid "Smartcard Ports found: "
 msgstr ""
 
-#: hwtest.h:380 hwtest.h:386
+#: hwtest.h:380 hwtest.h:386 hwtest.h:416
 msgid "USB Ports found: "
 msgstr ""
 
@@ -10325,57 +10416,57 @@ msgstr ""
 msgid "found: "
 msgstr ""
 
-#: hwtest.h:429 hwtest.h:435
+#: hwtest.h:429 hwtest.h:435 hwtest.h:478
 msgid "CAM Ports found: "
 msgstr ""
 
 #: hwtest.h:494 hwtest.h:500 hwtest.h:506 hwtest.h:501 hwtest.h:507
-#: hwtest.h:504 hwtest.h:505
+#: hwtest.h:504 hwtest.h:505 hwtest.h:553
 msgid "SUCESS Serial Port"
 msgstr ""
 
 #: hwtest.h:496 hwtest.h:502 hwtest.h:508 hwtest.h:503 hwtest.h:509
-#: hwtest.h:506 hwtest.h:507
+#: hwtest.h:506 hwtest.h:507 hwtest.h:555
 msgid "FAIL Serial Port"
 msgstr ""
 
 #: hwtest.h:508 hwtest.h:513 hwtest.h:519 hwtest.h:514 hwtest.h:520
-#: hwtest.h:517 hwtest.h:518
+#: hwtest.h:517 hwtest.h:518 hwtest.h:566
 msgid "LNB off / 22K off: OK\n"
 msgstr ""
 
 #: hwtest.h:510 hwtest.h:515 hwtest.h:521 hwtest.h:516 hwtest.h:522
-#: hwtest.h:519 hwtest.h:520
+#: hwtest.h:519 hwtest.h:520 hwtest.h:568
 msgid "LNB off / 22K off: NOT OK\n"
 msgstr ""
 
 #: hwtest.h:516 hwtest.h:522 hwtest.h:528 hwtest.h:523 hwtest.h:529
-#: hwtest.h:526 hwtest.h:527
+#: hwtest.h:526 hwtest.h:527 hwtest.h:575
 msgid "LNB 18V / 22K off: OK\n"
 msgstr ""
 
 #: hwtest.h:518 hwtest.h:524 hwtest.h:530 hwtest.h:525 hwtest.h:531
-#: hwtest.h:528 hwtest.h:529
+#: hwtest.h:528 hwtest.h:529 hwtest.h:577
 msgid "LNB 18V / 22K off: NOT OK\n"
 msgstr ""
 
 #: hwtest.h:524 hwtest.h:531 hwtest.h:537 hwtest.h:532 hwtest.h:538
-#: hwtest.h:535 hwtest.h:536
+#: hwtest.h:535 hwtest.h:536 hwtest.h:584
 msgid "LNB 13V / 22K off: OK\n"
 msgstr ""
 
 #: hwtest.h:526 hwtest.h:533 hwtest.h:539 hwtest.h:534 hwtest.h:540
-#: hwtest.h:537 hwtest.h:538
+#: hwtest.h:537 hwtest.h:538 hwtest.h:586
 msgid "LNB 13V / 22K off: NOT OK\n"
 msgstr ""
 
 #: hwtest.h:532 hwtest.h:540 hwtest.h:546 hwtest.h:541 hwtest.h:547
-#: hwtest.h:544 hwtest.h:545
+#: hwtest.h:544 hwtest.h:545 hwtest.h:593
 msgid "LNB 13V / 22K on: OK\n"
 msgstr ""
 
 #: hwtest.h:534 hwtest.h:542 hwtest.h:548 hwtest.h:543 hwtest.h:549
-#: hwtest.h:546 hwtest.h:547
+#: hwtest.h:546 hwtest.h:547 hwtest.h:595
 msgid "LNB 13V / 22K on: NOT OK\n"
 msgstr ""
 
@@ -10395,55 +10486,55 @@ msgstr ""
 msgid "yes (Text in MB)"
 msgstr ""
 
-#: copyfile.h:815
+#: copyfile.h:815 copyfile.h:824
 msgid "Filesize (B): "
 msgstr ""
 
-#: copyfile.h:817
+#: copyfile.h:817 copyfile.h:826
 msgid "Filesize (KB): "
 msgstr ""
 
-#: copyfile.h:819
+#: copyfile.h:819 copyfile.h:828
 msgid "Filesize (MB): "
 msgstr ""
 
-#: copyfile.h:826 copyfile.h:859
+#: copyfile.h:826 copyfile.h:859 copyfile.h:835 copyfile.h:868
 msgid "Move (B): "
 msgstr ""
 
-#: copyfile.h:828 copyfile.h:861
+#: copyfile.h:828 copyfile.h:861 copyfile.h:837 copyfile.h:870
 msgid "Move (KB): "
 msgstr ""
 
-#: copyfile.h:830 copyfile.h:863
+#: copyfile.h:830 copyfile.h:863 copyfile.h:839 copyfile.h:872
 msgid "Move (MB): "
 msgstr ""
 
-#: copyfile.h:835 copyfile.h:868
+#: copyfile.h:835 copyfile.h:868 copyfile.h:844 copyfile.h:877
 msgid "Copy (B): "
 msgstr ""
 
-#: copyfile.h:837 copyfile.h:870
+#: copyfile.h:837 copyfile.h:870 copyfile.h:846 copyfile.h:879
 msgid "Copy (KB): "
 msgstr ""
 
-#: copyfile.h:839 copyfile.h:872
+#: copyfile.h:839 copyfile.h:872 copyfile.h:848 copyfile.h:881
 msgid "Copy (MB): "
 msgstr ""
 
-#: copyfile.h:844
+#: copyfile.h:844 copyfile.h:853
 msgid "Amount of files: "
 msgstr ""
 
-#: copyfile.h:886 copyfile.h:887
+#: copyfile.h:886 copyfile.h:887 copyfile.h:895 copyfile.h:896
 msgid "file move error"
 msgstr ""
 
-#: copyfile.h:891 copyfile.h:892
+#: copyfile.h:891 copyfile.h:892 copyfile.h:900 copyfile.h:901
 msgid "file copy error"
 msgstr ""
 
-#: copyfile.h:898 copyfile.h:899
+#: copyfile.h:898 copyfile.h:899 copyfile.h:907 copyfile.h:908
 msgid "wait for stopping"
 msgstr ""
 
@@ -10459,29 +10550,29 @@ msgstr ""
 msgid "Can't remove file/dir !"
 msgstr ""
 
-#: harddisk.h:328
+#: harddisk.h:328 harddisk.h:352
 msgid ""
 "Directory has content\n"
 "Realy delete directory and content?"
 msgstr ""
 
 #: hwtest.h:590 hwtest.h:596 hwtest.h:591 hwtest.h:597 hwtest.h:594
-#: hwtest.h:595
+#: hwtest.h:595 hwtest.h:643
 msgid "SUCESS Flash/Nand"
 msgstr ""
 
 #: hwtest.h:592 hwtest.h:598 hwtest.h:593 hwtest.h:599 hwtest.h:596
-#: hwtest.h:597
+#: hwtest.h:597 hwtest.h:645
 msgid "FAIL Flash/Nand (/var and /mnt)"
 msgstr ""
 
 #: hwtest.h:594 hwtest.h:600 hwtest.h:595 hwtest.h:601 hwtest.h:598
-#: hwtest.h:599
+#: hwtest.h:599 hwtest.h:647
 msgid "FAIL Flash/Nand (/var)"
 msgstr ""
 
 #: hwtest.h:596 hwtest.h:602 hwtest.h:597 hwtest.h:603 hwtest.h:600
-#: hwtest.h:601
+#: hwtest.h:601 hwtest.h:649
 msgid "FAIL Flash/Nand (/mnt)"
 msgstr ""
 
@@ -10491,4 +10582,52 @@ msgstr ""
 
 #: plugins_tithek_skin.xml.h:6 skins_tithek_skin.xml.h:6
 msgid "Hid XXX Streams"
+msgstr ""
+
+#: extensions.h:300
+msgid "Can't get all TPK index !"
+msgstr ""
+
+#: hwtest.h:197
+msgid "Press OK or EXIT"
+msgstr ""
+
+#: hwtest.h:359 hwtest.h:365
+msgid "Smartcard "
+msgstr ""
+
+#: hwtest.h:361
+msgid ": Present\n"
+msgstr ""
+
+#: hwtest.h:367
+msgid ": Not Present\n"
+msgstr ""
+
+#: hwtest.h:427 hwtest.h:440
+msgid "USB "
+msgstr ""
+
+#: hwtest.h:431
+msgid " - OKAY!"
+msgstr ""
+
+#: hwtest.h:442
+msgid " : NOT OKAY!"
+msgstr ""
+
+#: plugins_autotimer_skin.xml.h:11 skins_autotimer_skin.xml.h:11
+msgid "Timer1 activ"
+msgstr ""
+
+#: plugins_autotimer_skin.xml.h:12 skins_autotimer_skin.xml.h:12
+msgid "Timer2 activ"
+msgstr ""
+
+#: system_update.h:82 system_update.h:204
+msgid "stable"
+msgstr ""
+
+#: system_update.h:84 system_update.h:210
+msgid "unstable"
 msgstr ""
