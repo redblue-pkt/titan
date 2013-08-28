@@ -3,6 +3,7 @@
 
 void setchannelkeycode(struct skin* channelbynr, char* value)
 {
+	STARTFUNC
 	char* tmpstr = NULL;
 
 	tmpstr = ostrcat(channelbynr->text, value, 0, 0);
@@ -13,6 +14,7 @@ void setchannelkeycode(struct skin* channelbynr, char* value)
 
 void screenchannelbynr(int rcret)
 {
+	STARTFUNC
 	struct skin* channelbynr = getscreen("channelbynr");
 	struct bouquet* bouquetnode = NULL;
 	struct mainbouquet* mainbouquetnode = NULL;

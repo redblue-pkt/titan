@@ -3,6 +3,7 @@
 
 int countfiles(char* dirname, int* count, int first)
 {
+	STARTFUNC
 	int ret = 0;
 	DIR *d;
 	char* tmpstr = NULL;
@@ -86,6 +87,7 @@ int countfiles(char* dirname, int* count, int first)
 //flag 1: move file
 int copyfilereal(char* from, char* to, struct copyfile* node, int flag)
 {
+	STARTFUNC
 	int fdfrom = -1, fdto = -1, ret = 0, readret = 0, writeret = 0;
 	off64_t count = 0, len = 0;
 	unsigned char* buf = NULL;
@@ -226,6 +228,7 @@ end:
 //flag 1: move file
 int copylink(char* from, char* to, struct copyfile* node, int flag)
 {
+	STARTFUNC
 	int ret = 0;
 	
 	if(from == NULL || to == NULL) return 1;
@@ -278,6 +281,7 @@ int copylink(char* from, char* to, struct copyfile* node, int flag)
 //flag 1: move file
 int copyblk(char* from, char* to, struct copyfile* node, int flag)
 {
+	STARTFUNC
 	int ret = 0;
 	struct stat64 s;
 	
@@ -320,6 +324,7 @@ int copyblk(char* from, char* to, struct copyfile* node, int flag)
 //flag 1: move file
 int copychr(char* from, char* to, struct copyfile* node, int flag)
 {
+	STARTFUNC
 	int ret = 0;
 	struct stat64 s;
 	
@@ -362,6 +367,7 @@ int copychr(char* from, char* to, struct copyfile* node, int flag)
 //flag 1: move file
 int copyfifo(char* from, char* to, struct copyfile* node, int flag)
 {
+	STARTFUNC
 	int ret = 0;
 	
 	if(from == NULL || to == NULL) return 1;
@@ -396,6 +402,7 @@ int copyfifo(char* from, char* to, struct copyfile* node, int flag)
 //flag 1: move file
 int copydir(char* dirfrom, char* dirto, struct copyfile* node, int first, int flag)
 {
+	STARTFUNC
 	DIR *d;
 	char* tmpstr = NULL, *tmpstr1 = NULL;
 	int ret = 0;
@@ -653,6 +660,7 @@ int copydir(char* dirfrom, char* dirto, struct copyfile* node, int first, int fl
 //flag 1: move file
 int copyfile(char* from, char* to, struct copyfile* node, int flag)
 {
+	STARTFUNC
 	char* tmpto = NULL, *tmpstr = NULL, *bname = NULL;
 	int ret = 1, fromtype = 0, totype = 0;
 	
@@ -717,12 +725,14 @@ int copyfile(char* from, char* to, struct copyfile* node, int flag)
 
 void copyfilestruct(struct stimerthread* timernode, struct copyfile* node, int flag)
 {
+	STARTFUNC
 	if(node != NULL)
 		copyfile(node->from, node->to, node, 0);
 }
 
 void movefilestruct(struct stimerthread* timernode, struct copyfile* node, int flag)
 {
+	STARTFUNC
 	if(node != NULL)
 		copyfile(node->from, node->to, node, 1);
 }
@@ -731,7 +741,7 @@ void movefilestruct(struct stimerthread* timernode, struct copyfile* node, int f
 //flag 1: move
 int screencopy(char* title, char* from, char* to, int flag)
 {
-	debug(1000, "in");
+	STARTFUNC
 	int rcret = -1, count = 0, ret = 0, fromthread = 0, sleeptime = 2;
 	struct skin* copyfile = getscreen("copyfile");
 	struct skin* progress = getscreennode(copyfile, "progress");
@@ -934,9 +944,6 @@ int screencopy(char* title, char* from, char* to, int flag)
 		clearscreen(copyfile);
 		drawscreen(skin, 0, 0);
 	}
-
-	debug(1000, "out");
-
 	return ret;
 }
 

@@ -3,6 +3,7 @@
 
 void debugchannelcache()
 {
+	STARTFUNC
 	int i, count = 0, maxcount = 0;;
 	struct channelcache* node = NULL;
 	
@@ -23,6 +24,7 @@ void debugchannelcache()
 
 struct channel* getchannel(int serviceid, uint64_t transponderid)
 {
+	STARTFUNC
 	unsigned int hash; 
 	struct channelcache* node = NULL;
 
@@ -49,8 +51,8 @@ struct channel* getchannel(int serviceid, uint64_t transponderid)
 
 struct channelcache* modifychannelcache(int serviceid, uint64_t transponderid, struct channel* chnode)
 {
+	STARTFUNC
 	unsigned int hash; 
-	//struct channelcache* node = NULL, *prev = NULL, *newnode = NULL;
 	struct channelcache* node = NULL, *newnode = NULL;
 
 	hash = (transponderid + serviceid) % CHANNELCACHEMAX;
@@ -68,21 +70,6 @@ struct channelcache* modifychannelcache(int serviceid, uint64_t transponderid, s
 	newnode->chnode = chnode;
 
 	node = channelcache[hash];
-/*
-	prev = channelcache[hash];
-	
-	if(node != NULL)
-	{
-		while(node != NULL)
-		{
-			prev = node;
-			node = node->next;
-		}
-		prev->next = newnode;
-	}
-	else
-		channelcache[hash] = newnode;
-*/
 	channelcache[hash] = newnode;
 	newnode->next = node;
 
@@ -91,6 +78,7 @@ struct channelcache* modifychannelcache(int serviceid, uint64_t transponderid, s
 
 void delchannelcache(int serviceid, uint64_t transponderid)
 {
+	STARTFUNC
 	unsigned int hash; 
 	struct channelcache *node = NULL, *prev = NULL;
 

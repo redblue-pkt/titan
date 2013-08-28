@@ -3,12 +3,12 @@
 
 int addchoicebox(struct skin* choicebox, char* value, char* text)
 {
-	debug(1000, "in");
+	STARTFUNC
 	char* tmp = NULL;
 
 	if(choicebox == NULL || value == NULL || text == NULL || strlen(value) == 0)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -66,18 +66,17 @@ int addchoicebox(struct skin* choicebox, char* value, char* text)
 	free(tmp);
 
 	return 0;
-	debug(1000, "out");
 }
 
 int setchoiceboxselection(struct skin* choicebox, char* value)
 {
-	debug(1000, "in");
+	STARTFUNC
 	int treffer = 0;
 	char* pos = NULL, *epos = NULL, *end = NULL;
 
 	if(choicebox == NULL || choicebox->input == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -85,7 +84,7 @@ int setchoiceboxselection(struct skin* choicebox, char* value)
 
 	if(value == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -140,7 +139,6 @@ int setchoiceboxselection(struct skin* choicebox, char* value)
 		}
 	}
 
-	debug(1000, "out");
 	return 0;
 }
 
