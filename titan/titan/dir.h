@@ -3,6 +3,7 @@
 
 void readlabelext(struct skin* label, char* filename, char* ext)
 {
+	STARTFUNC
 	char *tmpstr = NULL, *tmpstr1 = NULL;
 
 	tmpstr = changefilenameext(filename, ext);
@@ -25,6 +26,7 @@ void readlabelext(struct skin* label, char* filename, char* ext)
 //flag 16-127: use dirrcret for dirs
 char* screendir(char* path, char* mask, char* selection, int *dirrcret, char* ext, char* b1, int rc1, char* b2, int rc2, char* b3, int rc3, char* b4, int rc4, int width, int prozwidth, int height, int prozheight, int flag)
 {
+	STARTFUNC
 	int rcret = 0;
 	struct skin* dir = NULL;
 

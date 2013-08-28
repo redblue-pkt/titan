@@ -5,7 +5,7 @@
 //flag 1: use dvbdevsim
 struct dvbdev* adddvbdev(char *dev, int adapter, int devnr, int fd, int type, struct dvb_frontend_info* feinfo, struct dvbdev* last, int flag)
 {
-	debug(1000, "in");
+	STARTFUNC
 	struct dvbdev *newnode = NULL, *node = NULL;
 	char* tmp = NULL, *tmp1 = NULL;
 
@@ -91,7 +91,6 @@ struct dvbdev* adddvbdev(char *dev, int adapter, int devnr, int fd, int type, st
 			dvbdevsim = newnode;
 	}
 
-	debug(1000, "out");
 	return newnode;
 }
 
@@ -99,7 +98,7 @@ struct dvbdev* adddvbdev(char *dev, int adapter, int devnr, int fd, int type, st
 //flag 1: use dvbdevsim
 void deldvbdev(char *dev, int flag)
 {
-	debug(1000, "in");
+	STARTFUNC
 	struct dvbdev *node = NULL, *prev = NULL;
 
 	if(flag == 0)
@@ -152,14 +151,13 @@ void deldvbdev(char *dev, int flag)
 		prev = node;
 		node = node->next;
 	}
-	debug(1000, "out");
 }
 
 //flag 0: use dvbdev
 //flag 1: use dvbdevsim
 void freedvbdev(int flag)
 {
-	debug(1000, "in");
+	STARTFUNC
 	struct dvbdev *node = NULL, *prev = NULL;
 
 	if(flag == 0)
@@ -180,7 +178,6 @@ void freedvbdev(int flag)
 		if(prev != NULL)
 			deldvbdev(prev->dev, flag);
 	}
-	debug(1000, "out");
 }
 
 #endif

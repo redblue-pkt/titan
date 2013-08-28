@@ -3,6 +3,7 @@
 
 void setdefaults()
 {
+	STARTFUNC
 	int i = 0;
 	char* tmpstr = NULL;
 

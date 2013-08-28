@@ -3,7 +3,7 @@
 
 struct dvbdev* dvropen(struct dvbdev* fenode)
 {
-	debug(1000, "in");
+	STARTFUNC
 	int fd = -1;
 	struct dvbdev* node = dvbdev;
 
@@ -31,13 +31,12 @@ struct dvbdev* dvropen(struct dvbdev* fenode)
 		}
 	}
 
-	debug(1000, "out");
 	return node;
 }
 
 int dvropendirect(char *dvrdev)
 {
-	debug(1000, "in");
+	STARTFUNC
 	int fd = -1;
 
 	if((fd = open(dvrdev, O_WRONLY)) < 0)
@@ -46,12 +45,12 @@ int dvropendirect(char *dvrdev)
 	}
 
 	closeonexec(fd);
-	debug(1000, "out");
 	return fd;
 }
 
 void dvrclose(struct dvbdev* node, int fd)
 {
+	STARTFUNC
 	if(node != NULL)
 	{
 		close(node->fd);
@@ -63,14 +62,14 @@ void dvrclose(struct dvbdev* node, int fd)
 
 int dvrgetdev()
 {
-	debug(1000, "in");
+	STARTFUNC
 	int i, y, fd = -1, count = 0;
 	char *buf = NULL, *dvrdev = NULL;
 
 	dvrdev = getconfig("dvrdev", NULL);
 	if(dvrdev == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return count;
 	}
 
@@ -97,7 +96,6 @@ int dvrgetdev()
 	}
 
 	free(buf);
-	debug(1000, "out");
 	return count;
 }
 
