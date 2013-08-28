@@ -31,7 +31,7 @@ void init(void)
 	//if(mainmenu == NULL || listbox == NULL)
 	//	return;
 
-	//child = getscreennode(mainmenu, "panel");
+	//child = checkscreennode(mainmenu, "panel");
 	//if(child != NULL)
 	//	changeinput(child, "start");
 

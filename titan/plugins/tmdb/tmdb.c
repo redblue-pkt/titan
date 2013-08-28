@@ -24,7 +24,7 @@ void init(void)
 	if(mainmenu == NULL || listbox == NULL)
 		return;
 
-	child = getscreennode(mainmenu, "tmdb");
+	child = checkscreennode(mainmenu, "tmdb");
 	if(child != NULL)
 		changeinput(child, "start");
 

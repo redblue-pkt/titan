@@ -49,7 +49,7 @@ void init(void)
 	if(mainmenu == NULL || listbox == NULL)
 		return;
 
-	child = getscreennode(mainmenu, "mediacenter");
+	child = checkscreennode(mainmenu, "mediacenter");
 	if(child != NULL)
 		changeinput(child, "start");
 
