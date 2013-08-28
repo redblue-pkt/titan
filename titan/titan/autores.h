@@ -2,8 +2,7 @@
 #define AUTORES_H
 
 void screenautores(char* text, int timeout, int flag)
-{
-	debug(1000, "in");
+{	STARTFUNC
 	int rcret = -1, fromthread = 0;
 	struct skin* autores = getscreen("autores");
 	struct skin* framebuffer = getscreen("framebuffer");
@@ -56,11 +55,10 @@ void screenautores(char* text, int timeout, int flag)
 	}
 
 	//if(rcret != RCTIMEOUT) writerc(rcret);
-	debug(1000, "out");
 }
 
 void autoresthreadfunc(struct stimerthread* self, char* text, int timeout)
-{
+{	STARTFUNC
 	screenautores(text, timeout, 0);
 }
 
