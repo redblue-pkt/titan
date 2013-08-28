@@ -84,7 +84,7 @@ retry:
 			if(ret == 0) //connection closed
 			{
 				if(count - tmpcount != 0) return count - tmpcount;
-				err("connection closed fd=%d, count=%d", fd, count - tmpcount);
+				debug(250, "connection closed fd=%d, count=%d", fd, count - tmpcount);
 				if(flag == 1) return -1;
 				return 0;
 			}
