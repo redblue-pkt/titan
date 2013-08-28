@@ -108,7 +108,7 @@ struct tpk* addtpk(char *name, char* desc, char* section, char* showname, char* 
 
 	if(last == NULL)
 	{
-		while(node != NULL && strcasecmp(_(newnode->section), _(node->section)) >= 0)
+		while(node != NULL && strcasecmp(_(newnode->section), _(node->section)) > 0)
 		{
 			prev = node;
 			node = node->next;
