@@ -10,7 +10,7 @@ int dvbwrite(int fd, unsigned char* buf, int count, int tout)
 
 	if(fd < 0) return -1;
 
-	if(tout == -1) tout = 3000 * 1000;
+	if(tout == -1) tout = 5000 * 1000;
 	usec = tout % 1000000;
 	sec = (tout - usec) / 1000000;
 
@@ -62,7 +62,7 @@ int dvbreadfd(int fd, unsigned char *buf, int pos, int count, int tout, int flag
 	
 	if(fd < 0) return -1;
 
-	if(tout == -1) tout = 3000 * 1000;
+	if(tout == -1) tout = 5000 * 1000;
 	usec = tout % 1000000;
 	sec = (tout - usec) / 1000000;
 
