@@ -3,6 +3,7 @@
 
 void debugchannel()
 {
+	STARTFUNC
 	struct channel* node = channel;
 
 	while(node != NULL)
@@ -14,6 +15,7 @@ void debugchannel()
 
 int channelnottunable(struct channel* node)
 {
+	STARTFUNC
 	if(node == NULL) return 1;
 	if(node->transponder == NULL) return 1;
 	if(node->transponder->tunablestatus == 0)
@@ -39,7 +41,7 @@ int channelnottunable(struct channel* node)
 //flag 1: no lock
 struct channel* getlastchannel(struct channel* node, int flag)
 {
-	debug(1000, "in");
+	STARTFUNC
 	struct channel *prev = NULL;
 
 	if(flag == 0) m_lock(&status.channelmutex, 5);
@@ -50,13 +52,12 @@ struct channel* getlastchannel(struct channel* node, int flag)
 	}
 	if(flag == 0) m_unlock(&status.channelmutex, 5);
 
-	debug(1000, "out");
 	return prev;
 }
 
 struct channel* gettmpchannel()
 {
-	debug(1000, "in");
+	STARTFUNC
 
 	m_lock(&status.channelmutex, 5);
   struct channel *node = channel;
@@ -69,12 +70,12 @@ struct channel* gettmpchannel()
 	}
 	m_unlock(&status.channelmutex, 5);
 
-	debug(1000, "out");
 	return node;
 }
 
 struct channel* getprevchannelbyservicetype(struct channel* node)
 {
+	STARTFUNC
 	struct channel* prev = NULL;
 
 	if(node == NULL) node = channel;
@@ -95,6 +96,7 @@ struct channel* getprevchannelbyservicetype(struct channel* node)
 
 struct channel* getnextchannelbyservicetype(struct channel* node)
 {
+	STARTFUNC
 	struct channel* next = NULL;
 
 	if(node == NULL) node = channel;
@@ -116,14 +118,11 @@ struct channel* getnextchannelbyservicetype(struct channel* node)
 
 int movechannelblockdown(struct channel* node)
 {
+	STARTFUNC
 	int i = 0, ret = 0;
 	struct channel* prev = NULL;
 
-	if(node == NULL || channel == NULL)
-	{
-		debug(1000, "NULL detect");
-		return 1;
-	}
+	if(node == NULL || channel == NULL) return 1;
 
 	for(i = 0; i < status.moveblockcount; i++)
 	{
@@ -150,13 +149,10 @@ int movechannelblockdown(struct channel* node)
 
 int movechanneldown(struct channel* node)
 {
+	STARTFUNC
 	struct channel* prev = NULL, *next = NULL;
 
-	if(node == NULL || channel == NULL)
-	{
-		debug(1000, "NULL detect");
-		return 1;
-	}
+	if(node == NULL || channel == NULL) return 1;
 
 	m_lock(&status.channelmutex, 5);
 
@@ -200,14 +196,11 @@ int movechanneldown(struct channel* node)
 
 int movechannelblockup(struct channel* node)
 {
+	STARTFUNC
 	int i = 0, ret = 0;
 	struct channel* next = NULL;
 
-	if(node == NULL || channel == NULL)
-	{
-		debug(1000, "NULL detect");
-		return 1;
-	}
+	if(node == NULL || channel == NULL) return 1;
 
 	for(i = 0; i < status.moveblockcount + 1; i++)
 	{
@@ -226,13 +219,10 @@ int movechannelblockup(struct channel* node)
 
 int movechannelup(struct channel* node)
 {
+	STARTFUNC
 	struct channel* prev = NULL, *next = NULL, *last = NULL;
 
-	if(node == NULL || channel == NULL)
-	{
-		debug(1000, "NULL detect");
-		return 1;
-	}
+	if(node == NULL || channel == NULL) return 1;
 
 	m_lock(&status.channelmutex, 5);
 
@@ -278,7 +268,7 @@ int movechannelup(struct channel* node)
 
 struct channel* addchannel(char *line, int count, struct channel* last)
 {
-	//debug(1000, "in");
+	STARTFUNC
 	struct channel *newnode = NULL, *prev = NULL, *node = NULL;
 	char *name = NULL;
 	int ret = 0;
@@ -355,12 +345,12 @@ struct channel* addchannel(char *line, int count, struct channel* last)
 	if(node != NULL) node->prev = newnode;
 	
 	m_unlock(&status.channelmutex, 5);
-	//debug(1000, "out");
 	return newnode;
 }
 
 struct channel* createchannel(char* name, uint64_t transponderid, int providerid, int serviceid, int servicetype, int flag, int videocodec, int audiocodec, int videopid, int audiopid, int protect)
 {
+	STARTFUNC
 	struct channel* chnode = NULL;
 	char* tmpstr = NULL;
 
@@ -394,7 +384,7 @@ struct channel* createchannel(char* name, uint64_t transponderid, int providerid
 
 int readchannel(const char* filename)
 {
-	debug(1000, "in");
+	STARTFUNC
 	FILE *fd = NULL;
 	char *fileline = NULL;
 	int linecount = 0, len = 0;
@@ -443,7 +433,7 @@ int readchannel(const char* filename)
 //flag 1: don't del bouquet
 int delchannel(int serviceid, uint64_t transponderid, int flag)
 {
-	debug(1000, "in");
+	STARTFUNC
 	int ret = 1;
 	struct provider* providernode = NULL;
 
@@ -528,13 +518,12 @@ int delchannel(int serviceid, uint64_t transponderid, int flag)
 
 	recalcbouquetnr();
 	m_unlock(&status.channelmutex, 5);
-	debug(1000, "out");
 	return ret;
 }
 
 void delchannelbytransponder(uint64_t transponderid)
 {
-	debug(1000, "in");
+	STARTFUNC
 	struct channel *node = channel, *prev = channel;
 
 	while(node != NULL)
@@ -544,14 +533,13 @@ void delchannelbytransponder(uint64_t transponderid)
 		if(prev != NULL && prev->transponderid == transponderid)
 			delchannel(prev->serviceid, prev->transponderid, 0);
 	}
-	debug(1000, "out");
 }
 
 //flag 0: del bouquet
 //flag 1: don't del bouquet
 void freechannel(int flag)
 {
-	debug(1000, "in");
+	STARTFUNC
 	struct channel *node = channel, *prev = channel;
 
 	while(node != NULL)
@@ -561,22 +549,17 @@ void freechannel(int flag)
 		if(prev != NULL)
 			delchannel(prev->serviceid, prev->transponderid, flag);
 	}
-	debug(1000, "out");
 }
 
 /*
 struct channel* sortchannel()
 {
-	debug(1000, "in");
+	STARTFUNC
 	struct channel *node = channel;
 	struct channel *nodea = NULL, *nodeb = NULL, *nodec = NULL, *noded = NULL;
 	struct channel *nodetmp = NULL;
 
-	if(node == NULL)
-	{
-		debug(1000, "out -> NULL detect");
-		return NULL;
-	}
+	if(node == NULL) return NULL;
 	
 	struct channel **nodeaddr = &channel;
 
@@ -634,13 +617,13 @@ struct channel* sortchannel()
 	}
 
 	status.writechannel = 1;
-	debug(1000, "out");
 	return channel;
 }
 */
 
 struct channel* sortchannel()
 {
+	STARTFUNC
 	struct channel* tmpnode[10] = {0};
 	struct channel* node = channel, *tnode = NULL;
 	struct channel *next = NULL, *prev = NULL;
@@ -719,7 +702,7 @@ struct channel* sortchannel()
 
 int writechannel(const char *filename)
 {
-	debug(1000, "in");
+	STARTFUNC
 	FILE *fd = NULL;
 	struct channel *node = NULL;
 	int ret = 0;
@@ -751,7 +734,6 @@ int writechannel(const char *filename)
 	m_unlock(&status.channelmutex, 5);
 
 	fclose(fd);
-	debug(1000, "out");
 	return 0;
 }
 

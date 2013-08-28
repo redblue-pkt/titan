@@ -5,6 +5,7 @@
 //flag 1: with msg
 void delbgdownload(int nr, int flag)
 {
+	STARTFUNC
 	if(nr >= MAXBGDOWNLOAD) return;
 	
 	int count = 0;
@@ -49,6 +50,7 @@ void delbgdownload(int nr, int flag)
 
 void freebgdownload()
 {
+	STARTFUNC
 	int i = 0;
 	
 	for(i = 0; i < MAXBGDOWNLOAD; i++)
@@ -59,7 +61,7 @@ void freebgdownload()
 //flag 1: without play
 void screenbgdownload(int flag)
 {
-	debug(1000, "in");
+	STARTFUNC
 	int rcret = -1, i = 0;
 	struct skin* screenbgdownload = getscreen("bgdownload");
 	struct skin* listbox = getscreennode(screenbgdownload, "listbox");
@@ -204,13 +206,13 @@ void screenbgdownload(int flag)
 	delmarkedscreennodes(screenbgdownload, 1);
 	delownerrc(screenbgdownload);
 	clearscreen(screenbgdownload);
-	debug(1000, "out");
 }
 
 //flag 0: normal download
 //flag 1: playable download
 int startbgdownload(char* host, char* page, int port, char* filename, char* auth, int timeout, int flag)
 {
+	STARTFUNC
 	int i = 0;
 	struct download* dnode = NULL;
 

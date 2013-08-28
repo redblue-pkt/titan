@@ -3,6 +3,7 @@
 
 char* screencolorpicker(char* color, int screencalc, int filelistview, int flag)
 {
+	STARTFUNC
 	int rcret = 0;
 	long col = 0;
 	struct skin* colorpicker = getscreen("colorpicker");

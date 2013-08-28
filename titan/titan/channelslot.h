@@ -3,6 +3,7 @@
 
 struct channelslot* addchannelslot(char *line, int count, struct channelslot* last)
 {
+	STARTFUNC
 	struct channelslot *newnode = NULL, *prev = NULL, *node = channelslot;
 	int ret = 0;
 
@@ -56,6 +57,7 @@ struct channelslot* addchannelslot(char *line, int count, struct channelslot* la
 
 struct channelslot* getchannelslot(int serviceid, uint64_t transponderid)
 {
+	STARTFUNC
 	struct channelslot *node = channelslot;
 	
 	while(node != NULL)
@@ -70,7 +72,7 @@ struct channelslot* getchannelslot(int serviceid, uint64_t transponderid)
 
 int readchannelslot(char* filename)
 {
-	debug(1000, "in");
+	STARTFUNC
 	FILE *fd = NULL;
 	char* fileline = NULL;
 	int linecount = 0, len = 0;
@@ -117,7 +119,7 @@ int readchannelslot(char* filename)
 
 int delchannelslot(int serviceid, uint64_t transponderid)
 {
-	debug(1000, "in");
+	STARTFUNC
 	int ret = 1;
 	struct channelslot *node = channelslot, *prev = channelslot;
 
@@ -140,12 +142,12 @@ int delchannelslot(int serviceid, uint64_t transponderid)
 		prev = node;
 		node = node->next;
 	}
-	debug(1000, "out");
 	return ret;
 }
 
 void freechannelslot()
 {
+	STARTFUNC
 	struct channelslot *node = channelslot, *prev = channelslot;
 
 	while(node != NULL)
@@ -159,6 +161,7 @@ void freechannelslot()
 
 int writechannelslot(char *filename)
 {
+	STARTFUNC
 	FILE *fd = NULL;
 	struct channelslot *node = channelslot;
 	int ret = 0;

@@ -4,6 +4,7 @@
 //wait for a module inserted
 void cawait(struct stimerthread* self, struct dvbdev* dvbnode, int tout)
 {
+	STARTFUNC
 	unsigned int i = 0;
 	ca_slot_info_t info;
 
@@ -29,6 +30,7 @@ void cawait(struct stimerthread* self, struct dvbdev* dvbnode, int tout)
 //flag 1: flush buffer
 void careseting(struct stimerthread* self, struct dvbdev* dvbnode, int flag)
 {
+	STARTFUNC
 	if(dvbnode != NULL)
 	{
 		struct queue* qe = NULL;
@@ -58,6 +60,7 @@ void careseting(struct stimerthread* self, struct dvbdev* dvbnode, int flag)
 //wait for a while for some data und read it if some
 int caread(struct dvbdev* dvbnode, unsigned char* buf, int* len)
 {
+	STARTFUNC
 	int ret = 0, c = 0;
 	struct pollfd fds;
 
@@ -124,6 +127,7 @@ retry:
 
 int cawrite(struct dvbdev* dvbnode, int fd, unsigned char* buf, int count, int flag, int tout)
 {
+	STARTFUNC
 	int ret = 0;
 
 	if(dvbnode != NULL)
@@ -149,6 +153,7 @@ int cawrite(struct dvbdev* dvbnode, int fd, unsigned char* buf, int count, int f
 //send some data on an fd, for a special slot and connid
 int casend(struct dvbdev* dvbnode, unsigned char* buf, int len)
 {
+	STARTFUNC
 	unsigned char *tmpbuf = NULL;
 	int flag = 0;
 
@@ -205,6 +210,7 @@ int casend(struct dvbdev* dvbnode, unsigned char* buf, int len)
 
 void sendSPDU(struct dvbdev* dvbnode, unsigned char tag, void *data, int len, int sessionnr, void *apdu, int alen)
 {
+	STARTFUNC
 	unsigned char* buf = NULL;
 	unsigned char *tmpbuf = NULL;
 
@@ -236,6 +242,7 @@ void sendSPDU(struct dvbdev* dvbnode, unsigned char tag, void *data, int len, in
 
 void sendAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *data, int len)
 {
+	STARTFUNC
 	debug(620, "send APDU, nr %d", sessionnr);
 
 	unsigned char buf[len + 3 + 4];
@@ -250,6 +257,7 @@ void sendAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *d
 
 int parselenfield(unsigned char *buf, int* len)
 {
+	STARTFUNC
 	int i;
 
 	*len = 0;
@@ -271,6 +279,7 @@ int parselenfield(unsigned char *buf, int* len)
 
 int asn1decode(uint16_t* lenret, unsigned char* asn1array, uint32_t asn1arraylen)
 {
+	STARTFUNC
 	uint8_t len;
 
 	if(asn1arraylen < 1 || asn1array == NULL) return -1;
@@ -302,6 +311,7 @@ int asn1decode(uint16_t* lenret, unsigned char* asn1array, uint32_t asn1arraylen
 
 int cammistop(struct dvbdev* dvbnode, int sessionnr)
 {
+	STARTFUNC
 	debug(620, "cammistop");
 
 	unsigned char tag[] = {0x9f, 0x88, 0x00};
@@ -313,6 +323,7 @@ int cammistop(struct dvbdev* dvbnode, int sessionnr)
 
 int cammianswer(struct dvbdev* dvbnode, int sessionnr, int answer)
 {
+	STARTFUNC
 	debug(620, "cammianswer: %d", answer);
 
 	unsigned char tag[] = {0x9f, 0x88, 0x0B};
@@ -325,6 +336,7 @@ int cammianswer(struct dvbdev* dvbnode, int sessionnr, int answer)
 
 int cammianswerenq(struct dvbdev* dvbnode, int sessionnr, char *answer, int len)
 {
+	STARTFUNC
 	debug(620, "cammianswerenq (%d): %s", len, answer);
 
 	unsigned char data[len + 1];
@@ -339,6 +351,7 @@ int cammianswerenq(struct dvbdev* dvbnode, int sessionnr, char *answer, int len)
 
 int cammicancelenq(struct dvbdev* dvbnode, int sessionnr)
 {
+	STARTFUNC
 	debug(620, "cammicancelenq");
 
 	unsigned char tag[] = {0x9f, 0x88, 0x08};
@@ -350,6 +363,7 @@ int cammicancelenq(struct dvbdev* dvbnode, int sessionnr)
 
 int cammiaction(struct dvbdev* dvbnode, int sessionnr)
 {
+	STARTFUNC
 	struct casession* casession = NULL;
 
 	if(dvbnode == NULL || dvbnode->caslot == NULL) return 0;
@@ -394,6 +408,7 @@ int cammiaction(struct dvbdev* dvbnode, int sessionnr)
 
 int cammiAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *data, int len)
 {
+	STARTFUNC
 	char* tmpstr = NULL, *tmpstr1 = NULL;
 	struct casession* casession = NULL;
 	struct menulist* mlist = NULL, *mbox = NULL;
@@ -618,6 +633,7 @@ int cammiAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *d
 
 int cacaaction(struct dvbdev* dvbnode, int sessionnr)
 {
+	STARTFUNC
 	struct casession* casession = NULL;
 
 	if(dvbnode == NULL || dvbnode->caslot == NULL) return 0;
@@ -644,6 +660,7 @@ int cacaaction(struct dvbdev* dvbnode, int sessionnr)
 
 int cacaAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *data, int len)
 {
+	STARTFUNC
 	int i = 0;
 	struct casession* casession = NULL;
 
@@ -714,6 +731,7 @@ int cacaAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *da
 
 int cadatetimeaction(struct dvbdev* dvbnode, int sessionnr)
 {
+	STARTFUNC
 	struct casession* casession = NULL;
 
 	if(dvbnode == NULL || dvbnode->caslot == NULL) return 0;
@@ -743,6 +761,7 @@ int cadatetimeaction(struct dvbdev* dvbnode, int sessionnr)
 
 int cadatetimeAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *data, int len)
 {
+	STARTFUNC
 	struct casession* casession = NULL;
 
 	if(dvbnode == NULL || dvbnode->caslot == NULL) return 0;
@@ -780,6 +799,7 @@ int cadatetimeAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, vo
 
 int caresaction(struct dvbdev* dvbnode, int sessionnr)
 {
+	STARTFUNC
 	struct casession* casession = NULL;
 
 	if(dvbnode == NULL || dvbnode->caslot == NULL) return 0;
@@ -839,6 +859,7 @@ int caresaction(struct dvbdev* dvbnode, int sessionnr)
 
 int caresAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *data, int len)
 {
+	STARTFUNC
 	struct casession* casession = NULL;
 
 	if(dvbnode == NULL || dvbnode->caslot == NULL) return 0;
@@ -896,6 +917,7 @@ int caresAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *d
 
 void caappmenu(struct dvbdev* dvbnode)
 {
+	STARTFUNC
 	//must be send to the app session
 	debug(620, "caappmenu");
 	unsigned char tag[3] = {0x9F, 0x80, 0x22};  //Tenter_menu
@@ -908,6 +930,7 @@ void caappmenu(struct dvbdev* dvbnode)
 
 int caappaction(struct dvbdev* dvbnode, int sessionnr)
 {
+	STARTFUNC
 	struct casession* casession = NULL;
 
 	if(dvbnode == NULL || dvbnode->caslot == NULL) return 0;
@@ -938,7 +961,7 @@ int caappaction(struct dvbdev* dvbnode, int sessionnr)
 
 int caappAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *data, int len)
 {
-
+	STARTFUNC
 	if(dvbnode == NULL || dvbnode->caslot == NULL) return 0;
 
 	debug(620, "app manager %02x %02x %02x", tag[0], tag[1], tag[2]);
@@ -1007,7 +1030,8 @@ int caappAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *d
 //inuse: >1 the session is used for decrypt
 int getfreecasession(struct dvbdev* dvbnode, int type, int value)
 {
-        int i;
+	STARTFUNC
+	int i;
 
 	if(dvbnode != NULL && dvbnode->caslot != NULL)
 	{
@@ -1045,6 +1069,7 @@ int getfreecasession(struct dvbdev* dvbnode, int type, int value)
 
 void casessiondel(struct dvbdev* dvbnode, int sessionnr)
 {
+	STARTFUNC
 	if(dvbnode != NULL && dvbnode->caslot != NULL)
 	{
 		free(dvbnode->caslot->casession[sessionnr].mmititle);
@@ -1057,6 +1082,7 @@ void casessiondel(struct dvbdev* dvbnode, int sessionnr)
 
 void casessionfree(struct dvbdev* dvbnode)
 {
+	STARTFUNC
 	int i = 0;
 
 	for(i = 0; i < MAXCASESSION; i++)
@@ -1065,6 +1091,7 @@ void casessionfree(struct dvbdev* dvbnode)
 
 int casessionpoll(struct dvbdev* dvbnode)
 {
+	STARTFUNC
 	int sessionnr = 0;
 	struct casession* casession = NULL;
 
@@ -1103,6 +1130,7 @@ int casessionpoll(struct dvbdev* dvbnode)
 
 struct casession* casessioncreate(struct dvbdev* dvbnode, unsigned char* resid, unsigned char status, unsigned long newtag)
 {
+	STARTFUNC
 	unsigned long tag = 0;
 	int sessionnr = 0;
 	struct casession* casession = NULL;
@@ -1189,6 +1217,7 @@ struct casession* casessioncreate(struct dvbdev* dvbnode, unsigned char* resid, 
 
 void casessionreceive(struct dvbdev* dvbnode, unsigned char *buf, size_t len)
 {
+	STARTFUNC
 	unsigned char *pkt = buf;
 	unsigned char tag = *pkt++;
 	int llen = 0, hlen = 0;
@@ -1336,6 +1365,7 @@ void casessionreceive(struct dvbdev* dvbnode, unsigned char *buf, size_t len)
 //send a transport connection create request
 int cacreatetc(struct dvbdev* dvbnode)
 {
+	STARTFUNC
 	int ret = 0;
 	unsigned char* buf = NULL;
 
@@ -1363,6 +1393,7 @@ int cacreatetc(struct dvbdev* dvbnode)
 
 void caslotfree(struct dvbdev* dvbnode)
 {
+	STARTFUNC
 	if(dvbnode != NULL && dvbnode->caslot != NULL)
 	{
 		free(dvbnode->caslot->name);
@@ -1378,6 +1409,7 @@ void caslotfree(struct dvbdev* dvbnode)
 
 void processtpdu(struct dvbdev* dvbnode, unsigned char tpdutag, unsigned char* buf, int asnlen)
 {
+	STARTFUNC
 	struct caslot* canode = NULL;
 
 	if(dvbdev == NULL) return;
@@ -1493,6 +1525,7 @@ void processtpdu(struct dvbdev* dvbnode, unsigned char tpdutag, unsigned char* b
 
 void cacheck(struct stimerthread* self, struct dvbdev* dvbnode)
 {
+	STARTFUNC
 	int ret = 0, len = MINMALLOC;
 	ca_slot_info_t info;
 	struct caslot* canode = NULL;
@@ -1680,6 +1713,7 @@ void cacheck(struct stimerthread* self, struct dvbdev* dvbnode)
 
 void cathread(struct stimerthread* self, struct dvbdev* dvbnode)
 {
+	STARTFUNC
 	if(dvbnode == NULL || dvbnode->caslot == NULL) return;
 	debug(620, "CA thread start (slot %d)", dvbnode->devnr);
 
@@ -1697,6 +1731,7 @@ void cathread(struct stimerthread* self, struct dvbdev* dvbnode)
 
 void castart()
 {
+	STARTFUNC
 	struct dvbdev* dvbnode = dvbdev;
 
 	while(dvbnode != NULL)
@@ -1724,6 +1759,7 @@ void castart()
 
 int sendcapmttocam(struct dvbdev* dvbnode, struct service* node, unsigned char* buf, int len, int caservicenr, int cmdpos, int clear)
 {
+	STARTFUNC
 	int i = 0;
 	char* tmpstr = NULL, *blacklist = NULL;
 

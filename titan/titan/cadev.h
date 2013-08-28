@@ -3,7 +3,7 @@
 
 struct dvbdev* caopen(int adapter)
 {
-	debug(1000, "in");
+	STARTFUNC
 	int fd = -1;
 	struct dvbdev* node = dvbdev;
 
@@ -28,13 +28,12 @@ struct dvbdev* caopen(int adapter)
 		}
 	}
 
-	debug(1000, "out");
 	return node;
 }
 
 int caopendirect(char *cadev)
 {
-	debug(1000, "in");
+	STARTFUNC
 	int fd = -1;
 
 	if((fd = open(cadev, O_RDWR | O_NONBLOCK)) < 0)
@@ -43,12 +42,12 @@ int caopendirect(char *cadev)
 	}
 
 	closeonexec(fd);
-	debug(1000, "out");
 	return fd;
 }
 
 void caclose(struct dvbdev* node, int fd)
 {
+	STARTFUNC
 	if(node != NULL)
 	{
 		close(node->fd);
@@ -60,9 +59,10 @@ void caclose(struct dvbdev* node, int fd)
 
 int cagetcaps(struct dvbdev* node, struct ca_caps* caps)
 {
+	STARTFUNC
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -83,9 +83,10 @@ int cagetcaps(struct dvbdev* node, struct ca_caps* caps)
 
 int cagetmsg(struct dvbdev* node, struct ca_msg *msg)
 {
+	STARTFUNC
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -101,9 +102,10 @@ int cagetmsg(struct dvbdev* node, struct ca_msg *msg)
 
 int casendmsg(struct dvbdev* node, struct ca_msg *msg)
 {
+	STARTFUNC
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -119,9 +121,10 @@ int casendmsg(struct dvbdev* node, struct ca_msg *msg)
 
 int cagetdesc(struct dvbdev* node, struct ca_descr *descr)
 {
+	STARTFUNC
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -137,9 +140,10 @@ int cagetdesc(struct dvbdev* node, struct ca_descr *descr)
 
 int casetdesc(struct dvbdev* node, struct ca_descr *descr)
 {
+	STARTFUNC
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -155,9 +159,10 @@ int casetdesc(struct dvbdev* node, struct ca_descr *descr)
 
 int casetpid(struct dvbdev* node, struct ca_pid *pid)
 {
+	STARTFUNC
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -173,9 +178,10 @@ int casetpid(struct dvbdev* node, struct ca_pid *pid)
 
 int careset(struct dvbdev* node, int slot)
 {
+	STARTFUNC
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -191,9 +197,10 @@ int careset(struct dvbdev* node, int slot)
 
 int cagetslotinfo(struct dvbdev* node, ca_slot_info_t* info)
 {
+	STARTFUNC
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -215,6 +222,7 @@ int cagetslotinfo(struct dvbdev* node, ca_slot_info_t* info)
 //without this artefakte
 void cainit(int fd)
 {
+	STARTFUNC
 	ca_descr_t cadescr;
 	unsigned char buf[8];
 
@@ -235,14 +243,14 @@ void cainit(int fd)
 
 int cagetdev()
 {
-	debug(1000, "in");
+	STARTFUNC
 	int i, y, fd = -1, count = 0;
 	char *buf = NULL, *cadev = NULL;
 
 	cadev = getconfig("cadev", NULL);
 	if(cadev == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return count;
 	}
 
@@ -270,7 +278,6 @@ int cagetdev()
 	}
 
 	free(buf);
-	debug(1000, "out");
 	return count;
 }
 
