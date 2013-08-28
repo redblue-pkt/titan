@@ -287,7 +287,7 @@ void recordstop(struct service* node, int ret)
 				}
 				int ret = 0;
 				if(status.standby == 0)
-					ret = textbox(_("Message"), _("Record power off system?"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 200, 20, 0);
+					ret = textbox(_("Message"), _("Box recording finished poweroff in 2min !"), _("EXIT"), getrcconfigint("rcexit", NULL), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 900, 200, 120, 0);
 				if(ret == 0 || ret == 2)
 					oshutdown(1, 3);
 			}
