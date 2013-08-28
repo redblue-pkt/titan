@@ -79,9 +79,9 @@ void screensystem_update(int mode)
 	struct skin* b6 = getscreennode(systemupdate, "b6");
 	
 	if(imgtype == 1)
-		changetext(b6, "stable");
+		changetext(b6, _("stable"));
 	else
-		changetext(b6, "unstable");
+		changetext(b6, _("unstable"));
 		
 	if(!file_exist("/etc/.beta")) b6->hidden = YES;
 
@@ -201,13 +201,13 @@ void screensystem_update(int mode)
 					if(pinret == 0)
 					{
 						imgtype = 1;
-						changetext(b6, "stable");
+						changetext(b6, _("stable"));
 					}
 				}
 				else
 				{
 					imgtype = 0;
-					changetext(b6, "unstable");
+					changetext(b6, _("unstable"));
 				}
 			
 				char* cmd = NULL;
