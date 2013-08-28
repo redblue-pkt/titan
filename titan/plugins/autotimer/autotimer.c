@@ -365,7 +365,10 @@ void init(void)
 void deinit(void)
 {
 	if(autotimerthread != NULL)
+	{
 		autotimerthread->aktion = STOP;
+		sleep(2);
+	}
 	delmarkedscreen(120);
 	pluginaktiv = 0;
 	debug(10, "Autot Timer removed !!!");
