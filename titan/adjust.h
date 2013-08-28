@@ -2,7 +2,7 @@
 #define ADJUST_H
 
 void screenadjust()
-{
+{	STARTFUNC
 	int rcret = 0;
 	char* tmpstr = NULL;
 	

@@ -142,6 +142,9 @@
 #define NFS_SUPER_MAGIC 0x6969
 #define MSDOS_SUPER_MAGIC 0x4d44
 
+//Start Function Entry Point
+#define STARTFUNC
+
 //CA Defines
 #define T_SB 0x80		//sb (h<--m)
 #define T_RCV 0x81		//receive (h-->m)

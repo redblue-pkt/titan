@@ -2,8 +2,7 @@
 #define AUDIODEV_H
 
 struct dvbdev* audioopen(int adapter)
-{
-	debug(1000, "in");
+{	STARTFUNC
 	int fd = -1;
 	struct dvbdev* node = dvbdev;
 
@@ -28,13 +27,11 @@ struct dvbdev* audioopen(int adapter)
 		}
 	}
 
-	debug(1000, "out");
 	return node;
 }
 
 int audioopendirect(char *audiodev)
-{
-	debug(1000, "in");
+{	STARTFUNC
 	int fd = -1;
 
 	if((fd = open(audiodev, O_RDWR)) < 0)
@@ -43,12 +40,11 @@ int audioopendirect(char *audiodev)
 	}
 
 	closeonexec(fd);
-	debug(1000, "out");
 	return fd;
 }
 
 void audioclose(struct dvbdev* node, int fd)
-{
+{	STARTFUNC
 	if(node != NULL)
 	{
 		close(node->fd);
@@ -59,10 +55,10 @@ void audioclose(struct dvbdev* node, int fd)
 }
 
 int audiostop(struct dvbdev* node)
-{
+{	STARTFUNC
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -77,10 +73,10 @@ int audiostop(struct dvbdev* node)
 }
 
 int audioplay(struct dvbdev* node)
-{
+{	STARTFUNC
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -95,10 +91,10 @@ int audioplay(struct dvbdev* node)
 }
 
 int audiopause(struct dvbdev* node)
-{
+{	STARTFUNC
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -113,10 +109,10 @@ int audiopause(struct dvbdev* node)
 }
 
 int audiogetpts(struct dvbdev* node, uint64_t* pts)
-{
+{	STARTFUNC
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -131,10 +127,10 @@ int audiogetpts(struct dvbdev* node, uint64_t* pts)
 }
 
 int audioselectsource(struct dvbdev* node, audio_stream_source_t source)
-{
+{	STARTFUNC
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -149,10 +145,10 @@ int audioselectsource(struct dvbdev* node, audio_stream_source_t source)
 }
 
 int audiosetmute(struct dvbdev* node, int state)
-{
+{	STARTFUNC
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -166,10 +162,10 @@ int audiosetmute(struct dvbdev* node, int state)
 	return 0;
 }
 int audiosetavsync(struct dvbdev* node, int state)
-{
+{	STARTFUNC
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -184,11 +180,10 @@ int audiosetavsync(struct dvbdev* node, int state)
 }
 
 int audiosetbypassmode(struct dvbdev* node, int mode)
-{
-	
+{	STARTFUNC	
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -218,10 +213,10 @@ int audiosetbypassmode(struct dvbdev* node, int mode)
 }
 
 int audiochannelselect(struct dvbdev* node, audio_channel_select_t channel)
-{
+{	STARTFUNC
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -236,10 +231,10 @@ int audiochannelselect(struct dvbdev* node, audio_channel_select_t channel)
 }
 
 int audioclearbuffer(struct dvbdev* node)
-{
+{	STARTFUNC
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -253,10 +248,10 @@ int audioclearbuffer(struct dvbdev* node)
 }
 
 int audiosetid(struct dvbdev* node, int id)
-{
+{	STARTFUNC
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -271,10 +266,10 @@ int audiosetid(struct dvbdev* node, int id)
 }
 
 int audiosetstreamtype(struct dvbdev* node, int type)
-{
+{	STARTFUNC
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -289,15 +284,14 @@ int audiosetstreamtype(struct dvbdev* node, int type)
 }
 
 int audiogetdev()
-{
-	debug(1000, "in");
+{	STARTFUNC
 	int i, y, fd = -1, count = 0;
 	char *buf = NULL, *audiodev = NULL;
 
 	audiodev = getconfig("audiodev", NULL);
 	if(audiodev == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return count;
 	}
 
@@ -324,7 +318,6 @@ int audiogetdev()
 	}
 
 	free(buf);
-	debug(1000, "out");
 	return count;
 }
 

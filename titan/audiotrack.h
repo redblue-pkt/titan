@@ -2,7 +2,7 @@
 #define AUDIOTRACK_H
 
 struct audiotrack* checkaudiotrack(struct channel* chnode, struct audiotrack* atrack)
-{
+{	STARTFUNC
 	struct audiotrack* node = NULL;
 
 	if(chnode != NULL)
@@ -19,7 +19,7 @@ struct audiotrack* checkaudiotrack(struct channel* chnode, struct audiotrack* at
 }
 
 void screenaudiotrack()
-{
+{	STARTFUNC
 	int rcret = 0, treffer = 0;
 	struct skin* audiotrack = getscreen("audiotrack");
 	struct skin* listbox = getscreennode(audiotrack, "listbox");
@@ -93,14 +93,13 @@ void screenaudiotrack()
 }
 
 struct audiotrack* addaudiotrack(struct channel* chnode, char* langdesc, int pid, int audiocodec, struct audiotrack* last)
-{
-	debug(1000, "in");
+{	STARTFUNC
 	struct audiotrack *newnode = NULL, *prev = NULL, *node = NULL;
 	char *tmpstr = NULL;
 
 	if(chnode == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
@@ -153,18 +152,16 @@ struct audiotrack* addaudiotrack(struct channel* chnode, char* langdesc, int pid
 	newnode->next = node;
 
 	m_unlock(&status.audiotrackmutex, 7);
-	debug(1000, "out");
 	return newnode;
 }
 
 void freeaudiotrack(struct channel* chnode)
-{
-	debug(1000, "in");
+{	STARTFUNC
 	struct audiotrack *node = NULL, *prev = NULL;
 
 	if(chnode == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return;
 	}
 
@@ -186,7 +183,6 @@ void freeaudiotrack(struct channel* chnode)
 
 	}
 	m_unlock(&status.audiotrackmutex, 7);
-	debug(1000, "out");
 }
 
 #endif

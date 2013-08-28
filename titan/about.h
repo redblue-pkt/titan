@@ -2,7 +2,7 @@
 #define ABOUT_H
 
 int screenabout(void)
-{
+{	STARTFUNC
 	char *text = NULL, *tmpstr = NULL;
 	struct dvbdev* dvbnode = dvbdev;
 
