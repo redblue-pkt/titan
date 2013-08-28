@@ -3,6 +3,7 @@
 
 int screendirsort()
 {
+	STARTFUNC
 	int tmpsort = 0;
 	int rcret = 0;
 

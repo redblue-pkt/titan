@@ -3,7 +3,7 @@
 
 int screendownload(char* title, char* host, char* page, int port, char* filename, char* auth, int timeout, int flag)
 {
-	debug(1000, "in");
+	STARTFUNC
 	int rcret = -1, count = 0, ret = 0, fromthread = 0, sleeptime = 2;
 	struct skin* download = getscreen("download");
 	struct skin* progress = getscreennode(download, "progress");
@@ -137,8 +137,6 @@ int screendownload(char* title, char* host, char* page, int port, char* filename
 		clearscreen(download);
 		drawscreen(skin, 0, 0);
 	}
-
-	debug(1000, "out");
 
 	return ret;
 }

@@ -13,6 +13,7 @@
 
 struct dvbdev* dmxgetlast(int adapter)
 {
+	STARTFUNC
 	struct dvbdev* node = dvbdev;
 	struct dvbdev* lastnode = NULL;
 
@@ -28,7 +29,7 @@ struct dvbdev* dmxgetlast(int adapter)
 
 struct dvbdev* dmxopen(struct dvbdev* fenode)
 {
-	debug(1000, "in");
+	STARTFUNC
 	int fd = -1;
 
 	if(fenode == NULL) return NULL;
@@ -59,13 +60,12 @@ struct dvbdev* dmxopen(struct dvbdev* fenode)
 	}
 
 	m_unlock(&status.dmxdevmutex, 9);
-	debug(1000, "out");
 	return node;
 }
 
 int dmxopendirect(char *dmxdev)
 {
-	debug(1000, "in");
+	STARTFUNC
 	int fd = -1;
 	
 	if((fd = open(dmxdev, O_RDWR)) < 0)
@@ -76,12 +76,12 @@ int dmxopendirect(char *dmxdev)
 		fcntl(fd, F_SETFL, fcntl(fd, F_GETFL) | O_NONBLOCK);
 	
 	closeonexec(fd);
-	debug(1000, "out");
 	return fd;
 }
 
 void dmxclose(struct dvbdev* node, int fd)
 {
+	STARTFUNC
 	if(node != NULL)
 	{
 		close(node->fd);
@@ -93,9 +93,10 @@ void dmxclose(struct dvbdev* node, int fd)
 
 int dmxstop(struct dvbdev* node)
 {
+	STARTFUNC
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -110,9 +111,10 @@ int dmxstop(struct dvbdev* node)
 
 int dmxstart(struct dvbdev* node)
 {
+	STARTFUNC
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -127,9 +129,10 @@ int dmxstart(struct dvbdev* node)
 
 int dmxsetbuffersize(struct dvbdev* node, unsigned long size)
 {
+	STARTFUNC
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -148,11 +151,12 @@ int dmxsetbuffersize(struct dvbdev* node, unsigned long size)
 
 int dmxsetfilter(struct dvbdev* node, int pid, int secnr, int flag)
 {
+	STARTFUNC
 	struct dmx_sct_filter_params sctflt;
 
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -377,9 +381,10 @@ int dmxsetfilter(struct dvbdev* node, int pid, int secnr, int flag)
 
 int dmxaddpid(struct dvbdev* node, int pid)
 {
+	STARTFUNC
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -406,9 +411,10 @@ int dmxaddpid(struct dvbdev* node, int pid)
 
 int dmxremovepid(struct dvbdev* node, int pid)
 {
+	STARTFUNC
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -435,11 +441,12 @@ int dmxremovepid(struct dvbdev* node, int pid)
 
 int dmxgetstc(struct dvbdev* node, int64_t* stc)
 {
+	STARTFUNC
 	struct dmx_stc dmxstc;
 
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -461,9 +468,10 @@ int dmxgetstc(struct dvbdev* node, int64_t* stc)
 
 int dmxsetsource(struct dvbdev* node, int source)
 {
+	STARTFUNC
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -478,6 +486,7 @@ int dmxsetsource(struct dvbdev* node, int source)
 
 int dmxsetpesfilterfd(int fd, int pid, int input, int output, int pestype, int nostart)
 {
+	STARTFUNC
 	struct dmx_pes_filter_params pesflt;
 	memset(&pesflt, 0, sizeof(pesflt));
 
@@ -509,9 +518,10 @@ int dmxsetpesfilterfd(int fd, int pid, int input, int output, int pestype, int n
 
 int dmxsetpesfilter(struct dvbdev* node, int pid, int input, int output, int pestype, int nostart)
 {
+	STARTFUNC
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 	return dmxsetpesfilterfd(node->fd, pid, input, output, pestype, nostart);
@@ -519,14 +529,14 @@ int dmxsetpesfilter(struct dvbdev* node, int pid, int input, int output, int pes
 
 int dmxgetdev()
 {
-	debug(1000, "in");
+	STARTFUNC
 	int i, y, z, fd = -1, count = 0;
 	char *buf = NULL, *dmxdev = NULL;
 
 	dmxdev = getconfig("dmxdev", NULL);
 	if(dmxdev == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return count;
 	}
 
@@ -557,7 +567,6 @@ int dmxgetdev()
 	}
 
 	free(buf);
-	debug(1000, "out");
 	return count;
 }
 
