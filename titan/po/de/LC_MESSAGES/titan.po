@@ -4041,8 +4041,8 @@ msgstr "Stabil"
 msgid "unstable"
 msgstr "Unstabil"
 
-msgid "Box recording finished poweroff in 2min !"
-msgstr "Aufnahme beended Box wird in 2min ausgeschaltet !"
+msgid "Box recording finished poweroff in 30sec !"
+msgstr "Aufnahme beended Box wird in 30sek ausgeschaltet !"
 
 msgid "Timer Record start !\n"
 msgstr "Timer Aufnahme gestartet ! \n"
