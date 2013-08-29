@@ -8,3 +8,4 @@ Maintainer: Atemio
 Homepage: http://www.atemio.de
 Source: git
 Description: wireless modul rt5370sta.ko
+Showname: Wlan rt5370sta

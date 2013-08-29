@@ -8,3 +8,4 @@ Maintainer: Atemio
 Homepage: http://www.atemio.de
 Source: git
 Description: wireless modul rt3070sta.ko
+Showname: Wlan rt3070sta
