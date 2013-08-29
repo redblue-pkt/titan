@@ -2997,7 +2997,6 @@ struct menulist* tpkmenulist(struct menulist* mlist, char* paramskinname, char* 
 				tmppic = ostrcat(tmppic, ".png", 1, 0);
 				
 				//if pic not exist, get it from server
-				/*
 				int port = 80;
 				char* ip = NULL, *path = NULL;
 				char* tmpstr1 = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL;
@@ -3026,7 +3025,6 @@ struct menulist* tpkmenulist(struct menulist* mlist, char* paramskinname, char* 
 				free(tmpstr1); tmpstr1 = NULL;
 				free(tmpstr2); tmpstr2 = NULL;
 				free(tmpstr3); tmpstr3 = NULL;
-				*/
 			}
 
 			tmpmlist = addmenulist(&mlist, tmpstr, tmpinfo, tmppic, 0, 0);
