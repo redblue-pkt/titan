@@ -3013,10 +3013,10 @@ struct menulist* tpkmenulist(struct menulist* mlist, char* paramskinname, char* 
 					
 					if(ip != NULL && path != NULL)
 					{
-						tmpstr1 = ostrcat(tmpstr1, path, 1, 0);
-						tmpstr1 = ostrcat(tmpstr1, "/", 1, 0);
-						tmpstr1 = ostrcat(tmpstr1, node->name, 1, 0);
-						tmpstr1 = ostrcat(tmpstr1, ".png", 1, 0);
+						tmpstr2 = ostrcat(tmpstr2, path, 1, 0);
+						tmpstr2 = ostrcat(tmpstr2, "/", 1, 0);
+						tmpstr2 = ostrcat(tmpstr2, node->filename, 1, 0);
+						tmpstr2 = ostrcat(tmpstr2, ".png", 1, 0);
 	
 	          debug(130, "get http://%s/%s -> %s", ip, tmpstr2, tmpstr1);
 						gethttp(ip, tmpstr2, port, tmpstr1, HTTPAUTH, 5000, NULL, 0);
