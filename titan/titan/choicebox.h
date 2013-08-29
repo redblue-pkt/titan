@@ -74,11 +74,13 @@ int setchoiceboxselection(struct skin* choicebox, char* value)
 	int treffer = 0;
 	char* pos = NULL, *epos = NULL, *end = NULL;
 
-	if(choicebox == NULL || choicebox->input == NULL)
+	if(choicebox == NULL)
 	{
 		err("NULL detect");
 		return 1;
 	}
+	
+	if(choicebox->input == NULL) return 1;
 
 	choicebox->aktpage = 0;
 
