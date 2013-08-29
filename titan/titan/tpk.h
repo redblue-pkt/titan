@@ -2769,7 +2769,7 @@ int tpkgetindex(int flag)
 			tmpstr2 = ostrcat(tmpstr2, HTTPPACKAGES, 1, 0);
 
 			debug(130, "get http://%s/%s -> %s", ip, tmpstr1, tmpstr2);
-			httpret = gethttp(ip, tmpstr1, 80, tmpstr2, HTTPAUTH, 5000, NULL, 0);
+			httpret = gethttp(ip, tmpstr1, port, tmpstr2, HTTPAUTH, 5000, NULL, 0);
 			if(httpret == NULL)
 			{
 				err("http download error %s/%s", ip, tmpstr1);
@@ -2791,7 +2791,7 @@ int tpkgetindex(int flag)
 					tmpstr2 = ostrcat(tmpstr2, HTTPPREVIEW, 1, 0);
 
           debug(130, "get http://%s/%s -> %s", ip, tmpstr1, tmpstr2);
-					gethttp(ip, tmpstr1, 80, tmpstr2, HTTPAUTH, 5000, NULL, 0);
+					gethttp(ip, tmpstr1, port, tmpstr2, HTTPAUTH, 5000, NULL, 0);
 					free(tmpstr1); tmpstr1 = NULL;
 					free(tmpstr2); tmpstr2 = NULL;
 				}
@@ -2866,7 +2866,7 @@ int tpkgetpackage(char* package, char* url)
 			ip = "titannit.dyndns.tv";
 
     debug(130, "get http://%s/%s -> %s", ip, tmpstr1, tmpstr2);
-		screendownload("Download", ip, tmpstr1, 80, tmpstr2, HTTPAUTH, 5000, 0);
+		screendownload("Download", ip, tmpstr1, port, tmpstr2, HTTPAUTH, 5000, 0);
 		drawscreen(load, 0, 0);
 		ret = tpkinstall(tmpstr3);
 		clearscreen(load);
@@ -2995,15 +2995,21 @@ struct menulist* tpkmenulist(struct menulist* mlist, char* paramskinname, char* 
 			if(tmppic != NULL)
 			{
 				tmppic = ostrcat(tmppic, ".png", 1, 0);
+				
 				//if pic not exist, get it from server
 				/*
-				if(file_exist(tmppic) == 0)
+				int port = 80;
+				char* ip = NULL, *path = NULL;
+				char* tmpstr1 = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL;
+
+				tmpstr1 = ostrcat(tmpstr1, TMP, 1, 0);
+				tmpstr1 = ostrcat(tmpstr1, "/", 1, 0);
+				tmpstr1 = ostrcat(tmpstr1, tmppic, 1, 0);
+						
+				if(file_exist(tmpstr1) == 0)
 				{
-					int port = 80;
-					char* ip = NULL, *path = NULL;
-					char* tmpstr1 = NULL, *tmpstr2 = NULL;
-					
-					tpkgeturl(node->url, &ip, &path, &port);
+					tmpstr3 = ostrcat(tmpstr3, node->url, 1, 0);	
+					tpkgeturl(tmpstr3, &ip, &path, &port);
 					
 					if(ip != NULL && path != NULL)
 					{
@@ -3012,16 +3018,14 @@ struct menulist* tpkmenulist(struct menulist* mlist, char* paramskinname, char* 
 						tmpstr1 = ostrcat(tmpstr1, node->name, 1, 0);
 						tmpstr1 = ostrcat(tmpstr1, ".png", 1, 0);
 	
-						tmpstr2 = ostrcat(tmpstr2, TMP, 1, 0);
-						tmpstr2 = ostrcat(tmpstr2, "/", 1, 0);
-						tmpstr2 = ostrcat(tmpstr2, tmppic, 1, 0);
-	
-	          debug(130, "get http://%s/%s -> %s", ip, tmpstr1, tmpstr2);
-						gethttp(ip, tmpstr1, 80, tmpstr2, HTTPAUTH, 5000, NULL, 0);
+	          debug(130, "get http://%s/%s -> %s", ip, tmpstr2, tmpstr1);
+						gethttp(ip, tmpstr2, port, tmpstr1, HTTPAUTH, 5000, NULL, 0);
 					}
-					free(tmpstr1); tmpstr1 = NULL;
-					free(tmpstr2); tmpstr2 = NULL;
 				}
+				
+				free(tmpstr1); tmpstr1 = NULL;
+				free(tmpstr2); tmpstr2 = NULL;
+				free(tmpstr3); tmpstr3 = NULL;
 				*/
 			}
 
