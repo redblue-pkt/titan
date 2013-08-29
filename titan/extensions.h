@@ -94,7 +94,9 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 		if(mbox != NULL)
 		{
 			debug(130, "section: %s", mbox->name);
+			drawscreen(load, 0, 0);
 			mbox1 = tpkmenulist(mlist1, "tpkinstall", "Tpk Install - select file", "/tmp/tpk", mbox->name, 2, NULL, 1);
+			clearscreen(load);
 			
 			if(mbox1 != NULL && mbox1->param != NULL && mbox1->param1 != NULL)
 			{
