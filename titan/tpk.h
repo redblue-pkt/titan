@@ -2943,9 +2943,10 @@ struct menulist* tpkmenulist(struct menulist* mlist, char* paramskinname, char* 
 			
 			if(flag == 2)
 			{
-				tmpstr = ostrcat(tmpstr, node->section, 1, 0);
-				tmpstr = ostrcat(tmpstr, "-", 1, 0);
 				tmpstr = ostrcat(tmpstr, node->showname, 1, 0);
+				tmpstr = ostrcat(tmpstr, " (", 1, 0);
+				tmpstr = ostrcat(tmpstr, node->section, 1, 0);
+				tmpstr = ostrcat(tmpstr, ")", 1, 0);
 				tmpmlist = addmenulist(&mlist, tmpstr, NULL, tmppic, 0, 0);
 				changemenulistparam(tmpmlist, node->name, node->titanname);
 				free(tmpstr); tmpstr = NULL;
