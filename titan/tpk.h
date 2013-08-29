@@ -2908,11 +2908,13 @@ struct menulist* tpkmenulist(struct menulist* mlist, char* paramskinname, char* 
 	struct tpk* node = tpk, *tpk_installed = NULL, *node_installed = NULL;
 	struct menulist* tmpmlist = NULL;
 	char* tmpstr = NULL, *tmpinfo = NULL, *tmppic = NULL;
+	struct skin* load = getscreen("loading");
 	
 	if(node == NULL) return NULL;
 	
 	if(flag == 1)
 	{
+		drawscreen(load, 0, 0);
 		tpk = NULL;
 		tpklistinstalled(0);
 		tpk_installed = tpk;
@@ -3050,6 +3052,7 @@ struct menulist* tpkmenulist(struct menulist* mlist, char* paramskinname, char* 
 		tpk = tpk_installed;
 		freetpk();
 		tpk = node;
+		clearscreen(load);
 	}
 
   setmenulistdefault(mlist, defentry);
