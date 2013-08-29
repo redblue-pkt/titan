@@ -96,7 +96,7 @@ int dmxstop(struct dvbdev* node)
 	STARTFUNC
 	if(node == NULL)
 	{
-		err("NULL detect");
+		debug(200, "NULL detect");
 		return 1;
 	}
 
