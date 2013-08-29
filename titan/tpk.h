@@ -2993,7 +2993,37 @@ struct menulist* tpkmenulist(struct menulist* mlist, char* paramskinname, char* 
 			
 			tmppic = ostrcat(tmppic, node->name, 1, 0);
 			if(tmppic != NULL)
+			{
 				tmppic = ostrcat(tmppic, ".png", 1, 0);
+				//if pic not exist, get it from server
+				/*
+				if(file_exist(tmppic) == 0)
+				{
+					int port = 80;
+					char* ip = NULL, *path = NULL;
+					char* tmpstr1 = NULL, *tmpstr2 = NULL;
+					
+					tpkgeturl(node->url, &ip, &path, &port);
+					
+					if(ip != NULL && path != NULL)
+					{
+						tmpstr1 = ostrcat(tmpstr1, path, 1, 0);
+						tmpstr1 = ostrcat(tmpstr1, "/", 1, 0);
+						tmpstr1 = ostrcat(tmpstr1, node->name, 1, 0);
+						tmpstr1 = ostrcat(tmpstr1, ".png", 1, 0);
+	
+						tmpstr2 = ostrcat(tmpstr2, TMP, 1, 0);
+						tmpstr2 = ostrcat(tmpstr2, "/", 1, 0);
+						tmpstr2 = ostrcat(tmpstr2, tmppic, 1, 0);
+	
+	          debug(130, "get http://%s/%s -> %s", ip, tmpstr1, tmpstr2);
+						gethttp(ip, tmpstr1, 80, tmpstr2, HTTPAUTH, 5000, NULL, 0);
+					}
+					free(tmpstr1); tmpstr1 = NULL;
+					free(tmpstr2); tmpstr2 = NULL;
+				}
+				*/
+			}
 
 			tmpmlist = addmenulist(&mlist, tmpstr, tmpinfo, tmppic, 0, 0);
 
