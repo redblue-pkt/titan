@@ -84,7 +84,7 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 	{
 		drawscreen(load, 0, 0);
 
-		if(first == 1) tpkgetindex(1);
+		if(first == 1) tpkgetindex(0);
 		tpklist();
 
 		clearscreen(load);
