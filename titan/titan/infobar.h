@@ -131,7 +131,7 @@ void screeninfobar()
 			}
 		}
 
-		if(rcret == getrcconfigint("rcpause", NULL) || (checkbox("ATEMIO520") == 1 && rcret == getrcconfigint("rcplay", NULL) && status.pause == 0 && status.slowspeed == 0 && status.playspeed == 0))
+		if(rcret == getrcconfigint("rcpause", NULL))
 		{
 			//timeshift
 			if(status.timeshift == 1 && (status.playing == 0 || status.slowspeed != 0 || status.playspeed != 0 || status.pause != 0))
@@ -360,20 +360,7 @@ void screeninfobar()
 			subtitlepause(0);
 			continue;
 		}
-		if(status.timeshift == 0 && (rcret == getrcconfigint("rcplay", NULL) || rcret == getrcconfigint("rcarchive", NULL)))
-		{
-			subtitlepause(1);
-			status.infobar = 0;
-			status.infobaraktiv = 0;
-			clearscreen(infobar);
-			screenplay(NULL, NULL, 1, 0);
-			status.infobaraktiv = 1;
-			status.updatevfd = START;
-			drawscreen(skin, 0, 0);
-			subtitlepause(0);
-			continue;
-		}
-		if(status.timeshift == 1 && rcret == getrcconfigint("rcarchive", NULL))
+		if((status.timeshift == 0 && rcret == getrcconfigint("rcplay", NULL)) || rcret == getrcconfigint("rcarchive", NULL) || rcret == getrcconfigint("rcwebplay", NULL))
 		{
 			subtitlepause(1);
 			status.infobar = 0;
