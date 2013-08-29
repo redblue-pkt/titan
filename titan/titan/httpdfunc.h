@@ -987,7 +987,7 @@ char* webvideo(char* param, int fmt)
 	{
 		int count = 0;
 
-		writerc(getrcconfigint("rcplay", NULL));
+		writerc(getrcconfigint("rcarchive", NULL)); //rcplay is used for timeshift (pts), so we use rcarchive
 		while(status.play == 0 && count < 30)
 		{
 			usleep(100000);
