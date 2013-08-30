@@ -2765,7 +2765,7 @@ void clearscreennolock(struct skin* node)
 //flag 3 = vertical (begin to middle, middle to end)
 void drawgradient(int posx, int posy, int width, int height, long col1, long col2, int transparent, int flag)
 {
-	int p, i, x, y, steps, xstep, ystep;
+	int p = 0, i = 0, x = 0, y = 0, steps = 0, xstep = 0, ystep = 0;
 	int xcount = 0, ycount = 0, owidth = width, oheight = height;
 	unsigned char r3, g3, b3;
 	unsigned long col = 0;
