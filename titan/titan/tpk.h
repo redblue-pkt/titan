@@ -1261,6 +1261,13 @@ int tpkwriterestore(char* path, char* to, int newtype, int oldtype, int exist)
 	int ret = 0, major = 0, minor = 0;
 	FILE *fd = NULL;
 	char* tmpstr = NULL, *from = NULL;
+	
+	//check free space in /tmp for backup files
+	if(getfreespace("/tmp") < 3 * 1024 * 1024)
+	{
+		err("no free space in /tmp");
+		return 1;
+	}
 
 	if(to == NULL)
 	{
