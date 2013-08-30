@@ -56,14 +56,23 @@ int sizesort64(const struct dirent64** v1, const struct dirent64** v2)
 
 	tmpstr = createpath(status.tmp, (char*) (*v1)->d_name);
 	//tmpstr = createpath(status.tmp, (char*) (*(const struct dirent64**)v1)->d_name);
-	rpath = realpath(tmpstr, NULL);
+	
+	rpath = calloc(1, MINMALLOC);
+	if(rpath == NULL)
+	{
+		err("no mem");
+		return 0;
+	}
+	
+	rpath = realpath(tmpstr, rpath);
 	s1 = getfilesize(rpath);
 	free(tmpstr); tmpstr = NULL;
-	free(rpath); rpath = NULL;
+	memset(rpath, '\0', MINMALLOC);
 
 	tmpstr = createpath(status.tmp, (char*) (*v2)->d_name);
 	//tmpstr = createpath(status.tmp, (char*) (*(const struct dirent64**)v2)->d_name);
-	rpath = realpath(tmpstr, NULL);
+
+	rpath = realpath(tmpstr, rpath);
 	s2 = getfilesize(rpath);
 	free(tmpstr); tmpstr = NULL;
 	free(rpath); rpath = NULL;
@@ -82,14 +91,23 @@ int rsizesort64(const struct dirent64** v1, const struct dirent64** v2)
 
 	tmpstr = createpath(status.tmp, (char*) (*v1)->d_name);
 	//tmpstr = createpath(status.tmp, (char*) (*(const struct dirent64**)v1)->d_name);
-	rpath = realpath(tmpstr, NULL);
+	
+	rpath = calloc(1, MINMALLOC);
+	if(rpath == NULL)
+	{
+		err("no mem");
+		return 0;
+	}
+	
+	rpath = realpath(tmpstr, rpath);
 	s1 = getfilesize(rpath);
 	free(tmpstr); tmpstr = NULL;
-	free(rpath); rpath = NULL;
+	memset(rpath, '\0', MINMALLOC);
 
 	tmpstr = createpath(status.tmp, (char*) (*v2)->d_name);
 	//tmpstr = createpath(status.tmp, (char*) (*(const struct dirent64**)v2)->d_name);
-	rpath = realpath(tmpstr, NULL);
+	
+	rpath = realpath(tmpstr, rpath);
 	s2 = getfilesize(rpath);
 	free(tmpstr); tmpstr = NULL;
 	free(rpath); rpath = NULL;
@@ -107,14 +125,23 @@ int datesort64(const struct dirent64** v1, const struct dirent64** v2)
 
 	tmpstr = createpath(status.tmp, (char*) (*v1)->d_name);
 	//tmpstr = createpath(status.tmp, (char*) (*(const struct dirent64**)v1)->d_name);
-	rpath = realpath(tmpstr, NULL);
+	
+	rpath = calloc(1, MINMALLOC);
+	if(rpath == NULL)
+	{
+		err("no mem");
+		return 0;
+	}
+	
+	rpath = realpath(tmpstr, rpath);
 	t1 = getfiletime(rpath, 2);
 	free(tmpstr); tmpstr = NULL;
-	free(rpath); rpath = NULL;
+	memset(rpath, '\0', MINMALLOC);
 
 	tmpstr = createpath(status.tmp, (char*) (*v2)->d_name);
 	//tmpstr = createpath(status.tmp, (char*) (*(const struct dirent64**)v2)->d_name);
-	rpath = realpath(tmpstr, NULL);
+	
+	rpath = realpath(tmpstr, rpath);
 	t2 = getfiletime(rpath, 2);
 	free(tmpstr); tmpstr = NULL;
 	free(rpath); rpath = NULL;
@@ -132,14 +159,23 @@ int rdatesort64(const struct dirent64** v1, const struct dirent64** v2)
 
 	tmpstr = createpath(status.tmp, (char*) (*v1)->d_name);
 	//tmpstr = createpath(status.tmp, (char*) (*(const struct dirent64**)v1)->d_name);
-	rpath = realpath(tmpstr, NULL);
+	
+	rpath = calloc(1, MINMALLOC);
+	if(rpath == NULL)
+	{
+		err("no mem");
+		return 0;
+	}
+	
+	rpath = realpath(tmpstr, rpath);
 	t1 = getfiletime(rpath, 2);
 	free(tmpstr); tmpstr = NULL;
-	free(rpath); rpath = NULL;
+	memset(rpath, '\0', MINMALLOC);
 
 	tmpstr = createpath(status.tmp, (char*) (*v2)->d_name);
 	//tmpstr = createpath(status.tmp, (char*) (*(const struct dirent64**)v2)->d_name);
-	rpath = realpath(tmpstr, NULL);
+	
+	rpath = realpath(tmpstr, rpath);
 	t2 = getfiletime(rpath, 2);
 	free(tmpstr); tmpstr = NULL;
 	free(rpath); rpath = NULL;
@@ -192,7 +228,6 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 	int count = 0, tmpcount = 0, i = 0, gridbr = 0, posx = 0, pagecount = 0, sumcount = 0;
 	struct skin *child = node, *oldchild = NULL, *parentdir = NULL;
 	char *tmpstr = NULL;
-	char *rpath = NULL;
 
 	int (*cmpfunc)(const struct dirent64**, const struct dirent64**);
 	//int (*cmpfunc)(const void*, const void*);
@@ -433,11 +468,19 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 					child->filelist->view = view;
 
 					tmpstr = createpath(node->input, filelist[i]->d_name);
-					rpath = realpath(tmpstr, NULL);
-					if(view == 4) child->filelist->size = getfilesize(rpath);
-					else if(view == 5) child->filelist->date = getfiletime(rpath, 2);
+					
+					rpath = calloc(1, MINMALLOC);
+					if(rpath != NULL)
+					{
+						rpath = realpath(tmpstr, rpath);
+						if(view == 4) child->filelist->size = getfilesize(rpath);
+						else if(view == 5) child->filelist->date = getfiletime(rpath, 2);
+						free(rpath); rpath = NULL;
+					}
+					else
+						err("no mem");
+						
 					free(tmpstr); tmpstr = NULL;
-					free(rpath); rpath = NULL;
 				}
 			}
 			if(parentdir == child)
@@ -672,10 +715,18 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 						child->filelist->view = view;
 
 						tmpstr = createpath(node->input, filelist[i]->d_name);
-						rpath = realpath(tmpstr, NULL);
-						if(view == 4) child->filelist->size = getfilesize(rpath);
-						else if(view == 5) child->filelist->date = getfiletime(rpath, 2);
-						free(rpath); rpath = NULL;
+						
+						rpath = calloc(1, MINMALLOC);
+						if(rpath != NULL)
+						{
+							rpath = realpath(tmpstr, rpath);
+							if(view == 4) child->filelist->size = getfilesize(rpath);
+							else if(view == 5) child->filelist->date = getfiletime(rpath, 2);
+							free(rpath); rpath = NULL;
+						}
+						else
+							err("no mem");
+							
 						free(tmpstr); tmpstr = NULL;
 					}
 					if(view == 3)

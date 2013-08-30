@@ -395,7 +395,14 @@ int checkswaplink()
 	int ret = 1;
 	char* tmpstr = NULL;
 
-	tmpstr = realpath("/var/swap", NULL);
+	tmpstr = calloc(1, MINMALLOC);
+	if(tmpstr == NULL)
+	{
+		err("no mem");
+		return ret;
+	}
+	
+	tmpstr = realpath("/var/swap", tmpstr);
 	if(tmpstr != NULL && ostrcmp(tmpstr, "/mnt/swapextensions") != 0)
 		ret = 0;
 
@@ -418,8 +425,16 @@ char* delmountpart(char* filename, int free1)
 		err("no mem");
 		return NULL;
 	}
+	
+	rpath = calloc(1, MINMALLOC);
+	if(rpath == NULL)
+	{
+		err("no mem");
+		free(buf); buf = NULL;
+		return NULL;
+	}
 
-	rpath = realpath(filename, NULL);
+	rpath = realpath(filename, rpath);
 
 	fd = setmntent("/proc/mounts", "r");
 	if(fd != NULL)
@@ -3524,7 +3539,14 @@ int isdir(char* name)
 
 	if(S_ISLNK(sbuf.st_mode))
 	{
-		rpath = realpath(name, NULL);
+		rpath = calloc(1, MINMALLOC);
+		if(rpath == NULL)
+		{
+			err("no mem");
+			return 0;
+		}
+	
+		rpath = realpath(name, rpath);
 		if(lstat64(rpath, &sbuf) == -1)
 		{
 			free(rpath);
@@ -3533,7 +3555,7 @@ int isdir(char* name)
 		free(rpath);
 		if(S_ISDIR(sbuf.st_mode))
 			return 1;
-        }
+	}
 
 	return 0;
 }
