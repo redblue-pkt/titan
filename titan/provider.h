@@ -417,13 +417,6 @@ int provider2bouquet(int providerid)
 	char* tmpstr = NULL;
 	char* path = NULL;
 	
-	path = calloc(1, MINMALLOC);
-	if(path == NULL)
-	{
-		err("no mem");
-		return 1;
-	}
-
 	pnode = getprovider(providerid);
 	if(pnode == NULL) return 1;
 
@@ -432,23 +425,26 @@ int provider2bouquet(int providerid)
 	tmpstr = ostrcat(tmpstr, oitoa(status.servicetype), 1, 1);
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
 
-	path = realpath(getconfig("bouquetfile", NULL), path);
-	if(path != NULL) path = dirname(path);
-	path = ostrcat(path, "/bouquets.", 1, 0);
-					
-	path = ostrcat(path, pnode->name, 1, 0);
-	if(status.servicetype == 0) path = ostrcat(path, "_tv", 1, 0);
-	if(status.servicetype == 1) path = ostrcat(path, "_radio", 1, 0);
-
-	if(file_exist(path))
+	path = orealpath(getconfig("bouquetfile", NULL));
+	if(path != NULL)
 	{
-		free(tmpstr); tmpstr = NULL;
-		free(path); path = NULL;
-		return 1;
-	}
+		path = dirname(path);
+		path = ostrcat(path, "/bouquets.", 1, 0);
+					
+		path = ostrcat(path, pnode->name, 1, 0);
+		if(status.servicetype == 0) path = ostrcat(path, "_tv", 1, 0);
+		if(status.servicetype == 1) path = ostrcat(path, "_radio", 1, 0);
 
-	tmpstr = ostrcat(tmpstr, path, 1, 0);
-	mnode = addmainbouquet(tmpstr, 1, NULL);
+		if(file_exist(path))
+		{
+			free(tmpstr); tmpstr = NULL;
+			free(path); path = NULL;
+			return 1;
+		}
+
+		tmpstr = ostrcat(tmpstr, path, 1, 0);
+		mnode = addmainbouquet(tmpstr, 1, NULL);
+	}
 	free(tmpstr); tmpstr = NULL;
 	free(path); path = NULL;
 

@@ -83,18 +83,17 @@ int screenlistedit(int list, struct channel* chnode, void* aktlist)
 				newentry = textinput(NULL, "bouquet");
 				if(newentry != NULL)
 				{
-					char* dname = calloc(1, MINMALLOC);
-					if(dname != NULL)
-					{
-						newentry = stringreplacechar(newentry, '#', '_');
-						tmpstr = ostrcat(newentry, "#", 0, 0);
-						tmpnr = oitoa(status.servicetype);
-						tmpstr = ostrcat(tmpstr, tmpnr, 1, 0);
-						free(tmpnr); tmpnr = NULL;
-						tmpstr = ostrcat(tmpstr, "#", 1, 0);
+					newentry = stringreplacechar(newentry, '#', '_');
+					tmpstr = ostrcat(newentry, "#", 0, 0);
+					tmpnr = oitoa(status.servicetype);
+					tmpstr = ostrcat(tmpstr, tmpnr, 1, 0);
+					free(tmpnr); tmpnr = NULL;
+					tmpstr = ostrcat(tmpstr, "#", 1, 0);
 					
-						dname = realpath(getconfig("bouquetfile", NULL), dname);
-						if(dname != NULL) dname = dirname(dname);
+					char* dname = orealpath(getconfig("bouquetfile", NULL));
+					if(dname != NULL)
+					{ 
+						dname = dirname(dname);
 						tmpstr = ostrcat(tmpstr, dname, 1, 0);
 						free(dname); dname = NULL;
 
@@ -102,10 +101,8 @@ int screenlistedit(int list, struct channel* chnode, void* aktlist)
 						tmpstr = ostrcat(tmpstr, "bouquets.", 1, 0);
 						tmpstr = ostrcat(tmpstr, newentry, 1, 1);
 						addmainbouquet(tmpstr, 1, NULL);
-						free(tmpstr); tmpstr = NULL;
 					}
-					else
-						err("no mem");
+					free(tmpstr); tmpstr = NULL;
 				}
 			}
 			if(startchannel == 1 && ostrcmp(listbox->select->name, "setstartchannel") == 0)
