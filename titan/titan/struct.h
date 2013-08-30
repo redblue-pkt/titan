@@ -134,6 +134,7 @@
 #define HILO(x) (x##_hi << 8 | x##_lo)
 #define HILO32(x) (x##_hi << 24 | x##_mh << 16 | x##_ml << 8 | x##_lo)
 #define SERIALDEV "/dev/ttyAS0"
+#define MAXTOKENS 256
 
 #define USBDEVICE_SUPER_MAGIC 0x9fa2
 #define EXT2_SUPER_MAGIC 0xEF53

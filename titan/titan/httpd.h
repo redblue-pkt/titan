@@ -570,20 +570,8 @@ void gotdata(int* connfd)
 				return;
 			}
 			
-			char* rpath = calloc(1, MINMALLOC);
-			if(rpath == NULL)
-			{
-				err("no mem");
-				senderror(connfd, "Open File", "Can't open File", auth, 0);
-				free(fullfilename); fullfilename = NULL;
-				free(buf); buf = NULL;
-				free(filename); filename = NULL;
-				tmpstr = NULL;
-				return;
-			}
-			
 			debug(250, "sende OK response to client");
-			rpath = realpath(fullfilename, rpath);
+			char* rpath = orealpath(fullfilename);
 			header = createheader(getfilesize(rpath), fullfilename, NULL, NULL, 200, auth);
 			free(rpath); rpath = NULL;
 			free(fullfilename); fullfilename = NULL;

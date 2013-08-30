@@ -1,7 +1,23 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
-#define MAXTOKENS 256
+char* orealpath(char* file)
+{
+	char* tmpstr = NULL, *rpath = NULL;
+	
+	if(file == NULL) return NULL;
+	
+	tmpstr = calloc(1, MINMALLOC);
+	if(tmpstr == NULL)
+	{
+		err("no mem");
+		return NULL;
+	}
+	
+	rpath = realpath(file, tmpstr);
+	if(rpath == NULL) free(tmpstr);
+	return rpath;
+}
 
 int osystem(char* cmd, int timeout)
 {
@@ -395,14 +411,7 @@ int checkswaplink()
 	int ret = 1;
 	char* tmpstr = NULL;
 
-	tmpstr = calloc(1, MINMALLOC);
-	if(tmpstr == NULL)
-	{
-		err("no mem");
-		return ret;
-	}
-	
-	tmpstr = realpath("/var/swap", tmpstr);
+	tmpstr = orealpath("/var/swap");
 	if(tmpstr != NULL && ostrcmp(tmpstr, "/mnt/swapextensions") != 0)
 		ret = 0;
 
@@ -426,15 +435,8 @@ char* delmountpart(char* filename, int free1)
 		return NULL;
 	}
 	
-	rpath = calloc(1, MINMALLOC);
-	if(rpath == NULL)
-	{
-		err("no mem");
-		free(buf); buf = NULL;
-		return NULL;
-	}
-
-	rpath = realpath(filename, rpath);
+	rpath = orealpath(filename);
+	if(rpath == NULL) return NULL;
 
 	fd = setmntent("/proc/mounts", "r");
 	if(fd != NULL)
@@ -3539,14 +3541,7 @@ int isdir(char* name)
 
 	if(S_ISLNK(sbuf.st_mode))
 	{
-		rpath = calloc(1, MINMALLOC);
-		if(rpath == NULL)
-		{
-			err("no mem");
-			return 0;
-		}
-	
-		rpath = realpath(name, rpath);
+		rpath = orealpath(name);
 		if(lstat64(rpath, &sbuf) == -1)
 		{
 			free(rpath);
