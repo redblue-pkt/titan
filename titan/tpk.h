@@ -1266,7 +1266,7 @@ int tpkwriterestore(char* path, char* to, int newtype, int oldtype, int exist)
 	if(getfreespace("/tmp") < 3 * 1024 * 1024)
 	{
 		err("no free space in /tmp");
-		return 1;
+		return 0;
 	}
 
 	if(to == NULL)
