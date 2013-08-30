@@ -251,7 +251,7 @@ void* timerthreadfunc(void *param)
 				if(node->status == DEACTIVE && node->aktion == START && node->count != 0)
 				{
 					pthread_attr_init(&node->attr);
-					pthread_attr_setstacksize(&node->attr, 50000);
+					pthread_attr_setstacksize(&node->attr, 151552);
 					pthread_attr_setdetachstate(&node->attr, PTHREAD_CREATE_JOINABLE);
 					node->status = ACTIVE;
 					debug(10, "start timer sub thread");

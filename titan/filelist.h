@@ -57,7 +57,7 @@ int sizesort64(const struct dirent64** v1, const struct dirent64** v2)
 	tmpstr = createpath(status.tmp, (char*) (*v1)->d_name);
 	//tmpstr = createpath(status.tmp, (char*) (*(const struct dirent64**)v1)->d_name);
 	
-	rpath = orealpath(tmpstr);
+	rpath = realpath(tmpstr, NULL);
 	s1 = getfilesize(rpath);
 	free(tmpstr); tmpstr = NULL;
 	free(rpath); rpath = NULL;
@@ -65,7 +65,7 @@ int sizesort64(const struct dirent64** v1, const struct dirent64** v2)
 	tmpstr = createpath(status.tmp, (char*) (*v2)->d_name);
 	//tmpstr = createpath(status.tmp, (char*) (*(const struct dirent64**)v2)->d_name);
 
-	rpath = orealpath(tmpstr);
+	rpath = realpath(tmpstr, NULL);
 	s2 = getfilesize(rpath);
 	free(tmpstr); tmpstr = NULL;
 	free(rpath); rpath = NULL;
@@ -85,7 +85,7 @@ int rsizesort64(const struct dirent64** v1, const struct dirent64** v2)
 	tmpstr = createpath(status.tmp, (char*) (*v1)->d_name);
 	//tmpstr = createpath(status.tmp, (char*) (*(const struct dirent64**)v1)->d_name);
 	
-	rpath = orealpath(tmpstr);
+	rpath = realpath(tmpstr, NULL);
 	s1 = getfilesize(rpath);
 	free(tmpstr); tmpstr = NULL;
 	free(rpath); rpath = NULL;
@@ -93,7 +93,7 @@ int rsizesort64(const struct dirent64** v1, const struct dirent64** v2)
 	tmpstr = createpath(status.tmp, (char*) (*v2)->d_name);
 	//tmpstr = createpath(status.tmp, (char*) (*(const struct dirent64**)v2)->d_name);
 	
-	rpath = orealpath(tmpstr);
+	rpath = realpath(tmpstr, NULL);
 	s2 = getfilesize(rpath);
 	free(tmpstr); tmpstr = NULL;
 	free(rpath); rpath = NULL;
@@ -112,7 +112,7 @@ int datesort64(const struct dirent64** v1, const struct dirent64** v2)
 	tmpstr = createpath(status.tmp, (char*) (*v1)->d_name);
 	//tmpstr = createpath(status.tmp, (char*) (*(const struct dirent64**)v1)->d_name);
 	
-	rpath = orealpath(tmpstr);
+	rpath = realpath(tmpstr, NULL);
 	t1 = getfiletime(rpath, 2);
 	free(tmpstr); tmpstr = NULL;
 	free(rpath); rpath = NULL;
@@ -120,7 +120,7 @@ int datesort64(const struct dirent64** v1, const struct dirent64** v2)
 	tmpstr = createpath(status.tmp, (char*) (*v2)->d_name);
 	//tmpstr = createpath(status.tmp, (char*) (*(const struct dirent64**)v2)->d_name);
 	
-	rpath = orealpath(tmpstr);
+	rpath = realpath(tmpstr, NULL);
 	t2 = getfiletime(rpath, 2);
 	free(tmpstr); tmpstr = NULL;
 	free(rpath); rpath = NULL;
@@ -139,7 +139,7 @@ int rdatesort64(const struct dirent64** v1, const struct dirent64** v2)
 	tmpstr = createpath(status.tmp, (char*) (*v1)->d_name);
 	//tmpstr = createpath(status.tmp, (char*) (*(const struct dirent64**)v1)->d_name);
 	
-	rpath = orealpath(tmpstr);
+	rpath = realpath(tmpstr, NULL);
 	t1 = getfiletime(rpath, 2);
 	free(tmpstr); tmpstr = NULL;
 	free(rpath); rpath = NULL;
@@ -147,7 +147,7 @@ int rdatesort64(const struct dirent64** v1, const struct dirent64** v2)
 	tmpstr = createpath(status.tmp, (char*) (*v2)->d_name);
 	//tmpstr = createpath(status.tmp, (char*) (*(const struct dirent64**)v2)->d_name);
 	
-	rpath = orealpath(tmpstr);
+	rpath = realpath(tmpstr, NULL);
 	t2 = getfiletime(rpath, 2);
 	free(tmpstr); tmpstr = NULL;
 	free(rpath); rpath = NULL;
@@ -440,7 +440,7 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 					child->filelist->view = view;
 
 					tmpstr = createpath(node->input, filelist[i]->d_name);
-					rpath = orealpath(tmpstr);
+					rpath = realpath(tmpstr, NULL);
 					if(view == 4) child->filelist->size = getfilesize(rpath);
 					else if(view == 5) child->filelist->date = getfiletime(rpath, 2);
 					free(rpath); rpath = NULL;
@@ -679,7 +679,7 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 						child->filelist->view = view;
 
 						tmpstr = createpath(node->input, filelist[i]->d_name);
-						rpath = orealpath(tmpstr);
+						rpath = realpath(tmpstr, NULL);
 						if(view == 4) child->filelist->size = getfilesize(rpath);
 						else if(view == 5) child->filelist->date = getfiletime(rpath, 2);
 						free(rpath); rpath = NULL;

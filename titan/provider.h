@@ -425,7 +425,7 @@ int provider2bouquet(int providerid)
 	tmpstr = ostrcat(tmpstr, oitoa(status.servicetype), 1, 1);
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
 
-	path = orealpath(getconfig("bouquetfile", NULL));
+	path = realpath(getconfig("bouquetfile", NULL), NULL);
 	if(path != NULL)
 	{
 		path = dirname(path);

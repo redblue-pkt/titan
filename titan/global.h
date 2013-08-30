@@ -1,24 +1,6 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
-char* orealpath(char* file)
-{
-	char* tmpstr = NULL, *rpath = NULL;
-	
-	if(file == NULL) return NULL;
-	
-	tmpstr = calloc(1, MINMALLOC);
-	if(tmpstr == NULL)
-	{
-		err("no mem");
-		return NULL;
-	}
-	
-	rpath = realpath(file, tmpstr);
-	if(rpath == NULL) free(tmpstr);
-	return rpath;
-}
-
 int osystem(char* cmd, int timeout)
 {
 	int ret = 0;
@@ -411,7 +393,7 @@ int checkswaplink()
 	int ret = 1;
 	char* tmpstr = NULL;
 
-	tmpstr = orealpath("/var/swap");
+	tmpstr = realpath("/var/swap", NULL);
 	if(tmpstr != NULL && ostrcmp(tmpstr, "/mnt/swapextensions") != 0)
 		ret = 0;
 
@@ -435,7 +417,7 @@ char* delmountpart(char* filename, int free1)
 		return NULL;
 	}
 	
-	rpath = orealpath(filename);
+	rpath = realpath(filename, NULL);
 	if(rpath == NULL) return NULL;
 
 	fd = setmntent("/proc/mounts", "r");
@@ -3541,7 +3523,7 @@ int isdir(char* name)
 
 	if(S_ISLNK(sbuf.st_mode))
 	{
-		rpath = orealpath(name);
+		rpath = realpath(name, NULL);
 		if(lstat64(rpath, &sbuf) == -1)
 		{
 			free(rpath);

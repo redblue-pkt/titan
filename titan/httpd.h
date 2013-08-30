@@ -571,7 +571,7 @@ void gotdata(int* connfd)
 			}
 			
 			debug(250, "sende OK response to client");
-			char* rpath = orealpath(fullfilename);
+			char* rpath = realpath(fullfilename, NULL);
 			header = createheader(getfilesize(rpath), fullfilename, NULL, NULL, 200, auth);
 			free(rpath); rpath = NULL;
 			free(fullfilename); fullfilename = NULL;
