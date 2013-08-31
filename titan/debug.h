@@ -13,6 +13,51 @@ short debug_level = 10;
 // mc debug_level = 50;
 // panel debug_level = 60;
 
+void __cyg_profile_func_enter(void *this_fn, void* call_size) __attribute__((no_instrument_function));
+void __cyg_profile_func_enter(void *this_fn, void* call_size)
+{
+	int i = 0, freeid = -1;
+	pthread_t threadid = pthread_self();
+
+	for(i = 0; i < MAXSTACKTRACE; i++)
+	{
+		if(stacktrace[i].thread == NULL && freeid == -1) freeid = i;
+		if(stacktrace[i].thread == threadid)
+		{
+			stacktrace[i].func[stacktrace[i].pos] = this_fn;
+			stacktrace[i].pos++;
+			if(stacktrace[i].pos >= MAXSTACKTRACE - 1) stacktrace[i].pos = MAXSTACKTRACE - 1;
+			freeid = -2;
+		}
+	}
+
+	if(freeid >= -1)
+	{
+		stacktrace[freeid].thread = threadid;
+		stacktrace[freeid].func[stacktrace[freeid].pos] = this_fn;
+		stacktrace[freeid].pos++;
+		if(stacktrace[i].pos >= MAXSTACKTRACE) stacktrace[i].pos = MAXSTACKTRACE - 1;
+	}
+}
+
+void __cyg_profile_func_exit(void *this_fn, void* call_size) __attribute__((no_instrument_function));
+void __cyg_profile_func_exit(void *this_fn, void* call_size)
+{
+	int i = 0;
+	pthread_t threadid = pthread_self();
+
+	for(i = 0; i < MAXSTACKTRACE; i++)
+	{
+		if(stacktrace[i].thread == threadid)
+		{
+			stacktrace[i].pos--;
+			if(stacktrace[i].pos < 0) stacktrace[i].pos = 0;
+			stacktrace[i].func[stacktrace[i].pos] = NULL;
+			if(stacktrace[i].pos == 0) stacktrace[i].thread = NULL;
+		}
+	}
+}
+
 //debug
 //first line shows greater/same debuglevel
 //second line shows only same debuglevel

@@ -454,7 +454,7 @@ else
 fi
 
 if [ "$GROUP" = "dev" ]; then
-	devflag="-fexceptions -rdynamic"
+	devflag="-finstrument-functions -fexceptions -rdynamic"
 else
 	devflag=""
 fi

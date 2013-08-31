@@ -2372,14 +2372,14 @@ void m_unlock(pthread_mutex_t *mutex, int flag)
 
 void debugstack(int sig, void* address, void* address1)
 {
-	Dl_info info, info1;
+	Dl_info info, info1, info2;
 	void* trace[20];
 	size_t size;
 	size = backtrace(trace, 20);
 
 	FILE* fd = NULL;
 	void* akttrace[2];
-	int i;
+	int i = 0, y = 0;
 	char **strings;
 	char **aktstring;
 	time_t rawtime;
@@ -2414,14 +2414,30 @@ void debugstack(int sig, void* address, void* address1)
 		fprintf(stderr, "Error in Thread: %x (%s)\n", (unsigned int)pthread_self(), info.dli_sname);
 	else
 		fprintf(stderr, "Error in Thread: %x\n", (unsigned int)pthread_self());
-	fprintf(stderr, "Obtaining %zd stack frames:\n\n", size);
-
+	
+	fprintf(stderr, "\nObtaining %zd stack frames:\n\n", size);
 	for(i = 0; i < size; i++)
 		fprintf(stderr, "%s\n", strings[i]);
 
 	fprintf(stderr, "\nLast functions:\n\n");
 	fprintf(stderr, "%s\n", aktstring[0]);
 	fprintf(stderr, "%s\n", aktstring[1]);
+	
+	for(i = 0; i < MAXSTACKTRACE; i++)
+	{
+		if(stacktrace[i].thread != '\0')
+		{
+			fprintf(stderr, "\nObtaining %d Thread Stack frames [%p]:\n\n", stacktrace[i].pos, (void*)stacktrace[i].thread);
+			for(y = 0; y < MAXSTACKTRACE; y++)
+			{
+				if(stacktrace[i].func[y] != NULL)
+				{
+					dladdr(stacktrace[i].func[y], &info2);
+          fprintf(stderr, "%s(%s) [%p]\n", info2.dli_fname, info2.dli_sname, stacktrace[i].func[y]);
+				}
+			}
+		}
+	}
 
 	fprintf(stderr, "--------------------------------------\n");
 
@@ -2456,12 +2472,31 @@ void debugstack(int sig, void* address, void* address1)
 			fprintf(fd, "Error in Thread: %x (%s)\n", (unsigned int)pthread_self(), info.dli_sname);
 		else
 			fprintf(fd, "Error in Thread: %x\n", (unsigned int)pthread_self());
-		fprintf(fd, "Obtaining %zd stack frames:\n\n", size);
-		for(i = 1; i < size; i++)
+			
+		fprintf(fd, "\nObtaining %zd stack frames:\n\n", size);
+		for(i = 0; i < size; i++)
 			fprintf(fd, "%s\n", strings[i]);
+			
 		fprintf(fd, "\nLast functions:\n\n");
 		fprintf(fd, "%s\n", aktstring[0]);
 		fprintf(fd, "%s\n", aktstring[1]);
+		
+		for(i = 0; i < MAXSTACKTRACE; i++)
+		{
+			if(stacktrace[i].thread != '\0')
+			{
+				fprintf(fd, "\nObtaining %d Thread Stack frames [%p]:\n\n", stacktrace[i].pos, (void*)stacktrace[i].thread);
+				for(y = 0; y < MAXSTACKTRACE; y++)
+				{
+					if(stacktrace[i].func[y] != NULL)
+					{
+						dladdr(stacktrace[i].func[y], &info2);
+	          fprintf(fd, "%s(%s) [%p]\n", info2.dli_fname, info2.dli_sname, stacktrace[i].func[y]);
+					}
+				}
+			}
+		}
+		
 		fprintf(fd, "--------------------------------------\n\n");
 		fclose(fd);
 		sync();
