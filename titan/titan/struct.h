@@ -135,6 +135,7 @@
 #define HILO32(x) (x##_hi << 24 | x##_mh << 16 | x##_ml << 8 | x##_lo)
 #define SERIALDEV "/dev/ttyAS0"
 #define MAXTOKENS 256
+#define MAXSTACKTRACE 50
 
 #define USBDEVICE_SUPER_MAGIC 0x9fa2
 #define EXT2_SUPER_MAGIC 0xEF53
@@ -196,6 +197,14 @@ enum {START, PAUSE, STOP};
 enum {DEACTIVE, ACTIVE, INPAUSE, ERROR};
 enum {FUNCTEXT, FUNCPIC, FUNCPROGRESS};
 enum {CASESSIONCREATE, CASESSIONBUSY, CASESSIONDEL, CASESSIONSTART, CASESSIONFINAL, CARESFIRSTENQUIRY, CARESCHANGE, CARESENQUIRY, CADATETIMESEND, CAMMIIDLE, CAMMIDISPLAYREPLAY, CAMMIFAKEOK};
+
+struct stacktrace
+{
+	int pos;
+	pthread_t thread;
+	void* func[MAXSTACKTRACE];
+};
+struct stacktrace stacktrace[MAXSTACKTRACE];
 
 struct lastsubtitle
 {
