@@ -1413,6 +1413,14 @@ int tpkextractfilelist(char* file, char* path, int flag)
 
 	while(fgets(fileline, MINMALLOC, fd) != NULL)
 	{
+		//reset hangtime
+		if(pthread_self() == status.mainthread)
+		{
+			time_t sec = time(NULL);
+			if(status.sec != 0 && sec - status.sec > status.spinnertime && sec - status.sec < 86400)
+				status.sec = sec - (status.spinnertime + 1);
+		}
+		
 		ilen = strlen(fileline) - 1;
 		if(ilen >= 0 && fileline[ilen] == '\n')
 			fileline[ilen] = '\0';
