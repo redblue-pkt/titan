@@ -16,7 +16,7 @@ short debug_level = 10;
 void __cyg_profile_func_enter(void *this_fn, void* call_size) __attribute__((no_instrument_function));
 void __cyg_profile_func_enter(void *this_fn, void* call_size)
 {
-	int i = 0, treffer = 0;
+	int i = 0;
 	pthread_t threadid = pthread_self();
 
 	for(i = 0; i < MAXSTACKTRACE; i++)
@@ -25,13 +25,12 @@ void __cyg_profile_func_enter(void *this_fn, void* call_size)
 		{
 			stacktrace[i].func[stacktrace[i].pos] = this_fn;
 			stacktrace[i].pos++;
-			if(stacktrace[i].pos == MAXSTACKTRACE) stacktrace[i].pos = MAXSTACKTRACE - 1;
-			treffer = 1;
+			if(stacktrace[i].pos >= MAXSTACKTRACE) stacktrace[i].pos = MAXSTACKTRACE - 1;
 			break;
 		}
 	}
 
-	if(treffer == 0)
+	if(i == MAXSTACKTRACE)
 	{
 		for(i = 0; i < MAXSTACKTRACE; i++)
 		{
@@ -40,7 +39,7 @@ void __cyg_profile_func_enter(void *this_fn, void* call_size)
 				stacktrace[i].thread = threadid;
 				stacktrace[i].func[stacktrace[i].pos] = this_fn;
 				stacktrace[i].pos++;
-				if(stacktrace[i].pos == MAXSTACKTRACE) stacktrace[i].pos = MAXSTACKTRACE - 1;
+				if(stacktrace[i].pos >= MAXSTACKTRACE) stacktrace[i].pos = MAXSTACKTRACE - 1;
 				break;
 			}
 		}
