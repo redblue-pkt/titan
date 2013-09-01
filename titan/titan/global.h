@@ -2425,16 +2425,13 @@ void debugstack(int sig, void* address, void* address1)
 	
 	for(i = 0; i < MAXSTACKTRACE; i++)
 	{
-		if(stacktrace[i].thread != '\0')
+		if(stacktrace[i].pos > 0)
 		{
 			fprintf(stderr, "\nObtaining %d Thread Stack frames [%p]:\n\n", stacktrace[i].pos, (void*)stacktrace[i].thread);
-			for(y = 0; y < MAXSTACKTRACE; y++)
+			for(y = stacktrace[i].pos - 1; y >= 0; y--)
 			{
-				if(stacktrace[i].func[y] != NULL)
-				{
-					dladdr(stacktrace[i].func[y], &info2);
-          fprintf(stderr, "%s(%s) [%p]\n", info2.dli_fname, info2.dli_sname, stacktrace[i].func[y]);
-				}
+				dladdr(stacktrace[i].func[y], &info2);
+        fprintf(stderr, "%s(%s) [%p]\n", info2.dli_fname, info2.dli_sname, stacktrace[i].func[y]);
 			}
 		}
 	}
@@ -2483,16 +2480,13 @@ void debugstack(int sig, void* address, void* address1)
 		
 		for(i = 0; i < MAXSTACKTRACE; i++)
 		{
-			if(stacktrace[i].thread != '\0')
+			if(stacktrace[i].pos > 0)
 			{
 				fprintf(fd, "\nObtaining %d Thread Stack frames [%p]:\n\n", stacktrace[i].pos, (void*)stacktrace[i].thread);
-				for(y = 0; y < MAXSTACKTRACE; y++)
+				for(y = stacktrace[i].pos - 1; y >= 0; y--)
 				{
-					if(stacktrace[i].func[y] != NULL)
-					{
-						dladdr(stacktrace[i].func[y], &info2);
-	          fprintf(fd, "%s(%s) [%p]\n", info2.dli_fname, info2.dli_sname, stacktrace[i].func[y]);
-					}
+					dladdr(stacktrace[i].func[y], &info2);
+	        fprintf(fd, "%s(%s) [%p]\n", info2.dli_fname, info2.dli_sname, stacktrace[i].func[y]);
 				}
 			}
 		}
