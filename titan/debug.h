@@ -26,22 +26,19 @@ void __cyg_profile_func_enter(void *this_fn, void* call_size)
 			stacktrace[i].func[stacktrace[i].pos] = this_fn;
 			stacktrace[i].pos++;
 			if(stacktrace[i].pos >= MAXSTACKTRACE) stacktrace[i].pos = MAXSTACKTRACE - 1;
-			break;
+			return;
 		}
 	}
 
-	if(i == MAXSTACKTRACE)
+	for(i = 0; i < MAXSTACKTRACE; i++)
 	{
-		for(i = 0; i < MAXSTACKTRACE; i++)
+		if(stacktrace[i].pos == 0)
 		{
-			if(stacktrace[i].pos == 0)
-			{
-				stacktrace[i].thread = threadid;
-				stacktrace[i].func[stacktrace[i].pos] = this_fn;
-				stacktrace[i].pos++;
-				if(stacktrace[i].pos >= MAXSTACKTRACE) stacktrace[i].pos = MAXSTACKTRACE - 1;
-				break;
-			}
+			stacktrace[i].thread = threadid;
+			stacktrace[i].func[stacktrace[i].pos] = this_fn;
+			stacktrace[i].pos++;
+			if(stacktrace[i].pos >= MAXSTACKTRACE) stacktrace[i].pos = MAXSTACKTRACE - 1;
+			break;
 		}
 	}
 }
