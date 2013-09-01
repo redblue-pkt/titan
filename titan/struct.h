@@ -135,7 +135,8 @@
 #define HILO32(x) (x##_hi << 24 | x##_mh << 16 | x##_ml << 8 | x##_lo)
 #define SERIALDEV "/dev/ttyAS0"
 #define MAXTOKENS 256
-#define MAXSTACKTRACE 50
+#define MAXSTACKTRACE 30
+#define MAXSTACKTRACEFUNC 20
 
 #define USBDEVICE_SUPER_MAGIC 0x9fa2
 #define EXT2_SUPER_MAGIC 0xEF53
@@ -202,7 +203,7 @@ struct stacktrace
 {
 	int pos;
 	pthread_t thread;
-	void* func[MAXSTACKTRACE];
+	void* func[MAXSTACKTRACEFUNC];
 };
 struct stacktrace stacktrace[MAXSTACKTRACE];
 
