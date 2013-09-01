@@ -351,14 +351,19 @@ void init(void)
 	readscreen(tmpstr, 120, 1);
 	free(tmpstr); tmpstr = NULL;
 	debug(10, "Autot Timer Plugin loadet !!!");
-	if(getconfigint("at1_running", NULL) == 1)
+	if(getconfig("at1_akt", NULL) != NULL)
 	{
-		if(autotimerthread == NULL)
+		if(getconfigint("at1_running", NULL) == 1)
 		{
-			autostart = 120;
-			autotimerthread = addtimer(&autotimer_thread, START, 10000, 1, NULL, NULL, NULL);
+			if(autotimerthread == NULL)
+			{
+				autostart = 120;
+				autotimerthread = addtimer(&autotimer_thread, START, 10000, 1, NULL, NULL, NULL);
+			}
 		}
 	}
+	else
+		addconfigint("at1_running", 0);
 }
 
 //wird beim entladen ausgefuehrt
