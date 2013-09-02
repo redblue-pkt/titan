@@ -4289,7 +4289,10 @@ char* convertspacetolf(char* value)
 	return value;
 }
 
-char* getcolorformatchoices()
+//flag 0: all
+//flag 1: hdmi
+//flag 2: not hdmi
+char* getcolorformatchoices(int flag)
 {
 	debug(1000, "in");
 	char *colorformatchoicesdev = NULL;
@@ -4309,7 +4312,29 @@ char* getcolorformatchoices()
 		debug(1000, "out -> NULL detect");
 		return NULL;
 	}
+	
+	if(flag == 1)
+	{
+		value = string_replace("rgb", NULL, value, 1);
+		value = string_replace("  ", " ", value, 1);
+		value = string_replace("cvbs", NULL, value, 1);
+		value = string_replace("  ", " ", value, 1);
+		value = string_replace("svideo", NULL, value, 1);
+		value = string_replace("  ", " ", value, 1);
+		value = string_replace("yuv", NULL, value, 1);
+		value = string_replace("  ", " ", value, 1);
+	}
+	else if(flag == 2)
+	{
+		value = string_replace("hdmi_rgb", NULL, value, 1);
+		value = string_replace("  ", " ", value, 1);
+		value = string_replace("hdmi_yuv", NULL, value, 1);
+		value = string_replace("  ", " ", value, 1);
+		value = string_replace("hdmi_422", NULL, value, 1);
+		value = string_replace("  ", " ", value, 1);
+	}
 
+	value = strstrip(value);
 	value = convertspacetolf(value);
 
 	debug(1000, "out");

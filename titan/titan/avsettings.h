@@ -95,22 +95,38 @@ void screenavsettings(int flag)
 	setchoiceboxselection(aspect, ret);
 	free(ret); ret = NULL;
 
-	ret = getcolorformatchoices();
-	changeinput(colformat, ret);
-	free(ret); ret = NULL;
-	ret = getcolorformat(1);
-	setchoiceboxselection(colformat, ret);
-	free(ret); ret = NULL;
-
 	ret = getcolorformat(2);
 	if(ret == NULL || strlen(ret) == 0)
+	{
+		free(ret); ret = NULL;
 		colformatscart->hidden = YES;
+		
+		ret = getcolorformatchoices(0);
+		changeinput(colformat, ret);
+		free(ret); ret = NULL;
+		ret = getcolorformat(1);
+		setchoiceboxselection(colformat, ret);
+		free(ret); ret = NULL;
+	}
 	else
 	{
+		free(ret); ret = NULL;
 		colformatscart->hidden = NO;
+		
+		ret = getcolorformatchoices(1);
+		changeinput(colformat, ret);
+		free(ret); ret = NULL;
+		ret = getcolorformat(1);
+		setchoiceboxselection(colformat, ret);
+		free(ret); ret = NULL;
+		
+		ret = getcolorformatchoices(2);
 		changeinput(colformatscart, ret);
+		free(ret); ret = NULL;
+		ret = getcolorformat(2);
+		setchoiceboxselection(colformatscart, ret);
+		free(ret); ret = NULL;
 	}
-	free(ret); ret = NULL;
 
 	ret = getaudiosourcechoices();
 	changeinput(audiosource, ret);
@@ -271,6 +287,14 @@ void screenavsettings(int flag)
 			if(colformat->ret != NULL)
 			{
 				setcolorformat(colformat->ret); 
+				ret = getcolorformat(1);
+				changeinput(colformat, ret);
+				free(ret); ret = NULL;
+				drawscreen(avsettings, 0, 0);
+			}
+			if(colformatscart->ret != NULL)
+			{
+				setcolorformat(colformatscart->ret); 
 				ret = getcolorformat(2);
 				changeinput(colformatscart, ret);
 				free(ret); ret = NULL;
