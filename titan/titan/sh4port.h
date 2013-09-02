@@ -662,6 +662,7 @@ void sighandler(int sig, struct sigcontext ctx)
 		case SIGFPE:
 		case SIGSEGV:
 		case SIGSTKFLT:
+		case SIGABRT:
 		{
 			/* sh4
 			unsigned long sc_regs[16];

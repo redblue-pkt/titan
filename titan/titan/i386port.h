@@ -203,6 +203,7 @@ void sighandler(int sig, struct sigcontext ctx)
 		case SIGFPE:
 		case SIGSEGV:
 		case SIGSTKFLT:
+		case SIGABRT:
 		{
 			//intel
 			debugstack(sig, (void *)ctx.eip, NULL);

@@ -525,11 +525,11 @@ int main(int argc, char *argv[])
 	sigaction(SIGPIPE, &sa, NULL);
 	sigaction(SIGALRM, &sa, NULL);
 	sigaction(SIGSTKFLT, &sa, NULL);
+	sigaction(SIGABRT, &sa, NULL);
 
 	signal(SIGHUP, SIG_IGN);
 	signal(SIGINT, SIG_IGN);
 	signal(SIGTRAP, SIG_IGN);
-	signal(SIGABRT, SIG_IGN);
 #ifdef SH4
 	signal(SIGTERM, SIG_IGN);
 #endif

@@ -701,6 +701,7 @@ void sighandler(int sig, struct sigcontext ctx)
 		case SIGFPE:
 		case SIGSEGV:
 		case SIGSTKFLT:
+		case SIGABRT:
 		{
 /*
 #ifdef SIMULATE
