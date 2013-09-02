@@ -271,7 +271,7 @@ int createstartscreen()
 //exitcode: 3 Gui restart
 //flag: 0 do not check record
 //flag: 1 check record
-//flag: 2 check record / do write config
+//flag: 2 check record / don't write config
 //flag: 3 check record with timeout
 //flag: 4 check record with increase fixpowerofftime
 //flag: 5 check record with increase powerofftime
