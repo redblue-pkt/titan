@@ -246,211 +246,23 @@ void screensystem_update(int mode)
 				char* msgtxt = NULL;
 				writeallconfig(1);
 
-				if(file_exist("/tmp/.swapextensionsdev") && checkswaplink() == 0 && file_exist("/etc/.beta"))
+				debug(40, "Update: update with log");
+				if(ostrstr(filelist->select->text, "_FULL_") != NULL)
 				{
-					debug(40, "Update: update with log");
-					if(ostrstr(filelist->select->text, "_KERNEL_") != NULL && file_exist("/etc/.beta"))
-					{
-						cmd = ostrcat(cmd, "kernel ", 1, 0);
-						cmd = ostrcat(cmd, tmpstr, 1, 0);
-						cmd = ostrcat(cmd, auth, 1, 0);
-						if(imgtype == 1)
-							cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
-						else
-							cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
-						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
-						msgtxt = ostrcat(msgtxt, _("starting Kernel Update ?"), 1, 0);
-					}
-					else if(ostrstr(filelist->select->text, "_FW_") != NULL && file_exist("/etc/.beta"))
-					{
-						cmd = ostrcat(cmd, "fw ", 1, 0);
-						cmd = ostrcat(cmd, tmpstr, 1, 0);
-						cmd = ostrcat(cmd, auth, 1, 0);
-						if(imgtype == 1)
-							cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
-						else
-							cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
-						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
-						msgtxt = ostrcat(msgtxt, _("starting Fw Update ?"), 1, 0);
-					}
-					else if(ostrstr(filelist->select->text, "_ROOT_") != NULL && file_exist("/etc/.beta"))
-					{
-						cmd = ostrcat(cmd, "root ", 1, 0);
-						cmd = ostrcat(cmd, tmpstr, 1, 0);
-						cmd = ostrcat(cmd, auth, 1, 0);
-						if(imgtype == 1)
-							cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
-						else
-							cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
-						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
-						msgtxt = ostrcat(msgtxt, _("starting Root Update ?"), 1, 0);
-					}
-					else if(ostrstr(filelist->select->text, "_VAR_") != NULL && file_exist("/etc/.beta"))
-					{
-						cmd = ostrcat(cmd, "var ", 1, 0);
-						cmd = ostrcat(cmd, tmpstr, 1, 0);
-						cmd = ostrcat(cmd, auth, 1, 0);
-						if(imgtype == 1)
-							cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
-						else
-							cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
-						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
-						msgtxt = ostrcat(msgtxt, _("starting Var Update ?"), 1, 0);
-					}
-					else if(ostrstr(filelist->select->text, "_FULL_") != NULL)
-					{
-						cmd = ostrcat(cmd, "full ", 1, 0);
-						cmd = ostrcat(cmd, tmpstr, 1, 0);
-						cmd = ostrcat(cmd, auth, 1, 0);
-						if(imgtype == 1)
-							cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
-						else
-							cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
-						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
-						msgtxt = ostrcat(msgtxt, _("starting Full Update ?"), 1, 0);
-					}
-					else if(ostrstr(filelist->select->text, "_USB_") != NULL)
-					{
-						//char* device = getconfig("device", NULL);
-						cmd = ostrcat(cmd, device->ret, 1, 0);
-						cmd = ostrcat(cmd, " ", 1, 0);
-						cmd = ostrcat(cmd, tmpstr, 1, 0);
-						cmd = ostrcat(cmd, auth, 1, 0);
-						if(imgtype == 1)
-							cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
-						else
-							cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
-						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
-						msgtxt = ostrcat(msgtxt, _("starting Usb Update ?"), 1, 0);
-					}
-					else if(ostrstr(filelist->select->text, "_FULLUSB_") != NULL)
-					{
-						//char* device = getconfig("device", NULL);
-						cmd = ostrcat(cmd, device->ret, 1, 0);
-						cmd = ostrcat(cmd, " ", 1, 0);
-						cmd = ostrcat(cmd, tmpstr, 1, 0);
-						cmd = ostrcat(cmd, auth, 1, 0);
-						if(imgtype == 1)
-							cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
-						else
-							cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
-						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
-						msgtxt = ostrcat(msgtxt, _("starting Fullusb Update ?"), 1, 0);
-					}
-					else if(ostrstr(filelist->select->text, ".tar.gz") != NULL)
-					{
-						//char* device = getconfig("device", NULL);
-						cmd = ostrcat(cmd, device->ret, 1, 0);
-						cmd = ostrcat(cmd, " ", 1, 0);
-						cmd = ostrcat(cmd, tmpstr, 1, 0);
-						cmd = ostrcat(cmd, auth, 1, 0);
-						if(imgtype == 1)
-							cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
-						else
-							cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
-						cmd = ostrcat(cmd, " > /var/swap/update_debug.log 2>&1", 1, 0);
-						msgtxt = ostrcat(msgtxt, _("starting Usb (unknown release grp) Update ?"), 1, 0);
-					}
-				}
-				else
-				{
-					debug(40, "Update: update without log");
+					cmd = ostrcat(cmd, "full ", 1, 0);
+					cmd = ostrcat(cmd, tmpstr, 1, 0);
+					cmd = ostrcat(cmd, auth, 1, 0);
+					if(imgtype == 1)
+						cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
+					else
+						cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
 
-					if(ostrstr(filelist->select->text, "_KERNEL_") != NULL && file_exist("/etc/.beta"))
-					{
-						cmd = ostrcat(cmd, "kernel ", 1, 0);
-						cmd = ostrcat(cmd, tmpstr, 1, 0);
-						cmd = ostrcat(cmd, auth, 1, 0);
-						if(imgtype == 1)
-							cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
-						else
-							cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
-						msgtxt = ostrcat(msgtxt, _("starting Kernel Update ?"), 1, 0);
-					}
-					else if(ostrstr(filelist->select->text, "_FW_") != NULL && file_exist("/etc/.beta"))
-					{
-						cmd = ostrcat(cmd, "fw ", 1, 0);
-						cmd = ostrcat(cmd, tmpstr, 1, 0);
-						cmd = ostrcat(cmd, auth, 1, 0);
-						if(imgtype == 1)
-							cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
-						else
-							cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
-						msgtxt = ostrcat(msgtxt, _("starting Fw Update ?"), 1, 0);
-					}
-					else if(ostrstr(filelist->select->text, "_ROOT_") != NULL && file_exist("/etc/.beta"))
-					{
-						cmd = ostrcat(cmd, "root ", 1, 0);
-						cmd = ostrcat(cmd, tmpstr, 1, 0);
-						cmd = ostrcat(cmd, auth, 1, 0);
-						if(imgtype == 1)
-							cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
-						else
-							cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
-						msgtxt = ostrcat(msgtxt, _("starting Root Update starten ?"), 1, 0);
-					}
-					else if(ostrstr(filelist->select->text, "_VAR_") != NULL && file_exist("/etc/.beta"))
-					{
-						cmd = ostrcat(cmd, "var ", 1, 0);
-						cmd = ostrcat(cmd, tmpstr, 1, 0);
-						cmd = ostrcat(cmd, auth, 1, 0);
-						if(imgtype == 1)
-							cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
-						else
-							cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
-						msgtxt = ostrcat(msgtxt, _("starting Var Update ?"), 1, 0);
-					}
-					else if(ostrstr(filelist->select->text, "_FULL_") != NULL)
-					{
-						cmd = ostrcat(cmd, "full ", 1, 0);
-						cmd = ostrcat(cmd, tmpstr, 1, 0);
-						cmd = ostrcat(cmd, auth, 1, 0);
-						if(imgtype == 1)
-							cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
-						else
-							cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
-						msgtxt = ostrcat(msgtxt, _("starting Full Update ?"), 1, 0);
-					}
-					else if(ostrstr(filelist->select->text, "_USB_") != NULL)
-					{
-						//char* device = getconfig("device", NULL);
-						cmd = ostrcat(cmd, device->ret, 1, 0);
-						cmd = ostrcat(cmd, " ", 1, 0);
-						cmd = ostrcat(cmd, tmpstr, 1, 0);
-						cmd = ostrcat(cmd, auth, 1, 0);
-						if(imgtype == 1)
-							cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
-						else
-							cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
-						msgtxt = ostrcat(msgtxt, _("starting Usb Update ?"), 1, 0);
-					}
-					else if(ostrstr(filelist->select->text, "_FULLUSB_") != NULL)
-					{
-						//char* device = getconfig("device", NULL);
-						cmd = ostrcat(cmd, device->ret, 1, 0);
-						cmd = ostrcat(cmd, " ", 1, 0);
-						cmd = ostrcat(cmd, tmpstr, 1, 0);
-						cmd = ostrcat(cmd, auth, 1, 0);
-						if(imgtype == 1)
-							cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
-						else
-							cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
-						msgtxt = ostrcat(msgtxt, _("starting Fullusb Update ?"), 1, 0);
-					}
-					else if(ostrstr(filelist->select->text, ".tar.gz") != NULL)
-					{
-						//char* device = getconfig("device", NULL);
-						cmd = ostrcat(cmd, device->ret, 1, 0);
-						cmd = ostrcat(cmd, " ", 1, 0);
-						cmd = ostrcat(cmd, tmpstr, 1, 0);
-						cmd = ostrcat(cmd, auth, 1, 0);
-						if(imgtype == 1)
-							cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
-						else
-							cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
-						msgtxt = ostrcat(msgtxt, _("starting Usb (unknown release grp) Update ?"), 1, 0);
-					}
+					if(file_exist("/etc/.beta"))
+						cmd = ostrcat(cmd, " > /var/swap/logs/update_debug.log 2>&1", 1, 0);
+
+					msgtxt = ostrcat(msgtxt, _("starting Full Update ?"), 1, 0);
 				}
+
 				clearscreen(systemupdate);
 				resettvpic();
 				if(msgtxt == NULL)
