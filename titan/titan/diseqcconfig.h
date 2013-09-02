@@ -3,7 +3,6 @@
 
 int changeuncommittedcmd(struct skin* cmdorder, char* type)
 {
-	STARTFUNC
 	if(type == NULL || ostrcmp(type, "0") == 0)
 	{
 		changeinput(cmdorder, NULL);
@@ -27,7 +26,6 @@ int changeuncommittedcmd(struct skin* cmdorder, char* type)
 
 void changediseqcmode(struct skin* committedcmd, struct skin* cmdorder, struct skin* uncommittedcmd, struct skin* rotorpos, struct skin* diseqcrepeat, char *type)
 {
-	STARTFUNC
 	committedcmd->hidden = YES;
 	cmdorder->hidden = YES;
 	uncommittedcmd->hidden = YES;
@@ -49,7 +47,6 @@ void changediseqcmode(struct skin* committedcmd, struct skin* cmdorder, struct s
 
 void changediseqc(struct skin* diseqcmode, struct skin* toneburst, struct skin* committedcmd, struct skin* cmdorder, struct skin* uncommittedcmd, struct skin* diseqcrepeat, struct skin* rotorpos, char* feshortname, char *diseqcnr)
 {
-	STARTFUNC
 	char* tmpstr = NULL, *tmpnr = NULL;
 	int i = 0;
 
@@ -105,7 +102,6 @@ void changediseqc(struct skin* diseqcmode, struct skin* toneburst, struct skin* 
 
 void screendiseqc(char* feshortname, char* diseqcnr)
 {
-	STARTFUNC
 	int rcret = 0;
 	struct skin* diseqcscreen = getscreen("diseqcscreen");
 	struct skin* listbox = getscreennode(diseqcscreen, "listbox");
@@ -236,7 +232,6 @@ void screendiseqc(char* feshortname, char* diseqcnr)
 
 void screenownpos()
 {
-	STARTFUNC
 	int rcret = 0;
 	struct skin* ownpos = getscreen("ownpos");
 	struct skin* listbox = getscreennode(ownpos, "listbox");

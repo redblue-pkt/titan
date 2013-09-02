@@ -3,7 +3,6 @@
 
 int dvbwrite(int fd, unsigned char* buf, int count, int tout)
 {
-	STARTFUNC
 	struct timeval timeout;
 	int ret = 0, usec = 0, sec = 0, tmpcount = count;
 	unsigned char* buffer = NULL;
@@ -55,7 +54,6 @@ int dvbwrite(int fd, unsigned char* buf, int count, int tout)
 //flag 1: eof without timeout
 int dvbreadfd(int fd, unsigned char *buf, int pos, int count, int tout, int flag)
 {
-	STARTFUNC
 	struct timeval timeout;
 	int ret = 0, usec = 0, sec = 0;
 	fd_set rfds;
@@ -122,14 +120,12 @@ retry:
 
 int dvbread(struct dvbdev* node, unsigned char *buf, int pos, int count, int tout)
 {
-	STARTFUNC
 	if(node == NULL) return -2;
 	return dvbreadfd(node->fd, buf, pos, count, tout, 0);
 }
 
 int dvbfindpmtpid(int fd, int16_t *pmtpid, int *serviceid, int tssize)
 {
-	STARTFUNC
 	off_t pos = 0;
 	int left = 5 * 1024 * 1024;
 
@@ -197,7 +193,6 @@ int dvbfindpmtpid(int fd, int16_t *pmtpid, int *serviceid, int tssize)
 
 int dvbgetpmtpid(unsigned char *buf, int serviceid)
 {
-	STARTFUNC
 	if(buf == NULL) return 1;
 
 	int i=0;
@@ -222,7 +217,6 @@ int dvbgetpmtpid(unsigned char *buf, int serviceid)
 
 char* dvbgethbbtvurl(unsigned char* buf)
 {
-	STARTFUNC
 	//int seclen = 0;
 	int pos = 0;
 	int pos2 = 0;
@@ -312,7 +306,6 @@ char* dvbgethbbtvurl(unsigned char* buf)
 
 unsigned char* dvbget(struct dvbdev* fenode, int pid, int type, int secnr, int timeout)
 {
-	STARTFUNC
 	int length = -1;
 	struct dvbdev* dmxnode = NULL;
 	unsigned char* buf = NULL;
@@ -357,25 +350,21 @@ unsigned char* dvbget(struct dvbdev* fenode, int pid, int type, int secnr, int t
 
 unsigned char* dvbgetait(struct dvbdev* fenode, int pid, int secnr, int timeout)
 {
-	STARTFUNC
 	return dvbget(fenode, pid, 14, secnr, timeout);
 }
 
 unsigned char* dvbgetsdt(struct dvbdev* fenode, int secnr, int timeout)
 {
-	STARTFUNC
 	return dvbget(fenode, 0x11, 11, secnr, timeout);
 }
 
 unsigned char* dvbgetpat(struct dvbdev* fenode, int timeout)
 {
-	STARTFUNC
 	return dvbget(fenode, 0, 1, 0, timeout);
 }
 
 unsigned char* dvbgetnit(struct dvbdev* fenode, int secnr, int timeout)
 {
-	STARTFUNC
 	return dvbget(fenode, 0x10, 4, secnr, timeout);
 }
 
@@ -383,7 +372,6 @@ unsigned char* dvbgetnit(struct dvbdev* fenode, int secnr, int timeout)
 //flag 1: don't use patbuf
 unsigned char* dvbgetpmt(struct dvbdev* fenode, unsigned char* patbuf, int serviceid, int16_t* pmtpid, int* pmtlen, int timeout, int flag)
 {
-	STARTFUNC
 	int length = -1, i;
 	struct dvbdev* dmxnode = NULL;
 	unsigned char* buf = NULL;
@@ -469,7 +457,6 @@ unsigned char* dvbgetpmt(struct dvbdev* fenode, unsigned char* patbuf, int servi
 
 int dvbgetinfo(unsigned char* pmtbuf, struct channel* chnode)
 {
-	STARTFUNC
 	int i, sectionlength, programinfolength, esinfolength, ret = 0;
 	unsigned short pos, descriptortag, descriptorlength;
 	int isac3 = 0, isdts = 0, isaac = 0;
@@ -721,7 +708,6 @@ int dvbgetinfo(unsigned char* pmtbuf, struct channel* chnode)
 //check dynamic change of pmt
 void dvbgetpmtthread()
 {
-	STARTFUNC
 	int len = 0, change = 0;
 	unsigned char* pmtbuf = NULL;
 
@@ -780,7 +766,6 @@ void dvbgetpmtthread()
 
 time_t dvbconvertdate(unsigned char *buf, int flag)
 {
-	STARTFUNC
 	int i = 0;
 	long mjd;
 	struct tm *time = NULL;
@@ -821,7 +806,6 @@ time_t dvbconvertdate(unsigned char *buf, int flag)
 
 int dvbgetdate(time_t* time, int timeout)
 {
-	STARTFUNC
 	int length = -1, sectionlength;
 	struct dvbdev* dmxnode = NULL;
 	unsigned char *buf = NULL;
@@ -879,7 +863,6 @@ int dvbgetdate(time_t* time, int timeout)
 // getPTS extracts a pts value from any PID at a given offset.
 int getpts(int fd, off64_t offset, int spid, int left, unsigned long long *pts, off64_t *findpos, int dir, int tssize)
 {
-	STARTFUNC
 	int first = 1;
 	
 	offset -= offset % tssize;
@@ -1062,7 +1045,6 @@ int getpts(int fd, off64_t offset, int spid, int left, unsigned long long *pts, 
 
 unsigned long long fixuppts(unsigned long long start, unsigned long long end)
 {
-	STARTFUNC
 		//pts can wrap to 0 in the middle
 		if(end < start)
 			end = end + 0x200000000LL;
@@ -1071,7 +1053,6 @@ unsigned long long fixuppts(unsigned long long start, unsigned long long end)
 
 unsigned long long gettsbitrate(unsigned long long start, unsigned long long end, off64_t startfindpos, off64_t endfindpos)
 {
-	STARTFUNC
 	unsigned long long bitrate = 0;
 	unsigned long long diff = 0;
 
@@ -1087,7 +1068,6 @@ unsigned long long gettsbitrate(unsigned long long start, unsigned long long end
 
 int gettsinfo(int fd, unsigned long long* lenpts, unsigned long long* startpts, unsigned long long* endpts, unsigned long long* bitrate, int tssize)
 {
-	STARTFUNC
 	int ret = 0;
 	unsigned long long start = 0, end = 0;
 	off64_t startfindpos = 0, endfindpos = 0;
@@ -1118,7 +1098,6 @@ int gettsinfo(int fd, unsigned long long* lenpts, unsigned long long* startpts, 
 
 int getptspos(int fd, off64_t startfind, unsigned long long* pts, off64_t* findpos, int dir, int tssize)
 {
-	STARTFUNC
 	int ret = 0;
 	unsigned long long pts1 = 0;
 	off64_t findpos1 = 0;
@@ -1135,7 +1114,6 @@ int getptspos(int fd, off64_t startfind, unsigned long long* pts, off64_t* findp
 //rc = 2 --> h.264
 int findcodec(unsigned char* buf, int len, int tssize)
 {
-	STARTFUNC
 	int i,i1;
 	int rc = 2;
 	
@@ -1160,7 +1138,6 @@ int findcodec(unsigned char* buf, int len, int tssize)
 //flag=2 -> ende Frame
 int findframeHD(unsigned char* buf, int len, int start, int tssize, int flag)
 {
-	STARTFUNC
 	int position = -1;
 	int i = 0;
 	int i1 = 0;
@@ -1221,9 +1198,7 @@ int findframeHD(unsigned char* buf, int len, int start, int tssize, int flag)
 //flag=1 -> I-Fame
 //flag=2 -> ende Frame
 int findframe(unsigned char* buf, int len, int start, int tssize, int flag)
-{
-	STARTFUNC
-	
+{	
 	//#define	SEQ_START_CODE          0x000001b3
 	//#define GOP_START_CODE          0x000001b8
 	//#define PICTURE_START_CODE      0x00000100
@@ -1280,7 +1255,6 @@ int findframe(unsigned char* buf, int len, int start, int tssize, int flag)
 
 int findandposrew(int fd, int tssize, int skip)
 {
-	STARTFUNC
 	int i;
 	int ret = 0;
 	int framelen = -1;

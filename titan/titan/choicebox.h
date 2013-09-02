@@ -3,7 +3,6 @@
 
 int addchoicebox(struct skin* choicebox, char* value, char* text)
 {
-	STARTFUNC
 	char* tmp = NULL;
 
 	if(choicebox == NULL || value == NULL || text == NULL || strlen(value) == 0)
@@ -70,7 +69,6 @@ int addchoicebox(struct skin* choicebox, char* value, char* text)
 
 int setchoiceboxselection(struct skin* choicebox, char* value)
 {
-	STARTFUNC
 	int treffer = 0;
 	char* pos = NULL, *epos = NULL, *end = NULL;
 

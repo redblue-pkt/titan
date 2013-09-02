@@ -2,8 +2,7 @@
 #define BOUQUETS_H
 
 void debugbouquet()
-{
-	STARTFUNC	
+{	
 	struct mainbouquet* mainbouquetnode = mainbouquet;
 	struct bouquet* bouquetnode = NULL;
 
@@ -22,7 +21,6 @@ void debugbouquet()
 
 struct bouquet* getlastbouquet(struct bouquet* node)
 {
-	STARTFUNC
 	struct bouquet *prev = NULL;
 
 	while(node != NULL)
@@ -36,7 +34,6 @@ struct bouquet* getlastbouquet(struct bouquet* node)
 
 struct bouquet* getprevbouquetbyservicetype(struct bouquet* first, struct bouquet* node)
 {
-	STARTFUNC
 	struct bouquet* prev = NULL;
 
 	if(node == NULL) node = first;
@@ -57,7 +54,6 @@ struct bouquet* getprevbouquetbyservicetype(struct bouquet* first, struct bouque
 
 struct bouquet* getnextbouquetbyservicetype(struct bouquet* first, struct bouquet* node)
 {
-	STARTFUNC
 	struct bouquet* next = NULL;
 
 	if(node == NULL) node = first;
@@ -79,7 +75,6 @@ struct bouquet* getnextbouquetbyservicetype(struct bouquet* first, struct bouque
 
 int movebouquetblockdown(struct bouquet* node)
 {
-	STARTFUNC
 	int i = 0, ret = 0;
 	struct bouquet* prev = NULL;
 	struct mainbouquet* mainbouquetnode = NULL;
@@ -118,7 +113,6 @@ int movebouquetblockdown(struct bouquet* node)
 
 int movebouquetdown(struct bouquet* node)
 {
-	STARTFUNC
 	struct bouquet* prev = NULL, *next = NULL;
 	struct mainbouquet* mainbouquetnode = NULL;
 
@@ -172,7 +166,6 @@ int movebouquetdown(struct bouquet* node)
 
 int movebouquetblockup(struct bouquet* node)
 {
-	STARTFUNC
 	int i = 0, ret = 0;
 	struct bouquet* next = NULL;
 	struct mainbouquet* mainbouquetnode = NULL;
@@ -203,7 +196,6 @@ int movebouquetblockup(struct bouquet* node)
 
 int movebouquetup(struct bouquet* node)
 {
-	STARTFUNC
 	struct bouquet* prev = NULL, *next = NULL, *last = NULL;
 	struct mainbouquet* mainbouquetnode = NULL;
 
@@ -259,7 +251,6 @@ int movebouquetup(struct bouquet* node)
 
 struct bouquet* getbouquetbychannel(struct bouquet* node, int serviceid, uint64_t transponderid)
 {
-	STARTFUNC
 	while(node != NULL)
 	{
 		if(node->channel != NULL && node->channel->serviceid == serviceid && node->channel->transponderid == transponderid)
@@ -271,7 +262,6 @@ struct bouquet* getbouquetbychannel(struct bouquet* node, int serviceid, uint64_
 
 struct bouquet* getbouquetbynr(int nr)
 {
-	STARTFUNC
 	struct mainbouquet* mainbouquetnode = mainbouquet;
 	struct bouquet* bouquetnode = NULL;
 
@@ -293,7 +283,6 @@ struct bouquet* getbouquetbynr(int nr)
 
 struct bouquet* addbouquet(struct bouquet **firstnode, char *line, int type, int count, struct bouquet* last)
 {
-	STARTFUNC
 	struct bouquet *newnode = NULL, *prev = NULL, *node = *firstnode;
 	int ret = 0;
 
@@ -364,7 +353,6 @@ struct bouquet* addbouquet(struct bouquet **firstnode, char *line, int type, int
 
 void recalcbouquetnr()
 {
-	STARTFUNC
 	int i;
 	struct mainbouquet* node = mainbouquet;
 	struct bouquet* bouquetnode = NULL;
@@ -390,7 +378,6 @@ void recalcbouquetnr()
 
 int readbouquet(char* filename, struct bouquet** firstnode, int type)
 {
-	STARTFUNC
 	FILE *fd = NULL;
 	char *fileline = NULL;
 	int linecount = 0, len = 0;
@@ -437,7 +424,6 @@ int readbouquet(char* filename, struct bouquet** firstnode, int type)
 
 void delbouquet(int serviceid, uint64_t transponderid, struct bouquet** firstnode)
 {
-	STARTFUNC
 	struct bouquet *node = *firstnode, *prev = *firstnode;
 
 	while(node != NULL)
@@ -470,7 +456,6 @@ void delbouquet(int serviceid, uint64_t transponderid, struct bouquet** firstnod
 
 void setbouquetchanneltonullmain(int serviceid, uint64_t transponderid)
 {
-	STARTFUNC
 	struct mainbouquet* node = mainbouquet;
 	struct bouquet* bouquetnode = NULL;
 
@@ -489,7 +474,6 @@ void setbouquetchanneltonullmain(int serviceid, uint64_t transponderid)
 
 void delbouquetbychannel(int serviceid, uint64_t transponderid)
 {
-	STARTFUNC
 	struct mainbouquet* node = mainbouquet;
 
 	while(node != NULL)
@@ -504,7 +488,6 @@ void delbouquetbychannel(int serviceid, uint64_t transponderid)
 //flag: 1 = do not del bouquet
 void delunusedbouquetchannels(int flag)
 {
-	STARTFUNC
 	struct mainbouquet* mainbouquetnode = mainbouquet;
 	struct bouquet *node = NULL, *prev = NULL;
 	struct channel* chnode = NULL;
@@ -529,7 +512,6 @@ void delunusedbouquetchannels(int flag)
 
 void freebouquet(struct bouquet** firstnode)
 {
-	STARTFUNC
 	struct bouquet *node = *firstnode, *prev = *firstnode;
 
 	while(node != NULL)
@@ -543,7 +525,6 @@ void freebouquet(struct bouquet** firstnode)
 
 struct bouquet* sortbouquet(struct bouquet **nodeaddr)
 {
-	STARTFUNC
 	struct bouquet *nodea = NULL, *nodeb = NULL, *nodec = NULL, *noded = NULL;
 	struct bouquet *nodetmp = NULL;
 
@@ -618,7 +599,6 @@ struct bouquet* sortbouquet(struct bouquet **nodeaddr)
 /*
 struct bouquet* sortbouquet(struct bouquet **nodeaddr)
 {
-	STARTFUNC
 	struct bouquet *tmpnode[10] = {0};
 	struct bouquet *tnode = NULL;
 	struct bouquet *next = NULL, *prev = NULL;
@@ -702,7 +682,6 @@ struct bouquet* sortbouquet(struct bouquet **nodeaddr)
 
 int writebouquet(const char *filename, struct bouquet *node)
 {
-	STARTFUNC
 	FILE *fd = NULL;
 	int ret = 0;
 

@@ -3,7 +3,6 @@
 
 void blindcalc()
 {	
-	STARTFUNC
 	unsigned int blindmax = 0, cblindmax = 0, tblindmax = 0;
 	char* tmpstr = NULL;
 
@@ -29,7 +28,6 @@ void blindcalc()
 
 void blindchangetunertype(struct skin* tunertype, struct skin* minfrequency, struct skin* maxfrequency, struct skin* stepfrequency, struct skin* minsignalrate, struct skin* maxsignalrate, struct skin* stepsignalrate, struct skin* usedefaultsr, struct skin* onlydvbs, struct skin* usedefaultfec, struct skin* cminfrequency, struct skin* cmaxfrequency, struct skin* cstepfrequency, struct skin* cminsignalrate, struct skin* cmaxsignalrate, struct skin* cstepsignalrate, struct skin* cusedefaultsr, struct skin* cusedefaultfec, struct skin* tminfrequency, struct skin* tmaxfrequency, struct skin* tstepfrequency)
 {	
-	STARTFUNC
 	minfrequency->hidden = YES;
 	maxfrequency->hidden = YES;
 	stepfrequency->hidden = YES;
@@ -85,8 +83,7 @@ void blindchangetunertype(struct skin* tunertype, struct skin* minfrequency, str
 }
 
 void screenblindscanadjust()
-{	
-	STARTFUNC
+{
 	int rcret = 0;
 	struct skin* blindscan = getscreen("blindscanadjust");
 	struct skin* listbox = getscreennode(blindscan, "listbox");

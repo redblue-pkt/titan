@@ -5,7 +5,6 @@
 //flag 1: use dvbdevsim
 struct dvbdev* adddvbdev(char *dev, int adapter, int devnr, int fd, int type, struct dvb_frontend_info* feinfo, struct dvbdev* last, int flag)
 {
-	STARTFUNC
 	struct dvbdev *newnode = NULL, *node = NULL;
 	char* tmp = NULL, *tmp1 = NULL;
 
@@ -98,7 +97,6 @@ struct dvbdev* adddvbdev(char *dev, int adapter, int devnr, int fd, int type, st
 //flag 1: use dvbdevsim
 void deldvbdev(char *dev, int flag)
 {
-	STARTFUNC
 	struct dvbdev *node = NULL, *prev = NULL;
 
 	if(flag == 0)
@@ -157,7 +155,6 @@ void deldvbdev(char *dev, int flag)
 //flag 1: use dvbdevsim
 void freedvbdev(int flag)
 {
-	STARTFUNC
 	struct dvbdev *node = NULL, *prev = NULL;
 
 	if(flag == 0)

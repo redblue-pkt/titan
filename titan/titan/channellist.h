@@ -3,7 +3,6 @@
 
 int selectchannel(struct skin* listbox, int sid, uint64_t tid)
 {
-	STARTFUNC
 	struct skin* node = listbox;
 	struct channel* chnode = NULL;
 	listbox->aktpage = -1;
@@ -50,7 +49,6 @@ int selectchannel(struct skin* listbox, int sid, uint64_t tid)
 
 void changechannelepg(struct channel* chnode, struct skin* node)
 {
-	STARTFUNC
 	struct epg* epgnode = NULL;
 	char* tmpstr = NULL;
 
@@ -66,7 +64,6 @@ void changechannelepg(struct channel* chnode, struct skin* node)
 
 void showallchannel(struct skin* channellist, struct skin* listbox, struct skin* channeltimeline, int mode)
 {
-	STARTFUNC
 	struct skin* chnode = NULL;
 	struct channel* tmpchannel = channel;
 	long long deaktivcol = convertcol("deaktivcol");
@@ -117,7 +114,6 @@ void showallchannel(struct skin* channellist, struct skin* listbox, struct skin*
 
 void showbouquetchannel(struct skin* channellist, struct skin* listbox, struct skin* channeltimeline, struct bouquet* firstbouquet, struct mainbouquet* mbouquet, int mode)
 {
-	STARTFUNC
 	struct skin* chnode = NULL;
 	struct bouquet* tmpbouquet = firstbouquet;
 	char* tmpstr = NULL, *tmpnr = NULL;
@@ -186,7 +182,6 @@ void showbouquetchannel(struct skin* channellist, struct skin* listbox, struct s
 
 void showproviderchannel(struct skin* channellist, struct skin* listbox, struct skin* channeltimeline, struct provider* providernode, int mode)
 {
-	STARTFUNC
 	struct skin* chnode = NULL;
 	struct channel* tmpchannel = channel;
 	long long deaktivcol = convertcol("deaktivcol");
@@ -240,7 +235,6 @@ void showproviderchannel(struct skin* channellist, struct skin* listbox, struct 
 
 void showprovider(struct skin* channellist, struct skin* listbox)
 {
-	STARTFUNC
 	struct provider *node = provider;
 	struct skin* providernode = NULL;
 
@@ -260,7 +254,6 @@ void showprovider(struct skin* channellist, struct skin* listbox)
 
 void showsatchannel(struct skin* channellist, struct skin* listbox, struct skin* channeltimeline, struct sat* satnode, int mode)
 {
-	STARTFUNC
 	struct skin* chnode = NULL;
 	struct channel* tmpchannel = channel;
 	long long deaktivcol = convertcol("deaktivcol");
@@ -317,7 +310,6 @@ void showsatchannel(struct skin* channellist, struct skin* listbox, struct skin*
 
 void showsat(struct skin* channellist, struct skin* listbox)
 {
-	STARTFUNC
 	int i = 0, treffer = 0;
 	struct sat *node = sat;
 	struct dvbdev *dvbnode = NULL;
@@ -370,7 +362,6 @@ void showsat(struct skin* channellist, struct skin* listbox)
 
 void showazchannel(struct skin* channellist, struct skin* listbox, struct skin* channeltimeline, int character, int mode)
 {
-	STARTFUNC
 	struct skin* chnode = NULL;
 	struct channel* tmpchannel = channel;
 	long long deaktivcol = convertcol("deaktivcol");
@@ -424,7 +415,6 @@ void showazchannel(struct skin* channellist, struct skin* listbox, struct skin* 
 
 void showaz(struct skin* channellist, struct skin* listbox)
 {
-	STARTFUNC
 	struct skin* node = NULL;
 	int i;
 	char* tmpstr = NULL;
@@ -453,7 +443,6 @@ void showaz(struct skin* channellist, struct skin* listbox)
 
 void showmainbouquet(struct skin* channellist, struct skin* listbox)
 {
-	STARTFUNC
 	struct mainbouquet *node = mainbouquet;
 	struct skin* bouquetnode = NULL;
 
@@ -476,7 +465,6 @@ void showmainbouquet(struct skin* channellist, struct skin* listbox)
 
 void drawchannellist(struct skin* channellist, int list, struct skin* listbox)
 {
-	STARTFUNC
 	status.markedchannel = NULL;
 	if(list == ALLCHANNEL || list == SATCHANNEL || list == PROVIDERCHANNEL || list == AZCHANNEL || list == BOUQUETCHANNEL)
 	{
@@ -491,7 +479,6 @@ void drawchannellist(struct skin* channellist, int list, struct skin* listbox)
 
 void recalclist(int list, void* aktlist, int listmode, struct skin* channellist, struct skin* listbox, struct skin* channeltimeline)
 {
-	STARTFUNC
 	if(list == ALLCHANNEL)
 		showallchannel(channellist, listbox, channeltimeline, listmode);
 	if(list == SATCHANNEL)
@@ -512,7 +499,6 @@ void recalclist(int list, void* aktlist, int listmode, struct skin* channellist,
 
 void changebutton(int listmode, struct skin* b1, struct skin* b2, struct skin* b3, struct skin* b4, struct skin* b5, struct skin* b6, struct skin* b7, struct skin* b8, struct skin* b9, struct skin* b10, struct skin* b11, struct skin* b12, struct skin* b13, struct skin* b14, struct skin* b15, int flag)
 {
-	STARTFUNC
 	if(listmode == NOMODE)
 	{
 		b1->hidden = NO;
@@ -580,7 +566,6 @@ void changebutton(int listmode, struct skin* b1, struct skin* b2, struct skin* b
 
 void changechanneltitle(struct skin* channellist, struct skin* listbox, int listmode, char** oldtitle, long* oldfontcol, long* oldbgcol)
 {
-	STARTFUNC
 	struct skin* titletext = getscreennode(channellist, "titletext");
 	char* tmpstr = NULL;
 
@@ -644,7 +629,6 @@ void changechanneltitle(struct skin* channellist, struct skin* listbox, int list
 
 void addscreenrcchannellist(struct skin* channellist, struct skin* listbox)
 {
-	STARTFUNC
 	addscreenrc(channellist, listbox);
 
 	//deaktivate for blockmove
@@ -657,7 +641,6 @@ void addscreenrcchannellist(struct skin* channellist, struct skin* listbox)
 //flag 3: edit modus
 int screenchannellist(struct channel** retchannel, char** retchannellist, int flag)
 {
-	STARTFUNC
 	struct skin* channellist = getscreen("channellist");
 	struct skin* titletext = getscreennode(channellist, "titletext");
 	struct skin* listbox = getscreennode(channellist, "listbox");
