@@ -36,7 +36,7 @@ void screeneraseswap()
 		system("touch /var/etc/.erasemtd");
 		sleep(4);
 		clearscreen(load);
-		oshutdown(2, 1);
+		oshutdown(2, 2);
 	}
 }
 
@@ -52,7 +52,7 @@ void screenbackuperaseswap()
 		system("touch /var/etc/.backupmtd");
 		sleep(4);
 		clearscreen(load);
-		oshutdown(2, 1);
+		oshutdown(2, 2);
 	}
 }
 
