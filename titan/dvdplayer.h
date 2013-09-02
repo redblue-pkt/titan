@@ -15,7 +15,6 @@ int dvdmenu = 0;
 
 int dvd_calc_y_fbscreen()
 {
-	STARTFUNC
 	int y_offset = 0;
 	int dvd_aspect = 0;
 
@@ -49,7 +48,6 @@ int dvd_calc_y_fbscreen()
 
 int dvd_calc_x_fbscreen()
 {
-	STARTFUNC
 	int x_offset = 0;
 	int dvd_aspect = 0;
 
@@ -82,7 +80,6 @@ int dvd_calc_x_fbscreen()
 
 int dvdblit()
 {
-	STARTFUNC
 #ifdef DVDPLAYER
 	int x_offset = dvd_calc_x_fbscreen();
 	int y_offset = dvd_calc_y_fbscreen();
@@ -150,7 +147,6 @@ int dvdblit()
 
 void dvdchangevideo()
 {
-	STARTFUNC
 #ifdef DVDPLAYER
 	char* tmpstr = NULL;
 
@@ -187,7 +183,6 @@ void dvdchangevideo()
 
 void dvdcleanup()
 {
-	STARTFUNC
 #ifdef DVDPLAYER
 	ddvdconfig = NULL;
 	dvdtimerthread = NULL;
@@ -204,7 +199,6 @@ void dvdcleanup()
 
 void dvdthread()
 {
-	STARTFUNC
 	debug(333, "dvd thread start");
 
 #ifdef DVDPLAYER
@@ -222,7 +216,6 @@ void dvdthread()
 
 int dvdstart(char* filename)
 {
-	STARTFUNC
 #ifdef DVDPLAYER
 	char* tmpstr = NULL;
 
@@ -295,7 +288,6 @@ int dvdstart(char* filename)
 
 int dvdmenuopen()
 {
-	STARTFUNC
 #ifdef DVDPLAYER
 	return dvdmenu;
 #else
@@ -305,7 +297,6 @@ int dvdmenuopen()
 
 void dvdgotmessage()
 {
-	STARTFUNC
 #ifdef DVDPLAYER
 	if(ddvdconfig == NULL) return;
 	switch(ddvd_get_next_message(ddvdconfig, 0))
@@ -466,7 +457,6 @@ void dvdgotmessage()
 
 int dvdisplaying()
 {
-	STARTFUNC
 #ifdef DVDPLAYER
 	if(dvdtimerthread == NULL)
 		return 0;
@@ -476,12 +466,10 @@ int dvdisplaying()
 
 void dvdafterend()
 {
-	STARTFUNC
 }
 
 int dvdstop()
 {
-	STARTFUNC
 #ifdef DVDPLAYER
 	debug(333, "dvd stop");
 	int i = 0;
@@ -502,7 +490,6 @@ int dvdstop()
 
 int dvdgetnumaudiotracks()
 {
-	STARTFUNC
 	unsigned int i = 0;
 
 #ifdef DVDPLAYER
@@ -515,7 +502,6 @@ int dvdgetnumaudiotracks()
 
 int dvdgetcuraudiotrack()
 {
-	STARTFUNC
 	int audioid = -1;
 
 #ifdef DVDPLAYER
@@ -531,7 +517,6 @@ int dvdgetcuraudiotrack()
 
 int dvdchangeaudiotrack(unsigned int i)
 {
-	STARTFUNC
 #ifdef DVDPLAYER
 	if(ddvdconfig != NULL)
 		ddvd_set_audio(ddvdconfig, i);
@@ -542,7 +527,6 @@ int dvdchangeaudiotrack(unsigned int i)
 
 char* dvdgetaudiotrackinfo(unsigned int audioid)
 {
-	STARTFUNC
 	char* tmpstr = NULL;
 
 #ifdef DVDPLAYER
@@ -582,7 +566,6 @@ char* dvdgetaudiotrackinfo(unsigned int audioid)
 
 int dvdgetnumsputracks()
 {
-	STARTFUNC
 	unsigned int i = 0;
 
 #ifdef DVDPLAYER
@@ -595,7 +578,6 @@ int dvdgetnumsputracks()
 
 int dvdgetcursputrack()
 {
-	STARTFUNC
 	int spuid = -1;
 
 #ifdef DVDPLAYER
@@ -610,7 +592,6 @@ int dvdgetcursputrack()
 
 int dvdchangesputrack(unsigned int i)
 {
-	STARTFUNC
 #ifdef DVDPLAYER
 	if(ddvdconfig != NULL)
 		ddvd_set_spu(ddvdconfig, i);
@@ -621,7 +602,6 @@ int dvdchangesputrack(unsigned int i)
 
 char* dvdgetsputrackinfo(unsigned int spuid)
 {
-	STARTFUNC
 	char* tmpstr = NULL;
 
 #ifdef DVDPLAYER
@@ -640,7 +620,6 @@ char* dvdgetsputrackinfo(unsigned int spuid)
 
 int dvdgetangelinfo()
 {
-	STARTFUNC
 #ifdef DVDPLAYER
 	int current = 0, num = 0;
 
@@ -654,7 +633,6 @@ int dvdgetangelinfo()
 
 int dvdff(int speed)
 {
-	STARTFUNC
 #ifdef DVDPLAYER
 	if(ddvdconfig == NULL) return 1;
 	debug(333, "dvd fastforward (%d)", speed);
@@ -668,7 +646,6 @@ int dvdff(int speed)
 
 int dvdfr(int speed)
 {
-	STARTFUNC
 #ifdef DVDPLAYER
 	if(ddvdconfig == NULL) return 1;
 	debug(333, "dvd rewind (%d)", speed);
@@ -682,7 +659,6 @@ int dvdfr(int speed)
 
 int dvdpause()
 {
-	STARTFUNC
 	debug(333, "dvd pause");
 
 #ifdef DVDPLAYER
@@ -695,7 +671,6 @@ int dvdpause()
 
 int dvdplay()
 {
-	STARTFUNC
 	debug(333, "dvd play");
 
 #ifdef DVDPLAYER
@@ -708,13 +683,11 @@ int dvdplay()
 
 int dvdcontinue()
 {
-	STARTFUNC
 	return dvdplay();
 }
 
 int dvdgetinfo(int flag)
 {
-	STARTFUNC
 #ifdef DVDPLAYER
 	if(ddvdconfig == NULL) return 1;
 
@@ -758,7 +731,6 @@ int dvdgetinfo(int flag)
 
 int dvdsetfb()
 {
-	STARTFUNC
 #ifdef DVDPLAYER
 	int width = 720, height = 576, colbytes = 4;
 
@@ -779,7 +751,6 @@ int dvdsetfb()
 
 unsigned long long dvdgetlength()
 {
-	STARTFUNC
 	unsigned long long len = 0;
 
 #ifdef DVDPLAYER
@@ -800,7 +771,6 @@ unsigned long long dvdgetlength()
 
 int dvdsetresume()
 {
-	STARTFUNC
 #ifdef DVDPLAYER
 	if(ddvdconfig != NULL)
 	{
@@ -813,7 +783,6 @@ int dvdsetresume()
 
 int dvdgetresume()
 {
-	STARTFUNC
 #ifdef DVDPLAYER
 	if(ddvdconfig != NULL)
 	{
@@ -826,7 +795,6 @@ int dvdgetresume()
 
 int dvdseek(int sec)
 {
-	STARTFUNC
 #ifdef DVDPLAYER
 	if(ddvdconfig != NULL)
 	{
@@ -839,7 +807,6 @@ int dvdseek(int sec)
 
 unsigned long long dvdgetpts()
 {
-	STARTFUNC
 	unsigned long long pts = 0;
 
 #ifdef DVDPLAYER
@@ -861,7 +828,6 @@ unsigned long long dvdgetpts()
 
 int dvdseektitle(int title)
 {
-	STARTFUNC
 	debug(333, "seek title %d", title);
 
 #ifdef DVDPLAYER
@@ -874,7 +840,6 @@ int dvdseektitle(int title)
 
 int dvdseekchapter(int chapter)
 {
-	STARTFUNC
 	debug(333, "seek chapter %d", chapter);
 
 #ifdef DVDPLAYER
@@ -887,7 +852,6 @@ int dvdseekchapter(int chapter)
 
 int dvdkeypress(int key)
 {
-	STARTFUNC
 #ifdef DVDPLAYER
 	if(ddvdconfig == NULL) return 1;
 

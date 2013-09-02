@@ -3,7 +3,6 @@
 
 struct dvbdev* ciopen(struct dvbdev* node)
 {
-	STARTFUNC
 	int fd = -1;
 
 	if(node != NULL)
@@ -25,7 +24,6 @@ struct dvbdev* ciopen(struct dvbdev* node)
 
 int ciopendirect(char *cidev)
 {
-	STARTFUNC
 	int fd = -1;
 
 	if((fd = open(cidev, O_RDWR | O_NONBLOCK)) < 0)
@@ -39,7 +37,6 @@ int ciopendirect(char *cidev)
 
 void ciclose(struct dvbdev* node, int fd)
 {
-	STARTFUNC
 	if(node != NULL)
 	{
 		close(node->fd);
@@ -51,7 +48,6 @@ void ciclose(struct dvbdev* node, int fd)
 
 int cigetdev()
 {
-	STARTFUNC
 	int i, y, fd = -1, count = 0;
 	char *buf = NULL, *cidev = NULL;
 

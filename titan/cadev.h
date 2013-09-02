@@ -3,7 +3,6 @@
 
 struct dvbdev* caopen(int adapter)
 {
-	STARTFUNC
 	int fd = -1;
 	struct dvbdev* node = dvbdev;
 
@@ -33,7 +32,6 @@ struct dvbdev* caopen(int adapter)
 
 int caopendirect(char *cadev)
 {
-	STARTFUNC
 	int fd = -1;
 
 	if((fd = open(cadev, O_RDWR | O_NONBLOCK)) < 0)
@@ -47,7 +45,6 @@ int caopendirect(char *cadev)
 
 void caclose(struct dvbdev* node, int fd)
 {
-	STARTFUNC
 	if(node != NULL)
 	{
 		close(node->fd);
@@ -59,7 +56,6 @@ void caclose(struct dvbdev* node, int fd)
 
 int cagetcaps(struct dvbdev* node, struct ca_caps* caps)
 {
-	STARTFUNC
 	if(node == NULL)
 	{
 		err("NULL detect");
@@ -83,7 +79,6 @@ int cagetcaps(struct dvbdev* node, struct ca_caps* caps)
 
 int cagetmsg(struct dvbdev* node, struct ca_msg *msg)
 {
-	STARTFUNC
 	if(node == NULL)
 	{
 		err("NULL detect");
@@ -102,7 +97,6 @@ int cagetmsg(struct dvbdev* node, struct ca_msg *msg)
 
 int casendmsg(struct dvbdev* node, struct ca_msg *msg)
 {
-	STARTFUNC
 	if(node == NULL)
 	{
 		err("NULL detect");
@@ -121,7 +115,6 @@ int casendmsg(struct dvbdev* node, struct ca_msg *msg)
 
 int cagetdesc(struct dvbdev* node, struct ca_descr *descr)
 {
-	STARTFUNC
 	if(node == NULL)
 	{
 		err("NULL detect");
@@ -140,7 +133,6 @@ int cagetdesc(struct dvbdev* node, struct ca_descr *descr)
 
 int casetdesc(struct dvbdev* node, struct ca_descr *descr)
 {
-	STARTFUNC
 	if(node == NULL)
 	{
 		err("NULL detect");
@@ -159,7 +151,6 @@ int casetdesc(struct dvbdev* node, struct ca_descr *descr)
 
 int casetpid(struct dvbdev* node, struct ca_pid *pid)
 {
-	STARTFUNC
 	if(node == NULL)
 	{
 		err("NULL detect");
@@ -178,7 +169,6 @@ int casetpid(struct dvbdev* node, struct ca_pid *pid)
 
 int careset(struct dvbdev* node, int slot)
 {
-	STARTFUNC
 	if(node == NULL)
 	{
 		err("NULL detect");
@@ -197,7 +187,6 @@ int careset(struct dvbdev* node, int slot)
 
 int cagetslotinfo(struct dvbdev* node, ca_slot_info_t* info)
 {
-	STARTFUNC
 	if(node == NULL)
 	{
 		err("NULL detect");
@@ -222,7 +211,6 @@ int cagetslotinfo(struct dvbdev* node, ca_slot_info_t* info)
 //without this artefakte
 void cainit(int fd)
 {
-	STARTFUNC
 	ca_descr_t cadescr;
 	unsigned char buf[8];
 
@@ -243,7 +231,6 @@ void cainit(int fd)
 
 int cagetdev()
 {
-	STARTFUNC
 	int i, y, fd = -1, count = 0;
 	char *buf = NULL, *cadev = NULL;
 

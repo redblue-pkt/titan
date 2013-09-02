@@ -3,7 +3,6 @@
 
 struct audiotrack* checkaudiotrack(struct channel* chnode, struct audiotrack* atrack)
 {
-	STARTFUNC
 	struct audiotrack* node = NULL;
 
 	if(chnode != NULL)
@@ -21,7 +20,6 @@ struct audiotrack* checkaudiotrack(struct channel* chnode, struct audiotrack* at
 
 void screenaudiotrack()
 {
-	STARTFUNC
 	int rcret = 0, treffer = 0;
 	struct skin* audiotrack = getscreen("audiotrack");
 	struct skin* listbox = getscreennode(audiotrack, "listbox");
@@ -96,7 +94,6 @@ void screenaudiotrack()
 
 struct audiotrack* addaudiotrack(struct channel* chnode, char* langdesc, int pid, int audiocodec, struct audiotrack* last)
 {
-	STARTFUNC
 	struct audiotrack *newnode = NULL, *prev = NULL, *node = NULL;
 	char *tmpstr = NULL;
 
@@ -160,7 +157,6 @@ struct audiotrack* addaudiotrack(struct channel* chnode, char* langdesc, int pid
 
 void freeaudiotrack(struct channel* chnode)
 {
-	STARTFUNC
 	struct audiotrack *node = NULL, *prev = NULL;
 
 	if(chnode == NULL)

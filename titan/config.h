@@ -3,19 +3,16 @@
 
 struct clist* addconfigtmp(char *key, char *value)
 {
-	STARTFUNC
 	return addlisttmp(config, key, value);
 }
 
 struct clist* addconfigdef(char *key, char *value)
 {
-	STARTFUNC
 	return addlistdef(config, key, value);
 }
 
 struct clist* addconfig(char *key, char *value)
 {
-	STARTFUNC
 	struct clist* node = NULL;
 
 	node = addlist(config, key, value);
@@ -27,7 +24,6 @@ struct clist* addconfig(char *key, char *value)
 
 struct clist* addconfigscreentmp(char *key, struct skin *node)
 {
-	STARTFUNC
 	struct clist* ret = NULL;
 
 	if(key != NULL && node != NULL && node->ret != NULL)
@@ -43,7 +39,6 @@ struct clist* addconfigscreentmp(char *key, struct skin *node)
 
 struct clist* addconfigscreentmpcheck(char *key, struct skin *node, char* check)
 {
-	STARTFUNC
 	if(ostrcmp(node->ret, check) == 0)
 		return addconfigtmp(key, "");
 	else
@@ -52,7 +47,6 @@ struct clist* addconfigscreentmpcheck(char *key, struct skin *node, char* check)
 
 struct clist* addconfigscreen(char *key, struct skin *node)
 {
-	STARTFUNC
 	struct clist* ret = NULL;
 
 	if(key != NULL && node != NULL && node->ret != NULL)
@@ -68,7 +62,6 @@ struct clist* addconfigscreen(char *key, struct skin *node)
 
 struct clist* addconfigscreencheck(char *key, struct skin *node, char* check)
 {
-	STARTFUNC
 	if(ostrcmp(node->ret, check) == 0)
 		delconfig(key);
 	else
@@ -79,7 +72,6 @@ struct clist* addconfigscreencheck(char *key, struct skin *node, char* check)
 
 struct clist* addconfiginttmp(char *key, int value)
 {
-	STARTFUNC
 	char* fileline = NULL;
 	struct clist* ret = NULL;
 
@@ -92,7 +84,6 @@ struct clist* addconfiginttmp(char *key, int value)
 
 struct clist* addconfigllutmp(char *key, uint64_t value)
 {
-	STARTFUNC
 	char* fileline = NULL;
 	struct clist* ret = NULL;
 
@@ -105,7 +96,6 @@ struct clist* addconfigllutmp(char *key, uint64_t value)
 
 struct clist* addconfiglutmp(char *key, unsigned long value)
 {
-	STARTFUNC
 	char* fileline = NULL;
 	struct clist* ret = NULL;
 
@@ -118,7 +108,6 @@ struct clist* addconfiglutmp(char *key, unsigned long value)
 
 struct clist* addconfigint(char *key, int value)
 {
-	STARTFUNC
 	char* fileline = NULL;
 	struct clist* ret = NULL;
 
@@ -131,7 +120,6 @@ struct clist* addconfigint(char *key, int value)
 
 struct clist* addconfigllu(char *key, uint64_t value)
 {
-	STARTFUNC
 	char* fileline = NULL;
 	struct clist* ret = NULL;
 
@@ -144,7 +132,6 @@ struct clist* addconfigllu(char *key, uint64_t value)
 
 struct clist* addconfiglu(char *key, unsigned long value)
 {
-	STARTFUNC
 	char* fileline = NULL;
 	struct clist* ret = NULL;
 
@@ -157,7 +144,6 @@ struct clist* addconfiglu(char *key, unsigned long value)
 
 struct clist* addconfigintcheck(char *key, int value, int check)
 {
-	STARTFUNC
 	if(value == check)
 		delconfig(key);
 	else
@@ -168,7 +154,6 @@ struct clist* addconfigintcheck(char *key, int value, int check)
 
 int readconfig(const char *filename, struct clist** tmpconfig)
 {
-	STARTFUNC
 	FILE *fd = NULL;
 	char *fileline = NULL, *pos;
 	int len = 0;
@@ -214,7 +199,6 @@ int readconfig(const char *filename, struct clist** tmpconfig)
 
 int writeconfigtmp()
 {
-	STARTFUNC
 	int ret = 0;
 
 	if(writelisttmp(config) == 0)
@@ -225,31 +209,26 @@ int writeconfigtmp()
 
 int writeconfig(const char *filename)
 {
-	STARTFUNC
 	return writelist(config, filename);
 }
 
 char* getconfigbyval(char *value, char *ext)
 {
-	STARTFUNC
 	return getlistbyval(config, value, ext);
 }
 
 char* getconfignotmp(char *key, char *ext)
 {
-	STARTFUNC
 	return getlistnotmp(config, key, ext);
 }
 
 char* getconfig(char *key, char *ext)
 {
-	STARTFUNC
 	return getlist(config, key, ext);
 }
 
 int getconfigint(char *key, char *ext)
 {
-	STARTFUNC
 	char *ret = NULL;
 
 	ret = getlist(config, key, ext);
@@ -261,7 +240,6 @@ int getconfigint(char *key, char *ext)
 
 float getconfigfloat(char *key, char *ext)
 {
-	STARTFUNC
 	char *ret = NULL;
 
 	ret = getlist(config, key, ext);
@@ -273,7 +251,6 @@ float getconfigfloat(char *key, char *ext)
 
 uint64_t getconfigllu(char *key, char *ext)
 {
-	STARTFUNC
 	char *ret = NULL;
 
 	ret = getlist(config, key, ext);
@@ -285,7 +262,6 @@ uint64_t getconfigllu(char *key, char *ext)
 
 unsigned long getconfiglu(char *key, char *ext)
 {
-	STARTFUNC
 	char *ret = NULL;
 
 	ret = getlist(config, key, ext);
@@ -297,32 +273,27 @@ unsigned long getconfiglu(char *key, char *ext)
 
 void delconfigtmpall()
 {
-	STARTFUNC
 	dellisttmpall(config);
 }
 
 void delconfigtmp(char *key)
 {
-	STARTFUNC
 	dellisttmp(config, key);
 }
 
 void delconfig(char *key)
 {
-	STARTFUNC
 	status.writeconfig = 1;
 	dellist(config, key, 0);
 }
 
 void freeconfig()
 {
-	STARTFUNC
 	freelist(config);
 }
 
 int reloadconfig(char *filename)
 {
-	STARTFUNC
 	int ret = 0;
 
 	freeconfig();

@@ -3,7 +3,6 @@
 
 void debugcaservice()
 {
-	STARTFUNC
 	int i = 0;
 
 	for(i = 0; i < MAXCASERVICE; i++)
@@ -23,7 +22,6 @@ void debugcaservice()
 
 int getcaservicebyslot(struct caslot* caslot, int flag)
 {
-	STARTFUNC
 	int i = 0;
 
 	for(i = 0; i < MAXCASERVICE; i++)
@@ -48,7 +46,6 @@ int getcaservicebyslot(struct caslot* caslot, int flag)
 //flag 3 = from recordthread
 int caserviceadd(struct service* snode, int flag)
 {
-	STARTFUNC
 	int i = 0, first = -1;
 
 	if(snode == NULL) return -1;
@@ -89,7 +86,6 @@ int caserviceadd(struct service* snode, int flag)
 
 void caservicedel(struct service* snode, struct caslot* caslot)
 {
-	STARTFUNC
 	int i = 0;
 
 	for(i = 0; i < MAXCASERVICE; i++)
@@ -130,7 +126,6 @@ void caservicedel(struct service* snode, struct caslot* caslot)
 
 void freecaservice()
 {
-	STARTFUNC
 	int i = 0;
 
 	for(i = 0; i < MAXCASERVICE; i++)
@@ -152,7 +147,6 @@ void freecaservice()
 
 void dvbwritepmt(struct service* node, unsigned char* pmtbuf)
 {
-	STARTFUNC
 	int length;
 	FILE *fd;
 	char* filename = NULL, *tmpnr = NULL;
@@ -194,7 +188,6 @@ void dvbwritepmt(struct service* node, unsigned char* pmtbuf)
 
 void sendcapmttosock(struct service* node, unsigned char* buf, int pos, int caservicenr)
 {
-	STARTFUNC
 	int ret = 0, i = 0;
 
 	if(caservice[caservicenr].camsockfd < 0 || socksend(&caservice[caservicenr].camsockfd, buf, pos, -1) != 0)
@@ -218,7 +211,6 @@ void sendcapmttosock(struct service* node, unsigned char* buf, int pos, int case
 //flag 2: clear capmt
 int createcapmt(struct dvbdev* dvbnode, struct service* node, unsigned char* buf, int* lenbytes, int flag)
 {
-	STARTFUNC
 	if(buf == NULL || node == NULL || node->channel == NULL) return -1;
 	if(node->fedev == NULL || node->channel->pmt == NULL) return -1;
 	if(node->channel->cadesc == NULL || node->channel->esinfo == NULL) return -1;
@@ -412,7 +404,6 @@ int createcapmt(struct dvbdev* dvbnode, struct service* node, unsigned char* buf
 //flag 3 = from recordthread
 void sendcapmt(struct service* node, int clear, int flag)
 {
-	STARTFUNC
 	int len = 0, i = 0, caservicenr = 0, lenbytes = 0;
 	unsigned char* buf = NULL;
 	struct dvbdev* dvbnode = dvbdev;
@@ -560,7 +551,6 @@ void sendcapmt(struct service* node, int clear, int flag)
 
 void checkcam()
 {
-	STARTFUNC
 	int i = 0; 
 
 	if(status.pmtmode == 1) return;
@@ -581,7 +571,6 @@ void checkcam()
 
 struct pmt* addpmt(struct channel* chnode, int programnumber, int versionnumber, int currentnextindicator)
 {
-	STARTFUNC
 	struct pmt *newnode = NULL;
 
 	if(chnode == NULL)
@@ -610,7 +599,6 @@ struct pmt* addpmt(struct channel* chnode, int programnumber, int versionnumber,
 
 struct cadesc* addcadesc(struct channel* chnode, int pid, unsigned char* buf, struct cadesc* last)
 {
-	STARTFUNC
 	struct cadesc *newnode = NULL, *prev = NULL, *node = NULL;
 
 	if(chnode == NULL || buf == NULL)
@@ -673,7 +661,6 @@ struct cadesc* addcadesc(struct channel* chnode, int pid, unsigned char* buf, st
 
 struct esinfo* addesinfo(struct channel* chnode, int streamtype, int pid, struct esinfo* last)
 {
-	STARTFUNC
 	struct esinfo *newnode = NULL, *prev = NULL, *node = NULL;
 
 	if(chnode == NULL)
@@ -722,8 +709,6 @@ struct esinfo* addesinfo(struct channel* chnode, int streamtype, int pid, struct
 
 void freepmt(struct channel* chnode)
 {
-	STARTFUNC
-
 	if(chnode == NULL || chnode->pmt == NULL) return;
 
 	free(chnode->pmt);
@@ -732,7 +717,6 @@ void freepmt(struct channel* chnode)
 
 void freecadesc(struct channel* chnode)
 {
-	STARTFUNC
 	struct cadesc *node = NULL, *prev = NULL;
 
 	if(chnode == NULL) return;
@@ -757,7 +741,6 @@ void freecadesc(struct channel* chnode)
 
 void freeesinfo(struct channel* chnode)
 {
-	STARTFUNC
 	struct esinfo *node = NULL, *prev = NULL;
 
 	if(chnode == NULL) return;

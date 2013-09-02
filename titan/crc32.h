@@ -54,7 +54,6 @@ static const uint32_t crc_table[286] = {
 
 uint32_t dvbcrc32(const uint8_t *data, size_t len)
 {
-	STARTFUNC
 	int i;
 	uint32_t crc = 0xffffffff;
 

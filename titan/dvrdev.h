@@ -3,7 +3,6 @@
 
 struct dvbdev* dvropen(struct dvbdev* fenode)
 {
-	STARTFUNC
 	int fd = -1;
 	struct dvbdev* node = dvbdev;
 
@@ -36,7 +35,6 @@ struct dvbdev* dvropen(struct dvbdev* fenode)
 
 int dvropendirect(char *dvrdev)
 {
-	STARTFUNC
 	int fd = -1;
 
 	if((fd = open(dvrdev, O_WRONLY)) < 0)
@@ -50,7 +48,6 @@ int dvropendirect(char *dvrdev)
 
 void dvrclose(struct dvbdev* node, int fd)
 {
-	STARTFUNC
 	if(node != NULL)
 	{
 		close(node->fd);
@@ -62,7 +59,6 @@ void dvrclose(struct dvbdev* node, int fd)
 
 int dvrgetdev()
 {
-	STARTFUNC
 	int i, y, fd = -1, count = 0;
 	char *buf = NULL, *dvrdev = NULL;
 

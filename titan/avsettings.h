@@ -5,7 +5,6 @@
 //flag 1: whith vfd output
 void screenavsettings(int flag)
 {
-	STARTFUNC
 	int rcret = 0;
 	char* ret = NULL;
 	struct skin* avsettings = getscreen("avsettings");

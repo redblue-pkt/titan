@@ -3,7 +3,6 @@
 
 void freechannelhistory()
 {
-	STARTFUNC
 	int i = 0;
 
 	for(i = 0; i < MAXCHANNELHISTORY; i++)
@@ -16,7 +15,6 @@ void freechannelhistory()
 
 void delchannelhistory(struct channel* chnode)
 {
-	STARTFUNC
 	int i = 0;
 	if(chnode == NULL) return;
 
@@ -33,7 +31,6 @@ void delchannelhistory(struct channel* chnode)
 
 void addchannelhistory(struct channel* chnode, char* channellist)
 {
-	STARTFUNC
 	int i = 0;
 	struct channel* tmpchannel = NULL;
 	char* tmpstr = NULL;
@@ -67,7 +64,6 @@ void addchannelhistory(struct channel* chnode, char* channellist)
 
 void screenchannelhistory()
 {
-	STARTFUNC
 	int rcret = -1, i = 0;
 	struct skin* chistory = getscreen("channelhistory");
 	struct skin* listbox = getscreennode(chistory, "listbox");

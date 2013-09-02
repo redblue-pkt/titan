@@ -3,7 +3,6 @@
 
 int screendownload(char* title, char* host, char* page, int port, char* filename, char* auth, int timeout, int flag)
 {
-	STARTFUNC
 	int rcret = -1, count = 0, ret = 0, fromthread = 0, sleeptime = 2;
 	struct skin* download = getscreen("download");
 	struct skin* progress = getscreennode(download, "progress");
