@@ -13,6 +13,7 @@ short debug_level = 10;
 // mc debug_level = 50;
 // panel debug_level = 60;
 
+#ifdef BETA
 void __cyg_profile_func_enter(void *this_fn, void* call_size) __attribute__((no_instrument_function));
 void __cyg_profile_func_enter(void *this_fn, void* call_size)
 {
@@ -58,6 +59,7 @@ void __cyg_profile_func_exit(void *this_fn, void* call_size)
 		}
 	}
 }
+#endif
 
 //debug
 //first line shows greater/same debuglevel

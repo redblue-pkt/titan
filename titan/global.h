@@ -2422,7 +2422,8 @@ void debugstack(int sig, void* address, void* address1)
 	fprintf(stderr, "\nLast functions:\n\n");
 	fprintf(stderr, "%s\n", aktstring[0]);
 	fprintf(stderr, "%s\n", aktstring[1]);
-	
+
+#ifdef BETA	
 	for(i = 0; i < MAXSTACKTRACE; i++)
 	{
 		if(stacktrace[i].pos > 0)
@@ -2435,6 +2436,7 @@ void debugstack(int sig, void* address, void* address1)
 			}
 		}
 	}
+#endif
 
 	fprintf(stderr, "--------------------------------------\n");
 
@@ -2477,7 +2479,8 @@ void debugstack(int sig, void* address, void* address1)
 		fprintf(fd, "\nLast functions:\n\n");
 		fprintf(fd, "%s\n", aktstring[0]);
 		fprintf(fd, "%s\n", aktstring[1]);
-		
+
+#ifdef BETA		
 		for(i = 0; i < MAXSTACKTRACE; i++)
 		{
 			if(stacktrace[i].pos > 0)
@@ -2490,6 +2493,7 @@ void debugstack(int sig, void* address, void* address1)
 				}
 			}
 		}
+#endif
 		
 		fprintf(fd, "--------------------------------------\n\n");
 		fclose(fd);
