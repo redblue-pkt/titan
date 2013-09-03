@@ -58,7 +58,7 @@ readerconfig/Makefile
 rgui/Makefile
 scriptexec/Makefile
 stock/Makefile
-stopifnotuse/Makefile
+stopifnotused/Makefile
 streaminfo/Makefile
 tinews/Makefile
 tithek/Makefile

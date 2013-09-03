@@ -28,7 +28,7 @@ SUBDIRS = \
 	rgui \
 	scriptexec \
 	stock \
-	stopifnotuse \
+	stopifnotused \
 	streaminfo \
 	tinews \
 	tithek \
