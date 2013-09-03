@@ -515,32 +515,8 @@ int main(int argc, char *argv[])
 	sa.sa_handler = (void *)sighandler;
 	sigemptyset(&sa.sa_mask);
 	sa.sa_flags = SA_RESTART;
-
-	sigaction(SIGILL, &sa, NULL);
-	sigaction(SIGBUS, &sa, NULL);
-	sigaction(SIGFPE, &sa, NULL);
-	sigaction(SIGUSR1, &sa, NULL);
-	sigaction(SIGSEGV, &sa, NULL);
-	sigaction(SIGUSR2, &sa, NULL);
-	sigaction(SIGPIPE, &sa, NULL);
-	sigaction(SIGALRM, &sa, NULL);
-	sigaction(SIGSTKFLT, &sa, NULL);
-	sigaction(SIGABRT, &sa, NULL);
-
-	signal(SIGHUP, SIG_IGN);
-	signal(SIGINT, SIG_IGN);
-	signal(SIGTRAP, SIG_IGN);
-#ifdef SH4
-	signal(SIGTERM, SIG_IGN);
-#endif
-	signal(SIGXCPU, SIG_IGN);
-	signal(SIGXFSZ, SIG_IGN);
-	signal(SIGVTALRM, SIG_IGN);
-	signal(SIGPROF, SIG_IGN);
-	signal(SIGPOLL, SIG_IGN);
-	signal(SIGRTMAX, SIG_IGN);
-	signal(SIGPWR, SIG_IGN);
-	signal(SIGSYS, SIG_IGN);
+	
+	initsignal(&sa);
 
 	status.rguidfd = -1;
 	status.sec = time(NULL);
