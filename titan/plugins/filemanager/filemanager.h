@@ -209,9 +209,19 @@ void screenfilemanager()
 					if(ret == 1)
 					{
 						if(copy == 0)
-							screencopy(_("Move File"), file1, tmpstr, 1);
+						{
+							if(aktfilelist == 0)
+								screencopy(_("Move File"), file1, filelistpath2->text, 1);
+							else
+								screencopy(_("Move File"), file1, filelistpath1->text, 1);
+						}
 						else
-							screencopy(_("Copy File"), file1, tmpstr, 0);
+						{
+							if(aktfilelist == 0)
+								screencopy(_("Copy File"), file1, filelistpath2->text, 0);
+							else
+								screencopy(_("Copy File"), file1, filelistpath1->text, 0);
+						}
 					}
 					
 					free(tmpstr); tmpstr = NULL;
