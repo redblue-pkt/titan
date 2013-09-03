@@ -257,7 +257,10 @@ void screensystem_update(int mode)
 					else
 						cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
 
-					if(file_exist("/etc/.beta"))
+					if(!file_exist("/var/swap/logs"))
+						 mkdir("/var/swap/logs", 777);
+
+					if(file_exist("/etc/.beta") && file_exist("/var/swap/logs"))
 						cmd = ostrcat(cmd, " > /var/swap/logs/update_debug.log 2>&1", 1, 0);
 
 					msgtxt = ostrcat(msgtxt, _("starting Full Update ?"), 1, 0);
@@ -277,6 +280,7 @@ void screensystem_update(int mode)
 				{
 					debug(40, "update started cmd: %s", cmd);
 					status.sec = 0; //deactivate spinner
+					
 					system(cmd);
 					//should only reached if system fails
 					textbox(_("Message"), _("Can't start system update\nPlease remove Stick/HDD and try again"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
