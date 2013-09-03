@@ -842,7 +842,7 @@ int screencopy(char* title, char* from, char* to, int flag)
 			tmpstr = ostrcat(_("Amount of files: "), oitoa(cnode->filecount), 0, 1);
 			tmpstr = ostrcat(tmpstr, " / ", 1, 0);
 			tmpstr = ostrcat(tmpstr, oitoa(cnode->maxfilecount), 1, 1);
-			changetext(filecount, NULL);
+			changetext(filecount, tmpstr);
 			free(tmpstr); tmpstr = NULL;
 		}
 		drawscreen(copyfile, 0, 0);
