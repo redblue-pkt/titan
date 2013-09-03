@@ -15,5 +15,5 @@ bin_PROGRAMS = titan
 
 titan_SOURCES =	titan.c
 
-titan_LDADD = -lpthread -ldl -lpng -lfreetype -leplayer3 -ldreamdvd -ljpeg -lmmeimage -lmme_host -lipkg
+titan_LDADD = -lpthread -ldl -lpng -lfreetype -leplayer3 -ldreamdvd -ljpeg -lmmeimage -lmme_host
 titan_CFLAGS = $(ALL_CFLAGS)
