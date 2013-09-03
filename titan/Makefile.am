@@ -7,8 +7,6 @@ INCLUDES = \
 	-I../../../apps/titan/libdreamdvd \
 	-I../../../apps/misc/tools/libeplayer3/include \
 	-I../../../apps/misc/tools/libmmeimage \
-	-I../../../apps/titan/titan/libdreamdvd \
-	-I../../../apps/misc/tools/libmmeimage \
 	-I../../../apps/titan/titan
 
 bin_PROGRAMS = titan
