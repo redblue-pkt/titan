@@ -215,9 +215,9 @@ end:
 
 	if(node != NULL)
 	{ 
-		node->filecount--;
+		node->filecount++;
 		if(node->maxfilecount > 1)
-			node->proz = 100 - ((int)ceil((((float)node->filecount / node->maxfilecount) * 100)));
+			node->proz = (int)ceil((((float)node->filecount / node->maxfilecount) * 100));
 	}
 	return ret;
 }
@@ -266,9 +266,9 @@ int copylink(char* from, char* to, struct copyfile* node, int flag)
 
 	if(node != NULL)
 	{ 
-		node->filecount--;
+		node->filecount++;
 		if(node->maxfilecount > 1)
-			node->proz = 100 - ((int)ceil((((float)node->filecount / node->maxfilecount) * 100)));
+			node->proz = (int)ceil((((float)node->filecount / node->maxfilecount) * 100));
 	}
 	free(buf); buf = NULL;
 	return 0;
@@ -309,9 +309,9 @@ int copyblk(char* from, char* to, struct copyfile* node, int flag)
 
 	if(node != NULL)
 	{ 
-		node->filecount--;
+		node->filecount++;
 		if(node->maxfilecount > 1)
-			node->proz = 100 - ((int)ceil((((float)node->filecount / node->maxfilecount) * 100)));
+			node->proz = (int)ceil((((float)node->filecount / node->maxfilecount) * 100));
 	}
 	return 0;
 }
@@ -351,9 +351,9 @@ int copychr(char* from, char* to, struct copyfile* node, int flag)
 
 	if(node != NULL)
 	{ 
-		node->filecount--;
+		node->filecount++;
 		if(node->maxfilecount > 1)
-			node->proz = 100 - ((int)ceil((((float)node->filecount / node->maxfilecount) * 100)));
+			node->proz = (int)ceil((((float)node->filecount / node->maxfilecount) * 100));
 	}
 	return 0;
 }
@@ -385,9 +385,9 @@ int copyfifo(char* from, char* to, struct copyfile* node, int flag)
 
 	if(node != NULL)
 	{
-		node->filecount--;
+		node->filecount++;
 		if(node->maxfilecount > 1)
-			node->proz = 100 - ((int)ceil((((float)node->filecount / node->maxfilecount) * 100)));
+			node->proz = (int)ceil((((float)node->filecount / node->maxfilecount) * 100));
 	}
 	return 0;
 }
@@ -468,9 +468,9 @@ int copydir(char* dirfrom, char* dirto, struct copyfile* node, int first, int fl
 				
 				if(node != NULL)
 				{
-					node->filecount--;
+					node->filecount++;
 					if(node->maxfilecount > 1)
-						node->proz = 100 - ((int)ceil((((float)node->filecount / node->maxfilecount) * 100)));
+						node->proz = (int)ceil((((float)node->filecount / node->maxfilecount) * 100));
 				}
 
 				ret = copydir(pathfrom, pathto, node, 0, flag); //Recursively call with the new path
@@ -786,15 +786,12 @@ int screencopy(char* title, char* from, char* to, int flag)
 	cnode->to = to;
 	cnode->ret = -1;
 	cnode->stop = 0;
-	cnode->filecount = 1;
+	cnode->filecount = 0;
 	cnode->maxfilecount = 1;
 	
 	ret = countfiles(from, &count, 1);
 	if(ret == 0)
-	{
-		cnode->filecount = count;
 		cnode->maxfilecount = count;
-	}
 	
 	if(flag == 1)
 		addtimer(&movefilestruct, START, 1000, 1, (void*)cnode, NULL, NULL);
