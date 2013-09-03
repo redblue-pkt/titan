@@ -46,7 +46,7 @@ imdb/Makefile
 imdbapi/Makefile
 instar/Makefile
 keylock/Makefile
-lcdperal1/Makefile
+lcdpearl1/Makefile
 lcdsamsung/Makefile
 mboxinfo/Makefile
 mc/Makefile
