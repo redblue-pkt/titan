@@ -178,7 +178,7 @@ void screenfilemanager()
 						tmpstr = ostrcat(tmpstr, _("Realy copy this file/dir?"), 1, 0);
 						copy = 1;
 						//not need with screencopy start
-						cmd = ostrcat(cmd, "cp -r ", 1, 0);
+						//cmd = ostrcat(cmd, "cp -r ", 1, 0);
 						//not need with screencopy end
 					}
 					if(rcret == getrcconfigint("rcyellow", NULL))
@@ -186,7 +186,7 @@ void screenfilemanager()
 						tmpstr = ostrcat(tmpstr, _("Realy move this file/dir?"), 1, 0);
 						copy = 0;
 						//not need with screencopy start
-						cmd = ostrcat(cmd, "mv -f ", 1, 0);
+						//cmd = ostrcat(cmd, "mv -f ", 1, 0);
 						//not need with screencopy end
 					}
 					
@@ -205,7 +205,7 @@ void screenfilemanager()
 					
 					ret = textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 300, 0, 0);
 					
-					/*
+					
 					if(ret == 1)
 					{
 						if(copy == 0)
@@ -213,10 +213,11 @@ void screenfilemanager()
 						else
 							screencopy(_("Copy File"), file1, tmpstr, 0);
 					}
-					*/
+					
 					free(tmpstr); tmpstr = NULL;
 					
 					//not need with screencopy start
+					/*
 					cmd = ostrcat(cmd, "\"", 1, 0);
 					cmd = ostrcat(cmd, file1, 1, 0);
 					cmd = ostrcat(cmd, "\" \"", 1, 0);
@@ -227,6 +228,7 @@ void screenfilemanager()
 					cmd = ostrcat(cmd, "\"", 1, 0);
 					if(ret == 1) system(cmd);
 					free(cmd); cmd = NULL;
+					*/
 					//not need with screencopy end
 				}
 				free(file1); file1 = NULL;
