@@ -1,5 +1,5 @@
 lib_LTLIBRARIES = libdvdplayer.la
-libdvdplayer_la_SOURCES = dvdplayer.c
+libdvdplayer_la_SOURCES = dvdplay.c
 
 AM_CPPFLAGS = -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE
 ALL_CFLAGS= -DSH4 -Deplayer3 -DDVDPLAYER -Os -export-dynamic -Wall -Wno-unused-but-set-variable
