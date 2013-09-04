@@ -14,7 +14,6 @@ void debugepgrecord(struct epgrecord* first)
 
 struct epgrecord* addepgrecord(time_t epgbegin, time_t epgend, time_t begin, time_t end, struct epgrecord** first, struct epgrecord* last)
 {
-	//debug(1000, "in");
 	struct epgrecord *newnode = NULL, *prev = NULL, *node = *first;
 
 	newnode = (struct epgrecord*)malloc(sizeof(struct epgrecord));	
@@ -59,13 +58,11 @@ struct epgrecord* addepgrecord(time_t epgbegin, time_t epgend, time_t begin, tim
 	newnode->next = node;
 	if(node != NULL) node->prev = newnode;
 
-	//debug(1000, "out");
 	return newnode;
 }
 
 void delepgrecord(struct epgrecord* epgrecordnode, struct epgrecord** first)
 {
-	debug(1000, "in");
 	struct epgrecord *node = *first, *prev = *first;
 
 	while(node != NULL)
@@ -93,12 +90,10 @@ void delepgrecord(struct epgrecord* epgrecordnode, struct epgrecord** first)
 		prev = node;
 		node = node->next;
 	}
-	debug(1000, "out");
 }
 
 void freeepgrecord(struct epgrecord** first)
 {
-	debug(1000, "in");
 	struct epgrecord *node = *first, *prev = *first;
 
 	while(node != NULL)
@@ -108,7 +103,6 @@ void freeepgrecord(struct epgrecord** first)
 		if(prev != NULL)
 			delepgrecord(prev, first);
 	}
-	debug(1000, "out");
 }
 
 struct epgrecord* getepgrecord(struct channel* chnode, struct epg* epgnode)

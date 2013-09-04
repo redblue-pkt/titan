@@ -3,16 +3,12 @@
 
 struct fb* getfb(char *name)
 {
-	debug(1000, "in");
 	struct fb *node = fb;
 
 	while(node != NULL)
 	{
 		if(ostrstr(node->name, name) != NULL)
-		{
-			debug(1000, "out");
 			return node;
-		}
 
 		node = node->next;
 	}
@@ -22,14 +18,13 @@ struct fb* getfb(char *name)
 
 long getfbsize(int dev)
 {
-	debug(1000, "in");
 	struct fb* node = fb;
 	unsigned long fbmemcount = 0;
 	struct fb_fix_screeninfo fix_screeninfo;
 
 	if(fb == NULL)
 	{
-		debug(1000, "out -> NULL dedect");
+		err("NULL dedect");
 		return 0;
 	}
 
@@ -50,13 +45,11 @@ long getfbsize(int dev)
 		node = node->next;
 	}
 
-	debug(1000, "out");
 	return fix_screeninfo.smem_len - fbmemcount;
 }
 
 struct fb* addfb(char *fbname, int dev, int width, int height, int colbytes, int fd, unsigned char* mmapfb, unsigned long fixfbsize)
 {
-	debug(1000, "in");
 	struct fb *newnode = NULL, *node = fb;
 	char *name = NULL;
 	long ret = 0;
@@ -119,7 +112,6 @@ struct fb* addfb(char *fbname, int dev, int width, int height, int colbytes, int
 	}
 
 	debug(100, "fbname=%s, fbwidth=%d, fbheight=%d, fbcol=%d, fbsize=%ld", newnode->name, newnode->width, newnode->height, newnode->colbytes, newnode->varfbsize);
-	debug(1000, "out");
 	return newnode;
 }
 
@@ -146,7 +138,6 @@ void fb2png_thread()
 
 void delfb(char *name)
 {
-	debug(1000, "in");
 	struct fb *node = fb, *prev = fb;
 
 	while(node != NULL)
@@ -169,12 +160,10 @@ void delfb(char *name)
 		prev = node;
 		node = node->next;
 	}
-	debug(1000, "out");
 }
 
 void freefb()
 {
-	debug(1000, "in");
 	struct fb *node = fb, *prev = fb;
 
 	while(node != NULL)
@@ -184,12 +173,10 @@ void freefb()
 		if(prev != NULL)
 			delfb(prev->name);
 	}
-	debug(1000, "out");
 }
 
 struct fb* openfb(char *fbdev, int devnr)
 {
-	debug(1000, "in");
 	int fd = -1;
 	unsigned char *mmapfb = NULL;
 	struct fb_var_screeninfo var_screeninfo;
@@ -247,7 +234,6 @@ struct fb* openfb(char *fbdev, int devnr)
 
 #endif
 
-	debug(1000, "out");
 	return node;
 }
 

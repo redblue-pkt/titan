@@ -194,7 +194,6 @@ int ralphasort64(const struct dirent64** v1, const struct dirent64** v2)
 //view 1000: not used here see inputhelp.h
 int createfilelist(struct skin* screen, struct skin* node, int view)
 {
-	debug(1000, "in");
 	struct dirent64 **filelist = NULL;
 
 	int count = 0, tmpcount = 0, i = 0, gridbr = 0, posx = 0, pagecount = 0, sumcount = 0;
@@ -206,7 +205,7 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 
 	if(node->input == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -754,13 +753,11 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 	}
 */
 	free(filelist);
-	debug(1000, "out");
 	return 0;
 }
 
 void getfilelist(struct skin* input, struct skin* filelistpath, struct skin* filelist, char* path, char* filemask, int tmpview, char* selection)
 {
-	debug(1000, "in");
 	char* tmpstr = NULL;
 
 	if(path == NULL || strlen(path) == 0 || !isdir(path))
@@ -794,7 +791,6 @@ void getfilelist(struct skin* input, struct skin* filelistpath, struct skin* fil
 	free(tmpstr); tmpstr = NULL;
 
 	drawscreen(input, 0, 0);
-	debug(1000, "out");
 }
 
 void getfilelistmax(struct skin* filelist, int* maxdirs, int* maxfiles)

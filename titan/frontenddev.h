@@ -3,7 +3,6 @@
 
 int calclof(struct dvbdev* node, struct transponder* tpnode, char* feaktnr, int flag)
 {
-	debug(1000, "in");
 	int loftype = 0;
 	int lofl, lofh, lofthreshold;
 	int satcrfrequ = 0;
@@ -11,7 +10,7 @@ int calclof(struct dvbdev* node, struct transponder* tpnode, char* feaktnr, int 
 
 	if(node == NULL || tpnode == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return -1;
 	}
 
@@ -109,7 +108,7 @@ char* fegettypestr(struct dvbdev* dvbnode)
 
 	if(dvbnode == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
@@ -143,7 +142,7 @@ void fegetconfig(struct dvbdev *dvbnode, struct transponder *tpnode, char** aktn
 
 	if(dvbnode == NULL || tpnode == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return;
 	}
 
@@ -190,7 +189,6 @@ void settunerstatus()
 //flag 2 = from rectimer
 struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dvbfirst)
 {
-	debug(1000, "in");
 	struct dvbdev* dvbnode = NULL;
 	struct dvbdev* tmpdvbnode = NULL;
 	char* tmpstr = NULL, *tmpnr = NULL, *aktnr = NULL;
@@ -203,7 +201,7 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 
 	if(tpnode == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
@@ -418,13 +416,11 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 		dvbnode = dvbnode->next;
 	}
 
-	debug(1000, "out");
 	return NULL;
 }
 
 int feopen(struct dvbdev* node, char *fedev)
 {
-	debug(1000, "in");
 	int fd = -1;
 
 	if(node != NULL)
@@ -440,14 +436,11 @@ int feopen(struct dvbdev* node, char *fedev)
 	}
 
 	closeonexec(fd);
-	debug(1000, "out");
 	return fd;
 }
 
 void feclose(struct dvbdev* node, int fd)
 {
-	debug(1000, "in");
-
 	if(node != NULL)
 	{
 		close(node->fd);
@@ -455,18 +448,15 @@ void feclose(struct dvbdev* node, int fd)
 	}
 	else
 		close(fd);
-
-	debug(1000, "out");
 }
 
 int fegetunlock(struct dvbdev* node)
 {
-	debug(1000, "in");
 	fe_status_t status;
 
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -477,8 +467,7 @@ int fegetunlock(struct dvbdev* node)
 	if(ioctl(node->fd, FE_READ_STATUS, &status) == -1)
 		perr("FE_READ_STATUS");
 
-	debug(1000, "out");
-        if(status & FE_HAS_LOCK)
+	if(status & FE_HAS_LOCK)
 		return 0;
 	else
 		return 1;
@@ -486,7 +475,6 @@ int fegetunlock(struct dvbdev* node)
 
 int fewait(struct dvbdev* node)
 {
-	debug(1000, "in");
 	//struct dvb_frontend_event ev;
 	fe_status_t status;
 
@@ -494,7 +482,7 @@ int fewait(struct dvbdev* node)
 
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -516,7 +504,6 @@ int fewait(struct dvbdev* node)
 		usleep(1000);
 	}
 
-	debug(1000, "out");
 	//if(ev.status & FE_HAS_LOCK)
 	//	return 0;
 	if(status & FE_HAS_LOCK)
@@ -527,11 +514,9 @@ int fewait(struct dvbdev* node)
 
 void fegetfrontend(struct dvbdev* node)
 {
-	debug(1000, "in");
-
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err(""NULL detect");
 		return;
 	}
 
@@ -583,8 +568,6 @@ void fegetfrontend(struct dvbdev* node)
 		debug(200, "frontend akt u.qam.modulation = %d", fe_param.u.qam.modulation);
 	}
 #endif
-
-	debug(1000, "out");
 }
 
 int fesettone(struct dvbdev* node, fe_sec_tone_mode_t tone, int wait)
@@ -593,7 +576,7 @@ int fesettone(struct dvbdev* node, fe_sec_tone_mode_t tone, int wait)
 	
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -608,7 +591,6 @@ int fesettone(struct dvbdev* node, fe_sec_tone_mode_t tone, int wait)
 		node->feakttone = tone;
 		usleep(wait * 1000);
 	}
-	debug(1000, "out");
 	
 	return ret;
 }
@@ -617,12 +599,11 @@ int fesettone(struct dvbdev* node, fe_sec_tone_mode_t tone, int wait)
 //flag 1: don't reset tuner params on volt off
 int fesetvoltage(struct dvbdev* node, fe_sec_voltage_t volt, int wait)
 {
-	debug(1000, "in");
 	int ret = 0;
 	
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -648,17 +629,15 @@ int fesetvoltage(struct dvbdev* node, fe_sec_voltage_t volt, int wait)
 			node->feakttone = 0;
 		}
 	}
-	debug(1000, "out");
-	
+
 	return ret;
 }
 
 void fediseqcsendburst(struct dvbdev* node, fe_sec_mini_cmd_t burst, int wait)
 {
-	debug(1000, "in");
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return;
 	}
 
@@ -666,18 +645,16 @@ void fediseqcsendburst(struct dvbdev* node, fe_sec_mini_cmd_t burst, int wait)
 	if(ioctl(node->fd, FE_DISEQC_SEND_BURST, burst) == -1)
 		perr("FE_DISEQC_SEND_BURST");
 	usleep(wait * 1000);
-	debug(1000, "out");
 }
 
 void fediseqcsendmastercmd(struct dvbdev* node, struct dvb_diseqc_master_cmd *cmd, int wait)
 {
-	debug(1000, "in");
 	int i, repeat = 0, imsg = 0;
 	char* tmpstr = NULL;
 
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return;
 	}
 	
@@ -699,17 +676,15 @@ void fediseqcsendmastercmd(struct dvbdev* node, struct dvb_diseqc_master_cmd *cm
 	}
 	imsg = (cmd->msg[0] << 24) | (cmd->msg[1] << 16) | (cmd->msg[2] << 8) | cmd->msg[3];
 	debug(200, "DISEQC Master cmd (%s -> %04X)", node->feshortname, imsg);
-	debug(1000, "out");
 }
 
 void fesdiseqcpoweron(struct dvbdev* node)
 {
-	debug(1000, "in");
 	struct dvb_diseqc_master_cmd cmd = {{0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 0};
 
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return;
 	}
 
@@ -720,17 +695,15 @@ void fesdiseqcpoweron(struct dvbdev* node)
 
 	debug(200, "DISEQC Power on (%s)", node->feshortname);
 	fediseqcsendmastercmd(node, &cmd, 100);
-	debug(1000, "out");
 }
 
 void fesdiseqcreset(struct dvbdev* node)
 {
-	debug(1000, "in");
 	struct dvb_diseqc_master_cmd cmd = {{0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 0};
 	
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return;
 	}
 
@@ -741,17 +714,15 @@ void fesdiseqcreset(struct dvbdev* node)
 
 	debug(200, "DISEQC Reset (%s)", node->feshortname);
 	fediseqcsendmastercmd(node, &cmd, 100);
-	debug(1000, "out");
 }
 
 void fesdiseqcstandby(struct dvbdev* node)
 {
-	debug(1000, "in");
 	struct dvb_diseqc_master_cmd cmd = {{0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 0};
 	
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return;
 	}
 	
@@ -762,12 +733,10 @@ void fesdiseqcstandby(struct dvbdev* node)
 
 	debug(200, "DISEQC Standby (%s)", node->feshortname);
 	fediseqcsendmastercmd(node, &cmd, 100);
-	debug(1000, "out");
 }
 
 void fediseqcrotor(struct dvbdev* node, struct transponder* tpnode, int pos, int flag)
 {
-	debug(1000, "in");
 	int orbitalpos = 0;
 	fe_sec_voltage_t oldvolt = 0;
 	fe_sec_tone_mode_t oldtone = 0;
@@ -775,7 +744,7 @@ void fediseqcrotor(struct dvbdev* node, struct transponder* tpnode, int pos, int
 	
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return;
 	}
 	
@@ -879,8 +848,6 @@ void fediseqcrotor(struct dvbdev* node, struct transponder* tpnode, int pos, int
 	
 	fesetvoltage(node, oldvolt, 15);
 	fesettone(node, oldtone, 15);
-	
-	debug(1000, "out");
 }
 
 void fesetunicable(struct dvbdev* node)
@@ -891,7 +858,7 @@ void fesetunicable(struct dvbdev* node)
 
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return;
 	}
 
@@ -950,7 +917,6 @@ void fesetunicable(struct dvbdev* node)
 
 void fediseqcset(struct dvbdev* node, struct transponder* tpnode)
 {
-	debug(1000, "in");
 	char* tmpstr = NULL;
 	int toneburst = 0, cmdorder = 0, input = 0, uinput = 0, diseqmode = 0, rotorpos = 0, latpos = 0, longpos = 0;
 	float latitude = 0, longitude = 0;
@@ -1115,13 +1081,10 @@ void fediseqcset(struct dvbdev* node, struct transponder* tpnode)
 
 		fediseqcrotor(node, tpnode, rotorpos, 11);
 	}
-
-	debug(1000, "out");
 }
 
 void feset(struct dvbdev* node, struct transponder* tpnode)
 {
-	debug(1000, "in");
 	int voltagemode = 0, tonemode = 0;
 	fe_sec_tone_mode_t tone;
 	fe_sec_voltage_t volt;
@@ -1130,7 +1093,7 @@ void feset(struct dvbdev* node, struct transponder* tpnode)
 
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return;
 	}
 
@@ -1182,18 +1145,16 @@ void feset(struct dvbdev* node, struct transponder* tpnode)
 		         if(node->feunicable == 1) tone = SEC_TONE_OFF;
 	}
 	fesettone(node, tone, 15);
-	debug(1000, "out");
 }
 
 void fediscard(struct dvbdev* node)
 {
-	debug(1000, "in");
 	struct dvb_frontend_event ev;
 	int count = 0;
 
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return;
 	}
 
@@ -1204,86 +1165,75 @@ void fediscard(struct dvbdev* node)
 		if(ioctl(node->fd, FE_GET_EVENT, &ev) == -1)
 			break;
 	}
-
-	debug(1000, "out");
 }
 
 uint16_t fereadsnr(struct dvbdev* node)
 {
-	debug(1000, "in");
 	uint16_t snr = 0;
 
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 0;
 	}
 
 	ioctl(node->fd, FE_READ_SNR, &snr);
 	debug(200, "frontend snr = %02x", (snr * 100) / 0xffff);
-	debug(1000, "out");
 	return snr;
 }
 
 uint16_t fereadsignalstrength(struct dvbdev* node)
 {
-	debug(1000, "in");
 	uint16_t signal = 0;
 
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 0;
 	}
 
 	ioctl(node->fd, FE_READ_SIGNAL_STRENGTH, &signal);
 	debug(200, "frontend signal = %02x", (signal * 100) / 0xffff);
-	debug(1000, "out");
 	return signal;
 }
 
 uint32_t fereadber(struct dvbdev* node)
 {
-	debug(1000, "in");
 	uint32_t ber = 0;
 
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 0;
 	}
 
 	ioctl(node->fd, FE_READ_BER, &ber);
 	debug(200, "frontend ber = %02x", ber);
-	debug(1000, "out");
 	return ber;
 }
 
 uint32_t fereaduncorrectedblocks(struct dvbdev* node)
 {
-	debug(1000, "in");
 	uint32_t unc = 0;
 
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 0;
 	}
 
 	ioctl(node->fd, FE_READ_UNCORRECTED_BLOCKS, &unc);
 	debug(200, "frontend unc = %02x", unc);
-	debug(1000, "out");
 	return unc;
 }
 
 fe_status_t fereadstatus(struct dvbdev* node)
 {
-	debug(1000, "in");
 	fe_status_t status;
 
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return -1;
 	}
 
@@ -1299,16 +1249,14 @@ fe_status_t fereadstatus(struct dvbdev* node)
 	if(status & FE_TIMEDOUT) debug(200, "frontend = FE_TIMEDOUT");
 	if(status & FE_REINIT) debug(200, "frontend = FE_REINIT");
 
-	debug(1000, "out");
 	return status;
 }
 
 void fetunedvbs(struct dvbdev* node, struct transponder* tpnode)
 {
-	debug(1000, "in");
 	if(node == NULL || tpnode == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return;
 	}
 	
@@ -1436,16 +1384,13 @@ void fetunedvbs(struct dvbdev* node, struct transponder* tpnode)
 		perr("FE_SET_FRONTEND");
 	}
 #endif
-	debug(1000, "out");
 }
 
 void fetunedvbc(struct dvbdev* node, struct transponder* tpnode)
 {
-	debug(1000, "in");
-
 	if(node == NULL || tpnode == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return;
 	}
 	
@@ -1519,17 +1464,15 @@ void fetunedvbc(struct dvbdev* node, struct transponder* tpnode)
 		perr("FE_SET_FRONTEND");
 	}
 #endif
-	debug(1000, "out");
 }
 
 void fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 {
-	debug(1000, "in");
 	struct dvb_frontend_parameters tuneto;
 
 	if(node == NULL || tpnode == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return;
 	}
 	
@@ -1624,7 +1567,6 @@ void fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 	{
 		perr("FE_SET_FRONTEND");
 	}
-	debug(1000, "out");
 }
 
 #ifdef SIMULATE
@@ -1632,7 +1574,6 @@ int tunercount = 0;
 #endif
 struct dvb_frontend_info* fegetinfo(struct dvbdev* node, int fd)
 {
-	debug(1000, "in");
 	struct dvb_frontend_info* feinfo = NULL;
 	int tmpfd = -1;
 
@@ -1669,13 +1610,11 @@ struct dvb_frontend_info* fegetinfo(struct dvbdev* node, int fd)
 		//feinfo->type = FE_QAM;
 	}
 #endif
-	debug(1000, "out");
 	return feinfo;
 }
 
 int fegetdev()
 {
-	debug(1000, "in");
 	int i, y, fd = -1, count = 0;
 	char *buf = NULL, *frontenddev = NULL;
 	struct dvb_frontend_info* feinfo = NULL;
@@ -1684,7 +1623,7 @@ int fegetdev()
 	frontenddev = getconfig("frontenddev", NULL);
 	if(frontenddev == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return count;
 	}
 
@@ -1716,7 +1655,6 @@ int fegetdev()
 	}
 
 	free(buf);
-	debug(1000, "out");
 	return count;
 }
 
@@ -1729,7 +1667,7 @@ int fecreatedummy()
 	frontenddev = getconfig("frontenddev", NULL);
 	if(frontenddev == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
