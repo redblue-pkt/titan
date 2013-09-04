@@ -3,17 +3,13 @@
 
 int delplugin(char *pluginname)
 {
-	debug(1000, "in");
 	struct skin* plugin = getscreen("plugin");
 	struct skin* listbox = getscreennode(plugin, "listbox");
 	struct skin* child = getscreennode(plugin, pluginname);
 	void (*deinitplugin)(void);
 
 	if(plugin == NULL || child == NULL || listbox == NULL || child->pluginhandle == NULL)
-	{
-		debug(1000, "out -> NULL detect");
 		return 1;
-	}
 
 	deinitplugin = dlsym(child->pluginhandle, "deinit");
 	if(deinitplugin != NULL)
@@ -26,13 +22,11 @@ int delplugin(char *pluginname)
 	listbox->aktline = 0;
 	listbox->select = NULL;
 
-	debug(1000, "out");
 	return 0;
 }
 
 struct skin* getplugin(char* pluginname)
 {
-	debug(1000, "in");
 	struct skin* plugin = getscreen("plugin");
 	struct skin* pluginnode = getscreennode(plugin, pluginname);
 
@@ -44,7 +38,6 @@ struct skin* getplugin(char* pluginname)
 
 int addplugin(char *pluginname, char* plugindesc, char* pluginpic, char* pluginhandle, int hidden)
 {
-	debug(1000, "in");
 	struct skin* plugin = getscreen("plugin");
 	struct skin* listbox = getscreennode(plugin, "listbox");
 	struct skin* child = NULL;
@@ -100,13 +93,11 @@ int addplugin(char *pluginname, char* plugindesc, char* pluginpic, char* pluginh
 		child->del = PLUGINDELMARK;
 	}
 
-	debug(1000, "out");
 	return 0;
 }
 
 int readplugin(char *dir)
 {
-	debug(1000, "in");
 	struct dirent **filelist;
 	void *pluginhandle = NULL;
 	int count = 0, ret = 0;
@@ -212,13 +203,11 @@ int readplugin(char *dir)
 	}
 
 	free(filelist);
-	debug(1000, "out");
 	return 0;
 }
 
 int loadplugin()
 {
-	debug(1000, "in");
 	struct dirent **filelist;
 	int count = 0;
 	char *pluginpath = NULL;
@@ -254,7 +243,6 @@ int loadplugin()
 			pluginpath = createpath(tmppath, filelist[count]->d_name);
 			readplugin(pluginpath);
 			free(pluginpath); pluginpath = NULL;
-
 		}
 		free(filelist[count]);
 	}
@@ -291,14 +279,12 @@ int loadplugin()
 			pluginpath = createpath(tmppath, filelist[count]->d_name);
 			readplugin(pluginpath);
 			free(pluginpath); pluginpath = NULL;
-
 		}
 		free(filelist[count]);
 	}
 	free(filelist);	
 
 	return 0;
-	debug(1000, "out");
 }
 
 void screenplugin()
