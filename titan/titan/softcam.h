@@ -85,7 +85,7 @@ void readmenu()
 			}
 
 			// update emuname with status
-			if(active == 1 && check ==1)
+			if(active == 1 && check == 1)
 			{
 				emuname = ostrcat(emuname, "  (", 1, 0);
 				emuname = ostrcat(emuname, _("started"), 1, 0);
@@ -93,7 +93,7 @@ void readmenu()
 				emuname = ostrcat(emuname, _("active"), 1, 0);
 				emuname = ostrcat(emuname, ")", 1, 0);
 			}
-			else if(check ==1)
+			else if(check == 1)
 			{
 				emuname = ostrcat(emuname, "  (", 1, 0);
 				emuname = ostrcat(emuname, _("started"), 1, 0);
