@@ -443,7 +443,6 @@ int skyhuffmandecode(unsigned char *buf, int len, unsigned char *result, int res
 
 struct extepgcache* addextepgcache(int id, struct epg* epgnode, struct extepgcache* last)
 {
-	//debug(1000, "in");
 	struct extepgcache *newnode = NULL, *prev = NULL, *node = extepgcache;
 
 	newnode = (struct extepgcache*)calloc(1, sizeof(struct extepgcache));
@@ -476,13 +475,11 @@ struct extepgcache* addextepgcache(int id, struct epg* epgnode, struct extepgcac
 		prev->next = newnode;
 	newnode->next = node;
 
-	//debug(1000, "out");
 	return newnode;
 }
 
 void delextepgcache(struct extepgcache* cache)
 {
-	//debug(1000, "in");
 	struct extepgcache *node = extepgcache, *prev = extepgcache;
 
 	while(node != NULL)
@@ -502,12 +499,10 @@ void delextepgcache(struct extepgcache* cache)
 		prev = node;
 		node = node->next;
 	}
-	//debug(1000, "out");
 }
 
 void freeextepgcache()
 {
-	//debug(1000, "in");
 	struct extepgcache *node = extepgcache, *prev = extepgcache;
 
 	while(node != NULL)
@@ -517,21 +512,16 @@ void freeextepgcache()
 		if(prev != NULL)
 			delextepgcache(prev);
 	}
-	//debug(1000, "out");
 }
 
 struct extepgcache* getextepgcache(int id)
 {
-	//debug(1000, "in");
 	struct extepgcache *node = extepgcache;
 
 	while(node != NULL)
 	{
 		if(node->id == id)
-		{
-			//debug(1000, "out");
 			return node;
-		}
 
 		node = node->next;
 	}
@@ -541,7 +531,6 @@ struct extepgcache* getextepgcache(int id)
 
 struct extepgchannel* addextepgchannel(int id, int serviceid, off64_t transponderid, struct extepgchannel* last)
 {
-	//debug(1000, "in");
 	struct extepgchannel *newnode = NULL, *prev = NULL, *node = extepgchannel;
 
 	newnode = (struct extepgchannel*)calloc(1, sizeof(struct extepgchannel));
@@ -575,13 +564,11 @@ struct extepgchannel* addextepgchannel(int id, int serviceid, off64_t transponde
 		prev->next = newnode;
 	newnode->next = node;
 
-	//debug(1000, "out");
 	return newnode;
 }
 
 void delextepgchannel(struct extepgchannel* channel)
 {
-	//debug(1000, "in");
 	struct extepgchannel *node = extepgchannel, *prev = extepgchannel;
 
 	while(node != NULL)
@@ -601,12 +588,10 @@ void delextepgchannel(struct extepgchannel* channel)
 		prev = node;
 		node = node->next;
 	}
-	//debug(1000, "out");
 }
 
 void freeextepgchannel()
 {
-	//debug(1000, "in");
 	struct extepgchannel *node = extepgchannel, *prev = extepgchannel;
 
 	while(node != NULL)
@@ -616,21 +601,16 @@ void freeextepgchannel()
 		if(prev != NULL)
 			delextepgchannel(prev);
 	}
-	//debug(1000, "out");
 }
 
 struct extepgchannel* getextepgchannel(int id)
 {
-	//debug(1000, "in");
 	struct extepgchannel *node = extepgchannel;
 
 	while(node != NULL)
 	{
 		if(node->id == id)
-		{
-			//debug(1000, "out");
 			return node;
-		}
 
 		node = node->next;
 	}
@@ -640,7 +620,6 @@ struct extepgchannel* getextepgchannel(int id)
 
 struct extepgconfig* addextepgconfig(char *line, int count, struct extepgconfig* last)
 {
-	//debug(1000, "in");
 	struct extepgconfig *newnode = NULL, *prev = NULL, *node = extepgconfig;
 	char *file = NULL;
 	int ret = 0;
@@ -704,13 +683,11 @@ struct extepgconfig* addextepgconfig(char *line, int count, struct extepgconfig*
 		prev->next = newnode;
 	newnode->next = node;
 
-	//debug(1000, "out");
 	return newnode;
 }
 
 int readextepgconfig(char* filename)
 {
-	debug(1000, "in");
 	FILE *fd = NULL;
 	char *fileline = NULL;
 	int linecount = 0, len = 0;
@@ -756,7 +733,6 @@ int readextepgconfig(char* filename)
 
 void delextepgconfig(struct extepgconfig* config)
 {
-	//debug(1000, "in");
 	struct extepgconfig *node = extepgconfig, *prev = extepgconfig;
 
 	while(node != NULL)
@@ -779,12 +755,10 @@ void delextepgconfig(struct extepgconfig* config)
 		prev = node;
 		node = node->next;
 	}
-	//debug(1000, "out");
 }
 
 void freeextepgconfig()
 {
-	//debug(1000, "in");
 	struct extepgconfig *node = extepgconfig, *prev = extepgconfig;
 
 	while(node != NULL)
@@ -794,21 +768,16 @@ void freeextepgconfig()
 		if(prev != NULL)
 			delextepgconfig(prev);
 	}
-	//debug(1000, "out");
 }
 
 struct extepgconfig* getextepgconfig(uint64_t transponderid, int type)
 {
-	//debug(1000, "in");
 	struct extepgconfig *node = extepgconfig;
 
 	while(node != NULL)
 	{
 		if(node->transponderid == transponderid && node->type == type)
-		{
-			//debug(1000, "out");
 			return node;
-		}
 
 		node = node->next;
 	}
@@ -1017,10 +986,7 @@ int readmhwtitle(struct stimerthread* self, struct dvbdev* fenode, struct channe
 			serviceid = HILO(mhwchannel->channel_id);
 			tmpchnode = getchannel(serviceid, transponderid);
 			if(tmpchnode == NULL)
-			{
-				debug(1000, "NULL detect");
 				continue;
-			}
 
 			//look in epglist if channel exists
 			//only if epglist is marked as whitelist
@@ -1064,7 +1030,6 @@ int readmhwtitle(struct stimerthread* self, struct dvbdev* fenode, struct channe
 
 			if(epgnode == NULL)
 			{
-				debug(1000, "NULL detect");
 				m_unlock(&status.epgmutex, 4);
 				continue;
 			}
@@ -1502,7 +1467,6 @@ int readmhw2title(struct stimerthread* self, struct dvbdev* fenode, struct chann
 				tmpchnode = getchannel(serviceid, transponderid);
 				if(tmpchnode == NULL)
 				{
-					debug(1000, "NULL detect");
 					pos += 3;
 					continue;
 				}
@@ -1538,7 +1502,6 @@ int readmhw2title(struct stimerthread* self, struct dvbdev* fenode, struct chann
 
 				if(epgnode == NULL)
 				{
-					debug(1000, "NULL detect");
 					m_unlock(&status.epgmutex, 4);
 					pos += 3;
 					continue;
@@ -2090,7 +2053,6 @@ start:
 						tmpchnode = getchannel(extepgchannelnode->serviceid, extepgchannelnode->transponderid);
 						if(tmpchnode == NULL)
 						{
-							debug(1000, "NULL detect");
 							p += packetlen;
 							continue;
 						}
@@ -2126,7 +2088,6 @@ start:
 
 						if(epgnode == NULL)
 						{
-							debug(1000, "NULL detect");
 							m_unlock(&status.epgmutex, 4);
 							p += packetlen;
 							continue;

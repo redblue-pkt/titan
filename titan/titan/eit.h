@@ -123,7 +123,6 @@ char* createwriteepg(int* buflen)
 
 int writeepgfast(const char* filename, char* buf, int buflen)
 {
-	debug(1000, "in");
 	FILE *fd = NULL;
 	int ret;
 
@@ -156,13 +155,11 @@ int writeepgfast(const char* filename, char* buf, int buflen)
 	}
 
 	fclose(fd);
-	debug(1000, "out");
 	return 0;
 }
 
 int writeepgslow(const char* filename)
 {
-	debug(1000, "in");
 	FILE *fd = NULL;
 	struct channel *chnode = channel;
 	struct epg* epgnode = NULL;
@@ -279,7 +276,6 @@ int writeepgslow(const char* filename)
 
 	fclose(fd);
 	if(err == 1) unlink(filename);
-	debug(1000, "out");
 	m_unlock(&status.epgmutex, 4);
 	return 0;
 }
@@ -310,7 +306,7 @@ char* epgdescunzip(struct epg* epgnode)
 
 	if(epgnode == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
@@ -326,25 +322,20 @@ char* epgdescunzip(struct epg* epgnode)
 
 struct epg* getepgbytime(struct channel* chnode, time_t akttime)
 {
-	debug(1000, "in");
-
 	m_lock(&status.epgmutex, 4);
 
 	if(chnode == NULL || chnode->epg == NULL)
 	{
-		debug(1000, "out-> NULL detect");
 		m_unlock(&status.epgmutex, 4);
 		return NULL;
 	}
 
 	struct epg *node = chnode->epg;
-
 	while(node != NULL)
 	{
 		if(node->starttime <= akttime && node->endtime > akttime) 
 		{
-			debug(1000, "out");
-        		m_unlock(&status.epgmutex, 4);
+			m_unlock(&status.epgmutex, 4);
 			return node;
 		}
 
@@ -357,26 +348,22 @@ struct epg* getepgbytime(struct channel* chnode, time_t akttime)
 
 struct epg* getepgnext(struct channel* chnode)
 {
-	debug(1000, "in");
 	time_t akttime = time(NULL);
 
 	m_lock(&status.epgmutex, 4);
 
 	if(chnode == NULL || chnode->epg == NULL)
 	{
-		debug(1000, "out-> NULL detect");
 		m_unlock(&status.epgmutex, 4);
 		return NULL;
 	}
 
 	struct epg *node = chnode->epg;
-
 	while(node != NULL)
 	{
 		if(node->starttime >= akttime)
 		{
-			debug(1000, "out");
-        		m_unlock(&status.epgmutex, 4);
+			m_unlock(&status.epgmutex, 4);
 			return node;
 		}
 
@@ -404,11 +391,7 @@ struct epg* getepgakt(struct channel* chnode)
 //flag 1: nolock
 struct epg* getepg(struct channel* chnode, int eventid, int flag)
 {
-	if(chnode == NULL)
-	{
-		debug(1000, "out-> NULL detect");
-		return NULL;
-	}
+	if(chnode == NULL) return NULL;
 
 	if(flag == 0) m_lock(&status.epgmutex, 4);
 
@@ -435,11 +418,7 @@ struct epg* updateepg(struct channel* chnode, struct epg* epgnode, int eventid, 
 //	debug(1000, "in");
 	int changetime = 0;
 
-	if(chnode == NULL || epgnode == NULL)
-	{
-		debug(1000, "out-> NULL detect");
-		return NULL;
-	}
+	if(chnode == NULL || epgnode == NULL) return NULL;
 
 	//if(epgnode->version >= version) return epgnode;
 	if(endtime <= time(NULL)) return epgnode;
@@ -503,7 +482,6 @@ struct epg* updateepg(struct channel* chnode, struct epg* epgnode, int eventid, 
 	}
 
 	if(flag == 0) m_unlock(&status.epgmutex, 4);
-//	debug(1000, "out");
 	return epgnode;
 }
 
@@ -511,13 +489,7 @@ struct epg* updateepg(struct channel* chnode, struct epg* epgnode, int eventid, 
 //flag 1: nolock
 struct epg* addoldentryepg(struct channel* chnode, struct epg* newnode, int flag)
 {
-//	debug(1000, "in");
-
-	if(newnode == NULL)
-	{
-		debug(1000, "out-> NULL detect");
-		return NULL;
-	}
+	if(newnode == NULL) return NULL;
 
 	if(flag == 0) m_lock(&status.epgmutex, 4);
 
@@ -543,7 +515,6 @@ struct epg* addoldentryepg(struct channel* chnode, struct epg* newnode, int flag
 
 	addoldentry((void*)newnode, 0, time(NULL) + 3600, NULL);
 
-//	debug(1000, "out");
 	return newnode;
 }
 
@@ -551,13 +522,7 @@ struct epg* addoldentryepg(struct channel* chnode, struct epg* newnode, int flag
 //flag 1: nolock
 struct epg* addepg(struct channel* chnode, int eventid, int version, time_t starttime, time_t endtime, struct epg* last, int flag)
 {
-//	debug(1000, "in");
-
-	if(chnode == NULL)
-	{
-		debug(1000, "out-> NULL detect");
-		return NULL;
-	}
+	if(chnode == NULL) return NULL;
 
 	if(flag == 0) m_lock(&status.epgmutex, 4);
 
@@ -625,26 +590,17 @@ struct epg* addepg(struct channel* chnode, int eventid, int version, time_t star
 	if(node != NULL) node->prev = newnode;
 
 	if(flag == 0) m_unlock(&status.epgmutex, 4);
-//	debug(1000, "out");
 	return newnode;
 }
 
 void deloldentryepg(struct epg* node)
 {
-	debug(1000, "in");
-
-	if(node == NULL)
-	{
-		debug(1000, "out-> NULL detect");
-		return;
-	}
+	if(node == NULL) return;
 
 	clearepgentry(node);
 
 	free(node);
 	node = NULL;
-
-	debug(1000, "out");
 }
 
 void clearepgentry(struct epg* node)
@@ -665,13 +621,7 @@ void clearepgentry(struct epg* node)
 //flag 1: nolock
 void delepg(struct channel* chnode, struct epg* epgnode, int flag)
 {
-	debug(1000, "in");
-
-	if(chnode == NULL)
-	{
-		debug(1000, "out-> NULL detect");
-		return;
-	}
+	if(chnode == NULL) return;
 
 	if(flag == 0) m_lock(&status.epgmutex, 4);
 
@@ -705,18 +655,11 @@ void delepg(struct channel* chnode, struct epg* epgnode, int flag)
 		node = node->next;
 	}
 	if(flag == 0) m_unlock(&status.epgmutex, 4);
-	debug(1000, "out");
 }
 
 void freeepg(struct channel* chnode)
 {
-	debug(1000, "in");
-
-	if(chnode == NULL)
-	{
-		debug(1000, "out-> NULL detect");
-		return;
-	}
+	if(chnode == NULL) return;
 
 	m_lock(&status.epgmutex, 4);
 	struct epg *node = chnode->epg, *prev = chnode->epg;
@@ -729,7 +672,6 @@ void freeepg(struct channel* chnode)
 			delepg(chnode, prev, 1);
 	}
 	m_unlock(&status.epgmutex, 4);
-	debug(1000, "out");
 }
 
 //flag 0: stop scanlist and delete epg.dat
@@ -1259,7 +1201,6 @@ void parseeit(struct channel* chnode, unsigned char *buf, int len, int flag)
 
 		if(epgnode == NULL)
 		{
-			debug(1000, "out -> NULL detect");
 			m_unlock(&status.epgmutex, 4);
 			continue;
 		}
@@ -1285,7 +1226,6 @@ void parseeit(struct channel* chnode, unsigned char *buf, int len, int flag)
 
 int readepg(const char* filename)
 {
-	debug(1000, "in");
 	FILE *fd = NULL;
 	struct channel *chnode = channel, *oldchnode = NULL;
 	struct epg* epgnode = NULL;
@@ -1416,7 +1356,6 @@ int readepg(const char* filename)
 			chnode = getchannel(serviceid, transponderid);
 			if(chnode == NULL)
 			{
-				debug(1000, "out -> NULL detect");
 				free(title); title = NULL;
 				free(subtitle); subtitle = NULL;
 				free(desc); desc = NULL;
@@ -1439,7 +1378,6 @@ int readepg(const char* filename)
 		epgnode = addepg(chnode, eventid, version, starttime, endtime, epgnode, 1);
 		if(epgnode == NULL)
 		{
-			debug(1000, "out -> NULL detect");
 			free(title); title = NULL;
 			free(subtitle); subtitle = NULL;
 			free(desc); desc = NULL;
@@ -1463,7 +1401,6 @@ int readepg(const char* filename)
 	//epg.dat seems defekt IO Error
 	if(count > 50) unlink(filename);
 
-	debug(1000, "out");
 	return 0;
 }
 
@@ -1650,7 +1587,6 @@ end:
 
 void epgthreadfunc(struct stimerthread* self)
 {
-	debug(1000, "in");
 	char* tmpstr = NULL;
 	time_t akttime = 0;
 	struct channel* chnode = NULL;
@@ -1741,7 +1677,6 @@ void epgthreadfunc(struct stimerthread* self)
 
 end:
 	debug(400, "end epg thread on aktiv channel");
-	debug(1000, "out");
 }
 
 #endif

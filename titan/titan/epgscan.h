@@ -111,16 +111,12 @@ void epgscanlistclearscantime()
 
 struct epgscanlist* getepgscanlistbytransponder(uint64_t transponderid)
 {
-	//debug(1000, "in");
 	struct epgscanlist *node = epgscanlist;
 
 	while(node != NULL)
 	{
 		if(node->transponderid == transponderid)
-		{
-			//debug(1000, "out");
 			return node;
-		}
 
 		node = node->next;
 	}
@@ -373,7 +369,6 @@ struct epgscanlist* addepgscanlist(char *line, int count, struct epgscanlist* la
 
 int readepgscanlist(const char* filename)
 {
-	debug(1000, "in");
 	FILE *fd = NULL;
 	char *fileline = NULL;
 	int linecount = 0, len = 0;
@@ -420,7 +415,6 @@ int readepgscanlist(const char* filename)
 
 int delepgscanlist(int serviceid, uint64_t transponderid)
 {
-	debug(1000, "in");
 	int ret = 1;
 	struct epgscanlist *node = epgscanlist, *prev = epgscanlist;
 
@@ -451,22 +445,17 @@ int delepgscanlist(int serviceid, uint64_t transponderid)
 		prev = node;
 		node = node->next;
 	}
-	debug(1000, "out");
 	return ret;
 }
 
 struct epgscanlist* getepgscanlist(int serviceid, uint64_t transponderid)
 {
-	//debug(1000, "in");
 	struct epgscanlist *node = epgscanlist;
 
 	while(node != NULL)
 	{
 		if(node->serviceid == serviceid && node->transponderid == transponderid)
-		{
-			//debug(1000, "out");
 			return node;
-		}
 
 		node = node->next;
 	}
@@ -476,7 +465,6 @@ struct epgscanlist* getepgscanlist(int serviceid, uint64_t transponderid)
 
 void freeepgscanlist()
 {
-	debug(1000, "in");
 	struct epgscanlist *node = epgscanlist, *prev = epgscanlist;
 
 	while(node != NULL)
@@ -486,12 +474,10 @@ void freeepgscanlist()
 		if(prev != NULL)
 			delepgscanlist(prev->serviceid, prev->transponderid);
 	}
-	debug(1000, "out");
 }
 
 int writeepgscanlist(const char *filename)
 {
-	debug(1000, "in");
 	FILE *fd = NULL;
 	struct epgscanlist *node = epgscanlist;
 	int ret = 0;
@@ -514,7 +500,6 @@ int writeepgscanlist(const char *filename)
 	}
 
 	fclose(fd);
-	debug(1000, "out");
 	return 0;
 }
 
