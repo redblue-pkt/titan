@@ -122,5 +122,6 @@ compile "facebook" "facebook" "" "-l curl"
 compile "readerconfig" "readerconfig" "" ""
 compile "tiwakeup" "tiwakeup" "" ""
 compile "autotimer" "autotimer" "" ""
+compile "usbreset" "usbreset" "" ""
 
 #rm -r networkbrowser/networkbrowser
