@@ -4,7 +4,7 @@
 #include "crc32.h"
 #include "sock.h"
 
-#define SYSCODE 0UL
+#define SYSCODE 1738589837UL
 #define HTTPAUTH "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0="
 
 struct clist *config[LISTHASHSIZE] = {NULL};

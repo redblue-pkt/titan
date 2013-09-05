@@ -10,7 +10,7 @@ int calclof(struct dvbdev* node, struct transponder* tpnode, char* feaktnr, int 
 
 	if(node == NULL || tpnode == NULL)
 	{
-		err("NULL detect");
+		perr("NULL detect");
 		return -1;
 	}
 
@@ -108,7 +108,7 @@ char* fegettypestr(struct dvbdev* dvbnode)
 
 	if(dvbnode == NULL)
 	{
-		err("NULL detect");
+		perr("NULL detect");
 		return NULL;
 	}
 
@@ -142,7 +142,7 @@ void fegetconfig(struct dvbdev *dvbnode, struct transponder *tpnode, char** aktn
 
 	if(dvbnode == NULL || tpnode == NULL)
 	{
-		err("NULL detect");
+		perr("NULL detect");
 		return;
 	}
 
@@ -201,7 +201,7 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 
 	if(tpnode == NULL)
 	{
-		err("NULL detect");
+		perr("NULL detect");
 		return NULL;
 	}
 
@@ -456,7 +456,7 @@ int fegetunlock(struct dvbdev* node)
 
 	if(node == NULL)
 	{
-		err("NULL detect");
+		perr("NULL detect");
 		return 1;
 	}
 
@@ -482,7 +482,7 @@ int fewait(struct dvbdev* node)
 
 	if(node == NULL)
 	{
-		err("NULL detect");
+		perr("NULL detect");
 		return 1;
 	}
 
@@ -516,7 +516,7 @@ void fegetfrontend(struct dvbdev* node)
 {
 	if(node == NULL)
 	{
-		err(""NULL detect");
+		perr("NULL detect");
 		return;
 	}
 
@@ -576,7 +576,7 @@ int fesettone(struct dvbdev* node, fe_sec_tone_mode_t tone, int wait)
 	
 	if(node == NULL)
 	{
-		err("NULL detect");
+		perr("NULL detect");
 		return 1;
 	}
 
@@ -603,7 +603,7 @@ int fesetvoltage(struct dvbdev* node, fe_sec_voltage_t volt, int wait)
 	
 	if(node == NULL)
 	{
-		err("NULL detect");
+		perr("NULL detect");
 		return 1;
 	}
 
@@ -637,7 +637,7 @@ void fediseqcsendburst(struct dvbdev* node, fe_sec_mini_cmd_t burst, int wait)
 {
 	if(node == NULL)
 	{
-		err("NULL detect");
+		perr("NULL detect");
 		return;
 	}
 
@@ -654,7 +654,7 @@ void fediseqcsendmastercmd(struct dvbdev* node, struct dvb_diseqc_master_cmd *cm
 
 	if(node == NULL)
 	{
-		err("NULL detect");
+		perr("NULL detect");
 		return;
 	}
 	
@@ -684,7 +684,7 @@ void fesdiseqcpoweron(struct dvbdev* node)
 
 	if(node == NULL)
 	{
-		err("NULL detect");
+		perr("NULL detect");
 		return;
 	}
 
@@ -703,7 +703,7 @@ void fesdiseqcreset(struct dvbdev* node)
 	
 	if(node == NULL)
 	{
-		err("NULL detect");
+		perr("NULL detect");
 		return;
 	}
 
@@ -722,7 +722,7 @@ void fesdiseqcstandby(struct dvbdev* node)
 	
 	if(node == NULL)
 	{
-		err("NULL detect");
+		perr("NULL detect");
 		return;
 	}
 	
@@ -744,7 +744,7 @@ void fediseqcrotor(struct dvbdev* node, struct transponder* tpnode, int pos, int
 	
 	if(node == NULL)
 	{
-		err("NULL detect");
+		perr("NULL detect");
 		return;
 	}
 	
@@ -858,7 +858,7 @@ void fesetunicable(struct dvbdev* node)
 
 	if(node == NULL)
 	{
-		err("NULL detect");
+		perr("NULL detect");
 		return;
 	}
 
@@ -1093,7 +1093,7 @@ void feset(struct dvbdev* node, struct transponder* tpnode)
 
 	if(node == NULL)
 	{
-		err("NULL detect");
+		perr("NULL detect");
 		return;
 	}
 
@@ -1154,7 +1154,7 @@ void fediscard(struct dvbdev* node)
 
 	if(node == NULL)
 	{
-		err("NULL detect");
+		perr("NULL detect");
 		return;
 	}
 
@@ -1173,7 +1173,7 @@ uint16_t fereadsnr(struct dvbdev* node)
 
 	if(node == NULL)
 	{
-		err("NULL detect");
+		perr("NULL detect");
 		return 0;
 	}
 
@@ -1188,7 +1188,7 @@ uint16_t fereadsignalstrength(struct dvbdev* node)
 
 	if(node == NULL)
 	{
-		err("NULL detect");
+		perr("NULL detect");
 		return 0;
 	}
 
@@ -1203,7 +1203,7 @@ uint32_t fereadber(struct dvbdev* node)
 
 	if(node == NULL)
 	{
-		err("NULL detect");
+		perr("NULL detect");
 		return 0;
 	}
 
@@ -1218,7 +1218,7 @@ uint32_t fereaduncorrectedblocks(struct dvbdev* node)
 
 	if(node == NULL)
 	{
-		err("NULL detect");
+		perr("NULL detect");
 		return 0;
 	}
 
@@ -1233,7 +1233,7 @@ fe_status_t fereadstatus(struct dvbdev* node)
 
 	if(node == NULL)
 	{
-		err("NULL detect");
+		perr("NULL detect");
 		return -1;
 	}
 
@@ -1256,7 +1256,7 @@ void fetunedvbs(struct dvbdev* node, struct transponder* tpnode)
 {
 	if(node == NULL || tpnode == NULL)
 	{
-		err("NULL detect");
+		perr("NULL detect");
 		return;
 	}
 	
@@ -1390,7 +1390,7 @@ void fetunedvbc(struct dvbdev* node, struct transponder* tpnode)
 {
 	if(node == NULL || tpnode == NULL)
 	{
-		err("NULL detect");
+		perr("NULL detect");
 		return;
 	}
 	
@@ -1472,7 +1472,7 @@ void fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 
 	if(node == NULL || tpnode == NULL)
 	{
-		err("NULL detect");
+		perr("NULL detect");
 		return;
 	}
 	
@@ -1585,7 +1585,7 @@ struct dvb_frontend_info* fegetinfo(struct dvbdev* node, int fd)
 	feinfo = (struct dvb_frontend_info*)malloc(sizeof(struct dvb_frontend_info));
 	if(feinfo == NULL)
 	{
-		err("no mem");
+		perr("no mem");
 		return NULL;
 	}
 
@@ -1623,14 +1623,14 @@ int fegetdev()
 	frontenddev = getconfig("frontenddev", NULL);
 	if(frontenddev == NULL)
 	{
-		err("NULL detect");
+		perr("NULL detect");
 		return count;
 	}
 
 	buf = malloc(MINMALLOC);
 	if(buf == NULL)
 	{
-		err("no memory");
+		perr("no memory");
 		return count;
 	}
 
@@ -1667,14 +1667,14 @@ int fecreatedummy()
 	frontenddev = getconfig("frontenddev", NULL);
 	if(frontenddev == NULL)
 	{
-		err("NULL detect");
+		perr("NULL detect");
 		return 1;
 	}
 
 	buf = malloc(MINMALLOC);
 	if(buf == NULL)
 	{
-		err("no memory");
+		perr("no memory");
 		return 1;
 	}
 
