@@ -925,7 +925,7 @@ firstwizzardstep1:
 	//start record timer thread (on delay change you must change rectimer.h also)
 	status.rectimerthread = addtimer(&checkrectimer, START, 1000, -1, NULL, NULL, NULL);
 	//check if cam socket connected
-	addtimer(&checkcam, START, 3000, -1, NULL, NULL, NULL);
+//	addtimer(&checkcam, START, 3000, -1, NULL, NULL, NULL);
 	//start stream server
 	tmpthread = addtimer(&streamthreadfunc, START, 10000, -1, NULL, NULL, NULL);
 	if(tmpthread != NULL)
