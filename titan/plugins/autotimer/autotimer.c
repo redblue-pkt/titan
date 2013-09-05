@@ -248,17 +248,30 @@ void autotimer_thread()
 						node->transponderid = channelall->transponderid;
 						recnode = rectimer;
 						konflikt = 0;
+						
+						//gleiche Sendung, gleicher Sender?
 						while(recnode != NULL)
 						{
 							if(recnode != node && recnode->status < 2)
 							{
 								if((node->begin >= recnode->begin && node->begin < recnode->end) || (node->end >= recnode->begin && node->end < recnode->end))
 								{
-									konflikt = 1;
-									break;
+									if(ostrcmp(epgnode->title, recnode->name) == 0 && channelall->transponderid == recnode->transponderid && channelall->servicetype == recnode->servicetype)
+									{	
+										konflikt = 1;
+										break;
+									}
 								}
 							}
 							recnode = recnode->next;
+						}
+						
+						//allgemeiner Konflikt?
+						recnode = rectimer;
+						if(konflikt == 0)
+						{
+							if(checkrectimerconflict(recnode) != 0) 
+								konflikt = 1;
 						}
 						
 						if(konflikt == 0)
@@ -267,8 +280,16 @@ void autotimer_thread()
 							node->recpath = ostrcat(NULL, getconfig("rec_path", NULL), 0, 0);
 							node->afterevent = 0;
 							node->repeate = 0;
-							node->justplay = getconfigint("at1_event", NULL);
-							node->afterevent = getconfigint("at1_afterevent", NULL);
+							if(searchpos == 1)
+							{
+								node->justplay = getconfigint("at1_event", NULL);
+								node->afterevent = getconfigint("at1_afterevent", NULL);
+							}
+							else if(searchpos == 2)
+							{
+								node->justplay = getconfigint("at2_event", NULL);
+								node->afterevent = getconfigint("at2_afterevent", NULL);
+							}
 							node->serviceid = channelall->serviceid;
 							node->servicetype = channelall->servicetype;
 							node->disabled = 0;
@@ -301,6 +322,12 @@ void autotimer_thread()
 					searchall = search2;
 					channelall = channel2;
 					searchpos = 2;
+				}
+				else
+				{
+					searchall = NULL;
+					channelall = NULL;
+				  searchpos = 0;
 				}
 			}
 			else if(searchpos == 2)
