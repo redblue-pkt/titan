@@ -45,7 +45,6 @@ struct tpk
 	int done;
 	char* url;
 	int size;
-	int type;
 	char* installpath;
 	char* usepath;
 	struct tpk* prev;
@@ -79,7 +78,7 @@ void debugtpk()
 	}
 }
 
-struct tpk* addtpk(char *name, char* desc, char* section, char* showname, char* arch, char* filename, char* titanname, int version, int group, int minversion, int preinstalled, char* url, int size, int type, char* installpath, char* usepath, struct tpk* last)
+struct tpk* addtpk(char *name, char* desc, char* section, char* showname, char* arch, char* filename, char* titanname, int version, int group, int minversion, int preinstalled, char* url, int size, char* installpath, char* usepath, struct tpk* last)
 {
 	struct tpk *newnode = NULL, *prev = NULL, *node = tpk;
 
@@ -106,7 +105,6 @@ struct tpk* addtpk(char *name, char* desc, char* section, char* showname, char* 
 	newnode->minversion = minversion;
 	newnode->preinstalled = preinstalled;
 	newnode->size = size;
-	newnode->type = type;
 	newnode->installpath = strstrip(ostrcat(installpath, NULL, 0, 0));
 	newnode->usepath = strstrip(ostrcat(usepath, NULL, 0, 0));
 
@@ -774,7 +772,7 @@ struct tpk* tpkreadcontrol(char* path, int flag)
 	FILE *fd = NULL;
 	char* fileline = NULL, *tmpstr = NULL;
 	char* showname = NULL, *section = NULL, *desc = NULL, *packagename = NULL, *arch = NULL, *filename = NULL, *titanname = NULL, *installpath = NULL, *usepath = NULL;
-	int version = 0, group = 0, minversion = 0, preinstalled = 0, size = 0, type = 0;
+	int version = 0, group = 0, minversion = 0, preinstalled = 0, size = 0;
 	struct tpk* tpknode = NULL;
 
 	if(path == NULL) return NULL;
@@ -850,12 +848,6 @@ struct tpk* tpkreadcontrol(char* path, int flag)
 			if(tmpstr != NULL) size = atoi(tmpstr);
 			free(tmpstr); tmpstr = NULL;
 		}
-		if(strstr(fileline, "Type: ") == fileline)
-		{
-			tmpstr = ostrcat(fileline + 6, NULL, 0, 0);
-			if(tmpstr != NULL) type = atoi(tmpstr);
-			free(tmpstr); tmpstr = NULL;
-		}
 		if(strstr(fileline, "Titanname: ") == fileline)
 			titanname = ostrcat(fileline + 11, NULL, 0, 0);
 		if(strstr(fileline, "Installpath: ") == fileline)
@@ -877,7 +869,7 @@ struct tpk* tpkreadcontrol(char* path, int flag)
 	filename = ostrcat(filename, "_", 1, 0);
 	filename = ostrcat(filename, arch, 1, 0);
 
-	tpknode = addtpk(packagename, desc, section, showname, arch, filename, titanname, version, group, minversion, preinstalled, NULL, size, type, installpath, usepath, NULL);
+	tpknode = addtpk(packagename, desc, section, showname, arch, filename, titanname, version, group, minversion, preinstalled, NULL, size, installpath, usepath, NULL);
 
 end:
 	free(showname); showname = NULL;
@@ -981,27 +973,18 @@ end:
 
 #ifndef TPKCREATE
 
-int tpkchecksize(struct tpk* tpknode)
+int tpkchecksize(struct tpk* tpknode, char* installpath)
 {
-	if(tpknode == NULL) return 0;
+	if(tpknode == NULL || installpath == NULL) return 0;
 
 	if(tpknode->size != 0)
 	{
-		if(tpknode->type == 0) //check /var
+		if(tpknode->type == 0)
 		{
-			unsigned long long size = getfreespace("/var") / 1024;
+			unsigned long long size = getfreespace(installpath) / 1024;
 			if(tpknode->size + TPKADDSIZE >= size)
 			{
-				err("size to big for /var %d -> %lld", tpknode->size, size);
-				return 1;
-			}
-		}
-		else if(tpknode->type == 1) //check /var/swap
-		{
-			unsigned long long size = getfreespace("/var/swap") / 1024;
-			if(tpknode->size + TPKADDSIZE >= size)
-			{
-				err("size to big for /var/swap %d -> %lld", tpknode->size, size);
+				err("size to big for %s %d -> %lld", installpath, tpknode->size, size);
 				return 1;
 			}
 		}
@@ -2021,7 +2004,7 @@ int tpkinstall(char* file, char* installpath)
 	}
 
 	//check size
-	ret = tpkchecksize(tpknode);
+	ret = tpkchecksize(tpknode, installpath);
 	if(ret != 0)
 	{
 		err("size to big %d", tpknode->size);
@@ -2605,8 +2588,8 @@ int tpklist()
 	int ret = 0, len = 0;
 	FILE *fd = NULL;
 	char* fileline = NULL;
-	char* name = NULL, *showname = NULL, *section = NULL, *desc = NULL, *url = NULL, *arch = NULL, *filename = NULL, *titanname = NULL, *installpath = NULL, *usepath = NULL;
-	int version = 0, group = 0, minversion = 0, preinstalled = 0, size = 0, type = 0;
+	char* name = NULL, *showname = NULL, *section = NULL, *desc = NULL, *url = NULL, *arch = NULL, *filename = NULL, *titanname = NULL, *usepath = NULL;
+	int version = 0, group = 0, minversion = 0, preinstalled = 0, size = 0;
 	struct tpk* tpknode = NULL, *tpkinstalled = NULL, *tpktmp = NULL;
 
 	freetpk();
@@ -2678,14 +2661,6 @@ int tpklist()
 		goto end;
 	}
 	
-	installpath = malloc(MINMALLOC);
-	if(installpath == NULL)
-	{
-		err("no mem");
-		ret = 1;
-		goto end;
-	}
-	
 	usepath = malloc(MINMALLOC);
 	if(usepath == NULL)
 	{
@@ -2711,7 +2686,7 @@ int tpklist()
 		if(len >= 0 && fileline[len] == '\r')
 			fileline[len] = '\0';
 
-		ret = sscanf(fileline, "%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%d#%d#%d#%d#%d#%d", url, name, showname, section, desc, arch, titanname, installpath, usepath, &version, &group, &minversion, &preinstalled, &size, &type);
+		ret = sscanf(fileline, "%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%d#%d#%d#%d#%d#%d", url, name, showname, section, desc, arch, titanname, usepath, &version, &group, &minversion, &preinstalled, &size);
 		if(ret != 13)
 		{
 			err("read file %s", TMPALLPACKAGES);
@@ -2745,7 +2720,7 @@ int tpklist()
 			filename = ostrcat(filename, "_", 1, 0);
 			filename = ostrcat(filename, arch, 1, 0);
 			
-			tpknode = addtpk(name, desc, section, showname, arch, filename, titanname, version, group, minversion, preinstalled, url, size, type, installpath, usepath, NULL);
+			tpknode = addtpk(name, desc, section, showname, arch, filename, titanname, version, group, minversion, preinstalled, url, size, installpath, usepath, NULL);
 		}
 	}
 
@@ -3142,7 +3117,7 @@ struct menulist* tpkmenulist(struct menulist* mlist, char* paramskinname, char* 
 				tmpstr = ostrcat(tmpstr, node->section, 1, 0);
 				tmpstr = ostrcat(tmpstr, ")", 1, 0);
 				tmpmlist = addmenulist(&mlist, tmpstr, NULL, tmppic, 0, 0);
-				changemenulistparam(tmpmlist, node->name, node->titanname);
+				changemenulistparam(tmpmlist, node->name, node->titanname, NULL);
 				free(tmpstr); tmpstr = NULL;
 			}
 			
@@ -3223,12 +3198,7 @@ struct menulist* tpkmenulist(struct menulist* mlist, char* paramskinname, char* 
 			}
 
 			tmpmlist = addmenulist(&mlist, tmpstr, tmpinfo, tmppic, 0, 0);
-
-			//check size
-			if(tpkchecksize(node) != 0)
-				changemenulistparam(tmpmlist, node->filename, "0");
-			else
-				changemenulistparam(tmpmlist, node->filename, node->url);
+			changemenulistparam(tmpmlist, node->filename, node->url, node->path, node->size);
  
 			free(tmpstr); tmpstr = NULL;
 			free(tmpinfo); tmpinfo = NULL;

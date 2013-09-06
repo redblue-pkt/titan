@@ -556,7 +556,7 @@ struct menulist* addmenulist(struct menulist** mlist, char* name, char* text, ch
 struct menulist* menulistbox(struct menulist* mlist, char* paramskinname, char* skintitle, char* paramskinpath, char* defaultpic, int showpng, int flag);
 struct menulist* menulistboxext(struct menulist* mlist, char* paramskinname, char* skintitle, char* paramskinpath, char* defaultpic, int showpng, int* rcreturn, int flag);
 void setmenulistdefault(struct menulist* mlist, char* defaultentry);
-void changemenulistparam(struct menulist* mlist, char* param, char* param1);
+void changemenulistparam(struct menulist* mlist, char* param, char* param1, char* param2, char* param3);
 
 //skinfunc.h
 char* gettime(struct skin* node, char* format);
