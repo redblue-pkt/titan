@@ -1,14 +1,9 @@
 #! /bin/sh
 #
 
-#rm -rf /var/usr/lib/gstreamer-0.10
-#ln -s /var/swap/lib/gstreamer-0.10 /var/usr/lib
-#rm -rf /var/usr/lib/directfb-1.4-5
-#ln -s /var/swap/lib/directfb-1.4-5 /var/usr/lib
-
 echo start gmediarender
-export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/var/swap/lib
-export PATH=$PATH:/var/swap/bin:/var/bin
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/var/swap/lib:/mnt/swapextensions/lib
+export PATH=$PATH:/var/swap/bin:/mnt/swapextensions/bin:/var/bin
 
 gmediarender -f $1 --gst-debug-disable
 echo close gmediarender
