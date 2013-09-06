@@ -979,14 +979,11 @@ int tpkchecksize(struct tpk* tpknode, char* installpath)
 
 	if(tpknode->size != 0)
 	{
-		if(tpknode->type == 0)
+		unsigned long long size = getfreespace(installpath) / 1024;
+		if(tpknode->size + TPKADDSIZE >= size)
 		{
-			unsigned long long size = getfreespace(installpath) / 1024;
-			if(tpknode->size + TPKADDSIZE >= size)
-			{
-				err("size to big for %s %d -> %lld", installpath, tpknode->size, size);
-				return 1;
-			}
+			err("size to big for %s %d -> %lld", installpath, tpknode->size, size);
+			return 1;
 		}
 	}
 
@@ -2720,7 +2717,7 @@ int tpklist()
 			filename = ostrcat(filename, "_", 1, 0);
 			filename = ostrcat(filename, arch, 1, 0);
 			
-			tpknode = addtpk(name, desc, section, showname, arch, filename, titanname, version, group, minversion, preinstalled, url, size, installpath, usepath, NULL);
+			tpknode = addtpk(name, desc, section, showname, arch, filename, titanname, version, group, minversion, preinstalled, url, size, NULL, usepath, NULL);
 		}
 	}
 
@@ -2738,7 +2735,6 @@ end:
 	free(arch); arch = NULL;
 	free(filename); filename = NULL;
 	free(titanname); titanname = NULL;
-	free(installpath); installpath = NULL;
 	free(usepath); usepath = NULL;
 	free(fileline); fileline = NULL;
 	if(fd != NULL) fclose(fd);
@@ -3117,7 +3113,7 @@ struct menulist* tpkmenulist(struct menulist* mlist, char* paramskinname, char* 
 				tmpstr = ostrcat(tmpstr, node->section, 1, 0);
 				tmpstr = ostrcat(tmpstr, ")", 1, 0);
 				tmpmlist = addmenulist(&mlist, tmpstr, NULL, tmppic, 0, 0);
-				changemenulistparam(tmpmlist, node->name, node->titanname, NULL);
+				changemenulistparam(tmpmlist, node->name, node->titanname, NULL, NULL);
 				free(tmpstr); tmpstr = NULL;
 			}
 			
@@ -3198,7 +3194,7 @@ struct menulist* tpkmenulist(struct menulist* mlist, char* paramskinname, char* 
 			}
 
 			tmpmlist = addmenulist(&mlist, tmpstr, tmpinfo, tmppic, 0, 0);
-			changemenulistparam(tmpmlist, node->filename, node->url, node->path, node->size);
+			changemenulistparam(tmpmlist, node->filename, node->url, node->usepath, node->size);
  
 			free(tmpstr); tmpstr = NULL;
 			free(tmpinfo); tmpinfo = NULL;
