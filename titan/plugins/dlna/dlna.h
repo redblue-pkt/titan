@@ -251,7 +251,21 @@ void screendlna()
 	memset(node, 0, sizeof(struct dlna));
 
 	dlnasetdefault(node);
-	readdlna("/var/swap/etc/minidlna.conf", node);
+	
+	if(file_exist("/var/swap/etc/minidlna.conf") == 1)
+	{
+		dlnastop = "/var/swap/titanplugins/dlna/dlna.sh stop /var/swap/etc/minidlna.conf";
+		dlnastart = "/var/swap/titanplugins/dlna/dlna.sh start /var/swap/etc/minidlna.conf";
+		dlnaconfig = "/var/swap/etc/minidlna.conf";	
+	}
+	else
+	{
+		dlnastop = "/mnt/swapextensions/titanplugins/dlna/dlna.sh stop /mnt/swapextensions/etc/minidlna.conf";
+		dlnastart = "/mnt/swapextensions/titanplugins/dlna/dlna.sh start /mnt/swapextensions/etc/minidlna.conf";
+		dlnaconfig = "/mnt/swapextensions/etc/minidlna.conf";	
+	}
+	
+	readdlna(dlnaconfig, node);
 	
 	addchoicebox(startmode, "n", _("no"));
 	addchoicebox(startmode, "y", _("yes"));
@@ -298,7 +312,7 @@ void screendlna()
 			node->dir2 = ostrcat(dir2->ret, NULL, 0, 0);
 			node->dir3 = ostrcat(dir3->ret, NULL, 0, 0);
 			node->dir4 = ostrcat(dir4->ret, NULL, 0, 0);
-			writedlna("/var/swap/etc/minidlna.conf", node);
+			writedlna(dlnaconfig, node);
 			freedlnacontent(node);
 			if(startmode->ret != NULL) addownconfig("dlna", startmode->ret);
 			
@@ -306,8 +320,8 @@ void screendlna()
 			
 			if(rcret == getrcconfigint("rcgreen", NULL))
 			{
-				system("/var/swap/titanplugins/dlna/dlna.sh stop");
-				ret = system("/var/swap/titanplugins/dlna/dlna.sh start");
+				system(dlnastop);
+				ret = system(dlnastart);
 				if(ret == 0)
 					textbox(_("Message"), _("DLNA started."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
 				else
@@ -318,7 +332,7 @@ void screendlna()
 
 		if(rcret == getrcconfigint("rcyellow", NULL))
 		{
-			system("/var/swap/titanplugins/dlna/dlna.sh stop");
+			system(dlnastop);
 			textbox(_("Message"), _("DLNA now stopped"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
 			drawscreen(dlna, 0, 0);
 		}
