@@ -70,6 +70,28 @@ void screenfeed()
 	free(lastline);
 }
 
+char* getinstallpath()
+{
+	char* tmpstr = NULL;
+	struct menulist* mlist = NULL, *mbox = NULL, *tmpmlist = NULL;
+	
+	tmpmlist = addmenulist(&mlist, "Flash (permanent)", NULL, NULL, 0, 0);
+	changemenulistparam(tmpmlist, "/mnt/swapextensions", NULL);
+	
+	tmpmlist = addmenulist(&mlist, "Flash (temporary)", NULL, NULL, 0, 0);
+	changemenulistparam(tmpmlist, "/var", NULL);
+	
+	tmpmlist = addmenulist(&mlist, "Stick", NULL, NULL, 0, 0);
+	changemenulistparam(tmpmlist, "/var/swap", NULL);
+	
+	mbox = menulistbox(mlist, NULL, "Choice Install Medium", NULL, NULL, 0, 0);
+	if(mbox != NULL)
+		tmpstr = ostrcat(mbox->param);
+	
+	freemenulist(mlist, 0); mlist = NULL;
+	return tmpstr;
+}
+
 void screenextensions(int mode, char* path, char* defentry, int first)
 {
 	char* tmpstr = NULL, *tmpinfo = NULL;
@@ -120,7 +142,8 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 						drawscreen(load, 0, 0);
 						resettvpic();
 						char* log = NULL;
-						if(tpkgetpackage(mbox1->param, mbox1->param1) == 0)
+						//TODO: installpath
+						if(tpkgetpackage(mbox1->param, mbox1->param1, NULL) == 0)
 						{
 							log = readfiletomem(TPKLOG, 0);
 							if(log == NULL) log = ostrcat("Install success", NULL, 0, 0);
@@ -256,7 +279,8 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 					tmpstr = ostrcat(tmpstr, "/tmp", 1, 0);
 					tmpstr = ostrcat(tmpstr, "/", 1, 0);
 					tmpstr = ostrcat(tmpstr, mbox->name, 1, 0);
-					ret = tpkinstall(tmpstr);
+					//TODO: installpath
+					ret = tpkinstall(tmpstr, NULL);
 					free(tmpstr); tmpstr = NULL;
 				}
 				else
@@ -264,7 +288,8 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 					tmpstr = ostrcat(tmpstr, path, 1, 0);
 					tmpstr = ostrcat(tmpstr, "/", 1, 0);
 					tmpstr = ostrcat(tmpstr, mbox->name, 1, 0);
-					ret = tpkinstall(tmpstr);
+					//TODO: installpath
+					ret = tpkinstall(tmpstr, NULL);
 					free(tmpstr); tmpstr = NULL;
 				}
 

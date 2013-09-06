@@ -24,7 +24,7 @@
 #define HTTPPREVIEW "Packages.preview.gz"
 
 int tpkremove(char* file, int restore, int flag);
-int tpkgetpackage(char* package, char* url);
+int tpkgetpackage(char* package, char* url, char* installpath);
 int tpklistinstalled(int flag);
 int tpkcreatefilereal(char* mainpath, char* from, char* to, off64_t start, off64_t len, char* name, int flag);
 
@@ -46,6 +46,8 @@ struct tpk
 	char* url;
 	int size;
 	int type;
+	char* installpath;
+	char* usepath;
 	struct tpk* prev;
 	struct tpk* next;
 };
@@ -77,7 +79,7 @@ void debugtpk()
 	}
 }
 
-struct tpk* addtpk(char *name, char* desc, char* section, char* showname, char* arch, char* filename, char* titanname, int version, int group, int minversion, int preinstalled, char* url, int size, int type, struct tpk* last)
+struct tpk* addtpk(char *name, char* desc, char* section, char* showname, char* arch, char* filename, char* titanname, int version, int group, int minversion, int preinstalled, char* url, int size, int type, char* installpath, char* usepath, struct tpk* last)
 {
 	struct tpk *newnode = NULL, *prev = NULL, *node = tpk;
 
@@ -105,6 +107,8 @@ struct tpk* addtpk(char *name, char* desc, char* section, char* showname, char* 
 	newnode->preinstalled = preinstalled;
 	newnode->size = size;
 	newnode->type = type;
+	newnode->installpath = strstrip(ostrcat(installpath, NULL, 0, 0));
+	newnode->usepath = strstrip(ostrcat(usepath, NULL, 0, 0));
 
 	if(last == NULL)
 	{
@@ -769,7 +773,7 @@ struct tpk* tpkreadcontrol(char* path, int flag)
 	int len = 0;
 	FILE *fd = NULL;
 	char* fileline = NULL, *tmpstr = NULL;
-	char* showname = NULL, *section = NULL, *desc = NULL, *packagename = NULL, *arch = NULL, *filename = NULL, *titanname = NULL;
+	char* showname = NULL, *section = NULL, *desc = NULL, *packagename = NULL, *arch = NULL, *filename = NULL, *titanname = NULL, *installpath = NULL, *usepath = NULL;
 	int version = 0, group = 0, minversion = 0, preinstalled = 0, size = 0, type = 0;
 	struct tpk* tpknode = NULL;
 
@@ -854,6 +858,10 @@ struct tpk* tpkreadcontrol(char* path, int flag)
 		}
 		if(strstr(fileline, "Titanname: ") == fileline)
 			titanname = ostrcat(fileline + 11, NULL, 0, 0);
+		if(strstr(fileline, "Installpath: ") == fileline)
+			installpath = ostrcat(fileline + 13, NULL, 0, 0);
+		if(strstr(fileline, "Usepath: ") == fileline)
+			usepath = ostrcat(fileline + 9, NULL, 0, 0);
 	}
 
 	if(section == NULL) section = ostrcat("extra", NULL, 0, 0);
@@ -861,13 +869,15 @@ struct tpk* tpkreadcontrol(char* path, int flag)
 	if(showname == NULL) showname = ostrcat("*", NULL, 0, 0);
 	if(arch == NULL) arch = ostrcat("noarch", NULL, 0, 0);
 	if(titanname == NULL) titanname = ostrcat("*", NULL, 0, 0);
+	if(installpath == NULL) installpath = ostrcat("*", NULL, 0, 0);
+	if(usepath == NULL) usepath = ostrcat("*", NULL, 0, 0);
 	
 	filename = ostrcat(packagename, "_", 0, 0);
 	filename = ostrcat(filename, oitoa(version), 1, 1);
 	filename = ostrcat(filename, "_", 1, 0);
 	filename = ostrcat(filename, arch, 1, 0);
 
-	tpknode = addtpk(packagename, desc, section, showname, arch, filename, titanname, version, group, minversion, preinstalled, NULL, size, type, NULL);
+	tpknode = addtpk(packagename, desc, section, showname, arch, filename, titanname, version, group, minversion, preinstalled, NULL, size, type, installpath, usepath, NULL);
 
 end:
 	free(showname); showname = NULL;
@@ -877,7 +887,9 @@ end:
 	free(arch); arch = NULL;
 	free(filename); filename = NULL;
 	free(titanname); titanname = NULL;
-	free(fileline); fileline = NULL;
+	free(installpath); installpath = NULL;
+	free(titanname); titanname = NULL;
+	free(usepath); usepath = NULL;
 	if(fd != NULL) fclose(fd);
 	return tpknode;
 }
@@ -1718,7 +1730,122 @@ end:
 	return ret;
 }
 
-int tpkinstall(char* file)
+int tpkchangeinstallpath(char* file, char* installpath)
+{
+	int ret = 0, count = 0, max = 0, i = 0;
+	FILE *fd = NULL;
+	char* fileline = NULL;
+	
+	if(installpath == NULL || installpath[0] == '*') return 0;
+
+	fileline = calloc(1, MINMALLOC);
+	if(fileline == NULL)
+	{
+		err("no mem");
+		return 1;
+	}
+
+	fd = fopen(file, "r");
+	if(fd == NULL)
+	{
+		perr("can't open %s", file);
+		free(fileline); fileline = NULL;
+		return 1;
+	}
+
+	//count lines
+	while(fgets(fileline, MINMALLOC, fd) != NULL)
+		count++;
+
+	//create buffer
+	char* buf[count];
+	for(i = 0; i < count; i++)
+		buf[i] = NULL;
+
+	ret = fseek(fd, 0, SEEK_SET);
+	if(ret < 0)
+	{
+		perr("seek to startpos");
+		ret = 1;
+		goto end;
+	}
+	else
+		ret = 0;
+
+	//read lines into buffer
+	while(fgets(fileline, MINMALLOC, fd) != NULL)
+		buf[count] = ostrcat(fileline, NULL, 0, 0);
+
+	if(fd != NULL) fclose(fd);
+
+	fd = fopen(file, "w");
+	if(fd == NULL)
+	{
+		perr("can't open %s", file);
+		free(fileline); fileline = NULL;
+		return 1;
+	}
+
+	for(i = 0; i < count; i++)
+	{
+		if(buf[i] == NULL) continue;
+		buf[i] = string_replace("_path_", installpath, buf[i], 1);	
+		ret = fprintf(fd, "%s", buf[i]);
+		if(ret < 0)
+		{
+			perr("writting filelist file (%s)", file);
+			ret = 1;
+			goto end;
+		}
+		else
+			ret = 0;
+	}
+
+end:
+	for(i = 0; i < count; i++)
+	{
+		free(buf[i]);
+		buf[i] = NULL;
+	}
+
+	free(fileline); fileline = NULL;
+	if(fd != NULL) fclose(fd);
+	return ret;
+}
+
+int tpkaddinstallpath(char* file, char* installpath)
+{
+	int ret = 0;
+	FILE *fd = NULL;
+	char* tmpstr = NULL;
+	
+	if(installpath == NULL || installpath[0] == '*') return 0;
+
+	fd = fopen(file, "a");
+	if(fd == NULL)
+	{
+		perr("can't open %s", file);
+		return 1;
+	}
+	
+	tmpstr = ostrcat("Installpath: ", installpath, 0, 0);
+	ret = fprintf(fd, "%s", tmpstr);
+	free(tmpstr); tmpstr = NULL;
+	if(ret < 0)
+	{
+		perr("add installpath to control file %s", file);
+		ret = 1;
+		goto end;
+	}
+	else
+		ret = 0;
+
+end:
+	if(fd != NULL) fclose(fd);
+	return ret;
+}
+
+int tpkinstall(char* file, char* installpath)
 {
 	int ret = 0;
 	off64_t startpos = 0, len = 0;
@@ -1811,24 +1938,50 @@ int tpkinstall(char* file)
 		goto end;
 	}
 
+	//extract filelist
 	tmpstr = ostrcat(tmpstr, path, 1, 0);
 	tmpstr = ostrcat(tmpstr, "/filelist.tpk", 1, 0);
-	ret = tpkcreatefile("", file, tmpstr, startpos, len, 0); //extract filelist
-	free(tmpstr); tmpstr = NULL;
+	ret = tpkcreatefile("", file, tmpstr, startpos, len, 0);
 	if(ret != 0)
 	{
-		err("extract filelist %s", file);
+		err("extract filelist %s", tmpstr);
+		free(tmpstr); tmpstr = NULL;
 		ret = 1;
 		goto end;
 	}
+	
+	//change filelist install path
+	ret = tpkchangeinstallpath(tmpstr, installpath);
+	if(ret != 0)
+	{
+		err("change installpath filelist %s", tmpstr);
+		free(tmpstr); tmpstr = NULL;
+		ret = 1;
+		goto end;
+	}
+	free(tmpstr); tmpstr = NULL;
 
-	ret = tpkextractfilelist(file, path, 0); //extract CONTROL
+	//extract CONTROL
+	ret = tpkextractfilelist(file, path, 0);
 	if(ret != 0)
 	{
 		err("extract control files %s", file);
 		ret = 1;
 		goto end;
 	}
+	
+	//add installpath to control file
+	tmpstr = ostrcat(tmpstr, path, 1, 0);
+	tmpstr = ostrcat(tmpstr, "/CONTROL/control", 1, 0);
+	ret = tpkaddinstallpath(tmpstr, installpath);
+	if(ret != 0)
+	{
+		err("add installpath to control files %s", tmpstr);
+		free(tmpstr); tmpstr = NULL;
+		ret = 1;
+		goto end;
+	}
+	free(tmpstr); tmpstr = NULL;
 
 	//check group
 	freetpk();
@@ -1879,6 +2032,9 @@ int tpkinstall(char* file)
 	//execute pre install
 	tmpstr = ostrcat(tmpstr, path, 1, 0);
 	tmpstr = ostrcat(tmpstr, "/preinst", 1, 0);
+	tmpstr = ostrcat(tmpstr, " \"", 1, 0);
+	tmpstr = ostrcat(tmpstr, installpath, 1, 0);
+	tmpstr = ostrcat(tmpstr, "\"", 1, 0);
 	if(file_exist(tmpstr) == 1)
 	{
 		tmpstr = ostrcat(tmpstr, " >> ", 1, 0);
@@ -1922,6 +2078,9 @@ int tpkinstall(char* file)
 	//execute post install
 	tmpstr = ostrcat(tmpstr, path, 1, 0);
 	tmpstr = ostrcat(tmpstr, "/postinst", 1, 0);
+	tmpstr = ostrcat(tmpstr, " \"", 1, 0);
+	tmpstr = ostrcat(tmpstr, installpath, 1, 0);
+	tmpstr = ostrcat(tmpstr, "\"", 1, 0);
 	if(file_exist(tmpstr) == 1)
 	{
 		tmpstr = ostrcat(tmpstr, " >> ", 1, 0);
@@ -2446,7 +2605,7 @@ int tpklist()
 	int ret = 0, len = 0;
 	FILE *fd = NULL;
 	char* fileline = NULL;
-	char* name = NULL, *showname = NULL, *section = NULL, *desc = NULL, *url = NULL, *arch = NULL, *filename = NULL, *titanname = NULL;
+	char* name = NULL, *showname = NULL, *section = NULL, *desc = NULL, *url = NULL, *arch = NULL, *filename = NULL, *titanname = NULL, *installpath = NULL, *usepath = NULL;
 	int version = 0, group = 0, minversion = 0, preinstalled = 0, size = 0, type = 0;
 	struct tpk* tpknode = NULL, *tpkinstalled = NULL, *tpktmp = NULL;
 
@@ -2518,6 +2677,22 @@ int tpklist()
 		ret = 1;
 		goto end;
 	}
+	
+	installpath = malloc(MINMALLOC);
+	if(installpath == NULL)
+	{
+		err("no mem");
+		ret = 1;
+		goto end;
+	}
+	
+	usepath = malloc(MINMALLOC);
+	if(usepath == NULL)
+	{
+		err("no mem");
+		ret = 1;
+		goto end;
+	}
 
 	fd = fopen(TMPALLPACKAGES, "r");
 	if(fd == NULL)
@@ -2536,7 +2711,7 @@ int tpklist()
 		if(len >= 0 && fileline[len] == '\r')
 			fileline[len] = '\0';
 
-		ret = sscanf(fileline, "%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%d#%d#%d#%d#%d#%d", url, name, showname, section, desc, arch, titanname, &version, &group, &minversion, &preinstalled, &size, &type);
+		ret = sscanf(fileline, "%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%d#%d#%d#%d#%d#%d", url, name, showname, section, desc, arch, titanname, installpath, usepath, &version, &group, &minversion, &preinstalled, &size, &type);
 		if(ret != 13)
 		{
 			err("read file %s", TMPALLPACKAGES);
@@ -2570,7 +2745,7 @@ int tpklist()
 			filename = ostrcat(filename, "_", 1, 0);
 			filename = ostrcat(filename, arch, 1, 0);
 			
-			tpknode = addtpk(name, desc, section, showname, arch, filename, titanname, version, group, minversion, preinstalled, url, size, type, NULL);
+			tpknode = addtpk(name, desc, section, showname, arch, filename, titanname, version, group, minversion, preinstalled, url, size, type, installpath, usepath, NULL);
 		}
 	}
 
@@ -2588,6 +2763,8 @@ end:
 	free(arch); arch = NULL;
 	free(filename); filename = NULL;
 	free(titanname); titanname = NULL;
+	free(installpath); installpath = NULL;
+	free(usepath); usepath = NULL;
 	free(fileline); fileline = NULL;
 	if(fd != NULL) fclose(fd);
 	return ret;
@@ -2634,7 +2811,7 @@ int tpkupdate()
 					continue;
 				}
 
-				ret = tpkgetpackage(tpknode->filename, tpknode->url);
+				ret = tpkgetpackage(tpknode->filename, tpknode->url, tpkinstallednode->installpath);
 				if(ret == 0) //install ok
 				{
 					tpkcleanworkdir(tmpstr1);
@@ -2830,7 +3007,7 @@ end:
 	return err;
 }
 
-int tpkgetpackage(char* package, char* url)
+int tpkgetpackage(char* package, char* url, char* installpath)
 {
 	int ret = 0, port = 80;
 	char* ip = NULL, *path = NULL;
@@ -2883,7 +3060,7 @@ int tpkgetpackage(char* package, char* url)
     debug(130, "get http://%s/%s -> %s", ip, tmpstr1, tmpstr2);
 		screendownload("Download", ip, tmpstr1, port, tmpstr2, HTTPAUTH, 5000, 0);
 		drawscreen(load, 0, 0);
-		ret = tpkinstall(tmpstr3);
+		ret = tpkinstall(tmpstr3, installpath);
 		clearscreen(load);
 		unlink(tmpstr2);
 		unlink(tmpstr3);
