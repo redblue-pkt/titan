@@ -21,7 +21,6 @@ void debugplaylist()
 
 struct playlist* getlastplaylist(struct playlist* node)
 {
-	debug(1000, "in");
 	struct playlist *prev = NULL;
 
 	while(node != NULL)
@@ -30,7 +29,6 @@ struct playlist* getlastplaylist(struct playlist* node)
 		node = node->next;
 	}
 
-	debug(1000, "out");
 	return prev;
 }
 
@@ -41,14 +39,13 @@ int moveplaylistdown(struct playlist* node)
 
 	if(node == NULL)
 	{
-		debug(1000, "NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
 	mainplaylistnode = getmainplaylistbyplaylistpointer(node);
 	if(mainplaylistnode == NULL)
 	{
-		debug(1000, "NULL detect");
 		err("NULL detect");
 		return 1;
 	}
@@ -99,14 +96,14 @@ int moveplaylistup(struct playlist* node)
 
 	if(node == NULL)
 	{
-		debug(1000, "NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
 	mainplaylistnode = getmainplaylistbyplaylistpointer(node);
 	if(mainplaylistnode == NULL)
 	{
-		debug(1000, "NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 	
@@ -174,7 +171,6 @@ struct playlist* getplaylist(char* file)
 
 struct playlist* addplaylist(struct playlist **firstnode, char *line, int count, struct playlist* last)
 {
-	//debug(1000, "in");
 	struct playlist *newnode = NULL, *prev = NULL, *node = *firstnode;
 	int ret = 0;
 	char* file = NULL;
@@ -239,13 +235,11 @@ struct playlist* addplaylist(struct playlist **firstnode, char *line, int count,
 	newnode->next = node;
 	if(node != NULL) node->prev = newnode;
 
-	//debug(1000, "out");
 	return newnode;
 }
 
 int readplaylist(char* filename, struct playlist** firstnode)
 {
-	debug(1000, "in");
 	FILE *fd = NULL;
 	char *fileline = NULL;
 	int linecount = 0, len = 0;
@@ -292,7 +286,6 @@ int readplaylist(char* filename, struct playlist** firstnode)
 
 void delplaylist(char* file, struct playlist** firstnode)
 {
-	debug(1000, "in");
 	struct playlist *node = *firstnode, *prev = *firstnode;
 
 	while(node != NULL)
@@ -324,12 +317,10 @@ void delplaylist(char* file, struct playlist** firstnode)
 		prev = node;
 		node = node->next;
 	}
-	debug(1000, "out");
 }
 
 void freeplaylist(struct playlist** firstnode)
 {
-	debug(1000, "in");
 	struct playlist *node = *firstnode, *prev = *firstnode;
 
 	while(node != NULL)
@@ -339,12 +330,10 @@ void freeplaylist(struct playlist** firstnode)
 		if(prev != NULL)
 			delplaylist(prev->file, firstnode);
 	}
-	debug(1000, "out");
 }
 
 int writeplaylist(const char *filename, struct playlist *node)
 {
-	debug(1000, "in");
 	FILE *fd = NULL;
 	int ret = 0;
 
@@ -366,7 +355,6 @@ int writeplaylist(const char *filename, struct playlist *node)
 	}
 
 	fclose(fd);
-	debug(1000, "out");
 	return 0;
 }
 

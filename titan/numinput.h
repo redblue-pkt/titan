@@ -3,7 +3,6 @@
 
 char* numinput(char* title, char* num, char* mask, int isip)
 {
-	debug(1000, "in");
 	int rcret = -1, fromthread = 0, height = 0;
 	struct skin* numinput = getscreen("numinput");
 	struct skin* input = getscreennode(numinput, "input");
@@ -77,7 +76,6 @@ char* numinput(char* title, char* num, char* mask, int isip)
 	}
 
 	numinput->height = height;
-	debug(1000, "out");
 	return ret;
 }
 

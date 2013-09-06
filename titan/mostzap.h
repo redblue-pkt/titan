@@ -46,7 +46,7 @@ int movemostzapup(struct mostzap* node)
 
 	if(node == NULL || mostzap == NULL)
 	{
-		debug(1000, "NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -79,7 +79,6 @@ int movemostzapup(struct mostzap* node)
 
 struct mostzap* addmostzap(char* line, int count, struct mostzap* last)
 {
-	//debug(1000, "in");
 	struct mostzap *newnode = NULL, *prev = NULL, *node = mostzap;
 	int ret = 0;
 
@@ -120,7 +119,6 @@ struct mostzap* addmostzap(char* line, int count, struct mostzap* last)
 	newnode->next = node;
 	if(node != NULL) node->prev = newnode;
 	
-	//debug(1000, "out");
 	return newnode;
 }
 
@@ -151,7 +149,6 @@ struct mostzap* createmostzap(int serviceid, uint64_t transponderid)
 
 int readmostzap(const char* filename)
 {
-	debug(1000, "in");
 	FILE *fd = NULL;
 	char *fileline = NULL;
 	int linecount = 0, len = 0;
@@ -195,7 +192,6 @@ int readmostzap(const char* filename)
 
 int delmostzap(int serviceid, uint64_t transponderid, int flag)
 {
-	debug(1000, "in");
 	int ret = 1;
 	struct mostzap *node = mostzap, *prev = mostzap;
 
@@ -227,13 +223,11 @@ int delmostzap(int serviceid, uint64_t transponderid, int flag)
 		node = node->next;
 	}
 
-	debug(1000, "out");
 	return ret;
 }
 
 void freemostzap(int flag)
 {
-	debug(1000, "in");
 	struct mostzap *node = mostzap, *prev = mostzap;
 
 	while(node != NULL)
@@ -243,12 +237,10 @@ void freemostzap(int flag)
 		if(prev != NULL)
 			delmostzap(prev->serviceid, prev->transponderid, flag);
 	}
-	debug(1000, "out");
 }
 
 int writemostzap(const char *filename)
 {
-	debug(1000, "in");
 	FILE *fd = NULL;
 	struct mostzap *node = mostzap;
 	int ret = 0, count = 0;;
@@ -275,7 +267,6 @@ int writemostzap(const char *filename)
 	}
 
 	fclose(fd);
-	debug(1000, "out");
 	return 0;
 }
 

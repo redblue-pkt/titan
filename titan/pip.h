@@ -8,7 +8,6 @@
 //flag 5: same as 3 but new tuning
 int pipstartreal(struct channel* chnode, char* pin, int flag)
 {
-	debug(1000, "in");
 	struct transponder* tpnode = NULL;
 	struct dvbdev *fenode = NULL;
 	struct dvbdev *dmxvideonode = NULL;
@@ -287,7 +286,6 @@ int pipstartreal(struct channel* chnode, char* pin, int flag)
 
 	m_unlock(&status.servicemutex, 2);
 	
-	debug(1000, "out");
 	return 0;
 }
 

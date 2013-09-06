@@ -3,7 +3,6 @@
 
 void screensettings_bluebutton()
 {
-	debug(1000, "in");
 	char* skintitle = "Blue Key Action - Setup";
 	struct skin* plugin = getscreen("plugin");
 	struct skin* child = plugin->child;
@@ -48,7 +47,6 @@ void screensettings_bluebutton()
 
 	freemenulist(mlist, 1); mlist = NULL;
 	free(tmpstr); tmpstr = NULL;
-	debug(1000, "out");
 	return;
 }
 

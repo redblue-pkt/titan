@@ -26,7 +26,6 @@ void debugscreen(struct skin* node)
 
 void* convertfunc(char *value, uint8_t *rettype)
 {
-	debug(1000, "in");
 	*rettype = FUNCTEXT;
 
 	if(ostrcmp("getpicon", value) == 0)
@@ -220,13 +219,11 @@ void* convertfunc(char *value, uint8_t *rettype)
 	if(ostrcmp("getpowerofftime", value) == 0)
 		return &getpowerofftime;
 
-	debug(1000, "out");
 	return 0;
 }
 
 long convertcol(char *value)
 {
-//	debug(1000, "in");
 	char *ret;
 	long col = 0;
 
@@ -246,13 +243,11 @@ long convertcol(char *value)
 			col = strtol(value, '\0', 16);
 	}
 
-//	debug(1000, "out");
 	return col;
 }
 
 int convertxmlentry(char *value, uint8_t *proz)
 {
-//	debug(1000, "in");
 	int ret = -1;
 	char *buf = NULL;
 
@@ -337,22 +332,18 @@ int convertxmlentry(char *value, uint8_t *proz)
 			ret = atoi(value);
 	}
 
-//	debug(1000, "out");
 	return ret;
 }
 
 struct skin* checkscreen(char* screenname)
 {
-	//debug(1000, "in");
 	struct skin* node = skin;
 
 	while(node != NULL)
 	{
 		if(ostrcmp(node->name, screenname) == 0)
-		{
-			//debug(1000, "out");
 			return node;
-		}
+
 		node = node->next;
 	}
 	return status.skinerr;
@@ -360,16 +351,13 @@ struct skin* checkscreen(char* screenname)
 
 struct skin* getscreen(char* screenname)
 {
-	debug(1000, "in");
 	struct skin* node = skin;
 
 	while(node != NULL)
 	{
 		if(ostrcmp(node->name, screenname) == 0)
-		{
-			debug(1000, "out");
 			return node;
-		}
+
 		node = node->next;
 	}
 	err("screen not found %s", screenname);
@@ -378,14 +366,13 @@ struct skin* getscreen(char* screenname)
 
 struct skin* sortscreen(struct skin* node)
 {
-	debug(1000, "in");
 	struct skin *nodea = NULL, *nodeb = NULL, *nodec = NULL, *noded = NULL;
 	struct skin *nodetmp = NULL;
 	struct skin **nodeaddr;
 
 	if(node == NULL || node == status.skinerr)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
@@ -450,13 +437,11 @@ struct skin* sortscreen(struct skin* node)
 		nodetmp = nodetmp->next;
 	}
 
-	debug(1000, "out");
 	return node;
 }
 
 struct skin* sortscreenbyname(char *screenname)
 {
-	debug(1000, "in");
 	struct skin* node = NULL;
 
 	if(strlen(screenname) == 0)
@@ -464,13 +449,11 @@ struct skin* sortscreenbyname(char *screenname)
 	else
 		node = getscreen(screenname);
 
-	debug(1000, "out");
 	return sortscreen(node);
 }
 
 struct skin* getlastscreennode(struct skin* node)
 {
-	debug(1000, "in");
 	struct skin *prev = NULL;
 
 	if(node != NULL) node = node->child;
@@ -481,7 +464,6 @@ struct skin* getlastscreennode(struct skin* node)
 		node = node->next;
 	}
 
-	debug(1000, "out");
 	return prev;
 }
 
@@ -509,7 +491,6 @@ char* changepicpath(char* picname)
 
 struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 {
-//	debug(1000, "in");
 	char *ret = NULL;
 	struct skin *newnode = NULL, *prev = NULL, *tmpnode = node;
 	struct skin **nodeaddr;
@@ -937,13 +918,11 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 	if(newnode->type & FILELIST)
 		createfilelist(tmpnode, newnode, 0);
 
-	//debug(1000, "out");
 	return newnode;
 }
 
 struct skin* addscreennodebyname(char* screenname, char* line)
 {
-	debug(1000, "in");
 	struct skin *node = NULL;
 
 	if(strlen(screenname) == 0)
@@ -951,7 +930,6 @@ struct skin* addscreennodebyname(char* screenname, char* line)
 	else
 		node = getscreen(screenname);
 
-	debug(1000, "out");
 	return addscreennode(node, line, NULL);
 }
 
@@ -959,7 +937,6 @@ struct skin* addscreennodebyname(char* screenname, char* line)
 //flag 1: check if screen name exists
 int addscreen(char *buf, int del, int flag)
 {
-	debug(1000, "in");
 	struct skin* node = NULL, *tmpnode = NULL;
 	char* buf1 = buf, *tmpstr = NULL;
 
@@ -999,7 +976,6 @@ int addscreen(char *buf, int del, int flag)
 			buf1 = buf;
 		}
 	}
-	debug(1000, "out");
 	return 0;
 }
 
@@ -1007,7 +983,6 @@ int addscreen(char *buf, int del, int flag)
 //flag 1: check if screen name exists
 int readscreen(char *filename, int del, int flag)
 {
-	debug(1000, "in");
 	char *buf = NULL;
 
 	if(filename == NULL) return 1;
@@ -1028,23 +1003,18 @@ int readscreen(char *filename, int del, int flag)
 		addscreen(buf, del, flag);
 		free(buf);
 	}
-	debug(1000, "out");
 	return 0;
 }
 
 struct skin* checkscreennode(struct skin *node, char* nodename)
 {
-	debug(1000, "in");
-
 	if(node != NULL) node = node->child;
 
 	while(node != NULL)
 	{
 		if(ostrcmp(node->name, nodename) == 0)
-		{
-			debug(1000, "out");
 			return node;
-		}
+
 		node = node->next;
 	}
 
@@ -1053,17 +1023,13 @@ struct skin* checkscreennode(struct skin *node, char* nodename)
 
 struct skin* getscreennode(struct skin *node, char* nodename)
 {
-	debug(1000, "in");
-
 	if(node != NULL) node = node->child;
 
 	while(node != NULL)
 	{
 		if(ostrcmp(node->name, nodename) == 0)
-		{
-			debug(1000, "out");
 			return node;
-		}
+
 		node = node->next;
 	}
 
@@ -1073,19 +1039,14 @@ struct skin* getscreennode(struct skin *node, char* nodename)
 
 struct skin* getscreennodebyname(char* screenname, char* nodename)
 {
-	debug(1000, "in");
 	struct skin *node = NULL;
 
 	node = getscreen(screenname);
-
-	debug(1000, "out");
 	return getscreennode(node, nodename);
 }
 
 void freenodecontent(struct skin* node)
 {
-	debug(1000, "in");
-
 	if(node->pluginhandle != NULL)
 		dlclose(node->pluginhandle);
 
@@ -1140,13 +1101,10 @@ void freenodecontent(struct skin* node)
 	node->handle = NULL;
 	node->handle1 = NULL;
 	node->pluginhandle = NULL;
-
-	debug(1000, "out");
 }
 
 void delmarkedscreennodes(struct skin* node, int mark)
 {
-	debug(1000, "in");
 	struct skin *prev = NULL, *screen = node;
 	struct skin* sel = NULL, *tmp = NULL;
 
@@ -1214,22 +1172,15 @@ void delmarkedscreennodes(struct skin* node, int mark)
 		prev = node;
 		node = node->next;
 	}
-
-
-	debug(1000, "out");
 }
 
 void delscreennode(struct skin *node, char* nodename)
 {
-	debug(1000, "in");
 	struct skin *prev = NULL;
 	struct skin **nodeaddr;
 
 	if(node == NULL || node == status.skinerr)
-	{
-		debug(1000, "out -> NULL detect");
 		return;
-	}
 
 	if(node == skin && node->child == NULL)
 		nodeaddr=&skin;
@@ -1264,8 +1215,6 @@ void delscreennode(struct skin *node, char* nodename)
 		free(node);
 		node = NULL;
 	}
-
-	debug(1000, "out");
 }
 
 void delscreennodebyname(char *screenname, char* nodename)
@@ -1278,12 +1227,10 @@ void delscreennodebyname(char *screenname, char* nodename)
 		node = getscreen(screenname);
 
 	delscreennode(node, nodename);
-	debug(1000, "out");
 }
 
 void delscreen(struct skin *node)
 {
-	debug(1000, "in");
 	struct skin *prev = NULL, *child = NULL;
 
 	if(node != NULL && node != status.skinerr)
@@ -1299,22 +1246,17 @@ void delscreen(struct skin *node)
 
 	if(node != NULL)
 		delscreennode(skin, node->name);
-
-	debug(1000, "out");
 }
 
 void delscreenbyname(char *screenname)
 {
-	debug(1000, "in");
 	struct skin *node = NULL;
 	node = getscreen(screenname);
 	delscreen(node);
-	debug(1000, "out");
 }
 
 void delmarkedscreen(int del)
 {
-	debug(1000, "in");
 	struct skin *node = skin, *prev = skin;
 
 	while(node != NULL)
@@ -1324,12 +1266,10 @@ void delmarkedscreen(int del)
 		if(prev != NULL && prev->del == del)
 			delscreen(prev);
 	}
-	debug(1000, "out");
 }
 
 void freescreen()
 {
-	debug(1000, "in");
 	struct skin *node = skin, *prev = skin;
 
 	while(node != NULL)
@@ -1339,7 +1279,6 @@ void freescreen()
 		if(prev != NULL)
 			delscreen(prev);
 	}
-	debug(1000, "out");
 }
 
 inline unsigned long getpixelbuf(char* buf, int posx, int posy, int bufwidth)
@@ -1377,7 +1316,6 @@ inline void drawpixelfb(struct fb* node, int posx, int posy, unsigned long color
 
 unsigned char* scale(unsigned char* buf, int width, int height, int channels, int newwidth, int newheight, int free1)
 {
-	debug(1000, "out");
 	int h, w, pixel, nmatch;
 
 	if(buf == NULL)
@@ -1414,7 +1352,6 @@ unsigned char* scale(unsigned char* buf, int width, int height, int channels, in
 	}
 
 	if(free1 == 1) free(buf);
-	debug(1000, "out");
 	return newbuf;
 }
 
@@ -1841,7 +1778,6 @@ int readjpgsw(const char* filename, int posx, int posy, int mwidth, int mheight,
 
 unsigned char* readpng(const char* filename, unsigned long* width, unsigned long* height, unsigned long* rowbytes, int* channels, int posx, int posy, int mwidth, int mheight, int halign, int valign)
 {
-	debug(1000, "in");
 	FILE *fd = NULL;
 	int ret, bit_depth, color_type;
 	unsigned char *buf = NULL;
@@ -1972,13 +1908,11 @@ unsigned char* readpng(const char* filename, unsigned long* width, unsigned long
 
 	debug(100, "png width=%ld height=%ld channels=%d rowbytes=%ld", *width, *height, *channels, *rowbytes);
 
-	debug(1000, "out");
 	return buf;
 }
 
 void drawpic(const char* filename, int posx, int posy, int scalewidth, int scaleheight, int mwidth, int mheight, int halign, int valign, int transparent, int quality, int add)
 {
-	debug(1000, "in");
 	unsigned char *buf = NULL, *scalebuf = NULL;
 	int memfd = -1, py = 0, pyh = 0, pxw = 0, diff = 0;
 	unsigned long width, height, rowbytes;
@@ -2142,8 +2076,6 @@ void drawpic(const char* filename, int posx, int posy, int scalewidth, int scale
 		else if(pictype == 1)
 			freebpamem(memfd, buf, width * height * 3);
 	}
-	
-	debug(1000, "out");
 }
 
 //flag 0: don't del outside
@@ -2286,7 +2218,6 @@ void drawcircle(int x0, int y0, int radius, int startangle, int endangle, long c
 
 int drawchar(struct font* font, FT_ULong currentchar, int posx, int posy, int mwidth, int height, long color, int transparent, int charspace, int test)
 {
-//	debug(1000, "in");
 	int space = 0, y = 0, x = 0, py = 0, pxw = 0, pyh = 0, max = 220, min = 35;
 	FT_UInt glyphindex;
 	FT_Vector kerning;
@@ -2324,16 +2255,11 @@ int drawchar(struct font* font, FT_ULong currentchar, int posx, int posy, int mw
 	else
 		kerning.x = 0;
 
-	if (test == 1 || space == 1)
-	{
-		//debug(1000, "out -> test or space");
+	if(test == 1 || space == 1)
 		return sbit->xadvance + kerning.x + charspace;
-	}
+
 	if(posx + sbit->xadvance > mwidth)
-	{
-		//debug(1000, "out -> text to long");
 		return -1;
-	}
 
 	if(status.fasttextrender == 1)
 	{
@@ -2377,13 +2303,11 @@ int drawchar(struct font* font, FT_ULong currentchar, int posx, int posy, int mw
 		}
 	}
 
-//	debug(1000, "out");
 	return sbit->xadvance + kerning.x + charspace;
 }
 
 void getstringwh(struct font* font, char *string, int *stringwidth, int *stringheight, int charspace)
 {
-	debug(1000, "in");
 	FT_ULong cret = 0;
 	if(string == NULL) return;
 
@@ -2393,7 +2317,6 @@ void getstringwh(struct font* font, char *string, int *stringwidth, int *stringh
 		*stringwidth += drawchar(font, cret, 0, 0, 0, 0, 0, 0, charspace, 1);
 		string++;
 	}
-	debug(1000, "out");
 }
 
 int calcstrhalign(struct font* aktfont, char *string, int posx, int mwidth, int halign, int charspace)
@@ -2501,7 +2424,6 @@ void wrapstr(char* string, char* fontname, int fontsize, int mwidth, int charspa
 //flag 1: password
 int drawstring(char* string, unsigned long linecount, unsigned int poscount, unsigned int markpos, int posx, int posy, int mwidth, int mheight, int halign, int valign, char* fontname, int fontsize, long color, int transparent, int wrap, int* lastposx, int* lastposy, int* len, int charspace, int flag)
 {
-	debug(1000, "in");
 	int charwidth = 0, lineend = 0;
 	int charcount = 0;
 	if(lastposy == NULL || *lastposy == 0) posy=posy + FONTPOSYOFFSET;
@@ -2531,7 +2453,7 @@ int drawstring(char* string, unsigned long linecount, unsigned int poscount, uns
 
 	if(fontsize < 5)
 	{
-		debug(1000, "out -> fontsize to small");
+		err("fontsize to small");
 		if(flag == 1) free(tmpstr);
 		return 1;
 	}
@@ -2543,7 +2465,7 @@ int drawstring(char* string, unsigned long linecount, unsigned int poscount, uns
 	aktheight += fontsize;
 	if(aktheight > mheight)
 	{
-		debug(1000, "out -> to many textlines");
+		err("to many textlines");
 		if(flag == 1) free(tmpstr);
 		return 1;
 	}
@@ -2592,13 +2514,11 @@ int drawstring(char* string, unsigned long linecount, unsigned int poscount, uns
 	if(lastposy != NULL) *lastposy = posy + fontsize;
 	
 	if(flag == 1) free(tmpstr);
-	debug(1000, "out");
 	return ret;
 }
 
 char* saverect(int posx, int posy, int width, int height)
 {
-	debug(1000, "in");
 	char* buf;
 	int y = 0, len = width * skinfb->colbytes, px = posx * skinfb->colbytes;
 
@@ -2612,7 +2532,6 @@ char* saverect(int posx, int posy, int width, int height)
 	for(y = 0; y < height; y++)
 		memcpy(buf + len * y, skinfb->fb + ((y + posy) * skinfb->pitch) + px, len);
 
-	debug(1000, "out");
 	return buf;
 }
 
@@ -2625,7 +2544,6 @@ char* savescreen(struct skin* node)
 //flag 1: free
 void restorerectcheck(char* buf, int posx, int posy, int width, int height, int flag)
 {
-	debug(1000, "in");
 	int y = 0, len = width * skinfb->colbytes, px = posx * skinfb->colbytes;
 
 	if(buf != NULL)
@@ -2639,7 +2557,6 @@ void restorerectcheck(char* buf, int posx, int posy, int width, int height, int 
 			buf = NULL;
 		}
 	}
-	debug(1000, "out");
 }
 
 void restorerect(char* buf, int posx, int posy, int width, int height)
@@ -2660,7 +2577,6 @@ void restorescreennofree(char* buf, struct skin* node)
 //*************** GOST LCD
 void lcd_fillrect(int posx, int posy, int width, int height, long color, int transparent)
 {
-	//debug(1000, "in");
 	int y, x;
 	unsigned long tmpcol;
 
@@ -2679,18 +2595,14 @@ void lcd_fillrect(int posx, int posy, int width, int height, long color, int tra
 	for(y = 0; y < height; y++)
 		for(x = 0; x < width; x++)
 			drawpixel(posx + x, posy + y, tmpcol);
-
-	//debug(1000, "out");
 }
 
 void lcd_drawrect(int posx, int posy, int width, int height, long color, int transparent)
 {
-	//debug(1000, "in");
 	fillrect(posx, posy, width, 1, color, transparent);
 	fillrect(posx, posy + height - 1, width, 1, color, transparent);
 	fillrect(posx, posy, 1, height, color, transparent);
 	fillrect(posx + width - 1, posy, 1, height, color, transparent);
-	//debug(1000, "out");
 }
 //*************** GOST LCD
 
@@ -2876,48 +2788,37 @@ void drawgradient(int posx, int posy, int width, int height, long col1, long col
 
 void drawtitlebggradient(struct skin* node)
 {
-	debug(1000, "in");
 	if(status.picbordersize > 0)
 		drawgradient(node->rposx + status.picbordersize, node->rposy + status.picbordersize, node->rwidth - (status.picbordersize * 2), node->rheight - (node->rheight - node->titlesize), node->titlebgcol, node->titlebgcol2, node->transparent, node->titlegradient);
 	else
 		drawgradient(node->rposx, node->rposy, node->rwidth, node->rheight - (node->rheight - node->titlesize), node->titlebgcol, node->titlebgcol2, node->transparent, node->titlegradient);
-	debug(1000, "out");
 }
 
 void drawbggradient(struct skin* node)
 {
-	debug(1000, "in");
 	drawgradient(node->rposx, node->rposy, node->rwidth, node->rheight, node->bgcol, node->bgcol2, node->transparent, node->gradient);
-	debug(1000, "out");
 }
 
 void drawtitlebgcol(struct skin* node)
 {
-	debug(1000, "in");
 	if(status.picbordersize > 0)
 		fillrect(node->rposx + status.picbordersize, node->rposy + status.picbordersize, node->rwidth - (status.picbordersize * 2), node->rheight - (node->rheight - node->titlesize), node->titlebgcol, node->transparent);
 	else
 		fillrect(node->rposx, node->rposy, node->rwidth, node->rheight - (node->rheight - node->titlesize), node->titlebgcol, node->transparent);
-	debug(1000, "out");
 }
 
 void drawbginnercol(struct skin* node)
 {
-	debug(1000, "in");
 	fillrect(node->rposx + node->bordersize, node->rposy + node->bordersize, node->rwidth - node->bordersize * 2, node->rheight - node->bordersize * 2, node->bgcol, node->transparent);
-	debug(1000, "out");
 }
 
 void drawbgcol(struct skin* node)
 {
-	debug(1000, "in");
 	fillrect(node->rposx + node->bgspace, node->rposy + node->bgspace, node->rwidth - (node->bgspace * 2), node->rheight - (node->bgspace * 2), node->bgcol, node->transparent);
-	debug(1000, "out");
 }
 
 void drawtitle(struct skin* node)
 {
-	debug(1000, "in");
 	if(status.titlelinesize > 0)
 		drawstring(node->title, 1, 0, -1, node->iposx, node->rposy + node->bordersize, node->iwidth, node->titlesize - status.titlelinesize, node->titlealign, MIDDLE, node->font, node->fontsize, node->fontcol, node->transparent, 0, NULL, NULL, NULL, node->charspace, 0);
 	else
@@ -2926,23 +2827,19 @@ void drawtitle(struct skin* node)
 		fillrect(node->rposx, node->rposy + node->titlesize + status.picbordersize, node->rwidth, status.titlelinesize, node->bordercol, node->transparent);
 	else if(node->bordersize > 0)
 		fillrect(node->rposx, node->rposy + node->titlesize, node->rwidth, node->bordersize, node->bordercol, node->transparent);
-	debug(1000, "out");
 }
 
 void drawprogressbar(struct skin* node)
 {
-	debug(1000, "in");
 	int val = 0;
 
 	if(node->progresssize > 100) node->progresssize = 100;
 	val = ((float)node->iwidth / 100) * node->progresssize;
 	fillrect(node->rposx + node->bordersize, node->rposy + node->bordersize, val, node->iheight, node->progresscol, node->transparent);
-	debug(1000, "out");
 }
 
 void drawmultiprogressbar(struct skin* node)
 {
-	debug(1000, "in");
 	struct epgrecord* epgrecord = node->epgrecord;
 	int val1 = 0, val2 = 0;
 
@@ -2958,7 +2855,6 @@ void drawmultiprogressbar(struct skin* node)
 			fillrect(node->rposx + node->bordersize + node->bgspace + val1, node->rposy + node->bgspace + node->bordersize, val2 - val1 + (node->bgspace * 2), node->iheight + (node->bgspace * 2), node->progresscol, node->transparent);
 		epgrecord = epgrecord->next;
 	}
-	debug(1000, "out");
 }
 
 void drawroundborder(struct skin* node, char* bglt, char* bglb, char* bgrt, char* bgrb)
@@ -2986,7 +2882,6 @@ void drawroundborder(struct skin* node, char* bglt, char* bglb, char* bgrt, char
 //TODO: not full implemented
 void drawpicborder(struct skin* node)
 {
-	debug(1000, "in");
 	int borderwidth = status.picbordersize;
 	int borderheight = status.picbordersize;
 
@@ -3015,12 +2910,10 @@ void drawpicborder(struct skin* node)
 	//right
 	//drawpic("/home/nit/titan/skin/bs_r.png", node->rposx - node->bordersize + node->rwidth, node->rposy + node->bordersize, 0, node->rheight - (node->bordersize * 2), borderwidth, node->rheight - (node->bordersize * 2), LEFT, TOP, node->transparent, node->picquality, node->picmem);
 	drawpic("/home/nit/titan/skin/bs_r.png", node->rposx + node->rwidth - borderwidth, node->rposy + borderheight, 0, node->rheight - (borderheight * 2), borderwidth, node->rheight - (borderheight * 2), LEFT, TOP, node->transparent, node->picquality, node->picmem);
-	debug(1000, "out");
 }
 
 void drawborder(struct skin* node)
 {
-	debug(1000, "in");
 	if(node->bordersize == 1 && node->rheight > 2 && node->bordertype == 0)
 		drawrect(node->rposx, node->rposy, node->rwidth, node->rheight, node->bordercol, node->transparent);
 	else if(node->bordersize == 1 && node->rheight <= 2 && node->bordertype == 0)
@@ -3036,25 +2929,20 @@ void drawborder(struct skin* node)
 		if(node->bordertype == 0 || checkbit(node->bordertype, 3) == 1)
 			fillrect(node->rposx + node->rwidth - node->bordersize, node->rposy, node->bordersize, node->rheight, node->bordercol, node->transparent);
 	}
-	debug(1000, "out");
 }
 
 void drawscrollbar(struct skin* node)
 {
-	debug(1000, "in");
 	if(node->bordersize == 0)
 		drawrect(node->rposx + node->rwidth - node->bordersize - node->scrollbarwidth, node->iposy, node->scrollbarwidth, node->iheight, node->bordercol, node->transparent);
 	else
 		fillrect(node->rposx + node->rwidth - node->bordersize - node->scrollbarwidth, node->iposy, node->scrollbarbordersize, node->iheight, node->bordercol, node->transparent);
 
 	fillrect(node->rposx + node->rwidth - node->bordersize - node->scrollbarwidth, node->iposy + node->scrollbarpos, node->scrollbarwidth, node->scrollbarheight, node->bordercol, node->transparent);
-	debug(1000, "out");
 }
 
 void clearshadow(struct skin* node)
 {
-	debug(1000, "in");
-
 	if(node->shadowsize < 1) return;
 	switch(node->shadowpos)
 	{
@@ -3075,12 +2963,10 @@ void clearshadow(struct skin* node)
 		clearrect(node->rposx + node->rwidth, node->rposy - node->shadowsize, node->shadowsize, node->rheight);
 		break;
 	}
-	debug(1000, "out");
 }
 
 void drawshadow(struct skin* node)
 {
-	debug(1000, "in");
 	switch(node->shadowpos)
 	{
 		case BOTTOMLEFT:
@@ -3100,7 +2986,6 @@ void drawshadow(struct skin* node)
 		fillrect(node->rposx + node->rwidth, node->rposy - node->shadowsize, node->shadowsize, node->rheight, node->shadowcol, node->transparent);
 		break;
 	}
-	debug(1000, "out");
 }
 
 //flag 0: del background
@@ -3110,8 +2995,6 @@ void drawnode(struct skin* node, int flag)
 	long color = 0, color2 = 0;
 	int len = 0;
 	char* bglt = NULL, *bglb = NULL, *bgrt = NULL, *bgrb = NULL;
-
-	debug(1000, "in");
 	
 	node->flag = setbit(node->flag, 0);
 
@@ -3269,13 +3152,10 @@ void drawnode(struct skin* node, int flag)
 	}
 
 	free(bglt); free(bglb); free(bgrt); free(bgrb);
-	debug(1000, "out");
 }
 
 void calcscrollbar(struct skin* node)
 {
-	debug(1000, "in");
-
 	node->scrollbarheight = node->iheight;
 
 	if(node->pagecount > 1)
@@ -3297,7 +3177,6 @@ void calcscrollbar(struct skin* node)
 		if(node->iposy + node->scrollbarpos + node->scrollbarheight > node->iposy + node->iheight) node->scrollbarheight = node->iheight - node->scrollbarpos;
 		if(node->scrollbarheight < 1) node->scrollbarheight = 1;
 	}
-	debug(1000, "out");
 }
 
 void calclistboxchild(struct skin* node, struct skin* parent)
@@ -3315,7 +3194,6 @@ void calclistboxchild(struct skin* node, struct skin* parent)
 
 int calclistbox(struct skin* node)
 {
-	debug(1000, "in");
 	struct skin* child = NULL, *last = NULL, *found = NULL;
 	int selcol = 0;
 
@@ -3531,7 +3409,6 @@ int calclistbox(struct skin* node)
 		else node->aktpage = 1;
 	}
 	node->poscount = 0;
-	debug(1000, "out");
 	return 0;
 }
 
@@ -3618,7 +3495,6 @@ int setnodeattr(struct skin* node, struct skin* parent, int screencalc)
 	if((parent->type & LISTBOX) || (parent->type & FILELIST) || (parent->type & GRID))
 		if(node->pagecount != parent->aktpage) return 1;
 
-	debug(1000, "in");
 	int shadowlx = 0, shadowrx = 0, shadowoy = 0, shadowuy = 0;
 	unsigned int linecount = 0, pagecount = 0, poscount = 0;
 	char* tmpstr = NULL;
@@ -3800,13 +3676,11 @@ int setnodeattr(struct skin* node, struct skin* parent, int screencalc)
 	//if(node->transparent == 0 && parent != skin)
 		//node->transparent = parent->transparent;
 
-	debug(1000, "out");
 	return 0;
 }
 
 int clearscreenalways()
 {
-	debug(1000, "in");
 	int i, ret = 0;
 
 	for(i = 0; i < sizeof(status.drawallways) / sizeof(skin); i++)
@@ -3817,13 +3691,11 @@ int clearscreenalways()
 		}
 	}
 
-	debug(1000, "out");
 	return ret;
 }
 
 int drawscreenalways(struct skin* node, int screencalc)
 {
-	debug(1000, "in");
 	int i, ret = 0;
 
 	for(i = 0; i < sizeof(status.drawallways) / sizeof(skin); i++)
@@ -3840,14 +3712,11 @@ int drawscreenalways(struct skin* node, int screencalc)
 		}
 	}
 
-	debug(1000, "out");
 	return ret;
 }
 
 int drawscreennode(struct skin *node, char* nodename, int screencalc)
 {
-	debug(1000, "in");
-
 	node = getscreennode(node, nodename);
 	m_lock(&status.drawingmutex, 0);
 	if(node != status.skinerr)
@@ -3857,13 +3726,11 @@ int drawscreennode(struct skin *node, char* nodename, int screencalc)
 	blitfb(0);
 	m_unlock(&status.drawingmutex, 0);
 
-	debug(1000, "out");
 	return 0;
 }
 
 int drawscreennodebyname(char* screenname, char* nodename, int screencalc)
 {
-	debug(1000, "in");
 	struct skin *node;
 
 	node = getscreennodebyname(screenname, nodename);
@@ -3875,7 +3742,6 @@ int drawscreennodebyname(char* screenname, char* nodename, int screencalc)
 	blitfb(0);
 	m_unlock(&status.drawingmutex, 0);
 
-	debug(1000, "out");
 	return 0;
 }
 
@@ -3890,8 +3756,6 @@ int drawscreennodebyname(char* screenname, char* nodename, int screencalc)
 int drawscreen(struct skin* node, int screencalc, int flag)
 {
 	struct fb* merkskinfb = NULL;
-
-	debug(1000, "in");
 	int ret;
 	struct skin *child = NULL, *parent = NULL, *oldparent = NULL;
 
@@ -3911,7 +3775,7 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 	{
 		if(flag == 0 || flag == 4)
 			m_unlock(&status.drawingmutex, 0);
-		debug(1000, "out -> setnodeattr ret = 1");
+		err("setnodeattr ret = 1");
 		return 1;
 	}
 	
@@ -4069,13 +3933,11 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 	//}
 	if(flag == 0 || flag == 4)
 		m_unlock(&status.drawingmutex, 0);
-	debug(1000, "out");
 	return 0;
 }
 
 int drawscreenbyname(char* screenname, int screencalc, int flag)
 {
-	debug(1000, "in");
 	int ret;
 	struct skin* node = NULL;
 
@@ -4087,13 +3949,11 @@ int drawscreenbyname(char* screenname, int screencalc, int flag)
 	}
 
 	ret = drawscreen(node, screencalc, flag);
-	debug(1000, "out");
 	return ret;
 }
 
 int changeinput(struct skin* node, char* text)
 {
-	debug(1000, "in");
 	int ret = 1;
 
 	if(node != NULL)
@@ -4115,14 +3975,12 @@ int changeinput(struct skin* node, char* text)
 		}
 		ret = 0;
 	}
-	debug(1000, "out");
 
 	return ret;
 }
 
 int changetext(struct skin* node, char* text)
 {
-	debug(1000, "in");
 	int ret = 1;
 
 	if(node != NULL)
@@ -4134,14 +3992,12 @@ int changetext(struct skin* node, char* text)
 			node->text = text;
 		ret = 0;
 	}
-	debug(1000, "out");
 
 	return ret;
 }
 
 int changetext2(struct skin* node, char* text)
 {
-	debug(1000, "in");
 	int ret = 1;
 
 	if(node != NULL)
@@ -4153,7 +4009,6 @@ int changetext2(struct skin* node, char* text)
 			node->text2 = text;
 		ret = 0;
 	}
-	debug(1000, "out");
 
 	return ret;
 }
@@ -4161,7 +4016,6 @@ int changetext2(struct skin* node, char* text)
 
 int changename(struct skin* node, char* text)
 {
-	debug(1000, "in");
 	int ret = 1;
 
 	if(node != NULL)
@@ -4173,14 +4027,12 @@ int changename(struct skin* node, char* text)
 			node->name = strdup("unknown");
 		ret = 0;
 	}
-	debug(1000, "out");
 
 	return ret;
 }
 
 int changepicmem(struct skin* node, char* text, int timeout, int del)
 {
-	debug(1000, "in");
 	unsigned long width = 0, height = 0, rowbytes = 0;
 	int ret = 1, channels = 0, memfd = -1, length = 0;
 	unsigned char* buf = NULL;
@@ -4209,14 +4061,12 @@ int changepicmem(struct skin* node, char* text, int timeout, int del)
 			node->pic = text;
 		ret = 0;
 	}
-	debug(1000, "out");
 
 	return ret;
 }
 
 int changepic(struct skin* node, char* text)
 {
-	debug(1000, "in");
 	int ret = 1;
 
 	if(node != NULL)
@@ -4229,14 +4079,12 @@ int changepic(struct skin* node, char* text)
 			node->pic = text;
 		ret = 0;
 	}
-	debug(1000, "out");
 
 	return ret;
 }
 
 int changeselectpic(struct skin* node, char* text)
 {
-	debug(1000, "in");
 	int ret = 1;
 
 	if(node != NULL)
@@ -4248,14 +4096,12 @@ int changeselectpic(struct skin* node, char* text)
 			node->selectpic = text;
 		ret = 0;
 	}
-	debug(1000, "out");
 
 	return ret;
 }
 
 int changetitle(struct skin* node, char* text)
 {
-	debug(1000, "in");
 	int ret = 1;
 
 	if(node != NULL)
@@ -4273,14 +4119,12 @@ int changetitle(struct skin* node, char* text)
 		}
 		ret = 0;
 	}
-	debug(1000, "out");
 
 	return ret;
 }
 
 int changemask(struct skin* node, char* text)
 {
-	debug(1000, "in");
 	int ret = 1;
 
 	if(node != NULL)
@@ -4301,14 +4145,12 @@ int changemask(struct skin* node, char* text)
 			node->mask = text;
 		ret = 0;
 	}
-	debug(1000, "out");
 
 	return ret;
 }
 
 int changeret(struct skin* node, char* text)
 {
-	debug(1000, "in");
 	int ret = 1;
 
 	if(node != NULL)
@@ -4320,14 +4162,12 @@ int changeret(struct skin* node, char* text)
 			node->ret = text;
 		ret = 0;
 	}
-	debug(1000, "out");
 
 	return ret;
 }
 
 int changeparent(struct skin* node, char* text)
 {
-	debug(1000, "in");
 	int ret = 1;
 
 	if(node != NULL)
@@ -4339,14 +4179,12 @@ int changeparent(struct skin* node, char* text)
 			node->parent = text;
 		ret = 0;
 	}
-	debug(1000, "out");
 
 	return ret;
 }
 
 int changefont(struct skin* node, char* text)
 {
-	debug(1000, "in");
 	int ret = 1;
 
 	if(node != NULL)
@@ -4358,14 +4196,12 @@ int changefont(struct skin* node, char* text)
 			node->font = text;
 		ret = 0;
 	}
-	debug(1000, "out");
 
 	return ret;
 }
 
 int changeparam1(struct skin* node, char* text)
 {
-	debug(1000, "in");
 	int ret = 1;
 
 	if(node != NULL)
@@ -4377,14 +4213,12 @@ int changeparam1(struct skin* node, char* text)
 			node->param1 = text;
 		ret = 0;
 	}
-	debug(1000, "out");
 
 	return ret;
 }
 
 int changeparam2(struct skin* node, char* text)
 {
-	debug(1000, "in");
 	int ret = 1;
 
 	if(node != NULL)
@@ -4396,14 +4230,12 @@ int changeparam2(struct skin* node, char* text)
 			node->param2 = text;
 		ret = 0;
 	}
-	debug(1000, "out");
 
 	return ret;
 }
 
 int changechoiceboxvalue(struct skin* node, char* text)
 {
-	debug(1000, "in");
 	int ret = 1;
 
 	if(node != NULL)
@@ -4415,7 +4247,6 @@ int changechoiceboxvalue(struct skin* node, char* text)
 			node->choiceboxvalue = text;
 		ret = 0;
 	}
-	debug(1000, "out");
 
 	return ret;
 }

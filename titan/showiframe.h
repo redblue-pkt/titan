@@ -5,7 +5,6 @@
 //flag 1: not stop service
 int singlepicstart(const char *filename, int flag)
 {
-	debug(1000, "in -> %s", filename);
 	int ret = 0;
 
 	if(status.aktservice->type != STILLPIC)
@@ -73,7 +72,6 @@ int singlepicstart(const char *filename, int flag)
 		err("open %s\n", filename);
 		return 1;
 	}
-	debug(1000, "out");
 	return 0;
 }
 

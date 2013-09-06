@@ -3,7 +3,6 @@
 
 void freemenulist(struct menulist* mlist, int delparam)
 {
-	debug(1000, "in");
 	struct menulist *node = mlist, *prev = mlist;
 
 	while(node != NULL)
@@ -34,7 +33,6 @@ void freemenulist(struct menulist* mlist, int delparam)
 			prev = NULL;
 		}
 	}
-	debug(1000, "out");
 }
 
 void changemenulistparam(struct menulist* mlist, char* param, char* param1)
@@ -133,7 +131,6 @@ struct menulist* addmenulist(struct menulist** mlist, char* name, char* text, ch
 //flag 1: rcgreen = subchannel
 struct menulist* menulistboxext(struct menulist* mlist, char* paramskinname, char* skintitle, char* paramskinpath, char* defaultpic, int showpng, int* rcreturn, int flag)
 {
-	debug(1000, "in");
 	int rcret = 0, fromthread = 0;
 	struct skin* framebuffer = getscreen("framebuffer");
 	struct skin* tmp = NULL;
@@ -315,7 +312,6 @@ struct menulist* menulistboxext(struct menulist* mlist, char* paramskinname, cha
 	else
 		clearscreen(screen);
 
-	debug(1000, "out");
 	return ret;
 }
 

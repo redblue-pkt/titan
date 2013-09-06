@@ -68,7 +68,6 @@ struct clist* addskinconfigscreencheck(char *key, struct skin *node, char* check
 
 struct clist* addskinconfigint(char *key, int value)
 {
-	debug(1000, "in");
 	char* fileline = NULL;
 	struct clist* ret = NULL;
 
@@ -76,13 +75,11 @@ struct clist* addskinconfigint(char *key, int value)
 	ret = addskinconfig(key, fileline);
 
 	free(fileline);
-	debug(1000, "out");
 	return ret;
 }
 
 int readskinconfig(const char *filename, struct clist** tmpskinconfig)
 {
-	debug(1000, "in");
 	FILE *fd = NULL;
 	char *fileline = NULL, *pos;
 	int len = 0;
@@ -123,7 +120,6 @@ int readskinconfig(const char *filename, struct clist** tmpskinconfig)
 
 	fclose(fd);
 	free(fileline);
-	debug(1000, "out");
 	return 0;
 }
 
@@ -175,18 +171,16 @@ void freeskinconfig()
 
 int reloadskinconfig(char *filename)
 {
-	debug(1000, "in");
 	int ret = 0;
 
 	freeskinconfig();
 	ret = readskinconfig(filename, skinconfig);
 	if(ret != 0)
 	{
-		debug(1000, "out -> readskinconfig fail");
+		err("readskinconfig fail");
 		return 1;
 	}
 
-	debug(1000, "out");
 	return 0;
 }
 

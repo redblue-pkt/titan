@@ -14,7 +14,6 @@ void debugmainplaylist()
 
 struct mainplaylist* getlastmainplaylist(struct mainplaylist* node)
 {
-	debug(1000, "in");
 	struct mainplaylist *prev = NULL;
 
 	while(node != NULL)
@@ -23,7 +22,6 @@ struct mainplaylist* getlastmainplaylist(struct mainplaylist* node)
 		node = node->next;
 	}
 
-	debug(1000, "out");
 	return prev;
 }
 
@@ -33,7 +31,7 @@ int movemainplaylistdown(struct mainplaylist* node)
 
 	if(node == NULL || mainplaylist == NULL)
 	{
-		debug(1000, "NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -78,7 +76,7 @@ int movemainplaylistup(struct mainplaylist* node)
 
 	if(node == NULL || mainplaylist == NULL)
 	{
-		debug(1000, "NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -121,7 +119,6 @@ int movemainplaylistup(struct mainplaylist* node)
 
 struct mainplaylist* addmainplaylist(char *line, int count, struct mainplaylist* last)
 {
-	debug(1000, "in");
 	struct mainplaylist *newnode = NULL, *prev = NULL, *node = mainplaylist;
 	char *name = NULL, *filename = NULL;
 	int ret = 0;
@@ -196,13 +193,11 @@ struct mainplaylist* addmainplaylist(char *line, int count, struct mainplaylist*
 	newnode->next = node;
 	if(node != NULL) node->prev = newnode;
 
-	debug(1000, "out");
 	return newnode;
 }
 
 int readmainplaylist(char* filename)
 {
-	debug(1000, "in");
 	FILE *fd = NULL;
 	char *fileline = NULL;
 	int linecount = 0, len = 0;
@@ -264,7 +259,6 @@ int readallplaylist()
 
 struct mainplaylist* getmainplaylistbyplaylistpointer(struct playlist* playlistnode)
 {
-	debug(1000, "in");
 	struct mainplaylist *node = mainplaylist;
 	struct playlist *bnode = NULL;
 
@@ -274,10 +268,8 @@ struct mainplaylist* getmainplaylistbyplaylistpointer(struct playlist* playlistn
 		while(bnode != NULL)
 		{
 			if(bnode == playlistnode)
-			{
-				debug(1000, "out");
 				return node;
-			}
+
 			bnode = bnode->next;
 		}
 		node = node->next;
@@ -288,16 +280,12 @@ struct mainplaylist* getmainplaylistbyplaylistpointer(struct playlist* playlistn
 
 struct mainplaylist* getmainplaylist(char *name)
 {
-	debug(1000, "in");
 	struct mainplaylist *node = mainplaylist;
 
 	while(node != NULL)
 	{
 		if(ostrcmp(node->name, name) == 0)
-		{
-			debug(1000, "out");
 			return node;
-		}
 
 		node = node->next;
 	}
@@ -307,7 +295,6 @@ struct mainplaylist* getmainplaylist(char *name)
 
 void delmainplaylist(char *name)
 {
-	debug(1000, "in");
 	struct mainplaylist *node = mainplaylist, *prev = mainplaylist;
 
 	while(node != NULL)
@@ -342,12 +329,10 @@ void delmainplaylist(char *name)
 		prev = node;
 		node = node->next;
 	}
-	debug(1000, "out");
 }
 
 void freemainplaylist()
 {
-	debug(1000, "in");
 	struct mainplaylist *node = mainplaylist, *prev = mainplaylist;
 
 	while(node != NULL)
@@ -357,7 +342,6 @@ void freemainplaylist()
 		if(prev != NULL)
 			delmainplaylist(prev->name);
 	}
-	debug(1000, "out");
 }
 
 void freeallplaylist()
@@ -373,7 +357,6 @@ void freeallplaylist()
 
 int writemainplaylist(const char *filename)
 {
-	debug(1000, "in");
 	FILE *fd = NULL;
 	struct mainplaylist *node = mainplaylist;
 	int ret = 0;
@@ -396,7 +379,6 @@ int writemainplaylist(const char *filename)
 	}
 
 	fclose(fd);
-	debug(1000, "out");
 	return 0;
 }
 

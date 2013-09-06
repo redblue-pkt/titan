@@ -14,16 +14,12 @@ void resetsatscan()
 
 struct sat* getsatbyorbitalpos(int orbitalpos)
 {
-	debug(1000, "in");
 	struct sat *node = sat;
 
 	while(node != NULL)
 	{
 		if(node->orbitalpos == orbitalpos)
-		{
-			debug(1000, "out");
 			return node;
-		}
 
 		node = node->next;
 	}
@@ -117,7 +113,6 @@ char* getsatstring(char* feshortname, int fetype)
 
 struct sat* getlastsat(struct sat* node)
 {
-	debug(1000, "in");
 	struct sat *prev = NULL;
 
 	while(node != NULL || sat == NULL)
@@ -126,7 +121,6 @@ struct sat* getlastsat(struct sat* node)
 		node = node->next;
 	}
 
-	debug(1000, "out");
 	return prev;
 }
 
@@ -137,7 +131,7 @@ int movesatblockdown(struct sat* node)
 
 	if(node == NULL)
 	{
-		debug(1000, "NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -164,7 +158,7 @@ int movesatdown(struct sat* node)
 
 	if(node == NULL || sat == NULL)
 	{
-		debug(1000, "NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 	
@@ -214,7 +208,7 @@ int movesatblockup(struct sat* node)
 
 	if(node == NULL)
 	{
-		debug(1000, "NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -235,7 +229,7 @@ int movesatup(struct sat* node)
 
 	if(node == NULL)
 	{
-		debug(1000, "NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 	
@@ -282,7 +276,6 @@ int movesatup(struct sat* node)
 
 struct sat* addsat(char *line, int count, struct sat* last)
 {
-	debug(1000, "in");
 	struct sat *newnode = NULL, *prev = NULL, *node = sat;
 	char *name = NULL;
 	int ret = 0;
@@ -346,13 +339,11 @@ struct sat* addsat(char *line, int count, struct sat* last)
 	newnode->next = node;
 	if(node != NULL) node->prev = newnode;
 
-	debug(1000, "out");
 	return newnode;
 }
 
 int readsat(const char* filename)
 {
-	debug(1000, "in");
 	FILE *fd = NULL;
 	char *fileline = NULL, *tmpstr = NULL, *tmpstr0 = NULL, *tmpstr1 = NULL;
 	int linecount = 0, treffer0 = 1, treffer1 = 1, len = 0;
@@ -417,7 +408,6 @@ int readsat(const char* filename)
 
 void delsat(char *name)
 {
-	debug(1000, "in");
 	struct sat *node = sat, *prev = sat;
 
 	while(node != NULL)
@@ -451,21 +441,16 @@ void delsat(char *name)
 		prev = node;
 		node = node->next;
 	}
-	debug(1000, "out");
 }
 
 struct sat* getsat(char *name)
 {
-	debug(1000, "in");
 	struct sat *node = sat;
 
 	while(node != NULL)
 	{
 		if(ostrstr(node->name, name) != NULL)
-		{
-			debug(1000, "out");
 			return node;
-		}
 
 		node = node->next;
 	}
@@ -475,7 +460,6 @@ struct sat* getsat(char *name)
 
 void freesat()
 {
-	debug(1000, "in");
 	struct sat *node = sat, *prev = sat;
 
 	while(node != NULL)
@@ -485,12 +469,10 @@ void freesat()
 		if(prev != NULL)
 			delsat(prev->name);
 	}
-	debug(1000, "out");
 }
 
 int writesat(const char *filename)
 {
-	debug(1000, "in");
 	FILE *fd = NULL;
 	struct sat *node = sat;
 	int ret = 0;
@@ -514,7 +496,6 @@ int writesat(const char *filename)
 	}
 
 	fclose(fd);
-	debug(1000, "out");
 	return 0;
 }
 

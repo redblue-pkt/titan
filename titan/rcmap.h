@@ -3,7 +3,6 @@
 
 struct rcmap* addrcmap(char *line, int count, struct rcmap* last)
 {
-	debug(1000, "in");
 	struct rcmap *newnode = NULL, *prev = NULL, *node = rcmap;
 	char *name = NULL, *key = NULL, *newkey = NULL;
 	int ret = 0;
@@ -86,13 +85,11 @@ struct rcmap* addrcmap(char *line, int count, struct rcmap* last)
 		prev->next = newnode;
 	newnode->next = node;
 
-	debug(1000, "out");
 	return newnode;
 }
 
 int readrcmap(const char* filename)
 {
-	debug(1000, "in");
 	FILE *fd = NULL;
 	char *fileline = NULL;
 	int linecount = 0, len = 0;
@@ -138,7 +135,6 @@ int readrcmap(const char* filename)
 
 void delrcmap(char* name)
 {
-	debug(1000, "in");
 	struct rcmap *node = rcmap, *prev = rcmap;
 
 	while(node != NULL)
@@ -161,21 +157,16 @@ void delrcmap(char* name)
 		prev = node;
 		node = node->next;
 	}
-	debug(1000, "out");
 }
 
 struct rcmap* getrcmap(char* name, int key)
 {
-	debug(1000, "in");
 	struct rcmap *node = rcmap;
 
 	while(node != NULL)
 	{
 		if(ostrcmp(node->name, name) == 0 && node->key == key)
-		{
-			debug(1000, "out");
 			return node;
-		}
 
 		node = node->next;
 	}
@@ -185,7 +176,6 @@ struct rcmap* getrcmap(char* name, int key)
 
 void freercmap()
 {
-	debug(1000, "in");
 	struct rcmap *node = rcmap, *prev = rcmap;
 
 	while(node != NULL)
@@ -195,7 +185,6 @@ void freercmap()
 		if(prev != NULL)
 			delrcmap(prev->name);
 	}
-	debug(1000, "out");
 }
 
 #endif

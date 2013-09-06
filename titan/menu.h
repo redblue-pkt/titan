@@ -79,7 +79,6 @@ void menucheckentry(struct skin* child)
 //flag 1: fist call
 struct skin* menu(struct skin* menu, int flag)
 {
-	debug(1000, "in");
 	int rcret = 0, ret = 0;
 	struct skin* listbox = getscreennode(menu, "listbox");
 	struct skin* menutext = getscreennode(menu, "menutext");
@@ -90,7 +89,7 @@ struct skin* menu(struct skin* menu, int flag)
 
 	if(listbox == NULL || menu == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
@@ -167,27 +166,24 @@ struct skin* menu(struct skin* menu, int flag)
 
 	delownerrc(menu);
 	clearscreen(menu);
-	debug(1000, "out");
 	return listbox->select;
 }
 
 int menucall(struct skin* menunode, struct skin* menuentry, int check)
 {
-	debug(1000, "in");
-
 	void (*startplugin) (void);
 	int ret = 0, pincheck = 0;
 	char* tmpstr = NULL;
 
 	if(menuentry == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 	
 	if(!(menuentry->type & MENU)) return 1;
 	
-	debug(1000, "menuentry->name=%s", menuentry->name);
+	debug(100, "menuentry->name=%s", menuentry->name);
 		
 	tmpstr = ostrcat("protect_", menuentry->name, 0, 0);
 	pincheck = getconfigint(tmpstr, 0);
@@ -846,7 +842,6 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		ret = 1;
 
 	resettvpic();
-	debug(1000, "out");
 	return ret;
 }
 

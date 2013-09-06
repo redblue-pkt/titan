@@ -36,16 +36,12 @@ char* blocktogb(unsigned long size)
 
 struct hdd* gethdd(char* device)
 {
-	debug(1000, "in");
 	struct hdd *node = hdd;
 
 	while(node != NULL)
 	{
 		if(ostrcmp(node->device, device) == 0)
-		{
-			debug(1000, "out");
 			return node;
-		}
 		node = node->next;
 	}
 	debug(100, "hdd not found (device=%s)", device);
@@ -795,7 +791,6 @@ void screenharddisksleep()
 //flag 1: no lock
 void delhdd(char* device, int flag)
 {
-	debug(1000, "in");
 	if(flag == 0) m_lock(&status.hddmutex, 13);
 	struct hdd *node = hdd, *prev = hdd;
 	
@@ -832,14 +827,12 @@ void delhdd(char* device, int flag)
 		node = node->next;
 	}
 	if(flag == 0) m_unlock(&status.hddmutex, 13);
-	debug(1000, "out");
 }
 
 //flag 0: lock
 //flag 1: no lock
 struct hdd* addhdd(char* device, int partition, unsigned long size, int removable, char* vendor, char *model, char* label, char* filesystem, char* uuid, int timetosleep, struct hdd* last, int flag)
 {
-	debug(1000, "in");
 	if(flag == 0) m_lock(&status.hddmutex, 13);
 	struct hdd *newnode = NULL, *prev = NULL, *node = hdd;
 
@@ -892,7 +885,6 @@ struct hdd* addhdd(char* device, int partition, unsigned long size, int removabl
 	newnode->next = node;
 
 	if(flag == 0) m_unlock(&status.hddmutex, 13);
-	debug(1000, "out");
 	return newnode;
 }
 
@@ -900,7 +892,6 @@ struct hdd* addhdd(char* device, int partition, unsigned long size, int removabl
 //flag = 1: no mutex lock
 void freehdd(int flag)
 {
-	debug(1000, "in");
 	if(flag == 0) m_lock(&status.hddmutex, 13);
 	struct hdd *node = hdd, *prev = hdd;
 
@@ -911,7 +902,6 @@ void freehdd(int flag)
 		if(prev != NULL)
 			delhdd(prev->device, 1);
 	}
-	debug(1000, "out");
 	if(flag == 0) m_unlock(&status.hddmutex, 13);
 }
 

@@ -159,12 +159,11 @@ start:
 
 struct linkedchannel* addlinkedchannel(struct channel* chnode, int serviceid, uint64_t transponderid, time_t starttime, time_t endtime, struct linkedchannel* last)
 {
-	debug(1000, "in");
 	struct linkedchannel *newnode = NULL, *prev = NULL, *node = NULL;
 
 	if(chnode == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
@@ -204,7 +203,6 @@ struct linkedchannel* addlinkedchannel(struct channel* chnode, int serviceid, ui
 	newnode->next = node;
 
 	m_unlock(&status.linkedchannelmutex, 14);
-	debug(1000, "out");
 	return newnode;
 }
 
@@ -214,7 +212,7 @@ void dellinkedchannel(struct channel* chnode, struct linkedchannel* lnode, int f
 {
 	if(chnode == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return;
 	}
 
@@ -244,12 +242,11 @@ void dellinkedchannel(struct channel* chnode, struct linkedchannel* lnode, int f
 
 void freelinkedchannel(struct channel* chnode)
 {
-	debug(1000, "in");
 	struct linkedchannel *node = NULL, *prev = NULL;
 
 	if(chnode == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return;
 	}
 
@@ -267,7 +264,6 @@ void freelinkedchannel(struct channel* chnode)
 		prev = NULL;
 	}
 	m_unlock(&status.linkedchannelmutex, 14);
-	debug(1000, "out");
 }
 
 void deloldlinkedchannel()

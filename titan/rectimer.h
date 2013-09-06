@@ -261,7 +261,6 @@ void copyrectimer(struct rectimer* src, struct rectimer* dst)
 
 struct rectimer* addrectimernode(char* line, struct rectimer* last)
 {
-	debug(1000, "in");
 	char *ret = NULL;
 	struct rectimer *newnode = NULL, *prev = NULL, *node = rectimer;
 	
@@ -392,7 +391,6 @@ struct rectimer* addrectimernode(char* line, struct rectimer* last)
 	newnode->next = node;
 	if(node != NULL) node->prev = newnode;
 
-	debug(1000, "out");
 	return newnode;
 }
 
@@ -586,7 +584,6 @@ void checkrectimer(struct stimerthread* self)
 
 int addrectimer(char *buf)
 {
-	debug(1000, "in");
 	struct rectimer* node = NULL;
 	char* buf1 = buf;
 	char* line = NULL;
@@ -617,13 +614,11 @@ int addrectimer(char *buf)
 		}
 	}
 	free(line);
-	debug(1000, "out");
 	return 0;
 }
 
 int readrectimer(char *filename)
 {
-	debug(1000, "in");
 	char *buf = NULL;
 
 	buf = readfiletomem(filename, 1);
@@ -635,7 +630,6 @@ int readrectimer(char *filename)
 		writerectimer(getconfig("rectimerfile", NULL), 0);
 		free(buf);
 	}
-	debug(1000, "out");
 	return 0;
 }
 
@@ -643,8 +637,6 @@ int readrectimer(char *filename)
 //flag 1 = don't set mutex
 void delrectimer(struct rectimer* rectimernode, int write, int flag)
 {
-	debug(1000, "in");
-
 	if(flag == 0) m_lock(&status.rectimermutex, 1);
 	struct rectimer *node = rectimer, *prev = rectimer;
 
@@ -712,12 +704,10 @@ void delrectimer(struct rectimer* rectimernode, int write, int flag)
 
 	if(flag == 0)
 		m_unlock(&status.rectimermutex, 1);
-	debug(1000, "out");
 }
 
 void deloldrectimer()
 {
-	debug(1000, "in");
 	struct rectimer *node = rectimer, *prev = rectimer;
 
 	while(node != NULL)
@@ -727,12 +717,10 @@ void deloldrectimer()
 		if(prev != NULL && checkrectimertime(prev) == 1)
 			delrectimer(prev, 1, 0);
 	}
-	debug(1000, "out");
 }
 
 void freerectimer()
 {
-	debug(1000, "in");
 	struct rectimer *node = rectimer, *prev = rectimer;
 
 	while(node != NULL)
@@ -742,14 +730,12 @@ void freerectimer()
 		if(prev != NULL)
 			delrectimer(prev, 0, 0);
 	}
-	debug(1000, "out");
 }
 
 //flag 0: lock
 //flag 1: don't lock
 int writerectimer(const char *filename, int flag)
 {
-	debug(1000, "in");
 	FILE *fd = NULL;
 	struct rectimer *node = NULL;
 	int ret = 0;
@@ -822,7 +808,6 @@ int writerectimer(const char *filename, int flag)
 	if(flag == 0) m_unlock(&status.rectimermutex, 1);
 
 	status.writerectimer = 0;
-	debug(1000, "out");
 	return 0;
 }
 

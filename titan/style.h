@@ -3,7 +3,6 @@
 
 struct style* addstyle(char* line, struct style* last)
 {
-//	debug(1000, "in");
 	char *ret = NULL;
 	struct style *newnode = NULL, *prev = NULL, *node = NULL;
 	int memfd = -1, length;
@@ -349,7 +348,6 @@ struct style* addstyle(char* line, struct style* last)
 		prev->next = newnode;
 	newnode->next = node;
 
-	//debug(1000, "out");
 	return newnode;
 }
 
@@ -432,7 +430,6 @@ struct style* getstyle(char* name)
 
 void delstyle(struct style* snode)
 {
-	debug(1000, "in");
 	struct style *node = style, *prev = style;
 
 	while(node != NULL)
@@ -452,12 +449,10 @@ void delstyle(struct style* snode)
 		prev = node;
 		node = node->next;
 	}
-	debug(1000, "out");
 }
 
 void freestyle()
 {
-	debug(1000, "in");
 	struct style *node = style, *prev = style;
 
 	while(node != NULL)
@@ -467,7 +462,6 @@ void freestyle()
 		if(prev != NULL)
 			delstyle(prev);
 	}
-	debug(1000, "out");
 }
 
 /*

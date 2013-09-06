@@ -7,8 +7,6 @@
 //flag 1: with menulist
 void screenkeyactions(int key, int flag)
 {
-	debug(1000, "in");
-
 	char* keyconf = NULL;
 	struct skin* pluginnode = NULL;
 	void (*startplugin)(void);
@@ -161,7 +159,6 @@ void screenkeyactions(int key, int flag)
 
 	resettvpic();
 	freemenulist(mlist, 1); mlist = NULL;
-	debug(1000, "out");
 	return;
 }
 

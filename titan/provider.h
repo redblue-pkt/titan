@@ -3,7 +3,6 @@
 
 int getlastproviderid()
 {
-	debug(1000, "in");
 	int lastid = 0;
 	struct provider *node = provider, *prev = NULL;
 
@@ -15,13 +14,11 @@ int getlastproviderid()
 		node = node->next;
 	}
 
-	debug(1000, "out");
 	return lastid;
 }
 
 struct provider* getlastprovider(struct provider* node)
 {
-	debug(1000, "in");
 	struct provider *prev = NULL;
 
 	while(node != NULL)
@@ -30,7 +27,6 @@ struct provider* getlastprovider(struct provider* node)
 		node = node->next;
 	}
 
-	debug(1000, "out");
 	return prev;
 }
 
@@ -41,7 +37,7 @@ int moveproviderblockdown(struct provider* node)
 
 	if(node == NULL)
 	{
-		debug(1000, "NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -68,7 +64,7 @@ int moveproviderdown(struct provider* node)
 
 	if(node == NULL || provider == NULL)
 	{
-		debug(1000, "NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 	
@@ -118,7 +114,7 @@ int moveproviderblockup(struct provider* node)
 
 	if(node == NULL)
 	{
-		debug(1000, "NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -139,7 +135,7 @@ int moveproviderup(struct provider* node)
 
 	if(node == NULL || provider == NULL)
 	{
-		debug(1000, "NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 	
@@ -186,7 +182,6 @@ int moveproviderup(struct provider* node)
 
 struct provider* addprovider(char *line, int count, struct provider* last)
 {
-	//debug(1000, "in");
 	struct provider *newnode = NULL, *prev = NULL, *node = provider;
 	char *name = NULL;
 	int ret = 0;
@@ -250,13 +245,11 @@ struct provider* addprovider(char *line, int count, struct provider* last)
 	newnode->next = node;
 	if(node != NULL) node->prev = newnode;
 
-	//debug(1000, "out");
 	return newnode;
 }
 
 int readprovider(const char* filename)
 {
-	debug(1000, "in");
 	FILE *fd = NULL;
 	char *fileline = NULL, *tmpstr = NULL, *tmpstr0 = NULL, *tmpstr1 = NULL;
 	int linecount = 0, treffer0 = 1, treffer1 = 1, len = 0;
@@ -321,7 +314,6 @@ int readprovider(const char* filename)
 
 void delprovider(int providerid)
 {
-	debug(1000, "in");
 	struct provider *node = provider, *prev = provider;
 
 	while(node != NULL)
@@ -353,7 +345,6 @@ void delprovider(int providerid)
 		prev = node;
 		node = node->next;
 	}
-	debug(1000, "out");
 }
 
 void delprovidernotused(struct provider* node)
@@ -373,16 +364,12 @@ void delprovidernotused(struct provider* node)
 
 struct provider* getproviderbyname(char* name)
 {
-	debug(1000, "in");
 	struct provider *node = provider;
 
 	while(node != NULL)
 	{
 		if(ostrcmp(node->name, name) == 0)
-		{
-			debug(1000, "out");
 			return node;
-		}
 
 		node = node->next;
 	}
@@ -392,16 +379,12 @@ struct provider* getproviderbyname(char* name)
 
 struct provider* getprovider(int providerid)
 {
-	//debug(1000, "in");
 	struct provider *node = provider;
 
 	while(node != NULL)
 	{
 		if(node->providerid == providerid)
-		{
-			//debug(1000, "out");
 			return node;
-		}
 
 		node = node->next;
 	}
@@ -469,7 +452,6 @@ int provider2bouquet(int providerid)
 
 void freeprovider()
 {
-	debug(1000, "in");
 	struct provider *node = provider, *prev = provider;
 
 	while(node != NULL)
@@ -479,12 +461,10 @@ void freeprovider()
 		if(prev != NULL)
 			delprovider(prev->providerid);
 	}
-	debug(1000, "out");
 }
 
 int writeprovider(const char *filename)
 {
-	debug(1000, "in");
 	FILE *fd = NULL;
 	struct provider *node = provider;
 	int ret;
@@ -507,7 +487,6 @@ int writeprovider(const char *filename)
 	}
 
 	fclose(fd);
-	debug(1000, "out");
 	return 0;
 }
 

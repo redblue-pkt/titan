@@ -63,7 +63,6 @@
 
 struct dvbdev* scopen()
 {
-	debug(1000, "in");
 	int fd = -1;
 	struct dvbdev* node = dvbdev;
 
@@ -88,13 +87,11 @@ struct dvbdev* scopen()
 		}
 	}
 
-	debug(1000, "out");
 	return node;
 }
 
 int scopendirect(char *scdev)
 {
-	debug(1000, "in");
 	int fd = -1;
 
 	if((fd = open(scdev, O_RDWR)) < 0)
@@ -103,7 +100,6 @@ int scopendirect(char *scdev)
 	}
 
 	closeonexec(fd);
-	debug(1000, "out");
 	return fd;
 }
 
@@ -122,7 +118,7 @@ int scsetreset(struct dvbdev* node)
 {
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -140,7 +136,7 @@ int scsetmodes(struct dvbdev* node, struct sci_modes* modes)
 {
 	if(node == NULL || modes == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -158,7 +154,7 @@ int scgetmodes(struct dvbdev* node, struct sci_modes* modes)
 {
 	if(node == NULL || modes == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -176,7 +172,7 @@ int scsetparameters(struct dvbdev* node, struct sci_parameters* parameters)
 {
 	if(node == NULL || parameters == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -194,7 +190,7 @@ int scgetparameters(struct dvbdev* node, struct sci_parameters* parameters)
 {
 	if(node == NULL || parameters == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -212,7 +208,7 @@ int scsetclockstart(struct dvbdev* node)
 {
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -230,7 +226,7 @@ int scsetclockstop(struct dvbdev* node)
 {
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -248,7 +244,7 @@ int scgetiscardpresent(struct dvbdev* node, uint32_t* status)
 {
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -266,7 +262,7 @@ int scgetiscardactivated(struct dvbdev* node, uint32_t* status)
 {
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -284,7 +280,7 @@ int scsetdeactivate(struct dvbdev* node)
 {
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -302,7 +298,7 @@ int scsetatrready(struct dvbdev* node)
 {
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -320,7 +316,7 @@ int scgetatrstatus(struct dvbdev* node, uint32_t* status)
 {
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -338,7 +334,7 @@ int scsetclock(struct dvbdev* node, uint32_t* clock)
 {
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -356,7 +352,7 @@ int scsetonlyreset(struct dvbdev* node)
 {
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -372,14 +368,13 @@ int scsetonlyreset(struct dvbdev* node)
 
 int scgetdev()
 {
-	debug(1000, "in");
 	int y, fd = -1, count = 0;
 	char *buf = NULL, *scdev = NULL;
 
 	scdev = getconfig("scdev", NULL);
 	if(scdev == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return count;
 	}
 
@@ -403,7 +398,6 @@ int scgetdev()
 	}
 
 	free(buf);
-	debug(1000, "out");
 	return count;
 }
 

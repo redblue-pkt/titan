@@ -451,7 +451,6 @@ char* getepgtime(struct skin* node, char* format, int akt, int type)
 	// type 1 = endtime
 	// type 2 = remainingtime
 
-	debug(1000, "in");
 	struct epg* epgnode = NULL;
 	struct tm *loctime = NULL;
 	struct channel* chnode = NULL;
@@ -460,7 +459,7 @@ char* getepgtime(struct skin* node, char* format, int akt, int type)
 	
 	if(format == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
@@ -507,11 +506,9 @@ char* getepgtime(struct skin* node, char* format, int akt, int type)
 			buf1 = ostrcat(buf, NULL, 1, 0);
 
 			free(loctime); loctime = NULL;
-			debug(1000, "out");
 			return buf1;
 		}
 	}
-	debug(1000, "out");
 	return NULL;
 }
 
@@ -697,14 +694,13 @@ char* getalternatepicon(struct skin* node)
 
 char* gettime(struct skin* node, char* format)
 {
-	debug(1000, "in");
 	time_t sec;
 	struct tm *loctime = NULL;
 	char *buf = NULL, *buf1 = NULL;
 
 	if(format == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
@@ -725,7 +721,6 @@ char* gettime(struct skin* node, char* format)
 	}
 
 	free(loctime);
-	debug(1000, "out");
 	return buf1;
 }
 

@@ -63,7 +63,6 @@ void akttolast()
 //flag 6: same as 5 but second zap
 int servicestartreal(struct channel* chnode, char* channellist, char* pin, int flag)
 {
-	debug(1000, "in");
 	struct transponder* tpnode = NULL;
 	struct dvbdev *fenode = NULL;
 	struct dvbdev *dmxaudionode = NULL;
@@ -580,7 +579,6 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		timeshiftpause(); //start permanent timeshift record
 	}
 	
-	debug(1000, "out");
 	return 0;
 }
 
@@ -772,7 +770,7 @@ void servicechangeaudio(struct channel* chnode, struct audiotrack* tracknode)
 {
 	if(chnode == NULL || tracknode == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return;
 	}
 
@@ -798,7 +796,6 @@ void servicechangeaudio(struct channel* chnode, struct audiotrack* tracknode)
 
 struct service* addservice(struct service* last)
 {
-	debug(1000, "in");
 	struct service *newnode = NULL, *node = NULL;
 
 	newnode = (struct service*)calloc(1, sizeof(struct service));
@@ -828,7 +825,6 @@ struct service* addservice(struct service* last)
 	else
 		service = newnode;
 
-	debug(1000, "out");
 	m_unlock(&status.servicemutex, 2);
 	return newnode;
 }
@@ -850,7 +846,6 @@ struct service* checkservice(struct service* node)
 //flag 1: not set mutex
 void delservice(struct service* snode, int flag)
 {
-	debug(1000, "in");
 	m_lock(&status.servicemutex, 2);
 	struct service *node = service, *prev = service;
 	struct rectimer *rectimernode = NULL;
@@ -917,12 +912,10 @@ void delservice(struct service* snode, int flag)
 		node = node->next;
 	}
 	m_unlock(&status.servicemutex, 2);
-	debug(1000, "out");
 }
 
 void freeservice()
 {
-	debug(1000, "in");
 	struct service *node = service, *prev = service;
 
 	while(node != NULL)
@@ -932,7 +925,6 @@ void freeservice()
 		if(prev != NULL)
 			delservice(prev, 0);
 	}
-	debug(1000, "out");
 }
 
 char* servicecheckret(int ret, int flag)

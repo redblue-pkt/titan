@@ -111,7 +111,6 @@ void freebpamem(int memfd, unsigned char* mem, size_t len)
 //mode 3: without fill (draw to fb)
 void blitrect(int posx, int posy, int width, int height, long color, int transparent, int mode)
 {
-	//debug(1000, "in");
 	int y, x;
 	unsigned long tmpcol;
 	
@@ -152,7 +151,6 @@ void blitrect(int posx, int posy, int width, int height, long color, int transpa
 		for(y = 0; y < height; y++)
 			drawpixel(posx + width - 1, posy + y, tmpcol);
 	}
-	//debug(1000, "out");
 }
 
 int readjpg(const char* filename, unsigned long* width, unsigned long* height, unsigned long* rowbytes, int* channels, unsigned char **mem, int *memfd)
@@ -199,8 +197,6 @@ void initsignal(struct sigaction* sa)
 
 void sighandler(int sig, struct sigcontext ctx)
 {
-
-	debug(1000, "in");
 	switch(sig)
 	{
 		case SIGALRM:
@@ -242,7 +238,6 @@ void sighandler(int sig, struct sigcontext ctx)
 			break;
 		}
 	}
-	debug(1000, "out");
 }
 
 #endif

@@ -78,16 +78,12 @@ int maprc(int rccode, struct skin* owner)
 
 struct rc* getrc(int key, struct skin* owner)
 {
-	debug(1000, "in");
 	struct rc *node = rc;
 
 	while(node != NULL)
 	{
 		if(node->key == key && node->owner == owner)
-		{
-			debug(1000, "out");
 			return node;
-		}
 
 		node = node->next;
 	}
@@ -97,10 +93,7 @@ struct rc* getrc(int key, struct skin* owner)
 	while(node != NULL)
 	{
 		if(node->key == key && node->owner == NULL)
-		{
-			debug(1000, "out");
 			return node;
-		}
 
 		node = node->next;
 	}
@@ -109,7 +102,6 @@ struct rc* getrc(int key, struct skin* owner)
 
 int openrc()
 {
-	debug(1000, "in");
 	char *rcdev = NULL;
 	int i = 0;
 
@@ -138,18 +130,13 @@ int openrc()
 		return 1;
 	}
 
-	debug(1000, "out");
 	return 0;
 }
 
 void closerc()
 {
-	debug(1000, "in");
-
 	if(status.fdrc != -1)
 		close(status.fdrc);
-
-	debug(1000, "out");
 }
 
 int islongkey(int keycode)
@@ -220,7 +207,6 @@ int flushrc(unsigned int timeout)
 
 int waitrcext(struct skin* owner, unsigned int timeout, int screencalc, int filelistview)
 {
-	debug(1000, "in");
 	fd_set rfds;
 	struct timeval tv;
 	struct input_event rcdata;
@@ -358,7 +344,6 @@ int waitrcext(struct skin* owner, unsigned int timeout, int screencalc, int file
 		}
 	}
 
-	debug(1000, "out");
 	if(ret != RCTIMEOUT)
 		status.lastrcaction = time(NULL);
 	return ret;
@@ -371,7 +356,6 @@ int waitrc(struct skin* owner, unsigned int timeout, int screencalc)
 
 struct rc* addrc(int key, void *func, struct skin* screen, struct skin *screennode)
 {
-	debug(1000, "in");
 	struct rc *newnode, *node = rc;
 	struct rc **nodeaddr;
 
@@ -400,7 +384,6 @@ struct rc* addrc(int key, void *func, struct skin* screen, struct skin *screenno
 				node->screennode = screennode;
 				free(newnode);
 				newnode = NULL;
-				debug(1000, "out -> key %d found, use change instread add", key);
 				return node;
 			}
 			nodeaddr = &node->next;
@@ -411,13 +394,11 @@ struct rc* addrc(int key, void *func, struct skin* screen, struct skin *screenno
 	else
 		rc = newnode;
 
-	debug(1000, "out");
 	return newnode;
 }
 
 void delrc(int key, struct skin* owner, struct skin* screennode)
 {
-	debug(1000, "in");
 	struct rc *node = rc, *prev = rc;
 
 	while(node != NULL)
@@ -437,12 +418,10 @@ void delrc(int key, struct skin* owner, struct skin* screennode)
 		prev = node;
 		node = node->next;
 	}
-	debug(1000, "out");
 }
 
 void delownerrc(struct skin* owner)
 {
-	debug(1000, "in");
 	struct rc *node = rc, *prev = rc;
 
 	while(node != NULL)
@@ -452,12 +431,10 @@ void delownerrc(struct skin* owner)
 		if(prev != NULL && prev->owner == owner)
 			delrc(prev->key, prev->owner, prev->screennode);
 	}
-	debug(1000, "out");
 }
 
 void freerc()
 {
-	debug(1000, "in");
 	struct rc *node = rc, *prev = rc;
 
 	while(node != NULL)
@@ -467,7 +444,6 @@ void freerc()
 		if(prev != NULL)
 			delrc(prev->key, prev->owner, prev->screennode);
 	}
-	debug(1000, "out");
 }
 
 #endif
