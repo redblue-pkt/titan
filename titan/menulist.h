@@ -27,6 +27,12 @@ void freemenulist(struct menulist* mlist, int delparam)
 
 				free(prev->param1);
 				prev->param1 = NULL;
+				
+				free(prev->param2);
+				prev->param2 = NULL;
+				
+				free(prev->param3);
+				prev->param3 = NULL;
 			}
 
 			free(prev);
@@ -35,7 +41,7 @@ void freemenulist(struct menulist* mlist, int delparam)
 	}
 }
 
-void changemenulistparam(struct menulist* mlist, char* param, char* param1)
+void changemenulistparam(struct menulist* mlist, char* param, char* param1, char* param2, char* param3)
 {
 	if(mlist != NULL)
 	{
@@ -44,6 +50,12 @@ void changemenulistparam(struct menulist* mlist, char* param, char* param1)
 
 		free(mlist->param1);
 		mlist->param1 = ostrcat(param1, NULL, 0, 0);
+		
+		free(mlist->param2);
+		mlist->param2 = ostrcat(param2, NULL, 0, 0);
+		
+		free(mlist->param3);
+		mlist->param3 = ostrcat(param3, NULL, 0, 0);
 	}
 }
 

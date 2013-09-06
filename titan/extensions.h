@@ -70,23 +70,48 @@ void screenfeed()
 	free(lastline);
 }
 
-char* getinstallpath()
+char* getinstallpath(char* path, char* size)
 {
+	int count = 0, size = 0;
 	char* tmpstr = NULL;
 	struct menulist* mlist = NULL, *mbox = NULL, *tmpmlist = NULL;
 	
-	tmpmlist = addmenulist(&mlist, "Flash (permanent)", NULL, NULL, 0, 0);
-	changemenulistparam(tmpmlist, "/mnt/swapextensions", NULL);
+	if(size != NULL) size = atoi(size);
 	
-	tmpmlist = addmenulist(&mlist, "Flash (temporary)", NULL, NULL, 0, 0);
-	changemenulistparam(tmpmlist, "/var", NULL);
+	if(path == NULL || path[0] == '*' || ostrstr(path, "/mnt/swapextensions") != NULL)
+	{
+		tmpmlist = addmenulist(&mlist, "Flash (permanent)", NULL, NULL, 0, 0);
+		changemenulistparam(tmpmlist, "/mnt/swapextensions", NULL);
+		free(tmpstr); tmpstr = NULL;
+		tmpstr = ostrcat("/mnt/swapextensions", NULL, 0, 0);
+		count++;
+	}
 	
-	tmpmlist = addmenulist(&mlist, "Stick", NULL, NULL, 0, 0);
-	changemenulistparam(tmpmlist, "/var/swap", NULL);
+	if(path == NULL || path[0] == '*' || ostrstr(path, "/var") != NULL)
+	{
+		tmpmlist = addmenulist(&mlist, "Flash (temporary)", NULL, NULL, 0, 0);
+		changemenulistparam(tmpmlist, "/var", NULL);
+		free(tmpstr); tmpstr = NULL;
+		tmpstr = ostrcat("/var", NULL, 0, 0);
+		count++;
+	}
 	
-	mbox = menulistbox(mlist, NULL, "Choice Install Medium", NULL, NULL, 0, 0);
-	if(mbox != NULL)
-		tmpstr = ostrcat(mbox->param, NULL, 0, 0);
+	if(path == NULL || path[0] == '*' || ostrstr(path, "/var/swap") != NULL)
+	{
+		tmpmlist = addmenulist(&mlist, "Stick", NULL, NULL, 0, 0);
+		changemenulistparam(tmpmlist, "/var/swap", NULL);
+		free(tmpstr); tmpstr = NULL;
+		tmpstr = ostrcat("/var/swap", NULL, 0, 0);
+		count++;
+	}
+	
+	if(count > 1)
+	{
+		free(tmpstr); tmpstr = NULL;
+		mbox = menulistbox(mlist, NULL, "Choice Install Medium", NULL, NULL, 0, 0);
+		if(mbox != NULL)
+			tmpstr = ostrcat(mbox->param, NULL, 0, 0);
+	}
 	
 	freemenulist(mlist, 0); mlist = NULL;
 	return tmpstr;
@@ -94,7 +119,7 @@ char* getinstallpath()
 
 void screenextensions(int mode, char* path, char* defentry, int first)
 {
-	char* tmpstr = NULL, *tmpinfo = NULL;
+	char* tmpstr = NULL, *tmpinfo = NULL, *installpath = NULL;
 	struct menulist* mlist = NULL, *mbox = NULL;
 	struct menulist* mlist1 = NULL, *mbox1 = NULL;
 	struct skin* load = getscreen("loading");
@@ -122,11 +147,8 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 			{
 				debug(130, "file: %s", mbox1->name);
 				
-				if(ostrcmp(mbox1->param1, "0") == 0)
-        {
-          textbox(_("Tpk Install Info"), _("Can't install Package. Package to big."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);       
-        }
-        else
+				installpath = getinstallpath(mbox1->param2, mbox1->param3);
+        if(installpath != NULL)
         {
 					tmpinfo = ostrcat(tmpinfo, _("Installing"), 1, 0);
 					tmpinfo = ostrcat(tmpinfo, " ", 1, 0);
@@ -136,13 +158,12 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 					tmpinfo = ostrcat(tmpinfo, " ", 1, 0);
 					tmpinfo = ostrcat(tmpinfo, _("started"), 1, 0);
 					tmpinfo = ostrcat(tmpinfo, " ?", 1, 0);
-	
+		
 					if(textbox(_("Tpk Install Info"), _(tmpinfo), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
 					{
 						drawscreen(load, 0, 0);
 						resettvpic();
 						char* log = NULL;
-						//TODO: installpath
 						if(tpkgetpackage(mbox1->param, mbox1->param1, NULL) == 0)
 						{
 							log = readfiletomem(TPKLOG, 0);
@@ -168,7 +189,7 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 				}
 			}
 		}
-		
+		free(installpath); installpath = NULL;
 		free(tmpstr); tmpstr = NULL;	
 		freemenulist(mlist1, 0); mlist1 = NULL;
 		if(mbox != NULL) tmpstr = ostrcat(mbox->name, NULL, 0, 0);
@@ -259,55 +280,58 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 		
 		if(mbox != NULL)
 		{
-			debug(130, "file: %s", mbox->name);
-
-			tmpinfo = ostrcat(tmpinfo, _("Installing"), 1, 0);
-			tmpinfo = ostrcat(tmpinfo, " ", 1, 0);
-			tmpinfo = ostrcat(tmpinfo, mbox->name, 1, 0);
-			tmpinfo = ostrcat(tmpinfo, " ", 1, 0);
-			tmpinfo = ostrcat(tmpinfo, _("started"), 1, 0);
-			tmpinfo = ostrcat(tmpinfo, " ?", 1, 0);
-
-			if(textbox(_(text2), _(tmpinfo), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 2)
+			installpath = getinstallpath(NULL, 0);
+			if(installpath != NULL)
 			{
-				char* log = NULL;
-				int ret = 0;				
-				drawscreen(load, 0, 0);
-				resettvpic();				
-				if(path == NULL)
+				debug(130, "file: %s", mbox->name);
+	
+				tmpinfo = ostrcat(tmpinfo, _("Installing"), 1, 0);
+				tmpinfo = ostrcat(tmpinfo, " ", 1, 0);
+				tmpinfo = ostrcat(tmpinfo, mbox->name, 1, 0);
+				tmpinfo = ostrcat(tmpinfo, " ", 1, 0);
+				tmpinfo = ostrcat(tmpinfo, _("started"), 1, 0);
+				tmpinfo = ostrcat(tmpinfo, " ?", 1, 0);
+	
+				if(textbox(_(text2), _(tmpinfo), "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 2)
 				{
-					tmpstr = ostrcat(tmpstr, "/tmp", 1, 0);
-					tmpstr = ostrcat(tmpstr, "/", 1, 0);
-					tmpstr = ostrcat(tmpstr, mbox->name, 1, 0);
-					//TODO: installpath
-					ret = tpkinstall(tmpstr, NULL);
-					free(tmpstr); tmpstr = NULL;
-				}
-				else
-				{
-					tmpstr = ostrcat(tmpstr, path, 1, 0);
-					tmpstr = ostrcat(tmpstr, "/", 1, 0);
-					tmpstr = ostrcat(tmpstr, mbox->name, 1, 0);
-					//TODO: installpath
-					ret = tpkinstall(tmpstr, NULL);
-					free(tmpstr); tmpstr = NULL;
-				}
-
-				log = readfiletomem(TPKLOG, 0);
-				if(log == NULL && ret != 0) log = ostrcat("Install error", NULL, 0, 0);
-				if(log == NULL && ret == 0) log = ostrcat("Install success", NULL, 0, 0);
-				textbox(_(text2), log, "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
-				free(log); log = NULL;
-				unlink(TPKLOG);
-				textbox(_("Message"), _("Some plugins needs restart.\nIf the plugin is not active\nreboot the box."), "EXIT", getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
-				loadplugin();
-				if(file_exist("/tmp/.tpk_needs_reboot"))
-				{
-					textbox(_("Message"), _("TPK Tmp Install Done your system rebooting !"), "EXIT", getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
-					system("init 6");
+					char* log = NULL;
+					int ret = 0;				
+					drawscreen(load, 0, 0);
+					resettvpic();				
+					if(path == NULL)
+					{
+						tmpstr = ostrcat(tmpstr, "/tmp", 1, 0);
+						tmpstr = ostrcat(tmpstr, "/", 1, 0);
+						tmpstr = ostrcat(tmpstr, mbox->name, 1, 0);
+						ret = tpkinstall(tmpstr, NULL);
+						free(tmpstr); tmpstr = NULL;
+					}
+					else
+					{
+						tmpstr = ostrcat(tmpstr, path, 1, 0);
+						tmpstr = ostrcat(tmpstr, "/", 1, 0);
+						tmpstr = ostrcat(tmpstr, mbox->name, 1, 0);
+						ret = tpkinstall(tmpstr, NULL);
+						free(tmpstr); tmpstr = NULL;
+					}
+	
+					log = readfiletomem(TPKLOG, 0);
+					if(log == NULL && ret != 0) log = ostrcat("Install error", NULL, 0, 0);
+					if(log == NULL && ret == 0) log = ostrcat("Install success", NULL, 0, 0);
+					textbox(_(text2), log, "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
+					free(log); log = NULL;
+					unlink(TPKLOG);
+					textbox(_("Message"), _("Some plugins needs restart.\nIf the plugin is not active\nreboot the box."), "EXIT", getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+					loadplugin();
+					if(file_exist("/tmp/.tpk_needs_reboot"))
+					{
+						textbox(_("Message"), _("TPK Tmp Install Done your system rebooting !"), "EXIT", getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+						system("init 6");
+					}
 				}
 			}
 		}
+		free(installpath); installpath = NULL;
 		free(tmpstr); tmpstr = NULL;
 		freemenulist(mlist, 0); mlist = NULL;
 		if(mbox != NULL) tmpstr = ostrcat(mbox->name, NULL, 0, 0);

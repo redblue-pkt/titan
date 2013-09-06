@@ -388,6 +388,7 @@ struct tpk* tpkcreateindex(char* path, char* name, int flag)
 	if(tpknode->showname == NULL) tpknode->showname = ostrcat("*", NULL, 0, 0);
 	if(tpknode->arch == NULL) tpknode->arch = ostrcat("noarch", NULL, 0, 0);
 	if(tpknode->titanname == NULL) tpknode->titanname = ostrcat("*", NULL, 0, 0);
+	if(tpknode->usepath == NULL) tpknode->usepath = ostrcat("*", NULL, 0, 0);
 
   if(flag == 0)
   {
@@ -399,7 +400,7 @@ struct tpk* tpkcreateindex(char* path, char* name, int flag)
   		goto end;
   	}
   
-  	writeret = fprintf(fd, "%s#%s#%s#%s#%s#%s#%d#%d#%d#%d#%d#%d\n", tpknode->name, tpknode->showname, tpknode->section, tpknode->desc, tpknode->arch, tpknode->titanname, tpknode->version, tpknode->group, tpknode->minversion, tpknode->preinstalled, tpknode->size, tpknode->type);
+  	writeret = fprintf(fd, "%s#%s#%s#%s#%s#%s#%s#%d#%d#%d#%d#%d#%d\n", tpknode->name, tpknode->showname, tpknode->section, tpknode->desc, tpknode->arch, tpknode->titanname, tpknode->usepath, tpknode->version, tpknode->group, tpknode->minversion, tpknode->preinstalled, tpknode->size);
   	if(writeret < 0)
   	{
   		perr("writting file %s", PACKAGES);
@@ -949,7 +950,7 @@ int tpkgetfilesize(char* file)
   return (len / 1024) + 1;
 }
 
-int tpkwritecontrol(char* path, struct tpk* tpknode, int size, int type)
+int tpkwritecontrol(char* path, struct tpk* tpknode, int size)
 {
   int ret = 0;
 	FILE *fd = NULL;
@@ -972,7 +973,7 @@ int tpkwritecontrol(char* path, struct tpk* tpknode, int size, int type)
 		goto end;
 	}
   
-  ret = fprintf(fd, "Package: %s\nArchitecture: %s\nShowname: %s\nVersion: %d\nSection: %s\nDescription: %s\nGroup: %d\nMinversion: %d\nPreinstalled: %d\nSize: %d\nType: %d\nTitanname: %s", tpknode->name, tpknode->arch, tpknode->showname, tpknode->version, tpknode->section, tpknode->desc, tpknode->group, tpknode->minversion, tpknode->preinstalled, size, type, tpknode->titanname);
+  ret = fprintf(fd, "Package: %s\nArchitecture: %s\nShowname: %s\nVersion: %d\nSection: %s\nDescription: %s\nGroup: %d\nMinversion: %d\nPreinstalled: %d\nSize: %d\nTitanname: %s\nPath: %s", tpknode->name, tpknode->arch, tpknode->showname, tpknode->version, tpknode->section, tpknode->desc, tpknode->group, tpknode->minversion, tpknode->preinstalled, size, tpknode->titanname, tpknode->path);
   if(ret < 0)
   {
     perr("writting file %s", tmpstr);
@@ -988,7 +989,7 @@ end:
 	return ret;
 }
 
-int tpkcalcsize(char* mainpath, char* dirname, int* size, int* type, int first)
+int tpkcalcsize(char* mainpath, char* dirname, int* size, int first)
 {
 	DIR *d;
 	char* tmpstr = NULL;
@@ -1033,11 +1034,7 @@ int tpkcalcsize(char* mainpath, char* dirname, int* size, int* type, int first)
 					break;
 				}
         
-        //check type of package
-        if(path != NULL && strstr(path, "/var/swap/") != NULL)
-          *type = 1;
-        
-				ret = tpkcalcsize(mainpath, path, size, type, 0); //Recursively call with the new path
+				ret = tpkcalcsize(mainpath, path, size, 0); //Recursively call with the new path
 				if(ret != 0)
 				{
 					err("calc size %s", path);
@@ -1068,7 +1065,7 @@ int tpkcalcsize(char* mainpath, char* dirname, int* size, int* type, int first)
 int tpkcalcallsize(char* dirname, char* name)
 {
 	DIR *d;
-	int ret = 0, size = 0, type = 0;
+	int ret = 0, size = 0;
 	struct tpk* tpknode = NULL;
 
 	d = opendir(dirname); //Open the directory
@@ -1086,7 +1083,6 @@ int tpkcalcallsize(char* dirname, char* name)
 		char path[PATH_MAX];
 		tpknode = NULL;
     size = 0;
-    type = 0;
 
 		snprintf(path, PATH_MAX, "%s", dirname);
 		entry = readdir(d); //Readdir gets subsequent entries from d
@@ -1124,7 +1120,7 @@ int tpkcalcallsize(char* dirname, char* name)
 					continue;
 				}
 
-				ret = tpkcalcsize(path, path, &size, &type, 1);
+				ret = tpkcalcsize(path, path, &size, 1);
 				if(ret != 0)
 				{
 					err("calc size %s", path);
@@ -1133,7 +1129,7 @@ int tpkcalcallsize(char* dirname, char* name)
 					continue;
 				}
         
-        ret = tpkwritecontrol(path, tpknode, size, type);
+        ret = tpkwritecontrol(path, tpknode, size);
         if(ret != 0)
 				{
 					err("write control %s", path);
