@@ -80,29 +80,38 @@ char* getinstallpath(char* path, char* size)
 	
 	if(path == NULL || path[0] == '*' || ostrstr(path, "/mnt/swapextensions") != NULL)
 	{
-		tmpmlist = addmenulist(&mlist, "Flash (permanent)", NULL, NULL, 0, 0);
-		changemenulistparam(tmpmlist, "/mnt/swapextensions", NULL, NULL, NULL);
-		free(tmpstr); tmpstr = NULL;
-		tmpstr = ostrcat("/mnt/swapextensions", NULL, 0, 0);
-		count++;
+		if(tpkchecksize(NULL, "/mnt/swapextensions", isize) == 0)
+		{
+			tmpmlist = addmenulist(&mlist, "Flash (permanent)", NULL, NULL, 0, 0);
+			changemenulistparam(tmpmlist, "/mnt/swapextensions", NULL, NULL, NULL);
+			free(tmpstr); tmpstr = NULL;
+			tmpstr = ostrcat("/mnt/swapextensions", NULL, 0, 0);
+			count++;
+		}
 	}
 	
 	if(path == NULL || path[0] == '*' || ostrstr(path, "/var") != NULL)
 	{
-		tmpmlist = addmenulist(&mlist, "Flash (temporary)", NULL, NULL, 0, 0);
-		changemenulistparam(tmpmlist, "/var", NULL, NULL, NULL);
-		free(tmpstr); tmpstr = NULL;
-		tmpstr = ostrcat("/var", NULL, 0, 0);
-		count++;
+		if(tpkchecksize(NULL, "/var", isize) == 0)
+		{
+			tmpmlist = addmenulist(&mlist, "Flash (temporary)", NULL, NULL, 0, 0);
+			changemenulistparam(tmpmlist, "/var", NULL, NULL, NULL);
+			free(tmpstr); tmpstr = NULL;
+			tmpstr = ostrcat("/var", NULL, 0, 0);
+			count++;
+		}
 	}
 	
 	if(path == NULL || path[0] == '*' || ostrstr(path, "/var/swap") != NULL)
 	{
-		tmpmlist = addmenulist(&mlist, "Stick", NULL, NULL, 0, 0);
-		changemenulistparam(tmpmlist, "/var/swap", NULL, NULL, NULL);
-		free(tmpstr); tmpstr = NULL;
-		tmpstr = ostrcat("/var/swap", NULL, 0, 0);
-		count++;
+		if(tpkchecksize(NULL, "/var/swap", isize) == 0)
+		{
+			tmpmlist = addmenulist(&mlist, "Stick", NULL, NULL, 0, 0);
+			changemenulistparam(tmpmlist, "/var/swap", NULL, NULL, NULL);
+			free(tmpstr); tmpstr = NULL;
+			tmpstr = ostrcat("/var/swap", NULL, 0, 0);
+			count++;
+		}
 	}
 	
 	if(count > 1)
@@ -112,6 +121,8 @@ char* getinstallpath(char* path, char* size)
 		if(mbox != NULL)
 			tmpstr = ostrcat(mbox->param, NULL, 0, 0);
 	}
+	else
+		textbox(_("Tpk Install Info"), _("Can't install Package. Package to big."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
 	
 	freemenulist(mlist, 0); mlist = NULL;
 	return tmpstr;
