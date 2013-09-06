@@ -7,8 +7,8 @@
 # Short-Description:    MiniDLNA Server
 ### END INIT INFO
 
-export PATH=$PATH:/var/swap/bin:/var/bin
-export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/var/swap/lib
+export PATH=$PATH:/var/swap/bin:/mnt/swapextensions/bin:/var/bin
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/var/swap/lib:/mnt/swapextensions/lib
 	
 NAME=minidlna
 DESC="MiniDLNA"
@@ -16,7 +16,7 @@ DAEMON=minidlna
 USER=root
 GROUP=root
  
-params="-f /var/swap/etc/minidlna.conf -R"
+params="-f $2 -R"
  
 case $1 in
   start)
@@ -30,6 +30,6 @@ case $1 in
     $0 start
   ;;
   *)
-    echo "Usage: /var/swap/titanplugins/dlna/dlna.sh {start|restart|stop}"
+    echo "Usage: dlna.sh {start|restart|stop}"
   ;;
 esac
