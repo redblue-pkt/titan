@@ -82,7 +82,7 @@ char* getinstallpath(char* path, char* size)
 	{
 		if(tpkchecksize(NULL, "/mnt/swapextensions", isize) == 0)
 		{
-			tmpmlist = addmenulist(&mlist, "Flash (permanent)", NULL, NULL, 0, 0);
+			tmpmlist = addmenulist(&mlist, "Install to Flash (permanent)", NULL, NULL, 0, 0);
 			changemenulistparam(tmpmlist, "/mnt/swapextensions", NULL, NULL, NULL);
 			free(tmpstr); tmpstr = NULL;
 			tmpstr = ostrcat("/mnt/swapextensions", NULL, 0, 0);
@@ -94,7 +94,7 @@ char* getinstallpath(char* path, char* size)
 	{
 		if(tpkchecksize(NULL, "/var", isize) == 0)
 		{
-			tmpmlist = addmenulist(&mlist, "Flash (temporary)", NULL, NULL, 0, 0);
+			tmpmlist = addmenulist(&mlist, "Install to Flash (temporary)", NULL, NULL, 0, 0);
 			changemenulistparam(tmpmlist, "/var", NULL, NULL, NULL);
 			free(tmpstr); tmpstr = NULL;
 			tmpstr = ostrcat("/var", NULL, 0, 0);
@@ -106,7 +106,7 @@ char* getinstallpath(char* path, char* size)
 	{
 		if(tpkchecksize(NULL, "/var/swap", isize) == 0)
 		{
-			tmpmlist = addmenulist(&mlist, "Stick", NULL, NULL, 0, 0);
+			tmpmlist = addmenulist(&mlist, "Install to Stick or HDD", NULL, NULL, 0, 0);
 			changemenulistparam(tmpmlist, "/var/swap", NULL, NULL, NULL);
 			free(tmpstr); tmpstr = NULL;
 			tmpstr = ostrcat("/var/swap", NULL, 0, 0);
