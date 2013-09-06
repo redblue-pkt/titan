@@ -175,7 +175,7 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 						drawscreen(load, 0, 0);
 						resettvpic();
 						char* log = NULL;
-						if(tpkgetpackage(mbox1->param, mbox1->param1, NULL) == 0)
+						if(tpkgetpackage(mbox1->param, mbox1->param1, installpath) == 0)
 						{
 							log = readfiletomem(TPKLOG, 0);
 							if(log == NULL) log = ostrcat("Install success", NULL, 0, 0);
@@ -314,7 +314,7 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 						tmpstr = ostrcat(tmpstr, "/tmp", 1, 0);
 						tmpstr = ostrcat(tmpstr, "/", 1, 0);
 						tmpstr = ostrcat(tmpstr, mbox->name, 1, 0);
-						ret = tpkinstall(tmpstr, NULL);
+						ret = tpkinstall(tmpstr, installpath);
 						free(tmpstr); tmpstr = NULL;
 					}
 					else
@@ -322,7 +322,7 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 						tmpstr = ostrcat(tmpstr, path, 1, 0);
 						tmpstr = ostrcat(tmpstr, "/", 1, 0);
 						tmpstr = ostrcat(tmpstr, mbox->name, 1, 0);
-						ret = tpkinstall(tmpstr, NULL);
+						ret = tpkinstall(tmpstr, installpath);
 						free(tmpstr); tmpstr = NULL;
 					}
 	
