@@ -1369,7 +1369,7 @@ end:
 //flag 1: extract other
 int tpkextractfilelist(char* file, char* path, int flag)
 {
-	int ret = 0, ilen = 0, type = 0, major = 0, minor = 0, control = 0, exist = 0;
+	int ret = 0, ilen = 0, type = 0, major = 0, minor = 0, control = 0, exist = 0, count = 0;
 	off64_t startpos = 0, len = 0;
 	FILE *fd = NULL;
 	char* fileline = NULL, *from = NULL, *to = NULL, *tmpstr = NULL;
@@ -1412,6 +1412,8 @@ int tpkextractfilelist(char* file, char* path, int flag)
 
 	while(fgets(fileline, MINMALLOC, fd) != NULL)
 	{
+		count++;
+		
 		//reset hangtime
 		if(pthread_self() == status.mainthread)
 		{
@@ -1528,6 +1530,11 @@ int tpkextractfilelist(char* file, char* path, int flag)
 	}
 
 end:
+	if(count == 0)
+	{
+		err("no entry in filelist");
+	}
+	
 	free(fileline); fileline = NULL;
 	free(from); from = NULL;
 	free(to); to = NULL;
