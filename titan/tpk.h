@@ -975,21 +975,21 @@ end:
 
 int tpkchecksize(struct tpk* tpknode, char* installpath, int size)
 {
-	int isize = 0, tsize = 0;
+	int tpksize = 0;
 	
-	if(installpath == NULL) return 0;
+	if(installpath == NULL || installpath[0] == '*') return 0;
 	
 	if(tpknode != NULL)
-		isize = tpknode->size;
+		tpksize = tpknode->size;
 	else
-		isize = size;
+		tpksize = size;
 
-	if(isize != 0)
+	if(tpksize != 0)
 	{
-		unsigned long long size = getfreespace(installpath) / 1024;
-		if(isize + TPKADDSIZE >= size)
+		unsigned long long freesize = getfreespace(installpath) / 1024;
+		if(tpksize + TPKADDSIZE >= freesize)
 		{
-			err("size to big for %s %d -> %lld", installpath, tsize, isize);
+			err("size to big for %s %d -> %lld", installpath, tpksize, freesize);
 			return 1;
 		}
 	}
