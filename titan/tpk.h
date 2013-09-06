@@ -1760,8 +1760,12 @@ int tpkchangeinstallpath(char* file, char* installpath)
 		ret = 0;
 
 	//read lines into buffer
+	count = 0;
 	while(fgets(fileline, MINMALLOC, fd) != NULL)
+	{
 		buf[count] = ostrcat(fileline, NULL, 0, 0);
+		count++;
+	}
 
 	if(fd != NULL) fclose(fd);
 
