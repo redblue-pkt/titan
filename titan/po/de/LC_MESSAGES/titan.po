@@ -4047,3 +4047,15 @@ msgstr "Aufnahme beendet. Box wird in 30sek ausgeschalten !"
 msgid "Timer Record start !\n"
 msgstr "Timer Aufnahme gestartet ! \n"
 
+msgid "Choice Install Medium"
+msgstr "Installation Auswahl"
+
+msgid "Install to Flash (permanent)"
+msgstr "In Flash installieren (permanent)"
+
+msgid "Install to Flash (temporary)"
+msgstr "In Flash installieren (temporär)"
+
+msgid "Install to Stick or HDD"
+msgstr "Auf Stick o. HDD installieren"
+
