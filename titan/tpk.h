@@ -1959,7 +1959,7 @@ int tpkinstall(char* file, char* installpath)
 	
 	//add installpath to control file
 	tmpstr = ostrcat(tmpstr, path, 1, 0);
-	tmpstr = ostrcat(tmpstr, "/CONTROL/control", 1, 0);
+	tmpstr = ostrcat(tmpstr, "/control", 1, 0);
 	ret = tpkaddinstallpath(tmpstr, installpath);
 	if(ret != 0)
 	{
