@@ -659,6 +659,7 @@ int delscreenrc(struct skin* screen, struct skin* node);
 void screenspinner();
 
 //global.h
+void delspezchar(char* text, int flag);
 int osystem(char* cmd, int timeout);
 char* mask(char* input, int count, char* maskchar);
 char* getboxtype();
