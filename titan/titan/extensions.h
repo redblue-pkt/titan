@@ -72,16 +72,16 @@ void screenfeed()
 
 char* getinstallpath(char* path, char* size)
 {
-	int count = 0, size = 0;
+	int count = 0, isize = 0;
 	char* tmpstr = NULL;
 	struct menulist* mlist = NULL, *mbox = NULL, *tmpmlist = NULL;
 	
-	if(size != NULL) size = atoi(size);
+	if(size != NULL) isize = atoi(size);
 	
 	if(path == NULL || path[0] == '*' || ostrstr(path, "/mnt/swapextensions") != NULL)
 	{
 		tmpmlist = addmenulist(&mlist, "Flash (permanent)", NULL, NULL, 0, 0);
-		changemenulistparam(tmpmlist, "/mnt/swapextensions", NULL);
+		changemenulistparam(tmpmlist, "/mnt/swapextensions", NULL, NULL, NULL);
 		free(tmpstr); tmpstr = NULL;
 		tmpstr = ostrcat("/mnt/swapextensions", NULL, 0, 0);
 		count++;
@@ -90,7 +90,7 @@ char* getinstallpath(char* path, char* size)
 	if(path == NULL || path[0] == '*' || ostrstr(path, "/var") != NULL)
 	{
 		tmpmlist = addmenulist(&mlist, "Flash (temporary)", NULL, NULL, 0, 0);
-		changemenulistparam(tmpmlist, "/var", NULL);
+		changemenulistparam(tmpmlist, "/var", NULL, NULL, NULL);
 		free(tmpstr); tmpstr = NULL;
 		tmpstr = ostrcat("/var", NULL, 0, 0);
 		count++;
@@ -99,7 +99,7 @@ char* getinstallpath(char* path, char* size)
 	if(path == NULL || path[0] == '*' || ostrstr(path, "/var/swap") != NULL)
 	{
 		tmpmlist = addmenulist(&mlist, "Stick", NULL, NULL, 0, 0);
-		changemenulistparam(tmpmlist, "/var/swap", NULL);
+		changemenulistparam(tmpmlist, "/var/swap", NULL, NULL, NULL);
 		free(tmpstr); tmpstr = NULL;
 		tmpstr = ostrcat("/var/swap", NULL, 0, 0);
 		count++;

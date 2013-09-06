@@ -423,6 +423,7 @@ struct menulist
 	char* param;
 	char* param1;
 	char* param2;
+	char* param3;
 	int deaktiv;
 	int defaultentry;
 	struct menulist* next;
