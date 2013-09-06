@@ -1732,7 +1732,7 @@ end:
 
 int tpkchangeinstallpath(char* file, char* installpath)
 {
-	int ret = 0, count = 0, max = 0, i = 0;
+	int ret = 0, count = 0, i = 0;
 	FILE *fd = NULL;
 	char* fileline = NULL;
 	
