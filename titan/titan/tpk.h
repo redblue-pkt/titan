@@ -1787,7 +1787,7 @@ int tpkchangeinstallpath(char* file, char* installpath)
 	for(i = 0; i < count; i++)
 	{
 		if(buf[i] == NULL) continue;
-		buf[i] = string_replace("_path_", installpath, buf[i], 1);	
+		buf[i] = string_replace("/_path_", installpath, buf[i], 1);	
 		ret = fprintf(fd, "%s", buf[i]);
 		if(ret < 0)
 		{
@@ -1826,7 +1826,7 @@ int tpkaddinstallpath(char* file, char* installpath)
 		return 1;
 	}
 	
-	tmpstr = ostrcat("Installpath: ", installpath, 0, 0);
+	tmpstr = ostrcat("\nInstallpath: ", installpath, 0, 0);
 	ret = fprintf(fd, "%s", tmpstr);
 	free(tmpstr); tmpstr = NULL;
 	if(ret < 0)
