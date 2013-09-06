@@ -2136,6 +2136,54 @@ end:
 	return ret;
 }
 
+char* tpkgetinstallpath(char* path)
+{
+	int len = 0;
+	FILE *fd = NULL;
+	char* fileline = NULL, *tmpstr = NULL;
+	char* installpath = NULL;
+	
+	if(path == NULL) return NULL;
+
+	fileline = malloc(MINMALLOC);
+	if(fileline == NULL)
+	{
+		err("no mem");
+		goto end;
+	}
+
+	tmpstr = ostrcat(tmpstr, path, 1, 0);
+	tmpstr = ostrcat(tmpstr, "/", 1, 0);
+	tmpstr = ostrcat(tmpstr, "control", 1, 0);
+
+	fd = fopen(tmpstr, "r");
+	if(fd == NULL)
+	{
+		perr("can't open %s", tmpstr);
+		goto end;
+	}
+	free(tmpstr); tmpstr = NULL;
+
+	while(fgets(fileline, MINMALLOC, fd) != NULL)
+	{
+		len = strlen(fileline) - 1;
+		if(len >= 0 && fileline[len] == '\n')
+			fileline[len] = '\0';
+		len--;
+		if(len >= 0 && fileline[len] == '\r')
+			fileline[len] = '\0';
+
+		if(strstr(fileline, "Installpath: ") == fileline)
+			installpath = ostrcat(fileline + 13, NULL, 0, 0);
+	}
+
+	if(installpath == NULL) installpath = ostrcat("*", NULL, 0, 0);
+	
+end:
+	if(fd != NULL) fclose(fd);
+	return installpath;
+}
+
 //flag 0: clean workdir
 //flag 1: don't clean workdir, don't create del flag file
 //flag 2: same as 0 but don't create del flag file
@@ -2143,6 +2191,7 @@ int tpkremove(char* file, int restore, int flag)
 {
 	int ret = 0;
 	char* tmpstr = NULL, *name = NULL, *path = NULL;
+	char* installpath = NULL;
 
 	if(file == NULL)
 	{
@@ -2180,12 +2229,18 @@ int tpkremove(char* file, int restore, int flag)
 		tpkcreateflagfile(EXTRACTDIR, tmpstr);
 		free(tmpstr); tmpstr = NULL;
 	}
+	
+	//get install path from control file
+	installpath = tpkgetinstallpath(path);
 
 	//execute pre remove
 	tmpstr = ostrcat(tmpstr, path, 1, 0);
 	tmpstr = ostrcat(tmpstr, "/prerm", 1, 0);
 	if(file_exist(tmpstr) == 1)
 	{
+		tmpstr = ostrcat(tmpstr, " \"", 1, 0);
+		tmpstr = ostrcat(tmpstr, installpath, 1, 0);
+		tmpstr = ostrcat(tmpstr, "\"", 1, 0);
 		tmpstr = ostrcat(tmpstr, " >> ", 1, 0);
 		tmpstr = ostrcat(tmpstr, TPKLOG, 1, 0);
 		tmpstr = ostrcat(tmpstr, " 2>&1", 1, 0);
@@ -2210,6 +2265,9 @@ int tpkremove(char* file, int restore, int flag)
 	tmpstr = ostrcat(tmpstr, "/postrm", 1, 0);
 	if(file_exist(tmpstr) == 1)
 	{
+		tmpstr = ostrcat(tmpstr, " \"", 1, 0);
+		tmpstr = ostrcat(tmpstr, installpath, 1, 0);
+		tmpstr = ostrcat(tmpstr, "\"", 1, 0);
 		tmpstr = ostrcat(tmpstr, " >> ", 1, 0);
 		tmpstr = ostrcat(tmpstr, TPKLOG, 1, 0);
 		tmpstr = ostrcat(tmpstr, " 2>&1", 1, 0);
@@ -2236,6 +2294,7 @@ end:
 		}
 	}
 
+	free(installpath); installpath = NULL;
 	free(path); path = NULL;
 	return ret;
 }
