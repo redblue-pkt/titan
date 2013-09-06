@@ -2187,8 +2187,6 @@ char* tpkgetinstallpath(char* path)
 		if(strstr(fileline, "Installpath: ") == fileline)
 			installpath = ostrcat(fileline + 13, NULL, 0, 0);
 	}
-
-	if(installpath == NULL) installpath = ostrcat("*", NULL, 0, 0);
 	
 end:
 	if(fd != NULL) fclose(fd);
