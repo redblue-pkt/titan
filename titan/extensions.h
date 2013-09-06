@@ -86,7 +86,7 @@ char* getinstallpath()
 	
 	mbox = menulistbox(mlist, NULL, "Choice Install Medium", NULL, NULL, 0, 0);
 	if(mbox != NULL)
-		tmpstr = ostrcat(mbox->param);
+		tmpstr = ostrcat(mbox->param, NULL, 0, 0);
 	
 	freemenulist(mlist, 0); mlist = NULL;
 	return tmpstr;
