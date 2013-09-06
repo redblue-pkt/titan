@@ -973,7 +973,7 @@ int tpkwritecontrol(char* path, struct tpk* tpknode, int size)
 		goto end;
 	}
   
-  ret = fprintf(fd, "Package: %s\nArchitecture: %s\nShowname: %s\nVersion: %d\nSection: %s\nDescription: %s\nGroup: %d\nMinversion: %d\nPreinstalled: %d\nSize: %d\nTitanname: %s\nPath: %s", tpknode->name, tpknode->arch, tpknode->showname, tpknode->version, tpknode->section, tpknode->desc, tpknode->group, tpknode->minversion, tpknode->preinstalled, size, tpknode->titanname, tpknode->path);
+  ret = fprintf(fd, "Package: %s\nArchitecture: %s\nShowname: %s\nVersion: %d\nSection: %s\nDescription: %s\nGroup: %d\nMinversion: %d\nPreinstalled: %d\nSize: %d\nTitanname: %s\nUsepath: %s", tpknode->name, tpknode->arch, tpknode->showname, tpknode->version, tpknode->section, tpknode->desc, tpknode->group, tpknode->minversion, tpknode->preinstalled, size, tpknode->titanname, tpknode->usepath);
   if(ret < 0)
   {
     perr("writting file %s", tmpstr);
