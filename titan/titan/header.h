@@ -8,6 +8,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//copyfile.h
+int screencopy(char* title, char* from, char* to, int flag);
+
 //httpdfunc.h
 char* webrectimersend(char* param, int fmt);
 

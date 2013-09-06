@@ -51,11 +51,11 @@ int addusbreset(char* dirname, struct menulist** mlist)
 				tmpstr = readsys(path, 1);
 				if(tmpstr != NULL && path[1] == '-')
 				{
-					tmpstr = ostract(tmpstr, " (", 1, 0);
-					tmpstr = ostract(tmpstr, entry->d_name, 1, 0);
-					tmpstr = ostract(tmpstr, ")", 1, 0);
+					tmpstr = ostrcat(tmpstr, " (", 1, 0);
+					tmpstr = ostrcat(tmpstr, entry->d_name, 1, 0);
+					tmpstr = ostrcat(tmpstr, ")", 1, 0);
 					struct menulist* m = addmenulist(mlist, tmpstr, NULL, NULL, 0, 0);
-					changemenulistparam(m, entry->d_name, NULL);
+					changemenulistparam(m, entry->d_name, NULL, NULL, NULL);
 				}
 				free(tmpstr); tmpstr = NULL;
 				
@@ -75,7 +75,6 @@ int addusbreset(char* dirname, struct menulist** mlist)
 
 void screenusbreset()
 {
-	char* tmpstr = NULL;
 	struct menulist* mlist = NULL, *mbox = NULL;	
 	struct skin* load = getscreen("loading");
 	
