@@ -204,10 +204,7 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 	//int (*cmpfunc)(const void*, const void*);
 
 	if(node->input == NULL)
-	{
-		err("NULL detect");
 		return 1;
-	}
 
 	if(view == 2)
 		node->type |= GRID;
