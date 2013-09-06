@@ -179,7 +179,7 @@ void initsignal(struct sigaction* sa)
 	sigaction(SIGPIPE, sa, NULL);
 	sigaction(SIGALRM, sa, NULL);
 	sigaction(SIGSTKFLT, sa, NULL);
-	sigaction(SIGABRT, &sa, NULL);
+	sigaction(SIGABRT, sa, NULL);
 
 	signal(SIGHUP, SIG_IGN);
 	signal(SIGINT, SIG_IGN);
