@@ -878,7 +878,7 @@ void getnetworkbrowser_dns(struct inetwork* net, struct menulist** mlist)
 			tmpstr = ostrcat(tmpstr , strstrip(nInfo[i].ip), 1, 0);
 			tmpstr = ostrcat(tmpstr , ")", 1, 0);
 			struct menulist* tmpmlist = addmenulist(mlist, tmpstr, NULL, "netbrowser_scanshares.png", 0, 0);
-			changemenulistparam(tmpmlist, nInfo[i].ip, strstrip(nInfo[i].name));
+			changemenulistparam(tmpmlist, nInfo[i].ip, strstrip(nInfo[i].name), NULL, NULL);
 			free(tmpstr); tmpstr = NULL;
 
 		}
@@ -920,7 +920,7 @@ void getnetworkbrowser_cifs(struct menulist** mlist, char* s, char* r, char* u, 
 			tmpstr = ostrcat(tmpstr , ": /", 1, 0);
 			tmpstr = ostrcat(tmpstr , strstrip(sInfo[i].sharename), 1, 0);
 			struct menulist* tmpmlist = addmenulist(mlist, tmpstr, NULL, "netbrowser_cifs.png", 0, 0);
-			changemenulistparam(tmpmlist, sInfo[i].sharename, NULL);
+			changemenulistparam(tmpmlist, sInfo[i].sharename, NULL, NULL, NULL);
 			free(tmpstr); tmpstr = NULL;
 		}
 	}
@@ -963,7 +963,7 @@ void  getnetworkbrowser_nfs(struct menulist** mlist, char* s, char* r)
 				tmpstr1 = nfsInfo[i].share;
 				if(tmpstr1 != NULL && strlen(tmpstr1) > 0) tmpstr1++;
 				delspezchar(tmpstr1, 3);
-				changemenulistparam(tmpmlist, tmpstr1, NULL);
+				changemenulistparam(tmpmlist, tmpstr1, NULL, NULL, NULL);
 				free(tmpstr); tmpstr = NULL;
 			}
 		}
