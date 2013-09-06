@@ -2690,7 +2690,7 @@ int tpklist()
 		if(len >= 0 && fileline[len] == '\r')
 			fileline[len] = '\0';
 
-		ret = sscanf(fileline, "%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%d#%d#%d#%d#%d#%d", url, name, showname, section, desc, arch, titanname, usepath, &version, &group, &minversion, &preinstalled, &size);
+		ret = sscanf(fileline, "%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%d#%d#%d#%d#%d", url, name, showname, section, desc, arch, titanname, usepath, &version, &group, &minversion, &preinstalled, &size);
 		if(ret != 13)
 		{
 			err("read file %s", TMPALLPACKAGES);
@@ -3201,7 +3201,9 @@ struct menulist* tpkmenulist(struct menulist* mlist, char* paramskinname, char* 
 			}
 
 			tmpmlist = addmenulist(&mlist, tmpstr, tmpinfo, tmppic, 0, 0);
-			changemenulistparam(tmpmlist, node->filename, node->url, node->usepath, node->size);
+			char* size = oitoa(node->size);
+			changemenulistparam(tmpmlist, node->filename, node->url, node->usepath, size);
+			free(size); size = NULL;
  
 			free(tmpstr); tmpstr = NULL;
 			free(tmpinfo); tmpinfo = NULL;
