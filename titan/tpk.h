@@ -2019,11 +2019,11 @@ int tpkinstall(char* file, char* installpath)
 	//execute pre install
 	tmpstr = ostrcat(tmpstr, path, 1, 0);
 	tmpstr = ostrcat(tmpstr, "/preinst", 1, 0);
-	tmpstr = ostrcat(tmpstr, " \"", 1, 0);
-	tmpstr = ostrcat(tmpstr, installpath, 1, 0);
-	tmpstr = ostrcat(tmpstr, "\"", 1, 0);
 	if(file_exist(tmpstr) == 1)
 	{
+		tmpstr = ostrcat(tmpstr, " \"", 1, 0);
+		tmpstr = ostrcat(tmpstr, installpath, 1, 0);
+		tmpstr = ostrcat(tmpstr, "\"", 1, 0);
 		tmpstr = ostrcat(tmpstr, " >> ", 1, 0);
 		tmpstr = ostrcat(tmpstr, TPKLOG, 1, 0);
 		tmpstr = ostrcat(tmpstr, " 2>&1", 1, 0);
@@ -2065,11 +2065,11 @@ int tpkinstall(char* file, char* installpath)
 	//execute post install
 	tmpstr = ostrcat(tmpstr, path, 1, 0);
 	tmpstr = ostrcat(tmpstr, "/postinst", 1, 0);
-	tmpstr = ostrcat(tmpstr, " \"", 1, 0);
-	tmpstr = ostrcat(tmpstr, installpath, 1, 0);
-	tmpstr = ostrcat(tmpstr, "\"", 1, 0);
 	if(file_exist(tmpstr) == 1)
 	{
+		tmpstr = ostrcat(tmpstr, " \"", 1, 0);
+		tmpstr = ostrcat(tmpstr, installpath, 1, 0);
+		tmpstr = ostrcat(tmpstr, "\"", 1, 0);
 		tmpstr = ostrcat(tmpstr, " >> ", 1, 0);
 		tmpstr = ostrcat(tmpstr, TPKLOG, 1, 0);
 		tmpstr = ostrcat(tmpstr, " 2>&1", 1, 0);
