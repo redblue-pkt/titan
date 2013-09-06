@@ -973,16 +973,23 @@ end:
 
 #ifndef TPKCREATE
 
-int tpkchecksize(struct tpk* tpknode, char* installpath)
+int tpkchecksize(struct tpk* tpknode, char* installpath, int size)
 {
-	if(tpknode == NULL || installpath == NULL) return 0;
+	int isize = 0, tsize = 0;
+	
+	if(installpath == NULL) return 0;
+	
+	if(tpknode != NULL)
+		isize = tpknode->size;
+	else
+		isize = size;
 
-	if(tpknode->size != 0)
+	if(isize != 0)
 	{
 		unsigned long long size = getfreespace(installpath) / 1024;
-		if(tpknode->size + TPKADDSIZE >= size)
+		if(isize + TPKADDSIZE >= size)
 		{
-			err("size to big for %s %d -> %lld", installpath, tpknode->size, size);
+			err("size to big for %s %d -> %lld", installpath, tsize, isize);
 			return 1;
 		}
 	}
@@ -2001,7 +2008,7 @@ int tpkinstall(char* file, char* installpath)
 	}
 
 	//check size
-	ret = tpkchecksize(tpknode, installpath);
+	ret = tpkchecksize(tpknode, installpath, 0);
 	if(ret != 0)
 	{
 		err("size to big %d", tpknode->size);
