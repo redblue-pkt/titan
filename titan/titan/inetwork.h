@@ -3,7 +3,6 @@
 
 void delinetworkfound()
 {
-	debug(1000, "in");
 	struct inetwork *node = inetwork;
 
 	while(node != NULL)
@@ -15,21 +14,14 @@ void delinetworkfound()
 
 struct inetwork* getinetworkfirstwlan()
 {
-	debug(1000, "in");
 	struct inetwork *node = inetwork;
 
 	while(node != NULL)
 	{
 		if(ostrcmp(node->device, "ra0") == 0)
-		{
-			debug(1000, "out");
 			return node;
-		}
 		if(ostrcmp(node->device, "wlan0") == 0)
-		{
-			debug(1000, "out");
 			return node;
-		}
 
 		node = node->next;
 	}
@@ -38,16 +30,12 @@ struct inetwork* getinetworkfirstwlan()
 
 struct inetwork* getinetworkbydevice(char* device)
 {
-	debug(1000, "in");
 	struct inetwork *node = inetwork;
 
 	while(node != NULL)
 	{
 		if(ostrcmp(node->device, device) == 0)
-		{
-			debug(1000, "out");
 			return node;
-		}
 
 		node = node->next;
 	}
@@ -57,7 +45,6 @@ struct inetwork* getinetworkbydevice(char* device)
 
 void delinetwork(char* device)
 {
-	debug(1000, "in");
 	struct inetwork *node = inetwork, *prev = inetwork;
 	
 	while(node != NULL)
@@ -91,12 +78,10 @@ void delinetwork(char* device)
 		prev = node;
 		node = node->next;
 	}
-	debug(1000, "out");
 }
 
 void delinetworknotfound()
 {
-	debug(1000, "in");
 	struct inetwork *node = inetwork, *prev = inetwork;
 
 	while(node != NULL)
@@ -106,7 +91,6 @@ void delinetworknotfound()
 		if(prev != NULL && prev->found == 0)
 			delinetwork(prev->device);
 	}
-	debug(1000, "out");
 }
 
 //flag 0: change all
@@ -169,7 +153,6 @@ struct inetwork* changeinetwork(char* device, char* ip, char* netmask, char* mac
 
 struct inetwork* addinetwork(char* device, char* ip, char* netmask, char* mac, char* broadcast, int type, struct inetwork* last)
 {
-	debug(1000, "in");
 	struct inetwork *newnode = NULL, *prev = NULL, *node = inetwork;
 
 	newnode = (struct inetwork*)malloc(sizeof(struct inetwork));	
@@ -226,7 +209,6 @@ struct inetwork* addinetwork(char* device, char* ip, char* netmask, char* mac, c
 	}
 	newnode->next = node;
 
-	debug(1000, "out");
 	return newnode;
 }
 
@@ -445,7 +427,6 @@ int addinetworkall(struct stimerthread* self)
 
 void freeinetwork()
 {
-	debug(1000, "in");
 	struct inetwork *node = inetwork, *prev = inetwork;
 
 	while(node != NULL)
@@ -455,7 +436,6 @@ void freeinetwork()
 		if(prev != NULL)
 			delinetwork(prev->device);
 	}
-	debug(1000, "out");
 }
 
 #endif

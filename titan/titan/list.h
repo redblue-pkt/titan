@@ -19,7 +19,6 @@ void debuglist(struct clist* node, char* search)
 
 struct clist* addlisttmp(struct clist **clist, char *key1, char *value1)
 {
-	debug(1000, "in");
 	m_lock(&status.clistmutex, 12);
 	struct clist *newnode = NULL, *node = NULL, *prev = NULL;
 	char *key = NULL, *value = NULL;
@@ -27,7 +26,6 @@ struct clist* addlisttmp(struct clist **clist, char *key1, char *value1)
 
 	if(key1 == NULL || value1 == NULL)
 	{
-		debug(1000, "out -> NULL dedect");
 		m_unlock(&status.clistmutex, 12);
 		return NULL;
 	}
@@ -84,7 +82,6 @@ struct clist* addlisttmp(struct clist **clist, char *key1, char *value1)
 				}
 				free(node->tmp);
 				node->tmp = value;
-				debug(1000, "out -> key %s found, use change instread add", key);
 				m_unlock(&status.clistmutex, 12);
 				return newnode;
 			}
@@ -96,14 +93,12 @@ struct clist* addlisttmp(struct clist **clist, char *key1, char *value1)
 	else
 		clist[hash] = newnode;
 
-	debug(1000, "out");
 	m_unlock(&status.clistmutex, 12);
 	return newnode;
 }
 
 struct clist* addlistdef(struct clist **clist, char *key1, char *value1)
 {
-	debug(1000, "in");
 	m_lock(&status.clistmutex, 12);
 	struct clist *newnode = NULL, *node = NULL, *prev = NULL;
 	char *key = NULL, *value = NULL;
@@ -111,7 +106,6 @@ struct clist* addlistdef(struct clist **clist, char *key1, char *value1)
 
 	if(key1 == NULL || value1 == NULL)
 	{
-		debug(1000, "out -> NULL dedect");
 		m_unlock(&status.clistmutex, 12);
 		return NULL;
 	}
@@ -168,7 +162,6 @@ struct clist* addlistdef(struct clist **clist, char *key1, char *value1)
 				}
 				free(node->def);
 				node->def = value;
-				debug(1000, "out -> key %s found, use change instread add", key);
 				m_unlock(&status.clistmutex, 12);
 				return newnode;
 			}
@@ -180,14 +173,12 @@ struct clist* addlistdef(struct clist **clist, char *key1, char *value1)
 	else
 		clist[hash] = newnode;
 
-	debug(1000, "out");
 	m_unlock(&status.clistmutex, 12);
 	return newnode;
 }
 
 struct clist* addlist(struct clist **clist, char *key1, char *value1)
 {
-	debug(1000, "in");
 	m_lock(&status.clistmutex, 12);
 	struct clist *newnode = NULL, *node = NULL, *prev = NULL;
 	char *key = NULL, *value = NULL;
@@ -195,7 +186,6 @@ struct clist* addlist(struct clist **clist, char *key1, char *value1)
 
 	if(key1 == NULL || value1 == NULL)
 	{
-		debug(1000, "out -> NULL dedect");
 		m_unlock(&status.clistmutex, 12);
 		return NULL;
 	}
@@ -258,7 +248,6 @@ struct clist* addlist(struct clist **clist, char *key1, char *value1)
 				}
 				free(node->value);
 				node->value = value;
-				debug(1000, "out -> key %s found, use change instread add", key);
 				m_unlock(&status.clistmutex, 12);
 				return node;
 			}
@@ -270,14 +259,12 @@ struct clist* addlist(struct clist **clist, char *key1, char *value1)
 	else
 		clist[hash] = newnode;
 
-	debug(1000, "out");
 	m_unlock(&status.clistmutex, 12);
 	return newnode;
 }
 
 int writelist(struct clist **clist, const char *filename)
 {
-	debug(1000, "in");
 	m_lock(&status.clistmutex, 12);
 	FILE *fd = NULL;
 	struct clist *node = NULL;
@@ -317,14 +304,12 @@ int writelist(struct clist **clist, const char *filename)
 	}
 	
 	fclose(fd);
-	debug(1000, "out");
 	m_unlock(&status.clistmutex, 12);
 	return 0;
 }
 
 char* getlistbyval(struct clist **clist, char *value, char *ext)
 {
-	//debug(1000, "in");
 	m_lock(&status.clistmutex, 12);
 	struct clist *node = NULL;
 	char* tmpstr = NULL, *tmpval = NULL;
@@ -350,7 +335,6 @@ char* getlistbyval(struct clist **clist, char *value, char *ext)
 			if(ostrcmp(tmpval, tmpstr) == 0)
 			{
 				free(tmpstr);
-				//debug(1000, "out");
 				m_unlock(&status.clistmutex, 12);
 				return node->key;
 			}
@@ -366,7 +350,6 @@ char* getlistbyval(struct clist **clist, char *value, char *ext)
 
 char* getlistnotmp(struct clist **clist, char *key, char *ext)
 {
-	//debug(1000, "in");
 	m_lock(&status.clistmutex, 12);
 	struct clist *node = NULL;
 	char* tmpstr = NULL;
@@ -391,7 +374,6 @@ char* getlistnotmp(struct clist **clist, char *key, char *ext)
 		if(ostrcmp(node->key, tmpstr) == 0)
 		{
 			free(tmpstr);
-			//debug(1000, "out");
 			if(node->value != NULL)
 			{
 				m_unlock(&status.clistmutex, 12);
@@ -414,7 +396,6 @@ char* getlistnotmp(struct clist **clist, char *key, char *ext)
 
 char* getlist(struct clist **clist, char *key, char *ext)
 {
-	//debug(1000, "in");
 	m_lock(&status.clistmutex, 12);
 	struct clist *node = NULL;
 	char* tmpstr = NULL;
@@ -439,7 +420,6 @@ char* getlist(struct clist **clist, char *key, char *ext)
 		if(ostrcmp(node->key, tmpstr) == 0)
 		{
 			free(tmpstr);
-			//debug(1000, "out");
 			if(node->tmp != NULL && strlen(node->tmp) > 0)
 			{
 				m_unlock(&status.clistmutex, 12);
@@ -469,7 +449,6 @@ char* getlist(struct clist **clist, char *key, char *ext)
 //flag 1: no lock
 void dellist(struct clist **clist, char *key, int flag)
 {
-	debug(1000, "in");
 	if(flag == 0) m_lock(&status.clistmutex, 12);
 	struct clist *node = NULL, *prev = NULL;
 	int hash = 0;
@@ -513,13 +492,11 @@ void dellist(struct clist **clist, char *key, int flag)
 		prev = node;
 		node = node->next;
 	}
-	debug(1000, "out");
 	if(flag == 0) m_unlock(&status.clistmutex, 12);
 }
 
 void dellisttmpall(struct clist **clist)
 {
-	debug(1000, "in");
 	m_lock(&status.clistmutex, 12);
 	struct clist *node = NULL, *prev = NULL;
 	int i;
@@ -545,13 +522,11 @@ void dellisttmpall(struct clist **clist)
 			node = node->next;
 		}
 	}
-	debug(1000, "out");
 	m_unlock(&status.clistmutex, 12);
 }
 
 void dellisttmp(struct clist **clist, char *key)
 {
-	debug(1000, "in");
 	m_lock(&status.clistmutex, 12);
 	struct clist *node = NULL, *prev = NULL;
 	int hash = 0;
@@ -578,13 +553,11 @@ void dellisttmp(struct clist **clist, char *key)
 		prev = node;
 		node = node->next;
 	}
-	debug(1000, "out");
 	m_unlock(&status.clistmutex, 12);
 }
 
 void freelist(struct clist** clist)
 {
-	debug(1000, "in");
 	m_lock(&status.clistmutex, 12);
 	struct clist *node = NULL, *prev = NULL;
 	int i;
@@ -600,13 +573,11 @@ void freelist(struct clist** clist)
 				dellist(clist, prev->key, 1);
 		}
 	}
-	debug(1000, "out");
 	m_unlock(&status.clistmutex, 12);
 }
 
 int writelisttmp(struct clist **clist)
 {
-	debug(1000, "in");
 	m_lock(&status.clistmutex, 12);
 	struct clist *node = NULL;
 	int ret = 1, i;
@@ -645,7 +616,6 @@ int writelisttmp(struct clist **clist)
 		}
 	}
 
-	debug(1000, "out");
 	m_unlock(&status.clistmutex, 12);
 	return ret;
 }

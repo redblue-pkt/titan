@@ -28,8 +28,6 @@ void checkpictimeout()
 
 struct pic* addpic(char *name, unsigned char* picbuf, int memfd, unsigned long width, unsigned long height, unsigned long rowbytes, int channels, int timeout, int del, struct pic* last)
 {
-	debug(1000, "in");
-
 	//chech if pic timed out and can remove
 	checkpictimeout();
 
@@ -77,7 +75,6 @@ struct pic* addpic(char *name, unsigned char* picbuf, int memfd, unsigned long w
 
 	newnode->next = node;
 
-	debug(1000, "out");
 	return newnode;
 }
 
@@ -99,7 +96,6 @@ void freepiccontent(struct pic* node)
 
 void delpic(char* name)
 {
-	debug(1000, "in");
 	struct pic *node = pic, *prev = pic;
 	char* tmpstr = NULL;
 
@@ -125,12 +121,10 @@ void delpic(char* name)
 		node = node->next;
 	}
 	free(tmpstr);
-	debug(1000, "out");
 }
 
 void delmarkedpic(int del)
 {
-	debug(1000, "in");
 	struct pic *node = pic, *prev = pic;
 
 	while(node != NULL)
@@ -152,12 +146,10 @@ void delmarkedpic(int del)
 		prev = node;
 		node = node->next;
 	}
-	debug(1000, "out");
 }
 
 struct pic* getpic(char* name)
 {
-	debug(1000, "in");
 	struct pic *node = pic;
 	char* tmpstr = NULL;
 
@@ -167,7 +159,6 @@ struct pic* getpic(char* name)
 	{
 		if(ostrcmp(node->name, tmpstr) == 0)
 		{
-			debug(1000, "out");
 			free(tmpstr);
 			node->lastaccess = time(NULL);
 			return node;
@@ -182,7 +173,6 @@ struct pic* getpic(char* name)
 
 void freepic()
 {
-	debug(1000, "in");
 	struct pic *node = pic, *prev = pic;
 
 	while(node != NULL)
@@ -192,7 +182,6 @@ void freepic()
 		if(prev != NULL)
 			delpic(prev->name);
 	}
-	debug(1000, "out");
 }
 
 #endif

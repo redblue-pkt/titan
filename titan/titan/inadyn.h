@@ -3,7 +3,6 @@
 
 int readinadyn(const char* filename, char** user, char** pw, char** host, char** system)
 {
-	debug(1000, "in");
 	FILE *fd = NULL;
 	char *fileline = NULL, *tmpstr = NULL;
 	int len = 0;

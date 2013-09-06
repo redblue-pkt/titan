@@ -14,8 +14,6 @@ void debugqueue()
 
 struct queue* addqueue(int type, void* data, int len, void* data1, int len1, int flag, struct queue* last)
 {
-	//debug(1000, "in");
-
 	m_lock(&status.queuemutex, 11);
 
 	struct queue *newnode = NULL, *prev = NULL, *node = queue;
@@ -84,7 +82,6 @@ struct queue* addqueue(int type, void* data, int len, void* data1, int len1, int
 	newnode->next = node;
 	if(node != NULL) node->prev = queue;
 
-	//debug(1000, "out");
 	m_unlock(&status.queuemutex, 11);
 	return newnode;
 }
@@ -93,7 +90,6 @@ struct queue* addqueue(int type, void* data, int len, void* data1, int len1, int
 //flag: 1 = no lock
 void delqueue(struct queue* queuenode, int flag)
 {
-	debug(1000, "in");
 	if(flag == 0) m_lock(&status.queuemutex, 11);
 	struct queue *node = queue, *prev = queue;
 
@@ -129,12 +125,10 @@ void delqueue(struct queue* queuenode, int flag)
 		node = node->next;
 	}
 	if(flag == 0) m_unlock(&status.queuemutex, 11);
-	debug(1000, "out");
 }
 
 struct queue* getqueue(int type)
 {
-	//debug(1000, "in");
 	m_lock(&status.queuemutex, 11);
 	struct queue *node = queue;
 
@@ -142,7 +136,6 @@ struct queue* getqueue(int type)
 	{
 		if(node->type == type)
 		{
-			//debug(1000, "out");
 			m_unlock(&status.queuemutex, 11);
 			return node;
 		}
@@ -155,7 +148,6 @@ struct queue* getqueue(int type)
 
 void freequeue()
 {
-	debug(1000, "in");
 	m_lock(&status.queuemutex, 11);
 	struct queue *node = queue, *prev = queue;
 
@@ -167,7 +159,6 @@ void freequeue()
 			delqueue(prev, 1);
 	}
 	m_unlock(&status.queuemutex, 11);
-	debug(1000, "out");
 }
 
 #endif

@@ -3,7 +3,6 @@
 
 int readwlan(const char* filename, char** type, char** ssid, char** key)
 {
-	debug(1000, "in");
 	FILE *fd = NULL;
 	char *fileline = NULL, *tmpstr = NULL;
 

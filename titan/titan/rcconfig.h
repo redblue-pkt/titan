@@ -52,7 +52,6 @@ struct clist* addrcconfigscreen(char *key, struct skin *node)
 
 struct clist* addrcconfigint(char *key, int value)
 {
-	debug(1000, "in");
 	char* fileline = NULL;
 	struct clist* ret = NULL;
 
@@ -60,13 +59,11 @@ struct clist* addrcconfigint(char *key, int value)
 	ret = addrcconfig(key, fileline);
 
 	free(fileline);
-	debug(1000, "out");
 	return ret;
 }
 
 int readrcconfig(const char *filename, struct clist** tmprcconfig)
 {
-	debug(1000, "in");
 	FILE *fd = NULL;
 	char *fileline = NULL, *pos;
 	int len = 0;
@@ -107,7 +104,6 @@ int readrcconfig(const char *filename, struct clist** tmprcconfig)
 
 	fclose(fd);
 	free(fileline);
-	debug(1000, "out");
 	return 0;
 }
 
@@ -165,18 +161,16 @@ void freercconfig()
 
 int reloadrcconfig(char *filename)
 {
-	debug(1000, "in");
 	int ret = 0;
 
 	freercconfig();
 	ret = readrcconfig(filename, rcconfig);
 	if(ret != 0)
 	{
-		debug(1000, "out -> readrcconfig fail");
+		err("readrcconfig fail");
 		return 1;
 	}
 
-	debug(1000, "out");
 	return 0;
 }
 

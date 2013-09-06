@@ -208,7 +208,6 @@ void createrecthumbthread(struct stimerthread* self, char* dname, char* filename
 
 void recordstop(struct service* node, int ret)
 {
-	debug(1000, "in");
 	struct stimerthread *recthumbthread = NULL;
 	struct rectimer* rectimernode = NULL;
 	int afterevent = 1, type = -1;
@@ -293,8 +292,6 @@ void recordstop(struct service* node, int ret)
 			}
 		}
 	}
-
-	debug(1000, "out");
 }
 
 //flag 0: record split
@@ -754,7 +751,6 @@ char* recordcreatefilename(char* path, char* channelname, char* moviename, int t
 	tmpstr = ostrcat(tmpstr, buf1, 1, 1);
 	tmpstr = ostrcat(tmpstr, ".ts", 1, 0);
 
-	debug(1000, "out");
 	return tmpstr;
 }
 
@@ -1101,12 +1097,11 @@ int recordstart(struct channel* chnode, int filefd, int recordfd, int type, time
 
 struct service* getrecordbyname(char* recname, int type)
 {
-	debug(1000, "in");
 	struct service* servicenode = service;
 
 	if(recname == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
@@ -1124,7 +1119,6 @@ struct service* getrecordbyname(char* recname, int type)
 	}
 
 	return NULL;
-	debug(1000, "out");
 }
 
 int screenrecordduration(int minutes, int nextmin)

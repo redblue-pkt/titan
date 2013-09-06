@@ -90,7 +90,6 @@ struct newsletter* addnewsletter(char *line, int count, struct newsletter* last)
 
 int readnewsletter()
 {
-	debug(1000, "in");
 	FILE *fd = NULL;
 	char* fileline = NULL;
 	int linecount = 0, len = 0;

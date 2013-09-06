@@ -686,7 +686,6 @@ int oregexint(char* regex, char* str)
 
 struct splitstr* oregexsplit(char* regex, char *str, char *tok, int* count)
 {
-	debug(1000, "in");
 	char *tmpstr = NULL;
 	struct splitstr *tmparray = NULL;
 	*count = 0;
@@ -706,7 +705,6 @@ struct splitstr* oregexsplit(char* regex, char *str, char *tok, int* count)
 		tmpstr = strtok(NULL, tok);
 	}
 
-	debug(1000, "out");
 	return tmparray;
 }
 
@@ -1107,8 +1105,6 @@ char* getserialpw()
 
 int writeserial(char* cpuid)
 {
-	debug(1000, "in");
-
 	char* filename = "/var/etc/codepages/codepage.868", *pw = NULL;
 	unsigned char* buf = NULL;
 	FILE *fd = NULL;
@@ -1131,8 +1127,6 @@ int writeserial(char* cpuid)
 
 	free(buf); buf = NULL;
 	fclose(fd);
-
-	debug(1000, "out");
 
 	if(ret != 1) return 1;
 	return 0;
@@ -1823,7 +1817,6 @@ int ostrftime(char* buf, int count, char* format, struct tm* t)
 //flag 3 = only write config
 int writeallconfig(int flag)
 {
-	debug(1000, "in");
 	char* tmpstr = NULL;
 	int ret = 0;
 
@@ -1897,7 +1890,6 @@ int writeallconfig(int flag)
 
 	sync();
 
-	debug(1000, "out");
 	return ret;
 }
 
@@ -2113,7 +2105,6 @@ struct tm* olocaltime(time_t *value)
 
 int setwakeuptimer(time_t waketime)
 {
-	debug(1000, "in");
 	char* wakeuptimerprog = NULL;
 	struct tm *loctime = NULL;
 	char *buf = NULL;
@@ -2123,7 +2114,7 @@ int setwakeuptimer(time_t waketime)
 
 	if(wakeuptimerprog == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return ret;
 	}
 
@@ -2147,13 +2138,11 @@ int setwakeuptimer(time_t waketime)
 
 	free(loctime);
 	free(buf);
-	debug(1000, "out");
 	return ret;
 }
 
 int autoresolution()
 {
-	debug(1000, "in");
 	char *hotpluginfo = NULL;
 	char *value = NULL;
 
@@ -2164,14 +2153,14 @@ int autoresolution()
 
 	if(hotpluginfo == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
 	value = readsys(hotpluginfo, 1);
 	if(value == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -2189,7 +2178,6 @@ int autoresolution()
 	}
 
 	free(value);
-	debug(1000, "out");
 	return 0;
 }
 
@@ -2529,7 +2517,6 @@ int mountauto(const char *file, const char *dir, unsigned long int flag, const v
 
 int setwaswakuptimer(int value)
 {
-	debug(1000, "in");
 	char *waswakeuptimerdev = NULL, *tmpstr = NULL;
 	int ret = 0;
 
@@ -2544,13 +2531,11 @@ int setwaswakuptimer(int value)
 		return ret;
 	}
 
-	debug(1000, "out");
 	return 0;
 }
 
 int getwaswakuptimer()
 {
-	debug(1000, "in");
 	int ret = 0;
 	char *waswakeuptimerdev = NULL;
 	char *value = NULL;
@@ -2559,14 +2544,14 @@ int getwaswakuptimer()
 
 	if(waswakeuptimerdev == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return 0;
 	}
 
 	value = readsys(waswakeuptimerdev, 1);
 	if(value == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return 0;
 	}
 
@@ -2574,7 +2559,6 @@ int getwaswakuptimer()
 	if(atoi(value) == 1) ret = 1;
 
 	free(value);
-	debug(1000, "out");
 	return ret;
 }
 
@@ -2607,7 +2591,6 @@ void checkboxstart()
 
 int setwakeuptimerdev(time_t value)
 {
-	debug(1000, "in");
 	char* wakeuptimerdev, *tmpstr = NULL;
 	int ret = 0;
 	int diff = getconfigint("wakeuptimerdevdiff", NULL);
@@ -2626,13 +2609,11 @@ int setwakeuptimerdev(time_t value)
 		return ret;
 	}
 
-	debug(1000, "out");
 	return 0;
 }
 
 int changepolicy()
 {
-	debug(1000, "in");
 	char *tmppolicy = NULL, *tmpstr = NULL;
 
  	tmppolicy = getpolicy();
@@ -2650,7 +2631,6 @@ int changepolicy()
 
 	free(tmpstr); tmpstr = NULL;
 	free(tmppolicy); tmppolicy = NULL;
-	debug(1000, "out");
 	return 0;
 }
 
@@ -3001,8 +2981,6 @@ int setoverclockfreq(int mode)
 
 int setvmpeg(struct dvbdev* node, int posx, int posy, int width, int height)
 {
-	debug(1000, "in");
-
 	if(status.tvpic == 1 && (posx != 0 || posy != 0 || width != 0 || height != 0))
 		return 0;
 
@@ -3048,7 +3026,6 @@ int setvmpeg(struct dvbdev* node, int posx, int posy, int width, int height)
 		return ret;
 	}
 
-	debug(1000, "out");
 	return 0;
 }
 
@@ -3132,7 +3109,6 @@ int checkdev(char* dev)
 
 int setsaturation(int value)
 {
-	debug(1000, "in");
 	char* saturationdev;
 
 	saturationdev = getconfig("saturationdev", NULL);
@@ -3143,13 +3119,11 @@ int setsaturation(int value)
 		return writesysint(saturationdev, value, 1);
 	}
 
-	debug(1000, "out");
 	return 0;
 }
 
 int setbrightness(int value)
 {
-	debug(1000, "in");
 	char* brightnessdev;
 
 	brightnessdev = getconfig("brightnessdev", NULL);
@@ -3160,13 +3134,11 @@ int setbrightness(int value)
 		return writesysint(brightnessdev, value, 1);
 	}
 
-	debug(1000, "out");
 	return 0;
 }
 
 int setcontrast(int value)
 {
-	debug(1000, "in");
 	char* contrastdev;
 
 	contrastdev = getconfig("contrastdev", NULL);
@@ -3177,13 +3149,11 @@ int setcontrast(int value)
 		return writesysint(contrastdev, value, 1);
 	}
 
-	debug(1000, "out");
 	return 0;
 }
 
 int settint(int value)
 {
-	debug(1000, "in");
 	char* tintdev;
 
 	tintdev = getconfig("tintdev", NULL);
@@ -3194,7 +3164,6 @@ int settint(int value)
 		return writesysint(tintdev, value, 1);
 	}
 
-	debug(1000, "out");
 	return 0;
 }
 
@@ -3587,14 +3556,11 @@ char* getmaxsatstring(int maxsat)
 
 void ostrcatbig(char** value1, char* value2, int* maxlen, int* pos)
 {
-//	debug(1000, "in");
 	int len = 0;
 
 	if(value2 == NULL)
-	{
-		debug(1000, "out -> NULL detect");
 		return;
-	}
+
 	len = strlen(value2);
 
 	if(len > MINMALLOC)
@@ -3619,13 +3585,10 @@ void ostrcatbig(char** value1, char* value2, int* maxlen, int* pos)
 
 	memcpy(*value1 + *pos, value2, len + 1);
 	*pos = *pos + len;
-
-	//debug(1000, "out");
 }
 
 char* ostrshrink(char* value)
 {
-//	debug(1000, "in");
 	int len = 0;
 	char* buf = NULL;
 
@@ -3647,7 +3610,6 @@ char* ostrshrink(char* value)
 
 char* ostrcat(char* value1, char* value2, int free1, int free2)
 {
-//	debug(1000, "in");
 	int len = 0, len1 = 0, len2 = 0;
 	char* buf = NULL;
 
@@ -3679,13 +3641,11 @@ char* ostrcat(char* value1, char* value2, int free1, int free2)
 	//if(buf != NULL && strlen(buf) == 0x0b - 0x01)
 	//	printf("******** memleak string (%s) (%p) ********\n", buf, buf);
 
-	//debug(1000, "out");
 	return buf;
 }
 
 char* ollutoa(uint64_t value)
 {
-	debug(1000, "in");
 	char *buf = NULL;
 
 	buf = malloc(MINMALLOC);
@@ -3698,13 +3658,11 @@ char* ollutoa(uint64_t value)
 	sprintf(buf, "%llu", value);
 	buf = ostrshrink(buf);
 
-	debug(1000, "out");
 	return buf;
 }
 
 char* olutoa(unsigned long value)
 {
-	debug(1000, "in");
 	char *buf = NULL;
 
 	buf = malloc(MINMALLOC);
@@ -3717,13 +3675,11 @@ char* olutoa(unsigned long value)
 	sprintf(buf, "%lu", value);
 	buf = ostrshrink(buf);
 
-	debug(1000, "out");
 	return buf;
 }
 
 char* oitoax(int value)
 {
-	debug(1000, "in");
 	char *buf = NULL;
 
 	buf = malloc(MINMALLOC);
@@ -3736,13 +3692,11 @@ char* oitoax(int value)
 	sprintf(buf, "%x", value);
 	buf = ostrshrink(buf);
 
-	debug(1000, "out");
 	return buf;
 }
 
 char* oitoa(int value)
 {
-	debug(1000, "in");
 	char *buf = NULL;
 
 	buf = malloc(MINMALLOC);
@@ -3755,13 +3709,11 @@ char* oitoa(int value)
 	sprintf(buf, "%d", value);
 	buf = ostrshrink(buf);
 
-	debug(1000, "out");
 	return buf;
 }
 
 char* oitoa64(off64_t value)
 {
-	debug(1000, "in");
 	char *buf = NULL;
 
 	buf = malloc(MINMALLOC);
@@ -3774,13 +3726,11 @@ char* oitoa64(off64_t value)
 	sprintf(buf, "%lld", value);
 	buf = ostrshrink(buf);
 
-	debug(1000, "out");
 	return buf;
 }
 
 char* oftoa64(double value, char* count)
 {
-	debug(1000, "in");
 	char *buf = NULL;
 	char* tmpstr = NULL;
 
@@ -3798,63 +3748,55 @@ char* oftoa64(double value, char* count)
 	buf = ostrshrink(buf);
 
 	free(tmpstr);
-	debug(1000, "out");
 	return buf;
 }
 
 int ostrncmp(char* value1, char* value2, int count)
 {
-	//debug(1000, "in");
 	int ret = 1;
 
 	if(value1 != NULL && value2 != NULL)
 		ret = strncmp(value1, value2, count);
 
-	//debug(1000, "out");
 	return ret;
 }
 
 int ostrcmp(char* value1, char* value2)
 {
-//	debug(1000, "in");
 	int ret = 1;
 
 	if(value1 != NULL && value2 != NULL)
 		ret = strcmp(value1, value2);
 
-//	debug(1000, "out");
 	return ret;
 }
 
 int ostrcasecmp(char* value1, char* value2)
 {
-//	debug(1000, "in");
 	int ret = 1;
 
 	if(value1 != NULL && value2 != NULL)
 		ret = strcasecmp(value1, value2);
 
-//	debug(1000, "out");
 	return ret;
 }
 
 char* createpath(char* dir, char* file)
 {
-	debug(1000, "in");
 	char *absdir = NULL;
 	char *pos = NULL;
 	char* tmpdir = NULL;
 
 	if(dir == NULL || file == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
 	tmpdir = ostrcat(dir, NULL, 0, 0);
 	if(tmpdir == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
@@ -3885,14 +3827,12 @@ char* createpath(char* dir, char* file)
 	else
 		sprintf(absdir, "%s", tmpdir);
 
-	debug(1000, "out");
 	free(tmpdir);
 	return absdir;
 }
 
 int settimezone(char* zone)
 {
-	debug(1000, "in");
 	int ret = 0;
 	char* tmpzone = NULL, *zonepath = NULL;
 
@@ -3917,21 +3857,16 @@ int settimezone(char* zone)
 		perr("link");
 
 	free(tmpzone);
-	debug(1000, "out");
 	return ret;
 }
 
 int delchar(char** text, int pos)
 {
-	debug(1000, "in");
 	char *tmptext = NULL;
 	int i = 0, y = 0, len = 0;
 
 	if(text == NULL || *text == NULL)
-	{
-		debug(1000, "out -> NULL detect");
 		return pos;
-	}
 
 	len = strlen(*text);
 	if(len == 0) return pos;
@@ -3957,22 +3892,17 @@ int delchar(char** text, int pos)
 
 	free(*text);
 	*text = tmptext;
-	debug(1000, "out");
 	return pos;
 }
 
 
 int insertchar(char** text, char zeichen, int pos)
 {
-	debug(1000, "in");
 	char *tmptext = NULL;
 	int i, y = 0;
 
 	if(text == NULL || *text == NULL)
-	{
-		debug(1000, "out -> NULL detect");
 		return pos;
-	}
 
 	tmptext = malloc(strlen(*text) + 2);
 	if(tmptext == NULL)
@@ -4004,13 +3934,11 @@ int insertchar(char** text, char zeichen, int pos)
 
 	free(*text);
 	*text = tmptext;
-	debug(1000, "out");
 	return pos + 1;
 }
 
 void calctext(char* buf, char* buf1, unsigned int* linecount, unsigned int* pagecount, unsigned int* poscount, int pagelen, int page)
 {
-	debug(1000, "in");
 	unsigned int tmpposcount = 0;
 
 	*poscount = 0;
@@ -4056,13 +3984,10 @@ void calctext(char* buf, char* buf1, unsigned int* linecount, unsigned int* page
 
 	if(pagelen > 0)
 		*pagecount = (int)ceil(((float)*linecount / pagelen));
-
-	debug(1000, "out");
 }
 
 int initlocale(char *localepath)
 {
-	debug(1000, "in");
 	setlocale(LC_ALL, "");
 	if(bindtextdomain(PROGNAME, localepath) == NULL)
 	{
@@ -4074,7 +3999,6 @@ int initlocale(char *localepath)
 		err("set textdomain");
 		return 1;
 	}
-	debug(1000, "out");
 	return 0;
 }
 
@@ -4084,7 +4008,6 @@ int initlocale(char *localepath)
 //copy SYS_LC_MESSAGES from other language into LC_MESSAGE
 int setlang(char *lang)
 {
-	debug(1000, "in");
 	char *ret;
 
 	setenv("LANG", lang, 1);
@@ -4095,13 +4018,11 @@ int setlang(char *lang)
 		err("can't set LC_MESSAGES to %s", lang);
 		return 1;
 	}
-	debug(1000, "out");
 	return 0;
 }
 
 unsigned long readsysul(const char *filename, int line)
 {
-	debug(1000, "in");
 	int i = 0, len = 0;
 	unsigned long ret = 0;
 	FILE *fd = NULL;
@@ -4142,14 +4063,12 @@ unsigned long readsysul(const char *filename, int line)
 		free(buf1); buf1 = NULL;
 	}
 
-	debug(1000, "out");
 	return ret;
 }
 
 
 char* readsys(const char *filename, int line)
 {
-	debug(1000, "in");
 	int i = 0, len = 0;
 	FILE *fd = NULL;
 	char *fileline = NULL;
@@ -4182,8 +4101,6 @@ char* readsys(const char *filename, int line)
 	buf1 = ostrshrink(fileline);
 
 	fclose(fd);
-
-	debug(1000, "out");
 	return buf1;
 }
 
@@ -4193,14 +4110,13 @@ char* readsys(const char *filename, int line)
 //flag 3: append with \n
 int writesys(const char *filename, char *value, int flag)
 {
-	debug(1000, "in");
 	FILE *fd = NULL;
 	char* tmpstr = NULL;
 	int ret;
 
 	if(value == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -4230,7 +4146,6 @@ int writesys(const char *filename, char *value, int flag)
 
 	free(tmpstr);
 	fclose(fd);
-	debug(1000, "out");
 	return 0;
 }
 
@@ -4240,7 +4155,6 @@ int writesys(const char *filename, char *value, int flag)
 //flag 3: append with \n
 int writesysint(const char *filename, int value, int flag)
 {
-	debug(1000, "in");
 	char* tmpstr = NULL;
 	int ret = 0;
 
@@ -4248,13 +4162,11 @@ int writesysint(const char *filename, int value, int flag)
 	ret = writesys(filename, tmpstr, flag);
 
 	free(tmpstr);
-	debug(1000, "out");
 	return ret;
 }
 
 char* getdevcontent(char* devconfig)
 {
-	debug(1000, "in");
 	char *dev = NULL;
 	char *value = NULL;
 
@@ -4262,24 +4174,22 @@ char* getdevcontent(char* devconfig)
 
 	if(dev == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
 	value = readsys(dev, 1);
 	if(value == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
-	debug(1000, "out");
 	return value;
 }
 
 char* convertspacetolf(char* value)
 {
-	debug(1000, "in");
 	int i = 0;
 
 	while(value[i] != '\0')
@@ -4289,7 +4199,6 @@ char* convertspacetolf(char* value)
 		i++;
 	}
 
-	debug(1000, "out");
 	return value;
 }
 
@@ -4298,7 +4207,6 @@ char* convertspacetolf(char* value)
 //flag 2: not hdmi
 char* getcolorformatchoices(int flag)
 {
-	debug(1000, "in");
 	char *colorformatchoicesdev = NULL;
 	char *value = NULL;
 
@@ -4306,14 +4214,14 @@ char* getcolorformatchoices(int flag)
 
 	if(colorformatchoicesdev == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
 	value = readsys(colorformatchoicesdev, 1);
 	if(value == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 	
@@ -4341,13 +4249,11 @@ char* getcolorformatchoices(int flag)
 	value = strstrip(value);
 	value = convertspacetolf(value);
 
-	debug(1000, "out");
 	return value;
 }
 
 char* getaudiosourcechoices()
 {
-	debug(1000, "in");
 	char *audiosourcechoicesdev = NULL;
 	char *value = NULL;
 
@@ -4355,26 +4261,24 @@ char* getaudiosourcechoices()
 
 	if(audiosourcechoicesdev == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
 	value = readsys(audiosourcechoicesdev, 1);
 	if(value == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
 	value = convertspacetolf(value);
 
-	debug(1000, "out");
 	return value;
 }
 
 char* getac3choices()
 {
-	debug(1000, "in");
 	char *ac3choicesdev = NULL;
 	char *value = NULL;
 
@@ -4382,26 +4286,24 @@ char* getac3choices()
 
 	if(ac3choicesdev == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
 	value = readsys(ac3choicesdev, 1);
 	if(value == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
 	value = convertspacetolf(value);
 
-	debug(1000, "out");
 	return value;
 }
 
 int setciclock(int slotnr, char* value)
 {
-	debug(1000, "in");
 	char* ciclockdev = NULL, *tmpstr = NULL;
 	int ret = 0;
 
@@ -4424,14 +4326,12 @@ int setciclock(int slotnr, char* value)
 		return ret;
 	}
 
-	debug(1000, "out");
 	return 0;
 }
 
 //routes stream from tuner to ci or ci to ci
 int setciinput(int slotnr, char* value)
 {
-	debug(1000, "in");
 	char* ciinputdev = NULL, *tmpstr = NULL;
 	int ret = 0;
 
@@ -4454,14 +4354,12 @@ int setciinput(int slotnr, char* value)
 		return ret;
 	}
 
-	debug(1000, "out");
 	return 0;
 }
 
 //routes stream from tuner or ci to linux
 int setcisource(int tunernr, char* value)
 {
-	debug(1000, "in");
 	char* cisourcedev = NULL, *tmpstr = NULL;
 	int ret = 0;
 
@@ -4484,13 +4382,11 @@ int setcisource(int tunernr, char* value)
 		return ret;
 	}
 
-	debug(1000, "out");
 	return 0;
 }
 
 int setinput(char* value)
 {
-	debug(1000, "in");
 	char* inputdev = NULL;
 	int ret = 0;
 
@@ -4503,13 +4399,11 @@ int setinput(char* value)
 		return ret;
 	}
 
-	debug(1000, "out");
 	return 0;
 }
 
 char* getinput()
 {
-	debug(1000, "in");
 	char *inputdev = NULL;
 	char *value = NULL;
 
@@ -4517,24 +4411,22 @@ char* getinput()
 
 	if(inputdev == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
 	value = readsys(inputdev, 1);
 	if(value == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
-	debug(1000, "out");
 	return value;
 }
 
 int setac3(char* value)
 {
-	debug(1000, "in");
 	char* ac3dev = NULL;
 	int ret = 0;
 
@@ -4548,13 +4440,11 @@ int setac3(char* value)
 		return ret;
 	}
 
-	debug(1000, "out");
 	return 0;
 }
 
 char* getac3()
 {
-	debug(1000, "in");
 	char *ac3dev = NULL;
 	char *value = NULL;
 
@@ -4562,24 +4452,22 @@ char* getac3()
 
 	if(ac3dev == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
 	value = readsys(ac3dev, 1);
 	if(value == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
-	debug(1000, "out");
 	return value;
 }
 
 int setaudiodelaybitstream(char* value)
 {
-	debug(1000, "in");
 	char* audiodelaybitstreamdev = NULL;
 	int ret = 0;
 
@@ -4593,13 +4481,11 @@ int setaudiodelaybitstream(char* value)
 		return ret;
 	}
 
-	debug(1000, "out");
 	return 0;
 }
 
 char* getaudiodelaybitstream()
 {
-	debug(1000, "in");
 	char *audiodelaybitstreamdev = NULL;
 	char *value = NULL;
 
@@ -4607,24 +4493,22 @@ char* getaudiodelaybitstream()
 
 	if(audiodelaybitstreamdev == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
 	value = readsys(audiodelaybitstreamdev, 1);
 	if(value == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
-	debug(1000, "out");
 	return value;
 }
 
 char* getpolicychoices()
 {
-	debug(1000, "in");
 	char *policychoicesdev = NULL;
 	char *value = NULL;
 
@@ -4632,26 +4516,24 @@ char* getpolicychoices()
 
 	if(policychoicesdev == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
 	value = readsys(policychoicesdev, 1);
 	if(value == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
 	value = convertspacetolf(value);
 
-	debug(1000, "out");
 	return value;
 }
 
 char* getpolicy()
 {
-	debug(1000, "in");
 	char *policydev = NULL;
 	char *value = NULL;
 
@@ -4659,24 +4541,22 @@ char* getpolicy()
 
 	if(policydev == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
 	value = readsys(policydev, 1);
 	if(value == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
-	debug(1000, "out");
 	return value;
 }
 
 int setpolicy(char* value)
 {
-	debug(1000, "in");
 	char* policydev;
 	int ret = 0;
 
@@ -4690,13 +4570,11 @@ int setpolicy(char* value)
 		return ret;
 	}
 
-	debug(1000, "out");
 	return 0;
 }
 
 char* getaspectchoices()
 {
-	debug(1000, "in");
 	char *aspectchoicesdev = NULL;
 	char *value = NULL;
 
@@ -4704,26 +4582,24 @@ char* getaspectchoices()
 
 	if(aspectchoicesdev == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
 	value = readsys(aspectchoicesdev, 1);
 	if(value == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
 	value = convertspacetolf(value);
 
-	debug(1000, "out");
 	return value;
 }
 
 char* getaspect()
 {
-	debug(1000, "in");
 	char *aspectdev = NULL;
 	char *value = NULL;
 
@@ -4731,24 +4607,22 @@ char* getaspect()
 
 	if(aspectdev == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
 	value = readsys(aspectdev, 1);
 	if(value == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
-	debug(1000, "out");
 	return value;
 }
 
 int setaspect(char* value)
 {
-	debug(1000, "in");
 	char* aspectdev;
 	int ret = 0;
 
@@ -4770,13 +4644,11 @@ int setaspect(char* value)
 		return ret;
 	}
 
-	debug(1000, "out");
 	return 0;
 }
 
 char* getvideomodechoices()
 {
-	debug(1000, "in");
 	char *videomodechoicesdev = NULL;
 	char *value = NULL;
 
@@ -4784,14 +4656,14 @@ char* getvideomodechoices()
 
 	if(videomodechoicesdev == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
 	value = readsys(videomodechoicesdev, 1);
 	if(value == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
@@ -4819,13 +4691,11 @@ char* getvideomodechoices()
 	value = strstrip(value);
 	value = convertspacetolf(value);
 
-	debug(1000, "out");
 	return value;
 }
 
 char* getmode3dchoices()
 {
-	debug(1000, "in");
 	char *mode3dchoicesdev = NULL;
 	char *value = NULL;
 
@@ -4839,19 +4709,17 @@ char* getmode3dchoices()
 	value = readsys(mode3dchoicesdev, 1);
 	if(value == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
 	value = convertspacetolf(value);
 
-	debug(1000, "out");
 	return value;
 }
 
 char* getmode3d()
 {
-	debug(1000, "in");
 	char *mode3ddev = NULL;
 	char *value = NULL;
 
@@ -4859,24 +4727,22 @@ char* getmode3d()
 
 	if(mode3ddev == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
 	value = readsys(mode3ddev, 1);
 	if(value == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
-	debug(1000, "out");
 	return value;
 }
 
 int setmode3d(char* value)
 {
-	debug(1000, "in");
 	char* mode3ddev;
 	int ret = 0;
 
@@ -4890,13 +4756,11 @@ int setmode3d(char* value)
 		return ret;
 	}
 
-	debug(1000, "out");
 	return 0;
 }
 
 char* getvideomode()
 {
-	debug(1000, "in");
 	char *videomodedev = NULL;
 	char *value = NULL;
 
@@ -4904,18 +4768,17 @@ char* getvideomode()
 
 	if(videomodedev == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
 	value = readsys(videomodedev, 1);
 	if(value == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
-	debug(1000, "out");
 	return value;
 }
 
@@ -4975,7 +4838,6 @@ void switchvideomode()
 //flag 1: don't write videomode to config
 int setvideomode(char* value, int flag)
 {
-	debug(1000, "in");
 	char* videomodedev;
 	int ret = 0;
 
@@ -4989,13 +4851,11 @@ int setvideomode(char* value, int flag)
 		return ret;
 	}
 
-	debug(1000, "out");
 	return 0;
 }
 
 int setcolorformat(char* value)
 {
-	debug(1000, "in");
 	char* colorformatdev;
 	int ret = 0;
 
@@ -5009,13 +4869,11 @@ int setcolorformat(char* value)
 		return ret;
 	}
 
-	debug(1000, "out");
 	return 0;
 }
 
 char* getcolorformat(int line)
 {
-	debug(1000, "in");
 	char *colorformatdev = NULL;
 	char *value = NULL;
 
@@ -5023,24 +4881,22 @@ char* getcolorformat(int line)
 
 	if(colorformatdev == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
 	value = readsys(colorformatdev, line);
 	if(value == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
-	debug(1000, "out");
 	return value;
 }
 
 int setaudiosource(char* value)
 {
-	debug(1000, "in");
 	char* audiosourcedev;
 	int ret = 1;
 
@@ -5054,13 +4910,11 @@ int setaudiosource(char* value)
 		return ret;
 	}
 
-	debug(1000, "out");
 	return 0;
 }
 
 char* getaudiosource()
 {
-	debug(1000, "in");
 	char *audiosourcedev = NULL;
 	char *value = NULL;
 
@@ -5068,24 +4922,22 @@ char* getaudiosource()
 
 	if(audiosourcedev == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
 	value = readsys(audiosourcedev, 1);
 	if(value == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
-	debug(1000, "out");
 	return value;
 }
 
 char* getsataswitch()
 {
-	debug(1000, "in");
 	char *sataswitchdev = NULL;
 	char *value = NULL;
 
@@ -5093,24 +4945,22 @@ char* getsataswitch()
 
 	if(sataswitchdev == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
 	value = readsys(sataswitchdev, 1);
 	if(value == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
-	debug(1000, "out");
 	return value;
 }
 
 int setsataswitch(char* value)
 {
-	debug(1000, "in");
 	char* sataswitchdev;
 	int ret = 1;
 
@@ -5123,13 +4973,11 @@ int setsataswitch(char* value)
 		return ret;
 	}
 
-	debug(1000, "out");
 	return 0;
 }
 
 int setprogress(value)
 {
-	debug(1000, "in");
 	char *progressdev;
 
 	progressdev = getconfig("progressdev", NULL);
@@ -5140,13 +4988,11 @@ int setprogress(value)
 		return writesysint(progressdev, value, 0);
 	}
 
-	debug(1000, "out");
 	return 0;
 }
 
 int setmute(int value)
 {
-	debug(1000, "in");
 	char* mutedev;
 	int tmpvol, ret = 0;
 
@@ -5174,13 +5020,11 @@ int setmute(int value)
 			return ret;
 		}
 	}
-	debug(1000, "out");
 	return 0;
 }
 
 int setvol(int value)
 {
-	debug(1000, "in");
 	char* voldev;
 	int ret = 0, tmpvol = value;
 
@@ -5209,13 +5053,11 @@ int setvol(int value)
 		return ret;
 	}
 
-	debug(1000, "out");
 	return 0;
 }
 
 int getvol()
 {
-	debug(1000, "in");
 	char *voldev = NULL;
 	char *value = NULL;
 	int tmpvol = -1;
@@ -5224,7 +5066,7 @@ int getvol()
 
 	if(voldev == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return 0;
 	}
 	if(status.volmute == -1)
@@ -5233,7 +5075,7 @@ int getvol()
 		tmpvol = status.volmute;
 	if(value == NULL && tmpvol == -1)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return 0;
 	}
 	if(status.volmute == -1)
@@ -5245,31 +5087,23 @@ int getvol()
 		if(status.volautochange == 0 && status.volautochangevalue < 100)
 			tmpvol = tmpvol + ((tmpvol * status.volautochangevalue) / (100 - status.volautochangevalue));
 	}
-	debug(1000, "out");
 	return tmpvol;
 }
 
 void setdebuglevel()
 {
-	debug(1000, "in");
-
 	debug_level = getconfigint("debuglevel", NULL);
 	debug(0, "set debug level to %d", debug_level);
-
-	debug(1000, "out");
 }
 
 char* getxmlentry(char *line, char *searchstr)
 {
-	//debug(1000, "in");
 	char *buf = NULL, *buf1 = NULL, *buf2 = NULL;
 
 	buf = ostrstr(line, searchstr);
 	if(buf == NULL)
-	{
-		//debug(1000, "out -> searchstr=\"%s\" not found in line=\"%s\"", searchstr, line);
 		return NULL;
-	}
+
 	buf = buf + strlen(searchstr);
 	if(buf[0] == '"')
 	{
@@ -5314,13 +5148,12 @@ char* getxmlentry(char *line, char *searchstr)
 		}
 		buf2[0] = '\0';
 	}
-	//debug(1000, "out");
+
 	return buf1;
 }
 
 char* readbintomem(const char* filename, size_t size)
 {
-	debug(1000, "in");
 	FILE *fd = NULL;
 	char *fileline = NULL;
 
@@ -5342,13 +5175,11 @@ char* readbintomem(const char* filename, size_t size)
 	fread(fileline, size, 1, fd);
 
 	fclose(fd);
-	debug(1000, "out");
 	return fileline;
 }
 
 char* readfiletomem(const char* filename, int flag)
 {
-	debug(1000, "in");
 	FILE *fd = NULL;
 	char *fileline = NULL, *buf = NULL, *buf1 = NULL;
 	int buf1size = 0, buf1oldsize = 0;
@@ -5392,7 +5223,6 @@ char* readfiletomem(const char* filename, int flag)
 
 	free(fileline);
 	fclose(fd);
-	debug(1000, "out");
 	return buf1;
 }
 
@@ -5529,7 +5359,6 @@ char* readeittomem(const char* filename)
 
 char* command(char* input)
 {
-	debug(1000, "in");
 	char* tmpstr = NULL, *fileline = NULL;
 	FILE *iopipe = NULL;
 	
@@ -5556,7 +5385,6 @@ char* command(char* input)
 
 	free(fileline);
 	pclose(iopipe);
-	debug(1000, "out");
 	return tmpstr;
 }
 
@@ -5654,7 +5482,6 @@ char* string_withchars2return(char *str)
 
 char* string_remove_whitechars(char *text)
 {
-	debug(1000, "in");
 	char *p1 = text, *p2 = text;
 
 	if(text == NULL) return NULL;
@@ -5668,13 +5495,11 @@ char* string_remove_whitechars(char *text)
 	}
 	*p2 = '\0';
 
-	debug(1000, "out");
 	return text;
 }
 
 char* strstrip(char *text)
 {
-	debug(1000, "in");
 	char* tmpstr = text;
 
 	if(text == NULL) return NULL;
@@ -5685,7 +5510,6 @@ char* strstrip(char *text)
 
 	memmove(text, tmpstr, len + 1);
 
-	debug(1000, "out");
 	return text;
 }
 
@@ -5694,10 +5518,7 @@ char* string_strip_whitechars(char *text)
 	char *p1 = text, *p2 = text;
 
 	if(text == NULL)
-	{
-		debug(1000, "out -> NULL detect");
 		return NULL;
-	}
 
 	while(*p1 != '\0')
 	{
@@ -5774,7 +5595,6 @@ char* string_replace_all(char *search, char *replace, char *string, int free1)
 
 char* string_replace_remove_last_chars(char *search, char *replace, char *string, int free1)
 {
-	debug(1000, "in");
 	char* searchpos = NULL;
 	char* tmpstr = NULL;
 
@@ -5800,13 +5620,11 @@ char* string_replace_remove_last_chars(char *search, char *replace, char *string
 
 	if(free1 == 1) free(string);
 
-	debug(1000, "out");
 	return tmpstr;
 }
 
 char* string_replace(char *search, char *replace, char *string, int free1)
 {
-	debug(1000, "in");
 	char* searchpos = NULL;
 	char* tmpstr = NULL;
 
@@ -5833,7 +5651,6 @@ char* string_replace(char *search, char *replace, char *string, int free1)
 
 	if(free1 == 1) free(string);
 
-	debug(1000, "out");
 	return tmpstr;
 }
 
@@ -5885,19 +5702,16 @@ char* ostrrstr(char* str, char* search, int len, int flag)
 
 char* ostrstr(char* str, char* search)
 {
-	//debug(1000, "in");
 	char* ret = NULL;
 
 	if(str == NULL || search == NULL) return NULL;
 	ret = strstr(str, search);
 
-	//debug(1000, "out");
 	return ret;
 }
 
 int file_exist(char* filename)
 {
-	debug(1000, "in");
 	if(access(filename, F_OK) == 0)
 		return 1;
 	else
@@ -5906,31 +5720,28 @@ int file_exist(char* filename)
 
 char* string_newline(char* str)
 {
-	debug(1000, "in");
 	if(str == NULL) return NULL;
 
 	int size = strlen(str);
 
 	if(str[size - 1] == '\n')
 		str[size - 1] = '\0';
-	debug(1000, "out");
+
 	return str;
 }
 
 char* string_quote(char* str)
 {
-	debug(1000, "in");
 	char* tmpstr = NULL;
 
 	tmpstr = ostrcat("\"", str, 0, 0);
 	tmpstr = ostrcat(tmpstr, "\"", 1, 0);
-	debug(1000, "out");
+
 	return tmpstr;
 }
 
 struct splitstr* strsplit(char *str, char *tok, int* count)
 {
-	debug(1000, "in");
 	char *tmpstr = NULL;
 	struct splitstr *tmparray = NULL;
 	*count = 0;
@@ -5949,7 +5760,6 @@ struct splitstr* strsplit(char *str, char *tok, int* count)
 		tmpstr = strtok(NULL, tok);
 	}
 
-	debug(1000, "out");
 	return tmparray;
 }
 
@@ -6350,13 +6160,11 @@ char* string_decode(char* input, int flag)
 		debug(210, "input: %s", input);
 	}
 
-	debug(1000, "out");
 	return input;
 }
 
 char* string_deltags(char* str)
 {
-	debug(1000, "in");
 	int i = 0, y = 0, len = 0;
 
 	if(str == NULL) return 0;
@@ -6379,13 +6187,11 @@ char* string_deltags(char* str)
 	}
 	str[y] = '\0';
 
-	debug(1000, "out");
 	return str;
 }
 
 char* string_striptags(char* str)
 {
-	debug(1000, "in");
 	int i = 0, len = 0;
 
 	if(str == NULL) return 0;
@@ -6406,13 +6212,11 @@ char* string_striptags(char* str)
 			str[i] = ' ';
 	}	
 
-	debug(1000, "out");
 	return strstrip(str);
 }
 
 char* string_resub(char* str, char* str2, char* input, int dir)
 {
-	debug(1000, "in");
 	int len;
 	char* tmpstr = NULL, *pos = NULL, *pos2 = NULL;
 
@@ -6441,7 +6245,6 @@ char* string_resub(char* str, char* str2, char* input, int dir)
 
 	tmpstr = strndup(pos, pos2 - pos);
 
-	debug(1000, "out");
 	return strstrip(tmpstr);
 }
 

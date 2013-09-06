@@ -23,7 +23,7 @@ int videodiscontinuityskip(struct dvbdev* node, int flag)
 
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -659,7 +659,6 @@ void initsignal(struct sigaction* sa)
 
 void sighandler(int sig, struct sigcontext ctx)
 {
-	debug(1000, "in");
 	switch(sig)
 	{
 		case SIGALRM:
@@ -709,7 +708,6 @@ void sighandler(int sig, struct sigcontext ctx)
 			break;
 		}
 	}
-	debug(1000, "out");
 }
 
 #endif

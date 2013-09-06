@@ -25,7 +25,6 @@ void oldentrythreadfunc(struct stimerthread* self)
 //type 2: copyfile
 struct oldentry* addoldentry(void* entry, int type, time_t del, struct oldentry* last)
 {
-	debug(1000, "in");
 	struct oldentry *newnode = NULL, *node = NULL;
 
 	newnode = (struct oldentry*)malloc(sizeof(struct oldentry));	
@@ -59,7 +58,6 @@ struct oldentry* addoldentry(void* entry, int type, time_t del, struct oldentry*
 		oldentry = newnode;
 
 	m_unlock(&status.oldentrymutex, 18);
-	debug(1000, "out");
 	return newnode;
 }
 
@@ -67,8 +65,6 @@ struct oldentry* addoldentry(void* entry, int type, time_t del, struct oldentry*
 //flag 1: no lock
 void deloldentry(struct oldentry *entry, int flag)
 {
-	debug(1000, "in");
-
 	if(flag == 0) m_lock(&status.oldentrymutex, 18);
 	struct oldentry *node = oldentry, *prev = oldentry;
 
@@ -100,13 +96,10 @@ void deloldentry(struct oldentry *entry, int flag)
 	}
 
 	if(flag == 0) m_unlock(&status.oldentrymutex, 18);
-	debug(1000, "out");
 }
 
 void freeoldentry()
 {
-	debug(1000, "in");
-
 	m_lock(&status.oldentrymutex, 18);
 	struct oldentry *node = oldentry, *prev = oldentry;
 
@@ -119,7 +112,6 @@ void freeoldentry()
 	}
 
 	m_unlock(&status.oldentrymutex, 18);
-	debug(1000, "out");
 }
 
 #endif

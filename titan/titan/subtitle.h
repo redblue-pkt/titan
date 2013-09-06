@@ -1354,7 +1354,6 @@ void subpes(unsigned char *pkt, int len, int id1, int id2)
 
 void* subthreadfunc(void *param)
 {
-	debug(1000, "in");
 	struct dvbdev* dmxsubnode = NULL;
 	int count = 0, len = 0, packlen = 0;
 	unsigned char* buf = NULL;
@@ -1363,7 +1362,7 @@ void* subthreadfunc(void *param)
 
 	if(subnode == NULL || subnode->pid < 1)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		pthread_exit(NULL);
 	}
 
@@ -1485,7 +1484,6 @@ void* subthreadfunc(void *param)
 	subfree(0);
 	subfree(1);
 
-	debug(1000, "out");
 	pthread_exit(NULL);
 }
 
@@ -1694,13 +1692,12 @@ void screensubtitle()
 
 struct subtitle* addsubtitle(struct channel* chnode, int subtype, char* langdesc, int pid, int type, int id1, int id2, struct subtitle* last)
 {
-	debug(1000, "in");
 	struct subtitle *newnode = NULL, *prev = NULL, *node = NULL;
 	char *tmpstr = NULL, *tmpnr = NULL;
 
 	if(chnode == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return NULL;
 	}
 
@@ -1763,18 +1760,16 @@ struct subtitle* addsubtitle(struct channel* chnode, int subtype, char* langdesc
 	newnode->next = node;
 
 	m_unlock(&status.subtitlemutex, 8);
-	debug(1000, "out");
 	return newnode;
 }
 
 void freesubtitle(struct channel* chnode)
 {
-	debug(1000, "in");
 	struct subtitle *node = NULL, *prev = NULL;
 
 	if(chnode == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return;
 	}
 
@@ -1796,7 +1791,6 @@ void freesubtitle(struct channel* chnode)
 
 	}
 	m_unlock(&status.subtitlemutex, 8);
-	debug(1000, "out");
 }
 
 int subtitlestartlast()
@@ -1861,7 +1855,6 @@ struct lastsubtitle* getlastsubtitle(uint64_t transponderid, int serviceid)
 
 struct lastsubtitle* addlastsubtitle(char* line, int count, struct lastsubtitle* last)
 {
-	//debug(1000, "in");
 	struct lastsubtitle *newnode = NULL, *prev = NULL, *node = lastsubtitle;
 	int ret = 0;
 
@@ -1911,13 +1904,11 @@ struct lastsubtitle* addlastsubtitle(char* line, int count, struct lastsubtitle*
 		prev->next = newnode;
 	newnode->next = node;
 
-	//debug(1000, "out");
 	return newnode;
 }
 
 int readlastsubtitle(const char* filename)
 {
-	debug(1000, "in");
 	FILE *fd = NULL;
 	char *fileline = NULL;
 	int linecount = 0, len = 0;
@@ -1964,7 +1955,6 @@ int readlastsubtitle(const char* filename)
 
 void dellastsubtitle(struct lastsubtitle* lsnode)
 {
-	debug(1000, "in");
 	struct lastsubtitle *node = lastsubtitle, *prev = lastsubtitle;
 
 	while(node != NULL)
@@ -1985,12 +1975,10 @@ void dellastsubtitle(struct lastsubtitle* lsnode)
 		prev = node;
 		node = node->next;
 	}
-	debug(1000, "out");
 }
 
 void freelastsubtitle()
 {
-	debug(1000, "in");
 	struct lastsubtitle *node = lastsubtitle, *prev = lastsubtitle;
 
 	while(node != NULL)
@@ -2000,12 +1988,10 @@ void freelastsubtitle()
 		if(prev != NULL)
 			dellastsubtitle(prev);
 	}
-	debug(1000, "out");
 }
 
 int writelastsubtitle(const char *filename)
 {
-	debug(1000, "in");
 	FILE *fd = NULL;
 	struct lastsubtitle *node = lastsubtitle;
 	int ret = 0;
@@ -2028,7 +2014,6 @@ int writelastsubtitle(const char *filename)
 	}
 
 	fclose(fd);
-	debug(1000, "out");
 	return 0;
 }
 

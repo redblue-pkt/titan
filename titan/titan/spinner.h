@@ -3,7 +3,6 @@
 
 void checkspinner()
 {
-	debug(1000, "in");
 	time_t sec = time(NULL);
 	int rcret = 0;
 
@@ -23,8 +22,6 @@ void checkspinner()
 				system(REBOOT);
 		}
 	}
-
-	debug(1000, "out");
 }
 
 void screenspinner()

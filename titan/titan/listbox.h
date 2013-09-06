@@ -3,13 +3,12 @@
 
 int setlistboxselection(struct skin* listbox, char* childname)
 {
-	debug(1000, "in");
 	struct skin* child = NULL;
 	int count = 0;
 
 	if(listbox == NULL || childname == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -49,7 +48,6 @@ int setlistboxselection(struct skin* listbox, char* childname)
 		child = child->next;
 	}
 
-	debug(1000, "out");
 	return 0;
 }
 

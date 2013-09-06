@@ -3,8 +3,6 @@
 
 void progressbarright(struct skin* screen, struct skin* progressbar, int screencalc, int filelistview, int flag)
 {
-	debug(1000, "in");
-
 	if(progressbar != NULL)
 	{
 		if(progressbar->progresssize <= 100)
@@ -15,14 +13,10 @@ void progressbarright(struct skin* screen, struct skin* progressbar, int screenc
 		else
 			progressbar->progresssize = 100;
 	}
-
-	debug(1000, "out");
 }
 
 void progressbarleft(struct skin* screen, struct skin* progressbar, int screencalc, int filelistview, int flag)
 {
-	debug(1000, "in");
-
 	if(progressbar != NULL)
 	{
 		if(progressbar->progresssize > 0)
@@ -33,13 +27,10 @@ void progressbarleft(struct skin* screen, struct skin* progressbar, int screenca
 		else
 			progressbar->progresssize = 0;
 	}
-
-	debug(1000, "out");
 }
 
 void filelistok(struct skin* screen, struct skin* filelist, int screencalc, int filelistview, int flag)
 {
-	debug(1000, "in");
 	struct skin* path = NULL;
 	char* tmp = NULL, *lastdir = NULL, *plastdir = NULL;
 	int inplen = 0;
@@ -84,7 +75,6 @@ void filelistok(struct skin* screen, struct skin* filelist, int screencalc, int 
 				err("no memory");
 		}
 	}
-	debug(1000, "out");
 }
 
 void helpbox(struct skin* screen, struct skin* node, int screencalc, int filelistview, int flag)
@@ -111,7 +101,6 @@ void inputboxhelp(struct skin* screen, struct skin* inputbox, int screencalc, in
 
 void inputboxchar(struct skin* screen, struct skin* inputbox, char zeichen, int screencalc, int filelistview, int flag)
 {
-	debug(1000, "in");
 	if(inputbox != NULL && inputbox->input != NULL)
 	{
 		if(strlen(inputbox->input) > 0)
@@ -121,12 +110,10 @@ void inputboxchar(struct skin* screen, struct skin* inputbox, char zeichen, int 
 				drawscreen(screen, screencalc, flag);
 		}
 	}
-	debug(1000, "out");
 }
 
 void inputboxff(struct skin* screen, struct skin* inputbox, int screencalc, int filelistview, int flag)
 {
-	debug(1000, "in");
 	if(inputbox != NULL)
 	{
 		if(inputbox->input == NULL)
@@ -134,23 +121,19 @@ void inputboxff(struct skin* screen, struct skin* inputbox, int screencalc, int 
 		inputbox->aktpage = insertchar(&inputbox->input, '_', inputbox->aktpage);
 		drawscreen(screen, screencalc, flag);
 	}
-	debug(1000, "out");
 }
 
 void inputboxfr(struct skin* screen, struct skin* inputbox, int screencalc, int filelistview, int flag)
 {
-	debug(1000, "in");
 	if(inputbox != NULL && inputbox->input != NULL)
 	{
 		inputbox->aktpage = delchar(&inputbox->input, inputbox->aktpage);
 		drawscreen(screen, screencalc, flag);
 	}
-	debug(1000, "out");
 }
 
 void checkinputboxnumright(struct skin* inputbox)
 {
-	debug(1000, "in");
 	int count = 0;
 
 	if(inputbox != NULL && inputbox->input != NULL && (inputbox->type & INPUTBOXNUM))
@@ -170,12 +153,10 @@ void checkinputboxnumright(struct skin* inputbox)
 			}
 		}
 	}
-	debug(1000, "out");
 }
 
 void checkinputboxnumleft(struct skin* inputbox)
 {
-	debug(1000, "in");
 	int count = 0;
 
 	if(inputbox != NULL && inputbox->input != NULL && (inputbox->type & INPUTBOXNUM))
@@ -195,13 +176,10 @@ void checkinputboxnumleft(struct skin* inputbox)
 			}
 		}
 	}
-	debug(1000, "out");
 }
 
 void inputboxright(struct skin* screen, struct skin* inputbox, int screencalc, int filelistview, int flag)
 {
-	debug(1000, "in");
-
 	if(inputbox != NULL && inputbox->input != NULL)
 	{
 		inputbox->aktpage++;
@@ -210,13 +188,10 @@ void inputboxright(struct skin* screen, struct skin* inputbox, int screencalc, i
 		checkinputboxnumright(inputbox);
 		drawscreen(screen, screencalc, flag);
 	}
-	debug(1000, "out");
 }
 
 void inputboxleft(struct skin* screen, struct skin* inputbox, int screencalc, int filelistview, int flag)
 {
-	debug(1000, "in");
-
 	if(inputbox != NULL && inputbox->input != NULL)
 	{
 		inputbox->aktpage--;
@@ -225,7 +200,6 @@ void inputboxleft(struct skin* screen, struct skin* inputbox, int screencalc, in
 		checkinputboxnumleft(inputbox);
 		drawscreen(screen, screencalc, flag);
 	}
-	debug(1000, "out");
 }
 
 void inputbox0(struct skin* screen, struct skin* inputbox, int screencalc, int filelistview, int flag)
@@ -555,7 +529,6 @@ void inputbox9(struct skin* screen, struct skin* inputbox, int screencalc, int f
 
 void choiceboxleft(struct skin* screen, struct skin* choicebox, int screencalc, int filelistview, int flag)
 {
-	debug(1000, "in");
 	if(choicebox != NULL)
 	{
 		if(choicebox->aktpage <= 1)
@@ -564,12 +537,10 @@ void choiceboxleft(struct skin* screen, struct skin* choicebox, int screencalc, 
 			choicebox->aktpage--;
 		drawscreen(screen, screencalc, flag);
 	}
-	debug(1000, "out");
 }
 
 void choiceboxright(struct skin* screen, struct skin* choicebox, int screencalc, int filelistview, int flag)
 {
-	debug(1000, "in");
 	if(choicebox != NULL)
 	{
 		if(choicebox->aktpage >= choicebox->linecount)
@@ -581,12 +552,10 @@ void choiceboxright(struct skin* screen, struct skin* choicebox, int screencalc,
 		}
 		drawscreen(screen, screencalc, flag);
 	}
-	debug(1000, "out");
 }
 
 void griddown(struct skin* screen, struct skin* grid, int screencalc, int filelistview, int flag)
 {
-	debug(1000, "in");
 	int end = 0, br = 0, mark = 0;
 	struct skin* node = NULL;
 
@@ -642,13 +611,10 @@ void griddown(struct skin* screen, struct skin* grid, int screencalc, int fileli
 		if(grid->select != NULL) delscreenrc(screen, grid->select);
 		drawscreen(screen, screencalc, flag);
 	}
-
-	debug(1000, "out");
 }
 
 void gridup(struct skin* screen, struct skin* grid, int screencalc, int filelistview, int flag)
 {
-	debug(1000, "in");
 	int start = 0, br = 0, mark = 0;
 	struct skin* node = NULL, *tmpnode = NULL;;
 
@@ -713,13 +679,10 @@ void gridup(struct skin* screen, struct skin* grid, int screencalc, int filelist
 		if(grid->select != NULL) delscreenrc(screen, grid->select);
 		drawscreen(screen, screencalc, flag);
 	}
-
-	debug(1000, "out");
 }
 
 void gridleft(struct skin* screen, struct skin* grid, int screencalc, int filelistview, int flag)
 {
-	debug(1000, "in");
 	struct skin* node = NULL;
 
 	if(grid != NULL)
@@ -752,12 +715,10 @@ void gridleft(struct skin* screen, struct skin* grid, int screencalc, int fileli
 		if(grid->select != NULL)
 			grid->gridcol = grid->select->posx + (grid->select->width / 2);
 	}
-	debug(1000, "out");
 }
 
 void gridright(struct skin* screen, struct skin* grid, int screencalc, int filelistview, int flag)
 {
-	debug(1000, "in");
 	struct skin* node = NULL;
 
 	if(grid != NULL)
@@ -792,13 +753,10 @@ void gridright(struct skin* screen, struct skin* grid, int screencalc, int filel
 		if(grid->select != NULL)
 			grid->gridcol = grid->select->posx + (grid->select->width / 2);
 	}
-	debug(1000, "out");
 }
 
 void gridchup(struct skin* screen, struct skin* grid, int screencalc, int filelistview, int flag)
 {
-	debug(1000, "in");
-
 	if(grid != NULL)
 	{
 		grid->aktline = -1;
@@ -810,14 +768,10 @@ void gridchup(struct skin* screen, struct skin* grid, int screencalc, int fileli
 		if(grid->select != NULL)
 			grid->gridcol = grid->select->posx + (grid->select->width / 2);
 	}
-
-	debug(1000, "out");
 }
 
 void gridchdown(struct skin* screen, struct skin* grid, int screencalc, int filelistview, int flag)
 {
-	debug(1000, "in");
-
 	if(grid != NULL)
 	{
 		grid->aktline = -1;
@@ -832,15 +786,11 @@ void gridchdown(struct skin* screen, struct skin* grid, int screencalc, int file
 		if(grid->select != NULL)
 			grid->gridcol = grid->select->posx + (grid->select->width / 2);
 	}
-
-	debug(1000, "out");
 }
 
 
 void listboxleft(struct skin* screen, struct skin* listbox, int screencalc, int filelistview, int flag)
 {
-	debug(1000, "in");
-
 	if(listbox != NULL)
 	{
 		listbox->aktline = -1;
@@ -851,14 +801,10 @@ void listboxleft(struct skin* screen, struct skin* listbox, int screencalc, int 
 		if(listbox->select != NULL) delscreenrc(screen, listbox->select);
 		drawscreen(screen, screencalc, flag);
 	}
-
-	debug(1000, "out");
 }
 
 void listboxright(struct skin* screen, struct skin* listbox, int screencalc, int filelistview, int flag)
 {
-	debug(1000, "in");
-
 	if(listbox != NULL)
 	{
 		listbox->aktline = -1;
@@ -872,14 +818,10 @@ void listboxright(struct skin* screen, struct skin* listbox, int screencalc, int
 		if(listbox->select != NULL) delscreenrc(screen, listbox->select);
 		drawscreen(screen, screencalc, flag);
 	}
-
-	debug(1000, "out");
 }
 
 void listboxup(struct skin* screen, struct skin* listbox, int screencalc, int filelistview, int flag)
 {
-	debug(1000, "in");
-
 	if(listbox != NULL)
 	{
 		listbox->aktpage = -1;
@@ -890,13 +832,10 @@ void listboxup(struct skin* screen, struct skin* listbox, int screencalc, int fi
 		if(listbox->select != NULL) delscreenrc(screen, listbox->select);
 		drawscreen(screen, screencalc, flag);
 	}
-	debug(1000, "out");
 }
 
 void listboxdown(struct skin* screen, struct skin* listbox, int screencalc, int filelistview, int flag)
 {
-	debug(1000, "in");
-
 	if(listbox != NULL)
 	{
 		listbox->aktpage = -1;
@@ -908,12 +847,10 @@ void listboxdown(struct skin* screen, struct skin* listbox, int screencalc, int 
 		if(listbox->select != NULL) delscreenrc(screen, listbox->select);
 		drawscreen(screen, screencalc, flag);
 	}
-	debug(1000, "out");
 }
 
 void textboxup(struct skin* screen, struct skin* textbox, int screencalc, int filelistview, int flag)
 {
-	debug(1000, "in");
 	if(textbox != NULL)
 	{
 		if(textbox->aktpage > 1)
@@ -922,12 +859,10 @@ void textboxup(struct skin* screen, struct skin* textbox, int screencalc, int fi
 			drawscreen(screen, screencalc, flag);
 		}
 	}
-	debug(1000, "out");
 }
 
 void textboxdown(struct skin* screen, struct skin* textbox, int screencalc, int filelistview, int flag)
 {
-	debug(1000, "in");
 	if(textbox != NULL)
 	{
 		if(textbox->aktpage < textbox->pagecount)
@@ -936,16 +871,13 @@ void textboxdown(struct skin* screen, struct skin* textbox, int screencalc, int 
 			drawscreen(screen, screencalc, flag);
 		}
 	}
-	debug(1000, "out");
 }
 
 int addscreenrc(struct skin* screen, struct skin* node)
 {
-	debug(1000, "in");
-
 	if(node == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -1022,17 +954,14 @@ int addscreenrc(struct skin* screen, struct skin* node)
 		addrc(getrcconfigint("rchelp", NULL), helpbox, screen, node);
 	}
 
-	debug(1000, "out");
 	return 0;
 }
 
 int delscreenrc(struct skin* screen, struct skin* node)
 {
-	debug(1000, "in");
-
 	if(node == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -1109,7 +1038,6 @@ int delscreenrc(struct skin* screen, struct skin* node)
 		delrc(getrcconfigint("rchelp", NULL), screen, node);
 	}
 
-	debug(1000, "out");
 	return 0;
 }
 

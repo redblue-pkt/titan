@@ -146,7 +146,7 @@ int movemediadbdown(struct mediadb* node)
 
 	if(node == NULL || mediadb == NULL)
 	{
-		debug(1000, "NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -195,7 +195,7 @@ int movemediadbup(struct mediadb* node)
 
 	if(node == NULL || mediadb == NULL)
 	{
-		debug(1000, "NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -285,7 +285,6 @@ struct mediadbfilter* addmediadbfilter(struct mediadb* mnode, int nr, int count,
 	if(node != NULL) node->prev = newnode;
 	
 	m_unlock(&status.mediadbmutex, 17);
-	//debug(1000, "out");
 	return newnode;
 }
 
@@ -367,7 +366,6 @@ struct mediadbcategory* addmediadbcategory(char* line, int type, int count, stru
 	if(node != NULL) node->prev = newnode;
 	
 	if(flag == 0) m_unlock(&status.mediadbmutex, 17);
-	//debug(1000, "out");
 	return newnode;
 }
 
@@ -453,7 +451,6 @@ int addmediadbcontent(struct mediadb* node, char *line, int len, int count)
 //flag 1: without lock
 struct mediadb* addmediadb(char *line, int len, int count, struct mediadb* last, int sort, int flag)
 {
-	//debug(1000, "in");
 	struct mediadb *newnode = NULL, *prev = NULL, *node = NULL;
 	int ret = 0;
 
@@ -515,7 +512,6 @@ struct mediadb* addmediadb(char *line, int len, int count, struct mediadb* last,
 	if(node != NULL) node->prev = newnode;
 
 	if(flag == 0) m_unlock(&status.mediadbmutex, 17);
-	//debug(1000, "out");
 	return newnode;
 }
 
@@ -612,7 +608,6 @@ struct mediadb* createmediadb(struct mediadb* update, char* id, int type, char* 
 //flag 1: read mediadbcategory
 int readmediadb(const char* filename, int type, int flag)
 {
-	debug(1000, "in");
 	FILE *fd = NULL;
 	char *fileline = NULL;
 	int linecount = 0, len = 0;
@@ -708,7 +703,6 @@ void freemediadbcontent(struct mediadb* node)
 //flag 1: without lock
 int delmediadbfilter(struct mediadbfilter* mnode, int flag)
 {
-	debug(1000, "in");
 	int ret = 1;
 
 	if(flag == 0) m_lock(&status.mediadbmutex, 17);
@@ -743,13 +737,11 @@ int delmediadbfilter(struct mediadbfilter* mnode, int flag)
 	}
 
 	if(flag == 0) m_unlock(&status.mediadbmutex, 17);
-	debug(1000, "out");
 	return ret;
 }
 
 int delmediadbcategory(struct mediadbcategory* mnode, int flag)
 {
-	debug(1000, "in");
 	int ret = 1;
 
 	m_lock(&status.mediadbmutex, 17);
@@ -787,13 +779,11 @@ int delmediadbcategory(struct mediadbcategory* mnode, int flag)
 	}
 
 	m_unlock(&status.mediadbmutex, 17);
-	debug(1000, "out");
 	return ret;
 }
 
 int delmediadb(struct mediadb* mnode, int flag)
 {
-	debug(1000, "in");
 	int ret = 1;
 
 	m_lock(&status.mediadbmutex, 17);
@@ -835,13 +825,11 @@ int delmediadb(struct mediadb* mnode, int flag)
 	}
 
 	m_unlock(&status.mediadbmutex, 17);
-	debug(1000, "out");
 	return ret;
 }
 
 void freemediadbfilter(int flag)
 {
-	debug(1000, "in");
 	struct mediadbfilter *node = mediadbfilter, *prev = mediadbfilter;
 
 	while(node != NULL)
@@ -851,12 +839,10 @@ void freemediadbfilter(int flag)
 		if(prev != NULL)
 			delmediadbfilter(prev, flag);
 	}
-	debug(1000, "out");
 }
 
 void freemediadbcategory(int flag)
 {
-	debug(1000, "in");
 	struct mediadbcategory *node = mediadbcategory, *prev = mediadbcategory;
 
 	while(node != NULL)
@@ -866,12 +852,10 @@ void freemediadbcategory(int flag)
 		if(prev != NULL)
 			delmediadbcategory(prev, flag);
 	}
-	debug(1000, "out");
 }
 
 void freemediadb(int flag)
 {
-	debug(1000, "in");
 	struct mediadb *node = mediadb, *prev = mediadb;
 
 	while(node != NULL)
@@ -883,12 +867,10 @@ void freemediadb(int flag)
 	}
 
 	status.writemediadb = 0;
-	debug(1000, "out");
 }
 
 int writemediadbcategory(const char *filename)
 {
-	debug(1000, "in");
 	FILE *fd = NULL;
 	struct mediadbcategory *node = NULL;
 	int ret = 0;
@@ -916,13 +898,11 @@ int writemediadbcategory(const char *filename)
 	m_unlock(&status.mediadbmutex, 17);
 
 	fclose(fd);
-	debug(1000, "out");
 	return 0;
 }
 
 int writemediadb(const char *filename, struct mediadb* cmediadb)
 {
-	debug(1000, "in");
 	FILE *fd = NULL;
 	struct mediadb *node = NULL;
 	int ret = 0;
@@ -978,7 +958,6 @@ int writemediadb(const char *filename, struct mediadb* cmediadb)
 
 	fclose(fd);
 	status.writemediadb = 0;
-	debug(1000, "out");
 	return 0;
 }
 

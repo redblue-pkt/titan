@@ -62,7 +62,6 @@ struct clist* addownconfigscreen(char *key, struct skin *node)
 
 struct clist* addownconfigint(char *key, int value)
 {
-	debug(1000, "in");
 	char* fileline = NULL;
 	struct clist* ret = NULL;
 
@@ -70,7 +69,6 @@ struct clist* addownconfigint(char *key, int value)
 	ret = addownconfig(key, fileline);
 
 	free(fileline);
-	debug(1000, "out");
 	return ret;
 }
 
@@ -144,18 +142,16 @@ void freeownconfig()
 
 int reloadownconfig(char *filename)
 {
-	debug(1000, "in");
 	int ret = 0;
 
 	freeownconfig();
 	ret = readconfig(filename, ownconfig);
 	if(ret != 0)
 	{
-		debug(1000, "out -> readownconfig fail");
+		err("readownconfig fail");
 		return 1;
 	}
 
-	debug(1000, "out");
 	return 0;
 }
 

@@ -3,7 +3,6 @@
 
 void screenscart()
 {
-	debug(1000, "in");
 	int rcret = 0;
 	char* tmpstr = NULL;
 
@@ -25,7 +24,6 @@ void screenscart()
 	else
 		textbox(_("Message"), _("Videomode must be 576i for Scart"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 	free(tmpstr); tmpstr = NULL;
-	debug(1000, "out");
 	return;
 }
 

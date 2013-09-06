@@ -6,14 +6,13 @@
 //flag 2: reload skin
 int screenlanguage(int flag)
 {
-	debug(1000, "in");
 	int rcret = 0, change = 0, reloadskin = 0;
 	struct skin* language = getscreen("language");
 	struct skin* listbox = getscreennode(language, "listbox");
 
 	if(listbox == NULL || language == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -67,7 +66,6 @@ int screenlanguage(int flag)
 		if(createstartscreen() != 0) return 2;
 		readscreen(getconfig("skinfile", NULL), 0, 0);
 	}
-	debug(1000, "out");
 	return 0;
 }
 

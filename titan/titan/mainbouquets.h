@@ -60,7 +60,6 @@ void debugmainbouquet()
 
 struct mainbouquet* getlastmainbouquet(struct mainbouquet* node)
 {
-	debug(1000, "in");
 	struct mainbouquet *prev = NULL;
 
 	while(node != NULL)
@@ -69,7 +68,6 @@ struct mainbouquet* getlastmainbouquet(struct mainbouquet* node)
 		node = node->next;
 	}
 
-	debug(1000, "out");
 	return prev;
 }
 
@@ -121,7 +119,7 @@ int movemainbouquetblockdown(struct mainbouquet* node)
 
 	if(node == NULL || mainbouquet == NULL)
 	{
-		debug(1000, "NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -154,7 +152,7 @@ int movemainbouquetdown(struct mainbouquet* node)
 
 	if(node == NULL || mainbouquet == NULL)
 	{
-		debug(1000, "NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 	
@@ -204,7 +202,7 @@ int movemainbouquetblockup(struct mainbouquet* node)
 
 	if(node == NULL || mainbouquet == NULL)
 	{
-		debug(1000, "NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -229,7 +227,7 @@ int movemainbouquetup(struct mainbouquet* node)
 
 	if(node == NULL || mainbouquet == NULL)
 	{
-		debug(1000, "NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 	
@@ -276,7 +274,6 @@ int movemainbouquetup(struct mainbouquet* node)
 
 struct mainbouquet* addmainbouquet(char *line, int count, struct mainbouquet* last)
 {
-	debug(1000, "in");
 	struct mainbouquet *newnode = NULL, *prev = NULL, *node = mainbouquet;
 	char *name = NULL, *filename = NULL;
 	int ret = 0;
@@ -351,13 +348,11 @@ struct mainbouquet* addmainbouquet(char *line, int count, struct mainbouquet* la
 	newnode->next = node;
 	if(node != NULL) node->prev = newnode;
 
-	debug(1000, "out");
 	return newnode;
 }
 
 int readmainbouquet(char* filename)
 {
-	debug(1000, "in");
 	FILE *fd = NULL;
 	char *fileline = NULL, *tmpstr = NULL, *tmpstr0 = NULL, *tmpstr1 = NULL;
 	int linecount = 0, treffer0 = 1, treffer1 = 1, len = 0;
@@ -440,7 +435,6 @@ int readallbouquet()
 
 struct mainbouquet* getmainbouquetbybouquetpointer(struct bouquet* bouquetnode)
 {
-	debug(1000, "in");
 	struct mainbouquet *node = mainbouquet;
 	struct bouquet *bnode = NULL;
 
@@ -450,10 +444,8 @@ struct mainbouquet* getmainbouquetbybouquetpointer(struct bouquet* bouquetnode)
 		while(bnode != NULL)
 		{
 			if(bnode == bouquetnode)
-			{
-				debug(1000, "out");
 				return node;
-			}
+
 			bnode = bnode->next;
 		}
 		node = node->next;
@@ -464,16 +456,12 @@ struct mainbouquet* getmainbouquetbybouquetpointer(struct bouquet* bouquetnode)
 
 struct mainbouquet* getmainbouquetbyfilename(char *filename)
 {
-	debug(1000, "in");
 	struct mainbouquet *node = mainbouquet;
 
 	while(node != NULL)
 	{
 		if(ostrcmp(node->filename, filename) == 0)
-		{
-			debug(1000, "out");
 			return node;
-		}
 
 		node = node->next;
 	}
@@ -483,16 +471,12 @@ struct mainbouquet* getmainbouquetbyfilename(char *filename)
 
 struct mainbouquet* getmainbouquet(char *name)
 {
-	debug(1000, "in");
 	struct mainbouquet *node = mainbouquet;
 
 	while(node != NULL)
 	{
 		if(ostrcmp(node->name, name) == 0)
-		{
-			debug(1000, "out");
 			return node;
-		}
 
 		node = node->next;
 	}
@@ -504,7 +488,6 @@ struct mainbouquet* getmainbouquet(char *name)
 //flag 1: unlink bouquet
 void delmainbouquet(char *name, int flag)
 {
-	debug(1000, "in");
 	struct mainbouquet *node = mainbouquet, *prev = mainbouquet;
 
 	while(node != NULL)
@@ -542,12 +525,10 @@ void delmainbouquet(char *name, int flag)
 		prev = node;
 		node = node->next;
 	}
-	debug(1000, "out");
 }
 
 void freemainbouquet()
 {
-	debug(1000, "in");
 	struct mainbouquet *node = mainbouquet, *prev = mainbouquet;
 
 	while(node != NULL)
@@ -557,7 +538,6 @@ void freemainbouquet()
 		if(prev != NULL)
 			delmainbouquet(prev->name, 0);
 	}
-	debug(1000, "out");
 }
 
 void freeallbouquet()
@@ -573,7 +553,6 @@ void freeallbouquet()
 
 int writemainbouquet(const char *filename)
 {
-	debug(1000, "in");
 	FILE *fd = NULL;
 	struct mainbouquet *node = mainbouquet;
 	int ret = 0;
@@ -596,7 +575,6 @@ int writemainbouquet(const char *filename)
 	}
 
 	fclose(fd);
-	debug(1000, "out");
 	return 0;
 }
 

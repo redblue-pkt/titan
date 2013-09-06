@@ -88,7 +88,7 @@ int selectchannelgmepg(struct skin* listbox)
 
 	if(chnode == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
