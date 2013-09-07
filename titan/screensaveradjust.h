@@ -99,6 +99,26 @@ void screenscreensaveradjust()
 			node = node->next;
 		}
 	}
+	//TODO: use config instread fix path
+	if(file_exist("/var/saver/"))
+	{
+		char* path = NULL;
+		delmarkedscreennodes(screensaveradjust, FILELISTDELMARK);
+		changeinput(filelist, "/var/saver");
+		createfilelist(screensaveradjust, filelist, 0);
+		
+		node = filelist;
+		while(node != NULL)
+		{
+			if(node->del == FILELISTDELMARK && node->text != NULL && ostrcmp(node->text, "..") != 0)
+			{
+				path = ostrcat("/var/saver/" , node->text, 0, 0);
+				addchoicebox(screensaver_type, path, node->text);
+				free(path); path = NULL;
+			}
+			node = node->next;
+		}
+	}
 	setchoiceboxselection(screensaver_type, getconfig("screensaver_type", NULL));
 
 	drawscreen(screensaveradjust, 0, 0);
