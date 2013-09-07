@@ -8,7 +8,7 @@
 ### END INIT INFO
 
 export PATH=$PATH:/var/swap/bin:/mnt/swapextensions/bin:/var/bin
-export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/var/swap/lib:/mnt/swapextensions/lib
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/var/swap/lib:/mnt/swapextensions/lib:/var/lib
 	
 NAME=minidlna
 DESC="MiniDLNA"
