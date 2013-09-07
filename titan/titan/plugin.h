@@ -10,6 +10,9 @@ int delplugin(char *pluginname)
 
 	if(plugin == NULL || child == NULL || listbox == NULL || child->pluginhandle == NULL)
 		return 1;
+		
+	if(plugin == status.skinerr || child == status.skinerr || listbox == status.skinerr)
+		return 1;
 
 	deinitplugin = dlsym(child->pluginhandle, "deinit");
 	if(deinitplugin != NULL)
