@@ -10,3 +10,4 @@ Source: obi by AAF
 Description: ImdBapi Info Plugin
 Titanname: IMDb-API
 Showname: IMDb-API
+Installpath: /var

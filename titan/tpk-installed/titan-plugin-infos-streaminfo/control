@@ -10,3 +10,4 @@ Source: nit by AAF
 Description: streaminfo Plugin
 Titanname: Streaminfo
 Showname: Streaminfo
+Installpath: /var
