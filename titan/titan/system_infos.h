@@ -50,6 +50,7 @@ void screensystem_infos(int mode)
 		system("ls /media/usb/* >/dev/null");
 		system("ls /media/net/* >/dev/null");
 		system("ls /var/swap/* >/dev/null");
+		system("ls /mnt/swapextension/* >/dev/null");
 		system("ls /var/backup/* >/dev/null");
 		system("ls /media/hdd/* >/dev/null");
 		tmpstr = command("df -h");
@@ -74,6 +75,7 @@ void screensystem_infos(int mode)
 		system("ls /media/usb/* >/dev/null");
 		system("ls /media/net/* >/dev/null");
 		system("ls /var/swap/* >/dev/null");
+		system("ls /mnt/swapextension/* >/dev/null");
 		system("ls /var/backup/* >/dev/null");
 		system("ls /media/hdd/* >/dev/null");
 		tmpstr = command("mount");
