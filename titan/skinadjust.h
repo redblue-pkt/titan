@@ -43,7 +43,10 @@ void screenskinadjust()
 	changeinput(bottomoffset, "0\n10\n20\n30\n40\n50\n60\n70\n80\n90\n100");
 	setchoiceboxselection(bottomoffset, getconfig("fbbottomoffset", NULL));
 
-	changeinput(piconpath, getconfig("piconpath", NULL));
+  addchoicebox(piconpath, "/mnt/swapextensions/titanpicons", _("Flash (permanent)"));
+	addchoicebox(piconpath, "/var/swap/titanpicons", _("Stick or HDD"));
+	addchoicebox(piconpath, "/var/titanpicons", _("Flash (temporary)"));
+	setchoiceboxselection(piconpath, getconfig("piconpath", NULL));
 
 	oleftoffset = getconfigint("fbleftoffset", NULL);
 	orightoffset = getconfigint("fbrightoffset", NULL); 
@@ -131,6 +134,7 @@ void screenskinadjust()
 			addconfigscreencheck("showrecfreesize", showrecfreesize, "0");
 			status.showrecfreesize = getconfigint("showrecfreesize", NULL);
 
+			/*
 			if(listbox->select != NULL && ostrcmp(listbox->select->name, "piconpath") == 0)
 			{
 				clearscreen(skinadjust);
@@ -142,6 +146,7 @@ void screenskinadjust()
 				drawscreen(skinadjust, 0, 0);
 				continue;
 			}
+			*/
 
       writeskinconfigtmp();
       if(reboot == 1)
