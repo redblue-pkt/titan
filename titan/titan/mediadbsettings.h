@@ -18,7 +18,7 @@ void screenmediadbsettings()
 	char* tmpstr = NULL;
 
 	addchoicebox(mediadbpath, "/media/hdd/.mediadb", "/media/hdd/.mediadb");
-	if(checkswaplink() == 0)
+	if(file_exist("/var/swap/") == 1)
 		addchoicebox(mediadbpath, "/var/swap/.mediadb", "/var/swap/.mediadb");
 	setchoiceboxselection(mediadbpath, getconfig("mediadbpath", NULL));
 
