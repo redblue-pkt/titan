@@ -22,10 +22,10 @@ for i in $USBIDS; do
 		if [ -e /var/lib/modules/$WLAN_MODULE.ko ]; then
 			exit 0
 		fi
-		if [ -e /var/swap/modules/$WLAN_MODULE.ko ]; then
+		if [ -e /var/swap/lib/modules/$WLAN_MODULE.ko ]; then
 			exit 0
 		fi
-		if [ -e /mnt/swapextensions/modules/$WLAN_MODULE.ko ]; then
+		if [ -e /mnt/swapextensions/lib/modules/$WLAN_MODULE.ko ]; then
 			exit 0
 		fi
 		exit 1
