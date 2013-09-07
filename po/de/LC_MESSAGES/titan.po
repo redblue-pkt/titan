@@ -3277,10 +3277,10 @@ msgid "Tpk Remove Info - Remove ERROR"
 msgstr "Paket konnte nicht gelöscht werden"
 
 msgid "Install success"
-msgstr "Installation erfolgreich durchgeführt.\nkeine Installationsinformationen gefunden!"
+msgstr "Installation erfolgreich durchgeführt."
 
 msgid "Install error"
-msgstr "Installation nicht erfolgreich durchgeführt.\nkeine Installationsinformationen gefunden!"
+msgstr "Installation nicht erfolgreich durchgeführt."
 
 msgid "Installing"
 msgstr "Installation von"
@@ -3292,10 +3292,10 @@ msgid "Removeing"
 msgstr "Löschen von"
 
 msgid "Remove success"
-msgstr "Löschen erfolgreich durchgeführt.\nkeine Installationsinformationen gefunden!"
+msgstr "Löschen erfolgreich durchgeführt."
 
 msgid "Remove error"
-msgstr "Löschen nicht erfolgreich durchgeführt.\nkeine Installationsinformationen gefunden!"
+msgstr "Löschen nicht erfolgreich durchgeführt."
 
 msgid "Tpk Tmp Info"
 msgstr "Info zur TMP-TPK Installation"
