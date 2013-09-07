@@ -104,13 +104,16 @@ char* getinstallpath(char* path, char* size)
 	
 	if(path == NULL || path[0] == '*' || ostrstr(path, "/var/swap") != NULL)
 	{
-		if(tpkchecksize(NULL, "/var/swap", isize) == 0)
+		if(file_exist("/var/swap") == 1)
 		{
-			tmpmlist = addmenulist(&mlist, "Install to Stick or HDD", NULL, NULL, 0, 0);
-			changemenulistparam(tmpmlist, "/var/swap", NULL, NULL, NULL);
-			free(tmpstr); tmpstr = NULL;
-			tmpstr = ostrcat("/var/swap", NULL, 0, 0);
-			count++;
+			if(tpkchecksize(NULL, "/var/swap", isize) == 0)
+			{
+				tmpmlist = addmenulist(&mlist, "Install to Stick or HDD", NULL, NULL, 0, 0);
+				changemenulistparam(tmpmlist, "/var/swap", NULL, NULL, NULL);
+				free(tmpstr); tmpstr = NULL;
+				tmpstr = ostrcat("/var/swap", NULL, 0, 0);
+				count++;
+			}
 		}
 	}
 	
