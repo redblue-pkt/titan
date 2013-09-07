@@ -10,3 +10,4 @@ Source: nit
 Description: filemanager
 Titanname: File Manager
 Showname: File Manager
+Installpath: /var
