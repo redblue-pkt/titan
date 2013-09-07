@@ -1359,7 +1359,7 @@ printf("sub 22\n");
 void screentithekplay(char* titheklink, char* title, int first)
 {
 	if(!file_exist("/mnt/swapextensions/player"))
-		mkdir("/mnt/swapetensions/player", 0777); 
+		mkdir("/mnt/swapextensions/player", 0777); 
 
 	char* disclaimer = NULL;
 	disclaimer = ostrcat(disclaimer, "/mnt/swapextensions/player/tithek_disclaimer_accepted", 1, 0);
