@@ -4059,3 +4059,12 @@ msgstr "In Flash installieren (temporär)"
 msgid "Install to Stick or HDD"
 msgstr "Auf Stick o. HDD installieren"
 
+msgid "Flash (permanent)"
+msgstr "Flash (permanent)"
+
+msgid "Flash (temporary)"
+msgstr "Flash (temporär)"
+
+msgid "Stick or HDD"
+msgstr "Stick oder HDD"
+
