@@ -70,6 +70,46 @@ void screenfeed()
 	free(lastline);
 }
 
+//flag 0: install ok
+//flag 1: install err
+//flag 2: remove ok
+//flag 3: remove err
+char* gettpklog(char* installpath, int flag)
+{
+	char* tmpstr = NULL;
+
+	if(flag == 0 || flag == 1)
+		tmpstr = ostrcat(tmpstr, _("Installation start"), 1, 0);
+	else
+		tmpstr = ostrcat(tmpstr, _("Remove start"), 1, 0);
+	tmpstr = ostrcat(tmpstr, "\n\n", 1, 0);
+	
+	tmpstr = ostrcat(tmpstr, readfiletomem(TPKLOG, 0), 1, 1);
+	
+	tmpstr = ostrcat(tmpstr, "\n\n", 1, 0);
+	
+	if(installpath != NULL)
+	{
+		tmpstr = ostrcat(tmpstr, _("New free space (KB): "), 1, 0);
+		tmpstr = ostrcat(tmpstr, ollutoa(getfreespace(installpath) / 1024), 1, 1);
+		tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+	}
+	
+	if(flag == 0)
+		tmpstr = ostrcat(tmpstr, _("Install success"), 0, 0);
+	if(flag == 1)
+		tmpstr = ostrcat(tmpstr, _("Install error"), 0, 0);
+	if(flag == 2)
+		tmpstr = ostrcat(tmpstr, _("Remove success"), 0, 0);
+	if(flag == 3)
+		tmpstr = ostrcat(tmpstr, _("Remove error"), 0, 0);
+		
+	if(installpath == NULL || ostrcmp("/var/swap", installpath) == 0)
+		sync();
+	
+	return tmpstr;
+}
+
 char* getinstallpath(char* path, char* size)
 {
 	int count = 0, isize = 0;
@@ -180,14 +220,12 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 						char* log = NULL;
 						if(tpkgetpackage(mbox1->param, mbox1->param1, installpath) == 0)
 						{
-							log = readfiletomem(TPKLOG, 0);
-							if(log == NULL) log = ostrcat("Install success", NULL, 0, 0);
+							log = gettpklog(installpath, 0);
 							textbox(_("Tpk Install Info - Install OK"), _(log), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 2);
 						}
 						else
 						{
-							log = readfiletomem(TPKLOG, 0);
-							if(log == NULL) log = ostrcat("Install error", NULL, 0, 0);
+							log = gettpklog(installpath, 1);
 							textbox(_("Tpk Install Info - Install ERROR"), _(log), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 2);
 						}
 						textbox(_("Message"), _("Some plugins needs restart.\nIf the plugin is not active\nreboot the box."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
@@ -236,16 +274,14 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 				char* log = NULL;
 				if(tpkremove(mbox->param, 0, 0) == 0)
 				{
-					log = readfiletomem(TPKLOG, 0);
-					if(log == NULL) log = ostrcat("Remove success", NULL, 0, 0);
+					log = gettpklog(NULL, 2);
 					textbox(_("Tpk Remove Info - Remove OK"), _(log), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 2);
 					//del plugin from memory if Titanname is defined in plugin control file
 					if(mbox->param1 != NULL && mbox->param1[0] != '*') delplugin(mbox->param1);
 				}
 				else
 				{
-					log = readfiletomem(TPKLOG, 0);
-					if(log == NULL) log = ostrcat("Remove error", NULL, 0, 0);
+					log = gettpklog(NULL, 3);
 					textbox(_("Tpk Remove Info - Remove ERROR"), _(log), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 2);
 				}
 				textbox(_("Message"), _("Some plugins needs restart.\nIf the plugin is not active\nreboot the box."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
@@ -329,9 +365,8 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 						free(tmpstr); tmpstr = NULL;
 					}
 	
-					log = readfiletomem(TPKLOG, 0);
-					if(log == NULL && ret != 0) log = ostrcat("Install error", NULL, 0, 0);
-					if(log == NULL && ret == 0) log = ostrcat("Install success", NULL, 0, 0);
+					if(ret != 0) log = gettpklog(installpath, 1);
+					if(ret == 0) log = gettpklog(installpath, 0);
 					textbox(_(text2), log, "EXIT", getrcconfigint("rcexit", NULL), "OK", getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
 					free(log); log = NULL;
 					unlink(TPKLOG);
