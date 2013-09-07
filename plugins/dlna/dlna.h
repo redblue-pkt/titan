@@ -252,16 +252,22 @@ void screendlna()
 
 	dlnasetdefault(node);
 	
-	if(file_exist("/var/swap/etc/minidlna.conf") == 1)
+	if(file_exist("/var/etc/minidlna.conf") == 1)
 	{
-		dlnastop = "/var/swap/titanplugins/dlna/dlna.sh stop /var/swap/etc/minidlna.conf";
-		dlnastart = "/var/swap/titanplugins/dlna/dlna.sh start /var/swap/etc/minidlna.conf";
+		dlnastop = "/var/usr/local/share/titan/plugins/dlna/dlna.sh stop /var/etc/minidlna.conf";
+		dlnastart = "/var/usr/local/share/titan/plugins/dlna/dlna.sh start /var/etc/minidlna.conf";
+		dlnaconfig = "/var/swap/etc/minidlna.conf";	
+	}
+	else if(file_exist("/var/swap/etc/minidlna.conf") == 1)
+	{
+		dlnastop = "/var/swap/usr/local/share/titan/plugins/dlna/dlna.sh stop /var/swap/etc/minidlna.conf";
+		dlnastart = "/var/swap/usr/local/share/titan/plugins/dlna/dlna.sh start /var/swap/etc/minidlna.conf";
 		dlnaconfig = "/var/swap/etc/minidlna.conf";	
 	}
 	else
 	{
-		dlnastop = "/mnt/swapextensions/titanplugins/dlna/dlna.sh stop /mnt/swapextensions/etc/minidlna.conf";
-		dlnastart = "/mnt/swapextensions/titanplugins/dlna/dlna.sh start /mnt/swapextensions/etc/minidlna.conf";
+		dlnastop = "/mnt/swapextensions/usr/local/share/titan/plugins/dlna/dlna.sh stop /mnt/swapextensions/etc/minidlna.conf";
+		dlnastart = "/mnt/swapextensions/usr/local/share/titan/plugins/dlna/dlna.sh start /mnt/swapextensions/etc/minidlna.conf";
 		dlnaconfig = "/mnt/swapextensions/etc/minidlna.conf";	
 	}
 	
