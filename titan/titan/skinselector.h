@@ -27,7 +27,7 @@ void screenskinselect(void)
 	char *tmpstr = NULL, *token, *saveptr, *cur_skin=getconfig("skinfile",NULL), *skinpaths;
 
 	if(getconfig("skins", NULL) == NULL)
-		skinpaths=strdup("/var/swap/skin;/mnt/swapextension/skin;/var/skin");
+		skinpaths=strdup("/var/swap/usr/local/share/titan/skin;/mnt/swapextension/usr/local/share/titan/skin;/var/usr/local/share/titan/skin");
 	else
 		skinpaths=strdup(getconfig("skins", NULL));
 
