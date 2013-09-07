@@ -602,7 +602,7 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 	}
 	else
 	{
-		if(file_exist("/var/swap/etc/.codecpack"))
+		if(file_exist("/mnt/swapextensions/etc/.codecpack"))
 		{
 			addmenulist(&mlist, "Search on Kinox", NULL, NULL, 0, 0);
 			addmenulist(&mlist, "Search on Movie4k", NULL, NULL, 0, 0);
