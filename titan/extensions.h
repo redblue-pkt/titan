@@ -96,13 +96,13 @@ char* gettpklog(char* installpath, int flag)
 	}
 	
 	if(flag == 0)
-		tmpstr = ostrcat(tmpstr, _("Install success"), 0, 0);
+		tmpstr = ostrcat(tmpstr, _("Install success"), 1, 0);
 	if(flag == 1)
-		tmpstr = ostrcat(tmpstr, _("Install error"), 0, 0);
+		tmpstr = ostrcat(tmpstr, _("Install error"), 1, 0);
 	if(flag == 2)
-		tmpstr = ostrcat(tmpstr, _("Remove success"), 0, 0);
+		tmpstr = ostrcat(tmpstr, _("Remove success"), 1, 0);
 	if(flag == 3)
-		tmpstr = ostrcat(tmpstr, _("Remove error"), 0, 0);
+		tmpstr = ostrcat(tmpstr, _("Remove error"), 1, 0);
 		
 	if(installpath == NULL || ostrcmp("/var/swap", installpath) == 0)
 		sync();
