@@ -252,12 +252,6 @@ void screendlna()
 
 	dlnasetdefault(node);
 	
-	if(file_exist("/var/etc/minidlna.conf") == 1)
-	{
-		dlnastop = "/var/titanplugins/dlna/dlna.sh stop /var/etc/minidlna.conf";
-		dlnastart = "/var/titanplugins/dlna/dlna.sh start /var/etc/minidlna.conf";
-		dlnaconfig = "/var/etc/minidlna.conf";
-	}
 	if(file_exist("/var/swap/etc/minidlna.conf") == 1)
 	{
 		dlnastop = "/var/swap/titanplugins/dlna/dlna.sh stop /var/swap/etc/minidlna.conf";
