@@ -1788,7 +1788,7 @@ int tpkchangeinstallpath(char* file, char* installpath)
 	{
 		if(buf[i] == NULL) continue;
 		if(noinstpath == 0) buf[i] = string_replace("/_path_", installpath, buf[i], 1);
-		if(ostrstr(buf[i], "/var/swap#") == buf[i]) continue;	
+		if(ostrstr(buf[i], "/var/swap#") == buf[i]) continue; //don't touch /var/swap	
 		ret = fprintf(fd, "%s", buf[i]);
 		if(ret < 0)
 		{
