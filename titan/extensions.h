@@ -144,7 +144,7 @@ char* getinstallpath(char* path, char* size)
 	
 	if(path == NULL || path[0] == '*' || ostrstr(path, "/var/swap") != NULL)
 	{
-		if(file_exist("/tmp/.swapextensions") == 1)
+		if(file_exist("/tmp/.swapextensionsdev") == 1)
 		{
 			if(tpkchecksize(NULL, "/var/swap", isize) == 0)
 			{
