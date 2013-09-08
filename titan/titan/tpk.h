@@ -1726,11 +1726,11 @@ end:
 
 int tpkchangeinstallpath(char* file, char* installpath)
 {
-	int ret = 0, count = 0, i = 0;
+	int ret = 0, count = 0, i = 0, noinstpath = 0;
 	FILE *fd = NULL;
 	char* fileline = NULL;
 	
-	if(installpath == NULL || installpath[0] == '*') return 0;
+	if(installpath == NULL || installpath[0] == '*') noinstpath = 1;
 
 	fileline = calloc(1, MINMALLOC);
 	if(fileline == NULL)
@@ -1787,7 +1787,8 @@ int tpkchangeinstallpath(char* file, char* installpath)
 	for(i = 0; i < count; i++)
 	{
 		if(buf[i] == NULL) continue;
-		buf[i] = string_replace("/_path_", installpath, buf[i], 1);	
+		if(noinstpath == 0) buf[i] = string_replace("/_path_", installpath, buf[i], 1);
+		if(ostrstr(buf[i], "/var/swap#") == buf[i]) continue;	
 		ret = fprintf(fd, "%s", buf[i]);
 		if(ret < 0)
 		{
