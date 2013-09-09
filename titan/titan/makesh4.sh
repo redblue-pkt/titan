@@ -98,7 +98,7 @@ echo "[titan]--------------------------------------------------------"
 
 rm -rf "$HOME"/flashimg/source.titan/skin
 mkdir "$HOME"/flashimg/source.titan/skin	
-svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source.sh4/titanskins_default/var/usr/local/share/titan/skin/default "$HOME"/flashimg/source.titan/skin/default
+svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source/skins_default/_path_/usr/local/share/titan/skin/default "$HOME"/flashimg/source.titan/skin/default
 
 echo "[titan]--------------------------------------------------------"
 echo "[titan] get skin done"
@@ -108,7 +108,7 @@ echo "[titan]--------------------------------------------------------"
 echo "[titan] get settings"
 echo "[titan]--------------------------------------------------------"
 rm -rf "$HOME"/flashimg/source.titan/settings.svn
-svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source.sh4/titansettings_default_sat_1_0/mnt/settings "$HOME"/flashimg/source.titan/settings.svn
+svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source/settings_default_sat_1_0/mnt/settings "$HOME"/flashimg/source.titan/settings.svn
 sort -u "$HOME"/flashimg/source.titan/settings.svn/channel > "$HOME"/flashimg/source.titan/settings.svn/channel.sort
 mv -f "$HOME"/flashimg/source.titan/settings.svn/channel.sort "$HOME"/flashimg/source.titan/settings.svn/channel
 sed s/"^ *"// -i "$HOME"/flashimg/source.titan/settings.svn/channel
