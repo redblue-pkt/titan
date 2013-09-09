@@ -143,7 +143,7 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 	hid = getconfigint("tithek_hid_xxx", NULL);
 	if(node->flag == 1000 && hid == 1)
 		skip = 1;
-	else if((node->flag == 9996 || node->flag == 9997 || node->flag == 9998 || node->flag == 9999) && !file_exist("/mnt/swapextensions/etc/.codecpack"))
+	else if((node->flag == 9996 || node->flag == 9997 || node->flag == 9998 || node->flag == 9999) && !file_exist("/mnt/swapextensions/etc/.codecpack") && !file_exist("/var/swap/etc/.codecpack") && !file_exist("/var/etc/.codecpack"))
 		skip = 1;
 	else if(node->flag == 16 && pay == 0)
 		skip = 1;
@@ -1241,7 +1241,7 @@ printf("sub 22\n");
 //						addmenulist(&mlist, "File Caching Playback (10MB / 120s)", NULL, NULL, 0, 0);
 //						addmenulist(&mlist, "File Caching Playback (20MB / 240s)", NULL, NULL, 0, 0);
 //						addmenulist(&mlist, "File Caching Playback (30MB / 360s)", NULL, NULL, 0, 0);
-						if(file_exist("/mnt/swapextensions/etc/.codecpack"))
+						if(status.expertmodus >= 11 || file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack"))
 						{
 							addmenulist(&mlist, "Download Full File", NULL, NULL, 0, 0);
 							addmenulist(&mlist, "Download Full File (background)", NULL, NULL, 0, 0);

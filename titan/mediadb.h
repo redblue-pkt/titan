@@ -2595,7 +2595,7 @@ int findfiles(char* dirname, int type, int onlydir, int onlycount, int first)
 		{
 			//TODO: add extensions
 			
-			if((status.expertmodus > 0) || (file_exist("/mnt/swapextensions/etc/.codecpack")))
+			if(status.expertmodus >= 11 || file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack"))
 			{
 				if(!filelistflt(".avi .dat .divx .flv .mkv .m4v .mp4 .mov .mpg .mpeg .mts .m2ts .trp .ts .vdr .vob .wmv .rm", entry->d_name)) //video
 				{				
