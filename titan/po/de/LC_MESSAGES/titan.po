@@ -765,6 +765,9 @@ msgstr "Vorsicht eine Aufnahme läuft.\nSie können den Ausschalttimer benutzen um
 msgid "Found running record\nor record is starting in next time.\nReally shutdown ?"
 msgstr "Vorsicht eine Aufnahme läuft, oder startet bald.\nWollen sie wirklich Ausschalten?"
 
+msgid "Found running download\nReally shutdown ?"
+msgstr "Vorsicht ein Download läuft.\nWollen sie wirklich Ausschalten?"
+
 msgid "French"
 msgstr "Französisch"
 
