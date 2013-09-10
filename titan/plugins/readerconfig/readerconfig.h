@@ -299,6 +299,53 @@ void screenoscamconfig(struct oscam* node, char* file)
 	clearscreen(oscamconfig);
 }
 
+char* getoscamconfig()
+{
+	int count = 0;
+	char* tmpstr = NULL;
+	struct menulist* mlist = NULL, *mbox = NULL, *tmpmlist = NULL;
+	
+	if(file_exist("/var/swap/keys/oscam.server"))
+	{
+		tmpmlist = addmenulist(&mlist, "Use config from Flash (permanent)", NULL, NULL, 0, 0);
+		changemenulistparam(tmpmlist, "/mnt/swapextensions", NULL, NULL, NULL);
+		free(tmpstr); tmpstr = NULL;
+		tmpstr = ostrcat("/mnt/swapextensions", NULL, 0, 0);
+		count++;
+	}
+	
+	if(file_exist("/var/keys/oscam.server"))
+	{
+		tmpmlist = addmenulist(&mlist, "Use config from Flash (temporary)", NULL, NULL, 0, 0);
+		changemenulistparam(tmpmlist, "/var", NULL, NULL, NULL);
+		free(tmpstr); tmpstr = NULL;
+		tmpstr = ostrcat("/var", NULL, 0, 0);
+		count++;
+	}
+	
+	if(file_exist("/var/swap/keys/oscam.server"))
+	{
+		tmpmlist = addmenulist(&mlist, "Use config from Stick or HDD", NULL, NULL, 0, 0);
+		changemenulistparam(tmpmlist, "/var/swap", NULL, NULL, NULL);
+		free(tmpstr); tmpstr = NULL;
+		tmpstr = ostrcat("/var/swap", NULL, 0, 0);
+		count++;
+	}
+	
+	if(count > 1)
+	{
+		free(tmpstr); tmpstr = NULL;
+		mbox = menulistbox(mlist, NULL, "Choice Config File", NULL, NULL, 0, 0);
+		if(mbox != NULL)
+			tmpstr = ostrcat(mbox->param, NULL, 0, 0);
+	}
+	else
+		textbox(_("Message"), _("No config file found."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
+	
+	freemenulist(mlist, 0); mlist = NULL;
+	return tmpstr;
+}
+
 void screenoscam(char* cfgfile)
 {
 	int rcret = -1;
@@ -311,11 +358,9 @@ void screenoscam(char* cfgfile)
 	char* tmpstr = NULL, *file = NULL, *cmd = NULL;
 
 	if(cfgfile == NULL)
-	{	
-		if(file_exist("/var/swap/keys/oscam.server"))
-			file = ostrcat("/var/swap/keys/oscam.server", NULL, 0, 0);
-		else if(file_exist("/var/keys/oscam.server"))
-			file = ostrcat("/var/keys/oscam.server", NULL, 0, 0);
+	{
+		file = getoscamconfig();	
+		if(file == NULL) return;
 	}
 	else
 	{
