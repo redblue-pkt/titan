@@ -4074,3 +4074,8 @@ msgstr "Flash (temporär)"
 msgid "Stick or HDD"
 msgstr "Stick oder HDD"
 
+msgid "yes (Text in %)"
+msgstr "Ja (Text in %)"
+
+msgid "yes (Text in MB)"
+msgstr "Ja (Text in MB)"
