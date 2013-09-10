@@ -936,7 +936,7 @@ char* servicecheckret(int ret, int flag)
 		switch(ret)
 		{
 			case 1:
-				tmpstr = ostrcat(_("Can't find a Tuner.\nAlle Tuners in use or no Tuner defined."), NULL, 0, 0);
+				tmpstr = ostrcat(_("Can't find a Tuner.\nAll Tuners in use or no Tuner defined."), NULL, 0, 0);
 				break;
 			case 2:
 				tmpstr = ostrcat(_("Tuning to Channel failed!"), NULL, 0, 0);

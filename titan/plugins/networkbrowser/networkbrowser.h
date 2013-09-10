@@ -1326,7 +1326,7 @@ void screennetworkbrowser_addshare(struct networkbrowser* node, int newnode)
 	struct skin* listbox = getscreennode(net_addshare, "listbox");
 	struct skin* tmp = NULL;
 	struct skin* skin_sharename = getscreennode(net_addshare, "skin_sharename");
-	struct skin* skin_ip = getscreennode(net_addshare, "skin_ipaddresse");
+	struct skin* skin_ip = getscreennode(net_addshare, "skin_ipaddress");
 	struct skin* skin_sharedir = getscreennode(net_addshare, "skin_sharedir");
 	struct skin* skin_username = getscreennode(net_addshare, "skin_username");
 	struct skin* skin_password = getscreennode(net_addshare, "skin_password");

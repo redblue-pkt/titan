@@ -57,7 +57,7 @@ void callmon_main()
 	struct skin* callmon_main = getscreen("callmon_main");
 	struct skin* listbox = getscreennode(callmon_main, "listbox");
 	struct skin* fritzversion = getscreennode(callmon_main, "fritzversion");
-	struct skin* ipaddresse = getscreennode(callmon_main, "ipaddresse");
+	struct skin* ipaddress = getscreennode(callmon_main, "ipaddress");
 	struct skin* phonebook = getscreennode(callmon_main, "phonebook");
 	struct skin* userid = getscreennode(callmon_main, "userid");
 	struct skin* passwort = getscreennode(callmon_main, "passwort");
@@ -81,9 +81,9 @@ void callmon_main()
 	changemask(userid, "abcdefghijklmnopqrstuvwxyz");
 	changeinput(userid, getlist(myconfig, "FritzUser", NULL));
 	
-	changemask(ipaddresse, "000.000.000.000");
+	changemask(ipaddress, "000.000.000.000");
 	tmpstr = fixip(getlist(myconfig, "FRITZBOXIP", NULL), 0);
-	changeinput(ipaddresse, tmpstr);
+	changeinput(ipaddress, tmpstr);
 	free(tmpstr); tmpstr = NULL;
 	
 	changemask(rufnummer1, "0000000000000");
@@ -176,7 +176,7 @@ void callmon_main()
 			system(tmpstr);
 			free(tmpstr); tmpstr = NULL;
 			
-			tmpstr = fixip(ipaddresse->ret, 1);
+			tmpstr = fixip(ipaddress->ret, 1);
 			addlist(myconfig, "FRITZBOXIP", tmpstr);
 			free(tmpstr); tmpstr = NULL;
 			addlist(myconfig, "FritzVersion", fritzversion->ret);

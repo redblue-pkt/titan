@@ -28,7 +28,7 @@
 	<node parent="listbox" name="skin_sharename" text="sharename" type="inputbox" valign="middle" width="100%" height="35">
 	<node parent="listbox" name="skin_usedns" text="usedns" type="choicebox" valign="middle" width="100%" height="35">
 	<node parent="listbox" name="skin_dns" text="dnsaddresse" type="inputbox" valign="middle" width="100%" height="35">
-	<node parent="listbox" name="skin_ipaddresse" text="ipaddresse" type="inputboxnum" valign="middle" width="100%" height="35">
+	<node parent="listbox" name="skin_ipaddress" text="ipaddress" type="inputboxnum" valign="middle" width="100%" height="35">
 	<node parent="listbox" name="skin_ftpport" text="ftpport" type="inputboxnum" valign="middle" width="100%" height="35">
 	<node parent="listbox" name="skin_sharedir" text="sharedir" type="inputbox" valign="middle" width="100%" height="35">
 	<node parent="listbox" name="skin_userauth" text="userauth" type="choicebox" valign="middle" width="100%" height="35">

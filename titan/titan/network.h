@@ -337,9 +337,9 @@ void screennetwork_restart(struct inetwork *net, int flag)
 	}
 }
 
-void nethidden(struct skin* ipaddresse, struct skin* netmask, struct skin* gateway, struct skin* dnsserver1, struct skin* dnsserver2, int type)
+void nethidden(struct skin* ipaddress, struct skin* netmask, struct skin* gateway, struct skin* dnsserver1, struct skin* dnsserver2, int type)
 {
-	ipaddresse->hidden = type;
+	ipaddress->hidden = type;
 	netmask->hidden = type;
 	gateway->hidden = type;
 	dnsserver1->hidden = type;
@@ -352,7 +352,7 @@ void screennetwork_adapterext(int mode, char* interface)
 	struct skin* network = getscreen("network");
 	struct skin* listbox = getscreennode(network, "listbox");
 	struct skin* type = getscreennode(network, "type");
-	struct skin* ipaddresse = getscreennode(network, "ipaddresse");
+	struct skin* ipaddress = getscreennode(network, "ipaddress");
 	struct skin* netmask = getscreennode(network, "netmask");
 	struct skin* gateway = getscreennode(network, "gateway");
 	struct skin* dnsserver1 = getscreennode(network, "dnsserver1");
@@ -364,15 +364,15 @@ void screennetwork_adapterext(int mode, char* interface)
 	if(net == NULL)
 		return;
 
-	char* tmp_ipaddresse = ostrcat(net->ip, NULL, 0, 0);
+	char* tmp_ipaddress = ostrcat(net->ip, NULL, 0, 0);
 	char* tmp_netmask = ostrcat(net->netmask, NULL, 0, 0);;
 	char* tmp_gateway = ostrcat(status.gateway, NULL, 0, 0);;
 	char* tmp_dnsserver1 = ostrcat(status.dnsserver1, NULL, 0, 0);;
 	char* tmp_dnsserver2 = ostrcat(status.dnsserver2, NULL, 0, 0);;
 	int tmp_type = net->type;
 
-	changemask(ipaddresse, "000.000.000.000");
-	changeinput(ipaddresse, net->ip);
+	changemask(ipaddress, "000.000.000.000");
+	changeinput(ipaddress, net->ip);
 
 	changemask(netmask, "000.000.000.000");
 	changeinput(netmask, net->netmask);
@@ -393,17 +393,17 @@ void screennetwork_adapterext(int mode, char* interface)
 	if(net->type == 1)
 	{
 		setchoiceboxselection(type, "1");
-		nethidden(ipaddresse, netmask, gateway, dnsserver1, dnsserver2, YES);
+		nethidden(ipaddress, netmask, gateway, dnsserver1, dnsserver2, YES);
 	}
 	else if(net->type == 2)
 	{
 		setchoiceboxselection(type, "2");
-		nethidden(ipaddresse, netmask, gateway, dnsserver1, dnsserver2, YES);
+		nethidden(ipaddress, netmask, gateway, dnsserver1, dnsserver2, YES);
 	}
 	else
 	{
 		setchoiceboxselection(type, "0");
-		nethidden(ipaddresse, netmask, gateway, dnsserver1, dnsserver2, NO);
+		nethidden(ipaddress, netmask, gateway, dnsserver1, dnsserver2, NO);
 	}
 
 	listbox->aktline = 1;
@@ -437,17 +437,17 @@ void screennetwork_adapterext(int mode, char* interface)
 			if(ostrcmp(listbox->select->name, "type") == 0)
 			{
 				if(atoi(listbox->select->ret) == 0)
-					nethidden(ipaddresse, netmask, gateway, dnsserver1, dnsserver2, NO);
+					nethidden(ipaddress, netmask, gateway, dnsserver1, dnsserver2, NO);
 				else
-					nethidden(ipaddresse, netmask, gateway, dnsserver1, dnsserver2, YES);
+					nethidden(ipaddress, netmask, gateway, dnsserver1, dnsserver2, YES);
 
 				drawscreen(network, 0, 0);
 				tmp_type = atoi(listbox->select->ret);
 			}
-			else if(ostrcmp(listbox->select->name, "ipaddresse") == 0)
+			else if(ostrcmp(listbox->select->name, "ipaddress") == 0)
 			{
-				free(tmp_ipaddresse);
-				tmp_ipaddresse = ostrcat(listbox->select->ret, NULL, 0, 0);
+				free(tmp_ipaddress);
+				tmp_ipaddress = ostrcat(listbox->select->ret, NULL, 0, 0);
 			}
 			else if(ostrcmp(listbox->select->name, "netmask") == 0)
 			{
@@ -476,16 +476,16 @@ void screennetwork_adapterext(int mode, char* interface)
 	{
 		debug(50, "save settings");
 		debug(50, "type: %i", tmp_type);
-		debug(50, "ipaddresse: %s", tmp_ipaddresse);
+		debug(50, "ipaddress: %s", tmp_ipaddress);
 		debug(50, "netmask: %s", tmp_netmask);
 		debug(50, "gateway: %s", tmp_gateway);
 		debug(50, "dnsserver1: %s", tmp_dnsserver1);
 		debug(50, "dnsserver2: %s", tmp_dnsserver2);
 
-		if(ostrcmp(net->ip, tmp_ipaddresse) != 0)
+		if(ostrcmp(net->ip, tmp_ipaddress) != 0)
 		{
 			free(net->ip);
-			net->ip = ostrcat(tmp_ipaddresse, NULL, 0, 0);
+			net->ip = ostrcat(tmp_ipaddress, NULL, 0, 0);
 		}
 		if(ostrcmp(net->netmask, tmp_netmask) != 0)
 		{
@@ -522,7 +522,7 @@ void screennetwork_adapterext(int mode, char* interface)
 		screennetwork_restart(net, 1);
 	}
 
-	free(tmp_ipaddresse);
+	free(tmp_ipaddress);
 	free(tmp_netmask);
 	free(tmp_gateway);
 	free(tmp_dnsserver1);
