@@ -4079,3 +4079,18 @@ msgstr "Ja (Text in %)"
 
 msgid "yes (Text in MB)"
 msgstr "Ja (Text in MB)"
+
+msgid "Use config from Flash (permanent)"
+msgstr "Config vom Flash (permanent) verwenden"
+
+msgid "Use config from Flash (temporary)"
+msgstr "Config vom Flash (temporär) verwenden"
+
+msgid "Use config from Stick or HDD"
+msgstr "Config vom Stick / HDD verwenden"
+
+msgid "Choice Config File"
+msgstr "Config File wählen"
+
+msgid "No config file found."
+msgstr "Es wurde kein Config File gefunden."
