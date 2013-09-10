@@ -533,7 +533,7 @@ void checkrectimer(struct stimerthread* self)
 			else
 				node->status = 3;
 			free(node->errstr);
-			node->errstr = ostrcat(_("not started akttime greater timer endtime"), NULL, 0, 0);
+			node->errstr = ostrcat(_("not started akttime higher timer endtime"), NULL, 0, 0);
 			status.writerectimer = 1;
 		}
 		//for epgscan

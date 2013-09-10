@@ -170,7 +170,7 @@ void screenbgdownload(int flag)
 				struct download* dnode = bgdownload[nr];
 				if(dnode != NULL && dnode->ret == -1)
 				{
-					if(textbox(_("Message"), _("Realy stop download ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+					if(textbox(_("Message"), _("Really stop download ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 						delbgdownload(nr, 1);
 					drawscreen(screenbgdownload, 0, 0);
 				}

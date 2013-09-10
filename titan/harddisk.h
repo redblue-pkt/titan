@@ -345,7 +345,7 @@ void screenconfigurehdd(char* dev)
 					ret = rmdir(path);
 					if(ret < 0)
 					{
-						if(textbox("Message", _("Directory has content\nRealy delete directory and content?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+						if(textbox("Message", _("Directory has content\nReally delete directory and content?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 						{
 							drawscreen(load, 0, 0);
 							ret = -1;

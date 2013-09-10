@@ -248,7 +248,7 @@ int addinetworkall(struct stimerthread* self)
 
 	for(tmpifa = ifa; tmpifa != NULL; tmpifa = tmpifa->ifa_next)
 	{
-		char* tmp_ipaddresse = NULL;
+		char* tmp_ipaddress = NULL;
 		char* tmp_netmask = NULL;
 		char* tmp_mac = NULL;
 		char* tmp_broadcast = NULL;
@@ -275,10 +275,10 @@ int addinetworkall(struct stimerthread* self)
 		if(strlen(buf) != 0)
 		{
 			tmpstr = fixip(buf, 0);
-			tmp_ipaddresse = string_newline(ostrcat(tmpstr, NULL, 1, 0));
+			tmp_ipaddress = string_newline(ostrcat(tmpstr, NULL, 1, 0));
 		}
 		else
-			tmp_ipaddresse = ostrcat(tmp_ipaddresse, "000.000.000.000", 1, 0);
+			tmp_ipaddress = ostrcat(tmp_ipaddress, "000.000.000.000", 1, 0);
 
 		//NETMASK
 		memset(buf, 0, MINMALLOC);
@@ -367,12 +367,12 @@ int addinetworkall(struct stimerthread* self)
 		if(tmpinetwork != NULL)
 		{
 			if(self == NULL)
-				node = changeinetwork(tmp_device, tmp_ipaddresse, tmp_netmask, tmp_mac, tmp_broadcast, tmp_type, tmpinetwork, 0);
+				node = changeinetwork(tmp_device, tmp_ipaddress, tmp_netmask, tmp_mac, tmp_broadcast, tmp_type, tmpinetwork, 0);
 			else
-				node = changeinetwork(tmp_device, tmp_ipaddresse, tmp_netmask, tmp_mac, tmp_broadcast, tmp_type, tmpinetwork, 1);
+				node = changeinetwork(tmp_device, tmp_ipaddress, tmp_netmask, tmp_mac, tmp_broadcast, tmp_type, tmpinetwork, 1);
 		}
 		else
-			node = addinetwork(tmp_device, tmp_ipaddresse, tmp_netmask, tmp_mac, tmp_broadcast, tmp_type, node);
+			node = addinetwork(tmp_device, tmp_ipaddress, tmp_netmask, tmp_mac, tmp_broadcast, tmp_type, node);
 	}
 
 	freeifaddrs(ifa); ifa = NULL;

@@ -140,7 +140,7 @@ msgstr "immer"
 msgid "all"
 msgstr "alle"
 
-msgid "All new channel added!"
+msgid "All new channels added!"
 msgstr "Alle neuen Kanäle gespeichert!"
 
 msgid "ALL"
@@ -347,7 +347,7 @@ msgstr "Aktueller Sender kann nicht gelöscht werden"
 msgid "Can't restore settings"
 msgstr "Wiederherstellung kann nicht durchgeführt werden"
 
-msgid "Can't find a Tuner.\nAlle Tuners in use or no Tuner defined."
+msgid "Can't find a Tuner.\nAll Tuners in use or no Tuner defined."
 msgstr "Kein freier Tuner gefunden"
 
 msgid "Can't open frontend dev or Frontend Type unknown!"
@@ -554,7 +554,7 @@ msgstr "DNS-Server 1"
 msgid "dnsserver 2"
 msgstr "DNS-Server 2"
 
-msgid "Do you really want to erase all datas and backups from Swap?\n"
+msgid "Do you really want to erase all data and backups from Swap?\n"
 "The Box will reboot and the erase will be started!"
 msgstr "Internen Swap Speicher löschen und Werkseinstellung durchführen?\n"
 "Box neu starten und Löschvorgang ausführen "
@@ -767,6 +767,9 @@ msgstr "Vorsicht eine Aufnahme läuft, oder startet bald.\nWollen sie wirklich Au
 
 msgid "Found running download\nReally shutdown ?"
 msgstr "Vorsicht ein Download läuft.\nWollen sie wirklich Ausschalten?"
+
+msgid "Really stop download ?"
+msgstr "Download wirklich beenden?"
 
 msgid "French"
 msgstr "Französisch"
@@ -1241,7 +1244,7 @@ msgid "No TPK found in /tmp"
 msgstr "Kein TPK gefunden in /tmp"
 
 msgid "No skinconfig found in skin.\n"
-"Can't chage to selected skin."
+"Can't change to selected skin."
 msgstr "Keine Skinconfiguration gefunden.\n"
 "Kann Skin nicht auswählen"
 
@@ -1563,13 +1566,13 @@ msgstr "Zufällig-An"
 msgid "rcreboot"
 msgstr "RC Neustart"
 
-msgid "Realy Delete ?"
+msgid "Really Delete ?"
 msgstr "wirklich löschen?"
 
-msgid "Realy restore default settings ?"
+msgid "Really restore default settings ?"
 msgstr "Soll auf Werkseinstellung zurücksetzt werden?"
 
-msgid "Receiver now reboot !!!"
+msgid "Receiver reboots now !!!"
 msgstr "Receiver startet jetzt neu!"
 
 msgid "record"
@@ -2772,10 +2775,10 @@ msgstr "Feste Abschaltzeit"
 msgid "Start playback"
 msgstr "Wiedergabe starten?"
 
-msgid "not started akttime greater timer endtime"
+msgid "not started akttime higher timer endtime"
 msgstr "nicht gestartet, Endzeit bereits vergangen"
 
-msgid "Does you want delete all unused Bouquetentrys?"
+msgid "Do you want delete all unused Bouquetentrys?"
 msgstr "Wollen Sie ungenutzte Bouqueteinträge löschen?"
 
 msgid "EPG Search"
@@ -3987,7 +3990,7 @@ msgstr "Karte gefunden"
 msgid "card not present"
 msgstr "Keine Karte gefunden"
 
-msgid "Directory has content\nRealy delete directory and content?"
+msgid "Directory has content\nReally delete directory and content?"
 msgstr "Verzeichnis hat einen Inhalt\nWirklich löschen?"
 
 msgid "Hid XXX Streams"
