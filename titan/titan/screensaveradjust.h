@@ -60,11 +60,11 @@ void screenscreensaveradjust()
 	}
 	
 	//TODO: use config instread fix path
-	if(file_exist("/var/swap/saver/"))
+	if(file_exist("/var/swap/usr/local/share/titan/saver"))
 	{
 		char* path = NULL;
 		delmarkedscreennodes(screensaveradjust, FILELISTDELMARK);
-		changeinput(filelist, "/var/swap/saver");
+		changeinput(filelist, "/var/swap/usr/local/share/titan/saver");
 		createfilelist(screensaveradjust, filelist, 0);
 		
 		node = filelist;
@@ -72,7 +72,7 @@ void screenscreensaveradjust()
 		{
 			if(node->del == FILELISTDELMARK && node->text != NULL && ostrcmp(node->text, "..") != 0)
 			{
-				path = ostrcat("/var/swap/saver/" , node->text, 0, 0);
+				path = ostrcat("/var/swap/usr/local/share/titan/saver" , node->text, 0, 0);
 				addchoicebox(screensaver_type, path, node->text);
 				free(path); path = NULL;
 			}
@@ -80,11 +80,11 @@ void screenscreensaveradjust()
 		}
 	}
 	//TODO: use config instread fix path
-	if(file_exist("/mnt/swapextensions/saver/"))
+	if(file_exist("/mnt/swapextensions/usr/local/share/titan/saver"))
 	{
 		char* path = NULL;
 		delmarkedscreennodes(screensaveradjust, FILELISTDELMARK);
-		changeinput(filelist, "/mnt/swapextensions/saver");
+		changeinput(filelist, "/mnt/swapextensions/usr/local/share/titan/saver");
 		createfilelist(screensaveradjust, filelist, 0);
 		
 		node = filelist;
@@ -92,7 +92,7 @@ void screenscreensaveradjust()
 		{
 			if(node->del == FILELISTDELMARK && node->text != NULL && ostrcmp(node->text, "..") != 0)
 			{
-				path = ostrcat("/mnt/swapextensions/saver/" , node->text, 0, 0);
+				path = ostrcat("/mnt/swapextensions/usr/local/share/titan/saver" , node->text, 0, 0);
 				addchoicebox(screensaver_type, path, node->text);
 				free(path); path = NULL;
 			}
@@ -100,11 +100,11 @@ void screenscreensaveradjust()
 		}
 	}
 	//TODO: use config instread fix path
-	if(file_exist("/var/saver/"))
+	if(file_exist("/var/usr/local/share/titan/saver"))
 	{
 		char* path = NULL;
 		delmarkedscreennodes(screensaveradjust, FILELISTDELMARK);
-		changeinput(filelist, "/var/saver");
+		changeinput(filelist, "/var/usr/local/share/titan/saver");
 		createfilelist(screensaveradjust, filelist, 0);
 		
 		node = filelist;
@@ -112,7 +112,7 @@ void screenscreensaveradjust()
 		{
 			if(node->del == FILELISTDELMARK && node->text != NULL && ostrcmp(node->text, "..") != 0)
 			{
-				path = ostrcat("/var/saver/" , node->text, 0, 0);
+				path = ostrcat("/var/usr/local/share/titan/saver" , node->text, 0, 0);
 				addchoicebox(screensaver_type, path, node->text);
 				free(path); path = NULL;
 			}
