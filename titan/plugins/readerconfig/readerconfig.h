@@ -355,17 +355,21 @@ void screenoscam(char* cfgfile)
 	
 	struct skin* tmp = NULL;
 	struct oscam* node = NULL;
-	char* tmpstr = NULL, *file = NULL, *cmd = NULL;
+	char* tmpstr = NULL, *file = NULL, *cmd = NULL, *dvbapi = NULL;
 
 	if(cfgfile == NULL)
 	{
-		file = getoscamconfig();	
-		if(file == NULL) return;
+		tmpstr = getoscamconfig();	
+		if(tmpstr == NULL) return;
+		dvbapi = ostrcat(tmpstr, "/keys/oscam.dvbapi", 0, 0);
+		file = ostrcat(tmpstr, "/keys/oscam.server", 0, 0);
+		free(tmpstr), tmpstr = NULL; 
 	}
 	else
 	{
 		cmd = ostrcat("/sbin/emu.sh keydir ", cfgfile, 0, 0);
 		tmpstr = string_newline(command(cmd));
+		dvbapi = ostrcat(tmpstr, "/oscam.dvbapi", 0, 0);
 		file = ostrcat(tmpstr, "/oscam.server", 0, 0);
 		free(cmd), cmd = NULL;
 		free(tmpstr), tmpstr = NULL;
@@ -450,8 +454,43 @@ start:
 				goto start;
 			}
 		}
+		if(rcret == getrcconfigint("rcgreen", NULL))
+		{
+			int ret = 1;
+			
+			tmpstr = ostrcat(dvbapi, ".disable", 0, 0);
+			if(tmpstr != NULL)
+			{
+				if(file_exist(dvbapi) == 1)
+				{
+					ret = rename(dvbapi, tmpstr);
+					free(tmpstr); tmpstr = NULL;
+					tmpstr = ostrcat(tmpstr, _("Oscam dvbapi config disabled !"), 0, 0);
+				}
+				else if(file_exist(tmpstr) == 1)
+				{
+					ret = rename(tmpstr, dvbapi);
+					free(tmpstr); tmpstr = NULL;
+					tmpstr = ostrcat(tmpstr, _("Oscam dvbapi config enabled !"), 0, 0);
+				}
+			}
+			
+			if(ret == 0)
+			{
+				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
+				if(textbox(_("Message"), _("Restart Oscam ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0) == 1)
+				{
+					char* cmd = NULL;
+					cmd = ostrcat("emu.sh restart" , NULL, 0, 0);
+					system(cmd);
+					free(cmd);
+				}			
+			}
+			free(tmpstr); tmpstr = NULL;	
+		}
 	}
 
+  free(dvbapi); dvbapi = NULL;
 	free(file); file = NULL;
 	delmarkedscreennodes(skinoscam, 1);
 	freeoscam();
