@@ -1806,9 +1806,6 @@ msgstr "Suche"
 msgid "scan"
 msgstr "Suche"
 
-msgid "Tunerconfig is not allowed if record"
-msgstr "Während einer Aufnahme ist keine Tunereinstellung möglich"
-
 msgid "Scan Config"
 msgstr "Sendersuchlaufseinstellungen"
 
