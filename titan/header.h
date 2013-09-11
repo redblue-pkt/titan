@@ -382,6 +382,7 @@ void delsat(char *name);
 struct sat* getsatbyorbitalpos(int orbitalpos);
 int movesatdown(struct sat* node);
 int movesatup(struct sat* node);
+int sat2bouquet(int orbitalpos);
 
 //provider.h
 int writeprovider(const char *filename);

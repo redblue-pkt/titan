@@ -38,7 +38,7 @@ int screenlistedit(int list, struct channel* chnode, void* aktlist)
 		cpmode->hidden = YES;
 		protectmode->hidden = YES;
 	}
-	if(list == PROVIDERLIST)
+	if(list == SATLIST || list == PROVIDERLIST)
 		cpmode->hidden = NO;
 	if(list == MAINBOUQUETLIST)
 	{
