@@ -328,9 +328,20 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 	else if(ostrcmp(query, "getsignal") == 0)
 		buf = webgetsignal(fmt);
 	else if(ostrcmp(query, "getmoviefilelist") == 0)
-		buf = webgetfilelist(param, "getmoviefilelist", "delmoviefile", getconfig("rec_streampath", NULL), "*.avi *.dat *.divx *.flv *.mkv *.m4v *.mp4 *.mov *.mpg *.mpeg *.mts *.m2ts *.trp *.ts *.vdr *.vob *.wmv *.rm", 31, fmt);
+	{
+		if(fmt == 0)
+			buf = webgetfilelist(param, "getmoviefilelist", "delmoviefile", getconfig("rec_streampath", NULL), "*.avi *.dat *.divx *.flv *.mkv *.m4v *.mp4 *.mov *.mpg *.mpeg *.mts *.m2ts *.trp *.ts *.vdr *.vob *.wmv *.rm", 31, fmt);
+		else
+			buf = webgetfilelist(param, "getmoviefilelist", "delmoviefile", getconfig("rec_streampath", NULL), "*.avi *.dat *.divx *.flv *.mkv *.m4v *.mp4 *.mov *.mpg *.mpeg *.mts *.m2ts *.trp *.ts *.vdr *.vob *.wmv *.rm *.wav *.mp3", 31, fmt);
+	
+	}
 	else if(ostrcmp(query, "delmoviefile") == 0)
-		buf = webdelfile(param, "getmoviefilelist", "delmoviefile", getconfig("rec_streampath", NULL), "*.avi *.dat *.divx *.flv *.mkv *.m4v *.mp4 *.mov *.mpg *.mpeg *.mts *.m2ts *.trp *.ts *.vdr *.vob *.wmv *.rm", 31, fmt);
+	{
+		if(fmt == 0)
+			buf = webdelfile(param, "getmoviefilelist", "delmoviefile", getconfig("rec_streampath", NULL), "*.avi *.dat *.divx *.flv *.mkv *.m4v *.mp4 *.mov *.mpg *.mpeg *.mts *.m2ts *.trp *.ts *.vdr *.vob *.wmv *.rm", 31, fmt);
+		else
+			buf = webdelfile(param, "getmoviefilelist", "delmoviefile", getconfig("rec_streampath", NULL), "*.avi *.dat *.divx *.flv *.mkv *.m4v *.mp4 *.mov *.mpg *.mpeg *.mts *.m2ts *.trp *.ts *.vdr *.vob *.wmv *.rm *.wav *.mp3", 31, fmt);
+	}
 	else if(ostrcmp(query, "getm3u") == 0)
 	{
 		buf = webgetm3u(param, *connfd, fmt);
