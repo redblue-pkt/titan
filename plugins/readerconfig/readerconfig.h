@@ -305,7 +305,7 @@ char* getoscamconfig()
 	char* tmpstr = NULL;
 	struct menulist* mlist = NULL, *mbox = NULL, *tmpmlist = NULL;
 	
-	if(file_exist("/var/swap/keys/oscam.server"))
+	if(file_exist("/mnt/swapextensions/keys/oscam.server"))
 	{
 		tmpmlist = addmenulist(&mlist, "Use config from Flash (permanent)", NULL, NULL, 0, 0);
 		changemenulistparam(tmpmlist, "/mnt/swapextensions", NULL, NULL, NULL);
