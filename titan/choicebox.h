@@ -82,11 +82,7 @@ int setchoiceboxselection(struct skin* choicebox, char* value)
 
 	choicebox->aktpage = 0;
 
-	if(value == NULL)
-	{
-		err("NULL detect");
-		return 1;
-	}
+	if(value == NULL) return 1;
 
 	if(choicebox->choiceboxvalue != NULL)
 		pos = choicebox->choiceboxvalue;
