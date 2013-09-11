@@ -471,6 +471,64 @@ void freesat()
 	}
 }
 
+int sat2bouquet(int orbitalpos)
+{
+	struct sat* snode = NULL;
+	struct mainbouquet* mnode = NULL;
+	struct channel* chnode = channel;
+	char* tmpstr = NULL;
+	char* path = NULL;
+	
+	snode = getsatbyorbitalpos(orbitalpos);
+	if(snode == NULL) return 1;
+
+	tmpstr = ostrcat(tmpstr, snode->name, 1, 0);
+	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+	tmpstr = ostrcat(tmpstr, oitoa(status.servicetype), 1, 1);
+	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+
+	path = realpath(getconfig("bouquetfile", NULL), NULL);
+	if(path != NULL)
+	{
+		path = dirname(path);
+		path = ostrcat(path, "/bouquets.", 1, 0);
+					
+		path = ostrcat(path, snode->name, 1, 0);
+		if(status.servicetype == 0) path = ostrcat(path, "_tv", 1, 0);
+		if(status.servicetype == 1) path = ostrcat(path, "_radio", 1, 0);
+
+		if(file_exist(path))
+		{
+			free(tmpstr); tmpstr = NULL;
+			free(path); path = NULL;
+			return 1;
+		}
+
+		tmpstr = ostrcat(tmpstr, path, 1, 0);
+		mnode = addmainbouquet(tmpstr, 1, NULL);
+	}
+	free(tmpstr); tmpstr = NULL;
+	free(path); path = NULL;
+
+	if(mnode != NULL)
+	{
+		while(chnode != NULL)
+		{
+			if(chnode->transponder != NULL && chnode->transponder->orbitalpos == orbitalpos && chnode->servicetype == status.servicetype)
+			{
+				tmpstr = ostrcat(tmpstr, oitoa(chnode->serviceid), 1, 1);
+				tmpstr = ostrcat(tmpstr, "#", 1, 0);
+				tmpstr = ostrcat(tmpstr, ollutoa(chnode->transponderid), 1, 1);
+				addbouquet(&mnode->bouquet, tmpstr, status.servicetype, 1, NULL);
+				free(tmpstr); tmpstr = NULL;
+			}
+			chnode = chnode->next;
+		}
+	}
+
+	return 0;
+}
+
 int writesat(const char *filename)
 {
 	FILE *fd = NULL;
