@@ -43,6 +43,8 @@ void screenskinadjust()
 	changeinput(bottomoffset, "0\n10\n20\n30\n40\n50\n60\n70\n80\n90\n100");
 	setchoiceboxselection(bottomoffset, getconfig("fbbottomoffset", NULL));
 
+	//hide picon path, set it fix to /mnt/swapextensions/usr/local/share/titan/picons
+  piconpath->hidden = YES;
   addchoicebox(piconpath, "/mnt/swapextensions/usr/local/share/titan/picons", _("Flash (permanent)"));
 	addchoicebox(piconpath, "/var/swap/usr/local/share/titan/picons", _("Stick or HDD"));
 	addchoicebox(piconpath, "/var/usr/local/share/titan/picons", _("Flash (temporary)"));
