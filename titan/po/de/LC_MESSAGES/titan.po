@@ -2650,7 +2650,7 @@ msgid "south"
 msgstr "Süd"
 
 msgid "browser"
-msgstr "Browser"
+msgstr "Internetbrowser"
 
 msgid "swaptool"
 msgstr "Swap-Tools"
@@ -3001,7 +3001,7 @@ msgid "News"
 msgstr "Neuigkeiten"
 
 msgid "BROWSER"
-msgstr "Browser"
+msgstr "Internetbrowser"
 
 msgid "NEXT"
 msgstr "Weiter"
@@ -3083,6 +3083,9 @@ msgstr "Spiele"
 
 msgid "swapbrowser"
 msgstr "Swap-Internetbrowser"
+
+msgid "browser"
+msgstr "Internetbrowser"
 
 msgid "Extensions..."
 msgstr "Erweiterungen"
