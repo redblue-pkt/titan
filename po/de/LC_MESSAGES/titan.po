@@ -2649,9 +2649,6 @@ msgstr "Nord"
 msgid "south"
 msgstr "Süd"
 
-msgid "browser"
-msgstr "Internetbrowser"
-
 msgid "swaptool"
 msgstr "Swap-Tools"
 
