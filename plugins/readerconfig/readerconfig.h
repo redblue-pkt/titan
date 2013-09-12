@@ -352,7 +352,8 @@ void screenoscam(char* cfgfile)
 	struct skin* skinoscam = getscreen("reader");
 	struct skin* listbox = getscreennode(skinoscam, "listbox");
 	struct skin* menutitle = getscreennode(skinoscam, "menutitle");
-	
+	struct skin* b2 = getscreennode(skinoscam, "b2");
+
 	struct skin* tmp = NULL;
 	struct oscam* node = NULL;
 	char* tmpstr = NULL, *file = NULL, *cmd = NULL, *dvbapi = NULL;
@@ -382,8 +383,13 @@ void screenoscam(char* cfgfile)
 	tmpstr = ostrcat(_("Reader Selection"), " : ", 0, 0);
 	tmpstr = ostrcat(tmpstr, file, 1, 0);
 	changetext(menutitle, tmpstr);
-	free(tmpstr), tmpstr = NULL;	
-		
+	free(tmpstr), tmpstr = NULL;
+
+	if(file_exist(dvbapi))
+		changetext(b2, _("Dvbapi (enabled)"));
+	else
+		changetext(b2, _("Dvbapi (disabled)"));
+
 start:
 
 	tmp = NULL;
@@ -466,12 +472,14 @@ start:
 					ret = rename(dvbapi, tmpstr);
 					free(tmpstr); tmpstr = NULL;
 					tmpstr = ostrcat(tmpstr, _("Oscam dvbapi config disabled !"), 0, 0);
+					changetext(b2, _("Dvbapi (disabled)"));
 				}
 				else if(file_exist(tmpstr) == 1)
 				{
 					ret = rename(tmpstr, dvbapi);
 					free(tmpstr); tmpstr = NULL;
 					tmpstr = ostrcat(tmpstr, _("Oscam dvbapi config enabled !"), 0, 0);
+					changetext(b2, _("Dvbapi (enabled)"));
 				}
 			}
 			
@@ -486,11 +494,12 @@ start:
 					free(cmd);
 				}			
 			}
-			free(tmpstr); tmpstr = NULL;	
+			free(tmpstr); tmpstr = NULL;
+			drawscreen(skinoscam, 0, 0);	
 		}
 	}
 
-  free(dvbapi); dvbapi = NULL;
+	free(dvbapi); dvbapi = NULL;
 	free(file); file = NULL;
 	delmarkedscreennodes(skinoscam, 1);
 	freeoscam();
