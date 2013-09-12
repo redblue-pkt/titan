@@ -11,7 +11,7 @@
 <node name="b5" picmem="skin/key_ok_70x40.png"   posx="5"  posy="615" width="70" height="40">
 <node name="b6" picmem="skin/key_exit_70x40.png" posx="75" posy="615" width="70" height="40">
 <node name="b1" text="EDIT" picmem="skin/key_red_30x30.png"     textposx="40" valign="middle" fontcol="black" fontsize="25" posx="155" posy="620" width="200" height="30">
-<node name="b2" text="DVBAPI" picmem="skin/key_green_30x30.png"     textposx="40" valign="middle" fontcol="black" fontsize="25" posx="365" posy="620" width="200" height="30">
+<node name="b2" text="Dvbapi" picmem="skin/key_green_30x30.png"     textposx="40" valign="middle" fontcol="black" fontsize="25" posx="365" posy="620" width="250" height="30">
 </screen>
 
 #readerconfig fullscreen, max 1220x660, Xspace=30 !

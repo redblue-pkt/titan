@@ -4100,3 +4100,15 @@ msgstr "Config File wählen"
 
 msgid "No config file found."
 msgstr "Es wurde kein Config File gefunden."
+
+msgid "Oscam dvbapi config disabled !"
+msgstr "Oscam dvbapi config deaktiviert !"
+
+msgid "Oscam dvbapi config enabled !"
+msgstr "Oscam dvbapi config aktiviert !"
+
+msgid "Dvbapi (enabled)"
+msgstr "Dvbapi (aktiviert)"
+
+msgid "Dvbapi (disabled)"
+msgstr "Dvbapi (deaktiviert)"
