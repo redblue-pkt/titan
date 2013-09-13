@@ -175,7 +175,7 @@ void screenfilemanager()
 					
 					if(rcret == getrcconfigint("rcgreen", NULL))
 					{
-						tmpstr = ostrcat(tmpstr, _("Realy copy this file/dir?"), 1, 0);
+						tmpstr = ostrcat(tmpstr, _("Really copy this file/dir?"), 1, 0);
 						copy = 1;
 						//not need with screencopy start
 						//cmd = ostrcat(cmd, "cp -r ", 1, 0);
@@ -183,7 +183,7 @@ void screenfilemanager()
 					}
 					if(rcret == getrcconfigint("rcyellow", NULL))
 					{
-						tmpstr = ostrcat(tmpstr, _("Realy move this file/dir?"), 1, 0);
+						tmpstr = ostrcat(tmpstr, _("Really move this file/dir?"), 1, 0);
 						copy = 0;
 						//not need with screencopy start
 						//cmd = ostrcat(cmd, "mv -f ", 1, 0);
@@ -263,7 +263,7 @@ void screenfilemanager()
 					file1 = createpath(filelistpath2->text, filelist2->select->text);
 				if(file1 != NULL)
 				{
-					tmpstr = ostrcat(tmpstr, _("Realy delete this file/dir?"), 1, 0);
+					tmpstr = ostrcat(tmpstr, _("Really delete this file/dir?"), 1, 0);
 					tmpstr = ostrcat(tmpstr, "\n\n", 1, 0);
 					tmpstr = ostrcat(tmpstr, file1, 1, 0);
 					ret = textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
