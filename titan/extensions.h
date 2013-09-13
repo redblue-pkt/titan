@@ -237,7 +237,7 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 						unlink(TPKLOG);
 						if(file_exist("/tmp/.tpk_needs_reboot"))
 						{
-							textbox(_("Message"), _("TPK Install Done your system rebooting !"), "EXIT", getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 800, 200, 0, 0);
+							textbox(_("Message"), _("TPK Install done, your system will reboot !"), "EXIT", getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 800, 200, 0, 0);
 							system("init 6");
 						}
 					}
@@ -292,7 +292,7 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 				unlink(TPKLOG);
 				if(file_exist("/tmp/.tpk_needs_reboot"))
 				{
-					textbox(_("Message"), _("TPK Remove Done your system rebooting !"), "EXIT", getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+					textbox(_("Message"), _("TPK Remove done, your system will reboot !"), "EXIT", getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 					system("init 6");
 				}
 			}
@@ -377,7 +377,7 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 					loadplugin();
 					if(file_exist("/tmp/.tpk_needs_reboot"))
 					{
-						textbox(_("Message"), _("TPK Tmp Install Done your system rebooting !"), "EXIT", getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+						textbox(_("Message"), _("TPK Tmp Install done, your system will reboot !"), "EXIT", getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 						system("init 6");
 					}
 				}
@@ -410,7 +410,7 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 
 		if(file_exist("/tmp/.tpk_needs_reboot"))
 		{
-			textbox(_("Message"), _("TPK Upgrade Done your system rebooting !"), "EXIT", getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+			textbox(_("Message"), _("TPK Upgrade done, your system will reboot !"), "EXIT", getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 			system("init 6");
 		}
 		unlink("/tmp/.tpk_upgrade_start");

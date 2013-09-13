@@ -38,7 +38,7 @@ int tithekmlehd = 0;
 //flag 22	- kinox hoster
 //flag 23	- kinox hoster serie
 //flag 24	- hoster flashx
-//flag 25	- hoster vidstream
+//flag 25	- < vidstream
 //flag 26	- hoster xvidstage
 //flag 27	- hoster nowvideo
 //flag 28	- solarmovie hoster
@@ -2077,7 +2077,7 @@ waitrcstart:
 				}
 				else if((((struct tithek*)listbox->select->handle)->flag == 66))
 				{
-					textbox(_("Message"), _("The hoster is not yet supported for the time !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
+					textbox(_("Message"), _("The hoster is not yet supported !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 					continue;
 				}	
 				else if((((struct tithek*)listbox->select->handle)->flag == 3))

@@ -3480,13 +3480,13 @@ msgstr "Kopieren"
 msgid "Moven"
 msgstr "Verschieben"
 
-msgid "Realy move this file/dir?"
+msgid "Really move this file/dir?"
 msgstr "Wollen Sie diese Datei verschieben?"
 
-msgid "Realy copy this file/dir?"
+msgid "Really copy this file/dir?"
 msgstr "Wollen Sie diese Datei kopieren?"
 
-msgid "Realy delete this file/dir?"
+msgid "Really delete this file/dir?"
 msgstr "Wollen Sie diese Datei löschen?"
 
 msgid "From"
@@ -3543,7 +3543,7 @@ msgstr "Kopieren des Satelliten erfolgreich abgeschlossen"
 msgid "Copy satlist not ok"
 msgstr "Kopieren des Satelliten abgebrochen"
 
-msgid "The hoster is not yet supported for the time !"
+msgid "The hoster is not yet supported !"
 msgstr "Der hoster wird zur zeit noch nicht unterstützt!"
 
 msgid "CLEAR INPUT"
@@ -3594,16 +3594,16 @@ msgstr "Unicable Produkt"
 msgid "Resync Recording immediately"
 msgstr "Synchronisiere Aufnahmen sofort"
 
-msgid "TPK Upgrade Done your system rebooting !"
+msgid "TPK Upgrade done, your system will reboot !"
 msgstr "TPK Aktualisieren abgeschlossen\nIhre Box wird neu gestartet"
 
-msgid "TPK Tmp Install Done your system rebooting !"
+msgid "TPK Tmp Install done, your system will reboot !"
 msgstr "TPK Tmp Installation abgeschlossen\nIhre Box wird neu gestartet"
 
-msgid "TPK Install Done your system rebooting !"
+msgid "TPK Install done, your system will reboot !"
 msgstr "TPK Installation abgeschlossen\nIhre Box wird neu gestartet"
 
-msgid "TPK Remove Done your system rebooting !"
+msgid "TPK Remove done your system will reboot !"
 msgstr "TPK Löschen abgeschlossen\nIhre Box wird neu gestartet"
 
 msgid "Weather Infos"
