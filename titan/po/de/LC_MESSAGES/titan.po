@@ -2769,10 +2769,10 @@ msgstr "Feste Abschaltzeit"
 msgid "Start playback"
 msgstr "Wiedergabe starten?"
 
-msgid "not started akttime higher timer endtime"
+msgid "not started akttime higher than timer endtime"
 msgstr "nicht gestartet, Endzeit bereits vergangen"
 
-msgid "Do you want delete all unused Bouquetentrys?"
+msgid "Do you want to delete all unused Bouquetentrys?"
 msgstr "Wollen Sie ungenutzte Bouqueteinträge löschen?"
 
 msgid "EPG Search"
@@ -3795,7 +3795,7 @@ msgstr "Direktes Streamen mit Puffer (7.5MB)"
 msgid "Streaming Playback Caching (10MB)"
 msgstr "Direktes Streamen mit Puffer (10MB)"
 
-msgid "ERROR... can't set maker in this file"
+msgid "ERROR... can't set marker in this file"
 msgstr "Fehler für diese Datei kann kein Marker gesetzt werden"
 
 msgid "Marker has been set."
@@ -3936,10 +3936,10 @@ msgstr "Folge"
 msgid "Vietnamese"
 msgstr "Vietnamesisch"
 
-msgid "/var not writeable!\nRepear it?"
+msgid "/var not writeable!\nRepair it?"
 msgstr "/var nicht beschreibbar!\nReparieren?"
 
-msgid "/mnt not writeable!\nRepear it?"
+msgid "/mnt not writeable!\nRepair it?"
 msgstr "/mnt nicht beschreibbar!\nReparieren?"
 
 msgid "Can't install Package. Package to big."
