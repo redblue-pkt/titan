@@ -32,5 +32,6 @@ int movie4k_series(struct skin* grid, struct skin* listbox, struct skin* countla
 int movie4k_series_listed(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title);
 char* movie4k(char* link);
 char* xvideos(char* link);
+char* solarmovie(char* link);
 
 #endif
