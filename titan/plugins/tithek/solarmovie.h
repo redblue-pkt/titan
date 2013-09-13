@@ -42,15 +42,10 @@ char* solarmovie(char* link)
 		if(file_exist("/tmp/tithek/get1"))
 		{
 			tmpstr1 = command("cat /tmp/tithek/get1");
-string_strip_whitechars(tmpstr1);
-
-//tmpstr1 = string_replace_all("\r\n", "", tmpstr1, 1);
-//tmpstr1 = string_replace_all("\r", "", tmpstr1, 1);
-//tmpstr1 = string_replace_all("\n", "", tmpstr1, 1);
+			string_strip_whitechars(tmpstr1);
 
 			if(ostrstr(tmpstr1, "<!DOCTYPE") == NULL)
 			{
-printf("111\n");
 				cmd = ostrcat(cmd, "cat /tmp/tithek/get1 | zcat", 1, 0);
 				debug(99, "cmd: %s", cmd);
 				free(tmpstr1), tmpstr1 = NULL;
@@ -61,51 +56,29 @@ printf("111\n");
 			}
 			else
 			{
-printf("222\n");
 				system("cp -a /tmp/tithek/get1 /tmp/tithek/get_zcat1");
-}
+			}
+
 			if(ostrstr(tmpstr1, "<div class=\"thirdPartyEmbContainer\">") != NULL)
 			{
-printf("333\n");
 				tmpstr1 = string_resub("<div class=\"thirdPartyEmbContainer\">", "</div>", tmpstr1, 1);
-//				url = oregex(".*\"(http://.*)\".*", tmpstr1);
 				url = string_resub("<center><iframe src=\"", "\"", tmpstr1, 0);
 				if(url == NULL || ostrncmp("http://", url, 7) == 0)
-				{
-printf("yyyyyyyy\n");				
 					url = oregex(".*src=\"(http://.*)&width.*", tmpstr1);
-	}
 			}
 			else
 			{
-printf("4445555555555555555555\n");
-//printf("tmpstr1: %s\n", tmpstr1);
-//printf("orec: %s\n", oregex(".*<iframe name=\"service_frame\" class=\"service_frame\" src=\"(http://.*)\"", tmpstr1));
 				url = oregex(".*<iframe name=\"service_frame\" class=\"service_frame\" src=\"(http://.*)\".*", tmpstr1);
-
-				debug(99, "######################################");				
-				debug(99, "######################################");				
-				debug(99, "######################################");				
-				debug(99, "######################################");				
-
-url = oregex("(http://.*)\".*", url);
-				debug(99, "######################################");				
-
+				url = oregex("(http://.*)\".*", url);
 				url = string_replace_all("embed", "file", url, 1);
-				
-
 			}
 
-			debug(99, "url: %s", url);						
-			debug(99, "hname: %s", hname);						
-			debug(99, "#################################");						
-			
 			tmpstr1 = ostrcat(url, NULL, 0, 0);
 		
 			int count2 = 0;
 			struct splitstr* ret2 = NULL;
-//			ret2 = strsplit(tmpstr1, "/", &count2);
-			ret2 = strsplit(tmpstr1, "= & / \"", &count2);
+			ret2 = strsplit(tmpstr1, "/", &count2);
+//			ret2 = strsplit(tmpstr1, "= & / \"", &count2);
 		
 			if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "sockshare.com") == 0)
 				streamurl = putlocker("Sockshare.com", ret2[3].part);
@@ -127,7 +100,6 @@ url = oregex("(http://.*)\".*", url);
 			{
 				tmpstr2 = ostrcat(ret2[2].part, NULL, 0, 0);
 				tmpstr2 = string_replace("embed.php?v=", "", tmpstr2, 1);
-				debug(99, "22222222tmpstr2: %s", tmpstr2);	
 				streamurl = nowvideo("NowVideo.eu", tmpstr2);
 			}
 			else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "nowvideo.eu") == 0)
