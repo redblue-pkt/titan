@@ -3,7 +3,6 @@
 
 int readtimezone(struct skin* timezone, struct skin* listbox)
 {
-	debug(1000, "in");
 	FILE *fd = NULL;
 	char *fileline = NULL, *filename = NULL;
 	char *pos = NULL, *name = NULL, *zone = NULL;
@@ -66,7 +65,6 @@ int readtimezone(struct skin* timezone, struct skin* listbox)
 
 	fclose(fd);
 	free(fileline);
-	debug(1000, "out");
 	return 0;
 }
 

@@ -108,7 +108,7 @@ char* transpondergetbandwidthstr(struct transponder* node, int flag)
 	{
 		if(node == NULL)
 		{
-			debug(1000, "out -> NULL detect");
+			err("NULL detect");
 			return NULL;
 		}
 
@@ -145,7 +145,7 @@ char* transpondergettransmissionstr(struct transponder* node, int flag)
 	{
 		if(node == NULL)
 		{
-			debug(1000, "out -> NULL detect");
+			err("NULL detect");
 			return NULL;
 		}
 
@@ -179,7 +179,7 @@ char* transpondergetguardintervalstr(struct transponder* node, int flag)
 	{
 		if(node == NULL)
 		{
-			debug(1000, "out -> NULL detect");
+			err("NULL detect");
 			return NULL;
 		}
 
@@ -212,7 +212,7 @@ char* transpondergethierarchystr(struct transponder* node, int flag)
 	{
 		if(node == NULL)
 		{
-			debug(1000, "out -> NULL detect");
+			err("NULL detect");
 			return NULL;
 		}
 
@@ -246,7 +246,7 @@ char* transpondergetpilotstr(struct transponder* node, int flag)
 	{
 		if(node == NULL)
 		{
-			debug(1000, "out -> NULL detect");
+			err("NULL detect");
 			return NULL;
 		}
 
@@ -281,7 +281,7 @@ char* transpondergetrolloffstr(struct transponder* node, int flag)
 	{
 		if(node == NULL)
 		{
-			debug(1000, "out -> NULL detect");
+			err("NULL detect");
 			return NULL;
 		}
 
@@ -405,7 +405,7 @@ char* transpondergetinversionstr(struct transponder* node, int flag)
 	{
 		if(node == NULL)
 		{
-			debug(1000, "out -> NULL detect");
+			err("NULL detect");
 			return NULL;
 		}
 
@@ -439,7 +439,7 @@ char* transpondergetpolarizationstr(struct transponder* node, int flag)
 	{
 		if(node == NULL)
 		{
-			debug(1000, "out -> NULL detect");
+			err("NULL detect");
 			return NULL;
 		}
 
@@ -562,7 +562,7 @@ char* transpondergetsystemstr(struct transponder* node, int flag)
 	{
 		if(node == NULL)
 		{
-			debug(1000, "out -> NULL detect");
+			err("NULL detect");
 			return NULL;
 		}
 
@@ -587,7 +587,6 @@ char* transpondergetsystemstr(struct transponder* node, int flag)
 
 struct transponder* getlasttransponder(struct transponder* node)
 {
-	debug(1000, "in");
 	struct transponder *prev = NULL;
 
 	while(node != NULL)
@@ -596,13 +595,11 @@ struct transponder* getlasttransponder(struct transponder* node)
 		node = node->next;
 	}
 
-	debug(1000, "out");
 	return prev;
 }
 
 struct transponder* addtransponder(char* line, int count, struct transponder* last)
 {
-	//debug(1000, "in");
 	struct transponder *newnode = NULL, *prev = NULL, *node = transponder;
 	int ret = 0;
 
@@ -655,8 +652,6 @@ struct transponder* addtransponder(char* line, int count, struct transponder* la
 		prev->next = newnode;
 	newnode->next = node;
 
-
-	//debug(1000, "out");
 	return newnode;
 }
 
@@ -732,7 +727,6 @@ int copytransponder(struct transponder* tp1, struct transponder* tp2, uint64_t t
 
 int readtransponder(const char* filename)
 {
-	debug(1000, "in");
 	FILE *fd = NULL;
 	char *fileline = NULL;
 	int linecount = 0, len = 0;
@@ -779,7 +773,6 @@ int readtransponder(const char* filename)
 
 int readtransponderencoding(const char* filename)
 {
-	debug(1000, "in");
 	FILE *fd = NULL;
 	char *fileline = NULL;
 	int linecount = 0, len = 0;
@@ -834,7 +827,6 @@ int readtransponderencoding(const char* filename)
 
 void deltransponder(struct transponder* tpnode)
 {
-	debug(1000, "in");
 	struct dvbdev* dvbnode = dvbdev;
 	struct transponder *node = transponder, *prev = transponder;
 
@@ -872,7 +864,6 @@ void deltransponder(struct transponder* tpnode)
 		prev = node;
 		node = node->next;
 	}
-	debug(1000, "out");
 }
 
 void deltransponderbyid(uint64_t transponderid)
@@ -894,7 +885,6 @@ void deltransponderbyid(uint64_t transponderid)
 
 struct transponder* gettransponderbydetail(uint64_t id, int fetype, int orbitalpos, unsigned int frequency, int inversion, unsigned int symbolrate, int polarization, int fec, int modulation, int rolloff, int pilot, int system, int useid)
 {
-	//debug(1000, "in");
 	int divisor = 1000000;
 	struct transponder *node = transponder;
 
@@ -912,10 +902,7 @@ struct transponder* gettransponderbydetail(uint64_t id, int fetype, int orbitalp
 		if((useid == 1 && node->id == id) || useid == 0)
 		{
 			if(node->fetype == fetype && node->orbitalpos == orbitalpos && (node->frequency / divisor) == frequency && node->inversion == inversion && node->symbolrate == symbolrate && node->polarization == polarization && node->fec == fec && node->modulation == modulation && node->rolloff == rolloff && node->pilot == pilot && node->system == system)
-			{
-				//debug(1000, "out");
 				return node;
-			}
 		}
 
 		node = node->next;
@@ -925,7 +912,6 @@ struct transponder* gettransponderbydetail(uint64_t id, int fetype, int orbitalp
 
 void deltransponderbyorbitalpos(int orbitalpos)
 {
-	//debug(1000, "in");
 	struct transponder *node = transponder, *prev = transponder;
 
 	while(node != NULL)
@@ -935,12 +921,10 @@ void deltransponderbyorbitalpos(int orbitalpos)
 		if(prev != NULL && prev->orbitalpos == orbitalpos)
 			deltransponder(prev);
 	}
-	//debug(1000, "out");
 }
 
 void freetransponder()
 {
-	debug(1000, "in");
 	struct transponder *node = transponder, *prev = transponder;
 
 	while(node != NULL)
@@ -950,12 +934,10 @@ void freetransponder()
 		if(prev != NULL)
 			deltransponder(prev);
 	}
-	debug(1000, "out");
 }
 
 int writetransponder(const char *filename)
 {
-	debug(1000, "in");
 	FILE *fd = NULL;
 	struct transponder *node = transponder;
 	int ret = 0;
@@ -983,7 +965,6 @@ int writetransponder(const char *filename)
 	}
 
 	fclose(fd);
-	debug(1000, "out");
 	return 0;
 }
 

@@ -36,7 +36,6 @@ char vfdtext[64];
 // Set the brightness of the VFD
 int setvfdbrightness(int value)
 {
-	debug(1000, "in");
 	char *vfddev;
 	struct vfdioctl data;
 	int fd;
@@ -59,13 +58,11 @@ int setvfdbrightness(int value)
 		m_unlock(&status.vfdmutex, 3);
 	}
 
-	debug(1000, "out");
 	return 0;
 }
 
 int setvfdlight(int on)
 {
-	debug(1000, "in");
 	char *vfddev;
 	struct vfdioctl data;
 	int fd;
@@ -169,7 +166,6 @@ void writescrollvfd(char* value)
 // Display a text on VFD
 int writevfdioctl(char *value)
 {
-	debug(1000, "in");
 	char *vfddev;
 	int ret=0;
 
@@ -200,7 +196,6 @@ int writevfdioctl(char *value)
 		strncpy(vfdtext, value, 63);
 	}
 
-	debug(1000, "out");
 	return ret;
 }
 
@@ -216,7 +211,6 @@ int writevfdmenu(char *value)
 // Display a text on VFD
 int writevfd(char *value)
 {
-	debug(1000, "in");
 	char *vfddev, *tmpvalue = NULL;
 	int ret=0, len = 0;
 
@@ -270,7 +264,6 @@ int writevfd(char *value)
 	}
 
 	free(tmpvalue);
-	debug(1000, "out");
 	return ret;
 }
 
@@ -291,7 +284,6 @@ struct vfdiconstate *getvfdiconstate(vfdicons icon)
 // Switch an icon on the VFD on or off
 int setvfdicon(vfdicons id, int onoff)
 {
-	debug(1000, "in");
 	char *vfddev;
 	struct vfdioctl data;
 	int fd;
@@ -322,7 +314,6 @@ int setvfdicon(vfdicons id, int onoff)
 	close (fd);
 	m_unlock(&status.vfdmutex, 3);
 
-	debug(1000, "out");
 	return ret;
 }
 

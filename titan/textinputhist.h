@@ -109,7 +109,6 @@ void readhistory(struct skin* textinputhist, struct skin* listbox, char* histnam
 
 char* textinputhist(char* title, char* text, char* histname)
 {
-	debug(1000, "in");
 	int rcret = -1, fromthread = 0, height = 0;
 	struct skin* textinputhist = getscreen("textinputhist");
 	struct skin* listbox = getscreennode(textinputhist, "listbox");
@@ -228,8 +227,6 @@ char* textinputhist(char* title, char* text, char* histname)
 
 	textinputhist->height = height;
 	delmarkedscreennodes(textinputhist, 1);
-	debug(1000, "out");
-	printf("ret: %s\n",ret);
 	return ret;
 }
 

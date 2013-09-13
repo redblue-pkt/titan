@@ -277,7 +277,6 @@ int createstartscreen()
 //flag: 5 check record with increase powerofftime
 void oshutdown(int exitcode, int flag)
 {
-	debug(1000, "in");
 	struct dvbdev* dvbnode = dvbdev;
 	struct service* servicenode = service;
 	void* threadstatus;
@@ -488,13 +487,11 @@ void oshutdown(int exitcode, int flag)
 		pthread_attr_destroy(&writethreadattr);
 	}
 
-	debug(1000, "out");
 	exit(exitcode);
 }
 
 int main(int argc, char *argv[])
 {
-	debug(1000, "in");
 	int ret = 0, serviceret = 0, skincheck = 0;
 	char* tmpstr = NULL;
 	unsigned char *mmapfb = NULL;
@@ -1069,7 +1066,6 @@ firstwizzardstep1:
 	if(mmapfb != NULL) {
 		free(mmapfb); mmapfb=NULL;
 	}
-	debug(1000, "out");
 	oshutdown(1, 1);
 	return 0;
 

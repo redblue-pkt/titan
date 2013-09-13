@@ -3,7 +3,6 @@
 
 char* textinput(char* title, char* text)
 {
-	debug(1000, "in");
 	int rcret = -1, fromthread = 0, height = 0;
 	struct skin* textinput = getscreen("textinput");
 	struct skin* input = getscreennode(textinput, "input");
@@ -68,7 +67,6 @@ char* textinput(char* title, char* text)
 	}
 
 	textinput->height = height;
-	debug(1000, "out");
 	return ret;
 }
 
