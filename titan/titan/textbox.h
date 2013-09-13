@@ -6,7 +6,6 @@
 //flag 3: no clearscreen
 int textbox(char* title, char* text, char* b1, int rc1, char* b2, int rc2, char* b3, int rc3, char* b4, int rc4, int width, int height, int timeout, int flag)
 {
-	debug(1000, "in");
 	int rcret = -1, fromthread = 0;
 	struct skin* messagebox = getscreen("messagebox");
 	struct skin* textbox = getscreennode(messagebox, "textbox");
@@ -145,7 +144,6 @@ int textbox(char* title, char* text, char* b1, int rc1, char* b2, int rc2, char*
 
 	changetitle(messagebox, NULL);
 	changetext(textbox, NULL);
-	debug(1000, "out");
 
 	m_unlock(&status.textboxmutex, 22);
 	if(rcret == rc1) return 1;

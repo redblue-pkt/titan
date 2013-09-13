@@ -7,7 +7,6 @@
 
 struct dvbdev* videoopen(int adapter, int devnr)
 {
-	debug(1000, "in");
 	int fd = -1;
 	struct dvbdev* node = dvbdev;
 
@@ -37,13 +36,11 @@ struct dvbdev* videoopen(int adapter, int devnr)
 		}
 	}
 
-	debug(1000, "out");
 	return node;
 }
 
 int videoopendirect(char* videodev)
 {
-	debug(1000, "in");
 	int fd = -1;
 
 	if((fd = open(videodev, O_RDWR)) < 0)
@@ -52,7 +49,6 @@ int videoopendirect(char* videodev)
 	}
 
 	closeonexec(fd);
-	debug(1000, "out");
 	return fd;
 }
 
@@ -71,7 +67,7 @@ int videostop(struct dvbdev* node, int clearscreen)
 {
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -89,7 +85,7 @@ int videoplay(struct dvbdev* node)
 {
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -107,7 +103,7 @@ int videofreeze(struct dvbdev* node)
 {
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -124,7 +120,7 @@ int videocontinue(struct dvbdev* node)
 {
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -141,7 +137,7 @@ int videogetpts(struct dvbdev* node, uint64_t* pts)
 {
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -159,7 +155,7 @@ int videoselectsource(struct dvbdev* node, video_stream_source_t source)
 {
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -177,7 +173,7 @@ int videosetblank(struct dvbdev* node, int clearscreen)
 {
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -196,7 +192,7 @@ int videosetdisplayformat(struct dvbdev* node, video_display_format_t format)
 {
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -215,7 +211,7 @@ int videofastforward(struct dvbdev* node, int frames)
 {
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -233,7 +229,7 @@ int videoslowmotion(struct dvbdev* node, int frames)
 {
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -251,7 +247,7 @@ int videosetid(struct dvbdev* node, int id)
 {
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -269,7 +265,7 @@ int videoclearbuffer(struct dvbdev* node)
 {
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -286,7 +282,7 @@ int videostillpicture(struct dvbdev* node, struct video_still_picture* stillpic)
 {
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -303,7 +299,7 @@ int videosetstreamtype(struct dvbdev* node, int type)
 {
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -321,7 +317,7 @@ int videosetencoding(struct dvbdev* node, int type)
 {
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -339,7 +335,7 @@ int videosetformat(struct dvbdev* node, video_format_t format)
 {
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -357,7 +353,7 @@ int videosetsystem(struct dvbdev* node, video_system_t system)
 {
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 
@@ -373,14 +369,13 @@ int videosetsystem(struct dvbdev* node, video_system_t system)
 
 int videogetdev()
 {
-	debug(1000, "in");
 	int i, y, fd = -1, count = 0;
 	char *buf = NULL, *videodev = NULL;
 
 	videodev = getconfig("videodev", NULL);
 	if(videodev == NULL)
 	{
-		debug(1000, "out -> NULL detect");
+		err("NULL detect");
 		return count;
 	}
 
@@ -407,7 +402,6 @@ int videogetdev()
 	}
 
 	free(buf);
-	debug(1000, "out");
 	return count;
 }
 
@@ -415,7 +409,7 @@ int videoreadqwidth(struct dvbdev* node)
 {
 	if(node == NULL)
 	{
-		debug(1000, "out-> NULL detect");
+		err("NULL detect");
 		return 1;
 	}
 

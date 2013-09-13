@@ -3,7 +3,6 @@
 
 struct unicable* addunicable(char *line, int count, struct unicable* last)
 {
-	//debug(1000, "in");
 	struct unicable *newnode = NULL, *prev = NULL, *node = unicable;
 	char *manufacturer = NULL, *product = NULL;;
 	int ret = 0;
@@ -76,13 +75,11 @@ struct unicable* addunicable(char *line, int count, struct unicable* last)
 	newnode->next = node;
 	if(node != NULL) node->prev = newnode;
 
-	//debug(1000, "out");
 	return newnode;
 }
 
 int readunicable(const char* filename)
 {
-	debug(1000, "in");
 	FILE *fd = NULL;
 	char *fileline = NULL;
 	int linecount = 0, len = 0;
@@ -126,7 +123,6 @@ int readunicable(const char* filename)
 
 void delunicable(struct unicable* unicablenode)
 {
-	debug(1000, "in");
 	struct unicable *node = unicable, *prev = unicable;
 
 	while(node != NULL)
@@ -159,12 +155,10 @@ void delunicable(struct unicable* unicablenode)
 		prev = node;
 		node = node->next;
 	}
-	debug(1000, "out");
 }
 
 void freeunicable()
 {
-	debug(1000, "in");
 	struct unicable *node = unicable, *prev = unicable;
 
 	while(node != NULL)
@@ -174,7 +168,6 @@ void freeunicable()
 		if(prev != NULL)
 			delunicable(prev);
 	}
-	debug(1000, "out");
 }
 
 void screenunicable(struct skin* loftype, struct skin* lofl, struct skin* lofh, struct skin* satcr, struct skin* satcrfrequ2)
