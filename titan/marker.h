@@ -190,8 +190,8 @@ int setmarker()
 	if(atime == 0)
 	{
 		// syntax ??
-		//int ret = textbox(_("Message"), _("ERROR... can't set maker in this file"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 4, 0);
-		textbox(_("Message"), _("ERROR... can't set maker in this file"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 4, 0);
+		//int ret = textbox(_("Message"), _("ERROR... can't set marker in this file"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 4, 0);
+		textbox(_("Message"), _("ERROR... can't set marker in this file"), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 4, 0);
 		return -1;
 	}
 	node = addmarkernode(pos);

@@ -1010,7 +1010,7 @@ firstwizzardstep1:
 		//check writeable in /var
 		if(mkdir("/var/writetest", 0777) != 0 && errno != EEXIST)
 		{
-			if(textbox(_("Message"), _("/var not writeable!\nRepear it?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 15, 0) == 1)
+			if(textbox(_("Message"), _("/var not writeable!\nRepair it?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 15, 0) == 1)
 			{
 				system("repairjffs2.sh var &"); //this script kills titan an reboot
 				sleep(10);
@@ -1027,7 +1027,7 @@ firstwizzardstep1:
 		//check writeable in /mnt
 		if(mkdir("/mnt/writetest", 0777) != 0 && errno != EEXIST)
 		{
-			if(textbox(_("Message"), _("/mnt not writeable!\nRepear it?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 15, 0) == 1)
+			if(textbox(_("Message"), _("/mnt not writeable!\nRepair it?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 15, 0) == 1)
 			{
 				system("repairjffs2.sh mnt &"); //this script kills titan an reboot
 				sleep(10);
