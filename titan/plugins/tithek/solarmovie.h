@@ -4,48 +4,151 @@
 // flag 1 = putlocker/sockshare
 // flag 2 = filenuke
 
-char* solarmovie(char* link, char* url, char* name, int flag)
+char* solarmovie(char* link)
 {
-	debug(99, "link(%d): %s", flag, link);
-	char* video_id = NULL, *source = NULL, *streamurl = NULL;
+	debug(99, "link: %s", link);
+	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *path = NULL, *url = NULL, *streamurl = NULL, *id = NULL, *hname = NULL, *cmd = NULL;
 
-	if(flag == 1 || flag == 2 || flag == 3 || flag == 4 || flag == 5 || flag == 6 || flag == 7)
+	if(link == NULL) return NULL;
+
+	int count = 0;
+	struct splitstr* ret1 = NULL;
+	ret1 = strsplit(link, ";", &count);
+	if(ret1 != NULL && count >= 3)
 	{
-		int count = 0;
-		struct splitstr* ret1 = NULL;
-		ret1 = strsplit(link, ";", &count);
-		if(ret1 != NULL && count >= 3)
-		{			
-			video_id = ostrcat(video_id, ret1[1].part, 1, 0);
-			debug(99, "video_id: %s", video_id);
+		unlink("/tmp/tithek/get");
+		unlink("/tmp/tithek/get_zcat");
+		unlink("/tmp/tithek/get_zcat1");
 
-			source = ostrcat(source, ret1[2].part, 1, 0);
-			debug(99, "source: %s", source);
+		path = ostrcat(ret1[0].part, NULL, 0, 0);
+		debug(99, "path: %s", path);
 
-			if(flag == 1)
-				streamurl = putlocker(source, video_id);
-			else if(flag == 2)
-				streamurl = filenuke(source, video_id);
-			else if(flag == 3)
-				streamurl = streamcloud(source, video_id);
-			else if(flag == 4)
-				streamurl = flashx(source, video_id);
-			else if(flag == 5)
-				streamurl = vidstream(source, video_id);
-			else if(flag == 6)
-				streamurl = xvidstage(source, video_id);
-			else if(flag == 7)
-				streamurl = nowvideo(source, video_id);
+		id = ostrcat(ret1[1].part, NULL, 0, 0);
+		debug(99, "id: %s", id);
 
-			debug(99, "streamurl1: %s", streamurl);
+		hname = ostrcat(ret1[2].part, NULL, 0, 0);
+		debug(99, "hname: %s", hname);
 
-			streamurl = string_replace_all("amp;", "", streamurl, 1);
-			debug(99, "streamurl2: %s", streamurl);
-		}
-		free(ret1), ret1 = NULL;
+//		tmpstr = gethttp("www.solarmovie.so", path, 80, NULL, NULL, 5000, NULL, 0);
+
+		char* send = ostrcat(send, "GET /link/play/", 1, 0);
+		send = ostrcat(send, id, 1, 0);
+		send = ostrcat(send, " HTTP/1.1\r\nHost: www.solarmovie.so\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nConnection: close\r\nAccept-Encoding: gzip\r\n\r\n", 1, 0);	
+		debug(99, "send: %s", send);
+		unlink("/tmp/tithek/get1");
+		gethttpreal("www.solarmovie.so", path, 80, "/tmp/tithek/get1", NULL, NULL, 0, send, NULL, 5000, 0);
+		free(send); send = NULL;
+
+		if(file_exist("/tmp/tithek/get1"))
+		{
+			tmpstr1 = command("cat /tmp/tithek/get1");
+string_strip_whitechars(tmpstr1);
+
+//tmpstr1 = string_replace_all("\r\n", "", tmpstr1, 1);
+//tmpstr1 = string_replace_all("\r", "", tmpstr1, 1);
+//tmpstr1 = string_replace_all("\n", "", tmpstr1, 1);
+
+			if(ostrstr(tmpstr1, "<!DOCTYPE") == NULL)
+			{
+printf("111\n");
+				cmd = ostrcat(cmd, "cat /tmp/tithek/get1 | zcat", 1, 0);
+				debug(99, "cmd: %s", cmd);
+				free(tmpstr1), tmpstr1 = NULL;
+				tmpstr1 = command(cmd);
+				
+				writesys("/tmp/tithek/get_zcat1", tmpstr1, 0);
+				free(cmd), cmd = NULL;
+			}
+			else
+			{
+printf("222\n");
+				system("cp -a /tmp/tithek/get1 /tmp/tithek/get_zcat1");
+}
+			if(ostrstr(tmpstr1, "<div class=\"thirdPartyEmbContainer\">") != NULL)
+			{
+printf("333\n");
+				tmpstr1 = string_resub("<div class=\"thirdPartyEmbContainer\">", "</div>", tmpstr1, 1);
+//				url = oregex(".*\"(http://.*)\".*", tmpstr1);
+				url = string_resub("<center><iframe src=\"", "\"", tmpstr1, 0);
+				if(url == NULL || ostrncmp("http://", url, 7) == 0)
+				{
+printf("yyyyyyyy\n");				
+					url = oregex(".*src=\"(http://.*)&width.*", tmpstr1);
 	}
-	free(video_id), video_id = NULL;
-	free(source), source = NULL;
+			}
+			else
+			{
+printf("4445555555555555555555\n");
+//printf("tmpstr1: %s\n", tmpstr1);
+//printf("orec: %s\n", oregex(".*<iframe name=\"service_frame\" class=\"service_frame\" src=\"(http://.*)\"", tmpstr1));
+				url = oregex(".*<iframe name=\"service_frame\" class=\"service_frame\" src=\"(http://.*)\".*", tmpstr1);
+
+				debug(99, "######################################");				
+				debug(99, "######################################");				
+				debug(99, "######################################");				
+				debug(99, "######################################");				
+
+url = oregex("(http://.*)\".*", url);
+				debug(99, "######################################");				
+
+				url = string_replace_all("embed", "file", url, 1);
+				
+
+			}
+
+			debug(99, "url: %s", url);						
+			debug(99, "hname: %s", hname);						
+			debug(99, "#################################");						
+			
+			tmpstr1 = ostrcat(url, NULL, 0, 0);
+		
+			int count2 = 0;
+			struct splitstr* ret2 = NULL;
+//			ret2 = strsplit(tmpstr1, "/", &count2);
+			ret2 = strsplit(tmpstr1, "= & / \"", &count2);
+		
+			if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "sockshare.com") == 0)
+				streamurl = putlocker("Sockshare.com", ret2[3].part);
+			else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "putlocker.com") == 0)
+				streamurl = putlocker("Sockshare.com", ret2[3].part);
+			else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "filenuke.com") == 0)
+				streamurl = filenuke("FileNuke.com", ret2[2].part);
+			else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "streamcloud.eu") == 0)
+				streamurl = streamcloud("StreamCloud.eu", ret2[2].part);
+			else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "streamcloud.eu") == 0)
+				streamurl = streamcloud("StreamCloud.eu", ret2[2].part);
+			else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "vidstream.in") == 0)
+				streamurl = vidstream("VidStream.in", ret2[2].part);
+			else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "flashx.tv") == 0)
+				streamurl = flashx("FlashX.tv", ret2[3].part);
+			else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "xvidstage.com") == 0)
+				streamurl = xvidstage("XvidStage.com", ret2[2].part);
+			else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "nowvideo.eu") == 0)
+			{
+				tmpstr2 = ostrcat(ret2[2].part, NULL, 0, 0);
+				tmpstr2 = string_replace("embed.php?v=", "", tmpstr2, 1);
+				debug(99, "22222222tmpstr2: %s", tmpstr2);	
+				streamurl = nowvideo("NowVideo.eu", tmpstr2);
+			}
+			else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "nowvideo.eu") == 0)
+			{
+				tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
+				tmpstr2 = string_replace("embed.php?v=", "", tmpstr2, 1);
+				debug(99, "tmpstr2: %s", tmpstr2);	
+				streamurl = nowvideo("NowVideo.eu", tmpstr2);
+			}
+			free(ret2), ret2 = NULL;
+		}
+	}
+	free(ret1), ret1 = NULL;
+
+	free(url), url = NULL;
+	free(tmpstr), tmpstr = NULL;
+	free(tmpstr1), tmpstr1 = NULL;
+	free(tmpstr2), tmpstr2 = NULL;
+	free(path), path = NULL;
+	free(hname), hname = NULL;
+	free(id), id = NULL;
 
 	return streamurl;
 }
@@ -164,7 +267,7 @@ int solarmovie_hoster(struct skin* grid, struct skin* listbox, struct skin* coun
 {
 	debug(99, "link: %s", link);
 	int ret = 1, series = 0;
-	char* ip = NULL, *pos = NULL, *path = NULL, *etitle = NULL, *episode = NULL, *session = NULL, *update = NULL, *quality = NULL, *id = NULL, *line = NULL, *hname = NULL, *tmpstr = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *cmd = NULL, *url = NULL, *tmpstr1 = NULL, *tmpfile = NULL, *tmphost = NULL;
+	char* ip = NULL, *pos = NULL, *path = NULL, *etitle = NULL, *episode = NULL, *session = NULL, *update = NULL, *quality = NULL, *id = NULL, *line = NULL, *hname = NULL, *tmpstr = NULL, *cmd = NULL, *url = NULL, *tmpstr1 = NULL, *tmphost = NULL, *tmphname = NULL;
 
 	unlink("/tmp/tithek/get");
 	unlink("/tmp/tithek/get_zcat");
@@ -241,190 +344,65 @@ int solarmovie_hoster(struct skin* grid, struct skin* listbox, struct skin* coun
 					update = string_resub("oddCell\">", "</td>", tmpstr1, 0);
 					string_remove_whitechars(quality);
 					strstrip(quality);
-					hname = oregex(".*/\">(.*)</a>.*", tmpstr1);
-					string_remove_whitechars(hname);
-					strstrip(hname);
+					tmphname = oregex(".*/\">(.*)</a>.*", tmpstr1);
+					string_remove_whitechars(tmphname);
+					strstrip(tmphname);
 	
 					tmphost = ostrcat("www.solarmovie.so", NULL, 0, 0);
-					tmpfile = ostrcat("/link/play/", id, 0, 0);
+					url = ostrcat("/link/play/", id, 0, 0);
 		
-					char* send = ostrcat(send, "GET /link/play/", 1, 0);
-					send = ostrcat(send, id, 1, 0);
-					send = ostrcat(send, " HTTP/1.1\r\nHost: www.solarmovie.so\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nConnection: close\r\nAccept-Encoding: gzip\r\n\r\n", 1, 0);	
-					debug(99, "send: %s", send);
-					unlink("/tmp/tithek/get1");
-					gethttpreal(tmphost, tmpfile, 80, "/tmp/tithek/get1", NULL, NULL, 0, send, NULL, 5000, 0);
-					free(send); send = NULL;
-					free(tmphost); tmphost = NULL;
-					free(tmpfile); tmpfile = NULL;
-					if(!file_exist("/tmp/tithek/get1"))
-					{
-						printf("countinue\n");
-						continue;
-					}
+					int type = 43;
+					if(ostrcmp(tmphname, "sockshare.com") == 0)
+						hname = ostrcat("Sockshare.com", NULL, 0, 0);
+					else if(ostrcmp(tmphname, "putlocker.com") == 0)
+						hname = ostrcat("Putlocker.com", NULL, 0, 0);
+					else if(ostrcmp(tmphname, "filenuke.com") == 0)
+						hname = ostrcat("FileNuke.com", NULL, 0, 0);
+					else if(ostrcmp(tmphname, "streamcloud.eu") == 0)
+						hname = ostrcat("StreamCloud.eu", NULL, 0, 0);
+					else if(ostrcmp(tmphname, "streamcloud") == 0)
+						hname = ostrcat("StreamCloud.eu", NULL, 0, 0);
+					else if(ostrcmp(tmphname, "vidstream.in") == 0)
+						hname = ostrcat("VidStream.in", NULL, 0, 0);
+					else if(ostrcmp(tmphname, "flashx.tv") == 0)
+						hname = ostrcat("FlashX.tv", NULL, 0, 0);
+					else if(ostrcmp(tmphname, "primeshare.tv") == 0)
+						hname = ostrcat("PrimeShare.tv", NULL, 0, 0);
+					else if(ostrcmp(tmphname, "xvidstage.com") == 0)
+						hname = ostrcat("XvidStage.com", NULL, 0, 0);
+					else if(ostrcmp(tmphname, "vidxden.com") == 0)
+						hname = ostrcat("vidxden.com", NULL, 0, 0);
+					else if(ostrcmp(tmphname, "nowvideo.eu") == 0)
+						hname = ostrcat("NowVideo.eu", NULL, 0, 0);
 					else
 					{
-						tmpstr1 = command("cat /tmp/tithek/get1");
-						if(ostrstr(tmpstr1, "<!DOCTYPE") == NULL)
-						{
-							cmd = ostrcat(cmd, "cat /tmp/tithek/get1 | zcat", 1, 0);
-							debug(99, "cmd: %s", cmd);
-							free(tmpstr1), tmpstr1 = NULL;
-							tmpstr1 = command(cmd);
-							
-							writesys("/tmp/tithek/get_zcat1", tmpstr1, 0);
-							free(cmd), cmd = NULL;
-						}
-						else
-							system("cp -a /tmp/tithek/get1 /tmp/tithek/get_zcat1");
-			
-			
-						if(getconfigint("debuglevel", NULL) == 99)
-							system("cp -a /tmp/tithek/get_zcat1 /tmp/solarmovie3_tmpstr_get_zcat1");
-	
-						char* tmpline = ostrcat("/tmp/solarmovie3_tmpstr_get_zcat_", oitoa(i), 0, 0);			
-						if(getconfigint("debuglevel", NULL) == 99)
-							writesys(tmpline, tmpstr1, 0);
-						free(tmpline), tmpline = NULL;
-	
-						if(ostrstr(tmpstr1, "<div class=\"thirdPartyEmbContainer\">") != NULL)
-						{
-							tmpstr1 = string_resub("<div class=\"thirdPartyEmbContainer\">", "</div>", tmpstr1, 0);
-							url = oregex(".*\"(http://.*)\".*", tmpstr1);
-						}
-						else
-						{
-							url = string_resub("<iframe name=\"service_frame\" src=\"", "\"", tmpstr1, 0);
-							debug(99, "url: %s", url);
-							url = string_replace_all("embed", "file", url, 1);
-						}
-						debug(99, "url: %s", url);
-						tmpstr3 = ostrcat(url, NULL, 0, 0);
-	
-						int type = 0;
-						int count2 = 0;
-						struct splitstr* ret2 = NULL;
-						ret2 = strsplit(tmpstr3, "= & / \"", &count2);
-				
-						if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "sockshare.com") == 0)
-						{
-							tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
-							hname = ostrcat("Sockshare.com", NULL, 0, 0);
-							type = 14;
-						}
-						else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "putlocker.com") == 0)
-						{
-							url = ostrcat("http://www.putlocker.com/embed/", ret2[3].part, 0, 0);
-							tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
-							hname = ostrcat("Putlocker.com", NULL, 0, 0);
-							type = 14;
-						}
-						else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "filenuke.com") == 0)
-						{
-							tmpstr2 = ostrcat(ret2[2].part, NULL, 0, 0);
-							hname = ostrcat("FileNuke.com", NULL, 0, 0);
-							type = 15;
-						}
-						else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "streamcloud.eu") == 0)
-						{
-							tmpstr2 = ostrcat(ret2[2].part, NULL, 0, 0);
-							hname = ostrcat("StreamCloud.eu", NULL, 0, 0);
-							type = 20;
-						}
-						else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "vidstream.in") == 0)
-						{
-							tmpstr2 = ostrcat(ret2[2].part, NULL, 0, 0);
-							hname = ostrcat("VidStream.in", NULL, 0, 0);
-							type = 25;
-						}
-						else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "flashx.tv") == 0)
-						{
-							tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
-							hname = ostrcat("FlashX.tv", NULL, 0, 0);
-							type = 24;
-						}
-						else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "primeshare.tv") == 0)
-						{
-							tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
-							hname = ostrcat("PrimeShare.tv", NULL, 0, 0);
-						}				
-						else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "xvidstage.com") == 0)
-						{
-							tmpstr2 = ostrcat(ret2[2].part, NULL, 0, 0);
-							tmpstr2 = string_replace_all("embed-", "", tmpstr2, 1);
-							tmpstr2 = string_replace_all(".html", "", tmpstr2, 1);
-							hname = ostrcat("XvidStage.com", NULL, 0, 0);
-							type = 26;
-						}
-						else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "vidxden.com") == 0)
-						{
-							tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
-							hname = ostrcat("Vidxden.com (DivX)", NULL, 0, 0);
-						}
-						else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "nowvideo.eu") == 0)
-						{
-							url = ostrcat("http://embed.nowvideo.eu/embed.php?v=", ret2[3].part, 0, 0);
-							tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
-							type = 27;
-							hname = ostrcat("NowVideo.eu", NULL, 0, 0);
-						}
-						else if(ret2 != NULL && count2 > 2)
-						{
-							tmpstr2 = ostrcat(ret2[2].part, NULL, 0, 0);
-	//						hname = ostrcat(hname, " (coming soon)", 0, 0);
-							type = 66;
-						}
-						else
-						{
-							tmpstr2 = ostrcat("unknown", NULL, 0, 0);
-	//						hname = ostrcat(hname, " (coming soon)", 0, 0);
-							type = 66;
-						}
-	
-	
-						free(ret2), ret2 = NULL;
-						debug(99, "-------------------------------");
-						debug(99, "hname: %s url: %s id: %s", hname, url, tmpstr2);
-	
-						incount += 1;
-						line = ostrcat(line, hname, 1, 0);
-						if(quality != NULL)
-						{
-							line = ostrcat(line, " (", 1, 0);
-							line = ostrcat(line, quality, 1, 0);
-							line = ostrcat(line, ")", 1, 0);
-						}
-						if(update != NULL)
-						{
-							line = ostrcat(line, " (", 1, 0);
-							line = ostrcat(line, update, 1, 0);
-							line = ostrcat(line, ")", 1, 0);
-						}
-						line = ostrcat(line, "#", 1, 0);
-						line = ostrcat(line, url, 1, 0);
-						line = ostrcat(line, ";", 1, 0);
-						line = ostrcat(line, tmpstr2, 1, 0);
-						line = ostrcat(line, ";", 1, 0);				
-						line = ostrcat(line, hname, 1, 0);
-						line = ostrcat(line, "#", 1, 0);
-						line = ostrcat(line, "http://atemio.dyndns.tv/mediathek/menu/", 1, 0);
-						line = ostrcat(line, hname, 1, 0);
-						line = ostrcat(line, ".jpg#solarmovie_", 1, 0);
-						line = ostrcat(line, hname, 1, 0);
-						line = ostrcat(line, ".jpg#Solarmovie - ", 1, 0);
-						line = ostrcat(line, title, 1, 0);
-						line = ostrcat(line, "#", 1, 0);
-						line = ostrcat(line, oitoa(type), 1, 0);
-						line = ostrcat(line, "\n", 1, 0);
-	
-						free(tmpstr3), tmpstr3 = NULL;
-						free(tmpstr2), tmpstr2 = NULL;
-						free(hname), hname = NULL;
-						free(url), url = NULL;
-						free(quality), quality = NULL;
-						free(update), update = NULL;
+						hname = ostrcat(tmphname, " (coming soon)", 0, 0);
+						type = 66;
 					}
+
+					debug(99, "hname: %s url: %s id: %s", hname, url, id);
+					
+					incount += 1;
+					line = ostrcat(line, hname, 1, 0);				
+					line = ostrcat(line, "#", 1, 0);
+					line = ostrcat(line, url, 1, 0);
+					line = ostrcat(line, ";", 1, 0);
+					line = ostrcat(line, id, 1, 0);
+					line = ostrcat(line, ";", 1, 0);				
+					line = ostrcat(line, tmphname, 1, 0);
+					line = ostrcat(line, "#", 1, 0);
+					line = ostrcat(line, "http://atemio.dyndns.tv/mediathek/menu/", 1, 0);
+					line = ostrcat(line, hname, 1, 0);
+					line = ostrcat(line, ".jpg#solarmovie_", 1, 0);
+					line = ostrcat(line, hname, 1, 0);
+					line = ostrcat(line, ".jpg#Solarmovie - ", 1, 0);
+					line = ostrcat(line, title, 1, 0);
+					line = ostrcat(line, "#", 1, 0);
+					line = ostrcat(line, oitoa(type), 1, 0);
+					line = ostrcat(line, "\n", 1, 0);
 					free(hname), hname = NULL;
+										
+					free(tmphname), tmphname = NULL;
 					free(id), id = NULL;		
 				}
 			}

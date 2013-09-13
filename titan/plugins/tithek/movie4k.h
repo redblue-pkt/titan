@@ -362,7 +362,7 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 
 					if(id != NULL)
 					{
-						if(countj >= 2)
+						if(countj >= 1)
 						{	
 							free(url), url = NULL;
 							free(pathnew), pathnew = NULL;
