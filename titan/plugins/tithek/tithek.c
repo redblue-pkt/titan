@@ -54,7 +54,7 @@ void deinit(void)
 //wird in der Pluginverwaltung bzw Menue ausfeguehrt
 void start(void)
 {
-	if(checkbox("ATEMIO510") == 0 && checkbox("ATEMIO7600") == 0 && checkbox("UFS912") == 0 && checkbox("ATEVIO700") == 0 && checkbox("ATEVIO7000") == 0 && checkbox("WHITEBOX") == 0 && checkbox("ATEMIO520") == 0)
+	if(checkbox("ATEMIO510") == 0 && checkbox("ATEMIO7600") == 0 && checkbox("UFS912") == 0 && checkbox("ATEVIO700") == 0 && checkbox("ATEVIO7000") == 0 && checkbox("WHITEBOX") == 0 && checkbox("ATEMIO520") == 0 && checkbox("ATEMIO530") == 0)
 	{
 		if(file_exist("/var/bin/audio.elf") || file_exist("/var/swap/bin/audio.elf") || file_exist("/mnt/swapextension/bin/audio.elf"))
 			textbox(_("Message"), _("Alternativ Audio Firmware not working korrekt with all videos (DTSDOWNMIX)!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);

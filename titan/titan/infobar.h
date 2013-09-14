@@ -156,7 +156,7 @@ void screeninfobar()
 			}
 			if(rcret == getrcconfigint("rcplay", NULL))
 			{
-				if(checkbox("ATEMIO520") != 1)
+				if(checkbox("ATEMIO520") != 1 && checkbox("ATEMIO530") != 1)
 				{
 					if(status.playing == 0 || (status.playspeed == 0 && status.slowspeed == 0 && status.pause == 0))
 					{
