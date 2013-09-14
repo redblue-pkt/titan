@@ -772,7 +772,7 @@ int checkreseller()
 			return 0;
 		}
 	}
-	else if(checkbox("WHITEBOX") == 1 || checkbox("ATEMIO520") == 1)
+	else if(checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1)
 	{
 		if((buf[1072] & 0xff) == 0x25 && (buf[1073] & 0xff) == 0x29 && (buf[1074] & 0xff) == 0x02 && (buf[1075] & 0xff) == 0xA5)
 		{
@@ -883,7 +883,7 @@ int checkflash()
 	char* dev = NULL;
 	char* dir = NULL;
 	
-	if((checkbox("ATEMIO7600") == 1) || (checkbox("ATEMIO510") == 1) || (checkbox("ATEVIO700") == 1) || (checkbox("ATEVIO7000") == 1) || (checkbox("UFS910") == 1) || (checkbox("UFS922") == 1) || (checkbox("ATEMIO520") == 1))
+	if((checkbox("ATEMIO7600") == 1) || (checkbox("ATEMIO510") == 1) || (checkbox("ATEVIO700") == 1) || (checkbox("ATEVIO7000") == 1) || (checkbox("UFS910") == 1) || (checkbox("UFS922") == 1) || (checkbox("ATEMIO520") == 1) || (checkbox("ATEMIO530") == 1))
 	{
 		dev = ostrcat(dev, "3", 1, 0);
 		dir = ostrcat(dir, "var", 1, 0);		
@@ -976,7 +976,7 @@ char* getcpuid()
 	
 		char* mac = NULL;
 		
-		if(checkbox("WHITEBOX") == 1 || checkbox("ATEMIO520") == 1 || checkbox("ATEMIO510") == 1 || checkbox("ATEMIO7600") == 1)
+		if(checkbox("ATEMIO510") == 1 || checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1 || checkbox("ATEMIO7600") == 1)
 			mac = getmacfromcmdline();
 		else
 			mac = ostrcat(mac, net->mac, 1, 0);
