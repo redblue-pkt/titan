@@ -17,17 +17,14 @@ echo "[myvideo.sh] START (buildtype: $buildtype): $DATENAME" > _full/myvideo/bui
 
 mainurl=http://www.myvideo.de
 if [ "$buildtype" = "full" ];then
-	mainliste="Top_100 Videos_A-Z Serien Filme Musik"
+	main_list="Top_100 Videos_A-Z Serien Filme Musik"
 else
-	mainliste="Top_100"
+	main_list="Top_100"
 fi
 	
 black_list="Themen webstars tv Playlisten Flight Videos_in_Playlisten Videos_in_Playlisten/Beliebte_Playlisten Alle_Serien_A-Z Videos_in_Kategorien Video_Flight channel/unforgettable Serien/Serien_Suche Serien/WWE Top_100/Top_100_Playlisten Themen/Sexy echo channel/Clipgenerator musik-tv Videos_A-Z/Videos_in_Playlisten Videos_A-Z/Video_Flight"
-$wgetbin --no-check-certificate "http://myvideo.de" -O cache.main.list
-main_list=`cat cache.main.list | tr ':' '\n' | grep return | grep topgrey | tr ' ' '\n' | grep href | cut -d"'" -f2 | grep -v ^# | sed 's!/!!' | sort -um`
 skip=0
 
-echo main_list $main_list
 for ROUND1 in $main_list; do
 	for black in $black_list; do	
 		if [ $ROUND1 == $black ]; then
@@ -41,7 +38,7 @@ for ROUND1 in $main_list; do
 		$wgetbin --no-check-certificate "http://myvideo.de/$ROUND1" -O cache.$filename.list
 		TITLE=`echo "$ROUND1" | tr '_' ' ' | tr '-' ' '`			
 		echo "$TITLE""#http://atemio.dyndns.tv/mediathek/myvideo/myvideo."$filename".list#http://atemio.dyndns.tv/mediathek/menu/"$filename".jpg#"$filename".jpg"#MyVideo#3 >> cache.myvideo.category.titanlist
-		submenu_list=`cat cache.$filename.list | tr ' ' '\n' | grep "/$ROUND1/" | grep -v page |cut -d "'" -f2 | sed "s!/$ROUND1/!!" | sort -um`
+		submenu_list=`cat cache.$filename.list | tr ' ' '\n' | grep "/$ROUND1/" | grep -v page | cut -d "'" -f2 | cut -d '"' -f2 | grep -v searchChannelID | grep ^/ | sed "s!/$ROUND1/!!" | tr ' ' '\n' | grep -v href= | sort -um`
 	fi
 	echo submenu_list1 $submenu_list
 
@@ -58,7 +55,7 @@ for ROUND1 in $main_list; do
 			$wgetbin --no-check-certificate "http://myvideo.de/$ROUND1/$ROUND2" -O cache.$filename.list
 			echo ROUND2 $ROUND2
 			echo filename $filename
-	
+
 			TITLE=`echo "$ROUND2" | tr '_' ' ' | tr '-' ' '`
 				
 			if [ -e cache.myvideo.$filename_submenu1.titanlist ] && [ ! `cat cache.myvideo.$filename_submenu1.titanlist | grep menu/$filename.jpg | wc -l` -eq 0 ] && [ ! `cat cache.myvideo.$filename_submenu1.titanlist | grep "$TITLE" | wc -l` -eq 0 ]; then
@@ -90,7 +87,7 @@ for ROUND1 in $main_list; do
 						skip=1
 					fi
 				done
-		
+
 				if [ $skip == 0 ];then
 					PIC=`cat cache.$filename_submenu2.list | tr ";" "\n" | grep /channel | grep .jpg | sed "s/.*longdesc=/pic=/" | grep ^pic | grep "/$ROUND3PATH/$ROUND3" | cut -d"'" -f2`
 					echo PIC $PIC
