@@ -4112,3 +4112,6 @@ msgstr "Dvbapi (deaktiviert)"
 
 msgid "After EPG Scan"
 msgstr "Nach EPG Suche"
+
+msgid "Found new Stick/HDD.\nYou can configure it in Harddisk Menu."
+msgstr "Neuer Stick/HDD erkannt.\nSie können diesen im Festplatten Menü einstellen."
