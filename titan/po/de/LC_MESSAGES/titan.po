@@ -3511,7 +3511,7 @@ msgid "middle"
 msgstr "mittel"
 
 msgid "Del EPG before scan"
-msgstr "Lösche EPG vor dem Scan"
+msgstr "Lösche EPG vor der Suche"
 
 msgid "Found Pay Stream visit the official Website and Order this Stream and try this again !"
 msgstr "Pay-Stream gefunden besuchen Sie die offizielle Website und bestellen\nSie diesen Stream und versuchen Sie es nochmal!"
@@ -4109,3 +4109,6 @@ msgstr "Dvbapi (aktiviert)"
 
 msgid "Dvbapi (disabled)"
 msgstr "Dvbapi (deaktiviert)"
+
+msgid "After EPG Scan"
+msgstr "Nach EPG Suche"
