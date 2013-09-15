@@ -883,7 +883,38 @@ struct hdd* addhdd(char* device, int partition, unsigned long size, int removabl
 		newnode->prev = prev;
 	}
 	newnode->next = node;
-
+	
+	//show message for new, not configured devices
+	//check only partition 1
+	if(status.standby == 0 && newnode->partition == 1 && ostrstr(newnode->device, "1") != NULL)
+	{
+		char* tmpstr = NULL, *backup = NULL, *movie = NULL, *swapextensions = NULL, *swapfile = NULL;
+		int newdev = 1;
+		
+		tmpstr = ostrcat("/media/autofs/", newnode->device, 0, 0);
+		if(file_exist(tmpstr) == 0)
+		{
+			backup = ostrcat(tmpstr, "/backup", 0, 0);
+			movie = ostrcat(tmpstr, "/movie", 0, 0);
+			swapextensions = ostrcat(tmpstr, "/swapextensions", 0, 0);
+			swapfile = ostrcat(tmpstr, "/swapfile", 0, 0);
+			
+			if(file_exist(movie) == 1 || file_exist(swapextensions)== 1 || file_exist(backup) == 1 || file_exist(swapfile) == 1)
+				newdev = 0;
+			
+			if(newdev == 1)
+				textbox("Message", _("Found new Stick/HDD.\nYou can configure it in Harddisk Menu."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 15, 0);
+			
+			tmpstr = ostrcat(tmpstr, "/.titandev", 0, 0);	
+			writesys(tmpstr, "titan", 1);
+		}
+		free(tmpstr); tmpstr = NULL;
+		free(backup); backup = NULL;
+		free(movie); movie = NULL;
+		free(swapextensions); swapextensions = NULL;
+		free(swapfile); swapfile = NULL;				
+	}
+	
 	if(flag == 0) m_unlock(&status.hddmutex, 13);
 	return newnode;
 }
