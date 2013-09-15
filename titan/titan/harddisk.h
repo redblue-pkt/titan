@@ -888,11 +888,12 @@ struct hdd* addhdd(char* device, int partition, unsigned long size, int removabl
 	//check only partition 1
 	if(status.standby == 0 && newnode->partition == 1 && ostrstr(newnode->device, "1") != NULL)
 	{
-		char* tmpstr = NULL, *backup = NULL, *movie = NULL, *swapextensions = NULL, *swapfile = NULL;
+		char* tmpstr = NULL, *backup = NULL, *movie = NULL, *swapextensions = NULL, *swapfile = NULL, *checkfile = NULL;
 		int newdev = 1;
 		
 		tmpstr = ostrcat("/media/autofs/", newnode->device, 0, 0);
-		if(file_exist(tmpstr) == 0)
+		checkfile = ostrcat(tmpstr, "/.titandev", 0, 0);
+		if(file_exist(checkfile) == 0)
 		{
 			backup = ostrcat(tmpstr, "/backup", 0, 0);
 			movie = ostrcat(tmpstr, "/movie", 0, 0);
@@ -905,14 +906,15 @@ struct hdd* addhdd(char* device, int partition, unsigned long size, int removabl
 			if(newdev == 1)
 				textbox("Message", _("Found new Stick/HDD.\nYou can configure it in Harddisk Menu."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 15, 0);
 			
-			tmpstr = ostrcat(tmpstr, "/.titandev", 0, 0);	
-			writesys(tmpstr, "titan", 1);
+			writesys(checkfile, "titan", 1);
+			sync();
 		}
 		free(tmpstr); tmpstr = NULL;
 		free(backup); backup = NULL;
 		free(movie); movie = NULL;
 		free(swapextensions); swapextensions = NULL;
 		free(swapfile); swapfile = NULL;				
+		free(checkfile); checkfile = NULL;				
 	}
 	
 	if(flag == 0) m_unlock(&status.hddmutex, 13);
