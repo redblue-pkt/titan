@@ -903,11 +903,11 @@ struct hdd* addhdd(char* device, int partition, unsigned long size, int removabl
 			if(file_exist(movie) == 1 || file_exist(swapextensions)== 1 || file_exist(backup) == 1 || file_exist(swapfile) == 1)
 				newdev = 0;
 			
-			if(newdev == 1)
+			if(newdev == 1 && writesys(checkfile, "titan", 1) == 0)
+			{
+				sync();
 				textbox("Message", _("Found new Stick/HDD.\nYou can configure it in Harddisk Menu."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 15, 0);
-			
-			writesys(checkfile, "titan", 1);
-			sync();
+			}
 		}
 		free(tmpstr); tmpstr = NULL;
 		free(backup); backup = NULL;
