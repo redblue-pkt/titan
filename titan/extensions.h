@@ -118,7 +118,7 @@ char* getinstallpath(char* path, char* size)
 	
 	if(size != NULL) isize = atoi(size);
 	
-	if(path == NULL || path[0] == '*' || ostrstr(path, "/mnt/swapextensions") != NULL)
+	if(path == NULL || path[0] == '*' || ostrstr(path, "mnt") != NULL)
 	{
 		if(tpkchecksize(NULL, "/mnt/swapextensions", isize) == 0)
 		{
@@ -130,7 +130,7 @@ char* getinstallpath(char* path, char* size)
 		}
 	}
 	
-	if(path == NULL || path[0] == '*' || ostrstr(path, "/var") != NULL)
+	if(path == NULL || path[0] == '*' || ostrstr(path, "var") != NULL)
 	{
 		if(tpkchecksize(NULL, "/var", isize) == 0)
 		{
@@ -142,7 +142,7 @@ char* getinstallpath(char* path, char* size)
 		}
 	}
 	
-	if(path == NULL || path[0] == '*' || ostrstr(path, "/var/swap") != NULL)
+	if(path == NULL || path[0] == '*' || ostrstr(path, "swap") != NULL)
 	{
 		if(file_exist("/tmp/.swapextensionsdev") == 1)
 		{
