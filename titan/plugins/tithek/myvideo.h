@@ -172,7 +172,6 @@ int myvideo_search(struct skin* grid, struct skin* listbox, struct skin* countla
 		else
 			search = textinputhist("Search", searchstr, "searchhist");
 	}
-printf("link: %s\n", link);
 
 	if(search != NULL || flag > 0)
 	{
@@ -212,13 +211,7 @@ printf("link: %s\n", link);
 					debug(99, "ret1[i].part: %s", ret1[i].part);
 					int rcret = waitrc(NULL, 10, 0);
 					if(rcret == getrcconfigint("rcexit", NULL)) break;
-//					if(flag == 0)
-//						pic = oregex(".*longdesc='(.*)' class='vThumb'.*", ret1[i].part);
-//					else
-						pic = oregex(".*longdesc='(.*)' class='vThumb.*", ret1[i].part);
-
-//ret1[i].part: img id='i9201814' onload='IL(this);' src='http://is2.myvideo.de/de/bilder/images/s_trans.gif' longdesc='http://i3.myv-img.de/mv/web/138/movie33/86/thumbs/9201814_1.jpg' class='vThumb chThumb' alt='Kings Of Leon -- Wait For Me' onmouseover='sVT("9201814",1,0,"http://i3.myv-img.de/mv/web/138/movie33/86/thumbs");' onmouseout='sVT("9201814",0,0,"");'
-					
+					pic = oregex(".*longdesc='(.*)' class='vThumb.*", ret1[i].part);
 					id = oregex(".*img id='i(.*)' onload=.*", ret1[i].part);
 					title = oregex(".*alt='(.*)' onmouseover=.*", ret1[i].part);
 					debug(99, "title: %s", title);
