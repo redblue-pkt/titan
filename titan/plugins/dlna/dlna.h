@@ -240,7 +240,7 @@ void screendlna()
 	struct skin* dir4 = getscreennode(dlna, "dir4");
 	struct inetwork* net = inetwork;
 	struct skin* tmp = NULL;
-	char* tmpstr = NULL;
+	char* tmpstr = NULL, *dlnastop = NULL, *dlnastart = NULL, *dlnaconfig = NULL;
 
 	struct dlna* node = (struct dlna*)malloc(sizeof(struct dlna));
 	if(node == NULL)
