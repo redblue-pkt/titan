@@ -889,7 +889,7 @@ struct hdd* addhdd(char* device, int partition, unsigned long size, int removabl
 	if(status.standby == 0 && newnode->partition == 1 && ostrstr(newnode->device, "1") != NULL)
 	{
 		char* tmpstr = NULL, *backup = NULL, *movie = NULL, *swapextensions = NULL, *swapfile = NULL, *checkfile = NULL;
-		int newdev = 1;
+		int newdev = 1, ret = 0;
 		
 		tmpstr = ostrcat("/media/autofs/", newnode->device, 0, 0);
 		checkfile = ostrcat(tmpstr, "/.titandev", 0, 0);
@@ -902,11 +902,13 @@ struct hdd* addhdd(char* device, int partition, unsigned long size, int removabl
 			
 			if(file_exist(movie) == 1 || file_exist(swapextensions)== 1 || file_exist(backup) == 1 || file_exist(swapfile) == 1)
 				newdev = 0;
-			
-			if(newdev == 1 && writesys(checkfile, "titan", 1) == 0)
+				
+			ret = writesys(checkfile, "titan", 1);
+			if(ret == 0)
 			{
 				sync();
-				textbox("Message", _("Found new Stick/HDD.\nYou can configure it in Harddisk Menu."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 15, 0);
+				if(newdev == 1)
+					textbox("Message", _("Found new Stick/HDD.\nYou can configure it in Harddisk Menu."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 15, 0);
 			}
 		}
 		free(tmpstr); tmpstr = NULL;
