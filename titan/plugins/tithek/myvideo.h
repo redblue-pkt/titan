@@ -156,7 +156,7 @@ unlink("/tmp/myvideo_tmpstr_uni");
 	return streamurl;
 }
 
-int myvideo_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr)
+int myvideo_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr, int flag)
 {
 	int ret = 1;
 
@@ -164,12 +164,17 @@ int myvideo_search(struct skin* grid, struct skin* listbox, struct skin* countla
 		return ret;
 
 	char* search = NULL;
-	if(searchstr == NULL)
-		search = textinputhist("Search", " ", "searchhist");
-	else
-		search = textinputhist("Search", searchstr, "searchhist");
 
-	if(search != NULL)
+	if(flag == 0)
+	{ 
+		if(searchstr == NULL)
+			search = textinputhist("Search", " ", "searchhist");
+		else
+			search = textinputhist("Search", searchstr, "searchhist");
+	}
+printf("link: %s\n", link);
+
+	if(search != NULL || flag > 0)
 	{
 		drawscreen(load, 0, 0);
 		search = stringreplacechar(search, ' ', '+');
@@ -178,9 +183,14 @@ int myvideo_search(struct skin* grid, struct skin* listbox, struct skin* countla
 		char* pic = NULL;
 		char* title = NULL;
 		char* menu = NULL;
+		char* path = NULL;
 		char* ip = ostrcat("www.myvideo.de", NULL, 0, 0);
-		char* path = ostrcat("Videos_A-Z?searchWord=", search, 0, 0);
-					
+
+		if(flag == 0)
+			path = ostrcat("Videos_A-Z?searchWord=", search, 0, 0);
+		else
+			path = ostrcat("Top_100/Top_100_Single_Charts", NULL, 0, 0);
+		
 		char* tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
 		tmpstr = string_replace_all("<", "\n", tmpstr, 1);
 		tmpstr = string_replace_all(">", "\n", tmpstr, 1);
@@ -202,8 +212,13 @@ int myvideo_search(struct skin* grid, struct skin* listbox, struct skin* countla
 					debug(99, "ret1[i].part: %s", ret1[i].part);
 					int rcret = waitrc(NULL, 10, 0);
 					if(rcret == getrcconfigint("rcexit", NULL)) break;
-				
-					pic = oregex(".*longdesc='(.*)' class='vThumb'.*", ret1[i].part);
+//					if(flag == 0)
+//						pic = oregex(".*longdesc='(.*)' class='vThumb'.*", ret1[i].part);
+//					else
+						pic = oregex(".*longdesc='(.*)' class='vThumb.*", ret1[i].part);
+
+//ret1[i].part: img id='i9201814' onload='IL(this);' src='http://is2.myvideo.de/de/bilder/images/s_trans.gif' longdesc='http://i3.myv-img.de/mv/web/138/movie33/86/thumbs/9201814_1.jpg' class='vThumb chThumb' alt='Kings Of Leon -- Wait For Me' onmouseover='sVT("9201814",1,0,"http://i3.myv-img.de/mv/web/138/movie33/86/thumbs");' onmouseout='sVT("9201814",0,0,"");'
+					
 					id = oregex(".*img id='i(.*)' onload=.*", ret1[i].part);
 					title = oregex(".*alt='(.*)' onmouseover=.*", ret1[i].part);
 					debug(99, "title: %s", title);
