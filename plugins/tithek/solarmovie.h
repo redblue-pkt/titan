@@ -31,7 +31,7 @@ char* solarmovie(char* link)
 
 //		tmpstr = gethttp("www.solarmovie.so", path, 80, NULL, NULL, 5000, NULL, 0);
 
-		char* send = ostrcat(send, "GET /link/play/", 1, 0);
+		char* send = ostrcat("GET /link/play/", NULL, 0, 0);
 		send = ostrcat(send, id, 1, 0);
 		send = ostrcat(send, " HTTP/1.1\r\nHost: www.solarmovie.so\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nConnection: close\r\nAccept-Encoding: gzip\r\n\r\n", 1, 0);	
 		debug(99, "send: %s", send);

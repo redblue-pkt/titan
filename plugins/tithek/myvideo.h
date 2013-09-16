@@ -6,7 +6,7 @@
 char* myvideo(char* input, char* url, char* name, int flag)
 {
 	debug(99, "link(%d): %s", flag, input);
-	char* ip = NULL, *pos = NULL, *path = NULL, *pageUrl = NULL, *playpath = NULL, *video_id = NULL, *source = NULL, *streamurl = NULL, *tmpstr_uni = NULL, *b64 = NULL, *key = NULL, *newurl = NULL, *link = NULL;
+	char* ip = NULL, *pos = NULL, *path = NULL, *pageUrl = NULL, *playpath = NULL, *video_id = NULL, *source = NULL, *streamurl = NULL, *tmpstr_uni = NULL, *b64 = NULL, *key = NULL, *newurl = NULL, *link = NULL, *tmpstr = NULL, *tmppath = NULL, *error = NULL;
 
 	if(flag == 1)
 	{
@@ -33,14 +33,33 @@ char* myvideo(char* input, char* url, char* name, int flag)
 		path = pos + 1;
 	}
 
-	char* tmpstr = NULL;
+	tmppath = ostrcat("watch/", video_id , 0, 0);
+	tmppath = ostrcat(tmppath, "/" , 1, 0);
+	tmpstr = gethttp(ip, tmppath, 80, NULL, NULL, 10000, NULL, 0);
+	error = string_resub("<div class='lContent lContNoBorder error sBold sCenter'>", "</div>", tmpstr, 0);
+
+	unlink("/tmp/myvideo_tmpstr");
+	unlink("/tmp/myvideo_tmpstr_uni");
+	unlink("/tmp/myvideo_tmpstr_error");
+
+	if(getconfigint("debuglevel", NULL) == 99)
+		writesys("/tmp/myvideo_tmpstr_error", tmpstr, 0);
+				
+	if(ostrstr(error, "<div class='error sBold' id='error_screen_body'>") == NULL)
+	{
+		textbox(_("Message"), _(error) , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
+		debug(99, "error msg: %s", error);
+	}	
+	
+	debug(99, "error link: http://%s/%s", ip, tmppath);
+	free(tmpstr), tmpstr = NULL;
+	free(tmppath), tmppath = NULL;
+	free(error), error = NULL;
+	
 // not working tmpstr hat zusatzdaten im string
 	tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
 
 	debug(99, "link: http://%s/%s", ip, path);
-
-unlink("/tmp/myvideo_tmpstr");
-unlink("/tmp/myvideo_tmpstr_uni");
 
 	if(getconfigint("debuglevel", NULL) == 99)
 		writesys("/tmp/myvideo_tmpstr", tmpstr, 0);
@@ -223,9 +242,13 @@ int myvideo_search(struct skin* grid, struct skin* listbox, struct skin* countla
 					{
 						incount += 1;
 						line = ostrcat(line, title, 1, 0);
-						line = ostrcat(line, "#http://www.myvideo.de/dynamic/get_player_video_xml.php?flash_playertype=SER&ID=", 1, 0);
+//						line = ostrcat(line, "#http://www.myvideo.de/dynamic/get_player_video_xml.php?flash_playertype=SER&ID=", 1, 0);
+// de fix
+						line = ostrcat(line, "#http://www.myvideo.de/dynamic/get_player_video_xml.php?domain=www.myvideo.de&flash_playertype=D&ds=1&autorun=yes&ID=", 1, 0);
 						line = ostrcat(line, id, 1, 0);
-						line = ostrcat(line, "&_countlimit=4&autorun=yes;pageUrl=http://www.myvideo.de/watch/", 1, 0);										
+//						line = ostrcat(line, "&_countlimit=4&autorun=yes;pageUrl=http://www.myvideo.de/watch/", 1, 0);										
+// de fix
+						line = ostrcat(line, "&_countlimit=4;pageUrl=http://www.myvideo.de/watch/", 1, 0);										
 						line = ostrcat(line, id, 1, 0);
 						line = ostrcat(line, "/;playpath=flv:movie24/a0/", 1, 0);
 						line = ostrcat(line, id, 1, 0);
