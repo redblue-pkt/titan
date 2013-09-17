@@ -164,7 +164,7 @@ char* getinstallpath(char* path, char* size)
 		if(mbox != NULL)
 			tmpstr = ostrcat(mbox->param, NULL, 0, 0);
 	}
-	else
+	else if(count == 0)
 	{
 		textbox(_("Tpk Install Info"), _("Can't install Package. Package to big."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
 		free(tmpstr); tmpstr = NULL;
