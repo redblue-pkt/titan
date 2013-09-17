@@ -15,6 +15,9 @@ BEGINTIME=`date +%s`
 DATENAME=`date +"%Y.%m.%d_%H.%M.%S"`
 echo "[ard.sh] START (buildtype: $buildtype): $DATENAME" > _full/ard/build.log
 
+##################
+skip=1
+if [ $skip == 1 ];then
 watchlist="
 New;/ard/servlet/ajax-cache/3516220/view=switch/index.html
 Most~Viewed;/ard/servlet/ajax-cache/3516210/view=list/show=recent/index.html
@@ -56,11 +59,40 @@ echo geturl $geturl
 			TITLE=`echo $ROUND2 | sed 's!data-xtclib=!\ndata-xtclib=!' | grep data-xtclib= | cut -d'"' -f2 | tr '~' ' '`
 		fi				
 		TITLE=`echo $TITLE | sed 's/&amp;/und/g'`
+#		TITLE=`echo $TITLE | sed 's/&quot;/"/g'`
+#		TITLE=`echo $TITLE | sed 's/&uuml;/\ü/g'`
+#		TITLE=`echo $TITLE | sed 's/&auml;/\ä/g'`
+#		TITLE=`echo $TITLE | sed 's/&ouml;/\ö/g'`
+#		TITLE=`echo $TITLE | sed 's/&szlig;/\ß/g'`
 		TITLE=`echo $TITLE | sed 's/&quot;/"/g'`
-		TITLE=`echo $TITLE | sed 's/&uuml;/\ü/g'`
-		TITLE=`echo $TITLE | sed 's/&auml;/\ä/g'`
-		TITLE=`echo $TITLE | sed 's/&ouml;/\ö/g'`
-		TITLE=`echo $TITLE | sed 's/&szlig;/\ß/g'`
+		TITLE=`echo $TITLE | sed 's/&lt;/\</g'`
+		TITLE=`echo $TITLE | sed 's/&#034;/\"/g'`
+		TITLE=`echo $TITLE | sed 's/&#039;/\"/g'` # '
+		TITLE=`echo $TITLE | sed 's/&szlig;/ÃŸ/g'`
+		TITLE=`echo $TITLE | sed 's/&ndash;/-/g'`
+		TITLE=`echo $TITLE | sed 's/&Auml;/Ã„/g'`
+		TITLE=`echo $TITLE | sed 's/&Uuml;/Ãœ/g'`
+		TITLE=`echo $TITLE | sed 's/&Ouml;/Ã–/g'`
+		TITLE=`echo $TITLE | sed 's/&auml;/Ã¤/g'`
+		TITLE=`echo $TITLE | sed 's/&uuml;/Ã¼/g'`
+		TITLE=`echo $TITLE | sed 's/&ouml;/Ã¶/g'`
+		TITLE=`echo $TITLE | sed 's/&eacute;/Ã©/g'`
+		TITLE=`echo $TITLE | sed 's/&egrave;/Ã¨/g'`
+		TITLE=`echo $TITLE | sed 's/%F6/Ã¶/g'`
+		TITLE=`echo $TITLE | sed 's/%FC/Ã¼/g'`
+		TITLE=`echo $TITLE | sed 's/%E4/Ã¤/g'`
+		TITLE=`echo $TITLE | sed 's/%26/&/g'`
+		TITLE=`echo $TITLE | sed 's/%C4/Ã„/g'`
+		TITLE=`echo $TITLE | sed 's/%D6/Ã–/g'`
+		TITLE=`echo $TITLE | sed 's/%DC/Ãœ/g'`
+		TITLE=`echo $TITLE | sed 's/|/-/g'`
+		TITLE=`echo $TITLE | sed 's/(/ /g'`
+		TITLE=`echo $TITLE | sed 's/)/ /g'`
+		TITLE=`echo $TITLE | sed 's/+/ /g'`
+		TITLE=`echo $TITLE | sed 's/\//-/g'`
+		TITLE=`echo $TITLE | sed 's/,/ /g'`
+#		TITLE=`echo $TITLE | cut -d ":" -f2 | cut -d "," -f1`
+		TITLE=`echo $(php -r "echo rawurldecode('$TITLE');")`
 	
 		wget $URL -O cache.$filename.$count.list
 	
@@ -90,10 +122,193 @@ echo geturl $geturl
 	fi
 	
 done
+fi
 
+###############
+# shows
+###############
+
+for ROUND in 0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z; do
+	watchlist="$watchlist $ROUND;/ard/servlet/ajax-cache/3474820/view=list/initial=$ROUND/index.html"
+done
+	
+#watchlist="
+#A;/ard/servlet/ajax-cache/3474820/view=list/initial=A/index.html
+#B;/ard/servlet/ajax-cache/3474820/view=list/initial=B/index.html
+#"
+
+skipcount=0
+for ROUND0 in $watchlist; do
+	count=`expr $count + 1`
+	filename=`echo $ROUND0 | cut -d ";" -f1 | tr 'A-Z' 'a-z' | tr '~' '.'`
+	section=`echo $ROUND0 | cut -d ";" -f1 | tr '~' '.'`
+	geturl=`echo $ROUND0 | cut -d ";" -f2`
+	wget http://www.ardmediathek.de$geturl -O cache.$filename.$count.html
+	searchlist=`cat cache.$filename.$count.html | tr '\r' '\n' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's/ \+/~/g' | sed 's!<div~class="mt-media_item">!\n\n<div~class="mt-media_item">!g' | grep ^'<div~class="mt-media_item">'`
+
+echo section $section
+echo filename $filename
+#exit
+#echo searchlist $searchlist
+#exit
+
+	for ROUND1 in $searchlist; do
+		piccount=`expr $piccount + 1`
+		count=`expr $count + 1`
+		echo ROUND1 $ROUND1
+		URL=http://www.ardmediathek.de`echo $ROUND1 | sed 's!<a~href=!\nurl=!' | grep url= | cut -d'"' -f2`
+		echo URL1 $URL
+		PIC=http://www.ardmediathek.de`echo $ROUND1 | sed 's!<img~src=!\npic=!' | grep pic= | cut -d'"' -f2`		
+		TITLE=`echo $ROUND1 | sed 's!alt=!\nalt=!' | grep alt= | cut -d'"' -f2 | tr '~' ' '`
+		if [ -z "$TITLE" ];then
+			TITLE=`echo $ROUND2 | sed 's!data-xtclib=!\ndata-xtclib=!' | grep data-xtclib= | cut -d'"' -f2 | tr '~' ' '`
+		fi				
+		TITLE=`echo $TITLE | sed 's/&amp;/und/g'`
+#		TITLE=`echo $TITLE | sed 's/&quot;/"/g'`
+#		TITLE=`echo $TITLE | sed 's/&uuml;/\ü/g'`
+#		TITLE=`echo $TITLE | sed 's/&auml;/\ä/g'`
+#		TITLE=`echo $TITLE | sed 's/&ouml;/\ö/g'`
+#		TITLE=`echo $TITLE | sed 's/&szlig;/\ß/g'`
+		TITLE=`echo $TITLE | sed 's/&quot;/"/g'`
+		TITLE=`echo $TITLE | sed 's/&lt;/\</g'`
+		TITLE=`echo $TITLE | sed 's/&#034;/\"/g'`
+		TITLE=`echo $TITLE | sed 's/&#039;/\"/g'` # '
+		TITLE=`echo $TITLE | sed 's/&szlig;/ÃŸ/g'`
+		TITLE=`echo $TITLE | sed 's/&ndash;/-/g'`
+		TITLE=`echo $TITLE | sed 's/&Auml;/Ã„/g'`
+		TITLE=`echo $TITLE | sed 's/&Uuml;/Ãœ/g'`
+		TITLE=`echo $TITLE | sed 's/&Ouml;/Ã–/g'`
+		TITLE=`echo $TITLE | sed 's/&auml;/Ã¤/g'`
+		TITLE=`echo $TITLE | sed 's/&uuml;/Ã¼/g'`
+		TITLE=`echo $TITLE | sed 's/&ouml;/Ã¶/g'`
+		TITLE=`echo $TITLE | sed 's/&eacute;/Ã©/g'`
+		TITLE=`echo $TITLE | sed 's/&egrave;/Ã¨/g'`
+		TITLE=`echo $TITLE | sed 's/%F6/Ã¶/g'`
+		TITLE=`echo $TITLE | sed 's/%FC/Ã¼/g'`
+		TITLE=`echo $TITLE | sed 's/%E4/Ã¤/g'`
+		TITLE=`echo $TITLE | sed 's/%26/&/g'`
+		TITLE=`echo $TITLE | sed 's/%C4/Ã„/g'`
+		TITLE=`echo $TITLE | sed 's/%D6/Ã–/g'`
+		TITLE=`echo $TITLE | sed 's/%DC/Ãœ/g'`
+		TITLE=`echo $TITLE | sed 's/|/ /g'`
+		TITLE=`echo $TITLE | sed 's/(/ /g'`
+		TITLE=`echo $TITLE | sed 's/)/ /g'`
+		TITLE=`echo $TITLE | sed 's/+/ /g'`
+		TITLE=`echo $TITLE | sed 's/\//-/g'`
+		TITLE=`echo $TITLE | sed 's/,/ /g'`
+		TITLE=`echo $TITLE | cut -d ":" -f2 | cut -d "," -f1`
+		TITLE=`echo $(php -r "echo rawurldecode('$TITLE');")`
+
+		TAGTITLE=$TITLE
+		filename2=`echo $TITLE | tr 'A-Z' 'a-z' | tr '~' '.' | tr ',' '.' | tr '"' '.' | tr ':' '.' | tr ' ' '.' | tr '+' '.' | sed 's/\.\+/./g'`
+
+		ID=`echo $URL | cut -d"=" -f2`
+		echo ID $ID
+		
+		URL=http://www.ardmediathek.de/ard/servlet/ajax-cache/3516962/view=list/documentId="$ID"/goto=1/index.html
+		echo URL2 $URL
+
+		wget $URL -O cache.$filename."$filename2".$count.list
+
+		searchlist=`cat cache.$filename."$filename2".$count.list | tr '\r' '\n' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's/ \+/~/g' | sed 's!<div~class="mt-media_item">!\n\n<div~class="mt-media_item">!g' | grep ^'<div~class="mt-media_item">'`
+	
+		for ROUND2 in $searchlist; do
+			piccount=`expr $piccount + 1`
+			count=`expr $count + 1`
+			skipcount=`expr $skipcount + 1`
+if [ $skipcount == 3 ]; then
+skipcount=0
+#	break
+fi	
+			URL=http://www.ardmediathek.de`echo $ROUND2 | sed 's!<a~href=!\nurl=!' | grep url= | cut -d'"' -f2`
+			PIC=http://www.ardmediathek.de`echo $ROUND2 | sed 's!<img~src=!\npic=!' | grep pic= | cut -d'"' -f2`		
+			TITLE=`echo $ROUND2 | sed 's!alt=!\nalt=!' | grep alt= | cut -d'"' -f2 | tr '~' ' '`
+			if [ -z "$TITLE" ];then
+				TITLE=`echo $ROUND2 | sed 's!data-xtclib=!\ndata-xtclib=!' | grep data-xtclib= | cut -d'"' -f2 | tr '~' ' '`
+			fi				
+			TITLE=`echo $TITLE | sed 's/&amp;/und/g'`
+	#		TITLE=`echo $TITLE | sed 's/&quot;/"/g'`
+	#		TITLE=`echo $TITLE | sed 's/&uuml;/\ü/g'`
+	#		TITLE=`echo $TITLE | sed 's/&auml;/\ä/g'`
+	#		TITLE=`echo $TITLE | sed 's/&ouml;/\ö/g'`
+	#		TITLE=`echo $TITLE | sed 's/&szlig;/\ß/g'`
+			TITLE=`echo $TITLE | sed 's/&quot;/"/g'`
+			TITLE=`echo $TITLE | sed 's/&lt;/\</g'`
+			TITLE=`echo $TITLE | sed 's/&#034;/\"/g'`
+			TITLE=`echo $TITLE | sed 's/&#039;/\"/g'` # '
+			TITLE=`echo $TITLE | sed 's/&szlig;/Ãx/g'`
+			TITLE=`echo $TITLE | sed 's/&ndash;/-/g'`
+			TITLE=`echo $TITLE | sed 's/&Auml;/Ã/g'`
+			TITLE=`echo $TITLE | sed 's/&Uuml;/ÃS/g'`
+			TITLE=`echo $TITLE | sed 's/&Ouml;/Ã/g'`
+			TITLE=`echo $TITLE | sed 's/&auml;/Ã¤/g'`
+			TITLE=`echo $TITLE | sed 's/&uuml;/Ã¼/g'`
+			TITLE=`echo $TITLE | sed 's/&ouml;/Ã¶/g'`
+			TITLE=`echo $TITLE | sed 's/&eacute;/Ã©/g'`
+			TITLE=`echo $TITLE | sed 's/&egrave;/Ã¨/g'`
+			TITLE=`echo $TITLE | sed 's/%F6/Ã¶/g'`
+			TITLE=`echo $TITLE | sed 's/%FC/Ã¼/g'`
+			TITLE=`echo $TITLE | sed 's/%E4/Ã¤/g'`
+			TITLE=`echo $TITLE | sed 's/%26/&/g'`
+			TITLE=`echo $TITLE | sed 's/%C4/Ã/g'`
+			TITLE=`echo $TITLE | sed 's/%D6/Ã/g'`
+			TITLE=`echo $TITLE | sed 's/%DC/ÃS/g'`
+		TITLE=`echo $TITLE | sed 's/|/ /g'`
+		TITLE=`echo $TITLE | sed 's/(/ /g'`
+		TITLE=`echo $TITLE | sed 's/)/ /g'`
+		TITLE=`echo $TITLE | sed 's/+/ /g'`
+		TITLE=`echo $TITLE | sed 's/\//-/g'`
+		TITLE=`echo $TITLE | sed 's/,/ /g'`
+		TITLE=`echo $TITLE | sed 's/:/ /g'`
+
+#			TITLE=`echo $TITLE | cut -d ":" -f2 | cut -d "," -f1`
+			TITLE=`echo $(php -r "echo rawurldecode('$TITLE');")`
+		
+			wget $URL -O cache.$filename.$count.list
+		
+			URL=`cat cache.$filename.$count.list | grep .mp4 | grep http | sed 's!http://!\nhttp://!g' | grep ^"http://" | cut -d'"' -f1 | tail -n1`
+			
+			echo TITLE $TITLE
+			echo URL $URL
+			echo PIC $PIC
+			LINE="$TITLE#$URL#$PIC#ard_$piccount.jpg#ARD#2"
+			if [ ! -z "$TITLE" ] && [ ! -z "$URL" ] && [ `cat cache.ard.shows."$filename2".titanlist | grep "#$URL#" | wc -l` -eq 0 ];then
+				echo $LINE >> cache.ard.shows."$filename2".titanlist
+			fi
+	
+			if [ ! -z "$TITLE" ] && [ ! -z "$URL" ] && [ `cat cache.ard.titanlist | grep "#$URL#" | wc -l` -eq 0 ];then
+				echo $LINE >> cache.ard.titanlist
+			else
+				echo $LINE >> cache.ard.error.titanlist
+			fi
+		done
+		if [ -e cache.ard.shows."$filename2".titanlist ];then
+			piccount=`expr $piccount + 1`
+			URL="http://atemio.dyndns.tv/mediathek/ard/streams/ard.shows."$filename2".list"
+			PIC="http://atemio.dyndns.tv/mediathek/menu/"$filename2".jpg"
+			LINE="$TAGTITLE#$URL#$PIC#ard_$piccount.jpg#ARD#0"
+			if [ ! -z "$TITLE" ] && [ ! -z "$URL" ] && [ `cat cache.ard.shows.titanlist | grep "#$URL#" | wc -l` -eq 0 ];then
+				echo $LINE >> cache.ard.shows.titanlist
+			fi
+			cat cache.ard.shows."$filename2".titanlist >> _full/ard/streams/ard.shows."$filename2".list
+		fi
+	done
+done
+
+if [ -e cache.ard.shows.titanlist ];then
+	piccount=`expr $piccount + 1`
+	URL="http://atemio.dyndns.tv/mediathek/ard/ard.shows.list"
+	PIC="http://atemio.dyndns.tv/mediathek/menu/shows.jpg"
+	LINE="All Shows#$URL#$PIC#ard_$piccount.jpg#ARD#0"
+	echo $LINE >> cache.ard.category.titanlist
+	cat cache.ard.shows.titanlist | sort -u > _full/ard/ard.shows.list
+fi
+
+##############
 if [ "$buildtype" = "full" ];then
 	cat cache.ard.titanlist | sort -u > _full/ard/streams/ard.all-sorted.list
-	cat cache.ard.category.titanlist | sort -u > _full/ard/ard.category.list
+#	cat cache.ard.category.titanlist | sort -u > _full/ard/ard.category.list
+	cat cache.ard.category.titanlist > _full/ard/ard.category.list
 	
 	for ROUND in 0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z; do
 		filename=`echo "$ROUND" | tr 'A-Z' 'a-z'`
@@ -110,8 +325,8 @@ if [ "$buildtype" = "full" ];then
 fi
 
 #cp cache.ard.all.titanlist _full/ard/ard.category.list
-cp _full/mainmenu.list /var/www/atemio/web/mediathek
-cp _full/mainmenu-ard.list /var/www/atemio/web/mediathek
+#cp _full/mainmenu.list /var/www/atemio/web/mediathek
+#cp _full/mainmenu-ard.list /var/www/atemio/web/mediathek
 
 cp -a _full/ard/* /var/www/atemio/web/mediathek/ard
 
