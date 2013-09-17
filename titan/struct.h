@@ -1481,6 +1481,7 @@ struct status
 	int firstunicablewait;
 	//path for imdbfolder
 	char* imdbfolderpath;
+	int virtualzap;
 } status;
 
 struct fb

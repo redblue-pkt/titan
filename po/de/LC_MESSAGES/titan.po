@@ -4115,3 +4115,12 @@ msgstr "Nach EPG Suche"
 
 msgid "Found new Stick/HDD.\nYou can configure it in Harddisk Menu."
 msgstr "Neuer Stick/HDD erkannt.\nSie können diesen im Festplatten Menü einstellen."
+
+msgid "yes / vzap 1 sec"
+msgstr "Ja / VZAP 1 sek"
+
+msgid "yes / vzap 2 sec"
+msgstr "Ja / VZAP 2 sek"
+
+msgid "yes / vzap endless"
+msgstr "Ja / VZAP unendlich"

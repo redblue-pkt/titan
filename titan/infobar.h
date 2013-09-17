@@ -629,20 +629,34 @@ void screeninfobar()
 			status.infobar = 1;
 			continue;
 		}
-		if(rcret == getrcconfigint("rcchup", NULL) || (status.crosscontrol == 1 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcdown", NULL)))
+		if(rcret == getrcconfigint("rcchup", NULL) || (status.crosscontrol > 0 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcdown", NULL)))
 		{
 			subtitlepause(1);
-			zapup();
+			if(status.crosscontrol > 1 && status.virtualzap == 0 && rcret == getrcconfigint("rcdown", NULL))
+			{
+				status.virtualzap = status.crosscontrol - 1;
+				zapup();
+				status.virtualzap = 0;
+			}
+			else 
+				zapup();
 			clearscreen(infobar);
 			drawscreen(skin, 0, 0);
 			infobartimeout = 0;
 			status.infobar = 2;
 			continue;
 		}
-		if(rcret == getrcconfigint("rcchdown", NULL) || (status.crosscontrol == 1 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcup", NULL)))
+		if(rcret == getrcconfigint("rcchdown", NULL) || (status.crosscontrol > 0 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcup", NULL)))
 		{
 			subtitlepause(1);
-			zapdown();
+			if(status.crosscontrol > 1 && status.virtualzap == 0 && rcret == getrcconfigint("rcup", NULL))
+			{
+				status.virtualzap = status.crosscontrol - 1;
+				zapdown();
+				status.virtualzap = 0;
+			}
+			else
+				zapdown();
 			clearscreen(infobar);
 			drawscreen(skin, 0, 0);
 			infobartimeout = 0;
