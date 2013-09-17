@@ -117,6 +117,7 @@ void setdefaults()
 	status.autochangechannelname = getconfigint("autochangechannelname", NULL);
 	status.showrecfreesize = getconfigint("showrecfreesize", NULL);
 	status.defpicmemtimeout = getskinconfigint("defpicmemtimeout", NULL);
+	status.imdbfolderpath = getconfig("imdbfolderpath", NULL); 
 
 	if(status.filelistselectcol == 0) status.filelistselectcol = status.listboxselectcol;
 	

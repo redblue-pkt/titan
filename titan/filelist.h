@@ -367,7 +367,7 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 							string_removechar(shortname);
 							strstrip(shortname);
 
-							tmpstr = ostrcat(tmpstr, getconfig("imdbfolderpath", NULL), 1, 0);
+							tmpstr = ostrcat(tmpstr, status.imdbfolderpath, 1, 0);
 							tmpstr = ostrcat(tmpstr, "/", 1, 0);																			
 							tmpstr = ostrcat(tmpstr, shortname, 1, 0);
 							tmpstr = ostrcat(tmpstr, ".png", 1, 0);

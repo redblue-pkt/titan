@@ -1479,6 +1479,8 @@ struct status
 	//on some fat32 hdd it takes very long to get free size
 	int showrecfreesize;
 	int firstunicablewait;
+	//path for imdbfolder
+	char* imdbfolderpath;
 } status;
 
 struct fb
