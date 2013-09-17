@@ -66,10 +66,7 @@ void videoclose(struct dvbdev* node, int fd)
 int videostop(struct dvbdev* node, int clearscreen)
 {
 	if(node == NULL)
-	{
-		err("NULL detect");
 		return 1;
-	}
 
 	debug(200, "VIDEO_STOP");
 	if(ioctl(node->fd, VIDEO_STOP, clearscreen) < 0)
