@@ -38,7 +38,7 @@ Das Erste - Live
 for ROUND1 in $watchlist; do
 	count=`expr $count + 1`
 	filename=`echo $ROUND1 | cut -d ";" -f1 | tr 'A-Z' 'a-z' | tr '~' '.'`
-	section=`echo $ROUND1 | cut -d ";" -f1 | tr '~' '.'`
+	section=`echo $ROUND1 | cut -d ";" -f1 | tr '~' ' '`
 	geturl=`echo $ROUND1 | cut -d ";" -f2`
 
 	wget http://www.ardmediathek.de$geturl -O cache.$filename.$count.html
@@ -59,11 +59,13 @@ for ROUND1 in $watchlist; do
 		TITLE=`echo $TITLE | sed 's/&lt;/\</g'`
 		TITLE=`echo $TITLE | sed 's/&#034;/\"/g'`
 		TITLE=`echo $TITLE | sed 's/&#039;/\"/g'` # '
-		TITLE=`echo $TITLE | sed 's/&szlig;/ÃŸ/g'`
+		TITLE=`echo $TITLE | sed 's/#034;/\"/g'`
+		TITLE=`echo $TITLE | sed 's/#039;/\"/g'` # '
+		TITLE=`echo $TITLE | sed 's/&szlig;/Ãx/g'`
 		TITLE=`echo $TITLE | sed 's/&ndash;/-/g'`
-		TITLE=`echo $TITLE | sed 's/&Auml;/Ã„/g'`
-		TITLE=`echo $TITLE | sed 's/&Uuml;/Ãœ/g'`
-		TITLE=`echo $TITLE | sed 's/&Ouml;/Ã–/g'`
+		TITLE=`echo $TITLE | sed 's/&Auml;/Ã/g'`
+		TITLE=`echo $TITLE | sed 's/&Uuml;/ÃS/g'`
+		TITLE=`echo $TITLE | sed 's/&Ouml;/Ã/g'`
 		TITLE=`echo $TITLE | sed 's/&auml;/Ã¤/g'`
 		TITLE=`echo $TITLE | sed 's/&uuml;/Ã¼/g'`
 		TITLE=`echo $TITLE | sed 's/&ouml;/Ã¶/g'`
@@ -73,15 +75,19 @@ for ROUND1 in $watchlist; do
 		TITLE=`echo $TITLE | sed 's/%FC/Ã¼/g'`
 		TITLE=`echo $TITLE | sed 's/%E4/Ã¤/g'`
 		TITLE=`echo $TITLE | sed 's/%26/&/g'`
-		TITLE=`echo $TITLE | sed 's/%C4/Ã„/g'`
-		TITLE=`echo $TITLE | sed 's/%D6/Ã–/g'`
-		TITLE=`echo $TITLE | sed 's/%DC/Ãœ/g'`
-		TITLE=`echo $TITLE | sed 's/|/-/g'`
+		TITLE=`echo $TITLE | sed 's/%C4/Ã/g'`
+		TITLE=`echo $TITLE | sed 's/%D6/Ã/g'`
+		TITLE=`echo $TITLE | sed 's/%DC/ÃS/g'`
+		TITLE=`echo $TITLE | sed 's/|/ /g'`
 		TITLE=`echo $TITLE | sed 's/(/ /g'`
 		TITLE=`echo $TITLE | sed 's/)/ /g'`
 		TITLE=`echo $TITLE | sed 's/+/ /g'`
 		TITLE=`echo $TITLE | sed 's/\//-/g'`
 		TITLE=`echo $TITLE | sed 's/,/ /g'`
+		TITLE=`echo $TITLE | sed 's/;/ /g'`
+		TITLE=`echo $TITLE | sed 's/:/ /g'`
+		TITLE=`echo $TITLE | sed 's/\.\+/./g'`	
+
 #		TITLE=`echo $TITLE | cut -d ":" -f2 | cut -d "," -f1`
 		TITLE=`echo $(php -r "echo rawurldecode('$TITLE');")`
 	
@@ -127,7 +133,7 @@ if [ "$buildtype" = "full" ];then
 	for ROUND0 in $watchlist; do
 		count=`expr $count + 1`
 		filename=`echo $ROUND0 | cut -d ";" -f1 | tr 'A-Z' 'a-z' | tr '~' '.'`
-		section=`echo $ROUND0 | cut -d ";" -f1 | tr '~' '.'`
+		section=`echo $ROUND0 | cut -d ";" -f1 | tr '~' ' '`
 		geturl=`echo $ROUND0 | cut -d ";" -f2`
 		wget http://www.ardmediathek.de$geturl -O cache.$filename.$count.html
 		searchlist=`cat cache.$filename.$count.html | tr '\r' '\n' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's/ \+/~/g' | sed 's!<div~class="mt-media_item">!\n\n<div~class="mt-media_item">!g' | grep ^'<div~class="mt-media_item">'`
@@ -148,6 +154,8 @@ if [ "$buildtype" = "full" ];then
 			TITLE=`echo $TITLE | sed 's/&lt;/\</g'`
 			TITLE=`echo $TITLE | sed 's/&#034;/\"/g'`
 			TITLE=`echo $TITLE | sed 's/&#039;/\"/g'` # '
+			TITLE=`echo $TITLE | sed 's/#034;/\"/g'`
+			TITLE=`echo $TITLE | sed 's/#039;/\"/g'` # '
 			TITLE=`echo $TITLE | sed 's/&szlig;/Ãx/g'`
 			TITLE=`echo $TITLE | sed 's/&ndash;/-/g'`
 			TITLE=`echo $TITLE | sed 's/&Auml;/Ã/g'`
@@ -171,11 +179,13 @@ if [ "$buildtype" = "full" ];then
 			TITLE=`echo $TITLE | sed 's/+/ /g'`
 			TITLE=`echo $TITLE | sed 's/\//-/g'`
 			TITLE=`echo $TITLE | sed 's/,/ /g'`
+			TITLE=`echo $TITLE | sed 's/;/ /g'`
+			TITLE=`echo $TITLE | sed 's/\.\+/./g'`
 			TITLE=`echo $TITLE | cut -d ":" -f2 | cut -d "," -f1`
 			TITLE=`echo $(php -r "echo rawurldecode('$TITLE');")`
 	
 			TAGTITLE=$TITLE
-			filename2=`echo $TITLE | tr 'A-Z' 'a-z' | tr '~' '.' | tr ',' '.' | tr '"' '.' | tr ':' '.' | tr ' ' '.' | tr '+' '.' | sed 's/\.\+/./g'`
+			filename2=`echo $TITLE | tr 'A-Z' 'a-z' | tr '~' '.' | tr ',' '.' | tr '"' '.' | tr ':' '.' | tr ' ' '.' | tr '+' '.' | tr '!' '.' | sed 's/\.\+/./g'`
 	
 			ID=`echo $URL | cut -d"=" -f2`
 			echo ID $ID
@@ -203,6 +213,8 @@ if [ "$buildtype" = "full" ];then
 				TITLE=`echo $TITLE | sed 's/&lt;/\</g'`
 				TITLE=`echo $TITLE | sed 's/&#034;/\"/g'`
 				TITLE=`echo $TITLE | sed 's/&#039;/\"/g'` # '
+				TITLE=`echo $TITLE | sed 's/#034;/\"/g'`
+				TITLE=`echo $TITLE | sed 's/#039;/\"/g'` # '
 				TITLE=`echo $TITLE | sed 's/&szlig;/Ãx/g'`
 				TITLE=`echo $TITLE | sed 's/&ndash;/-/g'`
 				TITLE=`echo $TITLE | sed 's/&Auml;/Ã/g'`
@@ -226,8 +238,9 @@ if [ "$buildtype" = "full" ];then
 				TITLE=`echo $TITLE | sed 's/+/ /g'`
 				TITLE=`echo $TITLE | sed 's/\//-/g'`
 				TITLE=`echo $TITLE | sed 's/,/ /g'`
+				TITLE=`echo $TITLE | sed 's/;/ /g'`
 				TITLE=`echo $TITLE | sed 's/:/ /g'`
-	
+				TITLE=`echo $TITLE | sed 's/\.\+/./g'`	
 	#			TITLE=`echo $TITLE | cut -d ":" -f2 | cut -d "," -f1`
 				TITLE=`echo $(php -r "echo rawurldecode('$TITLE');")`
 			
