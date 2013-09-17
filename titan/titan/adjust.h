@@ -203,6 +203,9 @@ void screenadjust()
 
 	addchoicebox(crosscontrol, "0", _("no"));
 	addchoicebox(crosscontrol, "1", _("yes"));
+	addchoicebox(crosscontrol, "2", _("yes / vzap 1 sec"));
+	addchoicebox(crosscontrol, "3", _("yes / vzap 2 sec"));
+	addchoicebox(crosscontrol, "9999", _("yes / vzap endless"));
 	setchoiceboxselection(crosscontrol, getconfig("crosscontrol", NULL));
 
 	addchoicebox(emucontrol, "0", _("no"));
@@ -296,6 +299,7 @@ void screenadjust()
 			addconfigscreencheck("recforerun", forerun, "0");
 			addconfigscreencheck("recoverrun", overrun, "0");
 			addconfigscreencheck("virtualzap", virtualzap, "0");
+			status.virtualzap = getconfigint("virtualzap", NULL);
 			if(fasttextrender->ret != NULL)
 			{
 				addconfigscreencheck("fasttextrender", fasttextrender, "0");

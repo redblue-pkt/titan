@@ -7,7 +7,7 @@ struct channel* nextprev(int zapdir, struct bouquet* node)
 	struct skin* infobar = getscreen("infobar");
 	struct channel* tmpchnode = status.aktservice->channel;
 	struct bouquet* tmpnode = node, *lastnode = node;
-	int virtualzap = getconfigint("virtualzap", NULL) * 1000;
+	int virtualzap = status.virtualzap * 1000;
 
 	if(node == NULL) return NULL;
 	struct channel* chnode = node->channel;
@@ -79,7 +79,7 @@ int zapall(int zapdir)
 	struct channel* node = status.aktservice->channel, *lastnode = status.aktservice->channel;
 	struct skin* infobar = getscreen("infobar");
 	struct channel* tmpchnode = status.aktservice->channel;
-	int virtualzap = getconfigint("virtualzap", NULL) * 1000;
+	int virtualzap = status.virtualzap * 1000;
 
 	if(node == NULL) return 1;
 
@@ -171,7 +171,7 @@ int zapaz(int zapdir, char* aktblist)
 	struct channel* node = status.aktservice->channel, *lastnode = status.aktservice->channel;
 	struct skin* infobar = getscreen("infobar");
 	struct channel* tmpchnode = status.aktservice->channel;
-	int virtualzap = getconfigint("virtualzap", NULL) * 1000;
+	int virtualzap = status.virtualzap * 1000;
 
 	if(node == NULL)
 		return 1;
@@ -247,7 +247,7 @@ int zapsat(int zapdir, char* aktblist)
 	struct transponder* tpnode = NULL;
 	struct skin* infobar = getscreen("infobar");
 	struct channel* tmpchnode = status.aktservice->channel;
-	int virtualzap = getconfigint("virtualzap", NULL) * 1000;
+	int virtualzap = status.virtualzap * 1000;
 
 	if(node == NULL || satnode == NULL)
 		return 1;
@@ -324,7 +324,7 @@ int zapprovider(int zapdir, char* aktblist)
 	struct provider* providernode = getproviderbyname(aktblist + 11);
 	struct skin* infobar = getscreen("infobar");
 	struct channel* tmpchnode = status.aktservice->channel;
-	int virtualzap = getconfigint("virtualzap", NULL) * 1000;
+	int virtualzap = status.virtualzap * 1000;
 
 	if(node == NULL || providernode == NULL)
 		return 1;
