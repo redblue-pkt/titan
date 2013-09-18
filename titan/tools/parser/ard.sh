@@ -115,7 +115,7 @@ for ROUND1 in $watchlist; do
 		PIC="http://atemio.dyndns.tv/mediathek/menu/"$filename".jpg"
 		LINE="$section#$URL#$PIC#ard_$piccount.jpg#ARD#3"
 		echo $LINE >> cache.ard.category.titanlist
-		cat cache.ard."$filename".titanlist >> _full/ard/streams/ard."$filename".list
+		cat cache.ard."$filename".titanlist > _full/ard/streams/ard."$filename".list
 	fi
 	
 done
@@ -270,7 +270,7 @@ if [ "$buildtype" = "full" ];then
 				if [ ! -z "$TITLE" ] && [ ! -z "$URL" ] && [ `cat cache.ard.shows.titanlist | grep "#$URL#" | wc -l` -eq 0 ];then
 					echo $LINE >> cache.ard.shows.titanlist
 				fi
-				cat cache.ard.shows."$filename2".titanlist >> _full/ard/streams/ard.shows."$filename2".list
+				cat cache.ard.shows."$filename2".titanlist > _full/ard/streams/ard.shows."$filename2".list
 			fi
 		done
 	done
