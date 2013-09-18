@@ -7,7 +7,7 @@ char plugindesc[] = "Extensions";
 char pluginpic[] = "%pluginpath%/autotimer/plugin.png";
 
 int pluginaktiv = 0;
-int pluginversion = 999999;
+int pluginversion = PLUGINVERSION;
 int autostart = 10;
 //struct skin* pluginmenu = NULL;
 //int pluginflag = 1; //don't show the plugin in pluginmanager
