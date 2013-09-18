@@ -49,12 +49,12 @@ start:
 	while(1)
 	{
 		rcret = waitrc(infobar, virtualzap, 0);
-		if(rcret == getrcconfigint("rcchup", NULL) || (status.crosscontrol == 1 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcdown", NULL)))
+		if(rcret == getrcconfigint("rcchup", NULL) || (status.crosscontrol > 0 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcdown", NULL)))
 		{
 			zapdir = 0;
 			goto start;
 		}
-		else if(rcret == getrcconfigint("rcchdown", NULL) || (status.crosscontrol == 1 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcup", NULL)))
+		else if(rcret == getrcconfigint("rcchdown", NULL) || (status.crosscontrol > 0 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcup", NULL)))
 		{
 			zapdir = 1;
 			goto start;
@@ -110,12 +110,12 @@ start:
 		while(1)
 		{
 			rcret = waitrc(infobar, virtualzap, 0);
-			if(rcret == getrcconfigint("rcchup", NULL) || (status.crosscontrol == 1 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcdown", NULL)))
+			if(rcret == getrcconfigint("rcchup", NULL) || (status.crosscontrol > 0 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcdown", NULL)))
 			{
 				zapdir = 0;
 				goto start;
 			}
-			else if(rcret == getrcconfigint("rcchdown", NULL) || (status.crosscontrol == 1 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcup", NULL)))
+			else if(rcret == getrcconfigint("rcchdown", NULL) || (status.crosscontrol > 0 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcup", NULL)))
 			{
 				zapdir = 1;
 				goto start;
@@ -211,12 +211,12 @@ start:
 		while(1)
 		{
 			rcret = waitrc(infobar, virtualzap, 0);
-			if(rcret == getrcconfigint("rcchup", NULL) || (status.crosscontrol == 1 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcdown", NULL)))
+			if(rcret == getrcconfigint("rcchup", NULL) || (status.crosscontrol > 0 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcdown", NULL)))
 			{
 				zapdir = 0;
 				goto start;
 			}
-			else if(rcret == getrcconfigint("rcchdown", NULL) || (status.crosscontrol == 1 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcup", NULL)))
+			else if(rcret == getrcconfigint("rcchdown", NULL) || (status.crosscontrol > 0 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcup", NULL)))
 			{
 				zapdir = 1;
 				goto start;
@@ -289,12 +289,12 @@ start:
 		while(1)
 		{
 			rcret = waitrc(infobar, virtualzap, 0);
-			if(rcret == getrcconfigint("rcchup", NULL) || (status.crosscontrol == 1 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcdown", NULL)))
+			if(rcret == getrcconfigint("rcchup", NULL) || (status.crosscontrol > 0 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcdown", NULL)))
 			{
 				zapdir = 0;
 				goto start;
 			}
-			else if(rcret == getrcconfigint("rcchdown", NULL) || (status.crosscontrol == 1 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcup", NULL)))
+			else if(rcret == getrcconfigint("rcchdown", NULL) || (status.crosscontrol > 0 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcup", NULL)))
 			{
 				zapdir = 1;
 				goto start;
@@ -364,12 +364,12 @@ start:
 		while(1)
 		{
 			rcret = waitrc(infobar, virtualzap, 0);
-			if(rcret == getrcconfigint("rcchup", NULL) || (status.crosscontrol == 1 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcdown", NULL)))
+			if(rcret == getrcconfigint("rcchup", NULL) || (status.crosscontrol > 0 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcdown", NULL)))
 			{
 				zapdir = 0;
 				goto start;
 			}
-			else if(rcret == getrcconfigint("rcchdown", NULL) || (status.crosscontrol == 1 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcup", NULL)))
+			else if(rcret == getrcconfigint("rcchdown", NULL) || (status.crosscontrol > 0 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcup", NULL)))
 			{
 				zapdir = 1;
 				goto start;

@@ -30,9 +30,9 @@ void screeninfobar()
 	{
 		mark = 0;
 
-		if(status.crosscontrol == 1 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcright", NULL))
+		if(status.crosscontrol > 0 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcright", NULL))
 			writerc(getrcconfigint("rcvolup", NULL));
-		if(status.crosscontrol == 1 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcleft", NULL))
+		if(status.crosscontrol > 0 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcleft", NULL))
 			writerc(getrcconfigint("rcvoldown", NULL));
 
 		//check if mediadb can freed
