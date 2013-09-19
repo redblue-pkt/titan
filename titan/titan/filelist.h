@@ -211,7 +211,6 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 	else
 		node->type &= ~(GRID);
 	
-
 	status.tmp = node->input;
 	switch(getconfigint("dirsort", NULL))
 	{
