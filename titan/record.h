@@ -763,6 +763,7 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 	struct service* servicenode = NULL;
 	struct dvbdev* fenode = NULL, *dmxnode = NULL;
 	struct audiotrack* atrack = NULL;
+	struct subtitle *subnode = NULL
 	char* tmpstr = NULL;
 	struct transponder* tpnode = NULL;
 	int input = DMX_IN_FRONTEND;
@@ -1021,6 +1022,20 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 				atrack = atrack->next;
 			}
 			if(chnode->pcrpid > 0 && chnode->pcrpid != chnode->videopid && chnode->pcrpid != chnode->audiopid && pcrpidmatch == 0) dmxaddpid(dmxnode, chnode->pcrpid);
+			
+			//add all subtitle
+			m_lock(&status.subtitlemutex, 8);
+			subnode = chnode->subtitle;
+			while(subnode != NULL)
+			{
+				if(subnode->pid > 0)
+					dmxaddpid(dmxnode, subnode->pid);
+				subnode = subnode->next;
+			}
+			m_unlock(&status.subtitlemutex, 8);
+			
+			//add epg pid
+			if(getconfigint("epg2record", NULL) == 1) dmxaddpid(dmxnode, 0x12);	
 		}
 		else
 		{
