@@ -231,6 +231,7 @@ for ROUND0 in $watchlist; do
 		URL="http://atemio.dyndns.tv/mediathek/solarmovie/streams/solarmovie.$filename0.list"
 		PIC="http://atemio.dyndns.tv/mediathek/menu/$filename0.jpg"
 		TITLE=`echo $ROUND0 | sed 's/.html//' | sed 's/watch-//' | tr '-' ' ' | tr '/' ' '`
+		TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' # ' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/Ãx/g' -e 's/&ndash;/-/g' -e 's/&Auml;/Ã/g' -e 's/&Uuml;/ÃS/g' -e 's/&Ouml;/Ã/g' -e 's/&auml;/Ã¤/g' -e 's/&uuml;/Ã¼/g' -e 's/&ouml;/Ã¶/g' -e 's/&eacute;/Ã©/g' -e 's/&egrave;/Ã¨/g' -e 's/%F6/Ã¶/g' -e 's/%FC/Ã¼/g' -e 's/%E4/Ã¤/g' -e 's/%26/&/g' -e 's/%C4/Ã/g' -e 's/%D6/Ã/g' -e 's/%DC/ÃS/g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
 
 		pcount=0
 		echo pages $pages
@@ -261,6 +262,7 @@ for ROUND0 in $watchlist; do
 						for ROUND1 in $input; do
 							piccount=`expr $piccount + 1`
 							TITLE=`echo $ROUND1 | cut -d '"' -f2 | tr '~' ' ' | sed 's/#/%/'`
+							TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' # ' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/Ãx/g' -e 's/&ndash;/-/g' -e 's/&Auml;/Ã/g' -e 's/&Uuml;/ÃS/g' -e 's/&Ouml;/Ã/g' -e 's/&auml;/Ã¤/g' -e 's/&uuml;/Ã¼/g' -e 's/&ouml;/Ã¶/g' -e 's/&eacute;/Ã©/g' -e 's/&egrave;/Ã¨/g' -e 's/%F6/Ã¶/g' -e 's/%FC/Ã¼/g' -e 's/%E4/Ã¤/g' -e 's/%26/&/g' -e 's/%C4/Ã/g' -e 's/%D6/Ã/g' -e 's/%DC/ÃS/g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
 							URL=http://www.solarmovie.so`echo $ROUND1 | sed s'!href=!\nhref=!' | grep ^"href=" | cut -d '"' -f2 | tr '~' ' '`
 							PIC=`echo $ROUND1 | sed s'!<img~src=!\n<img~src=!' | grep ^"<img~src=" | cut -d '"' -f2 | tr '~' ' '`
 							LINE="$TITLE#$URL#$PIC#solarmovie_$piccount.jpg#Solarmovie#28"
@@ -294,11 +296,11 @@ if [ "$buildtype" = "full" ];then
 		filename=`echo "$ROUND" | tr 'A-Z' 'a-z'`
 		if [ `cat cache.solarmovie.titanlist | grep ^"$ROUND" | wc -l` -gt 0 ];then
 			cat cache.solarmovie.titanlist | grep ^"$ROUND" > cache.solarmovie.titanlist."$ROUND"
-			cat cache.solarmovie.titanlist."$ROUND" | sort -um > _full/solarmovie/streams/solarmovie.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
+			cat cache.solarmovie.titanlist."$ROUND" | sort -u > _full/solarmovie/streams/solarmovie.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
 			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/solarmovie/streams/solarmovie."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#Solarmovie#3 >> _full/solarmovie/solarmovie.a-z.list
 		elif [ `cat cache.solarmovie.titanlist | grep ^"$filename" | wc -l` -gt 0 ];then
 			cat cache.solarmovie.titanlist | grep ^"$filename" > cache.solarmovie.titanlist."$ROUND"
-			cat cache.solarmovie.titanlist."$ROUND" | sort -um > _full/solarmovie/streams/solarmovie.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
+			cat cache.solarmovie.titanlist."$ROUND" | sort -u > _full/solarmovie/streams/solarmovie.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
 			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/solarmovie/streams/solarmovie."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#Solarmovie#3 >> _full/solarmovie/solarmovie.a-z.list
 		fi
 	done

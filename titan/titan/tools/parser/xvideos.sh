@@ -67,12 +67,7 @@ if [ "$buildtype" = "full" ];then
 					TITLE=`echo $URL | tr '/' '\n' | tail -n1 | tr '_' ' ' | tr '-' ' ' | sed 's/^ //'`
 				fi
 	
-				TITLE=`echo $TITLE | sed 's/&amp;/und/g'`
-				TITLE=`echo $TITLE | sed 's/&quot;/"/g'`
-				TITLE=`echo $TITLE | sed 's/&uuml;/\ü/g'`
-				TITLE=`echo $TITLE | sed 's/&auml;/\ä/g'`
-				TITLE=`echo $TITLE | sed 's/&ouml;/\ö/g'`
-				TITLE=`echo $TITLE | sed 's/&szlig;/\ß/g'`
+				TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' # ' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/Ãx/g' -e 's/&ndash;/-/g' -e 's/&Auml;/Ã/g' -e 's/&Uuml;/ÃS/g' -e 's/&Ouml;/Ã/g' -e 's/&auml;/Ã¤/g' -e 's/&uuml;/Ã¼/g' -e 's/&ouml;/Ã¶/g' -e 's/&eacute;/Ã©/g' -e 's/&egrave;/Ã¨/g' -e 's/%F6/Ã¶/g' -e 's/%FC/Ã¼/g' -e 's/%E4/Ã¤/g' -e 's/%26/&/g' -e 's/%C4/Ã/g' -e 's/%D6/Ã/g' -e 's/%DC/ÃS/g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
 			
 				if [ ! -z "$TITLE" ] && [ ! -z "$URL" ];then
 					LINE="$TITLE#http://www.xvideos.com$URL#$PIC#xvideos_$piccount.jpg#XVIDEOS#42"			
@@ -108,11 +103,11 @@ if [ "$buildtype" = "full" ];then
 		filename=`echo "$ROUND" | tr 'A-Z' 'a-z'`
 		if [ `cat cache.xvideos.titanlist | grep ^"$ROUND" | wc -l` -gt 0 ];then
 			cat cache.xvideos.titanlist | grep ^"$ROUND" > cache.xvideos.titanlist."$ROUND"
-			cat cache.xvideos.titanlist."$ROUND" | sort -um > _full/xvideos/streams/xvideos.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
+			cat cache.xvideos.titanlist."$ROUND" | sort -u > _full/xvideos/streams/xvideos.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
 			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/xvideos/streams/xvideos."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#XVIDEOS#3 >> _full/xvideos/xvideos.a-z.list
 		elif [ `cat cache.xvideos.titanlist | grep ^"$filename" | wc -l` -gt 0 ];then
 			cat cache.xvideos.titanlist | grep ^"$filename" > cache.xvideos.titanlist."$ROUND"
-			cat cache.xvideos.titanlist."$ROUND" | sort -um > _full/xvideos/streams/xvideos.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
+			cat cache.xvideos.titanlist."$ROUND" | sort -u > _full/xvideos/streams/xvideos.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
 			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/xvideos/streams/xvideos."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#XVIDEOS#3 >> _full/xvideos/xvideos.a-z.list
 		fi
 	done

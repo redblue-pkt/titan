@@ -57,10 +57,7 @@ for SEARCH in $SEARCHLIST; do
 		$wgetbin --no-check-certificate http://www.youtube.com/watch?v=$ROUND -O cache.$filename.title.list
 #		TITLE=`cat cache.$filename.title.list | grep '<meta name="title" content="' | sed 's/      <meta name="title" content="//' | sed 's/">//' | tr '&#' '%' | tr -d ';'`
 		TITLE=`cat cache.$filename.title.list | grep '<meta name="title" content="' | sed 's/content=/\n/' | tail -n 1 | cut -d '"' -f2`
-		TITLE=`echo $TITLE | sed 's/&amp;/und/'`
-		TITLE=`echo $TITLE | sed 's/&amp;/und/'`
-		TITLE=`echo $TITLE | sed 's/&quot;/"/'`
-		TITLE=`echo $TITLE | sed 's/&quot;/"/'`
+		TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' # ' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/Ãx/g' -e 's/&ndash;/-/g' -e 's/&Auml;/Ã/g' -e 's/&Uuml;/ÃS/g' -e 's/&Ouml;/Ã/g' -e 's/&auml;/Ã¤/g' -e 's/&uuml;/Ã¼/g' -e 's/&ouml;/Ã¶/g' -e 's/&eacute;/Ã©/g' -e 's/&egrave;/Ã¨/g' -e 's/%F6/Ã¶/g' -e 's/%FC/Ã¼/g' -e 's/%E4/Ã¤/g' -e 's/%26/&/g' -e 's/%C4/Ã/g' -e 's/%D6/Ã/g' -e 's/%DC/ÃS/g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
 
 #ls cat cache.$filename.title.list 
 #exit
@@ -104,10 +101,7 @@ if [ "$buildtype" = "full" ];then
 			$wgetbin --no-check-certificate http://www.youtube.com/watch?v=$ROUND -O cache.$filename.title.list
 	#		TITLE=`cat cache.$filename.title.list | grep '<meta name="title" content="' | sed 's/      <meta name="title" content="//' | sed 's/">//' | tr '&#' '%' | tr -d ';'`
 			TITLE=`cat cache.$filename.title.list | grep '<meta name="title" content="' | sed 's/content=/\n/' | tail -n 1 | cut -d '"' -f2`
-			TITLE=`echo $TITLE | sed 's/&amp;/und/'`
-			TITLE=`echo $TITLE | sed 's/&amp;/und/'`
-			TITLE=`echo $TITLE | sed 's/&quot;/"/'`
-			TITLE=`echo $TITLE | sed 's/&quot;/"/'`
+			TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' # ' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/Ãx/g' -e 's/&ndash;/-/g' -e 's/&Auml;/Ã/g' -e 's/&Uuml;/ÃS/g' -e 's/&Ouml;/Ã/g' -e 's/&auml;/Ã¤/g' -e 's/&uuml;/Ã¼/g' -e 's/&ouml;/Ã¶/g' -e 's/&eacute;/Ã©/g' -e 's/&egrave;/Ã¨/g' -e 's/%F6/Ã¶/g' -e 's/%FC/Ã¼/g' -e 's/%E4/Ã¤/g' -e 's/%26/&/g' -e 's/%C4/Ã/g' -e 's/%D6/Ã/g' -e 's/%DC/ÃS/g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
 	
 	
 	
