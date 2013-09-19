@@ -96,6 +96,7 @@ for SEARCH in $SEARCHLIST; do
 		piccount=`expr $piccount + 1`
 		PIC=`echo $ROUND | sed 's/"thumbnail":/\nthumbnail:/' | grep ^thumbnail: | cut -d'"' -f2 | tr '\\' ' ' | sed 's/ \+//g'`
 		TITLE=`echo $PIC | tr '/' '\n' | tail -n1 | sed 's/-172x198.jpg//' | sed 's/-172x198.gif//' | tr '-' ' ' | tr '_' ' '`
+		TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' # ' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/Ãx/g' -e 's/&ndash;/-/g' -e 's/&Auml;/Ã/g' -e 's/&Uuml;/ÃS/g' -e 's/&Ouml;/Ã/g' -e 's/&auml;/Ã¤/g' -e 's/&uuml;/Ã¼/g' -e 's/&ouml;/Ã¶/g' -e 's/&eacute;/Ã©/g' -e 's/&egrave;/Ã¨/g' -e 's/%F6/Ã¶/g' -e 's/%FC/Ã¼/g' -e 's/%E4/Ã¤/g' -e 's/%26/&/g' -e 's/%C4/Ã/g' -e 's/%D6/Ã/g' -e 's/%DC/ÃS/g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
 		URL=`echo $ROUND | sed 's/"Streaming":/\nStreaming:/' | grep ^Streaming: | cut -d'"' -f2 | tr '\\' ' ' | sed 's/ \+//g'`
 		
 		LINE="$TITLE#rtmp://mf.netzkino.c.nmdn.net/netzkino/_definst_/mp4:$URL#$PIC#netzkino_$piccount.jpg#Netzkino#2"
@@ -113,18 +114,18 @@ done
 
 if [ "$buildtype" = "full" ];then
 	cat cache.netzkino.titanlist | sort -m > _full/netzkino/streams/netzkino.all-newfirst.list
-	cat cache.netzkino.titanlist | sort -um > _full/netzkino/streams/netzkino.all-sorted.list
+	cat cache.netzkino.titanlist | sort -u > _full/netzkino/streams/netzkino.all-sorted.list
 	cat cache.netzkino.category.titanlist | sort -m > _full/netzkino/netzkino.category.list
 	
 	for ROUND in 0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z; do
 		filename=`echo "$ROUND" | tr 'A-Z' 'a-z'`
 		if [ `cat cache.netzkino.titanlist | grep ^"$ROUND" | wc -l` -gt 0 ];then
 			cat cache.netzkino.titanlist | grep ^"$ROUND" > cache.netzkino.titanlist."$ROUND"
-			cat cache.netzkino.titanlist."$ROUND" | sort -um > _full/netzkino/streams/netzkino.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
+			cat cache.netzkino.titanlist."$ROUND" | sort -u > _full/netzkino/streams/netzkino.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
 			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/netzkino/streams/netzkino."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#Netzkino#3 >> _full/netzkino/netzkino.a-z.list
 		elif [ `cat cache.netzkino.titanlist | grep ^"$filename" | wc -l` -gt 0 ];then
 			cat cache.netzkino.titanlist | grep ^"$filename" > cache.netzkino.titanlist."$ROUND"
-			cat cache.netzkino.titanlist."$ROUND" | sort -um > _full/netzkino/streams/netzkino.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
+			cat cache.netzkino.titanlist."$ROUND" | sort -u > _full/netzkino/streams/netzkino.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
 			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/netzkino/streams/netzkino."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#Netzkino#3 >> _full/netzkino/netzkino.a-z.list
 		fi
 	done

@@ -39,16 +39,8 @@ for ROUND1 in $id_list; do
 
 	URL=`echo $ROUND1 | sed 's/url="/\nurl="/g' | grep ^"url=" | tr '~' ' ' | cut -d '"' -f2`
 	TITLE=`echo $ROUND1 | sed 's/title="/\ntitle="/g' | grep ^"title=" | tr '~' ' ' | cut -d '"' -f2`
-	TITLE=`echo $TITLE | sed 's/&amp;/und/g'`
-	TITLE=`echo $TITLE | sed 's/&quot;/"/g'`
-	TITLE=`echo $TITLE | sed 's/&uuml;/\ü/g'`
-	TITLE=`echo $TITLE | sed 's/&auml;/\ä/g'`
-	TITLE=`echo $TITLE | sed 's/&ouml;/\ö/g'`
-	TITLE=`echo $TITLE | sed 's/&szlig;/\ß/g'`
-	TITLE=`echo $TITLE | sed "s/&#039;/'/g"`
-	TITLE=`echo $TITLE | sed 's/&#034;/"/g'`
-	TITLE=`echo $TITLE | sed 's/&#038;/&/g'`
-	
+	TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' # ' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/Ãx/g' -e 's/&ndash;/-/g' -e 's/&Auml;/Ã/g' -e 's/&Uuml;/ÃS/g' -e 's/&Ouml;/Ã/g' -e 's/&auml;/Ã¤/g' -e 's/&uuml;/Ã¼/g' -e 's/&ouml;/Ã¶/g' -e 's/&eacute;/Ã©/g' -e 's/&egrave;/Ã¨/g' -e 's/%F6/Ã¶/g' -e 's/%FC/Ã¼/g' -e 's/%E4/Ã¤/g' -e 's/%26/&/g' -e 's/%C4/Ã/g' -e 's/%D6/Ã/g' -e 's/%DC/ÃS/g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
+
 	PIC=http://atemio.dyndns.tv/mediathek/menu/`echo $TITLE | tr 'A-Z' 'a-z' | tr ' ' '_'`.jpg
 	
 	if [ -z "$PIC" ]; then
@@ -72,11 +64,11 @@ for ROUND in 0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X
 	filename=`echo "$ROUND" | tr 'A-Z' 'a-z'`
 	if [ `cat cache.internettv.titanlist | grep ^"$ROUND" | wc -l` -gt 0 ];then
 		cat cache.internettv.titanlist | grep ^"$ROUND" >> cache.internettv.titanlist."$ROUND"
-		cat cache.internettv.titanlist."$ROUND" | sort -um > _full/internettv/streams/internettv.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
+		cat cache.internettv.titanlist."$ROUND" | sort -u > _full/internettv/streams/internettv.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
 		echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/internettv/streams/internettv."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#Internet TV#3 >> _full/internettv/internettv.a-z.list
 	elif [ `cat cache.internettv.titanlist | grep ^"$filename" | wc -l` -gt 0 ];then
 		cat cache.internettv.titanlist | grep ^"$filename" >> cache.internettv.titanlist."$ROUND"
-		cat cache.internettv.titanlist."$ROUND" | sort -um > _full/internettv/streams/internettv.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
+		cat cache.internettv.titanlist."$ROUND" | sort -u > _full/internettv/streams/internettv.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
 		echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/internettv/streams/internettv."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#Internet TV#3 >> _full/internettv/internettv.a-z.list
 
 	fi

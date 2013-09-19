@@ -54,40 +54,7 @@ for ROUND1 in $watchlist; do
 		if [ -z "$TITLE" ];then
 			TITLE=`echo $ROUND2 | sed 's!data-xtclib=!\ndata-xtclib=!' | grep data-xtclib= | cut -d'"' -f2 | tr '~' ' '`
 		fi				
-		TITLE=`echo $TITLE | sed 's/&amp;/und/g'`
-		TITLE=`echo $TITLE | sed 's/&quot;/"/g'`
-		TITLE=`echo $TITLE | sed 's/&lt;/\</g'`
-		TITLE=`echo $TITLE | sed 's/&#034;/\"/g'`
-		TITLE=`echo $TITLE | sed 's/&#039;/\"/g'` # '
-		TITLE=`echo $TITLE | sed 's/#034;/\"/g'`
-		TITLE=`echo $TITLE | sed 's/#039;/\"/g'` # '
-		TITLE=`echo $TITLE | sed 's/&szlig;/Ãx/g'`
-		TITLE=`echo $TITLE | sed 's/&ndash;/-/g'`
-		TITLE=`echo $TITLE | sed 's/&Auml;/Ã/g'`
-		TITLE=`echo $TITLE | sed 's/&Uuml;/ÃS/g'`
-		TITLE=`echo $TITLE | sed 's/&Ouml;/Ã/g'`
-		TITLE=`echo $TITLE | sed 's/&auml;/Ã¤/g'`
-		TITLE=`echo $TITLE | sed 's/&uuml;/Ã¼/g'`
-		TITLE=`echo $TITLE | sed 's/&ouml;/Ã¶/g'`
-		TITLE=`echo $TITLE | sed 's/&eacute;/Ã©/g'`
-		TITLE=`echo $TITLE | sed 's/&egrave;/Ã¨/g'`
-		TITLE=`echo $TITLE | sed 's/%F6/Ã¶/g'`
-		TITLE=`echo $TITLE | sed 's/%FC/Ã¼/g'`
-		TITLE=`echo $TITLE | sed 's/%E4/Ã¤/g'`
-		TITLE=`echo $TITLE | sed 's/%26/&/g'`
-		TITLE=`echo $TITLE | sed 's/%C4/Ã/g'`
-		TITLE=`echo $TITLE | sed 's/%D6/Ã/g'`
-		TITLE=`echo $TITLE | sed 's/%DC/ÃS/g'`
-		TITLE=`echo $TITLE | sed 's/|/ /g'`
-		TITLE=`echo $TITLE | sed 's/(/ /g'`
-		TITLE=`echo $TITLE | sed 's/)/ /g'`
-		TITLE=`echo $TITLE | sed 's/+/ /g'`
-		TITLE=`echo $TITLE | sed 's/\//-/g'`
-		TITLE=`echo $TITLE | sed 's/,/ /g'`
-		TITLE=`echo $TITLE | sed 's/;/ /g'`
-		TITLE=`echo $TITLE | sed 's/:/ /g'`
-		TITLE=`echo $TITLE | sed 's/\.\+/./g'`	
-
+		TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' # ' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/Ãx/g' -e 's/&ndash;/-/g' -e 's/&Auml;/Ã/g' -e 's/&Uuml;/ÃS/g' -e 's/&Ouml;/Ã/g' -e 's/&auml;/Ã¤/g' -e 's/&uuml;/Ã¼/g' -e 's/&ouml;/Ã¶/g' -e 's/&eacute;/Ã©/g' -e 's/&egrave;/Ã¨/g' -e 's/%F6/Ã¶/g' -e 's/%FC/Ã¼/g' -e 's/%E4/Ã¤/g' -e 's/%26/&/g' -e 's/%C4/Ã/g' -e 's/%D6/Ã/g' -e 's/%DC/ÃS/g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
 #		TITLE=`echo $TITLE | cut -d ":" -f2 | cut -d "," -f1`
 		TITLE=`echo $(php -r "echo rawurldecode('$TITLE');")`
 	
@@ -149,38 +116,7 @@ if [ "$buildtype" = "full" ];then
 			if [ -z "$TITLE" ];then
 				TITLE=`echo $ROUND2 | sed 's!data-xtclib=!\ndata-xtclib=!' | grep data-xtclib= | cut -d'"' -f2 | tr '~' ' '`
 			fi				
-			TITLE=`echo $TITLE | sed 's/&amp;/und/g'`
-			TITLE=`echo $TITLE | sed 's/&quot;/"/g'`
-			TITLE=`echo $TITLE | sed 's/&lt;/\</g'`
-			TITLE=`echo $TITLE | sed 's/&#034;/\"/g'`
-			TITLE=`echo $TITLE | sed 's/&#039;/\"/g'` # '
-			TITLE=`echo $TITLE | sed 's/#034;/\"/g'`
-			TITLE=`echo $TITLE | sed 's/#039;/\"/g'` # '
-			TITLE=`echo $TITLE | sed 's/&szlig;/Ãx/g'`
-			TITLE=`echo $TITLE | sed 's/&ndash;/-/g'`
-			TITLE=`echo $TITLE | sed 's/&Auml;/Ã/g'`
-			TITLE=`echo $TITLE | sed 's/&Uuml;/ÃS/g'`
-			TITLE=`echo $TITLE | sed 's/&Ouml;/Ã/g'`
-			TITLE=`echo $TITLE | sed 's/&auml;/Ã¤/g'`
-			TITLE=`echo $TITLE | sed 's/&uuml;/Ã¼/g'`
-			TITLE=`echo $TITLE | sed 's/&ouml;/Ã¶/g'`
-			TITLE=`echo $TITLE | sed 's/&eacute;/Ã©/g'`
-			TITLE=`echo $TITLE | sed 's/&egrave;/Ã¨/g'`
-			TITLE=`echo $TITLE | sed 's/%F6/Ã¶/g'`
-			TITLE=`echo $TITLE | sed 's/%FC/Ã¼/g'`
-			TITLE=`echo $TITLE | sed 's/%E4/Ã¤/g'`
-			TITLE=`echo $TITLE | sed 's/%26/&/g'`
-			TITLE=`echo $TITLE | sed 's/%C4/Ã/g'`
-			TITLE=`echo $TITLE | sed 's/%D6/Ã/g'`
-			TITLE=`echo $TITLE | sed 's/%DC/ÃS/g'`
-			TITLE=`echo $TITLE | sed 's/|/ /g'`
-			TITLE=`echo $TITLE | sed 's/(/ /g'`
-			TITLE=`echo $TITLE | sed 's/)/ /g'`
-			TITLE=`echo $TITLE | sed 's/+/ /g'`
-			TITLE=`echo $TITLE | sed 's/\//-/g'`
-			TITLE=`echo $TITLE | sed 's/,/ /g'`
-			TITLE=`echo $TITLE | sed 's/;/ /g'`
-			TITLE=`echo $TITLE | sed 's/\.\+/./g'`
+			TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' # ' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/Ãx/g' -e 's/&ndash;/-/g' -e 's/&Auml;/Ã/g' -e 's/&Uuml;/ÃS/g' -e 's/&Ouml;/Ã/g' -e 's/&auml;/Ã¤/g' -e 's/&uuml;/Ã¼/g' -e 's/&ouml;/Ã¶/g' -e 's/&eacute;/Ã©/g' -e 's/&egrave;/Ã¨/g' -e 's/%F6/Ã¶/g' -e 's/%FC/Ã¼/g' -e 's/%E4/Ã¤/g' -e 's/%26/&/g' -e 's/%C4/Ã/g' -e 's/%D6/Ã/g' -e 's/%DC/ÃS/g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/\.\+/./g'`
 			TITLE=`echo $TITLE | cut -d ":" -f2 | cut -d "," -f1`
 			TITLE=`echo $(php -r "echo rawurldecode('$TITLE');")`
 	
@@ -208,39 +144,7 @@ if [ "$buildtype" = "full" ];then
 				if [ -z "$TITLE" ];then
 					TITLE=`echo $ROUND2 | sed 's!data-xtclib=!\ndata-xtclib=!' | grep data-xtclib= | cut -d'"' -f2 | tr '~' ' '`
 				fi				
-				TITLE=`echo $TITLE | sed 's/&amp;/und/g'`
-				TITLE=`echo $TITLE | sed 's/&quot;/"/g'`
-				TITLE=`echo $TITLE | sed 's/&lt;/\</g'`
-				TITLE=`echo $TITLE | sed 's/&#034;/\"/g'`
-				TITLE=`echo $TITLE | sed 's/&#039;/\"/g'` # '
-				TITLE=`echo $TITLE | sed 's/#034;/\"/g'`
-				TITLE=`echo $TITLE | sed 's/#039;/\"/g'` # '
-				TITLE=`echo $TITLE | sed 's/&szlig;/Ãx/g'`
-				TITLE=`echo $TITLE | sed 's/&ndash;/-/g'`
-				TITLE=`echo $TITLE | sed 's/&Auml;/Ã/g'`
-				TITLE=`echo $TITLE | sed 's/&Uuml;/ÃS/g'`
-				TITLE=`echo $TITLE | sed 's/&Ouml;/Ã/g'`
-				TITLE=`echo $TITLE | sed 's/&auml;/Ã¤/g'`
-				TITLE=`echo $TITLE | sed 's/&uuml;/Ã¼/g'`
-				TITLE=`echo $TITLE | sed 's/&ouml;/Ã¶/g'`
-				TITLE=`echo $TITLE | sed 's/&eacute;/Ã©/g'`
-				TITLE=`echo $TITLE | sed 's/&egrave;/Ã¨/g'`
-				TITLE=`echo $TITLE | sed 's/%F6/Ã¶/g'`
-				TITLE=`echo $TITLE | sed 's/%FC/Ã¼/g'`
-				TITLE=`echo $TITLE | sed 's/%E4/Ã¤/g'`
-				TITLE=`echo $TITLE | sed 's/%26/&/g'`
-				TITLE=`echo $TITLE | sed 's/%C4/Ã/g'`
-				TITLE=`echo $TITLE | sed 's/%D6/Ã/g'`
-				TITLE=`echo $TITLE | sed 's/%DC/ÃS/g'`
-				TITLE=`echo $TITLE | sed 's/|/ /g'`
-				TITLE=`echo $TITLE | sed 's/(/ /g'`
-				TITLE=`echo $TITLE | sed 's/)/ /g'`
-				TITLE=`echo $TITLE | sed 's/+/ /g'`
-				TITLE=`echo $TITLE | sed 's/\//-/g'`
-				TITLE=`echo $TITLE | sed 's/,/ /g'`
-				TITLE=`echo $TITLE | sed 's/;/ /g'`
-				TITLE=`echo $TITLE | sed 's/:/ /g'`
-				TITLE=`echo $TITLE | sed 's/\.\+/./g'`	
+				TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' # ' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/Ãx/g' -e 's/&ndash;/-/g' -e 's/&Auml;/Ã/g' -e 's/&Uuml;/ÃS/g' -e 's/&Ouml;/Ã/g' -e 's/&auml;/Ã¤/g' -e 's/&uuml;/Ã¼/g' -e 's/&ouml;/Ã¶/g' -e 's/&eacute;/Ã©/g' -e 's/&egrave;/Ã¨/g' -e 's/%F6/Ã¶/g' -e 's/%FC/Ã¼/g' -e 's/%E4/Ã¤/g' -e 's/%26/&/g' -e 's/%C4/Ã/g' -e 's/%D6/Ã/g' -e 's/%DC/ÃS/g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
 	#			TITLE=`echo $TITLE | cut -d ":" -f2 | cut -d "," -f1`
 				TITLE=`echo $(php -r "echo rawurldecode('$TITLE');")`
 			
@@ -295,11 +199,11 @@ if [ "$buildtype" = "full" ];then
 		filename=`echo "$ROUND" | tr 'A-Z' 'a-z'`
 		if [ `cat cache.ard.titanlist | grep ^"$ROUND" | wc -l` -gt 0 ];then
 			cat cache.ard.titanlist | grep ^"$ROUND" > cache.ard.titanlist."$ROUND"
-			cat cache.ard.titanlist."$ROUND" | sort -um > _full/ard/streams/ard.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
+			cat cache.ard.titanlist."$ROUND" | sort -u > _full/ard/streams/ard.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
 			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/ard/streams/ard."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#ARD#3 >> _full/ard/ard.a-z.list
 		elif [ `cat cache.ard.titanlist | grep ^"$filename" | wc -l` -gt 0 ];then
 			cat cache.ard.titanlist | grep ^"$filename" > cache.ard.titanlist."$ROUND"
-			cat cache.ard.titanlist."$ROUND" | sort -um > _full/ard/streams/ard.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
+			cat cache.ard.titanlist."$ROUND" | sort -u > _full/ard/streams/ard.`echo "$ROUND" | tr 'A-Z' 'a-z'`.list
 			echo `echo "$ROUND" | tr 'A-Z' 'a-z'`"#http://atemio.dyndns.tv/mediathek/ard/streams/ard."`echo "$ROUND" | tr 'A-Z' 'a-z'`".list#http://atemio.dyndns.tv/mediathek/menu/`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#"`echo "$ROUND" | tr 'A-Z' 'a-z'`.jpg#ARD#3 >> _full/ard/ard.a-z.list
 		fi
 	done
