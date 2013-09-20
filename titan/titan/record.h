@@ -763,7 +763,7 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 	struct service* servicenode = NULL;
 	struct dvbdev* fenode = NULL, *dmxnode = NULL;
 	struct audiotrack* atrack = NULL;
-	struct subtitle *subnode = NULL
+	struct subtitle *subnode = NULL;
 	char* tmpstr = NULL;
 	struct transponder* tpnode = NULL;
 	int input = DMX_IN_FRONTEND;

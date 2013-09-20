@@ -1922,7 +1922,6 @@ void drawpic(const char* filename, int posx, int posy, int scalewidth, int scale
 	struct pic* picnode = NULL;
 	int decoding = getconfigint("pichwdecode", NULL);
 	int pictype = 0; //0 = png, 1 = jpg HW, 2 = jpg SW
-	unsigned long tmpcol = 0;
 	unsigned char r = 0, g = 0, b = 0, ralpha = 0;
 
 	length = strlen(filename);
@@ -2051,11 +2050,10 @@ void drawpic(const char* filename, int posx, int posy, int scalewidth, int scale
 						}
 						else
 						{
-							tmpcol = skinfb->fblong[x];
 							ralpha = 255 - src[3]; 
-							alpha_composite(r, src[0], src[3], ralpha, (tmpcol & 0xff0000) >> 16);
-							alpha_composite(g, src[1], src[3], ralpha, (tmpcol & 0x00ff00) >> 8);
-							alpha_composite(b, src[2], src[3], ralpha, tmpcol & 0xff);
+							alpha_composite(r, src[0], src[3], ralpha, (skinfb->fblong[x] & 0xff0000) >> 16);
+							alpha_composite(g, src[1], src[3], ralpha, (skinfb->fblong[x] & 0x00ff00) >> 8);
+							alpha_composite(b, src[2], src[3], ralpha, skinfb->fblong[x] & 0xff);
 							skinfb->fblong[x] = (255 << 24) | r << 16 | g << 8 | b;
 						}
 						src += 4;
@@ -2087,7 +2085,7 @@ void drawcircle(int x0, int y0, int radius, int startangle, int endangle, long c
 	int x = 0, y = radius, px = 0, py = 0;
 
 	transparent = (transparent - 255) * -1;
-        unsigned long tmpcol = color | ((transparent & 0xff) << 24);
+	unsigned long tmpcol = color | ((transparent & 0xff) << 24);
 
 	while(y > x)
 	{
@@ -2224,7 +2222,7 @@ int drawchar(struct font* font, FT_ULong currentchar, int posx, int posy, int mw
 	FT_Vector kerning;
 	FT_Error ret;
 	FTC_SBit sbit;
-	unsigned long tmpcol = 0, tmpcol1 = 0;
+	unsigned long tmpcol = 0;
 	unsigned char red, green, blue, r, g, b;
 	unsigned char* src = NULL;
 	unsigned char ralpha = 0;
@@ -2240,7 +2238,6 @@ int drawchar(struct font* font, FT_ULong currentchar, int posx, int posy, int mw
 
 	FTC_Node anode;
 	ret = FTC_SBitCache_Lookup(font->cache, &font->desc, glyphindex, &sbit, &anode);
-
 	if(ret != 0)
 	{
 		err("FTC_SBitCache_Lookup for char %x %c failed. Error: 0x%.2X", (int)currentchar, (int)currentchar, ret);
@@ -2292,11 +2289,10 @@ int drawchar(struct font* font, FT_ULong currentchar, int posx, int posy, int mw
 					skinfb->fblong[x] = tmpcol;
 				else
 				{
-					tmpcol1 = skinfb->fblong[x];
 					ralpha = 255 - src[0]; 
-					alpha_composite(r, red, src[0], ralpha, (tmpcol1 & 0xff0000) >> 16);
-					alpha_composite(g, green, src[0], ralpha, (tmpcol1 & 0x00ff00) >> 8);
-					alpha_composite(b, blue, src[0], ralpha, tmpcol1 & 0xff);
+					alpha_composite(r, red, src[0], ralpha, (skinfb->fblong[x] & 0xff0000) >> 16);
+					alpha_composite(g, green, src[0], ralpha, (skinfb->fblong[x] & 0x00ff00) >> 8);
+					alpha_composite(b, blue, src[0], ralpha, skinfb->fblong[x] & 0xff);
 					skinfb->fblong[x] = transparent << 24 | r << 16 | g << 8 | b;
 				}
 			}
@@ -2721,7 +2717,7 @@ void drawgradient(int posx, int posy, int width, int height, long col1, long col
 		g3 = (g1 * p + g2 * i) / steps;
 		b3 = (b1 * p + b2 * i) / steps;
 		col = (transparent << 24) | (r3 << 16) | (g3 << 8) | b3;
-		
+	
 		for(y = 0; y < ystep; y++)
 			for(x = 0; x < xstep; x++)
 				drawpixel(posx + x, posy + y, col);
@@ -3683,8 +3679,9 @@ int setnodeattr(struct skin* node, struct skin* parent, int screencalc)
 int clearscreenalways()
 {
 	int i, ret = 0;
+	int tmp = sizeof(status.drawallways) / sizeof(skin);
 
-	for(i = 0; i < sizeof(status.drawallways) / sizeof(skin); i++)
+	for(i = 0; i < tmp; i++)
 	{
 		if(status.drawallways[i] != NULL)
 		{
@@ -3698,8 +3695,9 @@ int clearscreenalways()
 int drawscreenalways(struct skin* node, int screencalc)
 {
 	int i, ret = 0;
+	int tmp = sizeof(status.drawallways) / sizeof(skin);
 
-	for(i = 0; i < sizeof(status.drawallways) / sizeof(skin); i++)
+	for(i = 0; i < tmp; i++)
 	{
 		if(status.drawallways[i] != NULL)
 		{
