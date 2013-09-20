@@ -249,12 +249,15 @@ void screenepgsettings()
 				epgscandeltimer();
 			else
 				epgscancreatetimer();
-				
-			if(getconfig("epg_listmode", NULL) == 1 || getconfig("epg_listmode", NULL) == 3)
-			{
-				textbox(_("Message"), _("Deavtivate Refresh Time and After EPG in scan-mode"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 15, 0);
-				delconfig("epg_refreshtime");
-				delconfig("epg_afterevent");		
+			
+			if(getconfig("epg_refreshtime", NULL) != NULL || getconfigint("epg_afterevent", NULL) != 0)
+			{   	
+				if(getconfigint("epg_listmode", NULL) == 1 || getconfigint("epg_listmode", NULL) == 3)
+				{
+					textbox(_("Message"), _("Deavtivate Refresh Time and After EPG in scan-mode"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 15, 0);
+					delconfig("epg_refreshtime");
+					delconfig("epg_afterevent");		
+				}
 			}
 
 			break;
