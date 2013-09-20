@@ -2674,7 +2674,7 @@ void clearscreennolock(struct skin* node)
 //flag 3 = vertical (begin to middle, middle to end)
 void drawgradient(int posx, int posy, int width, int height, long col1, long col2, int transparent, int flag)
 {
-	int p = 0, i = 0, x = 0, y = 0, steps = 0, xstep = 0, ystep = 0;
+	int p, i, x, y, steps, xstep, ystep, tmp = 0;
 	int xcount = 0, ycount = 0, owidth = width, oheight = height;
 	unsigned char r3, g3, b3;
 	unsigned long col = 0;
@@ -2684,8 +2684,10 @@ void drawgradient(int posx, int posy, int width, int height, long col1, long col
 	if(flag == LEFTRIGHT || flag == LEFTMIDDLE)
 	{
 		if(flag == LEFTMIDDLE) width = width / 2;
-		if(width < 100)
+		if(width < 10)
 			steps = width;
+		if(width < 100)
+			steps = width / 2;
 		else
 			steps = width / 5;
 		xstep = width / steps;
@@ -2694,8 +2696,10 @@ void drawgradient(int posx, int posy, int width, int height, long col1, long col
 	else
 	{
 		if(flag == TOPMIDDLE) height = height / 2;
-		if(height < 100)
+		if(height < 10)
 			steps = height;
+		else if(height < 100)
+			steps = height / 2;
 		else
 			steps = height / 5;
 		xstep = width;
@@ -2710,6 +2714,10 @@ void drawgradient(int posx, int posy, int width, int height, long col1, long col
 	unsigned char g2 = (col2 >> 8) & 0xff;
 	unsigned char b2 = col2 & 0xff;
 
+	int yend = (posy + ystep) * skinfb->width;
+	int xend = posx + xstep;
+	posy *= skinfb->width;
+
 	for(i = 0; i < steps; i++)
 	{
 		p = steps - i;
@@ -2717,20 +2725,23 @@ void drawgradient(int posx, int posy, int width, int height, long col1, long col
 		g3 = (g1 * p + g2 * i) / steps;
 		b3 = (b1 * p + b2 * i) / steps;
 		col = (transparent << 24) | (r3 << 16) | (g3 << 8) | b3;
-	
-		for(y = 0; y < ystep; y++)
-			for(x = 0; x < xstep; x++)
-				drawpixel(posx + x, posy + y, col);
+		
+		for(y = posy; y < yend; y += skinfb->width)
+			for(x = posx; x < xend; x++)
+				drawpixelfast(x, y, col);
 
 		if(flag == LEFTRIGHT || flag == LEFTMIDDLE)
 		{
 			posx += xstep;
 			xcount += xstep;
+			xend = posx + xstep;
 		}
 		else 
 		{
-			posy += ystep;
+			tmp = ystep * skinfb->width;
+			posy += tmp;
 			ycount += ystep;
+			yend = posy + tmp;
 		}
 	}
 
@@ -2744,19 +2755,22 @@ void drawgradient(int posx, int posy, int width, int height, long col1, long col
 			b3 = (b2 * p + b1 * i) / steps;
 			col = (transparent << 24) | (r3 << 16) | (g3 << 8) | b3;
 		
-			for(y = 0; y < ystep; y++)
-				for(x = 0; x < xstep; x++)
-					drawpixel(posx + x, posy + y, col);
+			for(y = posy; y < yend; y += skinfb->width)
+				for(x = posx; x < xend; x++)
+					drawpixelfast(x, y, col);
 			
 			if(flag == LEFTMIDDLE)
 			{
 				posx += xstep;
 				xcount += xstep;
+				xend = posx + xstep;
 			}
 			else 
 			{
-				posy += ystep;
+				tmp = ystep * skinfb->width;
+				posy += tmp;
 				ycount += ystep;
+				yend = posy + tmp;
 			}
 		}
 	}
@@ -2765,20 +2779,20 @@ void drawgradient(int posx, int posy, int width, int height, long col1, long col
 	{
 		if(owidth > xcount)
 		{
-			int tmp = owidth - xcount;
-			for(y = 0; y < ystep; y++)
-				for(x = 0; x < tmp; x++)
-					drawpixel(posx + x, posy + y, col);
+			int tmp = posx + (owidth - xcount);
+			for(y = posy; y < yend; y += skinfb->width)
+				for(x = posx; x < tmp; x++)
+					drawpixelfast(x, y, col);
 		}
 	}
 	if(flag == TOPBOTTOM || flag == TOPMIDDLE)
 	{
 		if(oheight > ycount)
 		{
-			int tmp = oheight - ycount;
-			for(y = 0; y < tmp; y++)
-				for(x = 0; x < xstep; x++)
-					drawpixel(posx + x, posy + y, col);
+			int tmp = posy + ((oheight - ycount) * skinfb->width);
+			for(y = posy; y < tmp; y += skinfb->width)
+				for(x = posx; x < xend; x++)
+					drawpixelfast(x, y, col);
 		}
 	}
 }
