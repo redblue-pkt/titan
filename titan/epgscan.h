@@ -318,8 +318,8 @@ struct epgscanlist* addepgscanlist(char *line, int count, struct epgscanlist* la
 	status.writeepgscanlist = 1;
 
 	ret = sscanf(line, "%d#%llu", &newnode->serviceid, &newnode->transponderid);
-        if(ret != 2)
-        {
+	if(ret != 2)
+	{
 		if(count > 0)
 		{
 			err("epgscanlist line %d not ok", count);
@@ -333,11 +333,11 @@ struct epgscanlist* addepgscanlist(char *line, int count, struct epgscanlist* la
 	}
 
 	if(getchannel(newnode->serviceid, newnode->transponderid) == NULL)
-        {
-                err("epgscanlist line %d not ok (channel not found)", count);
-                free(newnode);
-                return NULL;
-        }
+	{
+		err("epgscanlist line %d not ok (channel not found)", count);
+		free(newnode);
+		return NULL;
+	}
 
 	if(last == NULL)
 	{
