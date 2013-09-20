@@ -4124,3 +4124,6 @@ msgstr "Ja / VZAP 2 sek"
 
 msgid "yes / vzap endless"
 msgstr "Ja / VZAP unendlich"
+
+msgid "Deavtivate Refresh Time and After EPG in scan-mode"
+msgstr "Deaktiviere Aktualisierungszeit und Nach Suche im Suche-Modus"
