@@ -1923,7 +1923,7 @@ void drawpic(const char* filename, int posx, int posy, int scalewidth, int scale
 	int decoding = getconfigint("pichwdecode", NULL);
 	int pictype = 0; //0 = png, 1 = jpg HW, 2 = jpg SW
 	unsigned long tmpcol = 0;
-	unsigned char r = 0, g = 0, b = 0;
+	unsigned char r = 0, g = 0, b = 0, ralpha = 0;
 
 	length = strlen(filename);
 	if(filename[length - 1] == 'g' && filename[length - 2] == 'n' && filename[length - 3] == 'p')
@@ -2052,9 +2052,10 @@ void drawpic(const char* filename, int posx, int posy, int scalewidth, int scale
 						else
 						{
 							tmpcol = skinfb->fblong[x];
-							alpha_composite(r, src[0], src[3], (tmpcol & 0xff0000) >> 16);
-							alpha_composite(g, src[1], src[3], (tmpcol & 0x00ff00) >> 8);
-							alpha_composite(b, src[2], src[3], tmpcol & 0xff);
+							ralpha = 255 - src[3]; 
+							alpha_composite(r, src[0], src[3], ralpha, (tmpcol & 0xff0000) >> 16);
+							alpha_composite(g, src[1], src[3], ralpha, (tmpcol & 0x00ff00) >> 8);
+							alpha_composite(b, src[2], src[3], ralpha, tmpcol & 0xff);
 							skinfb->fblong[x] = (255 << 24) | r << 16 | g << 8 | b;
 						}
 						src += 4;
@@ -2224,9 +2225,9 @@ int drawchar(struct font* font, FT_ULong currentchar, int posx, int posy, int mw
 	FT_Error ret;
 	FTC_SBit sbit;
 	unsigned long tmpcol = 0, tmpcol1 = 0;
-	long buffercol = 0;
 	unsigned char red, green, blue, r, g, b;
 	unsigned char* src = NULL;
+	unsigned char ralpha = 0;
 
 	if(currentchar == 32) space = 1;
 
@@ -2284,22 +2285,22 @@ int drawchar(struct font* font, FT_ULong currentchar, int posx, int posy, int mw
 		pxw = y + sbit->pitch;
 		for(x = y; x < pxw; x++)
 		{
-			buffercol = src[0];
-			src++;
-			if(buffercol > min)
+			if(src[0] > min)
 			{
 				//renderquality 255-0 = best
-				if(buffercol > max)
+				if(src[0] > max)
 					skinfb->fblong[x] = tmpcol;
 				else
 				{
 					tmpcol1 = skinfb->fblong[x];
-					alpha_composite(r, red, buffercol, (tmpcol1 & 0xff0000) >> 16);
-					alpha_composite(g, green, buffercol, (tmpcol1 & 0x00ff00) >> 8);
-					alpha_composite(b, blue, buffercol, tmpcol1 & 0xff);
+					ralpha = 255 - src[0]; 
+					alpha_composite(r, red, src[0], ralpha, (tmpcol1 & 0xff0000) >> 16);
+					alpha_composite(g, green, src[0], ralpha, (tmpcol1 & 0x00ff00) >> 8);
+					alpha_composite(b, blue, src[0], ralpha, tmpcol1 & 0xff);
 					skinfb->fblong[x] = transparent << 24 | r << 16 | g << 8 | b;
 				}
 			}
+			src++;
 		}
 	}
 
