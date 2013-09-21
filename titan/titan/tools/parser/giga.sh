@@ -31,33 +31,59 @@ for ROUND0 in $WATCHLIST; do
 	
 	done
 	filename=`echo $ROUND0 | tr '-' '.' | tr '/' '.'`
-#	tagname=`echo $ROUND0 | tr '/' '\n' | tail -n1`
 	tagname=`echo $ROUND0 | tr '/' '-'`
 			
 	for ROUND1 in $tags; do
 		count=`expr $count + 1`
-	#	$wgetbin http://www.giga.de/$ROUND1/ -O cache.giga."$filename"."$count"
 		$wgetbin http://www.giga.de/$ROUND1 -O cache.giga."$filename"."$count"
-	
-	#	LIST=`cat cache.giga."$filename"."$count" | sed -e 's/$/\r/' | tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's/ \+/~/g' | sed 's!<span~class="timestamp">!\n\n\n<span~class="timestamp">!g' | grep ^'<span~class="timestamp">' > tests`
-		LIST=`cat cache.giga."$filename"."$count" | grep "<h1><a href=" | cut -d'"' -f2`
+
+		LIST=`cat cache.giga."$filename"."$count" | tr '\n' '\r' |  tr '\r' ' ' |  tr '\n' ' ' | tr '\t' ' ' | sed 's/ \+/ /g' | sed 's!<noscript>!\n!g' | sed 's!<figure>!\n!g' | sed 's!</i>!\n!g' | grep ^" <img alt="  | sed 's/ \+/~/g'`
+
 		for ROUND2 in $LIST; do
 			count=`expr $count + 1`
-#			echo ROUND2 $ROUND2
-			$wgetbin $ROUND2 -O cache.giga."$filename"."$count"
+			echo ROUND2 $ROUND2
+			echo "$ROUND2" > ROUND2
+
+			URL=`echo $ROUND2 | sed "s!http:!\n'http:!g" | grep -v .jpg | grep -v .png | cut -d'"' -f1 | cut -d"'" -f2 | tail -n1`
+			echo URL $URL
+
+			$wgetbin $URL -O cache.giga."$filename"."$count"
 #			ls cache.giga."$filename"."$count"
 			URL=`cat cache.giga."$filename"."$count" | grep 'rel="media:video" resource=' | sed 's!rel="media:video" resource=!\nlink=!g' | grep ^link= | cut -d'"' -f2 | tail -n1`
-#			echo URL $URL
-			PIC=`cat cache.giga."$filename"."$count" | grep 'rel="media:video" resource=' | sed 's!poster=!\npic=!g' | grep ^pic= | cut -d'"' -f2 | tail -n1`
-#			echo PIC $PIC
+
+
+#			PIC=`cat cache.giga."$filename"."$count" | grep 'rel="media:video" resource=' | sed 's!poster=!\npic=!g' | grep ^pic= | cut -d'"' -f2 | tail -n1`
+			PIC=`echo $ROUND2 | sed 's!~src="!\npic=!g' | grep ^pic= | cut -d'"' -f1 | cut -d"=" -f2 | tail -n1`
+			echo PIC $PIC
+
+			PIC2=`echo $ROUND2 | sed 's!~rel="media:thumbnail"~href=!\npic=!g' | grep ^pic= | cut -d'"' -f2 | tail -n1`
+
+			if [ -z "$PIC ]; then  
+				PIC=$PIC2
+			fi
+
+			if [ -z "$PIC ]; then  
+				PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
+			fi
+
+#			PIC=`cat cache.giga."$filename"."$count" | grep 'rel="media:video" resource=' | sed 's!poster=!\npic=!g' | grep ^pic= | cut -d'"' -f2 | tail -n1`
+
 	
-			TITLE=`cat cache.giga."$filename"."$count" | grep 'rel="media:video" resource=' | sed 's!"POST_TITLE":!\ntitle=!g' | grep ^title= | cut -d'"' -f2`
+#			TITLE=`cat cache.giga."$filename"."$count" | grep 'rel="media:video" resource=' | sed 's!"POST_TITLE":!\ntitle=!g' | grep ^title= | cut -d'"' -f2`
+			TITLE=`echo $ROUND2 | sed 's!~rel="media:thumbnail"~href=!\npic=!g' | grep ^pic= | sed 's!></a>!\n\r!g' | tr '~' ' ' | sed 's!<a href=.*!!g' | sed '/./,$!d' | tail -n1 | tr '\r' ' '`
+
+			if [ -z "$TITLE" ]; then
+				TITLE=`echo $URL | sed 's!http://www.giga.de/!!'| tr '/' '\n' | tail -n2 | head -n1 | tr '-' ' '`
+			fi
 	
 			TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' # ' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/Ãx/g' -e 's/&ndash;/-/g' -e 's/&Auml;/Ã/g' -e 's/&Uuml;/ÃS/g' -e 's/&Ouml;/Ã/g' -e 's/&auml;/Ã¤/g' -e 's/&uuml;/Ã¼/g' -e 's/&ouml;/Ã¶/g' -e 's/&eacute;/Ã©/g' -e 's/&egrave;/Ã¨/g' -e 's/%F6/Ã¶/g' -e 's/%FC/Ã¼/g' -e 's/%E4/Ã¤/g' -e 's/%26/&/g' -e 's/%C4/Ã/g' -e 's/%D6/Ã/g' -e 's/%DC/ÃS/g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
 
-#			echo TITLE $TITLE
-#			echo "################################################"
-	
+			echo PIC $PIC
+			echo URL $URL
+			echo TITLE "$TITLE"
+
+			echo "################################################"
+##exit
 			if [ ! -z "$TITLE" ] && [ ! -z "$URL" ];then
 				piccount=`expr $piccount + 1`
 				LINE="$TITLE#$URL#$PIC#giga_$piccount.jpg#Giga#2"
@@ -67,6 +93,8 @@ for ROUND0 in $WATCHLIST; do
 				if [ `cat cache.giga.titanlist | grep "#$URL#" | wc -l` -eq 0 ];then
 					echo $LINE >> cache.giga.titanlist
 				fi
+#			else
+#			exit
 			fi
 		done
 	done
