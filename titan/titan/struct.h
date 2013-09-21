@@ -175,10 +175,8 @@ typedef enum { VFD_USB = 0x10, VFD_HD, VFD_HDD, VFD_LOCK, VFD_BT, VFD_MP3, VFD_M
 #define bcdtoint(i) ((((i & 0xf0) >> 4) * 10) + (i & 0x0f))
 
 #define alpha_composite(composite, fg, alpha, ralpha, bg) { \
-unsigned short temp = ((unsigned short)(fg)*(unsigned short)(alpha) +   \
-(unsigned short)(bg)*(unsigned short)(ralpha) +  \
-(unsigned short)128);  \
-(composite) = (unsigned char)((temp + (temp >> 8)) >> 8); }
+unsigned short temp = (fg)*(alpha) + (bg)*(ralpha);  \
+(composite) = (temp + (temp >> 8)) >> 8; }
 
 enum {LEFT=20000, CENTER, RIGHT, TEXTCENTER, TEXTRIGHT};
 enum {TOP=20000, MIDDLE, BOTTOM, TEXTMIDDLE, TEXTBOTTOM};
