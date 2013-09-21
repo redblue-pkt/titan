@@ -1930,6 +1930,8 @@ void drawpic(const char* filename, int posx, int posy, int scalewidth, int scale
 	int pictype = 0; //0 = png, 1 = jpg HW, 2 = jpg SW
 	unsigned char r = 0, g = 0, b = 0, ralpha = 0;
 
+	if(filename == NULL) return;
+
 	length = strlen(filename);
 	if(filename[length - 1] == 'g' && filename[length - 2] == 'n' && filename[length - 3] == 'p')
 		pictype = 0;
