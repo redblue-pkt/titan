@@ -1532,11 +1532,11 @@ int drawjpgsw(struct jpeg_decompress_struct* cinfo, unsigned char* buf, int posx
 	if(accelfb != NULL && accelfb->varfbsize > width8 && (scalewidth != 0 || scaleheight != 0) && (scalewidth != width || scaleheight != height))
 	{
 		if(halign == CENTER)
-			posx += mwidth / 2 - scalewidth / 2;
+			posx += (mwidth >> 1) - (scalewidth >> 1);
 		else if(halign == RIGHT)
 			posx += mwidth - scalewidth;
 		if(valign == MIDDLE)
-			posy += mheight / 2 - scaleheight / 2;
+			posy += (mheight >> 1) - (scaleheight >> 1);
 		else if(valign == BOTTOM)
 			posy += mheight - scaleheight;
 	
@@ -1645,11 +1645,11 @@ int drawjpgsw(struct jpeg_decompress_struct* cinfo, unsigned char* buf, int posx
 		if(height > mheight) height = mheight;
 
 		if(halign == CENTER)
-			posx += mwidth / 2 - width / 2;
+			posx += (mwidth >> 1) - (width >> 1);
 		else if(halign == RIGHT)
 			posx += mwidth - width;
 		if(valign == MIDDLE)
-			posy += mheight / 2 - height / 2;
+			posy += (mheight >> 1) - (height >> 1);
 		else if(valign == BOTTOM)
 			posy += mheight - height;
 
@@ -1997,11 +1997,11 @@ void drawpic(const char* filename, int posx, int posy, int scalewidth, int scale
 		if(height > mheight) height = mheight;
 
 		if(halign == CENTER)
-			posx += mwidth / 2 - width / 2;
+			posx += (mwidth >> 1) - (width >> 1);
 		else if(halign == RIGHT)
 			posx += mwidth - width;
 		if(valign == MIDDLE)
-			posy += mheight / 2 - height / 2;
+			posy += (mheight >> 1) - (height >> 1);
 		else if(valign == BOTTOM)
 			posy += mheight - height;
 
@@ -2332,7 +2332,7 @@ int calcstrhalign(struct font* aktfont, char *string, int posx, int mwidth, int 
 		case TEXTCENTER:
 		case CENTER:
 			getstringwh(aktfont, string, &stringwidth, &stringheight, charspace);
-			if(stringwidth < mwidth) posx += (mwidth - stringwidth) / 2;
+			if(stringwidth < mwidth) posx += ((mwidth - stringwidth) >> 1);
 			break;
 		case TEXTRIGHT:
 		case RIGHT:
@@ -2351,7 +2351,7 @@ int calcstrvalign(char *string, int posy, int oldposy, int mheight, int fontsize
 	{
 		case TEXTMIDDLE:
 		case MIDDLE:
-			posy += mheight / 2 - (fontsize * linecount) / 2;
+			posy += (mheight >> 1) - ((fontsize * linecount) >> 1);
 			if(posy < oldposy) posy = oldposy;
 			break;
 		case TEXTBOTTOM:
@@ -2540,7 +2540,7 @@ char* saverect(int posx, int posy, int width, int height)
 
 char* savescreen(struct skin* node)
 {
-	return saverect(node->rposx - node->shadowsize, node->rposy - node->shadowsize, node->rwidth + (node->shadowsize * 2), node->rheight + (node->shadowsize * 2));
+	return saverect(node->rposx - node->shadowsize, node->rposy - node->shadowsize, node->rwidth + (node->shadowsize << 1), node->rheight + (node->shadowsize << 1));
 }
 
 //flag 0: no free
@@ -2569,12 +2569,12 @@ void restorerect(char* buf, int posx, int posy, int width, int height)
 
 void restorescreen(char* buf, struct skin* node)
 {
-	restorerectcheck(buf, node->rposx - node->shadowsize, node->rposy - node->shadowsize, node->rwidth + (node->shadowsize * 2), node->rheight + (node->shadowsize * 2), 1);
+	restorerectcheck(buf, node->rposx - node->shadowsize, node->rposy - node->shadowsize, node->rwidth + (node->shadowsize << 1), node->rheight + (node->shadowsize << 1), 1);
 }
 
 void restorescreennofree(char* buf, struct skin* node)
 {
-	restorerectcheck(buf, node->rposx - node->shadowsize, node->rposy - node->shadowsize, node->rwidth + (node->shadowsize * 2), node->rheight + (node->shadowsize * 2), 0);
+	restorerectcheck(buf, node->rposx - node->shadowsize, node->rposy - node->shadowsize, node->rwidth + (node->shadowsize << 1), node->rheight + (node->shadowsize << 1), 0);
 }
 
 //*************** GOST LCD
@@ -2689,11 +2689,11 @@ void drawgradient(int posx, int posy, int width, int height, long col1, long col
 
 	if(flag == LEFTRIGHT || flag == LEFTMIDDLE)
 	{
-		if(flag == LEFTMIDDLE) width = width / 2;
+		if(flag == LEFTMIDDLE) width = (width >> 1);
 		if(width < 10)
 			steps = width;
 		if(width < 100)
-			steps = width / 2;
+			steps = (width >> 1);
 		else
 			steps = width / 5;
 		xstep = width / steps;
@@ -2701,11 +2701,11 @@ void drawgradient(int posx, int posy, int width, int height, long col1, long col
 	}
 	else
 	{
-		if(flag == TOPMIDDLE) height = height / 2;
+		if(flag == TOPMIDDLE) height = (height >> 1);
 		if(height < 10)
 			steps = height;
 		else if(height < 100)
-			steps = height / 2;
+			steps = (height >> 1);
 		else
 			steps = height / 5;
 		xstep = width;
@@ -2806,7 +2806,7 @@ void drawgradient(int posx, int posy, int width, int height, long col1, long col
 void drawtitlebggradient(struct skin* node)
 {
 	if(status.picbordersize > 0)
-		drawgradient(node->rposx + status.picbordersize, node->rposy + status.picbordersize, node->rwidth - (status.picbordersize * 2), node->rheight - (node->rheight - node->titlesize), node->titlebgcol, node->titlebgcol2, node->transparent, node->titlegradient);
+		drawgradient(node->rposx + status.picbordersize, node->rposy + status.picbordersize, node->rwidth - (status.picbordersize << 1), node->rheight - (node->rheight - node->titlesize), node->titlebgcol, node->titlebgcol2, node->transparent, node->titlegradient);
 	else
 		drawgradient(node->rposx, node->rposy, node->rwidth, node->rheight - (node->rheight - node->titlesize), node->titlebgcol, node->titlebgcol2, node->transparent, node->titlegradient);
 }
@@ -2819,19 +2819,19 @@ void drawbggradient(struct skin* node)
 void drawtitlebgcol(struct skin* node)
 {
 	if(status.picbordersize > 0)
-		fillrect(node->rposx + status.picbordersize, node->rposy + status.picbordersize, node->rwidth - (status.picbordersize * 2), node->rheight - (node->rheight - node->titlesize), node->titlebgcol, node->transparent);
+		fillrect(node->rposx + status.picbordersize, node->rposy + status.picbordersize, node->rwidth - (status.picbordersize << 1), node->rheight - (node->rheight - node->titlesize), node->titlebgcol, node->transparent);
 	else
 		fillrect(node->rposx, node->rposy, node->rwidth, node->rheight - (node->rheight - node->titlesize), node->titlebgcol, node->transparent);
 }
 
 void drawbginnercol(struct skin* node)
 {
-	fillrect(node->rposx + node->bordersize, node->rposy + node->bordersize, node->rwidth - node->bordersize * 2, node->rheight - node->bordersize * 2, node->bgcol, node->transparent);
+	fillrect(node->rposx + node->bordersize, node->rposy + node->bordersize, node->rwidth - (node->bordersize << 1), node->rheight - (node->bordersize << 1), node->bgcol, node->transparent);
 }
 
 void drawbgcol(struct skin* node)
 {
-	fillrect(node->rposx + node->bgspace, node->rposy + node->bgspace, node->rwidth - (node->bgspace * 2), node->rheight - (node->bgspace * 2), node->bgcol, node->transparent);
+	fillrect(node->rposx + node->bgspace, node->rposy + node->bgspace, node->rwidth - (node->bgspace << 1), node->rheight - (node->bgspace << 1), node->bgcol, node->transparent);
 }
 
 void drawtitle(struct skin* node)
@@ -2869,7 +2869,7 @@ void drawmultiprogressbar(struct skin* node)
 		val2 = ((float)node->iwidth / 100) * epgrecord->size;
 
 		if(val2 > val1)
-			fillrect(node->rposx + node->bordersize + node->bgspace + val1, node->rposy + node->bgspace + node->bordersize, val2 - val1 + (node->bgspace * 2), node->iheight + (node->bgspace * 2), node->progresscol, node->transparent);
+			fillrect(node->rposx + node->bordersize + node->bgspace + val1, node->rposy + node->bgspace + node->bordersize, val2 - val1 + (node->bgspace << 1), node->iheight + (node->bgspace << 1), node->progresscol, node->transparent);
 		epgrecord = epgrecord->next;
 	}
 }
@@ -2879,7 +2879,7 @@ void drawroundborder(struct skin* node, char* bglt, char* bglb, char* bgrt, char
 	int i, rad = status.borderradius;
 
 	if(node->borderradius > 0) rad = node->borderradius;
-	if(rad > node->rheight / 2) rad = node->rheight / 2;
+	if(rad > (node->rheight >> 1)) rad = (node->rheight >> 1);
 	int tmpbordersize = rad - node->bordersize;
 
 	//left - top
@@ -2916,17 +2916,17 @@ void drawpicborder(struct skin* node)
 	drawpic("/home/nit/titan/skin/bs_br.png", node->rposx + node->rwidth - borderwidth, node->rposy + node->rheight - borderheight, 0, 0, borderwidth, borderheight, LEFT, TOP, node->transparent, node->picquality, node->picmem);
 
 	//top
-	//drawpic("/home/nit/titan/skin/bs_t.png", node->rposx + node->bordersize, node->rposy + node->bordersize - borderheight, node->rwidth - (node->bordersize * 2), 0, node->rwidth - (node->bordersize * 2), borderheight, LEFT, TOP, node->transparent, node->picquality, node->picmem);
-	drawpic("/home/nit/titan/skin/bs_t.png", node->rposx + borderwidth, node->rposy, node->rwidth - (borderwidth * 2), 0, node->rwidth - (borderwidth * 2), borderheight, LEFT, TOP, node->transparent, node->picquality, node->picmem);
+	//drawpic("/home/nit/titan/skin/bs_t.png", node->rposx + node->bordersize, node->rposy + node->bordersize - borderheight, node->rwidth - (node->bordersize << 1), 0, node->rwidth - (node->bordersize << 1), borderheight, LEFT, TOP, node->transparent, node->picquality, node->picmem);
+	drawpic("/home/nit/titan/skin/bs_t.png", node->rposx + borderwidth, node->rposy, node->rwidth - (borderwidth << 1), 0, node->rwidth - (borderwidth << 1), borderheight, LEFT, TOP, node->transparent, node->picquality, node->picmem);
 	//bottom
-	//drawpic("/home/nit/titan/skin/bs_b.png", node->rposx + node->bordersize, node->rposy - node->bordersize + node->rheight, node->rwidth - (node->bordersize * 2), 0, node->rwidth - (node->bordersize * 2), borderheight, LEFT, TOP, node->transparent, node->picquality, node->picmem);
-	drawpic("/home/nit/titan/skin/bs_b.png", node->rposx + borderwidth, node->rposy + node->rheight - borderheight, node->rwidth - (borderwidth * 2), 0, node->rwidth - (node->bordersize * 2), borderheight, LEFT, TOP, node->transparent, node->picquality, node->picmem);
+	//drawpic("/home/nit/titan/skin/bs_b.png", node->rposx + node->bordersize, node->rposy - node->bordersize + node->rheight, node->rwidth - (node->bordersize << 1), 0, node->rwidth - (node->bordersize << 1), borderheight, LEFT, TOP, node->transparent, node->picquality, node->picmem);
+	drawpic("/home/nit/titan/skin/bs_b.png", node->rposx + borderwidth, node->rposy + node->rheight - borderheight, node->rwidth - (borderwidth << 1), 0, node->rwidth - (node->bordersize << 1), borderheight, LEFT, TOP, node->transparent, node->picquality, node->picmem);
 	//left
-	//drawpic("/home/nit/titan/skin/bs_l.png", node->rposx + node->bordersize - borderwidth, node->rposy + node->bordersize, 0, node->rheight - (node->bordersize * 2), borderwidth, node->rheight - (node->bordersize * 2), LEFT, TOP, node->transparent, node->picquality, node->picmem);
-	drawpic("/home/nit/titan/skin/bs_l.png", node->rposx, node->rposy + borderheight, 0, node->rheight - (borderheight * 2), borderwidth, node->rheight - (borderheight * 2), LEFT, TOP, node->transparent, node->picquality, node->picmem);
+	//drawpic("/home/nit/titan/skin/bs_l.png", node->rposx + node->bordersize - borderwidth, node->rposy + node->bordersize, 0, node->rheight - (node->bordersize << 1), borderwidth, node->rheight - (node->bordersize << 1), LEFT, TOP, node->transparent, node->picquality, node->picmem);
+	drawpic("/home/nit/titan/skin/bs_l.png", node->rposx, node->rposy + borderheight, 0, node->rheight - (borderheight << 1), borderwidth, node->rheight - (borderheight << 1), LEFT, TOP, node->transparent, node->picquality, node->picmem);
 	//right
-	//drawpic("/home/nit/titan/skin/bs_r.png", node->rposx - node->bordersize + node->rwidth, node->rposy + node->bordersize, 0, node->rheight - (node->bordersize * 2), borderwidth, node->rheight - (node->bordersize * 2), LEFT, TOP, node->transparent, node->picquality, node->picmem);
-	drawpic("/home/nit/titan/skin/bs_r.png", node->rposx + node->rwidth - borderwidth, node->rposy + borderheight, 0, node->rheight - (borderheight * 2), borderwidth, node->rheight - (borderheight * 2), LEFT, TOP, node->transparent, node->picquality, node->picmem);
+	//drawpic("/home/nit/titan/skin/bs_r.png", node->rposx - node->bordersize + node->rwidth, node->rposy + node->bordersize, 0, node->rheight - (node->bordersize << 1), borderwidth, node->rheight - (node->bordersize << 1), LEFT, TOP, node->transparent, node->picquality, node->picmem);
+	drawpic("/home/nit/titan/skin/bs_r.png", node->rposx + node->rwidth - borderwidth, node->rposy + borderheight, 0, node->rheight - (borderheight << 1), borderwidth, node->rheight - (borderheight << 1), LEFT, TOP, node->transparent, node->picquality, node->picmem);
 }
 
 void drawborder(struct skin* node)
@@ -3022,7 +3022,7 @@ void drawnode(struct skin* node, int flag)
 			int rad = status.borderradius;
 
 			if(node->borderradius > 0) rad = node->borderradius;
-			if(rad > node->rheight / 2) rad = node->rheight / 2;
+			if(rad > (node->rheight >> 1)) rad = (node->rheight >> 1);
 
 			bglt = saverect(node->rposx, node->rposy, rad, rad);
 			bglb = saverect(node->rposx, node->rposy + node->rheight - rad, rad, rad);
@@ -3035,7 +3035,7 @@ void drawnode(struct skin* node, int flag)
 	{
 		if(node->child != NULL && status.picbordersize > 0)
 		{
-			clearrect(node->rposx + node->bordersize, node->rposy + node->bordersize, node->rwidth - node->bordersize * 2, node->rheight - node->bordersize * 2);
+			clearrect(node->rposx + node->bordersize, node->rposy + node->bordersize, node->rwidth - (node->bordersize << 1), node->rheight - (node->bordersize << 1));
 		}
 		else
 			clearscreennolock(node);
@@ -3440,7 +3440,7 @@ int calcrwidth(struct skin* node, struct skin* parent)
 
 	if(node->scrollbar == YES || node->scrollbar == AUTOYES || node->scrollbar == AUTONO) scrollbarwidth = SCROLLBARWIDTH;
 
-	if(node->rwidth < (node->bordersize * 2) + scrollbarwidth) node->rwidth = (node->bordersize * 2) + scrollbarwidth;
+	if(node->rwidth < (node->bordersize << 1) + scrollbarwidth) node->rwidth = (node->bordersize << 1) + scrollbarwidth;
 
 	return 0;
 }
@@ -3457,7 +3457,7 @@ int calcrheight(struct skin* node, struct skin* parent)
 		if(node->rheight == 0) node->rheight = node->fontsize + 2;
 	}
 
-	if(node->rheight < (node->bordersize * 2) + node->titlesize) node->rheight = (node->bordersize * 2) + node->titlesize;
+	if(node->rheight < (node->bordersize << 1) + node->titlesize) node->rheight = (node->bordersize << 1) + node->titlesize;
 
 	return 0;
 }
@@ -3470,7 +3470,7 @@ int calcrposx(struct skin* node, struct skin* parent)
 		node->rposx = node->posx;
 
 	if(node->posx == CENTER || (node->posx == 0 && parent->halign == CENTER))
-		node->rposx = parent->iposx + parent->iwidth / 2 - node->rwidth / 2;
+		node->rposx = parent->iposx + (parent->iwidth >> 1) - (node->rwidth >> 1);
 	else if(node->posx == LEFT)
 		node->rposx = parent->iposx;
 	else if(node->posx == RIGHT || (node->posx == 0 && parent->halign == RIGHT))
@@ -3492,7 +3492,7 @@ int calcrposy(struct skin* node, struct skin* parent)
 		node->rposy = node->posy;
 
 	if(node->posy == MIDDLE || (node->posy == 0 && parent->valign == MIDDLE))
-		node->rposy = parent->iposy + parent->iheight / 2 - node->rheight / 2;
+		node->rposy = parent->iposy + (parent->iheight >> 1) - (node->rheight >> 1);
 	else if(node->posy == TOP)
 		node->rposy = parent->iposy;
 	else if(node->posy == BOTTOM || (node->posy ==0 && parent->valign == BOTTOM))
@@ -3564,8 +3564,8 @@ int setnodeattr(struct skin* node, struct skin* parent, int screencalc)
 
 	node->iposx = node->rposx + node->bordersize + node->hspace;
 	node->iposy = node->rposy + node->bordersize + node->titlesize + node->vspace;
-	node->iwidth = node->rwidth - node->bordersize * 2 - node->hspace * 2;
-	node->iheight = node->rheight - node->bordersize * 2 - node->titlesize - node->vspace * 2;
+	node->iwidth = node->rwidth - (node->bordersize << 1) - (node->hspace << 1);
+	node->iheight = node->rheight - (node->bordersize << 1) - node->titlesize - (node->vspace << 1);
 
 	switch(node->shadowpos)
 	{
