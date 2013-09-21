@@ -2682,7 +2682,7 @@ void clearscreennolock(struct skin* node)
 //flag 3 = vertical (begin to middle, middle to end)
 void drawgradient(int posx, int posy, int width, int height, long col1, long col2, int transparent, int flag)
 {
-	int p, i, x, y, steps, xstep, ystep, tmp = 0;
+	int p, i, x, y, steps, xstep, ystep, tmp = 0, r = 0;
 	int xcount = 0, ycount = 0, owidth = width, oheight = height;
 	unsigned char r3, g3, b3;
 	unsigned long col = 0;
@@ -2691,11 +2691,11 @@ void drawgradient(int posx, int posy, int width, int height, long col1, long col
 
 	if(flag == LEFTRIGHT || flag == LEFTMIDDLE)
 	{
-		if(flag == LEFTMIDDLE) width = (width >> 1);
+		if(flag == LEFTMIDDLE) width = width / 2;
 		if(width < 10)
 			steps = width;
 		if(width < 100)
-			steps = (width >> 1);
+			steps = width / 2;
 		else
 			steps = width / 5;
 		xstep = width / steps;
@@ -2703,11 +2703,11 @@ void drawgradient(int posx, int posy, int width, int height, long col1, long col
 	}
 	else
 	{
-		if(flag == TOPMIDDLE) height = (height >> 1);
+		if(flag == TOPMIDDLE) height = height / 2;
 		if(height < 10)
 			steps = height;
 		else if(height < 100)
-			steps = (height >> 1);
+			steps = height / 2;
 		else
 			steps = height / 5;
 		xstep = width;
@@ -2734,9 +2734,18 @@ void drawgradient(int posx, int posy, int width, int height, long col1, long col
 		b3 = (b1 * p + b2 * i) / steps;
 		col = (transparent << 24) | (r3 << 16) | (g3 << 8) | b3;
 		
+		r = 0;
 		for(y = posy; y < yend; y += skinfb->width)
-			for(x = posx; x < xend; x++)
-				drawpixelfast(x, y, col);
+		{
+			if(r == 0)
+			{
+				r = 1;
+				for(x = posx; x < xend; x++)
+					drawpixelfast(x, y, col);
+			}
+			else
+				memcpy(skinfb->fb + (y + posx) * skinfb->colbytes, skinfb->fb + (posy + posx) * skinfb->colbytes, (xend - posx) * skinfb->colbytes);
+		}
 
 		if(flag == LEFTRIGHT || flag == LEFTMIDDLE)
 		{
@@ -2763,9 +2772,18 @@ void drawgradient(int posx, int posy, int width, int height, long col1, long col
 			b3 = (b2 * p + b1 * i) / steps;
 			col = (transparent << 24) | (r3 << 16) | (g3 << 8) | b3;
 		
+			r = 0;
 			for(y = posy; y < yend; y += skinfb->width)
-				for(x = posx; x < xend; x++)
-					drawpixelfast(x, y, col);
+			{
+				if(r == 0)
+				{
+					r = 1;
+					for(x = posx; x < xend; x++)
+						drawpixelfast(x, y, col);
+				}
+				else
+					memcpy(skinfb->fb + (y + posx) * skinfb->colbytes, skinfb->fb + (posy + posx) * skinfb->colbytes, (xend - posx) * skinfb->colbytes);
+			}
 			
 			if(flag == LEFTMIDDLE)
 			{
