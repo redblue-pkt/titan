@@ -92,7 +92,7 @@ void* convertfunc(char *value, uint8_t *rettype)
 	}
 	if(ostrcmp("getplaytext", value) == 0)
 		return &getplaytext;
-  if(ostrcmp("getbufferstatus", value) == 0)
+	if(ostrcmp("getbufferstatus", value) == 0)
 	{
 		*rettype = FUNCPROGRESS;
 		return &getbufferstatus;
@@ -132,7 +132,7 @@ void* convertfunc(char *value, uint8_t *rettype)
 		*rettype = FUNCPROGRESS;
 		return &getsignal;
 	}
-  if(ostrcmp("getrecfreesizetext", value) == 0)
+	if(ostrcmp("getrecfreesizetext", value) == 0)
 		return &getrecfreesizetext;
 	if(ostrcmp("getwlanlinkqualitytext", value) == 0)
 		return &getwlanlinkqualitytext;
@@ -1513,7 +1513,8 @@ unsigned char* savejpg(char* filename, int width, int height, int channels, int 
 
 int drawjpgsw(struct jpeg_decompress_struct* cinfo, unsigned char* buf, int posx, int posy, int width, int height, int colbytes, int mwidth, int mheight, int scalewidth, int scaleheight, int halign, int valign)
 {
-	int aktline = 0, x = 0, py = 0, px = 0, row_stride = 0;
+	int aktline = 0, x = 0, py = 0, px = 0, row_stride = 0, pyw = 0;
+	int width4 = width * 4, width8 = width * 8, aktline1 = 0;
 	unsigned char red, green, blue;
 	unsigned long color = 0;
 	JSAMPARRAY buffer = NULL;
@@ -1528,7 +1529,7 @@ int drawjpgsw(struct jpeg_decompress_struct* cinfo, unsigned char* buf, int posx
 	else
 		row_stride = width * colbytes; 
 
-	if(accelfb != NULL && accelfb->varfbsize > width * 8 && (scalewidth != 0 || scaleheight != 0) && (scalewidth != width || scaleheight != height))
+	if(accelfb != NULL && accelfb->varfbsize > width8 && (scalewidth != 0 || scaleheight != 0) && (scalewidth != width || scaleheight != height))
 	{
 		if(halign == CENTER)
 			posx += mwidth / 2 - scalewidth / 2;
@@ -1553,6 +1554,7 @@ int drawjpgsw(struct jpeg_decompress_struct* cinfo, unsigned char* buf, int posx
 				aktline = cinfo->output_scanline;
 
 				py++;
+				pyw = width * py;
 				for(x = 0; x < width; x++)
 				{
 					px = colbytes * x;
@@ -1566,10 +1568,10 @@ int drawjpgsw(struct jpeg_decompress_struct* cinfo, unsigned char* buf, int posx
 					else
 						color = (255 << 24) | (red << 16) | (red << 8) | red;
 
-					drawpixelfb(accelfb, (width * py) + x, 0, color);
+					drawpixelfb(accelfb, pyw + x, 0, color);
 				}
 
-				if((py * width * 4) + (width * 8) >= accelfb->varfbsize)
+				if((py * width4) + (width8) >= accelfb->varfbsize)
 				{
 					py++;
 					if(scaleheight > 0)
@@ -1590,26 +1592,28 @@ int drawjpgsw(struct jpeg_decompress_struct* cinfo, unsigned char* buf, int posx
 		{
 			while(aktline < height)
 			{
+				aktline1 = aktline * row_stride;
 				aktline++;
 
 				py++;
+				pyw = width * py;
 				for(x = 0; x < width; x++)
 				{
 					px = colbytes * x;
-					red = buf[((aktline - 1) * row_stride) + px];
+					red = buf[aktline1 + px];
 					if(colbytes > 2)
 					{
-						green = buf[((aktline - 1) * row_stride) + (px + 1)];
-						blue = buf[((aktline - 1) * row_stride) + (px + 2)];
+						green = buf[aktline1 + (px + 1)];
+						blue = buf[aktline1 + (px + 2)];
 						color = (255 << 24) | (red << 16) | (green << 8) | blue;
 					}
 					else
 						color = (255 << 24) | (red << 16) | (red << 8) | red;
 
-					drawpixelfb(accelfb, (width * py) + x, 0, color);
+					drawpixelfb(accelfb, pyw + x, 0, color);
 				}
 
-				if((py * width * 4) + (width * 8) >= accelfb->varfbsize)
+				if((py * width4) + (width8) >= accelfb->varfbsize)
 				{
 					py++;
 					if(scaleheight > 0)
@@ -1659,6 +1663,8 @@ int drawjpgsw(struct jpeg_decompress_struct* cinfo, unsigned char* buf, int posx
 			}
 			else
 				aktline++;
+				
+			aktline1 = (aktline - 1) * row_stride;
 
 			py = (posy + aktline - 1) * skinfb->width;
 			for(x = 0; x < width; x++)
@@ -1668,7 +1674,7 @@ int drawjpgsw(struct jpeg_decompress_struct* cinfo, unsigned char* buf, int posx
 				if(cinfo != NULL)
 					red = buffer[0][px];
 				else
-					red = buf[((aktline - 1) * row_stride) + px];
+					red = buf[aktline1 + px];
 
 				if(colbytes > 2)
 				{
@@ -1680,8 +1686,8 @@ int drawjpgsw(struct jpeg_decompress_struct* cinfo, unsigned char* buf, int posx
 					}
 					else
 					{
-						green = buf[((aktline - 1) * row_stride) + (px + 1)];
-						blue = buf[((aktline - 1) * row_stride) + (px + 2)];
+						green = buf[aktline1 + (px + 1)];
+						blue = buf[aktline1 + (px + 2)];
 						color = (255 << 24) | (red << 16) | (green << 8) | blue;
 					}
 				}
