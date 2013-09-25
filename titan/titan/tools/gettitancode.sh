@@ -9,13 +9,13 @@ rm tmp
 rm tmp.gz
 rm tmp.lzma
 
-if [ $TYPE == "ufs910" ];then
-	dd if=$KERNELDIR of=tmp.lzma bs=1 skip=64
-	lzma -d tmp.lzma
-else
+#if [ $TYPE == "ufs910" ];then
+#	dd if=$KERNELDIR of=tmp.lzma bs=1 skip=64
+#	lzma -d tmp.lzma
+#else
 	dd if=$KERNELDIR of=tmp.gz bs=1 skip=64
 	gzip -d tmp.gz
-fi
+#fi
 
 str=`strings tmp | grep "Linux version 2.6" | sed 's/Linux version //' | sed 's/(.*)//' | sed 's/  / /'`
 
