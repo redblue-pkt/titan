@@ -3967,7 +3967,7 @@ msgstr "Installeer IPK Kabel Settings in applicatiemenu !\n"
 "Scan is momenteel nog niet geimplementeerd."
 
 msgid "Show last pos Question"
-msgstr "Gebruik \"laatste pos\"
+msgstr "Gebruik laatste pos"
 
 msgid "default Directory"
 msgstr "Standaard directory"
