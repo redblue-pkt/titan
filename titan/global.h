@@ -1091,7 +1091,6 @@ char* getserialpw()
 
 int writeserial(char* cpuid)
 {
-	char* pw = NULL;
 	char* filename = "/var/etc/codepages/codepage.868", *pw = NULL;
 	unsigned char* buf = NULL;
 	FILE *fd = NULL;
