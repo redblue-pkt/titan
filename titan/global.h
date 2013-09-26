@@ -296,7 +296,7 @@ int checklowflash()
 		return 1;
 	}
 
-	if(ostrcmp(tmpstr, "00980000") == 0)
+	if(ostrcmp(tmpstr, "00960000") == 0)
 	{
 		free(tmpstr), tmpstr = NULL;
 		status.security = 1;
