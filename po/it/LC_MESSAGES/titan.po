@@ -2253,11 +2253,9 @@ msgstr "time + channel"
 msgid "Timeshift Path"
 msgstr "Timeshift Path"
 
-msgid ""
-"Timeshift is running !!!\n"
+msgid "Timeshift is running !!!\n"
 "Stop it and switch ?"
-msgstr ""
-"Timeshift e attivo !!!\n"
+msgstr "Timeshift e attivo !!!\n"
 "Stop o Cambiare Canale ?"
 
 msgid "Timezone"
@@ -3622,8 +3620,7 @@ msgid "Enable Cable Tuner ?"
 msgstr "attivare il Tuner DVB-C?"
 
 msgid "Please install tpk Cable Settings, scan currenty not supportet !"
-msgstr ""
-"Installa i Settings per Cavo Prima!\n"
+msgstr "Installa i Settings per Cavo Prima!\n"
 "Ricerca Canali per DVB-C non e ancora supportata !"
 
 msgid "Show last pos Question"
