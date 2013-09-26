@@ -1160,7 +1160,7 @@ void checkserial(char* input)
 	free(authbuf);
 
 // ufs910 work start
-	if(checkbox("UFS910")
+	if(checkbox("UFS910"))
 	{
 		status.security = 1;
 		writeserial(input);
