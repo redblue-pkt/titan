@@ -1089,9 +1089,9 @@ char* getserialpw()
 	return pw;
 }
 
-int writeserial(char* cpuid)
+int writeserial(char* filename, char* cpuid)
 {
-	char* filename = "/var/etc/codepages/codepage.868", *pw = NULL;
+	char* pw = NULL;
 	unsigned char* buf = NULL;
 	FILE *fd = NULL;
 	int ret = 0;
@@ -1154,7 +1154,7 @@ void checkserial(char* input)
 			if(ret != NULL && ostrcmp(input, (&ret[i])->part) == 0)
 			{
 				status.security = 1;
-				if(count > 1) writeserial(input);
+				if(count > 1) writeserial(filename, input);
 				break;
 			}
 		}
