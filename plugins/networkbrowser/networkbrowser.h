@@ -914,7 +914,6 @@ void getnetworkbrowser_cifs(struct menulist** mlist, char* s, char* r, char* u, 
 			debug(70, "rech: %s", r);
 			debug(70, "rechip: %s", s);
 			
-			delspezchar(sInfo[i].sharename, 3);
 			tmpstr = ostrcat(tmpstr , "(cifs) ", 1, 0);
 			tmpstr = ostrcat(tmpstr , strstrip(s), 1, 0);
 			tmpstr = ostrcat(tmpstr , ": /", 1, 0);
@@ -962,7 +961,6 @@ void  getnetworkbrowser_nfs(struct menulist** mlist, char* s, char* r)
 				struct menulist* tmpmlist = addmenulist(mlist, tmpstr, NULL, "netbrowser_nfs.png", 0, 0);
 				tmpstr1 = nfsInfo[i].share;
 				if(tmpstr1 != NULL && strlen(tmpstr1) > 0) tmpstr1++;
-				delspezchar(tmpstr1, 3);
 				changemenulistparam(tmpmlist, tmpstr1, NULL, NULL, NULL);
 				free(tmpstr); tmpstr = NULL;
 			}
