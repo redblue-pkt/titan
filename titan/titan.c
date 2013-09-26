@@ -625,15 +625,13 @@ int main(int argc, char *argv[])
 		if(checkbox("UFS910") == 1 && checklowflash() != 0)
 		{
 			printf("error: 8\n");		
-//			destroy();
-//			exit(100);
+			destroy();
+			exit(100);
 		}
-		else
-		{				
-			char* cpuid = getcpuid();
-			checkserial(cpuid);
-			free(cpuid); cpuid = NULL;
-		}	
+	
+		char* cpuid = getcpuid();
+		checkserial(cpuid);
+		free(cpuid); cpuid = NULL;
 	}
 	else
 	{

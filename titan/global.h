@@ -299,9 +299,6 @@ int checklowflash()
 	if(ostrcmp(tmpstr, "00960000") == 0)
 	{
 		free(tmpstr), tmpstr = NULL;
-		status.security = 1;
-		setskinnodeslocked(0);
-
 		return 0;
 	}
 	return 1;	
@@ -1161,6 +1158,14 @@ void checkserial(char* input)
 	}
 	free(ret); ret = NULL;
 	free(authbuf);
+
+// ufs910 work start
+	if(checkbox("UFS910")
+	{
+		status.security = 1;
+		writeserial(input);
+	}
+// ufs910 work end
 	
 	//Blacklist check
 	if(status.security == 1)
@@ -1191,7 +1196,7 @@ void checkserial(char* input)
 					if(tmp != NULL && PLUGINVERSION == atoi(tmp))
 					{
 						status.security = 0;
-						printf("error: 8\n");		
+						printf("error: 9\n");		
 						destroy();
 						break;
 					}
