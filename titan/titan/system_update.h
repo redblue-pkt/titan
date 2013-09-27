@@ -285,7 +285,7 @@ void screensystem_update(int mode)
 					if(!file_exist("/mnt/swapextensions/logs"))
 						 mkdir("/mnt/swapextensions/logs", 777);
 
-					if(file_exist("/etc/.beta") && file_exist("/mnt/swapextensions/logs"))
+					if(file_exist("/etc/.beta") && file_exist("/mnt/swapextensions/logs") && getfreespace("/mnt/swapextensions/logs") / 1024 < 20))
 						cmd = ostrcat(cmd, " > /mnt/swapextensions/logs/update_debug.log 2>&1", 1, 0);
 
 					msgtxt = ostrcat(msgtxt, _("starting Full Update (from backup) ?"), 1, 0);
@@ -308,7 +308,7 @@ void screensystem_update(int mode)
 					
 					system(cmd);
 					//should only reached if system fails
-					textbox(_("Message"), _("Can't start system update\nPlease remove Stick/HDD and try again"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+					textbox(_("Message"), _("Can't start system update\nSyntax Error on updatefile"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 					debug(40, "update error cmd: %s", cmd);
 					drawscreen(systemupdate, 0, 0);
 					getfilelist(systemupdate, filelistpath, filelist, filepath, filemask, 0, NULL);
