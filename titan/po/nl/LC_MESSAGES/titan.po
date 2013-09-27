@@ -105,25 +105,25 @@ msgid "Add Cifs Network Share"
 msgstr "Cifs Network Share toevoegen"
 
 msgid "Add Nfs Network Share"
-msgstr "Hinzufügen einer Nfs Freigabe"
+msgstr "Nfs Network Share toevoegen"
 
 msgid "Add Ftpfs Network Share"
-msgstr "Hinzufügen einer Ftp Freigabe"
+msgstr "FTP Network Share toevoegen"
 
 msgid "add new share"
-msgstr "Neue Freigabe hinzufügen"
+msgstr "Nieuwe koppeling toevoegen"
 
 msgid "add cifs share"
-msgstr "Neue Cifs Freigabe hinzufügen"
+msgstr "Cifs share toevoegen"
 
 msgid "add nfs share"
-msgstr "Neue Nfs Freigabe hinzufügen"
+msgstr "Nfs share toevoegen"
 
 msgid "add ftp share"
-msgstr "Neue Ftp Freigabe hinzufügen"
+msgstr "Ftp share toevoegen"
 
 msgid "Adjust"
-msgstr "System Einstellungen"
+msgstr "Systeem instellingen"
 
 msgid "Auto Scan"
 msgstr "automatisch"
@@ -135,13 +135,13 @@ msgid "auto"
 msgstr "automatisch"
 
 msgid "always"
-msgstr "immer"
+msgstr "altijd"
 
 msgid "all"
 msgstr "alle"
 
 msgid "All new channels added!"
-msgstr "Alle neuen Kanäle gespeichert!"
+msgstr "Alle nieuwe kanalen opgeslagen!"
 
 msgid "ALL"
 msgstr "Alle"
@@ -150,28 +150,28 @@ msgid "(ALL)"
 msgstr "(Alle)"
 
 msgid "All Channels"
-msgstr "Alle Sender"
+msgstr "Alle kanalen"
 
 msgid "alpha"
-msgstr "Alphabetisch"
+msgstr "alfabetisch"
 
 msgid "alt file"
-msgstr "alternative Datei"
+msgstr "alternatief bestand"
 
 msgid "Are you sure you want to restore settings?"
-msgstr "Sollen die Einstellungen wieder hergestellt werden?"
+msgstr "Weet u zeker dat u de opgeslagen gegevens wilt terugzetten?"
 
 msgid "Apple Trailer"
 msgstr "Apple Movie Trailer"
 
 msgid "Aspect Ratio:"
-msgstr "Seitenverhältnis:"
+msgstr "Aspect Ratio:"
 
 msgid "Aspect Settings"
-msgstr "Bildverhältnis Einstellungen"
+msgstr "Beeldverhouding instellen"
 
 msgid "Aspect"
-msgstr "Seitenverhältnis"
+msgstr "Beeldverhouding"
 
 msgid "Audio / Video / Sat"
 msgstr "Audio/Video/Sat "
@@ -180,25 +180,25 @@ msgid "Audio PID:"
 msgstr "Audio PID:"
 
 msgid "Audio Player"
-msgstr "Musik abspielen"
+msgstr "Audio speler"
 
 msgid "AUDIO SETTINGS"
-msgstr "MUSIK Einstellungen"
+msgstr "Audio instellingen"
 
 msgid "Audio Source"
-msgstr "Audio Quelle"
+msgstr "Audio bron"
 
 msgid "Audio Tracks"
-msgstr "Tonspur wählen"
+msgstr "Geluidsspoor kiezen"
 
 msgid "AUDIO"
 msgstr "MUSIK"
 
 msgid "Audio/Subt."
-msgstr "Ton/Untertitel"
+msgstr "Audio/Ondertiteling"
 
 msgid "Auto resolution"
-msgstr "Automatische Auflösung"
+msgstr "Automatische resolutie"
 
 msgid "Auto Resolution"
 msgstr "Automatische Auflösung"
