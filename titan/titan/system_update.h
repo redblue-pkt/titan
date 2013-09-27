@@ -45,7 +45,10 @@ void screensystem_update(int mode)
 	{
 		skinname = "systemupdate_flash_tmp_menu";
 		filemask = ostrcat(filemask, "*.img", 1, 0);
-		filepath = ostrcat(filepath, "/tmp", 1, 0);
+		if(file_exist("/var/backup"))
+			filepath = ostrcat(filepath, "/var/backup", 1, 0);
+		else
+			filepath = ostrcat(filepath, "/tmp", 1, 0);		
 		type = ostrcat(type, "tmp", 1, 0);
 	}
 	else if (mode == 2)
@@ -68,7 +71,10 @@ void screensystem_update(int mode)
 	{
 		skinname = "systemupdate_usb_tmp_menu";
 		filemask = ostrcat(filemask, "*.tar.gz", 1, 0);
-		filepath = ostrcat(filepath, "/tmp", 1, 0);
+		if(file_exist("/var/backup"))
+			filepath = ostrcat(filepath, "/var/backup", 1, 0);
+		else
+			filepath = ostrcat(filepath, "/tmp", 1, 0);	
 		type = ostrcat(type, "tmp", 1, 0);
 	}
 
