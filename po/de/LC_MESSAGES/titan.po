@@ -4127,3 +4127,7 @@ msgstr "Ja / VZAP unendlich"
 
 msgid "Deavtivate Refresh Time and After EPG in scan-mode"
 msgstr "Deaktiviere Aktualisierungszeit und Nach Suche im Suche-Modus"
+
+msgid "Can't start system update\nSyntax Error on updatefile"
+msgstr "System Aktualisierung kann nicht gestartet werden!\nSyntax Fehler im Update File."
+
