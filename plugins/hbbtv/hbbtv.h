@@ -358,7 +358,9 @@ void screenopera(char* url)
 	struct stimerthread* operareceiver = NULL;
 	char* opera_root, *opera_bin = NULL, *opera_dir = NULL;
 	char* opera_home = NULL, *opera_fonts = NULL, *opera_widgets = NULL;
-
+	
+	textbox(_("Message"), _("You can leave HBBTV with Record Key."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 15, 0);
+	
   if(isdir("/var/usr/local/share/titan/plugins/hbbtv/opera"))
 		opera_root = ostrcat("/var/usr/local/share/titan/plugins/hbbtv/opera", NULL, 0, 0);
 	else if(isdir("/var/swap/usr/local/share/titan/plugins/hbbtv/opera"))
