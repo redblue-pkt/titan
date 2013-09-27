@@ -157,7 +157,8 @@ char* getinstallpath(char* path, char* size)
 		}
 	}
 	
-	if(count > 1)
+	//if(count > 1) // if only 1 installpath, don't show choicebox
+	if(count > 0) // show always choicebox
 	{
 		free(tmpstr); tmpstr = NULL;
 		mbox = menulistbox(mlist, NULL, "Choice Install Medium", NULL, NULL, 0, 0);
