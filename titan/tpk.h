@@ -18,7 +18,7 @@
 #define TMPPREVIEW TMP"/Packages.preview"
 #define EXTRACTDIR "/mnt/tpk" //path must exist
 #define PREFILE "/var/etc/.tpkpre"
-#define TPKADDSIZE 200
+#define TPKADDSIZE 100
 
 #define HTTPPACKAGES "Packages.gz"
 #define HTTPPREVIEW "Packages.preview.gz"
