@@ -676,7 +676,7 @@ msgid "Extensions Menu"
 msgstr "Erweiterungsmenü"
 
 msgid "Extensions"
-msgstr "Erweiterungen"
+msgstr "Applicaties"
 
 msgid "Expert Sat Settings"
 msgstr "Experten Satelliten-Einstellungen"
@@ -1600,13 +1600,13 @@ msgid "Record Split Size"
 msgstr "Teile Aufnahmen ab einer Größe von"
 
 msgid "Record Timer"
-msgstr "Aufnahme Timer"
+msgstr "Opname Timer"
 
 msgid "Records and EPG ..."
-msgstr "Aufnahme und EPG"
+msgstr "Opname en EPG ..."
 
 msgid "Records and EPG"
-msgstr "Aufnahme und EPG"
+msgstr "Opname en EPG"
 
 msgid "record_max_sectors"
 msgstr "Max. Aufnahme Sektoren"
@@ -1879,16 +1879,16 @@ msgid "Settings backup/restore"
 msgstr "Einstellungen Sichern/Wiederherstellen"
 
 msgid "Settings"
-msgstr "Einstellungen"
+msgstr "Instellingen"
 
 msgid "settings"
-msgstr "Kanallisten"
+msgstr "instellingen"
 
 msgid "Settings..."
-msgstr "Einstellungen"
+msgstr "Instellingen..."
 
 msgid "Settings OK ?"
-msgstr "Einstellungen speichern?"
+msgstr "Instellingen Ok?"
 
 msgid "Share Settings"
 msgstr "Freigaben Einstellungen"
@@ -1981,7 +1981,7 @@ msgid "SNR:"
 msgstr "SNR:"
 
 msgid "Softcam Panel"
-msgstr "Softcam Einstellungen"
+msgstr "Softcam instellingen"
 
 msgid "Softcam selection:"
 msgstr "Softcam auswählen:"
@@ -2020,10 +2020,10 @@ msgid "ssl"
 msgstr "ssl"
 
 msgid "Standby / Poweroff"
-msgstr "Standby/Ausschalten"
+msgstr "Standby / Uitschakelen"
 
 msgid "Standby / Poweroff..."
-msgstr "Standby/Ausschalten"
+msgstr "Standby / Uitschakelen"
 
 msgid "Standby Brightness"
 msgstr "Standby Helligkeit"
@@ -3085,7 +3085,7 @@ msgid "browser"
 msgstr "Internetbrowser"
 
 msgid "Extensions..."
-msgstr "Erweiterungen"
+msgstr "Applicaties"
 
 msgid "Harddisk Configure"
 msgstr "Festplatte konfigurieren"
