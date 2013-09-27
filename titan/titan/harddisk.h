@@ -340,12 +340,12 @@ void screenconfigurehdd(char* dev)
 			if(mode == 0) ret = mkdir(path, 0777);
 			if(mode == 1)
 			{
-				if(textbox("Message", _("Are you sure you want to delete this directory?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+				if(textbox("Message", _("Are you sure you want to delete this directory?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
 				{
 					ret = rmdir(path);
 					if(ret < 0)
 					{
-						if(textbox("Message", _("Directory has content\nReally delete directory and content?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+						if(textbox("Message", _("Directory has content\nReally delete directory and content?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
 						{
 							drawscreen(load, 0, 0);
 							ret = -1;
@@ -372,11 +372,11 @@ void screenconfigurehdd(char* dev)
 			{
 				if(mode == 0) perr("mkdir");
 				if(mode == 1) perr("rmdir");
-				textbox("Message", _("can't create or delete directory"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
+				textbox("Message", _("can't create or delete directory"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 5, 0);
 			}
 			else if(ret != 9999)
 			{
-				textbox("Message", _("succesfull create or delelete directory"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
+				textbox("Message", _("succesfull create or delelete directory"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 5, 0);
 				//start hotplug after create/del dir
 				if(ostrcmp(listbox->select->name, "addrecord") == 0 || ostrcmp(listbox->select->name, "addswap") == 0 || ostrcmp(listbox->select->name, "addext") == 0 || ostrcmp(listbox->select->name, "addbackup") == 0)
 				{
@@ -908,7 +908,7 @@ struct hdd* addhdd(char* device, int partition, unsigned long size, int removabl
 			{
 				sync();
 				if(newdev == 1)
-					textbox("Message", _("Found new Stick/HDD.\nYou can configure it in Harddisk Menu."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 15, 0);
+					textbox("Message", _("Found new Stick/HDD.\nYou can configure it in Harddisk Menu."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 15, 0);
 			}
 		}
 		free(tmpstr); tmpstr = NULL;
