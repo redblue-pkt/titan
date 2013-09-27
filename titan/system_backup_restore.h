@@ -24,9 +24,8 @@ void screensystem_backup_restore()
 		rcret = waitrc(backup_restore, 0, 0);
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
-		if(rcret == getrcconfigint("rcred", NULL)) break;
 
-		if(rcret == getrcconfigint("rcgreen", NULL))
+		if(rcret == getrcconfigint("rcred", NULL))
 		{
 			clearscreen(backup_restore);
 			if(textbox(_("Restore Settings"), _("Are you sure you want to restore settings?\n\nOK = start restore\nEXIT = abort restore"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 700, 250, 0, 0) == 1)
@@ -59,14 +58,7 @@ void screensystem_backup_restore()
 				drawscreen(backup_restore, 0, 0);
 			}
 		}
-		if(rcret == getrcconfigint("rcblue", NULL))
-		{
-			tmpstr = readfiletomem("/tmp/backup.log", 0);
-			textbox(_("BACKUP LOG"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
-			free(tmpstr); tmpstr = NULL;
-			drawscreen(backup_restore, 0, 0);
-		}
-		if(rcret == getrcconfigint("rcyellow", NULL))
+		if(rcret == getrcconfigint("rcgreen", NULL))
 		{
 			if(isfile("/tmp/.backupdev"))
 			{
@@ -96,6 +88,13 @@ void screensystem_backup_restore()
 				textbox(_("BACKUP ERROR"), _("A record hdd or a swapstick must be mounted!\n\nAborting backup..."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 				drawscreen(backup_restore, 0, 0);
 			}
+		}
+		if(rcret == getrcconfigint("rcyellow", NULL))
+		{
+			tmpstr = readfiletomem("/tmp/backup.log", 0);
+			textbox(_("BACKUP LOG"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 600, 0, 0);
+			free(tmpstr); tmpstr = NULL;
+			drawscreen(backup_restore, 0, 0);
 		}
 	}
 
