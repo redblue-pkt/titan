@@ -285,7 +285,7 @@ void screensystem_update(int mode)
 					if(!file_exist("/mnt/swapextensions/logs"))
 						 mkdir("/mnt/swapextensions/logs", 777);
 
-					if(file_exist("/etc/.beta") && file_exist("/mnt/swapextensions/logs") && getfreespace("/mnt/swapextensions/logs") / 1024 < 20)
+					if(file_exist("/etc/.beta") && file_exist("/mnt/swapextensions/logs") && getfreespace("/mnt/swapextensions/logs") / 1024 > 120)
 						cmd = ostrcat(cmd, " > /mnt/swapextensions/logs/update_debug.log 2>&1", 1, 0);
 
 					msgtxt = ostrcat(msgtxt, _("starting Full Update (from backup) ?"), 1, 0);
