@@ -266,9 +266,9 @@ void screensystem_update(int mode)
 					msgtxt = ostrcat(msgtxt, _("starting Full Update ?"), 1, 0);
 				}
 
-				if(ostrstr(filelist->select->text, "_BACKUP_") != NULL)
+				if(ostrstr(filelist->select->text, "_FULLBACKUP.") != NULL)
 				{
-					cmd = ostrcat(cmd, "backup ", 1, 0);
+					cmd = ostrcat(cmd, "fullbackup ", 1, 0);
 					cmd = ostrcat(cmd, tmpstr, 1, 0);
 					cmd = ostrcat(cmd, auth, 1, 0);
 					if(imgtype == 1)
