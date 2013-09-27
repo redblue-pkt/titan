@@ -303,10 +303,10 @@ msgid "Bouquets"
 msgstr "Favorieten"
 
 msgid "Brightness"
-msgstr "Helligkeit"
+msgstr "Helderheid"
 
 msgid "broadcast"
-msgstr "Sendung"
+msgstr "Uitzending"
 
 msgid "browsers"
 msgstr "Internet Browser"
@@ -318,88 +318,88 @@ msgid "CAM PMT Mode"
 msgstr "CAM PMT Mode"
 
 msgid "Cancel Shutdown"
-msgstr "Ausschalttimer beenden"
+msgstr "Sleep-timer stoppen"
 
 msgid "cancel"
-msgstr "beenden"
+msgstr "Beeindigen"
 
 msgid "Cancel"
-msgstr "Beenden"
+msgstr "Beeindigen"
 
 msgid "Can't get EPG time or EPG endtime not ok"
-msgstr "EPG Zeit kann nicht gefunden werden, oder ist nicht korrekt!"
+msgstr "EPG tijd kan niet gevonden worden of is niet ok!"
 
 msgid "Can't start playback !"
-msgstr "Kann die Wiedergabe nicht starten!"
+msgstr "Weergave kan niet gestart worden"
 
 msgid "Can't start timeshift play !"
-msgstr "Timeshift kann nicht gestartet werden"
+msgstr "Timeshift kan niet gestart worden"
 
 msgid "Can't get Network Infos"
-msgstr "Netzwerk Freigaben können nicht abgerufen werden"
+msgstr "Netwerkinformatie kan niet gevonden worden"
 
 msgid "can't create or delete directory"
 msgstr "Verzeichnis kann nicht verändert werden"
 
 msgid "Can't remove akive Service"
-msgstr "Aktueller Sender kann nicht gelöscht werden"
+msgstr "Actuele zender kan niet gewist worden"
 
 msgid "Can't restore settings"
-msgstr "Wiederherstellung kann nicht durchgeführt werden"
+msgstr "Instellingen terugzetten lukt niet"
 
 msgid "Can't find a Tuner.\nAll Tuners in use or no Tuner defined."
-msgstr "Kein freier Tuner gefunden"
+msgstr "Er is geen vrije tuner beschikbaar"
 
 msgid "Can't open frontend dev or Frontend Type unknown!"
-msgstr "Frontend kann nicht geöffnet werden oder unbekannter Type"
+msgstr "Frontend kan niet geopend worden of onbekend Type"
 
 msgid "CHANGE"
-msgstr "Ändern"
+msgstr "Veranderen"
 
 msgid "change"
-msgstr "Ändern"
+msgstr "veranderen"
 
 msgid "Change Channelname auto."
-msgstr "Kanalname automatisch ändern"
+msgstr "Zendernaam automatisch aanpassen"
 
 msgid "Change language needs reboot"
-msgstr "Änderung der Sprache benötigt einen Neustart!"
+msgstr "Bij taalaanpassing is een herstart noodzakelijk!"
 
 msgid "Channels A-Z"
-msgstr "Sender A-Z"
+msgstr "Zenders A-Z"
 
 msgid "Channel Edit"
-msgstr "Senderliste bearbeiten"
+msgstr "Zenderlijst bewerken"
 
 msgid "Channel EPG"
-msgstr "Sender EPG"
+msgstr "Zender EPG"
 
 msgid "Channellist empty or corrupt (channel not found)!"
-msgstr "Kanalliste fehlerhaft (Kanal nicht gefunden)!"
+msgstr "Zenderlijst is leeg of corrupt (zender niet gevonden)!"
 
 msgid "Channel Search"
-msgstr "Sender Suche"
+msgstr "Zender zoeken"
 
 msgid "Channel Service"
-msgstr "Empfangseinstellungen"
+msgstr "Ontvangstinstellingen"
 
 msgid "Channel Service..."
-msgstr "Kanalsuche"
+msgstr "Zender zoeken"
 
 msgid "Channel"
-msgstr "Sender"
+msgstr "Zender"
 
 msgid "channel"
-msgstr "Sendername"
+msgstr "Zendernaam"
 
 msgid "channel + time"
-msgstr "Sendername + Uhrzeit"
+msgstr "Zendernaam + tijd"
 
 msgid "check your Secret Feed !"
-msgstr "Bitte den Secret Feed überprüfen!"
+msgstr "Controleer de Secret Feed!"
 
 msgid "Child Protection"
-msgstr "Jugendschutz"
+msgstr "Kinderslot"
 
 msgid "Child safety"
 msgstr "Jugendschutz"
