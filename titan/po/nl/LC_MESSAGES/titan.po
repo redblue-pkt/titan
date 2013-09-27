@@ -402,22 +402,22 @@ msgid "Child Protection"
 msgstr "Kinderslot"
 
 msgid "Child safety"
-msgstr "Jugendschutz"
+msgstr "Kinderbescherming"
 
 msgid "Clear before scan"
-msgstr "Vor der Suche löschen?"
+msgstr "Wissen voor zoeken"
 
 msgid "Color Format Scart"
-msgstr "Farbformat für Scart"
+msgstr "Kleurinstellingen Scart"
 
 msgid "Color Format"
-msgstr "Farbformat"
+msgstr "Kleurformat"
 
 msgid "comming soon"
-msgstr "folgt demnächst, das Team arbeitet dran"
+msgstr "binnenkort beschikbaar"
 
 msgid "comming soon..."
-msgstr "folgt demnächst, das Team arbeitet dran"
+msgstr "binnenkort beschikbaar..."
 
 msgid "Committed command"
 msgstr "Committed command"
@@ -426,31 +426,31 @@ msgid "Common Interface"
 msgstr "CI-Module"
 
 msgid "Contrast"
-msgstr "Kontrast"
+msgstr "Contrast"
 
 msgid "Configure"
-msgstr "Festplatte konfigurieren"
+msgstr "Hardeschijf configureren"
 
 msgid "copy service"
-msgstr "zu Favoriten kopieren"
+msgstr "naar favorieten copieren"
 
 msgid "CPU"
 msgstr "Prozessor"
 
 msgid "CPU info"
-msgstr "Prozessor Information"
+msgstr "Processor informatie"
 
 msgid "CPU frequency"
-msgstr "CPU Frequenz"
+msgstr "Processor frequentie"
 
 msgid "Create Backup"
-msgstr "Datensicherung erstellen"
+msgstr "Maak backup"
 
 msgid "date"
 msgstr "Datum"
 
 msgid "Day"
-msgstr "Tag"
+msgstr "Dag"
 
 msgid "Deactivate"
 msgstr "Stoppen"
@@ -462,43 +462,43 @@ msgid "Detect hanging System !!!\n"
 "\n"
 "KILL = Red\n"
 "BOOT = Power"
-msgstr "Systemfehler !!!\n"
+msgstr "Systeemfout !!!\n"
 "\n"
-"Rot  = Prozess beenden\n"
-"Grün = System Neustarten"
+"Rood  = Hangend proces afbreken\n"
+"Groen = Herstart systeem"
 
 msgid "default"
-msgstr "Voreinstellung"
+msgstr "Standaardinstelling"
 
 msgid "Default"
-msgstr "Voreinstellung"
+msgstr "Standaardinstelling"
 
 msgid "DEFAULT"
-msgstr "Voreinstellung"
+msgstr "Standaardinstelling"
 
 msgid "Default Icon"
-msgstr "Standardbild"
+msgstr "Standaard Icoon"
 
 msgid "del startchannel"
-msgstr "lösche Startkanal"
+msgstr "verwijder startzender"
 
 msgid "DEL"
-msgstr "Löschen"
+msgstr "Vewijderen"
 
 msgid "del medium for record"
-msgstr "Laufwerk nicht für Aufnahmen benutzen"
+msgstr "Medium niet gebruiken voor opname"
 
 msgid "del medium for extension"
-msgstr "Laufwerk nicht für Erweiterungen benutzen"
+msgstr "Medium niet gebruiken voor extenties"
 
 msgid "del medium for swap"
-msgstr "Laufwerk nicht für Swap-Datei benutzen"
+msgstr "Medium niet gebruiken voor swap geheugen"
 
 msgid "del medium for backup"
-msgstr "Laufwerk nicht für Sicherungen und Wiederherstellung benutzen"
+msgstr "Medium niet gebruiken voor backups"
 
 msgid "daily"
-msgstr "täglich"
+msgstr "dagelijks"
 
 msgid "Delete EPG after read"
 msgstr "Lösche EPG nach dem einlesen"
