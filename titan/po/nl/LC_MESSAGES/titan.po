@@ -1,44 +1,20 @@
-msgid ""
-msgstr ""
-"Project-Id-Version: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.5\n"
-
 msgid "--- SD resolution"
-msgstr "--- SD resolutie"
+msgstr "--- SD Auflösung"
 
 msgid "--- Time to switch"
-msgstr "--- tijd voordat er omgeschakeld wordt"
-
-msgid "---"
-msgstr "---"
-
-msgid "???"
-msgstr "???"
+msgstr "--- Zeit bis Umschalten"
 
 msgid "1500rpm"
-msgstr "1500 toeren"
+msgstr "1500 U/min"
 
 msgid "3D Mode"
 msgstr "3D Modus"
 
 msgid "3D-Mode Settings"
-msgstr "3D-Mode instellingen"
+msgstr "3D-Modus Einstellungen"
 
 msgid "500rpm"
-msgstr "500 toeren"
-
-msgid "a"
-msgstr "a"
-
-msgid "A"
-msgstr "A"
+msgstr "500 U/min"
 
 msgid "A mount entry with this name already exists!\n"
 "Update existing entry and continue?"
@@ -46,51 +22,51 @@ msgstr "Eine Freigabe mit diesem Name existiert bereits!\n"
 "Wollen sie diese wirklich überschreiben?"
 
 msgid "Are you sure you want remove this share?"
-msgstr "Weet u zeker dat u deze netwerkkoppeling wilt verwijderen?"
+msgstr "Wollen Sie diese Freigabe wirklich löschen?"
 
 msgid "Are you sure you want to save this network mount?"
-msgstr "Weet u zeker dat u deze nerwerkkoppeling wilt opslaan?"
+msgstr "Wollen Sie diese Freigabe wirklich speichern?"
 
 msgid "Are you sure you want to remove all Partitions\n"
 "on this device and create a new Partition 1?\n"
 "Box reboots after format"
-msgstr "Wilt u alle partities verwijderen\n"
-"van dit apparaat en een nieuwe partitie maken?\n"
-"De box wordt vervolgens opnieuw opgestart."
+msgstr "Wollen Sie alle Partitionen entfernen\n"
+"auf diesem Gerät und eine neue Partition erstellen?\n"
+"Die Box wird danach neu gestartet."
 
 msgid "Are you sure you want to format this Partition?\n"
 "Box reboots after format"
-msgstr "Weet u zeker dat u deze partitie wilt formatteren?\n"
-"De box wordt vervolgens opnieuw opgestart."
+msgstr "Wollen sie die Partition formatieren?\n"
+"Die Box wird danach neu gestartet."
 
 msgid "Are you sure you want to check this Partition?\n"
 "Box reboots after check"
-msgstr "Weet u zeker dat u de partitie wilt testen?\n"
-"De box wordt vervolgens opnieuw opgestart."
+msgstr "Wollen sie die Partition prüfen?\n"
+"Die Box wird danach neu gestartet."
 
 msgid "A record hdd or a swapstick must be mounted!"
-msgstr "Er moet een hardeschijf of een USB-Stick ge-mount zijn!"
+msgstr "Es muss eine Festplatte oder ein USB-Stick eingebunden sein"
 
 msgid "A/V Settings"
-msgstr "A/V instellingen"
+msgstr "Bild/Ton Einstellungen"
 
 msgid "Panel"
-msgstr "TitaNit Panel"
+msgstr "Atemio Panel"
 
 msgid "Wizard"
 msgstr "Setup-Assistent"
 
 msgid "Aborting restoring..."
-msgstr "Backup terugzetten wordt afgebroken"
+msgstr "Die Rücksicherung der Daten wird beendet!"
 
 msgid "Aborting backup..."
-msgstr "Backup maken wordt afgebroken"
+msgstr "Die Datensicherung wird beendet!"
 
 msgid "About"
-msgstr "Over"
+msgstr "Über"
 
 msgid "AC3 default"
-msgstr "Dolby Digital (AC3) default"
+msgstr "Dolby Digital (AC3) standardmäßig"
 
 msgid "AC3 downmix"
 msgstr "Dolby Digital (AC3) downmix"
@@ -99,55 +75,55 @@ msgid "AC3 Mode"
 msgstr "Dolby Digital (AC3) Modus"
 
 msgid "Action after"
-msgstr "Aktie na"
+msgstr "Aktion danach"
 
 msgid "Aktion after"
-msgstr "Na de opname"
+msgstr "Nach der Aufnahme"
 
 msgid "Activate"
-msgstr "Activeren"
+msgstr "Aktivieren"
 
 msgid "Adapter Settings"
-msgstr "IP-instellingen"
+msgstr "IP-Addressen Einstellungen"
 
 msgid "add service"
-msgstr "Service toevoegen"
+msgstr "Eintrag hinzufügen"
 
 msgid "add recording (stop after current event)"
-msgstr "Opname toevoegen (deze uitzending)"
+msgstr "Aufnahme hinzufügen (diese Sendung)"
 
 msgid "add recording (indefinitely)"
-msgstr "Opname toevoegen (oneindig)"
+msgstr "Aufnahme hinzufügen (unbegrenzt)"
 
 msgid "add recording (enter duration)"
-msgstr "Opname toevoegen (opnameduur ingeven)"
+msgstr "Aufnahme hinzufügen (Länge eingeben)"
 
 msgid "ADD"
-msgstr "Toevoegen"
+msgstr "Hinzufügen"
 
 msgid "Add Cifs Network Share"
-msgstr "Cifs Network Share toevoegen"
+msgstr "Hinzufügen einer Cifs Freigabe"
 
 msgid "Add Nfs Network Share"
-msgstr "Nfs Network Share toevoegen"
+msgstr "Hinzufügen einer Nfs Freigabe"
 
 msgid "Add Ftpfs Network Share"
-msgstr "FTP Network Share toevoegen"
+msgstr "Hinzufügen einer Ftp Freigabe"
 
 msgid "add new share"
-msgstr "Nieuwe koppeling toevoegen"
+msgstr "Neue Freigabe hinzufügen"
 
 msgid "add cifs share"
-msgstr "Cifs share toevoegen"
+msgstr "Neue Cifs Freigabe hinzufügen"
 
 msgid "add nfs share"
-msgstr "Nfs share toevoegen"
+msgstr "Neue Nfs Freigabe hinzufügen"
 
 msgid "add ftp share"
-msgstr "Ftp share toevoegen"
+msgstr "Neue Ftp Freigabe hinzufügen"
 
 msgid "Adjust"
-msgstr "Systeem instellingen"
+msgstr "System Einstellungen"
 
 msgid "Auto Scan"
 msgstr "automatisch"
@@ -159,13 +135,13 @@ msgid "auto"
 msgstr "automatisch"
 
 msgid "always"
-msgstr "altijd"
+msgstr "immer"
 
 msgid "all"
 msgstr "alle"
 
-msgid "All new channel added!"
-msgstr "Alle nieuwe kanalen opgeslagen!"
+msgid "All new channels added!"
+msgstr "Alle neuen Kanäle gespeichert!"
 
 msgid "ALL"
 msgstr "Alle"
@@ -174,101 +150,91 @@ msgid "(ALL)"
 msgstr "(Alle)"
 
 msgid "All Channels"
-msgstr "Alle kanalen"
+msgstr "Alle Sender"
 
 msgid "alpha"
-msgstr "alfabetisch"
+msgstr "Alphabetisch"
 
 msgid "alt file"
-msgstr "alternatief bestand"
+msgstr "alternative Datei"
 
 msgid "Are you sure you want to restore settings?"
-msgstr "Weet u zeker dat u de opgeslagen gegevens wilt terugzetten?"
+msgstr "Sollen die Einstellungen wieder hergestellt werden?"
 
 msgid "Apple Trailer"
 msgstr "Apple Movie Trailer"
 
 msgid "Aspect Ratio:"
-msgstr "Aspect Ratio:"
+msgstr "Seitenverhältnis:"
 
 msgid "Aspect Settings"
-msgstr "Beeldverhouding instellen"
+msgstr "Bildverhältnis Einstellungen"
 
 msgid "Aspect"
-msgstr "Beeldverhouding"
+msgstr "Seitenverhältnis"
 
 msgid "Audio / Video / Sat"
-msgstr "Audio / Video / Sat "
+msgstr "Audio/Video/Sat "
 
 msgid "Audio PID:"
 msgstr "Audio PID:"
 
 msgid "Audio Player"
-msgstr "Audio speler"
+msgstr "Musik abspielen"
 
 msgid "AUDIO SETTINGS"
-msgstr "Audio instellingen"
+msgstr "MUSIK Einstellungen"
 
 msgid "Audio Source"
-msgstr "Audio bron"
+msgstr "Audio Quelle"
 
 msgid "Audio Tracks"
-msgstr "Geluidsspoor kiezen"
+msgstr "Tonspur wählen"
 
 msgid "AUDIO"
-msgstr "AUDIO"
+msgstr "MUSIK"
 
 msgid "Audio/Subt."
-msgstr "Audio/Ondertiteling"
+msgstr "Ton/Untertitel"
 
 msgid "Auto resolution"
-msgstr "Automatische resolutie"
+msgstr "Automatische Auflösung"
 
 msgid "Auto Resolution"
-msgstr "Automatische resolutie"
+msgstr "Automatische Auflösung"
 
 msgid "Automatic Search"
-msgstr "Automatisch zoeken"
+msgstr "Automatische Sendersuche"
 
 msgid "Automatic stop in 5 seconds."
-msgstr "Automatische herstart in 5 seconden! "
+msgstr "Automatisches Neustart wird in 5 Sekunden eingeleitet!"
 
 msgid "Automount"
-msgstr "Automount"
+msgstr "Automatische Einbindung"
 
 msgid "Autostart"
-msgstr "Autostart"
+msgstr "Boot Optionen"
 
 msgid "A-Z (Text)"
 msgstr "A-Z (Text)"
 
-msgid "b"
-msgstr "b"
-
-msgid "B"
-msgstr "B"
-
 msgid "bar"
-msgstr "Achtergrondkleur"
+msgstr "Farbliche Darstellung des Hintergrundes"
 
 msgid "Backup / Restore Settings"
-msgstr "Backup maken/terugzetten"
+msgstr "Einstellungen sichern/wiederherstellen"
 
 msgid "Backup"
-msgstr "Backup opslaan"
+msgstr "Sicherung erstellen"
 
 msgid "BACKUP ERROR"
-msgstr "!!! Fout bij het maken van Backup !!!"
+msgstr "!!! Fehler beim Sichern der Daten !!!"
 
 msgid "Backup - Settings"
-msgstr "Backup wordt gemaakt"
+msgstr "Einstellungen werden gesichert"
 
-msgid "Backup startet\n"
-"\n"
-"Please wait..."
-msgstr "Backup wordt gemaaktt\n"
-"\n"
-"even geduld.."
+msgid "Backup startet\n\nPlease wait..."
+msgstr "Sicherung wurde gestartet\n\nBitte warten..."
 
 msgid "bbgain"
 msgstr "BBGain"
@@ -277,37 +243,37 @@ msgid "BER:"
 msgstr "BER:"
 
 msgid "bestfit"
-msgstr "Verbreden tot beeldgrootte"
+msgstr "Auf Bildschirmgröße verbreitern"
 
 msgid "Beta Config"
-msgstr "Betatester instellingen"
+msgstr "Betatester Einstellungen"
 
 msgid "betapass"
-msgstr "Betatester wachtwoord"
+msgstr "Betatester Passwort"
 
 msgid "betauser"
-msgstr "Betatester loginnaam"
+msgstr "Betatester Benutzername"
 
 msgid "big"
-msgstr "groot"
+msgstr "groß"
 
 msgid "black"
-msgstr "zwart"
+msgstr "schwarz"
 
 msgid "blue"
-msgstr "blauw"
+msgstr "blau"
 
 msgid "Blue Button"
-msgstr "Blauwe knop"
+msgstr "Blaue Taste"
 
 msgid "Blue Key Action - Setup"
-msgstr "Blauweknop - functievastlegging"
+msgstr "Blaue - Taste Belegungsmenü"
 
 msgid "Blue Key Action - Plugins"
-msgstr "Blauweknop - Plugins"
+msgstr "Blaue - Taste Erweiterungsliste"
 
 msgid "border"
-msgstr "Kaderkleur"
+msgstr "Farbliche Darstellung der Umrandung"
 
 msgid "bootlogos"
 msgstr "Bootlogos"
@@ -319,185 +285,172 @@ msgid "Bootlogo"
 msgstr "Bootlogo"
 
 msgid "BootResolution"
-msgstr "Startresolutie"
+msgstr "Startauflösung"
 
 msgid "Boot Resolution"
-msgstr "Start resolutie"
+msgstr "Startauflösung"
 
 msgid "bootrgbfix"
-msgstr "RGB-correctie bij start"
+msgstr "RGB Korrektur beim Start"
 
 msgid "bootstop"
-msgstr "bootstop"
+msgstr "Startabbruch"
 
 msgid "Bouquet List"
-msgstr "Favorieten"
+msgstr "Favoriten"
 
 msgid "Bouquets"
-msgstr "Favorieten"
+msgstr "Favoriten"
 
 msgid "Brightness"
-msgstr "Helderheid"
+msgstr "Helligkeit"
 
 msgid "broadcast"
-msgstr "Uitzending"
+msgstr "Sendung"
 
 msgid "browsers"
 msgstr "Internet Browser"
 
-msgid "c"
-msgstr "c"
-
-msgid "C"
-msgstr "C"
-
 msgid "Cam / Emu"
-msgstr "Cam / Emu"
+msgstr "CAM/EMU"
 
 msgid "CAM PMT Mode"
 msgstr "CAM PMT Mode"
 
 msgid "Cancel Shutdown"
-msgstr "Sleep-timer stoppen"
+msgstr "Ausschalttimer beenden"
 
 msgid "cancel"
-msgstr "Beeindigen"
+msgstr "beenden"
 
 msgid "Cancel"
-msgstr "Beeindigen"
+msgstr "Beenden"
 
 msgid "Can't get EPG time or EPG endtime not ok"
-msgstr "EPG tijd kan niet gevonden worden of is niet ok!"
+msgstr "EPG Zeit kann nicht gefunden werden, oder ist nicht korrekt!"
 
 msgid "Can't start playback !"
-msgstr "Weergave kan niet gestart worden"
+msgstr "Kann die Wiedergabe nicht starten!"
 
 msgid "Can't start timeshift play !"
-msgstr "Timeshift kan niet gestart worden"
+msgstr "Timeshift kann nicht gestartet werden"
 
 msgid "Can't get Network Infos"
-msgstr "Netwerkinformatie kan niet gevonden worden"
+msgstr "Netzwerk Freigaben können nicht abgerufen werden"
 
 msgid "can't create or delete directory"
-msgstr "map kan niet gemaakt of aangepast worden"
+msgstr "Verzeichnis kann nicht verändert werden"
 
 msgid "Can't remove akive Service"
-msgstr "Actuele zender kan niet gewist worden"
+msgstr "Aktueller Sender kann nicht gelöscht werden"
 
 msgid "Can't restore settings"
-msgstr "Instellingen terugzetten lukt niet"
+msgstr "Wiederherstellung kann nicht durchgeführt werden"
 
-msgid "Can't find a Tuner.\n"
-"Alle Tuners in use or no Tuner defined."
-msgstr "Er is geen vrije tuner beschikbaar"
+msgid "Can't find a Tuner.\nAll Tuners in use or no Tuner defined."
+msgstr "Kein freier Tuner gefunden"
 
 msgid "Can't open frontend dev or Frontend Type unknown!"
-msgstr "Frontend kan niet geopend worden of onbekend Type"
+msgstr "Frontend kann nicht geöffnet werden oder unbekannter Type"
 
 msgid "CHANGE"
-msgstr "Veranderen"
+msgstr "Ändern"
 
 msgid "change"
-msgstr "veranderen"
+msgstr "Ändern"
 
 msgid "Change Channelname auto."
-msgstr "Zendernaam automatisch aanpassen"
+msgstr "Kanalname automatisch ändern"
 
 msgid "Change language needs reboot"
-msgstr "Bij taalaanpassing is een herstart noodzakelijk!"
+msgstr "Änderung der Sprache benötigt einen Neustart!"
 
 msgid "Channels A-Z"
-msgstr "Zenders A-Z"
+msgstr "Sender A-Z"
 
 msgid "Channel Edit"
-msgstr "Zenderlijst bewerken"
+msgstr "Senderliste bearbeiten"
 
 msgid "Channel EPG"
-msgstr "Zender EPG"
+msgstr "Sender EPG"
 
 msgid "Channellist empty or corrupt (channel not found)!"
-msgstr "Zenderlijst is leeg of corrupt (zender niet gevonden)!"
+msgstr "Kanalliste fehlerhaft (Kanal nicht gefunden)!"
 
 msgid "Channel Search"
-msgstr "Zender zoeken"
+msgstr "Sender Suche"
 
 msgid "Channel Service"
-msgstr "Ontvangstinstellingen"
+msgstr "Empfangseinstellungen"
 
 msgid "Channel Service..."
-msgstr "Zender zoeken"
+msgstr "Kanalsuche"
 
 msgid "Channel"
-msgstr "Zender"
+msgstr "Sender"
 
 msgid "channel"
-msgstr "Zendernaam"
+msgstr "Sendername"
 
 msgid "channel + time"
-msgstr "Zendernaam + tijd"
+msgstr "Sendername + Uhrzeit"
 
 msgid "check your Secret Feed !"
-msgstr "Controleer de Secret Feed!"
+msgstr "Bitte den Secret Feed überprüfen!"
 
 msgid "Child Protection"
-msgstr "Kinderslot"
+msgstr "Jugendschutz"
 
 msgid "Child safety"
-msgstr "Kinderbescherming"
+msgstr "Jugendschutz"
 
 msgid "Clear before scan"
-msgstr "Wissen voor zoeken"
+msgstr "Vor der Suche löschen?"
 
 msgid "Color Format Scart"
-msgstr "Kleurinstellingen Scart"
+msgstr "Farbformat für Scart"
 
 msgid "Color Format"
-msgstr "Kleurformat"
+msgstr "Farbformat"
 
 msgid "comming soon"
-msgstr "binnenkort beschikbaar"
+msgstr "folgt demnächst, das Team arbeitet dran"
 
 msgid "comming soon..."
-msgstr "binnenkort beschikbaar..."
+msgstr "folgt demnächst, das Team arbeitet dran"
 
 msgid "Committed command"
 msgstr "Committed command"
 
 msgid "Common Interface"
-msgstr "CI Module"
+msgstr "CI-Module"
 
 msgid "Contrast"
-msgstr "Contrast"
+msgstr "Kontrast"
 
 msgid "Configure"
-msgstr "Hardeschijf configureren"
+msgstr "Festplatte konfigurieren"
 
 msgid "copy service"
-msgstr "naar favorieten copieren"
+msgstr "zu Favoriten kopieren"
 
 msgid "CPU"
-msgstr "Processor"
+msgstr "Prozessor"
 
 msgid "CPU info"
-msgstr "Processor informatie"
+msgstr "Prozessor Information"
 
 msgid "CPU frequency"
-msgstr "Processor frequentie"
+msgstr "CPU Frequenz"
 
 msgid "Create Backup"
-msgstr "Maak backup"
-
-msgid "d"
-msgstr "d"
-
-msgid "D"
-msgstr "D"
+msgstr "Datensicherung erstellen"
 
 msgid "date"
 msgstr "Datum"
 
 msgid "Day"
-msgstr "Dag"
+msgstr "Tag"
 
 msgid "Deactivate"
 msgstr "Stoppen"
@@ -509,88 +462,88 @@ msgid "Detect hanging System !!!\n"
 "\n"
 "KILL = Red\n"
 "BOOT = Power"
-msgstr "Systeemfout !!!\n"
+msgstr "Systemfehler !!!\n"
 "\n"
-"Rood  = Hangend proces afbreken\n"
-"Groen = Herstart systeem"
+"Rot  = Prozess beenden\n"
+"Grün = System Neustarten"
 
 msgid "default"
-msgstr "Standaardinstelling"
+msgstr "Voreinstellung"
 
 msgid "Default"
-msgstr "Standaardinstelling"
+msgstr "Voreinstellung"
 
 msgid "DEFAULT"
-msgstr "Standaardinstelling"
+msgstr "Voreinstellung"
 
 msgid "Default Icon"
-msgstr "Standaard Icoon"
+msgstr "Standardbild"
 
 msgid "del startchannel"
-msgstr "verwijder startzender"
+msgstr "lösche Startkanal"
 
 msgid "DEL"
-msgstr "Vewijderen"
+msgstr "Löschen"
 
 msgid "del medium for record"
-msgstr "Medium niet gebruiken voor opname"
+msgstr "Laufwerk nicht für Aufnahmen benutzen"
 
 msgid "del medium for extension"
-msgstr "Medium niet gebruiken voor extenties"
+msgstr "Laufwerk nicht für Erweiterungen benutzen"
 
 msgid "del medium for swap"
-msgstr "Medium niet gebruiken voor swap geheugen"
+msgstr "Laufwerk nicht für Swap-Datei benutzen"
 
 msgid "del medium for backup"
-msgstr "Medium niet gebruiken voor backups"
+msgstr "Laufwerk nicht für Sicherungen und Wiederherstellung benutzen"
 
 msgid "daily"
-msgstr "dagelijks"
+msgstr "täglich"
 
 msgid "Delete EPG after read"
-msgstr "EPG wissen na het inlezen"
+msgstr "Lösche EPG nach dem einlesen"
 
 msgid "details"
 msgstr "details"
 
 msgid "Device:"
-msgstr "Apparaat"
+msgstr "Gerät:"
 
 msgid "Devices"
-msgstr "Apparaten"
+msgstr "Geräte"
 
 msgid "deaktiv"
-msgstr "uitgeschakeld"
+msgstr "ausgeschaltet"
 
 msgid "dhcp"
 msgstr "Automatisch (dhcp)"
 
 msgid "Dirsort"
-msgstr "Map-sortering"
+msgstr "Ordnersortierung"
 
 msgid "direct connect"
-msgstr "Direkte verbinding"
+msgstr "Direkte Verbindung"
 
 msgid "disable"
-msgstr "uit"
+msgstr "aus"
 
 msgid "DiSEqC Command Order"
-msgstr "DiSEqC Command Order"
+msgstr "DiSEqC Übertragungsart"
 
 msgid "DiSEqC Configuration"
-msgstr "DiSEqC Instelling"
+msgstr "DiSEqC Einstellungen"
 
 msgid "DiSEqC Mode"
 msgstr "DiSEqC Modus"
 
 msgid "DiSEqC repeats"
-msgstr "DiSEqC herhalingen"
+msgstr "DiSEqC Wiederholungen"
 
 msgid "Diseqc Settings"
-msgstr "DiSEqC instellingen"
+msgstr "DiSEqC Einstellungen"
 
 msgid "DiSEqC Sat Settings"
-msgstr "DiSEqC Satelliet instellingen"
+msgstr "DiSEqC Satelliten Einstellungen"
 
 msgid "DiSEqC"
 msgstr "DiSEqC"
@@ -601,39 +554,33 @@ msgstr "DNS-Server 1"
 msgid "dnsserver 2"
 msgstr "DNS-Server 2"
 
-msgid "Do you really want to erase all datas and backups from Swap?\n"
+msgid "Do you really want to erase all data and backups from Swap?\n"
 "The Box will reboot and the erase will be started!"
-msgstr "Alle backups en informatie op Swap wissen?\n"
-"De box zal herstarten en de wis-actie wordt uitgevoerd! "
+msgstr "Internen Swap Speicher löschen und Werkseinstellung durchführen?\n"
+"Box neu starten und Löschvorgang ausführen "
 
 msgid "Do you really want to start the Wizard?\n"
 "The Box will reboot and the Wizard will be started!"
-msgstr "Wilt u de wizzard gestart worden?\n"
-"De box zal herstarten en de wizzard  wordt uitgevoerd!"
+msgstr "Soll der Assistent gestartet werden?\n"
+"Die Box wird neu gestartet und der Assistent wird ausgeführt"
 
 msgid "Don't clear TV on zap (only with fastzap)"
-msgstr "TV beeld niet wissen (alleen bij Fastzap)"
+msgstr "TV Bild beim schnellen umschalten nicht löschen"
 
 msgid "download error"
-msgstr "fout bij  het dowloaden"
+msgstr "Fehler beim Download"
 
 msgid "DVB-T not supportet at the moment !"
-msgstr "DVB-T wordt niet ondersteund momenteel!"
-
-msgid "e"
-msgstr "e"
-
-msgid "E"
-msgstr "E"
+msgstr "DVB-T wird zur Zeit nicht unterstützt"
 
 msgid "East / West"
-msgstr "Oost / West"
+msgstr "Ost/West"
 
 msgid "edit share"
-msgstr "verbindingsbeheer"
+msgstr "Freigabe bearbeiten"
 
 msgid "empty"
-msgstr "leeg"
+msgstr "kein Modul"
 
 msgid "emu"
 msgstr "Emu"
@@ -642,67 +589,67 @@ msgid "emus"
 msgstr "Emus"
 
 msgid "emucontrol"
-msgstr "Emu controle"
+msgstr "Emu Kontrolle"
 
 msgid "enable"
-msgstr "aan"
+msgstr "ein"
 
 msgid "End"
-msgstr "Einde"
+msgstr "Ende"
 
 msgid "endless"
-msgstr "onbegrensd"
+msgstr "endlos"
 
 msgid "English"
-msgstr "Engels"
+msgstr "Englisch"
 
 msgid "EPG Info"
 msgstr "EPG Info"
 
 msgid "Epg List Mode"
-msgstr "EPG formaat"
+msgstr "EPG Listenformat"
 
 msgid "EPG Path"
-msgstr "EPG opslag pad"
+msgstr "EPG Speicherpfad"
 
 msgid "Epg Refresh Time"
-msgstr "EPG verversingstijd"
+msgstr "EPG Aktualisierungszeit"
 
 msgid "EPG Reset"
-msgstr "EPG wissen"
+msgstr "EPG löschen"
 
 msgid "EPG Settings"
-msgstr "EPG instellingen"
+msgstr "EPG Einstellungen"
 
 msgid "Epgfreespace (KB)"
-msgstr "EPG opslagruimte"
+msgstr "Freier EPG Speicher"
 
 msgid "Error file not supported"
-msgstr "Fout, bestandsformaat wordt niet ondersteund!"
+msgstr "Fehler, Datei wird nicht unterstützt!"
 
 msgid "Error: create timer thread !!"
-msgstr "Fout, timeropname kan niet gemaakt worden!"
+msgstr "Fehler, Aufnametimer kann nicht erstellt werden!"
 
 msgid "Error: open rc device !!"
-msgstr "Fout, afstandbediening kan niet geopend worden!"
+msgstr "Fehler, Fernbedienungs device kann nicht geöffnet werden!"
 
 msgid "Error: open rcsim device !!"
-msgstr "Fout, afstandbediening (simdevice) kan niet geopend worden!"
+msgstr "Fehler, Fernbedienungs simdevice kann nicht geöffnet werden!"
 
 msgid "Error: no frontend device found !!"
-msgstr "Fout, frontend device kan niet geopend worden!"
+msgstr "Fehler, Frontend device kann nicht geöffnet werden!"
 
 msgid "Error: no demux device found !!"
-msgstr "Fout, demux device kan niet geopend worden!"
+msgstr "Fehler, Demux device kann nicht geöffnet werden!"
 
 msgid "Error: no video device found !!"
-msgstr "Fout, video device kan niet geopend worden!"
+msgstr "Fehler, Video device kann nicht geöffnet werden!"
 
 msgid "Error: no audio device found !!"
-msgstr "Fout, audio device kan niet geopend worden!"
+msgstr "Fehler, Audio device kann nicht geöffnet werden!"
 
 msgid "Error: skin not found !!"
-msgstr "Fout, skin kan niet geopend worden!"
+msgstr "Fehler, Skin kann nicht geladen werden!"
 
 msgid "errorboot"
 msgstr "Errorboot"
@@ -710,11 +657,8 @@ msgstr "Errorboot"
 msgid "errorstop"
 msgstr "Errorstop"
 
-msgid "Erase Swap"
-msgstr "Wis Swap"
-
 msgid "ERROR cant read res"
-msgstr "Fout, resolutie kan niet worden vastgesteld."
+msgstr "Abbruch, Auflösungsstatus nicht Verfügbar"
 
 msgid "EXIT"
 msgstr "Exit"
@@ -723,256 +667,236 @@ msgid "Exit"
 msgstr "Exit"
 
 msgid "Exit = abort restore"
-msgstr "Exit = restore afbreken"
+msgstr "Exit = Wiederherstellung beenden"
 
 msgid "Extensions List"
-msgstr "Overzichtslijst van applicaties"
+msgstr "Erweiterungsliste"
 
 msgid "Extensions Menu"
-msgstr "Applicatie menu"
+msgstr "Erweiterungsmenü"
 
 msgid "Extensions"
-msgstr "Applicaties"
+msgstr "Erweiterungen"
 
 msgid "Expert Sat Settings"
-msgstr "Expert satteliet instellingen"
-
-msgid "f"
-msgstr "f"
-
-msgid "F"
-msgstr "F"
+msgstr "Experten Satelliten-Einstellungen"
 
 msgid "Fancontrol"
-msgstr "Ventilatoraansturing"
+msgstr "Lüftersteuerung"
 
 msgid "Fast DiSEqC"
-msgstr "Snelle DiSEqC"
+msgstr "schnelles DiSEqC"
 
 msgid "Fast Text Render"
-msgstr "Snelle textrendering"
+msgstr "Schnelle Textausgabe"
 
 msgid "fast"
-msgstr "snel"
+msgstr "schnell"
 
 msgid "Faststop"
-msgstr "Snelle TitanNit herstart"
+msgstr "Schneller TitanNit Neustart"
 
 msgid "Fastzap"
-msgstr "Snel omschakelen"
+msgstr "Schnelles Umschalten"
 
 msgid "Fav"
-msgstr "Favorieten"
+msgstr "Favoriten"
 
 msgid "FEC"
-msgstr "FEC"
+msgstr "Vorwärtsfehlerkorrektur (FEC)"
 
 msgid "FEC:"
 msgstr "FEC:"
 
 msgid "Feed"
-msgstr "Geef Feedadres in"
+msgstr "Bitte Feed Addresse eingeben"
 
 msgid "FDMA bypass"
 msgstr "FDMA bypass"
 
 msgid "First Wizzard"
-msgstr "Start assistent"
+msgstr "Start Assistent"
 
 msgid "File Browser"
-msgstr "Bestandsbrowser"
+msgstr "Dateimanager"
 
 msgid "file"
-msgstr "bestand"
+msgstr "Datei"
 
 msgid "filealtresult"
-msgstr "alternatief bestandsresultaat"
+msgstr "alternatives Dateiresultat"
 
 msgid "Filelist-Mode"
-msgstr "Bestandsweergave instelling"
+msgstr "Datei-Modus"
 
 msgid "Filesystem Check"
-msgstr "Bestandssysteem controleren"
+msgstr "Dateisystem prüfen"
 
 msgid "Flashupdate (online)"
-msgstr "Software actualiseren (Internet)"
+msgstr "Softwareaktualisierung (Internet)"
 
 msgid "Flashupdate (tmp)"
-msgstr "Software actualiseren (Lokal)"
+msgstr "Softwareaktualisierung (Lokal)"
 
 msgid "fonts"
-msgstr "Lettertype"
+msgstr "Schriftarten"
 
 msgid "Fontsize adjust in pixel"
-msgstr "Tekengrootte aanpassen in pixels"
+msgstr "Schriftgröße verändern in Pixel"
 
 msgid "fontsize"
-msgstr "Tekengrootte"
+msgstr "Schriftgröße"
 
 msgid "Format HDD"
-msgstr "Formatteer hardeschijf"
+msgstr "Festplatte formatieren"
 
 msgid "Found Data:"
-msgstr "Gevonden data:"
+msgstr "Gefundene - Daten:"
 
 msgid "Found Radio:"
-msgstr "Gevonden radio"
+msgstr "Gefundene - Radio:"
 
 msgid "Found TV:"
-msgstr "Gevonden TV"
+msgstr "Gefundene - TV:"
 
-msgid "Found running Record.\n"
-"Realy shutdown ?"
-msgstr "Letop! er loopt een opname.\n"
-"U kunt de uitschakel timer gebruiken om na de opname af te sluiten!\n"
-"\n"
-"Wilt u nu werkelijk uitschakelen?"
+msgid "Found running Record.\nRealy shutdown ?"
+msgstr "Vorsicht eine Aufnahme läuft.\nSie können den Ausschalttimer benutzen um nach der Aufnahme Auszuschalten!\n\nWollen sie wirklich Ausschalten?"
 
-msgid "Found running record\n"
-"or record is starting in next time.\n"
-"Really shutdown ?"
-msgstr "Letop! er loopt een opname, of start binnenkort.\n"
-"Wilt u nu werkelijk uitschakelen?"
+msgid "Found running record\nor record is starting in next time.\nReally shutdown ?"
+msgstr "Vorsicht eine Aufnahme läuft, oder startet bald.\nWollen sie wirklich Ausschalten?"
+
+msgid "Found running download\nReally shutdown ?"
+msgstr "Vorsicht ein Download läuft.\nWollen sie wirklich Ausschalten?"
+
+msgid "Really stop download ?"
+msgstr "Download wirklich beenden?"
 
 msgid "French"
-msgstr "Frans"
+msgstr "Französisch"
 
 msgid "free space"
-msgstr "Vrije opslagruimte"
+msgstr "Freier Speicherplatz"
 
 msgid "Frequency"
-msgstr "Frequentie"
+msgstr "Frequenz"
 
 msgid "Frequency:"
-msgstr "Frequentie:"
+msgstr "Frequenz:"
 
 msgid "Friday"
-msgstr "Vrijdag"
+msgstr "Freitag"
 
 msgid "fsckrecord"
-msgstr "Bestandssysteemcontrole opname partitie"
+msgstr "Dateisystemprüfung Aufnahme-Partition"
 
 msgid "fsckroot"
-msgstr "Bestandssysteemcontrole Root partitie"
+msgstr "Dateisystemprüfung Root-Partition"
 
 msgid "fsckswap"
-msgstr "Bestandssysteemcontrole SWAP partitie"
+msgstr "Dateisystemprüfung SWAP-Partition"
 
 msgid "ftdi"
-msgstr "Aktiveer ftdi-driver"
+msgstr "Aktiviere ftdi-Treiber"
 
 msgid "ftpd"
 msgstr "FTP Dienst"
 
 msgid "ftpport"
-msgstr "Ftp poort"
+msgstr "Ftp Port"
 
 msgid "fullcover"
-msgstr "Complete achtergrond met cover"
-
-msgid "g"
-msgstr "g"
-
-msgid "G"
-msgstr "G"
+msgstr "Kompletter Hintergrund mit Cover"
 
 msgid "gateway"
 msgstr "Gateway"
 
 msgid "Germany"
-msgstr "Duitsland"
+msgstr "Deutschland"
 
 msgid "Graphic Multi EPG"
-msgstr "Grafische Multi-EPG"
+msgstr "Grafisches Multi-EPG"
 
 msgid "GRAPHIC MULTI EPG - Bouquets"
-msgstr "Grafische Multi-EPG - Favorieten"
+msgstr "Grafisches-Multi-EPG - Favoriten"
 
 msgid "Graphic EPG"
-msgstr "Grafische EPG"
+msgstr "Grafisches Multi-EPG"
 
 msgid "Graph. EPG"
-msgstr "Graf. EPG"
+msgstr "Grafisches-EPG"
 
 msgid "Graphic MULTI EPG - Bouquets -"
-msgstr "Grafische Multi-EPG - Favoriten -"
+msgstr "Grafisches Multi-EPG - Favoriten -"
 
 msgid "Graphic EPG Zoom"
-msgstr "Grafische Multi-EPG Zoom Factor"
+msgstr "Grafisches Multi-EPG Zoom Faktor"
 
 msgid "Graphic EPG Picon"
-msgstr "Grafisches Multi-EPG picon"
+msgstr "Grafisches Multi-EPG Vorschaubilder"
 
 msgid "Greek"
-msgstr "Grieks"
+msgstr "Griechisch"
 
 msgid "grey"
-msgstr "grijs"
+msgstr "grau"
 
 msgid "German"
-msgstr "Duits"
+msgstr "Deutsch"
+
+msgid "Dutch"
+msgstr "Niederländisch"
 
 msgid "GUI Restart"
-msgstr "GUI herstart"
+msgstr "GUI Neustart"
 
 msgid "Goto startpos"
-msgstr "ga naar startpositie"
-
-msgid "h"
-msgstr "h"
-
-msgid "H"
-msgstr "H"
+msgstr "gehe zur startposition"
 
 msgid "Hangtime"
-msgstr "Tijd voordat vast-loop-melding verschijnt"
+msgstr "Zeit bis Warnmeldung erscheint in Sekunden"
 
 msgid "Harddisk Format - List Devices"
-msgstr "Fromatteer hardeschijf - aangesloten apparaten"
+msgstr "Festplatte formatieren - angeschlossene Geräte"
+
+msgid "Harddisk Format - Filesystem"
+msgstr "Festplatte formatieren - Dateisystem"
 
 msgid "Harddisk Fsck - List Devices"
-msgstr "Controleer hardeschijf - aangesloten apparaten"
+msgstr "Dateisysten prüfen- angeschl. Geräte"
 
 msgid "Harddisk"
-msgstr "Hardeschijf"
+msgstr "Festplatte"
 
-msgid "HDD not configured\n"
-"can't find record path"
-msgstr "Hardeschijf is niet ingesteld, er is geen opname pad !\n"
-"aub hardeschijf inrichten."
+msgid "HDD not configured\ncan't find record path"
+msgstr "Festplatte nicht eingerichtet, kein Aufnahmepfad vorhanden!\n"
+"Bitte Festplatte einrichten."
 
 msgid "hddreplacement"
-msgstr "Netwerkkoppeling gebruiken als opname plek"
+msgstr "Netzwerk Freigabe als Aufnahmeort"
 
 msgid "HighSR"
 msgstr "HighSR"
 
 msgid "How many days"
-msgstr "Hoveel dagen vooruit van EPG opslaan"
+msgstr "Wie viele Tage EPG im vorraus speichern"
 
 msgid "HTTP Settings"
-msgstr "Webserver instellingen"
+msgstr "Webserver Einstellungen"
 
 msgid "HTTPD Port"
-msgstr "Webserver poort"
-
-msgid "i"
-msgstr "i"
-
-msgid "I"
-msgstr "I"
+msgstr "Webserver Port"
 
 msgid "Image Information"
-msgstr "Image Informatie"
+msgstr "Image Informationen"
 
 msgid "Imdb Directory"
-msgstr "Imdb map"
+msgstr "Imdb Verzeichnis"
 
 msgid "imdb mvis (network/hdd)"
-msgstr "Imdb achtergrond beelden (netwerk/hardeschijf)"
+msgstr "Imdb Hintergrund Bilder (Netzwerk/Festplatte)"
 
 msgid "Increased Voltage"
-msgstr "Verhoogd voltage"
+msgstr "erhöhte Spannung"
 
 msgid "Info"
 msgstr "Info"
@@ -981,31 +905,31 @@ msgid "infos"
 msgstr "Infos"
 
 msgid "Infobar Auto hide on call"
-msgstr "Informatiebalk automatisch dimmen"
+msgstr "Infobar automatisch ausblenden"
 
 msgid "Infobar Sleep"
-msgstr "Tijd voordat informatiebalk verschijnt"
+msgstr "Zeit bis Infobar erscheint in Sekunden"
 
 msgid "Infobar Timeout"
-msgstr "Tijd totdat informatiebalk dimt"
+msgstr "Zeit bis Infobar ausblendet in Sekunden"
 
 msgid "Information"
 msgstr "Informatie"
 
 msgid "Information..."
-msgstr "Informatie..."
+msgstr "Informatie"
 
 msgid "Infos"
 msgstr "Infos"
 
 msgid "initializing"
-msgstr "initialiseren"
+msgstr "initialisieren"
 
 msgid "install"
-msgstr "installeren"
+msgstr "installieren"
 
 msgid "Install"
-msgstr "Installeren"
+msgstr "Installieren"
 
 msgid "Internet Browser"
 msgstr "Internet Browser"
@@ -1014,100 +938,82 @@ msgid "internet"
 msgstr "Internet"
 
 msgid "Interval"
-msgstr "Interval"
+msgstr "Intervall"
 
 msgid "Inversion"
-msgstr "Omkering"
+msgstr "Umkehrung"
 
 msgid "Inversion:"
-msgstr "Omkering:"
+msgstr "Umkehrung:"
 
 msgid "ipaddresse"
-msgstr "IP Adres"
+msgstr "IP Adresse"
 
-msgid "Ipk Install Info"
-msgstr "IPK installatie informatie"
+msgid "Tpk Install Info"
+msgstr "Info zur TPK installation"
 
-msgid "Ipk Install - select file"
-msgstr "IPK installeren - kies bestand"
+msgid "Tpk Install - select file"
+msgstr "TPK installieren - Datei wählen"
 
-msgid "IPK install (online)"
-msgstr "IPK Pakketten installeren (Internet)"
+msgid "TPK install (online)"
+msgstr "TPK Pakete installieren (Internet)"
 
-msgid "IPK remove"
-msgstr "IPK Pakketten verwijderen"
+msgid "TPK remove"
+msgstr "TPK Pakete löschen"
 
-msgid "Ipk Remove - select file"
-msgstr "IPK Pakketten verwijderen - kies bestand"
+msgid "Tpk Remove - select file"
+msgstr "TPK Pakete löschen"
 
-msgid "Ipk Remove Info"
-msgstr "IPK Pakketten verwijder info"
+msgid "Tpk Remove Info"
+msgstr "Info zur TPK Deinstallation"
 
-msgid "IPK tmp (tmp)"
-msgstr "IPK Pakketten instaleren uit /tmp"
+msgid "TPK tmp (tmp)"
+msgstr "TPK installieren aus /tmp"
 
 msgid "Is this Videomode ok ?"
-msgstr "Is deze Video instelling ok?"
+msgstr "Ist dieser Videomodus ok?"
 
 msgid "Italian"
-msgstr "Italiaans"
+msgstr "Italienisch"
 
 msgid "iwatch"
 msgstr "iWatch"
-
-msgid "j"
-msgstr "j"
-
-msgid "J"
-msgstr "J"
-
-msgid "k"
-msgstr "k"
-
-msgid "K"
-msgstr "K"
 
 msgid "Kernel"
 msgstr "Kernel"
 
 msgid "Keyboard"
-msgstr "Toetsenbord"
+msgstr "Tastatur"
 
 msgid "keymaps"
-msgstr "Afstandsbedieningsinstelling"
-
-msgid "l"
-msgstr "l"
-
-msgid "L"
-msgstr "L"
+msgstr "Fernbedienungseinstellungen"
 
 msgid "lan"
 msgstr "LAN"
 
 msgid "Language"
-msgstr "Taal"
+msgstr "Sprache"
 
 msgid "Latitude"
-msgstr "Breedtegraad"
+msgstr "Breitengrad"
 
 msgid "letterbox"
-msgstr "letterbox"
+msgstr "Breitbild schmal wiedergeben"
 
 msgid "Listbox Select"
-msgstr "Listbox keuze"
+msgstr "Listbox Auswahl"
 
 msgid "LNB Configuration"
-msgstr "LNB instellingen"
+msgstr "LNB Einstellungen"
 
 msgid "LNB Settings"
-msgstr "LNB instellingen"
+msgstr "LNB Einstellungen"
 
 msgid "LNB"
 msgstr "LNB"
 
 msgid "loadpartition"
-msgstr "Laadt partitie"
+msgstr "Lade Partition"
 
 msgid "LOF"
 msgstr "LOF"
@@ -1122,82 +1028,76 @@ msgid "LOG (Text)"
 msgstr "LOG (Text)"
 
 msgid "logto"
-msgstr "log naar"
+msgstr "Logge in Datei"
 
 msgid "Longitude"
-msgstr "Lengtegraad"
+msgstr "Längengrad"
 
 msgid "loop to Tuner"
-msgstr "Verbonden met tuner"
+msgstr "Verbunden mit Tuner"
 
 msgid "Logo 1"
-msgstr "Verspringend beeld tonen"
+msgstr "Springendes Bild anzeigen"
 
 msgid "Logo 2"
-msgstr "Scrollend beeld tonen"
-
-msgid "m"
-msgstr "m"
-
-msgid "M"
-msgstr "M"
+msgstr "Scrollendes Bild anzeigen"
 
 msgid "Main Menu"
-msgstr "Hoofdmenu"
+msgstr "Hauptmenü"
 
 msgid "Manual Search"
-msgstr "Handmatig zoeken"
+msgstr "Manuelle Suche"
 
 msgid "Manuel Scan"
-msgstr "Handmatige scan"
+msgstr "Sendersuchlauf"
 
 msgid "maxdelay"
-msgstr "Maximale vertraging"
+msgstr "Maximale Verzögerung"
 
 msgid "maxrate"
-msgstr "Maximale rate"
+msgstr "Maximae Rate"
 
 msgid "MC VideoPlayer Imdb Settings"
-msgstr "MC VideoPlayer Imdb instellingen"
+msgstr "MC VideoPlayer Imdb Einstellungen"
 
 msgid "MC VideoPlayer Sort Settings"
-msgstr "MC VideoPlayer sorteervolgorde"
+msgstr "MC VideoPlayer Sortierreihenfolge"
 
 msgid "MC VideoPlayer View Settings"
-msgstr "MC VideoPlayer instellingen tonen"
+msgstr "MC VideoPlayer Einstellungen anzeigen"
 
 msgid "Media Center"
 msgstr "Media Center"
 
 msgid "Media Player"
-msgstr "Media afspelen"
+msgstr "Medien Abspielen"
 
 msgid "MediaCenter Icon"
-msgstr "MediaCenter icoon"
+msgstr "MediaCenter Bild"
 
 msgid "Memory"
-msgstr "Geheugen"
+msgstr "Speicher"
 
 msgid "Memory info"
-msgstr "geheugen informatie"
+msgstr "Speicher Information"
 
 msgid "MENU"
 msgstr "Menu"
 
 msgid "Menu Protect"
-msgstr "Beveilig menu"
+msgstr "Menü schützen"
 
 msgid "Menulist"
-msgstr "Menulijst"
+msgstr "Menüliste"
 
 msgid "MENUPROTECT"
-msgstr "Beveilig menu"
+msgstr "Menüschutz"
 
 msgid "Menu not implemented !"
-msgstr "Menu is niet beschikbaar"
+msgstr "Menü noch nicht verfügbar!"
 
 msgid "Message"
-msgstr "Mededeling"
+msgstr "Mitteilung"
 
 msgid "Minutes"
 msgstr "Minuten"
@@ -1206,40 +1106,40 @@ msgid "Minutes:"
 msgstr "Minuten:"
 
 msgid "mixed mode"
-msgstr "mixed mode"
+msgstr "gemischter Modus"
 
 msgid "Modulation"
-msgstr "Modulatie"
+msgstr "Modulationsverfahren"
 
 msgid "Modulation:"
-msgstr "Modulatie:"
+msgstr "Modulation:"
 
 msgid "Module"
-msgstr "Module"
+msgstr "Modul"
 
 msgid "Module info"
-msgstr "Module informatie"
+msgstr "Modul Informationen"
 
 msgid "Module Config"
-msgstr "Module instellingen"
+msgstr "Modul Einstellungen"
 
 msgid "Monday"
-msgstr "Maandag"
+msgstr "Montag"
 
 msgid "Mounts"
-msgstr "Netwerk verbindingen"
+msgstr "Geräteanbindungen"
 
 msgid "move service"
-msgstr "Verplaats service"
+msgstr "Eintrag verschieben"
 
 msgid "Moviepath"
-msgstr "Map voor films"
+msgstr "Ordner für Filme"
 
 msgid "MTD"
-msgstr "MTD"
+msgstr "Flash Aufteilung"
 
 msgid "MTD info"
-msgstr "MTD info"
+msgstr "Flash Aufteilungs Information"
 
 msgid "Multi EPG"
 msgstr "Multi-EPG"
@@ -1248,31 +1148,25 @@ msgid "Multi (EPG)"
 msgstr "Multi (EPG)"
 
 msgid "MULTI EPG - All Channels"
-msgstr "MULTI EPG - Alle zenders"
+msgstr "MULTI EPG - Alle Sender"
 
 msgid "Multi Sat"
-msgstr "Multi Satellieten"
+msgstr "Multi Satelliten"
 
 msgid "Single Service"
-msgstr "Single Service"
+msgstr "Einzelsender"
 
 msgid "Multiple Service"
-msgstr "Multiple Service"
+msgstr "mehrerer Sender gleichzeitig"
 
 msgid "Module Type"
-msgstr "Module Type"
+msgstr "Module Typ"
 
 msgid "mvid"
 msgstr "mvid"
 
 msgid "My Video"
-msgstr "Mijn Video"
-
-msgid "n"
-msgstr "n"
-
-msgid "N"
-msgstr "N"
+msgstr "My Video"
 
 msgid "Name"
 msgstr "Name"
@@ -1281,52 +1175,52 @@ msgid "Name:"
 msgstr "Name:"
 
 msgid "netmask"
-msgstr "netmask"
+msgstr "Netzmaske"
 
 msgid "Network Adapter Settings"
-msgstr "Network Adapter Settings"
+msgstr "Netzwerkadapter Einstellungen"
 
 msgid "Network Adapter Test"
 msgstr "Netzwerkadapter Test"
 
 msgid "Network Assistant"
-msgstr "Netwerk assistent"
+msgstr "Netzwerk Assistent"
 
 msgid "Network Interfacelist"
-msgstr "Network Interfacelist"
+msgstr "Netzwerkadapterliste"
 
 msgid "Network Restart"
-msgstr "Netwerk opnieuw opstarten"
+msgstr "Netzwerk neu starten"
 
 msgid "Network Scan"
-msgstr "Netwerk doorzoeken"
+msgstr "Netzwerk durchsuchen"
 
 msgid "Network Test"
-msgstr "Netwerk testen"
+msgstr "Netzwerk testen"
 
 msgid "Network"
-msgstr "Netwerk"
+msgstr "Netzwerk"
 
 msgid "network"
-msgstr "netwerk"
+msgstr "Netzwerk"
 
 msgid "Networkbrowser"
-msgstr "Netwerk browser"
+msgstr "Netzwerk Browser"
 
 msgid "Networkbrowser - show scanned DNS-Shares"
-msgstr "Netwerk browser - gevonden DNS-koppelingen"
+msgstr "Netzwerk Browser - gefundene DNS-Freigaben"
 
 msgid "Networkbrowser - show scanned cifs/nfs-Shares"
-msgstr "Netwerk browser - gevonden cifs/nfs koppelingen"
+msgstr "Netzwerk Browser - gefundene cifs/nfs Freigaben"
 
 msgid "Next"
-msgstr "Verder"
+msgstr "Weiter"
 
 msgid "never"
-msgstr "nooit"
+msgstr "nie"
 
 msgid "Nfs Server Settings"
-msgstr "NFS Server instellingen"
+msgstr "NFS Server Einstellungen"
 
 msgid "nfsserver"
 msgstr "NFS-Server"
@@ -1335,216 +1229,204 @@ msgid "nfs server"
 msgstr "NFS-Server"
 
 msgid "No Live Stream running"
-msgstr "geen Live Stream actief"
+msgstr "Kein Stream aktiv"
 
 msgid "picture"
-msgstr "Beeld"
+msgstr "Bild"
 
 msgid "No"
-msgstr "Nee"
+msgstr "Nein"
 
 msgid "no"
-msgstr "nee"
+msgstr "Nein"
 
-msgid "No IPK found in /tmp"
-msgstr "Geen IPK gevonden in /tmp"
+msgid "No TPK found in /tmp"
+msgstr "Kein TPK gefunden in /tmp"
 
 msgid "No skinconfig found in skin.\n"
-"Can't chage to selected skin."
-msgstr "Geen Skinconfiguratie gevonden.\n"
-"Skin kan niet geselecteerd worden"
+"Can't change to selected skin."
+msgstr "Keine Skinconfiguration gefunden.\n"
+"Kann Skin nicht auswählen"
 
 msgid "nothing"
-msgstr "niks doen"
+msgstr "nichts tun"
 
 msgid "No backup folders found!!!"
-msgstr "Geen backup map gevonden"
+msgstr "Kein Ordner für Datensicherung gefunden"
 
 msgid "non"
-msgstr "non"
+msgstr "Originalgröße"
 
 msgid "noaudiosync"
 msgstr "noaudiosync"
 
 msgid "North / South"
-msgstr "Noorden / Zuiden"
+msgstr "Norden/Süden"
 
 msgid "nr_usbreaders"
-msgstr "Aantal USB-Kaartlezers"
-
-msgid "o"
-msgstr "o"
-
-msgid "O"
-msgstr "O"
+msgstr "Anzahl USB-Kartenleser"
 
 msgid "OFF"
-msgstr "uit"
+msgstr "aus"
 
 msgid "Off"
-msgstr "uit"
+msgstr "aus"
 
 msgid "off"
-msgstr "uit"
+msgstr "aus"
 
 msgid "OK"
 msgstr "Ok"
 
 msgid "OK = start restore"
-msgstr "Ok = herstelactie starten"
+msgstr "Ok = Wiederherstellung starten"
 
 msgid "oldaudiofw"
-msgstr "oldaudiofw"
+msgstr "Alte Audio Firmware"
 
 msgid "Old Audiofw"
-msgstr "Old Audiofw"
+msgstr "Alte Audio Firmware"
 
 msgid "oldvideofw"
-msgstr "oldvideofw"
+msgstr "Alte Video Firmware"
 
 msgid "ONID:"
 msgstr "ONID:"
 
 msgid "on"
-msgstr "aan"
+msgstr "ein"
 
 msgid "On"
-msgstr "Aan"
+msgstr "ein"
 
 msgid "ON"
-msgstr "AAN"
+msgstr "ein"
 
 msgid "once"
-msgstr "eenmalig"
+msgstr "einmalig"
 
 msgid "Only free scan"
-msgstr "Alleen niet gecodeerde zenders"
+msgstr "Nur unverschlüsselte Sender"
 
 msgid "Only free channel scan"
-msgstr "Alleen niet gecodeerde zenders"
+msgstr "Nur freie Sender suchen"
 
 msgid "only_boot_overclock"
-msgstr "Alleen bij opstarten overklokken"
+msgstr "Nur beim Start übertakten"
 
 msgid "Only Boot Overclock"
-msgstr "Alleen bij opstarten overklokken"
+msgstr "Nur beim Start übertakten"
 
 msgid "only on power off / restart"
-msgstr "Alleen bij uitschakelen /power off"
+msgstr "Nur beim Ausschalten/Neustarten"
 
 msgid "options"
-msgstr "opties"
+msgstr "Optionen"
 
 msgid "Orbital Position:"
 msgstr "Orbital Position"
 
 msgid "OSD Bottom Overscan"
-msgstr "OSD onder verkleinen"
+msgstr "OSD unten verkleinern"
 
 msgid "OSD Left Overscan"
-msgstr "OSD links verkleinen"
+msgstr "OSD links verkleinern"
 
 msgid "OSD Right Overscan"
-msgstr "OSD rechts verkleinen"
+msgstr "OSD rechts verkleinern"
 
 msgid "OSD Top Overscan"
-msgstr "OSD boven verkleinen"
+msgstr "OSD oben verkleinern"
 
 msgid "OSD Transparent"
-msgstr "OSD transparantie"
+msgstr "OSD Transparenz"
 
 msgid "OverClock Settings"
-msgstr "Overklok instellingen"
+msgstr "OverClock Einstellungen"
 
 msgid "Overclocking"
-msgstr "Overklokken"
-
-msgid "p"
-msgstr "p"
-
-msgid "P"
-msgstr "P"
+msgstr "Übertakten"
 
 msgid "panscan"
-msgstr "panscan"
+msgstr "Zoom mit Randbeschnitt"
 
 msgid "password"
-msgstr "Wachtwoord"
+msgstr "Passwort"
 
 msgid "Password"
-msgstr "Wachtwoord"
+msgstr "Passwort"
 
 msgid "PCR PID:"
 msgstr "PCR PID:"
 
 msgid "Piconpath"
-msgstr "opslaglocatie zenderlogo's"
+msgstr "Speicherpfad für Picons"
 
 msgid "picons"
-msgstr "Zenderlogo's"
+msgstr "Senderlogos"
 
 msgid "Picture Player"
-msgstr "Picture Player"
+msgstr "Fotos anzeigen"
 
 msgid "PICTURE SETTINGS"
-msgstr "Piture instellingen"
+msgstr "FOTOS Einstellungen"
 
 msgid "PICTURE"
-msgstr "PICTURE"
+msgstr "FOTOS"
 
 msgid "PIDs"
 msgstr "PIDs"
 
 msgid "Pilot"
-msgstr "Pilot (voor HD ontvangs 'ja' kiezen)"
+msgstr "Pilot (für HD Empfang 'ein' auswählen)"
 
 msgid "Pin Code Channel"
-msgstr "PIN code zender"
+msgstr "PIN Schutz für Kanal"
 
 msgid "Pin Code"
-msgstr "PIN code"
+msgstr "PIN Schutz"
 
 msgid "Pin Code menu"
-msgstr "PIN code voor menu"
+msgstr "PIN Schutz für Menü"
 
 msgid "PIN Settings"
-msgstr "PIN instelling"
+msgstr "PIN Einstellungen"
 
 msgid "Pin"
-msgstr "Pin"
+msgstr "PIN"
 
 msgid "PIN:"
-msgstr "PIN:"
+msgstr "PIN Schutz:"
 
 msgid "pingserver"
-msgstr "Server pingen"
+msgstr "Server anpingen"
 
 msgid "pingtimeout"
-msgstr "Ping timeout"
+msgstr "Ping Zeitüberschreitung"
 
 msgid "PinOn"
-msgstr "PinOn"
+msgstr "PIN auf"
 
 msgid "pl2303"
-msgstr "PL2303-stuurprogramma"
+msgstr "PL2303-Treiber"
 
 msgid "player"
 msgstr "Multimedia Player"
 
 msgid "PlayList - select your playlist !"
-msgstr "Afspeellijst - kies je lijst!"
+msgstr "PlayList - wähle deine Liste"
 
 msgid "Playlist-Mode"
-msgstr "Afspeellijst modus"
+msgstr "Playlist-Modus"
 
 msgid "PlayList"
-msgstr "Afspeellijst"
+msgstr "PlayList"
 
 msgid "playlist"
-msgstr "afspeellijst"
+msgstr "Playlist"
 
 msgid "Play Icon"
-msgstr "Afspeel afbeelding"
+msgstr "Play Bild"
 
 msgid "pll0_ndiv_mdiv"
 msgstr "PLL0 ndiv mdiv"
@@ -1556,124 +1438,112 @@ msgid "pll1_ndiv_mdiv"
 msgstr "PLL1 ndiv mdiv"
 
 msgid "Plugins"
-msgstr "Applicaties"
+msgstr "Zusatzprogramme"
 
 msgid "plugload"
-msgstr "Applicatie laden"
+msgstr "Plugin laden"
 
 msgid "PMT PID:"
 msgstr "PMT PID:"
 
 msgid "Polarization"
-msgstr "Polarization"
+msgstr "Polarisationsebene"
 
 msgid "Polarization:"
-msgstr "Polarization:"
+msgstr "Polarisation:"
 
 msgid "Policy"
-msgstr "Beeldinstellingen"
+msgstr "Bild Einstellungen"
 
 msgid "Polish"
-msgstr "Pools"
+msgstr "Polnisch"
 
 msgid "portmap"
-msgstr "portmap"
+msgstr "Port Weiterleitung"
 
 msgid "Power action"
-msgstr "Aktie bij het indrukken van de aan/uit knop"
+msgstr "Aktion bei Druck der EIN/AUS Taste"
 
 msgid "Power aktion"
-msgstr "Aktie bij het indrukken van de aan/uit knop"
+msgstr "Aktion bei Druck der EIN/AUS Taste"
 
 msgid "Power Off Timer"
-msgstr "Power Off Timer"
+msgstr "Ausschalttimer"
 
 msgid "Power Off"
-msgstr "Uitschakelen"
+msgstr "Ausschalten"
 
 msgid "power off"
-msgstr "uitschakelen"
+msgstr "Ausschalten"
 
 msgid "Poweroff Timer"
-msgstr "Power Off Timer"
+msgstr "Ausschalttimer"
 
 msgid "Poweroff"
-msgstr "Uitschakelen"
+msgstr "Ausschalten"
 
 msgid "poweroff"
-msgstr "Uitschakelen"
+msgstr "Ausschalten"
 
 msgid "Power Menu"
-msgstr "Uitschakelen Menu"
+msgstr "Ausschaltmenu"
 
 msgid "Prev"
-msgstr "Terug"
+msgstr "Zurück"
 
 msgid "press red"
-msgstr "druk rode toets"
+msgstr "Drück Rote-Taste"
 
 msgid "profile"
-msgstr "profiel"
+msgstr "Profil"
 
 msgid "Program Info"
-msgstr "Programa informatie"
+msgstr "Programm Information"
 
 msgid "progressbar"
-msgstr "Voortgangsindicator"
+msgstr "Fortschrittsbalken"
 
 msgid "Protect Channel"
-msgstr "Zender met PIN beschermen"
+msgstr "Kanal mit PIN schützen"
 
 msgid "Protect Menu"
-msgstr "Menu met PIN beschermen"
+msgstr "Menü mit PIN schützen"
 
 msgid "protect service"
-msgstr "Service met PIN beschermen"
+msgstr "Sender mit PIN schützen"
 
 msgid "protocol"
-msgstr "protocol"
+msgstr "Protokoll"
 
 msgid "Prov"
-msgstr "Prov"
+msgstr "Anbieter"
 
 msgid "Provider:"
 msgstr "Provider:"
 
 msgid "proxyauth"
-msgstr "Proxy authenticatie"
+msgstr "Proxy Authentifizierung"
 
 msgid "proxyip"
-msgstr "IP van proxyserver"
+msgstr "IP für Proxyserver"
 
 msgid "proxypass"
-msgstr "Wachtwoord voor proxyserver"
+msgstr "Passwort für Proxyserver"
 
 msgid "proxyport"
-msgstr "Poort voor proxyserver"
+msgstr "Port für Proxyserver"
 
 msgid "proxyuser"
-msgstr "Gebruikersnaam voor Proxyserver"
+msgstr "Benutzername für Proxyserver"
 
 msgid "PSK auto"
 msgstr "PSK automatisch"
-
-msgid "q"
-msgstr "q"
-
-msgid "Q"
-msgstr "Q"
 
 msgid "QAM auto"
 msgstr "QAM automatisch"
 
 msgid "QPSK auto"
 msgstr "QPSK automatisch"
-
-msgid "r"
-msgstr "r"
-
-msgid "R"
-msgstr "R"
 
 msgid "Radio (Info)"
 msgstr "Radio (Info)"
@@ -1682,181 +1552,181 @@ msgid "radiologos"
 msgstr "Radiologos"
 
 msgid "Radio Player"
-msgstr "Radio player"
+msgstr "Radio Player"
 
 msgid "Ram"
-msgstr "Ram geheugen"
+msgstr "Freier Speicher"
 
 msgid "Random"
-msgstr "Random"
+msgstr "Zufällig"
 
 msgid "Random-On"
-msgstr "Random-on"
+msgstr "Zufällig-An"
 
 msgid "rcreboot"
-msgstr "RC herstart"
+msgstr "RC Neustart"
 
-msgid "Realy Delete ?"
-msgstr "Werkelijk wissen?"
+msgid "Really Delete ?"
+msgstr "wirklich löschen?"
 
-msgid "Realy restore default settings ?"
-msgstr "Terug naar fabriekinstellingen?"
+msgid "Really restore default settings ?"
+msgstr "Soll auf Werkseinstellung zurücksetzt werden?"
 
-msgid "Receiver now reboot !!!"
-msgstr "Ontvanger herstart nu!!"
+msgid "Receiver reboots now !!!"
+msgstr "Receiver startet jetzt neu!"
 
 msgid "record"
-msgstr "opname"
+msgstr "Aufnahme"
 
 msgid "Record"
-msgstr "Opname"
+msgstr "Aufnahme"
 
 msgid "ready"
-msgstr "ready"
+msgstr "bereit"
 
 msgid "Record / Timeshift / Stream"
-msgstr "Record / Timeshift / Stream"
+msgstr "Aufnahme/Timeshift/Stream"
 
 msgid "Record Forerun (min)"
-msgstr "Opname voorlooptijd (min)"
+msgstr "Vorlaufzeit (min)"
 
 msgid "Record Overrun (min)"
-msgstr "Opname nalooptijd (min)"
+msgstr "Nachlaufzeit (min)"
 
 msgid "Record Path"
-msgstr "Opnamepad instellen"
+msgstr "Aufnahmepfad Einstellungen"
 
 msgid "Record Split Size"
-msgstr "Opname bestandsgrootte splitsen na"
+msgstr "Teile Aufnahmen ab einer Größe von"
 
 msgid "Record Timer"
-msgstr "Opname Timer"
+msgstr "Aufnahme Timer"
 
 msgid "Records and EPG ..."
-msgstr "Opname en EPG ..."
+msgstr "Aufnahme und EPG"
 
 msgid "Records and EPG"
-msgstr "Opname en EPG"
+msgstr "Aufnahme und EPG"
 
 msgid "record_max_sectors"
-msgstr "record_max_sectors"
+msgstr "Max. Aufnahme Sektoren"
 
 msgid "record_split_size"
-msgstr "record_split_size"
+msgstr "Größe der geteilten Dateien"
 
 msgid "record_split_type"
-msgstr "record_split_type"
+msgstr "Typ der Aufnahmeteilung"
 
 msgid "Records"
-msgstr "Geprogrammeerde opnames"
+msgstr "Programmierte Aufnahmen"
 
 msgid "red"
-msgstr "rood"
+msgstr "rot"
 
 msgid "Red Button"
-msgstr "Rode knop"
+msgstr "Rote Taste"
 
 msgid "Red Key Action - Setup"
-msgstr "Rode knop - functievastlegging"
+msgstr "Rote-Taste Belegungsmenü "
 
 msgid "Red Key Action - Plugins"
-msgstr "Rode knop - Plugins"
+msgstr "Rote-Taste Erweiterungsliste "
 
 msgid "Reduce Standby frequency"
-msgstr "CPU onderklokken in standby"
+msgstr "CPU Frequenz im Standby reduzieren"
 
 msgid "remove share"
-msgstr "Share verwijderen"
+msgstr "Freigabe löschen"
 
 msgid "Repeat-On"
-msgstr "Herhalen-Aan"
+msgstr "Wiederholen-An"
 
 msgid "Repeate"
-msgstr "Herhalen"
+msgstr "Wiederholen"
 
 msgid "repeate"
-msgstr "herhalen"
+msgstr "Wiederholen"
 
 msgid "RESET"
-msgstr "reset"
+msgstr "zurücksetzen"
 
 msgid "Restore default settings"
-msgstr "Fabrieksinstelling terugzetten"
+msgstr "Werkseinstellungen"
 
 msgid "RESTORE ERROR"
-msgstr "Fout bij terugzetten"
+msgstr "Fehler bei der Wiederherstellung!"
 
 msgid "Restore Settings"
-msgstr "Settings terugzetten"
+msgstr "Einstellungen wiederherstellen"
 
 msgid "Refresh"
-msgstr "Verversen"
+msgstr "Aktualisieren"
 
 msgid "RELOAD"
-msgstr "opnieuw laden"
+msgstr "Neu laden"
 
 msgid "remove service"
-msgstr "Service verwijderen"
+msgstr "Eintrag löschen"
 
 msgid "repairmodus"
-msgstr "repairmodus"
+msgstr "Reparaturmodus"
 
 msgid "Repeate type"
-msgstr "Herhalingstype"
+msgstr "Wiederholungsart"
 
 msgid "Repeat"
-msgstr "Herhalen"
+msgstr "Wiederholen"
 
 msgid "Resolution (default)"
-msgstr "Standaard resolutie"
+msgstr "Auflösung (Standard)"
 
 msgid "Resolution Settings"
-msgstr "Resolutie instellingen"
+msgstr "Auflösung"
 
 msgid "Resolution:"
-msgstr "Resolutie"
+msgstr "Auflösung"
 
 msgid "Restart Network ?"
-msgstr "Netwerk herstarten?"
+msgstr "Netzwerk neu Starten?"
 
 msgid "Restart Network"
-msgstr "Het netwerk wordt opnieuw gestart"
+msgstr "Netzwerk wird neu gestartet"
 
 msgid "Restart tiTan"
-msgstr "TitanNit opnieuw starten"
+msgstr "TitanNit neu starten"
 
 msgid "Restart"
-msgstr "Herstart"
+msgstr "Neustart"
 
 msgid "Restore"
-msgstr "Herstel"
+msgstr "Wiederherstellung"
 
 msgid "reverse alpha"
-msgstr "Alphabetisch omgekeerd"
+msgstr "Alphabetisch umgekehrt"
 
 msgid "reverse date"
-msgstr "Datum omgekeerd"
+msgstr "Datum umgekehrt"
 
 msgid "reverse size"
-msgstr "Grootte omgkeerd"
+msgstr "Größe umgekehrt"
 
 msgid "rmcrashlog"
-msgstr "Crashlog wissen"
+msgstr "Crashlog löschen"
 
 msgid "rmemthy"
-msgstr "Lege map wissen"
+msgstr "leere Verzeichnisse löschen"
 
 msgid "Rolloff"
-msgstr "Rolloff"
+msgstr "Abtastfrequenz"
 
 msgid "Rolloff:"
-msgstr "Rolloff:"
+msgstr "Abtastfrequenz:"
 
 msgid "Rotor Position"
-msgstr "Rotor Positie"
+msgstr "Rotor Position"
 
 msgid "Rotor Settings"
-msgstr "Rotor instellingen"
+msgstr "Rotor Einstellungen"
 
 msgid "rsize"
 msgstr "rsize"
@@ -1864,14 +1734,8 @@ msgstr "rsize"
 msgid "Russian"
 msgstr "Russisch"
 
-msgid "s"
-msgstr "s"
-
-msgid "S"
-msgstr "S"
-
 msgid "Samba Server Settings"
-msgstr "Samba Server instellingen"
+msgstr "Samba Server Einstellungen"
 
 msgid "sambaserver"
 msgstr "Samba Server"
@@ -1880,220 +1744,217 @@ msgid "samba server"
 msgstr "Samba Server"
 
 msgid "Sat Config"
-msgstr "Satellieten instellingen"
+msgstr "Satelliten Einstellungen"
 
 msgid "Satelite Type"
-msgstr "Satelliet keuze"
+msgstr "Satelliten Auswahl"
 
 msgid "sat_single"
-msgstr "Single sateliet instelling."
+msgstr "Einzel Satellit Einstellungen"
 
 msgid "sat_diseqc_ab"
-msgstr "DiSEqC A/B instellingen"
+msgstr "DiSEqC A/B Einstellungen"
 
 msgid "sat_diseqc_abcd"
-msgstr "DiSEqC A/B/B/C instellingen"
+msgstr "DiSEqC A/B/B/C Einstellungen"
 
 msgid "sat_diseqc_abcdefgh"
-msgstr "DiSEqC A/B/B/C/E/F/G/H instellingen"
+msgstr "DiSEqC A/B/B/C/E/F/G/H Einstellungen"
 
 msgid "sat_expert"
-msgstr "Expert Satelliet instellingen"
+msgstr "Experten Satellit Einstellungen"
 
 msgid "Satfinder"
-msgstr "Satfinder"
+msgstr "Satellitenfinder"
 
 msgid "SAT"
-msgstr "Satellieten"
+msgstr "Satelliten"
 
 msgid "Satellite"
-msgstr "Satelliet"
+msgstr "Satellit"
 
 msgid "Satellites"
-msgstr "Satellieten"
+msgstr "Satelliten"
 
 msgid "Satelite Entrys"
-msgstr "Satellieten aantal"
+msgstr "Satelliten Anzahl"
 
 msgid "Saturation"
-msgstr "Saturation"
+msgstr "Sättigung"
 
 msgid "Saturday"
-msgstr "Zaterdag"
+msgstr "Samstag"
 
 msgid "Save Settings"
-msgstr "Instellingen opslaan"
+msgstr "Einstellungen speichern"
 
 msgid "Save"
-msgstr "Opslaan"
+msgstr "Speichern"
 
 msgid "SAVE"
-msgstr "OPSLAAN"
+msgstr "Speichern"
 
 msgid "save network settings ?"
-msgstr "Netwerkinstellingen opslaan? "
+msgstr "Netzwerkeinstellungen speichern?"
 
 msgid "sbs"
-msgstr "Naastelkaar (Side by Side)"
+msgstr "nebeneinander (Side by Side)"
 
 msgid "Scan"
-msgstr "Scan"
+msgstr "Suche"
 
 msgid "scan"
-msgstr "scan"
-
-msgid "Tunerconfig is not allowed if record"
-msgstr "Gedurende opname kan tunerinstelling niet worden aangepast"
+msgstr "Suche"
 
 msgid "Scan Config"
-msgstr "Zenderzoek instellingen"
+msgstr "Sendersuchlaufseinstellungen"
 
 msgid "scan wlan"
-msgstr "scan wlan"
+msgstr "Suche WLAN"
 
 msgid "Scanning Network Shares, please wait !!"
-msgstr "Zoeken naar netwerk shares, ogenblik aub !!"
+msgstr "Suche Netzwerk Freigaben, bitte warten!"
 
 msgid "scartonstandby"
-msgstr "scartonstandby"
+msgstr "Scart im Standby"
 
 msgid "Scart-Recorder"
-msgstr "Scart ingang"
+msgstr "Scart Eingang"
 
 msgid "Screensaver Adjust"
-msgstr "Screensaver Aanpassen"
+msgstr "Bildschirmschonereinstellungen"
 
 msgid "screensaver background"
-msgstr "screensaver achtergrond"
+msgstr "Bildschirmschoner Hintergrund"
 
 msgid "screensaver delay"
-msgstr "screensaver vertraging"
+msgstr "Bildschirmschoner Verzögerung"
 
 msgid "screensaver interval"
-msgstr "screensaver interval"
+msgstr "Bildschirmschoner Intervall"
 
 msgid "screensaver pic"
-msgstr "screensaver pic"
+msgstr "Bildschirmschoner Bild"
 
 msgid "screensaver type"
-msgstr "screensaver type"
+msgstr "Bildschirmschoner Typ"
 
 msgid "screensaver"
-msgstr "screensaver"
+msgstr "Bildschirmschoner"
 
 msgid "Screensaver"
-msgstr "Screensaver type"
+msgstr "Bildschirmschoner"
 
 msgid "Second Infobar"
-msgstr "Tweede informatiebalk"
+msgstr "Zweite Infobar"
 
 msgid "Select backup:"
-msgstr "Selecteer backup"
+msgstr "Wiederherstellung auswählen"
 
 msgid "Select Path"
-msgstr "Selecteer pad"
+msgstr "Pfadauswahl"
 
 msgid "SELECT"
-msgstr "SELECTEER"
+msgstr "auswählen"
 
 msgid "search EU VHF I"
-msgstr "search EU VHF I"
+msgstr "suche EU VHF I"
 
 msgid "Service"
-msgstr "Zender"
+msgstr "Sender"
 
 msgid "Serviceinfo"
-msgstr "Zenderinfo"
+msgstr "Senderinfo"
 
 msgid "succesfull create or delelete directory"
-msgstr "Map is succesvol verwijderd"
+msgstr "Verzeichnis wurde erfolgreich verändert"
 
 msgid "set startchannel"
-msgstr "Als startkanaal kiezen"
+msgstr "als Startkanal setzen"
 
 msgid "Settings succesfull saved"
-msgstr "Instellingen zijn succesvol opgeslagen"
+msgstr "Einstellungen erfolgreich gespeichert"
 
 msgid "Settings backup/restore"
-msgstr "Instellingen backuppen/terugzetten"
+msgstr "Einstellungen Sichern/Wiederherstellen"
 
 msgid "Settings"
-msgstr "Instellingen"
+msgstr "Einstellungen"
 
 msgid "settings"
-msgstr "instellingen"
+msgstr "Kanallisten"
 
 msgid "Settings..."
-msgstr "Instellingen..."
+msgstr "Einstellungen"
 
 msgid "Settings OK ?"
-msgstr "Instellingen Ok?"
+msgstr "Einstellungen speichern?"
 
 msgid "Share Settings"
-msgstr "Verbindingsbeheer"
+msgstr "Freigaben Einstellungen"
 
 msgid "sharedir"
-msgstr "sharedir"
+msgstr "Speicherort auf entferntem Rechner"
 
 msgid "sharename"
-msgstr "sharename"
+msgstr "Freigabename"
 
 msgid "Sharename"
-msgstr "Sharename"
+msgstr "Freigabename"
 
 msgid "Should Timeshift File deleted ?"
-msgstr "Moet timeshift bestand verwijderd worden?"
+msgstr "Soll die Timeshift Datei gelöscht werden?"
 
 msgid "Show EPG screen (EPG button)"
-msgstr "Toon EPG (EPG knop)"
+msgstr "Zeige EPG (EPG Taste)"
 
 msgid "Show in Standby"
-msgstr "In Standby tonen"
+msgstr "Im Standby anzeigen"
 
 msgid "Show in VFD"
-msgstr "In Display tonen"
+msgstr "Im Display zeigen"
 
 msgid "showip"
-msgstr "Toon IP adres"
+msgstr "Zeige IP Adresse"
 
 msgid "showtvinfo"
-msgstr "Toon TVinformatie"
+msgstr "Zeige TV Informationen"
 
 msgid "Show Module Messages"
-msgstr "Show Module Messages"
+msgstr "Zeige Modul Informationen"
 
 msgid "SID:"
 msgstr "SID"
 
 msgid "Signal:"
-msgstr "Signaal:"
+msgstr "Signal:"
 
 msgid "Single Sat"
-msgstr "Enkele Satellieten"
+msgstr "Einzelne Satelliten"
 
 msgid "Single Satelite"
-msgstr "Enkele Satellieten"
+msgstr "Einzelne Sat"
 
 msgid "Single LNB"
-msgstr "Einele LNB"
+msgstr "Einzel LNB"
 
 msgid "Single EPG"
-msgstr "Simpele EPG"
+msgstr "Einfach-EPG"
 
 msgid "Single Transponder"
-msgstr "Enkele Transponder"
+msgstr "Einzelne Transponder"
 
 msgid "Single (EPG)"
-msgstr "Eenvoudig (EPG)"
+msgstr "Einfach (EPG)"
 
 msgid "size"
-msgstr "grootte"
+msgstr "Größe"
 
 msgid "Skin Adjust"
-msgstr "Skin instellingen"
+msgstr "Skin Einstellungen"
 
 msgid "Skin Select"
-msgstr "Skin keuze"
+msgstr "Skinauswahl"
 
 msgid "Skin"
 msgstr "Skinauswahl"
@@ -2102,16 +1963,16 @@ msgid "skins"
 msgstr "Skins"
 
 msgid "Skip 1/3"
-msgstr "Spronggrootte op de knoppen 1+3 in seconden"
+msgstr "Sprungzeit auf den Tasten 1+3 in Sekunden"
 
 msgid "Skip 4/6"
-msgstr "Spronggrootte op de knoppen 4+6 in seconden"
+msgstr "Sprungzeit auf den Tasten 4+6 in Sekunden"
 
 msgid "Skip 7/9"
-msgstr "Spronggrootte op de knoppen 7+9 in seconden"
+msgstr "Sprungzeit auf den Tasten 7+9 in Sekunden"
 
 msgid "Sleep Timer"
-msgstr "Slaaptimer"
+msgstr "Ausschalt Timer"
 
 msgid "small"
 msgstr "klein"
@@ -2120,130 +1981,130 @@ msgid "SNR:"
 msgstr "SNR:"
 
 msgid "Softcam Panel"
-msgstr "Softcam instellingen"
+msgstr "Softcam Einstellungen"
 
 msgid "Softcam selection:"
-msgstr "Softcam kiezen:"
+msgstr "Softcam auswählen:"
 
 msgid "Sort"
-msgstr "Sorteren"
+msgstr "Sortieren"
 
 msgid "SORT"
-msgstr "Sorteren"
+msgstr "Sortieren"
 
 msgid "Sorting"
-msgstr "Sortering"
+msgstr "Sortierung"
 
 msgid "sorry found no harddisk"
-msgstr "Geen harddisk/usbstick gevonden"
+msgstr "Keine Festplatte/USB-Stick gefunden"
 
 msgid "Sound"
 msgstr "Sound"
 
 msgid "Song TitleText"
-msgstr "Musik Titel tonen"
+msgstr "Musik Titel Text anzeigen"
 
 msgid "Space"
 msgstr "Space"
 
 msgid "speed"
-msgstr "Snelheid"
+msgstr "Geschwindigkeit"
 
 msgid "Spinnerspeed"
-msgstr "Spinnerspeed"
+msgstr "Spinnergeschwindigkeit"
 
 msgid "Spinnertime"
-msgstr "Spinnertime"
+msgstr "Spinnerzeit"
 
 msgid "ssl"
 msgstr "ssl"
 
 msgid "Standby / Poweroff"
-msgstr "Standby / Uitschakelen"
+msgstr "Standby/Ausschalten"
 
 msgid "Standby / Poweroff..."
-msgstr "Standby / Uitschakelen"
+msgstr "Standby/Ausschalten"
 
 msgid "Standby Brightness"
-msgstr "Standby Helderheid"
+msgstr "Standby Helligkeit"
 
 msgid "Standby Mode"
-msgstr "Standby Mode"
+msgstr "Standby Modus"
 
 msgid "Standby"
 msgstr "Standby"
 
 msgid "standby_freq"
-msgstr "Standby Frequentie"
+msgstr "Standby Frequenz"
 
 msgid "Standby frequency"
-msgstr "Ingestelde CPU frequentie in standby"
+msgstr "Eingestellte CPU Frequenz im Standby"
 
 msgid "standby_overclock"
-msgstr "Overklokken in de standy"
+msgstr "Übertakten im Standby"
 
 msgid "Start HTTPD"
-msgstr "Start Webserver"
+msgstr "Starte Webserver"
 
 msgid "Start"
-msgstr "Start"
+msgstr "Anfang"
 
 msgid "starting Kernel Update ?"
-msgstr "Kernel update starten?"
+msgstr "Kernel Aktualisierung starten?"
 
 msgid "starting Fw Update ?"
-msgstr "FW update starten? "
+msgstr "Fw Aktualisierung starten?"
 
 msgid "starting Root Update ?"
-msgstr "Root update starten? "
+msgstr "Root Aktualisierung starten?"
 
 msgid "starting Var Update ?"
-msgstr "Var Update starten? "
+msgstr "Fw Var starten?"
 
 msgid "starting Full Update ?"
-msgstr "Complete update starten?"
+msgstr "Komplette Aktualisierung starten?"
 
 msgid "starting Usb Update ?"
-msgstr "Usb update starten?"
+msgstr "USB Aktualisierung starten?"
 
 msgid "starting Fullusb Update ?"
-msgstr "Full-Usb update starten?"
+msgstr "Full-USB Aktualisierung starten?"
 
 msgid "starting Usb (unknown release grp) Update ?"
-msgstr "Usb update van onbekende releasegroup starten?"
+msgstr "USB (unbekannte Release Gruppe) Aktualisierung starten?"
 
 msgid "start QtBrowser now ?"
-msgstr "QtBrowser starten?"
+msgstr "Soll der QtBrowser gestartet werden?"
 
 msgid "STOP/START"
-msgstr "STOP/START"
+msgstr "Stopp/Start"
 
 msgid "stream is running !"
-msgstr "Videostream loopt!"
+msgstr "Video Übertragung läuft!"
 
 msgid "Stream Path"
-msgstr "Pad voor stream"
+msgstr "Ordner für Stream"
 
 msgid "Streaming"
 msgstr "Streaming"
 
 msgid "Stream Port"
-msgstr "Stream Port"
+msgstr "Übertragungen Port"
 
 msgid "Style"
 msgstr "Style"
 
 msgid "Subtitle"
-msgstr "Ondertiteling"
+msgstr "Untertitel"
 
 msgid "Sunday"
-msgstr "Zondag"
+msgstr "Sonntag"
 
 msgid "Subservices"
-msgstr "Subservices"
+msgstr "Unterkanäle"
 
 msgid "Subchannel"
-msgstr "Subchannel"
+msgstr "Unterkanäle"
 
 msgid "Swap"
 msgstr "Swap"
@@ -2255,13 +2116,16 @@ msgid "swapemus"
 msgstr "Swap-Emus"
 
 msgid "swap_max_sectors"
-msgstr "max. Swap Sectoren"
+msgstr "max. Swap Sektoren"
 
 msgid "swapnetwork"
-msgstr "Swap-Netwerk"
+msgstr "Swap-Netzwerk"
+
+msgid "swappicons"
+msgstr "Swap-Picons"
 
 msgid "swapscreensaver"
-msgstr "Swap-Screensaver"
+msgstr "Swap-Bildschirmschoner"
 
 msgid "swapskins"
 msgstr "Swap-Skins"
@@ -2270,16 +2134,16 @@ msgid "swapsystem"
 msgstr "Swap-System"
 
 msgid "swapsize"
-msgstr "Swap grootte"
+msgstr "Swap Größe"
 
 msgid "swapsystems"
 msgstr "Swap-System"
 
 msgid "Switch"
-msgstr "Omschakelen"
+msgstr "Umschalten"
 
 msgid "switch channel"
-msgstr "Zender omschakelen"
+msgstr "Kanal umschalten"
 
 msgid "swts"
 msgstr "swts"
@@ -2294,16 +2158,16 @@ msgid "Sysinfo"
 msgstr "Systeminformation"
 
 msgid "System - Flashupdate (online)"
-msgstr "System - Flash update (Internet)"
+msgstr "System - Flash Softwareaktualisierung (Internet)"
 
 msgid "System - Flashupdate (tmp)"
-msgstr "System - Flash update (Lokaal)"
+msgstr "System - Flash Softwareaktualisierung (Lokal)"
 
 msgid "System - Usbupdate (online)"
-msgstr "System - USB update (Internet)"
+msgstr "System - USB Softwareaktualisierung (Internet)"
 
 msgid "System - Usbupdate (tmp)"
-msgstr "System - USB update (Lokaal)"
+msgstr "System - USB Softwareaktualisierung (Lokal)"
 
 msgid "System Info"
 msgstr "System Infos"
@@ -2315,13 +2179,13 @@ msgid "System..."
 msgstr "Systeem"
 
 msgid "System:"
-msgstr "Systeem:"
+msgstr "System:"
 
 msgid "szap"
 msgstr "sZap"
 
 msgid "szap_diseqc_repeat"
-msgstr "sZap DiSEqC herhaling"
+msgstr "sZap DiSEqC Wiederholung"
 
 msgid "szap_emul"
 msgstr "sZap EMU"
@@ -2330,66 +2194,61 @@ msgid "szap_frontend"
 msgstr "sZap Front-End"
 
 msgid "szaplong"
-msgstr "lange sZap "
-
-msgid "t"
-msgstr "t"
-
-msgid "T"
-msgstr "T"
+msgstr "langer sZap "
 
 msgid "tab"
-msgstr "Onderelkaar (Tab)"
+msgstr "untereinander (Tab)"
 
 msgid "telnet"
 msgstr "Telnet"
 
 msgid "Test frequency"
-msgstr "Frequentie testen"
+msgstr "Frequenz testen"
 
 msgid "TEST"
-msgstr "TEST"
+msgstr "Test"
 
 msgid "text"
-msgstr "textkleur"
+msgstr "Farbliche Darstellung des Textes"
 
 msgid "thereafter on this Channel:"
-msgstr "straks op deze zender:"
+msgstr "danach auf diesem Sender:"
 
 msgid "Threshold"
-msgstr "Drempelwaarde"
+msgstr "Grenzwert"
 
 msgid "Thursday"
-msgstr "Donderdag"
+msgstr "Donnerstag"
 
 msgid "Time to sleep"
-msgstr "Hardeschijfstandby"
+msgstr "Festplattenstandby"
+
+msgid "Harddisk Sleep"
+msgstr "Festplattenstandby"
 
 msgid "Timer Record Path"
-msgstr "Map voor Timeropname"
+msgstr "Ordner für Timeraufnahme"
 
 msgid "Timer"
-msgstr "Timer"
+msgstr "Aufnahme"
 
 msgid "time"
-msgstr "Tijd"
+msgstr "Uhrzeit"
 
 msgid "time + channel"
-msgstr "tijd + zendernaam"
+msgstr "Uhrzeit + Sendername"
 
 msgid "Timeshift Path"
-msgstr "Map voor Timeshift"
+msgstr "Ordner für Timeshift"
 
-msgid "Timeshift is running !!!\n"
-"Stop it and switch ?"
-msgstr "Timeshift loopt !!!\n"
-"Uitschakelen en zappen?"
+msgid "Timeshift is running !!!\nStop it and switch ?"
+msgstr "Timeshift läuft!!!\nAusschalten und Umschalten?"
 
 msgid "Timezone"
-msgstr "Tijdzone"
+msgstr "Zeitzone"
 
 msgid "Tint"
-msgstr "Verzadiging"
+msgstr "Sättigung"
 
 msgid "Tone Burst"
 msgstr "Tone Burst"
@@ -2398,7 +2257,7 @@ msgid "Tone Mode"
 msgstr "Tone Modus"
 
 msgid "Top"
-msgstr "Top (Processen)"
+msgstr "Top (Prozesse)"
 
 msgid "Transponder:"
 msgstr "Transponder:"
@@ -2407,13 +2266,13 @@ msgid "TSID:"
 msgstr "TSID:"
 
 msgid "Tuesday"
-msgstr "Dinsdag"
+msgstr "Dienstag"
 
 msgid "Tuner Configuration"
-msgstr "Tuner Instellingen"
+msgstr "Tuner Einstellungen"
 
 msgid "Tuner Reception"
-msgstr "Tunerontvangst"
+msgstr "Tunerempfang"
 
 msgid "Tuner"
 msgstr "Tuner"
@@ -2422,16 +2281,16 @@ msgid "Tuner:"
 msgstr "Tuner:"
 
 msgid "tuner_sleep_off"
-msgstr "tuner_sleep_off"
+msgstr "Tuner im Ruhezustand aus"
 
 msgid "Tunerconfig"
-msgstr "Tunerinstellingen"
+msgstr "Tunereinstellungen"
 
 msgid "Tuning to Channel failed!"
-msgstr "Kanaal niet beschikbaar !"
+msgstr "Kanal nicht verfügbar!"
 
 msgid "tuxtxt_cpufrequ_workaround"
-msgstr "Teletext CPU Frequentie fix"
+msgstr "Teletext CPU Frequenz fix"
 
 msgid "TV (Info)"
 msgstr "TV (Info)"
@@ -2440,103 +2299,91 @@ msgid "TXT PID:"
 msgstr "TXT PID:"
 
 msgid "Type of Scan"
-msgstr "Soort scan"
+msgstr "Art des Suchlaufs"
 
 msgid "type"
-msgstr "Type"
+msgstr "Typ"
 
 msgid "Type"
-msgstr "Type"
+msgstr "Typ"
 
 msgid "Type:"
-msgstr "Type:"
+msgstr "Typ:"
 
 msgid "type of channelsearch"
-msgstr "Type kanaalzoekmethode"
-
-msgid "u"
-msgstr "u"
-
-msgid "U"
-msgstr "U"
+msgstr "Type der Kanalsuche"
 
 msgid "UNC:"
 msgstr "UNC:"
 
 msgid "undefined"
-msgstr "ongedefinieerd"
+msgstr "nicht definiert"
 
 msgid "Unicable Configuration"
-msgstr "Unicable instellingen"
+msgstr "Unicable Einstellungen"
 
 msgid "unknown"
-msgstr "onbekend"
+msgstr "unbekannt"
 
 msgid "Unknown Error."
-msgstr "Onbekende fout"
+msgstr "unbekannter Fehler"
 
 msgid "UNLOAD"
-msgstr "Deactiveren"
+msgstr "Deaktivieren"
 
 msgid "update"
-msgstr "update"
+msgstr "aktualisieren"
 
 msgid "Update"
-msgstr "Update"
+msgstr "Aktualisierung"
 
 msgid "updatelist"
-msgstr "Update Lijst"
+msgstr "Update Liste"
 
 msgid "Usb Device"
-msgstr "USB apparaat"
+msgstr "USB Geräte"
 
 msgid "Usbupdate (online)"
-msgstr "USB Software update (Internet)"
+msgstr "USB Software Aktualisierung (Internet)"
 
 msgid "Usbupdate (tmp)"
-msgstr "USB Software update (Lokaal)"
+msgstr "USB Software Aktualisierung (Lokal)"
 
 msgid "use medium for backup"
-msgstr "gebruik apparaat voor backup"
+msgstr "Laufwerk für Sicherungen und Wiederherstellung benutzen"
 
 msgid "use medium for record"
-msgstr "gebruik apparaat voor opname"
+msgstr "Laufwerk für Aufnahmen benutzen"
 
 msgid "use medium for extension"
-msgstr "gebruik apparaat voor applicaties"
+msgstr "Laufwerk für Erweiterungen benutzen"
 
 msgid "use medium for swap"
-msgstr "gebruik apparaat voor SWAP"
+msgstr "Laufwerk für SWAP-DATEI benutzen"
 
 msgid "Use EPG Endtime"
-msgstr "Gebruik EPG eindtijd"
+msgstr "Zum Sendungsende"
 
 msgid "Use Teletxt Workaround"
-msgstr "Gebruik teletext workaround "
+msgstr "Workaround für Videotext nutzen"
 
 msgid "use ssl"
-msgstr "SSL gebruiken"
+msgstr "SSL benutzen"
 
 msgid "useproxy"
-msgstr "Gebruik proxy"
+msgstr "Benutze Proxy"
 
 msgid "userauth"
-msgstr "Gebruiker Authenticatie"
+msgstr "Benutzer Authentifizierung"
 
 msgid "User"
-msgstr "Gebruiker"
+msgstr "Benutzer"
 
 msgid "user defined"
-msgstr "door gebruiker gedefineerd"
+msgstr "Benutzer definiert"
 
 msgid "username"
-msgstr "gebruikersnaam"
-
-msgid "v"
-msgstr "v"
-
-msgid "V"
-msgstr "V"
+msgstr "Benutzername"
 
 msgid "VFDisplay"
 msgstr "VFDisplay"
@@ -2545,67 +2392,61 @@ msgid "Video PID:"
 msgstr "Video PID:"
 
 msgid "Video Player"
-msgstr "Film afspelen"
+msgstr "Filme abspielen"
 
 msgid "Video Settings"
-msgstr "Beeld instellingen"
+msgstr "Bild Einstellungen"
 
 msgid "VIDEO SETTINGS"
-msgstr "FILM instellingen"
+msgstr "FILME Einstellungen"
 
 msgid "Video"
-msgstr "Beeld"
+msgstr "Bild"
 
 msgid "VIDEO"
-msgstr "FILMEN"
+msgstr "FILME"
 
 msgid "VideoMode Aspect Settings"
-msgstr "Beeldverhouding instellingen"
+msgstr "Bild Seitenverhältnis Einstellungen"
 
 msgid "VideoMode Resolution Settings"
-msgstr "Beeldresolutie instellingen"
+msgstr "Bild Auflösung Einstellungen"
 
 msgid "VideoMode Settings"
-msgstr "Beeld instellingen"
+msgstr "Bild Einstellungen"
 
 msgid "Videotune"
-msgstr "Beeld instellingen"
+msgstr "Bild Einstellungen"
 
 msgid "View"
-msgstr "Toon"
+msgstr "Zeige"
 
 msgid "Virtualzap Timeout"
-msgstr "Virtualzap Timeout"
+msgstr "Virtuelles Umschalten"
 
 msgid "VLC Player"
 msgstr "VLC Player"
 
 msgid "Voltage Mode"
-msgstr "Voltage Mode"
+msgstr "Spannung Modus"
 
 msgid "Volume off"
-msgstr "Volume uit"
+msgstr "Lautstärke aus"
 
 msgid "Vol off"
-msgstr "Volume uit"
+msgstr "Lautstärke aus"
 
 msgid "Volumebar Timeout"
-msgstr "tijd totdat volume indicator dimt"
-
-msgid "w"
-msgstr "w"
-
-msgid "W"
-msgstr "W"
+msgstr "Zeit bis Lautstärkeanzeige ausblendet in Sekunden"
 
 msgid "Wait for channel scan end"
-msgstr "Zenderoeken, wacht op einde"
+msgstr "Sendersuchlauf, warte bis zum Ende."
 
 msgid "wait for stopping download"
-msgstr "Wachten, de download wordt gestopt"
+msgstr "Warten, Download wird beendet."
 
 msgid "Weather Info"
-msgstr "Weerinformatie"
+msgstr "Wetter anzeigen"
 
 msgid "Web Radio Player"
 msgstr "Web Radio Player"
@@ -2614,34 +2455,25 @@ msgid "webif"
 msgstr "Web Interface"
 
 msgid "Wednesday"
-msgstr "Woensdag"
+msgstr "Mittwoch"
 
 msgid "weekly"
-msgstr "Weekelijks"
+msgstr "Wochentag"
 
 msgid "wlan"
-msgstr "Wireless Lan"
+msgstr "WLAN"
 
 msgid "whitelist"
-msgstr "whitelist"
+msgstr "Weiße Liste"
 
 msgid "white"
-msgstr "wit"
+msgstr "weiß"
 
 msgid "workdays"
-msgstr "Werkdagen"
+msgstr "Werktags"
 
 msgid "wsize"
 msgstr "wsize"
-
-msgid "x"
-msgstr "x"
-
-msgid "X"
-msgstr "X"
-
-msgid "y"
-msgstr "y"
 
 msgid "yes"
 msgstr "Ja"
@@ -2652,184 +2484,149 @@ msgstr "Ja"
 msgid "YES"
 msgstr "Ja"
 
-msgid "Y"
-msgstr "Y"
-
 msgid "yellow"
-msgstr "geel"
-
-msgid "z"
-msgstr "z"
-
-msgid "Z"
-msgstr "Z"
+msgstr "gelb"
 
 msgid "DEU (DVB Subtitle)"
-msgstr "Duits (DVB-ondertiteling)"
+msgstr "Deutsch (DVB-Untertitel)"
 
 msgid "ENG (DVB-Subtitle)"
-msgstr "Engels (DVB-ondertiteling)"
+msgstr "Englisch (DVB-Untertitel)"
 
 msgid "FRA (DVB-Subtitle)"
-msgstr "Frans (DVB-ondertiteling)"
+msgstr "Französisch (DVB-Untertitel)"
 
 msgid "Change Feed"
-msgstr "Feedadres toevoegen"
+msgstr "Feedadresse hinzufügen"
 
 msgid "ADD ONE"
-msgstr "toevoegen"
+msgstr "hinzufügen"
 
 msgid "ADD ALL"
-msgstr "uitkiezen"
+msgstr "auswählen"
 
 msgid "Show Modules"
-msgstr "Toon CI-Modules"
+msgstr "CI Modulanzeige"
 
 msgid "Age Protect"
-msgstr "Age Protect"
+msgstr "Altersschutz ab"
 
 msgid "Protect Channel Freetime (min)"
-msgstr "Protect Channel Freetime (min)"
+msgstr "Kanalschutzzeit aus (min)"
 
 msgid " SELECT"
-msgstr "a SELECT"
+msgstr "alle hinzu"
 
 msgid "rename service"
-msgstr "hernoem service"
+msgstr "Eintrag umbennen"
 
 msgid "Resolution (current)"
-msgstr "Aktuele resolutie"
+msgstr "Aktuelle Auflösung"
 
 msgid "virtualbox (text)"
-msgstr "virtualbox (text)"
+msgstr "Eingabe (Teletext)"
 
 msgid "Two step mute"
-msgstr "Twee traps mute"
+msgstr "Zwei Stufen Stummschaltung"
 
-msgid "Backup started\n"
-"\n"
-"Please wait..."
-msgstr "Backup gestart\n"
-"\n"
-"Even wachten aub.."
+msgid "Backup started\n\nPlease wait..."
+msgstr "Sicherung gestartet\n\nBitte warten"
 
-msgid "No backup folders found!!!\n"
-"\n"
-"Aborting restoring..."
-msgstr "Geen Backupmap gevonden"
+msgid "No backup folders found!!!\n\nAborting restoring..."
+msgstr "Kein Backup Verzeichnis gefunden"
 
-msgid "A record hdd or a swapstick must be mounted!\n"
-"\n"
-"Aborting backup..."
-msgstr "een hardeschijf of swapstick moet gemount zijn!\n"
-"\n"
-"Backup wordt afgebroken..."
+msgid "A record hdd or a swapstick must be mounted!\n\nAborting backup..."
+msgstr "Kein Backup Verzeichnis gefunden"
 
-msgid "You find this Backup with timestamp on /tmp\n"
-"Connecting per ftp and copy this backup to your Pc !\n"
-"Please Waiting 2 Min ... and relax\n"
-" \n"
-"Next infos on LCD Display!"
-msgstr "Backup wordt opgeslagen in  /tmp \n"
-"Vanaf daar veilig stellen naar uw PC mbv van FTP"
+msgid "Backup to /tmp or /var/backup. If the free memory too small can a usb device will never use.\nThere must be a folder backup."
+msgstr "Sicherung wird in /tmp oder /var/backup abgelegt. Fals der interne Speicher nicht ausreicht kann die Sicherung auch\nauf einem USB Stick/HDD gespeichert werden.\nEs muß ein Ordner backup auf dem Gerät sein."
 
-msgid "Some plugins needs restart.\n"
-"If the plugin is not active\n"
-"reboot the box."
-msgstr "Sommige applicaties  vereisen een reboot\n"
-"Als de applicatie niet actief is reboot de box"
+msgid "Some plugins needs restart.\nIf the plugin is not active\nreboot the box."
+msgstr "Einige Erweiterungen benötigen einen Neustart.\nWenn das Plugin nicht verfügbar ist, bitte Neustarten"
 
 msgid "EDIT"
-msgstr "Bewerken"
+msgstr "Bearbeiten"
 
 msgid "SCAN"
 msgstr "starten"
 
-msgid "Install netsurf Internetbrowser Ipk first !"
-msgstr "Internetbrowser netsurf is niet geinstalleerd."
+msgid "Install netsurf Internetbrowser Tpk first !"
+msgstr "Internetbrowser netsurf ist nicht installiert"
 
 msgid "start Internet browser now ?"
-msgstr "Internet Browser starten?"
+msgstr "Wollen sie den Internet Browser starten?"
 
 msgid "Move"
 msgstr "Rotor bewegen"
 
 msgid "Fine move"
-msgstr "Rotor langzaam bewegen"
+msgstr "Rotor langsam bewegen"
 
 msgid "Limit"
-msgstr "Grenswaarde"
+msgstr "Grenzwert"
 
 msgid "Storage position"
-msgstr "Opgeslagen positie"
+msgstr "gespeicherte Position"
 
 msgid "move west"
-msgstr "beweeg naar west"
+msgstr "nach West"
 
 msgid "search west"
-msgstr "zoek west"
+msgstr "suche West"
 
 msgid "move east"
-msgstr "beweeg naar oost"
+msgstr "nach Ost"
 
 msgid "search east"
-msgstr "zoek oost"
+msgstr "suche Ost"
 
 msgid "Positioner Setup"
-msgstr "Positioner Setup"
+msgstr "Rotor Einstellungen"
 
 msgid "store position"
-msgstr "sla positie op"
+msgstr "neu speicher"
 
 msgid "goto position"
-msgstr "ga naar positie"
+msgstr "zur Position"
 
 msgid "start position"
-msgstr "start positie"
+msgstr "anfangs Position"
 
 msgid "step west"
-msgstr "stap west"
+msgstr "nach West"
 
 msgid "step east"
-msgstr "stap oost"
+msgstr "nach Ost"
 
 msgid "limits off"
-msgstr "limits off"
+msgstr "Grenze aus"
 
 msgid "limit west"
-msgstr "grens west"
+msgstr "Grenze West"
 
 msgid "limit east"
-msgstr "grens oost"
+msgstr "Grenze Ost"
 
 msgid "limits on"
-msgstr "grens aan"
+msgstr "Grenze an"
 
 msgid "Set action after rec"
-msgstr "Acties na opnamen"
+msgstr "Nach der Aufnahme"
 
-msgid "For next OnlineUpdate please contact Atemio and send this Serial Number\n"
-"and your Atemio Serial Number !!\n"
-"\n"
-"Board-ID SerialNr:"
-msgstr "Mocht de Online Functie gedeactiveerd zijn, stuur dan het \n"
-"Board-ID Seriennummer (AA...)en het Seriennummer onder het\n"
-"apparaat (AM...) aan het  email addres. \n"
-"\n"
-"Board-ID Seriennummer:"
+msgid "For next OnlineUpdate please contact Atemio and send this Serial Number\nand your Atemio Serial Number !!\n\nBoard-ID SerialNr:"
+msgstr "Sollten die Online Funktionen deaktiviert sein, senden sie bitte die hier angezeigte\nBoard-ID Seriennummer (AA...)und die Seriennummer unterhalb des\nGerätes (AM...) an die eingeblendete E-Mail Addresse. \n\nBoard-ID Seriennummer:"
 
 msgid "Registration needed, please contact Atemio !"
-msgstr "Registatie is noodzakelijk neem contact op met Atemio !\n"
-"Informatie is te vinden in het Atemio-Panel > System > Serial-Information"
+msgstr "Registrierung erforderlich, bitte kontaktieren sie Atemio!\nInfos erhalten Sie im Atemio-Panel > System > Serial-Information"
 
 msgid "no description found"
-msgstr "Geen beschrijving is gevonden"
+msgstr "keine Beschreibung gefunden"
 
 msgid "EPG resetet and now clear."
-msgstr "EPG teruggezet en nu leeg"
+msgstr "EPG zurück gesetzt und gelöscht"
 
 msgid "Show Pictitle"
-msgstr "toon beeldnaam"
+msgstr "Zeige Bildname"
 
 msgid "Autostart Playlist"
 msgstr "Playlist automatisch starten"
@@ -2837,23 +2634,20 @@ msgstr "Playlist automatisch starten"
 msgid "EPG button on EPG Screen"
 msgstr "EPG Taste im EPG"
 
-msgid "east"
-msgstr "oost"
+msgid "east" 
+msgstr "Ost"
 
-msgid "west"
-msgstr "west"
+msgid "west" 
+msgstr "West"
 
 msgid "Diseqc Command Order"
-msgstr "DiSEqC-commandovolgorde"
+msgstr "DiSEqC-Befehlsreihenfolge"
 
 msgid "north"
-msgstr "noord"
+msgstr "Nord"
 
 msgid "south"
-msgstr "zuid"
-
-msgid "browser"
-msgstr "Browser"
+msgstr "Süd"
 
 msgid "swaptool"
 msgstr "Swap-Tools"
@@ -2868,412 +2662,412 @@ msgid "lcdsamsungskins"
 msgstr "Samsung-LCD-Skins"
 
 msgid "Backup created successfully"
-msgstr "Backup gelukt"
+msgstr "Sicherung erfolgreich angelegt"
 
 msgid "EPG Save Mode"
-msgstr "Wanneer moeten de epg opgeslagen worden"
+msgstr "Wann sollen die EPG Daten gesichert werden"
 
 msgid "OWN POS"
-msgstr "Eigen Positie"
+msgstr "Eigene Pos"
 
 msgid "Own Position"
-msgstr "Eigen Positie"
+msgstr "Eigene Position"
 
 msgid "Player for .ts"
-msgstr "Player voor .ts"
+msgstr "Player für .ts"
 
 msgid "Action"
-msgstr "Aktie"
+msgstr "Aktion"
 
 msgid "Time to stop "
-msgstr "Tijd voor actie (min)"
+msgstr "Zeit bis Aktion (min)"
 
 msgid "NotUsed Settings"
-msgstr "IfNotUsed instellingen"
+msgstr "IfNotUsed Einstellungen"
 
 msgid "ask"
-msgstr "vraag"
+msgstr "Nachfragen"
 
 msgid "allways del file"
-msgstr "TS bestand altijd wissen"
+msgstr "TS Datei immer löschen"
 
 msgid "never del file"
-msgstr "TS bestand nooit wissen"
+msgstr "TS Datei nie löschen"
 
 msgid "After Timeshift"
-msgstr "Aktie na timeshift"
+msgstr "Aktion nach Timeshift"
 
 msgid "Show Timeline in Channellist"
-msgstr "Zeige Fortschritsbalken in Kanalliste"
+msgstr "Zeige Fortschrittsbalken in Kanalliste"
 
 msgid "TiThek PlayList"
-msgstr "TiThek PlayList"
+msgstr "TiThek Wiedergabeliste"
 
 msgid "start, Playback"
-msgstr "start, weergave"
+msgstr "Starte Wiedergabe"
 
 msgid "TiThek Menu"
-msgstr "TiThek Menu"
+msgstr "TiThek Menü"
 
-msgid "Please wait ...\n"
-"\n"
-"All Settings are saved.\n"
-"\n"
-"Box will start in few seconds."
-msgstr "Even geduld ...\n"
-"\n"
-"Alle instellingen worden opslagen\n"
-"\n"
-"Box zal over enkele seconden starten"
+msgid "Please wait ...\n\nAll Settings are saved.\n\nBox will start in few seconds."
+msgstr "Bitte warten ...\n\nAlle Einstellungen werden gespeichert\n\nBox wird in wenigen Sekunden starten."
 
 msgid "File exist, overwrite?"
-msgstr "Bestand bestaat reeds, overschrijven?"
+msgstr "Datei existiert, überschreiben?"
 
 msgid "animation 1"
-msgstr "Animatie  1"
+msgstr "Animation 1"
 
 msgid "Animated Screens"
-msgstr "Geanimeerde menu´s"
+msgstr "Animierte Menüs"
 
 msgid "anim. width"
-msgstr "anim. width"
+msgstr "anim. Breite"
 
 msgid "anim. height"
-msgstr "anim. height"
+msgstr "anim. Höhe"
 
 msgid "anim. both"
-msgstr "anim. both"
+msgstr "anim. beides"
 
 msgid "no keycode"
-msgstr "onversleuteld"
+msgstr "unverschlüsselt"
 
-msgid "Before you can see Signal/SNR/Ber you must zap to a channel of the satellite "
+msgid ""
+"Before you can see Signal/SNR/Ber you must zap to a channel of the satellite "
 "you are searching."
-msgstr "Voordat u Signal/SNR/Ber kunt zien moet u naar een zender schakelen die u "
-"zoekt"
+msgstr "Bevor Sie Signal/SNR/Ber sehen können müssen sie auf einen Kanal des "
+"Satelliten schalten den Sie suchen."
 
 msgid "Can't get Streamurl !"
-msgstr "Streamurl kan niet geopend worden !"
+msgstr "Streamadresse nicht erreichbar"
 
 msgid "This is a advertising Image !"
-msgstr "Dit is een TitanNit Testimage !"
+msgstr "Dies ist ein TitanNit Testimage!"
 
 msgid "Inc. AC3 Audio in %"
-msgstr "Inc. AC3 Audio in %"
+msgstr "AC3-Angleichung durch Stereotonabsenkung in %"
 
 msgid "very fast"
-msgstr "zeer snel"
+msgstr "sehr schnell"
 
 msgid "slow"
-msgstr "langzaam"
+msgstr "langsam"
 
 msgid "very slow"
-msgstr "zeer langzaam"
+msgstr "sehr langsam"
 
 msgid "Animated Speed"
-msgstr "Animatie snelheid"
+msgstr "Animationsgeschwindigkeit"
 
 msgid "time small"
-msgstr "tijd klein"
+msgstr "Zeit klein"
 
 msgid "Fix Shutdown Time"
-msgstr "Vaste uitschakeltijd"
+msgstr "Feste Abschaltzeit"
 
 msgid "Start playback"
-msgstr "Weergave starten"
+msgstr "Wiedergabe starten?"
 
-msgid "not started akttime greater timer endtime"
-msgstr "niet gestart, eindtijd is reeds geweest"
+msgid "not started akttime higher than timer endtime"
+msgstr "nicht gestartet, Endzeit bereits vergangen"
 
-msgid "Does you want delete all unused Bouquetentrys?"
-msgstr "Wilt u de niet gebruikte favorieten records verwijderen?"
+msgid "Do you want to delete all unused Bouquetentrys?"
+msgstr "Wollen Sie ungenutzte Bouqueteinträge löschen?"
 
 msgid "EPG Search"
-msgstr "EPG Search"
+msgstr "EPG-Suche"
 
 msgid "DESC"
-msgstr "Beschrijving"
+msgstr "Beschreibung"
 
 msgid "TITLE"
 msgstr "Titel"
 
 msgid "Search"
-msgstr "Zoek"
+msgstr "Suche"
 
 msgid "NONE"
-msgstr "geen"
+msgstr "keines"
 
-msgid "WLAN started.\n"
+msgid ""
+"WLAN started.\n"
 " You can now configure the new interface."
-msgstr "WLAN is gestart.\n"
-"verdere configuratie kan nu plaatsvinden"
+msgstr "WLAN gestartet.\n"
+"Sie können nun den Adapter konfigurieren"
 
-msgid "WLAN not started,\n"
+msgid ""
+"WLAN not started,\n"
 "Please check your config."
-msgstr "WLAN kon niet gestart worden,\n"
-"controleer de instellingen."
+msgstr ""
+"WLAN konnte nicht gestartet werden,\n"
+"bitte überprüfen Sie Ihre Konfiguration."
 
 msgid "searching..."
-msgstr "zoeken..."
+msgstr "Suche..."
 
 msgid "WLAN now stopped"
-msgstr "WLAN is nu uitgeschakeld"
+msgstr "WLAN ist jetzt ausgeschaltet"
 
 msgid "WLAN Settings"
-msgstr "WLAN instellingen"
+msgstr "WLAN Einstellungen"
 
 msgid "Key"
-msgstr "Sleutel"
+msgstr "Schlüssel"
 
 msgid "DYNDNS started."
-msgstr "DYNDNS gestart"
+msgstr "DYNDNS gestartet"
 
-msgid "DYNDNS not started,\n"
+msgid ""
+"DYNDNS not started,\n"
 "Please check your config."
-msgstr "DYNDNS niet gestart,\n"
-"controleer de instellingen."
+msgstr ""
+"DYNDNS nicht gestartet,\n"
+"bitte Konfiguration überprüfen."
 
 msgid "DYNDNS now stopped"
-msgstr "DYNDNS gestopt"
+msgstr "DYNDNS gestoppt"
 
 msgid "Start on boot"
-msgstr "automatische Start"
+msgstr "automatischer Start"
 
 msgid "NEW"
-msgstr "Nieuw"
+msgstr "Neu"
 
 msgid "Can't connect to server !"
-msgstr "Kan geen connectie krijgen met de server."
+msgstr "Keine Verbindung zum Server möglich!"
 
 msgid "Connection to server lost !"
-msgstr "Verbinding met de server verloren."
+msgstr "Verbindung zum Server verloren!"
 
 msgid "Start RGUID"
-msgstr "Start RGUID"
+msgstr "Starte RGUI Dienst"
 
 msgid "Blindscan Adjust"
-msgstr "Blindscan aanpassen"
+msgstr "Blindscan Anpassung"
 
 msgid "Blindscan Settings"
-msgstr "Blindscan instellingen"
+msgstr "Blindscan Einstellungen"
 
 msgid "Maximal frequency"
-msgstr "Maximale Frequentie"
+msgstr "Maximale Frequenz"
 
 msgid "Maximal signalrate"
 msgstr "Maximale Signalrate"
 
 msgid "Minimal frequency"
-msgstr "Minimale Frequentie"
+msgstr "Minimale Frequenz"
 
 msgid "Minimal signalrate"
 msgstr "Minimale Signalrate"
 
 msgid "Step frequency"
-msgstr "Frequentie stap"
+msgstr "Frequenzschritt"
 
 msgid "Step signalrate"
-msgstr "Signalrate stap"
+msgstr "Signalratenschritt"
 
 msgid "Channel History"
-msgstr "Zender historie"
+msgstr "Kanal Verlauf"
 
 msgid "KILL"
-msgstr "KILL"
+msgstr "Rot"
 
 msgid "BOOT"
-msgstr "BOOT"
+msgstr "Grün"
 
 msgid "SEARCH"
-msgstr "SEARCH"
+msgstr "Suchen"
 
 msgid "START"
-msgstr "START"
+msgstr "Starten"
 
 msgid "STOP"
-msgstr "STOP"
+msgstr "Stoppen"
 
 msgid "LOG"
-msgstr "LOG"
+msgstr "Log"
 
 msgid "hold"
-msgstr "behouden"
+msgstr "behalten"
 
 msgid "delete"
-msgstr "verwijderen"
+msgstr "löschen"
 
 msgid "SatCount: "
-msgstr "Satellieten: "
+msgstr "Satelliten: "
 
 msgid "ChannelCount: "
-msgstr "Kanalen:"
+msgstr "Kanäle: "
 
 msgid "BouquetCount: "
-msgstr "Favorieten:"
+msgstr "Bouquets: "
 
 msgid "BouquetEntrys: "
-msgstr "Favorieten regels"
+msgstr "Bouqeuteinträge: "
 
 msgid "EpgChannels: "
-msgstr "EPG Kanalen"
+msgstr "EPG Kanäle: "
 
 msgid "ProviderCount: "
-msgstr "Provideraantal"
+msgstr "Provideranzahl: "
 
 msgid "Optimize"
-msgstr "optimaliseren"
+msgstr "optimieren"
 
 msgid "Send remote box into standby ?"
-msgstr "Zet remote box in standby"
+msgstr "Ferne Box in Standby versetzen?"
 
 msgid "BG-RUN"
-msgstr "uitvoeren in achtergrond"
+msgstr "Ausführung im Hintergrund"
 
 msgid "Script has no output or started in background."
-msgstr "Script heeft geen output of gestart is achtergrond"
+msgstr "Skript hat keine Ausgabe oder wurde im Hintergrund gestartet."
 
 msgid "Script execute"
-msgstr "Script uitvoeren"
+msgstr "Skript ausführen"
 
 msgid "No plugin found."
-msgstr "Geen applicatie gevonden"
+msgstr "Kein Plugin gefunden"
 
 msgid "rw"
-msgstr "rw"
+msgstr ""
 
 msgid "ro"
-msgstr "ro"
+msgstr ""
 
 msgid "Sharename can't be empty!"
-msgstr "Sharenaam mag niet leeg zijn!"
+msgstr "Freigabename darf nicht leer sein!"
 
 msgid "A mount entry with this name already exists!"
-msgstr "Een koppeling met deze naam bestaat reeds"
+msgstr "Ein Eintrag mit diesem Namen existiert bereits!"
 
 msgid "--actors--"
-msgstr "--acteurs--"
+msgstr "--Darsteller--"
 
 msgid "Actors:"
-msgstr "Acteurs"
+msgstr "Dartsteller:"
 
 msgid "Picdenom Mode"
-msgstr "Picdenom Mode"
+msgstr "Softwarebilddecoder"
 
 msgid "Pic HW-decode"
-msgstr "Pic HW-decode"
+msgstr "Hardwarebilddecoder"
 
 msgid "COPY"
-msgstr "Kopieeren"
+msgstr "Kopieren"
 
 msgid "DLNA started."
-msgstr "DLNA gestart"
+msgstr "DLNA gestartet"
 
-msgid "DLNA not started,\n"
+msgid ""
+"DLNA not started,\n"
 "Please check your config."
-msgstr "DLNA niet gestart,\n"
-"Controleer de instellingen"
+msgstr ""
+"DLNA nicht gestartet,\n"
+"Bitte Konfiguration überprüfen."
 
 msgid "DLNA now stopped"
-msgstr "DLNA gestopt"
+msgstr "DLNA angehalten"
 
 msgid "DLNA Settings"
-msgstr "DLNA instellingen"
+msgstr "DLNA Einstellungen"
 
 msgid "Interface"
-msgstr "Interface"
+msgstr "Schnittstelle"
 
 msgid "Medie Dir 1"
-msgstr "Media map 1"
+msgstr "Medien Ordner 1"
 
 msgid "Medie Dir 2"
-msgstr "Media map 2"
+msgstr "Medien Ordner 2"
 
 msgid "Medie Dir 3"
-msgstr "Media map 3"
+msgstr "Medien Ordner 3"
 
 msgid "Medie Dir 4"
-msgstr "Media map 4"
+msgstr "Medien Ordner 4"
 
 msgid "Port"
-msgstr "Port"
+msgstr ""
 
 msgid "Server Name"
-msgstr "Server Name"
+msgstr ""
 
 msgid "News"
-msgstr "Nieuws"
+msgstr "Neuigkeiten"
 
 msgid "BROWSER"
-msgstr "Browser"
+msgstr "Internetbrowser"
 
 msgid "NEXT"
-msgstr "volgende"
+msgstr "Weiter"
 
 msgid "PREV"
-msgstr "Terug"
+msgstr "Zurück"
 
 msgid "Weather"
-msgstr "Weer"
+msgstr "Wetter"
 
 msgid "Day: "
-msgstr "Dag:"
+msgstr "Tag: "
 
 msgid "Lowest temp: "
-msgstr "Minimum temperatuur: "
+msgstr "Tiefstemperatur: "
 
 msgid "Highest temp: "
-msgstr "Maximum temperatuur: "
+msgstr "Höchsttemperatur: "
 
 msgid "Condition: "
-msgstr "Weer:"
+msgstr "Wetter: "
 
 msgid "Media Dir 1"
-msgstr "Media map 1"
+msgstr "Medien Ordner 1"
 
 msgid "Media Dir 2"
-msgstr "Media map 2"
+msgstr "Medien Ordner 2"
 
 msgid "Media Dir 3"
-msgstr "Media map 3"
+msgstr "Medien Ordner 3"
 
 msgid "Media Dir 4"
-msgstr "Media map 4"
+msgstr "Medien Ordner 4"
 
 msgid "Pearl LCD Settings"
-msgstr "Pearl LCD instellingen"
+msgstr "Pearl LCD Einstellungen"
 
 msgid "Remove mode"
-msgstr "Wis Modus"
+msgstr "Lösch Modus"
 
 msgid "Move mode"
-msgstr "verplaats Modus"
+msgstr "Verschiebe Modus"
 
 msgid "Copy mode"
-msgstr "copieer Modus"
+msgstr "Kopier Modus"
 
 msgid "Protect mode"
-msgstr "Bescherm Modus"
+msgstr "Schutz Modus"
 
 msgid "Edit mode"
-msgstr "Hernoem Modus"
+msgstr "Umbennen Modus"
 
 msgid "Channellist view"
-msgstr "Channellist view"
+msgstr "Nichtempfangbare Kanäle"
 
 msgid "hidden"
-msgstr "verbergen"
+msgstr "ausblenden"
 
 msgid "deactive"
-msgstr "deactive"
+msgstr "sichtbar"
 
-msgid "IPK upgrade (online)"
-msgstr "IPK upgrade (online)"
+msgid "TPK upgrade (online)"
+msgstr "TPK Aktualisieren (Internet)"
 
-msgid "IPK media (media)"
-msgstr "IPK media (media)"
+msgid "TPK media (media)"
+msgstr "TPK installieren von USB Medien"
 
 msgid "No output found !"
-msgstr "geen informatie beschikbaar"
+msgstr "Keine Information vorhanden"
 
 msgid "swapplayer"
 msgstr "Swap-Multimedia Player"
@@ -3282,701 +3076,505 @@ msgid "swaptools"
 msgstr "Swap-Tools"
 
 msgid "games"
-msgstr "Spelletjes"
+msgstr "Spiele"
 
 msgid "swapbrowser"
 msgstr "Swap-Internetbrowser"
 
+msgid "browser"
+msgstr "Internetbrowser"
+
 msgid "Extensions..."
-msgstr "Applicaties"
+msgstr "Erweiterungen"
 
 msgid "Harddisk Configure"
-msgstr "Hardeschijf configureren"
+msgstr "Festplatte konfigurieren"
 
 msgid "Harddisk Configure - List Devices"
-msgstr "Hardeschijf configureren - aangesloten aparaten"
+msgstr "Festplatte konfigurieren - angeschlossene Geräte"
 
 msgid "Record Path settings"
-msgstr "Opnamepad instellen"
+msgstr "Aufnahmepfad Einstellungen"
 
-msgid "Here you can make your recording timer configuration. Use to navigate the "
-"control cross and the extra buttons displayed with your remote control to "
-"select."
-msgstr "Hier kunt u uw opnames programmeren.\n"
-"\n"
-"Gebruik het stuur-kruis en de extra getoonde knopppen op uw "
-"afstandsbediening om te navigeren."
+msgid "Here you can make your recording timer configuration. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können sie Ihre Aufnahme-Timer Konfiguration vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
-msgid "Here you can in your EPG entries for specific search. Use to start a color "
-"button to search. Use to navigate the control cross and the extra buttons "
-"displayed with your remote control to select."
-msgstr "Hier kunt u in de EPG zoeken. Gebruik een van de kleurknoppen om de "
-"zoekactie te starten.\n"
-"\n"
-"Gebruik het stuur-kruis en de extra getoonde knopppen op uw "
-"afstandsbediening om te navigeren."
+msgid "Here you can in your EPG entries for specific search. Use to start a color button to search. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie in Ihrem EPG nach speziellen einträgen suchen. Verwenden Sie eine der Farbtasten um die Suche zu starten.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
-msgid "Here you can start and manage your additional plug-ins. Use to navigate the "
-"control cross and the extra buttons displayed with your remote control to "
-"select."
-msgstr "Hier kunt u uw extra applicaties starten en beheren.\n"
-"\n"
-"Gebruik het stuur-kruis en de extra getoonde knopppen op uw "
-"afstandsbediening om te navigeren."
+msgid "Here you can start and manage your additional plug-ins. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie Ihre zusätzlichen Plug-Ins starten und verwalten.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
-msgid "Here you can install from our current online offering plug-ins. Use to "
-"navigate the control cross and the extra buttons displayed with your remote "
-"control to select."
-msgstr "Hier kunt u het actuele online aanbod van applicaties installeren.\n"
-"\n"
-"Gebruik het stuur-kruis en de extra getoonde knopppen op uw "
-"afstandsbediening om te navigeren."
+msgid "Here you can install from our current online offering plug-ins. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie von unseren aktuellen Online-Angebot Plug-Ins installieren.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
-msgid "Here you can choose to configure your tuner. Use to navigate the control "
-"cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u de instellingen van uw tuner beheren.\n"
-"\n"
-"Gebruik het stuur-kruis en de extra getoonde knopppen op uw "
-"afstandsbediening om te navigeren."
+msgid "Here you can choose to configure your tuner. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie Ihren Tuner für die Konfiguration auswählen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
-msgid "Here they can do for your chosen tuner to receive settings. Use to navigate "
-"the control cross and the extra buttons displayed with your remote control "
-"to select."
-msgstr "Hier kunt u de ontvangstinstellingen van de door u gekozen tuner instellen.\n"
-"\n"
-"Gebruik het stuur-kruis en de extra getoonde knopppen op uw "
-"afstandsbediening om te navigeren."
+msgid "Here they can do for your chosen tuner to receive settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie für Ihren ausgewählten Tuner die Empfangs-Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
-msgid "Here they can do for your chosen tuner to lnb settings. Use to navigate the "
-"control cross and the extra buttons displayed with your remote control to "
-"select."
-msgstr "Hier kunt u voor de door uw gekozen tuner de LNB-instellingen beheren.\n"
-"\n"
-"Gebruik het stuur-kruis en de extra getoonde knopppen op uw "
-"afstandsbediening om te navigeren."
+msgid "Here they can do for your chosen tuner to lnb settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie für Ihren ausgewählten Tuner die LNB-Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
-msgid "Here they can do for your chosen tuner to ownpos settings. Use to navigate "
-"the control cross and the extra buttons displayed with your remote control "
-"to select."
-msgstr "Hier kunt u voor de door u gekozen tuner de eigen-positie-instellingen "
-"beheren.\n"
-"\n"
-"Gebruik het stuur-kruis en de extra getoonde knopppen op uw "
-"afstandsbediening om te navigeren."
+msgid "Here they can do for your chosen tuner to ownpos settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie für Ihren ausgewählten Tuner die Eigene-Poistion-Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
-msgid "Here you can check the reception of the current station. Use to navigate the "
-"control cross and the extra buttons displayed with your remote control to "
-"select."
-msgstr "Hier kunt u de ontvangst van de actuele zender controleren.\n"
-"\n"
-"Gebruik het stuur-kruis en de extra getoonde knopppen op uw "
-"afstandsbediening om te navigeren."
+msgid "Here you can check the reception of the current station. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie den Empfang des aktuellen Senders überprüfen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
-msgid "Here you can do a blind scan, this process takes a long time. Use to "
-"navigate the control cross and the extra buttons displayed with your remote "
-"control to select."
-msgstr "Hier kunt u een blindscan uitvoeren, het uitvoeren van deze actie duurt zeer "
-"lang.\n"
-"\n"
-"Gebruik het stuur-kruis en de extra getoonde knopppen op uw "
-"afstandsbediening om te navigeren."
+msgid "Here you can do a blind scan, this process takes a long time. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie einen Blindscan durchführen, dieser Vorgang dauert sehr lange.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
-msgid "Here you can configure Ci-Modules. Use to navigate the control cross and the "
-"extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw CI-Module configureren.\n"
-"\n"
-"Gebruik het stuur-kruis en de extra getoonde knopppen op uw "
-"afstandsbediening om te navigeren."
+msgid "Here you can configure Ci-Modules. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie CI-Module konfigurieren.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
-msgid "Here you can select your Network Interface. Use to navigate the control "
-"cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw network adaptor uitkiezen.\n"
-"\n"
-"Gebruik het stuur-kruis en de extra getoonde knopppen op uw "
-"afstandsbediening om te navigeren."
+msgid "Here you can make your module settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie die Einstellungen für CI-Module anpassen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
-msgid "Here you can make for your selected network interface settings. Use to "
-"navigate the control cross and the extra buttons displayed with your remote "
-"control to select."
-msgstr "Hier kunt u voor de door u uitgekozen netwerkadaptor instellingen beheren.\n"
-"\n"
-"Gebruik het stuur-kruis en de extra getoonde knopppen op uw "
-"afstandsbediening om te navigeren."
+msgid "Here you can select your Network Interface. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie Ihre Netzwerkschnittstelle auswählen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
-msgid "Here you can make for your wireless network settings. Use to navigate the "
-"control cross and the extra buttons displayed with your remote control to "
-"select."
-msgstr "Hier kunt u uw WLAN instellingen beheren.\n"
-"\n"
-"Gebruik het stuur-kruis en de extra getoonde knopppen op uw "
-"afstandsbediening om te navigeren."
+msgid "Here you can make for your selected network interface settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie für Ihre ausgewählte Netzwerkschnittstelle Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
-msgid "Here you can test your network. Use to navigate the control cross and the "
-"extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw netwerk testen.\n"
-"\n"
-"Gebruik het stuur-kruis en de extra getoonde knopppen op uw "
-"afstandsbediening om te navigeren."
+msgid "Here you can make for your wireless network settings. 1. Use Search button and select Your SSID (apoint / router) and Press ok 2. Make settings Type / Key confirm with ok and Note the following instructions 3. Disable Lan Yes, Activate Wlan Yes and use DHCP for easy setup."
+msgstr "Hier können Sie Ihre WLAN Einstellungen vornehmen.\n1. Suche starten, die eigene SSID (apoint / router) mit ok übernehmen.\n2. Schlüssel und Typ anpassen und mit ok bestätigen (speichern).\n3. Deaktiviere LAN ja, Aktiviere Wlan und DHCP für einfache Einrichtung."
 
-msgid "Here you can configure your network shares. Use to navigate the control "
-"cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw netwerk mappings controleren.\n"
-"\n"
-"Gebruik het stuur-kruis en de extra getoonde knopppen op uw "
-"afstandsbediening om te navigeren."
+msgid "Here you can test your network. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie Ihr Netzwerk testen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
-msgid "Here you can configure your web server. Use to navigate the control cross "
-"and the extra buttons displayed with your remote control to select."
-msgstr "Hier u uw Webserver beheren.\n"
-"\n"
-"Gebruik het stuur-kruis en de extra getoonde knopppen op uw "
-"afstandsbediening om te navigeren."
+msgid "Here you can configure your network shares. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie Ihre Netzwerk Freigaben konfigurieren.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
-msgid "Here you can configure access to your DynDNS. Use to navigate the control "
-"cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw DynDns toegang beheren.\n"
-"\n"
-"Gebruik het stuur-kruis en de extra getoonde knopppen op uw "
-"afstandsbediening om te navigeren."
+msgid "Here you can configure your web server. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie Ihren Webserver konfigurieren.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+
+msgid "Here you can configure access to your DynDNS. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie Ihren DynDns Zugang konfigurieren.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
 msgid "Here you can backup and restore your settings."
-msgstr "Hier kunt u uw instellingen backuppen en terugzetten"
+msgstr "Hier können Sie Ihre Einstellungen sichern und wiederherstellen."
 
-msgid "Here you can make your picture and sound settings. Use to navigate the "
-"control cross and the extra buttons displayed with your remote control to "
-"select."
-msgstr "Hier kunt u uw beeld en geluidsinstellingen beheren\n"
-"\n"
-"Gebruik het stuur-kruis en de extra getoonde knopppen op uw "
-"afstandsbediening om te navigeren."
+msgid "Here you can make your picture and sound settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie Ihre Bild und Ton Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
-msgid "Here you can set your language. Use to navigate the control cross and the "
-"extra buttons displayed with your remote control to select."
-msgstr "Hierkunt u uw taal instellen.\n"
-"\n"
-"Gebruik het stuur-kruis en de extra getoonde knopppen op uw "
-"afstandsbediening om te navigeren."
+msgid "Here you can set your language. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie Ihre Sprache einstellen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
-msgid "Here you can set your timezone. Use to navigate the control cross and the "
-"extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw tijdzone instellen.\n"
-"\n"
-"Gebruik het stuur-kruis en de extra getoonde knopppen op uw "
-"afstandsbediening om te navigeren."
+msgid "Here you can set your timezone. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie Ihre Zeitzone einstellen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
-msgid "Here you can make your system settings. Use to navigate the control cross "
-"and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw systeeem instellingen beheren.\n"
-"\n"
-"Gebruik het stuur-kruis en de extra getoonde knopppen op uw "
-"afstandsbediening om te navigeren."
+msgid "Here you can make your system settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie Ihre System Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
-msgid "Here you can make your screensaver settings. Use to navigate the control "
-"cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw screensaver instellen.\n"
-"\n"
-"Gebruik het stuur-kruis en de extra getoonde knopppen op uw "
-"afstandsbediening om te navigeren."
+msgid "Here you can make your screensaver settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie Ihre Bildschirmschoner Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
-msgid "Here you can make your recordpath settings. Use to navigate the control "
-"cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u het opname pad instellen.\n"
-"\n"
-"Gebruik het stuur-kruis en de extra getoonde knopppen op uw "
-"afstandsbediening om te navigeren."
+msgid "Here you can make your recordpath settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie Ihre Aufnahmepfad Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
-msgid "Here you can make your epg settings. Use to navigate the control cross and "
-"the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw EPG instellingen beheren.\n"
-"\n"
-"Gebruik het stuur-kruis en de extra getoonde knopppen op uw "
-"afstandsbediening om te navigeren."
+msgid "Here you can make your epg settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie Ihre EPG Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
-msgid "Here you can make your mediadb settings. Use to navigate the control cross "
-"and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw MediaDB instellingen beheren.\n"
-"\n"
-"Gebruik het stuur-kruis en de extra getoonde knopppen op uw "
-"afstandsbediening om te navigeren."
+msgid "Here you can make your mediadb settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie Ihre MediaDB Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
-msgid "Here you can make your vfd settings. Use to navigate the control cross and "
-"the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw VFD instellingen beheren.\n"
-"\n"
-"Gebruik het stuur-kruis en de extra getoonde knopppen op uw "
-"afstandsbediening om te navigeren."
+msgid "Here you can make your vfd settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie Ihre VFD Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
-msgid "Here you can select from the following list. Use to navigate the control "
-"cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u een selectie maken uit de lijst\n"
-"\n"
-"Gebruik het stuur-kruis en de extra getoonde knopppen op uw "
-"afstandsbediening om te navigeren."
+msgid "Here you can select from the following list. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie aus der folgenden Liste auswählen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
-msgid "Here you can edit the following channels from the EPG. Use to navigate the "
-"control cross and the extra buttons displayed with your remote control to "
-"select."
-msgstr "Hier kunt u de EPG bewerken van de volgende kanalen.\n"
-"\n"
-"Gebruik het stuur-kruis en de extra getoonde knopppen op uw "
-"afstandsbediening om te navigeren."
+msgid "Here you can edit the following channels from the EPG. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie aus den folgenden Kanälen das EPG bearbeiten.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
-msgid "Here you can select from the following list a skin. Use to navigate the "
-"control cross and the extra buttons displayed with your remote control to "
-"select."
-msgstr "Hier kunt u uit de lijst een skin selecteren.\n"
-"\n"
-"Gebruik het stuur-kruis en de extra getoonde knopppen op uw "
-"afstandsbediening om te navigeren."
+msgid "Here you can select from the following list a skin. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie aus den folgender Liste einen Skin auswählen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
-msgid "Here you can create a new record timer. Use to navigate the control cross "
-"and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u een nieuwe timeropname programeren.\n"
-"\n"
-"Gebruik het stuur-kruis en de extra getoonde knopppen op uw "
-"afstandsbediening om te navigeren."
+msgid "Here you can create a new record timer. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können sie einen neuen Aufnahme-Timer anlegen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
-msgid "Here you can make your PIN security settings. Use to navigate the control "
-"cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw PIN instellingen beheren.\n"
-"\n"
-"Gebruik het stuur-kruis en de extra getoonde knopppen op uw "
-"afstandsbediening om te navigeren.."
+msgid "Here you can make your PIN security settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie Ihre PIN Sicherheitseinstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
-msgid "Here you can make your PIN security for menus settings. Use to navigate the "
-"control cross and the extra buttons displayed with your remote control to "
-"select."
-msgstr "Hier kunt u uw PIN instellingen voor het menu beheren.\n"
-"\n"
-"Gebruik het stuur-kruis en de extra getoonde knopppen op uw "
-"afstandsbediening om te navigeren."
+msgid "Here you can make your PIN security for menus settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie Ihre PIN Sicherheitseinstellungen für Menus vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
-msgid "No MediaDB Directory found\n"
-"Press OK to create it"
-msgstr "er is geen map gevonden voor de MedisDB!\n"
-"Wilt u deze maken?"
+msgid "No MediaDB Directory found\nPress OK to create it"
+msgstr "Kein MediaDB Verzeichnis gefunden!\nWollen Sie es anlegen?"
 
-msgid "Free space in /var to little!\n"
-"This can make problems!"
-msgstr "Geen geheugen ruimte meer in /var\n"
-"Dit kan tot problemen leiden!"
+msgid "Free space in /var to little!\nThis can make problems!"
+msgstr "Kein freier Speicher in /var\nDies kann zu Problemen führen!"
 
-msgid "Here you can select your hard disks and USB flash drives for configuration. "
-"Use to navigate the control cross and the extra buttons displayed with your "
-"remote control to select."
-msgstr "Hier kunt u uw hardeschijf of usb stick uitkiezen om te beheren.\n"
-"\n"
-"Gebruik het stuur-kruis en de extra getoonde knopppen op uw "
-"afstandsbediening om te navigeren."
+msgid "Here you can select your hard disks and USB flash drives for configuration. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie Ihre Festplatten und USB-Sticks zur Konfiguration auswählen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
-msgid "Here you can view the current channel information. Use to navigate the "
-"control cross and the extra buttons displayed with your remote control to "
-"select."
-msgstr "Hier kunt u de actuele zenderinfo oproepen.\n"
-"\n"
-"Gebruik het stuur-kruis en de extra getoonde knopppen op uw "
-"afstandsbediening om te navigeren."
+msgid "Here you can view the current channel information. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie die aktuellen Senderinfos abrufen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+
+msgid "Here you can make your timeshift settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie die Timeshift Einstellungen anpassen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
 msgid "please wait..."
-msgstr "een ogenblik geduld alstublieft"
+msgstr "bitte warten"
 
 msgid "System Update"
-msgstr "System Update"
+msgstr "System aktualisieren"
 
 msgid "DYNDNS Settings"
-msgstr "DYNDNS instellingen"
+msgstr "DYNDNS Einstellungen"
 
 msgid "MediaDB Settings"
-msgstr "MediaDB instellingen"
+msgstr "MediaDB Einstellungen"
 
 msgid "MediaDB Path"
-msgstr "MediaDB Pad"
+msgstr "Datenbank Ordner"
 
 msgid "Delete MediaDB before scan"
-msgstr "Verwijder MediaDB voor de scan"
+msgstr "Datenbank vor dem scannen löschen"
 
 msgid "Delete unused entrys before scan"
-msgstr "Verwijder niet gebruikte entrys voor scan"
+msgstr "Datenbank vor dem scannen überprüfen (unbenutzte Einträge löschen)"
 
 msgid "Update entrys on scan"
-msgstr "Actualiseer gegevens bij het scannen"
+msgstr "Aktualisiere Daten beim scannen"
 
 msgid "Create Thumb Picture"
-msgstr "Thumb pictures maken"
+msgstr "Thumb Bilder erstellen"
 
 msgid "TV Resolution (w):"
-msgstr "TV resolutie (breedte):"
+msgstr "TV Auflösung (Breite):"
 
 msgid "TV Resolution (h):"
-msgstr "TV resolutie (hoogte):"
+msgstr "TV Auflösung (Höhe):"
 
-msgid "Are you sure you want to restore settings?\n"
-"\n"
-"OK = start restore\n"
-"EXIT = abort restore"
-msgstr "Wilt u uw instellingen terugzetten??\n"
-"\n"
-"OK = herstellen starten\n"
-"EXIT = Wiederherstellung abbrechen"
+msgid "Are you sure you want to restore settings?\n\nOK = start restore\nEXIT = abort restore"
+msgstr "Sie wollen Ihre Einstellungen wiederherstellen?\n\nOK = Wiederherstellung starten\nEXIT = Wiederherstellung abbrechen"
 
 msgid "Backup failed, see log"
-msgstr "Backup is niet geslaagd, controleer log"
+msgstr "Sicherung fehlgeschlagen, Infos können Sie im Log sehen"
 
-msgid "Press -restore- and your saved settings will be restored from your "
-"swapstick / recording hdd! The Box will restart automatically for "
-"restoring!\n"
-"\n"
-"Press -backup- to save your actual settings to swapstick / recording hdd.\n"
-"WARNING: The old backup will be deleted!\n"
-"\n"
-"While using the update function, your settings will be saved and restored "
-"automatically, if possible!"
-msgstr "Druk op  -herstellen- (Groen)\n"
-"en uw instellingen worden hersteld uit een eerder gesaved herstelbestand! Uw "
-"box zal daarna automatisch herstarten! \n"
-"\n"
-"Druk op -herstelpunt maken - (Geel)\n"
-"dan word een herstelpunt gemaakt.\n"
-"LETOP: Eerdere herstelpunten worden verwijdert!\n"
-"\n"
-"Indien u de Systeem update  functie onder -Systeem- gebruikt, dan wordt dit "
-"herstelpunt automatisch gemaakt !"
+msgid "Press -restore- and your saved settings will be restored from your swapstick / recording hdd! The Box will restart automatically for restoring!\n\nPress -backup- to save your actual settings to swapstick / recording hdd.\nWARNING: The old backup will be deleted!"
+msgstr "Drücken von -Wiederherstellung- (Grün)\nund Ihre Daten werden aus einer zuvor erstellten Sicherung wiederhergestellt! Ihre Satbox wird dafür automatisch neugestartet! \n\nDrücken von -Sicherung erstellen- (Gelb)\ndann werden Ihre Daten gesichert.\nWARNUNG: Die alten Sicherungen werden gelöscht!"
 
-msgid "Can't start system update\n"
-"Please remove Stick/HDD and try again"
-msgstr "Systeem update kan niet gestart worden!\n"
-"Verwijder allen USB apparaten en probeer opnieuw."
+msgid "Can't start system update\nPlease remove Stick/HDD and try again"
+msgstr "System Aktualisierung kann nicht gestartet werden!\nEntfernen Sie Bitte alle USB Speichermedien und versuchen Sie es erneut."
 
 msgid "wireless"
-msgstr "Wlan Module"
+msgstr "WLAN Module"
 
-msgid "Can't backup ipkg files\n"
-"Please check if partition is full"
-msgstr "Backup van de  IPKG Databank is mislukt\n"
-"Controleer de swapstick."
+msgid "Tpk Install - select section"
+msgstr "TPK installieren - Kategorie wählen"
 
-msgid "Ipk Install - select section"
-msgstr "IPK installeren - Kies categorie"
+msgid "Tpk Install Info - Install OK"
+msgstr "Paket erfolgreich installiert"
 
-msgid "Ipk Install Info - Install OK"
-msgstr "IPK Pakket is succesvol geinstalleerd"
+msgid "Tpk Install Info - Install ERROR"
+msgstr "Paket konnte nicht installiert werden"
 
-msgid "Ipk Install Info - Install ERROR"
-msgstr "IPK pakket installeer fout"
+msgid "Tpk Remove Info - Remove OK"
+msgstr "Paket erfolgreich gelöscht"
 
-msgid "Ipk Remove Info - Remove OK"
-msgstr "IPK Pakket succesvol gewist"
-
-msgid "Ipk Remove Info - Remove ERROR"
-msgstr "IPK Pakket kon niet gewist worden"
+msgid "Tpk Remove Info - Remove ERROR"
+msgstr "Paket konnte nicht gelöscht werden"
 
 msgid "Install success"
-msgstr "Installatie succesvol uitgevoerd.\n"
-"Er is geen installatie info gevonden!"
+msgstr "Installation erfolgreich durchgeführt."
 
 msgid "Install error"
-msgstr "Installatie niet succesvol uitgevoerd.\n"
-"Er is geen installatie info gevonden!"
+msgstr "Installation nicht erfolgreich durchgeführt."
 
 msgid "Installing"
-msgstr "Installeren van"
+msgstr "Installation von"
 
 msgid "starting"
-msgstr "uitvoeren"
+msgstr "durchführen"
 
 msgid "Removeing"
-msgstr "wissen "
+msgstr "Löschen von"
 
 msgid "Remove success"
-msgstr "Wissen succesvol uitgevoerd.\n"
-"Er is geen installatie info gevonden!"
+msgstr "Löschen erfolgreich durchgeführt."
 
 msgid "Remove error"
-msgstr "Wissen niet succesvol uitgevoerd.\n"
-"Er is geen installatie info gevonden!"
+msgstr "Löschen nicht erfolgreich durchgeführt."
 
-msgid "Ipk Tmp Info"
-msgstr "Ipk Tmp Info"
+msgid "Tpk Tmp Info"
+msgstr "Info zur TMP-TPK Installation"
 
-msgid "Ipk Media Info"
-msgstr "Ipk Media Info"
+msgid "Tpk Media Info"
+msgstr "Info zur Media-TPK Installation"
 
 msgid "Networkbrowser - show Shares"
-msgstr "Netwerk Browser - toon koppelingen"
+msgstr "Netzwerk Browser - zeige Freigaben"
 
 msgid "Installed version:"
-msgstr "Geinstalleerde Versie:"
+msgstr "Installierte Version:"
 
 msgid "Emu not found"
-msgstr "geen Emu gevonden"
+msgstr "kein Emu gefunden"
 
 msgid "active"
-msgstr "Autostart geactiveerd"
+msgstr "Autostart aktiviert"
 
 msgid "running"
-msgstr "running"
+msgstr "an"
 
 msgid "started"
-msgstr "gestart"
+msgstr "gestartet"
 
 msgid "Activate (autostart)"
-msgstr "Aktiveren (autostart)"
+msgstr "Aktivieren (autostart)"
 
 msgid "Load Playlist"
-msgstr "Playlist laden"
+msgstr "Playliste laden"
 
 msgid "Edit Playlist"
-msgstr "Playlist bewerken"
+msgstr "Playliste bearbeiten"
 
 msgid "Aktivate new network config ?"
-msgstr "Activeer nieuwe netwerk instellingen ?"
+msgstr "Aktiviere neue Netzwerk Einstellungen?"
 
 msgid "Spezialfunctions unlocked, no input required"
-msgstr "Spezialfunctions unlocked, no input required"
+msgstr "Receiver bereits freigeschaltet, keine Freischaltung notwendig"
 
 msgid "Code not ok, please try again !"
-msgstr "Code is niet goed probeer opnieuw"
+msgstr "Ihr Schlüssel wurde nicht akzeptiert, bitte versuchen Sie es erneut"
 
 msgid "Code ok"
-msgstr "Code is ok"
+msgstr "Ihr Schlüssel wurde erfolgreich aktiviert"
 
 msgid "Serial Input"
-msgstr "Serial Input"
+msgstr "Freischaltmenü"
 
 msgid "Receiver unlock"
-msgstr "Receiver unlock"
+msgstr "Receiver freischalten"
 
 msgid "Code1"
-msgstr "Code1"
+msgstr "Schlüssel 1:"
 
 msgid "Code2"
-msgstr "Code2"
+msgstr "Schlüssel 2: "
 
 msgid "RECEIVER ID: "
-msgstr "Board-ID Serienummer: "
+msgstr "Board-ID Seriennummer: "
 
-msgid "Can't save Code.\n"
-"Delete Plugins to free space"
-msgstr "Code kan niet opgeslagen worden.\n"
-"Verwijder plugins om ruimte vrij te maken"
+msgid "Can't save Code.\nDelete Plugins to free space"
+msgstr "Ihr Schlüssel kann nicht gespeichert werden.\nLöschen Sie bitte eines der von Ihnen installierten Erweiterungen\num freien Speicherplatz zu erhalten."
 
-msgid "Please contact Atemio for activation. Use to navigate the control cross and "
-"the extra buttons displayed with your remote control to select."
-msgstr "Neem Contact op met Atemio om te activeren\n"
-"\n"
-"Gebruik het stuur-kruis en de extra getoonde knopppen op uw "
-"afstandsbediening om te navigeren."
+msgid "Please contact Atemio for activation. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Bitte wenden Sie sich an Atemio, falls Ihre Freischaltung noch nicht wirksam ist.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
 msgid "Alternativ Audio Firmware not working korrekt with all videos (DTSDOWNMIX)!"
-msgstr "(DTSDOWNMIX) is geinstalleerd!\n"
-"hiermee lopen niet alle videos correct."
+msgstr "Sie haben die Alternative Audio Firmware installiert (DTSDOWNMIX)!\nDamit laufen die Videos nicht korrekt."
 
 msgid "To many read error or end of file"
-msgstr "To many read error or end of file"
+msgstr "Zu viele Lesefehler oder das Ende der Datei erreicht"
 
 msgid "date + time"
-msgstr "Datum + Tijd"
+msgstr "Datum + Zeit"
 
 msgid "Not enought space"
-msgstr "Onvoldoende opslagruimte"
+msgstr "Nicht genug Speicherplatz vorhanden"
 
 msgid "Error create filename"
-msgstr "Bestand kan niet gemaakt worden"
+msgstr "Es kann keine Datei angelegt werden"
 
 msgid "Can't open file"
-msgstr "Bestand kan niet geopend worden"
+msgstr "Die Datei kann nicht geöffnet werden"
 
 msgid "Can't open FRONTEND device"
-msgstr "Het FRONTEND device kan niet geopend worden"
+msgstr "Das FRONTEND device kann nicht geöffnet werden"
 
 msgid "Can't open DMX device"
-msgstr "Het DMX device kan niet geopend worden"
+msgstr "Das DMX device kann nicht geöffnet werden"
 
 msgid "Pid's not ok"
-msgstr "PID's zijn niet ok"
+msgstr "Fehler in den Pid's"
 
 msgid "Channel or Transponder is empty"
-msgstr "Kanaal of Transponder ist leeg"
+msgstr "Kanal oder Transponder ist lehr"
 
 msgid "Write error"
-msgstr "Write error"
+msgstr "Schreibfehler"
 
 msgid "No memory"
-msgstr "Geen opslagruimte beschikbaar"
+msgstr "Kein Speicher verfügbar"
 
 msgid "Failed open split file"
-msgstr "Split File kan niet geopend worden"
+msgstr "Split Datei kann nicht geöffnet werden"
 
 msgid "Frontend type unknown"
-msgstr "Frontend Type onbekend"
+msgstr "Frontend Typ unbekannt"
 
 msgid "Tune to channel failed"
-msgstr "Afstemmen op kanaal is niet gelukt"
+msgstr "Kanal kann nicht angesteuert werden"
 
 msgid "Can't create service"
-msgstr "Service kan niet gemaakt worden"
+msgstr "Es kann kein Service angelegt werden"
 
-msgid "Can't find free Tuner for Record.\n"
-"Switch to Recording/Timeshift Channel ?"
-msgstr "Er is geen vrije Tuner .\n"
-"zappen naar  opname/timeshift kanaal ?"
+msgid "Can't find free Tuner for Record.\nSwitch to Recording/Timeshift Channel ?"
+msgstr "Es ist kein freier Tuner vorhanden.\nZum Aufnahme/Timeschift Kanal wechseln?"
 
 msgid "size (default)"
-msgstr "size (default)"
+msgstr "Grösse (Voreinstellung)"
 
 msgid "datetime"
-msgstr "Datum tijd"
+msgstr "Datum Uhrzeit"
 
 msgid "Transponder changed"
-msgstr "Transponder is verandert"
+msgstr "Transponder wurde geändert"
 
 msgid "Start at last position ?"
-msgstr "Starten bij de laatse positie?"
+msgstr "An letzter Stelle beginnen?"
 
-msgid "Install Tithek Ipk first !"
-msgstr "Installeer deTithek Plugin onder applicaties"
+msgid "Install Tithek Tpk first !"
+msgstr "Installieren Sie Bitte das Tithek Plugin unter Erweiterungen"
 
-msgid "Install Weather Ipk first !"
-msgstr "Installeer de weer Plugin onder applicaties"
+msgid "Install Weather Tpk first !"
+msgstr "Installieren Sie Bitte das Wetter Plugin unter Erweiterungen"
 
 msgid "Record started"
-msgstr "Opname is gestart"
+msgstr "Aufnahme wurde gestartet"
 
 msgid "swapwireless"
-msgstr "SWAP-Wlan Module"
+msgstr "Swap-WLAN Module"
 
 msgid "found"
-msgstr "gevonden"
+msgstr "Es wurden"
 
 msgid "Results"
-msgstr "Links gevonden"
+msgstr "Links gefunden"
 
 msgid "Page"
-msgstr "Pagina"
+msgstr "Seite"
 
 msgid "show 2 entrys"
-msgstr "Zeer groot (2 afbeeldingen)"
+msgstr "sehr gross (2 Bilder)"
 
 msgid "show 6 entrys"
-msgstr "Groot (6 afbeeldingen)"
+msgstr "gross (6 Bilder)"
 
 msgid "show 12 entrys"
-msgstr "Klein (12 afbeeldingen)"
+msgstr "klein (12 Bilder)"
 
 msgid "show 20 entrys"
-msgstr "Zeer klein (20 afbeeldingen)"
+msgstr "sehr klein (20 Bilder)"
 
 msgid "show 30 entrys"
-msgstr "ganz klein (30 afbeeldingen)"
+msgstr "ganz klein (30 Bilder)"
 
 msgid "show auto entrys"
-msgstr "Afhankelijk van aantal automatisch aanpassen"
+msgstr "automatisch anpassen"
 
 msgid "Pic Ratio"
-msgstr "Pic Ratio"
+msgstr "Bilder im Orginalformat darstellen"
 
 msgid "Delete"
-msgstr "Wissen"
+msgstr "Löschen"
 
 msgid "Copy"
-msgstr "copieren"
+msgstr "Kopieren"
 
 msgid "Moven"
-msgstr "Verplaatsen"
+msgstr "Verschieben"
 
-msgid "Realy move this file/dir?"
-msgstr "Wilt u dit bestan verplaatsen"
+msgid "Really move this file/dir?"
+msgstr "Wollen Sie diese Datei verschieben?"
 
-msgid "Realy copy this file/dir?"
-msgstr "Wilt u dit bestand copieren ?"
+msgid "Really copy this file/dir?"
+msgstr "Wollen Sie diese Datei kopieren?"
 
-msgid "Realy delete this file/dir?"
-msgstr "Wilt u dit bestand wissen?"
+msgid "Really delete this file/dir?"
+msgstr "Wollen Sie diese Datei löschen?"
 
 msgid "From"
-msgstr "van"
+msgstr "von"
 
 msgid "To"
-msgstr "naar"
+msgstr "nach"
 
-msgid "Install File Manager Ipk first !"
-msgstr "Installeer File Manager Ipk eerst !"
+msgid "Install File Manager Tpk first !"
+msgstr "Installieren Sie Bitte das Datei Browser unter Erweiterungen"
 
 msgid "FILELIST MANAGER"
-msgstr "Bestands browser"
+msgstr "Datei Browser"
 
 msgid "Are you sure you want to delete this directory?"
-msgstr "Wilt u deze directory wissen"
+msgstr "Wollen Sie dieses Verzeichnis löschen?"
 
 msgid "Wait for cam ready"
-msgstr "Wachttijd voor CI Module"
+msgstr "Wartezeit für CI-Module"
 
 msgid "middle"
-msgstr "middel"
+msgstr "mittel"
 
 msgid "Del EPG before scan"
-msgstr "Verwijder EPG voor scan"
+msgstr "Lösche EPG vor der Suche"
 
-msgid "Found Pay Stream visit the official Website and Order this Stream and try "
-"this again !"
-msgstr "Pay-Stream gevonden bezoek de officiele Website en bestel\n"
-"deze Stream en probeer nog eens !"
+msgid "Found Pay Stream visit the official Website and Order this Stream and try this again !"
+msgstr "Pay-Stream gefunden besuchen Sie die offizielle Website und bestellen\nSie diesen Stream und versuchen Sie es nochmal!"
 
 msgid "Show Pay Streams"
-msgstr "Toon Pay-Streams"
+msgstr "Zeige Pay und Englische Streams"
 
 msgid "ADD FAV"
-msgstr "Favorieten toevoegen"
+msgstr "Fav hinzufügen"
 
 msgid "DEL FAV"
-msgstr "Favorieten wissen"
+msgstr "Fav löschen"
 
 msgid "Remove this Favorite ?"
-msgstr "Wilt u deze favoriet wissen ?"
+msgstr "Wollen Sie diesen Favoriten löschen?"
 
 msgid "Add this link as Favorite ?"
-msgstr "Wilt u deze favoriet toevoegen?"
+msgstr "Wollen Sie diesen Favoriten hinzufügen?"
 
 msgid "Copy providerlist successfull"
-msgstr "Copy providerlist geslaagd"
+msgstr "Kopieren des Anbieters erfolgreich abgeschlossen"
 
 msgid "Copy providerlist not ok"
-msgstr "Copy providerlist niet geslaagd"
+msgstr "Kopieren des Anbieters abgebrochen"
 
-msgid "The hoster is not yet supported for the time !"
-msgstr "De hoster wordt momenteel nog niet ondersteund"
+msgid "Copy satlist successfull"
+msgstr "Kopieren des Satelliten erfolgreich abgeschlossen"
+
+msgid "Copy satlist not ok"
+msgstr "Kopieren des Satelliten abgebrochen"
+
+msgid "The hoster is not yet supported !"
+msgstr "Der hoster wird zur zeit noch nicht unterstützt!"
 
 msgid "CLEAR INPUT"
-msgstr "CLEAR INPUT"
+msgstr "Eingabefeld Löschen"
 
 msgid "REMOVE ENTRY"
-msgstr "REMOVE ENTRY"
+msgstr "Listeneintrag Löschen"
 
-msgid "Streaming version of this file is currently not available. You can download "
-"it below."
-msgstr "Streaming-Version is niet beschikbaar: u kunt het hieronder downloaden"
+msgid "Streaming version of this file is currently not available. You can download it below."
+msgstr "Streaming-Version dieser Datei ist derzeit nicht verfügbar. Sie können es nur downloaden."
 
 msgid "Autocheck cam can decrypt"
-msgstr "Autocheck of Cam ontsleutelen kan?"
+msgstr "Automatisches Überprüfen ob Ihr CAM entschlüsseln kann?"
 
 msgid "Enable Cable Tuner ?"
-msgstr "Kabel Tuner actieveren ?"
+msgstr "Wollen Sie den Kabel Tuner aktivieren?"
 
-msgid "Please install ipk Cable Settings, scan currenty not supportet !"
-msgstr "Installeer IPK Kabel Settings in applicatiemenu !\n"
-"Scan is momenteel nog niet geimplementeerd."
+msgid "Please install tpk Cable Settings, scan currenty not supportet !"
+msgstr "Bitte installieren Sie die Kabel Settings im Erweiterungsmenu!\nKabel Suchlauf wird noch nicht unterstützt!"
 
 msgid "Show last pos Question"
-msgstr "Gebruik laatste pos"
+msgstr "Benutze 'An letzter Stelle beginnen'"
 
 msgid "default Directory"
-msgstr "Standaard directory"
+msgstr "standard Verzeichnis"
 
 msgid "use last Directory"
-msgstr "Gebruik altijd laatste directory"
+msgstr "Benutze immer letztes Verzeichnis"
 
 msgid "Pic quality"
-msgstr "Pic quality"
+msgstr "Darstellungsqualität von Fotos"
 
 msgid "low"
 msgstr "gering"
@@ -3985,100 +3583,88 @@ msgid "best"
 msgstr "beste"
 
 msgid "Manual Search Cable"
-msgstr "Handmatig zoeken op Cable"
+msgstr "Manuelle Kabelsuche"
 
 msgid "Unicable manufacturer"
-msgstr "Unicable fabrikant"
+msgstr "Unicable Hersteller"
 
 msgid "Unicable product"
-msgstr "Unicable Product"
+msgstr "Unicable Produkt"
 
 msgid "Resync Recording immediately"
-msgstr "Resync Recording direct"
+msgstr "Synchronisiere Aufnahmen sofort"
 
-msgid "IPK Upgrade Done your system rebooting !"
-msgstr "IPK upgrade afgerond\n"
-"Uw box wordt nieuw gestart"
+msgid "TPK Upgrade done, your system will reboot !"
+msgstr "TPK Aktualisieren abgeschlossen\nIhre Box wird neu gestartet"
 
-msgid "IPK Tmp Install Done your system rebooting !"
-msgstr "IPK Tmp installatie afgesloten\n"
-"uw box wordt opnieuw gestart"
+msgid "TPK Tmp Install done, your system will reboot !"
+msgstr "TPK Tmp Installation abgeschlossen\nIhre Box wird neu gestartet"
 
-msgid "IPK Install Done your system rebooting !"
-msgstr "IPK installatie afgesloten\n"
-"uw box wordt opnieuw gestart"
+msgid "TPK Install done, your system will reboot !"
+msgstr "TPK Installation abgeschlossen\nIhre Box wird neu gestartet"
 
-msgid "IPK Remove Done your system rebooting !"
-msgstr "IPK wissen afgeslotn\n"
-"uw box wordt opnieuw gestart"
+msgid "TPK Remove done your system will reboot !"
+msgstr "TPK Löschen abgeschlossen\nIhre Box wird neu gestartet"
 
 msgid "Weather Infos"
-msgstr "Weer tonen"
+msgstr "Wetter anzeigen"
 
 msgid "Mediathek"
-msgstr "Online Mediatheek"
+msgstr "Online Mediathek"
 
 msgid "Create Folder"
-msgstr "Directory maken"
+msgstr "Verzeichnis anlegen"
 
 msgid "Recording name"
-msgstr "Opname naam"
+msgstr "Aufnahme Name"
 
 msgid "Can't show this file!"
-msgstr "Het bestand kan niet getoond "
+msgstr "Diese Datei kann nicht angezeigt werden"
 
 msgid "Skip privat CA descriptor"
-msgstr "Skip privat CA descriptor"
+msgstr "Überspringe Private CA descriptor"
 
 msgid "Rename"
-msgstr "Hernoemen"
+msgstr "Umbenennen"
 
 msgid "MediaDB scan finished"
-msgstr "MediaDB scan gestopt"
+msgstr "MediaDB Suche beendet"
 
 msgid "This file doesn't exist, or has been removed"
-msgstr "Bestand bestaat niet of is verplaatst"
+msgstr "Dieser Stream ist zur zeit nicht verfügbar oder entfernt worden"
 
-msgid "Here you can select your reader. Use to navigate the control cross and the "
-"extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw cardreader selecteren.\n"
-"\n"
-"Gebruik het stuur-kruis en de extra getoonde knopppen op uw "
-"afstandsbediening om te navigeren."
+msgid "Here you can select your reader. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können sie Ihre Reader auswählen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
-msgid "Here you can configure your reader. Use to navigate the control cross and "
-"the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw cardreader instellen.\n"
-"\n"
-"Gebruik het stuur-kruis en de extra getoonde knopppen op uw "
-"afstandsbediening om te navigeren."
+msgid "Here you can configure your reader. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können sie Ihre Reader Konfiguration vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
 msgid "Reader Config"
-msgstr "Reader instellingen"
+msgstr "Reader Einstellungen"
 
 msgid "Reader Selection"
-msgstr "Reader keuze"
+msgstr "Reader Auswahl"
 
 msgid "Reader Configuration"
-msgstr "Reader configuratie"
+msgstr "Reader Konfiguration"
 
 msgid "Reader Config Plugin not installed !"
-msgstr "Installer aub de reader configuratie Plugin unter applicaties"
+msgstr "Installieren Sie Bitte das Reader Konfiguration Plugin unter Erweiterungen"
 
 msgid "Reader active"
-msgstr "Reader geactiveerd"
+msgstr "Reader aktiviert"
 
 msgid "Oscam config written to medium !"
-msgstr "Oscam Config wordt opgeslagen"
+msgstr "Oscam Config wurde gespeichert!"
 
 msgid "Restart Oscam ?"
-msgstr "Oscam opnieuw starten ?"
+msgstr "Soll Oscam neu gestartet werden?"
 
 msgid "first slot"
-msgstr "eerste Kaartlezer (onder)"
+msgstr "erster Kartenschacht (unten)"
 
 msgid "second slot"
-msgstr "tweede Kaartlezer (boven)"
+msgstr "zweiter Kartenschacht (oben)"
 
 msgid "Enable"
 msgstr "Enable"
@@ -4087,157 +3673,461 @@ msgid "Device"
 msgstr "Device"
 
 msgid "green"
-msgstr "groen"
+msgstr "grün"
 
 msgid "Backdrop Download Count"
-msgstr "Hoeveel achtergrondbeelden moeten er geladen worden"
+msgstr "Wieviel Hintergrundbilder sollen geladen werden"
 
 msgid "Debug Modus"
 msgstr "Debug Modus"
 
 msgid "Backdrop Interval"
-msgstr "Achtergrond beeldwissel interval"
+msgstr "Hintergrund Bilderwechesel Interval"
 
 msgid "MediaDB Debug"
 msgstr "MediaDB Debug Modus"
 
 msgid "MediaDB place"
-msgstr "MediaDB opslaglocatie"
+msgstr "MediaDB Speicherort"
 
 msgid "scan Directory"
-msgstr "scan Directory"
+msgstr "Durchsuchtes Verzeichnis"
 
 msgid "OTHER"
-msgstr "anders"
+msgstr "mehr"
 
 msgid "Delete File"
-msgstr "Bestand wissen"
+msgstr "Datei löschen"
 
 msgid "MediaDB Scan Info"
-msgstr "MediaDB Scan informatie"
+msgstr "MediaDB Scan Informationen"
 
 msgid "MediaDB Edit"
-msgstr "MediaDB bewerken"
+msgstr "MediaDB Eintrag bearbeiten"
 
 msgid "AV Settings"
-msgstr "Audio/Video instellingen"
+msgstr "Audio/Video Einstellungen"
 
 msgid "Red-Menu"
-msgstr "Rood-Menu"
+msgstr "Rot-Menu"
 
 msgid "Expert Modus"
-msgstr "Expert Modus"
+msgstr "Experten Modus"
 
 msgid "Create Record Picture"
-msgstr "Create Record Picture"
+msgstr "Erstelle Aufnahme Vorschaubild"
 
 msgid "Error, Internet Connection not found"
-msgstr "Fout, Geen internet verbinding"
+msgstr "Fehler, keine Internet Verbindung verfügbar"
 
 msgid "No space left on device"
-msgstr "Fout, onvoldoende opslagruimte"
+msgstr "Fehler, Festplatte/Stick voll"
 
 msgid "Only default signalrate"
-msgstr "Gebruit Standard Signalrate"
+msgstr "Verwende Standard Signalrate"
 
 msgid "Only DVBS"
-msgstr "Alleen DVBS"
+msgstr "Nur DVBS verwenden"
 
 msgid "Only default FEC"
-msgstr "Alleem Standaard FEC"
+msgstr "Verwende Standard FEC"
 
 msgid "Show infobar on program change"
-msgstr "Toon infobalk bij zappen"
+msgstr "Zeige Infobar bei Sendungwechsel"
 
 msgid "Deactivate Crypt Support on Media Playback"
-msgstr "Deactivate Crypt bij media afspelen"
+msgstr "Deaktiviere Crypt Support während der Wiedergabe von Daten/Streams"
 
 msgid "Use cross control for fast zapping and vol"
-msgstr "Gebruik het stuur-kruis voor snel zappen en volume regeling"
+msgstr "Benutze das Steuerkreuz für schnelles Umschalten und laut/leise"
 
 msgid "Deactivate MiniTV"
-msgstr "Deactivate MiniTV"
+msgstr "Deaktiviere MiniTV Vorschau Fenster"
 
 msgid "Caching Playback (10MB / 120s)"
-msgstr "Caching Playback (10MB / 120s)"
+msgstr "Auf Festplatte zwischenspeichern (10MB/120s)"
 
 msgid "Caching Playback (20MB / 240s)"
-msgstr "Caching Playback (20MB / 240s)"
+msgstr "Auf Festplatte zwischenspeichern (20MB/240s)"
 
 msgid "Caching Playback (30MB / 360s)"
-msgstr "Caching Playback (30MB / 360s)"
+msgstr "Auf Festplatte zwischenspeichern (30MB/360s)"
 
 msgid "Download Full File"
-msgstr "Download Full File"
+msgstr "Datei Downloaden in Streampfad"
 
 msgid "Download Full File (background)"
-msgstr "Download Full File (background)"
+msgstr "Datei Downloaden in Streampfad (unsichtbar)"
 
 msgid "Remove Cachefile ?"
-msgstr "Cache bestand verwijderen"
+msgstr "Zwischengespeicherte Datei löschen?"
 
 msgid "Playbackbuffer Size"
-msgstr "Playbackbuffer Size"
+msgstr "Wiedergabepuffer - Grösse (http) Streams"
 
 msgid "Time to wait after seek for fill buffer"
-msgstr "Weergave Buffer: wachttijd na zoekactie om buffer te vullen"
+msgstr "Wiedergabepuffer - Zeit bis zum automatischen laden nach einem Seek"
 
 msgid "Streaming Playback (default)"
-msgstr "Streaming Playback (default)"
+msgstr "Direktes Streamen (standard)"
 
 msgid "Streaming Playback Caching (0.5MB)"
-msgstr "Streaming Playback Caching (0.5MB)"
+msgstr "Direktes Streamen mit Puffer (0.5MB)"
 
 msgid "Streaming Playback Caching (1MB)"
-msgstr "Streaming Playback Caching (1MB)"
+msgstr "Direktes Streamen mit Puffer (1MB)"
 
 msgid "Streaming Playback Caching (2MB)"
-msgstr "Streaming Playback Caching (2MB)"
+msgstr "Direktes Streamen mit Puffer (2MB)"
 
 msgid "Streaming Playback Caching (3MB)"
-msgstr "Streaming Playback Caching (3MB)"
+msgstr "Direktes Streamen mit Puffer (3MB)"
 
 msgid "Streaming Playback Caching (4MB)"
-msgstr "Streaming Playback Caching (4MB)"
+msgstr "Direktes Streamen mit Puffer (4MB)"
 
 msgid "Streaming Playback Caching (5MB)"
-msgstr "Streaming Playback Caching (5MB)"
+msgstr "Direktes Streamen mit Puffer (5MB)"
 
 msgid "Streaming Playback Caching (7.5MB)"
-msgstr "Streaming Playback Caching (7.5MB)"
+msgstr "Direktes Streamen mit Puffer (7.5MB)"
 
 msgid "Streaming Playback Caching (10MB)"
-msgstr "Streaming Playback Caching (10MB)"
+msgstr "Direktes Streamen mit Puffer (10MB)"
 
-msgid "ERROR... can't set maker in this file"
-msgstr "Fout.. Marker kan niet gezet worden in dit bestand"
+msgid "ERROR... can't set marker in this file"
+msgstr "Fehler für diese Datei kann kein Marker gesetzt werden"
 
 msgid "Marker has been set."
-msgstr "Marker is niet gezet"
+msgstr "Ihr Marker wurde erfolgreich gesetzt"
 
-msgid "Download successful !"
-msgstr "Download geslaagd!"
+msgid "Download finished!"
+msgstr "Download abgeschlossen!"
 
 msgid "dnsaddresse"
-msgstr "DNS Adres"
+msgstr "DNS Adresse"
 
 msgid "usedns"
-msgstr "usedns"
+msgstr "Benutze DNS Adresse"
 
 msgid "Search on Kinox"
-msgstr "Search on Kinox"
+msgstr "Suche diesen Titel bei Kinox"
+
+msgid "Search on Solarmovies (movie)"
+msgstr "Suche diesen Titel bei Solarmovies (movie)"
+
+msgid "Search on Solarmovies (serie)"
+msgstr "Suche diesen Titel bei Solarmovies (serie)"
+
+msgid "Search on Youtube"
+msgstr "Suche diesen Titel bei Youtube"
+
+msgid "Search on MyVideo"
+msgstr "Suche diesen Titel bei MyVideo"
 
 msgid "Error, found result without imdbid we can't this save in MediaDB"
-msgstr "Fout, gevonden zoek resultaat heeft geen IMDBid en kan daardoor niet \n"
-"in de MediaDB opgeslagen worden"
+msgstr "Fehler, ihr TMBb Suchergebniss hat eine ungültige imdbid und kann\ndadurch nicht in der MediaDB abgespeichert werden"
 
 msgid "EPG Scan activate standby?"
-msgstr "EPG Scan activate standby?"
+msgstr "EPG Scan aktiviert Standby?"
 
-msgid "Timeshift file to short\n"
-"please wait a little and try again"
-msgstr "Timeshift: Bestand is te klein\n"
-"wacht een moment en probeer op nieuw"
+msgid "Timeshift file to short\nplease wait a little and try again"
+msgstr "Timeshift: Datei ist zu klein\nBitte später versuchen"
 
 msgid "Behavior at recording"
-msgstr "Opnamegedrag"
+msgstr "Verhalten bei der Aufnahme"
+
+msgid "star"
+msgstr "Stern"
+
+msgid "blink star"
+msgstr "Stern blinkend"
+
+msgid "show record"
+msgstr "zeige record"
+
+msgid "fade out/in"
+msgstr "ein/ausblenden"
+
+msgid "blink"
+msgstr "blinken"
+
+msgid "Start Wlan ?"
+msgstr "Wollen Sie WLAN jetzt starten?"
+
+msgid "View Sections"
+msgstr "Ansicht Menus"
+
+msgid "View Cover"
+msgstr "Ansicht Cover (streams)"
+
+msgid "deaktivate ethernet interface ?"
+msgstr "LAN Verbindung ausschalten?"
+
+msgid "EPG SHORT VIEW"
+msgstr "EPG-Kurzübersicht"
+
+msgid "Short EPG"
+msgstr "Kurz-EPG"
+
+msgid "Timeshift Settings"
+msgstr "Timeshift Einstellungen"
+
+msgid "Timeshifttype"
+msgstr "Timeshiftart"
+
+msgid "Ask on channel switch"
+msgstr "Nachfragen bei Kanalwechsel"
+
+msgid "Send all CAID to modules"
+msgstr "Alle CAIDs an CI-Modul schicken"
+
+msgid "Automatic start last subtitle"
+msgstr "Automatischer Untertitel Start"
+
+msgid "Audio delay"
+msgstr "Audio Verzögerung"
+
+msgid "Show hidden files"
+msgstr "Versteckte Dateien anzeigen"
+
+msgid "Activate CEC"
+msgstr "CEC einschalten"
+
+msgid "Ext. Modul detect (needs reboot)"
+msgstr "Erw. Modulerkennung (reboot erforderlich)"
+
+msgid "Can't create Path"
+msgstr "Verzeichnis konnte nicht angelegt werden"
+
+msgid "Create Path"
+msgstr "Verzeichnis anlegen"
+
+msgid "Use numeric keys"
+msgstr "Benutze Nummerntasten"
+
+msgid "Mail send succesfull"
+msgstr "E-Mail erfolgreich versendet"
+
+msgid "Can't send Mail"
+msgstr "E-Mail konnte nicht versendet werden"
+
+msgid "SEND"
+msgstr "Senden"
+
+msgid "If you don't find Windows shares you need to disable 'Password protected sharing' in the 'Network and Sharing Center'."
+msgstr "Sollten keine Windows Freigaben sichtbar sein, muss 'Kennwortgeschützte Freigaben' im 'Netzwerk- und Freigabecenter' abgeschalten werden."
+
+msgid "Show HDD freesize"
+msgstr "Zeige freien Festplattenspeicher"
+
+msgid "Jump To (min)"
+msgstr "Springe von akt. Position vor +(min)"
+
+msgid "Jump"
+msgstr "Springen"
+
+msgid "Season"
+msgstr "Staffel"
+
+msgid "Episode"
+msgstr "Folge"
+
+msgid "Vietnamese"
+msgstr "Vietnamesisch"
+
+msgid "/var not writeable!\nRepair it?"
+msgstr "/var nicht beschreibbar!\nReparieren?"
+
+msgid "/mnt not writeable!\nRepair it?"
+msgstr "/mnt nicht beschreibbar!\nReparieren?"
+
+msgid "Can't install Package. Package to big."
+msgstr "Paket zu gross. Installation nicht möglich."
+
+msgid "Format and restore default settings"
+msgstr "Formatiere Internen Speicher mit Werkseinstellung"
+
+msgid "Format and backup/restore settings"
+msgstr "Formatiere Internen Speicher ohne Werkseinstellung"
+
+msgid "Do you really want to erase Swap (Settings are preserve)?\nThe Box will reboot and the erase will be started!"
+msgstr "Internen Swap Speicher löschen ohne Werkseinstellung durchführen?\nBox neu starten und Löschvorgang ausführen "
+
+msgid "MediaDB entry for this file not found."
+msgstr "MediaDB Eintrag dieser Datei konnte nicht gefunden werden."
+
+msgid "Tunerconfig is not allowed if record\nor stream is running !"
+msgstr "Tunerconfig während einer Aufnahme/Streaming ist nicht erlaubt"
+
+msgid "Can't change hostname !"
+msgstr "Fehler, Hostname kann nicht geändert werden!"
+
+msgid "HOSTNAME"
+msgstr "Hostname"
+
+msgid "Tpk Update Info - Update ERROR"
+msgstr "Tpk Update Info - Update Fehler"
+
+msgid "Can't get all TPK index !"
+msgstr "Es konnten nicht alle TPK Index Dateien geholt werden !"
+
+msgid "Can't update all packages !"
+msgstr "Es konnten nicht alle TPK Pakete aktualisiert werden !"
+
+msgid "Update Plugins to new Version?"
+msgstr "Plugins auf die neue Version aktualisieren?"
+
+msgid "Channel Allocation"
+msgstr "Sender Zuordnung"
+
+msgid "ADD BOUQUET"
+msgstr "Favoriten hinzufügen"
+
+msgid "sort service"
+msgstr "Sender sortieren"
+
+msgid "card present"
+msgstr "Karte gefunden"
+
+msgid "card not present"
+msgstr "Keine Karte gefunden"
+
+msgid "Directory has content\nReally delete directory and content?"
+msgstr "Verzeichnis hat einen Inhalt\nWirklich löschen?"
+
+msgid "Hid XXX Streams"
+msgstr "XXX Streams ausblenden"
+
+msgid "Filesize (B): "
+msgstr "Dateigrösse (B): "
+
+msgid "Filesize (KB): "
+msgstr "Dateigrösse (KB): "
+
+msgid "Filesize (MB): "
+msgstr "Dateigrösse (MB): "
+
+msgid "Move (B): "
+msgstr "Verschoben (B): "
+
+msgid "Move (KB): "
+msgstr "Verschoben (KB): "
+
+msgid "Move (MB): "
+msgstr "Verschoben (MB): "
+
+msgid "Copy (B): "
+msgstr "Kopiert (B): "
+
+msgid "Copy (KB): "
+msgstr "Kopiert (KB): "
+
+msgid "Copy (MB): "
+msgstr "Kopiert (MB): "
+
+msgid "Amount of files: "
+msgstr "Anzahl Dateien: "
+
+msgid "file move error"
+msgstr "Fehler beim Verschieben"
+
+msgid "file copy error"
+msgstr "Fehler beim Kopieren"
+
+msgid "Can't rename file !"
+msgstr "Datei konnte nicht umbenannt werden !"
+
+msgid "Can't create directory !"
+msgstr "Verzeichnis konnte nicht erstellt werden !"
+
+msgid "Can't remove file/dir !"
+msgstr "Datei/Verzeichnis konnte nicht gelöscht werden !"
+
+msgid "stable"
+msgstr "Stabil"
+
+msgid "unstable"
+msgstr "Unstabil"
+
+msgid "Box recording finished poweroff in 30sec !"
+msgstr "Aufnahme beendet. Box wird in 30sek ausgeschalten !"
+
+msgid "Timer Record start !\n"
+msgstr "Timer Aufnahme gestartet ! \n"
+
+msgid "Choice Install Medium"
+msgstr "Installation Auswahl"
+
+msgid "Install to Flash (permanent)"
+msgstr "In Flash installieren (permanent)"
+
+msgid "Install to Flash (temporary)"
+msgstr "In Flash installieren (temporär)"
+
+msgid "Install to Stick or HDD"
+msgstr "Auf Stick o. HDD installieren"
+
+msgid "Flash (permanent)"
+msgstr "Flash (permanent)"
+
+msgid "Flash (temporary)"
+msgstr "Flash (temporär)"
+
+msgid "Stick or HDD"
+msgstr "Stick oder HDD"
+
+msgid "yes (Text in %)"
+msgstr "Ja (Text in %)"
+
+msgid "yes (Text in MB)"
+msgstr "Ja (Text in MB)"
+
+msgid "Use config from Flash (permanent)"
+msgstr "Config vom Flash (permanent) verwenden"
+
+msgid "Use config from Flash (temporary)"
+msgstr "Config vom Flash (temporär) verwenden"
+
+msgid "Use config from Stick or HDD"
+msgstr "Config vom Stick / HDD verwenden"
+
+msgid "Choice Config File"
+msgstr "Config File wählen"
+
+msgid "No config file found."
+msgstr "Es wurde kein Config File gefunden."
+
+msgid "Oscam dvbapi config disabled !"
+msgstr "Oscam dvbapi config deaktiviert !"
+
+msgid "Oscam dvbapi config enabled !"
+msgstr "Oscam dvbapi config aktiviert !"
+
+msgid "Dvbapi (enabled)"
+msgstr "Dvbapi (aktiviert)"
+
+msgid "Dvbapi (disabled)"
+msgstr "Dvbapi (deaktiviert)"
+
+msgid "After EPG Scan"
+msgstr "Nach EPG Suche"
+
+msgid "Found new Stick/HDD.\nYou can configure it in Harddisk Menu."
+msgstr "Neuer Stick/HDD erkannt.\nSie können diesen im Festplatten Menü einstellen."
+
+msgid "yes / vzap 1 sec"
+msgstr "Ja / VZAP 1 sek"
+
+msgid "yes / vzap 2 sec"
+msgstr "Ja / VZAP 2 sek"
+
+msgid "yes / vzap endless"
+msgstr "Ja / VZAP unendlich"
+
+msgid "Deavtivate Refresh Time and After EPG in scan-mode"
+msgstr "Deaktiviere Aktualisierungszeit und Nach Suche im Suche-Modus"
+
+msgid "Can't start system update\nSyntax Error on updatefile"
+msgstr "System Aktualisierung kann nicht gestartet werden!\nSyntax Fehler im Update File."
+
