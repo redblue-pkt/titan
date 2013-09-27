@@ -201,40 +201,40 @@ msgid "Auto resolution"
 msgstr "Automatische resolutie"
 
 msgid "Auto Resolution"
-msgstr "Automatische Auflösung"
+msgstr "Automatische resolutie"
 
 msgid "Automatic Search"
-msgstr "Automatische Sendersuche"
+msgstr "Automatisch zoeken"
 
 msgid "Automatic stop in 5 seconds."
-msgstr "Automatisches Neustart wird in 5 Sekunden eingeleitet!"
+msgstr "Automatische herstart in 5 seconden!"
 
 msgid "Automount"
-msgstr "Automatische Einbindung"
+msgstr "Automount"
 
 msgid "Autostart"
-msgstr "Boot Optionen"
+msgstr "Autostart"
 
 msgid "A-Z (Text)"
 msgstr "A-Z (Text)"
 
 msgid "bar"
-msgstr "Farbliche Darstellung des Hintergrundes"
+msgstr "Achtergrondkleur"
 
 msgid "Backup / Restore Settings"
-msgstr "Einstellungen sichern/wiederherstellen"
+msgstr "Backup maken/terugzetten"
 
 msgid "Backup"
-msgstr "Sicherung erstellen"
+msgstr "Backup opslaan"
 
 msgid "BACKUP ERROR"
-msgstr "!!! Fehler beim Sichern der Daten !!!"
+msgstr "!!! Fout bij het maken van Backup !!!"
 
 msgid "Backup - Settings"
-msgstr "Einstellungen werden gesichert"
+msgstr "Backup wordt gemaakt"
 
 msgid "Backup startet\n\nPlease wait..."
-msgstr "Sicherung wurde gestartet\n\nBitte warten..."
+msgstr "Backup wordt gemaaktt\n\neven geduld.."
 
 msgid "bbgain"
 msgstr "BBGain"
@@ -243,37 +243,37 @@ msgid "BER:"
 msgstr "BER:"
 
 msgid "bestfit"
-msgstr "Auf Bildschirmgröße verbreitern"
+msgstr "Verbreden tot beeldgrootte"
 
 msgid "Beta Config"
-msgstr "Betatester Einstellungen"
+msgstr "Betatester instellingen"
 
 msgid "betapass"
-msgstr "Betatester Passwort"
+msgstr "Betatester wachtwoord"
 
 msgid "betauser"
-msgstr "Betatester Benutzername"
+msgstr "Betatester loginnaam"
 
 msgid "big"
-msgstr "groß"
+msgstr "groot"
 
 msgid "black"
-msgstr "schwarz"
+msgstr "zwart"
 
 msgid "blue"
-msgstr "blau"
+msgstr "blauw"
 
 msgid "Blue Button"
-msgstr "Blaue Taste"
+msgstr "Blauwe knop"
 
 msgid "Blue Key Action - Setup"
-msgstr "Blaue - Taste Belegungsmenü"
+msgstr "Blauweknop - functievastlegging"
 
 msgid "Blue Key Action - Plugins"
-msgstr "Blaue - Taste Erweiterungsliste"
+msgstr "Blauweknop - Plugins"
 
 msgid "border"
-msgstr "Farbliche Darstellung der Umrandung"
+msgstr "Kaderkleur"
 
 msgid "bootlogos"
 msgstr "Bootlogos"
@@ -285,22 +285,22 @@ msgid "Bootlogo"
 msgstr "Bootlogo"
 
 msgid "BootResolution"
-msgstr "Startauflösung"
+msgstr "Startresolutie"
 
 msgid "Boot Resolution"
-msgstr "Startauflösung"
+msgstr "Start resolutie"
 
 msgid "bootrgbfix"
-msgstr "RGB Korrektur beim Start"
+msgstr "RGB-correctie bij start"
 
 msgid "bootstop"
-msgstr "Startabbruch"
+msgstr "bootstop"
 
 msgid "Bouquet List"
-msgstr "Favoriten"
+msgstr "Favorieten"
 
 msgid "Bouquets"
-msgstr "Favoriten"
+msgstr "Favorieten"
 
 msgid "Brightness"
 msgstr "Helligkeit"
