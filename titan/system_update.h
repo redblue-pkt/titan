@@ -266,6 +266,25 @@ void screensystem_update(int mode)
 					msgtxt = ostrcat(msgtxt, _("starting Full Update ?"), 1, 0);
 				}
 
+				if(ostrstr(filelist->select->text, "_BACKUP_") != NULL)
+				{
+					cmd = ostrcat(cmd, "backup ", 1, 0);
+					cmd = ostrcat(cmd, tmpstr, 1, 0);
+					cmd = ostrcat(cmd, auth, 1, 0);
+					if(imgtype == 1)
+						cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
+					else
+						cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
+
+					if(!file_exist("/mnt/swapextensions/logs"))
+						 mkdir("/mnt/swapextensions/logs", 777);
+
+					if(file_exist("/etc/.beta") && file_exist("/mnt/swapextensions/logs"))
+						cmd = ostrcat(cmd, " > /mnt/swapextensions/logs/update_debug.log 2>&1", 1, 0);
+
+					msgtxt = ostrcat(msgtxt, _("starting Full Update (from backup) ?"), 1, 0);
+				}
+
 				clearscreen(systemupdate);
 				resettvpic();
 				if(msgtxt == NULL)
