@@ -301,14 +301,14 @@ void screensystem_update(int mode)
 					addscreenrc(systemupdate, filelist);
 				}
 
-				if(textbox(_("Message"), msgtxt, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+				if(textbox(_("Message"), msgtxt, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
 				{
 					debug(40, "update started cmd: %s", cmd);
 					status.sec = 0; //deactivate spinner
 					
 					system(cmd);
 					//should only reached if system fails
-					textbox(_("Message"), _("Can't start system update\nSyntax Error on updatefile"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+					textbox(_("Message"), _("Can't start system update\nSyntax Error on updatefile"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
 					debug(40, "update error cmd: %s", cmd);
 					drawscreen(systemupdate, 0, 0);
 					getfilelist(systemupdate, filelistpath, filelist, filepath, filemask, 0, NULL);
