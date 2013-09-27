@@ -1,20 +1,20 @@
 msgid "--- SD resolution"
-msgstr "--- SD Auflösung"
+msgstr "--- SD resolutie"
 
 msgid "--- Time to switch"
-msgstr "--- Zeit bis Umschalten"
+msgstr "--- tijd voordat er omgeschakeld wordt"
 
 msgid "1500rpm"
-msgstr "1500 U/min"
+msgstr "1500 toeren"
 
 msgid "3D Mode"
 msgstr "3D Modus"
 
 msgid "3D-Mode Settings"
-msgstr "3D-Modus Einstellungen"
+msgstr "3D-Mode instellingen"
 
 msgid "500rpm"
-msgstr "500 U/min"
+msgstr "500 toeren"
 
 msgid "A mount entry with this name already exists!\n"
 "Update existing entry and continue?"
@@ -22,33 +22,33 @@ msgstr "Eine Freigabe mit diesem Name existiert bereits!\n"
 "Wollen sie diese wirklich überschreiben?"
 
 msgid "Are you sure you want remove this share?"
-msgstr "Wollen Sie diese Freigabe wirklich löschen?"
+msgstr "Weet u zeker dat u deze netwerkkoppeling wilt verwijderen?"
 
 msgid "Are you sure you want to save this network mount?"
-msgstr "Wollen Sie diese Freigabe wirklich speichern?"
+msgstr "Weet u zeker dat u deze nerwerkkoppeling wilt opslaan?"
 
 msgid "Are you sure you want to remove all Partitions\n"
 "on this device and create a new Partition 1?\n"
 "Box reboots after format"
-msgstr "Wollen Sie alle Partitionen entfernen\n"
-"auf diesem Gerät und eine neue Partition erstellen?\n"
-"Die Box wird danach neu gestartet."
+msgstr "Wilt u alle partities verwijderen\n"
+"van dit apparaat en een nieuwe partitie maken?\n"
+"De box wordt vervolgens opnieuw opgestart."
 
 msgid "Are you sure you want to format this Partition?\n"
 "Box reboots after format"
-msgstr "Wollen sie die Partition formatieren?\n"
-"Die Box wird danach neu gestartet."
+msgstr "Weet u zeker dat u deze partitie wilt formatteren?\n"
+"De box wordt vervolgens opnieuw opgestart."
 
 msgid "Are you sure you want to check this Partition?\n"
 "Box reboots after check"
-msgstr "Wollen sie die Partition prüfen?\n"
-"Die Box wird danach neu gestartet."
+msgstr "Weet u zeker dat u de partitie wilt testen?\n"
+"De box wordt vervolgens opnieuw opgestart."
 
 msgid "A record hdd or a swapstick must be mounted!"
-msgstr "Es muss eine Festplatte oder ein USB-Stick eingebunden sein"
+msgstr "Er moet een hardeschijf of een USB-Stick ge-mount zijn!"
 
 msgid "A/V Settings"
-msgstr "Bild/Ton Einstellungen"
+msgstr "A/V instellingen"
 
 msgid "Panel"
 msgstr "Atemio Panel"
@@ -57,16 +57,16 @@ msgid "Wizard"
 msgstr "Setup-Assistent"
 
 msgid "Aborting restoring..."
-msgstr "Die Rücksicherung der Daten wird beendet!"
+msgstr "Backup terugzetten wordt afgebroken"
 
 msgid "Aborting backup..."
-msgstr "Die Datensicherung wird beendet!"
+msgstr "Backup maken wordt afgebroken"
 
 msgid "About"
-msgstr "Über"
+msgstr "Over"
 
 msgid "AC3 default"
-msgstr "Dolby Digital (AC3) standardmäßig"
+msgstr "Dolby Digital (AC3) default"
 
 msgid "AC3 downmix"
 msgstr "Dolby Digital (AC3) downmix"
@@ -75,34 +75,34 @@ msgid "AC3 Mode"
 msgstr "Dolby Digital (AC3) Modus"
 
 msgid "Action after"
-msgstr "Aktion danach"
+msgstr "Aktie na"
 
 msgid "Aktion after"
-msgstr "Nach der Aufnahme"
+msgstr "Na de opname"
 
 msgid "Activate"
-msgstr "Aktivieren"
+msgstr "Activeren"
 
 msgid "Adapter Settings"
-msgstr "IP-Addressen Einstellungen"
+msgstr "IP-instellingen"
 
 msgid "add service"
-msgstr "Eintrag hinzufügen"
+msgstr "Service toevoegen"
 
 msgid "add recording (stop after current event)"
-msgstr "Aufnahme hinzufügen (diese Sendung)"
+msgstr "Opname toevoegen (deze uitzending)"
 
 msgid "add recording (indefinitely)"
-msgstr "Aufnahme hinzufügen (unbegrenzt)"
+msgstr "Opname toevoegen (oneindig)"
 
 msgid "add recording (enter duration)"
-msgstr "Aufnahme hinzufügen (Länge eingeben)"
+msgstr "Opname toevoegen (opnameduur ingeven)"
 
 msgid "ADD"
-msgstr "Hinzufügen"
+msgstr "Toevoegen"
 
 msgid "Add Cifs Network Share"
-msgstr "Hinzufügen einer Cifs Freigabe"
+msgstr "Cifs Network Share toevoegen"
 
 msgid "Add Nfs Network Share"
 msgstr "Hinzufügen einer Nfs Freigabe"
@@ -914,10 +914,10 @@ msgid "Infobar Timeout"
 msgstr "Zeit bis Infobar ausblendet in Sekunden"
 
 msgid "Information"
-msgstr "Informatie"
+msgstr "Information"
 
 msgid "Information..."
-msgstr "Informatie"
+msgstr "Informationen"
 
 msgid "Infos"
 msgstr "Infos"
@@ -2173,10 +2173,10 @@ msgid "System Info"
 msgstr "System Infos"
 
 msgid "System"
-msgstr "Systeem"
+msgstr "System"
 
 msgid "System..."
-msgstr "Systeem"
+msgstr "System"
 
 msgid "System:"
 msgstr "System:"
@@ -4127,7 +4127,3 @@ msgstr "Ja / VZAP unendlich"
 
 msgid "Deavtivate Refresh Time and After EPG in scan-mode"
 msgstr "Deaktiviere Aktualisierungszeit und Nach Suche im Suche-Modus"
-
-msgid "Can't start system update\nSyntax Error on updatefile"
-msgstr "System Aktualisierung kann nicht gestartet werden!\nSyntax Fehler im Update File."
-
