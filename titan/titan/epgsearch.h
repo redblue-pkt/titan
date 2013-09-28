@@ -146,8 +146,14 @@ void screenepgsearch(char* text)
 				else
 				{
 					genre = 0;
+					char* s1 = ostrcat(listbox->select->text, NULL, 0, 0);
+					char* s2 = ostrcat(listbox->select->handle, NULL, 0, 0);
+					char* s3 = ostrcat(listbox->select->handle1, NULL, 0, 0);
 				  delmarkedscreennodes(epgsearch, 1);
-				  searchepg(listbox->select->text, listbox->select->handle, listbox->select->handle1, 3, epgsearch, listbox);
+				  searchepg(s1, s2, s3, 3, epgsearch, listbox);
+				  free(s1); s1 = NULL;
+				  free(s2); s2 = NULL;
+				  free(s3); s3 = NULL;
 				}
 			}
 			break;
