@@ -2176,13 +2176,13 @@ int autoresolution()
 	{
 		setvideomode("720p50", 0);
 		changefbresolution("720p50", 0);
-		setcolorformat("hdmi_rgb");
+		setcolorformat("hdmi_rgb", 0);
 	}
 	else
 	{
 		setvideomode("576i50", 0);
 		changefbresolution("576i50", 0);
-		setcolorformat("rgb");
+		setcolorformat("rgb", 1);
 	}
 
 	free(value);
@@ -4862,7 +4862,9 @@ int setvideomode(char* value, int flag)
 	return 0;
 }
 
-int setcolorformat(char* value)
+//flag 0 = hdmi
+//flag 1 = scart
+int setcolorformat(char* value, int flag)
 {
 	char* colorformatdev;
 	int ret = 0;
@@ -4873,7 +4875,13 @@ int setcolorformat(char* value)
 	{
 		debug(100, "set %s to %s", colorformatdev, value);
 		ret = writesys(colorformatdev, value, 0);
-		if(ret == 0) addconfig("av_colorformat", value);
+		if(ret == 0)
+		{
+			if(flag == 0)
+				addconfig("av_colorformat", value);
+			else
+				addconfig("av_colorformatscart", value);
+		}
 		return ret;
 	}
 
