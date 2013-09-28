@@ -223,7 +223,7 @@ struct provider* addprovider(char *line, int count, struct provider* last)
 
 	if(last == NULL)
 	{
-		while(node != NULL && strcoll(newnode->name, node->name) > 0)
+		while(node != NULL && strcasecmp(newnode->name, node->name) > 0)
 		{
 			prev = node;
 			node = node->next;
