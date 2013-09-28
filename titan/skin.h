@@ -983,14 +983,9 @@ int addscreen(char *buf, int del, int flag)
 //flag 1: check if screen name exists
 int readscreen(char *filename, int del, int flag)
 {
-printf("xxxxxxxxxxxxxxxxxxx readscreen in");
 	char *buf = NULL;
 
-	if(filename == NULL)
-	{
-		printf("xxxxxxxxxxxxxxxxxxx readscreen err out"); 
-		return 1;
-	}
+	if(filename == NULL) return 1;
 
 	buf = readfiletomem(filename, 1);
 	
@@ -1009,7 +1004,6 @@ printf("xxxxxxxxxxxxxxxxxxx readscreen in");
 		free(buf);
 	}
 	
-	printf("xxxxxxxxxxxxxxxxxxx readscreen out");
 	return 0;
 }
 
