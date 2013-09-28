@@ -47,6 +47,7 @@ struct tpk
 	int size;
 	char* installpath;
 	char* usepath;
+	char* boxtype;
 	struct tpk* prev;
 	struct tpk* next;
 };
@@ -78,7 +79,7 @@ void debugtpk()
 	}
 }
 
-struct tpk* addtpk(char *name, char* desc, char* section, char* showname, char* arch, char* filename, char* titanname, int version, int group, int minversion, int preinstalled, char* url, int size, char* installpath, char* usepath, struct tpk* last)
+struct tpk* addtpk(char *name, char* desc, char* section, char* showname, char* arch, char* filename, char* titanname, int version, int group, int minversion, int preinstalled, char* url, int size, char* installpath, char* usepath, char* boxtype, struct tpk* last)
 {
 	struct tpk *newnode = NULL, *prev = NULL, *node = tpk;
 
@@ -107,6 +108,7 @@ struct tpk* addtpk(char *name, char* desc, char* section, char* showname, char* 
 	newnode->size = size;
 	newnode->installpath = strstrip(ostrcat(installpath, NULL, 0, 0));
 	newnode->usepath = strstrip(ostrcat(usepath, NULL, 0, 0));
+	newnode->boxtype = strstrip(ostrcat(boxtype, NULL, 0, 0));
 
 	if(last == NULL)
 	{
@@ -771,7 +773,7 @@ struct tpk* tpkreadcontrol(char* path, int flag)
 	int len = 0;
 	FILE *fd = NULL;
 	char* fileline = NULL, *tmpstr = NULL;
-	char* showname = NULL, *section = NULL, *desc = NULL, *packagename = NULL, *arch = NULL, *filename = NULL, *titanname = NULL, *installpath = NULL, *usepath = NULL;
+	char* showname = NULL, *section = NULL, *desc = NULL, *packagename = NULL, *arch = NULL, *filename = NULL, *titanname = NULL, *installpath = NULL, *usepath = NULL, *boxtype = NULL;
 	int version = 0, group = 0, minversion = 0, preinstalled = 0, size = 0;
 	struct tpk* tpknode = NULL;
 
@@ -854,6 +856,8 @@ struct tpk* tpkreadcontrol(char* path, int flag)
 			installpath = ostrcat(fileline + 13, NULL, 0, 0);
 		if(strstr(fileline, "Usepath: ") == fileline)
 			usepath = ostrcat(fileline + 9, NULL, 0, 0);
+		if(strstr(fileline, "Boxtype: ") == fileline)
+			boxtype = ostrcat(fileline + 9, NULL, 0, 0);
 	}
 
 	if(section == NULL) section = ostrcat("extra", NULL, 0, 0);
@@ -863,13 +867,14 @@ struct tpk* tpkreadcontrol(char* path, int flag)
 	if(titanname == NULL) titanname = ostrcat("*", NULL, 0, 0);
 	if(installpath == NULL) installpath = ostrcat("*", NULL, 0, 0);
 	if(usepath == NULL) usepath = ostrcat("*", NULL, 0, 0);
+	if(boxtype == NULL) boxtype = ostrcat("*", NULL, 0, 0);
 	
 	filename = ostrcat(packagename, "_", 0, 0);
 	filename = ostrcat(filename, oitoa(version), 1, 1);
 	filename = ostrcat(filename, "_", 1, 0);
 	filename = ostrcat(filename, arch, 1, 0);
 
-	tpknode = addtpk(packagename, desc, section, showname, arch, filename, titanname, version, group, minversion, preinstalled, NULL, size, installpath, usepath, NULL);
+	tpknode = addtpk(packagename, desc, section, showname, arch, filename, titanname, version, group, minversion, preinstalled, NULL, size, installpath, usepath, boxtype, NULL);
 
 end:
 	free(showname); showname = NULL;
@@ -882,6 +887,7 @@ end:
 	free(installpath); installpath = NULL;
 	free(titanname); titanname = NULL;
 	free(usepath); usepath = NULL;
+	free(boxtype); boxtype = NULL;
 	if(fd != NULL) fclose(fd);
 	return tpknode;
 }
@@ -2010,6 +2016,14 @@ int tpkinstall(char* file, char* installpath)
 			node = node->next;
 		}
 	}
+	
+	//check boxtype
+	if(tpknode->boxtype != NULL && ostrcmp(tpknode->boxtype, "*") != 0 && ostrstr(tpknode->boxtype, getboxtype()) == NULL)
+	{
+		err("boxtype not allowed %s", tpknode->boxtype);
+		ret = 1;
+		goto end;	
+	}
 
 	//check minversion
 	if(tpknode->minversion != 0 && tpknode->minversion < PLUGINVERSION)
@@ -2661,7 +2675,7 @@ int tpklist()
 	int ret = 0, len = 0;
 	FILE *fd = NULL;
 	char* fileline = NULL;
-	char* name = NULL, *showname = NULL, *section = NULL, *desc = NULL, *url = NULL, *arch = NULL, *filename = NULL, *titanname = NULL, *usepath = NULL;
+	char* name = NULL, *showname = NULL, *section = NULL, *desc = NULL, *url = NULL, *arch = NULL, *filename = NULL, *titanname = NULL, *usepath = NULL, *boxtype = NULL;
 	int version = 0, group = 0, minversion = 0, preinstalled = 0, size = 0;
 	struct tpk* tpknode = NULL, *tpkinstalled = NULL, *tpktmp = NULL;
 
@@ -2741,6 +2755,14 @@ int tpklist()
 		ret = 1;
 		goto end;
 	}
+	
+	boxtype = malloc(MINMALLOC);
+	if(boxtype == NULL)
+	{
+		err("no mem");
+		ret = 1;
+		goto end;
+	}
 
 	fd = fopen(TMPALLPACKAGES, "r");
 	if(fd == NULL)
@@ -2759,7 +2781,7 @@ int tpklist()
 		if(len >= 0 && fileline[len] == '\r')
 			fileline[len] = '\0';
 
-		ret = sscanf(fileline, "%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%d#%d#%d#%d#%d", url, name, showname, section, desc, arch, titanname, usepath, &version, &group, &minversion, &preinstalled, &size);
+		ret = sscanf(fileline, "%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%[^#]#%d#%d#%d#%d#%d", url, name, showname, section, desc, arch, titanname, usepath, boxtype, &version, &group, &minversion, &preinstalled, &size);
 		if(ret != 13)
 		{
 			err("read file %s", TMPALLPACKAGES);
@@ -2767,6 +2789,7 @@ int tpklist()
 		}
 		ret = 0;
 
+		//check group
 		int skip = 0;
 		if(group != 0)
 		{
@@ -2781,6 +2804,10 @@ int tpklist()
 				node = node->next;
 			}
 		}
+		
+		//check boxtype
+		if(boxtype != NULL && ostrcmp(boxtype, "*") != 0 && ostrstr(boxtype, getboxtype()) == NULL)
+			skip = 1;
 
 		//check minversion
 		if(minversion != 0 && minversion < PLUGINVERSION)
@@ -2793,7 +2820,7 @@ int tpklist()
 			filename = ostrcat(filename, "_", 1, 0);
 			filename = ostrcat(filename, arch, 1, 0);
 			
-			tpknode = addtpk(name, desc, section, showname, arch, filename, titanname, version, group, minversion, preinstalled, url, size, NULL, usepath, NULL);
+			tpknode = addtpk(name, desc, section, showname, arch, filename, titanname, version, group, minversion, preinstalled, url, size, NULL, usepath, boxtype, NULL);
 		}
 	}
 
@@ -2812,6 +2839,7 @@ end:
 	free(filename); filename = NULL;
 	free(titanname); titanname = NULL;
 	free(usepath); usepath = NULL;
+	free(boxtype); boxtype = NULL;
 	free(fileline); fileline = NULL;
 	if(fd != NULL) fclose(fd);
 	return ret;
