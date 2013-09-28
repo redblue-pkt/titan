@@ -495,7 +495,6 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 	struct skin *newnode = NULL, *prev = NULL, *tmpnode = node;
 	struct skin **nodeaddr;
 	int memfd = -1, length;
-	int fontsizeadjust = getskinconfigint("fontsizeadjust", NULL);
 
 	if(node == skin)
 		nodeaddr=&skin;
@@ -704,8 +703,8 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 		if(ret != NULL)
 		{
 			newnode->fontsize = atoi(ret);
-			if(newnode->fontsize + fontsizeadjust >= 10)
-				newnode->fontsize += fontsizeadjust;
+			if(newnode->fontsize + status.fontsizeadjust >= 10)
+				newnode->fontsize += status.fontsizeadjust;
 			else if(newnode->fontsize >= 10)
 				newnode->fontsize = 10;
 			free(ret);
@@ -714,8 +713,8 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 		if(ret != NULL)
 		{
 			newnode->fontsize2 = atoi(ret);
-			if(newnode->fontsize2 + fontsizeadjust >= 10)
-				newnode->fontsize2 += fontsizeadjust;
+			if(newnode->fontsize2 + status.fontsizeadjust >= 10)
+				newnode->fontsize2 += status.fontsizeadjust;
 			else if(newnode->fontsize2 >= 10)
 				newnode->fontsize2 = 10;
 			free(ret);

@@ -118,7 +118,8 @@ void screenskinadjust()
 		{
 			int oldfontsizeadjust = getskinconfigint("fontsizeadjust", NULL);
 			addskinconfigscreencheck("fontsizeadjust", fontsizeadjust, "0");
-			if(oldfontsizeadjust != getskinconfigint("fontsizeadjust", NULL)) reboot = 1;			
+			if(oldfontsizeadjust != getskinconfigint("fontsizeadjust", NULL)) reboot = 1;
+			status.fontsizeadjust = getconfigint("fontsizeadjust", NULL);			
 			
 			addskinconfigscreencheck("listboxselecttype", listboxselecttype, "0");
 			status.listboxselecttype = getskinconfigint("listboxselecttype", NULL);

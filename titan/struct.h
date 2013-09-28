@@ -1478,6 +1478,7 @@ struct status
 	//path for imdbfolder
 	char* imdbfolderpath;
 	int virtualzap;
+	int fontsizeadjust;
 } status;
 
 struct fb
