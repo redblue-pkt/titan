@@ -118,7 +118,8 @@ void setdefaults()
 	status.showrecfreesize = getconfigint("showrecfreesize", NULL);
 	status.defpicmemtimeout = getskinconfigint("defpicmemtimeout", NULL);
 	status.imdbfolderpath = getconfig("imdbfolderpath", NULL);
-	status.virtualzap = getconfigint("virtualzap", NULL); 
+	status.virtualzap = getconfigint("virtualzap", NULL);
+	status.fontsizeadjust = getconfigint("fontsizeadjust", NULL); 
 
 	if(status.filelistselectcol == 0) status.filelistselectcol = status.listboxselectcol;
 	
