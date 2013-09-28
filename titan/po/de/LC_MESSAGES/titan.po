@@ -4134,3 +4134,18 @@ msgstr "System Aktualisierung kann nicht gestartet werden!\nSyntax Fehler im Upd
 msgid "You can leave HBBTV with Record Key."
 msgstr "HBBTV kann mit der RECORD Taste beendet werden."
 
+msgid "Search only aktual epg ?"
+msgstr "Nur im aktuellen EPG suchen ?"
+
+msgid "Child"
+msgstr "Kinder"
+
+msgid "Comedy"
+msgstr "Komödie"
+
+msgid "War"
+msgstr "Krieg"
+
+msgid "Music"
+msgstr "Musik"
+
