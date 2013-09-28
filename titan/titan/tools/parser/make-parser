@@ -45,7 +45,7 @@ mv -f "$HOME"/parser/*.sh "$HOME"/parser/BUILD
 # disable beeg
 #rm "$HOME"/parser/BUILD/beeg.sh
 #rm "$HOME"/parser/BUILD/kinox.sh
-rm "$HOME"/parser/BUILD/myvideo.sh
+#rm "$HOME"/parser/BUILD/myvideo.sh
 #rm "$HOME"/parser/BUILD/netzkino.sh
 #rm "$HOME"/parser/BUILD/rtl2now.sh
 #rm "$HOME"/parser/BUILD/rtl-now.sh
