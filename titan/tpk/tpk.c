@@ -389,6 +389,7 @@ struct tpk* tpkcreateindex(char* path, char* name, int flag)
 	if(tpknode->arch == NULL) tpknode->arch = ostrcat("noarch", NULL, 0, 0);
 	if(tpknode->titanname == NULL) tpknode->titanname = ostrcat("*", NULL, 0, 0);
 	if(tpknode->usepath == NULL) tpknode->usepath = ostrcat("*", NULL, 0, 0);
+	if(tpknode->boxtype == NULL) tpknode->boxtype = ostrcat("*", NULL, 0, 0);
 
   if(flag == 0)
   {
@@ -400,7 +401,7 @@ struct tpk* tpkcreateindex(char* path, char* name, int flag)
   		goto end;
   	}
   
-  	writeret = fprintf(fd, "%s#%s#%s#%s#%s#%s#%s#%d#%d#%d#%d#%d#%d\n", tpknode->name, tpknode->showname, tpknode->section, tpknode->desc, tpknode->arch, tpknode->titanname, tpknode->usepath, tpknode->version, tpknode->group, tpknode->minversion, tpknode->preinstalled, tpknode->size);
+  	writeret = fprintf(fd, "%s#%s#%s#%s#%s#%s#%s#%s#%d#%d#%d#%d#%d#%d\n", tpknode->name, tpknode->showname, tpknode->section, tpknode->desc, tpknode->arch, tpknode->titanname, tpknode->usepath, tpknode->boxtype, tpknode->version, tpknode->group, tpknode->minversion, tpknode->preinstalled, tpknode->size);
   	if(writeret < 0)
   	{
   		perr("writting file %s", PACKAGES);
@@ -973,7 +974,7 @@ int tpkwritecontrol(char* path, struct tpk* tpknode, int size)
 		goto end;
 	}
   
-  ret = fprintf(fd, "Package: %s\nArchitecture: %s\nShowname: %s\nVersion: %d\nSection: %s\nDescription: %s\nGroup: %d\nMinversion: %d\nPreinstalled: %d\nSize: %d\nTitanname: %s\nUsepath: %s", tpknode->name, tpknode->arch, tpknode->showname, tpknode->version, tpknode->section, tpknode->desc, tpknode->group, tpknode->minversion, tpknode->preinstalled, size, tpknode->titanname, tpknode->usepath);
+  ret = fprintf(fd, "Package: %s\nArchitecture: %s\nShowname: %s\nVersion: %d\nSection: %s\nDescription: %s\nGroup: %d\nMinversion: %d\nPreinstalled: %d\nSize: %d\nTitanname: %s\nUsepath: %s\nBoxtype: %s", tpknode->name, tpknode->arch, tpknode->showname, tpknode->version, tpknode->section, tpknode->desc, tpknode->group, tpknode->minversion, tpknode->preinstalled, size, tpknode->titanname, tpknode->usepath, tpknode->boxtype);
   if(ret < 0)
   {
     perr("writting file %s", tmpstr);
