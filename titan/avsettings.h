@@ -286,7 +286,7 @@ void screenavsettings(int flag)
 			}
 			if(colformat->ret != NULL)
 			{
-				setcolorformat(colformat->ret); 
+				setcolorformat(colformat->ret, 0); 
 				ret = getcolorformat(1);
 				changeinput(colformat, ret);
 				free(ret); ret = NULL;
@@ -294,7 +294,7 @@ void screenavsettings(int flag)
 			}
 			if(colformatscart->ret != NULL)
 			{
-				setcolorformat(colformatscart->ret); 
+				setcolorformat(colformatscart->ret, 1); 
 				ret = getcolorformat(2);
 				changeinput(colformatscart, ret);
 				free(ret); ret = NULL;
