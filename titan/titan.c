@@ -1001,7 +1001,7 @@ firstwizzardstep1:
 	}
 	
 	//check free space in /var
-	if(getfreespace("/var") / 1024 < 250) //200kb
+	if(getfreespace("/var") / 1024 < 50) //200kb
 		textbox(_("Message"), _("Free space in /var to little!\nThis can make problems!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
 	else
 	{
@@ -1018,7 +1018,7 @@ firstwizzardstep1:
 	}
 
 	//check free space in /mnt
-	if(getfreespace("/mnt") / 1024 < 200) //200kb
+	if(getfreespace("/mnt") / 1024 < 50) //200kb
 		textbox(_("Message"), _("Free space in /mnt to little!\nThis can make problems!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
 	else
 	{
