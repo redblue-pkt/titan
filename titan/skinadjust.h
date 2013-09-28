@@ -13,7 +13,6 @@ void screenskinadjust()
 	struct skin* rightoffset = getscreennode(skinadjust, "rightoffset");
 	struct skin* topoffset = getscreennode(skinadjust, "topoffset");
 	struct skin* bottomoffset = getscreennode(skinadjust, "bottomoffset");
-	struct skin* piconpath = getscreennode(skinadjust, "piconpath");
 	struct skin* showrecfreesize = getscreennode(skinadjust, "showrecfreesize");
 	struct skin* listboxselect = getscreennode(skinadjust, "listboxselect");
 	struct skin* tmp = NULL;
@@ -42,13 +41,6 @@ void screenskinadjust()
 
 	changeinput(bottomoffset, "0\n10\n20\n30\n40\n50\n60\n70\n80\n90\n100");
 	setchoiceboxselection(bottomoffset, getconfig("fbbottomoffset", NULL));
-
-	//hide picon path, set it fix to /mnt/swapextensions/usr/local/share/titan/picons
-  piconpath->hidden = YES;
-  addchoicebox(piconpath, "/mnt/swapextensions/usr/local/share/titan/picons", _("Flash (permanent)"));
-	addchoicebox(piconpath, "/var/swap/usr/local/share/titan/picons", _("Stick or HDD"));
-	addchoicebox(piconpath, "/var/usr/local/share/titan/picons", _("Flash (temporary)"));
-	setchoiceboxselection(piconpath, getconfig("piconpath", NULL));
 
 	oleftoffset = getconfigint("fbleftoffset", NULL);
 	orightoffset = getconfigint("fbrightoffset", NULL); 
@@ -132,23 +124,8 @@ void screenskinadjust()
 			status.listboxselecttype = getskinconfigint("listboxselecttype", NULL);
 			addskinconfigscreencheck("osdtransparent", osdtransparent, "0");
 			setosdtransparent(getskinconfigint("osdtransparent", NULL));
-			addconfigscreen("piconpath", piconpath);
 			addconfigscreencheck("showrecfreesize", showrecfreesize, "0");
 			status.showrecfreesize = getconfigint("showrecfreesize", NULL);
-
-			/*
-			if(listbox->select != NULL && ostrcmp(listbox->select->name, "piconpath") == 0)
-			{
-				clearscreen(skinadjust);
-				ret = screendir(listbox->select->ret, "", NULL, NULL, NULL, NULL, 0, "SELECT", 0, NULL, 0, NULL, 0, 700, 0, 650, 0, 0);
-				if(ret != NULL)
-					changeinput(listbox->select, ret);
-				free(ret);
-
-				drawscreen(skinadjust, 0, 0);
-				continue;
-			}
-			*/
 
       writeskinconfigtmp();
       if(reboot == 1)
