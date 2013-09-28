@@ -1690,35 +1690,54 @@ void changechannellist(struct channel* chnode, char* channellist)
 
 char* createpiconpath(struct channel* chnode, int flag)
 {
-	char* tmpstr = NULL, *tmpnr = NULL;
+	char* tmpstr = NULL, *picon = NULL;
 
 	if(chnode != NULL)
 	{
-		tmpstr = ostrcat(tmpstr, getconfig("piconpath", NULL), 1, 0);
-		if(flag==1)
-			tmpstr = ostrcat(tmpstr, "/alternate/", 1, 0);
-		else
-			tmpstr = ostrcat(tmpstr, "/", 1, 0);
-		tmpnr = oitoa(chnode->serviceid);
-		tmpstr = ostrcat(tmpstr, tmpnr, 1, 1);
-		tmpnr = NULL;
-		tmpstr = ostrcat(tmpstr, "-", 1, 0);
-		tmpnr = ollutoa(chnode->transponderid);
-		tmpstr = ostrcat(tmpstr, tmpnr, 1, 1);
-		tmpnr = NULL;
-		tmpstr = ostrcat(tmpstr, ".png", 1, 0);
-	}
-	if(!isfile(tmpstr))
-	{
-		free(tmpstr); tmpstr = NULL;
-		//tmpstr = ostrcat(tmpstr, getconfig("piconpath", NULL), 1, 0);
-		//tmpstr = ostrcat(tmpstr, "/", 1, 0);
-		//tmpstr = ostrcat(tmpstr, "default.png", 1, 0);
-		tmpstr = ostrcat(tmpstr, getconfig("defskinpath", NULL), 1, 0);
-		tmpstr = ostrcat(tmpstr, "/skin/", 1, 0);
-		tmpstr = ostrcat(tmpstr, "defpicon.png", 1, 0);
-	}
+		picon = ostrcat("/", oitoa(chnode->serviceid), 0, 1);
+		picon = ostrcat(picon, "-", 1, 0);
+		picon = ostrcat(picon, ollutoa(chnode->transponderid), 1, 1);
+		picon = ostrcat(picon, ".png", 1, 0);
 
+		if(flag == 1)
+			tmpstr = ostrcat("/mnt/swapextensions/usr/local/share/titan/picons/alternate", picon, 1, 0);
+		else
+			tmpstr = ostrcat("/mnt/swapextensions/usr/local/share/titan/picons", picon, 1, 0);
+		if(isfile(tmpstr))
+		{
+			free(picon);
+			return tmpstr;
+		}
+		
+		free(tmpstr); tmpstr = NULL;
+		if(flag == 1)
+			tmpstr = ostrcat("/var/swap/usr/local/share/titan/picons/alternate", picon, 1, 0);
+		else
+			tmpstr = ostrcat("/var/swap/usr/local/share/titan/picons", picon, 1, 0);
+		if(isfile(tmpstr))
+		{
+			free(picon);
+			return tmpstr;
+		}
+		
+		free(tmpstr); tmpstr = NULL;
+		if(flag == 1)
+			tmpstr = ostrcat("/var/usr/local/share/titan/picons/alternate", picon, 1, 0);
+		else
+			tmpstr = ostrcat("/var/usr/local/share/titan/picons", picon, 1, 0);
+		if(isfile(tmpstr))
+		{
+			free(picon);
+			return tmpstr;
+		}
+	}
+	
+	free(tmpstr); tmpstr = NULL;
+	tmpstr = ostrcat(tmpstr, getconfig("defskinpath", NULL), 1, 0);
+	tmpstr = ostrcat(tmpstr, "/skin/", 1, 0);
+	tmpstr = ostrcat(tmpstr, "defpicon.png", 1, 0);
+
+	free(picon);
 	return tmpstr;
 }
 
