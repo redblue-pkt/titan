@@ -1700,9 +1700,9 @@ char* createpiconpath(struct channel* chnode, int flag)
 		picon = ostrcat(picon, ".png", 1, 0);
 
 		if(flag == 1)
-			tmpstr = ostrcat("/mnt/swapextensions/usr/local/share/titan/picons/alternate", picon, 1, 0);
+			tmpstr = ostrcat("/mnt/swapextensions/usr/local/share/titan/picons/alternate", picon, 0, 0);
 		else
-			tmpstr = ostrcat("/mnt/swapextensions/usr/local/share/titan/picons", picon, 1, 0);
+			tmpstr = ostrcat("/mnt/swapextensions/usr/local/share/titan/picons", picon, 0, 0);
 		if(isfile(tmpstr))
 		{
 			free(picon);
@@ -1711,9 +1711,9 @@ char* createpiconpath(struct channel* chnode, int flag)
 		
 		free(tmpstr); tmpstr = NULL;
 		if(flag == 1)
-			tmpstr = ostrcat("/var/swap/usr/local/share/titan/picons/alternate", picon, 1, 0);
+			tmpstr = ostrcat("/var/swap/usr/local/share/titan/picons/alternate", picon, 0, 0);
 		else
-			tmpstr = ostrcat("/var/swap/usr/local/share/titan/picons", picon, 1, 0);
+			tmpstr = ostrcat("/var/swap/usr/local/share/titan/picons", picon, 0, 0);
 		if(isfile(tmpstr))
 		{
 			free(picon);
@@ -1722,9 +1722,9 @@ char* createpiconpath(struct channel* chnode, int flag)
 		
 		free(tmpstr); tmpstr = NULL;
 		if(flag == 1)
-			tmpstr = ostrcat("/var/usr/local/share/titan/picons/alternate", picon, 1, 0);
+			tmpstr = ostrcat("/var/usr/local/share/titan/picons/alternate", picon, 0, 0);
 		else
-			tmpstr = ostrcat("/var/usr/local/share/titan/picons", picon, 1, 0);
+			tmpstr = ostrcat("/var/usr/local/share/titan/picons", picon, 0, 0);
 		if(isfile(tmpstr))
 		{
 			free(picon);
