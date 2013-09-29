@@ -826,7 +826,7 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 			newnode->pic = changepicpath(ret);
 			free(ret);
 
-			if(getpic(newnode->pic) == NULL)
+			if(getpic(newnode->pic) == NULL && newnode->pic != NULL)
 			{
 				length = strlen(newnode->pic);
 				if(newnode->pic[length - 1] == 'g' && newnode->pic[length - 2] == 'n' && newnode->pic[length - 3] == 'p')
