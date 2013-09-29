@@ -58,11 +58,14 @@ start:
 				}
 			}
 			
-			if(result == NULL && count == 0 && search1 != NULL && ostrcmp(search, search1) != 0)
+			if(result == NULL && count == 0 && search1 != NULL)
 			{
 				count = 1;
-				search = search1;
-				goto start;
+				if(ostrcmp(search, search1) != 0)
+				{
+					search = search1;
+					goto start;
+				}
 			}
 			
 			if(result == NULL && count == 1 && search2 != NULL)
