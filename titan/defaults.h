@@ -119,7 +119,7 @@ void setdefaults()
 	status.defpicmemtimeout = getskinconfigint("defpicmemtimeout", NULL);
 	status.imdbfolderpath = getconfig("imdbfolderpath", NULL);
 	status.virtualzap = getconfigint("virtualzap", NULL);
-	status.fontsizeadjust = getconfigint("fontsizeadjust", NULL); 
+	status.fontsizeadjust = getskinconfigint("fontsizeadjust", NULL); 
 
 	if(status.filelistselectcol == 0) status.filelistselectcol = status.listboxselectcol;
 	
