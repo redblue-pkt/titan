@@ -670,7 +670,7 @@ int oregexint(char* regex, char* str)
 struct splitstr* oregexsplit(char* regex, char *str, char *tok, int* count)
 {
 	char *tmpstr = NULL;
-	struct splitstr *tmparray = NULL;
+	struct splitstr *array = NULL, *tmparray = NULL;
 	*count = 0;
 
 	if(str == NULL || tok == NULL)
@@ -680,15 +680,18 @@ struct splitstr* oregexsplit(char* regex, char *str, char *tok, int* count)
 	while(tmpstr != NULL)
 	{
 		*count = *count + 1;
-		tmparray = (struct splitstr*)realloc(tmparray, sizeof(struct splitstr*) * (*count));
-		if(tmparray == NULL)
+		tmparray = array; array = (struct splitstr*)realloc(array, sizeof(struct splitstr*) * (*count));
+		if(array == NULL)
+		{
+			free(tmparray);
 			return NULL;
+		}
       
-		(&tmparray[(*count) - 1])->part = oregex(regex, tmpstr);
+		(&array[(*count) - 1])->part = oregex(regex, tmpstr);
 		tmpstr = strtok(NULL, tok);
 	}
 
-	return tmparray;
+	return array;
 }
 
 void freeoregexsplit(struct splitstr* tmparray, int len)
@@ -5197,8 +5200,8 @@ char* readbintomem(const char* filename, size_t size)
 char* readfiletomem(const char* filename, int flag)
 {
 	FILE *fd = NULL;
-	char *fileline = NULL, *buf = NULL, *buf1 = NULL;
-	int buf1size = 0, buf1oldsize = 0;
+	char *fileline = NULL, *buf = NULL, *tmpbuf = NULL;
+	int bufsize = 0, bufoldsize = 0;
 
 	fileline = malloc(MINMALLOC);
 	if(fileline == NULL)
@@ -5217,36 +5220,35 @@ char* readfiletomem(const char* filename, int flag)
 
 	while(fgets(fileline, MINMALLOC, fd) != NULL)
 	{
-		buf = fileline;
-
 		if(flag == 1)
-			if(buf[0] == '#' || buf[0] == '\n')
+			if(fileline[0] == '#' || fileline[0] == '\n')
 				continue;
 
-		buf1oldsize = buf1size;
-		buf1size += strlen(buf);
-		buf1 = realloc(buf1, buf1size + 1);
-		if(buf1 == NULL)
+		bufoldsize = bufsize;
+		bufsize += strlen(fileline);
+		tmpbuf = buf;	buf = realloc(buf, bufsize + 1);
+		if(buf == NULL)
 		{
 			err("no memory");
 			free(fileline);
+			free(tmpbuf);
 			fclose(fd);
 			return NULL;
 		}
 
-		sprintf(buf1 + buf1oldsize, "%s", buf);
+		sprintf(buf + bufoldsize, "%s", fileline);
 	}
 
 	free(fileline);
 	fclose(fd);
-	return buf1;
+	return buf;
 }
 
 char* readeittomem(const char* filename)
 {
 	unsigned char byte;
 	FILE *fil = NULL;
-	char *zeichen = NULL, *buf = NULL, *buf1 = NULL;
+	char *zeichen = NULL, *buf = NULL, *buf1 = NULL, *tmpbuf1 = NULL;
 	int buf1size = 0, buf1oldsize = 0;
 	int Beschreibung;
 	int len;
@@ -5275,96 +5277,104 @@ char* readeittomem(const char* filename)
 	}
 	Beschreibung = 0;
 	fseek(fil, 12, SEEK_SET); //ersten 12 Byte nicht relevant
-	while(!feof(fil)) {
-		byte=fgetc(fil);
+	while(!feof(fil))
+	{
+		byte = fgetc(fil);
 
-		if (byte == 0x4D) {
+		if(byte == 0x4D)
+		{
 			fseek(fil, 4,SEEK_CUR);
-			byte=fgetc(fil);
+			byte = fgetc(fil);
 			len = byte + 0;
-			byte=fgetc(fil);
-			fgets(zeichen,len,fil);
-			if (byte != 0x05)
-				sprintf(buf,"%c%s\n", byte,zeichen);
+			byte = fgetc(fil);
+			fgets(zeichen, len, fil);
+			if(byte != 0x05)
+				sprintf(buf, "%c%s\n", byte, zeichen);
 			else
-				sprintf(buf,"%s\n", zeichen);
+				sprintf(buf, "%s\n", zeichen);
 
 			buf1oldsize = buf1size;
 			buf1size += strlen(buf);
-			buf1 = realloc(buf1, buf1size + 1);
+			tmpbuf1 = buf1; buf1 = realloc(buf1, buf1size + 1);
 			if(buf1 == NULL)
 			{
 				err("no memory");
 				free(zeichen);
 				free(buf);
+				free(tmpbuf1);
 				fclose(fil);
 				return NULL;
 			}
 			sprintf(buf1 + buf1oldsize, "%s", buf);
 
  			//printf("T %s\n", zeichen);
-			byte=fgetc(fil);
+			byte = fgetc(fil);
 			len = byte + 0;
-			byte=fgetc(fil);
-			fgets(zeichen,len,fil);
-			if (byte != 0x05)
-				sprintf(buf,"%c%s\n\n", byte,zeichen);
+			byte = fgetc(fil);
+			fgets(zeichen, len, fil);
+			if(byte != 0x05)
+				sprintf(buf,"%c%s\n\n", byte, zeichen);
 			else
 				sprintf(buf,"%s\n\n", zeichen);
 				
 			buf1oldsize = buf1size;
 			buf1size += strlen(buf);
-			buf1 = realloc(buf1, buf1size + 1);
+			tmpbuf1 = buf1; buf1 = realloc(buf1, buf1size + 1);
 			if(buf1 == NULL)
 			{
 				err("no memory");
 				free(zeichen);
 				free(buf);
+				free(tmpbuf1);
 				fclose(fil);
 				return NULL;
 			}
 			sprintf(buf1 + buf1oldsize, "%s", buf);
 
 		}
-		else if (byte == 0x4E) {
-			fseek(fil, 6,SEEK_CUR);
-			byte=fgetc(fil);
+		else if(byte == 0x4E)
+		{
+			fseek(fil, 6, SEEK_CUR);
+			byte = fgetc(fil);
 			len = byte;
-			byte=fgetc(fil);
-			fgets(zeichen,len,fil);
-			if (Beschreibung == 0) {
-				if (byte != 0x05)
-					sprintf(buf,"%c%s", byte,zeichen);
+			byte = fgetc(fil);
+			fgets(zeichen, len, fil);
+			if(Beschreibung == 0)
+			{
+				if(byte != 0x05)
+					sprintf(buf, "%c%s", byte, zeichen);
 				else
-					sprintf(buf,"%s", zeichen);
+					sprintf(buf, "%s", zeichen);
 				Beschreibung = 1;
 			}
 			else
 			{
-				if (byte != 0x05)
-					sprintf(buf,"%c%s", byte,zeichen);
+				if(byte != 0x05)
+					sprintf(buf, "%c%s", byte, zeichen);
 				else
-					sprintf(buf,"%s", zeichen);
+					sprintf(buf, "%s", zeichen);
 			}	
 
 			buf1oldsize = buf1size;
 			buf1size += strlen(buf);
-			buf1 = realloc(buf1, buf1size + 1);
+			tmpbuf1 = buf1; buf1 = realloc(buf1, buf1size + 1);
 			if(buf1 == NULL)
 			{
 				err("no memory");
 				free(zeichen);
 				free(buf);
+				free(tmpbuf1);
 				fclose(fil);
 				return NULL;
 			}
 			sprintf(buf1 + buf1oldsize, "%s", buf);      
 
 		}
-		else {
-			byte=fgetc(fil);
+		else
+		{
+			byte = fgetc(fil);
 			len= byte;
-			fgets(zeichen,len+1,fil);
+			fgets(zeichen, len + 1, fil);
 		}  
 	}
 	free(zeichen);
@@ -5759,7 +5769,7 @@ char* string_quote(char* str)
 struct splitstr* strsplit(char *str, char *tok, int* count)
 {
 	char *tmpstr = NULL;
-	struct splitstr *tmparray = NULL;
+	struct splitstr *array = NULL, *tmparray = NULL;
 	*count = 0;
 
 	if(str == NULL || tok == NULL)
@@ -5769,29 +5779,33 @@ struct splitstr* strsplit(char *str, char *tok, int* count)
 	while(tmpstr != NULL)
 	{
 		*count = *count + 1;
-		tmparray = (struct splitstr*)realloc(tmparray, sizeof(struct splitstr*) * (*count));
-		if(tmparray == NULL)
+		tmparray = array; array = (struct splitstr*)realloc(array, sizeof(struct splitstr*) * (*count));
+		if(array == NULL)
+		{
+			free(tmparray);
 			return NULL;
-		(&tmparray[(*count) - 1])->part = tmpstr;
+		}
+		
+		(&array[(*count) - 1])->part = tmpstr;
 		tmpstr = strtok(NULL, tok);
 	}
 
-	return tmparray;
+	return array;
 }
 
 char* string_shortname(char *tmpfilename, int mode)
 {
-	debug(50, "in %s",tmpfilename);
+	debug(50, "in %s", tmpfilename);
 
 //	char replacelist[] = "avi mkv x264 se disc0 disc1 disc2 disc3 disc4 0disc 1disc 2disc 3disc 4disc season0 season1 season2 season3 season4 season5 season6 season7 season8 season9 hdtv 720p 1080i 1080p uncut cd0 cd1 cd2 cd3 cd4 cd5 cd6 cd7 cd8 cd9 dvd0 dvd1 dvd2 dvd3 dvd4 ac3d ac3 bdrip bluray cam camrip complete custom cut dc directors dl doku dts dvdr dvdrip dvdscr dvdscreener extended french finnish german hd hddvd hddvdrip hdtv int internal int ld limited multi multisubs nordic ntsc pal pl r1 r5 recut remastered repack rip screener se see special.edition sse stv subbed swedish staffel tc telecine telesync ts unrated ws xxx italian";
 	char* str = NULL;
 
-	if (mode==1)
+	if(mode==1)
 	{
 		char* replacelist = "avi mkv x264 xvid se uncut ac3d ac3hd ac3 bdrip bluray cam camrip complete custom cut dc directors dl doku dts dvdr dvdrip dvdscr dvdscreener ecc extended french finnish german hd hddvd hddvdrip hdtv int internal int ld limited multi multisubs nordic ntsc pal pl r1 r5 recut remastered repack rip screener se see sse stv subbed swedish staffel tc telecine telesync ts unrated ws xxx italian";
 		str = ostrcat(str, replacelist, 1, 0);
 	}
-	else if (mode==2)
+	else if(mode==2)
 	{
 		char* replacelist = "1080i 1080p 720p ac3 ac3d ac3hd avi bdrip bluray cam camrip complete custom cut dat dc directors divx dl doku dts dvdr dvdrip dvdscr dvdscreener ecc ed extended finnish flv french german hd hddvd hddvdrip hdtv int internal ld limited linedubbed m2ts m4v md mkv mov mp4 mpeg mpg mts multi multisubs nordic ntsc pal pl proper r1 r3 r5 recut remastered repack rip rm screener se sse staffel stv subbed svcd swedish tc telecine telesync trp ts uc uncut unrated ur vcd vdr vob wmv ws x264 xvid xxx";
 		str = ostrcat(str, replacelist, 1, 0);
@@ -5825,12 +5839,12 @@ char* string_shortname(char *tmpfilename, int mode)
 			{					
 				if(ostrcmp((&ret1[i])->part, (&ret2[j])->part) == 0)
 				{
-					if (mode==1)
+					if(mode==1)
 					{
 						tmpfilename = string_replace((&ret2[j])->part, replace, tmpfilename, 1);
 						continue;
 					}
-					else if (mode==2)
+					else if(mode==2)
 					{
 						tmpfilename = string_replace_remove_last_chars((&ret2[j])->part, replace, tmpfilename, 1);
 						//break;
@@ -5842,7 +5856,7 @@ char* string_shortname(char *tmpfilename, int mode)
 						continue;
 					}
 				}
-				else if (first == 1 && mode == 2)
+				else if(first == 1 && mode == 2)
 				{
 //					printf("zahl: %s\n", (&ret2[j])->part);
 				 	int theCharacter = atoi((&ret2[j])->part);
