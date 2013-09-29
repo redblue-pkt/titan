@@ -33,5 +33,6 @@ int movie4k_series_listed(struct skin* grid, struct skin* listbox, struct skin* 
 char* movie4k(char* link);
 char* xvideos(char* link);
 char* solarmovie(char* link);
+char* ard(char* link);
 
 #endif
