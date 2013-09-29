@@ -752,7 +752,7 @@ char *eitlang(u_char *l)
 */
 
 //Parse 0x4D Short Event Descriptor
-void eventdesc(struct channel* chnode, struct epg* epgnode, void *buf)
+void eventdesc(struct channel* chnode, struct epg* epgnode, void *buf, unsigned char* lang)
 {
 	struct transponder* tpnode = NULL;
 	struct eitshortevent *evtdesc = buf;
@@ -770,6 +770,11 @@ void eventdesc(struct channel* chnode, struct epg* epgnode, void *buf)
 		err("no mem");
 		return;
 	}
+	
+	lang[0] = evtdesc->lang_code1;
+	lang[1] = evtdesc->lang_code2;
+	lang[2] = evtdesc->lang_code3;
+	
 	memcpy(title, (char *)&evtdesc->data, evtlen);
 	title[evtlen] = '\0';
 	free(epgnode->title);
@@ -807,11 +812,17 @@ void epgadddesc(struct epg* epgnode, char* desc)
 }
 
 // Parse 0x4E Extended Event Descriptor
-void longeventdesc(struct channel* chnode, struct epg* epgnode, unsigned char *buf)
+void longeventdesc(struct channel* chnode, struct epg* epgnode, unsigned char *buf, unsigned char* lang)
 {
 	struct transponder* tpnode = NULL;
 	struct eitlongevent *levt = (struct eitlongevent*)buf;
 	char* desc = NULL;
+
+  if(lang[0] != '\0')
+	{
+		if(lang[0] != levt->lang_code1 || lang[1] != levt->lang_code2 || lang[2] != levt->lang_code3)
+			return;
+	}
 
 	if(chnode != NULL) tpnode = chnode->transponder;
 	int nonempty = (levt->descriptor_number || levt->last_descriptor_number || levt->length_of_items || levt->data[0]);
@@ -1049,6 +1060,8 @@ void contentidentifierdesc(struct epg* epgnode, unsigned char *buf)
 void parseeitdesc(struct channel* chnode, struct epg* epgnode, unsigned char *buf, int len, int nolongdesc)
 {
 	unsigned char *p;
+	unsigned char lang[3] = {'\0', '\0', '\0'};
+	
 	for(p = buf; p < buf + len; p += 2 + p[1])
 	{
 		switch((int)p[0])
@@ -1059,11 +1072,11 @@ void parseeitdesc(struct channel* chnode, struct epg* epgnode, unsigned char *bu
 				linkagedesc(chnode, epgnode, p);
 				break;
 			case 0x4D:
-				eventdesc(chnode, epgnode, p);
+				eventdesc(chnode, epgnode, p, lang);
 				break;
 			case 0x4E:
 				if(nolongdesc == 0)
-					longeventdesc(chnode, epgnode, p);
+					longeventdesc(chnode, epgnode, p, lang);
 				break;
 			case 0x55:
 				ratingdescr(epgnode, p);
