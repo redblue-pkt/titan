@@ -32,7 +32,7 @@ mediaCollection.addMediaStream(1, 1, "", "http://http-stream.rbb-online.de/rbb/a
 
 */
 
-		streamurl = oregex(".*mediaCollection.addMediaStream.*(http://.*.mp4).*", tmpstr)
+		streamurl = oregex(".*mediaCollection.addMediaStream.*(http://.*.mp4).*", tmpstr);
 	}
 
 	free(tmpstr); tmpstr = NULL;
