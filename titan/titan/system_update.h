@@ -127,7 +127,7 @@ void screensystem_update(int mode)
 					if(ostrcmp(pch, rootpart) == 0)
 						showname = ostrcat(showname, " (active)", 1, 0);
 
-					debug(40, "addchoicebox: device=%s, label=%s showname=%s",pch, label, showname);
+					debug(40, "addchoicebox: device=%s, label=%s showname=%s", pch, label, showname);
 					addchoicebox(device, label, _(showname));
 
 					free(cmd), cmd = NULL;
