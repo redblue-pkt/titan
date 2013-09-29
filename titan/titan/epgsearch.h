@@ -215,6 +215,7 @@ void screenepgsearch(char* text)
 		
 		if(rcret == getrcconfigint("rcmenu", NULL))
 		{
+			tmp = NULL;
 			genre = 1;
 			delmarkedscreennodes(epgsearch, 1);
 			
