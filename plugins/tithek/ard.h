@@ -20,8 +20,18 @@ char* ard(char* link)
 	if(getconfigint("debuglevel", NULL) == 99)
 		writesys("/tmp/ard1_tmpstr", tmpstr, 0);
 
+	writesys("/var/usr/local/share/titan/plugins/tithek/ard1_tmpstr", tmpstr, 0);
+	
+
 	if(tmpstr != NULL)
 	{
+		if(ostrstr(tmpstr, "<div class=\"fsk\">") != NULL)
+		{
+			char* tmpstr2 = string_resub("<div class=\"fsk\">", "</div>", tmpstr, 0);
+			tmpstr2 = string_replace(".", ".\n", tmpstr2, 1),
+			textbox(_("Message"), tmpstr2, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 400, 0, 0);
+			free(tmpstr2), tmpstr2 = NULL;
+		}
 /*
 		streamurl = string_resub("'file': '","',",tmpstr,0);
 
