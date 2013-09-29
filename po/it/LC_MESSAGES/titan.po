@@ -1,14 +1,25 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: franco consoli <doofy81@googlemail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
 msgid "--- SD resolution"
-msgstr "---Risoluzione sd"
+msgstr "--- Risoluzione SD"
 
 msgid "--- Time to switch"
-msgstr "---tempo per cambiare canale"
+msgstr "---Tempo per cambiare canale"
 
 msgid "1500rpm"
 msgstr "1500 U/min"
 
 msgid "3D Mode"
-msgstr "3D Mode"
+msgstr "3D Modus"
 
 msgid "3D-Mode Settings"
 msgstr "3D-Mode Impostazioni"
@@ -16,10 +27,12 @@ msgstr "3D-Mode Impostazioni"
 msgid "500rpm"
 msgstr "500 U/min"
 
-msgid "A mount entry with this name already exists!\n"
+msgid ""
+"A mount entry with this name already exists!\n"
 "Update existing entry and continue?"
-msgstr "Un mount con questo nome esiste gia!\n"
-"Aggiornare mount esistente e continuare??"
+msgstr ""
+"Un mount con questo nome esiste gia!\n"
+"Aggiornare mount esistente e continuare?"
 
 msgid "Are you sure you want remove this share?"
 msgstr "Sei sicuro di voler rimuovere questa azione?"
@@ -27,34 +40,40 @@ msgstr "Sei sicuro di voler rimuovere questa azione?"
 msgid "Are you sure you want to save this network mount?"
 msgstr "Sei sicuro di voler salvare questo mount di rete ?"
 
-msgid "Are you sure you want to remove all Partitions\n"
+msgid ""
+"Are you sure you want to remove all Partitions\n"
 "on this device and create a new Partition 1?\n"
 "Box reboots after format"
-msgstr "Sei sicuro di voler rimuovere tutte le Partizioni\n"
+msgstr ""
+"Sei sicuro di voler rimuovere tutte le Partizioni\n"
 "su questo dispositivo e creare una partizione nuova?\n"
-"Il ricevitore un restart automatico."
+"Il ricevitore fara subito dopo restart."
 
-msgid "Are you sure you want to format this Partition?\n"
+msgid ""
+"Are you sure you want to format this Partition?\n"
 "Box reboots after format"
-msgstr "formatare partizione?\n"
-"Il ricevitore sara subito dopo restart."
+msgstr ""
+"formatare partizione?\n"
+"Il ricevitore fara subito dopo restart."
 
-msgid "Are you sure you want to check this Partition?\n"
+msgid ""
+"Are you sure you want to check this Partition?\n"
 "Box reboots after check"
-msgstr "Sei sicuro di voler controllare questa partizione?\n"
-"Il ricevitore sara subito dopo restart."
+msgstr ""
+"Sei sicuro di voler controllare questa partizione?\n"
+"\"\"Il ricevitore fara subito dopo restart."
 
 msgid "A record hdd or a swapstick must be mounted!"
-msgstr "Un hdd nominata record o un  swapstick deve essere montato"
+msgstr "Un hdd nominato record o un  swapstick deve essere montato"
 
 msgid "A/V Settings"
-msgstr "A/V Impostazioni"
+msgstr "Impostazioni A/V"
 
 msgid "Panel"
-msgstr "Panello Atemio"
+msgstr "Atemio Panel"
 
 msgid "Wizard"
-msgstr "Assistente Setup"
+msgstr "Wizard"
 
 msgid "Aborting restoring..."
 msgstr "Interruzione ripristino"
@@ -63,7 +82,7 @@ msgid "Aborting backup..."
 msgstr "Interruzione di backup ...!"
 
 msgid "About"
-msgstr "Informazioni su..."
+msgstr "About"
 
 msgid "AC3 default"
 msgstr "Dolby Digital (AC3) predefinito"
@@ -87,7 +106,7 @@ msgid "Adapter Settings"
 msgstr "Impostazioni indirizzo IP"
 
 msgid "add service"
-msgstr "add service"
+msgstr "aggiungi service"
 
 msgid "add recording (stop after current event)"
 msgstr "aggiungere registrazione (questa trasmissione)"
@@ -96,7 +115,7 @@ msgid "add recording (indefinitely)"
 msgstr "aggiungere registrazione (all infinito)"
 
 msgid "add recording (enter duration)"
-msgstr "aggiungere registrazione (all infinito)"
+msgstr "aggiungere registrazione (dare durata)"
 
 msgid "ADD"
 msgstr "Aggiungere"
@@ -129,19 +148,19 @@ msgid "Auto Scan"
 msgstr "Auto Scan"
 
 msgid "AUTO"
-msgstr "AUTO"
+msgstr "automatico"
 
 msgid "auto"
-msgstr "auto"
+msgstr "automatico"
 
 msgid "always"
 msgstr "sempre"
 
 msgid "all"
-msgstr "tutto"
+msgstr "tutti"
 
-msgid "All new channel added!"
-msgstr "All new channel added!"
+msgid "All new channels added!"
+msgstr "Tutti i nuovi canali salvati!"
 
 msgid "ALL"
 msgstr "tutto"
@@ -159,7 +178,7 @@ msgid "alt file"
 msgstr "file alternativo"
 
 msgid "Are you sure you want to restore settings?"
-msgstr "Devono esser Ripristinate le impostazioni?"
+msgstr "Ripristinare le impostazioni?"
 
 msgid "Apple Trailer"
 msgstr "Apple Movie Trailer"
@@ -186,7 +205,7 @@ msgid "AUDIO SETTINGS"
 msgstr "Impostazioni Audio"
 
 msgid "Audio Source"
-msgstr "Fonte Audio"
+msgstr "Audio Source"
 
 msgid "Audio Tracks"
 msgstr "Audio Tracks"
@@ -201,19 +220,19 @@ msgid "Auto resolution"
 msgstr "Auto resolution"
 
 msgid "Auto Resolution"
-msgstr "Auto resolution"
+msgstr "Auto Resolution"
 
 msgid "Automatic Search"
 msgstr "Ricerca Automatica"
 
 msgid "Automatic stop in 5 seconds."
-msgstr "Restar in 5 Secondi !"
+msgstr "Restart in 5 Secondi !"
 
 msgid "Automount"
 msgstr "Automount"
 
 msgid "Autostart"
-msgstr "Autostart"
+msgstr "Avvio automatico"
 
 msgid "A-Z (Text)"
 msgstr "A-Z (Text)"
@@ -222,21 +241,23 @@ msgid "bar"
 msgstr "bar"
 
 msgid "Backup / Restore Settings"
-msgstr "impostazioni Backup"
+msgstr "Salva / Ripristina  i Settings"
 
 msgid "Backup"
-msgstr "Creare Backup"
+msgstr "Crea Backup"
 
 msgid "BACKUP ERROR"
 msgstr "BACKUP ERROR"
 
 msgid "Backup - Settings"
-msgstr "impostazioni Backup"
+msgstr "impostazioni-Backup"
 
-msgid "Backup startet\n"
+msgid ""
+"Backup startet\n"
 "\n"
 "Please wait..."
-msgstr "Backup startet\n"
+msgstr ""
+"Backup Partito\n"
 "\n"
 "Please wait..."
 
@@ -274,7 +295,7 @@ msgid "Blue Key Action - Setup"
 msgstr "Impostazioni tasto-Blu"
 
 msgid "Blue Key Action - Plugins"
-msgstr "Tasto blu - Plugins"
+msgstr "Tasto Blu - Plugins"
 
 msgid "border"
 msgstr "border"
@@ -304,10 +325,10 @@ msgid "Bouquet List"
 msgstr "Lista Favoriti"
 
 msgid "Bouquets"
-msgstr "Favoriten"
+msgstr "Favoriti"
 
 msgid "Brightness"
-msgstr "Brightness"
+msgstr "Luminosità"
 
 msgid "broadcast"
 msgstr "Trassmissione"
@@ -316,7 +337,7 @@ msgid "browsers"
 msgstr "Internet Browser"
 
 msgid "Cam / Emu"
-msgstr "CAM / EMU"
+msgstr "CAM/EMU"
 
 msgid "CAM PMT Mode"
 msgstr "CAM PMT Mode"
@@ -325,10 +346,10 @@ msgid "Cancel Shutdown"
 msgstr "Cancel Shutdown"
 
 msgid "cancel"
-msgstr "cancellare"
+msgstr "anulla"
 
 msgid "Cancel"
-msgstr "Cancellare"
+msgstr "Annula"
 
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr "EPG non puo essere trovato oppure non e ok"
@@ -337,35 +358,36 @@ msgid "Can't start playback !"
 msgstr "Non è possibile riprodurre!"
 
 msgid "Can't start timeshift play !"
-msgstr "Non è possibile Timeshift play!"
+msgstr "Impossibile avviare Timeshift"
 
 msgid "Can't get Network Infos"
 msgstr "Non è possibile ottenere informazioni di rete"
 
 msgid "can't create or delete directory"
-msgstr "Cartella non puo essere creata o cancellata"
+msgstr "Cartella non puo essere cambiata"
 
 msgid "Can't remove akive Service"
 msgstr "il canale corrente non puo essere cancellato"
 
 msgid "Can't restore settings"
-msgstr "il restauro  dei setting non puo essere effetuato"
+msgstr "il restauro non puo essere effetuato"
 
-msgid "Can't find a Tuner.\n"
-"Alle Tuners in use or no Tuner defined."
-msgstr "Nessun turner Trovato"
+msgid ""
+"Can't find a Tuner.\n"
+"All Tuners in use or no Tuner defined."
+msgstr "Nessun Tuner libero trovato"
 
 msgid "Can't open frontend dev or Frontend Type unknown!"
-msgstr "Frontend non puo essere aperto o tipo sconosciuto"
+msgstr "Frontend non può essere aperto o tipo sconosciuto"
 
 msgid "CHANGE"
-msgstr "Cambiare"
+msgstr "Modifica"
 
 msgid "change"
-msgstr "Cambiare"
+msgstr "modifica"
 
 msgid "Change Channelname auto."
-msgstr "Cambiare il nome del canale automaticamente"
+msgstr "Cambia nome del canale automaticamente"
 
 msgid "Change language needs reboot"
 msgstr "Modifica della lingua ha bisogno di un riavvio !"
@@ -401,7 +423,7 @@ msgid "channel + time"
 msgstr "Nome canale + tempo"
 
 msgid "check your Secret Feed !"
-msgstr "controlla il feed segreto!"
+msgstr "Controlla il feed segreto!"
 
 msgid "Child Protection"
 msgstr "Protezione Minori"
@@ -410,13 +432,13 @@ msgid "Child safety"
 msgstr "Protezione minori"
 
 msgid "Clear before scan"
-msgstr "cancellare prima della ricerca?"
+msgstr "Cancellare prima della ricerca?"
 
 msgid "Color Format Scart"
 msgstr "Farbformat per Scart"
 
 msgid "Color Format"
-msgstr "Farbformat"
+msgstr "Formato colore"
 
 msgid "comming soon"
 msgstr "Prossimamente, il Team ci lavora"
@@ -434,10 +456,10 @@ msgid "Contrast"
 msgstr "Contrasto"
 
 msgid "Configure"
-msgstr "Configurare HDD"
+msgstr "Configura HDD"
 
 msgid "copy service"
-msgstr "Copiare nei Favoriti"
+msgstr "Copia nei Favoriti"
 
 msgid "CPU"
 msgstr "Processore"
@@ -463,29 +485,31 @@ msgstr "Disattiva"
 msgid "debug"
 msgstr "Debug"
 
-msgid "Detect hanging System !!!\n"
+msgid ""
+"Detect hanging System !!!\n"
 "\n"
 "KILL = Red\n"
 "BOOT = Power"
-msgstr "Errore nel sistema !!!\n"
+msgstr ""
+"Errore nel sistema !!!\n"
 "\n"
 "Rosso  = Finire il Processo\n"
 "Verde = Restart Del sistema"
 
 msgid "default"
-msgstr "predefinita"
+msgstr "Valore predefinito"
 
 msgid "Default"
-msgstr "Predefinita"
+msgstr "valore predefinito"
 
 msgid "DEFAULT"
-msgstr "PREDEFINITO"
+msgstr "Valore predefinito"
 
 msgid "Default Icon"
 msgstr "Icona predefinita"
 
 msgid "del startchannel"
-msgstr "del startchannel"
+msgstr "cancella canale di partenza"
 
 msgid "DEL"
 msgstr "Cancellare"
@@ -518,7 +542,7 @@ msgid "Devices"
 msgstr "Dispositivi"
 
 msgid "deaktiv"
-msgstr "Spento"
+msgstr "spento"
 
 msgid "dhcp"
 msgstr "Automatico (dhcp)"
@@ -530,13 +554,13 @@ msgid "direct connect"
 msgstr "Connessione Diretta"
 
 msgid "disable"
-msgstr "disattivo"
+msgstr "Spento"
 
 msgid "DiSEqC Command Order"
 msgstr "DiSEqC Command Order"
 
 msgid "DiSEqC Configuration"
-msgstr "DiSEqC Configuration"
+msgstr "Configurazine DiSEqC"
 
 msgid "DiSEqC Mode"
 msgstr "DiSEqC Mode"
@@ -548,7 +572,7 @@ msgid "Diseqc Settings"
 msgstr "Impostazioni DiSEqC"
 
 msgid "DiSEqC Sat Settings"
-msgstr "DiSEqC Satelliten Einstellungen"
+msgstr "Impostazione SatDiSEqC"
 
 msgid "DiSEqC"
 msgstr "DiSEqC"
@@ -559,24 +583,28 @@ msgstr "DNS-Server 1"
 msgid "dnsserver 2"
 msgstr "DNS-Server 2"
 
-msgid "Do you really want to erase all datas and backups from Swap?\n"
+msgid ""
+"Do you really want to erase all data and backups from Swap?\n"
 "The Box will reboot and the erase will be started!"
-msgstr "cancellare il backup e dati dallo Swap ?\n"
-"per cancellare i dati fare il reboot del decoder "
+msgstr ""
+"cancellare il backup e dati dallo Swap ?\n"
+"per cancellare i dati eseque reboot del decoder "
 
-msgid "Do you really want to start the Wizard?\n"
+msgid ""
+"Do you really want to start the Wizard?\n"
 "The Box will reboot and the Wizard will be started!"
-msgstr "far partire l assistente?\n"
+msgstr ""
+"far partire l assistente?\n"
 "il decoder fara un restart e l assistente partira"
 
 msgid "Don't clear TV on zap (only with fastzap)"
-msgstr "Don't clear TV on zap (only with fastzap)"
+msgstr "Immagine TV durante la commutazione veloce non verra cancellata"
 
 msgid "download error"
 msgstr "errore nel download"
 
 msgid "DVB-T not supportet at the moment !"
-msgstr "DVB-T non e supportata al momento"
+msgstr "DVB-T non e supportata al momento !"
 
 msgid "East / West"
 msgstr "Ost/West"
@@ -597,7 +625,7 @@ msgid "emucontrol"
 msgstr "Controllo EMU"
 
 msgid "enable"
-msgstr "attivo"
+msgstr "abilita"
 
 msgid "End"
 msgstr "Fine"
@@ -618,13 +646,13 @@ msgid "EPG Path"
 msgstr "EPG Path"
 
 msgid "Epg Refresh Time"
-msgstr "Epg Refresh Time"
+msgstr "Tempo di aggiornamento dell EPG"
 
 msgid "EPG Reset"
-msgstr "Cancellare EPG"
+msgstr "Cancella EPG"
 
 msgid "EPG Settings"
-msgstr "impostazioni EPG"
+msgstr "Impostazioni EPG"
 
 msgid "Epgfreespace (KB)"
 msgstr "Epgfreespace (KB)"
@@ -633,7 +661,7 @@ msgid "Error file not supported"
 msgstr "Errore File non Supportato!"
 
 msgid "Error: create timer thread !!"
-msgstr "Error: create timer thread!"
+msgstr "Errore: timer non può essere creato!"
 
 msgid "Error: open rc device !!"
 msgstr "Error: open rc device!"
@@ -654,7 +682,7 @@ msgid "Error: no audio device found !!"
 msgstr "Error: no audio device found!"
 
 msgid "Error: skin not found !!"
-msgstr "Fehler, Skin kann nicht geladen werden!"
+msgstr "Errore, Skin non trovato!"
 
 msgid "errorboot"
 msgstr "Errorboot"
@@ -681,7 +709,7 @@ msgid "Extensions Menu"
 msgstr "Extensions Menu"
 
 msgid "Extensions"
-msgstr "Estensioni"
+msgstr "Extensions"
 
 msgid "Expert Sat Settings"
 msgstr "Expert Sat Settings"
@@ -723,13 +751,13 @@ msgid "First Wizzard"
 msgstr "Start Assistent"
 
 msgid "File Browser"
-msgstr "Esplorazione file"
+msgstr "File browser"
 
 msgid "file"
 msgstr "File"
 
 msgid "filealtresult"
-msgstr "Risultato Diverso File"
+msgstr "Risultato File Diverso"
 
 msgid "Filelist-Mode"
 msgstr "Filelist-Mode"
@@ -750,7 +778,7 @@ msgid "Fontsize adjust in pixel"
 msgstr "Fontsize adjust in pixel"
 
 msgid "fontsize"
-msgstr "Fontsize"
+msgstr "fontsize"
 
 msgid "Format HDD"
 msgstr "Formatare HDD"
@@ -764,16 +792,30 @@ msgstr "Trovati Radio:"
 msgid "Found TV:"
 msgstr "trovati - TV:"
 
-msgid "Found running Record.\n"
+msgid ""
+"Found running Record.\n"
 "Realy shutdown ?"
-msgstr "Reggistrazione Trovata.\n"
+msgstr ""
+"Reggistrazione Trovata.\n"
 "Sicuro di vuoler Spegnere ?"
 
-msgid "Found running record\n"
+msgid ""
+"Found running record\n"
 "or record is starting in next time.\n"
 "Really shutdown ?"
-msgstr "Reggistrzione in corso , oho sta per iniziare.\n"
+msgstr ""
+"Reggistrzione in corso , oh sta per iniziare.\n"
 "Sicuro di vuoler Spegnere?"
+
+msgid ""
+"Found running download\n"
+"Really shutdown ?"
+msgstr ""
+"Reggistrzione in corso , oh sta per iniziare.\n"
+"Sicuro di vuoler Spegnere?"
+
+msgid "Really stop download ?"
+msgstr "Cancella Download ?"
 
 msgid "French"
 msgstr "Francese"
@@ -854,7 +896,7 @@ msgid "GUI Restart"
 msgstr "Restar GUI"
 
 msgid "Goto startpos"
-msgstr "Goto startpos"
+msgstr "vai all inizio"
 
 msgid "Hangtime"
 msgstr "Hangtime"
@@ -869,12 +911,14 @@ msgid "Harddisk Fsck - List Devices"
 msgstr "Harddisk Fsck - List Devices"
 
 msgid "Harddisk"
-msgstr "Disco fisso"
+msgstr "Hdd"
 
-msgid "HDD not configured\n"
+msgid ""
+"HDD not configured\n"
 "can't find record path"
-msgstr "HDD not configured\n"
-"can't find record path"
+msgstr ""
+"HDD non configurato\n"
+"non riesce a trovare record path"
 
 msgid "hddreplacement"
 msgstr "hddreplacement"
@@ -919,22 +963,22 @@ msgid "Infobar Timeout"
 msgstr "Infobar Timeout"
 
 msgid "Information"
-msgstr "Information"
+msgstr "Informazioni"
 
 msgid "Information..."
 msgstr "Informazioni"
 
 msgid "Infos"
-msgstr "Info"
+msgstr "Infos"
 
 msgid "initializing"
 msgstr "initializing"
 
 msgid "install"
-msgstr "Installare"
+msgstr "installa"
 
 msgid "Install"
-msgstr "Installieren"
+msgstr "Installa"
 
 msgid "Internet Browser"
 msgstr "Internet Browser"
@@ -1018,7 +1062,7 @@ msgid "LNB"
 msgstr "LNB"
 
 msgid "loadpartition"
-msgstr "carica partizioni"
+msgstr "Carica Prtizioni"
 
 msgid "LOF"
 msgstr "LOF"
@@ -1054,7 +1098,7 @@ msgid "Manual Search"
 msgstr "Ricerca Manuale"
 
 msgid "Manuel Scan"
-msgstr "Manuel Scan"
+msgstr "Ricerca Manuale"
 
 msgid "maxdelay"
 msgstr "maxdelay"
@@ -1075,10 +1119,10 @@ msgid "Media Center"
 msgstr "Media Center"
 
 msgid "Media Player"
-msgstr "Riproduttore multimediale"
+msgstr "Media Player"
 
 msgid "MediaCenter Icon"
-msgstr "MediaCenter Foto"
+msgstr "MediaCenter Icon"
 
 msgid "Memory"
 msgstr "Memoria"
@@ -1099,16 +1143,16 @@ msgid "MENUPROTECT"
 msgstr "PROTEZIONEMENU"
 
 msgid "Menu not implemented !"
-msgstr "Menu non ancora disponibile!"
+msgstr "Menu non disponibile!"
 
 msgid "Message"
-msgstr "Messaggio:"
+msgstr "Messaggio"
 
 msgid "Minutes"
 msgstr "Minuti"
 
 msgid "Minutes:"
-msgstr "Minuti:"
+msgstr "Minuten:"
 
 msgid "mixed mode"
 msgstr "mixed mode"
@@ -1120,7 +1164,7 @@ msgid "Modulation:"
 msgstr "Modulation:"
 
 msgid "Module"
-msgstr "Modulo"
+msgstr "Modul"
 
 msgid "Module info"
 msgstr "Informazione Moduli"
@@ -1141,7 +1185,7 @@ msgid "Moviepath"
 msgstr "Moviepath"
 
 msgid "MTD"
-msgstr "Divisione Flash"
+msgstr "Flash divisione"
 
 msgid "MTD info"
 msgstr "MTD info"
@@ -1165,7 +1209,7 @@ msgid "Multiple Service"
 msgstr "Multiple Service"
 
 msgid "Module Type"
-msgstr "Module Typ"
+msgstr "Module Type"
 
 msgid "mvid"
 msgstr "mvid"
@@ -1186,19 +1230,19 @@ msgid "Network Adapter Settings"
 msgstr "Network Adapter Settings"
 
 msgid "Network Adapter Test"
-msgstr "Network adapter Test"
+msgstr "Network Adapter Test"
 
 msgid "Network Assistant"
-msgstr "Network Assistent"
+msgstr "Netzwerk Assistent"
 
 msgid "Network Interfacelist"
 msgstr "Network Interfacelist"
 
 msgid "Network Restart"
-msgstr "Restart di rete"
+msgstr "Restart  Rete"
 
 msgid "Network Scan"
-msgstr "Scan di rete"
+msgstr "Scan di Rete"
 
 msgid "Network Test"
 msgstr "Test di Rete"
@@ -1219,7 +1263,7 @@ msgid "Networkbrowser - show scanned cifs/nfs-Shares"
 msgstr "Networkbrowser - show scanned cifs/nfs-Shares"
 
 msgid "Next"
-msgstr "Successivo"
+msgstr "Avanti"
 
 msgid "never"
 msgstr "mai"
@@ -1243,14 +1287,16 @@ msgid "No"
 msgstr "No"
 
 msgid "no"
-msgstr "Nein"
+msgstr "no"
 
 msgid "No TPK found in /tmp"
 msgstr "Nessun TPK Trovato in /tmp"
 
-msgid "No skinconfig found in skin.\n"
-"Can't chage to selected skin."
-msgstr "Nessuna Configurazione per lo Skin Trovato.\n"
+msgid ""
+"No skinconfig found in skin.\n"
+"Can't change to selected skin."
+msgstr ""
+"Nessuna Configurazione per lo Skin Trovato.\n"
 "Non puo erssere Attivato"
 
 msgid "nothing"
@@ -1299,10 +1345,10 @@ msgid "ONID:"
 msgstr "ONID:"
 
 msgid "on"
-msgstr "attivo"
+msgstr "on"
 
 msgid "On"
-msgstr "Attivo"
+msgstr "On"
 
 msgid "ON"
 msgstr "ON"
@@ -1323,7 +1369,7 @@ msgid "Only Boot Overclock"
 msgstr "Only Boot Overclock"
 
 msgid "only on power off / restart"
-msgstr "only on power off / restart"
+msgstr "Solo quando si spegne il riavvio"
 
 msgid "options"
 msgstr "Opzioni"
@@ -1443,7 +1489,7 @@ msgid "pll1_ndiv_mdiv"
 msgstr "PLL1 ndiv mdiv"
 
 msgid "Plugins"
-msgstr "Plugins"
+msgstr "Estensioni"
 
 msgid "plugload"
 msgstr "Carica Plugin"
@@ -1515,7 +1561,7 @@ msgid "Protect Menu"
 msgstr "Proteggere Menu con Pin "
 
 msgid "protect service"
-msgstr "protect service"
+msgstr "proteggi canale con pin"
 
 msgid "protocol"
 msgstr "Protocollo"
@@ -1563,7 +1609,7 @@ msgid "Ram"
 msgstr "Spazio libero"
 
 msgid "Random"
-msgstr "Random"
+msgstr "Casuale"
 
 msgid "Random-On"
 msgstr "Random-On"
@@ -1571,13 +1617,13 @@ msgstr "Random-On"
 msgid "rcreboot"
 msgstr "rcreboot"
 
-msgid "Realy Delete ?"
-msgstr "sicuro di voler cancellare?"
+msgid "Really Delete ?"
+msgstr "Cancellare davvero ?"
 
-msgid "Realy restore default settings ?"
+msgid "Really restore default settings ?"
 msgstr "Ripristinare Inpostazioni di Fabbrica"
 
-msgid "Receiver now reboot !!!"
+msgid "Receiver reboots now !!!"
 msgstr "Decoder Riparte adesso!"
 
 msgid "record"
@@ -1665,13 +1711,13 @@ msgid "Restore Settings"
 msgstr "Restore Settings"
 
 msgid "Refresh"
-msgstr "Aggiornamento"
+msgstr "Attuallizare"
 
 msgid "RELOAD"
 msgstr "RELOAD"
 
 msgid "remove service"
-msgstr "remove service"
+msgstr "rimuovere service"
 
 msgid "repairmodus"
 msgstr "repairmodus"
@@ -1680,7 +1726,7 @@ msgid "Repeate type"
 msgstr "Repeate type"
 
 msgid "Repeat"
-msgstr "Ripeti"
+msgstr "Repeat"
 
 msgid "Resolution (default)"
 msgstr "Risoluzione (Standard)"
@@ -1689,7 +1735,7 @@ msgid "Resolution Settings"
 msgstr "Impostazione Risoluzione"
 
 msgid "Resolution:"
-msgstr "Risoluzione"
+msgstr "Risoluzione:"
 
 msgid "Restart Network ?"
 msgstr "Restart Network ?"
@@ -1701,7 +1747,7 @@ msgid "Restart tiTan"
 msgstr "Restart tiTan"
 
 msgid "Restart"
-msgstr "Riavvia"
+msgstr "Riavviare il sistema"
 
 msgid "Restore"
 msgstr "Ripristina"
@@ -1719,7 +1765,7 @@ msgid "rmcrashlog"
 msgstr "cancellare Crashlog"
 
 msgid "rmemthy"
-msgstr "cancellare cartellew vuote"
+msgstr "cancellare cartelle vuote"
 
 msgid "Rolloff"
 msgstr "Rolloff"
@@ -1797,7 +1843,7 @@ msgid "Save"
 msgstr "Salva"
 
 msgid "SAVE"
-msgstr "Salva"
+msgstr "SALVA"
 
 msgid "save network settings ?"
 msgstr "Salva impostazioni rete?"
@@ -1806,13 +1852,10 @@ msgid "sbs"
 msgstr "Side by Side"
 
 msgid "Scan"
-msgstr "Scansione"
+msgstr "Ricerca"
 
 msgid "scan"
-msgstr "scansione"
-
-msgid "Tunerconfig is not allowed if record"
-msgstr "Tunerconfig is not allowed if record"
+msgstr "ricerca"
 
 msgid "Scan Config"
 msgstr "Impostazioni ricerca canali"
@@ -1851,13 +1894,13 @@ msgid "screensaver"
 msgstr "screensaver"
 
 msgid "Screensaver"
-msgstr "Salvaschermo"
+msgstr "Screensaver"
 
 msgid "Second Infobar"
 msgstr "Second Infobar"
 
 msgid "Select backup:"
-msgstr "selezionare il backup"
+msgstr "Seleziona il backup"
 
 msgid "Select Path"
 msgstr "Select Path"
@@ -1887,13 +1930,13 @@ msgid "Settings backup/restore"
 msgstr "Salvare Impostazioni/Ripristinare"
 
 msgid "Settings"
-msgstr "Impostazioni"
+msgstr "Einstellungen"
 
 msgid "settings"
 msgstr "Liste Canali"
 
 msgid "Settings..."
-msgstr "Impostazioni..."
+msgstr "Impostazioni"
 
 msgid "Settings OK ?"
 msgstr "Salvare Impostazioni?"
@@ -1926,10 +1969,10 @@ msgid "showip"
 msgstr "mostra indirizzo ip"
 
 msgid "showtvinfo"
-msgstr "showtvinfo"
+msgstr "motra info tv"
 
 msgid "Show Module Messages"
-msgstr "Show Module Messages"
+msgstr "mostra informaziono moduli"
 
 msgid "SID:"
 msgstr "SID"
@@ -2001,7 +2044,7 @@ msgid "SORT"
 msgstr "SORT"
 
 msgid "Sorting"
-msgstr "Sorting"
+msgstr "ordinamento"
 
 msgid "sorry found no harddisk"
 msgstr "nessun hdd o usb trovato"
@@ -2043,7 +2086,7 @@ msgid "Standby"
 msgstr "Standby"
 
 msgid "standby_freq"
-msgstr "standby_freq"
+msgstr "Standby Frequenz"
 
 msgid "Standby frequency"
 msgstr "Standby frequency"
@@ -2055,13 +2098,13 @@ msgid "Start HTTPD"
 msgstr "Start Webserver"
 
 msgid "Start"
-msgstr "Start"
+msgstr "Inizio"
 
 msgid "starting Kernel Update ?"
 msgstr "starting Kernel Update ?"
 
 msgid "starting Fw Update ?"
-msgstr "starting Fw Update ?"
+msgstr "Fw Aktualisierung starten?"
 
 msgid "starting Root Update ?"
 msgstr "starting Root Update ?"
@@ -2139,19 +2182,19 @@ msgid "swapskins"
 msgstr "Swap-Skins"
 
 msgid "swapsystem"
-msgstr "swapsystem"
+msgstr "Swap-System"
 
 msgid "swapsize"
-msgstr "swapsize"
+msgstr "Grandezza Swap"
 
 msgid "swapsystems"
-msgstr "swapsystems"
+msgstr "Swap-System"
 
 msgid "Switch"
-msgstr "Switch"
+msgstr "cambia"
 
 msgid "switch channel"
-msgstr "Cambia canale"
+msgstr "Cambia Canale"
 
 msgid "swts"
 msgstr "swts"
@@ -2178,16 +2221,16 @@ msgid "System - Usbupdate (tmp)"
 msgstr "System - Usbupdate (tmp)"
 
 msgid "System Info"
-msgstr "System Infos"
+msgstr "System Info"
 
 msgid "System"
-msgstr "System"
+msgstr "Sistema"
 
 msgid "System..."
-msgstr "System"
+msgstr "Sistema....test"
 
 msgid "System:"
-msgstr "System:"
+msgstr "Sistema:"
 
 msgid "szap"
 msgstr "sZap"
@@ -2202,7 +2245,7 @@ msgid "szap_frontend"
 msgstr "sZap Front-End"
 
 msgid "szaplong"
-msgstr "szaplong"
+msgstr "szaplong "
 
 msgid "tab"
 msgstr "tab"
@@ -2211,7 +2254,7 @@ msgid "telnet"
 msgstr "Telnet"
 
 msgid "Test frequency"
-msgstr "Test frequency"
+msgstr "Testa Frequenza"
 
 msgid "TEST"
 msgstr "Test"
@@ -2229,7 +2272,7 @@ msgid "Thursday"
 msgstr "Giovedì"
 
 msgid "Time to sleep"
-msgstr "Time to sleep"
+msgstr "standby HDD"
 
 msgid "Harddisk Sleep"
 msgstr "Harddisk Sleep"
@@ -2238,7 +2281,7 @@ msgid "Timer Record Path"
 msgstr "Timer Record Path"
 
 msgid "Timer"
-msgstr "Timer"
+msgstr "Registrazione"
 
 msgid "time"
 msgstr "time"
@@ -2249,13 +2292,15 @@ msgstr "time + channel"
 msgid "Timeshift Path"
 msgstr "Timeshift Path"
 
-msgid "Timeshift is running !!!\n"
+msgid ""
+"Timeshift is running !!!\n"
 "Stop it and switch ?"
-msgstr "Timeshift e attivo !!!\n"
+msgstr ""
+"Timeshift e attivo !!!\n"
 "Stop o Cambiare Canale ?"
 
 msgid "Timezone"
-msgstr "Timezone"
+msgstr "Fuso orario"
 
 msgid "Tint"
 msgstr "Tint"
@@ -2315,7 +2360,7 @@ msgid "type"
 msgstr "type"
 
 msgid "Type"
-msgstr "Type"
+msgstr "Typ"
 
 msgid "Type:"
 msgstr "Type:"
@@ -2339,13 +2384,13 @@ msgid "Unknown Error."
 msgstr "Errore Sconosciuto"
 
 msgid "UNLOAD"
-msgstr "Disattivare"
+msgstr "UNLOAD"
 
 msgid "update"
 msgstr "aggiorna"
 
 msgid "Update"
-msgstr "Aggiorna"
+msgstr "Aggiornamento"
 
 msgid "updatelist"
 msgstr "Aggiorna Lista"
@@ -2357,7 +2402,7 @@ msgid "Usbupdate (online)"
 msgstr "Usbupdate (Internet)"
 
 msgid "Usbupdate (tmp)"
-msgstr "Usbupdate (Lokal)"
+msgstr "Usbupdate (tmp)"
 
 msgid "use medium for backup"
 msgstr "use medium for backup"
@@ -2387,13 +2432,13 @@ msgid "userauth"
 msgstr "userauth"
 
 msgid "User"
-msgstr "Utente"
+msgstr "User"
 
 msgid "user defined"
 msgstr "Utente definito"
 
 msgid "username"
-msgstr "utente"
+msgstr "Nome utente"
 
 msgid "VFDisplay"
 msgstr "VFDisplay"
@@ -2402,10 +2447,10 @@ msgid "Video PID:"
 msgstr "Video PID:"
 
 msgid "Video Player"
-msgstr "Video Player"
+msgstr "Riproduttore video"
 
 msgid "Video Settings"
-msgstr "Impostazioni Video"
+msgstr "Impostazioni del video"
 
 msgid "VIDEO SETTINGS"
 msgstr "Impostazioni VIDEO"
@@ -2495,7 +2540,7 @@ msgid "YES"
 msgstr "SI"
 
 msgid "yellow"
-msgstr "giallo"
+msgstr "Giallo"
 
 msgid "DEU (DVB Subtitle)"
 msgstr "DEU (DVB Subtitle)"
@@ -2510,7 +2555,7 @@ msgid "Change Feed"
 msgstr "Aggiungi Feed"
 
 msgid "ADD ONE"
-msgstr "Aggiungere"
+msgstr "Aggiungi"
 
 msgid "ADD ALL"
 msgstr "seleziona"
@@ -2519,7 +2564,7 @@ msgid "Show Modules"
 msgstr "Mostra Moduli CI"
 
 msgid "Age Protect"
-msgstr "Altersschutz ab"
+msgstr "Protezione Età da"
 
 msgid "Protect Channel Freetime (min)"
 msgstr "Protect Channel Freetime (min)"
@@ -2528,7 +2573,7 @@ msgid " SELECT"
 msgstr " SELEZIONA"
 
 msgid "rename service"
-msgstr "rinominare service"
+msgstr "rinomina service"
 
 msgid "Resolution (current)"
 msgstr "Attuale (risoluzione)"
@@ -2539,36 +2584,39 @@ msgstr "virtualbox (text)"
 msgid "Two step mute"
 msgstr "Two step mute"
 
-msgid "Backup started\n"
+msgid ""
+"Backup started\n"
 "\n"
 "Please wait..."
-msgstr "Backup partito\n"
+msgstr ""
+"Backup partito\n"
 "\n"
 "Please wait..."
 
-msgid "No backup folders found!!!\n"
+msgid ""
+"No backup folders found!!!\n"
 "\n"
 "Aborting restoring..."
 msgstr "Nessuna Cartella  Backup Trovata"
 
-msgid "A record hdd or a swapstick must be mounted!\n"
+msgid ""
+"A record hdd or a swapstick must be mounted!\n"
 "\n"
 "Aborting backup..."
-msgstr "A record hdd or a swapstick must be mounted!\n"
-"\n"
-"Aborting backup..."
+msgstr "Nessuna directory di backup trovato"
 
-msgid "Backup to /tmp or /var/backup. If the free memory too small can a usb device will never use.\n"
+msgid ""
+"Backup to /tmp or /var/backup. If the free memory too small can a usb device will never use.\n"
 "There must be a folder backup."
-msgstr "Backup to /tmp or /var/backup. If the free memory too small can a usb device will never use.\n"
+msgstr ""
+"Backup to /tmp or /var/backup. If the free memory too small can a usb device will never use.\n"
 "There must be a folder backup."
 
-msgid "Some plugins needs restart.\n"
+msgid ""
+"Some plugins needs restart.\n"
 "If the plugin is not active\n"
 "reboot the box."
-msgstr "Some plugins needs restart.\n"
-"If the plugin is not active\n"
-"reboot the box."
+msgstr "fare un restart dopo installazzione dei Plugin."
 
 msgid "EDIT"
 msgstr "Editare"
@@ -2577,13 +2625,13 @@ msgid "SCAN"
 msgstr "SCAN"
 
 msgid "Install netsurf Internetbrowser Tpk first !"
-msgstr "Internetbrowser netsurf ist nicht installiert"
+msgstr "Install netsurf Internetbrowser Tpk first !"
 
 msgid "start Internet browser now ?"
 msgstr "start Internet browser now ?"
 
 msgid "Move"
-msgstr "Muovi"
+msgstr "Move"
 
 msgid "Fine move"
 msgstr "Fine move"
@@ -2598,13 +2646,13 @@ msgid "move west"
 msgstr "move west"
 
 msgid "search west"
-msgstr "cerca West"
+msgstr "search west"
 
 msgid "move east"
 msgstr "move east"
 
 msgid "search east"
-msgstr "cerca Ost"
+msgstr "search east"
 
 msgid "Positioner Setup"
 msgstr "Impostazioni Rotor"
@@ -2619,7 +2667,7 @@ msgid "start position"
 msgstr "start position"
 
 msgid "step west"
-msgstr " West"
+msgstr "step west"
 
 msgid "step east"
 msgstr "step east"
@@ -2639,11 +2687,13 @@ msgstr "limits on"
 msgid "Set action after rec"
 msgstr "Dopo Registrazione"
 
-msgid "For next OnlineUpdate please contact Atemio and send this Serial Number\n"
+msgid ""
+"For next OnlineUpdate please contact Atemio and send this Serial Number\n"
 "and your Atemio Serial Number !!\n"
 "\n"
 "Board-ID SerialNr:"
-msgstr "For next OnlineUpdate please contact Atemio and send this Serial Number\n"
+msgstr ""
+"For next OnlineUpdate please contact Atemio and send this Serial Number\n"
 "and your Atemio Serial Number !!\n"
 "\n"
 "Board-ID SerialNr:"
@@ -2652,7 +2702,7 @@ msgid "Registration needed, please contact Atemio !"
 msgstr "Registration needed, please contact Atemio !"
 
 msgid "no description found"
-msgstr "no description found"
+msgstr "nessuna desrizione trovata"
 
 msgid "EPG resetet and now clear."
 msgstr "EPG resetet and now clear."
@@ -2661,7 +2711,7 @@ msgid "Show Pictitle"
 msgstr "Show Pictitle"
 
 msgid "Autostart Playlist"
-msgstr "Start automatico della Playlist"
+msgstr "Autostart Playlist"
 
 msgid "EPG button on EPG Screen"
 msgstr "EPG button on EPG Screen"
@@ -2680,9 +2730,6 @@ msgstr "Nord"
 
 msgid "south"
 msgstr "Sud"
-
-msgid "browser"
-msgstr "Browser"
 
 msgid "swaptool"
 msgstr "Swap-Tools"
@@ -2724,13 +2771,13 @@ msgid "ask"
 msgstr "Chiedere"
 
 msgid "allways del file"
-msgstr "allways del file"
+msgstr "cancella sempre file"
 
 msgid "never del file"
-msgstr "never del file"
+msgstr "mai cancellarel file"
 
 msgid "After Timeshift"
-msgstr "Azione dopo Timeshift"
+msgstr "Azione dopoTimeshift"
 
 msgid "Show Timeline in Channellist"
 msgstr "Show Timeline in Channellist"
@@ -2744,12 +2791,14 @@ msgstr "Start Playback"
 msgid "TiThek Menu"
 msgstr "TiThek Menu"
 
-msgid "Please wait ...\n"
+msgid ""
+"Please wait ...\n"
 "\n"
 "All Settings are saved.\n"
 "\n"
 "Box will start in few seconds."
-msgstr "Please wait ...\n"
+msgstr ""
+"Please wait ...\n"
 "\n"
 "Impostazioni saranno salvati\n"
 "\n"
@@ -2807,37 +2856,41 @@ msgid "Fix Shutdown Time"
 msgstr "Fix Shutdown Time"
 
 msgid "Start playback"
-msgstr "Avvia la riproduzione"
+msgstr "Avviare la riproduzione?"
 
-msgid "not started akttime greater timer endtime"
-msgstr "ot started akttime greater timer endtime"
+msgid "not started akttime higher than timer endtime"
+msgstr "not started akttime higher than timer endtime"
 
-msgid "Does you want delete all unused Bouquetentrys?"
-msgstr "Cancellare Bouquet non usati?"
+msgid "Do you want to delete all unused Bouquetentrys?"
+msgstr "Do you want to delete all unused Bouquetentrys?"
 
 msgid "EPG Search"
 msgstr "Ricerca-EPG"
 
 msgid "DESC"
-msgstr "DESC"
+msgstr "desrizione"
 
 msgid "TITLE"
-msgstr "Titel"
+msgstr "TITOLO"
 
 msgid "Search"
 msgstr "Cerca"
 
 msgid "NONE"
-msgstr "NONE"
+msgstr "Nessuno"
 
-msgid "WLAN started.\n"
+msgid ""
+"WLAN started.\n"
 " You can now configure the new interface."
-msgstr "WLAN partito.\n"
-"si puo impostare il dispositivo"
+msgstr ""
+"WLAN partito.\n"
+"Si puo impostare il dispositivo"
 
-msgid "WLAN not started,\n"
+msgid ""
+"WLAN not started,\n"
 "Please check your config."
-msgstr "WLAN non partito,\n"
+msgstr ""
+"WLAN non partito,\n"
 "controllare le config."
 
 msgid "searching..."
@@ -2855,9 +2908,11 @@ msgstr "Key"
 msgid "DYNDNS started."
 msgstr "DYNDNS partito"
 
-msgid "DYNDNS not started,\n"
+msgid ""
+"DYNDNS not started,\n"
 "Please check your config."
-msgstr "DYNDNS non partito,\n"
+msgstr ""
+"DYNDNS non partito,\n"
 "Controlla le configurazioni ."
 
 msgid "DYNDNS now stopped"
@@ -2891,10 +2946,10 @@ msgid "Maximal signalrate"
 msgstr "Maximal signalrate"
 
 msgid "Minimal frequency"
-msgstr "Minimale Frequenz"
+msgstr "Minimal frequency"
 
 msgid "Minimal signalrate"
-msgstr "Minimale Signalrate"
+msgstr "Minimal signalrate"
 
 msgid "Step frequency"
 msgstr "Step frequency"
@@ -2906,13 +2961,13 @@ msgid "Channel History"
 msgstr "Channel History"
 
 msgid "KILL"
-msgstr "KILL"
+msgstr "Rosso"
 
 msgid "BOOT"
-msgstr "BOOT"
+msgstr "Verde"
 
 msgid "SEARCH"
-msgstr "SEARCH"
+msgstr "Cerca"
 
 msgid "START"
 msgstr "START"
@@ -2921,19 +2976,19 @@ msgid "STOP"
 msgstr "STOP"
 
 msgid "LOG"
-msgstr "LOG"
+msgstr "Log"
 
 msgid "hold"
 msgstr "hold"
 
 msgid "delete"
-msgstr "cancellare"
+msgstr "rimuove"
 
 msgid "SatCount: "
-msgstr "SatCount: "
+msgstr "Satelliti: "
 
 msgid "ChannelCount: "
-msgstr "ChannelCount: "
+msgstr "Canali: "
 
 msgid "BouquetCount: "
 msgstr "Bouquets: "
@@ -2945,10 +3000,10 @@ msgid "EpgChannels: "
 msgstr "EPG Canali: "
 
 msgid "ProviderCount: "
-msgstr "ProviderCount: "
+msgstr "Numero Provider: "
 
 msgid "Optimize"
-msgstr "Optimizazioni"
+msgstr "Ottimizza"
 
 msgid "Send remote box into standby ?"
 msgstr "Send remote box into standby?"
@@ -2965,9 +3020,11 @@ msgstr "effettuare Skript"
 msgid "No plugin found."
 msgstr "Nessun Plugin trovato"
 
+#, fuzzy
 msgid "rw"
 msgstr "rw"
 
+#, fuzzy
 msgid "ro"
 msgstr "ro"
 
@@ -2990,14 +3047,16 @@ msgid "Pic HW-decode"
 msgstr "Pic HW-decode"
 
 msgid "COPY"
-msgstr "Copiare"
+msgstr "Copia"
 
 msgid "DLNA started."
 msgstr "DLNA partito"
 
-msgid "DLNA not started,\n"
+msgid ""
+"DLNA not started,\n"
 "Please check your config."
-msgstr "DLNA non partito,\n"
+msgstr ""
+"DLNA non partito,\n"
 "Controlla le Configurazioni."
 
 msgid "DLNA now stopped"
@@ -3024,6 +3083,7 @@ msgstr "Media cartella 4"
 msgid "Port"
 msgstr "Port"
 
+#, fuzzy
 msgid "Server Name"
 msgstr "Nome del server"
 
@@ -3031,7 +3091,7 @@ msgid "News"
 msgstr "Novità"
 
 msgid "BROWSER"
-msgstr "Browser"
+msgstr "Internetbrowser"
 
 msgid "NEXT"
 msgstr "Avanti"
@@ -3052,7 +3112,7 @@ msgid "Highest temp: "
 msgstr "Highest temp: "
 
 msgid "Condition: "
-msgstr "Condition: "
+msgstr "Meteo: "
 
 msgid "Media Dir 1"
 msgstr "Media cartella 1"
@@ -3082,7 +3142,7 @@ msgid "Protect mode"
 msgstr "Protect mode"
 
 msgid "Edit mode"
-msgstr "Modifica modalità"
+msgstr "edit Mode"
 
 msgid "Channellist view"
 msgstr "Channellist view"
@@ -3100,10 +3160,10 @@ msgid "TPK media (media)"
 msgstr "TPK media (media)"
 
 msgid "No output found !"
-msgstr "No output found !"
+msgstr "Nessuna informazione disponibile"
 
 msgid "swapplayer"
-msgstr "swapplayer"
+msgstr "Swap-Multimedia Player"
 
 msgid "swaptools"
 msgstr "Swap-Tools"
@@ -3112,16 +3172,19 @@ msgid "games"
 msgstr "Giochi"
 
 msgid "swapbrowser"
-msgstr "swapbrowser"
+msgstr "Swap-Internetbrowser"
+
+msgid "browser"
+msgstr "Internetbrowser"
 
 msgid "Extensions..."
 msgstr "Extensions"
 
 msgid "Harddisk Configure"
-msgstr "Harddisk Configure"
+msgstr "Impostazioni HDD"
 
 msgid "Harddisk Configure - List Devices"
-msgstr "Harddisk Configure - List Devices"
+msgstr "Impostazioni HDD - lista dei dispositivi"
 
 msgid "Record Path settings"
 msgstr "Record Path settings"
@@ -3168,14 +3231,8 @@ msgstr "Here you can select your Network Interface. Use to navigate the control 
 msgid "Here you can make for your selected network interface settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
 msgstr "Here you can make for your selected network interface settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
 
-msgid "Here you can make for your wireless network settings.\n"
-"1. Use Search button and select Your SSID (apoint / router) and Press ok\n"
-"2. Make settings Type / Key confirm with ok and Note the following instructions\n"
-"3. Disable Lan Yes, Activate Wlan Yes and use DHCP for easy setup."
-msgstr "Here you can make for your wireless network settings.\n"
-"1. Use Search button and select Your SSID (apoint / router) and Press ok\n"
-"2. Make settings Type / Key confirm with ok and Note the following instructions\n"
-"3. Disable Lan Yes, Activate Wlan Yes and use DHCP for easy setup."
+msgid "Here you can make for your wireless network settings. 1. Use Search button and select Your SSID (apoint / router) and Press ok 2. Make settings Type / Key confirm with ok and Note the following instructions 3. Disable Lan Yes, Activate Wlan Yes and use DHCP for easy setup."
+msgstr "Here you can make for your wireless network settings. 1. Use Search button and select Your SSID (apoint / router) and Press ok 2. Make settings Type / Key confirm with ok and Note the following instructions 3. Disable Lan Yes, Activate Wlan Yes and use DHCP for easy setup."
 
 msgid "Here you can test your network. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
 msgstr "Here you can test your network. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
@@ -3237,15 +3294,19 @@ msgstr "Here you can make your PIN security settings. Use to navigate the contro
 msgid "Here you can make your PIN security for menus settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
 msgstr "Here you can make your PIN security for menus settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
 
-msgid "No MediaDB Directory found\n"
+msgid ""
+"No MediaDB Directory found\n"
 "Press OK to create it"
-msgstr "No MediaDB Directory found\n"
+msgstr ""
+"No MediaDB Directory found\n"
 "Press OK to create it"
 
-msgid "Free space in /var to little!\n"
+msgid ""
+"Free space in /var to little!\n"
 "This can make problems!"
-msgstr "Free space in /var to little!\n"
-"This can make problems!"
+msgstr ""
+"non abbastanza spazio libero in /var\n"
+"questo puo prtare problemi !"
 
 msgid "Here you can select your hard disks and USB flash drives for configuration. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
 msgstr "Here you can select your hard disks and USB flash drives for configuration. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
@@ -3266,7 +3327,7 @@ msgid "DYNDNS Settings"
 msgstr "Impostazioni DYNDNS"
 
 msgid "MediaDB Settings"
-msgstr "Impostazioni MediaDB"
+msgstr "MediaDB Settings"
 
 msgid "MediaDB Path"
 msgstr "MediaDB Path"
@@ -3289,31 +3350,37 @@ msgstr "Risoluzione TV (w):"
 msgid "TV Resolution (h):"
 msgstr "Risoluzione TV (h):"
 
-msgid "Are you sure you want to restore settings?\n"
+msgid ""
+"Are you sure you want to restore settings?\n"
 "\n"
 "OK = start restore\n"
 "EXIT = abort restore"
-msgstr "Are you sure you want to restore settings?\n"
+msgstr ""
+"Are you sure you want to restore settings?\n"
 "\n"
 "OK = start restore\n"
 "EXIT = abort restore"
 
 msgid "Backup failed, see log"
-msgstr "Backup failed, see log"
+msgstr "Backup mancato, Info si possono vedere nel Log"
 
-msgid "Press -restore- and your saved settings will be restored from your swapstick / recording hdd! The Box will restart automatically for restoring!\n"
+msgid ""
+"Press -restore- and your saved settings will be restored from your swapstick / recording hdd! The Box will restart automatically for restoring!\n"
 "\n"
 "Press -backup- to save your actual settings to swapstick / recording hdd.\n"
 "WARNING: The old backup will be deleted!"
-msgstr "Press -restore- and your saved settings will be restored from your swapstick / recording hdd! The Box will restart automatically for restoring!\n"
+msgstr ""
+"Press -restore- and your saved settings will be restored from your swapstick / recording hdd! The Box will restart automatically for restoring!\n"
 "\n"
 "Press -backup- to save your actual settings to swapstick / recording hdd.\n"
 "WARNING: The old backup will be deleted!"
 
-msgid "Can't start system update\n"
+msgid ""
+"Can't start system update\n"
 "Please remove Stick/HDD and try again"
-msgstr "Can't start system update\n"
-"Please remove Stick/HDD and try again"
+msgstr ""
+"Aggiornamento del sistema non può essere avviato!\n"
+"Si prega di rimuovere tutti i dispositivi USB e riprova."
 
 msgid "wireless"
 msgstr "Moduli Wlan"
@@ -3364,7 +3431,7 @@ msgid "Networkbrowser - show Shares"
 msgstr "Networkbrowser - show Shares"
 
 msgid "Installed version:"
-msgstr "Versione installata:"
+msgstr "Installed version:"
 
 msgid "Emu not found"
 msgstr "nessun Emu trovato"
@@ -3373,7 +3440,7 @@ msgid "active"
 msgstr "Autostart attivo"
 
 msgid "running"
-msgstr "in esecuzione"
+msgstr "running"
 
 msgid "started"
 msgstr "partito"
@@ -3397,7 +3464,7 @@ msgid "Code not ok, please try again !"
 msgstr "Il suo codice non e stato accetato, si prega di riprovare"
 
 msgid "Code ok"
-msgstr "Il suo codice e stato attivato"
+msgstr "Il suo codice e stato accetato"
 
 msgid "Serial Input"
 msgstr "Sblocca menù"
@@ -3414,14 +3481,17 @@ msgstr "Codice 2: "
 msgid "RECEIVER ID: "
 msgstr "RECEIVER ID: "
 
-msgid "Can't save Code.\n"
+msgid ""
+"Can't save Code.\n"
 "Delete Plugins to free space"
-msgstr "il codice non puo essere salvato.\n"
+msgstr ""
+"il codice non puo essere salvato.\n"
 "Cancellare un plugin da lei installato\n"
 "Per avere piu spazio libero."
 
 msgid "Please contact Atemio for activation. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Si prega di contattare Atemio, in caso che l Attivazione non è ancora in vigore.\n"
+msgstr ""
+"Si prega di contattare Atemio, in caso che l Attivazione non è ancora in vigore.\n"
 "Utilizzare il controllo a croce ed i pulsanti aggiuntivi visualizzati con il telecomando per navigare. "
 
 msgid "Alternativ Audio Firmware not working korrekt with all videos (DTSDOWNMIX)!"
@@ -3472,9 +3542,11 @@ msgstr "errore nel cambio canale"
 msgid "Can't create service"
 msgstr "il service non puo essere creato"
 
-msgid "Can't find free Tuner for Record.\n"
+msgid ""
+"Can't find free Tuner for Record.\n"
 "Switch to Recording/Timeshift Channel ?"
-msgstr "nessun tener trovato.\n"
+msgstr ""
+"nessun tener trovato.\n"
 "per registrazione/Timeschift cambiare canale ?"
 
 msgid "size (default)"
@@ -3499,7 +3571,7 @@ msgid "Record started"
 msgstr "Partita registrazione"
 
 msgid "swapwireless"
-msgstr "Swap-WLAN Module"
+msgstr "SWAP-Moduli Wlan"
 
 msgid "found"
 msgstr "found"
@@ -3532,7 +3604,7 @@ msgid "Pic Ratio"
 msgstr "Pic Ratio"
 
 msgid "Delete"
-msgstr "Elimina"
+msgstr "Cancella"
 
 msgid "Copy"
 msgstr "Copia"
@@ -3540,14 +3612,14 @@ msgstr "Copia"
 msgid "Moven"
 msgstr "Muovere"
 
-msgid "Realy move this file/dir?"
-msgstr "muovere questo file ?"
+msgid "Really move this file/dir?"
+msgstr "Sposta File?"
 
-msgid "Realy copy this file/dir?"
-msgstr "copiare questo file?"
+msgid "Really copy this file/dir?"
+msgstr "kopiare File?"
 
-msgid "Realy delete this file/dir?"
-msgstr "cancellare questo file ?"
+msgid "Really delete this file/dir?"
+msgstr "Cancellare File?"
 
 msgid "From"
 msgstr "Da"
@@ -3562,7 +3634,7 @@ msgid "FILELIST MANAGER"
 msgstr "FILELIST MANAGER"
 
 msgid "Are you sure you want to delete this directory?"
-msgstr "cancellare questa cartella ?"
+msgstr "Cancellare questa cartella ?"
 
 msgid "Wait for cam ready"
 msgstr "tempo di attesa per Moduli CI"
@@ -3577,19 +3649,19 @@ msgid "Found Pay Stream visit the official Website and Order this Stream and try
 msgstr "Found Pay Stream visit the official Website and Order this Stream and try this again !"
 
 msgid "Show Pay Streams"
-msgstr "Mostrare Pay-Streams"
+msgstr "Show Pay Streams"
 
 msgid "ADD FAV"
 msgstr "AggiungereFav"
 
 msgid "DEL FAV"
-msgstr "cancellare FAV"
+msgstr "Cancellare FAV"
 
 msgid "Remove this Favorite ?"
 msgstr "cancellare questo favorito ?"
 
 msgid "Add this link as Favorite ?"
-msgstr "imprtare questo Favorito ?"
+msgstr "importare questo Favorito ?"
 
 msgid "Copy providerlist successfull"
 msgstr "Copy providerlist successfull"
@@ -3597,8 +3669,14 @@ msgstr "Copy providerlist successfull"
 msgid "Copy providerlist not ok"
 msgstr "Copy providerlist not ok"
 
-msgid "The hoster is not yet supported for the time !"
-msgstr "The hoster is not yet supported for the time !"
+msgid "Copy satlist successfull"
+msgstr "Copy satlist successfull"
+
+msgid "Copy satlist not ok"
+msgstr "Copy satlist not ok"
+
+msgid "The hoster is not yet supported !"
+msgstr "The hoster is not yet supported !"
 
 msgid "CLEAR INPUT"
 msgstr "CLEAR INPUT"
@@ -3610,13 +3688,14 @@ msgid "Streaming version of this file is currently not available. You can downlo
 msgstr "Streaming version of this file is currently not available. You can download it below."
 
 msgid "Autocheck cam can decrypt"
-msgstr "Autocheck cam can decrypt ?"
+msgstr "Autocheck cam can decrypt"
 
 msgid "Enable Cable Tuner ?"
 msgstr "attivare il Tuner DVB-C?"
 
 msgid "Please install tpk Cable Settings, scan currenty not supportet !"
-msgstr "Installa i Settings per Cavo Prima!\n"
+msgstr ""
+"Installa i Settings per Cavo Prima!\n"
 "Ricerca Canali per DVB-C non e ancora supportata !"
 
 msgid "Show last pos Question"
@@ -3649,26 +3728,26 @@ msgstr "Unicable product"
 msgid "Resync Recording immediately"
 msgstr "Resync Recording immediately"
 
-msgid "TPK Upgrade Done your system rebooting !"
-msgstr "TPK Upgrade Done your system rebooting !"
+msgid "TPK Upgrade done, your system will reboot !"
+msgstr "TPK Upgrade done, your system will reboot !"
 
-msgid "TPK Tmp Install Done your system rebooting !"
-msgstr "TPK Tmp Install Done your system rebooting !"
+msgid "TPK Tmp Install done, your system will reboot !"
+msgstr "TPK Tmp Install done, your system will reboot !"
 
-msgid "TPK Install Done your system rebooting !"
-msgstr "TPK Install Done your system rebooting !"
+msgid "TPK Install done, your system will reboot !"
+msgstr "TPK Install done, your system will reboot !"
 
-msgid "TPK Remove Done your system rebooting !"
-msgstr "TPK Remove Done your system rebooting !"
+msgid "TPK Remove done your system will reboot !"
+msgstr "TPK Remove done your system will reboot !"
 
 msgid "Weather Infos"
-msgstr "Weather Infos"
+msgstr "Meteo Infos"
 
 msgid "Mediathek"
-msgstr "Online Mediathek"
+msgstr "Mediathek"
 
 msgid "Create Folder"
-msgstr "Crea cartella"
+msgstr "Crea Cartella"
 
 msgid "Recording name"
 msgstr "Recording name"
@@ -3707,7 +3786,7 @@ msgid "Reader Config Plugin not installed !"
 msgstr "Reader Config Plugin not installed !"
 
 msgid "Reader active"
-msgstr "Reader attivato"
+msgstr "Reader attivo"
 
 msgid "Oscam config written to medium !"
 msgstr "Oscam Config e stata salvata!"
@@ -3716,10 +3795,10 @@ msgid "Restart Oscam ?"
 msgstr "Restart Oscam ?"
 
 msgid "first slot"
-msgstr "first slot"
+msgstr "Primo Slot (sotto)"
 
 msgid "second slot"
-msgstr "second slot"
+msgstr "Secondo Slot (sopra)"
 
 msgid "Enable"
 msgstr "Abilita"
@@ -3767,7 +3846,7 @@ msgid "Red-Menu"
 msgstr "Rosso-Menu"
 
 msgid "Expert Modus"
-msgstr "Expert Modus"
+msgstr "Expert Mode"
 
 msgid "Create Record Picture"
 msgstr "Create Record Picture"
@@ -3782,7 +3861,7 @@ msgid "Only default signalrate"
 msgstr "Only default signalrate"
 
 msgid "Only DVBS"
-msgstr "Solo DVBS"
+msgstr "Usare Solo DVBS"
 
 msgid "Only default FEC"
 msgstr "Only default FEC"
@@ -3797,7 +3876,7 @@ msgid "Use cross control for fast zapping and vol"
 msgstr "Use cross control for fast zapping and vol"
 
 msgid "Deactivate MiniTV"
-msgstr "Deactivate MiniTV"
+msgstr "Disattiva MiniTV"
 
 msgid "Caching Playback (10MB / 120s)"
 msgstr "Caching Playback (10MB / 120s)"
@@ -3850,8 +3929,8 @@ msgstr "Streaming Playback Caching (7.5MB)"
 msgid "Streaming Playback Caching (10MB)"
 msgstr "Streaming Playback Caching (10MB)"
 
-msgid "ERROR... can't set maker in this file"
-msgstr "ERROR... can't set maker in this file"
+msgid "ERROR... can't set marker in this file"
+msgstr "ERROR... can't set marker in this file"
 
 msgid "Marker has been set."
 msgstr "Marker has been set."
@@ -3863,7 +3942,7 @@ msgid "dnsaddresse"
 msgstr "Indirizzo DNS"
 
 msgid "usedns"
-msgstr "usa dns"
+msgstr "usa DNS"
 
 msgid "Search on Kinox"
 msgstr "Search on Kinox"
@@ -3886,9 +3965,11 @@ msgstr "Error, found result without imdbid we can't this save in MediaDB"
 msgid "EPG Scan activate standby?"
 msgstr "EPG Scan activate standby?"
 
-msgid "Timeshift file to short\n"
+msgid ""
+"Timeshift file to short\n"
 "please wait a little and try again"
-msgstr "Timeshift file to short\n"
+msgstr ""
+"Timeshift file to short\n"
 "please wait a little and try again"
 
 msgid "Behavior at recording"
@@ -3946,7 +4027,7 @@ msgid "Audio delay"
 msgstr "Audio delay"
 
 msgid "Show hidden files"
-msgstr "Mostra i file nascosti"
+msgstr "Show hidden files"
 
 msgid "Activate CEC"
 msgstr "Attiva CEC"
@@ -3988,20 +4069,24 @@ msgid "Season"
 msgstr "Season"
 
 msgid "Episode"
-msgstr "Episode"
+msgstr "Episodio"
 
 msgid "Vietnamese"
 msgstr "Vietnamese"
 
-msgid "/var not writeable!\n"
-"Repear it?"
-msgstr "/var not writeable!\n"
-"Repear it?"
+msgid ""
+"/var not writeable!\n"
+"Repair it?"
+msgstr ""
+"/var not writeable!\n"
+"Repair it?"
 
-msgid "/mnt not writeable!\n"
-"Repear it?"
-msgstr "/mnt not writeable!\n"
-"Repear it?"
+msgid ""
+"/mnt not writeable!\n"
+"Repair it?"
+msgstr ""
+"/mnt not writeable!\n"
+"Repair it?"
 
 msgid "Can't install Package. Package to big."
 msgstr "Can't install Package. Package to big."
@@ -4012,17 +4097,21 @@ msgstr "Format and restore default settings"
 msgid "Format and backup/restore settings"
 msgstr "Format and backup/restore settings"
 
-msgid "Do you really want to erase Swap (Settings are preserve)?\n"
+msgid ""
+"Do you really want to erase Swap (Settings are preserve)?\n"
 "The Box will reboot and the erase will be started!"
-msgstr "Do you really want to erase Swap (Settings are preserve)?\n"
+msgstr ""
+"Do you really want to erase Swap (Settings are preserve)?\n"
 "The Box will reboot and the erase will be started!"
 
 msgid "MediaDB entry for this file not found."
 msgstr "MediaDB entry for this file not found."
 
-msgid "Tunerconfig is not allowed if record\n"
+msgid ""
+"Tunerconfig is not allowed if record\n"
 "or stream is running !"
-msgstr "Tunerconfig is not allowed if record\n"
+msgstr ""
+"Tunerconfig is not allowed if record\n"
 "or stream is running !"
 
 msgid "Can't change hostname !"
@@ -4041,7 +4130,7 @@ msgid "Can't update all packages !"
 msgstr "Can't update all packages !"
 
 msgid "Update Plugins to new Version?"
-msgstr "Update Plugins to new Version?"
+msgstr "Aggiorna Plugins ?"
 
 msgid "Channel Allocation"
 msgstr "Channel Allocation"
@@ -4050,7 +4139,7 @@ msgid "ADD BOUQUET"
 msgstr "Aggiungi BOUQUET"
 
 msgid "sort service"
-msgstr "sort service"
+msgstr "Riordina Canali"
 
 msgid "card present"
 msgstr "card present"
@@ -4058,10 +4147,12 @@ msgstr "card present"
 msgid "card not present"
 msgstr "card not present"
 
-msgid "Directory has content\n"
-"Realy delete directory and content?"
-msgstr "Directory has content\n"
-"Realy delete directory and content?"
+msgid ""
+"Directory has content\n"
+"Really delete directory and content?"
+msgstr ""
+"Directory has content\n"
+"Really delete directory and content?"
 
 msgid "Hid XXX Streams"
 msgstr "Hid XXX Streams"
@@ -4115,4 +4206,94 @@ msgid "stable"
 msgstr "stabile"
 
 msgid "unstable"
-msgstr "unstable"
+msgstr "non stabile"
+
+msgid "Box recording finished poweroff in 30sec !"
+msgstr "Registrazione Finita. Box sara spento in 30 secondi !\" "
+
+msgid "Timer Record start !\n"
+msgstr "Timer registrazione partita ! \n"
+
+msgid "Choice Install Medium"
+msgstr "Choice Install Medium"
+
+msgid "Install to Flash (permanent)"
+msgstr "Install to Flash (permanent)"
+
+msgid "Install to Flash (temporary)"
+msgstr "Install to Flash (temporary)"
+
+msgid "Install to Stick or HDD"
+msgstr "Install to Stick or HDD"
+
+msgid "Flash (permanent)"
+msgstr "Flash (permanent)"
+
+msgid "Flash (temporary)"
+msgstr "Flash (temporary)"
+
+msgid "Stick or HDD"
+msgstr "Stick o HDD"
+
+msgid "yes (Text in %)"
+msgstr "yes (Text in %)"
+
+msgid "yes (Text in MB)"
+msgstr "yes (Text in MB)"
+
+msgid "Use config from Flash (permanent)"
+msgstr "Use config from Flash (permanent)"
+
+msgid "Use config from Flash (temporary)"
+msgstr "Use config from Flash (temporary)"
+
+msgid "Use config from Stick or HDD"
+msgstr "Use config from Stick or HDD"
+
+msgid "Choice Config File"
+msgstr "Choice Config File"
+
+msgid "No config file found."
+msgstr "No config file found."
+
+msgid "Oscam dvbapi config disabled !"
+msgstr "Oscam dvbapi config disattivato !"
+
+msgid "Oscam dvbapi config enabled !"
+msgstr "Oscam dvbapi config attivo !"
+
+msgid "Dvbapi (enabled)"
+msgstr "Dvbapi (attivo)"
+
+msgid "Dvbapi (disabled)"
+msgstr "Dvbapi (disattivo)"
+
+msgid "After EPG Scan"
+msgstr "Cerca EPG"
+
+msgid ""
+"Found new Stick/HDD.\n"
+"You can configure it in Harddisk Menu."
+msgstr ""
+"Found new Stick/HDD.\n"
+"You can configure it in Harddisk Menu."
+
+msgid "yes / vzap 1 sec"
+msgstr "yes / vzap 1 sec"
+
+msgid "yes / vzap 2 sec"
+msgstr "yes / vzap 2 sec"
+
+msgid "yes / vzap endless"
+msgstr "yes / vzap endless"
+
+msgid "Deavtivate Refresh Time and After EPG in scan-mode"
+msgstr "Deavtivate Refresh Time and After EPG in scan-mode"
+
+msgid ""
+"Can't start system update\n"
+"Syntax Error on updatefile"
+msgstr ""
+"Can't start system update\n"
+"Syntax Error on updatefile"
+
