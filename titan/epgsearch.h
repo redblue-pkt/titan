@@ -154,6 +154,8 @@ void screenepgsearch(char* text)
 				  free(s1); s1 = NULL;
 				  free(s2); s2 = NULL;
 				  free(s3); s3 = NULL;
+				  drawscreen(epgsearch, 0, 0);
+					continue;
 				}
 			}
 			break;
