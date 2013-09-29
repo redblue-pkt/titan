@@ -5118,7 +5118,6 @@ void setdebuglevel()
 char* getxmlentry(char *line, char *searchstr)
 {
 	char *buf = NULL, *buf1 = NULL, *buf2 = NULL;
-	unsigned char buf3 = '\0';
 
 	buf = ostrstr(line, searchstr);
 	if(buf == NULL)
@@ -5134,13 +5133,10 @@ char* getxmlentry(char *line, char *searchstr)
 			err("strchr returns NULL");
 			return NULL;
 		}
-		buf3 = buf2[0];
-		buf2[0] = '\0';
-		buf1 = ostrcat(buf, NULL, 0, 0);
-		buf2[0] = buf3;
+		buf1 = strndup(buf, buf2 - buf);
 		if(buf1 == NULL)
 		{
-			err("ostrcat failed");
+			err("strndup failed");
 			return NULL;
 		}
 	}
@@ -5160,13 +5156,10 @@ char* getxmlentry(char *line, char *searchstr)
 				}
 			}
 		}
-		buf3 = buf2[0];
-		buf2[0] = '\0';
-		buf1 = ostrcat(buf, NULL, 0, 0);
-		buf2[0] = buf3;
+		buf1 = strndup(buf, buf2 - buf);
 		if(buf1 == NULL)
 		{
-			err("ostrcat failed");
+			err("strndup failed");
 			return NULL;
 		}
 	}
