@@ -5118,6 +5118,7 @@ void setdebuglevel()
 char* getxmlentry(char *line, char *searchstr)
 {
 	char *buf = NULL, *buf1 = NULL, *buf2 = NULL;
+	unsigned char buf3 = '\0';
 
 	buf = ostrstr(line, searchstr);
 	if(buf == NULL)
@@ -5127,45 +5128,47 @@ char* getxmlentry(char *line, char *searchstr)
 	if(buf[0] == '"')
 	{
 		buf = buf + 1;
-		buf1 = ostrcat(buf, NULL, 0, 0);
-		if(buf1 == NULL)
-		{
-			err("ostrcat failed");
-			return NULL;
-		}
-		buf2 = strchr(buf1, '"');
+		buf2 = strchr(buf, '"');
 		if(buf2 == NULL)
 		{
 			err("strchr returns NULL");
-			free(buf1);
 			return NULL;
 		}
+		buf3 = buf2[0];
 		buf2[0] = '\0';
-	}
-	else
-	{
 		buf1 = ostrcat(buf, NULL, 0, 0);
+		buf2[0] = buf3;
 		if(buf1 == NULL)
 		{
 			err("ostrcat failed");
 			return NULL;
 		}
-		buf2 = strchr(buf1, ' ');
+	}
+	else
+	{
+		buf2 = strchr(buf, ' ');
 		if(buf2 == NULL)
 		{
-			buf2 = ostrstr(buf1, "/>");
+			buf2 = ostrstr(buf, "/>");
 			if(buf2 == NULL) 
 			{
-				buf2 = strchr(buf1, '>');
+				buf2 = strchr(buf, '>');
 				if(buf2 == NULL)
 				{
 					err("strchr returns NULL");
-					free(buf1);
 					return NULL;
 				}
 			}
 		}
+		buf3 = buf2[0];
 		buf2[0] = '\0';
+		buf1 = ostrcat(buf, NULL, 0, 0);
+		buf2[0] = buf3;
+		if(buf1 == NULL)
+		{
+			err("ostrcat failed");
+			return NULL;
+		}
 	}
 
 	return buf1;
