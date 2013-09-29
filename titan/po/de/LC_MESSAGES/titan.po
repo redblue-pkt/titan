@@ -30,8 +30,8 @@ msgstr "Wollen Sie diese Freigabe wirklich speichern?"
 msgid "Are you sure you want to remove all Partitions\n"
 "on this device and create a new Partition 1?\n"
 "Box reboots after format"
-msgstr "Wollen Sie alle Partitionen entfernen\n"
-"auf diesem Gerät und eine neue Partition erstellen?\n"
+msgstr "Wollen Sie alle Partitionen auf diesem Gerät\n"
+"entfernen und eine neue Partition erstellen?\n"
 "Die Box wird danach neu gestartet."
 
 msgid "Are you sure you want to format this Partition?\n"
@@ -57,7 +57,7 @@ msgid "Wizard"
 msgstr "Setup-Assistent"
 
 msgid "Aborting restoring..."
-msgstr "Die Rücksicherung der Daten wird beendet!"
+msgstr "Die Wiederherstellung der Daten wird beendet!"
 
 msgid "Aborting backup..."
 msgstr "Die Datensicherung wird beendet!"
@@ -159,7 +159,7 @@ msgid "alt file"
 msgstr "alternative Datei"
 
 msgid "Are you sure you want to restore settings?"
-msgstr "Sollen die Einstellungen wieder hergestellt werden?"
+msgstr "Sollen die Einstellungen wiederhergestellt werden?"
 
 msgid "Apple Trailer"
 msgstr "Apple Movie Trailer"
@@ -207,7 +207,7 @@ msgid "Automatic Search"
 msgstr "Automatische Sendersuche"
 
 msgid "Automatic stop in 5 seconds."
-msgstr "Automatisches Neustart wird in 5 Sekunden eingeleitet!"
+msgstr "Automatischer Neustart wird in 5 Sekunden eingeleitet!"
 
 msgid "Automount"
 msgstr "Automatische Einbindung"
@@ -234,7 +234,7 @@ msgid "Backup - Settings"
 msgstr "Einstellungen werden gesichert"
 
 msgid "Backup startet\n\nPlease wait..."
-msgstr "Sicherung wurde gestartet\n\nBitte warten..."
+msgstr "Sicherung wurde gestartet\n\nBitte warten ..."
 
 msgid "bbgain"
 msgstr "BBGain"
@@ -607,7 +607,7 @@ msgid "EPG Info"
 msgstr "EPG Info"
 
 msgid "Epg List Mode"
-msgstr "EPG Listenformat"
+msgstr "EPG Suchmethode"
 
 msgid "EPG Path"
 msgstr "EPG Speicherpfad"
@@ -760,13 +760,13 @@ msgid "Found TV:"
 msgstr "Gefundene - TV:"
 
 msgid "Found running Record.\nRealy shutdown ?"
-msgstr "Vorsicht eine Aufnahme läuft.\nSie können den Ausschalttimer benutzen um nach der Aufnahme Auszuschalten!\n\nWollen sie wirklich Ausschalten?"
+msgstr "Vorsicht eine Aufnahme läuft.\nSie können den Ausschalttimer benutzen, um nach der Aufnahme auszuschalten!\n\nWollen sie wirklich ausschalten?"
 
 msgid "Found running record\nor record is starting in next time.\nReally shutdown ?"
-msgstr "Vorsicht eine Aufnahme läuft, oder startet bald.\nWollen sie wirklich Ausschalten?"
+msgstr "Vorsicht eine Aufnahme läuft, oder startet bald.\nWollen sie wirklich ausschalten?"
 
 msgid "Found running download\nReally shutdown ?"
-msgstr "Vorsicht ein Download läuft.\nWollen sie wirklich Ausschalten?"
+msgstr "Vorsicht ein Download läuft.\nWollen sie wirklich ausschalten?"
 
 msgid "Really stop download ?"
 msgstr "Download wirklich beenden?"
@@ -878,7 +878,7 @@ msgid "HighSR"
 msgstr "HighSR"
 
 msgid "How many days"
-msgstr "Wie viele Tage EPG im vorraus speichern"
+msgstr "Wie viele Tage EPG im voraus speichern"
 
 msgid "HTTP Settings"
 msgstr "Webserver Einstellungen"
@@ -1055,7 +1055,7 @@ msgid "maxdelay"
 msgstr "Maximale Verzögerung"
 
 msgid "maxrate"
-msgstr "Maximae Rate"
+msgstr "Maximale Rate"
 
 msgid "MC VideoPlayer Imdb Settings"
 msgstr "MC VideoPlayer Imdb Einstellungen"
@@ -1082,7 +1082,7 @@ msgid "Memory info"
 msgstr "Speicher Information"
 
 msgid "MENU"
-msgstr "Menu"
+msgstr "Menü"
 
 msgid "Menu Protect"
 msgstr "Menü schützen"
@@ -1157,7 +1157,7 @@ msgid "Single Service"
 msgstr "Einzelsender"
 
 msgid "Multiple Service"
-msgstr "mehrerer Sender gleichzeitig"
+msgstr "mehrere Sender gleichzeitig"
 
 msgid "Module Type"
 msgstr "Module Typ"
@@ -1807,7 +1807,7 @@ msgid "scan"
 msgstr "Suche"
 
 msgid "Scan Config"
-msgstr "Sendersuchlaufseinstellungen"
+msgstr "Suchlaufeinstellungen"
 
 msgid "scan wlan"
 msgstr "Suche WLAN"
@@ -2059,7 +2059,7 @@ msgid "starting Root Update ?"
 msgstr "Root Aktualisierung starten?"
 
 msgid "starting Var Update ?"
-msgstr "Fw Var starten?"
+msgstr "Var Aktualisierung starten?"
 
 msgid "starting Full Update ?"
 msgstr "Komplette Aktualisierung starten?"
@@ -2176,7 +2176,7 @@ msgid "System"
 msgstr "System"
 
 msgid "System..."
-msgstr "System"
+msgstr "System...test2"
 
 msgid "System:"
 msgstr "System:"
@@ -2242,7 +2242,7 @@ msgid "Timeshift Path"
 msgstr "Ordner für Timeshift"
 
 msgid "Timeshift is running !!!\nStop it and switch ?"
-msgstr "Timeshift läuft!!!\nAusschalten und Umschalten?"
+msgstr "Timeshift läuft!\nAusschalten und Umschalten?"
 
 msgid "Timezone"
 msgstr "Zeitzone"
@@ -2311,7 +2311,7 @@ msgid "Type:"
 msgstr "Typ:"
 
 msgid "type of channelsearch"
-msgstr "Type der Kanalsuche"
+msgstr "Typ der Kanalsuche"
 
 msgid "UNC:"
 msgstr "UNC:"
@@ -2440,7 +2440,7 @@ msgid "Volumebar Timeout"
 msgstr "Zeit bis Lautstärkeanzeige ausblendet in Sekunden"
 
 msgid "Wait for channel scan end"
-msgstr "Sendersuchlauf, warte bis zum Ende."
+msgstr "Sendersuchlauf, bitte warten ..."
 
 msgid "wait for stopping download"
 msgstr "Warten, Download wird beendet."
@@ -2539,10 +2539,10 @@ msgid "A record hdd or a swapstick must be mounted!\n\nAborting backup..."
 msgstr "Kein Backup Verzeichnis gefunden"
 
 msgid "Backup to /tmp or /var/backup. If the free memory too small can a usb device will never use.\nThere must be a folder backup."
-msgstr "Sicherung wird in /tmp oder /var/backup abgelegt. Fals der interne Speicher nicht ausreicht kann die Sicherung auch\nauf einem USB Stick/HDD gespeichert werden.\nEs muß ein Ordner backup auf dem Gerät sein."
+msgstr "Sicherung wird in /tmp oder /var/backup abgelegt. Falls der interne Speicher nicht ausreicht, kann die Sicherung auch\nauf einem USB Stick/HDD gespeichert werden.\nEs muß ein Ordner backup auf dem Gerät sein."
 
 msgid "Some plugins needs restart.\nIf the plugin is not active\nreboot the box."
-msgstr "Einige Erweiterungen benötigen einen Neustart.\nWenn das Plugin nicht verfügbar ist, bitte Neustarten"
+msgstr "Einige Erweiterungen benötigen einen Neustart.\nWenn das Plugin nicht verfügbar ist, bitte neustarten"
 
 msgid "EDIT"
 msgstr "Bearbeiten"
@@ -2623,7 +2623,7 @@ msgid "no description found"
 msgstr "keine Beschreibung gefunden"
 
 msgid "EPG resetet and now clear."
-msgstr "EPG zurück gesetzt und gelöscht"
+msgstr "EPG zurückgesetzt und gelöscht"
 
 msgid "Show Pictitle"
 msgstr "Zeige Bildname"
@@ -2904,7 +2904,7 @@ msgid "BouquetCount: "
 msgstr "Bouquets: "
 
 msgid "BouquetEntrys: "
-msgstr "Bouqeuteinträge: "
+msgstr "Bouqueteinträge: "
 
 msgid "EpgChannels: "
 msgstr "EPG Kanäle: "
@@ -2916,7 +2916,7 @@ msgid "Optimize"
 msgstr "optimieren"
 
 msgid "Send remote box into standby ?"
-msgstr "Ferne Box in Standby versetzen?"
+msgstr "Remote Box in Standby versetzen?"
 
 msgid "BG-RUN"
 msgstr "Ausführung im Hintergrund"
@@ -3253,13 +3253,13 @@ msgid "Are you sure you want to restore settings?\n\nOK = start restore\nEXIT = 
 msgstr "Sie wollen Ihre Einstellungen wiederherstellen?\n\nOK = Wiederherstellung starten\nEXIT = Wiederherstellung abbrechen"
 
 msgid "Backup failed, see log"
-msgstr "Sicherung fehlgeschlagen, Infos können Sie im Log sehen"
+msgstr "Sicherung fehlgeschlagen, Infos siehe log"
 
 msgid "Press -restore- and your saved settings will be restored from your swapstick / recording hdd! The Box will restart automatically for restoring!\n\nPress -backup- to save your actual settings to swapstick / recording hdd.\nWARNING: The old backup will be deleted!"
-msgstr "Drücken von -Wiederherstellung- (Grün)\nund Ihre Daten werden aus einer zuvor erstellten Sicherung wiederhergestellt! Ihre Satbox wird dafür automatisch neugestartet! \n\nDrücken von -Sicherung erstellen- (Gelb)\ndann werden Ihre Daten gesichert.\nWARNUNG: Die alten Sicherungen werden gelöscht!"
+msgstr "Drücken von -Wiederherstellung- (Grün)\nund Ihre Daten werden aus einer zuvor erstellten Sicherung wiederhergestellt! Ihr Receiver wird dafür automatisch neugestartet! \n\nDrücken von -Sicherung erstellen- (Gelb)\ndann werden Ihre Daten gesichert.\nWARNUNG: Die alten Sicherungen werden gelöscht!"
 
 msgid "Can't start system update\nPlease remove Stick/HDD and try again"
-msgstr "System Aktualisierung kann nicht gestartet werden!\nEntfernen Sie Bitte alle USB Speichermedien und versuchen Sie es erneut."
+msgstr "System Aktualisierung kann nicht gestartet werden!\nEntfernen Sie bitte alle USB Speichermedien und versuchen Sie es erneut."
 
 msgid "wireless"
 msgstr "WLAN Module"
@@ -3361,7 +3361,7 @@ msgid "RECEIVER ID: "
 msgstr "Board-ID Seriennummer: "
 
 msgid "Can't save Code.\nDelete Plugins to free space"
-msgstr "Ihr Schlüssel kann nicht gespeichert werden.\nLöschen Sie bitte eines der von Ihnen installierten Erweiterungen\num freien Speicherplatz zu erhalten."
+msgstr "Ihr Schlüssel kann nicht gespeichert werden.\nLöschen Sie bitte eine der von Ihnen installierten Erweiterungen\num freien Speicherplatz zu erhalten."
 
 msgid "Please contact Atemio for activation. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
 msgstr "Bitte wenden Sie sich an Atemio, falls Ihre Freischaltung noch nicht wirksam ist.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
@@ -3391,10 +3391,10 @@ msgid "Can't open DMX device"
 msgstr "Das DMX device kann nicht geöffnet werden"
 
 msgid "Pid's not ok"
-msgstr "Fehler in den Pid's"
+msgstr "Fehler in den Pids"
 
 msgid "Channel or Transponder is empty"
-msgstr "Kanal oder Transponder ist lehr"
+msgstr "Kanal oder Transponder ist leer"
 
 msgid "Write error"
 msgstr "Schreibfehler"
@@ -3415,7 +3415,7 @@ msgid "Can't create service"
 msgstr "Es kann kein Service angelegt werden"
 
 msgid "Can't find free Tuner for Record.\nSwitch to Recording/Timeshift Channel ?"
-msgstr "Es ist kein freier Tuner vorhanden.\nZum Aufnahme/Timeschift Kanal wechseln?"
+msgstr "Es ist kein freier Tuner vorhanden.\nZum Aufnahme/Timeshift Kanal wechseln?"
 
 msgid "size (default)"
 msgstr "Grösse (Voreinstellung)"
@@ -3430,10 +3430,10 @@ msgid "Start at last position ?"
 msgstr "An letzter Stelle beginnen?"
 
 msgid "Install Tithek Tpk first !"
-msgstr "Installieren Sie Bitte das Tithek Plugin unter Erweiterungen"
+msgstr "Installieren Sie bitte das Tithek Plugin unter Erweiterungen"
 
 msgid "Install Weather Tpk first !"
-msgstr "Installieren Sie Bitte das Wetter Plugin unter Erweiterungen"
+msgstr "Installieren Sie bitte das Wetter Plugin unter Erweiterungen"
 
 msgid "Record started"
 msgstr "Aufnahme wurde gestartet"
@@ -3496,7 +3496,7 @@ msgid "To"
 msgstr "nach"
 
 msgid "Install File Manager Tpk first !"
-msgstr "Installieren Sie Bitte das Datei Browser unter Erweiterungen"
+msgstr "Installieren Sie bitte das Datei Browser Plugin unter Erweiterungen"
 
 msgid "FILELIST MANAGER"
 msgstr "Datei Browser"
@@ -3514,7 +3514,7 @@ msgid "Del EPG before scan"
 msgstr "Lösche EPG vor der Suche"
 
 msgid "Found Pay Stream visit the official Website and Order this Stream and try this again !"
-msgstr "Pay-Stream gefunden besuchen Sie die offizielle Website und bestellen\nSie diesen Stream und versuchen Sie es nochmal!"
+msgstr "Pay-Stream gefunden, besuchen Sie die offizielle Website und bestellen\nSie diesen Stream und versuchen Sie es nochmal!"
 
 msgid "Show Pay Streams"
 msgstr "Zeige Pay und Englische Streams"
@@ -3544,16 +3544,16 @@ msgid "Copy satlist not ok"
 msgstr "Kopieren des Satelliten abgebrochen"
 
 msgid "The hoster is not yet supported !"
-msgstr "Der hoster wird zur zeit noch nicht unterstützt!"
+msgstr "Der Hoster wird zur Zeit noch nicht unterstützt!"
 
 msgid "CLEAR INPUT"
-msgstr "Eingabefeld Löschen"
+msgstr "Eingabefeld löschen"
 
 msgid "REMOVE ENTRY"
-msgstr "Listeneintrag Löschen"
+msgstr "Listeneintrag löschen"
 
 msgid "Streaming version of this file is currently not available. You can download it below."
-msgstr "Streaming-Version dieser Datei ist derzeit nicht verfügbar. Sie können es nur downloaden."
+msgstr "Streaming-Version dieser Datei ist derzeit nicht verfügbar. Sie können nur downloaden."
 
 msgid "Autocheck cam can decrypt"
 msgstr "Automatisches Überprüfen ob Ihr CAM entschlüsseln kann?"
@@ -3568,7 +3568,7 @@ msgid "Show last pos Question"
 msgstr "Benutze 'An letzter Stelle beginnen'"
 
 msgid "default Directory"
-msgstr "standard Verzeichnis"
+msgstr "Standard Verzeichnis"
 
 msgid "use last Directory"
 msgstr "Benutze immer letztes Verzeichnis"
@@ -3631,7 +3631,7 @@ msgid "MediaDB scan finished"
 msgstr "MediaDB Suche beendet"
 
 msgid "This file doesn't exist, or has been removed"
-msgstr "Dieser Stream ist zur zeit nicht verfügbar oder entfernt worden"
+msgstr "Dieser Stream ist zur Zeit nicht verfügbar oder entfernt worden"
 
 msgid "Here you can select your reader. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
 msgstr "Hier können sie Ihre Reader auswählen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
@@ -3718,10 +3718,10 @@ msgid "Create Record Picture"
 msgstr "Erstelle Aufnahme Vorschaubild"
 
 msgid "Error, Internet Connection not found"
-msgstr "Fehler, keine Internet Verbindung verfügbar"
+msgstr "Fehler: keine Internet Verbindung verfügbar"
 
 msgid "No space left on device"
-msgstr "Fehler, Festplatte/Stick voll"
+msgstr "Fehler: Festplatte/Stick voll"
 
 msgid "Only default signalrate"
 msgstr "Verwende Standard Signalrate"
@@ -3796,7 +3796,7 @@ msgid "Streaming Playback Caching (10MB)"
 msgstr "Direktes Streamen mit Puffer (10MB)"
 
 msgid "ERROR... can't set marker in this file"
-msgstr "Fehler für diese Datei kann kein Marker gesetzt werden"
+msgstr "Fehler: Für diese Datei kann kein Marker gesetzt werden"
 
 msgid "Marker has been set."
 msgstr "Ihr Marker wurde erfolgreich gesetzt"
@@ -3844,7 +3844,7 @@ msgid "blink star"
 msgstr "Stern blinkend"
 
 msgid "show record"
-msgstr "zeige record"
+msgstr "Zeige record"
 
 msgid "fade out/in"
 msgstr "ein/ausblenden"
@@ -3916,7 +3916,7 @@ msgid "SEND"
 msgstr "Senden"
 
 msgid "If you don't find Windows shares you need to disable 'Password protected sharing' in the 'Network and Sharing Center'."
-msgstr "Sollten keine Windows Freigaben sichtbar sein, muss 'Kennwortgeschützte Freigaben' im 'Netzwerk- und Freigabecenter' abgeschalten werden."
+msgstr "Sollten keine Windows Freigaben sichtbar sein, muss 'Kennwortgeschützte Freigaben' im 'Netzwerk- und Freigabecenter' abgeschaltet werden."
 
 msgid "Show HDD freesize"
 msgstr "Zeige freien Festplattenspeicher"
@@ -3946,13 +3946,13 @@ msgid "Can't install Package. Package to big."
 msgstr "Paket zu gross. Installation nicht möglich."
 
 msgid "Format and restore default settings"
-msgstr "Formatiere Internen Speicher mit Werkseinstellung"
+msgstr "Formatiere internen Speicher mit Werkseinstellung"
 
 msgid "Format and backup/restore settings"
-msgstr "Formatiere Internen Speicher ohne Werkseinstellung"
+msgstr "Formatiere internen Speicher ohne Werkseinstellung"
 
 msgid "Do you really want to erase Swap (Settings are preserve)?\nThe Box will reboot and the erase will be started!"
-msgstr "Internen Swap Speicher löschen ohne Werkseinstellung durchführen?\nBox neu starten und Löschvorgang ausführen "
+msgstr "Internen Swap Speicher löschen (Konfiguration wird beibehalten)?\nBox neu starten und Löschvorgang ausführen "
 
 msgid "MediaDB entry for this file not found."
 msgstr "MediaDB Eintrag dieser Datei konnte nicht gefunden werden."
@@ -3970,10 +3970,10 @@ msgid "Tpk Update Info - Update ERROR"
 msgstr "Tpk Update Info - Update Fehler"
 
 msgid "Can't get all TPK index !"
-msgstr "Es konnten nicht alle TPK Index Dateien geholt werden !"
+msgstr "Es konnten nicht alle TPK Index Dateien geholt werden!"
 
 msgid "Can't update all packages !"
-msgstr "Es konnten nicht alle TPK Pakete aktualisiert werden !"
+msgstr "Es konnten nicht alle TPK Pakete aktualisiert werden!"
 
 msgid "Update Plugins to new Version?"
 msgstr "Plugins auf die neue Version aktualisieren?"
@@ -3994,7 +3994,7 @@ msgid "card not present"
 msgstr "Keine Karte gefunden"
 
 msgid "Directory has content\nReally delete directory and content?"
-msgstr "Verzeichnis hat einen Inhalt\nWirklich löschen?"
+msgstr "Verzeichnis ist nicht leer.\nWirklich löschen?"
 
 msgid "Hid XXX Streams"
 msgstr "XXX Streams ausblenden"
@@ -4036,13 +4036,13 @@ msgid "file copy error"
 msgstr "Fehler beim Kopieren"
 
 msgid "Can't rename file !"
-msgstr "Datei konnte nicht umbenannt werden !"
+msgstr "Datei konnte nicht umbenannt werden!"
 
 msgid "Can't create directory !"
-msgstr "Verzeichnis konnte nicht erstellt werden !"
+msgstr "Verzeichnis konnte nicht erstellt werden!"
 
 msgid "Can't remove file/dir !"
-msgstr "Datei/Verzeichnis konnte nicht gelöscht werden !"
+msgstr "Datei/Verzeichnis konnte nicht gelöscht werden!"
 
 msgid "stable"
 msgstr "Stabil"
@@ -4051,10 +4051,10 @@ msgid "unstable"
 msgstr "Unstabil"
 
 msgid "Box recording finished poweroff in 30sec !"
-msgstr "Aufnahme beendet. Box wird in 30sek ausgeschalten !"
+msgstr "Aufnahme beendet. Box wird in 30sek ausgeschaltet!"
 
 msgid "Timer Record start !\n"
-msgstr "Timer Aufnahme gestartet ! \n"
+msgstr "Timer Aufnahme gestartet! \n"
 
 msgid "Choice Install Medium"
 msgstr "Installation Auswahl"
@@ -4099,10 +4099,10 @@ msgid "No config file found."
 msgstr "Es wurde kein Config File gefunden."
 
 msgid "Oscam dvbapi config disabled !"
-msgstr "Oscam dvbapi config deaktiviert !"
+msgstr "Oscam dvbapi config deaktiviert!"
 
 msgid "Oscam dvbapi config enabled !"
-msgstr "Oscam dvbapi config aktiviert !"
+msgstr "Oscam dvbapi config aktiviert!"
 
 msgid "Dvbapi (enabled)"
 msgstr "Dvbapi (aktiviert)"
@@ -4114,7 +4114,7 @@ msgid "After EPG Scan"
 msgstr "Nach EPG Suche"
 
 msgid "Found new Stick/HDD.\nYou can configure it in Harddisk Menu."
-msgstr "Neuer Stick/HDD erkannt.\nSie können diesen im Festplatten Menü einstellen."
+msgstr "Neuer Datenträger erkannt.\nSie können diesen im Festplatten Menü konfigurieren."
 
 msgid "yes / vzap 1 sec"
 msgstr "Ja / VZAP 1 sek"
