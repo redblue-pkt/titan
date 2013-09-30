@@ -2,13 +2,7 @@ Package: titan-plugin-network-networkbrowser
 Version: 21579
 Description: Networkbrowser scanning an manage cifs/nfs/ftp shares.
 Section: network
-Priority: optional
-Maintainer: Atemio
 Architecture: sh4
-OE: Skin
-Homepage: http://www.atemio.de
-Depends:
-Source: http://www.aaf-digital.info
 Titanname: Networkbrowser
 Showname: Networkbrowser
 Installpath: /var

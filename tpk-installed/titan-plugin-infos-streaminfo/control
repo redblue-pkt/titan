@@ -1,12 +1,7 @@
 Package: titan-plugin-infos-streaminfo
 Version: 21579
 Architecture: sh4
-OE: Callmonitor
 Section: infos
-Priority: optional
-Maintainer: Atemio
-Homepage: http://www.atemio.de
-Source: nit by AAF 
 Description: streaminfo Plugin
 Titanname: Streaminfo
 Showname: Streaminfo

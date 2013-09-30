@@ -1,12 +1,7 @@
 Package: titan-plugin-infos-tmdb
 Version: 21579
 Architecture: sh4
-OE: infos
 Section: infos
-Priority: optional
-Maintainer: Atemio
-Homepage: http://www.atemio.de
-Source: obi by AAF 
 Description: TMDb Movie Database Plugin
 Titanname: TMDb
 Showname: TMDb
