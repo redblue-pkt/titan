@@ -42,7 +42,7 @@ msgstr "formatare partizione?\n"
 msgid "Are you sure you want to check this Partition?\n"
 "Box reboots after check"
 msgstr "Sei sicuro di voler controllare questa partizione?\n"
-"\"\"Il ricevitore fara subito dopo restart."
+"Il ricevitore fara subito dopo restart."
 
 msgid "A record hdd or a swapstick must be mounted!"
 msgstr "Un hdd nominato record o un  swapstick deve essere montato"
