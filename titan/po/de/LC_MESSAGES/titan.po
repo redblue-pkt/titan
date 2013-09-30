@@ -351,7 +351,7 @@ msgid "Can't find a Tuner.\nAll Tuners in use or no Tuner defined."
 msgstr "Kein freier Tuner gefunden"
 
 msgid "Can't open frontend dev or Frontend Type unknown!"
-msgstr "Frontend kann nicht geöffnet werden oder unbekannter Type"
+msgstr "Frontend kann nicht geöffnet werden oder unbekannter Typ"
 
 msgid "CHANGE"
 msgstr "Ändern"
@@ -438,7 +438,7 @@ msgid "CPU"
 msgstr "Prozessor"
 
 msgid "CPU info"
-msgstr "Prozessor Information"
+msgstr "CPU Information"
 
 msgid "CPU frequency"
 msgstr "CPU Frequenz"
@@ -462,10 +462,10 @@ msgid "Detect hanging System !!!\n"
 "\n"
 "KILL = Red\n"
 "BOOT = Power"
-msgstr "Systemfehler !!!\n"
+msgstr "Systemfehler!!!\n"
 "\n"
 "Rot  = Prozess beenden\n"
-"Grün = System Neustarten"
+"Grün = System neustarten"
 
 msgid "default"
 msgstr "Voreinstellung"
@@ -565,7 +565,7 @@ msgstr "Soll der Assistent gestartet werden?\n"
 "Die Box wird neu gestartet und der Assistent wird ausgeführt"
 
 msgid "Don't clear TV on zap (only with fastzap)"
-msgstr "TV Bild beim schnellen umschalten nicht löschen"
+msgstr "TV Bild beim schnellen Umschalten nicht löschen"
 
 msgid "download error"
 msgstr "Fehler beim Download"
@@ -760,13 +760,13 @@ msgid "Found TV:"
 msgstr "Gefundene - TV:"
 
 msgid "Found running Record.\nRealy shutdown ?"
-msgstr "Vorsicht eine Aufnahme läuft.\nSie können den Ausschalttimer benutzen, um nach der Aufnahme auszuschalten!\n\nWollen sie wirklich ausschalten?"
+msgstr "Vorsicht, eine Aufnahme läuft.\nSie können den Ausschalttimer benutzen, um nach der Aufnahme auszuschalten!\n\nWollen Sie wirklich ausschalten?"
 
 msgid "Found running record\nor record is starting in next time.\nReally shutdown ?"
-msgstr "Vorsicht eine Aufnahme läuft, oder startet bald.\nWollen sie wirklich ausschalten?"
+msgstr "Vorsicht eine Aufnahme läuft, oder startet bald.\nWollen Sie wirklich ausschalten?"
 
 msgid "Found running download\nReally shutdown ?"
-msgstr "Vorsicht ein Download läuft.\nWollen sie wirklich ausschalten?"
+msgstr "Vorsicht ein Download läuft.\nWollen Sie wirklich ausschalten?"
 
 msgid "Really stop download ?"
 msgstr "Download wirklich beenden?"
@@ -850,7 +850,7 @@ msgid "GUI Restart"
 msgstr "GUI Neustart"
 
 msgid "Goto startpos"
-msgstr "gehe zur startposition"
+msgstr "gehe zur Startposition"
 
 msgid "Hangtime"
 msgstr "Zeit bis Warnmeldung erscheint in Sekunden"
@@ -878,7 +878,7 @@ msgid "HighSR"
 msgstr "HighSR"
 
 msgid "How many days"
-msgstr "Wie viele Tage EPG im voraus speichern"
+msgstr "Wie viele Tage EPG im Voraus speichern"
 
 msgid "HTTP Settings"
 msgstr "Webserver Einstellungen"
@@ -998,7 +998,7 @@ msgid "Latitude"
 msgstr "Breitengrad"
 
 msgid "letterbox"
-msgstr "Breitbild schmal wiedergeben"
+msgstr "Letterbox"
 
 msgid "Listbox Select"
 msgstr "Listbox Auswahl"
@@ -1070,7 +1070,7 @@ msgid "Media Center"
 msgstr "Media Center"
 
 msgid "Media Player"
-msgstr "Medien Abspielen"
+msgstr "Medien abspielen"
 
 msgid "MediaCenter Icon"
 msgstr "MediaCenter Bild"
@@ -1139,7 +1139,7 @@ msgid "MTD"
 msgstr "Flash Aufteilung"
 
 msgid "MTD info"
-msgstr "Flash Aufteilungs Information"
+msgstr "Flash Aufteilung Information"
 
 msgid "Multi EPG"
 msgstr "Multi-EPG"
@@ -1160,7 +1160,7 @@ msgid "Multiple Service"
 msgstr "mehrere Sender gleichzeitig"
 
 msgid "Module Type"
-msgstr "Module Typ"
+msgstr "Modul Typ"
 
 msgid "mvid"
 msgstr "mvid"
@@ -1245,7 +1245,7 @@ msgstr "Kein TPK gefunden in /tmp"
 
 msgid "No skinconfig found in skin.\n"
 "Can't change to selected skin."
-msgstr "Keine Skinconfiguration gefunden.\n"
+msgstr "Keine Skinkonfiguration gefunden.\n"
 "Kann Skin nicht auswählen"
 
 msgid "nothing"
@@ -1492,7 +1492,7 @@ msgid "Prev"
 msgstr "Zurück"
 
 msgid "press red"
-msgstr "Drück Rote-Taste"
+msgstr "Drücke rote Taste"
 
 msgid "profile"
 msgstr "Profil"
@@ -1618,7 +1618,7 @@ msgid "record_split_type"
 msgstr "Typ der Aufnahmeteilung"
 
 msgid "Records"
-msgstr "Programmierte Aufnahmen"
+msgstr "Timer"
 
 msgid "red"
 msgstr "rot"
@@ -1876,7 +1876,7 @@ msgid "Settings succesfull saved"
 msgstr "Einstellungen erfolgreich gespeichert"
 
 msgid "Settings backup/restore"
-msgstr "Einstellungen Sichern/Wiederherstellen"
+msgstr "Einstellungen sichern/wiederherstellen"
 
 msgid "Settings"
 msgstr "Einstellungen"
@@ -2536,10 +2536,10 @@ msgid "No backup folders found!!!\n\nAborting restoring..."
 msgstr "Kein Backup Verzeichnis gefunden"
 
 msgid "A record hdd or a swapstick must be mounted!\n\nAborting backup..."
-msgstr "Kein Backup Verzeichnis gefunden"
+msgstr "Kein Backup Verzeichnis gefunden\nBreche Sicherung ab ..."
 
 msgid "Backup to /tmp or /var/backup. If the free memory too small can a usb device will never use.\nThere must be a folder backup."
-msgstr "Sicherung wird in /tmp oder /var/backup abgelegt. Falls der interne Speicher nicht ausreicht, kann die Sicherung auch\nauf einem USB Stick/HDD gespeichert werden.\nEs muß ein Ordner backup auf dem Gerät sein."
+msgstr "Sicherung wird in /tmp oder /var/backup abgelegt. Falls der interne Speicher nicht ausreicht, kann die Sicherung auch\nauf einem USB Stick/HDD gespeichert werden.\nEs muss ein Ordner "backup" auf dem Gerät sein."
 
 msgid "Some plugins needs restart.\nIf the plugin is not active\nreboot the box."
 msgstr "Einige Erweiterungen benötigen einen Neustart.\nWenn das Plugin nicht verfügbar ist, bitte neustarten"
@@ -2554,7 +2554,7 @@ msgid "Install netsurf Internetbrowser Tpk first !"
 msgstr "Internetbrowser netsurf ist nicht installiert"
 
 msgid "start Internet browser now ?"
-msgstr "Wollen sie den Internet Browser starten?"
+msgstr "Wollen Sie den Internet Browser starten?"
 
 msgid "Move"
 msgstr "Rotor bewegen"
@@ -2614,10 +2614,10 @@ msgid "Set action after rec"
 msgstr "Nach der Aufnahme"
 
 msgid "For next OnlineUpdate please contact Atemio and send this Serial Number\nand your Atemio Serial Number !!\n\nBoard-ID SerialNr:"
-msgstr "Sollten die Online Funktionen deaktiviert sein, senden sie bitte die hier angezeigte\nBoard-ID Seriennummer (AA...)und die Seriennummer unterhalb des\nGerätes (AM...) an die eingeblendete E-Mail Addresse. \n\nBoard-ID Seriennummer:"
+msgstr "Sollten die Online Funktionen deaktiviert sein, senden Sie bitte die hier angezeigte\nBoard-ID Seriennummer (AA...)und die Seriennummer unterhalb des\nGerätes (AM...) an die eingeblendete E-Mail Addresse. \n\nBoard-ID Seriennummer:"
 
 msgid "Registration needed, please contact Atemio !"
-msgstr "Registrierung erforderlich, bitte kontaktieren sie Atemio!\nInfos erhalten Sie im Atemio-Panel > System > Serial-Information"
+msgstr "Registrierung erforderlich, bitte kontaktieren Sie Atemio!\nInfos erhalten Sie im Atemio-Panel > System > Serial-Information"
 
 msgid "no description found"
 msgstr "keine Beschreibung gefunden"
@@ -2662,7 +2662,7 @@ msgid "lcdsamsungskins"
 msgstr "Samsung-LCD-Skins"
 
 msgid "Backup created successfully"
-msgstr "Sicherung erfolgreich angelegt"
+msgstr "Sicherung erfolgreich erstellt"
 
 msgid "EPG Save Mode"
 msgstr "Wann sollen die EPG Daten gesichert werden"
@@ -2736,8 +2736,8 @@ msgstr "unverschlüsselt"
 msgid ""
 "Before you can see Signal/SNR/Ber you must zap to a channel of the satellite "
 "you are searching."
-msgstr "Bevor Sie Signal/SNR/Ber sehen können müssen sie auf einen Kanal des "
-"Satelliten schalten den Sie suchen."
+msgstr "Bevor Sie Signal/SNR/Ber sehen können, müssen Sie auf einen Kanal des "
+"Satelliten schalten, den Sie suchen."
 
 msgid "Can't get Streamurl !"
 msgstr "Streamadresse nicht erreichbar"
@@ -2794,7 +2794,7 @@ msgid ""
 "WLAN started.\n"
 " You can now configure the new interface."
 msgstr "WLAN gestartet.\n"
-"Sie können nun den Adapter konfigurieren"
+"Sie können den Adapter nun konfigurieren"
 
 msgid ""
 "WLAN not started,\n"
@@ -3013,7 +3013,7 @@ msgid "Day: "
 msgstr "Tag: "
 
 msgid "Lowest temp: "
-msgstr "Tiefstemperatur: "
+msgstr "Tiefsttemperatur: "
 
 msgid "Highest temp: "
 msgstr "Höchsttemperatur: "
@@ -3097,124 +3097,124 @@ msgid "Record Path settings"
 msgstr "Aufnahmepfad Einstellungen"
 
 msgid "Here you can make your recording timer configuration. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können sie Ihre Aufnahme-Timer Konfiguration vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier können Sie Ihre Aufnahme-Timer Konfiguration vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can in your EPG entries for specific search. Use to start a color button to search. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie in Ihrem EPG nach speziellen einträgen suchen. Verwenden Sie eine der Farbtasten um die Suche zu starten.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier können Sie im EPG nach bestimmten Einträgen suchen. Verwenden Sie eine der Farbtasten um die Suche zu starten.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can start and manage your additional plug-ins. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie Ihre zusätzlichen Plug-Ins starten und verwalten.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier können Sie Ihre zusätzlichen Plug-Ins starten und verwalten.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can install from our current online offering plug-ins. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie von unseren aktuellen Online-Angebot Plug-Ins installieren.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier können Sie von unseren aktuellen Online-Angebot Plug-Ins installieren.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can choose to configure your tuner. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie Ihren Tuner für die Konfiguration auswählen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier können Sie Ihren Tuner für die Konfiguration auswählen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here they can do for your chosen tuner to receive settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie für Ihren ausgewählten Tuner die Empfangs-Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier können Sie für Ihren ausgewählten Tuner die Empfangs-Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here they can do for your chosen tuner to lnb settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie für Ihren ausgewählten Tuner die LNB-Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier können Sie für Ihren ausgewählten Tuner die LNB-Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here they can do for your chosen tuner to ownpos settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie für Ihren ausgewählten Tuner die Eigene-Poistion-Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier können Sie für Ihren ausgewählten Tuner die Eigene-Position-Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can check the reception of the current station. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie den Empfang des aktuellen Senders überprüfen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier können Sie den Empfang des aktuellen Senders überprüfen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can do a blind scan, this process takes a long time. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie einen Blindscan durchführen, dieser Vorgang dauert sehr lange.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier können Sie einen Blindscan durchführen, dieser Vorgang dauert sehr lange.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can configure Ci-Modules. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie CI-Module konfigurieren.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier können Sie CI-Module konfigurieren.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can make your module settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie die Einstellungen für CI-Module anpassen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier können Sie die Einstellungen für CI-Module anpassen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can select your Network Interface. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie Ihre Netzwerkschnittstelle auswählen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier können Sie Ihre Netzwerkschnittstelle auswählen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can make for your selected network interface settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie für Ihre ausgewählte Netzwerkschnittstelle Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier können Sie für Ihre ausgewählte Netzwerkschnittstelle Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can make for your wireless network settings. 1. Use Search button and select Your SSID (apoint / router) and Press ok 2. Make settings Type / Key confirm with ok and Note the following instructions 3. Disable Lan Yes, Activate Wlan Yes and use DHCP for easy setup."
 msgstr "Hier können Sie Ihre WLAN Einstellungen vornehmen.\n1. Suche starten, die eigene SSID (apoint / router) mit ok übernehmen.\n2. Schlüssel und Typ anpassen und mit ok bestätigen (speichern).\n3. Deaktiviere LAN ja, Aktiviere Wlan und DHCP für einfache Einrichtung."
 
 msgid "Here you can test your network. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie Ihr Netzwerk testen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier können Sie Ihr Netzwerk testen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can configure your network shares. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie Ihre Netzwerk Freigaben konfigurieren.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier können Sie Ihre Netzwerk Freigaben konfigurieren.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can configure your web server. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie Ihren Webserver konfigurieren.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier können Sie Ihren Webserver konfigurieren.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can configure access to your DynDNS. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie Ihren DynDns Zugang konfigurieren.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier können Sie Ihren DynDns Zugang konfigurieren.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can backup and restore your settings."
 msgstr "Hier können Sie Ihre Einstellungen sichern und wiederherstellen."
 
 msgid "Here you can make your picture and sound settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie Ihre Bild und Ton Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier können Sie Ihre Bild und Ton Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can set your language. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie Ihre Sprache einstellen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier können Sie Ihre Sprache einstellen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can set your timezone. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie Ihre Zeitzone einstellen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier können Sie Ihre Zeitzone einstellen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can make your system settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie Ihre System Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier können Sie Ihre System Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can make your screensaver settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie Ihre Bildschirmschoner Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier können Sie Ihre Bildschirmschoner Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can make your recordpath settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie Ihre Aufnahmepfad Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier können Sie Ihre Aufnahmepfad Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can make your epg settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie Ihre EPG Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier können Sie Ihre EPG Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can make your mediadb settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie Ihre MediaDB Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier können Sie Ihre MediaDB Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can make your vfd settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie Ihre VFD Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier können Sie Ihre VFD Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can select from the following list. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie aus der folgenden Liste auswählen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier können Sie aus der folgenden Liste auswählen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can edit the following channels from the EPG. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie aus den folgenden Kanälen das EPG bearbeiten.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier können Sie aus den folgenden Kanälen das EPG bearbeiten.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can select from the following list a skin. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie aus den folgender Liste einen Skin auswählen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier können Sie aus der folgenden Liste einen Skin auswählen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can create a new record timer. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können sie einen neuen Aufnahme-Timer anlegen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier können sie einen neuen Aufnahme-Timer anlegen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can make your PIN security settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie Ihre PIN Sicherheitseinstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier können Sie Ihre PIN Sicherheitseinstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can make your PIN security for menus settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie Ihre PIN Sicherheitseinstellungen für Menus vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier können Sie Ihre PIN Sicherheitseinstellungen für Menüs vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "No MediaDB Directory found\nPress OK to create it"
-msgstr "Kein MediaDB Verzeichnis gefunden!\nWollen Sie es anlegen?"
+msgstr "Kein MediaDB Verzeichnis gefunden!\nWollen Sie es erstellen?"
 
 msgid "Free space in /var to little!\nThis can make problems!"
 msgstr "Kein freier Speicher in /var\nDies kann zu Problemen führen!"
 
 msgid "Here you can select your hard disks and USB flash drives for configuration. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie Ihre Festplatten und USB-Sticks zur Konfiguration auswählen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier können Sie Ihre Festplatten und USB-Sticks zur Konfiguration auswählen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can view the current channel information. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie die aktuellen Senderinfos abrufen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier können Sie die aktuellen Senderinfos abrufen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can make your timeshift settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie die Timeshift Einstellungen anpassen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier können Sie die Timeshift Einstellungen anpassen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "please wait..."
 msgstr "bitte warten"
@@ -3241,7 +3241,7 @@ msgid "Update entrys on scan"
 msgstr "Aktualisiere Daten beim scannen"
 
 msgid "Create Thumb Picture"
-msgstr "Thumb Bilder erstellen"
+msgstr "Vorschau Bilder erstellen"
 
 msgid "TV Resolution (w):"
 msgstr "TV Auflösung (Breite):"
@@ -3250,7 +3250,7 @@ msgid "TV Resolution (h):"
 msgstr "TV Auflösung (Höhe):"
 
 msgid "Are you sure you want to restore settings?\n\nOK = start restore\nEXIT = abort restore"
-msgstr "Sie wollen Ihre Einstellungen wiederherstellen?\n\nOK = Wiederherstellung starten\nEXIT = Wiederherstellung abbrechen"
+msgstr "Wollen Sie Ihre Einstellungen wiederherstellen?\n\nOK = Wiederherstellung starten\nEXIT = Wiederherstellung abbrechen"
 
 msgid "Backup failed, see log"
 msgstr "Sicherung fehlgeschlagen, Infos siehe log"
@@ -3364,7 +3364,7 @@ msgid "Can't save Code.\nDelete Plugins to free space"
 msgstr "Ihr Schlüssel kann nicht gespeichert werden.\nLöschen Sie bitte eine der von Ihnen installierten Erweiterungen\num freien Speicherplatz zu erhalten."
 
 msgid "Please contact Atemio for activation. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Bitte wenden Sie sich an Atemio, falls Ihre Freischaltung noch nicht wirksam ist.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Bitte wenden Sie sich an Atemio, falls Ihre Freischaltung noch nicht wirksam ist.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Alternativ Audio Firmware not working korrekt with all videos (DTSDOWNMIX)!"
 msgstr "Sie haben die Alternative Audio Firmware installiert (DTSDOWNMIX)!\nDamit laufen die Videos nicht korrekt."
@@ -3418,7 +3418,7 @@ msgid "Can't find free Tuner for Record.\nSwitch to Recording/Timeshift Channel 
 msgstr "Es ist kein freier Tuner vorhanden.\nZum Aufnahme/Timeshift Kanal wechseln?"
 
 msgid "size (default)"
-msgstr "Grösse (Voreinstellung)"
+msgstr "Größe (Voreinstellung)"
 
 msgid "datetime"
 msgstr "Datum Uhrzeit"
@@ -3460,10 +3460,10 @@ msgid "show 12 entrys"
 msgstr "klein (12 Bilder)"
 
 msgid "show 20 entrys"
-msgstr "sehr klein (20 Bilder)"
+msgstr "kleiner (20 Bilder)"
 
 msgid "show 30 entrys"
-msgstr "ganz klein (30 Bilder)"
+msgstr "sehr klein (30 Bilder)"
 
 msgid "show auto entrys"
 msgstr "automatisch anpassen"
@@ -3514,7 +3514,7 @@ msgid "Del EPG before scan"
 msgstr "Lösche EPG vor der Suche"
 
 msgid "Found Pay Stream visit the official Website and Order this Stream and try this again !"
-msgstr "Pay-Stream gefunden, besuchen Sie die offizielle Website und bestellen\nSie diesen Stream und versuchen Sie es nochmal!"
+msgstr "Pay-Stream gefunden, besuchen Sie die offizielle Website, um diesen Stream zu\nbestellen und versuchen Sie es nochmal!"
 
 msgid "Show Pay Streams"
 msgstr "Zeige Pay und Englische Streams"
@@ -3616,7 +3616,7 @@ msgid "Create Folder"
 msgstr "Verzeichnis anlegen"
 
 msgid "Recording name"
-msgstr "Aufnahme Name"
+msgstr "Aufnahme Titel"
 
 msgid "Can't show this file!"
 msgstr "Diese Datei kann nicht angezeigt werden"
@@ -3634,10 +3634,10 @@ msgid "This file doesn't exist, or has been removed"
 msgstr "Dieser Stream ist zur Zeit nicht verfügbar oder entfernt worden"
 
 msgid "Here you can select your reader. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können sie Ihre Reader auswählen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier können Sie Ihre Reader auswählen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can configure your reader. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können sie Ihre Reader Konfiguration vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier können Sie Ihre Reader Konfiguration vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Reader Config"
 msgstr "Reader Einstellungen"
@@ -3649,7 +3649,7 @@ msgid "Reader Configuration"
 msgstr "Reader Konfiguration"
 
 msgid "Reader Config Plugin not installed !"
-msgstr "Installieren Sie Bitte das Reader Konfiguration Plugin unter Erweiterungen"
+msgstr "Installieren Sie bitte das Reader Konfiguration Plugin unter Erweiterungen"
 
 msgid "Reader active"
 msgstr "Reader aktiviert"
@@ -3682,7 +3682,7 @@ msgid "Debug Modus"
 msgstr "Debug Modus"
 
 msgid "Backdrop Interval"
-msgstr "Hintergrund Bilderwechesel Interval"
+msgstr "Hintergrund Bilderwechsel Interval"
 
 msgid "MediaDB Debug"
 msgstr "MediaDB Debug Modus"
@@ -3754,10 +3754,10 @@ msgid "Caching Playback (30MB / 360s)"
 msgstr "Auf Festplatte zwischenspeichern (30MB/360s)"
 
 msgid "Download Full File"
-msgstr "Datei Downloaden in Streampfad"
+msgstr "Datei downloaden in Streampfad"
 
 msgid "Download Full File (background)"
-msgstr "Datei Downloaden in Streampfad (unsichtbar)"
+msgstr "Datei downloaden in Streampfad (unsichtbar)"
 
 msgid "Remove Cachefile ?"
 msgstr "Zwischengespeicherte Datei löschen?"
@@ -4135,7 +4135,7 @@ msgid "You can leave HBBTV with Record Key."
 msgstr "HBBTV kann mit der RECORD Taste beendet werden."
 
 msgid "Search only aktual epg ?"
-msgstr "Nur im aktuellen EPG suchen ?"
+msgstr "Nur im aktuellen EPG suchen?"
 
 msgid "Child"
 msgstr "Kinder"
