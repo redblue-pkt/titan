@@ -2458,7 +2458,7 @@ msgid "Wednesday"
 msgstr "Mittwoch"
 
 msgid "weekly"
-msgstr "Wochentag"
+msgstr "Wöchentlich"
 
 msgid "wlan"
 msgstr "WLAN"
