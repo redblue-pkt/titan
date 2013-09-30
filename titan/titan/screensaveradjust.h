@@ -72,7 +72,7 @@ void screenscreensaveradjust()
 		{
 			if(node->del == FILELISTDELMARK && node->text != NULL && ostrcmp(node->text, "..") != 0)
 			{
-				path = ostrcat("/var/swap/usr/local/share/titan/saver" , node->text, 0, 0);
+				path = ostrcat("/var/swap/usr/local/share/titan/saver/" , node->text, 0, 0);
 				addchoicebox(screensaver_type, path, node->text);
 				free(path); path = NULL;
 			}
@@ -92,7 +92,7 @@ void screenscreensaveradjust()
 		{
 			if(node->del == FILELISTDELMARK && node->text != NULL && ostrcmp(node->text, "..") != 0)
 			{
-				path = ostrcat("/mnt/swapextensions/usr/local/share/titan/saver" , node->text, 0, 0);
+				path = ostrcat("/mnt/swapextensions/usr/local/share/titan/saver/" , node->text, 0, 0);
 				addchoicebox(screensaver_type, path, node->text);
 				free(path); path = NULL;
 			}
@@ -112,7 +112,7 @@ void screenscreensaveradjust()
 		{
 			if(node->del == FILELISTDELMARK && node->text != NULL && ostrcmp(node->text, "..") != 0)
 			{
-				path = ostrcat("/var/usr/local/share/titan/saver" , node->text, 0, 0);
+				path = ostrcat("/var/usr/local/share/titan/saver/" , node->text, 0, 0);
 				addchoicebox(screensaver_type, path, node->text);
 				free(path); path = NULL;
 			}
