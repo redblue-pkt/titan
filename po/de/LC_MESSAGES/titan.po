@@ -2176,7 +2176,7 @@ msgid "System"
 msgstr "System"
 
 msgid "System..."
-msgstr "System...test2"
+msgstr "System"
 
 msgid "System:"
 msgstr "System:"
