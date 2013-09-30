@@ -10,7 +10,7 @@ int searchepg(char* search, char* search1, char* search2, int searchtype, struct
 	struct epg* epgnode = NULL;
 	struct skin* tmp = NULL;
 	struct tm *loctime = NULL;
-	time_t akttime = time(NULL) + 10800;
+	time_t akttime = time(NULL) + 7200;
   
 	if(search == NULL || strlen(search) < 2) return 1;
 
