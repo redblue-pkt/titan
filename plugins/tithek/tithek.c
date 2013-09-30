@@ -21,6 +21,7 @@
 #include "mlehd.h"
 #include "xvideos.h"
 #include "ard.h"
+#include "zdf.h"
 
 char pluginname[] = "TiTan Mediathek";
 char plugindesc[] = "TiTan Mediathek";

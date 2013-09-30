@@ -20,7 +20,7 @@ char* ard(char* link)
 	if(getconfigint("debuglevel", NULL) == 99)
 		writesys("/tmp/ard1_tmpstr", tmpstr, 0);
 
-	writesys("/var/usr/local/share/titan/plugins/tithek/ard1_tmpstr", tmpstr, 0);
+//	writesys("/var/usr/local/share/titan/plugins/tithek/ard1_tmpstr", tmpstr, 0);
 	
 
 	if(tmpstr != NULL)
