@@ -58,11 +58,11 @@ for ROUND1 in $watchlist; do
 		AIRTIME=`echo $ROUND2 | sed 's!<span~class="mt-airtime">!\n<span~class="mt-airtime"<!' | grep '<span~class="mt-airtime"<' | cut -d'<' -f3 | tr '~' ' '`
 		TITLE="`echo $TITLE` (`echo $AIRTIME`)"
 
-		wget $URL -O cache.$filename.$count.list
+#		wget $URL -O cache.$filename.$count.list
 	
-		URL=`cat cache.$filename.$count.list | grep .mp4 | grep http | sed 's!http://!\nhttp://!g' | grep ^"http://" | cut -d'"' -f1 | tail -n1`
+#		URL=`cat cache.$filename.$count.list | grep .mp4 | grep http | sed 's!http://!\nhttp://!g' | grep ^"http://" | cut -d'"' -f1 | tail -n1`
 		
-		LINE="$TITLE#$URL#$PIC#ard_$piccount.jpg#ARD#2"
+		LINE="$TITLE#$URL#$PIC#ard_$piccount.jpg#ARD#45"
 		if [ ! -z "$TITLE" ] && [ ! -z "$URL" ] && [ `cat cache.ard."$filename".titanlist | grep "#$URL#" | wc -l` -eq 0 ];then
 			echo $LINE >> cache.ard."$filename".titanlist
 		fi
@@ -152,15 +152,15 @@ if [ "$buildtype" = "full" ];then
 #echo ROUND3 $ROUND3
 #echo TITLE $TITLE
 #exit
-					wget $URL -O cache.$filename.$count.list
+#					wget $URL -O cache.$filename.$count.list
 #					if [ `du cache.$filename.$count.list | cut -d"/" -f1 | tr '\t' '\n' | head -n1` = 0 ];then
 #						echo 333333333333333aaaaaaaaaaaaaaaaa
 #						exit
 #					fi
 #				
-					URL=`cat cache.$filename.$count.list | grep .mp4 | grep http | sed 's!http://!\nhttp://!g' | grep ^"http://" | cut -d'"' -f1 | tail -n1`
+#					URL=`cat cache.$filename.$count.list | grep .mp4 | grep http | sed 's!http://!\nhttp://!g' | grep ^"http://" | cut -d'"' -f1 | tail -n1`
 				
-					LINE="$TITLE#$URL#$PIC#ard_$piccount.jpg#ARD#2"
+					LINE="$TITLE#$URL#$PIC#ard_$piccount.jpg#ARD#45"
 					if [ ! -z "$TITLE" ] && [ ! -z "$URL" ] && [ `cat cache.ard.shows."$filename2".titanlist | grep "#$URL#" | wc -l` -eq 0 ];then
 						echo $LINE >> cache.ard.shows."$filename2".titanlist
 					fi
