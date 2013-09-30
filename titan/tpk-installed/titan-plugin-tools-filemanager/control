@@ -1,12 +1,7 @@
 Package: titan-plugin-tools-filemanager
 Version: 21579
 Architecture: sh4
-OE: stopifnotused
 Section: tools
-Priority: optional
-Maintainer: Atemio
-Homepage: http://www.atemio.de
-Source: nit
 Description: filemanager
 Titanname: File Manager
 Showname: File Manager

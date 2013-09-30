@@ -2,13 +2,7 @@ Package: titan-plugin-player-tithek
 Version: 21579
 Description: TiThek the Multimedia-thek.
 Section: player
-Priority: optional
-Maintainer: AAF
 Architecture: sh4
-OE: Skin
-Homepage: http://www.aaf-digital.info
-Depends:
-Source: http://www.aaf-digital.info
 Titanname: TiTan Mediathek
 Showname: TiTan Mediathek
 Installpath: /var

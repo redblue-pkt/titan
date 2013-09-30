@@ -1,12 +1,7 @@
 Package: titan-plugin-infos-imdbapi
 Version: 21579
 Architecture: sh4
-OE: KeyLock
 Section: infos
-Priority: optional
-Maintainer: Atemio
-Homepage: http://www.atemio.de
-Source: obi by AAF 
 Description: ImdBapi Info Plugin
 Titanname: IMDb-API
 Showname: IMDb-API
