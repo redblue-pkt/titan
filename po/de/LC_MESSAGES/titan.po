@@ -2539,7 +2539,7 @@ msgid "A record hdd or a swapstick must be mounted!\n\nAborting backup..."
 msgstr "Kein Backup Verzeichnis gefunden\nBreche Sicherung ab ..."
 
 msgid "Backup to /tmp or /var/backup. If the free memory too small can a usb device will never use.\nThere must be a folder backup."
-msgstr "Sicherung wird in /tmp oder /var/backup abgelegt. Falls der interne Speicher nicht ausreicht, kann die Sicherung auch\nauf einem USB Stick/HDD gespeichert werden.\nEs muss ein Ordner "backup" auf dem Gerät sein."
+msgstr "Sicherung wird in /tmp oder /var/backup abgelegt. Falls der interne Speicher nicht ausreicht, kann die Sicherung auch\nauf einem USB Stick/HDD gespeichert werden.\nEs muss ein Ordner backup auf dem Gerät sein."
 
 msgid "Some plugins needs restart.\nIf the plugin is not active\nreboot the box."
 msgstr "Einige Erweiterungen benötigen einen Neustart.\nWenn das Plugin nicht verfügbar ist, bitte neustarten"
