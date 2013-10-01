@@ -621,7 +621,7 @@ int playerstart(char* file)
 		subout.screen_width = fb->width;
 		subout.screen_height = fb->height;
 		subout.framebufferFD = fb->fd;
-		subout.destination = fb->fb;
+		subout.destination = (uint32_t *)fb->fb;
 		subout.destStride = fb->pitch;
 		subout.shareFramebuffer = 1;
 
