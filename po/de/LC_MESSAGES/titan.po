@@ -19,7 +19,7 @@ msgstr "500 U/min"
 msgid "A mount entry with this name already exists!\n"
 "Update existing entry and continue?"
 msgstr "Eine Freigabe mit diesem Name existiert bereits!\n"
-"Wollen sie diese wirklich überschreiben?"
+"Wollen Sie diese wirklich überschreiben?"
 
 msgid "Are you sure you want remove this share?"
 msgstr "Wollen Sie diese Freigabe wirklich löschen?"
@@ -607,7 +607,7 @@ msgid "EPG Info"
 msgstr "EPG Info"
 
 msgid "Epg List Mode"
-msgstr "EPG Suchmethode"
+msgstr "EPG Hintergrundsuche"
 
 msgid "EPG Path"
 msgstr "EPG Speicherpfad"
