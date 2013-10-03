@@ -1,6 +1,47 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
+//flag 0: get pluginpath an add text
+//flag 1: get pluginpath and change "%pluginpath%/"
+char* createpluginpath(char* text, int flag)
+{
+	char* tmpstr = NULL;
+	if(text == NULL) return NULL;
+	
+	if(flag == 0)
+	{
+	  tmpstr = ostrcat(getconfig("pluginpath", NULL), text, 0, 0);
+	  if(file_exist(tmpstr) == 1) return tmpstr;
+	  
+	  free(tmpstr); tmpstr = NULL;
+	  tmpstr = ostrcat(getconfig("pluginpath1", NULL), text, 0, 0);
+	  if(file_exist(tmpstr) == 1) return tmpstr;
+	  
+	  free(tmpstr); tmpstr = NULL;
+	  tmpstr = ostrcat(getconfig("pluginpath2", NULL), text, 0, 0);
+	  if(file_exist(tmpstr) == 1) return tmpstr;
+	  
+	  return NULL;
+	}
+	else
+	{
+		if(strlen(text) < 13) return NULL;
+		
+		tmpstr = ostrcat(getconfig("pluginpath", NULL), &text[13]);
+		if(file_exist(tmpstr) == 1) return tmpstr;
+		
+		free(tmpstr); tmpstr = NULL;
+		tmpstr = ostrcat(getconfig("pluginpath1", NULL), &text[13]);
+		if(file_exist(tmpstr) == 1) return tmpstr;
+		
+		free(tmpstr); tmpstr = NULL;
+		tmpstr = ostrcat(getconfig("pluginpath2", NULL), &text[13]);
+		if(file_exist(tmpstr) == 1) return tmpstr;
+	}
+	
+	return NULL;
+} 
+
 int osystem(char* cmd, int timeout)
 {
 	int ret = 0;
@@ -1691,6 +1732,8 @@ void changechannellist(struct channel* chnode, char* channellist)
 		}
 }
 
+//flag 0: normal picons
+//flag 1: alternate picons
 char* createpiconpath(struct channel* chnode, int flag)
 {
 	char* tmpstr = NULL, *picon = NULL;

@@ -217,6 +217,7 @@ int loadplugin()
 	char *tmpstr = NULL;
 	char *tmppath = NULL;
 
+	//pluginpath
 	tmppath = getconfig("pluginpath", NULL);
 
 	if(tmppath == NULL)
@@ -251,9 +252,8 @@ int loadplugin()
 	}
 	free(filelist);
 	
-	
-	// 2. plugindir
-	tmppath = getconfig("pluginpath_2", NULL);
+	//pluginpath1
+	tmppath = getconfig("pluginpath1", NULL);
 
 	if(tmppath == NULL)
 		return 0;
@@ -261,7 +261,42 @@ int loadplugin()
 	count = scandir(tmppath, &filelist, 0, 0);
 	if(count < 0)
 	{
-		perr("scandir_2");
+		perr("scandir1");
+		return 0;
+	}
+
+	while(count--)
+	{
+		//check if link is a dir
+		if(filelist[count]->d_type == DT_LNK || filelist[count]->d_type == DT_UNKNOWN)
+		{
+			tmpstr = createpath(tmppath, filelist[count]->d_name);
+			if(isdir(tmpstr) == 1)
+				filelist[count]->d_type = DT_DIR;
+
+			free(tmpstr); tmpstr = NULL;
+		}
+
+		if(filelist[count]->d_type == DT_DIR && ostrcmp(filelist[count]->d_name, ".") != 0 && ostrcmp(filelist[count]->d_name, "..") != 0)
+		{
+			pluginpath = createpath(tmppath, filelist[count]->d_name);
+			readplugin(pluginpath);
+			free(pluginpath); pluginpath = NULL;
+		}
+		free(filelist[count]);
+	}
+	free(filelist);
+	
+	//pluginpath2
+	tmppath = getconfig("pluginpath2", NULL);
+
+	if(tmppath == NULL)
+		return 0;
+
+	count = scandir(tmppath, &filelist, 0, 0);
+	if(count < 0)
+	{
+		perr("scandir2");
 		return 0;
 	}
 

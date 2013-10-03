@@ -22,7 +22,7 @@ void init(void)
 {
 	char* tmpstr = NULL;
 
-	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/catcatch/skin.xml", 0, 0);
+	tmpstr = createpluginpath("/catcatch/skin.xml", 0);
 	readscreen(tmpstr, 241, 1);
 	free(tmpstr); tmpstr = NULL;
 
