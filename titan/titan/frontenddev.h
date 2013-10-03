@@ -1252,12 +1252,12 @@ fe_status_t fereadstatus(struct dvbdev* node)
 	return status;
 }
 
-void fetunedvbs(struct dvbdev* node, struct transponder* tpnode)
+int fetunedvbs(struct dvbdev* node, struct transponder* tpnode)
 {
 	if(node == NULL || tpnode == NULL)
 	{
 		err("NULL detect");
-		return;
+		return 1;
 	}
 	
 	if(node->feunicable == 1)
@@ -1377,21 +1377,25 @@ void fetunedvbs(struct dvbdev* node, struct transponder* tpnode)
 	if((ioctl(node->fd, FE_SET_PROPERTY, &cmdseq)) == -1)
 	{
 		perr("FE_SET_PROPERTY");
+		return 1;
 	}
 #else
 	if(ioctl(node->fd, FE_SET_FRONTEND, &tuneto) == -1)
 	{
 		perr("FE_SET_FRONTEND");
+		return 1;
 	}
 #endif
+
+	return 0;
 }
 
-void fetunedvbc(struct dvbdev* node, struct transponder* tpnode)
+int fetunedvbc(struct dvbdev* node, struct transponder* tpnode)
 {
 	if(node == NULL || tpnode == NULL)
 	{
 		err("NULL detect");
-		return;
+		return 1;
 	}
 	
 	int fec = tpnode->fec;
@@ -1457,23 +1461,27 @@ void fetunedvbc(struct dvbdev* node, struct transponder* tpnode)
 	if((ioctl(node->fd, FE_SET_PROPERTY, &cmdseq)) == -1)
 	{
 		perr("FE_SET_PROPERTY");
+		return 1;
 	}
 #else
 	if(ioctl(node->fd, FE_SET_FRONTEND, &tuneto) == -1)
 	{
 		perr("FE_SET_FRONTEND");
+		return 1;
 	}
 #endif
+
+	return 0;
 }
 
-void fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
+int fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 {
 	struct dvb_frontend_parameters tuneto;
 
 	if(node == NULL || tpnode == NULL)
 	{
 		err("NULL detect");
-		return;
+		return 1;
 	}
 	
 	int hp = tpnode->fec; //fec = hp on DVBT
@@ -1566,7 +1574,10 @@ void fetunedvbt(struct dvbdev* node, struct transponder* tpnode)
 	if(ioctl(node->fd, FE_SET_FRONTEND, &tuneto) == -1)
 	{
 		perr("FE_SET_FRONTEND");
+		return 1;
 	}
+	
+	return 0;
 }
 
 #ifdef SIMULATE
