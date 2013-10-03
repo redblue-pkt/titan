@@ -610,7 +610,7 @@ msgstr "Inversion"
 msgid "Inversion:"
 msgstr "Inversion:"
 
-msgid "ipaddresse"
+msgid "ipaddress"
 msgstr "Adresse IP"
 
 msgid "Ipk Install - select file"

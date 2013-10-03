@@ -1013,7 +1013,7 @@ msgstr "Nghịch đảo"
 msgid "Inversion:"
 msgstr "Nghịch đảo:"
 
-msgid "ipaddresse"
+msgid "ipaddress"
 msgstr "Địa chỉ IP"
 
 msgid "Is this Videomode ok ?"

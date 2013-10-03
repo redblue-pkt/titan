@@ -960,7 +960,7 @@ msgstr "Inversione"
 msgid "Inversion:"
 msgstr "Inversione:"
 
-msgid "ipaddresse"
+msgid "ipaddress"
 msgstr "Indirizzo Ip"
 
 msgid "Tpk Install Info"
