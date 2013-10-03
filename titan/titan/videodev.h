@@ -404,11 +404,7 @@ int videogetdev()
 
 int videoreadqwidth(struct dvbdev* node)
 {
-	if(node == NULL)
-	{
-		err("NULL detect");
-		return 1;
-	}
+	if(node == NULL) return 1;
 
 	if(ioctl(node->fd, VIDEO_GET_SIZE, &status.videosize) < 0)
 	{
