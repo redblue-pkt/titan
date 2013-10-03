@@ -3913,7 +3913,7 @@ msgid "Can't send Mail"
 msgstr "E-Mail konnte nicht versendet werden"
 
 msgid "SEND"
-msgstr "Senden"
+msgstr "in Vorber."
 
 msgid "If you don't find Windows shares you need to disable 'Password protected sharing' in the 'Network and Sharing Center'."
 msgstr "Sollten keine Windows Freigaben sichtbar sein, muss 'Kennwortgeschützte Freigaben' im 'Netzwerk- und Freigabecenter' abgeschaltet werden."
@@ -3943,7 +3943,7 @@ msgid "/mnt not writeable!\nRepair it?"
 msgstr "/mnt nicht beschreibbar!\nReparieren?"
 
 msgid "Can't install Package. Package to big."
-msgstr "Paket zu gross. Installation nicht möglich."
+msgstr "Paket zu groß. Installation nicht möglich."
 
 msgid "Format and restore default settings"
 msgstr "Formatiere internen Speicher mit Werkseinstellung"
