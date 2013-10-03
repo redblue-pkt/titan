@@ -1132,7 +1132,7 @@ void doscan(struct stimerthread* timernode)
 			}
 			else if(fenode->feinfo->type == FE_QAM)
 			{
-				fetunedvbc(fenode, tpnode) != 0)
+				if(fetunedvbc(fenode, tpnode) != 0)
 				{
 					scaninfo.tpcount++;
 					tpnode = tpnode->next;
