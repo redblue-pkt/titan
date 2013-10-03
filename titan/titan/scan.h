@@ -199,10 +199,6 @@ struct transponder* cablesystemdesc(unsigned char* buf, uint64_t transportid, un
 			break;
 	}
 
-	if(frequency > 1000000) frequency /= 1000;
-
-	frequency = (int)1000 * (int)round((double)frequency / (double)1000);
-
 	id = ((onid << 16) | transportid) & 0xffffffff;
 	id = id | ((uint64_t)1 << 32);
 
@@ -1125,12 +1121,37 @@ void doscan(struct stimerthread* timernode)
 			if(fenode->feinfo->type == FE_QPSK)
 			{
 				feset(fenode, tpnode);
-				fetunedvbs(fenode, tpnode);
+				if(fetunedvbs(fenode, tpnode) != 0)
+				{
+					scaninfo.tpcount++;
+					tpnode = tpnode->next;
+					debug(500, "tuning failed");
+					if(scaninfo.scantype == 0) break;
+					continue;
+				}
 			}
 			else if(fenode->feinfo->type == FE_QAM)
-				fetunedvbc(fenode, tpnode);
+			{
+				fetunedvbc(fenode, tpnode) != 0)
+				{
+					scaninfo.tpcount++;
+					tpnode = tpnode->next;
+					debug(500, "tuning failed");
+					if(scaninfo.scantype == 0) break;
+					continue;
+				}
+			}
 			else if(fenode->feinfo->type == FE_OFDM)
-				fetunedvbt(fenode, tpnode);
+			{
+				if(fetunedvbt(fenode, tpnode) != 0)
+				{
+					scaninfo.tpcount++;
+					tpnode = tpnode->next;
+					debug(500, "tuning failed");
+					if(scaninfo.scantype == 0) break;
+					continue;
+				}
+			}
 			else
 			{
 				scaninfo.tpcount++;
@@ -1146,7 +1167,7 @@ void doscan(struct stimerthread* timernode)
 			{
 				scaninfo.tpcount++;
 				tpnode = tpnode->next;
-				debug(500, "tuning failed");
+				debug(500, "tuning failed last");
 				if(scaninfo.scantype == 0) break;
 				continue;
 			}
