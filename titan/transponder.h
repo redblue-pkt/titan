@@ -12,6 +12,7 @@ void changetransponderid(struct transponder* tpnode, uint64_t transponderid)
 	struct bouquet* node7 = NULL;
 
 	if(tpnode == NULL) return;
+	if(gettransponder(transponderid) != NULL) return;
 
 	while(node1 != NULL)
 	{
