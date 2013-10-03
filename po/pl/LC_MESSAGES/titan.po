@@ -613,7 +613,7 @@ msgstr "Inwersja"
 msgid "Inversion:"
 msgstr "Inwersja:"
 
-msgid "ipaddresse"
+msgid "ipaddress"
 msgstr "adres IP"
 
 msgid "IPK install (online)"
