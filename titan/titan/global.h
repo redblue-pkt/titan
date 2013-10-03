@@ -27,15 +27,15 @@ char* createpluginpath(char* text, int flag)
 	{
 		if(strlen(text) < 13) return NULL;
 		
-		tmpstr = ostrcat(getconfig("pluginpath", NULL), &text[13], 0, 0);
+		tmpstr = ostrcat(getconfig("pluginpath", NULL), &text[12], 0, 0);
 		if(file_exist(tmpstr) == 1) return tmpstr;
 		
 		free(tmpstr); tmpstr = NULL;
-		tmpstr = ostrcat(getconfig("pluginpath1", NULL), &text[13], 0, 0);
+		tmpstr = ostrcat(getconfig("pluginpath1", NULL), &text[12], 0, 0);
 		if(file_exist(tmpstr) == 1) return tmpstr;
 		
 		free(tmpstr); tmpstr = NULL;
-		tmpstr = ostrcat(getconfig("pluginpath2", NULL), &text[13], 0, 0);
+		tmpstr = ostrcat(getconfig("pluginpath2", NULL), &text[12], 0, 0);
 		if(file_exist(tmpstr) == 1) return tmpstr;
 	}
 	
