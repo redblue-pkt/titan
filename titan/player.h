@@ -1159,11 +1159,18 @@ char** playergettracklist(int type)
 					debug(150, "Video Track List");
 				}
 		}
+		
+		int i = 0;
+		while(TrackList[i] != NULL)
+		{
+			string_newline(TrackList[i]);
+			i += 2;
+		}
 	
 		if(TrackList != NULL)
 		{
 			debug(150, "Track List");
-			int i = 0;
+			i = 0;
 			while(TrackList[i] != NULL)
 			{
 				debug(150, "%s - %s", TrackList[i], TrackList[i + 1]);
