@@ -599,7 +599,7 @@ int playerstart(char* file)
 		//select container_ffmpeg, if we does not found a container with extensions
 		if(player->container->selectedContainer == NULL)
 			player->container->Command(player, CONTAINER_ADD, "mp3");
-		
+
 		if(player && player->container && player->container->selectedContainer)
 		{
 			int size = getconfigint("playerbuffersize", NULL);
@@ -1361,7 +1361,7 @@ void playerchangeaudiotrack(int num)
 #ifdef EPLAYER3
 	if(player && player->playback)
 	{
-		if(num >= 0 && num <= 9)
+		//if(num >= 0 && num <= 9)
 			player->playback->Command(player, PLAYBACK_SWITCH_AUDIO, (void*)&num);
 	}
 #endif
