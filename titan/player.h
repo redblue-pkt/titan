@@ -1188,7 +1188,6 @@ void playergetcurtrac(int type, int *CurTrackId, char** CurTrackEncoding, char**
 #ifdef EPLAYER3
 	if(player && player->manager)
 	{
-	printf("11111111111111\n");
 		switch(type)
 		{
 			case 1:
@@ -1200,10 +1199,8 @@ void playergetcurtrac(int type, int *CurTrackId, char** CurTrackEncoding, char**
 				}
 				break;
 			case 2:
-			printf("22222222222222\n");
 				if(player->manager->subtitle)
 				{
-					printf("33333333333333\n");
 					player->manager->subtitle->Command(player, MANAGER_GET, CurTrackId);
 					player->manager->subtitle->Command(player, MANAGER_GETENCODING, CurTrackEncoding);
 					player->manager->subtitle->Command(player, MANAGER_GETNAME, CurTrackName);
@@ -1380,7 +1377,7 @@ void playerchangesubtitletrack(int num)
 #ifdef EPLAYER3
 	if(player && player->playback)
 	{
-		if(num >= 0 && num <= 9)
+		//if(num >= 0 && num <= 9)
 			player->playback->Command(player, PLAYBACK_SWITCH_SUBTITLE, (void*)&num);
 	}
 #endif
