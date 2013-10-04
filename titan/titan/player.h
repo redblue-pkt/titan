@@ -1161,14 +1161,14 @@ char** playergettracklist(int type)
 		}
 		
 		int i = 0;
-		while(TrackList[i] != NULL)
-		{
-			string_newline(TrackList[i]);
-			i += 2;
-		}
-	
 		if(TrackList != NULL)
 		{
+			while(TrackList[i] != NULL)
+			{
+				string_newline(TrackList[i]);
+				i += 2;
+			}
+			
 			debug(150, "Track List");
 			i = 0;
 			while(TrackList[i] != NULL)
@@ -1360,10 +1360,7 @@ void playerchangeaudiotrack(int num)
 {
 #ifdef EPLAYER3
 	if(player && player->playback)
-	{
-		//if(num >= 0 && num <= 9)
-			player->playback->Command(player, PLAYBACK_SWITCH_AUDIO, (void*)&num);
-	}
+		player->playback->Command(player, PLAYBACK_SWITCH_AUDIO, (void*)&num);
 #endif
 
 #ifdef EPLAYER4
@@ -1376,10 +1373,7 @@ void playerchangesubtitletrack(int num)
 {
 #ifdef EPLAYER3
 	if(player && player->playback)
-	{
-		//if(num >= 0 && num <= 9)
-			player->playback->Command(player, PLAYBACK_SWITCH_SUBTITLE, (void*)&num);
-	}
+		player->playback->Command(player, PLAYBACK_SWITCH_SUBTITLE, (void*)&num);
 #endif
 }
 
@@ -1388,7 +1382,6 @@ void playerstopsubtitletrack()
 #ifdef EPLAYER3
 	if(player && player->output && player->output->subtitle)
 		player->output->subtitle->Command(player, (OutputCmd_t)OUTPUT_STOP, NULL);
-
 #endif
 }
 
