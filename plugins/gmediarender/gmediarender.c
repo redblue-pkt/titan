@@ -15,7 +15,7 @@ void init(void)
 {
 	char* tmpstr = NULL;
 
-	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/gmediarender/skin.xml", 0, 0);
+	tmpstr = createpluginpath("/gmediarender/skin.xml", 0);
 	readscreen(tmpstr, 279, 1);
 	free(tmpstr); tmpstr = NULL;
 

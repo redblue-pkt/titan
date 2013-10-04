@@ -22,7 +22,7 @@ void init(void)
 {
 	char* tmpstr = NULL;
 
-	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/wins3/skin.xml", 0, 0);
+	tmpstr = createpluginpath("/wins3/skin.xml", 0);
 	readscreen(tmpstr, 196, 1);
 	free(tmpstr); tmpstr = NULL;
 

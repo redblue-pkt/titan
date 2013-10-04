@@ -14,7 +14,7 @@ void init(void)
 {
 	char* tmpstr = NULL;
 
-	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/mboxinfo/skin.xml", 0, 0);
+	tmpstr = createpluginpath("/mboxinfo/skin.xml", 0);
 	readscreen(tmpstr, 194, 1);
 	free(tmpstr); tmpstr = NULL;
 

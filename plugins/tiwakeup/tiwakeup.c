@@ -22,7 +22,7 @@ void init(void)
 {
 	char* tmpstr = NULL;
 
-	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/tiwakeup/skin.xml", 0, 0);
+	tmpstr = createpluginpath("/tiwakeup/skin.xml", 0);
 	readscreen(tmpstr, 280, 1);
 	free(tmpstr); tmpstr = NULL;
 

@@ -33,27 +33,60 @@ void LCD_start_lcd4linux()
 	char* startlcd = NULL;
 	
 	if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf75h") == 0)
-		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 1", 0, 0);
+	{
+		startlcd = createpluginpath("/lcdsamsung/start.sh", 0);
+		startlcd = ostrcat(startlcd, " 1", 1, 0);
+	}
 	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf83h") == 0)
-		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 6", 0, 0);
+	{
+		startlcd = createpluginpath("/lcdsamsung/start.sh", 0);
+		startlcd = ostrcat(startlcd, " 6", 1, 0);
+	}
 	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87hold") == 0)
-		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 3", 0, 0);
+	{
+		startlcd = createpluginpath("/lcdsamsung/start.sh", 0);
+		startlcd = ostrcat(startlcd, " 3", 1, 0);
+	}
 	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87h") == 0)
-		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 2", 0, 0);
+	{
+		startlcd = createpluginpath("/lcdsamsung/start.sh", 0);
+		startlcd = ostrcat(startlcd, " 2", 1, 0);
+	}
 	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf105p") == 0)
-		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 5", 0, 0);
+	{
+		startlcd = createpluginpath("/lcdsamsung/start.sh", 0);
+		startlcd = ostrcat(startlcd, " 5", 1, 0);
+	}
 	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf107h") == 0)
-		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 4", 0, 0);
+	{
+		startlcd = createpluginpath("/lcdsamsung/start.sh", 0);
+		startlcd = ostrcat(startlcd, " 4", 1, 0);
+	}
 	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf72h") == 0)
-		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 7", 0, 0);
+	{
+		startlcd = createpluginpath("/lcdsamsung/start.sh", 0);
+		startlcd = ostrcat(startlcd, " 7", 1, 0);
+	}
 	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf85h") == 0)
-		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 8", 0, 0);
+	{
+		startlcd = createpluginpath("/lcdsamsung/start.sh", 0);
+		startlcd = ostrcat(startlcd, " 8", 1, 0);
+	}
 	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf85p") == 0)
-		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 9", 0, 0);
+	{
+		startlcd = createpluginpath("/lcdsamsung/start.sh", 0);
+		startlcd = ostrcat(startlcd, " 9", 1, 0);
+	}
 	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "none") == 0)
-		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 99", 0, 0);
+	{
+		startlcd = createpluginpath("/lcdsamsung/start.sh", 0);
+		startlcd = ostrcat(startlcd, " 99", 1, 0);
+	}
 	else
-		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 2", 0, 0);
+	{
+		startlcd = createpluginpath("/lcdsamsung/start.sh", 0);
+		startlcd = ostrcat(startlcd, " 2", 1, 0);
+	}
 	
 	
 	if(LCD_Samsung1thread == NULL)
@@ -254,27 +287,60 @@ void LCD_Samsung1_thread()
 	struct skin* sreverse = getscreennode(LCD_Play, "reverse");
 		
 	if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf75h") == 0)
-		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 1", 0, 0);
+	{
+		startlcd = createpluginpath("/lcdsamsung/start.sh", 0);
+		startlcd = ostrcat(startlcd, " 1", 1, 0);
+	}
 	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf83h") == 0)
-		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 6", 0, 0);
+	{
+		startlcd = createpluginpath("/lcdsamsung/start.sh", 0);
+		startlcd = ostrcat(startlcd, " 6", 1, 0);
+	}
 	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87hold") == 0)
-		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 3", 0, 0);
+	{
+		startlcd = createpluginpath("/lcdsamsung/start.sh", 0);
+		startlcd = ostrcat(startlcd, " 3", 1, 0);
+	}
 	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf87h") == 0)
-		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 2", 0, 0);
+	{
+		startlcd = createpluginpath("/lcdsamsung/start.sh", 0);
+		startlcd = ostrcat(startlcd, " 2", 1, 0);
+	}
 	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf105p") == 0)
-		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 5", 0, 0);
+	{
+		startlcd = createpluginpath("/lcdsamsung/start.sh", 0);
+		startlcd = ostrcat(startlcd, " 5", 1, 0);
+	}
 	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf107h") == 0)
-		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 4", 0, 0);
+	{
+		startlcd = createpluginpath("/lcdsamsung/start.sh", 0);
+		startlcd = ostrcat(startlcd, " 4", 1, 0);
+	}
 	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf72h") == 0)
-		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 7", 0, 0);
+	{
+		startlcd = createpluginpath("/lcdsamsung/start.sh", 0);
+		startlcd = ostrcat(startlcd, " 7", 1, 0);
+	}
 	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf85h") == 0)
-		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 8", 0, 0);
+	{
+		startlcd = createpluginpath("/lcdsamsung/start.sh", 0);
+		startlcd = ostrcat(startlcd, " 8", 1, 0);
+	}
 	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf85p") == 0)
-		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 9", 0, 0);
+	{
+		startlcd = createpluginpath("/lcdsamsung/start.sh", 0);
+		startlcd = ostrcat(startlcd, " 9", 1, 0);
+	}
 	else if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "none") == 0)
-		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 99", 0, 0);
+	{
+		startlcd = createpluginpath("/lcdsamsung/start.sh", 0);
+		startlcd = ostrcat(startlcd, " 99", 1, 0);
+	}
 	else
-		startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/start.sh 2", 0, 0);
+	{
+		startlcd = createpluginpath("/lcdsamsung/start.sh", 0);
+		startlcd = ostrcat(startlcd, " 2", 1, 0);
+	}
 	
 	
 	if(ostrcmp(getconfig("lcd_samsung_plugin_standby", NULL), "yes") == 0) 
@@ -407,15 +473,16 @@ void LCD_Samsung1_thread()
 					standby = 2;
 				else
 				{
-					tmpstr = ostrcat("cp ", getconfig("pluginpath", NULL), 0, 0);
-					tmpstr = ostrcat(tmpstr, "/lcdsamsung/standby.jpg", 1, 0);
-					tmpstr = ostrcat(tmpstr, " /tmp/titanlcd.jpg", 1, 0);
+					tmpstr = createpluginpath("/lcdsamsung/standby.jpg", 0);
+					tmpstr = ostrcat("cp ", tmpstr, 0, 1);
+					tmpstr = ostrcat(tmpstr, " /tmp/titanlcd.png", 1, 0);
 					system(tmpstr);
 					free(tmpstr); tmpstr=NULL;
 					sleep(3);
-					tmpstr = ostrcat("cp ", getconfig("pluginpath", NULL), 0, 0);
-					tmpstr = ostrcat(tmpstr, "/lcdsamsung/black.jpg", 1, 0);
-					tmpstr = ostrcat(tmpstr, " /tmp/titanlcd.jpg", 1, 0);
+					
+					tmpstr = createpluginpath("/lcdsamsung/black.jpg", 0);
+					tmpstr = ostrcat("cp ", tmpstr, 0, 1);
+					tmpstr = ostrcat(tmpstr, " /tmp/titanlcd.png", 1, 0);
 					system(tmpstr);
 					sleep(2);
 					system("killall fbread");
@@ -795,9 +862,10 @@ void LCD_Samsung1_main()
 	if(LCD_Samsung1thread == NULL)
 	{
 		char* tmpstr = NULL;
-		tmpstr = ostrcat("cp ", getconfig("pluginpath", NULL), 0, 0);
-		tmpstr = ostrcat(tmpstr, "/lcdsamsung/start.jpg", 1, 0);
-		tmpstr = ostrcat(tmpstr, " /tmp/titanlcd.jpg", 1, 0);
+		
+		tmpstr = createpluginpath("/lcdsamsung/start.png", 0);
+		tmpstr = ostrcat("cp ", tmpstr, 0, 1);
+		tmpstr = ostrcat(tmpstr, " /tmp/titanlcd.png", 1, 0);
 		system(tmpstr);
 		free(tmpstr); tmpstr=NULL;
 		addconfig("lcd_samsung_plugin_running", "yes");
@@ -821,12 +889,14 @@ void init(void)
 	pluginaktiv = 1;
 	firststart = 1;
 	
-	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/lcdsamsung/skin.xml", 0, 0);
+	tmpstr = createpluginpath("/lcdsamsung/skin.xml", 0);
 	readscreen(tmpstr, 119, 1);
 	free(tmpstr); tmpstr = NULL;
-	tmpstr = ostrcat("cp ", getconfig("pluginpath", NULL), 0, 0);
-	tmpstr = ostrcat(tmpstr, "/lcdsamsung/black.jpg", 1, 0);
+	
+	tmpstr = createpluginpath("/lcdsamsung/black.jpg", 0);
+	tmpstr = ostrcat("cp ", tmpstr, 0, 1);
 	tmpstr = ostrcat(tmpstr, " /tmp/fbreadstop.jpg", 1, 0);
+		
 	system(tmpstr);
 	free(tmpstr); tmpstr = NULL;
 	system("killall fbread");
@@ -834,7 +904,7 @@ void init(void)
 	tmpstr = getconfig("lcd_samsung_plugin_running", NULL);
 	if(ostrcmp(tmpstr, "yes") == 0)
 		LCD_Samsung1_main();
-	tmpstr=NULL;
+	tmpstr = NULL;
 }
 
 //wird beim entladen ausgefuehrt

@@ -60,7 +60,7 @@ void init(void)
 	char* tmpstr = NULL;
 	pluginaktiv = 1;
 	
-	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/stopifnotused/skin.xml", 0, 0);
+	tmpstr = createpluginpath("/stopifnotused/skin.xml", 0);
 	readscreen(tmpstr, 117, 1);
 	free(tmpstr); tmpstr = NULL;
 	debug(10, "Stop if not used Plugin loadet !!!");

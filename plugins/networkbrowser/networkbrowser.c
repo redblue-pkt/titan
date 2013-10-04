@@ -32,7 +32,7 @@ void init(void)
 		changeinput(child, "start");
 	pluginmenu = child;
 
-	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/networkbrowser/skin.xml", 0, 0);
+	tmpstr = createpluginpath("/networkbrowser/skin.xml", 0);
 	readscreen(tmpstr, 100, 1);
 	free(tmpstr); tmpstr = NULL;
 

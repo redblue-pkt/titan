@@ -29,7 +29,7 @@ void init(void)
 		changeinput(child, "start");
 
 	pluginmenu = child;
-	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/imdbapi/skin.xml", 0, 0);
+	tmpstr = createpluginpath("/imdbapi/skin.xml", 0);
 	readscreen(tmpstr, 201, 1);
 	free(tmpstr); tmpstr = NULL;
 	debug(10, "imdbapi Plugin loadet !!!");

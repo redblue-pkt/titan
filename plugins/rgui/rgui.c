@@ -22,7 +22,7 @@ void init(void)
 {
 	char* tmpstr = NULL;
 
-	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/rgui/skin.xml", 0, 0);
+	tmpstr = createpluginpath("/rgui/skin.xml", 0);
 	readscreen(tmpstr, 197, 1);
 	free(tmpstr); tmpstr = NULL;
 

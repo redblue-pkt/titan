@@ -29,7 +29,7 @@ void init(void)
 		changeinput(child, "start");
 
 	pluginmenu = child;
-	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/imdb/skin.xml", 0, 0);
+	tmpstr = createpluginpath("/imdb/skin.xml", 0);
 	readscreen(tmpstr, 201, 1);
 	free(tmpstr); tmpstr = NULL;
 	debug(10, "Imdb Plugin loadet !!!");

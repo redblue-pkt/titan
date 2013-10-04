@@ -374,7 +374,7 @@ void init(void)
 {
 	char* tmpstr = NULL;
 	pluginaktiv = 1;
-	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/autotimer/skin.xml", 0, 0);
+	tmpstr = createpluginpath("/autotimer/skin.xml", 0);
 	readscreen(tmpstr, 120, 1);
 	free(tmpstr); tmpstr = NULL;
 	debug(10, "Autot Timer Plugin loadet !!!");

@@ -18,7 +18,7 @@ void init(void)
 	pluginaktiv = 1;
 	char* tmpstr = NULL;
 	
-	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/stock/skin.xml", 0, 0);
+	tmpstr = createpluginpath("/stock/skin.xml", 0);
 	readscreen(tmpstr, 220, 1);
 	free(tmpstr); tmpstr = NULL;
   

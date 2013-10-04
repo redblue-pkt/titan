@@ -260,7 +260,7 @@ void instar_main()
 {
 	int rcode = 0;
 
-	instarconf = ostrcat(getconfig("pluginpath", NULL), "/instar/instar.conf", 0, 0);
+	instarconf = createpluginpath("/instar/instar.conf", 0);
 	readconfig(instarconf, myconfig);
 	
   if(ostrcmp(getlist(myconfig, "InstarCamAutostart", NULL), "ja") == 0)

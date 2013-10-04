@@ -20,7 +20,7 @@ void init(void)
 	char* tmpstr = NULL;
 	coldstart = 1;
 	
-	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/callmonitor1/skin.xml", 0, 0);
+	tmpstr = createpluginpath("/callmonitor1/skin.xml", 0);
 	readscreen(tmpstr, 121, 1);
 	free(tmpstr); tmpstr = NULL;
 	
@@ -35,7 +35,8 @@ void deinit(void)
 {
 	char* tmpstr = NULL;
 
-	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/callmonitor1/fritzbox_msg_new.sh stop", 0, 0);
+	tmpstr = createpluginpath("/callmonitor1/fritzbox_msg_new.sh", 0);
+	tmpstr = ostrcat(tmpstr, " stop", 1, 0);
 	system(tmpstr);
 	pluginaktiv = 0;
 	debug(10, "CallMonitor1 removed !!!");

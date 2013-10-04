@@ -29,7 +29,7 @@ void init(void)
 		changeinput(child, "start");
 
 	pluginmenu = child;
-	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/tmdb/skin.xml", 0, 0);
+	tmpstr = createpluginpath("/tmdb/skin.xml", 0);
 	readscreen(tmpstr, 201, 1);
 	free(tmpstr); tmpstr = NULL;
 	debug(10, "TMDb Plugin loadet !!!");

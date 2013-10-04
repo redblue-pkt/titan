@@ -31,7 +31,7 @@ void weather_getline(FILE* fd, char* fileline)
 void LCD_start_lcd4linux()
 {
 	int count = 0;
-	char* startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdpearl1/start.sh", 0, 0);
+	char* startlcd = createpluginpath("/lcdpearl1/start.sh", 0);
 
 	if(LCD_Pearl1thread == NULL)
 		return;
@@ -46,7 +46,7 @@ void LCD_start_lcd4linux()
 			LCD_Pearl1thread->aktion = STOP;
 		}
 	}
-	free(startlcd);startlcd=NULL;	
+	free(startlcd); startlcd=NULL;	
 }
 
 void LCD_Pearl1_thread()
@@ -111,8 +111,11 @@ void LCD_Pearl1_thread()
 		
 	int put = 0, typemerk = 0, type = 0;
 	int standby = 0;
-	char* fbgrab = ostrcat(getconfig("pluginpath", NULL), "/lcdpearl1/fbgrab -f /tmp/titanlcd.raw -w 320 -h 240 -b 32 -i /tmp/.titanlcd1.png > /dev/null", 0, 0);
-	char* startlcd = ostrcat(getconfig("pluginpath", NULL), "/lcdpearl1/start.sh", 0, 0);
+	
+	char* fbgrab = createpluginpath("/lcdpearl1/fbgrab", 0);
+	fbgrab = ostrcat(fbgrab, " -f /tmp/titanlcd.raw -w 320 -h 240 -b 32 -i /tmp/.titanlcd1.png > /dev/null", 1, 0);
+	
+	char* startlcd = createpluginpath("/lcdpearl1/start.sh", 0);
 
 	unsigned long long int pos = 0, len = 0, reverse = 0;
 	int playertype = 0;
@@ -398,9 +401,11 @@ void LCD_Pearl1_main()
 	if(LCD_Pearl1thread == NULL)
 	{
 		char* tmpstr = NULL;
-		tmpstr = ostrcat("cp ", getconfig("pluginpath", NULL), 0, 0);
-		tmpstr = ostrcat(tmpstr, "/lcdpearl1/start.png", 1, 0);
+		
+		tmpstr = createpluginpath("/lcdpearl1/start.png", 0);
+		tmpstr = ostrcat("cp ", tmpstr, 0, 1);
 		tmpstr = ostrcat(tmpstr, " /tmp/titanlcd.png", 1, 0);
+		
 		system(tmpstr);
 		free(tmpstr); tmpstr=NULL;
 		//textbox(_("Message"), _("LCD Pearl1 starts ..."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 5, 0);
@@ -428,7 +433,7 @@ void init(void)
 	pluginaktiv = 1;
 	firststart = 1;
 	
-	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/lcdpearl1/skin.xml", 0, 0);
+	tmpstr = createpluginpath("/lcdpearl1/skin.xml", 0);
 	readscreen(tmpstr, 116, 1);
 	free(tmpstr); tmpstr = NULL;
 	debug(10, "LCD Pearl loadet !!!");
