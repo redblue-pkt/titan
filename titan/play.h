@@ -239,11 +239,17 @@ void screenplaytracklist(int mode, int playertype, int flag)
 				free(tmpstr); tmpstr = NULL;
 				tmp->type = CHOICEBOX;
 				tmp->del = 1;
-				tmp->handle = (char*)(i / 2);
+				if(tracklist[i] != NULL && atoi(tracklist[i]) != 0)
+					tmp->handle = (char*)atoi(tracklist[i]);
+				else
+					tmp->handle = (char*)(i / 2);
 
 				if(ostrcmp(curtrackname, tracklist[i]) == 0 && ostrcmp(curtrackencoding, tracklist[i + 1]) == 0)
 				{
-					tmp->handle1 = (char*)(i / 2);
+					if(curtrackname != NULL && atoi(curtrackname) != 0)
+						tmp->handle = (char*)atoi(curtrackname);
+					else
+						tmp->handle1 = (char*)(i / 2);
 					changeinput(tmp, _("running"));
 				}
 				else
