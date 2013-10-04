@@ -247,7 +247,7 @@ void screenplaytracklist(int mode, int playertype, int flag)
 				if(ostrcmp(curtrackname, tracklist[i]) == 0 && ostrcmp(curtrackencoding, tracklist[i + 1]) == 0)
 				{
 					if(curtrackname != NULL && atoi(curtrackname) != 0)
-						tmp->handle = (char*)atoi(curtrackname);
+						tmp->handle1 = (char*)atoi(curtrackname);
 					else
 						tmp->handle1 = (char*)(i / 2);
 					changeinput(tmp, _("running"));
