@@ -16,7 +16,7 @@ void init(void)
 {
 	char* tmpstr = NULL;
 
-	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/facebook/skin.xml", 0, 0);
+	tmpstr = createpluginpath("/facebook/skin.xml", 0);
 	readscreen(tmpstr, 242, 1);
 	free(tmpstr); tmpstr = NULL;
 

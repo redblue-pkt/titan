@@ -8,7 +8,8 @@ void callmonstart()
 {
 	char* tmpstr = NULL;
 	
-	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/callmonitor1/fritzbox_msg_new.sh stop", 0, 0);
+	tmpstr = createpluginpath("/callmonitor1/fritzbox_msg_new.sh", 0);
+	tmpstr = ostrcat(tmpstr, " stop", 1, 0);
 	system(tmpstr);
 	free(tmpstr); tmpstr = NULL;
 	
@@ -17,7 +18,8 @@ void callmonstart()
 	else
 		sleep(1); 
 	
-	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/callmonitor1/fritzbox_msg_new.sh start", 0, 0);
+	tmpstr = createpluginpath("/callmonitor1/fritzbox_msg_new.sh", 0);
+	tmpstr = ostrcat(tmpstr, " start", 1, 0);
 	system(tmpstr);
 	free(tmpstr); tmpstr = NULL;
 	coldstart = 0;
@@ -45,7 +47,7 @@ void callmon_main()
 	
 	struct clist *myconfig[LISTHASHSIZE] = {NULL};
 	char* callconf = NULL;
-	callconf = ostrcat(getconfig("pluginpath", NULL), "/callmonitor1/callmon.conf", 0, 0);
+	callconf = createpluginpath("/callmonitor1/callmon.conf", 0);
 	readconfig(callconf, myconfig);
 		
 	debug(1000, "in");
@@ -172,7 +174,8 @@ void callmon_main()
 		
 		if(hgreen == 1 || hblue == 1)
 		{	
-			tmpstr = ostrcat(getconfig("pluginpath", NULL), "/callmonitor1/fritzbox_msg_new.sh stop", 0, 0);
+			tmpstr = createpluginpath("/callmonitor1/fritzbox_msg_new.sh", 0);
+			tmpstr = ostrcat(tmpstr, " stop", 1, 0);
 			system(tmpstr);
 			free(tmpstr); tmpstr = NULL;
 			
@@ -199,7 +202,8 @@ void callmon_main()
 			
 			if(hblue == 1 && ostrcmp(getlist(myconfig, "usePhoneBook", NULL), "1")  == 0)
 			{
-				tmpstr = ostrcat(getconfig("pluginpath", NULL), "/callmonitor1/fritzbox_msg_new.sh loadPhoneBook", 0, 0);
+				tmpstr = createpluginpath("/callmonitor1/fritzbox_msg_new.sh", 0);
+				tmpstr = ostrcat(tmpstr, " loadPhoneBook", 1, 0);
 				system(tmpstr);
 				free(tmpstr); tmpstr = NULL;
 			}

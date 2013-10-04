@@ -15,7 +15,7 @@ void init(void)
 {
 	char* tmpstr = NULL;
 
-	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/dlna/skin.xml", 0, 0);
+	tmpstr = createpluginpath("/dlna/skin.xml", 0);
 	readscreen(tmpstr, 207, 1);
 	free(tmpstr); tmpstr = NULL;
 

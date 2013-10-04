@@ -132,7 +132,7 @@ void mc_main()
 	system("/bin/umount -fl `mount | grep fuse | grep -v '/dev/' | cut -d ' ' -f3`; /bin/umount -fl `mount | grep iso9660 | cut -d ' ' -f3`; killall -9 rarfs fusesmb curlftpfs");
 
 	char* tmpstr = NULL;
-	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/mc/skin.xml", 0, 0);
+	tmpstr = createpluginpath("/mc/skin.xml", 0);
 	readscreen(tmpstr, 101, 1);
 	free(tmpstr); tmpstr = NULL;
 	

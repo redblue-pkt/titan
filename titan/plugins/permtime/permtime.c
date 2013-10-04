@@ -72,7 +72,7 @@ void init(void)
 	char* tmpstr = NULL;
 	pluginaktiv = 1;
 	
-	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/permtime/skin.xml", 0, 0);
+	tmpstr = createpluginpath("/permtime/skin.xml", 0);
 	readscreen(tmpstr, 115, 1);
 	free(tmpstr); tmpstr = NULL;
 	tmpstr = getconfig("permtime_plugin_running", NULL);

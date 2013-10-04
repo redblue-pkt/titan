@@ -15,7 +15,7 @@ void init(void)
 {
 	char* tmpstr = NULL;
 
-	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/optimize/skin.xml", 0, 0);
+	tmpstr = createpluginpath("/optimize/skin.xml", 0);
 	readscreen(tmpstr, 198, 1);
 	free(tmpstr); tmpstr = NULL;
 

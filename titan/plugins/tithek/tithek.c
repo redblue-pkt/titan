@@ -35,7 +35,7 @@ void init(void)
 {
 	char* tmpstr = NULL;
 
-	tmpstr = ostrcat(getconfig("pluginpath", NULL), "/tithek/skin.xml", 0, 0);
+	tmpstr = createpluginpath("/tithek/skin.xml", 0);
 	readscreen(tmpstr, 195, 1);
 	free(tmpstr); tmpstr = NULL;
 
