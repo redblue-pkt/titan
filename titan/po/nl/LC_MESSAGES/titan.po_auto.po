@@ -321,7 +321,7 @@ msgstr ""
 #: tithek.h:2187 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012
 #: tmc.h:1017 tmdb.h:784 tmdb.h:947 tpk.h:3018 tunerconfig.h:772 unlock.h:20
 #: unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:53 vidstream.h:57
-#: xvidstage.h:64 xvidstage.h:177 youtube.h:176 zdf.h:33
+#: xvidstage.h:64 xvidstage.h:177 youtube.h:176 zdf.h:33 global.h:6149
 msgid "Message"
 msgstr ""
 
@@ -386,7 +386,7 @@ msgstr ""
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:784 tmdb.h:947 tpk.h:3018
 #: tunerconfig.h:772 unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75
 #: videomode.h:53 vidstream.h:57 xvidstage.h:64 xvidstage.h:177 youtube.h:176
-#: zdf.h:33
+#: zdf.h:33 global.h:6149
 msgid "OK"
 msgstr ""
 
@@ -453,7 +453,7 @@ msgstr ""
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:784 tmdb.h:947 tpk.h:3018
 #: tunerconfig.h:772 unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75
 #: videomode.h:53 vidstream.h:57 xvidstage.h:64 xvidstage.h:177 youtube.h:176
-#: zdf.h:33
+#: zdf.h:33 global.h:6149
 msgid "EXIT"
 msgstr ""
 
@@ -1301,7 +1301,7 @@ msgstr ""
 msgid "This file doesn't exist, or has been removed"
 msgstr ""
 
-#: global.h:6145 keyactions.h:213
+#: global.h:6145 keyactions.h:213 global.h:6149
 msgid "ERROR cant read res"
 msgstr ""
 

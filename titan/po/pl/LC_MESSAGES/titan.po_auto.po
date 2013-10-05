@@ -738,7 +738,7 @@ msgstr ""
 #: system_backup_restore.h:80 system_backup_restore.h:82 system_update.h:298
 #: system_update.h:304 system_update.h:311 tithek.h:610 tithek.h:1047
 #: tithek.h:1090 tithek.h:1341 tithek.h:1363 tithek.h:1368 tithek.h:2111
-#: tithek.h:2173 tithek.h:2187 tpk.h:3018 zdf.h:33
+#: tithek.h:2173 tithek.h:2187 tpk.h:3018 zdf.h:33 global.h:6149
 msgid "Message"
 msgstr ""
 
@@ -993,7 +993,7 @@ msgstr ""
 #: system_backup_restore.h:95 system_update.h:298 system_update.h:304
 #: system_update.h:311 tithek.h:610 tithek.h:1047 tithek.h:1090 tithek.h:1341
 #: tithek.h:1363 tithek.h:1368 tithek.h:1382 tithek.h:2111 tithek.h:2173
-#: tithek.h:2187 tpk.h:3018 zdf.h:33
+#: tithek.h:2187 tpk.h:3018 zdf.h:33 global.h:6149
 msgid "OK"
 msgstr ""
 
@@ -1248,7 +1248,7 @@ msgstr ""
 #: system_backup_restore.h:95 system_update.h:298 system_update.h:304
 #: system_update.h:311 tithek.h:610 tithek.h:1047 tithek.h:1090 tithek.h:1341
 #: tithek.h:1363 tithek.h:1368 tithek.h:1382 tithek.h:2111 tithek.h:2173
-#: tithek.h:2187 tpk.h:3018 zdf.h:33
+#: tithek.h:2187 tpk.h:3018 zdf.h:33 global.h:6149
 msgid "EXIT"
 msgstr ""
 
@@ -1736,7 +1736,7 @@ msgstr ""
 #: global.h:4602 global.h:4606 global.h:4607 global.h:4614 global.h:4639
 #: global.h:4634 global.h:4645 global.h:6121 keyactions.h:216 global.h:6109
 #: global.h:6153 global.h:6159 global.h:6209 global.h:6060 keyactions.h:213
-#: global.h:6145
+#: global.h:6145 global.h:6149
 msgid "ERROR cant read res"
 msgstr ""
 
