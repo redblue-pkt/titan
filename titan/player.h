@@ -1383,6 +1383,16 @@ void playerstopsubtitletrack()
 #ifdef EPLAYER3
 	if(player && player->output && player->output->subtitle)
 		player->output->subtitle->Command(player, (OutputCmd_t)OUTPUT_STOP, NULL);
+	if(player && player->container && player->container->assContainer)
+	{
+		player->container->assContainer->Command(player, CONTAINER_STOP, NULL);
+		player->container->assContainer->Command(player, CONTAINER_INIT, NULL);
+	}
+	if(player && player->manager && player->manager->subtitle)
+	{
+		int onlycurrent = 1;
+		player->manager->subtitle->Command(player, MANAGER_DEL, (void*)&onlycurrent);
+	}
 #endif
 }
 
