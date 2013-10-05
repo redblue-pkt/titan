@@ -268,6 +268,11 @@ void blitfb(int flag)
 	blitfb2(skinfb, flag);
 }
 
+void blitfb1()
+{
+	blitfb2(skinfb, 0);
+}
+
 //flag 0: del skinfb
 //flag 1: don't del skinfb
 void changefbresolution(char *value, int flag)

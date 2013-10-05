@@ -442,6 +442,7 @@ struct inetwork* getinetworkfirstwlan();
 
 //fb.h
 void blitfb(int flag);
+void blitfb1();
 void changefbresolution(char *value, int flag);
 void setfbtransparent(int value);
 struct fb* addfb(char *fbname, int dev, int width, int height, int colbytes, int fd, unsigned char* mmapfb, unsigned long fixfbsize);
