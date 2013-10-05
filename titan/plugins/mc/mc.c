@@ -3,6 +3,7 @@
 #include "../titan/header.h"
 
 extern struct fb* fb;
+extern struct fb* skinfb;
 
 #include "../titan/player.h"
 #include "mc_header.h"
