@@ -55,7 +55,7 @@
 #: networkbrowser.h:1424 networkbrowser.h:1428 networkbrowser.h:1432
 #: networkbrowser.h:1436 networkbrowser.h:1462 play.h:540 play.h:547
 #: play.h:562 scan.h:1735 scan.h:2198 scan.h:2202 scan.h:2206 scan.h:2210
-#: scan.h:2214 skinadjust.h:49
+#: scan.h:2214 skinadjust.h:49 play.h:548 play.h:555 play.h:570
 msgid "no"
 msgstr ""
 
@@ -121,7 +121,8 @@ msgstr ""
 #: adjust.h:220 networkbrowser.h:1421 networkbrowser.h:1425
 #: networkbrowser.h:1429 networkbrowser.h:1433 networkbrowser.h:1437
 #: networkbrowser.h:1463 play.h:538 play.h:545 play.h:560 scan.h:1736
-#: scan.h:2199 scan.h:2203 scan.h:2207 scan.h:2211 scan.h:2215
+#: scan.h:2199 scan.h:2203 scan.h:2207 scan.h:2211 scan.h:2215 play.h:546
+#: play.h:553 play.h:568
 msgid "yes"
 msgstr ""
 
@@ -313,13 +314,13 @@ msgid "expert (11)"
 msgstr ""
 
 #: audiotrack.h:48 play.h:247 rectimer.h:1490 subtitle.h:1615 audiotrack.h:50
-#: rectimer.h:1475 subtitle.h:1613 play.h:253
+#: rectimer.h:1475 subtitle.h:1613 play.h:253 play.h:261
 msgid "running"
 msgstr ""
 
 #: audiotrack.h:117 play.h:232 subtitle.h:1722 tunerconfig.h:157
 #: tunerconfig.h:341 tunerconfig.h:381 audiotrack.h:119 audiotrack.h:116
-#: subtitle.h:1719
+#: subtitle.h:1719 play.h:243
 msgid "undefined"
 msgstr ""
 
@@ -465,7 +466,8 @@ msgstr ""
 #: system_backup_restore.h:80 system_backup_restore.h:82 system_update.h:298
 #: system_update.h:304 system_update.h:311 tithek.h:610 tithek.h:1047
 #: tithek.h:1090 tithek.h:1341 tithek.h:1363 tithek.h:1368 tithek.h:2111
-#: tithek.h:2173 tithek.h:2187 tpk.h:3018 zdf.h:33 global.h:6149
+#: tithek.h:2173 tithek.h:2187 tpk.h:3018 zdf.h:33 global.h:6149 play.h:579
+#: play.h:1186 play.h:1372
 msgid "Message"
 msgstr ""
 
@@ -600,7 +602,8 @@ msgstr ""
 #: system_backup_restore.h:95 system_update.h:298 system_update.h:304
 #: system_update.h:311 tithek.h:610 tithek.h:1047 tithek.h:1090 tithek.h:1341
 #: tithek.h:1363 tithek.h:1368 tithek.h:1382 tithek.h:2111 tithek.h:2173
-#: tithek.h:2187 tpk.h:3018 zdf.h:33 global.h:6149
+#: tithek.h:2187 tpk.h:3018 zdf.h:33 global.h:6149 play.h:462 play.h:579
+#: play.h:1171 play.h:1177 play.h:1186 play.h:1187 play.h:1372
 msgid "OK"
 msgstr ""
 
@@ -733,6 +736,8 @@ msgstr ""
 #: system_update.h:304 system_update.h:311 tithek.h:610 tithek.h:1047
 #: tithek.h:1090 tithek.h:1341 tithek.h:1363 tithek.h:1368 tithek.h:1382
 #: tithek.h:2111 tithek.h:2173 tithek.h:2187 tpk.h:3018 zdf.h:33 global.h:6149
+#: play.h:462 play.h:579 play.h:1171 play.h:1177 play.h:1186 play.h:1187
+#: play.h:1372
 msgid "EXIT"
 msgstr ""
 
@@ -1120,7 +1125,7 @@ msgid "EJECT"
 msgstr ""
 
 #: dvdplay.h:29 play.h:1283 plugins_dlna_skin.xml.h:10
-#: skins_dlna_skin.xml.h:10 play.h:1291 play.h:1297
+#: skins_dlna_skin.xml.h:10 play.h:1291 play.h:1297 play.h:1305
 msgid "SELECT"
 msgstr ""
 
@@ -1129,6 +1134,7 @@ msgstr ""
 #: mc_pictureplayer.h:358 mc_pictureplayer.h:451 mc_videoplayer.h:734
 #: mc_videoplayer.h:870 play.h:1350 play.h:1358 mc_audioplayer.h:594
 #: mc_audioplayer.h:697 mc_videoplayer.h:733 mc_videoplayer.h:869 play.h:1364
+#: play.h:1372
 msgid "Can't start playback !"
 msgstr ""
 
@@ -1866,36 +1872,36 @@ msgstr ""
 msgid "MediaDB entry for this file not found."
 msgstr ""
 
-#: mediadb.h:1099 play.h:527 mediadb.h:1078 play.h:533
+#: mediadb.h:1099 play.h:527 mediadb.h:1078 play.h:533 play.h:541
 msgid "MediaDB directory scan started in Background !"
 msgstr ""
 
-#: mediadb.h:1101 play.h:529 mediadb.h:1080 play.h:535
+#: mediadb.h:1101 play.h:529 mediadb.h:1080 play.h:535 play.h:543
 msgid "Delete MediaDB before scan"
 msgstr ""
 
-#: mediadb.h:1108 play.h:536 mediadb.h:1087 play.h:542
+#: mediadb.h:1108 play.h:536 mediadb.h:1087 play.h:542 play.h:550
 msgid "Delete unused entrys before scan"
 msgstr ""
 
-#: mediadb.h:1115 play.h:543 mediadb.h:1094 play.h:549
+#: mediadb.h:1115 play.h:543 mediadb.h:1094 play.h:549 play.h:557
 msgid "scan Directory"
 msgstr ""
 
-#: mediadb.h:1119 play.h:547 mediadb.h:1098 play.h:553
+#: mediadb.h:1119 play.h:547 mediadb.h:1098 play.h:553 play.h:561
 msgid "MediaDB place"
 msgstr ""
 
-#: mediadb.h:1123 play.h:551 mediadb.h:1102 play.h:557
+#: mediadb.h:1123 play.h:551 mediadb.h:1102 play.h:557 play.h:565
 msgid "MediaDB Debug"
 msgstr ""
 
-#: mediadb.h:1130 play.h:558 mediadb.h:1109 play.h:564
+#: mediadb.h:1130 play.h:558 mediadb.h:1109 play.h:564 play.h:572
 msgid "Backdrop Download Count"
 msgstr ""
 
 #: mediadb.h:1133 mediadbsettings.h:52 play.h:561 plugins_mc_skin.xml.h:6
-#: skins_mc_skin.xml.h:6 tmc.h:539 mediadb.h:1112 play.h:567
+#: skins_mc_skin.xml.h:6 tmc.h:539 mediadb.h:1112 play.h:567 play.h:575
 msgid "all"
 msgstr ""
 
@@ -2503,21 +2509,21 @@ msgstr ""
 #: plugins_imdb_skin.xml.h:9 plugins_tmc_skin.xml.h:16
 #: plugins_tmdb_skin.xml.h:9 skins_imdbapi_skin.xml.h:9
 #: skins_imdb_skin.xml.h:9 skins_tmc_skin.xml.h:16 skins_tmdb_skin.xml.h:9
-#: play.h:374 play.h:408
+#: play.h:374 play.h:408 play.h:382 play.h:416
 msgid "Title:"
 msgstr ""
 
-#: play.h:373 play.h:407 play.h:379 play.h:413
+#: play.h:373 play.h:407 play.h:379 play.h:413 play.h:387 play.h:421
 msgid "Artist:"
 msgstr ""
 
 #: play.h:378 play.h:412 plugins_mc_skin.xml.h:5 skins_mc_skin.xml.h:5
-#: play.h:384 play.h:418
+#: play.h:384 play.h:418 play.h:392 play.h:426
 msgid "Album:"
 msgstr ""
 
 #: play.h:383 play.h:417 plugins_mc_skin.xml.h:68 skins_mc_skin.xml.h:68
-#: play.h:389 play.h:423
+#: play.h:389 play.h:423 play.h:397 play.h:431
 msgid "Year:"
 msgstr ""
 
@@ -2525,36 +2531,36 @@ msgstr ""
 #: plugins_imdb_skin.xml.h:3 plugins_mc_skin.xml.h:30 plugins_tmc_skin.xml.h:7
 #: plugins_tmdb_skin.xml.h:1 skins_imdbapi_skin.xml.h:3
 #: skins_imdb_skin.xml.h:3 skins_mc_skin.xml.h:30 skins_tmc_skin.xml.h:7
-#: skins_tmdb_skin.xml.h:1 play.h:394 play.h:428
+#: skins_tmdb_skin.xml.h:1 play.h:394 play.h:428 play.h:402 play.h:436
 msgid "Genre:"
 msgstr ""
 
-#: play.h:393 play.h:427 play.h:399 play.h:433
+#: play.h:393 play.h:427 play.h:399 play.h:433 play.h:407 play.h:441
 msgid "Comment:"
 msgstr ""
 
-#: play.h:432 play.h:438
+#: play.h:432 play.h:438 play.h:446
 msgid "Track:"
 msgstr ""
 
-#: play.h:437 play.h:443
+#: play.h:437 play.h:443 play.h:451
 msgid "Copyright:"
 msgstr ""
 
-#: play.h:448 play.h:454
+#: play.h:448 play.h:454 play.h:462
 msgid "iD3Tag"
 msgstr ""
 
-#: play.h:1075 play.h:1079 play.h:1085
+#: play.h:1075 play.h:1079 play.h:1085 play.h:1093
 msgid "Jump To (min)"
 msgstr ""
 
 #: play.h:1149 play.h:1155 plugins_tmc_skin.xml.h:1 skins_tmc_skin.xml.h:1
-#: play.h:1157 play.h:1163 play.h:1169
+#: play.h:1157 play.h:1163 play.h:1169 play.h:1171 play.h:1177
 msgid "EPG Info"
 msgstr ""
 
-#: play.h:1164 play.h:1172 play.h:1178
+#: play.h:1164 play.h:1172 play.h:1178 play.h:1186
 msgid "Record in progress"
 msgstr ""
 
@@ -2565,6 +2571,7 @@ msgstr ""
 #: play.h:1283 plugins_networkbrowser_skin.xml.h:3 plugins_stock_skin.xml.h:4
 #: plugins_weather_skin.xml.h:2 skins_networkbrowser_skin.xml.h:3
 #: skins_stock_skin.xml.h:4 skins_weather_skin.xml.h:2 play.h:1291 play.h:1297
+#: play.h:1305
 msgid "DEL"
 msgstr ""
 
@@ -5453,7 +5460,7 @@ msgstr ""
 msgid "ERROR... can't set marker in this file"
 msgstr ""
 
-#: play.h:1179
+#: play.h:1179 play.h:1187
 msgid "Really Delete ?"
 msgstr ""
 
