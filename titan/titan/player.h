@@ -624,7 +624,7 @@ int playerstart(char* file)
 		subout.destination = (uint32_t *)skinfb->fb;
 		subout.destStride = skinfb->pitch;
 		subout.shareFramebuffer = 1;
-		subout.framebufferBlit = blitfb;
+		subout.framebufferBlit = blitfb1;
 
 		player->output->subtitle->Command(player, (OutputCmd_t)OUTPUT_SET_SUBTITLE_OUTPUT, (void*)&subout);
 		
