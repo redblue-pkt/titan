@@ -30,8 +30,6 @@ extern struct fb* skinfb;
 #include "mc_videoplayer_settings.h"
 #include "mc_pictureplayer_settings.h"
 
-extern struct fb* skinfb;
-
 char pluginname[] = "Media Center";
 char plugindesc[] = "Multi Mediacenter";
 char pluginpic[] = "%pluginpath%/mediacenter/plugin.png";
