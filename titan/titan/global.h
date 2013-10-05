@@ -2414,17 +2414,21 @@ void m_unlock(pthread_mutex_t *mutex, int flag)
 
 void debugstack(int sig, void* address, void* address1)
 {
-	Dl_info info, info1, info2;
+	Dl_info info, info1;
 	void* trace[20];
 	size_t size;
 	size = backtrace(trace, 20);
 
 	FILE* fd = NULL;
 	void* akttrace[2];
-	int i = 0, y = 0;
+	int i = 0;
 	char **strings;
 	char **aktstring;
 	time_t rawtime;
+#ifdef BETA
+	int y = 0;
+	Dl_info info2;
+#endif
 
 	char* imgversion = NULL;
 	struct stimerthread* tnode = NULL;
