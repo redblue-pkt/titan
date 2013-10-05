@@ -102,6 +102,11 @@
 #: pin.h:194 avsettings.h:138 avsettings.h:159 avsettings.h:163 dlna.h:276
 #: inadyn.h:138 mediadb.h:1085 mediadb.h:1092 mediadb.h:1107 network.h:672
 #: rectimer.h:1059 rectimer.h:1064 rectimer.h:1069 skinadjust.h:56
+#: adjust.h:211 adjust.h:215 adjust.h:219 adjust.h:245 networkbrowser.h:1420
+#: networkbrowser.h:1424 networkbrowser.h:1428 networkbrowser.h:1432
+#: networkbrowser.h:1436 networkbrowser.h:1462 play.h:540 play.h:547
+#: play.h:562 scan.h:1735 scan.h:2198 scan.h:2202 scan.h:2206 scan.h:2210
+#: scan.h:2214 skinadjust.h:49
 msgid "no"
 msgstr ""
 
@@ -208,7 +213,11 @@ msgstr ""
 #: networkbrowser.h:1435 networkbrowser.h:1439 networkbrowser.h:1465 pin.h:105
 #: pin.h:177 pin.h:195 avsettings.h:139 avsettings.h:160 dlna.h:277
 #: inadyn.h:139 mediadb.h:1083 mediadb.h:1090 mediadb.h:1105 network.h:673
-#: rectimer.h:1060 rectimer.h:1065 rectimer.h:1070
+#: rectimer.h:1060 rectimer.h:1065 rectimer.h:1070 adjust.h:212 adjust.h:216
+#: adjust.h:220 networkbrowser.h:1421 networkbrowser.h:1425
+#: networkbrowser.h:1429 networkbrowser.h:1433 networkbrowser.h:1437
+#: networkbrowser.h:1463 play.h:538 play.h:545 play.h:560 scan.h:1736
+#: scan.h:2199 scan.h:2203 scan.h:2207 scan.h:2211 scan.h:2215
 msgid "yes"
 msgstr ""
 
@@ -361,12 +370,12 @@ msgid "4 GB"
 msgstr ""
 
 #: adjust.h:123 adjust.h:124 adjust.h:139 adjust.h:233 httpdsettings.h:43
-#: adjust.h:140 adjust.h:234
+#: adjust.h:140 adjust.h:234 adjust.h:236
 msgid "extern"
 msgstr ""
 
 #: adjust.h:124 adjust.h:125 adjust.h:140 adjust.h:234 httpdsettings.h:42
-#: adjust.h:141 adjust.h:235
+#: adjust.h:141 adjust.h:235 adjust.h:237
 msgid "intern"
 msgstr ""
 
@@ -384,7 +393,12 @@ msgstr ""
 #: transponder.h:267 transponder.h:293 transponder.h:318 transponder.h:336
 #: transponder.h:362 transponder.h:371 transponder.h:377 transponder.h:384
 #: transponder.h:416 transponder.h:426 transponder.h:475 transponder.h:511
-#: adjust.h:148 avsettings.h:66 rectimer.h:1155
+#: adjust.h:148 avsettings.h:66 rectimer.h:1155 transponder.h:121
+#: transponder.h:133 transponder.h:157 transponder.h:167 transponder.h:193
+#: transponder.h:200 transponder.h:226 transponder.h:234 transponder.h:258
+#: transponder.h:268 transponder.h:301 transponder.h:319 transponder.h:337
+#: transponder.h:363 transponder.h:372 transponder.h:378 transponder.h:385
+#: transponder.h:417 transponder.h:427 transponder.h:476 transponder.h:512
 msgid "auto"
 msgstr ""
 
@@ -448,7 +462,7 @@ msgstr ""
 
 #: audiotrack.h:48 play.h:155 rectimer.h:1283 subtitle.h:1612 rectimer.h:1288
 #: subtitle.h:1614 play.h:160 play.h:247 rectimer.h:1490 subtitle.h:1615
-#: audiotrack.h:50 rectimer.h:1475 subtitle.h:1613
+#: audiotrack.h:50 rectimer.h:1475 subtitle.h:1613 play.h:253
 msgid "running"
 msgstr ""
 
@@ -474,7 +488,8 @@ msgstr ""
 #: readerconfig.h:358 transponder.h:255 transponder.h:263 transponder.h:414
 #: transponder.h:422 tunerconfig.h:671 vfdisplay.h:42 vfdisplay.h:50
 #: harddisk.h:731 avsettings.h:65 avsettings.h:81 harddisk.h:755
-#: harddisk.h:751 network.h:391
+#: harddisk.h:751 network.h:391 readerconfig.h:413 transponder.h:256
+#: transponder.h:264 transponder.h:415 transponder.h:423
 msgid "off"
 msgstr ""
 
@@ -520,7 +535,8 @@ msgstr ""
 #: mc_pictureplayer_settings.h:27 avsettings.h:81
 #: mc_pictureplayer_settings.h:35 mc_pictureplayer_settings.h:39
 #: readerconfig.h:361 transponder.h:256 transponder.h:265 transponder.h:415
-#: transponder.h:424 avsettings.h:82
+#: transponder.h:424 avsettings.h:82 readerconfig.h:416 transponder.h:257
+#: transponder.h:266 transponder.h:416 transponder.h:425
 msgid "on"
 msgstr ""
 
@@ -706,7 +722,23 @@ msgstr ""
 #: rectimer.h:1200 rectimer.h:1346 rectimer.h:1358 scart.h:12 scart.h:25
 #: service.h:716 service.h:956 skinadjust.h:154 system_update.h:273
 #: system_update.h:279 system_update.h:286 tithek.h:1329 tithek.h:1351
-#: tithek.h:1356 tithek.h:2076 tithek.h:2138 tithek.h:2152 tpk.h:2990
+#: tithek.h:1356 tithek.h:2076 tithek.h:2138 tithek.h:2152 tpk.h:2990 ard.h:32
+#: callmon_main.h:39 channellist.h:920 channellist.h:922 channellist.h:1006
+#: epgsearch.h:27 epgsettings.h:257 epgsettings.h:281 extensions.h:235
+#: extensions.h:241 extensions.h:291 extensions.h:296 extensions.h:325
+#: extensions.h:381 extensions.h:414 global.h:6145 hbbtv.h:362
+#: mc_audioplayer.h:594 mc_audioplayer.h:697 mc_videoplayer.h:733
+#: mc_videoplayer.h:869 mc_videoplayer.h:885 myvideo.h:50
+#: networkbrowser.h:1551 networkbrowser.h:1558 networkbrowser.h:1563
+#: networkbrowser.h:1659 play.h:571 play.h:1178 play.h:1364 readerconfig.h:343
+#: readerconfig.h:443 readerconfig.h:444 readerconfig.h:488 readerconfig.h:489
+#: record.h:905 record.h:1092 record.h:1324 record.h:1348 scan.h:1628
+#: scan.h:1639 scan.h:1850 scan.h:1941 scan.h:2286 skinadjust.h:133
+#: solarmovie.h:265 system_backup_restore.h:40 system_backup_restore.h:43
+#: system_backup_restore.h:80 system_backup_restore.h:82 system_update.h:298
+#: system_update.h:304 system_update.h:311 tithek.h:610 tithek.h:1047
+#: tithek.h:1090 tithek.h:1341 tithek.h:1363 tithek.h:1368 tithek.h:2111
+#: tithek.h:2173 tithek.h:2187 tpk.h:3018 zdf.h:33
 msgid "Message"
 msgstr ""
 
@@ -942,7 +974,26 @@ msgstr ""
 #: scart.h:25 service.h:716 service.h:956 skinadjust.h:154 system_update.h:273
 #: system_update.h:279 system_update.h:286 tithek.h:1329 tithek.h:1351
 #: tithek.h:1356 tithek.h:1370 tithek.h:2076 tithek.h:2138 tithek.h:2152
-#: tpk.h:2990
+#: tpk.h:2990 ard.h:32 callmon_main.h:39 channellist.h:920 channellist.h:922
+#: channellist.h:1006 epgsearch.h:27 epgsettings.h:257 epgsettings.h:281
+#: epgsettings.h:295 extensions.h:170 extensions.h:220 extensions.h:228
+#: extensions.h:233 extensions.h:235 extensions.h:274 extensions.h:282
+#: extensions.h:289 extensions.h:291 extensions.h:325 extensions.h:406
+#: extensions.h:457 global.h:6145 harddisk.h:911 hbbtv.h:362
+#: mc_audioplayer.h:594 mc_audioplayer.h:697 mc_videoplayer.h:733
+#: mc_videoplayer.h:869 mc_videoplayer.h:885 myvideo.h:50
+#: networkbrowser.h:1551 networkbrowser.h:1558 networkbrowser.h:1563
+#: networkbrowser.h:1659 play.h:454 play.h:1169 play.h:1178 play.h:1179
+#: play.h:1364 readerconfig.h:343 readerconfig.h:443 readerconfig.h:444
+#: readerconfig.h:488 readerconfig.h:489 record.h:905 record.h:1348
+#: scan.h:1639 scan.h:1850 scan.h:1941 scan.h:2286 skinadjust.h:133
+#: solarmovie.h:265 system_backup_restore.h:31 system_backup_restore.h:40
+#: system_backup_restore.h:43 system_backup_restore.h:51
+#: system_backup_restore.h:80 system_backup_restore.h:82
+#: system_backup_restore.h:95 system_update.h:298 system_update.h:304
+#: system_update.h:311 tithek.h:610 tithek.h:1047 tithek.h:1090 tithek.h:1341
+#: tithek.h:1363 tithek.h:1368 tithek.h:1382 tithek.h:2111 tithek.h:2173
+#: tithek.h:2187 tpk.h:3018 zdf.h:33
 msgid "OK"
 msgstr ""
 
@@ -1178,11 +1229,30 @@ msgstr ""
 #: rectimer.h:1358 scart.h:12 scart.h:25 service.h:716 service.h:956
 #: system_update.h:273 system_update.h:279 system_update.h:286 tithek.h:1329
 #: tithek.h:1351 tithek.h:1356 tithek.h:1370 tithek.h:2076 tithek.h:2138
-#: tithek.h:2152 tpk.h:2990
+#: tithek.h:2152 tpk.h:2990 ard.h:32 channellist.h:920 channellist.h:922
+#: channellist.h:1006 epgsearch.h:27 epgsettings.h:257 epgsettings.h:281
+#: epgsettings.h:295 extensions.h:170 extensions.h:220 extensions.h:228
+#: extensions.h:233 extensions.h:235 extensions.h:274 extensions.h:282
+#: extensions.h:289 extensions.h:291 extensions.h:325 extensions.h:406
+#: extensions.h:457 global.h:6145 harddisk.h:911 hbbtv.h:362
+#: mc_audioplayer.h:594 mc_audioplayer.h:697 mc_videoplayer.h:733
+#: mc_videoplayer.h:869 mc_videoplayer.h:885 myvideo.h:50
+#: networkbrowser.h:1551 networkbrowser.h:1558 networkbrowser.h:1563
+#: networkbrowser.h:1659 play.h:454 play.h:1169 play.h:1178 play.h:1179
+#: play.h:1364 readerconfig.h:343 readerconfig.h:443 readerconfig.h:444
+#: readerconfig.h:488 readerconfig.h:489 record.h:905 record.h:1092
+#: record.h:1324 record.h:1348 scan.h:1639 scan.h:1850 scan.h:1941 scan.h:2286
+#: solarmovie.h:265 system_backup_restore.h:31 system_backup_restore.h:40
+#: system_backup_restore.h:43 system_backup_restore.h:51
+#: system_backup_restore.h:80 system_backup_restore.h:82
+#: system_backup_restore.h:95 system_update.h:298 system_update.h:304
+#: system_update.h:311 tithek.h:610 tithek.h:1047 tithek.h:1090 tithek.h:1341
+#: tithek.h:1363 tithek.h:1368 tithek.h:1382 tithek.h:2111 tithek.h:2173
+#: tithek.h:2187 tpk.h:3018 zdf.h:33
 msgid "EXIT"
 msgstr ""
 
-#: callmon_main.h:37
+#: callmon_main.h:37 callmon_main.h:39
 msgid ""
 "Callmon Timeout !!!\n"
 "\n"
@@ -1192,20 +1262,24 @@ msgstr ""
 #: callmon_main.h:85 callmon_main.h:103 callmon_main.h:107 callmon_main.h:111
 #: callmon_main.h:115 callmon_main.h:75 callmon_main.h:95 callmon_main.h:113
 #: callmon_main.h:117 callmon_main.h:121 callmon_main.h:125 instar.h:193
+#: callmon_main.h:77 callmon_main.h:97 callmon_main.h:119 callmon_main.h:123
+#: callmon_main.h:127
 msgid "ja"
 msgstr ""
 
 #: callmon_main.h:86 callmon_main.h:104 callmon_main.h:108 callmon_main.h:112
 #: callmon_main.h:116 callmon_main.h:74 callmon_main.h:96 callmon_main.h:114
 #: callmon_main.h:118 callmon_main.h:122 callmon_main.h:126 instar.h:192
+#: callmon_main.h:76 callmon_main.h:98 callmon_main.h:120 callmon_main.h:124
+#: callmon_main.h:128
 msgid "nein"
 msgstr ""
 
-#: callmon_main.h:119 callmon_main.h:129
+#: callmon_main.h:119 callmon_main.h:129 callmon_main.h:131
 msgid "puffern"
 msgstr ""
 
-#: callmon_main.h:120 callmon_main.h:130
+#: callmon_main.h:120 callmon_main.h:130 callmon_main.h:132
 msgid "verwerfen"
 msgstr ""
 
@@ -1213,6 +1287,7 @@ msgstr ""
 #: skin_default_skin.xml.h:92 skin_default_skin.xml.h:93
 #: skin_default_skin.xml.h:94 skin_default_skin.xml.h:95
 #: skin_default_skin.xml.h:96 callmon_main.h:133 mediadbsettings.h:55
+#: callmon_main.h:135
 msgid "3"
 msgstr ""
 
@@ -1220,6 +1295,7 @@ msgstr ""
 #: skin_default_skin.xml.h:94 skin_default_skin.xml.h:95
 #: skin_default_skin.xml.h:96 skin_default_skin.xml.h:97
 #: skin_default_skin.xml.h:98 callmon_main.h:134 mediadbsettings.h:56
+#: callmon_main.h:136
 msgid "4"
 msgstr ""
 
@@ -1227,28 +1303,30 @@ msgstr ""
 #: skin_default_skin.xml.h:95 skin_default_skin.xml.h:96
 #: skin_default_skin.xml.h:97 skin_default_skin.xml.h:98
 #: skin_default_skin.xml.h:99 callmon_main.h:135 mediadbsettings.h:57
+#: callmon_main.h:137
 msgid "5"
 msgstr ""
 
 #: callmon_main.h:126 skin_default_skin.xml.h:94 skin_default_skin.xml.h:95
 #: skin_default_skin.xml.h:96 skin_default_skin.xml.h:97
 #: skin_default_skin.xml.h:98 skin_default_skin.xml.h:99
-#: skin_default_skin.xml.h:100 callmon_main.h:136
+#: skin_default_skin.xml.h:100 callmon_main.h:136 callmon_main.h:138
 msgid "6"
 msgstr ""
 
 #: callmon_main.h:127 skin_default_skin.xml.h:96 skin_default_skin.xml.h:97
 #: skin_default_skin.xml.h:98 skin_default_skin.xml.h:99
 #: skin_default_skin.xml.h:100 skin_default_skin.xml.h:101
-#: skin_default_skin.xml.h:102 callmon_main.h:137
+#: skin_default_skin.xml.h:102 callmon_main.h:137 callmon_main.h:139
 msgid "8"
 msgstr ""
 
 #: callmon_main.h:128 callmon_main.h:138 mediadbsettings.h:58
+#: callmon_main.h:140
 msgid "10"
 msgstr ""
 
-#: callmon_main.h:129 callmon_main.h:139
+#: callmon_main.h:129 callmon_main.h:139 callmon_main.h:141
 msgid "12"
 msgstr ""
 
@@ -1294,7 +1372,7 @@ msgstr ""
 #: channellist.h:1027 channellist.h:1228 channellist.h:1254 channellist.h:577
 #: channellist.h:1061 channellist.h:1262 channellist.h:702 channellist.h:1220
 #: channellist.h:1221 channellist.h:1433 channellist.h:719 channellist.h:1237
-#: channellist.h:1238 channellist.h:1450
+#: channellist.h:1238 channellist.h:1450 channellist.h:1227 channellist.h:1440
 msgid "Bouquets"
 msgstr ""
 
@@ -1311,7 +1389,7 @@ msgstr ""
 #: channellist.h:1297 channellist.h:577 channellist.h:1304 channellist.h:582
 #: channellist.h:1309 channellist.h:1346 channellist.h:1355 channellist.h:1364
 #: channellist.h:1390 channellist.h:590 channellist.h:1398 channellist.h:719
-#: channellist.h:1573 channellist.h:736 channellist.h:1590
+#: channellist.h:1573 channellist.h:736 channellist.h:1590 channellist.h:1580
 msgid "Channel"
 msgstr ""
 
@@ -1329,7 +1407,8 @@ msgstr ""
 #: channellist.h:1057 channellist.h:1300 channellist.h:1083 channellist.h:1326
 #: channellist.h:602 channellist.h:1091 channellist.h:1334 channellist.h:735
 #: channellist.h:1254 channellist.h:1255 channellist.h:1507 channellist.h:752
-#: channellist.h:1271 channellist.h:1272 channellist.h:1524
+#: channellist.h:1271 channellist.h:1272 channellist.h:1524 channellist.h:1261
+#: channellist.h:1262 channellist.h:1514
 msgid "Satellites"
 msgstr ""
 
@@ -1348,6 +1427,7 @@ msgstr ""
 #: channellist.h:1462 channellist.h:615 channellist.h:1151 channellist.h:1470
 #: channellist.h:752 channellist.h:1322 channellist.h:1323 channellist.h:1647
 #: channellist.h:769 channellist.h:1339 channellist.h:1340 channellist.h:1664
+#: channellist.h:1329 channellist.h:1330 channellist.h:1654
 msgid "Provider"
 msgstr ""
 
@@ -1361,6 +1441,7 @@ msgstr ""
 #: channellist.h:1015 channellist.h:1041 channellist.h:628 channellist.h:1049
 #: channellist.h:771 channellist.h:772 channellist.h:1204 channellist.h:1205
 #: channellist.h:788 channellist.h:789 channellist.h:1221 channellist.h:1222
+#: channellist.h:1211 channellist.h:1212
 msgid "All Channels"
 msgstr ""
 
@@ -1368,7 +1449,7 @@ msgstr ""
 #: channellist.h:771 channellist.h:790 channellist.h:821 channellist.h:822
 #: channellist.h:823 channellist.h:824 channellist.h:825 channellist.h:826
 #: channellist.h:833 channellist.h:838 channellist.h:846 channellist.h:999
-#: channellist.h:1016
+#: channellist.h:1016 channellist.h:1006
 msgid "Can't remove akive Service"
 msgstr ""
 
@@ -1377,7 +1458,8 @@ msgstr ""
 #: channellist.h:1017 channellist.h:1018 channellist.h:1019 channellist.h:1020
 #: channellist.h:1027 channellist.h:1032 channellist.h:1069 channellist.h:1078
 #: channellist.h:1087 channellist.h:1113 channellist.h:1121 channellist.h:1288
-#: channellist.h:1289 channellist.h:1305 channellist.h:1306
+#: channellist.h:1289 channellist.h:1305 channellist.h:1306 channellist.h:1295
+#: channellist.h:1296
 msgid "Channels A-Z"
 msgstr ""
 
@@ -1442,6 +1524,8 @@ msgstr ""
 #: transponder.h:272 transponder.h:296 transponder.h:302 transponder.h:221
 #: transponder.h:231 transponder.h:328 transponder.h:346 transponder.h:373
 #: transponder.h:379 diseqcconfig.h:139 diseqcconfig.h:144 diseqcconfig.h:163
+#: transponder.h:222 transponder.h:232 transponder.h:329 transponder.h:347
+#: transponder.h:374 transponder.h:380
 msgid "none"
 msgstr ""
 
@@ -1612,6 +1696,7 @@ msgid "never"
 msgstr ""
 
 #: epgsettings.h:114 epgsettings.h:202 epgsettings.h:261 epgsettings.h:271
+#: epgsettings.h:281
 msgid "EPG resetet and now clear."
 msgstr ""
 
@@ -1651,6 +1736,7 @@ msgstr ""
 #: global.h:4602 global.h:4606 global.h:4607 global.h:4614 global.h:4639
 #: global.h:4634 global.h:4645 global.h:6121 keyactions.h:216 global.h:6109
 #: global.h:6153 global.h:6159 global.h:6209 global.h:6060 keyactions.h:213
+#: global.h:6145
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -1841,13 +1927,13 @@ msgid "Imdb Suche"
 msgstr ""
 
 #: ipkg.h:362 ipkg.h:363 ipkg.h:364 ipkg.h:358 tpk.h:2753 tpk.h:2751
-#: tpk.h:2990
+#: tpk.h:2990 tpk.h:3018
 msgid "check your Secret Feed !"
 msgstr ""
 
 #: ipkg.h:701 ipkg.h:702 ipkg.h:467 ipkg.h:733 ipkg.h:525 ipkg.h:804
 #: ipkg.h:519 ipkg.h:798 ipkg.h:524 ipkg.h:528 ipkg.h:549 tpk.h:2984
-#: tpk.h:2987 tpk.h:2992 tpk.h:3234
+#: tpk.h:2987 tpk.h:2992 tpk.h:3234 tpk.h:3262
 msgid "no description found"
 msgstr ""
 
@@ -1898,7 +1984,7 @@ msgstr ""
 #: mc_pictureplayer.h:119 mc_videoplayer.h:220 mc_videoplayer.h:215
 #: mc_videoplayer.h:214 mc_pictureplayer.h:116 mc_videoplayer.h:216
 #: mc_audioplayer.h:399 mc_global.h:1069 mc_pictureplayer.h:140
-#: mc_videoplayer.h:417
+#: mc_videoplayer.h:417 mc_audioplayer.h:398 mc_videoplayer.h:416
 msgid "Repeat-On"
 msgstr ""
 
@@ -1917,6 +2003,8 @@ msgstr ""
 #: mc_audioplayer.h:406 mc_audioplayer.h:556 mc_global.h:1071
 #: mc_pictureplayer.h:147 mc_pictureplayer.h:312 mc_videoplayer.h:424
 #: mc_videoplayer.h:654 plugins_mc_skin.xml.h:47 skins_mc_skin.xml.h:47
+#: mc_audioplayer.h:405 mc_audioplayer.h:555 mc_videoplayer.h:423
+#: mc_videoplayer.h:653
 msgid "Repeat"
 msgstr ""
 
@@ -1943,7 +2031,9 @@ msgstr ""
 #: mc_global.h:336 mc_global.h:408 mc_pictureplayer.h:265
 #: mc_pictureplayer.h:310 mc_pictureplayer.h:420 mc_videoplayer.h:581
 #: mc_videoplayer.h:652 mc_videoplayer.h:836 plugins_mc_skin.xml.h:27
-#: skins_mc_skin.xml.h:27
+#: skins_mc_skin.xml.h:27 mc_audioplayer.h:510 mc_audioplayer.h:553
+#: mc_audioplayer.h:673 mc_videoplayer.h:580 mc_videoplayer.h:651
+#: mc_videoplayer.h:835
 msgid "Filelist-Mode"
 msgstr ""
 
@@ -1957,7 +2047,7 @@ msgstr ""
 #: mc_videoplayer.h:360 mc_audioplayer.h:298 mc_videoplayer.h:367
 #: mc_audioplayer.h:555 mc_global.h:552 mc_global.h:580 mc_global.h:1066
 #: mc_pictureplayer.h:311 mc_videoplayer.h:653 plugins_mc_skin.xml.h:46
-#: skins_mc_skin.xml.h:46
+#: skins_mc_skin.xml.h:46 mc_audioplayer.h:554 mc_videoplayer.h:652
 msgid "Random"
 msgstr ""
 
@@ -1972,7 +2062,8 @@ msgstr ""
 #: mc_pictureplayer.h:282 mc_videoplayer.h:401 mc_videoplayer.h:400
 #: mc_audioplayer.h:319 mc_videoplayer.h:408 mc_audioplayer.h:576
 #: mc_global.h:269 mc_global.h:692 mc_global.h:925 mc_global.h:939
-#: mc_pictureplayer.h:331 mc_videoplayer.h:694
+#: mc_pictureplayer.h:331 mc_videoplayer.h:694 mc_audioplayer.h:575
+#: mc_videoplayer.h:693
 msgid "Playlist-Mode"
 msgstr ""
 
@@ -1997,7 +2088,8 @@ msgstr ""
 #: dvdplay.h:62 mc_audioplayer.h:595 mc_audioplayer.h:698 mc_global.h:765
 #: mc_global.h:1010 mc_pictureplayer.h:95 mc_pictureplayer.h:232
 #: mc_pictureplayer.h:358 mc_pictureplayer.h:451 mc_videoplayer.h:734
-#: mc_videoplayer.h:870 play.h:1350 play.h:1358
+#: mc_videoplayer.h:870 play.h:1350 play.h:1358 mc_audioplayer.h:594
+#: mc_audioplayer.h:697 mc_videoplayer.h:733 mc_videoplayer.h:869 play.h:1364
 msgid "Can't start playback !"
 msgstr ""
 
@@ -2110,7 +2202,8 @@ msgstr ""
 #: skins_zapback_skin.xml.h:7 plugins_autotimer_skin.xml.h:11
 #: plugins_tithek_skin.xml.h:15 skins_autotimer_skin.xml.h:11
 #: skins_tithek_skin.xml.h:15 dirsort.h:24 plugins_autotimer_skin.xml.h:13
-#: skins_autotimer_skin.xml.h:13
+#: skins_autotimer_skin.xml.h:13 plugins_readerconfig_skin.xml.h:10
+#: skins_readerconfig_skin.xml.h:10
 msgid ""
 msgstr ""
 
@@ -2125,7 +2218,7 @@ msgstr ""
 #: tithek.h:560 tithek.h:461 tithek.h:503 tithek.h:524 tithek.h:562
 #: filemanager.h:306 mc_internetbrowser.h:41 mc_wetterinfo.h:41 tithek.h:1348
 #: filemanager.h:307 filemanager.h:331 tithek.h:1357 filemanager.h:343
-#: tithek.h:1356
+#: tithek.h:1356 tithek.h:1368
 msgid "Registration needed, please contact Atemio !"
 msgstr ""
 
@@ -2209,7 +2302,10 @@ msgstr ""
 #: moduleconfig.h:345 bgdownload.h:95 hwtest.h:424 bgdownload.h:97
 #: bgdownload.h:155 httpdfunc.h:2653 httpdfunc.h:2665 hwtest.h:467
 #: youtube.h:128 bgdownload.h:94 bgdownload.h:152 httpdfunc.h:2656
-#: httpdfunc.h:2668
+#: httpdfunc.h:2668 transponder.h:122 transponder.h:158 transponder.h:194
+#: transponder.h:227 transponder.h:259 transponder.h:295 transponder.h:330
+#: transponder.h:348 transponder.h:418 transponder.h:451 transponder.h:480
+#: transponder.h:504 transponder.h:574 zdf.h:91
 msgid "unknown"
 msgstr ""
 
@@ -2261,21 +2357,21 @@ msgstr ""
 #: networkbrowser.h:806 networkbrowser.h:811 networkbrowser.h:838
 #: networkbrowser.h:840 networkbrowser.h:836 networkbrowser.h:854
 #: networkbrowser.h:984 networkbrowser.h:985 networkbrowser.h:987
-#: networkbrowser.h:988
+#: networkbrowser.h:988 networkbrowser.h:986
 msgid "Scanning Network Shares, please wait !!"
 msgstr ""
 
 #: networkbrowser.h:30 networkbrowser.h:34 networkbrowser.h:806
 #: networkbrowser.h:824 networkbrowser.h:829 networkbrowser.h:856
 #: networkbrowser.h:858 networkbrowser.h:854 networkbrowser.h:872
-#: networkbrowser.h:1005 networkbrowser.h:1008
+#: networkbrowser.h:1005 networkbrowser.h:1008 networkbrowser.h:1006
 msgid "Networkbrowser - show scanned DNS-Shares"
 msgstr ""
 
 #: networkbrowser.h:47 networkbrowser.h:56 networkbrowser.h:813
 #: networkbrowser.h:831 networkbrowser.h:836 networkbrowser.h:863
 #: networkbrowser.h:865 networkbrowser.h:861 networkbrowser.h:879
-#: networkbrowser.h:1026 networkbrowser.h:1029
+#: networkbrowser.h:1026 networkbrowser.h:1029 networkbrowser.h:1027
 msgid "Networkbrowser - show scanned cifs/nfs-Shares"
 msgstr ""
 
@@ -2288,6 +2384,7 @@ msgstr ""
 #: networkbrowser.h:1117 networkbrowser.h:1089 networkbrowser.h:1094
 #: networkbrowser.h:1143 networkbrowser.h:1145 networkbrowser.h:1144
 #: networkbrowser.h:1159 networkbrowser.h:1372 networkbrowser.h:1375
+#: networkbrowser.h:1373
 msgid "cifs"
 msgstr ""
 
@@ -2296,6 +2393,7 @@ msgstr ""
 #: networkbrowser.h:1118 networkbrowser.h:1090 networkbrowser.h:1095
 #: networkbrowser.h:1144 networkbrowser.h:1146 networkbrowser.h:1145
 #: networkbrowser.h:1160 networkbrowser.h:1373 networkbrowser.h:1376
+#: networkbrowser.h:1374
 msgid "nfs"
 msgstr ""
 
@@ -2304,6 +2402,7 @@ msgstr ""
 #: networkbrowser.h:1119 networkbrowser.h:1091 networkbrowser.h:1096
 #: networkbrowser.h:1145 networkbrowser.h:1147 networkbrowser.h:1146
 #: networkbrowser.h:1161 networkbrowser.h:1374 networkbrowser.h:1377
+#: networkbrowser.h:1375
 msgid "ftpfs"
 msgstr ""
 
@@ -2312,6 +2411,7 @@ msgstr ""
 #: networkbrowser.h:1152 networkbrowser.h:1124 networkbrowser.h:1129
 #: networkbrowser.h:1178 networkbrowser.h:1180 networkbrowser.h:1179
 #: networkbrowser.h:1194 networkbrowser.h:1409 networkbrowser.h:1412
+#: networkbrowser.h:1410
 msgid "ssl_try"
 msgstr ""
 
@@ -2320,6 +2420,7 @@ msgstr ""
 #: networkbrowser.h:1153 networkbrowser.h:1125 networkbrowser.h:1130
 #: networkbrowser.h:1179 networkbrowser.h:1181 networkbrowser.h:1180
 #: networkbrowser.h:1195 networkbrowser.h:1410 networkbrowser.h:1413
+#: networkbrowser.h:1411
 msgid "ssl_control"
 msgstr ""
 
@@ -2333,6 +2434,7 @@ msgstr ""
 #: networkbrowser.h:1182 networkbrowser.h:1181 networkbrowser.h:1196
 #: networkbrowser.h:1411 plugins_networkbrowser_skin.xml.h:24
 #: skins_networkbrowser_skin.xml.h:24 networkbrowser.h:1414
+#: networkbrowser.h:1412
 msgid "ssl"
 msgstr ""
 
@@ -2341,6 +2443,7 @@ msgstr ""
 #: networkbrowser.h:1157 networkbrowser.h:1129 networkbrowser.h:1134
 #: networkbrowser.h:1183 networkbrowser.h:1185 networkbrowser.h:1184
 #: networkbrowser.h:1199 networkbrowser.h:1414 networkbrowser.h:1417
+#: networkbrowser.h:1415
 msgid "socks5"
 msgstr ""
 
@@ -2349,6 +2452,7 @@ msgstr ""
 #: networkbrowser.h:1158 networkbrowser.h:1130 networkbrowser.h:1135
 #: networkbrowser.h:1184 networkbrowser.h:1186 networkbrowser.h:1185
 #: networkbrowser.h:1200 networkbrowser.h:1415 networkbrowser.h:1418
+#: networkbrowser.h:1416
 msgid "socks4"
 msgstr ""
 
@@ -2357,6 +2461,7 @@ msgstr ""
 #: networkbrowser.h:1159 networkbrowser.h:1131 networkbrowser.h:1136
 #: networkbrowser.h:1185 networkbrowser.h:1187 networkbrowser.h:1186
 #: networkbrowser.h:1201 networkbrowser.h:1416 networkbrowser.h:1419
+#: networkbrowser.h:1417
 msgid "html"
 msgstr ""
 
@@ -2365,6 +2470,7 @@ msgstr ""
 #: networkbrowser.h:1205 networkbrowser.h:1177 networkbrowser.h:1182
 #: networkbrowser.h:1231 networkbrowser.h:1233 networkbrowser.h:1232
 #: networkbrowser.h:1247 networkbrowser.h:1466 networkbrowser.h:1469
+#: networkbrowser.h:1467
 msgid "udp"
 msgstr ""
 
@@ -2373,6 +2479,7 @@ msgstr ""
 #: networkbrowser.h:1206 networkbrowser.h:1178 networkbrowser.h:1183
 #: networkbrowser.h:1232 networkbrowser.h:1234 networkbrowser.h:1233
 #: networkbrowser.h:1248 networkbrowser.h:1467 networkbrowser.h:1470
+#: networkbrowser.h:1468
 msgid "tcp"
 msgstr ""
 
@@ -2403,7 +2510,7 @@ msgstr ""
 #: networkbrowser.h:797 networkbrowser.h:956 networkbrowser.h:919
 #: networkbrowser.h:924 networkbrowser.h:967 networkbrowser.h:969
 #: networkbrowser.h:965 networkbrowser.h:983 networkbrowser.h:1153
-#: networkbrowser.h:1156
+#: networkbrowser.h:1156 networkbrowser.h:1154
 msgid "Add Cifs Network Share"
 msgstr ""
 
@@ -2414,6 +2521,7 @@ msgstr ""
 #: networkbrowser.h:983 networkbrowser.h:955 networkbrowser.h:960
 #: networkbrowser.h:1003 networkbrowser.h:1005 networkbrowser.h:1002
 #: networkbrowser.h:1019 networkbrowser.h:1203 networkbrowser.h:1206
+#: networkbrowser.h:1204
 msgid "Add Nfs Network Share"
 msgstr ""
 
@@ -2424,6 +2532,7 @@ msgstr ""
 #: networkbrowser.h:855 networkbrowser.h:1010 networkbrowser.h:982
 #: networkbrowser.h:987 networkbrowser.h:1030 networkbrowser.h:1032
 #: networkbrowser.h:1046 networkbrowser.h:1243 networkbrowser.h:1246
+#: networkbrowser.h:1244
 msgid "Add Ftpfs Network Share"
 msgstr ""
 
@@ -2432,7 +2541,7 @@ msgstr ""
 #: networkbrowser.h:1016 networkbrowser.h:1282 networkbrowser.h:1254
 #: networkbrowser.h:1259 networkbrowser.h:1322 networkbrowser.h:1324
 #: networkbrowser.h:1323 networkbrowser.h:1338 networkbrowser.h:1562
-#: networkbrowser.h:1565
+#: networkbrowser.h:1565 networkbrowser.h:1563
 msgid "Are you sure you want to save this network mount?"
 msgstr ""
 
@@ -2474,6 +2583,7 @@ msgstr ""
 #: networkbrowser.h:1341 networkbrowser.h:1404 networkbrowser.h:1406
 #: networkbrowser.h:1419 networkbrowser.h:1415 networkbrowser.h:1416
 #: networkbrowser.h:1431 networkbrowser.h:1658 networkbrowser.h:1661
+#: networkbrowser.h:1659
 msgid "Are you sure you want remove this share?"
 msgstr ""
 
@@ -2574,6 +2684,7 @@ msgstr ""
 #: panel_extensions.h:136 panel_extensions.h:96 panel_extensions.h:137
 #: extensions.h:135 extensions.h:191 extensions.h:273 extensions.h:193
 #: extensions.h:277 extensions.h:231 extensions.h:287 extensions.h:373
+#: extensions.h:235 extensions.h:291 extensions.h:377
 msgid ""
 "Some plugins needs restart.\n"
 "If the plugin is not active\n"
@@ -3017,7 +3128,7 @@ msgid "Backup"
 msgstr ""
 
 #: panel_system_backup.h:23 plugins_panel_skin.xml.h:3
-#: skins_panel_skin.xml.h:3 system_backup.h:24
+#: skins_panel_skin.xml.h:3 system_backup.h:24 system_backup.h:18
 msgid "Create Backup"
 msgstr ""
 
@@ -3034,6 +3145,7 @@ msgid ""
 msgstr ""
 
 #: panel_system.h:138 system_update.h:99 system_update.h:117
+#: system_update.h:123
 msgid "non-version"
 msgstr ""
 
@@ -3058,7 +3170,7 @@ msgstr ""
 
 #: panel_system.h:259 panel_system.h:319 system_update.h:226
 #: system_update.h:296 system_update.h:310 system_update.h:412
-#: system_update.h:266
+#: system_update.h:266 system_update.h:272
 msgid "starting Full Update ?"
 msgstr ""
 
@@ -3077,21 +3189,24 @@ msgid "starting Root Update starten ?"
 msgstr ""
 
 #: panel_system.h:343 system_update.h:330 system_update.h:458
-#: system_update.h:273
+#: system_update.h:273 system_update.h:298
 msgid "Error file not supported"
 msgstr ""
 
 #: panel_system_restore.h:17 panel_system_restore.h:74
 #: plugins_panel_skin.xml.h:2 skins_panel_skin.xml.h:2
 #: system_backup_restore.h:18 system_backup_restore.h:83
+#: system_backup_restore.h:75
 msgid "Backup / Restore Settings"
 msgstr ""
 
 #: panel_system_restore.h:31 system_backup_restore.h:32
+#: system_backup_restore.h:31
 msgid "Restore Settings"
 msgstr ""
 
 #: panel_system_restore.h:31 system_backup_restore.h:32
+#: system_backup_restore.h:31
 msgid ""
 "Are you sure you want to restore settings?\n"
 "\n"
@@ -3100,6 +3215,7 @@ msgid ""
 msgstr ""
 
 #: panel_system_restore.h:33 system_backup_restore.h:34
+#: system_backup_restore.h:33
 msgid ""
 "Please wait ...\n"
 "\n"
@@ -3109,10 +3225,12 @@ msgid ""
 msgstr ""
 
 #: panel_system_restore.h:50 system_backup_restore.h:52
+#: system_backup_restore.h:51
 msgid "RESTORE ERROR"
 msgstr ""
 
 #: panel_system_restore.h:50 system_backup_restore.h:52
+#: system_backup_restore.h:51
 msgid ""
 "No backup folders found!!!\n"
 "\n"
@@ -3120,10 +3238,12 @@ msgid ""
 msgstr ""
 
 #: panel_system_restore.h:63 system_backup_restore.h:73
+#: system_backup_restore.h:65
 msgid "Backup - Settings"
 msgstr ""
 
 #: panel_system_restore.h:64 system_backup_restore.h:74
+#: system_backup_restore.h:66
 msgid ""
 "Backup started\n"
 "\n"
@@ -3131,14 +3251,17 @@ msgid ""
 msgstr ""
 
 #: panel_system_restore.h:78 system_backup_restore.h:90
+#: system_backup_restore.h:82
 msgid "Backup created successfully"
 msgstr ""
 
 #: panel_system_restore.h:84 system_backup_restore.h:96
+#: system_backup_restore.h:88
 msgid "BACKUP ERROR"
 msgstr ""
 
 #: panel_system_restore.h:84 system_backup_restore.h:96
+#: system_backup_restore.h:88
 msgid ""
 "A record hdd or a swapstick must be mounted!\n"
 "\n"
@@ -3151,7 +3274,7 @@ msgstr ""
 
 #: play.h:551 play.h:557 play.h:563 play.h:587 play.h:593 play.h:590
 #: play.h:596 play.h:1149 play.h:1155 plugins_tmc_skin.xml.h:1
-#: skins_tmc_skin.xml.h:1 play.h:1157 play.h:1163
+#: skins_tmc_skin.xml.h:1 play.h:1157 play.h:1163 play.h:1169
 msgid "EPG Info"
 msgstr ""
 
@@ -3171,12 +3294,13 @@ msgstr ""
 #: plugins_stock_skin.xml.h:4 plugins_weather_skin.xml.h:3
 #: skins_stock_skin.xml.h:4 skins_weather_skin.xml.h:3 play.h:1283
 #: plugins_weather_skin.xml.h:2 skins_weather_skin.xml.h:2 play.h:1291
+#: play.h:1297
 msgid "DEL"
 msgstr ""
 
 #: play.h:633 play.h:639 play.h:645 play.h:675 play.h:676 dvdplay.h:27
 #: play.h:679 dvdplay.h:29 plugins_dlna_skin.xml.h:10 skins_dlna_skin.xml.h:10
-#: play.h:1283 play.h:1291
+#: play.h:1283 play.h:1291 play.h:1297
 msgid "SELECT"
 msgstr ""
 
@@ -3300,7 +3424,7 @@ msgstr ""
 #: plugins_imdb_skin.xml.h:3 plugins_mc_skin.xml.h:30 plugins_tmc_skin.xml.h:7
 #: plugins_tmdb_skin.xml.h:1 skins_imdbapi_skin.xml.h:3
 #: skins_imdb_skin.xml.h:3 skins_mc_skin.xml.h:30 skins_tmc_skin.xml.h:7
-#: skins_tmdb_skin.xml.h:1
+#: skins_tmdb_skin.xml.h:1 play.h:394 play.h:428
 msgid "Genre:"
 msgstr ""
 
@@ -3355,7 +3479,7 @@ msgstr ""
 #: plugins_imdbapi_skin.xml.h:9 plugins_imdb_skin.xml.h:9
 #: plugins_tmc_skin.xml.h:16 plugins_tmdb_skin.xml.h:9
 #: skins_imdbapi_skin.xml.h:9 skins_imdb_skin.xml.h:9 skins_tmc_skin.xml.h:16
-#: skins_tmdb_skin.xml.h:9
+#: skins_tmdb_skin.xml.h:9 play.h:374 play.h:408
 msgid "Title:"
 msgstr ""
 
@@ -3394,7 +3518,7 @@ msgstr ""
 
 #: plugins_mc_skin.xml.h:4 skins_mc_skin.xml.h:4 mediadb.h:1133
 #: mediadbsettings.h:52 play.h:561 plugins_mc_skin.xml.h:6
-#: skins_mc_skin.xml.h:6 tmc.h:539 mediadb.h:1112
+#: skins_mc_skin.xml.h:6 tmc.h:539 mediadb.h:1112 play.h:567
 msgid "all"
 msgstr ""
 
@@ -4002,6 +4126,7 @@ msgid "NotUsed Settings"
 msgstr ""
 
 #: plugins_stopifnotused_skin.xml.h:2 skins_stopifnotused_skin.xml.h:2
+#: epgsearch.h:228
 msgid "Action"
 msgstr ""
 
@@ -4175,29 +4300,30 @@ msgid "Record / Timeshift / Stream"
 msgstr ""
 
 #: record.h:635 record.h:636 record.h:663 record.h:908 record.h:904
+#: record.h:905
 msgid ""
 "Can't find free Tuner for Record.\n"
 "Switch to Recording/Timeshift Channel ?"
 msgstr ""
 
 #: record.h:797 record.h:798 record.h:825 record.h:828 record.h:1080
-#: record.h:1076
+#: record.h:1076 record.h:1091
 msgid "Timer Record start !\n"
 msgstr ""
 
 #: record.h:892 record.h:929 record.h:898 record.h:935 record.h:925
 #: record.h:962 record.h:928 record.h:965 record.h:970 record.h:1197
-#: record.h:1245 record.h:1191 record.h:1239
+#: record.h:1245 record.h:1191 record.h:1239 record.h:1206 record.h:1254
 msgid "stop"
 msgstr ""
 
 #: record.h:933 record.h:939 record.h:966 record.h:969 record.h:978
-#: record.h:1260 record.h:1254
+#: record.h:1260 record.h:1254 record.h:1269
 msgid "change"
 msgstr ""
 
 #: record.h:969 record.h:975 record.h:1002 record.h:1005 record.h:1019
-#: record.h:1315 record.h:1309
+#: record.h:1315 record.h:1309 record.h:1324
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr ""
 
@@ -4356,6 +4482,7 @@ msgid "Realy restore default settings ?"
 msgstr ""
 
 #: restoredefault.h:17 restoredefault.h:19 skinadjust.h:149 skinadjust.h:154
+#: skinadjust.h:133
 msgid "Receiver now reboot !!!"
 msgstr ""
 
@@ -4364,16 +4491,16 @@ msgid "Can't restore settings"
 msgstr ""
 
 #: scan.h:306 scan.h:308 channellist.h:694 channellist.h:1752 scan.h:532
-#: channellist.h:711 channellist.h:1769
+#: channellist.h:711 channellist.h:1769 channellist.h:1759 scan.h:528
 msgid "TV"
 msgstr ""
 
 #: scan.h:308 scan.h:310 channellist.h:689 channellist.h:1757 scan.h:534
-#: channellist.h:706 channellist.h:1774
+#: channellist.h:706 channellist.h:1774 channellist.h:1764 scan.h:530
 msgid "Radio"
 msgstr ""
 
-#: scan.h:310 scan.h:312 scan.h:536
+#: scan.h:310 scan.h:312 scan.h:536 scan.h:532
 msgid "Data"
 msgstr ""
 
@@ -4383,22 +4510,22 @@ msgid "Sat: "
 msgstr ""
 
 #: scan.h:735 scan.h:824 scan.h:844 scan.h:869 scan.h:892 scan.h:888
-#: optimize.h:265 optimize.h:272 scan.h:1522 scan.h:1523
+#: optimize.h:265 optimize.h:272 scan.h:1522 scan.h:1523 scan.h:1544
 msgid "Transponder: "
 msgstr ""
 
 #: scan.h:743 scan.h:832 scan.h:852 scan.h:877 scan.h:900 scan.h:896
-#: scan.h:1532 scan.h:1533
+#: scan.h:1532 scan.h:1533 scan.h:1554
 msgid "TV: "
 msgstr ""
 
 #: scan.h:751 scan.h:840 scan.h:860 scan.h:885 scan.h:908 scan.h:904
-#: scan.h:1540 scan.h:1541
+#: scan.h:1540 scan.h:1541 scan.h:1562
 msgid "Radio: "
 msgstr ""
 
 #: scan.h:759 scan.h:848 scan.h:868 scan.h:893 scan.h:916 scan.h:912
-#: scan.h:1548 scan.h:1549
+#: scan.h:1548 scan.h:1549 scan.h:1570
 msgid "Data: "
 msgstr ""
 
@@ -4408,44 +4535,46 @@ msgid "All new channel added!"
 msgstr ""
 
 #: scan.h:803 scan.h:892 scan.h:912 scan.h:937 scan.h:970 scan.h:966
-#: scan.h:1607
+#: scan.h:1607 scan.h:1628
 msgid "Wait for channel scan end"
 msgstr ""
 
 #: scan.h:947 scan.h:951 scan.h:954 scan.h:1043 scan.h:1064 scan.h:1089
 #: scan.h:1122 tunerconfig.h:606 scan.h:1119 scan.h:1826 scan.h:1829
+#: scan.h:1850
 msgid ""
 "Scan is not allowed if record\n"
 "or stream is running !"
 msgstr ""
 
 #: scan.h:1019 scan.h:1023 scan.h:1026 scan.h:1115 scan.h:1136 scan.h:1161
-#: scan.h:1194 scan.h:1191 scan.h:1917 scan.h:1920
+#: scan.h:1194 scan.h:1191 scan.h:1917 scan.h:1920 scan.h:1941
 msgid "No Tuner configured"
 msgstr ""
 
 #: scan.h:1032 scan.h:1036 scan.h:1039 scan.h:1128 scan.h:1149 scan.h:1174
 #: scan.h:1207 scan.h:1204 scan.h:1931 scan.h:1938 scan.h:1934 scan.h:1941
+#: scan.h:1955 scan.h:1962
 msgid "Single Transponder"
 msgstr ""
 
 #: scan.h:1033 scan.h:1037 scan.h:1040 scan.h:1129 scan.h:1150 scan.h:1175
-#: scan.h:1208 scan.h:1205 scan.h:1932 scan.h:1935
+#: scan.h:1208 scan.h:1205 scan.h:1932 scan.h:1935 scan.h:1956
 msgid "Single Sat"
 msgstr ""
 
 #: scan.h:1034 scan.h:1038 scan.h:1041 scan.h:1130 scan.h:1151 scan.h:1176
-#: scan.h:1209 scan.h:1206 scan.h:1933 scan.h:1936
+#: scan.h:1209 scan.h:1206 scan.h:1933 scan.h:1936 scan.h:1957
 msgid "Multi Sat"
 msgstr ""
 
 #: scan.h:1039 scan.h:1043 scan.h:1046 scan.h:1135 scan.h:1156 scan.h:1181
-#: scan.h:1214 scan.h:1211 scan.h:1944 scan.h:1947
+#: scan.h:1214 scan.h:1211 scan.h:1944 scan.h:1947 scan.h:1968
 msgid "Auto Scan"
 msgstr ""
 
 #: scan.h:1225 scan.h:1229 scan.h:1232 scan.h:1321 scan.h:1347 scan.h:1372
-#: scan.h:1405 scan.h:1402 scan.h:1403 scan.h:2262 scan.h:2265
+#: scan.h:1405 scan.h:1402 scan.h:1403 scan.h:2262 scan.h:2265 scan.h:2286
 msgid "Transponder changed"
 msgstr ""
 
@@ -5686,7 +5815,8 @@ msgstr ""
 #: skin_default_skin.xml.h:182 plugins_mc_skin.xml.h:21
 #: plugins_networkbrowser_skin.xml.h:5 plugins_readerconfig_skin.xml.h:2
 #: skins_mc_skin.xml.h:21 skins_networkbrowser_skin.xml.h:5
-#: skins_readerconfig_skin.xml.h:2
+#: skins_readerconfig_skin.xml.h:2 plugins_readerconfig_skin.xml.h:3
+#: skins_readerconfig_skin.xml.h:3
 msgid "EDIT"
 msgstr ""
 
@@ -8132,42 +8262,43 @@ msgstr ""
 msgid "skip "
 msgstr ""
 
-#: tithek.h:298 tithek.h:303 tithek.h:601 tithek.h:606
+#: tithek.h:298 tithek.h:303 tithek.h:601 tithek.h:606 tithek.h:610
 msgid "File exist, overwrite?"
 msgstr ""
 
 #: tithek.h:464 tithek.h:481 tithek.h:491 tithek.h:508 tithek.h:496
 #: tithek.h:513 tithek.h:498 tithek.h:515 tithek.h:536 tithek.h:544
 #: tithek.h:497 tithek.h:514 tithek.h:552 tithek.h:499 tithek.h:516
-#: tithek.h:554 tithek.h:1321 tithek.h:1330 tithek.h:1329
+#: tithek.h:554 tithek.h:1321 tithek.h:1330 tithek.h:1329 tithek.h:1341
 msgid "Start playback"
 msgstr ""
 
 #: tithek.h:488 tithek.h:473 tithek.h:512 tithek.h:478 tithek.h:517
 #: tithek.h:479 tithek.h:519 tithek.h:540 tithek.h:548 tithek.h:518
 #: tithek.h:556 tithek.h:480 tithek.h:520 tithek.h:558 tithek.h:1343
-#: tithek.h:1352 tithek.h:1351
+#: tithek.h:1352 tithek.h:1351 tithek.h:1363
 msgid "Can't get Streamurl !"
 msgstr ""
 
 #: transponder.h:362 transponder.h:369 transponder.h:371 transponder.h:378
-#: transponder.h:448 transponder.h:455
+#: transponder.h:448 transponder.h:455 transponder.h:449 transponder.h:456
 msgid "Horizontal"
 msgstr ""
 
 #: transponder.h:363 transponder.h:371 transponder.h:372 transponder.h:380
-#: transponder.h:449 transponder.h:457
+#: transponder.h:449 transponder.h:457 transponder.h:450 transponder.h:458
 msgid "Vertikal"
 msgstr ""
 
 #: transponder.h:396 transponder.h:419 transponder.h:433 transponder.h:455
 #: transponder.h:405 transponder.h:428 transponder.h:442 transponder.h:464
 #: transponder.h:476 transponder.h:499 transponder.h:513 transponder.h:535
+#: transponder.h:477 transponder.h:500 transponder.h:514 transponder.h:536
 msgid "QPSK"
 msgstr ""
 
 #: transponder.h:397 transponder.h:435 transponder.h:406 transponder.h:444
-#: transponder.h:477 transponder.h:515
+#: transponder.h:477 transponder.h:515 transponder.h:478 transponder.h:516
 msgid "PSK 8"
 msgstr ""
 
@@ -8175,44 +8306,47 @@ msgstr ""
 #: transponder.h:443 transponder.h:457 transponder.h:416 transponder.h:429
 #: transponder.h:446 transponder.h:452 transponder.h:466 transponder.h:478
 #: transponder.h:487 transponder.h:500 transponder.h:517 transponder.h:523
-#: transponder.h:537
+#: transponder.h:537 transponder.h:479 transponder.h:488 transponder.h:501
+#: transponder.h:518 transponder.h:524 transponder.h:538
 msgid "QAM 16"
 msgstr ""
 
 #: transponder.h:406 transponder.h:422 transponder.h:441 transponder.h:461
 #: transponder.h:415 transponder.h:431 transponder.h:450 transponder.h:470
 #: transponder.h:486 transponder.h:502 transponder.h:521 transponder.h:541
+#: transponder.h:487 transponder.h:503 transponder.h:522 transponder.h:542
 msgid "QAM auto"
 msgstr ""
 
 #: transponder.h:408 transponder.h:445 transponder.h:417 transponder.h:454
-#: transponder.h:488 transponder.h:525
+#: transponder.h:488 transponder.h:525 transponder.h:489 transponder.h:526
 msgid "QAM 32"
 msgstr ""
 
 #: transponder.h:409 transponder.h:421 transponder.h:447 transponder.h:459
 #: transponder.h:418 transponder.h:430 transponder.h:456 transponder.h:468
 #: transponder.h:489 transponder.h:501 transponder.h:527 transponder.h:539
+#: transponder.h:490 transponder.h:502 transponder.h:528 transponder.h:540
 msgid "QAM 64"
 msgstr ""
 
 #: transponder.h:410 transponder.h:449 transponder.h:419 transponder.h:458
-#: transponder.h:490 transponder.h:529
+#: transponder.h:490 transponder.h:529 transponder.h:491 transponder.h:530
 msgid "QAM 128"
 msgstr ""
 
 #: transponder.h:411 transponder.h:451 transponder.h:420 transponder.h:460
-#: transponder.h:491 transponder.h:531
+#: transponder.h:491 transponder.h:531 transponder.h:492 transponder.h:532
 msgid "QAM 256"
 msgstr ""
 
 #: transponder.h:491 transponder.h:498 transponder.h:500 transponder.h:507
-#: transponder.h:571 transponder.h:578
+#: transponder.h:571 transponder.h:578 transponder.h:572 transponder.h:579
 msgid "DVBS"
 msgstr ""
 
 #: transponder.h:492 transponder.h:500 transponder.h:501 transponder.h:509
-#: transponder.h:572 transponder.h:580
+#: transponder.h:572 transponder.h:580 transponder.h:573 transponder.h:581
 msgid "DVBS2"
 msgstr ""
 
@@ -8250,7 +8384,7 @@ msgid "Lnb / Unicable"
 msgstr ""
 
 #: tunerconfig.h:244 tunerconfig.h:245 tunerconfig.h:302 tunerconfig.h:303
-#: skinadjust.h:58 skinadjust.h:61
+#: skinadjust.h:58 skinadjust.h:61 skinadjust.h:54
 msgid "press red"
 msgstr ""
 
@@ -8485,7 +8619,7 @@ msgstr ""
 msgid "WLAN LOG"
 msgstr ""
 
-#: scan.h:924 scan.h:920 scan.h:1556 scan.h:1557
+#: scan.h:924 scan.h:920 scan.h:1556 scan.h:1557 scan.h:1578
 msgid "Blindscan: "
 msgstr ""
 
@@ -8562,7 +8696,7 @@ msgstr ""
 msgid "EGG Scan Log"
 msgstr ""
 
-#: epgsettings.h:216 epgsettings.h:275 epgsettings.h:285
+#: epgsettings.h:216 epgsettings.h:275 epgsettings.h:285 epgsettings.h:295
 msgid "EPG Scan Log"
 msgstr ""
 
@@ -8711,31 +8845,35 @@ msgstr ""
 
 #: panel_extensions.h:112 panel_extensions.h:113 extensions.h:223
 #: extensions.h:349 extensions.h:227 extensions.h:355 extensions.h:321
-#: extensions.h:453
+#: extensions.h:453 extensions.h:325 extensions.h:457
 msgid "No plugin found."
 msgstr ""
 
 #: networkbrowser.h:1209 networkbrowser.h:1181 networkbrowser.h:1186
 #: networkbrowser.h:1235 networkbrowser.h:1237 networkbrowser.h:1236
 #: networkbrowser.h:1251 networkbrowser.h:1470 networkbrowser.h:1473
+#: networkbrowser.h:1471
 msgid "rw"
 msgstr ""
 
 #: networkbrowser.h:1210 networkbrowser.h:1182 networkbrowser.h:1187
 #: networkbrowser.h:1236 networkbrowser.h:1238 networkbrowser.h:1237
 #: networkbrowser.h:1252 networkbrowser.h:1471 networkbrowser.h:1474
+#: networkbrowser.h:1472
 msgid "ro"
 msgstr ""
 
 #: networkbrowser.h:1259 networkbrowser.h:1231 networkbrowser.h:1236
 #: networkbrowser.h:1310 networkbrowser.h:1312 networkbrowser.h:1311
 #: networkbrowser.h:1326 networkbrowser.h:1550 networkbrowser.h:1553
+#: networkbrowser.h:1551
 msgid "Sharename can't be empty!"
 msgstr ""
 
 #: networkbrowser.h:1270 networkbrowser.h:1242 networkbrowser.h:1247
 #: networkbrowser.h:1317 networkbrowser.h:1319 networkbrowser.h:1318
 #: networkbrowser.h:1333 networkbrowser.h:1557 networkbrowser.h:1560
+#: networkbrowser.h:1558
 msgid "A mount entry with this name already exists!"
 msgstr ""
 
@@ -9112,30 +9250,32 @@ msgid "poweroff"
 msgstr ""
 
 #: extensions.h:105 extensions.h:118 extensions.h:349 extensions.h:355
-#: extensions.h:168 extensions.h:216 extensions.h:453
+#: extensions.h:168 extensions.h:216 extensions.h:453 extensions.h:170
+#: extensions.h:220 extensions.h:457
 msgid "Tpk Install Info"
 msgstr ""
 
-#: extensions.h:105 extensions.h:168
+#: extensions.h:105 extensions.h:168 extensions.h:170
 msgid "Can't install Package. Package to big."
 msgstr ""
 
 #: extensions.h:109 extensions.h:237 extensions.h:241 extensions.h:207
-#: extensions.h:338
+#: extensions.h:338 extensions.h:211 extensions.h:342
 msgid "Installing"
 msgstr ""
 
 #: extensions.h:115 extensions.h:169 extensions.h:241 softcam.h:91
 #: softcam.h:99 extensions.h:171 extensions.h:245 extensions.h:213
-#: extensions.h:267 extensions.h:342
+#: extensions.h:267 extensions.h:342 extensions.h:217 extensions.h:271
+#: extensions.h:346
 msgid "started"
 msgstr ""
 
-#: extensions.h:127 extensions.h:224
+#: extensions.h:127 extensions.h:224 extensions.h:228
 msgid "Tpk Install Info - Install OK"
 msgstr ""
 
-#: extensions.h:133 extensions.h:229
+#: extensions.h:133 extensions.h:229 extensions.h:233
 msgid "Tpk Install Info - Install ERROR"
 msgstr ""
 
@@ -9143,19 +9283,19 @@ msgstr ""
 msgid "TPK Install Done your system rebooting !"
 msgstr ""
 
-#: extensions.h:165 extensions.h:167 extensions.h:263
+#: extensions.h:165 extensions.h:167 extensions.h:263 extensions.h:267
 msgid "Removeing"
 msgstr ""
 
-#: extensions.h:172 extensions.h:174 extensions.h:270
+#: extensions.h:172 extensions.h:174 extensions.h:270 extensions.h:274
 msgid "Tpk Remove Info"
 msgstr ""
 
-#: extensions.h:181 extensions.h:183 extensions.h:278
+#: extensions.h:181 extensions.h:183 extensions.h:278 extensions.h:282
 msgid "Tpk Remove Info - Remove OK"
 msgstr ""
 
-#: extensions.h:189 extensions.h:191 extensions.h:285
+#: extensions.h:189 extensions.h:191 extensions.h:285 extensions.h:289
 msgid "Tpk Remove Info - Remove ERROR"
 msgstr ""
 
@@ -9168,7 +9308,7 @@ msgid "TPK Tmp Install Done your system rebooting !"
 msgstr ""
 
 #: extensions.h:294 extensions.h:298 extensions.h:300 extensions.h:304
-#: extensions.h:398 extensions.h:402
+#: extensions.h:398 extensions.h:402 extensions.h:406
 msgid "Tpk Update Info - Update ERROR"
 msgstr ""
 
@@ -9176,7 +9316,7 @@ msgstr ""
 msgid "Can't get TPK index !"
 msgstr ""
 
-#: extensions.h:298 extensions.h:304 extensions.h:402
+#: extensions.h:298 extensions.h:304 extensions.h:402 extensions.h:406
 msgid "Can't update all packages !"
 msgstr ""
 
@@ -9279,7 +9419,7 @@ msgid "The page is temporarily unavailable"
 msgstr ""
 
 #: flashx.h:70 putlocker.h:52 solarmovie.h:187 xvidstage.h:64 xvidstage.h:177
-#: solarmovie.h:190
+#: solarmovie.h:190 solarmovie.h:265
 msgid "This file doesn't exist, or has been removed"
 msgstr ""
 
@@ -9316,13 +9456,13 @@ msgstr ""
 #: kinox.h:254 movie4k.h:766 movie4k.h:890 movie4k.h:1005 solarmovie.h:454
 #: movie4k.h:774 movie4k.h:898 movie4k.h:1013 movie4k.h:775 movie4k.h:899
 #: movie4k.h:1014 kinox.h:256 movie4k.h:754 movie4k.h:878 movie4k.h:993
-#: solarmovie.h:457
+#: solarmovie.h:457 solarmovie.h:407
 msgid "Season"
 msgstr ""
 
 #: kinox.h:258 movie4k.h:770 movie4k.h:1009 solarmovie.h:458 movie4k.h:778
 #: movie4k.h:1017 movie4k.h:779 movie4k.h:1018 kinox.h:260 movie4k.h:758
-#: movie4k.h:997 solarmovie.h:461
+#: movie4k.h:997 solarmovie.h:461 solarmovie.h:411
 msgid "Episode"
 msgstr ""
 
@@ -9364,7 +9504,7 @@ msgstr ""
 msgid "best"
 msgstr ""
 
-#: mc_videoplayer.h:886 player.h:97
+#: mc_videoplayer.h:886 player.h:97 mc_videoplayer.h:885
 msgid "Start at last position ?"
 msgstr ""
 
@@ -9412,31 +9552,31 @@ msgstr ""
 msgid "MediaDB entry for this file not found."
 msgstr ""
 
-#: mediadb.h:1099 play.h:527 mediadb.h:1078
+#: mediadb.h:1099 play.h:527 mediadb.h:1078 play.h:533
 msgid "MediaDB directory scan started in Background !"
 msgstr ""
 
-#: mediadb.h:1101 play.h:529 mediadb.h:1080
+#: mediadb.h:1101 play.h:529 mediadb.h:1080 play.h:535
 msgid "Delete MediaDB before scan"
 msgstr ""
 
-#: mediadb.h:1108 play.h:536 mediadb.h:1087
+#: mediadb.h:1108 play.h:536 mediadb.h:1087 play.h:542
 msgid "Delete unused entrys before scan"
 msgstr ""
 
-#: mediadb.h:1115 play.h:543 mediadb.h:1094
+#: mediadb.h:1115 play.h:543 mediadb.h:1094 play.h:549
 msgid "scan Directory"
 msgstr ""
 
-#: mediadb.h:1119 play.h:547 mediadb.h:1098
+#: mediadb.h:1119 play.h:547 mediadb.h:1098 play.h:553
 msgid "MediaDB place"
 msgstr ""
 
-#: mediadb.h:1123 play.h:551 mediadb.h:1102
+#: mediadb.h:1123 play.h:551 mediadb.h:1102 play.h:557
 msgid "MediaDB Debug"
 msgstr ""
 
-#: mediadb.h:1130 play.h:558 mediadb.h:1109
+#: mediadb.h:1130 play.h:558 mediadb.h:1109 play.h:564
 msgid "Backdrop Download Count"
 msgstr ""
 
@@ -9585,39 +9725,41 @@ msgstr ""
 msgid "useUnknown910"
 msgstr ""
 
-#: play.h:373 play.h:407
+#: play.h:373 play.h:407 play.h:379 play.h:413
 msgid "Artist:"
 msgstr ""
 
 #: play.h:378 play.h:412 plugins_mc_skin.xml.h:5 skins_mc_skin.xml.h:5
+#: play.h:384 play.h:418
 msgid "Album:"
 msgstr ""
 
 #: play.h:383 play.h:417 plugins_mc_skin.xml.h:68 skins_mc_skin.xml.h:68
+#: play.h:389 play.h:423
 msgid "Year:"
 msgstr ""
 
-#: play.h:393 play.h:427
+#: play.h:393 play.h:427 play.h:399 play.h:433
 msgid "Comment:"
 msgstr ""
 
-#: play.h:432
+#: play.h:432 play.h:438
 msgid "Track:"
 msgstr ""
 
-#: play.h:437
+#: play.h:437 play.h:443
 msgid "Copyright:"
 msgstr ""
 
-#: play.h:448
+#: play.h:448 play.h:454
 msgid "iD3Tag"
 msgstr ""
 
-#: play.h:1075 play.h:1079
+#: play.h:1075 play.h:1079 play.h:1085
 msgid "Jump To (min)"
 msgstr ""
 
-#: play.h:1164 play.h:1172
+#: play.h:1164 play.h:1172 play.h:1178
 msgid "Record in progress"
 msgstr ""
 
@@ -9875,26 +10017,31 @@ msgid "Device"
 msgstr ""
 
 #: plugins_readerconfig_skin.xml.h:3 skins_readerconfig_skin.xml.h:3
+#: plugins_readerconfig_skin.xml.h:4 skins_readerconfig_skin.xml.h:4
 msgid "Enable"
 msgstr ""
 
 #: plugins_readerconfig_skin.xml.h:4 skins_readerconfig_skin.xml.h:4
+#: plugins_readerconfig_skin.xml.h:6 skins_readerconfig_skin.xml.h:6
 msgid ""
 "Here you can set your language. Use to navigate the control cross and the "
 "extra buttons displayed with your remote control to select."
 msgstr ""
 
 #: plugins_readerconfig_skin.xml.h:5 skins_readerconfig_skin.xml.h:5
+#: plugins_readerconfig_skin.xml.h:7 skins_readerconfig_skin.xml.h:7
 msgid "Reader Config"
 msgstr ""
 
 #: plugins_readerconfig_skin.xml.h:6 readerconfig.h:268
-#: skins_readerconfig_skin.xml.h:6
+#: skins_readerconfig_skin.xml.h:6 plugins_readerconfig_skin.xml.h:8
+#: skins_readerconfig_skin.xml.h:8
 msgid "Reader Configuration"
 msgstr ""
 
 #: plugins_readerconfig_skin.xml.h:7 readerconfig.h:333
-#: skins_readerconfig_skin.xml.h:7
+#: skins_readerconfig_skin.xml.h:7 plugins_readerconfig_skin.xml.h:9
+#: readerconfig.h:383 skins_readerconfig_skin.xml.h:9
 msgid "Reader Selection"
 msgstr ""
 
@@ -9917,6 +10064,7 @@ msgstr ""
 
 #: plugins_tithek_skin.xml.h:7 skins_tithek_skin.xml.h:7 tithek.h:1021
 #: plugins_tithek_skin.xml.h:8 skins_tithek_skin.xml.h:8 tithek.h:1026
+#: tithek.h:1030
 msgid "please wait..."
 msgstr ""
 
@@ -10035,15 +10183,15 @@ msgstr ""
 msgid "second slot"
 msgstr ""
 
-#: readerconfig.h:363
+#: readerconfig.h:363 readerconfig.h:418
 msgid "Reader active"
 msgstr ""
 
-#: readerconfig.h:388
+#: readerconfig.h:388 readerconfig.h:443
 msgid "Oscam config written to medium !"
 msgstr ""
 
-#: readerconfig.h:389
+#: readerconfig.h:389 readerconfig.h:444 readerconfig.h:489
 msgid "Restart Oscam ?"
 msgstr ""
 
@@ -10055,7 +10203,7 @@ msgstr ""
 msgid "Record power off system?"
 msgstr ""
 
-#: record.h:1339 record.h:1333
+#: record.h:1339 record.h:1333 record.h:1348
 msgid "Record started"
 msgstr ""
 
@@ -10075,7 +10223,7 @@ msgid ""
 "this again !"
 msgstr ""
 
-#: scan.h:1516 scan.h:1517
+#: scan.h:1516 scan.h:1517 scan.h:1538
 msgid "Sat/Provider: "
 msgstr ""
 
@@ -10083,7 +10231,7 @@ msgstr ""
 msgid "Does you want delete all unused Bouquetentrys?"
 msgstr ""
 
-#: scan.h:1939 scan.h:1942
+#: scan.h:1939 scan.h:1942 scan.h:1963
 msgid "Single Provider"
 msgstr ""
 
@@ -10111,19 +10259,19 @@ msgstr ""
 msgid "Backup failed"
 msgstr ""
 
-#: system_backup_restore.h:41
+#: system_backup_restore.h:41 system_backup_restore.h:40
 msgid "Restore failed, see log"
 msgstr ""
 
-#: system_backup_restore.h:44
+#: system_backup_restore.h:44 system_backup_restore.h:43
 msgid "Update Plugins to new Version?"
 msgstr ""
 
-#: system_backup_restore.h:65
+#: system_backup_restore.h:65 system_backup_restore.h:95
 msgid "BACKUP LOG"
 msgstr ""
 
-#: system_backup_restore.h:88
+#: system_backup_restore.h:88 system_backup_restore.h:80
 msgid "Backup failed, see log"
 msgstr ""
 
@@ -10162,29 +10310,29 @@ msgstr ""
 msgid "permanent"
 msgstr ""
 
-#: tithek.h:807 tithek.h:812
+#: tithek.h:807 tithek.h:812 tithek.h:816
 msgid "found"
 msgstr ""
 
-#: tithek.h:812 tithek.h:817
+#: tithek.h:812 tithek.h:817 tithek.h:821
 msgid "Results"
 msgstr ""
 
-#: tithek.h:1034 tithek.h:1039
+#: tithek.h:1034 tithek.h:1039 tithek.h:1043
 msgid "Remove Cachefile ?"
 msgstr ""
 
-#: tithek.h:1081 tithek.h:1086
+#: tithek.h:1081 tithek.h:1086 tithek.h:1090
 msgid ""
 "Can't start download.\n"
 "Please try later."
 msgstr ""
 
-#: tithek.h:1362 tithek.h:1371 tithek.h:1370
+#: tithek.h:1362 tithek.h:1371 tithek.h:1370 tithek.h:1382
 msgid "TitanNit Tithek disclaimer"
 msgstr ""
 
-#: tithek.h:1425 tithek.h:1436 tithek.h:1435
+#: tithek.h:1425 tithek.h:1436 tithek.h:1435 tithek.h:1447
 msgid "Page"
 msgstr ""
 
@@ -10196,11 +10344,11 @@ msgstr ""
 msgid "The hoster is not yet supported for the time !"
 msgstr ""
 
-#: tithek.h:2131 tithek.h:2139 tithek.h:2138
+#: tithek.h:2131 tithek.h:2139 tithek.h:2138 tithek.h:2173
 msgid "Remove this Favorite ?"
 msgstr ""
 
-#: tithek.h:2145 tithek.h:2153 tithek.h:2152
+#: tithek.h:2145 tithek.h:2153 tithek.h:2152 tithek.h:2187
 msgid "Add this link as Favorite ?"
 msgstr ""
 
@@ -10361,23 +10509,23 @@ msgstr ""
 msgid "POS"
 msgstr ""
 
-#: transponder.h:117 transponder.h:126
+#: transponder.h:117 transponder.h:126 transponder.h:118 transponder.h:127
 msgid "8 Mhz"
 msgstr ""
 
-#: transponder.h:118 transponder.h:128
+#: transponder.h:118 transponder.h:128 transponder.h:119 transponder.h:129
 msgid "7 Mhz"
 msgstr ""
 
-#: transponder.h:119 transponder.h:130
+#: transponder.h:119 transponder.h:130 transponder.h:120 transponder.h:131
 msgid "6 Mhz"
 msgstr ""
 
-#: transponder.h:154 transponder.h:162
+#: transponder.h:154 transponder.h:162 transponder.h:155 transponder.h:163
 msgid "2 Khz"
 msgstr ""
 
-#: transponder.h:155 transponder.h:164
+#: transponder.h:155 transponder.h:164 transponder.h:156 transponder.h:165
 msgid "8 Khz"
 msgstr ""
 
@@ -10555,11 +10703,11 @@ msgstr ""
 msgid "card not present"
 msgstr ""
 
-#: skinadjust.h:54 skinadjust.h:57
+#: skinadjust.h:54 skinadjust.h:57 skinadjust.h:50
 msgid "yes (Text in %)"
 msgstr ""
 
-#: skinadjust.h:55 skinadjust.h:58
+#: skinadjust.h:55 skinadjust.h:58 skinadjust.h:51
 msgid "yes (Text in MB)"
 msgstr ""
 
@@ -10670,7 +10818,7 @@ msgstr ""
 msgid "Hid XXX Streams"
 msgstr ""
 
-#: extensions.h:300 extensions.h:398
+#: extensions.h:300 extensions.h:398 extensions.h:402
 msgid "Can't get all TPK index !"
 msgstr ""
 
@@ -10710,11 +10858,13 @@ msgstr ""
 msgid "Timer2 activ"
 msgstr ""
 
-#: system_update.h:82 system_update.h:204
+#: system_update.h:82 system_update.h:204 system_update.h:88
+#: system_update.h:210
 msgid "stable"
 msgstr ""
 
-#: system_update.h:84 system_update.h:210
+#: system_update.h:84 system_update.h:210 system_update.h:90
+#: system_update.h:216
 msgid "unstable"
 msgstr ""
 
@@ -10774,4 +10924,230 @@ msgstr ""
 
 #: skinadjust.h:48
 msgid "Flash (temporary)"
+msgstr ""
+
+#: adjust.h:206
+msgid "yes / vzap 1 sec"
+msgstr ""
+
+#: adjust.h:207
+msgid "yes / vzap 2 sec"
+msgstr ""
+
+#: adjust.h:208
+msgid "yes / vzap endless"
+msgstr ""
+
+#: bgdownload.h:173
+msgid "Really stop download ?"
+msgstr ""
+
+#: channellist.h:920
+msgid "Copy satlist successfull"
+msgstr ""
+
+#: channellist.h:922
+msgid "Copy satlist not ok"
+msgstr ""
+
+#: epgsearch.h:27
+msgid "Search only aktual epg ?"
+msgstr ""
+
+#: epgsearch.h:236
+msgid "Animation"
+msgstr ""
+
+#: epgsearch.h:244
+msgid "History"
+msgstr ""
+
+#: epgsearch.h:252
+msgid "Doku"
+msgstr ""
+
+#: epgsearch.h:260
+msgid "Thriller"
+msgstr ""
+
+#: epgsearch.h:268
+msgid "Child"
+msgstr ""
+
+#: epgsearch.h:276
+msgid "Fantasy"
+msgstr ""
+
+#: epgsearch.h:284
+msgid "Horror"
+msgstr ""
+
+#: epgsearch.h:292
+msgid "Comedy"
+msgstr ""
+
+#: epgsearch.h:300
+msgid "War"
+msgstr ""
+
+#: epgsearch.h:308
+msgid "Scifi"
+msgstr ""
+
+#: epgsearch.h:316
+msgid "Sport"
+msgstr ""
+
+#: epgsearch.h:324
+msgid "Western"
+msgstr ""
+
+#: epgsearch.h:332
+msgid "Eastern"
+msgstr ""
+
+#: epgsearch.h:340
+msgid "Music"
+msgstr ""
+
+#: epgsettings.h:257
+msgid "Deavtivate Refresh Time and After EPG in scan-mode"
+msgstr ""
+
+#: extensions.h:241
+msgid "TPK Install done, your system will reboot !"
+msgstr ""
+
+#: extensions.h:296
+msgid "TPK Remove done, your system will reboot !"
+msgstr ""
+
+#: extensions.h:381
+msgid "TPK Tmp Install done, your system will reboot !"
+msgstr ""
+
+#: extensions.h:414
+msgid "TPK Upgrade done, your system will reboot !"
+msgstr ""
+
+#: filemanager.h:178
+msgid "Really copy this file/dir?"
+msgstr ""
+
+#: filemanager.h:186
+msgid "Really move this file/dir?"
+msgstr ""
+
+#: filemanager.h:266
+msgid "Really delete this file/dir?"
+msgstr ""
+
+#: harddisk.h:348
+msgid ""
+"Directory has content\n"
+"Really delete directory and content?"
+msgstr ""
+
+#: harddisk.h:911
+msgid ""
+"Found new Stick/HDD.\n"
+"You can configure it in Harddisk Menu."
+msgstr ""
+
+#: hbbtv.h:362
+msgid "You can leave HBBTV with Record Key."
+msgstr ""
+
+#: marker.h:194
+msgid "ERROR... can't set marker in this file"
+msgstr ""
+
+#: play.h:1179
+msgid "Really Delete ?"
+msgstr ""
+
+#: plugins_networkbrowser_skin.xml.h:10 skins_networkbrowser_skin.xml.h:10
+msgid "ipaddress"
+msgstr ""
+
+#: plugins_readerconfig_skin.xml.h:2 skins_readerconfig_skin.xml.h:2
+msgid "Dvbapi"
+msgstr ""
+
+#: plugins_readerconfig_skin.xml.h:5 skins_readerconfig_skin.xml.h:5
+msgid ""
+"Here you can configure your reader. Use to navigate the control cross and "
+"the extra buttons displayed with your remote control to select."
+msgstr ""
+
+#: readerconfig.h:343
+msgid "No config file found."
+msgstr ""
+
+#: readerconfig.h:389 readerconfig.h:482
+msgid "Dvbapi (enabled)"
+msgstr ""
+
+#: readerconfig.h:391 readerconfig.h:475
+msgid "Dvbapi (disabled)"
+msgstr ""
+
+#: readerconfig.h:474
+msgid "Oscam dvbapi config disabled !"
+msgstr ""
+
+#: readerconfig.h:481
+msgid "Oscam dvbapi config enabled !"
+msgstr ""
+
+#: rectimer.h:536
+msgid "not started akttime higher than timer endtime"
+msgstr ""
+
+#: restoredefault.h:10
+msgid "Really restore default settings ?"
+msgstr ""
+
+#: restoredefault.h:19
+msgid "Receiver reboots now !!!"
+msgstr ""
+
+#: restoredefault.h:32
+msgid ""
+"Do you really want to erase all data and backups from Swap?\n"
+"The Box will reboot and the erase will be started!"
+msgstr ""
+
+#: scan.h:1618
+msgid "All new channels added!"
+msgstr ""
+
+#: scan.h:1639
+msgid "Do you want to delete all unused Bouquetentrys?"
+msgstr ""
+
+#: service.h:939
+msgid ""
+"Can't find a Tuner.\n"
+"All Tuners in use or no Tuner defined."
+msgstr ""
+
+#: skinselector.h:218
+msgid ""
+"No skinconfig found in skin.\n"
+"Can't change to selected skin."
+msgstr ""
+
+#: system_update.h:291
+msgid "starting Full Update (from backup) ?"
+msgstr ""
+
+#: system_update.h:311
+msgid ""
+"Can't start system update\n"
+"Syntax Error on updatefile"
+msgstr ""
+
+#: tithek.h:2111
+msgid "The hoster is not yet supported !"
 msgstr ""
