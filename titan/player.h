@@ -618,12 +618,13 @@ int playerstart(char* file)
 		//for subtitle
 		SubtitleOutputDef_t subout;
 
-		subout.screen_width = fb->width;
-		subout.screen_height = fb->height;
-		subout.framebufferFD = fb->fd;
-		subout.destination = (uint32_t *)fb->fb;
-		subout.destStride = fb->pitch;
+		subout.screen_width = skinfb->width;
+		subout.screen_height = skinfb->height;
+		subout.framebufferFD = skinfb->fd;
+		subout.destination = (uint32_t *)skinfb->fb;
+		subout.destStride = skinfb->pitch;
 		subout.shareFramebuffer = 1;
+		subout.framebufferBlit = blitfb;
 
 		player->output->subtitle->Command(player, (OutputCmd_t)OUTPUT_SET_SUBTITLE_OUTPUT, (void*)&subout);
 		
