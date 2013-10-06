@@ -2998,61 +2998,61 @@ msgid "Day: "
 msgstr "Dag:"
 
 msgid "Lowest temp: "
-msgstr "Minimum temperatuur: "
+msgstr "Tiefsttemperatur: "
 
 msgid "Highest temp: "
-msgstr "Maximum temperatuur: "
+msgstr "Höchsttemperatur: "
 
 msgid "Condition: "
-msgstr "Weer:"
+msgstr "Wetter: "
 
 msgid "Media Dir 1"
-msgstr "Media map 1"
+msgstr "Medien Ordner 1"
 
 msgid "Media Dir 2"
-msgstr "Media map 2"
+msgstr "Medien Ordner 2"
 
 msgid "Media Dir 3"
-msgstr "Media map 3"
+msgstr "Medien Ordner 3"
 
 msgid "Media Dir 4"
-msgstr "Media map 4"
+msgstr "Medien Ordner 4"
 
 msgid "Pearl LCD Settings"
-msgstr "Pearl LCD instellingen"
+msgstr "Pearl LCD Einstellungen"
 
 msgid "Remove mode"
-msgstr "Wis Modus"
+msgstr "Lösch Modus"
 
 msgid "Move mode"
-msgstr "verplaats Modus"
+msgstr "Verschiebe Modus"
 
 msgid "Copy mode"
-msgstr "copieer Modus"
+msgstr "Kopier Modus"
 
 msgid "Protect mode"
-msgstr "Bescherm Modus"
+msgstr "Schutz Modus"
 
 msgid "Edit mode"
-msgstr "Hernoem Modus"
+msgstr "Umbennen Modus"
 
 msgid "Channellist view"
-msgstr "Channellist view"
+msgstr "Nichtempfangbare Kanäle"
 
 msgid "hidden"
-msgstr "verbergen"
+msgstr "ausblenden"
 
 msgid "deactive"
-msgstr "deactive"
+msgstr "sichtbar"
 
 msgid "TPK upgrade (online)"
-msgstr "TPK upgrade (online)"
+msgstr "TPK Aktualisieren (Internet)"
 
 msgid "TPK media (media)"
-msgstr "TPK media (media)"
+msgstr "TPK installieren von USB Medien"
 
 msgid "No output found !"
-msgstr "geen informatie beschikbaar"
+msgstr "Keine Information vorhanden"
 
 msgid "swapplayer"
 msgstr "Swap-Multimedia Player"
@@ -3061,7 +3061,7 @@ msgid "swaptools"
 msgstr "Swap-Tools"
 
 msgid "games"
-msgstr "Spelletjes"
+msgstr "Spiele"
 
 msgid "swapbrowser"
 msgstr "Swap-Internetbrowser"
@@ -3070,16 +3070,16 @@ msgid "browser"
 msgstr "Internetbrowser"
 
 msgid "Extensions..."
-msgstr "Applicaties..."
+msgstr "Erweiterungen"
 
 msgid "Harddisk Configure"
-msgstr "Hardeschijf configureren"
+msgstr "Festplatte konfigurieren"
 
 msgid "Harddisk Configure - List Devices"
-msgstr "Hardeschijf configureren - aangesloten aparaten"
+msgstr "Festplatte konfigurieren - angeschlossene Geräte"
 
 msgid "Record Path settings"
-msgstr "Opnamepad instellen"
+msgstr "Aufnahmepfad Einstellungen"
 
 msgid "Here you can make your recording timer configuration. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
 msgstr "Hier können Sie Ihre Aufnahme-Timer Konfiguration vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
