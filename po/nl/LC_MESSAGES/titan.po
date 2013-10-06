@@ -3045,11 +3045,11 @@ msgstr "verbergen"
 msgid "deactive"
 msgstr "deactive"
 
-msgid "IPK upgrade (online)"
-msgstr "IPK upgrade (online)"
+msgid "TPK upgrade (online)"
+msgstr "TPK upgrade (online)"
 
-msgid "IPK media (media)"
-msgstr "IPK media (media)"
+msgid "TPK media (media)"
+msgstr "TPK media (media)"
 
 msgid "No output found !"
 msgstr "geen informatie beschikbaar"
