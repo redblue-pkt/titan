@@ -3054,11 +3054,11 @@ msgstr "verbergen"
 msgid "deactive"
 msgstr "deactive"
 
-msgid "IPK upgrade (online)"
-msgstr "IPK upgrade (online)"
+msgid "TPK upgrade (online)"
+msgstr "TPK upgrade (online)"
 
-msgid "IPK media (media)"
-msgstr "IPK media (media)"
+msgid "TPK media (media)"
+msgstr "TPK media (media)"
 
 msgid "No output found !"
 msgstr "geen informatie beschikbaar"
@@ -3294,11 +3294,11 @@ msgstr "Wissen succesvol uitgevoerd.\nEr is geen installatie info gevonden!"
 msgid "Remove error"
 msgstr "Wissen niet succesvol uitgevoerd.\nEr is geen installatie info gevonden!"
 
-msgid "Ipk Tmp Info"
-msgstr "Ipk Tmp Info"
+msgid "Tpk Tmp Info"
+msgstr "Tpk Tmp Info"
 
-msgid "Ipk Media Info"
-msgstr "Ipk Media Info"
+msgid "Tpk Media Info"
+msgstr "Tpk Media Info"
 
 msgid "Networkbrowser - show Shares"
 msgstr "Netwerk Browser - toon koppelingen"
@@ -3423,10 +3423,10 @@ msgstr "Transponder is verandert"
 msgid "Start at last position ?"
 msgstr "Starten bij de laatse positie?"
 
-msgid "Install Tithek Ipk first !"
+msgid "Install Tithek Tpk first !"
 msgstr "Installeer deTithek Plugin onder applicaties"
 
-msgid "Install Weather Ipk first !"
+msgid "Install Weather Tpk first !"
 msgstr "Installeer de weer Plugin onder applicaties"
 
 msgid "Record started"
@@ -3474,13 +3474,13 @@ msgstr "copieren"
 msgid "Moven"
 msgstr "Verplaatsen"
 
-mmsgid "Realy move this file/dir?"
+msgid "Really move this file/dir?"
 msgstr "Wilt u dit bestan verplaatsen"
 
-msgid "Realy copy this file/dir?"
+msgid "Really copy this file/dir?"
 msgstr "Wilt u dit bestand copieren ?"
 
-msgid "Realy delete this file/dir?"
+msgid "Really delete this file/dir?"
 msgstr "Wilt u dit bestand wissen?"
 
 msgid "From"
@@ -3489,8 +3489,8 @@ msgstr "van"
 msgid "To"
 msgstr "naar"
 
-msgid "Install File Manager Ipk first !"
-msgstr "Installeer File Manager Ipk eerst !"
+msgid "Install File Manager Tpk first !"
+msgstr "Installeer File Manager Tpk eerst !"
 
 msgid "FILELIST MANAGER"
 msgstr "Bestands browser"
@@ -3537,7 +3537,7 @@ msgstr "Kopieren des Satelliten erfolgreich abgeschlossen"
 msgid "Copy satlist not ok"
 msgstr "Kopieren des Satelliten abgebrochen"
 
-msgid "The hoster is not yet supported for the time !"
+msgid "The hoster is not yet supported !"
 msgstr "De hoster wordt momenteel nog niet ondersteund"
 
 msgid "CLEAR INPUT"
