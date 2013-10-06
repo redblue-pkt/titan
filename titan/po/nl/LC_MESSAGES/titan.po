@@ -3202,325 +3202,325 @@ msgid "Here you can make your timeshift settings. Use to navigate the control cr
 msgstr "Hier können Sie die Timeshift Einstellungen anpassen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
 msgid "please wait..."
-msgstr "een ogenblik geduld alstublieft"
+msgstr "bitte warten"
 
 msgid "System Update"
-msgstr "System Update"
+msgstr "System aktualisieren"
 
 msgid "DYNDNS Settings"
-msgstr "DYNDNS instellingen"
+msgstr "DYNDNS Einstellungen"
 
 msgid "MediaDB Settings"
-msgstr "MediaDB instellingen"
+msgstr "MediaDB Einstellungen"
 
 msgid "MediaDB Path"
-msgstr "MediaDB Pad"
+msgstr "Datenbank Ordner"
 
 msgid "Delete MediaDB before scan"
-msgstr "Verwijder MediaDB voor de scan"
+msgstr "Datenbank vor dem scannen löschen"
 
 msgid "Delete unused entrys before scan"
-msgstr "Verwijder niet gebruikte entrys voor scan"
+msgstr "Datenbank vor dem scannen überprüfen (unbenutzte Einträge löschen)"
 
 msgid "Update entrys on scan"
-msgstr "Actualiseer gegevens bij het scannen"
+msgstr "Aktualisiere Daten beim scannen"
 
 msgid "Create Thumb Picture"
-msgstr "Thumb pictures maken"
+msgstr "Vorschau Bilder erstellen"
 
 msgid "TV Resolution (w):"
-msgstr "TV resolutie (breedte):"
+msgstr "TV Auflösung (B):"
 
 msgid "TV Resolution (h):"
-msgstr "TV resolutie (hoogte):"
+msgstr "TV Auflösung (H):"
 
 msgid "Are you sure you want to restore settings?\n\nOK = start restore\nEXIT = abort restore"
-msgstr "Wilt u uw instellingen terugzetten??\n\nOK = herstellen starten\nEXIT = Wiederherstellung abbrechen"
+msgstr "Wollen Sie Ihre Einstellungen wiederherstellen?\n\nOK = Wiederherstellung starten\nEXIT = Wiederherstellung abbrechen"
 
 msgid "Backup failed, see log"
-msgstr "Backup is niet geslaagd, controleer log"
+msgstr "Sicherung fehlgeschlagen, Infos siehe log"
 
 msgid "Press -restore- and your saved settings will be restored from your swapstick / recording hdd! The Box will restart automatically for restoring!\n\nPress -backup- to save your actual settings to swapstick / recording hdd.\nWARNING: The old backup will be deleted!"
-msgstr "Druk op  -herstellen- (Groen)\nen uw instellingen worden hersteld uit een eerder gesaved herstelbestand! Uw box zal daarna automatisch herstarten!\n\nDruk op -herstelpunt maken - (Geel)\ndan word een herstelpunt gemaakt.\nLETOP: Eerdere herstelpunten worden verwijdert!\n\nIndien u de Systeem update  functie onder -Systeem- gebruikt, dan wordt dit herstelpunt automatisch gemaakt!"
+msgstr "-Wiederherstellung- (Rot):\nIhre Einstellungen werden aus einer zuvor erstellten Sicherung wiederhergestellt! Der Receiver wird dafür automatisch neugestartet! \n\n-Sicherung erstellen- (Grün):\nIhre Einstellungen werden gesichert.\nWARNUNG: Die alten Sicherungen werden gelöscht!\n\n-Ergebnis- (Gelb):\nÜberprüfung der Sicherung mittels Logdatei"
 
 msgid "Can't start system update\nPlease remove Stick/HDD and try again"
-msgstr "Systeem update kan niet gestart worden!\nVerwijder allen USB apparaten en probeer opnieuw."
+msgstr "System Aktualisierung kann nicht gestartet werden!\nEntfernen Sie bitte alle USB Speichermedien und versuchen Sie es erneut."
 
 msgid "wireless"
 msgstr "WLAN Module"
 
 msgid "Tpk Install - select section"
-msgstr "TPK installeren - Kies categorie"
+msgstr "TPK installieren - Kategorie wählen"
 
 msgid "Tpk Install Info - Install OK"
-msgstr "TPK Pakket is succesvol geinstalleerd"
+msgstr "Paket erfolgreich installiert"
 
 msgid "Tpk Install Info - Install ERROR"
-msgstr "TPK pakket installeer fout"
+msgstr "Paket konnte nicht installiert werden"
 
 msgid "Tpk Remove Info - Remove OK"
-msgstr "TPK Pakket succesvol gewist"
+msgstr "Paket erfolgreich gelöscht"
 
 msgid "Tpk Remove Info - Remove ERROR"
-msgstr "TPK Pakket kon niet gewist worden"
+msgstr "Paket konnte nicht gelöscht werden"
 
 msgid "Install success"
-msgstr "Installatie succesvol uitgevoerd.\nEr is geen installatie info gevonden!"
+msgstr "Installation erfolgreich durchgeführt."
 
 msgid "Install error"
-msgstr "Installatie niet succesvol uitgevoerd.\nEr is geen installatie info gevonden!"
+msgstr "Installation nicht erfolgreich durchgeführt."
 
 msgid "Installing"
-msgstr "Installeren van"
+msgstr "Installation von"
 
 msgid "starting"
-msgstr "uitvoeren"
+msgstr "durchführen"
 
 msgid "Removeing"
-msgstr "wissen "
+msgstr "Löschen von"
 
 msgid "Remove success"
-msgstr "Wissen succesvol uitgevoerd.\nEr is geen installatie info gevonden!"
+msgstr "Löschen erfolgreich durchgeführt."
 
 msgid "Remove error"
-msgstr "Wissen niet succesvol uitgevoerd.\nEr is geen installatie info gevonden!"
+msgstr "Löschen nicht erfolgreich durchgeführt."
 
-msgid "Ipk Tmp Info"
-msgstr "Ipk Tmp Info"
+msgid "Tpk Tmp Info"
+msgstr "Info zur TMP-TPK Installation"
 
-msgid "Ipk Media Info"
-msgstr "Ipk Media Info"
+msgid "Tpk Media Info"
+msgstr "Info zur Media-TPK Installation"
 
 msgid "Networkbrowser - show Shares"
-msgstr "Netwerk Browser - toon koppelingen"
+msgstr "Netzwerk Browser - zeige Freigaben"
 
 msgid "Installed version:"
-msgstr "Geinstalleerde Versie:"
+msgstr "Installierte Version:"
 
 msgid "Emu not found"
-msgstr "geen Emu gevonden"
+msgstr "kein Emu gefunden"
 
 msgid "active"
-msgstr "Autostart geactiveerd"
+msgstr "Autostart aktiviert"
 
 msgid "running"
-msgstr "running"
+msgstr "an"
 
 msgid "started"
-msgstr "gestart"
+msgstr "gestartet"
 
 msgid "Activate (autostart)"
-msgstr "Aktiveren (autostart)"
+msgstr "Aktivieren (autostart)"
 
 msgid "Load Playlist"
-msgstr "Playlist laden"
+msgstr "Playliste laden"
 
 msgid "Edit Playlist"
-msgstr "Playlist bewerken"
+msgstr "Playliste bearbeiten"
 
 msgid "Aktivate new network config ?"
-msgstr "Activeer nieuwe netwerk instellingen ?"
+msgstr "Aktiviere neue Netzwerk Einstellungen?"
 
 msgid "Spezialfunctions unlocked, no input required"
-msgstr "Spezialfunctions unlocked, no input required"
+msgstr "Receiver bereits freigeschaltet, keine Freischaltung notwendig"
 
 msgid "Code not ok, please try again !"
-msgstr "Code is niet goed probeer opnieuw"
+msgstr "Ihr Schlüssel wurde nicht akzeptiert, bitte versuchen Sie es erneut"
 
 msgid "Code ok"
-msgstr "Code is ok"
+msgstr "Ihr Schlüssel wurde erfolgreich aktiviert"
 
 msgid "Serial Input"
-msgstr "Serial Input"
+msgstr "Freischaltmenü"
 
 msgid "Receiver unlock"
-msgstr "Receiver unlock"
+msgstr "Receiver freischalten"
 
 msgid "Code1"
-msgstr "Code1"
+msgstr "Schlüssel 1:"
 
 msgid "Code2"
-msgstr "Code2"
+msgstr "Schlüssel 2: "
 
 msgid "RECEIVER ID: "
-msgstr "Board-ID Serienummer: "
+msgstr "Board-ID Seriennummer: "
 
 msgid "Can't save Code.\nDelete Plugins to free space"
-msgstr "Code kan niet opgeslagen worden.\nVerwijder plugins om ruimte vrij te maken"
+msgstr "Ihr Schlüssel kann nicht gespeichert werden.\nLöschen Sie bitte eine der von Ihnen installierten Erweiterungen\num freien Speicherplatz zu erhalten."
 
 msgid "Please contact Atemio for activation. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Neem Contact op met Atemio om te activeren\n\nGebruik het stuur-kruis en de extra getoonde knopppen op uw\nafstandsbediening om te navigeren."
+msgstr "Bitte wenden Sie sich an Atemio, falls Ihre Freischaltung noch nicht wirksam ist.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Alternativ Audio Firmware not working korrekt with all videos (DTSDOWNMIX)!"
-msgstr "(DTSDOWNMIX) is geinstalleerd!\nhiermee lopen niet alle videos correct."
+msgstr "Sie haben die Alternative Audio Firmware installiert (DTSDOWNMIX)!\nDamit laufen die Videos nicht korrekt."
 
 msgid "To many read error or end of file"
-msgstr "To many read error or end of file"
+msgstr "Zu viele Lesefehler oder das Ende der Datei erreicht"
 
 msgid "date + time"
-msgstr "Datum + Tijd"
+msgstr "Datum + Zeit"
 
 msgid "Not enought space"
-msgstr "Onvoldoende opslagruimte"
+msgstr "Nicht genug Speicherplatz vorhanden"
 
 msgid "Error create filename"
-msgstr "Bestand kan niet gemaakt worden"
+msgstr "Es kann keine Datei angelegt werden"
 
 msgid "Can't open file"
-msgstr "Bestand kan niet geopend worden"
+msgstr "Die Datei kann nicht geöffnet werden"
 
 msgid "Can't open FRONTEND device"
-msgstr "Het FRONTEND device kan niet geopend worden"
+msgstr "Das FRONTEND device kann nicht geöffnet werden"
 
 msgid "Can't open DMX device"
-msgstr "Het DMX device kan niet geopend worden"
+msgstr "Das DMX device kann nicht geöffnet werden"
 
 msgid "Pid's not ok"
-msgstr "PID's zijn niet ok"
+msgstr "Fehler in den Pids"
 
 msgid "Channel or Transponder is empty"
-msgstr "Kanaal of Transponder ist leeg"
+msgstr "Kanal oder Transponder ist leer"
 
 msgid "Write error"
-msgstr "Write error"
+msgstr "Schreibfehler"
 
 msgid "No memory"
-msgstr "Geen opslagruimte beschikbaar"
+msgstr "Kein Speicher verfügbar"
 
 msgid "Failed open split file"
-msgstr "Split File kan niet geopend worden"
+msgstr "Split Datei kann nicht geöffnet werden"
 
 msgid "Frontend type unknown"
-msgstr "Frontend Type onbekend"
+msgstr "Frontend Typ unbekannt"
 
 msgid "Tune to channel failed"
-msgstr "Afstemmen op kanaal is niet gelukt"
+msgstr "Kanal kann nicht angesteuert werden"
 
 msgid "Can't create service"
-msgstr "Service kan niet gemaakt worden"
+msgstr "Es kann kein Service angelegt werden"
 
 msgid "Can't find free Tuner for Record.\nSwitch to Recording/Timeshift Channel ?"
-msgstr "Er is geen vrije Tuner .\nzappen naar  opname/timeshift kanaal ?"
+msgstr "Es ist kein freier Tuner vorhanden.\nZum Aufnahme/Timeshift Kanal wechseln?"
 
 msgid "size (default)"
-msgstr "size (default)"
+msgstr "Größe (Voreinstellung)"
 
 msgid "datetime"
-msgstr "Datum tijd"
+msgstr "Datum Uhrzeit"
 
 msgid "Transponder changed"
-msgstr "Transponder is verandert"
+msgstr "Transponder wurde geändert"
 
 msgid "Start at last position ?"
-msgstr "Starten bij de laatse positie?"
+msgstr "An letzter Stelle beginnen?"
 
-msgid "Install Tithek Ipk first !"
-msgstr "Installeer deTithek Plugin onder applicaties"
+msgid "Install Tithek Tpk first !"
+msgstr "Installieren Sie bitte das Tithek Plugin unter Erweiterungen"
 
-msgid "Install Weather Ipk first !"
-msgstr "Installeer de weer Plugin onder applicaties"
+msgid "Install Weather Tpk first !"
+msgstr "Installieren Sie bitte das Wetter Plugin unter Erweiterungen"
 
 msgid "Record started"
-msgstr "Opname is gestart"
+msgstr "Aufnahme wurde gestartet"
 
 msgid "swapwireless"
-msgstr "SWAP-Wlan Module"
+msgstr "Swap-WLAN Module"
 
 msgid "found"
-msgstr "gevonden"
+msgstr "Es wurden"
 
 msgid "Results"
-msgstr "Links gevonden"
+msgstr "Links gefunden"
 
 msgid "Page"
-msgstr "Pagina"
+msgstr "Seite"
 
 msgid "show 2 entrys"
-msgstr "Zeer groot (2 afbeeldingen)"
+msgstr "sehr gross (2 Bilder)"
 
 msgid "show 6 entrys"
-msgstr "Groot (6 afbeeldingen)"
+msgstr "gross (6 Bilder)"
 
 msgid "show 12 entrys"
-msgstr "Klein (12 afbeeldingen)"
+msgstr "klein (12 Bilder)"
 
 msgid "show 20 entrys"
-msgstr "Zeer klein (20 afbeeldingen)"
+msgstr "kleiner (20 Bilder)"
 
 msgid "show 30 entrys"
-msgstr "ganz klein (30 afbeeldingen)"
+msgstr "sehr klein (30 Bilder)"
 
 msgid "show auto entrys"
-msgstr "Afhankelijk van aantal automatisch aanpassen"
+msgstr "automatisch anpassen"
 
 msgid "Pic Ratio"
-msgstr "Pic Ratio"
+msgstr "Bilder im Orginalformat darstellen"
 
 msgid "Delete"
-msgstr "Wissen"
+msgstr "Löschen"
 
 msgid "Copy"
-msgstr "copieren"
+msgstr "Kopieren"
 
 msgid "Moven"
-msgstr "Verplaatsen"
+msgstr "Verschieben"
 
-mmsgid "Realy move this file/dir?"
-msgstr "Wilt u dit bestan verplaatsen"
+msgid "Really move this file/dir?"
+msgstr "Wollen Sie diese Datei verschieben?"
 
-msgid "Realy copy this file/dir?"
-msgstr "Wilt u dit bestand copieren ?"
+msgid "Really copy this file/dir?"
+msgstr "Wollen Sie diese Datei kopieren?"
 
-msgid "Realy delete this file/dir?"
-msgstr "Wilt u dit bestand wissen?"
+msgid "Really delete this file/dir?"
+msgstr "Wollen Sie diese Datei löschen?"
 
 msgid "From"
-msgstr "van"
+msgstr "von"
 
 msgid "To"
-msgstr "naar"
+msgstr "nach"
 
-msgid "Install File Manager Ipk first !"
-msgstr "Installeer File Manager Ipk eerst !"
+msgid "Install File Manager Tpk first !"
+msgstr "Installieren Sie bitte das Datei Browser Plugin unter Erweiterungen"
 
 msgid "FILELIST MANAGER"
-msgstr "Bestands browser"
+msgstr "Datei Browser"
 
 msgid "Are you sure you want to delete this directory?"
-msgstr "Wilt u deze directory wissen"
+msgstr "Wollen Sie dieses Verzeichnis löschen?"
 
 msgid "Wait for cam ready"
-msgstr "Wachttijd voor CI Module"
+msgstr "Wartezeit für CI-Module"
 
 msgid "middle"
-msgstr "middel"
+msgstr "mittel"
 
 msgid "Del EPG before scan"
-msgstr "Verwijder EPG voor scan"
+msgstr "Lösche EPG vor der Suche"
 
 msgid "Found Pay Stream visit the official Website and Order this Stream and try this again !"
-msgstr "Pay-Stream gevonden bezoek de officiele Website en bestel\ndeze Stream en probeer nog eens !"
+msgstr "Pay-Stream gefunden, besuchen Sie die offizielle Website, um diesen Stream zu\nbestellen und versuchen Sie es nochmal!"
 
 msgid "Show Pay Streams"
-msgstr "Toon Pay-Streams"
+msgstr "Zeige Pay und Englische Streams"
 
 msgid "ADD FAV"
-msgstr "Favorieten toevoegen"
+msgstr "Fav hinzufügen"
 
 msgid "DEL FAV"
-msgstr "Favorieten wissen"
+msgstr "Fav löschen"
 
 msgid "Remove this Favorite ?"
-msgstr "Wilt u deze favoriet wissen ?"
+msgstr "Wollen Sie diesen Favoriten löschen?"
 
 msgid "Add this link as Favorite ?"
-msgstr "Wilt u deze favoriet toevoegen?"
+msgstr "Wollen Sie diesen Favoriten hinzufügen?"
 
 msgid "Copy providerlist successfull"
-msgstr "Copy providerlist geslaagd"
+msgstr "Kopieren des Anbieters erfolgreich abgeschlossen"
 
 msgid "Copy providerlist not ok"
-msgstr "Copy providerlist niet geslaagd"
+msgstr "Kopieren des Anbieters abgebrochen"
 
 msgid "Copy satlist successfull"
 msgstr "Kopieren des Satelliten erfolgreich abgeschlossen"
@@ -3528,38 +3528,38 @@ msgstr "Kopieren des Satelliten erfolgreich abgeschlossen"
 msgid "Copy satlist not ok"
 msgstr "Kopieren des Satelliten abgebrochen"
 
-msgid "The hoster is not yet supported for the time !"
-msgstr "De hoster wordt momenteel nog niet ondersteund"
+msgid "The hoster is not yet supported !"
+msgstr "Der Hoster wird zur Zeit noch nicht unterstützt!"
 
 msgid "CLEAR INPUT"
-msgstr "CLEAR INPUT"
+msgstr "Eingabefeld löschen"
 
 msgid "REMOVE ENTRY"
-msgstr "REMOVE ENTRY"
+msgstr "Listeneintrag löschen"
 
 msgid "Streaming version of this file is currently not available. You can download it below."
-msgstr "Streaming-Version is niet beschikbaar: u kunt het hieronder downloaden"
+msgstr "Streaming-Version dieser Datei ist derzeit nicht verfügbar. Sie können nur downloaden."
 
 msgid "Autocheck cam can decrypt"
-msgstr "Autocheck of Cam ontsleutelen kan?"
+msgstr "Automatisch überprüfen, ob Ihr CAM entschlüsseln kann?"
 
 msgid "Enable Cable Tuner ?"
-msgstr "Kabel Tuner actieveren ?"
+msgstr "Wollen Sie den Kabel Tuner aktivieren?"
 
 msgid "Please install tpk Cable Settings, scan currenty not supportet !"
-msgstr "Installeer TPK Kabel Settings in applicatiemenu !\nScan is momenteel nog niet geimplementeerd."
+msgstr "Bitte installieren Sie die Kabel Settings im Erweiterungsmenu!\nKabel Suchlauf wird noch nicht unterstützt!"
 
 msgid "Show last pos Question"
-msgstr "Gebruik laatste pos"
+msgstr "Benutze 'An letzter Stelle beginnen'"
 
 msgid "default Directory"
-msgstr "Standaard directory"
+msgstr "Standard Verzeichnis"
 
 msgid "use last Directory"
-msgstr "Gebruik altijd laatste directory"
+msgstr "Benutze immer letztes Verzeichnis"
 
 msgid "Pic quality"
-msgstr "Pic quality"
+msgstr "Darstellungsqualität von Fotos"
 
 msgid "low"
 msgstr "gering"
@@ -3568,88 +3568,88 @@ msgid "best"
 msgstr "beste"
 
 msgid "Manual Search Cable"
-msgstr "Handmatig zoeken op Cable"
+msgstr "Manuelle Kabelsuche"
 
 msgid "Unicable manufacturer"
-msgstr "Unicable fabrikant"
+msgstr "Unicable Hersteller"
 
 msgid "Unicable product"
-msgstr "Unicable Product"
+msgstr "Unicable Produkt"
 
 msgid "Resync Recording immediately"
-msgstr "Resync Recording direct"
+msgstr "Synchronisiere Aufnahmen sofort"
 
-msgid "TPK Upgrade Done your system rebooting !"
-msgstr "TPK upgrade afgerond\nUw box wordt nieuw gestart"
+msgid "TPK Upgrade done, your system will reboot !"
+msgstr "TPK Aktualisieren abgeschlossen\nIhre Box wird neu gestartet"
 
-msgid "TPK Tmp Install Done your system rebooting !"
-msgstr "TPK Tmp installatie afgesloten\nuw box wordt opnieuw gestart"
+msgid "TPK Tmp Install done, your system will reboot !"
+msgstr "TPK Tmp Installation abgeschlossen\nIhre Box wird neu gestartet"
 
-msgid "TPK Install Done your system rebooting !"
-msgstr "TPK installatie afgesloten\nuw box wordt opnieuw gestart"
+msgid "TPK Install done, your system will reboot !"
+msgstr "TPK Installation abgeschlossen\nIhre Box wird neu gestartet"
 
-msgid "TPK Remove Done your system rebooting !"
-msgstr "TPK wissen afgeslotn\nuw box wordt opnieuw gestart"
+msgid "TPK Remove done your system will reboot !"
+msgstr "TPK Löschen abgeschlossen\nIhre Box wird neu gestartet"
 
 msgid "Weather Infos"
-msgstr "Weer tonen"
+msgstr "Wetter anzeigen"
 
 msgid "Mediathek"
-msgstr "Online Mediatheek"
+msgstr "Online Mediathek"
 
 msgid "Create Folder"
-msgstr "Directory maken"
+msgstr "Verzeichnis anlegen"
 
 msgid "Recording name"
-msgstr "Opname naam"
+msgstr "Aufnahme Titel"
 
 msgid "Can't show this file!"
-msgstr "Het bestand kan niet getoond "
+msgstr "Diese Datei kann nicht angezeigt werden"
 
 msgid "Skip privat CA descriptor"
-msgstr "Skip privat CA descriptor"
+msgstr "Überspringe Private CA descriptor"
 
 msgid "Rename"
-msgstr "Hernoemen"
+msgstr "Umbenennen"
 
 msgid "MediaDB scan finished"
-msgstr "MediaDB scan gestopt"
+msgstr "MediaDB Suche beendet"
 
 msgid "This file doesn't exist, or has been removed"
-msgstr "Bestand bestaat niet of is verplaatst"
+msgstr "Dieser Stream ist zur Zeit nicht verfügbar oder entfernt worden"
 
 msgid "Here you can select your reader. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw cardreader selecteren.\n\nGebruik het stuur-kruis en de extra getoonde knopppen op uw\nafstandsbediening om te navigeren."
+msgstr "Hier können Sie Ihre Reader auswählen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can configure your reader. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw cardreader instellen.\n\nGebruik het stuur-kruis en de extra getoonde knopppen op uw\nafstandsbediening om te navigeren."
+msgstr "Hier können Sie Ihre Reader Konfiguration vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Reader Config"
-msgstr "Reader instellingen"
+msgstr "Reader Einstellungen"
 
 msgid "Reader Selection"
-msgstr "Reader keuze"
+msgstr "Reader Auswahl"
 
 msgid "Reader Configuration"
-msgstr "Reader configuratie"
+msgstr "Reader Konfiguration"
 
 msgid "Reader Config Plugin not installed !"
-msgstr "Installer aub de reader configuratie Plugin unter applicaties"
+msgstr "Installieren Sie bitte das Reader Konfiguration Plugin unter Erweiterungen"
 
 msgid "Reader active"
-msgstr "Reader geactiveerd"
+msgstr "Reader aktiviert"
 
 msgid "Oscam config written to medium !"
-msgstr "Oscam Config wordt opgeslagen"
+msgstr "Oscam Config wurde gespeichert!"
 
 msgid "Restart Oscam ?"
-msgstr "Oscam opnieuw starten ?"
+msgstr "Soll Oscam neu gestartet werden?"
 
 msgid "first slot"
-msgstr "eerste Kaartlezer (onder)"
+msgstr "erster Kartenschacht (unten)"
 
 msgid "second slot"
-msgstr "tweede Kaartlezer (boven)"
+msgstr "zweiter Kartenschacht (oben)"
 
 msgid "Enable"
 msgstr "Enable"
@@ -3658,145 +3658,145 @@ msgid "Device"
 msgstr "Device"
 
 msgid "green"
-msgstr "groen"
+msgstr "grün"
 
 msgid "Backdrop Download Count"
-msgstr "Hoeveel achtergrondbeelden moeten er geladen worden"
+msgstr "Wie viele Hintergrundbilder sollen geladen werden"
 
 msgid "Debug Modus"
 msgstr "Debug Modus"
 
 msgid "Backdrop Interval"
-msgstr "Achtergrond beeldwissel interval"
+msgstr "Hintergrund Bilderwechsel Interval"
 
 msgid "MediaDB Debug"
 msgstr "MediaDB Debug Modus"
 
 msgid "MediaDB place"
-msgstr "MediaDB opslaglocatie"
+msgstr "MediaDB Speicherort"
 
 msgid "scan Directory"
-msgstr "scan Directory"
+msgstr "Durchsuchtes Verzeichnis"
 
 msgid "OTHER"
-msgstr "anders"
+msgstr "mehr"
 
 msgid "Delete File"
-msgstr "Bestand wissen"
+msgstr "Datei löschen"
 
 msgid "MediaDB Scan Info"
-msgstr "MediaDB Scan informatie"
+msgstr "MediaDB Scan Informationen"
 
 msgid "MediaDB Edit"
-msgstr "MediaDB bewerken"
+msgstr "MediaDB Eintrag bearbeiten"
 
 msgid "AV Settings"
-msgstr "Audio/Video instellingen"
+msgstr "Audio/Video Einstellungen"
 
 msgid "Red-Menu"
-msgstr "Rood-Menu"
+msgstr "Rot-Menu"
 
 msgid "Expert Modus"
-msgstr "Expert Modus"
+msgstr "Experten Modus"
 
 msgid "Create Record Picture"
-msgstr "Create Record Picture"
+msgstr "Erstelle Aufnahme Vorschaubild"
 
 msgid "Error, Internet Connection not found"
-msgstr "Fout, Geen internet verbinding"
+msgstr "Fehler: keine Internet Verbindung verfügbar"
 
 msgid "No space left on device"
-msgstr "Fout, onvoldoende opslagruimte"
+msgstr "Fehler: Festplatte/Stick voll"
 
 msgid "Only default signalrate"
-msgstr "Gebruit Standard Signalrate"
+msgstr "Verwende Standard Signalrate"
 
 msgid "Only DVBS"
-msgstr "Alleen DVBS"
+msgstr "Nur DVBS verwenden"
 
 msgid "Only default FEC"
-msgstr "Alleem Standaard FEC"
+msgstr "Verwende Standard FEC"
 
 msgid "Show infobar on program change"
-msgstr "Toon infobalk bij zappen"
+msgstr "Zeige Infobar bei Sendungwechsel"
 
 msgid "Deactivate Crypt Support on Media Playback"
-msgstr "Deactivate Crypt bij media afspelen"
+msgstr "Deaktiviere Crypt Support während der Wiedergabe von Daten/Streams"
 
 msgid "Use cross control for fast zapping and vol"
-msgstr "Gebruik het stuur-kruis voor snel zappen en volume regeling"
+msgstr "Benutze das Steuerkreuz für schnelles Umschalten und laut/leise"
 
 msgid "Deactivate MiniTV"
-msgstr "Deactivate MiniTV"
+msgstr "Deaktiviere MiniTV Vorschau Fenster"
 
 msgid "Caching Playback (10MB / 120s)"
-msgstr "Caching Playback (10MB / 120s)"
+msgstr "Auf Festplatte zwischenspeichern (10MB/120s)"
 
 msgid "Caching Playback (20MB / 240s)"
-msgstr "Caching Playback (20MB / 240s)"
+msgstr "Auf Festplatte zwischenspeichern (20MB/240s)"
 
 msgid "Caching Playback (30MB / 360s)"
-msgstr "Caching Playback (30MB / 360s)"
+msgstr "Auf Festplatte zwischenspeichern (30MB/360s)"
 
 msgid "Download Full File"
-msgstr "Download Full File"
+msgstr "Datei downloaden in Streampfad"
 
 msgid "Download Full File (background)"
-msgstr "Download Full File (background)"
+msgstr "Datei downloaden in Streampfad (unsichtbar)"
 
 msgid "Remove Cachefile ?"
-msgstr "Cache bestand verwijderen"
+msgstr "Zwischengespeicherte Datei löschen?"
 
 msgid "Playbackbuffer Size"
-msgstr "Playbackbuffer Size"
+msgstr "Wiedergabepuffer - Grösse (http) Streams"
 
 msgid "Time to wait after seek for fill buffer"
-msgstr "Weergave Buffer: wachttijd na zoekactie om buffer te vullen"
+msgstr "Wiedergabepuffer - Zeit bis zum automatischen laden nach einem Seek"
 
 msgid "Streaming Playback (default)"
-msgstr "Streaming Playback (default)"
+msgstr "Direktes Streamen (standard)"
 
 msgid "Streaming Playback Caching (0.5MB)"
-msgstr "Streaming Playback Caching (0.5MB)"
+msgstr "Direktes Streamen mit Puffer (0.5MB)"
 
 msgid "Streaming Playback Caching (1MB)"
-msgstr "Streaming Playback Caching (1MB)"
+msgstr "Direktes Streamen mit Puffer (1MB)"
 
 msgid "Streaming Playback Caching (2MB)"
-msgstr "Streaming Playback Caching (2MB)"
+msgstr "Direktes Streamen mit Puffer (2MB)"
 
 msgid "Streaming Playback Caching (3MB)"
-msgstr "Streaming Playback Caching (3MB)"
+msgstr "Direktes Streamen mit Puffer (3MB)"
 
 msgid "Streaming Playback Caching (4MB)"
-msgstr "Streaming Playback Caching (4MB)"
+msgstr "Direktes Streamen mit Puffer (4MB)"
 
 msgid "Streaming Playback Caching (5MB)"
-msgstr "Streaming Playback Caching (5MB)"
+msgstr "Direktes Streamen mit Puffer (5MB)"
 
 msgid "Streaming Playback Caching (7.5MB)"
-msgstr "Streaming Playback Caching (7.5MB)"
+msgstr "Direktes Streamen mit Puffer (7.5MB)"
 
 msgid "Streaming Playback Caching (10MB)"
-msgstr "Streaming Playback Caching (10MB)"
+msgstr "Direktes Streamen mit Puffer (10MB)"
 
-msgid "ERROR... can't set maker in this file"
-msgstr "Fout.. Marker kan niet gezet worden in dit bestand"
+msgid "ERROR... can't set marker in this file"
+msgstr "Fehler: Für diese Datei kann kein Marker gesetzt werden"
 
 msgid "Marker has been set."
-msgstr "Marker is niet gezet"
+msgstr "Ihr Marker wurde erfolgreich gesetzt"
 
-msgid "Download successful !"
-msgstr "Download geslaagd!"
+msgid "Download finished!"
+msgstr "Download abgeschlossen!"
 
 msgid "dnsaddresse"
-msgstr "DNS Adres"
+msgstr "DNS Adresse"
 
 msgid "usedns"
-msgstr "usedns"
+msgstr "Benutze DNS Adresse"
 
 msgid "Search on Kinox"
-msgstr "Search on Kinox"
+msgstr "Suche diesen Titel bei Kinox"
 
 msgid "Search on Solarmovies (movie)"
 msgstr "Suche diesen Titel bei Solarmovies (movie)"
@@ -3811,16 +3811,16 @@ msgid "Search on MyVideo"
 msgstr "Suche diesen Titel bei MyVideo"
 
 msgid "Error, found result without imdbid we can't this save in MediaDB"
-msgstr "Fout, gevonden zoek resultaat heeft geen IMDBid en kan daardoor niet\nin de MediaDB opgeslagen worden"
+msgstr "Fehler, ihr TMBb Suchergebniss hat eine ungültige imdbid und kann\ndadurch nicht in der MediaDB abgespeichert werden"
 
 msgid "EPG Scan activate standby?"
-msgstr "EPG Scan activate standby?"
+msgstr "EPG Scan aktiviert Standby?"
 
 msgid "Timeshift file to short\nplease wait a little and try again"
-msgstr "Timeshift: Bestand is te klein\nwacht een moment en probeer op nieuw"
+msgstr "Timeshift: Datei ist zu klein\nBitte später versuchen"
 
 msgid "Behavior at recording"
-msgstr "Opnamegedrag"
+msgstr "Verhalten bei der Aufnahme"
 
 msgid "star"
 msgstr "Stern"
@@ -3829,7 +3829,7 @@ msgid "blink star"
 msgstr "Stern blinkend"
 
 msgid "show record"
-msgstr "zeige record"
+msgstr "Zeige record"
 
 msgid "fade out/in"
 msgstr "ein/ausblenden"
@@ -3898,10 +3898,10 @@ msgid "Can't send Mail"
 msgstr "E-Mail konnte nicht versendet werden"
 
 msgid "SEND"
-msgstr "Senden"
+msgstr "in Vorber."
 
 msgid "If you don't find Windows shares you need to disable 'Password protected sharing' in the 'Network and Sharing Center'."
-msgstr "Sollten keine Windows Freigaben sichtbar sein, muss 'Kennwortgeschützte Freigaben' im 'Netzwerk- und Freigabecenter' abgeschalten werden."
+msgstr "Sollten keine Windows Freigaben sichtbar sein, muss 'Kennwortgeschützte Freigaben' im 'Netzwerk- und Freigabecenter' abgeschaltet werden."
 
 msgid "Show HDD freesize"
 msgstr "Zeige freien Festplattenspeicher"
@@ -3928,16 +3928,16 @@ msgid "/mnt not writeable!\nRepair it?"
 msgstr "/mnt nicht beschreibbar!\nReparieren?"
 
 msgid "Can't install Package. Package to big."
-msgstr "Paket zu gross. Installation nicht möglich."
+msgstr "Paket zu groß. Installation nicht möglich."
 
 msgid "Format and restore default settings"
-msgstr "Formatiere Internen Speicher mit Werkseinstellung"
+msgstr "Formatiere internen Speicher mit Werkseinstellung"
 
 msgid "Format and backup/restore settings"
-msgstr "Formatiere Internen Speicher ohne Werkseinstellung"
+msgstr "Formatiere internen Speicher ohne Werkseinstellung"
 
 msgid "Do you really want to erase Swap (Settings are preserve)?\nThe Box will reboot and the erase will be started!"
-msgstr "Internen Swap Speicher löschen ohne Werkseinstellung durchführen?\nBox neu starten und Löschvorgang ausführen "
+msgstr "Internen Swap Speicher löschen (Konfiguration wird beibehalten)?\nBox neu starten und Löschvorgang ausführen "
 
 msgid "MediaDB entry for this file not found."
 msgstr "MediaDB Eintrag dieser Datei konnte nicht gefunden werden."
@@ -3955,10 +3955,10 @@ msgid "Tpk Update Info - Update ERROR"
 msgstr "Tpk Update Info - Update Fehler"
 
 msgid "Can't get all TPK index !"
-msgstr "Es konnten nicht alle TPK Index Dateien geholt werden !"
+msgstr "Es konnten nicht alle TPK Index Dateien geholt werden!"
 
 msgid "Can't update all packages !"
-msgstr "Es konnten nicht alle TPK Pakete aktualisiert werden !"
+msgstr "Es konnten nicht alle TPK Pakete aktualisiert werden!"
 
 msgid "Update Plugins to new Version?"
 msgstr "Plugins auf die neue Version aktualisieren?"
@@ -3979,7 +3979,7 @@ msgid "card not present"
 msgstr "Keine Karte gefunden"
 
 msgid "Directory has content\nReally delete directory and content?"
-msgstr "Verzeichnis hat einen Inhalt\nWirklich löschen?"
+msgstr "Verzeichnis ist nicht leer.\nWirklich löschen?"
 
 msgid "Hid XXX Streams"
 msgstr "XXX Streams ausblenden"
@@ -4021,13 +4021,13 @@ msgid "file copy error"
 msgstr "Fehler beim Kopieren"
 
 msgid "Can't rename file !"
-msgstr "Datei konnte nicht umbenannt werden !"
+msgstr "Datei konnte nicht umbenannt werden!"
 
 msgid "Can't create directory !"
-msgstr "Verzeichnis konnte nicht erstellt werden !"
+msgstr "Verzeichnis konnte nicht erstellt werden!"
 
 msgid "Can't remove file/dir !"
-msgstr "Datei/Verzeichnis konnte nicht gelöscht werden !"
+msgstr "Datei/Verzeichnis konnte nicht gelöscht werden!"
 
 msgid "stable"
 msgstr "Stabil"
@@ -4036,10 +4036,10 @@ msgid "unstable"
 msgstr "Unstabil"
 
 msgid "Box recording finished poweroff in 30sec !"
-msgstr "Aufnahme beendet. Box wird in 30sek ausgeschalten !"
+msgstr "Aufnahme beendet. Box wird in 30sek ausgeschaltet!"
 
 msgid "Timer Record start !\n"
-msgstr "Timer Aufnahme gestartet ! \n"
+msgstr "Timer Aufnahme gestartet! \n"
 
 msgid "Choice Install Medium"
 msgstr "Installation Auswahl"
@@ -4084,10 +4084,10 @@ msgid "No config file found."
 msgstr "Es wurde kein Config File gefunden."
 
 msgid "Oscam dvbapi config disabled !"
-msgstr "Oscam dvbapi config deaktiviert !"
+msgstr "Oscam dvbapi config deaktiviert!"
 
 msgid "Oscam dvbapi config enabled !"
-msgstr "Oscam dvbapi config aktiviert !"
+msgstr "Oscam dvbapi config aktiviert!"
 
 msgid "Dvbapi (enabled)"
 msgstr "Dvbapi (aktiviert)"
@@ -4099,7 +4099,7 @@ msgid "After EPG Scan"
 msgstr "Nach EPG Suche"
 
 msgid "Found new Stick/HDD.\nYou can configure it in Harddisk Menu."
-msgstr "Neuer Stick/HDD erkannt.\nSie können diesen im Festplatten Menü einstellen."
+msgstr "Neuer Datenträger erkannt.\nSie können diesen im Festplatten Menü konfigurieren."
 
 msgid "yes / vzap 1 sec"
 msgstr "Ja / VZAP 1 sek"
@@ -4112,3 +4112,24 @@ msgstr "Ja / VZAP unendlich"
 
 msgid "Deavtivate Refresh Time and After EPG in scan-mode"
 msgstr "Deaktiviere Aktualisierungszeit und Nach Suche im Suche-Modus"
+
+msgid "Can't start system update\nSyntax Error on updatefile"
+msgstr "System Aktualisierung kann nicht gestartet werden!\nSyntax Fehler im Update File."
+
+msgid "You can leave HBBTV with Record Key."
+msgstr "HBBTV kann mit der RECORD Taste beendet werden."
+
+msgid "Search only aktual epg ?"
+msgstr "Nur im aktuellen EPG suchen?"
+
+msgid "Child"
+msgstr "Kinder"
+
+msgid "Comedy"
+msgstr "Komödie"
+
+msgid "War"
+msgstr "Krieg"
+
+msgid "Music"
+msgstr "Musik"
