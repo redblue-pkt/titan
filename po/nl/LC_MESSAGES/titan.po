@@ -2551,7 +2551,7 @@ msgstr "Bewerken"
 msgid "SCAN"
 msgstr "starten"
 
-msgid "Install netsurf Internetbrowser Ipk first !"
+msgid "Install netsurf Internetbrowser Tpk first !"
 msgstr "Internetbrowser netsurf is niet geinstalleerd."
 
 msgid "start Internet browser now ?"
@@ -2635,10 +2635,10 @@ msgstr "Playlist automatisch starten"
 msgid "EPG button on EPG Screen"
 msgstr "EPG Taste im EPG"
 
-msgid "east"
+msgid "east" 
 msgstr "oost"
 
-msgid "west"
+msgid "west" 
 msgstr "west"
 
 msgid "Diseqc Command Order"
@@ -2649,9 +2649,6 @@ msgstr "noord"
 
 msgid "south"
 msgstr "zuid"
-
-msgid "browser"
-msgstr "Browser"
 
 msgid "swaptool"
 msgstr "Swap-Tools"
@@ -2672,6 +2669,9 @@ msgid "EPG Save Mode"
 msgstr "Wanneer moeten de epg opgeslagen worden"
 
 msgid "OWN POS"
+msgstr "Eigen Positie"
+
+msgid "Own Position"
 msgstr "Eigen Positie"
 
 msgid "Player for .ts"
@@ -2734,7 +2734,8 @@ msgstr "anim. both"
 msgid "no keycode"
 msgstr "onversleuteld"
 
-msgid "Before you can see Signal/SNR/Ber you must zap to a channel of the satellite "
+msgid ""
+"Before you can see Signal/SNR/Ber you must zap to a channel of the satellite "
 "you are searching."
 msgstr "Voordat u Signal/SNR/Ber kunt zien moet u naar een zender schakelen die u "
 "zoekt"
@@ -2769,7 +2770,7 @@ msgstr "Vaste uitschakeltijd"
 msgid "Start playback"
 msgstr "Weergave starten"
 
-msgid "not started akttime greater timer endtime"
+msgid "not started akttime higher than timer endtime"
 msgstr "niet gestart, eindtijd is reeds geweest"
 
 msgid "Does you want delete all unused Bouquetentrys?"
@@ -2790,10 +2791,14 @@ msgstr "Zoek"
 msgid "NONE"
 msgstr "geen"
 
-msgid "WLAN started.\nYou can now configure the new interface."
+msgid ""
+"WLAN started.\n"
+" You can now configure the new interface."
 msgstr "WLAN is gestart.\nverdere configuratie kan nu plaatsvinden"
 
-msgid "WLAN not started,\nPlease check your config."
+msgid ""
+"WLAN not started,\n"
+"Please check your config."
 msgstr "WLAN kon niet gestart worden,\ncontroleer de instellingen."
 
 msgid "searching..."
@@ -2811,7 +2816,9 @@ msgstr "Sleutel"
 msgid "DYNDNS started."
 msgstr "DYNDNS gestart"
 
-msgid "DYNDNS not started,\nPlease check your config."
+msgid ""
+"DYNDNS not started,\n"
+"Please check your config."
 msgstr "DYNDNS niet gestart,\ncontroleer de instellingen."
 
 msgid "DYNDNS now stopped"
@@ -2949,7 +2956,9 @@ msgstr "Kopieeren"
 msgid "DLNA started."
 msgstr "DLNA gestart"
 
-msgid "DLNA not started,\nPlease check your config."
+msgid ""
+"DLNA not started,\n"
+"Please check your config."
 msgstr "DLNA niet gestart,\nControleer de instellingen"
 
 msgid "DLNA now stopped"
