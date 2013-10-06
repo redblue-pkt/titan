@@ -3082,124 +3082,124 @@ msgid "Record Path settings"
 msgstr "Opnamepad instellen"
 
 msgid "Here you can make your recording timer configuration. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw opnames programmeren.\n\nGebruik het stuur-kruis en de extra getoonde knopppen op uw\nafstandsbediening om te navigeren."
+msgstr "Hier können Sie Ihre Aufnahme-Timer Konfiguration vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can in your EPG entries for specific search. Use to start a color button to search. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u in de EPG zoeken. Gebruik een van de kleurknoppen om de\nzoekactie te starten.\n\nGebruik het stuur-kruis en de extra getoonde knopppen op uw\nafstandsbediening om te navigeren."
+msgstr "Hier können Sie im EPG nach bestimmten Einträgen suchen. Verwenden Sie eine der Farbtasten um die Suche zu starten.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can start and manage your additional plug-ins. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw extra applicaties starten en beheren.\n\nGebruik het stuur-kruis en de extra getoonde knopppen op uw\nafstandsbediening om te navigeren."
+msgstr "Hier können Sie Ihre zusätzlichen Plug-Ins starten und verwalten.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can install from our current online offering plug-ins. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u het actuele online aanbod van applicaties installeren.\n\nGebruik het stuur-kruis en de extra getoonde knopppen op uw\nafstandsbediening om te navigeren."
+msgstr "Hier können Sie von unseren aktuellen Online-Angebot Plug-Ins installieren.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can choose to configure your tuner. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u de instellingen van uw tuner beheren.\n\nGebruik het stuur-kruis en de extra getoonde knopppen op uw\nafstandsbediening om te navigeren."
+msgstr "Hier können Sie Ihren Tuner für die Konfiguration auswählen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here they can do for your chosen tuner to receive settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u de ontvangstinstellingen van de door u gekozen tuner instellen.\n\nGebruik het stuur-kruis en de extra getoonde knopppen op uw\nafstandsbediening om te navigeren."
+msgstr "Hier können Sie für Ihren ausgewählten Tuner die Empfangs-Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here they can do for your chosen tuner to lnb settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u voor de door uw gekozen tuner de LNB-instellingen beheren.\n\nGebruik het stuur-kruis en de extra getoonde knopppen op uw\nafstandsbediening om te navigeren."
+msgstr "Hier können Sie für Ihren ausgewählten Tuner die LNB-Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here they can do for your chosen tuner to ownpos settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u voor de door u gekozen tuner de eigen-positie-instellingen beheren.\n\nGebruik het stuur-kruis en de extra getoonde knopppen op uw\nafstandsbediening om te navigeren."
+msgstr "Hier können Sie für Ihren ausgewählten Tuner die Eigene-Position-Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can check the reception of the current station. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u de ontvangst van de actuele zender controleren.\n\nGebruik het stuur-kruis en de extra getoonde knopppen op uw\nafstandsbediening om te navigeren."
+msgstr "Hier können Sie den Empfang des aktuellen Senders überprüfen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can do a blind scan, this process takes a long time. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u een blindscan uitvoeren, het uitvoeren van deze actie duurt zeer lang.\n\nGebruik het stuur-kruis en de extra getoonde knopppen op uw\nafstandsbediening om te navigeren."
+msgstr "Hier können Sie einen Blindscan durchführen, dieser Vorgang dauert sehr lange.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can configure Ci-Modules. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw CI-Module configureren.\n\nGebruik het stuur-kruis en de extra getoonde knopppen op uw\nafstandsbediening om te navigeren."
+msgstr "Hier können Sie CI-Module konfigurieren.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can make your module settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie die Einstellungen für CI-Module anpassen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier können Sie die Einstellungen für CI-Module anpassen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can select your Network Interface. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw network adaptor uitkiezen.\n\nGebruik het stuur-kruis en de extra getoonde knopppen op uw\nafstandsbediening om te navigeren."
+msgstr "Hier können Sie Ihre Netzwerkschnittstelle auswählen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can make for your selected network interface settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u voor de door u uitgekozen netwerkadaptor instellingen beheren.\n\nGebruik het stuur-kruis en de extra getoonde knopppen op uw\nafstandsbediening om te navigeren."
+msgstr "Hier können Sie für Ihre ausgewählte Netzwerkschnittstelle Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can make for your wireless network settings. 1. Use Search button and select Your SSID (apoint / router) and Press ok 2. Make settings Type / Key confirm with ok and Note the following instructions 3. Disable Lan Yes, Activate Wlan Yes and use DHCP for easy setup."
-msgstr "Hier kunt u uw WLAN instellingen beheren.\n\nGebruik het stuur-kruis en de extra getoonde knopppen op uw\nafstandsbediening om te navigeren."
+msgstr "Hier können Sie Ihre WLAN Einstellungen vornehmen.\n1. Suche starten, die eigene SSID (apoint / router) mit ok übernehmen.\n2. Schlüssel und Typ anpassen und mit ok bestätigen (speichern).\n3. Deaktiviere LAN ja, Aktiviere Wlan und DHCP für einfache Einrichtung."
 
 msgid "Here you can test your network. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw netwerk testen.\n\nGebruik het stuur-kruis en de extra getoonde knopppen op uw\nafstandsbediening om te navigeren."
+msgstr "Hier können Sie Ihr Netzwerk testen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can configure your network shares. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw netwerk mappings controleren.\n\nGebruik het stuur-kruis en de extra getoonde knopppen op uw\nafstandsbediening om te navigeren."
+msgstr "Hier können Sie Ihre Netzwerk Freigaben konfigurieren.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can configure your web server. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier u uw Webserver beheren.\n\nGebruik het stuur-kruis en de extra getoonde knopppen op uw\nafstandsbediening om te navigeren."
+msgstr "Hier können Sie Ihren Webserver konfigurieren.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can configure access to your DynDNS. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw DynDns toegang beheren.\n\nGebruik het stuur-kruis en de extra getoonde knopppen op uw\nafstandsbediening om te navigeren."
+msgstr "Hier können Sie Ihren DynDNS Zugang konfigurieren.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can backup and restore your settings."
-msgstr "Hier kunt u uw instellingen backuppen en terugzetten"
+msgstr "Hier können Sie Ihre Einstellungen sichern und wiederherstellen."
 
 msgid "Here you can make your picture and sound settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw beeld en geluidsinstellingen beheren\n\nGebruik het stuur-kruis en de extra getoonde knopppen op uw\nafstandsbediening om te navigeren."
+msgstr "Hier können Sie Ihre Bild und Ton Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can set your language. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hierkunt u uw taal instellen.\n\nGebruik het stuur-kruis en de extra getoonde knopppen op uw\nafstandsbediening om te navigeren."
+msgstr "Hier können Sie Ihre Sprache einstellen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can set your timezone. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw tijdzone instellen.\n\nGebruik het stuur-kruis en de extra getoonde knopppen op uw\nafstandsbediening om te navigeren."
+msgstr "Hier können Sie Ihre Zeitzone einstellen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can make your system settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw systeeem instellingen beheren.\n\nGebruik het stuur-kruis en de extra getoonde knopppen op uw\nafstandsbediening om te navigeren."
+msgstr "Hier können Sie Ihre System Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can make your screensaver settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw screensaver instellen.\n\nGebruik het stuur-kruis en de extra getoonde knopppen op uw\nafstandsbediening om te navigeren."
+msgstr "Hier können Sie Ihre Bildschirmschoner Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can make your recordpath settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u het opname pad instellen.\n\nGebruik het stuur-kruis en de extra getoonde knopppen op uw\nafstandsbediening om te navigeren."
+msgstr "Hier können Sie Ihre Aufnahmepfad Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can make your epg settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw EPG instellingen beheren.\n\nGebruik het stuur-kruis en de extra getoonde knopppen op uw\nafstandsbediening om te navigeren."
+msgstr "Hier können Sie Ihre EPG Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can make your mediadb settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw MediaDB instellingen beheren.\n\nGebruik het stuur-kruis en de extra getoonde knopppen op uw\nafstandsbediening om te navigeren."
+msgstr "Hier können Sie Ihre MediaDB Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can make your vfd settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw VFD instellingen beheren.\n\nGebruik het stuur-kruis en de extra getoonde knopppen op uw\nafstandsbediening om te navigeren."
+msgstr "Hier können Sie Ihre VFD Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can select from the following list. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u een selectie maken uit de lijst\n\nGebruik het stuur-kruis en de extra getoonde knopppen op uw\nafstandsbediening om te navigeren."
+msgstr "Hier können Sie aus der folgenden Liste auswählen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can edit the following channels from the EPG. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u de EPG bewerken van de volgende kanalen.\n\nGebruik het stuur-kruis en de extra getoonde knopppen op uw\nafstandsbediening om te navigeren."
+msgstr "Hier können Sie aus den folgenden Kanälen das EPG bearbeiten.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can select from the following list a skin. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uit de lijst een skin selecteren.\n\nGebruik het stuur-kruis en de extra getoonde knopppen op uw\nafstandsbediening om te navigeren."
+msgstr "Hier können Sie aus der folgenden Liste einen Skin auswählen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can create a new record timer. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u een nieuwe timeropname programeren.\n\nGebruik het stuur-kruis en de extra getoonde knopppen op uw\nafstandsbediening om te navigeren."
+msgstr "Hier können sie einen neuen Aufnahme-Timer anlegen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can make your PIN security settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw PIN instellingen beheren.\n\nGebruik het stuur-kruis en de extra getoonde knopppen op uw\nafstandsbediening om te navigeren"
+msgstr "Hier können Sie Ihre PIN Sicherheitseinstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can make your PIN security for menus settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw PIN instellingen voor het menu beheren.\n\nGebruik het stuur-kruis en de extra getoonde knopppen op uw\nafstandsbediening om te navigeren."
+msgstr "Hier können Sie Ihre PIN Sicherheitseinstellungen für Menüs vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "No MediaDB Directory found\nPress OK to create it"
-msgstr "er is geen map gevonden voor de MedisDB!\nWilt u deze maken?"
+msgstr "Kein MediaDB Verzeichnis gefunden!\nWollen Sie es erstellen?"
 
 msgid "Free space in /var to little!\nThis can make problems!"
-msgstr "Geen geheugen ruimte meer in /var\nDit kan tot problemen leiden!"
+msgstr "Kein freier Speicher in /var\nDies kann zu Problemen führen!"
 
 msgid "Here you can select your hard disks and USB flash drives for configuration. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw hardeschijf of usb stick uitkiezen om te beheren.\n\nGebruik het stuur-kruis en de extra getoonde knopppen op uw\nafstandsbediening om te navigeren."
+msgstr "Hier können Sie Ihre Festplatten und USB-Sticks zur Konfiguration\nauswählen.\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can view the current channel information. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u de actuele zenderinfo oproepen.\n\nGebruik het stuur-kruis en de extra getoonde knopppen op uw\nafstandsbediening om te navigeren."
+msgstr "Hier können Sie die aktuellen Senderinfos abrufen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can make your timeshift settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie die Timeshift Einstellungen anpassen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier können Sie die Timeshift Einstellungen anpassen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "please wait..."
 msgstr "bitte warten"
