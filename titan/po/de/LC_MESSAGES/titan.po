@@ -1849,7 +1849,7 @@ msgid "Second Infobar"
 msgstr "Zweite Infobar"
 
 msgid "Select backup:"
-msgstr "Wiederherstellung auswählen"
+msgstr "Sicherung auswählen:"
 
 msgid "Select Path"
 msgstr "Pfadauswahl"
