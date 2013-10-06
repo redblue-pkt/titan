@@ -3588,16 +3588,16 @@ msgstr "Unicable Product"
 msgid "Resync Recording immediately"
 msgstr "Resync Recording direct"
 
-msgid "TPK Upgrade Done your system rebooting !"
+msgid "TPK Upgrade done, your system will reboot !"
 msgstr "TPK upgrade afgerond\nUw box wordt nieuw gestart"
 
-msgid "TPK Tmp Install Done your system rebooting !"
+msgid "TPK Tmp Install done, your system will reboot !"
 msgstr "TPK Tmp installatie afgesloten\nuw box wordt opnieuw gestart"
 
-msgid "TPK Install Done your system rebooting !"
+msgid "TPK Install done, your system will reboot !"
 msgstr "TPK installatie afgesloten\nuw box wordt opnieuw gestart"
 
-msgid "TPK Remove Done your system rebooting !"
+msgid "TPK Remove done your system will reboot !"
 msgstr "TPK wissen afgeslotn\nuw box wordt opnieuw gestart"
 
 msgid "Weather Infos"
@@ -3789,13 +3789,13 @@ msgstr "Streaming Playback Caching (7.5MB)"
 msgid "Streaming Playback Caching (10MB)"
 msgstr "Streaming Playback Caching (10MB)"
 
-msgid "ERROR... can't set maker in this file"
+msgid "ERROR... can't set marker in this file"
 msgstr "Fout.. Marker kan niet gezet worden in dit bestand"
 
 msgid "Marker has been set."
 msgstr "Marker is niet gezet"
 
-msgid "Download successful !"
+msgid "Download finished!"
 msgstr "Download geslaagd!"
 
 msgid "dnsaddresse"
