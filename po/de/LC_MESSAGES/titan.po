@@ -41,7 +41,7 @@ msgstr "Wollen sie die Partition formatieren?\n"
 
 msgid "Are you sure you want to check this Partition?\n"
 "Box reboots after check"
-msgstr "Wollen sie die Partition prüfen?\n"
+msgstr "Wollen Sie die Partition prüfen?\n"
 "Die Box wird danach neu gestartet."
 
 msgid "A record hdd or a swapstick must be mounted!"
@@ -330,7 +330,7 @@ msgid "Can't get EPG time or EPG endtime not ok"
 msgstr "EPG Zeit kann nicht gefunden werden, oder ist nicht korrekt!"
 
 msgid "Can't start playback !"
-msgstr "Kann die Wiedergabe nicht starten!"
+msgstr "Wiedergabe kann nicht gestartet werden!"
 
 msgid "Can't start timeshift play !"
 msgstr "Timeshift kann nicht gestartet werden"
@@ -348,7 +348,7 @@ msgid "Can't restore settings"
 msgstr "Wiederherstellung kann nicht durchgeführt werden"
 
 msgid "Can't find a Tuner.\nAll Tuners in use or no Tuner defined."
-msgstr "Kein freier Tuner gefunden"
+msgstr "Kein freier Tuner gefunden oder kein Tuner definiert."
 
 msgid "Can't open frontend dev or Frontend Type unknown!"
 msgstr "Frontend kann nicht geöffnet werden oder unbekannter Typ"
@@ -435,7 +435,7 @@ msgid "copy service"
 msgstr "zu Favoriten kopieren"
 
 msgid "CPU"
-msgstr "Prozessor"
+msgstr "CPU"
 
 msgid "CPU info"
 msgstr "CPU Information"
@@ -501,7 +501,7 @@ msgid "daily"
 msgstr "täglich"
 
 msgid "Delete EPG after read"
-msgstr "Lösche EPG nach dem einlesen"
+msgstr "Lösche EPG nach dem Einlesen"
 
 msgid "details"
 msgstr "details"
@@ -628,28 +628,28 @@ msgid "Error file not supported"
 msgstr "Fehler, Datei wird nicht unterstützt!"
 
 msgid "Error: create timer thread !!"
-msgstr "Fehler, Aufnametimer kann nicht erstellt werden!"
+msgstr "Fehler: Aufnahmetimer kann nicht erstellt werden!"
 
 msgid "Error: open rc device !!"
-msgstr "Fehler, Fernbedienungs device kann nicht geöffnet werden!"
+msgstr "Fehler: Fernbedienungs Gerät kann nicht geöffnet werden!"
 
 msgid "Error: open rcsim device !!"
-msgstr "Fehler, Fernbedienungs simdevice kann nicht geöffnet werden!"
+msgstr "Fehler: Fernbedienungs simdevice kann nicht geöffnet werden!"
 
 msgid "Error: no frontend device found !!"
-msgstr "Fehler, Frontend device kann nicht geöffnet werden!"
+msgstr "Fehler: Frontend kann nicht geöffnet werden!"
 
 msgid "Error: no demux device found !!"
-msgstr "Fehler, Demux device kann nicht geöffnet werden!"
+msgstr "Fehler: Demux Gerät kann nicht geöffnet werden!"
 
 msgid "Error: no video device found !!"
-msgstr "Fehler, Video device kann nicht geöffnet werden!"
+msgstr "Fehler: Video Gerät kann nicht geöffnet werden!"
 
 msgid "Error: no audio device found !!"
-msgstr "Fehler, Audio device kann nicht geöffnet werden!"
+msgstr "Fehler: Audio Gerät kann nicht geöffnet werden!"
 
 msgid "Error: skin not found !!"
-msgstr "Fehler, Skin kann nicht geladen werden!"
+msgstr "Fehler: Skin kann nicht geladen werden!"
 
 msgid "errorboot"
 msgstr "Errorboot"
@@ -2946,7 +2946,7 @@ msgid "--actors--"
 msgstr "--Darsteller--"
 
 msgid "Actors:"
-msgstr "Dartsteller:"
+msgstr "Darsteller:"
 
 msgid "Picdenom Mode"
 msgstr "Softwarebilddecoder"
@@ -3856,7 +3856,7 @@ msgid "Start Wlan ?"
 msgstr "Wollen Sie WLAN jetzt starten?"
 
 msgid "View Sections"
-msgstr "Ansicht Menus"
+msgstr "Ansicht Menüs"
 
 msgid "View Cover"
 msgstr "Ansicht Cover (streams)"
@@ -3958,7 +3958,7 @@ msgid "MediaDB entry for this file not found."
 msgstr "MediaDB Eintrag dieser Datei konnte nicht gefunden werden."
 
 msgid "Tunerconfig is not allowed if record\nor stream is running !"
-msgstr "Tunerconfig während einer Aufnahme/Streaming ist nicht erlaubt"
+msgstr "Tuner Konfiguration während einer Aufnahme/Streaming ist nicht erlaubt"
 
 msgid "Can't change hostname !"
 msgstr "Fehler, Hostname kann nicht geändert werden!"
