@@ -62,6 +62,8 @@ int filemanagercreatefolder(int aktfilelist, struct skin* filelist1, struct skin
 	char* search = textinputhist(_("Create Folder"), " ", "searchhist");
 	if(search != NULL)
 	{
+		strstrip(search);
+		
 		if(aktfilelist == 0)
 			tmpstr = createpath(filelistpath1->text, search);
 		else
