@@ -2305,6 +2305,7 @@ start:
 	delownerrc(scan);
 	clearscreen(scan);
 	resetsatscan();
+	freechannelhistory();
 
 	if(status.lastservice->channel == NULL)
 	{
