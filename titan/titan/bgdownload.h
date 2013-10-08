@@ -86,13 +86,11 @@ void screenbgdownload(int flag)
 				tmpstr = ostrcat(tmpstr, bgdownload[i]->filename, 1, 0);
 				changetext(tmp, tmpstr);
 				free(tmpstr); tmpstr = NULL;
-				tmp->progresssize = bgdownload[i]->proz;
 				tmp->handle = (void*)(i + 1);
 			}
 			else
 			{
 				changetext(tmp, _("unknown"));
-				tmp->progresssize = 0;
 				tmp->handle = (void*)(i + 1);
 			}
 			
@@ -107,7 +105,8 @@ void screenbgdownload(int flag)
 				tmp1->height = progress->height;
 				tmp1->bordersize = progress->bordersize;
 				tmp1->bordercol = progress->bordercol;
-				tmp1->prozwidth = 0;		
+				tmp1->prozwidth = 0;
+				tmp1->progresssize = bgdownload[i]->proz;		
 				tmp1->handle = (void*)(i + 1);
 			}
 		}
