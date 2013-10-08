@@ -4,7 +4,7 @@
 .label {font-family:verdana; font-size: 11pt; color: #ffffff; text-decoration: none}
 .label1 {font-family:verdana; font-size: 12pt; color: #ffffff; text-decoration: none}
 .smalllabel1 {font-family:verdana; font-size: 10pt; color: #ffffff; text-decoration: none}
-.link {vertical-align: middle; font-family:verdana; font-size: 12pt; color: #ffffff; text-decoration: none}
+.link {overflow: hidden; vertical-align: middle; font-family:verdana; font-size: 12pt; color: #ffffff; text-decoration: none}
 .link:hover {background-color: #00a4c8}
 .smalllink {vertical-align: middle; font-family:verdana; font-size: 8pt; color: #ffffff; text-decoration: none}
 .smalllink:hover {background-color: #00a4c8}
@@ -34,7 +34,7 @@
 .gepgchannel1 {text-align: left; color: #ffffff; white-space: nowrap; border: 1px solid #303030; height: 27px; width: 150px; max-height: 27px; max-width: 150px; min-width: 150px; overflow: hidden; background-color: #454545}
 .gepgchannel2 {text-align: left; color: #ffffff; white-space: nowrap; border: 1px solid #303030; height: 27px; width: 150px; max-height: 27px; max-width: 150px; min-width: 150px; overflow: hidden; background-color: #505050}
 .gepgchannelcell {border: 1px solid #303030; height: 27px; width: 100px; max-height: 27px; max-width: 100px; min-width: 100px; overflow: hidden}
-.gepgcell {white-space: nowrap; font-size: 10px; color: #ffffff; height: 27px; max-height: 27px; overflow: hidden}
+.gepgcell {white-space: normal; font-size: 10px; color: #ffffff; height: 27px; max-height: 27px; overflow: hidden}
 .gepgcellborder {border-left: 2px solid #303030; height: 27px; max-height: 27px; color: #ffffff;}
 .gepgcellblank {height: 27px; width: 100px; max-height: 27px; max-width: 100px; overflow: hidden; background-color: #303030}
 .tableBoxOuter {width: 100%; height: 100%}
