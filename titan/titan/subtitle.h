@@ -159,7 +159,6 @@ void subdraw(unsigned long long subpts, struct subpage* page)
 	unsigned char* scalebuf = NULL;
 
 	if(page == NULL) return;
-	if(checkfbregion(page) == 1) return;
 
 	//wait for subtitle to display
 #ifndef SIMULATE
@@ -183,6 +182,8 @@ void subdraw(unsigned long long subpts, struct subpage* page)
 	debug(300, "pts = %lld, subpts = %lld", pts, subpts);
 
 	subclear(0);
+	
+	if(checkfbregion(page) == 1) return;
 
 	pageregnode = page->pageregions;
 	while(pageregnode != NULL)
