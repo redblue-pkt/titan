@@ -79,6 +79,12 @@ void subclear(int ontimeout)
 		pageregnode = subnode->pageregions;
 		while(pageregnode != NULL)
 		{
+			if(pageregnode->drawed == 0)
+			{
+				pageregnode = pageregnode->next;
+				continue;			
+			}
+			
 			struct subreg *regnode = subnode->regions;
 			while(regnode != NULL)
 			{
@@ -205,6 +211,7 @@ void subdraw(unsigned long long subpts, struct subpage* page)
 
 			pageregnode->scaleposx = posx;
 			pageregnode->scaleposy = posy;
+			pageregnode->drawed = 1;
 
 			//scale
 			regnode->scalewidth = regnode->width * skinfb->width / subdisplaywidth;
