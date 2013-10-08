@@ -1834,6 +1834,7 @@ int subtitlestartlast()
 			{
 				if(subtitlestart(node) == 0)
 				{
+					subtitlepause(1);
 					status.subthreadpid = node->pid;
 					status.subthreadid2 = node->id2;
 					ret = 0;
