@@ -1560,7 +1560,10 @@ int subtitlestop(int flag)
 	status.subthread = 0;
 	pthread_attr_destroy(&status.subthreadattr);
 	if(flag == 0)
+	{
 		status.subthreadpid = 0;
+		status.subthreadid2 = 0;
+	}
 
 	return 0;
 }
@@ -1610,6 +1613,7 @@ void screensubtitle()
 
 				if(node->pid == status.subthreadpid)
 				{
+					if(node->subtype == 2 || (node->subtype == 1 && node->id2 == status.subthreadid2))
 					changeinput(tmp, _("running"));
 					treffer = 1;
 				}
@@ -1649,12 +1653,15 @@ void screensubtitle()
 				
 				if(checksubtitle(status.aktservice->channel, (struct subtitle*)listbox->select->handle) != NULL)
 				{
-					if(((struct subtitle*)listbox->select->handle)->pid != status.subthreadpid)
+					if(((struct subtitle*)listbox->select->handle)->pid != status.subthreadpid || ((struct subtitle*)listbox->select->handle)->id2 != status.subthreadid2)
 					{
 						clearscreen(subtitle);
 						drawscreen(skin, 0, 0);
 						if(subtitlestart((struct subtitle*)listbox->select->handle) == 0)
+						{
 							status.subthreadpid = ((struct subtitle*)listbox->select->handle)->pid;
+							status.subthreadid2 = ((struct subtitle*)listbox->select->handle)->id2; 
+						}
 
 						if(status.autosubtitle == 1 && status.aktservice->channel != NULL)
 						{
@@ -1666,19 +1673,27 @@ void screensubtitle()
 								tmpstr = ostrcat(tmpstr, oitoa(status.aktservice->channel->serviceid), 1, 1);
 								tmpstr = ostrcat(tmpstr, "#", 1, 0);
 								tmpstr = ostrcat(tmpstr, oitoa(((struct subtitle*)listbox->select->handle)->pid), 1, 1);
+								tmpstr = ostrcat(tmpstr, "#", 1, 0);
+								tmpstr = ostrcat(tmpstr, oitoa(((struct subtitle*)listbox->select->handle)->id2), 1, 1);
 								addlastsubtitle(tmpstr, 1, NULL);
 								free(tmpstr); tmpstr = NULL;
 							}
 							else
-								changelastsubtitle(lsnode, ((struct subtitle*)listbox->select->handle)->pid);
+								changelastsubtitle(lsnode, ((struct subtitle*)listbox->select->handle)->pid, ((struct subtitle*)listbox->select->handle)->id2);
 						}
 
 					}
 					else
+					{
 						status.subthreadpid = 0;
+						status.subthreadid2 = 0;
+					}
 				}
 				else
+				{
 					status.subthreadpid = 0;
+					status.subthreadid2 = 0;
+				}
 				m_unlock(&status.subtitlemutex, 8);
 			}
 			break;
@@ -1710,6 +1725,7 @@ struct subtitle* addsubtitle(struct channel* chnode, int subtype, char* langdesc
 
 	memset(newnode, 0, sizeof(struct subtitle));
 
+  newnode->subtype = subtype;
 	newnode->pid = pid;
 	newnode->type = type;
 	newnode->id1 = id1;
@@ -1809,7 +1825,7 @@ int subtitlestartlast()
 		{
 			while(node != NULL)
 			{
-				if(node->pid == lsnode->subtitlepid)
+				if(node->pid == lsnode->subtitlepid && node->id2 == lsnode->subtitleid2)
 					break;
 				node = node->next;
 			}
@@ -1819,6 +1835,7 @@ int subtitlestartlast()
 				if(subtitlestart(node) == 0)
 				{
 					status.subthreadpid = node->pid;
+					status.subthreadid2 = node->id2;
 					ret = 0;
 				}
 			}
@@ -1828,13 +1845,14 @@ int subtitlestartlast()
 	return ret;
 }
 
-void changelastsubtitle(struct lastsubtitle* lsnode, int pid)
+void changelastsubtitle(struct lastsubtitle* lsnode, int pid, int id2)
 {
 	if(lsnode == NULL) return;
 
-	if(lsnode->subtitlepid != pid)
+	if(lsnode->subtitlepid != pid || lsnode->subtitleid2 != id2)
 	{
 		lsnode->subtitlepid = pid;
+		lsnode->subtitleid2 = id2;
 		status.writelastsubtitle = 1;
 	}
 }
@@ -1867,8 +1885,8 @@ struct lastsubtitle* addlastsubtitle(char* line, int count, struct lastsubtitle*
 		return NULL;
 	}
 
-	ret = sscanf(line, "%llu#%d#%"SCNu16"", &newnode->transponderid, &newnode->serviceid, &newnode->subtitlepid);
-	if(ret != 3)
+	ret = sscanf(line, "%llu#%d#%"SCNu16"#%"SCNu16"", &newnode->transponderid, &newnode->serviceid, &newnode->subtitlepid, &newnode->subtitleid2);
+	if(ret != 4)
 	{
 		if(count > 0)
 		{
@@ -2005,7 +2023,7 @@ int writelastsubtitle(const char *filename)
 
 	while(node != NULL)
 	{
-		ret = fprintf(fd, "%llu#%d#%d\n", node->transponderid, node->serviceid, node->subtitlepid);
+		ret = fprintf(fd, "%llu#%d#%d#%d\n", node->transponderid, node->serviceid, node->subtitlepid, node->subtitleid2);
 		if(ret < 0)
 		{
 			perr("writting file %s", filename);
