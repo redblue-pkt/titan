@@ -94,7 +94,7 @@ void freetithekcontent(struct tithek* node)
 
 int addtithekcontent(struct tithek* node, char *line, int len, int count, int pay)
 {
-	int ret = 0, i = 0, skip = 0, hid = 0;
+	int ret = 0, i = 0, skip = 0, hid = 0, sos = 0;
 	char* tmpstr = NULL, *flag = NULL, *cmd = NULL, *tmp = NULL;
 	if(node == NULL) return 1;
 
@@ -144,6 +144,7 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 
 	if(flag != NULL) node->flag = atoi(flag);
 	
+	sos = getconfigint("sos", NULL);
 	hid = getconfigint("tithek_hid_xxx", NULL);
 	if(node->flag == 1000 && hid == 1)
 		skip = 1;
@@ -161,7 +162,7 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 		skip = 1;
 	else if(node->flag == 35 && pay == 0)
 		skip = 1;
-	else if(titheksolarmovie == 1 && node->flag == 9996)
+	else if(titheksolarmovie == 1 && node->flag == 9996 && sos == 0)
 	{
 		cmd = ostrcat(cmd, "ww", 1, 0);
 		cmd = ostrcat(cmd, "w.sola", 1, 0);
@@ -181,7 +182,7 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 
 		titheksolarmovie = 0;
 	}
-	else if(tithekmovie4k == 1 && node->flag == 9997)
+	else if(tithekmovie4k == 1 && node->flag == 9997 && sos == 0)
 	{
 		cmd = ostrcat(cmd, "ww", 1, 0);
 		cmd = ostrcat(cmd, "w.mov", 1, 0);
@@ -201,7 +202,7 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 
 		tithekmovie4k = 0;
 	}		
-	else if(tithekmlehd == 1 && node->flag == 9998)
+	else if(tithekmlehd == 1 && node->flag == 9998 && sos == 0)
 	{
 		cmd = ostrcat(cmd, "ww", 1, 0);
 		cmd = ostrcat(cmd, "w.mle", 1, 0);
@@ -221,7 +222,7 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 
 		tithekmlehd = 0;
 	}
-	else if(tithekkinox == 1 && node->flag == 9999)
+	else if(tithekkinox == 1 && node->flag == 9999 && sos == 0)
 	{
 		cmd = ostrcat(cmd, "kin", 1, 0);
 		cmd = ostrcat(cmd, "ox", 1, 0);
