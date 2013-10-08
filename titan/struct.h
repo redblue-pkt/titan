@@ -637,6 +637,7 @@ struct subpagereg
 	int reghorizontaladdress;
 	int regverticaladdress;
 	int scaleposx, scaleposy;
+	int drawed;
 	struct subpagereg *next;
 };
 
