@@ -190,6 +190,7 @@ void playerresetts();
 void delchannelhistory(struct channel* chnode);
 void addchannelhistory(struct channel* chnode, char* channellist);
 void screenchannelhistory();
+void freechannelhistory();
 
 //channellist.h
 int screenchannellist(struct channel** retchannel, char** retchannellist, int flag);
