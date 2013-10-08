@@ -1331,7 +1331,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 			}
 			else if(ostrcmp(keyconf, "Download Full File") == 0)
 			{
-				char* search = textinput("Search", filename);
+				char* search = textinput("Filename", filename);
 				if(search != NULL)
 				{	
 					char* tmpstr2 = tithekdownload(tmpstr1, search, NULL, 0, 1);
@@ -1350,7 +1350,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 			}
 			else if(ostrcmp(keyconf, "Download Full File (background)") == 0)
 			{
-				char* search = textinput("Search", filename);
+				char* search = textinput("Filename", filename);
 				if(search != NULL)
 					backgrounddl(tmpstr1, search);
 				free(search), search = NULL;
