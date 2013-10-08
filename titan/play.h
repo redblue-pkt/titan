@@ -273,6 +273,7 @@ void screenplaytracklist(int mode, int playertype, int flag)
 		rcret = waitrc(track, 0, 0);
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
+		if(rcret == getrcconfigint("rcyellow", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
 			if(listbox->select != NULL)
@@ -295,6 +296,9 @@ void screenplaytracklist(int mode, int playertype, int flag)
 	delownerrc(track);
 	clearscreen(track);
 	blitfb(0);
+	
+	if(rcret == getrcconfigint("rcyellow", NULL))
+		screenplaytracklist(2, playertype, flag);
 }
 
 void playrcyellow(char* file, char* showname, int playinfobarstatus, int playertype, int flag)
