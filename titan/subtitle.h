@@ -79,12 +79,6 @@ void subclear(int ontimeout)
 		pageregnode = subnode->pageregions;
 		while(pageregnode != NULL)
 		{
-			if(pageregnode->drawed == 0)
-			{
-				pageregnode = pageregnode->next;
-				continue;			
-			}
-			
 			struct subreg *regnode = subnode->regions;
 			while(regnode != NULL)
 			{
@@ -106,54 +100,6 @@ void subclear(int ontimeout)
 		if(stat == 1) blitfb(0);
 		subfree(0);
 	}
-}
-
-int checkfbregion(struct subpage* page)
-{
-	struct subpagereg* pageregnode = NULL;
-	int y, x;
-	
-	if(status.autosubtitle == 0) return 0;
-	if(page == NULL) return 0;
-	
-	pageregnode = page->pageregions;
-	while(pageregnode != NULL)
-	{
-		struct subreg *regnode = page->regions;
-		while(regnode != NULL)
-		{
-			if(regnode->regid == pageregnode->regid) break;
-			regnode = regnode->next;
-		}
-		
-		if(regnode != NULL && regnode->buf != NULL)
-		{
-			int posx = pageregnode->reghorizontaladdress * skinfb->width / subdisplaywidth;
-			int posy = pageregnode->regverticaladdress * skinfb->height / subdisplayheight;
-			
-			//check if drawing place is empty
-			for(y = 0; y < regnode->scaleheight; y++)
-			{
-				if(y == 0 || y == regnode->scaleheight - 1)
-				{
-					for(x = 0; x < regnode->scalewidth; x++)
-					{
-						if(getpixel(posx + x, posy + y) != 0)
-							return 1;
-					}
-				}
-				else
-				{
-					if(getpixel(posx, posy + y) != 0 || getpixel(posx + regnode->scalewidth - 1, posy + y) != 0)
-						return 1;
-				}
-			}	
-		}
-		
-		pageregnode = pageregnode->next;
-	}
-	
-	return 0;
 }
 
 void subdraw(unsigned long long subpts, struct subpage* page)
@@ -188,8 +134,6 @@ void subdraw(unsigned long long subpts, struct subpage* page)
 	debug(300, "pts = %lld, subpts = %lld", pts, subpts);
 
 	subclear(0);
-	
-	if(checkfbregion(page) == 1) return;
 
 	pageregnode = page->pageregions;
 	while(pageregnode != NULL)
@@ -211,7 +155,6 @@ void subdraw(unsigned long long subpts, struct subpage* page)
 
 			pageregnode->scaleposx = posx;
 			pageregnode->scaleposy = posy;
-			pageregnode->drawed = 1;
 
 			//scale
 			regnode->scalewidth = regnode->width * skinfb->width / subdisplaywidth;
