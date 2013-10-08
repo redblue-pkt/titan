@@ -1487,7 +1487,9 @@ void* subthreadfunc(void *param)
 	pthread_exit(NULL);
 }
 
-int subtitlestart(struct subtitle* node)
+//flag 0: start normal
+//flag 1: start in pause
+int subtitlestart(struct subtitle* node, int flag)
 {
 	int ret;
 
@@ -1497,7 +1499,11 @@ int subtitlestart(struct subtitle* node)
 		return 1;
 	}
 
-	status.subthreadaktion = START;
+	if(flag == 0)
+		status.subthreadaktion = START;
+	else
+		status.subthreadaktion = PAUSE;
+	
 	pthread_attr_destroy(&status.subthreadattr);
 	pthread_attr_init(&status.subthreadattr);
 	pthread_attr_setstacksize(&status.subthreadattr, 50000);
@@ -1657,7 +1663,7 @@ void screensubtitle()
 					{
 						clearscreen(subtitle);
 						drawscreen(skin, 0, 0);
-						if(subtitlestart((struct subtitle*)listbox->select->handle) == 0)
+						if(subtitlestart((struct subtitle*)listbox->select->handle, 0) == 0)
 						{
 							status.subthreadpid = ((struct subtitle*)listbox->select->handle)->pid;
 							status.subthreadid2 = ((struct subtitle*)listbox->select->handle)->id2; 
@@ -1832,9 +1838,8 @@ int subtitlestartlast()
 		
 			if(node != NULL)
 			{
-				if(subtitlestart(node) == 0)
+				if(subtitlestart(node, 1) == 0)
 				{
-					status.subthreadaktion = PAUSE;
 					status.subthreadpid = node->pid;
 					status.subthreadid2 = node->id2;
 					ret = 0;
