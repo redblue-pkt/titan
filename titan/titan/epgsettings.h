@@ -121,6 +121,7 @@ void screenepgsettings()
 	struct skin* mhw2epg = getscreennode(epgsettings, "mhw2epg");
 	struct skin* opentv = getscreennode(epgsettings, "opentv");
 	struct skin* epg_afterevent = getscreennode(epgsettings, "epg_afterevent");
+	struct skin* load = getscreen("loading");
 	struct skin* tmp = NULL;
 
 	changeinput(epgpath, getconfig("epg_path", NULL));
@@ -277,7 +278,9 @@ void screenepgsettings()
 		}
 		if(rcret == getrcconfigint("rcred", NULL))
 		{
+			drawscreen(load, 0, 0);
 			resetepg(0);
+			clearscreen(load);
 			textbox(_("Message"), _("EPG resetet and now clear."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 			drawscreen(epgsettings, 0, 0);
 		}
