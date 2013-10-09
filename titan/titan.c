@@ -439,7 +439,7 @@ void oshutdown(int exitcode, int flag)
 		freeallplaylist();
 		freemainplaylist();
 		freeallbouquet();
-		freemainbouquet();
+		freemainbouquet(0);
 		freechannel(0);
 		freetransponder();
 		freeprovider();
