@@ -1658,7 +1658,7 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 		}
 		*/
 		
-		rcret = textbox(_("Message"), _("Bouquet\n\nRenew Bouquet = Red\nDelete all Bouquet = Green\nMake Provider to Bouquet = Yellow"), _("EXIT"), getrcconfigint("rcexit", NULL), _("RENEW"), getrcconfigint("rcred", NULL), _("DELETE"), getrcconfigint("rcgreen", NULL), _("NEW"), getrcconfigint("rcyellow", NULL), 600, 400, 0, 0);
+		rcret = textbox(_("Message"), _("Bouquet\n\nRenew Bouquet = Red\nDelete all Bouquet = Green\nProvider to Bouquet = Yellow"), _("EXIT"), getrcconfigint("rcexit", NULL), _("RENEW"), getrcconfigint("rcred", NULL), _("DELETE"), getrcconfigint("rcgreen", NULL), _("NEW"), getrcconfigint("rcyellow", NULL), 600, 400, 0, 0);
 		if(rcret == 2)
 			delunusedbouquetchannels(0);
 		else if(rcret == 3)
