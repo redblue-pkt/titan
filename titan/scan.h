@@ -1947,6 +1947,11 @@ void screenscanconfig(int flag)
 
 	if(status.aktservice->channel != NULL)
 		tpnode = status.aktservice->channel->transponder;
+		
+	//clear akt and last channel, so all channel can delete
+	freechannelhistory();
+	status.lastservice->channel = NULL;
+	status.aktservice->channel = NULL;
 
 start:
 
@@ -2305,7 +2310,6 @@ start:
 	delownerrc(scan);
 	clearscreen(scan);
 	resetsatscan();
-	freechannelhistory();
 
 	if(status.lastservice->channel == NULL)
 	{
