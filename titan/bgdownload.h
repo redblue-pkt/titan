@@ -106,7 +106,10 @@ void screenbgdownload(int flag)
 				tmp1->bordersize = progress->bordersize;
 				tmp1->bordercol = progress->bordercol;
 				tmp1->prozwidth = 0;
-				tmp1->progresssize = bgdownload[i]->proz;		
+				if(bgdownload[i] != NULL)
+					tmp1->progresssize = bgdownload[i]->proz;
+				else
+					tmp1->progresssize = 0;		
 				tmp1->handle = (void*)(i + 1);
 			}
 		}
