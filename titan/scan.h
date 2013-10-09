@@ -1636,10 +1636,53 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 	if(scantype == 0) deltransponderbyid(99);
 	if(clear == 1)
 	{
+		//TODO: Auswahl Bouquet
+		// EXIT = keine änderung vornehmen
+		// delunusedbouquetchannels(1);
+		
+		// erneuern = unbenutzte einträge löschen
+		// delunusedbouquetchannels(0);
+		
+		// löschen = da legt der glaube keine an und löscht sie
+		// freemainbouquet();
+		
+		// neuerstellen = da legt der einfach die provider 1:1 als bouget an
+		/*
+		freemainbouquet();
+		struct provider *pnode = provider;
+		
+		while(pnode != NULL)
+		{
+			provider2bouquet(pnode->providerid);
+			pnode = pnode->next;
+		}
+		*/
+		
+		rcret = textbox(_("Message"), _("Bouquet\n\nRenew Bouquet = Red\nDelete all Bouquet = Green\nMake Provider to Bouquet = Yellow"), _("EXIT"), getrcconfigint("rcexit", NULL), _("RENEW"), getrcconfigint("rcred", NULL), _("DELETE"), getrcconfigint("rcgreen", NULL), _("NEW"), getrcconfigint("rcyellow", NULL), 600, 400, 0, 0);
+		if(rcret == 2)
+			delunusedbouquetchannels(0);
+		else if(rcret == 3)
+			freemainbouquet();
+		else if(rcret == 4)
+		{
+			freemainbouquet();
+			struct provider *pnode = provider;
+			
+			while(pnode != NULL)
+			{
+				provider2bouquet(pnode->providerid);
+				pnode = pnode->next;
+			}
+		}
+		else
+			delunusedbouquetchannels(1);
+		
+		/*
 		if(textbox(_("Message"), _("Do you want to delete all unused Bouquetentrys?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 			delunusedbouquetchannels(0);
 		else
 			delunusedbouquetchannels(1);
+		*/
 	}
 	delmarkedscreennodes(scan, 1);
 	delownerrc(scan);
