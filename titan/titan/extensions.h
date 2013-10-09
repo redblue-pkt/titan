@@ -267,8 +267,6 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 			tmpinfo = ostrcat(tmpinfo, _("Removeing"), 1, 0);
 			tmpinfo = ostrcat(tmpinfo, " ", 1, 0);
 			tmpinfo = ostrcat(tmpinfo, mbox->name, 1, 0);
-			tmpinfo = ostrcat(tmpinfo, " ", 1, 0);
-			tmpinfo = ostrcat(tmpinfo, _("started"), 1, 0);
 			tmpinfo = ostrcat(tmpinfo, " ?", 1, 0);
 
 			if(textbox(_("Tpk Remove Info"), _(tmpinfo), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
