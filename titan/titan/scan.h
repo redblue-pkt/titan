@@ -2356,10 +2356,13 @@ start:
 
 	if(status.lastservice->channel == NULL)
 	{
-		if(status.servicetype == 0)
-			servicecheckret(servicestart(getchannel(getconfigint("serviceid", NULL), getconfigllu("transponderid", NULL)), getconfig("channellist", NULL), NULL, 0), 0);
-		else
-			servicecheckret(servicestart(getchannel(getconfigint("rserviceid", NULL), getconfigllu("rtransponderid", NULL)), getconfig("rchannellist", NULL),  NULL, 0), 0);
+		if(getchannel(getconfigint("serviceid", NULL), getconfigllu("transponderid", NULL)) != NULL)
+		{
+			if(status.servicetype == 0)
+				servicecheckret(servicestart(getchannel(getconfigint("serviceid", NULL), getconfigllu("transponderid", NULL)), getconfig("channellist", NULL), NULL, 0), 0);
+			else
+				servicecheckret(servicestart(getchannel(getconfigint("rserviceid", NULL), getconfigllu("rtransponderid", NULL)), getconfig("rchannellist", NULL),  NULL, 0), 0);
+		}
 	}
 	else
 	{
