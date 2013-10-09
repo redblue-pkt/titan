@@ -4149,3 +4149,12 @@ msgstr "Krieg"
 msgid "Music"
 msgstr "Musik"
 
+msgid "Bouquet\n\nRenew Bouquet = Red\nDelete all Bouquet = Green\nProvider to Bouquet = Yellow"
+msgstr "Favoriten\n\nFavoriten erneuern = Rot\nAlle Favoriten löschen = Grün\nProvider als Favoriten anlegen = Gelb"
+
+msgid "RENEW"
+msgstr "Erneuern"
+
+msgid "DELETE"
+msgstr "Löschen"		
+
