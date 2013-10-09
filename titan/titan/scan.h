@@ -1662,10 +1662,10 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 		if(rcret == 2)
 			delunusedbouquetchannels(0);
 		else if(rcret == 3)
-			freemainbouquet();
+			freemainbouquet(1);
 		else if(rcret == 4)
 		{
-			freemainbouquet();
+			freemainbouquet(1);
 			struct provider *pnode = provider;
 			
 			while(pnode != NULL)
