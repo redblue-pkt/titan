@@ -8,10 +8,10 @@
 <node name="menutitle" text="Reader Selection" fontcol="black" fontsize="28" posx="110" posy="285" width="1000" height="30" hspace="10" valign="middle" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
 <node name="listbox" type="listbox" scrollbar="auto" bordercol="titlebgcol" bordersize="1" fontsize="28" posx="center" posy="325" width="1000" height="275" hspace="5" vspace="5">
 <node name="buttonbar" posx="0" posy="610" width="1220" height="50" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
-<node name="b5" picmem="skin/key_ok_70x40.png"   posx="5"  posy="615" width="70" height="40">
-<node name="b6" picmem="skin/key_exit_70x40.png" posx="75" posy="615" width="70" height="40">
-<node name="b1" text="EDIT" picmem="skin/key_red_30x30.png"     textposx="40" valign="middle" fontcol="black" fontsize="25" posx="155" posy="620" width="200" height="30">
-<node name="b2" text="Dvbapi" picmem="skin/key_green_30x30.png"     textposx="40" valign="middle" fontcol="black" fontsize="25" posx="365" posy="620" width="250" height="30">
+	<node name="b5" picmem="skin/key_ok_70x40.png"   posx="5"  posy="615" width="70" height="40">
+	<node name="b6" picmem="skin/key_exit_70x40.png" posx="75" posy="615" width="70" height="40">
+	<node name="b1" text="EDIT" picmem="skin/key_red_30x30.png"      textposx="40" valign="middle" fontcol="black" fontsize="25" posx="155" posy="620" width="200" height="30">
+	<node name="b2" text="Dvbapi" picmem="skin/key_green_30x30.png"  textposx="40" valign="middle" fontcol="black" fontsize="25" posx="365" posy="620" width="250" height="30">
 </screen>
 
 #readerconfig fullscreen, max 1220x660, Xspace=30 !
@@ -23,9 +23,9 @@
 <node name="details" bordercol="titlebgcol" bordersize="1" borderradius="8" type="textbox" wrap="yes" fontsize="28" posx="0" posy="60" width="840" height="145" hspace="10" vspace="10" text="Here you can set your language. Use to navigate the control cross and the extra buttons displayed with your remote control to select.">
 <node name="menutitle" text="Reader Configuration" fontcol="black" fontsize="28" posx="110" posy="285" width="1000" height="30" hspace="10" valign="middle" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
 <node name="listbox" type="listbox" scrollbar="auto" bordercol="titlebgcol" bordersize="1" fontsize="28" posx="center" posy="325" width="1000" height="275" hspace="5" vspace="5">
-<node name=enable type=choicebox parent=listbox valign=middle posx=0 text="Enable" bordercol=bordercol width=100%>
-<node name=device type=choicebox parent=listbox valign=middle posx=0 text="Device" bordercol=bordercol width=100%>
+	<node parent="listbox" name="enable" type="choicebox" text="Enable" valign="middle" bordercol="bordercol" width="100%">
+	<node parent="listbox" name="device" type="choicebox" text="Device" valign="middle" bordercol="bordercol" width="100%">
 <node name="buttonbar" posx="0" posy="610" width="1220" height="50" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
-<node name="b5" picmem="skin/key_ok_70x40.png"   posx="5"  posy="615" width="70" height="40">
-<node name="b6" picmem="skin/key_exit_70x40.png" posx="75" posy="615" width="70" height="40">
+	<node name="b5" picmem="skin/key_ok_70x40.png"   posx="5"  posy="615" width="70" height="40">
+	<node name="b6" picmem="skin/key_exit_70x40.png" posx="75" posy="615" width="70" height="40">
 </screen>
