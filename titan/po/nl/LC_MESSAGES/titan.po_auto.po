@@ -38,7 +38,8 @@
 #: play.h:548 play.h:555 play.h:570 play.h:537 play.h:544 play.h:559
 #: epgsettings.h:132 epgsettings.h:185 epgsettings.h:194 epgsettings.h:198
 #: epgsettings.h:203 epgsettings.h:208 play.h:541 play.h:563 scan.h:1798
-#: scan.h:2268 scan.h:2272 scan.h:2276 scan.h:2280 scan.h:2284
+#: scan.h:2268 scan.h:2272 scan.h:2276 scan.h:2280 scan.h:2284 scan.h:1800
+#: scan.h:2270 scan.h:2274 scan.h:2278 scan.h:2282 scan.h:2286
 msgid "no"
 msgstr ""
 
@@ -90,7 +91,8 @@ msgstr ""
 #: tithek_settings.h:42 tmc.h:532 tmc.h:536 play.h:546 play.h:553 play.h:568
 #: play.h:535 play.h:542 play.h:557 epgsettings.h:133 epgsettings.h:186
 #: epgsettings.h:195 play.h:539 play.h:561 scan.h:1799 scan.h:2269 scan.h:2273
-#: scan.h:2277 scan.h:2281 scan.h:2285
+#: scan.h:2277 scan.h:2281 scan.h:2285 scan.h:1801 scan.h:2271 scan.h:2275
+#: scan.h:2279 scan.h:2283 scan.h:2287
 msgid "yes"
 msgstr ""
 
@@ -337,7 +339,8 @@ msgstr ""
 #: filemanager.h:271 filemanager.h:281 filemanager.h:321 filemanager.h:345
 #: play.h:572 play.h:1179 play.h:1365 scan.h:1915 scan.h:2006 scan.h:2363
 #: tithek.h:611 tithek.h:1048 tithek.h:1091 tithek.h:1342 tithek.h:1364
-#: tithek.h:1369 tithek.h:2112 tithek.h:2174 tithek.h:2188
+#: tithek.h:1369 tithek.h:2112 tithek.h:2174 tithek.h:2188 scan.h:1917
+#: scan.h:2008 scan.h:2365
 msgid "Message"
 msgstr ""
 
@@ -413,6 +416,7 @@ msgstr ""
 #: play.h:1170 play.h:1180 play.h:1365 scan.h:1915 scan.h:2006 scan.h:2363
 #: tithek.h:611 tithek.h:1048 tithek.h:1091 tithek.h:1342 tithek.h:1364
 #: tithek.h:1369 tithek.h:1383 tithek.h:2112 tithek.h:2174 tithek.h:2188
+#: scan.h:1917 scan.h:2008 scan.h:2365
 msgid "OK"
 msgstr ""
 
@@ -490,6 +494,7 @@ msgstr ""
 #: play.h:1170 play.h:1180 play.h:1365 scan.h:1915 scan.h:2006 scan.h:2363
 #: tithek.h:611 tithek.h:1048 tithek.h:1091 tithek.h:1342 tithek.h:1364
 #: tithek.h:1369 tithek.h:1383 tithek.h:2112 tithek.h:2174 tithek.h:2188
+#: scan.h:1917 scan.h:2008 scan.h:2365
 msgid "EXIT"
 msgstr ""
 
@@ -680,7 +685,7 @@ msgid "Satellites"
 msgstr ""
 
 #: channellist.h:752 channellist.h:1329 channellist.h:1330 channellist.h:1654
-#: scan.h:2290
+#: scan.h:2290 scan.h:2292
 msgid "Provider"
 msgstr ""
 
@@ -2859,6 +2864,7 @@ msgstr ""
 
 #: plugins_filemanager_skin.xml.h:2 plugins_tmc_skin.xml.h:3
 #: skins_filemanager_skin.xml.h:2 skins_tmc_skin.xml.h:3 scan.h:2291
+#: scan.h:2293
 msgid "Delete"
 msgstr ""
 
@@ -4114,37 +4120,37 @@ msgstr ""
 msgid "Do you want to delete all unused Bouquetentrys?"
 msgstr ""
 
-#: scan.h:1850 scan.h:1915
+#: scan.h:1850 scan.h:1915 scan.h:1917
 msgid ""
 "Scan is not allowed if record\n"
 "or stream is running !"
 msgstr ""
 
-#: scan.h:1941 scan.h:2006
+#: scan.h:1941 scan.h:2006 scan.h:2008
 msgid "No Tuner configured"
 msgstr ""
 
-#: scan.h:1955 scan.h:1962 scan.h:2025 scan.h:2032
+#: scan.h:1955 scan.h:1962 scan.h:2025 scan.h:2032 scan.h:2027 scan.h:2034
 msgid "Single Transponder"
 msgstr ""
 
-#: scan.h:1956 scan.h:2026
+#: scan.h:1956 scan.h:2026 scan.h:2028
 msgid "Single Sat"
 msgstr ""
 
-#: scan.h:1957 scan.h:2027
+#: scan.h:1957 scan.h:2027 scan.h:2029
 msgid "Multi Sat"
 msgstr ""
 
-#: scan.h:1963 scan.h:2033
+#: scan.h:1963 scan.h:2033 scan.h:2035
 msgid "Single Provider"
 msgstr ""
 
-#: scan.h:1968 scan.h:2038
+#: scan.h:1968 scan.h:2038 scan.h:2040
 msgid "Auto Scan"
 msgstr ""
 
-#: scan.h:2286 scan.h:2363
+#: scan.h:2286 scan.h:2363 scan.h:2365
 msgid "Transponder changed"
 msgstr ""
 
@@ -5040,10 +5046,10 @@ msgstr ""
 msgid "Condition: "
 msgstr ""
 
-#: scan.h:2288
+#: scan.h:2288 scan.h:2290
 msgid "Renew"
 msgstr ""
 
-#: scan.h:2289
+#: scan.h:2289 scan.h:2291
 msgid "Unchanged"
 msgstr ""
