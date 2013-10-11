@@ -36,6 +36,9 @@
 #: tithek_settings.h:37 tithek_settings.h:41 tmc.h:531 tmc.h:535
 #: tunerconfig.h:184 tunerconfig.h:213 tunerconfig.h:244 tunerconfig.h:277
 #: play.h:548 play.h:555 play.h:570 play.h:537 play.h:544 play.h:559
+#: epgsettings.h:132 epgsettings.h:185 epgsettings.h:194 epgsettings.h:198
+#: epgsettings.h:203 epgsettings.h:208 play.h:541 play.h:563 scan.h:1798
+#: scan.h:2268 scan.h:2272 scan.h:2276 scan.h:2280 scan.h:2284
 msgid "no"
 msgstr ""
 
@@ -47,7 +50,7 @@ msgstr ""
 msgid "epg"
 msgstr ""
 
-#: adjust.h:67 epgsettings.h:135
+#: adjust.h:67 epgsettings.h:135 epgsettings.h:136
 msgid "Channel EPG"
 msgstr ""
 
@@ -85,7 +88,9 @@ msgstr ""
 #: scan.h:2215 screensaveradjust.h:20 timeshiftsettings.h:58
 #: timeshiftsettings.h:62 tithek_settings.h:34 tithek_settings.h:38
 #: tithek_settings.h:42 tmc.h:532 tmc.h:536 play.h:546 play.h:553 play.h:568
-#: play.h:535 play.h:542 play.h:557
+#: play.h:535 play.h:542 play.h:557 epgsettings.h:133 epgsettings.h:186
+#: epgsettings.h:195 play.h:539 play.h:561 scan.h:1799 scan.h:2269 scan.h:2273
+#: scan.h:2277 scan.h:2281 scan.h:2285
 msgid "yes"
 msgstr ""
 
@@ -155,6 +160,7 @@ msgid "Gui Restart"
 msgstr ""
 
 #: adjust.h:107 adjust.h:117 epgsettings.h:144 epgsettings.h:150 network.h:593
+#: epgsettings.h:145 epgsettings.h:151
 msgid "deaktiv"
 msgstr ""
 
@@ -204,7 +210,7 @@ msgstr ""
 msgid "auto"
 msgstr ""
 
-#: adjust.h:148 epgsettings.h:212 rectimer.h:1156
+#: adjust.h:148 epgsettings.h:212 rectimer.h:1156 epgsettings.h:213
 msgid "nothing"
 msgstr ""
 
@@ -325,6 +331,13 @@ msgstr ""
 #: unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:53 vidstream.h:57
 #: xvidstage.h:64 xvidstage.h:177 youtube.h:176 zdf.h:33 global.h:6149
 #: play.h:579 play.h:1186 play.h:1372 play.h:568 play.h:1175 play.h:1361
+#: bgdownload.h:176 epgsettings.h:258 epgsettings.h:284 extensions.h:289
+#: extensions.h:294 extensions.h:323 extensions.h:375 extensions.h:379
+#: extensions.h:412 filemanager.h:95 filemanager.h:100 filemanager.h:208
+#: filemanager.h:271 filemanager.h:281 filemanager.h:321 filemanager.h:345
+#: play.h:572 play.h:1179 play.h:1365 scan.h:1915 scan.h:2006 scan.h:2363
+#: tithek.h:611 tithek.h:1048 tithek.h:1091 tithek.h:1342 tithek.h:1364
+#: tithek.h:1369 tithek.h:2112 tithek.h:2174 tithek.h:2188
 msgid "Message"
 msgstr ""
 
@@ -391,7 +404,15 @@ msgstr ""
 #: videomode.h:53 vidstream.h:57 xvidstage.h:64 xvidstage.h:177 youtube.h:176
 #: zdf.h:33 global.h:6149 play.h:462 play.h:579 play.h:1171 play.h:1177
 #: play.h:1186 play.h:1187 play.h:1372 play.h:451 play.h:568 play.h:1160
-#: play.h:1166 play.h:1175 play.h:1176 play.h:1361
+#: play.h:1166 play.h:1175 play.h:1176 play.h:1361 bgdownload.h:176
+#: epgsettings.h:258 epgsettings.h:284 epgsettings.h:298 extensions.h:272
+#: extensions.h:280 extensions.h:287 extensions.h:323 extensions.h:400
+#: extensions.h:404 extensions.h:455 filemanager.h:95 filemanager.h:100
+#: filemanager.h:208 filemanager.h:271 filemanager.h:281 filemanager.h:311
+#: filemanager.h:321 filemanager.h:345 play.h:455 play.h:572 play.h:1164
+#: play.h:1170 play.h:1180 play.h:1365 scan.h:1915 scan.h:2006 scan.h:2363
+#: tithek.h:611 tithek.h:1048 tithek.h:1091 tithek.h:1342 tithek.h:1364
+#: tithek.h:1369 tithek.h:1383 tithek.h:2112 tithek.h:2174 tithek.h:2188
 msgid "OK"
 msgstr ""
 
@@ -460,17 +481,25 @@ msgstr ""
 #: videomode.h:53 vidstream.h:57 xvidstage.h:64 xvidstage.h:177 youtube.h:176
 #: zdf.h:33 global.h:6149 play.h:462 play.h:579 play.h:1171 play.h:1177
 #: play.h:1186 play.h:1187 play.h:1372 play.h:451 play.h:568 play.h:1160
-#: play.h:1166 play.h:1175 play.h:1176 play.h:1361
+#: play.h:1166 play.h:1175 play.h:1176 play.h:1361 bgdownload.h:176
+#: epgsettings.h:258 epgsettings.h:284 epgsettings.h:298 extensions.h:272
+#: extensions.h:280 extensions.h:287 extensions.h:323 extensions.h:400
+#: extensions.h:404 extensions.h:455 filemanager.h:95 filemanager.h:100
+#: filemanager.h:208 filemanager.h:271 filemanager.h:281 filemanager.h:311
+#: filemanager.h:321 filemanager.h:345 play.h:455 play.h:572 play.h:1164
+#: play.h:1170 play.h:1180 play.h:1365 scan.h:1915 scan.h:2006 scan.h:2363
+#: tithek.h:611 tithek.h:1048 tithek.h:1091 tithek.h:1342 tithek.h:1364
+#: tithek.h:1369 tithek.h:1383 tithek.h:2112 tithek.h:2174 tithek.h:2188
 msgid "EXIT"
 msgstr ""
 
 #: audiotrack.h:48 play.h:253 rectimer.h:1475 subtitle.h:1613 play.h:261
-#: play.h:250
+#: play.h:250 subtitle.h:1623
 msgid "running"
 msgstr ""
 
 #: audiotrack.h:116 play.h:232 subtitle.h:1719 tunerconfig.h:157
-#: tunerconfig.h:341 tunerconfig.h:381 play.h:243
+#: tunerconfig.h:341 tunerconfig.h:381 play.h:243 subtitle.h:1741
 msgid "undefined"
 msgstr ""
 
@@ -524,11 +553,12 @@ msgstr ""
 #: transponder.h:158 transponder.h:194 transponder.h:227 transponder.h:259
 #: transponder.h:295 transponder.h:330 transponder.h:348 transponder.h:364
 #: transponder.h:418 transponder.h:451 transponder.h:480 transponder.h:493
-#: transponder.h:504 transponder.h:574 youtube.h:128 zdf.h:91
+#: transponder.h:504 transponder.h:574 youtube.h:128 zdf.h:91 bgdownload.h:93
+#: bgdownload.h:154
 msgid "unknown"
 msgstr ""
 
-#: bgdownload.h:173
+#: bgdownload.h:173 bgdownload.h:176
 msgid "Really stop download ?"
 msgstr ""
 
@@ -650,6 +680,7 @@ msgid "Satellites"
 msgstr ""
 
 #: channellist.h:752 channellist.h:1329 channellist.h:1330 channellist.h:1654
+#: scan.h:2290
 msgid "Provider"
 msgstr ""
 
@@ -934,14 +965,14 @@ msgid "EJECT"
 msgstr ""
 
 #: dvdplay.h:29 play.h:1297 plugins_dlna_skin.xml.h:10
-#: skins_dlna_skin.xml.h:10 play.h:1305 play.h:1294
+#: skins_dlna_skin.xml.h:10 play.h:1305 play.h:1294 play.h:1298
 msgid "SELECT"
 msgstr ""
 
 #: dvdplay.h:62 mc_audioplayer.h:594 mc_audioplayer.h:697 mc_global.h:765
 #: mc_global.h:1010 mc_pictureplayer.h:95 mc_pictureplayer.h:232
 #: mc_pictureplayer.h:358 mc_pictureplayer.h:451 mc_videoplayer.h:733
-#: mc_videoplayer.h:869 play.h:1364 play.h:1372 play.h:1361
+#: mc_videoplayer.h:869 play.h:1364 play.h:1372 play.h:1361 play.h:1365
 msgid "Can't start playback !"
 msgstr ""
 
@@ -1018,60 +1049,62 @@ msgstr ""
 msgid "Music"
 msgstr ""
 
-#: epgsettings.h:136 epgsettings.h:177
+#: epgsettings.h:136 epgsettings.h:177 epgsettings.h:137 epgsettings.h:178
 msgid "Single EPG"
 msgstr ""
 
-#: epgsettings.h:137 epgsettings.h:178
+#: epgsettings.h:137 epgsettings.h:178 epgsettings.h:138 epgsettings.h:179
 msgid "Multi EPG"
 msgstr ""
 
-#: epgsettings.h:138
+#: epgsettings.h:138 epgsettings.h:139
 msgid "Graphic Multi EPG"
 msgstr ""
 
-#: epgsettings.h:145 tmc.h:389
+#: epgsettings.h:145 tmc.h:389 epgsettings.h:146
 msgid "scan"
 msgstr ""
 
-#: epgsettings.h:146
+#: epgsettings.h:146 epgsettings.h:147
 msgid "whitelist"
 msgstr ""
 
-#: epgsettings.h:147
+#: epgsettings.h:147 epgsettings.h:148
 msgid "scan and whitelist"
 msgstr ""
 
 #: epgsettings.h:188 epgsettings.h:199 epgsettings.h:204 epgsettings.h:209
-#: mediadbsettings.h:33
+#: mediadbsettings.h:33 epgsettings.h:189 epgsettings.h:200 epgsettings.h:205
+#: epgsettings.h:210
 msgid "always"
 msgstr ""
 
-#: epgsettings.h:189
+#: epgsettings.h:189 epgsettings.h:190
 msgid "only on power off / restart"
 msgstr ""
 
-#: epgsettings.h:190 mediadbsettings.h:45
+#: epgsettings.h:190 mediadbsettings.h:45 epgsettings.h:191
 msgid "never"
 msgstr ""
 
-#: epgsettings.h:198 epgsettings.h:203 epgsettings.h:208
+#: epgsettings.h:198 epgsettings.h:203 epgsettings.h:208 epgsettings.h:199
+#: epgsettings.h:204 epgsettings.h:209
 msgid "only for scan"
 msgstr ""
 
-#: epgsettings.h:213
+#: epgsettings.h:213 epgsettings.h:214
 msgid "poweroff"
 msgstr ""
 
-#: epgsettings.h:257
+#: epgsettings.h:257 epgsettings.h:258
 msgid "Deavtivate Refresh Time and After EPG in scan-mode"
 msgstr ""
 
-#: epgsettings.h:281
+#: epgsettings.h:281 epgsettings.h:284
 msgid "EPG resetet and now clear."
 msgstr ""
 
-#: epgsettings.h:295
+#: epgsettings.h:295 epgsettings.h:298
 msgid "EPG Scan Log"
 msgstr ""
 
@@ -1107,7 +1140,7 @@ msgstr ""
 msgid "Remove error"
 msgstr ""
 
-#: extensions.h:170 extensions.h:220 extensions.h:457
+#: extensions.h:170 extensions.h:220 extensions.h:457 extensions.h:455
 msgid "Tpk Install Info"
 msgstr ""
 
@@ -1115,12 +1148,12 @@ msgstr ""
 msgid "Can't install Package. Package to big."
 msgstr ""
 
-#: extensions.h:211 extensions.h:342
+#: extensions.h:211 extensions.h:342 extensions.h:340
 msgid "Installing"
 msgstr ""
 
 #: extensions.h:217 extensions.h:271 extensions.h:346 softcam.h:91
-#: softcam.h:99
+#: softcam.h:99 extensions.h:344
 msgid "started"
 msgstr ""
 
@@ -1132,7 +1165,8 @@ msgstr ""
 msgid "Tpk Install Info - Install ERROR"
 msgstr ""
 
-#: extensions.h:235 extensions.h:291 extensions.h:377
+#: extensions.h:235 extensions.h:291 extensions.h:377 extensions.h:289
+#: extensions.h:375
 msgid ""
 "Some plugins needs restart.\n"
 "If the plugin is not active\n"
@@ -1147,43 +1181,43 @@ msgstr ""
 msgid "Removeing"
 msgstr ""
 
-#: extensions.h:274
+#: extensions.h:274 extensions.h:272
 msgid "Tpk Remove Info"
 msgstr ""
 
-#: extensions.h:282
+#: extensions.h:282 extensions.h:280
 msgid "Tpk Remove Info - Remove OK"
 msgstr ""
 
-#: extensions.h:289
+#: extensions.h:289 extensions.h:287
 msgid "Tpk Remove Info - Remove ERROR"
 msgstr ""
 
-#: extensions.h:296
+#: extensions.h:296 extensions.h:294
 msgid "TPK Remove done, your system will reboot !"
 msgstr ""
 
-#: extensions.h:325 extensions.h:457
+#: extensions.h:325 extensions.h:457 extensions.h:323 extensions.h:455
 msgid "No plugin found."
 msgstr ""
 
-#: extensions.h:381
+#: extensions.h:381 extensions.h:379
 msgid "TPK Tmp Install done, your system will reboot !"
 msgstr ""
 
-#: extensions.h:402 extensions.h:406
+#: extensions.h:402 extensions.h:406 extensions.h:400 extensions.h:404
 msgid "Tpk Update Info - Update ERROR"
 msgstr ""
 
-#: extensions.h:402
+#: extensions.h:402 extensions.h:400
 msgid "Can't get all TPK index !"
 msgstr ""
 
-#: extensions.h:406
+#: extensions.h:406 extensions.h:404
 msgid "Can't update all packages !"
 msgstr ""
 
-#: extensions.h:414
+#: extensions.h:414 extensions.h:412
 msgid "TPK Upgrade done, your system will reboot !"
 msgstr ""
 
@@ -1253,51 +1287,52 @@ msgstr ""
 msgid "Create Folder"
 msgstr ""
 
-#: filemanager.h:93
+#: filemanager.h:93 filemanager.h:95
 msgid "Can't rename file !"
 msgstr ""
 
-#: filemanager.h:98
+#: filemanager.h:98 filemanager.h:100
 msgid "Can't create directory !"
 msgstr ""
 
-#: filemanager.h:178
+#: filemanager.h:178 filemanager.h:180
 msgid "Really copy this file/dir?"
 msgstr ""
 
-#: filemanager.h:186
+#: filemanager.h:186 filemanager.h:188
 msgid "Really move this file/dir?"
 msgstr ""
 
-#: filemanager.h:194
+#: filemanager.h:194 filemanager.h:196
 msgid "From"
 msgstr ""
 
-#: filemanager.h:198
+#: filemanager.h:198 filemanager.h:200
 msgid "To"
 msgstr ""
 
-#: filemanager.h:214 filemanager.h:216
+#: filemanager.h:214 filemanager.h:216 filemanager.h:218
 msgid "Move File"
 msgstr ""
 
-#: filemanager.h:221 filemanager.h:223
+#: filemanager.h:221 filemanager.h:223 filemanager.h:225
 msgid "Copy File"
 msgstr ""
 
-#: filemanager.h:266
+#: filemanager.h:266 filemanager.h:268
 msgid "Really delete this file/dir?"
 msgstr ""
 
-#: filemanager.h:279
+#: filemanager.h:279 filemanager.h:281
 msgid "Can't remove file/dir !"
 msgstr ""
 
-#: filemanager.h:319
+#: filemanager.h:319 filemanager.h:321
 msgid "Can't show this file!"
 msgstr ""
 
 #: filemanager.h:343 mc_internetbrowser.h:41 mc_wetterinfo.h:41 tithek.h:1368
+#: filemanager.h:345 tithek.h:1369
 msgid "Registration needed, please contact Atemio !"
 msgstr ""
 
@@ -1916,36 +1951,36 @@ msgstr ""
 msgid "MediaDB entry for this file not found."
 msgstr ""
 
-#: mediadb.h:1078 play.h:533 play.h:541 play.h:530
+#: mediadb.h:1078 play.h:533 play.h:541 play.h:530 play.h:534
 msgid "MediaDB directory scan started in Background !"
 msgstr ""
 
-#: mediadb.h:1080 play.h:535 play.h:543 play.h:532
+#: mediadb.h:1080 play.h:535 play.h:543 play.h:532 play.h:536
 msgid "Delete MediaDB before scan"
 msgstr ""
 
-#: mediadb.h:1087 play.h:542 play.h:550 play.h:539
+#: mediadb.h:1087 play.h:542 play.h:550 play.h:539 play.h:543
 msgid "Delete unused entrys before scan"
 msgstr ""
 
-#: mediadb.h:1094 play.h:549 play.h:557 play.h:546
+#: mediadb.h:1094 play.h:549 play.h:557 play.h:546 play.h:550
 msgid "scan Directory"
 msgstr ""
 
-#: mediadb.h:1098 play.h:553 play.h:561 play.h:550
+#: mediadb.h:1098 play.h:553 play.h:561 play.h:550 play.h:554
 msgid "MediaDB place"
 msgstr ""
 
-#: mediadb.h:1102 play.h:557 play.h:565 play.h:554
+#: mediadb.h:1102 play.h:557 play.h:565 play.h:554 play.h:558
 msgid "MediaDB Debug"
 msgstr ""
 
-#: mediadb.h:1109 play.h:564 play.h:572 play.h:561
+#: mediadb.h:1109 play.h:564 play.h:572 play.h:561 play.h:565
 msgid "Backdrop Download Count"
 msgstr ""
 
 #: mediadb.h:1112 mediadbsettings.h:52 play.h:567 plugins_mc_skin.xml.h:6
-#: skins_mc_skin.xml.h:6 tmc.h:539 play.h:575 play.h:564
+#: skins_mc_skin.xml.h:6 tmc.h:539 play.h:575 play.h:564 play.h:568
 msgid "all"
 msgstr ""
 
@@ -2544,21 +2579,22 @@ msgstr ""
 #: plugins_imdb_skin.xml.h:9 plugins_tmc_skin.xml.h:16
 #: plugins_tmdb_skin.xml.h:9 skins_imdbapi_skin.xml.h:9
 #: skins_imdb_skin.xml.h:9 skins_tmc_skin.xml.h:16 skins_tmdb_skin.xml.h:9
-#: play.h:382 play.h:416 play.h:371 play.h:405
+#: play.h:382 play.h:416 play.h:371 play.h:405 play.h:375 play.h:409
 msgid "Title:"
 msgstr ""
 
 #: play.h:379 play.h:413 play.h:387 play.h:421 play.h:376 play.h:410
+#: play.h:380 play.h:414
 msgid "Artist:"
 msgstr ""
 
 #: play.h:384 play.h:418 plugins_mc_skin.xml.h:5 skins_mc_skin.xml.h:5
-#: play.h:392 play.h:426 play.h:381 play.h:415
+#: play.h:392 play.h:426 play.h:381 play.h:415 play.h:385 play.h:419
 msgid "Album:"
 msgstr ""
 
 #: play.h:389 play.h:423 plugins_mc_skin.xml.h:68 skins_mc_skin.xml.h:68
-#: play.h:397 play.h:431 play.h:386 play.h:420
+#: play.h:397 play.h:431 play.h:386 play.h:420 play.h:390 play.h:424
 msgid "Year:"
 msgstr ""
 
@@ -2567,45 +2603,48 @@ msgstr ""
 #: plugins_tmdb_skin.xml.h:1 skins_imdbapi_skin.xml.h:3
 #: skins_imdb_skin.xml.h:3 skins_mc_skin.xml.h:30 skins_tmc_skin.xml.h:7
 #: skins_tmdb_skin.xml.h:1 play.h:402 play.h:436 play.h:391 play.h:425
+#: play.h:395 play.h:429
 msgid "Genre:"
 msgstr ""
 
 #: play.h:399 play.h:433 play.h:407 play.h:441 play.h:396 play.h:430
+#: play.h:400 play.h:434
 msgid "Comment:"
 msgstr ""
 
-#: play.h:438 play.h:446 play.h:435
+#: play.h:438 play.h:446 play.h:435 play.h:439
 msgid "Track:"
 msgstr ""
 
-#: play.h:443 play.h:451 play.h:440
+#: play.h:443 play.h:451 play.h:440 play.h:444
 msgid "Copyright:"
 msgstr ""
 
-#: play.h:454 play.h:462 play.h:451
+#: play.h:454 play.h:462 play.h:451 play.h:455
 msgid "iD3Tag"
 msgstr ""
 
-#: play.h:1085 play.h:1093 play.h:1082
+#: play.h:1085 play.h:1093 play.h:1082 play.h:1086
 msgid "Jump To (min)"
 msgstr ""
 
 #: play.h:1163 play.h:1169 plugins_tmc_skin.xml.h:1 skins_tmc_skin.xml.h:1
-#: play.h:1171 play.h:1177 play.h:1160 play.h:1166
+#: play.h:1171 play.h:1177 play.h:1160 play.h:1166 play.h:1164 play.h:1170
 msgid "EPG Info"
 msgstr ""
 
-#: play.h:1178 play.h:1186 play.h:1175
+#: play.h:1178 play.h:1186 play.h:1175 play.h:1179
 msgid "Record in progress"
 msgstr ""
 
-#: play.h:1179 play.h:1187 play.h:1176
+#: play.h:1179 play.h:1187 play.h:1176 play.h:1180
 msgid "Really Delete ?"
 msgstr ""
 
 #: play.h:1297 plugins_networkbrowser_skin.xml.h:3 plugins_stock_skin.xml.h:4
 #: plugins_weather_skin.xml.h:2 skins_networkbrowser_skin.xml.h:3
 #: skins_stock_skin.xml.h:4 skins_weather_skin.xml.h:2 play.h:1305 play.h:1294
+#: play.h:1298
 msgid "DEL"
 msgstr ""
 
@@ -2819,7 +2858,7 @@ msgid "Copy"
 msgstr ""
 
 #: plugins_filemanager_skin.xml.h:2 plugins_tmc_skin.xml.h:3
-#: skins_filemanager_skin.xml.h:2 skins_tmc_skin.xml.h:3
+#: skins_filemanager_skin.xml.h:2 skins_tmc_skin.xml.h:3 scan.h:2291
 msgid "Delete"
 msgstr ""
 
@@ -3575,6 +3614,7 @@ msgid "Pic Ratio"
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:8 skins_tithek_skin.xml.h:8 tithek.h:1030
+#: tithek.h:1031
 msgid "please wait..."
 msgstr ""
 
@@ -4074,37 +4114,37 @@ msgstr ""
 msgid "Do you want to delete all unused Bouquetentrys?"
 msgstr ""
 
-#: scan.h:1850
+#: scan.h:1850 scan.h:1915
 msgid ""
 "Scan is not allowed if record\n"
 "or stream is running !"
 msgstr ""
 
-#: scan.h:1941
+#: scan.h:1941 scan.h:2006
 msgid "No Tuner configured"
 msgstr ""
 
-#: scan.h:1955 scan.h:1962
+#: scan.h:1955 scan.h:1962 scan.h:2025 scan.h:2032
 msgid "Single Transponder"
 msgstr ""
 
-#: scan.h:1956
+#: scan.h:1956 scan.h:2026
 msgid "Single Sat"
 msgstr ""
 
-#: scan.h:1957
+#: scan.h:1957 scan.h:2027
 msgid "Multi Sat"
 msgstr ""
 
-#: scan.h:1963
+#: scan.h:1963 scan.h:2033
 msgid "Single Provider"
 msgstr ""
 
-#: scan.h:1968
+#: scan.h:1968 scan.h:2038
 msgid "Auto Scan"
 msgstr ""
 
-#: scan.h:2286
+#: scan.h:2286 scan.h:2363
 msgid "Transponder changed"
 msgstr ""
 
@@ -4582,53 +4622,53 @@ msgstr ""
 msgid "never del file"
 msgstr ""
 
-#: tithek.h:610
+#: tithek.h:610 tithek.h:611
 msgid "File exist, overwrite?"
 msgstr ""
 
-#: tithek.h:816
+#: tithek.h:816 tithek.h:817
 msgid "found"
 msgstr ""
 
-#: tithek.h:821
+#: tithek.h:821 tithek.h:822
 msgid "Results"
 msgstr ""
 
-#: tithek.h:1043
+#: tithek.h:1043 tithek.h:1044
 msgid "Remove Cachefile ?"
 msgstr ""
 
-#: tithek.h:1090
+#: tithek.h:1090 tithek.h:1091
 msgid ""
 "Can't start download.\n"
 "Please try later."
 msgstr ""
 
-#: tithek.h:1341
+#: tithek.h:1341 tithek.h:1342
 msgid "Start playback"
 msgstr ""
 
-#: tithek.h:1363
+#: tithek.h:1363 tithek.h:1364
 msgid "Can't get Streamurl !"
 msgstr ""
 
-#: tithek.h:1382
+#: tithek.h:1382 tithek.h:1383
 msgid "TitanNit Tithek disclaimer"
 msgstr ""
 
-#: tithek.h:1447
+#: tithek.h:1447 tithek.h:1448
 msgid "Page"
 msgstr ""
 
-#: tithek.h:2111
+#: tithek.h:2111 tithek.h:2112
 msgid "The hoster is not yet supported !"
 msgstr ""
 
-#: tithek.h:2173
+#: tithek.h:2173 tithek.h:2174
 msgid "Remove this Favorite ?"
 msgstr ""
 
-#: tithek.h:2187
+#: tithek.h:2187 tithek.h:2188
 msgid "Add this link as Favorite ?"
 msgstr ""
 
@@ -4998,4 +5038,12 @@ msgstr ""
 
 #: weather.h:442 weather.h:460 weather.h:478 weather.h:496
 msgid "Condition: "
+msgstr ""
+
+#: scan.h:2288
+msgid "Renew"
+msgstr ""
+
+#: scan.h:2289
+msgid "Unchanged"
 msgstr ""
