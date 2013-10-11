@@ -1392,7 +1392,7 @@ void delchannelbymultisat()
 	}
 }
 
-void screenscan(struct transponder* transpondernode, struct skin* mscan, char* tuner, int scantype, int orbitalpos, unsigned int frequency, int inversion, unsigned int symbolrate, int polarization, int fec, int modulation, int rolloff, int pilot, int networkscan, int onlyfree, int clear, int blindscan, int ichangename, int system, int timeout)
+void screenscan(struct transponder* transpondernode, struct skin* mscan, char* tuner, int scantype, int orbitalpos, unsigned int frequency, int inversion, unsigned int symbolrate, int polarization, int fec, int modulation, int rolloff, int pilot, int networkscan, int onlyfree, int clear, int blindscan, int ichangename, int delunusedfav, int system, int favtype, int timeout)
 {
 	int rcret = 0, tpmax = 0, i = 0, alladded = 0;
 	struct skin* scan = getscreen("scan");
@@ -1656,11 +1656,11 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 			provider2bouquet(pnode->providerid);
 			pnode = pnode->next;
 		}
-		*/
-		
+	
 		rcret = textbox(_("Message"), _("Bouquet\n\nRenew Bouquet = Red\nDelete all Bouquet = Green\nProvider to Bouquet = Yellow"), _("EXIT"), getrcconfigint("rcexit", NULL), _("RENEW"), getrcconfigint("rcred", NULL), _("DELETE"), getrcconfigint("rcgreen", NULL), _("NEW"), getrcconfigint("rcyellow", NULL), 600, 400, 0, 0);
 		if(rcret == 2)
 			delunusedbouquetchannels(0);
+
 		else if(rcret == 3)
 			freemainbouquet(1);
 		else if(rcret == 4)
@@ -1677,12 +1677,31 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 		else
 			delunusedbouquetchannels(1);
 		
-		/*
 		if(textbox(_("Message"), _("Do you want to delete all unused Bouquetentrys?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 			delunusedbouquetchannels(0);
 		else
 			delunusedbouquetchannels(1);
 		*/
+
+		if(favtype == 0)
+			delunusedbouquetchannels(0);
+		else if(favtype == 1)
+			delunusedbouquetchannels(1);
+		else if(favtype == 2)
+		{
+			freemainbouquet(1);
+			struct provider *pnode = provider;
+			
+			while(pnode != NULL)
+			{
+				provider2bouquet(pnode->providerid);
+				pnode = pnode->next;
+			}
+// remove unused favs ARD-SR
+			delunusedbouquetchannels(1);
+		}
+		else if(favtype == 3)
+			freemainbouquet(1);
 	}
 	delmarkedscreennodes(scan, 1);
 	delownerrc(scan);
@@ -1850,7 +1869,7 @@ void screenscanconfig(int flag)
 	int iscantype = -1, isat = -1;
 	int iinversion = -1, ipolarization = -1;
 	int ifec = -1, imodulation = -1, irolloff = -1, ipilot = -1, isystem = -1;
-	int inetworkscan = -1, ionlyfree = -1, iclear = -1, iblindscan = -1, ichangename = -1;
+	int inetworkscan = -1, ionlyfree = -1, iclear = -1, iblindscan = -1, ichangename = -1, ifavtype = -1;
 	int i = 0, treffer = 0, tunercount = 0;
 	struct skin* scan = getscreen("manualscan");
 	struct skin* listbox = getscreennode(scan, "listbox");
@@ -1878,6 +1897,8 @@ void screenscanconfig(int flag)
 	struct skin* onlyfree = getscreennode(scan, "onlyfree");
 	struct skin* blindscan = getscreennode(scan, "blindscan");
 	struct skin* changename = getscreennode(scan, "changename");
+	struct skin* favtype = getscreennode(scan, "favtype");
+	
 	struct skin* b4 = getscreennode(scan, "b4");
 	struct skin* b5 = getscreennode(scan, "b5");
 	struct skin* tmp = NULL;
@@ -2262,6 +2283,12 @@ start:
 	addchoicebox(changename, "0", _("no"));
 	addchoicebox(changename, "1", _("yes"));
 
+	//favtype
+	addchoicebox(favtype, "0", _("Renew"));
+	addchoicebox(favtype, "1", _("Unchanged"));
+	addchoicebox(favtype, "2", _("Provider"));
+	addchoicebox(favtype, "3", _("Delete"));
+
 	drawscreen(scan, 2, 0);
 	changescantype(scantype->ret, scan, listbox, tuner, sat, id, system, frequency, inversion, symbolrate, polarization, fec, modulation, rolloff, pilot, hp, lp, bandwidth, transmission, guardinterval, hierarchy, b4, b5, flag);
 	drawscreen(scan, 0, 0);
@@ -2301,6 +2328,7 @@ start:
 		if(clear->ret != NULL) iclear = atoi(clear->ret);
 		if(blindscan->ret != NULL) iblindscan = atoi(blindscan->ret);
 		if(changename->ret != NULL) ichangename = atoi(changename->ret);
+		if(favtype->ret != NULL) ifavtype = atoi(favtype->ret);
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL)) break;
@@ -2323,7 +2351,7 @@ start:
 		if(rcret == getrcconfigint("rcred", NULL))
 		{
 			clearscreen(scan);
-			screenscan(tpnode, scan->child, tuner->ret, iscantype, isat, ifrequency, iinversion, isymbolrate, ipolarization, ifec, imodulation, irolloff, ipilot, inetworkscan, ionlyfree, iclear, iblindscan, ichangename, isystem, 5000000);
+			screenscan(tpnode, scan->child, tuner->ret, iscantype, isat, ifrequency, iinversion, isymbolrate, ipolarization, ifec, imodulation, irolloff, ipilot, inetworkscan, ionlyfree, iclear, iblindscan, ichangename, isystem, ifavtype, 5000000);
 			drawscreen(scan, 0, 0);
 		}
 		if(rcret == getrcconfigint("rcgreen", NULL) && tpnode != NULL && iscantype == 0)
