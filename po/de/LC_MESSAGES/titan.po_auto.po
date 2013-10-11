@@ -111,6 +111,7 @@
 #: epgsettings.h:198 epgsettings.h:203 epgsettings.h:208 play.h:563
 #: scan.h:1798 scan.h:2268 scan.h:2272 scan.h:2276 scan.h:2280 scan.h:2284
 #: scan.h:1800 scan.h:2270 scan.h:2274 scan.h:2278 scan.h:2282 scan.h:2286
+#: scan.h:1801 scan.h:2271 scan.h:2275 scan.h:2279 scan.h:2283 scan.h:2287
 msgid "no"
 msgstr ""
 
@@ -225,7 +226,8 @@ msgstr ""
 #: play.h:553 play.h:568 play.h:535 play.h:542 play.h:557 epgsettings.h:133
 #: epgsettings.h:186 epgsettings.h:195 play.h:561 scan.h:1799 scan.h:2269
 #: scan.h:2273 scan.h:2277 scan.h:2281 scan.h:2285 scan.h:1801 scan.h:2271
-#: scan.h:2275 scan.h:2279 scan.h:2283 scan.h:2287
+#: scan.h:2275 scan.h:2279 scan.h:2283 scan.h:2287 scan.h:1802 scan.h:2272
+#: scan.h:2276 scan.h:2280 scan.h:2284 scan.h:2288
 msgid "yes"
 msgstr ""
 
@@ -756,7 +758,8 @@ msgstr ""
 #: filemanager.h:321 filemanager.h:345 play.h:572 play.h:1179 play.h:1365
 #: scan.h:1915 scan.h:2006 scan.h:2363 tithek.h:611 tithek.h:1048
 #: tithek.h:1091 tithek.h:1342 tithek.h:1364 tithek.h:1369 tithek.h:2112
-#: tithek.h:2174 tithek.h:2188 scan.h:2008 scan.h:2365
+#: tithek.h:2174 tithek.h:2188 scan.h:2008 scan.h:2365 scan.h:1619 scan.h:1629
+#: scan.h:1918 scan.h:2009 scan.h:2366
 msgid "Message"
 msgstr ""
 
@@ -1021,7 +1024,7 @@ msgstr ""
 #: play.h:1170 play.h:1180 play.h:1365 scan.h:1915 scan.h:2006 scan.h:2363
 #: tithek.h:611 tithek.h:1048 tithek.h:1091 tithek.h:1342 tithek.h:1364
 #: tithek.h:1369 tithek.h:1383 tithek.h:2112 tithek.h:2174 tithek.h:2188
-#: scan.h:2008 scan.h:2365
+#: scan.h:2008 scan.h:2365 scan.h:1619 scan.h:1918 scan.h:2009 scan.h:2366
 msgid "OK"
 msgstr ""
 
@@ -1286,7 +1289,7 @@ msgstr ""
 #: play.h:1170 play.h:1180 play.h:1365 scan.h:1915 scan.h:2006 scan.h:2363
 #: tithek.h:611 tithek.h:1048 tithek.h:1091 tithek.h:1342 tithek.h:1364
 #: tithek.h:1369 tithek.h:1383 tithek.h:2112 tithek.h:2174 tithek.h:2188
-#: scan.h:2008 scan.h:2365
+#: scan.h:2008 scan.h:2365 scan.h:1619 scan.h:1918 scan.h:2009 scan.h:2366
 msgid "EXIT"
 msgstr ""
 
@@ -1466,7 +1469,7 @@ msgstr ""
 #: channellist.h:752 channellist.h:1322 channellist.h:1323 channellist.h:1647
 #: channellist.h:769 channellist.h:1339 channellist.h:1340 channellist.h:1664
 #: channellist.h:1329 channellist.h:1330 channellist.h:1654 scan.h:2290
-#: scan.h:2292
+#: scan.h:2292 scan.h:2293
 msgid "Provider"
 msgstr ""
 
@@ -4563,21 +4566,22 @@ msgstr ""
 
 #: scan.h:735 scan.h:824 scan.h:844 scan.h:869 scan.h:892 scan.h:888
 #: optimize.h:265 optimize.h:272 scan.h:1522 scan.h:1523 scan.h:1544
+#: scan.h:1545
 msgid "Transponder: "
 msgstr ""
 
 #: scan.h:743 scan.h:832 scan.h:852 scan.h:877 scan.h:900 scan.h:896
-#: scan.h:1532 scan.h:1533 scan.h:1554
+#: scan.h:1532 scan.h:1533 scan.h:1554 scan.h:1555
 msgid "TV: "
 msgstr ""
 
 #: scan.h:751 scan.h:840 scan.h:860 scan.h:885 scan.h:908 scan.h:904
-#: scan.h:1540 scan.h:1541 scan.h:1562
+#: scan.h:1540 scan.h:1541 scan.h:1562 scan.h:1563
 msgid "Radio: "
 msgstr ""
 
 #: scan.h:759 scan.h:848 scan.h:868 scan.h:893 scan.h:916 scan.h:912
-#: scan.h:1548 scan.h:1549 scan.h:1570
+#: scan.h:1548 scan.h:1549 scan.h:1570 scan.h:1571
 msgid "Data: "
 msgstr ""
 
@@ -4587,13 +4591,13 @@ msgid "All new channel added!"
 msgstr ""
 
 #: scan.h:803 scan.h:892 scan.h:912 scan.h:937 scan.h:970 scan.h:966
-#: scan.h:1607 scan.h:1628
+#: scan.h:1607 scan.h:1628 scan.h:1629
 msgid "Wait for channel scan end"
 msgstr ""
 
 #: scan.h:947 scan.h:951 scan.h:954 scan.h:1043 scan.h:1064 scan.h:1089
 #: scan.h:1122 tunerconfig.h:606 scan.h:1119 scan.h:1826 scan.h:1829
-#: scan.h:1850 scan.h:1915 scan.h:1917
+#: scan.h:1850 scan.h:1915 scan.h:1917 scan.h:1918
 msgid ""
 "Scan is not allowed if record\n"
 "or stream is running !"
@@ -4601,37 +4605,38 @@ msgstr ""
 
 #: scan.h:1019 scan.h:1023 scan.h:1026 scan.h:1115 scan.h:1136 scan.h:1161
 #: scan.h:1194 scan.h:1191 scan.h:1917 scan.h:1920 scan.h:1941 scan.h:2006
-#: scan.h:2008
+#: scan.h:2008 scan.h:2009
 msgid "No Tuner configured"
 msgstr ""
 
 #: scan.h:1032 scan.h:1036 scan.h:1039 scan.h:1128 scan.h:1149 scan.h:1174
 #: scan.h:1207 scan.h:1204 scan.h:1931 scan.h:1938 scan.h:1934 scan.h:1941
 #: scan.h:1955 scan.h:1962 scan.h:2025 scan.h:2032 scan.h:2027 scan.h:2034
+#: scan.h:2028 scan.h:2035
 msgid "Single Transponder"
 msgstr ""
 
 #: scan.h:1033 scan.h:1037 scan.h:1040 scan.h:1129 scan.h:1150 scan.h:1175
 #: scan.h:1208 scan.h:1205 scan.h:1932 scan.h:1935 scan.h:1956 scan.h:2026
-#: scan.h:2028
+#: scan.h:2028 scan.h:2029
 msgid "Single Sat"
 msgstr ""
 
 #: scan.h:1034 scan.h:1038 scan.h:1041 scan.h:1130 scan.h:1151 scan.h:1176
 #: scan.h:1209 scan.h:1206 scan.h:1933 scan.h:1936 scan.h:1957 scan.h:2027
-#: scan.h:2029
+#: scan.h:2029 scan.h:2030
 msgid "Multi Sat"
 msgstr ""
 
 #: scan.h:1039 scan.h:1043 scan.h:1046 scan.h:1135 scan.h:1156 scan.h:1181
 #: scan.h:1214 scan.h:1211 scan.h:1944 scan.h:1947 scan.h:1968 scan.h:2038
-#: scan.h:2040
+#: scan.h:2040 scan.h:2041
 msgid "Auto Scan"
 msgstr ""
 
 #: scan.h:1225 scan.h:1229 scan.h:1232 scan.h:1321 scan.h:1347 scan.h:1372
 #: scan.h:1405 scan.h:1402 scan.h:1403 scan.h:2262 scan.h:2265 scan.h:2286
-#: scan.h:2363 scan.h:2365
+#: scan.h:2363 scan.h:2365 scan.h:2366
 msgid "Transponder changed"
 msgstr ""
 
@@ -8678,7 +8683,7 @@ msgstr ""
 msgid "WLAN LOG"
 msgstr ""
 
-#: scan.h:924 scan.h:920 scan.h:1556 scan.h:1557 scan.h:1578
+#: scan.h:924 scan.h:920 scan.h:1556 scan.h:1557 scan.h:1578 scan.h:1579
 msgid "Blindscan: "
 msgstr ""
 
@@ -9919,7 +9924,7 @@ msgstr ""
 
 #: plugins_filemanager_skin.xml.h:2 plugins_tmc_skin.xml.h:3
 #: skins_filemanager_skin.xml.h:2 skins_tmc_skin.xml.h:3 scan.h:2291
-#: scan.h:2293
+#: scan.h:2293 scan.h:2294
 msgid "Delete"
 msgstr ""
 
@@ -10302,7 +10307,7 @@ msgid ""
 "this again !"
 msgstr ""
 
-#: scan.h:1516 scan.h:1517 scan.h:1538
+#: scan.h:1516 scan.h:1517 scan.h:1538 scan.h:1539
 msgid "Sat/Provider: "
 msgstr ""
 
@@ -10310,7 +10315,7 @@ msgstr ""
 msgid "Does you want delete all unused Bouquetentrys?"
 msgstr ""
 
-#: scan.h:1939 scan.h:1942 scan.h:1963 scan.h:2033 scan.h:2035
+#: scan.h:1939 scan.h:1942 scan.h:1963 scan.h:2033 scan.h:2035 scan.h:2036
 msgid "Single Provider"
 msgstr ""
 
@@ -11197,7 +11202,7 @@ msgid ""
 "The Box will reboot and the erase will be started!"
 msgstr ""
 
-#: scan.h:1618
+#: scan.h:1618 scan.h:1619
 msgid "All new channels added!"
 msgstr ""
 
@@ -11231,10 +11236,10 @@ msgstr ""
 msgid "The hoster is not yet supported !"
 msgstr ""
 
-#: scan.h:2288 scan.h:2290
+#: scan.h:2288 scan.h:2290 scan.h:2291
 msgid "Renew"
 msgstr ""
 
-#: scan.h:2289 scan.h:2291
+#: scan.h:2289 scan.h:2291 scan.h:2292
 msgid "Unchanged"
 msgstr ""
