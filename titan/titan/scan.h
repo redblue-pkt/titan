@@ -1698,7 +1698,7 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 				pnode = pnode->next;
 			}
 // remove unused favs ARD-SR
-			delunusedbouquetchannels(1);
+			delunusedbouquetchannels(0);
 		}
 		else if(favtype == 3)
 			freemainbouquet(1);
