@@ -4045,10 +4045,10 @@ msgid "Can't remove file/dir !"
 msgstr "Datei/Verzeichnis konnte nicht gelöscht werden!"
 
 msgid "stable"
-msgstr "Stabil"
+msgstr "stabil"
 
 msgid "unstable"
-msgstr "Unstabil"
+msgstr "unstabil"
 
 msgid "Box recording finished poweroff in 30sec !"
 msgstr "Aufnahme beendet. Box wird in 30sek ausgeschaltet!"
