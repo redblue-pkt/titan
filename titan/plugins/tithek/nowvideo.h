@@ -1,7 +1,7 @@
 #ifndef NOWVIDEO_H
 #define NOWVIDEO_H
 
-char* nowvideo(char* host, char* file)
+char* nowvideo(char* host, char* file, char* hosterurl)
 {
 	debug(99, "in host: %s file: %s", host, file);
 	int debuglevel = getconfigint("debuglevel", NULL);

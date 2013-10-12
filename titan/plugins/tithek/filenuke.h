@@ -1,7 +1,7 @@
 #ifndef FILENUKE_H
 #define FILENUKE_H
 
-char* filenuke(char* host, char* file)
+char* filenuke(char* host, char* file, char* hosterurl)
 {
 	debug(99, "in host: %s file: %s", host, file);
 	int debuglevel = getconfigint("debuglevel", NULL);

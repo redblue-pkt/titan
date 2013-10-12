@@ -1130,11 +1130,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		}
 		else if(((struct tithek*)listbox->select->handle)->flag == 14)
 		{
-			if(tmpstr != NULL) tmpstr1 = kinox(tmpstr, NULL, NULL, 1);
-		}
-		else if(((struct tithek*)listbox->select->handle)->flag == 15)
-		{
-			if(tmpstr != NULL) tmpstr1 = kinox(tmpstr, NULL, NULL, 2);
+			if(tmpstr != NULL) tmpstr1 = kinox(tmpstr);
 		}
 		else if(((struct tithek*)listbox->select->handle)->flag == 16)
 		{
@@ -1151,26 +1147,6 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		else if(((struct tithek*)listbox->select->handle)->flag == 19)
 		{
 			if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://rtl2now.rtl2.de", "rtl2now", 1);
-		}
-		else if(((struct tithek*)listbox->select->handle)->flag == 20)
-		{
-			if(tmpstr != NULL) tmpstr1 = kinox(tmpstr, NULL, NULL, 3);
-		}
-		else if(((struct tithek*)listbox->select->handle)->flag == 24)
-		{
-			if(tmpstr != NULL) tmpstr1 = kinox(tmpstr, NULL, NULL, 4);
-		}
-		else if(((struct tithek*)listbox->select->handle)->flag == 25)
-		{
-			if(tmpstr != NULL) tmpstr1 = kinox(tmpstr, NULL, NULL, 5);
-		}
-		else if(((struct tithek*)listbox->select->handle)->flag == 26)
-		{
-			if(tmpstr != NULL) tmpstr1 = kinox(tmpstr, NULL, NULL, 6);
-		}
-		else if(((struct tithek*)listbox->select->handle)->flag == 27)
-		{
-			if(tmpstr != NULL) tmpstr1 = kinox(tmpstr, NULL, NULL, 7);
 		}
 		else if(((struct tithek*)listbox->select->handle)->flag == 38)
 		{

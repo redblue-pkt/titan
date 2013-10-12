@@ -51,26 +51,26 @@ char* movie4k(char* link)
 		ret2 = strsplit(tmpstr1, "/", &count2);
 
 		if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "Sockshare") == 0)
-			streamurl = putlocker("Sockshare.com", ret2[3].part);
+			streamurl = putlocker("Sockshare.com", ret2[3].part, url);
 		else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "Putlocker") == 0)
-			streamurl = putlocker("Sockshare.com", ret2[3].part);
+			streamurl = putlocker("Sockshare.com", ret2[3].part, url);
 		else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "Filenuke") == 0)
-			streamurl = filenuke("FileNuke.com", ret2[2].part);
+			streamurl = filenuke("FileNuke.com", ret2[2].part, url);
 		else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "Streamclou") == 0)
-			streamurl = streamcloud("StreamCloud.eu", ret2[2].part);
+			streamurl = streamcloud("StreamCloud.eu", ret2[2].part, url);
 		else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "Streamcloud") == 0)
-			streamurl = streamcloud("StreamCloud.eu", ret2[2].part);
+			streamurl = streamcloud("StreamCloud.eu", ret2[2].part, url);
 		else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "VidStream") == 0)
-			streamurl = vidstream("VidStream.in", ret2[2].part);
+			streamurl = vidstream("VidStream.in", ret2[2].part, url);
 		else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "Flashx") == 0)
-			streamurl = flashx("FlashX.tv", ret2[3].part);
+			streamurl = flashx("FlashX.tv", ret2[3].part, url);
 		else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "Xvidstage") == 0)
-			streamurl = xvidstage("XvidStage.com", ret2[2].part);
+			streamurl = xvidstage("XvidStage.com", ret2[2].part, url);
 		else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "Nowvideo") == 0)
 		{
 			tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
 			tmpstr2 = string_replace("embed.php?v=", "", tmpstr2, 1);
-			streamurl = nowvideo("NowVideo.eu", tmpstr2);
+			streamurl = nowvideo("NowVideo.eu", tmpstr2, url);
 		}
 		free(ret2), ret2 = NULL;
 	}

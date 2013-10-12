@@ -1,7 +1,7 @@
 #ifndef XVIDSTAGE_H
 #define XVIDSTAGE_H
 
-char* xvidstage(char* host, char* file)
+char* xvidstage(char* host, char* file, char* hosterurl)
 {
 	debug(99, "in host: %s file: %s", host, file);
 	int debuglevel = getconfigint("debuglevel", NULL);

@@ -1,7 +1,7 @@
 #ifndef STREAMCLOAD_H
 #define STREAMCLOAD_H
 
-char* streamcloud(char* host, char* file)
+char* streamcloud(char* host, char* file, char* hosterurl)
 {
 	debug(99, "in host: %s file: %s", host, file);
 	int debuglevel = getconfigint("debuglevel", NULL);
