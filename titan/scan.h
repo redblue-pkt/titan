@@ -1320,7 +1320,7 @@ void scansetallsat(int fetype)
 
 	while(dvbnode != NULL)
 	{
-		if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo != NULL && dvbnode->felock < 1 && (fetype == -1 || dvbnode->feinfo->type == fetype))
+		if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo != NULL && dvbnode->felock < 1 && dvbnode->deactive == 0 && (fetype == -1 || dvbnode->feinfo->type == fetype))
 		{
 
 			tmpstr = ostrcat(dvbnode->feshortname, "_sat", 0, 0);
@@ -1926,7 +1926,7 @@ void screenscanconfig(int flag)
 	//tuner
 	while(dvbnode != NULL)
 	{
-		if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo != NULL && dvbnode->felock < 1 && (flag == 1 || dvbnode->feinfo->type == fetype))
+		if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo != NULL && dvbnode->felock < 1 && dvbnode->deactive == 0 && (flag == 1 || dvbnode->feinfo->type == fetype))
 		{
 			treffer = 0;
 			if(dvbnode->feshortname != NULL)
