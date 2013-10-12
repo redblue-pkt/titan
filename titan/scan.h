@@ -1647,7 +1647,7 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 			
 			while(pnode != NULL)
 			{
-				provider2bouquet(pnode->providerid);
+				provider2bouquet(pnode->providerid, 1);
 				pnode = pnode->next;
 			}
 		}
