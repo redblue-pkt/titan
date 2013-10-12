@@ -170,11 +170,10 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 		cmd = ostrcat(cmd, "e.", 1, 0);
 		cmd = ostrcat(cmd, "so", 1, 0);
 		
-		//if(system(cmd) != 0)
 		for(i = 0; i < 3; i++)
 		{
 			free(tmp); tmp = NULL;
-			tmp = gethttp(cmd, "/", 80, NULL, NULL, 5000, NULL, 0);
+			tmp = gethttpreal(cmd, "/", 80, NULL, NULL, NULL, 0, NULL, NULL, 5000, 2);
 			if(tmp != NULL) break;
 		}
 		if(tmp == NULL)
@@ -190,11 +189,10 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 		cmd = ostrcat(cmd, ".", 1, 0);
 		cmd = ostrcat(cmd, "to", 1, 0);
 		
-		//if(system(cmd) != 0)
 		for(i = 0; i < 3; i++)
 		{
 			free(tmp); tmp = NULL;
-			tmp = gethttp(cmd, "/", 80, NULL, NULL, 5000, NULL, 0);
+			tmp = gethttpreal(cmd, "/", 80, NULL, NULL, NULL, 0, NULL, NULL, 5000, 2);
 			if(tmp != NULL) break;
 		}
 		if(tmp == NULL)
@@ -210,11 +208,10 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 		cmd = ostrcat(cmd, ".", 1, 0);
 		cmd = ostrcat(cmd, "se", 1, 0);
 		
-		//if(system(cmd) != 0)
 		for(i = 0; i < 3; i++)
 		{
 			free(tmp); tmp = NULL;
-			tmp = gethttp(cmd, "/", 80, NULL, NULL, 5000, NULL, 0);
+			tmp = gethttpreal(cmd, "/", 80, NULL, NULL, NULL, 0, NULL, NULL, 5000, 2);
 			if(tmp != NULL) break;
 		}
 		if(tmp == NULL)
@@ -229,11 +226,10 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 		cmd = ostrcat(cmd, ".", 1, 0);
 		cmd = ostrcat(cmd, "to", 1, 0);
 		
-		//if(system(cmd) != 0)
 		for(i = 0; i < 3; i++)
 		{
 			free(tmp); tmp = NULL;
-			tmp = gethttp(cmd, "/", 80, NULL, NULL, 5000, NULL, 0);
+			tmp = gethttpreal(cmd, "/", 80, NULL, NULL, NULL, 0, NULL, NULL, 5000, 2);
 			if(tmp != NULL) break;
 		}
 		if(tmp == NULL)
