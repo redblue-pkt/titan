@@ -1828,7 +1828,8 @@ void screenscanconfig(int flag)
 	int iscantype = -1, isat = -1;
 	int iinversion = -1, ipolarization = -1;
 	int ifec = -1, imodulation = -1, irolloff = -1, ipilot = -1, isystem = -1;
-	int inetworkscan = -1, ionlyfree = -1, iclear = -1, iblindscan = -1, ichangename = -1, ifavtype = -1, iemptybouquet = -1, irmunusedbouquetchannels = -1;
+	int inetworkscan = -1, ionlyfree = -1, iclear = -1, iblindscan = -1, ichangename = -1;
+	int ifavtype = -1, iemptybouquet = -1, iunusedbouquetchannels = -1;
 	int i = 0, treffer = 0, tunercount = 0;
 	struct skin* scan = getscreen("manualscan");
 	struct skin* listbox = getscreennode(scan, "listbox");
