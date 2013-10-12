@@ -1636,12 +1636,6 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 	if(scantype == 0) deltransponderbyid(99);
 	if(clear == 1)
 	{
-		// keine änderung vornehmen
-		// delunusedbouquetchannels(1);
-		
-		// unbenutzte einträge löschen
-		// delunusedbouquetchannels(0);
-
 		// favtype 0 = unchanged
 		// favtype 1 = create new
 		// favtype 2 = delete
@@ -1660,9 +1654,8 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 		else if(favtype == 2)
 			freemainbouquet(1);
 
-// needed, remove emthy bouquets proc
-//		if(emptybouquet == 1)
-//			delunusedbouquets();
+		if(emptybouquet == 1)
+			delemptymainbouquet(1);
 		
 		if(textbox(_("Message"), _("Do you want to delete all unused Bouquetentrys?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 			delunusedbouquetchannels(0);
