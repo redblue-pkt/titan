@@ -909,14 +909,14 @@ start:
 			{
 				if(list == PROVIDERLIST)
 				{
-					if(provider2bouquet(((struct provider*)listbox->select->handle1)->providerid) == 0)
+					if(provider2bouquet(((struct provider*)listbox->select->handle1)->providerid, 0) == 0)
 						textbox(_("Message"), _("Copy providerlist successfull"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
 					else
 						textbox(_("Message"), _("Copy providerlist not ok"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
 				}
 				else if(list == SATLIST)
 				{
-					if(sat2bouquet(((struct sat*)listbox->select->handle1)->orbitalpos) == 0)
+					if(sat2bouquet(((struct sat*)listbox->select->handle1)->orbitalpos, 0) == 0)
 						textbox(_("Message"), _("Copy satlist successfull"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
 					else
 						textbox(_("Message"), _("Copy satlist not ok"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);

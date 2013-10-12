@@ -392,8 +392,11 @@ struct provider* getprovider(int providerid)
 	return NULL;
 }
 
-int provider2bouquet(int providerid)
+//flag 0: add all provider
+//flag 1: add only provider with channel
+int provider2bouquet(int providerid, int flag)
 {
+	int treffer = 0;
 	struct provider* pnode = NULL;
 	struct mainbouquet* mnode = NULL;
 	struct channel* chnode = channel;
@@ -429,7 +432,6 @@ int provider2bouquet(int providerid)
 		mnode = addmainbouquet(tmpstr, 1, NULL);
 	}
 	free(tmpstr); tmpstr = NULL;
-	free(path); path = NULL;
 
 	if(mnode != NULL)
 	{
@@ -440,13 +442,18 @@ int provider2bouquet(int providerid)
 				tmpstr = ostrcat(tmpstr, oitoa(chnode->serviceid), 1, 1);
 				tmpstr = ostrcat(tmpstr, "#", 1, 0);
 				tmpstr = ostrcat(tmpstr, ollutoa(chnode->transponderid), 1, 1);
+				treffer = 1;
 				addbouquet(&mnode->bouquet, tmpstr, status.servicetype, 1, NULL);
 				free(tmpstr); tmpstr = NULL;
 			}
 			chnode = chnode->next;
 		}
 	}
-
+	
+	if(treffer == 0 && flag == 1)
+		delmainbouquet(path, 1);
+ 
+	free(path); path = NULL;
 	return 0;
 }
 

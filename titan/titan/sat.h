@@ -471,8 +471,11 @@ void freesat()
 	}
 }
 
-int sat2bouquet(int orbitalpos)
+//flag 0: add all provider
+//flag 1: add only provider with channel
+int sat2bouquet(int orbitalpos, int flag)
 {
+	int treffer = 0;
 	struct sat* snode = NULL;
 	struct mainbouquet* mnode = NULL;
 	struct channel* chnode = channel;
@@ -508,7 +511,6 @@ int sat2bouquet(int orbitalpos)
 		mnode = addmainbouquet(tmpstr, 1, NULL);
 	}
 	free(tmpstr); tmpstr = NULL;
-	free(path); path = NULL;
 
 	if(mnode != NULL)
 	{
@@ -519,13 +521,18 @@ int sat2bouquet(int orbitalpos)
 				tmpstr = ostrcat(tmpstr, oitoa(chnode->serviceid), 1, 1);
 				tmpstr = ostrcat(tmpstr, "#", 1, 0);
 				tmpstr = ostrcat(tmpstr, ollutoa(chnode->transponderid), 1, 1);
+				treffer = 1;
 				addbouquet(&mnode->bouquet, tmpstr, status.servicetype, 1, NULL);
 				free(tmpstr); tmpstr = NULL;
 			}
 			chnode = chnode->next;
 		}
 	}
+	
+	if(treffer == 0 && flag == 1)
+		delmainbouquet(path, 1);
 
+  free(path); path = NULL;
 	return 0;
 }
 
