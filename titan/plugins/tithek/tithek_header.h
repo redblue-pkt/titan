@@ -1,6 +1,17 @@
 #ifndef TITHEK_HEADER_H
 #define TITHEK_HEADER_H
 
+void titheklog(int debuglevel, char* name1, char* name2, char* content)
+{
+	char* tmpstr = NULL;
+	
+	if(debuglevel != 99) return;
+
+	tmpstr = ostrcat(name1, name2, 0, 0);
+	writesys(tmpstr, content, 0);
+	free(tmpstr);
+}
+
 void screentithekplay(char* titheklink, char* title, int first);
 void screentithek_settings();
 char* oltostr(long val, unsigned base);

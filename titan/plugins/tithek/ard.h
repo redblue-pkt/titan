@@ -4,6 +4,7 @@
 char* ard(char* link)
 {
 	debug(99, "link %s", link);
+	int debuglevel = getconfigint("debuglevel", NULL);
 	char* ip = NULL, *pos = NULL, *path = NULL, *streamurl = NULL, *tmpstr = NULL;
 	
 	ip = string_replace("http://", "", (char*)link, 0);
@@ -17,8 +18,7 @@ char* ard(char* link)
 	}
 
 	tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/ard1_tmpstr", tmpstr, 0);
+	titheklog(debuglevel, "/tmp/ard1_tmpstr", NULL, tmpstr);
 
 //	writesys("/var/usr/local/share/titan/plugins/tithek/ard1_tmpstr", tmpstr, 0);
 	
@@ -48,8 +48,7 @@ mediaCollection.addMediaStream(1, 1, "", "http://http-stream.rbb-online.de/rbb/a
 	free(tmpstr); tmpstr = NULL;
 	free(ip), ip = NULL;
 
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/ard2_streamurl", streamurl, 0);
+  titheklog(debuglevel, "/tmp/ard2_streamurl", NULL, streamurl);
 
 // segfault munmap_chunk(): invalid pointer
 //	free(pos), pos = NULL;
