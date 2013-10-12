@@ -700,7 +700,7 @@ char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, 
 		pbuf++;
 	}
 
-	if(flag == 3)
+	if(flag == 2)
 	{
 		if(headerlen > 0)
 		{
