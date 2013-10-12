@@ -4,6 +4,7 @@
 char* zdf(char* link)
 {
 	debug(99, "link %s", link);
+	int debuglevel = getconfigint("debuglevel", NULL);
 	char* ip = NULL, *pos = NULL, *path = NULL, *streamurl = NULL, *tmpstr = NULL, *tmpstr2 = NULL, *pic = NULL, *title = NULL, *tmpstr3 = NULL, *quali = NULL;
 	
 	ip = string_replace("http://", "", (char*)link, 0);
@@ -17,12 +18,7 @@ char* zdf(char* link)
 	}
 
 	tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/zdf1_tmpstr", tmpstr, 0);
-
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/var/usr/local/share/titan/plugins/tithek/zdf1_tmpstr", tmpstr, 0);
-	
+	titheklog(debuglevel, "/tmp/zdf1_tmpstr", NULL, tmpstr);
 
 	if(tmpstr != NULL)
 	{
@@ -40,8 +36,7 @@ char* zdf(char* link)
 		string_strip_whitechars(tmpstr2);
 		tmpstr2 = string_replace_all("<formitaet basetype", "\n\t<formitaet basetype", tmpstr2, 1);
 
-		if(getconfigint("debuglevel", NULL) == 99)
-			writesys("/var/usr/local/share/titan/plugins/tithek/zdf1_tmpstr2", tmpstr2, 0);
+		titheklog(debuglevel, "/tmp/zdf1_tmpstr2", NULL, tmpstr");
 		
 		int count = 0, i = 0;	
  		struct splitstr* ret1 = NULL;
@@ -112,24 +107,25 @@ char* zdf(char* link)
 		}
 		free(ret1), ret1 = NULL;
 
-		if(mlist != NULL){
+		if(mlist != NULL)
+		{
 			mbox = menulistbox(mlist, NULL, NULL, NULL, NULL, 1, 0);
-			if(mbox != NULL){
-			    free(streamurl), streamurl = NULL;
-    
-			    debug(99, "mbox->name %s", mbox->name);
-			    debug(99, "mbox->text %s", mbox->text);
-			    streamurl = ostrcat(mbox->text, NULL, 0, 0);
-    
+			if(mbox != NULL)
+			{
+				free(streamurl), streamurl = NULL;
+
+				debug(99, "mbox->name %s", mbox->name);
+				debug(99, "mbox->text %s", mbox->text);
+				streamurl = ostrcat(mbox->text, NULL, 0, 0);
+
 			}
-		}														
+		}
 	}
 
 	free(tmpstr); tmpstr = NULL;
 	free(ip), ip = NULL;
 
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/zdf2_streamurl", streamurl, 0);
+	titheklog(debuglevel, "/tmp/zdf2_streamurl", NULL, streamurl");
 
 // segfault munmap_chunk(): invalid pointer
 //	free(pos), pos = NULL;

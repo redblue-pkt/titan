@@ -4,6 +4,7 @@
 char* vidstream(char* host, char* file)
 {
 	debug(99, "in host: %s file: %s", host, file);
+	int debuglevel = getconfigint("debuglevel", NULL);
 	char* tmphost = NULL;
 	char* tmpfile = NULL;
 	char* tmpstr = NULL;
@@ -41,8 +42,7 @@ char* vidstream(char* host, char* file)
 	debug(99, "send: %s", send);
 	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/vidstream1_tmpstr", tmpstr, 0);
+	titheklog(debuglevel, "/tmp/vidstream1_tmpstr", NULL, tmpstr);
 
 	sleep(1);
 
@@ -120,14 +120,12 @@ char* vidstream(char* host, char* file)
 	free(tmpstr), tmpstr = NULL;
 	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 	
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/vidstream2_tmpstr_post", tmpstr, 0);
+	titheklog(debuglevel, "/tmp/vidstream2_tmpstr_post", NULL, tmpstr);
 
 	sleep(1);
 	streamlink = string_resub("file: \"", "\",", tmpstr, 0);
 
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/vidstream3_streamlink", streamlink, 0);
+	titheklog(debuglevel, "/tmp/vidstream3_streamlink", NULL, streamlink);
 
 end:
 

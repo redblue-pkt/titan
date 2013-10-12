@@ -4,6 +4,7 @@
 char* streamcloud(char* host, char* file)
 {
 	debug(99, "in host: %s file: %s", host, file);
+	int debuglevel = getconfigint("debuglevel", NULL);
 	char* tmphost = NULL;
 	char* tmpfile = NULL;
 	char* tmpstr = NULL;
@@ -104,7 +105,7 @@ char* streamcloud(char* host, char* file)
 	hash = ostrcat(hash, op, 1, 0);
 	debug(99, "hash: %s", hash);
 	hashlen = oitoa(strlen(hash));
-    	
+
 	//create send string
 	free(send), send = NULL;
 
@@ -122,13 +123,11 @@ char* streamcloud(char* host, char* file)
 
 	free(tmpstr), tmpstr = NULL;
 	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 0);
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/streamcould2_tmpstr_post", tmpstr, 0);
+	titheklog(debuglevel, "/tmp/streamcould2_tmpstr_post", NULL, tmpstr);
 
 //	streamlink = oregex(".*file: \".*(http:.*video.mp4).*\".*", tmpstr);
 	streamlink = string_resub("file: \"", "\"", tmpstr, 0);
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/streamcould3_streamlink", streamlink, 0);
+	titheklog(debuglevel, "/tmp/streamcould3_streamlink", NULL, streamlink);
 
 	free(tmpstr); tmpstr = NULL;
 

@@ -127,6 +127,7 @@ char* solarmovie(char* link)
 
 int solarmovie_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr, int flag)
 {
+	int debuglevel = getconfigint("debuglevel", NULL);
 	int ret = 1;
 	int incount = 0;
 		
@@ -162,8 +163,7 @@ int solarmovie_search(struct skin* grid, struct skin* listbox, struct skin* coun
 			path = ostrcat("tv/search/", search, 0, 0);
 	
 		tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
-		if(getconfigint("debuglevel", NULL) == 99)
-			writesys("/tmp/solarmovie_tmpstr", tmpstr, 0);
+		titheklog(debuglevel, "/tmp/solarmovie_tmpstr", NULL, tmpstr);
 
 		while(ostrstr(tmpstr, "<div class=\"typicalGrey coverGroup\">") != NULL)
 		{
@@ -171,7 +171,7 @@ int solarmovie_search(struct skin* grid, struct skin* listbox, struct skin* coun
 			if(rcret == getrcconfigint("rcexit", NULL)) break;
 
 			incount += 1;
-			if(getconfigint("debuglevel", NULL) == 99)
+			if(debuglevel == 99)
 			{
 				file = ostrcat("/tmp/solarmovie_tmpstr", oitoa(incount), 0, 1);
 				writesys(file, tmpstr, 0);
@@ -179,7 +179,7 @@ int solarmovie_search(struct skin* grid, struct skin* listbox, struct skin* coun
 				
 			tmpstr1 = string_resub("<div class=\"typicalGrey coverGroup\">", "</div>", tmpstr, 0);
 
-			if(getconfigint("debuglevel", NULL) == 99)
+			if(debuglevel == 99)
 			{
 				file1 = ostrcat("/tmp/solarmovie_tmpstr_resub", oitoa(incount), 0, 1);
 				writesys(file1, tmpstr1, 0);
@@ -238,6 +238,7 @@ int solarmovie_search(struct skin* grid, struct skin* listbox, struct skin* coun
 int solarmovie_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title)
 {
 	debug(99, "link: %s", link);
+	int debuglevel = getconfigint("debuglevel", NULL);
 	int ret = 1, series = 0;
 	char* ip = NULL, *pos = NULL, *path = NULL, *etitle = NULL, *episode = NULL, *session = NULL, *update = NULL, *quality = NULL, *id = NULL, *line = NULL, *hname = NULL, *tmpstr = NULL, *cmd = NULL, *url = NULL, *tmpstr1 = NULL, *tmphost = NULL, *tmphname = NULL;
 
@@ -265,8 +266,7 @@ int solarmovie_hoster(struct skin* grid, struct skin* listbox, struct skin* coun
 		textbox(_("Message"), _("This file doesn't exist, or has been removed") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
 		goto end;
 	}
-	if(getconfigint("debuglevel", NULL) == 99)
-		system("cp -a /tmp/tithek/get /tmp/solarmovie1_tmpstr_get");
+	if(debuglevel == 99) system("cp -a /tmp/tithek/get /tmp/solarmovie1_tmpstr_get");
 
 	tmpstr = command("cat /tmp/tithek/get");
 	if(ostrstr(tmpstr, "<!DOCTYPE") == NULL)
@@ -282,8 +282,7 @@ int solarmovie_hoster(struct skin* grid, struct skin* listbox, struct skin* coun
 	else
 		system("cp -a /tmp/tithek/get /tmp/tithek/get_zcat");
 
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/solarmovie2_tmpstr_zcat", tmpstr, 0);
+	titheklog(debuglevel, "/tmp/solarmovie2_tmpstr_zcat", NULL, tmpstr);
 
 	drawscreen(load, 0, 0);
 	if(ostrstr(link, "/tv/") != NULL && ostrstr(link, "/season-") == NULL && ostrstr(link, "/episode-") == NULL)	
@@ -402,7 +401,7 @@ int solarmovie_hoster(struct skin* grid, struct skin* listbox, struct skin* coun
 				episode = oregex(".*/episode-([0-9]{1,2})/.*", ret1[i].part);
 				etitle = oregex(".*>(.*)<.*", ret1[i].part);
 				url = string_resub("\"", "\"", ret1[i].part, 0);
-printf("(s%se%s) (%s) = %s\n",session , episode, etitle, url);				
+
 				incount += 1;
 				line = ostrcat(line, _("Season"), 1, 0);
 				line = ostrcat(line, " ", 1, 0);
@@ -455,8 +454,7 @@ printf("(s%se%s) (%s) = %s\n",session , episode, etitle, url);
 			tmpstr = ostrcat("/tmp/tithek/solarmovie.hoster.ser.list", NULL, 0, 0);
 		writesys(tmpstr, line, 0);
 
-		if(getconfigint("debuglevel", NULL) == 99)
-			writesys("/tmp/solarmovie8_line", line, 0);
+		titheklog(debuglevel, "/tmp/solarmovie8_line", NULL, line);
 					
 		struct tithek* tnode = (struct tithek*)listbox->select->handle;
 		createtithek(tnode, tnode->title,  tmpstr, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);
