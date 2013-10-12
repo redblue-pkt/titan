@@ -542,6 +542,21 @@ void freemainbouquet(int flag)
 	}
 }
 
+//flag 0: don't unlink bouquet
+//flag 1: unlink bouquet
+void delemptymainbouquet(int flag)
+{
+	struct mainbouquet *node = mainbouquet, *prev = mainbouquet;
+
+	while(node != NULL)
+	{
+		prev = node;
+		node = node->next;
+		if(prev != NULL && prev->bouquet == NULL)
+			delmainbouquet(prev->name, flag);
+	}
+}
+
 void freeallbouquet()
 {
 	struct mainbouquet* node = mainbouquet;
