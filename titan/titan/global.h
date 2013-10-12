@@ -3279,6 +3279,8 @@ int ozip(char* inbuf, int inlen, char** outbuf, int* outlen, int level)
 
 //flag 0: malloc mem
 //flag 1: don't malloc mem
+//flag 2: malloc mem (gzip)
+//flag 3: don't malloc mem (gzip)
 int ounzip(char* inbuf, int inlen, char** outbuf, int* outlen, int maxbuf, int flag)
 {
 	int ret = 0;
@@ -3295,7 +3297,14 @@ int ounzip(char* inbuf, int inlen, char** outbuf, int* outlen, int maxbuf, int f
 	stream.avail_out = 0;
 	stream.next_out = Z_NULL;
 
-	ret = inflateInit(&stream);
+	if(flag == 2 || flag == 3)
+	{
+		ret = inflateInit2(&stream, 16 + MAX_WBITS);
+		if(flag == 2) flag == 0;
+		else if(flag == 3) flag == 1;
+	}
+	else
+		ret = inflateInit(&stream);
 	if(ret != Z_OK)
 		return 1;
 
