@@ -4,6 +4,7 @@
 char* nowvideo(char* host, char* file)
 {
 	debug(99, "in host: %s file: %s", host, file);
+	int debuglevel = getconfigint("debuglevel", NULL);
 	char* tmphost = NULL;
 	char* tmpfile = NULL;
 	char* tmpstr = NULL;
@@ -31,8 +32,7 @@ char* nowvideo(char* host, char* file)
 
 	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/nowvideo1", tmpstr, 0);
+	titheklog(debuglevel, "/tmp/nowvideo1", NULL, tmpstr);
 
 	if(ostrstr(tmpstr, "The file is being transfered to our other servers. This may take few minutes.") != NULL)
 	{
@@ -58,8 +58,7 @@ char* nowvideo(char* host, char* file)
 	free(tmpstr), tmpstr = NULL;
 	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/nowvideo2", tmpstr, 0);
+	titheklog(debuglevel, "/tmp/nowvideo2", NULL, tmpstr);
 
 	sleep(1);
 	streamlink = string_resub("url=", "&", tmpstr, 0);

@@ -34,7 +34,7 @@ char* flashx(char* host, char* file)
 	debug(99, "send: %s", send);
 	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 
-  titheklog(debuglevel, "/tmp/flashx1_tmpstr_get1", NULL, tmpstr);
+	titheklog(debuglevel, "/tmp/flashx1_tmpstr_get1", NULL, tmpstr);
 
 	free(tmpstr); tmpstr = NULL;
 	free(send); send = NULL;
@@ -50,7 +50,7 @@ char* flashx(char* host, char* file)
 	debug(99, "send: %s", send);
 	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 
-  titheklog(debuglevel, "/tmp/flashx2_tmpstr_get2", NULL, tmpstr);
+	titheklog(debuglevel, "/tmp/flashx2_tmpstr_get2", NULL, tmpstr);
 
 	free(tmpstr); tmpstr = NULL;
 	free(send); send = NULL;
@@ -70,12 +70,12 @@ char* flashx(char* host, char* file)
 		goto end;
 	}
 
-  if(debuglevel == 99) system("cp -a /tmp/tithek/x9 /tmp/flashx3_tmpstr_get3");
+	if(debuglevel == 99) system("cp -a /tmp/tithek/x9 /tmp/flashx3_tmpstr_get3");
 
 	free(send); send = NULL;
 	tmpstr = command("cat /tmp/tithek/x9 | sed '1,1d' | zcat");
 
-  titheklog(debuglevel, "/tmp/flashx4_tmpstr_get3_zcat", NULL, tmpstr);
+	titheklog(debuglevel, "/tmp/flashx4_tmpstr_get3_zcat", NULL, tmpstr);
 
 	streamlink = string_resub("<file>", "</file>", tmpstr, 0);
 	titheklog(debuglevel, "/tmp/flashx5_streamlink", NULL, streamlink);

@@ -253,6 +253,7 @@ int movie4k_search(struct skin* grid, struct skin* listbox, struct skin* countla
 int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title)
 {
 	debug(99, "link: %s", link);
+	int debuglevel = getconfigint("debuglevel", NULL);
 	int ret = 1;
 	char* ip = NULL, *pos = NULL, *path = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *line = NULL, *url = NULL, *url2 = NULL, *url3 = NULL, *url4 = NULL, *pathnew = NULL, *hname = NULL, *id = NULL, *logfile = NULL, *tmphname = NULL, *hnamein = NULL, *nolinks = NULL;
 
@@ -270,8 +271,7 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 	}
 
 	tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/movie4k2_tmpstr", tmpstr, 0);
+	titheklog(debuglevel, "/tmp/movie4k2_tmpstr", NULL, tmpstr);
 
 	if(tmpstr != NULL)
 	{
@@ -330,11 +330,9 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 
 						logfile = ostrcat("/tmp/movie4k4_pathnew1", id, 0, 0);
 						logfile = ostrcat(logfile, "_", 1, 0);
-						logfile = ostrcat(logfile, tmphname, 1, 0);
-
-						if(getconfigint("debuglevel", NULL) == 99)
-							writesys(logfile, pathnew, 0);
+						titheklog(debuglevel, logfile, tmphname, pathnew);
 						free(logfile), logfile= NULL;
+						
 						url = ostrcat(pathnew, NULL, 0, 0);
 					}
 					else
@@ -666,6 +664,7 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 int movie4k_hoster_series(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title)
 {
 	debug(99, "link: %s", link);
+	int debuglevel = getconfigint("debuglevel", NULL);
 	int ret = 1, series = 0;
 	char* ip = NULL, *pos = NULL, *id = NULL, *tpath = NULL, *path = NULL, *tmpstr = NULL, *line = NULL, *episode = NULL;
 	char* from = NULL;
@@ -703,8 +702,7 @@ int movie4k_hoster_series(struct skin* grid, struct skin* listbox, struct skin* 
 
 	tmpstr = gethttp(ip, tpath, 80, NULL, NULL, 10000, NULL, 0);
 	free(tpath), tpath = NULL;
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/movie4k2_tmpstr", tmpstr, 0);
+	titheklog(debuglevel, "/tmp/movie4k2_tmpstr", NULL, tmpstr);
 
 	if(tmpstr != NULL)
 	{
@@ -798,8 +796,7 @@ int movie4k_hoster_series(struct skin* grid, struct skin* listbox, struct skin* 
 			tmpstr = ostrcat("/tmp/tithek/movie4k.hoster.ser.list", NULL, 0, 0);
 		writesys(tmpstr, line, 0);
 
-		if(getconfigint("debuglevel", NULL) == 99)
-			writesys("/tmp/movie4k8_line", line, 0);
+		titheklog(debuglevel, "/tmp/movie4k8_line", NULL, line);
 					
 		struct tithek* tnode = (struct tithek*)listbox->select->handle;
 		createtithek(tnode, tnode->title,  tmpstr, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);
@@ -811,6 +808,7 @@ int movie4k_hoster_series(struct skin* grid, struct skin* listbox, struct skin* 
 int movie4k_series(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title)
 {
 	debug(99, "link: %s", link);
+	int debuglevel = getconfigint("debuglevel", NULL);
 	int ret = 1;
 	char* ip = NULL, *pos = NULL, *tpath = NULL, *path = NULL, *tmpstr = NULL, *line = NULL;
 	char* from = NULL;
@@ -835,8 +833,7 @@ int movie4k_series(struct skin* grid, struct skin* listbox, struct skin* countla
 
 	tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
 	free(tpath), tpath = NULL;
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/movie4k2_tmpstr", tmpstr, 0);
+	titheklog(debuglevel, "/tmp/movie4k2_tmpstr", NULL, tmpstr);
 
 	if(tmpstr != NULL)
 	{
@@ -911,8 +908,7 @@ int movie4k_series(struct skin* grid, struct skin* listbox, struct skin* countla
 		tmpstr = ostrcat("/tmp/tithek/movie4k.series.list", NULL, 0, 0);
 		writesys(tmpstr, line, 0);
 
-		if(getconfigint("debuglevel", NULL) == 99)
-			writesys("/tmp/movie4k8_line", line, 0);
+		titheklog(debuglevel, "/tmp/movie4k8_line", NULL, line);
 					
 		struct tithek* tnode = (struct tithek*)listbox->select->handle;
 		createtithek(tnode, tnode->title,  tmpstr, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);
@@ -924,6 +920,7 @@ int movie4k_series(struct skin* grid, struct skin* listbox, struct skin* countla
 int movie4k_series_listed(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title)
 {
 	debug(99, "link: %s", link);
+	int debuglevel = getconfigint("debuglevel", NULL);
 	int ret = 1;
 	char* ip = NULL, *pos = NULL, *tpath = NULL, *path = NULL, *tmpstr = NULL, *line = NULL;
 	char* from = NULL;
@@ -949,8 +946,7 @@ int movie4k_series_listed(struct skin* grid, struct skin* listbox, struct skin* 
 
 	tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
 	free(tpath), tpath = NULL;
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/movie4k2_tmpstr", tmpstr, 0);
+	titheklog(debuglevel, "/tmp/movie4k2_tmpstr", NULL, tmpstr);
 
 	if(tmpstr != NULL)
 	{
@@ -1034,8 +1030,7 @@ int movie4k_series_listed(struct skin* grid, struct skin* listbox, struct skin* 
 		tmpstr = ostrcat("/tmp/tithek/movie4k.series.listed.list", NULL, 0, 0);
 		writesys(tmpstr, line, 0);
 
-		if(getconfigint("debuglevel", NULL) == 99)
-			writesys("/tmp/movie4k8_line", line, 0);
+		titheklog(debuglevel, "/tmp/movie4k8_line", NULL, line);
 					
 		struct tithek* tnode = (struct tithek*)listbox->select->handle;
 		createtithek(tnode, tnode->title,  tmpstr, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);

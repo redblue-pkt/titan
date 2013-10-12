@@ -6,6 +6,7 @@
 char* myvideo(char* input, char* url, char* name, int flag)
 {
 	debug(99, "link(%d): %s", flag, input);
+	int debuglevel = getconfigint("debuglevel", NULL);
 	char* ip = NULL, *pos = NULL, *path = NULL, *pageUrl = NULL, *playpath = NULL, *video_id = NULL, *source = NULL, *streamurl = NULL, *tmpstr_uni = NULL, *b64 = NULL, *key = NULL, *newurl = NULL, *link = NULL, *tmpstr = NULL, *tmppath = NULL, *error = NULL;
 
 	if(flag == 1)
@@ -42,8 +43,7 @@ char* myvideo(char* input, char* url, char* name, int flag)
 	unlink("/tmp/myvideo_tmpstr_uni");
 	unlink("/tmp/myvideo_tmpstr_error");
 
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/myvideo_tmpstr_error", tmpstr, 0);
+	titheklog(debuglevel, "/tmp/myvideo_tmpstr_error", NULL, tmpstr);
 				
 	if(ostrstr(error, "<div class='error sBold' id='error_screen_body'>") == NULL)
 	{
@@ -61,8 +61,7 @@ char* myvideo(char* input, char* url, char* name, int flag)
 
 	debug(99, "link: http://%s/%s", ip, path);
 
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/myvideo_tmpstr", tmpstr, 0);
+	titheklog(debuglevel, "/tmp/myvideo_tmpstr", NULL, tmpstr);
 
 /*
 // work start
@@ -118,8 +117,7 @@ char* myvideo(char* input, char* url, char* name, int flag)
 
 			htmldecode(tmpstr_uni, tmpstr_uni);
 
-			if(getconfigint("debuglevel", NULL) == 99)
-				writesys("/tmp/myvideo_tmpstr_uni", tmpstr_uni, 0);
+			titheklog(debuglevel, "/tmp/myvideo_tmpstr_uni", NULL, tmpstr_uni);
 
 			if(ostrstr(tmpstr_uni, "connectionurl='rtmp"))
 			{

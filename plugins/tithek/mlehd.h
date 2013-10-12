@@ -4,6 +4,7 @@
 char* mlehd(char* link)
 {
 	debug(99, "link %s", link);
+	int debuglevel = getconfigint("debuglevel", NULL);
 	char* ip = NULL, *pos = NULL, *path = NULL, *streamurl = NULL, *tmpstr = NULL, *tmppath = NULL;
 	
 	ip = string_replace("http://", "", (char*)link, 0);
@@ -36,8 +37,7 @@ char* mlehd(char* link)
 	free(ip), ip = NULL;
 	free(tmppath), tmppath = NULL;
 
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/mlehd2_streamurl", streamurl, 0);
+  titheklog(debuglevel, "/tmp/mlehd2_streamurl", NULL, streamurl);
 
 // segfault munmap_chunk(): invalid pointer
 //	free(pos), pos = NULL;

@@ -53,6 +53,7 @@ char* kinox(char* link, char* url, char* name, int flag)
 int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr, int flag)
 {
 	int ret = 1;
+	int debuglevel = getconfigint("debuglevel", NULL);
 
 	if(listbox == NULL || listbox->select == NULL || listbox->select->handle == NULL)
 		return ret;
@@ -94,10 +95,8 @@ int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabe
 		tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
 		tmpstr = string_resub("<div id=\"beep\" class=\"beep\"></div>", "</table>", tmpstr, 0);
 
-		if(getconfigint("debuglevel", NULL) == 99)
-			writesys("/tmp/kinox1_tmpstr", tmpstr, 0);
-
-
+		titheklog(debuglevel, "/tmp/kinox1_tmpstr", NULL, tmpstr);
+		
 		int count = 0;
 		int incount = 0;
 		int i = 0;
@@ -197,6 +196,7 @@ int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabe
 int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title)
 {
 	debug(99, "link: %s", link);
+	int debuglevel = getconfigint("debuglevel", NULL);
 	int ret = 1, series = 0;
 	char* ip = NULL, *pos = NULL, *path = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *tmpstr4 = NULL, *tmpstr5 = NULL, *line = NULL, *url = NULL, *url2 = NULL, *url3 = NULL, *url4 = NULL, *pathnew = NULL;
 
@@ -214,8 +214,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 	}
 
 	tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/kinox2_tmpstr", tmpstr, 0);
+	titheklog(debuglevel, "/tmp/kinox2_tmpstr", NULL, tmpstr);
 	
 	if(tmpstr != NULL)
 	{
@@ -290,8 +289,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 		else
 		{
 			tmpstr = string_resub("<ul id=\"HosterList\" class=\"Sortable\">", "</ul>", tmpstr, 0);
-			if(getconfigint("debuglevel", NULL) == 99)
-				writesys("/tmp/kinox3_tmpstr", tmpstr, 0);
+			titheklog(debuglevel, "/tmp/kinox3_tmpstr", NULL, tmpstr);
 	
 			int count = 0;
 			int incount = 0;
@@ -315,18 +313,12 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 					hname = string_resub("<div class=\"Named\">", "</div>", ret1[i].part, 0);
 					pathnew = ostrcat("/aGET/Mirror/", hlink, 0, 0);
 
-					char* logfile = ostrcat("/tmp/kinox4_pathnew1", hname, 0, 0);
-					if(getconfigint("debuglevel", NULL) == 99)
-						writesys(logfile, pathnew, 0);
-					free(logfile), logfile= NULL;
+					titheklog(debuglevel, "/tmp/kinox4_pathnew1", hname, pathnew);
 					
 					tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
 					free(pathnew), pathnew = NULL;
 
-					logfile = ostrcat("/tmp/kinox5_tmpstr1", hname, 0, 0);
-					if(getconfigint("debuglevel", NULL) == 99)
-						writesys(logfile, tmpstr1, 0);
-					free(logfile), logfile= NULL;
+					titheklog(debuglevel, "/tmp/kinox5_tmpstr1", hname, tmpstr1);
 
 					tmpstr1 = string_replace_all("\\", "", tmpstr1, 1);
 					tmpstr1 = string_resub("<a href=\"", "\"", tmpstr1, 0);
@@ -337,18 +329,12 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 					pathnew = ostrcat("/aGET/Mirror/", hlink, 0, 0);
 					pathnew = ostrcat(pathnew, "&Part=2", 1, 0);
 
-					logfile = ostrcat("/tmp/kinox6_pathnew2", hname, 0, 0);
-					if(getconfigint("debuglevel", NULL) == 99)
-						writesys(logfile, pathnew, 0);
-					free(logfile), logfile= NULL;
+					titheklog(debuglevel, "/tmp/kinox6_pathnew2", hname, pathnew);
 					
 					tmpstr3 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
 					free(pathnew), pathnew = NULL;
 
-					logfile = ostrcat("/tmp/kinox7_tmpstr3", hname, 0, 0);
-					if(getconfigint("debuglevel", NULL) == 99)
-						writesys(logfile, tmpstr3, 0);
-					free(logfile), logfile= NULL;
+					titheklog(debuglevel, "/tmp/kinox7_tmpstr3", hname, tmpstr3);
 
 					tmpstr3 = string_replace_all("\\", "", tmpstr3, 1);
 					tmpstr3 = string_resub("<a href=\"", "\"", tmpstr3, 0);
@@ -359,18 +345,12 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 					pathnew = ostrcat("/aGET/Mirror/", hlink, 0, 0);
 					pathnew = ostrcat(pathnew, "&Part=3", 1, 0);
 
-					logfile = ostrcat("/tmp/kinox6_pathnew3", hname, 0, 0);
-					if(getconfigint("debuglevel", NULL) == 99)
-						writesys(logfile, pathnew, 0);
-					free(logfile), logfile= NULL;
+					titheklog(debuglevel, "/tmp/kinox6_pathnew3", hname, pathnew);
 					
 					tmpstr4 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
 					free(pathnew), pathnew = NULL;
 
-					logfile = ostrcat("/tmp/kinox7_tmpstr4", hname, 0, 0);
-					if(getconfigint("debuglevel", NULL) == 99)
-						writesys(logfile, tmpstr4, 0);
-					free(logfile), logfile= NULL;
+					titheklog(debuglevel, "/tmp/kinox7_tmpstr4", hname, tmpstr4);
 
 					tmpstr4 = string_replace_all("\\", "", tmpstr4, 1);
 					tmpstr4 = string_resub("<a href=\"", "\"", tmpstr4, 0);
@@ -381,18 +361,12 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 					pathnew = ostrcat("/aGET/Mirror/", hlink, 0, 0);
 					pathnew = ostrcat(pathnew, "&Part=4", 1, 0);
 
-					logfile = ostrcat("/tmp/kinox6_pathnew4", hname, 0, 0);
-					if(getconfigint("debuglevel", NULL) == 99)
-						writesys(logfile, pathnew, 0);
-					free(logfile), logfile= NULL;
+					titheklog(debuglevel, "/tmp/kinox6_pathnew4", hname, pathnew);
 					
 					tmpstr5 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
 					free(pathnew), pathnew = NULL;
 
-					logfile = ostrcat("/tmp/kinox7_tmpstr5", hname, 0, 0);
-					if(getconfigint("debuglevel", NULL) == 99)
-						writesys(logfile, tmpstr5, 0);
-					free(logfile), logfile= NULL;
+					titheklog(debuglevel, "/tmp/kinox7_tmpstr5", hname, tmpstr5);
 
 					tmpstr5 = string_replace_all("\\", "", tmpstr5, 1);
 					tmpstr5 = string_resub("<a href=\"", "\"", tmpstr5, 0);
@@ -817,8 +791,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 			tmpstr = ostrcat("/tmp/tithek/kinox.hoster.ser.list", NULL, 0, 0);
 		writesys(tmpstr, line, 0);
 
-		if(getconfigint("debuglevel", NULL) == 99)
-			writesys("/tmp/kinox8_line", line, 0);
+		titheklog(debuglevel, "/tmp/kinox8_line", NULL, line);
 					
 		struct tithek* tnode = (struct tithek*)listbox->select->handle;
 		createtithek(tnode, tnode->title,  tmpstr, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);
@@ -831,6 +804,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title)
 {
 	debug(99, "link: %s", link);
+	int debuglevel = getconfigint("debuglevel", NULL);
 	int ret = 1;
 	char* ip = NULL, *pathnew = NULL, *seriesid = NULL, *searchname = NULL, *url = NULL, *session = NULL, *episode = NULL, *pos = NULL, *path = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *line = NULL;		
 
@@ -1034,8 +1008,7 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 		tmpstr = ostrcat("/tmp/tithek/kinox.hoster.series.list", NULL, 0, 0);
 		writesys(tmpstr, line, 0);
 
-		if(getconfigint("debuglevel", NULL) == 99)
-			writesys("/tmp/kinox9_line", line, 0);
+		titheklog(debuglevel, "/tmp/kinox9_line", NULL, line);
 
 		struct tithek* tnode = (struct tithek*)listbox->select->handle;
 		createtithek(tnode, tnode->title,  tmpstr, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);
