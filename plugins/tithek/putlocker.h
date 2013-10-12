@@ -4,6 +4,7 @@
 char* putlocker(char* host, char* file)
 {
 	debug(99, "in host: %s file: %s", host, file);
+	int debuglevel = getconfigint("debuglevel", NULL);
 	char* tmphost = NULL;
 	char* tmpfile = NULL;
 	char* tmpstr = NULL;
@@ -52,8 +53,7 @@ char* putlocker(char* host, char* file)
 		textbox(_("Message"), _("This file doesn't exist, or has been removed") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
 		goto end;
 	}
-	if(getconfigint("debuglevel", NULL) == 99)
-		system("cp -a /tmp/tithek/get /tmp/putlocker1_tmpstr_get");
+	if(debuglevel == 99) system("cp -a /tmp/tithek/get /tmp/putlocker1_tmpstr_get");
 
 	char* header = NULL;
 	header = command("cat /tmp/tithek/get");
@@ -86,8 +86,7 @@ char* putlocker(char* host, char* file)
 	tmpstr = command(cmd);
 	free(cmd); cmd = NULL;
 	free(lines); lines = NULL;
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/putlocker2_tmpstr_zcat", tmpstr, 0);
+	titheklog(debuglevel, "/tmp/putlocker2_tmpstr_zcat", NULL, tmpstr);
 
 	//get hash from tmpstr
 	char* pos = ostrstr(tmpstr, "<input type=\"hidden\" value=");
@@ -125,13 +124,11 @@ char* putlocker(char* host, char* file)
 	//send and receive answer
 	gethttpreal(tmphost, tmpfile, 80, "/tmp/tithek/x9", NULL, NULL, 0, send, NULL, 5000, 0);
 	sleep(1);
-	if(getconfigint("debuglevel", NULL) == 99)
-		system("cp -a /tmp/tithek/x9 /tmp/putlocker3_tmpstr_post");
+	if(debuglevel == 99) system("cp -a /tmp/tithek/x9 /tmp/putlocker3_tmpstr_post");
 
 	free(send); send = NULL;
 	tmpstr = command("cat /tmp/tithek/x9 | sed '1,1d' | zcat");
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/putlocker4_tmpstr_post_zcat", tmpstr, 0);
+	titheklog(debuglevel, "/tmp/putlocker4_tmpstr_post_zcat", NULL, tmpstr);
 	
 	if(ostrstr(tmpstr, "warning_message") != NULL)
 	{
@@ -184,15 +181,13 @@ char* putlocker(char* host, char* file)
 	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 0);
 	free(send); send = NULL;
 
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/putlocker5_tmpstr_get", tmpstr, 0);
+	titheklog(debuglevel, "/tmp/putlocker5_tmpstr_get", NULL, tmpstr);
 
 //Streaming version of this file is currently not available. You can download it below.
 
 	//get streamlink1
 	streamlink1 = getxmlentry(tmpstr, "url=");
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/putlocker5_streamlink", streamlink1, 0);
+	titheklog(debuglevel, "/tmp/putlocker5_streamlink", NULL, streamlink1);
 
 	free(tmpstr); tmpstr = NULL;
 

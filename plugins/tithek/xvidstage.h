@@ -4,6 +4,7 @@
 char* xvidstage(char* host, char* file)
 {
 	debug(99, "in host: %s file: %s", host, file);
+	int debuglevel = getconfigint("debuglevel", NULL);
 	char* tmphost = NULL;
 	char* tmpfile = NULL;
 	char* tmpstr = NULL;
@@ -65,15 +66,13 @@ char* xvidstage(char* host, char* file)
 		goto end;
 	}
 
-	if(getconfigint("debuglevel", NULL) == 99)
-		system("cp -a /tmp/tithek/get /tmp/xvidstage1_tmpstr_get");
+	if(debuglevel == 99) system("cp -a /tmp/tithek/get /tmp/xvidstage1_tmpstr_get");
 
 	tmpstr = command("cat /tmp/tithek/get");
 	cookie = string_resub("Set-Cookie: afc=", ";", tmpstr, 0);	
 	debug(99, "cookie: %s", cookie);
-
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/xvidstage2_tmpstr", tmpstr, 0);
+	
+	titheklog(debuglevel, "/tmp/xvidstage2_tmpstr", NULL, tmpstr);
 
 	free(tmpstr), tmpstr = NULL;
 
@@ -98,8 +97,7 @@ char* xvidstage(char* host, char* file)
 	free(cmd); cmd = NULL;
 	free(lines); lines = NULL;
 
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/xvidstage3_tmpstr_zcat", tmpstr, 0);
+	titheklog(debuglevel, "/tmp/xvidstage3_tmpstr_zcat", NULL, tmpstr);
 
 	sleep(1);
 
@@ -178,37 +176,31 @@ char* xvidstage(char* host, char* file)
 		goto end;
 	}
 
-	if(getconfigint("debuglevel", NULL) == 99)
-		system("cp -a /tmp/tithek/post /tmp/xvidstage4_tmpstr_post");	
+	if(debuglevel == 99) system("cp -a /tmp/tithek/post /tmp/xvidstage4_tmpstr_post");	
 
 	cmd = ostrcat(cmd, "cat /tmp/tithek/post | zcat", 1, 0);
 	debug(99, "cmd: %s", cmd);
 	post = command(cmd);
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/xvidstage5_tmpstr_post1_zcat", post, 0);
+	titheklog(debuglevel, "/tmp/xvidstage5_tmpstr_post1_zcat", NULL, post);
 	free(cmd); cmd = NULL;
 
 	free(tmpstr),tmpstr = NULL;
 	tmpstr = string_resub(";return p}('", ");'", post, 0);
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/xvidstage6_tmpstr_post1_zcat_resub", tmpstr, 0);
+	titheklog(debuglevel, "/tmp/xvidstage6_tmpstr_post1_zcat_resub", NULL, tmpstr);
 	
 	post = string_replace_all(tmpstr, "", post, 1);
 	post = string_replace_all(";return p}(');'", "", post, 1);
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/xvidstage7_tmpstr_post2", post, 0);
+	titheklog(debuglevel, "/tmp/xvidstage7_tmpstr_post2", NULL, post);
 
 	free(tmpstr),tmpstr = NULL;
 	free(b36code),b36code = NULL;
 	tmpstr = string_resub(";return p}('", ");'", post, 0);
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/xvidstage8_tmpstr_post2_resub", tmpstr, 0);
+	titheklog(debuglevel, "/tmp/xvidstage8_tmpstr_post2_resub", NULL, tmpstr);
 
 	b36code = oregex(".*;',[0-9]{2,2},[0-9]{2,2},'(.*)'.split.*", post);
 	
-	b36code = string_replace_all("||", "| |", b36code, 1);		
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/xvidstage9_tmpstr_post2_resub_b36code2", b36code, 0);
+	b36code = string_replace_all("||", "| |", b36code, 1);
+	titheklog(debuglevel, "/tmp/xvidstage9_tmpstr_post2_resub_b36code2", NULL, b36code);
 	
 	struct splitstr* ret1 = NULL;
 	int count = 0;
@@ -287,8 +279,7 @@ char* xvidstage(char* host, char* file)
 	free(post), post = NULL;
 	free(charlist), charlist = NULL;
 
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/xvidstage10_tmpstr_last", tmpstr, 0);
+	titheklog(debuglevel, "/tmp/xvidstage10_tmpstr_last", NULL, tmpstr);
 
 	streamlink = oregex(".*file.*(http:.*video.flv).*image.*", tmpstr);
 	if(streamlink == NULL)
@@ -318,8 +309,7 @@ char* xvidstage(char* host, char* file)
 	if(streamlink == NULL)
 		streamlink = oregex(".*value=.*(http:.*video.avi).*\".*", tmpstr);			
 
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/xvidstage11_streamlink", streamlink, 0);
+	titheklog(debuglevel, "/tmp/xvidstage11_streamlink", NULL, streamlink);
 
 	free(tmpstr); tmpstr = NULL;
 
