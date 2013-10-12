@@ -1594,7 +1594,10 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 		
 		if(scantype != 3 && scaninfo.threadend == 1 && endmsgshow == 0)
 		{
-			textbox(_("Message"), _("Channel scan ended.\nYou can add all channel (green) or\neach and every (red) to the channellist."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
+			if(scaninfo.tvcount + scaninfo.radiocount + scaninfo.datacount == 0)
+				textbox(_("Message"), _("Channel scan ended.\nNothing found."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
+			else
+				textbox(_("Message"), _("Channel scan ended.\nYou can add all channel (green) or\neach and every (red) to the channellist."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
 			endmsgshow = 1;		
 		}
 
@@ -1621,7 +1624,10 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 				lnode = lnode->next;
 			}
 			clearscreen(load);
-			textbox(_("Message"), _("All new channels added!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+			if(scaninfo.tvcount + scaninfo.radiocount + scaninfo.datacount == 0)
+				textbox(_("Message"), _("Channel scan ended.\nNothing found."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
+			else
+				textbox(_("Message"), _("All new channels added!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 		}
 
 		if(rcret == getrcconfigint("rcexit", NULL))
