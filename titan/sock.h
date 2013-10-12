@@ -586,6 +586,7 @@ int checkhttpheader(char* tmpbuf, char** retstr)
 
 //flag 0: output without header
 //flag 1: output with header
+//flag 2: output only header
 char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, struct download* dnode, int redirect, char* header, long* clen, int timeout, int flag)
 {
 	int sock = -1, ret = 0, count = 0, hret = 0, freeheader = 0;
@@ -697,6 +698,24 @@ char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, 
 			break;
 		}
 		pbuf++;
+	}
+
+	if(flag == 3)
+	{
+		if(headerlen > 0)
+		{
+			count = headerlen;
+			headerlen = 0;
+			if(filename != NULL)
+				fwrite(tmpbuf, count, 1, fd);
+			else
+			{
+				buf = realloc(buf, count);
+				memcpy(buf, tmpbuf, count);
+			}
+		}
+	
+		goto end;
 	}
 
 	//TODO: case-sens check
