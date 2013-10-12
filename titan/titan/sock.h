@@ -589,7 +589,7 @@ int checkhttpheader(char* tmpbuf, char** retstr)
 //flag 2: output only header
 char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, struct download* dnode, int redirect, char* header, long* clen, int timeout, int flag)
 {
-	int sock = -1, ret = 0, count = 0, hret = 0, freeheader = 0;
+	int sock = -1, ret = 0, count = 0, hret = 0, freeheader = 0, gzip = 0;
 	int headerlen = 0;
 	unsigned int len = 0, maxret = 0;
 	char *ip = NULL;
@@ -725,6 +725,8 @@ char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, 
 		contentlen += 15;
 		len = strtoul(contentlen, NULL, 10);
 	}
+	if(filename == NULL && flag == 0 && ostrstr(tmpbuf, "Content-Type: application/x-gzip") != NULL)
+		gzip = 1;
 
 	if(flag == 0) headerlen = 0;
 	while((ret = sockread(sock, (unsigned char*)tmpbuf + headerlen, 0, MINMALLOC - headerlen, timeout * 1000, 0)) > 0)
@@ -772,6 +774,23 @@ end:
 	free(tmpbuf);
 	if(fd != NULL) fclose(fd);
 	sockclose(&sock);
+	
+	if(gzip == 1)
+	{
+		int unzipret = 0, outlen = 0;
+		char* outbuf = NULL;
+		
+		unzipret = ounzip(buf, count, &outbuf, &outlen, MINMALLOC * 100, 0);
+		if(unzipret == 0 && outbuf != NULL)
+		{
+			free(buf); buf = outbuf;
+			count = outlen;
+		}
+		else
+		{
+			err("unzip http data");
+		}
+	}
 
 	if(filename == NULL)
 	{
