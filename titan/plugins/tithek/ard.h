@@ -48,7 +48,7 @@ mediaCollection.addMediaStream(1, 1, "", "http://http-stream.rbb-online.de/rbb/a
 	free(tmpstr); tmpstr = NULL;
 	free(ip), ip = NULL;
 
-  titheklog(debuglevel, "/tmp/ard2_streamurl", NULL, streamurl);
+	titheklog(debuglevel, "/tmp/ard2_streamurl", NULL, streamurl);
 
 // segfault munmap_chunk(): invalid pointer
 //	free(pos), pos = NULL;

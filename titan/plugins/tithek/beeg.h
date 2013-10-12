@@ -28,7 +28,7 @@ char* beeg(char* link)
 	free(tmpstr); tmpstr = NULL;
 	free(ip), ip = NULL;
 
-  titheklog(debuglevel, "/tmp/beeg2_streamurl", NULL, streamurl);
+	titheklog(debuglevel, "/tmp/beeg2_streamurl", NULL, streamurl);
 
 // segfault munmap_chunk(): invalid pointer
 //	free(pos), pos = NULL;

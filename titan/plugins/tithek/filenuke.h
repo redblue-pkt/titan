@@ -198,7 +198,7 @@ char* filenuke(char* host, char* file)
 	free(post), post = NULL;
 	free(charlist), charlist = NULL;
 
-  titheklog(debuglevel, "/tmp/filenuke7_tmpstr_last", NULL, tmpstr);
+	titheklog(debuglevel, "/tmp/filenuke7_tmpstr_last", NULL, tmpstr);
 
 	streamlink = oregex(".*file.*(http:.*video.flv).*image.*", tmpstr);
 	if(streamlink == NULL)
