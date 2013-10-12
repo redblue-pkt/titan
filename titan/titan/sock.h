@@ -780,7 +780,7 @@ end:
 		int unzipret = 0, outlen = 0;
 		char* outbuf = NULL;
 		
-		unzipret = ounzip(buf, count, &outbuf, &outlen, MINMALLOC * 100, 0);
+		unzipret = ounzip(buf, count, &outbuf, &outlen, MINMALLOC * 100, 2);
 		if(unzipret == 0 && outbuf != NULL)
 		{
 			free(buf); buf = outbuf;
