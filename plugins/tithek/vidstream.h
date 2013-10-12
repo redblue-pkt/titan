@@ -1,7 +1,7 @@
 #ifndef VIDSTREAM_H
 #define VIDSTREAM_H
 
-char* vidstream(char* host, char* file)
+char* vidstream(char* host, char* file, char* hosterurl)
 {
 	debug(99, "in host: %s file: %s", host, file);
 	int debuglevel = getconfigint("debuglevel", NULL);
