@@ -4172,3 +4172,6 @@ msgstr "neu erstellen"
 
 msgid "Delete All"
 msgstr "alle löschen"		
+
+msgid "Channel scan ended.\nYou can add all channel (green) or\neach and every (red) to the channellist."
+msgstr "Sendersuchlauf wurde beendet.\nSie können alle (grün) oder\neinzelne (rot) Sender zur Senderliste hinzufügen."
