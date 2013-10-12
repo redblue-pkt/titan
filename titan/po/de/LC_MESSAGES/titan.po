@@ -2440,7 +2440,7 @@ msgid "Volumebar Timeout"
 msgstr "Zeit bis Lautstärkeanzeige ausblendet (sek)"
 
 msgid "Wait for channel scan end"
-msgstr "Sendersuchlauf, bitte warten ..."
+msgstr "Bitte Warten, Sendersuchlauf wird abgebrochen."
 
 msgid "wait for stopping download"
 msgstr "Warten, Download wird beendet."
@@ -4149,12 +4149,26 @@ msgstr "Krieg"
 msgid "Music"
 msgstr "Musik"
 
-msgid "Bouquet\n\nRenew Bouquet = Red\nDelete all Bouquet = Green\nProvider to Bouquet = Yellow"
-msgstr "Favoriten\n\nFavoriten erneuern = Rot\nAlle Favoriten löschen = Grün\nProvider als Favoriten anlegen = Gelb"
+msgid "Remove unused Channels in Bouquets"
+msgstr "Lösche unbenutze Kanäle in Favoriten"
 
-msgid "RENEW"
-msgstr "Erneuern"
+msgid "Remove emthy Bouquet"
+msgstr "Lösche leere Favoriten Ordner"
 
-msgid "DELETE"
-msgstr "Löschen"		
+msgid "Bouquet Type"
+msgstr "Favoriten Typ"
 
+msgid "Scan is not allowed if record or stream is running !"
+msgstr "Beenden Sie laufende Aufnahmen oder Streams und versuchen sie es dann erneut."
+
+msgid "No Tuner configured"
+msgstr "Fehler: Es ist kein Tuner eingerichtet"
+
+msgid "Unchanged"
+msgstr "nicht verändern"
+
+msgid "Create new"
+msgstr "neu erstellen"
+
+msgid "Delete All"
+msgstr "alle löschen"		
