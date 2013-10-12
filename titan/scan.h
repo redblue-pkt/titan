@@ -1962,7 +1962,7 @@ void screenscanconfig(int flag)
 
 	if(tunercount < 1)
 	{
-		textbox(_("Message"), _("No Tuner configured"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+		textbox(_("Message"), _("No Tuner configured"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
 		return;
 	}
 
