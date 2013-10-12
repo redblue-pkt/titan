@@ -383,7 +383,7 @@ void delsat(char *name);
 struct sat* getsatbyorbitalpos(int orbitalpos);
 int movesatdown(struct sat* node);
 int movesatup(struct sat* node);
-int sat2bouquet(int orbitalpos);
+int sat2bouquet(int orbitalpos, int flag);
 
 //provider.h
 int writeprovider(const char *filename);
@@ -811,6 +811,7 @@ struct mainbouquet* addmainbouquet(char *line, int count, struct mainbouquet* la
 struct mainbouquet* screenmainbouquet();
 int mainbouquet2epgscanlist(struct mainbouquet* mnode);
 int mainbouquet2channelslot(struct mainbouquet* mnode, int slot);
+void delmainbouquet(char *name, int flag);
 
 //listbox.h
 struct skin* addlistbox(struct skin* screen, struct skin* listbox, struct skin* last, int del);
