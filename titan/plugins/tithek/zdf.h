@@ -36,7 +36,7 @@ char* zdf(char* link)
 		string_strip_whitechars(tmpstr2);
 		tmpstr2 = string_replace_all("<formitaet basetype", "\n\t<formitaet basetype", tmpstr2, 1);
 
-		titheklog(debuglevel, "/tmp/zdf1_tmpstr2", NULL, tmpstr");
+		titheklog(debuglevel, "/tmp/zdf1_tmpstr2", NULL, tmpstr);
 		
 		int count = 0, i = 0;	
  		struct splitstr* ret1 = NULL;
@@ -125,7 +125,7 @@ char* zdf(char* link)
 	free(tmpstr); tmpstr = NULL;
 	free(ip), ip = NULL;
 
-	titheklog(debuglevel, "/tmp/zdf2_streamurl", NULL, streamurl");
+	titheklog(debuglevel, "/tmp/zdf2_streamurl", NULL, streamurl);
 
 // segfault munmap_chunk(): invalid pointer
 //	free(pos), pos = NULL;

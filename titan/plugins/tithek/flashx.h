@@ -3,8 +3,10 @@
 
 char* flashx(char* host, char* file, char* hosterurl)
 {
-	debug(99, "host: %s file: %s", host, file);
+	debug(99, "host: %s", host);
+	debug(99, "file: %s", file);
 	debug(99, "hosterurl: %s", hosterurl);
+	int debuglevel = getconfigint("debuglevel", NULL);
 	char* tmphost = NULL;
 	char* tmppath = NULL;
 	char* tmpstr = NULL;
@@ -39,8 +41,7 @@ char* flashx(char* host, char* file, char* hosterurl)
 	send = ostrcat(send, "\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nConnection: close\r\nAccept-Encoding: gzip\r\n\r\n", 1, 0);	
 	debug(99, "send: %s", send);
 	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/flashx_tmpstr_get1", tmpstr, 0);
+	titheklog(debuglevel, "/tmp/flashx_tmpstr_get1", NULL, tmpstr);
 //	writesys("/var/usr/local/share/titan/plugins/tithek//flashx_tmpstr_get1", tmpstr, 0);
 //printf("\n#######################################################\n");
 
@@ -81,8 +82,7 @@ char* flashx(char* host, char* file, char* hosterurl)
 	debug(99, "send: %s", send);
 	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/flashx_tmpstr_get2", tmpstr, 0);
+	titheklog(debuglevel, "/tmp/flashx_tmpstr_get2", NULL, tmpstr);
 //	writesys("/var/usr/local/share/titan/plugins/tithek//flashx_tmpstr_get2", tmpstr, 0);
 //printf("\n#######################################################\n");
 
@@ -125,8 +125,7 @@ char* flashx(char* host, char* file, char* hosterurl)
 	debug(99, "send: %s", send);
 	tmpstr = gethttpreal(tmphost, "/player/show.php", 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/flashx_tmpstr_get3", tmpstr, 0);
+	titheklog(debuglevel, "/tmp/flashx_tmpstr_get3", NULL, tmpstr);
 //	writesys("/var/usr/local/share/titan/plugins/tithek//flashx_tmpstr_get3", tmpstr, 0);
 //printf("\n#######################################################\n");
 //var code ='<object id="nuevoplayer" width="'+ww+'" height="'+hh+'" data="http://play.flashx.tv/nuevo/player/player.swf?config=http://play.flashx.tv/nuevo/player/play.php?str=4MfrzrW4qrPKnM2dw5/Fvcs=" type="application/x-shockwave-flash">';
@@ -160,8 +159,7 @@ char* flashx(char* host, char* file, char* hosterurl)
 	debug(99, "send: %s", send);
 	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/flashx_tmpstr_get4", tmpstr, 0);
+	titheklog(debuglevel, "/tmp/flashx_tmpstr_get4", NULL, tmpstr);
 //	writesys("/var/usr/local/share/titan/plugins/tithek//flashx_tmpstr_get4", tmpstr, 0);
 //printf("\n#######################################################\n");
 
