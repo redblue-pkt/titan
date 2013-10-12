@@ -62,6 +62,8 @@
 #: scan.h:1800 scan.h:2270 scan.h:2274 scan.h:2278 scan.h:2282 scan.h:2286
 #: scan.h:1801 scan.h:2271 scan.h:2275 scan.h:2279 scan.h:2283 scan.h:2287
 #: scan.h:1803 scan.h:2273 scan.h:2277 scan.h:2281 scan.h:2285 scan.h:2289
+#: scan.h:1763 scan.h:2234 scan.h:2238 scan.h:2242 scan.h:2246 scan.h:2250
+#: scan.h:2259
 msgid "no"
 msgstr ""
 
@@ -134,7 +136,8 @@ msgstr ""
 #: scan.h:2273 scan.h:2277 scan.h:2281 scan.h:2285 scan.h:1801 scan.h:2271
 #: scan.h:2275 scan.h:2279 scan.h:2283 scan.h:2287 scan.h:1802 scan.h:2272
 #: scan.h:2276 scan.h:2280 scan.h:2284 scan.h:2288 scan.h:1804 scan.h:2274
-#: scan.h:2278 scan.h:2282 scan.h:2286 scan.h:2290
+#: scan.h:2278 scan.h:2282 scan.h:2286 scan.h:2290 scan.h:1764 scan.h:2235
+#: scan.h:2239 scan.h:2243 scan.h:2247 scan.h:2251 scan.h:2260
 msgid "yes"
 msgstr ""
 
@@ -490,6 +493,7 @@ msgstr ""
 #: tithek.h:1091 tithek.h:1342 tithek.h:1364 tithek.h:1369 tithek.h:2112
 #: tithek.h:2174 tithek.h:2188 scan.h:2008 scan.h:2365 scan.h:1619 scan.h:1629
 #: scan.h:1918 scan.h:2009 scan.h:2366 scan.h:1708 scan.h:2011 scan.h:2368
+#: scan.h:1667 scan.h:1881 scan.h:1972 scan.h:2333
 msgid "Message"
 msgstr ""
 
@@ -635,7 +639,8 @@ msgstr ""
 #: tithek.h:611 tithek.h:1048 tithek.h:1091 tithek.h:1342 tithek.h:1364
 #: tithek.h:1369 tithek.h:1383 tithek.h:2112 tithek.h:2174 tithek.h:2188
 #: scan.h:2008 scan.h:2365 scan.h:1619 scan.h:1918 scan.h:2009 scan.h:2366
-#: scan.h:1708 scan.h:2011 scan.h:2368
+#: scan.h:1708 scan.h:2011 scan.h:2368 scan.h:1667 scan.h:1881 scan.h:1972
+#: scan.h:2333
 msgid "OK"
 msgstr ""
 
@@ -779,7 +784,7 @@ msgstr ""
 #: tithek.h:1091 tithek.h:1342 tithek.h:1364 tithek.h:1369 tithek.h:1383
 #: tithek.h:2112 tithek.h:2174 tithek.h:2188 scan.h:2008 scan.h:2365
 #: scan.h:1619 scan.h:1918 scan.h:2009 scan.h:2366 scan.h:1708 scan.h:2011
-#: scan.h:2368
+#: scan.h:2368 scan.h:1667 scan.h:1881 scan.h:1972 scan.h:2333
 msgid "EXIT"
 msgstr ""
 
@@ -4097,45 +4102,45 @@ msgid "Does you want delete all unused Bouquetentrys?"
 msgstr ""
 
 #: scan.h:1826 scan.h:1829 scan.h:1850 scan.h:1915 scan.h:1917 scan.h:1918
-#: scan.h:1920
+#: scan.h:1920 scan.h:1881
 msgid ""
 "Scan is not allowed if record\n"
 "or stream is running !"
 msgstr ""
 
 #: scan.h:1917 scan.h:1920 scan.h:1941 scan.h:2006 scan.h:2008 scan.h:2009
-#: scan.h:2011
+#: scan.h:2011 scan.h:1972
 msgid "No Tuner configured"
 msgstr ""
 
 #: scan.h:1931 scan.h:1938 scan.h:1934 scan.h:1941 scan.h:1955 scan.h:1962
 #: scan.h:2025 scan.h:2032 scan.h:2027 scan.h:2034 scan.h:2028 scan.h:2035
-#: scan.h:2030 scan.h:2037
+#: scan.h:2030 scan.h:2037 scan.h:1991 scan.h:1998
 msgid "Single Transponder"
 msgstr ""
 
 #: scan.h:1932 scan.h:1935 scan.h:1956 scan.h:2026 scan.h:2028 scan.h:2029
-#: scan.h:2031
+#: scan.h:2031 scan.h:1992
 msgid "Single Sat"
 msgstr ""
 
 #: scan.h:1933 scan.h:1936 scan.h:1957 scan.h:2027 scan.h:2029 scan.h:2030
-#: scan.h:2032
+#: scan.h:2032 scan.h:1993
 msgid "Multi Sat"
 msgstr ""
 
 #: scan.h:1939 scan.h:1942 scan.h:1963 scan.h:2033 scan.h:2035 scan.h:2036
-#: scan.h:2038
+#: scan.h:2038 scan.h:1999
 msgid "Single Provider"
 msgstr ""
 
 #: scan.h:1944 scan.h:1947 scan.h:1968 scan.h:2038 scan.h:2040 scan.h:2041
-#: scan.h:2043
+#: scan.h:2043 scan.h:2004
 msgid "Auto Scan"
 msgstr ""
 
 #: scan.h:2262 scan.h:2265 scan.h:2286 scan.h:2363 scan.h:2365 scan.h:2366
-#: scan.h:2368
+#: scan.h:2368 scan.h:2333
 msgid "Transponder changed"
 msgstr ""
 
@@ -5600,7 +5605,7 @@ msgstr ""
 msgid "All new channels added!"
 msgstr ""
 
-#: scan.h:1639 scan.h:1708
+#: scan.h:1639 scan.h:1708 scan.h:1667
 msgid "Do you want to delete all unused Bouquetentrys?"
 msgstr ""
 
@@ -5634,6 +5639,14 @@ msgstr ""
 msgid "Renew"
 msgstr ""
 
-#: scan.h:2289 scan.h:2291 scan.h:2292 scan.h:2294
+#: scan.h:2289 scan.h:2291 scan.h:2292 scan.h:2294 scan.h:2254
 msgid "Unchanged"
+msgstr ""
+
+#: scan.h:2255
+msgid "Create new"
+msgstr ""
+
+#: scan.h:2256
+msgid "Delete All"
 msgstr ""
