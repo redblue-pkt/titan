@@ -4,6 +4,7 @@
 char* filenuke(char* host, char* file)
 {
 	debug(99, "in host: %s file: %s", host, file);
+	int debuglevel = getconfigint("debuglevel", NULL);
 	char* tmphost = NULL;
 	char* tmpfile = NULL;
 	char* tmpstr = NULL;
@@ -37,8 +38,7 @@ char* filenuke(char* host, char* file)
 	tmpstr = gethttp(tmphost, tmpfile, 80, NULL, NULL, 10000, NULL, 0);
 	debug(99, "write file");
 	sleep(2);
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/filenuke1_tmpstr", tmpstr, 0);
+	titheklog(debuglevel, "/tmp/filenuke1_tmpstr", NULL, tmpstr);
 
 	if(ostrstr(tmpstr, "<title>The page is temporarily unavailable</title>") != NULL)
 	{
@@ -94,8 +94,7 @@ char* filenuke(char* host, char* file)
 
 	//send and receive answer
 	post = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 0);
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/filenuke2_tmpstr_post1", post, 0);
+	titheklog(debuglevel, "/tmp/filenuke2_tmpstr_post1", NULL, post);
 //
 	gethttpreal(tmphost, tmpfile, 80, "/tmp/tithek/post", NULL, NULL, 0, send, NULL, 5000, 0);
 	cmd = ostrcat("cat /tmp/tithek/post | zcat", NULL, 0, 0);
@@ -106,25 +105,21 @@ char* filenuke(char* host, char* file)
 //
 	free(tmpstr),tmpstr = NULL;
 	tmpstr = string_resub(";return p}('", ");'", post, 0);
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/filenuke3_tmpstr1", tmpstr, 0);
+	titheklog(debuglevel, "/tmp/filenuke3_tmpstr1", NULL, tmpstr);
 	
 	post = string_replace_all(tmpstr, "", post, 1);
 	post = string_replace_all(";return p}(');'", "", post, 1);
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/filenuke4_post2", post, 0);
+	titheklog(debuglevel, "/tmp/filenuke4_post2", NULL, post);
 
 	free(tmpstr),tmpstr = NULL;
 	free(b36code),b36code = NULL;
 	tmpstr = string_resub(";return p}('", ");'", post, 0);
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/filenuke5_tmpstr2", tmpstr, 0);
+	titheklog(debuglevel, "/tmp/filenuke5_tmpstr2", NULL, tmpstr);
 
 	b36code = oregex(".*;',[0-9]{2,2},[0-9]{2,2},'(.*)'.split.*", post);
 	
-	b36code = string_replace_all("||", "| |", b36code, 1);		
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/filenuke6_b36code2", b36code, 0);
+	b36code = string_replace_all("||", "| |", b36code, 1);
+	titheklog(debuglevel, "/tmp/filenuke6_b36code2", NULL, b36code);
 	
 	struct splitstr* ret1 = NULL;
 	int count = 0;
@@ -203,8 +198,7 @@ char* filenuke(char* host, char* file)
 	free(post), post = NULL;
 	free(charlist), charlist = NULL;
 
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/filenuke7_tmpstr_last", tmpstr, 0);
+  titheklog(debuglevel, "/tmp/filenuke7_tmpstr_last", NULL, tmpstr);
 
 	streamlink = oregex(".*file.*(http:.*video.flv).*image.*", tmpstr);
 	if(streamlink == NULL)
@@ -234,8 +228,7 @@ char* filenuke(char* host, char* file)
 	if(streamlink == NULL)
 		streamlink = oregex(".*value=.*(http:.*video.avi).*\".*", tmpstr);			
 
-	if(getconfigint("debuglevel", NULL) == 99)
-		writesys("/tmp/filenuke8_streamlink", streamlink, 0);
+	titheklog(debuglevel, "/tmp/filenuke8_streamlink", NULL, streamlink);
 
 	free(tmpstr); tmpstr = NULL;
 
