@@ -1394,7 +1394,7 @@ void delchannelbymultisat()
 
 void screenscan(struct transponder* transpondernode, struct skin* mscan, char* tuner, int scantype, int orbitalpos, unsigned int frequency, int inversion, unsigned int symbolrate, int polarization, int fec, int modulation, int rolloff, int pilot, int networkscan, int onlyfree, int clear, int blindscan, int ichangename, int system, int favtype, int emptybouquet, int unusedbouquetchannels, int timeout)
 {
-	int rcret = 0, tpmax = 0, i = 0, alladded = 0;
+	int rcret = 0, tpmax = 0, i = 0, alladded = 0, endmsgshow = 0;
 	struct skin* scan = getscreen("scan");
 	struct skin* progress = getscreennode(scan, "progress");
 	struct skin* listbox = getscreennode(scan, "listbox");
@@ -1591,6 +1591,12 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 
 		drawscreen(scan, 0, 0);
 		rcret = waitrc(scan, 1000, 0);
+		
+		if(scantype != 3 && scaninfo.threadend == 1 && endmsgshow == 0)
+		{
+			textbox(_("Message"), _("Channel scan ended.\nYou can add all channel (green) or\neach and every (red) to the channellist."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+			endmsgshow = 1;		
+		}
 
 		if(scantype != 3 && rcret == getrcconfigint("rcred", NULL))
 			scanaddchannel(listbox->select, scantype, tpnode, ichangename);
