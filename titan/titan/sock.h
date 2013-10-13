@@ -725,7 +725,7 @@ char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, 
 		contentlen += 15;
 		len = strtoul(contentlen, NULL, 10);
 	}
-	if(filename == NULL && (flag == 0 || flag == 1) && ostrstr(tmpbuf, "Content-Type: application/x-gzip") != NULL)
+	if(filename == NULL && (flag == 0 || flag == 1) && ostrstr(tmpbuf, "gzip") != NULL)
 	{
 		if(flag == 0) gzip = -1;
 		else if(flag == 1) gzip = headerlen;
