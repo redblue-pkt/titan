@@ -3300,8 +3300,8 @@ int ounzip(char* inbuf, int inlen, char** outbuf, int* outlen, int maxbuf, int f
 	if(flag == 2 || flag == 3)
 	{
 		ret = inflateInit2(&stream, 16 + MAX_WBITS);
-		if(flag == 2) flag == 0;
-		else if(flag == 3) flag == 1;
+		if(flag == 2) flag = 0;
+		else if(flag == 3) flag = 1;
 	}
 	else
 		ret = inflateInit(&stream);
