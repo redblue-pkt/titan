@@ -584,13 +584,41 @@ int checkhttpheader(char* tmpbuf, char** retstr)
 	return stat;
 }
 
+int getchunkedlen(int sock, int timeout)
+{
+	int ret = 0, end = 0;;
+	char chunked[16] = {'\0'};
+	int chunkedid = 0;
+
+	while(chunkedid < 15)
+	{
+		unsigned char c = '\0';
+
+		ret = sockreceive(&sock, &c, 1, timeout * 1000);
+		if(ret != 0)
+		{
+			printf("no client data in buffer");
+			break;
+		}
+
+		if(c == ';') break;
+
+		chunked[chunkedid] = c;
+		chunkedid++;
+		if(chunkedid > 2 && c == '\n')
+			break;
+	}
+
+	return(strtol(chunked, NULL, 16));
+}
+
 //flag 0: output without header
 //flag 1: output with header
 //flag 2: output only header
 char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, struct download* dnode, int redirect, char* header, long* clen, int timeout, int flag)
 {
 	int sock = -1, ret = 0, count = 0, hret = 0, freeheader = 0, gzip = 0;
-	int headerlen = 0;
+	int headerlen = 0, chunkedlen = 0, chunked = 0;
 	unsigned int len = 0, maxret = 0;
 	char *ip = NULL;
 	char *tmpbuf = NULL, *buf = NULL;
@@ -679,7 +707,7 @@ char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, 
 	char* pbuf = tmpbuf;
 	while(pbuf - tmpbuf < MINMALLOC)
 	{
-		unsigned char c;
+		unsigned char c = '\0';
 
 		ret = sockreceive(&sock, &c, 1, timeout * 1000);
 		if(ret != 0)
@@ -735,9 +763,17 @@ char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, 
 		if(flag == 0) gzip = -1;
 		else if(flag == 1) gzip = headerlen;
 	}
+	if(strstr(tmpbuf, "Transfer-Encoding: chunked") != NULL)
+	{
+		chunked = 1; 
+		chunkedlen = getchunkedlen(sock, timeout);
+		if(chunkedlen > MINMALLOC) chunked = 0;
+	}
+		
 
 	if(flag == 0) headerlen = 0;
-	while((ret = sockread(sock, (unsigned char*)tmpbuf + headerlen, 0, MINMALLOC - headerlen, timeout * 1000, 0)) > 0)
+	if(chunked == 0) chunkedlen = MINMALLOC - headerlen;
+	while((ret = sockread(sock, (unsigned char*)tmpbuf + headerlen, 0, chunkedlen, timeout * 1000, 0)) > 0)
 	{
 		maxret += ret;
 		if(len > 0)
@@ -761,6 +797,13 @@ char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, 
 			memcpy(buf + count - ret, tmpbuf, ret);
 		}
 		memset(tmpbuf, 0, ret);
+		
+		if(chunked == 1)
+		{
+			chunkedlen = getchunkedlen(sock, timeout);
+			if(chunkedlen > MINMALLOC) chunked = 0;
+		}
+		if(chunked == 0) chunkedlen = MINMALLOC - headerlen;
 	}
 	if(ret < 0)
 	{
