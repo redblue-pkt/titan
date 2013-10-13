@@ -4177,7 +4177,7 @@ msgid "Delete All"
 msgstr "alle löschen"
 
 msgid "Channel scan ended."
-msgstr "Sendersuchlauf wurde beendet, bitte speichern mit den Farbtasten."
+msgstr "Sendersuchlauf wurde beendet.\nBitte speichern Sie mit den Farbtasten Ihre Suche ab."
 
 msgid "Channel scan ended.\nNothing found."
 msgstr "Sendersuchlauf wurde beendet.\nEs wurden keine Sender gefunden."
