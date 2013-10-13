@@ -6,8 +6,9 @@ char* filenuke(char* host, char* file, char* hosterurl)
 	debug(99, "in host: %s file: %s", host, file);
 	int debuglevel = getconfigint("debuglevel", NULL);
 	char* tmphost = NULL, *error = NULL, *tmpfile = NULL, *tmpstr = NULL, *send = NULL, *id = NULL, *fname = NULL, *op = NULL, *hash = NULL, *hashlen = NULL, *ip = NULL;
-	char* b36code = NULL, *base = NULL, *search = NULL, *post = NULL, *streamlink = NULL, *cmd = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *charlist = NULL;
-
+	char* b36code = NULL, *base = NULL, *search = NULL, *post = NULL, *streamlink = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *charlist = NULL;
+//	char* cmd = NULL;
+	
 	if(host == NULL || file == NULL) return NULL;
 
 	tmphost = ostrcat("www.", host, 0, 0);
@@ -64,7 +65,7 @@ char* filenuke(char* host, char* file, char* hosterurl)
 	//create send string
 	send = ostrcat(send, "POST /", 1, 0);
 	send = ostrcat(send, id, 1, 0);
-	send = ostrcat(send, " HTTP/1.1\r\nContent-Length: ", 1, 0);
+	send = ostrcat(send, " HTTP/1.0\r\nContent-Length: ", 1, 0);
 	send = ostrcat(send, hashlen, 1, 0);
 	send = ostrcat(send, "\r\nAccept-Encoding: gzip\r\nConnection: close\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nHost: ", 1, 0);
 	send = ostrcat(send, host, 1, 0);
@@ -73,18 +74,25 @@ char* filenuke(char* host, char* file, char* hosterurl)
 	debug(99, "send: %s", send);
 
 	sleep(5);
-
+/*
 	//send and receive answer
 	post = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 0);
 	titheklog(debuglevel, "/tmp/filenuke2_tmpstr_post1", NULL, post);
-//
-	gethttpreal(tmphost, tmpfile, 80, "/tmp/tithek/post", NULL, NULL, 0, send, NULL, 5000, 0);
+
 	cmd = ostrcat("cat /tmp/tithek/post | zcat", NULL, 0, 0);
 	debug(99, "cmd: %s", cmd);
 	post = command(cmd);
 	writesys("/tmp/filenuke2_post1", post, 0);
 	free(cmd); cmd = NULL;
-//
+*/
+// new start
+// working with
+// KinoX_Star.Wars.The.Clone.Wars_1.(de)_Staffel.4.Folge.19_FileNuke.com.mp4
+// http://filenuke.com/3gop8ac00z3v;3gop8ac00z3v;FileNuke.com
+	post = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 0);
+	debug(99, "post: %s", post);
+// new end
+
 	free(tmpstr),tmpstr = NULL;
 	tmpstr = string_resub(";return p}('", ");'", post, 0);
 	titheklog(debuglevel, "/tmp/filenuke3_tmpstr1", NULL, tmpstr);
