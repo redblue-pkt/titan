@@ -2503,10 +2503,10 @@ msgid "Change Feed"
 msgstr "Feedadresse hinzufügen"
 
 msgid "ADD ONE"
-msgstr "hinzufügen"
+msgstr "makierte Sender Speichern"
 
 msgid "ADD ALL"
-msgstr "auswählen"
+msgstr "alle gefundenen Sender Speichern"
 
 msgid "Show Modules"
 msgstr "CI-Modul Anzeige"
@@ -4176,8 +4176,8 @@ msgstr "neu erstellen"
 msgid "Delete All"
 msgstr "alle löschen"
 
-msgid "Channel scan ended.\nYou can add all channel (green) or\neach and every (red) to the channellist."
-msgstr "Sendersuchlauf wurde beendet.\nSie können alle (grün) oder\neinzelne (rot) Sender zur Senderliste hinzufügen."
+msgid "Channel scan ended."
+msgstr "Sendersuchlauf wurde beendet."
 
 msgid "Channel scan ended.\nNothing found."
 msgstr "Sendersuchlauf wurde beendet.\nEs wurden keine Sender gefunden."
@@ -4190,3 +4190,18 @@ msgstr "Datei(en) kopieren"
 
 msgid "Move File"
 msgstr "Datei(en) verschieben"
+
+msgid "Here you can set your Channel search options. Use to navigate the control cross and the extra buttons displayed with your remote control to select. Very important before you have to start a channel search under tuners adjust their reception tuner settings. With a manual it with the colored buttons save their channel search."
+msgstr "Hier können Sie Ihre Kanal Suchoptionen einstellen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren. Sehr wichtig, bevor Sie eine Kanalsuche starten müssen sie ihre Empfangs Tuner einstellen unter Tuner-Einstellungen. Bei einer manuellen sie mit den Farbtasten ihre Kanalsuche abspeichern."
+
+msgid "After the manual search, you have to if they want to save all the sender to save the search with the green button. To add a station manually have to select the sender in the right box and then save it with the red button that station. If you do not do this and go to exit out the search not saved."
+msgstr "Nach der manuellen Suche müssen Sie wenn sie alle sender abspeichern wollen mit der grünen taste die suche abspeichern. Um manuel einen Sender hinzuzufügen muss man den sender im rechten feld markieren und dann mit der Roten Taste diesen Sender abspeichern. Wenn man dies nicht macht und mit exit raus geht wird die suche nicht abgespeichert."
+
+msgid "SCANSTART"
+msgstr "Kanalsuche starten"
+
+msgid "SAVETRANSPONDER"
+msgstr "Transponder speichern"
+
+msgid "TRANSPONDEREDIT"
+msgstr "Transponder bearbeiten"
