@@ -3330,7 +3330,11 @@ int ounzip(char* inbuf, int inlen, char** outbuf, int* outlen, int maxbuf, int f
 		ret = inflate(&stream, Z_NO_FLUSH);
 		if(ret == Z_NEED_DICT || ret == Z_DATA_ERROR || ret == Z_MEM_ERROR)
 		{
-			free(*outbuf); *outbuf = NULL;
+			if(flag == 0)
+			{
+				free(*outbuf); 
+				*outbuf = NULL;
+			}				
 			(void)inflateEnd(&stream);
 			return 1;
 		}
