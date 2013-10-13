@@ -763,13 +763,12 @@ char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, 
 		if(flag == 0) gzip = -1;
 		else if(flag == 1) gzip = headerlen;
 	}
-	if(strstr(tmpbuf, "Transfer-Encoding: chunked") != NULL)
+	if(ostrstr(tmpbuf, "Transfer-Encoding: chunked") != NULL)
 	{
 		chunked = 1; 
 		chunkedlen = getchunkedlen(sock, timeout);
 		if(chunkedlen > MINMALLOC) chunked = 0;
 	}
-		
 
 	if(flag == 0) headerlen = 0;
 	if(chunked == 0) chunkedlen = MINMALLOC - headerlen;
