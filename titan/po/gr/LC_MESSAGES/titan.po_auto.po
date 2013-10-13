@@ -114,7 +114,8 @@
 #: scan.h:1801 scan.h:2271 scan.h:2275 scan.h:2279 scan.h:2283 scan.h:2287
 #: scan.h:1803 scan.h:2273 scan.h:2277 scan.h:2281 scan.h:2285 scan.h:2289
 #: scan.h:1763 scan.h:2234 scan.h:2238 scan.h:2242 scan.h:2246 scan.h:2250
-#: scan.h:2259
+#: scan.h:2259 scan.h:1768 scan.h:2241 scan.h:2245 scan.h:2249 scan.h:2253
+#: scan.h:2257 scan.h:2266
 msgid "no"
 msgstr ""
 
@@ -232,7 +233,8 @@ msgstr ""
 #: scan.h:2275 scan.h:2279 scan.h:2283 scan.h:2287 scan.h:1802 scan.h:2272
 #: scan.h:2276 scan.h:2280 scan.h:2284 scan.h:2288 scan.h:1804 scan.h:2274
 #: scan.h:2278 scan.h:2282 scan.h:2286 scan.h:2290 scan.h:1764 scan.h:2235
-#: scan.h:2239 scan.h:2243 scan.h:2247 scan.h:2251 scan.h:2260
+#: scan.h:2239 scan.h:2243 scan.h:2247 scan.h:2251 scan.h:2260 scan.h:1769
+#: scan.h:2242 scan.h:2246 scan.h:2250 scan.h:2254 scan.h:2258 scan.h:2267
 msgid "yes"
 msgstr ""
 
@@ -765,7 +767,12 @@ msgstr ""
 #: tithek.h:1091 tithek.h:1342 tithek.h:1364 tithek.h:1369 tithek.h:2112
 #: tithek.h:2174 tithek.h:2188 scan.h:2008 scan.h:2365 scan.h:1619 scan.h:1629
 #: scan.h:1918 scan.h:2009 scan.h:2366 scan.h:1708 scan.h:2011 scan.h:2368
-#: scan.h:1667 scan.h:1881 scan.h:1972 scan.h:2333
+#: scan.h:1667 scan.h:1881 scan.h:1972 scan.h:2333 filenuke.h:33 flashx.h:50
+#: global.h:6158 putlocker.h:53 putlocker.h:139 scan.h:1598 scan.h:1600
+#: scan.h:1630 scan.h:1640 scan.h:1888 scan.h:1979 scan.h:2345 sock.h:860
+#: solarmovie.h:266 tithek.h:607 tithek.h:1044 tithek.h:1087 tithek.h:1314
+#: tithek.h:1336 tithek.h:2084 tithek.h:2146 tithek.h:2160 xvidstage.h:65
+#: xvidstage.h:175 zdf.h:29 sock.h:861 sock.h:862 sock.h:884
 msgid "Message"
 msgstr ""
 
@@ -1032,7 +1039,12 @@ msgstr ""
 #: tithek.h:1369 tithek.h:1383 tithek.h:2112 tithek.h:2174 tithek.h:2188
 #: scan.h:2008 scan.h:2365 scan.h:1619 scan.h:1918 scan.h:2009 scan.h:2366
 #: scan.h:1708 scan.h:2011 scan.h:2368 scan.h:1667 scan.h:1881 scan.h:1972
-#: scan.h:2333
+#: scan.h:2333 filenuke.h:33 flashx.h:50 global.h:6158 putlocker.h:53
+#: putlocker.h:139 scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1888
+#: scan.h:1979 scan.h:2345 sock.h:860 solarmovie.h:266 tithek.h:607
+#: tithek.h:1044 tithek.h:1087 tithek.h:1314 tithek.h:1336 tithek.h:1355
+#: tithek.h:2084 tithek.h:2146 tithek.h:2160 xvidstage.h:65 xvidstage.h:175
+#: zdf.h:29 sock.h:861 sock.h:862 sock.h:884
 msgid "OK"
 msgstr ""
 
@@ -1299,7 +1311,12 @@ msgstr ""
 #: tithek.h:1369 tithek.h:1383 tithek.h:2112 tithek.h:2174 tithek.h:2188
 #: scan.h:2008 scan.h:2365 scan.h:1619 scan.h:1918 scan.h:2009 scan.h:2366
 #: scan.h:1708 scan.h:2011 scan.h:2368 scan.h:1667 scan.h:1881 scan.h:1972
-#: scan.h:2333
+#: scan.h:2333 filenuke.h:33 flashx.h:50 global.h:6158 putlocker.h:53
+#: putlocker.h:139 scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1888
+#: scan.h:1979 scan.h:2345 sock.h:860 solarmovie.h:266 tithek.h:607
+#: tithek.h:1044 tithek.h:1087 tithek.h:1314 tithek.h:1336 tithek.h:1355
+#: tithek.h:2084 tithek.h:2146 tithek.h:2160 xvidstage.h:65 xvidstage.h:175
+#: zdf.h:29 sock.h:861 sock.h:862 sock.h:884
 msgid "EXIT"
 msgstr ""
 
@@ -1794,7 +1811,7 @@ msgstr ""
 #: global.h:4602 global.h:4606 global.h:4607 global.h:4614 global.h:4639
 #: global.h:4634 global.h:4645 global.h:6121 keyactions.h:216 global.h:6109
 #: global.h:6153 global.h:6159 global.h:6209 global.h:6060 keyactions.h:213
-#: global.h:6145 global.h:6149
+#: global.h:6145 global.h:6149 global.h:6158
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -2262,7 +2279,7 @@ msgstr ""
 #: plugins_tithek_skin.xml.h:15 skins_autotimer_skin.xml.h:11
 #: skins_tithek_skin.xml.h:15 dirsort.h:24 plugins_autotimer_skin.xml.h:13
 #: skins_autotimer_skin.xml.h:13 plugins_readerconfig_skin.xml.h:10
-#: skins_readerconfig_skin.xml.h:10
+#: skins_readerconfig_skin.xml.h:10 plugins_tithek1_skin.xml.h:15
 msgid ""
 msgstr ""
 
@@ -2277,7 +2294,7 @@ msgstr ""
 #: tithek.h:560 tithek.h:461 tithek.h:503 tithek.h:524 tithek.h:562
 #: filemanager.h:306 mc_internetbrowser.h:41 mc_wetterinfo.h:41 tithek.h:1348
 #: filemanager.h:307 filemanager.h:331 tithek.h:1357 filemanager.h:343
-#: tithek.h:1356 tithek.h:1368 filemanager.h:345 tithek.h:1369
+#: tithek.h:1356 tithek.h:1368 filemanager.h:345 tithek.h:1369 tithek.h:1341
 msgid "Registration needed, please contact Atemio !"
 msgstr ""
 
@@ -2365,7 +2382,7 @@ msgstr ""
 #: transponder.h:227 transponder.h:259 transponder.h:295 transponder.h:330
 #: transponder.h:348 transponder.h:418 transponder.h:451 transponder.h:480
 #: transponder.h:504 transponder.h:574 zdf.h:91 bgdownload.h:93
-#: bgdownload.h:154
+#: bgdownload.h:154 zdf.h:86
 msgid "unknown"
 msgstr ""
 
@@ -3681,6 +3698,7 @@ msgstr ""
 #: skins_mc_skin.xml.h:41 plugins_mc_skin.xml.h:51 plugins_tithek_skin.xml.h:9
 #: skins_mc_skin.xml.h:51 skins_tithek_skin.xml.h:9
 #: plugins_tithek_skin.xml.h:10 skins_tithek_skin.xml.h:10
+#: plugins_tithek1_skin.xml.h:10
 msgid "Screensaver"
 msgstr ""
 
@@ -4208,10 +4226,12 @@ msgid "Time to stop "
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1
+#: plugins_tithek1_skin.xml.h:1
 msgid "TiThek Menu"
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:2 skins_tithek_skin.xml.h:2
+#: plugins_tithek1_skin.xml.h:2
 msgid "TiThek PlayList"
 msgstr ""
 
@@ -4601,7 +4621,7 @@ msgid "All new channel added!"
 msgstr ""
 
 #: scan.h:803 scan.h:892 scan.h:912 scan.h:937 scan.h:970 scan.h:966
-#: scan.h:1607 scan.h:1628 scan.h:1629
+#: scan.h:1607 scan.h:1628 scan.h:1629 scan.h:1640
 msgid "Wait for channel scan end"
 msgstr ""
 
@@ -4615,7 +4635,7 @@ msgstr ""
 
 #: scan.h:1019 scan.h:1023 scan.h:1026 scan.h:1115 scan.h:1136 scan.h:1161
 #: scan.h:1194 scan.h:1191 scan.h:1917 scan.h:1920 scan.h:1941 scan.h:2006
-#: scan.h:2008 scan.h:2009 scan.h:2011 scan.h:1972
+#: scan.h:2008 scan.h:2009 scan.h:2011 scan.h:1972 scan.h:1979
 msgid "No Tuner configured"
 msgstr ""
 
@@ -4623,30 +4643,31 @@ msgstr ""
 #: scan.h:1207 scan.h:1204 scan.h:1931 scan.h:1938 scan.h:1934 scan.h:1941
 #: scan.h:1955 scan.h:1962 scan.h:2025 scan.h:2032 scan.h:2027 scan.h:2034
 #: scan.h:2028 scan.h:2035 scan.h:2030 scan.h:2037 scan.h:1991 scan.h:1998
+#: scan.h:2005
 msgid "Single Transponder"
 msgstr ""
 
 #: scan.h:1033 scan.h:1037 scan.h:1040 scan.h:1129 scan.h:1150 scan.h:1175
 #: scan.h:1208 scan.h:1205 scan.h:1932 scan.h:1935 scan.h:1956 scan.h:2026
-#: scan.h:2028 scan.h:2029 scan.h:2031 scan.h:1992
+#: scan.h:2028 scan.h:2029 scan.h:2031 scan.h:1992 scan.h:1999
 msgid "Single Sat"
 msgstr ""
 
 #: scan.h:1034 scan.h:1038 scan.h:1041 scan.h:1130 scan.h:1151 scan.h:1176
 #: scan.h:1209 scan.h:1206 scan.h:1933 scan.h:1936 scan.h:1957 scan.h:2027
-#: scan.h:2029 scan.h:2030 scan.h:2032 scan.h:1993
+#: scan.h:2029 scan.h:2030 scan.h:2032 scan.h:1993 scan.h:2000
 msgid "Multi Sat"
 msgstr ""
 
 #: scan.h:1039 scan.h:1043 scan.h:1046 scan.h:1135 scan.h:1156 scan.h:1181
 #: scan.h:1214 scan.h:1211 scan.h:1944 scan.h:1947 scan.h:1968 scan.h:2038
-#: scan.h:2040 scan.h:2041 scan.h:2043 scan.h:2004
+#: scan.h:2040 scan.h:2041 scan.h:2043 scan.h:2004 scan.h:2011
 msgid "Auto Scan"
 msgstr ""
 
 #: scan.h:1225 scan.h:1229 scan.h:1232 scan.h:1321 scan.h:1347 scan.h:1372
 #: scan.h:1405 scan.h:1402 scan.h:1403 scan.h:2262 scan.h:2265 scan.h:2286
-#: scan.h:2363 scan.h:2365 scan.h:2366 scan.h:2368 scan.h:2333
+#: scan.h:2363 scan.h:2365 scan.h:2366 scan.h:2368 scan.h:2333 scan.h:2345
 msgid "Transponder changed"
 msgstr ""
 
@@ -8335,7 +8356,7 @@ msgid "skip "
 msgstr ""
 
 #: tithek.h:298 tithek.h:303 tithek.h:601 tithek.h:606 tithek.h:610
-#: tithek.h:611
+#: tithek.h:611 tithek.h:607
 msgid "File exist, overwrite?"
 msgstr ""
 
@@ -8343,14 +8364,14 @@ msgstr ""
 #: tithek.h:513 tithek.h:498 tithek.h:515 tithek.h:536 tithek.h:544
 #: tithek.h:497 tithek.h:514 tithek.h:552 tithek.h:499 tithek.h:516
 #: tithek.h:554 tithek.h:1321 tithek.h:1330 tithek.h:1329 tithek.h:1341
-#: tithek.h:1342
+#: tithek.h:1342 tithek.h:1314
 msgid "Start playback"
 msgstr ""
 
 #: tithek.h:488 tithek.h:473 tithek.h:512 tithek.h:478 tithek.h:517
 #: tithek.h:479 tithek.h:519 tithek.h:540 tithek.h:548 tithek.h:518
 #: tithek.h:556 tithek.h:480 tithek.h:520 tithek.h:558 tithek.h:1343
-#: tithek.h:1352 tithek.h:1351 tithek.h:1363 tithek.h:1364
+#: tithek.h:1352 tithek.h:1351 tithek.h:1363 tithek.h:1364 tithek.h:1336
 msgid "Can't get Streamurl !"
 msgstr ""
 
@@ -9496,12 +9517,14 @@ msgstr ""
 msgid "Can't show this file!"
 msgstr ""
 
-#: filenuke.h:50 putlocker.h:141 vidstream.h:56
+#: filenuke.h:50 putlocker.h:141 vidstream.h:56 filenuke.h:32 flashx.h:49
+#: putlocker.h:138
 msgid "The page is temporarily unavailable"
 msgstr ""
 
 #: flashx.h:70 putlocker.h:52 solarmovie.h:187 xvidstage.h:64 xvidstage.h:177
-#: solarmovie.h:190 solarmovie.h:265
+#: solarmovie.h:190 solarmovie.h:265 putlocker.h:53 solarmovie.h:266
+#: xvidstage.h:65 xvidstage.h:175
 msgid "This file doesn't exist, or has been removed"
 msgstr ""
 
@@ -9538,13 +9561,15 @@ msgstr ""
 #: kinox.h:254 movie4k.h:766 movie4k.h:890 movie4k.h:1005 solarmovie.h:454
 #: movie4k.h:774 movie4k.h:898 movie4k.h:1013 movie4k.h:775 movie4k.h:899
 #: movie4k.h:1014 kinox.h:256 movie4k.h:754 movie4k.h:878 movie4k.h:993
-#: solarmovie.h:457 solarmovie.h:407
+#: solarmovie.h:457 solarmovie.h:407 kinox.h:259 movie4k.h:752 movie4k.h:875
+#: movie4k.h:989 solarmovie.h:406
 msgid "Season"
 msgstr ""
 
 #: kinox.h:258 movie4k.h:770 movie4k.h:1009 solarmovie.h:458 movie4k.h:778
 #: movie4k.h:1017 movie4k.h:779 movie4k.h:1018 kinox.h:260 movie4k.h:758
-#: movie4k.h:997 solarmovie.h:461 solarmovie.h:411
+#: movie4k.h:997 solarmovie.h:461 solarmovie.h:411 kinox.h:263 movie4k.h:756
+#: movie4k.h:993 solarmovie.h:410
 msgid "Episode"
 msgstr ""
 
@@ -10140,50 +10165,59 @@ msgid "Reader Selection"
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:3 skins_tithek_skin.xml.h:3
+#: plugins_tithek1_skin.xml.h:3
 msgid "ADD FAV"
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:4 skins_tithek_skin.xml.h:4
+#: plugins_tithek1_skin.xml.h:4
 msgid "DEL FAV"
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:5 skins_tithek_skin.xml.h:5
+#: plugins_tithek1_skin.xml.h:5
 msgid "Exit Tithek"
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:6 skins_tithek_skin.xml.h:6
 #: plugins_tithek_skin.xml.h:7 skins_tithek_skin.xml.h:7
+#: plugins_tithek1_skin.xml.h:7
 msgid "Pic Ratio"
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:7 skins_tithek_skin.xml.h:7 tithek.h:1021
 #: plugins_tithek_skin.xml.h:8 skins_tithek_skin.xml.h:8 tithek.h:1026
-#: tithek.h:1030 tithek.h:1031
+#: tithek.h:1030 tithek.h:1031 plugins_tithek1_skin.xml.h:8 tithek.h:1027
 msgid "please wait..."
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:8 skins_tithek_skin.xml.h:8
 #: plugins_tithek_skin.xml.h:9 skins_tithek_skin.xml.h:9
+#: plugins_tithek1_skin.xml.h:9
 msgid "Red-Menu"
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:10 skins_tithek_skin.xml.h:10
 #: plugins_tithek_skin.xml.h:11 skins_tithek_skin.xml.h:11
+#: plugins_tithek1_skin.xml.h:11
 msgid "Show Pay Streams"
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:11 skins_tithek_skin.xml.h:11
 #: plugins_tithek_skin.xml.h:12 skins_tithek_skin.xml.h:12
+#: plugins_tithek1_skin.xml.h:12
 msgid "TITHEK SETTINGS"
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:12 skins_tithek_skin.xml.h:12
 #: plugins_tithek_skin.xml.h:13 skins_tithek_skin.xml.h:13
+#: plugins_tithek1_skin.xml.h:13
 msgid "View Cover"
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:13 skins_tithek_skin.xml.h:13
 #: plugins_tithek_skin.xml.h:14 skins_tithek_skin.xml.h:14
+#: plugins_tithek1_skin.xml.h:14
 msgid "View Sections"
 msgstr ""
 
@@ -10326,7 +10360,7 @@ msgid "Does you want delete all unused Bouquetentrys?"
 msgstr ""
 
 #: scan.h:1939 scan.h:1942 scan.h:1963 scan.h:2033 scan.h:2035 scan.h:2036
-#: scan.h:2038 scan.h:1999
+#: scan.h:2038 scan.h:1999 scan.h:2006
 msgid "Single Provider"
 msgstr ""
 
@@ -10334,7 +10368,7 @@ msgstr ""
 msgid "green"
 msgstr ""
 
-#: sock.h:820
+#: sock.h:820 sock.h:858 sock.h:859 sock.h:860 sock.h:882
 msgid "Download finished!"
 msgstr ""
 
@@ -10405,29 +10439,31 @@ msgstr ""
 msgid "permanent"
 msgstr ""
 
-#: tithek.h:807 tithek.h:812 tithek.h:816 tithek.h:817
+#: tithek.h:807 tithek.h:812 tithek.h:816 tithek.h:817 tithek.h:813
 msgid "found"
 msgstr ""
 
-#: tithek.h:812 tithek.h:817 tithek.h:821 tithek.h:822
+#: tithek.h:812 tithek.h:817 tithek.h:821 tithek.h:822 tithek.h:818
 msgid "Results"
 msgstr ""
 
-#: tithek.h:1034 tithek.h:1039 tithek.h:1043 tithek.h:1044
+#: tithek.h:1034 tithek.h:1039 tithek.h:1043 tithek.h:1044 tithek.h:1040
 msgid "Remove Cachefile ?"
 msgstr ""
 
-#: tithek.h:1081 tithek.h:1086 tithek.h:1090 tithek.h:1091
+#: tithek.h:1081 tithek.h:1086 tithek.h:1090 tithek.h:1091 tithek.h:1087
 msgid ""
 "Can't start download.\n"
 "Please try later."
 msgstr ""
 
 #: tithek.h:1362 tithek.h:1371 tithek.h:1370 tithek.h:1382 tithek.h:1383
+#: tithek.h:1355
 msgid "TitanNit Tithek disclaimer"
 msgstr ""
 
 #: tithek.h:1425 tithek.h:1436 tithek.h:1435 tithek.h:1447 tithek.h:1448
+#: tithek.h:1420
 msgid "Page"
 msgstr ""
 
@@ -10440,10 +10476,12 @@ msgid "The hoster is not yet supported for the time !"
 msgstr ""
 
 #: tithek.h:2131 tithek.h:2139 tithek.h:2138 tithek.h:2173 tithek.h:2174
+#: tithek.h:2146
 msgid "Remove this Favorite ?"
 msgstr ""
 
 #: tithek.h:2145 tithek.h:2153 tithek.h:2152 tithek.h:2187 tithek.h:2188
+#: tithek.h:2160
 msgid "Add this link as Favorite ?"
 msgstr ""
 
@@ -10910,6 +10948,7 @@ msgid "afterevent"
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:6 skins_tithek_skin.xml.h:6
+#: plugins_tithek1_skin.xml.h:6
 msgid "Hid XXX Streams"
 msgstr ""
 
@@ -11213,7 +11252,7 @@ msgid ""
 "The Box will reboot and the erase will be started!"
 msgstr ""
 
-#: scan.h:1618 scan.h:1619
+#: scan.h:1618 scan.h:1619 scan.h:1630
 msgid "All new channels added!"
 msgstr ""
 
@@ -11243,7 +11282,7 @@ msgid ""
 "Syntax Error on updatefile"
 msgstr ""
 
-#: tithek.h:2111 tithek.h:2112
+#: tithek.h:2111 tithek.h:2112 tithek.h:2084
 msgid "The hoster is not yet supported !"
 msgstr ""
 
@@ -11251,14 +11290,31 @@ msgstr ""
 msgid "Renew"
 msgstr ""
 
-#: scan.h:2289 scan.h:2291 scan.h:2292 scan.h:2294 scan.h:2254
+#: scan.h:2289 scan.h:2291 scan.h:2292 scan.h:2294 scan.h:2254 scan.h:2261
 msgid "Unchanged"
 msgstr ""
 
-#: scan.h:2255
+#: scan.h:2255 scan.h:2262
 msgid "Create new"
 msgstr ""
 
-#: scan.h:2256
+#: scan.h:2256 scan.h:2263
 msgid "Delete All"
+msgstr ""
+
+#: scan.h:1598 scan.h:1628
+msgid ""
+"Channel scan ended.\n"
+"Nothing found."
+msgstr ""
+
+#: scan.h:1600
+msgid ""
+"Channel scan ended.\n"
+"You can add all channel (green) or\n"
+"each and every (red) to the channellist."
+msgstr ""
+
+#: scan.h:1888
+msgid "Scan is not allowed if record or stream is running !"
 msgstr ""
