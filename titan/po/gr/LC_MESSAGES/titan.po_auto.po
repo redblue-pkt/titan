@@ -773,7 +773,7 @@ msgstr ""
 #: solarmovie.h:266 tithek.h:607 tithek.h:1044 tithek.h:1087 tithek.h:1314
 #: tithek.h:1336 tithek.h:2084 tithek.h:2146 tithek.h:2160 xvidstage.h:65
 #: xvidstage.h:175 zdf.h:29 sock.h:861 sock.h:862 sock.h:884 putlocker.h:161
-#: sock.h:887
+#: sock.h:887 sock.h:889
 msgid "Message"
 msgstr ""
 
@@ -1046,6 +1046,7 @@ msgstr ""
 #: tithek.h:1044 tithek.h:1087 tithek.h:1314 tithek.h:1336 tithek.h:1355
 #: tithek.h:2084 tithek.h:2146 tithek.h:2160 xvidstage.h:65 xvidstage.h:175
 #: zdf.h:29 sock.h:861 sock.h:862 sock.h:884 putlocker.h:161 sock.h:887
+#: sock.h:889
 msgid "OK"
 msgstr ""
 
@@ -1318,6 +1319,7 @@ msgstr ""
 #: tithek.h:1044 tithek.h:1087 tithek.h:1314 tithek.h:1336 tithek.h:1355
 #: tithek.h:2084 tithek.h:2146 tithek.h:2160 xvidstage.h:65 xvidstage.h:175
 #: zdf.h:29 sock.h:861 sock.h:862 sock.h:884 putlocker.h:161 sock.h:887
+#: sock.h:889
 msgid "EXIT"
 msgstr ""
 
@@ -10370,6 +10372,7 @@ msgid "green"
 msgstr ""
 
 #: sock.h:820 sock.h:858 sock.h:859 sock.h:860 sock.h:882 sock.h:885
+#: sock.h:887
 msgid "Download finished!"
 msgstr ""
 
