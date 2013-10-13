@@ -1413,6 +1413,9 @@ msgstr "PL2303-Treiber"
 msgid "player"
 msgstr "Multimedia Player"
 
+msgid "players"
+msgstr "Player"
+
 msgid "PlayList - select your playlist !"
 msgstr "PlayList - wähle deine Liste"
 
@@ -4171,7 +4174,7 @@ msgid "Create new"
 msgstr "neu erstellen"
 
 msgid "Delete All"
-msgstr "alle löschen"		
+msgstr "alle löschen"
 
 msgid "Channel scan ended.\nYou can add all channel (green) or\neach and every (red) to the channellist."
 msgstr "Sendersuchlauf wurde beendet.\nSie können alle (grün) oder\neinzelne (rot) Sender zur Senderliste hinzufügen."
@@ -4181,4 +4184,9 @@ msgstr "Sendersuchlauf wurde beendet.\nEs wurden keine Sender gefunden."
 
 msgid "The page is temporarily unavailable"
 msgstr "Die Seite ist vorübergehend nicht erreichbar"
-                                                                  
+
+msgid "Copy File"
+msgstr "Datei(en) kopieren"
+
+msgid "Move File"
+msgstr "Datei(en) verschieben"
