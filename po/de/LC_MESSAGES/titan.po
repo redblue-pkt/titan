@@ -1413,9 +1413,6 @@ msgstr "PL2303-Treiber"
 msgid "player"
 msgstr "Multimedia Player"
 
-msgid "players"
-msgstr "Player"
-
 msgid "PlayList - select your playlist !"
 msgstr "PlayList - wähle deine Liste"
 
@@ -2503,10 +2500,10 @@ msgid "Change Feed"
 msgstr "Feedadresse hinzufügen"
 
 msgid "ADD ONE"
-msgstr "makierte Sender Speichern"
+msgstr "markierte Sender speichern"
 
 msgid "ADD ALL"
-msgstr "alle gefundenen Sender Speichern"
+msgstr "alle gefundenen Sender speichern"
 
 msgid "Show Modules"
 msgstr "CI-Modul Anzeige"
@@ -4204,4 +4201,4 @@ msgid "SAVETRANSPONDER"
 msgstr "Transponder speichern"
 
 msgid "TRANSPONDEREDIT"
-msgstr "Transponder bearbeiten"
+msgstr "Transponder auswählen"
