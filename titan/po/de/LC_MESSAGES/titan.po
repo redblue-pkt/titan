@@ -4177,4 +4177,8 @@ msgid "Channel scan ended.\nYou can add all channel (green) or\neach and every (
 msgstr "Sendersuchlauf wurde beendet.\nSie können alle (grün) oder\neinzelne (rot) Sender zur Senderliste hinzufügen."
 
 msgid "Channel scan ended.\nNothing found."
-msgstr "Sendersuchlauf wurde beendet.\nEs wurden keine Sender gefunden."                                                                           
+msgstr "Sendersuchlauf wurde beendet.\nEs wurden keine Sender gefunden."
+
+msgid "The page is temporarily unavailable"
+msgstr "Die Seite ist vorübergehend nicht erreichbar"
+                                                                  

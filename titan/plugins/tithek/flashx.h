@@ -7,12 +7,7 @@ char* flashx(char* host, char* file, char* hosterurl)
 	debug(99, "file: %s", file);
 	debug(99, "hosterurl: %s", hosterurl);
 	int debuglevel = getconfigint("debuglevel", NULL);
-	char* tmphost = NULL;
-	char* tmppath = NULL;
-	char* tmpstr = NULL;
-	char* send = NULL;
-	char* streamlink = NULL;
-	char* ip = NULL, *pos = NULL, *path = NULL;
+	char* tmphost = NULL, *tmppath = NULL, *tmpstr = NULL, *send = NULL, *streamlink = NULL, *ip = NULL, *pos = NULL, *path = NULL, *error = NULL;
 
 	if(host == NULL || file == NULL) return NULL;
 
@@ -42,9 +37,20 @@ char* flashx(char* host, char* file, char* hosterurl)
 	debug(99, "send: %s", send);
 	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 	titheklog(debuglevel, "/tmp/flashx_tmpstr_get1", NULL, tmpstr);
-//	writesys("/var/usr/local/share/titan/plugins/tithek//flashx_tmpstr_get1", tmpstr, 0);
+	writesys("/var/usr/local/share/titan/plugins/tithek//flashx_tmpstr_get1", tmpstr, 0);
 //printf("\n#######################################################\n");
-
+ 
+	if(ostrstr(tmpstr, "<center>Video not found, deleted or abused, sorry!<br") != NULL)
+	{
+		error = string_resub("<li> <center>", "<br", tmpstr, 0);
+		string_deltags(error);
+		error = strstrip(error);
+		if(error == NULL || strlen(error) == 0)
+			error = ostrcat(_("The page is temporarily unavailable"), NULL, 0, 0);
+		textbox(_("Message"), error, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 400, 0, 0);
+		goto end;
+	}
+	
 	char* cookie1 = string_resub("Set-Cookie: pageredir=", ";", tmpstr, 0);
 	debug(99, "cookie1: %s", cookie1);
 
@@ -83,14 +89,17 @@ char* flashx(char* host, char* file, char* hosterurl)
 	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 
 	titheklog(debuglevel, "/tmp/flashx_tmpstr_get2", NULL, tmpstr);
-//	writesys("/var/usr/local/share/titan/plugins/tithek//flashx_tmpstr_get2", tmpstr, 0);
+	writesys("/var/usr/local/share/titan/plugins/tithek//flashx_tmpstr_get2", tmpstr, 0);
 //printf("\n#######################################################\n");
 
 	char* hash1tmp = string_resub("<input type=\"hidden\" name=\"sec\" value=\"", "\"", tmpstr, 0);
 	char* hash2tmp = string_resub("<input type=\"hidden\" name=\"id\" value=\"", "\"", tmpstr, 0);
 	
+	if(hash1tmp == NULL || hash2tmp == NULL) goto end;
 	char* hash1 = htmlencode(hash1tmp);
 	char* hash2 = htmlencode(hash2tmp);
+	free(hash1tmp); hash1tmp = NULL;
+	free(hash2tmp); hash2tmp = NULL;
 	
 	// htmldecod cant / to %2f
 //	hash1 = string_replace_all("/", "%2F", hash1, 1);
@@ -100,6 +109,8 @@ char* flashx(char* host, char* file, char* hosterurl)
 	hash = ostrcat(hash, "&id=", 0, 0);
 	hash = ostrcat(hash, hash2, 0, 0);
 	char* hashlen = NULL;
+
+	if(hash == NULL) goto end;
 	hashlen = oitoa(strlen(hash));
 	debug(99, "hashlen: %s", hashlen);
 
@@ -121,12 +132,14 @@ char* flashx(char* host, char* file, char* hosterurl)
 	send = ostrcat(send, cookie2, 1, 0);
 	send = ostrcat(send, "\r\nContent-Type: application/x-www-form-urlencoded\r\n\r\n", 1, 0);	
 	send = ostrcat(send, hash, 1, 0);
-
+	free(hash); hash = NULL;
+	free(hashlen); hashlen = NULL;
+	
 	debug(99, "send: %s", send);
 	tmpstr = gethttpreal(tmphost, "/player/show.php", 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 
 	titheklog(debuglevel, "/tmp/flashx_tmpstr_get3", NULL, tmpstr);
-//	writesys("/var/usr/local/share/titan/plugins/tithek//flashx_tmpstr_get3", tmpstr, 0);
+	writesys("/var/usr/local/share/titan/plugins/tithek//flashx_tmpstr_get3", tmpstr, 0);
 //printf("\n#######################################################\n");
 //var code ='<object id="nuevoplayer" width="'+ww+'" height="'+hh+'" data="http://play.flashx.tv/nuevo/player/player.swf?config=http://play.flashx.tv/nuevo/player/play.php?str=4MfrzrW4qrPKnM2dw5/Fvcs=" type="application/x-shockwave-flash">';
 	char* playurl = string_resub("?config=", "\"", tmpstr, 0);
@@ -160,7 +173,7 @@ char* flashx(char* host, char* file, char* hosterurl)
 	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 
 	titheklog(debuglevel, "/tmp/flashx_tmpstr_get4", NULL, tmpstr);
-//	writesys("/var/usr/local/share/titan/plugins/tithek//flashx_tmpstr_get4", tmpstr, 0);
+	writesys("/var/usr/local/share/titan/plugins/tithek//flashx_tmpstr_get4", tmpstr, 0);
 //printf("\n#######################################################\n");
 
 
@@ -203,14 +216,15 @@ char* flashx(char* host, char* file, char* hosterurl)
 
 	if(getconfigint("debuglevel", NULL) == 99)
 		writesys("/tmp/flashx_tmpstr_get5", tmpstr, 0);
-//	writesys("/var/usr/local/share/titan/plugins/tithek//flashx_tmpstr_get5", tmpstr, 0);
+	writesys("/var/usr/local/share/titan/plugins/tithek//flashx_tmpstr_get5", tmpstr, 0);
 //printf("\n#######################################################\n");
 
 	streamlink = string_resub("<file>", "</file>", tmpstr, 0);
 	if(getconfigint("debuglevel", NULL) == 99)
 		writesys("/tmp/flashx5_streamlink", streamlink, 0);
 
-//end:
+end:
+	free(error); error = NULL;
 	free(tmphost); tmphost = NULL;
 	free(tmphost); tmphost = NULL;
 	free(tmpstr); tmpstr = NULL;

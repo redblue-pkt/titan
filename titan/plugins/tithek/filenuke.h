@@ -5,30 +5,12 @@ char* filenuke(char* host, char* file, char* hosterurl)
 {
 	debug(99, "in host: %s file: %s", host, file);
 	int debuglevel = getconfigint("debuglevel", NULL);
-	char* tmphost = NULL;
-	char* tmpfile = NULL;
-	char* tmpstr = NULL;
-	char* send = NULL;
-	char* id = NULL;
-	char* fname = NULL;
-	char* op = NULL;
-	char* hash = NULL;
-	char* hashlen = NULL;	
-	char* ip = NULL;
-	char* b36code = NULL;
-	char* base = NULL;
-	char* search = NULL;
-	char* post = NULL;
-	char* streamlink = NULL;
-	char* cmd = NULL;
-
-	char* tmpstr2 = NULL;
-	char* tmpstr3 = NULL;
-	char* charlist = NULL;
+	char* tmphost = NULL, *error = NULL, *tmpfile = NULL, *tmpstr = NULL, *send = NULL, *id = NULL, *fname = NULL, *op = NULL, *hash = NULL, *hashlen = NULL, *ip = NULL;
+	char* b36code = NULL, *base = NULL, *search = NULL, *post = NULL, *streamlink = NULL, *cmd = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *charlist = NULL;
 
 	if(host == NULL || file == NULL) return NULL;
 
-	tmphost = ostrcat(host, NULL, 0, 0);
+	tmphost = ostrcat("www.", host, 0, 0);
 	tmpfile = ostrcat("/", file, 0, 0);
 	debug(99, "tmphost: %s", tmphost);
 	ip = get_ip(tmphost);
@@ -42,13 +24,13 @@ char* filenuke(char* host, char* file, char* hosterurl)
 
 	if(ostrstr(tmpstr, "<title>The page is temporarily unavailable</title>") != NULL)
 	{
-		tmpstr = string_resub("<td align=\"center\" valign=\"middle\">", "</td>", tmpstr, 1);
-		string_deltags(tmpstr);
-		tmpstr = string_replace("Terms", "\nTerms", tmpstr, 1);
-		tmpstr = strstrip(tmpstr);
-		if(tmpstr == NULL || strlen(tmpstr) == 0)
-			tmpstr = ostrcat(_("The page is temporarily unavailable"), tmpstr, 0, 1);
-		textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 400, 0, 0);
+		error = string_resub("<td align=\"center\" valign=\"middle\">", "</td>", tmpstr, 0);
+		string_deltags(error);
+		error = string_replace("Terms", "\nTerms", error, 1);
+		error = strstrip(error);
+		if(error == NULL || strlen(error) == 0)
+			error = ostrcat(_("The page is temporarily unavailable"), error, 0, 1);
+		textbox(_("Message"), error, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 400, 0, 0);
 		goto end;
 	}
 
@@ -234,6 +216,7 @@ char* filenuke(char* host, char* file, char* hosterurl)
 
 end:
 
+	free(error); error = NULL;
 	free(tmphost); tmphost = NULL;
 	free(tmpfile); tmpfile = NULL;
 	free(tmpstr); tmpstr = NULL;
