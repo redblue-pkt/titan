@@ -791,12 +791,12 @@ end:
 		if(outbuf != NULL)
 		{
 			if(gzip == -1)
-				unzipret = ounzip(buf, count, &outbuf, &outlen, MINMALLOC * 100, 1);
+				unzipret = ounzip(buf, count, &outbuf, &outlen, MINMALLOC * 100, 3);
 			else
 			{
 				memcpy(outbuf, buf, gzip);
 				char* tmpoutbuf = outbuf + gzip;
-				unzipret = ounzip(buf + gzip, count - gzip, &tmpoutbuf, &outlen, MINMALLOC * 100, 1);
+				unzipret = ounzip(buf + gzip, count - gzip, &tmpoutbuf, &outlen, MINMALLOC * 100, 3);
 				outlen += gzip;			
 			}
 			if(unzipret == 0)
