@@ -725,8 +725,11 @@ char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, 
 		contentlen += 15;
 		len = strtoul(contentlen, NULL, 10);
 	}
-	if(filename == NULL && flag == 0 && ostrstr(tmpbuf, "Content-Type: application/x-gzip") != NULL)
-		gzip = 1;
+	if(filename == NULL && (flag == 0 || flag == 1) && ostrstr(tmpbuf, "Content-Type: application/x-gzip") != NULL)
+	{
+		if(flag == 0) gzip = -1;
+		else if(flag == 1) gzip = headerlen;
+	}
 
 	if(flag == 0) headerlen = 0;
 	while((ret = sockread(sock, (unsigned char*)tmpbuf + headerlen, 0, MINMALLOC - headerlen, timeout * 1000, 0)) > 0)
@@ -775,20 +778,41 @@ end:
 	if(fd != NULL) fclose(fd);
 	sockclose(&sock);
 	
-	if(gzip == 1)
+	if(gzip != 0)
 	{
 		int unzipret = 0, outlen = 0;
 		char* outbuf = NULL;
 		
-		unzipret = ounzip(buf, count, &outbuf, &outlen, MINMALLOC * 100, 2);
-		if(unzipret == 0 && outbuf != NULL)
+		if(gzip == -1)
+			outbuf = malloc(MINMALLOC * 100);
+		else
+			outbuf = malloc((MINMALLOC * 100) + gzip);
+			
+		if(outbuf != NULL)
 		{
-			free(buf); buf = outbuf;
-			count = outlen;
+			if(gzip == -1)
+				unzipret = ounzip(buf, count, &outbuf, &outlen, MINMALLOC * 100, 1);
+			else
+			{
+				memcpy(outbuf, buf, gzip);
+				char* tmpoutbuf = outbuf + gzip;
+				unzipret = ounzip(buf + gzip, count - gzip, &tmpoutbuf, &outlen, MINMALLOC * 100, 1);
+				outlen += gzip;			
+			}
+			if(unzipret == 0)
+			{
+				free(buf); buf = outbuf;
+				count = outlen;
+			}
+			else
+			{
+				free(outbuf); outbuf = NULL;
+				err("unzip http data");
+			}
 		}
 		else
 		{
-			err("unzip http data");
+			err("no mem");
 		}
 	}
 
