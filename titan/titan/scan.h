@@ -1637,7 +1637,7 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 				timernode->aktion = STOP;
 				while(i < 4 && scaninfo.threadend == 0)
 				{
-					textbox(_("Message"), _("Wait for channel scan end"), NULL, 0, NULL, 0, NULL, 0, NULL, 0, 600, 200, 3, 0);
+					textbox(_("Message"), _("Wait for channel scan end"), NULL, 0, NULL, 0, NULL, 0, NULL, 0, 800, 200, 3, 0);
 					i++;
 				}
 			}
