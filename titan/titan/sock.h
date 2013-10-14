@@ -588,7 +588,7 @@ unsigned long getchunkedlen(int sock, int timeout)
 {
 printf("1111111111\n");
 	unsigned long len = 0;
-	int ret = 0, end = 0;;
+	int ret = 0;
 	char chunked[16] = {'\0'};
 	int chunkedid = 0;
 
