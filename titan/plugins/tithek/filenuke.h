@@ -11,6 +11,15 @@ char* filenuke(char* host, char* file, char* hosterurl)
 	
 	if(host == NULL || file == NULL) return NULL;
 
+	unlink("/tmp/filenuke1_get");
+	unlink("/tmp/filenuke2_post");
+	unlink("/tmp/filenuke3_tmpstr1");
+	unlink("/tmp/filenuke4_post2");
+	unlink("/tmp/filenuke5_tmpstr2");
+	unlink("/tmp/filenuke6_b36code2");
+	unlink("/tmp/filenuke7_tmpstr_last");
+	unlink("/tmp/filenuke8_streamlink");
+
 	tmphost = ostrcat("www.", host, 0, 0);
 	tmpfile = ostrcat("/", file, 0, 0);
 	debug(99, "tmphost: %s", tmphost);
@@ -94,7 +103,7 @@ char* filenuke(char* host, char* file, char* hosterurl)
 	send = ostrcat(send, " HTTP/1.0\r\nContent-Length: ", 1, 0);
 	send = ostrcat(send, hashlen, 1, 0);
 	send = ostrcat(send, "\r\nAccept-Encoding: gzip\r\nConnection: close\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nHost: ", 1, 0);
-	send = ostrcat(send, host, 1, 0);
+	send = ostrcat(send, tmphost, 1, 0);
 	send = ostrcat(send, "\r\nContent-Type: application/x-www-form-urlencoded\r\n\r\n", 1, 0);
 	send = ostrcat(send, hash, 1, 0);
 	debug(99, "send: %s", send);
