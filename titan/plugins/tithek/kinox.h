@@ -40,6 +40,8 @@ char* kinox(char* link)
 			streamurl = xvidstage("XvidStage.com", id, url);
 		else if(ostrcmp(hname, "NowVideo.eu") == 0)
 			streamurl = nowvideo("NowVideo.eu", id, url);
+		else if(ostrcmp(hname, "NowVideo.sx") == 0)
+			streamurl = nowvideo("NowVideo.sx", id, url);
 					
 		debug(99, "streamurl1: %s", streamurl);
 
@@ -404,6 +406,8 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 						tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
 					else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "NowVideo.eu") == 0)
 						tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
+					else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "NowVideo.sx") == 0)
+						tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
 					else
 					{
 						tmpstr2 = ostrcat("unknown", NULL, 0, 0);
@@ -474,6 +478,8 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 							tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
 						else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "NowVideo.eu") == 0)
 							tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
+						else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "NowVideo.sx") == 0)
+							tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
 						else
 						{
 							tmpstr2 = ostrcat("unknown", NULL, 0, 0);
@@ -538,6 +544,8 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 						else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "Vidxden.com (DivX)") == 0)
 							tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
 						else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "NowVideo.eu") == 0)
+							tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
+						else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "NowVideo.sx") == 0)
 							tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
 						else
 						{
@@ -604,6 +612,8 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 						else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "Vidxden.com (DivX)") == 0)
 							tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
 						else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "NowVideo.eu") == 0)
+							tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
+						else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "NowVideo.sx") == 0)
 							tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
 						else
 						{
@@ -803,6 +813,8 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 					else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "Vidxden.com (DivX)") == 0)
 						tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
 					else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "NowVideo.eu") == 0)
+						tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
+					else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "NowVideo.sx") == 0)
 						tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
 					else
 					{
