@@ -6,8 +6,9 @@
 
 char* solarmovie(char* link)
 {
-	debug(99, "link: %s", link);
-	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *path = NULL, *url = NULL, *streamurl = NULL, *id = NULL, *hname = NULL, *cmd = NULL;
+	debug(99, "link11111111111: %s", link);
+	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *path = NULL, *url = NULL, *streamurl = NULL, *id = NULL, *hname = NULL;
+//	char* cmd = NULL;
 
 	if(link == NULL) return NULL;
 
@@ -29,46 +30,29 @@ char* solarmovie(char* link)
 		hname = ostrcat(ret1[2].part, NULL, 0, 0);
 		debug(99, "hname: %s", hname);
 
-//		tmpstr = gethttp("www.solarmovie.so", path, 80, NULL, NULL, 5000, NULL, 0);
-
 		char* send = ostrcat("GET /link/play/", NULL, 0, 0);
 		send = ostrcat(send, id, 1, 0);
 		send = ostrcat(send, " HTTP/1.1\r\nHost: www.solarmovie.so\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nConnection: close\r\nAccept-Encoding: gzip\r\n\r\n", 1, 0);	
 		debug(99, "send: %s", send);
 		unlink("/tmp/tithek/get1");
-		gethttpreal("www.solarmovie.so", path, 80, "/tmp/tithek/get1", NULL, NULL, 0, send, NULL, 5000, 0);
+		tmpstr = gethttpreal("www.solarmovie.so", path, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 0);
+		debug(99, "tmpstr: %s", tmpstr);
 		free(send); send = NULL;
 
-		if(file_exist("/tmp/tithek/get1"))
+		if(tmpstr != NULL)
 		{
-			tmpstr1 = command("cat /tmp/tithek/get1");
-			string_strip_whitechars(tmpstr1);
-
-			if(ostrstr(tmpstr1, "<!DOCTYPE") == NULL)
+			string_strip_whitechars(tmpstr);
+			if(ostrstr(tmpstr, "<div class=\"thirdPartyEmbContainer\">") != NULL)
 			{
-				cmd = ostrcat(cmd, "cat /tmp/tithek/get1 | zcat", 1, 0);
-				debug(99, "cmd: %s", cmd);
-				free(tmpstr1), tmpstr1 = NULL;
-				tmpstr1 = command(cmd);
-				
-				writesys("/tmp/tithek/get_zcat1", tmpstr1, 0);
-				free(cmd), cmd = NULL;
-			}
-			else
-			{
-				system("cp -a /tmp/tithek/get1 /tmp/tithek/get_zcat1");
-			}
-
-			if(ostrstr(tmpstr1, "<div class=\"thirdPartyEmbContainer\">") != NULL)
-			{
-				tmpstr1 = string_resub("<div class=\"thirdPartyEmbContainer\">", "</div>", tmpstr1, 1);
+				tmpstr1 = string_resub("<div class=\"thirdPartyEmbContainer\">", "</div>", tmpstr, 0);
+				stringreplacechar(tmpstr1, '\n', ' ');
 				url = string_resub("<center><iframe src=\"", "\"", tmpstr1, 0);
-				if(url == NULL || ostrncmp("http://", url, 7) == 0)
+				if(url == NULL || ostrncmp("http://", url, 7) == 1)
 					url = oregex(".*src=\"(http://.*)&width.*", tmpstr1);
 			}
 			else
 			{
-				url = oregex(".*<iframe name=\"service_frame\" class=\"service_frame\" src=\"(http://.*)\".*", tmpstr1);
+				url = oregex(".*<iframe name=\"service_frame\" class=\"service_frame\" src=\"(http://.*)\".*", tmpstr);
 				url = oregex("(http://.*)\".*", url);
 				url = string_replace_all("embed", "file", url, 1);
 			}
@@ -259,16 +243,16 @@ int solarmovie_hoster(struct skin* grid, struct skin* listbox, struct skin* coun
 		path = pos + 1;
 	}
 
-	gethttp(ip, path, 80, "/tmp/tithek/get", NULL, 10000, NULL, 0);
+	tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
 	
-	if(!file_exist("/tmp/tithek/get"))
+	if(tmpstr == NULL)
 	{
 		textbox(_("Message"), _("This file doesn't exist, or has been removed") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
 		goto end;
 	}
-	if(debuglevel == 99) system("cp -a /tmp/tithek/get /tmp/solarmovie1_tmpstr_get");
+//	if(debuglevel == 99) system("cp -a /tmp/tithek/get /tmp/solarmovie1_tmpstr_get");
 
-	tmpstr = command("cat /tmp/tithek/get");
+//	tmpstr = command("cat /tmp/tithek/get");
 	if(ostrstr(tmpstr, "<!DOCTYPE") == NULL)
 	{
 		cmd = ostrcat(cmd, "cat /tmp/tithek/get | zcat", 1, 0);
@@ -279,10 +263,10 @@ int solarmovie_hoster(struct skin* grid, struct skin* listbox, struct skin* coun
 		writesys("/tmp/tithek/get_zcat", tmpstr, 0);
 		free(cmd), cmd = NULL;
 	}
-	else
-		system("cp -a /tmp/tithek/get /tmp/tithek/get_zcat");
+//	else
+//		system("cp -a /tmp/tithek/get /tmp/tithek/get_zcat");
 
-	titheklog(debuglevel, "/tmp/solarmovie2_tmpstr_zcat", NULL, tmpstr);
+//	titheklog(debuglevel, "/tmp/solarmovie2_tmpstr_zcat", NULL, tmpstr);
 
 	drawscreen(load, 0, 0);
 	if(ostrstr(link, "/tv/") != NULL && ostrstr(link, "/season-") == NULL && ostrstr(link, "/episode-") == NULL)	
@@ -293,10 +277,10 @@ int solarmovie_hoster(struct skin* grid, struct skin* listbox, struct skin* coun
 	if(series == 0)
 	{
 		series = 0;
-		if(file_exist("/tmp/tithek/get_zcat"))
+		if(tmpstr != NULL)
 		{
-			free(tmpstr), tmpstr = NULL;
-			tmpstr = command("cat /tmp/tithek/get_zcat");
+//			free(tmpstr), tmpstr = NULL;
+//			tmpstr = command("cat /tmp/tithek/get_zcat");
 			char* tmpcat = string_resub("<tbody>", "</tbody>", tmpstr, 0);
 	
 			char* ptmpcat = ostrstr(tmpcat, "<td class=\"qualit");
@@ -383,8 +367,10 @@ int solarmovie_hoster(struct skin* grid, struct skin* listbox, struct skin* coun
 	else
 	{
 		series = 1;
-		if(file_exist("/tmp/tithek/get_zcat"))
+		if(tmpstr != NULL)
 		{
+writesys("/tmp/tithek/get_zcat", tmpstr, 0);
+
 			free(tmpstr), tmpstr = NULL;
 			tmpstr = command("cat /tmp/tithek/get_zcat | grep episode- | grep -v Episode | grep -v 'linkCount typicalGrey'");
 			writesys("/var/usr/local/share/titan/plugins/tithek/solarmovie8_tmpstr", tmpstr, 0);
