@@ -778,6 +778,7 @@ msgstr ""
 #: sock.h:887 sock.h:889 filenuke.h:48 filenuke.h:60 flashx.h:45 flashx.h:91
 #: flashx.h:144 flashx.h:180 flashx.h:215 global.h:6162 sock.h:937
 #: solarmovie.h:250 sock.h:940 sock.h:956 sock.h:952 putlocker.h:174
+#: putlocker.h:177
 msgid "Message"
 msgstr ""
 
@@ -1052,7 +1053,7 @@ msgstr ""
 #: zdf.h:29 sock.h:861 sock.h:862 sock.h:884 putlocker.h:161 sock.h:887
 #: sock.h:889 filenuke.h:48 filenuke.h:60 flashx.h:45 flashx.h:91 flashx.h:144
 #: flashx.h:180 flashx.h:215 global.h:6162 sock.h:937 solarmovie.h:250
-#: sock.h:940 sock.h:956 sock.h:952 putlocker.h:174
+#: sock.h:940 sock.h:956 sock.h:952 putlocker.h:174 putlocker.h:177
 msgid "OK"
 msgstr ""
 
@@ -1327,7 +1328,7 @@ msgstr ""
 #: zdf.h:29 sock.h:861 sock.h:862 sock.h:884 putlocker.h:161 sock.h:887
 #: sock.h:889 filenuke.h:48 filenuke.h:60 flashx.h:45 flashx.h:91 flashx.h:144
 #: flashx.h:180 flashx.h:215 global.h:6162 sock.h:937 solarmovie.h:250
-#: sock.h:940 sock.h:956 sock.h:952 putlocker.h:174
+#: sock.h:940 sock.h:956 sock.h:952 putlocker.h:174 putlocker.h:177
 msgid "EXIT"
 msgstr ""
 
@@ -9532,6 +9533,7 @@ msgstr ""
 #: filenuke.h:50 putlocker.h:141 vidstream.h:56 filenuke.h:32 flashx.h:49
 #: putlocker.h:138 putlocker.h:160 filenuke.h:47 filenuke.h:59 flashx.h:44
 #: flashx.h:90 flashx.h:143 flashx.h:179 flashx.h:214 putlocker.h:173
+#: putlocker.h:176
 msgid "The page is temporarily unavailable"
 msgstr ""
 
