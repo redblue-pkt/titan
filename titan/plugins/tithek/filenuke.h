@@ -18,7 +18,21 @@ char* filenuke(char* host, char* file, char* hosterurl)
 	debug(99, "ip: %s", ip);
 	debug(99, "test host only: %s", get_ip(host));
 	debug(99, "tmpfile: %s", tmpfile);
-	tmpstr = gethttp(tmphost, tmpfile, 80, NULL, NULL, 10000, NULL, 0);
+
+	send = ostrcat(send, "GET ", 1, 0);
+	send = ostrcat(send, tmpfile, 1, 0);
+	send = ostrcat(send, " HTTP/1.1\r\nAccept-Encoding: identity\r\n", 1, 0);
+	send = ostrcat(send, "Accept-Language: de-DE,de;q=0.8,en-US;q=0.6,en;q=0.4\r\n", 1, 0);
+	send = ostrcat(send, "Host: ", 1, 0);
+	send = ostrcat(send, tmphost, 1, 0);
+	send = ostrcat(send, "\r\nUser-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; de-DE; rv:1.9.0.3) Gecko/2008092417 Firefox/3.0.3\r\n", 1, 0);
+	send = ostrcat(send, "Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7\r\n", 1, 0);
+	send = ostrcat(send, "Connection: close\r\nCookie: xxx2=ok;\r\n\r\n", 1, 0);
+	debug(99, "send: %s", send);
+
+	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
+	free(send), send = NULL;
+
 	debug(99, "write file");
 	sleep(2);
 	titheklog(debuglevel, "/tmp/filenuke1_tmpstr", NULL, tmpstr);
@@ -27,7 +41,19 @@ char* filenuke(char* host, char* file, char* hosterurl)
 	{
 		error = string_resub("<td align=\"center\" valign=\"middle\">", "</td>", tmpstr, 0);
 		string_deltags(error);
-		error = string_replace("Terms", "\nTerms", error, 1);
+		stringreplacechar(error, '|', '\0');
+		error = strstrip(error);
+		if(error == NULL || strlen(error) == 0)
+			error = ostrcat(_("The page is temporarily unavailable"), error, 0, 1);
+		textbox(_("Message"), error, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 400, 0, 0);
+		goto end;
+	}
+
+	if(ostrstr(tmpstr, "<title>Direct IP access not allowed") != NULL)
+	{
+		error = string_resub("<title>", "</title>", tmpstr, 0);
+		string_deltags(error);
+		stringreplacechar(error, '|', '\0');
 		error = strstrip(error);
 		if(error == NULL || strlen(error) == 0)
 			error = ostrcat(_("The page is temporarily unavailable"), error, 0, 1);
@@ -90,6 +116,7 @@ char* filenuke(char* host, char* file, char* hosterurl)
 // KinoX_Star.Wars.The.Clone.Wars_1.(de)_Staffel.4.Folge.19_FileNuke.com.mp4
 // http://filenuke.com/3gop8ac00z3v;3gop8ac00z3v;FileNuke.com
 	post = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 0);
+
 	debug(99, "post: %s", post);
 // new end
 
