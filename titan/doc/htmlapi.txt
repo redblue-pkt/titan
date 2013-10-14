@@ -8,244 +8,347 @@
 use query?param&param&... for html output
 use queryraw?param&param&... for raw-struct output
 
-query: sendrc
-raw: nothing
-desc: send rc code
-param: rc code
+query:	sendrc
+raw:			nothing
+desc:			send rc code
+param:		rc code
+example:	query?sendrc&rcmute
 
-query: getrectimer
-raw: begin#end#justplay#repeate#name#serviceid#transpoderid#status#errstr#timestamp#channelname#afterevent
-desc: get aktive record timer
-param: no
+query:	getrectimer
+raw:			begin#end#justplay#repeate#name#serviceid#transpoderid#status#errstr#timestamp#channelname#afterevent (or "no data", if no timer in list)
+desc:			get active record timer list
+param:		no
+example:	queryraw?getrectimer
 
-query: addrectimer
-raw: ?
-desc: add a record timer
-param: ?
+query:	getrectimerarchive
+raw:			begin#end#justplay#repeate#name#serviceid#transpoderid#status#errstr#timestamp#channelname#afterevent (or "no data", if no timer in list)
+desc:			get old record timer list
+param:		no
+example:	queryraw?getrectimer
 
-query: delrectimer
-raw: ?
-desc: delete a record timer
-param: ?
+query:	addrectimer (not used for queryraw)
+raw:			???
+desc:			add a record timer
+param:		???
 
-query: editrectimer
-raw: ?
-desc: edit a record timer
-param: ?
+query:	editrectimer (not used for queryraw)
+raw:			???
+desc:			edit a record timer
+param:		???
 
-query: rectimersend
-raw: ?
-desc: ?
-param: ?
+query:	delrectimer
+raw:			begin#end#justplay#repeate#name#serviceid#transpoderid#status#errstr#timestamp#channelname#afterevent
+desc:			delete a record timer and give active record timer list back
+param:		timestamp	(from getrectimer/getrectimerarchive entry)
+example:	queryraw?delrectimer&1362672485239282
 
-query: getrectimerarchive
-raw: begin#end#justplay#repeate#name#serviceid#transpoderid#status#errstr#timestamp#channelname#afterevent
-desc: get old record timer
-param: no
+query: 	rectimersend
+raw:			ok -> TimerID
+desc:			set a record timer
+param:		node=				(0 for new timer, else timestamp from getrectimer/getrectimerarchive entry)
+param:		name=				(timer name)
+param:		type=				("record" for record, else switch timer)
+param:		begin=			(start time, format "HH:MM dd-mm-YYYY" example "10:26 11-03-2013")
+param:		end=				(end time, format "HH:MM dd-mm-YYYY" example "11:26 11-03-2013")
+param:		sid=				(ServiceID from channel)
+param:		tid=				(TransponderID from channel)
+param:		repeat=			(0 no repeate, else Bitmuster, 1 Mo, 2 Di, 4 Mi, 8 Do, 16 Fr, 32 Sa, 64 So)
+param:		afterevent=	(0 auto,1 nothing, 2 standby, 3 shutdown)
+param:		ext=1				(if ext=x exist, then we give the current created timer entry back, else the active record timer list)
+param:		send=Send		(must exist)
+param:		channel=		(channel name --> use it only, if you don't use sid+tid. Channelname must be unique in your channellist)
+example:	queryraw?rectimersend&node=%s&name=%s&type=%s&begin=%s&end=%s&sid=%s&tid=%s&repeat=%s&afterevent=%s&ext=1&send=Send'; 
+example:	queryraw?rectimersend&node=%s&name=%s&type=%s&begin=%s&end=%s&channel=%s&repeat=%s&afterevent=%s&send=Send
 
-query: setvol
-raw: returns the aktive vol (0-100)
-desc: set the volume
-param: 0-100
+query:	getbouquet
+raw:			bouquetname#type
+desc:			get a list of all bouquets
+param:		no
+example:	queryraw?getbouquet
 
-query: setmute
-raw: returns the aktive mute (0/1)
-descr: set mute
-param: 0/1
+query:	getsat
+raw:			satname#orbitalpos
+desc:			get a list of all sat
+param:		no
+example:	queryraw?getsat
 
-query: getbouquet
-raw: bouquetname#type
-desc: get a list of all bouquets
-param: no
+query:	getprovider
+raw:			providername#number
+desc:			get a list of all provoder
+param:		no
+example:	queryraw?getprovider
 
-query: getsat
-raw: satname#orbitalpos
-desc: get a list of all sat
-param: no
+query:	getaz
+raw:			returns A-Z
+desc:			get chars A-Z
+param:		no
+example:	queryraw?getaz
 
-query: getprovider
-raw: providername#number
-desc: get a list of all provoder
-param: no
+query:	getchannelpage
+raw:			channelname#proz#serviceid#transponderid#channellist#servicetype#eventid#actstarttime#actepgshort#nextstartime#nextstoptime#nextepgshort#nexteventid#lockstatus
+desc:			get a channel page
+param:		at type 0 = 0, 1 = orbitalpos, 2 = providername, 3 = A-Z
+param:		type (0 = all, 1 = sat, 2 = provider, 3 = A-Z)
+param:		page nr
+example:	queryraw?getchannelpage&0&0&1
 
-query: getaz
-raw: returns A-Z
-desc: get chars A-Z
-param: no
+query:	getallchannel
+raw:			channelname#proz#serviceid#transponderid#channellist#servicetype#eventid#actstarttime#actepgshort#nextstartime#nextstoptime#nextepgshort#nexteventid#lockstatus
+desc:			get channel page 1 from "getchannelpage" with type 0(all)
+param:		no
+example:	queryraw?getallchannel
 
-query: getchannelpage
-raw: channelname#proz#serviceid#transponderid#channellist#servicetype#eventid#actstarttime#actepgshort#nextstartime#nextstoptime#nextepgshort
-desc: get a channel page
-param: 0 = 0, 1 = orbitalpos, 2 = providername, 3 = A-Z
-param: type (0 = all, 1 = sat, 2 = provider, 3 = A-Z)
-param: page nr
+query:	getbouquetchannel
+raw:			channelname#proz#serviceid#transponderid#channellist#servicetype#eventid#actstarttime#actepgshort#nextstartime#nextstoptime#nextepgshort#nexteventid#lockstatus
+desc:			get all channel from a bouquet
+param:		bouquetname
+example:	queryraw?getbouquetchannel&Musik
 
-query: getallchannel
-raw: channelname#proz#serviceid#transponderid#channellist#servicetype#eventid#actstarttime#actepgshort#nextstartime#nextstoptime#nextepgshort
-desc: get all channel
-param: no
+query:	getsatchannel
+raw:			channelname#proz#serviceid#transponderid#channellist#servicetype#eventid#actstarttime#actepgshort#nextstartime#nextstoptime#nextepgshort#nexteventid#lockstatus
+desc:			get channel page 1 from "getchannelpage" with type 1(Sat)
+param:		orbitalposition
+example:	queryraw?getsatchannel&192
 
-query: getbouquetchannel
-raw: channelname#proz#serviceid#transponderid#channellist#servicetype#eventid#actstarttime#actepgshort#nextstartime#nextstoptime#nextepgshort
-desc: get all channel from a bouquet
-param: bouquetname
+query:	getproviderchannel
+raw:			channelname#proz#serviceid#transponderid#channellist#servicetype#eventid#actstarttime#actepgshort#nextstartime#nextstoptime#nextepgshort#nexteventid#lockstatus
+desc:			get all channel from a provider
+param:		providerID (List number in "getprovider")
+example:	queryraw?getproviderchannel&31
 
-query: getsatchannel
-raw: channelname#proz#serviceid#transponderid#channellist#servicetype#eventid#actstarttime#actepgshort#nextstartime#nextstoptime#nextepgshort
-desc: get all channel from a sat
-param: orbitalposition
+query:	getazchannel
+raw:			channelname#proz#serviceid#transponderid#channellist#servicetype#eventid#actstarttime#actepgshort#nextstartime#nextstoptime#nextepgshort#nexteventid#lockstatus
+desc:			get all channel from first char
+param:		char (A-Z in ASCII Dec)
+example:	queryraw?getazchannel&81
 
-query: getproviderchannel
-raw: channelname#proz#serviceid#transponderid#channellist#servicetype#eventid#actstarttime#actepgshort#nextstartime#nextstoptime#nextepgshort
-desc: get all channel from a provider
-param: providername
+query:	switch
+raw:			channelname#proz#serviceid#transponderid#channellist#servicetype#eventid#actstarttime#actepgshort#nextstartime#nextstoptime#nextepgshort#nexteventid#lockstatus
+desc:			change channel
+param:		channelid
+param:		transponderid
+param:		bouquetName (BOUQUET)-xxx     / is an optional param, it set the right bouquet in channellist.
+example:	queryraw?switch&66553&20625&(BOUQUET)-Musik
 
-query: getazchannel
-raw: channelname#proz#serviceid#transponderid#channellist#servicetype#eventid#actstarttime#actepgshort#nextstartime#nextstoptime#nextepgshort
-desc: get all channel from first char
-param: char (A-Z)
+query:	getaktservice
+raw:			channelname#proz#serviceid#transponderid#channellist#servicetype#eventid#actstarttime#actepgshort#nextstartime#nextstoptime#nextepgshort#nexteventid#lockstatus
+desc:			get akt service data from TV channel
+param:		no
+example:	queryraw?getaktservice
 
-query: switch
-raw: channelname#proz#serviceid#transponderid#channellist#servicetype#eventid#actstarttime#actepgshort#nextstartime#nextstoptime#nextepgshort
-desc: change channel
-param: channelid
-param: transponderid
+query:	getservice
+raw:			channelname#proz#serviceid#transponderid#channellist#servicetype#eventid#actstarttime#actepgshort#nextstartime#nextstoptime#nextepgshort#nexteventid#lockstatus
+desc:			get service data
+param:		channelid
+param:		transponderid
+example:	queryraw?getservice&66553&20625
 
-query: getaktservice
-raw: channelname#proz#serviceid#transponderid#channellist#servicetype#eventid#actstarttime#actepgshort#nextstartime#nextstoptime#nextepgshort
-desc: get akt service
-param: no
+query:	getsysteminfo
+raw:			titan#NIT#ReleaseRev#ImageName#BoxType#BoxTime
+desc:			get system data
+param:		no
+example:	queryraw?getsysteminfo
 
-query: getepg
-raw: epgshort#begin#end#subtitle#epglong
-desc: get epg from a channel
-param: channelid
-param: transponderid
-param: epg event id
+query:	getconfig
+raw:			ParamName#ParamValue
+desc:			get titan config data
+param:		no
+example:	queryraw?getconfig
 
-query: getmovieepg
-raw: returns .epg
-desc: gets the epg to a recordet movie
-param: movie name (full path)
+query:	getchannellock
+raw:			channelname#serviceid#transponderid#channellock
+param:		channelid
+param:		transponderid
+example:	queryraw?getchannellock&66553&20625
 
-query: getsingleepg
-raw: epgshort#begin#end#subtitle#epglong#eventid
-desc: get all epg to a channel
-param: channelid
-param: transponderid
+query:	getbouquetepg
+raw:			BeginNewChannel(fixtext)#channelname#serviceid#transponderid#servicetype
+					epgshort#begin#end#subtitle#epglong#eventid
+					epgshort#begin#end#subtitle#epglong#eventid
+					BeginNewChannel(fixtext)#channelname#serviceid#transponderid#servicetype
+					epgshort#begin#end#subtitle#epglong#eventid
+					epgshort#begin#end#subtitle#epglong#eventid
+					....
+desc:			get EPG data from all channel from a bouquet
+param:		bouquetname
+param:		longepgtext 0/1
+param:		startzeit (unix time format)
+param:		endzeit		(unix time format)
+example:	queryraw?getbouquetepg&Musik&0&1381707900&1381729500
 
-query: getgmultiepg
-raw: ?
-desc: get all epg from all channel in a bouquet
-param: bouquetname
-param: page nr
+query:	getepg
+raw:			epgshort#begin#end#subtitle#epglong
+desc:			get epg data from epg event id
+param:		channelid
+param:		transponderid
+param:		epg event id
+example:	queryraw?getepg&61302&66553&20625
 
-query: getepgsearch
-raw: ?
-desc: search epg entry
-param: ?
+query:	getmovieepg
+raw:			returns text from movie .epg file
+desc:			get the epg to a recorded movie
+param:		movie name (full path)
+example:	queryraw?getmovieepg&/media/hdd/movie/movie.ts
 
-query: getsignal
-raw: ber#unc#signal#snr
-desc: get tuner signals
-param: no
+query:	getsingleepg
+raw:			epgshort#begin#end#subtitle#epglong#eventid
+desc:			get all epg data from a channel
+param:		channelid
+param:		transponderid
+example:	queryraw?getsingleepg&61301&66553&0
 
-query: getmoviefilelist
-raw: name#type (dir = 0, file = 1)
-desc: get a list of movies
-param: empty or path
-param: page nr
+query:	getgmultiepg (for queryraw use "getbouquetepg")
+raw:			??? 
+desc:			get all epg from all channel in a bouquet
+param:		bouquetname
+param:		page nr
 
-query: delmoviefile
-raw: ?
-desc: delete a file
-param: ?
+query:	getepgsearch
+raw:			BeginNewChannel(fixtext)#channelname#serviceid#transponderid#servicetype
+					epgshort#begin#end#subtitle#epglong#eventid
+					epgshort#begin#end#subtitle#epglong#eventid
+					BeginNewChannel(fixtext)#channelname#serviceid#transponderid#servicetype
+					epgshort#begin#end#subtitle#epglong#eventid
+					epgshort#begin#end#subtitle#epglong#eventid
+					....
+desc:			search epg entry
+param:		Search String
+param:		Pagecount 	(optional) 	-1=all
+param:		withlongepg (optional)  0/1
+example:	queryraw?getepgsearch&Tagesschau&-1&0
 
-query: getm3u
-raw: m3u format
-desc: get m3u file from a movie
-param: moviename
+query:	getsignal
+raw:			ber#unc#signal#snr
+desc:			get tuner signal value from active TV tuner
+param:		no
+example:	queryraw?getsignal
 
-query: getvideo
-raw: http url string for video
-desc: get html inline code for playing movie
-param: moviename
+query:	getmoviefilelist
+raw:			filename#type (dir = 0, file = 1)
+desc:			get a list of movies
+param:		empty or path
+param:		page nr (not used for queryraw)
+example:	queryraw?getmoviefilelist
 
-query: getshoot
-raw: fixtext shoot.html
-desc: get a screenshot
-param: type (gui, tv, gui + tv)
+query:	delmoviefile
+raw:			give "getmoviefilelist" back
+desc:			delete a movie file
+param:		path
+param:		1
+param:		FileName
+example:	queryraw?delmoviefile&/media/hdd/movie&1&Movie.ts)
 
-query: poweroff
-raw: nothing
-desc: poweroff the box
-param: no
+query:	getm3u
+raw:			m3u format
+desc:			get m3u file from a movie
+param:		moviename
 
-query: restart
-raw: nothing
-desc: restart the box
-param: no
+query:	getvideo
+raw:			http url string for video
+desc:			get html inline code for playing movie
+param:		moviename
 
-query: guirestart
-raw: nothing
-desc: gui restart the box
-param: no
+query:	getshoot
+raw:			fixtext "shoot.html"
+desc:			get a screenshot
+param:		type (1=gui, 2=tv, 3=gui + tv)
+example:	queryraw?getshoot&1
 
-query: standby
-raw: nothing
-desc: set box in standby
-param: no
+query:	poweroff
+raw:			nothing
+desc:			poweroff the box
+param:		no
+example:	queryraw?poweroff
 
-query: boxstatus
-raw: running or standby
-desc: get boxstatus (running or standby)
-param: no
+query:	restart
+raw:			nothing
+desc:			restart the box
+param:		no
+example:	queryraw?restart
 
-query: message
-raw: fixtext Message send
-desc: shows the message on tv
-param; message
+query:	guirestart
+raw:			nothing
+desc:			gui restart the box
+param:		no
+example:	queryraw?guirestart
 
-query: getvol
-raw: returns the aktive vol (0-100)
-desc: get the volume
-param: 0-100
+query:	standby
+raw:			nothing
+desc:			set box in standby
+param:		no
+example:	queryraw?standby
 
-query: getmute
-raw: returns the aktive mute (0/1)
-descr: get mute
-param: no
+query:	boxstatus
+raw:			running or standby
+desc:			get boxstatus (running or standby)
+param:		no
+example:	queryraw?boxstatus
 
-query: setvol
-raw: returns the aktive vol (0-100)
-desc: set the volume
-param: no
+query:	message
+raw:			fixtext "Message send"
+desc:			shows the message on tv
+param:		message=
+example:	queryraw?message=Hallo Message
 
-query: getrccodes
-raw: name#code
-descr: gets all rccodes
-param: no
+query:	xmessage
+raw:			fixtext "OK"
+desc:			shows the Xmessage on tv
+param:		caption=
+param:		body=
+param:		timeout=	(in secound, 0 for static message)
+example:	cgi-bin/xmessage?caption=Hallo&body=Text&timeout=30
 
-query: videoplay
-raw play: play (on error "can not start playback")
-raw stop: stop (on error "not in play mode")
-raw pause: pause (on error "not in play mode")
-raw ff: ff (on error "not in play mode")
-raw fr: fr (on error "not in play mode")
-raw getlen: len in sek (on error "not in play mode")
-raw getpos: pos in sek (on error "not in play mode")
-raw getisplaying: 0/1 (on error "not in play mode")
-raw getplayercan: playercan bits (on error "not in play mode")
-descr: play a stream
-param: play url
-param: stop url
-param: pause url
-param: ff url
-param: fr url
-param: getlen url
-param: getpos url
-param: getisplaying url
-param: getplayercan url
+query:	getvol
+raw:			vol (0-100)
+desc:			get the current volume value
+param:		no
+example:	queryraw?getvol
+
+query:	setvol
+raw:			returns the active vol (0-100)
+desc:			set the volume
+param:		0-100
+example:	queryraw?setvol&50
+
+query:	getmute
+raw:			mute (0/1)
+descr:		get the current mute state
+param:		no
+example:	queryraw?getmute
+
+query:	setmute
+raw:			returns the aktive mute (0/1)
+descr:		set mute
+param:		0/1
+example:	queryraw?setmute&1
+
+query:	getrccodes
+raw:			rcName#code
+descr:		gets all rccodes
+param:		no
+example:	queryraw?getrccodes
+
+query:	videoplay
+raw: 			play: play (on error "can not start playback")
+raw:			stop: stop (on error "not in play mode")
+raw				pause: pause (on error "not in play mode")
+raw				ff: ff (on error "not in play mode")
+raw				fr: fr (on error "not in play mode")
+raw				getlen: len in sek (on error "not in play mode")
+raw				getpos: pos in sek (on error "not in play mode")
+raw				getisplaying: 0/1 (on error "not in play mode")
+raw				getplayercan: playercan bits (on error "not in play mode")
+descr:		play a stream on TV
+param:		play url/local file(full path)
+param:		stop url/local file(full path)
+param:		pause url/local file(full path)
+param:		ff url/local file(full path)
+param:		fr url/local file(full path)
+param:		getlen url/local file(full path)
+param:		getpos url/local file(full path)
+param:		getisplaying url/local file(full path)
+param:		getplayercan url/local file(full path)
+example:	queryraw?videoplay&play&/media/hdd/movie/movie.ts
 
 ***************************************
 
