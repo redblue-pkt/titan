@@ -64,7 +64,8 @@
 #: scan.h:1803 scan.h:2273 scan.h:2277 scan.h:2281 scan.h:2285 scan.h:2289
 #: scan.h:1763 scan.h:2234 scan.h:2238 scan.h:2242 scan.h:2246 scan.h:2250
 #: scan.h:2259 scan.h:1768 scan.h:2241 scan.h:2245 scan.h:2249 scan.h:2253
-#: scan.h:2257 scan.h:2266
+#: scan.h:2257 scan.h:2266 tithek_global.h:33 tithek_global.h:37
+#: tithek_global.h:41
 msgid "no"
 msgstr ""
 
@@ -140,6 +141,7 @@ msgstr ""
 #: scan.h:2278 scan.h:2282 scan.h:2286 scan.h:2290 scan.h:1764 scan.h:2235
 #: scan.h:2239 scan.h:2243 scan.h:2247 scan.h:2251 scan.h:2260 scan.h:1769
 #: scan.h:2242 scan.h:2246 scan.h:2250 scan.h:2254 scan.h:2258 scan.h:2267
+#: tithek_global.h:34 tithek_global.h:38 tithek_global.h:42
 msgid "yes"
 msgstr ""
 
@@ -501,7 +503,9 @@ msgstr ""
 #: solarmovie.h:266 tithek.h:607 tithek.h:1044 tithek.h:1087 tithek.h:1314
 #: tithek.h:1336 tithek.h:2084 tithek.h:2146 tithek.h:2160 xvidstage.h:65
 #: xvidstage.h:175 zdf.h:29 sock.h:861 sock.h:862 sock.h:884 putlocker.h:161
-#: sock.h:887 sock.h:889
+#: sock.h:887 sock.h:889 filenuke.h:48 filenuke.h:60 flashx.h:45 flashx.h:91
+#: flashx.h:144 flashx.h:180 flashx.h:215 global.h:6162 sock.h:937
+#: solarmovie.h:250
 msgid "Message"
 msgstr ""
 
@@ -654,7 +658,8 @@ msgstr ""
 #: tithek.h:1044 tithek.h:1087 tithek.h:1314 tithek.h:1336 tithek.h:1355
 #: tithek.h:2084 tithek.h:2146 tithek.h:2160 xvidstage.h:65 xvidstage.h:175
 #: zdf.h:29 sock.h:861 sock.h:862 sock.h:884 putlocker.h:161 sock.h:887
-#: sock.h:889
+#: sock.h:889 filenuke.h:48 filenuke.h:60 flashx.h:45 flashx.h:91 flashx.h:144
+#: flashx.h:180 flashx.h:215 global.h:6162 sock.h:937 solarmovie.h:250
 msgid "OK"
 msgstr ""
 
@@ -804,7 +809,9 @@ msgstr ""
 #: sock.h:860 solarmovie.h:266 tithek.h:607 tithek.h:1044 tithek.h:1087
 #: tithek.h:1314 tithek.h:1336 tithek.h:1355 tithek.h:2084 tithek.h:2146
 #: tithek.h:2160 xvidstage.h:65 xvidstage.h:175 zdf.h:29 sock.h:861 sock.h:862
-#: sock.h:884 putlocker.h:161 sock.h:887 sock.h:889
+#: sock.h:884 putlocker.h:161 sock.h:887 sock.h:889 filenuke.h:48
+#: filenuke.h:60 flashx.h:45 flashx.h:91 flashx.h:144 flashx.h:180
+#: flashx.h:215 global.h:6162 sock.h:937 solarmovie.h:250
 msgid "EXIT"
 msgstr ""
 
@@ -1031,7 +1038,7 @@ msgstr ""
 #: skins_autotimer_skin.xml.h:11 skins_tithek_skin.xml.h:15 dirsort.h:24
 #: plugins_autotimer_skin.xml.h:13 skins_autotimer_skin.xml.h:13
 #: plugins_readerconfig_skin.xml.h:10 skins_readerconfig_skin.xml.h:10
-#: plugins_tithek1_skin.xml.h:15
+#: plugins_tithek1_skin.xml.h:15 plugins_tithek222_skin.xml.h:15
 msgid ""
 msgstr ""
 
@@ -1471,19 +1478,20 @@ msgid "Registration needed, please contact Atemio !"
 msgstr ""
 
 #: filenuke.h:50 putlocker.h:141 vidstream.h:56 filenuke.h:32 flashx.h:49
-#: putlocker.h:138 putlocker.h:160
+#: putlocker.h:138 putlocker.h:160 filenuke.h:47 filenuke.h:59 flashx.h:44
+#: flashx.h:90 flashx.h:143 flashx.h:179 flashx.h:214
 msgid "The page is temporarily unavailable"
 msgstr ""
 
 #: flashx.h:70 putlocker.h:52 solarmovie.h:187 xvidstage.h:64 xvidstage.h:177
 #: solarmovie.h:190 solarmovie.h:265 putlocker.h:53 solarmovie.h:266
-#: xvidstage.h:65 xvidstage.h:175
+#: xvidstage.h:65 xvidstage.h:175 solarmovie.h:250
 msgid "This file doesn't exist, or has been removed"
 msgstr ""
 
 #: global.h:6121 keyactions.h:216 global.h:6109 global.h:6153 global.h:6159
 #: global.h:6209 global.h:6060 keyactions.h:213 global.h:6145 global.h:6149
-#: global.h:6158
+#: global.h:6158 global.h:6162
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -1721,14 +1729,14 @@ msgstr ""
 #: movie4k.h:774 movie4k.h:898 movie4k.h:1013 movie4k.h:775 movie4k.h:899
 #: movie4k.h:1014 kinox.h:256 movie4k.h:754 movie4k.h:878 movie4k.h:993
 #: solarmovie.h:457 solarmovie.h:407 kinox.h:259 movie4k.h:752 movie4k.h:875
-#: movie4k.h:989 solarmovie.h:406
+#: movie4k.h:989 solarmovie.h:406 solarmovie.h:392
 msgid "Season"
 msgstr ""
 
 #: kinox.h:258 movie4k.h:770 movie4k.h:1009 solarmovie.h:458 movie4k.h:778
 #: movie4k.h:1017 movie4k.h:779 movie4k.h:1018 kinox.h:260 movie4k.h:758
 #: movie4k.h:997 solarmovie.h:461 solarmovie.h:411 kinox.h:263 movie4k.h:756
-#: movie4k.h:993 solarmovie.h:410
+#: movie4k.h:993 solarmovie.h:410 solarmovie.h:396
 msgid "Episode"
 msgstr ""
 
@@ -3216,6 +3224,7 @@ msgstr ""
 #: plugins_mc_skin.xml.h:51 plugins_tithek_skin.xml.h:9 skins_mc_skin.xml.h:51
 #: skins_tithek_skin.xml.h:9 plugins_tithek_skin.xml.h:10
 #: skins_tithek_skin.xml.h:10 plugins_tithek1_skin.xml.h:10
+#: plugins_tithek222_skin.xml.h:10
 msgid "Screensaver"
 msgstr ""
 
@@ -3613,69 +3622,70 @@ msgid "Y-Resolution"
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1
-#: plugins_tithek1_skin.xml.h:1
+#: plugins_tithek1_skin.xml.h:1 plugins_tithek222_skin.xml.h:1
 msgid "TiThek Menu"
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:2 skins_tithek_skin.xml.h:2
-#: plugins_tithek1_skin.xml.h:2
+#: plugins_tithek1_skin.xml.h:2 plugins_tithek222_skin.xml.h:2
 msgid "TiThek PlayList"
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:3 skins_tithek_skin.xml.h:3
-#: plugins_tithek1_skin.xml.h:3
+#: plugins_tithek1_skin.xml.h:3 plugins_tithek222_skin.xml.h:3
 msgid "ADD FAV"
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:4 skins_tithek_skin.xml.h:4
-#: plugins_tithek1_skin.xml.h:4
+#: plugins_tithek1_skin.xml.h:4 plugins_tithek222_skin.xml.h:4
 msgid "DEL FAV"
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:5 skins_tithek_skin.xml.h:5
-#: plugins_tithek1_skin.xml.h:5
+#: plugins_tithek1_skin.xml.h:5 plugins_tithek222_skin.xml.h:5
 msgid "Exit Tithek"
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:6 skins_tithek_skin.xml.h:6
 #: plugins_tithek_skin.xml.h:7 skins_tithek_skin.xml.h:7
-#: plugins_tithek1_skin.xml.h:7
+#: plugins_tithek1_skin.xml.h:7 plugins_tithek222_skin.xml.h:7
 msgid "Pic Ratio"
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:7 skins_tithek_skin.xml.h:7 tithek.h:1021
 #: plugins_tithek_skin.xml.h:8 skins_tithek_skin.xml.h:8 tithek.h:1026
 #: tithek.h:1030 tithek.h:1031 plugins_tithek1_skin.xml.h:8 tithek.h:1027
+#: plugins_tithek222_skin.xml.h:8
 msgid "please wait..."
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:8 skins_tithek_skin.xml.h:8
 #: plugins_tithek_skin.xml.h:9 skins_tithek_skin.xml.h:9
-#: plugins_tithek1_skin.xml.h:9
+#: plugins_tithek1_skin.xml.h:9 plugins_tithek222_skin.xml.h:9
 msgid "Red-Menu"
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:10 skins_tithek_skin.xml.h:10
 #: plugins_tithek_skin.xml.h:11 skins_tithek_skin.xml.h:11
-#: plugins_tithek1_skin.xml.h:11
+#: plugins_tithek1_skin.xml.h:11 plugins_tithek222_skin.xml.h:11
 msgid "Show Pay Streams"
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:11 skins_tithek_skin.xml.h:11
 #: plugins_tithek_skin.xml.h:12 skins_tithek_skin.xml.h:12
-#: plugins_tithek1_skin.xml.h:12
+#: plugins_tithek1_skin.xml.h:12 plugins_tithek222_skin.xml.h:12
 msgid "TITHEK SETTINGS"
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:12 skins_tithek_skin.xml.h:12
 #: plugins_tithek_skin.xml.h:13 skins_tithek_skin.xml.h:13
-#: plugins_tithek1_skin.xml.h:13
+#: plugins_tithek1_skin.xml.h:13 plugins_tithek222_skin.xml.h:13
 msgid "View Cover"
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:13 skins_tithek_skin.xml.h:13
 #: plugins_tithek_skin.xml.h:14 skins_tithek_skin.xml.h:14
-#: plugins_tithek1_skin.xml.h:14
+#: plugins_tithek1_skin.xml.h:14 plugins_tithek222_skin.xml.h:14
 msgid "View Sections"
 msgstr ""
 
@@ -4320,7 +4330,7 @@ msgid ""
 msgstr ""
 
 #: sock.h:820 sock.h:858 sock.h:859 sock.h:860 sock.h:882 sock.h:885
-#: sock.h:887
+#: sock.h:887 sock.h:935
 msgid "Download finished!"
 msgstr ""
 
@@ -4730,32 +4740,32 @@ msgid "Add this link as Favorite ?"
 msgstr ""
 
 #: tithek_settings.h:16 tithek_settings.h:24 tithek_settings.h:17
-#: tithek_settings.h:25
+#: tithek_settings.h:25 tithek_global.h:17 tithek_global.h:25
 msgid "show auto entrys"
 msgstr ""
 
 #: tithek_settings.h:17 tithek_settings.h:25 tithek_settings.h:18
-#: tithek_settings.h:26
+#: tithek_settings.h:26 tithek_global.h:18 tithek_global.h:26
 msgid "show 2 entrys"
 msgstr ""
 
 #: tithek_settings.h:18 tithek_settings.h:26 tithek_settings.h:19
-#: tithek_settings.h:27
+#: tithek_settings.h:27 tithek_global.h:19 tithek_global.h:27
 msgid "show 6 entrys"
 msgstr ""
 
 #: tithek_settings.h:19 tithek_settings.h:27 tithek_settings.h:20
-#: tithek_settings.h:28
+#: tithek_settings.h:28 tithek_global.h:20 tithek_global.h:28
 msgid "show 12 entrys"
 msgstr ""
 
 #: tithek_settings.h:20 tithek_settings.h:28 tithek_settings.h:21
-#: tithek_settings.h:29
+#: tithek_settings.h:29 tithek_global.h:21 tithek_global.h:29
 msgid "show 20 entrys"
 msgstr ""
 
 #: tithek_settings.h:21 tithek_settings.h:29 tithek_settings.h:22
-#: tithek_settings.h:30
+#: tithek_settings.h:30 tithek_global.h:22 tithek_global.h:30
 msgid "show 30 entrys"
 msgstr ""
 
@@ -5342,7 +5352,7 @@ msgid "afterevent"
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:6 skins_tithek_skin.xml.h:6
-#: plugins_tithek1_skin.xml.h:6
+#: plugins_tithek1_skin.xml.h:6 plugins_tithek222_skin.xml.h:6
 msgid "Hid XXX Streams"
 msgstr ""
 
@@ -5711,4 +5721,8 @@ msgstr ""
 
 #: scan.h:1888
 msgid "Scan is not allowed if record or stream is running !"
+msgstr ""
+
+#: scan.h:1600
+msgid "Channel scan ended."
 msgstr ""
