@@ -777,7 +777,7 @@ msgstr ""
 #: xvidstage.h:175 zdf.h:29 sock.h:861 sock.h:862 sock.h:884 putlocker.h:161
 #: sock.h:887 sock.h:889 filenuke.h:48 filenuke.h:60 flashx.h:45 flashx.h:91
 #: flashx.h:144 flashx.h:180 flashx.h:215 global.h:6162 sock.h:937
-#: solarmovie.h:250 sock.h:940 sock.h:956
+#: solarmovie.h:250 sock.h:940 sock.h:956 sock.h:952
 msgid "Message"
 msgstr ""
 
@@ -1052,7 +1052,7 @@ msgstr ""
 #: zdf.h:29 sock.h:861 sock.h:862 sock.h:884 putlocker.h:161 sock.h:887
 #: sock.h:889 filenuke.h:48 filenuke.h:60 flashx.h:45 flashx.h:91 flashx.h:144
 #: flashx.h:180 flashx.h:215 global.h:6162 sock.h:937 solarmovie.h:250
-#: sock.h:940 sock.h:956
+#: sock.h:940 sock.h:956 sock.h:952
 msgid "OK"
 msgstr ""
 
@@ -1327,7 +1327,7 @@ msgstr ""
 #: zdf.h:29 sock.h:861 sock.h:862 sock.h:884 putlocker.h:161 sock.h:887
 #: sock.h:889 filenuke.h:48 filenuke.h:60 flashx.h:45 flashx.h:91 flashx.h:144
 #: flashx.h:180 flashx.h:215 global.h:6162 sock.h:937 solarmovie.h:250
-#: sock.h:940 sock.h:956
+#: sock.h:940 sock.h:956 sock.h:952
 msgid "EXIT"
 msgstr ""
 
@@ -10383,7 +10383,7 @@ msgid "green"
 msgstr ""
 
 #: sock.h:820 sock.h:858 sock.h:859 sock.h:860 sock.h:882 sock.h:885
-#: sock.h:887 sock.h:935 sock.h:938 sock.h:954
+#: sock.h:887 sock.h:935 sock.h:938 sock.h:954 sock.h:950
 msgid "Download finished!"
 msgstr ""
 
