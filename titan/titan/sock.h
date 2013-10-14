@@ -584,8 +584,10 @@ int checkhttpheader(char* tmpbuf, char** retstr)
 	return stat;
 }
 
-int getchunkedlen(int sock, int timeout)
+unsigned long getchunkedlen(int sock, int timeout)
 {
+printf("1111111111\n");
+	unsigned long len = 0;
 	int ret = 0, end = 0;;
 	char chunked[16] = {'\0'};
 	int chunkedid = 0;
@@ -600,16 +602,20 @@ int getchunkedlen(int sock, int timeout)
 			printf("no client data in buffer");
 			break;
 		}
-
+printf("222222222\n");
 		if(c == ';') break;
 
 		chunked[chunkedid] = c;
+printf("333333333\n");
 		chunkedid++;
 		if(chunkedid > 2 && c == '\n')
 			break;
 	}
-
-	return(strtol(chunked, NULL, 16));
+printf("8888888\n");
+	len = strtol(chunked, NULL, 16);
+printf("999999999\n");
+	debug(99, "chunkedlen=%ul", len); 
+	return len;
 }
 
 //flag 0: output without header
