@@ -586,7 +586,6 @@ int checkhttpheader(char* tmpbuf, char** retstr)
 
 unsigned long getchunkedlen(int sock, int timeout)
 {
-printf("1111111111\n");
 	unsigned long len = 0;
 	int ret = 0;
 	char chunked[16] = {'\0'};
@@ -602,18 +601,15 @@ printf("1111111111\n");
 			printf("no client data in buffer");
 			break;
 		}
-printf("222222222\n");
 		if(c == ';') break;
 
 		chunked[chunkedid] = c;
-printf("333333333\n");
 		chunkedid++;
 		if(chunkedid > 2 && c == '\n')
 			break;
 	}
-printf("8888888\n");
+
 	len = strtol(chunked, NULL, 16);
-printf("999999999\n");
 	debug(99, "chunkedlen=%u", len); 
 	return len;
 }
@@ -624,7 +620,7 @@ printf("999999999\n");
 char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, struct download* dnode, int redirect, char* header, long* clen, int timeout, int flag)
 {
 	int sock = -1, ret = 0, count = 0, hret = 0, freeheader = 0, gzip = 0;
-	int headerlen = 0, chunkedlen = 0, chunked = 0;
+	int headerlen = 0, chunkedlen = 0, chunked = 0, readsize = 0;
 	unsigned int len = 0, maxret = 0;
 	char *ip = NULL;
 	char *tmpbuf = NULL, *buf = NULL;
@@ -733,6 +729,10 @@ char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, 
 		}
 		pbuf++;
 	}
+	
+	debug(99, "-----------------------------------------------------------------");	
+	debug(99, "header: %s", tmpbuf);
+	debug(99, "-----------------------------------------------------------------");
 
 	if(flag == 2)
 	{
@@ -751,6 +751,8 @@ char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, 
 	
 		goto end;
 	}
+	
+	if(flag == 0) headerlen = 0;
 
 	//TODO: case-sens check
 	char* contentlen = ostrstr(tmpbuf, "Content-Length:");
@@ -759,10 +761,6 @@ char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, 
 		contentlen += 15;
 		len = strtoul(contentlen, NULL, 10);
 	}
-
-	debug(99, "-----------------------------------------------------------------");	
-	debug(99, "header: %s", tmpbuf);
-	debug(99, "-----------------------------------------------------------------");
 	
 	if(filename == NULL && (flag == 0 || flag == 1) && ostrstr(tmpbuf, "gzip") != NULL)
 	{
@@ -773,13 +771,17 @@ char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, 
 	{
 		chunked = 1; 
 		chunkedlen = getchunkedlen(sock, timeout);
-		if(chunkedlen > MINMALLOC) chunked = 0;
+		if(chunkedlen + headerlen > MINMALLOC)
+			readsize = MINMALLOC - headerlen;
+		else
+			readsize = chunkedlen;
 	}
 
-	if(flag == 0) headerlen = 0;
-	if(chunked == 0) chunkedlen = MINMALLOC - headerlen;
-	while((ret = sockread(sock, (unsigned char*)tmpbuf + headerlen, 0, chunkedlen, timeout * 1000, 0)) > 0)
+	if(chunked == 0) readsize = MINMALLOC - headerlen;
+	while((ret = sockread(sock, (unsigned char*)tmpbuf + headerlen, 0, readsize, timeout * 1000, 0)) > 0)
 	{
+		if(chunked == 1) chunkedlen -= ret;
+
 		maxret += ret;
 		if(len > 0)
 		{
@@ -803,12 +805,22 @@ char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, 
 		}
 		memset(tmpbuf, 0, ret);
 		
-		if(chunked == 1)
+		if(chunked == 1 && chunkedlen == 0)
 		{
 			chunkedlen = getchunkedlen(sock, timeout);
-			if(chunkedlen > MINMALLOC) chunked = 0;
+			if(chunkedlen + headerlen > MINMALLOC)
+				readsize = MINMALLOC - headerlen;
+			else
+				readsize = chunkedlen;
 		}
-		if(chunked == 0) chunkedlen = MINMALLOC - headerlen;
+		if(chunked == 1 && chunkedlen > 0)
+		{
+			if(chunkedlen + headerlen > MINMALLOC)
+				readsize = MINMALLOC - headerlen;
+			else
+				readsize = chunkedlen;
+		}
+		if(chunked == 0) readsize = MINMALLOC - headerlen;
 	}
 	if(ret < 0)
 	{
@@ -827,11 +839,11 @@ char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, 
 	}
 
 end:
-printf("aaaaaaaa\n");
+
 	free(tmpbuf);
 	if(fd != NULL) fclose(fd);
 	sockclose(&sock);
-printf("bbbbbb\n");	
+
 	if(gzip != 0)
 	{
 		debug(99, "http unzip start");
@@ -871,13 +883,13 @@ printf("bbbbbb\n");
 		}
 		debug(99, "http unzip end");
 	}
-printf("ccccccccc\n");
+
 	if(filename == NULL)
 	{
 		buf = realloc(buf, count + 1);
 		buf[count] = '\0';
 	}
-printf("ddddddddd\n");
+
 	if((hret == 301 || hret == 302) && retstr != NULL && redirect < 3) //redirect
 	{
 		char* pos = NULL, *rpage = NULL;
@@ -900,17 +912,17 @@ printf("ddddddddd\n");
 				rpage = pos + 1;
 			}
 		}
-printf("eeeeeeeee\n");
+
 		redirect++;
 		free(buf); buf = NULL;
 		buf = gethttpreal(rhost, rpage, port, filename, auth, dnode, redirect, NULL, clen, timeout, flag);
 		free(rhost); rhost = NULL;
 	}
-printf("ffffffff\n");
+
 	if(clen != 0) *clen = maxret;
 	if(dnode != NULL) dnode->ret = 0;
 	free(retstr); retstr = NULL;
-printf("ggggggggggg\n");
+
 	if(filename == NULL)
 		return buf;
 	else
