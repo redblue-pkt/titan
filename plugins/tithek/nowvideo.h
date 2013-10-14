@@ -18,7 +18,7 @@ char* nowvideo(char* host, char* file, char* hosterurl)
 	unlink("/tmp/nowvideo1_get");
 	unlink("/tmp/nowvideo2_get");
 
-	tmphost = ostrcat(tmphost, host, 1, 0);
+	tmphost = ostrcat(host, NULL, 0, 0);
 	tmpfile = ostrcat("/video/", file, 0, 0);
 	
 	debug(99, "tmphost: %s", tmphost);
@@ -26,10 +26,10 @@ char* nowvideo(char* host, char* file, char* hosterurl)
 	debug(99, "ip: %s", ip);
 	debug(99, "tmpfile: %s", tmpfile);
 
-	send = ostrcat(send, "GET /video/", 1, 0);
-	send = ostrcat(send, file, 1, 0);
+	send = ostrcat(send, "GET ", 1, 0);
+	send = ostrcat(send, tmpfile, 1, 0);
 	send = ostrcat(send, " HTTP/1.1\r\nHost: ", 1, 0);
-	send = ostrcat(send, host, 1, 0);
+	send = ostrcat(send, tmphost, 1, 0);
 	send = ostrcat(send, "\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nConnection: close\r\nAccept-Encoding: gzip\r\n\r\n", 1, 0);
 	debug(99, "send: %s", send);
 
@@ -65,7 +65,7 @@ char* nowvideo(char* host, char* file, char* hosterurl)
 	send = ostrcat(send, "GET ", 1, 0);
 	send = ostrcat(send, tmpfile, 1, 0);
 	send = ostrcat(send, " HTTP/1.1\r\nHost: ", 1, 0);
-	send = ostrcat(send, host, 1, 0);
+	send = ostrcat(send, tmphost, 1, 0);
 	send = ostrcat(send, "\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nConnection: close\r\nAccept-Encoding: gzip\r\n\r\n", 1, 0);
 	debug(99, "send: %s", send);
 	free(tmpstr), tmpstr = NULL;
