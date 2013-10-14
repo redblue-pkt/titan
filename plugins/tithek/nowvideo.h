@@ -15,6 +15,9 @@ char* nowvideo(char* host, char* file, char* hosterurl)
 	
 	if(host == NULL || file == NULL) return NULL;
 
+	unlink("/tmp/nowvideo1_get");
+	unlink("/tmp/nowvideo2_get");
+
 	tmphost = ostrcat(tmphost, host, 1, 0);
 	tmpfile = ostrcat("/video/", file, 0, 0);
 	
@@ -31,8 +34,8 @@ char* nowvideo(char* host, char* file, char* hosterurl)
 	debug(99, "send: %s", send);
 
 	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
-
-	titheklog(debuglevel, "/tmp/nowvideo1", NULL, tmpstr);
+	debug(99, "tmpstr: %s", tmpstr);
+	titheklog(debuglevel, "/tmp/nowvideo1_get", NULL, tmpstr);
 
 	if(ostrstr(tmpstr, "The file is being transfered to our other servers. This may take few minutes.") != NULL)
 	{
@@ -42,6 +45,16 @@ char* nowvideo(char* host, char* file, char* hosterurl)
 
 	file = string_resub("flashvars.file=\"", "\";", tmpstr, 0);
 	filekey = string_resub("flashvars.filekey=\"", "\";", tmpstr, 0);
+
+	if(filekey == NULL)
+	{
+		char* searchstr = string_resub("flashvars.filekey=", ";", tmpstr, 0);
+		debug(99, "searchstr: %s", searchstr);
+		searchstr = ostrcat(searchstr, "=\"", 1, 0);
+		filekey = string_resub(searchstr, "\";", tmpstr, 0);
+	}
+	debug(99, "filekey: %s", filekey);
+
 
 	free(tmpfile), tmpfile = NULL;
 	tmpfile = ostrcat("/api/player.api.php?file=", file, 0, 0);
@@ -57,8 +70,8 @@ char* nowvideo(char* host, char* file, char* hosterurl)
 	debug(99, "send: %s", send);
 	free(tmpstr), tmpstr = NULL;
 	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
-
-	titheklog(debuglevel, "/tmp/nowvideo2", NULL, tmpstr);
+	debug(99, "tmpstr: %s", tmpstr);
+	titheklog(debuglevel, "/tmp/nowvideo2_get", NULL, tmpstr);
 
 	sleep(1);
 	streamlink = string_resub("url=", "&", tmpstr, 0);
