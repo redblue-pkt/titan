@@ -614,7 +614,7 @@ printf("333333333\n");
 printf("8888888\n");
 	len = strtol(chunked, NULL, 16);
 printf("999999999\n");
-	debug(99, "chunkedlen=%ul", len); 
+	debug(99, "chunkedlen=%u", len); 
 	return len;
 }
 
@@ -827,12 +827,14 @@ char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, 
 	}
 
 end:
+printf("aaaaaaaa\n");
 	free(tmpbuf);
 	if(fd != NULL) fclose(fd);
 	sockclose(&sock);
-	
+printf("bbbbbb\n");	
 	if(gzip != 0)
 	{
+		debug(99, "http unzip start");
 		int unzipret = 0, outlen = 0;
 		char* outbuf = NULL;
 		
@@ -867,14 +869,15 @@ end:
 		{
 			err("no mem");
 		}
+		debug(99, "http unzip end");
 	}
-
+printf("ccccccccc\n");
 	if(filename == NULL)
 	{
 		buf = realloc(buf, count + 1);
 		buf[count] = '\0';
 	}
-
+printf("ddddddddd\n");
 	if((hret == 301 || hret == 302) && retstr != NULL && redirect < 3) //redirect
 	{
 		char* pos = NULL, *rpage = NULL;
@@ -897,17 +900,17 @@ end:
 				rpage = pos + 1;
 			}
 		}
-
+printf("eeeeeeeee\n");
 		redirect++;
 		free(buf); buf = NULL;
 		buf = gethttpreal(rhost, rpage, port, filename, auth, dnode, redirect, NULL, clen, timeout, flag);
 		free(rhost); rhost = NULL;
 	}
-
+printf("ffffffff\n");
 	if(clen != 0) *clen = maxret;
 	if(dnode != NULL) dnode->ret = 0;
 	free(retstr); retstr = NULL;
-
+printf("ggggggggggg\n");
 	if(filename == NULL)
 		return buf;
 	else
