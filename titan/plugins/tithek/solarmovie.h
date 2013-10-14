@@ -67,7 +67,7 @@ char* solarmovie(char* link)
 			if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "sockshare.com") == 0)
 				streamurl = putlocker("Sockshare.com", ret2[3].part, url);
 			else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "putlocker.com") == 0)
-				streamurl = putlocker("Sockshare.com", ret2[3].part, url);
+				streamurl = putlocker("Putlocker.com", ret2[3].part, url);
 			else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "filenuke.com") == 0)
 				streamurl = filenuke("FileNuke.com", ret2[2].part, url);
 			else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "streamcloud.eu") == 0)

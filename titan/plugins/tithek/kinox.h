@@ -27,7 +27,7 @@ char* kinox(char* link)
 		if(ostrcmp(hname, "Sockshare.com") == 0)
 			streamurl = putlocker("Sockshare.com", id, url);
 		else if(ostrcmp(hname, "Putlocker.com") == 0)
-			streamurl = putlocker("Sockshare.com", id, url);
+			streamurl = putlocker("Putlocker.com", id, url);
 		else if(ostrcmp(hname, "FileNuke.com") == 0)
 			streamurl = filenuke("FileNuke.com", id, url);
 		else if(ostrcmp(hname, "StreamCloud.eu") == 0)

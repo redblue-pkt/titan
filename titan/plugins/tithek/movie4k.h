@@ -53,7 +53,7 @@ char* movie4k(char* link)
 		if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "Sockshare") == 0)
 			streamurl = putlocker("Sockshare.com", ret2[3].part, url);
 		else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "Putlocker") == 0)
-			streamurl = putlocker("Sockshare.com", ret2[3].part, url);
+			streamurl = putlocker("Putlocker.com", ret2[3].part, url);
 		else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "Filenuke") == 0)
 			streamurl = filenuke("FileNuke.com", ret2[2].part, url);
 		else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "Streamclou") == 0)
