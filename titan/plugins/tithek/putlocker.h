@@ -5,23 +5,13 @@ char* putlocker(char* host, char* file, char* hosterurl)
 {
 	debug(99, "in host: %s file: %s", host, file);
 	int debuglevel = getconfigint("debuglevel", NULL);
-	char* tmphost = NULL;
-	char* tmpfile = NULL;
-	char* tmpstr = NULL;
-	char* send = NULL;
-	char* hash = NULL;
-	char* hashstr = NULL;
-	char* hashlen = NULL;
-	char* ip = NULL;
-	char* phpsessid = NULL;
-	char* serverid = NULL;
-	char* usender = NULL;
-	char* streamlink = NULL;
-	char* streamlink1 = NULL;
-	char* tmpstr2 = NULL;
+	char* tmphost = NULL, *tmpfile = NULL, *tmpstr = NULL, *send = NULL, *hash = NULL, *hashstr = NULL, *hashlen = NULL;
+	char* ip = NULL, *phpsessid = NULL, *serverid = NULL, *usender = NULL, *streamlink = NULL, *streamlink1 = NULL, *tmpstr2 = NULL;
 
-	unlink("/tmp/tithek/get");
-	unlink("/tmp/tithek/x9");
+	unlink("/tmp/putlocker1_tmpstr_get");
+	unlink("/tmp/putlocker2_tmpstr_post");
+	unlink("/tmp/putlocker3_tmpstr_get");
+	unlink("/tmp/putlocker4_streamlink");
 
 	if(host == NULL || file == NULL) return NULL;
 
@@ -41,6 +31,9 @@ char* putlocker(char* host, char* file, char* hosterurl)
 
 	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 	free(send); send = NULL;
+	debug(99, "tmpstr: %s", tmpstr);
+	titheklog(debuglevel, "/tmp/putlocker1_tmpstr_get", NULL, tmpstr);
+	
 	phpsessid = getxmlentry(tmpstr, "PHPSESSID=");
 	debug(99, "phpsessid: %s", phpsessid);
 	serverid = getxmlentry(tmpstr, "SERVERID=");
@@ -50,7 +43,6 @@ char* putlocker(char* host, char* file, char* hosterurl)
 
 	//get hash from tmpstr
 	char* pos = ostrstr(tmpstr, "<input type=\"hidden\" value=");
-	debug(99, "tmpstr: %s", tmpstr);
 	hashstr = getxmlentry(pos, "value=");
 // free(tmpstr) after getxml or segfault...
 	free(tmpstr); tmpstr = NULL;
@@ -70,8 +62,8 @@ char* putlocker(char* host, char* file, char* hosterurl)
 	send = ostrcat(send, file, 1, 0);
 	send = ostrcat(send, " HTTP/1.1\r\nContent-Length: ", 1, 0);
 	send = ostrcat(send, hashlen, 1, 0);
-	send = ostrcat(send, "\r\nAccept-Encoding: gzip\r\nConnection: close\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nHost: www.", 1, 0);
-	send = ostrcat(send, host, 1, 0);
+	send = ostrcat(send, "\r\nAccept-Encoding: gzip\r\nConnection: close\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nHost: ", 1, 0);
+	send = ostrcat(send, tmphost, 1, 0);
 	send = ostrcat(send, "\r\nCookie: usender=", 1, 0);
 	send = ostrcat(send, usender, 1, 0);
 	send = ostrcat(send, " SERVERID=", 1, 0);
@@ -86,7 +78,7 @@ char* putlocker(char* host, char* file, char* hosterurl)
 	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 	free(send); send = NULL;
 	debug(99, "tmpstr: %s", tmpstr);
-	titheklog(debuglevel, "/tmp/putlocker4_tmpstr_post_zcat", NULL, tmpstr);
+	titheklog(debuglevel, "/tmp/putlocker2_tmpstr_post", NULL, tmpstr);
 	
 	if(ostrstr(tmpstr, "warning_message") != NULL)
 	{
@@ -126,8 +118,8 @@ char* putlocker(char* host, char* file, char* hosterurl)
 	//create send string
 	send = ostrcat(send, "GET ", 1, 0);
 	send = ostrcat(send, streamlink, 1, 0);
-	send = ostrcat(send, " HTTP/1.1\r\nAccept-Encoding: identity\r\nHost: www.", 1, 0);
-	send = ostrcat(send, host, 1, 0);
+	send = ostrcat(send, " HTTP/1.1\r\nAccept-Encoding: identity\r\nHost: ", 1, 0);
+	send = ostrcat(send, tmphost, 1, 0);
 	send = ostrcat(send, "\r\nCookie: SERVERID=", 1, 0);
 	send = ostrcat(send, serverid, 1, 0);
 	send = ostrcat(send, "PHPSESSID=", 1, 0);
@@ -138,11 +130,12 @@ char* putlocker(char* host, char* file, char* hosterurl)
 	
 	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 0);
 	free(send); send = NULL;
-	titheklog(debuglevel, "/tmp/putlocker5_tmpstr_get", NULL, tmpstr);
+	debug(99, "tmpstr: %s", tmpstr);
+	titheklog(debuglevel, "/tmp/putlocker3_tmpstr_get", NULL, tmpstr);
 
 	//get streamlink1
 	streamlink1 = getxmlentry(tmpstr, "url=");
-	titheklog(debuglevel, "/tmp/putlocker5_streamlink", NULL, streamlink1);
+	titheklog(debuglevel, "/tmp/putlocker4_streamlink", NULL, streamlink1);
 
 	free(tmpstr); tmpstr = NULL;
 
