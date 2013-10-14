@@ -32,10 +32,10 @@ char* filenuke(char* host, char* file, char* hosterurl)
 
 	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 	free(send), send = NULL;
+	debug(99, "tmpstr: %s", tmpstr);
+	titheklog(debuglevel, "/tmp/filenuke1_get", NULL, tmpstr);
 
-	debug(99, "write file");
-	sleep(2);
-	titheklog(debuglevel, "/tmp/filenuke1_tmpstr", NULL, tmpstr);
+//	sleep(2);
 
 	if(ostrstr(tmpstr, "<title>The page is temporarily unavailable</title>") != NULL)
 	{
@@ -99,43 +99,33 @@ char* filenuke(char* host, char* file, char* hosterurl)
 	send = ostrcat(send, hash, 1, 0);
 	debug(99, "send: %s", send);
 
-	sleep(5);
-/*
-	//send and receive answer
+//	sleep(5);
+	
 	post = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 0);
-	titheklog(debuglevel, "/tmp/filenuke2_tmpstr_post1", NULL, post);
-
-	cmd = ostrcat("cat /tmp/tithek/post | zcat", NULL, 0, 0);
-	debug(99, "cmd: %s", cmd);
-	post = command(cmd);
-	writesys("/tmp/filenuke2_post1", post, 0);
-	free(cmd); cmd = NULL;
-*/
-// new start
-// working with
-// KinoX_Star.Wars.The.Clone.Wars_1.(de)_Staffel.4.Folge.19_FileNuke.com.mp4
-// http://filenuke.com/3gop8ac00z3v;3gop8ac00z3v;FileNuke.com
-	post = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 0);
-
+	free(send), send = NULL;
 	debug(99, "post: %s", post);
-// new end
+	titheklog(debuglevel, "/tmp/filenuke2_post", NULL, tmpstr);
 
 	free(tmpstr),tmpstr = NULL;
 	tmpstr = string_resub(";return p}('", ");'", post, 0);
+	debug(99, "tmpstr: %s", tmpstr);
 	titheklog(debuglevel, "/tmp/filenuke3_tmpstr1", NULL, tmpstr);
 	
 	post = string_replace_all(tmpstr, "", post, 1);
 	post = string_replace_all(";return p}(');'", "", post, 1);
+	debug(99, "post: %s", post);
 	titheklog(debuglevel, "/tmp/filenuke4_post2", NULL, post);
 
 	free(tmpstr),tmpstr = NULL;
 	free(b36code),b36code = NULL;
 	tmpstr = string_resub(";return p}('", ");'", post, 0);
+	debug(99, "tmpstr: %s", tmpstr);
 	titheklog(debuglevel, "/tmp/filenuke5_tmpstr2", NULL, tmpstr);
 
 	b36code = oregex(".*;',[0-9]{2,2},[0-9]{2,2},'(.*)'.split.*", post);
 	
 	b36code = string_replace_all("||", "| |", b36code, 1);
+	debug(99, "b36code: %s", b36code);
 	titheklog(debuglevel, "/tmp/filenuke6_b36code2", NULL, b36code);
 	
 	struct splitstr* ret1 = NULL;
