@@ -955,6 +955,9 @@ msgstr "Info zur TPK installation"
 msgid "Tpk Install - select file"
 msgstr "TPK installieren - Datei wählen"
 
+msgid "Tpk Install - select install medium"
+msgstr "TPK installieren - Installationsmedium auswählen"
+
 msgid "TPK install (online)"
 msgstr "TPK Pakete installieren (Internet)"
 
