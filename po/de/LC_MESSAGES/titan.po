@@ -4063,13 +4063,13 @@ msgid "Choice Install Medium"
 msgstr "Installation Auswahl"
 
 msgid "Install to FLASH"
-msgstr "In Flash installieren FLASH"
+msgstr "FLASH Installation (FLASH)"
 
 msgid "Install to MNT"
-msgstr "In Flash installieren MNT"
+msgstr "MNT Installation (FLASH)"
 
 msgid "Install to SWAP"
-msgstr "Auf SWAP installieren"
+msgstr "SWAP Installation (USB oder HDD)"
 
 msgid "Flash (permanent)"
 msgstr "Flash (permanent)"
@@ -4207,4 +4207,4 @@ msgid "TRANSPONDEREDIT"
 msgstr "Transponder auswählen"
 
 msgid "Flash: Flash range is deleted after update, mnt: flash range to permanently update available, swap: USB medium permanently"
-msgstr "FLASH: Flashbereich der nach update gelöscht wird\nMNT: Flashbereich dauerhaft nach update vorhanden\nSwap: Usb medium dauerhaft"
+msgstr "FLASH: Installation im Flash, wird nach einem Imageupdate gelöscht.\nMNT: Installation im Flash, nach Imageudate noch vorhanden.\nSwap:Installation auf USB-HDD, nach Imageupdate noch vorhanden."
