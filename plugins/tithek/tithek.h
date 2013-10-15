@@ -1179,7 +1179,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 
 		free(tmpstr); tmpstr = NULL;
 
-		if(ostrcmp(title, "TiThek - Internet Radio") == 0)
+		if(ostrstr(title, "Internet Radio") != NULL)
 			flag = 4;
 
 		if(ostrstr(tmpstr1, "&") != NULL)
@@ -1236,6 +1236,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 			}
 			mbox = menulistbox(mlist, NULL, skintitle, NULL, NULL, 1, 0);
 			if(mbox != NULL) keyconf = mbox->name;
+			debug(99, "tmpstr1: %s filename: %s flag: %s", tmpstr1, filename, flag);
 			if(ostrcmp(keyconf, "Streaming Playback (default)") == 0)
 			{
 				addconfigtmp("playerbuffersize", "0");
