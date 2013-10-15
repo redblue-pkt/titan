@@ -4059,14 +4059,14 @@ msgstr "Timer Aufnahme gestartet! \n"
 msgid "Choice Install Medium"
 msgstr "Installation Auswahl"
 
-msgid "Install to Flash (permanent)"
-msgstr "In Flash installieren (permanent)"
+msgid "Install to FLASH"
+msgstr "In Flash installieren FLASH"
 
-msgid "Install to Flash (temporary)"
-msgstr "In Flash installieren (temporär)"
+msgid "Install to MNT"
+msgstr "In Flash installieren MNT"
 
-msgid "Install to Stick or HDD"
-msgstr "Auf Stick o. HDD installieren"
+msgid "Install to SWAP"
+msgstr "Auf SWAP installieren"
 
 msgid "Flash (permanent)"
 msgstr "Flash (permanent)"
@@ -4204,4 +4204,4 @@ msgid "TRANSPONDEREDIT"
 msgstr "Transponder auswählen"
 
 msgid "Flash: Flash range is deleted after update, mnt: flash range to permanently update available, swap: USB medium permanently"
-msgstr "FLASH: flashbereich der nach update gelöscht wird\nMNT: flashbereich dauerhaft nach update vorhanden\nSwap: Usb medium dauerhaft"
+msgstr "FLASH: Flashbereich der nach update gelöscht wird\nMNT: Flashbereich dauerhaft nach update vorhanden\nSwap: Usb medium dauerhaft"
