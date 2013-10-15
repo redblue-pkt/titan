@@ -72,6 +72,13 @@ char* movie4k(char* link)
 			tmpstr2 = string_replace("embed.php?v=", "", tmpstr2, 1);
 			streamurl = nowvideo("NowVideo.eu", tmpstr2, url);
 		}
+		else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "Movshare") == 0)
+		{
+			tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
+			tmpstr2 = string_replace("embed.php?v=", "", tmpstr2, 1);
+			streamurl = movshare("MovShare.net", tmpstr2, url);
+		}
+
 		free(ret2), ret2 = NULL;
 	}
 	free(ret1), ret1 = NULL;
@@ -104,7 +111,7 @@ int movie4k_search(struct skin* grid, struct skin* listbox, struct skin* countla
 	char* str = NULL;
 	char* pic = NULL;
 	char* type = NULL;
-
+	int debuglevel = getconfigint("debuglevel", NULL);
 
 	if(listbox == NULL || listbox->select == NULL || listbox->select->handle == NULL)
 		return ret;
@@ -123,7 +130,9 @@ int movie4k_search(struct skin* grid, struct skin* listbox, struct skin* countla
 	if(search != NULL)
 	{
 		drawscreen(load, 0, 0);
+		search = strstrip(search);
 		search = stringreplacechar(search, ' ', '+');
+		debug(99, "search: %s", search);
 
 		char* send = NULL;
 		send = ostrcat(send, "GET /searchAutoCompleteNew.php?search=the HTTP/1.1\r\n", 1, 0);
@@ -132,8 +141,10 @@ int movie4k_search(struct skin* grid, struct skin* listbox, struct skin* countla
 		send = ostrcat(send, "Connection: close\r\nUser-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; de-DE; rv:1.9.0.3) Gecko/2008092417 Firefox/3.0.3\r\n\r\n", 1, 0);
 		debug(99, "send: %s", send);
 
-		tmpstr = gethttpreal("movie4k.to", "/", 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
+		tmpstr = gethttpreal("www.movie4k.to", "/searchAutoCompleteNew.php?search=the", 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 		free(send); send = NULL;
+		debug(99, "tmpstr: %s", tmpstr);
+		titheklog(debuglevel, "/tmp/movie4k_search", NULL, tmpstr);
 
 		char* key = string_resub("securekey=", "&search", tmpstr, 0);
 		debug(99, "key: %s", key);
@@ -417,8 +428,8 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 						hname = ostrcat("XvidStage.com", NULL, 0, 0);
 					else if(ostrcmp(tmphname, "Nowvideo") == 0)
 						hname = ostrcat("NowVideo.eu", NULL, 0, 0);
-					else if(ostrcmp(tmphname, "Nowvideo") == 0)
-						hname = ostrcat("NowVideo.eu", NULL, 0, 0);
+					else if(ostrcmp(tmphname, "Movshare") == 0)
+						hname = ostrcat("MovShare.net", NULL, 0, 0);
 					else
 					{
 						hname = ostrcat(tmphname, " (coming soon)", 0, 0);
@@ -480,8 +491,8 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 							hname = ostrcat("XvidStage.com", NULL, 0, 0);
 						else if(ostrcmp(tmphname, "Nowvideo") == 0)
 							hname = ostrcat("NowVideo.eu", NULL, 0, 0);
-						else if(ostrcmp(tmphname, "Nowvideo") == 0)
-							hname = ostrcat("NowVideo.eu", NULL, 0, 0);
+						else if(ostrcmp(tmphname, "Movshare") == 0)
+							hname = ostrcat("MovShare.net", NULL, 0, 0);
 						else
 						{
 							hname = ostrcat(tmphname, " (coming soon)", 0, 0);
@@ -536,8 +547,8 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 							hname = ostrcat("XvidStage.com", NULL, 0, 0);
 						else if(ostrcmp(tmphname, "Nowvideo") == 0)
 							hname = ostrcat("NowVideo.eu", NULL, 0, 0);
-						else if(ostrcmp(tmphname, "Nowvideo") == 0)
-							hname = ostrcat("NowVideo.eu", NULL, 0, 0);
+						else if(ostrcmp(tmphname, "Movshare") == 0)
+							hname = ostrcat("MovShare.net", NULL, 0, 0);
 						else
 						{
 							hname = ostrcat(tmphname, " (coming soon)", 0, 0);
@@ -592,8 +603,8 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 							hname = ostrcat("XvidStage.com", NULL, 0, 0);
 						else if(ostrcmp(tmphname, "Nowvideo") == 0)
 							hname = ostrcat("NowVideo.eu", NULL, 0, 0);
-						else if(ostrcmp(tmphname, "Nowvideo") == 0)
-							hname = ostrcat("NowVideo.eu", NULL, 0, 0);
+						else if(ostrcmp(tmphname, "Movshare") == 0)
+							hname = ostrcat("MovShare.net", NULL, 0, 0);
 						else
 						{
 							hname = ostrcat(tmphname, " (coming soon)", 0, 0);

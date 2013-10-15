@@ -52,20 +52,17 @@ char* xvidstage(char* host, char* file, char* hosterurl)
 	send = ostrcat(send, tmphost, 1, 0);
 	send = ostrcat(send, "\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nConnection: close\r\nAccept-Encoding: gzip\r\n\r\n", 1, 0);	
 	debug(99, "send: %s", send);
-	
-	char* line = NULL;
-	char* lines = NULL;
-	char* cmd = NULL;
 
 	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 	debug(99, "tmpstr: %s", tmpstr);
 	titheklog(debuglevel, "/tmp/xvidstage1_get", NULL, tmpstr);
+
 	free(send); send = NULL;
 
-	sleep(1);
+//	sleep(1);
 	if(tmpstr == NULL)
 	{
-		textbox(_("Message"), _("This file doesn't exist, or has been removed") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
+		textbox(_("Message"), _("The page is temporarily unavailable") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
 		goto end;
 	}
 
@@ -140,9 +137,9 @@ char* xvidstage(char* host, char* file, char* hosterurl)
 	titheklog(debuglevel, "/tmp/xvidstage2_post", NULL, post);
 
 // hier wird nun ein captcha bild auth verlangt geht also erstmal nicht mehr
-	if(post == NULL)
+	if(tmpstr == NULL)
 	{
-		textbox(_("Message"), _("This file doesn't exist, or has been removed") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
+		textbox(_("Message"), _("The page is temporarily unavailable") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
 		goto end;
 	}
 	

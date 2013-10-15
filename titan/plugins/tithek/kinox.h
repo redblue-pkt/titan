@@ -42,6 +42,8 @@ char* kinox(char* link)
 			streamurl = nowvideo("NowVideo.eu", id, url);
 		else if(ostrcmp(hname, "NowVideo.sx") == 0)
 			streamurl = nowvideo("NowVideo.sx", id, url);
+		else if(ostrcmp(hname, "MovShare.net") == 0)
+			streamurl = movshare("MovShare.net", id, url);
 					
 		debug(99, "streamurl1: %s", streamurl);
 
@@ -78,7 +80,6 @@ int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabe
 	if(search != NULL)
 	{
 		drawscreen(load, 0, 0);
-		search = stringreplacechar(search, ' ', '+');
 		char* tmpstr = NULL;
 		char* tmpstr1 = NULL;
 		char* line = NULL;
@@ -91,6 +92,10 @@ int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabe
 		char* ip = NULL;
 		char* path = NULL;
 		char* menu = NULL;
+
+		search = strstrip(search);
+		search = stringreplacechar(search, ' ', '+');
+		debug(99, "search: %s", search);
 
 		ip = ostrcat("kinox.to", NULL, 0, 0);
 		if(flag == 0)
@@ -408,6 +413,8 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 						tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
 					else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "NowVideo.sx") == 0)
 						tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
+					else if(ret2 != NULL && count2 > 4 && ostrcmp(hname, "MovShare.net") == 0)
+						tmpstr2 = ostrcat(ret2[4].part, NULL, 0, 0);
 					else
 					{
 						tmpstr2 = ostrcat("unknown", NULL, 0, 0);
@@ -480,6 +487,8 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 							tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
 						else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "NowVideo.sx") == 0)
 							tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
+						else if(ret2 != NULL && count2 > 4 && ostrcmp(hname, "MovShare.net") == 0)
+							tmpstr2 = ostrcat(ret2[4].part, NULL, 0, 0);
 						else
 						{
 							tmpstr2 = ostrcat("unknown", NULL, 0, 0);
@@ -547,6 +556,8 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 							tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
 						else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "NowVideo.sx") == 0)
 							tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
+						else if(ret2 != NULL && count2 > 4 && ostrcmp(hname, "MovShare.net") == 0)
+							tmpstr2 = ostrcat(ret2[4].part, NULL, 0, 0);
 						else
 						{
 							tmpstr2 = ostrcat("unknown", NULL, 0, 0);
@@ -615,6 +626,8 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 							tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
 						else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "NowVideo.sx") == 0)
 							tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
+						else if(ret2 != NULL && count2 > 4 && ostrcmp(hname, "MovShare.net") == 0)
+							tmpstr2 = ostrcat(ret2[4].part, NULL, 0, 0);
 						else
 						{
 							tmpstr2 = ostrcat("unknown", NULL, 0, 0);
@@ -816,6 +829,8 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 						tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
 					else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "NowVideo.sx") == 0)
 						tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
+					else if(ret2 != NULL && count2 > 4 && ostrcmp(hname, "MovShare.net") == 0)
+						tmpstr2 = ostrcat(ret2[4].part, NULL, 0, 0);
 					else
 					{
 						tmpstr2 = ostrcat("unknown", NULL, 0, 0);
@@ -892,7 +907,9 @@ int kinox_search_cast(struct skin* grid, struct skin* listbox, struct skin* coun
 	if(search != NULL)
 	{
 		drawscreen(load, 0, 0);
+		search = strstrip(search);
 		search = stringreplacechar(search, ' ', '+');
+		debug(99, "search: %s", search);
 
 		char* tmpstr = NULL;
 		char* tmpstr1 = NULL;

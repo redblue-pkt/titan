@@ -44,9 +44,15 @@ char* filenuke(char* host, char* file, char* hosterurl)
 	debug(99, "tmpstr: %s", tmpstr);
 	titheklog(debuglevel, "/tmp/filenuke1_get", NULL, tmpstr);
 
+	if(tmpstr == NULL)
+	{
+		textbox(_("Message"), _("The page is temporarily unavailable") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
+		goto end;
+	}
+
 //	sleep(2);
 
-	if(ostrstr(tmpstr, "<title>The page is temporarily unavailable</title>") != NULL)
+	if(tmpstr == NULL || ostrstr(tmpstr, "<title>The page is temporarily unavailable</title>") != NULL)
 	{
 		error = string_resub("<td align=\"center\" valign=\"middle\">", "</td>", tmpstr, 0);
 		string_deltags(error);
@@ -114,6 +120,12 @@ char* filenuke(char* host, char* file, char* hosterurl)
 	free(send), send = NULL;
 	debug(99, "post: %s", post);
 	titheklog(debuglevel, "/tmp/filenuke2_post", NULL, tmpstr);
+
+	if(post == NULL)
+	{
+		textbox(_("Message"), _("The page is temporarily unavailable") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
+		goto end;
+	}
 
 	free(tmpstr),tmpstr = NULL;
 	tmpstr = string_resub(";return p}('", ");'", post, 0);

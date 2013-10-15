@@ -22,6 +22,7 @@
 #include "xvideos.h"
 #include "ard.h"
 #include "zdf.h"
+#include "movshare.h"
 
 char pluginname[] = "TiTan Mediathek";
 char plugindesc[] = "TiTan Mediathek";

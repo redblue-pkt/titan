@@ -93,6 +93,33 @@ char* solarmovie(char* link)
 				debug(99, "tmpstr2: %s", tmpstr2, url);	
 				streamurl = nowvideo("NowVideo.eu", tmpstr2, url);
 			}
+			else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "nowvideo.sx") == 0)
+			{
+				tmpstr2 = ostrcat(ret2[2].part, NULL, 0, 0);
+				tmpstr2 = string_replace("embed.php?v=", "", tmpstr2, 1);
+				streamurl = nowvideo("NowVideo.sx", tmpstr2, url);
+			}
+			else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "nowvideo.sx") == 0)
+			{
+				tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
+				tmpstr2 = string_replace("embed.php?v=", "", tmpstr2, 1);
+				debug(99, "tmpstr2: %s", tmpstr2, url);	
+				streamurl = nowvideo("NowVideo.sx", tmpstr2, url);
+			}
+			else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "movshare.net") == 0)
+			{
+				tmpstr2 = ostrcat(ret2[2].part, NULL, 0, 0);
+				tmpstr2 = string_replace("embed.php?v=", "", tmpstr2, 1);
+				streamurl = movshare("MovShare.net", tmpstr2, url);
+			}
+			else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "movshare.net") == 0)
+			{
+				tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
+				tmpstr2 = string_replace("embed.php?v=", "", tmpstr2, 1);
+				debug(99, "tmpstr2: %s", tmpstr2, url);	
+				streamurl = movshare("MovShare.net", tmpstr2, url);
+			}
+
 			free(ret2), ret2 = NULL;
 		}
 	}
@@ -127,7 +154,6 @@ int solarmovie_search(struct skin* grid, struct skin* listbox, struct skin* coun
 	if(search != NULL)
 	{
 		drawscreen(load, 0, 0);
-		search = stringreplacechar(search, ' ', '+');
 		char* tmpstr = NULL;
 		char* tmpstr1 = NULL;
 		char* line = NULL;
@@ -139,13 +165,16 @@ int solarmovie_search(struct skin* grid, struct skin* listbox, struct skin* coun
 		char* menu = NULL;
 		char* file = NULL;
 		char* file1 = NULL;
+		search = strstrip(search);
+		search = stringreplacechar(search, ' ', '+');
+		debug(99, "search: %s", search);
 
 		ip = ostrcat("www.solarmovie.so", NULL, 0, 0);
 		if(flag == 0)
 			path = ostrcat("movie/search/", search, 0, 0);
 		else
 			path = ostrcat("tv/search/", search, 0, 0);
-	
+
 		tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
 		titheklog(debuglevel, "/tmp/solarmovie_tmpstr", NULL, tmpstr);
 
@@ -329,6 +358,10 @@ int solarmovie_hoster(struct skin* grid, struct skin* listbox, struct skin* coun
 						hname = ostrcat("vidxden.com", NULL, 0, 0);
 					else if(ostrcmp(tmphname, "nowvideo.eu") == 0)
 						hname = ostrcat("NowVideo.eu", NULL, 0, 0);
+					else if(ostrcmp(tmphname, "nowvideo.sx") == 0)
+						hname = ostrcat("NowVideo.sx", NULL, 0, 0);
+					else if(ostrcmp(tmphname, "movshare.net") == 0)
+						hname = ostrcat("MovShare.net", NULL, 0, 0);
 					else
 					{
 						hname = ostrcat(tmphname, " (coming soon)", 0, 0);

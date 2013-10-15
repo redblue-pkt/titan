@@ -25,6 +25,7 @@ char* flashx(char* host, char* file, char* hosterurl);
 char* vidstream(char* host, char* file, char* hosterurl);
 char* xvidstage(char* host, char* file, char* hosterurl);
 char* nowvideo(char* host, char* file, char* hosterurl);
+char* movshare(char* host, char* file, char* hosterurl);
 int myvideo_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr, int flag);
 int youtube_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr);
 int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr, int flag);

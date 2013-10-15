@@ -34,6 +34,18 @@ char* putlocker(char* host, char* file, char* hosterurl)
 	debug(99, "tmpstr: %s", tmpstr);
 	titheklog(debuglevel, "/tmp/putlocker1_tmpstr_get", NULL, tmpstr);
 	
+	if(tmpstr == NULL)
+	{
+		textbox(_("Message"), _("The page is temporarily unavailable") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
+		goto end;
+	}
+
+	if(ostrstr(tmpstr, "This file doesn't exist, or has been removed.") != NULL)
+	{
+		textbox(_("Message"), _("This file doesn't exist, or has been removed."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 400, 0, 0);
+		goto end;
+	}
+	
 	phpsessid = getxmlentry(tmpstr, "PHPSESSID=");
 	debug(99, "phpsessid: %s", phpsessid);
 	serverid = getxmlentry(tmpstr, "SERVERID=");
@@ -79,6 +91,12 @@ char* putlocker(char* host, char* file, char* hosterurl)
 	free(send); send = NULL;
 	debug(99, "tmpstr: %s", tmpstr);
 	titheklog(debuglevel, "/tmp/putlocker2_tmpstr_post", NULL, tmpstr);
+
+	if(tmpstr == NULL)
+	{
+		textbox(_("Message"), _("The page is temporarily unavailable") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
+		goto end;
+	}
 	
 	if(ostrstr(tmpstr, "warning_message") != NULL)
 	{
@@ -132,6 +150,12 @@ char* putlocker(char* host, char* file, char* hosterurl)
 	free(send); send = NULL;
 	debug(99, "tmpstr: %s", tmpstr);
 	titheklog(debuglevel, "/tmp/putlocker3_tmpstr_get", NULL, tmpstr);
+
+	if(tmpstr == NULL)
+	{
+		textbox(_("Message"), _("The page is temporarily unavailable") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
+		goto end;
+	}
 
 	//get streamlink1
 	streamlink1 = getxmlentry(tmpstr, "url=");
