@@ -3254,7 +3254,7 @@ int ozip(char* inbuf, int inlen, char** outbuf, int* outlen, int level)
 
 	stream.avail_in = inlen;
 	stream.next_in = (void*)inbuf;
-
+  
 	do
 	{
 		stream.avail_out = inlen;
@@ -3267,11 +3267,13 @@ int ozip(char* inbuf, int inlen, char** outbuf, int* outlen, int level)
 			(void)deflateEnd(&stream);
 			return 1;
 		}
-
 	}
 	while(stream.avail_out == 0);
+	
+	char* tmpoutbuf = *outbuf;	
 	*outlen = inlen - stream.avail_out;
 	*outbuf = realloc(*outbuf, *outlen);
+	if(*outbuf == NULL) free(tmpoutbuf);	
 
 	(void)deflateEnd(&stream);
 	return 0;
@@ -3322,10 +3324,25 @@ int ounzip(char* inbuf, int inlen, char** outbuf, int* outlen, int maxbuf, int f
 	stream.avail_in = inlen;
 	stream.next_in = (void*)inbuf;
 
+	int round = 0;
 	do
 	{
 		stream.avail_out = maxbuf;
-		stream.next_out = (void*)*outbuf;
+		
+		if(flag == 0 && round > 0)
+		{
+			char* tmpoutbuf = *outbuf;
+			*outbuf = realloc(*outbuf, maxbuf * (round + 1));
+			if(*outbuf == NULL)
+			{
+				free(tmpoutbuf);
+				(void)inflateEnd(&stream);
+				return 1;
+			}
+			stream.next_out = (void*)(*outbuf) + maxbuf * round;
+		}
+		else
+			stream.next_out = (void*)*outbuf;
 
 		ret = inflate(&stream, Z_NO_FLUSH);
 		if(ret == Z_NEED_DICT || ret == Z_DATA_ERROR || ret == Z_MEM_ERROR)
@@ -3339,10 +3356,19 @@ int ounzip(char* inbuf, int inlen, char** outbuf, int* outlen, int maxbuf, int f
 			return 1;
 		}
 
+		round++;
 	}
 	while(stream.avail_out == 0);
-	*outlen = maxbuf - stream.avail_out;
-	if(flag == 0) *outbuf = realloc(*outbuf, *outlen);
+	
+	if(flag == 0)
+	{
+		char* tmpoutbuf = *outbuf;
+		*outlen = (maxbuf * round) - stream.avail_out;
+		*outbuf = realloc(*outbuf, *outlen);
+		if(*outbuf == NULL) free(tmpoutbuf);	
+	}
+	else
+		*outlen = maxbuf - stream.avail_out;			
 
 	(void)inflateEnd(&stream);
 	return 0;
