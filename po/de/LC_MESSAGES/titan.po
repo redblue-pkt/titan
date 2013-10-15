@@ -4202,3 +4202,6 @@ msgstr "Transponder speichern"
 
 msgid "TRANSPONDEREDIT"
 msgstr "Transponder auswählen"
+
+msgid "Flash: Flash range is deleted after update, mnt: flash range to permanently update available, swap: USB medium permanently"
+msgstr "FLASH: flashbereich der nach update gelöscht wird\nMNT: flashbereich dauerhaft nach update vorhanden\nSwap: Usb medium dauerhaft"
