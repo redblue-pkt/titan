@@ -34,7 +34,13 @@ char* streamcloud(char* host, char* file, char* hosterurl)
 	debug(99, "tmpstr: %s", tmpstr);
 	sleep(20);
 	titheklog(debuglevel, "/tmp/streamcould1_get", NULL, tmpstr);
-	
+
+	if(tmpstr == NULL)
+	{
+		textbox(_("Message"), _("The page is temporarily unavailable") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
+		goto end;
+	}
+
 	cookie = string_resub("Set-Cookie: afc=", ";", tmpstr, 0);	
 	debug(99, "cookie: %s", cookie);
 
@@ -100,6 +106,12 @@ char* streamcloud(char* host, char* file, char* hosterurl)
 	free(send), send = NULL;
 	debug(99, "tmpstr: %s", tmpstr);
 	titheklog(debuglevel, "/tmp/streamcould2_post", NULL, tmpstr);
+
+	if(tmpstr == NULL)
+	{
+		textbox(_("Message"), _("The page is temporarily unavailable") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
+		goto end;
+	}
 
 //	streamlink = oregex(".*file: \".*(http:.*video.mp4).*\".*", tmpstr);
 	streamlink = string_resub("file: \"", "\"", tmpstr, 0);
