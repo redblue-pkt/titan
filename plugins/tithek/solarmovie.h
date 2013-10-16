@@ -119,7 +119,11 @@ char* solarmovie(char* link)
 				debug(99, "tmpstr2: %s", tmpstr2, url);	
 				streamurl = movshare("MovShare.net", tmpstr2, url);
 			}
-
+			else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "movreel.com") == 0)
+				streamurl = filenuke("MovReel.com", ret2[2].part, url);
+			else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "novamov") == 0)
+				streamurl = filenuke("NovaMov", ret2[2].part, url);
+			
 			free(ret2), ret2 = NULL;
 		}
 	}
@@ -362,6 +366,10 @@ int solarmovie_hoster(struct skin* grid, struct skin* listbox, struct skin* coun
 						hname = ostrcat("NowVideo.sx", NULL, 0, 0);
 					else if(ostrcmp(tmphname, "movshare.net") == 0)
 						hname = ostrcat("MovShare.net", NULL, 0, 0);
+					else if(ostrcmp(tmphname, "movreel.com") == 0)
+						hname = ostrcat("MovReel.com", NULL, 0, 0);
+					else if(ostrcmp(tmphname, "novamov") == 0)
+						hname = ostrcat("NovaMov", NULL, 0, 0);
 					else
 					{
 						hname = ostrcat(tmphname, " (coming soon)", 0, 0);

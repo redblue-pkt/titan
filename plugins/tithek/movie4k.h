@@ -78,7 +78,11 @@ char* movie4k(char* link)
 			tmpstr2 = string_replace("embed.php?v=", "", tmpstr2, 1);
 			streamurl = movshare("MovShare.net", tmpstr2, url);
 		}
-
+		else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "MovReel") == 0)
+			streamurl = filenuke("MovReel.com", ret2[2].part, url);
+		else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "NovaMov") == 0)
+			streamurl = filenuke("NovaMov", ret2[2].part, url);
+						
 		free(ret2), ret2 = NULL;
 	}
 	free(ret1), ret1 = NULL;
@@ -430,6 +434,10 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 						hname = ostrcat("NowVideo.eu", NULL, 0, 0);
 					else if(ostrcmp(tmphname, "Movshare") == 0)
 						hname = ostrcat("MovShare.net", NULL, 0, 0);
+					else if(ostrcmp(tmphname, "MovReel") == 0)
+						hname = ostrcat("MovReel.com", NULL, 0, 0);
+					else if(ostrcmp(tmphname, "NovaMov") == 0)
+						hname = ostrcat("NovaMov", NULL, 0, 0);
 					else
 					{
 						hname = ostrcat(tmphname, " (coming soon)", 0, 0);
@@ -493,6 +501,10 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 							hname = ostrcat("NowVideo.eu", NULL, 0, 0);
 						else if(ostrcmp(tmphname, "Movshare") == 0)
 							hname = ostrcat("MovShare.net", NULL, 0, 0);
+						else if(ostrcmp(tmphname, "MovReel") == 0)
+							hname = ostrcat("MovReel.com", NULL, 0, 0);
+						else if(ostrcmp(tmphname, "NovaMov") == 0)
+							hname = ostrcat("NovaMov", NULL, 0, 0);
 						else
 						{
 							hname = ostrcat(tmphname, " (coming soon)", 0, 0);
@@ -549,6 +561,10 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 							hname = ostrcat("NowVideo.eu", NULL, 0, 0);
 						else if(ostrcmp(tmphname, "Movshare") == 0)
 							hname = ostrcat("MovShare.net", NULL, 0, 0);
+						else if(ostrcmp(tmphname, "MovReel") == 0)
+							hname = ostrcat("MovReel.com", NULL, 0, 0);
+						else if(ostrcmp(tmphname, "NovaMov") == 0)
+							hname = ostrcat("NovaMov", NULL, 0, 0);
 						else
 						{
 							hname = ostrcat(tmphname, " (coming soon)", 0, 0);
@@ -605,6 +621,10 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 							hname = ostrcat("NowVideo.eu", NULL, 0, 0);
 						else if(ostrcmp(tmphname, "Movshare") == 0)
 							hname = ostrcat("MovShare.net", NULL, 0, 0);
+						else if(ostrcmp(tmphname, "MovReel") == 0)
+							hname = ostrcat("MovReel.com", NULL, 0, 0);
+						else if(ostrcmp(tmphname, "NovaMov") == 0)
+							hname = ostrcat("NovaMov", NULL, 0, 0);
 						else
 						{
 							hname = ostrcat(tmphname, " (coming soon)", 0, 0);
