@@ -4207,4 +4207,7 @@ msgid "TRANSPONDEREDIT"
 msgstr "Transponder auswählen"
 
 msgid "Flash: Flash range is deleted after update, mnt: flash range to permanently update available, swap: USB medium permanently"
-msgstr "FLASH: Installation im Flash, wird nach einem Imageupdate gelöscht.\nMNT: Installation im Flash, nach Imageudate noch vorhanden.\nSwap:Installation auf USB/HDD, nach Imageupdate noch vorhanden."
+msgstr "FLASH: Installation im Flash, wird nach einem Imageupdate gelöscht.\nMNT: Installation im Flash, nach Imageupdate noch vorhanden.\nSWAP: Installation auf USB/HDD, nach Imageupdate noch vorhanden."
+
+msgid "Change Channelname"
+msgstr "Kanalnamen aktualisieren"
