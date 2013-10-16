@@ -23,6 +23,8 @@
 #include "ard.h"
 #include "zdf.h"
 #include "movshare.h"
+#include "movreel.h"
+#include "novamov.h"
 
 char pluginname[] = "TiTan Mediathek";
 char plugindesc[] = "TiTan Mediathek";

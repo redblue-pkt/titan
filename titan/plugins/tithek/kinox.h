@@ -25,26 +25,30 @@ char* kinox(char* link)
 		debug(99, "hname: %s", hname);
 		
 		if(ostrcmp(hname, "Sockshare.com") == 0)
-			streamurl = putlocker("Sockshare.com", id, url);
+			streamurl = putlocker(hname, id, url);
 		else if(ostrcmp(hname, "Putlocker.com") == 0)
-			streamurl = putlocker("Putlocker.com", id, url);
+			streamurl = putlocker(hname, id, url);
 		else if(ostrcmp(hname, "FileNuke.com") == 0)
-			streamurl = filenuke("FileNuke.com", id, url);
+			streamurl = filenuke(hname, id, url);
 		else if(ostrcmp(hname, "StreamCloud.eu") == 0)
-			streamurl = streamcloud("StreamCloud.eu", id, url);
+			streamurl = streamcloud(hname, id, url);
 		else if(ostrcmp(hname, "VidStream.in") == 0)
-			streamurl = vidstream("VidStream.in", id, url);
+			streamurl = vidstream(hname, id, url);
 		else if(ostrcmp(hname, "FlashX.tv") == 0)
-			streamurl = flashx("FlashX.tv", id, url);
+			streamurl = flashx(hname, id, url);
 		else if(ostrcmp(hname, "XvidStage.com") == 0)
-			streamurl = xvidstage("XvidStage.com", id, url);
+			streamurl = xvidstage(hname, id, url);
 		else if(ostrcmp(hname, "NowVideo.eu") == 0)
-			streamurl = nowvideo("NowVideo.eu", id, url);
+			streamurl = nowvideo(hname, id, url);
 		else if(ostrcmp(hname, "NowVideo.sx") == 0)
-			streamurl = nowvideo("NowVideo.sx", id, url);
+			streamurl = nowvideo(hname, id, url);
 		else if(ostrcmp(hname, "MovShare.net") == 0)
-			streamurl = movshare("MovShare.net", id, url);
-					
+			streamurl = movshare(hname, id, url);
+		else if(ostrcmp(hname, "MovReel.com") == 0)
+			streamurl = movreel(hname, id, url);
+		else if(ostrcmp(hname, "NovaMov") == 0)
+			streamurl = novamov(hname, id, url);
+
 		debug(99, "streamurl1: %s", streamurl);
 
 		streamurl = string_replace_all("amp;", "", streamurl, 1);
@@ -415,6 +419,10 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 						tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
 					else if(ret2 != NULL && count2 > 4 && ostrcmp(hname, "MovShare.net") == 0)
 						tmpstr2 = ostrcat(ret2[4].part, NULL, 0, 0);
+					else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "MovReel.com") == 0)
+						tmpstr2 = ostrcat(ret2[2].part, NULL, 0, 0);
+					else if(ret2 != NULL && count2 > 4 && ostrcmp(hname, "NovaMov") == 0)
+						tmpstr2 = ostrcat(ret2[4].part, NULL, 0, 0);
 					else
 					{
 						tmpstr2 = ostrcat("unknown", NULL, 0, 0);
@@ -489,6 +497,10 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 							tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
 						else if(ret2 != NULL && count2 > 4 && ostrcmp(hname, "MovShare.net") == 0)
 							tmpstr2 = ostrcat(ret2[4].part, NULL, 0, 0);
+						else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "MovReel.com") == 0)
+							tmpstr2 = ostrcat(ret2[2].part, NULL, 0, 0);
+						else if(ret2 != NULL && count2 > 4 && ostrcmp(hname, "NovaMov") == 0)
+							tmpstr2 = ostrcat(ret2[4].part, NULL, 0, 0);
 						else
 						{
 							tmpstr2 = ostrcat("unknown", NULL, 0, 0);
@@ -557,6 +569,10 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 						else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "NowVideo.sx") == 0)
 							tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
 						else if(ret2 != NULL && count2 > 4 && ostrcmp(hname, "MovShare.net") == 0)
+							tmpstr2 = ostrcat(ret2[4].part, NULL, 0, 0);
+						else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "MovReel.com") == 0)
+							tmpstr2 = ostrcat(ret2[2].part, NULL, 0, 0);
+						else if(ret2 != NULL && count2 > 4 && ostrcmp(hname, "NovaMov") == 0)
 							tmpstr2 = ostrcat(ret2[4].part, NULL, 0, 0);
 						else
 						{
@@ -627,6 +643,10 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 						else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "NowVideo.sx") == 0)
 							tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
 						else if(ret2 != NULL && count2 > 4 && ostrcmp(hname, "MovShare.net") == 0)
+							tmpstr2 = ostrcat(ret2[4].part, NULL, 0, 0);
+						else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "MovReel.com") == 0)
+							tmpstr2 = ostrcat(ret2[2].part, NULL, 0, 0);
+						else if(ret2 != NULL && count2 > 4 && ostrcmp(hname, "NovaMov") == 0)
 							tmpstr2 = ostrcat(ret2[4].part, NULL, 0, 0);
 						else
 						{
@@ -830,6 +850,10 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 					else if(ret2 != NULL && count2 > 3 && ostrcmp(hname, "NowVideo.sx") == 0)
 						tmpstr2 = ostrcat(ret2[3].part, NULL, 0, 0);
 					else if(ret2 != NULL && count2 > 4 && ostrcmp(hname, "MovShare.net") == 0)
+						tmpstr2 = ostrcat(ret2[4].part, NULL, 0, 0);
+					else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "MovReel.com") == 0)
+						tmpstr2 = ostrcat(ret2[2].part, NULL, 0, 0);
+					else if(ret2 != NULL && count2 > 4 && ostrcmp(hname, "NovaMov") == 0)
 						tmpstr2 = ostrcat(ret2[4].part, NULL, 0, 0);
 					else
 					{
