@@ -3231,7 +3231,7 @@ int ozip(char* inbuf, int inlen, char** outbuf, int* outlen, int level)
 	int ret = 0;
 	z_stream stream;
 	
-	if(inbuf == NULL || outbuf == NULL) return 1;
+	if(inbuf == NULL || outbuf == NULL || inlen == 0) return 1;
 
 	stream.zalloc = Z_NULL;
 	stream.zfree = Z_NULL;
@@ -3296,7 +3296,7 @@ int ounzip(char* inbuf, int inlen, char** outbuf, int* outlen, int maxbuf, int f
 	int ret = 0;
 	z_stream stream;
 	
-	if(inbuf == NULL || outbuf == NULL) return 1;
+	if(inbuf == NULL || outbuf == NULL || maxbuf == 0) return 1;
 	if(flag == 1 && *outbuf == NULL) return 1;
 
 	stream.zalloc = Z_NULL;
