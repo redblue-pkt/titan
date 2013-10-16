@@ -3278,6 +3278,7 @@ int ozip(char* inbuf, int inlen, char** outbuf, int* outlen, int level)
 	{
 		err("no mem");
 		free(tmpoutbuf);
+		*outlen = 0;
 		(void)deflateEnd(&stream);
 		return 1;
 	}	
@@ -3377,6 +3378,7 @@ int ounzip(char* inbuf, int inlen, char** outbuf, int* outlen, int maxbuf, int f
 		{
 			err("no mem");
 			free(tmpoutbuf);
+			*outlen = 0;
 			(void)inflateEnd(&stream);
 			return 1;
 		}	
