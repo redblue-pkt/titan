@@ -70,7 +70,7 @@ int wlanlinkquality()
 	fileline = malloc(MINMALLOC);
 	if(fileline == NULL)
 	{
-		err("no memory");
+		err("no mem");
 		return 0;
 	}
 
@@ -192,7 +192,7 @@ int checkpng(char* filename)
 	sig = malloc(8);
 	if(sig == NULL)
 	{
-		err("no memory");
+		err("no mem");
 		fclose(fd);
 		return 0;
 	}
@@ -525,7 +525,7 @@ struct blacklist* readblacklist(char* filename)
 	newnode = (struct blacklist*)calloc(1, sizeof(struct blacklist));
 	if(newnode == NULL)
 	{
-		err("no memory");
+		err("no mem");
 		return NULL;
 	}
 
@@ -724,6 +724,7 @@ struct splitstr* oregexsplit(char* regex, char *str, char *tok, int* count)
 		tmparray = array; array = (struct splitstr*)realloc(array, sizeof(struct splitstr*) * (*count));
 		if(array == NULL)
 		{
+			err("no mem");
 			free(tmparray);
 			return NULL;
 		}
@@ -2175,7 +2176,7 @@ int setwakeuptimer(time_t waketime)
 	buf = malloc(MINMALLOC);
 	if(buf == NULL)
 	{
-		err("no memory");
+		err("no mem");
 		return ret;
 	}
 
@@ -3273,7 +3274,13 @@ int ozip(char* inbuf, int inlen, char** outbuf, int* outlen, int level)
 	char* tmpoutbuf = *outbuf;	
 	*outlen = inlen - stream.avail_out;
 	*outbuf = realloc(*outbuf, *outlen);
-	if(*outbuf == NULL) free(tmpoutbuf);	
+	if(*outbuf == NULL)
+	{
+		err("no mem");
+		free(tmpoutbuf);
+		(void)deflateEnd(&stream);
+		return 1;
+	}	
 
 	(void)deflateEnd(&stream);
 	return 0;
@@ -3335,6 +3342,7 @@ int ounzip(char* inbuf, int inlen, char** outbuf, int* outlen, int maxbuf, int f
 			*outbuf = realloc(*outbuf, maxbuf * (round + 1));
 			if(*outbuf == NULL)
 			{
+				err("no mem");
 				free(tmpoutbuf);
 				(void)inflateEnd(&stream);
 				return 1;
@@ -3365,7 +3373,13 @@ int ounzip(char* inbuf, int inlen, char** outbuf, int* outlen, int maxbuf, int f
 		char* tmpoutbuf = *outbuf;
 		*outlen = (maxbuf * round) - stream.avail_out;
 		*outbuf = realloc(*outbuf, *outlen);
-		if(*outbuf == NULL) free(tmpoutbuf);	
+		if(*outbuf == NULL)
+		{
+			err("no mem");
+			free(tmpoutbuf);
+			(void)inflateEnd(&stream);
+			return 1;
+		}	
 	}
 	else
 		*outlen = maxbuf - stream.avail_out;			
@@ -3675,7 +3689,7 @@ void ostrcatbig(char** value1, char* value2, int* maxlen, int* pos)
 		*value1 = realloc(*value1, *maxlen);
 		if(*value1 == NULL)
 		{
-			err("no memory");
+			err("no mem");
 			return;
 		}
 	}
@@ -3748,7 +3762,7 @@ char* ollutoa(uint64_t value)
 	buf = malloc(MINMALLOC);
 	if(buf == NULL)
 	{
-		err("no memory");
+		err("no mem");
 		return NULL;
 	}
 
@@ -3765,7 +3779,7 @@ char* olutoa(unsigned long value)
 	buf = malloc(MINMALLOC);
 	if(buf == NULL)
 	{
-		err("no memory");
+		err("no mem");
 		return NULL;
 	}
 
@@ -3782,7 +3796,7 @@ char* oitoax(int value)
 	buf = malloc(MINMALLOC);
 	if(buf == NULL)
 	{
-		err("no memory");
+		err("no mem");
 		return NULL;
 	}
 
@@ -3799,7 +3813,7 @@ char* oitoa(int value)
 	buf = malloc(MINMALLOC);
 	if(buf == NULL)
 	{
-		err("no memory");
+		err("no mem");
 		return NULL;
 	}
 
@@ -3816,7 +3830,7 @@ char* oitoa64(off64_t value)
 	buf = malloc(MINMALLOC);
 	if(buf == NULL)
 	{
-		err("no memory");
+		err("no mem");
 		return NULL;
 	}
 
@@ -3834,7 +3848,7 @@ char* oftoa64(double value, char* count)
 	buf = malloc(MINMALLOC);
 	if(buf == NULL)
 	{
-		err("no memory");
+		err("no mem");
 		return NULL;
 	}
 
@@ -3915,7 +3929,7 @@ char* createpath(char* dir, char* file)
 	if(absdir == NULL)
 	{
 		free(tmpdir);
-		err("no memory");
+		err("no mem");
 		return NULL;
 	}
 
@@ -3971,7 +3985,7 @@ int delchar(char** text, int pos)
 	tmptext = malloc(strlen(*text));
 	if(tmptext == NULL)
 	{
-		err("no memory");
+		err("no mem");
 		return pos;
 	}
 
@@ -4004,7 +4018,7 @@ int insertchar(char** text, char zeichen, int pos)
 	tmptext = malloc(strlen(*text) + 2);
 	if(tmptext == NULL)
 	{
-		err("no memory");
+		err("no mem");
 		return pos;
 	}
 
@@ -4129,7 +4143,7 @@ unsigned long readsysul(const char *filename, int line)
 	fileline = malloc(MINMALLOC);
 	if(fileline == NULL)
 	{
-		err("no memory");
+		err("no mem");
 		return 0;
 	}
 
@@ -4174,7 +4188,7 @@ char* readsys(const char *filename, int line)
 	fileline = malloc(MINMALLOC);
 	if(fileline == NULL)
 	{
-		err("no memory");
+		err("no mem");
 		return NULL;
 	}
 
@@ -5261,7 +5275,7 @@ char* readbintomem(const char* filename, size_t size)
 	fileline = calloc(1, size + 1);
 	if(fileline == NULL)
 	{
-		err("no memory");
+		err("no mem");
 		return NULL;
 	}
 
@@ -5288,7 +5302,7 @@ char* readfiletomem(const char* filename, int flag)
 	fileline = malloc(MINMALLOC);
 	if(fileline == NULL)
 	{
-		err("no memory");
+		err("no mem");
 		return NULL;
 	}
 
@@ -5311,7 +5325,7 @@ char* readfiletomem(const char* filename, int flag)
 		tmpbuf = buf;	buf = realloc(buf, bufsize + 1);
 		if(buf == NULL)
 		{
-			err("no memory");
+			err("no mem");
 			free(fileline);
 			free(tmpbuf);
 			fclose(fd);
@@ -5338,14 +5352,14 @@ char* readeittomem(const char* filename)
 	zeichen = malloc(255);
 	if(zeichen == NULL)
 	{
-		err("no memory");
+		err("no mem");
 		return NULL;
 	}
 	buf = malloc(255);
 	if(buf == NULL)
 	{
 		free(zeichen);
-		err("no memory");
+		err("no mem");
 		return NULL;
 	}
 
@@ -5380,7 +5394,7 @@ char* readeittomem(const char* filename)
 			tmpbuf1 = buf1; buf1 = realloc(buf1, buf1size + 1);
 			if(buf1 == NULL)
 			{
-				err("no memory");
+				err("no mem");
 				free(zeichen);
 				free(buf);
 				free(tmpbuf1);
@@ -5404,7 +5418,7 @@ char* readeittomem(const char* filename)
 			tmpbuf1 = buf1; buf1 = realloc(buf1, buf1size + 1);
 			if(buf1 == NULL)
 			{
-				err("no memory");
+				err("no mem");
 				free(zeichen);
 				free(buf);
 				free(tmpbuf1);
@@ -5442,7 +5456,7 @@ char* readeittomem(const char* filename)
 			tmpbuf1 = buf1; buf1 = realloc(buf1, buf1size + 1);
 			if(buf1 == NULL)
 			{
-				err("no memory");
+				err("no mem");
 				free(zeichen);
 				free(buf);
 				free(tmpbuf1);
@@ -5475,7 +5489,7 @@ char* command(char* input)
 	fileline = malloc(MINMALLOC);
 	if(fileline == NULL)
 	{
-		err("no memory");
+		err("no mem");
 		return NULL;
 	}
 
@@ -5864,6 +5878,7 @@ struct splitstr* strsplit(char *str, char *tok, int* count)
 		tmparray = array; array = (struct splitstr*)realloc(array, sizeof(struct splitstr*) * (*count));
 		if(array == NULL)
 		{
+			err("no mem");
 			free(tmparray);
 			return NULL;
 		}
