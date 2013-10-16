@@ -1049,7 +1049,7 @@ msgid "Main Menu"
 msgstr "Hauptmenü"
 
 msgid "Manual Search"
-msgstr "Manuelle Suche"
+msgstr "Manuelle Sendersuche"
 
 msgid "Manuel Scan"
 msgstr "Sendersuchlauf"
