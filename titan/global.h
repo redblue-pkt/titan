@@ -1,6 +1,44 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
+//flag 0: with wait message
+//flag 1: without wait message
+void waitmsgbar(int sec, int exit, int flag)
+{
+	if(sec < 1) return;
+	int maxsec = sec, rcret = -1;
+	
+	struct skin* waitmsgbar = getscreen("waitmsgbar");
+	struct skin* load = getscreen("loading");
+	
+	waitmsgbar->progresssize = 0;
+	
+	if(flag == 0) drawscreen(load, 0, 0);
+	
+	while(sec > 0)
+	{
+		drawscreen(waitmsgbar, 0, 0);
+		
+		if(exit == 0)
+			sleep(1);
+		else
+		{
+			rcret = waitrc(0, 1000, 0);
+			if(rcret == getrcconfigint("rcexit", NULL))
+				break;
+				
+			if(rcret != RCTIMEOUT) continue;
+		}
+		
+		sec--;
+		waitmsgbar->progresssize = ((maxsec - sec) * 100) / maxsec;
+	}
+	
+	if(flag == 0) clearscreen(load);
+	clearscreen(waitmsgbar);
+	drawscreen(skin, 0, 0);
+}
+
 //flag 0: get pluginpath an add text
 //flag 1: get pluginpath and change "%pluginpath%/"
 char* createpluginpath(char* text, int flag)
