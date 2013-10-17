@@ -123,6 +123,10 @@ char* solarmovie(char* link)
 				streamurl = filenuke("MovReel.com", ret2[2].part, url);
 			else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "novamov") == 0)
 				streamurl = filenuke("NovaMov", ret2[2].part, url);
+			else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "divxstage") == 0)
+				streamurl = filenuke("DivXStage", ret2[2].part, url);
+			else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "primeshare.tv") == 0)
+				streamurl = filenuke("PrimeShare.tv", ret2[2].part, url);
 			
 			free(ret2), ret2 = NULL;
 		}
@@ -370,6 +374,10 @@ int solarmovie_hoster(struct skin* grid, struct skin* listbox, struct skin* coun
 						hname = ostrcat("MovReel.com", NULL, 0, 0);
 					else if(ostrcmp(tmphname, "novamov") == 0)
 						hname = ostrcat("NovaMov", NULL, 0, 0);
+					else if(ostrcmp(tmphname, "divxstage") == 0)
+						hname = ostrcat("DivXStage", NULL, 0, 0);
+					else if(ostrcmp(tmphname, "primeshare.tv") == 0)
+						hname = ostrcat("PrimeShare.tv", NULL, 0, 0);
 					else
 					{
 						hname = ostrcat(tmphname, " (coming soon)", 0, 0);

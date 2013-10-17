@@ -82,7 +82,11 @@ char* movie4k(char* link)
 			streamurl = filenuke("MovReel.com", ret2[2].part, url);
 		else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "NovaMov") == 0)
 			streamurl = filenuke("NovaMov", ret2[2].part, url);
-						
+		else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "DivXStage") == 0)
+			streamurl = filenuke("DivXStage", ret2[2].part, url);
+		else if(ret2 != NULL && count2 > 2 && ostrcmp(hname, "PrimeShare") == 0)
+			streamurl = filenuke("PrimeShare.tv", ret2[2].part, url);
+									
 		free(ret2), ret2 = NULL;
 	}
 	free(ret1), ret1 = NULL;
@@ -438,6 +442,10 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 						hname = ostrcat("MovReel.com", NULL, 0, 0);
 					else if(ostrcmp(tmphname, "NovaMov") == 0)
 						hname = ostrcat("NovaMov", NULL, 0, 0);
+					else if(ostrcmp(tmphname, "DivXStage") == 0)
+						hname = ostrcat("DivXStage", NULL, 0, 0);
+					else if(ostrcmp(tmphname, "PrimeShare") == 0)
+						hname = ostrcat("PrimeShare.tv", NULL, 0, 0);
 					else
 					{
 						hname = ostrcat(tmphname, " (coming soon)", 0, 0);
@@ -565,6 +573,10 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 							hname = ostrcat("MovReel.com", NULL, 0, 0);
 						else if(ostrcmp(tmphname, "NovaMov") == 0)
 							hname = ostrcat("NovaMov", NULL, 0, 0);
+						else if(ostrcmp(tmphname, "DivXStage") == 0)
+							hname = ostrcat("DivXStage", NULL, 0, 0);
+						else if(ostrcmp(tmphname, "PrimeShare") == 0)
+							hname = ostrcat("PrimeShare.tv", NULL, 0, 0);
 						else
 						{
 							hname = ostrcat(tmphname, " (coming soon)", 0, 0);
@@ -625,6 +637,10 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 							hname = ostrcat("MovReel.com", NULL, 0, 0);
 						else if(ostrcmp(tmphname, "NovaMov") == 0)
 							hname = ostrcat("NovaMov", NULL, 0, 0);
+						else if(ostrcmp(tmphname, "DivXStage") == 0)
+							hname = ostrcat("DivXStage", NULL, 0, 0);
+						else if(ostrcmp(tmphname, "PrimeShare") == 0)
+							hname = ostrcat("PrimeShare.tv", NULL, 0, 0);
 						else
 						{
 							hname = ostrcat(tmphname, " (coming soon)", 0, 0);
