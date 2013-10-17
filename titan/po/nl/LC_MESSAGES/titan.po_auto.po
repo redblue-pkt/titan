@@ -368,7 +368,8 @@ msgstr ""
 #: putlocker.h:45 putlocker.h:96 putlocker.h:106 putlocker.h:153
 #: solarmovie.h:287 streamcloud.h:42 streamcloud.h:117 tithek.h:1315
 #: tithek.h:1337 tithek.h:2085 tithek.h:2147 tithek.h:2161 vidstream.h:50
-#: vidstream.h:62 vidstream.h:131 xvidstage.h:141
+#: vidstream.h:62 vidstream.h:131 xvidstage.h:141 play.h:1369 solarmovie.h:205
+#: tithek_global.h:205 tpk.h:3027
 msgid "Message"
 msgstr ""
 
@@ -463,6 +464,7 @@ msgstr ""
 #: putlocker.h:153 solarmovie.h:287 streamcloud.h:42 streamcloud.h:117
 #: tithek.h:1315 tithek.h:1337 tithek.h:1356 tithek.h:2085 tithek.h:2147
 #: tithek.h:2161 vidstream.h:50 vidstream.h:62 vidstream.h:131 xvidstage.h:141
+#: play.h:1369 solarmovie.h:205 tithek_global.h:205 tpk.h:3027
 msgid "OK"
 msgstr ""
 
@@ -559,6 +561,7 @@ msgstr ""
 #: putlocker.h:153 solarmovie.h:287 streamcloud.h:42 streamcloud.h:117
 #: tithek.h:1315 tithek.h:1337 tithek.h:1356 tithek.h:2085 tithek.h:2147
 #: tithek.h:2161 vidstream.h:50 vidstream.h:62 vidstream.h:131 xvidstage.h:141
+#: play.h:1369 solarmovie.h:205 tithek_global.h:205 tpk.h:3027
 msgid "EXIT"
 msgstr ""
 
@@ -835,7 +838,7 @@ msgstr ""
 
 #: dir.h:80 dir.h:89 dir.h:98 dir.h:107 plugins_lcdpearl1_skin.xml.h:2
 #: plugins_lcdsamsung_skin.xml.h:2 skins_lcdpearl1_skin.xml.h:2
-#: skins_lcdsamsung_skin.xml.h:2
+#: skins_lcdsamsung_skin.xml.h:2 dir.h:83 dir.h:92 dir.h:101 dir.h:110
 msgid "---"
 msgstr ""
 
@@ -875,6 +878,7 @@ msgstr ""
 #: skins_tmc_skin.xml.h:18 skins_tmdb_skin.xml.h:11 skins_weather_skin.xml.h:4
 #: skins_wins3_skin.xml.h:4 skins_zapback_skin.xml.h:7
 #: plugins_tithek1_skin.xml.h:15 plugins_tithek222_skin.xml.h:15
+#: plugins_tithek.2222222_skin.xml.h:15
 msgid ""
 msgstr ""
 
@@ -1043,6 +1047,7 @@ msgstr ""
 #: mc_global.h:1010 mc_pictureplayer.h:95 mc_pictureplayer.h:232
 #: mc_pictureplayer.h:358 mc_pictureplayer.h:451 mc_videoplayer.h:733
 #: mc_videoplayer.h:869 play.h:1364 play.h:1372 play.h:1361 play.h:1365
+#: play.h:1369
 msgid "Can't start playback !"
 msgstr ""
 
@@ -1420,7 +1425,7 @@ msgstr ""
 
 #: flashx.h:70 putlocker.h:52 solarmovie.h:265 xvidstage.h:64 xvidstage.h:177
 #: putlocker.h:53 solarmovie.h:266 xvidstage.h:65 xvidstage.h:175
-#: solarmovie.h:250 solarmovie.h:287
+#: solarmovie.h:250 solarmovie.h:287 solarmovie.h:205 tithek_global.h:205
 msgid "This file doesn't exist, or has been removed"
 msgstr ""
 
@@ -1806,13 +1811,15 @@ msgstr ""
 #: kinox.h:256 movie4k.h:754 movie4k.h:878 movie4k.h:993 solarmovie.h:407
 #: kinox.h:259 movie4k.h:752 movie4k.h:875 movie4k.h:989 solarmovie.h:406
 #: solarmovie.h:392 kinox.h:274 movie4k.h:799 movie4k.h:922 movie4k.h:1036
-#: solarmovie.h:441
+#: solarmovie.h:441 kinox.h:226 movie4k.h:747 movie4k.h:870 movie4k.h:984
+#: solarmovie.h:359 tithek_global.h:359
 msgid "Season"
 msgstr ""
 
 #: kinox.h:260 movie4k.h:758 movie4k.h:997 solarmovie.h:411 kinox.h:263
 #: movie4k.h:756 movie4k.h:993 solarmovie.h:410 solarmovie.h:396 kinox.h:278
-#: movie4k.h:803 movie4k.h:1040 solarmovie.h:445
+#: movie4k.h:803 movie4k.h:1040 solarmovie.h:445 kinox.h:230 movie4k.h:751
+#: movie4k.h:988 solarmovie.h:363 tithek_global.h:363
 msgid "Episode"
 msgstr ""
 
@@ -3277,6 +3284,7 @@ msgstr ""
 #: plugins_mc_skin.xml.h:51 plugins_tithek_skin.xml.h:10
 #: skins_mc_skin.xml.h:51 skins_tithek_skin.xml.h:10
 #: plugins_tithek1_skin.xml.h:10 plugins_tithek222_skin.xml.h:10
+#: plugins_tithek.2222222_skin.xml.h:10
 msgid "Screensaver"
 msgstr ""
 
@@ -3675,67 +3683,79 @@ msgstr ""
 
 #: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1
 #: plugins_tithek1_skin.xml.h:1 plugins_tithek222_skin.xml.h:1
+#: plugins_tithek.2222222_skin.xml.h:1
 msgid "TiThek Menu"
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:2 skins_tithek_skin.xml.h:2
 #: plugins_tithek1_skin.xml.h:2 plugins_tithek222_skin.xml.h:2
+#: plugins_tithek.2222222_skin.xml.h:2
 msgid "TiThek PlayList"
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:3 skins_tithek_skin.xml.h:3
 #: plugins_tithek1_skin.xml.h:3 plugins_tithek222_skin.xml.h:3
+#: plugins_tithek.2222222_skin.xml.h:3
 msgid "ADD FAV"
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:4 skins_tithek_skin.xml.h:4
 #: plugins_tithek1_skin.xml.h:4 plugins_tithek222_skin.xml.h:4
+#: plugins_tithek.2222222_skin.xml.h:4
 msgid "DEL FAV"
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:5 skins_tithek_skin.xml.h:5
 #: plugins_tithek1_skin.xml.h:5 plugins_tithek222_skin.xml.h:5
+#: plugins_tithek.2222222_skin.xml.h:5
 msgid "Exit Tithek"
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:6 skins_tithek_skin.xml.h:6
 #: plugins_tithek1_skin.xml.h:6 plugins_tithek222_skin.xml.h:6
+#: plugins_tithek.2222222_skin.xml.h:6
 msgid "Hid XXX Streams"
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:7 skins_tithek_skin.xml.h:7
 #: plugins_tithek1_skin.xml.h:7 plugins_tithek222_skin.xml.h:7
+#: plugins_tithek.2222222_skin.xml.h:7
 msgid "Pic Ratio"
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:8 skins_tithek_skin.xml.h:8 tithek.h:1030
 #: tithek.h:1031 plugins_tithek1_skin.xml.h:8 tithek.h:1027
-#: plugins_tithek222_skin.xml.h:8
+#: plugins_tithek222_skin.xml.h:8 plugins_tithek.2222222_skin.xml.h:8
 msgid "please wait..."
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:9 skins_tithek_skin.xml.h:9
 #: plugins_tithek1_skin.xml.h:9 plugins_tithek222_skin.xml.h:9
+#: plugins_tithek.2222222_skin.xml.h:9
 msgid "Red-Menu"
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:11 skins_tithek_skin.xml.h:11
 #: plugins_tithek1_skin.xml.h:11 plugins_tithek222_skin.xml.h:11
+#: plugins_tithek.2222222_skin.xml.h:11
 msgid "Show Pay Streams"
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:12 skins_tithek_skin.xml.h:12
 #: plugins_tithek1_skin.xml.h:12 plugins_tithek222_skin.xml.h:12
+#: plugins_tithek.2222222_skin.xml.h:12
 msgid "TITHEK SETTINGS"
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:13 skins_tithek_skin.xml.h:13
 #: plugins_tithek1_skin.xml.h:13 plugins_tithek222_skin.xml.h:13
+#: plugins_tithek.2222222_skin.xml.h:13
 msgid "View Cover"
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:14 skins_tithek_skin.xml.h:14
 #: plugins_tithek1_skin.xml.h:14 plugins_tithek222_skin.xml.h:14
+#: plugins_tithek.2222222_skin.xml.h:14
 msgid "View Sections"
 msgstr ""
 
@@ -4939,11 +4959,11 @@ msgstr ""
 msgid "POS"
 msgstr ""
 
-#: tpk.h:3018
+#: tpk.h:3018 tpk.h:3027
 msgid "check your Secret Feed !"
 msgstr ""
 
-#: tpk.h:3262
+#: tpk.h:3262 tpk.h:3271
 msgid "no description found"
 msgstr ""
 
