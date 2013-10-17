@@ -506,7 +506,14 @@ msgstr ""
 #: sock.h:887 sock.h:889 filenuke.h:48 filenuke.h:60 flashx.h:45 flashx.h:91
 #: flashx.h:144 flashx.h:180 flashx.h:215 global.h:6162 sock.h:937
 #: solarmovie.h:250 sock.h:940 sock.h:956 sock.h:952 putlocker.h:174
-#: putlocker.h:177
+#: putlocker.h:177 divxstage.h:44 divxstage.h:80 filenuke.h:49 filenuke.h:61
+#: filenuke.h:73 filenuke.h:122 global.h:6243 movreel.h:43 movreel.h:55
+#: movreel.h:67 movreel.h:118 movreel.h:166 movshare.h:72 novamov.h:44
+#: nowvideo.h:42 primeshare.h:38 primeshare.h:44 primeshare.h:89
+#: putlocker.h:39 putlocker.h:45 putlocker.h:96 putlocker.h:106
+#: putlocker.h:153 solarmovie.h:287 streamcloud.h:42 streamcloud.h:117
+#: tithek.h:1315 tithek.h:1337 tithek.h:2085 tithek.h:2147 tithek.h:2161
+#: vidstream.h:50 vidstream.h:62 vidstream.h:131 xvidstage.h:141
 msgid "Message"
 msgstr ""
 
@@ -662,6 +669,14 @@ msgstr ""
 #: sock.h:889 filenuke.h:48 filenuke.h:60 flashx.h:45 flashx.h:91 flashx.h:144
 #: flashx.h:180 flashx.h:215 global.h:6162 sock.h:937 solarmovie.h:250
 #: sock.h:940 sock.h:956 sock.h:952 putlocker.h:174 putlocker.h:177
+#: divxstage.h:44 divxstage.h:80 filenuke.h:49 filenuke.h:61 filenuke.h:73
+#: filenuke.h:122 global.h:6243 movreel.h:43 movreel.h:55 movreel.h:67
+#: movreel.h:118 movreel.h:166 movshare.h:72 novamov.h:44 nowvideo.h:42
+#: primeshare.h:38 primeshare.h:44 primeshare.h:89 putlocker.h:39
+#: putlocker.h:45 putlocker.h:96 putlocker.h:106 putlocker.h:153
+#: solarmovie.h:287 streamcloud.h:42 streamcloud.h:117 tithek.h:1315
+#: tithek.h:1337 tithek.h:2085 tithek.h:2147 tithek.h:2161 vidstream.h:50
+#: vidstream.h:62 vidstream.h:131 xvidstage.h:141
 msgid "OK"
 msgstr ""
 
@@ -814,7 +829,15 @@ msgstr ""
 #: sock.h:884 putlocker.h:161 sock.h:887 sock.h:889 filenuke.h:48
 #: filenuke.h:60 flashx.h:45 flashx.h:91 flashx.h:144 flashx.h:180
 #: flashx.h:215 global.h:6162 sock.h:937 solarmovie.h:250 sock.h:940
-#: sock.h:956 sock.h:952 putlocker.h:174 putlocker.h:177
+#: sock.h:956 sock.h:952 putlocker.h:174 putlocker.h:177 divxstage.h:44
+#: divxstage.h:80 filenuke.h:49 filenuke.h:61 filenuke.h:73 filenuke.h:122
+#: global.h:6243 movreel.h:43 movreel.h:55 movreel.h:67 movreel.h:118
+#: movreel.h:166 movshare.h:72 novamov.h:44 nowvideo.h:42 primeshare.h:38
+#: primeshare.h:44 primeshare.h:89 putlocker.h:39 putlocker.h:45
+#: putlocker.h:96 putlocker.h:106 putlocker.h:153 solarmovie.h:287
+#: streamcloud.h:42 streamcloud.h:117 tithek.h:1315 tithek.h:1337
+#: tithek.h:2085 tithek.h:2147 tithek.h:2161 vidstream.h:50 vidstream.h:62
+#: vidstream.h:131 xvidstage.h:141
 msgid "EXIT"
 msgstr ""
 
@@ -1477,25 +1500,31 @@ msgstr ""
 #: filemanager.h:306 mc_internetbrowser.h:41 mc_wetterinfo.h:41 tithek.h:1348
 #: filemanager.h:307 filemanager.h:331 tithek.h:1357 filemanager.h:343
 #: tithek.h:1356 tithek.h:1368 filemanager.h:345 tithek.h:1369 tithek.h:1341
+#: tithek.h:1342
 msgid "Registration needed, please contact Atemio !"
 msgstr ""
 
 #: filenuke.h:50 putlocker.h:141 vidstream.h:56 filenuke.h:32 flashx.h:49
 #: putlocker.h:138 putlocker.h:160 filenuke.h:47 filenuke.h:59 flashx.h:44
 #: flashx.h:90 flashx.h:143 flashx.h:179 flashx.h:214 putlocker.h:173
-#: putlocker.h:176
+#: putlocker.h:176 divxstage.h:80 filenuke.h:49 filenuke.h:60 filenuke.h:72
+#: filenuke.h:122 movreel.h:43 movreel.h:54 movreel.h:66 movreel.h:118
+#: movreel.h:166 movshare.h:72 primeshare.h:38 primeshare.h:89 putlocker.h:39
+#: putlocker.h:96 putlocker.h:105 putlocker.h:153 streamcloud.h:42
+#: streamcloud.h:117 vidstream.h:50 vidstream.h:61 vidstream.h:131
+#: xvidstage.h:64 xvidstage.h:141
 msgid "The page is temporarily unavailable"
 msgstr ""
 
 #: flashx.h:70 putlocker.h:52 solarmovie.h:187 xvidstage.h:64 xvidstage.h:177
 #: solarmovie.h:190 solarmovie.h:265 putlocker.h:53 solarmovie.h:266
-#: xvidstage.h:65 xvidstage.h:175 solarmovie.h:250
+#: xvidstage.h:65 xvidstage.h:175 solarmovie.h:250 solarmovie.h:287
 msgid "This file doesn't exist, or has been removed"
 msgstr ""
 
 #: global.h:6121 keyactions.h:216 global.h:6109 global.h:6153 global.h:6159
 #: global.h:6209 global.h:6060 keyactions.h:213 global.h:6145 global.h:6149
-#: global.h:6158 global.h:6162
+#: global.h:6158 global.h:6162 global.h:6243
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -1733,14 +1762,16 @@ msgstr ""
 #: movie4k.h:774 movie4k.h:898 movie4k.h:1013 movie4k.h:775 movie4k.h:899
 #: movie4k.h:1014 kinox.h:256 movie4k.h:754 movie4k.h:878 movie4k.h:993
 #: solarmovie.h:457 solarmovie.h:407 kinox.h:259 movie4k.h:752 movie4k.h:875
-#: movie4k.h:989 solarmovie.h:406 solarmovie.h:392
+#: movie4k.h:989 solarmovie.h:406 solarmovie.h:392 kinox.h:274 movie4k.h:799
+#: movie4k.h:922 movie4k.h:1036 solarmovie.h:441
 msgid "Season"
 msgstr ""
 
 #: kinox.h:258 movie4k.h:770 movie4k.h:1009 solarmovie.h:458 movie4k.h:778
 #: movie4k.h:1017 movie4k.h:779 movie4k.h:1018 kinox.h:260 movie4k.h:758
 #: movie4k.h:997 solarmovie.h:461 solarmovie.h:411 kinox.h:263 movie4k.h:756
-#: movie4k.h:993 solarmovie.h:410 solarmovie.h:396
+#: movie4k.h:993 solarmovie.h:410 solarmovie.h:396 kinox.h:278 movie4k.h:803
+#: movie4k.h:1040 solarmovie.h:445
 msgid "Episode"
 msgstr ""
 
@@ -2368,7 +2399,7 @@ msgstr ""
 msgid "WLAN Info"
 msgstr ""
 
-#: nowvideo.h:39
+#: nowvideo.h:39 divxstage.h:44 novamov.h:44 nowvideo.h:42 primeshare.h:44
 msgid ""
 "The file is being transfered to our other servers. This may take few minutes."
 msgstr ""
@@ -4706,22 +4737,22 @@ msgid ""
 msgstr ""
 
 #: tithek.h:1321 tithek.h:1330 tithek.h:1329 tithek.h:1341 tithek.h:1342
-#: tithek.h:1314
+#: tithek.h:1314 tithek.h:1315
 msgid "Start playback"
 msgstr ""
 
 #: tithek.h:1343 tithek.h:1352 tithek.h:1351 tithek.h:1363 tithek.h:1364
-#: tithek.h:1336
+#: tithek.h:1336 tithek.h:1337
 msgid "Can't get Streamurl !"
 msgstr ""
 
 #: tithek.h:1362 tithek.h:1371 tithek.h:1370 tithek.h:1382 tithek.h:1383
-#: tithek.h:1355
+#: tithek.h:1355 tithek.h:1356
 msgid "TitanNit Tithek disclaimer"
 msgstr ""
 
 #: tithek.h:1425 tithek.h:1436 tithek.h:1435 tithek.h:1447 tithek.h:1448
-#: tithek.h:1420
+#: tithek.h:1420 tithek.h:1421
 msgid "Page"
 msgstr ""
 
@@ -4734,12 +4765,12 @@ msgid "The hoster is not yet supported for the time !"
 msgstr ""
 
 #: tithek.h:2131 tithek.h:2139 tithek.h:2138 tithek.h:2173 tithek.h:2174
-#: tithek.h:2146
+#: tithek.h:2146 tithek.h:2147
 msgid "Remove this Favorite ?"
 msgstr ""
 
 #: tithek.h:2145 tithek.h:2153 tithek.h:2152 tithek.h:2187 tithek.h:2188
-#: tithek.h:2160
+#: tithek.h:2160 tithek.h:2161
 msgid "Add this link as Favorite ?"
 msgstr ""
 
@@ -5690,7 +5721,7 @@ msgid ""
 "Syntax Error on updatefile"
 msgstr ""
 
-#: tithek.h:2111 tithek.h:2112 tithek.h:2084
+#: tithek.h:2111 tithek.h:2112 tithek.h:2084 tithek.h:2085
 msgid "The hoster is not yet supported !"
 msgstr ""
 
@@ -5729,4 +5760,8 @@ msgstr ""
 
 #: scan.h:1600
 msgid "Channel scan ended."
+msgstr ""
+
+#: putlocker.h:45
+msgid "This file doesn't exist, or has been removed."
 msgstr ""
