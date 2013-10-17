@@ -1,15 +1,15 @@
 #ifndef FILENUKE_H
 #define FILENUKE_H
 
-char* filenuke(char* host, char* file, char* hosterurl)
+char* filenuke(char* link)
 {
-	debug(99, "in host: %s file: %s", host, file);
+	debug(99, "link: %s");
 	int debuglevel = getconfigint("debuglevel", NULL);
-	char* tmphost = NULL, *error = NULL, *tmpfile = NULL, *tmpstr = NULL, *send = NULL, *id = NULL, *fname = NULL, *op = NULL, *hash = NULL, *hashlen = NULL, *ip = NULL;
+	char* tmphost = NULL, *error = NULL, *tmppath = NULL, *tmpstr = NULL, *send = NULL, *id = NULL, *fname = NULL, *op = NULL, *hash = NULL, *hashlen = NULL, *ip = NULL;
 	char* b36code = NULL, *base = NULL, *search = NULL, *post = NULL, *streamlink = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *charlist = NULL;
 //	char* cmd = NULL;
-	
-	if(host == NULL || file == NULL) return NULL;
+
+	if(link == NULL) return NULL;
 
 	unlink("/tmp/filenuke1_get");
 	unlink("/tmp/filenuke2_post");
@@ -20,16 +20,51 @@ char* filenuke(char* host, char* file, char* hosterurl)
 	unlink("/tmp/filenuke7_tmpstr_last");
 	unlink("/tmp/filenuke8_streamlink");
 
+/////////////
+	char* tmplink = NULL, *pos = NULL, *path = NULL;
+
+	tmplink = ostrcat(link, NULL, 0, 0);
+
+	if(ostrstr(link, "/Out/?s=") != NULL)
+	{
+		tmplink = string_replace("/Out/?s=", "", tmplink, 1);
+		debug(99, "remove out string: %s", tmplink);
+	}
+	
+
+	if(tmplink == NULL || ostrncmp("http://", tmplink, 7))
+	{
+		textbox(_("Message"), _("Hoster Url not http://") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
+		goto end;
+	}
+
+	tmphost = string_replace("http://", "", tmplink, 0);
+	free(tmplink) , tmplink = NULL;
+
+	if(tmphost != NULL)
+		pos = strchr(tmphost, '/');
+	if(pos != NULL)
+	{
+		pos[0] = '\0';
+		path = pos + 1;
+	}
+
+	tmppath = ostrcat("/", path, 0, 0);
+//	free(path), path = NULL;
+
+/////////////
+
+/*
 	tmphost = ostrcat("www.", host, 0, 0);
-	tmpfile = ostrcat("/", file, 0, 0);
+	tmppath = ostrcat("/", file, 0, 0);
 	debug(99, "tmphost: %s", tmphost);
 	ip = get_ip(tmphost);
 	debug(99, "ip: %s", ip);
 	debug(99, "test host only: %s", get_ip(host));
-	debug(99, "tmpfile: %s", tmpfile);
-
+	debug(99, "tmppath: %s", tmppath);
+*/
 	send = ostrcat(send, "GET ", 1, 0);
-	send = ostrcat(send, tmpfile, 1, 0);
+	send = ostrcat(send, tmppath, 1, 0);
 	send = ostrcat(send, " HTTP/1.1\r\nAccept-Encoding: identity\r\n", 1, 0);
 	send = ostrcat(send, "Accept-Language: de-DE,de;q=0.8,en-US;q=0.6,en;q=0.4\r\n", 1, 0);
 	send = ostrcat(send, "Host: ", 1, 0);
@@ -39,7 +74,7 @@ char* filenuke(char* host, char* file, char* hosterurl)
 	send = ostrcat(send, "Connection: close\r\nCookie: xxx2=ok;\r\n\r\n", 1, 0);
 	debug(99, "send: %s", send);
 
-	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
+	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 	free(send), send = NULL;
 	debug(99, "tmpstr: %s", tmpstr);
 	titheklog(debuglevel, "/tmp/filenuke1_get", NULL, tmpstr);
@@ -112,7 +147,7 @@ char* filenuke(char* host, char* file, char* hosterurl)
 	send = ostrcat(send, hash, 1, 0);
 	debug(99, "send: %s", send);
 	
-	post = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 0);
+	post = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 0);
 	free(send), send = NULL;
 	debug(99, "post: %s", post);
 	titheklog(debuglevel, "/tmp/filenuke2_post", NULL, tmpstr);
@@ -260,7 +295,7 @@ end:
 
 	free(error); error = NULL;
 	free(tmphost); tmphost = NULL;
-	free(tmpfile); tmpfile = NULL;
+	free(tmppath); tmppath = NULL;
 	free(tmpstr); tmpstr = NULL;
 	free(send); send = NULL;
 	free(hash), hash = NULL;
