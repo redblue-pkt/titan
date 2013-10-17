@@ -11,25 +11,10 @@ void titheklog(int debuglevel, char* name1, char* name2, char* content)
 	writesys(tmpstr, content, 0);
 	free(tmpstr);
 }
-
+char* hoster(char* url);
 void screentithekplay(char* titheklink, char* title, int first);
 void screentithek_settings();
 char* oltostr(long val, unsigned base);
-char* putlocker(char* host, char* file, char* hosterurl);
-char* filenuke(char* host, char* file, char* hosterurl);
-char* streamcloud(char* host, char* file, char* hosterurl);
-char* myvideo(char* link, char* url, char* name, int flag);
-char* rtl2now(char* link, char* url, char* name, int flag);
-char* youtube(char* link, char* url, char* name, int flag);
-char* flashx(char* host, char* file, char* hosterurl);
-char* vidstream(char* host, char* file, char* hosterurl);
-char* xvidstage(char* host, char* file, char* hosterurl);
-char* nowvideo(char* host, char* file, char* hosterurl);
-char* movshare(char* host, char* file, char* hosterurl);
-char* movreel(char* host, char* file, char* hosterurl);
-char* novamov(char* host, char* file, char* hosterurl);
-char* divxstage(char* host, char* file, char* hosterurl);
-char* primeshare(char* host, char* file, char* hosterurl);
 int myvideo_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr, int flag);
 int youtube_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr);
 int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr, int flag);
@@ -51,5 +36,20 @@ char* xvideos(char* link);
 char* solarmovie(char* link);
 char* ard(char* link);
 char* zdf(char* link);
+char* myvideo(char* link, char* url, char* name, int flag);
+char* rtl2now(char* link, char* url, char* name, int flag);
+char* youtube(char* link, char* url, char* name, int flag);
+char* putlocker(char* link);
+char* filenuke(char* link);
+char* streamcloud(char* link);
+char* flashx(char* link);
+char* vidstream(char* link);
+char* xvidstage(char* link);
+char* nowvideo(char* link);
+char* movshare(char* link);
+char* movreel(char* link);
+char* novamov(char* link);
+char* divxstage(char* link);
+char* primeshare(char* link);
 
 #endif

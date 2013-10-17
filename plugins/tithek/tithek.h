@@ -1176,7 +1176,6 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 		{
 			if(tmpstr != NULL) tmpstr1 = beeg(tmpstr);
 		}
-
 		free(tmpstr); tmpstr = NULL;
 
 		if(ostrstr(title, "Internet Radio") != NULL)

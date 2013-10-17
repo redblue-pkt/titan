@@ -1,14 +1,50 @@
 #ifndef FLASHX_H
 #define FLASHX_H
 
-char* flashx(char* host, char* file, char* hosterurl)
+char* flashx(char* link)
 {
-	debug(99, "host: %s", host);
-	debug(99, "file: %s", file);
-	debug(99, "hosterurl: %s", hosterurl);
+	debug(99, "link: %s", link);
 	int debuglevel = getconfigint("debuglevel", NULL);
-	char* tmphost = NULL, *tmppath = NULL, *tmpstr = NULL, *send = NULL, *streamlink = NULL, *ip = NULL, *pos = NULL, *path = NULL;
+	char* tmphost = NULL, *tmppath = NULL, *tmpstr = NULL, *send = NULL, *streamlink = NULL, *ip = NULL;
 	char* playurl = NULL, *tmpstr2 = NULL, *hash1tmp = NULL, *hash2tmp = NULL, *hash = NULL, *hash1 = NULL, *hash2 = NULL, *error = NULL, *cookie1 = NULL, *cookie2 = NULL, *cookie3 = NULL, *tmphost1 = NULL;
+
+
+/////////////
+	char* tmplink = NULL, *pos = NULL, *path = NULL;
+
+	tmplink = ostrcat(link, NULL, 0, 0);
+
+	if(ostrstr(tmplink, "/Out/?s=") != NULL)
+	{
+		tmplink = string_replace("/Out/?s=", "", tmplink, 1);
+		debug(99, "remove out string: %s", tmplink);
+	}
+	
+
+	if(tmplink == NULL || ostrncmp("http://", tmplink, 7))
+	{
+		textbox(_("Message"), _("Hoster Url not http://") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
+		goto end;
+	}
+
+	tmphost = string_replace("http://", "", tmplink, 0);
+	free(tmplink) , tmplink = NULL;
+
+	if(tmphost != NULL)
+		pos = strchr(tmphost, '/');
+	if(pos != NULL)
+	{
+		pos[0] = '\0';
+		path = pos + 1;
+	}
+
+	tmppath = ostrcat("/", path, 0, 0);
+//	free(path), path = NULL;
+
+/////////////
+
+
+/*
 	if(host == NULL || file == NULL) return NULL;
 
 	ip = string_replace("http://", "", (char*)hosterurl, 0);
@@ -23,6 +59,7 @@ char* flashx(char* host, char* file, char* hosterurl)
 	
 	tmphost = ostrcat(ip, NULL, 0, 0);
 	tmppath = ostrcat("/", path, 0, 0);
+*/
 	
 	send = ostrcat(send, "GET ", 1, 0);
 	send = ostrcat(send, tmppath, 1, 0);
