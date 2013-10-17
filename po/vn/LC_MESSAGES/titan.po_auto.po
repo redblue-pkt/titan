@@ -525,6 +525,17 @@ msgstr ""
 #: putlocker.h:136 putlocker.h:184 streamcloud.h:30 streamcloud.h:71
 #: streamcloud.h:146 vidstream.h:44 vidstream.h:80 vidstream.h:92
 #: vidstream.h:161 xvidstage.h:53 xvidstage.h:93 xvidstage.h:170
+#: divxstage.h:79 divxstage.h:115 filenuke.h:37 filenuke.h:84 filenuke.h:96
+#: filenuke.h:108 filenuke.h:157 flashx.h:26 flashx.h:82 flashx.h:128
+#: flashx.h:181 flashx.h:217 flashx.h:252 movreel.h:30 movreel.h:79
+#: movreel.h:91 movreel.h:103 movreel.h:154 movreel.h:202 movshare.h:35
+#: movshare.h:116 novamov.h:35 novamov.h:80 nowvideo.h:36 nowvideo.h:79
+#: primeshare.h:29 primeshare.h:79 primeshare.h:124 putlocker.h:32
+#: putlocker.h:76 putlocker.h:82 putlocker.h:133 putlocker.h:143
+#: putlocker.h:191 solarmovie.h:202 streamcloud.h:31 streamcloud.h:78
+#: streamcloud.h:153 tithek_global.h:110 tithek.h:1316 tithek.h:1338
+#: tithek.h:2086 tithek.h:2148 tithek.h:2162 vidstream.h:45 vidstream.h:86
+#: vidstream.h:98 vidstream.h:167 xvidstage.h:54 xvidstage.h:100
 msgid "Message"
 msgstr ""
 
@@ -698,7 +709,18 @@ msgstr ""
 #: putlocker.h:69 putlocker.h:75 putlocker.h:126 putlocker.h:136
 #: putlocker.h:184 streamcloud.h:30 streamcloud.h:71 streamcloud.h:146
 #: vidstream.h:44 vidstream.h:80 vidstream.h:92 vidstream.h:161 xvidstage.h:53
-#: xvidstage.h:93 xvidstage.h:170
+#: xvidstage.h:93 xvidstage.h:170 divxstage.h:79 divxstage.h:115 filenuke.h:37
+#: filenuke.h:84 filenuke.h:96 filenuke.h:108 filenuke.h:157 flashx.h:26
+#: flashx.h:82 flashx.h:128 flashx.h:181 flashx.h:217 flashx.h:252
+#: movreel.h:30 movreel.h:79 movreel.h:91 movreel.h:103 movreel.h:154
+#: movreel.h:202 movshare.h:35 movshare.h:116 novamov.h:35 novamov.h:80
+#: nowvideo.h:36 nowvideo.h:79 primeshare.h:29 primeshare.h:79
+#: primeshare.h:124 putlocker.h:32 putlocker.h:76 putlocker.h:82
+#: putlocker.h:133 putlocker.h:143 putlocker.h:191 solarmovie.h:202
+#: streamcloud.h:31 streamcloud.h:78 streamcloud.h:153 tithek_global.h:110
+#: tithek.h:1316 tithek.h:1338 tithek.h:2086 tithek.h:2148 tithek.h:2162
+#: vidstream.h:45 vidstream.h:86 vidstream.h:98 vidstream.h:167 xvidstage.h:54
+#: xvidstage.h:100
 msgid "OK"
 msgstr ""
 
@@ -870,7 +892,18 @@ msgstr ""
 #: putlocker.h:69 putlocker.h:75 putlocker.h:126 putlocker.h:136
 #: putlocker.h:184 streamcloud.h:30 streamcloud.h:71 streamcloud.h:146
 #: vidstream.h:44 vidstream.h:80 vidstream.h:92 vidstream.h:161 xvidstage.h:53
-#: xvidstage.h:93 xvidstage.h:170
+#: xvidstage.h:93 xvidstage.h:170 divxstage.h:79 divxstage.h:115 filenuke.h:37
+#: filenuke.h:84 filenuke.h:96 filenuke.h:108 filenuke.h:157 flashx.h:26
+#: flashx.h:82 flashx.h:128 flashx.h:181 flashx.h:217 flashx.h:252
+#: movreel.h:30 movreel.h:79 movreel.h:91 movreel.h:103 movreel.h:154
+#: movreel.h:202 movshare.h:35 movshare.h:116 novamov.h:35 novamov.h:80
+#: nowvideo.h:36 nowvideo.h:79 primeshare.h:29 primeshare.h:79
+#: primeshare.h:124 putlocker.h:32 putlocker.h:76 putlocker.h:82
+#: putlocker.h:133 putlocker.h:143 putlocker.h:191 solarmovie.h:202
+#: streamcloud.h:31 streamcloud.h:78 streamcloud.h:153 tithek_global.h:110
+#: tithek.h:1316 tithek.h:1338 tithek.h:2086 tithek.h:2148 tithek.h:2162
+#: vidstream.h:45 vidstream.h:86 vidstream.h:98 vidstream.h:167 xvidstage.h:54
+#: xvidstage.h:100
 msgid "EXIT"
 msgstr ""
 
@@ -1535,7 +1568,7 @@ msgstr ""
 #: filemanager.h:306 mc_internetbrowser.h:41 mc_wetterinfo.h:41 tithek.h:1348
 #: filemanager.h:307 filemanager.h:331 tithek.h:1357 filemanager.h:343
 #: tithek.h:1356 tithek.h:1368 filemanager.h:345 tithek.h:1369 tithek.h:1341
-#: tithek.h:1342
+#: tithek.h:1342 tithek.h:1343
 msgid "Registration needed, please contact Atemio !"
 msgstr ""
 
@@ -1553,14 +1586,21 @@ msgstr ""
 #: movreel.h:147 movreel.h:195 movshare.h:100 primeshare.h:67 primeshare.h:118
 #: putlocker.h:69 putlocker.h:126 putlocker.h:135 putlocker.h:184
 #: streamcloud.h:71 streamcloud.h:146 vidstream.h:80 vidstream.h:91
-#: vidstream.h:161 xvidstage.h:93 xvidstage.h:170
+#: vidstream.h:161 xvidstage.h:93 xvidstage.h:170 divxstage.h:115
+#: filenuke.h:84 filenuke.h:95 filenuke.h:107 filenuke.h:157 flashx.h:81
+#: flashx.h:127 flashx.h:180 flashx.h:216 flashx.h:251 movreel.h:79
+#: movreel.h:90 movreel.h:102 movreel.h:154 movreel.h:202 movshare.h:116
+#: primeshare.h:73 primeshare.h:124 putlocker.h:76 putlocker.h:133
+#: putlocker.h:142 putlocker.h:191 streamcloud.h:78 streamcloud.h:153
+#: vidstream.h:86 vidstream.h:97 vidstream.h:167 xvidstage.h:100
+#: xvidstage.h:177
 msgid "The page is temporarily unavailable"
 msgstr ""
 
 #: flashx.h:70 putlocker.h:52 solarmovie.h:187 xvidstage.h:64 xvidstage.h:177
 #: solarmovie.h:190 solarmovie.h:265 putlocker.h:53 solarmovie.h:266
 #: xvidstage.h:65 xvidstage.h:175 solarmovie.h:250 solarmovie.h:287
-#: solarmovie.h:205 tithek_global.h:205
+#: solarmovie.h:205 tithek_global.h:205 solarmovie.h:202
 msgid "This file doesn't exist, or has been removed"
 msgstr ""
 
@@ -1807,6 +1847,7 @@ msgstr ""
 #: movie4k.h:989 solarmovie.h:406 solarmovie.h:392 kinox.h:274 movie4k.h:799
 #: movie4k.h:922 movie4k.h:1036 solarmovie.h:441 kinox.h:226 movie4k.h:747
 #: movie4k.h:870 movie4k.h:984 solarmovie.h:359 tithek_global.h:359
+#: movie4k.h:639 movie4k.h:763 solarmovie.h:320
 msgid "Season"
 msgstr ""
 
@@ -1815,7 +1856,8 @@ msgstr ""
 #: movie4k.h:997 solarmovie.h:461 solarmovie.h:411 kinox.h:263 movie4k.h:756
 #: movie4k.h:993 solarmovie.h:410 solarmovie.h:396 kinox.h:278 movie4k.h:803
 #: movie4k.h:1040 solarmovie.h:445 kinox.h:230 movie4k.h:751 movie4k.h:988
-#: solarmovie.h:363 tithek_global.h:363
+#: solarmovie.h:363 tithek_global.h:363 movie4k.h:643 movie4k.h:882
+#: solarmovie.h:324
 msgid "Episode"
 msgstr ""
 
@@ -2444,7 +2486,8 @@ msgid "WLAN Info"
 msgstr ""
 
 #: nowvideo.h:39 divxstage.h:44 novamov.h:44 nowvideo.h:42 primeshare.h:44
-#: divxstage.h:75 novamov.h:73 nowvideo.h:72 primeshare.h:73
+#: divxstage.h:75 novamov.h:73 nowvideo.h:72 primeshare.h:73 divxstage.h:79
+#: novamov.h:80 nowvideo.h:79 primeshare.h:79
 msgid ""
 "The file is being transfered to our other servers. This may take few minutes."
 msgstr ""
@@ -4793,22 +4836,22 @@ msgid ""
 msgstr ""
 
 #: tithek.h:1321 tithek.h:1330 tithek.h:1329 tithek.h:1341 tithek.h:1342
-#: tithek.h:1314 tithek.h:1315
+#: tithek.h:1314 tithek.h:1315 tithek.h:1316
 msgid "Start playback"
 msgstr ""
 
 #: tithek.h:1343 tithek.h:1352 tithek.h:1351 tithek.h:1363 tithek.h:1364
-#: tithek.h:1336 tithek.h:1337
+#: tithek.h:1336 tithek.h:1337 tithek.h:1338
 msgid "Can't get Streamurl !"
 msgstr ""
 
 #: tithek.h:1362 tithek.h:1371 tithek.h:1370 tithek.h:1382 tithek.h:1383
-#: tithek.h:1355 tithek.h:1356
+#: tithek.h:1355 tithek.h:1356 tithek.h:1357
 msgid "TitanNit Tithek disclaimer"
 msgstr ""
 
 #: tithek.h:1425 tithek.h:1436 tithek.h:1435 tithek.h:1447 tithek.h:1448
-#: tithek.h:1420 tithek.h:1421
+#: tithek.h:1420 tithek.h:1421 tithek.h:1422
 msgid "Page"
 msgstr ""
 
@@ -4821,12 +4864,12 @@ msgid "The hoster is not yet supported for the time !"
 msgstr ""
 
 #: tithek.h:2131 tithek.h:2139 tithek.h:2138 tithek.h:2173 tithek.h:2174
-#: tithek.h:2146 tithek.h:2147
+#: tithek.h:2146 tithek.h:2147 tithek.h:2148
 msgid "Remove this Favorite ?"
 msgstr ""
 
 #: tithek.h:2145 tithek.h:2153 tithek.h:2152 tithek.h:2187 tithek.h:2188
-#: tithek.h:2160 tithek.h:2161
+#: tithek.h:2160 tithek.h:2161 tithek.h:2162
 msgid "Add this link as Favorite ?"
 msgstr ""
 
@@ -5778,7 +5821,8 @@ msgid ""
 "Syntax Error on updatefile"
 msgstr ""
 
-#: tithek.h:2111 tithek.h:2112 tithek.h:2084 tithek.h:2085
+#: tithek.h:2111 tithek.h:2112 tithek.h:2084 tithek.h:2085 tithek_global.h:110
+#: tithek.h:2086
 msgid "The hoster is not yet supported !"
 msgstr ""
 
@@ -5819,12 +5863,14 @@ msgstr ""
 msgid "Channel scan ended."
 msgstr ""
 
-#: putlocker.h:45 putlocker.h:75
+#: putlocker.h:45 putlocker.h:75 putlocker.h:82
 msgid "This file doesn't exist, or has been removed."
 msgstr ""
 
 #: divxstage.h:36 filenuke.h:36 flashx.h:25 movreel.h:29 movshare.h:34
 #: novamov.h:34 nowvideo.h:35 primeshare.h:28 putlocker.h:31 streamcloud.h:30
-#: vidstream.h:44 xvidstage.h:53
+#: vidstream.h:44 xvidstage.h:53 filenuke.h:37 flashx.h:26 movreel.h:30
+#: movshare.h:35 novamov.h:35 nowvideo.h:36 primeshare.h:29 putlocker.h:32
+#: streamcloud.h:31 vidstream.h:45 xvidstage.h:54
 msgid "Hoster Url not http://"
 msgstr ""
