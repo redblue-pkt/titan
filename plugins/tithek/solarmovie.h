@@ -287,7 +287,7 @@ int solarmovie_hoster(struct skin* grid, struct skin* listbox, struct skin* coun
 					string_remove_whitechars(tmphname);
 					strstrip(tmphname);
 
-					pichname = ostrcat(hname, NULL, 0, 0);
+					pichname = ostrcat(tmphname, NULL, 0, 0);
 					string_tolower(pichname);
 					pichname = stringreplacecharonce(pichname, '.', '\0');
 
