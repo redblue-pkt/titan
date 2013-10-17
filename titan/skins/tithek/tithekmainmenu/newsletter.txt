@@ -1,3 +1,4 @@
+7#17.10.2013#Software Update#Diese Woche wird die TitanNit Version 1.34 freigegeben.\nDiese Version wird nicht im Online-Update angeboten, die TPK Installationsroutinen wurden verbessert\nund sind nicht kompatibel mit der alten Version.\nBitte alle SWAP Erweiterungen vorher löschen und später die TPKs neu installieren.
 6#09.08.2013#Software Update#An diesem Wochenende wird die TitanNit Version 1.32\nfür alle Boxen freigegeben.\n
 5#14.07.2013#Software Update#An diesem Wochenende wird die TitanNit Version 1.30\nfür alle Boxen freigegeben.\nDiese Version wird für die Atemio 510 und Atemio 7600\nnur als IRD Image mit dem iboot 2013 freigegeben.
 4#26.06.2013#Atemio news#Die TitanNit Test-Version 1.29 für alle Boxen\nund für die Atemio7600 mit dem neuen iboot ist ab heute verfügbar.\nIn der IRD Testversion Atemio7600 ist bereits das iboot enthalten\nBootzeiten unter 20 Sekunden sind nun auf der Atemio möglich.
