@@ -1236,7 +1236,7 @@ void playstartservice()
 // startfolder 2 = do nothing with playstop/playstart
 int screenplay(char* startfile, char* showname, int startfolder, int flag)
 {
-	int rcret = 0, playertype = 0, ret = 0, rcwait = 1000, screensaver_delay = 0;
+	int rcret = 0, playertype = 0, ret = 0, rcwait = 1000, screensaver_delay = 0, holdselection = 0;
 	char* file = NULL, *tmpstr = NULL, *tmpstr1 = NULL;
 	char* tmppolicy = NULL, *startdir = NULL;
 	char* formats = NULL;
@@ -1295,7 +1295,8 @@ playerstart:
 			startdir = dirname(tmpstr1);
 		}
 		free(file); file = NULL;
-		file = screendir(startdir, formats, basename(tmpstr), &dirrcret, ".epg", _("DEL"), getrcconfigint("rcred", NULL), _("SELECT"), 0, "EPG", getrcconfigint("rcyellow", NULL), "SORT", getrcconfigint("rcblue", NULL), 90, 1, 90, 1, 64);
+		file = screendirreal(startdir, formats, basename(tmpstr), &dirrcret, ".epg", _("DEL"), getrcconfigint("rcred", NULL), _("SELECT"), 0, "EPG", getrcconfigint("rcyellow", NULL), "SORT", getrcconfigint("rcblue", NULL), 90, 1, 90, 1, holdselection, 64);
+		holdselection = 0;
 		free(tmpstr); tmpstr = NULL;
 		free(tmpstr1); tmpstr1 = NULL;
 		startdir = tmpstartdir;
@@ -1321,7 +1322,10 @@ playerstart:
 			free(tmpstr); tmpstr = NULL;
 		
 			if(playcheckdirrcret(file, dirrcret) == 1)
+			{
+				if(dirrcret == 1) holdselection = 1;
 				goto playerstart;
+			}
 
 			if(startfolder == 1 && flag != 3)
 			{

@@ -23,7 +23,7 @@ void readlabelext(struct skin* label, char* filename, char* ext)
 //flag 1: add selected dir to path
 //flag 2-15: add selected dir to path and use dirrcret for dirs
 //flag 16-127: use dirrcret for dirs
-char* screendir(char* path, char* mask, char* selection, int *dirrcret, char* ext, char* b1, int rc1, char* b2, int rc2, char* b3, int rc3, char* b4, int rc4, int width, int prozwidth, int height, int prozheight, int flag)
+char* screendirreal(char* path, char* mask, char* selection, int *dirrcret, char* ext, char* b1, int rc1, char* b2, int rc2, char* b3, int rc3, char* b4, int rc4, int width, int prozwidth, int height, int prozheight, int holdselection, int flag)
 {
 	int rcret = 0;
 	struct skin* dir = NULL;
@@ -50,8 +50,11 @@ char* screendir(char* path, char* mask, char* selection, int *dirrcret, char* ex
 	else
 		tmppath = ostrcat(path, NULL, 0, 0);
 
-	filelist->aktline = 0;
-	filelist->aktpage = 0;
+	if(holdselection == 0)
+	{
+		filelist->aktline = 0;
+		filelist->aktpage = 0;
+	}
 	changemask(filelist, mask);
 	changeinput(filelist, tmppath);
 	changetext(filelistpath, filelist->input);
@@ -63,7 +66,7 @@ char* screendir(char* path, char* mask, char* selection, int *dirrcret, char* ex
 	free(tmppath);
 	delmarkedscreennodes(dir, FILELISTDELMARK);
 	createfilelist(dir, filelist, 0);
-	setlistboxselection(filelist, selection);
+	if(holdselection == 0) setlistboxselection(filelist, selection);
 
 	if(ext != NULL)
 	{
@@ -258,6 +261,11 @@ char* screendir(char* path, char* mask, char* selection, int *dirrcret, char* ex
 	delownerrc(dir);
 	clearscreen(dir);
 	return ret;
+}
+
+char* screendir(char* path, char* mask, char* selection, int *dirrcret, char* ext, char* b1, int rc1, char* b2, int rc2, char* b3, int rc3, char* b4, int rc4, int width, int prozwidth, int height, int prozheight, int flag)
+{
+	return screendirreal(path, mask, selection, dirrcret, ext, b1, rc1, b2, rc2, b3, rc3, b4, rc4, width, prozwidth, height, prozheight, 0, flag);
 }
 
 #endif
