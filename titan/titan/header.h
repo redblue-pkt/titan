@@ -783,6 +783,7 @@ int getlfiletype(char* filename);
 unsigned long long getfreespace(char* dir);
 char* getfilenamepng(char* filename);
 char* htmlencode(char* from);
+void waitmsgbar(int sec, int exit, int flag);
 
 //rcconfig.h
 int getrcconfigint(char *key, char* ext);

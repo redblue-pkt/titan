@@ -33,9 +33,8 @@ char* streamcloud(char* host, char* file, char* hosterurl)
 	free(send), send = NULL;
 	debug(99, "tmpstr: %s", tmpstr);
 
-	//waitmsg(10, "Streamcloud")
-	sleep(10);
-
+	waitmsgbar(20, 0, 1);
+	
 	titheklog(debuglevel, "/tmp/streamcould1_get", NULL, tmpstr);
 
 	if(tmpstr == NULL)

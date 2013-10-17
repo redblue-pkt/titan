@@ -73,7 +73,6 @@ char* movshare(char* host, char* file, char* hosterurl)
 		goto end;
 	}
 
-	sleep(1);
 	streamlink = string_resub("url=", "&", tmpstr, 0);
 end:
 	free(tmphost); tmphost = NULL;

@@ -45,8 +45,6 @@ char* vidstream(char* host, char* file, char* hosterurl)
 	debug(99, "tmpstr: %s", tmpstr);
 	titheklog(debuglevel, "/tmp/vidstream1_get", NULL, tmpstr);
 
-//	sleep(1);
-
 	if(tmpstr == NULL)
 	{
 		textbox(_("Message"), _("The page is temporarily unavailable") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
@@ -134,7 +132,6 @@ char* vidstream(char* host, char* file, char* hosterurl)
 		goto end;
 	}
 
-//	sleep(1);
 	streamlink = string_resub("file: \"", "\",", tmpstr, 0);
 
 	titheklog(debuglevel, "/tmp/vidstream3_streamlink", NULL, streamlink);

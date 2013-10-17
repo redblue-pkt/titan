@@ -75,7 +75,6 @@ char* novamov(char* host, char* file, char* hosterurl)
 	debug(99, "tmpstr: %s", tmpstr);
 	titheklog(debuglevel, "/tmp/novamov2_get", NULL, tmpstr);
 
-	sleep(1);
 	streamlink = string_resub("url=", "&", tmpstr, 0);
 	debug(99, "streamlink1: %s", streamlink);
 	htmldecode(streamlink, streamlink);

@@ -86,7 +86,6 @@ char* putlocker(char* host, char* file, char* hosterurl)
 	send = ostrcat(send, hash, 1, 0);
 	debug(99, "send: %s", send);
 
-//	sleep(7);
 	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 	free(send); send = NULL;
 	debug(99, "tmpstr: %s", tmpstr);
@@ -143,8 +142,6 @@ char* putlocker(char* host, char* file, char* hosterurl)
 	send = ostrcat(send, "PHPSESSID=", 1, 0);
 	send = ostrcat(send, phpsessid, 1, 0);
 	send = ostrcat(send, "\r\nConnection: close\r\nUser-Agent: Python-urllib/2.6\r\n\r\n", 1, 0);
-
-//	sleep(5);
 	
 	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 0);
 	free(send); send = NULL;

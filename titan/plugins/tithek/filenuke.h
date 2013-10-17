@@ -50,8 +50,6 @@ char* filenuke(char* host, char* file, char* hosterurl)
 		goto end;
 	}
 
-//	sleep(2);
-
 	if(tmpstr == NULL || ostrstr(tmpstr, "<title>The page is temporarily unavailable</title>") != NULL)
 	{
 		error = string_resub("<td align=\"center\" valign=\"middle\">", "</td>", tmpstr, 0);
@@ -113,8 +111,6 @@ char* filenuke(char* host, char* file, char* hosterurl)
 	send = ostrcat(send, "\r\nContent-Type: application/x-www-form-urlencoded\r\n\r\n", 1, 0);
 	send = ostrcat(send, hash, 1, 0);
 	debug(99, "send: %s", send);
-
-//	sleep(5);
 	
 	post = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 0);
 	free(send), send = NULL;
