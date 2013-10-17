@@ -186,6 +186,15 @@ void deltpk(struct tpk* tpknode)
 			
 			free(node->titanname);
 			node->titanname = NULL;
+			
+			free(node->installpath);
+			node->installpath = NULL;
+			
+			free(node->usepath);
+			node->usepath = NULL;
+			
+			free(node->boxtype);
+			node->boxtype = NULL;
 
 			free(node);
 			node = NULL;
