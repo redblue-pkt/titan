@@ -70,8 +70,8 @@ char* putlocker(char* host, char* file, char* hosterurl)
 	debug(99, "hashlen: %s", hashlen);
 
 	//create send string
-	send = ostrcat(send, "POST /file/", 1, 0);
-	send = ostrcat(send, file, 1, 0);
+	send = ostrcat(send, "POST ", 1, 0);
+	send = ostrcat(send, tmpfile, 1, 0);
 	send = ostrcat(send, " HTTP/1.1\r\nContent-Length: ", 1, 0);
 	send = ostrcat(send, hashlen, 1, 0);
 	send = ostrcat(send, "\r\nAccept-Encoding: gzip\r\nConnection: close\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nHost: ", 1, 0);

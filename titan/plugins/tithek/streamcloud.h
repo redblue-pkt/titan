@@ -32,7 +32,10 @@ char* streamcloud(char* host, char* file, char* hosterurl)
 	tmpstr = gethttpreal(tmphost, tmpfile, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 	free(send), send = NULL;
 	debug(99, "tmpstr: %s", tmpstr);
-	sleep(20);
+
+	//waitmsg(10, "Streamcloud")
+	sleep(10);
+
 	titheklog(debuglevel, "/tmp/streamcould1_get", NULL, tmpstr);
 
 	if(tmpstr == NULL)
@@ -57,6 +60,9 @@ char* streamcloud(char* host, char* file, char* hosterurl)
 
 	char* pos3 = ostrstr(tmpstr, "<input type=\"hidden\" name=\"op\" value=");
 	op = getxmlentry(pos3, "value=");
+	debug(99, "op1: %s", op);
+	op = string_replace_all("download2", "download1", op, 1);
+	debug(99, "op2: %s", op);
 
 	char* pos4 = ostrstr(tmpstr, "<input type=\"hidden\" name=\"hash\" value=");
 	hashline = getxmlentry(pos4, "value=");

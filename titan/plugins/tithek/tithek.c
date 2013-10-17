@@ -25,6 +25,8 @@
 #include "movshare.h"
 #include "movreel.h"
 #include "novamov.h"
+#include "divxstage.h"
+#include "primeshare.h"
 
 char pluginname[] = "TiTan Mediathek";
 char plugindesc[] = "TiTan Mediathek";
