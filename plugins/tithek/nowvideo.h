@@ -73,7 +73,6 @@ char* nowvideo(char* host, char* file, char* hosterurl)
 	debug(99, "tmpstr: %s", tmpstr);
 	titheklog(debuglevel, "/tmp/nowvideo2_get", NULL, tmpstr);
 
-	sleep(1);
 	streamlink = string_resub("url=", "&", tmpstr, 0);
 end:
 	free(tmphost); tmphost = NULL;

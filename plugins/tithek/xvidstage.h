@@ -59,7 +59,6 @@ char* xvidstage(char* host, char* file, char* hosterurl)
 
 	free(send); send = NULL;
 
-//	sleep(1);
 	if(tmpstr == NULL)
 	{
 		textbox(_("Message"), _("The page is temporarily unavailable") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
