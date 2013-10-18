@@ -268,13 +268,16 @@ int checkpng(char* filename)
 	return 1;
 }
 
-char **str_split(char *string, char *delim) {
+char **str_split(char *string, char *delim)
+{
 	char **tokens = NULL;
 	char *working = NULL;
 	char *token = NULL;
 	int idx = 0;
+	
+	if(string == NULL) return NULL;
 
-	tokens  = malloc(sizeof(char *) * MAXTOKENS);
+	tokens = malloc(sizeof(char*) * MAXTOKENS);
 	if(tokens == NULL)
 		return NULL;
 
@@ -291,9 +294,11 @@ char **str_split(char *string, char *delim) {
 	idx = 0;
 
 	/* always keep the last entry NULL termindated */
-	while((idx < (MAXTOKENS - 1)) && (token != NULL)) {
+	while(idx < (MAXTOKENS - 1) && token != NULL)
+	{
 		tokens[idx] = malloc(sizeof(char) * strlen(token) + 1);
-		if(tokens[idx] != NULL) {
+		if(tokens[idx] != NULL)
+		{
 			strcpy(tokens[idx], token);
 			idx++;
 			token = strtok(NULL, delim);
