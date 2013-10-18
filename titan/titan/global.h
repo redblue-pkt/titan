@@ -3,15 +3,22 @@
 
 //flag 0: with wait message
 //flag 1: without wait message
-void waitmsgbar(int sec, int exit, int flag)
+void waitmsgbar(int sec, int exit, char* text, int flag)
 {
 	if(sec < 1) return;
 	int maxsec = sec, rcret = -1;
 	
+	char* tmpstr = NULL;
 	struct skin* waitmsgbar = getscreen("waitmsgbar");
 	struct skin* load = getscreen("loading");
 	
 	waitmsgbar->progresssize = 0;
+	if(text == NULL)
+		tmpstr = ostrcat("0%", NULL, 0, 0);
+	else
+		tmpstr = ostrcat(_(text), " (0%)", 0, 0);
+	changetext(waitmsgbar, tmpstr);
+	free(tmpstr); tmpstr = NULL;
 	
 	if(flag == 0) drawscreen(load, 0, 0);
 	
@@ -32,8 +39,20 @@ void waitmsgbar(int sec, int exit, int flag)
 		
 		sec--;
 		waitmsgbar->progresssize = ((maxsec - sec) * 100) / maxsec;
+		
+		if(text == NULL)
+			tmpstr = ostrcat(oitoa(waitmsgbar->progresssize), "%", 1, 0);
+		else
+		{
+			tmpstr = ostrcat(_(text), " (", 1, 0);
+			tmpstr = ostrcat(tmpstr, oitoa(waitmsgbar->progresssize), 1, 1);
+			tmpstr = ostrcat(tmpstr, "%)", 1, 0);
+		}
+		changetext(waitmsgbar, tmpstr);
+		free(tmpstr); tmpstr = NULL;
 	}
 	
+	free(tmpstr); tmpstr = NULL;
 	if(flag == 0) clearscreen(load);
 	clearscreen(waitmsgbar);
 	drawscreen(skin, 0, 0);
@@ -6384,17 +6403,15 @@ char* string_striptags(char* str)
 
 char* string_resub(char* str, char* str2, char* input, int dir)
 {
-	int len;
 	char* tmpstr = NULL, *pos = NULL, *pos2 = NULL;
 
 	if(str == NULL || str2 == NULL || input == NULL) return NULL;
 
 	if(dir == 0)
 	{
-		len = strlen(str);
 		pos = ostrstr(input, str);
 		if(pos == NULL) return NULL;
-		pos += len;
+		pos += strlen(str);
 
 		pos2 = ostrstr(pos, str2);
 		if(pos2 == NULL) return NULL;
@@ -6404,10 +6421,9 @@ char* string_resub(char* str, char* str2, char* input, int dir)
 		pos2 = ostrstr(input, str2);
 		if(pos2 == NULL) return NULL;
 
-		len = strlen(str);
 		pos = ostrrstr(input, str, pos2 - input, 0);
 		if(pos == NULL) return NULL;
-		pos += len;
+		pos += strlen(str);
 	}
 
 	tmpstr = strndup(pos, pos2 - pos);
