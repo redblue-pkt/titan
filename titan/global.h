@@ -3731,20 +3731,14 @@ void ostrcatbig(char** value1, char* value2, int* maxlen, int* pos)
 	if(value2 == NULL)
 		return;
 
-	len = strlen(value2);
-
-	if(len > MINMALLOC)
-	{
-		err("string to long");
-		return;
-	}
+	len = strlen(value2) + 1;
 
 	if(*value1 != NULL && maxlen == 0)
 		*maxlen = strlen(*value1);
 
-	if(*value1 == NULL || *pos + len + 1 > *maxlen)
+	if(*value1 == NULL || *pos + len > *maxlen)
 	{
-		*maxlen = *maxlen + (MINMALLOC * 10);
+		*maxlen = *maxlen + len + (MINMALLOC * 10);
 		*value1 = realloc(*value1, *maxlen);
 		if(*value1 == NULL)
 		{
@@ -3753,8 +3747,8 @@ void ostrcatbig(char** value1, char* value2, int* maxlen, int* pos)
 		}
 	}
 
-	memcpy(*value1 + *pos, value2, len + 1);
-	*pos = *pos + len;
+	memcpy(*value1 + *pos, value2, len);
+	*pos = *pos + (len - 1);
 }
 
 char* ostrshrink(char* value)
@@ -5540,6 +5534,7 @@ char* readeittomem(const char* filename)
 
 char* command(char* input)
 {
+	int maxlen = 0, pos = 0;
 	char* tmpstr = NULL, *fileline = NULL;
 	FILE *iopipe = NULL;
 	
@@ -5561,7 +5556,15 @@ char* command(char* input)
 	while(!feof(iopipe))
 	{
 		if(fgets(fileline, MINMALLOC, iopipe) != NULL)
-			tmpstr = ostrcat(tmpstr, fileline, 1, 0);
+			ostrcatbig(&tmpstr, fileline, &maxlen, &pos);
+	}
+	
+	if(pos > 0)
+	{
+		char* tmp = tmpstr;
+		tmpstr = realloc(tmpstr, pos + 1);
+		if(tmpstr == NULL)
+			tmpstr = tmp;
 	}
 
 	free(fileline);
