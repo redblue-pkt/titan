@@ -754,20 +754,20 @@ char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, 
 	
 	if(flag == 0) headerlen = 0;
 
-	//TODO: case-sens check
-	char* contentlen = ostrstr(tmpbuf, "Content-Length:");
+	char* contentlen = ostrstrcase(tmpbuf, "Content-Length:");
 	if(contentlen != NULL)
 	{
 		contentlen += 15;
 		len = strtoul(contentlen, NULL, 10);
 	}
 	
-	if(filename == NULL && (flag == 0 || flag == 1) && ostrstr(tmpbuf, "gzip") != NULL)
+	if(filename == NULL && (flag == 0 || flag == 1) && ostrstrcase(tmpbuf, "gzip") != NULL)
 	{
 		if(flag == 0) gzip = -1;
 		else if(flag == 1) gzip = headerlen;
 	}
-	if(ostrstr(tmpbuf, "Transfer-Encoding: chunked") != NULL)
+	
+	if(ostrstrcase(tmpbuf, "Transfer-Encoding: chunked") != NULL)
 	{
 		chunked = 1; 
 		chunkedlen = getchunkedlen(sock, timeout);
