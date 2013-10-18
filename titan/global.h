@@ -5692,7 +5692,7 @@ char* strstrip(char *text)
 	while(isspace(tmpstr[len - 1])) tmpstr[--len] = '\0';
 	while(*tmpstr && isspace(*tmpstr)) ++tmpstr, --len;
 
-	memmove(text, tmpstr, len + 1);
+	if(text != tmpstr) memmove(text, tmpstr, len + 1);
 
 	return text;
 }
