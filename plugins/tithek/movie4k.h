@@ -278,7 +278,7 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 					if(nolinks == NULL)
 					{
 						a++;
-//						ret1[i].part = string_replace_all("</a>&nbsp;</td>", "</a></td>", ret1[i].part, 0);
+//						ret1[i].part = string_replace_all("</a>&nbsp;</td>", "</a></td>", ret1[i].part, 1);
 
 						pathnew = string_resub("<a href=\\\"", "\\", ret1[i].part, 0);
 						tmphname = string_resub("title=\\\"", " ", ret1[i].part, 0);
