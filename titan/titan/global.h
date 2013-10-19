@@ -44,7 +44,7 @@ void waitmsgbar(int sec, int exit, char* text, int flag)
 			tmpstr = ostrcat(oitoa(waitmsgbar->progresssize), "%", 1, 0);
 		else
 		{
-			tmpstr = ostrcat(_(text), " (", 1, 0);
+			tmpstr = ostrcat(_(text), " (", 0, 0);
 			tmpstr = ostrcat(tmpstr, oitoa(waitmsgbar->progresssize), 1, 1);
 			tmpstr = ostrcat(tmpstr, "%)", 1, 0);
 		}
