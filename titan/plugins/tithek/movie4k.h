@@ -252,6 +252,8 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 	{
 		drawscreen(load, 0, 0);
 
+		tmpstr1 = ostrcat(tmpstr, NULL, 0, 0);
+
 		if(ostrstr(tmpstr, "links\[") == NULL)
 		{
 			hnamein = string_resub("width=\"16\"> &nbsp;", "</a></td><td align=", tmpstr, 0);
@@ -263,8 +265,6 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 			writesys("/tmp/movie4k.list", tmpstr, 1);
 			tmpstr = command("cat /tmp/movie4k.list | grep ^links");
 		}
-
-		tmpstr1 = ostrcat(tmpstr, NULL, 0, 0);
 
 		int count = 0;
 		int incount = 0;
