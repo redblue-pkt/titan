@@ -226,8 +226,9 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 	debug(99, "link: %s", link);
 	int debuglevel = getconfigint("debuglevel", NULL);
 	int ret = 1, maxlen = 0, bigpos = 0;
-	char* extra = NULL, *pos3 = NULL, *ip = NULL, *pos = NULL, *path = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *line = NULL, *url = NULL, *url2 = NULL, *url3 = NULL, *url4 = NULL, *pathnew = NULL, *id = NULL, *logfile = NULL, *tmphname = NULL, *hnamein = NULL, *nolinks = NULL;
-	char* pichname = NULL;
+	char* extra = NULL, *pos3 = NULL, *ip = NULL, *pos = NULL, *path = NULL, *tmpstr = NULL, *line = NULL, *url = NULL, *url2 = NULL;
+	char* url3 = NULL, *url4 = NULL, *pathnew = NULL, *id = NULL, *logfile = NULL, *tmphname = NULL, *hnamein = NULL, *nolinks = NULL;
+	char* tmpid = NULL, *pichname = NULL;
 	if(listbox == NULL || listbox->select == NULL || listbox->select->handle == NULL)
 		return ret;
 
@@ -248,17 +249,15 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 	if(tmpstr != NULL)
 	{
 		drawscreen(load, 0, 0);
-
-		tmpstr1 = ostrcat(tmpstr, NULL, 0, 0);
 		
 		int countj = 0;
-		if(ostrstr(tmpstr1, "&part=1") != NULL)
+		if(ostrstr(tmpstr, "&part=1") != NULL)
 			countj = 1;
-		if(ostrstr(tmpstr1, "&part=2") != NULL)
+		if(ostrstr(tmpstr, "&part=2") != NULL)
 			countj = 2;
-		if(ostrstr(tmpstr1, "&part=3") != NULL)
+		if(ostrstr(tmpstr, "&part=3") != NULL)
 			countj = 3;
-		if(ostrstr(tmpstr1, "&part=4") != NULL)
+		if(ostrstr(tmpstr, "&part=4") != NULL)
 			countj = 4;
 
 		if(ostrstr(tmpstr, "links\[") == NULL)
@@ -272,6 +271,8 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 			writesys("/tmp/movie4k.list", tmpstr, 1);
 			tmpstr = command("cat /tmp/movie4k.list | grep ^links");
 		}
+		
+		tmpid = oregex(".*movie.php?id=(.*[0-9]{1,10})&part=.*", tmpstr);
 
 		int count = 0;
 		int incount = 0;
@@ -306,7 +307,7 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 						if(id == NULL)
 							id = oregex(".*tvshows-(.*[0-9]{1,10})-.*", pathnew);
 						if(id == NULL)
-							id = oregex(".*movie.php?id=(.*[0-9]{1,10})&part=.*", tmpstr1);
+							id = ostrcat(tmpid, NULL, 0, 0);
 
 //						debug(99, "(%d/%d/%d) pathnew: %s hname: %s id: %s",a ,i ,max ,pathnew , tmphname, id);
 
@@ -338,7 +339,7 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 						if(id == NULL)
 							id = oregex(".*tvshows-(.*[0-9]{1,10})-.*", path);
 						if(id == NULL)
-							id = oregex(".*movie.php?id=(.*[0-9]{1,10})&part=.*", tmpstr1);
+							id = ostrcat(tmpid, NULL, 0, 0);
 
 						tmphname = ostrcat(hnamein, NULL, 0, 0);
 
@@ -520,19 +521,20 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 
 				}
 
-				free(url), url = NULL;
-				free(url2), url2 = NULL;
-				free(url3), url3 = NULL;
-				free(url4), url4 = NULL;
-				free(pathnew), pathnew = NULL;
-				free(logfile), logfile = NULL;					
+				free(url); url = NULL;
+				free(url2); url2 = NULL;
+				free(url3); url3 = NULL;
+				free(url4); url4 = NULL;
+				free(pathnew); pathnew = NULL;
+				free(logfile); logfile = NULL;
+				free(id); id = NULL;					
 			}
 		}
-		free(ret1), ret1 = NULL;
+		free(ret1); ret1 = NULL;
 	}
 
-	free(tmpstr1), tmpstr1 = NULL;
-	free(tmpstr), tmpstr = NULL;	
+	free(tmpid); tmpid = NULL;
+	free(tmpstr); tmpstr = NULL;	
 
 	if(line != NULL)
 	{
