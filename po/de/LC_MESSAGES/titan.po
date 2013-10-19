@@ -4211,3 +4211,9 @@ msgstr "FLASH: Installation im Flash, wird nach einem Imageupdate gelöscht.\nMNT
 
 msgid "Change Channelname"
 msgstr "Kanalnamen aktualisieren"
+
+msgid "PLAY"
+msgstr "Abspielen"
+
+msgid "Choice Playback"
+msgstr "Wiedergabe auswählen"
