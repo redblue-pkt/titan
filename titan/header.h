@@ -695,6 +695,7 @@ unsigned long readsysul(const char *filename, int line);
 char* oitoax(int value);
 void closeonexec(int fd);
 char* ostrstrcase(char* str, char* sub);
+char* ostrnstr(char* str, char* search, int size);
 char* getdevcontent(char* devconfig);
 char* getxmlentry(char *line, char *searchstr);
 void debugstack(int sig, void* address, void* address1);
