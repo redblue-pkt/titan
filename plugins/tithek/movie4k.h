@@ -53,7 +53,7 @@ char* movie4k(char* link)
 
 int movie4k_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr, int flag)
 {
-	int ret = 1;
+	int ret = 1, maxlen = 0, bigpos = 0;
 	int incount = 0;
 	char* tmpstr = NULL;
 	char* from = NULL;
@@ -172,18 +172,21 @@ int movie4k_search(struct skin* grid, struct skin* listbox, struct skin* countla
 						lang = ostrcat(" (en)", NULL, 0, 0);
 					else
 						lang = ostrcat(" (\?\?)", NULL, 0, 0);
-					line = ostrcat(line, name, 1, 0);
+					
+					ostrcatbig(&line, name, &maxlen, &bigpos);
+					ostrcatbig(&line, lang, &maxlen, &bigpos);
+					ostrcatbig(&line, "#http://www.movie4k.to/", &maxlen, &bigpos);
+					ostrcatbig(&line, link, &maxlen, &bigpos);
+					ostrcatbig(&line, "#", &maxlen, &bigpos);
+					ostrcatbig(&line, pic, &maxlen, &bigpos);
+					ostrcatbig(&line, "#movie4k_search_", &maxlen, &bigpos);
+					char* cincount = oitoa(incount + time(NULL));
+					ostrcatbig(&line, cincount, &maxlen, &bigpos);
+					free(cincount); cincount = NULL;
+					ostrcatbig(&line, ".jpg#Movie4k - Search#", &maxlen, &bigpos);
+					ostrcatbig(&line, type, &maxlen, &bigpos);
+					ostrcatbig(&line, "\n", &maxlen, &bigpos);  
 
-					line = ostrcat(line, lang, 1, 0);
-					line = ostrcat(line, "#http://www.movie4k.to/", 1, 0);
-					line = ostrcat(line, link, 1, 0);
-					line = ostrcat(line, "#", 1, 0);
-					line = ostrcat(line, pic, 1, 0);
-					line = ostrcat(line, "#movie4k_search_", 1, 0);
-					line = ostrcat(line, oitoa(incount + time(NULL)), 1, 1);
-					line = ostrcat(line, ".jpg#Movie4k - Search#", 1, 0);
-					line = ostrcat(line, type, 1, 0);
-					line = ostrcat(line, "\n", 1, 0);
 					free(str), str = NULL;
 											
 					free(name), name = NULL;
@@ -207,6 +210,8 @@ int movie4k_search(struct skin* grid, struct skin* listbox, struct skin* countla
 		{
 			menu = ostrcat("/tmp/tithek/movie4k.search.list", NULL, 0, 0);
 			writesys(menu, line, 0);
+			free(line); line = NULL;
+			
 			struct tithek* tnode = (struct tithek*)listbox->select->handle;
 			createtithek(tnode, tnode->title,  menu, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);
 			ret = 0;
@@ -402,11 +407,9 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 						ostrcatbig(&line, extra, &maxlen, &bigpos);
 						ostrcatbig(&line, ")", &maxlen, &bigpos);					
 					}
-					ostrcatbig(&line, "#", &maxlen, &bigpos);
-					ostrcatbig(&line, "http://www.movie4k.to/", &maxlen, &bigpos);
+					ostrcatbig(&line, "#http://www.movie4k.to/", &maxlen, &bigpos);
 					ostrcatbig(&line, url, &maxlen, &bigpos);
-					ostrcatbig(&line, "#", &maxlen, &bigpos);
-					ostrcatbig(&line, "http://atemio.dyndns.tv/mediathek/menu/", &maxlen, &bigpos);
+					ostrcatbig(&line, "#http://atemio.dyndns.tv/mediathek/menu/", &maxlen, &bigpos);
 					ostrcatbig(&line, pichname, &maxlen, &bigpos);
 					ostrcatbig(&line, ".jpg#movie4k_", &maxlen, &bigpos);
 					ostrcatbig(&line, pichname, &maxlen, &bigpos);
@@ -434,11 +437,9 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 							ostrcatbig(&line, extra, &maxlen, &bigpos);
 							ostrcatbig(&line, ")", &maxlen, &bigpos);					
 						}
-						ostrcatbig(&line, "#", &maxlen, &bigpos);
-						ostrcatbig(&line, "http://www.movie4k.to/", &maxlen, &bigpos);
+						ostrcatbig(&line, "#http://www.movie4k.to/", &maxlen, &bigpos);
 						ostrcatbig(&line, url2, &maxlen, &bigpos);
-						ostrcatbig(&line, "#", &maxlen, &bigpos);
-						ostrcatbig(&line, "http://atemio.dyndns.tv/mediathek/menu/", &maxlen, &bigpos);
+						ostrcatbig(&line, "#http://atemio.dyndns.tv/mediathek/menu/", &maxlen, &bigpos);
 						ostrcatbig(&line, pichname, &maxlen, &bigpos);
 						ostrcatbig(&line, ".jpg#kinox_", &maxlen, &bigpos);
 						ostrcatbig(&line, pichname, &maxlen, &bigpos);
@@ -466,11 +467,9 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 							ostrcatbig(&line, extra, &maxlen, &bigpos);
 							ostrcatbig(&line, ")", &maxlen, &bigpos);					
 						}
-						ostrcatbig(&line, "#", &maxlen, &bigpos);
-						ostrcatbig(&line, "http://www.movie4k.to/", &maxlen, &bigpos);
+						ostrcatbig(&line, "#http://www.movie4k.to/", &maxlen, &bigpos);
 						ostrcatbig(&line, url3, &maxlen, &bigpos);
-						ostrcatbig(&line, "#", &maxlen, &bigpos);
-						ostrcatbig(&line, "http://atemio.dyndns.tv/mediathek/menu/", &maxlen, &bigpos);
+						ostrcatbig(&line, "#http://atemio.dyndns.tv/mediathek/menu/", &maxlen, &bigpos);
 						ostrcatbig(&line, pichname, &maxlen, &bigpos);
 						ostrcatbig(&line, ".jpg#movie4k_", &maxlen, &bigpos);
 						ostrcatbig(&line, pichname, &maxlen, &bigpos);
@@ -498,11 +497,9 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 							ostrcatbig(&line, extra, &maxlen, &bigpos);
 							ostrcatbig(&line, ")", &maxlen, &bigpos);					
 						}
-						ostrcatbig(&line, "#", &maxlen, &bigpos);
-						ostrcatbig(&line, "http://www.movie4k.to/", &maxlen, &bigpos);
+						ostrcatbig(&line, "#http://www.movie4k.to/", &maxlen, &bigpos);
 						ostrcatbig(&line, url4, &maxlen, &bigpos);
-						ostrcatbig(&line, "#", &maxlen, &bigpos);
-						ostrcatbig(&line, "http://atemio.dyndns.tv/mediathek/menu/", &maxlen, &bigpos);
+						ostrcatbig(&line, "#http://atemio.dyndns.tv/mediathek/menu/", &maxlen, &bigpos);
 						ostrcatbig(&line, pichname, &maxlen, &bigpos);
 						ostrcatbig(&line, ".jpg#movie4k_", &maxlen, &bigpos);
 						ostrcatbig(&line, pichname, &maxlen, &bigpos);
@@ -558,7 +555,7 @@ int movie4k_hoster_series(struct skin* grid, struct skin* listbox, struct skin* 
 {
 	debug(99, "link: %s", link);
 	int debuglevel = getconfigint("debuglevel", NULL);
-	int ret = 1, series = 0;
+	int ret = 1, series = 0, maxlen = 0, bigpos = 0;
 	char* ip = NULL, *pos = NULL, *id = NULL, *tpath = NULL, *path = NULL, *tmpstr = NULL, *line = NULL, *episode = NULL;
 	char* from = NULL;
 	char* folgen = NULL;
@@ -642,34 +639,37 @@ int movie4k_hoster_series(struct skin* grid, struct skin* listbox, struct skin* 
 							debug(99, "(S%d/E%d) convertlink: %s id: %s", i, j, link, id);
 
 							incount += 1;
-							line = ostrcat(line, _("Season"), 1, 0);
-							line = ostrcat(line, " ", 1, 0);
-							line = ostrcat(line, oitoa(i), 1, 0);
-							line = ostrcat(line, " ", 1, 0);
-							line = ostrcat(line, _("Episode"), 1, 0);
-							line = ostrcat(line, " ", 1, 0);
-//							line = ostrcat(line, oitoa(j), 1, 0);
-							line = ostrcat(line, episode, 1, 0);					
-							line = ostrcat(line, "#", 1, 0);
-							line = ostrcat(line, "http://www.movie4k.to/", 1, 0);
-							line = ostrcat(line, link, 1, 0);
-							line = ostrcat(line, "#", 1, 0);
-							line = ostrcat(line, "http://atemio.dyndns.tv/mediathek/menu/s", 1, 0);
-							line = ostrcat(line, oitoa(i), 1, 0);
-							line = ostrcat(line, "e", 1, 0);
-//							line = ostrcat(line, oitoa(j), 1, 0);
-							line = ostrcat(line, episode, 1, 0);
-							line = ostrcat(line, ".jpg", 1, 0);																
-							line = ostrcat(line, "#movie4k_search_", 1, 0);
-							line = ostrcat(line, oitoa(i), 1, 0);
-							line = ostrcat(line, "e", 1, 0);
-//							line = ostrcat(line, oitoa(j), 1, 0);
-							line = ostrcat(line, episode, 1, 0);
-							line = ostrcat(line, ".jpg#Movie4k - ", 1, 0);
-							line = ostrcat(line, title, 1, 0);
-							line = ostrcat(line, "#34\n", 1, 0);
-							free(id), id = NULL;
-							free(episode), episode = NULL;
+							
+							char* ci = oitoa(i);
+//							char* cj = oitoa(j);
+							ostrcatbig(&line, _("Season"), &maxlen, &bigpos);
+							ostrcatbig(&line, " ", &maxlen, &bigpos);
+							ostrcatbig(&line, ci, &maxlen, &bigpos);
+							ostrcatbig(&line, " ", &maxlen, &bigpos);
+							ostrcatbig(&line, _("Episode"), &maxlen, &bigpos);
+							ostrcatbig(&line, " ", &maxlen, &bigpos);							
+//							ostrcatbig(&line, cj, &maxlen, &bigpos);
+							ostrcatbig(&line, episode, &maxlen, &bigpos);
+							ostrcatbig(&line, "#http://www.movie4k.to/", &maxlen, &bigpos);
+							ostrcatbig(&line, link, &maxlen, &bigpos);
+							ostrcatbig(&line, "#http://atemio.dyndns.tv/mediathek/menu/s", &maxlen, &bigpos);
+							ostrcatbig(&line, ci, &maxlen, &bigpos);
+							ostrcatbig(&line, "e", &maxlen, &bigpos);
+//							ostrcatbig(&line, cj, &maxlen, &bigpos);
+							ostrcatbig(&line, episode, &maxlen, &bigpos);
+							ostrcatbig(&line, ".jpg#movie4k_search_", &maxlen, &bigpos);
+							ostrcatbig(&line, ci, &maxlen, &bigpos);
+							ostrcatbig(&line, "e", &maxlen, &bigpos);
+//							ostrcatbig(&line, cj, &maxlen, &bigpos);
+							ostrcatbig(&line, episode, &maxlen, &bigpos);
+							ostrcatbig(&line, ".jpg#Movie4k - ", &maxlen, &bigpos);
+							ostrcatbig(&line, title, &maxlen, &bigpos);
+							ostrcatbig(&line, "#34\n", &maxlen, &bigpos);
+
+							free(id); id = NULL;
+							free(episode); episode = NULL;
+							free(ci); ci = NULL;
+//						free(cj); cj = NULL;
 						}
 					}
 					free(ret1), ret1 = NULL;
@@ -691,6 +691,7 @@ int movie4k_hoster_series(struct skin* grid, struct skin* listbox, struct skin* 
 		writesys(tmpstr, line, 0);
 
 		titheklog(debuglevel, "/tmp/movie4k8_line", NULL, line);
+		free(line); line = NULL;
 					
 		struct tithek* tnode = (struct tithek*)listbox->select->handle;
 		createtithek(tnode, tnode->title,  tmpstr, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);
@@ -703,7 +704,7 @@ int movie4k_series(struct skin* grid, struct skin* listbox, struct skin* countla
 {
 	debug(99, "link: %s", link);
 	int debuglevel = getconfigint("debuglevel", NULL);
-	int ret = 1;
+	int ret = 1, maxlen = 0, bigpos = 0;
 	char* ip = NULL, *pos = NULL, *tpath = NULL, *path = NULL, *tmpstr = NULL, *line = NULL;
 	char* from = NULL;
 	char* folgen = NULL;
@@ -766,25 +767,22 @@ int movie4k_series(struct skin* grid, struct skin* listbox, struct skin* countla
 					season = strstrip(season);
 					debug(99, "(S%s) input: %s%s",season, name, lang);
 
-					line = ostrcat(line, _("Season"), 1, 0);
-					line = ostrcat(line, " ", 1, 0);
-					line = ostrcat(line, season, 1, 0);
-					line = ostrcat(line, " ", 1, 0);
-										
-					line = ostrcat(line, lang, 1, 0);	
-					line = ostrcat(line, "#", 1, 0);
-					line = ostrcat(line, "http://www.movie4k.to/", 1, 0);
-					line = ostrcat(line, link, 1, 0);
-					line = ostrcat(line, "#", 1, 0);
-					line = ostrcat(line, "http://atemio.dyndns.tv/mediathek/menu/s", 1, 0);
-					line = ostrcat(line, season, 1, 0);
-					line = ostrcat(line, ".jpg", 1, 0);
-					line = ostrcat(line, "#s", 1, 0);
-					line = ostrcat(line, season, 1, 0);
-					line = ostrcat(line, ".jpg", 1, 0);
-					line = ostrcat(line, "#Movie4k - ", 1, 0);
-					line = ostrcat(line, title, 1, 0);
-					line = ostrcat(line, "#39\n", 1, 0);
+          ostrcatbig(&line, _("Season"), &maxlen, &bigpos);
+          ostrcatbig(&line, " ", &maxlen, &bigpos);
+          ostrcatbig(&line, season, &maxlen, &bigpos);
+          ostrcatbig(&line, " ", &maxlen, &bigpos);
+          
+          ostrcatbig(&line, lang, &maxlen, &bigpos);
+          ostrcatbig(&line, "#http://www.movie4k.to/", &maxlen, &bigpos);
+          ostrcatbig(&line, link, &maxlen, &bigpos);
+          ostrcatbig(&line, "#http://atemio.dyndns.tv/mediathek/menu/s", &maxlen, &bigpos);
+          ostrcatbig(&line, season, &maxlen, &bigpos);
+          ostrcatbig(&line, ".jpg#s", &maxlen, &bigpos);
+          ostrcatbig(&line, season, &maxlen, &bigpos);
+          ostrcatbig(&line, ".jpg#Movie4k - ", &maxlen, &bigpos);
+          ostrcatbig(&line, title, &maxlen, &bigpos);
+          ostrcatbig(&line, "#39\n", &maxlen, &bigpos);
+
 					free(name), name = NULL;
 					free(lang), lang = NULL;
 					free(season), season = NULL;
@@ -804,6 +802,7 @@ int movie4k_series(struct skin* grid, struct skin* listbox, struct skin* countla
 		writesys(tmpstr, line, 0);
 
 		titheklog(debuglevel, "/tmp/movie4k8_line", NULL, line);
+		free(line); line = NULL;
 					
 		struct tithek* tnode = (struct tithek*)listbox->select->handle;
 		createtithek(tnode, tnode->title,  tmpstr, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);
@@ -816,7 +815,7 @@ int movie4k_series_listed(struct skin* grid, struct skin* listbox, struct skin* 
 {
 	debug(99, "link: %s", link);
 	int debuglevel = getconfigint("debuglevel", NULL);
-	int ret = 1;
+	int ret = 1, maxlen = 0, bigpos = 0;
 	char* ip = NULL, *pos = NULL, *tpath = NULL, *path = NULL, *tmpstr = NULL, *line = NULL;
 	char* from = NULL;
 	char* folgen = NULL;
@@ -881,32 +880,29 @@ int movie4k_series_listed(struct skin* grid, struct skin* listbox, struct skin* 
 					episode = strstrip(episode);
 					debug(99, "(S%s/E%s) input: %s%s",season, episode, name, lang);
 
-					line = ostrcat(line, _("Season"), 1, 0);
-					line = ostrcat(line, " ", 1, 0);
-					line = ostrcat(line, season, 1, 0);
-					line = ostrcat(line, " ", 1, 0);
-					line = ostrcat(line, _("Episode"), 1, 0);
-					line = ostrcat(line, " ", 1, 0);				
-					line = ostrcat(line, episode, 1, 0);
-					line = ostrcat(line, " ", 1, 0);
-					line = ostrcat(line, lang, 1, 0);	
-					line = ostrcat(line, "#", 1, 0);
-					line = ostrcat(line, "http://www.movie4k.to/", 1, 0);
-					line = ostrcat(line, link, 1, 0);
-					line = ostrcat(line, "#", 1, 0);
-					line = ostrcat(line, "http://atemio.dyndns.tv/mediathek/menu/s", 1, 0);
-					line = ostrcat(line, season, 1, 0);
-					line = ostrcat(line, "e", 1, 0);
-					line = ostrcat(line, episode, 1, 0);
-					line = ostrcat(line, ".jpg", 1, 0);
-					line = ostrcat(line, "#s", 1, 0);
-					line = ostrcat(line, season, 1, 0);
-					line = ostrcat(line, "e", 1, 0);
-					line = ostrcat(line, episode, 1, 0);
-					line = ostrcat(line, ".jpg", 1, 0);
-					line = ostrcat(line, "#Movie4k - ", 1, 0);
-					line = ostrcat(line, title, 1, 0);
-					line = ostrcat(line, "#34\n", 1, 0);
+          ostrcatbig(&line, _("Season"), &maxlen, &bigpos);
+          ostrcatbig(&line, " ", &maxlen, &bigpos);
+          ostrcatbig(&line, season, &maxlen, &bigpos);
+          ostrcatbig(&line, " ", &maxlen, &bigpos);
+          ostrcatbig(&line, _("Episode"), &maxlen, &bigpos);
+          ostrcatbig(&line, " ", &maxlen, &bigpos);
+          ostrcatbig(&line, episode, &maxlen, &bigpos);
+          ostrcatbig(&line, " ", &maxlen, &bigpos);
+          ostrcatbig(&line, lang, &maxlen, &bigpos);
+          ostrcatbig(&line, "#http://www.movie4k.to/", &maxlen, &bigpos);
+          ostrcatbig(&line, link, &maxlen, &bigpos);
+          ostrcatbig(&line, "#http://atemio.dyndns.tv/mediathek/menu/s", &maxlen, &bigpos);
+          ostrcatbig(&line, season, &maxlen, &bigpos);
+          ostrcatbig(&line, "e", &maxlen, &bigpos);
+          ostrcatbig(&line, episode, &maxlen, &bigpos);
+          ostrcatbig(&line, ".jpg#s", &maxlen, &bigpos);
+          ostrcatbig(&line, season, &maxlen, &bigpos);
+          ostrcatbig(&line, "e", &maxlen, &bigpos);
+          ostrcatbig(&line, episode, &maxlen, &bigpos);
+          ostrcatbig(&line, ".jpg#Movie4k - ", &maxlen, &bigpos);
+          ostrcatbig(&line, title, &maxlen, &bigpos);
+					ostrcatbig(&line, "#34\n", &maxlen, &bigpos); 
+
 					free(name), name = NULL;
 					free(lang), lang = NULL;
 					free(season), season = NULL;
@@ -927,6 +923,7 @@ int movie4k_series_listed(struct skin* grid, struct skin* listbox, struct skin* 
 		writesys(tmpstr, line, 0);
 
 		titheklog(debuglevel, "/tmp/movie4k8_line", NULL, line);
+		free(line); line = NULL;
 					
 		struct tithek* tnode = (struct tithek*)listbox->select->handle;
 		createtithek(tnode, tnode->title,  tmpstr, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);
