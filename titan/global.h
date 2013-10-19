@@ -3338,8 +3338,11 @@ int ozip(char* inbuf, int inlen, char** outbuf, int* outlen, int level)
 	*outbuf = realloc(*outbuf, *outlen);
 	if(*outbuf == NULL)
 	{
-		err("no mem");
-		if(*outlen > 0)	free(tmpoutbuf);
+		if(*outlen > 0)
+		{
+			err("no mem");	
+			free(tmpoutbuf);
+		}
 		*outlen = 0;
 		(void)deflateEnd(&stream);
 		return 1;
