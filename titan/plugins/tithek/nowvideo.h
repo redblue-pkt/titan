@@ -84,27 +84,24 @@ char* getfilekey(char* w, char* i, char* s, char* e)
 		if(b >= b1) b = 0;
 	}
 
+	char* r1 = NULL, *r2 = NULL, *r3 = NULL, *r4 = NULL;
 	char* pos = ostrstr(cc, ");}('");
 	if(pos != NULL)
 	{
-		char* r1 = string_resub(");}('", "'", pos, 0);
+		r1 = string_resub(");}('", "'", pos, 0);
 		pos = ostrstr(pos + 5, ",'");
 		if(pos != NULL)
 		{
-			char* r2 = string_resub(",'", "'", pos, 0);
+			r2 = string_resub(",'", "'", pos, 0);
 			pos = ostrstr(pos + 2, ",'");
 			if(pos != NULL)
 			{
-				char* r3 = string_resub(",'", "'", pos, 0);
+				r3 = string_resub(",'", "'", pos, 0);
 				pos = ostrstr(pos + 2, ",'");
 				if(pos != NULL)
 				{
-					char* r4 = string_resub(",'", "'", pos, 0);
+					r4 = string_resub(",'", "'", pos, 0);
 					ret = getfilekey(r1, r2, r3, r4);
-					free(r1); r1 = NULL;
-					free(r2); r2 = NULL;
-					free(r3); r3 = NULL;
-					free(r4); r4 = NULL;
 				}
 			}
 		}
@@ -112,6 +109,11 @@ char* getfilekey(char* w, char* i, char* s, char* e)
 	else
 		ret = string_resub("\"", "\"", cc, 0);
 
+  free(r1); r1 = NULL;
+	free(r2); r2 = NULL;
+	free(r3); r3 = NULL;
+	free(r4); r4 = NULL;
+					
 	return ret;
 }
 
