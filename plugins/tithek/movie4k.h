@@ -251,15 +251,21 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 		drawscreen(load, 0, 0);
 		
 		int countj = 0;
-		if(ostrstr(tmpstr, "&part=1") != NULL)
-			countj = 1;
-		if(ostrstr(tmpstr, "&part=2") != NULL)
-			countj = 2;
-		if(ostrstr(tmpstr, "&part=3") != NULL)
-			countj = 3;
-		if(ostrstr(tmpstr, "&part=4") != NULL)
-			countj = 4;
-
+		char* cpart = ostrstr(tmpstr, "&part=");
+		if(cpart != NULL)
+		{
+			if(ostrnstr(cpart, "&part=4", 7) != NULL)
+				countj = 4;
+			else if(ostrnstr(cpart, "&part=3", 7) != NULL)
+				countj = 3;
+			else if(ostrnstr(cpart, "&part=2", 7) != NULL)
+				countj = 2;
+			else if(ostrnstr(cpart, "&part=1", 7) != NULL)
+				countj = 1;
+				
+			tmpid = string_resub("movie.php?id=", "&part=", tmpstr, 0);
+		}
+			
 		if(ostrstr(tmpstr, "links\[") == NULL)
 		{
 			hnamein = string_resub("width=\"16\"> &nbsp;", "</a></td><td align=", tmpstr, 0);
@@ -272,14 +278,11 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 			tmpstr = command("cat /tmp/movie4k.list | grep ^links");
 		}
 		
-		tmpid = oregex(".*movie.php?id=(.*[0-9]{1,10})&part=.*", tmpstr);
-
 		int count = 0;
 		int incount = 0;
 		int i;
 		struct splitstr* ret1 = NULL;
 		ret1 = strsplit(tmpstr, "\n", &count);		
-
 
 		if(ret1 != NULL && count > 0)
 		{
@@ -306,7 +309,7 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 							id = string_resub("watch-movie-", ".html", pathnew, 0);
 						if(id == NULL)
 							id = oregex(".*tvshows-(.*[0-9]{1,10})-.*", pathnew);
-						if(id == NULL)
+						if(id == NULL && part == 1)
 							id = ostrcat(tmpid, NULL, 0, 0);
 
 //						debug(99, "(%d/%d/%d) pathnew: %s hname: %s id: %s",a ,i ,max ,pathnew , tmphname, id);
@@ -338,7 +341,7 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 							id = string_resub("watch-movie-", ".html", path, 0);
 						if(id == NULL)
 							id = oregex(".*tvshows-(.*[0-9]{1,10})-.*", path);
-						if(id == NULL)
+						if(id == NULL && part == 1)
 							id = ostrcat(tmpid, NULL, 0, 0);
 
 						tmphname = ostrcat(hnamein, NULL, 0, 0);
@@ -516,9 +519,16 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 					if(nolinks != NULL)
 					{
 						printf("break\n");
+						
+						free(url); url = NULL;
+						free(url2); url2 = NULL;
+						free(url3); url3 = NULL;
+						free(url4); url4 = NULL;
+						free(pathnew); pathnew = NULL;
+						free(logfile); logfile = NULL;
+						free(id); id = NULL;
 						break;
 					}
-
 				}
 
 				free(url); url = NULL;
@@ -533,7 +543,7 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 		free(ret1); ret1 = NULL;
 	}
 
-	free(tmpid); tmpid = NULL;
+  free(tmpid); tmpid = NULL;
 	free(tmpstr); tmpstr = NULL;	
 
 	if(line != NULL)
