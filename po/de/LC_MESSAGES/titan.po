@@ -219,7 +219,7 @@ msgid "A-Z (Text)"
 msgstr "A-Z (Text)"
 
 msgid "bar"
-msgstr "Farbliche Darstellung des Hintergrundes"
+msgstr "Balken"
 
 msgid "Backup / Restore Settings"
 msgstr "Einstellungen sichern/wiederherstellen"
@@ -273,7 +273,7 @@ msgid "Blue Key Action - Plugins"
 msgstr "Blaue - Taste Erweiterungsliste"
 
 msgid "border"
-msgstr "Farbliche Darstellung der Umrandung"
+msgstr "Rahmen"
 
 msgid "bootlogos"
 msgstr "Bootlogos"
@@ -306,7 +306,7 @@ msgid "Brightness"
 msgstr "Helligkeit"
 
 msgid "broadcast"
-msgstr "Sendung"
+msgstr "Broadcast Adresse"
 
 msgid "browsers"
 msgstr "Internet Browser"
@@ -468,7 +468,7 @@ msgstr "Systemfehler!!!\n"
 "Grün = System neustarten"
 
 msgid "default"
-msgstr "Voreinstellung"
+msgstr "System Status"
 
 msgid "Default"
 msgstr "Voreinstellung"
@@ -2212,7 +2212,7 @@ msgid "TEST"
 msgstr "Test"
 
 msgid "text"
-msgstr "Farbliche Darstellung des Textes"
+msgstr "Text"
 
 msgid "thereafter on this Channel:"
 msgstr "danach auf diesem Sender:"
