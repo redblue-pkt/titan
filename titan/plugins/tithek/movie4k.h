@@ -7,7 +7,7 @@
 char* movie4k(char* link)
 {
 	debug(99, "link: %s", link);
-	char* tmpstr = NULL, *url = NULL, *streamurl = NULL, *tmppath = NULL, *tmphost = NULL, *pos = NULL, *id = NULL;
+	char* tmpstr = NULL, *url = NULL, *streamurl = NULL, *tmppath = NULL, *tmphost = NULL, *pos = NULL;
 
 	if(link == NULL || ostrncmp("http://", link, 7)) return NULL;
 
@@ -44,9 +44,6 @@ char* movie4k(char* link)
 	free(url), url = NULL;
 	free(tmpstr), tmpstr = NULL;
 	free(tmphost), tmphost = NULL;
-// *** glibc detected *** /var/usr/local/share/titan/plugins/tithek/titan: munmap_chunk(): invalid pointer: 0x008c5307 ***
-//	free(tmppath), tmppath = NULL;
-	free(id), id = NULL;
 
 	return streamurl;
 }
