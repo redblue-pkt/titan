@@ -4217,3 +4217,6 @@ msgstr "Abspielen"
 
 msgid "Choice Playback"
 msgstr "Wiedergabe auswählen"
+
+msgid "wait 20 seconds"
+msgstr "warten Sie 20 Sekunden"
