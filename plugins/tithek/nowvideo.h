@@ -1,6 +1,120 @@
 #ifndef NOWVIDEO_H
 #define NOWVIDEO_H
 
+char* getfilekey(char* w, char* i, char* s, char* e)
+{
+	char* ret = NULL;
+
+	if(w == NULL || i == NULL || s == NULL || e == NULL)
+		return NULL;
+
+	int a = 0, b = 0, c = 0;
+	int a1 = 0, b1 = 0;
+
+	int lw = strlen(w);
+	int li = strlen(i);
+	int ls = strlen(s);
+	int le = strlen(e);
+
+	char ca[lw + li + ls - 14];
+	char cb[16];
+
+	ca[lw + li + ls - 15] = '\0';
+	cb[15] = '\0';
+	
+	while(1)
+	{
+		if(a < 5)
+		{
+			cb[b1] = w[a];
+			b1++;
+		}
+		else if(a < lw)
+		{
+			ca[a1] = w[a];
+			a1++;
+		}
+		a++;
+		
+		if(b < 5)
+		{
+			cb[b1] = i[b];
+			b1++;
+		}
+		else if(b < li)
+		{
+			ca[a1] = i[b];
+			a1++;
+		}
+		b++;
+		
+		if(c < 5)
+		{
+			cb[b1] = s[c];
+			b1++;
+		}
+		else if(c < ls)
+		{
+			ca[a1] = s[c];
+			a1++;
+		}
+		c++;
+		
+		if(lw + li + ls == a1 + b1)
+			break;
+	}
+
+	b = 0;
+	int d = 0;
+	char cc[a1 / 2 + 1];
+	char casub[3] = {'\0'};
+	cc[a1 / 2] = '\0';
+	
+	for(a = 0; a < a1; a += 2)
+	{
+		int c = -1;
+		
+		if(cb[b] % 2) c = 1;
+
+		casub[0] = ca[a];
+		casub[1] = ca[a + 1];
+
+		cc[d] = strtol(casub, '\0', 36) - c;
+		b++; d++;
+		if(b >= b1) b = 0;
+	}
+
+	char* pos = ostrstr(cc, ");}('");
+	if(pos != NULL)
+	{
+		char* r1 = string_resub(");}('", "'", pos, 0);
+		pos = ostrstr(pos + 5, ",'");
+		if(pos != NULL)
+		{
+			char* r2 = string_resub(",'", "'", pos, 0);
+			pos = ostrstr(pos + 2, ",'");
+			if(pos != NULL)
+			{
+				char* r3 = string_resub(",'", "'", pos, 0);
+				pos = ostrstr(pos + 2, ",'");
+				if(pos != NULL)
+				{
+					char* r4 = string_resub(",'", "'", pos, 0);
+					ret = getfilekey(r1, r2, r3, r4);
+					free(r1); r1 = NULL;
+					free(r2); r2 = NULL;
+					free(r3); r3 = NULL;
+					free(r4); r4 = NULL;
+				}
+			}
+		}
+	}
+	else
+		ret = string_resub("\"", "\"", cc, 0);
+
+	return ret;
+}
+
 char* nowvideo(char* link)
 {
 	debug(99, "link: %s", link);
