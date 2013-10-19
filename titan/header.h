@@ -8,6 +8,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//infobar.h
+void screeninfobar();
+
 //copyfile.h
 int screencopy(char* title, char* from, char* to, int flag);
 
@@ -185,6 +188,7 @@ char* checkthumb(char* path, char* file);
 int dvdstop();
 int dvdsetfb();
 void playerresetts();
+void playerinit(int argc, char* argv[]);
 
 //channelhistory.h
 void delchannelhistory(struct channel* chnode);
@@ -666,6 +670,7 @@ int delscreenrc(struct skin* screen, struct skin* node);
 void screenspinner();
 
 //global.h
+char* getmacfromcmdline();
 char* createpluginpath(char* text, int flag);
 void delspezchar(char* text, int flag);
 int osystem(char* cmd, int timeout);
