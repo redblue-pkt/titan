@@ -231,6 +231,8 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 	char* tmpid = NULL, *pichname = NULL;
 	if(listbox == NULL || listbox->select == NULL || listbox->select->handle == NULL)
 		return ret;
+		
+	drawscreen(load, 0, 0);
 
 	ip = string_replace("http://", "", (char*)link, 0);
 
@@ -247,9 +249,7 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 	int a = 0;
 
 	if(tmpstr != NULL)
-	{
-		drawscreen(load, 0, 0);
-		
+	{	
 		int countj = 0;
 		char* cpart = ostrstr(tmpstr, "&part=");
 		if(cpart != NULL)
@@ -572,6 +572,8 @@ int movie4k_hoster_series(struct skin* grid, struct skin* listbox, struct skin* 
 
 	if(listbox == NULL || listbox->select == NULL || listbox->select->handle == NULL)
 		return ret;
+		
+	drawscreen(load, 0, 0);
 
 	ip = string_replace("http://", "", (char*)link, 0);
 
@@ -605,15 +607,13 @@ int movie4k_hoster_series(struct skin* grid, struct skin* listbox, struct skin* 
 
 	if(tmpstr != NULL)
 	{
-		drawscreen(load, 0, 0);
-
 		if(ostrstr(tmpstr, "episodeform") != NULL)
 		{
 			int i;
 			for(i = 1; i < 30; i++)
 			{
 				from = ostrcat(from, "<FORM name=\"episodeform", 1, 0);
-				from = ostrcat(from, oitoa(i), 1, 0);
+				from = ostrcat(from, oitoa(i), 1, 1);
 				from = ostrcat(from, "\">", 1, 0);
 				folgen = string_resub(from, "</FORM>", tmpstr, 0);
 				folgen = string_resub("<OPTION></OPTION>", "</SELECT>", folgen, 1);
@@ -724,6 +724,8 @@ int movie4k_series(struct skin* grid, struct skin* listbox, struct skin* countla
 
 	if(listbox == NULL || listbox->select == NULL || listbox->select->handle == NULL)
 		return ret;
+		
+	drawscreen(load, 0, 0);
 
 	ip = string_replace("http://", "", (char*)link, 0);
 
@@ -741,8 +743,6 @@ int movie4k_series(struct skin* grid, struct skin* listbox, struct skin* countla
 
 	if(tmpstr != NULL)
 	{
-		drawscreen(load, 0, 0);
-
 		folgen = string_resub("<TABLE id=\"tablemoviesindex\">", "</TABLE>", tmpstr, 0);
 		folgen = string_replace_all("\n", "", folgen, 1);
 		folgen = string_replace_all("\t", "", folgen, 1);
@@ -836,6 +836,8 @@ int movie4k_series_listed(struct skin* grid, struct skin* listbox, struct skin* 
 
 	if(listbox == NULL || listbox->select == NULL || listbox->select->handle == NULL)
 		return ret;
+		
+	drawscreen(load, 0, 0);
 
 	ip = string_replace("http://", "", (char*)link, 0);
 
@@ -853,8 +855,6 @@ int movie4k_series_listed(struct skin* grid, struct skin* listbox, struct skin* 
 
 	if(tmpstr != NULL)
 	{
-		drawscreen(load, 0, 0);
-
 		folgen = string_resub("<TABLE id=\"tablemoviesindex\">", "</TABLE>", tmpstr, 0);
 		folgen = string_replace_all("\n", "", folgen, 1);
 		folgen = string_replace_all("\t", "", folgen, 1);
