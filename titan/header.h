@@ -749,6 +749,7 @@ int ostrcmp(char* value1, char* value2);
 int ostrcasecmp(char* value1, char* value2);
 char* ostrshrink(char* value);
 char* ostrcat(char* value1, char* value2, int free1, int free2);
+void ostrcatbig(char** value1, char* value2, int* maxlen, int* pos);
 int ostrncmp(char* value1, char* value2, int count);
 char* readsys(const char *filename, int line);
 char* string_replace_remove_last_chars(char *search, char *replace, char *string, int free1);

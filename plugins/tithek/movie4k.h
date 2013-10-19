@@ -309,7 +309,7 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 							id = string_resub("watch-movie-", ".html", pathnew, 0);
 						if(id == NULL)
 							id = oregex(".*tvshows-(.*[0-9]{1,10})-.*", pathnew);
-						if(id == NULL && part == 1)
+						if(id == NULL)
 							id = ostrcat(tmpid, NULL, 0, 0);
 
 //						debug(99, "(%d/%d/%d) pathnew: %s hname: %s id: %s",a ,i ,max ,pathnew , tmphname, id);
@@ -341,7 +341,7 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 							id = string_resub("watch-movie-", ".html", path, 0);
 						if(id == NULL)
 							id = oregex(".*tvshows-(.*[0-9]{1,10})-.*", path);
-						if(id == NULL && part == 1)
+						if(id == NULL)
 							id = ostrcat(tmpid, NULL, 0, 0);
 
 						tmphname = ostrcat(hnamein, NULL, 0, 0);
