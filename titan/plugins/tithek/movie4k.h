@@ -254,13 +254,13 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 		char* cpart = ostrstr(tmpstr, "&part=");
 		if(cpart != NULL)
 		{
-			if(ostrnstr(cpart, "&part=4", 7) != NULL)
+			if(ostrstr(cpart, "&part=4") != NULL)
 				countj = 4;
-			else if(ostrnstr(cpart, "&part=3", 7) != NULL)
+			else if(ostrstr(cpart, "&part=3") != NULL)
 				countj = 3;
-			else if(ostrnstr(cpart, "&part=2", 7) != NULL)
+			else if(ostrstr(cpart, "&part=2") != NULL)
 				countj = 2;
-			else if(ostrnstr(cpart, "&part=1", 7) != NULL)
+			else if(ostrstr(cpart, "&part=1") != NULL)
 				countj = 1;
 				
 			tmpid = string_resub("movie.php?id=", "&part=", tmpstr, 0);

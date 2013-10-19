@@ -5902,16 +5902,6 @@ char* ostrstr(char* str, char* search)
 	return ret;
 }
 
-char* ostrnstr(char* str, char* search, int size)
-{
-	char* ret = NULL;
-
-	if(str == NULL || search == NULL) return NULL;
-	ret = strnstr(str, search, size);
-
-	return ret;
-}
-
 int file_exist(char* filename)
 {
 	if(access(filename, F_OK) == 0)
