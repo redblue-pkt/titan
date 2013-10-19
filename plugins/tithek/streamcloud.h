@@ -69,7 +69,7 @@ char* streamcloud(char* link)
 	free(send), send = NULL;
 	debug(99, "tmpstr: %s", tmpstr);
 
-	waitmsgbar(20, 0, 1);
+	waitmsgbar(20, 0, "wait 20 seconds" 1);
 	
 	titheklog(debuglevel, "/tmp/streamcould1_get", NULL, tmpstr);
 
