@@ -253,6 +253,16 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 		drawscreen(load, 0, 0);
 
 		tmpstr1 = ostrcat(tmpstr, NULL, 0, 0);
+		
+		int countj = 0;
+		if(ostrstr(tmpstr1, "&part=1") != NULL)
+			countj = 1;
+		if(ostrstr(tmpstr1, "&part=2") != NULL)
+			countj = 2;
+		if(ostrstr(tmpstr1, "&part=3") != NULL)
+			countj = 3;
+		if(ostrstr(tmpstr1, "&part=4") != NULL)
+			countj = 4;
 
 		if(ostrstr(tmpstr, "links\[") == NULL)
 		{
@@ -342,16 +352,6 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 					pichname = ostrcat(tmphname, NULL, 0, 0);
 					string_tolower(pichname);
 					pichname = stringreplacecharonce(pichname, '.', '\0');
-						
-					int countj = 0;
-					if(ostrstr(tmpstr1, "&part=1") != NULL)
-						countj = 1;
-					if(ostrstr(tmpstr1, "&part=2") != NULL)
-						countj = 2;
-					if(ostrstr(tmpstr1, "&part=3") != NULL)
-						countj = 3;
-					if(ostrstr(tmpstr1, "&part=4") != NULL)
-						countj = 4;
 
 					if(id != NULL)
 					{
