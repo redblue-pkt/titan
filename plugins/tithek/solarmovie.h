@@ -56,7 +56,7 @@ char* solarmovie(char* link)
 		url = string_resub("<center><iframe src=\"", "\"", tmpstr1, 0);
 		if(url == NULL || ostrncmp("http://", url, 7) == 1)
 		{
-			free(url); url == NULL;
+			free(url); url = NULL;
 			url = oregex(".*src=\"(http://.*)&width.*", tmpstr1);
 		}
 	}
