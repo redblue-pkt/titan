@@ -281,7 +281,7 @@ for ROUND0 in $watchlist; do
 			done
 			
 			if [ `cat cache.solarmovie.$filename0.titanlist | wc -l` -gt 0 ];then
-				cat cache.solarmovie.$filename0.titanlist | sort -um > _full/solarmovie/streams/solarmovie.$filename0.list
+				cat cache.solarmovie.$filename0.titanlist | sort -u > _full/solarmovie/streams/solarmovie.$filename0.list
 			fi	
 		fi
 	fi
