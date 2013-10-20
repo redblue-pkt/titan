@@ -74,9 +74,7 @@ char* movshare(char* link)
 	debug(99, "tmpstr: %s", tmpstr);
 	titheklog(debuglevel, "/tmp/movshare1_get", NULL, tmpstr);
 	
-	file = string_resub("login.php?return=/video/", "\">Log In", tmpstr, 0);
-	if(file == NULL)
-		file = string_resub("<a href=\"/share.php?id=", "&title=", tmpstr, 0);
+	file = string_replace("/embed.php?v=", "", tmppath, 0);
 	if(file == NULL)
 		file = string_resub("flashvars.file=\"", "\";", tmpstr, 0);
 	
@@ -125,7 +123,7 @@ char* movshare(char* link)
 	free(tmppath), tmppath = NULL;
 //	free(tmphost), tmphost = NULL;
 	free(send), send = NULL;
-	free(tmppath), tmppath = NULL;
+	
 	tmppath = ostrcat("/api/player.api.php?file=", file, 0, 0);
 	tmppath = ostrcat(tmppath, "&key=", 1, 0);
 	tmppath = ostrcat(tmppath, filekey, 1, 0);
