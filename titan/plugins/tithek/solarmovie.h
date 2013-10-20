@@ -206,6 +206,8 @@ int solarmovie_hoster(struct skin* grid, struct skin* listbox, struct skin* coun
 	if(listbox == NULL || listbox->select == NULL || listbox->select->handle == NULL)
 		return ret;
 
+	drawscreen(load, 0, 0);
+
 	tmphost = string_replace("http://", "", (char*)link, 0);
 
 	if(tmphost != NULL)
@@ -241,7 +243,6 @@ int solarmovie_hoster(struct skin* grid, struct skin* listbox, struct skin* coun
 
 	titheklog(debuglevel, "/tmp/solarmovie2_tmpstr_zcat", NULL, tmpstr);
 
-	drawscreen(load, 0, 0);
 	if(ostrstr(link, "/tv/") != NULL && ostrstr(link, "/season-") == NULL && ostrstr(link, "/episode-") == NULL)	
 		series = 1;
 	else
