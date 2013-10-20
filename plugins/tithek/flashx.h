@@ -66,7 +66,9 @@ char* flashx(char* link)
 	send = ostrcat(send, " HTTP/1.1\r\nHost: ", 1, 0);	
 	send = ostrcat(send, tmphost, 1, 0);
 	send = ostrcat(send, "\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nConnection: close\r\nAccept-Encoding: gzip\r\n\r\n", 1, 0);	
-	debug(99, "send: %s", send);
+	debug(99, "#############################################################################################################");
+	debug(99, "send1: %s", send);
+	debug(99, "#############################################################################################################");
 
 	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 	debug(99, "tmpstr: %s", tmpstr);
@@ -118,7 +120,9 @@ char* flashx(char* link)
 	send = ostrcat(send, "; PHPSESSID=", 1, 0);	
 	send = ostrcat(send, cookie2, 1, 0);	
 	send = ostrcat(send, "\r\nConnection: close\r\nAccept-Encoding: gzip\r\n\r\n", 1, 0);	
-	debug(99, "send: %s", send);
+	debug(99, "#############################################################################################################");
+	debug(99, "send2: %s", send);
+	debug(99, "#############################################################################################################");
 
 	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 	titheklog(debuglevel, "/tmp/flashx_tmpstr_get2", NULL, tmpstr);
@@ -145,8 +149,8 @@ char* flashx(char* link)
 	free(hash2tmp); hash2tmp = NULL;
 	
 	// htmldecod cant / to %2f
-//	hash1 = string_replace_all("/", "%2F", hash1, 1);
-//	hash2 = string_replace_all("/", "%2F", hash2, 1);
+	hash1 = string_replace_all("/", "%2F", hash1, 1);
+	hash2 = string_replace_all("/", "%2F", hash2, 1);
 
 	hash = ostrcat("sec=", hash1, 0, 0);
 	hash = ostrcat(hash, "&id=", 0, 0);
@@ -159,7 +163,8 @@ char* flashx(char* link)
 	free(tmpstr); tmpstr = NULL;
 	free(send); send = NULL;
 
-	send = ostrcat(send, "POST /player/show.php HTTP/1.1\r\nContent-Length: ", 1, 0);
+//	send = ostrcat(send, "POST /player/show.php HTTP/1.1\r\nContent-Length: ", 1, 0);
+	send = ostrcat(send, "POST /player/playit.php HTTP/1.1\r\nContent-Length: ", 1, 0);
 	send = ostrcat(send, hashlen, 1, 0);
 	send = ostrcat(send, "\r\nAccept-Encoding: gzip\r\nConnection: close\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nHost: ", 1, 0);
 	send = ostrcat(send, tmphost, 1, 0);
@@ -171,8 +176,11 @@ char* flashx(char* link)
 	send = ostrcat(send, hash, 1, 0);
 	free(hash); hash = NULL;
 	free(hashlen); hashlen = NULL;
-	
-	debug(99, "send: %s", send);
+
+	debug(99, "#############################################################################################################");
+	debug(99, "send3: %s", send);
+	debug(99, "#############################################################################################################");
+
 	tmpstr = gethttpreal(tmphost, "/player/show.php", 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 	debug(99, "tmpstr: %s", tmpstr);
 	titheklog(debuglevel, "/tmp/flashx_tmpstr_get3", NULL, tmpstr);
@@ -207,8 +215,10 @@ char* flashx(char* link)
 	send = ostrcat(send, "; PHPSESSID=", 1, 0);	
 	send = ostrcat(send, cookie2, 1, 0);	
 	send = ostrcat(send, "\r\nConnection: close\r\nAccept-Encoding: gzip\r\n\r\n", 1, 0);	
+	debug(99, "#############################################################################################################");
+	debug(99, "send4: %s", send);
+	debug(99, "#############################################################################################################");
 
-	debug(99, "send: %s", send);
 	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 	debug(99, "tmpstr: %s", tmpstr);
 	titheklog(debuglevel, "/tmp/flashx_tmpstr_get4", NULL, tmpstr);
@@ -242,7 +252,9 @@ char* flashx(char* link)
 	send = ostrcat(send, "; PHPSESSID=", 1, 0);	
 	send = ostrcat(send, cookie2, 1, 0);	
 	send = ostrcat(send, "\r\nConnection: close\r\nAccept-Encoding: gzip\r\n\r\n", 1, 0);	
-	debug(99, "send: %s", send);
+	debug(99, "#############################################################################################################");
+	debug(99, "send6: %s", send);
+	debug(99, "#############################################################################################################");
 
 	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 	debug(99, "tmpstr: %s", tmpstr);
