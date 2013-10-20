@@ -110,7 +110,11 @@ char* getfilekey(char* w, char* i, char* s, char* e)
 		}
 	}
 	else
-		ret = string_resub("\"", "\"", cc, 0);
+	{
+		ret = string_resub("ll=\"", "\"", cc, 0);
+		if(ret == NULL)
+			ret = string_resub("filekey=\"", "\"", cc, 0);	
+	}
 
   free(r1); r1 = NULL;
 	free(r2); r2 = NULL;
