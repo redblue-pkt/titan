@@ -92,6 +92,12 @@ char* flashx(char* link)
 	cookie3 = string_resub("Set-Cookie: video_", "=", tmpstr, 0);
 	debug(99, "cookie3 (vid): %s", cookie3);
 	
+	if(cookie3 == NULL)
+	{
+		debug(99, "use url (vid): %s", cookie3);	
+		cookie3 = string_resub("http://flashx.tv/video/", "/", tmpstr, 0);
+	}
+
 	free(tmppath), tmppath = NULL;
 	tmppath = ostrcat("/player/embed.php?vid=", cookie3, 0, 0);
 	free(tmphost), tmphost = NULL;
