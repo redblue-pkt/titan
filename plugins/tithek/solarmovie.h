@@ -55,12 +55,17 @@ char* solarmovie(char* link)
 		stringreplacechar(tmpstr1, '\n', ' ');
 		url = string_resub("<center><iframe src=\"", "\"", tmpstr1, 0);
 		if(url == NULL || ostrncmp("http://", url, 7) == 1)
+		{
+			free(url); url == NULL;
 			url = oregex(".*src=\"(http://.*)&width.*", tmpstr1);
+		}
 	}
 	else
 	{
-		url = oregex(".*<iframe name=\"service_frame\" class=\"service_frame\" src=\"(http://.*)\".*", tmpstr);
-		url = oregex("(http://.*)\".*", url);
+		//char* tmpurl = oregex(".*<iframe name=\"service_frame\" class=\"service_frame\" src=\"(http://.*)\".*", tmpstr);
+		//url = oregex("(http://.*)\".*", tmpurl);
+		//free(tmpurl); tmpurl == NULL;
+		url = string_resub("<iframe name=\"service_frame\" class=\"service_frame\" src=\"", "\"", tmpstr, 0);
 		url = string_replace_all("embed", "file", url, 1);
 	}
 
