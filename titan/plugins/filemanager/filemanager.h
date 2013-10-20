@@ -115,7 +115,7 @@ void screenfilemanager()
 	struct skin* filelist1 = getscreennode(filemanager1, "filelist");
 	struct skin* filelistpath2 = getscreennode(filemanager2, "filelistpath");
 	struct skin* filelist2 = getscreennode(filemanager2, "filelist");
-	char* file1 = NULL, *cmd = NULL, *tmpstr = NULL;
+	char* file1 = NULL, *file2 = NULL, *cmd = NULL, *tmpstr = NULL;
 	struct skin* tmpfilelist = filelist1;
 
 	filelist1->aktline = 0;
@@ -213,9 +213,19 @@ void screenfilemanager()
 						if(copy == 0)
 						{
 							if(aktfilelist == 0)
-								screencopy(_("Move File"), file1, filelistpath2->text, 1);
+							{
+								file2 = createpath(filelistpath2->text, filelist1->select->text);
+								if(rename(file1, file2) != 0)
+									screencopy(_("Move File"), file1, filelistpath2->text, 1);
+								free(file2); file2 = NULL;
+							}
 							else
-								screencopy(_("Move File"), file1, filelistpath1->text, 1);
+							{
+								file2 = createpath(filelistpath1->text, filelist2->select->text);
+								if(rename(file1, file2) != 0)
+									screencopy(_("Move File"), file1, filelistpath1->text, 1);
+								free(file2); file2 = NULL;
+							}
 						}
 						else
 						{
