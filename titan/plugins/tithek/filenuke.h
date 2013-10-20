@@ -3,7 +3,7 @@
 
 char* filenuke(char* link)
 {
-	debug(99, "link: %s");
+	debug(99, "link: %s", link);
 	int debuglevel = getconfigint("debuglevel", NULL);
 	char* tmphost = NULL, *error = NULL, *tmppath = NULL, *tmpstr = NULL, *send = NULL, *id = NULL, *fname = NULL, *op = NULL, *hash = NULL, *hashlen = NULL, *ip = NULL;
 	char* b36code = NULL, *base = NULL, *search = NULL, *post = NULL, *streamlink = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *charlist = NULL;
