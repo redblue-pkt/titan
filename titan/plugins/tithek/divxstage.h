@@ -80,8 +80,43 @@ char* divxstage(char* link)
 		goto end;
 	}
 
-	file = string_resub("flashvars.file=\"", "\";", tmpstr, 0);
-	filekey = string_resub("flashvars.filekey=\"", "\";", tmpstr, 0);
+	file = string_replace("/video/", "", tmppath, 0);
+	if(file == NULL)
+		file = string_resub("login.php?return=/video/", "\">Log In", tmpstr, 0);
+	if(file == NULL)
+		file = string_resub("<a href=\"/share.php?id=", "&title=", tmpstr, 0);
+	if(file == NULL)
+		file = string_resub("flashvars.file=\"", "\";", tmpstr, 0);
+	
+	char* r1 = NULL, *r2 = NULL, *r3 = NULL, *r4 = NULL;
+	pos = ostrstr(tmpstr, ");}('");
+	if(pos != NULL)
+	{
+		r1 = string_resub(");}('", "'", pos, 0);
+		pos = ostrstr(pos + 5, ",'");
+		if(pos != NULL)
+		{
+			r2 = string_resub(",'", "'", pos, 0);
+			pos = ostrstr(pos + 2, ",'");
+			if(pos != NULL)
+			{
+				r3 = string_resub(",'", "'", pos, 0);
+				pos = ostrstr(pos + 2, ",'");
+				if(pos != NULL)
+					r4 = string_resub(",'", "'", pos, 0);
+			}
+		}
+	}
+	
+	filekey = getfilekey(r1, r2, r3, r4);
+	
+	free(r1); r1 = NULL;
+	free(r2); r2 = NULL;
+	free(r3); r3 = NULL;
+	free(r4); r4 = NULL;
+	
+	if(filekey == NULL)
+		filekey = string_resub("flashvars.filekey=\"", "\";", tmpstr, 0);
 
 	if(filekey == NULL)
 	{
