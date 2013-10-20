@@ -472,8 +472,8 @@ if [ "$buildtype" = "full" ];then
 				echo $LINE >> cache.movie4k.movies.genre.titanlist
 			fi
 	# unsortet for check on website		
-	#		cat cache.movie4k.category.movie.`echo "$TITLE" | tr 'A-Z' 'a-z'`.titanlist  | sort -u > _full/movie4k/streams/movie4k.category.movie.`echo "$TITLE" | tr 'A-Z' 'a-z'`.list
-			cat cache.movie4k.category.movie.`echo "$TITLE" | tr 'A-Z' 'a-z'`.titanlist > _full/movie4k/streams/movie4k.category.movie.`echo "$TITLE" | tr 'A-Z' 'a-z'`.list
+			cat cache.movie4k.category.movie.`echo "$TITLE" | tr 'A-Z' 'a-z'`.titanlist  | sort -u > _full/movie4k/streams/movie4k.category.movie.`echo "$TITLE" | tr 'A-Z' 'a-z'`.list
+	#		cat cache.movie4k.category.movie.`echo "$TITLE" | tr 'A-Z' 'a-z'`.titanlist > _full/movie4k/streams/movie4k.category.movie.`echo "$TITLE" | tr 'A-Z' 'a-z'`.list
 		done
 	done
 	
@@ -531,8 +531,8 @@ if [ "$buildtype" = "full" ];then
 				echo $LINE >> cache.movie4k.series.genre.titanlist
 			fi
 	# unsortet for check on website
-	#		cat cache.movie4k.category.series.`echo "$TITLE" | tr 'A-Z' 'a-z'`.titanlist  | sort -u > _full/movie4k/streams/movie4k.category.series.`echo "$TITLE" | tr 'A-Z' 'a-z'`.list
-			cat cache.movie4k.category.series.`echo "$TITLE" | tr 'A-Z' 'a-z'`.titanlist > _full/movie4k/streams/movie4k.category.series.`echo "$TITLE" | tr 'A-Z' 'a-z'`.list
+			cat cache.movie4k.category.series.`echo "$TITLE" | tr 'A-Z' 'a-z'`.titanlist  | sort -u > _full/movie4k/streams/movie4k.category.series.`echo "$TITLE" | tr 'A-Z' 'a-z'`.list
+	#		cat cache.movie4k.category.series.`echo "$TITLE" | tr 'A-Z' 'a-z'`.titanlist > _full/movie4k/streams/movie4k.category.series.`echo "$TITLE" | tr 'A-Z' 'a-z'`.list
 		done
 	done
 	
