@@ -4195,7 +4195,7 @@ msgid "Here you can set your Channel search options. Use to navigate the control
 msgstr "Hier können Sie Ihre Kanal Suchoptionen einstellen. Benutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren.\nSehr wichtig, bevor Sie eine Kanalsuche starten, müssen Sie Ihre Empfangs Tuner unter Tuner-Einstellungen (Kabel/Sat/Terrestrisch) einstellen."
 
 msgid "After the manual search, you have to if they want to save all the sender to save the search with the green button. To add a station manually have to select the sender in the right box and then save it with the red button that station. If you do not do this and go to exit out the search not saved."
-msgstr "Nach der manuellen Suche müssen Sie, wenn sie alle gefundenen Sender abspeichern wollen, mit der grünen Taste die Suche abspeichern. Um manuell einen Sender hinzuzufügen, muss man den Sender im rechten Feld markieren und dann mit der Roten Taste diesen Sender abspeichern. Exit speichert das Suchergebnis nicht."
+msgstr "Nach der manuellen Suche müssen Sie, wenn sie alle gefundenen Sender abspeichern wollen, mit der grünen Taste die Suche abspeichern. Um manuell einen Sender hinzuzufügen, muss man den Sender im rechten Feld markieren und dann mit der roten Taste diesen Sender abspeichern. Exit speichert das Suchergebnis nicht."
 
 msgid "SCANSTART"
 msgstr "Kanalsuche starten"
