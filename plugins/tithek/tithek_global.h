@@ -14,7 +14,6 @@ char* getfilekey(char* w, char* i, char* s, char* e)
 	int lw = strlen(w);
 	int li = strlen(i);
 	int ls = strlen(s);
-	int le = strlen(e);
 	
 	if(lw < 5 || li < 5 || ls < 5)
 		return NULL;
