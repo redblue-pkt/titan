@@ -80,7 +80,9 @@ char* nowvideo(char* link)
 		goto end;
 	}
 
-	file = string_resub("login.php?return=/video/", "\">Log In", tmpstr, 0);
+  file = string_replace("/video/", "", tmppath, 0);
+	if(file == NULL)
+		file = string_resub("login.php?return=/video/", "\">Log In", tmpstr, 0);
 	if(file == NULL)
 		file = string_resub("<a href=\"/share.php?id=", "&title=", tmpstr, 0);
 	if(file == NULL)
