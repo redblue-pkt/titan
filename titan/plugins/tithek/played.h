@@ -5,7 +5,7 @@ char* played(char* link)
 {
 	debug(99, "link: %s", link);
 	int debuglevel = getconfigint("debuglevel", NULL);
-	char* tmphost = NULL, *error = NULL, *tmppath = NULL, *tmpstr = NULL, *send = NULL, *id = NULL, *fname = NULL, *hashmsg = NULL, *hash = NULL, *hashlen = NULL, *ip = NULL, *streamlink = NULL, *rand = NULL;
+	char* tmphost = NULL, *error = NULL, *tmppath = NULL, *tmpstr = NULL, *send = NULL, *id = NULL, *fname = NULL, *hashmsg = NULL, *hash = NULL, *hashlen = NULL, *ip = NULL, *streamlink = NULL;
 	
 	if(link == NULL) return NULL;
 
