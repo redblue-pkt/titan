@@ -123,4 +123,36 @@ void filedebugfunc(char* file, char* msg, ...)
 }
 #define filedebug(file, msg...) filedebugfunc(file, msg);
 
+//fileerr
+void fileerrfunc(char* file, char* file1, const char* function, int line, char* msg, ...)
+{
+	FILE* fd = fopen(file, "a"); 
+	if(fd != NULL)
+	{
+		va_list ap;
+		va_start(ap, msg);
+		fprintf(fd, "[%s] error: ", PROGNAME);
+		vfprintf(fd, msg, ap);
+		va_end(ap);
+		fprintf(fd, ", file=%s, func=%s, line=%d\n", file1, function, line);	
+	}
+}
+#define fileerr(file, msg...) fileerrfunc(file, __FILE__, __FUNCTION__, __LINE__, msg);
+
+//fileperr
+void fileperrfunc(char* file, char* file1, const char* function, int line, char* msg, ...)
+{
+	FILE* fd = fopen(file, "a"); 
+	if(fd != NULL)
+	{
+		va_list ap;
+		va_start(ap, msg);
+		fprintf(fd, "[%s] error: ", PROGNAME);
+		vfprintf(fd, msg, ap);
+		va_end(ap);
+		fprintf(fd, ", err=%m, file=%s, func=%s, line=%d\n", file1, function, line);
+	}
+}
+#define fileperr(file, msg...) fileperrfunc(file, __FILE__, __FUNCTION__, __LINE__, msg);
+
 #endif
