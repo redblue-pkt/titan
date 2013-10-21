@@ -30,6 +30,7 @@
 #include "novamov.h"
 #include "divxstage.h"
 #include "primeshare.h"
+#include "faststream.h"
 
 char pluginname[] = "TiTan Mediathek";
 char plugindesc[] = "TiTan Mediathek";

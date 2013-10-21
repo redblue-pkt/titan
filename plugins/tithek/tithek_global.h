@@ -228,6 +228,8 @@ char* hoster(char* url)
 		streamurl = divxstage(url);
 	else if(ostrstr(tmplink, "primeshare") != NULL)
 		streamurl = primeshare(url);
+	else if(ostrstr(tmplink, "faststream") != NULL)
+		streamurl = faststream(url);
 	else
 		textbox(_("Message"), _("The hoster is not yet supported !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 

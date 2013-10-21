@@ -51,5 +51,6 @@ char* movreel(char* link);
 char* novamov(char* link);
 char* divxstage(char* link);
 char* primeshare(char* link);
+char* faststream(char* link);
 
 #endif
