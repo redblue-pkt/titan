@@ -202,7 +202,7 @@ int solarmovie_hoster(struct skin* grid, struct skin* listbox, struct skin* coun
 	debug(99, "link: %s", link);
 	int debuglevel = getconfigint("debuglevel", NULL);
 	int ret = 1, series = 0;
-	char* pos = NULL, *etitle = NULL, *episode = NULL, *session = NULL, *update = NULL, *quality = NULL, *id = NULL, *line = NULL, *hname = NULL, *tmpstr = NULL, *cmd = NULL, *url = NULL, *tmpstr1 = NULL, *tmphost = NULL, *tmphname = NULL;
+	char* pos = NULL, *etitle = NULL, *episode = NULL, *session = NULL, *update = NULL, *quality = NULL, *id = NULL, *line = NULL, *hname = NULL, *tmpstr = NULL, *url = NULL, *tmpstr1 = NULL, *tmphost = NULL, *tmphname = NULL;
 	char* pichname = NULL, *tmppath = NULL;
 	unlink("/tmp/tithek/get");
 	unlink("/tmp/tithek/get_zcat");
@@ -233,6 +233,7 @@ int solarmovie_hoster(struct skin* grid, struct skin* listbox, struct skin* coun
 //	if(debuglevel == 99) system("cp -a /tmp/tithek/get /tmp/solarmovie1_tmpstr_get");
 
 //	tmpstr = command("cat /tmp/tithek/get");
+/*
 	if(ostrstr(tmpstr, "<!DOCTYPE") == NULL)
 	{
 		cmd = ostrcat(cmd, "cat /tmp/tithek/get | zcat", 1, 0);
@@ -245,6 +246,11 @@ int solarmovie_hoster(struct skin* grid, struct skin* listbox, struct skin* coun
 	}
 //	else
 //		system("cp -a /tmp/tithek/get /tmp/tithek/get_zcat");
+*/
+
+writesys("/tmp/tithek/get_zcat", tmpstr, 0);
+
+
 
 	titheklog(debuglevel, "/tmp/solarmovie2_tmpstr_zcat", NULL, tmpstr);
 
@@ -253,8 +259,11 @@ int solarmovie_hoster(struct skin* grid, struct skin* listbox, struct skin* coun
 	else
 		series = 0;
 
+printf("series: %d\n", series);
+
 	if(series == 0)
 	{
+printf("11111111111111111111111111111\n");
 		series = 0;
 		if(tmpstr != NULL)
 		{
@@ -341,6 +350,8 @@ int solarmovie_hoster(struct skin* grid, struct skin* listbox, struct skin* coun
 	}
 	else
 	{
+printf("22222222222222222222222222222222\n");
+	
 		series = 1;
 		if(tmpstr != NULL)
 		{
