@@ -29,7 +29,6 @@ char* nowvideo(char* link)
 		tmplink = string_replace("/Out/?s=", "", tmplink, 1);
 		debug(99, "remove out string: %s", tmplink);
 	}
-	
 
 	if(tmplink == NULL || ostrncmp("http://", tmplink, 7))
 	{
@@ -53,6 +52,15 @@ char* nowvideo(char* link)
 
 /////////////
 
+
+	if(ostrstr(link, "http://file.") != NULL)
+		tmphost = string_replace("file.", "www.", tmphost, 1);
+
+	if(ostrstr(link, "file.php?v=") != NULL)
+	{
+		tmppath = string_replace("file.php?v=", "video/", tmppath, 1);
+		tmppath = stringreplacecharonce(tmppath, '&', '\0');
+	}
 
 /*
 	tmphost = ostrcat(host, NULL, 0, 0);
@@ -126,7 +134,6 @@ char* nowvideo(char* link)
 		filekey = string_resub(searchstr, "\";", tmpstr, 0);
 	}
 	debug(99, "filekey: %s", filekey);
-
 
 	free(tmppath), tmppath = NULL;
 	tmppath = ostrcat("/api/player.api.php?file=", file, 0, 0);
