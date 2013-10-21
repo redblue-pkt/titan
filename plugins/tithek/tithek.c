@@ -31,6 +31,7 @@
 #include "divxstage.h"
 #include "primeshare.h"
 #include "faststream.h"
+#include "played.h"
 
 char pluginname[] = "TiTan Mediathek";
 char plugindesc[] = "TiTan Mediathek";
