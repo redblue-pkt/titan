@@ -119,8 +119,9 @@ void setdefaults()
 	status.defpicmemtimeout = getskinconfigint("defpicmemtimeout", NULL);
 	status.imdbfolderpath = getconfig("imdbfolderpath", NULL);
 	status.virtualzap = getconfigint("virtualzap", NULL);
-	status.fontsizeadjust = getskinconfigint("fontsizeadjust", NULL); 
-
+	status.fontsizeadjust = getskinconfigint("fontsizeadjust", NULL);
+	
+	if(checkbox("ATEMIO7600") == 1) delconfig("fastzap");
 	if(status.filelistselectcol == 0) status.filelistselectcol = status.listboxselectcol;
 	
 	status.bgpic = getskinconfig("bgpic", NULL);
