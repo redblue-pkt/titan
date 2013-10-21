@@ -27,20 +27,20 @@ int tithekmlehd = 0;
 //flag 11	- youtube suche 50
 //flag 12	- myvideo
 //flag 13	- myvideo search 50
-//flag 14	- hoster putlocker/sockshare
-//flag 15	- hoster filenuke
+//flag 14	- unbenutzt... old: hoster putlocker/sockshare
+//flag 15	- unbenutzt... old: hoster filenuke
 //flag 16	- superrtlnow pay
 //flag 17	- rtlnow pay
 //flag 18	- voxnow pay
 //flag 19	- rtl2now pay
-//flag 20	- hoster StreamCloud
+//flag 20	- unbenutzt... old: hoster StreamCloud
 //flag 21	- kinox search
 //flag 22	- kinox hoster
 //flag 23	- kinox hoster serie
-//flag 24	- hoster flashx
-//flag 25	- hoster vidstream
-//flag 26	- hoster xvidstage
-//flag 27	- hoster nowvideo
+//flag 24	- unbenutzt... old: hoster flashx
+//flag 25	- unbenutzt... old: hoster vidstream
+//flag 26	- unbenutzt... old: hoster xvidstage
+//flag 27	- unbenutzt... old: hoster nowvideo
 //flag 28	- solarmovie hoster
 //flag 29	- solarmovie search movie
 //flag 30	- solarmovie search serie
@@ -1235,7 +1235,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 			}
 			mbox = menulistbox(mlist, NULL, skintitle, NULL, NULL, 1, 0);
 			if(mbox != NULL) keyconf = mbox->name;
-			debug(99, "tmpstr1: %s filename: %s flag: %s", tmpstr1, filename, flag);
+			debug(99, "tmpstr1: %s filename: %s flag: %d", tmpstr1, filename, flag);
 			if(ostrcmp(keyconf, "Streaming Playback (default)") == 0)
 			{
 				addconfigtmp("playerbuffersize", "0");
