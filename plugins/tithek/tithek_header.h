@@ -53,5 +53,6 @@ char* divxstage(char* link);
 char* primeshare(char* link);
 char* faststream(char* link);
 char* played(char* link);
+char* videoweed(char* link);
 
 #endif

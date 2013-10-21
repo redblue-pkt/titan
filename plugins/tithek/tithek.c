@@ -32,6 +32,7 @@
 #include "primeshare.h"
 #include "faststream.h"
 #include "played.h"
+#include "videoweed.h"
 
 char pluginname[] = "TiTan Mediathek";
 char plugindesc[] = "TiTan Mediathek";
