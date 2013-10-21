@@ -881,7 +881,7 @@ msgid "How many days"
 msgstr "Wie viele Tage EPG im Voraus speichern"
 
 msgid "HTTP Settings"
-msgstr "Webserver Einstellungen"
+msgstr "Webinterface und RGUI Einstellungen"
 
 msgid "HTTPD Port"
 msgstr "Webserver Port"
@@ -2455,7 +2455,7 @@ msgid "Web Radio Player"
 msgstr "Web Radio Player"
 
 msgid "webif"
-msgstr "Web Interface"
+msgstr "Webinterface"
 
 msgid "Wednesday"
 msgstr "Mittwoch"
@@ -3151,7 +3151,7 @@ msgid "Here you can configure your network shares. Use to navigate the control c
 msgstr "Hier können Sie Ihre Netzwerk Freigaben konfigurieren.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can configure your web server. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie Ihren Webserver konfigurieren.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
+msgstr "Hier können Sie das Webinterface und den RGUI Service konfigurieren.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can configure access to your DynDNS. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
 msgstr "Hier können Sie Ihren DynDNS Zugang konfigurieren.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
@@ -3184,13 +3184,13 @@ msgid "Here you can make your mediadb settings. Use to navigate the control cros
 msgstr "Hier können Sie Ihre MediaDB Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can make your vfd settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie Ihre VFD Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
+msgstr "Hier können Sie Ihre VFDisplay Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can select from the following list. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
 msgstr "Hier können Sie aus der folgenden Liste auswählen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can edit the following channels from the EPG. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie aus den folgenden Kanälen das EPG bearbeiten.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
+msgstr "Hier können Sie Sender und Favoriten definieren, für die ein EPG Scan stattfinden soll.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can select from the following list a skin. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
 msgstr "Hier können Sie aus der folgenden Liste einen Skin auswählen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
