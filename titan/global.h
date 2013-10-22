@@ -77,8 +77,6 @@ char* createpluginpath(char* text, int flag)
 	  free(tmpstr); tmpstr = NULL;
 	  tmpstr = ostrcat(getconfig("pluginpath2", NULL), text, 0, 0);
 	  if(file_exist(tmpstr) == 1) return tmpstr;
-	  
-	  return NULL;
 	}
 	else
 	{
@@ -96,6 +94,7 @@ char* createpluginpath(char* text, int flag)
 		if(file_exist(tmpstr) == 1) return tmpstr;
 	}
 	
+	free(tmpstr); tmpstr = NULL;
 	return NULL;
 } 
 

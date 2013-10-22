@@ -471,15 +471,19 @@ char* changepicpath(char* picname)
 {
 	char* tmpstr = NULL;
 	
-	if(picname == NULL)
-		return NULL;
+	if(picname == NULL || picname[0] == '\0') return NULL;
 
-	if(getconfig("skinpath", NULL) != NULL && strlen(picname) > 0 && picname[0] != '/')
+	if(picname[0] != '/')
 	{
 		if(ostrstr(picname, "%pluginpath%/") != NULL)
 			tmpstr = createpluginpath(picname, 1);
 		else
-			tmpstr = createpath(getconfig("skinpath", NULL), picname);
+		{
+			if(getconfig("skinpath", NULL) != NULL)
+				tmpstr = createpath(getconfig("skinpath", NULL), picname);
+			else
+				tmpstr = ostrcat(picname, NULL, 0, 0);
+		}
 	}
 	else
 		tmpstr = ostrcat(picname, NULL, 0, 0);
