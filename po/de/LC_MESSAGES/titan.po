@@ -465,7 +465,7 @@ msgid "default"
 msgstr "System Status"
 
 msgid "Default"
-msgstr "Voreinstellung"
+msgstr "System Status"
 
 msgid "DEFAULT"
 msgstr "Voreinstellung"
@@ -3589,7 +3589,7 @@ msgid "Unicable product"
 msgstr "Unicable Produkt"
 
 msgid "Resync Recording immediately"
-msgstr "Synchronisiere Aufnahmen sofort"
+msgstr "Synchronisiere Aufnahmen sofort (Schreibcache aus)"
 
 msgid "TPK Upgrade done, your system will reboot !"
 msgstr "TPK Aktualisieren abgeschlossen\nIhre Box wird neu gestartet"
