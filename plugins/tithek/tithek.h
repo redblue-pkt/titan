@@ -1371,8 +1371,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 	writesysint("/proc/sys/vm/drop_caches", 3, 0); 
 	
 	if(first == 1)
-	{
-		delallfiles("/tmp/tithek", NULL); 
+	{ 
 		mkdir("/tmp/tithek", 777);
 		if(status.mcaktiv == 0)
 		{
@@ -2172,7 +2171,7 @@ waitrcstart:
 	if(first == 1)
 	{
 		freetithek();
-		delallfiles("/tmp/tithek", ".list");
+		delallfiles("/tmp/tithek", NULL);
 		if(status.mcaktiv == 0)
 			servicecheckret(servicestart(status.lastservice->channel, NULL, NULL, 0), 0);
 	}
