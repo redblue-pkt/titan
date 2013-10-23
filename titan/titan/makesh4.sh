@@ -771,6 +771,7 @@ rm -rf `find "$HOME"/flashimg/BUILD/titan -type f -name "*.po"`
 rm -rf `find "$HOME"/flashimg/BUILD/titan -type f -name "*.a"`
 rm -rf `find "$HOME"/flashimg/BUILD/titan -type f -name "*.la"`
 rm -rf `find "$HOME"/flashimg/BUILD/titan -type f -name "make.sh"`
+rm -rf `find "$HOME"/flashimg/BUILD/titan -type f -name "Makefile.am"`
 rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/networkbrowser/netlib
 rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/tithek/menu
 rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/tithek/tithekmainmenu

@@ -90,11 +90,19 @@ void screengmediarender()
 
 	drawscreen(skin, 0, 0);
 
+	if(file_exist("/var/usr/local/share/titan/plugins/gmediarender/gmediarender.sh") == 1)
+		cmd = ostrcat(cmd, "/var/usr/local/share/titan/plugins/gmediarender/gmediarender.sh gmediarender-", 1, 0);
+	else if(file_exist("/var/swap/usr/local/share/titan/plugins/gmediarender/gmediarender.sh") == 1)
+		cmd = ostrcat(cmd, "/var/swap/usr/local/share/titan/plugins/gmediarender/gmediarender.sh gmediarender-", 1, 0);
+	else
+		cmd = ostrcat(cmd, "/mnt/swapextensions/usr/local/share/titan/plugins/gmediarender/gmediarender.sh gmediarender-", 1, 0);
+	
 	cmd = ostrcat(cmd, "/var/usr/local/share/titan/plugins/gmediarender/gmediarender.sh gmediarender-", 1, 0);
 	cmd = ostrcat(cmd, status.boxtype, 1, 0);
 	cmd = ostrcat(cmd, " &", 1, 0);
 
 	//start renderer
+	debug(10, "cmd: %s", cmd);
 	system(cmd);
 	free(cmd), cmd = NULL;
 
