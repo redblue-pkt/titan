@@ -326,7 +326,9 @@ void screendlna()
 			
 			if(rcret == getrcconfigint("rcgreen", NULL))
 			{
+				debug(10, "cmd: %s", dlnastop);
 				system(dlnastop);
+				debug(10, "cmd: %s", dlnastart);
 				ret = system(dlnastart);
 				if(ret == 0)
 					textbox(_("Message"), _("DLNA started."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
@@ -338,6 +340,7 @@ void screendlna()
 
 		if(rcret == getrcconfigint("rcyellow", NULL))
 		{
+			debug(10, "cmd: %s", dlnastop);
 			system(dlnastop);
 			textbox(_("Message"), _("DLNA now stopped"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
 			drawscreen(dlna, 0, 0);
