@@ -1,0 +1,14 @@
+Package: titan-plugin-player-mediacenter
+Architecture: sh4
+Showname: Mediacenter
+Version: 24513
+Section: player
+Description: Atemio MediaCenter the best multimedia Player on sh4.
+Group: 0
+Minversion: 0
+Preinstalled: 0
+Size: 5
+Titanname: *
+Usepath: *
+Boxtype: *
+Installpath: /mnt/swapextensions
