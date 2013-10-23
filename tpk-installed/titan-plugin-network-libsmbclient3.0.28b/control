@@ -1,0 +1,14 @@
+Package: titan-plugin-network-libsmbclient3.0.28b
+Architecture: sh4
+Showname: SMB Client Lib v3.0.28b (/media/smbfs)
+Version: 24513
+Section: network
+Description: Networkfile libsmbclient 3.0.28b
+Group: 0
+Minversion: 0
+Preinstalled: 0
+Size: 1665
+Titanname: *
+Usepath: swap,mnt
+Boxtype: *
+Installpath: /mnt/swapextensions

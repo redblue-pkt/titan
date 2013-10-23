@@ -1,0 +1,14 @@
+Package: titan-plugin-wireless-rt2870sta
+Architecture: sh4
+Showname: Wlan rt2870sta
+Version: 24513
+Section: wireless
+Description: wireless modul rt2870sta.ko
+Group: 0
+Minversion: 0
+Preinstalled: 0
+Size: 461
+Titanname: *
+Usepath: *
+Boxtype: *
+Installpath: /var

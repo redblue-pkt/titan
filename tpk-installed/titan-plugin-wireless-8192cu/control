@@ -1,0 +1,14 @@
+Package: titan-plugin-wireless-8192cu
+Architecture: sh4
+Showname: Wlan 8192cu
+Version: 24513
+Section: wireless
+Description: wireless 8192cu.ko model
+Group: 0
+Minversion: 0
+Preinstalled: 0
+Size: 242
+Titanname: *
+Usepath: *
+Boxtype: *
+Installpath: /var
