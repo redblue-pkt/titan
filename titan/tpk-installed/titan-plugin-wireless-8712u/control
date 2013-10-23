@@ -1,0 +1,14 @@
+Package: titan-plugin-wireless-8712u
+Architecture: sh4
+Showname: Wlan 8712u
+Version: 24513
+Section: wireless
+Description: wireless modul 8712u.ko
+Group: 0
+Minversion: 0
+Preinstalled: 0
+Size: 327
+Titanname: *
+Usepath: *
+Boxtype: *
+Installpath: /var
