@@ -83,14 +83,17 @@ char* createpluginpath(char* text, int flag)
 		if(strlen(text) < 13) return NULL;
 		
 		tmpstr = ostrcat(getconfig("pluginpath", NULL), &text[12], 0, 0);
+if(tmpstr != NULL) printf("1) %s\n", tmpstr);
 		if(file_exist(tmpstr) == 1) return tmpstr;
 		
 		free(tmpstr); tmpstr = NULL;
 		tmpstr = ostrcat(getconfig("pluginpath1", NULL), &text[12], 0, 0);
+if(tmpstr != NULL) printf("2) %s\n", tmpstr);
 		if(file_exist(tmpstr) == 1) return tmpstr;
 		
 		free(tmpstr); tmpstr = NULL;
 		tmpstr = ostrcat(getconfig("pluginpath2", NULL), &text[12], 0, 0);
+if(tmpstr != NULL) printf("3) %s\n", tmpstr);
 		if(file_exist(tmpstr) == 1) return tmpstr;
 	}
 	
