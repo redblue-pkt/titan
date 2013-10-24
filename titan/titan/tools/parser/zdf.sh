@@ -68,7 +68,7 @@ if [ "$buildtype" = "full" ];then
 
 				filename2=`echo $TITLE | tr 'A-Z' 'a-z' | tr '(' '.' | tr ')' '.' | tr '-' '.' | tr '_' '.' | tr '~' '.' | tr '|' '.' | tr ',' '.' | tr '"' '.' | tr ':' '.' | tr ' ' '.' | tr '+' '.' | tr '!' '.' | sed 's!%2!!g' | sed 's!&!.!g' | sed 's/\.\+/./g'`
 
-				URL="http://atemio.dyndns.tv/mediathek/streams/zdf.$filename.$filename2.list"
+				URL="http://atemio.dyndns.tv/mediathek/zdf/zdf.$filename.$filename2.list"
 				PIC="http://atemio.dyndns.tv/mediathek/menu/$filename2.jpg"
 
 				LINE="$TITLE#$URL#$PIC#zdf_$piccount.jpg#ZDF#3"
