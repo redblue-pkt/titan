@@ -892,8 +892,6 @@ firstwizzardstep1:
 			servicecheckret(serviceret, 0);
 	}
 
-	//start spinner thread
-	addtimer(&checkspinner, START, 2000, -1, NULL, NULL, NULL);
 	//start auto shutdown thread
 	addtimer(&checkshutdowntimer, START, 10000, -1, NULL, NULL, NULL);
 	//start demo mode
@@ -957,6 +955,9 @@ firstwizzardstep1:
 
 	//init the player
 	playerinit(argc, argv);
+	
+	//start spinner thread
+	addtimer(&checkspinner, START, 2000, -1, NULL, NULL, NULL);
 
 	system(getconfig("skriptaftertv", NULL));
 
