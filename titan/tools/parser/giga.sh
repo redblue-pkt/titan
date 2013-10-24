@@ -68,12 +68,14 @@ for ROUND0 in $WATCHLIST; do
 
 #			PIC=`cat cache.giga."$filename"."$count" | grep 'rel="media:video" resource=' | sed 's!poster=!\npic=!g' | grep ^pic= | cut -d'"' -f2 | tail -n1`
 
-	
 #			TITLE=`cat cache.giga."$filename"."$count" | grep 'rel="media:video" resource=' | sed 's!"POST_TITLE":!\ntitle=!g' | grep ^title= | cut -d'"' -f2`
-			TITLE=`echo $ROUND2 | sed 's!~rel="media:thumbnail"~href=!\npic=!g' | grep ^pic= | sed 's!></a>!\n\r!g' | tr '~' ' ' | sed 's!<a href=.*!!g' | sed '/./,$!d' | tail -n1 | tr '\r' ' '`
-
+#			TITLE=`echo $ROUND2 | sed 's!~rel="media:thumbnail"~href=!\npic=!g' | grep ^pic= | sed 's!></a>!\n\r!g' | tr '~' ' ' | sed 's!<a href=.*!!g' | sed '/./,$!d' | tail -n1 | tr '\r' ' '`
+#			TITLE=`echo $ROUND2 | sed 's!;~">!\ntitle>!g' | grep ^"title>" | tr '~' ' ' | cut -d ">" -f2 | sed '/./,$!d' | tail -n1 | tr '\r' ' '`
+			TITLE=`echo $URL | tr '/' '\n' | tr '~' ' ' | tail -n1 | sed 's!.mp4!!' | tr '-' ' '`
+		
+			
 			if [ -z "$TITLE" ]; then
-				TITLE=`echo $URL | sed 's!http://www.giga.de/!!'| tr '/' '\n' | tail -n2 | head -n1 | tr '-' ' '`
+				TITLE="unknown title"
 			fi
 	
 			TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' # ' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/Ãx/g' -e 's/&ndash;/-/g' -e 's/&Auml;/Ã/g' -e 's/&Uuml;/ÃS/g' -e 's/&Ouml;/Ã/g' -e 's/&auml;/Ã¤/g' -e 's/&uuml;/Ã¼/g' -e 's/&ouml;/Ã¶/g' -e 's/&eacute;/Ã©/g' -e 's/&egrave;/Ã¨/g' -e 's/%F6/Ã¶/g' -e 's/%FC/Ã¼/g' -e 's/%E4/Ã¤/g' -e 's/%26/&/g' -e 's/%C4/Ã/g' -e 's/%D6/Ã/g' -e 's/%DC/ÃS/g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
