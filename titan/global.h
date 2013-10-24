@@ -1651,7 +1651,7 @@ void setskinnodeslocked(int flag)
 			}
 
 //			if(checkbox("UFS910") == 0)
-			if(!file_exist("/etc/.beta"))
+			if(!file_exist("/etc/.beta") || checkbox("UFS910") == 0)
 			{
 				if(ostrcmp("system_backup", child->name) == 0) child->locked = 1;
 			}
