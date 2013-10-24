@@ -40,7 +40,7 @@ char* ard(char* link)
 		int count = 0, i = 0;	
  		struct splitstr* ret1 = NULL;
  		struct menulist* mlist = NULL, *mbox = NULL;
-		ret1 = strsplit(string_decode(tmpstr2,0), "\n", &count);
+		ret1 = strsplit(string_decode(tmpstr2, 0), "\n", &count);
 		for(i = 0; i < count; i++)
 		{
 			if(ret1[i].part != NULL && strlen(ret1[i].part) > 1)
@@ -95,7 +95,7 @@ char* ard(char* link)
 			}
 		}
 		free(ret1), ret1 = NULL;
-		free(tmpstr2), tmpstr2 = NULL;
+//		free(tmpstr2), tmpstr2 = NULL;
 
 		if(mlist != NULL)
 		{
