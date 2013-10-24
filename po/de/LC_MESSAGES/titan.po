@@ -4129,7 +4129,7 @@ msgid "Can't start system update\nSyntax Error on updatefile"
 msgstr "System Aktualisierung kann nicht gestartet werden!\nSyntax Fehler im Update File."
 
 msgid "You can leave HBBTV with Record Key."
-msgstr "HBBTV kann mit der RECORD Taste beendet werden."
+msgstr "Wichtig: Starten Sie HBBTV mit der ROTEN Taste.\nBeenden Sie HBBTV mit der RECORD Taste."
 
 msgid "Search only aktual epg ?"
 msgstr "Nur im aktuellen EPG suchen?"
