@@ -118,10 +118,15 @@ compile "gmediarender" "gmediarender" "" ""
 compile "imdb" "imdb" "" ""
 compile "filemanager" "filemanager" "" ""
 compile "catcatch" "catcatch" "" ""
-compile "facebook" "facebook" "" "-l curl"
 compile "readerconfig" "readerconfig" "" ""
 compile "tiwakeup" "tiwakeup" "" ""
 compile "autotimer" "autotimer" "" ""
 compile "usbreset" "usbreset" "" ""
+
+cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
+echo make curl
+make curl
+compile "facebook" "facebook" "" "-l curl"
+
 
 #rm -r networkbrowser/networkbrowser
