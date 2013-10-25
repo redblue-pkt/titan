@@ -402,7 +402,7 @@ struct tpk* tpkcreateindex(char* path, char* name, int flag)
   		goto end;
   	}
   
-  	writeret = fprintf(fd, "%s#%s#%s#%s#%s#%s#%s#%s#%d#%d#%d#%d#%d#%d\n", tpknode->name, tpknode->showname, tpknode->section, tpknode->desc, tpknode->arch, tpknode->titanname, tpknode->usepath, tpknode->boxtype, tpknode->version, tpknode->group, tpknode->minversion, tpknode->preinstalled, tpknode->size);
+  	writeret = fprintf(fd, "%s#%s#%s#%s#%s#%s#%s#%s#%d#%d#%d#%d#%d\n", tpknode->name, tpknode->showname, tpknode->section, tpknode->desc, tpknode->arch, tpknode->titanname, tpknode->usepath, tpknode->boxtype, tpknode->version, tpknode->group, tpknode->minversion, tpknode->preinstalled, tpknode->size);
   	if(writeret < 0)
   	{
   		perr("writting file %s", PACKAGES);
