@@ -21,6 +21,7 @@ short debug_level = 10;
 #define _(x) gettext(x)
 #define MINMALLOC 4096
 #define PROGNAME "tpk"
+#define TPKZIPALL 0
 
 //#define WORKDIR "/tpk" //path must exist
 #define TPKFILELIST WORKDIR"/filelist.tpk"
@@ -585,14 +586,45 @@ int tpkcreatearchive(char* mainpath, char* dirname, int first)
 			tmpstr = ostrcat(tmpstr, path, 1, 0);
 			tmpstr = ostrcat(tmpstr, "/", 1, 0);
 			tmpstr = ostrcat(tmpstr, entry->d_name, 1, 0);
+			
+			if(ZIPALL == 0)
+			{
+				char* tmpzip = ostrcat("gzip ", tmpstr, 0, 0);
+				ret = system(tmpzip);
+				free(tmpzip); tmpzip = NULL;
+				if(ret != 0)
+				{
+					err("zip file %s", tmpstr);
+					ret = 1;
+					break;
+				}
+				
+				tmpstr = ostrcat(tmpstr, ".gz", 1, 0);			
+			}
+
 			ret = tpkcreatefile(mainpath, tmpstr, ARCHIVE, 0, -1, 1);
-			free(tmpstr); tmpstr = NULL;
 			if(ret != 0)
 			{
-				err("create file");
+				err("create file %s", tmpstr);
+				free(tmpstr); tmpstr = NULL;
 				ret = 1;
 				break;
 			}
+			
+			if(TPKZIPALL == 0)
+			{
+				char* tmpzip = ostrcat("gzip -d ", tmpstr, 0, 0);
+				ret = system(tmpzip);
+				if(ret != 0)
+				{
+					err("unzip file %s", tmpstr);
+					free(tmpstr); tmpstr = NULL;
+					ret = 1;
+					break;
+				}			
+			}
+			
+			free(tmpstr); tmpstr = NULL;
 		}
 		else if(entry->d_type == DT_SOCK) //socket
 		{
@@ -815,22 +847,25 @@ int tpkcreatallearchive(char* dirname, char* name)
 					goto end;
 				}
 
-				tmpstr = ostrcat(tmpstr, "gzip ", 1, 0);
-				tmpstr = ostrcat(tmpstr, WORKDIR, 1, 0);
-				tmpstr = ostrcat(tmpstr, "/", 1, 0);
-				tmpstr = ostrcat(tmpstr, tpknode->name, 1, 0);
-				tmpstr = ostrcat(tmpstr, "_", 1, 0);
-				tmpstr = ostrcat(tmpstr, oitoa(tpknode->version), 1, 1);
-				tmpstr = ostrcat(tmpstr, "_", 1, 0);
-				tmpstr = ostrcat(tmpstr, tpknode->arch, 1, 0);
-				tmpstr = ostrcat(tmpstr, ".tpk", 1, 0);
-				ret = system(tmpstr);
-				free(tmpstr); tmpstr = NULL;
-				if(ret != 0)
+				if(TPKZIPALL == 1)
 				{
-					err("gzip file");
-					ret = 1;
-					goto end;
+					tmpstr = ostrcat(tmpstr, "gzip ", 1, 0);
+					tmpstr = ostrcat(tmpstr, WORKDIR, 1, 0);
+					tmpstr = ostrcat(tmpstr, "/", 1, 0);
+					tmpstr = ostrcat(tmpstr, tpknode->name, 1, 0);
+					tmpstr = ostrcat(tmpstr, "_", 1, 0);
+					tmpstr = ostrcat(tmpstr, oitoa(tpknode->version), 1, 1);
+					tmpstr = ostrcat(tmpstr, "_", 1, 0);
+					tmpstr = ostrcat(tmpstr, tpknode->arch, 1, 0);
+					tmpstr = ostrcat(tmpstr, ".tpk", 1, 0);
+					ret = system(tmpstr);
+					free(tmpstr); tmpstr = NULL;
+					if(ret != 0)
+					{
+						err("gzip file");
+						ret = 1;
+						goto end;
+					}
 				}
 
 				ret = unlink(TPKFILELIST);
