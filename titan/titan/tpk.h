@@ -995,7 +995,7 @@ end:
 int tpkcreatefilegz(char* from, char* to, off64_t start, off64_t len, int flag)
 {
 	int fdfrom = -1, fdto = -1, ret = 0, readret = 0, writeret = 0;
-	off64_t count = 0, endpos = 0;
+	off64_t count = 0;
 	unsigned char bufin[MINMALLOC * 4] = {'\0'};
 	unsigned char bufout[MINMALLOC * 4] = {'\0'};
 	z_stream stream;
