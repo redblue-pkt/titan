@@ -210,6 +210,7 @@ struct lastsubtitle
 	uint64_t transponderid;
 	int serviceid;
 	int16_t subtitlepid;
+	int16_t subtitleid1;
 	int16_t subtitleid2;
 	struct lastsubtitle* next;
 };
@@ -1341,6 +1342,7 @@ struct status
 	int subthreadstatus;
 	int subthreadaktion;
 	int subthreadpid;
+	int subthreadid1;
 	int subthreadid2;
 	// epg thread pointer
 	struct stimerthread* epgthread;
