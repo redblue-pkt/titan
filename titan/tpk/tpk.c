@@ -604,9 +604,7 @@ int tpkcreatearchive(char* mainpath, char* dirname, int first)
 					free(tmpstr); tmpstr = NULL;
 					ret = 1;
 					break;
-				}
-				
-				tmpstr = ostrcat(tmpstr, ".gz", 1, 0);			
+				}		
 			}
 
 			ret = tpkcreatefile(mainpath, tmpstr, ARCHIVE, 0, -1, 1);
