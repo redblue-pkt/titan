@@ -9,6 +9,7 @@
 #define PREVIEWFILELIST "/tmp/filelist.preview"
 #endif
 
+#define TPKUSEBACKUP 1
 #define TPKLOG "/tmp/tpk.log"
 #define FEEDFILE "/etc/ipkg/official-feed.conf"
 #define PREDIR "/etc/tpk.restore"
@@ -1301,7 +1302,7 @@ int tpkwriterestore(char* path, char* to, int newtype, int oldtype, int exist)
 	}
 	free(tmpstr); tmpstr = NULL;
 
-	if(exist == 1)
+	if(TPKUSEBACKUP == 1 && exist == 1)
 	{
 		if(oldtype == DT_REG)
 		{
