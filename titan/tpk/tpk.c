@@ -587,7 +587,7 @@ int tpkcreatearchive(char* mainpath, char* dirname, int first)
 			tmpstr = ostrcat(tmpstr, "/", 1, 0);
 			tmpstr = ostrcat(tmpstr, entry->d_name, 1, 0);
 			
-			if(ZIPALL == 0)
+			if(TPKZIPALL == 0)
 			{
 				char* tmpzip = ostrcat("gzip ", tmpstr, 0, 0);
 				ret = system(tmpzip);
