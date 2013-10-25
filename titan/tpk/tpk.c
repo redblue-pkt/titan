@@ -590,11 +590,8 @@ int tpkcreatearchive(char* mainpath, char* dirname, int first)
 			if(TPKZIPALL == 0)
 			{
 				char* tmpzip = NULL;
+				
 				tmpzip = ostrcat("gzip \"", tmpstr, 0, 0);
-				tmpzip = ostrcat(tmpzip, "\"; rename \"", 1, 0);
-				tmpzip = ostrcat(tmpzip, tmpstr, 1, 0);
-				tmpzip = ostrcat(tmpzip, ".gz\" \"", 1, 0);
-				tmpzip = ostrcat(tmpzip, tmpstr, 1, 0);
 				tmpzip = ostrcat(tmpzip, "\"", 1, 0);
 				printf("tmpzip1: %s\n",tmpzip);
 				ret = system(tmpzip);
@@ -602,6 +599,17 @@ int tpkcreatearchive(char* mainpath, char* dirname, int first)
 				if(ret != 0)
 				{
 					err("zip file %s", tmpstr);
+					free(tmpstr); tmpstr = NULL;
+					ret = 1;
+					break;
+				}
+				
+				tmpzip = ostrcat(tmpstr, ".gz", 0, 0);
+				ret = rename(tmpzip, tmpstr);
+				free(tmpzip); tmpzip = NULL;
+				if(ret != 0)
+				{
+					err("rename file %s", tmpstr);
 					free(tmpstr); tmpstr = NULL;
 					ret = 1;
 					break;
@@ -620,12 +628,20 @@ int tpkcreatearchive(char* mainpath, char* dirname, int first)
 			if(TPKZIPALL == 0)
 			{
 				char* tmpzip = NULL;
-				tmpzip = ostrcat("rename \"", tmpstr, 0, 0);
-				tmpzip = ostrcat(tmpzip, "\" \"", 1, 0);
-				tmpzip = ostrcat(tmpzip, tmpstr, 1, 0);
-				tmpzip = ostrcat(tmpzip, ".gz\"; gzip -d \"", 1, 0);
-				tmpzip = ostrcat(tmpzip, tmpstr, 1, 0);
-				tmpzip = ostrcat(tmpzip, "\"", 1, 0);
+				
+				tmpzip = ostrcat(tmpstr, ".gz", 0, 0);
+				ret = rename(tmpstr, tmpzip);
+				free(tmpzip); tmpzip = NULL;
+				if(ret != 0)
+				{
+					err("rename file %s", tmpstr);
+					free(tmpstr); tmpstr = NULL;
+					ret = 1;
+					break;
+				}
+				
+				tmpzip = ostrcat("gzip -d \"", tmpstr, 0, 0);
+				tmpzip = ostrcat(tmpzip, ".gz\"", 1, 0);
 				printf("tmpzip2: %s\n",tmpzip);
 				ret = system(tmpzip);
 				free(tmpzip); tmpzip = NULL;
