@@ -25,7 +25,7 @@
 #define HTTPPREVIEW "Packages.preview.gz"
 
 int tpkremove(char* file, int restore, int flag);
-int tpkgetpackage(char* package, char* url, char* installpath);
+int tpkgetpackage(char* package, char* url, char* installpath, int flag);
 int tpklistinstalled(int flag);
 int tpkcreatefilereal(char* mainpath, char* from, char* to, off64_t start, off64_t len, char* name, int flag);
 
@@ -1860,7 +1860,9 @@ end:
 	return ret;
 }
 
-int tpkinstall(char* file, char* installpath)
+//flag 0: check group
+//flag 1: don't check group
+int tpkinstall(char* file, char* installpath, int flag)
 {
 	int ret = 0;
 	off64_t startpos = 0, len = 0;
@@ -1999,31 +2001,34 @@ int tpkinstall(char* file, char* installpath)
 	free(tmpstr); tmpstr = NULL;
 
 	//check group
-	freetpk();
-	tpklistinstalled(1);
-	tpkinstalled = tpk;
-	tpk = NULL;
-
-	tpknode = tpkreadcontrol(path, 0);
-	if(tpknode == NULL)
+	if(flag == 0)
 	{
-		err("read control files %s/%s", path, name);
-		ret = 1;
-		goto end;
-	}
-
-	if(tpknode->group != 0)
-	{
-		struct tpk* node = tpkinstalled;
-		while(node != NULL)
+		freetpk();
+		tpklistinstalled(1);
+		tpkinstalled = tpk;
+		tpk = NULL;
+	
+		tpknode = tpkreadcontrol(path, 0);
+		if(tpknode == NULL)
 		{
-			if(node->group == tpknode->group && ostrcmp(node->name, tpknode->name) != 0)
+			err("read control files %s/%s", path, name);
+			ret = 1;
+			goto end;
+		}
+	
+		if(tpknode->group != 0)
+		{
+			struct tpk* node = tpkinstalled;
+			while(node != NULL)
 			{
-				err("can't install tpk with same group %s (group %d)", path, tpknode->group);
-				ret = 1;
-				goto end;
+				if(node->group == tpknode->group && ostrcmp(node->name, tpknode->name) != 0)
+				{
+					err("can't install tpk with same group %s (group %d)", path, tpknode->group);
+					ret = 1;
+					goto end;
+				}
+				node = node->next;
 			}
-			node = node->next;
 		}
 	}
 	
@@ -2896,7 +2901,7 @@ int tpkupdate()
 					continue;
 				}
 
-				ret = tpkgetpackage(tpknode->filename, tpknode->url, tpkinstallednode->installpath);
+				ret = tpkgetpackage(tpknode->filename, tpknode->url, tpkinstallednode->installpath, 1);
 				if(ret == 0) //install ok
 				{
 					tpkcleanworkdir(tmpstr1);
@@ -3092,7 +3097,9 @@ end:
 	return err;
 }
 
-int tpkgetpackage(char* package, char* url, char* installpath)
+//flag 0: check group
+//flag 1: don't check group
+int tpkgetpackage(char* package, char* url, char* installpath, int flag)
 {
 	int ret = 0, port = 80;
 	char* ip = NULL, *path = NULL;
@@ -3145,7 +3152,7 @@ int tpkgetpackage(char* package, char* url, char* installpath)
     debug(130, "get http://%s/%s -> %s", ip, tmpstr1, tmpstr2);
 		screendownload("Download", ip, tmpstr1, port, tmpstr2, HTTPAUTH, 5000, 0);
 		drawscreen(load, 0, 0);
-		ret = tpkinstall(tmpstr3, installpath);
+		ret = tpkinstall(tmpstr3, installpath, flag);
 		clearscreen(load);
 		unlink(tmpstr2);
 		unlink(tmpstr3);
