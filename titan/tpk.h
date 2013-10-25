@@ -20,6 +20,7 @@
 #define EXTRACTDIR "/mnt/tpk" //path must exist
 #define PREFILE "/var/etc/.tpkpre"
 #define TPKADDSIZE 100
+#define TPKZIPALL 0
 
 #define HTTPPACKAGES "Packages.gz"
 #define HTTPPREVIEW "Packages.preview.gz"
@@ -480,6 +481,142 @@ end:
 		if(flag == 0 && ret == 1) unlink(to);
 	}
 	free(buf);
+
+	return ret;
+}
+
+//flag 0: zlib
+//flag 1: gzip
+int tpkcreatefilegz(char* from, char* to, off64_t start, off64_t len, int flag)
+{
+	int fdfrom = -1, fdto = -1, ret = 0, readret = 0, writeret = 0;
+	off64_t count = 0, endpos = 0;
+	unsigned char bufin[MINMALLOC * 4] = {'\0'};
+	unsigned char bufout[MINMALLOC * 4] = {'\0'};
+	z_stream stream;
+	
+	stream.zalloc = Z_NULL;
+	stream.zfree = Z_NULL;
+	stream.opaque = Z_NULL;
+	stream.avail_in = 0;
+	stream.next_in = Z_NULL;
+	stream.avail_out = 0;
+	stream.next_out = Z_NULL;
+
+	if(flag == 1)
+		ret = inflateInit2(&stream, 16 + MAX_WBITS);
+	else
+		ret = inflateInit(&stream);
+	if(ret != Z_OK)
+		return 1;
+
+	fdfrom = open(from, O_RDONLY);
+	if(fdfrom < 0)
+	{
+		perr("open from %s", from);
+		ret = 1;
+		goto end;
+	}
+
+	ret = unlink(to);
+	if(ret != 0 && errno != ENOENT)
+	{
+		perr("remove file %s", to);
+		ret = 1;
+		goto end;
+	}
+	else
+		ret = 0;
+
+	fdto = open(to, O_CREAT | O_TRUNC | O_WRONLY | O_LARGEFILE, 0777);
+	if(fdto < 0)
+	{
+		perr("open to %s", to);
+		ret = 1;
+		goto end;
+	}
+
+	if(len == -1)
+	{
+		len = lseek64(fdfrom, 0, SEEK_END);
+		if(len < 0)
+		{
+			perr("can't get filelen %s", from);
+			ret = 1;
+			goto end;
+		}
+	}
+
+	if(lseek64(fdfrom, start, SEEK_SET) < 0)
+	{
+		perr("can't seek to startpos %s", from);
+		ret = 1;
+		goto end;
+	}
+
+	while(len != 0)
+	{
+		if(len - count > (MINMALLOC * 4))
+			readret = dvbreadfd(fdfrom, bufin, 0, MINMALLOC * 4, -1, 1);
+		else
+			readret = dvbreadfd(fdfrom, bufin, 0, len - count, -1, 1);
+		if(readret <= 0)
+		{
+			err("read file %s", from);
+			ret = 1;
+			goto end;
+		}
+		
+		stream.avail_in = readret;
+		stream.next_in = (void*)bufin;
+		
+		do
+		{
+			stream.avail_out = MINMALLOC * 4;
+			stream.next_out = bufout;
+
+			ret = inflate(&stream, Z_NO_FLUSH);
+			if(ret == Z_NEED_DICT || ret == Z_DATA_ERROR || ret == Z_MEM_ERROR)
+			{
+				err("unzip file %s", from);
+				ret = 1;
+				goto end;				
+			}
+			else
+				ret = 0;
+			
+			int have = (MINMALLOC * 4) - stream.avail_out;
+
+			writeret = dvbwrite(fdto, bufout, have, -1);
+			if(writeret != have)
+			{
+				err("write file %s", to);
+				ret = 1;
+				goto end;
+			}
+		}
+		while (stream.avail_out == 0);
+
+		count += readret;
+		if(count == len) break;
+		if(count > len)
+		{
+			err("write more then filelen %s", to);
+			ret = 1;
+			goto end;
+		}
+	}
+
+end:
+	(void)inflateEnd(&stream);
+
+	if(fdfrom >= 0)
+		close(fdfrom);
+	if(fdto >= 0)
+	{
+		close(fdto);
+		if(ret == 1) unlink(to);
+	}
 
 	return ret;
 }
@@ -1535,7 +1672,10 @@ int tpkextractfilelist(char* file, char* path, int flag)
 		}
 		else if(type == DT_REG) //file
 		{
-			ret = tpkcreatefile("", file, to, startpos, len, 0);
+			if(TPKZIPALL == 1)
+				ret = tpkcreatefile("", file, to, startpos, len, 0);
+			else
+				ret = tpkcreatefilegz(file, to, startpos, len, 1);
 			if(ret != 0)
 			{
 				err("create file %s", to);
