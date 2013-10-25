@@ -4132,7 +4132,7 @@ msgid "You can leave HBBTV with Record Key."
 msgstr "Wichtig: Starten Sie HBBTV mit der ROTEN Taste.\nBeenden Sie HBBTV mit der RECORD Taste."
 
 msgid "Search only aktual epg ?"
-msgstr "Nur im aktuellen EPG suchen?"
+msgstr "Nur im EPG des aktuellen Senders suchen?"
 
 msgid "Child"
 msgstr "Kinder"
