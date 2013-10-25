@@ -593,7 +593,6 @@ int tpkcreatearchive(char* mainpath, char* dirname, int first)
 				
 				tmpzip = ostrcat("gzip \"", tmpstr, 0, 0);
 				tmpzip = ostrcat(tmpzip, "\"", 1, 0);
-				printf("tmpzip1: %s\n",tmpzip);
 				ret = system(tmpzip);
 				free(tmpzip); tmpzip = NULL;
 				if(ret != 0)
@@ -642,7 +641,6 @@ int tpkcreatearchive(char* mainpath, char* dirname, int first)
 				
 				tmpzip = ostrcat("gzip -d \"", tmpstr, 0, 0);
 				tmpzip = ostrcat(tmpzip, ".gz\"", 1, 0);
-				printf("tmpzip2: %s\n",tmpzip);
 				ret = system(tmpzip);
 				free(tmpzip); tmpzip = NULL;
 				if(ret != 0)
