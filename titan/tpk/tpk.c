@@ -589,12 +589,15 @@ int tpkcreatearchive(char* mainpath, char* dirname, int first)
 			
 			if(TPKZIPALL == 0)
 			{
-				char* tmpzip = ostrcat("gzip ", tmpstr, 0, 0);
+				char* tmpzip = NULL;
+				tmpzip = ostrcat("gzip \"", tmpstr, 0, 0);
+				tmpzip = ostrcat(tmpzip, "\"", 1, 0);
 				ret = system(tmpzip);
 				free(tmpzip); tmpzip = NULL;
 				if(ret != 0)
 				{
 					err("zip file %s", tmpstr);
+					free(tmpstr); tmpstr = NULL;
 					ret = 1;
 					break;
 				}
@@ -613,8 +616,11 @@ int tpkcreatearchive(char* mainpath, char* dirname, int first)
 			
 			if(TPKZIPALL == 0)
 			{
-				char* tmpzip = ostrcat("gzip -d ", tmpstr, 0, 0);
+				char* tmpzip = NULL;
+				tmpzip = ostrcat("gzip -d \"", tmpstr, 0, 0);
+				tmpzip = ostrcat(tmpzip, "\"", 1, 0);
 				ret = system(tmpzip);
+				free(tmpzip); tmpzip = NULL;
 				if(ret != 0)
 				{
 					err("unzip file %s", tmpstr);
