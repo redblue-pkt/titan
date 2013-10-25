@@ -126,6 +126,8 @@ compile "usbreset" "usbreset" "" ""
 cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
 echo make curl
 make curl
+
+cd "$HOME"/flashimg/source.titan/plugins
 compile "facebook" "facebook" "" "-l curl"
 
 
