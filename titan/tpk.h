@@ -994,11 +994,15 @@ end:
 //flag 1: gzip
 int tpkcreatefilegz(char* from, char* to, off64_t start, off64_t len, int flag)
 {
+	char* tmpstr = NULL;
 	int fdfrom = -1, fdto = -1, ret = 0, readret = 0, writeret = 0;
 	off64_t count = 0;
 	unsigned char bufin[MINMALLOC * 4] = {'\0'};
 	unsigned char bufout[MINMALLOC * 4] = {'\0'};
 	z_stream stream;
+	
+	if(to == NULL) return 1;
+	tmpstr = string_replace(".gz", NULL, to, 0);
 	
 	stream.zalloc = Z_NULL;
 	stream.zfree = Z_NULL;
@@ -1023,20 +1027,20 @@ int tpkcreatefilegz(char* from, char* to, off64_t start, off64_t len, int flag)
 		goto end;
 	}
 
-	ret = unlink(to);
+	ret = unlink(tmpstr);
 	if(ret != 0 && errno != ENOENT)
 	{
-		perr("remove file %s", to);
+		perr("remove file %s", tmpstr);
 		ret = 1;
 		goto end;
 	}
 	else
 		ret = 0;
 
-	fdto = open(to, O_CREAT | O_TRUNC | O_WRONLY | O_LARGEFILE, 0777);
+	fdto = open(tmpstr, O_CREAT | O_TRUNC | O_WRONLY | O_LARGEFILE, 0777);
 	if(fdto < 0)
 	{
-		perr("open to %s", to);
+		perr("open to %s", tmpstr);
 		ret = 1;
 		goto end;
 	}
@@ -1095,7 +1099,7 @@ int tpkcreatefilegz(char* from, char* to, off64_t start, off64_t len, int flag)
 			writeret = dvbwrite(fdto, bufout, have, -1);
 			if(writeret != have)
 			{
-				err("write file %s", to);
+				err("write file %s", tmpstr);
 				ret = 1;
 				goto end;
 			}
@@ -1106,7 +1110,7 @@ int tpkcreatefilegz(char* from, char* to, off64_t start, off64_t len, int flag)
 		if(count == len) break;
 		if(count > len)
 		{
-			err("write more then filelen %s", to);
+			err("write more then filelen %s", tmpstr);
 			ret = 1;
 			goto end;
 		}
@@ -1120,9 +1124,10 @@ end:
 	if(fdto >= 0)
 	{
 		close(fdto);
-		if(ret == 1) unlink(to);
+		if(ret == 1) unlink(tmpstr);
 	}
 
+	free(tmpstr); tmpstr = NULL;
 	return ret;
 }
 
