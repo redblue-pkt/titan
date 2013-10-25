@@ -3942,11 +3942,11 @@ msgstr "/mnt nicht beschreibbar!\nReparieren?"
 msgid "Can't install Package. Package to big."
 msgstr "Paket zu groß. Installation nicht möglich."
 
-msgid "Format and restore default settings"
-msgstr "Formatiere internen Speicher mit Werkseinstellung"
+msgid "Format MNT with Backup/Restore"
+msgstr "Formatiere MNT und sichere eigene Daten"
 
-msgid "Format and backup/restore settings"
-msgstr "Formatiere internen Speicher ohne Werkseinstellung"
+msgid "Format MNT (all)"
+msgstr "Formatiere MNT (komplett)"
 
 msgid "Do you really want to erase Swap (Settings are preserve)?\nThe Box will reboot and the erase will be started!"
 msgstr "Internen Swap Speicher löschen (Konfiguration wird beibehalten)?\nBox neu starten und Löschvorgang ausführen "
