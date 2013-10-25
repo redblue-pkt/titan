@@ -61,8 +61,8 @@ void screenrestoredefaultchoice()
 	struct menulist* mlist = NULL, *mbox = NULL;
 
 	addmenulist(&mlist, "Restore default settings", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "Format and backup/restore settings", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "Format and restore default settings", NULL, NULL, 0, 0);
+	addmenulist(&mlist, "Format MNT with Backup/Restore", NULL, NULL, 0, 0);
+	addmenulist(&mlist, "Format MNT (all)", NULL, NULL, 0, 0);
 
 	mbox = menulistbox(mlist, NULL, "Restore default settings", NULL, NULL, 1, 0);
 
@@ -72,11 +72,11 @@ void screenrestoredefaultchoice()
 		{
 			screenrestoredefault();
 		}
-		else if(ostrcmp(mbox->name, "Format and backup/restore settings") == 0)
+		else if(ostrcmp(mbox->name, "Format MNT with Backup/Restore") == 0)
 		{
 			screenbackuperaseswap();
 		}
-		else if(ostrcmp(mbox->name, "Format and restore default settings") == 0)
+		else if(ostrcmp(mbox->name, "Format MNT (all)") == 0)
 		{
 			screeneraseswap();
 		}
