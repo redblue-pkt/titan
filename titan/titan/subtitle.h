@@ -1687,7 +1687,7 @@ void screensubtitle()
 								free(tmpstr); tmpstr = NULL;
 							}
 							else
-								changelastsubtitle(lsnode, ((struct subtitle*)listbox->select->handle)->pid, ((struct subtitle*)listbox->select->handle)->id2);
+								changelastsubtitle(lsnode, ((struct subtitle*)listbox->select->handle)->pid, ((struct subtitle*)listbox->select->handle)->id1, ((struct subtitle*)listbox->select->handle)->id2);
 						}
 
 					}
@@ -1856,11 +1856,11 @@ int subtitlestartlast()
 	return ret;
 }
 
-void changelastsubtitle(struct lastsubtitle* lsnode, int pid, int id2)
+void changelastsubtitle(struct lastsubtitle* lsnode, int pid, int id1, int id2)
 {
 	if(lsnode == NULL) return;
 
-	if(lsnode->subtitlepid != pid || lsnode->subtitleid1 != id1 || lsnode->subtitleid2 != id2)
+	if(lsnode->subtitlepid != pid || lsnode->subtitleid1 != id2 || lsnode->subtitleid2 != id2)
 	{
 		lsnode->subtitlepid = pid;
 		lsnode->subtitleid1 = id1;
