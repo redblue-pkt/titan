@@ -9,59 +9,158 @@ rm _liste
 rm -rf _full/internettv
 mkdir -p _full/internettv/streams
 rm cache.*
-touch cache.internettv.titanlist
-echo "NBA TV#rtmp://31.7.58.122:1935/stream/I8s9S4H7.stream playpath=N1V3R0h8.stream swfUrl=http://thecdn.04stream.com/p/bbp.swf live=true  pageUrl=http://www.04stream.com/NBA TV#http://atemio.dyndns.tv/mediathek/menu/nbatv.jpg#internettv.nba.tv.jpg#Internet Tv#2" >> cache.internettv.titanlist
-echo "TV Halle#rtmp://62.113.210.250/medienasa-live/tvhalle_high#http://atemio.dyndns.tv/mediathek/menu/tvhalle.jpg#internettv.tvhalle.jpg#Internet Tv#2" >> cache.internettv.titanlist
-echo "TV Magdeburg#rtmp://62.113.210.250/medienasa-live/ok-magdeburg_high#http://atemio.dyndns.tv/mediathek/menu/tvmagdeburg.jpg#internettv.tvmagdeburg.jpg#Internet Tv#2" >> cache.internettv.titanlist
-echo "Virgin 1#rtmp://fms.105.net:1935/live/virgin1 playpath=virgin1 swfurl=http://www.highermedia.com/assets/flash/jw_player.swf live=1 pageurl=http://www.google.com/Virgin 1#http://atemio.dyndns.tv/mediathek/menu/virgin.1.jpg#internettv.virgin.1.jpg#Internet Tv#2" >> cache.internettv.titanlist
 
 BEGINTIME=`date +%s`
 DATENAME=`date +"%Y.%m.%d_%H.%M.%S"`
 echo "[internettv.sh] START (buildtype: $buildtype): $DATENAME" > _full/internettv/build.log
 
-testcount=0
-piccount=0
+LIST=`cat "$HOME"/parser/BUILD/mediathek/mainmenu-internettv-manuel.list | tr ' ' '~'`
+MAX=`wc -l "$HOME"/parser/BUILD/mediathek/mainmenu-internettv-manuel.list`
 count=0
-icount=0
+piccount=0
+for ROUND0 in $LIST; do
+	LIST2=`echo $ROUND0 | sed 's!#!\n!g'`
+	icount=0
 
-count=`expr $count + 1`	
-#$wgetbin "https://gitorious.org/~max10/neutrino-mp/max10s-neutrino-mp/blobs/raw/master/data/webtv/webtv.xml" -O cache.mainfile
-#$wgetbin "http://gitorious.org/neutrino-mp/max10s-neutrino-mp/raw/787e39155fc72e6df89dc01d502f457fc10f92a8:data/webtv/webtv.xml" -O cache.mainfile
-$wgetbin "https://gitorious.org/neutrino-mp/max10s-neutrino-mp/raw/e4fefb51121d7886b81227eb1215da049e1a729a:data/webtv/webtv.xml" -O cache.mainfile
+	filename=""
+	for ROUND in $LIST2; do
+		icount=`expr $icount + 1`
 
-id_list="`cat cache.mainfile | tr '\n' ' ' | sed 's/ \+/ /g' | sed 's/<webtv/\n\n<webtv/g' | grep ^"<webtv" | tr ' ' '~'`"
+		if [ "$icount" = "1" ];then
+			TITLE=`echo $ROUND | tr '~' ' '`
+		fi
 
-#exit
+		if [ "$icount" = "2" ];then
+			URL=`echo $ROUND | tr '~' ' '`
+		fi
+	done
 
-count1=0
-for ROUND1 in $id_list; do
-	piccount=`expr $piccount + 1`
-	count1=`expr $count1 + 1`
 
-	URL=`echo $ROUND1 | sed 's/url="/\nurl="/g' | grep ^"url=" | tr '~' ' ' | cut -d '"' -f2`
-	TITLE=`echo $ROUND1 | sed 's/title="/\ntitle="/g' | grep ^"title=" | tr '~' ' ' | cut -d '"' -f2`
-	TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' # ' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/Ãx/g' -e 's/&ndash;/-/g' -e 's/&Auml;/Ã/g' -e 's/&Uuml;/ÃS/g' -e 's/&Ouml;/Ã/g' -e 's/&auml;/Ã¤/g' -e 's/&uuml;/Ã¼/g' -e 's/&ouml;/Ã¶/g' -e 's/&eacute;/Ã©/g' -e 's/&egrave;/Ã¨/g' -e 's/%F6/Ã¶/g' -e 's/%FC/Ã¼/g' -e 's/%E4/Ã¤/g' -e 's/%26/&/g' -e 's/%C4/Ã/g' -e 's/%D6/Ã/g' -e 's/%DC/ÃS/g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
-	DESCRIPTION=`echo $ROUND1 | sed 's/description=/\ndescription=/g' | grep ^"description=" | tr '~' ' ' | cut -d '"' -f2 | tr '>' ' ' | tr '<' ' ' | sed -e 's/ \+/ /g'`
-	PIC=http://atemio.dyndns.tv/mediathek/menu/`echo $TITLE | tr 'A-Z' 'a-z' | tr ' ' '_'`.jpg
-	if [ ! -z "$DESCRIPTION" ]; then
-		TITLE="$TITLE ($DESCRIPTION)"
+	if [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "music" | wc -l` -gt 0 ];then
+		filename=Musik
+	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "xx" | wc -l` -gt 0 ];then
+		filename=Xxx
+	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "adult" | wc -l` -gt 0 ];then
+		filename=Xxx
+	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "sport" | wc -l` -gt 0 ];then
+		filename=Sport
+	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "nba" | wc -l` -gt 0 ];then
+		filename=Sport
+	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "nfl" | wc -l` -gt 0 ];then
+		filename=Sport
+	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "live" | wc -l` -gt 0 ];then
+		filename=Live
+	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "russia" | wc -l` -gt 0 ];then
+		filename=Russia
+	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "french" | wc -l` -gt 0 ];then
+		filename=French
+	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "usa" | wc -l` -gt 0 ];then
+		filename=Usa
+	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "uk" | wc -l` -gt 0 ];then
+		filename=Uk
+	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "japan" | wc -l` -gt 0 ];then
+		filename=Japan
+	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "webcam" | wc -l` -gt 0 ];then
+		filename=Webcam
+	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "x Tv" | wc -l` -gt 0 ];then
+		filename=Xxx
+	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "arabic" | wc -l` -gt 0 ];then
+		filename=Arabic
+	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "muzica" | wc -l` -gt 0 ];then
+		filename=Musik
+	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "israel" | wc -l` -gt 0 ];then
+		filename=Israel
+	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "turkish" | wc -l` -gt 0 ];then
+		filename=Turkish
+	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "czech" | wc -l` -gt 0 ];then
+		filename=Czech
+	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "3d" | wc -l` -gt 0 ];then
+		filename=3d
+	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "16+" | wc -l` -gt 0 ];then
+		filename=Xxx
+	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "18+" | wc -l` -gt 0 ];then
+		filename=Xxx
+	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "spania" | wc -l` -gt 0 ];then
+		filename=Spania
+	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "holand" | wc -l` -gt 0 ];then
+		filename=Holand
+	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "greek" | wc -l` -gt 0 ];then
+		filename=Greek
+	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "hd" | wc -l` -gt 0 ];then
+		filename=Hd
+	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "animal" | wc -l` -gt 0 ];then
+		filename=Discovery
+	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "discovery" | wc -l` -gt 0 ];then
+		filename=Discovery
+	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "geo" | wc -l` -gt 0 ];then
+		filename=Discovery
+	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "outdoor" | wc -l` -gt 0 ];then
+		filename=Discovery
+	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "planet" | wc -l` -gt 0 ];then
+		filename=Discovery
+	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "scifi" | wc -l` -gt 0 ];then
+		filename=Sci-fi
+	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "star trek" | wc -l` -gt 0 ];then
+		filename=Sci-fi
+	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "sci" | wc -l` -gt 0 ];then
+		filename=Sci-fi
+	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "korea" | wc -l` -gt 0 ];then
+		filename=Korea
+	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "german" | wc -l` -gt 0 ];then
+		filename=German
+	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "tv magdeburg" | wc -l` -gt 0 ];then
+		filename=German
+	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "tv halle" | wc -l` -gt 0 ];then
+		filename=German
+	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "mersburg tv" | wc -l` -gt 0 ];then
+		filename=German
+	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "cartoon" | wc -l` -gt 0 ];then
+		filename=Cartoon
+	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "simpson" | wc -l` -gt 0 ];then
+		filename=Simpsons
+	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "asia" | wc -l` -gt 0 ];then
+		filename=Asia
 	fi
-	
-	if [ -z "$PIC" ]; then
-		PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
-	fi
+		
+	PIC=http://atemio.dyndns.tv/mediathek/menu/`echo $TITLE | tr 'A-Z' 'a-z' | tr ' ' '.'`.jpg
 
-	if [ ! -z "$TITLE" ] && [ ! -z "$URL" ] && [ `echo "$TITLE" | grep -e ^[a-z] -e ^[A-Z] -e ^[0-9] | wc -l` -eq 1 ];then
+	if [ ! -z "$TITLE" ] && [ ! -z "$URL" ];then
+		piccount=`expr $piccount + 1`
+		
 		LINE="$TITLE#$URL#$PIC#internettv_$piccount.jpg#Internet TV#2"
-		if [ `cat cache.internettv.titanlist | grep "^$TITLE" | wc -l` -eq 0 ];then
+
+		count=`expr $count + 1`
+		echo "add: ($count/$MAX) $TITLE"
+		echo "add: ($count/$MAX) $TITLE" >> seclist 
+#		echo LINE: $LINE
+		if [ ! -z "$filename" ] && [ `cat cache.internettv."$filename".titanlist | grep "#$URL#" | wc -l` -eq 0 ];then
+			echo $LINE >> cache.internettv."$filename".titanlist
+		fi
+		if [ `cat cache.internettv.titanlist | grep "#$URL#" | wc -l` -eq 0 ];then
 			echo $LINE >> cache.internettv.titanlist
 		fi
 	fi
-#		echo URL $URL
-#		echo PIC $PIC
-#		echo TITLE $TITLE
+
+	if [ ! -z "$filename" ] && [ `cat cache.category.titanlist | grep ^"$filename#" | wc -l` -eq 0 ];then
+		piccount=`expr $piccount + 1`
+		URL="http://atemio.dyndns.tv/mediathek/internettv/streams/internettv."$filename".list"
+		PIC="http://atemio.dyndns.tv/mediathek/menu/tv.`echo $filename | tr 'A-Z' 'a-z'`.jpg"
+		if [ "$filename" == "Xxx" ];then
+			ptype=1000
+		else
+			ptype=3
+		fi
+		LINE="$filename#$URL#$PIC#internettv_$piccount.jpg#Internet Tv#$ptype"
+		echo $LINE >> cache.category.titanlist
+
+	fi
+
+	if [ ! -z "$filename" ];then
+		cat cache.internettv."$filename".titanlist | sort -u > _full/internettv/streams/internettv."$filename".list
+	fi
 done
 
+cat cache.category.titanlist | sort -u > _full/internettv/internettv.category.list
 cat cache.internettv.titanlist | sort -u > _full/internettv/streams/internettv.all-sorted.list
 
 for ROUND in 0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z; do
@@ -83,11 +182,9 @@ TIME=`expr $DONETIME - $BEGINTIME`
 echo "[internettv.sh] build time: ($TIME s) done" >> _full/internettv/build.log	
 echo "[internettv.sh] internettv: "`ls -1 _full/internettv` >> _full/internettv/build.log
 echo "[internettv.sh] internettv/streams: "`ls -1 _full/internettv/streams` >> _full/internettv/build.log
-
 if [ "$buildtype" != "full" ];then
 	cp -a _full/internettv/* /var/www/atemio/web/mediathek/internettv
 fi
-
 rm cache.*
-
 exit
+
