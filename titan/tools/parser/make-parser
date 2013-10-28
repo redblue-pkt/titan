@@ -59,7 +59,7 @@ mv -f "$HOME"/parser/*.sh "$HOME"/parser/BUILD
 #rm "$HOME"/parser/BUILD/drdish.sh
 #rm "$HOME"/parser/BUILD/mlehd.sh
 #rm "$HOME"/parser/BUILD/giga.sh
-rm "$HOME"/parser/BUILD/internettv.sh
+#rm "$HOME"/parser/BUILD/internettv.sh
 
 lasttimestamp=`cat /var/www/atemio/web/mediathek/lasttimestamp`
 lasttimestamp=`expr $lasttimestamp + 84500`
