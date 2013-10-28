@@ -122,7 +122,7 @@ for ROUND0 in $LIST; do
 		filename=Asia
 	fi
 		
-	PIC=http://atemio.dyndns.tv/mediathek/menu/`echo $TITLE | tr 'A-Z' 'a-z' | tr ' ' '.'`.jpg
+	PIC=http://atemio.dyndns.tv/mediathek/menu/tv.`echo $TITLE | tr 'A-Z' 'a-z' | tr ' ' '.'`.jpg
 
 	if [ ! -z "$TITLE" ] && [ ! -z "$URL" ];then
 		piccount=`expr $piccount + 1`
