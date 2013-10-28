@@ -58,6 +58,8 @@ MusicBox (Music)#rtmp://musicbox.cdnvideo.ru/musicbox-live/musicbox.sdp#http://a
 Music (Music)#rtmp://www.planeta-online.tv:1936/live/channel_4#http://atemio.dyndns.tv/mediathek/menu/music.jpg#internettv_60.jpg#Internet TV#2
 MyStream 1#rtmp://www.tvarm.ru/live/myStream1.sdp#http://atemio.dyndns.tv/mediathek/menu/mystream_1.jpg#internettv_527.jpg#Internet TV#2
 NBA TV#rtmp://31.7.58.122:1935/stream/I8s9S4H7.stream playpath=N1V3R0h8.stream swfUrl=http://thecdn.04stream.com/p/bbp.swf live=true  pageUrl=http://www.04stream.com/NBA TV#http://atemio.dyndns.tv/mediathek/menu/nbatv.jpg#internettv.nba.tv.jpg#Internet Tv#2
+NBA TV 2#rtmp://46.246.29.130:1935/stream/o0X2C8M0.stream swfUrl=http://thecdn.04stream.com/p/boopo.swf pageUrl=http://04stream.com swfVfy=true live=true#http://atemio.dyndns.tv/mediathek/menu/nbatv.jpg#internettv.nba.tv.jpg#Internet Tv#2
+NFL TV#rtmp://46.246.29.130:1935/stream/gdfhdfytty.stream swfUrl=http://www.04stream.com/p/boopo.swf pageUrl=http://www.04stream.com swfVfy=1 live=true#http://atemio.dyndns.tv/mediathek/menu/nfltv.jpg#internettv.nfl.tv.jpg#Internet Tv#2
 NOVA SPORT (Czech republic)#http://81.201.52.159:8023#http://atemio.dyndns.tv/mediathek/menu/nova_sport.jpg#internettv_266.jpg#Internet TV#2
 Ocko TV (Music)#rtmp://194.79.52.79/ockoi/ockoHQ2#http://atemio.dyndns.tv/mediathek/menu/ocko_tv.jpg#internettv_52.jpg#Internet TV#2
 Olay Tv (Turkish Tv)#rtmp://stream.taksimbilisim.com/olaytv/bant1#http://atemio.dyndns.tv/mediathek/menu/olay_tv.jpg#internettv_559.jpg#Internet TV#2
