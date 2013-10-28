@@ -2140,22 +2140,22 @@ int tpkinstall(char* file, char* installpath, int flag)
 	}
 	free(tmpstr); tmpstr = NULL;
 
+	freetpk();
+	tpklistinstalled(1);
+	tpkinstalled = tpk;
+	tpk = NULL;
+	
+	tpknode = tpkreadcontrol(path, 0);
+	if(tpknode == NULL)
+	{
+		err("read control files %s/%s", path, name);
+		ret = 1;
+		goto end;
+	}
+	
 	//check group
 	if(flag == 0)
 	{
-		freetpk();
-		tpklistinstalled(1);
-		tpkinstalled = tpk;
-		tpk = NULL;
-	
-		tpknode = tpkreadcontrol(path, 0);
-		if(tpknode == NULL)
-		{
-			err("read control files %s/%s", path, name);
-			ret = 1;
-			goto end;
-		}
-	
 		if(tpknode->group != 0)
 		{
 			struct tpk* node = tpkinstalled;
