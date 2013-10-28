@@ -14,8 +14,8 @@ BEGINTIME=`date +%s`
 DATENAME=`date +"%Y.%m.%d_%H.%M.%S"`
 echo "[internettv.sh] START (buildtype: $buildtype): $DATENAME" > _full/internettv/build.log
 
-LIST=`cat "$HOME"/parser/BUILD/mediathek/mainmenu-internettv-manuel.list | tr ' ' '~'`
-MAX=`wc -l "$HOME"/parser/BUILD/mediathek/mainmenu-internettv-manuel.list`
+LIST=`cat /var/www/atemio/web/mediathek/mainmenu-internettv-manuel.list | tr ' ' '~'`
+MAX=`wc -l /var/www/atemio/web/mediathek/mainmenu-internettv-manuel.list`
 count=0
 piccount=0
 for ROUND0 in $LIST; do
