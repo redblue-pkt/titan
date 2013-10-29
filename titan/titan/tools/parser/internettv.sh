@@ -55,7 +55,9 @@ cartoon:Cartoon
 simpson:Cartoon
 south:Cartoon
 asia:Asia
-live:Live"
+live:Live
+Switzer:Switzerland
+austria:Austria"
 
 MAXGENRES=`echo $GENRES | tr ' ' '\n' | wc -l`
 

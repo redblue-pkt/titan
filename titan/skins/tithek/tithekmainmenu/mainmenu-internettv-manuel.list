@@ -164,20 +164,20 @@ ARD (960x544) (German)#rtsp://daserste.edges.wowza.gl-systemhaus.de/live/mp4:das
 MDR Sachsen-Anhalt (German)#http://mdr_sa_hls-lh.akamaihd.net/i/livetvmdrsachsenanhalt_de@106901/index_1728_av-p.m3u8?sd=10&rebase=on#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
 MDR Thüringen (German)#http://mdr_th_hls-lh.akamaihd.net/i/livetvmdrthueringen_de@106903/index_1728_av-p.m3u8?sd=10&rebase=on#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
 Vizion Plus#rtmp://live.vizionplus.tv:1935/live/livestream2#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
-ORF 1 HQ#rtsp://apasfwl.apa.at:80/orf1_q6a/orf.sdp#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
-ORF 2 EUROPE HQ#rtsp://apasfwl.apa.at/orf2e_q6a/orf.sdp#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
-ORF 2 HQ#rtsp://apasfwl.apa.at:80/orf2_q6a/orf.sdp#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
-ORF 3 HQ#rtsp://apasfwl.apa.at:80/orf3_q6a/orf.sdp#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
-ORF SPORT+ HQ#rtsp://apasfwl.apa.at/orfs_q6a/orf.sdp#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+ORF 1 HQ (German/Austria)#rtsp://apasfwl.apa.at:80/orf1_q6a/orf.sdp#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+ORF 2 EUROPE HQ (German/Austria)#rtsp://apasfwl.apa.at/orf2e_q6a/orf.sdp#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+ORF 2 HQ (German/Austria)#rtsp://apasfwl.apa.at:80/orf2_q6a/orf.sdp#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+ORF 3 HQ (German/Austria)#rtsp://apasfwl.apa.at:80/orf3_q6a/orf.sdp#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+ORF SPORT+ HQ (German/Austria)#rtsp://apasfwl.apa.at/orfs_q6a/orf.sdp#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
 Rouge TV (Music) (Switzerland)#rtsp://rtmp.infomaniak.ch/livecast/rougetv#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
 Telezuri (Switzerland)#rtmp://rtmp.infomaniak.ch:1935/livecast/_definst_/telezuri#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
 TeleBärn (Switzerland)#rtsp://rtmp.infomaniak.ch/livecast/barntele#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
 VOX (German)#http://88.212.11.206:5000/live/66/66.m3u8#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
 WDR (German)#http://wdr_ios_fs-i.akamaihd.net/hls/live/200964/1/playlist1x.m3u8#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
 NBA TV 3#http://nba247.cdnak.nbahd.neulion.com/mobile/nba/nba247/as/live/ipad_1240.m3u8#http://atemio.dyndns.tv/mediathek/menu/tv.nba.tv.2.jpg#internettv_77.jpg#Internet TV#2
-_segfault_:Sat 1#http://88.212.11.206:5000/live/26/26.m3u8#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
-_segfault_:Kika#http://88.212.11.206:5000/live/30/30.m3u8#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
-_segfault_:ORF 1#http://194.232.200.128:1935/orf1_q6a/orf.sdp/hasbahca.m3u8#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
-_segfault_:rbb Berlin#http://88.212.11.206:5000/live/13/13.m3u8#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+_segfault_:Sat 1 (German)#http://88.212.11.206:5000/live/26/26.m3u8#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+_segfault_:Kika (German)#http://88.212.11.206:5000/live/30/30.m3u8#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+_segfault_:ORF 1 (German/Austria)#http://194.232.200.128:1935/orf1_q6a/orf.sdp/hasbahca.m3u8#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+_segfault_:rbb Berlin (German)#http://88.212.11.206:5000/live/13/13.m3u8#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
 
 
