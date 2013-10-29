@@ -1,20 +1,18 @@
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<!--<meta http-equiv="refresh" content="5">-->
-<link rel="stylesheet" type="text/css" href="titan.css">
-<script type="text/javascript">
-function screenshot () {
-window.location.href="query?getshoot&1"
-}
-</script>
-</head>
-<body class=body onload="screenshot()">
-
-<table width=100% height=100% border=0 cellpadding=0 cellspacing=0>
-<tr><td align=center valign=middle>
-<img border=0 src=/tmp/dump.png width="100%" height=auto/>
-</td></tr>
-</table>
-</body>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" href="titan.css">
+	</head>
+	<body class=body>
+		<table width=100% height=100% border=0 cellpadding=0 cellspacing=0>
+			<tr><td align=center valign=top>
+				<img border=0 src=/tmp/dump.jpg width="100%" height=auto/>
+			</td></tr>
+		</table>
+		<script type="text/javascript">
+			if (window.name == 'mainshoot') {
+				 parent.shootreload(); 
+			} 
+		</script>
+ 	</body>
 </html>
