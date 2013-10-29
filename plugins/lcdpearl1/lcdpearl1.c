@@ -432,8 +432,17 @@ void init(void)
 	char* tmpstr = NULL;
 	pluginaktiv = 1;
 	firststart = 1;
-	
-	tmpstr = createpluginpath("/lcdpearl1/skin.xml", 0);
+
+	tmpstr = createpluginpath("/lcdpearl1/skin2.xml", 0);
+		
+	if(!file_exist(tmpstr))
+	{
+		free(tmpstr); tmpstr = NULL;
+		tmpstr = createpluginpath("/lcdpearl1/skin.xml", 0);
+	}
+
+	printf("use skin: %s\n", tmpstr");
+
 	readscreen(tmpstr, 116, 1);
 	free(tmpstr); tmpstr = NULL;
 	debug(10, "LCD Pearl loadet !!!");
