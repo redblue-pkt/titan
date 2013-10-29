@@ -15,7 +15,7 @@ DATENAME=`date +"%Y.%m.%d_%H.%M.%S"`
 echo "[internettv.sh] START (buildtype: $buildtype): $DATENAME" > _full/internettv/build.log
 
 LIST=`cat /var/www/atemio/web/mediathek/mainmenu-internettv-manuel.list | tr ' ' '~'`
-MAX=`wc -l /var/www/atemio/web/mediathek/mainmenu-internettv-manuel.list`
+MAX=`cat /var/www/atemio/web/mediathek/mainmenu-internettv-manuel.list | wc -l`
 count=0
 piccount=0
 for ROUND0 in $LIST; do
@@ -36,7 +36,9 @@ for ROUND0 in $LIST; do
 	done
 
 
-	if [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "music" | wc -l` -gt 0 ];then
+	if [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "german" | wc -l` -gt 0 ];then
+		filename=German
+	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "music" | wc -l` -gt 0 ];then
 		filename=Musik
 	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "xx" | wc -l` -gt 0 ];then
 		filename=Xxx
@@ -48,8 +50,6 @@ for ROUND0 in $LIST; do
 		filename=Sport
 	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "nfl" | wc -l` -gt 0 ];then
 		filename=Sport
-	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "live" | wc -l` -gt 0 ];then
-		filename=Live
 	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "russia" | wc -l` -gt 0 ];then
 		filename=Russia
 	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "french" | wc -l` -gt 0 ];then
@@ -106,20 +106,14 @@ for ROUND0 in $LIST; do
 		filename=Sci-fi
 	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "korea" | wc -l` -gt 0 ];then
 		filename=Korea
-	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "german" | wc -l` -gt 0 ];then
-		filename=German
-	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "tv magdeburg" | wc -l` -gt 0 ];then
-		filename=German
-	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "tv halle" | wc -l` -gt 0 ];then
-		filename=German
-	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "mersburg tv" | wc -l` -gt 0 ];then
-		filename=German
 	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "cartoon" | wc -l` -gt 0 ];then
 		filename=Cartoon
 	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "simpson" | wc -l` -gt 0 ];then
 		filename=Simpsons
 	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "asia" | wc -l` -gt 0 ];then
 		filename=Asia
+	elif [ `echo "$ROUND0" | tr 'A-Z' 'a-z' | grep "live" | wc -l` -gt 0 ];then
+		filename=Live
 	fi
 		
 	PIC=http://atemio.dyndns.tv/mediathek/menu/tv.`echo $TITLE | tr 'A-Z' 'a-z' | tr ' ' '.'`.jpg
@@ -131,7 +125,7 @@ for ROUND0 in $LIST; do
 
 		count=`expr $count + 1`
 		echo "add: ($count/$MAX) $TITLE"
-		echo "add: ($count/$MAX) $TITLE" >> seclist 
+#		echo "add: ($count/$MAX) $TITLE" >> seclist 
 #		echo LINE: $LINE
 		if [ ! -z "$filename" ] && [ `cat cache.internettv."$filename".titanlist | grep "#$URL#" | wc -l` -eq 0 ];then
 			echo $LINE >> cache.internettv."$filename".titanlist
