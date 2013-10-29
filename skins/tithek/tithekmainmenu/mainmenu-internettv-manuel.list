@@ -191,6 +191,30 @@ Animal Planet HD (English)#rtmp://s01.webport.tv/promo//mtv#http://atemio.dyndns
 BURSA SPORT (Sport)#http://stream.yayindayiz.biz/Bursaspor/bursaspor/playlist.m3u8#http://atemio.dyndns.tv/mediathek/menu/tv.eurosport.1.(file).jpg#internettv_187.jpg#Internet TV#2
 Sunrise Music (Music)#http://wtv.cores.biz/relay/sunrise.flv#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
 Radio 538 TV (Music)#rtmp://82.201.102.111:80/live/_definst_/live#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+Alex TV (English)#rtsp://217.115.145.185:1935/live/mp4:alexlivestream_2#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+BLK online TV Burgenlandkreis (german) (Music)#rtmp://62.113.210.250/medienasa-live/BLKonline_high#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+bw family.tv (German)#rtmp://live.bwfamily.tv:1935/rtplive/vlc.sdp#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+Deluxe Music TV (German)#rtmp://flash.cdn.deluxemusic.tv/deluxemusic.tv-live/web_850.stream#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+Elbekanal Schönebeck (German)#rtmp://62.113.210.250/medienasa-live/elbe_high#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+Filstalwelle (German)#rtmp://62.113.210.27/filstalwelle-live/livestream#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+Juwelo TV (German)#rtmp://85.214.107.68/juwelo_hd/live_DE1#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+LT - TV Baden Wuerttemberg (German)#rtmp://62.113.210.105/ltv-live/livestream#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+OK Dessau (German)#rtmp://62.113.210.250/medienasa-live/ok-dessau_high#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+OK Magdeburg (German)#rtmp://62.113.210.250/medienasa-live/ok-magdeburg_high#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+OK Merseburg (German)#rtmp://62.113.210.250/medienasa-live/ok-merseburg_high#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+OK Salzwedel (German)#rtmp://62.113.210.250/medienasa-live/ok-salzwedel_high#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+OK Stendal (German)#rtmp://62.113.210.250/medienasa-live/ok-stendal_high#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+OK Wernigerode (German)#rtmp://62.113.210.250/medienasa-live/ok-wernigerode_high#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+Punktum Südharz (German)#rtmp://62.113.210.250/medienasa-live/punktum_high#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+Ran 1 (German)#rtmp://62.113.210.250/medienasa-live/mp4:ran1_high#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+RAN 1 Dessau (German)#rtmp://62.113.210.250/medienasa-live/ran1_high#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+RBW (German)#rtmp://62.113.210.250/medienasa-live/rbw_high#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+RFH TV (German)#rtmp://62.113.210.250/medienasa-live/RFH_high#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+RTL Tele Letzebourg (Schweiz)#rtmp://wowza01.newmedia.lu/channel1/live#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+SDF = Mein Fernsehen in Südtirol (Schweiz)#http://videocdn.sdf.bz.it/hls-live/livepkgr/_definst_/liveevent/livestream.m3u8#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+TeleBärn (Schweiz)#rtsp://rtmp.infomaniak.ch/livecast/barntele#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+VISIT-X TV (German)#rtmp://194.116.150.47/live/visitx.stream1#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+VRF Vogtland (WMV) (German)#mms://stream.vrf.de/VRF#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
 _segfault_:BIM TV (360p) (English)#htthttp://188.254.62.124:1935/live/livestream_360p/playlist.m3u8#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
 _segfault_:BBC World News (English)#htthttp://ca-edge-8.cdn2.streamago.tv:80/streamagoedge/1916/809/anjalo_bbc.m3u8#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
 _segfault_:Sat 1 (German)#htthttp://88.212.11.206:5000/live/26/26.m3u8#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
