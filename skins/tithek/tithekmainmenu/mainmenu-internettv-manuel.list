@@ -78,8 +78,9 @@ Music (Music)#rtmp://www.planeta-online.tv:1936/live/channel_4#http://atemio.dyn
 MyStream 1#rtmp://www.tvarm.ru/live/myStream1.sdp#http://atemio.dyndns.tv/mediathek/menu/tv.mystream.1.jpg#internettv_75.jpg#Internet TV#2
 NATIONAL GEO (SPAIN) (LIVE)#rtmp://5.63.145.188/live playpath=nati678h?id=7685 swfUrl=http://www.ezcast.tv/static/scripts/eplayer.swf live=1 pageUrl=http://www.ezcast.tv/embedded/nati678h/1/650/400 Conn=S:OK#http://atemio.dyndns.tv/mediathek/menu/tv.national.geo.(spain).(live).jpg#internettv_194.jpg#Internet TV#2
 NATIONAL GEO WILD (FILE)#http://212.20.40.37:1234/udp/233.7.70.223:5000#http://atemio.dyndns.tv/mediathek/menu/tv.national.geo.wild.(file).jpg#internettv_192.jpg#Internet TV#2
-NBA TV 2#rtmp://46.246.29.130:1935/stream/o0X2C8M0.stream swfUrl=http://thecdn.04stream.com/p/boopo.swf pageUrl=http://04stream.com swfVfy=true live=true#http://atemio.dyndns.tv/mediathek/menu/tv.nba.tv.2.jpg#internettv_77.jpg#Internet TV#2
 NBA TV#rtmp://31.7.58.122:1935/stream/I8s9S4H7.stream playpath=N1V3R0h8.stream swfUrl=http://thecdn.04stream.com/p/bbp.swf live=true pageUrl=http://www.04stream.com/NBA TV#http://atemio.dyndns.tv/mediathek/menu/tv.nba.tv.jpg#internettv_76.jpg#Internet TV#2
+NBA TV 2#rtmp://46.246.29.130:1935/stream/o0X2C8M0.stream swfUrl=http://thecdn.04stream.com/p/boopo.swf pageUrl=http://04stream.com swfVfy=true live=true#http://atemio.dyndns.tv/mediathek/menu/tv.nba.tv.2.jpg#internettv_77.jpg#Internet TV#2
+
 NFL TV#rtmp://46.246.29.130:1935/stream/gdfhdfytty.stream swfUrl=http://www.04stream.com/p/boopo.swf pageUrl=http://www.04stream.com swfVfy=1 live=true#http://atemio.dyndns.tv/mediathek/menu/tv.nfl.tv.jpg#internettv_78.jpg#Internet TV#2
 NHK World HD (JAPAN) (LIVE)#rtmp://ca-1.net.fivecool.org/nhkw/gwm#http://atemio.dyndns.tv/mediathek/menu/tv.nhk.world.hd.(japan).(live).jpg#internettv_145.jpg#Internet TV#2
 Ocko TV (Music)#rtmp://194.79.52.79/ockoi/ockoHQ2#http://atemio.dyndns.tv/mediathek/menu/tv.ocko.tv.(music).jpg#internettv_80.jpg#Internet TV#2
@@ -163,6 +164,20 @@ ARD (960x544) (German)#rtsp://daserste.edges.wowza.gl-systemhaus.de/live/mp4:das
 MDR Sachsen-Anhalt (German)#http://mdr_sa_hls-lh.akamaihd.net/i/livetvmdrsachsenanhalt_de@106901/index_1728_av-p.m3u8?sd=10&rebase=on#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
 MDR Thüringen (German)#http://mdr_th_hls-lh.akamaihd.net/i/livetvmdrthueringen_de@106903/index_1728_av-p.m3u8?sd=10&rebase=on#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
 Vizion Plus#rtmp://live.vizionplus.tv:1935/live/livestream2#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
-
+ORF 1 HQ#rtsp://apasfwl.apa.at:80/orf1_q6a/orf.sdp#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+ORF 2 EUROPE HQ#rtsp://apasfwl.apa.at/orf2e_q6a/orf.sdp#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+ORF 2 HQ#rtsp://apasfwl.apa.at:80/orf2_q6a/orf.sdp#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+ORF 3 HQ#rtsp://apasfwl.apa.at:80/orf3_q6a/orf.sdp#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+ORF SPORT+ HQ#rtsp://apasfwl.apa.at/orfs_q6a/orf.sdp#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+Rouge TV (Music) (Switzerland)#rtsp://rtmp.infomaniak.ch/livecast/rougetv#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+Telezuri (Switzerland)#rtmp://rtmp.infomaniak.ch:1935/livecast/_definst_/telezuri#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+TeleBärn (Switzerland)#rtsp://rtmp.infomaniak.ch/livecast/barntele#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+VOX (German)#http://88.212.11.206:5000/live/66/66.m3u8#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+WDR (German)#http://wdr_ios_fs-i.akamaihd.net/hls/live/200964/1/playlist1x.m3u8#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+NBA TV 3#http://nba247.cdnak.nbahd.neulion.com/mobile/nba/nba247/as/live/ipad_1240.m3u8#http://atemio.dyndns.tv/mediathek/menu/tv.nba.tv.2.jpg#internettv_77.jpg#Internet TV#2
+_segfault_:Sat 1#http://88.212.11.206:5000/live/26/26.m3u8#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+_segfault_:Kika#http://88.212.11.206:5000/live/30/30.m3u8#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+_segfault_:ORF 1#http://194.232.200.128:1935/orf1_q6a/orf.sdp/hasbahca.m3u8#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+_segfault_:rbb Berlin#http://88.212.11.206:5000/live/13/13.m3u8#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
 
 
