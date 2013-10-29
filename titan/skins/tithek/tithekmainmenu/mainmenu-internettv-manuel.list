@@ -153,3 +153,7 @@ Weo TV (FRANCE) (LIVE)#rtmp://str81.creacast.com:80/weo/high#http://atemio.dyndn
 WORLD FASHION CHANNEL (Fashion) (LIVE)#rtmp://83.229.210.89/WFC_EU//BTVwfceu0#http://atemio.dyndns.tv/mediathek/menu/tv.world.fashion.channel.(fashion).(live).jpg#internettv_157.jpg#Internet TV#2
 World Travel Channel (Turkish Tv)#rtmp://stream.taksimbilisim.com:1935/wtc/bant1#http://atemio.dyndns.tv/mediathek/menu/tv.world.travel.channel.(turkish.tv).jpg#internettv_142.jpg#Internet TV#2
 Wrestling Tv (Sport)#rtmp://80.93.53.88:1935/live/wrestling.stream#http://atemio.dyndns.tv/mediathek/menu/tv.wrestling.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+ZDF (German)#rtsp://3gp-livestreaming1.zdf.de/liveedge2/de10_v1_710.sdp#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+ZDFneo (German)#rtsp://3gp-livestreaming1.zdf.de/liveedge2/de09_v1_710.sdp#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+ZDF.kultur (German)#rtsp://3gp-livestreaming1.zdf.de/liveedge2/de07_v1_710.sdp#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+ZDFinfo (German)#rtsp://3gp-livestreaming1.zdf.de/liveedge2/de08_v1_710.sdp#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
