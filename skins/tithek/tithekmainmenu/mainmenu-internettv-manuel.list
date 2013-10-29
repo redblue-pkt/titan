@@ -118,10 +118,10 @@ Samanyolu (Turkish Tv)#rtmp://stream2.ebru.tv/live/samanyolu_usa_1.sdp#http://at
 ShansonTV#rtmp://chanson.cdnvideo.ru/chanson-live/shansontv.sdp#http://atemio.dyndns.tv/mediathek/menu/tv.shansontv.jpg#internettv_108.jpg#Internet TV#2
 SOUTH PARK (UK) (LIVE)#rtmp://198.27.74.25/app playpath=southpark01 swfUrl=http://www.tgun.tv/jwplayer/player.swf live=1 pageUrl=http://www.tgun.tv/menus/players/playerindex3.php?southpark01#http://atemio.dyndns.tv/mediathek/menu/tv.south.park.(uk).(live).jpg#internettv_156.jpg#Internet TV#2
 Soyuz#rtmp://www.planeta-online.tv:1936/live/soyuz#http://atemio.dyndns.tv/mediathek/menu/tv.soyuz.jpg#internettv_110.jpg#Internet TV#2
-STAR TREK (LIVE)#rtmp://198.27.74.25/app playpath=ds901 swfUrl=http://www.tgun.tv/jwplayer/player.swf live=1 pageUrl=http://www.tgun.tv/menus/players/playerindex3.php?ds901#http://atemio.dyndns.tv/mediathek/menu/tv.star.trek.(live).jpg#internettv_198.jpg#Internet TV#2
+STAR TREK (Scifi)#rtmp://198.27.74.25/app playpath=ds901 swfUrl=http://www.tgun.tv/jwplayer/player.swf live=1 pageUrl=http://www.tgun.tv/menus/players/playerindex3.php?ds901#http://atemio.dyndns.tv/mediathek/menu/tv.star.trek.(live).jpg#internettv_198.jpg#Internet TV#2
 Storm Babes TV (16+ Soft)#rtmp://www.stormbabes.tv:1935/stormApp/storm#http://atemio.dyndns.tv/mediathek/menu/tv.storm.babes.tv.(16+.soft).jpg#internettv_111.jpg#Internet TV#2
 StreetClip (Music)#rtmp://stream.streetclip.tv:1935/live/high-stream#http://atemio.dyndns.tv/mediathek/menu/tv.streetclip.(music).jpg#internettv_112.jpg#Internet TV#2
-StreetSoul (Music)#rtmp://im1.tv.flash.glb.ipercast.net/im1.tv-live/live1#http://atemio.dyndns.tv/mediathek/menu/tv.streetsoul.(music).jpg#internettv_113.jpg#Internet TV#2
+Im1 (Music)#rtmp://im1.tv.flash.glb.ipercast.net/im1.tv-live/live1#http://atemio.dyndns.tv/mediathek/menu/tv.streetsoul.(music).jpg#internettv_113.jpg#Internet TV#2
 STUDENTSKA TV (ATV - Авторское телевидение) (LIV)#rtmp://213.202.73.202/iskon/studentska_b3.stream#http://atemio.dyndns.tv/mediathek/menu/tv.studentska.tv.(atv.-.Авторское.телевидение).(liv).jpg#internettv_177.jpg#Internet TV#2
 Sunrise#http://wtv.cores.biz/relay/sunrise.mp4#http://atemio.dyndns.tv/mediathek/menu/tv.sunrise.jpg#internettv_114.jpg#Internet TV#2
 TELE 1 (SWISS) (LIVE)#rtmp://fl1.sz.xlcdn.com/live/_definst_/ playpath=sz=ZentralschweizerFernsehenTele1AG=live-mbr-1000_3 swfUrl=http://www.tele1.ch/DesktopModules/MyVideoPlayer/scripts/jwplayer.flash.swf live=1 pageUrl=http://www.tele1.ch/#http://atemio.dyndns.tv/mediathek/menu/tv.tele.1.(swiss).(live).jpg#internettv_181.jpg#Internet TV#2
@@ -134,7 +134,7 @@ Triangle tv (NZ) (LIVE)#rtmp://ns8.indexforce.com/alalamia/alalamia#http://atemi
 TRUE SPORT (THAILAND) (LIVE)#rtmp://123.29.71.211/hctv//vstv018#http://atemio.dyndns.tv/mediathek/menu/tv.true.sport.(thailand).(live).jpg#internettv_164.jpg#Internet TV#2
 T SPORTS LIVE (THAI) (LIVE)#rtmp://58.97.57.152/live playpath=ch04 swfUrl=http://www.one2hd.com/swfs/mediaPlayer/mediaPlayer.swf pageUrl=http://www.one2hd.com/#http://atemio.dyndns.tv/mediathek/menu/tv.t.sports.live.(thai).(live).jpg#internettv_186.jpg#Internet TV#2
 TV1 Turkey (Turkish Tv)#rtmp://stream.taksimbilisim.com:1935/tv1/bant1#http://atemio.dyndns.tv/mediathek/menu/tv.tv1.turkey.(turkish.tv).jpg#internettv_122.jpg#Internet TV#2
-TV41 Turkey (Turkish Tv)#rtmp://stream.taksimbilisim.com/tv41/bant1#http://atemio.dyndns.tv/mediathek/menu/tv.tv41.turkey.(turkish.tv).jpg#internettv_123.jpg#Internet TV#2
+TV41 Turkey (Music Turkish Tv)#rtmp://stream.taksimbilisim.com/tv41/bant1#http://atemio.dyndns.tv/mediathek/menu/tv.tv41.turkey.(turkish.tv).jpg#internettv_123.jpg#Internet TV#2
 TV52 Turkey (Turkish Tv)#rtmp://stream.taksimbilisim.com/tv52/bant1#http://atemio.dyndns.tv/mediathek/menu/tv.tv52.turkey.(turkish.tv).jpg#internettv_124.jpg#Internet TV#2
 Tv-DK#rtmp://s1.media-planet.sk/live/dolnykubin#http://atemio.dyndns.tv/mediathek/menu/tv.tv-dk.jpg#internettv_126.jpg#Internet TV#2
 TV Halle (German)#rtmp://62.113.210.250/medienasa-live/tvhalle_high#http://atemio.dyndns.tv/mediathek/menu/tv.tv.halle.(german).jpg#internettv_127.jpg#Internet TV#2
