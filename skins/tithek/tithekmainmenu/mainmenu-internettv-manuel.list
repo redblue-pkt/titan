@@ -157,3 +157,8 @@ ZDF (German)#rtsp://3gp-livestreaming1.zdf.de/liveedge2/de10_v1_710.sdp#http://a
 ZDFneo (German)#rtsp://3gp-livestreaming1.zdf.de/liveedge2/de09_v1_710.sdp#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
 ZDF.kultur (German)#rtsp://3gp-livestreaming1.zdf.de/liveedge2/de07_v1_710.sdp#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
 ZDFinfo (German)#rtsp://3gp-livestreaming1.zdf.de/liveedge2/de08_v1_710.sdp#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+ARD (480x272) (German)#rtsp://daserste.edges.wowza.gl-systemhaus.de/live/mp4:daserste_int_320#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+ARD (512x288) (German)#rtsp://daserste.edges.wowza.gl-systemhaus.de/live/mp4:daserste_int_576#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+ARD (960x544) (German)#rtsp://daserste.edges.wowza.gl-systemhaus.de/live/mp4:daserste_int_1600#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+
+
