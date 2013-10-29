@@ -175,9 +175,9 @@ TeleBärn (Switzerland)#rtsp://rtmp.infomaniak.ch/livecast/barntele#http://atemio
 VOX (German)#http://88.212.11.206:5000/live/66/66.m3u8#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
 WDR (German)#http://wdr_ios_fs-i.akamaihd.net/hls/live/200964/1/playlist1x.m3u8#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
 NBA TV 3#http://nba247.cdnak.nbahd.neulion.com/mobile/nba/nba247/as/live/ipad_1240.m3u8#http://atemio.dyndns.tv/mediathek/menu/tv.nba.tv.2.jpg#internettv_77.jpg#Internet TV#2
-_segfault_:Sat 1 (German)#http://88.212.11.206:5000/live/26/26.m3u8#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
-_segfault_:Kika (German)#http://88.212.11.206:5000/live/30/30.m3u8#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
-_segfault_:ORF 1 (German/Austria)#http://194.232.200.128:1935/orf1_q6a/orf.sdp/hasbahca.m3u8#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
-_segfault_:rbb Berlin (German)#http://88.212.11.206:5000/live/13/13.m3u8#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+_segfault_:Sat 1 (German)#htthttp://88.212.11.206:5000/live/26/26.m3u8#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+_segfault_:Kika (German)#htthttp://88.212.11.206:5000/live/30/30.m3u8#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+_segfault_:ORF 1 (German/Austria)#htthttp://194.232.200.128:1935/orf1_q6a/orf.sdp/hasbahca.m3u8#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
+_segfault_:rbb Berlin (German)#htthttp://88.212.11.206:5000/live/13/13.m3u8#http://atemio.dyndns.tv/mediathek/menu/tv.zdf.tv.(sport).jpg#internettv_143.jpg#Internet TV#2
 
 
