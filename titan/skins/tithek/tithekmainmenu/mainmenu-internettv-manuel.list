@@ -106,9 +106,10 @@ TV41 Turkey (Turkish Tv)#rtmp://stream.taksimbilisim.com/tv41/bant1#http://atemi
 TV52 Turkey (Turkish Tv)#rtmp://stream.taksimbilisim.com/tv52/bant1#http://atemio.dyndns.tv/mediathek/menu/tv52_turkey.jpg#internettv_555.jpg#Internet TV#2
 TV-ARM RU#rtmp://www.tvarm.ru/live/myStream1.sdp#http://atemio.dyndns.tv/mediathek/menu/tv-arm_ru.jpg#internettv_483.jpg#Internet TV#2
 Tv-DK#rtmp://s1.media-planet.sk/live/dolnykubin#http://atemio.dyndns.tv/mediathek/menu/tv-dk.jpg#internettv_581.jpg#Internet TV#2
-TV Halle#rtmp://62.113.210.250/medienasa-live/tvhalle_high#http://atemio.dyndns.tv/mediathek/menu/tvhalle.jpg#internettv.tvhalle.jpg#Internet Tv#2
+TV Halle (German)#rtmp://62.113.210.250/medienasa-live/tvhalle_high#http://atemio.dyndns.tv/mediathek/menu/tvhalle.jpg#internettv.tvhalle.jpg#Internet Tv#2
 TV LaOS#rtmp://tv1.streampulse.eu/laos/live#http://atemio.dyndns.tv/mediathek/menu/tv_laos.jpg#internettv_219.jpg#Internet TV#2
-TV Magdeburg#rtmp://62.113.210.250/medienasa-live/ok-magdeburg_high#http://atemio.dyndns.tv/mediathek/menu/tvmagdeburg.jpg#internettv.tvmagdeburg.jpg#Internet Tv#2
+TV Magdeburg (German)#rtmp://62.113.210.250/medienasa-live/ok-magdeburg_high#http://atemio.dyndns.tv/mediathek/menu/tvmagdeburg.jpg#internettv.tvmagdeburg.jpg#Internet Tv#2
+Hessischer Rundfunk (German)#rtmp://cp121363.live.edgefcs.net/live/hr-fernsehen_768@53002 swfUrl=http://player.longtailvideo.com/player.swf pageUrl=http://adamski.tv swfVfy=1 live=1#http://atemio.dyndns.tv/mediathek/menu/hr.jpg#internettv.hr.jpg#Internet Tv#2
 TVMix#rtmp://tv-mix.ru/live/Stream1#http://atemio.dyndns.tv/mediathek/menu/tvmix.jpg#internettv_548.jpg#Internet TV#2
 TVT#rtmp://s1.media-planet.sk/live/turzovka#http://atemio.dyndns.tv/mediathek/menu/tvt.jpg#internettv_430.jpg#Internet TV#2
 TV-TUR#rtmp://www.planeta-online.tv:1936/live/channel_2#http://atemio.dyndns.tv/mediathek/menu/tv-tur.jpg#internettv_360.jpg#Internet TV#2
