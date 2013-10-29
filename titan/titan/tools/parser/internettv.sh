@@ -105,7 +105,7 @@ gcount=`expr $gcount + 1`
 	#		echo "add: ($count/$MAX) $TITLE" >> seclist 
 	#		echo LINE: $LINE
 			add=0
-			if [ ! -z "$filename" ] && [ ! -e cat cache.internettv."$filename".titanlist ];then
+			if [ ! -z "$filename" ] && [ ! -e cache.internettv."$filename".titanlist ];then
 				echo $LINE >> cache.internettv."$filename".titanlist
 				count2=`expr $count2 + 1`
 				echo "add: ($count/$MAX) ($count2) $TITLE Genre: ($filename)"
