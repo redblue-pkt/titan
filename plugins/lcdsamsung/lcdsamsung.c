@@ -897,7 +897,7 @@ void init(void)
 		tmpstr = createpluginpath("/lcdsamsung/skin.xml", 0);
 	}
 
-	printf("use skin: %s\n", tmpstr");
+	printf("use skin: %s\n", tmpstr);
 
 	readscreen(tmpstr, 119, 1);
 	free(tmpstr); tmpstr = NULL;

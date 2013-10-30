@@ -441,7 +441,7 @@ void init(void)
 		tmpstr = createpluginpath("/lcdpearl1/skin.xml", 0);
 	}
 
-	printf("use skin: %s\n", tmpstr");
+	printf("use skin: %s\n", tmpstr);
 
 	readscreen(tmpstr, 116, 1);
 	free(tmpstr); tmpstr = NULL;
