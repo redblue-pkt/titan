@@ -889,7 +889,16 @@ void init(void)
 	pluginaktiv = 1;
 	firststart = 1;
 	
-	tmpstr = createpluginpath("/lcdsamsung/skin.xml", 0);
+	tmpstr = createpluginpath("/lcdsamsung/skin2.xml", 0);
+		
+	if(!file_exist(tmpstr))
+	{
+		free(tmpstr); tmpstr = NULL;
+		tmpstr = createpluginpath("/lcdsamsung/skin.xml", 0);
+	}
+
+	printf("use skin: %s\n", tmpstr");
+
 	readscreen(tmpstr, 119, 1);
 	free(tmpstr); tmpstr = NULL;
 	
