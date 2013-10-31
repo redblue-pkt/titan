@@ -1484,6 +1484,8 @@ struct status
 	char* imdbfolderpath;
 	int virtualzap;
 	int fontsizeadjust;
+	//count for drawing screen
+	int drawscreencount;
 } status;
 
 struct fb

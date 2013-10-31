@@ -355,6 +355,8 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 		buf = webgetvideo(param, *connfd, fmt);
   else if(ostrcmp(query, "videoplay") == 0 || ostrcmp(query, "videoplay=") == 0)
 		buf = webvideo(param, fmt);
+	else if(ostrcmp(query, "getdrawcount") == 0)
+		buf = webgetdrawcount(param, fmt);
 	else if(ostrcmp(query, "getshoot") == 0)
 	{
 		webgetshoot(param, fmt);
