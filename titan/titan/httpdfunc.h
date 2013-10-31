@@ -1576,6 +1576,11 @@ char* webgetgmultiepg(char* param, int fmt)
 	return buf;
 }
 
+void webgetdrawcount(char* param, int fmt)
+{
+	return oitoa(status.drawscreencount);
+}
+
 void webgetshoot(char* param, int fmt)
 {
 	char* cmd = NULL, *tmpstr = NULL;

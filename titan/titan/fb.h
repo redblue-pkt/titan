@@ -412,9 +412,7 @@ void pngforlcd(unsigned char *fbuffer, int width, int height)
 }
 
 void write_FB_to_JPEG_file(unsigned char *inbuffer, int image_width, int image_height, char * filename, int quality)
-{
-	
-		
+{		
 	size_t helpb = 0;
 	size_t help = 0;
 	unsigned char *helpbuffer = malloc(image_width*image_height*3);

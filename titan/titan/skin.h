@@ -3939,6 +3939,7 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 	{
 		if(screencalc == 0)
 		{
+			status.drawscreencount++;
 			drawscreenalways(node, screencalc);
 
 			if(merkskinfb != NULL) 
