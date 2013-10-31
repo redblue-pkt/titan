@@ -1485,7 +1485,7 @@ struct status
 	int virtualzap;
 	int fontsizeadjust;
 	//count for drawing screen
-	int drawscreencount;
+	unsigned int drawscreencount;
 } status;
 
 struct fb
