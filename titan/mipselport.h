@@ -623,7 +623,8 @@ void blitscale(int posx, int posy, int width, int height, int scalewidth, int sc
 */
 }
 
-void blitjpg(unsigned char* buf, int posx, int posy, int width, int height, int scalewidth, int scaleheight)
+void blitjpg(unsigned char* buf, int posx, int posy, int width, int height, int scalewidth, int scaleheight, int mwidth, int mheight, int halign, int valign)
+//void blitjpg(unsigned char* buf, int posx, int posy, int width, int height, int scalewidth, int scaleheight)
 {
 /*
 #ifndef SIMULATE
@@ -677,7 +678,7 @@ void initsignal(struct sigaction* sa)
 	sigaction(SIGUSR2, sa, NULL);
 	sigaction(SIGPIPE, sa, NULL);
 	sigaction(SIGALRM, sa, NULL);
-	sigaction(SIGSTKFLT, sa, NULL);
+//	sigaction(SIGSTKFLT, sa, NULL);
 	sigaction(SIGABRT, sa, NULL);
 
 	signal(SIGHUP, SIG_IGN);
@@ -723,7 +724,7 @@ void sighandler(int sig, struct sigcontext ctx)
 		case SIGBUS:
 		case SIGFPE:
 		case SIGSEGV:
-		case SIGSTKFLT:
+//		case SIGSTKFLT:
 		{
 /*
 #ifdef SIMULATE
