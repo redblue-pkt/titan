@@ -16,7 +16,8 @@ struct stmfbio_var_screeninfo_ex infoex;
 
 int setencoding(struct channel* chnode, struct dvbdev* videonode)
 {
-	if(chnode == NULL) return 1;
+	int ret 1;
+	if(chnode == NULL) return ret;
 	
 	switch(chnode->videocodec)
 	{
