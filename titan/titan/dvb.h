@@ -462,7 +462,7 @@ int dvbgetinfo(unsigned char* pmtbuf, struct channel* chnode)
 	int isac3 = 0, isdts = 0, isaac = 0;
 	int audiocodec = 0, videocodec = 0;
 	int firstaudiopid = -1, firstaudiocodec = -1, audiochange = 1;
-	int streamtype, pid, tsid, onid;
+	int streamtype, pid, tsid, onid, pcrpid;
 	unsigned char *tmpbuf = NULL;
 	struct audiotrack* prevaudio = NULL;
 
@@ -476,8 +476,11 @@ int dvbgetinfo(unsigned char* pmtbuf, struct channel* chnode)
 	if(sectionlength > MINMALLOC) sectionlength = MINMALLOC;
 	programinfolength = ((pmtbuf[10] & 0x0F) << 8) | (pmtbuf[11] & 0xff);
 	if(programinfolength > MINMALLOC) programinfolength = MINMALLOC;
+	
+	pcrpid = chnode->pcrpid;
 	chnode->pcrpid = ((pmtbuf[8] & 0x1F) << 8) + pmtbuf[9];
 	debug(200, "add pcrpid %d", chnode->pcrpid);
+	if(chnode->pcrpid != pcrpid) status.writechannel = 1;
 
 	// pmt
 	int programnumber = (pmtbuf[3] << 8) + pmtbuf[4];

@@ -67,7 +67,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	struct dvbdev *fenode = NULL;
 	struct dvbdev *dmxaudionode = NULL;
 	struct dvbdev *dmxvideonode = NULL;
-	//struct dvbdev *dmxpcrnode = NULL;
+	struct dvbdev *dmxpcrnode = NULL;
 	struct dvbdev *audionode = NULL;
 	struct dvbdev *videonode = NULL;
 	int ret = 0, festatus = 1, tmpmute = 0, i = 0;
@@ -195,7 +195,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	}
 
 	//check pmt if not all infos in channellist
-	if(chnode->audiopid == -1 || chnode->videopid == -1 || chnode->audiocodec == -1 || chnode->videocodec == -1 || (getconfigint("av_ac3default", NULL) == YES && chnode->audiocodec != AC3))
+	if(chnode->audiopid == -1 || chnode->videopid == -1 || chnode->pcrpid == -1 || chnode->audiocodec == -1 || chnode->videocodec == -1 || (getconfigint("av_ac3default", NULL) == YES && chnode->audiocodec != AC3))
 	{
 		//wait for tuner lock
 		if(flag == 0)
@@ -257,6 +257,40 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		tmpmute = 1;
 		setmute(1);
 	}
+	
+	//demux pcr start
+	if(flag == 0 && chnode->pcrpid > 0)
+	{
+		if(status.aktservice->dmxpcrdev != NULL && status.aktservice->dmxpcrdev->fd >= 0 && status.aktservice->dmxpcrdev->adapter == fenode->adapter && status.aktservice->dmxpcrdev->devnr == fenode->devnr)
+			dmxpcrnode = status.aktservice->dmxpcrdev;
+		else
+		{
+			dmxclose(status.aktservice->dmxpcrdev, -1);
+			dmxpcrnode = dmxopen(fenode);
+		}
+		if(dmxpcrnode != NULL)
+		{
+			if(dmxsetsource(dmxpcrnode, fenode->fedmxsource) != 0)
+			{
+				dmxclose(dmxpcrnode, -1);
+				dmxpcrnode = NULL;
+			}
+			if(dmxsetpesfilter(dmxpcrnode, chnode->pcrpid, -1, DMX_OUT_DECODER, DMX_PES_PCR, 0) != 0)
+			{
+				dmxclose(dmxpcrnode, -1);
+				dmxpcrnode = NULL;
+			}
+		}
+		else
+			err("demux pcr dev not ok");
+	}
+	else
+	{
+		err("dmx pcrpid not valid (%d)", chnode->pcrpid);
+		dmxclose(status.aktservice->dmxpcrdev, -1);
+	}
+
+	status.aktservice->dmxpcrdev = dmxpcrnode;
 
 	//demux audio start
 	if(chnode->audiopid > 0)
@@ -477,43 +511,6 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		debug(200, "hbbtvurl=%s", chnode->hbbtvurl);
 		free(aitbuf); aitbuf = NULL;
 	}
-
-	//demux pcr start
-	//i think this is not needed
-	/*
-	if(flag == 0 && chnode->pcrpid > 0)
-	{
-		if(status.aktservice->dmxpcrdev != NULL && status.aktservice->dmxpcrdev->fd >= 0 && status.aktservice->dmxpcrdev->adapter == fenode->adapter && status.aktservice->dmxpcrdev->devnr == fenode->devnr)
-			dmxpcrnode = status.aktservice->dmxpcrdev;
-		else
-		{
-			dmxclose(status.aktservice->dmxpcrdev, -1);
-			dmxpcrnode = dmxopen(fenode);
-		}
-		if(dmxpcrnode != NULL)
-		{
-			if(dmxsetsource(dmxpcrnode, fenode->fedmxsource) != 0)
-			{
-				dmxclose(dmxpcrnode, -1);
-				dmxpcrnode = NULL;
-			}
-			if(dmxsetpesfilter(dmxpcrnode, chnode->pcrpid, -1, DMX_OUT_DECODER, DMX_PES_PCR, 0) != 0)
-			{
-				dmxclose(dmxpcrnode, -1);
-				dmxpcrnode = NULL;
-			}
-		}
-		else
-			err("demux pcr dev not ok");
-	}
-	else
-	{
-		err("dmx pcrpid not valid (%d)", chnode->pcrpid);
-		dmxclose(status.aktservice->dmxpcrdev, -1);
-	}
-
-	status.aktservice->dmxpcrdev = dmxpcrnode;
-	*/
 
 	if(flag == 0)
 	{
