@@ -6,6 +6,30 @@
 #define FBIO_BLIT 0x22
 #endif
 
+int setencoding(struct channel* chnode, struct dvbdev* videonode)
+{
+	if(chnode == NULL) return 1;
+	
+	switch(chnode->videocodec)
+	{
+		case MPEGV:
+			ret = videosetstreamtype(videonode, 0);
+			break;
+		case MPEG4V:
+			ret = videosetstreamtype(videonode, 4);
+			break;
+		case H264:
+			ret = videosetstreamtype(videonode, 1);
+			break;
+		case VC1:
+			ret = videosetstreamtype(videonode, 3);
+			break;
+		default:
+			ret = videosetstreamtype(videonode, 0);
+	}
+	return ret;
+}
+
 int videodiscontinuityskip(struct dvbdev* node, int flag)
 {
 	return 0;
