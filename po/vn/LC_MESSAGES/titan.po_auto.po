@@ -65,7 +65,8 @@
 #: scan.h:1763 scan.h:2234 scan.h:2238 scan.h:2242 scan.h:2246 scan.h:2250
 #: scan.h:2259 scan.h:1768 scan.h:2241 scan.h:2245 scan.h:2249 scan.h:2253
 #: scan.h:2257 scan.h:2266 tithek_global.h:33 tithek_global.h:37
-#: tithek_global.h:41
+#: tithek_global.h:41 adjust.h:93 adjust.h:118 adjust.h:148 adjust.h:162
+#: adjust.h:183 adjust.h:199 adjust.h:220 adjust.h:224 adjust.h:250
 msgid "no"
 msgstr ""
 
@@ -141,118 +142,120 @@ msgstr ""
 #: scan.h:2278 scan.h:2282 scan.h:2286 scan.h:2290 scan.h:1764 scan.h:2235
 #: scan.h:2239 scan.h:2243 scan.h:2247 scan.h:2251 scan.h:2260 scan.h:1769
 #: scan.h:2242 scan.h:2246 scan.h:2250 scan.h:2254 scan.h:2258 scan.h:2267
-#: tithek_global.h:34 tithek_global.h:38 tithek_global.h:42
+#: tithek_global.h:34 tithek_global.h:38 tithek_global.h:42 adjust.h:94
+#: adjust.h:119 adjust.h:149 adjust.h:159 adjust.h:184 adjust.h:200
+#: adjust.h:221 adjust.h:225
 msgid "yes"
 msgstr ""
 
-#: adjust.h:84 adjust.h:85
+#: adjust.h:84 adjust.h:85 adjust.h:89
 msgid "medium"
 msgstr ""
 
 #: adjust.h:85 adjust.h:164 mc_audioplayer_settings.h:35
 #: mc_pictureplayer_settings.h:50 mc_videoplayer_settings.h:31
 #: moduleconfig.h:238 plugins_mc_skin.xml.h:23 skins_mc_skin.xml.h:23
-#: moduleconfig.h:248 adjust.h:86 adjust.h:165
+#: moduleconfig.h:248 adjust.h:86 adjust.h:165 adjust.h:90 adjust.h:169
 msgid "fast"
 msgstr ""
 
 #: adjust.h:92 mc_audioplayer_settings.h:27 mc_pictureplayer_settings.h:42
 #: mc_videoplayer_settings.h:23 plugins_mc_skin.xml.h:7 skins_mc_skin.xml.h:7
-#: adjust.h:93
+#: adjust.h:93 adjust.h:97
 msgid "alpha"
 msgstr ""
 
 #: adjust.h:93 mc_audioplayer_settings.h:28 mc_pictureplayer_settings.h:43
 #: mc_videoplayer_settings.h:24 plugins_mc_skin.xml.h:48
-#: skins_mc_skin.xml.h:48 adjust.h:94
+#: skins_mc_skin.xml.h:48 adjust.h:94 adjust.h:98
 msgid "reverse alpha"
 msgstr ""
 
 #: adjust.h:94 mc_audioplayer_settings.h:29 mc_pictureplayer_settings.h:44
 #: mc_videoplayer_settings.h:25 plugins_mc_skin.xml.h:54
-#: skins_mc_skin.xml.h:54 adjust.h:95
+#: skins_mc_skin.xml.h:54 adjust.h:95 adjust.h:99
 msgid "size"
 msgstr ""
 
 #: adjust.h:95 mc_audioplayer_settings.h:30 mc_pictureplayer_settings.h:45
 #: mc_videoplayer_settings.h:26 plugins_mc_skin.xml.h:50
-#: skins_mc_skin.xml.h:50 adjust.h:96
+#: skins_mc_skin.xml.h:50 adjust.h:96 adjust.h:100
 msgid "reverse size"
 msgstr ""
 
 #: adjust.h:96 mc_audioplayer_settings.h:31 mc_pictureplayer_settings.h:46
 #: mc_videoplayer_settings.h:27 plugins_mc_skin.xml.h:16
-#: skins_mc_skin.xml.h:16 vfdisplay.h:46 adjust.h:97
+#: skins_mc_skin.xml.h:16 vfdisplay.h:46 adjust.h:97 adjust.h:101
 msgid "date"
 msgstr ""
 
 #: adjust.h:97 mc_audioplayer_settings.h:32 mc_pictureplayer_settings.h:47
 #: mc_videoplayer_settings.h:28 plugins_mc_skin.xml.h:49
-#: skins_mc_skin.xml.h:49 adjust.h:98
+#: skins_mc_skin.xml.h:49 adjust.h:98 adjust.h:102
 msgid "reverse date"
 msgstr ""
 
-#: adjust.h:100 adjust.h:101
+#: adjust.h:100 adjust.h:101 adjust.h:105
 msgid "Power Menu"
 msgstr ""
 
-#: adjust.h:101 adjust.h:102
+#: adjust.h:101 adjust.h:102 adjust.h:106
 msgid "Power Off"
 msgstr ""
 
-#: adjust.h:102 powerofftimer.h:118 adjust.h:103
+#: adjust.h:102 powerofftimer.h:118 adjust.h:103 adjust.h:107
 msgid "Standby"
 msgstr ""
 
-#: adjust.h:103 softcam.h:291 adjust.h:104
+#: adjust.h:103 softcam.h:291 adjust.h:104 adjust.h:108
 msgid "Restart"
 msgstr ""
 
-#: adjust.h:104 adjust.h:105
+#: adjust.h:104 adjust.h:105 adjust.h:109
 msgid "Gui Restart"
 msgstr ""
 
 #: adjust.h:107 adjust.h:117 epgsettings.h:134 epgsettings.h:140 network.h:594
 #: epgsettings.h:144 epgsettings.h:150 adjust.h:108 adjust.h:118 network.h:593
-#: epgsettings.h:145 epgsettings.h:151
+#: epgsettings.h:145 epgsettings.h:151 adjust.h:112 adjust.h:122
 msgid "deaktiv"
 msgstr ""
 
-#: adjust.h:108 adjust.h:109
+#: adjust.h:108 adjust.h:109 adjust.h:113
 msgid "1 sec"
 msgstr ""
 
-#: adjust.h:109 avsettings.h:74 adjust.h:110 avsettings.h:75
+#: adjust.h:109 avsettings.h:74 adjust.h:110 avsettings.h:75 adjust.h:114
 msgid "2 sec"
 msgstr ""
 
-#: adjust.h:110 pin.h:165 adjust.h:111 pin.h:188
+#: adjust.h:110 pin.h:165 adjust.h:111 pin.h:188 adjust.h:115
 msgid "endless"
 msgstr ""
 
-#: adjust.h:118 adjust.h:119
+#: adjust.h:118 adjust.h:119 adjust.h:123
 msgid "1 GB"
 msgstr ""
 
-#: adjust.h:119 adjust.h:120
+#: adjust.h:119 adjust.h:120 adjust.h:124
 msgid "2 GB"
 msgstr ""
 
-#: adjust.h:120 adjust.h:121
+#: adjust.h:120 adjust.h:121 adjust.h:125
 msgid "3 GB"
 msgstr ""
 
-#: adjust.h:121 adjust.h:122
+#: adjust.h:121 adjust.h:122 adjust.h:126
 msgid "4 GB"
 msgstr ""
 
 #: adjust.h:139 adjust.h:233 httpdsettings.h:43 adjust.h:140 adjust.h:234
-#: adjust.h:236
+#: adjust.h:236 adjust.h:144 adjust.h:241
 msgid "extern"
 msgstr ""
 
 #: adjust.h:140 adjust.h:234 httpdsettings.h:42 adjust.h:141 adjust.h:235
-#: adjust.h:237
+#: adjust.h:237 adjust.h:145 adjust.h:242
 msgid "intern"
 msgstr ""
 
@@ -268,80 +271,81 @@ msgstr ""
 #: transponder.h:258 transponder.h:268 transponder.h:294 transponder.h:301
 #: transponder.h:319 transponder.h:337 transponder.h:363 transponder.h:372
 #: transponder.h:378 transponder.h:385 transponder.h:417 transponder.h:427
-#: transponder.h:476 transponder.h:512
+#: transponder.h:476 transponder.h:512 adjust.h:152
 msgid "auto"
 msgstr ""
 
 #: adjust.h:148 epgsettings.h:202 rectimer.h:1171 epgsettings.h:212
-#: adjust.h:149 rectimer.h:1156 epgsettings.h:213
+#: adjust.h:149 rectimer.h:1156 epgsettings.h:213 adjust.h:153
 msgid "nothing"
 msgstr ""
 
-#: adjust.h:149 rectimer.h:1172 adjust.h:150 rectimer.h:1157
+#: adjust.h:149 rectimer.h:1172 adjust.h:150 rectimer.h:1157 adjust.h:154
 msgid "standby"
 msgstr ""
 
-#: adjust.h:150 rectimer.h:1173 adjust.h:151 rectimer.h:1158
+#: adjust.h:150 rectimer.h:1173 adjust.h:151 rectimer.h:1158 adjust.h:155
 msgid "power off"
 msgstr ""
 
-#: adjust.h:158 adjust.h:159
+#: adjust.h:158 adjust.h:159 adjust.h:163
 msgid "anim. width"
 msgstr ""
 
-#: adjust.h:159 adjust.h:160
+#: adjust.h:159 adjust.h:160 adjust.h:164
 msgid "anim. height"
 msgstr ""
 
-#: adjust.h:160 adjust.h:161
+#: adjust.h:160 adjust.h:161 adjust.h:165
 msgid "anim. both"
 msgstr ""
 
-#: adjust.h:163 adjust.h:164
+#: adjust.h:163 adjust.h:164 adjust.h:168
 msgid "very fast"
 msgstr ""
 
-#: adjust.h:165 timeshiftsettings.h:49 tmc.h:557 adjust.h:166
+#: adjust.h:165 timeshiftsettings.h:49 tmc.h:557 adjust.h:166 adjust.h:170
 msgid "normal"
 msgstr ""
 
 #: adjust.h:166 moduleconfig.h:236 tmc.h:556 moduleconfig.h:246 adjust.h:167
+#: adjust.h:171
 msgid "slow"
 msgstr ""
 
-#: adjust.h:167 adjust.h:168
+#: adjust.h:167 adjust.h:168 adjust.h:172
 msgid "very slow"
 msgstr ""
 
-#: adjust.h:170 pin.h:83 adjust.h:171 pin.h:106
+#: adjust.h:170 pin.h:83 adjust.h:171 pin.h:106 adjust.h:175
 msgid "hidden"
 msgstr ""
 
-#: adjust.h:171 adjust.h:172
+#: adjust.h:171 adjust.h:172 adjust.h:176
 msgid "deactive"
 msgstr ""
 
-#: adjust.h:182 adjust.h:183
+#: adjust.h:182 adjust.h:183 adjust.h:187
 msgid "channel-movie"
 msgstr ""
 
-#: adjust.h:183 adjust.h:184
+#: adjust.h:183 adjust.h:184 adjust.h:188
 msgid "movie-channel"
 msgstr ""
 
-#: adjust.h:197 adjust.h:198
+#: adjust.h:197 adjust.h:198 adjust.h:202
 msgid "expert (11)"
 msgstr ""
 
 #: audiotrack.h:48 play.h:247 rectimer.h:1490 subtitle.h:1615 audiotrack.h:50
 #: rectimer.h:1475 subtitle.h:1613 play.h:253 play.h:261 play.h:250
-#: subtitle.h:1623
+#: subtitle.h:1623 subtitle.h:1624
 msgid "running"
 msgstr ""
 
 #: audiotrack.h:117 play.h:232 subtitle.h:1722 tunerconfig.h:157
 #: tunerconfig.h:341 tunerconfig.h:381 audiotrack.h:119 audiotrack.h:116
-#: subtitle.h:1719 play.h:243 subtitle.h:1741
+#: subtitle.h:1719 play.h:243 subtitle.h:1741 subtitle.h:1745
 msgid "undefined"
 msgstr ""
 
@@ -535,7 +539,17 @@ msgstr ""
 #: putlocker.h:191 solarmovie.h:202 streamcloud.h:31 streamcloud.h:78
 #: streamcloud.h:153 tithek_global.h:110 tithek.h:1316 tithek.h:1338
 #: tithek.h:2086 tithek.h:2148 tithek.h:2162 vidstream.h:45 vidstream.h:86
-#: vidstream.h:98 vidstream.h:167 xvidstage.h:54 xvidstage.h:100
+#: vidstream.h:98 vidstream.h:167 xvidstage.h:54 xvidstage.h:100 ard.h:31
+#: channellist.h:946 channellist.h:948 channellist.h:953 channellist.h:955
+#: channellist.h:1039 divxstage.h:150 dlna.h:336 dlna.h:345 faststream.h:30
+#: faststream.h:79 faststream.h:91 faststream.h:103 faststream.h:160
+#: filemanager.h:291 filemanager.h:355 flashx.h:84 flashx.h:138 flashx.h:195
+#: flashx.h:233 flashx.h:270 global.h:6272 gmediarender.h:115 movshare.h:149
+#: nowvideo.h:87 played.h:30 played.h:79 played.h:91 played.h:103 played.h:160
+#: putlocker.h:79 putlocker.h:85 putlocker.h:146 putlocker.h:194
+#: solarmovie.h:35 solarmovie.h:47 solarmovie.h:230 streamcloud.h:91
+#: streamcloud.h:122 streamcloud.h:161 tithek_global.h:238 tithek.h:2083
+#: tithek.h:2159 tpk.h:3173 tpk.new.h:3167 videoweed.h:35 videoweed.h:80
 msgid "Message"
 msgstr ""
 
@@ -720,7 +734,17 @@ msgstr ""
 #: streamcloud.h:31 streamcloud.h:78 streamcloud.h:153 tithek_global.h:110
 #: tithek.h:1316 tithek.h:1338 tithek.h:2086 tithek.h:2148 tithek.h:2162
 #: vidstream.h:45 vidstream.h:86 vidstream.h:98 vidstream.h:167 xvidstage.h:54
-#: xvidstage.h:100
+#: xvidstage.h:100 ard.h:31 channellist.h:946 channellist.h:948
+#: channellist.h:953 channellist.h:955 channellist.h:1039 divxstage.h:150
+#: dlna.h:336 dlna.h:345 faststream.h:30 faststream.h:79 faststream.h:91
+#: faststream.h:103 faststream.h:160 filemanager.h:291 filemanager.h:355
+#: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
+#: global.h:6272 gmediarender.h:115 httpdfunc.h:3044 movshare.h:149
+#: nowvideo.h:87 played.h:30 played.h:79 played.h:91 played.h:103 played.h:160
+#: putlocker.h:79 putlocker.h:85 putlocker.h:146 putlocker.h:194
+#: solarmovie.h:35 solarmovie.h:47 solarmovie.h:230 streamcloud.h:91
+#: streamcloud.h:122 streamcloud.h:161 tithek_global.h:238 tithek.h:2083
+#: tithek.h:2159 tpk.h:3173 tpk.new.h:3167 videoweed.h:35 videoweed.h:80
 msgid "OK"
 msgstr ""
 
@@ -903,7 +927,17 @@ msgstr ""
 #: streamcloud.h:31 streamcloud.h:78 streamcloud.h:153 tithek_global.h:110
 #: tithek.h:1316 tithek.h:1338 tithek.h:2086 tithek.h:2148 tithek.h:2162
 #: vidstream.h:45 vidstream.h:86 vidstream.h:98 vidstream.h:167 xvidstage.h:54
-#: xvidstage.h:100
+#: xvidstage.h:100 ard.h:31 channellist.h:946 channellist.h:948
+#: channellist.h:953 channellist.h:955 channellist.h:1039 divxstage.h:150
+#: dlna.h:336 dlna.h:345 faststream.h:30 faststream.h:79 faststream.h:91
+#: faststream.h:103 faststream.h:160 filemanager.h:291 filemanager.h:355
+#: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
+#: global.h:6272 gmediarender.h:115 httpdfunc.h:3044 movshare.h:149
+#: nowvideo.h:87 played.h:30 played.h:79 played.h:91 played.h:103 played.h:160
+#: putlocker.h:79 putlocker.h:85 putlocker.h:146 putlocker.h:194
+#: solarmovie.h:35 solarmovie.h:47 solarmovie.h:230 streamcloud.h:91
+#: streamcloud.h:122 streamcloud.h:161 tithek_global.h:238 tithek.h:2083
+#: tithek.h:2159 tpk.h:3173 tpk.new.h:3167 videoweed.h:35 videoweed.h:80
 msgid "EXIT"
 msgstr ""
 
@@ -919,7 +953,8 @@ msgstr ""
 #: transponder.h:227 transponder.h:259 transponder.h:295 transponder.h:330
 #: transponder.h:348 transponder.h:364 transponder.h:418 transponder.h:451
 #: transponder.h:480 transponder.h:493 transponder.h:504 transponder.h:574
-#: zdf.h:91 bgdownload.h:93 bgdownload.h:154 zdf.h:86
+#: zdf.h:91 bgdownload.h:93 bgdownload.h:154 zdf.h:86 httpdfunc.h:2661
+#: httpdfunc.h:2673
 msgid "unknown"
 msgstr ""
 
@@ -1008,80 +1043,86 @@ msgstr ""
 msgid "12"
 msgstr ""
 
-#: channellist.h:578 channellist.h:593
+#: channellist.h:578 channellist.h:593 channellist.h:591
 msgid "Move mode"
 msgstr ""
 
-#: channellist.h:587 channellist.h:602
+#: channellist.h:587 channellist.h:602 channellist.h:600
 msgid "Remove mode"
 msgstr ""
 
-#: channellist.h:596 channellist.h:611
+#: channellist.h:596 channellist.h:611 channellist.h:609
 msgid "Copy mode"
 msgstr ""
 
-#: channellist.h:605 channellist.h:620
+#: channellist.h:605 channellist.h:620 channellist.h:618
 msgid "Protect mode"
 msgstr ""
 
-#: channellist.h:614 channellist.h:629
+#: channellist.h:614 channellist.h:629 channellist.h:627
 msgid "Edit mode"
 msgstr ""
 
 #: channellist.h:689 channellist.h:1757 scan.h:534 channellist.h:706
-#: channellist.h:1774 channellist.h:1764 scan.h:530
+#: channellist.h:1774 channellist.h:1764 scan.h:530 channellist.h:703
+#: channellist.h:1797
 msgid "Radio"
 msgstr ""
 
 #: channellist.h:694 channellist.h:1752 scan.h:532 channellist.h:711
-#: channellist.h:1769 channellist.h:1759 scan.h:528
+#: channellist.h:1769 channellist.h:1759 scan.h:528 channellist.h:708
+#: channellist.h:1792
 msgid "TV"
 msgstr ""
 
 #: channellist.h:702 channellist.h:1220 channellist.h:1221 channellist.h:1433
 #: channellist.h:719 channellist.h:1237 channellist.h:1238 channellist.h:1450
-#: channellist.h:1227 channellist.h:1228 channellist.h:1440
+#: channellist.h:1227 channellist.h:1228 channellist.h:1440 channellist.h:717
+#: channellist.h:1260 channellist.h:1261 channellist.h:1473
 msgid "Bouquets"
 msgstr ""
 
 #: channellist.h:719 channellist.h:1573 channellist.h:736 channellist.h:1590
-#: channellist.h:1580
+#: channellist.h:1580 channellist.h:1613
 msgid "Channel"
 msgstr ""
 
 #: channellist.h:735 channellist.h:1254 channellist.h:1255 channellist.h:1507
 #: channellist.h:752 channellist.h:1271 channellist.h:1272 channellist.h:1524
-#: channellist.h:1261 channellist.h:1262 channellist.h:1514
+#: channellist.h:1261 channellist.h:1262 channellist.h:1514 channellist.h:754
+#: channellist.h:1294 channellist.h:1295 channellist.h:1547
 msgid "Satellites"
 msgstr ""
 
 #: channellist.h:752 channellist.h:1322 channellist.h:1323 channellist.h:1647
 #: channellist.h:769 channellist.h:1339 channellist.h:1340 channellist.h:1664
 #: channellist.h:1329 channellist.h:1330 channellist.h:1654 scan.h:2290
-#: scan.h:2292 scan.h:2293 scan.h:2295
+#: scan.h:2292 scan.h:2293 scan.h:2295 channellist.h:773 channellist.h:1362
+#: channellist.h:1363 channellist.h:1687
 msgid "Provider"
 msgstr ""
 
 #: channellist.h:771 channellist.h:772 channellist.h:1204 channellist.h:1205
 #: channellist.h:788 channellist.h:789 channellist.h:1221 channellist.h:1222
-#: channellist.h:1211 channellist.h:1212
+#: channellist.h:1211 channellist.h:1212 channellist.h:794 channellist.h:795
+#: channellist.h:1244 channellist.h:1245
 msgid "All Channels"
 msgstr ""
 
-#: channellist.h:913 channellist.h:930
+#: channellist.h:913 channellist.h:930 channellist.h:946
 msgid "Copy providerlist successfull"
 msgstr ""
 
-#: channellist.h:915 channellist.h:932
+#: channellist.h:915 channellist.h:932 channellist.h:948
 msgid "Copy providerlist not ok"
 msgstr ""
 
-#: channellist.h:999 channellist.h:1016 channellist.h:1006
+#: channellist.h:999 channellist.h:1016 channellist.h:1006 channellist.h:1039
 msgid "Can't remove akive Service"
 msgstr ""
 
 #: channellist.h:1288 channellist.h:1289 channellist.h:1305 channellist.h:1306
-#: channellist.h:1295 channellist.h:1296
+#: channellist.h:1295 channellist.h:1296 channellist.h:1328 channellist.h:1329
 msgid "Channels A-Z"
 msgstr ""
 
@@ -1276,17 +1317,17 @@ msgstr ""
 msgid "west"
 msgstr ""
 
-#: dlna.h:312 dlna.h:332
+#: dlna.h:312 dlna.h:332 dlna.h:334
 msgid "DLNA started."
 msgstr ""
 
-#: dlna.h:314 dlna.h:334
+#: dlna.h:314 dlna.h:334 dlna.h:336
 msgid ""
 "DLNA not started,\n"
 "Please check your config."
 msgstr ""
 
-#: dlna.h:322 dlna.h:342
+#: dlna.h:322 dlna.h:342 dlna.h:345
 msgid "DLNA now stopped"
 msgstr ""
 
@@ -1561,14 +1602,14 @@ msgid "Realy delete this file/dir?"
 msgstr ""
 
 #: filemanager.h:281 filemanager.h:282 filemanager.h:307 filemanager.h:319
-#: filemanager.h:321
+#: filemanager.h:321 filemanager.h:331
 msgid "Can't show this file!"
 msgstr ""
 
 #: filemanager.h:306 mc_internetbrowser.h:41 mc_wetterinfo.h:41 tithek.h:1348
 #: filemanager.h:307 filemanager.h:331 tithek.h:1357 filemanager.h:343
 #: tithek.h:1356 tithek.h:1368 filemanager.h:345 tithek.h:1369 tithek.h:1341
-#: tithek.h:1342 tithek.h:1343
+#: tithek.h:1342 tithek.h:1343 filemanager.h:355
 msgid "Registration needed, please contact Atemio !"
 msgstr ""
 
@@ -1593,28 +1634,33 @@ msgstr ""
 #: primeshare.h:73 primeshare.h:124 putlocker.h:76 putlocker.h:133
 #: putlocker.h:142 putlocker.h:191 streamcloud.h:78 streamcloud.h:153
 #: vidstream.h:86 vidstream.h:97 vidstream.h:167 xvidstage.h:100
-#: xvidstage.h:177
+#: xvidstage.h:177 divxstage.h:150 faststream.h:79 faststream.h:90
+#: faststream.h:102 faststream.h:160 flashx.h:83 flashx.h:137 flashx.h:194
+#: flashx.h:232 flashx.h:269 movshare.h:149 played.h:79 played.h:90
+#: played.h:102 played.h:160 putlocker.h:79 putlocker.h:136 putlocker.h:145
+#: putlocker.h:194 solarmovie.h:35 solarmovie.h:46 streamcloud.h:91
+#: streamcloud.h:122 streamcloud.h:161
 msgid "The page is temporarily unavailable"
 msgstr ""
 
 #: flashx.h:70 putlocker.h:52 solarmovie.h:187 xvidstage.h:64 xvidstage.h:177
 #: solarmovie.h:190 solarmovie.h:265 putlocker.h:53 solarmovie.h:266
 #: xvidstage.h:65 xvidstage.h:175 solarmovie.h:250 solarmovie.h:287
-#: solarmovie.h:205 tithek_global.h:205 solarmovie.h:202
+#: solarmovie.h:205 tithek_global.h:205 solarmovie.h:202 solarmovie.h:230
 msgid "This file doesn't exist, or has been removed"
 msgstr ""
 
 #: global.h:6121 keyactions.h:216 global.h:6109 global.h:6153 global.h:6159
 #: global.h:6209 global.h:6060 keyactions.h:213 global.h:6145 global.h:6149
-#: global.h:6158 global.h:6162 global.h:6243
+#: global.h:6158 global.h:6162 global.h:6243 global.h:6272
 msgid "ERROR cant read res"
 msgstr ""
 
-#: gmediarender.h:101
+#: gmediarender.h:101 gmediarender.h:109
 msgid "Servername"
 msgstr ""
 
-#: gmediarender.h:105
+#: gmediarender.h:105 gmediarender.h:113
 msgid "Wait for connect or press EXIT"
 msgstr ""
 
@@ -1847,7 +1893,8 @@ msgstr ""
 #: movie4k.h:989 solarmovie.h:406 solarmovie.h:392 kinox.h:274 movie4k.h:799
 #: movie4k.h:922 movie4k.h:1036 solarmovie.h:441 kinox.h:226 movie4k.h:747
 #: movie4k.h:870 movie4k.h:984 solarmovie.h:359 tithek_global.h:359
-#: movie4k.h:639 movie4k.h:763 solarmovie.h:320
+#: movie4k.h:639 movie4k.h:763 solarmovie.h:320 kinox.h:227 movie4k.h:654
+#: movie4k.h:779 movie4k.h:892 solarmovie.h:378
 msgid "Season"
 msgstr ""
 
@@ -1857,7 +1904,7 @@ msgstr ""
 #: movie4k.h:993 solarmovie.h:410 solarmovie.h:396 kinox.h:278 movie4k.h:803
 #: movie4k.h:1040 solarmovie.h:445 kinox.h:230 movie4k.h:751 movie4k.h:988
 #: solarmovie.h:363 tithek_global.h:363 movie4k.h:643 movie4k.h:882
-#: solarmovie.h:324
+#: solarmovie.h:324 kinox.h:231 movie4k.h:658 movie4k.h:896 solarmovie.h:382
 msgid "Episode"
 msgstr ""
 
@@ -2487,7 +2534,7 @@ msgstr ""
 
 #: nowvideo.h:39 divxstage.h:44 novamov.h:44 nowvideo.h:42 primeshare.h:44
 #: divxstage.h:75 novamov.h:73 nowvideo.h:72 primeshare.h:73 divxstage.h:79
-#: novamov.h:80 nowvideo.h:79 primeshare.h:79
+#: novamov.h:80 nowvideo.h:79 primeshare.h:79 nowvideo.h:87 videoweed.h:80
 msgid ""
 "The file is being transfered to our other servers. This may take few minutes."
 msgstr ""
@@ -4851,7 +4898,7 @@ msgid "TitanNit Tithek disclaimer"
 msgstr ""
 
 #: tithek.h:1425 tithek.h:1436 tithek.h:1435 tithek.h:1447 tithek.h:1448
-#: tithek.h:1420 tithek.h:1421 tithek.h:1422
+#: tithek.h:1420 tithek.h:1421 tithek.h:1422 tithek.h:1419
 msgid "Page"
 msgstr ""
 
@@ -4864,12 +4911,12 @@ msgid "The hoster is not yet supported for the time !"
 msgstr ""
 
 #: tithek.h:2131 tithek.h:2139 tithek.h:2138 tithek.h:2173 tithek.h:2174
-#: tithek.h:2146 tithek.h:2147 tithek.h:2148
+#: tithek.h:2146 tithek.h:2147 tithek.h:2148 tithek.h:2145
 msgid "Remove this Favorite ?"
 msgstr ""
 
 #: tithek.h:2145 tithek.h:2153 tithek.h:2152 tithek.h:2187 tithek.h:2188
-#: tithek.h:2160 tithek.h:2161 tithek.h:2162
+#: tithek.h:2160 tithek.h:2161 tithek.h:2162 tithek.h:2159
 msgid "Add this link as Favorite ?"
 msgstr ""
 
@@ -5034,11 +5081,13 @@ msgstr ""
 msgid "POS"
 msgstr ""
 
-#: tpk.h:2753 tpk.h:2751 tpk.h:2990 tpk.h:3018 tpk.h:3027
+#: tpk.h:2753 tpk.h:2751 tpk.h:2990 tpk.h:3018 tpk.h:3027 tpk.h:3173
+#: tpk.new.h:3167
 msgid "check your Secret Feed !"
 msgstr ""
 
 #: tpk.h:2984 tpk.h:2987 tpk.h:2992 tpk.h:3234 tpk.h:3262 tpk.h:3271
+#: tpk.h:3421 tpk.new.h:3411
 msgid "no description found"
 msgstr ""
 
@@ -5451,7 +5500,7 @@ msgstr ""
 msgid "Can't create directory !"
 msgstr ""
 
-#: filemanager.h:267 filemanager.h:279 filemanager.h:281
+#: filemanager.h:267 filemanager.h:279 filemanager.h:281 filemanager.h:291
 msgid "Can't remove file/dir !"
 msgstr ""
 
@@ -5575,11 +5624,13 @@ msgstr ""
 msgid "Remove error"
 msgstr ""
 
-#: filemanager.h:214 filemanager.h:216 filemanager.h:218
+#: filemanager.h:214 filemanager.h:216 filemanager.h:218 filemanager.h:219
+#: filemanager.h:226
 msgid "Move File"
 msgstr ""
 
-#: filemanager.h:221 filemanager.h:223 filemanager.h:225
+#: filemanager.h:221 filemanager.h:223 filemanager.h:225 filemanager.h:233
+#: filemanager.h:235
 msgid "Copy File"
 msgstr ""
 
@@ -5599,15 +5650,15 @@ msgstr ""
 msgid "Flash (temporary)"
 msgstr ""
 
-#: adjust.h:206
+#: adjust.h:206 adjust.h:211
 msgid "yes / vzap 1 sec"
 msgstr ""
 
-#: adjust.h:207
+#: adjust.h:207 adjust.h:212
 msgid "yes / vzap 2 sec"
 msgstr ""
 
-#: adjust.h:208
+#: adjust.h:208 adjust.h:213
 msgid "yes / vzap endless"
 msgstr ""
 
@@ -5615,11 +5666,11 @@ msgstr ""
 msgid "Really stop download ?"
 msgstr ""
 
-#: channellist.h:920
+#: channellist.h:920 channellist.h:953
 msgid "Copy satlist successfull"
 msgstr ""
 
-#: channellist.h:922
+#: channellist.h:922 channellist.h:955
 msgid "Copy satlist not ok"
 msgstr ""
 
@@ -5711,7 +5762,7 @@ msgstr ""
 msgid "Really move this file/dir?"
 msgstr ""
 
-#: filemanager.h:266 filemanager.h:268
+#: filemanager.h:266 filemanager.h:268 filemanager.h:278
 msgid "Really delete this file/dir?"
 msgstr ""
 
@@ -5822,7 +5873,7 @@ msgid ""
 msgstr ""
 
 #: tithek.h:2111 tithek.h:2112 tithek.h:2084 tithek.h:2085 tithek_global.h:110
-#: tithek.h:2086
+#: tithek.h:2086 tithek_global.h:238 tithek.h:2083
 msgid "The hoster is not yet supported !"
 msgstr ""
 
@@ -5863,7 +5914,7 @@ msgstr ""
 msgid "Channel scan ended."
 msgstr ""
 
-#: putlocker.h:45 putlocker.h:75 putlocker.h:82
+#: putlocker.h:45 putlocker.h:75 putlocker.h:82 putlocker.h:85
 msgid "This file doesn't exist, or has been removed."
 msgstr ""
 
@@ -5871,6 +5922,15 @@ msgstr ""
 #: novamov.h:34 nowvideo.h:35 primeshare.h:28 putlocker.h:31 streamcloud.h:30
 #: vidstream.h:44 xvidstage.h:53 filenuke.h:37 flashx.h:26 movreel.h:30
 #: movshare.h:35 novamov.h:35 nowvideo.h:36 primeshare.h:29 putlocker.h:32
-#: streamcloud.h:31 vidstream.h:45 xvidstage.h:54
+#: streamcloud.h:31 vidstream.h:45 xvidstage.h:54 faststream.h:30 played.h:30
+#: videoweed.h:35
 msgid "Hoster Url not http://"
+msgstr ""
+
+#: spinner.h:18
+msgid ""
+"Detect hanging System !!!\n"
+"\n"
+"KILL = Red\n"
+"BOOT = Green"
 msgstr ""
