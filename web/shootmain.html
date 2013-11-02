@@ -4,18 +4,38 @@
 		<!--<meta http-equiv="refresh" content="5">-->
 		<link rel="stylesheet" type="text/css" href="titan.css">
 		<script type="text/javascript">
-		function shootreload() {
-			// nach 5 Sek neuen Shoot machen(nachdem der alte angezeigt wurde)
-			setTimeout("screenshot()",5000);
-		}
-		function screenshot() {
-			if (document.all.autoupdate.checked == true) {
-				mainshoot.location.href="query?getshoot&1";
+			locOSDcount='0';
+			function subRequestReturn(sURL) {
+				try {
+					var xmlhttp = new XMLHttpRequest;
+				} catch (e) {
+					return false;
+				}
+				try {
+					xmlhttp.open('GET', sURL, false);
+					xmlhttp.send('');
+					return xmlhttp.responseText;
+				} catch (e) {
+					return false;
+				}
 			}
-		}
+			function shootreload() {
+				if (document.all.autoupdate.checked == true) {
+					var newOSDcount = subRequestReturn('queryraw?getdrawcount');
+					if (locOSDcount != newOSDcount) {
+						locOSDcount=newOSDcount;
+						mainshoot.location.href="query?getshoot&1";
+					} else {
+						setTimeout("shootreload()",1000);
+					}		
+				}
+			}
 		</script>
 	</head>
 	<body class=body>
+		<script type="text/javascript">
+			locOSDcount = subRequestReturn('queryraw?getdrawcount');
+		</script>	
 		<table width=100% height=100% border=0 cellpadding=0 cellspacing=0>
 			<tr>
 				<td width=180>
@@ -24,7 +44,7 @@
 					<div class=label>OSD Screenshot</div>
 				</td>
 				<td width=180>
-					<div class=label><input type="checkbox" name="autoupdate" onclick=screenshot()>Automatisch updaten</div>
+					<div class=label><input type="checkbox" name="autoupdate" onclick=shootreload()>Automatisch updaten</div>
 				</td>
 			</tr>
 			<tr>
