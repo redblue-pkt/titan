@@ -8,10 +8,6 @@
 			function subRequestReturn(sURL) {
 				try {
 					var xmlhttp = new XMLHttpRequest;
-				} catch (e) {
-					return false;
-				}
-				try {
 					xmlhttp.open('GET', sURL, false);
 					xmlhttp.send('');
 					return xmlhttp.responseText;
