@@ -341,7 +341,7 @@ struct channel* addchannel(char *line, int count, struct channel* last)
 	return newnode;
 }
 
-struct channel* createchannel(char* name, uint64_t transponderid, int providerid, int serviceid, int servicetype, int flag, int videocodec, int audiocodec, int videopid, int audiopid, int protect)
+struct channel* createchannel(char* name, uint64_t transponderid, int providerid, int serviceid, int servicetype, int flag, int videocodec, int audiocodec, int videopid, int audiopid, int protect, int pcrpid)
 {
 	struct channel* chnode = NULL;
 	char* tmpstr = NULL;
@@ -367,6 +367,8 @@ struct channel* createchannel(char* name, uint64_t transponderid, int providerid
 	tmpstr = ostrcat(tmpstr, oitoa(audiopid), 1, 1);
 	tmpstr = ostrcat(tmpstr, "#", 1, 0);
 	tmpstr = ostrcat(tmpstr, oitoa(protect), 1, 1);
+	tmpstr = ostrcat(tmpstr, "#", 1, 0);
+	tmpstr = ostrcat(tmpstr, oitoa(pcrpid), 1, 1);
 
 	chnode = addchannel(tmpstr, 1, NULL);
 

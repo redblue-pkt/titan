@@ -69,7 +69,7 @@ void testzap(char* testtransponder, char* testchannel)
 				
 	int serviceid = 0;
 	int8_t videocodec = 0, audiocodec = 0;
-	int16_t videopid = 0, audiopid = 0;
+	int16_t videopid = 0, audiopid = 0, pcrpid = 0;
 				
 	char* tmpstr = NULL, *tmpstr1 = NULL;
 	struct transponder* tp = NULL;
@@ -95,12 +95,12 @@ void testzap(char* testtransponder, char* testchannel)
 					textbox(_("Message"), _("testchannel not found"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 				else
 				{
-					int ret = sscanf(tmpstr1, "%d#%"SCNu8"#%"SCNu8"#%"SCNu16"#%"SCNu16, &serviceid, &videocodec, &audiocodec, &videopid, &audiopid);
-					if(ret != 5)
+					int ret = sscanf(tmpstr1, "%d#%"SCNu8"#%"SCNu8"#%"SCNu16"#%"SCNu16"#%"SCNu16, &serviceid, &videocodec, &audiocodec, &videopid, &audiopid, &pcrpid);
+					if(ret != 6)
 						textbox(_("Message"), _("testchannel entry not ok"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);			
 					else
 					{
-						chnode = createchannel("testchannel", tpid, 0, serviceid, 99, 0, videocodec, audiocodec, videopid, audiopid, 0);
+						chnode = createchannel("testchannel", tpid, 0, serviceid, 99, 0, videocodec, audiocodec, videopid, audiopid, 0, pcrpid);
 						if(chnode == NULL)
 							textbox(_("Message"), _("can't create new channel"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);			
 						else
