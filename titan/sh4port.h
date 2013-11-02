@@ -14,6 +14,30 @@ struct stmfbio_var_screeninfo_ex infoex;
 #define DVB_DISCONTINUITY_SKIP                0x01
 #define DVB_DISCONTINUITY_CONTINUOUS_REVERSE  0x02
 
+int setencoding(struct channel* chnode, struct dvbdev* videonode)
+{
+	if(chnode == NULL) return 1;
+	
+	switch(chnode->videocodec)
+	{
+		case MPEGV:
+			ret = videosetencoding(videonode, 2);
+			break;
+		case MPEG4V:
+			ret = videosetencoding(videonode, 7);
+			break;
+		case H264:
+			ret = videosetencoding(videonode, 8);
+			break;
+		case VC1:
+			ret = videosetencoding(videonode, 10);
+			break;
+		default:
+			ret = videosetencoding(videonode, 0);
+	}
+	return ret;
+}
+
 // inform the player about the jump in the stream data
 // flag 0: skip
 // flag 1: cont. reverse

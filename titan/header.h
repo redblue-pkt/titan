@@ -174,6 +174,7 @@ void screenextensions_check(int flag);
 //...port.h
 void fbsave();
 void fbrestore();
+int setencoding(struct channel* chnode, struct dvbdev* videonode);
 
 //mostzap.h
 struct mostzap* createmostzap(int serviceid, uint64_t transponderid);

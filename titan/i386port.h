@@ -1,6 +1,30 @@
 #ifndef I386PORT_H
 #define I386PORT_H
 
+int setencoding(struct channel* chnode, struct dvbdev* videonode)
+{
+	if(chnode == NULL) return 1;
+	
+	switch(chnode->videocodec)
+	{
+		case MPEGV:
+			ret = videosetencoding(videonode, 2);
+			break;
+		case MPEG4V:
+			ret = videosetencoding(videonode, 7);
+			break;
+		case H264:
+			ret = videosetencoding(videonode, 8);
+			break;
+		case VC1:
+			ret = videosetencoding(videonode, 10);
+			break;
+		default:
+			ret = videosetencoding(videonode, 0);
+	}
+	return ret;
+}
+
 int videodiscontinuityskip(struct dvbdev* node, int flag)
 {
 	return 0;
