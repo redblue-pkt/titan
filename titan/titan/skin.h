@@ -3456,7 +3456,7 @@ int calcrwidth(struct skin* node, struct skin* parent)
 	int scrollbarwidth = 0;
 
 	if(node->prozwidth == 1)
-		node->rwidth = ((float)parent->iwidth / 100) * node->width;
+		node->rwidth = (((parent->iwidth * 100) / 100) * node->width) / 100;
 	else
 		node->rwidth = node->width;
 
@@ -3470,7 +3470,7 @@ int calcrwidth(struct skin* node, struct skin* parent)
 int calcrheight(struct skin* node, struct skin* parent)
 {
 	if(node->prozheight == 1)
-		node->rheight = ((float)parent->iheight / 100) * node->height;
+		node->rheight = (((parent->iheight * 100) / 100) * node->height) / 100;
 	else
 	{
 		node->rheight = node->height;
