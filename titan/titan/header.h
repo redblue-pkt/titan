@@ -302,6 +302,8 @@ int videogetpts(struct dvbdev* node, uint64_t* pts);
 int videoslowmotion(struct dvbdev* node, int frames);
 int videostop(struct dvbdev* node, int clearscreen);
 int videoplay(struct dvbdev* node);
+int videosetencoding(struct dvbdev* node, int type);
+int videosetstreamtype(struct dvbdev* node, int type);
 
 // scan.h
 unsigned int satblindscan(struct stimerthread* timernode, int onlycalc);
