@@ -2873,7 +2873,7 @@ void drawprogressbar(struct skin* node)
 	int val = 0;
 
 	if(node->progresssize > 100) node->progresssize = 100;
-	val = ((float)node->iwidth / 100) * node->progresssize;
+	val = (((node->iwidth * 100) / 100) * node->progresssize) / 100;
 	fillrect(node->rposx + node->bordersize, node->rposy + node->bordersize, val, node->iheight, node->progresscol, node->transparent);
 }
 
