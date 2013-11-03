@@ -5227,6 +5227,8 @@ int setvol(int value)
 		{
 			status.volmute = -1;
 			ret = writesysint(voldev, value, 0);
+			if(ret == 0)
+				ret = audiosetmixer(aktservice.audiodev, value, value);
 		}
 		if(ret == 0 && status.mute != 2) addconfigint("vol", tmpvol);
 		return ret;
