@@ -550,7 +550,7 @@ msgstr ""
 #: solarmovie.h:35 solarmovie.h:47 solarmovie.h:230 streamcloud.h:91
 #: streamcloud.h:122 streamcloud.h:161 tithek_global.h:238 tithek.h:2083
 #: tithek.h:2159 tpk.h:3173 tpk.new.h:3167 videoweed.h:35 videoweed.h:80
-#: service.h:697 service.h:937
+#: service.h:697 service.h:937 global.h:6274 service.h:696 service.h:936
 msgid "Message"
 msgstr ""
 
@@ -746,7 +746,7 @@ msgstr ""
 #: solarmovie.h:35 solarmovie.h:47 solarmovie.h:230 streamcloud.h:91
 #: streamcloud.h:122 streamcloud.h:161 tithek_global.h:238 tithek.h:2083
 #: tithek.h:2159 tpk.h:3173 tpk.new.h:3167 videoweed.h:35 videoweed.h:80
-#: service.h:697 service.h:937
+#: service.h:697 service.h:937 global.h:6274 service.h:696 service.h:936
 msgid "OK"
 msgstr ""
 
@@ -940,7 +940,7 @@ msgstr ""
 #: solarmovie.h:35 solarmovie.h:47 solarmovie.h:230 streamcloud.h:91
 #: streamcloud.h:122 streamcloud.h:161 tithek_global.h:238 tithek.h:2083
 #: tithek.h:2159 tpk.h:3173 tpk.new.h:3167 videoweed.h:35 videoweed.h:80
-#: service.h:697 service.h:937
+#: service.h:697 service.h:937 global.h:6274 service.h:696 service.h:936
 msgid "EXIT"
 msgstr ""
 
@@ -1655,7 +1655,7 @@ msgstr ""
 
 #: global.h:6121 keyactions.h:216 global.h:6109 global.h:6153 global.h:6159
 #: global.h:6209 global.h:6060 keyactions.h:213 global.h:6145 global.h:6149
-#: global.h:6158 global.h:6162 global.h:6243 global.h:6272
+#: global.h:6158 global.h:6162 global.h:6243 global.h:6272 global.h:6274
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -4467,7 +4467,7 @@ msgstr ""
 msgid "Script execute"
 msgstr ""
 
-#: service.h:709 service.h:718 service.h:716 service.h:697
+#: service.h:709 service.h:718 service.h:716 service.h:697 service.h:696
 msgid ""
 "Timeshift is running !!!\n"
 "Stop it and switch ?"
@@ -4479,15 +4479,15 @@ msgid ""
 "Alle Tuners in use or no Tuner defined."
 msgstr ""
 
-#: service.h:941 service.h:950 service.h:942 service.h:923
+#: service.h:941 service.h:950 service.h:942 service.h:923 service.h:922
 msgid "Tuning to Channel failed!"
 msgstr ""
 
-#: service.h:944 service.h:953 service.h:945 service.h:926
+#: service.h:944 service.h:953 service.h:945 service.h:926 service.h:925
 msgid "Can't open frontend dev or Frontend Type unknown!"
 msgstr ""
 
-#: service.h:949 service.h:958 service.h:950 service.h:931
+#: service.h:949 service.h:958 service.h:950 service.h:931 service.h:930
 msgid "Channellist empty or corrupt (channel not found)!"
 msgstr ""
 
@@ -5853,7 +5853,7 @@ msgstr ""
 msgid "Do you want to delete all unused Bouquetentrys?"
 msgstr ""
 
-#: service.h:939 service.h:920
+#: service.h:939 service.h:920 service.h:919
 msgid ""
 "Can't find a Tuner.\n"
 "All Tuners in use or no Tuner defined."
