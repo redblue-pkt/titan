@@ -663,8 +663,6 @@ int main(int argc, char *argv[])
 	openfont(getskinconfig("fontfile4", NULL));
 	openfont(getskinconfig("fontfile5", NULL));
 
-	setvol(getconfigint("vol", NULL));
-
 	setlang(getconfig("lang", NULL));
 	initlocale(getconfig("localepath", NULL));
 
@@ -817,6 +815,9 @@ int main(int argc, char *argv[])
 	ret = readepgscanlist(getconfig("epgchannelfile", NULL));
 	ret = settimezone(getconfig("timezone", NULL));
 	ret = readextepgconfig(getconfig("extepgfile", NULL));
+	
+	//set volume on start
+	setvol(getconfigint("vol", NULL));
 
 	//check to remove preinstalled tpk packages
 	ret = tpkupdatepre();
