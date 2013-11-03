@@ -33,7 +33,6 @@ void serviceresetchannelinfo(struct channel* chnode)
 	freecadesc(chnode);
 	freeesinfo(chnode);
 	chnode->txtpid = 0;
-	chnode->pcrpid = 0;
 	chnode->pmtpid = 0;
 	chnode->crypt = 0;
 }
