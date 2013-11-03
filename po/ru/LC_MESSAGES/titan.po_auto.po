@@ -825,6 +825,7 @@ msgstr ""
 #: solarmovie.h:35 solarmovie.h:47 solarmovie.h:230 streamcloud.h:91
 #: streamcloud.h:122 streamcloud.h:161 tithek_global.h:238 tithek.h:2083
 #: tithek.h:2159 tpk.h:3173 tpk.new.h:3167 videoweed.h:35 videoweed.h:80
+#: service.h:697 service.h:937
 msgid "Message"
 msgstr ""
 
@@ -1140,6 +1141,7 @@ msgstr ""
 #: solarmovie.h:35 solarmovie.h:47 solarmovie.h:230 streamcloud.h:91
 #: streamcloud.h:122 streamcloud.h:161 tithek_global.h:238 tithek.h:2083
 #: tithek.h:2159 tpk.h:3173 tpk.new.h:3167 videoweed.h:35 videoweed.h:80
+#: service.h:697 service.h:937
 msgid "OK"
 msgstr ""
 
@@ -1455,6 +1457,7 @@ msgstr ""
 #: solarmovie.h:35 solarmovie.h:47 solarmovie.h:230 streamcloud.h:91
 #: streamcloud.h:122 streamcloud.h:161 tithek_global.h:238 tithek.h:2083
 #: tithek.h:2159 tpk.h:3173 tpk.new.h:3167 videoweed.h:35 videoweed.h:80
+#: service.h:697 service.h:937
 msgid "EXIT"
 msgstr ""
 
@@ -4905,7 +4908,7 @@ msgid "imdb mvis (network/hdd)"
 msgstr ""
 
 #: service.h:560 service.h:566 service.h:571 service.h:573 service.h:574
-#: service.h:709 service.h:718 service.h:716
+#: service.h:709 service.h:718 service.h:716 service.h:697
 msgid ""
 "Timeshift is running !!!\n"
 "Stop it and switch ?"
@@ -4919,17 +4922,17 @@ msgid ""
 msgstr ""
 
 #: service.h:786 service.h:787 service.h:793 service.h:798 service.h:800
-#: service.h:801 service.h:941 service.h:950 service.h:942
+#: service.h:801 service.h:941 service.h:950 service.h:942 service.h:923
 msgid "Tuning to Channel failed!"
 msgstr ""
 
 #: service.h:789 service.h:790 service.h:796 service.h:801 service.h:803
-#: service.h:804 service.h:944 service.h:953 service.h:945
+#: service.h:804 service.h:944 service.h:953 service.h:945 service.h:926
 msgid "Can't open frontend dev or Frontend Type unknown!"
 msgstr ""
 
 #: service.h:794 service.h:795 service.h:801 service.h:806 service.h:808
-#: service.h:809 service.h:949 service.h:958 service.h:950
+#: service.h:809 service.h:949 service.h:958 service.h:950 service.h:931
 msgid "Channellist empty or corrupt (channel not found)!"
 msgstr ""
 
@@ -11463,7 +11466,7 @@ msgstr ""
 msgid "Do you want to delete all unused Bouquetentrys?"
 msgstr ""
 
-#: service.h:939
+#: service.h:939 service.h:920
 msgid ""
 "Can't find a Tuner.\n"
 "All Tuners in use or no Tuner defined."

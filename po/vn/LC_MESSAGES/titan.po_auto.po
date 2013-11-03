@@ -550,6 +550,7 @@ msgstr ""
 #: solarmovie.h:35 solarmovie.h:47 solarmovie.h:230 streamcloud.h:91
 #: streamcloud.h:122 streamcloud.h:161 tithek_global.h:238 tithek.h:2083
 #: tithek.h:2159 tpk.h:3173 tpk.new.h:3167 videoweed.h:35 videoweed.h:80
+#: service.h:697 service.h:937
 msgid "Message"
 msgstr ""
 
@@ -745,6 +746,7 @@ msgstr ""
 #: solarmovie.h:35 solarmovie.h:47 solarmovie.h:230 streamcloud.h:91
 #: streamcloud.h:122 streamcloud.h:161 tithek_global.h:238 tithek.h:2083
 #: tithek.h:2159 tpk.h:3173 tpk.new.h:3167 videoweed.h:35 videoweed.h:80
+#: service.h:697 service.h:937
 msgid "OK"
 msgstr ""
 
@@ -938,6 +940,7 @@ msgstr ""
 #: solarmovie.h:35 solarmovie.h:47 solarmovie.h:230 streamcloud.h:91
 #: streamcloud.h:122 streamcloud.h:161 tithek_global.h:238 tithek.h:2083
 #: tithek.h:2159 tpk.h:3173 tpk.new.h:3167 videoweed.h:35 videoweed.h:80
+#: service.h:697 service.h:937
 msgid "EXIT"
 msgstr ""
 
@@ -4464,7 +4467,7 @@ msgstr ""
 msgid "Script execute"
 msgstr ""
 
-#: service.h:709 service.h:718 service.h:716
+#: service.h:709 service.h:718 service.h:716 service.h:697
 msgid ""
 "Timeshift is running !!!\n"
 "Stop it and switch ?"
@@ -4476,15 +4479,15 @@ msgid ""
 "Alle Tuners in use or no Tuner defined."
 msgstr ""
 
-#: service.h:941 service.h:950 service.h:942
+#: service.h:941 service.h:950 service.h:942 service.h:923
 msgid "Tuning to Channel failed!"
 msgstr ""
 
-#: service.h:944 service.h:953 service.h:945
+#: service.h:944 service.h:953 service.h:945 service.h:926
 msgid "Can't open frontend dev or Frontend Type unknown!"
 msgstr ""
 
-#: service.h:949 service.h:958 service.h:950
+#: service.h:949 service.h:958 service.h:950 service.h:931
 msgid "Channellist empty or corrupt (channel not found)!"
 msgstr ""
 
@@ -5850,7 +5853,7 @@ msgstr ""
 msgid "Do you want to delete all unused Bouquetentrys?"
 msgstr ""
 
-#: service.h:939
+#: service.h:939 service.h:920
 msgid ""
 "Can't find a Tuner.\n"
 "All Tuners in use or no Tuner defined."
