@@ -144,6 +144,34 @@ int audioselectsource(struct dvbdev* node, audio_stream_source_t source)
 	return 0;
 }
 
+int audiosetmixer(struct dvbdev* node, int left, int right)
+{
+	if(node == NULL)
+	{
+		debug(200, "NULL detect");
+		return 1;
+	}
+
+#if DVB_API_VERSION < 3
+	audioMixer_t mixer;
+	mixer.volume_left = 63.0 - pow(1.068241, 63 - left);
+	mixer.volume_right = 63.0 - pow(1.068241, 63 - right);
+#else
+	audio_mixer_t mixer;
+	mixer.volume_left = left;
+	mixer.volume_right = right;
+#endif
+
+	debug(200, "AUDIO_SET_MIXER");
+	if(ioctl(node->fd, AUDIO_SET_MIXER, &mixer) < 0)
+	{
+		perr("AUDIO_SET_MIXER");
+		return 1;
+	}
+	
+	return 0;
+}
+
 int audiosetmute(struct dvbdev* node, int state)
 {
 	if(node == NULL)
