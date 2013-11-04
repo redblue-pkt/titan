@@ -132,7 +132,7 @@ void LCD_Pearl1_thread()
 
 		tmpstr = gettime(NULL, "%H:%M");
 		
-		// TV Programm läuft
+		// TV Programm lï¿½uft
 		if(status.infobaraktiv == 1)
 		{
 			if(ostrcmp(getconfig("write_fb_to_png", NULL), "yes") == 0)
@@ -172,7 +172,10 @@ void LCD_Pearl1_thread()
 			if(status.standby > 0 && standby == 0)
 			{
 				if(ostrcmp(getconfig("lcd_pearl1_plugin_standby", NULL), "yes") == 0)
+				{
 					standby = 2;
+					put = 1;
+				}
 				else {
 					system("killall lcd4linux");
 					standby = 1;
