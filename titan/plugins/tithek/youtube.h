@@ -18,11 +18,32 @@ char* youtube(char* link, char* url, char* name, int flag)
 		path = pos + 1;
 	}
 
+/* spox.com
+
+http://www.spox.com/de/sport/ussport/nba/live-stream/1310/miami-heat-washington-wizards-frank-buschmann.html
+grep code:
+<div id="spxliveplayer"><iframe frameborder="0" width="640px" height="360px" scrolling="no" src="http://www.youtube.com/embed/SjMEn0d6ByU" id="spxliveiframe" ></iframe></div>
+
+and get to youtube
+*/
+
 	tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
+//	writesys("/var/usr/local/share/titan/plugins/tithek/youtube_tmpstr", tmpstr, 0);
+
 	if(flag == 1)
 	{
-
-		if(ostrstr(tmpstr, "status=fail&") == NULL)
+		if(ostrstr(tmpstr, "&hlsvp=") != NULL)
+		{
+			printf("found NBA1\n");
+			streamurl = string_resub("&hlsvp=", "&", tmpstr, 0);
+			string_decode(streamurl,0);
+			string_decode(streamurl,0);
+			string_decode(streamurl,0);
+			string_decode(streamurl,0);
+			string_decode(streamurl,0);
+			string_decode(streamurl,0);	
+		}
+		else if(ostrstr(tmpstr, "status=fail&") == NULL)
 		{
  			struct splitstr* ret1 = NULL;
 			struct menulist* mlist = NULL, *mbox = NULL;
