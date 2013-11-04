@@ -380,7 +380,7 @@ struct dvbdev* fegetfree(struct transponder* tpnode, int flag, struct dvbdev* dv
 						band = calclof(dvbnode, tpnode, aktnr, 0);
 					else
 						band = calclof(dvbnode, tpnode, aktnr, 1);
-					if(tmpdvbnode != NULL && tmpdvbnode->feaktband != band && (tmpdvbnode->felock != 0 || (flag == 2 && tmpdvbnode->felock == 0)))
+					if(tmpdvbnode != NULL && tmpdvbnode->feaktband != band && (tmpdvbnode->felock != 0 || (flag >= 2 && tmpdvbnode->felock == 0)))
 					{
 						free(tmpnr); tmpnr = NULL;
 						continue;
