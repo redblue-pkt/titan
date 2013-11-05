@@ -1311,6 +1311,11 @@ inline void drawpixel(int posx, int posy, unsigned long color)
 	skinfb->fblong[(skinfb->width * posy) + posx] = color;
 }
 
+inline void drawpixelfastfb(struct fb* node, int posx, int posy, unsigned long color)
+{
+	node->fblong[posy + posx] = color;
+}
+
 inline void drawpixelfb(struct fb* node, int posx, int posy, unsigned long color)
 {
 	node->fblong[(node->width * posy) + posx] = color;
