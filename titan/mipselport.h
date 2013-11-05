@@ -402,13 +402,26 @@ void blitrect(int posx, int posy, int width, int height, long color, int transpa
 {
 	int y, x;
 	unsigned long tmpcol;
+	struct fb* tmpfb = NULL;
 	
 	if(posx < 0) posx = 0;
-	if(posx > skinfb->width) posx = skinfb->width;
 	if(posy < 0) posy = 0;
-	if(posy > skinfb->height) posy = skinfb->height;
-	if(posx + width > skinfb->width) width = skinfb->width - posx;
-	if(posy + height > skinfb->height) height = skinfb->height - posy;
+	if(mode < 2)
+	{
+		if(posx > skinfb->width) posx = skinfb->width;
+		if(posy > skinfb->height) posy = skinfb->height;
+		if(posx + width > skinfb->width) width = skinfb->width - posx;
+		if(posy + height > skinfb->height) height = skinfb->height - posy;
+		tmpfb = skinfb;
+	}
+	else
+	{
+		if(posx > fb->width) posx = fb->width;
+		if(posy > fb->height) posy = fb->height;
+		if(posx + width > fb->width) width = fb->width - posx;
+		if(posy + height > fb->height) height = fb->height - posy;
+		tmpfb = fb;
+	}
 
 	if(width <= 0 || height <= 0) return;
 
@@ -417,28 +430,39 @@ void blitrect(int posx, int posy, int width, int height, long color, int transpa
 
 	if(mode == 0 || mode == 2)
 	{
-		for(y = 0; y < height; y++)
+		posy *= tmpfb->width;
+		int yend = (posy + height) * tmpfb->width;
+		int xend = posx + width;
+		int xlen = (xend - posx) * tmpfb->colbytes;
+		int r = 0;
+		unsigned char* from = tmpfb->fb + (posy + posx) * tmpfb->colbytes;
+		
+		for(y = posy; y < yend; y += tmpfb->width)
 		{
-			for(x = 0; x < width; x++)
+			if(r == 0)
 			{
-				drawpixel(posx + x, posy + y, tmpcol);
+				r = 1;
+				for(x = posx; x < xend; x++)
+					drawpixelfastfb(tmpfb, x, y, tmpcol);
 			}
+			else
+				memcpy(tmpfb->fb + (y + posx) * tmpfb->colbytes, from, xlen);
 		}
 	}
 	else if(mode == 1 || mode == 3)
 	{
 		//topline
 		for(x = 0; x < width; x++)
-			drawpixel(posx + x, posy, tmpcol);
+			drawpixelfb(tmpfb, posx + x, posy, tmpcol);
 		//bottomline
 		for(x = 0; x < width; x++)
-			drawpixel(posx + x, posy + height - 1, tmpcol);
+			drawpixelfb(tmpfb, posx + x, posy + height - 1, tmpcol);
 		//leftline
 		for(y = 0; y < height; y++)
-			drawpixel(posx, posy + y, tmpcol);
+			drawpixelfb(tmpfb, posx, posy + y, tmpcol);
 		//rightline
 		for(y = 0; y < height; y++)
-			drawpixel(posx + width - 1, posy + y, tmpcol);
+			drawpixelfb(tmpfb, posx + width - 1, posy + y, tmpcol);
 	}
 
 /*
