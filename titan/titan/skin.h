@@ -2873,7 +2873,7 @@ void drawprogressbar(struct skin* node)
 	int val = 0;
 
 	if(node->progresssize > 100) node->progresssize = 100;
-	val = (((node->iwidth * 100) / 100) * node->progresssize) / 100;
+	val = ((float)node->iwidth / 100) * node->progresssize;
 	fillrect(node->rposx + node->bordersize, node->rposy + node->bordersize, val, node->iheight, node->progresscol, node->transparent);
 }
 
@@ -2886,9 +2886,9 @@ void drawmultiprogressbar(struct skin* node)
 	{
 		
 		if(epgrecord->posx > 100) epgrecord->posx = 100;
-		val1 = (((node->iwidth * 100) / 100) * epgrecord->posx) / 100;
+		val1 = ((float)node->iwidth / 100) * epgrecord->posx;
 		if(epgrecord->size > 100) epgrecord->size = 100;
-		val2 = (((node->iwidth * 100) / 100) * epgrecord->size) / 100;
+		val2 = ((float)node->iwidth / 100) * epgrecord->size;
 
 		if(val2 > val1)
 			fillrect(node->rposx + node->bordersize + node->bgspace + val1, node->rposy + node->bgspace + node->bordersize, val2 - val1 + (node->bgspace << 1), node->iheight + (node->bgspace << 1), node->progresscol, node->transparent);
@@ -3199,8 +3199,8 @@ void calcscrollbar(struct skin* node)
 
 	if(node->pagecount > 1)
 	{
-		node->scrollbarheight = ((node->iwidth * 10000) / node->pagecount) / 10000;
-		node->scrollbarpos = (((node->iheight * 10000) / node->pagecount) / 10000) * (node->aktpage - 1);
+		node->scrollbarheight = (float)node->iheight / node->pagecount;
+		node->scrollbarpos = ((float)node->iheight / node->pagecount) * (node->aktpage - 1);
 		if(node->scrollbar == AUTONO) node->scrollbar = AUTOYES;
 	}
 	else if(node->scrollbar == AUTOYES)
@@ -3456,7 +3456,7 @@ int calcrwidth(struct skin* node, struct skin* parent)
 	int scrollbarwidth = 0;
 
 	if(node->prozwidth == 1)
-		node->rwidth = (((parent->iwidth * 100) / 100) * node->width) / 100;
+		node->rwidth = ((float)parent->iwidth / 100) * node->width;
 	else
 		node->rwidth = node->width;
 
@@ -3470,7 +3470,7 @@ int calcrwidth(struct skin* node, struct skin* parent)
 int calcrheight(struct skin* node, struct skin* parent)
 {
 	if(node->prozheight == 1)
-		node->rheight = (((parent->iheight * 100) / 100) * node->height) / 100;
+		node->rheight = ((float)parent->iheight / 100) * node->height;
 	else
 	{
 		node->rheight = node->height;
@@ -3487,7 +3487,7 @@ int calcrheight(struct skin* node, struct skin* parent)
 int calcrposx(struct skin* node, struct skin* parent)
 {
 	if(node->prozposx == 1)
-		node->rposx = (((parent->iwidth * 100) / 100) * node->posx) / 100;
+		node->rposx = ((float)parent->iwidth / 100) * node->posx;
 	else
 		node->rposx = node->posx;
 
@@ -3509,7 +3509,7 @@ int calcrposx(struct skin* node, struct skin* parent)
 int calcrposy(struct skin* node, struct skin* parent)
 {
 	if(node->prozposy == 1)
-		node->rposy = (((parent->iheight * 100) / 100) * node->posy) / 100;
+		node->rposy = ((float)parent->iheight / 100) * node->posy;
 	else
 		node->rposy = node->posy;
 
@@ -3601,11 +3601,11 @@ int setnodeattr(struct skin* node, struct skin* parent, int screencalc)
 		calclistboxchild(node, parent);
 
 	if(node->picprozwidth == 1)
-		node->rpicwidth = (((node->iwidth * 100) / 100) * node->picwidth) / 100;
+		node->rpicwidth = ((float)node->iwidth / 100) * node->picwidth;
 	else
 		node->rpicwidth = node->picwidth;
 	if(node->picprozheight == 1)
-		node->rpicheight = (((node->iheight * 100) / 100) * node->picheight) / 100;
+		node->rpicheight = ((float)node->iheight / 100) * node->picheight;
 	else
 		node->rpicheight = node->picheight;
 
