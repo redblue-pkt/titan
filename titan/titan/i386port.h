@@ -1,6 +1,11 @@
 #ifndef I386PORT_H
 #define I386PORT_H
 
+int setmixer(struct dvbdev* node, int left, int right)
+{
+	return 0;
+}
+
 int setencoding(struct channel* chnode, struct dvbdev* videonode)
 {
 	int ret = 1;
