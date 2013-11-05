@@ -5228,11 +5228,7 @@ int setvol(int value)
 			status.volmute = -1;
 			ret = writesysint(voldev, value, 0);
 			if(ret == 0)
-			{
-				if(status.mute != 2) addconfigint("vol", tmpvol);
-				if(checkbox("ATEMIO5000") == 1)
-						ret = audiosetmixer(status.aktservice->audiodev, value, value);
-			}
+				ret = setmixer(status.aktservice->audiodev, value, value);
 		}
 		if(ret == 0 && status.mute != 2) addconfigint("vol", tmpvol);
 		return ret;

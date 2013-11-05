@@ -14,6 +14,11 @@ struct stmfbio_var_screeninfo_ex infoex;
 #define DVB_DISCONTINUITY_SKIP                0x01
 #define DVB_DISCONTINUITY_CONTINUOUS_REVERSE  0x02
 
+int setmixer(struct dvbdev* node, int left, int right)
+{
+	return 0;
+}
+
 int setencoding(struct channel* chnode, struct dvbdev* videonode)
 {
 	int ret = 1;

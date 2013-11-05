@@ -6,6 +6,11 @@
 #define FBIO_BLIT 0x22
 #endif
 
+int setmixer(struct dvbdev* node, int left, int right)
+{
+	return audiosetmixer(node, left, right);
+}
+
 int setencoding(struct channel* chnode, struct dvbdev* videonode)
 {
 	int ret = 1;
