@@ -663,10 +663,6 @@ int main(int argc, char *argv[])
 	openfont(getskinconfig("fontfile4", NULL));
 	openfont(getskinconfig("fontfile5", NULL));
 
-	//set volume on start
-	if(checkbox("ATEMIO5000") == 0)
-		setvol(getconfigint("vol", NULL));
-
 	setlang(getconfig("lang", NULL));
 	initlocale(getconfig("localepath", NULL));
 
@@ -821,8 +817,7 @@ int main(int argc, char *argv[])
 	ret = readextepgconfig(getconfig("extepgfile", NULL));
 	
 	//set volume on start
-	if(checkbox("ATEMIO5000") == 1)
-		setvol(getconfigint("vol", NULL));
+	setvol(getconfigint("vol", NULL));
 
 	//check to remove preinstalled tpk packages
 	ret = tpkupdatepre();
