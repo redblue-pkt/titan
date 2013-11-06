@@ -2991,21 +2991,21 @@ void clearshadow(struct skin* node)
 	switch(node->shadowpos)
 	{
 		case BOTTOMLEFT:
-		clearrect(node->rposx - node->shadowsize, node->rposy + node->rheight, node->rwidth, node->shadowsize);
-		clearrect(node->rposx - node->shadowsize, node->rposy + node->shadowsize, node->shadowsize, node->rheight);
-		break;
+			clearrect(node->rposx - node->shadowsize, node->rposy + node->rheight, node->rwidth, node->shadowsize);
+			clearrect(node->rposx - node->shadowsize, node->rposy + node->shadowsize, node->shadowsize, node->rheight);
+			break;
 		case BOTTOMRIGHT:
-		clearrect(node->rposx + node->shadowsize, node->rposy + node->rheight, node->rwidth, node->shadowsize);
-		clearrect(node->rposx + node->rwidth, node->rposy + node->shadowsize, node->shadowsize, node->rheight);
-		break;
+			clearrect(node->rposx + node->shadowsize, node->rposy + node->rheight, node->rwidth, node->shadowsize);
+			clearrect(node->rposx + node->rwidth, node->rposy + node->shadowsize, node->shadowsize, node->rheight);
+			break;
 		case TOPLEFT:
-		clearrect(node->rposx - node->shadowsize, node->rposy - node->shadowsize, node->rwidth, node->shadowsize);
-		clearrect(node->rposx - node->shadowsize, node->rposy - node->shadowsize, node->shadowsize, node->rheight);
-		break;
+			clearrect(node->rposx - node->shadowsize, node->rposy - node->shadowsize, node->rwidth, node->shadowsize);
+			clearrect(node->rposx - node->shadowsize, node->rposy - node->shadowsize, node->shadowsize, node->rheight);
+			break;
 		default:
-		clearrect(node->rposx + node->shadowsize, node->rposy - node->shadowsize, node->rwidth, node->shadowsize);
-		clearrect(node->rposx + node->rwidth, node->rposy - node->shadowsize, node->shadowsize, node->rheight);
-		break;
+			clearrect(node->rposx + node->shadowsize, node->rposy - node->shadowsize, node->rwidth, node->shadowsize);
+			clearrect(node->rposx + node->rwidth, node->rposy - node->shadowsize, node->shadowsize, node->rheight);
+			break;
 	}
 }
 
@@ -3014,21 +3014,21 @@ void drawshadow(struct skin* node)
 	switch(node->shadowpos)
 	{
 		case BOTTOMLEFT:
-		fillrect(node->rposx - node->shadowsize, node->rposy + node->rheight, node->rwidth, node->shadowsize, node->shadowcol, node->transparent);
-		fillrect(node->rposx - node->shadowsize, node->rposy + node->shadowsize, node->shadowsize, node->rheight, node->shadowcol, node->transparent);
-		break;
+			fillrect(node->rposx - node->shadowsize, node->rposy + node->rheight, node->rwidth, node->shadowsize, node->shadowcol, node->transparent);
+			fillrect(node->rposx - node->shadowsize, node->rposy + node->shadowsize, node->shadowsize, node->rheight, node->shadowcol, node->transparent);
+			break;
 		case BOTTOMRIGHT:
-		fillrect(node->rposx + node->shadowsize, node->rposy + node->rheight, node->rwidth, node->shadowsize, node->shadowcol, node->transparent);
-		fillrect(node->rposx + node->rwidth, node->rposy + node->shadowsize, node->shadowsize, node->rheight, node->shadowcol, node->transparent);
-		break;
+			fillrect(node->rposx + node->shadowsize, node->rposy + node->rheight, node->rwidth, node->shadowsize, node->shadowcol, node->transparent);
+			fillrect(node->rposx + node->rwidth, node->rposy + node->shadowsize, node->shadowsize, node->rheight, node->shadowcol, node->transparent);
+			break;
 		case TOPLEFT:
-		fillrect(node->rposx - node->shadowsize, node->rposy - node->shadowsize, node->rwidth, node->shadowsize, node->shadowcol, node->transparent);
-		fillrect(node->rposx - node->shadowsize, node->rposy - node->shadowsize, node->shadowsize, node->rheight, node->shadowcol, node->transparent);
-		break;
+			fillrect(node->rposx - node->shadowsize, node->rposy - node->shadowsize, node->rwidth, node->shadowsize, node->shadowcol, node->transparent);
+			fillrect(node->rposx - node->shadowsize, node->rposy - node->shadowsize, node->shadowsize, node->rheight, node->shadowcol, node->transparent);
+			break;
 		default:
-		fillrect(node->rposx + node->shadowsize, node->rposy - node->shadowsize, node->rwidth, node->shadowsize, node->shadowcol, node->transparent);
-		fillrect(node->rposx + node->rwidth, node->rposy - node->shadowsize, node->shadowsize, node->rheight, node->shadowcol, node->transparent);
-		break;
+			fillrect(node->rposx + node->shadowsize, node->rposy - node->shadowsize, node->rwidth, node->shadowsize, node->shadowcol, node->transparent);
+			fillrect(node->rposx + node->rwidth, node->rposy - node->shadowsize, node->shadowsize, node->rheight, node->shadowcol, node->transparent);
+			break;
 	}
 }
 
@@ -3061,9 +3061,7 @@ void drawnode(struct skin* node, int flag)
 	if(flag == 0 && node->bgcol == -1)
 	{
 		if(node->child != NULL && status.picbordersize > 0)
-		{
 			clearrect(node->rposx + node->bordersize, node->rposy + node->bordersize, node->rwidth - (node->bordersize << 1), node->rheight - (node->bordersize << 1));
-		}
 		else
 			clearscreennolock(node);
 	}
@@ -3128,13 +3126,15 @@ void drawnode(struct skin* node, int flag)
 		{
 			int lastposx = 0;
 			if(node->textposx2 > 0)
+			{
 				drawstring(node->text, 1, 0, -1, node->iposx + node->textposx, node->iposy, node->iwidth - node->textposx - (node->iwidth - node->textposx2) - len, node->iheight, node->halign, node->valign, node->font, node->fontsize, color, node->transparent, 0, &lastposx, NULL, NULL, node->charspace, 0);
-			else
-				drawstring(node->text, 1, 0, -1, node->iposx + node->textposx, node->iposy, node->iwidth - node->textposx - len, node->iheight, node->halign, node->valign, node->font, node->fontsize, color, node->transparent, 0, &lastposx, NULL, NULL, node->charspace, 0);
-			if(node->textposx2 > 0)
 				drawstring(node->text2, 1, 0, -1, node->iposx + node->textposx2, node->iposy, node->iwidth - node->textposx2 - len, node->iheight, node->halign, node->valign, node->font, node->fontsize2, color2, node->transparent, 0, NULL, NULL, NULL, node->charspace, 0);
+			}
 			else
+			{
+				drawstring(node->text, 1, 0, -1, node->iposx + node->textposx, node->iposy, node->iwidth - node->textposx - len, node->iheight, node->halign, node->valign, node->font, node->fontsize, color, node->transparent, 0, &lastposx, NULL, NULL, node->charspace, 0);
 				drawstring(node->text2, 1, 0, -1, lastposx, node->iposy, node->iwidth - (lastposx - node->iposx) - len, node->iheight, node->halign, node->valign, node->font, node->fontsize2, color2, node->transparent, 0, NULL, NULL, NULL, node->charspace, 0);
+			}
 		}
 	}
 	if(node->filelist != NULL && node->filelist->view > 3)
