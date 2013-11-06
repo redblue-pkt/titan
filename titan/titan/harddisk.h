@@ -20,7 +20,7 @@ int checkfilesystemexist(char* filesystem)
 	return ret;
 }
 
-char* blocktogb(unsigned long size)
+char* blocktogb(unsigned long long size)
 {
 	char* buf = NULL;
 
@@ -48,10 +48,10 @@ struct hdd* gethdd(char* device)
 	return NULL;
 }
 
-unsigned long hddgetsize(char* device, char* partition)
+unsigned long long hddgetsize(char* device, char* partition)
 {
 	char* file = NULL;
-	unsigned long size = 0;
+	unsigned long long size = 0;
 
 	file = ostrcat(file , "/sys/block/", 1, 0);
 	file = ostrcat(file , device, 1, 0);
@@ -831,7 +831,7 @@ void delhdd(char* device, int flag)
 
 //flag 0: lock
 //flag 1: no lock
-struct hdd* addhdd(char* device, int partition, unsigned long size, int removable, char* vendor, char *model, char* label, char* filesystem, char* uuid, int timetosleep, struct hdd* last, int flag)
+struct hdd* addhdd(char* device, int partition, unsigned long long size, int removable, char* vendor, char *model, char* label, char* filesystem, char* uuid, int timetosleep, struct hdd* last, int flag)
 {
 	if(flag == 0) m_lock(&status.hddmutex, 13);
 	struct hdd *newnode = NULL, *prev = NULL, *node = hdd;
