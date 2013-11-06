@@ -613,7 +613,7 @@ void hddformat(char* dev, char* filesystem)
 	node = gethdd(dev);
 	if(node == NULL) return;
 	
-	if(node->size > 4294967295)
+	if(node->size > 4294967295UL)
 		large = 1;
 
 	if(node->partition == 0)
