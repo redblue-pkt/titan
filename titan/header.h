@@ -695,6 +695,7 @@ unsigned int gethash(char* str);
 char* oregex(char* regex, char* str);
 int resettvpic();
 unsigned long readsysul(const char *filename, int line);
+unsigned long long readsysull(const char *filename, int line);
 char* oitoax(int value);
 void closeonexec(int fd);
 char* ostrstrcase(char* str, char* sub);

@@ -61,7 +61,7 @@ unsigned long long hddgetsize(char* device, char* partition)
 		file = ostrcat(file , partition, 1, 0);
 	}
 	file = ostrcat(file , "/size", 1, 0);
-	size = readsysul(file, 1);
+	size = readsysull(file, 1);
 	debug(80, "file: %s, size: %lu", file, size);
 	free(file); file = NULL;
 

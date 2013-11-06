@@ -4194,7 +4194,52 @@ int setlang(char *lang)
 	return 0;
 }
 
-unsigned long long readsysul(const char *filename, int line)
+unsigned long readsysul(const char *filename, int line)
+{
+	int i = 0, len = 0;
+	unsigned long ret = 0;
+	FILE *fd = NULL;
+	char *fileline = NULL;
+	char *buf1 = NULL;
+
+	fileline = malloc(MINMALLOC);
+	if(fileline == NULL)
+	{
+		err("no mem");
+		return 0;
+	}
+
+	fd = fopen(filename, "r");
+	if(fd == NULL)
+	{
+		perr("can't open %s", filename);
+		free(fileline);
+		return 0;
+	}
+
+	for(i = 0; i < line; i++)
+	{
+		memset(fileline, 0, MINMALLOC);
+		fgets(fileline, MINMALLOC, fd);
+	}
+
+	len = strlen(fileline) - 1;
+	if(len >= 0 && fileline[len] == '\n')
+		fileline[len] = '\0';
+	buf1 = ostrshrink(fileline);
+
+	fclose(fd);
+
+	if(buf1 != NULL)
+	{
+		ret = strtoul(buf1, NULL, 10);
+		free(buf1); buf1 = NULL;
+	}
+
+	return ret;
+}
+
+unsigned long long readsysull(const char *filename, int line)
 {
 	int i = 0, len = 0;
 	unsigned long long ret = 0;
@@ -4238,7 +4283,6 @@ unsigned long long readsysul(const char *filename, int line)
 
 	return ret;
 }
-
 
 char* readsys(const char *filename, int line)
 {
