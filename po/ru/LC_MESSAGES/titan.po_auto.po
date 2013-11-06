@@ -517,7 +517,7 @@ msgstr ""
 #: transponder.h:422 tunerconfig.h:671 vfdisplay.h:42 vfdisplay.h:50
 #: harddisk.h:731 avsettings.h:65 avsettings.h:81 harddisk.h:755
 #: harddisk.h:751 network.h:391 readerconfig.h:413 transponder.h:256
-#: transponder.h:264 transponder.h:415 transponder.h:423
+#: transponder.h:264 transponder.h:415 transponder.h:423 harddisk.h:757
 msgid "off"
 msgstr ""
 
@@ -826,6 +826,8 @@ msgstr ""
 #: streamcloud.h:122 streamcloud.h:161 tithek_global.h:238 tithek.h:2083
 #: tithek.h:2159 tpk.h:3173 tpk.new.h:3167 videoweed.h:35 videoweed.h:80
 #: service.h:697 service.h:937 global.h:6274 service.h:696 service.h:936
+#: global.h:6320 harddisk.h:637 harddisk.h:645 harddisk.h:654 harddisk.h:706
+#: youtube.h:197
 msgid "Message"
 msgstr ""
 
@@ -1142,6 +1144,8 @@ msgstr ""
 #: streamcloud.h:122 streamcloud.h:161 tithek_global.h:238 tithek.h:2083
 #: tithek.h:2159 tpk.h:3173 tpk.new.h:3167 videoweed.h:35 videoweed.h:80
 #: service.h:697 service.h:937 global.h:6274 service.h:696 service.h:936
+#: global.h:6320 harddisk.h:637 harddisk.h:645 harddisk.h:654 harddisk.h:706
+#: harddisk.h:917 youtube.h:197
 msgid "OK"
 msgstr ""
 
@@ -1458,6 +1462,8 @@ msgstr ""
 #: streamcloud.h:122 streamcloud.h:161 tithek_global.h:238 tithek.h:2083
 #: tithek.h:2159 tpk.h:3173 tpk.new.h:3167 videoweed.h:35 videoweed.h:80
 #: service.h:697 service.h:937 global.h:6274 service.h:696 service.h:936
+#: global.h:6320 harddisk.h:637 harddisk.h:645 harddisk.h:654 harddisk.h:706
+#: harddisk.h:917 youtube.h:197
 msgid "EXIT"
 msgstr ""
 
@@ -1959,7 +1965,7 @@ msgstr ""
 #: global.h:4634 global.h:4645 global.h:6121 keyactions.h:216 global.h:6109
 #: global.h:6153 global.h:6159 global.h:6209 global.h:6060 keyactions.h:213
 #: global.h:6145 global.h:6149 global.h:6158 global.h:6162 global.h:6243
-#: global.h:6272 global.h:6274
+#: global.h:6272 global.h:6274 global.h:6320
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -1994,22 +2000,22 @@ msgid "Harddisk Configure"
 msgstr ""
 
 #: harddisk.h:188 harddisk.h:202 harddisk.h:203 harddisk.h:619 harddisk.h:227
-#: harddisk.h:643 harddisk.h:223 harddisk.h:639
+#: harddisk.h:643 harddisk.h:223 harddisk.h:639 harddisk.h:645
 msgid "use medium for record"
 msgstr ""
 
 #: harddisk.h:193 harddisk.h:212 harddisk.h:213 harddisk.h:624 harddisk.h:237
-#: harddisk.h:648 harddisk.h:233 harddisk.h:644
+#: harddisk.h:648 harddisk.h:233 harddisk.h:644 harddisk.h:650
 msgid "use medium for extension"
 msgstr ""
 
 #: harddisk.h:198 harddisk.h:222 harddisk.h:223 harddisk.h:626 harddisk.h:247
-#: harddisk.h:650 harddisk.h:243 harddisk.h:646
+#: harddisk.h:650 harddisk.h:243 harddisk.h:646 harddisk.h:652
 msgid "use medium for swap"
 msgstr ""
 
 #: harddisk.h:203 harddisk.h:232 harddisk.h:233 harddisk.h:628 harddisk.h:257
-#: harddisk.h:652 harddisk.h:253 harddisk.h:648
+#: harddisk.h:652 harddisk.h:253 harddisk.h:648 harddisk.h:654
 msgid "use medium for backup"
 msgstr ""
 
@@ -2107,12 +2113,14 @@ msgid ""
 msgstr ""
 
 #: harddisk.h:540 harddisk.h:563 harddisk.h:611 harddisk.h:635 harddisk.h:631
+#: harddisk.h:637
 msgid ""
 "Are you sure you want to format this Partition?\n"
 "Box reboots after format"
 msgstr ""
 
 #: harddisk.h:568 harddisk.h:591 harddisk.h:680 harddisk.h:704 harddisk.h:700
+#: harddisk.h:706
 msgid ""
 "Are you sure you want to check this Partition?\n"
 "Box reboots after check"
@@ -2125,23 +2133,27 @@ msgstr ""
 #: skin_default_skin.xml.h:440 skin_default_skin.xml.h:450
 #: skin_default_skin.xml.h:451 skin_default_skin.xml.h:452
 #: skin_default_skin.xml.h:453 harddisk.h:644 harddisk.h:730 harddisk.h:754
-#: harddisk.h:750
+#: harddisk.h:750 harddisk.h:756
 msgid "Time to sleep"
 msgstr ""
 
 #: harddisk.h:616 harddisk.h:646 harddisk.h:732 harddisk.h:756 harddisk.h:752
+#: harddisk.h:758
 msgid "5 min"
 msgstr ""
 
 #: harddisk.h:616 harddisk.h:646 harddisk.h:732 harddisk.h:756 harddisk.h:752
+#: harddisk.h:758
 msgid "10 min"
 msgstr ""
 
 #: harddisk.h:617 harddisk.h:647 harddisk.h:733 harddisk.h:757 harddisk.h:753
+#: harddisk.h:759
 msgid "15 min"
 msgstr ""
 
 #: harddisk.h:617 harddisk.h:647 harddisk.h:733 harddisk.h:757 harddisk.h:753
+#: harddisk.h:759
 msgid "60 min"
 msgstr ""
 
@@ -2533,7 +2545,7 @@ msgstr ""
 #: transponder.h:227 transponder.h:259 transponder.h:295 transponder.h:330
 #: transponder.h:348 transponder.h:418 transponder.h:451 transponder.h:480
 #: transponder.h:504 transponder.h:574 zdf.h:91 bgdownload.h:93
-#: bgdownload.h:154 zdf.h:86 httpdfunc.h:2661 httpdfunc.h:2673
+#: bgdownload.h:154 zdf.h:86 httpdfunc.h:2661 httpdfunc.h:2673 youtube.h:149
 msgid "unknown"
 msgstr ""
 
@@ -9728,7 +9740,7 @@ msgid "Harddisk Format - Filesystem"
 msgstr ""
 
 #: harddisk.h:637 harddisk.h:638 harddisk.h:723 harddisk.h:724 harddisk.h:747
-#: harddisk.h:748 harddisk.h:743 harddisk.h:744
+#: harddisk.h:748 harddisk.h:743 harddisk.h:744 harddisk.h:749 harddisk.h:750
 msgid "Harddisk Sleep"
 msgstr ""
 
@@ -11391,7 +11403,7 @@ msgid ""
 "Really delete directory and content?"
 msgstr ""
 
-#: harddisk.h:911
+#: harddisk.h:911 harddisk.h:917
 msgid ""
 "Found new Stick/HDD.\n"
 "You can configure it in Harddisk Menu."
