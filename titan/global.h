@@ -2373,7 +2373,7 @@ void delspezchar(char* text, int flag)
 			if(tmpstr[0] == '/') tmpstr[0] = '-';
 			if(flag == 2)
 			{
-				if(tmpstr[0] == 'ยง') tmpstr[0] = '-';
+				if(tmpstr[0] == 'ง') tmpstr[0] = '-';
 				if(tmpstr[0] == '<') tmpstr[0] = '-';
  				if(tmpstr[0] == '>') tmpstr[0] = '-';
 				if(tmpstr[0] == ':') tmpstr[0] = '-';
