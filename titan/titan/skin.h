@@ -2409,7 +2409,7 @@ void wrapstr(char* string, char* fontname, int fontsize, int mwidth, int charspa
 			string++;
 		if(*string == '\n')
 		{
-			if(*string != '\0') string++;
+			string++;
 			posx = 0;
 		}
 		else
