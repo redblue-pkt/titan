@@ -412,21 +412,14 @@ void blitrect(int posx, int posy, int width, int height, long color, int transpa
 	if(posx < 0) posx = 0;
 	if(posy < 0) posy = 0;
 	if(mode < 2)
-	{
-		if(posx > skinfb->width) posx = skinfb->width;
-		if(posy > skinfb->height) posy = skinfb->height;
-		if(posx + width > skinfb->width) width = skinfb->width - posx;
-		if(posy + height > skinfb->height) height = skinfb->height - posy;
 		tmpfb = skinfb;
-	}
 	else
-	{
-		if(posx > fb->width) posx = fb->width;
-		if(posy > fb->height) posy = fb->height;
-		if(posx + width > fb->width) width = fb->width - posx;
-		if(posy + height > fb->height) height = fb->height - posy;
 		tmpfb = fb;
-	}
+		
+	if(posx > tmpfb->width) posx = tmpfb->width;
+	if(posy > tmpfb->height) posy = tmpfb->height;
+	if(posx + width > tmpfb->width) width = tmpfb->width - posx;
+	if(posy + height > tmpfb->height) height = tmpfb->height - posy;
 
 	if(width <= 0 || height <= 0) return;
 
@@ -435,13 +428,13 @@ void blitrect(int posx, int posy, int width, int height, long color, int transpa
 
 	if(mode == 0 || mode == 2)
 	{
-		posy *= tmpfb->width;
 		int yend = (posy + height) * tmpfb->width;
+		posy *= tmpfb->width;
 		int xend = posx + width;
 		int xlen = (xend - posx) * tmpfb->colbytes;
 		int r = 0;
 		unsigned char* from = tmpfb->fb + (posy + posx) * tmpfb->colbytes;
-		
+
 		for(y = posy; y < yend; y += tmpfb->width)
 		{
 			if(r == 0)
