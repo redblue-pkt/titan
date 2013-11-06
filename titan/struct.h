@@ -480,7 +480,7 @@ struct hdd
 {
 	char* device;
 	int partition;
-	unsigned long size;
+	unsigned long long size;
 	char* filesystem;
 	char* label;
 	char* uuid;
