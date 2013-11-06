@@ -3302,9 +3302,11 @@ int calclistbox(struct skin* node)
 		last = child;
 
 		if(node->aktline == -1 && child->pagecount == node->aktpage)
+		{
 			node->aktline = node->linecount;
-
-		if(node->aktline == node->linecount)
+			found = child;
+		}
+		else if(node->aktline == node->linecount)
 			found = child;
 
 		child->bordersize = 0;
