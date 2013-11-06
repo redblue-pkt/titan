@@ -113,7 +113,7 @@ int hddgetremovable(char* device)
 
 void screenfilesystem(char* dev)
 {
-	int i, rcret = 0, count = 1;
+	int i, rcret = 0, count = 2;
 	struct skin* screen = getscreen("harddisk_main");
 	struct skin* titletext = getscreennode(screen, "titletext");
 	struct skin* listbox = getscreennode(screen, "listbox");
@@ -126,24 +126,24 @@ void screenfilesystem(char* dev)
 	changetitle(screen, _("Harddisk Format - Filesystem"));
 	if(titletext != status.skinerr) changetext(titletext, _("Harddisk Format - Filesystem"));
 
-	if(status.expertmodus > 9) count = 4;
+	if(status.expertmodus > 9) count = 5;
 
 	for(i = 0; i < count; i++)
 	{
 		if(i == 0 && checkfilesystemexist("ext3") == 0) continue;
-		else if(i ==  1 && checkfilesystemexist("ext2") == 0) continue;
-		else if(i == 2 && checkfilesystemexist("jfs") == 0) continue;
-		else if(i == 3 && checkfilesystemexist("vfat") == 0) continue;
-		else if(i == 4 && checkfilesystemexist("ext4") == 0) continue;
-
+		else if(i == 1 && checkfilesystemexist("ext4") == 0) continue;
+		else if(i == 2 && checkfilesystemexist("ext2") == 0) continue;
+		else if(i == 3 && checkfilesystemexist("jfs") == 0) continue;
+		else if(i == 4 && checkfilesystemexist("vfat") == 0) continue;
+		
 		tmp = addlistbox(screen, listbox, tmp, 1);
 		if(tmp != NULL)
 		{
 			if(i == 0) tmpstr = "ext3";
-			else if(i == 1) tmpstr = "ext2";
-			else if(i == 2) tmpstr = "jfs";
-			else if(i == 3) tmpstr = "vfat";
-			else if(i == 4) tmpstr = "ext4";	
+			else if(i == 1) tmpstr = "ext4";	
+			else if(i == 2) tmpstr = "ext2";
+			else if(i == 3) tmpstr = "jfs";
+			else if(i == 4) tmpstr = "vfat";
 			tmpstr1 = ostrcat(tmpstr1, getconfig("skinpath", NULL), 1, 0);
 			tmpstr1 = ostrcat(tmpstr1, "/skin/", 1, 0);
 			tmpstr1 = ostrcat(tmpstr1, tmpstr, 1, 0);
