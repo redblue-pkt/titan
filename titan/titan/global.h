@@ -4111,6 +4111,7 @@ int insertchar(char** text, char zeichen, int pos)
 void calctext(char* buf, char* buf1, unsigned int* linecount, unsigned int* pagecount, unsigned int* poscount, int pagelen, int page)
 {
 	unsigned int tmpposcount = 0;
+	unsigned int pagepagelen = 0;
 
 	*poscount = 0;
 	*linecount = 1;
@@ -4118,6 +4119,7 @@ void calctext(char* buf, char* buf1, unsigned int* linecount, unsigned int* page
 
 	page--;
 	if(page < 0) page = 0;
+	pagepagelen = pagelen * page;
 
 	if(buf != NULL)
 	{
@@ -4128,7 +4130,7 @@ void calctext(char* buf, char* buf1, unsigned int* linecount, unsigned int* page
 				if(*(buf + 1) == '\0') break;
 				(*linecount)++;
 
-				if(*linecount - 1 == pagelen * page)
+				if(*linecount - 1 == pagepagelen)
 					*poscount = tmpposcount + 1;
 			}
 			buf++;
@@ -4145,7 +4147,7 @@ void calctext(char* buf, char* buf1, unsigned int* linecount, unsigned int* page
 				if(*(buf1 + 1) == '\0') break;
 				(*linecount)++;
 
-				if(*linecount - 1 == pagelen * page)
+				if(*linecount - 1 == pagepagelen)
 					*poscount = tmpposcount + 1;
 			}
 			buf1++;
