@@ -962,11 +962,11 @@ int checkreseller()
 not working why ?
 
 printf("ResellerId: check\n");
-printf("ResellerId1: %x\n", buf[1072]);
-printf("ResellerId2: %x\n", buf[1073]);
-printf("ResellerId3: %x\n", buf[1074]);
-printf("ResellerId4: %x\n", buf[1075]);
-printf("ResellerId: %x %x %x %x\n", buf[1072], buf[1073], buf[1074], buf[1075]);
+printf("ResellerId1: %x\n",ï¿½buf[1072]);
+printf("ResellerId2: %x\n",ï¿½buf[1073]);
+printf("ResellerId3: %x\n",ï¿½buf[1074]);
+printf("ResellerId4: %x\n",ï¿½buf[1075]);
+printf("ResellerId: %x %x %x %x\n",ï¿½buf[1072],ï¿½buf[1073],ï¿½buf[1074],ï¿½buf[1075]);
 */
 		debug(10, "ResellerId: not supported");
 		debug(10, "boxtype: %s", getboxtype());
@@ -2373,7 +2373,7 @@ void delspezchar(char* text, int flag)
 			if(tmpstr[0] == '/') tmpstr[0] = '-';
 			if(flag == 2)
 			{
-				if(tmpstr[0] == '§') tmpstr[0] = '-';
+				if(tmpstr[0] == 'ï¿½') tmpstr[0] = '-';
 				if(tmpstr[0] == '<') tmpstr[0] = '-';
  				if(tmpstr[0] == '>') tmpstr[0] = '-';
 				if(tmpstr[0] == ':') tmpstr[0] = '-';
@@ -4194,10 +4194,10 @@ int setlang(char *lang)
 	return 0;
 }
 
-unsigned long readsysul(const char *filename, int line)
+unsigned long long readsysul(const char *filename, int line)
 {
 	int i = 0, len = 0;
-	unsigned long ret = 0;
+	unsigned long long ret = 0;
 	FILE *fd = NULL;
 	char *fileline = NULL;
 	char *buf1 = NULL;
@@ -4232,7 +4232,7 @@ unsigned long readsysul(const char *filename, int line)
 
 	if(buf1 != NULL)
 	{
-		ret = strtoul(buf1, NULL, 10);
+		ret = strtoull(buf1, NULL, 10);
 		free(buf1); buf1 = NULL;
 	}
 
