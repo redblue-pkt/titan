@@ -606,11 +606,15 @@ start:
 void hddformat(char* dev, char* filesystem)
 {
 	int format = 0;
+	int large = 0;
 	char* cmd = NULL;
 	struct hdd* node = NULL;
 
 	node = gethdd(dev);
 	if(node == NULL) return;
+	
+	if(node->size > 4294967295)
+		large = 1;
 
 	if(node->partition == 0)
 	{
@@ -618,6 +622,8 @@ void hddformat(char* dev, char* filesystem)
 		{
 			cmd = ostrcat("/sbin/parter.sh /dev/" , dev, 0, 0);
 			cmd = ostrcat(cmd , " create 1", 1, 0);
+			if(large == 1)
+				cmd = ostrcat(cmd , " large", 1, 0);
 
 			debug(80, "fdisk create cmd: %s", cmd);
 			system(cmd);
