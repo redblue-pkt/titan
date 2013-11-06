@@ -134,6 +134,7 @@ void screenfilesystem(char* dev)
 		else if(i ==  1 && checkfilesystemexist("ext2") == 0) continue;
 		else if(i == 2 && checkfilesystemexist("jfs") == 0) continue;
 		else if(i == 3 && checkfilesystemexist("vfat") == 0) continue;
+		else if(i == 4 && checkfilesystemexist("ext4") == 0) continue;
 
 		tmp = addlistbox(screen, listbox, tmp, 1);
 		if(tmp != NULL)
@@ -142,6 +143,7 @@ void screenfilesystem(char* dev)
 			else if(i == 1) tmpstr = "ext2";
 			else if(i == 2) tmpstr = "jfs";
 			else if(i == 3) tmpstr = "vfat";
+			else if(i == 4) tmpstr = "ext4";	
 			tmpstr1 = ostrcat(tmpstr1, getconfig("skinpath", NULL), 1, 0);
 			tmpstr1 = ostrcat(tmpstr1, "/skin/", 1, 0);
 			tmpstr1 = ostrcat(tmpstr1, tmpstr, 1, 0);
@@ -664,6 +666,8 @@ void hddformat(char* dev, char* filesystem)
 			cmd = ostrcat("/sbin/cmd.sh mkfs.ext2 /dev/" , dev, 0, 0);
 		else if(ostrcmp(filesystem, "ext3") == 0)
 			cmd = ostrcat("/sbin/cmd.sh \"mkfs.ext3 -T largefile -m0 -O dir_index\" /dev/" , dev, 0, 0);
+		else if(ostrcmp(filesystem, "ext4") == 0)
+			cmd = ostrcat("/sbin/cmd.sh mkfs.ext4 /dev/" , dev, 0, 0);
 
 		if(format == 2) cmd = ostrcat(cmd , "1", 1, 0);
 			
