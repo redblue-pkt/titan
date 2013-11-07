@@ -113,7 +113,7 @@ int hddgetremovable(char* device)
 
 void screenfilesystem(char* dev)
 {
-	int i, rcret = 0, count = 1;
+	int i, rcret = 0, count = 2;
 	struct skin* screen = getscreen("harddisk_main");
 	struct skin* titletext = getscreennode(screen, "titletext");
 	struct skin* listbox = getscreennode(screen, "listbox");
@@ -609,6 +609,7 @@ void hddformat(char* dev, char* filesystem)
 {
 	int format = 0;
 	int large = 0;
+	int rc = 0;
 	char* cmd = NULL;
 	struct hdd* node = NULL;
 	
@@ -675,7 +676,7 @@ void hddformat(char* dev, char* filesystem)
 		else if(ostrcmp(filesystem, "ext3") == 0)
 			cmd = ostrcat("/sbin/cmd.sh \"mkfs.ext3 -T largefile -m0 -O dir_index\" /dev/" , dev, 0, 0);
 		else if(ostrcmp(filesystem, "ext4") == 0)
-			cmd = ostrcat("/sbin/cmd.sh mkfs.ext4 /dev/" , dev, 0, 0);
+			cmd = ostrcat("/sbin/cmd.sh \"mkfs.ext4 -T largefile -m0 -O dir_index\" /dev/" , dev, 0, 0);
 
 		if(format == 2) cmd = ostrcat(cmd , "1", 1, 0);
 			
@@ -700,8 +701,13 @@ void hddformat(char* dev, char* filesystem)
 			cmd = ostrcat(cmd , " 0", 1, 0);
 
 		debug(80, "format cmd: %s", cmd);
-		system(cmd);
+		rc = system(cmd);
 		free(cmd); cmd = NULL;
+		if(rc != 0)
+		{
+			textbox(_("Message"), _("ERROR\npartition could not be created"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
+			return;
+		}
 	}
 }
 
