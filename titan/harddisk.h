@@ -113,7 +113,7 @@ int hddgetremovable(char* device)
 
 void screenfilesystem(char* dev)
 {
-	int i, rcret = 0, count = 2;
+	int i, rcret = 0, count = 1;
 	struct skin* screen = getscreen("harddisk_main");
 	struct skin* titletext = getscreennode(screen, "titletext");
 	struct skin* listbox = getscreennode(screen, "listbox");
@@ -611,12 +611,20 @@ void hddformat(char* dev, char* filesystem)
 	int large = 0;
 	char* cmd = NULL;
 	struct hdd* node = NULL;
+	
 
 	node = gethdd(dev);
 	if(node == NULL) return;
 	
 	if(node->size > 4294967295UL)
+	{
+		if(!file_exist("/var/bin/parted"))
+		{
+			textbox(_("Message"), _("HDD > 2TB unsupported.\nYou must first install plugin parted, then you can use this panel."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
+			return;
+		}
 		large = 1;
+	}
 
 	if(node->partition == 0)
 	{
