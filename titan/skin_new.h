@@ -3072,14 +3072,17 @@ int getrectdiff(int x, int y, int w, int h, int x1, int y1, int w1, int h1, int*
 
 //flag 0: draw all parts before node
 //flag 1: draw all parts after node
-struct skin* drawnodepart(struct skin* tmp, struct skin* screen, struct skin* node, int flag)
+struct skin* drawnodepart(struct skin* tmp, struct skin* screen, struct skin* parent, struct skin* node, int flag)
 {
 	int posx = 0, posy = 0, width = 0, height = 0;
 	struct skin* child = NULL;
 	
 	if(screen == NULL || node == NULL || screen == node) return NULL;
+	if(node->hidden == YES || parent->hidden == YES || node->locked == YES || parent->locked == YES) return NULL;
 	if(checkbit(node->flag, 1) == 0 || checkbit(screen->flag, 1) == 1) return NULL;
-printf("drawnodepart %s %d\n", node->name, flag);	
+	if(checkbit(parent->flag, 0) == 0) return NULL;
+
+//printf("drawnodepart %s %d\n", node->name, flag);	
 	if(flag == 0) 
 		child = screen;
 	else
@@ -3097,7 +3100,7 @@ printf("drawnodepart %s %d\n", node->name, flag);
 			continue;
 		}
 		
-		if(getrectdiff(node->rposx, node->rposy, node->rwight, node->rheight, child->rposx, child->rposy, child->rwidth, child->rheight, &posx, &posy, &weight, &height) == 1)
+		if(getrectdiff(node->rposx, node->rposy, node->rwidth, node->rheight, child->rposx, child->rposy, child->rwidth, child->rheight, &posx, &posy, &width, &height) == 1)
 		{
 			if(child == screen)
 				child = screen->child;
@@ -3111,9 +3114,11 @@ printf("drawnodepart %s %d\n", node->name, flag);
 			//if(node->child != NULL && status.picbordersize > 0)
 			//	drawbginnercol(node);
 			//else
-printf("drawbgcolpart %s\n", child->name);
+//printf("drawbgcolpart %s x=%d y=%d w=%d h=%d\n", child->name, posx, posy, width, height);
 				drawbgcolpart(posx, posy, width, height, child->bgspace, child->bgcol, child->transparent);
 		}
+		//if(child->gradient > 0)
+		//	drawbggradient(child);
 		
 		if(child == screen)
 			child = screen->child;
@@ -3133,9 +3138,9 @@ void drawnode(struct skin* node, int flag)
 	char* bglt = NULL, *bglb = NULL, *bgrt = NULL, *bgrb = NULL;
 	
 	node->flag = setbit(node->flag, 0);
-printf("%s %d\n", node->name, node->flag);
 	if(checkbit(node->flag, 1) == 0) return;
-	node->flag = clearbit(node->flag, 1);
+//printf("%s %d\n", node->name, node->flag);
+	//node->flag = clearbit(node->flag, 1);
 
 	if(node->bordersize > 0)
 	{
@@ -3384,7 +3389,14 @@ int calclistbox(struct skin* node)
 		if(node->poscount > node->iheight)
 		{
 			node->pagecount++;
-			if(found == NULL) change = node->pagecount;
+			if(node->aktpage == -1)
+			{
+				if(found == NULL) change = node->pagecount;
+			}
+			else
+			{
+				if(node->pagecount == node->aktpage) change = node->pagecount;
+			}
 			node->poscount = child->rheight;
 		}
 
@@ -3399,7 +3411,14 @@ int calclistbox(struct skin* node)
 		node->linecount++;
 		last = child;
 
-		if(change == node->pagecount && checkbit(child->flag, 1) == 0) change = 0;
+		if(node->aktpage == -1)
+		{
+			if(change == node->pagecount && checkbit(child->flag, 1) == 0) change = 0;
+		}
+		else
+		{
+			if(change == node->aktpage && checkbit(child->flag, 1) == 0) change = 0;
+		}
 
 		if(node->aktline == -1 && child->pagecount == node->aktpage)
 		{
@@ -3409,7 +3428,7 @@ int calclistbox(struct skin* node)
 		else if(node->aktline == node->linecount)
 			found = child;
 
-		child->bordersize = 0;
+		changebordersize(child, 0);
 		if(status.listboxselecttype == 3)
 		{
 			changeselectpic(child, NULL);
@@ -3437,7 +3456,7 @@ int calclistbox(struct skin* node)
 		if(node->aktline == -2) node->aktline = node->linecount;
 		if(status.listboxselecttype == 0)
 		{
-			found->bordersize = 1;
+			changebordersize(found, 1);
 			if(status.markmodus > 0)
 			{
 				found->bordercol = status.markcol;
@@ -3525,7 +3544,7 @@ int calclistbox(struct skin* node)
 		{
 			if(status.markmodus > 0)
 			{
-				found->bordersize = 1;
+				changebordersize(found, 1);
 				found->bordercol = status.markcol;
 				int i = 0;
 				struct skin* tmpskin = found;
@@ -3534,7 +3553,7 @@ int calclistbox(struct skin* node)
 					tmpskin = tmpskin->next;
 					if(tmpskin != NULL)
 					{
-						tmpskin->bordersize = 1;
+						changebordersize(tmpskin, 1);
 						tmpskin->bordercol = status.markcol;
 					}
 					else
@@ -3654,7 +3673,7 @@ int setnodeattr(struct skin* node, struct skin* parent, int screencalc)
 	char* tmpstr = NULL;
 
 	if(node->child != NULL && status.picbordersize > 0)
-		node->bordersize = status.picbordersize;
+		changebordersize(node, status.picbordersize);
 
 	if(node->skinfunc != NULL)
 	{
@@ -3750,7 +3769,7 @@ int setnodeattr(struct skin* node, struct skin* parent, int screencalc)
 		//return 1;
 	}
 
-	if(checkbit(parent->flag, 1) == 1) node->flag = setbit(node->flag, 1);
+	//if(checkbit(parent->flag, 1) == 1) node->flag = setbit(node->flag, 1);
 
 	if(node->font == NULL && parent->font != NULL)
 	{
@@ -4049,12 +4068,15 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 
 		if(setnodeattr(child, parent, screencalc) == 0 && screencalc == 0)
 		{
-			struct skin* tmp = drawnodepart(NULL, node, child, 0);
+			struct skin* tmp = drawnodepart(NULL, node, parent, child, 0);
 			drawnode(child, 1);
-			drawnodepart(tmp, node, child, 1);
+			drawnodepart(tmp, node, parent, child, 1);
+			child->flag = clearbit(child->flag, 1);
 		}
 		child = child->next;
 	}
+
+	if(screencalc == 0 || flag == 4) node->flag = clearbit(node->flag, 1);
 
 	if(flag == 0 || flag == 2 || flag == 4)
 	{
@@ -4478,7 +4500,7 @@ int changebgcol(struct skin* node, long value)
 {
 	int ret = 1;
 
-	if(node != NULL)
+	if(node != NULL && node->bgcol != value)
 	{
 		node->bgcol = value;
 		node->flag = setbit(node->flag, 1);
@@ -4492,9 +4514,24 @@ int changeprogresssize(struct skin* node, int16_t value)
 {
 	int ret = 1;
 
-	if(node != NULL)
+	//TODO
+	if(node != NULL /*&& node->progresssize != value*/)
 	{
 		node->progresssize = value;
+		node->flag = setbit(node->flag, 1);
+		ret = 0;
+	}
+	
+	return ret;
+}
+
+int changebordersize(struct skin* node, uint8_t value)
+{
+	int ret = 1;
+
+	if(node != NULL && node->bordersize != value)
+	{
+		node->bordersize = value;
 		node->flag = setbit(node->flag, 1);
 		ret = 0;
 	}
