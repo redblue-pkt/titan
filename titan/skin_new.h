@@ -2878,6 +2878,11 @@ void drawbgcol(struct skin* node)
 	fillrect(node->rposx + node->bgspace, node->rposy + node->bgspace, node->rwidth - (node->bgspace << 1), node->rheight - (node->bgspace << 1), node->bgcol, node->transparent);
 }
 
+void drawbgcolpart(int posx, int posy, int width, int height, int bgspace, long bgcol, int transparent)
+{
+	fillrect(posx + bgspace, posy + bgspace, width - (bgspace << 1), height - (bgspace << 1), bgcol, transparent);
+}
+
 void drawtitle(struct skin* node)
 {
 	if(status.titlelinesize > 0)
@@ -3049,6 +3054,76 @@ void drawshadow(struct skin* node)
 	}
 }
 
+int getrectdiff(int x, int y, int w, int h, int x1, int y1, int w1, int h1, int* x2, int* y2, int* w2, int* h2)
+{
+	int xx = x + w;
+	int xx1 = x1 + w1;
+	int yy = y + h;
+	int yy1 = y1 + h1;
+	
+	*x2 = OMAX(x, x1);
+	*w2 = OMIN(xx, xx1); (*w2) = (*w2) - (*x2);
+	*y2 = OMAX(y, y1);
+	*h2 = OMIN(yy, yy1); (*h2) = (*h2) - (*y2);
+	
+	if(*w2 <= 0 || *h2 <=0) return 1;
+	return 0;	
+}
+
+//flag 0: draw all parts before node
+//flag 1: draw all parts after node
+struct skin* drawnodepart(struct skin* tmp, struct skin* screen, struct skin* node, int flag)
+{
+	int posx = 0, posy = 0, width = 0, height = 0;
+	struct skin* child = NULL;
+	
+	if(screen == NULL || node == NULL || screen == node) return NULL;
+	if(checkbit(node->flag, 1) == 0 || checkbit(screen->flag, 1) == 1) return NULL;
+printf("drawnodepart %s %d\n", node->name, flag);	
+	if(flag == 0) 
+		child = screen;
+	else
+		child = tmp;
+
+	while(child != NULL)
+	{
+		if(flag == 0 && child == node) return child->next;
+		if(checkbit(child->flag, 1) == 1 || child == node)
+		{
+			if(child == screen)
+				child = screen->child;
+			else
+				child = child->next;
+			continue;
+		}
+		
+		if(getrectdiff(node->rposx, node->rposy, node->rwight, node->rheight, child->rposx, child->rposy, child->rwidth, child->rheight, &posx, &posy, &weight, &height) == 1)
+		{
+			if(child == screen)
+				child = screen->child;
+			else
+				child = child->next;
+			continue;
+		}
+		
+		if(child->bgcol > -1)
+		{
+			//if(node->child != NULL && status.picbordersize > 0)
+			//	drawbginnercol(node);
+			//else
+printf("drawbgcolpart %s\n", child->name);
+				drawbgcolpart(posx, posy, width, height, child->bgspace, child->bgcol, child->transparent);
+		}
+		
+		if(child == screen)
+			child = screen->child;
+		else
+			child = child->next;
+	}
+	
+	return NULL;
+}
+
 //flag 0: del background
 //flag 1: don't del background
 void drawnode(struct skin* node, int flag)
@@ -3078,13 +3153,15 @@ printf("%s %d\n", node->name, node->flag);
 		}
 	}
 
-//	if(flag == 0 && node->bgcol == -1)
+/*
+	if(flag == 0 && node->bgcol == -1)
 	{
 		if(node->child != NULL && status.picbordersize > 0)
 			clearrect(node->rposx + node->bordersize, node->rposy + node->bordersize, node->rwidth - (node->bordersize << 1), node->rheight - (node->bordersize << 1));
 		else
 			clearrect(node->rposx, node->rposy, node->rwidth, node->rheight);
 	}
+*/
 
 	if(node->deaktivcol > -1)
 	{
@@ -3971,7 +4048,11 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 			parent = oldparent;
 
 		if(setnodeattr(child, parent, screencalc) == 0 && screencalc == 0)
+		{
+			struct skin* tmp = drawnodepart(NULL, node, child, 0);
 			drawnode(child, 1);
+			drawnodepart(tmp, node, child, 1);
+		}
 		child = child->next;
 	}
 
