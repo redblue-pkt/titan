@@ -84,7 +84,7 @@
 #endif
 
 
-#define OVERSION "1.42"
+#define OVERSION "1.43"
 #define PROGNAME "titan"
 #define COPYRIGHT "NIT"
 #define CRONTRIBUT "obi, black, dvboxer, oxygen, gost"
