@@ -230,28 +230,28 @@ void playerstopts(int flag, int flag1)
 	snode = getservice(RECORDPLAY, flag1);
 	if(snode != NULL) snode->recendtime = 1;
 
+	if(snode != NULL && snode->recsrcfd >= 0 && flag == 0)
+	{
+		char* fileseek = changefilenameext(snode->recname, ".se");
+		FILE* fbseek = fopen(fileseek, "w");
+		if(fbseek != NULL)
+		{
+			off64_t pos = lseek64(snode->recsrcfd, 0, SEEK_CUR);
+			fprintf(fbseek,"%lld", pos);
+			fclose(fbseek);
+		}
+		free(fileseek); fileseek=NULL;
+		char* filemarker = changefilenameext(snode->recname, ".ma");
+		ret = putmarker(filemarker);
+		free(filemarker); filemarker=NULL;
+		delmarkernode(-1);
+	}
+	
 	if(flag == 0 || flag == 2)
 	{
 		playerslowts(0);
 		playerffts(0);
 
-		if(snode != NULL && snode->recsrcfd >= 0 && flag == 0)
-		{
-			char* fileseek = changefilenameext(snode->recname, ".se");
-			FILE* fbseek = fopen(fileseek, "w");
-			if(fbseek != NULL)
-			{
-				off64_t pos = lseek64(snode->recsrcfd, 0, SEEK_CUR);
-				fprintf(fbseek,"%lld", pos);
-				fclose(fbseek);
-			}
-			free(fileseek); fileseek=NULL;
-			char* filemarker = changefilenameext(snode->recname, ".ma");
-			ret = putmarker(filemarker);
-			free(filemarker); filemarker=NULL;
-			delmarkernode(-1);
-		}
-		
 		ret = servicestop(status.aktservice, 1, 1);
 		if(ret == 1)
 		{
