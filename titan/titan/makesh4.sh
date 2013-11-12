@@ -9,7 +9,8 @@ ROOTDIR=$8
 IPKDIR=$9
 VERSION=${10}
 BUILDTYPE=${11}
-GROUP=${12}
+BOX=${12}
+GROUP=${13}
 
 rm "$HOME"/flashimg/.ipk-build-error
 
