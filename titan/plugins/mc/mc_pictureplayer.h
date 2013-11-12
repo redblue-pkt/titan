@@ -120,7 +120,7 @@ void screenmc_pictureplayer()
 		}
 		else if(rcret == getrcconfigint("rcpause", NULL))
 		{
-			if((status.play == 1) || (status.pause == 1))
+			if((status.play == 1) || (status.pause == 1) || (status.playspeed != 0)  || ((checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1) && rcret == getrcconfigint("rcplay", NULL) && status.pause == 0 && status.slowspeed == 0 && status.playspeed == 0))
 				playrcpause(filename, NULL, &playinfobarstatus, &playinfobarcount, playertype, flag);
 		}
 		else if((rcret == getrcconfigint("rcchdown", NULL)) || (rcret == getrcconfigint("rcprev", NULL)))
