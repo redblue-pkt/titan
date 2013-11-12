@@ -375,7 +375,7 @@ void screenmc_audioplayer()
 		}
 		else if(rcret == getrcconfigint("rcplay", NULL))
 		{
-			if((status.play == 1) || (status.playspeed != 0))
+			if((status.play == 1) || (status.pause == 1) || (status.playspeed != 0))
 				playrcplay(filename, NULL, &playinfobarstatus, &playinfobarcount, playertype, flag);
 			//showplaylist(1);
 		}
