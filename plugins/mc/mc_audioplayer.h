@@ -362,13 +362,7 @@ void screenmc_audioplayer()
 			if((status.play == 1) || (status.playspeed != 0))
 				playrcfr(filename, NULL, &playinfobarstatus, &playinfobarcount, playertype, 2);
 		}
-		else if(rcret == getrcconfigint("rcplay", NULL))
-		{
-			if((status.play == 1) || (status.playspeed != 0))
-				playrcplay(filename, NULL, &playinfobarstatus, &playinfobarcount, playertype, flag);
-			//showplaylist(1);
-		}
-		else if(rcret == getrcconfigint("rcpause", NULL))
+		else if(rcret == getrcconfigint("rcpause", NULL) || ((checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1) && rcret == getrcconfigint("rcplay", NULL) && status.pause == 0 && status.slowspeed == 0 && status.playspeed == 0))
 		{
 			if(status.pause == 1)
 			{
@@ -376,8 +370,14 @@ void screenmc_audioplayer()
 					singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
 				drawscreen(apskin, 0, 0);
 			}
-			if((status.play == 1) || (status.pause == 1) || (status.playspeed != 0)  || ((checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1) && rcret == getrcconfigint("rcplay", NULL) && status.pause == 0 && status.slowspeed == 0 && status.playspeed == 0))
+			if((status.play == 1) || (status.pause == 1) || (status.playspeed != 0))
 				playrcpause(filename, NULL, &playinfobarstatus, &playinfobarcount, playertype, flag);
+		}
+		else if(rcret == getrcconfigint("rcplay", NULL))
+		{
+			if((status.play == 1) || (status.playspeed != 0))
+				playrcplay(filename, NULL, &playinfobarstatus, &playinfobarcount, playertype, flag);
+			//showplaylist(1);
 		}
 		else if((rcret == getrcconfigint("rcchdown", NULL)) || (rcret == getrcconfigint("rcnext", NULL)))
 		{
