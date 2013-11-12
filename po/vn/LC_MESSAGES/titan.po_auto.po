@@ -358,7 +358,7 @@ msgstr ""
 #: harddisk.h:731 avsettings.h:65 avsettings.h:81 harddisk.h:755
 #: harddisk.h:751 network.h:391 readerconfig.h:413 transponder.h:256
 #: transponder.h:264 transponder.h:415 transponder.h:423 harddisk.h:757
-#: harddisk.h:761
+#: harddisk.h:761 harddisk.h:775
 msgid "off"
 msgstr ""
 
@@ -554,6 +554,8 @@ msgstr ""
 #: service.h:697 service.h:937 global.h:6274 service.h:696 service.h:936
 #: global.h:6320 harddisk.h:637 harddisk.h:645 harddisk.h:654 harddisk.h:706
 #: youtube.h:197 harddisk.h:623 harddisk.h:647 harddisk.h:656 harddisk.h:710
+#: harddisk.h:632 harddisk.h:661 harddisk.h:663 harddisk.h:665 harddisk.h:708
+#: harddisk.h:724
 msgid "Message"
 msgstr ""
 
@@ -753,7 +755,8 @@ msgstr ""
 #: global.h:6320 harddisk.h:637 harddisk.h:645 harddisk.h:654 harddisk.h:706
 #: harddisk.h:917 youtube.h:197 harddisk.h:345 harddisk.h:350 harddisk.h:377
 #: harddisk.h:381 harddisk.h:433 harddisk.h:623 harddisk.h:647 harddisk.h:656
-#: harddisk.h:710 harddisk.h:921
+#: harddisk.h:710 harddisk.h:921 harddisk.h:632 harddisk.h:661 harddisk.h:663
+#: harddisk.h:665 harddisk.h:708 harddisk.h:724 harddisk.h:935
 msgid "OK"
 msgstr ""
 
@@ -951,7 +954,8 @@ msgstr ""
 #: global.h:6320 harddisk.h:637 harddisk.h:645 harddisk.h:654 harddisk.h:706
 #: harddisk.h:917 youtube.h:197 harddisk.h:345 harddisk.h:350 harddisk.h:377
 #: harddisk.h:381 harddisk.h:433 harddisk.h:623 harddisk.h:647 harddisk.h:656
-#: harddisk.h:710 harddisk.h:921
+#: harddisk.h:710 harddisk.h:921 harddisk.h:632 harddisk.h:661 harddisk.h:663
+#: harddisk.h:665 harddisk.h:708 harddisk.h:724 harddisk.h:935
 msgid "EXIT"
 msgstr ""
 
@@ -1716,6 +1720,7 @@ msgstr ""
 
 #: harddisk.h:202 harddisk.h:203 harddisk.h:619 harddisk.h:227 harddisk.h:643
 #: harddisk.h:223 harddisk.h:639 harddisk.h:645 harddisk.h:225 harddisk.h:647
+#: harddisk.h:656
 msgid "use medium for record"
 msgstr ""
 
@@ -1725,6 +1730,7 @@ msgstr ""
 
 #: harddisk.h:212 harddisk.h:213 harddisk.h:624 harddisk.h:237 harddisk.h:648
 #: harddisk.h:233 harddisk.h:644 harddisk.h:650 harddisk.h:235 harddisk.h:652
+#: harddisk.h:661
 msgid "use medium for extension"
 msgstr ""
 
@@ -1734,6 +1740,7 @@ msgstr ""
 
 #: harddisk.h:222 harddisk.h:223 harddisk.h:626 harddisk.h:247 harddisk.h:650
 #: harddisk.h:243 harddisk.h:646 harddisk.h:652 harddisk.h:245 harddisk.h:654
+#: harddisk.h:663
 msgid "use medium for swap"
 msgstr ""
 
@@ -1743,6 +1750,7 @@ msgstr ""
 
 #: harddisk.h:232 harddisk.h:233 harddisk.h:628 harddisk.h:257 harddisk.h:652
 #: harddisk.h:253 harddisk.h:648 harddisk.h:654 harddisk.h:255 harddisk.h:656
+#: harddisk.h:665
 msgid "use medium for backup"
 msgstr ""
 
@@ -1811,6 +1819,7 @@ msgid "record"
 msgstr ""
 
 #: harddisk.h:549 harddisk.h:597 harddisk.h:621 harddisk.h:617 harddisk.h:623
+#: harddisk.h:632
 msgid ""
 "Are you sure you want to remove all Partitions\n"
 "on this device and create a new Partition 1?\n"
@@ -1818,14 +1827,14 @@ msgid ""
 msgstr ""
 
 #: harddisk.h:563 harddisk.h:611 harddisk.h:635 harddisk.h:631 harddisk.h:637
-#: harddisk.h:639
+#: harddisk.h:639 harddisk.h:648
 msgid ""
 "Are you sure you want to format this Partition?\n"
 "Box reboots after format"
 msgstr ""
 
 #: harddisk.h:591 harddisk.h:680 harddisk.h:704 harddisk.h:700 harddisk.h:706
-#: harddisk.h:710
+#: harddisk.h:710 harddisk.h:724
 msgid ""
 "Are you sure you want to check this Partition?\n"
 "Box reboots after check"
@@ -1833,32 +1842,32 @@ msgstr ""
 
 #: harddisk.h:637 harddisk.h:638 harddisk.h:723 harddisk.h:724 harddisk.h:747
 #: harddisk.h:748 harddisk.h:743 harddisk.h:744 harddisk.h:749 harddisk.h:750
-#: harddisk.h:753 harddisk.h:754
+#: harddisk.h:753 harddisk.h:754 harddisk.h:767 harddisk.h:768
 msgid "Harddisk Sleep"
 msgstr ""
 
 #: harddisk.h:644 harddisk.h:730 harddisk.h:754 harddisk.h:750 harddisk.h:756
-#: harddisk.h:760
+#: harddisk.h:760 harddisk.h:774
 msgid "Time to sleep"
 msgstr ""
 
 #: harddisk.h:646 harddisk.h:732 harddisk.h:756 harddisk.h:752 harddisk.h:758
-#: harddisk.h:762
+#: harddisk.h:762 harddisk.h:776
 msgid "5 min"
 msgstr ""
 
 #: harddisk.h:646 harddisk.h:732 harddisk.h:756 harddisk.h:752 harddisk.h:758
-#: harddisk.h:762
+#: harddisk.h:762 harddisk.h:776
 msgid "10 min"
 msgstr ""
 
 #: harddisk.h:647 harddisk.h:733 harddisk.h:757 harddisk.h:753 harddisk.h:759
-#: harddisk.h:763
+#: harddisk.h:763 harddisk.h:777
 msgid "15 min"
 msgstr ""
 
 #: harddisk.h:647 harddisk.h:733 harddisk.h:757 harddisk.h:753 harddisk.h:759
-#: harddisk.h:763
+#: harddisk.h:763 harddisk.h:777
 msgid "60 min"
 msgstr ""
 
@@ -5795,7 +5804,7 @@ msgid ""
 "Really delete directory and content?"
 msgstr ""
 
-#: harddisk.h:911 harddisk.h:917 harddisk.h:921
+#: harddisk.h:911 harddisk.h:917 harddisk.h:921 harddisk.h:935
 msgid ""
 "Found new Stick/HDD.\n"
 "You can configure it in Harddisk Menu."
@@ -5956,4 +5965,16 @@ msgid ""
 "\n"
 "KILL = Red\n"
 "BOOT = Green"
+msgstr ""
+
+#: harddisk.h:624
+msgid ""
+"HDD > 2TB unsupported.\n"
+"You must first install plugin parted, then you can use this panel."
+msgstr ""
+
+#: harddisk.h:708
+msgid ""
+"ERROR\n"
+"partition could not be created"
 msgstr ""
