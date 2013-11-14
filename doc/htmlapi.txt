@@ -328,6 +328,12 @@ descr:		gets all rccodes
 param:		no
 example:	queryraw?getrccodes
 
+query:	getdrawcount
+raw:			count
+descr:		returns the OSD counter value
+param:		no
+example:	queryraw?getdrawcount
+
 query:	videoplay
 raw: 			play: play (on error "can not start playback")
 raw:			stop: stop (on error "not in play mode")
