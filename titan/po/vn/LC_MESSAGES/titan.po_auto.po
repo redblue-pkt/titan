@@ -555,7 +555,7 @@ msgstr ""
 #: global.h:6320 harddisk.h:637 harddisk.h:645 harddisk.h:654 harddisk.h:706
 #: youtube.h:197 harddisk.h:623 harddisk.h:647 harddisk.h:656 harddisk.h:710
 #: harddisk.h:632 harddisk.h:661 harddisk.h:663 harddisk.h:665 harddisk.h:708
-#: harddisk.h:724
+#: harddisk.h:724 timeshift.h:116 timeshift.h:159 timeshift.h:166
 msgid "Message"
 msgstr ""
 
@@ -756,7 +756,8 @@ msgstr ""
 #: harddisk.h:917 youtube.h:197 harddisk.h:345 harddisk.h:350 harddisk.h:377
 #: harddisk.h:381 harddisk.h:433 harddisk.h:623 harddisk.h:647 harddisk.h:656
 #: harddisk.h:710 harddisk.h:921 harddisk.h:632 harddisk.h:661 harddisk.h:663
-#: harddisk.h:665 harddisk.h:708 harddisk.h:724 harddisk.h:935
+#: harddisk.h:665 harddisk.h:708 harddisk.h:724 harddisk.h:935 timeshift.h:116
+#: timeshift.h:159 timeshift.h:166
 msgid "OK"
 msgstr ""
 
@@ -955,7 +956,8 @@ msgstr ""
 #: harddisk.h:917 youtube.h:197 harddisk.h:345 harddisk.h:350 harddisk.h:377
 #: harddisk.h:381 harddisk.h:433 harddisk.h:623 harddisk.h:647 harddisk.h:656
 #: harddisk.h:710 harddisk.h:921 harddisk.h:632 harddisk.h:661 harddisk.h:663
-#: harddisk.h:665 harddisk.h:708 harddisk.h:724 harddisk.h:935
+#: harddisk.h:665 harddisk.h:708 harddisk.h:724 harddisk.h:935 timeshift.h:116
+#: timeshift.h:159 timeshift.h:166
 msgid "EXIT"
 msgstr ""
 
@@ -4856,17 +4858,17 @@ msgid ""
 "Please remove Stick/HDD and try again"
 msgstr ""
 
-#: timeshift.h:113
+#: timeshift.h:113 timeshift.h:116
 msgid "Should Timeshift File deleted ?"
 msgstr ""
 
-#: timeshift.h:155
+#: timeshift.h:155 timeshift.h:159
 msgid ""
 "Timeshift file to short\n"
 "please wait a little and try again"
 msgstr ""
 
-#: timeshift.h:162
+#: timeshift.h:162 timeshift.h:166
 msgid "Can't start timeshift play !"
 msgstr ""
 
