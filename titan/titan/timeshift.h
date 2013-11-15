@@ -6,6 +6,7 @@
 void timeshiftpause(int flag)
 {
 	int ret = 0;
+	struct skin* playinfobarpic = getscreen("playinfobarpic");
 	
 	if(flag == 0 && status.timeshift == 1 && status.playing == 0 && status.timeshifttype == 1 && status.timeshiftpos == 0) //stop service
 	{
@@ -33,6 +34,7 @@ void timeshiftpause(int flag)
 			ret = servicestop(status.aktservice, 0, 2);
 		if(ret == 0)
 		{
+			drawscreen(playinfobarpic, 0, 0);
 			ret = recordstart(status.aktservice->channel, -1, 0, RECTIMESHIFT, 0, NULL);
 			if(ret != 0)
 			{
@@ -52,6 +54,7 @@ void timeshiftpause(int flag)
 		status.play = 0;
 		status.pause = 1;
 		playerpausets();
+		drawscreen(playinfobarpic, 0, 0);
 	}
 }
 
@@ -146,6 +149,8 @@ void timeshiftplay(int* playinfobarstatus, int* playinfobarcount)
 {
 	int ret = 1;
 
+	struct skin* playinfobarpic = getscreen("playinfobarpic");
+	
 	struct service* snode = getservice(RECORDTIMESHIFT, 0);
 	
 	if((status.timeshifttype == 0 && status.playing == 0) || (status.timeshifttype == 1 && status.playing == 0 && status.timeshiftpos > 0))
@@ -173,7 +178,10 @@ void timeshiftplay(int* playinfobarstatus, int* playinfobarcount)
 	else if(status.playing == 1)
 	{
 		if(status.playspeed != 0 || status.slowspeed != 0)
+		{
 			playerpausets();
+			drawscreen(playinfobarpic, 0, 0);
+		}
 		if(status.slowspeed != 0)
 			audioclearbuffer(status.aktservice->audiodev);
 		playercontinuets();
