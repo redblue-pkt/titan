@@ -150,7 +150,6 @@ void timeshiftplay(int* playinfobarstatus, int* playinfobarcount)
 	int ret = 1;
 
 	struct skin* playinfobarpic = getscreen("playinfobarpic");
-	
 	struct service* snode = getservice(RECORDTIMESHIFT, 0);
 	
 	if((status.timeshifttype == 0 && status.playing == 0) || (status.timeshifttype == 1 && status.playing == 0 && status.timeshiftpos > 0))
