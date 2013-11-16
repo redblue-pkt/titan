@@ -398,7 +398,7 @@ void timeshiftinfobar(int* playinfobarstatus, int* playinfobarcount)
 	if(status.playing == 1 && status.pause == 1)
 	{
 		//*playinfobarstatus = 0;
-		*playinfobarstatus = 0;
+		*playinfobarstatus = 2;
 		screenplayinfobar(NULL, NULL, 1, 1, 4);
 	}
 	if(status.playing == 1)
