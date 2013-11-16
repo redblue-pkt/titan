@@ -387,8 +387,17 @@ void timeshiftseek(int sekunden, int* playinfobarstatus, int* playinfobarcount, 
 
 void timeshiftinfobar(int* playinfobarstatus, int* playinfobarcount)
 {
+	if(status.playing == 0 && status.playspeed == 0)
+	{
+		*playinfobarstatus = 2;
+		//player simmulieren fuer infobar
+		status.playercan = 0xFFFF;
+		status.pause = 1;
+	}
+	
 	if(status.playing == 1 && status.pause == 1)
 	{
+		//*playinfobarstatus = 0;
 		*playinfobarstatus = 0;
 		screenplayinfobar(NULL, NULL, 1, 1, 4);
 	}
