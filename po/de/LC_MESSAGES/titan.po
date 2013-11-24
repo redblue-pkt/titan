@@ -2239,7 +2239,7 @@ msgid "Timeshift Path"
 msgstr "Ordner für Timeshift"
 
 msgid "Timeshift is running !!!\nStop it and switch ?"
-msgstr "Timeshift läuft!\nAusschalten und Umschalten?"
+msgstr "Timeshift läuft!\nAusschalten und umschalten?"
 
 msgid "Timezone"
 msgstr "Zeitzone"
