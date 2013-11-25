@@ -9,6 +9,7 @@ char pluginpic[] = "%pluginpath%/readerconfig/plugin.png";
 
 int pluginaktiv = 0;
 int pluginversion = PLUGINVERSION;
+int pluginflag = 1; //don't show the plugin in pluginmanager
 
 //wird beim laden ausgefuehrt
 void init(void)
