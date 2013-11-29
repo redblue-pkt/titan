@@ -185,12 +185,13 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 	}
 		
 	struct tmdb* tnode = NULL;
-	char* tmpstr = NULL, *tmpstr1 = NULL, *logdir = NULL, *logfile = NULL, *tmpsearch = NULL, *savefile = NULL, *timen = NULL, *log = NULL, *posterurl = NULL, *title = NULL, *tmpjpg = NULL, *tmpmpg = NULL, *tmpmeta = NULL;
+	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *logdir = NULL, *logfile = NULL, *tmpsearch = NULL, *savefile = NULL, *timen = NULL, *log = NULL, *posterurl = NULL, *title = NULL, *tmpjpg = NULL, *tmpmpg = NULL, *tmpmeta = NULL;
 
 	title = ostrcat(title, input, 1, 0);
 
 	int count = 0;
-	int mvicount = 0;	
+	int mvicount = 0;
+/*
 	tmpsearch = ostrcat("2.1/", NULL, 0, 0);
 	if(flag == 0)
 		tmpsearch = ostrcat(tmpsearch, "Movie.search", 1, 0);
@@ -204,12 +205,24 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 	tmpsearch = ostrcat(tmpsearch, "/", 1, 0);
 	tmpsearch = ostrcat(tmpsearch, title, 1, 0);
 	tmpsearch = stringreplacechar(tmpsearch, ' ', '+');
+*/
+
+	if(flag == 1)
+	{
+		tmpsearch = ostrcat("3/movie/", NULL, 0, 0);
+		tmpsearch = ostrcat(tmpsearch, title, 1, 0);
+	}
+	else
+		tmpsearch = ostrcat("3/movie/tt0083944", NULL, 0, 0);
+
+	tmpsearch = ostrcat(tmpsearch, "?api_key=351217450d7c7865ca39c74a7e3a0a4b&language=de", 1, 0);
 
 	debug(133, "search: http://api.themoviedb.org/%s", tmpsearch);
 	tmpstr = gethttp("api.themoviedb.org", tmpsearch, 80, NULL, NULL, 5000, NULL, 0);
+//	writesys("/var/usr/local/share/titan/plugins/tmdb/tmpstr", tmpstr, 1);
 	
 	debug(133, "tmpsearch: %s", tmpsearch);
-//	debug(133, "tmpstr: %s", tmpstr);
+	debug(133, "tmpstr: %s", tmpstr);
 				
 	free(tmpsearch); tmpsearch = NULL;
 
@@ -231,542 +244,504 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 	if(getconfigint("mediadbdebug", NULL) == 1)
 		filedebug(logfile, "#############\nTitle: %s\n#############", title);
 
-	if(tmpstr != NULL)
+	free(tmpsearch); tmpsearch = NULL;
+	char* ret = NULL;
+
+	if(tmpstr != NULL && ostrstr(tmpstr, "Invalid id - The pre-requisite id is invalid or not found") == NULL)
 	{
-		if(ostrstr(tmpstr, "<movies>Nothing found.</movies>") != NULL)
+		ret = getxmlentry(tmpstr, "\"Response\":");
+		if(ostrcmp(ret, "False") == 0)
 		{
-      debug(133, "<movies>Nothing found.</movies>");
+			free(ret); ret = NULL;
 			free(tmpstr); tmpstr = NULL;
 			return NULL;
 		}
+		free(ret); ret = NULL;
 
-		tmpstr1 = ostrstr(tmpstr, "<movie>");
-
-		while(tmpstr1 != NULL)
+		tnode = addtmdb(first, 1, tnode);
+		if(tnode == NULL)
 		{
-			tnode = addtmdb(first, 1, tnode);
-			if(tnode == NULL)
+			err("no mem");
+			free(tmpstr); tmpstr = NULL;
+			return *first;
+		}
+		count++;
+
+		tmpstr1 = ostrcat(tmpstr, NULL, 0, 0);
+		int count = 0;
+		int incount = 0;
+		int i = 0;
+		struct splitstr* ret1 = NULL;
+		ret1 = strsplit(tmpstr1, ",", &count);
+		if(ret1 != NULL)
+		{
+			int max = count;
+			for(i = 0; i < max; i++)
 			{
-				err("no mem");
-				free(tmpstr); tmpstr = NULL;
-				return *first;
-			}
-			count++;
-
-			if(ostrstr(tmpstr1, "<name>") != NULL)
-				tnode->title = string_resub("<name>", "</name>", tmpstr1, 0);
-
-			if(ostrstr(tmpstr1, "<language>") != NULL)
-				tnode->language = string_resub("<language>", "</language>", tmpstr1, 0);
-
-			if(ostrstr(tmpstr1, "<type>") != NULL)
-				tnode->type = string_resub("<type>", "</type>", tmpstr1, 0);
-
-			if(ostrstr(tmpstr1, "<original_name>") != NULL)
-				tnode->orgname = string_resub("<original_name>", "</original_name>", tmpstr1, 0);
-
-			if(ostrstr(tmpstr1, "<score>") != NULL)
-				tnode->score = string_resub("<score>", "</score>", tmpstr1, 0);
-
-			if(ostrstr(tmpstr1, "<rated>") != NULL)
-				tnode->rated = string_resub("<rated>", "</rated>", tmpstr1, 0);
-
-			if(ostrstr(tmpstr1, "<released>") != NULL)
-				tnode->released = string_resub("<released>", "</released>", tmpstr1, 0);
-
-			if(ostrstr(tmpstr1, "<categories>") != NULL)
-			{
-				char* tmpcat = string_resub("<categories>", "</categories>", tmpstr1, 0);
-				char* ptmpcat = ostrstr(tmpcat, "<category ");
-				while(ptmpcat != NULL)
+				if(ostrstr(ret1[i].part, "\"backdrop_path\"") != NULL)
 				{
-					tnode->genre = ostrcat(tnode->genre, string_resub("<category type=\"genre\" name=\"", "\" url=", ptmpcat, 0), 1, 1);
-					ptmpcat += 5;
-					ptmpcat = ostrstr(ptmpcat, "<category ");
-
-					if(ptmpcat != NULL)
-						tnode->genre = ostrcat(tnode->genre, ", ", 1, 0);
+					tmpstr2 = string_resub("\"backdrop_path\":\"", "\"", ret1[i].part, 0);
+					tmpstr3 = ostrcat("http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w1280", tmpstr2, 0, 0);
+					tnode->backdrop = ostrcat(tnode->backdrop, tmpstr3, 1, 0);
+					tnode->backdrop = ostrcat(tnode->backdrop, "\n", 1, 0);
+	
+					mvicount++;
 				}
-				free(tmpcat); tmpcat = NULL;
 			}
-
-			if(ostrstr(tmpstr1, "<runtime>") != NULL)
-				tnode->runtime = string_resub("<runtime>", "</runtime>", tmpstr1, 0);
-
-			if(ostrstr(tmpstr1, "<overview>") != NULL)
-				tnode->plot = string_resub("<overview>", "</overview>", tmpstr1, 0);
-
-			if(ostrstr(tmpstr1, "size=\"thumb\"") != NULL)
-				tnode->thumb = oregex(".*<image type=\"poster\" url=\".*(http://.*)\" size=\"thumb\".*", tmpstr1);
-
-			if(ostrstr(tmpstr1, "size=\"cover\"") != NULL)
-				tnode->cover = oregex(".*<image type=\"poster\" url=\".*(http://.*)\" size=\"cover\".*", tmpstr1);
-
-			if(ostrstr(tmpstr1, "<images>") != NULL)
-			{
-				char* tmpcat = string_resub("<images>", "</images>", tmpstr1, 0);
-				if(tmpcat != NULL)
-					tnode->postermid = oregex(".*<image type=\"poster\" url=\".*(http://.*)\" size=\"mid\".*", tmpcat);
-				free(tmpcat); tmpcat = NULL;
+		}
+		free(tmpstr2), tmpstr2 = NULL;				
+		free(tmpstr3), tmpstr3 = NULL;	
+		free(ret1), ret1 = NULL;
+	
+		tmpstr1 = getxmlentry(tmpstr, "\"genres\":");
+		tmpstr2 = string_resub("[", "]", tmpstr1, 0);
+		count = 0;
+		incount = 0;
+		i = 0;
+		struct splitstr* ret2 = NULL;
+		ret2 = strsplit(tmpstr2, ",", &count);
+		if(ret1 != NULL)
+		{
+			int max = count;
+			for(i = 0; i < max; i++)
+			{	
+				if(ostrstr(ret1[i].part, "\"name\"") != NULL)
+				{
+					tmpstr3 = string_resub("\"name\":\"", "\"", ret2[i].part, 0);
+					if(tnode->genre != NULL)
+						tnode->genre = ostrcat(tnode->genre, ",", 1, 0);						
+					tnode->genre = ostrcat(tnode->genre, tmpstr3, 1, 0);
+				}
 			}
+		}
+		free(tmpstr2), tmpstr2 = NULL;				
+		free(tmpstr3), tmpstr3 = NULL;
+		free(ret2), ret2 = NULL;				
+		
+		tnode->title = getxmlentry(tmpstr, "\"title\":");
+
+		tmpstr2 = getxmlentry(tmpstr, "\"spoken_languages\":");
+		tnode->language = string_resub("\"name\":\"", "\"", tmpstr2, 0);
+		free(tmpstr2), tmpstr2 = NULL;
+
+		tnode->type = string_resub("\"adult\":", ",", tmpstr, 0);
+		tnode->orgname = getxmlentry(tmpstr, "\"original_title\":");
+		tnode->score = string_resub("\"popularity\":", ",", tmpstr, 0);
+		tnode->rating = string_resub("\"vote_average\":", ",", tmpstr, 0);
+		tnode->votes = string_resub("\"vote_count\":", "}", tmpstr, 0);
+		tnode->released = getxmlentry(tmpstr, "\"release_date\":");
+		tnode->runtime = string_resub("\"runtime\":", ",", tmpstr, 0);
+		tnode->plot = getxmlentry(tmpstr, "\"overview\":");
+		tnode->year = getxmlentry(tmpstr, "\"Year\":");
+
+		tmpstr2 = getxmlentry(tmpstr, "\"poster_path\":");
+		tnode->thumb = ostrcat("http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w300", tmpstr2, 0, 0);
+		free(tmpstr2), tmpstr2 = NULL;
+
+		tmpstr2 = getxmlentry(tmpstr, "\"poster_path\":");
+		tnode->cover = ostrcat("http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w300", tmpstr2, 0, 0);
+		free(tmpstr2), tmpstr2 = NULL;
+
+		tmpstr2 = getxmlentry(tmpstr, "\"poster_path\":");
+		tnode->postermid = ostrcat("http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500", tmpstr2, 0, 0);
+		free(tmpstr2), tmpstr2 = NULL;
 			
-			if(tnode->postermid == NULL && ostrstr(tmpstr1, "size=\"mid\"") != NULL)
-				tnode->postermid = oregex(".*<image type=\"poster\" url=\".*(http://.*)\" size=\"mid\".*", tmpstr1);
+		tnode->year = getxmlentry(tmpstr, "\"release_date\":");
+		tnode->imdbid = getxmlentry(tmpstr, "\"imdb_id\":");
+		tnode->id = string_resub(",\"id\":", ",", tmpstr, 0);
 
-			if(ostrstr(tmpstr1, "<images>") != NULL)
+		if(getconfigint("mediadbdebug", NULL) == 1 && tnode->backdrop == NULL)
+		{
+			log = ostrcat(logdir, "/tmdb_", 0, 0);
+			if(tnode->imdbid != NULL)
+				log = ostrcat(log, tnode->imdbid, 1, 0);
+			else
+				log = ostrcat(log, timen, 1, 0);
+			
+			log = ostrcat(log, "_html", 1, 0);
+			writesys(log, tmpstr1, 1);
+			free(log), log = NULL;
+			
+			log = ostrcat(logdir, "/tmdb_", 0, 0);
+			if(tnode->imdbid != NULL)
+				log = ostrcat(log, tnode->imdbid, 1, 0);
+			else
+				log = ostrcat(log, timen, 1, 0);
+
+			log = ostrcat(log, "_link", 1, 0);
+			writesys(log, tnode->backdrop, 1);
+			free(log), log = NULL;
+		}
+			
+		if((flag1 == 0 && count == 1) || flag1 == 1 || flag1 == 2)
+		{
+			savefile = savetmdbpic(tnode->imdbid, tnode->thumb, TMPTMDBPIC1, "_thumb.jpg", flag1);
+			free(tnode->thumb);
+			tnode->thumb = savefile;
+
+			savefile = savetmdbpic(tnode->imdbid, tnode->cover, TMPTMDBPIC2, "_cover.jpg", flag1);
+			free(tnode->cover);
+			tnode->cover = savefile;
+
+			savefile = savetmdbpic(tnode->imdbid, tnode->postermid, TMPTMDBPIC3, "_postermid.jpg", flag1);
+			posterurl = ostrcat(posterurl, tnode->postermid, 1, 0);
+			free(tnode->postermid);
+			tnode->postermid = savefile;
+
+			if(mvicount == 0)
 			{
-				char* tmpcat = string_resub("<images>", "</images>", tmpstr1, 0);
-				char* ptmpcat = ostrstr(tmpcat, "<image ");
-
-				while(ptmpcat != NULL)
-				{
-					tnode->backdrop = ostrcat(tnode->backdrop, string_resub("<image type=\"backdrop\" url=\"", "\" size=", ptmpcat, 0), 1, 1);
-					ptmpcat += 5;
-					ptmpcat = ostrstr(ptmpcat, "<image ");
-
-					if(ptmpcat != NULL)
-					{
-						mvicount++;
-						tnode->backdrop = ostrcat(tnode->backdrop, "\n", 1, 0);
-					}
-				}
-				free(tmpcat); tmpcat = NULL;
+				savefile = savetmdbpic(tnode->imdbid, tnode->backdrop, TMPTMDBPIC4, "_backdrop1.jpg", flag1);
+				free(tnode->backdrop);
+				tnode->backdrop = savefile;					
 			}
-
-			if(tnode->backdrop == NULL && ostrstr(tmpstr1, "size=\"original\"") != NULL)
-				tnode->backdrop = oregex(".*<image type=\"backdrop\" url=\".*(http://.*/original/.*)\" size=\"original\" width=\"1920\" height=\"1080\".*", tmpstr1);
-				
-			if(tnode->backdrop == NULL && ostrstr(tmpstr1, "size=\"original\"") != NULL)
-				tnode->backdrop = oregex(".*<image type=\"backdrop\" url=\".*(http://.*/original/.*)\" size=\"original\" width=\"1280\" height=\"720\".*", tmpstr1);
-
-			if(tnode->backdrop == NULL && ostrstr(tmpstr1, "size=\"w1280\"") != NULL)
-				tnode->backdrop = oregex(".*<image type=\"backdrop\" url=\".*(http://.*/w1280/.*)\" size=\"w1280\" width=\"1280\" height=\"720\".*", tmpstr1);
-
-			if(tnode->backdrop == NULL && ostrstr(tmpstr1, "size=\"w780\"") != NULL)
-				tnode->backdrop = oregex(".*<image type=\"backdrop\" url=\".*(http://.*/w780/.*)\" size=\"poster\" width=\"780\" height=\"439\".*", tmpstr1);
-
-			if(tnode->backdrop == NULL && ostrstr(tmpstr1, "size=\"original\"") != NULL)
-				tnode->backdrop = oregex(".*<image type=\"backdrop\" url=\".*(http://.*/original/.*)\" size=\"original\".*", tmpstr1);
-
-			if(tnode->backdrop == NULL && ostrstr(tmpstr1, "size=\"w1280\"") != NULL)
-				tnode->backdrop = oregex(".*<image type=\"backdrop\" url=\".*(http://.*/w1280/.*)\" size=\"w1280\".*", tmpstr1);
-
-			if(tnode->backdrop == NULL && ostrstr(tmpstr1, "size=\"poster\"") != NULL)
-				tnode->backdrop = oregex(".*<image type=\"backdrop\" url=\".*(http://.*/poster/.*)\" size=\"poster\".*", tmpstr1);
-
-			if(ostrstr(tmpstr1, "<imdb_id>") != NULL)
-				tnode->imdbid = string_resub("<imdb_id>", "</imdb_id>", tmpstr1, 0);
-
-			if(getconfigint("mediadbdebug", NULL) == 1 && tnode->backdrop == NULL)
-			{
-				log = ostrcat(logdir, "/tmdb_", 0, 0);
-				if(tnode->imdbid != NULL)
-					log = ostrcat(log, tnode->imdbid, 1, 0);
-				else
-					log = ostrcat(log, timen, 1, 0);
-				
-				log = ostrcat(log, "_html", 1, 0);
-				writesys(log, tmpstr1, 1);
-				free(log), log = NULL;
-				
-				log = ostrcat(logdir, "/tmdb_", 0, 0);
-				if(tnode->imdbid != NULL)
-					log = ostrcat(log, tnode->imdbid, 1, 0);
-				else
-					log = ostrcat(log, timen, 1, 0);
-
-				log = ostrcat(log, "_link", 1, 0);
-				writesys(log, tnode->backdrop, 1);
-				free(log), log = NULL;
-			}
-
-			if(ostrstr(tmpstr1, "<rating>") != NULL)
-				tnode->rating = string_resub("<rating>", "</rating>", tmpstr1, 0);
-
-			if(ostrstr(tmpstr1, "<votes>") != NULL)
-				tnode->votes = string_resub("<votes>", "</votes>", tmpstr1, 0);
-
-			if(ostrstr(tmpstr1, "<id>") != NULL)
-				tnode->id = string_resub("<id>", "</id>", tmpstr1, 0);
-
-			if((flag1 == 0 && count == 1) || flag1 == 1 || flag1 == 2)
-			{
-				savefile = savetmdbpic(tnode->imdbid, tnode->thumb, TMPTMDBPIC1, "_thumb.jpg", flag1);
-				free(tnode->thumb);
-				tnode->thumb = savefile;
-
-				savefile = savetmdbpic(tnode->imdbid, tnode->cover, TMPTMDBPIC2, "_cover.jpg", flag1);
-				free(tnode->cover);
-				tnode->cover = savefile;
-
-				savefile = savetmdbpic(tnode->imdbid, tnode->postermid, TMPTMDBPIC3, "_postermid.jpg", flag1);
-				posterurl = ostrcat(posterurl, tnode->postermid, 1, 0);
-				free(tnode->postermid);
-				tnode->postermid = savefile;
-
-				if(mvicount == 0)
-				{
-					savefile = savetmdbpic(tnode->imdbid, tnode->backdrop, TMPTMDBPIC4, "_backdrop1.jpg", flag1);
-					free(tnode->backdrop);
-					tnode->backdrop = savefile;					
-				}
-			}
-							
-			if((flag1 == 1 || flag1 == 2) && tnode->backdrop != NULL && tnode->imdbid != NULL) 
-			{
-				debug(133, "load backdrop flag1: %d", flag1);
-				char* tmppath = NULL;
-				mvicount = 0;
-				char* tmpstr2 = NULL;
-				tmpstr2 = ostrcat(tnode->backdrop, NULL, 0, 0);
-				struct splitstr* ret1 = NULL;
-				int rcount = 0;
-				int i = 0;
-				ret1 = strsplit(tmpstr2, "\n", &rcount);
-				for(i = 0; i < rcount; i++)
-				{
-					if(ostrstr((&ret1[i])->part, "/original/") != NULL)
-					{
-						mvicount++;
-						debug(133, "load %s\n",(&ret1[i])->part);
-
-						if(!ostrncmp("http://", (&ret1[i])->part, 7))
-						{
-							tmppath = ostrcat("_backdrop", oitoa(mvicount), 0, 1);
-							tmppath = ostrcat(tmppath, ".jpg", 1, 0);
-
-							savefile = savetmdbpic(tnode->imdbid, (&ret1[i])->part, TMPTMDBPIC4, tmppath, flag1);
-							if(file_exist(savefile))
-							{
-								free(tnode->backdrop);
-								tnode->backdrop = savefile;
-		
-								free(tnode->mvi);
-								tnode->mvi = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
-								tnode->mvi = ostrcat(tnode->mvi, tnode->imdbid, 1, 0);
-								tnode->mvi = ostrcat(tnode->mvi, "_backdrop", 1, 0);
-								tnode->mvi = ostrcat(tnode->mvi, oitoa(mvicount), 1, 1);
-								tnode->mvi = ostrcat(tnode->mvi, ".mvi", 1, 0);
-								
-								if((!file_exist(tnode->mvi)) || (flag1 == 2))
-								{
-
-									off64_t filesize = getfilesize(tnode->backdrop);
-									debug(133, "filesize %lld", filesize);
-									
-									if(filesize < 1500000)
-									{
-										char* cmd = NULL;
-										cmd = ostrcat(cmd, "ffmpeg -i ", 1, 0);
-										cmd = ostrcat(cmd, tnode->backdrop, 1, 0);
-										cmd = ostrcat(cmd, " > ", 1, 0);
-										cmd = ostrcat(cmd, tmpmeta, 1, 0);
-										cmd = ostrcat(cmd, " 2>&1", 1, 0);
-						
-										debug(133, "cmd %s", cmd);
-										system(cmd);
-										free(cmd); cmd = NULL;
-
-										cmd = ostrcat(cmd, "cat ", 1, 0);
-										cmd = ostrcat(cmd, tmpmeta, 1, 0);
-										cmd = ostrcat(cmd, " | grep Stream | awk '{print $6}' | cut -d'x' -f1", 1, 0);
-										char* size = string_newline(command(cmd));
-										free(cmd), cmd = NULL;	
-										debug(133, "size %s", size);
-										if(size != NULL)
-										{
-											debug(133, "size %d", atoi(size));
-											int picsize = atoi(size);
-											unlink(tmpmeta);
-		
-											if(picsize < 2000)
-											{
-												debug(133, "size ok %d", picsize);
-												cmd = ostrcat(cmd, "jpegtran -outfile ", 1, 0);
-												cmd = ostrcat(cmd, tmpjpg, 1, 0);
-												cmd = ostrcat(cmd, " -copy none ", 1, 0);
-												cmd = ostrcat(cmd, tnode->backdrop, 1, 0);
-																
-												debug(133, "cmd %s", cmd);
-												system(cmd);
-												free(cmd); cmd = NULL;
-												if(file_exist(tmpjpg))
-												{
-													free(cmd), cmd = NULL;
-													cmd = ostrcat(cmd, "ffmpeg -y -f image2 -i ", 1, 0);
-													cmd = ostrcat(cmd, tmpjpg, 1, 0);
-													cmd = ostrcat(cmd, " ", 1, 0);
-													cmd = ostrcat(cmd, tmpmpg, 1, 0);
-
-													if(getconfigint("mediadbdebug", NULL) == 1)
-													{
-														filedebug(logfile, "#############\nbackdrop: %s size=(%s) filesize(%lld) (%s)\n#############", tnode->backdrop, size, filesize, (&ret1[i])->part);
-														cmd = ostrcat(cmd, " >> ", 1, 0);
-														cmd = ostrcat(cmd, logfile, 1, 0);
-														cmd = ostrcat(cmd, " 2>&1", 1, 0);
-													}
-													else
-													{
-														cmd = ostrcat(cmd, " > /dev/null 2>&1", 1, 0);
-													}
-													debug(133, "cmd %s", cmd);
-													system(cmd);
-													free(cmd); cmd = NULL;
-													
-													if(file_exist(tmpmpg))
-													{
-														cmd = ostrcat(cmd, "mv -f ", 1, 0);
-														cmd = ostrcat(cmd, tmpmpg, 1, 0);
-														cmd = ostrcat(cmd, " ", 1, 0);
-														cmd = ostrcat(cmd, tnode->mvi, 1, 0);
-														debug(133, "cmd %s", cmd);
-														system(cmd);
-														free(cmd); cmd = NULL;
-														
-														if(getconfigint("mediadbdebug", NULL) == 1)
-															writesysint("/proc/sys/vm/drop_caches", 3, 0);
-														
-														if(mvicount == getconfigint("mediadbbackdrop", NULL))
-															break;
-													}
-													else
-														mvicount--;
-												}
-											}
-											else
-											{
-												debug(133, "ERROR Backdrop size to big skipped %d", picsize);
-
-												if(getconfigint("mediadbdebug", NULL) == 1)
-													filedebug(logfile, "#############\nERROR Backdrop size to big skipped: %s size=(%s) filesize(%lld) (%s)\n#############", tnode->backdrop, size, filesize, (&ret1[i])->part);
-												mvicount--;
-											}
-										}
-										else
-										{
-											debug(133, "ERROR Backdrop size is NULL skipped %s", size);
-
-											if(getconfigint("mediadbdebug", NULL) == 1)
-												filedebug(logfile, "#############\nERROR Backdrop size is NULL skipped: %s size=(%s) filesize(%lld) (%s)\n#############", tnode->backdrop, size, filesize, (&ret1[i])->part);
-
-											mvicount--;
-										}
-										free(size), size = NULL;
-										unlink(tmpmeta);
-										unlink(tmpjpg);
-										unlink(tmpmpg);
-									}
-									else
-									{
-										debug(133, "ERROR Backdrop filesize to BIG skipped %lld", filesize);
-				
-										if(getconfigint("mediadbdebug", NULL) == 1)
-											filedebug(logfile, "#############\nERROR Backdrop filesize to BIG skipped: %s filesize(%lld) (%s)\n#############", tnode->backdrop, filesize, (&ret1[i])->part);
-									}
-								}								
-
-								free(tmppath), tmppath = NULL;
-							}
-							else
-								mvicount--;
-						}
-						else
-						{
-							log = ostrcat(logdir, "/tmdb_", 0, 0);
-							if(tnode->imdbid != NULL)
-								log = ostrcat(log, tnode->imdbid, 1, 0);
-							else
-								log = ostrcat(log, timen, 1, 0);
-							
-							log = ostrcat(log, "_html", 1, 0);
-							
-							char* cmd = NULL;
-							cmd = command("free");
-							log = ostrcat(log, "_error_link", 1, 0);
-							cmd = ostrcat(cmd, "\nlink: ", 1, 0);
-							cmd = ostrcat(cmd, (&ret1[i])->part, 1, 0);
-							writesys(log, cmd, 1);
-							free(cmd), cmd = NULL;
-							free(log), log = NULL;
-							mvicount--;
-						}
-
-						if(file_exist(tnode->mvi))
-							unlink(tnode->backdrop);
-					}
-				}
-				free(ret1), ret1 = NULL;				
-				free(tmpstr2), tmpstr2 = NULL;
-			}
-			else if((flag1 == 1 || flag1 == 2) && tnode->postermid != NULL && tnode->imdbid != NULL)
-			{
-				debug(133, "load postermid flag1: %d", flag1);
-
-				free(tnode->mvi);
-				tnode->mvi = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
-				tnode->mvi = ostrcat(tnode->mvi, tnode->imdbid, 1, 0);
-				tnode->mvi = ostrcat(tnode->mvi, "_backdrop1.mvi", 1, 0);
-				
-				if((!file_exist(tnode->mvi)) || (flag1 == 2))
-				{
-
-					off64_t filesize = getfilesize(tnode->backdrop);
-					debug(133, "filesize %lld", filesize);
+		}
 					
-					if(filesize < 1500000)
-					{
-						char* cmd = NULL;
-						cmd = ostrcat(cmd, "ffmpeg -i ", 1, 0);
-						cmd = ostrcat(cmd, tnode->postermid, 1, 0);
-						cmd = ostrcat(cmd, " > ", 1, 0);
-						cmd = ostrcat(cmd, tmpmeta, 1, 0);
-						cmd = ostrcat(cmd, " 2>&1", 1, 0);
-		
-						debug(133, "cmd %s", cmd);
-						system(cmd);
-						free(cmd); cmd = NULL;
+		if((flag1 == 1 || flag1 == 2) && tnode->backdrop != NULL && tnode->imdbid != NULL) 
+		{
+			debug(133, "load backdrop flag1: %d", flag1);
+			char* tmppath = NULL;
+			mvicount = 0;
+			char* tmpstr2 = NULL;
+			tmpstr2 = ostrcat(tnode->backdrop, NULL, 0, 0);
+			struct splitstr* ret1 = NULL;
+			int rcount = 0;
+			int i = 0;
+			ret1 = strsplit(tmpstr2, "\n", &rcount);
 
-						cmd = ostrcat(cmd, "cat ", 1, 0);
-						cmd = ostrcat(cmd, tmpmeta, 1, 0);
-						cmd = ostrcat(cmd, " | grep Stream | awk '{print $6}' | cut -d'x' -f1", 1, 0);
-						char* size = string_newline(command(cmd));
-						free(cmd), cmd = NULL;
-						debug(133, "size %s", size);
-						if(size != NULL)
+			for(i = 0; i < rcount; i++)
+			{
+				mvicount++;
+				debug(133, "load %s\n",(&ret1[i])->part);
+
+				if(!ostrncmp("http://", (&ret1[i])->part, 7))
+				{
+					tmppath = ostrcat("_backdrop", oitoa(mvicount), 0, 1);
+					tmppath = ostrcat(tmppath, ".jpg", 1, 0);
+
+					savefile = savetmdbpic(tnode->imdbid, (&ret1[i])->part, TMPTMDBPIC4, tmppath, flag1);
+					if(file_exist(savefile))
+					{
+						free(tnode->backdrop);
+						tnode->backdrop = savefile;
+
+						free(tnode->mvi);
+						tnode->mvi = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
+						tnode->mvi = ostrcat(tnode->mvi, tnode->imdbid, 1, 0);
+						tnode->mvi = ostrcat(tnode->mvi, "_backdrop", 1, 0);
+						tnode->mvi = ostrcat(tnode->mvi, oitoa(mvicount), 1, 1);
+						tnode->mvi = ostrcat(tnode->mvi, ".mvi", 1, 0);
+						
+						if((!file_exist(tnode->mvi)) || (flag1 == 2))
 						{
-							debug(133, "size %d", atoi(size));
-							int picsize = atoi(size);
-		
-							if(picsize < 2000)
+							off64_t filesize = getfilesize(tnode->backdrop);
+							debug(133, "filesize %lld", filesize);
+							
+							if(filesize < 1500000)
 							{
-								debug(133, "size ok %d", picsize);
-								cmd = ostrcat(cmd, "jpegtran -outfile ", 1, 0);
-								cmd = ostrcat(cmd, tmpjpg, 1, 0);
-								cmd = ostrcat(cmd, " -copy none ", 1, 0);
-								cmd = ostrcat(cmd, tnode->postermid, 1, 0);
+								char* cmd = NULL;
+								cmd = ostrcat(cmd, "ffmpeg -i ", 1, 0);
+								cmd = ostrcat(cmd, tnode->backdrop, 1, 0);
+								cmd = ostrcat(cmd, " > ", 1, 0);
+								cmd = ostrcat(cmd, tmpmeta, 1, 0);
+								cmd = ostrcat(cmd, " 2>&1", 1, 0);
 				
 								debug(133, "cmd %s", cmd);
 								system(cmd);
 								free(cmd); cmd = NULL;
-												
-								if(file_exist(tmpjpg))
+
+								cmd = ostrcat(cmd, "cat ", 1, 0);
+								cmd = ostrcat(cmd, tmpmeta, 1, 0);
+								cmd = ostrcat(cmd, " | grep Stream | awk '{print $6}' | cut -d'x' -f1", 1, 0);
+								char* size = string_newline(command(cmd));
+								free(cmd), cmd = NULL;	
+								debug(133, "size %s", size);
+								if(size != NULL)
 								{
-									free(cmd), cmd = NULL;
-									cmd = ostrcat(cmd, "ffmpeg -y -f image2 -i ", 1, 0);
-									cmd = ostrcat(cmd, tmpjpg, 1, 0);
-									cmd = ostrcat(cmd, " ", 1, 0);
-									cmd = ostrcat(cmd, tmpmpg, 1, 0);
+									debug(133, "size %d", atoi(size));
+									int picsize = atoi(size);
+									unlink(tmpmeta);
 
-									if(getconfigint("mediadbdebug", NULL) == 1)
+									if(picsize < 2000)
 									{
-										filedebug(logfile, "#############\npostermid: %s size=(%s) filesize(%lld) (%s)\n#############", tnode->postermid, size, filesize, posterurl);	
-										cmd = ostrcat(cmd, " >> ", 1, 0);
-										cmd = ostrcat(cmd, logfile, 1, 0);
-										cmd = ostrcat(cmd, " 2>&1", 1, 0);
-									}
-									else
-									{
-										cmd = ostrcat(cmd, " > /dev/null 2>&1", 1, 0);
-									}
-
-									debug(133, "cmd %s", cmd);
-									system(cmd);
-									free(cmd); cmd = NULL;
-									if(file_exist(tmpmpg))
-									{					
-										cmd = ostrcat(cmd, "mv -f ", 1, 0);
-										cmd = ostrcat(cmd, tmpmpg, 1, 0);
-										cmd = ostrcat(cmd, " ", 1, 0);
-										cmd = ostrcat(cmd, tnode->mvi, 1, 0);
+										debug(133, "size ok %d", picsize);
+										cmd = ostrcat(cmd, "jpegtran -outfile ", 1, 0);
+										cmd = ostrcat(cmd, tmpjpg, 1, 0);
+										cmd = ostrcat(cmd, " -copy none ", 1, 0);
+										cmd = ostrcat(cmd, tnode->backdrop, 1, 0);
+														
 										debug(133, "cmd %s", cmd);
 										system(cmd);
 										free(cmd); cmd = NULL;
-										
-										writesysint("/proc/sys/vm/drop_caches", 3, 0);
+										if(file_exist(tmpjpg))
+										{
+											free(cmd), cmd = NULL;
+											cmd = ostrcat(cmd, "ffmpeg -y -f image2 -i ", 1, 0);
+											cmd = ostrcat(cmd, tmpjpg, 1, 0);
+											cmd = ostrcat(cmd, " ", 1, 0);
+											cmd = ostrcat(cmd, tmpmpg, 1, 0);
+
+											if(getconfigint("mediadbdebug", NULL) == 1)
+											{
+												filedebug(logfile, "#############\nbackdrop: %s size=(%s) filesize(%lld) (%s)\n#############", tnode->backdrop, size, filesize, (&ret1[i])->part);
+												cmd = ostrcat(cmd, " >> ", 1, 0);
+												cmd = ostrcat(cmd, logfile, 1, 0);
+												cmd = ostrcat(cmd, " 2>&1", 1, 0);
+											}
+											else
+											{
+												cmd = ostrcat(cmd, " > /dev/null 2>&1", 1, 0);
+											}
+											debug(133, "cmd %s", cmd);
+											system(cmd);
+											free(cmd); cmd = NULL;
+											
+											if(file_exist(tmpmpg))
+											{
+												cmd = ostrcat(cmd, "mv -f ", 1, 0);
+												cmd = ostrcat(cmd, tmpmpg, 1, 0);
+												cmd = ostrcat(cmd, " ", 1, 0);
+												cmd = ostrcat(cmd, tnode->mvi, 1, 0);
+												debug(133, "cmd %s", cmd);
+												system(cmd);
+												free(cmd); cmd = NULL;
+												
+												if(getconfigint("mediadbdebug", NULL) == 1)
+													writesysint("/proc/sys/vm/drop_caches", 3, 0);
+												
+												if(mvicount == getconfigint("mediadbbackdrop", NULL))
+													break;
+											}
+											else
+												mvicount--;
+										}
+									}
+									else
+									{
+										debug(133, "ERROR Backdrop size to big skipped %d", picsize);
+
+										if(getconfigint("mediadbdebug", NULL) == 1)
+											filedebug(logfile, "#############\nERROR Backdrop size to big skipped: %s size=(%s) filesize(%lld) (%s)\n#############", tnode->backdrop, size, filesize, (&ret1[i])->part);
+										mvicount--;
 									}
 								}
-								free(cmd), cmd = NULL;
+								else
+								{
+									debug(133, "ERROR Backdrop size is NULL skipped %s", size);
+
+									if(getconfigint("mediadbdebug", NULL) == 1)
+										filedebug(logfile, "#############\nERROR Backdrop size is NULL skipped: %s size=(%s) filesize(%lld) (%s)\n#############", tnode->backdrop, size, filesize, (&ret1[i])->part);
+
+									mvicount--;
+								}
+								free(size), size = NULL;
+								unlink(tmpmeta);
+								unlink(tmpjpg);
+								unlink(tmpmpg);
 							}
 							else
 							{
-								debug(133, "ERROR Postermid size to big skipped %d", picsize);
+								debug(133, "ERROR Backdrop filesize to BIG skipped %lld", filesize);
+		
+								if(getconfigint("mediadbdebug", NULL) == 1)
+									filedebug(logfile, "#############\nERROR Backdrop filesize to BIG skipped: %s filesize(%lld) (%s)\n#############", tnode->backdrop, filesize, (&ret1[i])->part);
+							}
+						}								
+
+						free(tmppath), tmppath = NULL;
+					}
+					else
+						mvicount--;
+				}
+				else
+				{
+					log = ostrcat(logdir, "/tmdb_", 0, 0);
+					if(tnode->imdbid != NULL)
+						log = ostrcat(log, tnode->imdbid, 1, 0);
+					else
+						log = ostrcat(log, timen, 1, 0);
+					
+					log = ostrcat(log, "_html", 1, 0);
+					
+					char* cmd = NULL;
+					cmd = command("free");
+					log = ostrcat(log, "_error_link", 1, 0);
+					cmd = ostrcat(cmd, "\nlink: ", 1, 0);
+					cmd = ostrcat(cmd, (&ret1[i])->part, 1, 0);
+					writesys(log, cmd, 1);
+					free(cmd), cmd = NULL;
+					free(log), log = NULL;
+					mvicount--;
+				}
+
+				if(file_exist(tnode->mvi))
+					unlink(tnode->backdrop);
+			}
+			free(ret1), ret1 = NULL;				
+			free(tmpstr2), tmpstr2 = NULL;
+		}
+		else if((flag1 == 1 || flag1 == 2) && tnode->postermid != NULL && tnode->imdbid != NULL)
+		{
+			debug(133, "load postermid flag1: %d", flag1);
+
+			free(tnode->mvi);
+			tnode->mvi = ostrcat(getconfig("mediadbpath", NULL), "/", 0, 0);
+			tnode->mvi = ostrcat(tnode->mvi, tnode->imdbid, 1, 0);
+			tnode->mvi = ostrcat(tnode->mvi, "_backdrop1.mvi", 1, 0);
+			
+			if((!file_exist(tnode->mvi)) || (flag1 == 2))
+			{
+
+				off64_t filesize = getfilesize(tnode->backdrop);
+				debug(133, "filesize %lld", filesize);
+				
+				if(filesize < 1500000)
+				{
+					char* cmd = NULL;
+					cmd = ostrcat(cmd, "ffmpeg -i ", 1, 0);
+					cmd = ostrcat(cmd, tnode->postermid, 1, 0);
+					cmd = ostrcat(cmd, " > ", 1, 0);
+					cmd = ostrcat(cmd, tmpmeta, 1, 0);
+					cmd = ostrcat(cmd, " 2>&1", 1, 0);
+	
+					debug(133, "cmd %s", cmd);
+					system(cmd);
+					free(cmd); cmd = NULL;
+
+					cmd = ostrcat(cmd, "cat ", 1, 0);
+					cmd = ostrcat(cmd, tmpmeta, 1, 0);
+					cmd = ostrcat(cmd, " | grep Stream | awk '{print $6}' | cut -d'x' -f1", 1, 0);
+					char* size = string_newline(command(cmd));
+					free(cmd), cmd = NULL;
+					debug(133, "size %s", size);
+					if(size != NULL)
+					{
+						debug(133, "size %d", atoi(size));
+						int picsize = atoi(size);
+	
+						if(picsize < 2000)
+						{
+							debug(133, "size ok %d", picsize);
+							cmd = ostrcat(cmd, "jpegtran -outfile ", 1, 0);
+							cmd = ostrcat(cmd, tmpjpg, 1, 0);
+							cmd = ostrcat(cmd, " -copy none ", 1, 0);
+							cmd = ostrcat(cmd, tnode->postermid, 1, 0);
+			
+							debug(133, "cmd %s", cmd);
+							system(cmd);
+							free(cmd); cmd = NULL;
+											
+							if(file_exist(tmpjpg))
+							{
+								free(cmd), cmd = NULL;
+								cmd = ostrcat(cmd, "ffmpeg -y -f image2 -i ", 1, 0);
+								cmd = ostrcat(cmd, tmpjpg, 1, 0);
+								cmd = ostrcat(cmd, " ", 1, 0);
+								cmd = ostrcat(cmd, tmpmpg, 1, 0);
 
 								if(getconfigint("mediadbdebug", NULL) == 1)
-									filedebug(logfile, "#############\nERROR Postermid size to big skipped: %s size=(%s) filesize(%lld) (%s)\n#############", tnode->postermid, size, filesize, posterurl);	
+								{
+									filedebug(logfile, "#############\npostermid: %s size=(%s) filesize(%lld) (%s)\n#############", tnode->postermid, size, filesize, posterurl);	
+									cmd = ostrcat(cmd, " >> ", 1, 0);
+									cmd = ostrcat(cmd, logfile, 1, 0);
+									cmd = ostrcat(cmd, " 2>&1", 1, 0);
+								}
+								else
+								{
+									cmd = ostrcat(cmd, " > /dev/null 2>&1", 1, 0);
+								}
+
+								debug(133, "cmd %s", cmd);
+								system(cmd);
+								free(cmd); cmd = NULL;
+								if(file_exist(tmpmpg))
+								{					
+									cmd = ostrcat(cmd, "mv -f ", 1, 0);
+									cmd = ostrcat(cmd, tmpmpg, 1, 0);
+									cmd = ostrcat(cmd, " ", 1, 0);
+									cmd = ostrcat(cmd, tnode->mvi, 1, 0);
+									debug(133, "cmd %s", cmd);
+									system(cmd);
+									free(cmd); cmd = NULL;
+									
+									writesysint("/proc/sys/vm/drop_caches", 3, 0);
+								}
 							}
+							free(cmd), cmd = NULL;
 						}
 						else
 						{
-							debug(133, "ERROR Postermid size is NULL skipped %s", size);
+							debug(133, "ERROR Postermid size to big skipped %d", picsize);
 
 							if(getconfigint("mediadbdebug", NULL) == 1)
-								filedebug(logfile, "#############\nERROR Postermid size is NULL skipped: %s size=(%s) filesize(%lld) (%s)\n#############", tnode->postermid, size, filesize, posterurl);
+								filedebug(logfile, "#############\nERROR Postermid size to big skipped: %s size=(%s) filesize(%lld) (%s)\n#############", tnode->postermid, size, filesize, posterurl);	
 						}
-						free(size), size = NULL;
-						unlink(tmpmeta);
-						unlink(tmpjpg);
-						unlink(tmpmpg);
 					}
 					else
 					{
-						debug(133, "ERROR Postermid filesize to BIG skipped %lld", filesize);
+						debug(133, "ERROR Postermid size is NULL skipped %s", size);
 
 						if(getconfigint("mediadbdebug", NULL) == 1)
-							filedebug(logfile, "#############\nERROR Postermid filesize to BIG skipped: %s filesize(%lld) (%s)\n#############", tnode->postermid, filesize, posterurl);	
+							filedebug(logfile, "#############\nERROR Postermid size is NULL skipped: %s size=(%s) filesize(%lld) (%s)\n#############", tnode->postermid, size, filesize, posterurl);
 					}
+					free(size), size = NULL;
+					unlink(tmpmeta);
+					unlink(tmpjpg);
+					unlink(tmpmpg);
+				}
+				else
+				{
+					debug(133, "ERROR Postermid filesize to BIG skipped %lld", filesize);
+
+					if(getconfigint("mediadbdebug", NULL) == 1)
+						filedebug(logfile, "#############\nERROR Postermid filesize to BIG skipped: %s filesize(%lld) (%s)\n#############", tnode->postermid, filesize, posterurl);	
 				}
 			}
-
-			debug(133, "mvi=%s (mvicount=%d)", tnode->mvi,flag1);
-			debug(133, "backdrop=%s (mvicount=%d)", tnode->backdrop,flag1);
-
-			if(file_exist(tnode->mvi))
-				unlink(tnode->backdrop);
-
-			if(mvicount > 0)
-			{
-				free(tnode->mvi);
-				tnode->mvi = ostrcat(oitoa(mvicount), NULL, 1, 0);
-			}
-			else
-			{
-				free(tnode->mvi);
-				tnode->mvi = ostrcat("1", NULL, 0, 0);
-			}
-			debug(133, "change mvi=%s (mvicount=%d)", tnode->mvi,flag1);
-
-			tmpstr1 += 5;
-			tmpstr1 = ostrstr(tmpstr1, "<movie>");
-
-			free(posterurl), posterurl = NULL; 
-			free(logdir), logdir = NULL; 
-			free(logfile), logfile = NULL; 
-
-			debug(133, "----------------------tmdb start----------------------");
-			debug(133, "title: %s", tnode->title);
-			debug(133, "language: %s", tnode->language);
-			debug(133, "type: %s", tnode->type);
-			debug(133, "orgname: %s", tnode->orgname);
-			debug(133, "score: %s", tnode->score);
-			debug(133, "rating: %s", tnode->rating);
-			debug(133, "released: %s", tnode->released);
-			debug(133, "genre: %s", tnode->genre);
-			debug(133, "runtime: %s", tnode->runtime);
-			debug(133, "plot: %s", tnode->plot);
-			debug(133, "thumb: %s", tnode->thumb);
-			debug(133, "cover: %s", tnode->cover);
-			debug(133, "postermid: %s", tnode->postermid);
-			debug(133, "backdrop: %s", tnode->backdrop);
-			debug(133, "mvi: %s", tnode->mvi);
-			debug(133, "rating: %s", tnode->rating);
-			debug(133, "votes: %s", tnode->votes);
-			debug(133, "id: %s", tnode->id);	
-			debug(133, "imdbid: %s", tnode->imdbid);
-			debug(133, "----------------------tmdb end----------------------");
 		}
+
+
+		debug(133, "mvi=%s (mvicount=%d)", tnode->mvi,flag1);
+		debug(133, "backdrop=%s (mvicount=%d)", tnode->backdrop,flag1);
+
+		if(file_exist(tnode->mvi))
+			unlink(tnode->backdrop);
+
+		if(mvicount > 0)
+		{
+			free(tnode->mvi);
+			tnode->mvi = ostrcat(oitoa(mvicount), NULL, 1, 0);
+		}
+		else
+		{
+			free(tnode->mvi);
+			tnode->mvi = ostrcat("1", NULL, 0, 0);
+		}
+		debug(133, "change mvi=%s (mvicount=%d)", tnode->mvi,flag1);
+			
+		free(tmpstr); tmpstr = NULL;
+
+		debug(133, "----------------------tmdb start----------------------");
+		debug(133, "title: %s", tnode->title);
+		debug(133, "language: %s", tnode->language);
+		debug(133, "type: %s", tnode->type);
+		debug(133, "orgname: %s", tnode->orgname);
+		debug(133, "score: %s", tnode->score);
+		debug(133, "rating: %s", tnode->rating);
+		debug(133, "released: %s", tnode->released);
+		debug(133, "genre: %s", tnode->genre);
+		debug(133, "runtime: %s", tnode->runtime);
+		debug(133, "plot: %s", tnode->plot);
+		debug(133, "thumb: %s", tnode->thumb);
+		debug(133, "cover: %s", tnode->cover);
+		debug(133, "postermid: %s", tnode->postermid);
+		debug(133, "backdrop: %s", tnode->backdrop);
+		debug(133, "mvi: %s", tnode->mvi);
+		debug(133, "rating: %s", tnode->rating);
+		debug(133, "votes: %s", tnode->votes);
+		debug(133, "id: %s", tnode->id);	
+		debug(133, "imdbid: %s", tnode->imdbid);
+		debug(133, "----------------------tmdb end----------------------");
 	}
 
-	free(tmpstr); tmpstr = NULL;
 	return *first;
 }
 
