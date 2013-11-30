@@ -34,7 +34,7 @@ void freeimdb(struct imdb** node, int flag)
 // flag 2 = iimdbid search and save
 struct imdb* getimdb(struct imdb** first, char* input, int flag, int flag1, int flag2)
 {
-	char* tmpstr = NULL, *tmpsearch = NULL, *savefile = NULL, *pageposter = NULL, *title = NULL;
+	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *tmpsearch = NULL, *savefile = NULL, *pageposter = NULL, *title = NULL;
 
 	debug(133, "title: %s",input);
 	debug(133, "flag: %d",flag);
@@ -66,6 +66,8 @@ start:
 	debug(133, "search: http://www.imdb.de/%s", tmpsearch);
 
 	tmpstr = gethttp("www.imdb.de", tmpsearch, 80, NULL, NULL, 5000, NULL, 0);
+//	writesys("/var/usr/local/share/titan/plugins/imdb/tmpstr0", tmpstr, 1);
+
 	
 	debug(133, "tmpsearch: %s", tmpsearch);
 	free(tmpsearch); tmpsearch = NULL;
@@ -124,7 +126,6 @@ start:
 //			writesys("/var/usr/local/share/titan/plugins/imdb/tmpstr1", tmpstr, 0);
 
 			struct menulist* mlist = NULL, *mbox = NULL;
-			char* tmpstr1 = NULL;
 			
 			int count = 0;
 			struct splitstr* ret = NULL;
@@ -212,6 +213,7 @@ current not working
 			tmpsearch = ostrcat(tmpsearch, (*first)->id, 1, 0);
 	
 			tmpstr = gethttp("www.imdb.de", tmpsearch, 80, NULL, NULL, 5000, NULL, 0);
+//			writesys("/var/usr/local/share/titan/plugins/imdb/tmpstrj", tmpstr, 0);
 			
 			debug(133, "tmpsearch: %s", tmpsearch);
 			free(tmpsearch); tmpsearch = NULL;
@@ -221,89 +223,227 @@ current not working
 	if(*first != NULL && tmpstr != NULL)
 	{
 		if(ostrstr(tmpstr, "<title>") != NULL)
-		{
+		{		
 			(*first)->title = string_resub("<title>", "</title>", tmpstr, 0);
 			(*first)->title = string_decode((*first)->title, 1);
 			string_strip_whitechars((*first)->title);
 			strstrip((*first)->title);
 		}
 
-		if(ostrstr(tmpstr, "<h5>Genre:</h5>") != NULL)
+		if(ostrstr(tmpstr, "\"genre\">") != NULL)
 		{
-			(*first)->genre = string_resub("<h5>Genre:</h5>", "</div>", tmpstr, 0);
-			(*first)->genre = string_decode((*first)->genre, 1);
+			tmpstr1 = string_resub("&nbsp;-&nbsp;", "</div>", tmpstr, 0);
+
+			while(ostrstr(tmpstr1, "\"genre\"") != NULL)
+			{
+				tmpstr2 = string_resub("\"genre\">", "</span>", tmpstr1, 0);
+				tmpstr1 = string_replace("\"genre\">", "", tmpstr1, 1);
+				if((*first)->genre != NULL && tmpstr2 != NULL)
+					(*first)->genre = ostrcat((*first)->genre, ",", 1, 0);
+
+				(*first)->genre = ostrcat((*first)->genre, tmpstr2, 1, 0);
+				free(tmpstr2), tmpstr2 = NULL;
+			}
+			free(tmpstr1), tmpstr1 = NULL;
+
 			string_striptags((*first)->genre);
 			string_strip_whitechars((*first)->genre);
 			strstrip((*first)->genre);
 		}
-
-		if(ostrstr(tmpstr, "<h5>Drehbuchautor") != NULL)
+			
+		if(ostrstr(tmpstr, ">Writers:</h4>") != NULL)
 		{
-			char* tmp = NULL;
+			tmpstr1 = string_resub(">Writers:</h4>", "</div>", tmpstr, 0);
 
-			(*first)->writer = string_resub("<h5>Drehbuchautor", "</div>", tmpstr, 0);
-			tmp = (*first)->writer;
-			(*first)->writer = string_resub("<div class=\"info-content\">", "</div>", (*first)->writer, 0);
-			free(tmp); tmp = (*first)->writer;
-			(*first)->writer = string_resub(";\">", "</a>", (*first)->writer, 0);
-			free(tmp); tmp = NULL;
-			(*first)->writer = string_decode((*first)->writer, 1);
+			while(ostrstr(tmpstr1, "\"name\"") != NULL)
+			{
+				tmpstr2 = string_resub("\"name\">", "</span>", tmpstr1, 0);
+				tmpstr1 = string_replace("\"name\">", "", tmpstr1, 1);
+				if((*first)->writer != NULL && tmpstr2 != NULL)
+					(*first)->writer = ostrcat((*first)->writer, ",", 1, 0);
+
+				(*first)->writer = ostrcat((*first)->writer, tmpstr2, 1, 0);
+				free(tmpstr2), tmpstr2 = NULL;
+			}
+			free(tmpstr1), tmpstr1 = NULL;
+
 			string_striptags((*first)->writer);
 			string_strip_whitechars((*first)->writer);
 			strstrip((*first)->writer);
 		}
 
-		if(ostrstr(tmpstr, "Regisseur:") != NULL)
+		if((*first)->writer == NULL && ostrstr(tmpstr, ">Writer:</h4>") != NULL)
 		{
-			char* tmp = NULL;
+			tmpstr1 = string_resub(">Writer:</h4>", "</div>", tmpstr, 0);
 
-			(*first)->director = string_resub("Regisseur:", "</div>", tmpstr, 0);
-			tmp = (*first)->director;
-			(*first)->director = string_resub(";\">", "</a><br/>", (*first)->director, 0);
-			free(tmp); tmp = NULL;
-			(*first)->director = string_decode((*first)->director, 1);
+			while(ostrstr(tmpstr1, "\"name\"") != NULL)
+			{
+				tmpstr2 = string_resub("\"name\">", "</span>", tmpstr1, 0);
+				tmpstr1 = string_replace("\"name\">", "", tmpstr1, 1);
+				if((*first)->writer != NULL && tmpstr2 != NULL)
+					(*first)->writer = ostrcat((*first)->writer, ",", 1, 0);
+
+				(*first)->writer = ostrcat((*first)->writer, tmpstr2, 1, 0);
+				free(tmpstr2), tmpstr2 = NULL;
+			}
+			free(tmpstr1), tmpstr1 = NULL;
+
+			string_striptags((*first)->writer);
+			string_strip_whitechars((*first)->writer);
+			strstrip((*first)->writer);
+		}
+
+		if(ostrstr(tmpstr, ">Director:</h4>") != NULL)
+		{
+			tmpstr1 = string_resub(">Director:</h4>", "</div>", tmpstr, 0);
+
+			while(ostrstr(tmpstr1, "\"name\"") != NULL)
+			{
+				tmpstr2 = string_resub("\"name\">", "</span>", tmpstr1, 0);
+				tmpstr1 = string_replace("\"name\">", "", tmpstr1, 1);
+				if((*first)->director != NULL && tmpstr2 != NULL)
+					(*first)->director = ostrcat((*first)->director, ",", 1, 0);
+
+				(*first)->director = ostrcat((*first)->director, tmpstr2, 1, 0);
+				free(tmpstr2), tmpstr2 = NULL;
+			}
+			free(tmpstr1), tmpstr1 = NULL;
+
 			string_striptags((*first)->director);
 			string_strip_whitechars((*first)->director);
 			strstrip((*first)->director);
 		}
-		
-		if(ostrstr(tmpstr, "<h5>Premierendatum:</h5>") != NULL)
-		{
-			char* tmp = NULL;
 
-			(*first)->released = string_resub("<h5>Premierendatum:</h5>", "<a class=", tmpstr, 0);
-			tmp = (*first)->released;
-			(*first)->released = string_resub("<div class=\"info-content\">", "<a class=", (*first)->released, 0);
-			free(tmp); tmp = NULL;
-			(*first)->released = string_decode((*first)->released, 1);
+		if((*first)->director == NULL && ostrstr(tmpstr, ">Directors:</h4>") != NULL)
+		{
+			tmpstr1 = string_resub(">Directors:</h4>", "</div>", tmpstr, 0);
+
+			while(ostrstr(tmpstr1, "\"name\"") != NULL)
+			{
+				tmpstr2 = string_resub("\"name\">", "</span>", tmpstr1, 0);
+				tmpstr1 = string_replace("\"name\">", "", tmpstr1, 1);
+				if((*first)->director != NULL && tmpstr2 != NULL)
+					(*first)->director = ostrcat((*first)->director, ",", 1, 0);
+
+				(*first)->director = ostrcat((*first)->director, tmpstr2, 1, 0);
+				free(tmpstr2), tmpstr2 = NULL;
+			}
+			free(tmpstr1), tmpstr1 = NULL;
+
+			string_striptags((*first)->director);
+			string_strip_whitechars((*first)->director);
+			strstrip((*first)->director);
+		}
+
+		if((*first)->director == NULL && ostrstr(tmpstr, "<b>Director:</b>") != NULL)
+		{
+			(*first)->director = string_resub("<b>Director:</b>", "</div>", tmpstr, 0);
+			string_striptags((*first)->director);
+			string_strip_whitechars((*first)->director);
+			strstrip((*first)->director);
+		}
+
+		if((*first)->director == NULL && ostrstr(tmpstr, ">Creator:</h4>") != NULL)
+		{
+			tmpstr1 = string_resub(">Creator:</h4>", "</div>", tmpstr, 0);
+
+			while(ostrstr(tmpstr1, "\"name\"") != NULL)
+			{
+				tmpstr2 = string_resub("\"name\">", "</span>", tmpstr1, 0);
+				tmpstr1 = string_replace("\"name\">", "", tmpstr1, 1);
+				if((*first)->director != NULL && tmpstr2 != NULL)
+					(*first)->director = ostrcat((*first)->director, ",", 1, 0);
+
+				(*first)->director = ostrcat((*first)->director, tmpstr2, 1, 0);
+				free(tmpstr2), tmpstr2 = NULL;
+			}
+			free(tmpstr1), tmpstr1 = NULL;
+
+			string_striptags((*first)->director);
+			string_strip_whitechars((*first)->director);
+			strstrip((*first)->director);
+		}
+
+		if((*first)->director == NULL && ostrstr(tmpstr, ">Creators:</h4>") != NULL)
+		{
+			tmpstr1 = string_resub(">Creators:</h4>", "</div>", tmpstr, 0);
+
+			while(ostrstr(tmpstr1, "\"name\"") != NULL)
+			{
+				tmpstr2 = string_resub("\"name\">", "</span>", tmpstr1, 0);
+				tmpstr1 = string_replace("\"name\">", "", tmpstr1, 1);
+				if((*first)->director != NULL && tmpstr2 != NULL)
+					(*first)->director = ostrcat((*first)->director, ",", 1, 0);
+
+				(*first)->director = ostrcat((*first)->director, tmpstr2, 1, 0);
+				free(tmpstr2), tmpstr2 = NULL;
+			}
+			free(tmpstr1), tmpstr1 = NULL;
+
+			string_striptags((*first)->director);
+			string_strip_whitechars((*first)->director);
+			strstrip((*first)->director);
+		}
+
+		if(ostrstr(tmpstr, ">Release Date:</h4>") != NULL)
+		{
+			(*first)->released = string_resub(">Release Date:</h4>", "<span", tmpstr, 0);
 			string_striptags((*first)->released);
 			string_strip_whitechars((*first)->released);
 			strstrip((*first)->released);
 		}
 
-		if(ostrstr(tmpstr, "<h3>Besetzung</h3>") != NULL)
+		if(ostrstr(tmpstr, ">Star:</h4>") != NULL)
 		{
-			char* tmp = NULL;
+			tmpstr1 = string_resub(">Star:</h4>", "</div>", tmpstr, 0);
 
-			(*first)->actors = string_resub("<h3>Besetzung</h3>&nbsp;", "</td></tr></table>", tmpstr, 0);
-			tmp = (*first)->actors;
-			(*first)->actors = string_resub("<div class=\"info-content block\"><table class=\"cast\">", "</a></td></tr>", (*first)->actors, 0);
-			free(tmp); tmp = NULL;
-			(*first)->actors = string_replace("...", "als", (*first)->actors, 1);
-			(*first)->actors = string_decode((*first)->actors,1);
+			while(ostrstr(tmpstr1, "\"name\"") != NULL)
+			{
+				tmpstr2 = string_resub("\"name\">", "</span>", tmpstr1, 0);
+				tmpstr1 = string_replace("\"name\">", "", tmpstr1, 1);
+				if((*first)->actors != NULL && tmpstr2 != NULL)
+					(*first)->actors = ostrcat((*first)->actors, ",", 1, 0);
+
+				(*first)->actors = ostrcat((*first)->actors, tmpstr2, 1, 0);
+				free(tmpstr2), tmpstr2 = NULL;
+			}
+			free(tmpstr1), tmpstr1 = NULL;
+
 			string_striptags((*first)->actors);
 			string_strip_whitechars((*first)->actors);
 			strstrip((*first)->actors);
 		}
 
-		if(ostrstr(tmpstr, "<a name=\"poster\" href=\"") != NULL)
+		if(ostrstr(tmpstr, ">Stars:</h4>") != NULL)
 		{
-			char* tmp = NULL;
+			tmpstr1 = string_resub(">Stars:</h4>", "</div>", tmpstr, 0);
 
-			(*first)->thumb = string_resub("<a name=\"poster\" href=\"", "\" /></a>", tmpstr, 0);
-			tmp = (*first)->thumb;
-			(*first)->thumb = string_resub("src=\"", "\" /></a>", (*first)->thumb, 0);
-			free(tmp); tmp = NULL;
+			while(ostrstr(tmpstr1, "\"name\"") != NULL)
+			{
+				tmpstr2 = string_resub("\"name\">", "</span>", tmpstr1, 0);
+				tmpstr1 = string_replace("\"name\">", "", tmpstr1, 1);
+				if((*first)->actors != NULL && tmpstr2 != NULL)
+					(*first)->actors = ostrcat((*first)->actors, ",", 1, 0);
+
+				(*first)->actors = ostrcat((*first)->actors, tmpstr2, 1, 0);
+				free(tmpstr2), tmpstr2 = NULL;
+			}
+			free(tmpstr1), tmpstr1 = NULL;
+
+			string_striptags((*first)->actors);
+			string_strip_whitechars((*first)->actors);
+			strstrip((*first)->actors);
+		}
+
+		if(ostrstr(tmpstr, "\"description\">") != NULL)
+		{
+			tmpstr1 = string_resub("\"description\">", "</div>", tmpstr, 0);
+			(*first)->plot = string_resub("<p>", "</p>", tmpstr1, 0);
+		}
+	
+		if(ostrstr(tmpstr, "<meta property='og:image' content=\"") != NULL)
+		{
+			(*first)->thumb = string_resub("<meta property='og:image' content=\"", "\"", tmpstr, 0);
 		}
 
 		if(ostrstr(tmpstr, "/media/rm") != NULL)
@@ -337,13 +477,15 @@ current not working
 		}
 	}
 
-	if(*first != NULL && (*first)->id == NULL)
+//	if(*first != NULL && (*first)->id == NULL)
+	if(*first != NULL && (*first)->id != NULL)
 	{
 		tmpsearch = ostrcat("/title/tt", NULL, 0, 0);
 		tmpsearch = ostrcat(tmpsearch, (*first)->id, 1, 0);
 		tmpsearch = ostrcat(tmpsearch, "/plotsummary", 1, 0);
 
 		tmpstr = gethttp("www.imdb.de", tmpsearch, 80, NULL, NULL, 5000, NULL, 0);
+//		writesys("/var/usr/local/share/titan/plugins/imdb/tmpstrplot", tmpstr, 0);
 		
 		debug(133, "tmpsearch: %s", tmpsearch);
 					
@@ -352,17 +494,21 @@ current not working
 
 	if(*first != NULL && tmpstr != NULL)
 	{
-		if(ostrstr(tmpstr, "swiki.2.1") != NULL)
+		if(ostrstr(tmpstr, "<p class=\"plotSummary\">") != NULL)
 		{
-			(*first)->plot = string_resub("<div id=\"swiki.2.1\">", "</div>", tmpstr, 0);
-			(*first)->plot = string_decode((*first)->plot, 1);
-			string_striptags((*first)->plot);
-			string_strip_whitechars((*first)->plot);
-			strstrip((*first)->plot);
+			tmpstr1 = string_resub("<p class=\"plotSummary\">", "<span", tmpstr, 0);
+			if(tmpstr1 != NULL)
+			{
+				(*first)->plot = ostrcat((*first)->plot, tmpstr1, 1, 0);
+				string_striptags((*first)->plot);
+				string_strip_whitechars((*first)->plot);
+				strstrip((*first)->plot);
+			}
+			free(tmpstr1), tmpstr1 = NULL;
 		}
 		free(tmpstr), tmpstr = NULL;
 	}
-
+		
 	if(flag2 == 0 && *first != NULL && (*first)->id != NULL)
 	{
 		if((*first)->poster != NULL)
