@@ -20,6 +20,9 @@ void screenmediadbsettings()
 	addchoicebox(mediadbpath, "/media/hdd/.mediadb", "/media/hdd/.mediadb");
 	if(file_exist("/tmp/.swapextensionsdev") == 1)
 		addchoicebox(mediadbpath, "/var/swap/.mediadb", "/var/swap/.mediadb");
+	if(checkbox("ATEMIO520") == 1)
+		addchoicebox(mediadbpath, "/mnt/swapextensions/.mediadb", "/mnt/swapextensions/.mediadb");
+
 	setchoiceboxselection(mediadbpath, getconfig("mediadbpath", NULL));
 
 	addchoicebox(mediadbscandelall, "0", _("no"));
