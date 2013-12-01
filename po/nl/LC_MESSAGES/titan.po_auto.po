@@ -416,7 +416,9 @@ msgstr ""
 #: harddisk.h:650 harddisk.h:652 harddisk.h:654 harddisk.h:706 youtube.h:197
 #: harddisk.h:623 harddisk.h:647 harddisk.h:656 harddisk.h:710 harddisk.h:624
 #: harddisk.h:632 harddisk.h:661 harddisk.h:663 harddisk.h:665 harddisk.h:708
-#: harddisk.h:724 timeshift.h:116 timeshift.h:159 timeshift.h:166
+#: harddisk.h:724 timeshift.h:116 timeshift.h:159 timeshift.h:166 imdb.h:691
+#: mc_main.h:202 mc_videoplayer.h:734 mc_videoplayer.h:769
+#: mc_videoplayer.h:871 mc_videoplayer.h:887 tmdb.h:759 tmdb.h:922
 msgid "Message"
 msgstr ""
 
@@ -551,7 +553,9 @@ msgstr ""
 #: harddisk.h:381 harddisk.h:433 harddisk.h:623 harddisk.h:647 harddisk.h:656
 #: harddisk.h:710 harddisk.h:921 harddisk.h:624 harddisk.h:632 harddisk.h:661
 #: harddisk.h:663 harddisk.h:665 harddisk.h:708 harddisk.h:724 harddisk.h:935
-#: timeshift.h:116 timeshift.h:159 timeshift.h:166
+#: timeshift.h:116 timeshift.h:159 timeshift.h:166 imdb.h:691 mc_main.h:202
+#: mc_videoplayer.h:734 mc_videoplayer.h:769 mc_videoplayer.h:871
+#: mc_videoplayer.h:887 tmdb.h:759 tmdb.h:922
 msgid "OK"
 msgstr ""
 
@@ -688,7 +692,9 @@ msgstr ""
 #: harddisk.h:381 harddisk.h:433 harddisk.h:623 harddisk.h:647 harddisk.h:656
 #: harddisk.h:710 harddisk.h:921 harddisk.h:624 harddisk.h:632 harddisk.h:661
 #: harddisk.h:663 harddisk.h:665 harddisk.h:708 harddisk.h:724 harddisk.h:935
-#: timeshift.h:116 timeshift.h:159 timeshift.h:166
+#: timeshift.h:116 timeshift.h:159 timeshift.h:166 imdb.h:691 mc_main.h:202
+#: mc_videoplayer.h:734 mc_videoplayer.h:769 mc_videoplayer.h:871
+#: mc_videoplayer.h:887 tmdb.h:759 tmdb.h:922
 msgid "EXIT"
 msgstr ""
 
@@ -1182,7 +1188,7 @@ msgstr ""
 #: mc_global.h:1010 mc_pictureplayer.h:95 mc_pictureplayer.h:232
 #: mc_pictureplayer.h:358 mc_pictureplayer.h:451 mc_videoplayer.h:733
 #: mc_videoplayer.h:869 play.h:1364 play.h:1372 play.h:1361 play.h:1365
-#: play.h:1369
+#: play.h:1369 mc_videoplayer.h:734 mc_videoplayer.h:871
 msgid "Can't start playback !"
 msgstr ""
 
@@ -1924,7 +1930,7 @@ msgstr ""
 msgid "FAIL Flash/Nand (/mnt)"
 msgstr ""
 
-#: imdbapi.h:200 imdb.h:480 tmdb.h:784
+#: imdbapi.h:200 imdb.h:480 tmdb.h:784 imdb.h:691 tmdb.h:759
 msgid "Error, Internet Connection not found"
 msgstr ""
 
@@ -2042,6 +2048,7 @@ msgstr ""
 #: mc_audioplayer.h:405 mc_audioplayer.h:555 mc_global.h:1071
 #: mc_pictureplayer.h:147 mc_pictureplayer.h:312 mc_videoplayer.h:423
 #: mc_videoplayer.h:653 plugins_mc_skin.xml.h:47 skins_mc_skin.xml.h:47
+#: mc_videoplayer.h:654
 msgid "Repeat"
 msgstr ""
 
@@ -2049,18 +2056,19 @@ msgstr ""
 #: mc_global.h:336 mc_global.h:408 mc_pictureplayer.h:265
 #: mc_pictureplayer.h:310 mc_pictureplayer.h:420 mc_videoplayer.h:580
 #: mc_videoplayer.h:651 mc_videoplayer.h:835 plugins_mc_skin.xml.h:27
-#: skins_mc_skin.xml.h:27
+#: skins_mc_skin.xml.h:27 mc_videoplayer.h:652 mc_videoplayer.h:837
 msgid "Filelist-Mode"
 msgstr ""
 
 #: mc_audioplayer.h:554 mc_global.h:552 mc_global.h:580 mc_global.h:1066
 #: mc_pictureplayer.h:311 mc_videoplayer.h:652 plugins_mc_skin.xml.h:46
-#: skins_mc_skin.xml.h:46
+#: skins_mc_skin.xml.h:46 mc_videoplayer.h:653
 msgid "Random"
 msgstr ""
 
 #: mc_audioplayer.h:575 mc_global.h:269 mc_global.h:692 mc_global.h:925
 #: mc_global.h:939 mc_pictureplayer.h:331 mc_videoplayer.h:693
+#: mc_videoplayer.h:694
 msgid "Playlist-Mode"
 msgstr ""
 
@@ -2106,7 +2114,7 @@ msgstr ""
 msgid "comming soon"
 msgstr ""
 
-#: mc_main.h:201 panel_main.h:29 panel_main.h:135
+#: mc_main.h:201 panel_main.h:29 panel_main.h:135 mc_main.h:202
 msgid "Menu not implemented !"
 msgstr ""
 
@@ -2163,7 +2171,7 @@ msgstr ""
 msgid "skin (picmem jpg)"
 msgstr ""
 
-#: mc_videoplayer.h:885 player.h:97
+#: mc_videoplayer.h:885 player.h:97 mc_videoplayer.h:887
 msgid "Start at last position ?"
 msgstr ""
 
@@ -5096,7 +5104,7 @@ msgid ""
 "Please install it"
 msgstr ""
 
-#: tmdb.h:947
+#: tmdb.h:947 tmdb.h:922
 msgid "Error, found result without imdbid we can't this save in MediaDB"
 msgstr ""
 
@@ -5417,4 +5425,8 @@ msgstr ""
 msgid ""
 "ERROR\n"
 "partition could not be created"
+msgstr ""
+
+#: mc_videoplayer.h:769
+msgid "Found VIDEO_TS Folder, start with DVD-Player ?"
 msgstr ""

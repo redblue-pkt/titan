@@ -830,7 +830,9 @@ msgstr ""
 #: global.h:6320 harddisk.h:637 harddisk.h:645 harddisk.h:654 harddisk.h:706
 #: youtube.h:197 harddisk.h:623 harddisk.h:647 harddisk.h:656 harddisk.h:710
 #: harddisk.h:632 harddisk.h:661 harddisk.h:663 harddisk.h:665 harddisk.h:708
-#: harddisk.h:724 timeshift.h:116 timeshift.h:159 timeshift.h:166
+#: harddisk.h:724 timeshift.h:116 timeshift.h:159 timeshift.h:166 tmdb.h:759
+#: tmdb.h:922 imdb.h:691 mc_main.h:202 mc_videoplayer.h:769
+#: mc_videoplayer.h:871 mc_videoplayer.h:887
 msgid "Message"
 msgstr ""
 
@@ -1152,7 +1154,9 @@ msgstr ""
 #: harddisk.h:381 harddisk.h:433 harddisk.h:623 harddisk.h:647 harddisk.h:656
 #: harddisk.h:710 harddisk.h:921 harddisk.h:632 harddisk.h:661 harddisk.h:663
 #: harddisk.h:665 harddisk.h:708 harddisk.h:724 harddisk.h:935 timeshift.h:116
-#: timeshift.h:159 timeshift.h:166
+#: timeshift.h:159 timeshift.h:166 tmdb.h:759 tmdb.h:922 imdb.h:691
+#: mc_main.h:202 mc_videoplayer.h:769 mc_videoplayer.h:871
+#: mc_videoplayer.h:887
 msgid "OK"
 msgstr ""
 
@@ -1474,7 +1478,9 @@ msgstr ""
 #: harddisk.h:381 harddisk.h:433 harddisk.h:623 harddisk.h:647 harddisk.h:656
 #: harddisk.h:710 harddisk.h:921 harddisk.h:632 harddisk.h:661 harddisk.h:663
 #: harddisk.h:665 harddisk.h:708 harddisk.h:724 harddisk.h:935 timeshift.h:116
-#: timeshift.h:159 timeshift.h:166
+#: timeshift.h:159 timeshift.h:166 tmdb.h:759 tmdb.h:922 imdb.h:691
+#: mc_main.h:202 mc_videoplayer.h:769 mc_videoplayer.h:871
+#: mc_videoplayer.h:887
 msgid "EXIT"
 msgstr ""
 
@@ -2299,7 +2305,7 @@ msgstr ""
 #: mc_videoplayer.h:652 mc_videoplayer.h:836 plugins_mc_skin.xml.h:27
 #: skins_mc_skin.xml.h:27 mc_audioplayer.h:510 mc_audioplayer.h:553
 #: mc_audioplayer.h:673 mc_videoplayer.h:580 mc_videoplayer.h:651
-#: mc_videoplayer.h:835
+#: mc_videoplayer.h:835 mc_videoplayer.h:837
 msgid "Filelist-Mode"
 msgstr ""
 
@@ -2356,7 +2362,7 @@ msgstr ""
 #: mc_pictureplayer.h:358 mc_pictureplayer.h:451 mc_videoplayer.h:734
 #: mc_videoplayer.h:870 play.h:1350 play.h:1358 mc_audioplayer.h:594
 #: mc_audioplayer.h:697 mc_videoplayer.h:733 mc_videoplayer.h:869 play.h:1364
-#: play.h:1372 play.h:1361 play.h:1365 play.h:1369
+#: play.h:1372 play.h:1361 play.h:1365 play.h:1369 mc_videoplayer.h:871
 msgid "Can't start playback !"
 msgstr ""
 
@@ -2499,7 +2505,7 @@ msgid "comming soon"
 msgstr ""
 
 #: mc_main.h:172 panel_main.h:29 panel_main.h:243 mc_main.h:146 mc_main.h:144
-#: mc_main.h:201 panel_main.h:135
+#: mc_main.h:201 panel_main.h:135 mc_main.h:202
 msgid "Menu not implemented !"
 msgstr ""
 
@@ -9775,7 +9781,7 @@ msgstr ""
 msgid "Harddisk Sleep"
 msgstr ""
 
-#: imdbapi.h:200 imdb.h:480 tmdb.h:784
+#: imdbapi.h:200 imdb.h:480 tmdb.h:784 tmdb.h:759 imdb.h:691
 msgid "Error, Internet Connection not found"
 msgstr ""
 
@@ -9847,7 +9853,7 @@ msgstr ""
 msgid "best"
 msgstr ""
 
-#: mc_videoplayer.h:886 player.h:97 mc_videoplayer.h:885
+#: mc_videoplayer.h:886 player.h:97 mc_videoplayer.h:885 mc_videoplayer.h:887
 msgid "Start at last position ?"
 msgstr ""
 
@@ -10855,7 +10861,7 @@ msgid ""
 "Please install it"
 msgstr ""
 
-#: tmdb.h:947
+#: tmdb.h:947 tmdb.h:922
 msgid "Error, found result without imdbid we can't this save in MediaDB"
 msgstr ""
 
@@ -11607,4 +11613,8 @@ msgstr ""
 msgid ""
 "ERROR\n"
 "partition could not be created"
+msgstr ""
+
+#: mc_videoplayer.h:769
+msgid "Found VIDEO_TS Folder, start with DVD-Player ?"
 msgstr ""
