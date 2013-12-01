@@ -986,7 +986,7 @@ void screenmc_videoplayer()
 	clearscreen(blackscreen);
 	clearscreen(loadmediadb);
 
-	system("umount -a -f -t fuse.rarfs,iso9660,fuse.djmount,fuse.fusesmb,ftpfs");
+	system("umount -a -f -t fuse.rarfs,iso9660,fuse.djmount,fuse.fusesmb,fuse.curlftpfs");
 
 	writevfdmenu("Mediacenter");
 	debug(50, "closed");
