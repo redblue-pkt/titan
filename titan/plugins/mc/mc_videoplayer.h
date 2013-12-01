@@ -90,8 +90,8 @@ void screenmc_videoplayer()
 
 	char* savecmd = NULL;
 
-	if(!file_exist("/mnt/swapetensions/player"))   
-		mkdir("/mnt/swapetensions/player", 0777);
+	if(!file_exist("/mnt/swapextensions/player"))   
+		mkdir("/mnt/swapextensions/player", 0777);
 	
 	int refresh = 0;			
 	while(1)
@@ -550,7 +550,7 @@ void screenmc_videoplayer()
 			if(status.play == 1 && playertype == 0)
 			{
 				char* tmpfilename = ostrcat(filename, NULL, 0, 0);
-				char* fileseek = ostrcat("/mnt/swapetensions/player/", basename(tmpfilename), 0, 0);
+				char* fileseek = ostrcat("/mnt/swapextensions/player/", basename(tmpfilename), 0, 0);
 				fileseek = ostrcat(fileseek, ".se", 0, 0);
 				FILE* fbseek = fopen(fileseek, "w");
 				if(fbseek != NULL)
@@ -623,7 +623,7 @@ void screenmc_videoplayer()
 			if(status.play == 1 && playertype == 0)
 			{
 				char* tmpfilename = ostrcat(filename, NULL, 0, 0);
-				char* fileseek = ostrcat("/mnt/swapetensions/player/", basename(tmpfilename), 0, 0);
+				char* fileseek = ostrcat("/mnt/swapextensions/player/", basename(tmpfilename), 0, 0);
 				fileseek = ostrcat(fileseek, ".se", 0, 0);
 				FILE* fbseek = fopen(fileseek, "w");
 				if(fbseek != NULL)
@@ -876,7 +876,7 @@ void screenmc_videoplayer()
 						if(playertype == 0 && getconfigint("showlastpos", NULL) == 1)
 						{
 							char* tmpfilename = ostrcat(filename, NULL, 0, 0);
-							char* fileseek = ostrcat("/mnt/swapetensions/player/", basename(tmpfilename), 0, 0);
+							char* fileseek = ostrcat("/mnt/swapextensions/player/", basename(tmpfilename), 0, 0);
 							fileseek = ostrcat(fileseek, ".se", 0, 0);
 	
 							FILE* fbseek = fopen(fileseek, "r");
@@ -931,7 +931,7 @@ void screenmc_videoplayer()
 			if(status.play == 1)
 			{
 				char* tmpfilename = ostrcat(filename, NULL, 0, 0);
-				char* fileseek = ostrcat("/mnt/swapetensions/player/", basename(tmpfilename), 0, 0);
+				char* fileseek = ostrcat("/mnt/swapextensions/player/", basename(tmpfilename), 0, 0);
 				fileseek = ostrcat(fileseek, ".se", 0, 0);
 				unlink(fileseek);
 			
