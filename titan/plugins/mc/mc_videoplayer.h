@@ -642,6 +642,7 @@ void screenmc_videoplayer()
 			drawscreen(blackscreen, 0, 0);
 			drawscreen(loadmediadb, 0, 0);
 			sleep(2);
+			singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
 
 			// show skin
 			setfbtransparent(255);
@@ -750,6 +751,9 @@ void screenmc_videoplayer()
 			}
 			else if(filelist->select != NULL && filelist->select->input != NULL)
 			{
+
+				char* tmpfilename = ostrcat(filelistpath->text, NULL, 0, 0);			
+
 				// workaround dont open folder on rcchup
 				if(skip == 1)
 				{
@@ -757,16 +761,12 @@ void screenmc_videoplayer()
 					writerc(getrcconfigint("rcok", NULL));
 					skip = 0;
 				}
-				else
+				else if(!ostrncmp("video_ts", string_tolower(basename(tmpfilename)), 8))
 				{
-					char* checkdvd = ostrcat(filelist->select->name, NULL, 0, 0);
-					string_tolower(checkdvd);
-					printf("1\n");
-					if(ostrcmp(checkdvd, "video_ts") == 0)
+					struct skin* dvdplayer = getplugin("DVD Player");
+					if(dvdplayer != NULL)
 					{
-						printf("found video_ts folder\n");
-						struct skin* dvdplayer = getplugin("DVD Player");
-						if(dvdplayer != NULL)
+						if(textbox(_("Message"), _("Found VIDEO_TS Folder, start with DVD-Player ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0) == 1)
 						{
 							void (*startplugin)(char*, int);
 							startplugin = dlsym(dvdplayer->pluginhandle, "screendvdplay");
@@ -778,6 +778,8 @@ void screenmc_videoplayer()
 								startplugin(filename,0);
 							}
 						}
+						drawscreen(apskin, 0, 0);
+						singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
 					}
 					else
 					{
@@ -793,8 +795,8 @@ void screenmc_videoplayer()
 	
 						free(checkautoscan), checkautoscan = NULL;
 					}
-					free(checkdvd), checkdvd = NULL;
 				}
+				free(tmpfilename), tmpfilename = NULL;
 			}
 			else if(filelist->select != NULL && filelist->select->input == NULL)
 			{
@@ -983,7 +985,9 @@ void screenmc_videoplayer()
 
 	clearscreen(blackscreen);
 	clearscreen(loadmediadb);
-			
+
+	system("umount -a -f -t fuse.rarfs,iso9660,fuse.djmount,fuse.fusesmb,ftpfs");
+
 	writevfdmenu("Mediacenter");
 	debug(50, "closed");
 }
