@@ -28,8 +28,13 @@ void screenkeyactions(int key, int flag)
 			{
 				if(child->del == PLUGINDELMARK && (status.security == 1 || (status.security == 0 && checkpluginskip(child->name) == 0)))
 				{
-					addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);
-					debug(60, "key: %s", child->name);
+					if(ostrcmp("TMDb", child->name) == 1 && ostrcmp("Reader Config", child->name) == 1)
+					{
+						addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);
+						debug(60, "key: %s", child->name);
+					}
+					else
+						debug(60, "skip key: %s", child->name);					
 				}
 				child = child->next;
 			}
