@@ -1574,6 +1574,7 @@ int checkpluginskip(char* name)
 	else if(ostrcmp(name, "TopfieldVFD") == 0) return 1;
 	else if(ostrcmp(name, "Weather") == 0) return 1;
 	else if(ostrcmp(name, "zapback (Werbezapper)") == 0) return 1;	
+	else if(ostrcmp(name, "Reader Config") == 0) return 1;
 
 	return 0;
 }
@@ -1634,6 +1635,7 @@ void setskinnodeslocked(int flag)
 			else if(ostrcmp("weather", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("wins3", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("zapback_main", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("Reader Config", child->name) == 0) child->locked = flag;
 
 			if(status.expertmodus >= 11 && status.security == 1)
 				tmpflag = 0;
@@ -1642,6 +1644,9 @@ void setskinnodeslocked(int flag)
 
 // disable tmdb manual start
 			if(ostrcmp("TMDb", child->name) == 0) child->locked = 1;
+
+// disable Reader Config manual start
+			if(ostrcmp("Reader Config", child->name) == 0) child->locked = 1;
 
 			// dont show this menus
 			if(checkbox("ATEMIO510") == 1)
