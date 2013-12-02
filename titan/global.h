@@ -1640,6 +1640,9 @@ void setskinnodeslocked(int flag)
 			else
 				tmpflag = 1;
 
+// disable tmdb manual start
+			if(ostrcmp("TMDb", child->name) == 0) child->locked = 1;
+
 			// dont show this menus
 			if(checkbox("ATEMIO510") == 1)
 			{
