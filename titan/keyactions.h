@@ -28,11 +28,11 @@ void screenkeyactions(int key, int flag)
 			{
 				if(child->del == PLUGINDELMARK && (status.security == 1 || (status.security == 0 && checkpluginskip(child->name) == 0)))
 				{
-					if(ostrcmp("TMDb", child->name) == 1)
+					if(!ostrncmp("TMDb", child->name, 4))
 					{
 						debug(60, "skip key: %s", child->name);			
 					}
-					else if(ostrcmp("Reader Config", child->name) == 1)
+					else if(!ostrncmp("Reader Config", child->name, 13))
 					{
 						debug(60, "skip key: %s", child->name);			
 					}
