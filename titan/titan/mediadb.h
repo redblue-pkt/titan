@@ -2257,7 +2257,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				plot = ostrcat(plot, cmd, 1, 0);
 				free(cmd); cmd = NULL;
 
-				if(file_exist("/tmp/screenshot_backdrop1.jpg")
+				if(file_exist("/tmp/screenshot_backdrop1.jpg"))
 					mediadbcprec(timestamp, "_backdrop1.jpg");
 				else
 					mediadbffmpeg1(file, path, timestamp, logfile);
@@ -2321,12 +2321,12 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				free(buf); buf = NULL;
 */
 
-				if(file_exist("/tmp/screenshot_thumb.jpg")
+				if(file_exist("/tmp/screenshot_thumb.jpg"))
 					mediadbcprec(timestamp, "_thumb.jpg");
 				else
 					mediadbffmpeg2(file, path, timestamp, logfile);
 
-				if(file_exist("/tmp/screenshot_cover.jpg")
+				if(file_exist("/tmp/screenshot_cover.jpg"))
 					mediadbcprec(timestamp, "_cover.jpg");
 				else
 					mediadbffmpeg3(file, path, timestamp, logfile);
