@@ -1608,7 +1608,7 @@ void webgetshoot(char* param, int fmt)
 	}
 */
 // use new grab osd + video
-	cmd = ostrcat("/sbin/grab -j 40 -r 960", NULL, 1, 0);
+	cmd = ostrcat("/sbin/grab -j 100 -r 960", NULL, 1, 0);
 
 	if(cmd != NULL)
 		system(cmd);
