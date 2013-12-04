@@ -1585,10 +1585,10 @@ void webgetshoot(char* param, int fmt)
 {
 	char* cmd = NULL, *tmpstr = NULL;
 
+/*
 	if(status.aktservice->channel != NULL)
 	{
 		m_lock(&status.waitrcmutex, 24);
-
 		cmd = ostrcat(cmd, "grab.sh ", 1, 0);
 		cmd = ostrcat(cmd, param, 1, 0);
 		cmd = ostrcat(cmd, " ", 1, 0);
@@ -1602,9 +1602,13 @@ void webgetshoot(char* param, int fmt)
 		cmd = ostrcat(cmd, tmpstr, 1, 0);
 		free(tmpstr); tmpstr = NULL;
 		cmd = ostrcat(cmd, " titan", 1, 0);
+		cmd = ostrcat("/sbin/grab -o -j 40 -r 960", NULL, 1, 0);
 
 		m_unlock(&status.waitrcmutex, 24);
 	}
+*/
+// use new grab osd + video
+	cmd = ostrcat("/sbin/grab -o -j 40 -r 960", NULL, 1, 0);
 
 	if(cmd != NULL)
 		system(cmd);
