@@ -322,7 +322,12 @@ void screenmc_audioplayer()
 			}
 		}
 
-		if(rcret == getrcconfigint("rc1", NULL))
+		if (rcret == getrcconfigint("rcrecord", NULL))
+		{
+			system("grab -j 100");
+			textbox(_("Message"), _("Shooting Background done !\nSave Screenshoot Path: /tmp/screenshot.jpg"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
+		}
+		else if(rcret == getrcconfigint("rc1", NULL))
 		{
 			if((status.play == 1) || (status.playspeed != 0))
 				playrcjumpr(filename, NULL, 10, &playinfobarstatus, &playinfobarcount, playertype, flag);
