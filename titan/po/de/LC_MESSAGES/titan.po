@@ -4220,3 +4220,6 @@ msgstr "warten Sie 10 Sekunden"
 
 msgid "Here you can configure the smartcard readers. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
 msgstr "Hier können Sie Ihre Smartkarten konfigurieren.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
+
+msgid "Found VIDEO_TS Folder, start with DVD-Player ?"
+msgstr "DVD Strucktur gefunden, wollen sie diese mit dem DVD-Player starten ?"
