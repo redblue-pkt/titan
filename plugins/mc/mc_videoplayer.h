@@ -766,7 +766,7 @@ void screenmc_videoplayer()
 					struct skin* dvdplayer = getplugin("DVD Player");
 					if(dvdplayer != NULL)
 					{
-						if(textbox(_("Message"), _("Found VIDEO_TS Folder, start with DVD-Player ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0) == 1)
+						if(textbox(_("Message"), _("Found VIDEO_TS Folder, start with DVD-Player ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 5, 0) == 1)
 						{
 							void (*startplugin)(char*, int);
 							startplugin = dlsym(dvdplayer->pluginhandle, "screendvdplay");
