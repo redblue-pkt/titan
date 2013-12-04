@@ -1939,7 +1939,7 @@ int mediadbcp(char* timestamp, char* poster)
 
 	if(timestamp == NULL || poster == NULL) return 1;
 
-	cmd = ostrcat(cmd, "cp ", 1, 0);
+	cmd = ostrcat(cmd, "cp -a ", 1, 0);
 	cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
 	cmd = ostrcat(cmd, "/", 1, 0);
 	cmd = ostrcat(cmd, timestamp, 1, 0);
@@ -1954,6 +1954,33 @@ int mediadbcp(char* timestamp, char* poster)
 	system(cmd);
 	free(cmd); cmd = NULL;
 
+	return 0;
+}
+
+int mediadbcprec(char* timestamp, char* poster)
+{
+	char* cmd = NULL;
+
+	if(timestamp == NULL || poster == NULL) return 1;
+
+	cmd = ostrcat(cmd, "cp -a /tmp/screenshot", 1, 0);
+	cmd = ostrcat(cmd, poster, 1, 0);
+	cmd = ostrcat(cmd, " ", 1, 0);
+	cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
+	cmd = ostrcat(cmd, "/", 1, 0);
+	cmd = ostrcat(cmd, timestamp, 1, 0);
+	cmd = ostrcat(cmd, poster, 1, 0);
+
+	debug(133, "cmd %s", cmd);
+	system(cmd);
+	free(cmd); cmd = NULL;
+
+	cmd = ostrcat(cmd, "rm -f /tmp/screenshot", 1, 0);
+	cmd = ostrcat(cmd, poster, 1, 0);
+	debug(133, "cmd %s", cmd);
+	system(cmd);
+	free(cmd); cmd = NULL;
+	
 	return 0;
 }
 
@@ -2230,7 +2257,10 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				plot = ostrcat(plot, cmd, 1, 0);
 				free(cmd); cmd = NULL;
 
-				mediadbffmpeg1(file, path, timestamp, logfile);
+				if(file_exist("/tmp/screenshot_backdrop1.jpg")
+					mediadbcprec(timestamp, "_backdrop1.jpg");
+				else
+					mediadbffmpeg1(file, path, timestamp, logfile);
 
 // bilder alle unscharf
 /*
@@ -2291,8 +2321,15 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				free(buf); buf = NULL;
 */
 
-				mediadbffmpeg2(file, path, timestamp, logfile);
-				mediadbffmpeg3(file, path, timestamp, logfile);
+				if(file_exist("/tmp/screenshot_thumb.jpg")
+					mediadbcprec(timestamp, "_thumb.jpg");
+				else
+					mediadbffmpeg2(file, path, timestamp, logfile);
+
+				if(file_exist("/tmp/screenshot_cover.jpg")
+					mediadbcprec(timestamp, "_cover.jpg");
+				else
+					mediadbffmpeg3(file, path, timestamp, logfile);
 
 				mediadbcp(timestamp, "_poster.jpg");
 				mediadbcp(timestamp, "_postermid.jpg");
