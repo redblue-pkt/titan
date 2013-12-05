@@ -174,11 +174,11 @@ void recordwriteepg(char* filename, struct channel* chnode, struct rectimer* rec
 	free(epgfilename);
 }
 
-void createrecthumbthread(struct stimerthread* self, char* dname, char* filename)
+void createrecthumblastthread(struct stimerthread* self, char* dname, char* filename)
 {
 	if(status.mediadbthread != NULL || self == NULL) return;
 
-	debug(777, "mediadb scanthread (record thumb) start");
+	debug(777, "createrecthumbfirst thread (record thumb) start");
 
 	status.mediadbthreadstatus = 1;
 	status.mediadbthread = self;
@@ -203,12 +203,71 @@ void createrecthumbthread(struct stimerthread* self, char* dname, char* filename
 	status.mediadbthread = NULL;
 	status.mediadbthreadstatus = 0;
 
-	debug(777, "mediadb scanthread (record thumb) end");
+	debug(777, "createrecthumbfirst thread (record thumb) end");
+}
+
+void createrecthumbfirstthread(struct stimerthread* self, char* dname, char* filename)
+{
+	debug(777, "createrecthumblast thread (record thumb) start");
+	
+	int count = 0;
+
+	while(count < 600)
+	{
+		sleep(1);
+		count++;
+	}
+
+	if(status.recording > 0)
+	{
+		char* cmd = NULL;
+		cmd = ostrcat("/sbin/grab -j 100 -r 960 /tmp/screenshot_backdrop1.jpg", NULL, 0, 0);
+	
+		if(cmd != NULL)
+			system(cmd);
+		debug(777, "cmd: %s", cmd);
+
+		free(cmd);
+	}
+
+	count = 0;
+	while(count < 60)
+	{
+		sleep(1);
+		count++;
+	}
+
+	if(status.recording > 0)
+	{
+		char* cmd = NULL;
+		cmd = ostrcat("/sbin/grab -j 100 -r 500:400 /tmp/screenshot_cover.jpg", NULL, 0, 0);
+	
+		if(cmd != NULL)
+			system(cmd);
+		debug(777, "cmd: %s", cmd);
+
+		free(cmd);
+	}
+
+	if(status.recording > 0)
+	{
+		char* cmd = NULL;
+		cmd = ostrcat("/sbin/grab -j 100 -r 160:120 /tmp/screenshot_thumb.jpg", NULL, 0, 0);
+	
+		if(cmd != NULL)
+			system(cmd);
+		debug(777, "cmd: %s", cmd);
+
+		free(cmd);
+	}
+
+	debug(777, "createrecthumblast thread (record thumb) end");
+
 }
 
 void recordstop(struct service* node, int ret)
 {
-	struct stimerthread *recthumbthread = NULL;
+	struct stimerthread *recthumblastthread = NULL;
 	struct rectimer* rectimernode = NULL;
 	int afterevent = 1, type = -1;
 
@@ -252,7 +311,7 @@ void recordstop(struct service* node, int ret)
 		deltranspondertunablestatus();
 
 		if(dname != NULL && filename != NULL && getconfigint("recordpicture", NULL) == 1)
-			recthumbthread = addtimer(&createrecthumbthread, START, 1000, 1, (void*)ostrcat(dname, NULL, 0, 0), (void*)ostrcat(filename, NULL, 0, 0), NULL);
+			recthumblastthread = addtimer(&createrecthumblastthread, START, 1000, 1, (void*)ostrcat(dname, NULL, 0, 0), (void*)ostrcat(filename, NULL, 0, 0), NULL);
 
 		free(dname); dname = NULL;
 		free(filename); filename = NULL;
@@ -277,9 +336,9 @@ void recordstop(struct service* node, int ret)
 		{
 			if(status.recording < 1)
 			{
-				//wait for recthumbthread end before shutdown
+				//wait for recthumblastthread end before shutdown
 				int count = 0;
-				while(gettimer(recthumbthread) != NULL && count < 60)
+				while(gettimer(recthumblastthread) != NULL && count < 60)
 				{
 					sleep(1);
 					count++;
@@ -1246,6 +1305,7 @@ void screenrecorddirect()
 	struct service* servicenode = service;
 	struct epg* epgnode = NULL;
 	struct menulist* mlist = NULL, *mbox = NULL, *tmpmbox = NULL;
+	struct stimerthread *recthumbfirstthread = NULL;
 
 	while(servicenode != NULL)
 	{
@@ -1345,7 +1405,11 @@ void screenrecorddirect()
 
 		recordcheckret(NULL, ret, 6);
 		if(ret == 0 && newstart == 1)
+		{
 			textbox(_("Message"), _("Record started"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
+			if(getconfigint("recordpicture", NULL) == 1)
+				recthumbfirstthread = addtimer(&createrecthumbfirstthread, START, 1000, 1, NULL, NULL, NULL);
+		}
 	}
 	freemenulist(mlist, 1); mlist = NULL;
 }

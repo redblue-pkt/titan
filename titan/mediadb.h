@@ -1115,7 +1115,7 @@ void mediadbscanthread(struct stimerthread* self, char* path, int flag)
 
 		int count = 0;
 
-		while(count < 5)
+		while(count < 60)
 		{
 			sleep(1);
 			count++;
