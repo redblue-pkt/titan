@@ -118,6 +118,8 @@
 #: scan.h:2257 scan.h:2266 tithek_global.h:33 tithek_global.h:37
 #: tithek_global.h:41 adjust.h:93 adjust.h:118 adjust.h:148 adjust.h:162
 #: adjust.h:183 adjust.h:199 adjust.h:220 adjust.h:224 adjust.h:250
+#: mediadbsettings.h:28 mediadbsettings.h:32 mediadbsettings.h:51
+#: mediadbsettings.h:66 mediadbsettings.h:70
 msgid "no"
 msgstr ""
 
@@ -239,7 +241,8 @@ msgstr ""
 #: scan.h:2242 scan.h:2246 scan.h:2250 scan.h:2254 scan.h:2258 scan.h:2267
 #: tithek_global.h:34 tithek_global.h:38 tithek_global.h:42 adjust.h:94
 #: adjust.h:119 adjust.h:149 adjust.h:159 adjust.h:184 adjust.h:200
-#: adjust.h:221 adjust.h:225
+#: adjust.h:221 adjust.h:225 mediadbsettings.h:29 mediadbsettings.h:33
+#: mediadbsettings.h:52 mediadbsettings.h:67 mediadbsettings.h:71
 msgid "yes"
 msgstr ""
 
@@ -832,7 +835,12 @@ msgstr ""
 #: harddisk.h:632 harddisk.h:661 harddisk.h:663 harddisk.h:665 harddisk.h:708
 #: harddisk.h:724 timeshift.h:116 timeshift.h:159 timeshift.h:166 imdb.h:691
 #: mc_main.h:202 mc_videoplayer.h:769 mc_videoplayer.h:871
-#: mc_videoplayer.h:887 tmdb.h:759 tmdb.h:922
+#: mc_videoplayer.h:887 tmdb.h:759 tmdb.h:922 global.h:6328 imdb.h:626
+#: keyactions.h:224 mc_audioplayer.h:328 mc_audioplayer.h:599
+#: mc_audioplayer.h:702 mc_main.h:200 mc_main.h:209 mc_pictureplayer.h:119
+#: mc_pictureplayer.h:237 mc_pictureplayer.h:363 mc_pictureplayer.h:456
+#: mc_videoplayer.h:325 mc_videoplayer.h:739 mc_videoplayer.h:774
+#: mc_videoplayer.h:876 mc_videoplayer.h:892 mediadbsettings.h:95
 msgid "Message"
 msgstr ""
 
@@ -1156,7 +1164,12 @@ msgstr ""
 #: harddisk.h:665 harddisk.h:708 harddisk.h:724 harddisk.h:935 timeshift.h:116
 #: timeshift.h:159 timeshift.h:166 imdb.h:691 mc_main.h:202
 #: mc_videoplayer.h:769 mc_videoplayer.h:871 mc_videoplayer.h:887 tmdb.h:759
-#: tmdb.h:922
+#: tmdb.h:922 global.h:6328 httpdfunc.h:3048 imdb.h:626 keyactions.h:224
+#: mc_audioplayer.h:328 mc_audioplayer.h:599 mc_audioplayer.h:702
+#: mc_main.h:200 mc_main.h:209 mc_pictureplayer.h:119 mc_pictureplayer.h:237
+#: mc_pictureplayer.h:363 mc_pictureplayer.h:456 mc_videoplayer.h:325
+#: mc_videoplayer.h:739 mc_videoplayer.h:774 mc_videoplayer.h:876
+#: mc_videoplayer.h:892 mediadb.h:2454 mediadbsettings.h:95
 msgid "OK"
 msgstr ""
 
@@ -1480,7 +1493,12 @@ msgstr ""
 #: harddisk.h:665 harddisk.h:708 harddisk.h:724 harddisk.h:935 timeshift.h:116
 #: timeshift.h:159 timeshift.h:166 imdb.h:691 mc_main.h:202
 #: mc_videoplayer.h:769 mc_videoplayer.h:871 mc_videoplayer.h:887 tmdb.h:759
-#: tmdb.h:922
+#: tmdb.h:922 global.h:6328 httpdfunc.h:3048 imdb.h:626 keyactions.h:224
+#: mc_audioplayer.h:328 mc_audioplayer.h:599 mc_audioplayer.h:702
+#: mc_main.h:200 mc_main.h:209 mc_pictureplayer.h:119 mc_pictureplayer.h:237
+#: mc_pictureplayer.h:363 mc_pictureplayer.h:456 mc_videoplayer.h:325
+#: mc_videoplayer.h:739 mc_videoplayer.h:774 mc_videoplayer.h:876
+#: mc_videoplayer.h:892 mediadb.h:2454 mediadbsettings.h:95
 msgid "EXIT"
 msgstr ""
 
@@ -1519,7 +1537,7 @@ msgstr ""
 #: skin_default_skin.xml.h:92 skin_default_skin.xml.h:93
 #: skin_default_skin.xml.h:94 skin_default_skin.xml.h:95
 #: skin_default_skin.xml.h:96 callmon_main.h:133 mediadbsettings.h:55
-#: callmon_main.h:135
+#: callmon_main.h:135 mediadbsettings.h:58
 msgid "3"
 msgstr ""
 
@@ -1527,7 +1545,7 @@ msgstr ""
 #: skin_default_skin.xml.h:94 skin_default_skin.xml.h:95
 #: skin_default_skin.xml.h:96 skin_default_skin.xml.h:97
 #: skin_default_skin.xml.h:98 callmon_main.h:134 mediadbsettings.h:56
-#: callmon_main.h:136
+#: callmon_main.h:136 mediadbsettings.h:59
 msgid "4"
 msgstr ""
 
@@ -1535,7 +1553,7 @@ msgstr ""
 #: skin_default_skin.xml.h:95 skin_default_skin.xml.h:96
 #: skin_default_skin.xml.h:97 skin_default_skin.xml.h:98
 #: skin_default_skin.xml.h:99 callmon_main.h:135 mediadbsettings.h:57
-#: callmon_main.h:137
+#: callmon_main.h:137 mediadbsettings.h:60
 msgid "5"
 msgstr ""
 
@@ -1554,7 +1572,7 @@ msgid "8"
 msgstr ""
 
 #: callmon_main.h:128 callmon_main.h:138 mediadbsettings.h:58
-#: callmon_main.h:140
+#: callmon_main.h:140 mediadbsettings.h:61
 msgid "10"
 msgstr ""
 
@@ -1926,7 +1944,7 @@ msgstr ""
 #: epgsettings.h:65 panel_settings_autostart.h:71 epgsettings.h:153
 #: epgsettings.h:178 epgsettings.h:189 epgsettings.h:194 epgsettings.h:199
 #: mediadbsettings.h:33 epgsettings.h:188 epgsettings.h:204 epgsettings.h:209
-#: epgsettings.h:200 epgsettings.h:205 epgsettings.h:210
+#: epgsettings.h:200 epgsettings.h:205 epgsettings.h:210 mediadbsettings.h:36
 msgid "always"
 msgstr ""
 
@@ -1936,7 +1954,7 @@ msgid "only on power off / restart"
 msgstr ""
 
 #: epgsettings.h:67 epgsettings.h:155 epgsettings.h:180 mediadbsettings.h:45
-#: epgsettings.h:190 epgsettings.h:191
+#: epgsettings.h:190 epgsettings.h:191 mediadbsettings.h:48
 msgid "never"
 msgstr ""
 
@@ -1982,7 +2000,7 @@ msgstr ""
 #: global.h:4634 global.h:4645 global.h:6121 keyactions.h:216 global.h:6109
 #: global.h:6153 global.h:6159 global.h:6209 global.h:6060 keyactions.h:213
 #: global.h:6145 global.h:6149 global.h:6158 global.h:6162 global.h:6243
-#: global.h:6272 global.h:6274 global.h:6320
+#: global.h:6272 global.h:6274 global.h:6320 global.h:6328 keyactions.h:224
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -2257,6 +2275,7 @@ msgstr ""
 #: mc_videoplayer.h:214 mc_pictureplayer.h:116 mc_videoplayer.h:216
 #: mc_audioplayer.h:399 mc_global.h:1069 mc_pictureplayer.h:140
 #: mc_videoplayer.h:417 mc_audioplayer.h:398 mc_videoplayer.h:416
+#: mc_audioplayer.h:403 mc_pictureplayer.h:145 mc_videoplayer.h:421
 msgid "Repeat-On"
 msgstr ""
 
@@ -2276,7 +2295,9 @@ msgstr ""
 #: mc_pictureplayer.h:147 mc_pictureplayer.h:312 mc_videoplayer.h:424
 #: mc_videoplayer.h:654 plugins_mc_skin.xml.h:47 skins_mc_skin.xml.h:47
 #: mc_audioplayer.h:405 mc_audioplayer.h:555 mc_videoplayer.h:423
-#: mc_videoplayer.h:653
+#: mc_videoplayer.h:653 mc_audioplayer.h:410 mc_audioplayer.h:560
+#: mc_pictureplayer.h:152 mc_pictureplayer.h:317 mc_videoplayer.h:428
+#: mc_videoplayer.h:659
 msgid "Repeat"
 msgstr ""
 
@@ -2305,7 +2326,10 @@ msgstr ""
 #: mc_videoplayer.h:652 mc_videoplayer.h:836 plugins_mc_skin.xml.h:27
 #: skins_mc_skin.xml.h:27 mc_audioplayer.h:510 mc_audioplayer.h:553
 #: mc_audioplayer.h:673 mc_videoplayer.h:580 mc_videoplayer.h:651
-#: mc_videoplayer.h:835 mc_videoplayer.h:837
+#: mc_videoplayer.h:835 mc_videoplayer.h:837 mc_audioplayer.h:515
+#: mc_audioplayer.h:558 mc_audioplayer.h:678 mc_pictureplayer.h:270
+#: mc_pictureplayer.h:315 mc_pictureplayer.h:425 mc_videoplayer.h:585
+#: mc_videoplayer.h:657 mc_videoplayer.h:842
 msgid "Filelist-Mode"
 msgstr ""
 
@@ -2320,6 +2344,7 @@ msgstr ""
 #: mc_audioplayer.h:555 mc_global.h:552 mc_global.h:580 mc_global.h:1066
 #: mc_pictureplayer.h:311 mc_videoplayer.h:653 plugins_mc_skin.xml.h:46
 #: skins_mc_skin.xml.h:46 mc_audioplayer.h:554 mc_videoplayer.h:652
+#: mc_audioplayer.h:559 mc_pictureplayer.h:316 mc_videoplayer.h:658
 msgid "Random"
 msgstr ""
 
@@ -2335,7 +2360,8 @@ msgstr ""
 #: mc_audioplayer.h:319 mc_videoplayer.h:408 mc_audioplayer.h:576
 #: mc_global.h:269 mc_global.h:692 mc_global.h:925 mc_global.h:939
 #: mc_pictureplayer.h:331 mc_videoplayer.h:694 mc_audioplayer.h:575
-#: mc_videoplayer.h:693
+#: mc_videoplayer.h:693 mc_audioplayer.h:580 mc_pictureplayer.h:336
+#: mc_videoplayer.h:699
 msgid "Playlist-Mode"
 msgstr ""
 
@@ -2363,6 +2389,9 @@ msgstr ""
 #: mc_videoplayer.h:870 play.h:1350 play.h:1358 mc_audioplayer.h:594
 #: mc_audioplayer.h:697 mc_videoplayer.h:733 mc_videoplayer.h:869 play.h:1364
 #: play.h:1372 play.h:1361 play.h:1365 play.h:1369 mc_videoplayer.h:871
+#: mc_audioplayer.h:599 mc_audioplayer.h:702 mc_pictureplayer.h:237
+#: mc_pictureplayer.h:363 mc_pictureplayer.h:456 mc_videoplayer.h:739
+#: mc_videoplayer.h:876
 msgid "Can't start playback !"
 msgstr ""
 
@@ -2505,7 +2534,7 @@ msgid "comming soon"
 msgstr ""
 
 #: mc_main.h:172 panel_main.h:29 panel_main.h:243 mc_main.h:146 mc_main.h:144
-#: mc_main.h:201 panel_main.h:135 mc_main.h:202
+#: mc_main.h:201 panel_main.h:135 mc_main.h:202 mc_main.h:209
 msgid "Menu not implemented !"
 msgstr ""
 
@@ -2582,6 +2611,7 @@ msgstr ""
 #: transponder.h:348 transponder.h:418 transponder.h:451 transponder.h:480
 #: transponder.h:504 transponder.h:574 zdf.h:91 bgdownload.h:93
 #: bgdownload.h:154 zdf.h:86 httpdfunc.h:2661 httpdfunc.h:2673 youtube.h:149
+#: httpdfunc.h:2677
 msgid "unknown"
 msgstr ""
 
@@ -3799,7 +3829,7 @@ msgstr ""
 #: plugins_mc_skin.xml.h:4 skins_mc_skin.xml.h:4 mediadb.h:1133
 #: mediadbsettings.h:52 play.h:561 plugins_mc_skin.xml.h:6
 #: skins_mc_skin.xml.h:6 tmc.h:539 mediadb.h:1112 play.h:567 play.h:575
-#: play.h:564 play.h:568
+#: play.h:564 play.h:568 mediadbsettings.h:55
 msgid "all"
 msgstr ""
 
@@ -3835,7 +3865,7 @@ msgstr ""
 
 #: plugins_mc_skin.xml.h:18 skins_mc_skin.xml.h:18 mediadb.h:2421
 #: plugins_mc_skin.xml.h:24 skins_mc_skin.xml.h:24 mediadb.h:2423
-#: mediadb.h:2402
+#: mediadb.h:2402 mediadb.h:2439
 msgid "file"
 msgstr ""
 
@@ -5579,13 +5609,14 @@ msgstr ""
 #: skin_default_skin.xml.h:92 skin_default_skin.xml.h:93
 #: skin_default_skin.xml.h:94 mediadbsettings.h:53
 #: plugins_catcatch_skin.xml.h:3 skins_catcatch_skin.xml.h:3
+#: mediadbsettings.h:56
 msgid "1"
 msgstr ""
 
 #: skin_default_skin.xml.h:89 skin_default_skin.xml.h:90
 #: skin_default_skin.xml.h:91 skin_default_skin.xml.h:92
 #: skin_default_skin.xml.h:93 skin_default_skin.xml.h:94
-#: skin_default_skin.xml.h:95 mediadbsettings.h:54
+#: skin_default_skin.xml.h:95 mediadbsettings.h:54 mediadbsettings.h:57
 msgid "2"
 msgstr ""
 
@@ -9781,7 +9812,7 @@ msgstr ""
 msgid "Harddisk Sleep"
 msgstr ""
 
-#: imdbapi.h:200 imdb.h:480 tmdb.h:784 imdb.h:691 tmdb.h:759
+#: imdbapi.h:200 imdb.h:480 tmdb.h:784 imdb.h:691 tmdb.h:759 imdb.h:626
 msgid "Error, Internet Connection not found"
 msgstr ""
 
@@ -9854,6 +9885,7 @@ msgid "best"
 msgstr ""
 
 #: mc_videoplayer.h:886 player.h:97 mc_videoplayer.h:885 mc_videoplayer.h:887
+#: mc_videoplayer.h:892
 msgid "Start at last position ?"
 msgstr ""
 
@@ -9940,75 +9972,75 @@ msgstr ""
 msgid "MediaDB scan finished"
 msgstr ""
 
-#: mediadb.h:2425 mediadb.h:2427 mediadb.h:2406
+#: mediadb.h:2425 mediadb.h:2427 mediadb.h:2406 mediadb.h:2443
 msgid "path"
 msgstr ""
 
-#: mediadb.h:2429 mediadb.h:2431 mediadb.h:2410
+#: mediadb.h:2429 mediadb.h:2431 mediadb.h:2410 mediadb.h:2447
 msgid "title"
 msgstr ""
 
-#: mediadb.h:2433 mediadb.h:2435 mediadb.h:2414
+#: mediadb.h:2433 mediadb.h:2435 mediadb.h:2414 mediadb.h:2451
 msgid "imdbid"
 msgstr ""
 
-#: mediadb.h:2436 mediadb.h:2438 mediadb.h:2417
+#: mediadb.h:2436 mediadb.h:2438 mediadb.h:2417 mediadb.h:2454
 msgid "Add iMDB manuel"
 msgstr ""
 
-#: mediadbsettings.h:34
+#: mediadbsettings.h:34 mediadbsettings.h:37
 msgid "older 1 day"
 msgstr ""
 
-#: mediadbsettings.h:35
+#: mediadbsettings.h:35 mediadbsettings.h:38
 msgid "older 2 day"
 msgstr ""
 
-#: mediadbsettings.h:36
+#: mediadbsettings.h:36 mediadbsettings.h:39
 msgid "older 3 day"
 msgstr ""
 
-#: mediadbsettings.h:37
+#: mediadbsettings.h:37 mediadbsettings.h:40
 msgid "older 4 day"
 msgstr ""
 
-#: mediadbsettings.h:38
+#: mediadbsettings.h:38 mediadbsettings.h:41
 msgid "older 5 day"
 msgstr ""
 
-#: mediadbsettings.h:39
+#: mediadbsettings.h:39 mediadbsettings.h:42
 msgid "older 10 day"
 msgstr ""
 
-#: mediadbsettings.h:40
+#: mediadbsettings.h:40 mediadbsettings.h:43
 msgid "older 15 day"
 msgstr ""
 
-#: mediadbsettings.h:41
+#: mediadbsettings.h:41 mediadbsettings.h:44
 msgid "older 20 day"
 msgstr ""
 
-#: mediadbsettings.h:42
+#: mediadbsettings.h:42 mediadbsettings.h:45
 msgid "older 30 day"
 msgstr ""
 
-#: mediadbsettings.h:43
+#: mediadbsettings.h:43 mediadbsettings.h:46
 msgid "older 40 day"
 msgstr ""
 
-#: mediadbsettings.h:44
+#: mediadbsettings.h:44 mediadbsettings.h:47
 msgid "older 50 day"
 msgstr ""
 
-#: mediadbsettings.h:59
+#: mediadbsettings.h:59 mediadbsettings.h:62
 msgid "15"
 msgstr ""
 
-#: mediadbsettings.h:60
+#: mediadbsettings.h:60 mediadbsettings.h:63
 msgid "20"
 msgstr ""
 
-#: mediadbsettings.h:92
+#: mediadbsettings.h:92 mediadbsettings.h:95
 msgid ""
 "No MediaDB Directory found\n"
 "Press OK to create it"
@@ -11615,6 +11647,13 @@ msgid ""
 "partition could not be created"
 msgstr ""
 
-#: mc_videoplayer.h:769
+#: mc_videoplayer.h:769 mc_videoplayer.h:774
 msgid "Found VIDEO_TS Folder, start with DVD-Player ?"
+msgstr ""
+
+#: mc_audioplayer.h:328 mc_main.h:200 mc_pictureplayer.h:119
+#: mc_videoplayer.h:325
+msgid ""
+"Shooting Background done !\n"
+"Save Screenshoot Path: /tmp/screenshot.jpg"
 msgstr ""
