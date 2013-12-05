@@ -221,7 +221,7 @@ void createrecthumbfirstthread(struct stimerthread* self, char* dname, char* fil
 	if(status.recording > 0)
 	{
 		char* cmd = NULL;
-		cmd = ostrcat("/sbin/grab -v -j 100 -r 960 /tmp/screenshot_backdrop1.jpg", NULL, 0, 0);
+		cmd = ostrcat("/sbin/grab -v -j 100 -r 1280:720 /tmp/screenshot_backdrop1.jpg", NULL, 0, 0);
 	
 		if(cmd != NULL)
 			system(cmd);
