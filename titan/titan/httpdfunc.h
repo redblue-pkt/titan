@@ -1583,9 +1583,10 @@ char* webgetdrawcount(char* param, int fmt)
 
 void webgetshoot(char* param, int fmt)
 {
+	char* cmd = NULL;
+/*
 	char* cmd = NULL, *tmpstr = NULL;
 
-/*
 	if(status.aktservice->channel != NULL)
 	{
 		m_lock(&status.waitrcmutex, 24);
