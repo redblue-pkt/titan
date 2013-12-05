@@ -249,6 +249,13 @@ void createrecthumbfirstthread(struct stimerthread* self, char* dname, char* fil
 		free(cmd);
 	}
 
+	count = 0;
+	while(count < 10)
+	{
+		sleep(1);
+		count++;
+	}
+
 	if(status.recording > 0)
 	{
 		char* cmd = NULL;
