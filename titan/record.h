@@ -221,7 +221,7 @@ void createrecthumbfirstthread(struct stimerthread* self, char* dname, char* fil
 	if(status.recording > 0)
 	{
 		char* cmd = NULL;
-		cmd = ostrcat("/sbin/grab -j 100 -r 960 /tmp/screenshot_backdrop1.jpg", NULL, 0, 0);
+		cmd = ostrcat("/sbin/grab -v -j 100 -r 960 /tmp/screenshot_backdrop1.jpg", NULL, 0, 0);
 	
 		if(cmd != NULL)
 			system(cmd);
@@ -240,7 +240,7 @@ void createrecthumbfirstthread(struct stimerthread* self, char* dname, char* fil
 	if(status.recording > 0)
 	{
 		char* cmd = NULL;
-		cmd = ostrcat("/sbin/grab -j 100 -r 500:400 /tmp/screenshot_cover.jpg", NULL, 0, 0);
+		cmd = ostrcat("/sbin/grab -v -j 100 -r 500:400 /tmp/screenshot_cover.jpg", NULL, 0, 0);
 	
 		if(cmd != NULL)
 			system(cmd);
@@ -252,7 +252,7 @@ void createrecthumbfirstthread(struct stimerthread* self, char* dname, char* fil
 	if(status.recording > 0)
 	{
 		char* cmd = NULL;
-		cmd = ostrcat("/sbin/grab -j 100 -r 160:120 /tmp/screenshot_thumb.jpg", NULL, 0, 0);
+		cmd = ostrcat("/sbin/grab -v -j 100 -r 160:120 /tmp/screenshot_thumb.jpg", NULL, 0, 0);
 	
 		if(cmd != NULL)
 			system(cmd);
