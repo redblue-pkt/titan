@@ -856,7 +856,7 @@ int main(int argc, char *argv[])
 		{
 firstwizzardstep1:
 
-//			status.updatevfd = PAUSE;
+			status.updatevfd = PAUSE;
 //			screenavsettings(1);
 //			resettvpic();
 			//this screen can reload the skin (on language change)
