@@ -842,7 +842,8 @@ msgstr ""
 #: mc_videoplayer.h:325 mc_videoplayer.h:739 mc_videoplayer.h:774
 #: mc_videoplayer.h:876 mc_videoplayer.h:892 mediadbsettings.h:95 record.h:346
 #: record.h:962 record.h:1149 record.h:1382 record.h:1407 record.h:348
-#: record.h:964 record.h:1151 record.h:1384 record.h:1409
+#: record.h:964 record.h:1151 record.h:1384 record.h:1409 global.h:6347
+#: record.h:355 record.h:971 record.h:1158 record.h:1391 record.h:1416
 msgid "Message"
 msgstr ""
 
@@ -1173,7 +1174,7 @@ msgstr ""
 #: mc_videoplayer.h:739 mc_videoplayer.h:774 mc_videoplayer.h:876
 #: mc_videoplayer.h:892 mediadb.h:2454 mediadbsettings.h:95 record.h:346
 #: record.h:962 record.h:1407 httpdfunc.h:3049 record.h:348 record.h:964
-#: record.h:1409
+#: record.h:1409 global.h:6347 record.h:355 record.h:971 record.h:1416
 msgid "OK"
 msgstr ""
 
@@ -1505,6 +1506,8 @@ msgstr ""
 #: mc_videoplayer.h:892 mediadb.h:2454 mediadbsettings.h:95 record.h:346
 #: record.h:962 record.h:1149 record.h:1382 record.h:1407 httpdfunc.h:3049
 #: record.h:348 record.h:964 record.h:1151 record.h:1384 record.h:1409
+#: global.h:6347 record.h:355 record.h:971 record.h:1158 record.h:1391
+#: record.h:1416
 msgid "EXIT"
 msgstr ""
 
@@ -2007,6 +2010,7 @@ msgstr ""
 #: global.h:6153 global.h:6159 global.h:6209 global.h:6060 keyactions.h:213
 #: global.h:6145 global.h:6149 global.h:6158 global.h:6162 global.h:6243
 #: global.h:6272 global.h:6274 global.h:6320 global.h:6328 keyactions.h:224
+#: global.h:6347
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -4623,31 +4627,34 @@ msgid "Record / Timeshift / Stream"
 msgstr ""
 
 #: record.h:635 record.h:636 record.h:663 record.h:908 record.h:904
-#: record.h:905 record.h:962 record.h:964
+#: record.h:905 record.h:962 record.h:964 record.h:971
 msgid ""
 "Can't find free Tuner for Record.\n"
 "Switch to Recording/Timeshift Channel ?"
 msgstr ""
 
 #: record.h:797 record.h:798 record.h:825 record.h:828 record.h:1080
-#: record.h:1076 record.h:1091 record.h:1148 record.h:1150
+#: record.h:1076 record.h:1091 record.h:1148 record.h:1150 record.h:1157
 msgid "Timer Record start !\n"
 msgstr ""
 
 #: record.h:892 record.h:929 record.h:898 record.h:935 record.h:925
 #: record.h:962 record.h:928 record.h:965 record.h:970 record.h:1197
 #: record.h:1245 record.h:1191 record.h:1239 record.h:1206 record.h:1254
-#: record.h:1263 record.h:1312 record.h:1265 record.h:1314
+#: record.h:1263 record.h:1312 record.h:1265 record.h:1314 record.h:1272
+#: record.h:1321
 msgid "stop"
 msgstr ""
 
 #: record.h:933 record.h:939 record.h:966 record.h:969 record.h:978
 #: record.h:1260 record.h:1254 record.h:1269 record.h:1327 record.h:1329
+#: record.h:1336
 msgid "change"
 msgstr ""
 
 #: record.h:969 record.h:975 record.h:1002 record.h:1005 record.h:1019
 #: record.h:1315 record.h:1309 record.h:1324 record.h:1382 record.h:1384
+#: record.h:1391
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr ""
 
@@ -10625,6 +10632,7 @@ msgid "Record power off system?"
 msgstr ""
 
 #: record.h:1339 record.h:1333 record.h:1348 record.h:1407 record.h:1409
+#: record.h:1416
 msgid "Record started"
 msgstr ""
 
@@ -11341,7 +11349,7 @@ msgstr ""
 msgid "Copy File"
 msgstr ""
 
-#: record.h:289 record.h:346 record.h:348
+#: record.h:289 record.h:346 record.h:348 record.h:355
 msgid "Box recording finished poweroff in 30sec !"
 msgstr ""
 
