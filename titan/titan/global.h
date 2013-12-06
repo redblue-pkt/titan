@@ -5010,34 +5010,48 @@ char* getvideomode()
 void switchvideomode()
 {
 	int rcret = 0;
-	char* tmpstr = NULL;
+	char* tmpstr = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL;
 	tmpstr = getvideomode();	
 	struct skin* playpolicy = getscreen("playpolicy");
-			
+	tmpstr2 = getcolorformat(2);
+		
 	if(tmpstr != NULL)
 	{
-		if(ostrcmp("pal", tmpstr) == 0 || ostrncmp("576", tmpstr, 3) == 0)
+		if((ostrcmp("pal", tmpstr) == 0 || ostrncmp("576", tmpstr, 3) == 0) && ostrncmp("yuv", tmpstr2, 3) == 0)
 		{
 			setvideomode("720p50", 0);
 			changefbresolution("720p50", 0);
-			changetext(playpolicy, "720p50");
-			writevfdmenu("720p50");
+			changetext(playpolicy, "720p50 (rgb)");
+			writevfdmenu("720p50 (rgb)");
+			setcolorformat("rgb", 1);
+			unlink("/var/etc/.scart");
+		}
+		else if((ostrcmp("pal", tmpstr) == 0 || ostrncmp("576", tmpstr, 3) == 0) && ostrncmp("rgb", tmpstr2, 3) == 0)
+		{
+			setvideomode("720p50", 0);
+			changefbresolution("720p50", 0);
+			changetext(playpolicy, "720p50 (yuv)");
+			writevfdmenu("720p50 (yuv)");
+			setcolorformat("yuv", 1);
 			unlink("/var/etc/.scart");
 		}
 		else if(ostrncmp("720", tmpstr, 3) == 0)
 		{
 			setvideomode("1080i50", 0);
 			changefbresolution("1080i50", 0);
-			changetext(playpolicy, "1080i50");
-			writevfdmenu("1080i50");
+			tmpstr3 = ostrcat("1080i50 (", tmpstr2, 0, 0);
+			tmpstr3 = ostrcat(tmpstr3, ")", 1, 0);
+			changetext(playpolicy, tmpstr3);
+			writevfdmenu(tmpstr3);
 			unlink("/var/etc/.scart");			
 		}
 		else if(ostrncmp("1080", tmpstr, 4) == 0)
 		{
 			setvideomode("576i50", 0);
 			changefbresolution("576i50", 0);
-			changetext(playpolicy, "576i50");
-			writevfdmenu("576i50 / pal");
+			changetext(playpolicy, "576i50 (rgb)");
+			writevfdmenu("576i50 (rgb)");
+			setcolorformat("rgb", 1);
 			writesys("/var/etc/.scart", "0", 0);
 		}
 		/*
@@ -5057,6 +5071,8 @@ void switchvideomode()
 		clearscreen(playpolicy);
 	}
 	free(tmpstr);
+	free(tmpstr2);
+	free(tmpstr3);
 }
 
 //flag 0: write videomode to config
