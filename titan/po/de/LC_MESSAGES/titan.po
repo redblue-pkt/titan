@@ -4223,3 +4223,6 @@ msgstr "Hier können Sie Ihre Smartkarten konfigurieren.\n\nBenutzen Sie das Steu
 
 msgid "Found VIDEO_TS Folder, start with DVD-Player ?"
 msgstr "DVD Strucktur gefunden, wollen sie diese mit dem DVD-Player starten ?"
+
+msgid "Shooting Background done !\nSave Screenshoot Path: /tmp/screenshot.jpg"
+msgstr "Ihr Hintergrundbild wurde gespeichert !\nSpeicherpfad: /tmp/screenshot.jpg"
