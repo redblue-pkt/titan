@@ -795,6 +795,7 @@ unsigned long long getfreespace(char* dir);
 char* getfilenamepng(char* filename);
 char* htmlencode(char* from);
 void waitmsgbar(int sec, int exit, char* text, int flag);
+char* getcolorformat(int line);
 
 //rcconfig.h
 int getrcconfigint(char *key, char* ext);
