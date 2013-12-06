@@ -569,7 +569,7 @@ msgstr ""
 #: record.h:962 record.h:1149 record.h:1382 record.h:1407 record.h:348
 #: record.h:964 record.h:1151 record.h:1384 record.h:1409 global.h:6347
 #: record.h:355 record.h:971 record.h:1158 record.h:1391 record.h:1416
-#: global.h:6349
+#: global.h:6349 global.h:6344
 msgid "Message"
 msgstr ""
 
@@ -781,7 +781,7 @@ msgstr ""
 #: mc_videoplayer.h:892 mediadb.h:2454 mediadbsettings.h:95 record.h:346
 #: record.h:962 record.h:1407 httpdfunc.h:3049 record.h:348 record.h:964
 #: record.h:1409 global.h:6347 record.h:355 record.h:971 record.h:1416
-#: global.h:6349
+#: global.h:6349 global.h:6344
 msgid "OK"
 msgstr ""
 
@@ -992,7 +992,7 @@ msgstr ""
 #: record.h:962 record.h:1149 record.h:1382 record.h:1407 httpdfunc.h:3049
 #: record.h:348 record.h:964 record.h:1151 record.h:1384 record.h:1409
 #: global.h:6347 record.h:355 record.h:971 record.h:1158 record.h:1391
-#: record.h:1416 global.h:6349
+#: record.h:1416 global.h:6349 global.h:6344
 msgid "EXIT"
 msgstr ""
 
@@ -1718,6 +1718,7 @@ msgstr ""
 #: global.h:6209 global.h:6060 keyactions.h:213 global.h:6145 global.h:6149
 #: global.h:6158 global.h:6162 global.h:6243 global.h:6272 global.h:6274
 #: global.h:6320 global.h:6328 keyactions.h:224 global.h:6347 global.h:6349
+#: global.h:6344
 msgid "ERROR cant read res"
 msgstr ""
 
