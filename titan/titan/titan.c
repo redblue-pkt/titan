@@ -861,14 +861,14 @@ firstwizzardstep1:
 			resettvpic();
 			//this screen can reload the skin (on language change)
 			//all skin changes before here than are deleted
-			if(screenlanguage(2) == 2) return 100;
-			resettvpic();
+//			if(screenlanguage(2) == 2) return 100;
+//			resettvpic();
 			screentunerconfig();
 			resettvpic();
 			screenscanconfig(1);
 			resettvpic();
-			screennetwork_adapter();
-			resettvpic();
+//			screennetwork_adapter();
+//			resettvpic();
 			writevfd("Setting OK ?");
 			if(textbox(_("First Wizzard"), _("Settings OK ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
 			{
