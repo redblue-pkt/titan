@@ -1,3 +1,4 @@
+#define HTTPAUTH "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0="
 
 
 #include "../titan/struct.h"
@@ -33,6 +34,7 @@
 #include "faststream.h"
 #include "played.h"
 #include "videoweed.h"
+#include "internetradio.h"
 
 char pluginname[] = "TiTan Mediathek";
 char plugindesc[] = "TiTan Mediathek";
