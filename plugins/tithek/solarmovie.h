@@ -181,6 +181,7 @@ int solarmovie_search(struct skin* grid, struct skin* listbox, struct skin* coun
 
 		if(line != NULL)
 		{
+			line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 			menu = ostrcat("/tmp/tithek/solarmovie.search.list", NULL, 0, 0);
 			writesys(menu, line, 0);
 			free(line); line = NULL;
@@ -247,6 +248,7 @@ int solarmovie_search_local(struct skin* grid, struct skin* listbox, struct skin
 
 			if(line != NULL)
 			{
+				line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 				menu = ostrcat("/tmp/tithek/solarmovie.search.list", NULL, 0, 0);
 				writesys(menu, line, 0);
 				struct tithek* tnode = (struct tithek*)listbox->select->handle;
@@ -483,6 +485,7 @@ printf("22222222222222222222222222222222\n");
 
 	if(line != NULL)
 	{
+		line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 		if(series == 0)
 			tmpstr = ostrcat("/tmp/tithek/solarmovie.hoster.list", NULL, 0, 0);
 		else

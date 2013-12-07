@@ -331,6 +331,7 @@ int myvideo_search_local(struct skin* grid, struct skin* listbox, struct skin* c
 
 			if(line != NULL)
 			{
+				line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 				menu = ostrcat("/tmp/tithek/myvideo.search.list", NULL, 0, 0);
 				writesys(menu, line, 0);
 				struct tithek* tnode = (struct tithek*)listbox->select->handle;

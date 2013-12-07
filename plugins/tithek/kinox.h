@@ -149,6 +149,7 @@ int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabe
 			free(ret1), ret1 = NULL;
 			if(line != NULL)
 			{
+				line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 				menu = ostrcat("/tmp/tithek/kinox.search.list", NULL, 0, 0);
 				writesys(menu, line, 0);
 				struct tithek* tnode = (struct tithek*)listbox->select->handle;
@@ -214,6 +215,7 @@ int kinox_search_local(struct skin* grid, struct skin* listbox, struct skin* cou
 
 			if(line != NULL)
 			{
+				line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 				menu = ostrcat("/tmp/tithek/kinox.search.list", NULL, 0, 0);
 				writesys(menu, line, 0);
 				struct tithek* tnode = (struct tithek*)listbox->select->handle;
@@ -588,6 +590,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 
 	if(line != NULL)
 	{
+		line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 		if(series == 0)
 			tmpstr = ostrcat("/tmp/tithek/kinox.hoster.list", NULL, 0, 0);
 		else
@@ -755,6 +758,7 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 	free(tmpstr), tmpstr = NULL;	
 	if(line != NULL)
 	{
+		line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 		tmpstr = ostrcat("/tmp/tithek/kinox.hoster.series.list", NULL, 0, 0);
 		writesys(tmpstr, line, 0);
 
@@ -858,6 +862,7 @@ int kinox_search_cast(struct skin* grid, struct skin* listbox, struct skin* coun
 			free(ret1), ret1 = NULL;
 			if(line != NULL)
 			{
+				line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 				menu = ostrcat("/tmp/tithek/kinox.search.cast.list", NULL, 0, 0);
 				writesys(menu, line, 0);
 				struct tithek* tnode = (struct tithek*)listbox->select->handle;
