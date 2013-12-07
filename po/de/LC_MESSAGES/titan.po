@@ -3108,8 +3108,8 @@ msgstr "Hier können Sie von unseren aktuellen Online-Angebot Plug-Ins installier
 msgid "Here you can choose to configure your tuner. For your channel search, you must edit their tuner and adjust depending on the connection. For engine systems require an additional engine settings making."
 msgstr "Hier können Sie Ihren Tuner für die Konfiguration auswählen.\n\nFür Ihren Kanalsuchlauf müssen Sie Ihre Tuner bearbeiten und je nach Anbindung einstellen. Für Motoriesierte Anlagen Bitte zusätzlich Motor Ansteuerung bearbeiten."
 
-msgid "Here they can do for your chosen tuner to receive settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie für Ihren ausgewählten Tuner die Empfangs-Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
+msgid "Here you can set for your satellite tuner. First, make your satellite selection. When using DiSEqC They also point to the port used. For advanced Lnb / Unicam navigate to the field and press the Red button."
+msgstr "Hier können Sie für Ihren Sat Tuner einstellen.\n\nStellen Sie zunächst Ihre Satteliten Auswahl ein. Bei Verwendung von DiSEqC weisen Sie zusätzlich den verwendeten Port zu. Für erweiterte Lnb / Unicam navigieren Sie zum Feld und drücken Sie die Rote Taste."
 
 msgid "Here they can do for your chosen tuner to lnb settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
 msgstr "Hier können Sie für Ihren ausgewählten Tuner die LNB-Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
@@ -4233,3 +4233,5 @@ msgstr "Tuner bearbeiten"
 msgid "EDIT MOTOR"
 msgstr "Motor Ansteuerung"
 
+msgid "EDIT LNB / UNICABLE"
+msgstr "LNB / Unicabel bearbeiten"
