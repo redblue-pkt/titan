@@ -844,12 +844,12 @@ msgstr ""
 #: record.h:962 record.h:1149 record.h:1382 record.h:1407 record.h:348
 #: record.h:964 record.h:1151 record.h:1384 record.h:1409 global.h:6347
 #: record.h:355 record.h:971 record.h:1158 record.h:1391 record.h:1416
-#: global.h:6349 global.h:6344
+#: global.h:6349 global.h:6344 avsettings.h:241
 msgid "Message"
 msgstr ""
 
 #: avsettings.h:199 videomode.h:53 videomode.h:60 videomode.h:61
-#: avsettings.h:221 avsettings.h:222 avsettings.h:237
+#: avsettings.h:221 avsettings.h:222 avsettings.h:237 avsettings.h:241
 msgid "Is this Videomode ok ?"
 msgstr ""
 
@@ -1176,7 +1176,7 @@ msgstr ""
 #: mc_videoplayer.h:892 mediadb.h:2454 mediadbsettings.h:95 record.h:346
 #: record.h:962 record.h:1407 httpdfunc.h:3049 record.h:348 record.h:964
 #: record.h:1409 global.h:6347 record.h:355 record.h:971 record.h:1416
-#: global.h:6349 global.h:6344
+#: global.h:6349 global.h:6344 avsettings.h:241
 msgid "OK"
 msgstr ""
 
@@ -1509,7 +1509,7 @@ msgstr ""
 #: record.h:962 record.h:1149 record.h:1382 record.h:1407 httpdfunc.h:3049
 #: record.h:348 record.h:964 record.h:1151 record.h:1384 record.h:1409
 #: global.h:6347 record.h:355 record.h:971 record.h:1158 record.h:1391
-#: record.h:1416 global.h:6349 global.h:6344
+#: record.h:1416 global.h:6349 global.h:6344 avsettings.h:241
 msgid "EXIT"
 msgstr ""
 
