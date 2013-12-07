@@ -3114,8 +3114,8 @@ msgstr "Hier können Sie für Ihren Sat Tuner einstellen.\nStellen Sie zunächst Ih
 msgid "Here you can set for your cable tuner. Ask your cable provider and make you connect an automatic search."
 msgstr "Hier können Sie für Ihren Kabel Tuner einstellen.\n\nStellen Sie Ihren Kabel Anbieter ein und machen Sie anschließend einen Automatischen Suchlauf."
 
-msgid "Here you can set for your cable tuner. Activate the terrestrial tuner and do you connect an automatic search."
-msgstr "Hier können Sie für Ihren Kabel Tuner einstellen.\n\nAktivieren Sie den Terrestrischen Tuner und machen Sie anschließend einen Automatischen Suchlauf."
+msgid "Here you can set for your terrestrial tuner. Activate the terrestrial tuner and do you connect an automatic search."
+msgstr "Hier können Sie für Ihren Terrestrischen Tuner einstellen.\n\nAktivieren Sie den Terrestrischen Tuner und machen Sie anschließend einen Automatischen Suchlauf."
 
 msgid "Here they can do for your chosen tuner to lnb settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
 msgstr "Hier können Sie für Ihren ausgewählten Tuner die LNB-Einstellungen\nvornehmen.\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
