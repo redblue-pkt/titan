@@ -407,8 +407,8 @@ msgstr "Jugendschutz"
 msgid "Clear before scan"
 msgstr "Vor der Suche löschen?"
 
-msgid "Color Format Scart"
-msgstr "Farbformat für Scart"
+msgid "Color Format Scart / Composite"
+msgstr "Farbformat für Scart / Komponente"
 
 msgid "Color Format"
 msgstr "Farbformat"
