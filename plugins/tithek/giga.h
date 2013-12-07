@@ -1,44 +1,7 @@
-#ifndef BEEG_H
-#define BEEG_H
+#ifndef GIGA_H
+#define GIGA_H
 
-char* beeg(char* link)
-{
-	debug(99, "link %s", link);
-	int debuglevel = getconfigint("debuglevel", NULL);
-	char* ip = NULL, *pos = NULL, *path = NULL, *streamurl = NULL, *tmpstr = NULL;
-	
-	ip = string_replace("http://", "", (char*)link, 0);
-
-	if(ip != NULL)
-		pos = strchr(ip, '/');
-	if(pos != NULL)
-	{
-		pos[0] = '\0';
-		path = pos + 1;
-	}
-
-	tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
-	titheklog(debuglevel, "/tmp/beeg1_tmpstr", NULL, tmpstr);
-
-	if(tmpstr != NULL)
-	{
-		streamurl = string_resub("'file': '","',",tmpstr,0);
-	}
-
-	free(tmpstr); tmpstr = NULL;
-	free(ip), ip = NULL;
-
-	titheklog(debuglevel, "/tmp/beeg2_streamurl", NULL, streamurl);
-
-// segfault munmap_chunk(): invalid pointer
-//	free(pos), pos = NULL;
-//	free(path), path = NULL;
-
-	debug(99, "streamurl: %s", streamurl);	
-	return streamurl;
-}
-
-int beeg_search_local(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr, int flag)
+int giga_search_local(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr, int flag)
 {
 	char* tmpstr = NULL, *tmpstr1 = NULL, *line = NULL, *menu = NULL, *search = NULL;
 	int ret = 1, count = 0, i = 0;
@@ -58,7 +21,7 @@ int beeg_search_local(struct skin* grid, struct skin* listbox, struct skin* coun
 		strstrip(search);
 		string_tolower(search);
 
-		tmpstr = gethttp("atemio.dyndns.tv", "/mediathek/beeg/streams/beeg.all-sorted.list", 80, NULL, HTTPAUTH, 5000, NULL, 0);
+		tmpstr = gethttp("atemio.dyndns.tv", "/mediathek/giga/streams/giga.all-sorted.list", 80, NULL, HTTPAUTH, 5000, NULL, 0);
 
 		struct splitstr* ret1 = NULL;
 		ret1 = strsplit(tmpstr, "\n", &count);
@@ -88,7 +51,7 @@ int beeg_search_local(struct skin* grid, struct skin* listbox, struct skin* coun
 
 			if(line != NULL)
 			{
-				menu = ostrcat("/tmp/tithek/beeg.search.list", NULL, 0, 0);
+				menu = ostrcat("/tmp/tithek/giga.search.list", NULL, 0, 0);
 				writesys(menu, line, 0);
 				struct tithek* tnode = (struct tithek*)listbox->select->handle;
 				createtithek(tnode, tnode->title, menu, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);

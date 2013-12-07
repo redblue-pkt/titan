@@ -35,6 +35,9 @@
 #include "played.h"
 #include "videoweed.h"
 #include "internetradio.h"
+#include "internettv.h"
+#include "giga.h"
+#include "drdish.h"
 
 char pluginname[] = "TiTan Mediathek";
 char plugindesc[] = "TiTan Mediathek";
