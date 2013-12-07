@@ -3121,7 +3121,7 @@ msgid "Here they can do for your chosen tuner to lnb settings. Use to navigate t
 msgstr "Hier können Sie für Ihren ausgewählten Tuner die LNB-Einstellungen\nvornehmen.\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can make your settings for your engine systems. To enter the latitude and longitude using the number keys."
-msgstr "Hier können Sie für Ihre Motoriesierte Sat-Anlage Ihre Einstellungen \nvornehmen.\nZur Eingabe der Längen und Breitengrade benutzen Sie die Ziffertasten."
+msgstr "Hier können Sie für Ihre Motorisierte Sat-Anlage Ihre Einstellungen \nvornehmen.\nZur Eingabe der Längen und Breitengrade benutzen Sie die Ziffertasten."
 
 msgid "Here you can check the reception of the current station. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
 msgstr "Hier können Sie den Empfang des aktuellen Senders überprüfen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
@@ -4240,7 +4240,7 @@ msgid "EDIT MOTOR"
 msgstr "Motor Ansteuerung"
 
 msgid "EDIT LNB / UNICABLE"
-msgstr "LNB / Unicabel bearbeiten"
+msgstr "LNB/Unicable bearbeiten"
 
 msgid "Select Unicabel Manufacturer"
 msgstr "Unicable Hersteller auswählen"
