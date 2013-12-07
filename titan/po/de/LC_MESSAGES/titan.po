@@ -2667,8 +2667,8 @@ msgstr "Wann sollen die EPG Daten gesichert werden"
 msgid "OWN POS"
 msgstr "Eigene Pos"
 
-msgid "Own Position"
-msgstr "Eigene Position"
+msgid "Engine Systems"
+msgstr "Motoriesierte Anlage"
 
 msgid "Player for .ts"
 msgstr "Player für .ts"
@@ -3105,8 +3105,8 @@ msgstr "Hier können Sie Ihre zusätzlichen Plug-Ins starten und verwalten.\n\nBen
 msgid "Here you can install from our current online offering plug-ins. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
 msgstr "Hier können Sie von unseren aktuellen Online-Angebot Plug-Ins installieren.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
-msgid "Here you can choose to configure your tuner. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie Ihren Tuner für die Konfiguration auswählen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
+msgid "Here you can choose to configure your tuner. For your channel search, you must edit their tuner and adjust depending on the connection. For engine systems require an additional engine settings making."
+msgstr "Hier können Sie Ihren Tuner für die Konfiguration auswählen.\n\nFür Ihren Kanalsuchlauf müssen Sie Ihre Tuner bearbeiten und je nach Anbindung einstellen. Für Motoriesierte Anlagen Bitte zusätzlich Motor Ansteuerung bearbeiten."
 
 msgid "Here they can do for your chosen tuner to receive settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
 msgstr "Hier können Sie für Ihren ausgewählten Tuner die Empfangs-Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
@@ -3114,8 +3114,8 @@ msgstr "Hier können Sie für Ihren ausgewählten Tuner die Empfangs-Einstellungen 
 msgid "Here they can do for your chosen tuner to lnb settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
 msgstr "Hier können Sie für Ihren ausgewählten Tuner die LNB-Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
-msgid "Here they can do for your chosen tuner to ownpos settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie für Ihren ausgewählten Tuner die Eigene-Position-Einstellungen vornehmen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
+msgid "Here you can make your settings for your engine systems. To enter the latitude and longitude using the number keys."
+msgstr "Hier können Sie für Ihre Motoriesierte Sat-Anlage Ihre Einstellungen vornehmen.\n\nZur Eingabe der Längen und Breitengrade benutzen Sie die Ziffertasten."
 
 msgid "Here you can check the reception of the current station. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
 msgstr "Hier können Sie den Empfang des aktuellen Senders überprüfen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
@@ -4226,3 +4226,10 @@ msgstr "DVD Strucktur gefunden, wollen sie diese mit dem DVD-Player starten ?"
 
 msgid "Shooting Background done !\nSave Screenshoot Path: /tmp/screenshot.jpg"
 msgstr "Ihr Hintergrundbild wurde gespeichert !\nSpeicherpfad: /tmp/screenshot.jpg"
+
+msgid "EDIT TUNER"
+msgstr "Tuner bearbeiten"
+
+msgid "EDIT MOTOR"
+msgstr "Motor Ansteuerung"
+
