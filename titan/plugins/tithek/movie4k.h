@@ -205,6 +205,7 @@ int movie4k_search(struct skin* grid, struct skin* listbox, struct skin* countla
 
 		if(line != NULL)
 		{
+			line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 			menu = ostrcat("/tmp/tithek/movie4k.search.list", NULL, 0, 0);
 			writesys(menu, line, 0);
 			free(line); line = NULL;
@@ -271,6 +272,7 @@ int movie4k_search_local(struct skin* grid, struct skin* listbox, struct skin* c
 
 			if(line != NULL)
 			{
+				line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 				menu = ostrcat("/tmp/tithek/movie4k.search.list", NULL, 0, 0);
 				writesys(menu, line, 0);
 				struct tithek* tnode = (struct tithek*)listbox->select->handle;
@@ -606,11 +608,12 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 		free(ret1); ret1 = NULL;
 	}
 
-  free(tmpid); tmpid = NULL;
+	free(tmpid); tmpid = NULL;
 	free(tmpstr); tmpstr = NULL;	
 
 	if(line != NULL)
 	{
+		line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 		tmpstr = ostrcat("/tmp/tithek/movie4k.hoster.list", NULL, 0, 0);
 		writesys(tmpstr, line, 0);
 		free(line); line = NULL;
@@ -756,6 +759,7 @@ int movie4k_hoster_series(struct skin* grid, struct skin* listbox, struct skin* 
 
 	if(line != NULL)
 	{
+		line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 		if(series == 0)
 			tmpstr = ostrcat("/tmp/tithek/movie4k.hoster.list", NULL, 0, 0);
 		else
@@ -839,21 +843,21 @@ int movie4k_series(struct skin* grid, struct skin* listbox, struct skin* countla
 					season = strstrip(season);
 					debug(99, "(S%s) input: %s%s",season, name, lang);
 
-          ostrcatbig(&line, _("Season"), &maxlen, &bigpos);
-          ostrcatbig(&line, " ", &maxlen, &bigpos);
-          ostrcatbig(&line, season, &maxlen, &bigpos);
-          ostrcatbig(&line, " ", &maxlen, &bigpos);
-          
-          ostrcatbig(&line, lang, &maxlen, &bigpos);
-          ostrcatbig(&line, "#http://www.movie4k.to/", &maxlen, &bigpos);
-          ostrcatbig(&line, link, &maxlen, &bigpos);
-          ostrcatbig(&line, "#http://atemio.dyndns.tv/mediathek/menu/s", &maxlen, &bigpos);
-          ostrcatbig(&line, season, &maxlen, &bigpos);
-          ostrcatbig(&line, ".jpg#s", &maxlen, &bigpos);
-          ostrcatbig(&line, season, &maxlen, &bigpos);
-          ostrcatbig(&line, ".jpg#Movie4k - ", &maxlen, &bigpos);
-          ostrcatbig(&line, title, &maxlen, &bigpos);
-          ostrcatbig(&line, "#39\n", &maxlen, &bigpos);
+					ostrcatbig(&line, _("Season"), &maxlen, &bigpos);
+					ostrcatbig(&line, " ", &maxlen, &bigpos);
+					ostrcatbig(&line, season, &maxlen, &bigpos);
+					ostrcatbig(&line, " ", &maxlen, &bigpos);
+					
+					ostrcatbig(&line, lang, &maxlen, &bigpos);
+					ostrcatbig(&line, "#http://www.movie4k.to/", &maxlen, &bigpos);
+					ostrcatbig(&line, link, &maxlen, &bigpos);
+					ostrcatbig(&line, "#http://atemio.dyndns.tv/mediathek/menu/s", &maxlen, &bigpos);
+					ostrcatbig(&line, season, &maxlen, &bigpos);
+					ostrcatbig(&line, ".jpg#s", &maxlen, &bigpos);
+					ostrcatbig(&line, season, &maxlen, &bigpos);
+					ostrcatbig(&line, ".jpg#Movie4k - ", &maxlen, &bigpos);
+					ostrcatbig(&line, title, &maxlen, &bigpos);
+					ostrcatbig(&line, "#39\n", &maxlen, &bigpos);
 
 					free(name), name = NULL;
 					free(lang), lang = NULL;
@@ -870,6 +874,7 @@ int movie4k_series(struct skin* grid, struct skin* listbox, struct skin* countla
 
 	if(line != NULL)
 	{
+		line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 		tmpstr = ostrcat("/tmp/tithek/movie4k.series.list", NULL, 0, 0);
 		writesys(tmpstr, line, 0);
 
@@ -952,27 +957,27 @@ int movie4k_series_listed(struct skin* grid, struct skin* listbox, struct skin* 
 					episode = strstrip(episode);
 					debug(99, "(S%s/E%s) input: %s%s",season, episode, name, lang);
 
-          ostrcatbig(&line, _("Season"), &maxlen, &bigpos);
-          ostrcatbig(&line, " ", &maxlen, &bigpos);
-          ostrcatbig(&line, season, &maxlen, &bigpos);
-          ostrcatbig(&line, " ", &maxlen, &bigpos);
-          ostrcatbig(&line, _("Episode"), &maxlen, &bigpos);
-          ostrcatbig(&line, " ", &maxlen, &bigpos);
-          ostrcatbig(&line, episode, &maxlen, &bigpos);
-          ostrcatbig(&line, " ", &maxlen, &bigpos);
-          ostrcatbig(&line, lang, &maxlen, &bigpos);
-          ostrcatbig(&line, "#http://www.movie4k.to/", &maxlen, &bigpos);
-          ostrcatbig(&line, link, &maxlen, &bigpos);
-          ostrcatbig(&line, "#http://atemio.dyndns.tv/mediathek/menu/s", &maxlen, &bigpos);
-          ostrcatbig(&line, season, &maxlen, &bigpos);
-          ostrcatbig(&line, "e", &maxlen, &bigpos);
-          ostrcatbig(&line, episode, &maxlen, &bigpos);
-          ostrcatbig(&line, ".jpg#s", &maxlen, &bigpos);
-          ostrcatbig(&line, season, &maxlen, &bigpos);
-          ostrcatbig(&line, "e", &maxlen, &bigpos);
-          ostrcatbig(&line, episode, &maxlen, &bigpos);
-          ostrcatbig(&line, ".jpg#Movie4k - ", &maxlen, &bigpos);
-          ostrcatbig(&line, title, &maxlen, &bigpos);
+					ostrcatbig(&line, _("Season"), &maxlen, &bigpos);
+					ostrcatbig(&line, " ", &maxlen, &bigpos);
+					ostrcatbig(&line, season, &maxlen, &bigpos);
+					ostrcatbig(&line, " ", &maxlen, &bigpos);
+					ostrcatbig(&line, _("Episode"), &maxlen, &bigpos);
+					ostrcatbig(&line, " ", &maxlen, &bigpos);
+					ostrcatbig(&line, episode, &maxlen, &bigpos);
+					ostrcatbig(&line, " ", &maxlen, &bigpos);
+					ostrcatbig(&line, lang, &maxlen, &bigpos);
+					ostrcatbig(&line, "#http://www.movie4k.to/", &maxlen, &bigpos);
+					ostrcatbig(&line, link, &maxlen, &bigpos);
+					ostrcatbig(&line, "#http://atemio.dyndns.tv/mediathek/menu/s", &maxlen, &bigpos);
+					ostrcatbig(&line, season, &maxlen, &bigpos);
+					ostrcatbig(&line, "e", &maxlen, &bigpos);
+					ostrcatbig(&line, episode, &maxlen, &bigpos);
+					ostrcatbig(&line, ".jpg#s", &maxlen, &bigpos);
+					ostrcatbig(&line, season, &maxlen, &bigpos);
+					ostrcatbig(&line, "e", &maxlen, &bigpos);
+					ostrcatbig(&line, episode, &maxlen, &bigpos);
+					ostrcatbig(&line, ".jpg#Movie4k - ", &maxlen, &bigpos);
+					ostrcatbig(&line, title, &maxlen, &bigpos);
 					ostrcatbig(&line, "#34\n", &maxlen, &bigpos); 
 
 					free(name), name = NULL;
@@ -991,6 +996,7 @@ int movie4k_series_listed(struct skin* grid, struct skin* listbox, struct skin* 
 
 	if(line != NULL)
 	{
+		line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 		tmpstr = ostrcat("/tmp/tithek/movie4k.series.listed.list", NULL, 0, 0);
 		writesys(tmpstr, line, 0);
 

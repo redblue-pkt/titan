@@ -157,6 +157,7 @@ int rtl2now_search_local(struct skin* grid, struct skin* listbox, struct skin* c
 
 			if(line != NULL)
 			{
+				line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 				menu = ostrcat("/tmp/tithek/rtl2now.search.list", NULL, 0, 0);
 				writesys(menu, line, 0);
 				struct tithek* tnode = (struct tithek*)listbox->select->handle;
@@ -220,6 +221,7 @@ int rtlnow_search_local(struct skin* grid, struct skin* listbox, struct skin* co
 
 			if(line != NULL)
 			{
+				line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 				menu = ostrcat("/tmp/tithek/rtl-now.search.list", NULL, 0, 0);
 				writesys(menu, line, 0);
 				struct tithek* tnode = (struct tithek*)listbox->select->handle;
@@ -283,6 +285,7 @@ int superrtlnow_search_local(struct skin* grid, struct skin* listbox, struct ski
 
 			if(line != NULL)
 			{
+				line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 				menu = ostrcat("/tmp/tithek/superrtlnow.search.list", NULL, 0, 0);
 				writesys(menu, line, 0);
 				struct tithek* tnode = (struct tithek*)listbox->select->handle;
@@ -346,6 +349,7 @@ int voxnow_search_local(struct skin* grid, struct skin* listbox, struct skin* co
 
 			if(line != NULL)
 			{
+				line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 				menu = ostrcat("/tmp/tithek/voxnow.search.list", NULL, 0, 0);
 				writesys(menu, line, 0);
 				struct tithek* tnode = (struct tithek*)listbox->select->handle;
