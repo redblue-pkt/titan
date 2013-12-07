@@ -611,14 +611,30 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 	{
 		if(status.expertmodus >= 11 || file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack"))
 		{
-			addmenulist(&mlist, "Search on Kinox", NULL, NULL, 0, 0);
+			addmenulist(&mlist, "Search on KinoX", NULL, NULL, 0, 0);
+			addmenulist(&mlist, "Search on KinoX (local)", NULL, NULL, 0, 0);
 			addmenulist(&mlist, "Search on Movie4k", NULL, NULL, 0, 0);
+			addmenulist(&mlist, "Search on Movie4k (local)", NULL, NULL, 0, 0);
 			addmenulist(&mlist, "Search on Solarmovies (movie)", NULL, NULL, 0, 0);
 			addmenulist(&mlist, "Search on Solarmovies (serie)", NULL, NULL, 0, 0);
-			addmenulist(&mlist, "Search on Movie4k", NULL, NULL, 0, 0);
+			addmenulist(&mlist, "Search on Solarmovies (local)", NULL, NULL, 0, 0);
+			addmenulist(&mlist, "Search on Beeg (local)", NULL, NULL, 0, 0);
+			addmenulist(&mlist, "Search on Xvideos (local)", NULL, NULL, 0, 0);
 		}
 		addmenulist(&mlist, "Search on Youtube", NULL, NULL, 0, 0);
+		addmenulist(&mlist, "Search on Youtube (local)", NULL, NULL, 0, 0);
 		addmenulist(&mlist, "Search on MyVideo", NULL, NULL, 0, 0);
+		addmenulist(&mlist, "Search on Myvideo (local)", NULL, NULL, 0, 0);
+		addmenulist(&mlist, "Search on ARD (local)", NULL, NULL, 0, 0);
+		addmenulist(&mlist, "Search on ZDF (local)", NULL, NULL, 0, 0);
+		addmenulist(&mlist, "Search on DrDish (local)", NULL, NULL, 0, 0);
+		addmenulist(&mlist, "Search on Giga (local)", NULL, NULL, 0, 0);
+		addmenulist(&mlist, "Search on Rtl-Now (local)", NULL, NULL, 0, 0);
+		addmenulist(&mlist, "Search on Rtl2Now (local)", NULL, NULL, 0, 0);
+		addmenulist(&mlist, "Search on SuperRtlNow (local)", NULL, NULL, 0, 0);
+		addmenulist(&mlist, "Search on VoxNow (local)", NULL, NULL, 0, 0);
+		addmenulist(&mlist, "Search on InternetTv (local)", NULL, NULL, 0, 0);
+		addmenulist(&mlist, "Search on InternetRadio (local)", NULL, NULL, 0, 0);
 	}
 
 	addmenulist(&mlist, "Downloads", NULL, NULL, 0, 0);
@@ -668,16 +684,50 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 			screenbgdownload(1);
 		else if(ostrcmp(mbox->name, "Search on Kinox") == 0)
 			ret = 2;
+		else if(ostrcmp(mbox->name, "Search on Kinox (local)") == 0)
+			ret = 8;
 		else if(ostrcmp(mbox->name, "Search on Solarmovies (movie)") == 0)
 			ret = 3;
 		else if(ostrcmp(mbox->name, "Search on Solarmovies (serie)") == 0)
 			ret = 4;
+		else if(ostrcmp(mbox->name, "Search on Solarmovies (local)") == 0)
+			ret = 9;
 		else if(ostrcmp(mbox->name, "Search on Youtube") == 0)
 			ret = 5;
+		else if(ostrcmp(mbox->name, "Search on Youtube (local)") == 0)
+			ret = 10;
 		else if(ostrcmp(mbox->name, "Search on MyVideo") == 0)
 			ret = 6;
+		else if(ostrcmp(mbox->name, "Search on MyVideo (local)") == 0)
+			ret = 11;
 		else if(ostrcmp(mbox->name, "Search on Movie4k") == 0)
 			ret = 7;
+		else if(ostrcmp(mbox->name, "Search on Movie4k (local)") == 0)
+			ret = 12;
+		else if(ostrcmp(mbox->name, "Search on InternetRadio (local)") == 0)
+			ret = 13;
+		else if(ostrcmp(mbox->name, "Search on InternetTv (local)") == 0)
+			ret = 14;
+		else if(ostrcmp(mbox->name, "Search on ARD (local)") == 0)
+			ret = 15;
+		else if(ostrcmp(mbox->name, "Search on ZDF (local)") == 0)
+			ret = 16;
+		else if(ostrcmp(mbox->name, "Search on DrDish (local)") == 0)
+			ret = 17;
+		else if(ostrcmp(mbox->name, "Search on Giga (local)") == 0)
+			ret = 18;
+		else if(ostrcmp(mbox->name, "Search on Beeg (local)") == 0)
+			ret = 19;
+		else if(ostrcmp(mbox->name, "Search on Rtl2Now (local)") == 0)
+			ret = 20;
+		else if(ostrcmp(mbox->name, "Search on Rtl-Now (local)") == 0)
+			ret = 21;
+		else if(ostrcmp(mbox->name, "Search on SuperRtlNow (local)") == 0)
+			ret = 22;
+		else if(ostrcmp(mbox->name, "Search on VoxNow (local)") == 0)
+			ret = 23;
+		else if(ostrcmp(mbox->name, "Search on Xvideos (local)") == 0)
+			ret = 24;
 		else if(ostrcmp(mbox->name, "Downloads") == 0)
 		{
 			if(status.play == 1)
