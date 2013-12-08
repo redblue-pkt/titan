@@ -3813,21 +3813,6 @@ msgstr "DNS Adresse"
 msgid "usedns"
 msgstr "Benutze DNS Adresse"
 
-msgid "Search on Kinox"
-msgstr "Suche diesen Titel bei Kinox"
-
-msgid "Search on Solarmovies (movie)"
-msgstr "Suche diesen Titel bei Solarmovies (movie)"
-
-msgid "Search on Solarmovies (serie)"
-msgstr "Suche diesen Titel bei Solarmovies (serie)"
-
-msgid "Search on Youtube"
-msgstr "Suche diesen Titel bei Youtube"
-
-msgid "Search on MyVideo"
-msgstr "Suche diesen Titel bei MyVideo"
-
 msgid "Error, found result without imdbid we can't this save in MediaDB"
 msgstr "Fehler, ihr TMBb Suchergebniss hat eine ungültige imdbid und kann\ndadurch nicht in der MediaDB abgespeichert werden"
 
@@ -4244,3 +4229,78 @@ msgstr "LNB/Unicable bearbeiten"
 
 msgid "Select Unicabel Manufacturer"
 msgstr "Unicable Hersteller auswählen"
+
+msgid "Search on KinoX"
+msgstr "Suche diesen Titel bei Kinox"
+
+msgid "Search on KinoX (local)"
+msgstr "Suche diesen Titel bei KinoX (local)"
+
+msgid "Search on Movie4k"
+msgstr "Suche diesen Titel bei Movie4k"
+
+msgid "Search on Movie4k (local)"
+msgstr "Suche diesen Titel bei Movie4k (local)"
+
+msgid "Search on Solarmovies (movie)"
+msgstr "Suche diesen Titel bei Solarmovies (movie)"
+
+msgid "Search on Solarmovies (serie)"
+msgstr "Suche diesen Titel bei Solarmovies (serie)"
+
+msgid "Search on Solarmovies (local)"
+msgstr "Suche diesen Titel bei Solarmovies (local)"
+
+msgid "Search on Youtube"
+msgstr "Suche diesen Titel bei Youtube"
+
+msgid "Search on Youtube (local)"
+msgstr "Suche diesen Titel bei Youtube (local)"
+
+msgid "Search on MyVideo"
+msgstr "Suche diesen Titel bei MyVideo"
+
+msgid "Search on MyVideo (local)"
+msgstr "Suche diesen Titel bei MyVideo (local)"
+
+msgid "Search on Beeg (local)"
+msgstr "Suche diesen Titel bei Beeg (local)"
+
+msgid "Search on Xvideos (local)"
+msgstr "Suche diesen Titel bei Xvideos (local)"
+
+msgid "Search on ARD (local)"
+msgstr "Suche diesen Titel bei ARD (local)"
+
+msgid "Search on ZDF (local)"
+msgstr "Suche diesen Titel bei ZDF (local)"
+
+msgid "Search on DrDish (local)"
+msgstr "Suche diesen Titel bei DrDish (local)"
+
+msgid "Search on Giga (local)"
+msgstr "Suche diesen Titel bei Giga (local)"
+
+msgid "Search on Rtl-Now (local)"
+msgstr "Suche diesen Titel bei Rtl-Now (local)"
+
+msgid "Search on Rtl2-Now (local)"
+msgstr "Suche diesen Titel bei Rtl2-Now (local)"
+
+msgid "Search on SuperRTL-Now (local)"
+msgstr "Suche diesen Titel bei SuperRTL-Now (local)"
+
+msgid "Search on VOX-Now (local)"
+msgstr "Suche diesen Titel bei VOX-Now (local)"
+
+msgid "Search on InternetTv (local)"
+msgstr "Suche diesen Titel bei InternetTv (local)"
+
+msgid "Search on InternetRadio (local)"
+msgstr "Suche diesen Titel bei InternetRadio (local)"
+
+msgid "Search on Mle-HD (local)"
+msgstr "Suche diesen Titel bei Mle-Hd (local)"
+
+msgid "Search on Netzkino (local)"
+msgstr "Suche diesen Titel bei Netzkino (local)"

@@ -618,9 +618,11 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 			addmenulist(&mlist, "Search on Solarmovies (movie)", NULL, NULL, 0, 0);
 			addmenulist(&mlist, "Search on Solarmovies (serie)", NULL, NULL, 0, 0);
 			addmenulist(&mlist, "Search on Solarmovies (local)", NULL, NULL, 0, 0);
+			addmenulist(&mlist, "Search on Mle-HD (local)", NULL, NULL, 0, 0);
 			addmenulist(&mlist, "Search on Beeg (local)", NULL, NULL, 0, 0);
 			addmenulist(&mlist, "Search on Xvideos (local)", NULL, NULL, 0, 0);
 		}
+		addmenulist(&mlist, "Search on Netzkino (local)", NULL, NULL, 0, 0);
 		addmenulist(&mlist, "Search on Youtube", NULL, NULL, 0, 0);
 		addmenulist(&mlist, "Search on Youtube (local)", NULL, NULL, 0, 0);
 		addmenulist(&mlist, "Search on MyVideo", NULL, NULL, 0, 0);
@@ -630,9 +632,9 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 		addmenulist(&mlist, "Search on DrDish (local)", NULL, NULL, 0, 0);
 		addmenulist(&mlist, "Search on Giga (local)", NULL, NULL, 0, 0);
 		addmenulist(&mlist, "Search on Rtl-Now (local)", NULL, NULL, 0, 0);
-		addmenulist(&mlist, "Search on Rtl2Now (local)", NULL, NULL, 0, 0);
-		addmenulist(&mlist, "Search on SuperRtlNow (local)", NULL, NULL, 0, 0);
-		addmenulist(&mlist, "Search on VoxNow (local)", NULL, NULL, 0, 0);
+		addmenulist(&mlist, "Search on Rtl2-Now (local)", NULL, NULL, 0, 0);
+		addmenulist(&mlist, "Search on SuperRTL-Now (local)", NULL, NULL, 0, 0);
+		addmenulist(&mlist, "Search on VOX-Now (local)", NULL, NULL, 0, 0);
 		addmenulist(&mlist, "Search on InternetTv (local)", NULL, NULL, 0, 0);
 		addmenulist(&mlist, "Search on InternetRadio (local)", NULL, NULL, 0, 0);
 	}
@@ -718,16 +720,20 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 			ret = 18;
 		else if(ostrcmp(mbox->name, "Search on Beeg (local)") == 0)
 			ret = 19;
-		else if(ostrcmp(mbox->name, "Search on Rtl2Now (local)") == 0)
+		else if(ostrcmp(mbox->name, "Search on Rtl2-Now (local)") == 0)
 			ret = 20;
 		else if(ostrcmp(mbox->name, "Search on Rtl-Now (local)") == 0)
 			ret = 21;
-		else if(ostrcmp(mbox->name, "Search on SuperRtlNow (local)") == 0)
+		else if(ostrcmp(mbox->name, "Search on SuperRTL-Now (local)") == 0)
 			ret = 22;
-		else if(ostrcmp(mbox->name, "Search on VoxNow (local)") == 0)
+		else if(ostrcmp(mbox->name, "Search on VOX-Now (local)") == 0)
 			ret = 23;
 		else if(ostrcmp(mbox->name, "Search on Xvideos (local)") == 0)
 			ret = 24;
+		else if(ostrcmp(mbox->name, "Search on Mle-HD (local)") == 0)
+			ret = 25;
+		else if(ostrcmp(mbox->name, "Search on Netzkino (local)") == 0)
+			ret = 26;
 		else if(ostrcmp(mbox->name, "Downloads") == 0)
 		{
 			if(status.play == 1)
