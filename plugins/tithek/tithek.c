@@ -38,6 +38,7 @@
 #include "internettv.h"
 #include "giga.h"
 #include "drdish.h"
+#include "netzkino.h"
 
 char pluginname[] = "TiTan Mediathek";
 char plugindesc[] = "TiTan Mediathek";
