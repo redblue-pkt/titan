@@ -4294,13 +4294,13 @@ msgid "Search on VOX-Now (local)"
 msgstr "Suche diesen Titel bei VOX-Now (local)"
 
 msgid "Search on InternetTv (local)"
-msgstr "Suche diesen Titel bei InternetTv (local)"
+msgstr "Suche diesen Titel bei Internet-Tv (local)"
 
 msgid "Search on InternetRadio (local)"
-msgstr "Suche diesen Titel bei InternetRadio (local)"
+msgstr "Suche diesen Titel bei Internet-Radio (local)"
 
 msgid "Search on Mle-HD (local)"
-msgstr "Suche diesen Titel bei Mle-Hd (local)"
+msgstr "Suche diesen Titel bei Mle-HD (local)"
 
 msgid "Search on Netzkino (local)"
 msgstr "Suche diesen Titel bei Netzkino (local)"
