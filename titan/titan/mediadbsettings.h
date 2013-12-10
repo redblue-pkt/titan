@@ -17,7 +17,7 @@ void screenmediadbsettings()
 	struct skin* tmp = NULL;
 	char* tmpstr = NULL;
 
-	if(checkbox("ATEMIO520") == 1)
+	if(checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1)
 		addchoicebox(mediadbpath, "/mnt/swapextensions/.mediadb", "/mnt/swapextensions/.mediadb");
 	addchoicebox(mediadbpath, "/media/hdd/.mediadb", "/media/hdd/.mediadb");
 	if(file_exist("/tmp/.swapextensionsdev") == 1)
