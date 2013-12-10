@@ -12,6 +12,7 @@ BUILDTYPE=${11}
 BOX=${12}
 GROUP=${13}
 
+
 rm "$HOME"/flashimg/.ipk-build-error
 
 if [ -z "$TYPE" ]; then
