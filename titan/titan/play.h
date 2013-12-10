@@ -652,8 +652,8 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 				addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);
 			else if(ostrcmp(child->name, "IMDb-API") == 0)
 				addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);
-			else if(ostrcmp(child->name, "TMDb") == 0)
-				addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);
+//			else if(ostrcmp(child->name, "TMDb") == 0)
+//				addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);
 		}
 		child = child->next;
 	}
