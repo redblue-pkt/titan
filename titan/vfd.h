@@ -203,7 +203,7 @@ int writevfdmenu(char *value)
 {
 	int ret = 0;
 
-	if(checkbox("WHITEBOX") == 0 && checkbox("ATEMIO520") == 0)
+	if(checkbox("ATEMIO530") == 0 && checkbox("ATEMIO520") == 0)
 		ret = writevfd(value);
 	return ret;
 }
@@ -235,17 +235,17 @@ int writevfd(char *value)
 
 		len = strlen(value);
 
-		if(checkbox("WHITEBOX") != 1  && checkbox("ATEMIO520") != 1 && len > 63)
+		if(checkbox("ATEMIO530") != 1  && checkbox("ATEMIO520") != 1 && len > 63)
 		{
 			memcpy(tmpvalue, value, 63);
 			tmpvalue[62] = '\0';
 		}
-		else if((checkbox("WHITEBOX") == 1 || checkbox("ATEMIO520") == 1) && len > 4)
+		else if((checkbox("ATEMIO530") == 1 || checkbox("ATEMIO520") == 1) && len > 4)
 		{
 			memcpy(tmpvalue, value, 4);
 			tmpvalue[4] = '\0';
 		}
-		else if((checkbox("WHITEBOX") == 1 || checkbox("ATEMIO520") == 1) && len < 4)
+		else if((checkbox("ATEMIO530") == 1 || checkbox("ATEMIO520") == 1) && len < 4)
 		{
 			memcpy(tmpvalue, value, len);
 			tmpvalue[4] = '\0';
@@ -355,7 +355,7 @@ void initvfd()
 	tmpstr = ostrcat(tmpstr, "<", 1, 0);
 	tmpstr = ostrcat(tmpstr, PROGNAME, 1, 0);
 	tmpstr = ostrcat(tmpstr, ">", 1, 0);
-	if(checkbox("WHITEBOX") != 1 && checkbox("ATEMIO520") != 1)
+	if(checkbox("ATEMIO530") != 1 && checkbox("ATEMIO520") != 1)
 		writevfd(string_toupper(tmpstr));
 	free(tmpstr); tmpstr = NULL;
 
@@ -405,7 +405,7 @@ void updatevfd()
 
 	// Set VFD icons:
 	setvfdicon(VFD_REC, status.recording > 0);
-	if(status.standby == 0 && checkbox("WHITEBOX") != 1 && checkbox("ATEMIO520") != 1)
+	if(status.standby == 0 && checkbox("ATEMIO530") != 1 && checkbox("ATEMIO520") != 1)
 	{
 		//setvfdicon(VFD_USB, 0);
 		if(getaktvideosize() == 0) //videosize is ok
@@ -501,7 +501,7 @@ void updatevfd()
 				tmpstr = ostrcat(tmpstr, gettime(NULL, "%d.%m.%y"), 1, 1);
 				break;
 			default: // time
-				if(checkbox("WHITEBOX") == 1 || checkbox("ATEMIO520") == 1)
+				if(checkbox("ATEMIO530") == 1 || checkbox("ATEMIO520") == 1)
 					tmpstr = ostrcat(tmpstr, gettime(NULL, "%H%M"), 1, 1);
 				else
 					tmpstr = ostrcat(tmpstr, gettime(NULL, "%H:%M"), 1, 1);
