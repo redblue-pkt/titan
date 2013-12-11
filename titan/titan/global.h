@@ -875,9 +875,19 @@ int checkreseller()
 			return 0;
 		}
 	}
-	else if(checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1)
+	else if(checkbox("ATEMIO520") == 1)
 	{
 		if((buf[1072] & 0xff) == 0x25 && (buf[1073] & 0xff) == 0x29 && (buf[1074] & 0xff) == 0x02 && (buf[1075] & 0xff) == 0xA5)
+		{
+			debug(10, "ResellerId: found (%s) reseller !", getboxtype());
+			free(buf);
+			fclose(fd);
+			return 0;
+		}
+	}
+	else if(checkbox("ATEMIO530") == 1)
+	{
+		if((buf[1072] & 0xff) == 0x25 && (buf[1073] & 0xff) == 0x29 && (buf[1074] & 0xff) == 0x02 && (buf[1075] & 0xff) == 0xAA)
 		{
 			debug(10, "ResellerId: found (%s) reseller !", getboxtype());
 			free(buf);
