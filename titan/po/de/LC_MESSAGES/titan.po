@@ -2668,7 +2668,7 @@ msgid "OWN POS"
 msgstr "Eigene Pos"
 
 msgid "Engine Systems"
-msgstr "Motoriesierte Anlage"
+msgstr "Motorisierte Anlage"
 
 msgid "Player for .ts"
 msgstr "Player für .ts"
@@ -3106,7 +3106,7 @@ msgid "Here you can install from our current online offering plug-ins. Use to na
 msgstr "Hier können Sie von unseren aktuellen Online-Angebot Plug-Ins installieren.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Here you can choose to configure your tuner. For your channel search, you must edit their tuner and adjust depending on the connection. For engine systems require an additional engine settings making."
-msgstr "Hier können Sie Ihren Tuner für die Konfiguration auswählen.\nFür Ihren Kanalsuchlauf müssen Sie Ihre Tuner bearbeiten und je nach Anbindung einstellen. Für Motoriesierte Anlagen Bitte zusätzlich Motor Ansteuerung bearbeiten."
+msgstr "Hier können Sie Ihren Tuner für die Konfiguration auswählen.\nFür Ihren Kanalsuchlauf müssen Sie Ihre Tuner bearbeiten und je nach Anbindung einstellen. Für motorisierte Anlagen bitte zusätzlich Motor Ansteuerung bearbeiten."
 
 msgid "Here you can set for your satellite tuner. First, make your satellite selection. When using DiSEqC They also point to the port used. For advanced Lnb / Unicam navigate to the field and press the Red button."
 msgstr "Hier können Sie für Ihren Sat Tuner einstellen.\nStellen Sie zunächst Ihre Satteliten Auswahl ein. Bei Verwendung von DiSEqC weisen Sie zusätzlich den verwendeten Port zu. Für erweiterte Lnb / Unicam navigieren Sie zum Feld und drücken Sie die Rote Taste."
@@ -4227,7 +4227,7 @@ msgstr "Motor Ansteuerung"
 msgid "EDIT LNB / UNICABLE"
 msgstr "LNB/Unicable bearbeiten"
 
-msgid "Select Unicabel Manufacturer"
+msgid "Select Unicable Manufacturer"
 msgstr "Unicable Hersteller auswählen"
 
 msgid "Search on KinoX"
