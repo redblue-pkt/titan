@@ -1031,7 +1031,7 @@ int addhddall()
 					nodedev->sleeptime = timetosleep;
 					nodedev->notchanged = 0;
 				}
-				if(strlen(pos) == 3) {
+				if(strlen(pos) == 3 && timetosleep > 0) {
 					free(tmpstr2);tmpstr2=NULL;
 					tmpstr2 = ostrcat(tmpstr2, "/sys/block/", 1, 0);
 					tmpstr2 = ostrcat(tmpstr2, nodedev->device, 1, 0);
