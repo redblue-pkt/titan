@@ -2548,7 +2548,7 @@ msgid "SCAN"
 msgstr "starten"
 
 msgid "Install netsurf Internetbrowser Tpk first !"
-msgstr "Internetbrowser netsurf ist nicht installiert"
+msgstr "Internetbrowser Netsurf ist nicht installiert"
 
 msgid "start Internet browser now ?"
 msgstr "Wollen Sie den Internet Browser starten?"
@@ -3058,7 +3058,7 @@ msgid "deactive"
 msgstr "sichtbar"
 
 msgid "TPK upgrade (online)"
-msgstr "TPK Aktualisieren (Internet)"
+msgstr "TPK Pakete aktualisieren (online)"
 
 msgid "TPK media (media)"
 msgstr "TPK installieren von USB Medien"
@@ -3598,7 +3598,7 @@ msgid "Resync Recording immediately"
 msgstr "Synchronisiere Aufnahmen sofort (Schreibcache aus)"
 
 msgid "TPK Upgrade done, your system will reboot !"
-msgstr "TPK Aktualisieren abgeschlossen\nIhre Box wird neu gestartet"
+msgstr "TPK Aktualisierung abgeschlossen\nIhre Box wird neu gestartet"
 
 msgid "TPK Tmp Install done, your system will reboot !"
 msgstr "TPK Tmp Installation abgeschlossen\nIhre Box wird neu gestartet"
@@ -4165,7 +4165,7 @@ msgid "Channel scan ended."
 msgstr "Sendersuchlauf wurde beendet.\nBitte speichern Sie mit den Farbtasten Ihre Suche ab."
 
 msgid "Channel scan ended.\nNothing found."
-msgstr "Sendersuchlauf wurde beendet.\nEs wurden keine Sender gefunden."
+msgstr "Kanalsuchlauf wurde beendet.\nEs wurden keine Kanäle gefunden."
 
 msgid "The page is temporarily unavailable"
 msgstr "Die Seite ist vorübergehend nicht erreichbar"
@@ -4180,7 +4180,7 @@ msgid "Here you can set your Channel search options. Use to navigate the control
 msgstr "Hier können Sie Ihre Kanal Suchoptionen einstellen. Benutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren.\nSehr wichtig, bevor Sie eine Kanalsuche starten, müssen Sie Ihre Empfangs Tuner unter Tuner-Einstellungen (Kabel/Sat/Terrestrisch) einstellen."
 
 msgid "After the manual search, you have to if they want to save all the sender to save the search with the green button. To add a station manually have to select the sender in the right box and then save it with the red button that station. If you do not do this and go to exit out the search not saved."
-msgstr "Nach der manuellen Suche müssen Sie, wenn sie alle gefundenen Sender abspeichern wollen, mit der grünen Taste die Suche abspeichern. Um manuell einen Sender hinzuzufügen, muss man den Sender im rechten Feld markieren und dann mit der roten Taste diesen Sender abspeichern. Exit speichert das Suchergebnis nicht."
+msgstr "Nach der manuellen Suche müssen Sie mit der grünen Taste die gefundenen Kanäle abspeichern. Um manuell einen Kanal hinzuzufügen, muss man den Kanal im rechten Feld markieren und dann mit der roten Taste abspeichern. Exit speichert das Suchergebnis nicht."
 
 msgid "SCANSTART"
 msgstr "Kanalsuche starten"
@@ -4213,7 +4213,7 @@ msgid "Here you can configure the smartcard readers. Use to navigate the control
 msgstr "Hier können Sie Ihre Smartkarten konfigurieren.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "Found VIDEO_TS Folder, start with DVD-Player ?"
-msgstr "DVD Strucktur gefunden, wollen sie diese mit dem DVD-Player starten ?"
+msgstr "DVD Struktur gefunden, mit DVD-Player abspielen?"
 
 msgid "Shooting Background done !\nSave Screenshoot Path: /tmp/screenshot.jpg"
 msgstr "Ihr Hintergrundbild wurde gespeichert !\nSpeicherpfad: /tmp/screenshot.jpg"
