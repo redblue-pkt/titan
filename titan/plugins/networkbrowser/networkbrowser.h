@@ -1815,20 +1815,15 @@ start:
 
 	if(rcret == getrcconfigint("rcblue", NULL))
 	{
-printf("a00000000000000\n");
 		screennetworkbrowser_scan();
 		freemenulist(mlist, 0); mlist = NULL;
 		freenetworkbrowser(); networkbrowser = NULL;
 		goto start;
 	}
-printf("11111111111111\n");
+
 	if(rcret == getrcconfigint("rcmenu", NULL))
 	{
-printf("22222222222222\n");
-
 		screennetworkbrowser_settings();
-printf("3333333333333333\n");
-
 		freemenulist(mlist, 0); mlist = NULL;
 		freenetworkbrowser(); networkbrowser = NULL;
 		goto start;
