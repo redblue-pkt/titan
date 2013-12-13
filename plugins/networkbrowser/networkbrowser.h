@@ -890,20 +890,37 @@ void getnetworkbrowser_dns(struct inetwork* net, struct menulist** mlist)
 
 void getnetworkbrowser_cifs(struct menulist** mlist, char* s, char* r, char* u, char* p)
 {
-	int i = 0;
+	int i = 0, skip = 0;
 	char* tmpstr = NULL;
 	shareinfo* sInfo;
 
+printf("11111111111111111\n");
 	if(s == NULL || r == NULL || u == NULL || p == NULL || mlist == NULL) return;
+printf("22222222222222222\n");
+
+			printf("s: %s\n", s);
+			printf("r: %s\n", r);
+			printf("u: %s\n", u);
+			printf("p: %s\n", p);
 	
 	sInfo = newShareInfo();
 	smbInfo(s, r, u, p, sInfo);
 	
 	for (i = 0; i < 128; i++)
 	{
+printf("(%d) 3333333333333333\n", i);
+//printf("sInfo[i]: %s\n", sInfo[i]);
+//			printf("sharename: %s\n", sInfo[i].sharename);
+//			printf("type: %s\n", sInfo[i].typ);
+//			printf("comment: %s\n", sInfo[i].comment);
+//			printf("rech: %s\n", r);
+//			printf("rechip: %s\n", s);
+			
 		usleep(100000);
 
 		if(sInfo[i].sharename[0] == '\0'){
+printf("4444444444444444\n");
+skip=1;	
 			break;
 		}
 		else
@@ -922,6 +939,124 @@ void getnetworkbrowser_cifs(struct menulist** mlist, char* s, char* r, char* u, 
 			changemenulistparam(tmpmlist, sInfo[i].sharename, NULL, NULL, NULL);
 			free(tmpstr); tmpstr = NULL;
 		}
+	}
+
+	if(skip = 1)
+	{
+		printf("555555555555555\n");
+		char* cmd = NULL;
+		cmd = ostrcat("smbclient -L //" , s, 0, 0);
+		cmd = ostrcat(cmd, " -U '" , 1, 0);
+		cmd = ostrcat(cmd, u , 1, 0);
+		cmd = ostrcat(cmd, "%" , 1, 0);
+		cmd = ostrcat(cmd, p , 1, 0);
+		cmd = ostrcat(cmd, "'" , 1, 0);
+		printf("cmd: %s\n",cmd);
+		debug(70, "cmd: %s", cmd);
+
+		char* tmpstr1 = command(cmd);
+		printf("tmpstr1: %s\n",tmpstr1);
+		debug(70, "%s", tmpstr1);
+
+		char* tmpstr2 = string_resub("---------      ----      -------", "This machine has a browse list:", tmpstr1, 0);
+		printf("tmpstr2: %s\n",tmpstr2);
+		free(tmpstr1), tmpstr1 = NULL;
+
+		if(tmpstr2 == NULL)
+		{
+			free(cmd), cmd = NULL;
+			cmd = ostrcat("smbclient -N -L //" , s, 0, 0);
+			printf("cmd: %s\n",cmd);
+			debug(70, "cmd: %s", cmd);
+	
+			tmpstr1 = command(cmd);
+			printf("tmpstr1: %s\n",tmpstr1);
+			debug(70, "%s", tmpstr1);
+
+			free(tmpstr2), tmpstr2 = NULL;
+			tmpstr2 = string_resub("---------      ----      -------", "This machine has a browse list:", tmpstr1, 0);
+			printf("tmpstr2: %s\n",tmpstr2);
+			free(tmpstr1), tmpstr1 = NULL;
+		}
+
+		if(tmpstr2 != NULL)
+		{
+			char* tmpstr3 = ostrcat("\t", tmpstr2, 0, 0);
+
+			int count = 0;
+			int j;
+			struct splitstr* ret1 = NULL;
+			ret1 = strsplit(tmpstr3, "\n", &count);
+
+			if(ret1 != NULL && count > 0)
+			{
+				int max = count;
+				for(j = 0; j < max; j++)
+				{
+					printf("1ret1[j].part: %s\n",ret1[j].part);
+					
+					if(ostrncmp("\t", ret1[j].part, 1))
+					{
+						printf("skip line\n");
+						continue;
+					}
+
+					char* tmpstr4 = ostrcat(ret1[j].part, NULL, 0, 0);
+					
+					strstrip(tmpstr4);
+					printf("tmpstr4: %s\n",tmpstr4);
+					
+					char* tmpstr5 = ostrcat(tmpstr4 + 15, NULL, 0, 0);
+					printf("tmpstr5: %s\n",tmpstr5);
+
+					char* tmpstr7 = ostrcat(tmpstr4 + 25, NULL, 0, 0);
+					printf("tmpstr7: %s\n",tmpstr7);
+					free(tmpstr4), tmpstr4 = NULL;
+
+					char* tmpstr6 = string_resub("\t", tmpstr5, ret1[j].part, 0);
+					printf("tmpstr6: %s\n",tmpstr6);
+					
+					stringreplacechar(tmpstr5, ' ', '\0');									
+					free(tmpstr5), tmpstr5 = NULL;
+
+					debug(70, "sharename: %s", tmpstr6);
+					debug(70, "type: %s", tmpstr5);
+					debug(70, "comment: %s", tmpstr7);
+					debug(70, "rech: %s", r);
+					debug(70, "rechip: %s", s);
+			
+					tmpstr = ostrcat(tmpstr , "(cifs) ", 1, 0);
+					tmpstr = ostrcat(tmpstr , strstrip(s), 1, 0);
+					tmpstr = ostrcat(tmpstr , ": /", 1, 0);
+					tmpstr = ostrcat(tmpstr , strstrip(tmpstr6), 1, 0);
+					free(tmpstr6), tmpstr6 = NULL;	
+					free(tmpstr7), tmpstr7 = NULL;
+/*
+					strstrip(ret1[j].part);
+					printf("ret1[j].part: %s\n",ret1[j].part);
+					stringreplacechar(ret1[j].part, ' ', '\0');
+					printf("3ret1[j].part: %s\n",ret1[j].part);
+					
+					tmpstr = ostrcat(tmpstr , "(cifs) ", 1, 0);
+					tmpstr = ostrcat(tmpstr , strstrip(s), 1, 0);
+					tmpstr = ostrcat(tmpstr , ": /", 1, 0);
+					tmpstr = ostrcat(tmpstr , strstrip(ret1[j].part), 1, 0);
+*/
+
+					struct menulist* tmpmlist = addmenulist(mlist, tmpstr, NULL, "netbrowser_cifs.png", 0, 0);
+					changemenulistparam(tmpmlist, ret1[j].part, NULL, NULL, NULL);
+					free(tmpstr); tmpstr = NULL;		
+
+					printf("###############################################\n");
+
+				}
+			}
+			free(ret1), ret1 = NULL;
+			free(tmpstr3), tmpstr3 = NULL;
+		}
+		free(cmd), cmd = NULL;
+		free(tmpstr1), tmpstr1 = NULL;
+		free(tmpstr2), tmpstr2 = NULL;
 	}
 
 	freeShareInfo(sInfo);
