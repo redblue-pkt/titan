@@ -119,7 +119,9 @@
 #: tithek_global.h:41 adjust.h:93 adjust.h:118 adjust.h:148 adjust.h:162
 #: adjust.h:183 adjust.h:199 adjust.h:220 adjust.h:224 adjust.h:250
 #: mediadbsettings.h:28 mediadbsettings.h:32 mediadbsettings.h:51
-#: mediadbsettings.h:66 mediadbsettings.h:70
+#: mediadbsettings.h:66 mediadbsettings.h:70 networkbrowser.h:1538
+#: networkbrowser.h:1542 networkbrowser.h:1551 networkbrowser.h:1556
+#: networkbrowser.h:1560 networkbrowser.h:1586
 msgid "no"
 msgstr ""
 
@@ -243,6 +245,8 @@ msgstr ""
 #: adjust.h:119 adjust.h:149 adjust.h:159 adjust.h:184 adjust.h:200
 #: adjust.h:221 adjust.h:225 mediadbsettings.h:29 mediadbsettings.h:33
 #: mediadbsettings.h:52 mediadbsettings.h:67 mediadbsettings.h:71
+#: networkbrowser.h:1539 networkbrowser.h:1543 networkbrowser.h:1552
+#: networkbrowser.h:1557 networkbrowser.h:1561 networkbrowser.h:1587
 msgid "yes"
 msgstr ""
 
@@ -844,7 +848,11 @@ msgstr ""
 #: record.h:962 record.h:1149 record.h:1382 record.h:1407 record.h:348
 #: record.h:964 record.h:1151 record.h:1384 record.h:1409 global.h:6347
 #: record.h:355 record.h:971 record.h:1158 record.h:1391 record.h:1416
-#: global.h:6349 global.h:6344 avsettings.h:241 avsettings.h:238
+#: global.h:6349 global.h:6344 avsettings.h:241 avsettings.h:238 global.h:6354
+#: networkbrowser.h:1121 networkbrowser.h:1675 networkbrowser.h:1682
+#: networkbrowser.h:1687 networkbrowser.h:1843 play.h:1235 play.h:1425
+#: solarmovie.h:295 tithek.h:620 tithek.h:1057 tithek.h:1100 tithek.h:1327
+#: tithek.h:1349 tithek.h:1354 tithek.h:2995 tithek.h:3057 tithek.h:3071
 msgid "Message"
 msgstr ""
 
@@ -1177,7 +1185,12 @@ msgstr ""
 #: mc_videoplayer.h:892 mediadb.h:2454 mediadbsettings.h:95 record.h:346
 #: record.h:962 record.h:1407 httpdfunc.h:3049 record.h:348 record.h:964
 #: record.h:1409 global.h:6347 record.h:355 record.h:971 record.h:1416
-#: global.h:6349 global.h:6344 avsettings.h:241 avsettings.h:238
+#: global.h:6349 global.h:6344 avsettings.h:241 avsettings.h:238 global.h:6354
+#: networkbrowser.h:1121 networkbrowser.h:1675 networkbrowser.h:1682
+#: networkbrowser.h:1687 networkbrowser.h:1843 play.h:1220 play.h:1226
+#: play.h:1235 play.h:1236 play.h:1425 solarmovie.h:295 tithek.h:620
+#: tithek.h:1057 tithek.h:1100 tithek.h:1327 tithek.h:1349 tithek.h:1354
+#: tithek.h:2995 tithek.h:3057 tithek.h:3071
 msgid "OK"
 msgstr ""
 
@@ -1511,6 +1524,11 @@ msgstr ""
 #: record.h:348 record.h:964 record.h:1151 record.h:1384 record.h:1409
 #: global.h:6347 record.h:355 record.h:971 record.h:1158 record.h:1391
 #: record.h:1416 global.h:6349 global.h:6344 avsettings.h:241 avsettings.h:238
+#: global.h:6354 networkbrowser.h:1121 networkbrowser.h:1675
+#: networkbrowser.h:1682 networkbrowser.h:1687 networkbrowser.h:1843
+#: play.h:1220 play.h:1226 play.h:1235 play.h:1236 play.h:1425
+#: solarmovie.h:295 tithek.h:620 tithek.h:1057 tithek.h:1100 tithek.h:1327
+#: tithek.h:1349 tithek.h:1354 tithek.h:2995 tithek.h:3057 tithek.h:3071
 msgid "EXIT"
 msgstr ""
 
@@ -2013,7 +2031,7 @@ msgstr ""
 #: global.h:6153 global.h:6159 global.h:6209 global.h:6060 keyactions.h:213
 #: global.h:6145 global.h:6149 global.h:6158 global.h:6162 global.h:6243
 #: global.h:6272 global.h:6274 global.h:6320 global.h:6328 keyactions.h:224
-#: global.h:6347 global.h:6349 global.h:6344
+#: global.h:6347 global.h:6349 global.h:6344 global.h:6354
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -2404,7 +2422,7 @@ msgstr ""
 #: play.h:1372 play.h:1361 play.h:1365 play.h:1369 mc_videoplayer.h:871
 #: mc_audioplayer.h:599 mc_audioplayer.h:702 mc_pictureplayer.h:237
 #: mc_pictureplayer.h:363 mc_pictureplayer.h:456 mc_videoplayer.h:739
-#: mc_videoplayer.h:876
+#: mc_videoplayer.h:876 play.h:1425
 msgid "Can't start playback !"
 msgstr ""
 
@@ -2535,7 +2553,7 @@ msgstr ""
 #: filemanager.h:306 mc_internetbrowser.h:41 mc_wetterinfo.h:41 tithek.h:1348
 #: filemanager.h:307 filemanager.h:331 tithek.h:1357 filemanager.h:343
 #: tithek.h:1356 tithek.h:1368 filemanager.h:345 tithek.h:1369 tithek.h:1341
-#: tithek.h:1342 tithek.h:1343 filemanager.h:355
+#: tithek.h:1342 tithek.h:1343 filemanager.h:355 tithek.h:1354
 msgid "Registration needed, please contact Atemio !"
 msgstr ""
 
@@ -2676,7 +2694,8 @@ msgstr ""
 #: networkbrowser.h:806 networkbrowser.h:811 networkbrowser.h:838
 #: networkbrowser.h:840 networkbrowser.h:836 networkbrowser.h:854
 #: networkbrowser.h:984 networkbrowser.h:985 networkbrowser.h:987
-#: networkbrowser.h:988 networkbrowser.h:986
+#: networkbrowser.h:988 networkbrowser.h:986 networkbrowser.h:1092
+#: networkbrowser.h:1093
 msgid "Scanning Network Shares, please wait !!"
 msgstr ""
 
@@ -2684,6 +2703,7 @@ msgstr ""
 #: networkbrowser.h:824 networkbrowser.h:829 networkbrowser.h:856
 #: networkbrowser.h:858 networkbrowser.h:854 networkbrowser.h:872
 #: networkbrowser.h:1005 networkbrowser.h:1008 networkbrowser.h:1006
+#: networkbrowser.h:1113
 msgid "Networkbrowser - show scanned DNS-Shares"
 msgstr ""
 
@@ -2691,6 +2711,7 @@ msgstr ""
 #: networkbrowser.h:831 networkbrowser.h:836 networkbrowser.h:863
 #: networkbrowser.h:865 networkbrowser.h:861 networkbrowser.h:879
 #: networkbrowser.h:1026 networkbrowser.h:1029 networkbrowser.h:1027
+#: networkbrowser.h:1139
 msgid "Networkbrowser - show scanned cifs/nfs-Shares"
 msgstr ""
 
@@ -2703,7 +2724,7 @@ msgstr ""
 #: networkbrowser.h:1117 networkbrowser.h:1089 networkbrowser.h:1094
 #: networkbrowser.h:1143 networkbrowser.h:1145 networkbrowser.h:1144
 #: networkbrowser.h:1159 networkbrowser.h:1372 networkbrowser.h:1375
-#: networkbrowser.h:1373
+#: networkbrowser.h:1373 networkbrowser.h:1491
 msgid "cifs"
 msgstr ""
 
@@ -2712,7 +2733,7 @@ msgstr ""
 #: networkbrowser.h:1118 networkbrowser.h:1090 networkbrowser.h:1095
 #: networkbrowser.h:1144 networkbrowser.h:1146 networkbrowser.h:1145
 #: networkbrowser.h:1160 networkbrowser.h:1373 networkbrowser.h:1376
-#: networkbrowser.h:1374
+#: networkbrowser.h:1374 networkbrowser.h:1492
 msgid "nfs"
 msgstr ""
 
@@ -2721,7 +2742,7 @@ msgstr ""
 #: networkbrowser.h:1119 networkbrowser.h:1091 networkbrowser.h:1096
 #: networkbrowser.h:1145 networkbrowser.h:1147 networkbrowser.h:1146
 #: networkbrowser.h:1161 networkbrowser.h:1374 networkbrowser.h:1377
-#: networkbrowser.h:1375
+#: networkbrowser.h:1375 networkbrowser.h:1493
 msgid "ftpfs"
 msgstr ""
 
@@ -2730,7 +2751,7 @@ msgstr ""
 #: networkbrowser.h:1152 networkbrowser.h:1124 networkbrowser.h:1129
 #: networkbrowser.h:1178 networkbrowser.h:1180 networkbrowser.h:1179
 #: networkbrowser.h:1194 networkbrowser.h:1409 networkbrowser.h:1412
-#: networkbrowser.h:1410
+#: networkbrowser.h:1410 networkbrowser.h:1528
 msgid "ssl_try"
 msgstr ""
 
@@ -2739,7 +2760,7 @@ msgstr ""
 #: networkbrowser.h:1153 networkbrowser.h:1125 networkbrowser.h:1130
 #: networkbrowser.h:1179 networkbrowser.h:1181 networkbrowser.h:1180
 #: networkbrowser.h:1195 networkbrowser.h:1410 networkbrowser.h:1413
-#: networkbrowser.h:1411
+#: networkbrowser.h:1411 networkbrowser.h:1529
 msgid "ssl_control"
 msgstr ""
 
@@ -2753,7 +2774,7 @@ msgstr ""
 #: networkbrowser.h:1182 networkbrowser.h:1181 networkbrowser.h:1196
 #: networkbrowser.h:1411 plugins_networkbrowser_skin.xml.h:24
 #: skins_networkbrowser_skin.xml.h:24 networkbrowser.h:1414
-#: networkbrowser.h:1412
+#: networkbrowser.h:1412 networkbrowser.h:1530
 msgid "ssl"
 msgstr ""
 
@@ -2762,7 +2783,7 @@ msgstr ""
 #: networkbrowser.h:1157 networkbrowser.h:1129 networkbrowser.h:1134
 #: networkbrowser.h:1183 networkbrowser.h:1185 networkbrowser.h:1184
 #: networkbrowser.h:1199 networkbrowser.h:1414 networkbrowser.h:1417
-#: networkbrowser.h:1415
+#: networkbrowser.h:1415 networkbrowser.h:1533
 msgid "socks5"
 msgstr ""
 
@@ -2771,7 +2792,7 @@ msgstr ""
 #: networkbrowser.h:1158 networkbrowser.h:1130 networkbrowser.h:1135
 #: networkbrowser.h:1184 networkbrowser.h:1186 networkbrowser.h:1185
 #: networkbrowser.h:1200 networkbrowser.h:1415 networkbrowser.h:1418
-#: networkbrowser.h:1416
+#: networkbrowser.h:1416 networkbrowser.h:1534
 msgid "socks4"
 msgstr ""
 
@@ -2780,7 +2801,7 @@ msgstr ""
 #: networkbrowser.h:1159 networkbrowser.h:1131 networkbrowser.h:1136
 #: networkbrowser.h:1185 networkbrowser.h:1187 networkbrowser.h:1186
 #: networkbrowser.h:1201 networkbrowser.h:1416 networkbrowser.h:1419
-#: networkbrowser.h:1417
+#: networkbrowser.h:1417 networkbrowser.h:1535
 msgid "html"
 msgstr ""
 
@@ -2789,7 +2810,7 @@ msgstr ""
 #: networkbrowser.h:1205 networkbrowser.h:1177 networkbrowser.h:1182
 #: networkbrowser.h:1231 networkbrowser.h:1233 networkbrowser.h:1232
 #: networkbrowser.h:1247 networkbrowser.h:1466 networkbrowser.h:1469
-#: networkbrowser.h:1467
+#: networkbrowser.h:1467 networkbrowser.h:1591
 msgid "udp"
 msgstr ""
 
@@ -2798,7 +2819,7 @@ msgstr ""
 #: networkbrowser.h:1206 networkbrowser.h:1178 networkbrowser.h:1183
 #: networkbrowser.h:1232 networkbrowser.h:1234 networkbrowser.h:1233
 #: networkbrowser.h:1248 networkbrowser.h:1467 networkbrowser.h:1470
-#: networkbrowser.h:1468
+#: networkbrowser.h:1468 networkbrowser.h:1592
 msgid "tcp"
 msgstr ""
 
@@ -2829,7 +2850,7 @@ msgstr ""
 #: networkbrowser.h:797 networkbrowser.h:956 networkbrowser.h:919
 #: networkbrowser.h:924 networkbrowser.h:967 networkbrowser.h:969
 #: networkbrowser.h:965 networkbrowser.h:983 networkbrowser.h:1153
-#: networkbrowser.h:1156 networkbrowser.h:1154
+#: networkbrowser.h:1156 networkbrowser.h:1154 networkbrowser.h:1272
 msgid "Add Cifs Network Share"
 msgstr ""
 
@@ -2840,7 +2861,7 @@ msgstr ""
 #: networkbrowser.h:983 networkbrowser.h:955 networkbrowser.h:960
 #: networkbrowser.h:1003 networkbrowser.h:1005 networkbrowser.h:1002
 #: networkbrowser.h:1019 networkbrowser.h:1203 networkbrowser.h:1206
-#: networkbrowser.h:1204
+#: networkbrowser.h:1204 networkbrowser.h:1322
 msgid "Add Nfs Network Share"
 msgstr ""
 
@@ -2851,7 +2872,7 @@ msgstr ""
 #: networkbrowser.h:855 networkbrowser.h:1010 networkbrowser.h:982
 #: networkbrowser.h:987 networkbrowser.h:1030 networkbrowser.h:1032
 #: networkbrowser.h:1046 networkbrowser.h:1243 networkbrowser.h:1246
-#: networkbrowser.h:1244
+#: networkbrowser.h:1244 networkbrowser.h:1362
 msgid "Add Ftpfs Network Share"
 msgstr ""
 
@@ -2860,7 +2881,7 @@ msgstr ""
 #: networkbrowser.h:1016 networkbrowser.h:1282 networkbrowser.h:1254
 #: networkbrowser.h:1259 networkbrowser.h:1322 networkbrowser.h:1324
 #: networkbrowser.h:1323 networkbrowser.h:1338 networkbrowser.h:1562
-#: networkbrowser.h:1565 networkbrowser.h:1563
+#: networkbrowser.h:1565 networkbrowser.h:1563 networkbrowser.h:1687
 msgid "Are you sure you want to save this network mount?"
 msgstr ""
 
@@ -2902,7 +2923,7 @@ msgstr ""
 #: networkbrowser.h:1341 networkbrowser.h:1404 networkbrowser.h:1406
 #: networkbrowser.h:1419 networkbrowser.h:1415 networkbrowser.h:1416
 #: networkbrowser.h:1431 networkbrowser.h:1658 networkbrowser.h:1661
-#: networkbrowser.h:1659
+#: networkbrowser.h:1659 networkbrowser.h:1843
 msgid "Are you sure you want remove this share?"
 msgstr ""
 
@@ -3595,7 +3616,8 @@ msgstr ""
 #: play.h:551 play.h:557 play.h:563 play.h:587 play.h:593 play.h:590
 #: play.h:596 play.h:1149 play.h:1155 plugins_tmc_skin.xml.h:1
 #: skins_tmc_skin.xml.h:1 play.h:1157 play.h:1163 play.h:1169 play.h:1171
-#: play.h:1177 play.h:1160 play.h:1166 play.h:1164 play.h:1170
+#: play.h:1177 play.h:1160 play.h:1166 play.h:1164 play.h:1170 play.h:1220
+#: play.h:1226
 msgid "EPG Info"
 msgstr ""
 
@@ -3615,13 +3637,14 @@ msgstr ""
 #: plugins_stock_skin.xml.h:4 plugins_weather_skin.xml.h:3
 #: skins_stock_skin.xml.h:4 skins_weather_skin.xml.h:3 play.h:1283
 #: plugins_weather_skin.xml.h:2 skins_weather_skin.xml.h:2 play.h:1291
-#: play.h:1297 play.h:1305 play.h:1294 play.h:1298
+#: play.h:1297 play.h:1305 play.h:1294 play.h:1298 play.h:1354
 msgid "DEL"
 msgstr ""
 
 #: play.h:633 play.h:639 play.h:645 play.h:675 play.h:676 dvdplay.h:27
 #: play.h:679 dvdplay.h:29 plugins_dlna_skin.xml.h:10 skins_dlna_skin.xml.h:10
 #: play.h:1283 play.h:1291 play.h:1297 play.h:1305 play.h:1294 play.h:1298
+#: play.h:1354
 msgid "SELECT"
 msgstr ""
 
@@ -8611,7 +8634,7 @@ msgid "skip "
 msgstr ""
 
 #: tithek.h:298 tithek.h:303 tithek.h:601 tithek.h:606 tithek.h:610
-#: tithek.h:611 tithek.h:607
+#: tithek.h:611 tithek.h:607 tithek.h:620
 msgid "File exist, overwrite?"
 msgstr ""
 
@@ -8619,7 +8642,7 @@ msgstr ""
 #: tithek.h:513 tithek.h:498 tithek.h:515 tithek.h:536 tithek.h:544
 #: tithek.h:497 tithek.h:514 tithek.h:552 tithek.h:499 tithek.h:516
 #: tithek.h:554 tithek.h:1321 tithek.h:1330 tithek.h:1329 tithek.h:1341
-#: tithek.h:1342 tithek.h:1314 tithek.h:1315 tithek.h:1316
+#: tithek.h:1342 tithek.h:1314 tithek.h:1315 tithek.h:1316 tithek.h:1327
 msgid "Start playback"
 msgstr ""
 
@@ -8627,7 +8650,7 @@ msgstr ""
 #: tithek.h:479 tithek.h:519 tithek.h:540 tithek.h:548 tithek.h:518
 #: tithek.h:556 tithek.h:480 tithek.h:520 tithek.h:558 tithek.h:1343
 #: tithek.h:1352 tithek.h:1351 tithek.h:1363 tithek.h:1364 tithek.h:1336
-#: tithek.h:1337 tithek.h:1338
+#: tithek.h:1337 tithek.h:1338 tithek.h:1349
 msgid "Can't get Streamurl !"
 msgstr ""
 
@@ -9205,28 +9228,28 @@ msgstr ""
 #: networkbrowser.h:1209 networkbrowser.h:1181 networkbrowser.h:1186
 #: networkbrowser.h:1235 networkbrowser.h:1237 networkbrowser.h:1236
 #: networkbrowser.h:1251 networkbrowser.h:1470 networkbrowser.h:1473
-#: networkbrowser.h:1471
+#: networkbrowser.h:1471 networkbrowser.h:1595
 msgid "rw"
 msgstr ""
 
 #: networkbrowser.h:1210 networkbrowser.h:1182 networkbrowser.h:1187
 #: networkbrowser.h:1236 networkbrowser.h:1238 networkbrowser.h:1237
 #: networkbrowser.h:1252 networkbrowser.h:1471 networkbrowser.h:1474
-#: networkbrowser.h:1472
+#: networkbrowser.h:1472 networkbrowser.h:1596
 msgid "ro"
 msgstr ""
 
 #: networkbrowser.h:1259 networkbrowser.h:1231 networkbrowser.h:1236
 #: networkbrowser.h:1310 networkbrowser.h:1312 networkbrowser.h:1311
 #: networkbrowser.h:1326 networkbrowser.h:1550 networkbrowser.h:1553
-#: networkbrowser.h:1551
+#: networkbrowser.h:1551 networkbrowser.h:1675
 msgid "Sharename can't be empty!"
 msgstr ""
 
 #: networkbrowser.h:1270 networkbrowser.h:1242 networkbrowser.h:1247
 #: networkbrowser.h:1317 networkbrowser.h:1319 networkbrowser.h:1318
 #: networkbrowser.h:1333 networkbrowser.h:1557 networkbrowser.h:1560
-#: networkbrowser.h:1558
+#: networkbrowser.h:1558 networkbrowser.h:1682
 msgid "A mount entry with this name already exists!"
 msgstr ""
 
@@ -9807,6 +9830,7 @@ msgstr ""
 #: solarmovie.h:190 solarmovie.h:265 putlocker.h:53 solarmovie.h:266
 #: xvidstage.h:65 xvidstage.h:175 solarmovie.h:250 solarmovie.h:287
 #: solarmovie.h:205 tithek_global.h:205 solarmovie.h:202 solarmovie.h:230
+#: solarmovie.h:295
 msgid "This file doesn't exist, or has been removed"
 msgstr ""
 
@@ -9849,7 +9873,8 @@ msgstr ""
 #: movie4k.h:922 movie4k.h:1036 solarmovie.h:441 kinox.h:226 movie4k.h:747
 #: movie4k.h:870 movie4k.h:984 solarmovie.h:359 tithek_global.h:359
 #: movie4k.h:639 movie4k.h:763 solarmovie.h:320 kinox.h:227 movie4k.h:654
-#: movie4k.h:779 movie4k.h:892 solarmovie.h:378
+#: movie4k.h:779 movie4k.h:892 solarmovie.h:378 kinox.h:292 movie4k.h:720
+#: movie4k.h:846 movie4k.h:960 solarmovie.h:443
 msgid "Season"
 msgstr ""
 
@@ -9860,6 +9885,7 @@ msgstr ""
 #: movie4k.h:1040 solarmovie.h:445 kinox.h:230 movie4k.h:751 movie4k.h:988
 #: solarmovie.h:363 tithek_global.h:363 movie4k.h:643 movie4k.h:882
 #: solarmovie.h:324 kinox.h:231 movie4k.h:658 movie4k.h:896 solarmovie.h:382
+#: kinox.h:296 movie4k.h:724 movie4k.h:964 solarmovie.h:447
 msgid "Episode"
 msgstr ""
 
@@ -10167,10 +10193,12 @@ msgid "iD3Tag"
 msgstr ""
 
 #: play.h:1075 play.h:1079 play.h:1085 play.h:1093 play.h:1082 play.h:1086
+#: play.h:1142
 msgid "Jump To (min)"
 msgstr ""
 
 #: play.h:1164 play.h:1172 play.h:1178 play.h:1186 play.h:1175 play.h:1179
+#: play.h:1235
 msgid "Record in progress"
 msgstr ""
 
@@ -10486,6 +10514,7 @@ msgstr ""
 #: plugins_tithek_skin.xml.h:8 skins_tithek_skin.xml.h:8 tithek.h:1026
 #: tithek.h:1030 tithek.h:1031 plugins_tithek1_skin.xml.h:8 tithek.h:1027
 #: plugins_tithek222_skin.xml.h:8 plugins_tithek.2222222_skin.xml.h:8
+#: tithek.h:1040
 msgid "please wait..."
 msgstr ""
 
@@ -10745,30 +10774,34 @@ msgid "permanent"
 msgstr ""
 
 #: tithek.h:807 tithek.h:812 tithek.h:816 tithek.h:817 tithek.h:813
+#: tithek.h:826
 msgid "found"
 msgstr ""
 
 #: tithek.h:812 tithek.h:817 tithek.h:821 tithek.h:822 tithek.h:818
+#: tithek.h:831
 msgid "Results"
 msgstr ""
 
 #: tithek.h:1034 tithek.h:1039 tithek.h:1043 tithek.h:1044 tithek.h:1040
+#: tithek.h:1053
 msgid "Remove Cachefile ?"
 msgstr ""
 
 #: tithek.h:1081 tithek.h:1086 tithek.h:1090 tithek.h:1091 tithek.h:1087
+#: tithek.h:1100
 msgid ""
 "Can't start download.\n"
 "Please try later."
 msgstr ""
 
 #: tithek.h:1362 tithek.h:1371 tithek.h:1370 tithek.h:1382 tithek.h:1383
-#: tithek.h:1355 tithek.h:1356 tithek.h:1357
+#: tithek.h:1355 tithek.h:1356 tithek.h:1357 tithek.h:1368
 msgid "TitanNit Tithek disclaimer"
 msgstr ""
 
 #: tithek.h:1425 tithek.h:1436 tithek.h:1435 tithek.h:1447 tithek.h:1448
-#: tithek.h:1420 tithek.h:1421 tithek.h:1422 tithek.h:1419
+#: tithek.h:1420 tithek.h:1421 tithek.h:1422 tithek.h:1419 tithek.h:1432
 msgid "Page"
 msgstr ""
 
@@ -10781,12 +10814,12 @@ msgid "The hoster is not yet supported for the time !"
 msgstr ""
 
 #: tithek.h:2131 tithek.h:2139 tithek.h:2138 tithek.h:2173 tithek.h:2174
-#: tithek.h:2146 tithek.h:2147 tithek.h:2148 tithek.h:2145
+#: tithek.h:2146 tithek.h:2147 tithek.h:2148 tithek.h:2145 tithek.h:3057
 msgid "Remove this Favorite ?"
 msgstr ""
 
 #: tithek.h:2145 tithek.h:2153 tithek.h:2152 tithek.h:2187 tithek.h:2188
-#: tithek.h:2160 tithek.h:2161 tithek.h:2162 tithek.h:2159
+#: tithek.h:2160 tithek.h:2161 tithek.h:2162 tithek.h:2159 tithek.h:3071
 msgid "Add this link as Favorite ?"
 msgstr ""
 
@@ -11504,7 +11537,7 @@ msgstr ""
 msgid "ERROR... can't set marker in this file"
 msgstr ""
 
-#: play.h:1179 play.h:1187 play.h:1176 play.h:1180
+#: play.h:1179 play.h:1187 play.h:1176 play.h:1180 play.h:1236
 msgid "Really Delete ?"
 msgstr ""
 
@@ -11591,7 +11624,7 @@ msgid ""
 msgstr ""
 
 #: tithek.h:2111 tithek.h:2112 tithek.h:2084 tithek.h:2085 tithek_global.h:110
-#: tithek.h:2086 tithek_global.h:238 tithek.h:2083
+#: tithek.h:2086 tithek_global.h:238 tithek.h:2083 tithek.h:2995
 msgid "The hoster is not yet supported !"
 msgstr ""
 
@@ -11674,4 +11707,8 @@ msgstr ""
 msgid ""
 "Shooting Background done !\n"
 "Save Screenshoot Path: /tmp/screenshot.jpg"
+msgstr ""
+
+#: networkbrowser.h:1121
+msgid "Use User authentication ?"
 msgstr ""
