@@ -292,7 +292,7 @@ struct menulist* menulistboxext(struct menulist* mlist, char* paramskinname, cha
 			screenlinkedchannel();
 			break;
 		}
-		if(rcret == getrcconfigint("rcok", NULL) || rcret == getrcconfigint("rcred", NULL) || rcret == getrcconfigint("rcgreen", NULL) || rcret == getrcconfigint("rcyellow", NULL) || rcret == getrcconfigint("rcblue", NULL))
+		if(rcret == getrcconfigint("rcok", NULL) || rcret == getrcconfigint("rcred", NULL) || rcret == getrcconfigint("rcgreen", NULL) || rcret == getrcconfigint("rcyellow", NULL) || rcret == getrcconfigint("rcblue", NULL) || rcret == getrcconfigint("rcmenu", NULL))
 		{
 			if(rcreturn == NULL && rcret != getrcconfigint("rcok", NULL))
 				continue;

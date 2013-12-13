@@ -4304,3 +4304,15 @@ msgstr "Suche diesen Titel bei Mle-HD (local)"
 
 msgid "Search on Netzkino (local)"
 msgstr "Suche diesen Titel bei Netzkino (local)"
+
+msgid "Auth Settings"
+msgstr "Authentifizierungs - Einstellungen"
+
+msgid "AUTH SETTINGS"
+msgstr "Authentifizierung"
+
+msgid "Use User authentication ?"
+msgstr "Wollen Sie mit User Authentifizierung Suchen ?"
+
+msgid "Here you can configure your Auth Data. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Hier können Sie Ihre User Authentifizierung konfigurieren.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
