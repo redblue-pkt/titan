@@ -46,6 +46,7 @@ struct networkbrowser
 struct networkbrowser *networkbrowser = NULL;
 
 char* readnetworkbrowser(char* filename, int flag);
+void screennetworkbrowser_settings();
 void screennetworkbrowser_addshare(struct networkbrowser* node, int newnode);
 
 void debugnetworkbrowser(struct networkbrowser* node)
@@ -890,47 +891,33 @@ void getnetworkbrowser_dns(struct inetwork* net, struct menulist** mlist)
 
 void getnetworkbrowser_cifs(struct menulist** mlist, char* s, char* r, char* u, char* p)
 {
-	int i = 0, skip = 0;
+	int i = 0, error = 0, found = 0;
 	char* tmpstr = NULL;
 	shareinfo* sInfo;
 
-printf("11111111111111111\n");
 	if(s == NULL || r == NULL || u == NULL || p == NULL || mlist == NULL) return;
-printf("22222222222222222\n");
-
-			printf("s: %s\n", s);
-			printf("r: %s\n", r);
-			printf("u: %s\n", u);
-			printf("p: %s\n", p);
 	
 	sInfo = newShareInfo();
 	smbInfo(s, r, u, p, sInfo);
 	
 	for (i = 0; i < 128; i++)
 	{
-printf("(%d) 3333333333333333\n", i);
-//printf("sInfo[i]: %s\n", sInfo[i]);
-//			printf("sharename: %s\n", sInfo[i].sharename);
-//			printf("type: %s\n", sInfo[i].typ);
-//			printf("comment: %s\n", sInfo[i].comment);
-//			printf("rech: %s\n", r);
-//			printf("rechip: %s\n", s);
-			
 		usleep(100000);
 
-		if(sInfo[i].sharename[0] == '\0'){
-printf("4444444444444444\n");
-skip=1;	
+		if(sInfo[i].sharename[0] == '\0')
+		{
+			error = 1;
 			break;
 		}
 		else
 		{
+			debug(70, "----------------------------------------------------------", sInfo[i].sharename);
 			debug(70, "sharename: %s", sInfo[i].sharename);
 			debug(70, "type: %s", sInfo[i].typ);
 			debug(70, "comment: %s", sInfo[i].comment);
 			debug(70, "rech: %s", r);
 			debug(70, "rechip: %s", s);
-			
+			debug(70, "----------------------------------------------------------", sInfo[i].sharename);			
 			tmpstr = ostrcat(tmpstr , "(cifs) ", 1, 0);
 			tmpstr = ostrcat(tmpstr , strstrip(s), 1, 0);
 			tmpstr = ostrcat(tmpstr , ": /", 1, 0);
@@ -938,12 +925,12 @@ skip=1;
 			struct menulist* tmpmlist = addmenulist(mlist, tmpstr, NULL, "netbrowser_cifs.png", 0, 0);
 			changemenulistparam(tmpmlist, sInfo[i].sharename, NULL, NULL, NULL);
 			free(tmpstr); tmpstr = NULL;
+			found = 1;
 		}
 	}
 
-	if(skip = 1)
+	if(error == 1 && found == 0)
 	{
-		printf("555555555555555\n");
 		char* cmd = NULL;
 		cmd = ostrcat("smbclient -L //" , s, 0, 0);
 		cmd = ostrcat(cmd, " -U '" , 1, 0);
@@ -951,7 +938,6 @@ skip=1;
 		cmd = ostrcat(cmd, "%" , 1, 0);
 		cmd = ostrcat(cmd, p , 1, 0);
 		cmd = ostrcat(cmd, "'" , 1, 0);
-		printf("cmd: %s\n",cmd);
 		debug(70, "cmd: %s", cmd);
 
 		char* tmpstr1 = command(cmd);
@@ -959,23 +945,19 @@ skip=1;
 		debug(70, "%s", tmpstr1);
 
 		char* tmpstr2 = string_resub("---------      ----      -------", "This machine has a browse list:", tmpstr1, 0);
-		printf("tmpstr2: %s\n",tmpstr2);
 		free(tmpstr1), tmpstr1 = NULL;
 
 		if(tmpstr2 == NULL)
 		{
 			free(cmd), cmd = NULL;
 			cmd = ostrcat("smbclient -N -L //" , s, 0, 0);
-			printf("cmd: %s\n",cmd);
 			debug(70, "cmd: %s", cmd);
 	
 			tmpstr1 = command(cmd);
-			printf("tmpstr1: %s\n",tmpstr1);
 			debug(70, "%s", tmpstr1);
 
 			free(tmpstr2), tmpstr2 = NULL;
 			tmpstr2 = string_resub("---------      ----      -------", "This machine has a browse list:", tmpstr1, 0);
-			printf("tmpstr2: %s\n",tmpstr2);
 			free(tmpstr1), tmpstr1 = NULL;
 		}
 
@@ -993,62 +975,52 @@ skip=1;
 				int max = count;
 				for(j = 0; j < max; j++)
 				{
-					printf("1ret1[j].part: %s\n",ret1[j].part);
-					
 					if(ostrncmp("\t", ret1[j].part, 1))
 					{
-						printf("skip line\n");
 						continue;
 					}
 
 					char* tmpstr4 = ostrcat(ret1[j].part, NULL, 0, 0);
 					
 					strstrip(tmpstr4);
-					printf("tmpstr4: %s\n",tmpstr4);
-					
 					char* tmpstr5 = ostrcat(tmpstr4 + 15, NULL, 0, 0);
-					printf("tmpstr5: %s\n",tmpstr5);
-
 					char* tmpstr7 = ostrcat(tmpstr4 + 25, NULL, 0, 0);
-					printf("tmpstr7: %s\n",tmpstr7);
 					free(tmpstr4), tmpstr4 = NULL;
 
 					char* tmpstr6 = string_resub("\t", tmpstr5, ret1[j].part, 0);
-					printf("tmpstr6: %s\n",tmpstr6);
 					
 					stringreplacechar(tmpstr5, ' ', '\0');									
-					free(tmpstr5), tmpstr5 = NULL;
 
+					debug(70, "----------------------------------------------------------", sInfo[i].sharename);
 					debug(70, "sharename: %s", tmpstr6);
 					debug(70, "type: %s", tmpstr5);
 					debug(70, "comment: %s", tmpstr7);
 					debug(70, "rech: %s", r);
 					debug(70, "rechip: %s", s);
-			
+					debug(70, "----------------------------------------------------------", sInfo[i].sharename);
+						
 					tmpstr = ostrcat(tmpstr , "(cifs) ", 1, 0);
 					tmpstr = ostrcat(tmpstr , strstrip(s), 1, 0);
 					tmpstr = ostrcat(tmpstr , ": /", 1, 0);
 					tmpstr = ostrcat(tmpstr , strstrip(tmpstr6), 1, 0);
-					free(tmpstr6), tmpstr6 = NULL;	
+					free(tmpstr5), tmpstr5 = NULL;	
 					free(tmpstr7), tmpstr7 = NULL;
 /*
 					strstrip(ret1[j].part);
-					printf("ret1[j].part: %s\n",ret1[j].part);
 					stringreplacechar(ret1[j].part, ' ', '\0');
-					printf("3ret1[j].part: %s\n",ret1[j].part);
-					
+
 					tmpstr = ostrcat(tmpstr , "(cifs) ", 1, 0);
 					tmpstr = ostrcat(tmpstr , strstrip(s), 1, 0);
 					tmpstr = ostrcat(tmpstr , ": /", 1, 0);
 					tmpstr = ostrcat(tmpstr , strstrip(ret1[j].part), 1, 0);
-*/
-
 					struct menulist* tmpmlist = addmenulist(mlist, tmpstr, NULL, "netbrowser_cifs.png", 0, 0);
 					changemenulistparam(tmpmlist, ret1[j].part, NULL, NULL, NULL);
-					free(tmpstr); tmpstr = NULL;		
-
-					printf("###############################################\n");
-
+					free(tmpstr); tmpstr = NULL;
+*/
+					struct menulist* tmpmlist = addmenulist(mlist, tmpstr, NULL, "netbrowser_cifs.png", 0, 0);
+					changemenulistparam(tmpmlist, tmpstr6, NULL, NULL, NULL);
+					free(tmpstr); tmpstr = NULL;
+					free(tmpstr6), tmpstr6 = NULL;
 				}
 			}
 			free(ret1), ret1 = NULL;
@@ -1143,19 +1115,24 @@ start:
 	if(mbox != NULL)
 	{
 		drawscreen(load, 0, 0);
-		char* user = ostrcat(user, getconfig("netbrowser_user", NULL), 1, 0);
+
+		char* user = NULL, *pass = NULL;
+
+		if(textbox(_("Message"), _("Use User authentication ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0) == 1)
+		{
+			user = ostrcat(user, getconfig("netbrowser_user", NULL), 1, 0);
+			pass = ostrcat(pass, getconfig("netbrowser_pass", NULL), 1, 0);
+		}
+
 		if(user == NULL)
 			user = ostrcat("user", NULL, 0, 0);
-		char* pass = ostrcat(pass, getconfig("netbrowser_pass", NULL), 1, 0);
 		if(pass == NULL)
 			pass = ostrcat("pass", NULL, 0, 0);
 
 		debug(70, "user: %s",user);
 		debug(70, "pass: %s",pass);
 
-		getnetworkbrowser_cifs(&mlist1, mbox->param, mbox->param1, user, pass);
-		free(user), user = NULL;
-		free(pass), pass = NULL;		
+		getnetworkbrowser_cifs(&mlist1, mbox->param, mbox->param1, user, pass);		
 		getnetworkbrowser_nfs(&mlist1, mbox->param, mbox->param1);
 		clearscreen(load);
 start1:
@@ -1176,6 +1153,10 @@ start1:
 					node->dns = ostrcat(tmpstr3, NULL, 0, 0);
 					free(tmpstr3), tmpstr3 = NULL;
 					node->sharedir = ostrcat(mbox1->param, NULL, 0, 0);
+					node->username = ostrcat(user, NULL, 0, 0);
+					node->password = ostrcat(pass, NULL, 0, 0);
+					free(user), user = NULL;
+					free(pass), pass = NULL;
 					screennetworkbrowser_addshare(node, 1);
 				}
 			}
@@ -1199,6 +1180,8 @@ start1:
 			goto start1;
 		}
 		freemenulist(mlist1, 1); mlist1 = NULL;
+		free(user), user = NULL;
+		free(pass), pass = NULL;
 		goto start;
 	}
 
@@ -1560,10 +1543,16 @@ void screennetworkbrowser_addshare(struct networkbrowser* node, int newnode)
 	addchoicebox(skin_usessl, "1", _("yes"));
 	setchoiceboxselection(skin_usessl, node->usessl);
 
+	if(ostrcmp(node->username, "user") != 0 || ostrcmp(node->password, "pass") != 0)
+	{
+		tmpstr = ostrcat(tmpstr, "1", 1, 0);
+		node->userauth = ostrcat(tmpstr, NULL, 0, 0); 
+	}
 	addchoicebox(skin_userauth, "0", _("no"));
 	addchoicebox(skin_userauth, "1", _("yes"));
-	setchoiceboxselection(skin_userauth, node->userauth);
-
+	setchoiceboxselection(skin_userauth, tmpstr);
+	free(tmpstr); tmpstr = NULL;
+	
 	addchoicebox(skin_proxyauth, "0", _("no"));
 	addchoicebox(skin_proxyauth, "1", _("yes"));
 	setchoiceboxselection(skin_proxyauth, node->proxyauth);
@@ -1585,7 +1574,7 @@ void screennetworkbrowser_addshare(struct networkbrowser* node, int newnode)
 
 	changemask(skin_proxypass, "abcdefghijklmnopqrstuvwxyz");
 	changeinput(skin_proxypass, node->proxypass);
-
+		
 	changemask(skin_username, "abcdefghijklmnopqrstuvwxyz");
 	changeinput(skin_username, node->username);
 
@@ -1716,6 +1705,53 @@ void screennetworkbrowser_addshare(struct networkbrowser* node, int newnode)
 	clearscreen(net_addshare);
 }
 
+void screennetworkbrowser_settings()
+{
+	int rcret = -1;
+	struct skin* settings = getscreen("networkbrowser_settings");
+	struct skin* listbox = getscreennode(settings, "listbox");
+	struct skin* username = getscreennode(settings, "user");
+	struct skin* password = getscreennode(settings, "pass");
+	struct skin* tmp = NULL;
+
+	char* user = ostrcat(getconfig("netbrowser_user", NULL), NULL, 0, 0);
+	if(user == NULL)
+		user = ostrcat("user", NULL, 0, 0);
+
+	char* pass = ostrcat(getconfig("netbrowser_pass", NULL), NULL, 0, 0);
+	if(pass == NULL)
+		pass = ostrcat("pass", NULL, 0, 0);
+					
+	changemask(username, "abcdefghijklmnopqrstuvwxyz");
+	changeinput(username, user);
+	free(user), user = NULL;
+	
+	changemask(password, "abcdefghijklmnopqrstuvwxyz");
+	changeinput(password, pass);
+	free(pass), pass = NULL;
+
+	drawscreen(settings, 0, 0);
+	addscreenrc(settings, listbox);
+
+	tmp = listbox->select;
+	while(1)
+	{
+		addscreenrc(settings, tmp);
+		rcret = waitrc(settings, 0, 0);
+		tmp = listbox->select;
+
+		if(rcret == getrcconfigint("rcexit", NULL)) break;
+		if(rcret == getrcconfigint("rcok", NULL))
+		{
+			addconfigscreen("netbrowser_user", username);
+			addconfigscreen("netbrowser_pass", password);
+		}
+	}
+
+	delownerrc(settings);
+	clearscreen(settings);
+}
+
 void screennetworkbrowser()
 {
 	int rcret = 0;
@@ -1779,7 +1815,20 @@ start:
 
 	if(rcret == getrcconfigint("rcblue", NULL))
 	{
+printf("a00000000000000\n");
 		screennetworkbrowser_scan();
+		freemenulist(mlist, 0); mlist = NULL;
+		freenetworkbrowser(); networkbrowser = NULL;
+		goto start;
+	}
+printf("11111111111111\n");
+	if(rcret == getrcconfigint("rcmenu", NULL))
+	{
+printf("22222222222222\n");
+
+		screennetworkbrowser_settings();
+printf("3333333333333333\n");
+
 		freemenulist(mlist, 0); mlist = NULL;
 		freenetworkbrowser(); networkbrowser = NULL;
 		goto start;
