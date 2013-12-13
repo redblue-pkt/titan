@@ -13,7 +13,7 @@
 <node parent="buttonbar" name="b4" text="EDIT"   picmem="skin/key_green_30x30.png"  textposx="40" valign="middle" fontcol="black" fontsize="25" posx="345" posy="center" width="200" height="30">
 <node parent="buttonbar" name="b5" text="DEL"    picmem="skin/key_yellow_30x30.png" textposx="40" valign="middle" fontcol="black" fontsize="25" posx="555" posy="center" width="180" height="30">
 <node parent="buttonbar" name="b6" text="SEARCH" picmem="skin/key_blue_30x30.png"   textposx="40" valign="middle" fontcol="black" fontsize="25" posx="745" posy="center" width="150" height="30">
-<node parent="buttonbar" name="b7" text="AUTH SETTINGS" picmem="skin/key_menu_70x40.png"   textposx="40" valign="middle" fontcol="black" fontsize="25" posx="960" posy="center" width="220" height="30">
+<node parent="buttonbar" name="b7" text="AUTH SETTINGS" picmem="skin/key_menu_70x40.png"   textposx="80" valign="middle" fontcol="black" fontsize="25" posx="900" posy="center" width="300" height="40">
 </screen>
 
 
