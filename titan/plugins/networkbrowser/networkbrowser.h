@@ -931,8 +931,27 @@ void getnetworkbrowser_cifs(struct menulist** mlist, char* s, char* r, char* u, 
 
 	if(error == 1 && found == 0)
 	{
-		char* cmd = NULL;
-		cmd = ostrcat("smbclient -L //" , s, 0, 0);
+		char* cmd = NULL, *bin = NULL;
+		cmd = ostrcat("which smbclient3 | wc -l", NULL , 0, 0);
+		debug(70, "cmd: %s", cmd);
+
+		char* tmpstr1 = command(cmd);
+		debug(70, "---- binary check ----");
+		debug(70, "%s", tmpstr1);
+		debug(70, "----------------------");
+		if(!ostrncmp("0", tmpstr1, 1))
+		{
+			textbox(_("Message"), _("For Better Win7 Support install please Tpk Install > Network > Smbclient"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 5, 0);
+			bin = ostrcat("smbclient", NULL , 0, 0);
+		}
+		else
+			bin = ostrcat("smbclient3", NULL , 0, 0);
+
+		free(cmd), cmd = NULL;
+		free(tmpstr1), tmpstr1 = NULL;
+
+		cmd = ostrcat(bin, " -L //" , 0, 0);
+		cmd = ostrcat(cmd , r, 1, 0);
 		cmd = ostrcat(cmd, " -U '" , 1, 0);
 		cmd = ostrcat(cmd, u , 1, 0);
 		cmd = ostrcat(cmd, "%" , 1, 0);
@@ -940,29 +959,71 @@ void getnetworkbrowser_cifs(struct menulist** mlist, char* s, char* r, char* u, 
 		cmd = ostrcat(cmd, "'" , 1, 0);
 		debug(70, "cmd: %s", cmd);
 
-		char* tmpstr1 = command(cmd);
-		printf("tmpstr1: %s\n",tmpstr1);
+		tmpstr1 = command(cmd);
+		debug(70, "------ result 1 ------");
 		debug(70, "%s", tmpstr1);
+		debug(70, "----------------------");
 
-		char* tmpstr2 = string_resub("---------      ----      -------", "This machine has a browse list:", tmpstr1, 0);
+		char* tmpstr2 = NULL;
+		if(ostrstr(tmpstr1, "This machine has a browse list:") != NULL)
+			tmpstr2 = string_resub("---------      ----      -------", "This machine has a browse list:", tmpstr1, 0);
+		else
+			tmpstr2 = string_resub("---------       ----      -------", "Server               Comment", tmpstr1, 0);
+
+		debug(70, "------ result 2 ------");
+		debug(70, "%s", tmpstr2);
+		debug(70, "----------------------");
+				
 		free(tmpstr1), tmpstr1 = NULL;
 
 		if(tmpstr2 == NULL)
 		{
 			free(cmd), cmd = NULL;
-			cmd = ostrcat("smbclient -N -L //" , s, 0, 0);
+			cmd = ostrcat(bin, "  -N -L //" , 0, 0);
+			cmd = ostrcat(cmd , r, 1, 0);
 			debug(70, "cmd: %s", cmd);
 	
 			tmpstr1 = command(cmd);
+			debug(70, "------ result 3 ------");
 			debug(70, "%s", tmpstr1);
+			debug(70, "----------------------");
 
 			free(tmpstr2), tmpstr2 = NULL;
-			tmpstr2 = string_resub("---------      ----      -------", "This machine has a browse list:", tmpstr1, 0);
+			if(ostrstr(tmpstr1, "This machine has a browse list:") != NULL)
+				tmpstr2 = string_resub("---------      ----      -------", "This machine has a browse list:", tmpstr1, 0);
+			else
+				tmpstr2 = string_resub("---------       ----      -------", "Server               Comment", tmpstr1, 0);
+
+			debug(70, "------ result 4 ------");
+			debug(70, "%s", tmpstr2);
+			debug(70, "----------------------");
+
+			if(tmpstr2 == NULL)
+			{
+				if(ostrstr(tmpstr1, "Anonymous login successful") != NULL && ostrstr(tmpstr1, "Error returning browse list: NT_STATUS_ACCESS_DENIED") != NULL)
+				{
+					textbox(_("Message"), _("Anonymous login Access Denied !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 5, 0);
+					found = 1;
+				}
+				else if(ostrstr(tmpstr1, "Anonymous login successful") != NULL)
+					textbox(_("Message"), _("Anonymous login successful"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 5, 0);
+				else if(ostrstr(tmpstr1, "Access denied") != NULL)
+					textbox(_("Message"), _("Anonymous login Access Denied !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 5, 0);
+			}
+			
 			free(tmpstr1), tmpstr1 = NULL;
 		}
 
 		if(tmpstr2 != NULL)
 		{
+			if(ostrstr(tmpstr2, "Anonymous login successful") != NULL && ostrstr(tmpstr2, "Error returning browse list: NT_STATUS_ACCESS_DENIED") != NULL)
+			{
+				textbox(_("Message"), _("Anonymous login Access Denied !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 5, 0);
+				found = 1;
+			}
+			else if(ostrstr(tmpstr2, "Anonymous login successful") != NULL)
+				textbox(_("Message"), _("Anonymous login successful"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 5, 0);
+					
 			char* tmpstr3 = ostrcat("\t", tmpstr2, 0, 0);
 
 			int count = 0;
@@ -970,13 +1031,20 @@ void getnetworkbrowser_cifs(struct menulist** mlist, char* s, char* r, char* u, 
 			struct splitstr* ret1 = NULL;
 			ret1 = strsplit(tmpstr3, "\n", &count);
 
-			if(ret1 != NULL && count > 0)
+			if(found == 0 && ret1 != NULL && count > 0)
 			{
 				int max = count;
 				for(j = 0; j < max; j++)
 				{
+					if(!ostrncmp("Error returning", ret1[j].part, 15))
+					{
+						debug(70, "break: Error returning: %s\n", ret1[j].part);
+						break;
+					}
+
 					if(ostrncmp("\t", ret1[j].part, 1))
 					{
+						debug(70, "continue: no tab: %s\n", ret1[j].part);
 						continue;
 					}
 
@@ -988,7 +1056,7 @@ void getnetworkbrowser_cifs(struct menulist** mlist, char* s, char* r, char* u, 
 					free(tmpstr4), tmpstr4 = NULL;
 
 					char* tmpstr6 = string_resub("\t", tmpstr5, ret1[j].part, 0);
-					
+
 					stringreplacechar(tmpstr5, ' ', '\0');									
 
 					debug(70, "----------------------------------------------------------", sInfo[i].sharename);
@@ -1118,7 +1186,7 @@ start:
 
 		char* user = NULL, *pass = NULL;
 
-		if(textbox(_("Message"), _("Use User authentication ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0) == 1)
+		if(textbox(_("Message"), _("Use User authentication ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 700, 200, 0, 0) == 1)
 		{
 			user = ostrcat(user, getconfig("netbrowser_user", NULL), 1, 0);
 			pass = ostrcat(pass, getconfig("netbrowser_pass", NULL), 1, 0);

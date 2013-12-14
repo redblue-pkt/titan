@@ -4316,3 +4316,12 @@ msgstr "Wollen Sie mit User Authentifizierung Suchen ?"
 
 msgid "Here you can configure your Auth Data. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
 msgstr "Hier können Sie Ihre User Authentifizierung konfigurieren.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
+
+msgid "For Better Win7 Support install please Tpk Install > Network > Smbclient"
+msgstr "Für eine bessere Unterstützung für Win7 Shares installieren Sie bitte\nTpk Installieren > Netzwerk > Smbclient (Win7)"
+
+msgid "Anonymous login successful"
+msgstr "Anonymous login erfolgreich"
+
+msgid "Anonymous login Access Denied !"
+msgstr "Anonymous Login Zugriff verweigert !"
