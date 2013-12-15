@@ -113,7 +113,7 @@ int hddgetremovable(char* device)
 
 void screenfilesystem(char* dev)
 {
-	int i, rcret = 0, count = 2;
+	int i, rcret = 0, count = 1;
 	struct skin* screen = getscreen("harddisk_main");
 	struct skin* titletext = getscreennode(screen, "titletext");
 	struct skin* listbox = getscreennode(screen, "listbox");
