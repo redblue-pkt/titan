@@ -860,7 +860,7 @@ msgstr ""
 #: networkbrowser.h:944 networkbrowser.h:1005 networkbrowser.h:1009
 #: networkbrowser.h:1021 networkbrowser.h:1025 networkbrowser.h:1189
 #: networkbrowser.h:1743 networkbrowser.h:1750 networkbrowser.h:1755
-#: networkbrowser.h:1906 tpk.h:3185
+#: networkbrowser.h:1906 tpk.h:3185 tpk.h:3184
 msgid "Message"
 msgstr ""
 
@@ -1202,7 +1202,7 @@ msgstr ""
 #: tithek.h:3071 networkbrowser.h:944 networkbrowser.h:1005
 #: networkbrowser.h:1009 networkbrowser.h:1021 networkbrowser.h:1025
 #: networkbrowser.h:1189 networkbrowser.h:1743 networkbrowser.h:1750
-#: networkbrowser.h:1755 networkbrowser.h:1906 tpk.h:3185
+#: networkbrowser.h:1755 networkbrowser.h:1906 tpk.h:3185 tpk.h:3184
 msgid "OK"
 msgstr ""
 
@@ -1544,7 +1544,7 @@ msgstr ""
 #: tithek.h:3071 networkbrowser.h:944 networkbrowser.h:1005
 #: networkbrowser.h:1009 networkbrowser.h:1021 networkbrowser.h:1025
 #: networkbrowser.h:1189 networkbrowser.h:1743 networkbrowser.h:1750
-#: networkbrowser.h:1755 networkbrowser.h:1906 tpk.h:3185
+#: networkbrowser.h:1755 networkbrowser.h:1906 tpk.h:3185 tpk.h:3184
 msgid "EXIT"
 msgstr ""
 
@@ -2264,13 +2264,14 @@ msgstr ""
 
 #: ipkg.h:362 ipkg.h:363 ipkg.h:364 ipkg.h:358 tpk.h:2753 tpk.h:2751
 #: tpk.h:2990 tpk.h:3018 tpk.h:3027 tpk.h:3173 tpk.new.h:3167 tpk.h:3185
+#: tpk.h:3184
 msgid "check your Secret Feed !"
 msgstr ""
 
 #: ipkg.h:701 ipkg.h:702 ipkg.h:467 ipkg.h:733 ipkg.h:525 ipkg.h:804
 #: ipkg.h:519 ipkg.h:798 ipkg.h:524 ipkg.h:528 ipkg.h:549 tpk.h:2984
 #: tpk.h:2987 tpk.h:2992 tpk.h:3234 tpk.h:3262 tpk.h:3271 tpk.h:3421
-#: tpk.new.h:3411 tpk.h:3433
+#: tpk.new.h:3411 tpk.h:3433 tpk.h:3432
 msgid "no description found"
 msgstr ""
 
