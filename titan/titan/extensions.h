@@ -61,7 +61,7 @@ void screenfeed()
 		}
 
 		tmpstr = ostrcat(tmpstr, lastline, 1, 0);
-		tmpstr = ostrcat(tmpstr, "/svn/tpk/rev25198-all-secret/sh4", 1, 0);
+		tmpstr = ostrcat(tmpstr, "/svn/tpk/sh4", 1, 0);
 		writesys(getconfig("feed", NULL), tmpstr, 0);
 	}
 
