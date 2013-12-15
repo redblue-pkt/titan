@@ -618,8 +618,8 @@ void hddformat(char* dev, char* filesystem)
 	if(node == NULL) return;
 	
 	if(node->size > 4294967295UL)
-	{
-		if(!file_exist("/var/bin/parted"))
+	{	
+		if(!file_exist("/var/bin/parted") && !file_exist("/var/swap/bin/parted") && !file_exist("/mnt/swapextensions/bin/parted"))
 		{
 			textbox(_("Message"), _("HDD > 2TB unsupported.\nYou must first install plugin parted, then you can use this panel."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
 			return;
