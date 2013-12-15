@@ -11823,7 +11823,7 @@ msgid ""
 "Tpk updated by the: "
 msgstr ""
 
-#: tpk.h:2990 tpk.h:2987
+#: tpk.h:2990 tpk.h:2987 extensions.h:207
 msgid ""
 "It may only be a package to be installed. If they want to install another "
 "package of this section, they only remove the installed packet. Is not the "
