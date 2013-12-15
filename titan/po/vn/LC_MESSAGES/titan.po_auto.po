@@ -6189,3 +6189,9 @@ msgstr ""
 #: plugins_networkbrowser_skin.xml.h:32 skins_networkbrowser_skin.xml.h:32
 msgid "User"
 msgstr ""
+
+#: tpk.h:2989
+msgid ""
+"It may only be a package to be installed. Please update your Tpk or delete "
+"them the installed package"
+msgstr ""
