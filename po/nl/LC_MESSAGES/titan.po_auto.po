@@ -447,7 +447,7 @@ msgstr ""
 #: networkbrowser.h:1009 networkbrowser.h:1011 networkbrowser.h:1021
 #: networkbrowser.h:1025 networkbrowser.h:1189 networkbrowser.h:1743
 #: networkbrowser.h:1750 networkbrowser.h:1755 networkbrowser.h:1906
-#: tpk.h:3185 tpk.h:3184 tpk.h:3186 extensions.h:242
+#: tpk.h:3185 tpk.h:3184 tpk.h:3186 extensions.h:242 tpk.h:3182
 msgid "Message"
 msgstr ""
 
@@ -604,7 +604,7 @@ msgstr ""
 #: networkbrowser.h:1750 networkbrowser.h:1755 networkbrowser.h:1906
 #: tpk.h:3185 tpk.h:3184 tpk.h:3186 extensions.h:221 extensions.h:229
 #: extensions.h:234 extensions.h:242 extensions.h:296 extensions.h:349
-#: extensions.h:374 extensions.h:381 extensions.h:414
+#: extensions.h:374 extensions.h:381 extensions.h:414 tpk.h:3182
 msgid "OK"
 msgstr ""
 
@@ -764,7 +764,7 @@ msgstr ""
 #: networkbrowser.h:1750 networkbrowser.h:1755 networkbrowser.h:1906
 #: tpk.h:3185 tpk.h:3184 tpk.h:3186 extensions.h:221 extensions.h:229
 #: extensions.h:234 extensions.h:242 extensions.h:296 extensions.h:349
-#: extensions.h:374 extensions.h:381 extensions.h:414
+#: extensions.h:374 extensions.h:381 extensions.h:414 tpk.h:3182
 msgid "EXIT"
 msgstr ""
 
@@ -5268,12 +5268,12 @@ msgid "POS"
 msgstr ""
 
 #: tpk.h:3018 tpk.h:3027 tpk.h:3173 tpk.new.h:3167 tpk.h:3185 tpk.h:3184
-#: tpk.h:3186
+#: tpk.h:3186 tpk.h:3182
 msgid "check your Secret Feed !"
 msgstr ""
 
 #: tpk.h:3262 tpk.h:3271 tpk.h:3421 tpk.new.h:3411 tpk.h:3433 tpk.h:3432
-#: tpk.h:3434
+#: tpk.h:3434 tpk.h:3430
 msgid "no description found"
 msgstr ""
 
@@ -5628,10 +5628,14 @@ msgid ""
 "Tpk updated by the: "
 msgstr ""
 
-#: tpk.h:2990
+#: tpk.h:2990 tpk.h:2987
 msgid ""
 "It may only be a package to be installed. If they want to install another "
 "package of this section, they only remove the installed packet. Is not the "
 "plugin after reinstalling the software TitanNit in TitanNit Menu Visible "
 "then perform an update by Tpk to: "
+msgstr ""
+
+#: extensions.h:207
+msgid "It may only be a package to be installed"
 msgstr ""
