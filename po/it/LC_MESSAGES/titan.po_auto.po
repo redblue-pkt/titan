@@ -860,7 +860,7 @@ msgstr ""
 #: networkbrowser.h:944 networkbrowser.h:1005 networkbrowser.h:1009
 #: networkbrowser.h:1021 networkbrowser.h:1025 networkbrowser.h:1189
 #: networkbrowser.h:1743 networkbrowser.h:1750 networkbrowser.h:1755
-#: networkbrowser.h:1906 tpk.h:3185 tpk.h:3184 tpk.h:3186
+#: networkbrowser.h:1906 tpk.h:3185 tpk.h:3184 tpk.h:3186 extensions.h:242
 msgid "Message"
 msgstr ""
 
@@ -1203,7 +1203,8 @@ msgstr ""
 #: networkbrowser.h:1009 networkbrowser.h:1021 networkbrowser.h:1025
 #: networkbrowser.h:1189 networkbrowser.h:1743 networkbrowser.h:1750
 #: networkbrowser.h:1755 networkbrowser.h:1906 tpk.h:3185 tpk.h:3184
-#: tpk.h:3186
+#: tpk.h:3186 extensions.h:221 extensions.h:234 extensions.h:242
+#: extensions.h:296 extensions.h:374 extensions.h:381 extensions.h:414
 msgid "OK"
 msgstr ""
 
@@ -1546,7 +1547,8 @@ msgstr ""
 #: networkbrowser.h:1009 networkbrowser.h:1021 networkbrowser.h:1025
 #: networkbrowser.h:1189 networkbrowser.h:1743 networkbrowser.h:1750
 #: networkbrowser.h:1755 networkbrowser.h:1906 tpk.h:3185 tpk.h:3184
-#: tpk.h:3186
+#: tpk.h:3186 extensions.h:221 extensions.h:234 extensions.h:242
+#: extensions.h:296 extensions.h:374 extensions.h:381 extensions.h:414
 msgid "EXIT"
 msgstr ""
 
@@ -9675,7 +9677,7 @@ msgstr ""
 
 #: extensions.h:105 extensions.h:118 extensions.h:349 extensions.h:355
 #: extensions.h:168 extensions.h:216 extensions.h:453 extensions.h:170
-#: extensions.h:220 extensions.h:457 extensions.h:455
+#: extensions.h:220 extensions.h:457 extensions.h:455 extensions.h:221
 msgid "Tpk Install Info"
 msgstr ""
 
@@ -9685,21 +9687,22 @@ msgstr ""
 
 #: extensions.h:109 extensions.h:237 extensions.h:241 extensions.h:207
 #: extensions.h:338 extensions.h:211 extensions.h:342 extensions.h:340
+#: extensions.h:212
 msgid "Installing"
 msgstr ""
 
 #: extensions.h:115 extensions.h:169 extensions.h:241 softcam.h:91
 #: softcam.h:99 extensions.h:171 extensions.h:245 extensions.h:213
 #: extensions.h:267 extensions.h:342 extensions.h:217 extensions.h:271
-#: extensions.h:346 extensions.h:344
+#: extensions.h:346 extensions.h:344 extensions.h:218
 msgid "started"
 msgstr ""
 
-#: extensions.h:127 extensions.h:224 extensions.h:228
+#: extensions.h:127 extensions.h:224 extensions.h:228 extensions.h:229
 msgid "Tpk Install Info - Install OK"
 msgstr ""
 
-#: extensions.h:133 extensions.h:229 extensions.h:233
+#: extensions.h:133 extensions.h:229 extensions.h:233 extensions.h:234
 msgid "Tpk Install Info - Install ERROR"
 msgstr ""
 
@@ -9708,6 +9711,7 @@ msgid "TPK Install Done your system rebooting !"
 msgstr ""
 
 #: extensions.h:165 extensions.h:167 extensions.h:263 extensions.h:267
+#: extensions.h:269
 msgid "Removeing"
 msgstr ""
 
@@ -11542,7 +11546,7 @@ msgstr ""
 msgid "Deavtivate Refresh Time and After EPG in scan-mode"
 msgstr ""
 
-#: extensions.h:241
+#: extensions.h:241 extensions.h:242
 msgid "TPK Install done, your system will reboot !"
 msgstr ""
 
