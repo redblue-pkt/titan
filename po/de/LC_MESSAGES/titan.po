@@ -4231,7 +4231,7 @@ msgid "Select Unicable Manufacturer"
 msgstr "Unicable Hersteller auswählen"
 
 msgid "Search on KinoX"
-msgstr "Suche diesen Titel bei Kinox"
+msgstr "Suche diesen Titel bei KinoX"
 
 msgid "Search on KinoX (local)"
 msgstr "Suche diesen Titel bei KinoX (local)"
@@ -4312,19 +4312,19 @@ msgid "AUTH SETTINGS"
 msgstr "Authentifizierung"
 
 msgid "Use User authentication ?"
-msgstr "Wollen Sie mit User Authentifizierung Suchen ?"
+msgstr "Wollen Sie mit User Authentifizierung suchen ?"
 
 msgid "Here you can configure your Auth Data. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
 msgstr "Hier können Sie Ihre User Authentifizierung konfigurieren.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
 
 msgid "For Better Win7 Support install please Tpk Install > Network > Smbclient"
-msgstr "Für eine bessere Unterstützung für Win7 Shares installieren Sie bitte\nTpk Installieren > Netzwerk > Smbclient (Win7)"
+msgstr "Für eine bessere Unterstützung von Win7 Freigaben installieren Sie bitte\nTpk Installieren > Netzwerk > Smbclient (Win7)"
 
 msgid "Anonymous login successful"
-msgstr "Anonymous login erfolgreich"
+msgstr "Anonymous Login erfolgreich"
 
 msgid "Anonymous login Access Denied !"
 msgstr "Anonymous Login Zugriff verweigert !"
 
 msgid "It may only be a package to be installed. If they want to install another package of this section, they only remove the installed packet. Is not the plugin after reinstalling the software TitanNit in TitanNit Menu Visible then perform an update by Tpk to: "
-msgstr "Wenn sie ein anderes Packet aus dieser Section installieren wollen, entfernen Sie zuerst das installierte Packet. Ist das gewünschte Plugin nach einer Neuinstallation der Titannit Software im TitanNit Menu nicht Sichtbar dann führen die eine Tpk Aktualisierung durch zur: "
+msgstr "Wenn Sie ein anderes Paket aus dieser Sektion installieren wollen, entfernen Sie zuerst das installierte Paket. Ist das gewünschte Plugin nach einer Neuinstallation der Titannit Software im TitanNit Menu nicht sichtbar, dann führen Sie eine Tpk Aktualisierung durch zur: "
