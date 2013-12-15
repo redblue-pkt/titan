@@ -727,7 +727,7 @@ msgid "Filesystem Check"
 msgstr "Dateisystem prüfen"
 
 msgid "Flashupdate (online)"
-msgstr "Softwareaktualisierung (Internet)"
+msgstr "Softwareaktualisierung (Online)"
 
 msgid "Flashupdate (tmp)"
 msgstr "Softwareaktualisierung (Lokal)"
@@ -953,7 +953,7 @@ msgid "Tpk Install - select install medium"
 msgstr "TPK installieren - Installationsmedium auswählen"
 
 msgid "TPK install (online)"
-msgstr "TPK Pakete installieren (Internet)"
+msgstr "TPK Pakete installieren (Online)"
 
 msgid "TPK remove"
 msgstr "TPK Pakete löschen"
@@ -2155,13 +2155,13 @@ msgid "Sysinfo"
 msgstr "Systeminformation"
 
 msgid "System - Flashupdate (online)"
-msgstr "System - Flash Softwareaktualisierung (Internet)"
+msgstr "System - Flash Softwareaktualisierung (Online)"
 
 msgid "System - Flashupdate (tmp)"
 msgstr "System - Flash Softwareaktualisierung (Lokal)"
 
 msgid "System - Usbupdate (online)"
-msgstr "System - USB Softwareaktualisierung (Internet)"
+msgstr "System - USB Softwareaktualisierung (Online)"
 
 msgid "System - Usbupdate (tmp)"
 msgstr "System - USB Softwareaktualisierung (Lokal)"
@@ -2341,7 +2341,7 @@ msgid "Usb Device"
 msgstr "USB Geräte"
 
 msgid "Usbupdate (online)"
-msgstr "USB Software Aktualisierung (Internet)"
+msgstr "USB Software Aktualisierung (Online)"
 
 msgid "Usbupdate (tmp)"
 msgstr "USB Software Aktualisierung (Lokal)"
@@ -3058,7 +3058,7 @@ msgid "deactive"
 msgstr "sichtbar"
 
 msgid "TPK upgrade (online)"
-msgstr "TPK Pakete aktualisieren (online)"
+msgstr "TPK Pakete aktualisieren (Online)"
 
 msgid "TPK media (media)"
 msgstr "TPK installieren von USB Medien"
