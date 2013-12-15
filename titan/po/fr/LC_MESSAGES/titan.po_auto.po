@@ -11813,3 +11813,11 @@ msgid ""
 "Is the plugin after reinstalling the software TitanNit not visible lead a "
 "Tpk updated by the: "
 msgstr ""
+
+#: tpk.h:2990
+msgid ""
+"It may only be a package to be installed. If they want to install another "
+"package of this section, they only remove the installed packet. Is not the "
+"plugin after reinstalling the software TitanNit in TitanNit Menu Visible "
+"then perform an update by Tpk to: "
+msgstr ""
