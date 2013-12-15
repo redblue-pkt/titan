@@ -11806,3 +11806,12 @@ msgid ""
 "Please update your Tpk or delete them the installed package.\n"
 "Upgrade to: "
 msgstr ""
+
+#: tpk.h:2990
+msgid ""
+"It may only be a package to be installed.\n"
+"if they want to install another package they only remove the installed "
+"packet.\n"
+"Is the plugin after reinstalling the software TitanNit not visible lead a "
+"Tpk updated by the: "
+msgstr ""
