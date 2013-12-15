@@ -204,7 +204,7 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 			if(mbox1 != NULL && mbox1->param != NULL && mbox1->param1 != NULL)
 			{
 				debug(130, "file: %s", mbox1->name);
-				if(ostrstr(mbox1->name, "It may only be a package to be installed") == NULL)
+				if(ostrstr(mbox1->name, _("It may only be a package to be installed. If they want to install another package of this section, they only remove the installed packet. Is not the plugin after reinstalling the software TitanNit in TitanNit Menu Visible then perform an update by Tpk to: ")) == NULL)
 				{
 					installpath = getinstallpath(mbox1->param2, mbox1->param3);
 					if(installpath != NULL)
