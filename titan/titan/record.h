@@ -1307,13 +1307,19 @@ void screenrecordstop()
 
 void screenrecorddirect()
 {
-	char* tmpstr = NULL;
+	char* tmpstr = NULL, *cmd = NULL;
 	int ret = 0, ret1 = 0, newstart = 0;
 	struct service* servicenode = service;
 	struct epg* epgnode = NULL;
 	struct menulist* mlist = NULL, *mbox = NULL, *tmpmbox = NULL;
 	struct stimerthread *recthumbfirstthread = NULL;
 
+	cmd = ostrcat("ls -al ", getconfig("rec_path", NULL), 0, 0);
+	cmd = ostrcat(cmd, " >/dev/null &", 1, 0);
+ 	printf("cmd: %s\n", cmd);
+ 	system(cmd);
+	free(cmd), cmd = NULL;
+	
 	while(servicenode != NULL)
 	{
 		if(servicenode->type == RECORDDIRECT && servicenode->recname != NULL)
