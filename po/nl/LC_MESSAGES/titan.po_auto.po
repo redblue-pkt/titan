@@ -51,7 +51,9 @@
 #: adjust.h:250 mediadbsettings.h:28 mediadbsettings.h:32 mediadbsettings.h:51
 #: mediadbsettings.h:66 mediadbsettings.h:70 networkbrowser.h:1538
 #: networkbrowser.h:1542 networkbrowser.h:1551 networkbrowser.h:1556
-#: networkbrowser.h:1560 networkbrowser.h:1586
+#: networkbrowser.h:1560 networkbrowser.h:1586 networkbrowser.h:1606
+#: networkbrowser.h:1610 networkbrowser.h:1619 networkbrowser.h:1624
+#: networkbrowser.h:1628 networkbrowser.h:1654
 msgid "no"
 msgstr ""
 
@@ -116,7 +118,9 @@ msgstr ""
 #: mediadbsettings.h:33 mediadbsettings.h:52 mediadbsettings.h:67
 #: mediadbsettings.h:71 networkbrowser.h:1539 networkbrowser.h:1543
 #: networkbrowser.h:1552 networkbrowser.h:1557 networkbrowser.h:1561
-#: networkbrowser.h:1587
+#: networkbrowser.h:1587 networkbrowser.h:1607 networkbrowser.h:1611
+#: networkbrowser.h:1620 networkbrowser.h:1625 networkbrowser.h:1629
+#: networkbrowser.h:1655
 msgid "yes"
 msgstr ""
 
@@ -439,7 +443,11 @@ msgstr ""
 #: networkbrowser.h:1682 networkbrowser.h:1687 networkbrowser.h:1843
 #: play.h:1235 play.h:1425 solarmovie.h:295 tithek.h:620 tithek.h:1057
 #: tithek.h:1100 tithek.h:1327 tithek.h:1349 tithek.h:1354 tithek.h:2995
-#: tithek.h:3057 tithek.h:3071
+#: tithek.h:3057 tithek.h:3071 networkbrowser.h:944 networkbrowser.h:1005
+#: networkbrowser.h:1009 networkbrowser.h:1011 networkbrowser.h:1021
+#: networkbrowser.h:1025 networkbrowser.h:1189 networkbrowser.h:1743
+#: networkbrowser.h:1750 networkbrowser.h:1755 networkbrowser.h:1906
+#: tpk.h:3185
 msgid "Message"
 msgstr ""
 
@@ -590,7 +598,11 @@ msgstr ""
 #: networkbrowser.h:1843 play.h:1220 play.h:1226 play.h:1235 play.h:1236
 #: play.h:1425 solarmovie.h:295 tithek.h:620 tithek.h:1057 tithek.h:1100
 #: tithek.h:1327 tithek.h:1349 tithek.h:1354 tithek.h:2995 tithek.h:3057
-#: tithek.h:3071
+#: tithek.h:3071 networkbrowser.h:944 networkbrowser.h:1005
+#: networkbrowser.h:1009 networkbrowser.h:1011 networkbrowser.h:1021
+#: networkbrowser.h:1025 networkbrowser.h:1189 networkbrowser.h:1743
+#: networkbrowser.h:1750 networkbrowser.h:1755 networkbrowser.h:1906
+#: tpk.h:3185
 msgid "OK"
 msgstr ""
 
@@ -744,7 +756,11 @@ msgstr ""
 #: networkbrowser.h:1843 play.h:1220 play.h:1226 play.h:1235 play.h:1236
 #: play.h:1425 solarmovie.h:295 tithek.h:620 tithek.h:1057 tithek.h:1100
 #: tithek.h:1327 tithek.h:1349 tithek.h:1354 tithek.h:2995 tithek.h:3057
-#: tithek.h:3071
+#: tithek.h:3071 networkbrowser.h:944 networkbrowser.h:1005
+#: networkbrowser.h:1009 networkbrowser.h:1011 networkbrowser.h:1021
+#: networkbrowser.h:1025 networkbrowser.h:1189 networkbrowser.h:1743
+#: networkbrowser.h:1750 networkbrowser.h:1755 networkbrowser.h:1906
+#: tpk.h:3185
 msgid "EXIT"
 msgstr ""
 
@@ -1070,7 +1086,8 @@ msgstr ""
 #: skins_tmc_skin.xml.h:18 skins_tmdb_skin.xml.h:11 skins_weather_skin.xml.h:4
 #: skins_wins3_skin.xml.h:4 skins_zapback_skin.xml.h:7
 #: plugins_tithek1_skin.xml.h:15 plugins_tithek222_skin.xml.h:15
-#: plugins_tithek.2222222_skin.xml.h:15
+#: plugins_tithek.2222222_skin.xml.h:15 plugins_networkbrowser_skin.xml.h:37
+#: skins_networkbrowser_skin.xml.h:37
 msgid ""
 msgstr ""
 
@@ -2471,96 +2488,98 @@ msgid "MULTI EPG - All Channels"
 msgstr ""
 
 #: networkbrowser.h:985 networkbrowser.h:986 networkbrowser.h:1092
-#: networkbrowser.h:1093
+#: networkbrowser.h:1093 networkbrowser.h:1160 networkbrowser.h:1161
 msgid "Scanning Network Shares, please wait !!"
 msgstr ""
 
-#: networkbrowser.h:1006 networkbrowser.h:1113
+#: networkbrowser.h:1006 networkbrowser.h:1113 networkbrowser.h:1181
 msgid "Networkbrowser - show scanned DNS-Shares"
 msgstr ""
 
-#: networkbrowser.h:1027 networkbrowser.h:1139
+#: networkbrowser.h:1027 networkbrowser.h:1139 networkbrowser.h:1207
 msgid "Networkbrowser - show scanned cifs/nfs-Shares"
 msgstr ""
 
-#: networkbrowser.h:1154 networkbrowser.h:1272
+#: networkbrowser.h:1154 networkbrowser.h:1272 networkbrowser.h:1340
 msgid "Add Cifs Network Share"
 msgstr ""
 
-#: networkbrowser.h:1204 networkbrowser.h:1322
+#: networkbrowser.h:1204 networkbrowser.h:1322 networkbrowser.h:1390
 msgid "Add Nfs Network Share"
 msgstr ""
 
-#: networkbrowser.h:1244 networkbrowser.h:1362
+#: networkbrowser.h:1244 networkbrowser.h:1362 networkbrowser.h:1430
 msgid "Add Ftpfs Network Share"
 msgstr ""
 
-#: networkbrowser.h:1373 networkbrowser.h:1491
+#: networkbrowser.h:1373 networkbrowser.h:1491 networkbrowser.h:1559
 msgid "cifs"
 msgstr ""
 
-#: networkbrowser.h:1374 networkbrowser.h:1492
+#: networkbrowser.h:1374 networkbrowser.h:1492 networkbrowser.h:1560
 msgid "nfs"
 msgstr ""
 
-#: networkbrowser.h:1375 networkbrowser.h:1493
+#: networkbrowser.h:1375 networkbrowser.h:1493 networkbrowser.h:1561
 msgid "ftpfs"
 msgstr ""
 
-#: networkbrowser.h:1410 networkbrowser.h:1528
+#: networkbrowser.h:1410 networkbrowser.h:1528 networkbrowser.h:1596
 msgid "ssl_try"
 msgstr ""
 
-#: networkbrowser.h:1411 networkbrowser.h:1529
+#: networkbrowser.h:1411 networkbrowser.h:1529 networkbrowser.h:1597
 msgid "ssl_control"
 msgstr ""
 
 #: networkbrowser.h:1412 plugins_networkbrowser_skin.xml.h:24
 #: skins_networkbrowser_skin.xml.h:24 networkbrowser.h:1530
+#: networkbrowser.h:1598 plugins_networkbrowser_skin.xml.h:28
+#: skins_networkbrowser_skin.xml.h:28
 msgid "ssl"
 msgstr ""
 
-#: networkbrowser.h:1415 networkbrowser.h:1533
+#: networkbrowser.h:1415 networkbrowser.h:1533 networkbrowser.h:1601
 msgid "socks5"
 msgstr ""
 
-#: networkbrowser.h:1416 networkbrowser.h:1534
+#: networkbrowser.h:1416 networkbrowser.h:1534 networkbrowser.h:1602
 msgid "socks4"
 msgstr ""
 
-#: networkbrowser.h:1417 networkbrowser.h:1535
+#: networkbrowser.h:1417 networkbrowser.h:1535 networkbrowser.h:1603
 msgid "html"
 msgstr ""
 
-#: networkbrowser.h:1467 networkbrowser.h:1591
+#: networkbrowser.h:1467 networkbrowser.h:1591 networkbrowser.h:1659
 msgid "udp"
 msgstr ""
 
-#: networkbrowser.h:1468 networkbrowser.h:1592
+#: networkbrowser.h:1468 networkbrowser.h:1592 networkbrowser.h:1660
 msgid "tcp"
 msgstr ""
 
-#: networkbrowser.h:1471 networkbrowser.h:1595
+#: networkbrowser.h:1471 networkbrowser.h:1595 networkbrowser.h:1663
 msgid "rw"
 msgstr ""
 
-#: networkbrowser.h:1472 networkbrowser.h:1596
+#: networkbrowser.h:1472 networkbrowser.h:1596 networkbrowser.h:1664
 msgid "ro"
 msgstr ""
 
-#: networkbrowser.h:1551 networkbrowser.h:1675
+#: networkbrowser.h:1551 networkbrowser.h:1675 networkbrowser.h:1743
 msgid "Sharename can't be empty!"
 msgstr ""
 
-#: networkbrowser.h:1558 networkbrowser.h:1682
+#: networkbrowser.h:1558 networkbrowser.h:1682 networkbrowser.h:1750
 msgid "A mount entry with this name already exists!"
 msgstr ""
 
-#: networkbrowser.h:1563 networkbrowser.h:1687
+#: networkbrowser.h:1563 networkbrowser.h:1687 networkbrowser.h:1755
 msgid "Are you sure you want to save this network mount?"
 msgstr ""
 
-#: networkbrowser.h:1659 networkbrowser.h:1843
+#: networkbrowser.h:1659 networkbrowser.h:1843 networkbrowser.h:1906
 msgid "Are you sure you want remove this share?"
 msgstr ""
 
@@ -2983,7 +3002,8 @@ msgstr ""
 #: play.h:1297 plugins_networkbrowser_skin.xml.h:3 plugins_stock_skin.xml.h:4
 #: plugins_weather_skin.xml.h:2 skins_networkbrowser_skin.xml.h:3
 #: skins_stock_skin.xml.h:4 skins_weather_skin.xml.h:2 play.h:1305 play.h:1294
-#: play.h:1298 play.h:1354
+#: play.h:1298 play.h:1354 plugins_networkbrowser_skin.xml.h:5
+#: skins_networkbrowser_skin.xml.h:5
 msgid "DEL"
 msgstr ""
 
@@ -3256,6 +3276,7 @@ msgstr ""
 #: plugins_networkbrowser_skin.xml.h:21 plugins_tmdb_skin.xml.h:8
 #: skins_imdbapi_skin.xml.h:8 skins_imdb_skin.xml.h:8
 #: skins_networkbrowser_skin.xml.h:21 skins_tmdb_skin.xml.h:8
+#: plugins_networkbrowser_skin.xml.h:25 skins_networkbrowser_skin.xml.h:25
 msgid "SEARCH"
 msgstr ""
 
@@ -3460,6 +3481,7 @@ msgstr ""
 #: plugins_mc_skin.xml.h:21 plugins_networkbrowser_skin.xml.h:5
 #: plugins_readerconfig_skin.xml.h:3 skins_mc_skin.xml.h:21
 #: skins_networkbrowser_skin.xml.h:5 skins_readerconfig_skin.xml.h:3
+#: plugins_networkbrowser_skin.xml.h:7 skins_networkbrowser_skin.xml.h:7
 msgid "EDIT"
 msgstr ""
 
@@ -3599,110 +3621,136 @@ msgid "ADD"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:2 skins_networkbrowser_skin.xml.h:2
+#: plugins_networkbrowser_skin.xml.h:4 skins_networkbrowser_skin.xml.h:4
 msgid "COPY"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:4 skins_networkbrowser_skin.xml.h:4
+#: plugins_networkbrowser_skin.xml.h:6 skins_networkbrowser_skin.xml.h:6
 msgid "dnsaddresse"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:6 skins_networkbrowser_skin.xml.h:6
+#: plugins_networkbrowser_skin.xml.h:8 skins_networkbrowser_skin.xml.h:8
 msgid "ftpport"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:7 skins_networkbrowser_skin.xml.h:7
+#: plugins_networkbrowser_skin.xml.h:9 skins_networkbrowser_skin.xml.h:9
 msgid "hddreplacement"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:8 skins_networkbrowser_skin.xml.h:8
+#: plugins_networkbrowser_skin.xml.h:11 skins_networkbrowser_skin.xml.h:11
 msgid ""
 "Here you can configure your network shares. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:9 skins_networkbrowser_skin.xml.h:9
+#: plugins_networkbrowser_skin.xml.h:12 skins_networkbrowser_skin.xml.h:12
 msgid ""
 "If you don't find Windows shares you need to disable 'Password protected "
 "sharing' in the 'Network and Sharing Center'."
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:10 skins_networkbrowser_skin.xml.h:10
+#: plugins_networkbrowser_skin.xml.h:13 skins_networkbrowser_skin.xml.h:13
 msgid "ipaddress"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:11 skins_networkbrowser_skin.xml.h:11
+#: plugins_networkbrowser_skin.xml.h:14 skins_networkbrowser_skin.xml.h:14
 msgid "options"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:12 skins_networkbrowser_skin.xml.h:12
+#: plugins_networkbrowser_skin.xml.h:15 skins_networkbrowser_skin.xml.h:15
 msgid "password"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:13 skins_networkbrowser_skin.xml.h:13
+#: plugins_networkbrowser_skin.xml.h:17 skins_networkbrowser_skin.xml.h:17
 msgid "protocol"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:14 skins_networkbrowser_skin.xml.h:14
+#: plugins_networkbrowser_skin.xml.h:18 skins_networkbrowser_skin.xml.h:18
 msgid "proxy"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:15 skins_networkbrowser_skin.xml.h:15
+#: plugins_networkbrowser_skin.xml.h:19 skins_networkbrowser_skin.xml.h:19
 msgid "proxyauth"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:16 skins_networkbrowser_skin.xml.h:16
+#: plugins_networkbrowser_skin.xml.h:20 skins_networkbrowser_skin.xml.h:20
 msgid "proxyip"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:17 skins_networkbrowser_skin.xml.h:17
+#: plugins_networkbrowser_skin.xml.h:21 skins_networkbrowser_skin.xml.h:21
 msgid "proxypass"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:18 skins_networkbrowser_skin.xml.h:18
+#: plugins_networkbrowser_skin.xml.h:22 skins_networkbrowser_skin.xml.h:22
 msgid "proxyport"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:19 skins_networkbrowser_skin.xml.h:19
+#: plugins_networkbrowser_skin.xml.h:23 skins_networkbrowser_skin.xml.h:23
 msgid "proxyuser"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:20 skins_networkbrowser_skin.xml.h:20
+#: plugins_networkbrowser_skin.xml.h:24 skins_networkbrowser_skin.xml.h:24
 msgid "rsize"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:22 skins_networkbrowser_skin.xml.h:22
+#: plugins_networkbrowser_skin.xml.h:26 skins_networkbrowser_skin.xml.h:26
 msgid "sharedir"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:23 skins_networkbrowser_skin.xml.h:23
+#: plugins_networkbrowser_skin.xml.h:27 skins_networkbrowser_skin.xml.h:27
 msgid "sharename"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:25 skins_networkbrowser_skin.xml.h:25
+#: plugins_networkbrowser_skin.xml.h:29 skins_networkbrowser_skin.xml.h:29
 msgid "type"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:26 skins_networkbrowser_skin.xml.h:26
+#: plugins_networkbrowser_skin.xml.h:30 skins_networkbrowser_skin.xml.h:30
 msgid "usedns"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:27 skins_networkbrowser_skin.xml.h:27
+#: plugins_networkbrowser_skin.xml.h:31 skins_networkbrowser_skin.xml.h:31
 msgid "useproxy"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:28 skins_networkbrowser_skin.xml.h:28
+#: plugins_networkbrowser_skin.xml.h:33 skins_networkbrowser_skin.xml.h:33
 msgid "userauth"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:29 skins_networkbrowser_skin.xml.h:29
+#: plugins_networkbrowser_skin.xml.h:34 skins_networkbrowser_skin.xml.h:34
 msgid "username"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:30 skins_networkbrowser_skin.xml.h:30
+#: plugins_networkbrowser_skin.xml.h:35 skins_networkbrowser_skin.xml.h:35
 msgid "usessl"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:31 skins_networkbrowser_skin.xml.h:31
+#: plugins_networkbrowser_skin.xml.h:36 skins_networkbrowser_skin.xml.h:36
 msgid "wsize"
 msgstr ""
 
@@ -5214,11 +5262,11 @@ msgstr ""
 msgid "POS"
 msgstr ""
 
-#: tpk.h:3018 tpk.h:3027 tpk.h:3173 tpk.new.h:3167
+#: tpk.h:3018 tpk.h:3027 tpk.h:3173 tpk.new.h:3167 tpk.h:3185
 msgid "check your Secret Feed !"
 msgstr ""
 
-#: tpk.h:3262 tpk.h:3271 tpk.h:3421 tpk.new.h:3411
+#: tpk.h:3262 tpk.h:3271 tpk.h:3421 tpk.new.h:3411 tpk.h:3433
 msgid "no description found"
 msgstr ""
 
@@ -5512,6 +5560,41 @@ msgid ""
 "Save Screenshoot Path: /tmp/screenshot.jpg"
 msgstr ""
 
-#: networkbrowser.h:1121
+#: networkbrowser.h:1121 networkbrowser.h:1189
 msgid "Use User authentication ?"
+msgstr ""
+
+#: networkbrowser.h:944
+msgid ""
+"For Better Win7 Support install please Tpk Install > Network > Smbclient"
+msgstr ""
+
+#: networkbrowser.h:1005 networkbrowser.h:1011 networkbrowser.h:1021
+msgid "Anonymous login Access Denied !"
+msgstr ""
+
+#: networkbrowser.h:1009 networkbrowser.h:1025
+msgid "Anonymous login successful"
+msgstr ""
+
+#: plugins_networkbrowser_skin.xml.h:2 skins_networkbrowser_skin.xml.h:2
+msgid "Auth Settings"
+msgstr ""
+
+#: plugins_networkbrowser_skin.xml.h:3 skins_networkbrowser_skin.xml.h:3
+msgid "AUTH SETTINGS"
+msgstr ""
+
+#: plugins_networkbrowser_skin.xml.h:10 skins_networkbrowser_skin.xml.h:10
+msgid ""
+"Here you can configure your Auth Data. Use to navigate the control cross and "
+"the extra buttons displayed with your remote control to select."
+msgstr ""
+
+#: plugins_networkbrowser_skin.xml.h:16 skins_networkbrowser_skin.xml.h:16
+msgid "Password"
+msgstr ""
+
+#: plugins_networkbrowser_skin.xml.h:32 skins_networkbrowser_skin.xml.h:32
+msgid "User"
 msgstr ""
