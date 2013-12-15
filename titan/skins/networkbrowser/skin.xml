@@ -72,17 +72,18 @@
 
 
 #networkbrowser_settings fullscreen, max 1220x660, Xspace=30 !
-<screen name="networkbrowser_settings" fontsize="28" fontcol="fontcol" bgcol="black" posx="left" posy="top" width="100%" height="100%" hspace="30" vspace="30">
-<node name="titletext" text="Auth Settings" fontcol="black" fontsize="36" posx="0" posy="0" width="840" height="50" valign="middle" halign="center" bordercol="titlebgcol" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
+<screen name="networkbrowser_settings" fontsize="0" fontcol="fontcol" bgcol="black" posx="left" posy="top" width="100%" height="100%" hspace="30" vspace="30">
+<node name="titletext" text="Auth Settings" fontcol="black" fontsize="36" posx="0" posy="0" width="840" height="50" valign="middle" halign="center" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
 <node name="details" bordercol="titlebgcol" bordersize="1" borderradius="8" type="textbox" wrap="yes" fontsize="28" posx="0" posy="60" width="840" height="145" hspace="10" vspace="10" text="Here you can configure your Auth Data. Use to navigate the control cross and the extra buttons displayed with your remote control to select.">
 	<node name="minitv" func="gettvpic" param1="494:25:210">
 	<node bordersize="5" bordercol="black" posx="850" posy="0" width="370" height="205" bgcol="0" transparent="255">
 	<node bordersize="5" bordercol="black" posx="850" posy="0" width="370" height="205" transparent="0">
-<node name="listbox" type="listbox" scrollbar="auto" bordercol="titlebgcol" bordersize="1" fontsize="28" posx="center" posy="215" width="800" height="385" hspace="5" vspace="5">
+<node name="listbox" type="listbox" scrollbar="auto" bordercol="titlebgcol" bordersize="1" fontsize="28" posx="center" posy="215" width="800" height="375" hspace="5" vspace="5">
 	<node parent="listbox" name="user" text="User" type="inputbox" valign="middle" width="100%" height="35">
 	<node parent="listbox" name="pass" text="Password" type="inputbox" valign="middle" width="100%" height="35">
-<node name="buttonbar" posx="0" posy="610" width="1220" height="50" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
-<node name="b1" picmem="skin/key_ok_70x40.png"   posx="5"   posy="615" width="70" height="40">
-<node name="b2" picmem="skin/key_exit_70x40.png" posx="75"  posy="615" width="70" height="40">
+<node name="buttonbar" posx="0" posy="600" width="1220" height="50" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
+<node parent="buttonbar" name="b1" picmem="skin/key_ok_70x40.png"   posx="5"  posy="center" width="70" height="40">
+<node parent="buttonbar" name="b2" picmem="skin/key_exit_70x40.png" posx="75" posy="center" width="70" height="40">
 <node parent="buttonbar" name="b4" picmem="skin/key_text_70x40.png" posx="145" posy="center" width="70" height="40">
 </screen>
+
