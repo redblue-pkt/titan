@@ -6197,3 +6197,10 @@ msgid ""
 "It may only be a package to be installed. Please update your Tpk or delete "
 "them the installed package"
 msgstr ""
+
+#: tpk.h:2990
+msgid ""
+"It may only be a package to be installed.\n"
+"Please update your Tpk or delete them the installed package.\n"
+"Upgrade to: "
+msgstr ""
