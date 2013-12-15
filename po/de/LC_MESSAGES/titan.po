@@ -4325,3 +4325,6 @@ msgstr "Anonymous login erfolgreich"
 
 msgid "Anonymous login Access Denied !"
 msgstr "Anonymous Login Zugriff verweigert !"
+
+msgid "It may only be a package to be installed. If they want to install another package of this section, they only remove the installed packet. Is not the plugin after reinstalling the software TitanNit in TitanNit Menu Visible then perform an update by Tpk to: "
+msgstr "Wenn sie ein anderes Packet aus dieser Section installieren wollen, entfernen Sie zuerst das installierte Packet. Ist das gewünschte Plugin nach einer Neuinstallation der Titannit Software im TitanNit Menu nicht Sichtbar dann führen die eine Tpk Aktualisierung durch zur: "
