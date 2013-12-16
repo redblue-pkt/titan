@@ -632,7 +632,8 @@ void hddformat(char* dev, char* filesystem)
 		if(textbox(_("Message"), _("Are you sure you want to remove all Partitions\non this device and create a new Partition 1?\nBox reboots after format"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
 		{
 			cmd = ostrcat("/sbin/parter.sh /dev/" , dev, 0, 0);
-			cmd = ostrcat(cmd , " create 1", 1, 0);
+			cmd = ostrcat(cmd , " create 1 ", 1, 0);
+			cmd = ostrcat(cmd , filesystem, 1, 0);
 			if(large == 1)
 				cmd = ostrcat(cmd , " large", 1, 0);
 
@@ -653,13 +654,22 @@ void hddformat(char* dev, char* filesystem)
 	{
 		if(textbox(_("Message"), _("Are you sure you want to format this Partition?\nBox reboots after format"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
 		{
-			char* part = oregex(".*([0-9]{2,2}).*", dev);
+			printf("dev: %s\n", dev);
+
+			char* part = oregex(".*([0-9]{1,2}).*", dev);
 			printf("part: %s\n", part);
-			cmd = ostrcat("/sbin/parter.sh /dev/" , dev, 0, 0);
+
+			char* devname = oregex(".*([a-z]{3}).*", dev);
+			printf("devname: %s\n", devname);
+
+			cmd = ostrcat("/sbin/parter.sh /dev/" , devname, 0, 0);
 			cmd = ostrcat(cmd , " update ", 1, 0);
 			cmd = ostrcat(cmd , part, 1, 0);
+			cmd = ostrcat(cmd , " ", 1, 0);
+			cmd = ostrcat(cmd , filesystem, 1, 0);
 			free(part), part = NULL;
-			
+			free(devname), devname = NULL;
+
 			if(large == 1)
 				cmd = ostrcat(cmd , " large", 1, 0);
 
