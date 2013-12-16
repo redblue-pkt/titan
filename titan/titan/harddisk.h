@@ -636,6 +636,12 @@ void hddformat(char* dev, char* filesystem)
 			if(large == 1)
 				cmd = ostrcat(cmd , " large", 1, 0);
 
+			if(!file_exist("/mnt/swapextensions/logs"))
+				 mkdir("/mnt/swapextensions/logs", 777);
+		
+			if(file_exist("/etc/.beta") && file_exist("/mnt/swapextensions/logs"))
+				cmd = ostrcat(cmd, " > /mnt/swapextensions/logs/format_debug.log 2>&1", 1, 0);
+
 			debug(80, "fdisk create cmd: %s", cmd);
 			system(cmd);
 			format = 2;
@@ -646,7 +652,28 @@ void hddformat(char* dev, char* filesystem)
 	else
 	{
 		if(textbox(_("Message"), _("Are you sure you want to format this Partition?\nBox reboots after format"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
+		{
+			char* part = oregex(".*([0-9]{2,2}).*", dev);
+			printf("part: %s\n", part);
+			cmd = ostrcat("/sbin/parter.sh /dev/" , dev, 0, 0);
+			cmd = ostrcat(cmd , " update ", 1, 0);
+			cmd = ostrcat(cmd , part, 1, 0);
+			free(part), part = NULL;
+			
+			if(large == 1)
+				cmd = ostrcat(cmd , " large", 1, 0);
+
+			if(!file_exist("/mnt/swapextensions/logs"))
+				 mkdir("/mnt/swapextensions/logs", 777);
+		
+			if(file_exist("/etc/.beta") && file_exist("/mnt/swapextensions/logs"))
+				cmd = ostrcat(cmd, " > /mnt/swapextensions/logs/format_debug.log 2>&1", 1, 0);
+
+			debug(80, "fdisk update cmd: %s", cmd);
+			system(cmd);
 			format = 1;
+			free(cmd); cmd = NULL;
+		}
 	}
 
 	if(format > 0)
@@ -700,6 +727,12 @@ void hddformat(char* dev, char* filesystem)
 		else
 			cmd = ostrcat(cmd , " 0", 1, 0);
 
+		if(!file_exist("/mnt/swapextensions/logs"))
+			 mkdir("/mnt/swapextensions/logs", 777);
+
+		if(file_exist("/etc/.beta") && file_exist("/mnt/swapextensions/logs"))
+			cmd = ostrcat(cmd, " >> /mnt/swapextensions/logs/format_debug.log 2>&1", 1, 0);
+
 		debug(80, "format cmd: %s", cmd);
 		rc = system(cmd);
 		free(cmd); cmd = NULL;
@@ -731,6 +764,12 @@ int hddfsck(char* dev)
 			cmd = ostrcat("/sbin/cmd.sh \"fsck.ext2 -f -p\" /dev/" , dev, 0, 0);
 		else if(ostrcmp(node->filesystem, "ext3") == 0)
 			cmd = ostrcat("/sbin/cmd.sh \"fsck.ext3 -f -p\" /dev/" , dev, 0, 0);
+
+		if(!file_exist("/mnt/swapextensions/logs"))
+			 mkdir("/mnt/swapextensions/logs", 777);
+	
+		if(file_exist("/etc/.beta") && file_exist("/mnt/swapextensions/logs"))
+			cmd = ostrcat(cmd, " > /mnt/swapextensions/logs/fsck_debug.log 2>&1", 1, 0);
 
 		debug(80, "fsck cmd: %s", cmd);
 		system(cmd);
