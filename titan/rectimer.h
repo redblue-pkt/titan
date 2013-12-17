@@ -452,7 +452,16 @@ void checkrectimer(struct stimerthread* self)
 	//wait for right time
 	while(self->aktion != STOP && time(NULL) < 1072224000) // 01.01.2004
 		usleep(1 * 1000000);
-
+		
+	//wait for start all programs
+	ret = 30;
+	while(self->aktion != STOP && ret != 0)
+	{
+		usleep(1 * 1000000);
+		ret = ret - 1;
+	}
+	ret = 0;
+	
 	//on first start read rectimer
 	if(self->delay == 1000)
 	{
