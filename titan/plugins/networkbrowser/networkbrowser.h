@@ -1813,6 +1813,7 @@ void screennetworkbrowser_settings()
 		{
 			addconfigscreen("netbrowser_user", username);
 			addconfigscreen("netbrowser_pass", password);
+			break;
 		}
 	}
 
