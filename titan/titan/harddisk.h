@@ -774,6 +774,8 @@ int hddfsck(char* dev)
 			cmd = ostrcat("/sbin/cmd.sh \"fsck.ext2.gui -f -p\" /dev/" , dev, 0, 0);
 		else if(ostrcmp(node->filesystem, "ext3") == 0)
 			cmd = ostrcat("/sbin/cmd.sh \"fsck.ext3.gui -f -p\" /dev/" , dev, 0, 0);
+		else if(ostrcmp(node->filesystem, "ext4") == 0)
+			cmd = ostrcat("/sbin/cmd.sh \"fsck.ext4.gui -f -p\" /dev/" , dev, 0, 0);
 
 		if(!file_exist("/mnt/swapextensions/logs"))
 			 mkdir("/mnt/swapextensions/logs", 777);
