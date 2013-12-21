@@ -764,6 +764,11 @@ int hddfsck(char* dev)
 	if(node->filesystem == NULL) return 1;
 	debug(80, "device=%s filesystem=%s", dev, node->filesystem);
 
+	if(node->size > 524288000UL)
+	{	
+		textbox(_("Message"), _("Information: This hard drive size can take a file\nsystem check between 30 minutes and 1.5 hours."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
+	}
+
 	if(textbox(_("Message"), _("Are you sure you want to check this Partition?\nBox reboots after check"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
 	{
 		if(ostrcmp(node->filesystem, "vfat") == 0)
@@ -777,18 +782,29 @@ int hddfsck(char* dev)
 		else if(ostrcmp(node->filesystem, "ext4") == 0)
 			cmd = ostrcat("/sbin/cmd.sh \"fsck.ext4.gui -f -p\" /dev/" , dev, 0, 0);
 
-		if(!file_exist("/mnt/swapextensions/logs"))
-			 mkdir("/mnt/swapextensions/logs", 777);
-	
-		if(file_exist("/etc/.beta") && file_exist("/mnt/swapextensions/logs"))
-			cmd = ostrcat(cmd, " > /mnt/swapextensions/logs/fsck_debug.log 2>&1", 1, 0);
-
+		if(checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1 || checkbox("UFS912") == 1 || checkbox("ATEMIO7600") == 1)
+		{
+			if(!file_exist("/mnt/swapextensions/logs"))
+				 mkdir("/mnt/swapextensions/logs", 777);
+		
+			if(file_exist("/etc/.beta") && file_exist("/mnt/swapextensions/logs"))
+				cmd = ostrcat(cmd, " > /mnt/swapextensions/logs/fsck_debug.log 2>&1", 1, 0);
+		}
+		else if(file_exist("/var/swap"))
+		{
+			if(!file_exist("/var/swap/logs"))
+				 mkdir("/var/swap/logs", 777);
+		
+			if(file_exist("/etc/.beta") && file_exist("/var/swap/logs"))
+				cmd = ostrcat(cmd, " > /var/swap/logs/fsck_debug.log 2>&1", 1, 0);		
+		}	
+		
 		debug(80, "fsck cmd: %s", cmd);
 		system(cmd);
 		free(cmd); cmd = NULL;
 	}
 
-  return 0;
+	return 0;
 }
 
 void screenharddisksleep()
