@@ -111,7 +111,7 @@ void screensystem_update(int mode)
 
 				if(ostrstr(label, "MINI") != NULL)
 				{
-					cmd = ostrcat("cat /media/autofs/", pch, 0, 0);
+					cmd = ostrcat("cat /autofs/", pch, 0, 0);
 					cmd = ostrcat(cmd, "/etc/version", 1, 0);
 					version = command(cmd);
 
