@@ -705,15 +705,15 @@ void hddformat(char* dev, char* filesystem)
 			
 	
 		if(ostrcmp(filesystem, "vfat") == 0)
-			cmd = ostrcat("/sbin/cmd.sh \"mkfs.fat -F 32\" /dev/" , dev, 0, 0);
+			cmd = ostrcat("/sbin/cmd.sh \"mkfs.fat.gui -F 32\" /dev/" , dev, 0, 0);
 		else if(ostrcmp(filesystem, "jfs") == 0)
-			cmd = ostrcat("/sbin/cmd.sh \"mkfs.jfs -q\" /dev/" , dev, 0, 0);
+			cmd = ostrcat("/sbin/cmd.sh \"mkfs.jfs.gui -q\" /dev/" , dev, 0, 0);
 		else if(ostrcmp(filesystem, "ext2") == 0)
-			cmd = ostrcat("/sbin/cmd.sh mkfs.ext2 /dev/" , dev, 0, 0);
+			cmd = ostrcat("/sbin/cmd.sh mkfs.ext2.gui /dev/" , dev, 0, 0);
 		else if(ostrcmp(filesystem, "ext3") == 0)
-			cmd = ostrcat("/sbin/cmd.sh \"mkfs.ext3 -T largefile -m0 -O dir_index\" /dev/" , dev, 0, 0);
+			cmd = ostrcat("/sbin/cmd.sh \"mkfs.ext3.gui -T largefile -m0 -O dir_index\" /dev/" , dev, 0, 0);
 		else if(ostrcmp(filesystem, "ext4") == 0)
-			cmd = ostrcat("/sbin/cmd.sh \"mkfs.ext4 -T largefile -m0 -O dir_index\" /dev/" , dev, 0, 0);
+			cmd = ostrcat("/sbin/cmd.sh \"mkfs.ext4.gui -T largefile -m0 -O dir_index\" /dev/" , dev, 0, 0);
 
 		if(format == 2) cmd = ostrcat(cmd , "1", 1, 0);
 			
@@ -767,13 +767,13 @@ int hddfsck(char* dev)
 	if(textbox(_("Message"), _("Are you sure you want to check this Partition?\nBox reboots after check"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
 	{
 		if(ostrcmp(node->filesystem, "vfat") == 0)
-			cmd = ostrcat("/sbin/cmd.sh \"fsck.fat -a -v\" /dev/" , dev, 0, 0);
+			cmd = ostrcat("/sbin/cmd.sh \"fsck.fat.gui -a -v\" /dev/" , dev, 0, 0);
 		else if(ostrcmp(node->filesystem, "jfs") == 0)
-			cmd = ostrcat("/sbin/cmd.sh \"fsck.jfs -f -p\" /dev/" , dev, 0, 0);
+			cmd = ostrcat("/sbin/cmd.sh \"fsck.jfs.gui -f -p\" /dev/" , dev, 0, 0);
 		else if(ostrcmp(node->filesystem, "ext2") == 0)
-			cmd = ostrcat("/sbin/cmd.sh \"fsck.ext2 -f -p\" /dev/" , dev, 0, 0);
+			cmd = ostrcat("/sbin/cmd.sh \"fsck.ext2.gui -f -p\" /dev/" , dev, 0, 0);
 		else if(ostrcmp(node->filesystem, "ext3") == 0)
-			cmd = ostrcat("/sbin/cmd.sh \"fsck.ext3 -f -p\" /dev/" , dev, 0, 0);
+			cmd = ostrcat("/sbin/cmd.sh \"fsck.ext3.gui -f -p\" /dev/" , dev, 0, 0);
 
 		if(!file_exist("/mnt/swapextensions/logs"))
 			 mkdir("/mnt/swapextensions/logs", 777);
