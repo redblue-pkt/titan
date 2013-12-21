@@ -964,7 +964,7 @@ struct hdd* addhdd(char* device, int partition, unsigned long long size, int rem
 		char* tmpstr = NULL, *backup = NULL, *movie = NULL, *swapextensions = NULL, *swapfile = NULL, *checkfile = NULL;
 		int newdev = 1, ret = 0;
 		
-		tmpstr = ostrcat("/media/autofs/", newnode->device, 0, 0);
+		tmpstr = ostrcat("/autofs/", newnode->device, 0, 0);
 		checkfile = ostrcat(tmpstr, "/.titandev", 0, 0);
 		if(file_exist(checkfile) == 0)
 		{
