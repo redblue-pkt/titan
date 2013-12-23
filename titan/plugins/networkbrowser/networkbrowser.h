@@ -1305,7 +1305,7 @@ int checkhddreplacement(char* sharename)
 	{
 		if(ostrcmp(sharename, recordshare) == 0)
 		{
-      free(recordshare); recordshare = NULL;
+			free(recordshare); recordshare = NULL;
 			return 1;
 		}
   }
