@@ -120,7 +120,11 @@ void mc_main()
 
 	if(getconfigint("emucontrol", NULL) == 1)
 		system("emu.sh halt");
-
+	
+	system("/usr/bin/amixer -c 1 set Analog playback "40%" unmute &");
+	system("/usr/bin/amixer -c 1 set SPDIF playback "40%" unmute &");
+	system("/usr/bin/amixer -c 1 set HDMI playback "40%" unmute &");
+	
 	if(!file_exist(getconfig("mediadbpath", NULL)))
 		mkdir(getconfig("mediadbpath", NULL), 0777);
 		
@@ -294,6 +298,10 @@ void mc_main()
 		else
 			unlink("/var/etc/.scart");
 	}
+
+	system("/usr/bin/amixer -c 1 set Analog playback "70%" unmute &");
+	system("/usr/bin/amixer -c 1 set SPDIF playback "70%" unmute &");
+	system("/usr/bin/amixer -c 1 set HDMI playback "70%" unmute &");
 
 	free(videomode),videomode = NULL;
 	free(currvideomode),currvideomode = NULL;
