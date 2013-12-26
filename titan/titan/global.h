@@ -9,18 +9,9 @@ void set_player_sound(int flag)
 	char* vol = NULL, *cmd = NULL;
 
 	if(flag == 0)
-	{
 		vol = ostrcat(getconfig("vol_playerstart", NULL), NULL, 0, 0);
-		if(vol == NULL)
-			vol = ostrcat("30", NULL, 0, 0);
-	}
 	else if(flag == 1)
-	{
 		vol = ostrcat(getconfig("vol_playerstop", NULL), NULL, 0, 0);
-		if(vol == NULL)
-			vol = ostrcat("70", NULL, 0, 0);
-	
-	}
 
 	cmd = ostrcat("amixer -c 1 set Analog playback '", vol, 0, 0);
 	cmd = ostrcat(cmd, "%' unmute &", 1, 0);
