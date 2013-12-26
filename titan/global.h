@@ -8,13 +8,13 @@ void set_player_sound(int flag)
 {
 	char* vol = NULL, *cmd = NULL;
 
-	if(flag == 1)
+	if(flag == 0)
 	{
 		vol = ostrcat(getconfig("vol_playerstart", NULL), NULL, 0, 0);
 		if(vol == NULL)
 			vol = ostrcat("30", NULL, 0, 0);
 	}
-	else
+	else if(flag == 1)
 	{
 		vol = ostrcat(getconfig("vol_playerstop", NULL), NULL, 0, 0);
 		if(vol == NULL)
