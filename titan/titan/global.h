@@ -1,6 +1,44 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
+//flag 0: playerstart
+//flag 1: playerstop
+
+void set_player_sound(int flag)
+{
+	char* vol = NULL, *cmd = NULL;
+
+	if(flag == 1)
+	{
+		vol = ostrcat(getconfig("vol_playerstart", NULL), NULL, 0, 0);
+		if(vol == NULL)
+			vol = ostrcat("40", NULL, 0, 0);
+	}
+	else
+	{
+		vol = ostrcat(getconfig("vol_playerstop", NULL), NULL, 0, 0);
+		if(vol == NULL)
+			vol = ostrcat("70", NULL, 0, 0);
+	
+	}
+
+	cmd = ostrcat("amixer -c 1 set Analog playback '", vol, 0, 0);
+	cmd = ostrcat(cmd, "%' unmute &", 1, 0);
+	system(cmd);
+	free(cmd), cmd = NULL;
+
+	cmd = ostrcat("amixer -c 1 set SPDIF playback '", vol, 0, 0);
+	cmd = ostrcat(cmd, "%' unmute &", 1, 0);
+	system(cmd);
+	free(cmd), cmd = NULL;
+
+	cmd = ostrcat("amixer -c 1 set HDMI playback '", vol, 0, 0);
+	cmd = ostrcat(cmd, "%' unmute &", 1, 0);
+	system(cmd);
+	free(cmd), cmd = NULL;
+	free(vol), vol = NULL;
+}
+
 //flag 0: with wait message
 //flag 1: without wait message
 void waitmsgbar(int sec, int exit, char* text, int flag)

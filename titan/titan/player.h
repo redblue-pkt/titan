@@ -578,6 +578,8 @@ int playerstart(char* file)
 			return 1;
 		}
 
+		set_player_sound(0);
+
 		if(ostrstr(tmpfile, "file://") == NULL)
 			status.playercan = 0x4650;
 		else
@@ -959,6 +961,7 @@ int playerstop()
 
 	free(player);
 	player = NULL;
+	set_player_sound(1);
 #endif
 
 #ifdef EPLAYER4
