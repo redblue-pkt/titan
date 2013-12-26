@@ -12,7 +12,7 @@ void set_player_sound(int flag)
 	{
 		vol = ostrcat(getconfig("vol_playerstart", NULL), NULL, 0, 0);
 		if(vol == NULL)
-			vol = ostrcat("40", NULL, 0, 0);
+			vol = ostrcat("30", NULL, 0, 0);
 	}
 	else
 	{

@@ -78,6 +78,8 @@ void setdefaults()
 	addconfigdef("showhiddenfiles", "1");
 	addconfigdef("playerbuffersize", "1048576");
 	addconfigdef("playerbufferseektime", "3");
+	addconfigdef("playerstart", "30");
+	addconfigdef("playerstop", "70");
 	
 	status.expertmodus = getconfigint("expertmodus", NULL);
 	status.pmtmode = getconfigint("pmtmode", NULL);
