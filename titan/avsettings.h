@@ -26,6 +26,9 @@ void screenavsettings(int flag)
 	struct skin* mode3d = getscreennode(avsettings, "mode3d");
 	struct skin* autosubtitle = getscreennode(avsettings, "autosubtitle");
 	struct skin* audiodelaybitstream = getscreennode(avsettings, "audiodelaybitstream");
+	struct skin* playerstart = getscreennode(avsettings, "playerstart");
+	struct skin* playerstop = getscreennode(avsettings, "playerstop");
+
 	struct skin* tmp = NULL;
 
 	ret = getvideomodechoices();
@@ -80,6 +83,12 @@ void screenavsettings(int flag)
 	addchoicebox(stepmute, "0", _("off"));
 	addchoicebox(stepmute, "1", _("on"));
 	setchoiceboxselection(stepmute, getconfig("stepmute", NULL));
+
+	changeinput(playerstart, "30\n40\n50\n60\n70\n80\n90\n100\n10\n20");
+	setchoiceboxselection(playerstart, getconfig("vol_playerstart", NULL));
+
+	changeinput(playerstop, "70\n80\n90\n100\n10\n20\n30\n40\n50\n60");
+	setchoiceboxselection(playerstop, getconfig("vol_playerstop", NULL));
 
 	ret = getpolicychoices();
 	changeinput(policy, ret);
@@ -340,6 +349,8 @@ void screenavsettings(int flag)
 			addconfigscreencheck("av_ac3default", ac3default, 0);
 			addconfigscreencheck("autosubtitle", autosubtitle, 0);
 			status.autosubtitle = getconfigint("autosubtitle", NULL);
+			addconfigscreen("vol_playerstart", playerstart);
+			addconfigscreen("vol_playerstop", playerstop);
 
 			if(rcret == getrcconfigint("rcok", NULL)) break;
 		}
