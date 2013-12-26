@@ -4331,3 +4331,9 @@ msgstr "Wenn Sie ein anderes Paket aus dieser Sektion installieren wollen, entfe
 
 msgid "Information: This hard drive size can take a file\nsystem check between 30 minutes and 1.5 hours."
 msgstr "Information: Bei dieser Festplattengrösse kann ein\nFilesystemcheck zwischen 30min und 1,5 Stunden dauern."
+
+msgid "Sound amplifier (TV-Modus / internal Player)"
+msgstr "Sound Verstärkung (TV-Modus / interner Player)"
+
+msgid "Sound amplifier (external Player)"
+msgstr "Sound Verstärkung (externer Player)"
