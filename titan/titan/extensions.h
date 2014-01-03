@@ -215,7 +215,7 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 						tmpinfo = ostrcat(tmpinfo, "-", 1, 0);
 						tmpinfo = ostrcat(tmpinfo, mbox1->name, 1, 0);
 						tmpinfo = ostrcat(tmpinfo, " ", 1, 0);
-						tmpinfo = ostrcat(tmpinfo, _("started"), 1, 0);
+						tmpinfo = ostrcat(tmpinfo, _("starting"), 1, 0);
 						tmpinfo = ostrcat(tmpinfo, " ?", 1, 0);
 			
 						if(textbox(_("Tpk Install Info"), _(tmpinfo), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0) == 1)
@@ -343,7 +343,7 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 				tmpinfo = ostrcat(tmpinfo, " ", 1, 0);
 				tmpinfo = ostrcat(tmpinfo, mbox->name, 1, 0);
 				tmpinfo = ostrcat(tmpinfo, " ", 1, 0);
-				tmpinfo = ostrcat(tmpinfo, _("started"), 1, 0);
+				tmpinfo = ostrcat(tmpinfo, _("starting"), 1, 0);
 				tmpinfo = ostrcat(tmpinfo, " ?", 1, 0);
 	
 				if(textbox(_(text2), _(tmpinfo), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0) == 2)
