@@ -4312,7 +4312,7 @@ msgid "AUTH SETTINGS"
 msgstr "Authentifizierung"
 
 msgid "Use User authentication ?"
-msgstr "Wollen Sie mit User Authentifizierung suchen ?"
+msgstr "Wollen Sie mit User Authentifizierung suchen?"
 
 msgid "Here you can configure your Auth Data. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
 msgstr "Hier können Sie Ihre User Authentifizierung konfigurieren.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten, um mit Ihrer Fernbedienung zu navigieren."
@@ -4324,13 +4324,13 @@ msgid "Anonymous login successful"
 msgstr "Anonymous Login erfolgreich"
 
 msgid "Anonymous login Access Denied !"
-msgstr "Anonymous Login Zugriff verweigert !"
+msgstr "Anonymous Login Zugriff verweigert!"
 
 msgid "It may only be a package to be installed. If they want to install another package of this section, they only remove the installed packet. Is not the plugin after reinstalling the software TitanNit in TitanNit Menu Visible then perform an update by Tpk to: "
 msgstr "Wenn Sie ein anderes Paket aus dieser Sektion installieren wollen, entfernen Sie zuerst das installierte Paket. Ist das gewünschte Plugin nach einer Neuinstallation der Titannit Software im TitanNit Menu nicht sichtbar, dann führen Sie eine Tpk Aktualisierung durch zur: "
 
 msgid "Information: This hard drive size can take a file\nsystem check between 30 minutes and 1.5 hours."
-msgstr "Information: Bei dieser Festplattengrösse kann ein\nFilesystemcheck zwischen 30min und 1,5 Stunden dauern."
+msgstr "Information: Bei dieser Festplattengröße kann ein\nFilesystemcheck zwischen 30min und 1,5 Stunden dauern."
 
 msgid "Sound amplifier (TV-Modus / internal Player)"
 msgstr "Sound Verstärkung (TV-Modus / interner Player)"
