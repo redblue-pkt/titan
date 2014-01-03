@@ -3061,7 +3061,7 @@ msgid "TPK upgrade (online)"
 msgstr "TPK Pakete aktualisieren (Online)"
 
 msgid "TPK media (media)"
-msgstr "TPK installieren von USB Medien"
+msgstr "TPK installieren (HDD/USB)"
 
 msgid "No output found !"
 msgstr "Keine Information vorhanden"
