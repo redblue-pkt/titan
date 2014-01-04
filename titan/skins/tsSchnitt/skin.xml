@@ -1,0 +1,17 @@
+<screen name="tsSchnitt" title="ts - Schnitt" titlealign=center fontcol=fontcol valign=bottom fontsize=30 posx=center posy=center width=50% height=70% bordercol=bordercol bordersize=2 bgcol=bgcol>
+<node bordercol=bordercol scrollbar=auto type=listbox posx=left posy=10% name=listbox1 width=50% height=85%>
+<node bordercol=bordercol scrollbar=auto type=listbox posx=right posy=10% name=listbox2 width=50% height=85%>
+<node bordercol=bordercol scrollbar=auto type=listbox posy=bottom posx=center name=listbox3 width=85% height=85%>
+
+<node name=t1 type="textbox" parent=listbox1 valign=middle posx=10% text="Ausgewaehlt:" bordercol=bordercol bordersize=2 width=50% height=25>
+<node name=film type="textbox" parent=listbox2 valign=middle posx="center" text=" " bordercol=bordercol bordersize=2 width=90% height=25>	
+<node name=t2 type="textbox" parent=listbox1 valign=middle posx=10% text="Marker vorhanden:" bordercol=bordercol bordersize=2 width=50% height=25>
+<node name=marker type="textbox" parent=listbox2 valign=middle posx="right" text=" " bordercol=bordercol bordersize=2 width=50% height=25>		
+<node name=t4 type="textbox" parent=listbox1 valign=middle posx=10% text="Schnittstatus:" bordercol=bordercol bordersize=2 width=50% height=25>
+<node name=schnitt type="textbox" parent=listbox2 valign=middle posx="right" text=" " bordercol=bordercol bordersize=2 width=50% height=25>	
+<node name="schnittprog" type="progressbar" valign="middle" posy=25% parent="listbox3" progresscol="green" text="progress" fontcol="black" bgcol="white" halign="center" width="100%" height=25>		
+<node name=b1 text=WAEHLEN halign=center valign=middle bordercol=green bordersize=2 bordertype=2 posx=0 posy=0 width=100 height=30/>
+<node name=b2 text=EXIT halign=center valign=middle bordercol=exitcol bordersize=2 bordertype=2 posx=110 posy=0 width=100 height=30/>
+<node name=blue text=START halign=center valign=middle bordercol=blue bordersize=2 bordertype=2 posx=220 posy=0 width=150 height=30/>
+<node name=red text=ABBRUCH halign=center valign=middle bordercol=red bordersize=2 bordertype=2 posx=450 posy=0 width=150 height=30/>
+</screen>
