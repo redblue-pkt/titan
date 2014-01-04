@@ -101,13 +101,13 @@ void tsSchnitt_thread()
 			if(rc == 0)
 			{
 				ischnitt = 2;
-				textbox(_("INFO"), _("cut ended with RC 0"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+				textbox(_("INFO"), _("Schnitt erfolgreich beended"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 			}
 			else
 			{
 				remove(cutfile);
 				ischnitt = 3;
-				textbox(_("ERROR"), _("cut ended with ERROR !!!!!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+				textbox(_("ERROR"), _("Schnitt ended mit Fehler !!!!!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 			}
 		}
 		free(tmpstr); tmpstr = NULL;
@@ -262,7 +262,8 @@ void start(void)
 			rcret = waitrc(tsschnitt, 2000, 0);
 			tmp = listbox->select;	
 		
-			if (rcret == getrcconfigint("rcexit", NULL)) break;
+			if (rcret == getrcconfigint("rcexit", NULL) && tsSchnittThread == NULL) break;
+			if (rcret == getrcconfigint("rcyellow", NULL) && tsSchnittThread != NULL) break;
 			if (rcret == getrcconfigint("rcgreen", NULL))
 			{
 				if(tsSchnittThread == NULL)
