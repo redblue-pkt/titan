@@ -325,9 +325,21 @@ void start(void)
 					}
 				}
 			}
+			else if(ischnitt == 2)
+			{
+				changetext(schnitt, "fertig");	
+				changetext(schnittprog, "0.0%");
+				schnittprog->progresssize = 0;
+			}	
+			else if(ischnitt == 3)
+			{
+				changetext(schnitt, "fehlerhaft");	
+				changetext(schnittprog, "0.0%");
+				schnittprog->progresssize = 0;
+			}	
 			drawscreen(tsschnitt, 0, 0);			
 		}
-		if (rcret == getrcconfigint("rcexit", NULL)) break;
+		if (rcret == getrcconfigint("rcexit", NULL) || rcret == getrcconfigint("rcyellow", NULL)) break;
 	}
 	delownerrc(tsschnitt);
 	clearscreen(tsschnitt); 
