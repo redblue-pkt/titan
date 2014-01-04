@@ -101,7 +101,7 @@ void tsSchnitt_thread()
 			if(rc == 0)
 			{
 				ischnitt = 2;
-				textbox(_("INFO"), _("Schnitt erfolgreich beended"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+				textbox(_("INFO"), _("Schnitt erfolgreich beendet"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 			}
 			else
 			{
@@ -169,6 +169,7 @@ void start(void)
 	struct skin* schnitt = getscreennode(tsschnitt, "schnitt");
 	struct skin* schnittprog = getscreennode(tsschnitt, "schnittprog");
 	struct skin* tmp = NULL;
+	struct skin* load = getscreen("loading");
 	
 	while(1)
 	{
@@ -213,9 +214,9 @@ void start(void)
 			changetext(film, recfile);
 		
 		if(imarker == 0)
-			changetext(marker, "no");
+			changetext(marker, "nein");
 		else if(imarker == 2)
-			changetext(marker, "yes");
+			changetext(marker, "ja");
 	
 		schnittprog->progresssize = 0;
 		if(ischnitt == 0)
@@ -287,8 +288,10 @@ void start(void)
 			{
 				if(tsSchnittThread == NULL)
 				{
+					drawscreen(load, 0, 0);
 					tsSchnittThread = addtimer(&tsSchnitt_thread, START, 10000, 1, NULL, NULL, NULL);
 					sleep(1);
+					clearscreen(load);
 					break;
 				}
 				else
@@ -298,8 +301,10 @@ void start(void)
 			}
 			if (rcret == getrcconfigint("rcred", NULL) && tsSchnittThread != NULL)
 			{
+				drawscreen(load, 0, 0);
 				tsSchnittThread->aktion = STOP;
 				sleep(2);
+				clearscreen(load);
 				break;
 			}
 			if(ischnitt == 1)
