@@ -220,14 +220,14 @@ void start(void)
 		schnittprog->progresssize = 0;
 		if(ischnitt == 0)
 		{
-			changetext(schnitt, "no");
+			changetext(schnitt, "gestopt");
 			changetext(schnittprog, "0.0%");
 			schnittprog->progresssize = 0;
 		}
 		else if(ischnitt == 1)
 		{
 			changetext(schnittprog, "0.0%");
-			changetext(schnitt, "progress");
+			changetext(schnitt, "in Arbeit");
 			if(stat64(cutfile, &cdat) == 0)
 			{
  				if(stat64(recfile, &rdat) == 0)
@@ -244,10 +244,14 @@ void start(void)
 			}
 		}
 		else if(ischnitt == 2)
-			changetext(schnitt, "yes");	
+		{
+			changetext(schnitt, "fertig");	
+			changetext(schnittprog, "0.0%");
+			schnittprog->progresssize = 0;
+		}	
 		else if(ischnitt == 3)
 		{
-			changetext(schnitt, "error");	
+			changetext(schnitt, "fehlerhaft");	
 			changetext(schnittprog, "0.0%");
 			schnittprog->progresssize = 0;
 		}	
@@ -300,7 +304,7 @@ void start(void)
 			}
 			if(ischnitt == 1)
 			{
-				changetext(schnitt, "progress");
+				changetext(schnitt, "in Arbeit");
 				if(stat64(cutfile, &cdat) == 0)
 				{
  					if(stat64(recfile, &rdat) == 0)
