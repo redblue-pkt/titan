@@ -123,6 +123,7 @@ compile "readerconfig" "readerconfig" "" ""
 compile "tiwakeup" "tiwakeup" "" ""
 compile "autotimer" "autotimer" "" ""
 compile "usbreset" "usbreset" "" ""
+compile "tsSchnitt" "tsSchnitt" "" ""
 
 cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
 echo make curl
