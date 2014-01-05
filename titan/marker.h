@@ -187,10 +187,10 @@ int setmarker()
 	off64_t pos = lseek64(snode->recsrcfd, 0, SEEK_CUR);
 	playergetinfots(&len, &startpos, NULL, &atime, NULL, 0);
 	ret = videogetpts(status.aktservice->videodev, &aktpts);
-	if(ret == 0)
-		atime = (aktpts - startpos) / 90000;
-	else
-		atime = (atime - startpos) / 90000;
+	//if(ret == 0)
+	//	atime = (aktpts - startpos) / 90000;
+	//else
+	atime = (atime - startpos) / 90000;
 	if(atime == 0)
 	{
 		// syntax ??
