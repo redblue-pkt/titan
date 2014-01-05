@@ -1,13 +1,13 @@
 #tsSchnitt fullscreen, max 1220x660, Xspace=30 !
 <screen name="tsSchnitt" fontsize="28" fontcol="fontcol" bgcol="black" posx="left" posy="top" width="100%" height="100%" hspace="30" vspace="30">
 <node name="titletext" text="ts - Schnitt" fontcol="black" fontsize="36" posx="0" posy="0" width="840" height="50" valign="middle" halign="center" bordercol="titlebgcol" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
-<node name="details" bordercol="titlebgcol" bordersize="1" borderradius="8" type="textbox" wrap="yes" fontsize="28" posx="0" posy="60" width="840" height="145" hspace="10" vspace="10" text="Film im internen Player starten, mit Taste 0 Marker während eines Films setzen. Taste 5 ist für die Markerübersicht. Anschliessend hier Film auswählen und starten.">
+<node name="details" bordercol="titlebgcol" bordersize="1" borderradius="8" type="textbox" wrap="yes" fontsize="28" posx="0" posy="60" width="840" height="145" hspace="10" vspace="10" text="Film im internen Player starten, mit Taste 0 Marker während eines Films setzen. Taste 5 ist für die Markerübersicht. Anschließend hier Film auswählen und starten.">
 	<node name="minitv" func="gettvpic" param1="494:25:210">
 	<node bordersize="5" bordercol="black" posx="850" posy="0" width="370" height="205" bgcol="0" transparent="255">
 	<node bordersize="5" bordercol="black" posx="850" posy="0" width="370" height="205" transparent="0">
 <node name="textbox1" type="textbox" scrollbar="no" posx="100" posy="300" width="250" height="150">
 <node name="textbox2" type="textbox" scrollbar="no" posx="420" posy="300" width="700" height="150">
-<node parent="textbox1" name="t1" text="Ausgewaehlt:"       halign="left" valign="middle" posx="0" posy="0"  width="100%" height="35">
+<node parent="textbox1" name="t1" text="Ausgewählt:"       halign="left" valign="middle" posx="0" posy="0"  width="100%" height="35">
 <node parent="textbox1" name="t2" text="Marker vorhanden:"  halign="left" valign="middle" posx="0" posy="30" width="100%" height="35">
 <node parent="textbox1" name="t4" text="Schnittstatus:"  halign="left" valign="middle" posx="0" posy="60" width="100%" height="35">
 <node parent="textbox2" name="film" text=" "      halign="left" valign="middle" posx="0" posy="0"  width="100%" height="35">
@@ -16,7 +16,7 @@
 <node name="schnittprog" type="progressbar" valign="middle" parent="listbox" progresscol="green" text="progress" fontcol="grey" bgcol="white" halign="center" posx="100" posy="420" width="85%" height=40>		
 <node name="buttonbar" posx="0" posy="610" width="1220" height="50" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
 <node name="b1" picmem="skin/key_exit_70x40.png" posx="5" posy="615" width="70" height="40">
-<node name="b2" text="Film auswaehlen" picmem="skin/key_green_30x30.png" textposx="40" valign="middle" fontcol="black" fontsize="25" posx="280" posy="620" width="220" height="30">
+<node name="b2" text="Film auswählen" picmem="skin/key_green_30x30.png" textposx="40" valign="middle" fontcol="black" fontsize="25" posx="280" posy="620" width="220" height="30">
 <node name="blue" text="START" picmem="skin/key_blue_30x30.png" textposx="40" valign="middle" fontcol="black" fontsize="25" posx="750" posy="620" width="200" height="30">
 <node name="red" text="STOP" picmem="skin/key_red_30x30.png" textposx="40" valign="middle" fontcol="black" fontsize="25" posx="100" posy="620" width="200" height="30">
 <node name="yellow" text="im Hintergrund" picmem="skin/key_yellow_30x30.png" textposx="40" valign="middle" fontcol="black" fontsize="25" posx="520" posy="620" width="220" height="30">
