@@ -178,7 +178,7 @@ int putmarker(char* dateiname)
 
 int setmarker()
 {
-	unsigned long long atime = 0, len = 0, startpos = 0;
+	unsigned long long atime = 0, len = 0, startpos = 0, ret = 0, aktpts = 0;
 	struct marker *node = NULL;
 	
 	struct service* snode = getservice(RECORDPLAY, 0);
@@ -186,7 +186,11 @@ int setmarker()
 
 	off64_t pos = lseek64(snode->recsrcfd, 0, SEEK_CUR);
 	playergetinfots(&len, &startpos, NULL, &atime, NULL, 0);
-	atime = (atime - startpos) / 90000;
+	ret = videogetpts(status.aktservice->videodev, &aktpts);
+	if(ret == 0)
+		atime = (aktpts - startpos) / 90000;
+	else
+		atime = (atime - startpos) / 90000;
 	if(atime == 0)
 	{
 		// syntax ??
