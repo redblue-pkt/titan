@@ -144,8 +144,8 @@ void screenplayinfobar(char* file, char* showname, int mode, int playertype, int
 			ret = playergetinfots(&len, &startpos, NULL, &pos, NULL, 2);
 		else
 		{
-			ret = videogetpts(status.aktservice->videodev, &pos);
-			if(ret != 0)
+//			ret = videogetpts(status.aktservice->videodev, &pos);
+//			if(ret != 0)
 				ret = playergetinfots(&len, &startpos, NULL, &pos, NULL, 0);
 		}
 		len = len / 90000;
