@@ -13,6 +13,7 @@ int imarker, iindex, ischnitt;
 char* recfile = NULL;
 char* recname = NULL;
 char* cutfile = NULL;
+int zielsec = 0;
 
 struct stimerthread* tsSchnittThread = NULL;
 struct stimerthread* tsSchnittThreadKill = NULL;
@@ -35,10 +36,10 @@ void tsSchnitt_thread()
 {
 	char* tmpstr = NULL;
 	char* tmpstr2 = NULL;
-	char* tmpstr3 = NULL;
+	char* epgfile = NULL;
+	char* epgcutfile = NULL;
 	int z = 0;
 	int rc;
-	unsigned int buf[3];
 
 	tsSchnittThreadKill = addtimer(&tsSchnitt_thread_kill, START, 10000, 1, NULL, NULL, NULL);
 	
@@ -48,7 +49,11 @@ void tsSchnitt_thread()
 		
 		off64_t pos;
 		off64_t time;
-		off64_t mtime;
+		off64_t mtime = 0;
+		epgfile = changefilenameext(recfile, ".epg");
+		tmpstr = changefilenameext(epgfile, ".cut");
+ 		epgcutfile = ostrcat(tmpstr, ".epg", 0, 0); 
+ 		free(tmpstr); tmpstr=NULL;
 		tmpstr2 = changefilenameext(recfile, ".ma");
 		//tmpstr2 = ostrcat("\"",tmpstr2, 0, 0);
 		//tmpstr2 = ostrcat(tmpstr2, "\"", 0, 0);
@@ -67,7 +72,6 @@ void tsSchnitt_thread()
 					//tmpstr = ostrcat("/mnt/swapextensions/usr/local/share/titan/plugins/tsSchnitt/avconv", " -ss ", 0, 0);
 					tmpstr = ostrcat(tmpstr, " -ss ", 0, 0);
 					tmpstr = ostrcat(tmpstr, convert_timesec(time), 0, 0);
-
 					tmpstr = ostrcat(tmpstr, " -i \"",0, 0);
 					tmpstr = ostrcat(tmpstr, recfile, 0, 0);
 					tmpstr = ostrcat(tmpstr, "\"",0, 0);
@@ -79,6 +83,7 @@ void tsSchnitt_thread()
 				{
 					tmpstr = ostrcat(tmpstr, " -t ", 0, 0);
 					tmpstr = ostrcat(tmpstr, convert_timesec(time - mtime), 0, 0);
+					zielsec= time - mtime;
 					tmpstr = ostrcat(tmpstr, " \"", 0, 0);
 					tmpstr = ostrcat(tmpstr, cutfile, 0, 0);
 					tmpstr = ostrcat(tmpstr, "\"",0, 0);
@@ -101,6 +106,13 @@ void tsSchnitt_thread()
 			if(rc == 0)
 			{
 				ischnitt = 2;
+				tmpstr = ostrcat(tmpstr, "cp \"", 0, 0);
+				tmpstr = ostrcat(tmpstr, epgfile, 0, 0);
+				tmpstr = ostrcat(tmpstr, "\" \"", 0, 0);
+				tmpstr = ostrcat(tmpstr, epgcutfile, 0, 0);
+				tmpstr = ostrcat(tmpstr, "\"", 0, 0);
+				rc = system(tmpstr);
+				free(tmpstr);tmpstr= NULL;
 				textbox(_("INFO"), _("Schnitt erfolgreich beendet"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 			}
 			else
@@ -111,6 +123,8 @@ void tsSchnitt_thread()
 			}
 		}
 		free(tmpstr); tmpstr = NULL;
+		free(epgfile); epgfile=NULL;
+		free(epgcutfile); epgcutfile=NULL;
 	}
 
 	if(tsSchnittThreadKill != NULL)
@@ -147,6 +161,7 @@ void deinit(void)
 	free(cutfile); cutfile=NULL;
 	free(recfile); recfile=NULL;
 	free(recname); recname=NULL;
+
 	delmarkedscreen(122);
 	pluginaktiv = 0;
 	debug(10, "Record cut Plugin loadet !!!");
@@ -155,10 +170,16 @@ void deinit(void)
 //wird in der Pluginverwaltung bzw Menue ausfeguehrt
 void start(void)
 {
+
+	long long unsigned int lenpts = 0;
+	long long unsigned int startpts1 = 0;
+	long long unsigned int endpts = 0;
+	long long unsigned int aktbitrate = 0;
+	int recfd = -1;
+	
 	char* tmpstr = NULL;
 	char* tmpstr2 = NULL;
 	int rcret;
-	int rcm;
 	int help;
 	struct stat64 rdat;
 	struct stat64 cdat;
@@ -174,11 +195,11 @@ void start(void)
 	
 	while(1)
 	{
-
+		
 		if(recfile == NULL)
 			recfile = ostrcat(recfile, getconfig("tsSchnitt_recfile", NULL), 0, 0);
- 		if(recfile == NULL && tsSchnittThread == NULL)
- 		{
+		if(recfile == NULL && tsSchnittThread == NULL)
+		{
  			imarker = 0;
  			ischnitt = 0;
  		}
@@ -189,11 +210,14 @@ void start(void)
 		  	imarker = 0;
 		  else
 		  	imarker = 2;
-			free(tmpstr); tmpstr=NULL;	
-	  	tmpstr = changefilenameext(recfile, ".cut");
-	  	cutfile = ostrcat(tmpstr, ".ts", 0, 0); 
-	  	free(tmpstr); tmpstr=NULL;
-	  	if(isfile(cutfile) == 1 && tsSchnittThread == NULL)
+			free(tmpstr); tmpstr=NULL;
+	  	if(cutfile == NULL)
+			{ 
+		  	tmpstr = changefilenameext(recfile, ".cut");
+		  	cutfile = ostrcat(tmpstr, ".ts", 0, 0); 
+		  	free(tmpstr); tmpstr=NULL;
+		  }
+	   	if(isfile(cutfile) == 1 && tsSchnittThread == NULL)
 	  		ischnitt = 2;
 	  	else if(tsSchnittThread == NULL && ischnitt != 3)
 	  		ischnitt = 0;
@@ -222,7 +246,7 @@ void start(void)
 		schnittprog->progresssize = 0;
 		if(ischnitt == 0)
 		{
-			changetext(schnitt, "gestopt");
+			changetext(schnitt, "gestoppt");
 			changetext(schnittprog, "0.0%");
 			schnittprog->progresssize = 0;
 		}
@@ -234,6 +258,7 @@ void start(void)
 			{
  				if(stat64(recfile, &rdat) == 0)
  				{
+   					rdat.st_size = (rdat.st_size * zielsec) / getconfigint("tsSchnitt_lenrec", NULL);
   					help = (100 * cdat.st_size) / rdat.st_size;
  						schnittprog->progresssize = help;
  						tmpstr2 = ostrcat(oitoa(help),"." ,0, 0);
@@ -276,8 +301,14 @@ void start(void)
 				{
 					recfile = screendir("/var/media/hdd/movie", "*.ts", NULL, NULL, NULL, NULL, 0, "SELECT", 0, NULL, 0, NULL, 0, 1200, 0, 600, 0, 0);
 					addconfig("tsSchnitt_recfile", recfile);
+					recfd = open(recfile, O_RDONLY | O_LARGEFILE);
+					gettsinfo(recfd, &lenpts, &startpts1, &endpts, &aktbitrate, 188);
+					lenpts = lenpts / 90000;
+					addconfigint("tsSchnitt_lenrec", lenpts);
+					close(recfd);
 					free(recfile);recfile=NULL;
 					free(recname);recname=NULL;
+					free(cutfile); cutfile=NULL;
 					break;
 				}
 				else
@@ -291,7 +322,7 @@ void start(void)
 				{
 					drawscreen(load, 0, 0);
 					tsSchnittThread = addtimer(&tsSchnitt_thread, START, 10000, 1, NULL, NULL, NULL);
-					sleep(1);
+					sleep(4);
 					clearscreen(load);
 					break;
 				}
@@ -318,6 +349,7 @@ void start(void)
 				{
  					if(stat64(recfile, &rdat) == 0)
  					{
+  					rdat.st_size = (rdat.st_size * zielsec) / getconfigint("tsSchnitt_lenrec", NULL);
   					help = (100 * cdat.st_size) / rdat.st_size;
  						schnittprog->progresssize = help;
  						tmpstr2 = ostrcat(oitoa(help),"." ,0, 0);
