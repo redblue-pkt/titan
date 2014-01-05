@@ -107,7 +107,7 @@ void tsSchnitt_thread()
 			{
 				remove(cutfile);
 				ischnitt = 3;
-				textbox(_("ERROR"), _("Schnitt ended mit Fehler !!!!!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+				textbox(_("ERROR"), _("Schnitt endet mit Fehler !!!!!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 			}
 		}
 		free(tmpstr); tmpstr = NULL;
@@ -158,6 +158,7 @@ void start(void)
 	char* tmpstr = NULL;
 	char* tmpstr2 = NULL;
 	int rcret;
+	int rcm;
 	int help;
 	struct stat64 rdat;
 	struct stat64 cdat;
@@ -281,7 +282,7 @@ void start(void)
 				}
 				else
 				{
-					textbox(_("ERROR"), _("cut is running"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+					textbox(_("ERROR"), _("Schnitt ist in Arbeit"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 				}
 			}
 			if (rcret == getrcconfigint("rcblue", NULL))
@@ -301,11 +302,14 @@ void start(void)
 			}
 			if (rcret == getrcconfigint("rcred", NULL) && tsSchnittThread != NULL)
 			{
-				drawscreen(load, 0, 0);
-				tsSchnittThread->aktion = STOP;
-				sleep(2);
-				clearscreen(load);
-				break;
+				if(textbox(_("Frage"), _("Soll der Schnitt wirklich abgebrochen werden?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+				{
+					drawscreen(load, 0, 0);
+					tsSchnittThread->aktion = STOP;
+					sleep(2);
+					clearscreen(load);
+					break;
+				}
 			}
 			if(ischnitt == 1)
 			{
