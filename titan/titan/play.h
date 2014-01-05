@@ -92,7 +92,7 @@ void screenplayinfobar(char* file, char* showname, int mode, int playertype, int
 	struct skin* sreverse = getscreennode(playinfobar, "reverse");
 	struct skin* sprogress = getscreennode(playinfobar, "progress");
 	char* tmpstr = NULL;
-	unsigned long long pos = 0, len = 0, reverse = 0;
+	unsigned long long pos = 0, dpos = 0, len = 0, reverse = 0;
 
 	// show thumb cover start
 	struct skin* playinfobarcover = getscreen("playinfobarcover");
@@ -144,9 +144,15 @@ void screenplayinfobar(char* file, char* showname, int mode, int playertype, int
 			ret = playergetinfots(&len, &startpos, NULL, &pos, NULL, 2);
 		else
 		{
-//			ret = videogetpts(status.aktservice->videodev, &pos);
-//			if(ret != 0)
-				ret = playergetinfots(&len, &startpos, NULL, &pos, NULL, 0);
+			ret = playergetinfots(&len, &startpos, NULL, &pos, NULL, 0);
+			if(ret == 0)
+			{
+				ret = videogetpts(status.aktservice->videodev, &dpos);
+				if(ret == 0)
+					pos = dpos;
+				else
+					ret = 0; 
+			}
 		}
 		len = len / 90000;
 		pos = (pos - startpos) / 90000;
