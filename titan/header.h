@@ -534,6 +534,7 @@ int playerisplaying();
 void playerafterend();
 int playergetbuffersize();
 int playergetbufferstatus();
+off64_t playergetptspos(unsigned long long fpts, off64_t pos, int dir, int praez, int type, int flag, char* dsn);
 
 //filelist.h
 void getfilelist(struct skin* input, struct skin* filelistpath, struct skin* filelist, char* path, char* filemask, int tmpview, char* selection);
