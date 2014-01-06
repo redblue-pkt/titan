@@ -1656,13 +1656,13 @@ off64_t playergetptspos(unsigned long long fpts, off64_t pos, int dir, int praez
 	if(flag == 9) 
 	{
 		tssize = 188;
-		recbsize = tssize * 1024;
+		recbsize = tssize * 1024 * 10;
 		dupfd = open(dsn, O_RDONLY | O_LARGEFILE );
 	}
 	else
 	{
 		tssize = snode->tssize;
-		recbsize = snode->tssize * 1024;
+		recbsize = snode->tssize * 1024 * 10;
 		dupfd = open(snode->recname, O_RDONLY | O_LARGEFILE);
 	}
 
