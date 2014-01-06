@@ -1687,6 +1687,12 @@ void setskinnodeslocked(int flag)
 // disable Reader Config manual start
 			if(ostrcmp("Reader Config", child->name) == 0) child->locked = 1;
 
+			// show this menus
+			if(checkbox("UFS912") == 0)
+			{
+				if(ostrcmp("overclocking", child->name) == 0) child->locked = 0;
+			}
+
 			// dont show this menus
 			if(checkbox("ATEMIO510") == 1)
 			{
