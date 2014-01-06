@@ -424,6 +424,11 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		if(check == 1) return 0;
 		screennetwork(6);
 	}
+	else if(ostrcmp("overclocking", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screensettings_overclocking();
+	}
 	else if(ostrcmp("autostart_default", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
