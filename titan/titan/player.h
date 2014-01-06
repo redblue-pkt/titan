@@ -1617,5 +1617,225 @@ int playerjumpts(struct service* servicenode, int sekunden, int *startpts, off64
 	}
 }
 
+//praez	= 1 .... sekunden
+//			=	2 .... zehntel
+//			= 3 .... hundertstel
+//			= 4 .... volle Uebereinstimmung 
+//
+//type	= 0 .... alle
+//			= 1 .... nur PCR
+//			= 2 .... nur Video
+//			= 3 .... nur Audio
+//
+//flag = 0 --> play ts
+//flag = 1 --> timeshift
+//flag = 2 --> timeshift, not in play mode (only recording)
+//flag = 9 --> dataset mode
+// 
+off64_t playergetptspos(unsigned long long fpts, off64_t pos, int dir, int praez, int type, int flag, char* dsn)
+{
+	unsigned long long pts;
+	int ret = 0, dupfd = -1, left = 0, tssize = 0, recbsize = 0;
+	unsigned char* buf = NULL;
+	unsigned char *payload;
+	int pid = 0, pusi = 0;
+	char* packet;
+	
+	if(type > 3)
+	{
+		printf("type %i nicht unterstützt\n", type);
+		return -1;
+	}
+	
+	if(flag == 2)
+		snode = getservice(RECORDTIMESHIFT, 0);
+	else if(flag != 9)
+		snode = getservice(RECORDPLAY, 0);
+		
+	if(flag == 9) 
+	{
+		tssize = 188;
+		recbsize = tssize * 1024;
+		dupfd = open(dsn, O_RDONLY | O_LARGEFILE );
+	}
+	else
+	{
+		tssize = snode->tssize;
+		recbsize = snode->tssize * 1024;
+		dupfd = open(snode->recname, O_RDONLY | O_LARGEFILE);
+	}
+
+	if(dupfd < 0)
+	{
+		err("copy source fd not ok");
+		return -1;
+	}
+
+	buf = malloc(recbsize);
+	if(buf == NULL)
+	{
+		err("no mem");
+		return -1;
+	}
+	packet = buf;
+	if(dir > 0)  
+		pos = lseek64(dupfd, pos, SEEK_SET);
+	else
+		pos = lseek64(dupfd, pos - recbsize, SEEK_SET);
+	
+	ret = read(dupfd,  buf, recbsize);
+	close(dupfd);
+	left = 0;
+	
+	if(buf[0] != 0x47)
+	{
+		while(left < tssize)
+		{
+			if(buf[left] == 0x47) break;
+			left++;
+		}
+		if(left >= tssize)
+		{
+			free(buf);
+			return -1;
+		}	
+	}
+	pts = 0;
+	while(left <= recbsize - tssize)
+	{
+		if(pts != 0)
+		{
+			switch( praez )
+  	  {
+        case 1 :	if(fpts / 90000 != pts / 90000)
+        						pts = 0;
+        					break;
+        case 2 :	if(fpts / 9000 != pts / 9000)
+        						pts = 0;
+        					break;
+        case 3 :	if(fpts / 900 != pts / 900)
+        						pts = 0;
+        					break;		
+        case 4 :	if(fpts != pts )
+        						pts = 0;
+        					break;
+				default :	free(buf); return -1; break;
+			}
+			if(pts != 0)
+			{ 	
+				pos = pos + left - tssize;
+				free(buf);
+				return pos;
+			}
+		}
+		packet = buf + left;
+		left = left + tssize;
+						
+		pid = ((packet[1] << 8) | packet[2]) & 0x1FFF;
+		pusi = !!(packet[1] & 0x40);
+		//check for adaption field
+		if(packet[3] & 0x20)
+		{
+			if(type > 1)continue;
+			if(packet[4] >= 183) continue;
+			if(packet[4])
+			{
+				if(packet[5] & 0x10) //PCR present
+				{
+					pts = ((unsigned long long)(packet[6] & 0xFF)) << 25;
+					pts |= ((unsigned long long)(packet[7] & 0xFF)) << 17;
+					pts |= ((unsigned long long)(packet[8] & 0xFE)) << 9;
+					pts |= ((unsigned long long)(packet[9] & 0xFF)) << 1;
+					pts |= ((unsigned long long)(packet[10] & 0x80)) >> 7;
+					continue;
+				}
+			}
+			payload = packet + packet[4] + 4 + 1;
+		} else
+			payload = packet + 4;
+		
+		if(type == 1) continue;
+		if(!pusi) continue;
+		
+		if (payload[0] || payload[1] || (payload[2] != 1))
+			continue;
+		
+			//stream use extension mechanism def in ISO 13818-1 Amendment 2
+		if(payload[3] == 0xFD)
+		{
+			if(payload[7] & 1) //PES extension flag
+			{
+				int offs = 0;
+				if(payload[7] & 0x80) offs += 5; //pts avail
+				if(payload[7] & 0x40) offs += 5; //dts avail
+				if(payload[7] & 0x20) offs += 6; //escr avail
+				if(payload[7] & 0x10) offs += 3; //es rate
+				if(payload[7] & 0x8) offs += 1; //dsm trickmode
+				if(payload[7] & 0x4) offs += 1; //additional copy info
+				if(payload[7] & 0x2) offs += 2; //crc
+				if(payload[8] < offs) continue;
+
+				uint8_t pef = payload[9 + offs++]; //pes extension field
+				if(pef & 1) //pes extension flag 2
+				{
+					if(pef & 0x80) offs += 16; //private data flag
+					if(pef & 0x40) offs += 1; //pack header field flag
+					if(pef & 0x20) offs += 2; //program packet sequence counter flag
+					if(pef & 0x10) offs += 2; //P-STD buffer flag
+					if(payload[8] < offs) continue;
+
+					uint8_t stream_id_extension_len = payload[9 + offs++] & 0x7F;
+					if(stream_id_extension_len >= 1)
+					{
+						if(payload[8] < (offs + stream_id_extension_len)) continue;
+						//stream_id_extension_bit (should not set)
+						if(payload[9 + offs] & 0x80) continue;
+						switch(payload[9 + offs])
+						{
+							case 0x55 ... 0x5f: break; //VC-1
+							case 0x71: break; //AC3 / DTS
+							case 0x72: break; //DTS - HD
+							default:
+								printf("skip unknwn stream_id_extension %02x\n", payload[9 + offs]);
+								continue;
+						}
+					}
+					else
+						continue;
+				}
+				else
+					continue;
+			}
+			else
+				continue;
+		}
+		//drop non-audio, non-video packets because other streams
+		//can be non-compliant.
+		//0xC0 = audio, 0xE0 = video
+		else if(((payload[3] & 0xE0) != 0xC0) && ((payload[3] & 0xF0) != 0xE0))
+			continue;
+
+		if((payload[7] & 0x80) && ((payload[3] & 0xF0) != 0xE0) && (type == 0 || type == 2)) //PTS video
+		{
+			pts = ((unsigned long long)(payload[9] & 0xE)) << 29;
+			pts |= ((unsigned long long)(payload[10] & 0xFF)) << 22;
+			pts |= ((unsigned long long)(payload[11] & 0xFE)) << 14;
+			pts |= ((unsigned long long)(payload[12] & 0xFF)) << 7;
+			pts |= ((unsigned long long)(payload[13] & 0xFE)) >> 1;
+			continue;
+		}
+		if((payload[7] & 0x80) && ((payload[3] & 0xE0) != 0xC0) && (type == 0 || type == 3)) //PTS audio
+		{
+			pts = ((unsigned long long)(payload[9] & 0xE)) << 29;
+			pts |= ((unsigned long long)(payload[10] & 0xFF)) << 22;
+			pts |= ((unsigned long long)(payload[11] & 0xFE)) << 14;
+			pts |= ((unsigned long long)(payload[12] & 0xFF)) << 7;
+			pts |= ((unsigned long long)(payload[13] & 0xFE)) >> 1;
+			continue;
+		}
+	}
+	free(buf);
+	return recbsize * -1;
+}
 
 #endif
