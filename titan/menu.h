@@ -209,6 +209,13 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		struct skin* screen = getscreen("settingsmenu");
 		menu(screen, 0);
 	}
+	else if(ostrcmp("autostart", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		resettvpic();
+		struct skin* screen = getscreen("autostartmenu");
+		menu(screen, 0);
+	}
 	else if(ostrcmp("settings_grid", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
@@ -416,6 +423,36 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 	{
 		if(check == 1) return 0;
 		screennetwork(6);
+	}
+	else if(ostrcmp("autostart_default", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screensettings_autostart_default();
+	}
+	else if(ostrcmp("autostart_audiovideo", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screensettings_autostart_audiovideo();
+	}
+	else if(ostrcmp("autostart_usb", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screensettings_autostart_usb();
+	}
+	else if(ostrcmp("autostart_emu", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screensettings_autostart_emu();
+	}
+	else if(ostrcmp("autostart_network", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screensettings_autostart_network();
+	}
+	else if(ostrcmp("autostart_safety", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screensettings_autostart_safety();
 	}
 	else if(ostrcmp("poweroff", menuentry->name) == 0)
 	{

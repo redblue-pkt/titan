@@ -8,6 +8,14 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+// settings_autostart.h
+void screensettings_autostart_default();
+void screensettings_autostart_audiovideo();
+void screensettings_autostart_usb();
+void screensettings_autostart_emu();
+void screensettings_autostart_network();
+void screensettings_autostart_safety();
+
 //infobar.h
 void screeninfobar();
 
