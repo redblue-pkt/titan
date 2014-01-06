@@ -1640,6 +1640,7 @@ off64_t playergetptspos(unsigned long long fpts, off64_t pos, int dir, int praez
 	unsigned char *payload;
 	int pid = 0, pusi = 0;
 	char* packet;
+	struct service* snode;
 	
 	if(type > 3)
 	{
