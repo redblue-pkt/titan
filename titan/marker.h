@@ -326,4 +326,30 @@ void screenmarker()
 	blitfb(0);
 }
 
+off64_t getcurrentpos(struct service* snode)
+{
+	unsigned long long aktpts = 0;
+	int ret = 0;
+	off64_t posn = -1;
+		
+	off64_t pos = lseek64(snode->recsrcfd, 0, SEEK_CUR);
+
+	ret = videogetpts(status.aktservice->videodev, &aktpts);
+	if(ret == 0)
+	{
+		posn = playergetptspos(aktpts, pos, -1, 4, 0, 0, NULL);
+		if(posn < -1)
+			posn = playergetptspos(aktpts, pos - (posn *-1), -1, 4, 0, 0, NULL);
+		if(posn < -1)
+			posn = playergetptspos(aktpts, pos - (posn *-2), -1, 4, 0, 0, NULL);
+		if(posn < -1)
+			posn = playergetptspos(aktpts, pos - (posn *-3), -1, 4, 0, 0, NULL);
+		if(posn < -1)
+			posn = playergetptspos(aktpts, pos - (posn *-4), -1, 4, 0, 0, NULL);
+	}
+	return posn;
+}
+		
+
+
 #endif

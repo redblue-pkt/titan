@@ -926,6 +926,6 @@ int putmarker(char* dateiname);
 int setmarker();
 int jumpmarker(char* timetext);
 void screenmarker();
-
+off64_t getcurrentpos(struct service* snode);
 
 #endif
