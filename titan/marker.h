@@ -192,11 +192,11 @@ int setmarker()
 		atime = (aktpts - startpos) / 90000;
 		off64_t posn = playergetptspos(aktpts, pos, -1, 4, 2, 0, NULL);
 		if(posn < -1)
-			posn = playergetptspos(aktpts, pos - (findpos1 *-1), -1, 4, 2, 0, NULL);
+			posn = playergetptspos(aktpts, pos - (posn *-1), -1, 4, 2, 0, NULL);
 		if(posn < -1)
-			posn = playergetptspos(aktpts, pos - (findpos1 *-2), -1, 4, 2, 0, NULL);
+			posn = playergetptspos(aktpts, pos - (posn *-2), -1, 4, 2, 0, NULL);
 		if(posn < -1)
-			posn = playergetptspos(aktpts, pos - (findpos1 *-3), -1, 4, 2, 0, NULL);
+			posn = playergetptspos(aktpts, pos - (posn *-3), -1, 4, 2, 0, NULL);
 		if(posn > 0)
 			{
 				printf("marker-> new position found. OLD: %lld NEW: %lld\n", pos, posn); 
