@@ -228,15 +228,16 @@ void playerstopts(int flag, int flag1)
 	struct channel* node = NULL;
 
 	snode = getservice(RECORDPLAY, flag1);
-	if(snode != NULL) snode->recendtime = 1;
 
-	if(snode != NULL && snode->recsrcfd >= 0 && flag == 0)
+	if(snode != NULL && snode->recsrcfd >= 0 && flag == 0 && flag1 == 0)
 	{
 		char* fileseek = changefilenameext(snode->recname, ".se");
 		FILE* fbseek = fopen(fileseek, "w");
 		if(fbseek != NULL)
 		{
-			off64_t pos = lseek64(snode->recsrcfd, 0, SEEK_CUR);
+			off64_t pos = getcurrentpos(snode);
+			if(pos <= 0)
+				pos = lseek64(snode->recsrcfd, 0, SEEK_CUR);
 			fprintf(fbseek,"%lld", pos);
 			fclose(fbseek);
 		}
@@ -246,6 +247,8 @@ void playerstopts(int flag, int flag1)
 		free(filemarker); filemarker=NULL;
 		delmarkernode(-1);
 	}
+	
+	if(snode != NULL) snode->recendtime = 1;
 	
 	if(flag == 0 || flag == 2)
 	{
