@@ -69,6 +69,7 @@ void screenplaybufferstatus(struct stimerthread* self)
 void screenplayinfobar(char* file, char* showname, int mode, int playertype, int flag)
 {
 	int change = 1;
+	int videodevpts = 1;
 
 	if(checkbit(status.playercan, 14) == 0) return;
 
@@ -134,6 +135,7 @@ void screenplayinfobar(char* file, char* showname, int mode, int playertype, int
 	else
 		changetext(title, showname);
 
+	videodevpts = 1;
 	if(playertype == 1)
 	{
 		int ret = 0;
@@ -149,9 +151,15 @@ void screenplayinfobar(char* file, char* showname, int mode, int playertype, int
 			{
 				ret = videogetpts(status.aktservice->videodev, &dpos);
 				if(ret == 0)
+				{
 					pos = dpos;
+					videodevpts = 1;
+				}
 				else
+				{
 					ret = 0; 
+					videodevpts = 0;
+				}
 			}
 		}
 		len = len / 90000;
@@ -180,7 +188,10 @@ void screenplayinfobar(char* file, char* showname, int mode, int playertype, int
 	}
 
 	tmpstr = convert_timesec(pos);
-	changetext(spos, tmpstr);
+	if(videodevpts == 1)
+		changetext(spos, tmpstr);
+	else
+		changetext(spos, " ");
 	free(tmpstr); tmpstr = NULL;
 
 	tmpstr = convert_timesec(len);
