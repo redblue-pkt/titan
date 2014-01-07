@@ -1584,8 +1584,9 @@ playerstart:
 				
 				if(rcret == getrcconfigint("rc0", NULL))
 					setmarker();
+					
 				if(rcret == getrcconfigint("rc5", NULL))
-					screenmarker();
+					screenmarker(file, showname, &playinfobarstatus, &playinfobarcount, playertype, flag);
 
 			}
 			//don't change this sleep, without this
