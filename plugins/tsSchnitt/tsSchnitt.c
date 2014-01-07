@@ -79,16 +79,16 @@ void tsSchnitt_thread()
 					tmpstr = ostrcat(tmpstr, " -vcodec copy -map 0:v -acodec copy -map 0:a",0, 0);
 					mtime = time;
 				}
-				if(z == 1)
-				{
-					tmpstr = ostrcat(tmpstr, " -t ", 0, 0);
-					tmpstr = ostrcat(tmpstr, convert_timesec(time - mtime), 0, 0);
-					zielsec= time - mtime;
-					tmpstr = ostrcat(tmpstr, " \"", 0, 0);
-					tmpstr = ostrcat(tmpstr, cutfile, 0, 0);
-					tmpstr = ostrcat(tmpstr, "\"",0, 0);
-				}
 				z = z + 1;
+			}
+			if(z > 1)
+			{
+				tmpstr = ostrcat(tmpstr, " -t ", 0, 0);
+				tmpstr = ostrcat(tmpstr, convert_timesec(time - mtime), 0, 0);
+				zielsec= time - mtime;
+				tmpstr = ostrcat(tmpstr, " \"", 0, 0);
+				tmpstr = ostrcat(tmpstr, cutfile, 0, 0);
+				tmpstr = ostrcat(tmpstr, "\"",0, 0);
 			}	
 			fclose(datei);	
 			free(tmpstr2); tmpstr2 = NULL;													
@@ -100,27 +100,36 @@ void tsSchnitt_thread()
 
 		if(ischnitt == 1)
 		{
-			printf(" +++ %s +++\n",tmpstr);
-			rc = system(tmpstr);
-			free(tmpstr);tmpstr= NULL;
-			if(rc == 0)
+			tmpstr2 = ostrcat(tmpstr2, "weggeschnitten wird \nvon 00:00 bis ", 0, 0); 
+			tmpstr2 = ostrcat(tmpstr2, convert_timesec(mtime), 0, 0);
+			tmpstr2 = ostrcat(tmpstr2, "\n von ", 0, 0); 
+			tmpstr2 = ostrcat(tmpstr2, convert_timesec(time), 0, 0);
+			tmpstr2 = ostrcat(tmpstr2, " bis ende", 0, 0);
+			if(textbox(_("Information"), tmpstr2, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 			{
-				ischnitt = 2;
-				tmpstr = ostrcat(tmpstr, "cp \"", 0, 0);
-				tmpstr = ostrcat(tmpstr, epgfile, 0, 0);
-				tmpstr = ostrcat(tmpstr, "\" \"", 0, 0);
-				tmpstr = ostrcat(tmpstr, epgcutfile, 0, 0);
-				tmpstr = ostrcat(tmpstr, "\"", 0, 0);
+				printf(" +++ %s +++\n",tmpstr);
 				rc = system(tmpstr);
 				free(tmpstr);tmpstr= NULL;
-				textbox(_("INFO"), _("Schnitt erfolgreich beendet"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+				if(rc == 0)
+				{
+					ischnitt = 2;
+					tmpstr = ostrcat(tmpstr, "cp \"", 0, 0);
+					tmpstr = ostrcat(tmpstr, epgfile, 0, 0);
+					tmpstr = ostrcat(tmpstr, "\" \"", 0, 0);
+					tmpstr = ostrcat(tmpstr, epgcutfile, 0, 0);
+					tmpstr = ostrcat(tmpstr, "\"", 0, 0);
+					rc = system(tmpstr);
+					free(tmpstr);tmpstr= NULL;
+					textbox(_("INFO"), _("Schnitt erfolgreich beendet"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+				}
+				else
+				{
+					remove(cutfile);
+					ischnitt = 3;
+					textbox(_("ERROR"), _("Schnitt endet mit Fehler !!!!!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+				}
 			}
-			else
-			{
-				remove(cutfile);
-				ischnitt = 3;
-				textbox(_("ERROR"), _("Schnitt endet mit Fehler !!!!!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-			}
+			free(tmpstr2);tmpstr2=NULL;
 		}
 		free(tmpstr); tmpstr = NULL;
 		free(epgfile); epgfile=NULL;
