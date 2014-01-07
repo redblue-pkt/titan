@@ -129,6 +129,8 @@ void tsSchnitt_thread()
 					textbox(_("ERROR"), _("Schnitt endet mit Fehler !!!!!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 				}
 			}
+			else
+				ischnitt == 0
 			free(tmpstr2);tmpstr2=NULL;
 		}
 		free(tmpstr); tmpstr = NULL;
