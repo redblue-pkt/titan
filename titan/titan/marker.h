@@ -264,7 +264,7 @@ int jumpmarker(char* timetext)
 	return -1;
 }
 	
-void screenmarker()
+void screenmarker(char* file, char* showname, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag)
 {
 	int rcret;
 	//char* filemarker = NULL;
@@ -324,6 +324,12 @@ void screenmarker()
 	delmarkedscreennodes(screen1, 1);
 	clearscreen(screen1);
 	blitfb(0);
+	if(rcret==getrcconfigint("rcok",NULL))
+	{
+		*playinfobarstatus = 1;
+		*playinfobarcount = 0;
+		screenplayinfobar(file, showname, 0, playertype, flag);
+	}
 }
 
 off64_t getcurrentpos(struct service* snode)

@@ -925,7 +925,7 @@ int getmarker(char* dateiname);
 int putmarker(char* dateiname);
 int setmarker();
 int jumpmarker(char* timetext);
-void screenmarker();
+void screenmarker(char* file, char* showname, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag);
 off64_t getcurrentpos(struct service* snode);
 
 #endif
