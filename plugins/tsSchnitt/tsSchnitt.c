@@ -100,12 +100,12 @@ void tsSchnitt_thread()
 
 		if(ischnitt == 1)
 		{
-			tmpstr2 = ostrcat(tmpstr2, "weggeschnitten wird \nvon 00:00 bis ", 0, 0); 
+			tmpstr2 = ostrcat(tmpstr2, "Schnitt:\n\n   von 00:00:00 bis ", 0, 0); 
 			tmpstr2 = ostrcat(tmpstr2, convert_timesec(mtime), 0, 0);
-			tmpstr2 = ostrcat(tmpstr2, "\n von ", 0, 0); 
+			tmpstr2 = ostrcat(tmpstr2, "\n   von ", 0, 0); 
 			tmpstr2 = ostrcat(tmpstr2, convert_timesec(time), 0, 0);
 			tmpstr2 = ostrcat(tmpstr2, " bis ende", 0, 0);
-			if(textbox(_("Information"), tmpstr2, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+			if(textbox(_("Information"), tmpstr2, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 400, 250, 0, 0) == 1)
 			{
 				printf(" +++ %s +++\n",tmpstr);
 				rc = system(tmpstr);
@@ -130,7 +130,7 @@ void tsSchnitt_thread()
 				}
 			}
 			else
-				ischnitt == 0
+				ischnitt = 0;
 			free(tmpstr2);tmpstr2=NULL;
 		}
 		free(tmpstr); tmpstr = NULL;
