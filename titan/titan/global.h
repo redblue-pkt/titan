@@ -6335,7 +6335,7 @@ void setfanspeed(int speed, int aktion)
 
 	if(aktion == 1)
 		addconfig("fanspeed", speedSet);
-	else
+	else if(aktion == 2)
 		addconfig("fanspeedstandby", speedSet);
 
 	free(speedSet); speedSet=NULL;

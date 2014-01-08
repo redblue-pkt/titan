@@ -52,7 +52,6 @@ void screenpanel_settings_fancontrol()
 		}
 		if(rcret == getrcconfigint("rcgreen", NULL)){
 			setfanspeed(speed, type);
-			break;
 		}
 		if(rcret == getrcconfigint("rcyellow", NULL)){
 			if(type == 1) {
