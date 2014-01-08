@@ -6308,7 +6308,10 @@ void setfanspeed(int speed, int aktion)
 
 	if(speed < 0)
 	{
-		speedWert = getconfig("fanspeed", NULL);
+		if(speed == -1)
+			speedWert = getconfig("fanspeed", NULL);
+		else
+			speedWert = getconfig("fanspeedstandby", NULL);
 		if(speedWert == NULL)
 			speedSet = ostrcat(speedSet, "170", 1, 0);
 		else
@@ -6332,6 +6335,8 @@ void setfanspeed(int speed, int aktion)
 
 	if(aktion == 1)
 		addconfig("fanspeed", speedSet);
+	else
+		addconfig("fanspeedstandby", speedSet);
 
 	free(speedSet); speedSet=NULL;
 }
