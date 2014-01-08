@@ -32,13 +32,13 @@ void screenpanel_settings_fancontrol()
 	
 	struct skin* panel_fancontrol = getscreen("panel_settings_fancontrol");
 	struct skin* fanprogress = getscreennode(panel_fancontrol, "fanprogress");
-	struct skin* titletext = getscreennode(panel_fancontrol, "titeltext");
+	struct skin* titletext = getscreennode(panel_fancontrol, "titletext");
 
 	speedWert = getconfig("fanspeed", NULL);
 	speed = getspeedWert(speedWert);
 		
 	type = 1; //speed normal
-	changetext(titeltext, "FanControl-normal");
+	changetext(titletext, "FanControl-normal");
 	fanprogress->progresssize = speed;
 	drawscreen(panel_fancontrol, 0, 0);
 
@@ -57,12 +57,12 @@ void screenpanel_settings_fancontrol()
 		if(rcret == getrcconfigint("rcyellow", NULL)){
 			if(type == 1) {
 				type = 2;
-				changetext(titeltext, "FanControl-standby");
+				changetext(titletext, "FanControl-standby");
 				speed = getspeedWert(getconfig("fanspeedstandby", NULL));
 			}
 			else {
 				type = 1;
-				changetext(titeltext, "FanControl-normal");
+				changetext(titletext, "FanControl-normal");
 				speed = getspeedWert(getconfig("fanspeed", NULL));
 			}
 			fanprogress->progresssize = speed;
