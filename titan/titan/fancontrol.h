@@ -1,16 +1,10 @@
 #ifndef FANCONTROL_H
 #define FANCONTROL_H
 
-void screenpanel_settings_fancontrol()
+int getspeedWert(char* speedWert)
 {
-	int rcret = 0;
 	int speed = 0;
-	char* speedWert = NULL;
 	
-	struct skin* panel_fancontrol = getscreen("panel_settings_fancontrol");
-	struct skin* fanprogress = getscreennode(panel_fancontrol, "fanprogress");
-
-	speedWert = getconfig("fanspeed", NULL);
 	if (speedWert != NULL) 
 	{
 		if(ostrcmp(speedWert, "115") == 0)
@@ -26,7 +20,25 @@ void screenpanel_settings_fancontrol()
 	}
 	else 
 		speed = 100;
+	return speed;
+}
+
+void screenpanel_settings_fancontrol()
+{
+	int rcret = 0;
+	int speed = 0;
+	int type = 0;
+	char* speedWert = NULL;
+	
+	struct skin* panel_fancontrol = getscreen("panel_settings_fancontrol");
+	struct skin* fanprogress = getscreennode(panel_fancontrol, "fanprogress");
+	struct skin* titletext = getscreennode(panel_fancontrol, "titeltext");
+
+	speedWert = getconfig("fanspeed", NULL);
+	speed = getspeedWert(speedWert);
 		
+	type = 1; //speed normal
+	changetext(titeltext, "FanControl-normal");
 	fanprogress->progresssize = speed;
 	drawscreen(panel_fancontrol, 0, 0);
 
@@ -39,8 +51,22 @@ void screenpanel_settings_fancontrol()
 			break;
 		}
 		if(rcret == getrcconfigint("rcgreen", NULL)){
-			setfanspeed(speed, 1);
+			setfanspeed(speed, type);
 			break;
+		}
+		if(rcret == getrcconfigint("rcyellow", NULL)){
+			if(type == 1) {
+				type = 2;
+				changetext(titeltext, "FanControl-standby");
+				speed = getspeedWert(getconfig("fanspeedstandby", NULL));
+			}
+			else {
+				type = 1;
+				changetext(titeltext, "FanControl-normal");
+				speed = getspeedWert(getconfig("fanspeed", NULL));
+			}
+			fanprogress->progresssize = speed;
+			drawscreen(panel_fancontrol, 0, 0);
 		}
 		if(rcret == getrcconfigint("rcleft", NULL)){
 			if(speed > 0)

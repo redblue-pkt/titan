@@ -55,6 +55,8 @@ void screenstandby()
 		system(tmpstr);
 		free(tmpstr); tmpstr=NULL;
 	}
+	if(checkbox("UFS922") == 1)
+		setfanspeed(-2, 0);
 
 	status.protecttime = 0;
 	status.rcstandby = standbyscreen;
@@ -90,6 +92,8 @@ void screenstandby()
 			i++; if(i > 50) break;
 		}
 	}
+	if(checkbox("UFS922") == 1)
+		setfanspeed(-1, 0);
 	
 	setcecstandby(0);
 	system("vdstandby -d");
