@@ -174,7 +174,7 @@ msgid "Aspect"
 msgstr "Seitenverhältnis"
 
 msgid "Audio / Video / Sat"
-msgstr "Audio/Video/Sat "
+msgstr "Audio / Video / Sat"
 
 msgid "Audio PID:"
 msgstr "Audio PID:"
@@ -312,7 +312,7 @@ msgid "browsers"
 msgstr "Internet Browser"
 
 msgid "Cam / Emu"
-msgstr "CAM/EMU"
+msgstr "CAM / EMU"
 
 msgid "CAM PMT Mode"
 msgstr "CAM PMT Mode"
@@ -462,10 +462,10 @@ msgid "Detect hanging System !!!\n\nKILL = Red\nBOOT = Green"
 msgstr "Systemfehler!!!\n\nRot = Prozess beenden\nGrün = System neustarten"
 
 msgid "default"
-msgstr "System Status"
+msgstr "standard"
 
 msgid "Default"
-msgstr "System Status"
+msgstr "standard"
 
 msgid "DEFAULT"
 msgstr "Voreinstellung"
@@ -4337,3 +4337,12 @@ msgstr "Sound Verstärkung (TV-Modus / interner Player)"
 
 msgid "Sound amplifier (external Player)"
 msgstr "Sound Verstärkung (externer Player)"
+
+msgid "Autostart Settings"
+msgstr "Autostart Einstellungen"
+
+msgid "Overclocking Settings"
+msgstr "Overclocking Einstellungen"
+
+msgid "Default Autostart"
+msgstr "Allgemein"
