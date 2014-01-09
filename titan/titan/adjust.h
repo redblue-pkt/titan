@@ -250,7 +250,7 @@ void screenadjust()
 
 	if(checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1)
 	{
-		sataswitch->hidden = NO;
+		rcswitch->hidden = NO;
 		addchoicebox(rcswitch, "0", _("old"));
 		addchoicebox(rcswitch, "1", _("new"));
 		setchoiceboxselection(rcswitch, getconfig("rcswitch", NULL));
