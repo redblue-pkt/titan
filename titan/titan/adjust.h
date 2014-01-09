@@ -49,6 +49,7 @@ void screenadjust()
 	struct skin* playerbuffersize = getscreennode(adjust, "playerbuffersize");
 	struct skin* playerbufferseektime = getscreennode(adjust, "playerbufferseektime");
 	struct skin* sataswitch = getscreennode(adjust, "sataswitch");
+	struct skin* rcswitch = getscreennode(adjust, "rcswitch");
 
 	struct skin* tmp = NULL;
 
@@ -246,6 +247,16 @@ void screenadjust()
 	}
 	else
 		sataswitch->hidden = YES;
+
+	if(checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1)
+	{
+		sataswitch->hidden = NO;
+		addchoicebox(rcswitch, "0", _("old"));
+		addchoicebox(rcswitch, "1", _("new"));
+		setchoiceboxselection(rcswitch, getconfig("rcswitch", NULL));
+	}
+	else
+		rcswitch->hidden = YES;
 	
 	addchoicebox(playerbuffersize, "0", _("no"));
 	addchoicebox(playerbuffersize, "524288", "512KB");
@@ -356,6 +367,9 @@ void screenadjust()
 
 			if(checkbox("ATEMIO510") == 1 || checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1 || checkbox("UFS912") == 1)
 				addconfigscreencheck("usecec", usecec, "0");
+
+			if(checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1)
+				addconfigscreencheck("rcswitch", rcswitch, "0");
 
 			if(checkbox("ATEMIO7600") == 1)
 			{
