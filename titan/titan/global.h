@@ -1688,7 +1688,7 @@ void setskinnodeslocked(int flag)
 			if(ostrcmp("Reader Config", child->name) == 0) child->locked = 1;
 
 			// show this menus
-			if(checkbox("UFS912") == 0)
+			if(checkbox("UFS912") == 1)
 			{
 				if(ostrcmp("overclocking", child->name) == 0) child->locked = 0;
 			}
