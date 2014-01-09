@@ -8,7 +8,7 @@ void menucheckentry(struct skin* child)
 	if(child == NULL) return;
 
 	// Hide SoftCam Panel when no Emu's installed
-	if(ostrcmp(child->name, "softcam") == 0)
+	if(ostrcmp(child->name, "softcam") == 0 || ostrcmp(child->name, "autostart_emu") == 0)
 	{
 		if(status.security == 0 || checkemu() == 0)
 			child->hidden = YES;
