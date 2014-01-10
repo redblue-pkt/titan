@@ -5332,6 +5332,7 @@ int setmute(int value)
 		system("amixer -c 1 set HDMI mute &");
 		system("amixer -c 1 set Analog mute &");
 		system("amixer -c 1 set SPDIF mute &");
+		printf("mute\n");
 	} 
 	else
 	{
@@ -5347,6 +5348,7 @@ int setmute(int value)
 			system("amixer -c 1 set HDMI unmute &");
 			system("amixer -c 1 set Analog unmute &");
 			system("amixer -c 1 set SPDIF unmute &");
+			printf("unmute\n");
 			return ret;
 		}
 	}
