@@ -865,6 +865,27 @@ firstwizzardstep1:
 			//all skin changes before here than are deleted
 //			if(screenlanguage(2) == 2) return 100;
 //			resettvpic();
+
+
+			struct menulist* mlist = NULL, *mbox = NULL;
+			addmenulist(&mlist, "RemoteControl Long Version", "0", NULL, 0, 0);
+			addmenulist(&mlist, "RemoteControl Old Version", "1", NULL, 0, 0);
+			
+//			mbox = menulistbox(mlist, "playlistmenu", NULL, "%pluginpath%/mc/skin", NULL, 1, 0);
+			mbox = menulistbox(mlist, NULL, NULL, NULL, NULL, 1, 0);
+			if(mbox != NULL)
+			{
+				free(title), title = NULL;
+				free(tmpstr), tmpstr = NULL;
+
+				debug(10, "mbox->name %s", mbox->name);
+				debug(10, "mbox->text %s", mbox->text);
+
+				title = ostrcat(mbox->text, NULL, 0, 0);
+				flag = 1;
+				goto start;
+			}
+			
 			screentunerconfig();
 			resettvpic();
 			screenscanconfig(1);
