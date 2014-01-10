@@ -873,11 +873,13 @@ firstwizzardstep1:
 				addmenulist(&mlist, "RemoteControl Old Version", "1", NULL, 0, 0);
 				
 	//			mbox = menulistbox(mlist, "playlistmenu", NULL, "%pluginpath%/mc/skin", NULL, 1, 0);
-				mbox = menulistbox(mlist, NULL, NULL, NULL, NULL, 1, 0);
+				mbox = menulistbox(mlist, "remotecontrol", NULL, NULL, NULL, 2, 0);
 				if(mbox != NULL)
 				{
 					debug(10, "mbox->name %s", mbox->name);
 					debug(10, "mbox->text %s", mbox->text);
+					addconfigscreencheck("usecec", mbox->text, "0");
+					writeallconfig(1);				
 				}
 			}
 			else
