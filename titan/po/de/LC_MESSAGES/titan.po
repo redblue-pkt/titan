@@ -4355,3 +4355,6 @@ msgstr "Fernbedienung Alte Version"
 
 msgid "RemoteControl Long Version"
 msgstr "Fernbedienung Lange Version"
+
+msgid "Here to select your remote Model"
+msgstr "Hier müssen Sie Ihr Fernbedienungs Model auswählen und mit OK bestätigen."
