@@ -12,6 +12,8 @@ void set_player_sound(int flag)
 		vol = ostrcat(getconfig("vol_playerstart", NULL), NULL, 0, 0);
 	else if(flag == 1)
 		vol = ostrcat(getconfig("vol_playerstop", NULL), NULL, 0, 0);
+	else
+		vol = ostrcat("0", NULL, 0, 0);
 
 	cmd = ostrcat("amixer -c 1 set Analog playback '", vol, 0, 0);
 	cmd = ostrcat(cmd, "%' unmute &", 1, 0);
@@ -5324,6 +5326,11 @@ int setmute(int value)
 
 	if(value == 2)
 	{
+		if(status.mcaktiv == 1)
+			set_player_sound(0);
+		else
+			set_player_sound(1);
+		
 		tmpvol = getvol();
 		tmpvol = tmpvol * 50 / 100;
 		status.mute = value;
@@ -5331,6 +5338,8 @@ int setmute(int value)
 	} 
 	else
 	{
+		// disable sound
+		set_player_sound(2);
 		mutedev = getconfig("mutedev", NULL);
 
 		if(mutedev != NULL)
