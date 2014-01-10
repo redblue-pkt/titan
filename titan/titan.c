@@ -878,9 +878,7 @@ firstwizzardstep1:
 				{
 					debug(10, "mbox->name %s", mbox->name);
 					debug(10, "mbox->text %s", mbox->text);
-					char* tmp = ostrcat(mbox->text, NULL, 0, 0);
-					addconfigscreencheck("remotecontrol", tmp, "0");
-					free(tmp),tmp = NULL;
+					addconfig("mc_vp_path", mbox->text);
 					writeallconfig(1);				
 				}
 			}
