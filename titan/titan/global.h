@@ -5322,11 +5322,10 @@ int setmute(int value)
 	//don't set mute 2x
 	if(value == 1 && status.mute == 1) return 0;
 
-printf("mute value: %d\n", value);
+	printf("mute value: %d\n", value);
 
 	if(value == 2)
 	{
-		// disable sound
 		tmpvol = getvol();
 		tmpvol = tmpvol * 50 / 100;
 		status.mute = value;
@@ -5345,17 +5344,17 @@ printf("mute value: %d\n", value);
 			if(status.volautochangevalue != 0 && value == 0) setvol(getvol());
 			if(value == 1)
 			{
-				printf("unmute\n");
-				system("amixer -c 1 set HDMI unmute &");
-				system("amixer -c 1 set Analog unmute &");
-				system("amixer -c 1 set SPDIF unmute &");
-			}
-			else
-			{
 				printf("mute\n");
 				system("amixer -c 1 set HDMI mute &");
 				system("amixer -c 1 set Analog mute &");
 				system("amixer -c 1 set SPDIF mute &");
+			}
+			else
+			{
+				printf("unmute\n");
+				system("amixer -c 1 set HDMI unmute &");
+				system("amixer -c 1 set Analog unmute &");
+				system("amixer -c 1 set SPDIF unmute &");
 			}
 
 			return ret;
