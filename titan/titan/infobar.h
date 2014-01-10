@@ -162,7 +162,7 @@ void screeninfobar()
 			}
 			if(rcret == getrcconfigint("rcplay", NULL))
 			{
-				if((checkbox("ATEMIO520") != 1 && checkbox("ATEMIO530") != 1 && status.timeshifttype == 1) || ostrcmp(getconfig("remotecontrol", NULL), "1") == 1)
+				if(((checkbox("ATEMIO520") != 1 && checkbox("ATEMIO530") != 1) || ostrcmp(getconfig("remotecontrol", NULL), "1") == 1)  && status.timeshifttype == 1)
 				{
 					if(status.playing == 0 || (status.playspeed == 0 && status.slowspeed == 0 && status.pause == 0))
 					{
