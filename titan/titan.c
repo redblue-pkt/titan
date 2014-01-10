@@ -869,8 +869,8 @@ firstwizzardstep1:
 			if(checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1)
 			{
 				struct menulist* mlist = NULL, *mbox = NULL;
-				addmenulist(&mlist, "RemoteControl Long Version", "0", NULL, 0, 0);
 				addmenulist(&mlist, "RemoteControl Old Version", "1", NULL, 0, 0);
+				addmenulist(&mlist, "RemoteControl Long Version", "0", NULL, 0, 0);
 				
 	//			mbox = menulistbox(mlist, "playlistmenu", NULL, "%pluginpath%/mc/skin", NULL, 1, 0);
 				mbox = menulistbox(mlist, "remotecontrol", "Select Your Remote Control", NULL, NULL, 3, 0);
