@@ -390,7 +390,7 @@ void screenmc_videoplayer()
 			if((status.play == 1) || (status.playspeed != 0))
 				playrcfr(filename, NULL, &playinfobarstatus, &playinfobarcount, playertype, flag);
 		}
-		else if(rcret == getrcconfigint("rcpause", NULL) || ((checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1) && rcret == getrcconfigint("rcplay", NULL) && status.pause == 0 && status.slowspeed == 0 && status.playspeed == 0))
+		else if(rcret == getrcconfigint("rcpause", NULL) || ((checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1) && rcret == getrcconfigint("rcplay", NULL) && status.pause == 0 && status.slowspeed == 0 && status.playspeed == 0 && ostrcmp(getconfig("remotecontrol", NULL), "0") == 0))
 		{
 			if((status.play == 1) || (status.pause == 1) || (status.playspeed != 0))
 				playrcpause(filename, NULL, &playinfobarstatus, &playinfobarcount, playertype, flag);
