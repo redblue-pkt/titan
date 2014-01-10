@@ -215,8 +215,8 @@ struct menulist* menulistboxext(struct menulist* mlist, char* paramskinname, cha
 				if(showpng == 3)
 				{
 					tmp->valign = convertxmlentry("middle", 0);
-					tmp->textposx = 250;
-					tmp->height = 300;
+					tmp->textposx = 100;
+					tmp->height = 280;
 				}
 
 				if(mlist->pic == NULL)
