@@ -5325,12 +5325,10 @@ int setmute(int value)
 	if(value == 1 && status.mute == 1) return 0;
 
 	if(value == 2)
-	{
-		if(status.mcaktiv == 1)
-			set_player_sound(0);
-		else
-			set_player_sound(1);
-		
+	{	
+		// disable sound
+		set_player_sound(2);
+
 		tmpvol = getvol();
 		tmpvol = tmpvol * 50 / 100;
 		status.mute = value;
@@ -5338,12 +5336,15 @@ int setmute(int value)
 	} 
 	else
 	{
-		// disable sound
-		set_player_sound(2);
 		mutedev = getconfig("mutedev", NULL);
 
 		if(mutedev != NULL)
 		{
+			if(status.mcaktiv == 1)
+				set_player_sound(0);
+			else
+				set_player_sound(1);
+			
 			debug(100, "set %s to %d", mutedev, value);
 			//if(status.volautochangevalue != 0 && value == 0) setvol(getvol());
 			ret = writesysint(mutedev, value, 0);
