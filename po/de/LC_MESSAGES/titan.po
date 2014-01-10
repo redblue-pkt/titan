@@ -4348,7 +4348,7 @@ msgid "Default Autostart"
 msgstr "Allgemein"
 
 msgid "Select Your Remote Control"
-msgstr "Wählen Sie Ihre Fernbedienung aus."
+msgstr "Fernbedienungsauswahl Menu"
 
 msgid "RemoteControl Old Version"
 msgstr "Fernbedienung Alte Version"
