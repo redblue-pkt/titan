@@ -5322,17 +5322,15 @@ int setmute(int value)
 	//don't set mute 2x
 	if(value == 1 && status.mute == 1) return 0;
 
+printf("mute valve: %d\n", valve);
+
 	if(value == 2)
-	{	
+	{
 		// disable sound
 		tmpvol = getvol();
 		tmpvol = tmpvol * 50 / 100;
 		status.mute = value;
 		setvol(tmpvol);
-		system("amixer -c 1 set HDMI mute &");
-		system("amixer -c 1 set Analog mute &");
-		system("amixer -c 1 set SPDIF mute &");
-		printf("mute\n");
 	} 
 	else
 	{
@@ -5345,10 +5343,21 @@ int setmute(int value)
 			ret = writesysint(mutedev, value, 0);
 			if(ret == 0) status.mute = value;
 			if(status.volautochangevalue != 0 && value == 0) setvol(getvol());
-			system("amixer -c 1 set HDMI unmute &");
-			system("amixer -c 1 set Analog unmute &");
-			system("amixer -c 1 set SPDIF unmute &");
-			printf("unmute\n");
+			if(value == 1)
+			{
+				printf("unmute\n");
+				system("amixer -c 1 set HDMI unmute &");
+				system("amixer -c 1 set Analog unmute &");
+				system("amixer -c 1 set SPDIF unmute &");
+			}
+			else
+			{
+				printf("mute\n");
+				system("amixer -c 1 set HDMI mute &");
+				system("amixer -c 1 set Analog mute &");
+				system("amixer -c 1 set SPDIF mute &");
+			}
+
 			return ret;
 		}
 	}
