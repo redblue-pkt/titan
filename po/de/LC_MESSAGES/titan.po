@@ -4348,13 +4348,13 @@ msgid "Default Autostart"
 msgstr "Allgemein"
 
 msgid "Select Your Remote Control"
-msgstr "Fernbedienungsauswahl Menu"
+msgstr "Fernbedienungsauswahl Menü"
 
 msgid "RemoteControl Old Version"
-msgstr "Fernbedienung Alte Version"
+msgstr "Fernbedienung alte Version"
 
 msgid "RemoteControl Long Version"
-msgstr "Fernbedienung Lange Version"
+msgstr "Fernbedienung lange Version"
 
 msgid "Here to select your remote Model"
-msgstr "Hier müssen Sie Ihr Fernbedienungs Model auswählen und mit OK bestätigen."
+msgstr "Hier müssen Sie Ihr Fernbedienungsmodell auswählen und mit OK bestätigen."
