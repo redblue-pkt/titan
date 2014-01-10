@@ -212,6 +212,13 @@ struct menulist* menulistboxext(struct menulist* mlist, char* paramskinname, cha
 					tmp->height = 170;
 				}
 
+				if(showpng == 3)
+				{
+					tmp->valign = convertxmlentry("middle", 0);
+					tmp->textposx = 250;
+					tmp->height = 300;
+				}
+
 				if(mlist->pic == NULL)
 				{
 					mlist->pic = ostrcat(mlist->name, ".png", 0, 0);	
