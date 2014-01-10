@@ -878,7 +878,7 @@ firstwizzardstep1:
 				{
 					debug(10, "mbox->name %s", mbox->name);
 					debug(10, "mbox->text %s", mbox->text);
-					addconfig("mc_vp_path", mbox->text);
+					addconfig("remotecontrol", mbox->text);
 					writeallconfig(1);				
 				}
 			}
