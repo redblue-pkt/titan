@@ -4346,3 +4346,12 @@ msgstr "Overclocking Einstellungen"
 
 msgid "Default Autostart"
 msgstr "Allgemein"
+
+msgid "Select Your Remote Control"
+msgstr "Wählen Sie Ihre Fernbedienung aus."
+
+msgid "RemoteControl Old Version"
+msgstr "Fernbedienung Alte Version"
+
+msgid "RemoteControl Long Version"
+msgstr "Fernbedienung Lange Version"
