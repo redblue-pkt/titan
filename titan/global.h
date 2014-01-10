@@ -5325,14 +5325,13 @@ int setmute(int value)
 	if(value == 2)
 	{	
 		// disable sound
-		set_player_sound(2);
-		system("amixer -c 1 set HDMI mute &");
-		system("amixer -c 1 set Analog mute &");
-		system("amixer -c 1 set SPDIF mute &");
 		tmpvol = getvol();
 		tmpvol = tmpvol * 50 / 100;
 		status.mute = value;
 		setvol(tmpvol);
+		system("amixer -c 1 set HDMI mute &");
+		system("amixer -c 1 set Analog mute &");
+		system("amixer -c 1 set SPDIF mute &");
 	} 
 	else
 	{
@@ -5340,15 +5339,14 @@ int setmute(int value)
 
 		if(mutedev != NULL)
 		{
-			system("amixer -c 1 set HDMI unmute &");
-			system("amixer -c 1 set Analog unmute &");
-			system("amixer -c 1 set SPDIF unmute &");
-
 			debug(100, "set %s to %d", mutedev, value);
 			//if(status.volautochangevalue != 0 && value == 0) setvol(getvol());
 			ret = writesysint(mutedev, value, 0);
 			if(ret == 0) status.mute = value;
 			if(status.volautochangevalue != 0 && value == 0) setvol(getvol());
+			system("amixer -c 1 set HDMI unmute &");
+			system("amixer -c 1 set Analog unmute &");
+			system("amixer -c 1 set SPDIF unmute &");
 			return ret;
 		}
 	}
