@@ -866,36 +866,33 @@ firstwizzardstep1:
 //			if(screenlanguage(2) == 2) return 100;
 //			resettvpic();
 
-
-			struct menulist* mlist = NULL, *mbox = NULL;
-			addmenulist(&mlist, "RemoteControl Long Version", "0", NULL, 0, 0);
-			addmenulist(&mlist, "RemoteControl Old Version", "1", NULL, 0, 0);
-			
-//			mbox = menulistbox(mlist, "playlistmenu", NULL, "%pluginpath%/mc/skin", NULL, 1, 0);
-			mbox = menulistbox(mlist, NULL, NULL, NULL, NULL, 1, 0);
-			if(mbox != NULL)
+			if(checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1)
 			{
-				free(title), title = NULL;
-				free(tmpstr), tmpstr = NULL;
-
-				debug(10, "mbox->name %s", mbox->name);
-				debug(10, "mbox->text %s", mbox->text);
-
-				title = ostrcat(mbox->text, NULL, 0, 0);
-				flag = 1;
-				goto start;
+				struct menulist* mlist = NULL, *mbox = NULL;
+				addmenulist(&mlist, "RemoteControl Long Version", "0", NULL, 0, 0);
+				addmenulist(&mlist, "RemoteControl Old Version", "1", NULL, 0, 0);
+				
+	//			mbox = menulistbox(mlist, "playlistmenu", NULL, "%pluginpath%/mc/skin", NULL, 1, 0);
+				mbox = menulistbox(mlist, NULL, NULL, NULL, NULL, 1, 0);
+				if(mbox != NULL)
+				{
+					debug(10, "mbox->name %s", mbox->name);
+					debug(10, "mbox->text %s", mbox->text);
+				}
 			}
-			
-			screentunerconfig();
-			resettvpic();
-			screenscanconfig(1);
-			resettvpic();
-//			screennetwork_adapter();
-//			resettvpic();
-			writevfd("Setting OK ?");
-			if(textbox(_("First Wizzard"), _("Settings OK ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
+			else
 			{
-				goto firstwizzardstep1;
+				screentunerconfig();
+				resettvpic();
+				screenscanconfig(1);
+				resettvpic();
+	//			screennetwork_adapter();
+	//			resettvpic();
+				writevfd("Setting OK ?");
+				if(textbox(_("First Wizzard"), _("Settings OK ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
+				{
+					goto firstwizzardstep1;
+				}
 			}
 			resettvpic();
 		}
