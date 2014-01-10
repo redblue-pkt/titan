@@ -873,7 +873,7 @@ firstwizzardstep1:
 				addmenulist(&mlist, "RemoteControl Old Version", "1", NULL, 0, 0);
 				
 	//			mbox = menulistbox(mlist, "playlistmenu", NULL, "%pluginpath%/mc/skin", NULL, 1, 0);
-				mbox = menulistbox(mlist, "remotecontrol", NULL, NULL, NULL, 3, 0);
+				mbox = menulistbox(mlist, "remotecontrol", "Select Your Remote Control", NULL, NULL, 3, 0);
 				if(mbox != NULL)
 				{
 					debug(10, "mbox->name %s", mbox->name);
