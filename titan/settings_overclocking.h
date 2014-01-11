@@ -294,13 +294,15 @@ void screensettings_overclocking()
 		rcret = waitrc(panel_overclock, 0, 0);
 		tmp = listbox->select;
 
-		if(rcret == getrcconfigint("rcexit", NULL) || rcret == getrcconfigint("rcred", NULL)){
+		if(rcret == getrcconfigint("rcexit", NULL))
+		{
 			set_freq(inifreq, oldfreq, inifreq); // set freq back to initial value if freq <> inifreq
 			set_fdma(inifdma, oldfdma, inifdma);
 			break;
 		}
 
-		if(rcret == getrcconfigint("rcred", NULL)){
+		if(rcret == getrcconfigint("rcred", NULL))
+		{
 			set_freq(oldfreq, oldfreq, getownconfig("pll0_ndiv_mdiv"));
 			set_fdma(oldfdma, oldfdma, getownconfig("pll1_fdma_bypass"));
 			read_cpufreq(label1);
