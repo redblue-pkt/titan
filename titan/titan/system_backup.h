@@ -44,6 +44,24 @@ void screensystem_backup()
 				status.sec = 0; //deaktivate spinner
 				tmpstr = ostrcat(tmpstr, "backup.sh ", 1, 0);
 				tmpstr = ostrcat(tmpstr, listbox->select->ret, 1, 0);
+
+				if(checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1 || checkbox("UFS912") == 1 || checkbox("ATEMIO7600") == 1)
+				{
+					if(!file_exist("/mnt/logs"))
+						 mkdir("/mnt/logs", 777);
+				
+					if(file_exist("/etc/.beta") && file_exist("/mnt/logs"))
+						tmpstr = ostrcat(tmpstr, " > /mnt/logs/backup_debug.log 2>&1", 1, 0);
+				}
+				else if(file_exist("/var/swap"))
+				{
+					if(!file_exist("/var/swap/logs"))
+						 mkdir("/var/swap/logs", 777);
+				
+					if(file_exist("/etc/.beta") && file_exist("/var/swap/logs"))
+						tmpstr = ostrcat(cmd, " > /var/swap/logs/backup_debug.log 2>&1", 1, 0);		
+				}
+	
 				system(tmpstr);
 				free(tmpstr); tmpstr = NULL;
 				clearscreen(loading);
