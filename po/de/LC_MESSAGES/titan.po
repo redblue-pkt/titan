@@ -3312,8 +3312,8 @@ msgstr "Info zur Media-TPK Installation"
 msgid "Networkbrowser - show Shares"
 msgstr "Netzwerk Browser - zeige Freigaben"
 
-msgid "Installed version:"
-msgstr "Installierte Version:"
+msgid "Installed:"
+msgstr "Installiert:"
 
 msgid "Emu not found"
 msgstr "kein Emu gefunden"
