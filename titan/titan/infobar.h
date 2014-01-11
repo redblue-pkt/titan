@@ -4,6 +4,8 @@
 void screeninfobar()
 {
 	int rcret = 0, ret = 0, infobartimeout = 0, rcwait = 1000, count = 0, first = 1;
+	int playpic = 0;
+	struct skin* playinfobarpic = getscreen("playinfobarpic");
 	struct skin* infobar1 = getscreen("infobar");
 	struct skin* infobar2 = getscreen("infobar2");
 	struct skin* infobar = infobar1;
@@ -61,7 +63,12 @@ void screeninfobar()
 			rcret = waitrc(infobar, 1000, 0);
 			if(rcret == RCTIMEOUT)
 			{
-				timeshiftinfobar(&playinfobarstatus, &playinfobarcount);
+				if(playpic == 1) {
+					clearscreen(playinfobarpic);
+					drawscreen(playinfobarpic, 0, 0);
+				}
+				else
+					timeshiftinfobar(&playinfobarstatus, &playinfobarcount);
 				continue;
 			}
 		}
@@ -134,6 +141,10 @@ void screeninfobar()
 		if(rcret == getrcconfigint("rcpause", NULL) || ((checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1) && rcret == getrcconfigint("rcplay", NULL) && status.pause == 0 && status.slowspeed == 0 && status.playspeed == 0 && ostrcmp(getconfig("remotecontrol", NULL), "0") == 0))
 		{
 			//timeshift
+			if(playpic == 1) {
+				clearscreen(playinfobarpic);
+				playpic = 0;
+			}
 			if(status.timeshift == 1 && (status.playing == 0 || status.slowspeed != 0 || status.playspeed != 0 || status.pause != 0))
 			{
 				if(status.timeshifttype == 1 && status.timeshiftpos == 0)
@@ -146,22 +157,37 @@ void screeninfobar()
 			}
 			else
 			{
+				if(status.timeshift == 1)
+					playpic = 2;
+				else
+					playpic = 0;
 				timeshiftpause(0);
 				timeshiftinfobar(&playinfobarstatus, &playinfobarcount);
+				if(playpic == 0) {
+					drawscreen(playinfobarpic, 0, 0);
+					playpic = 1;
+				}
 			}
 			
 			continue;
 		}
 		if(status.timeshift == 1)
 		{
-					
 			if(rcret == getrcconfigint("rcstop", NULL))
 			{
+				if(playpic == 1) {
+					clearscreen(playinfobarpic);
+					playpic = 0;
+				}		
 				timeshiftstop(0);
 				continue;
 			}
 			if(rcret == getrcconfigint("rcplay", NULL))
 			{
+				if(playpic == 1) {
+					clearscreen(playinfobarpic);
+					playpic = 0;
+				}		
 				if(((checkbox("ATEMIO520") != 1 && checkbox("ATEMIO530") != 1) || ostrcmp(getconfig("remotecontrol", NULL), "1") == 1)  && status.timeshifttype == 1)
 				{
 					if(status.playing == 0 || (status.playspeed == 0 && status.slowspeed == 0 && status.pause == 0))
