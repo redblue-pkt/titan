@@ -59,7 +59,7 @@ void screensystem_backup()
 						 mkdir("/var/swap/logs", 777);
 				
 					if(file_exist("/etc/.beta") && file_exist("/var/swap/logs"))
-						tmpstr = ostrcat(cmd, " > /var/swap/logs/backup_debug.log 2>&1", 1, 0);		
+						tmpstr = ostrcat(tmpstr, " > /var/swap/logs/backup_debug.log 2>&1", 1, 0);		
 				}
 	
 				system(tmpstr);
