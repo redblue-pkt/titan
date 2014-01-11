@@ -788,6 +788,8 @@ rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/skin/default/skin/
 # mc grid filelist pngs
 #rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/skin/default/skin/*_grid_*.png
 
+cp -a "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/skin/default/skinconfig "$HOME"/flashimg/BUILD/titan/var/etc/titan.mnt/skinconfig
+
 cp -a "$HOME"/flashimg/BUILD/titan "$HOME"/flashimg/BUILD/titan-smal
 rm -rf "$HOME"/flashimg/BUILD/titan-smal/var/usr/local/share/titan/picons
 rm -rf "$HOME"/flashimg/BUILD/titan-smal/var/etc/titan/titan.cfg
