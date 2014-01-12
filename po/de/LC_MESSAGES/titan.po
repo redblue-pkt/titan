@@ -3553,7 +3553,7 @@ msgid "CLEAR INPUT"
 msgstr "Eingabefeld löschen"
 
 msgid "REMOVE ENTRY"
-msgstr "Listeneintrag löschen"
+msgstr "Eintrag löschen"
 
 msgid "Streaming version of this file is currently not available. You can download it below."
 msgstr "Streaming-Version dieser Datei ist derzeit nicht verfügbar. Sie können nur downloaden."
