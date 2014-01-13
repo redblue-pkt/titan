@@ -1598,7 +1598,18 @@ playerstart:
 					
 				if(rcret == getrcconfigint("rc5", NULL))
 					screenmarker(file, showname, &playinfobarstatus, &playinfobarcount, playertype, flag);
-
+				
+				if(rcret == getrcconfigint("rcmenu", NULL)) {
+					if(status.autoseek == 0) {
+						status.autoseek = 1;
+						textbox(_("Message"), _("Marker autoseek is started"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
+						addtimer(&markerautoseek_thread, START, 10000, 1, NULL, NULL, NULL);
+					}
+					else {
+						status.autoseek = 0;
+						textbox(_("Message"), _("Marker autoseek is stopped"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
+					}
+				}
 			}
 			//don't change this sleep, without this
 			//the player stops to fast, and a last seek can

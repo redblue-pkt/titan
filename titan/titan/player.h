@@ -112,6 +112,8 @@ int playerstartts(char* file, int flag)
 			free(fileseek); fileseek = NULL;
 		}	
 		
+		status.autoseek = 0;
+		
 		if(flag == 0)
 		{
 			delmarkernode(-1);
