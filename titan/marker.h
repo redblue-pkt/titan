@@ -354,9 +354,111 @@ off64_t getcurrentpos(struct service* snode)
 		if(posn < -1)
 			posn = playergetptspos(aktpts, pos - (posn *-4), -1, 4, 0, 0, NULL);
 	}
+	printf("return current pos: %lld \n", posn);
 	return posn;
 }
 		
+		
+
+void markerautoseek_thread()
+{
+	struct seeker
+	{
+		off64_t spos;
+		off64_t stime;
+		off64_t epos;
+		off64_t etime;
+		struct seeker* prev;
+		struct seeker* next;
+	};
+	
+	struct seeker *seeker = NULL;
+	struct seeker *seekerarb = NULL;
+	int ret = 0, time = 0;
+	int first = 1;
+	unsigned long long pts = 0;
+	unsigned long long hpos = 0, len = 0;
+	unsigned long long startpos = 0;
+	off64_t pos = 0;
+	
+	struct service* snode = getservice(RECORDPLAY, 0);
+	if(snode == NULL) return;
+	
+	if(status.playmarker == NULL)
+		return;	
+	struct marker *marker = status.playmarker;
+	
+	
+	seeker = (struct seeker*)calloc(1, sizeof(struct seeker));
+	seeker->spos  = 0;
+	seeker->stime = 0;
+	seeker->epos  = marker->pos;
+	seeker->etime = marker->time;
+	seeker->next  = NULL;
+	seekerarb = seeker;
+
+	while(marker->next != NULL)
+	{
+		seekerarb->next = (struct seeker*)calloc(1, sizeof(struct seeker));
+		seekerarb = seekerarb->next;
+		marker = marker->next;
+		seekerarb->spos  = marker->pos;
+		seekerarb->stime = marker->time;
+		if(marker->next == NULL)
+		{
+			seekerarb->epos  = 0;
+			seekerarb->etime = 9999999;
+			seekerarb->next  = NULL;
+		}
+		else {
+			marker = marker->next;
+			seekerarb->epos  = marker->pos;
+			seekerarb->etime = marker->time;
+			seekerarb->next  = NULL;
+		}
+	}
+	sleep(2);
+	ret = playergetinfots(&len, &startpos, NULL, &hpos, NULL, 0);
+	
+	while (status.playspeed != 0 || status.play != 0 || status.pause != 0)
+	{
+		ret = videogetpts(status.aktservice->videodev, &pts);
+		if(status.playspeed == 0) {
+			if(ret == 0) {
+				time = (pts - startpos) / 90000;
+				seekerarb = seeker;
+				while(1)
+				{
+					if(time >= seekerarb->stime && time < seekerarb->etime) {
+						m_lock(&status.tsseekmutex, 15);
+						if(seekerarb->epos == 0)
+							lseek64(snode->recsrcfd, 188+1024 , SEEK_END);
+						else 
+							lseek64(snode->recsrcfd, seekerarb->epos, SEEK_SET);
+						playerresetts();
+						m_unlock(&status.tsseekmutex, 15);
+					}
+					if(seekerarb->next != NULL)
+						seekerarb = seekerarb->next;
+					else
+						break;
+				}
+			}
+		}
+		sleep(1);
+	}
+	
+	while(1)
+	{
+		seekerarb = seeker->next;
+		free(seeker); seeker = NULL;
+		if(seekerarb == NULL)
+			break;
+		seeker = seekerarb;
+	}
+}
+
+	
 
 
 #endif
