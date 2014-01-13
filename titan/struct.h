@@ -1486,6 +1486,7 @@ struct status
 	int fontsizeadjust;
 	//count for drawing screen
 	unsigned int drawscreencount;
+	int autoseek;
 } status;
 
 struct fb

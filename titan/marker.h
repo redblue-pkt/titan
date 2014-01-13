@@ -417,10 +417,10 @@ void markerautoseek_thread()
 			seekerarb->next  = NULL;
 		}
 	}
-	sleep(2);
+	
 	ret = playergetinfots(&len, &startpos, NULL, &hpos, NULL, 0);
 	
-	while (status.playspeed != 0 || status.play != 0 || status.pause != 0)
+	while ((status.playspeed != 0 || status.play != 0 || status.pause != 0) && status.autoseek == 1)
 	{
 		ret = videogetpts(status.aktservice->videodev, &pts);
 		if(status.playspeed == 0) {
@@ -456,6 +456,7 @@ void markerautoseek_thread()
 			break;
 		seeker = seekerarb;
 	}
+	status.autoseek = 0;
 }
 
 	
