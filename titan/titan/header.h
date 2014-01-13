@@ -927,5 +927,6 @@ int setmarker();
 int jumpmarker(char* timetext);
 void screenmarker(char* file, char* showname, int* playinfobarstatus, int* playinfobarcount, int playertype, int flag);
 off64_t getcurrentpos(struct service* snode);
+void markerautoseek_thread();
 
 #endif
