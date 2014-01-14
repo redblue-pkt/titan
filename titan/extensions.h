@@ -298,6 +298,8 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 					writerc(getrcconfigint("rcexit", NULL));
 					writerc(getrcconfigint("rcexit", NULL));
 					writerc(getrcconfigint("rcexit", NULL));
+					//write only config file
+					writeallconfig(3);
 					system("init 6");
 				}
 			}
