@@ -5348,6 +5348,7 @@ int setmute(int value)
 				system("amixer -c 1 set HDMI mute &");
 				system("amixer -c 1 set Analog mute &");
 				system("amixer -c 1 set SPDIF mute &");
+				sleep(1);
 			}
 			else
 			{
