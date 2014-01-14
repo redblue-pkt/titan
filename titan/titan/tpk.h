@@ -2955,7 +2955,6 @@ int tpklist()
 				if(node->group == group)
 				{
 					skipgroup++;
-					skip = 1;
 					break;
 				}
 				node = node->next;
