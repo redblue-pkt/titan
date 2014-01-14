@@ -240,6 +240,12 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 							if(file_exist("/tmp/.tpk_needs_reboot"))
 							{
 								textbox(_("Message"), _("TPK Install done, your system will reboot !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
+								writerc(getrcconfigint("rcexit", NULL));
+								writerc(getrcconfigint("rcexit", NULL));
+								writerc(getrcconfigint("rcexit", NULL));
+								writerc(getrcconfigint("rcexit", NULL));
+								//write only config file
+								writeallconfig(3);
 								system("init 6");
 							}
 						}
@@ -385,6 +391,12 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 					if(file_exist("/tmp/.tpk_needs_reboot"))
 					{
 						textbox(_("Message"), _("TPK Tmp Install done, your system will reboot !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+						writerc(getrcconfigint("rcexit", NULL));
+						writerc(getrcconfigint("rcexit", NULL));
+						writerc(getrcconfigint("rcexit", NULL));
+						writerc(getrcconfigint("rcexit", NULL));
+						//write only config file
+						writeallconfig(3);
 						system("init 6");
 					}
 				}
@@ -418,6 +430,12 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 		if(file_exist("/tmp/.tpk_needs_reboot"))
 		{
 			textbox(_("Message"), _("TPK Upgrade done, your system will reboot !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+			writerc(getrcconfigint("rcexit", NULL));
+			writerc(getrcconfigint("rcexit", NULL));
+			writerc(getrcconfigint("rcexit", NULL));
+			writerc(getrcconfigint("rcexit", NULL));
+			//write only config file
+			writeallconfig(3);
 			system("init 6");
 		}
 		unlink("/tmp/.tpk_upgrade_start");
