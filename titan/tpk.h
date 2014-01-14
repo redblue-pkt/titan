@@ -2954,7 +2954,7 @@ int tpklist()
 			{
 				if(node->group == group)
 				{
-					skipgroup++;
+					skip = 1; 
 					break;
 				}
 				node = node->next;
@@ -2969,7 +2969,7 @@ int tpklist()
 		if(minversion != 0 && minversion < PLUGINVERSION)
 			skip = 1;
 
-		if(skip == 0 && skipgroup == 0)
+		if(skip == 0 &&
 		{
 			filename = ostrcat(name, "_", 0, 0);
 			filename = ostrcat(filename, oitoa(version), 1, 1);
@@ -2978,15 +2978,6 @@ int tpklist()
 			
 			tpknode = addtpk(name, desc, section, showname, arch, filename, titanname, version, group, minversion, preinstalled, url, size, NULL, usepath, boxtype, NULL);
 		}
-		else if(skipgroup == 1)
-		{
-			filename = ostrcat(name, "_", 0, 0);
-			filename = ostrcat(filename, oitoa(version), 1, 1);
-			filename = ostrcat(filename, "_", 1, 0);
-			filename = ostrcat(filename, arch, 1, 0);
-			tpknode = addtpk(name, " ", section, _("It may only be a package to be installed. If they want to install another package of this section, they only remove the installed packet. Is not the plugin after reinstalling the software TitanNit in TitanNit Menu Visible then perform an update by Tpk to: "), arch, filename, titanname, version, group, minversion, preinstalled, url, size, NULL, usepath, boxtype, NULL);
-		}		
-	}
 
 end:
 	tpktmp = tpk;
@@ -3178,7 +3169,6 @@ int tpkgetindex(int flag)
 		if(ostrcmp("97.74.32.10", ip) == 0)
 		{
 			if(ostrcmp(path, "/svn/tpk/sh4") == 0)
-			if(ostrcmp(path, "/svn/tpk/rev25658-all-secret/sh4") == 0) 
 			{
 				textbox(_("Message"), _("check your Secret Feed !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 				err = 1;
