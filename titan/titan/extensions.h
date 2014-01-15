@@ -223,10 +223,15 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 							drawscreen(load, 0, 0);
 							resettvpic();
 							char* log = NULL;
-							if(tpkgetpackage(mbox1->param, mbox1->param1, installpath, 0) == 0)
+							int tpkret = tpkgetpackage(mbox1->param, mbox1->param1, installpath, 0);
+							if(tpkret == 0)
 							{
 								log = gettpklog(installpath, 0);
 								textbox(_("Tpk Install Info - Install OK"), _(log), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 2);
+							}
+							else if(tpkret == 2)
+							{
+								textbox(_("Tpk Install Info - Install ERROR"), _("It may only be a package to be installed. If they want to install another package of this section, they only remove the installed packet. Is not the plugin after reinstalling the software TitanNit in TitanNit Menu Visible then perform an update by Tpk to: "), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 2);
 							}
 							else
 							{
@@ -381,8 +386,12 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 						free(tmpstr); tmpstr = NULL;
 					}
 	
-					if(ret != 0) log = gettpklog(installpath, 1);
-					if(ret == 0) log = gettpklog(installpath, 0);
+					if(ret == 0) 
+						log = gettpklog(installpath, 0);
+					else if(ret == 2)
+						log = ostrcat(_("It may only be a package to be installed. If they want to install another package of this section, they only remove the installed packet. Is not the plugin after reinstalling the software TitanNit in TitanNit Menu Visible then perform an update by Tpk to: "), NULL, 0, 0);
+					else
+						log = gettpklog(installpath, 1);
 					textbox(_(text2), log, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);
 					free(log); log = NULL;
 					unlink(TPKLOG);
