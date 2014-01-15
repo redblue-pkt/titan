@@ -374,12 +374,12 @@ void markerautoseek_thread()
 	
 	struct seeker *seeker = NULL;
 	struct seeker *seekerarb = NULL;
-	int ret = 0, time = 0;
-	int first = 1;
+	int ret = 0, time = 0, lasttime = 0;
+	int dir = 0;
 	unsigned long long pts = 0;
 	unsigned long long hpos = 0, len = 0;
 	unsigned long long startpos = 0;
-	off64_t pos = 0;
+	off64_t pos = 0, prosec = 0; diff = 0;
 	
 	struct service* snode = getservice(RECORDPLAY, 0);
 	if(snode == NULL) return;
@@ -388,7 +388,6 @@ void markerautoseek_thread()
 		return;	
 	struct marker *marker = status.playmarker;
 	
-	
 	seeker = (struct seeker*)calloc(1, sizeof(struct seeker));
 	seeker->spos  = 0;
 	seeker->stime = 0;
@@ -396,6 +395,8 @@ void markerautoseek_thread()
 	seeker->etime = marker->time;
 	seeker->next  = NULL;
 	seekerarb = seeker;
+	
+	prosec = marker->epos / marker->etime;
 
 	while(marker->next != NULL)
 	{
@@ -423,26 +424,37 @@ void markerautoseek_thread()
 	while ((status.playspeed != 0 || status.play != 0 || status.pause != 0) && status.autoseek == 1)
 	{
 		ret = videogetpts(status.aktservice->videodev, &pts);
-		if(status.playspeed == 0) {
-			if(ret == 0) {
-				time = (pts - startpos) / 90000;
-				seekerarb = seeker;
-				while(1)
-				{
-					if(time >= seekerarb->stime && time < seekerarb->etime) {
-						m_lock(&status.tsseekmutex, 15);
+		if(ret == 0) {
+			time = (pts - startpos) / 90000;
+			if(lasttime > time)
+				dir = -1;
+			else
+				dir = 1;
+			lasttime = time;
+			seekerarb = seeker;
+			while(1)
+			{
+				if(time >= seekerarb->stime && time < seekerarb->etime) {
+					m_lock(&status.tsseekmutex, 15);	
+					if(dir == 1) {
+						diff = (time - seekerarb->stime) * prosec;
 						if(seekerarb->epos == 0)
 							lseek64(snode->recsrcfd, 188+1024 , SEEK_END);
-						else 
-							lseek64(snode->recsrcfd, seekerarb->epos, SEEK_SET);
-						playerresetts();
-						m_unlock(&status.tsseekmutex, 15);
+						else
+							lseek64(snode->recsrcfd, seekerarb->epos+diff, SEEK_SET);
 					}
-					if(seekerarb->next != NULL)
-						seekerarb = seekerarb->next;
-					else
-						break;
+					else if(dir == -1) {
+						diff = (seekerarb->etime - time) * prosec;
+						lseek64(snode->recsrcfd, seekerarb->spos-diff, SEEK_SET);
+					}
+					playerresetts();
+					m_unlock(&status.tsseekmutex, 15);
+					break;					
 				}
+				if(seekerarb->next != NULL)
+					seekerarb = seekerarb->next;
+				else
+					break;
 			}
 		}
 		sleep(1);
