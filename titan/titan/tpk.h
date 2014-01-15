@@ -2004,7 +2004,7 @@ end:
 //flag 1: don't check group
 int tpkinstall(char* file, char* installpath, int flag)
 {
-	int ret = 0;
+	int ret = 0, groupskip = 0; 
 	off64_t startpos = 0, len = 0;
 	char* tmpstr = NULL, *name = NULL, *path = NULL, *tmpfile = NULL;
 	struct tpk* tpknode = NULL, *tpkinstalled = NULL;
@@ -2165,6 +2165,7 @@ int tpkinstall(char* file, char* installpath, int flag)
 				{
 					err("can't install tpk with same group %s (group %d)", path, tpknode->group);
 					ret = 1;
+          groupskip = 1; 					
 					goto end;
 				}
 				node = node->next;
@@ -2314,6 +2315,7 @@ end:
 
 	free(path); path = NULL;
 	free(tmpfile); tmpfile = NULL;
+	if(groupskip == 1) ret = 2; 
 	return ret;
 }
 
@@ -2947,6 +2949,7 @@ int tpklist()
 
 		//check group
 		int skip = 0;
+		 /* 
 		if(group != 0)
 		{
 			struct tpk* node = tpkinstalled;
@@ -2960,7 +2963,7 @@ int tpklist()
 				node = node->next;
 			}
 		}
-		
+    */ 		
 		//check boxtype
 		if(boxtype != NULL && ostrcmp(boxtype, "*") != 0 && ostrstr(boxtype, getboxtype()) == NULL)
 			skip = 1;
@@ -2969,7 +2972,7 @@ int tpklist()
 		if(minversion != 0 && minversion < PLUGINVERSION)
 			skip = 1;
 
-		if(skip == 0 && skipgroup == 0)
+		if(skip == 0) 
 		{
 			filename = ostrcat(name, "_", 0, 0);
 			filename = ostrcat(filename, oitoa(version), 1, 1);
