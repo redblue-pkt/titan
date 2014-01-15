@@ -426,7 +426,7 @@ void markerautoseek_thread()
 		ret = videogetpts(status.aktservice->videodev, &pts);
 		if(ret == 0) {
 			time = (pts - startpos) / 90000;
-			if(lasttime > time)
+			if(lasttime > time || status.playspeed < 0)
 				dir = -1;
 			else
 				dir = 1;
