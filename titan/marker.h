@@ -396,7 +396,7 @@ void markerautoseek_thread()
 	seeker->next  = NULL;
 	seekerarb = seeker;
 	
-//	prosec = marker->epos / marker->etime;
+	prosec = seeker->epos / seeker->etime;
 
 	while(marker->next != NULL)
 	{
