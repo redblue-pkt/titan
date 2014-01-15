@@ -379,7 +379,7 @@ void markerautoseek_thread()
 	unsigned long long pts = 0;
 	unsigned long long hpos = 0, len = 0;
 	unsigned long long startpos = 0;
-	off64_t pos = 0, prosec = 0, diff = 0;
+	off64_t prosec = 0, diff = 0;
 	
 	struct service* snode = getservice(RECORDPLAY, 0);
 	if(snode == NULL) return;
@@ -397,6 +397,7 @@ void markerautoseek_thread()
 	seekerarb = seeker;
 	
 	prosec = seeker->epos / seeker->etime;
+	prosec = (prosec / 188) * 188;
 
 	while(marker->next != NULL)
 	{
