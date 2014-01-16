@@ -5342,21 +5342,21 @@ int setmute(int value)
 			ret = writesysint(mutedev, value, 0);
 			if(ret == 0) status.mute = value;
 			if(status.volautochangevalue != 0 && value == 0) setvol(getvol());
-			if(value == 1)
-			{
-				printf("mute\n");
-				system("amixer -c 1 set HDMI mute &");
-				system("amixer -c 1 set Analog mute &");
-				system("amixer -c 1 set SPDIF mute &");
-				sleep(1);
-			}
-			else
-			{
-				printf("unmute\n");
-				system("amixer -c 1 set HDMI unmute &");
-				system("amixer -c 1 set Analog unmute &");
-				system("amixer -c 1 set SPDIF unmute &");
-			}
+//			if(value == 1)
+//			{
+//				printf("mute\n");
+//				system("amixer -c 1 set HDMI mute &");
+//				system("amixer -c 1 set Analog mute &");
+//				system("amixer -c 1 set SPDIF mute &");
+//				sleep(1);
+//			}
+//			else
+//			{
+//				printf("unmute\n");
+//				system("amixer -c 1 set HDMI unmute &");
+//				system("amixer -c 1 set Analog unmute &");
+//				system("amixer -c 1 set SPDIF unmute &");
+//			}
 
 			return ret;
 		}
