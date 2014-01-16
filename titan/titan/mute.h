@@ -20,6 +20,9 @@ void screenmute(struct skin* screen, struct skin* node, int flag)
 		if(status.mute == 2)
 			setvol(getconfigint("vol", NULL));
 		setmute(1);
+		system("amixer -c 1 set HDMI mute &");
+		system("amixer -c 1 set Analog mute &");
+		system("amixer -c 1 set SPDIF mute &");
 		setnodeattr(mute, framebuffer, 0);
 		if(status.drawallwaysbg[0] != NULL)
 			free(status.drawallwaysbg[0]);
@@ -32,6 +35,9 @@ void screenmute(struct skin* screen, struct skin* node, int flag)
 	}
 	else
 	{
+		system("amixer -c 1 set HDMI unmute &");
+		system("amixer -c 1 set Analog unmute &");
+		system("amixer -c 1 set SPDIF unmute &");
 		setmute(0);
 		if(flag == 2 || flag == 3)
 			clearscreennolock(mute);
