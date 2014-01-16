@@ -5322,7 +5322,7 @@ int setmute(int value)
 	//don't set mute 2x
 	if(value == 1 && status.mute == 1) return 0;
 
-	printf("mute value: %d\n", value);
+//	printf("mute value: %d\n", value);
 
 	if(value == 2)
 	{
