@@ -255,6 +255,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	{
 		tmpmute = 1;
 		//setmute(1);
+		audiosetmute(status.aktservice->audiodev, 1);
 	}
 	audiostop(status.aktservice->audiodev);
 	//demux pcr start
@@ -419,6 +420,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	if(tmpmute == 1)
 	{
 		tmpmute = 0;
+		audiosetmute(status.aktservice->audiodev, 0);
 		//setmute(0);
 	}
 	audioplay(status.aktservice->audiodev);
