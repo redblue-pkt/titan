@@ -254,7 +254,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	if(status.mute == 0)
 	{
 		tmpmute = 1;
-		setmute(1);
+		//setmute(1);
 	}
 	
 	//demux pcr start
@@ -419,7 +419,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	if(tmpmute == 1)
 	{
 		tmpmute = 0;
-		setmute(0);
+		//setmute(0);
 	}
 
 	//check pmt if not done
