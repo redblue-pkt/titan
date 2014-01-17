@@ -43,6 +43,7 @@ int playerstartts(char* file, int flag)
 	int16_t pmtpid = 0;
 	int serviceid = 0;
 	int supermagic = -1;
+	int lastpos = 0;
 	struct channel* chnode = NULL;
 	struct service* snode = NULL;
 	struct dvbdev* fenode = NULL;
@@ -88,6 +89,7 @@ int playerstartts(char* file, int flag)
 			return 1;
 		}
 		
+		lastpos = 0;
 		if(flag == 0 && getconfigint("showlastpos", NULL) == 1)
 		{ 
 			char* fileseek = changefilenameext(file, ".se");
@@ -104,6 +106,7 @@ int playerstartts(char* file, int flag)
 						off64_t seekpos = atoll(skip1);
 						seekpos = seekpos - (seekpos % tssize);
 						lseek64(fd, atoll(skip1), SEEK_SET);
+						lastpos = 1;
 					}
 					free(skip1); skip1 = NULL;
 				}
@@ -122,6 +125,21 @@ int playerstartts(char* file, int flag)
 			free(filemarker); filemarker=NULL;
 		}
 		
+		if(status.playmarker != NULL)
+		{
+			char* testfile = changefilenameext(file, ".as");
+			FILE* testseek = fopen(testfile, "r");
+			if(testseek != NULL)
+			{
+				if(lastpos == 0)
+					lseek64(fd, status.playmarker->pos, SEEK_SET);
+				status.autoseek = 2;
+				addtimer(&markerautoseek_thread, START, 10000, 1, NULL, NULL, NULL);
+				fclose(testseek);
+			}
+			free(testfile); testfile = NULL;
+		}
+				
 		delchannel(serviceid, 0, 1);
 		chnode = createchannel("player", 0, 0, serviceid, 99, 0, -1, -1, -1, -1, 0, -1);
 		if(chnode != NULL) chnode->pmtpid = pmtpid;

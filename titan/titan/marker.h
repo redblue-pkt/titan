@@ -381,6 +381,12 @@ void markerautoseek_thread()
 	unsigned long long startpos = 0;
 	off64_t prosec = 0, diff = 0;
 	
+	if(status.autoseek == 2)
+	{
+		sleep(2);
+		status.autoseek = 1;
+	}
+	
 	struct service* snode = getservice(RECORDPLAY, 0);
 	if(snode == NULL) return;
 	

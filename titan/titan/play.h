@@ -1266,6 +1266,9 @@ int playcheckdirrcret(char* file, int dirrcret)
 			epgfilename = changefilenameext(file, ".ma");
 			unlink(epgfilename);
 			free(epgfilename); epgfilename = NULL;
+			epgfilename = changefilenameext(file, ".as");
+			unlink(epgfilename);
+			free(epgfilename); epgfilename = NULL;
 		}
 		ret = 1;
 	}
@@ -1600,15 +1603,24 @@ playerstart:
 					screenmarker(file, showname, &playinfobarstatus, &playinfobarcount, playertype, flag);
 				
 				if(rcret == getrcconfigint("rcmenu", NULL)) {
+					char* asfile = changefilenameext(file, ".as");
 					if(status.autoseek == 0) {
 						status.autoseek = 1;
 						textbox(_("Message"), _("Marker autoseek is started"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
 						addtimer(&markerautoseek_thread, START, 10000, 1, NULL, NULL, NULL);
+						FILE* testseek = fopen(asfile, "w");
+						if(testseek != NULL)
+						{
+							fprintf(testseek,"autoseek is started\n");
+							fclose(testseek);
+						}
 					}
 					else {
 						status.autoseek = 0;
 						textbox(_("Message"), _("Marker autoseek is stopped"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
+						unlink(asfile);
 					}
+					free(asfile); asfile = NULL;
 				}
 			}
 			//don't change this sleep, without this
