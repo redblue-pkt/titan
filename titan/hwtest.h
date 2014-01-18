@@ -19,9 +19,10 @@
 //testtransponder1s=0#4000000#0#192#28125000#?#3#?#?#?#0
 //testchannel1s=8#0#1#380#381
 
-//Sat 19.2 (ProSieben)
+//Sat 19.2 (ProSieben LIVE)
 //testtransponder1s=0#12544750#0#192#22000000#0#4#2#0#2#0
 //testchannel1s=17501#0#1#511#512
+//testzap("0#12544750#0#192#22000000#0#4#2#0#2#0", "17501#0#1#511#512#-1"); 
 
 //DVB-S2
 //#define TEST_S12_FREQ   10767000 // 4132, 22Khz off
@@ -200,7 +201,7 @@ void screenhwtest()
 //				testzap(getconfig("testtransponder2s", NULL), getconfig("testchannel2s", NULL));
 //				textbox(_("Message"), _("Press OK or EXIT"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 400, 0, 0);
 //alt				testzap("0#10900000#0#192#28125000#1#3#2#3#2#0", "8#0#1#380#381");
-				testzap("0#11362000#0#192#22000000#2#2#2#0#2#1", "11110#1#1#6110#6122");
+				testzap("0#11362000#0#192#22000000#2#2#2#0#2#1", "11110#1#1#6110#6122#-1");
 				textbox(_("Message"), _("Press OK or EXIT"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 400, 0, 0);
 				servicestart(lastchannel, NULL, NULL, 0);	
 			}
