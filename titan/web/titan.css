@@ -4,7 +4,7 @@
 .label {font-family:verdana; font-size: 11pt; color: #ffffff; text-decoration: none}
 .label1 {font-family:verdana; font-size: 12pt; color: #ffffff; text-decoration: none}
 .smalllabel1 {font-family:verdana; font-size: 10pt; color: #ffffff; text-decoration: none}
-.link {vertical-align: middle; font-family:verdana; font-size: 12pt; color: #ffffff; text-decoration: none}
+.link {white-space: normal; vertical-align: middle; font-family:verdana; font-size: 12pt; color: #ffffff; text-decoration: none}
 .link:hover {background-color: #00a4c8}
 .smalllink {vertical-align: middle; font-family:verdana; font-size: 8pt; color: #ffffff; text-decoration: none}
 .smalllink:hover {background-color: #00a4c8}
