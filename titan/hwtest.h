@@ -18,6 +18,7 @@
 //ASIASAT-5, 4000H28125 - France 24 English (fec: 3/4)
 //testtransponder1s=0#4000000#0#192#28125000#?#3#?#?#?#0
 //testchannel1s=8#0#1#380#381
+//testzap("0#10900000#0#192#28125000#1#3#2#3#2#0", "8#0#1#380#381#-1"); 
 
 //Sat 19.2 (ProSieben LIVE)
 //testtransponder1s=0#12544750#0#192#22000000#0#4#2#0#2#0
@@ -202,7 +203,7 @@ void screenhwtest()
 //				testzap(getconfig("testtransponder2s", NULL), getconfig("testchannel2s", NULL));
 //				textbox(_("Message"), _("Press OK or EXIT"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 400, 0, 0);
 //alt				testzap("0#10900000#0#192#28125000#1#3#2#3#2#0", "8#0#1#380#381");
-				testzap("0#10900000#0#192#28125000#1#3#2#3#2#0#-1", "8#0#1#380#381#-1"); 
+				testzap("0#10900000#0#192#28125000#1#3#2#3#2#0", "8#0#1#380#381#-1"); 
 				textbox(_("Message"), _("Press OK or EXIT"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 400, 0, 0);
 				servicestart(lastchannel, NULL, NULL, 0);	
 			}
