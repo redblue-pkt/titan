@@ -37,7 +37,13 @@
 //testtransponder2s=0#4132000#0#192#10670000#2#7#?#?#?#1
 //testchannel2s=15#1#1#711#731
 
+//Sat 19.2 (ZDF HDneu)
+//testtransponder2s=0#11362000#0#192#22000000#2#2#2#0#2#1
+//testchannel2s=11110#1#1#6110#6122
+
 //Sat 19.2 (ZDF HD)
+//ZDF HD#66547#70#11110#0#0#1#0#6110#6122#0#6110
+//ZDF HD#4295033911#70#11110#0#0#1#0#6110#6120#0#6110
 //testtransponder2s=0#11361750#0#192#22000000#2#2#2#0#2#1
 //testchannel2s=11110#1#1#6110#6120
 
@@ -194,7 +200,7 @@ void screenhwtest()
 //				testzap(getconfig("testtransponder2s", NULL), getconfig("testchannel2s", NULL));
 //				textbox(_("Message"), _("Press OK or EXIT"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 400, 0, 0);
 //alt				testzap("0#10900000#0#192#28125000#1#3#2#3#2#0", "8#0#1#380#381");
-				testzap("0#12544750#0#192#22000000#0#4#2#0#2#0", "17501#0#1#511#512#-1");
+				testzap("0#11362000#0#192#22000000#2#2#2#0#2#1", "11110#1#1#6110#6122");
 				textbox(_("Message"), _("Press OK or EXIT"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 400, 0, 0);
 				servicestart(lastchannel, NULL, NULL, 0);	
 			}
