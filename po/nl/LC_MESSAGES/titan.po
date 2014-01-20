@@ -3250,7 +3250,7 @@ msgid "Backup failed, see log"
 msgstr "Backup is niet geslaagd, controleer log"
 
 msgid "Press -restore- and your saved settings will be restored from your swapstick / recording hdd! The Box will restart automatically for restoring!\n\nPress -backup- to save your actual settings to swapstick / recording hdd.\nWARNING: The old backup will be deleted!"
-msgstr "Druk op  -herstellen- (Groen)\nen uw instellingen worden hersteld uit een eerder gesaved herstelbestand! Uw box zal daarna automatisch herstarten!\n\nDruk op -herstelpunt maken - (Geel)\ndan word een herstelpunt gemaakt.\nLETOP: Eerdere herstelpunten worden verwijdert!\n\nIndien u de Systeem update  functie onder -Systeem- gebruikt, dan wordt dit herstelpunt automatisch gemaakt!"
+msgstr "has to be Druk op -herstellen-(Rood)\nen uw instellingen worden hersteld uit een eerder gesaved herstelbestand! Uw box zal daarna automatisch herstarten!\n\nDruk op -herstelpunt maken -(Groen)\ndan word een herstelpunt gemaakt.\nLETOP: Eerdere herstelpunten worden verwijdert!\n\nIndien u de Systeem update  functie onder -Systeem- gebruikt, dan wordt dit herstelpunt automatisch gemaakt!"
 
 msgid "Can't start system update\nPlease remove Stick/HDD and try again"
 msgstr "Systeem update kan niet gestart worden!\nVerwijder allen USB apparaten en probeer opnieuw."
