@@ -23,6 +23,7 @@ void screenmute(struct skin* screen, struct skin* node, int flag)
 		system("amixer -c 1 set HDMI mute &");
 		system("amixer -c 1 set Analog mute &");
 		system("amixer -c 1 set SPDIF mute &");
+		audiostop(status.aktservice->audiodev);
 		setnodeattr(mute, framebuffer, 0);
 		if(status.drawallwaysbg[0] != NULL)
 			free(status.drawallwaysbg[0]);
@@ -35,6 +36,7 @@ void screenmute(struct skin* screen, struct skin* node, int flag)
 	}
 	else
 	{
+		audioplay(status.aktservice->audiodev);
 		system("amixer -c 1 set HDMI unmute &");
 		system("amixer -c 1 set Analog unmute &");
 		system("amixer -c 1 set SPDIF unmute &");
