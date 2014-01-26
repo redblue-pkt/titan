@@ -58,6 +58,7 @@ void autotimer_thread()
 	
 	if(getconfigint("at1_akt", NULL) == 1)
 	{
+		addconfigint("at1_running", 1);
 		search1 = (struct searchoption*)calloc(1, sizeof(struct searchoption));
 		if(search1 == NULL)
 		{
@@ -120,6 +121,7 @@ void autotimer_thread()
 
 	if(getconfigint("at2_akt", NULL) == 1)
 	{
+		addconfigint("at1_running", 1);
 		search2 = (struct searchoption*)calloc(1, sizeof(struct searchoption));
 		if(search2 == NULL)
 		{
@@ -350,6 +352,7 @@ void autotimer_thread()
 	free(search1); search1 = NULL;
 	free(search2); search2 = NULL;
 	autotimerthread = NULL;
+	addconfigint("at1_running", 0);
   return;
 }
 
