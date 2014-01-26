@@ -6,7 +6,7 @@ char* putlocker(char* link)
 	debug(99, "link: %s", link);
 	int debuglevel = getconfigint("debuglevel", NULL);
 	char* tmphost = NULL, *tmppath = NULL, *tmpstr = NULL, *send = NULL, *hash = NULL, *hashstr = NULL, *hashlen = NULL;
-	char* ip = NULL, *phpsessid = NULL, *serverid = NULL, *usender = NULL, *streamlink = NULL, *streamlink1 = NULL, *tmpstr2 = NULL;
+	char* ip = NULL, *cmd = NULL, *phpsessid = NULL, *serverid = NULL, *usender = NULL, *streamlink = NULL, *streamlink1 = NULL, *tmpstr2 = NULL;
 
 	unlink("/tmp/putlocker1_tmpstr_get");
 	unlink("/tmp/putlocker2_tmpstr_post");
@@ -170,9 +170,31 @@ char* putlocker(char* link)
 		if(pos != NULL) pos[0] = '\0';
 	}
 	free(tmpstr); tmpstr = NULL;
+	
+	if(!ostrncmp("/get_file.php", streamlink, 13))
+	{
+		cmd = ostrcat(cmd, "wget 'http://", 1, 0);
+		cmd = ostrcat(cmd, tmphost, 1, 0);
+		cmd = ostrcat(cmd, "/", 1, 0);
+		cmd = ostrcat(cmd, streamlink, 1, 0);
+		cmd = ostrcat(cmd, "' -O /tmp/putlocker.stream", 1, 0);
+		debug(99, "cmd: %s", cmd);
+		unlink("/tmp/putlocker.stream");
+		
+		system(cmd);
+		
+		free(cmd), cmd = NULL;
+		cmd = ostrcat("cat /tmp/putlocker.stream", NULL, 0, 0);
+		
+		tmpstr = command(cmd);
+		free(cmd), cmd = NULL;
+	}
+
+/*
+	free(tmpstr); tmpstr = NULL;
 
 	if(streamlink == NULL) goto end;
-
+	
 	//create send string
 	send = ostrcat(send, "GET ", 1, 0);
 	send = ostrcat(send, streamlink, 1, 0);
@@ -182,9 +204,12 @@ char* putlocker(char* link)
 	send = ostrcat(send, serverid, 1, 0);
 	send = ostrcat(send, "PHPSESSID=", 1, 0);
 	send = ostrcat(send, phpsessid, 1, 0);
-	send = ostrcat(send, "\r\nConnection: close\r\nUser-Agent: Python-urllib/2.6\r\n\r\n", 1, 0);
+	send = ostrcat(send, "\r\nConnection: close\r\nUser-Agent: Python-urllib/2.7\r\n\r\n", 1, 0);
+	send = ostrcat(send, hash, 1, 0);
+	debug(99, "send: %s", send);
 	
-	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 0);
+	tmpstr = gethttpreal(tmphost, streamlink, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 0);
+*/
 	free(send); send = NULL;
 	debug(99, "tmpstr: %s", tmpstr);
 	titheklog(debuglevel, "/tmp/putlocker3_tmpstr_get", NULL, tmpstr);
