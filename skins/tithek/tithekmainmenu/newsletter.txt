@@ -1,3 +1,4 @@
+5#26.01.2014#Software Update#Die TitanNit Firmware V1.48 ist für die folgenden Geräte verfügbar:\nAtemio 510/520/7600, Atevio 700/7000 und UFS 910/922/912.\nWir wünschen allen eine schöne Woche.
 4#08.01.2014#Software Update#Die TitanNit Firmware V1.48 bald in unserer Database für die folgenden Geräte:\nAtemio 510/520/7600, Atevio 700/7000 und UFS 910/922/912.\nWir wünschen allen ein gesundes und erfolgreiches neues Jahr.
 3#07.12.2013#Software Update#Neue TitanNit Firmware V1.47 in der Database für die folgenden Geräte verfügbar:\nAtemio 510/520/7600, Atevio 700/7000 und UFS 910/922/912.\nWir wünschen allen eine schöne Adventszeit.
 2#06.12.2013#Software Update#Neue TitanNit Firmware V1.47 bald in der Database verfügbar!\nDer Bootloader für die Atevio 7600 ist fertig mit neuem Layout.\nBald auch als ird iboot und ird Image in unserer Database zu finden.\n Ein Update für die 7600 Atemio ist nur als IRD Installation möglich.
