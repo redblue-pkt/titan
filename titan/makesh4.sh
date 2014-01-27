@@ -619,11 +619,13 @@ if [ "$TYPE" == "ufs910" ] || [ "$TYPE" == "ufs922" ];then
 	rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgSettings.*
 	rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgWeather.*
 
-	ln -s /var/usr/local/share/titan/plugins/mc/skin/bgVideo.mvi "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgMusic.mvi
-	ln -s /var/usr/local/share/titan/plugins/mc/skin/bgVideo.mvi "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgBrowser.mvi
-	ln -s /var/usr/local/share/titan/plugins/mc/skin/bgVideo.mvi "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgPicture.mvi
-	ln -s /var/usr/local/share/titan/plugins/mc/skin/bgVideo.mvi "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgSettings.mvi
-	ln -s /var/usr/local/share/titan/plugins/mc/skin/bgVideo.mvi "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgWeather.mvi
+	cd "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/
+	ln -s bgVideo.mvi "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgMusic.mvi
+	ln -s bgVideo.mvi "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgBrowser.mvi
+	ln -s bgVideo.mvi "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgPicture.mvi
+	ln -s bgVideo.mvi "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgSettings.mvi
+	ln -s bgVideo.mvi "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgWeather.mvi
+	cd "$HOME"/flashimg/source.titan/titan
 fi
 
 cp -a "$HOME"/flashimg/source.titan/netsurf/netsurf-2.8/nsfb "$HOME"/flashimg/BUILD/titan/usr/bin
