@@ -1029,38 +1029,41 @@ firstwizzardstep1:
 		}
 	}
 	
-	//check free space in /var
-	if(getfreespace("/var") / 1024 < 50) //200kb
-		textbox(_("Message"), _("Free space in /var to little!\nThis can make problems!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
-	else
+	if(checkbox("UFS910") == 0 && checkbox("UFS922") == 0)
 	{
-		//check writeable in /var
-		if(mkdir("/var/writetest", 0777) != 0 && errno != EEXIST)
+		//check free space in /var
+		if(getfreespace("/var") / 1024 < 50) //200kb
+			textbox(_("Message"), _("Free space in /var to little!\nThis can make problems!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
+		else
 		{
-			if(textbox(_("Message"), _("/var not writeable!\nRepair it?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 15, 0) == 1)
+			//check writeable in /var
+			if(mkdir("/var/writetest", 0777) != 0 && errno != EEXIST)
 			{
-				system("repairjffs2.sh var &"); //this script kills titan an reboot
-				sleep(10);
+				if(textbox(_("Message"), _("/var not writeable!\nRepair it?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 15, 0) == 1)
+				{
+					system("repairjffs2.sh var &"); //this script kills titan an reboot
+					sleep(10);
+				}
 			}
+			rmdir("/var/writetest");
 		}
-		rmdir("/var/writetest");
-	}
-
-	//check free space in /mnt
-	if(getfreespace("/mnt") / 1024 < 50) //200kb
-		textbox(_("Message"), _("Free space in /mnt to little!\nThis can make problems!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
-	else
-	{
-		//check writeable in /mnt
-		if(mkdir("/mnt/writetest", 0777) != 0 && errno != EEXIST)
+	
+		//check free space in /mnt
+		if(getfreespace("/mnt") / 1024 < 50) //200kb
+			textbox(_("Message"), _("Free space in /mnt to little!\nThis can make problems!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
+		else
 		{
-			if(textbox(_("Message"), _("/mnt not writeable!\nRepair it?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 15, 0) == 1)
+			//check writeable in /mnt
+			if(mkdir("/mnt/writetest", 0777) != 0 && errno != EEXIST)
 			{
-				system("repairjffs2.sh mnt &"); //this script kills titan an reboot
-				sleep(10);
+				if(textbox(_("Message"), _("/mnt not writeable!\nRepair it?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 15, 0) == 1)
+				{
+					system("repairjffs2.sh mnt &"); //this script kills titan an reboot
+					sleep(10);
+				}
 			}
+			rmdir("/mnt/writetest");
 		}
-		rmdir("/mnt/writetest");
 	}
 
 	screeninfobar();
