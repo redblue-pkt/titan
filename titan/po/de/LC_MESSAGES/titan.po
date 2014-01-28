@@ -4275,8 +4275,8 @@ msgstr "Suche diesen Titel bei ARD (local)"
 msgid "Search on ZDF (local)"
 msgstr "Suche diesen Titel bei ZDF (local)"
 
-msgid "Search on DrDish (local)"
-msgstr "Suche diesen Titel bei DrDish (local)"
+msgid "Search on TecTime (local)"
+msgstr "Suche diesen Titel bei TecTime (local)"
 
 msgid "Search on Giga (local)"
 msgstr "Suche diesen Titel bei Giga (local)"

@@ -56,7 +56,7 @@ mv -f "$HOME"/parser/*.sh "$HOME"/parser/BUILD
 #rm "$HOME"/parser/BUILD/zdf.sh
 #rm "$HOME"/parser/BUILD/movie4k.sh
 #rm "$HOME"/parser/BUILD/xvideos.sh
-#rm "$HOME"/parser/BUILD/drdish.sh
+#rm "$HOME"/parser/BUILD/tectime.sh
 #rm "$HOME"/parser/BUILD/mlehd.sh
 #rm "$HOME"/parser/BUILD/giga.sh
 #rm "$HOME"/parser/BUILD/internettv.sh
