@@ -1,7 +1,7 @@
-#ifndef DRDISH_H
-#define DRDISH_H
+#ifndef TECTIME_H
+#define TECTIME_H
 
-int drdish_search_local(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr, int flag)
+int tectime_search_local(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr, int flag)
 {
 	char* tmpstr = NULL, *tmpstr1 = NULL, *line = NULL, *menu = NULL, *search = NULL;
 	int ret = 1, count = 0, i = 0;
@@ -21,7 +21,7 @@ int drdish_search_local(struct skin* grid, struct skin* listbox, struct skin* co
 		strstrip(search);
 		string_tolower(search);
 
-		tmpstr = gethttp("atemio.dyndns.tv", "/mediathek/drdish/streams/drdish.all-sorted.list", 80, NULL, HTTPAUTH, 5000, NULL, 0);
+		tmpstr = gethttp("atemio.dyndns.tv", "/mediathek/tectime/streams/tectime.all-sorted.list", 80, NULL, HTTPAUTH, 5000, NULL, 0);
 
 		struct splitstr* ret1 = NULL;
 		ret1 = strsplit(tmpstr, "\n", &count);
@@ -52,7 +52,7 @@ int drdish_search_local(struct skin* grid, struct skin* listbox, struct skin* co
 			if(line != NULL)
 			{
 				line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
-				menu = ostrcat("/tmp/tithek/drdish.search.list", NULL, 0, 0);
+				menu = ostrcat("/tmp/tithek/tectime.search.list", NULL, 0, 0);
 				writesys(menu, line, 0);
 				struct tithek* tnode = (struct tithek*)listbox->select->handle;
 				createtithek(tnode, tnode->title, menu, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);

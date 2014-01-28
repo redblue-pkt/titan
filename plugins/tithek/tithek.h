@@ -64,7 +64,7 @@ int tithekmlehd = 0;
 //flag 50	- beeg
 //flag 51   - ard local serach
 //flag 52   - zdf local serach
-//flag 53   - drdish local serach
+//flag 53   - tectime local serach
 //flag 54   - giga local serach
 //flag 55   - beeg local serach
 //flag 56   - rtl2now local serach
@@ -1894,13 +1894,13 @@ waitrcstart:
 				}
 				else if(check == 17)
 				{
-					if(drdish_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "DrDish - Search (local)", tmpstr, 0) == 0)
+					if(tectime_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "TecTime - Search (local)", tmpstr, 0) == 0)
 					{
 						oaktpage = listbox->aktpage;
 						oaktline = listbox->aktline;
 						ogridcol = listbox->gridcol;
 						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat("DrDish - Search (local)", " - ", 0, 0);
+						char* tmpstr1 = ostrcat("TecTime - Search (local)", " - ", 0, 0);
 						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
 						screentithekplay(tmpstr, tmpstr2, 0);
 						free(tmpstr); tmpstr = NULL;
@@ -2417,7 +2417,7 @@ why ?
 				}
 				else if(((struct tithek*)listbox->select->handle)->flag == 53)
 				{
-					if(drdish_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
+					if(tectime_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
 					{
 						oaktpage = listbox->aktpage;
 						oaktline = listbox->aktline;
