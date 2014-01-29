@@ -14,17 +14,26 @@ void set_player_sound(int flag)
 		vol = ostrcat(getconfig("vol_playerstop", NULL), NULL, 0, 0);
 
 	cmd = ostrcat("amixer -c 1 set Analog playback '", vol, 0, 0);
-	cmd = ostrcat(cmd, "%' unmute &", 1, 0);
+	if(status.mute == 1)
+		cmd = ostrcat(cmd, "%' mute &", 1, 0);
+	else
+		cmd = ostrcat(cmd, "%' unmute &", 1, 0);
 	system(cmd);
 	free(cmd), cmd = NULL;
 
 	cmd = ostrcat("amixer -c 1 set SPDIF playback '", vol, 0, 0);
-	cmd = ostrcat(cmd, "%' unmute &", 1, 0);
+	if(status.mute == 1)
+		cmd = ostrcat(cmd, "%' mute &", 1, 0);
+	else
+		cmd = ostrcat(cmd, "%' unmute &", 1, 0);
 	system(cmd);
 	free(cmd), cmd = NULL;
 
 	cmd = ostrcat("amixer -c 1 set HDMI playback '", vol, 0, 0);
-	cmd = ostrcat(cmd, "%' unmute &", 1, 0);
+	if(status.mute == 1)
+		cmd = ostrcat(cmd, "%' mute &", 1, 0);
+	else
+		cmd = ostrcat(cmd, "%' unmute &", 1, 0);
 	system(cmd);
 	free(cmd), cmd = NULL;
 	free(vol), vol = NULL;
