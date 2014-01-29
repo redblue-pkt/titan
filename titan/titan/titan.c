@@ -823,7 +823,10 @@ int main(int argc, char *argv[])
 	
 	//set volume on start
 	if(checkbox("ATEMIO5000") == 1)
+	{
 		setvol(getconfigint("vol", NULL));
+		system("fbset 1280x720-1");
+	}
 
 	//check to remove preinstalled tpk packages
 	ret = tpkupdatepre();
