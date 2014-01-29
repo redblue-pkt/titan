@@ -389,7 +389,8 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		{
 			audioselectsource(audionode, AUDIO_SOURCE_DEMUX);
 			audiosetbypassmode(audionode, chnode->audiocodec);
-			audioplay(audionode);
+			if(status.mute <> 1)
+				audioplay(audionode);
 		}
 		else
 			err("can't get free audio dev");
@@ -423,7 +424,8 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		audiosetmute(status.aktservice->audiodev, 0);
 		//setmute(0);
 	}
-	audioplay(status.aktservice->audiodev);
+	if(status.mute <> 1)
+		audioplay(status.aktservice->audiodev);
 	
 	//check pmt if not done
 	if(checkpmt == 0)
@@ -774,7 +776,8 @@ void servicechangeaudio(struct channel* chnode, struct audiotrack* tracknode)
 	if(status.timeshifttype == 0 && status.timeshift == 1 && status.playing == 0) return;
 	if(status.timeshifttype == 1 && status.timeshift == 1 && status.playing == 0 && status.timeshiftpos > 0) return;
 
-	audioplay(status.aktservice->audiodev);
+	if(status.mute <> 1)
+		audioplay(status.aktservice->audiodev);
 }
 
 struct service* addservice(struct service* last)
