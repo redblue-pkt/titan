@@ -1065,12 +1065,12 @@ firstwizzardstep1:
 			rmdir("/mnt/writetest");
 		}
 	}
-
+/*
 	if(checkbox("ATEMIO5000") == 1)
 	{
 		system("fbset 1280x720-1");
 	}
-
+*/
 	screeninfobar();
 
 	//for testign screens
