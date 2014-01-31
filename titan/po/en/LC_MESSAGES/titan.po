@@ -1,0 +1,267 @@
+msgid "500rpm"
+msgstr "500RPM"
+
+msgid "Aborting restoring..."
+msgstr "Aborting restore..."
+
+msgid "AC3 default"
+msgstr "AC3 Default"
+
+msgid "AC3 downmix"
+msgstr "AC3 Downmix"
+
+msgid "Action after"
+msgstr "Action After"
+
+msgid "add service"
+msgstr "Add Service"
+
+msgid "add recording (stop after current event)"
+msgstr "Add Recording (stop after current event)"
+
+msgid "add recording (indefinitely)"
+msgstr "Add Recording (indefinitely)"
+
+msgid "add recording (enter duration)"
+msgstr "Add Recording (enter duration)"
+
+msgid "ADD"
+msgstr "Add"
+
+msgid "add new share"
+msgstr "Add New Share"
+
+msgid "add cifs share"
+msgstr "Add Cifs Share"
+
+msgid "add nfs share"
+msgstr "Add Nfs Share"
+
+msgid "add ftp share"
+msgstr "Add Ftp Share"
+
+msgid "System Settings"
+msgstr "System Einstellungen"
+
+msgid "Auto Scan"
+msgstr "auto scan"
+
+msgid "AUTO"
+msgstr "auto"
+
+msgid "alpha"
+msgstr "Alphabetically"
+
+msgid "alt file"
+msgstr "alternative file"
+
+msgid "Apple Trailer"
+msgstr "Apple Movie Trailer"
+
+msgid "bar"
+msgstr "Selection Bar Colour"
+
+msgid "betapass"
+msgstr "Betatester Password"
+
+msgid "betauser"
+msgstr "Betatester Username"
+
+msgid "border"
+msgstr "border colour"
+
+msgid "bootrgbfix"
+msgstr "Boot RGB fix"
+
+msgid "broadcast"
+msgstr "Broadcast"
+
+msgid "browsers"
+msgstr "Internet Browser"
+
+msgid "Can't start timeshift play !"
+msgstr "Timeshift Can't start play !"
+
+msgid "Can't remove akive Service"
+msgstr "Can't remove a Live Service"
+
+msgid "Can't find a Tuner.\nAll Tuners in use or no Tuner defined."
+msgstr "Can't find a Spare Tuner.\nAll Tuners in use or no Tuner defined."
+
+msgid "CHANGE"
+msgstr "Change"
+
+msgid "Change language needs reboot"
+msgstr "language Change Requires reboot"
+
+msgid "channel"
+msgstr "Channel"
+
+msgid "check your Secret Feed !"
+msgstr "Please Check your Secret Feed !"
+
+msgid "CPU frequency"
+msgstr "CPU Frequency"
+
+msgid "del startchannel"
+msgstr "Del startchannel"
+
+msgid "del medium for extension"
+msgstr "Delete medium for extension"
+
+msgid "del medium for swap"
+msgstr "Delete medium for swap"
+
+msgid "del medium for backup"
+msgstr "Delete medium for backup"
+
+msgid "deaktiv"
+msgstr "deactivate"
+
+msgid "dhcp"
+msgstr "Automatic (dhcp)"
+
+msgid "Dirsort"
+msgstr "Directory sort"
+
+msgid "direct connect"
+msgstr "Direct connect"
+
+msgid "Diseqc Settings"
+msgstr "DisEqC Settings"
+
+msgid "dnsserver 1"
+msgstr "DNS-server 1"
+
+msgid "dnsserver 2"
+msgstr "DNS-server 2"
+
+msgid "download error"
+msgstr "Download Error"
+
+msgid "edit share"
+msgstr "Edit Share"
+
+msgid "empty"
+msgstr "Empty"
+
+msgid "Emu"
+msgstr "Emu"
+
+msgid "emus"
+msgstr "Emus"
+
+msgid "emucontrol"
+msgstr "Emu control"
+
+msgid "Epgfreespace (KB)"
+msgstr "Epg freespace (KB)"
+
+msgid "Error: create timer thread !!"
+msgstr "Error: Can't create timer thread !!"
+
+msgid "Error: open rc device !!"
+msgstr "Error: Can't open rc device !!"
+
+msgid "Error: open rcsim device !!"
+msgstr "Error: Can't open rcsim device !!"
+
+msgid "errorboot"
+msgstr "Boot Error"
+
+msgid "errorstop"
+msgstr "Shutdown Error"
+
+msgid "ERROR cant read res"
+msgstr "ERROR Can't Set Resolution"
+
+msgid "EXIT"
+msgstr "Exit"
+
+msgid "Exit = abort restore"
+msgstr "Exit = Abort Restore"
+
+msgid "Fancontrol"
+msgstr "Fan control"
+
+msgid "fast"
+msgstr "Fast"
+
+msgid "Fav"
+msgstr "Favourite"
+
+msgid "Feed"
+msgstr "Feed Address"
+
+msgid "First Wizzard"
+msgstr "First Start Wizzard"
+
+msgid "file"
+msgstr "File"
+
+msgid "Found running Record.\nRealy shutdown ?"
+msgstr "A recording is in progress.\nDo you wish to force shutdown and stop recording?"
+
+msgid "Found running record\nor record is starting in next time.\nReally shutdown ?"
+msgstr "A recording is in progress\nor a recording is Due to start.\nDo you wish to force shutdown and stop/ cancel recording?"
+
+msgid "Found running download\nReally shutdown ?"
+msgstr "A Download is in progress\nDo you wish to force shutdown and stop download ?"
+
+msgid "free space"
+msgstr "Free space"
+
+msgid "fsckrecord"
+msgstr "fsck record"
+
+msgid "fsckroot"
+msgstr "fsck root"
+
+msgid "fsckswap"
+msgstr "fsck swap"
+
+msgid "ftdi"
+msgstr "Activate ftdi Driver"
+
+msgid "ftpd"
+msgstr "Ftp Service "
+
+msgid "ftpport"
+msgstr "Ftp Port"
+
+msgid "fullcover"
+msgstr "Fullcover"
+
+msgid "gateway"
+msgstr "Gateway"
+
+msgid "Graphic Multi EPG"
+msgstr "Graphical Multi EPG"
+
+msgid "GRAPHIC MULTI EPG - Bouquets"
+msgstr "GRAPHICAL MULTI EPG - Bouquets"
+
+msgid "Graphic EPG"
+msgstr "Grafisches Multi-EPG"
+
+msgid "Graphic EPG Zoom"
+msgstr "Graphical EPG Zoom"
+
+msgid "Graphic EPG Picon"
+msgstr "Graphical EPG Picon"
+
+msgid "Goto startpos"
+msgstr "Goto startposition"
+
+msgid "HDD not configured\ncan't find record path"
+msgstr "Harddisk not configured\ncan't find record path"
+
+msgid "hddreplacement"
+msgstr "Network harddisk replacement"
+
+msgid "HTTPD Port"
+msgstr "Webserver Port"
+
+msgid "imdb mvis (network/hdd)"
+msgstr "imdb backgroung images (network/hdd)"
+
