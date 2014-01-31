@@ -483,3 +483,297 @@ msgstr "Reduce CPU frequency in standby"
 
 msgid "remove share"
 msgstr "Remove Share"
+
+msgid "repeate" 
+msgstr "Repeate" 
+	 
+msgid "RESET" 
+msgstr "Reset" 
+ 	 
+msgid "repairmodus" 
+msgstr "repair mode" 
+ 	 
+msgid "Repeate type" 
+msgstr "Repeat type" 
+ 	 
+msgid "reverse alpha" 
+msgstr "inverse alphabetic" 
+ 	 
+msgid "reverse date" 
+msgstr "inverse date" 
+	 	 
+msgid "reverse size" 
+msgstr "inverse size" 
+	 
+msgid "rmcrashlog" 
+msgstr "rm Crashlog" 
+	 	 
+msgid "rmemthy" 
+msgstr "Delete empty directory's" 
+ 	 
+msgid "sambaserver" 
+msgstr "Samba Server" 
+	 
+msgid "samba server" 
+msgstr "Samba Server" 
+ 	 
+msgid "sat_diseqc_ab" 
+msgstr "DiSEqC A/B Einstellungen" 
+
+msgid "sat_diseqc_abcd" 
+msgstr "DiSEqC A/B/B/C" 
+	 	 
+msgid "sat_diseqc_abcdefgh" 
+msgstr "DiSEqC A/B/B/C/E/F/G/H" 
+ 	 
+msgid "sat_expert" 
+msgstr "Expert satellite settings" 
+ 	 
+msgid "Satfinder" 
+msgstr "Satellite finder" 
+ 	 
+msgid "SAT" 
+msgstr "Satellite" 
+ 	 
+msgid "save network settings ?" 
+msgstr "Save Network Settings ?" 
+ 	 
+msgid "sbs" 
+msgstr "Side by Side" 
+ 	 
+msgid "scan" 
+msgstr "Scan" 
+ 	 
+msgid "Scart-Recorder" 
+msgstr "Scart Eingang" 
+ 	 
+msgid "Screensaver Adjust" 
+msgstr "Bildschirmschonereinstellungen" 
+	 	 
+msgid "screensaver background" 
+msgstr "Screensaver background" 
+ 	 
+msgid "screensaver delay" 
+msgstr "Screensaver delay" 
+	 	 
+msgid "screensaver interval" 
+msgstr "Screensaver interval" 
+ 	 
+msgid "screensaver pic" 
+msgstr "Screensaver picture" 
+ 	 
+msgid "succesfull create or delelete directory" 
+msgstr "create or delelete of directory complete" 
+ 	 
+msgid "set startchannel" 
+msgstr "Set Start channel" 
+ 	 
+msgid "settings" 
+msgstr "Settings" 
+ 	 
+msgid "sharedir" 
+msgstr "share directory" 
+	 
+msgid "sharename" 
+msgstr "share name" 
+ 	 
+msgid "Sharename" 
+msgstr "Share name" 
+ 	 
+msgid "Should Timeshift File deleted ?" 
+msgstr "Should Timeshift File be deleted ?" 
+ 	 
+msgid "showip" 
+msgstr "Show IP address" 
+ 	 
+msgid "showtvinfo" 
+msgstr ""Show TV info" 
+	 
+msgid "Single Satelite" 
+msgstr "Single Satellite" 
+	 	 
+msgid "size" 
+msgstr "Size" 
+	 
+msgid "skins" 
+msgstr "Skins" 
+ 	 
+msgid "Skip 1/3" 
+msgstr "Skip numeric buttons 1/3 time in seconds" 
+ 	 
+msgid "Skip 4/6" 
+msgstr "Skip numeric buttons 4/6 time in seconds" 
+ 	 
+msgid "Skip 7/9" 
+msgstr "Skip numeric buttons 7/9 time in seconds" 
+ 	 
+msgid "sorry found no harddisk" 
+msgstr "Sorry no Harddisk/USB storage was found" 
+	 
+msgid "Song TitleText" 
+msgstr "Song Title Text" 
+ 	 
+msgid "standby_freq" 
+msgstr "Standby Frequency" 
+ 	 
+msgid "standby_overclock" 
+msgstr "Standby Overclock" 
+	 
+msgid "Start HTTPD" 
+msgstr "Start HTTPD web server" 
+ 	 
+msgid "starting Fullusb Update ?" 
+msgstr "starting Full usb Update ?" 
+
+msgid "Sysinfo" 
+msgstr "System information" 
+ 	 
+msgid "System - Flashupdate (online)" 
+msgstr "System - Flash update (online)" 
+
+msgid "System - Flashupdate (tmp)" 
+msgstr "System - Flash update local(tmp)" 
+ 	 
+msgid "System - Usbupdate (online)" 
+msgstr "System - USB Update (online)" 
+	 
+msgid "System - Usbupdate (tmp)" 
+msgstr "System - USB update local(tmp)" 
+ 
+msgid "szap_diseqc_repeat" 
+msgstr "sZap DiSEqC Repeat" 
+ 
+msgid "szap_emul" 
+msgstr "sZap EMU" 
+
+msgid "szap_frontend" 
+msgstr "sZap Front-End" 
+ 	 
+msgid "szaplong" 
+msgstr "sZap long " 
+ 	 
+msgid "telnet" 
+msgstr "Telnet" 
+	 
+msgid "TEST" 
+msgstr "Test" 
+ 	 
+msgid "text" 
+msgstr "Text" 
+ 
+msgid "type of channelsearch" 
+msgstr "type of channel search" 
+ 	 
+msgid "updatelist" 
+msgstr "update list" 
+ 	 
+msgid "Usb Device" 
+msgstr "USB Device" 
+	 
+msgid "Usbupdate (online)" 
+msgstr "USB Update (online)" 
+ 	 
+msgid "Usbupdate (tmp)" 
+msgstr "USB Update (tmp)" 
+ 	 
+msgid "use ssl" 
+msgstr "Use SSL" 
+ 	 
+msgid "useproxy" 
+msgstr "Use proxy" 
+ 	 
+msgid "userauth" 
+msgstr "User Authentication" 
+
+msgid "user defined" 
+msgstr "User Defined" 
+ 	 
+msgid "username" 
+msgstr "Username" 
+ 	 
+msgid "wait for stopping download" 
+msgstr "waiting for download to complete" 
+ 	 
+msgid "webif" 
+msgstr "Web Interface" 
+	 	 
+msgid "DEU (DVB Subtitle)" 
+msgstr "Dutch (DVB Subtitle)" 
+ 
+msgid "ENG (DVB-Subtitle)" 
+msgstr "English (DVB-Subtitle)" 
+ 
+msgid "FRA (DVB-Subtitle)" 
+msgstr "France (DVB-Subtitle)" 
+ 
+msgid "rename service" 
+msgstr "Rename Service" 
+ 
+msgid "No backup folders found!!!\n\nAborting restoring..." 
+msgstr "No backup folders found!!!\n\nAborting restore..." 
+ 
+msgid "A record hdd or a swapstick must be mounted!\n\nAborting backup..." 
+msgstr "Kein Backup Verzeichnis gefunden\nBreche Sicherung ab ..." 
+ 
+msgid "Backup to /tmp or /var/backup. If the free memory too small can a usb device will never use.\nThere must be a folder backup." 
+msgstr "Backup is stored in / tmp or / var / backup. the internal memory may not be sufficient to secure also \ non a USB flash drive / HDD are stored. \ NYou need a backup folder to be on the device. " 
+ 	 
+msgid "Some plugins needs restart.\nIf the plugin is not active\nreboot the box." 
+msgstr "Some plugins require a restart.\nIf the plugin is not active\nreboot the box." 
+ 
+msgid "Install netsurf Internetbrowser Tpk first !" 
+msgstr "Install Netsurf Internet Browser Tpk first  !" 
+ 	 
+msgid "Move" 
+msgstr "Move Dish" 
+ 	 
+msgid "Set action after rec" 
+msgstr "Set action after Record" 
+ 	 
+msgid "EPG resetet and now clear." 
+msgstr "EPG has been reset." 
+ 	 
+msgid "Show Pictitle" 
+msgstr msgid "Show Picture title" 
+	 
+msgid "Backup created successfully" 
+msgstr "Backup has been created successfully" 
+ 	 
+msgid "allways del file" 
+msgstr "allways delete file" 
+ 	 
+msgid "never del file" 
+msgstr "Never delete file" 
+ 	 
+msgid "After Timeshift" 
+msgstr "Action After Timeshift" 
+ 	 
+msgid "Fix Shutdown Time" 
+msgstr "Fixed Shutdown Time" 
+	 	 
+msgid "not started akttime higher than timer endtime" 
+msgstr "not started, already passed End Time" 
+	 	 
+msgid "Do you want to delete all unused Bouquetentrys?" 
+msgstr "Do you want to delete all unused Bouquet entrys?" 
+ 	 
+msgid "DESC" 
+msgstr "Description" 
+	 	 
+msgid "Connection to server lost !" 
+msgstr "Connection to server has been lost !" 
+	 	 
+msgid "No plugin found." 
+msgstr "No plugin was found." 
+ 	 
+msgid "Here you can in your EPG entries for specific search. Use to start a color button to search. Use to navigate the control cross and the extra buttons displayed with your remote control to select." 
+msgstr "Here you can search your EPG entries for a specific program. Use to start a color button to search. Use to navigate the control cross and the extra buttons displayed with your remote control to select." 
+ 	 
+msgid "Here you can install from our current online offering plug-ins. Use to navigate the control cross and the extra buttons displayed with your remote control to select." 
+msgstr "Here you can install from our current online selection of plug-ins. Use to navigate the control cross and the extra buttons displayed with your remote control to select." 
+ 	 
+msgid "Here you can choose to configure your tuner. For your channel search, you must edit their tuner and adjust depending on the connection. For engine systems require an additional engine settings making." 
+msgstr "Here you can select which tuner you wish to configure. Use to navigate the control cross and the extra buttons displayed with your remote control to select." 
+ 
+msgid "Here you can set for your satellite tuner. First, make your satellite selection. When using DiSEqC They also point to the port used. For advanced Lnb / Unicam navigate to the field and press the Red button." 
+msgstr "Here you can change the reception setting for the selected tuner. Use to navigate the control cross and the extra buttons displayed with your remote control to select." 
