@@ -265,3 +265,222 @@ msgstr "Webserver Port"
 msgid "imdb mvis (network/hdd)"
 msgstr "imdb backgroung images (network/hdd)"
 
+msgid "infos"
+msgstr "Infos"
+
+msgid "Infobar Auto hide on call"
+msgstr "Infobar Auto hide"
+
+msgid "ipaddress"
+msgstr "IP adress"
+
+msgid "TPK remove"
+msgstr "TPK Remove"
+
+msgid "TPK tmp (tmp)"
+msgstr "TPK Install tmp (tmp)"
+
+msgid "lan"
+msgstr "LAN"
+
+msgid "loadpartition"
+msgstr "Load Partition"
+
+msgid "logto"
+msgstr "log File"
+
+msgid "Manuel Scan"
+msgstr "Manual Scan"
+
+msgid "maxdelay"
+msgstr "Max Delay"
+
+msgid "maxrate"
+msgstr "Max Rate"
+
+msgid "MENU"
+msgstr "Menu"
+
+msgid "Menu Protect"
+msgstr "Menu Protection"
+
+msgid "MENUPROTECT"
+msgstr "Menu Protect"
+
+msgid "mixed mode"
+msgstr "Mixed Mode"
+
+msgid "move service"
+msgstr "Move Service"
+
+msgid "Moviepath"
+msgstr "Movie path"
+
+msgid "MTD"
+msgstr "MTD flash location"
+
+msgid "MTD flash info"
+msgstr "Flash Aufteilung Information"
+
+msgid "netmask"
+msgstr "Netmask"
+
+msgid "Network Interfacelist"
+msgstr "Network Interface list"
+
+msgid "network"
+msgstr "Network"
+
+msgid "Networkbrowser"
+msgstr "Network Browser"
+
+msgid "Networkbrowser - show scanned DNS-Shares"
+msgstr "Network Browser - show scanned DNS-Shares"
+
+msgid "Networkbrowser - show scanned cifs/nfs-Shares"
+msgstr "Network Browser - show scanned cifs/nfs-Shares"
+
+msgid "nfsserver"
+msgstr "NFS-Server"
+
+msgid "nfs server"
+msgstr "NFS-Server"
+
+msgid "picture"
+msgstr "Picture"
+
+msgid "no"
+msgstr "No"
+
+msgid "No TPK found in /tmp"
+msgstr "No TPK packages found in /tmp"
+
+msgid "nr_usbreaders"
+msgstr "number of usb card readers"
+
+msgid "oldaudiofw"
+msgstr "old audio firmware"
+
+msgid "Old Audiofw"
+msgstr "old audio firmware"
+
+msgid "oldvideofw"
+msgstr "old audio firmware"
+
+msgid "only_boot_overclock"
+msgstr "Only overclock during boot"
+
+msgid "Only Boot Overclock"
+msgstr "Only overclock during boot"
+
+msgid "options"
+msgstr "Options"
+
+msgid "Overclocking"
+msgstr "OverClock"
+
+msgid "Piconpath"
+msgstr "Picon path"
+
+msgid "pingserver"
+msgstr "Ping Server"
+
+msgid "pingtimeout"
+msgstr "Ping timeout"
+
+msgid "pl2303"
+msgstr "pl2303 driver"
+
+msgid "player"
+msgstr "Multimedia Player"
+
+msgid "PlayList - select your playlist !"
+msgstr "PlayList - Please select your playlist !"
+
+msgid "pll0_ndiv_mdiv"
+msgstr "PLL0 ndiv mdiv"
+
+msgid "pll1_fdma_bypass"
+msgstr "PLL1 FDMA Bypass"
+
+msgid "pll1_ndiv_mdiv"
+msgstr "PLL1 ndiv mdiv"
+
+msgid "portmap"
+msgstr "port mapping"
+
+msgid "Power action"
+msgstr "Aktion bei Druck der EIN/AUS Taste"
+
+msgid "Power aktion"
+msgstr "Aktion bei Druck der EIN/AUS Taste"
+
+msgid "power off"
+msgstr "Power Off"
+
+msgid "Poweroff Timer"
+msgstr "Power Off Timer"
+
+msgid "Poweroff"
+msgstr "Power Off"
+
+msgid "poweroff"
+msgstr "Power Off"
+
+msgid "press red"
+msgstr "Press Red"
+
+msgid "profile"
+msgstr "Profile"
+
+msgid "progressbar"
+msgstr "Progress Bar"
+
+msgid "Prov"
+msgstr "Provider"
+
+msgid "Provider:"
+msgstr "Provider:"
+
+msgid "proxyauth"
+msgstr "proxy authority"
+
+msgid "proxyip"
+msgstr "Proxy IP"
+
+msgid "proxypass"
+msgstr "Proxy Password"
+
+msgid "Proxy Port"
+msgstr "Port für Proxyserver"
+
+msgid "proxyuser"
+msgstr "Proxy Username"
+
+msgid "radiologos"
+msgstr "Radio logos"
+
+msgid "rcreboot"
+msgstr "RC Reboot"
+
+msgid "Receiver reboots now !!!"
+msgstr "Receiver will reboot now !!!"
+
+msgid "record"
+msgstr "Record"
+
+msgid "Record"
+msgstr "Aufnahme"
+
+msgid "Red Key Action - Setup"
+msgstr "Red Key Function - Setup"
+
+msgid "Red Key Action - Plugins"
+msgstr "Red Key Function - Plugins"
+
+msgid "Reduce Standby frequency"
+msgstr "Reduce CPU frequency in standby"
+
+msgid "remove share"
+msgstr "Remove Share"
+
