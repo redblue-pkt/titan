@@ -542,6 +542,7 @@ echo "[titan]--------------------------------------------------------"
 "$HOME"/flashimg/source.titan/po/pl/LC_MESSAGES/make.sh "$STM"
 "$HOME"/flashimg/source.titan/po/ru/LC_MESSAGES/make.sh "$STM"
 "$HOME"/flashimg/source.titan/po/vn/LC_MESSAGES/make.sh "$STM"
+"$HOME"/flashimg/source.titan/po/en/LC_MESSAGES/make.sh "$STM"
 
 echo "[titan]--------------------------------------------------------"
 echo "[titan] Language Po files done"
