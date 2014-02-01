@@ -50,9 +50,6 @@ msgstr "Es muss eine Festplatte oder ein USB-Stick eingebunden sein"
 msgid "A/V Settings"
 msgstr "Bild/Ton Einstellungen"
 
-msgid "Panel"
-msgstr "Atemio Panel"
-
 msgid "Wizard"
 msgstr "Setup-Assistent"
 
@@ -258,10 +255,10 @@ msgid "Blue Button"
 msgstr "Blaue Taste"
 
 msgid "Blue Key Action - Setup"
-msgstr "Blaue - Taste Belegungsmenü"
+msgstr "Blaue Taste - Belegungsmenü"
 
 msgid "Blue Key Action - Plugins"
-msgstr "Blaue - Taste Erweiterungsliste"
+msgstr "Blaue Taste - Erweiterungsliste"
 
 msgid "border"
 msgstr "Rahmen"
@@ -288,7 +285,7 @@ msgid "bootstop"
 msgstr "Startabbruch"
 
 msgid "Bouquet List"
-msgstr "Favoriten"
+msgstr "Favoriten Liste"
 
 msgid "Bouquets"
 msgstr "Favoriten"
@@ -607,7 +604,7 @@ msgid "Epgfreespace (KB)"
 msgstr "Freier EPG Speicher (KB)"
 
 msgid "Error file not supported"
-msgstr "Fehler, Datei wird nicht unterstützt!"
+msgstr "Fehler: Datei wird nicht unterstützt!"
 
 msgid "Error: create timer thread !!"
 msgstr "Fehler: Aufnahmetimer kann nicht erstellt werden!"
@@ -1477,7 +1474,7 @@ msgid "Prev"
 msgstr "Zurück"
 
 msgid "press red"
-msgstr "Drücke rote Taste"
+msgstr "Drücke -Rot-"
 
 msgid "profile"
 msgstr "Profil"
@@ -1612,10 +1609,10 @@ msgid "Red Button"
 msgstr "Rote Taste"
 
 msgid "Red Key Action - Setup"
-msgstr "Rote-Taste Belegungsmenü "
+msgstr "Rote Taste - Belegungsmenü "
 
 msgid "Red Key Action - Plugins"
-msgstr "Rote-Taste Erweiterungsliste "
+msgstr "Rote Taste - Erweiterungsliste "
 
 msgid "Reduce Standby frequency"
 msgstr "CPU Frequenz im Standby reduzieren"
@@ -1747,7 +1744,7 @@ msgid "sat_diseqc_abcdefgh"
 msgstr "DiSEqC A/B/B/C/E/F/G/H Einstellungen"
 
 msgid "sat_expert"
-msgstr "Experten Satellit Einstellungen"
+msgstr "Satellit Experten Einstellungen"
 
 msgid "Satfinder"
 msgstr "Satellitenfinder"
@@ -1966,7 +1963,7 @@ msgid "SNR:"
 msgstr "SNR:"
 
 msgid "Softcam Panel"
-msgstr "Softcam Einstellungen"
+msgstr "Softcam"
 
 msgid "Softcam selection:"
 msgstr "Softcam auswählen:"
@@ -3766,7 +3763,7 @@ msgid "usedns"
 msgstr "Benutze DNS Adresse"
 
 msgid "Error, found result without imdbid we can't this save in MediaDB"
-msgstr "Fehler, ihr TMBb Suchergebniss hat eine ungültige imdbid und kann\ndadurch nicht in der MediaDB abgespeichert werden"
+msgstr "Fehler: Ihr TMBb Suchergebnis hat eine ungültige imdbid und kann\ndadurch nicht in der MediaDB abgespeichert werden"
 
 msgid "EPG Scan activate standby?"
 msgstr "EPG Scan aktiviert Standby?"
@@ -3775,7 +3772,7 @@ msgid "Timeshift file to short\nplease wait a little and try again"
 msgstr "Timeshift: Datei ist zu klein\nBitte später versuchen"
 
 msgid "Behavior at recording"
-msgstr "Verhalten bei der Aufnahme"
+msgstr "Verhalten während Aufnahme"
 
 msgid "star"
 msgstr "Stern"
@@ -3814,7 +3811,7 @@ msgid "Timeshift Settings"
 msgstr "Timeshift Einstellungen"
 
 msgid "Timeshifttype"
-msgstr "Timeshiftart"
+msgstr "Timeshift Methode"
 
 msgid "Ask on channel switch"
 msgstr "Nachfragen bei Kanalwechsel"
@@ -3901,7 +3898,7 @@ msgid "Tunerconfig is not allowed if record\nor stream is running !"
 msgstr "Tuner Konfiguration während einer Aufnahme/Streaming ist nicht erlaubt"
 
 msgid "Can't change hostname !"
-msgstr "Fehler, Hostname kann nicht geändert werden!"
+msgstr "Fehler: Hostname kann nicht geändert werden!"
 
 msgid "HOSTNAME"
 msgstr "Hostname"
@@ -4039,16 +4036,16 @@ msgid "No config file found."
 msgstr "Es wurde kein Config File gefunden."
 
 msgid "Oscam dvbapi config disabled !"
-msgstr "Oscam dvbapi config deaktiviert!"
+msgstr "Oscam DVBapi config deaktiviert!"
 
 msgid "Oscam dvbapi config enabled !"
-msgstr "Oscam dvbapi config aktiviert!"
+msgstr "Oscam DVBapi config aktiviert!"
 
 msgid "Dvbapi (enabled)"
-msgstr "Dvbapi (aktiviert)"
+msgstr "DVBapi (aktiviert)"
 
 msgid "Dvbapi (disabled)"
-msgstr "Dvbapi (deaktiviert)"
+msgstr "DVBapi (deaktiviert)"
 
 msgid "After EPG Scan"
 msgstr "Nach EPG Suche"
@@ -4129,10 +4126,10 @@ msgid "Move File"
 msgstr "Datei(en) verschieben"
 
 msgid "Here you can set your Channel search options. Use to navigate the control cross and the extra buttons displayed with your remote control to select. Very important, before you start looking for a channel must be set to its tuner tuner settings."
-msgstr "Hier können Sie Ihre Kanal Suchoptionen einstellen. Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten.\nSehr wichtig, bevor Sie eine Kanalsuche starten, müssen Sie Ihre Empfangs Tuner unter Tuner-Einstellungen (Kabel/Sat/Terrestrisch) einstellen."
+msgstr "Hier können Sie Ihre Kanalsuche einstellen. Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten.\nSehr wichtig: Bevor Sie eine Kanalsuche starten, müssen Sie Ihre Tuner unter Tuner-Einstellungen (Kabel/Sat/Terrestrisch) einstellen."
 
 msgid "After the manual search, you have to if they want to save all the sender to save the search with the green button. To add a station manually have to select the sender in the right box and then save it with the red button that station. If you do not do this and go to exit out the search not saved."
-msgstr "Nach der manuellen Suche müssen Sie mit der grünen Taste die gefundenen Kanäle abspeichern. Um manuell einen Kanal hinzuzufügen, muss man den Kanal im rechten Feld markieren und dann mit der roten Taste abspeichern. Exit speichert das Suchergebnis nicht."
+msgstr "Nach der manuellen Suche müssen Sie mit -Grün- die gefundenen Kanäle abspeichern. Um manuell einen Kanal hinzuzufügen, muss man den Kanal im rechten Feld markieren und dann mit -Rot- abspeichern. Exit speichert das Suchergebnis nicht."
 
 msgid "SCANSTART"
 msgstr "Kanalsuche starten"
@@ -4144,7 +4141,7 @@ msgid "TRANSPONDEREDIT"
 msgstr "Transponder auswählen"
 
 msgid "Flash: Flash range is deleted after update, mnt: flash range to permanently update available, swap: USB medium permanently"
-msgstr "MNT: Installation im Flash, nach Imageupdate noch vorhanden.\nFLASH: Installation im Flash, wird nach einem Imageupdate gelöscht.\nSWAP: Installation auf USB/HDD, nach Imageupdate noch vorhanden."
+msgstr "MNT: Installation im Flashspeicher: permanent\nFLASH: Installation im Flashspeicher, Verlust durch Update\nSWAP: Installation auf USB/HDD, permanent"
 
 msgid "Change Channelname"
 msgstr "Kanalnamen aktualisieren"
@@ -4309,4 +4306,4 @@ msgid "RemoteControl Long Version"
 msgstr "Fernbedienung lange Version"
 
 msgid "Here to select your remote Model"
-msgstr "Hier müssen Sie Ihr Fernbedienungsmodell auswählen und mit OK bestätigen."
+msgstr "Hier können Sie Ihr Fernbedienungsmodell auswählen und mit OK bestätigen."
