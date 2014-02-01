@@ -2178,6 +2178,9 @@ msgstr "System"
 msgid "System:"
 msgstr "System:"
 
+msgid "System_Status"
+msgstr "Systemstatus"
+
 msgid "szap"
 msgstr "sZap"
 
