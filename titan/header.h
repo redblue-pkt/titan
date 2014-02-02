@@ -809,6 +809,7 @@ char* htmlencode(char* from);
 void waitmsgbar(int sec, int exit, char* text, int flag);
 char* getcolorformat(int line);
 void set_player_sound(int flag);
+void screenshoot(int flag);
 
 //rcconfig.h
 int getrcconfigint(char *key, char* ext);
