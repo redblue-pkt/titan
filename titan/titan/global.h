@@ -6,7 +6,7 @@ void guestthread()
 	int count = 0;
 	char* tmpstr = NULL;
 	
-	while(count < 6000000)
+	while(count < 601)
 	{
 		sleep(60);
 		count++;
