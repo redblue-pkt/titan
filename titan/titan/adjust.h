@@ -173,7 +173,7 @@ void screenadjust()
 	setchoiceboxselection(screenanimspeed, getconfig("screenanimspeed", NULL));
 
 	addchoicebox(channellistview, "0", _("hidden"));
-	addchoicebox(channellistview, "1", _("deactive"));
+	addchoicebox(channellistview, "1", _("deaktiv"));
 	setchoiceboxselection(channellistview, getconfig("channellistview", NULL));
 
 	addchoicebox(showlastpos, "0", _("no"));	

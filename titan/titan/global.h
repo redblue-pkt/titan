@@ -1,6 +1,31 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
+//flag 0: video+gui
+//flag 1: video
+//flag 2: gui
+
+void screenshoot(int flag)
+{
+	char* cmd = NULL;
+
+	videofreeze(status.aktservice->videodev);
+
+	if(flag == 0)
+		cmd = ostrcat("/sbin/grab -j 100 -r 960", NULL, 0, 0);
+	else if(flag == 1)
+		cmd = ostrcat("/sbin/grab -v -j 100 -r 960", NULL, 0, 0);
+	else if(flag == 2)
+		cmd = ostrcat("/sbin/grab -o -j 100 -r 960", NULL, 0, 0);
+
+	if(cmd != NULL)
+		system(cmd);
+
+	videocontinue(status.aktservice->videodev);
+	
+	free(cmd), cmd = NULL;
+}
+
 //flag 0: playerstart
 //flag 1: playerstop
 
