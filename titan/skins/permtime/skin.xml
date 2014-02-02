@@ -1,5 +1,5 @@
-<screen halign=center fontcol=fontcol fontsize=30 name=permtime posx=20 posy=20 width=100 height=50 vspace=10 bgcol=bgcol>
+<screen halign=center fontcol=ffffff fontsize=30 name=permtime posx=20 posy=20 width=100 height=50 vspace=10 bgcol=212121>
 </screen>
 
-<screen halign=center fontcol=fontcol fontsize=30 name=pospermtime posx=25 posy=2% width=100 height=50 vspace=10 bgcol=bgcol pic=%pluginpath%/permtime/skin/pos.png picwidth=1 picheight=1>
+<screen halign=center fontcol=ffffff fontsize=30 name=pospermtime posx=25 posy=2% width=100 height=50 vspace=10 bgcol=212121 pic=%pluginpath%/permtime/skin/pos.png picwidth=1 picheight=1>
 </screen>
