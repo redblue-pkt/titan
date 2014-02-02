@@ -425,7 +425,7 @@ void screeninfobar()
 			status.infobar = 0;
 			status.infobaraktiv = 0;
 			clearscreen(infobar);
-			screenkeyactions(1, 0);
+			screenkeyactions(2, 0);
 			status.infobaraktiv = 1;
 			status.updatevfd = START;
 			drawscreen(skin, 0, 0);
