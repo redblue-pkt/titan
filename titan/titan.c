@@ -1069,6 +1069,8 @@ firstwizzardstep1:
 		}
 	}
 
+	addtimer(&guestthread, START, 1000, 1, NULL, NULL, NULL);
+
 	screeninfobar();
 
 	//for testign screens
