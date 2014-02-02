@@ -1,7 +1,7 @@
 #tsSchnitt fullscreen, max 1220x660, Xspace=30 !
 <screen name="tsSchnitt" fontsize="28" fontcol="fontcol" bgcol="black" posx="left" posy="top" width="100%" height="100%" hspace="30" vspace="30">
 <node name="titletext" text="ts - cut" fontcol="black" fontsize="36" posx="0" posy="0" width="840" height="50" valign="middle" halign="center" bordercol="titlebgcol" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
-<node name="details" bordercol="titlebgcol" bordersize="1" borderradius="8" type="textbox" wrap="yes" fontsize="28" posx="0" posy="60" width="840" height="145" hspace="10" vspace="10" text="Film im internen Player starten, mit Taste 0 Marker während eines Films setzen. Taste 5 ist für die Markerübersicht. Anschließend hier Film auswählen und starten.">
+<node name="details" bordercol="titlebgcol" bordersize="1" borderradius="8" type="textbox" wrap="yes" fontsize="28" posx="0" posy="60" width="840" height="145" hspace="10" vspace="10" text="Start movie in the internal player, set with 0 key marker during a movie. 5 key is for the marker overview. Then here select movie and start.">
 	<node name="minitv" func="gettvpic" param1="494:25:210">
 	<node bordersize="5" bordercol="black" posx="850" posy="0" width="370" height="205" bgcol="0" transparent="255">
 	<node bordersize="5" bordercol="black" posx="850" posy="0" width="370" height="205" transparent="0">
