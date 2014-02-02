@@ -49,7 +49,7 @@ for ROUND in $POLIST; do
 done
 
 cd "$HOME"/flashimg/source.titan/po
-if [ $SVNUSER = "atemio" ];then
+if [ $SVNUSER = "aafsvn" ];then
 	svn commit -m "[titan] autoupdate po files"
 	svn commit "$HOME"/flashimg/source.titan/po
 fi
