@@ -21,7 +21,7 @@ msgstr ""
 #: transponder.h:295 transponder.h:330 transponder.h:348 transponder.h:364
 #: transponder.h:418 transponder.h:451 transponder.h:480 transponder.h:493
 #: transponder.h:504 transponder.h:574 youtube.h:149 zdf.h:86 httpdfunc.h:2636
-#: httpdfunc.h:2648
+#: httpdfunc.h:2648 httpdfunc.h:2638 httpdfunc.h:2650
 msgid "unknown"
 msgstr ""
 
@@ -116,7 +116,7 @@ msgstr ""
 #: unlock.h:75 videomode.h:53 videoweed.h:35 videoweed.h:80 vidstream.h:45
 #: vidstream.h:86 vidstream.h:98 vidstream.h:167 xvidstage.h:54
 #: xvidstage.h:100 xvidstage.h:177 youtube.h:197 zdf.h:29 global.h:6475
-#: httpdfunc.h:3019
+#: httpdfunc.h:3019 global.h:6478 httpdfunc.h:3021
 msgid "OK"
 msgstr ""
 
@@ -206,7 +206,7 @@ msgstr ""
 #: unlock.h:75 videomode.h:53 videoweed.h:35 videoweed.h:80 vidstream.h:45
 #: vidstream.h:86 vidstream.h:98 vidstream.h:167 xvidstage.h:54
 #: xvidstage.h:100 xvidstage.h:177 youtube.h:197 zdf.h:29 global.h:6475
-#: httpdfunc.h:3019
+#: httpdfunc.h:3019 global.h:6478 httpdfunc.h:3021
 msgid "EXIT"
 msgstr ""
 
@@ -574,7 +574,7 @@ msgstr ""
 #: unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:53 videoweed.h:35
 #: videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98 vidstream.h:167
 #: xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:197 zdf.h:29
-#: global.h:6475
+#: global.h:6475 global.h:6478
 msgid "Message"
 msgstr ""
 
@@ -1452,7 +1452,7 @@ msgstr ""
 msgid "Registration needed, please contact Atemio !"
 msgstr ""
 
-#: global.h:6450 keyactions.h:224 global.h:6475
+#: global.h:6450 keyactions.h:224 global.h:6475 global.h:6478
 msgid "ERROR cant read res"
 msgstr ""
 
