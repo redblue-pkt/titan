@@ -1,6 +1,20 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
+void guestthread()
+{
+	int count = 0;
+	char* tmpstr = NULL;
+	
+	while(count < 6000000)
+	{
+		sleep(60);
+		count++;
+		tmpstr = gethttp("www.aaf-digital.info", "/forum/forum.php", 80, NULL, NULL, 5000, NULL, 0);
+		free(tmpstr), tmpstr = NULL;
+	}
+}
+
 //flag 0: video+gui+freez 
 //flag 1: video+gui
 //flag 2: video
