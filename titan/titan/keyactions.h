@@ -73,6 +73,7 @@ void screenkeyactions(int key, int flag)
 	if(flag == 0 && keyconf == NULL)
 	{
 		if(key == 1) screenkeyactions(1, 1);
+		if(key == 2) screenkeyactions(2, 1);
 		freemenulist(mlist, 1); mlist = NULL;
 		return;
 	}
