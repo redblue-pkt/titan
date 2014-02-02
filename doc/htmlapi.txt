@@ -251,7 +251,7 @@ param:		moviename
 query:	getshoot
 raw:			fixtext "shoot.html"
 desc:			get a screenshot
-param:		type (1=gui, 2=tv, 3=gui + tv)
+param:		type (0=gui+tv+freez, 1=gui+tv, 2=tv, 3=gui)
 example:	queryraw?getshoot&1
 
 query:	poweroff
