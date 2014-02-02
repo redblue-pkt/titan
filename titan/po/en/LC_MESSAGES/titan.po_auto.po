@@ -20,7 +20,8 @@ msgstr ""
 #: transponder.h:158 transponder.h:194 transponder.h:227 transponder.h:259
 #: transponder.h:295 transponder.h:330 transponder.h:348 transponder.h:364
 #: transponder.h:418 transponder.h:451 transponder.h:480 transponder.h:493
-#: transponder.h:504 transponder.h:574 youtube.h:149 zdf.h:86
+#: transponder.h:504 transponder.h:574 youtube.h:149 zdf.h:86 httpdfunc.h:2636
+#: httpdfunc.h:2648
 msgid "unknown"
 msgstr ""
 
@@ -114,7 +115,8 @@ msgstr ""
 #: tpk.new.h:3167 tunerconfig.h:772 unlock.h:20 unlock.h:66 unlock.h:71
 #: unlock.h:75 videomode.h:53 videoweed.h:35 videoweed.h:80 vidstream.h:45
 #: vidstream.h:86 vidstream.h:98 vidstream.h:167 xvidstage.h:54
-#: xvidstage.h:100 xvidstage.h:177 youtube.h:197 zdf.h:29
+#: xvidstage.h:100 xvidstage.h:177 youtube.h:197 zdf.h:29 global.h:6475
+#: httpdfunc.h:3019
 msgid "OK"
 msgstr ""
 
@@ -203,7 +205,8 @@ msgstr ""
 #: tpk.new.h:3167 tunerconfig.h:772 unlock.h:20 unlock.h:66 unlock.h:71
 #: unlock.h:75 videomode.h:53 videoweed.h:35 videoweed.h:80 vidstream.h:45
 #: vidstream.h:86 vidstream.h:98 vidstream.h:167 xvidstage.h:54
-#: xvidstage.h:100 xvidstage.h:177 youtube.h:197 zdf.h:29
+#: xvidstage.h:100 xvidstage.h:177 youtube.h:197 zdf.h:29 global.h:6475
+#: httpdfunc.h:3019
 msgid "EXIT"
 msgstr ""
 
@@ -382,6 +385,7 @@ msgid "Gui Restart"
 msgstr ""
 
 #: adjust.h:112 adjust.h:122 epgsettings.h:145 epgsettings.h:151 network.h:593
+#: adjust.h:176
 msgid "deaktiv"
 msgstr ""
 
@@ -570,6 +574,7 @@ msgstr ""
 #: unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:53 videoweed.h:35
 #: videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98 vidstream.h:167
 #: xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:197 zdf.h:29
+#: global.h:6475
 msgid "Message"
 msgstr ""
 
@@ -1447,7 +1452,7 @@ msgstr ""
 msgid "Registration needed, please contact Atemio !"
 msgstr ""
 
-#: global.h:6450 keyactions.h:224
+#: global.h:6450 keyactions.h:224 global.h:6475
 msgid "ERROR cant read res"
 msgstr ""
 
