@@ -15,10 +15,10 @@ fi
 rm -rf "$HOME"/flashimg/source.titan/titan/tools/tmp
 mkdir -p "$HOME"/flashimg/source.titan/titan/tools/tmp
 
-LIST=`find "$HOME"/flashimg/source.titan -type f -name "*.h"`
+LIST=`find "$HOME"/flashimg/source.titan/titan "$HOME"/flashimg/source.titan/plugins -type f -name "*.h"`
+LIST="$LIST $HOME/flashimg/source.titan/titan/titan.c"
 POLIST=`find "$HOME"/flashimg/source.titan/po -type f -name "*_auto.po"`
 SKINLIST=`find "$HOME"/flashimg/source.titan -type f -name "*kin.xml"`
-
 
 for ROUND in $LIST; do
 	cp -a $ROUND "$HOME"/flashimg/source.titan/titan/tools/tmp
@@ -40,15 +40,16 @@ done
 
 for ROUND in $POLIST; do
 	echo "[create.po] update $ROUND"
+	echo xgettext --omit-header -k_ *.* -o $ROUND
 	if [ "$2" == "update" ]; then
-		xgettext --omit-header -j -k_ *.h -o $ROUND
+		xgettext --omit-header -j -k_ *.* -o $ROUND
 	else
-		xgettext --omit-header -k_ *.h -o $ROUND
+		xgettext --omit-header -k_ *.* -o $ROUND
 	fi
 done
 
 cd "$HOME"/flashimg/source.titan/po
-if [ $SVNUSER = "aafsvn" ];then
+if [ $SVNUSER = "atemio" ];then
 	svn commit -m "[titan] autoupdate po files"
 	svn commit "$HOME"/flashimg/source.titan/po
 fi
