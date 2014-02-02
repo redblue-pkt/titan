@@ -118,7 +118,7 @@ msgstr ""
 #: vidstream.h:86 vidstream.h:98 vidstream.h:167 xvidstage.h:54
 #: xvidstage.h:100 xvidstage.h:177 youtube.h:197 zdf.h:29 global.h:6475
 #: httpdfunc.h:3019 global.h:6478 httpdfunc.h:3021 global.h:6480
-#: keyactions.h:226 keyactions.h:227
+#: keyactions.h:226 keyactions.h:227 global.h:6494
 msgid "OK"
 msgstr ""
 
@@ -209,7 +209,7 @@ msgstr ""
 #: vidstream.h:86 vidstream.h:98 vidstream.h:167 xvidstage.h:54
 #: xvidstage.h:100 xvidstage.h:177 youtube.h:197 zdf.h:29 global.h:6475
 #: httpdfunc.h:3019 global.h:6478 httpdfunc.h:3021 global.h:6480
-#: keyactions.h:226 keyactions.h:227
+#: keyactions.h:226 keyactions.h:227 global.h:6494
 msgid "EXIT"
 msgstr ""
 
@@ -584,6 +584,7 @@ msgstr ""
 #: videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98 vidstream.h:167
 #: xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:197 zdf.h:29
 #: global.h:6475 global.h:6478 global.h:6480 keyactions.h:226 keyactions.h:227
+#: global.h:6494
 msgid "Message"
 msgstr ""
 
@@ -1465,7 +1466,7 @@ msgid "Registration needed, please contact Atemio !"
 msgstr ""
 
 #: global.h:6450 keyactions.h:224 global.h:6475 global.h:6478 global.h:6480
-#: keyactions.h:226 keyactions.h:227
+#: keyactions.h:226 keyactions.h:227 global.h:6494
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -7691,11 +7692,11 @@ msgid ""
 "Repair it?"
 msgstr ""
 
-#: titan.c:1109
+#: titan.c:1109 titan.c:1111
 msgid "Unknown Error."
 msgstr ""
 
-#: titan.c:1111
+#: titan.c:1111 titan.c:1113
 msgid "Automatic stop in 10 seconds."
 msgstr ""
 
