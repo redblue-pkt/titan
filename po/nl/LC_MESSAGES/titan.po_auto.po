@@ -3008,7 +3008,7 @@ msgstr ""
 
 #: plugins_dlna_skin.xml.h:14 plugins_tsSchnitt_skin.xml.h:9
 #: skin_default_skin.xml.h:606 skins_dlna_skin.xml.h:14
-#: skins_tsSchnitt_skin.xml.h:9
+#: skins_tsSchnitt_skin.xml.h:9 skin_default_skin.xml.h:607
 msgid "STOP"
 msgstr ""
 
@@ -6010,11 +6010,11 @@ msgstr ""
 msgid "Menulist"
 msgstr ""
 
-#: skin_default_skin.xml.h:369
+#: skin_default_skin.xml.h:369 skin_default_skin.xml.h:370
 msgid "MENUPROTECT"
 msgstr ""
 
-#: skin_default_skin.xml.h:370
+#: skin_default_skin.xml.h:370 skin_default_skin.xml.h:369
 msgid "Menu Protect"
 msgstr ""
 
@@ -6844,7 +6844,7 @@ msgstr ""
 msgid "Step signalrate"
 msgstr ""
 
-#: skin_default_skin.xml.h:607
+#: skin_default_skin.xml.h:607 skin_default_skin.xml.h:606
 msgid "(Stop)"
 msgstr ""
 
