@@ -9,9 +9,11 @@
 void screenshoot(int flag)
 {
 	char* cmd = NULL;
-printf("flag: %d\n", flag);
 	if(flag == 0 || flag == 2)
+	{
 		videofreeze(status.aktservice->videodev);
+		sleep(1);
+	}
 
 	if(flag == 0 || flag == 1)
 		cmd = ostrcat("/sbin/grab -j 100 -r 960", NULL, 0, 0);
