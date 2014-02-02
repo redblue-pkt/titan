@@ -3,6 +3,7 @@
 
 //key 0: blue
 //key 1: red
+//key 2: plugin
 //flag 0: without menulist
 //flag 1: with menulist
 void screenkeyactions(int key, int flag)
@@ -66,6 +67,7 @@ void screenkeyactions(int key, int flag)
 	{
 		if(key == 0) keyconf = getconfig("bluekey", NULL);
 		if(key == 1) keyconf = getconfig("redkey", NULL);
+		if(key == 2) keyconf = getconfig("pluginkey", NULL);
 	}
 	
 	if(flag == 0 && keyconf == NULL)
