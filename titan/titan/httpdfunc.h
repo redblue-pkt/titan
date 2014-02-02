@@ -1583,7 +1583,9 @@ char* webgetdrawcount(char* param, int fmt)
 
 void webgetshoot(char* param, int fmt)
 {
-	screenshoot(0);
+	printf("param: %s\n",param);
+	printf("parm: %d\n",fmt);
+	screenshoot(atoi(param));
 }
 
 char* webgetepgsearch(char* query, char* param, int fmt)
