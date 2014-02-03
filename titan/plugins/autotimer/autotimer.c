@@ -345,12 +345,16 @@ void autotimer_thread()
 		}
 	}
 	free(buf); buf = NULL;
-	search1->channelname = NULL;
-	search1->search = NULL;
-	search2->channelname = NULL;
-	search2->search = NULL;
-	free(search1); search1 = NULL;
-	free(search2); search2 = NULL;
+	if(search1 != NULL) {
+		search1->channelname = NULL;
+		search1->search = NULL;
+		free(search1); search1 = NULL;
+	}
+	if(search2 != NULL) {
+		search2->channelname = NULL;
+		search2->search = NULL;
+		free(search2); search2 = NULL;
+	}
 	autotimerthread = NULL;
 	addconfigint("at1_running", 0);
   return;
