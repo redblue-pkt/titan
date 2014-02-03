@@ -895,6 +895,7 @@ msgstr ""
 #: skins_tsSchnitt_skin.xml.h:11 skins_weather_skin.xml.h:4
 #: skins_wins3_skin.xml.h:4 skins_zapback_skin.xml.h:7
 #: skin_default_skin.xml.h:734 skin_default_skin.xml.h:735
+#: plugins_tithek_skin.xml.h:14 skins_tithek_skin.xml.h:14
 msgid ""
 msgstr ""
 
@@ -3884,10 +3885,12 @@ msgid "TITHEK SETTINGS"
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:13 skins_tithek_skin.xml.h:13
+#: plugins_tithek_skin.xml.h:12 skins_tithek_skin.xml.h:12
 msgid "View Cover"
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:14 skins_tithek_skin.xml.h:14
+#: plugins_tithek_skin.xml.h:13 skins_tithek_skin.xml.h:13
 msgid "View Sections"
 msgstr ""
 
@@ -8292,4 +8295,8 @@ msgstr ""
 
 #: skin_default_skin.xml.h:546
 msgid "Search"
+msgstr ""
+
+#: plugins_tithek_skin.xml.h:2 skins_tithek_skin.xml.h:2
+msgid "TiThek Settings"
 msgstr ""
