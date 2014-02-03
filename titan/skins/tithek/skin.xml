@@ -1,36 +1,37 @@
-<screen fontcol=fontcol title="TiThek Menu" titlealign=center name="tithekmenu" hspace=30 vspace=30 fontsize=30 posx=center posy=center width=50% height=75% bordercol=bordercol bordersize=2 bgcol=bgcol>
-<node fontsize=30 bordercol=bordercol scrollbar=auto type=listbox name=listbox width=100% height=100%>
+<screen name="tithekmenu" title="TiThek Menu" titlealign="center" fontcol="fontcol" hspace="30" vspace="30" fontsize="30" posx="center" posy="center" width="50%" height="75%" bordercol="bordercol" bordersize="1" bgcol="bgcol">
+	<node name="listbox" type="listbox" scrollbar="auto" bordercol="bordercol" fontsize="30" width="100%" height="100%">
 </screen>
 
-<screen name="titheklist" fontcol=fontcol valign=bottom titlealign=center hspace=5 vspace=5 fontsize=30 title="TiThek PlayList" posx=center posy=center width=95% height=95% bordercol=bordercol bordersize=2 bgcol=bgcol>
-<node fontcol=fontcol fontsize=20 bordersize=0 bordercol=bordercol scrollbar=yes type=grid name=listbox posx=0 posy=1 width=100% height=-35>
-<node name="buttonbar" posx=center posy="0" width=100% height="50" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
-<node name="b1" picmem="skin/key_ok_70x40.png"   posx="50"  posy="590" width="70" height="40">
-<node name="b2" picmem="skin/key_exit_70x40.png" posx="125" posy="590" width="70" height="40">
-<node name="b3" text="Red-Menu" picmem="skin/key_red_30x30.png" posx="205" posy="595" textposx="40" valign="middle" fontcol="black" fontsize="25" width="180" height="30">
-<node name="b4" text="ADD FAV" picmem="skin/key_green_30x30.png"  textposx="40" valign="middle" fontcol="black" fontsize="25" posx="400" posy="595" width="220" height="30">
-<node name="b5" text="DEL FAV" picmem="skin/key_yellow_30x30.png" textposx="40" valign="middle" fontcol="black" fontsize="25" posx="620" posy="595" width="180" height="30">
-<node name="b6" text="Exit Tithek" picmem="skin/key_blue_30x30.png" textposx="40" valign="middle" fontcol="black" fontsize="25" posx="800" posy="595" width="180" height="30">
-<node name="b7" picmem="skin/key_menu_70x40.png" posx="1020" posy="590" width="70" height="40">
-<node name=countlabel hspace=0 halign=center valign=center posx=center posy=565 width=100% height=20/>
-<node name=countpage hspace=0 halign=right valign=center posx=right posy=565 width=100% height=20/>
+
+<screen name="titheklist" title="" titlealign="center" fontsize="36" fontcol="black" posx="center" posy="center" width="1220" height="680" valign="bottom" bordercol="black" bordersize="1" borderradius="8" titlebgcol="titlebgcol" titlebgcol2="white" titlegradient="topmiddle" bgcol="black">
+	<node name="listbox" type="grid" scrollbar="yes" fontsize="20" fontcol="fontcol" bordercol="titlebgcol" posx="center" posy="top" width="1204" height="-52">
+	<node name="countlabel" fontsize="20" fontcol="fontcol" halign="center" valign="middle" posx="center" posy="565" width="500" height="20">
+	<node name="countpage"  fontsize="20" fontcol="fontcol" halign="right"  valign="middle" posx="900"    posy="565" width="276" height="20">
+	<node name="buttonbar" posx="0" posy="0" width="100%" height="50" hspace="5" fontcol="black" fontsize="25" bordercol="titlebgcol" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
+		<node parent="buttonbar" name="b1" picmem="skin/key_ok_70x40.png"     posx="0"   posy="center" width="70" height="40">
+		<node parent="buttonbar" name="b2" picmem="skin/key_exit_70x40.png"   posx="70"  posy="center" width="70" height="40">
+		<node parent="buttonbar" name="b3" picmem="skin/key_red_30x30.png"    posx="150" posy="center" width="180" height="30" valign="middle" textposx="40" text="Red-Menu">
+		<node parent="buttonbar" name="b4" picmem="skin/key_green_30x30.png"  posx="340" posy="center" width="240" height="30" valign="middle" textposx="40" text="ADD FAV">
+		<node parent="buttonbar" name="b5" picmem="skin/key_yellow_30x30.png" posx="590" posy="center" width="200" height="30" valign="middle" textposx="40" text="DEL FAV">
+		<node parent="buttonbar" name="b6" picmem="skin/key_blue_30x30.png"   posx="800" posy="center" width="200" height="30" valign="middle" textposx="40" text="Exit Tithek">
+		<node parent="buttonbar" name="b7" picmem="skin/key_menu_70x40.png"   posx="right" posy="center" width="70" height="40">
 </screen>
 
-<screen name="tithek_settings" picmem=%pluginpath%/mc/skin/background5.png fontcol=fontcol valign=bottom fontsize=30 posx=center posy=center width=100% height=100% bordersize=0 bgcol=bgcol>
-<node textposx=100 text="TITHEK SETTINGS" name=mc_audioplayer_name posx=0 posy=30 width=100% height=30 fontcol=fontcol/>
-<node bordercol=bordercol scrollbar=auto type=listbox posy=150 posx=350 name=listbox width=45% height=60%>
-<node name=view type=choicebox parent=listbox valign=middle posx=0 text="View Sections" bordercol=bordercol bordersize=1 width=100% height=25>
-<node name=cover type=choicebox parent=listbox valign=middle posx=0 text="View Cover" bordercol=bordercol bordersize=1 width=100% height=25>
-<node name=picratio type=choicebox parent=listbox valign=middle posx=0 text="Pic Ratio" bordercol=bordercol bordersize=1 width=100% height=25>
-<node name=pay type=choicebox parent=listbox valign=middle posx=0 text="Show Pay Streams" bordercol=bordercol bordersize=1 width=100% height=25>
-<node name=hidxxx type=choicebox parent=listbox valign=middle posx=0 text="Hid XXX Streams" bordercol=bordercol bordersize=1 width=100% height=25>
 
-<node name="buttonbar" posx=center posy="660" width="1220" height="50" bordercol="black" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
-<node name="b1" picmem="skin/key_ok_70x40.png"   posx="50"  posy="665" width="70" height="40">
-<node name="b2" picmem="skin/key_exit_70x40.png" posx="125" posy="665" width="70" height="40">
-<node name="b3" text="Screensaver" picmem="skin/key_green_30x30.png"   textposx="40" valign="middle" fontcol="black" fontsize="25" posx="205" posy="670" width="300" height="30">
+<screen name="tithek_settings" title="TiThek Settings" titlealign="center" fontsize="36" fontcol="black" posx="center" posy="center" width="1220" height="680" valign="bottom" bordercol="black" bordersize="1" borderradius="8" titlebgcol="titlebgcol" titlebgcol2="white" titlegradient="topmiddle" bgcol="black">
+	<node name="listbox" type="listbox" scrollbar="auto" fontsize="28" fontcol="fontcol" bordersize="1" bordercol="titlebgcol" posx="center" posy="center" width="800" height="300">
+		<node parent="listbox" name="view" text="View Sections" type="choicebox" valign="middle" width="100%" height="35">
+		<node parent="listbox" name="cover" text="View Cover" type="choicebox" valign="middle" width="100%" height="35">
+		<node parent="listbox" name="picratio" text="Pic Ratio" type="choicebox" valign="middle" width="100%" height="35">
+		<node parent="listbox" name="pay" text="Show Pay Streams" type="choicebox" valign="middle" width="100%" height="35">
+		<node parent="listbox" name="hidxxx" text="Hid XXX Streams" type="choicebox" valign="middle" width="100%" height="35">
+	<node name="buttonbar" posx="0" posy="0" width="100%" height="50" hspace="5" fontcol="black" fontsize="25" bordercol="titlebgcol" bordersize="1" borderradius="8" bgcol="titlebgcol" bgcol2="white" gradient="topmiddle">
+		<node parent="buttonbar" name="b1" picmem="skin/key_ok_70x40.png"    posx="0"   posy="center" width="70" height="40">
+		<node parent="buttonbar" name="b2" picmem="skin/key_exit_70x40.png"  posx="70"  posy="center" width="70" height="40">
+		<node parent="buttonbar" name="b3" picmem="skin/key_green_30x30.png" posx="150" posy="center" width="280" height="30" valign="middle" textposx="40" text="Screensaver">
 </screen>
 
-<screen bgcol=-2 fontsize=50 fontcol=fontcol text="" name=loadingproz posx=0 posy=center halign=center width=100% height=70>
-<node name="proztext" text="please wait..." fontcol=fontcol fontsize="50" posx="0" posy="0" width="840" height="50" valign="middle" halign="center">
+
+<screen name="loadingproz" text="" fontsize="50" fontcol="fontcol" posx="0" posy="center" halign="center" width="100%" height="70" bgcol="-2">
+	<node name="proztext" text="please wait..." fontsize="50" fontcol="fontcol" posx="0" posy="0" width="840" height="50" valign="middle" halign="center">
 </screen>
