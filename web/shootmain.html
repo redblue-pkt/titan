@@ -3,8 +3,10 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<!--<meta http-equiv="refresh" content="5">-->
 		<link rel="stylesheet" type="text/css" href="titan.css">
+		<script language='JavaScript' src='helper.js'></script>
 		<script type="text/javascript">
 			locOSDcount='0';
+			shootType='0';
 			function subRequestReturn(sURL) {
 				try {
 					var xmlhttp = new XMLHttpRequest;
@@ -15,37 +17,94 @@
 					return false;
 				}
 			}
+			function checkelements() {
+				if (shootType == "2") {
+			  	document.all.autoupdate.checked=false;
+			  	document.all.autoupdate.disabled=true;
+			  } else {
+					document.all.autoupdate.disabled=false;
+				}
+				document.all.ShootBtn.disabled = document.all.autoupdate.checked;
+				document.all.type.disabled = document.all.autoupdate.checked;
+			}
+			function doshoot() {
+				var temptype="0";
+				if (document.all.autoupdate.checked == true && shootType == 0) {
+					temptype="1";
+				} else {
+					temptype=shootType;
+				}
+				mainshoot.location.href="query?getshoot&"+temptype;
+			}
+			function manshootclick() {
+				locOSDcount = subRequestReturn('queryraw?getdrawcount');
+				doshoot();
+			}
 			function shootreload() {
 				if (document.all.autoupdate.checked == true) {
 					var newOSDcount = subRequestReturn('queryraw?getdrawcount');
 					if (locOSDcount != newOSDcount) {
 						locOSDcount=newOSDcount;
-						mainshoot.location.href="query?getshoot&1";
+						doshoot();
 					} else {
 						setTimeout("shootreload()",1000);
 					}		
 				}
 			}
+			function shootreloadclick() {
+				checkelements();
+				shootreload();
+			}
+			function shoottypechange() {
+			  shootType=document.all.type.value;
+				checkelements();
+				try{
+					setCookie('tiTanShoot',shootType);
+				}catch(err){
+					
+				}
+			}
+			function firststart() {
+				var temp;
+				if((temp=getCookie('tiTanShoot'))!=null){
+					shootType=temp; 
+				}
+				if (shootType == "1") {
+					shootType="0";
+				}
+				document.all.type.value=shootType;
+				checkelements();
+				manshootclick();
+			}
 		</script>
 	</head>
-	<body class=body>
+	<body class=body>	
 		<script type="text/javascript">
-			locOSDcount = subRequestReturn('queryraw?getdrawcount');
-		</script>	
+		  setTimeout("firststart()",10);
+		</script>
 		<table width=100% height=100% border=0 cellpadding=0 cellspacing=0>
 			<tr>
-				<td width=180>
+				<td width=360>
+					<input type="button" name="ShootBtn" value="Screenshot erstellen" onclick=manshootclick()>
+					<label class=label>Typ:</label>
+					<select name="type" onChange=shoottypechange()>
+						<option value="3">nur OSD</option>
+						<option value="2">nur TV</option>
+						<option value="0">OSD+TV</option>
+					</select>
 				</td>
 				<td align=center valign=middle height=20>
 					<div class=label>OSD Screenshot</div>
 				</td>
 				<td width=180>
-					<div class=label><input type="checkbox" name="autoupdate" onclick=shootreload()>Automatisch updaten</div>
+				</td>
+				<td width=180>
+					<div class=label><input type="checkbox" name="autoupdate" onclick=shootreloadclick()>Automatisch updaten</div>
 				</td>
 			</tr>
 			<tr>
-				<td colspan="3" >
-					<iframe id="shootframe" name=mainshoot marginheight=0 marginwidth=0 border=0 frameborder=0 width=100% height=100% src=query?getshoot&0></iframe>
+				<td colspan="5" >
+					<iframe id="shootframe" name=mainshoot marginheight=0 marginwidth=0 border=0 frameborder=0 width=100% height=100%</iframe>
 				</td>
 			</tr>	
 		</table>
