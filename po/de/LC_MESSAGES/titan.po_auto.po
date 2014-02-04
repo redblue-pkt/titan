@@ -475,10 +475,6 @@ msgstr "Sehr langsam"
 msgid "hidden"
 msgstr "Versteckt"
 
-#: adjust.h:176
-msgid "deactive"
-msgstr "Deaktiviert"
-
 #: adjust.h:187
 msgid "channel-movie"
 msgstr "Kanal - Sendungstitel"
@@ -3359,7 +3355,7 @@ msgstr "Fotos anzeigen"
 
 #: plugins_mc_skin.xml.h:44 skins_mc_skin.xml.h:44
 msgid "PICTURE SETTINGS"
-msgstr ""FOTOS Einstellungen""
+msgstr "FOTOS Einstellungen"
 
 #: plugins_mc_skin.xml.h:45 skins_mc_skin.xml.h:45
 msgid "Radio Player"
@@ -4193,15 +4189,15 @@ msgstr "!!! Unbekannter Fehler !!!"
 
 #: rectimer.h:134
 msgid "Timer starttime or endtime not ok"
-msgstr "FEHLER: Start- oder Endzeit ist fehlerhaft!
+msgstr "FEHLER: Start- oder Endzeit ist fehlerhaft!"
 
 #: rectimer.h:139
 msgid "Timer endtime shorter than aktual time"
-msgstr "FEHLER: Endzeit liegt in der Vergangeheit!
+msgstr "FEHLER: Endzeit liegt in der Vergangenheit!"
 
 #: rectimer.h:144
 msgid "Timer endtime shorter than start time"
-msgstr FEHLER: Endzeit liegt vor Startzeit!
+msgstr "FEHLER: Endzeit liegt vor Startzeit!"
 
 #: rectimer.h:149
 msgid "Timer service ID not ok"
@@ -5923,7 +5919,7 @@ msgstr "Listbox Auswahl"
 
 #: skin_default_skin.xml.h:345
 msgid "Listbox Select Color"
-msgstr ""Listbox Auswahl Farbe"
+msgstr "Listbox Auswahl Farbe"
 
 #: skin_default_skin.xml.h:346
 msgid "LNB Settings"
@@ -6409,7 +6405,7 @@ msgstr "Aufnahme Name"
 
 #: skin_default_skin.xml.h:476
 msgid "Recordlist"
-msgstr Liste der Aufnahmen"
+msgstr "Liste der Aufnahmen"
 
 #: skin_default_skin.xml.h:477
 msgid "Record Overrun (min)"
@@ -7565,7 +7561,7 @@ msgstr "Beginne den Kompletten Flaschvorgang?"
 
 #: system_update.h:313
 msgid "starting Full Update (from backup) ?"
-msgstr "Beginne den Kompletten Flaschvorgang eines gesicherten Systemabbilds"
+msgstr "Beginne den Kompletten Flashvorgang eines gesicherten Systemabbilds"
 
 #: system_update.h:320
 msgid "Error file not supported"
@@ -7624,8 +7620,8 @@ msgid ""
 "Found running record\n"
 "or record is starting in next time.\n"
 "Really shutdown ?"
-msgstr "Eine Aufnahme wird aufgezeichnet oder eine Zeitgesteuerte Aufnahme startet gleich.\n"
-"Soll das System trotzdem Neugestartet werden?"
+msgstr "Eine Aufnahme wird aufgezeichnet oder eine zeitgesteuerte Aufnahme startet bald.\n"
+"Soll das System trotzdem neugestartet werden?"
 
 #: titan.c:318
 msgid ""
@@ -7711,7 +7707,7 @@ msgstr "Der Anbieter wird zur Zeit nicht unterstützt!"
 #: tithek.h:620
 msgid "File exist, overwrite?"
 msgstr "Diese Datei existiert bereits."\n
-"Soll die vorhande Datei überschrieben werden?"
+"Soll die vorhandene Datei überschrieben werden?"
 
 #: tithek.h:826
 msgid "found"
@@ -7729,8 +7725,8 @@ msgstr "Zwischenspeicher leeren?"
 msgid ""
 "Can't start download.\n"
 "Please try later."
-msgstr "Kann den Downlaod nicht starten.\n"
-"Bitte versuchen Sie es zu einem späteren Zeitlunkt erneut."
+msgstr "Kann den Download nicht starten.\n"
+"Bitte versuchen Sie es zu einem späteren Zeitpunkt erneut."
 
 #: tithek.h:1327
 msgid "Start playback"
@@ -7754,7 +7750,7 @@ msgstr "DIesen Favoriten löschen?"
 
 #: tithek.h:3071
 msgid "Add this link as Favorite ?"
-msgstr "Diesen Link zu de nFavoriten hinzufügen?"
+msgstr "Diesen Link zu den Favoriten hinzufügen?"
 
 #: tithek_settings.h:17 tithek_settings.h:25
 msgid "show auto entrys"
@@ -7762,23 +7758,23 @@ msgstr "Anzeige im automatischen Modus"
 
 #: tithek_settings.h:18 tithek_settings.h:26
 msgid "show 2 entrys"
-msgstr "Anzeige von je 2 Einträge"
+msgstr "Zeige 2 Einträge"
 
 #: tithek_settings.h:19 tithek_settings.h:27
 msgid "show 6 entrys"
-msgstr "Anzeige von je 6 Einträge"
+msgstr "Zeige 6 Einträge"
 
 #: tithek_settings.h:20 tithek_settings.h:28
 msgid "show 12 entrys"
-msgstr "Anzeige von je 12 Einträge"
+msgstr "Zeige 12 Einträge"
 
 #: tithek_settings.h:21 tithek_settings.h:29
 msgid "show 20 entrys"
-msgstr "Anzeige von je 20 Einträge"
+msgstr "Zeige 20 Einträge"
 
 #: tithek_settings.h:22 tithek_settings.h:30
 msgid "show 30 entrys"
-msgstr "Anzeige von je 30 Einträge"
+msgstr "Zeige 30 Einträge"
 
 #: tmc.h:387
 msgid "Status"
@@ -7810,7 +7806,7 @@ msgstr "Video / Bild"
 
 #: tmc.h:545
 msgid "audio / picture"
-msgstr "Audoi / Bild"
+msgstr "Audio / Bild"
 
 #: tmc.h:548
 msgid "pic1"
@@ -7869,7 +7865,7 @@ msgstr "IMDB Erweiterung wurde nicht gefunden!\n"
 
 #: tmdb.h:922
 msgid "Error, found result without imdbid we can't this save in MediaDB"
-msgstr "FEHLER: in der imdb-id ist ein Fehler und kan ndaher nicht übernommen werden!"
+msgstr "FEHLER: in der imdb-id ist ein Fehler und kann daher nicht übernommen werden!"
 
 #: tpchoice.h:21
 msgid "Transponderlist"
@@ -7885,7 +7881,7 @@ msgstr "Kabel"
 
 #: tpchoice.h:72
 msgid "TERR"
-msgstr "Terrestrisch"
+msgstr "Terristrisch"
 
 #: tpchoice.h:74
 msgid "UNKNOWN"
@@ -7970,7 +7966,7 @@ msgstr ""
 
 #: transponder.h:572 transponder.h:579
 msgid "DVBS"
-msgstr ""
+msgstr "DVB-S"
 
 #: transponder.h:573 transponder.h:581
 msgid "DVBS2"
@@ -8010,7 +8006,7 @@ msgstr "LNB / Unikabel"
 
 #: tunerconfig.h:379
 msgid "Terrestrisch"
-msgstr "Terrestrich"
+msgstr "Terristrisch"
 
 #: tunerconfig.h:645
 msgid "direct connect"
@@ -8044,7 +8040,7 @@ msgid ""
 "Can't save Code.\n"
 "Delete Plugins to free space"
 msgstr "Aktivierungscode kann nicht gespeichert werden.\n"
-"Bitte löschen Sie Erweiterungen um Speicherplatz freizugeben."
+"Bitte löschen Sie Erweiterungen, um Speicherplatz freizugeben."
 
 #: unlock.h:71
 msgid "Code ok"
@@ -8104,15 +8100,15 @@ msgstr "Blinkender Stern"
 
 #: weather.h:430 weather.h:448 weather.h:466 weather.h:484
 msgid "Day: "
-msgstr "Tag"
+msgstr "Tag:"
 
 #: weather.h:434 weather.h:452 weather.h:470 weather.h:488
 msgid "Lowest temp: "
-msgstr "Tiefsttemperatur"
+msgstr "Tiefsttemperatur:"
 
 #: weather.h:438 weather.h:456 weather.h:474 weather.h:492
 msgid "Highest temp: "
-msgstr "Höchsttemperatur"
+msgstr "Höchsttemperatur:"
 
 #: weather.h:442 weather.h:460 weather.h:478 weather.h:496
 msgid "Condition: "
