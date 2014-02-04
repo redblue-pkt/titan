@@ -26,7 +26,7 @@ msgstr "Unbekannt"
 
 #: about.h:32 skin_default_skin.xml.h:677
 msgid "Tunertype"
-msgstr ""
+msgstr "Art des Tuners"
 
 #: about.h:45
 msgid "System-Info"
@@ -363,7 +363,7 @@ msgstr "Datum absteigend"
 
 #: adjust.h:105
 msgid "Power Menu"
-msgstr ""
+msgstr "Ausschalten / Neustarten..."
 
 #: adjust.h:106 skin_default_skin.xml.h:453
 msgid "Power Off"
@@ -437,11 +437,11 @@ msgstr "nichts tun"
 
 #: adjust.h:154 rectimer.h:1166
 msgid "standby"
-msgstr ""
+msgstr "Bereitschaft"
 
 #: adjust.h:155 rectimer.h:1167
 msgid "power off"
-msgstr "AUsschalten"
+msgstr "Ausschalten"
 
 #: adjust.h:163
 msgid "anim. width"
@@ -485,7 +485,7 @@ msgstr "Sendungstitel - Kanal"
 
 #: adjust.h:202
 msgid "expert (11)"
-msgstr ""
+msgstr "Experten Modus (11)"
 
 #: adjust.h:211
 msgid "yes / vzap 1 sec"
@@ -622,7 +622,7 @@ msgstr "Ist dieser Videomodus ok?"
 msgid ""
 "This Plugin is only for Betatester and can change your Settings!\n"
 "Realy run it?"
-msgstr "Diese Erweiterung ist nur für Betatester und könnteIhre Settings verändern!\n"
+msgstr "Diese Erweiterung ist nur für Betatester und könnte Ihre Einstellungen verändern!\n"
 "Trotzdem ausführen?"
 
 #: bgdownload.h:176
@@ -766,15 +766,15 @@ msgstr "Kopieren des Anbieters abgebrochen"
 
 #: channellist.h:920
 msgid "Copy satlist successfull"
-msgstr "Kopieren des Satelliten erfolgreich abgeschlossen"
+msgstr "Kopieren der Senderliste erfolgreich abgeschlossen"
 
 #: channellist.h:922
 msgid "Copy satlist not ok"
-msgstr "Kopieren des Satelliten abgebrochen"
+msgstr "Kopieren der Senderliste abgebrochen"
 
 #: channellist.h:1006
 msgid "Can't remove akive Service"
-msgstr "Aktueller Sender kann nicht gelöscht werden!"
+msgstr "Aktiver Sender kann nicht gelöscht werden!"
 
 #: channellist.h:1295 channellist.h:1296
 msgid "Channels A-Z"
@@ -1026,7 +1026,7 @@ msgstr ""
 #: divxstage.h:79 novamov.h:80 nowvideo.h:87 primeshare.h:79 videoweed.h:80
 msgid ""
 "The file is being transfered to our other servers. This may take few minutes."
-msgstr ""
+msgstr "Die ausgewählte Datei ist vorübergehend nicht verfügbar.\nBitte versuchen Sie es zu einem späteren Zeitpunkt erneut."
 
 #: divxstage.h:150 faststream.h:79 faststream.h:90 faststream.h:102
 #: faststream.h:160 filenuke.h:84 filenuke.h:95 filenuke.h:107 filenuke.h:157
@@ -1061,11 +1061,11 @@ msgstr ""
 
 #: download.h:97
 msgid "download error"
-msgstr "Download Fehler"
+msgstr "FELER: Beim herunterladen trat ein unerwarteter Fehler auf!"
 
 #: download.h:101
 msgid "wait for stopping download"
-msgstr "Bitte warten Sie bis der Download beendet wurde."
+msgstr "Bitte warten Sie, bis das herunterladen beendet wurde."
 
 #: dvdplay.h:29
 msgid "EJECT"
@@ -1106,7 +1106,7 @@ msgstr ""
 
 #: epgsearch.h:244
 msgid "History"
-msgstr "Verlauf"
+msgstr "Geschichte"
 
 #: epgsearch.h:252
 msgid "Doku"
@@ -1178,7 +1178,7 @@ msgstr "Weiße Liste"
 
 #: epgsettings.h:148
 msgid "scan and whitelist"
-msgstr "scan-Liste und Weiße Liste"
+msgstr "Scan-Liste und Weiße Liste"
 
 #: epgsettings.h:189 epgsettings.h:200 epgsettings.h:205 epgsettings.h:210
 #: mediadbsettings.h:36
@@ -1195,7 +1195,7 @@ msgstr "Nie"
 
 #: epgsettings.h:199 epgsettings.h:204 epgsettings.h:209
 msgid "only for scan"
-msgstr "Nur für scan"
+msgstr "Nur für Scan"
 
 #: epgsettings.h:214
 msgid "poweroff"
@@ -1203,7 +1203,7 @@ msgstr "Ausschalten"
 
 #: epgsettings.h:258
 msgid "Deavtivate Refresh Time and After EPG in scan-mode"
-msgstr "Deaktiviere Aktualisierungszeit und Nach Suche im Suche-Modus"
+msgstr "Deaktiviere Aktualisierungszeit und nach Suche im Suche-Modus"
 
 #: epgsettings.h:284
 msgid "EPG resetet and now clear."
@@ -1283,7 +1283,7 @@ msgstr "Die gewünschte Erweiterung wurde erfolgreich installiert.\nDas System wi
 
 #: extensions.h:277
 msgid "Removeing"
-msgstr "Löschen von"
+msgstr "Die ausgewählte Erweiterung wird entfernt."
 
 #: extensions.h:282
 msgid "Tpk Remove Info"
@@ -1303,7 +1303,7 @@ msgstr "Die gewünschte TPK Erweiterung wurde erfolgreich entfernt.\nDas System s
 
 #: extensions.h:336 extensions.h:478
 msgid "No plugin found."
-msgstr "FEHLER: Keine Erweiterung gefuden!"
+msgstr "FEHLER: Keine Erweiterung gefunden!"
 
 #: extensions.h:392
 msgid ""
@@ -1356,7 +1356,7 @@ msgstr "Status aktualisiert."
 
 #: facebook.h:474
 msgid "Post on wall from another user"
-msgstr "Ein Benutzer hat an Ihre Pinnwand geschrieben."
+msgstr "Jemand hat an Ihre Pinnwand geschrieben."
 
 #: facebook.h:475
 msgid "Note created"
@@ -1364,7 +1364,7 @@ msgstr "FEHLER: wurde nicht erstellt!"
 
 #: facebook.h:476
 msgid "Link postet"
-msgstr "Link veröffentlicht"
+msgstr "Link veröffentlicht."
 
 #: facebook.h:477
 msgid "Video postet"
@@ -1384,7 +1384,7 @@ msgstr "Kommentar abgegeben"
 
 #: facebook.h:482
 msgid "Checkin to a place"
-msgstr ""
+msgstr "Ortsmakierung wurde gesetzt"
 
 #: facebook.h:483
 msgid "Post in group"
@@ -1440,15 +1440,15 @@ msgstr "FEHLER: Die Datei / das Verzeichnis kann nicht gelöscht werden!"
 
 #: filemanager.h:331
 msgid "Can't show this file!"
-msgstr "FEHLER: DIe Datei kann nicht angezeigt werden!"
+msgstr "FEHLER: Die Datei kann nicht angezeigt werden!"
 
 #: filemanager.h:355 mc_internetbrowser.h:41 mc_wetterinfo.h:41 tithek.h:1354
 msgid "Registration needed, please contact Atemio !"
-msgstr "Die Registrierung ist notwendig. Bitte kontaktieren Sie Atemio!"
+msgstr "Die Registrierung ist notwendig.\nBitte kontaktieren Sie Atemio!"
 
 #: global.h:6450 keyactions.h:224
 msgid "ERROR cant read res"
-msgstr ""
+msgstr "FEHLER: "
 
 #: gmediarender.h:109
 msgid "Servername"
@@ -1456,117 +1456,117 @@ msgstr ""
 
 #: gmediarender.h:113
 msgid "Wait for connect or press EXIT"
-msgstr ""
+msgstr "Warten Sie, bis die Verbindung hergestellt wurde\noder -EXIT- zum abbrechen."
 
 #: gmultiepg.h:546 gmultiepg.h:746
 msgid "GRAPHIC MULTI EPG - Bouquets"
-msgstr ""
+msgstr "Grafisches Multi EPG - Favoritenliste"
 
 #: gmultiepg.h:559
 msgid "GRAPHIC MULTI EPG - Channel"
-msgstr ""
+msgstr "Grafisches Multi EPG - Senderliste"
 
 #: gmultiepg.h:572
 msgid "GRAPHIC MULTI EPG - Satellites"
-msgstr ""
+msgstr "Grafisches Multi EPG - Satelliten"
 
 #: gmultiepg.h:585
 msgid "GRAPHIC MULTI EPG - Provider"
-msgstr ""
+msgstr "Grafisches Multi EPG - Anbieter"
 
 #: gmultiepg.h:598
 msgid "GRAPHIC MULTI EPG - All Channels"
-msgstr ""
+msgstr "Grafisches Multi EPG - Alle Sender"
 
 #: harddisk.h:126 harddisk.h:127
 msgid "Harddisk Format - Filesystem"
-msgstr ""
+msgstr "Festplatte formatieren - Filesystem"
 
 #: harddisk.h:165 plugins_mc_skin.xml.h:18 skins_mc_skin.xml.h:18
 msgid "default"
-msgstr ""
+msgstr "Standard"
 
 #: harddisk.h:213 harddisk.h:214
 msgid "Harddisk Configure"
-msgstr ""
+msgstr "Festplatte einrichten"
 
 #: harddisk.h:225 harddisk.h:715
 msgid "use medium for record"
-msgstr ""
+msgstr "Laufwerk für Aufnahmen verwenden."
 
 #: harddisk.h:230
 msgid "del medium for record"
-msgstr ""
+msgstr "Laufwerk für Aufnahmen entfernen."
 
 #: harddisk.h:235 harddisk.h:720
 msgid "use medium for extension"
-msgstr ""
+msgstr "Laufwerk für Erweiterungen verwenden."
 
 #: harddisk.h:240
 msgid "del medium for extension"
-msgstr ""
+msgstr "Laufwerk für Erweiterungen entfernen."
 
 #: harddisk.h:245 harddisk.h:722
 msgid "use medium for swap"
-msgstr ""
+msgstr "Laufwerk für Speichererweiterung (SWAP) verwenden."
 
 #: harddisk.h:250
 msgid "del medium for swap"
-msgstr ""
+msgstr "Laufwerk für Speichererweiterung (SWAP) entfernen."
 
 #: harddisk.h:255 harddisk.h:724
 msgid "use medium for backup"
-msgstr ""
+msgstr "Laufwerk für Datensicherung verwenden."
 
 #: harddisk.h:260
 msgid "del medium for backup"
-msgstr ""
+msgstr "Laufwerk für Datensicherung entfernen."
 
 #: harddisk.h:345
 msgid "Are you sure you want to delete this directory?"
-msgstr ""
+msgstr "Wollen das ausgewählte Verzeichnis wirklich löschen?"
 
 #: harddisk.h:350
 msgid ""
 "Directory has content\n"
 "Really delete directory and content?"
-msgstr ""
+msgstr "ACHTUNG: Das ausgewählte Verzeichnis ist nicht leer!\nVerzeichnis trotzdem löschen?\nAlle darin befindliche Daten gehen verloren!!!"
 
 #: harddisk.h:377
 msgid "can't create or delete directory"
-msgstr ""
+msgstr "FEHLER: Das Verzeichnis kann nicht erstellt / gelöscht werden!"
 
 #: harddisk.h:381
 msgid "succesfull create or delelete directory"
-msgstr ""
+msgstr "Das Verzeichnis wurde erfolgreich erstellt / gelöscht."
 
 #: harddisk.h:433 skin_default_skin.xml.h:262
 msgid "Harddisk"
-msgstr ""
+msgstr "Festplatte"
 
 #: harddisk.h:433
 msgid "sorry found no harddisk"
-msgstr ""
+msgstr "FEHLER: Keine Festplatte gefunden!"
 
 #: harddisk.h:441 harddisk.h:442
 msgid "Harddisk Format - List Devices"
-msgstr ""
+msgstr "Festplatte formatieren - Übersicht der Laufwerke"
 
 #: harddisk.h:446 harddisk.h:447
 msgid "Harddisk Fsck - List Devices"
-msgstr ""
+msgstr "Festplatten Dateisystem Prüfung - Übersicht der Laufwerke"
 
 #: harddisk.h:451 harddisk.h:452
 msgid "Harddisk Configure - List Devices"
-msgstr ""
+msgstr "Festplatte einrichten - Übersicht der Laufwerke"
 
 #: harddisk.h:470
 msgid "HDD "
-msgstr ""
+msgstr "Festplatte"
 
 #: harddisk.h:476
 msgid "STICK "
-msgstr ""
+msgstr "USB-Speicher"
 
 #: harddisk.h:495
 msgid "ext"
@@ -1588,100 +1588,100 @@ msgstr ""
 msgid ""
 "HDD > 2TB unsupported.\n"
 "You must first install plugin parted, then you can use this panel."
-msgstr ""
+msgstr "FEHLER: Festplatten mit einer Speicherkapazität über 2 TB werden nicht unterstützt.\nInstallieren Sie bitte erst die Erweiterung 'parted' um die Festplatte zu nutzen!"
 
 #: harddisk.h:632
 msgid ""
 "Are you sure you want to remove all Partitions\n"
 "on this device and create a new Partition 1?\n"
 "Box reboots after format"
-msgstr ""
+msgstr "ACHTUNG: Sind Sie sicher, dass sie alle Partitionen\nlöschen wollen und eine neue Partition 1 erstellen wollen?\nDer Receiver wird nach dem formatieren neu gestartet!"
 
 #: harddisk.h:666
 msgid ""
 "Are you sure you want to format this Partition?\n"
 "Box reboots after format"
-msgstr ""
+msgstr "ACHTUNG: Sind Sie sicher, dass sie die Patition formatieren wollen?\nDer Receiver wird nach dem formatieren neu gestartet!"
 
 #: harddisk.h:784
 msgid ""
 "ERROR\n"
 "partition could not be created"
-msgstr ""
+msgstr "FEHLER: Die Partition konnte nicht erstellt werden!"
 
 #: harddisk.h:802
 msgid ""
 "Information: This hard drive size can take a file\n"
 "system check between 30 minutes and 1.5 hours."
-msgstr ""
+msgstr "INFORMATION: Eine Überprüfung des Dateisystems dauert bis zu 1,5 Stunden!"
 
 #: harddisk.h:805
 msgid ""
 "Are you sure you want to check this Partition?\n"
 "Box reboots after check"
-msgstr ""
+msgstr "Wollen Sie die ausgewählte Partition überprüfen?\nDer Receiver wird anschließend neugestartet."
 
 #: harddisk.h:867 harddisk.h:868
 msgid "Harddisk Sleep"
-msgstr ""
+msgstr "Festplatten Bereitschaft (Sleep)"
 
 #: harddisk.h:874 skin_default_skin.xml.h:649
 msgid "Time to sleep"
-msgstr ""
+msgstr "Zeit bis Bereitschaft"
 
 #: harddisk.h:876
 msgid "5 min"
-msgstr ""
+msgstr "5 Minuten"
 
 #: harddisk.h:876
 msgid "10 min"
-msgstr ""
+msgstr "10 Minuten"
 
 #: harddisk.h:877
 msgid "15 min"
-msgstr ""
+msgstr "15 Minuten"
 
 #: harddisk.h:877
 msgid "60 min"
-msgstr ""
+msgstr "60 Minuten"
 
 #: harddisk.h:1035
 msgid ""
 "Found new Stick/HDD.\n"
 "You can configure it in Harddisk Menu."
-msgstr ""
+msgstr "Eine neue Festplatte / USB Speicher wurde gefunden.\nSie können es im Festplatten Menü einrichten."
 
 #: hbbtv.h:362
 msgid "You can leave HBBTV with Record Key."
-msgstr ""
+msgstr "Sie können das HBBTV durch Betätigung der -RECORD- Taste auf Ihrer Fernbedienung beenden."
 
 #: hwtest.h:88
 msgid "testtransponder not found"
-msgstr ""
+msgstr "FEHLER: Der Testtransponder konnte nicht gefunden werden!"
 
 #: hwtest.h:93
 msgid "testtransponder entry not ok"
-msgstr ""
+msgstr "FEHLER: Der eingetragene Testtransponder ist Fehlerhaft.\nBitte überprüfen Sie Ihre Angaben!"
 
 #: hwtest.h:98
 msgid "can't create new transponer"
-msgstr ""
+msgstr "FEHLER: Der Transponder kann nicht angelegt werden!"
 
 #: hwtest.h:103
 msgid "testchannel not found"
-msgstr ""
+msgstr "FEHLER: Testsender konnte nicht gefunden werden!"
 
 #: hwtest.h:108
 msgid "testchannel entry not ok"
-msgstr ""
+msgstr "FEHLER: Testsender-Eintrag ist Fehlerhaft.\nBitte überprüfen Sie Ihre Angaben!"
 
 #: hwtest.h:113
 msgid "can't create new channel"
-msgstr ""
+msgstr "FEHLER: Der Testsender kann nicht angelegt werden!"
 
 #: hwtest.h:206
 msgid "Press OK or EXIT"
-msgstr ""
+msgstr "Drücken Sie bitte -OK- oder -EXIT-"
 
 #: hwtest.h:245
 msgid "Press Front Key"
@@ -1689,15 +1689,15 @@ msgstr ""
 
 #: hwtest.h:279 tmc.h:702
 msgid "RED"
-msgstr ""
+msgstr "-ROT-"
 
 #: hwtest.h:284
 msgid "GREEN"
-msgstr ""
+msgstr "-GRÜN-"
 
 #: hwtest.h:289
 msgid "BLUE"
-msgstr ""
+msgstr "-BLAU-"
 
 #: hwtest.h:368 hwtest.h:374
 msgid "Smartcard "
@@ -1705,19 +1705,19 @@ msgstr ""
 
 #: hwtest.h:370
 msgid ": Present\n"
-msgstr ""
+msgstr ": vorhanden\n"
 
 #: hwtest.h:376
 msgid ": Not Present\n"
-msgstr ""
+msgstr ": nicht vorhanden\n"
 
 #: hwtest.h:384
 msgid "Smartcard Ports found: "
-msgstr ""
+msgstr "Smartcard Port gefunden: "
 
 #: hwtest.h:425
 msgid "USB Ports found: "
-msgstr ""
+msgstr "USB Anschluß gefunden: "
 
 #: hwtest.h:436 hwtest.h:449
 msgid "USB "
@@ -1725,27 +1725,27 @@ msgstr ""
 
 #: hwtest.h:440
 msgid " - OKAY!"
-msgstr ""
+msgstr " - OK!"
 
 #: hwtest.h:451
 msgid " : NOT OKAY!"
-msgstr ""
+msgstr " : NICHT OK!"
 
 #: hwtest.h:470 moduleconfig.h:338 scconfig.h:31
 msgid "Slot "
-msgstr ""
+msgstr "Einschub"
 
 #: hwtest.h:487
 msgid "CAM Ports found: "
-msgstr ""
+msgstr "CI-MODUL gefunden: "
 
 #: hwtest.h:562
 msgid "SUCESS Serial Port"
-msgstr ""
+msgstr "Serieller Anschlu Erfolgreich"
 
 #: hwtest.h:564
 msgid "FAIL Serial Port"
-msgstr ""
+msgstr "Serieller Anschluß Fehlerhaft"
 
 #: hwtest.h:575
 msgid "LNB off / 22K off: OK\n"
@@ -3648,7 +3648,7 @@ msgstr "Abbrechen"
 #: plugins_panel_skin.xml.h:13 skin_default_skin.xml.h:135
 #: skins_panel_skin.xml.h:13
 msgid "Child safety"
-msgstr "Jugendschutz"
+msgstr "Bootpasswort"
 
 #: plugins_panel_skin.xml.h:14 skins_panel_skin.xml.h:14 system_infos.h:17
 msgid "Default"
@@ -4193,7 +4193,7 @@ msgstr "FEHLER: Start- oder Endzeit ist fehlerhaft!"
 
 #: rectimer.h:139
 msgid "Timer endtime shorter than aktual time"
-msgstr "FEHLER: Endzeit liegt in der Vergangenheit!"
+msgstr "FEHLER: Endzeit liegt in der Vergangeheit!"
 
 #: rectimer.h:144
 msgid "Timer endtime shorter than start time"
@@ -5536,7 +5536,7 @@ msgstr "Hier können Sie Ihren Tuner für die Konfiguration auswählen.\nFür Ihren 
 msgid ""
 "Here you can configure access to your DynDNS. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
-msgstr ""
+msgstr "Hier können Sie Ihren DynDNS Zugang konfigurieren.\n\nNavigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten." 
 
 #: skin_default_skin.xml.h:269
 msgid ""
@@ -5811,11 +5811,11 @@ msgstr "AC3-Angleichung durch Stereotonabsenkung in %"
 
 #: skin_default_skin.xml.h:316
 msgid "Infobar Sleep"
-msgstr "Zeit bis Infobar erscheint (sek)"
+msgstr "Zeit bis Infobar erscheint (Sek)"
 
 #: skin_default_skin.xml.h:317
 msgid "Infobar Timeout"
-msgstr "Zeit bis Infobar ausblendet (sek)"
+msgstr "Zeit bis Infobar ausblendet (Sek)"
 
 #: skin_default_skin.xml.h:318
 msgid "Information"
@@ -6275,7 +6275,7 @@ msgstr "Wiedergabepuffer - Grösse (http) Streams"
 
 #: skin_default_skin.xml.h:440
 msgid "Player for .ts"
-msgstr "Wiedergabegerät für .ts"
+msgstr "Wiedergabegerät für .ts Dateien"
 
 #: skin_default_skin.xml.h:441
 msgid "PlayList"
@@ -6317,7 +6317,7 @@ msgstr "Rotor Einstellungen"
 
 #: skin_default_skin.xml.h:452
 msgid "Power aktion"
-msgstr "Aktion bei Druck der EIN/AUS Taste"
+msgstr "Aktion bei Betätigung der EIN/AUS Taste"
 
 #: skin_default_skin.xml.h:454
 msgid "Poweroff Timer"
@@ -6369,7 +6369,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:466
 msgid "Quick Menu"
-msgstr "Schnellmenu"
+msgstr "Schnellmenü"
 
 #: skin_default_skin.xml.h:467
 msgid "r"
@@ -6381,7 +6381,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:470 system_infos.h:103
 msgid "Ram"
-msgstr ""
+msgstr "Arbeitsspeicher"
 
 #: skin_default_skin.xml.h:471
 msgid "Rating"
@@ -6429,11 +6429,11 @@ msgstr "Aufnahme"
 
 #: skin_default_skin.xml.h:482
 msgid "Records and EPG"
-msgstr "Aufnahme und EPG"
+msgstr "Aufnahmen und EPG"
 
 #: skin_default_skin.xml.h:483
 msgid "Records and EPG ..."
-msgstr ""
+msgstr "Aufnahmen und EPG..."
 
 #: skin_default_skin.xml.h:484
 msgid "Record Split Size"
@@ -6465,7 +6465,7 @@ msgstr "Lösche leere Favoriten Ordner"
 
 #: skin_default_skin.xml.h:492
 msgid "REMOVE ENTRY"
-msgstr ""Lösche Eintrag"
+msgstr "Lösche Eintrag"
 
 #: skin_default_skin.xml.h:493
 msgid "remove service"
@@ -6645,7 +6645,7 @@ msgstr "---SD Auflösung"
 
 #: skin_default_skin.xml.h:546
 msgid "Second Infobar"
-msgstr Zweite Infoleiste"
+msgstr "Zweite Infoleiste"
 
 #: skin_default_skin.xml.h:547
 msgid "Select backup:"
@@ -6657,7 +6657,7 @@ msgstr "Pfadauswahl"
 
 #: skin_default_skin.xml.h:549
 msgid "Select Unicable Manufacturer"
-msgstr "Unicable Hersteller auswählen"
+msgstr "Unikabel Hersteller auswählen"
 
 #: skin_default_skin.xml.h:550
 msgid "SEND"
@@ -6745,7 +6745,7 @@ msgstr "Aussehen (Skin)"
 
 #: skin_default_skin.xml.h:575
 msgid "Skin Adjust"
-msgstr "Aussehen (Skin) Einstellungen
+msgstr "Aussehen (Skin) Einstellungen"
 
 #: skin_default_skin.xml.h:576
 msgid "Skin Select"
@@ -6753,19 +6753,19 @@ msgstr "Aussehen (Skin) Auswahl"
 
 #: skin_default_skin.xml.h:577
 msgid "Skip 1/3"
-msgstr "Sprungzeit auf den Tasten 1+3 (sek)"
+msgstr "Sprungzeit der Tasten 1+3 (Sek)"
 
 #: skin_default_skin.xml.h:578
 msgid "Skip 4/6"
-msgstr "Sprungzeit auf den Tasten 4+6 (sek)"
+msgstr "Sprungzeit der Tasten 4+6 (Sek)"
 
 #: skin_default_skin.xml.h:579
 msgid "Skip 7/9"
-msgstr "Sprungzeit auf den Tasten 7+9 (sek)"
+msgstr "Sprungzeit der Tasten 7+9 (Sek)"
 
 #: skin_default_skin.xml.h:580
 msgid "Skip privat CA descriptor"
-msgstr "Überspringe Private CA descriptor"
+msgstr "Überspringe Private CA Descriptor"
 
 #: skin_default_skin.xml.h:581
 msgid "SmartCard Reader"
@@ -6781,7 +6781,7 @@ msgstr "Softcam"
 
 #: skin_default_skin.xml.h:584
 msgid "Softcam Selection"
-msgstr "Softcam Auswhl"
+msgstr "Softcam Auswahl"
 
 #: skin_default_skin.xml.h:586
 msgid "sort service"
@@ -6849,7 +6849,7 @@ msgstr "Signalratenschritt"
 
 #: skin_default_skin.xml.h:607 skin_default_skin.xml.h:606
 msgid "(Stop)"
-msgstr "(Stopp)
+msgstr "(Stopp)"
 
 #: skin_default_skin.xml.h:608
 msgid "STOP/START"
@@ -6973,7 +6973,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:641
 msgid "thereafter on this Channel:"
-msgstr "danach auf diesem Sender:"
+msgstr "Anschließend auf diesem Sender:"
 
 #: skin_default_skin.xml.h:642
 msgid "Threshold"
@@ -7001,7 +7001,7 @@ msgstr "Timeshift Methode"
 
 #: skin_default_skin.xml.h:650
 msgid "--- Time to switch"
-msgstr "--- Zeit bis Umschalten"
+msgstr "--- Zeit bis zum Senderwechsel"
 
 #: skin_default_skin.xml.h:651
 msgid "Time to wait after seek for fill buffer"
@@ -7089,7 +7089,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:674
 msgid "Tunerconfig"
-msgstr "Tunereinstellungen"
+msgstr "Tunerkonfiguration"
 
 #: skin_default_skin.xml.h:675
 msgid "Tuner Configuration"
@@ -7101,11 +7101,11 @@ msgstr "Tunerempfang"
 
 #: skin_default_skin.xml.h:678
 msgid "TV Resolution (h):"
-msgstr "TV Auflösung (H):"
+msgstr "TV Auflösung (Höhe):"
 
 #: skin_default_skin.xml.h:679
 msgid "TV Resolution (w):"
-msgstr "TV Auflösung (B):"
+msgstr "TV Auflösung (Breite):"
 
 #: skin_default_skin.xml.h:680
 msgid "Two step mute"
@@ -7149,7 +7149,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:691
 msgid "Uncommitted Diseqc command"
-msgstr ""Ungebundener DiSEqC Befehl
+msgstr "Ungebundener DiSEqC Befehl"
 
 #: skin_default_skin.xml.h:692
 msgid "Unicable Configuration"
@@ -7165,7 +7165,7 @@ msgstr "aktualisieren"
 
 #: skin_default_skin.xml.h:696
 msgid "Update entrys on scan"
-msgstr "Aktualisiere vorhandene EInträge"
+msgstr "Aktualisiere vorhandene Einträge"
 
 #: skin_default_skin.xml.h:697
 msgid "USB"
@@ -7213,7 +7213,7 @@ msgstr "Bild Seitenverhältnis Einstellungen"
 
 #: skin_default_skin.xml.h:710
 msgid "VideoMode Resolution Settings"
-msgstr "Bild Auflösung Einstellungen"
+msgstr "Bildauflösungs Einstellungen"
 
 #: skin_default_skin.xml.h:711
 msgid "VideoMode Settings"
@@ -7229,7 +7229,7 @@ msgstr "Video Einstellungen"
 
 #: skin_default_skin.xml.h:714
 msgid "Vietnamese"
-msgstr "Vietnamesisch
+msgstr "Vietnamesisch"
 
 #: skin_default_skin.xml.h:715
 msgid "Virtualzap Timeout"
@@ -7245,7 +7245,7 @@ msgstr "Spannungsmodus"
 
 #: skin_default_skin.xml.h:718
 msgid "Volumebar Timeout"
-msgstr "Zeit bis Lautstärkeanzeige ausblendet (sek)"
+msgstr "Zeit bis Lautstärkeanzeige ausgeblendet wird (sek)"
 
 #: skin_default_skin.xml.h:719
 msgid "Votes"
@@ -7289,7 +7289,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:730
 msgid "Year"
-msgstr ""
+msgstr "Jahr"
 
 #: skin_default_skin.xml.h:731
 msgid "z"
@@ -7307,12 +7307,11 @@ msgstr ""
 msgid ""
 "No skinconfig found in skin.\n"
 "Can't change to selected skin."
-msgstr "Die Datei skinconfig.xml fehlt im ausgewählten skin!\n"
-"Der ausgewählte Skin kann nicht gelanden werden."
+msgstr "FEHLER: Die Datei skinconfig.xml fehlt im ausgewählten skin!\nDer ausgewählte Skin kann nicht gelanden werden."
 
 #: sock.h:950
 msgid "Download finished!"
-msgstr "Download beendet!"
+msgstr "Herunterladen beendet!"
 
 #: softcam.h:91 softcam.h:99
 msgid "started"
@@ -7324,7 +7323,7 @@ msgstr "Autostart aktiviert"
 
 #: softcam.h:119
 msgid "Emu not found"
-msgstr "Softcam wurde nicht gefunden"
+msgstr "FEHLER: Softcam wurde nicht gefunden"
 
 #: softcam.h:289
 msgid "Softcam selection:"
@@ -7336,11 +7335,11 @@ msgstr "Aktivieren"
 
 #: softcam.h:403
 msgid "Reader Config Plugin not installed !"
-msgstr "Reader Konfigurationsdatei ist nicht installiert!"
+msgstr "FEHLER: Reader Konfigurationsdatei ist nicht installiert!"
 
 #: solarmovie.h:295
 msgid "This file doesn't exist, or has been removed"
-msgstr "Diese Datei existiert nicht oder wurde entfernt."
+msgstr "FEHLER: Diese Datei existiert nicht oder wurde entfernt."
 
 #: spinner.h:18
 msgid ""
@@ -7348,10 +7347,7 @@ msgid ""
 "\n"
 "KILL = Red\n"
 "BOOT = Green"
-msgstr Systemfehler!!!\n"
-"\n"
-"-ROT- = Prozess beenden\n"
-"-GRÜN- = System neustarten"
+msgstr "Systemfehler!!!\n\n-ROT- = Prozess beenden\n-GRÜN- = System neustarten"
 
 #: spinner.h:18
 msgid "KILL"
@@ -7447,15 +7443,11 @@ msgid ""
 "All Settings are saved.\n"
 "\n"
 "Box will start in few seconds."
-msgstr "Bitte warten...\n"
-"\n"
-"Sämtliche Einstellungen werde ngesichert.\n"
-"\n"
-"Receiver startet in wenigen Sekunden neu"
+msgstr "Bitte warten...\n\nALLE Einstellungen werden gesichert.\n\nReceiver startet in wenigen Sekunden neu."
 
 #: system_backup_restore.h:40
 msgid "Restore failed, see log"
-msgstr "Wiederherstellung Fehlgeschlagen - siehe Logdatei"
+msgstr "FEHLER: Wiederherstellung Fehlgeschlagen - siehe Logdatei"
 
 #: system_backup_restore.h:43
 msgid "Update Plugins to new Version?"
@@ -7470,8 +7462,7 @@ msgid ""
 "No backup folders found!!!\n"
 "\n"
 "Aborting restoring..."
-msgstr "Der Ordner backup wurde nicht gefunden!\n\n"
-"Wiederherstellung wurde abgebrochen."
+msgstr "FEHLER: Der Ordner backup wurde nicht gefunden!\n\nWiederherstellung wurde abgebrochen."
 
 #: system_backup_restore.h:65
 msgid "Backup - Settings"
@@ -7482,18 +7473,15 @@ msgid ""
 "Backup started\n"
 "\n"
 "Please wait..."
-msgstr "Sicheuerung wurde gestartet.\n"
-"\n"
-"Bitte warten..."
+msgstr "Sicherung wurde gestartet.\n\nBitte warten..."
 
 #: system_backup_restore.h:80
 msgid "Backup failed, see log"
-msgstr "Die Sicherung ist fehlgeschlagen.\n"
-"Eine Logdatei wurde angelegt."
+msgstr "FEHLER: Die Sicherung ist fehlgeschlagen.\nEine Logdatei wurde angelegt."
 
 #: system_backup_restore.h:82
 msgid "Backup created successfully"
-msgstr "Die Sicherung wurde erfolgreich erstellet."
+msgstr "Die Sicherung wurde erfolgreich erstellt."
 
 #: system_backup_restore.h:88
 msgid "BACKUP ERROR"
@@ -7504,8 +7492,7 @@ msgid ""
 "A record hdd or a swapstick must be mounted!\n"
 "\n"
 "Aborting backup..."
-msgstr "Eine Festplatte oder ein USB Gerät muss für Aufnahmen angeschlossen sein!\n\n"
-"Backup wird abgebrochen."
+msgstr "ACHTUNG: Eine Festplatte oder ein USB Gerät muss für Aufnahmen angeschlossen sein!\n\nSicherung wird abgebrochen."
 
 #: system_backup_restore.h:95
 msgid "BACKUP LOG"
@@ -7525,7 +7512,7 @@ msgstr "Speicher Informationen"
 
 #: system_infos_sysinfo.h:36
 msgid "MTD info"
-msgstr ""
+msgstr "MTD Informationen"
 
 #: system_infos_sysinfo.h:46
 msgid "Module info"
@@ -7557,15 +7544,15 @@ msgstr ""
 
 #: system_update.h:283
 msgid "starting Full Update ?"
-msgstr "Beginne den Kompletten Flaschvorgang?"
+msgstr "Beginne den kompletten Flaschvorgang?"
 
 #: system_update.h:313
 msgid "starting Full Update (from backup) ?"
-msgstr "Beginne den Kompletten Flashvorgang eines gesicherten Systemabbilds"
+msgstr "Beginne den kompletten Flaschvorgang eines gesicherten Systemabbilds"
 
 #: system_update.h:320
 msgid "Error file not supported"
-msgstr "FELER: Dateiformat wird nicht unterstützt!"
+msgstr "FEHLER: Dateiformat wird nicht unterstützt!"
 
 #: system_update.h:333
 msgid ""
@@ -7582,7 +7569,7 @@ msgstr "Soll die Timeshiftdatei gelöscht werden?"
 msgid ""
 "Timeshift file to short\n"
 "please wait a little and try again"
-msgstr "Timeshiftwiedergabe kann noch nicht wiedergegeben werden."
+msgstr "Timeshiftwiedergabe kann noch nicht wiedergegeben werden.\nBitte versuchen Sie es in wenigen Minuten erneut."
 
 #: timeshift.h:162
 msgid "Can't start timeshift play !"
@@ -7613,22 +7600,22 @@ msgstr "Timeshiftdatei nie löschen"
 
 #: titan.c:245
 msgid "!!! This is a DEMO Version !!!"
-msgstr "!!! DIESE VERSION IST EINE DEMOVERSION !!!"
+msgstr "!!! DIESE VERSION IST EINE TESTVERSION !!!"
 
 #: titan.c:309
 msgid ""
 "Found running record\n"
 "or record is starting in next time.\n"
 "Really shutdown ?"
-msgstr "Eine Aufnahme wird aufgezeichnet oder eine zeitgesteuerte Aufnahme startet bald.\n"
-"Soll das System trotzdem neugestartet werden?"
+msgstr "ACHTUNG: Eine Aufnahme wird aufgezeichnet oder eine Zeitgesteuerte Aufnahme startet gleich.\n"
+"Soll das System trotzdem Neugestartet werden?"
 
 #: titan.c:318
 msgid ""
 "Found running download\n"
 "Really shutdown ?"
-msgstr "Ein Download wird ausgeführt.\n"
-"Download abbrechen und System Neustarten?"
+msgstr "ACHTUNG: Eine Datei wird heruntergeladen.\n"
+"Das Herunterladen abbrechen und System Neustarten?"
 
 #: titan.c:726
 msgid "Error: open rc device !!"
@@ -7660,7 +7647,7 @@ msgstr "Erstinstallationsassistent"
 
 #: titan.c:898
 msgid "Settings OK ?"
-msgstr ""
+msgstr "Senderlisten in Ordnung ?"
 
 #: titan.c:1018
 msgid "Receiver successful unlocked"
@@ -7670,27 +7657,27 @@ msgstr "Ihr Receiver wurde erfolgreich freigeschaltet."
 msgid ""
 "Free space in /var to little!\n"
 "This can make problems!"
-msgstr "Der freie Speicher in /var reicht nicht aus!"
+msgstr "FEHLER: Der freie Speicher in /var reicht nicht aus!"
 
 #: titan.c:1045
 msgid ""
 "/var not writeable!\n"
 "Repair it?"
-msgstr "/var ist nicht beschreibbar!\n"
+msgstr "FEHLER: /var ist nicht beschreibbar!\n"
 "Soll es repariert werden?"
 
 #: titan.c:1056
 msgid ""
 "Free space in /mnt to little!\n"
 "This can make problems!"
-msgstr "Der freie Speicher in /mnt reicht nicht aus!"
+msgstr "FEHLER: Der Speicher in /mnt ist nicht ausreichend!\nDas kann zu Problemen führen!"
 
 #: titan.c:1062
 msgid ""
 "/mnt not writeable!\n"
 "Repair it?"
-msgstr "/mnt ist nicht beschreibbar!\n"
-"Soll es repariert werden?"
+msgstr "FEHLER: /mnt ist nicht beschreibbar!\n"
+"Soll ein Reparaturversuch gestartet werden??"
 
 #: titan.c:1109
 msgid "Unknown Error."
@@ -7707,7 +7694,7 @@ msgstr "Der Anbieter wird zur Zeit nicht unterstützt!"
 #: tithek.h:620
 msgid "File exist, overwrite?"
 msgstr "Diese Datei existiert bereits."\n
-"Soll die vorhandene Datei überschrieben werden?"
+"Soll die vorhande Datei überschrieben werden?"
 
 #: tithek.h:826
 msgid "found"
@@ -7725,7 +7712,7 @@ msgstr "Zwischenspeicher leeren?"
 msgid ""
 "Can't start download.\n"
 "Please try later."
-msgstr "Kann den Download nicht starten.\n"
+msgstr "FELER: Das Herunterladen der Datei ist nicht möglich!\n"
 "Bitte versuchen Sie es zu einem späteren Zeitpunkt erneut."
 
 #: tithek.h:1327
@@ -7738,7 +7725,7 @@ msgstr "Streamadresse ist nicht erreichbar!"
 
 #: tithek.h:1368
 msgid "TitanNit Tithek disclaimer"
-msgstr "TitanNit Tithek Haftungsausschluss"
+msgstr "TitanNit Tithek Haftungsausschluss:"
 
 #: tithek.h:1432
 msgid "Page"
@@ -7746,7 +7733,7 @@ msgstr "Seite"
 
 #: tithek.h:3057
 msgid "Remove this Favorite ?"
-msgstr "DIesen Favoriten löschen?"
+msgstr "Diesen Favoriten löschen?"
 
 #: tithek.h:3071
 msgid "Add this link as Favorite ?"
@@ -7758,23 +7745,23 @@ msgstr "Anzeige im automatischen Modus"
 
 #: tithek_settings.h:18 tithek_settings.h:26
 msgid "show 2 entrys"
-msgstr "Zeige 2 Einträge"
+msgstr "Anzeige von je 2 Einträge"
 
 #: tithek_settings.h:19 tithek_settings.h:27
 msgid "show 6 entrys"
-msgstr "Zeige 6 Einträge"
+msgstr "Anzeige von je 6 Einträge"
 
 #: tithek_settings.h:20 tithek_settings.h:28
 msgid "show 12 entrys"
-msgstr "Zeige 12 Einträge"
+msgstr "Anzeige von je 12 Einträge"
 
 #: tithek_settings.h:21 tithek_settings.h:29
 msgid "show 20 entrys"
-msgstr "Zeige 20 Einträge"
+msgstr "Anzeige von je 20 Einträge"
 
 #: tithek_settings.h:22 tithek_settings.h:30
 msgid "show 30 entrys"
-msgstr "Zeige 30 Einträge"
+msgstr "Anzeige von je 30 Einträge"
 
 #: tmc.h:387
 msgid "Status"
@@ -7806,7 +7793,7 @@ msgstr "Video / Bild"
 
 #: tmc.h:545
 msgid "audio / picture"
-msgstr "Audio / Bild"
+msgstr "Audoi / Bild"
 
 #: tmc.h:548
 msgid "pic1"
@@ -7865,7 +7852,7 @@ msgstr "IMDB Erweiterung wurde nicht gefunden!\n"
 
 #: tmdb.h:922
 msgid "Error, found result without imdbid we can't this save in MediaDB"
-msgstr "FEHLER: in der imdb-id ist ein Fehler und kann daher nicht übernommen werden!"
+msgstr "FEHLER: in der imdb-id ist ein Fehler und kan ndaher nicht übernommen werden!"
 
 #: tpchoice.h:21
 msgid "Transponderlist"
@@ -7881,7 +7868,7 @@ msgstr "Kabel"
 
 #: tpchoice.h:72
 msgid "TERR"
-msgstr "Terristrisch"
+msgstr "Terrestrisch"
 
 #: tpchoice.h:74
 msgid "UNKNOWN"
@@ -7966,7 +7953,7 @@ msgstr ""
 
 #: transponder.h:572 transponder.h:579
 msgid "DVBS"
-msgstr "DVB-S"
+msgstr ""
 
 #: transponder.h:573 transponder.h:581
 msgid "DVBS2"
@@ -8006,7 +7993,7 @@ msgstr "LNB / Unikabel"
 
 #: tunerconfig.h:379
 msgid "Terrestrisch"
-msgstr "Terristrisch"
+msgstr "Terrestrich"
 
 #: tunerconfig.h:645
 msgid "direct connect"
@@ -8040,7 +8027,7 @@ msgid ""
 "Can't save Code.\n"
 "Delete Plugins to free space"
 msgstr "Aktivierungscode kann nicht gespeichert werden.\n"
-"Bitte löschen Sie Erweiterungen, um Speicherplatz freizugeben."
+"Bitte löschen Sie Erweiterungen um Speicherplatz freizugeben."
 
 #: unlock.h:71
 msgid "Code ok"
@@ -8048,7 +8035,7 @@ msgstr "Aktivierungscode akzeptiert."
 
 #: unlock.h:75
 msgid "Code not ok, please try again !"
-msgstr "Aktivierungscode stimmt nicht. Bitte versuchen Sie Ihre Eingabe erneut."
+msgstr "FEHLER: Der eingegebene Aktivierungscode ist nicht gültig!\nBitte versuchen Sie Ihre Eingabe erneut."
 
 #: vfdisplay.h:32
 msgid "channel"
@@ -8100,15 +8087,15 @@ msgstr "Blinkender Stern"
 
 #: weather.h:430 weather.h:448 weather.h:466 weather.h:484
 msgid "Day: "
-msgstr "Tag:"
+msgstr "Tag"
 
 #: weather.h:434 weather.h:452 weather.h:470 weather.h:488
 msgid "Lowest temp: "
-msgstr "Tiefsttemperatur:"
+msgstr "Tiefsttemperatur"
 
 #: weather.h:438 weather.h:456 weather.h:474 weather.h:492
 msgid "Highest temp: "
-msgstr "Höchsttemperatur:"
+msgstr "Höchsttemperatur"
 
 #: weather.h:442 weather.h:460 weather.h:478 weather.h:496
 msgid "Condition: "
