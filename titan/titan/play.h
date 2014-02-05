@@ -650,7 +650,7 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 		addmenulist(&mlist, "Search on Myvideo (local)", NULL, NULL, 0, 0);
 		addmenulist(&mlist, "Search on ARD (local)", NULL, NULL, 0, 0);
 		addmenulist(&mlist, "Search on ZDF (local)", NULL, NULL, 0, 0);
-		addmenulist(&mlist, "Search on TecTime (local)", NULL, NULL, 0, 0);
+		addmenulist(&mlist, "Search on DrDish (local)", NULL, NULL, 0, 0);
 		addmenulist(&mlist, "Search on Giga (local)", NULL, NULL, 0, 0);
 		addmenulist(&mlist, "Search on Rtl-Now (local)", NULL, NULL, 0, 0);
 		addmenulist(&mlist, "Search on Rtl2-Now (local)", NULL, NULL, 0, 0);
@@ -735,7 +735,7 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 			ret = 15;
 		else if(ostrcmp(mbox->name, "Search on ZDF (local)") == 0)
 			ret = 16;
-		else if(ostrcmp(mbox->name, "Search on TecTime (local)") == 0)
+		else if(ostrcmp(mbox->name, "Search on DrDish (local)") == 0)
 			ret = 17;
 		else if(ostrcmp(mbox->name, "Search on Giga (local)") == 0)
 			ret = 18;
@@ -1392,7 +1392,8 @@ playerstart:
 
 	if(file != NULL)
 	{
-		if(getconfigint("playertype", NULL) == 1 && cmpfilenameext(file, ".ts") == 0)
+		//if(getconfigint("playertype", NULL) == 1 && cmpfilenameext(file, ".ts") == 0)
+		if(cmpfilenameext(file, ".ts") == 0)
 			playertype = 1;
 
 		if(startfile == NULL)
