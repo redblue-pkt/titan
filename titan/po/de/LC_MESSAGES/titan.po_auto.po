@@ -2463,8 +2463,7 @@ msgstr "WLAN erfolgreich gestartet.\nSie können die Schnittstelle jetzt konfigur
 msgid ""
 "WLAN not started,\n"
 "Please check your config."
-msgstr ""
-FEHLER: WLAN nicht gestartet!\nÜberprüfen Sie Ihre Einstellungen.
+msgstr "FEHLER: WLAN nicht gestartet!\nÜberprüfen Sie Ihre Einstellungen."
 #: network.h:827
 msgid "searching..."
 msgstr "suche..."
@@ -7690,8 +7689,7 @@ msgstr "Der Anbieter wird zur Zeit nicht unterstützt!"
 
 #: tithek.h:620
 msgid "File exist, overwrite?"
-msgstr "Diese Datei existiert bereits."\n
-"Soll die vorhande Datei überschrieben werden?"
+msgstr "Diese Datei existiert bereits.\nSoll die vorhande Datei überschrieben werden?"
 
 #: tithek.h:826
 msgid "found"
