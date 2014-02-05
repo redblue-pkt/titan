@@ -622,8 +622,7 @@ msgstr "Ist dieser Videomodus ok?"
 msgid ""
 "This Plugin is only for Betatester and can change your Settings!\n"
 "Realy run it?"
-msgstr "Diese Erweiterung ist nur für Betatester und könnte Ihre Einstellungen verändern!\n"
-"Trotzdem ausführen?"
+msgstr "Diese Erweiterung ist nur für Betatester und könnte Ihre Einstellungen verändern!\nTrotzdem ausführen?"
 
 #: bgdownload.h:176
 msgid "Really stop download ?"
@@ -658,9 +657,7 @@ msgid ""
 "Callmon Timeout !!!\n"
 "\n"
 "check your parameter "
-msgstr "Call Monitor Timeout!!!\n"
-"\n"
-"Bitte überprüfen Sie Ihre Einstellungen!"
+msgstr "Call Monitor Timeout!!!\n\nBitte überprüfen Sie Ihre Einstellungen!"
 
 #: callmon_main.h:76 callmon_main.h:98 callmon_main.h:116 callmon_main.h:120
 #: callmon_main.h:124 callmon_main.h:128 instar.h:192
@@ -758,11 +755,11 @@ msgstr "Alle Kanäle"
 
 #: channellist.h:913
 msgid "Copy providerlist successfull"
-msgstr "Kopieren des Anbieters erfolgreich abgeschlossen"
+msgstr "Kopieren der Anbieterliste erfolgreich abgeschlossen"
 
 #: channellist.h:915
 msgid "Copy providerlist not ok"
-msgstr "Kopieren des Anbieters abgebrochen"
+msgstr "ACHTUNG: Kopieren des Anbieters abgebrochen"
 
 #: channellist.h:920
 msgid "Copy satlist successfull"
@@ -770,11 +767,11 @@ msgstr "Kopieren der Senderliste erfolgreich abgeschlossen"
 
 #: channellist.h:922
 msgid "Copy satlist not ok"
-msgstr "Kopieren der Senderliste abgebrochen"
+msgstr "ACHTUNG: Kopieren der Senderliste abgebrochen"
 
 #: channellist.h:1006
 msgid "Can't remove akive Service"
-msgstr "Aktiver Sender kann nicht gelöscht werden!"
+msgstr "FEHLER: Aktiver Sender kann nicht gelöscht werden!"
 
 #: channellist.h:1295 channellist.h:1296
 msgid "Channels A-Z"
@@ -1065,7 +1062,7 @@ msgstr "FELER: Beim herunterladen trat ein unerwarteter Fehler auf!"
 
 #: download.h:101
 msgid "wait for stopping download"
-msgstr "Bitte warten Sie, bis das herunterladen beendet wurde."
+msgstr "ACHTUNG: Bitte warten Sie, bis das herunterladen beendet wurde."
 
 #: dvdplay.h:29
 msgid "EJECT"
@@ -1279,7 +1276,7 @@ msgstr "FEHLER: Erweiterung konnte nicht installiert werden!"
 
 #: extensions.h:247
 msgid "TPK Install done, your system will reboot !"
-msgstr "Die gewünschte Erweiterung wurde erfolgreich installiert.\nDas System wird neugestartet."
+msgstr "Die gewünschte Erweiterung wurde erfolgreich installiert.\nDas System startet jetzt neu."
 
 #: extensions.h:277
 msgid "Removeing"
@@ -1310,7 +1307,7 @@ msgid ""
 "Some plugins needs restart.\n"
 "If the plugin is not active\n"
 "reboot the box."
-msgstr "Einige Erweiterungen benötigen einen Neustart.?NSollte die Erweiterung nicht verfügbar sein,\nstarten Sie den Reciver neu."
+msgstr "Einige Erweiterungen benötigen einen Neustart.?NSollte die Erweiterung nicht verfügbar sein,\nstarten Sie den Receiver neu."
 
 #: extensions.h:396
 msgid "TPK Tmp Install done, your system will reboot !"
@@ -1797,21 +1794,21 @@ msgstr ""
 
 #: imdbapi.h:200 imdb.h:626 tmdb.h:759
 msgid "Error, Internet Connection not found"
-msgstr ""
+msgstr "FEHLER: Kein Internetverbindung!"
 
 #: inadyn.h:188
 msgid "DYNDNS started."
-msgstr ""
+msgstr "DYNDNS gestartet"
 
 #: inadyn.h:190
 msgid ""
 "DYNDNS not started,\n"
 "Please check your config."
-msgstr ""
+msgstr "FEHLER: DYNDNS nicht gestartet!\nBitte überprüfen Sie Ihre Eingaben."
 
 #: inadyn.h:200
 msgid "DYNDNS now stopped"
-msgstr ""
+msgstr "DYNDNS wurde beendet."
 
 #: info.h:23
 msgid ""
@@ -1819,7 +1816,7 @@ msgid ""
 "and your Atemio Serial Number !!\n"
 "\n"
 "Board-ID SerialNr:"
-msgstr ""
+msgstr "Für die nächste Online Aktualisierung übermitteln Sie bitte Ihre Seriennummer\nIhre Atemio Seriennumer\n\nund Ihre Board-ID Sereinnummer:"
 
 #: info.h:26
 msgid "Email  \t\tinfo@atemio.de"
@@ -1827,12 +1824,12 @@ msgstr ""
 
 #: info.h:27 plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9 titan.c:907
 msgid "Info"
-msgstr ""
+msgstr "Information"
 
 #: info.h:48 info.h:64 info.h:91 plugins_panel_skin.xml.h:17
 #: skins_panel_skin.xml.h:17
 msgid "Infos"
-msgstr ""
+msgstr "Informationen"
 
 #: instar.h:196 instar.h:208
 msgid "aus"
@@ -1844,7 +1841,7 @@ msgstr ""
 
 #: kinox.h:292 movie4k.h:720 movie4k.h:846 movie4k.h:960 solarmovie.h:443
 msgid "Season"
-msgstr ""
+msgstr "Staffel"
 
 #: kinox.h:296 movie4k.h:724 movie4k.h:964 solarmovie.h:447
 msgid "Episode"
@@ -1852,11 +1849,11 @@ msgstr ""
 
 #: language.h:49
 msgid "Change language needs reboot"
-msgstr ""
+msgstr "ACHTUNG: Die Änderung der Spracheeinstellung erfordert einen Neustart!"
 
 #: lnbconfig.h:137 skin_default_skin.xml.h:447
 msgid "Polarization"
-msgstr ""
+msgstr "Polarisation:"
 
 #: lnbconfig.h:138
 msgid "13V"
@@ -1872,7 +1869,7 @@ msgstr ""
 
 #: lnbconfig.h:147
 msgid "universal"
-msgstr ""
+msgstr "Universal"
 
 #: lnbconfig.h:148
 msgid "C-Band"
@@ -1880,41 +1877,41 @@ msgstr ""
 
 #: lnbconfig.h:149 rectimer.h:1054
 msgid "user defined"
-msgstr ""
+msgstr "Benutzerdefiniert"
 
 #: lnbconfig.h:150
 msgid "unicable"
-msgstr ""
+msgstr "Unikabel"
 
 #: lnbconfig.h:151
 msgid "user unicable"
-msgstr ""
+msgstr "Unikabel Benutzerdefiniert"
 
 #: marker.h:215
 msgid "ERROR... can't set marker in this file"
-msgstr ""
+msgstr "FEHLER: Eine Markierung kann in dieser Datei nicht gesetzt werden!"
 
 #: marker.h:229
 msgid "Marker has been set."
-msgstr ""
+msgstr "Die Markierung wurde erfolgreich gesetzt."
 
 #: mc_audioplayer.h:328 mc_main.h:200 mc_pictureplayer.h:119
 #: mc_videoplayer.h:325
 msgid ""
 "Shooting Background done !\n"
 "Save Screenshoot Path: /tmp/screenshot.jpg"
-msgstr ""
+msgstr "Das Bildsschirmfoto wurde erfolgreich erstellt.\n Das Bild gespeichert unter\n/tmp/screenshot.jpg "
 
 #: mc_audioplayer.h:403 mc_global.h:1069 mc_pictureplayer.h:145
 #: mc_videoplayer.h:421
 msgid "Repeat-On"
-msgstr ""
+msgstr "Wiederholung AN"
 
 #: mc_audioplayer.h:410 mc_audioplayer.h:560 mc_global.h:1071
 #: mc_pictureplayer.h:152 mc_pictureplayer.h:317 mc_videoplayer.h:428
 #: mc_videoplayer.h:659 plugins_mc_skin.xml.h:47 skins_mc_skin.xml.h:47
 msgid "Repeat"
-msgstr ""
+msgstr "Wiederholung"
 
 #: mc_audioplayer.h:515 mc_audioplayer.h:558 mc_audioplayer.h:678
 #: mc_global.h:336 mc_global.h:408 mc_pictureplayer.h:270
@@ -1922,82 +1919,82 @@ msgstr ""
 #: mc_videoplayer.h:657 mc_videoplayer.h:842 plugins_mc_skin.xml.h:27
 #: skins_mc_skin.xml.h:27
 msgid "Filelist-Mode"
-msgstr ""
+msgstr "Dateilisten Modus"
 
 #: mc_audioplayer.h:559 mc_global.h:552 mc_global.h:580 mc_global.h:1066
 #: mc_pictureplayer.h:316 mc_videoplayer.h:658 plugins_mc_skin.xml.h:46
 #: skins_mc_skin.xml.h:46
 msgid "Random"
-msgstr ""
+msgstr "Zufällige Wiedergabe"
 
 #: mc_audioplayer.h:580 mc_global.h:269 mc_global.h:692 mc_global.h:925
 #: mc_global.h:939 mc_pictureplayer.h:336 mc_videoplayer.h:699
 msgid "Playlist-Mode"
-msgstr ""
+msgstr "Wiedergabelisten Modus"
 
 #: mc_audioplayer_settings.h:36 mc_pictureplayer_settings.h:51
 #: mc_videoplayer_settings.h:32 plugins_mc_skin.xml.h:14
 #: skins_mc_skin.xml.h:14
 msgid "big"
-msgstr ""
+msgstr "groß"
 
 #: mc_audioplayer_settings.h:37 mc_pictureplayer_settings.h:52
 #: mc_videoplayer_settings.h:33
 msgid "cover"
-msgstr ""
+msgstr "Hülle"
 
 #: mc_audioplayer_settings.h:38 mc_videoplayer_settings.h:34
 #: plugins_mc_skin.xml.h:29 skins_mc_skin.xml.h:29
 msgid "fullcover"
-msgstr ""
+msgstr "Vollbildansicht"
 
 #: mc_audioplayer_settings.h:39 mc_pictureplayer_settings.h:54
 #: mc_videoplayer_settings.h:35
 msgid "size (default)"
-msgstr ""
+msgstr "Größe (Standard)"
 
 #: mc_audioplayer_settings.h:40 mc_pictureplayer_settings.h:55
 #: mc_videoplayer_settings.h:36
 msgid "datetime"
-msgstr ""
+msgstr "Datum/Uhrzeit"
 
 #: mc_dateibrowser.h:38
 msgid "Install File Manager Tpk first !"
-msgstr ""
+msgstr "ACHTUNG: Sie müssen erst die Erweiterung 'Filemanager' installieren!"
 
 #: mc_global.h:541 mc_global.h:569 mc_global.h:1064
 msgid "Random-On"
-msgstr ""
+msgstr "Zufällige Wiedergabe an"
 
 #: mc_internetbrowser.h:38
 msgid "Install netsurf Internetbrowser Tpk first !"
-msgstr ""
+msgstr "ACHTUNG: Sie müssen erst die Erweiterung 'Netsurf Internetbrowser' installieren!"
 
 #: mc_main.h:37 mc_main.h:42 mc_main.h:47 mc_main.h:73 mc_main.h:78
 msgid "comming soon"
-msgstr ""
+msgstr "Folgt in Kürze!"
 
 #: mc_main.h:209 menu.h:153 panel_main.h:29 panel_main.h:135
 msgid "Menu not implemented !"
-msgstr ""
+msgstr "ACHTUNG: Menü nicht verfügbar!"
 
 #: mc_mediathek.h:37
 msgid "Install Tithek Tpk first !"
-msgstr ""
+msgstr "ACHTUNG: Sie müssen erst die Erweiterung 'Tithek' installieren!"
 
 #: mc_pictureplayer_settings.h:29 panel_settings_autostart.h:60
 #: panel_settings_autostart.h:132 settings_autostart.h:51
 #: settings_autostart.h:163
 msgid "low"
-msgstr ""
+msgstr "niedrige Qualität"
 
 #: mc_pictureplayer_settings.h:30 moduleconfig.h:247
 msgid "middle"
-msgstr ""
+msgstr "mittlere Qualität"
 
 #: mc_pictureplayer_settings.h:31
 msgid "best"
-msgstr ""
+msgstr "beste Qualität"
 
 #: mc_pictureplayer_settings.h:59 mc_pictureplayer_settings.h:65
 #: skin_default_skin.xml.h:330
@@ -2034,15 +2031,15 @@ msgstr ""
 
 #: mc_settings.h:14
 msgid "skin (picmem jpg)"
-msgstr ""
+msgstr "Aussehen (Skin) picmem"
 
 #: mc_videoplayer.h:774
 msgid "Found VIDEO_TS Folder, start with DVD-Player ?"
-msgstr ""
+msgstr "Ein Ordner VIDEO_TS wurde gefunden.\nSoll die Wiedergabe mit dem DVD-Player gestartet werden?"
 
 #: mc_videoplayer.h:892 player.h:99
 msgid "Start at last position ?"
-msgstr ""
+msgstr "An der letzten Position forsetzen?"
 
 #: mc_videoplayer_settings.h:54
 msgid "1s"
@@ -2062,47 +2059,47 @@ msgstr ""
 
 #: mc_videoplayer_settings.h:58
 msgid "5s (default)"
-msgstr ""
+msgstr "5s (Standard)"
 
 #: mc_wetterinfo.h:38
 msgid "Install Weather Tpk first !"
-msgstr ""
+msgstr "ACHTUNG: Sie müssen erst die Erweiterung 'Wetter' installieren!"
 
 #: mediadbedit.h:75
 msgid "unlock -> lock it"
-msgstr ""
+msgstr "Ungeschützt --> Schützen"
 
 #: mediadbedit.h:76
 msgid "unlock -> leaf unlock"
-msgstr ""
+msgstr "Ungeschützt --> Nicht ändern"
 
 #: mediadbedit.h:77
 msgid "locked -> unlock it"
-msgstr ""
+msgstr "Geschützt --> Schutz aufheben"
 
 #: mediadbedit.h:78
 msgid "locked -> leaf locked"
-msgstr ""
+msgstr "Geschützt --> Nicht ändern"
 
 #: mediadbedit.h:333
 msgid "MediaDB entry for this file not found."
-msgstr ""
+msgstr "ACHTUNG: der MedaiDB Eintrag wurde nicht gefunden!"
 
 #: mediadb.h:1078 play.h:555
 msgid "MediaDB directory scan started in Background !"
-msgstr ""
+msgstr "MediaDB Hintergrundsuche wurde gestartet."
 
 #: mediadb.h:1080 play.h:557 skin_default_skin.xml.h:172
 msgid "Delete MediaDB before scan"
-msgstr ""
+msgstr "MediaDB Eintrag vor der Suche löschen"
 
 #: mediadb.h:1087 play.h:564 skin_default_skin.xml.h:173
 msgid "Delete unused entrys before scan"
-msgstr ""
+msgstr "Lösche ungenutze Einträge vor der Suche"
 
 #: mediadb.h:1094 play.h:571
 msgid "scan Directory"
-msgstr ""
+msgstr "Verzeichnis durchsuchen"
 
 #: mediadb.h:1098 play.h:575
 msgid "MediaDB place"
@@ -2114,80 +2111,80 @@ msgstr ""
 
 #: mediadb.h:1109 play.h:586 skin_default_skin.xml.h:100
 msgid "Backdrop Download Count"
-msgstr ""
+msgstr "Zähler zurücksetzen"
 
 #: mediadb.h:1112 mediadbsettings.h:55 play.h:589 plugins_mc_skin.xml.h:6
 #: skins_mc_skin.xml.h:6 tmc.h:539
 msgid "all"
-msgstr ""
+msgstr "alle"
 
 #: mediadb.h:1477
 msgid "MediaDB scan finished"
-msgstr ""
+msgstr "MediaDB Suche abgeschlossen"
 
 #: mediadb.h:2439 plugins_mc_skin.xml.h:24 skins_mc_skin.xml.h:24
 msgid "file"
-msgstr ""
+msgstr "Datei"
 
 #: mediadb.h:2443
 msgid "path"
-msgstr ""
+msgstr "Pfad"
 
 #: mediadb.h:2447
 msgid "title"
-msgstr ""
+msgstr "Titel"
 
 #: mediadb.h:2451
 msgid "imdbid"
-msgstr ""
+msgstr "IMDBID"
 
 #: mediadb.h:2454
 msgid "Add iMDB manuel"
-msgstr ""
+msgstr "Füge die IMDBID manuell hinzu"
 
 #: mediadbsettings.h:37
 msgid "older 1 day"
-msgstr ""
+msgstr "älter als 1 Tag"
 
 #: mediadbsettings.h:38
 msgid "older 2 day"
-msgstr ""
+msgstr "älter als 2 Tage"
 
 #: mediadbsettings.h:39
 msgid "older 3 day"
-msgstr ""
+msgstr "älter als 3 Tage"
 
 #: mediadbsettings.h:40
 msgid "older 4 day"
-msgstr ""
+msgstr "älter als 4 Tage"
 
 #: mediadbsettings.h:41
 msgid "older 5 day"
-msgstr ""
+msgstr "älter als 5 Tage"
 
 #: mediadbsettings.h:42
 msgid "older 10 day"
-msgstr ""
+msgstr "älter als 10 Tage"
 
 #: mediadbsettings.h:43
 msgid "older 15 day"
-msgstr ""
+msgstr "älter als 15 Tage"
 
 #: mediadbsettings.h:44
 msgid "older 20 day"
-msgstr ""
+msgstr "älter als 20 Tage"
 
 #: mediadbsettings.h:45
 msgid "older 30 day"
-msgstr ""
+msgstr "älter als 30 Tage"
 
 #: mediadbsettings.h:46
 msgid "older 40 day"
-msgstr ""
+msgstr "älter als 40 Tage"
 
 #: mediadbsettings.h:47
 msgid "older 50 day"
-msgstr ""
+msgstr "älter als 50 Tage"
 
 #: mediadbsettings.h:56 plugins_catcatch_skin.xml.h:3
 #: skin_default_skin.xml.h:33 skins_catcatch_skin.xml.h:3
@@ -2210,31 +2207,31 @@ msgstr ""
 msgid ""
 "No MediaDB Directory found\n"
 "Press OK to create it"
-msgstr ""
+msgstr "ACHTUNG: Kein MediaDB Verzeichnis gefunden!\nDrücken Sie auf -OK- um ein Verzeichnis anzulegen."
 
 #: menu.h:879 menu.h:881 skin_default_skin.xml.h:530
 msgid "Save Settings"
-msgstr ""
+msgstr "Einstellungen speichern"
 
 #: menu.h:879
 msgid "Error in Save Settings"
-msgstr ""
+msgstr "FEHLER IN DEN EINSTELLUNGEN!!!"
 
 #: menu.h:881
 msgid "Settings succesfull saved"
-msgstr ""
+msgstr "Einstellungen erfolgreich gespeichert."
 
 #: moduleconfig.h:159
 msgid "double"
-msgstr ""
+msgstr "doppel"
 
 #: moduleconfig.h:168
 msgid "activate"
-msgstr ""
+msgstr "Aktiv"
 
 #: moduleconfig.h:169
 msgid "deaktivate"
-msgstr ""
+msgstr "Deaktiviert"
 
 #: moduleconfig.h:350
 msgid "Status: "
@@ -2242,100 +2239,100 @@ msgstr ""
 
 #: moduleconfig.h:354
 msgid "empty"
-msgstr ""
+msgstr "leer"
 
 #: moduleconfig.h:356
 msgid "initializing"
-msgstr ""
+msgstr "Initialiserung"
 
 #: moduleconfig.h:358
 msgid "ready"
-msgstr ""
+msgstr "Bereit"
 
 #: moduleconfig.h:373
 msgid "Module Type"
-msgstr ""
+msgstr "Modultyp"
 
 #: moduleconfig.h:374
 msgid "Single Service"
-msgstr ""
+msgstr "Einzelner Dienst"
 
 #: moduleconfig.h:375
 msgid "Multiple Service"
-msgstr ""
+msgstr "Mehrfach Dienst"
 
 #: multiepg.h:437 multiepg.h:627
 msgid "MULTI EPG - Bouquets"
-msgstr ""
+msgstr "Multi EPG - Favoriten"
 
 #: multiepg.h:450
 msgid "MULTI EPG - Channel"
-msgstr ""
+msgstr "Multi EPG - Sender"
 
 #: multiepg.h:463
 msgid "MULTI EPG - Satellites"
-msgstr ""
+msgstr "Multi EPG - Satelliten"
 
 #: multiepg.h:476
 msgid "MULTI EPG - Provider"
-msgstr ""
+msgstr "Multi EPG - Anbieter"
 
 #: multiepg.h:489
 msgid "MULTI EPG - All Channels"
-msgstr ""
+msgstr "Mutil EPG - Alle Sender"
 
 #: networkbrowser.h:944
 msgid ""
 "For Better Win7 Support install please Tpk Install > Network > Smbclient"
-msgstr ""
+msgstr "ACHTUNG: Für eine bessere Kompatibilität mit Windows 7 installieren Sie erst die Erweiterung 'SMB-Client'!"
 
 #: networkbrowser.h:1005 networkbrowser.h:1011 networkbrowser.h:1021
 msgid "Anonymous login Access Denied !"
-msgstr ""
+msgstr "ACHTUNG: Anonyme Anmeldung: Zugriff verweigert!"
 
 #: networkbrowser.h:1009 networkbrowser.h:1025
 msgid "Anonymous login successful"
-msgstr ""
+msgstr "Anonyme Anmeldung erfolgreich"
 
 #: networkbrowser.h:1160 networkbrowser.h:1161
 msgid "Scanning Network Shares, please wait !!"
-msgstr ""
+msgstr "Suche nach Netzwerkfreigaben.\nBitte warten..."
 
 #: networkbrowser.h:1181
 msgid "Networkbrowser - show scanned DNS-Shares"
-msgstr ""
+msgstr "Netzwerkbowser - Anzeige der DNS-Freigaben"
 
 #: networkbrowser.h:1189
 msgid "Use User authentication ?"
-msgstr ""
+msgstr "User Authentifizierung verwenden?"
 
 #: networkbrowser.h:1207
 msgid "Networkbrowser - show scanned cifs/nfs-Shares"
-msgstr ""
+msgstr "Netzwerkbrowser - Anzeige der CIFS/NFS Freigaben"
 
 #: networkbrowser.h:1340
 msgid "Add Cifs Network Share"
-msgstr ""
+msgstr "CIFS Netzwerkfreigabe hinzufügen"
 
 #: networkbrowser.h:1390
 msgid "Add Nfs Network Share"
-msgstr ""
+msgstr "NFS Netzwerkfreigabe hinzufügen"
 
 #: networkbrowser.h:1430
 msgid "Add Ftpfs Network Share"
-msgstr ""
+msgstr "FTPFS Netzwerkfreigabe hinzufügen"
 
 #: networkbrowser.h:1559
 msgid "cifs"
-msgstr ""
+msgstr "CIFS"
 
 #: networkbrowser.h:1560
 msgid "nfs"
-msgstr ""
+msgstr "NFS"
 
 #: networkbrowser.h:1561
 msgid "ftpfs"
-msgstr ""
+msgstr "FTPFS"
 
 #: networkbrowser.h:1596
 msgid "ssl_try"
@@ -2348,93 +2345,93 @@ msgstr ""
 #: networkbrowser.h:1598 plugins_networkbrowser_skin.xml.h:28
 #: skins_networkbrowser_skin.xml.h:28
 msgid "ssl"
-msgstr ""
+msgstr "SSL"
 
 #: networkbrowser.h:1601
 msgid "socks5"
-msgstr ""
+msgstr "SOCKS5"
 
 #: networkbrowser.h:1602
 msgid "socks4"
-msgstr ""
+msgstr "SOCKS4"
 
 #: networkbrowser.h:1603
 msgid "html"
-msgstr ""
+msgstr "HTML"
 
 #: networkbrowser.h:1659
 msgid "udp"
-msgstr ""
+msgstr "UDP"
 
 #: networkbrowser.h:1660
 msgid "tcp"
-msgstr ""
+msgstr "TCP"
 
 #: networkbrowser.h:1663
 msgid "rw"
-msgstr ""
+msgstr "Lese/Schreibzugriff"
 
 #: networkbrowser.h:1664
 msgid "ro"
-msgstr ""
+msgstr "Schreibgeschützt (ro)"
 
 #: networkbrowser.h:1743
 msgid "Sharename can't be empty!"
-msgstr ""
+msgstr "FEHLER: Ein Freigabename muss eingetragen sein!"
 
 #: networkbrowser.h:1750
 msgid "A mount entry with this name already exists!"
-msgstr ""
+msgstr "FEHLER: Eine Netzwerkfreigabe mit diesem Namen existiert bereits!"
 
 #: networkbrowser.h:1755
 msgid "Are you sure you want to save this network mount?"
-msgstr ""
+msgstr "Wollen Sie diese Netzwerkfreigabe wirklich speichern?"
 
 #: networkbrowser.h:1907
 msgid "Are you sure you want remove this share?"
-msgstr ""
+msgstr "ACHTUNG: Wollen Sie die Netzwerkfreigabe wirklich entfernen?"
 
 #: network.h:256 network.h:257
 msgid "Wait"
-msgstr ""
+msgstr "warten..."
 
 #: network.h:265 network.h:273
 msgid "ERROR"
-msgstr ""
+msgstr "!!! FEHLER !!!"
 
 #: network.h:284 network.h:299 plugins_mc_skin.xml.h:37
 #: plugins_panel_skin.xml.h:18 skin_default_skin.xml.h:393
 #: skins_mc_skin.xml.h:37 skins_panel_skin.xml.h:18 system_infos.h:91
 msgid "Network"
-msgstr ""
+msgstr "Netzwerk"
 
 #: network.h:284
 msgid "comming soon..."
-msgstr ""
+msgstr "Folgt bald..."
 
 #: network.h:335
 msgid "Restart Network"
-msgstr ""
+msgstr "Netzwerk Neustarten"
 
 #: network.h:389
 msgid "dhcp"
-msgstr ""
+msgstr "DHCP"
 
 #: network.h:390
 msgid "static"
-msgstr ""
+msgstr "Statisch"
 
 #: network.h:426
 msgid "save network settings ?"
-msgstr ""
+msgstr "Netzwerkeinstellungen speichern?"
 
 #: network.h:558
 msgid "Can't change hostname !"
-msgstr ""
+msgstr "FEHLER: Der Hostname kann nicht geändert werden!"
 
 #: network.h:679
 msgid "NONE"
-msgstr ""
+msgstr "OHNE"
 
 #: network.h:680
 msgid "WEP"
@@ -2450,31 +2447,31 @@ msgstr ""
 
 #: network.h:766
 msgid "deaktivate ethernet interface ?"
-msgstr ""
+msgstr "Netzwerkkarte abschalten?"
 
 #: network.h:774
 msgid "Start Wlan ?"
-msgstr ""
+msgstr "WLAN starten?"
 
 #: network.h:800
 msgid ""
 "WLAN started.\n"
 " You can now configure the new interface."
-msgstr ""
+msgstr "WLAN erfolgreich gestartet.\nSie können die Schnittstelle jetzt konfigurieren."
 
 #: network.h:804
 msgid ""
 "WLAN not started,\n"
 "Please check your config."
 msgstr ""
-
+FEHLER: WLAN nicht gestartet!\nÜberprüfen Sie Ihre Einstellungen.
 #: network.h:827
 msgid "searching..."
-msgstr ""
+msgstr "suche..."
 
 #: network.h:858
 msgid "WLAN now stopped"
-msgstr ""
+msgstr "WLAN abgeschaltet"
 
 #: network.h:865
 msgid "WLAN LOG"
@@ -2482,21 +2479,21 @@ msgstr ""
 
 #: network.h:876
 msgid "Found Wlan Stick and driver for: "
-msgstr ""
+msgstr "WLAN Gerät und Treiber wurden gefunden:"
 
 #: network.h:881
 msgid ""
 "Found Wlan Stick but no driver\n"
 "Please install driver: "
-msgstr ""
+msgstr "FEHLER: Ein WLAN Gerät wurde erkannt.\nBitte installieren Sie den passenden Treiber!"
 
 #: network.h:884
 msgid "Wlan Stick not found"
-msgstr ""
+msgstr "FEHLER: WLAN Gerät wurde nicht gefunden!"
 
 #: network.h:887
 msgid "WLAN Info"
-msgstr ""
+msgstr "WLAN Information"
 
 #: optimize.h:253
 msgid "hold"
