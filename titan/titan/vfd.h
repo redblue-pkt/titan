@@ -459,8 +459,8 @@ void updatevfd()
 				tmpstr = ostrcat(tmpstr, gettime(NULL, "%H%M"), 1, 1);
 				break;
 			case 5: // only channel number
-				if(oldvfdchannel != status.aktservice->channel)
-				{
+				//if(oldvfdchannel != status.aktservice->channel)
+				//{
 					if(status.aktservice->channel != NULL)
 					{
 						oldvfdchannel = status.aktservice->channel;
@@ -478,9 +478,9 @@ void updatevfd()
 							}
 						}
 					}
-				}
-				else if(oldvfdchannelnr != -1)
-					tmpstr = ostrcat(tmpstr, oitoa(oldvfdchannelnr), 1, 1);
+				//}
+				//else if(oldvfdchannelnr != -1)
+				//	tmpstr = ostrcat(tmpstr, oitoa(oldvfdchannelnr), 1, 1);
 				break;
 			default: // only channel name
 				if(status.aktservice->channel != NULL)
