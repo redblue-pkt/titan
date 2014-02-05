@@ -120,7 +120,8 @@ msgstr ""
 #: vidstream.h:86 vidstream.h:98 vidstream.h:167 xvidstage.h:54
 #: xvidstage.h:100 xvidstage.h:177 youtube.h:197 zdf.h:29 global.h:6475
 #: httpdfunc.h:3019 global.h:6478 httpdfunc.h:3021 global.h:6480
-#: keyactions.h:226 keyactions.h:227 global.h:6494
+#: keyactions.h:226 keyactions.h:227 global.h:6494 play.h:1450 play.h:1610
+#: play.h:1621
 msgid "OK"
 msgstr ""
 
@@ -211,7 +212,8 @@ msgstr ""
 #: vidstream.h:86 vidstream.h:98 vidstream.h:167 xvidstage.h:54
 #: xvidstage.h:100 xvidstage.h:177 youtube.h:197 zdf.h:29 global.h:6475
 #: httpdfunc.h:3019 global.h:6478 httpdfunc.h:3021 global.h:6480
-#: keyactions.h:226 keyactions.h:227 global.h:6494
+#: keyactions.h:226 keyactions.h:227 global.h:6494 play.h:1450 play.h:1610
+#: play.h:1621
 msgid "EXIT"
 msgstr ""
 
@@ -586,7 +588,7 @@ msgstr ""
 #: videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98 vidstream.h:167
 #: xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:197 zdf.h:29
 #: global.h:6475 global.h:6478 global.h:6480 keyactions.h:226 keyactions.h:227
-#: global.h:6494
+#: global.h:6494 play.h:1450 play.h:1610 play.h:1621
 msgid "Message"
 msgstr ""
 
@@ -1100,7 +1102,7 @@ msgstr ""
 #: dvdplay.h:62 mc_audioplayer.h:599 mc_audioplayer.h:702 mc_global.h:765
 #: mc_global.h:1010 mc_pictureplayer.h:95 mc_pictureplayer.h:237
 #: mc_pictureplayer.h:363 mc_pictureplayer.h:456 mc_videoplayer.h:739
-#: mc_videoplayer.h:876 play.h:1449
+#: mc_videoplayer.h:876 play.h:1449 play.h:1450
 msgid "Can't start playback !"
 msgstr ""
 
@@ -2832,11 +2834,11 @@ msgstr ""
 msgid "DEL"
 msgstr ""
 
-#: play.h:1609
+#: play.h:1609 play.h:1610
 msgid "Marker autoseek is started"
 msgstr ""
 
-#: play.h:1620
+#: play.h:1620 play.h:1621
 msgid "Marker autoseek is stopped"
 msgstr ""
 
