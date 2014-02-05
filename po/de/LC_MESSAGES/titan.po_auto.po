@@ -497,7 +497,7 @@ msgstr "Ja / VZap 2 Sekunde"
 
 #: adjust.h:213
 msgid "yes / vzap endless"
-msgstr "Ja / VZap Unendlich"
+msgstr "Ja / VZap unendlich"
 
 #: ard.h:31 avsettings.h:247 betarobot.h:57 bgdownload.h:176
 #: blindscanadjust.h:25 callmon_main.h:39 channellist.h:913 channellist.h:915
@@ -638,7 +638,7 @@ msgstr "KABEL: "
 
 #: blindscanadjust.h:21
 msgid "Terrestrial: "
-msgstr "TERRESTRICH: "
+msgstr "Terrestrisch: "
 
 #: blindscanadjust.h:120
 msgid "Sat"
@@ -819,7 +819,7 @@ msgstr "Anzahl der Dateien:"
 
 #: copyfile.h:881 copyfile.h:882
 msgid "file move error"
-msgstr "FEHLER: Beim verschieben ist ein Fehler aufgetreten!"
+msgstr "FEHLER: Beim Verschieben ist ein Fehler aufgetreten!"
 
 #: copyfile.h:886 copyfile.h:887
 msgid "file copy error"
@@ -1058,11 +1058,11 @@ msgstr ""
 
 #: download.h:97
 msgid "download error"
-msgstr "FELER: Beim herunterladen trat ein unerwarteter Fehler auf!"
+msgstr "FELER: Beim Herunterladen trat ein unerwarteter Fehler auf!"
 
 #: download.h:101
 msgid "wait for stopping download"
-msgstr "ACHTUNG: Bitte warten Sie, bis das herunterladen beendet wurde."
+msgstr "ACHTUNG: Bitte warten Sie bis das Herunterladen beendet wurde."
 
 #: dvdplay.h:29
 msgid "EJECT"
@@ -1232,15 +1232,15 @@ msgstr "Installation erfolgreich abgeschlossen."
 
 #: extensions.h:101
 msgid "Install error"
-msgstr "FEHLER: Installation Fehlerhaft!"
+msgstr "FEHLER: Installation fehlerhaft!"
 
 #: extensions.h:103
 msgid "Remove success"
-msgstr "Erfolgreich Entfernt."
+msgstr "Erfolgreich entfernt."
 
 #: extensions.h:105
 msgid "Remove error"
-msgstr "FEHLER: Beim löschen ist ein Fehler aufgetreten!"
+msgstr "FEHLER: Beim Löschen ist ein Fehler aufgetreten!"
 
 #: extensions.h:170 extensions.h:221 extensions.h:478
 msgid "Tpk Install Info"
@@ -1307,7 +1307,7 @@ msgid ""
 "Some plugins needs restart.\n"
 "If the plugin is not active\n"
 "reboot the box."
-msgstr "Einige Erweiterungen benötigen einen Neustart.?NSollte die Erweiterung nicht verfügbar sein,\nstarten Sie den Receiver neu."
+msgstr "Einige Erweiterungen benötigen einen Neustart.\nSollte die Erweiterung nicht verfügbar sein,\nstarten Sie den Receiver neu."
 
 #: extensions.h:396
 msgid "TPK Tmp Install done, your system will reboot !"
@@ -1315,7 +1315,7 @@ msgstr "TPK Installation aus tmp wurde erfolgreich durchgeführt.\nDas System wir
 
 #: extensions.h:420 extensions.h:424
 msgid "Tpk Update Info - Update ERROR"
-msgstr "FEHLER: Die aktualisierung aus tmp ist Fehlgeschlagen!"
+msgstr "FEHLER: Die Aktualisierung aus tmp ist Fehlgeschlagen!"
 
 #: extensions.h:420
 msgid "Can't get all TPK index !"
@@ -1323,11 +1323,11 @@ msgstr "FEHLER: Kann das komplette Inhaltsverzeichnis der TPK Rubrik nicht laden
 
 #: extensions.h:424
 msgid "Can't update all packages !"
-msgstr "FEHLER: Es konnten nich talle Erweiterungen aktualisiert werden!"
+msgstr "FEHLER: Es konnten nicht alle Erweiterungen aktualisiert werden!"
 
 #: extensions.h:432
 msgid "TPK Upgrade done, your system will reboot !"
-msgstr "Alle Erweiterungen wurden erfolgreich aktualisiert.?nDas System wird neu gestartet."
+msgstr "Alle Erweiterungen wurden erfolgreich aktualisiert.\nDas System wird neu gestartet."
 
 #: facebook.h:66 facebook.h:167
 msgid "Can't get data from facebook"
@@ -1381,7 +1381,7 @@ msgstr "Kommentar abgegeben"
 
 #: facebook.h:482
 msgid "Checkin to a place"
-msgstr "Ortsmakierung wurde gesetzt"
+msgstr "Ortsmarkierung wurde gesetzt"
 
 #: facebook.h:483
 msgid "Post in group"
@@ -1521,13 +1521,13 @@ msgstr "Laufwerk für Datensicherung entfernen."
 
 #: harddisk.h:345
 msgid "Are you sure you want to delete this directory?"
-msgstr "Wollen das ausgewählte Verzeichnis wirklich löschen?"
+msgstr "Wollen Sie das ausgewählte Verzeichnis wirklich löschen?"
 
 #: harddisk.h:350
 msgid ""
 "Directory has content\n"
 "Really delete directory and content?"
-msgstr "ACHTUNG: Das ausgewählte Verzeichnis ist nicht leer!\nVerzeichnis trotzdem löschen?\nAlle darin befindliche Daten gehen verloren!!!"
+msgstr "ACHTUNG: Das ausgewählte Verzeichnis ist nicht leer!\nVerzeichnis trotzdem löschen?\nAlle darin befindlichen Daten gehen verloren!!!"
 
 #: harddisk.h:377
 msgid "can't create or delete directory"
@@ -1592,13 +1592,13 @@ msgid ""
 "Are you sure you want to remove all Partitions\n"
 "on this device and create a new Partition 1?\n"
 "Box reboots after format"
-msgstr "ACHTUNG: Sind Sie sicher, dass sie alle Partitionen\nlöschen wollen und eine neue Partition 1 erstellen wollen?\nDer Receiver wird nach dem formatieren neu gestartet!"
+msgstr "ACHTUNG: Sind Sie sicher, dass Sie alle Partitionen\nlöschen wollen und eine neue Partition 1 erstellen wollen?\nDer Receiver wird nach dem Formatieren neu gestartet!"
 
 #: harddisk.h:666
 msgid ""
 "Are you sure you want to format this Partition?\n"
 "Box reboots after format"
-msgstr "ACHTUNG: Sind Sie sicher, dass sie die Patition formatieren wollen?\nDer Receiver wird nach dem formatieren neu gestartet!"
+msgstr "ACHTUNG: Sind Sie sicher, dass Sie die Partition formatieren wollen?\nDer Receiver wird nach dem Formatieren neu gestartet!"
 
 #: harddisk.h:784
 msgid ""
@@ -1658,7 +1658,7 @@ msgstr "FEHLER: Der Testtransponder konnte nicht gefunden werden!"
 
 #: hwtest.h:93
 msgid "testtransponder entry not ok"
-msgstr "FEHLER: Der eingetragene Testtransponder ist Fehlerhaft.\nBitte überprüfen Sie Ihre Angaben!"
+msgstr "FEHLER: Der eingetragene Testtransponder ist fehlerhaft.\nBitte überprüfen Sie Ihre Angaben!"
 
 #: hwtest.h:98
 msgid "can't create new transponer"
@@ -1670,7 +1670,7 @@ msgstr "FEHLER: Testsender konnte nicht gefunden werden!"
 
 #: hwtest.h:108
 msgid "testchannel entry not ok"
-msgstr "FEHLER: Testsender-Eintrag ist Fehlerhaft.\nBitte überprüfen Sie Ihre Angaben!"
+msgstr "FEHLER: Testsender-Eintrag ist fehlerhaft.\nBitte überprüfen Sie Ihre Angaben!"
 
 #: hwtest.h:113
 msgid "can't create new channel"
@@ -1738,11 +1738,11 @@ msgstr "CI-MODUL gefunden: "
 
 #: hwtest.h:562
 msgid "SUCESS Serial Port"
-msgstr "Serieller Anschlu Erfolgreich"
+msgstr "Serieller Anschluß erfolgreich"
 
 #: hwtest.h:564
 msgid "FAIL Serial Port"
-msgstr "Serieller Anschluß Fehlerhaft"
+msgstr "Serieller Anschluß fehlerhaft"
 
 #: hwtest.h:575
 msgid "LNB off / 22K off: OK\n"
@@ -1794,7 +1794,7 @@ msgstr ""
 
 #: imdbapi.h:200 imdb.h:626 tmdb.h:759
 msgid "Error, Internet Connection not found"
-msgstr "FEHLER: Kein Internetverbindung!"
+msgstr "FEHLER: Keine Internetverbindung!"
 
 #: inadyn.h:188
 msgid "DYNDNS started."
@@ -1816,7 +1816,7 @@ msgid ""
 "and your Atemio Serial Number !!\n"
 "\n"
 "Board-ID SerialNr:"
-msgstr "Für die nächste Online Aktualisierung übermitteln Sie bitte Ihre Seriennummer\nIhre Atemio Seriennumer\n\nund Ihre Board-ID Sereinnummer:"
+msgstr "Für die nächste Online Aktualisierung übermitteln Sie bitte Ihre Seriennummer\nIhre Atemio Seriennumer\n\n und Ihre Board-ID Sereinnummer:"
 
 #: info.h:26
 msgid "Email  \t\tinfo@atemio.de"
@@ -1885,7 +1885,7 @@ msgstr "Unikabel"
 
 #: lnbconfig.h:151
 msgid "user unicable"
-msgstr "Unikabel Benutzerdefiniert"
+msgstr "Unikabel benutzerdefiniert"
 
 #: marker.h:215
 msgid "ERROR... can't set marker in this file"
@@ -1900,7 +1900,7 @@ msgstr "Die Markierung wurde erfolgreich gesetzt."
 msgid ""
 "Shooting Background done !\n"
 "Save Screenshoot Path: /tmp/screenshot.jpg"
-msgstr "Das Bildsschirmfoto wurde erfolgreich erstellt.\n Das Bild gespeichert unter\n/tmp/screenshot.jpg "
+msgstr "Das Bildschirmfoto wurde erfolgreich erstellt.\nDas Bild wurde gespeichert unter\n/tmp/screenshot.jpg "
 
 #: mc_audioplayer.h:403 mc_global.h:1069 mc_pictureplayer.h:145
 #: mc_videoplayer.h:421
