@@ -536,14 +536,6 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	if(flag == 0 && status.autochangechannelname == 1)
 		addtimer(&autochangechannelname, START, 1000, 1, NULL, NULL, NULL);
 	
-	//set HD icon on display
-	if(checkbox("UFS910") == 1) {
-		if(status.videosize.w > 576)
-			system("fp_control -i 2 1 &");
-		else
-			system("fp_control -i 2 0 &");
-	}
-	
 	//autoresolution
 	if(flag == 0 && ostrcmp(getconfig("av_videomode_autores", NULL), "auto") == 0)
 	{

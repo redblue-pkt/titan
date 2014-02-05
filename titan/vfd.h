@@ -409,7 +409,10 @@ void updatevfd()
 	{
 		//setvfdicon(VFD_USB, 0);
 		if(getaktvideosize() == 0) //videosize is ok
-			setvfdicon(VFD_HD, status.videosize.w > 576);
+			if(status.videosize.w > 576)
+				setvfdicon(VFD_HD, 1);
+			else
+				setvfdicon(VFD_HD, 0);
 		else
 			setvfdicon(VFD_HD, 0);
 		//setvfdicon(VFD_HDD, 0);
