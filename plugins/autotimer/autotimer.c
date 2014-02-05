@@ -342,6 +342,7 @@ void autotimer_thread()
 		while (autotimerthread->aktion != STOP && i < 43200)
 		{
 			sleep(2);
+			i = i + 1;
 		}
 	}
 	free(buf); buf = NULL;
