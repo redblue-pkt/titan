@@ -121,7 +121,7 @@ msgstr ""
 #: xvidstage.h:100 xvidstage.h:177 youtube.h:197 zdf.h:29 global.h:6475
 #: httpdfunc.h:3019 global.h:6478 httpdfunc.h:3021 global.h:6480
 #: keyactions.h:226 keyactions.h:227 global.h:6494 play.h:1450 play.h:1610
-#: play.h:1621
+#: play.h:1621 service.h:709 service.h:950
 msgid "OK"
 msgstr ""
 
@@ -213,7 +213,7 @@ msgstr ""
 #: xvidstage.h:100 xvidstage.h:177 youtube.h:197 zdf.h:29 global.h:6475
 #: httpdfunc.h:3019 global.h:6478 httpdfunc.h:3021 global.h:6480
 #: keyactions.h:226 keyactions.h:227 global.h:6494 play.h:1450 play.h:1610
-#: play.h:1621
+#: play.h:1621 service.h:709 service.h:950
 msgid "EXIT"
 msgstr ""
 
@@ -588,7 +588,8 @@ msgstr ""
 #: videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98 vidstream.h:167
 #: xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:197 zdf.h:29
 #: global.h:6475 global.h:6478 global.h:6480 keyactions.h:226 keyactions.h:227
-#: global.h:6494 play.h:1450 play.h:1610 play.h:1621
+#: global.h:6494 play.h:1450 play.h:1610 play.h:1621 service.h:709
+#: service.h:950
 msgid "Message"
 msgstr ""
 
@@ -4565,27 +4566,27 @@ msgstr ""
 msgid "Script execute"
 msgstr ""
 
-#: service.h:701
+#: service.h:701 service.h:709
 msgid ""
 "Timeshift is running !!!\n"
 "Stop it and switch ?"
 msgstr ""
 
-#: service.h:925
+#: service.h:925 service.h:933
 msgid ""
 "Can't find a Tuner.\n"
 "All Tuners in use or no Tuner defined."
 msgstr ""
 
-#: service.h:928
+#: service.h:928 service.h:936
 msgid "Tuning to Channel failed!"
 msgstr ""
 
-#: service.h:931
+#: service.h:931 service.h:939
 msgid "Can't open frontend dev or Frontend Type unknown!"
 msgstr ""
 
-#: service.h:936
+#: service.h:936 service.h:944
 msgid "Channellist empty or corrupt (channel not found)!"
 msgstr ""
 
