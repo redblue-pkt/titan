@@ -2039,7 +2039,7 @@ msgstr "Ein Ordner VIDEO_TS wurde gefunden.\nSoll die Wiedergabe mit dem DVD-Pla
 
 #: mc_videoplayer.h:892 player.h:99
 msgid "Start at last position ?"
-msgstr "An der letzten Position forsetzen?"
+msgstr "An der letzten Position fortsetzen?"
 
 #: mc_videoplayer_settings.h:54
 msgid "1s"
@@ -2083,7 +2083,7 @@ msgstr "Geschützt --> Nicht ändern"
 
 #: mediadbedit.h:333
 msgid "MediaDB entry for this file not found."
-msgstr "ACHTUNG: der MedaiDB Eintrag wurde nicht gefunden!"
+msgstr "ACHTUNG: der MediaDB Eintrag wurde nicht gefunden!"
 
 #: mediadb.h:1078 play.h:555
 msgid "MediaDB directory scan started in Background !"
