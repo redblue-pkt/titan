@@ -12,9 +12,9 @@ void screensystem_backup()
 	struct skin* tmp = NULL;
 	char* tmpstr = NULL, *infotext = NULL;
 
-	infotext = "Backup to /tmp or /var/backup. If the free memory too small can a usb device will never use.\nThere must be a folder backup.";
+	infotext = _("Backup to /tmp or /var/backup. If the free memory too small can a usb device will never use.\nThere must be a folder backup.");
 
-	changetext(info, _(infotext));
+	changetext(info, infotext);
 	changetitle(backup, _("Create Backup"));
 
 	addscreenrc(backup, listbox);
