@@ -237,6 +237,7 @@ struct channelslot *channelslot = NULL;
 #include "hwtest.h"
 #include "settings_autostart.h"
 #include "settings_overclocking.h"
+#include "settings_pluginbutton.h"
 
 #define TIMECODE ""
 

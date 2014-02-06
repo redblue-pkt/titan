@@ -8,6 +8,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+// settings_pluginbutton.h
+void screensettings_pluginbutton();
+
 // settings_overclocking.h
 void screensettings_overclocking();
 

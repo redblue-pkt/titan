@@ -1741,6 +1741,12 @@ void setskinnodeslocked(int flag)
 // disable Reader Config manual start
 			if(ostrcmp("Reader Config", child->name) == 0) child->locked = 1;
 
+			// hide this menu on all boxes without ATEMIO530
+			if(checkbox("ATEMIO530") != 1)
+			{
+				if(ostrcmp("settings_pluginbutton", child->name) == 0) child->locked = 1;
+			}
+
 			// hide this menu on all boxes without ufs912
 			if(checkbox("UFS912") != 1)
 			{
