@@ -48,7 +48,7 @@ void screenkeyactions(int key, int flag)
 		}
 	
 		//addmenulist(&mlist, _("Extensions List"), NULL, NULL, 0, 0);
-		addmenulist(&mlist, _("Auto Resolution", NULL, "resolution.png", 0, 0);
+		addmenulist(&mlist, _("Auto Resolution"), NULL, "resolution.png", 0, 0);
 		if(checkemu() == 1)
 			addmenulist(&mlist, _("Softcam Panel"), NULL, NULL, 0, 0);
 		//addmenulist(&mlist, _("TV / Radio Switch"), NULL, NULL, 0, 0);
