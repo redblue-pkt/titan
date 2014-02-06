@@ -3383,7 +3383,7 @@ msgstr "Sortierung"
 
 #: plugins_mc_skin.xml.h:57 skin_default_skin.xml.h:585 skins_mc_skin.xml.h:57
 msgid "Sorting"
-msgstr "Sortierung"
+msgstr "Sortiere"
 
 #: plugins_mc_skin.xml.h:58 skins_mc_skin.xml.h:58
 msgid "Sound"
@@ -3645,7 +3645,7 @@ msgstr "Abbrechen"
 #: plugins_panel_skin.xml.h:13 skin_default_skin.xml.h:135
 #: skins_panel_skin.xml.h:13
 msgid "Child safety"
-msgstr "Bootpasswort"
+msgstr "Jugendschutz"
 
 #: plugins_panel_skin.xml.h:14 skins_panel_skin.xml.h:14 system_infos.h:17
 msgid "Default"
@@ -3832,7 +3832,7 @@ msgstr "Bitte warten"
 #: plugins_tithek_skin.xml.h:9 skin_default_skin.xml.h:487
 #: skins_tithek_skin.xml.h:9
 msgid "Red-Menu"
-msgstr "-ROT- Menü"
+msgstr "Rot-Menü"
 
 #: plugins_tithek_skin.xml.h:11 skins_tithek_skin.xml.h:11
 msgid "Show Pay Streams"
@@ -4571,7 +4571,7 @@ msgstr "Ja - Anzeige in MB"
 
 #: skinadjust.h:54 tunerconfig.h:302 tunerconfig.h:303
 msgid "press red"
-msgstr "-ROT- drücken"
+msgstr "Rote Tase drücken"
 
 #: skinadjust.h:133
 msgid "Receiver now reboot !!!"
@@ -4868,7 +4868,7 @@ msgstr "Automatischer Untertitel Start"
 
 #: skin_default_skin.xml.h:88
 msgid "Auto resolution"
-msgstr "Automatische  Auflösung"
+msgstr "Automatische Auflösung"
 
 #: skin_default_skin.xml.h:89
 msgid "Autostart - Audio / Video / Sat"
@@ -6554,7 +6554,7 @@ msgstr "Samba Server Einstellungen"
 
 #: skin_default_skin.xml.h:519
 msgid "SAT"
-msgstr ""
+msgstr "Sat"
 
 #: skin_default_skin.xml.h:520
 msgid "SATA Connector"
@@ -6602,7 +6602,7 @@ msgstr "Auswahl scannen"
 
 #: skin_default_skin.xml.h:535
 msgid "Scan locking"
-msgstr ""
+msgstr "Suche sperren"
 
 #: skin_default_skin.xml.h:536
 msgid "SCANSTART"
@@ -7388,7 +7388,7 @@ msgstr "Anzahl: "
 
 #: stock.h:229
 msgid "Avg volume: "
-msgstr "Durchscnittliche Anzahl: "
+msgstr "Durchschnittliche Anzahl: "
 
 #: stock.h:233
 msgid "Market cap: "
