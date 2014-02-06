@@ -121,7 +121,8 @@ msgstr ""
 #: xvidstage.h:100 xvidstage.h:177 youtube.h:197 zdf.h:29 global.h:6475
 #: httpdfunc.h:3019 global.h:6478 httpdfunc.h:3021 global.h:6480
 #: keyactions.h:226 keyactions.h:227 global.h:6494 play.h:1450 play.h:1610
-#: play.h:1621 service.h:709 service.h:950 global.h:6481
+#: play.h:1621 service.h:709 service.h:950 global.h:6481 rectimer.h:557
+#: rectimer.h:1210 rectimer.h:1356 rectimer.h:1368
 msgid "OK"
 msgstr ""
 
@@ -213,7 +214,8 @@ msgstr ""
 #: xvidstage.h:100 xvidstage.h:177 youtube.h:197 zdf.h:29 global.h:6475
 #: httpdfunc.h:3019 global.h:6478 httpdfunc.h:3021 global.h:6480
 #: keyactions.h:226 keyactions.h:227 global.h:6494 play.h:1450 play.h:1610
-#: play.h:1621 service.h:709 service.h:950 global.h:6481
+#: play.h:1621 service.h:709 service.h:950 global.h:6481 rectimer.h:557
+#: rectimer.h:1210 rectimer.h:1356 rectimer.h:1368
 msgid "EXIT"
 msgstr ""
 
@@ -263,7 +265,9 @@ msgstr ""
 #: settings_overclocking.h:244 skinadjust.h:49 timeshiftsettings.h:59
 #: timeshiftsettings.h:63 tithek_settings.h:33 tithek_settings.h:37
 #: tithek_settings.h:41 tmc.h:531 tmc.h:535 tunerconfig.h:184
-#: tunerconfig.h:213 tunerconfig.h:244 tunerconfig.h:277
+#: tunerconfig.h:213 tunerconfig.h:244 tunerconfig.h:277 rectimer.h:1069
+#: rectimer.h:1074 rectimer.h:1079 rectimer.h:1084 rectimer.h:1089
+#: rectimer.h:1094 rectimer.h:1099
 msgid "no"
 msgstr ""
 
@@ -321,7 +325,8 @@ msgstr ""
 #: settings_overclocking.h:214 settings_overclocking.h:234
 #: settings_overclocking.h:244 timeshiftsettings.h:58 timeshiftsettings.h:62
 #: tithek_settings.h:34 tithek_settings.h:38 tithek_settings.h:42 tmc.h:532
-#: tmc.h:536
+#: tmc.h:536 rectimer.h:1070 rectimer.h:1075 rectimer.h:1080 rectimer.h:1085
+#: rectimer.h:1090 rectimer.h:1095 rectimer.h:1100
 msgid "yes"
 msgstr ""
 
@@ -444,19 +449,19 @@ msgstr ""
 #: transponder.h:268 transponder.h:294 transponder.h:301 transponder.h:319
 #: transponder.h:337 transponder.h:363 transponder.h:372 transponder.h:378
 #: transponder.h:385 transponder.h:417 transponder.h:427 transponder.h:476
-#: transponder.h:512
+#: transponder.h:512 rectimer.h:1165
 msgid "auto"
 msgstr ""
 
-#: adjust.h:153 epgsettings.h:213 rectimer.h:1165
+#: adjust.h:153 epgsettings.h:213 rectimer.h:1165 rectimer.h:1166
 msgid "nothing"
 msgstr ""
 
-#: adjust.h:154 rectimer.h:1166
+#: adjust.h:154 rectimer.h:1166 rectimer.h:1167
 msgid "standby"
 msgstr ""
 
-#: adjust.h:155 rectimer.h:1167
+#: adjust.h:155 rectimer.h:1167 rectimer.h:1168
 msgid "power off"
 msgstr ""
 
@@ -589,11 +594,12 @@ msgstr ""
 #: xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:197 zdf.h:29
 #: global.h:6475 global.h:6478 global.h:6480 keyactions.h:226 keyactions.h:227
 #: global.h:6494 play.h:1450 play.h:1610 play.h:1621 service.h:709
-#: service.h:950 global.h:6481
+#: service.h:950 global.h:6481 rectimer.h:557 rectimer.h:1210 rectimer.h:1356
+#: rectimer.h:1368
 msgid "Message"
 msgstr ""
 
-#: audiotrack.h:48 play.h:271 rectimer.h:1484 subtitle.h:1624
+#: audiotrack.h:48 play.h:271 rectimer.h:1484 subtitle.h:1624 rectimer.h:1485
 msgid "running"
 msgstr ""
 
@@ -1607,7 +1613,7 @@ msgstr ""
 msgid "backup"
 msgstr ""
 
-#: harddisk.h:531 rectimer.h:1027
+#: harddisk.h:531 rectimer.h:1027 rectimer.h:1028
 msgid "record"
 msgstr ""
 
@@ -1906,7 +1912,7 @@ msgstr ""
 msgid "C-Band"
 msgstr ""
 
-#: lnbconfig.h:149 rectimer.h:1054
+#: lnbconfig.h:149 rectimer.h:1054 rectimer.h:1055
 msgid "user defined"
 msgstr ""
 
@@ -4250,91 +4256,94 @@ msgstr ""
 msgid "Timer transponder ID not ok"
 msgstr ""
 
-#: rectimer.h:545
+#: rectimer.h:545 rectimer.h:546
 msgid "not started akttime higher than timer endtime"
 msgstr ""
 
-#: rectimer.h:556
+#: rectimer.h:556 rectimer.h:557
 msgid "EPG Scan activate standby?"
 msgstr ""
 
-#: rectimer.h:663
+#: rectimer.h:663 rectimer.h:664
 msgid "stopped from user"
 msgstr ""
 
-#: rectimer.h:1028
+#: rectimer.h:1028 rectimer.h:1029
 msgid "switch channel"
 msgstr ""
 
-#: rectimer.h:1038 rectimer.h:1447 rectimer.h:1458
+#: rectimer.h:1038 rectimer.h:1447 rectimer.h:1458 rectimer.h:1039
+#: rectimer.h:1448 rectimer.h:1459
 msgid "once"
 msgstr ""
 
-#: rectimer.h:1039 rectimer.h:1449 rectimer.h:1460
+#: rectimer.h:1039 rectimer.h:1449 rectimer.h:1460 rectimer.h:1040
+#: rectimer.h:1450 rectimer.h:1461
 msgid "repeate"
 msgstr ""
 
-#: rectimer.h:1051
+#: rectimer.h:1051 rectimer.h:1052
 msgid "daily"
 msgstr ""
 
-#: rectimer.h:1052
+#: rectimer.h:1052 rectimer.h:1053
 msgid "weekly"
 msgstr ""
 
-#: rectimer.h:1053
+#: rectimer.h:1053 rectimer.h:1054
 msgid "workdays"
 msgstr ""
 
-#: rectimer.h:1058 skin_default_skin.xml.h:381
+#: rectimer.h:1058 skin_default_skin.xml.h:381 rectimer.h:1059
 msgid "Monday"
 msgstr ""
 
 #: rectimer.h:1059 skin_default_skin.xml.h:671 skin_default_skin.xml.h:672
-#: skin_default_skin.xml.h:673
+#: skin_default_skin.xml.h:673 rectimer.h:1060
 msgid "Tuesday"
 msgstr ""
 
 #: rectimer.h:1060 skin_default_skin.xml.h:723 skin_default_skin.xml.h:724
-#: skin_default_skin.xml.h:725
+#: skin_default_skin.xml.h:725 rectimer.h:1061
 msgid "Wednesday"
 msgstr ""
 
 #: rectimer.h:1061 skin_default_skin.xml.h:643 skin_default_skin.xml.h:644
-#: skin_default_skin.xml.h:645
+#: skin_default_skin.xml.h:645 rectimer.h:1062
 msgid "Thursday"
 msgstr ""
 
-#: rectimer.h:1062 skin_default_skin.xml.h:242
+#: rectimer.h:1062 skin_default_skin.xml.h:242 rectimer.h:1063
 msgid "Friday"
 msgstr ""
 
 #: rectimer.h:1063 skin_default_skin.xml.h:528 skin_default_skin.xml.h:529
+#: rectimer.h:1064
 msgid "Saturday"
 msgstr ""
 
 #: rectimer.h:1064 skin_default_skin.xml.h:615 skin_default_skin.xml.h:616
-#: skin_default_skin.xml.h:617
+#: skin_default_skin.xml.h:617 rectimer.h:1065
 msgid "Sunday"
 msgstr ""
 
-#: rectimer.h:1444
+#: rectimer.h:1444 rectimer.h:1445
 msgid "rec"
 msgstr ""
 
-#: rectimer.h:1455
+#: rectimer.h:1455 rectimer.h:1456
 msgid "switch"
 msgstr ""
 
-#: rectimer.h:1482
+#: rectimer.h:1482 rectimer.h:1483
 msgid "waiting"
 msgstr ""
 
-#: rectimer.h:1486
+#: rectimer.h:1486 rectimer.h:1487
 msgid "success"
 msgstr ""
 
-#: rectimer.h:1488
+#: rectimer.h:1488 rectimer.h:1489
 msgid "error"
 msgstr ""
 
