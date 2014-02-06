@@ -2083,7 +2083,7 @@ msgstr "Geschützt --> Nicht ändern"
 
 #: mediadbedit.h:333
 msgid "MediaDB entry for this file not found."
-msgstr "ACHTUNG: der MedaiDB Eintrag wurde nicht gefunden!"
+msgstr "ACHTUNG: der MediaDB Eintrag wurde nicht gefunden!"
 
 #: mediadb.h:1078 play.h:555
 msgid "MediaDB directory scan started in Background !"
@@ -3099,15 +3099,15 @@ msgid "IMDb - Plugin"
 msgstr "IMDb Erweiterung"
 
 #: plugins_instar_skin.xml.h:1 skins_instar_skin.xml.h:1
-msgid "IP-Kammera Einstellungen"
+msgid "IP-Kamera Einstellungen"
 msgstr ""
 
 #: plugins_instar_skin.xml.h:2 skins_instar_skin.xml.h:2
-msgid "Benutzer-Kammera 1"
+msgid "Benutzer-Kamera 1"
 msgstr ""
 
 #: plugins_instar_skin.xml.h:3 skins_instar_skin.xml.h:3
-msgid "Benutzer-Kammera 2"
+msgid "Benutzer-Kamera 2"
 msgstr ""
 
 #: plugins_instar_skin.xml.h:4 skins_instar_skin.xml.h:4
@@ -3119,35 +3119,35 @@ msgid "direkter Start"
 msgstr ""
 
 #: plugins_instar_skin.xml.h:6 skins_instar_skin.xml.h:6
-msgid "IP-Kammera 1"
+msgid "IP-Kamera 1"
 msgstr ""
 
 #: plugins_instar_skin.xml.h:7 skins_instar_skin.xml.h:7
-msgid "IP-Kammera 2"
+msgid "IP-Kamera 2"
 msgstr ""
 
 #: plugins_instar_skin.xml.h:8 skins_instar_skin.xml.h:8
-msgid "Kammera 1"
+msgid "Kamera 1"
 msgstr ""
 
 #: plugins_instar_skin.xml.h:9 skins_instar_skin.xml.h:9
-msgid "Kammera 2 (Umschalten mit Rot)"
+msgid "Kamera 2 (Umschalten mit Rot)"
 msgstr ""
 
 #: plugins_instar_skin.xml.h:10 skins_instar_skin.xml.h:10
-msgid "Passwort-Kammera 1"
+msgid "Passwort-Kamera 1"
 msgstr ""
 
 #: plugins_instar_skin.xml.h:11 skins_instar_skin.xml.h:11
-msgid "Passwort-Kammera 2"
+msgid "Passwort-Kamera 2"
 msgstr ""
 
 #: plugins_instar_skin.xml.h:12 skins_instar_skin.xml.h:12
-msgid "Port-Kammera 1"
+msgid "Port-Kamera 1"
 msgstr ""
 
 #: plugins_instar_skin.xml.h:13 skins_instar_skin.xml.h:13
-msgid "Port-Kammera 2"
+msgid "Port-Kamera 2"
 msgstr ""
 
 #: plugins_instar_skin.xml.h:18 skins_instar_skin.xml.h:18
