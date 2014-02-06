@@ -511,7 +511,8 @@ void checkrectimer(struct stimerthread* self)
 			chnode = getchannel(node->serviceid, node->transponderid);
 			if(node->justplay == 1)
 			{
-				ret = servicestart(chnode, NULL, node->channellist, 0);
+				//ret = servicestart(chnode, NULL, node->channellist, 0);
+				ret = servicestart(chnode, node->channellist, NULL, 0);
 				if(ret == 20 || ret == 22) ret = 0;
 			}
 			else
