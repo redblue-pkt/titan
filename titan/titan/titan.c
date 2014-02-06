@@ -325,12 +325,25 @@ void oshutdown(int exitcode, int flag)
 	if(ret == 1) return;
 	
 	if(exitcode == 1)
-		tmpstr = getconfig("powerofflogo", NULL);
+		tmpstr = getconfig("userpowerofflogo", NULL);
 	else if(exitcode == 2)
-		tmpstr = getconfig("restartlogo", NULL);
+		tmpstr = getconfig("userrestartlogo", NULL);
 	else if(exitcode == 3)
-		tmpstr = getconfig("guirestartlogo", NULL);
-		
+		tmpstr = getconfig("userguirestartlogo", NULL);
+	
+	if(tmpstr != NULL) {
+		if(file_exist(tmpstr) == 0) 
+			tmpstr = NULL;
+	}	
+	if(tmpstr == NULL) {	
+		if(exitcode == 1) 
+			tmpstr = getconfig("powerofflogo", NULL);
+		else if(exitcode == 2)
+			tmpstr = getconfig("restartlogo", NULL);
+		else if(exitcode == 3)
+			tmpstr = getconfig("guirestartlogo", NULL);
+	}
+			
 	if(tmpstr != NULL)
 	{
 		changepic(logo, tmpstr);
