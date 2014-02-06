@@ -90,7 +90,7 @@ int copyfilereal(char* from, char* to, struct copyfile* node, int flag)
 	off64_t count = 0, len = 0;
 	unsigned char* buf = NULL;
 
-	fdfrom = open(from, O_RDONLY);
+	fdfrom = open(from, O_RDONLY | O_LARGEFILE);
 	if(fdfrom < 0)
 	{
 		perr("open from %s", from);
