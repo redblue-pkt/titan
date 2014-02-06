@@ -1445,7 +1445,7 @@ msgstr "Die Registrierung ist notwendig.\nBitte kontaktieren Sie Atemio!"
 
 #: global.h:6450 keyactions.h:224
 msgid "ERROR cant read res"
-msgstr "FEHLER: Auflösung fehlerhaft"
+msgstr "FEHLER: Auflösungsstatus nicht Verfügbar!"
 
 #: gmediarender.h:109
 msgid "Servername"
@@ -8095,3 +8095,24 @@ msgstr "Höchsttemperatur"
 #: weather.h:442 weather.h:460 weather.h:478 weather.h:496
 msgid "Condition: "
 msgstr "Lage"
+
+msgid "Press -restore- and your saved settings will be restored from your swapstick / recording hdd! The Box will restart automatically for restoring!\n\nPress -backup- to save your actual settings to swapstick / recording hdd.\nWARNING: The old backup will be deleted!"
+msgstr "-Wiederherstellung- (Rot):\nIhre Einstellungen werden aus einer zuvor erstellten Sicherung wiederhergestellt! Der Receiver wird dafür automatisch neugestartet! \n\n-Sicherung erstellen- (Grün):\nIhre Einstellungen werden gesichert.\nWARNUNG: Die alten Sicherungen werden gelöscht!\n\n-Ergebnis- (Gelb):\nÜberprüfung der Sicherung mittels Logdatei"
+
+msgid "Format MNT with Backup/Restore"
+msgstr "Formatiere MNT und sichere eigene Daten"
+
+msgid "Format MNT (all)"
+msgstr "Formatiere MNT (komplett)"
+
+msgid "Networkbrowser - show Shares"
+msgstr "Netzwerk Browser - zeige Freigaben"
+
+msgid "add recording (stop after current event)"
+msgstr "Aufnahme hinzufügen (diese Sendung)"
+
+msgid "add recording (indefinitely)"
+msgstr "Aufnahme hinzufügen (unbegrenzt)"
+
+msgid "add recording (enter duration)"
+msgstr "Aufnahme hinzufügen (Länge eingeben)"
