@@ -6426,11 +6426,11 @@ msgstr "Aufnahmen"
 
 #: skin_default_skin.xml.h:482
 msgid "Records and EPG"
-msgstr "Aufnahmen und EPG"
+msgstr "Timer und EPG"
 
 #: skin_default_skin.xml.h:483
 msgid "Records and EPG ..."
-msgstr "Aufnahmen und EPG"
+msgstr "Timer und EPG"
 
 #: skin_default_skin.xml.h:484
 msgid "Record Split Size"
