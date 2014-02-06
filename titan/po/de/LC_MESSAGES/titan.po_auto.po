@@ -4030,7 +4030,7 @@ msgstr "Startposition"
 msgid ""
 "Position Setup is not allowed if record\n"
 "or stream is running !"
-msgstr "Position darf währen einer aktiven Aufnahme oder einer Streamwiedergabe nicht verändert werden."
+msgstr "Position darf während einer aktiven Aufnahme oder einer Streamwiedergabe nicht verändert werden."
 
 #: powerofftimer.h:117
 msgid "DeepStandby"
@@ -4084,19 +4084,19 @@ msgstr "OScam DVBapi config aktiviert!"
 msgid ""
 "HDD not configured\n"
 "can't find record path"
-msgstr "FELER: Festplatte nicht eingerichtet!\nKann den Ordner record nicht finden."
+msgstr "add to wish list: Festplatte nicht eingerichtet!\nKann den Ordner record nicht finden."
 
 #: record.h:40
 msgid "Not enought space"
-msgstr "FELER: Speicherplatz nicht ausreichend!"
+msgstr "FEHLER: Speicherplatz nicht ausreichend!"
 
 #: record.h:43
 msgid "Error create filename"
-msgstr "FELER: Dateiname kann nicht erzeugt werden!"
+msgstr "FEHLER: Dateiname kann nicht erzeugt werden!"
 
 #: record.h:46
 msgid "Can't open file"
-msgstr "FELER: Kann Datei nicht öffnen!"
+msgstr "FEHLER: Kann Datei nicht öffnen!"
 
 #: record.h:49
 msgid "Can't open FRONTEND device"
@@ -4108,7 +4108,7 @@ msgstr "FEHLER: Kann DMX Gerät nicht öffnen!"
 
 #: record.h:55
 msgid "Pid's not ok"
-msgstr "FELER: PIDs sind fehlerhaft!"
+msgstr "FEHLER: PIDs sind fehlerhaft!"
 
 #: record.h:58
 msgid "Channel or Transponder is empty"
@@ -4132,11 +4132,11 @@ msgstr "FEHLER: Frontend Typ unbekannt"
 
 #: record.h:73
 msgid "Tune to channel failed"
-msgstr "FELER: Sender kann nicht angesteuert werden"
+msgstr "add to wish list: Sender kann nicht angesteuert werden"
 
 #: record.h:78
 msgid "To many read error or end of file"
-msgstr "FELER: Zu viele Lesefehler oder Dateiende erreicht!"
+msgstr "add to wish list: Zu viele Lesefehler oder Dateiende erreicht!"
 
 #: record.h:81
 msgid "Can't create service"
@@ -4152,7 +4152,7 @@ msgstr "Aufnahme / Timeshift / Stream"
 
 #: record.h:355
 msgid "Box recording finished poweroff in 30sec !"
-msgstr "Aufnahme beendet. Box wird in 30sek ausgeschaltet!"
+msgstr "Aufnahme beendet. Box wird in 30 Sek. ausgeschaltet!"
 
 #: record.h:971
 msgid ""
@@ -4190,7 +4190,7 @@ msgstr "FEHLER: Start- oder Endzeit ist fehlerhaft!"
 
 #: rectimer.h:139
 msgid "Timer endtime shorter than aktual time"
-msgstr "FEHLER: Endzeit liegt in der Vergangeheit!"
+msgstr "FEHLER: Endzeit liegt in der Vergangenheit!"
 
 #: rectimer.h:144
 msgid "Timer endtime shorter than start time"
@@ -4375,7 +4375,7 @@ msgstr "Bitte Warten, Sendersuchlauf wird abgebrochen."
 
 #: scan.h:1888
 msgid "Scan is not allowed if record or stream is running !"
-msgstr "FEHLER: Beenden Sie laufende Aufnahmen oder Streams und versuchen sie es dann erneut!"
+msgstr "FEHLER: Beenden Sie laufende Aufnahmen oder Streams und versuchen Sie es dann erneut!"
 
 #: scan.h:1979
 msgid "No Tuner configured"
@@ -5557,7 +5557,7 @@ msgstr "Hier können Sie das Webinterface und den RGUI Service konfigurieren.\n\n
 msgid ""
 "Here you can create a new record timer. Use to navigate the control cross "
 "and the extra buttons displayed with your remote control to select."
-msgstr "Hier können sie einen neuen Aufnahme-Timer anlegen.\n\nNavigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
+msgstr "Hier können Sie einen neuen Aufnahme-Timer anlegen.\n\nNavigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
 #: skin_default_skin.xml.h:273
 msgid ""
@@ -7624,7 +7624,7 @@ msgstr "FEHLER: Frontend-Gerät wurde nicht gefunden!"
 
 #: titan.c:738
 msgid "Error: no demux device found !!"
-msgstr "FELER: Demux-Gerät wurde nicht gefunden!"
+msgstr "add to wish list: Demux-Gerät wurde nicht gefunden!"
 
 #: titan.c:744
 msgid "Error: no video device found !!"
@@ -7707,7 +7707,7 @@ msgstr "Zwischenspeicher leeren?"
 msgid ""
 "Can't start download.\n"
 "Please try later."
-msgstr "FELER: Das Herunterladen der Datei ist nicht möglich!\n"
+msgstr "add to wish list: Das Herunterladen der Datei ist nicht möglich!\n"
 "Bitte versuchen Sie es zu einem späteren Zeitpunkt erneut."
 
 #: tithek.h:1327
