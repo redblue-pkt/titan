@@ -122,7 +122,8 @@ msgstr ""
 #: httpdfunc.h:3019 global.h:6478 httpdfunc.h:3021 global.h:6480
 #: keyactions.h:226 keyactions.h:227 global.h:6494 play.h:1450 play.h:1610
 #: play.h:1621 service.h:709 service.h:950 global.h:6481 rectimer.h:557
-#: rectimer.h:1210 rectimer.h:1356 rectimer.h:1368
+#: rectimer.h:1210 rectimer.h:1356 rectimer.h:1368 titan.c:911 titan.c:920
+#: titan.c:1031 titan.c:1052 titan.c:1058 titan.c:1069 titan.c:1075
 msgid "OK"
 msgstr ""
 
@@ -215,7 +216,8 @@ msgstr ""
 #: httpdfunc.h:3019 global.h:6478 httpdfunc.h:3021 global.h:6480
 #: keyactions.h:226 keyactions.h:227 global.h:6494 play.h:1450 play.h:1610
 #: play.h:1621 service.h:709 service.h:950 global.h:6481 rectimer.h:557
-#: rectimer.h:1210 rectimer.h:1356 rectimer.h:1368
+#: rectimer.h:1210 rectimer.h:1356 rectimer.h:1368 titan.c:911 titan.c:920
+#: titan.c:1031 titan.c:1052 titan.c:1058 titan.c:1069 titan.c:1075
 msgid "EXIT"
 msgstr ""
 
@@ -595,7 +597,8 @@ msgstr ""
 #: global.h:6475 global.h:6478 global.h:6480 keyactions.h:226 keyactions.h:227
 #: global.h:6494 play.h:1450 play.h:1610 play.h:1621 service.h:709
 #: service.h:950 global.h:6481 rectimer.h:557 rectimer.h:1210 rectimer.h:1356
-#: rectimer.h:1368
+#: rectimer.h:1368 titan.c:1031 titan.c:1052 titan.c:1058 titan.c:1069
+#: titan.c:1075
 msgid "Message"
 msgstr ""
 
@@ -1860,6 +1863,7 @@ msgid "Email  \t\tinfo@atemio.de"
 msgstr ""
 
 #: info.h:27 plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9 titan.c:907
+#: titan.c:920
 msgid "Info"
 msgstr ""
 
@@ -7827,71 +7831,71 @@ msgid ""
 "Really shutdown ?"
 msgstr ""
 
-#: titan.c:726
+#: titan.c:726 titan.c:739
 msgid "Error: open rc device !!"
 msgstr ""
 
-#: titan.c:732
+#: titan.c:732 titan.c:745
 msgid "Error: no frontend device found !!"
 msgstr ""
 
-#: titan.c:738
+#: titan.c:738 titan.c:751
 msgid "Error: no demux device found !!"
 msgstr ""
 
-#: titan.c:744
+#: titan.c:744 titan.c:757
 msgid "Error: no video device found !!"
 msgstr ""
 
-#: titan.c:750
+#: titan.c:750 titan.c:763
 msgid "Error: no audio device found !!"
 msgstr ""
 
-#: titan.c:768
+#: titan.c:768 titan.c:781
 msgid "Error: skin not found !!"
 msgstr ""
 
-#: titan.c:898
+#: titan.c:898 titan.c:911
 msgid "First Wizzard"
 msgstr ""
 
-#: titan.c:898
+#: titan.c:898 titan.c:911
 msgid "Settings OK ?"
 msgstr ""
 
-#: titan.c:1018
+#: titan.c:1018 titan.c:1031
 msgid "Receiver successful unlocked"
 msgstr ""
 
-#: titan.c:1039
+#: titan.c:1039 titan.c:1052
 msgid ""
 "Free space in /var to little!\n"
 "This can make problems!"
 msgstr ""
 
-#: titan.c:1045
+#: titan.c:1045 titan.c:1058
 msgid ""
 "/var not writeable!\n"
 "Repair it?"
 msgstr ""
 
-#: titan.c:1056
+#: titan.c:1056 titan.c:1069
 msgid ""
 "Free space in /mnt to little!\n"
 "This can make problems!"
 msgstr ""
 
-#: titan.c:1062
+#: titan.c:1062 titan.c:1075
 msgid ""
 "/mnt not writeable!\n"
 "Repair it?"
 msgstr ""
 
-#: titan.c:1109 titan.c:1111
+#: titan.c:1109 titan.c:1111 titan.c:1124
 msgid "Unknown Error."
 msgstr ""
 
-#: titan.c:1111 titan.c:1113
+#: titan.c:1111 titan.c:1113 titan.c:1126
 msgid "Automatic stop in 10 seconds."
 msgstr ""
 
