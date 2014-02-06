@@ -12,9 +12,9 @@ void screensystem_backup_restore()
 	struct skin* info = getscreennode(backup_restore, "info");
 	char* tmpstr = NULL, *infotext = NULL;
 
-	infotext = "Press -restore- and your saved settings will be restored from your swapstick / recording hdd! The Box will restart automatically for restoring!\n\nPress -backup- to save your actual settings to swapstick / recording hdd.\nWARNING: The old backup will be deleted!";
+	infotext = _("Press -restore- and your saved settings will be restored from your swapstick / recording hdd! The Box will restart automatically for restoring!\n\nPress -backup- to save your actual settings to swapstick / recording hdd.\nWARNING: The old backup will be deleted!");
 
-	changetext(info, _(infotext));
+	changetext(info, infotext);
 	changetitle(backup_restore, _("Backup / Restore Settings"));
 
 	drawscreen(backup_restore, 0, 0);
