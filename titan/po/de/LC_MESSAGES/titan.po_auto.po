@@ -449,7 +449,7 @@ msgstr "Animations Breite"
 
 #: adjust.h:164
 msgid "anim. height"
-msgstr "Animastions Höhe"
+msgstr "Animations Höhe"
 
 #: adjust.h:165
 msgid "anim. both"
@@ -1050,7 +1050,7 @@ msgstr "DLNA nicht gestartet.\nBitte überprüfen Sie Ihre Konfiguration."
 
 #: dlna.h:345
 msgid "DLNA now stopped"
-msgstr "DLNA nicht gestoppt"
+msgstr "DLNA gestoppt"
 
 #: download.h:77 download.h:87
 msgid "Download (KB): "
@@ -4084,7 +4084,7 @@ msgstr "OScam DVBapi config aktiviert!"
 msgid ""
 "HDD not configured\n"
 "can't find record path"
-msgstr "add to wish list: Festplatte nicht eingerichtet!\nKann den Ordner record nicht finden."
+msgstr "Festplatte nicht eingerichtet!\nKann den Ordner record nicht finden."
 
 #: record.h:40
 msgid "Not enought space"
@@ -4132,11 +4132,11 @@ msgstr "FEHLER: Frontend Typ unbekannt"
 
 #: record.h:73
 msgid "Tune to channel failed"
-msgstr "add to wish list: Sender kann nicht angesteuert werden"
+msgstr "Sender kann nicht angesteuert werden"
 
 #: record.h:78
 msgid "To many read error or end of file"
-msgstr "add to wish list: Zu viele Lesefehler oder Dateiende erreicht!"
+msgstr "Zu viele Lesefehler oder Dateiende erreicht!"
 
 #: record.h:81
 msgid "Can't create service"
@@ -7624,7 +7624,7 @@ msgstr "FEHLER: Frontend-Gerät wurde nicht gefunden!"
 
 #: titan.c:738
 msgid "Error: no demux device found !!"
-msgstr "add to wish list: Demux-Gerät wurde nicht gefunden!"
+msgstr "Demux-Gerät wurde nicht gefunden!"
 
 #: titan.c:744
 msgid "Error: no video device found !!"
@@ -7707,7 +7707,7 @@ msgstr "Zwischenspeicher leeren?"
 msgid ""
 "Can't start download.\n"
 "Please try later."
-msgstr "add to wish list: Das Herunterladen der Datei ist nicht möglich!\n"
+msgstr "Das Herunterladen der Datei ist nicht möglich!\n"
 "Bitte versuchen Sie es zu einem späteren Zeitpunkt erneut."
 
 #: tithek.h:1327
