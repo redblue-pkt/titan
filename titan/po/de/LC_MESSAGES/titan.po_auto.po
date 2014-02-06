@@ -3014,7 +3014,7 @@ msgstr ""
 
 #: plugins_facebook_skin.xml.h:2 skins_facebook_skin.xml.h:2
 msgid "Facebook Register"
-msgstr "Auf Facebook Registrieren"
+msgstr "Auf Facebook registrieren"
 
 #: plugins_facebook_skin.xml.h:3 skins_facebook_skin.xml.h:3
 msgid ""
@@ -3510,7 +3510,7 @@ msgstr "Passwort des Proxyserver"
 
 #: plugins_networkbrowser_skin.xml.h:22 skins_networkbrowser_skin.xml.h:22
 msgid "proxyport"
-msgstr "Post des Proxyservers"
+msgstr "Port des Proxyservers"
 
 #: plugins_networkbrowser_skin.xml.h:23 skins_networkbrowser_skin.xml.h:23
 msgid "proxyuser"
@@ -3840,7 +3840,7 @@ msgstr "Zeige Pay Streams"
 
 #: plugins_tithek_skin.xml.h:12 skins_tithek_skin.xml.h:12
 msgid "TITHEK SETTINGS"
-msgstr "TITHEL EINSTELLUNGEN"
+msgstr "TITHEK EINSTELLUNGEN"
 
 #: plugins_tithek_skin.xml.h:13 skins_tithek_skin.xml.h:13
 msgid "View Cover"
@@ -3876,7 +3876,7 @@ msgstr "Bildername"
 
 #: plugins_tmc_skin.xml.h:11 skins_tmc_skin.xml.h:11
 msgid "Pic Timeout"
-msgstr "Zeit bis zum ausblenden"
+msgstr "Zeit bis zum Ausblenden"
 
 #: plugins_tmc_skin.xml.h:12 skins_tmc_skin.xml.h:12
 msgid "Preview"
@@ -3940,7 +3940,7 @@ msgid ""
 "Start movie in the internal player, set with 0 key marker during a movie. 5 "
 "key is for the marker overview. Then here select movie and start."
 msgstr "Starten Sie die Wiedergabe der ts Datei im internen Player und drücken Sie die Taste 0 um eine Markierung zu setzen.\n"
-"Drücken Sie die Taste 5 für eine Übersicht der Markierungen anzuzeigen und starten sie anschließend die Wiedergabe."
+"Drücken Sie die Taste 5 für eine Übersicht der Markierungen anzuzeigen und starten Sie anschließend die Wiedergabe."
 
 #: plugins_tsSchnitt_skin.xml.h:10 skins_tsSchnitt_skin.xml.h:10
 msgid "ts - cut"
@@ -6978,7 +6978,7 @@ msgstr "Grenzwert"
 
 #: skin_default_skin.xml.h:644
 msgid "Timer"
-msgstr "Zeitgesteuerte Aufnahme(n) (Timer)"
+msgstr "Zeitgesteuerte Timer Aufnahme"
 
 #: skin_default_skin.xml.h:645
 msgid "Timer Record Path"
