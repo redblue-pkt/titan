@@ -7304,7 +7304,7 @@ msgstr ""
 msgid ""
 "No skinconfig found in skin.\n"
 "Can't change to selected skin."
-msgstr "FEHLER: Die Datei skinconfig.xml fehlt im ausgewählten skin!\nDer ausgewählte Skin kann nicht gelanden werden."
+msgstr "FEHLER: Die Datei skinconfig.xml fehlt im ausgewählten Skin!\nDer ausgewählte Skin kann nicht gelanden werden."
 
 #: sock.h:950
 msgid "Download finished!"
@@ -7344,7 +7344,7 @@ msgid ""
 "\n"
 "KILL = Red\n"
 "BOOT = Green"
-msgstr "Systemfehler!!!\n\n-ROT- = Prozess beenden\n-GRÜN- = System neustarten"
+msgstr "Systemfehler!!!\n\n-ROT- = Prozess beenden\n-GRÜN- = System neu starten"
 
 #: spinner.h:18
 msgid "KILL"
@@ -7444,7 +7444,7 @@ msgstr "Bitte warten...\n\nALLE Einstellungen werden gesichert.\n\nReceiver star
 
 #: system_backup_restore.h:40
 msgid "Restore failed, see log"
-msgstr "FEHLER: Wiederherstellung Fehlgeschlagen - siehe Logdatei"
+msgstr "FEHLER: Wiederherstellung fehlgeschlagen - siehe Logdatei"
 
 #: system_backup_restore.h:43
 msgid "Update Plugins to new Version?"
@@ -7541,11 +7541,11 @@ msgstr ""
 
 #: system_update.h:283
 msgid "starting Full Update ?"
-msgstr "Beginne den kompletten Flaschvorgang?"
+msgstr "Beginne den kompletten Flashvorgang?"
 
 #: system_update.h:313
 msgid "starting Full Update (from backup) ?"
-msgstr "Beginne den kompletten Flaschvorgang eines gesicherten Systemabbilds"
+msgstr "Beginne den kompletten Flashvorgang eines gesicherten Systemabbilds"
 
 #: system_update.h:320
 msgid "Error file not supported"
@@ -7604,15 +7604,15 @@ msgid ""
 "Found running record\n"
 "or record is starting in next time.\n"
 "Really shutdown ?"
-msgstr "ACHTUNG: Eine Aufnahme wird aufgezeichnet oder eine Zeitgesteuerte Aufnahme startet gleich.\n"
-"Soll das System trotzdem Neugestartet werden?"
+msgstr "ACHTUNG: Eine Aufnahme wird aufgezeichnet oder eine zeitgesteuerte Aufnahme startet gleich.\n"
+"Soll das System trotzdem neu gestartet werden?"
 
 #: titan.c:318
 msgid ""
 "Found running download\n"
 "Really shutdown ?"
 msgstr "ACHTUNG: Eine Datei wird heruntergeladen.\n"
-"Das Herunterladen abbrechen und System Neustarten?"
+"Das Herunterladen abbrechen und System neu starten?"
 
 #: titan.c:726
 msgid "Error: open rc device !!"
