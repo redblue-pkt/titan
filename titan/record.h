@@ -1361,7 +1361,7 @@ void screenrecorddirect()
 	addmenulist(&mlist, _("add recording (indefinitely)"), NULL, NULL, 0, 0);
 	addmenulist(&mlist, _("add recording (enter duration)"), NULL, NULL, 0, 0);
 
-	mbox = menulistbox(mlist, _("recordlist"), _("Record"), NULL, NULL, 0, 0);
+	mbox = menulistbox(mlist, "recordlist", _("Record"), NULL, NULL, 0, 0);
 	
 	if(mbox != NULL)
 	{
