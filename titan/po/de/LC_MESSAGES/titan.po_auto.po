@@ -1058,11 +1058,11 @@ msgstr ""
 
 #: download.h:97
 msgid "download error"
-msgstr "FELER: Beim Herunterladen trat ein unerwarteter Fehler auf!"
+msgstr "FEHLER: Beim Herunterladen trat ein unerwarteter Fehler auf!"
 
 #: download.h:101
 msgid "wait for stopping download"
-msgstr "ACHTUNG: Bitte warten Sie, bis das Herunterladen beendet wurde."
+msgstr "ACHTUNG: Bitte warten Sie bis das Herunterladen beendet wurde."
 
 #: dvdplay.h:29
 msgid "EJECT"
@@ -1527,7 +1527,7 @@ msgstr "Wollen Sie das ausgewählte Verzeichnis wirklich löschen?"
 msgid ""
 "Directory has content\n"
 "Really delete directory and content?"
-msgstr "ACHTUNG: Das ausgewählte Verzeichnis ist nicht leer!\nVerzeichnis trotzdem löschen?\nAlle darin befindliche Daten gehen verloren!!!"
+msgstr "ACHTUNG: Das ausgewählte Verzeichnis ist nicht leer!\nVerzeichnis trotzdem löschen?\nAlle darin befindlichen Daten gehen verloren!!!"
 
 #: harddisk.h:377
 msgid "can't create or delete directory"
@@ -1598,7 +1598,7 @@ msgstr "ACHTUNG: Sind Sie sicher, dass Sie alle Partitionen\nlöschen wollen und 
 msgid ""
 "Are you sure you want to format this Partition?\n"
 "Box reboots after format"
-msgstr "ACHTUNG: Sind Sie sicher, dass sie die Patition formatieren wollen?\nDer Receiver wird nach dem formatieren neu gestartet!"
+msgstr "ACHTUNG: Sind Sie sicher, dass Sie die Partition formatieren wollen?\nDer Receiver wird nach dem Formatieren neu gestartet!"
 
 #: harddisk.h:784
 msgid ""
@@ -1816,7 +1816,7 @@ msgid ""
 "and your Atemio Serial Number !!\n"
 "\n"
 "Board-ID SerialNr:"
-msgstr "Für die nächste Online Aktualisierung übermitteln Sie bitte Ihre Seriennummer\nIhre Atemio Seriennumer\n\nund Ihre Board-ID Seriennummer:"
+msgstr "Für die nächste Online Aktualisierung übermitteln Sie bitte Ihre Seriennummer\nIhre Atemio Seriennumer\nund Ihre Board-ID Seriennummer:"
 
 #: info.h:26
 msgid "Email  \t\tinfo@atemio.de"
@@ -1900,7 +1900,7 @@ msgstr "Die Markierung wurde erfolgreich gesetzt."
 msgid ""
 "Shooting Background done !\n"
 "Save Screenshoot Path: /tmp/screenshot.jpg"
-msgstr "Das Bildsschirmfoto wurde erfolgreich erstellt.\n Das Bild gespeichert unter\n/tmp/screenshot.jpg "
+msgstr "Das Bildschirmfoto wurde erfolgreich erstellt.\n Das Bild wurde gespeichert unter\n/tmp/screenshot.jpg "
 
 #: mc_audioplayer.h:403 mc_global.h:1069 mc_pictureplayer.h:145
 #: mc_videoplayer.h:421
