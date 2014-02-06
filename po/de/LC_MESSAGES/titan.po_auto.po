@@ -23,7 +23,7 @@ msgstr ""
 #: transponder.h:418 transponder.h:451 transponder.h:480 transponder.h:493
 #: transponder.h:504 transponder.h:574 youtube.h:149 zdf.h:86 httpdfunc.h:2636
 #: httpdfunc.h:2648 httpdfunc.h:2638 httpdfunc.h:2650
-#: skin_default_skin.xml.h:694 skin_default_skin.xml.h:695
+#: skin_default_skin.xml.h:694 skin_default_skin.xml.h:695 stream.h:22
 msgid "unknown"
 msgstr ""
 
@@ -120,7 +120,11 @@ msgstr ""
 #: vidstream.h:86 vidstream.h:98 vidstream.h:167 xvidstage.h:54
 #: xvidstage.h:100 xvidstage.h:177 youtube.h:197 zdf.h:29 global.h:6475
 #: httpdfunc.h:3019 global.h:6478 httpdfunc.h:3021 global.h:6480
-#: keyactions.h:226 keyactions.h:227 global.h:6494
+#: keyactions.h:226 keyactions.h:227 global.h:6494 global.h:6481
+#: mc_global.h:766 mc_global.h:1011 play.h:1450 play.h:1610 play.h:1621
+#: rectimer.h:557 rectimer.h:1210 rectimer.h:1356 rectimer.h:1368 stream.h:33
+#: titan.c:911 titan.c:920 titan.c:1031 titan.c:1052 titan.c:1058 titan.c:1069
+#: titan.c:1075
 msgid "OK"
 msgstr ""
 
@@ -211,7 +215,11 @@ msgstr ""
 #: vidstream.h:86 vidstream.h:98 vidstream.h:167 xvidstage.h:54
 #: xvidstage.h:100 xvidstage.h:177 youtube.h:197 zdf.h:29 global.h:6475
 #: httpdfunc.h:3019 global.h:6478 httpdfunc.h:3021 global.h:6480
-#: keyactions.h:226 keyactions.h:227 global.h:6494
+#: keyactions.h:226 keyactions.h:227 global.h:6494 global.h:6481
+#: mc_global.h:766 mc_global.h:1011 play.h:1450 play.h:1610 play.h:1621
+#: rectimer.h:557 rectimer.h:1210 rectimer.h:1356 rectimer.h:1368 stream.h:33
+#: titan.c:911 titan.c:920 titan.c:1031 titan.c:1052 titan.c:1058 titan.c:1069
+#: titan.c:1075
 msgid "EXIT"
 msgstr ""
 
@@ -261,7 +269,9 @@ msgstr ""
 #: settings_overclocking.h:244 skinadjust.h:49 timeshiftsettings.h:59
 #: timeshiftsettings.h:63 tithek_settings.h:33 tithek_settings.h:37
 #: tithek_settings.h:41 tmc.h:531 tmc.h:535 tunerconfig.h:184
-#: tunerconfig.h:213 tunerconfig.h:244 tunerconfig.h:277
+#: tunerconfig.h:213 tunerconfig.h:244 tunerconfig.h:277 rectimer.h:1069
+#: rectimer.h:1074 rectimer.h:1079 rectimer.h:1084 rectimer.h:1089
+#: rectimer.h:1094 rectimer.h:1099
 msgid "no"
 msgstr ""
 
@@ -319,7 +329,8 @@ msgstr ""
 #: settings_overclocking.h:214 settings_overclocking.h:234
 #: settings_overclocking.h:244 timeshiftsettings.h:58 timeshiftsettings.h:62
 #: tithek_settings.h:34 tithek_settings.h:38 tithek_settings.h:42 tmc.h:532
-#: tmc.h:536
+#: tmc.h:536 rectimer.h:1070 rectimer.h:1075 rectimer.h:1080 rectimer.h:1085
+#: rectimer.h:1090 rectimer.h:1095 rectimer.h:1100
 msgid "yes"
 msgstr ""
 
@@ -442,19 +453,19 @@ msgstr ""
 #: transponder.h:268 transponder.h:294 transponder.h:301 transponder.h:319
 #: transponder.h:337 transponder.h:363 transponder.h:372 transponder.h:378
 #: transponder.h:385 transponder.h:417 transponder.h:427 transponder.h:476
-#: transponder.h:512
+#: transponder.h:512 rectimer.h:1165
 msgid "auto"
 msgstr ""
 
-#: adjust.h:153 epgsettings.h:213 rectimer.h:1165
+#: adjust.h:153 epgsettings.h:213 rectimer.h:1165 rectimer.h:1166
 msgid "nothing"
 msgstr ""
 
-#: adjust.h:154 rectimer.h:1166
+#: adjust.h:154 rectimer.h:1166 rectimer.h:1167
 msgid "standby"
 msgstr ""
 
-#: adjust.h:155 rectimer.h:1167
+#: adjust.h:155 rectimer.h:1167 rectimer.h:1168
 msgid "power off"
 msgstr ""
 
@@ -586,11 +597,14 @@ msgstr ""
 #: videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98 vidstream.h:167
 #: xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:197 zdf.h:29
 #: global.h:6475 global.h:6478 global.h:6480 keyactions.h:226 keyactions.h:227
-#: global.h:6494
+#: global.h:6494 global.h:6481 mc_global.h:766 mc_global.h:1011 play.h:1450
+#: play.h:1610 play.h:1621 rectimer.h:557 rectimer.h:1210 rectimer.h:1356
+#: rectimer.h:1368 stream.h:33 titan.c:1031 titan.c:1052 titan.c:1058
+#: titan.c:1069 titan.c:1075
 msgid "Message"
 msgstr ""
 
-#: audiotrack.h:48 play.h:271 rectimer.h:1484 subtitle.h:1624
+#: audiotrack.h:48 play.h:271 rectimer.h:1484 subtitle.h:1624 rectimer.h:1485
 msgid "running"
 msgstr ""
 
@@ -1100,7 +1114,8 @@ msgstr ""
 #: dvdplay.h:62 mc_audioplayer.h:599 mc_audioplayer.h:702 mc_global.h:765
 #: mc_global.h:1010 mc_pictureplayer.h:95 mc_pictureplayer.h:237
 #: mc_pictureplayer.h:363 mc_pictureplayer.h:456 mc_videoplayer.h:739
-#: mc_videoplayer.h:876 play.h:1449
+#: mc_videoplayer.h:876 play.h:1449 mc_global.h:766 mc_global.h:1011
+#: play.h:1450
 msgid "Can't start playback !"
 msgstr ""
 
@@ -1184,10 +1199,13 @@ msgid "Single EPG"
 msgstr ""
 
 #: epgsettings.h:138 epgsettings.h:179 skin_default_skin.xml.h:387
+#: keyactions.h:55 keyactions.h:112 settings_bluebutton.h:16
+#: settings_redbutton.h:17
 msgid "Multi EPG"
 msgstr ""
 
-#: epgsettings.h:139 skin_default_skin.xml.h:254
+#: epgsettings.h:139 skin_default_skin.xml.h:254 keyactions.h:56
+#: keyactions.h:119 settings_bluebutton.h:17 settings_redbutton.h:18
 msgid "Graphic Multi EPG"
 msgstr ""
 
@@ -1413,11 +1431,11 @@ msgstr ""
 msgid "Post in group"
 msgstr ""
 
-#: filemanager.h:23
+#: filemanager.h:23 filemanager.h:86 filemanager.h:92
 msgid "Rename"
 msgstr ""
 
-#: filemanager.h:62
+#: filemanager.h:62 filemanager.h:87 filemanager.h:97
 msgid "Create Folder"
 msgstr ""
 
@@ -1470,7 +1488,7 @@ msgid "Registration needed, please contact Atemio !"
 msgstr ""
 
 #: global.h:6450 keyactions.h:224 global.h:6475 global.h:6478 global.h:6480
-#: keyactions.h:226 keyactions.h:227 global.h:6494
+#: keyactions.h:226 keyactions.h:227 global.h:6494 global.h:6481
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -1604,7 +1622,7 @@ msgstr ""
 msgid "backup"
 msgstr ""
 
-#: harddisk.h:531 rectimer.h:1027
+#: harddisk.h:531 rectimer.h:1027 rectimer.h:1028
 msgid "record"
 msgstr ""
 
@@ -1851,6 +1869,7 @@ msgid "Email  \t\tinfo@atemio.de"
 msgstr ""
 
 #: info.h:27 plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9 titan.c:907
+#: titan.c:920
 msgid "Info"
 msgstr ""
 
@@ -1903,7 +1922,7 @@ msgstr ""
 msgid "C-Band"
 msgstr ""
 
-#: lnbconfig.h:149 rectimer.h:1054
+#: lnbconfig.h:149 rectimer.h:1054 rectimer.h:1055
 msgid "user defined"
 msgstr ""
 
@@ -1931,13 +1950,14 @@ msgid ""
 msgstr ""
 
 #: mc_audioplayer.h:403 mc_global.h:1069 mc_pictureplayer.h:145
-#: mc_videoplayer.h:421
+#: mc_videoplayer.h:421 mc_global.h:1070
 msgid "Repeat-On"
 msgstr ""
 
 #: mc_audioplayer.h:410 mc_audioplayer.h:560 mc_global.h:1071
 #: mc_pictureplayer.h:152 mc_pictureplayer.h:317 mc_videoplayer.h:428
 #: mc_videoplayer.h:659 plugins_mc_skin.xml.h:47 skins_mc_skin.xml.h:47
+#: mc_global.h:1072
 msgid "Repeat"
 msgstr ""
 
@@ -1951,12 +1971,13 @@ msgstr ""
 
 #: mc_audioplayer.h:559 mc_global.h:552 mc_global.h:580 mc_global.h:1066
 #: mc_pictureplayer.h:316 mc_videoplayer.h:658 plugins_mc_skin.xml.h:46
-#: skins_mc_skin.xml.h:46
+#: skins_mc_skin.xml.h:46 mc_global.h:1067
 msgid "Random"
 msgstr ""
 
 #: mc_audioplayer.h:580 mc_global.h:269 mc_global.h:692 mc_global.h:925
-#: mc_global.h:939 mc_pictureplayer.h:336 mc_videoplayer.h:699
+#: mc_global.h:939 mc_pictureplayer.h:336 mc_videoplayer.h:699 mc_global.h:693
+#: mc_global.h:926 mc_global.h:940
 msgid "Playlist-Mode"
 msgstr ""
 
@@ -1990,7 +2011,7 @@ msgstr ""
 msgid "Install File Manager Tpk first !"
 msgstr ""
 
-#: mc_global.h:541 mc_global.h:569 mc_global.h:1064
+#: mc_global.h:541 mc_global.h:569 mc_global.h:1064 mc_global.h:1065
 msgid "Random-On"
 msgstr ""
 
@@ -2431,6 +2452,7 @@ msgstr ""
 #: network.h:284 network.h:299 plugins_mc_skin.xml.h:37
 #: plugins_panel_skin.xml.h:18 skin_default_skin.xml.h:393
 #: skins_mc_skin.xml.h:37 skins_panel_skin.xml.h:18 system_infos.h:91
+#: hwtest.h:181 hwtest.h:394
 msgid "Network"
 msgstr ""
 
@@ -2832,11 +2854,11 @@ msgstr ""
 msgid "DEL"
 msgstr ""
 
-#: play.h:1609
+#: play.h:1609 play.h:1610
 msgid "Marker autoseek is started"
 msgstr ""
 
-#: play.h:1620
+#: play.h:1620 play.h:1621
 msgid "Marker autoseek is stopped"
 msgstr ""
 
@@ -3826,7 +3848,7 @@ msgstr ""
 msgid "Framerate"
 msgstr ""
 
-#: plugins_streaminfo_skin.xml.h:3 skins_streaminfo_skin.xml.h:3
+#: plugins_streaminfo_skin.xml.h:3 skins_streaminfo_skin.xml.h:3 play.h:670
 msgid "Streaminfo"
 msgstr ""
 
@@ -4207,11 +4229,12 @@ msgstr ""
 msgid "Timer Record start !\n"
 msgstr ""
 
-#: record.h:1272 record.h:1327
+#: record.h:1272 record.h:1327 record.h:1281 record.h:1292 record.h:1336
+#: record.h:1368 stream.h:15 stream.h:37
 msgid "stop"
 msgstr ""
 
-#: record.h:1342
+#: record.h:1342 record.h:1351 record.h:1374
 msgid "change"
 msgstr ""
 
@@ -4247,91 +4270,94 @@ msgstr ""
 msgid "Timer transponder ID not ok"
 msgstr ""
 
-#: rectimer.h:545
+#: rectimer.h:545 rectimer.h:546
 msgid "not started akttime higher than timer endtime"
 msgstr ""
 
-#: rectimer.h:556
+#: rectimer.h:556 rectimer.h:557
 msgid "EPG Scan activate standby?"
 msgstr ""
 
-#: rectimer.h:663
+#: rectimer.h:663 rectimer.h:664
 msgid "stopped from user"
 msgstr ""
 
-#: rectimer.h:1028
+#: rectimer.h:1028 rectimer.h:1029
 msgid "switch channel"
 msgstr ""
 
-#: rectimer.h:1038 rectimer.h:1447 rectimer.h:1458
+#: rectimer.h:1038 rectimer.h:1447 rectimer.h:1458 rectimer.h:1039
+#: rectimer.h:1448 rectimer.h:1459
 msgid "once"
 msgstr ""
 
-#: rectimer.h:1039 rectimer.h:1449 rectimer.h:1460
+#: rectimer.h:1039 rectimer.h:1449 rectimer.h:1460 rectimer.h:1040
+#: rectimer.h:1450 rectimer.h:1461
 msgid "repeate"
 msgstr ""
 
-#: rectimer.h:1051
+#: rectimer.h:1051 rectimer.h:1052
 msgid "daily"
 msgstr ""
 
-#: rectimer.h:1052
+#: rectimer.h:1052 rectimer.h:1053
 msgid "weekly"
 msgstr ""
 
-#: rectimer.h:1053
+#: rectimer.h:1053 rectimer.h:1054
 msgid "workdays"
 msgstr ""
 
-#: rectimer.h:1058 skin_default_skin.xml.h:381
+#: rectimer.h:1058 skin_default_skin.xml.h:381 rectimer.h:1059
 msgid "Monday"
 msgstr ""
 
 #: rectimer.h:1059 skin_default_skin.xml.h:671 skin_default_skin.xml.h:672
-#: skin_default_skin.xml.h:673
+#: skin_default_skin.xml.h:673 rectimer.h:1060
 msgid "Tuesday"
 msgstr ""
 
 #: rectimer.h:1060 skin_default_skin.xml.h:723 skin_default_skin.xml.h:724
-#: skin_default_skin.xml.h:725
+#: skin_default_skin.xml.h:725 rectimer.h:1061
 msgid "Wednesday"
 msgstr ""
 
 #: rectimer.h:1061 skin_default_skin.xml.h:643 skin_default_skin.xml.h:644
-#: skin_default_skin.xml.h:645
+#: skin_default_skin.xml.h:645 rectimer.h:1062
 msgid "Thursday"
 msgstr ""
 
-#: rectimer.h:1062 skin_default_skin.xml.h:242
+#: rectimer.h:1062 skin_default_skin.xml.h:242 rectimer.h:1063
 msgid "Friday"
 msgstr ""
 
 #: rectimer.h:1063 skin_default_skin.xml.h:528 skin_default_skin.xml.h:529
+#: rectimer.h:1064
 msgid "Saturday"
 msgstr ""
 
 #: rectimer.h:1064 skin_default_skin.xml.h:615 skin_default_skin.xml.h:616
-#: skin_default_skin.xml.h:617
+#: skin_default_skin.xml.h:617 rectimer.h:1065
 msgid "Sunday"
 msgstr ""
 
-#: rectimer.h:1444
+#: rectimer.h:1444 rectimer.h:1445
 msgid "rec"
 msgstr ""
 
-#: rectimer.h:1455
+#: rectimer.h:1455 rectimer.h:1456
 msgid "switch"
 msgstr ""
 
-#: rectimer.h:1482
+#: rectimer.h:1482 rectimer.h:1483
 msgid "waiting"
 msgstr ""
 
-#: rectimer.h:1486
+#: rectimer.h:1486 rectimer.h:1487
 msgid "success"
 msgstr ""
 
-#: rectimer.h:1488
+#: rectimer.h:1488 rectimer.h:1489
 msgid "error"
 msgstr ""
 
@@ -4747,7 +4773,7 @@ msgstr ""
 msgid "20:15"
 msgstr ""
 
-#: skin_default_skin.xml.h:38
+#: skin_default_skin.xml.h:38 videomode.h:20 videomode.h:75 videomode.h:82
 msgid "3D Mode"
 msgstr ""
 
@@ -5074,7 +5100,8 @@ msgstr ""
 msgid "Channel Service..."
 msgstr ""
 
-#: skin_default_skin.xml.h:134
+#: skin_default_skin.xml.h:134 keyactions.h:58 keyactions.h:133
+#: settings_bluebutton.h:19 settings_redbutton.h:20
 msgid "Child Protection"
 msgstr ""
 
@@ -5278,7 +5305,8 @@ msgstr ""
 msgid "Download"
 msgstr ""
 
-#: skin_default_skin.xml.h:191
+#: skin_default_skin.xml.h:191 keyactions.h:60 keyactions.h:140 play.h:663
+#: play.h:706 play.h:758 settings_bluebutton.h:21 settings_redbutton.h:22
 msgid "Downloads"
 msgstr ""
 
@@ -6026,7 +6054,7 @@ msgstr ""
 msgid "Media Center"
 msgstr ""
 
-#: skin_default_skin.xml.h:362
+#: skin_default_skin.xml.h:362 play.h:623 play.h:699
 msgid "MediaDB Edit"
 msgstr ""
 
@@ -6432,7 +6460,8 @@ msgstr ""
 msgid "Receiver unlock"
 msgstr ""
 
-#: skin_default_skin.xml.h:473 skin_default_skin.xml.h:474
+#: skin_default_skin.xml.h:473 skin_default_skin.xml.h:474 record.h:1290
+#: record.h:1364
 msgid "Record"
 msgstr ""
 
@@ -6548,7 +6577,8 @@ msgstr ""
 msgid "Restore"
 msgstr ""
 
-#: skin_default_skin.xml.h:504 skin_default_skin.xml.h:505
+#: skin_default_skin.xml.h:504 skin_default_skin.xml.h:505 restoredefault.h:63
+#: restoredefault.h:67 restoredefault.h:71
 msgid "Restore default settings"
 msgstr ""
 
@@ -6850,7 +6880,8 @@ msgid "SNR:"
 msgstr ""
 
 #: skin_default_skin.xml.h:583 skin_default_skin.xml.h:584
-#: skin_default_skin.xml.h:585
+#: skin_default_skin.xml.h:585 keyactions.h:53 keyactions.h:84
+#: settings_bluebutton.h:14 settings_redbutton.h:15
 msgid "Softcam Panel"
 msgstr ""
 
@@ -6955,7 +6986,7 @@ msgid "Storage position"
 msgstr ""
 
 #: skin_default_skin.xml.h:610 skin_default_skin.xml.h:611
-#: skin_default_skin.xml.h:612
+#: skin_default_skin.xml.h:612 stream.h:36
 msgid "Streaming"
 msgstr ""
 
@@ -7185,7 +7216,7 @@ msgid "TPK install (online)"
 msgstr ""
 
 #: skin_default_skin.xml.h:661 skin_default_skin.xml.h:662
-#: skin_default_skin.xml.h:663
+#: skin_default_skin.xml.h:663 extensions.h:202
 msgid "Tpk Install - select file"
 msgstr ""
 
@@ -7410,7 +7441,7 @@ msgid "Video PID:"
 msgstr ""
 
 #: skin_default_skin.xml.h:713 skin_default_skin.xml.h:714
-#: skin_default_skin.xml.h:715
+#: skin_default_skin.xml.h:715 play.h:618 play.h:685
 msgid "Video Settings"
 msgstr ""
 
@@ -7622,7 +7653,7 @@ msgstr ""
 msgid "Trade time: "
 msgstr ""
 
-#: stream.h:32
+#: stream.h:32 stream.h:33
 msgid "No Live Stream running"
 msgstr ""
 
@@ -7815,71 +7846,71 @@ msgid ""
 "Really shutdown ?"
 msgstr ""
 
-#: titan.c:726
+#: titan.c:726 titan.c:739
 msgid "Error: open rc device !!"
 msgstr ""
 
-#: titan.c:732
+#: titan.c:732 titan.c:745
 msgid "Error: no frontend device found !!"
 msgstr ""
 
-#: titan.c:738
+#: titan.c:738 titan.c:751
 msgid "Error: no demux device found !!"
 msgstr ""
 
-#: titan.c:744
+#: titan.c:744 titan.c:757
 msgid "Error: no video device found !!"
 msgstr ""
 
-#: titan.c:750
+#: titan.c:750 titan.c:763
 msgid "Error: no audio device found !!"
 msgstr ""
 
-#: titan.c:768
+#: titan.c:768 titan.c:781
 msgid "Error: skin not found !!"
 msgstr ""
 
-#: titan.c:898
+#: titan.c:898 titan.c:911
 msgid "First Wizzard"
 msgstr ""
 
-#: titan.c:898
+#: titan.c:898 titan.c:911
 msgid "Settings OK ?"
 msgstr ""
 
-#: titan.c:1018
+#: titan.c:1018 titan.c:1031
 msgid "Receiver successful unlocked"
 msgstr ""
 
-#: titan.c:1039
+#: titan.c:1039 titan.c:1052
 msgid ""
 "Free space in /var to little!\n"
 "This can make problems!"
 msgstr ""
 
-#: titan.c:1045
+#: titan.c:1045 titan.c:1058
 msgid ""
 "/var not writeable!\n"
 "Repair it?"
 msgstr ""
 
-#: titan.c:1056
+#: titan.c:1056 titan.c:1069
 msgid ""
 "Free space in /mnt to little!\n"
 "This can make problems!"
 msgstr ""
 
-#: titan.c:1062
+#: titan.c:1062 titan.c:1075
 msgid ""
 "/mnt not writeable!\n"
 "Repair it?"
 msgstr ""
 
-#: titan.c:1109 titan.c:1111
+#: titan.c:1109 titan.c:1111 titan.c:1124
 msgid "Unknown Error."
 msgstr ""
 
-#: titan.c:1111 titan.c:1113
+#: titan.c:1111 titan.c:1113 titan.c:1126
 msgid "Automatic stop in 10 seconds."
 msgstr ""
 
@@ -8299,4 +8330,436 @@ msgstr ""
 
 #: plugins_tithek_skin.xml.h:2 skins_tithek_skin.xml.h:2
 msgid "TiThek Settings"
+msgstr ""
+
+#: browser.h:191
+msgid "Home"
+msgstr ""
+
+#: browser.h:206
+msgid "Browser Favoriten"
+msgstr ""
+
+#: extensions.h:125
+msgid "Install to MNT"
+msgstr ""
+
+#: extensions.h:137
+msgid "Install to FLASH"
+msgstr ""
+
+#: extensions.h:151
+msgid "Install to SWAP"
+msgstr ""
+
+#: extensions.h:164
+msgid "Choice Install Medium"
+msgstr ""
+
+#: extensions.h:197
+msgid "Tpk Install - select section"
+msgstr ""
+
+#: extensions.h:271
+msgid "Tpk Remove - select file"
+msgstr ""
+
+#: filemanager.h:84 play.h:612
+msgid "Menu"
+msgstr ""
+
+#: hbbtv.h:742
+msgid "Channel HBBTV"
+msgstr ""
+
+#: hwtest.h:153 hwtest.h:195
+msgid "[S]Lock & Search"
+msgstr ""
+
+#: hwtest.h:160 hwtest.h:210
+msgid "[T]Lock & Search"
+msgstr ""
+
+#: hwtest.h:167 hwtest.h:215
+msgid "[C]Lock & Search"
+msgstr ""
+
+#: hwtest.h:176 hwtest.h:220
+msgid "Front Display"
+msgstr ""
+
+#: hwtest.h:177 hwtest.h:239
+msgid "Front Key"
+msgstr ""
+
+#: hwtest.h:180 hwtest.h:329
+msgid "Smartcard"
+msgstr ""
+
+#: hwtest.h:182 hwtest.h:414
+msgid "USB Port"
+msgstr ""
+
+#: hwtest.h:183 hwtest.h:458
+msgid "CAM"
+msgstr ""
+
+#: hwtest.h:184 hwtest.h:495
+msgid "RS232"
+msgstr ""
+
+#: hwtest.h:185 hwtest.h:567
+msgid "LNB"
+msgstr ""
+
+#: hwtest.h:186 hwtest.h:612
+msgid "Flash/Nand Check"
+msgstr ""
+
+#: hwtest.h:190
+msgid "Hardware Test"
+msgstr ""
+
+#: hwtest.h:267
+msgid "Color Bar"
+msgstr ""
+
+#: hwtest.h:305
+msgid "SCART 4:3 / 16:9"
+msgstr ""
+
+#: keyactions.h:21
+msgid "Key Action - Plugins"
+msgstr ""
+
+#: keyactions.h:24 keyactions.h:147 play.h:629 play.h:697
+msgid "MediaDB Scan Info"
+msgstr ""
+
+#: keyactions.h:51 keyactions.h:98 settings_redbutton.h:13
+msgid "Auto Resolution"
+msgstr ""
+
+#: keyactions.h:57 keyactions.h:126 settings_bluebutton.h:18
+#: settings_redbutton.h:19
+msgid "Sleep Timer"
+msgstr ""
+
+#: keyactions.h:59 keyactions.h:91 settings_bluebutton.h:20
+#: settings_redbutton.h:21 videomode.h:17 videomode.h:34
+msgid "Subchannel"
+msgstr ""
+
+#: keyactions.h:105 settings_bluebutton.h:15 settings_redbutton.h:12
+#: settings_redbutton.h:44
+msgid "Extensions List"
+msgstr ""
+
+#: mc_global.h:600 mc_global.h:609
+msgid "Load Playlist"
+msgstr ""
+
+#: mc_global.h:601
+msgid "Edit Playlist"
+msgstr ""
+
+#: networkbrowser.h:1875
+msgid "Networkbrowser - show Shares"
+msgstr ""
+
+#: play.h:619 play.h:687
+msgid "AV Settings"
+msgstr ""
+
+#: play.h:620 play.h:695
+msgid "iD3Tag Info"
+msgstr ""
+
+#: play.h:626 play.h:701
+msgid "Delete File"
+msgstr ""
+
+#: play.h:635
+msgid "Search on KinoX"
+msgstr ""
+
+#: play.h:636
+msgid "Search on KinoX (local)"
+msgstr ""
+
+#: play.h:637 play.h:726
+msgid "Search on Movie4k"
+msgstr ""
+
+#: play.h:638 play.h:728
+msgid "Search on Movie4k (local)"
+msgstr ""
+
+#: play.h:639 play.h:712
+msgid "Search on Solarmovies (movie)"
+msgstr ""
+
+#: play.h:640 play.h:714
+msgid "Search on Solarmovies (serie)"
+msgstr ""
+
+#: play.h:641 play.h:716
+msgid "Search on Solarmovies (local)"
+msgstr ""
+
+#: play.h:642 play.h:754
+msgid "Search on Mle-HD (local)"
+msgstr ""
+
+#: play.h:643 play.h:742
+msgid "Search on Beeg (local)"
+msgstr ""
+
+#: play.h:644 play.h:752
+msgid "Search on Xvideos (local)"
+msgstr ""
+
+#: play.h:646 play.h:756
+msgid "Search on Netzkino (local)"
+msgstr ""
+
+#: play.h:647 play.h:718
+msgid "Search on Youtube"
+msgstr ""
+
+#: play.h:648 play.h:720
+msgid "Search on Youtube (local)"
+msgstr ""
+
+#: play.h:649 play.h:722
+msgid "Search on MyVideo"
+msgstr ""
+
+#: play.h:650
+msgid "Search on Myvideo (local)"
+msgstr ""
+
+#: play.h:651 play.h:734
+msgid "Search on ARD (local)"
+msgstr ""
+
+#: play.h:652 play.h:736
+msgid "Search on ZDF (local)"
+msgstr ""
+
+#: play.h:653 play.h:738
+msgid "Search on TecTime (local)"
+msgstr ""
+
+#: play.h:654 play.h:740
+msgid "Search on Giga (local)"
+msgstr ""
+
+#: play.h:655 play.h:746
+msgid "Search on Rtl-Now (local)"
+msgstr ""
+
+#: play.h:656 play.h:744
+msgid "Search on Rtl2-Now (local)"
+msgstr ""
+
+#: play.h:657 play.h:748
+msgid "Search on SuperRTL-Now (local)"
+msgstr ""
+
+#: play.h:658 play.h:750
+msgid "Search on VOX-Now (local)"
+msgstr ""
+
+#: play.h:659 play.h:732
+msgid "Search on InternetTv (local)"
+msgstr ""
+
+#: play.h:660 play.h:730
+msgid "Search on InternetRadio (local)"
+msgstr ""
+
+#: play.h:672 play.h:689
+msgid "IMDb"
+msgstr ""
+
+#: play.h:674 play.h:691
+msgid "IMDb-API"
+msgstr ""
+
+#: play.h:693
+msgid "TMDb"
+msgstr ""
+
+#: play.h:708
+msgid "Search on Kinox"
+msgstr ""
+
+#: play.h:710
+msgid "Search on Kinox (local)"
+msgstr ""
+
+#: play.h:724
+msgid "Search on MyVideo (local)"
+msgstr ""
+
+#: readerconfig.h:310
+msgid "Use config from Flash (permanent)"
+msgstr ""
+
+#: readerconfig.h:319
+msgid "Use config from Flash (temporary)"
+msgstr ""
+
+#: readerconfig.h:328
+msgid "Use config from Stick or HDD"
+msgstr ""
+
+#: readerconfig.h:338
+msgid "Choice Config File"
+msgstr ""
+
+#: record.h:1360 record.h:1390
+msgid "add recording (stop after current event)"
+msgstr ""
+
+#: record.h:1361 record.h:1403
+msgid "add recording (indefinitely)"
+msgstr ""
+
+#: record.h:1362 record.h:1408
+msgid "add recording (enter duration)"
+msgstr ""
+
+#: restoredefault.h:64 restoredefault.h:75
+msgid "Format MNT with Backup/Restore"
+msgstr ""
+
+#: restoredefault.h:65 restoredefault.h:79
+msgid "Format MNT (all)"
+msgstr ""
+
+#: settings_bluebutton.h:6
+msgid "Blue Key Action - Setup"
+msgstr ""
+
+#: settings_bluebutton.h:12 settings_bluebutton.h:43 settings_redbutton.h:16
+msgid "TV / Radio Switch"
+msgstr ""
+
+#: settings_redbutton.h:6
+msgid "Red Key Action - Setup"
+msgstr ""
+
+#: system_backup.h:15
+msgid ""
+"Backup to /tmp or /var/backup. If the free memory too small can a usb device "
+"will never use.\n"
+"There must be a folder backup."
+msgstr ""
+
+#: system_backup_restore.h:15
+msgid ""
+"Press -restore- and your saved settings will be restored from your "
+"swapstick / recording hdd! The Box will restart automatically for "
+"restoring!\n"
+"\n"
+"Press -backup- to save your actual settings to swapstick / recording hdd.\n"
+"WARNING: The old backup will be deleted!"
+msgstr ""
+
+#: titan.c:867
+msgid "RemoteControl Old Version"
+msgstr ""
+
+#: titan.c:868
+msgid "RemoteControl Long Version"
+msgstr ""
+
+#: titan.c:870
+msgid "Select Your Remote Control"
+msgstr ""
+
+#: tithek.h:1215
+msgid "Choice Playback"
+msgstr ""
+
+#: tithek.h:1218 tithek.h:1252
+msgid "Streaming Playback (default)"
+msgstr ""
+
+#: tithek.h:1224 tithek.h:1258
+msgid "Streaming Playback Caching (0.5MB)"
+msgstr ""
+
+#: tithek.h:1225 tithek.h:1264
+msgid "Streaming Playback Caching (1MB)"
+msgstr ""
+
+#: tithek.h:1233 tithek.h:1288
+msgid "Streaming Playback Caching (5MB)"
+msgstr ""
+
+#: tithek.h:1234 tithek.h:1294
+msgid "Streaming Playback Caching (7.5MB)"
+msgstr ""
+
+#: tithek.h:1235 tithek.h:1300
+msgid "Streaming Playback Caching (10MB)"
+msgstr ""
+
+#: tithek.h:1243 tithek.h:1318
+msgid "Download Full File"
+msgstr ""
+
+#: tithek.h:1244 tithek.h:1337
+msgid "Download Full File (background)"
+msgstr ""
+
+#: tithek.h:1270
+msgid "Streaming Playback Caching (2MB)"
+msgstr ""
+
+#: tithek.h:1276
+msgid "Streaming Playback Caching (3MB)"
+msgstr ""
+
+#: tithek.h:1282
+msgid "Streaming Playback Caching (4MB)"
+msgstr ""
+
+#: tithek.h:1306
+msgid "File Caching Playback (10MB / 120s)"
+msgstr ""
+
+#: tithek.h:1310
+msgid "File Caching Playback (20MB / 240s)"
+msgstr ""
+
+#: tithek.h:1314
+msgid "File Caching Playback (30MB / 360s)"
+msgstr ""
+
+#: unicable.h:197
+msgid "Unicable manufacturer"
+msgstr ""
+
+#: unicable.h:212
+msgid "Unicable product"
+msgstr ""
+
+#: unicable.h:277
+msgid "Unicable SCR"
+msgstr ""
+
+#: videomode.h:18 videomode.h:40 videomode.h:47
+msgid "Resolution Settings"
+msgstr ""
+
+#: videomode.h:19 videomode.h:62 videomode.h:69
+msgid "Aspect Settings"
+msgstr ""
+
+#: videomode.h:25 videomode.h:27
+msgid "Videomode"
 msgstr ""
