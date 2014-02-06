@@ -13,7 +13,7 @@ msgstr ""
 #: about.h:25 skin_default_skin.xml.h:672 skin_default_skin.xml.h:673
 #: skin_default_skin.xml.h:674
 msgid "Tuner"
-msgstr ""
+msgstr "Tuner test"
 
 #: about.h:30 bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2666
 #: httpdfunc.h:2678 hwtest.h:476 moduleconfig.h:345
@@ -8749,7 +8749,7 @@ msgstr ""
 
 #: tithek.h:1215
 msgid "Choice Playback"
-msgstr ""
+msgstr "Choice Test Playback"
 
 #: system_backup.h:15
 msgid ""
