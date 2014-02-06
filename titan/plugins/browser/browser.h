@@ -188,7 +188,7 @@ void screenbrowser()
 	readbrowserfav(getconfig("browserfavfile", NULL));
 	node = browserfav;
 
-	tmpmbox = addmenulist(&mlist, "Home", NULL, NULL, 0, 0);
+	tmpmbox = addmenulist(&mlist, _("Home"), NULL, NULL, 0, 0);
 	if(tmpmbox != NULL)
 		tmpmbox->param = ostrcat(getconfig("browserhome", NULL), NULL, 0, 0);
 
@@ -203,7 +203,7 @@ void screenbrowser()
 
 start:
 	drawscreen(skin, 0, 0);
-	mbox = menulistbox(mlist, "menulist", "Browser Favoriten", NULL, NULL, 0, 0);
+	mbox = menulistbox(mlist, "menulist", _("Browser Favoriten"), NULL, NULL, 0, 0);
 	if(mbox != NULL)
 	{
 		if(mbox->param != NULL)

@@ -316,7 +316,7 @@ char* getoscamconfig()
 	
 	if(file_exist("/var/keys/oscam.server"))
 	{
-		tmpmlist = addmenulist(&mlist, "Use config from Flash (temporary)", NULL, NULL, 0, 0);
+		tmpmlist = addmenulist(&mlist, _("Use config from Flash (temporary)"), NULL, NULL, 0, 0);
 		changemenulistparam(tmpmlist, "/var", NULL, NULL, NULL);
 		free(tmpstr); tmpstr = NULL;
 		tmpstr = ostrcat("/var", NULL, 0, 0);
@@ -325,7 +325,7 @@ char* getoscamconfig()
 	
 	if(file_exist("/var/swap/keys/oscam.server"))
 	{
-		tmpmlist = addmenulist(&mlist, "Use config from Stick or HDD", NULL, NULL, 0, 0);
+		tmpmlist = addmenulist(&mlist, _("Use config from Stick or HDD"), NULL, NULL, 0, 0);
 		changemenulistparam(tmpmlist, "/var/swap", NULL, NULL, NULL);
 		free(tmpstr); tmpstr = NULL;
 		tmpstr = ostrcat("/var/swap", NULL, 0, 0);
