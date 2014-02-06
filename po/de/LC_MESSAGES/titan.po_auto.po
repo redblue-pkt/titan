@@ -7788,7 +7788,7 @@ msgstr "Video / Bild"
 
 #: tmc.h:545
 msgid "audio / picture"
-msgstr "Audoi / Bild"
+msgstr "Audio / Bild"
 
 #: tmc.h:548
 msgid "pic1"
@@ -7847,7 +7847,7 @@ msgstr "IMDB Erweiterung wurde nicht gefunden!\n"
 
 #: tmdb.h:922
 msgid "Error, found result without imdbid we can't this save in MediaDB"
-msgstr "FEHLER: in der imdb-id ist ein Fehler und kan ndaher nicht übernommen werden!"
+msgstr "FEHLER: in der imdb-id ist ein Fehler und kann daher nicht übernommen werden!"
 
 #: tpchoice.h:21
 msgid "Transponderlist"
@@ -7988,7 +7988,7 @@ msgstr "LNB / Unikabel"
 
 #: tunerconfig.h:379
 msgid "Terrestrisch"
-msgstr "Terrestrich"
+msgstr "Terrestrisch"
 
 #: tunerconfig.h:645
 msgid "direct connect"
