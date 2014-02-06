@@ -116,7 +116,7 @@ msgstr ""
 #: vidstream.h:86 vidstream.h:98 vidstream.h:167 xvidstage.h:54
 #: xvidstage.h:100 xvidstage.h:177 youtube.h:197 zdf.h:29
 msgid "OK"
-msgstr ""
+msgstr "Ok"
 
 #: about.h:45 ard.h:31 avsettings.h:247 betarobot.h:57 bgdownload.h:176
 #: blindscanadjust.h:25 channellist.h:913 channellist.h:915 channellist.h:920
@@ -205,7 +205,7 @@ msgstr ""
 #: vidstream.h:86 vidstream.h:98 vidstream.h:167 xvidstage.h:54
 #: xvidstage.h:100 xvidstage.h:177 youtube.h:197 zdf.h:29
 msgid "EXIT"
-msgstr ""
+msgstr "Exit"
 
 #: adjust.h:64 adjust.h:79 adjust.h:88 adjust.h:93 adjust.h:118 adjust.h:148
 #: adjust.h:158 adjust.h:162 adjust.h:179 adjust.h:183 adjust.h:191
@@ -375,7 +375,7 @@ msgstr ""
 
 #: adjust.h:108 skin_default_skin.xml.h:502 softcam.h:291
 msgid "Restart"
-msgstr "Neustart"
+msgstr "Neustarten"
 
 #: adjust.h:109
 msgid "Gui Restart"
@@ -819,11 +819,11 @@ msgstr "Anzahl der Dateien:"
 
 #: copyfile.h:881 copyfile.h:882
 msgid "file move error"
-msgstr "FEHLER: Beim Verschieben ist ein Fehler aufgetreten!"
+msgstr "FEHLER: Verschieben fehlgeschlagen!"
 
 #: copyfile.h:886 copyfile.h:887
 msgid "file copy error"
-msgstr "FEHLER: Beim Kopieren ist ein Fehler aufgetreten!"
+msgstr "FEHLER: Kopieren fehlgeschlagen!"
 
 #: copyfile.h:893 copyfile.h:894
 msgid "wait for stopping"
@@ -1058,7 +1058,7 @@ msgstr ""
 
 #: download.h:97
 msgid "download error"
-msgstr "FEHLER: Beim Herunterladen trat ein unerwarteter Fehler auf!"
+msgstr "FEHLER: Herunterladen fehlgeschlagen!"
 
 #: download.h:101
 msgid "wait for stopping download"
@@ -1232,7 +1232,7 @@ msgstr "Installation erfolgreich abgeschlossen."
 
 #: extensions.h:101
 msgid "Install error"
-msgstr "FEHLER: Installation fehlerhaft!"
+msgstr "FEHLER: Installation fehlgeschlagen!"
 
 #: extensions.h:103
 msgid "Remove success"
@@ -1240,7 +1240,7 @@ msgstr "Erfolgreich entfernt."
 
 #: extensions.h:105
 msgid "Remove error"
-msgstr "FEHLER: Beim Löschen ist ein Fehler aufgetreten!"
+msgstr "FEHLER: Löschen fehlgeschlagen!"
 
 #: extensions.h:170 extensions.h:221 extensions.h:478
 msgid "Tpk Install Info"
@@ -1248,7 +1248,7 @@ msgstr "Installations Information"
 
 #: extensions.h:170
 msgid "Can't install Package. Package to big."
-msgstr "FEHLER: Die gewünschte Erweiterung kann nicht installiert werden, da das Paket zu groß ist!"
+msgstr "FEHLER: Paket zu groß, Installation fehlgeschlagen!"
 
 #: extensions.h:207 extensions.h:234 extensions.h:386 tpk.h:2990
 msgid ""
@@ -1272,7 +1272,7 @@ msgstr "Erweiterung wurde erfolgreich installiert"
 
 #: extensions.h:234 extensions.h:239
 msgid "Tpk Install Info - Install ERROR"
-msgstr "FEHLER: Erweiterung konnte nicht installiert werden!"
+msgstr "FEHLER: Installation fehlgeschlagen!"
 
 #: extensions.h:247
 msgid "TPK Install done, your system will reboot !"
@@ -1292,7 +1292,7 @@ msgstr "Info zur TPK Deinstallation. Die Deinstallation wurde erfolgreich abgesc
 
 #: extensions.h:297
 msgid "Tpk Remove Info - Remove ERROR"
-msgstr "FEHLER: Bei der Deinstallation ist ein Fehler aufgetreten!"
+msgstr "FEHLER: Entfernen fehlgeschlagen!"
 
 #: extensions.h:304
 msgid "TPK Remove done, your system will reboot !"
@@ -1315,15 +1315,15 @@ msgstr "TPK Installation aus tmp wurde erfolgreich durchgeführt.\nDas System wir
 
 #: extensions.h:420 extensions.h:424
 msgid "Tpk Update Info - Update ERROR"
-msgstr "FEHLER: Die Aktualisierung aus tmp ist Fehlgeschlagen!"
+msgstr "FEHLER: Aktualisierung fehlgeschlagen!"
 
 #: extensions.h:420
 msgid "Can't get all TPK index !"
-msgstr "FEHLER: Kann das komplette Inhaltsverzeichnis der TPK Rubrik nicht laden!"
+msgstr "FEHLER: Inhalt unvollständig!"
 
 #: extensions.h:424
 msgid "Can't update all packages !"
-msgstr "FEHLER: Es konnten nicht alle Erweiterungen aktualisiert werden!"
+msgstr "FEHLER: Aktualisierung fehlgeschlagen!"
 
 #: extensions.h:432
 msgid "TPK Upgrade done, your system will reboot !"
@@ -1331,7 +1331,7 @@ msgstr "Alle Erweiterungen wurden erfolgreich aktualisiert.\nDas System wird neu
 
 #: facebook.h:66 facebook.h:167
 msgid "Can't get data from facebook"
-msgstr "FEHLER: Daten von Facebook können nicht geladen werden!"
+msgstr "FEHLER: Facebook fehlgeschlagen!"
 
 #: facebook.h:157
 msgid ""
@@ -1357,7 +1357,7 @@ msgstr "Jemand hat an Ihre Pinnwand geschrieben."
 
 #: facebook.h:475
 msgid "Note created"
-msgstr "FEHLER: wurde nicht erstellt!"
+msgstr "FEHLER: Erstellung fehlgeschlagen!"
 
 #: facebook.h:476
 msgid "Link postet"
@@ -1397,7 +1397,7 @@ msgstr "Verzeichnis anlegen"
 
 #: filemanager.h:95
 msgid "Can't rename file !"
-msgstr "FEHLER: Datei kann nicht umbenannt werden!"
+msgstr "FEHLER: Umbenennen fehlgeschlagen!"
 
 #: filemanager.h:100
 msgid "Can't create directory !"
@@ -1433,11 +1433,11 @@ msgstr "Möchten Sie tatsächlich diese Datei / dieses Verzeichnis löschen?"
 
 #: filemanager.h:291
 msgid "Can't remove file/dir !"
-msgstr "FEHLER: Die Datei / das Verzeichnis kann nicht gelöscht werden!"
+msgstr "FEHLER: Löschen fehlgeschlagen!"
 
 #: filemanager.h:331
 msgid "Can't show this file!"
-msgstr "FEHLER: Die Datei kann nicht angezeigt werden!"
+msgstr "FEHLER: Anzeigen fehlgeschlagen!"
 
 #: filemanager.h:355 mc_internetbrowser.h:41 mc_wetterinfo.h:41 tithek.h:1354
 msgid "Registration needed, please contact Atemio !"
@@ -1445,7 +1445,7 @@ msgstr "Die Registrierung ist notwendig.\nBitte kontaktieren Sie Atemio!"
 
 #: global.h:6450 keyactions.h:224
 msgid "ERROR cant read res"
-msgstr "FEHLER: "
+msgstr "FEHLER: Auflösung fehlerhaft"
 
 #: gmediarender.h:109
 msgid "Servername"
@@ -1531,7 +1531,7 @@ msgstr "ACHTUNG: Das ausgewählte Verzeichnis ist nicht leer!\nVerzeichnis trotzd
 
 #: harddisk.h:377
 msgid "can't create or delete directory"
-msgstr "FEHLER: Das Verzeichnis kann nicht erstellt / gelöscht werden!"
+msgstr "FEHLER: Verzeichnis kann nicht erstellt / gelöscht werden!"
 
 #: harddisk.h:381
 msgid "succesfull create or delelete directory"
@@ -1654,19 +1654,19 @@ msgstr "Sie können das HBBTV durch Betätigung der -RECORD- Taste auf Ihrer Fernb
 
 #: hwtest.h:88
 msgid "testtransponder not found"
-msgstr "FEHLER: Der Testtransponder konnte nicht gefunden werden!"
+msgstr "FEHLER: Testtransponder nicht gefunden!"
 
 #: hwtest.h:93
 msgid "testtransponder entry not ok"
-msgstr "FEHLER: Der eingetragene Testtransponder ist fehlerhaft.\nBitte überprüfen Sie Ihre Angaben!"
+msgstr "FEHLER: Testtransponder fehlerhaft!\nBitte überprüfen Sie Ihre Angaben!"
 
 #: hwtest.h:98
 msgid "can't create new transponer"
-msgstr "FEHLER: Der Transponder kann nicht angelegt werden!"
+msgstr "FEHLER: Transponder kann nicht angelegt werden!"
 
 #: hwtest.h:103
 msgid "testchannel not found"
-msgstr "FEHLER: Testsender konnte nicht gefunden werden!"
+msgstr "FEHLER: Testsender nicht gefunden!"
 
 #: hwtest.h:108
 msgid "testchannel entry not ok"
@@ -1674,7 +1674,7 @@ msgstr "FEHLER: Testsender-Eintrag ist fehlerhaft.\nBitte überprüfen Sie Ihre An
 
 #: hwtest.h:113
 msgid "can't create new channel"
-msgstr "FEHLER: Der Testsender kann nicht angelegt werden!"
+msgstr "FEHLER: Testsender kann nicht angelegt werden!"
 
 #: hwtest.h:206
 msgid "Press OK or EXIT"
@@ -2381,7 +2381,7 @@ msgstr "FEHLER: Ein Freigabename muss eingetragen sein!"
 
 #: networkbrowser.h:1750
 msgid "A mount entry with this name already exists!"
-msgstr "FEHLER: Eine Netzwerkfreigabe mit diesem Namen existiert bereits!"
+msgstr "FEHLER: Netzwerkfreigabe mit diesem Namen existiert bereits!"
 
 #: networkbrowser.h:1755
 msgid "Are you sure you want to save this network mount?"
@@ -2427,7 +2427,7 @@ msgstr "Einstellungen speichern?"
 
 #: network.h:558
 msgid "Can't change hostname !"
-msgstr "FEHLER: Der Hostname kann nicht geändert werden!"
+msgstr "FEHLER: Hostname kann nicht geändert werden!"
 
 #: network.h:679
 msgid "NONE"
@@ -2485,11 +2485,11 @@ msgstr "WLAN Gerät und Treiber wurden gefunden:"
 msgid ""
 "Found Wlan Stick but no driver\n"
 "Please install driver: "
-msgstr "FEHLER: Ein WLAN Gerät wurde erkannt.\nBitte installieren Sie den passenden Treiber!"
+msgstr "ACHTUNG: WLAN Gerät gefunden.\nBitte installieren Sie den passenden Treiber!"
 
 #: network.h:884
 msgid "Wlan Stick not found"
-msgstr "FEHLER: WLAN Gerät wurde nicht gefunden!"
+msgstr "FEHLER: WLAN Gerät nicht gefunden!"
 
 #: network.h:887
 msgid "WLAN Info"
@@ -5308,7 +5308,7 @@ msgstr "EPG Aktualisierungszeit"
 
 #: skin_default_skin.xml.h:210
 msgid "EPG Reset"
-msgstr "EPG Neustarten"
+msgstr "EPG löschen"
 
 #: skin_default_skin.xml.h:211
 msgid "EPG Save Mode"
@@ -5316,7 +5316,7 @@ msgstr "EPG Speichermodus"
 
 #: skin_default_skin.xml.h:212
 msgid "EPG Scanlist"
-msgstr "EPG Scanliste"
+msgstr "Scanliste"
 
 #: skin_default_skin.xml.h:213
 msgid "EPG Search"
@@ -6598,7 +6598,7 @@ msgstr "Einstellungen"
 
 #: skin_default_skin.xml.h:534
 msgid "ScanList"
-msgstr "Auswahl scannen"
+msgstr "Scanliste"
 
 #: skin_default_skin.xml.h:535
 msgid "Scan locking"
