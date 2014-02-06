@@ -124,7 +124,9 @@ msgstr ""
 #: mc_global.h:766 mc_global.h:1011 play.h:1450 play.h:1610 play.h:1621
 #: rectimer.h:557 rectimer.h:1210 rectimer.h:1356 rectimer.h:1368 stream.h:33
 #: titan.c:911 titan.c:920 titan.c:1031 titan.c:1052 titan.c:1058 titan.c:1069
-#: titan.c:1075
+#: titan.c:1075 global.h:6487 menu.h:884 menu.h:886 titan.c:246 titan.c:310
+#: titan.c:319 titan.c:912 titan.c:921 titan.c:1032 titan.c:1053 titan.c:1059
+#: titan.c:1070 titan.c:1076
 msgid "OK"
 msgstr ""
 
@@ -219,7 +221,9 @@ msgstr ""
 #: mc_global.h:766 mc_global.h:1011 play.h:1450 play.h:1610 play.h:1621
 #: rectimer.h:557 rectimer.h:1210 rectimer.h:1356 rectimer.h:1368 stream.h:33
 #: titan.c:911 titan.c:920 titan.c:1031 titan.c:1052 titan.c:1058 titan.c:1069
-#: titan.c:1075
+#: titan.c:1075 global.h:6487 menu.h:884 menu.h:886 titan.c:246 titan.c:310
+#: titan.c:319 titan.c:912 titan.c:921 titan.c:1032 titan.c:1053 titan.c:1059
+#: titan.c:1070 titan.c:1076
 msgid "EXIT"
 msgstr ""
 
@@ -600,7 +604,8 @@ msgstr ""
 #: global.h:6494 global.h:6481 mc_global.h:766 mc_global.h:1011 play.h:1450
 #: play.h:1610 play.h:1621 rectimer.h:557 rectimer.h:1210 rectimer.h:1356
 #: rectimer.h:1368 stream.h:33 titan.c:1031 titan.c:1052 titan.c:1058
-#: titan.c:1069 titan.c:1075
+#: titan.c:1069 titan.c:1075 global.h:6487 titan.c:246 titan.c:310 titan.c:319
+#: titan.c:1032 titan.c:1053 titan.c:1059 titan.c:1070 titan.c:1076
 msgid "Message"
 msgstr ""
 
@@ -1200,12 +1205,13 @@ msgstr ""
 
 #: epgsettings.h:138 epgsettings.h:179 skin_default_skin.xml.h:387
 #: keyactions.h:55 keyactions.h:112 settings_bluebutton.h:16
-#: settings_redbutton.h:17
+#: settings_redbutton.h:17 settings_pluginbutton.h:17
 msgid "Multi EPG"
 msgstr ""
 
 #: epgsettings.h:139 skin_default_skin.xml.h:254 keyactions.h:56
 #: keyactions.h:119 settings_bluebutton.h:17 settings_redbutton.h:18
+#: settings_pluginbutton.h:18
 msgid "Graphic Multi EPG"
 msgstr ""
 
@@ -1488,7 +1494,7 @@ msgid "Registration needed, please contact Atemio !"
 msgstr ""
 
 #: global.h:6450 keyactions.h:224 global.h:6475 global.h:6478 global.h:6480
-#: keyactions.h:226 keyactions.h:227 global.h:6494 global.h:6481
+#: keyactions.h:226 keyactions.h:227 global.h:6494 global.h:6481 global.h:6487
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -1869,7 +1875,7 @@ msgid "Email  \t\tinfo@atemio.de"
 msgstr ""
 
 #: info.h:27 plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9 titan.c:907
-#: titan.c:920
+#: titan.c:920 titan.c:921
 msgid "Info"
 msgstr ""
 
@@ -2259,15 +2265,15 @@ msgid ""
 msgstr ""
 
 #: menu.h:879 menu.h:881 skin_default_skin.xml.h:530
-#: skin_default_skin.xml.h:531
+#: skin_default_skin.xml.h:531 menu.h:884 menu.h:886
 msgid "Save Settings"
 msgstr ""
 
-#: menu.h:879
+#: menu.h:879 menu.h:884
 msgid "Error in Save Settings"
 msgstr ""
 
-#: menu.h:881
+#: menu.h:881 menu.h:886
 msgid "Settings succesfull saved"
 msgstr ""
 
@@ -5101,7 +5107,7 @@ msgid "Channel Service..."
 msgstr ""
 
 #: skin_default_skin.xml.h:134 keyactions.h:58 keyactions.h:133
-#: settings_bluebutton.h:19 settings_redbutton.h:20
+#: settings_bluebutton.h:19 settings_redbutton.h:20 settings_pluginbutton.h:20
 msgid "Child Protection"
 msgstr ""
 
@@ -5307,6 +5313,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:191 keyactions.h:60 keyactions.h:140 play.h:663
 #: play.h:706 play.h:758 settings_bluebutton.h:21 settings_redbutton.h:22
+#: settings_pluginbutton.h:22
 msgid "Downloads"
 msgstr ""
 
@@ -6881,7 +6888,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:583 skin_default_skin.xml.h:584
 #: skin_default_skin.xml.h:585 keyactions.h:53 keyactions.h:84
-#: settings_bluebutton.h:14 settings_redbutton.h:15
+#: settings_bluebutton.h:14 settings_redbutton.h:15 settings_pluginbutton.h:15
 msgid "Softcam Panel"
 msgstr ""
 
@@ -7829,88 +7836,88 @@ msgstr ""
 msgid "never del file"
 msgstr ""
 
-#: titan.c:245
+#: titan.c:245 titan.c:246
 msgid "!!! This is a DEMO Version !!!"
 msgstr ""
 
-#: titan.c:309
+#: titan.c:309 titan.c:310
 msgid ""
 "Found running record\n"
 "or record is starting in next time.\n"
 "Really shutdown ?"
 msgstr ""
 
-#: titan.c:318
+#: titan.c:318 titan.c:319
 msgid ""
 "Found running download\n"
 "Really shutdown ?"
 msgstr ""
 
-#: titan.c:726 titan.c:739
+#: titan.c:726 titan.c:739 titan.c:740
 msgid "Error: open rc device !!"
 msgstr ""
 
-#: titan.c:732 titan.c:745
+#: titan.c:732 titan.c:745 titan.c:746
 msgid "Error: no frontend device found !!"
 msgstr ""
 
-#: titan.c:738 titan.c:751
+#: titan.c:738 titan.c:751 titan.c:752
 msgid "Error: no demux device found !!"
 msgstr ""
 
-#: titan.c:744 titan.c:757
+#: titan.c:744 titan.c:757 titan.c:758
 msgid "Error: no video device found !!"
 msgstr ""
 
-#: titan.c:750 titan.c:763
+#: titan.c:750 titan.c:763 titan.c:764
 msgid "Error: no audio device found !!"
 msgstr ""
 
-#: titan.c:768 titan.c:781
+#: titan.c:768 titan.c:781 titan.c:782
 msgid "Error: skin not found !!"
 msgstr ""
 
-#: titan.c:898 titan.c:911
+#: titan.c:898 titan.c:911 titan.c:912
 msgid "First Wizzard"
 msgstr ""
 
-#: titan.c:898 titan.c:911
+#: titan.c:898 titan.c:911 titan.c:912
 msgid "Settings OK ?"
 msgstr ""
 
-#: titan.c:1018 titan.c:1031
+#: titan.c:1018 titan.c:1031 titan.c:1032
 msgid "Receiver successful unlocked"
 msgstr ""
 
-#: titan.c:1039 titan.c:1052
+#: titan.c:1039 titan.c:1052 titan.c:1053
 msgid ""
 "Free space in /var to little!\n"
 "This can make problems!"
 msgstr ""
 
-#: titan.c:1045 titan.c:1058
+#: titan.c:1045 titan.c:1058 titan.c:1059
 msgid ""
 "/var not writeable!\n"
 "Repair it?"
 msgstr ""
 
-#: titan.c:1056 titan.c:1069
+#: titan.c:1056 titan.c:1069 titan.c:1070
 msgid ""
 "Free space in /mnt to little!\n"
 "This can make problems!"
 msgstr ""
 
-#: titan.c:1062 titan.c:1075
+#: titan.c:1062 titan.c:1075 titan.c:1076
 msgid ""
 "/mnt not writeable!\n"
 "Repair it?"
 msgstr ""
 
-#: titan.c:1109 titan.c:1111 titan.c:1124
+#: titan.c:1109 titan.c:1111 titan.c:1124 titan.c:1125
 msgid "Unknown Error."
 msgstr ""
 
-#: titan.c:1111 titan.c:1113 titan.c:1126
+#: titan.c:1111 titan.c:1113 titan.c:1126 titan.c:1127
 msgid "Automatic stop in 10 seconds."
 msgstr ""
 
@@ -8437,21 +8444,24 @@ msgid "MediaDB Scan Info"
 msgstr ""
 
 #: keyactions.h:51 keyactions.h:98 settings_redbutton.h:13
+#: settings_pluginbutton.h:13
 msgid "Auto Resolution"
 msgstr ""
 
 #: keyactions.h:57 keyactions.h:126 settings_bluebutton.h:18
-#: settings_redbutton.h:19
+#: settings_redbutton.h:19 settings_pluginbutton.h:19
 msgid "Sleep Timer"
 msgstr ""
 
 #: keyactions.h:59 keyactions.h:91 settings_bluebutton.h:20
 #: settings_redbutton.h:21 videomode.h:17 videomode.h:34
+#: settings_pluginbutton.h:21
 msgid "Subchannel"
 msgstr ""
 
 #: keyactions.h:105 settings_bluebutton.h:15 settings_redbutton.h:12
-#: settings_redbutton.h:44
+#: settings_redbutton.h:44 settings_pluginbutton.h:12
+#: settings_pluginbutton.h:44
 msgid "Extensions List"
 msgstr ""
 
@@ -8644,6 +8654,7 @@ msgid "Blue Key Action - Setup"
 msgstr ""
 
 #: settings_bluebutton.h:12 settings_bluebutton.h:43 settings_redbutton.h:16
+#: settings_pluginbutton.h:16
 msgid "TV / Radio Switch"
 msgstr ""
 
@@ -8668,15 +8679,15 @@ msgid ""
 "WARNING: The old backup will be deleted!"
 msgstr ""
 
-#: titan.c:867
+#: titan.c:867 titan.c:868
 msgid "RemoteControl Old Version"
 msgstr ""
 
-#: titan.c:868
+#: titan.c:868 titan.c:869
 msgid "RemoteControl Long Version"
 msgstr ""
 
-#: titan.c:870
+#: titan.c:870 titan.c:871
 msgid "Select Your Remote Control"
 msgstr ""
 
@@ -8762,4 +8773,8 @@ msgstr ""
 
 #: videomode.h:25 videomode.h:27
 msgid "Videomode"
+msgstr ""
+
+#: settings_pluginbutton.h:6
+msgid "Plugin Key Action - Setup"
 msgstr ""
