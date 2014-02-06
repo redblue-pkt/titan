@@ -664,6 +664,11 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		if(check == 1) return 0;
 		screensettings_bluebutton();
 	}
+	else if(ostrcmp("settings_pluginbutton", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		screensettings_pluginbutton();
+	}
 	else if(ostrcmp("feed", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
