@@ -1278,7 +1278,7 @@ void screenrecordstop()
 			free(tmpstr); tmpstr = NULL;
 			if(tmpmbox != NULL)
 			{
-				tmpmbox->param = ostrcat(tmpmbox->param, "stop", 1, 0);
+				tmpmbox->param = ostrcat(tmpmbox->param, _("stop"), 1, 0);
 				tmpmbox->param = ostrcat(tmpmbox->param, " (", 1, 0);
 				tmpmbox->param = ostrcat(tmpmbox->param, servicenode->recname, 1, 0);
 				tmpmbox->param = ostrcat(tmpmbox->param, ")", 1, 0);
@@ -1287,9 +1287,9 @@ void screenrecordstop()
 		servicenode = servicenode->next;
 	}
 
-	mbox = menulistbox(mlist, "recordlist", "Record", NULL, NULL, 0, 0);
+	mbox = menulistbox(mlist, "recordlist", _("Record"), NULL, NULL, 0, 0);
 	
-	if(mbox != NULL && mbox->param != NULL && ostrstr(mbox->param, "stop") == mbox->param)
+	if(mbox != NULL && mbox->param != NULL && ostrstr(mbox->param, _("stop")) == mbox->param)
 	{
 		servicenode = getrecordbyname(mbox->param, RECORDDIRECT);
 		if(servicenode != NULL)
@@ -1333,7 +1333,7 @@ void screenrecorddirect()
 			free(tmpstr); tmpstr = NULL;
 			if(tmpmbox != NULL)
 			{
-				tmpmbox->param = ostrcat(tmpmbox->param, "stop", 1, 0);
+				tmpmbox->param = ostrcat(tmpmbox->param, _("stop"), 1, 0);
 				tmpmbox->param = ostrcat(tmpmbox->param, " (", 1, 0);
 				tmpmbox->param = ostrcat(tmpmbox->param, servicenode->recname, 1, 0);
 				tmpmbox->param = ostrcat(tmpmbox->param, ")", 1, 0);
@@ -1348,7 +1348,7 @@ void screenrecorddirect()
 			free(tmpstr); tmpstr = NULL;
 			if(tmpmbox != NULL)
 			{
-				tmpmbox->param = ostrcat(tmpmbox->param, "change", 1, 0);
+				tmpmbox->param = ostrcat(tmpmbox->param, _("change"), 1, 0);
 				tmpmbox->param = ostrcat(tmpmbox->param, " (", 1, 0);
 				tmpmbox->param = ostrcat(tmpmbox->param, servicenode->recname, 1, 0);
 				tmpmbox->param = ostrcat(tmpmbox->param, ")", 1, 0);
@@ -1357,21 +1357,21 @@ void screenrecorddirect()
 		servicenode = servicenode->next;
 	}
 
-	addmenulist(&mlist, "add recording (stop after current event)", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "add recording (indefinitely)", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "add recording (enter duration)", NULL, NULL, 0, 0);
+	addmenulist(&mlist, _("add recording (stop after current event)"), NULL, NULL, 0, 0);
+	addmenulist(&mlist, _("add recording (indefinitely)"), NULL, NULL, 0, 0);
+	addmenulist(&mlist, _("add recording (enter duration)"), NULL, NULL, 0, 0);
 
-	mbox = menulistbox(mlist, "recordlist", "Record", NULL, NULL, 0, 0);
+	mbox = menulistbox(mlist, _("recordlist"), _("Record"), NULL, NULL, 0, 0);
 	
 	if(mbox != NULL)
 	{
-		if(mbox->param != NULL && ostrstr(mbox->param, "stop") == mbox->param)
+		if(mbox->param != NULL && ostrstr(mbox->param, _("stop")) == mbox->param)
 		{
 			servicenode = getrecordbyname(mbox->param, RECORDDIRECT);
 			if(servicenode != NULL)
 				servicenode->recendtime = 2;
 		}
-		if(mbox->param != NULL && ostrstr(mbox->param, "change") == mbox->param)
+		if(mbox->param != NULL && ostrstr(mbox->param, _("change")) == mbox->param)
 		{
 			servicenode = getrecordbyname(mbox->param, RECORDDIRECT);
 			if(servicenode != NULL)
@@ -1387,7 +1387,7 @@ void screenrecorddirect()
 					servicenode->recendtime = time(NULL) + (ret1 * 60);
 			}
 		}
-		if(ostrcmp(mbox->name, "add recording (stop after current event)") == 0)
+		if(ostrcmp(mbox->name, _("add recording (stop after current event)")) == 0)
 		{
 			epgnode = getepgbytime(status.aktservice->channel, time(NULL) + 60);
 #ifndef SIMULATE
@@ -1400,12 +1400,12 @@ void screenrecorddirect()
 #endif
 			newstart = 1;
 		}
-		if(ostrcmp(mbox->name, "add recording (indefinitely)") == 0)
+		if(ostrcmp(mbox->name, _("add recording (indefinitely)")) == 0)
 		{
 			ret = recordstart(status.aktservice->channel, -1, 0, RECDIRECT, 0, NULL);
 			newstart = 1;
 		}
-		if(ostrcmp(mbox->name, "add recording (enter duration)") == 0)
+		if(ostrcmp(mbox->name, _("add recording (enter duration)")) == 0)
 		{
 			ret1 = screenrecordduration(0, 0);
 
