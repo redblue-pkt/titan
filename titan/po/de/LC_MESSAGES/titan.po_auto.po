@@ -6036,7 +6036,7 @@ msgstr "Minimale Signalrate"
 
 #: skin_default_skin.xml.h:375
 msgid "Minutes"
-msgstr "minuten"
+msgstr "Minuten"
 
 #: skin_default_skin.xml.h:376
 msgid "Minutes:"
@@ -6422,7 +6422,7 @@ msgstr "Aufnahmepfad Einstellungen"
 
 #: skin_default_skin.xml.h:481
 msgid "Records"
-msgstr "Aufnahme"
+msgstr "Aufnahmen"
 
 #: skin_default_skin.xml.h:482
 msgid "Records and EPG"
