@@ -4220,11 +4220,12 @@ msgstr ""
 msgid "Timer Record start !\n"
 msgstr ""
 
-#: record.h:1272 record.h:1327
+#: record.h:1272 record.h:1327 record.h:1281 record.h:1292 record.h:1336
+#: record.h:1368
 msgid "stop"
 msgstr ""
 
-#: record.h:1342
+#: record.h:1342 record.h:1351 record.h:1374
 msgid "change"
 msgstr ""
 
@@ -6448,7 +6449,8 @@ msgstr ""
 msgid "Receiver unlock"
 msgstr ""
 
-#: skin_default_skin.xml.h:473 skin_default_skin.xml.h:474
+#: skin_default_skin.xml.h:473 skin_default_skin.xml.h:474 record.h:1290
+#: record.h:1364
 msgid "Record"
 msgstr ""
 
@@ -8315,4 +8317,20 @@ msgstr ""
 
 #: plugins_tithek_skin.xml.h:2 skins_tithek_skin.xml.h:2
 msgid "TiThek Settings"
+msgstr ""
+
+#: record.h:1360 record.h:1390
+msgid "add recording (stop after current event)"
+msgstr ""
+
+#: record.h:1361 record.h:1403
+msgid "add recording (indefinitely)"
+msgstr ""
+
+#: record.h:1362 record.h:1408
+msgid "add recording (enter duration)"
+msgstr ""
+
+#: record.h:1364
+msgid "recordlist"
 msgstr ""
