@@ -23,7 +23,7 @@ msgstr ""
 #: transponder.h:418 transponder.h:451 transponder.h:480 transponder.h:493
 #: transponder.h:504 transponder.h:574 youtube.h:149 zdf.h:86 httpdfunc.h:2636
 #: httpdfunc.h:2648 httpdfunc.h:2638 httpdfunc.h:2650
-#: skin_default_skin.xml.h:694 skin_default_skin.xml.h:695
+#: skin_default_skin.xml.h:694 skin_default_skin.xml.h:695 stream.h:22
 msgid "unknown"
 msgstr ""
 
@@ -124,6 +124,7 @@ msgstr ""
 #: play.h:1621 service.h:709 service.h:950 global.h:6481 rectimer.h:557
 #: rectimer.h:1210 rectimer.h:1356 rectimer.h:1368 titan.c:911 titan.c:920
 #: titan.c:1031 titan.c:1052 titan.c:1058 titan.c:1069 titan.c:1075
+#: stream.h:33
 msgid "OK"
 msgstr ""
 
@@ -218,6 +219,7 @@ msgstr ""
 #: play.h:1621 service.h:709 service.h:950 global.h:6481 rectimer.h:557
 #: rectimer.h:1210 rectimer.h:1356 rectimer.h:1368 titan.c:911 titan.c:920
 #: titan.c:1031 titan.c:1052 titan.c:1058 titan.c:1069 titan.c:1075
+#: stream.h:33
 msgid "EXIT"
 msgstr ""
 
@@ -598,7 +600,7 @@ msgstr ""
 #: global.h:6494 play.h:1450 play.h:1610 play.h:1621 service.h:709
 #: service.h:950 global.h:6481 rectimer.h:557 rectimer.h:1210 rectimer.h:1356
 #: rectimer.h:1368 titan.c:1031 titan.c:1052 titan.c:1058 titan.c:1069
-#: titan.c:1075
+#: titan.c:1075 stream.h:33
 msgid "Message"
 msgstr ""
 
@@ -1196,12 +1198,13 @@ msgid "Single EPG"
 msgstr ""
 
 #: epgsettings.h:138 epgsettings.h:179 skin_default_skin.xml.h:387
-#: keyactions.h:55 keyactions.h:112
+#: keyactions.h:55 keyactions.h:112 settings_bluebutton.h:16
+#: settings_redbutton.h:17
 msgid "Multi EPG"
 msgstr ""
 
 #: epgsettings.h:139 skin_default_skin.xml.h:254 keyactions.h:56
-#: keyactions.h:119
+#: keyactions.h:119 settings_bluebutton.h:17 settings_redbutton.h:18
 msgid "Graphic Multi EPG"
 msgstr ""
 
@@ -4223,7 +4226,7 @@ msgid "Timer Record start !\n"
 msgstr ""
 
 #: record.h:1272 record.h:1327 record.h:1281 record.h:1292 record.h:1336
-#: record.h:1368
+#: record.h:1368 stream.h:15 stream.h:37
 msgid "stop"
 msgstr ""
 
@@ -5094,6 +5097,7 @@ msgid "Channel Service..."
 msgstr ""
 
 #: skin_default_skin.xml.h:134 keyactions.h:58 keyactions.h:133
+#: settings_bluebutton.h:19 settings_redbutton.h:20
 msgid "Child Protection"
 msgstr ""
 
@@ -5298,7 +5302,7 @@ msgid "Download"
 msgstr ""
 
 #: skin_default_skin.xml.h:191 keyactions.h:60 keyactions.h:140 play.h:663
-#: play.h:706 play.h:758
+#: play.h:706 play.h:758 settings_bluebutton.h:21 settings_redbutton.h:22
 msgid "Downloads"
 msgstr ""
 
@@ -6569,7 +6573,8 @@ msgstr ""
 msgid "Restore"
 msgstr ""
 
-#: skin_default_skin.xml.h:504 skin_default_skin.xml.h:505
+#: skin_default_skin.xml.h:504 skin_default_skin.xml.h:505 restoredefault.h:63
+#: restoredefault.h:67 restoredefault.h:71
 msgid "Restore default settings"
 msgstr ""
 
@@ -6872,6 +6877,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:583 skin_default_skin.xml.h:584
 #: skin_default_skin.xml.h:585 keyactions.h:53 keyactions.h:84
+#: settings_bluebutton.h:14 settings_redbutton.h:15
 msgid "Softcam Panel"
 msgstr ""
 
@@ -6976,7 +6982,7 @@ msgid "Storage position"
 msgstr ""
 
 #: skin_default_skin.xml.h:610 skin_default_skin.xml.h:611
-#: skin_default_skin.xml.h:612
+#: skin_default_skin.xml.h:612 stream.h:36
 msgid "Streaming"
 msgstr ""
 
@@ -7643,7 +7649,7 @@ msgstr ""
 msgid "Trade time: "
 msgstr ""
 
-#: stream.h:32
+#: stream.h:32 stream.h:33
 msgid "No Live Stream running"
 msgstr ""
 
@@ -8354,19 +8360,22 @@ msgstr ""
 msgid "Key Action - Plugins"
 msgstr ""
 
-#: keyactions.h:51 keyactions.h:98
+#: keyactions.h:51 keyactions.h:98 settings_redbutton.h:13
 msgid "Auto Resolution"
 msgstr ""
 
-#: keyactions.h:57 keyactions.h:126
+#: keyactions.h:57 keyactions.h:126 settings_bluebutton.h:18
+#: settings_redbutton.h:19
 msgid "Sleep Timer"
 msgstr ""
 
-#: keyactions.h:59 keyactions.h:91
+#: keyactions.h:59 keyactions.h:91 settings_bluebutton.h:20
+#: settings_redbutton.h:21
 msgid "Subchannel"
 msgstr ""
 
-#: keyactions.h:105
+#: keyactions.h:105 settings_bluebutton.h:15 settings_redbutton.h:12
+#: settings_redbutton.h:44
 msgid "Extensions List"
 msgstr ""
 
@@ -8576,4 +8585,24 @@ msgstr ""
 
 #: tithek.h:1314
 msgid "File Caching Playback (30MB / 360s)"
+msgstr ""
+
+#: restoredefault.h:64 restoredefault.h:75
+msgid "Format MNT with Backup/Restore"
+msgstr ""
+
+#: restoredefault.h:65 restoredefault.h:79
+msgid "Format MNT (all)"
+msgstr ""
+
+#: settings_bluebutton.h:6
+msgid "Blue Key Action - Setup"
+msgstr ""
+
+#: settings_bluebutton.h:12 settings_bluebutton.h:43 settings_redbutton.h:16
+msgid "TV / Radio Switch"
+msgstr ""
+
+#: settings_redbutton.h:6
+msgid "Red Key Action - Setup"
 msgstr ""
