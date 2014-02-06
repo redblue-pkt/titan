@@ -667,7 +667,7 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 	{
 		if(child->del == PLUGINDELMARK && (status.security == 1 || (status.security == 0 && checkpluginskip(child->name) == 0)))
 		{
-			if(ostrcmp(child->name, _("Streaminfo") == 0 && status.play == 1)
+			if(ostrcmp(child->name, _("Streaminfo")) == 0 && status.play == 1)
 				addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);
 			else if(ostrcmp(child->name, _("IMDb")) == 0)
 				addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);
