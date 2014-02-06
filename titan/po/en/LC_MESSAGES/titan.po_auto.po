@@ -1196,10 +1196,12 @@ msgid "Single EPG"
 msgstr ""
 
 #: epgsettings.h:138 epgsettings.h:179 skin_default_skin.xml.h:387
+#: keyactions.h:55 keyactions.h:112
 msgid "Multi EPG"
 msgstr ""
 
-#: epgsettings.h:139 skin_default_skin.xml.h:254
+#: epgsettings.h:139 skin_default_skin.xml.h:254 keyactions.h:56
+#: keyactions.h:119
 msgid "Graphic Multi EPG"
 msgstr ""
 
@@ -3839,7 +3841,7 @@ msgstr ""
 msgid "Framerate"
 msgstr ""
 
-#: plugins_streaminfo_skin.xml.h:3 skins_streaminfo_skin.xml.h:3
+#: plugins_streaminfo_skin.xml.h:3 skins_streaminfo_skin.xml.h:3 play.h:670
 msgid "Streaminfo"
 msgstr ""
 
@@ -5091,7 +5093,7 @@ msgstr ""
 msgid "Channel Service..."
 msgstr ""
 
-#: skin_default_skin.xml.h:134
+#: skin_default_skin.xml.h:134 keyactions.h:58 keyactions.h:133
 msgid "Child Protection"
 msgstr ""
 
@@ -5295,7 +5297,8 @@ msgstr ""
 msgid "Download"
 msgstr ""
 
-#: skin_default_skin.xml.h:191
+#: skin_default_skin.xml.h:191 keyactions.h:60 keyactions.h:140 play.h:663
+#: play.h:706 play.h:758
 msgid "Downloads"
 msgstr ""
 
@@ -6043,7 +6046,7 @@ msgstr ""
 msgid "Media Center"
 msgstr ""
 
-#: skin_default_skin.xml.h:362
+#: skin_default_skin.xml.h:362 play.h:623 play.h:699
 msgid "MediaDB Edit"
 msgstr ""
 
@@ -6868,7 +6871,7 @@ msgid "SNR:"
 msgstr ""
 
 #: skin_default_skin.xml.h:583 skin_default_skin.xml.h:584
-#: skin_default_skin.xml.h:585
+#: skin_default_skin.xml.h:585 keyactions.h:53 keyactions.h:84
 msgid "Softcam Panel"
 msgstr ""
 
@@ -7203,7 +7206,7 @@ msgid "TPK install (online)"
 msgstr ""
 
 #: skin_default_skin.xml.h:661 skin_default_skin.xml.h:662
-#: skin_default_skin.xml.h:663
+#: skin_default_skin.xml.h:663 extensions.h:202
 msgid "Tpk Install - select file"
 msgstr ""
 
@@ -7428,7 +7431,7 @@ msgid "Video PID:"
 msgstr ""
 
 #: skin_default_skin.xml.h:713 skin_default_skin.xml.h:714
-#: skin_default_skin.xml.h:715
+#: skin_default_skin.xml.h:715 play.h:618 play.h:685
 msgid "Video Settings"
 msgstr ""
 
@@ -8333,4 +8336,244 @@ msgstr ""
 
 #: record.h:1364
 msgid "recordlist"
+msgstr ""
+
+#: extensions.h:164
+msgid "Choice Install Medium"
+msgstr ""
+
+#: extensions.h:197
+msgid "Tpk Install - select section"
+msgstr ""
+
+#: extensions.h:271
+msgid "Tpk Remove - select file"
+msgstr ""
+
+#: keyactions.h:21
+msgid "Key Action - Plugins"
+msgstr ""
+
+#: keyactions.h:51 keyactions.h:98
+msgid "Auto Resolution"
+msgstr ""
+
+#: keyactions.h:57 keyactions.h:126
+msgid "Sleep Timer"
+msgstr ""
+
+#: keyactions.h:59 keyactions.h:91
+msgid "Subchannel"
+msgstr ""
+
+#: keyactions.h:105
+msgid "Extensions List"
+msgstr ""
+
+#: keyactions.h:147 play.h:629 play.h:697
+msgid "MediaDB Scan Info"
+msgstr ""
+
+#: networkbrowser.h:1875
+msgid "Networkbrowser - show Shares"
+msgstr ""
+
+#: play.h:619 play.h:687
+msgid "AV Settings"
+msgstr ""
+
+#: play.h:620 play.h:695
+msgid "iD3Tag Info"
+msgstr ""
+
+#: play.h:626 play.h:701
+msgid "Delete File"
+msgstr ""
+
+#: play.h:635
+msgid "Search on KinoX"
+msgstr ""
+
+#: play.h:636
+msgid "Search on KinoX (local)"
+msgstr ""
+
+#: play.h:637 play.h:726
+msgid "Search on Movie4k"
+msgstr ""
+
+#: play.h:638 play.h:728
+msgid "Search on Movie4k (local)"
+msgstr ""
+
+#: play.h:639 play.h:712
+msgid "Search on Solarmovies (movie)"
+msgstr ""
+
+#: play.h:640 play.h:714
+msgid "Search on Solarmovies (serie)"
+msgstr ""
+
+#: play.h:641 play.h:716
+msgid "Search on Solarmovies (local)"
+msgstr ""
+
+#: play.h:642 play.h:754
+msgid "Search on Mle-HD (local)"
+msgstr ""
+
+#: play.h:643 play.h:742
+msgid "Search on Beeg (local)"
+msgstr ""
+
+#: play.h:644 play.h:752
+msgid "Search on Xvideos (local)"
+msgstr ""
+
+#: play.h:646 play.h:756
+msgid "Search on Netzkino (local)"
+msgstr ""
+
+#: play.h:647 play.h:718
+msgid "Search on Youtube"
+msgstr ""
+
+#: play.h:648 play.h:720
+msgid "Search on Youtube (local)"
+msgstr ""
+
+#: play.h:649 play.h:722
+msgid "Search on MyVideo"
+msgstr ""
+
+#: play.h:650
+msgid "Search on Myvideo (local)"
+msgstr ""
+
+#: play.h:651 play.h:734
+msgid "Search on ARD (local)"
+msgstr ""
+
+#: play.h:652 play.h:736
+msgid "Search on ZDF (local)"
+msgstr ""
+
+#: play.h:653 play.h:738
+msgid "Search on TecTime (local)"
+msgstr ""
+
+#: play.h:654 play.h:740
+msgid "Search on Giga (local)"
+msgstr ""
+
+#: play.h:655 play.h:746
+msgid "Search on Rtl-Now (local)"
+msgstr ""
+
+#: play.h:656 play.h:744
+msgid "Search on Rtl2-Now (local)"
+msgstr ""
+
+#: play.h:657 play.h:748
+msgid "Search on SuperRTL-Now (local)"
+msgstr ""
+
+#: play.h:658 play.h:750
+msgid "Search on VOX-Now (local)"
+msgstr ""
+
+#: play.h:659 play.h:732
+msgid "Search on InternetTv (local)"
+msgstr ""
+
+#: play.h:660 play.h:730
+msgid "Search on InternetRadio (local)"
+msgstr ""
+
+#: play.h:672 play.h:689
+msgid "IMDb"
+msgstr ""
+
+#: play.h:674 play.h:691
+msgid "IMDb-API"
+msgstr ""
+
+#: play.h:693
+msgid "TMDb"
+msgstr ""
+
+#: play.h:708
+msgid "Search on Kinox"
+msgstr ""
+
+#: play.h:710
+msgid "Search on Kinox (local)"
+msgstr ""
+
+#: play.h:724
+msgid "Search on MyVideo (local)"
+msgstr ""
+
+#: readerconfig.h:310
+msgid "Use config from Flash (permanent)"
+msgstr ""
+
+#: readerconfig.h:338
+msgid "Choice Config File"
+msgstr ""
+
+#: tithek.h:1218 tithek.h:1252
+msgid "Streaming Playback (default)"
+msgstr ""
+
+#: tithek.h:1224 tithek.h:1258
+msgid "Streaming Playback Caching (0.5MB)"
+msgstr ""
+
+#: tithek.h:1225 tithek.h:1264
+msgid "Streaming Playback Caching (1MB)"
+msgstr ""
+
+#: tithek.h:1233 tithek.h:1288
+msgid "Streaming Playback Caching (5MB)"
+msgstr ""
+
+#: tithek.h:1234 tithek.h:1294
+msgid "Streaming Playback Caching (7.5MB)"
+msgstr ""
+
+#: tithek.h:1235 tithek.h:1300
+msgid "Streaming Playback Caching (10MB)"
+msgstr ""
+
+#: tithek.h:1243 tithek.h:1318
+msgid "Download Full File"
+msgstr ""
+
+#: tithek.h:1244 tithek.h:1337
+msgid "Download Full File (background)"
+msgstr ""
+
+#: tithek.h:1270
+msgid "Streaming Playback Caching (2MB)"
+msgstr ""
+
+#: tithek.h:1276
+msgid "Streaming Playback Caching (3MB)"
+msgstr ""
+
+#: tithek.h:1282
+msgid "Streaming Playback Caching (4MB)"
+msgstr ""
+
+#: tithek.h:1306
+msgid "File Caching Playback (10MB / 120s)"
+msgstr ""
+
+#: tithek.h:1310
+msgid "File Caching Playback (20MB / 240s)"
+msgstr ""
+
+#: tithek.h:1314
+msgid "File Caching Playback (30MB / 360s)"
 msgstr ""
