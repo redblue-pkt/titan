@@ -161,7 +161,7 @@ char* getinstallpath(char* path, char* size)
 	if(count > 0) // show always choicebox
 	{
 		free(tmpstr); tmpstr = NULL;
-		mbox = menulistbox(mlist, "tpkinstallinfo", "Choice Install Medium", NULL, NULL, 0, 0);
+		mbox = menulistbox(mlist, "tpkinstallinfo", _("Choice Install Medium"), NULL, NULL, 0, 0);
 		if(mbox != NULL)
 			tmpstr = ostrcat(mbox->param, NULL, 0, 0);
 	}
@@ -194,12 +194,12 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 
 		clearscreen(load);
 
-		mbox = tpkmenulist(mlist, NULL, "Tpk Install - select section", NULL, NULL, 1, defentry, 0);
+		mbox = tpkmenulist(mlist, NULL, _("Tpk Install - select section"), NULL, NULL, 1, defentry, 0);
 
 		if(mbox != NULL)
 		{
 			debug(130, "section: %s", mbox->name);
-			mbox1 = tpkmenulist(mlist1, "tpkinstall", "Tpk Install - select file", "/tmp/tpk", mbox->name, 2, NULL, 1);
+			mbox1 = tpkmenulist(mlist1, "tpkinstall", _("Tpk Install - select file"), "/tmp/tpk", mbox->name, 2, NULL, 1);
 			
 			if(mbox1 != NULL && mbox1->param != NULL && mbox1->param1 != NULL)
 			{
@@ -268,7 +268,7 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 	else if(mode == 1)
 	{
 		tpklistinstalled(0);
-		mbox = tpkmenulist(mlist, NULL, "Tpk Remove - select file", NULL, NULL, 1, defentry, 2);
+		mbox = tpkmenulist(mlist, NULL, _("Tpk Remove - select file"), NULL, NULL, 1, defentry, 2);
 		
 		if(mbox != NULL && mbox->param != NULL)
 		{

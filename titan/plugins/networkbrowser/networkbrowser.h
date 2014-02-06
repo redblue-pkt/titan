@@ -1872,7 +1872,7 @@ start:
 		node = node->next;
 	}
 	
-	mbox = menulistboxext(mlist, "networkbrowser", "Networkbrowser - show Shares", "%pluginpath%/networkbrowser/skin/", NULL, 1, &rcret, 0);
+	mbox = menulistboxext(mlist, "networkbrowser", _("Networkbrowser - show Shares"), "%pluginpath%/networkbrowser/skin/", NULL, 1, &rcret, 0);
 
 	if(rcret == getrcconfigint("rcred", NULL))
 	{
