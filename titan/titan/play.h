@@ -660,7 +660,7 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 		addmenulist(&mlist, _("Search on InternetRadio (local)"), NULL, NULL, 0, 0);
 	}
 
-	addmenulist(&mlist, _("Downloads", NULL, NULL, 0, 0);
+	addmenulist(&mlist, _("Downloads"), NULL, NULL, 0, 0);
 
 	//add plugins
 	while(child != NULL)
