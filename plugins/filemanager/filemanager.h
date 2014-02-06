@@ -81,20 +81,20 @@ int filemanagercreatefolder(int aktfilelist, struct skin* filelist1, struct skin
 void filemanagermenu(int aktfilelist, struct skin* filelist1, struct skin* filelistpath1, struct skin* filelist2, struct skin* filelistpath2)
 {
 	struct menulist* mlist = NULL, *mbox = NULL;
-	char* skintitle = "Menu";
+	char* skintitle = _("Menu");
 
-	addmenulist(&mlist, "Rename", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "Create Folder", NULL, NULL, 0, 0);
+	addmenulist(&mlist, _("Rename"), NULL, NULL, 0, 0);
+	addmenulist(&mlist, _("Create Folder"), NULL, NULL, 0, 0);
 
 	mbox = menulistbox(mlist, NULL, skintitle, NULL, NULL, 1, 0);
 	if(mbox != NULL)
 	{
-		if(ostrcmp(mbox->name, "Rename") == 0)
+		if(ostrcmp(mbox->name, _("Rename")) == 0)
 		{
 			if(filemanagerrename(aktfilelist, filelist1, filelistpath1, filelist2, filelistpath1) != 0)
 				textbox(_("Message"), _("Can't rename file !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);		
 		}
-		else if(ostrcmp(mbox->name, "Create Folder") == 0)
+		else if(ostrcmp(mbox->name, _("Create Folder")) == 0)
 		{
 			if(filemanagercreatefolder(aktfilelist, filelist1, filelistpath1, filelist2, filelistpath1) != 0)
 				textbox(_("Message"), _("Can't create directory !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);

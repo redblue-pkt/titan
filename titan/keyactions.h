@@ -21,7 +21,7 @@ void screenkeyactions(int key, int flag)
 		char* skintitle = _("Key Action - Plugins");
 
 		if(status.mediadbfiles > 0)
-			addmenulist(&mlist, "MediaDB Scan Info", NULL, NULL, 0, 0);
+			addmenulist(&mlist, _("MediaDB Scan Info"), NULL, NULL, 0, 0);
 			
 		if(key == 1)
 		{

@@ -1212,7 +1212,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 			debug(99, "filename: %s", filename);
 				
 			char* keyconf = NULL;
-			char* skintitle = "Choice Playback";
+			char* skintitle = _("Choice Playback");
 			struct menulist* mlist = NULL, *mbox = NULL;
 			
 			addmenulist(&mlist, _("Streaming Playback (default)")), NULL, NULL, 0, 0);

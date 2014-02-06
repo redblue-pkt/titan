@@ -609,7 +609,7 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 	struct skin* plugin = getscreen("plugin");
 	struct skin* child = plugin->child;
 	struct menulist* mlist = NULL, *mbox = NULL;
-	char* skintitle = "Menu";
+	char* skintitle = _("Menu");
 
 	if(flag < 99)
 	{

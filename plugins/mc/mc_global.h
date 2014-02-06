@@ -597,8 +597,8 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 	{
 		debug(50, "rcgreenss: playlist menu");
 
-		addmenulist(&mlist, "Load Playlist", NULL, NULL, 0, 0);
-		addmenulist(&mlist, "Edit Playlist", NULL, NULL, 0, 0);
+		addmenulist(&mlist, _("Load Playlist"), NULL, NULL, 0, 0);
+		addmenulist(&mlist, _("Edit Playlist"), NULL, NULL, 0, 0);
 		
 		mbox = menulistbox(mlist, "playlistmenu", NULL, "%pluginpath%/mc/skin", NULL, 1, 0);
 
@@ -606,7 +606,8 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 
 		if(mbox != NULL)
 		{
-			if(ostrcmp(mbox->name, "Load Playlist") == 0){
+			if(ostrcmp(mbox->name, _("Load Playlist")) == 0)
+			{
 //				*count = 0;
 //				*rcwait = 1000;
 	

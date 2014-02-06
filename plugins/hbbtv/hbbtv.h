@@ -739,7 +739,7 @@ void screenoperafav()
 	if(status.aktservice->channel != NULL && status.aktservice->channel->hbbtvurl != NULL)
 	{
 		debug(788, "hbbtvurl=%s", status.aktservice->channel->hbbtvurl);
-		tmpmbox = addmenulist(&mlist, "Channel HBBTV", NULL, NULL, 0, 0);
+		tmpmbox = addmenulist(&mlist, _("Channel HBBTV"), NULL, NULL, 0, 0);
 		if(tmpmbox != NULL)
 			tmpmbox->param = ostrcat(status.aktservice->channel->hbbtvurl, NULL, 0, 0);
 	}
