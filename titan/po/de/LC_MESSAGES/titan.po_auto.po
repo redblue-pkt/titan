@@ -2296,7 +2296,7 @@ msgstr "Anonyme Anmeldung erfolgreich"
 
 #: networkbrowser.h:1160 networkbrowser.h:1161
 msgid "Scanning Network Shares, please wait !!"
-msgstr "Suche nach Netzwerkfreigaben.\nBitte warten..."
+msgstr "Suche nach Netzwerkfreigaben.\nBitte warten"
 
 #: networkbrowser.h:1181
 msgid "Networkbrowser - show scanned DNS-Shares"
@@ -2393,11 +2393,11 @@ msgstr "ACHTUNG: Wollen Sie die Netzwerkfreigabe wirklich entfernen?"
 
 #: network.h:256 network.h:257
 msgid "Wait"
-msgstr "warten..."
+msgstr "Bitte warten"
 
 #: network.h:265 network.h:273
 msgid "ERROR"
-msgstr "!!! FEHLER !!!"
+msgstr "FEHLER"
 
 #: network.h:284 network.h:299 plugins_mc_skin.xml.h:37
 #: plugins_panel_skin.xml.h:18 skin_default_skin.xml.h:393
@@ -2407,7 +2407,7 @@ msgstr "Netzwerk"
 
 #: network.h:284
 msgid "comming soon..."
-msgstr "Folgt in Kürze..."
+msgstr "Folgt in Kürze"
 
 #: network.h:335
 msgid "Restart Network"
@@ -2467,7 +2467,7 @@ msgstr "FEHLER: WLAN nicht gestartet!\nÜberprüfen Sie Ihre Einstellungen."
 
 #: network.h:827
 msgid "searching..."
-msgstr "suche..."
+msgstr "Durchsuche Netzwerk"
 
 #: network.h:858
 msgid "WLAN now stopped"
@@ -3827,7 +3827,7 @@ msgstr "Bilder im Orginalformat darstellen"
 #: plugins_tithek_skin.xml.h:8 skin_default_skin.xml.h:443
 #: skins_tithek_skin.xml.h:8 tithek.h:1040
 msgid "please wait..."
-msgstr "Bitte warten..."
+msgstr "Bitte warten"
 
 #: plugins_tithek_skin.xml.h:9 skin_default_skin.xml.h:487
 #: skins_tithek_skin.xml.h:9
@@ -5820,7 +5820,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:319
 msgid "Information..."
-msgstr "Information"
+msgstr "Informationen"
 
 #: skin_default_skin.xml.h:320
 msgid "install"
@@ -6794,7 +6794,7 @@ msgstr "Sound Verstärkung (TV-Modus / interner Player)"
 
 #: skin_default_skin.xml.h:589
 msgid "Space"
-msgstr ""
+msgstr "Leerzeichen"
 
 #: skin_default_skin.xml.h:591
 msgid "Spinnerspeed"
@@ -6830,11 +6830,11 @@ msgstr "Standby / Ausschalten"
 
 #: skin_default_skin.xml.h:601
 msgid "Start HTTPD"
-msgstr ""
+msgstr "Autostart Webinterface"
 
 #: skin_default_skin.xml.h:603
 msgid "Start RGUID"
-msgstr ""
+msgstr "Autostart RGUID"
 
 #: skin_default_skin.xml.h:604
 msgid "Step frequency"
@@ -7046,7 +7046,7 @@ msgstr "TPK installieren - Datei wählen"
 
 #: skin_default_skin.xml.h:662
 msgid "Tpk Install - select install medium"
-msgstr "TPK Pakete installieren von..."
+msgstr "TPK installieren - Installationsmedium auswählen"
 
 #: skin_default_skin.xml.h:663
 msgid "TPK media (media)"
@@ -7470,7 +7470,7 @@ msgid ""
 "Backup started\n"
 "\n"
 "Please wait..."
-msgstr "Sicherung wurde gestartet.\n\nBitte warten..."
+msgstr "Sicherung wurde gestartet.\n\nBitte warten"
 
 #: system_backup_restore.h:80
 msgid "Backup failed, see log"
