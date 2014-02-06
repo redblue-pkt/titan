@@ -6116,7 +6116,7 @@ msgstr "Netzwerkadapterliste"
 
 #: skin_default_skin.xml.h:398
 msgid "Network Restart"
-msgstr "Netzwerk Neustarten"
+msgstr "Netzwerk neu starten"
 
 #: skin_default_skin.xml.h:399
 msgid "Network Scan"
@@ -6338,11 +6338,11 @@ msgstr "Senderschutzzeit aus (min)"
 
 #: skin_default_skin.xml.h:459
 msgid "Protect Menu"
-msgstr "Menu Sperren"
+msgstr "Menu sperren"
 
 #: skin_default_skin.xml.h:460
 msgid "protect service"
-msgstr "Sender Sperren"
+msgstr "Sender sperren"
 
 #: skin_default_skin.xml.h:461
 msgid "Prov"
@@ -6386,7 +6386,7 @@ msgstr "Bewertung"
 
 #: skin_default_skin.xml.h:472
 msgid "Receiver unlock"
-msgstr "Receiver Freischalten"
+msgstr "Receiver freischalten"
 
 #: skin_default_skin.xml.h:473
 msgid "Record"
@@ -6454,7 +6454,7 @@ msgstr "Veröffentlicht"
 
 #: skin_default_skin.xml.h:490
 msgid "RELOAD"
-msgstr "Neu Laden"
+msgstr "Neu laden"
 
 #: skin_default_skin.xml.h:491
 msgid "Remove emthy Bouquet"
@@ -6474,7 +6474,7 @@ msgstr "Lösche unbenutzte Kanäle in Favoriten"
 
 #: skin_default_skin.xml.h:495
 msgid "rename service"
-msgstr "Sender Umbenennen"
+msgstr "Sender umbenennen"
 
 #: skin_default_skin.xml.h:496
 msgid "Repeate"
@@ -6614,7 +6614,7 @@ msgstr "Bildschirmschoner"
 
 #: skin_default_skin.xml.h:538
 msgid "Screensaver Adjust"
-msgstr "Bildschirmschonereinstellungen"
+msgstr "Bildschirmschoner Einstellungen"
 
 #: skin_default_skin.xml.h:539
 msgid "screensaver background"
@@ -6662,7 +6662,7 @@ msgstr "Senden"
 
 #: skin_default_skin.xml.h:551
 msgid "Send all CAID to modules"
-msgstr "Übermittel alle CAIDs an das Modul"
+msgstr "Übermittle alle CAIDs an das Modul"
 
 #: skin_default_skin.xml.h:552
 msgid "Serial Input"
@@ -6702,11 +6702,11 @@ msgstr "Anzeige des freien Festplattenspeichers?"
 
 #: skin_default_skin.xml.h:562
 msgid "Show hidden files"
-msgstr "Anzeige versteckte Dateien?"
+msgstr "Versteckte Dateien anzeigen?"
 
 #: skin_default_skin.xml.h:563
 msgid "Show infobar on program change"
-msgstr "Anzeige Infoleiste bei Sendungswechsel?"
+msgstr "Infoleiste bei Sendungswechsel anzeigen?"
 
 #: skin_default_skin.xml.h:564
 msgid "Show in Standby"
@@ -6982,7 +6982,7 @@ msgstr "Zeitgesteuerte Timer Aufnahme"
 
 #: skin_default_skin.xml.h:645
 msgid "Timer Record Path"
-msgstr "Pfad für Zeitgesteuerte Aufnahmen (Timer)"
+msgstr "Pfad für zeitgesteuerte Aufnahmen (Timer)"
 
 #: skin_default_skin.xml.h:646
 msgid "Timeshift Path"
@@ -7002,7 +7002,7 @@ msgstr "--- Zeit bis zum Senderwechsel"
 
 #: skin_default_skin.xml.h:651
 msgid "Time to wait after seek for fill buffer"
-msgstr "Wiedergabepuffer - Zeit bis zum automatischen laden nach einer Suche"
+msgstr "Wiedergabepuffer - Zeit bis zum automatischen Laden nach einer Suche"
 
 #: skin_default_skin.xml.h:652
 msgid "Timezone"
