@@ -2449,6 +2449,7 @@ msgstr ""
 #: network.h:284 network.h:299 plugins_mc_skin.xml.h:37
 #: plugins_panel_skin.xml.h:18 skin_default_skin.xml.h:393
 #: skins_mc_skin.xml.h:37 skins_panel_skin.xml.h:18 system_infos.h:91
+#: hwtest.h:181 hwtest.h:394
 msgid "Network"
 msgstr ""
 
@@ -4769,7 +4770,7 @@ msgstr ""
 msgid "20:15"
 msgstr ""
 
-#: skin_default_skin.xml.h:38
+#: skin_default_skin.xml.h:38 videomode.h:20 videomode.h:75 videomode.h:82
 msgid "3D Mode"
 msgstr ""
 
@@ -8370,7 +8371,7 @@ msgid "Sleep Timer"
 msgstr ""
 
 #: keyactions.h:59 keyactions.h:91 settings_bluebutton.h:20
-#: settings_redbutton.h:21
+#: settings_redbutton.h:21 videomode.h:17 videomode.h:34
 msgid "Subchannel"
 msgstr ""
 
@@ -8605,4 +8606,96 @@ msgstr ""
 
 #: settings_redbutton.h:6
 msgid "Red Key Action - Setup"
+msgstr ""
+
+#: hwtest.h:153 hwtest.h:195
+msgid "[S]Lock & Search"
+msgstr ""
+
+#: hwtest.h:160 hwtest.h:210
+msgid "[T]Lock & Search"
+msgstr ""
+
+#: hwtest.h:167 hwtest.h:215
+msgid "[C]Lock & Search"
+msgstr ""
+
+#: hwtest.h:176 hwtest.h:220
+msgid "Front Display"
+msgstr ""
+
+#: hwtest.h:177 hwtest.h:239
+msgid "Front Key"
+msgstr ""
+
+#: hwtest.h:180 hwtest.h:329
+msgid "Smartcard"
+msgstr ""
+
+#: hwtest.h:182 hwtest.h:414
+msgid "USB Port"
+msgstr ""
+
+#: hwtest.h:183 hwtest.h:458
+msgid "CAM"
+msgstr ""
+
+#: hwtest.h:184 hwtest.h:495
+msgid "RS232"
+msgstr ""
+
+#: hwtest.h:185 hwtest.h:567
+msgid "LNB"
+msgstr ""
+
+#: hwtest.h:186 hwtest.h:612
+msgid "Flash/Nand Check"
+msgstr ""
+
+#: hwtest.h:190
+msgid "Hardware Test"
+msgstr ""
+
+#: hwtest.h:267
+msgid "Color Bar"
+msgstr ""
+
+#: hwtest.h:305
+msgid "SCART 4:3 / 16:9"
+msgstr ""
+
+#: titan.c:867
+msgid "RemoteControl Old Version"
+msgstr ""
+
+#: titan.c:868
+msgid "RemoteControl Long Version"
+msgstr ""
+
+#: titan.c:870
+msgid "Select Your Remote Control"
+msgstr ""
+
+#: unicable.h:197
+msgid "Unicable manufacturer"
+msgstr ""
+
+#: unicable.h:212
+msgid "Unicable product"
+msgstr ""
+
+#: unicable.h:277
+msgid "Unicable SCR"
+msgstr ""
+
+#: videomode.h:18 videomode.h:40 videomode.h:47
+msgid "Resolution Settings"
+msgstr ""
+
+#: videomode.h:19 videomode.h:62 videomode.h:69
+msgid "Aspect Settings"
+msgstr ""
+
+#: videomode.h:25 videomode.h:27
+msgid "Videomode"
 msgstr ""
