@@ -741,7 +741,7 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 			ret = 18;
 		else if(ostrcmp(mbox->name, _("Search on Beeg (local)")) == 0)
 			ret = 19;
-		else if(ostrcmp(mbox->name, _("Search on Rtl2-Now (local))") == 0)
+		else if(ostrcmp(mbox->name, _("Search on Rtl2-Now (local)")) == 0)
 			ret = 20;
 		else if(ostrcmp(mbox->name, _("Search on Rtl-Now (local)")) == 0)
 			ret = 21;
