@@ -2667,7 +2667,7 @@ msgstr "WLAN suchen"
 
 #: panel_settings_autostart.h:344
 msgid "Autostart Child Safety"
-msgstr "Jugendschutz automatisch EIn"
+msgstr "Jugendschutz automatisch EIN"
 
 #: panel_settings_autostart.h:350 settings_autostart.h:477
 msgid "Parental"
@@ -3794,7 +3794,7 @@ msgstr "X-Auflösung"
 
 #: plugins_streaminfo_skin.xml.h:5 skins_streaminfo_skin.xml.h:5
 msgid "Y-Resolution"
-msgstr "Y-Auflösund"
+msgstr "Y-Auflösung"
 
 #: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1
 msgid "TiThek Menu"
@@ -5160,7 +5160,7 @@ msgstr "Allgemein"
 
 #: skin_default_skin.xml.h:169
 msgid "Del EPG before scan"
-msgstr "Lösche EPG vor dem Suche"
+msgstr "Lösche EPG vor dem Suchen"
 
 #: skin_default_skin.xml.h:171
 msgid "Delete EPG after read"
@@ -5200,7 +5200,7 @@ msgstr "DiSEqC Modus"
 
 #: skin_default_skin.xml.h:182
 msgid "Diseqc repeats"
-msgstr "DiSEqC wiederholungen"
+msgstr "DiSEqC Wiederholungen"
 
 #: skin_default_skin.xml.h:183
 msgid "diseqcscreen..."
@@ -5498,7 +5498,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:261
 msgid "Hangtime"
-msgstr "Zeit bis Warnmeldung erscheint (sek)"
+msgstr "Zeit bis Warnmeldung erscheint (Sek)"
 
 #: skin_default_skin.xml.h:263
 msgid ""
@@ -5663,7 +5663,7 @@ msgstr "Hier können Sie Ihre Bildschirmschoner Einstellungen vornehmen.\n\nNavig
 msgid ""
 "Here you can make your settings for your engine systems. To enter the "
 "latitude and longitude using the number keys."
-msgstr "Hier können Sie für Ihre Motorisierte Sat-Anlage Ihre Einstellungen \nvornehmen.\nZur Eingabe der Längen und Breitengrade benutzen Sie die Ziffertasten."
+msgstr "Hier können Sie für Ihre motorisierte Sat-Anlage Ihre Einstellungen \nvornehmen.\nZur Eingabe der Längen und Breitengrade benutzen Sie die Ziffertasten."
 
 #: skin_default_skin.xml.h:289
 msgid ""
@@ -5713,20 +5713,20 @@ msgstr "Hier können Sie Ihre Netzwerkschnittstelle auswählen.\n\nNavigieren Sie 
 msgid ""
 "Here you can set for your cable tuner. Ask your cable provider and make you "
 "connect an automatic search."
-msgstr "Hier können Sie für Ihren Kabel Tuner einstellen.\n\nStellen Sie Ihren Kabel Anbieter ein und machen Sie anschließend einen Automatischen Suchlauf."
+msgstr "Hier können Sie Ihren Kabel Tuner einstellen.\n\nStellen Sie Ihren Kabel Anbieter ein und machen Sie anschließend einen automatischen Suchlauf."
 
 #: skin_default_skin.xml.h:297
 msgid ""
 "Here you can set for your satellite tuner. First, make your satellite "
 "selection. When using DiSEqC They also point to the port used. For advanced "
 "Lnb / Unicam navigate to the field and press the Red button."
-msgstr "Hier können Sie für Ihren Sat Tuner einstellen.\nStellen Sie zunächst Ihre Satteliten Auswahl ein. Bei Verwendung von DiSEqC weisen Sie zusätzlich den verwendeten Port zu. Für erweiterte Lnb / Unicam navigieren Sie zum Feld und drücken Sie die Rote Taste."
+msgstr "Hier können Sie Ihren Sat Tuner einstellen.\nStellen Sie zunächst Ihre Satelliten Auswahl ein. Bei Verwendung von DiSEqC weisen Sie zusätzlich den verwendeten Port zu. Für erweiterte Lnb / Unicam navigieren Sie zum Feld und drücken Sie die Rote Taste."
 
 #: skin_default_skin.xml.h:298
 msgid ""
 "Here you can set for your terrestrial tuner. Activate the terrestrial tuner "
 "and do you connect an automatic search."
-msgstr "Hier können Sie für Ihren Terrestrischen Tuner einstellen.\n\nAktivieren Sie den Terrestrischen Tuner und machen Sie anschließend einen Automatischen Suchlauf."
+msgstr "Hier können Sie für Ihren Terrestrischen Tuner einstellen.\n\nAktivieren Sie den Terrestrischen Tuner und machen Sie anschließend einen automatischen Suchlauf."
 
 #: skin_default_skin.xml.h:299
 msgid ""
@@ -5964,7 +5964,7 @@ msgstr "Manuelle Kabelsuche"
 
 #: skin_default_skin.xml.h:357
 msgid "Manual Search Terrestrial"
-msgstr "Manuelle Terrestrichesuche"
+msgstr "Manuelle terrestrische Suche"
 
 #: skin_default_skin.xml.h:358
 msgid "Marker"
@@ -5976,7 +5976,7 @@ msgstr "Maximal Frequenz"
 
 #: skin_default_skin.xml.h:360
 msgid "Maximal signalrate"
-msgstr "Maximale signalrate"
+msgstr "Maximale Signalrate"
 
 #: skin_default_skin.xml.h:361
 msgid "Media Center"
