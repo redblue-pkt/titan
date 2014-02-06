@@ -2423,7 +2423,7 @@ msgstr "Statisch"
 
 #: network.h:426
 msgid "save network settings ?"
-msgstr "Netzwerkeinstellungen speichern?"
+msgstr "Einstellungen speichern?"
 
 #: network.h:558
 msgid "Can't change hostname !"
@@ -2812,7 +2812,7 @@ msgstr "Automarker gestoppt"
 
 #: plugins_autotimer_skin.xml.h:1 skins_autotimer_skin.xml.h:1
 msgid "AutoTimer Settings"
-msgstr "Autotimer Einstellungen"
+msgstr "Einstellungen"
 
 #: plugins_autotimer_skin.xml.h:2 skins_autotimer_skin.xml.h:2
 msgid "afterevent"
@@ -2876,7 +2876,7 @@ msgstr "Timer 2 aktiv"
 
 #: plugins_callmonitor1_skin.xml.h:1 skins_callmonitor1_skin.xml.h:1
 msgid "CallMonitor Settings"
-msgstr "Callmonitor Einstellungen"
+msgstr "Einstellungen"
 
 #: plugins_callmonitor1_skin.xml.h:2 skins_callmonitor1_skin.xml.h:2
 msgid "1.Rufnummer"
@@ -3100,7 +3100,7 @@ msgstr "IMDb Erweiterung"
 
 #: plugins_instar_skin.xml.h:1 skins_instar_skin.xml.h:1
 msgid "IP-Kammera Einstellungen"
-msgstr "IP-Kamera Einstellungen"
+msgstr "Einstellungen"
 
 #: plugins_instar_skin.xml.h:2 skins_instar_skin.xml.h:2
 msgid "Benutzer-Kammera 1"
@@ -3170,7 +3170,7 @@ msgstr ""
 
 #: plugins_lcdpearl1_skin.xml.h:1 skins_lcdpearl1_skin.xml.h:1
 msgid "Pearl LCD Settings"
-msgstr "Pearl LCD Einstellungen"
+msgstr "Einstellungen"
 
 #: plugins_lcdpearl1_skin.xml.h:3 plugins_lcdsamsung_skin.xml.h:3
 #: skins_lcdpearl1_skin.xml.h:3 skins_lcdsamsung_skin.xml.h:3
@@ -3213,7 +3213,7 @@ msgstr ""
 
 #: plugins_lcdsamsung_skin.xml.h:1 skins_lcdsamsung_skin.xml.h:1
 msgid "Samsung SPF.. Settings"
-msgstr "Samsung SPDIF Einstellungen"
+msgstr "Einstellungen"
 
 #: plugins_lcdsamsung_skin.xml.h:6 skins_lcdsamsung_skin.xml.h:6
 msgid "DI"
@@ -3237,15 +3237,15 @@ msgstr ""
 
 #: plugins_mc_skin.xml.h:1 skins_mc_skin.xml.h:1
 msgid "MC VideoPlayer Imdb Settings"
-msgstr "MC VideoPlayer Imdb Einstellungen"
+msgstr "Einstellungen"
 
 #: plugins_mc_skin.xml.h:2 skins_mc_skin.xml.h:2
 msgid "MC VideoPlayer Sort Settings"
-msgstr "MC VideoPlayer Sortierreihenfolge"
+msgstr "Sortierreihenfolge"
 
 #: plugins_mc_skin.xml.h:3 skins_mc_skin.xml.h:3
 msgid "MC VideoPlayer View Settings"
-msgstr "MC VideoPlayer Einstellungen anzeigen"
+msgstr "Einstellungen anzeigen"
 
 #: plugins_mc_skin.xml.h:8 skins_mc_skin.xml.h:8
 msgid "Apple Trailer"
@@ -3344,15 +3344,15 @@ msgstr "Darstellungsqualität von Fotos"
 
 #: plugins_mc_skin.xml.h:42 skin_default_skin.xml.h:429 skins_mc_skin.xml.h:42
 msgid "PICTURE"
-msgstr "FOTOS"
+msgstr "Fotos"
 
 #: plugins_mc_skin.xml.h:43 skins_mc_skin.xml.h:43
 msgid "Picture Player"
-msgstr "Fotos anzeigen"
+msgstr "Bildbetrachter"
 
 #: plugins_mc_skin.xml.h:44 skins_mc_skin.xml.h:44
 msgid "PICTURE SETTINGS"
-msgstr "FOTOS Einstellungen"
+msgstr "Bildeinstellungen"
 
 #: plugins_mc_skin.xml.h:45 skins_mc_skin.xml.h:45
 msgid "Radio Player"
@@ -3434,7 +3434,7 @@ msgstr "Authentifizierung"
 
 #: plugins_networkbrowser_skin.xml.h:3 skins_networkbrowser_skin.xml.h:3
 msgid "AUTH SETTINGS"
-msgstr "Authentifizierungs - Einstellungen"
+msgstr "Einstellungen"
 
 #: plugins_networkbrowser_skin.xml.h:4 skins_networkbrowser_skin.xml.h:4
 msgid "COPY"
@@ -3607,7 +3607,7 @@ msgstr "Lüftersteuerung"
 
 #: plugins_panel_skin.xml.h:3 skins_panel_skin.xml.h:3
 msgid "OverClock Settings"
-msgstr "Übertaktungseinstellungen"
+msgstr "Übertakten"
 
 #: plugins_panel_skin.xml.h:4 skins_panel_skin.xml.h:4
 msgid "Panel"
@@ -3681,7 +3681,7 @@ msgstr "USB Geräte"
 
 #: plugins_panel_skin.xml.h:26 skins_panel_skin.xml.h:26
 msgid "Videotune"
-msgstr "Bild Einstellungen"
+msgstr "Bildeinstellungen"
 
 #: plugins_panel_skin.xml.h:27 skins_panel_skin.xml.h:27
 msgid "Wizard"
@@ -3714,17 +3714,17 @@ msgstr "Hier können Sie Ihre Sprache wählen.\n\nNavigieren Sie mit dem Steuerkre
 
 #: plugins_readerconfig_skin.xml.h:7 skins_readerconfig_skin.xml.h:7
 msgid "Reader Config"
-msgstr "Reader Einstellungen"
+msgstr "Einstellungen"
 
 #: plugins_readerconfig_skin.xml.h:8 readerconfig.h:268
 #: skins_readerconfig_skin.xml.h:8
 msgid "Reader Configuration"
-msgstr "Reader Konfiguration"
+msgstr "Konfiguration"
 
 #: plugins_readerconfig_skin.xml.h:9 readerconfig.h:383
 #: skins_readerconfig_skin.xml.h:9
 msgid "Reader Selection"
-msgstr "Reader Auswahl"
+msgstr "Auswahl"
 
 #: plugins_rgui_skin.xml.h:1 skins_rgui_skin.xml.h:1
 msgid "RGUI Client"
@@ -3761,7 +3761,7 @@ msgstr "Aktie"
 
 #: plugins_stopifnotused_skin.xml.h:1 skins_stopifnotused_skin.xml.h:1
 msgid "NotUsed Settings"
-msgstr "IfNotUsed Einstellungen"
+msgstr "Einstellungen"
 
 #: plugins_stopifnotused_skin.xml.h:3 skins_stopifnotused_skin.xml.h:3
 msgid "Auto start"
@@ -3840,7 +3840,7 @@ msgstr "Zeige Pay Streams"
 
 #: plugins_tithek_skin.xml.h:12 skins_tithek_skin.xml.h:12
 msgid "TITHEK SETTINGS"
-msgstr "TITHEK EINSTELLUNGEN"
+msgstr "Einstellungen"
 
 #: plugins_tithek_skin.xml.h:13 skins_tithek_skin.xml.h:13
 msgid "View Cover"
@@ -4066,7 +4066,7 @@ msgstr "Reader aktiviert"
 
 #: readerconfig.h:443
 msgid "Oscam config written to medium !"
-msgstr "OScam Einstellungen wurden gespeichert!"
+msgstr "Einstellungen erfolgreich gespeichert!"
 
 #: readerconfig.h:444 readerconfig.h:489
 msgid "Restart Oscam ?"
@@ -4775,7 +4775,7 @@ msgstr "Eintrag hinzufügen"
 
 #: skin_default_skin.xml.h:63
 msgid "Adjust"
-msgstr "System Einstellungen"
+msgstr "Einstellungen"
 
 #: skin_default_skin.xml.h:64
 msgid "ae"
@@ -4848,7 +4848,7 @@ msgstr "Audio Quelle"
 
 #: skin_default_skin.xml.h:82
 msgid "Audio/Subt."
-msgstr "Ton/Untertitel"
+msgstr "Audio/Untertitel"
 
 #: skin_default_skin.xml.h:83
 msgid "Audio Tracks"
@@ -4892,7 +4892,7 @@ msgstr "Autostart - Netzwerk"
 
 #: skin_default_skin.xml.h:94
 msgid "Autostart Settings"
-msgstr "Autostart Einstellungen"
+msgstr "Autostart"
 
 #: skin_default_skin.xml.h:95
 msgid "Autostart - Usb Device"
@@ -4900,7 +4900,7 @@ msgstr "USB-Gerät automatisch starten"
 
 #: skin_default_skin.xml.h:96
 msgid "A/V Settings"
-msgstr "Audio/Video Einstellungen"
+msgstr "Audio/Video"
 
 #: skin_default_skin.xml.h:97
 msgid "A-Z"
@@ -4940,7 +4940,7 @@ msgstr "Anfang"
 
 #: skin_default_skin.xml.h:107
 msgid "Behavior at recording"
-msgstr "Anzeige während der Aufnahme"
+msgstr "Anzeige während einer Aufnahme"
 
 #: skin_default_skin.xml.h:108
 msgid "BER:"
@@ -4952,15 +4952,15 @@ msgstr ""
 
 #: skin_default_skin.xml.h:110
 msgid "Blindscan Adjust"
-msgstr "Blindscan Anpassung"
+msgstr "Anpassen"
 
 #: skin_default_skin.xml.h:111
 msgid "Blindscan Settings"
-msgstr "Blindscan Einstellungen"
+msgstr "Einstellungen"
 
 #: skin_default_skin.xml.h:112
 msgid "Blue Button"
-msgstr "-BLAU-"
+msgstr "Blaue Taste"
 
 #: skin_default_skin.xml.h:113
 msgid "Bouquet List"
@@ -5040,7 +5040,7 @@ msgstr "löschen"
 
 #: skin_default_skin.xml.h:137
 msgid "Clear before scan"
-msgstr ""
+msgstr "Vor der Suche löschen?"
 
 #: skin_default_skin.xml.h:138
 msgid "CLEAR INPUT"
@@ -5208,7 +5208,7 @@ msgstr "DiSEqC"
 
 #: skin_default_skin.xml.h:184
 msgid "Diseqc Settings"
-msgstr "DiSEqC Einstellungen"
+msgstr "Einstellungen"
 
 #: skin_default_skin.xml.h:185
 msgid "DNS Name"
@@ -5324,7 +5324,7 @@ msgstr "EPG Suche"
 
 #: skin_default_skin.xml.h:214
 msgid "EPG Settings"
-msgstr "EPG-Einstellungen"
+msgstr "EPG"
 
 #: skin_default_skin.xml.h:215
 msgid "EPG SHORT VIEW"
@@ -5772,7 +5772,7 @@ msgstr "Hierarchie:"
 
 #: skin_default_skin.xml.h:307
 msgid "HOSTNAME"
-msgstr ""
+msgstr "Hostname"
 
 #: skin_default_skin.xml.h:308
 msgid "How many days"
@@ -5984,15 +5984,15 @@ msgstr ""
 
 #: skin_default_skin.xml.h:362
 msgid "MediaDB Edit"
-msgstr "MediaDB bearbeiten"
+msgstr "Bearbeiten"
 
 #: skin_default_skin.xml.h:363
 msgid "MediaDB Path"
-msgstr "MediaDB Pfad"
+msgstr "Pfad"
 
 #: skin_default_skin.xml.h:364
 msgid "MediaDB Settings"
-msgstr "MediaDB Einstellungen"
+msgstr "Einstellungen"
 
 #: skin_default_skin.xml.h:365
 msgid "Media Player"
@@ -6056,7 +6056,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:380
 msgid "Module Config"
-msgstr "Moduleinstellungen"
+msgstr "Einstellungen"
 
 #: skin_default_skin.xml.h:382 system_infos.h:74
 msgid "Mounts"
@@ -6100,11 +6100,11 @@ msgstr "Netzmaske"
 
 #: skin_default_skin.xml.h:394
 msgid "Network Adapter Settings"
-msgstr "Netzwerkadapter Einstellungen"
+msgstr "Einstellungen"
 
 #: skin_default_skin.xml.h:395
 msgid "Network Adapter Test"
-msgstr "Netzwerkadapter Test"
+msgstr "Test"
 
 #: skin_default_skin.xml.h:396
 msgid "Networkbrowser"
@@ -6112,7 +6112,7 @@ msgstr "Netzwerk Browser"
 
 #: skin_default_skin.xml.h:397
 msgid "Network Interfacelist"
-msgstr "Netzwerkadapterliste"
+msgstr "Adapterliste"
 
 #: skin_default_skin.xml.h:398
 msgid "Network Restart"
@@ -6302,7 +6302,7 @@ msgstr "Polarisation"
 
 #: skin_default_skin.xml.h:449
 msgid "Policy"
-msgstr "Bild Einstellungen"
+msgstr "Bildeinstellungen"
 
 #: skin_default_skin.xml.h:450
 msgid "Polish"
@@ -6418,7 +6418,7 @@ msgstr "Aufnahmepfad"
 
 #: skin_default_skin.xml.h:480
 msgid "Record Path settings"
-msgstr "Aufnahmepfad Einstellungen"
+msgstr "Einstellungen"
 
 #: skin_default_skin.xml.h:481
 msgid "Records"
@@ -6442,7 +6442,7 @@ msgstr "Zeitgesteuerte Aufnahmen (Timer)"
 
 #: skin_default_skin.xml.h:486
 msgid "Red Button"
-msgstr "-ROT-"
+msgstr "Rote Taste"
 
 #: skin_default_skin.xml.h:488 softcam.h:292
 msgid "Refresh"
@@ -6530,7 +6530,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:513
 msgid "Rotor Settings"
-msgstr "Rotor Einstellungen"
+msgstr "Einstellungen"
 
 #: skin_default_skin.xml.h:514
 msgid "Runtime"
@@ -6594,7 +6594,7 @@ msgstr "Transponder speichern"
 
 #: skin_default_skin.xml.h:533
 msgid "Scan Config"
-msgstr "Scan Einstellungen"
+msgstr "Einstellungen"
 
 #: skin_default_skin.xml.h:534
 msgid "ScanList"
@@ -6606,7 +6606,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:536
 msgid "SCANSTART"
-msgstr "Sendersuche starten"
+msgstr "Suchlauf beginnen"
 
 #: skin_default_skin.xml.h:537
 msgid "screensaver"
@@ -6614,27 +6614,27 @@ msgstr "Bildschirmschoner"
 
 #: skin_default_skin.xml.h:538
 msgid "Screensaver Adjust"
-msgstr "Bildschirmschoner Einstellungen"
+msgstr "Einstellungen"
 
 #: skin_default_skin.xml.h:539
 msgid "screensaver background"
-msgstr "Bildschirmschoner Hintergrund"
+msgstr "Hintergrund"
 
 #: skin_default_skin.xml.h:540
 msgid "screensaver delay"
-msgstr "Bildschirmschoner Verzögerung"
+msgstr "Verzögerung"
 
 #: skin_default_skin.xml.h:541
 msgid "screensaver interval"
-msgstr "Bildschirmschoner Intervall"
+msgstr "Intervall"
 
 #: skin_default_skin.xml.h:542
 msgid "screensaver pic"
-msgstr "Bildschirmschoner Bild"
+msgstr "Bild"
 
 #: skin_default_skin.xml.h:543
 msgid "screensaver type"
-msgstr "Bildschirmschoner Typ"
+msgstr "Typ"
 
 #: skin_default_skin.xml.h:544
 msgid "--- SD resolution"
@@ -6682,7 +6682,7 @@ msgstr "Nach der Aufnahme"
 
 #: skin_default_skin.xml.h:556
 msgid "set startchannel"
-msgstr "Als StartSender setzen"
+msgstr "Als Startsender setzen"
 
 #: skin_default_skin.xml.h:558
 msgid "Settings..."
@@ -6742,7 +6742,7 @@ msgstr "Skin-Auswahl"
 
 #: skin_default_skin.xml.h:575
 msgid "Skin Adjust"
-msgstr "Skin-Einstellungen"
+msgstr "Skin"
 
 #: skin_default_skin.xml.h:576
 msgid "Skin Select"
@@ -6810,7 +6810,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:594 system_update.h:88 system_update.h:210
 msgid "stable"
-msgstr "stabil"
+msgstr "UPDATE"
 
 #: skin_default_skin.xml.h:596
 msgid "Standby Brightness"
@@ -6902,11 +6902,11 @@ msgstr "System"
 
 #: skin_default_skin.xml.h:623
 msgid "System - Flashupdate (online)"
-msgstr "System - Flash Softwareaktualisierung (Online)"
+msgstr "Flashaktualisierung (Online)"
 
 #: skin_default_skin.xml.h:624
 msgid "System - Flashupdate (tmp)"
-msgstr "System - Flash Softwareaktualisierung (tmp)"
+msgstr "Flashareaktualisierung (tmp)"
 
 #: skin_default_skin.xml.h:625
 msgid "System Info"
@@ -6926,27 +6926,27 @@ msgstr "System aktualisieren"
 
 #: skin_default_skin.xml.h:629
 msgid "systemupdate_flash_online_menu..."
-msgstr "System - Flash Softwareaktualisierung (Online)"
+msgstr "Flashaktualisierung (Online)"
 
 #: skin_default_skin.xml.h:630
 msgid "systemupdate_flash_tmp_menu..."
-msgstr "System - Flash Softwareaktualisierung (tmp)"
+msgstr "Flashaktualisierung (tmp)"
 
 #: skin_default_skin.xml.h:631
 msgid "systemupdate_usb_online_menu..."
-msgstr "System - USB Softwareaktualisierung (Online)"
+msgstr "USB Softwareaktualisierung (Online)"
 
 #: skin_default_skin.xml.h:632
 msgid "systemupdate_usb_tmp_menu..."
-msgstr "System - USB Softwareaktualisierung (tmp)"
+msgstr "USB Softwareaktualisierung (tmp)"
 
 #: skin_default_skin.xml.h:633
 msgid "System - Usbupdate (online)"
-msgstr "System - USB Softwareaktualisierung (Online)"
+msgstr "USB Softwareaktualisierung (Online)"
 
 #: skin_default_skin.xml.h:634
 msgid "System - Usbupdate (tmp)"
-msgstr "System - USB Softwareaktualisierung (tmp)"
+msgstr "USB Softwareaktualisierung (tmp)"
 
 #: skin_default_skin.xml.h:635
 msgid "sz"
@@ -6978,7 +6978,7 @@ msgstr "Grenzwert"
 
 #: skin_default_skin.xml.h:644
 msgid "Timer"
-msgstr "Zeitgesteuerte Timer Aufnahme"
+msgstr "Timer"
 
 #: skin_default_skin.xml.h:645
 msgid "Timer Record Path"
@@ -6990,7 +6990,7 @@ msgstr "Timeshift Pfad"
 
 #: skin_default_skin.xml.h:647
 msgid "Timeshift Settings"
-msgstr "Timeshift Einstellungen"
+msgstr "Timeshift"
 
 #: skin_default_skin.xml.h:648
 msgid "Timeshifttype"
@@ -7086,15 +7086,15 @@ msgstr ""
 
 #: skin_default_skin.xml.h:674
 msgid "Tunerconfig"
-msgstr "Tunerkonfiguration"
+msgstr "Konfiguration"
 
 #: skin_default_skin.xml.h:675
 msgid "Tuner Configuration"
-msgstr "Tunereinstellungen"
+msgstr "Einstellungen"
 
 #: skin_default_skin.xml.h:676
 msgid "Tuner Reception"
-msgstr "Tunerempfang"
+msgstr "Empfang"
 
 #: skin_default_skin.xml.h:678
 msgid "TV Resolution (h):"
@@ -7170,11 +7170,11 @@ msgstr ""
 
 #: skin_default_skin.xml.h:699
 msgid "Usbupdate (online)"
-msgstr "System - USB Softwareaktualisierung (Online)"
+msgstr "USB-Alisierung (Online)"
 
 #: skin_default_skin.xml.h:700
 msgid "Usbupdate (tmp)"
-msgstr "System - USB Softwareaktualisierung (Lokal)"
+msgstr "USB-Alisierung (Lokal)"
 
 #: skin_default_skin.xml.h:701
 msgid "Use cross control for fast zapping and vol"
@@ -7210,7 +7210,7 @@ msgstr "Bild Seitenverhältnis Einstellungen"
 
 #: skin_default_skin.xml.h:710
 msgid "VideoMode Resolution Settings"
-msgstr "Bildauflösungs Einstellungen"
+msgstr "Bildauflösung"
 
 #: skin_default_skin.xml.h:711
 msgid "VideoMode Settings"
@@ -7222,7 +7222,7 @@ msgstr "Video PID:"
 
 #: skin_default_skin.xml.h:713
 msgid "Video Settings"
-msgstr "Video Einstellungen"
+msgstr "Bildeinstellungen"
 
 #: skin_default_skin.xml.h:714
 msgid "Vietnamese"
@@ -7420,7 +7420,7 @@ msgstr "Es wird kein Stream wiedergegeben"
 
 #: system_backup_restore.h:31
 msgid "Restore Settings"
-msgstr "Gespeicherte Einstellungen wiederherstellen"
+msgstr "Einstellungen wiederherstellen"
 
 #: system_backup_restore.h:31
 msgid ""
@@ -7545,7 +7545,7 @@ msgstr "Beginne den kompletten Flashvorgang?"
 
 #: system_update.h:313
 msgid "starting Full Update (from backup) ?"
-msgstr "Beginne den kompletten Flashvorgang eines gesicherten Systemabbilds"
+msgstr "Beginne Flashvorgang eines gesicherten Systemabbilds"
 
 #: system_update.h:320
 msgid "Error file not supported"
