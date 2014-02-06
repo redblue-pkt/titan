@@ -3099,16 +3099,16 @@ msgid "IMDb - Plugin"
 msgstr "IMDb Erweiterung"
 
 #: plugins_instar_skin.xml.h:1 skins_instar_skin.xml.h:1
-msgid "IP-Kamera Einstellungen"
-msgstr ""
+msgid "IP-Kammera Einstellungen"
+msgstr "IP-Kamera Einstellungen"
 
 #: plugins_instar_skin.xml.h:2 skins_instar_skin.xml.h:2
-msgid "Benutzer-Kamera 1"
-msgstr ""
+msgid "Benutzer-Kammera 1"
+msgstr "Benutzer-Kamera 1"
 
 #: plugins_instar_skin.xml.h:3 skins_instar_skin.xml.h:3
-msgid "Benutzer-Kamera 2"
-msgstr ""
+msgid "Benutzer-Kammera 2"
+msgstr "Benutzer-Kamera 2"
 
 #: plugins_instar_skin.xml.h:4 skins_instar_skin.xml.h:4
 msgid "CAMx"
@@ -3119,36 +3119,36 @@ msgid "direkter Start"
 msgstr ""
 
 #: plugins_instar_skin.xml.h:6 skins_instar_skin.xml.h:6
-msgid "IP-Kamera 1"
-msgstr ""
+msgid "IP-Kammera 1"
+msgstr "IP-Kamera 1"
 
 #: plugins_instar_skin.xml.h:7 skins_instar_skin.xml.h:7
-msgid "IP-Kamera 2"
-msgstr ""
+msgid "IP-Kammera 2"
+msgstr "IP-Kamera 2"
 
 #: plugins_instar_skin.xml.h:8 skins_instar_skin.xml.h:8
-msgid "Kamera 1"
-msgstr ""
+msgid "Kammera 1"
+msgstr "Kamera 1"
 
 #: plugins_instar_skin.xml.h:9 skins_instar_skin.xml.h:9
-msgid "Kamera 2 (Umschalten mit Rot)"
-msgstr ""
+msgid "Kammera 2 (Umschalten mit Rot)"
+msgstr "Kamera 2 (Umschalten mit Rot)"
 
 #: plugins_instar_skin.xml.h:10 skins_instar_skin.xml.h:10
-msgid "Passwort-Kamera 1"
-msgstr ""
+msgid "Passwort-Kammera 1"
+msgstr "Passwort-Kamera 1"
 
 #: plugins_instar_skin.xml.h:11 skins_instar_skin.xml.h:11
-msgid "Passwort-Kamera 2"
-msgstr ""
+msgid "Passwort-Kammera 2"
+msgstr "Passwort-Kamera 2"
 
 #: plugins_instar_skin.xml.h:12 skins_instar_skin.xml.h:12
-msgid "Port-Kamera 1"
-msgstr ""
+msgid "Port-Kammera 1"
+msgstr "Port-Kamera 1"
 
 #: plugins_instar_skin.xml.h:13 skins_instar_skin.xml.h:13
-msgid "Port-Kamera 2"
-msgstr ""
+msgid "Port-Kammera 2"
+msgstr "Port-Kamera 2"
 
 #: plugins_instar_skin.xml.h:18 skins_instar_skin.xml.h:18
 msgid ""
