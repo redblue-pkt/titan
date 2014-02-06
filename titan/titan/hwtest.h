@@ -150,21 +150,21 @@ void screenhwtest()
 		{
 			if(dvbnode->feinfo->type == FE_QPSK)
 			{
-				char* tmpstr = ostrcat("[S]Lock & Search", " (", 0, 0);
+				char* tmpstr = ostrcat(_("[S]Lock & Search"), " (", 0, 0);
 				tmpstr = ostrcat(tmpstr, dvbnode->feinfo->name, 1, 0);
 				tmpstr = ostrcat(tmpstr, ")", 1, 0);
 				addmenulist(&mlist, tmpstr, NULL, NULL, 0, 0);
 			}
 			if(dvbnode->feinfo->type == FE_OFDM)
 			{
-				char* tmpstr = ostrcat("[T]Lock & Search", " (", 0, 0);
+				char* tmpstr = ostrcat(_("[T]Lock & Search"), " (", 0, 0);
 				tmpstr = ostrcat(tmpstr, dvbnode->feinfo->name, 1, 0);
 				tmpstr = ostrcat(tmpstr, ")", 1, 0);
 				addmenulist(&mlist, tmpstr, NULL, NULL, 0, 0);
 			}
 			if(dvbnode->feinfo->type == FE_QAM)
 			{
-				char* tmpstr = ostrcat("[C]Lock & Search", " (", 0, 0);
+				char* tmpstr = ostrcat(_("[C]Lock & Search"), " (", 0, 0);
 				tmpstr = ostrcat(tmpstr, dvbnode->feinfo->name, 1, 0);
 				tmpstr = ostrcat(tmpstr, ")", 1, 0);
 				addmenulist(&mlist, tmpstr, NULL, NULL, 0, 0);
@@ -173,26 +173,26 @@ void screenhwtest()
 		
 		dvbnode = dvbnode->next;
 	}
-	addmenulist(&mlist, "Front Display", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "Front Key", NULL, NULL, 0, 0);
-	//addmenulist(&mlist, "Color Bar", NULL, NULL, 0, 0);
-	//addmenulist(&mlist, "SCART 4:3 / 16:9", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "Smartcard", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "Network", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "USB Port", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "CAM", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "RS232", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "LNB", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "Flash/Nand Check", NULL, NULL, 0, 0);
+	addmenulist(&mlist, _("Front Display"), NULL, NULL, 0, 0);
+	addmenulist(&mlist, _("Front Key"), NULL, NULL, 0, 0);
+	//addmenulist(&mlist, _("Color Bar"), NULL, NULL, 0, 0);
+	//addmenulist(&mlist, _("SCART 4:3 / 16:9"), NULL, NULL, 0, 0);
+	addmenulist(&mlist, _("Smartcard"), NULL, NULL, 0, 0);
+	addmenulist(&mlist, _("Network"), NULL, NULL, 0, 0);
+	addmenulist(&mlist, _("USB Port"), NULL, NULL, 0, 0);
+	addmenulist(&mlist, _("CAM"), NULL, NULL, 0, 0);
+	addmenulist(&mlist, _("RS232"), NULL, NULL, 0, 0);
+	addmenulist(&mlist, _("LNB"), NULL, NULL, 0, 0);
+	addmenulist(&mlist, _("Flash/Nand Check"), NULL, NULL, 0, 0);
 	
 	while(1)
 	{
-		mbox = menulistbox(mlist, NULL, "Hardware Test", NULL, NULL, 1, 0);
+		mbox = menulistbox(mlist, NULL, _("Hardware Test"), NULL, NULL, 1, 0);
 		
 		if(mbox != NULL)
 		{
 			setmenulistdefault(mlist, mbox->name);
-			if(ostrstr(mbox->name, "[S]Lock & Search") != NULL)
+			if(ostrstr(mbox->name, _("[S]Lock & Search")) != NULL)
 			{
 				clearscreen(load);
 				drawscreen(load, 0, 0);
@@ -207,17 +207,17 @@ void screenhwtest()
 				servicestart(lastchannel, NULL, NULL, 0);	
 			}
 			
-			if(ostrstr(mbox->name, "[T]Lock & Search") != NULL)
+			if(ostrstr(mbox->name, _("[T]Lock & Search")) != NULL)
 			{
 				//struct transponder* createtransponder(uint64_t id, FE_OFDM, int orbitalpos, TEST_S2_FREQ, int inversion, TEST_S2_SYMBOL, int polarization, int fec, int modulation, int rolloff, int pilot, int system);			
 			}
 			
-			if(ostrstr(mbox->name, "[C]Lock & Search") != NULL)
+			if(ostrstr(mbox->name, _("[C]Lock & Search")) != NULL)
 			{
 				//struct transponder* createtransponder(uint64_t id, FE_QAM, int orbitalpos, TEST_S2_FREQ, int inversion, TEST_S2_SYMBOL, int polarization, int fec, int modulation, int rolloff, int pilot, int system);			
 			}
 			
-			if(ostrcmp(mbox->name, "Front Display") == 0)
+			if(ostrcmp(mbox->name, _("Front Display")) == 0)
 			{
 				int i = 0;
 				char* tmpstr = NULL;
@@ -236,7 +236,7 @@ void screenhwtest()
 				status.updatevfd = START;
 			}
 			
-			if(ostrcmp(mbox->name, "Front Key") == 0)
+			if(ostrcmp(mbox->name, _("Front Key")) == 0)
 			{
 				char* tmpload = ostrcat(load->text, NULL, 0, 0);
 				char* tmpstr = NULL;
@@ -264,7 +264,7 @@ void screenhwtest()
 				free(tmpload); tmpload = NULL; 			
 			}
 			
-			if(ostrcmp(mbox->name, "Color Bar") == 0)
+			if(ostrcmp(mbox->name, _("Color Bar")) == 0)
 			{
 				char* tmpstr = NULL;
 				char* tmpload = ostrcat(load->text, NULL, 0, 0);
@@ -302,7 +302,7 @@ void screenhwtest()
 				load->bgcol = tmpbgcol;			
 			}
 			
-			if(ostrcmp(mbox->name, "SCART 4:3 / 16:9") == 0)
+			if(ostrcmp(mbox->name, _("SCART 4:3 / 16:9")) == 0)
 			{
 				char* tmpload = ostrcat(load->text, NULL, 0, 0);
 				char* tmpstr = NULL;
@@ -326,7 +326,7 @@ void screenhwtest()
 				changetext(load, tmpload);
 			}
 			
-			if(ostrcmp(mbox->name, "Smartcard") == 0)
+			if(ostrcmp(mbox->name, _("Smartcard")) == 0)
 			{
 				uint32_t status = 0;
 				int smartcardcount = 0;
@@ -391,7 +391,7 @@ void screenhwtest()
 				free(tmpstr1); tmpstr1 = NULL;
 			}
 			
-			if(ostrcmp(mbox->name, "Network") == 0)
+			if(ostrcmp(mbox->name, _("Network")) == 0)
 			{
 				struct inetwork* inode = inetwork;
 				
@@ -411,7 +411,7 @@ void screenhwtest()
 				}
 			}
 			
-			if(ostrcmp(mbox->name, "USB Port") == 0)
+			if(ostrcmp(mbox->name, _("USB Port")) == 0)
 			{
 				int usbcount = 0, found = 0, i = 0;
 				struct hdd* hddnode = NULL;
@@ -455,7 +455,7 @@ void screenhwtest()
 				free(tmpstr); tmpstr = NULL;
 			}
 			
-			if(ostrcmp(mbox->name, "CAM") == 0)
+			if(ostrcmp(mbox->name, _("CAM")) == 0)
 			{
 				int cicount = 0;
 				char* tmpstr = NULL, *tmpstr1 = NULL;
@@ -492,7 +492,7 @@ void screenhwtest()
 				free(tmpstr1); tmpstr1 = NULL;			
 			}
 			
-			if(ostrcmp(mbox->name, "RS232") == 0)
+			if(ostrcmp(mbox->name, _("RS232")) == 0)
 			{
 				int exist = 1, count = 0, okA = 0, okB = 0, okC = 0, okD = 0;
 				unsigned char tmpwr[4] = {0};
@@ -564,7 +564,7 @@ void screenhwtest()
 					textbox(_("Message"), _("FAIL Serial Port"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);			
 			}
 			
-			if(ostrcmp(mbox->name, "LNB") == 0)
+			if(ostrcmp(mbox->name, _("LNB")) == 0)
 			{
 				char* tmpstr = NULL;
 				int ret1 = 0, ret2 = 0;
@@ -609,7 +609,7 @@ void screenhwtest()
 				servicestart(lastchannel, NULL, NULL, 5);
 				clearscreen(load);	
 			}
-			if(ostrcmp(mbox->name, "Flash/Nand Check") == 0)
+			if(ostrcmp(mbox->name, _("Flash/Nand Check")) == 0)
 			{
 				int ret1 = 0, ret2 = 0, i = 0;
 				char* tmpstr = NULL, *tmpstr1 = NULL;

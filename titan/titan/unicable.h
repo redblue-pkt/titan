@@ -194,7 +194,7 @@ manufactor:
 			addmenulist(&mlist, node->manufacturer, NULL, NULL, 0, 0);
 		node = node->next;
 	}
-	mbox = menulistbox(mlist, "menulist", "Unicable manufacturer", NULL, NULL, 0, 1);
+	mbox = menulistbox(mlist, "menulist", _("Unicable manufacturer"), NULL, NULL, 0, 1);
 
 	if(mbox != NULL)
 	{
@@ -209,7 +209,7 @@ manufactor:
 				addmenulist(&mlist, node->product, NULL, NULL, 0, 0);
 			node = node->next;
 		}
-		mbox = menulistbox(mlist, "menulist", "Unicable product", NULL, NULL, 0, 1);
+		mbox = menulistbox(mlist, "menulist", _("Unicable product"), NULL, NULL, 0, 1);
 
 		if(mbox != NULL)
 		{
@@ -274,7 +274,7 @@ manufactor:
 				}
 				node = node->next;
 			}
-			mbox = menulistbox(mlist, "menulist", "Unicable SCR", NULL, NULL, 0, 1);
+			mbox = menulistbox(mlist, "menulist", _("Unicable SCR"), NULL, NULL, 0, 1);
 			if(mbox != NULL && mbox->name != NULL)
 			{
 				//change lnbconfig

@@ -864,10 +864,10 @@ int main(int argc, char *argv[])
 		if(checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1)
 		{
 			struct menulist* mlist = NULL, *mbox = NULL;
-			addmenulist(&mlist, "RemoteControl Old Version", "0", NULL, 0, 0);
-			addmenulist(&mlist, "RemoteControl Long Version", "1", NULL, 0, 0);
+			addmenulist(&mlist, _("RemoteControl Old Version"), "0", NULL, 0, 0);
+			addmenulist(&mlist, _("RemoteControl Long Version"), "1", NULL, 0, 0);
 			
-			mbox = menulistbox(mlist, "remotecontrol", "Select Your Remote Control", NULL, NULL, 3, 0);
+			mbox = menulistbox(mlist, "remotecontrol", _("Select Your Remote Control"), NULL, NULL, 3, 0);
 			if(mbox != NULL)
 			{
 				debug(10, "mbox->name %s", mbox->name);
