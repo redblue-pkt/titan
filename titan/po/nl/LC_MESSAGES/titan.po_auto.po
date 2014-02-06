@@ -8750,3 +8750,20 @@ msgstr ""
 #: tithek.h:1215
 msgid "Choice Playback"
 msgstr ""
+
+#: system_backup.h:15
+msgid ""
+"Backup to /tmp or /var/backup. If the free memory too small can a usb device "
+"will never use.\n"
+"There must be a folder backup."
+msgstr ""
+
+#: system_backup_restore.h:15
+msgid ""
+"Press -restore- and your saved settings will be restored from your "
+"swapstick / recording hdd! The Box will restart automatically for "
+"restoring!\n"
+"\n"
+"Press -backup- to save your actual settings to swapstick / recording hdd.\n"
+"WARNING: The old backup will be deleted!"
+msgstr ""
