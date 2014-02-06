@@ -3,23 +3,23 @@
 
 void screensettings_redbutton()
 {
-	char* skintitle = "Red Key Action - Setup";
+	char* skintitle = _("Red Key Action - Setup");
 	struct skin* plugin = getscreen("plugin");
 	struct skin* child = plugin->child;
 	char* tmpstr = NULL;
 	struct menulist* mlist = NULL, *mbox = NULL;
 	
-	addmenulist(&mlist, "Extensions List", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "Auto Resolution", NULL, NULL, 0, 0);
+	addmenulist(&mlist, _("Extensions List"), NULL, NULL, 0, 0);
+	addmenulist(&mlist, _("Auto Resolution"), NULL, NULL, 0, 0);
 	if(checkemu() == 1)
-		addmenulist(&mlist, "Softcam Panel", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "TV / Radio Switch", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "Multi EPG", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "Graphic Multi EPG", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "Sleep Timer", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "Child Protection", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "Subchannel", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "Downloads", NULL, NULL, 0, 0);
+		addmenulist(&mlist, _("Softcam Panel"), NULL, NULL, 0, 0);
+	addmenulist(&mlist, _("TV / Radio Switch"), NULL, NULL, 0, 0);
+	addmenulist(&mlist, _("Multi EPG"), NULL, NULL, 0, 0);
+	addmenulist(&mlist, _("Graphic Multi EPG"), NULL, NULL, 0, 0);
+	addmenulist(&mlist, _("Sleep Timer"), NULL, NULL, 0, 0);
+	addmenulist(&mlist, _("Child Protection"), NULL, NULL, 0, 0);
+	addmenulist(&mlist, _("Subchannel"), NULL, NULL, 0, 0);
+	addmenulist(&mlist, _("Downloads"), NULL, NULL, 0, 0);
 
 	while(child != NULL)
 	{
@@ -41,7 +41,7 @@ void screensettings_redbutton()
 	}
 	debug(60, "(new) Redkey=%s", mbox->name);
 
-	if(ostrcmp(mbox->name, "Extensions List") == 0)
+	if(ostrcmp(mbox->name, _("Extensions List")) == 0)
 		delconfig("redkey");
 	else
 		addconfig("redkey", mbox->name);
