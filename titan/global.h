@@ -1728,6 +1728,7 @@ void setskinnodeslocked(int flag)
 			else if(ostrcmp("wins3", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("zapback_main", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("Reader Config", child->name) == 0) child->locked = flag;
+			else if(ostrcmp("system_update_usb_tmp", child->name) == 0) child->locked = flag;
 
 			if(status.expertmodus >= 11 && status.security == 1)
 				tmpflag = 0;
@@ -1740,39 +1741,25 @@ void setskinnodeslocked(int flag)
 // disable Reader Config manual start
 			if(ostrcmp("Reader Config", child->name) == 0) child->locked = 1;
 
-			// show this menus
+			// hide this menu on all boxes without ufs912
 			if(checkbox("UFS912") != 1)
 			{
 				if(ostrcmp("overclocking", child->name) == 0) child->locked = 1;
 			}
-			
 
 			// dont show this menus
 			if(checkbox("ATEMIO510") == 1)
 			{
 				if(ostrcmp("vfdisplay", child->name) == 0) child->locked = 1;
-//				if(ostrcmp("system_backup", child->name) == 0) child->locked = 1;
-			}
-
-//			if(checkbox("UFS910") == 0)
-			if(!file_exist("/etc/.beta") && checkbox("UFS910") == 0)
-			{
-				if(ostrcmp("system_backup", child->name) == 0) child->locked = 1;
 			}
 		
 			if(checkbox("UFS910") == 1)
 			{
 				if(ostrcmp("unlock", child->name) == 0) child->locked = 1;
-				if(ostrcmp("system_update_usb_tmp", child->name) == 0) child->locked = 0;
 			}
-			else if(checkbox("ATEMIO7600") == 1 && file_exist("/etc/.beta"))
-			{
-				if(ostrcmp("system_update_usb_tmp", child->name) == 0) child->locked = 0;
-			}
-			else	 			
-				if(ostrcmp("system_update_usb_tmp", child->name) == 0) child->locked = tmpflag;
 
-			if(checkbox("ATEVIO7000") == 1 && !file_exist("/etc/.beta"))
+			// workaround, after reboot black screen
+			if(checkbox("ATEVIO7000") == 1)
 			{
 				if(ostrcmp("restart", child->name) == 0) child->locked = 1;
 			}
