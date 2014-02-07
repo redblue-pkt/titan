@@ -42,7 +42,10 @@ for ROUND in $POLIST; do
 	echo "[create.po] update $ROUND"
 	echo xgettext --omit-header -k_ *.* -o $ROUND
 	if [ "$2" == "update" ]; then
-		xgettext --omit-header -j -k_ *.* -o $ROUND
+		ROUND_UTF=`echo $ROUND | sed 's!titan.po_auto.po!titan.po_auto.po.utf!'`
+		iconv -f ISO-8859-1 -t UTF-8 $ROUND > $ROUND_UTF
+		xgettext --omit-header -j -k_ *.* -o $ROUND_UTF
+		iconv -f UTF-8 -t ISO-8859-1 $ROUND_UTF > $ROUND
 	else
 		xgettext --omit-header -k_ *.* -o $ROUND
 	fi
