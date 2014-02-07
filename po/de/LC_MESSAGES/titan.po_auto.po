@@ -524,15 +524,15 @@ msgstr "Ausschalten"
 
 #: adjust.h:163
 msgid "anim. width"
-msgstr "Animations Breite"
+msgstr "Animation horizontal"
 
 #: adjust.h:164
 msgid "anim. height"
-msgstr "Animations Höhe"
+msgstr "Animation vertikal"
 
 #: adjust.h:165
 msgid "anim. both"
-msgstr "Animation Beides"
+msgstr "Zoom"
 
 #: adjust.h:168
 msgid "very fast"
@@ -843,7 +843,7 @@ msgstr "Anbieter"
 
 #: channellist.h:771 channellist.h:772 channellist.h:1211 channellist.h:1212
 msgid "All Channels"
-msgstr "Alle Kanäle"
+msgstr "Alle Sender"
 
 #: channellist.h:913
 msgid "Copy providerlist successfull"
@@ -1797,7 +1797,7 @@ msgstr ""
 
 #: hwtest.h:279 tmc.h:702
 msgid "RED"
-msgstr "-ROT-"
+msgstr "Rote Taste"
 
 #: hwtest.h:284
 msgid "GREEN"
@@ -1805,7 +1805,7 @@ msgstr "-GRÜN-"
 
 #: hwtest.h:289
 msgid "BLUE"
-msgstr "-BLAU-"
+msgstr "Blaue Taste"
 
 #: hwtest.h:368 hwtest.h:374
 msgid "Smartcard "
