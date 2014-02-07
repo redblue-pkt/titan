@@ -4345,7 +4345,7 @@ msgstr ""
 
 #: record.h:1157
 msgid "Timer Record start !\n"
-msgstr "Timeraufnahme wurde gestartet!"
+msgstr "Timeraufnahme wurde gestartet !\n"
 
 #: record.h:1272 record.h:1327 record.h:1281 record.h:1292 record.h:1336
 #: record.h:1368 stream.h:15 stream.h:37
