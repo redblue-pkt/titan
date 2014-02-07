@@ -7501,22 +7501,22 @@ msgstr "TPK installieren - Installationsmedium auswählen"
 #: skin_default_skin.xml.h:663 skin_default_skin.xml.h:664
 #: skin_default_skin.xml.h:665
 msgid "TPK media (media)"
-msgstr "TPK Pakete installieren (Lokal)"
+msgstr "Erweiterungen installieren (Lokal)"
 
 #: skin_default_skin.xml.h:664 skin_default_skin.xml.h:665
 #: skin_default_skin.xml.h:666
 msgid "TPK remove"
-msgstr "TPK Pakete löschen"
+msgstr "Erweiterungen löschen"
 
 #: skin_default_skin.xml.h:665 skin_default_skin.xml.h:666
 #: skin_default_skin.xml.h:667
 msgid "TPK tmp (tmp)"
-msgstr "TPK Pakete installieren (tmp)"
+msgstr "Erweiterungen installieren (tmp)"
 
 #: skin_default_skin.xml.h:666 skin_default_skin.xml.h:667
 #: skin_default_skin.xml.h:668
 msgid "TPK upgrade (online)"
-msgstr "TPK Pakete aktualisieren (Online)"
+msgstr "Erweiterungen aktualisieren (Online)"
 
 #: skin_default_skin.xml.h:667 skin_default_skin.xml.h:668
 #: skin_default_skin.xml.h:669
@@ -8697,7 +8697,7 @@ msgstr "TPK installieren - Kategorie wählen"
 
 #: extensions.h:271
 msgid "Tpk Remove - select file"
-msgstr "TPK Pakete löschen"
+msgstr "Erweiterungen löschen"
 
 #: filemanager.h:84 play.h:612
 msgid "Menu"
