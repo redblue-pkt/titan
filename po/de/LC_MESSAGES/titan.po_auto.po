@@ -8971,15 +8971,15 @@ msgstr "Aufnahme hinzufügen (Länge eingeben)"
 
 #: restoredefault.h:64 restoredefault.h:75
 msgid "Format MNT with Backup/Restore"
-msgstr ""
+msgstr "Formatiere MNT und sichere eigene Daten"
 
 #: restoredefault.h:65 restoredefault.h:79
 msgid "Format MNT (all)"
-msgstr ""
+msgstr "Formatiere MNT (komplett)"
 
 #: settings_bluebutton.h:6
 msgid "Blue Key Action - Setup"
-msgstr ""
+msgstr "Blaue Taste - Belegungsmenü"
 
 #: settings_bluebutton.h:12 settings_bluebutton.h:43 settings_redbutton.h:16
 #: settings_pluginbutton.h:16
@@ -8988,14 +8988,14 @@ msgstr ""
 
 #: settings_redbutton.h:6
 msgid "Red Key Action - Setup"
-msgstr ""
+msgstr "Rote Taste - Belegungsmenü"
 
 #: system_backup.h:15
 msgid ""
 "Backup to /tmp or /var/backup. If the free memory too small can a usb device "
 "will never use.\n"
 "There must be a folder backup."
-msgstr ""
+msgstr "Sicherung wird in /tmp oder /var/backup abgelegt. Falls der interne Speicher nicht ausreicht, kann die Sicherung auch auf einem USB Stick/HDD gespeichert werden.\nEs muss ein Ordner mit dem Namen backup auf dem Gerät sein."
 
 #: system_backup_restore.h:15
 msgid ""
@@ -9005,67 +9005,67 @@ msgid ""
 "\n"
 "Press -backup- to save your actual settings to swapstick / recording hdd.\n"
 "WARNING: The old backup will be deleted!"
-msgstr ""
+msgstr "-Wiederherstellung- (Rot):\nIhre Einstellungen werden aus einer zuvor erstellten Sicherung wiederhergestellt! Der Receiver wird dafür automatisch neugestartet! \n\n-Sicherung erstellen- (Grün):\nIhre Einstellungen werden gesichert.\nWARNUNG: Die alten Sicherungen werden gelöscht!\n\n-Ergebnis- (Gelb):\nÜberprüfung der Sicherung mittels Logdatei"
 
 #: titan.c:867 titan.c:868
 msgid "RemoteControl Old Version"
-msgstr ""
+msgstr "Fernbedienung alte Version"
 
 #: titan.c:868 titan.c:869
 msgid "RemoteControl Long Version"
-msgstr ""
+msgstr "Fernbedienung lange Version"
 
 #: titan.c:870 titan.c:871
 msgid "Select Your Remote Control"
-msgstr ""
+msgstr "Fernbedienungsauswahl Menü"
 
 #: tithek.h:1215
 msgid "Choice Playback"
-msgstr ""
+msgstr "Wiedergabe auswählen"
 
 #: tithek.h:1218 tithek.h:1252
 msgid "Streaming Playback (default)"
-msgstr ""
+msgstr "Direktes Streamen (standard)"
 
 #: tithek.h:1224 tithek.h:1258
 msgid "Streaming Playback Caching (0.5MB)"
-msgstr ""
+msgstr "Streamen mit Puffer (0.5MB)"
 
 #: tithek.h:1225 tithek.h:1264
 msgid "Streaming Playback Caching (1MB)"
-msgstr ""
+msgstr "Streamen mit Puffer (1MB)"
 
 #: tithek.h:1233 tithek.h:1288
 msgid "Streaming Playback Caching (5MB)"
-msgstr ""
+msgstr "Streamen mit Puffer (5MB)"
 
 #: tithek.h:1234 tithek.h:1294
 msgid "Streaming Playback Caching (7.5MB)"
-msgstr ""
+msgstr "Streamen mit Puffer (7.5MB)"
 
 #: tithek.h:1235 tithek.h:1300
 msgid "Streaming Playback Caching (10MB)"
-msgstr ""
+msgstr "Streamen mit Puffer (10MB)"
 
 #: tithek.h:1243 tithek.h:1318
 msgid "Download Full File"
-msgstr ""
+msgstr "Datei in Streampfad herunterladen"
 
 #: tithek.h:1244 tithek.h:1337
 msgid "Download Full File (background)"
-msgstr ""
+msgstr "Datei in Streampfad herunterladen (im Hintergrund)"
 
 #: tithek.h:1270
 msgid "Streaming Playback Caching (2MB)"
-msgstr ""
+msgstr "Streamen mit Puffer (2MB)"
 
 #: tithek.h:1276
 msgid "Streaming Playback Caching (3MB)"
-msgstr ""
+msgstr "Streamen mit Puffer (3MB)"
 
 #: tithek.h:1282
 msgid "Streaming Playback Caching (4MB)"
-msgstr ""
+msgstr "Streamen mit Puffer (4MB)"
 
 #: tithek.h:1306
 msgid "File Caching Playback (10MB / 120s)"
@@ -9081,11 +9081,11 @@ msgstr ""
 
 #: unicable.h:197
 msgid "Unicable manufacturer"
-msgstr ""
+msgstr "Unicable Hersteller"
 
 #: unicable.h:212
 msgid "Unicable product"
-msgstr ""
+msgstr "Unicable Produkt"
 
 #: unicable.h:277
 msgid "Unicable SCR"
@@ -9093,11 +9093,11 @@ msgstr ""
 
 #: videomode.h:18 videomode.h:40 videomode.h:47
 msgid "Resolution Settings"
-msgstr ""
+msgstr "Auflösung"
 
 #: videomode.h:19 videomode.h:62 videomode.h:69
 msgid "Aspect Settings"
-msgstr ""
+msgstr "Seitenverhältnis Einstellungen"
 
 #: videomode.h:25 videomode.h:27
 msgid "Videomode"
@@ -9105,4 +9105,4 @@ msgstr ""
 
 #: settings_pluginbutton.h:6
 msgid "Plugin Key Action - Setup"
-msgstr ""
+msgstr "Plugin Taste - Belegungsmenü"
