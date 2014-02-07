@@ -46,18 +46,25 @@ for ROUND in $POLIST; do
 		ROUND_UTF=`echo $ROUND | sed 's!titan.po_auto.po!titan.po_auto.utf.po!'`
 		OUTFILE_MO=`echo $ROUND | sed 's!titan.po_auto.po!titan.mo!'`
 		OUTFILE_PO=`echo $ROUND | sed 's!titan.po_auto.po!titan.outfile.po!'`
+		ROUND_EDIT=`echo $ROUND | sed 's!titan.po_auto.po!titan.po!'`
+		ROUND_EDIT_UTF=`echo $ROUND | sed 's!titan.po_auto.po!titan.utf.po!'`
+		ROUND_MERGE_UTF=`echo $ROUND | sed 's!titan.po_auto.po!titan.merge.utf.po!'`
+		ROUND_MERGE=`echo $ROUND | sed 's!titan.po_auto.po!titan.merge.po!'`
 
 		iconv -f ISO-8859-1 -t UTF-8 $ROUND > $ROUND_UTF
 		xgettext --omit-header -j -k_ *.* -o $ROUND_UTF
-		iconv -f UTF-8 -t ISO-8859-1 $ROUND_UTF > $ROUND
+
+		iconv -f ISO-8859-1 -t UTF-8 $ROUND_EDIT > $ROUND_EDIT_UTF		
+		msgmerge $ROUND_EDIT_UTF $ROUND_UTF > $ROUND_MERGE_UTF
+		iconv -f UTF-8 -t ISO-8859-1 $ROUND_MERGE_UTF > $ROUND_MERGE
 		
-		SEARCH=`cat $ROUND | grep -n "Content-Transfer-Encoding: 8bit" | cut -d":" -f1`
+		SEARCH=`cat $ROUND_MERGE | grep -n "Content-Transfer-Encoding: 8bit" | cut -d":" -f1`
 
 		echo "[createpo.sh] SEARCH $SEARCH"
 		CUT=`expr $SEARCH + 1`
 		echo "[createpo.sh] CUT $CUT"
 
-		cat $ROUND | sed "1,"$CUT"d" > $OUTFILE_PO
+		cat $ROUND_MERGE | sed "1,"$CUT"d" > $OUTFILE_PO
 
 		echo "[createpo.sh] msgfmt -v $OUTFILE_PO -o $OUTFILE_MO"
 		msgfmt -v $OUTFILE_PO -o $OUTFILE_MO		
