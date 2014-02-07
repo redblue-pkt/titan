@@ -39,16 +39,28 @@ for ROUND in $SKINLIST; do
 done
 
 for ROUND in $POLIST; do
-	echo "[create.po] update $ROUND"
+	echo "[createpo.sh] ############################ start ###############################"
+	echo "[createpo.sh] update $ROUND"
 	echo xgettext --omit-header -k_ *.* -o $ROUND
 	if [ "$2" == "update" ]; then
 		ROUND_UTF=`echo $ROUND | sed 's!titan.po_auto.po!titan.po_auto.po.utf!'`
+		OUTFILE_MO=`echo $ROUND | sed 's!titan.po_auto.po!titan.mo!'`
+		OUTFILE_PO=`echo $ROUND | sed 's!titan.po_auto.po!titan.po!'`
+
 		iconv -f ISO-8859-1 -t UTF-8 $ROUND > $ROUND_UTF
 		xgettext --omit-header -j -k_ *.* -o $ROUND_UTF
 		iconv -f UTF-8 -t ISO-8859-1 $ROUND_UTF > $ROUND
+		
+		SEARCH=`cat $ROUND | grep -n "MIME-Version: 1.0" | cut -d":" -f1`
+		CUT=`expr $SEARCH + 1`
+		cat $ROUND | sed "1,"$CUT"d" > $OUTFILE_PO
+
+		echo "[createpo.sh] msgfmt -v $OUTFILE_PO -o $OUTFILE_MO"
+		msgfmt -v $OUTFILE_PO -o $OUTFILE_MO		
 	else
 		xgettext --omit-header -k_ *.* -o $ROUND
 	fi
+	echo "[createpo.sh] ############################# end ##################################"
 done
 
 cd "$HOME"/flashimg/source.titan/po
