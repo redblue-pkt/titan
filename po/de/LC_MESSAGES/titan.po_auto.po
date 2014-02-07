@@ -7316,12 +7316,12 @@ msgstr "System"
 #: skin_default_skin.xml.h:623 skin_default_skin.xml.h:624
 #: skin_default_skin.xml.h:625
 msgid "System - Flashupdate (online)"
-msgstr "Flashaktualisierung (Online)"
+msgstr "Softwareaktualisierung (Online)"
 
 #: skin_default_skin.xml.h:624 skin_default_skin.xml.h:625
 #: skin_default_skin.xml.h:626
 msgid "System - Flashupdate (tmp)"
-msgstr "Flashareaktualisierung (tmp)"
+msgstr "Softwareaktualisierung (tmp)"
 
 #: skin_default_skin.xml.h:625 skin_default_skin.xml.h:626
 #: skin_default_skin.xml.h:627
@@ -7346,12 +7346,12 @@ msgstr "System aktualisieren"
 #: skin_default_skin.xml.h:629 skin_default_skin.xml.h:630
 #: skin_default_skin.xml.h:631
 msgid "systemupdate_flash_online_menu..."
-msgstr "Flashaktualisierung (Online)"
+msgstr "Softwareaktualisierung (Online)"
 
 #: skin_default_skin.xml.h:630 skin_default_skin.xml.h:631
 #: skin_default_skin.xml.h:632
 msgid "systemupdate_flash_tmp_menu..."
-msgstr "Flashaktualisierung (tmp)"
+msgstr "Softwareaktualisierung (tmp)"
 
 #: skin_default_skin.xml.h:631 skin_default_skin.xml.h:632
 #: skin_default_skin.xml.h:633
@@ -8077,7 +8077,7 @@ msgstr ""
 
 #: system_update.h:283
 msgid "starting Full Update ?"
-msgstr "Beginne den kompletten Flashvorgang?"
+msgstr "Flashvorgang starten?"
 
 #: system_update.h:313
 msgid "starting Full Update (from backup) ?"
