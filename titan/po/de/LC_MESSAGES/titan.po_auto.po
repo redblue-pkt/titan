@@ -7145,7 +7145,7 @@ msgstr "Überspringe Private CA Descriptor"
 #: skin_default_skin.xml.h:581 skin_default_skin.xml.h:582
 #: skin_default_skin.xml.h:583
 msgid "SmartCard Reader"
-msgstr ""
+msgstr "Kartenleser"
 
 #: skin_default_skin.xml.h:582 skin_default_skin.xml.h:583
 #: skin_default_skin.xml.h:584
