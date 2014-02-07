@@ -1215,7 +1215,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 			char* skintitle = _("Choice Playback");
 			struct menulist* mlist = NULL, *mbox = NULL;
 			
-			addmenulist(&mlist, _("Streaming Playback (default)")), NULL, NULL, 0, 0);
+			addmenulist(&mlist, _("Streaming Playback (default)"), NULL, NULL, 0, 0);
 			
 			if(!ostrncmp("http://", tmpstr1, 7))
 			{
