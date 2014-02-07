@@ -7651,12 +7651,12 @@ msgstr ""
 #: skin_default_skin.xml.h:699 skin_default_skin.xml.h:700
 #: skin_default_skin.xml.h:701
 msgid "Usbupdate (online)"
-msgstr "USB-Alisierung (Online)"
+msgstr "USB-Aktualisierung (Online)"
 
 #: skin_default_skin.xml.h:700 skin_default_skin.xml.h:701
 #: skin_default_skin.xml.h:702
 msgid "Usbupdate (tmp)"
-msgstr "USB-Alisierung (Lokal)"
+msgstr "USB-Aktualisierung (Lokal)"
 
 #: skin_default_skin.xml.h:701 skin_default_skin.xml.h:702
 #: skin_default_skin.xml.h:703
@@ -7818,7 +7818,7 @@ msgid ""
 "Can't change to selected skin."
 msgstr ""
 "FEHLER: Die Datei skinconfig.xml fehlt im ausgewählten Skin!\n"
-"Der ausgewählte Skin kann nicht gelanden werden."
+"Der ausgewählte Skin kann nicht geladen werden."
 
 #: sock.h:950
 msgid "Download finished!"
@@ -8187,7 +8187,7 @@ msgstr "Erstinstallationsassistent"
 
 #: titan.c:898 titan.c:911 titan.c:912
 msgid "Settings OK ?"
-msgstr "Senderlisten in Ordnung ?"
+msgstr "Senderlisten in Ordnung?"
 
 #: titan.c:1018 titan.c:1031 titan.c:1032
 msgid "Receiver successful unlocked"
@@ -8239,7 +8239,7 @@ msgstr "Der Anbieter wird zur Zeit nicht unterstützt!"
 msgid "File exist, overwrite?"
 msgstr ""
 "Diese Datei existiert bereits.\n"
-"Soll die vorhande Datei überschrieben werden?"
+"Soll die vorhandene Datei überschrieben werden?"
 
 #: tithek.h:826
 msgid "found"
