@@ -5280,11 +5280,11 @@ msgstr ""
 
 #: skin_default_skin.xml.h:145
 msgid "Color Format"
-msgstr "Farbformat für Scart / Komponente"
+msgstr "Farbformat"
 
 #: skin_default_skin.xml.h:146
 msgid "Color Format Scart / Composite"
-msgstr ""
+msgstr "Farbformat für Scart / Komponente"
 
 #: skin_default_skin.xml.h:147
 msgid "Committed command"
