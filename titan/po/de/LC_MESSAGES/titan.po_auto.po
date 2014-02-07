@@ -1070,7 +1070,7 @@ msgstr "West"
 #: putlocker.h:32 streamcloud.h:31 videoweed.h:35 vidstream.h:45
 #: xvidstage.h:54
 msgid "Hoster Url not http://"
-msgstr ""
+msgstr "die Hoster Url ist nicht http://"
 
 #: divxstage.h:79 novamov.h:80 nowvideo.h:87 primeshare.h:79 videoweed.h:80
 msgid ""
@@ -2140,7 +2140,7 @@ msgstr ""
 
 #: mc_pictureplayer_settings.h:63
 msgid "Antenne Kaernten"
-msgstr ""
+msgstr "Antenne Kärnten"
 
 #: mc_pictureplayer_settings.h:64
 msgid "Onkelz Rock Radio"
@@ -8653,7 +8653,7 @@ msgstr "Höchsttemperatur"
 
 #: weather.h:442 weather.h:460 weather.h:478 weather.h:496
 msgid "Condition: "
-msgstr ""
+msgstr "Wetter:"
 
 #: skin_default_skin.xml.h:445
 msgid "Plugin Button"
@@ -8661,11 +8661,11 @@ msgstr ""
 
 #: skin_default_skin.xml.h:546
 msgid "Search"
-msgstr ""
+msgstr "Suche"
 
 #: plugins_tithek_skin.xml.h:2 skins_tithek_skin.xml.h:2
 msgid "TiThek Settings"
-msgstr ""
+msgstr "TiThek Einstellungen"
 
 #: browser.h:191
 msgid "Home"
@@ -8677,31 +8677,31 @@ msgstr ""
 
 #: extensions.h:125
 msgid "Install to MNT"
-msgstr ""
+msgstr "MNT Installation (FLASH)"
 
 #: extensions.h:137
 msgid "Install to FLASH"
-msgstr ""
+msgstr "FLASH Installation (FLASH)"
 
 #: extensions.h:151
 msgid "Install to SWAP"
-msgstr ""
+msgstr "SWAP Installation (USB oder HDD)"
 
 #: extensions.h:164
 msgid "Choice Install Medium"
-msgstr ""
+msgstr "Installation Auswahl"
 
 #: extensions.h:197
 msgid "Tpk Install - select section"
-msgstr ""
+msgstr "TPK installieren - Kategorie wählen"
 
 #: extensions.h:271
 msgid "Tpk Remove - select file"
-msgstr ""
+msgstr "TPK Pakete löschen"
 
 #: filemanager.h:84 play.h:612
 msgid "Menu"
-msgstr ""
+msgstr "Menü"
 
 #: hbbtv.h:742
 msgid "Channel HBBTV"
@@ -8791,19 +8791,19 @@ msgstr ""
 #: settings_redbutton.h:44 settings_pluginbutton.h:12
 #: settings_pluginbutton.h:44
 msgid "Extensions List"
-msgstr ""
+msgstr "Erweiterungsliste"
 
 #: mc_global.h:600 mc_global.h:609
 msgid "Load Playlist"
-msgstr ""
+msgstr "Playliste laden"
 
 #: mc_global.h:601
 msgid "Edit Playlist"
-msgstr ""
+msgstr "Playliste bearbeiten"
 
 #: networkbrowser.h:1875
 msgid "Networkbrowser - show Shares"
-msgstr ""
+msgstr "Netzwerk Browser - zeige Freigaben"
 
 #: play.h:619 play.h:687
 msgid "AV Settings"
@@ -8815,107 +8815,107 @@ msgstr ""
 
 #: play.h:626 play.h:701
 msgid "Delete File"
-msgstr ""
+msgstr "Datei löschen"
 
 #: play.h:635
 msgid "Search on KinoX"
-msgstr ""
+msgstr "Suche diesen Titel bei KinoX"
 
 #: play.h:636
 msgid "Search on KinoX (local)"
-msgstr ""
+msgstr "Suche diesen Titel bei KinoX (lokal)"
 
 #: play.h:637 play.h:726
 msgid "Search on Movie4k"
-msgstr ""
+msgstr "Suche diesen Titel bei Movie4k"
 
 #: play.h:638 play.h:728
 msgid "Search on Movie4k (local)"
-msgstr ""
+msgstr "Suche diesen Titel Movie4k (lokal)"
 
 #: play.h:639 play.h:712
 msgid "Search on Solarmovies (movie)"
-msgstr ""
+msgstr "Suche diesen Titel bei Solarmovies (Filme)"
 
 #: play.h:640 play.h:714
 msgid "Search on Solarmovies (serie)"
-msgstr ""
+msgstr "Suche diesen Titel bei Solarmovies (Serien)"
 
 #: play.h:641 play.h:716
 msgid "Search on Solarmovies (local)"
-msgstr ""
+msgstr "Suche diesen Titel bei Solarmovies (lokal)"
 
 #: play.h:642 play.h:754
 msgid "Search on Mle-HD (local)"
-msgstr ""
+msgstr "Suche diesen Titel bei Mle-HD (lokal)"
 
 #: play.h:643 play.h:742
 msgid "Search on Beeg (local)"
-msgstr ""
+msgstr "Suche diesen Titel bei Beeg (lokal)"
 
 #: play.h:644 play.h:752
 msgid "Search on Xvideos (local)"
-msgstr ""
+msgstr "Suche diesen Titel bei XVideos (lokal)"
 
 #: play.h:646 play.h:756
 msgid "Search on Netzkino (local)"
-msgstr ""
+msgstr "Suche diesen Titel bei Netzkino (lokal)"
 
 #: play.h:647 play.h:718
 msgid "Search on Youtube"
-msgstr ""
+msgstr "Suche diesen Titel bei Youtube"
 
 #: play.h:648 play.h:720
 msgid "Search on Youtube (local)"
-msgstr ""
+msgstr "Suche diesen Titel bei Youtube (lokal)"
 
 #: play.h:649 play.h:722
 msgid "Search on MyVideo"
-msgstr ""
+msgstr "Suche diesen Titel bei MyVideo"
 
 #: play.h:650
 msgid "Search on Myvideo (local)"
-msgstr ""
+msgstr "Suche diesen Titel bei MyVideo (lokal)"
 
 #: play.h:651 play.h:734
 msgid "Search on ARD (local)"
-msgstr ""
+msgstr "Suche diesen Titel bei ARD (lokal)"
 
 #: play.h:652 play.h:736
 msgid "Search on ZDF (local)"
-msgstr ""
+msgstr "Suche diesen Titel bei ZDF (lokal)"
 
 #: play.h:653 play.h:738
 msgid "Search on TecTime (local)"
-msgstr ""
+msgstr "Suche diesen Titel bei TecTime TV (lokal)"
 
 #: play.h:654 play.h:740
 msgid "Search on Giga (local)"
-msgstr ""
+msgstr "Suche diesen Titel bei Giga (lokal)"
 
 #: play.h:655 play.h:746
 msgid "Search on Rtl-Now (local)"
-msgstr ""
+msgstr "Suche diesen Titel bei RTL-Now (lokal)"
 
 #: play.h:656 play.h:744
 msgid "Search on Rtl2-Now (local)"
-msgstr ""
+msgstr "Suche diesen Titel bei RTL2-Now (lokal)"
 
 #: play.h:657 play.h:748
 msgid "Search on SuperRTL-Now (local)"
-msgstr ""
+msgstr "Suche diesen Titel bei SuperRTL-Now (lokal)"
 
 #: play.h:658 play.h:750
 msgid "Search on VOX-Now (local)"
-msgstr ""
+msgstr "Suche diesen Titel bei VOX-Now (lokal)"
 
 #: play.h:659 play.h:732
 msgid "Search on InternetTv (local)"
-msgstr ""
+msgstr "Suche diesen Titel in InternetTV (lokal)"
 
 #: play.h:660 play.h:730
 msgid "Search on InternetRadio (local)"
-msgstr ""
+msgstr "Suche diesen Titel bei den Internet Radios (lokal)"
 
 #: play.h:672 play.h:689
 msgid "IMDb"
@@ -8931,43 +8931,43 @@ msgstr ""
 
 #: play.h:708
 msgid "Search on Kinox"
-msgstr ""
+msgstr "Suche diesen Titel bei Kinox"
 
 #: play.h:710
 msgid "Search on Kinox (local)"
-msgstr ""
+msgstr "Suche diesen Titel bei Kinox (lokal)"
 
 #: play.h:724
 msgid "Search on MyVideo (local)"
-msgstr ""
+msgstr "Suche diesen Titel bei MyVideo (lokal)"
 
 #: readerconfig.h:310
 msgid "Use config from Flash (permanent)"
-msgstr ""
+msgstr "Config vom Flash (permanent) verwenden"
 
 #: readerconfig.h:319
 msgid "Use config from Flash (temporary)"
-msgstr ""
+msgstr "Config vom Flash (temporär) verwenden"
 
 #: readerconfig.h:328
 msgid "Use config from Stick or HDD"
-msgstr ""
+msgstr "Config vom Stick / HDD verwenden"
 
 #: readerconfig.h:338
 msgid "Choice Config File"
-msgstr ""
+msgstr "Config File wählen"
 
 #: record.h:1360 record.h:1390
 msgid "add recording (stop after current event)"
-msgstr ""
+msgstr "Aufnahme hinzufügen (diese Sendung)"
 
 #: record.h:1361 record.h:1403
 msgid "add recording (indefinitely)"
-msgstr ""
+msgstr "Aufnahme hinzufügen (unbegrenzt)"
 
 #: record.h:1362 record.h:1408
 msgid "add recording (enter duration)"
-msgstr ""
+msgstr "Aufnahme hinzufügen (Länge eingeben)"
 
 #: restoredefault.h:64 restoredefault.h:75
 msgid "Format MNT with Backup/Restore"
