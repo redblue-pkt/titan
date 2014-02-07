@@ -8340,4 +8340,456 @@ msgstr "Höchsttemperatur"
 
 #: weather.h:442 weather.h:460 weather.h:478 weather.h:496
 msgid "Condition: "
-msgstr "Lage"
+msgstr ""
+
+#: skin_default_skin.xml.h:445
+msgid "Plugin Button"
+msgstr ""
+
+#: skin_default_skin.xml.h:546
+msgid "Search"
+msgstr ""
+
+#: plugins_tithek_skin.xml.h:2 skins_tithek_skin.xml.h:2
+msgid "TiThek Settings"
+msgstr ""
+
+#: browser.h:191
+msgid "Home"
+msgstr ""
+
+#: browser.h:206
+msgid "Browser Favoriten"
+msgstr ""
+
+#: extensions.h:125
+msgid "Install to MNT"
+msgstr ""
+
+#: extensions.h:137
+msgid "Install to FLASH"
+msgstr ""
+
+#: extensions.h:151
+msgid "Install to SWAP"
+msgstr ""
+
+#: extensions.h:164
+msgid "Choice Install Medium"
+msgstr ""
+
+#: extensions.h:197
+msgid "Tpk Install - select section"
+msgstr ""
+
+#: extensions.h:271
+msgid "Tpk Remove - select file"
+msgstr ""
+
+#: filemanager.h:84 play.h:612
+msgid "Menu"
+msgstr ""
+
+#: hbbtv.h:742
+msgid "Channel HBBTV"
+msgstr ""
+
+#: hwtest.h:153 hwtest.h:195
+msgid "[S]Lock & Search"
+msgstr ""
+
+#: hwtest.h:160 hwtest.h:210
+msgid "[T]Lock & Search"
+msgstr ""
+
+#: hwtest.h:167 hwtest.h:215
+msgid "[C]Lock & Search"
+msgstr ""
+
+#: hwtest.h:176 hwtest.h:220
+msgid "Front Display"
+msgstr ""
+
+#: hwtest.h:177 hwtest.h:239
+msgid "Front Key"
+msgstr ""
+
+#: hwtest.h:180 hwtest.h:329
+msgid "Smartcard"
+msgstr ""
+
+#: hwtest.h:182 hwtest.h:414
+msgid "USB Port"
+msgstr ""
+
+#: hwtest.h:183 hwtest.h:458
+msgid "CAM"
+msgstr ""
+
+#: hwtest.h:184 hwtest.h:495
+msgid "RS232"
+msgstr ""
+
+#: hwtest.h:185 hwtest.h:567
+msgid "LNB"
+msgstr ""
+
+#: hwtest.h:186 hwtest.h:612
+msgid "Flash/Nand Check"
+msgstr ""
+
+#: hwtest.h:190
+msgid "Hardware Test"
+msgstr ""
+
+#: hwtest.h:267
+msgid "Color Bar"
+msgstr ""
+
+#: hwtest.h:305
+msgid "SCART 4:3 / 16:9"
+msgstr ""
+
+#: keyactions.h:21
+msgid "Key Action - Plugins"
+msgstr ""
+
+#: keyactions.h:24 keyactions.h:147 play.h:629 play.h:697
+msgid "MediaDB Scan Info"
+msgstr ""
+
+#: keyactions.h:51 keyactions.h:98 settings_redbutton.h:13
+#: settings_pluginbutton.h:13
+msgid "Auto Resolution"
+msgstr ""
+
+#: keyactions.h:57 keyactions.h:126 settings_bluebutton.h:18
+#: settings_redbutton.h:19 settings_pluginbutton.h:19
+msgid "Sleep Timer"
+msgstr ""
+
+#: keyactions.h:59 keyactions.h:91 settings_bluebutton.h:20
+#: settings_redbutton.h:21 videomode.h:17 videomode.h:34
+#: settings_pluginbutton.h:21
+msgid "Subchannel"
+msgstr ""
+
+#: keyactions.h:105 settings_bluebutton.h:15 settings_redbutton.h:12
+#: settings_redbutton.h:44 settings_pluginbutton.h:12
+#: settings_pluginbutton.h:44
+msgid "Extensions List"
+msgstr ""
+
+#: mc_global.h:600 mc_global.h:609
+msgid "Load Playlist"
+msgstr ""
+
+#: mc_global.h:601
+msgid "Edit Playlist"
+msgstr ""
+
+#: networkbrowser.h:1875
+msgid "Networkbrowser - show Shares"
+msgstr ""
+
+#: play.h:619 play.h:687
+msgid "AV Settings"
+msgstr ""
+
+#: play.h:620 play.h:695
+msgid "iD3Tag Info"
+msgstr ""
+
+#: play.h:626 play.h:701
+msgid "Delete File"
+msgstr ""
+
+#: play.h:635
+msgid "Search on KinoX"
+msgstr ""
+
+#: play.h:636
+msgid "Search on KinoX (local)"
+msgstr ""
+
+#: play.h:637 play.h:726
+msgid "Search on Movie4k"
+msgstr ""
+
+#: play.h:638 play.h:728
+msgid "Search on Movie4k (local)"
+msgstr ""
+
+#: play.h:639 play.h:712
+msgid "Search on Solarmovies (movie)"
+msgstr ""
+
+#: play.h:640 play.h:714
+msgid "Search on Solarmovies (serie)"
+msgstr ""
+
+#: play.h:641 play.h:716
+msgid "Search on Solarmovies (local)"
+msgstr ""
+
+#: play.h:642 play.h:754
+msgid "Search on Mle-HD (local)"
+msgstr ""
+
+#: play.h:643 play.h:742
+msgid "Search on Beeg (local)"
+msgstr ""
+
+#: play.h:644 play.h:752
+msgid "Search on Xvideos (local)"
+msgstr ""
+
+#: play.h:646 play.h:756
+msgid "Search on Netzkino (local)"
+msgstr ""
+
+#: play.h:647 play.h:718
+msgid "Search on Youtube"
+msgstr ""
+
+#: play.h:648 play.h:720
+msgid "Search on Youtube (local)"
+msgstr ""
+
+#: play.h:649 play.h:722
+msgid "Search on MyVideo"
+msgstr ""
+
+#: play.h:650
+msgid "Search on Myvideo (local)"
+msgstr ""
+
+#: play.h:651 play.h:734
+msgid "Search on ARD (local)"
+msgstr ""
+
+#: play.h:652 play.h:736
+msgid "Search on ZDF (local)"
+msgstr ""
+
+#: play.h:653 play.h:738
+msgid "Search on TecTime (local)"
+msgstr ""
+
+#: play.h:654 play.h:740
+msgid "Search on Giga (local)"
+msgstr ""
+
+#: play.h:655 play.h:746
+msgid "Search on Rtl-Now (local)"
+msgstr ""
+
+#: play.h:656 play.h:744
+msgid "Search on Rtl2-Now (local)"
+msgstr ""
+
+#: play.h:657 play.h:748
+msgid "Search on SuperRTL-Now (local)"
+msgstr ""
+
+#: play.h:658 play.h:750
+msgid "Search on VOX-Now (local)"
+msgstr ""
+
+#: play.h:659 play.h:732
+msgid "Search on InternetTv (local)"
+msgstr ""
+
+#: play.h:660 play.h:730
+msgid "Search on InternetRadio (local)"
+msgstr ""
+
+#: play.h:672 play.h:689
+msgid "IMDb"
+msgstr ""
+
+#: play.h:674 play.h:691
+msgid "IMDb-API"
+msgstr ""
+
+#: play.h:693
+msgid "TMDb"
+msgstr ""
+
+#: play.h:708
+msgid "Search on Kinox"
+msgstr ""
+
+#: play.h:710
+msgid "Search on Kinox (local)"
+msgstr ""
+
+#: play.h:724
+msgid "Search on MyVideo (local)"
+msgstr ""
+
+#: readerconfig.h:310
+msgid "Use config from Flash (permanent)"
+msgstr ""
+
+#: readerconfig.h:319
+msgid "Use config from Flash (temporary)"
+msgstr ""
+
+#: readerconfig.h:328
+msgid "Use config from Stick or HDD"
+msgstr ""
+
+#: readerconfig.h:338
+msgid "Choice Config File"
+msgstr ""
+
+#: record.h:1360 record.h:1390
+msgid "add recording (stop after current event)"
+msgstr ""
+
+#: record.h:1361 record.h:1403
+msgid "add recording (indefinitely)"
+msgstr ""
+
+#: record.h:1362 record.h:1408
+msgid "add recording (enter duration)"
+msgstr ""
+
+#: restoredefault.h:64 restoredefault.h:75
+msgid "Format MNT with Backup/Restore"
+msgstr ""
+
+#: restoredefault.h:65 restoredefault.h:79
+msgid "Format MNT (all)"
+msgstr ""
+
+#: settings_bluebutton.h:6
+msgid "Blue Key Action - Setup"
+msgstr ""
+
+#: settings_bluebutton.h:12 settings_bluebutton.h:43 settings_redbutton.h:16
+#: settings_pluginbutton.h:16
+msgid "TV / Radio Switch"
+msgstr ""
+
+#: settings_redbutton.h:6
+msgid "Red Key Action - Setup"
+msgstr ""
+
+#: system_backup.h:15
+msgid ""
+"Backup to /tmp or /var/backup. If the free memory too small can a usb device "
+"will never use.\n"
+"There must be a folder backup."
+msgstr ""
+
+#: system_backup_restore.h:15
+msgid ""
+"Press -restore- and your saved settings will be restored from your "
+"swapstick / recording hdd! The Box will restart automatically for "
+"restoring!\n"
+"\n"
+"Press -backup- to save your actual settings to swapstick / recording hdd.\n"
+"WARNING: The old backup will be deleted!"
+msgstr ""
+
+#: titan.c:867 titan.c:868
+msgid "RemoteControl Old Version"
+msgstr ""
+
+#: titan.c:868 titan.c:869
+msgid "RemoteControl Long Version"
+msgstr ""
+
+#: titan.c:870 titan.c:871
+msgid "Select Your Remote Control"
+msgstr ""
+
+#: tithek.h:1215
+msgid "Choice Playback"
+msgstr ""
+
+#: tithek.h:1218 tithek.h:1252
+msgid "Streaming Playback (default)"
+msgstr ""
+
+#: tithek.h:1224 tithek.h:1258
+msgid "Streaming Playback Caching (0.5MB)"
+msgstr ""
+
+#: tithek.h:1225 tithek.h:1264
+msgid "Streaming Playback Caching (1MB)"
+msgstr ""
+
+#: tithek.h:1233 tithek.h:1288
+msgid "Streaming Playback Caching (5MB)"
+msgstr ""
+
+#: tithek.h:1234 tithek.h:1294
+msgid "Streaming Playback Caching (7.5MB)"
+msgstr ""
+
+#: tithek.h:1235 tithek.h:1300
+msgid "Streaming Playback Caching (10MB)"
+msgstr ""
+
+#: tithek.h:1243 tithek.h:1318
+msgid "Download Full File"
+msgstr ""
+
+#: tithek.h:1244 tithek.h:1337
+msgid "Download Full File (background)"
+msgstr ""
+
+#: tithek.h:1270
+msgid "Streaming Playback Caching (2MB)"
+msgstr ""
+
+#: tithek.h:1276
+msgid "Streaming Playback Caching (3MB)"
+msgstr ""
+
+#: tithek.h:1282
+msgid "Streaming Playback Caching (4MB)"
+msgstr ""
+
+#: tithek.h:1306
+msgid "File Caching Playback (10MB / 120s)"
+msgstr ""
+
+#: tithek.h:1310
+msgid "File Caching Playback (20MB / 240s)"
+msgstr ""
+
+#: tithek.h:1314
+msgid "File Caching Playback (30MB / 360s)"
+msgstr ""
+
+#: unicable.h:197
+msgid "Unicable manufacturer"
+msgstr ""
+
+#: unicable.h:212
+msgid "Unicable product"
+msgstr ""
+
+#: unicable.h:277
+msgid "Unicable SCR"
+msgstr ""
+
+#: videomode.h:18 videomode.h:40 videomode.h:47
+msgid "Resolution Settings"
+msgstr ""
+
+#: videomode.h:19 videomode.h:62 videomode.h:69
+msgid "Aspect Settings"
+msgstr ""
+
+#: videomode.h:25 videomode.h:27
+msgid "Videomode"
+msgstr ""
+
+#: settings_pluginbutton.h:6
+msgid "Plugin Key Action - Setup"
+msgstr ""
