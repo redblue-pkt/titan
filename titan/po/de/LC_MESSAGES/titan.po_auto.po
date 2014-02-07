@@ -3994,7 +3994,7 @@ msgstr "XXX Streams ausblenden"
 
 #: plugins_tithek_skin.xml.h:7 skins_tithek_skin.xml.h:7
 msgid "Pic Ratio"
-msgstr "Bilder im Orginalformat darstellen"
+msgstr "Bilder im Originalformat darstellen"
 
 #: plugins_tithek_skin.xml.h:8 skin_default_skin.xml.h:443
 #: skins_tithek_skin.xml.h:8 tithek.h:1040
@@ -4017,7 +4017,7 @@ msgstr "Einstellungen"
 #: plugins_tithek_skin.xml.h:13 skins_tithek_skin.xml.h:13
 #: plugins_tithek_skin.xml.h:12 skins_tithek_skin.xml.h:12
 msgid "View Cover"
-msgstr "Ansicht Cover (streams)"
+msgstr "Ansicht Cover (Streams)"
 
 #: plugins_tithek_skin.xml.h:14 skins_tithek_skin.xml.h:14
 #: plugins_tithek_skin.xml.h:13 skins_tithek_skin.xml.h:13
