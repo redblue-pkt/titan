@@ -1263,7 +1263,7 @@ msgstr "Ausschalten"
 
 #: epgsettings.h:258
 msgid "Deavtivate Refresh Time and After EPG in scan-mode"
-msgstr "Deaktiviere Aktualisierungszeit und nach Suche im Suche-Modus"
+msgstr "Hintergrundsuche aktiv, Aktualisierungszeit wird deaktiviert"
 
 #: epgsettings.h:284
 msgid "EPG resetet and now clear."
