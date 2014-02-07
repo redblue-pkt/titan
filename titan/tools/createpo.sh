@@ -43,16 +43,20 @@ for ROUND in $POLIST; do
 	echo "[createpo.sh] update $ROUND"
 	echo xgettext --omit-header -k_ *.* -o $ROUND
 	if [ "$2" == "update" ]; then
-		ROUND_UTF=`echo $ROUND | sed 's!titan.po_auto.po!titan.po_auto.po.utf!'`
+		ROUND_UTF=`echo $ROUND | sed 's!titan.po_auto.po!titan.po_auto.utf.po!'`
 		OUTFILE_MO=`echo $ROUND | sed 's!titan.po_auto.po!titan.mo!'`
-		OUTFILE_PO=`echo $ROUND | sed 's!titan.po_auto.po!titan.po!'`
+		OUTFILE_PO=`echo $ROUND | sed 's!titan.po_auto.po!titan.outfile.po!'`
 
 		iconv -f ISO-8859-1 -t UTF-8 $ROUND > $ROUND_UTF
 		xgettext --omit-header -j -k_ *.* -o $ROUND_UTF
 		iconv -f UTF-8 -t ISO-8859-1 $ROUND_UTF > $ROUND
 		
-		SEARCH=`cat $ROUND | grep -n "MIME-Version: 1.0" | cut -d":" -f1`
+		SEARCH=`cat $ROUND | grep -n "Content-Transfer-Encoding: 8bit" | cut -d":" -f1`
+
+		echo "[createpo.sh] SEARCH $SEARCH"
 		CUT=`expr $SEARCH + 1`
+		echo "[createpo.sh] CUT $CUT"
+
 		cat $ROUND | sed "1,"$CUT"d" > $OUTFILE_PO
 
 		echo "[createpo.sh] msgfmt -v $OUTFILE_PO -o $OUTFILE_MO"
