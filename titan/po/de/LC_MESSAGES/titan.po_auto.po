@@ -708,8 +708,8 @@ msgid ""
 "This Plugin is only for Betatester and can change your Settings!\n"
 "Realy run it?"
 msgstr ""
-"Diese Erweiterung ist nur für Betatester und könnte Ihre Einstellungen "
-"verändern!\n"
+"Diese Erweiterung ist nur für Betatester und könnte Ihre Einstellungen ver�"
+"�ndern!\n"
 "Trotzdem ausführen?"
 
 #: bgdownload.h:176
@@ -1491,7 +1491,8 @@ msgstr "Möchten Sie tatsächlich diese Datei / dieses Verzeichnis kopieren?"
 
 #: filemanager.h:188
 msgid "Really move this file/dir?"
-msgstr "Möchten Sie tatsächlich diese Datei / dieses Verzeichnis verschieben?"
+msgstr ""
+"Möchten Sie tatsächlich diese Datei / dieses Verzeichnis verschieben?"
 
 #: filemanager.h:196
 msgid "From"
@@ -2415,8 +2416,8 @@ msgstr "Mutil EPG - Alle Sender"
 msgid ""
 "For Better Win7 Support install please Tpk Install > Network > Smbclient"
 msgstr ""
-"ACHTUNG: Für eine bessere Kompatibilität mit Windows 7 installieren Sie erst "
-"die Erweiterung 'SMB-Client'!"
+"ACHTUNG: Für eine bessere Kompatibilität mit Windows 7 installieren Sie "
+"erst die Erweiterung 'SMB-Client'!"
 
 #: networkbrowser.h:1005 networkbrowser.h:1011 networkbrowser.h:1021
 msgid "Anonymous login Access Denied !"
@@ -5826,7 +5827,8 @@ msgid ""
 "navigate the control cross and the extra buttons displayed with your remote "
 "control to select."
 msgstr ""
-"Hier können Sie von unseren aktuellen Online-Angebot Plug-Ins installieren.\n"
+"Hier können Sie von unseren aktuellen Online-Angebot Plug-Ins "
+"installieren.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -5836,8 +5838,8 @@ msgid ""
 "button to search. Use to navigate the control cross and the extra buttons "
 "displayed with your remote control to select."
 msgstr ""
-"Hier können Sie im EPG nach bestimmten Einträgen suchen. Verwenden Sie eine "
-"der Farbtasten um die Suche zu starten.\n"
+"Hier können Sie im EPG nach bestimmten Einträgen suchen. Verwenden Sie "
+"eine der Farbtasten um die Suche zu starten.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -8022,8 +8024,8 @@ msgid ""
 "\n"
 "Aborting backup..."
 msgstr ""
-"ACHTUNG: Eine Festplatte oder ein USB Gerät muss für Aufnahmen angeschlossen "
-"sein!\n"
+"ACHTUNG: Eine Festplatte oder ein USB Gerät muss für Aufnahmen "
+"angeschlossen sein!\n"
 "\n"
 "Sicherung wird abgebrochen."
 
@@ -8402,7 +8404,8 @@ msgstr ""
 #: tmdb.h:922
 msgid "Error, found result without imdbid we can't this save in MediaDB"
 msgstr ""
-"FEHLER: in der imdb-id ist ein Fehler und kann daher nicht übernommen werden!"
+"FEHLER: in der imdb-id ist ein Fehler und kann daher nicht übernommen "
+"werden!"
 
 #: tpchoice.h:21
 msgid "Transponderlist"
