@@ -556,11 +556,11 @@ msgstr "Versteckt"
 
 #: adjust.h:187
 msgid "channel-movie"
-msgstr "Sender - Sendungstitel"
+msgstr "Sender - Titel"
 
 #: adjust.h:188
 msgid "movie-channel"
-msgstr "Sendungstitel - Sender"
+msgstr "Titel - Sender"
 
 #: adjust.h:202
 msgid "expert (11)"
@@ -2357,11 +2357,11 @@ msgstr "doppel"
 
 #: moduleconfig.h:168
 msgid "activate"
-msgstr "Aktiv"
+msgstr "aktivieren"
 
 #: moduleconfig.h:169
 msgid "deaktivate"
-msgstr "Deaktiviert"
+msgstr "deaktivieren"
 
 #: moduleconfig.h:350
 msgid "Status: "
@@ -2717,11 +2717,11 @@ msgstr ""
 
 #: panel_settings_autostart.h:112 settings_autostart.h:143
 msgid "Old Audiofw"
-msgstr ""
+msgstr "Audio-FW veraltet"
 
 #: panel_settings_autostart.h:122 settings_autostart.h:153
 msgid "No Audiosync"
-msgstr ""
+msgstr "FEHLER: Audiosynch fehlgeschlagen"
 
 #: panel_settings_autostart.h:131 settings_autostart.h:162
 msgid "Boot Resolution"
@@ -2878,7 +2878,7 @@ msgstr "Videomode"
 msgid ""
 "Do you really want to start the Wizard?\n"
 "The Box will reboot and the Wizard will be started!"
-msgstr ""
+msgstr "ACHTUNG: Soll der Assistent ausgeführt werden?\nIhr Reciever wird zum Ausführen neugestartet."
 
 #: play.h:396 play.h:430 plugins_imdbapi_skin.xml.h:9
 #: plugins_imdb_skin.xml.h:9 plugins_tmc_skin.xml.h:16
@@ -4489,7 +4489,7 @@ msgstr "Receiver startet jetzt neu!"
 
 #: restoredefault.h:23
 msgid "Can't restore settings"
-msgstr "Wiederherstellung kann nicht durchgeführt werden!"
+msgstr "FEHLER: Wiederherstellung kann nicht durchgeführt werden!"
 
 #: restoredefault.h:32
 msgid ""
@@ -4507,7 +4507,7 @@ msgstr ""
 
 #: rgui.h:30
 msgid "Can't connect to server !"
-msgstr "Keine Verbindung zum Server möglich!"
+msgstr "FEHLER: Keine Verbindung zum Server möglich!"
 
 #: rgui.h:118
 msgid "Send remote box into standby ?"
@@ -4515,7 +4515,7 @@ msgstr "Remote Box in Standby versetzen?"
 
 #: rgui.h:134
 msgid "Connection to server lost !"
-msgstr "Verbindung zum Server verloren!"
+msgstr "FEHLER: Verbindung zum Server verloren!"
 
 #: rtl2now.h:28
 msgid ""
@@ -4962,7 +4962,7 @@ msgstr "IP-Addressen Einstellungen"
 
 #: skin_default_skin.xml.h:59
 msgid "ADD ALL"
-msgstr "alle gefundenen Sender speichern"
+msgstr "Alle Sender hinzufügen"
 
 #: skin_default_skin.xml.h:60
 msgid "ADD BOUQUET"
@@ -4970,7 +4970,7 @@ msgstr "Favoriten hinzufügen"
 
 #: skin_default_skin.xml.h:61
 msgid "ADD ONE"
-msgstr "markierten Sender speichern"
+msgstr "Einzeln hinzufügen"
 
 #: skin_default_skin.xml.h:62
 msgid "add service"
@@ -4999,7 +4999,7 @@ msgid ""
 "select the sender in the right box and then save it with the red button that "
 "station. If you do not do this and go to exit out the search not saved."
 msgstr ""
-"Nach der manuellen Suche müssen Sie mit -Grün- die gefundenen Kanäle "
+"Nach der manuellen Suche müssen Sie mit -Grün- die gefundenen Sender "
 "abspeichern. Um manuell einen Sender hinzuzufügen, muss man den Sender im "
 "rechten Feld markieren und dann mit -Rot- abspeichern. Exit speichert das "
 "Suchergebnis nicht."
@@ -5175,7 +5175,7 @@ msgstr "Favoriten Liste"
 
 #: skin_default_skin.xml.h:114
 msgid "Bouquet Type"
-msgstr "Favoriten Typ"
+msgstr "Favoriten Einträge"
 
 #: skin_default_skin.xml.h:115
 msgid "Brightness"
@@ -5308,7 +5308,7 @@ msgstr "Kopieren / Verschieben"
 
 #: skin_default_skin.xml.h:152
 msgid "copy service"
-msgstr "Sender kopieren"
+msgstr "Zu Favoriten kopieren"
 
 #: skin_default_skin.xml.h:153
 msgid "CPU"
@@ -5376,7 +5376,7 @@ msgstr "Lösche EPG nach dem Einlesen"
 
 #: skin_default_skin.xml.h:174
 msgid "del startchannel"
-msgstr "lösche Startsender"
+msgstr "Startsender entfernen"
 
 #: skin_default_skin.xml.h:175
 msgid "DESC"
@@ -5506,15 +5506,15 @@ msgstr "Freier EPG Speicher (KB)"
 
 #: skin_default_skin.xml.h:207
 msgid "Epg List Mode"
-msgstr "EPG Hintergrundsuche"
+msgstr "Hintergrundsuche"
 
 #: skin_default_skin.xml.h:208
 msgid "EPG Path"
-msgstr "EPG Pfad"
+msgstr "Speicherpfad"
 
 #: skin_default_skin.xml.h:209
 msgid "Epg Refresh Time"
-msgstr "EPG Aktualisierungszeit"
+msgstr "Aktualisierungszeit"
 
 #: skin_default_skin.xml.h:210
 msgid "EPG Reset"
@@ -5522,7 +5522,7 @@ msgstr "EPG löschen"
 
 #: skin_default_skin.xml.h:211
 msgid "EPG Save Mode"
-msgstr "EPG Speichermodus"
+msgstr "EPG Speichern"
 
 #: skin_default_skin.xml.h:212
 msgid "EPG Scanlist"
@@ -6117,7 +6117,7 @@ msgstr "Hostname"
 
 #: skin_default_skin.xml.h:308
 msgid "How many days"
-msgstr "Wie viele Tage"
+msgstr "Anzahl Tage"
 
 #: skin_default_skin.xml.h:309
 msgid "HTTPD Port"
@@ -6409,7 +6409,7 @@ msgstr "Bewegen"
 
 #: skin_default_skin.xml.h:384
 msgid "move service"
-msgstr "Sender verschieben"
+msgstr "In Favoriten verschieben"
 
 #: skin_default_skin.xml.h:385
 msgid "Moviepath"
@@ -6804,7 +6804,7 @@ msgstr "Neu laden"
 
 #: skin_default_skin.xml.h:491 skin_default_skin.xml.h:492
 msgid "Remove emthy Bouquet"
-msgstr "Lösche leere Favoriten Ordner"
+msgstr "Lösche leere Favoriten"
 
 #: skin_default_skin.xml.h:492 skin_default_skin.xml.h:493
 msgid "REMOVE ENTRY"
@@ -6812,7 +6812,7 @@ msgstr "Lösche Eintrag"
 
 #: skin_default_skin.xml.h:493 skin_default_skin.xml.h:494
 msgid "remove service"
-msgstr "Lösche Sender"
+msgstr "Aus Favoriten entfernen"
 
 #: skin_default_skin.xml.h:494 skin_default_skin.xml.h:495
 msgid "Remove unused Channels in Bouquets"
@@ -6832,7 +6832,7 @@ msgstr "Wiederholungsmodus"
 
 #: skin_default_skin.xml.h:498 skin_default_skin.xml.h:499
 msgid "RESET"
-msgstr ""
+msgstr "Reset"
 
 #: skin_default_skin.xml.h:499 skin_default_skin.xml.h:500
 msgid "Resolution:"
@@ -7040,7 +7040,7 @@ msgstr "Nach der Aufnahme"
 #: skin_default_skin.xml.h:556 skin_default_skin.xml.h:557
 #: skin_default_skin.xml.h:558
 msgid "set startchannel"
-msgstr "Als Startsender setzen"
+msgstr "Startsender festlegen"
 
 #: skin_default_skin.xml.h:558 skin_default_skin.xml.h:559
 #: skin_default_skin.xml.h:560
@@ -7166,7 +7166,7 @@ msgstr "Softcam Auswahl"
 #: skin_default_skin.xml.h:586 skin_default_skin.xml.h:587
 #: skin_default_skin.xml.h:588
 msgid "sort service"
-msgstr "Sender sortieren"
+msgstr "Favoriten sortieren"
 
 #: skin_default_skin.xml.h:587 skin_default_skin.xml.h:588
 #: skin_default_skin.xml.h:589
@@ -7201,7 +7201,7 @@ msgstr ""
 #: skin_default_skin.xml.h:594 system_update.h:88 system_update.h:210
 #: skin_default_skin.xml.h:595 skin_default_skin.xml.h:596
 msgid "stable"
-msgstr "stabil"
+msgstr "UPDATE-Img"
 
 #: skin_default_skin.xml.h:596 skin_default_skin.xml.h:597
 #: skin_default_skin.xml.h:598
@@ -8029,7 +8029,7 @@ msgstr ""
 
 #: system_backup_restore.h:95
 msgid "BACKUP LOG"
-msgstr ""
+msgstr "Backup Log"
 
 #: system_infos.h:49
 msgid "Free Space"
@@ -8069,7 +8069,7 @@ msgstr "USB Informationen"
 
 #: system_update.h:90 system_update.h:216
 msgid "unstable"
-msgstr "Betaimage"
+msgstr "svn-Betaimage"
 
 #: system_update.h:123
 msgid "non-version"
@@ -8613,7 +8613,7 @@ msgstr "Uhrzeit (klein)"
 
 #: vfdisplay.h:38
 msgid "channel number"
-msgstr "Sendernummer"
+msgstr "Programmplatz"
 
 #: vfdisplay.h:45
 msgid "date + time"
@@ -8774,18 +8774,18 @@ msgstr ""
 #: keyactions.h:51 keyactions.h:98 settings_redbutton.h:13
 #: settings_pluginbutton.h:13
 msgid "Auto Resolution"
-msgstr ""
+msgstr "Automatische Auflösung"
 
 #: keyactions.h:57 keyactions.h:126 settings_bluebutton.h:18
 #: settings_redbutton.h:19 settings_pluginbutton.h:19
 msgid "Sleep Timer"
-msgstr ""
+msgstr "Ausschalttimer"
 
 #: keyactions.h:59 keyactions.h:91 settings_bluebutton.h:20
 #: settings_redbutton.h:21 videomode.h:17 videomode.h:34
 #: settings_pluginbutton.h:21
 msgid "Subchannel"
-msgstr ""
+msgstr "Optionskanal"
 
 #: keyactions.h:105 settings_bluebutton.h:15 settings_redbutton.h:12
 #: settings_redbutton.h:44 settings_pluginbutton.h:12
@@ -8807,7 +8807,7 @@ msgstr "Netzwerk Browser - zeige Freigaben"
 
 #: play.h:619 play.h:687
 msgid "AV Settings"
-msgstr ""
+msgstr "AV Einstellungen"
 
 #: play.h:620 play.h:695
 msgid "iD3Tag Info"
@@ -8984,7 +8984,7 @@ msgstr "Blaue Taste - Belegungsmenü"
 #: settings_bluebutton.h:12 settings_bluebutton.h:43 settings_redbutton.h:16
 #: settings_pluginbutton.h:16
 msgid "TV / Radio Switch"
-msgstr ""
+msgstr "TV / Radio Umschalten"
 
 #: settings_redbutton.h:6
 msgid "Red Key Action - Setup"
@@ -9083,15 +9083,15 @@ msgstr "Streamen mit Puffer (4MB)"
 
 #: tithek.h:1306
 msgid "File Caching Playback (10MB / 120s)"
-msgstr ""
+msgstr "Im Cache Zwischenspeicherrn (10MB / 120 Sek)"
 
 #: tithek.h:1310
 msgid "File Caching Playback (20MB / 240s)"
-msgstr ""
+msgstr "Im Cache Wischenspeichern (20MB / 240 Sek)"
 
 #: tithek.h:1314
 msgid "File Caching Playback (30MB / 360s)"
-msgstr ""
+msgstr "Im Cache Zwischenspeichern (30MB / 360 Sek)"
 
 #: unicable.h:197
 msgid "Unicable manufacturer"
@@ -9115,7 +9115,7 @@ msgstr "Seitenverhältnis Einstellungen"
 
 #: videomode.h:25 videomode.h:27
 msgid "Videomode"
-msgstr ""
+msgstr "Bildqualität"
 
 #: settings_pluginbutton.h:6
 msgid "Plugin Key Action - Setup"
