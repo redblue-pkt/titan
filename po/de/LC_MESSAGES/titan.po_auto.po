@@ -5199,7 +5199,7 @@ msgstr "CAID Sperren"
 
 #: skin_default_skin.xml.h:122
 msgid "cancel"
-msgstr "Abbrechen"
+msgstr "abbrechen"
 
 #: skin_default_skin.xml.h:124
 msgid "Change Channelname"
@@ -7201,7 +7201,7 @@ msgstr ""
 #: skin_default_skin.xml.h:594 system_update.h:88 system_update.h:210
 #: skin_default_skin.xml.h:595 skin_default_skin.xml.h:596
 msgid "stable"
-msgstr "UPDATE"
+msgstr "stabil"
 
 #: skin_default_skin.xml.h:596 skin_default_skin.xml.h:597
 #: skin_default_skin.xml.h:598
