@@ -1344,7 +1344,7 @@ msgstr "FEHLER: Installation fehlgeschlagen!"
 #: extensions.h:247
 msgid "TPK Install done, your system will reboot !"
 msgstr ""
-"Die gewünschte Plugin wurde erfolgreich installiert.\n"
+"Das Plugin wurde erfolgreich installiert.\n"
 "Das System startet jetzt neu."
 
 #: extensions.h:277
