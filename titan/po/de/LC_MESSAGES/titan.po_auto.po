@@ -4644,7 +4644,7 @@ msgstr "blau"
 
 #: screensaveradjust.h:31
 msgid "green"
-msgstr ""
+msgstr "grün"
 
 #: screensaveradjust.h:32
 msgid "red"
@@ -4978,7 +4978,7 @@ msgstr "Eintrag hinzufügen"
 
 #: skin_default_skin.xml.h:63
 msgid "Adjust"
-msgstr "Einstellungen"
+msgstr "Erweitert"
 
 #: skin_default_skin.xml.h:64
 msgid "ae"
@@ -4990,7 +4990,7 @@ msgstr "Ä"
 
 #: skin_default_skin.xml.h:66
 msgid "After EPG Scan"
-msgstr "Nach EPG Suche"
+msgstr "Nach Aktualisierung"
 
 #: skin_default_skin.xml.h:67
 msgid ""
@@ -5163,7 +5163,7 @@ msgstr "Anpassen"
 
 #: skin_default_skin.xml.h:111
 msgid "Blindscan Settings"
-msgstr "Einstellungen"
+msgstr "Blindscan"
 
 #: skin_default_skin.xml.h:112
 msgid "Blue Button"
@@ -6877,7 +6877,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:513 skin_default_skin.xml.h:514
 msgid "Rotor Settings"
-msgstr "Einstellungen"
+msgstr "Rotor"
 
 #: skin_default_skin.xml.h:514 skin_default_skin.xml.h:515
 msgid "Runtime"
@@ -6961,7 +6961,7 @@ msgstr "Bildschirmschoner"
 
 #: skin_default_skin.xml.h:538 skin_default_skin.xml.h:539
 msgid "Screensaver Adjust"
-msgstr "Einstellungen"
+msgstr "Bildschirmschoner"
 
 #: skin_default_skin.xml.h:539 skin_default_skin.xml.h:540
 msgid "screensaver background"
@@ -7551,7 +7551,7 @@ msgstr "Konfiguration"
 #: skin_default_skin.xml.h:675 skin_default_skin.xml.h:676
 #: skin_default_skin.xml.h:677
 msgid "Tuner Configuration"
-msgstr "Einstellungen"
+msgstr "Tuner Konfiguration"
 
 #: skin_default_skin.xml.h:676 skin_default_skin.xml.h:677
 #: skin_default_skin.xml.h:678
