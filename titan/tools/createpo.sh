@@ -55,7 +55,8 @@ for ROUND in $POLIST; do
 		xgettext --omit-header -j -k_ *.* -o $ROUND_UTF
 
 		iconv -f ISO-8859-1 -t UTF-8 $ROUND_EDIT > $ROUND_EDIT_UTF		
-		msgmerge $ROUND_EDIT_UTF $ROUND_UTF > $ROUND_MERGE_UTF
+#		msgmerge $ROUND_EDIT_UTF $ROUND_UTF > $ROUND_MERGE_UTF
+		msgmerge $ROUND_UTF $ROUND_EDIT_UTF > $ROUND_MERGE_UTF
 		iconv -f UTF-8 -t ISO-8859-1 $ROUND_MERGE_UTF > $ROUND_MERGE
 		
 		SEARCH=`cat $ROUND_MERGE | grep -n "Content-Transfer-Encoding: 8bit" | cut -d":" -f1`
