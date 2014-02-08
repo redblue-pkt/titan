@@ -32,6 +32,7 @@ SUBDIRS = \
 	streaminfo \
 	tinews \
 	tithek \
+	tsSchnitt \
 	tmc \
 	tmdb \
 	TopfieldVFD \
