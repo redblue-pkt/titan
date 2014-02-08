@@ -65,6 +65,7 @@ tithek/Makefile
 tmc/Makefile
 tmdb/Makefile
 TopfieldVFD/Makefile
+tsSchnitt/Makefile
 usbreset/Makefile
 weather/Makefile
 wins3/Makefile
