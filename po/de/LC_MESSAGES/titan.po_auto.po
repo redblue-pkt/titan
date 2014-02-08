@@ -1381,7 +1381,7 @@ msgid ""
 "If the plugin is not active\n"
 "reboot the box."
 msgstr ""
-"Einige Erweiterungen benötigen einen Neustart.\n"
+"Einige Plugins benötigen einen Neustart.\n"
 "Sollte die Erweiterung nicht verfügbar sein,\n"
 "starten Sie den Receiver neu."
 
@@ -1406,7 +1406,7 @@ msgstr "FEHLER: Aktualisierung fehlgeschlagen!"
 #: extensions.h:432
 msgid "TPK Upgrade done, your system will reboot !"
 msgstr ""
-"Alle Erweiterungen wurden erfolgreich aktualisiert.\n"
+"Alle Plugins wurden erfolgreich aktualisiert.\n"
 "Das System wird neu gestartet."
 
 #: facebook.h:66 facebook.h:167
@@ -1584,11 +1584,11 @@ msgstr "Laufwerk für Aufnahmen entfernen."
 
 #: harddisk.h:235 harddisk.h:720
 msgid "use medium for extension"
-msgstr "Laufwerk für Erweiterungen verwenden."
+msgstr "Laufwerk für Plugins verwenden."
 
 #: harddisk.h:240
 msgid "del medium for extension"
-msgstr "Laufwerk für Erweiterungen entfernen."
+msgstr "Laufwerk für Plugins entfernen."
 
 #: harddisk.h:245 harddisk.h:722
 msgid "use medium for swap"
@@ -5546,11 +5546,11 @@ msgstr "Expertenmodus"
 
 #: skin_default_skin.xml.h:218
 msgid "Extensions"
-msgstr "Erweiterungen"
+msgstr "Plugins"
 
 #: skin_default_skin.xml.h:219
 msgid "Extensions..."
-msgstr "Erweiterungen"
+msgstr "Plugins"
 
 #: skin_default_skin.xml.h:220
 msgid "Ext. Modul detect (needs reboot)"
@@ -6635,7 +6635,7 @@ msgstr "darstellen"
 
 #: skin_default_skin.xml.h:445 skin_default_skin.xml.h:446
 msgid "Plugins"
-msgstr "Erweiterungen"
+msgstr "Plugins"
 
 #: skin_default_skin.xml.h:446 skin_default_skin.xml.h:447
 msgid "PMT PID:"
@@ -7501,22 +7501,22 @@ msgstr "TPK installieren - Installationsmedium auswählen"
 #: skin_default_skin.xml.h:663 skin_default_skin.xml.h:664
 #: skin_default_skin.xml.h:665
 msgid "TPK media (media)"
-msgstr "Erweiterungen installieren (Lokal)"
+msgstr "Plugins installieren (Lokal)"
 
 #: skin_default_skin.xml.h:664 skin_default_skin.xml.h:665
 #: skin_default_skin.xml.h:666
 msgid "TPK remove"
-msgstr "Erweiterungen löschen"
+msgstr "Plugins löschen"
 
 #: skin_default_skin.xml.h:665 skin_default_skin.xml.h:666
 #: skin_default_skin.xml.h:667
 msgid "TPK tmp (tmp)"
-msgstr "Erweiterungen installieren (tmp)"
+msgstr "Plugins installieren (tmp)"
 
 #: skin_default_skin.xml.h:666 skin_default_skin.xml.h:667
 #: skin_default_skin.xml.h:668
 msgid "TPK upgrade (online)"
-msgstr "Erweiterungen aktualisieren (Online)"
+msgstr "Plugins aktualisieren (Online)"
 
 #: skin_default_skin.xml.h:667 skin_default_skin.xml.h:668
 #: skin_default_skin.xml.h:669
@@ -7972,7 +7972,7 @@ msgstr "FEHLER: Wiederherstellung fehlgeschlagen - siehe Logdatei"
 
 #: system_backup_restore.h:43
 msgid "Update Plugins to new Version?"
-msgstr "Installierte Erweiterungen aktualisieren?"
+msgstr "Installierte Plugins aktualisieren?"
 
 #: system_backup_restore.h:51
 msgid "RESTORE ERROR"
@@ -8579,7 +8579,7 @@ msgid ""
 "Delete Plugins to free space"
 msgstr ""
 "Aktivierungscode kann nicht gespeichert werden.\n"
-"Bitte löschen Sie Erweiterungen um Speicherplatz freizugeben."
+"Bitte löschen Sie Plugins um Speicherplatz freizugeben."
 
 #: unlock.h:71
 msgid "Code ok"
@@ -8697,7 +8697,7 @@ msgstr "TPK installieren - Kategorie wählen"
 
 #: extensions.h:271
 msgid "Tpk Remove - select file"
-msgstr "Erweiterungen löschen"
+msgstr "Plugins löschen"
 
 #: filemanager.h:84 play.h:612
 msgid "Menu"
