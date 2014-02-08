@@ -708,7 +708,7 @@ msgid ""
 "This Plugin is only for Betatester and can change your Settings!\n"
 "Realy run it?"
 msgstr ""
-"Diese Erweiterung ist nur für Betatester und könnte Ihre Einstellungen "
+"Dieses Plugin ist nur für Betatester und könnte Ihre Einstellungen "
 "verändern!\n"
 "Trotzdem ausführen?"
 
@@ -1323,7 +1323,7 @@ msgstr ""
 "Wenn Sie ein anderes Paket aus dieser Sektion installieren wollen, entfernen "
 "Sie zuerst das installierte Paket. Ist das gewünschte Plugin nach einer "
 "Neuinstallation der TitanNit Software im TitanNit Menü nicht sichtbar, "
-"führen Sie bitte eine Tpk Aktualisierung durch. "
+"führen Sie bitte eine Plugin Aktualisierung durch. "
 
 #: extensions.h:212 extensions.h:353
 msgid "Installing"
@@ -1335,7 +1335,7 @@ msgstr "gestartet"
 
 #: extensions.h:230
 msgid "Tpk Install Info - Install OK"
-msgstr "Erweiterung wurde erfolgreich installiert"
+msgstr "Plugin wurde erfolgreich installiert"
 
 #: extensions.h:234 extensions.h:239
 msgid "Tpk Install Info - Install ERROR"
@@ -1344,21 +1344,21 @@ msgstr "FEHLER: Installation fehlgeschlagen!"
 #: extensions.h:247
 msgid "TPK Install done, your system will reboot !"
 msgstr ""
-"Die gewünschte Erweiterung wurde erfolgreich installiert.\n"
+"Die gewünschte Plugin wurde erfolgreich installiert.\n"
 "Das System startet jetzt neu."
 
 #: extensions.h:277
 msgid "Removeing"
-msgstr "Die ausgewählte Erweiterung wird entfernt."
+msgstr "Das Plugin wird entfernt."
 
 #: extensions.h:282
 msgid "Tpk Remove Info"
-msgstr "Info zur TPK Deinstallation"
+msgstr "Info zur Plugin Deinstallation"
 
 #: extensions.h:290
 msgid "Tpk Remove Info - Remove OK"
 msgstr ""
-"Info zur TPK Deinstallation. Die Deinstallation wurde erfolgreich "
+"Info zur Plugin Deinstallation. Die Deinstallation wurde erfolgreich "
 "abgeschlossen."
 
 #: extensions.h:297
@@ -1368,12 +1368,12 @@ msgstr "FEHLER: Entfernen fehlgeschlagen!"
 #: extensions.h:304
 msgid "TPK Remove done, your system will reboot !"
 msgstr ""
-"Die gewünschte TPK Erweiterung wurde erfolgreich entfernt.\n"
+"Das Plugin wurde erfolgreich entfernt.\n"
 "Das System startet jetzt neu."
 
 #: extensions.h:336 extensions.h:478
 msgid "No plugin found."
-msgstr "FEHLER: Keine Erweiterung gefunden!"
+msgstr "FEHLER: Kein Plugin gefunden!"
 
 #: extensions.h:392
 msgid ""
@@ -1382,13 +1382,13 @@ msgid ""
 "reboot the box."
 msgstr ""
 "Einige Plugins benötigen einen Neustart.\n"
-"Sollte die Erweiterung nicht verfügbar sein,\n"
+"Sollte das Plugin nicht verfügbar sein,\n"
 "starten Sie den Receiver neu."
 
 #: extensions.h:396
 msgid "TPK Tmp Install done, your system will reboot !"
 msgstr ""
-"TPK Installation aus tmp wurde erfolgreich durchgeführt.\n"
+"Plugin Installation aus tmp wurde erfolgreich durchgeführt.\n"
 "Das System wird neu gestartet."
 
 #: extensions.h:420 extensions.h:424
@@ -1678,7 +1678,7 @@ msgid ""
 msgstr ""
 "FEHLER: Festplatten mit einer Speicherkapazität über 2 TB werden nicht "
 "unterstützt.\n"
-"Installieren Sie bitte erst die Erweiterung 'parted' um die Festplatte zu "
+"Installieren Sie bitte erst das Plugin 'parted' um die Festplatte zu "
 "nutzen!"
 
 #: harddisk.h:632
@@ -2083,7 +2083,7 @@ msgstr "Datum/Uhrzeit"
 
 #: mc_dateibrowser.h:38
 msgid "Install File Manager Tpk first !"
-msgstr "ACHTUNG: Sie müssen erst die Erweiterung 'Filemanager' installieren!"
+msgstr "ACHTUNG: Sie müssen erst das Plugin 'Filemanager' installieren!"
 
 #: mc_global.h:541 mc_global.h:569 mc_global.h:1064 mc_global.h:1065
 msgid "Random-On"
@@ -2092,7 +2092,7 @@ msgstr "Zufällige Wiedergabe an"
 #: mc_internetbrowser.h:38
 msgid "Install netsurf Internetbrowser Tpk first !"
 msgstr ""
-"ACHTUNG: Sie müssen erst die Erweiterung 'Netsurf Internetbrowser' "
+"ACHTUNG: Sie müssen erst das Plugin 'Netsurf Internetbrowser' "
 "installieren!"
 
 #: mc_main.h:37 mc_main.h:42 mc_main.h:47 mc_main.h:73 mc_main.h:78
@@ -2105,7 +2105,7 @@ msgstr "ACHTUNG: Menü nicht verfügbar!"
 
 #: mc_mediathek.h:37
 msgid "Install Tithek Tpk first !"
-msgstr "ACHTUNG: Sie müssen erst die Erweiterung 'Tithek' installieren!"
+msgstr "ACHTUNG: Sie müssen erst das Plugin 'Tithek' installieren!"
 
 #: mc_pictureplayer_settings.h:29 panel_settings_autostart.h:60
 #: panel_settings_autostart.h:132 settings_autostart.h:51
@@ -2190,7 +2190,7 @@ msgstr "5s (Standard)"
 
 #: mc_wetterinfo.h:38
 msgid "Install Weather Tpk first !"
-msgstr "ACHTUNG: Sie müssen erst die Erweiterung 'Wetter' installieren!"
+msgstr "ACHTUNG: Sie müssen erst das Plugin 'Wetter' installieren!"
 
 #: mediadbedit.h:75
 msgid "unlock -> lock it"
@@ -2416,7 +2416,7 @@ msgid ""
 "For Better Win7 Support install please Tpk Install > Network > Smbclient"
 msgstr ""
 "ACHTUNG: Für eine bessere Kompatibilität mit Windows 7 installieren Sie erst "
-"die Erweiterung 'SMB-Client'!"
+"das Plugin 'SMB-Client'!"
 
 #: networkbrowser.h:1005 networkbrowser.h:1011 networkbrowser.h:1021
 msgid "Anonymous login Access Denied !"
@@ -3207,7 +3207,7 @@ msgstr "Regisseur"
 
 #: plugins_imdbapi_skin.xml.h:4 skins_imdbapi_skin.xml.h:4
 msgid "IMDb-API - Plugin"
-msgstr "IMDb - API Erweiterung"
+msgstr "IMDb - API Plugin"
 
 #: plugins_imdbapi_skin.xml.h:5 plugins_imdb_skin.xml.h:5
 #: plugins_tmdb_skin.xml.h:4 skins_imdbapi_skin.xml.h:5
@@ -3247,7 +3247,7 @@ msgstr "Autor:"
 
 #: plugins_imdb_skin.xml.h:4 skins_imdb_skin.xml.h:4
 msgid "IMDb - Plugin"
-msgstr "IMDb Erweiterung"
+msgstr "IMDb Plugin"
 
 #: plugins_instar_skin.xml.h:1 skins_instar_skin.xml.h:1
 msgid "IP-Kammera Einstellungen"
@@ -8395,9 +8395,9 @@ msgid ""
 "Can't get detail media infos\n"
 "Please install it"
 msgstr ""
-"IMDB Erweiterung wurde nicht gefunden!\n"
+"IMDB Plugin wurde nicht gefunden!\n"
 "Kann die angeforderten Details nicht abrufen.\n"
-"Bitte installieren Sie die Erweiterung."
+"Bitte installieren Sie das Plugin."
 
 #: tmdb.h:922
 msgid "Error, found result without imdbid we can't this save in MediaDB"
@@ -8791,7 +8791,7 @@ msgstr "Optionskanal"
 #: settings_redbutton.h:44 settings_pluginbutton.h:12
 #: settings_pluginbutton.h:44
 msgid "Extensions List"
-msgstr "Erweiterungsliste"
+msgstr "Plugin Liste"
 
 #: mc_global.h:600 mc_global.h:609
 msgid "Load Playlist"
