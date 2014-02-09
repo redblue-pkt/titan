@@ -1316,7 +1316,7 @@ msgid ""
 "then perform an update by Tpk to: "
 msgstr ""
 "Wenn Sie ein anderes Paket aus dieser Sektion installieren wollen, entfernen "
-"Sie zuerst das installierte. Ist nach einer Neuinstallation das Plugin\n"
+"Sie zuerst das Installierte. Ist nach einer Neuinstallation das Plugin\n"
 "nicht im Menü sichtbar, führen Sie bitte eine Aktualisierung durch."
 
 #: extensions.h:212 extensions.h:353
@@ -1389,7 +1389,7 @@ msgstr ""
 
 #: extensions.h:420 extensions.h:424
 msgid "Tpk Update Info - Update ERROR"
-msgstr "FEHLER: Plugin aktualisierung fehlgeschlagen!"
+msgstr "FEHLER: Aktualisierung fehlgeschlagen!"
 
 #: extensions.h:420
 msgid "Can't get all TPK index !"
