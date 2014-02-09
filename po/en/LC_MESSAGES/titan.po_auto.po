@@ -624,7 +624,8 @@ msgstr ""
 msgid ""
 "This Plugin is only for Betatester and can change your Settings!\n"
 "Realy run it?"
-msgstr "This Plugin is only for Betatesters and could apply changes\n"
+msgstr ""
+"This Plugin is only for Betatesters and could apply changes\n"
 "to your settings. Do you want to run the application?"
 
 #: bgdownload.h:176
@@ -1037,7 +1038,8 @@ msgstr "The hosters URL is not http://"
 #: divxstage.h:79 novamov.h:80 nowvideo.h:87 primeshare.h:79 videoweed.h:80
 msgid ""
 "The file is being transfered to our other servers. This may take few minutes."
-msgstr "The designated file is being transfered to our other Servers.\n"
+msgstr ""
+"The designated file is being transfered to our other Servers.\n"
 "This may take a few Minutes. Please try again later."
 
 #: divxstage.h:150 faststream.h:79 faststream.h:90 faststream.h:102
@@ -1061,7 +1063,8 @@ msgstr ""
 msgid ""
 "DLNA not started,\n"
 "Please check your config."
-msgstr "DLNA not started.\n"
+msgstr ""
+"DLNA not started.\n"
 "Please check your configuration."
 
 #: dlna.h:345
@@ -1220,7 +1223,8 @@ msgstr ""
 
 #: epgsettings.h:258
 msgid "Deavtivate Refresh Time and After EPG in scan-mode"
-msgstr "Background scan activated.\n"
+msgstr ""
+"Background scan activated.\n"
 "Timer scan and 'action after scan' is deactivated."
 
 #: epgsettings.h:284
@@ -1285,7 +1289,8 @@ msgstr "Install Information"
 
 #: extensions.h:170
 msgid "Can't install Package. Package to big."
-msgstr "ERROR: The designated package is too big\n"
+msgstr ""
+"ERROR: The designated package is too big\n"
 "and cannot be installed.\n"
 
 #: extensions.h:197
@@ -1302,7 +1307,8 @@ msgid ""
 "package of this section, they only remove the installed packet. Is not the "
 "plugin after reinstalling the software TitanNit in TitanNit Menu Visible "
 "then perform an update by Tpk to: "
-msgstr "You may only install one Plugin from this section.\n"
+msgstr ""
+"You may only install one Plugin from this section.\n"
 "If you want to install a plugin other than the one installed\n"
 "you will have to remove the installed one first. Should the installed\n"
 "plugin not be visible after updating to a new version of TitanNit you will\n"
@@ -1326,7 +1332,8 @@ msgstr "ERROR: Installation failed!"
 
 #: extensions.h:247
 msgid "TPK Install done, your system will reboot !"
-msgstr "Installed successfully.\n"
+msgstr ""
+"Installed successfully.\n"
 "Your Receiver will restart now"
 
 #: extensions.h:271
@@ -1351,7 +1358,8 @@ msgstr "ERROR: Removing failed"
 
 #: extensions.h:304
 msgid "TPK Remove done, your system will reboot !"
-msgstr "Removed successfully.\n"
+msgstr ""
+"Removed successfully.\n"
 "Your Receiver will restart now"
 
 #: extensions.h:336 extensions.h:478
@@ -1363,12 +1371,14 @@ msgid ""
 "Some plugins needs restart.\n"
 "If the plugin is not active\n"
 "reboot the box."
-msgstr "Some plugins need a restart.\n"
+msgstr ""
+"Some plugins need a restart.\n"
 "Your Receiver will restart now"
 
 #: extensions.h:396
 msgid "TPK Tmp Install done, your system will reboot !"
-msgstr "Installed successfully from tmp.\n"
+msgstr ""
+"Installed successfully from tmp.\n"
 "Your Receiver will restart now"
 
 #: extensions.h:420 extensions.h:424
@@ -1385,7 +1395,8 @@ msgstr "ERROR: Not all plugins were updated!"
 
 #: extensions.h:432
 msgid "TPK Upgrade done, your system will reboot !"
-msgstr "Updated successfully.\n"
+msgstr ""
+"Updated successfully.\n"
 "Your Receiver will restart now"
 
 #: facebook.h:66 facebook.h:167
@@ -1648,7 +1659,8 @@ msgstr ""
 msgid ""
 "HDD > 2TB unsupported.\n"
 "You must first install plugin parted, then you can use this panel."
-msgstr "Harddisk with a capacity larger than 2 TB are not supported.\n"
+msgstr ""
+"Harddisk with a capacity larger than 2 TB are not supported.\n"
 "You must install plugin 'parted' then you can use the Harddisk."
 
 #: harddisk.h:632
@@ -1674,7 +1686,8 @@ msgstr ""
 msgid ""
 "Information: This hard drive size can take a file\n"
 "system check between 30 minutes and 1.5 hours."
-msgstr "INFORMATION: A System Check for this Drive can take\n"
+msgstr ""
+"INFORMATION: A System Check for this Drive can take\n"
 "between 30 Minutes and 1.5 Hours."
 
 #: harddisk.h:805
@@ -1711,7 +1724,8 @@ msgstr "60 Minutes"
 msgid ""
 "Found new Stick/HDD.\n"
 "You can configure it in Harddisk Menu."
-msgstr "A new Stick/Harddisk was found.\n"
+msgstr ""
+"A new Stick/Harddisk was found.\n"
 "You can configure it in the Harddisk Menu."
 
 #: hbbtv.h:362
@@ -1952,8 +1966,7 @@ msgid ""
 msgstr ""
 "For Online Updates please contact Atemio and send this Serial Number\n"
 "\n"
-"your Atemio Serial Number"
-"and your Board-ID:"
+"your Atemio Serial Numberand your Board-ID:"
 
 #: info.h:26
 msgid "Email  \t\tinfo@atemio.de"
