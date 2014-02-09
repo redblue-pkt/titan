@@ -5399,6 +5399,7 @@ msgstr ""
 msgid "Filesystem Check"
 msgstr ""
 
+#: skin_default_skin.xml.h:231
 msgid "Fine move"
 msgstr ""
 
@@ -5468,6 +5469,7 @@ msgstr ""
 msgid "Git Changelog"
 msgstr ""
 
+#: skin_default_skin.xml.h:249
 msgid "Go to startpos"
 msgstr ""
 
@@ -8564,10 +8566,8 @@ msgstr ""
 msgid "\\"
 msgstr ""
 
-#: skin_default_skin.xml.h:231
 msgid "Fine move1"
 msgstr ""
 
-#: skin_default_skin.xml.h:249
 msgid "Go to startpos test"
 msgstr ""
