@@ -8875,12 +8875,3 @@ msgstr "Höchsttemperatur"
 #: weather.h:442 weather.h:460 weather.h:478 weather.h:496
 msgid "Condition: "
 msgstr "Wetter:"
-
-#~ msgid "TiThek PlayList"
-#~ msgstr "Tithek Wiedergabeliste"
-
-#~ msgid "TITHEK SETTINGS"
-#~ msgstr "Einstellungen"
-
-#~ msgid "Fine move"
-#~ msgstr "Rotor langsam bewegen"
