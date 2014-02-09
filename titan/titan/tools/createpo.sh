@@ -76,7 +76,7 @@ for ROUND in $POLIST; do
 		echo "[createpo.sh] msgfmt -v $OUTFILE_PO -o $OUTFILE_MO"
 		msgfmt -v $OUTFILE_PO -o $OUTFILE_MO		
 
-		iconv -f UTF-8 -t ISO-8859-1 $ROUND_UTF > $ROUND
+		iconv -f UTF-8 -t ISO-8859-1 $ROUND_NEW_MERGE > $ROUND
 	else
 		xgettext --omit-header -k_ *.* -o $ROUND
 	fi
