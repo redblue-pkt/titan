@@ -1,4 +1,40 @@
-#: plugins_tithek_skin.xml.h:14 skins_tithek_skin.xml.h:14
+#: dirsort.h:18 dirsort.h:19 dirsort.h:20 dirsort.h:21 dirsort.h:22
+#: dirsort.h:23 mc_imdb.h:78 mc_imdb.h:79 mc_imdb.h:80 mc_imdb.h:81
+#: mc_imdb.h:82 mc_view.h:17 mc_view.h:18 mc_view.h:19 mc_view.h:20
+#: mc_view.h:21 mc_view.h:22 plugins_autotimer_skin.xml.h:13
+#: plugins_callmonitor1_skin.xml.h:19 plugins_catcatch_skin.xml.h:7
+#: plugins_dlna_skin.xml.h:15 plugins_facebook_skin.xml.h:6
+#: plugins_filemanager_skin.xml.h:6 plugins_gmediarender_skin.xml.h:1
+#: plugins_imdbapi_skin.xml.h:11 plugins_imdb_skin.xml.h:11
+#: plugins_instar_skin.xml.h:17 plugins_keylock_skin.xml.h:1
+#: plugins_lcdpearl1_skin.xml.h:14 plugins_lcdsamsung_skin.xml.h:18
+#: plugins_mboxinfo_skin.xml.h:3 plugins_mc_skin.xml.h:69
+#: plugins_networkbrowser_skin.xml.h:37 plugins_news_skin.xml.h:5
+#: plugins_optimize_skin.xml.h:4 plugins_panel_skin.xml.h:28
+#: plugins_permtime_skin.xml.h:1 plugins_readerconfig_skin.xml.h:10
+#: plugins_rgui_skin.xml.h:9 plugins_stock_skin.xml.h:6
+#: plugins_stopifnotused_skin.xml.h:8 plugins_streaminfo_skin.xml.h:6
+#: plugins_tithek_skin.xml.h:14 plugins_tiwakeup_skin.xml.h:9
+#: plugins_tmc_skin.xml.h:18 plugins_tmdb_skin.xml.h:11
+#: plugins_tsSchnitt_skin.xml.h:11 plugins_weather_skin.xml.h:4
+#: plugins_wins3_skin.xml.h:4 plugins_zapback_skin.xml.h:7
+#: skin_default_skin.xml.h:735 skins_autotimer_skin.xml.h:13
+#: skins_callmonitor1_skin.xml.h:19 skins_catcatch_skin.xml.h:7
+#: skins_dlna_skin.xml.h:15 skins_facebook_skin.xml.h:6
+#: skins_filemanager_skin.xml.h:6 skins_gmediarender_skin.xml.h:1
+#: skins_imdbapi_skin.xml.h:11 skins_imdb_skin.xml.h:11
+#: skins_instar_skin.xml.h:17 skins_keylock_skin.xml.h:1
+#: skins_lcdpearl1_skin.xml.h:14 skins_lcdsamsung_skin.xml.h:18
+#: skins_mboxinfo_skin.xml.h:3 skins_mc_skin.xml.h:69
+#: skins_networkbrowser_skin.xml.h:37 skins_news_skin.xml.h:5
+#: skins_optimize_skin.xml.h:4 skins_panel_skin.xml.h:28
+#: skins_permtime_skin.xml.h:1 skins_readerconfig_skin.xml.h:10
+#: skins_rgui_skin.xml.h:9 skins_stock_skin.xml.h:6
+#: skins_stopifnotused_skin.xml.h:8 skins_streaminfo_skin.xml.h:6
+#: skins_tithek_skin.xml.h:14 skins_tiwakeup_skin.xml.h:9
+#: skins_tmc_skin.xml.h:18 skins_tmdb_skin.xml.h:11
+#: skins_tsSchnitt_skin.xml.h:11 skins_weather_skin.xml.h:4
+#: skins_wins3_skin.xml.h:4 skins_zapback_skin.xml.h:7
 msgid ""
 msgstr ""
 "Project-Id-Version: TitanNit 1.49\n"
@@ -23,25 +59,22 @@ msgstr ""
 msgid "Copyright"
 msgstr ""
 
-#: about.h:25 skin_default_skin.xml.h:672 skin_default_skin.xml.h:673
-#: skin_default_skin.xml.h:674
+#: about.h:25 skin_default_skin.xml.h:674
 msgid "Tuner"
 msgstr ""
 
-#: about.h:30 bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2666
-#: httpdfunc.h:2678 hwtest.h:476 moduleconfig.h:345
-#: skin_default_skin.xml.h:693 skinselector.h:138 transponder.h:122
-#: transponder.h:158 transponder.h:194 transponder.h:227 transponder.h:259
-#: transponder.h:295 transponder.h:330 transponder.h:348 transponder.h:364
-#: transponder.h:418 transponder.h:451 transponder.h:480 transponder.h:493
-#: transponder.h:504 transponder.h:574 youtube.h:149 zdf.h:86 httpdfunc.h:2636
-#: httpdfunc.h:2648 httpdfunc.h:2638 httpdfunc.h:2650
-#: skin_default_skin.xml.h:694 skin_default_skin.xml.h:695 stream.h:22
+#: about.h:30 bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2638
+#: httpdfunc.h:2650 hwtest.h:476 moduleconfig.h:345
+#: skin_default_skin.xml.h:695 skinselector.h:138 stream.h:22
+#: transponder.h:122 transponder.h:158 transponder.h:194 transponder.h:227
+#: transponder.h:259 transponder.h:295 transponder.h:330 transponder.h:348
+#: transponder.h:364 transponder.h:418 transponder.h:451 transponder.h:480
+#: transponder.h:493 transponder.h:504 transponder.h:574 youtube.h:149
+#: zdf.h:86
 msgid "unknown"
 msgstr ""
 
-#: about.h:32 skin_default_skin.xml.h:677 skin_default_skin.xml.h:678
-#: skin_default_skin.xml.h:679
+#: about.h:32 skin_default_skin.xml.h:679
 msgid "Tunertype"
 msgstr ""
 
@@ -65,18 +98,18 @@ msgstr ""
 #: filemanager.h:321 filemanager.h:331 filemanager.h:355 filenuke.h:37
 #: filenuke.h:84 filenuke.h:96 filenuke.h:108 filenuke.h:157 flashx.h:26
 #: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:6450 gmediarender.h:115 harddisk.h:345 harddisk.h:350
+#: global.h:6487 gmediarender.h:115 harddisk.h:345 harddisk.h:350
 #: harddisk.h:377 harddisk.h:381 harddisk.h:433 harddisk.h:624 harddisk.h:632
 #: harddisk.h:666 harddisk.h:715 harddisk.h:720 harddisk.h:722 harddisk.h:724
 #: harddisk.h:784 harddisk.h:802 harddisk.h:805 harddisk.h:1035 hbbtv.h:362
-#: httpdfunc.h:1098 httpdfunc.h:3049 hwtest.h:88 hwtest.h:93 hwtest.h:98
+#: httpdfunc.h:1098 httpdfunc.h:3021 hwtest.h:88 hwtest.h:93 hwtest.h:98
 #: hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:388
 #: hwtest.h:409 hwtest.h:454 hwtest.h:490 hwtest.h:562 hwtest.h:564
 #: hwtest.h:578 hwtest.h:587 hwtest.h:596 hwtest.h:605 hwtest.h:652
 #: hwtest.h:654 hwtest.h:656 hwtest.h:658 imdbapi.h:200 imdb.h:626
-#: inadyn.h:188 inadyn.h:190 inadyn.h:200 info.h:27 keyactions.h:224 log.h:46
+#: inadyn.h:188 inadyn.h:190 inadyn.h:200 info.h:27 keyactions.h:227 log.h:46
 #: log.h:48 mc_audioplayer.h:328 mc_audioplayer.h:599 mc_audioplayer.h:702
-#: mc_dateibrowser.h:38 mc_global.h:765 mc_global.h:1010
+#: mc_dateibrowser.h:38 mc_global.h:766 mc_global.h:1011
 #: mc_internetbrowser.h:38 mc_internetbrowser.h:41 mc_main.h:37 mc_main.h:42
 #: mc_main.h:47 mc_main.h:73 mc_main.h:78 mc_main.h:200 mc_main.h:209
 #: mc_mediathek.h:37 mc_pictureplayer.h:95 mc_pictureplayer.h:119
@@ -84,7 +117,7 @@ msgstr ""
 #: mc_videoplayer.h:325 mc_videoplayer.h:739 mc_videoplayer.h:774
 #: mc_videoplayer.h:876 mc_videoplayer.h:892 mc_wetterinfo.h:38
 #: mc_wetterinfo.h:41 mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477
-#: mediadb.h:2454 mediadbsettings.h:95 menu.h:153 menu.h:879 menu.h:881
+#: mediadb.h:2454 mediadbsettings.h:95 menu.h:153 menu.h:884 menu.h:886
 #: movreel.h:30 movreel.h:79 movreel.h:91 movreel.h:103 movreel.h:154
 #: movreel.h:202 movshare.h:35 movshare.h:149 myvideo.h:50
 #: networkbrowser.h:944 networkbrowser.h:1005 networkbrowser.h:1009
@@ -97,7 +130,7 @@ msgstr ""
 #: novamov.h:80 nowvideo.h:35 nowvideo.h:87 panel_main.h:29 panel_main.h:135
 #: panel_settings_wizard.h:6 played.h:30 played.h:79 played.h:91 played.h:103
 #: played.h:160 player.h:99 play.h:476 play.h:593 play.h:1241 play.h:1247
-#: play.h:1256 play.h:1257 play.h:1449 play.h:1609 play.h:1620
+#: play.h:1256 play.h:1257 play.h:1450 play.h:1610 play.h:1621
 #: plugins_dlna_skin.xml.h:8 plugins_facebook_skin.xml.h:5
 #: plugins_mboxinfo_skin.xml.h:2 plugins_mc_skin.xml.h:38
 #: plugins_rgui_skin.xml.h:3 plugins_tiwakeup_skin.xml.h:3
@@ -105,8 +138,8 @@ msgstr ""
 #: primeshare.h:79 primeshare.h:124 putlocker.h:32 putlocker.h:79
 #: putlocker.h:85 putlocker.h:136 putlocker.h:146 putlocker.h:219
 #: readerconfig.h:343 readerconfig.h:443 readerconfig.h:444 readerconfig.h:488
-#: readerconfig.h:489 record.h:355 record.h:971 record.h:1422 rectimer.h:556
-#: rectimer.h:1209 rectimer.h:1355 rectimer.h:1367 restoredefault.h:10
+#: readerconfig.h:489 record.h:355 record.h:971 record.h:1422 rectimer.h:557
+#: rectimer.h:1210 rectimer.h:1356 rectimer.h:1368 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:28
 #: scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1888 scan.h:1979
@@ -117,29 +150,21 @@ msgstr ""
 #: skins_wins3_skin.xml.h:3 sock.h:952 softcam.h:403 solarmovie.h:35
 #: solarmovie.h:47 solarmovie.h:295 spinner.h:18 streamcloud.h:31
 #: streamcloud.h:78 streamcloud.h:91 streamcloud.h:122 streamcloud.h:161
-#: stream.h:32 system_backup_restore.h:31 system_backup_restore.h:40
+#: stream.h:33 system_backup_restore.h:31 system_backup_restore.h:40
 #: system_backup_restore.h:43 system_backup_restore.h:51
 #: system_backup_restore.h:80 system_backup_restore.h:82
 #: system_backup_restore.h:88 system_backup_restore.h:95 system_update.h:320
 #: system_update.h:326 system_update.h:333 timeshift.h:113 timeshift.h:155
-#: timeshift.h:162 timeshiftsettings.h:45 titan.c:245 titan.c:309 titan.c:318
-#: titan.c:898 titan.c:907 titan.c:1018 titan.c:1039 titan.c:1045 titan.c:1056
-#: titan.c:1062 tithek_global.h:238 tithek.h:620 tithek.h:1057 tithek.h:1100
+#: timeshift.h:162 timeshiftsettings.h:45 titan.c:246 titan.c:310 titan.c:319
+#: titan.c:912 titan.c:921 titan.c:1032 titan.c:1053 titan.c:1059 titan.c:1070
+#: titan.c:1076 tithek_global.h:238 tithek.h:620 tithek.h:1057 tithek.h:1100
 #: tithek.h:1327 tithek.h:1349 tithek.h:1354 tithek.h:1368 tithek.h:2995
 #: tithek.h:3057 tithek.h:3071 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922 tpk.h:3185
 #: tpk.new.h:3167 tunerconfig.h:772 unlock.h:20 unlock.h:66 unlock.h:71
 #: unlock.h:75 videomode.h:53 videoweed.h:35 videoweed.h:80 vidstream.h:45
 #: vidstream.h:86 vidstream.h:98 vidstream.h:167 xvidstage.h:54
-#: xvidstage.h:100 xvidstage.h:177 youtube.h:197 zdf.h:29 global.h:6475
-#: httpdfunc.h:3019 global.h:6478 httpdfunc.h:3021 global.h:6480
-#: keyactions.h:226 keyactions.h:227 global.h:6494 play.h:1450 play.h:1610
-#: play.h:1621 service.h:709 service.h:950 global.h:6481 rectimer.h:557
-#: rectimer.h:1210 rectimer.h:1356 rectimer.h:1368 titan.c:911 titan.c:920
-#: titan.c:1031 titan.c:1052 titan.c:1058 titan.c:1069 titan.c:1075
-#: stream.h:33 mc_global.h:766 mc_global.h:1011 global.h:6487 menu.h:884
-#: menu.h:886 titan.c:246 titan.c:310 titan.c:319 titan.c:912 titan.c:921
-#: titan.c:1032 titan.c:1053 titan.c:1059 titan.c:1070 titan.c:1076
+#: xvidstage.h:100 xvidstage.h:177 youtube.h:197 zdf.h:29
 msgid "OK"
 msgstr ""
 
@@ -158,19 +183,19 @@ msgstr ""
 #: filemanager.h:208 filemanager.h:281 filemanager.h:291 filemanager.h:321
 #: filemanager.h:331 filemanager.h:355 filenuke.h:37 filenuke.h:84
 #: filenuke.h:96 filenuke.h:108 filenuke.h:157 flashx.h:26 flashx.h:84
-#: flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270 global.h:6450
+#: flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270 global.h:6487
 #: gmediarender.h:115 harddisk.h:345 harddisk.h:350 harddisk.h:377
 #: harddisk.h:381 harddisk.h:433 harddisk.h:624 harddisk.h:632 harddisk.h:666
 #: harddisk.h:715 harddisk.h:720 harddisk.h:722 harddisk.h:724 harddisk.h:784
 #: harddisk.h:802 harddisk.h:805 harddisk.h:1035 hbbtv.h:362 httpdfunc.h:1098
-#: httpdfunc.h:3049 hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103
+#: httpdfunc.h:3021 hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103
 #: hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:388 hwtest.h:409
 #: hwtest.h:454 hwtest.h:490 hwtest.h:562 hwtest.h:564 hwtest.h:578
 #: hwtest.h:587 hwtest.h:596 hwtest.h:605 hwtest.h:652 hwtest.h:654
 #: hwtest.h:656 hwtest.h:658 imdbapi.h:200 imdb.h:626 inadyn.h:188
-#: inadyn.h:190 inadyn.h:200 info.h:27 keyactions.h:224 log.h:46 log.h:48
+#: inadyn.h:190 inadyn.h:200 info.h:27 keyactions.h:227 log.h:46 log.h:48
 #: marker.h:215 marker.h:229 mc_audioplayer.h:328 mc_audioplayer.h:599
-#: mc_audioplayer.h:702 mc_dateibrowser.h:38 mc_global.h:765 mc_global.h:1010
+#: mc_audioplayer.h:702 mc_dateibrowser.h:38 mc_global.h:766 mc_global.h:1011
 #: mc_internetbrowser.h:38 mc_internetbrowser.h:41 mc_main.h:37 mc_main.h:42
 #: mc_main.h:47 mc_main.h:73 mc_main.h:78 mc_main.h:200 mc_main.h:209
 #: mc_mediathek.h:37 mc_pictureplayer.h:95 mc_pictureplayer.h:119
@@ -178,7 +203,7 @@ msgstr ""
 #: mc_videoplayer.h:325 mc_videoplayer.h:739 mc_videoplayer.h:774
 #: mc_videoplayer.h:876 mc_videoplayer.h:892 mc_wetterinfo.h:38
 #: mc_wetterinfo.h:41 mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477
-#: mediadb.h:2454 mediadbsettings.h:95 menu.h:153 menu.h:879 menu.h:881
+#: mediadb.h:2454 mediadbsettings.h:95 menu.h:153 menu.h:884 menu.h:886
 #: movreel.h:30 movreel.h:79 movreel.h:91 movreel.h:103 movreel.h:154
 #: movreel.h:202 movshare.h:35 movshare.h:149 myvideo.h:50
 #: networkbrowser.h:944 networkbrowser.h:1005 networkbrowser.h:1009
@@ -191,52 +216,44 @@ msgstr ""
 #: nowvideo.h:87 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:79 played.h:91 played.h:103 played.h:160 player.h:99
 #: play.h:476 play.h:593 play.h:1241 play.h:1247 play.h:1256 play.h:1257
-#: play.h:1449 play.h:1609 play.h:1620 plugins_catcatch_skin.xml.h:4
+#: play.h:1450 play.h:1610 play.h:1621 plugins_catcatch_skin.xml.h:4
 #: plugins_dlna_skin.xml.h:2 plugins_facebook_skin.xml.h:4
-#: plugins_mboxinfo_skin.xml.h:1 plugins_mc_skin.xml.h:22
-#: plugins_panel_skin.xml.h:15 plugins_rgui_skin.xml.h:2
-#: plugins_tiwakeup_skin.xml.h:2 plugins_wins3_skin.xml.h:1 possetup.h:98
-#: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
-#: putlocker.h:32 putlocker.h:79 putlocker.h:85 putlocker.h:136
-#: putlocker.h:146 putlocker.h:219 readerconfig.h:343 readerconfig.h:443
-#: readerconfig.h:444 readerconfig.h:488 readerconfig.h:489 record.h:90
-#: record.h:355 record.h:971 record.h:1158 record.h:1397 record.h:1422
-#: rectimer.h:556 rectimer.h:1209 rectimer.h:1355 rectimer.h:1367
-#: restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
+#: plugins_instar_skin.xml.h:6 plugins_mboxinfo_skin.xml.h:1
+#: plugins_mc_skin.xml.h:22 plugins_panel_skin.xml.h:15
+#: plugins_rgui_skin.xml.h:2 plugins_tiwakeup_skin.xml.h:2
+#: plugins_wins3_skin.xml.h:1 possetup.h:98 primeshare.h:29 primeshare.h:73
+#: primeshare.h:79 primeshare.h:124 putlocker.h:32 putlocker.h:79
+#: putlocker.h:85 putlocker.h:136 putlocker.h:146 putlocker.h:219
+#: readerconfig.h:343 readerconfig.h:443 readerconfig.h:444 readerconfig.h:488
+#: readerconfig.h:489 record.h:90 record.h:355 record.h:971 record.h:1158
+#: record.h:1397 record.h:1422 rectimer.h:557 rectimer.h:1210 rectimer.h:1356
+#: rectimer.h:1368 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:28 scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1888
 #: scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 scriptexec.h:41 service.h:701
 #: service.h:942 skin_default_skin.xml.h:216 skins_catcatch_skin.xml.h:4
 #: skins_dlna_skin.xml.h:2 skinselector.h:218 skins_facebook_skin.xml.h:4
-#: skins_mboxinfo_skin.xml.h:1 skins_mc_skin.xml.h:22
-#: skins_panel_skin.xml.h:15 skins_rgui_skin.xml.h:2
+#: skins_instar_skin.xml.h:6 skins_mboxinfo_skin.xml.h:1
+#: skins_mc_skin.xml.h:22 skins_panel_skin.xml.h:15 skins_rgui_skin.xml.h:2
 #: skins_tiwakeup_skin.xml.h:2 skins_wins3_skin.xml.h:1 sock.h:952
 #: softcam.h:403 solarmovie.h:35 solarmovie.h:47 solarmovie.h:295 spinner.h:18
 #: streamcloud.h:31 streamcloud.h:78 streamcloud.h:91 streamcloud.h:122
-#: streamcloud.h:161 stream.h:32 system_backup_restore.h:31
+#: streamcloud.h:161 stream.h:33 system_backup_restore.h:31
 #: system_backup_restore.h:40 system_backup_restore.h:43
 #: system_backup_restore.h:51 system_backup_restore.h:80
 #: system_backup_restore.h:82 system_backup_restore.h:88
 #: system_backup_restore.h:95 system_update.h:320 system_update.h:326
 #: system_update.h:333 timeshift.h:113 timeshift.h:155 timeshift.h:162
-#: timeshiftsettings.h:45 titan.c:245 titan.c:309 titan.c:318 titan.c:898
-#: titan.c:907 titan.c:1018 titan.c:1039 titan.c:1045 titan.c:1056
-#: titan.c:1062 tithek_global.h:238 tithek.h:620 tithek.h:1057 tithek.h:1100
+#: timeshiftsettings.h:45 titan.c:246 titan.c:310 titan.c:319 titan.c:912
+#: titan.c:921 titan.c:1032 titan.c:1053 titan.c:1059 titan.c:1070
+#: titan.c:1076 tithek_global.h:238 tithek.h:620 tithek.h:1057 tithek.h:1100
 #: tithek.h:1327 tithek.h:1349 tithek.h:1354 tithek.h:1368 tithek.h:2995
 #: tithek.h:3057 tithek.h:3071 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922 tpk.h:3185
 #: tpk.new.h:3167 tunerconfig.h:772 unlock.h:20 unlock.h:66 unlock.h:71
 #: unlock.h:75 videomode.h:53 videoweed.h:35 videoweed.h:80 vidstream.h:45
 #: vidstream.h:86 vidstream.h:98 vidstream.h:167 xvidstage.h:54
-#: xvidstage.h:100 xvidstage.h:177 youtube.h:197 zdf.h:29 global.h:6475
-#: httpdfunc.h:3019 global.h:6478 httpdfunc.h:3021 global.h:6480
-#: keyactions.h:226 keyactions.h:227 global.h:6494 play.h:1450 play.h:1610
-#: play.h:1621 service.h:709 service.h:950 global.h:6481 rectimer.h:557
-#: rectimer.h:1210 rectimer.h:1356 rectimer.h:1368 titan.c:911 titan.c:920
-#: titan.c:1031 titan.c:1052 titan.c:1058 titan.c:1069 titan.c:1075
-#: stream.h:33 mc_global.h:766 mc_global.h:1011 global.h:6487 menu.h:884
-#: menu.h:886 titan.c:246 titan.c:310 titan.c:319 titan.c:912 titan.c:921
-#: titan.c:1032 titan.c:1053 titan.c:1059 titan.c:1070 titan.c:1076
+#: xvidstage.h:100 xvidstage.h:177 youtube.h:197 zdf.h:29
 msgid "EXIT"
 msgstr ""
 
@@ -270,9 +287,9 @@ msgstr ""
 #: panel_settings_autostart.h:351 panel_settings_autostart.h:360
 #: panel_settings_overclocking.h:214 panel_settings_overclocking.h:234
 #: panel_settings_overclocking.h:244 pin.h:104 pin.h:176 pin.h:180 pin.h:194
-#: play.h:562 play.h:569 play.h:584 readerconfig.h:254 rectimer.h:1068
-#: rectimer.h:1073 rectimer.h:1078 rectimer.h:1083 rectimer.h:1088
-#: rectimer.h:1093 rectimer.h:1098 scan.h:1768 scan.h:2241 scan.h:2245
+#: play.h:562 play.h:569 play.h:584 readerconfig.h:254 rectimer.h:1069
+#: rectimer.h:1074 rectimer.h:1079 rectimer.h:1084 rectimer.h:1089
+#: rectimer.h:1094 rectimer.h:1099 scan.h:1768 scan.h:2241 scan.h:2245
 #: scan.h:2249 scan.h:2253 scan.h:2257 scan.h:2266 scan.h:2270
 #: screensaveradjust.h:19 settings_autostart.h:26 settings_autostart.h:87
 #: settings_autostart.h:144 settings_autostart.h:154 settings_autostart.h:172
@@ -286,9 +303,7 @@ msgstr ""
 #: settings_overclocking.h:244 skinadjust.h:49 timeshiftsettings.h:59
 #: timeshiftsettings.h:63 tithek_settings.h:33 tithek_settings.h:37
 #: tithek_settings.h:41 tmc.h:531 tmc.h:535 tunerconfig.h:184
-#: tunerconfig.h:213 tunerconfig.h:244 tunerconfig.h:277 rectimer.h:1069
-#: rectimer.h:1074 rectimer.h:1079 rectimer.h:1084 rectimer.h:1089
-#: rectimer.h:1094 rectimer.h:1099
+#: tunerconfig.h:213 tunerconfig.h:244 tunerconfig.h:277
 msgid "no"
 msgstr ""
 
@@ -332,9 +347,9 @@ msgstr ""
 #: panel_settings_autostart.h:337 panel_settings_autostart.h:351
 #: panel_settings_overclocking.h:214 panel_settings_overclocking.h:234
 #: panel_settings_overclocking.h:244 pin.h:105 pin.h:177 pin.h:195 play.h:560
-#: play.h:567 play.h:582 readerconfig.h:255 rectimer.h:1069 rectimer.h:1074
-#: rectimer.h:1079 rectimer.h:1084 rectimer.h:1089 rectimer.h:1094
-#: rectimer.h:1099 scan.h:1769 scan.h:2242 scan.h:2246 scan.h:2250 scan.h:2254
+#: play.h:567 play.h:582 readerconfig.h:255 rectimer.h:1070 rectimer.h:1075
+#: rectimer.h:1080 rectimer.h:1085 rectimer.h:1090 rectimer.h:1095
+#: rectimer.h:1100 scan.h:1769 scan.h:2242 scan.h:2246 scan.h:2250 scan.h:2254
 #: scan.h:2258 scan.h:2267 scan.h:2271 screensaveradjust.h:20
 #: settings_autostart.h:26 settings_autostart.h:87 settings_autostart.h:144
 #: settings_autostart.h:154 settings_autostart.h:172 settings_autostart.h:181
@@ -346,8 +361,7 @@ msgstr ""
 #: settings_overclocking.h:214 settings_overclocking.h:234
 #: settings_overclocking.h:244 timeshiftsettings.h:58 timeshiftsettings.h:62
 #: tithek_settings.h:34 tithek_settings.h:38 tithek_settings.h:42 tmc.h:532
-#: tmc.h:536 rectimer.h:1070 rectimer.h:1075 rectimer.h:1080 rectimer.h:1085
-#: rectimer.h:1090 rectimer.h:1095 rectimer.h:1100
+#: tmc.h:536
 msgid "yes"
 msgstr ""
 
@@ -369,22 +383,19 @@ msgstr ""
 
 #: adjust.h:98 mc_audioplayer_settings.h:28 mc_pictureplayer_settings.h:43
 #: mc_videoplayer_settings.h:24 plugins_mc_skin.xml.h:48
-#: skin_default_skin.xml.h:506 skins_mc_skin.xml.h:48
-#: skin_default_skin.xml.h:507
+#: skin_default_skin.xml.h:507 skins_mc_skin.xml.h:48
 msgid "reverse alpha"
 msgstr ""
 
 #: adjust.h:99 mc_audioplayer_settings.h:29 mc_pictureplayer_settings.h:44
 #: mc_videoplayer_settings.h:25 plugins_mc_skin.xml.h:54
-#: skin_default_skin.xml.h:573 skins_mc_skin.xml.h:54
-#: skin_default_skin.xml.h:574 skin_default_skin.xml.h:575
+#: skin_default_skin.xml.h:575 skins_mc_skin.xml.h:54
 msgid "size"
 msgstr ""
 
 #: adjust.h:100 mc_audioplayer_settings.h:30 mc_pictureplayer_settings.h:45
 #: mc_videoplayer_settings.h:26 plugins_mc_skin.xml.h:50
-#: skin_default_skin.xml.h:508 skins_mc_skin.xml.h:50
-#: skin_default_skin.xml.h:509
+#: skin_default_skin.xml.h:509 skins_mc_skin.xml.h:50
 msgid "reverse size"
 msgstr ""
 
@@ -396,8 +407,7 @@ msgstr ""
 
 #: adjust.h:102 mc_audioplayer_settings.h:32 mc_pictureplayer_settings.h:47
 #: mc_videoplayer_settings.h:28 plugins_mc_skin.xml.h:49
-#: skin_default_skin.xml.h:507 skins_mc_skin.xml.h:49
-#: skin_default_skin.xml.h:508
+#: skin_default_skin.xml.h:508 skins_mc_skin.xml.h:49
 msgid "reverse date"
 msgstr ""
 
@@ -405,17 +415,15 @@ msgstr ""
 msgid "Power Menu"
 msgstr ""
 
-#: adjust.h:106 skin_default_skin.xml.h:453 skin_default_skin.xml.h:454
+#: adjust.h:106 skin_default_skin.xml.h:454
 msgid "Power Off"
 msgstr ""
 
-#: adjust.h:107 powerofftimer.h:118 skin_default_skin.xml.h:595
-#: skin_default_skin.xml.h:596 skin_default_skin.xml.h:597
+#: adjust.h:107 powerofftimer.h:118 skin_default_skin.xml.h:597
 msgid "Standby"
 msgstr ""
 
-#: adjust.h:108 skin_default_skin.xml.h:502 softcam.h:291
-#: skin_default_skin.xml.h:503
+#: adjust.h:108 skin_default_skin.xml.h:503 softcam.h:291
 msgid "Restart"
 msgstr ""
 
@@ -423,8 +431,8 @@ msgstr ""
 msgid "Gui Restart"
 msgstr ""
 
-#: adjust.h:112 adjust.h:122 epgsettings.h:145 epgsettings.h:151 network.h:593
-#: adjust.h:176
+#: adjust.h:112 adjust.h:122 adjust.h:176 epgsettings.h:145 epgsettings.h:151
+#: network.h:593
 msgid "deaktiv"
 msgstr ""
 
@@ -464,25 +472,25 @@ msgstr ""
 msgid "intern"
 msgstr ""
 
-#: adjust.h:152 avsettings.h:68 rectimer.h:1164 transponder.h:121
+#: adjust.h:152 avsettings.h:68 rectimer.h:1165 transponder.h:121
 #: transponder.h:133 transponder.h:157 transponder.h:167 transponder.h:193
 #: transponder.h:200 transponder.h:226 transponder.h:234 transponder.h:258
 #: transponder.h:268 transponder.h:294 transponder.h:301 transponder.h:319
 #: transponder.h:337 transponder.h:363 transponder.h:372 transponder.h:378
 #: transponder.h:385 transponder.h:417 transponder.h:427 transponder.h:476
-#: transponder.h:512 rectimer.h:1165
+#: transponder.h:512
 msgid "auto"
 msgstr ""
 
-#: adjust.h:153 epgsettings.h:213 rectimer.h:1165 rectimer.h:1166
+#: adjust.h:153 epgsettings.h:213 rectimer.h:1166
 msgid "nothing"
 msgstr ""
 
-#: adjust.h:154 rectimer.h:1166 rectimer.h:1167
+#: adjust.h:154 rectimer.h:1167
 msgid "standby"
 msgstr ""
 
-#: adjust.h:155 rectimer.h:1167 rectimer.h:1168
+#: adjust.h:155 rectimer.h:1168
 msgid "power off"
 msgstr ""
 
@@ -518,7 +526,6 @@ msgstr ""
 msgid "hidden"
 msgstr ""
 
-#: adjust.h:176
 msgid "deactive"
 msgstr ""
 
@@ -558,7 +565,7 @@ msgstr ""
 #: filemanager.h:208 filemanager.h:281 filemanager.h:291 filemanager.h:331
 #: filemanager.h:355 filenuke.h:37 filenuke.h:84 filenuke.h:96 filenuke.h:108
 #: filenuke.h:157 flashx.h:26 flashx.h:84 flashx.h:138 flashx.h:195
-#: flashx.h:233 flashx.h:270 global.h:6450 gmediarender.h:115 harddisk.h:624
+#: flashx.h:233 flashx.h:270 global.h:6487 gmediarender.h:115 harddisk.h:624
 #: harddisk.h:632 harddisk.h:666 harddisk.h:715 harddisk.h:720 harddisk.h:722
 #: harddisk.h:724 harddisk.h:784 harddisk.h:802 harddisk.h:805 hbbtv.h:362
 #: httpdfunc.h:1098 hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103
@@ -566,9 +573,9 @@ msgstr ""
 #: hwtest.h:454 hwtest.h:490 hwtest.h:562 hwtest.h:564 hwtest.h:578
 #: hwtest.h:587 hwtest.h:596 hwtest.h:605 hwtest.h:652 hwtest.h:654
 #: hwtest.h:656 hwtest.h:658 imdbapi.h:200 imdb.h:626 inadyn.h:188
-#: inadyn.h:190 inadyn.h:200 keyactions.h:224 language.h:49 log.h:46 log.h:48
+#: inadyn.h:190 inadyn.h:200 keyactions.h:227 language.h:49 log.h:46 log.h:48
 #: marker.h:215 marker.h:229 mc_audioplayer.h:328 mc_audioplayer.h:599
-#: mc_audioplayer.h:702 mc_dateibrowser.h:38 mc_global.h:765 mc_global.h:1010
+#: mc_audioplayer.h:702 mc_dateibrowser.h:38 mc_global.h:766 mc_global.h:1011
 #: mc_internetbrowser.h:38 mc_internetbrowser.h:41 mc_main.h:37 mc_main.h:42
 #: mc_main.h:47 mc_main.h:73 mc_main.h:78 mc_main.h:200 mc_main.h:209
 #: mc_mediathek.h:37 mc_pictureplayer.h:95 mc_pictureplayer.h:119
@@ -586,13 +593,13 @@ msgstr ""
 #: network.h:804 network.h:858 novamov.h:35 novamov.h:80 nowvideo.h:35
 #: nowvideo.h:87 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:79 played.h:91 played.h:103 played.h:160 player.h:99
-#: play.h:593 play.h:1256 play.h:1449 play.h:1609 play.h:1620 possetup.h:98
+#: play.h:593 play.h:1256 play.h:1450 play.h:1610 play.h:1621 possetup.h:98
 #: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
 #: putlocker.h:32 putlocker.h:79 putlocker.h:85 putlocker.h:136
 #: putlocker.h:146 putlocker.h:219 readerconfig.h:343 readerconfig.h:443
 #: readerconfig.h:444 readerconfig.h:488 readerconfig.h:489 record.h:355
-#: record.h:971 record.h:1158 record.h:1397 record.h:1422 rectimer.h:556
-#: rectimer.h:1209 rectimer.h:1355 rectimer.h:1367 restoredefault.h:10
+#: record.h:971 record.h:1158 record.h:1397 record.h:1422 rectimer.h:557
+#: rectimer.h:1210 rectimer.h:1356 rectimer.h:1368 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:28
 #: scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1640 scan.h:1888
@@ -600,12 +607,12 @@ msgstr ""
 #: skinadjust.h:133 skinselector.h:218 sock.h:952 softcam.h:403
 #: solarmovie.h:35 solarmovie.h:47 solarmovie.h:295 spinner.h:18
 #: streamcloud.h:31 streamcloud.h:78 streamcloud.h:91 streamcloud.h:122
-#: streamcloud.h:161 stream.h:32 system_backup_restore.h:40
+#: streamcloud.h:161 stream.h:33 system_backup_restore.h:40
 #: system_backup_restore.h:43 system_backup_restore.h:80
 #: system_backup_restore.h:82 system_update.h:320 system_update.h:326
 #: system_update.h:333 timeshift.h:113 timeshift.h:155 timeshift.h:162
-#: timeshiftsettings.h:45 titan.c:245 titan.c:309 titan.c:318 titan.c:1018
-#: titan.c:1039 titan.c:1045 titan.c:1056 titan.c:1062 tithek_global.h:238
+#: timeshiftsettings.h:45 titan.c:246 titan.c:310 titan.c:319 titan.c:1032
+#: titan.c:1053 titan.c:1059 titan.c:1070 titan.c:1076 tithek_global.h:238
 #: tithek.h:620 tithek.h:1057 tithek.h:1100 tithek.h:1327 tithek.h:1349
 #: tithek.h:1354 tithek.h:2995 tithek.h:3057 tithek.h:3071 tiwakeup.h:66
 #: tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759
@@ -613,17 +620,10 @@ msgstr ""
 #: unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:53 videoweed.h:35
 #: videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98 vidstream.h:167
 #: xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:197 zdf.h:29
-#: global.h:6475 global.h:6478 global.h:6480 keyactions.h:226 keyactions.h:227
-#: global.h:6494 play.h:1450 play.h:1610 play.h:1621 service.h:709
-#: service.h:950 global.h:6481 rectimer.h:557 rectimer.h:1210 rectimer.h:1356
-#: rectimer.h:1368 titan.c:1031 titan.c:1052 titan.c:1058 titan.c:1069
-#: titan.c:1075 stream.h:33 mc_global.h:766 mc_global.h:1011 global.h:6487
-#: titan.c:246 titan.c:310 titan.c:319 titan.c:1032 titan.c:1053 titan.c:1059
-#: titan.c:1070 titan.c:1076
 msgid "Message"
 msgstr ""
 
-#: audiotrack.h:48 play.h:271 rectimer.h:1484 subtitle.h:1624 rectimer.h:1485
+#: audiotrack.h:48 play.h:271 rectimer.h:1485 subtitle.h:1624
 msgid "running"
 msgstr ""
 
@@ -779,8 +779,7 @@ msgstr ""
 msgid "Edit mode"
 msgstr ""
 
-#: channellist.h:689 channellist.h:1764 scan.h:530 skin_default_skin.xml.h:469
-#: skin_default_skin.xml.h:470
+#: channellist.h:689 channellist.h:1764 scan.h:530 skin_default_skin.xml.h:470
 msgid "Radio"
 msgstr ""
 
@@ -1088,16 +1087,14 @@ msgstr ""
 msgid "SELECT"
 msgstr ""
 
-#: dvdplay.h:62 mc_audioplayer.h:599 mc_audioplayer.h:702 mc_global.h:765
-#: mc_global.h:1010 mc_pictureplayer.h:95 mc_pictureplayer.h:237
+#: dvdplay.h:62 mc_audioplayer.h:599 mc_audioplayer.h:702 mc_global.h:766
+#: mc_global.h:1011 mc_pictureplayer.h:95 mc_pictureplayer.h:237
 #: mc_pictureplayer.h:363 mc_pictureplayer.h:456 mc_videoplayer.h:739
-#: mc_videoplayer.h:876 play.h:1449 play.h:1450 mc_global.h:766
-#: mc_global.h:1011
+#: mc_videoplayer.h:876 play.h:1450
 msgid "Can't start playback !"
 msgstr ""
 
-#: epg.h:182 skin_default_skin.xml.h:572 skin_default_skin.xml.h:573
-#: skin_default_skin.xml.h:574
+#: epg.h:182 skin_default_skin.xml.h:574
 msgid "Single (EPG)"
 msgstr ""
 
@@ -1170,20 +1167,19 @@ msgstr ""
 msgid "Music"
 msgstr ""
 
-#: epgsettings.h:137 epgsettings.h:178 skin_default_skin.xml.h:571
-#: skin_default_skin.xml.h:572 skin_default_skin.xml.h:573
+#: epgsettings.h:137 epgsettings.h:178 skin_default_skin.xml.h:573
 msgid "Single EPG"
 msgstr ""
 
-#: epgsettings.h:138 epgsettings.h:179 skin_default_skin.xml.h:387
-#: keyactions.h:55 keyactions.h:112 settings_bluebutton.h:16
-#: settings_redbutton.h:17 settings_pluginbutton.h:17
+#: epgsettings.h:138 epgsettings.h:179 keyactions.h:55 keyactions.h:112
+#: settings_bluebutton.h:16 settings_pluginbutton.h:17 settings_redbutton.h:17
+#: skin_default_skin.xml.h:387
 msgid "Multi EPG"
 msgstr ""
 
-#: epgsettings.h:139 skin_default_skin.xml.h:254 keyactions.h:56
-#: keyactions.h:119 settings_bluebutton.h:17 settings_redbutton.h:18
-#: settings_pluginbutton.h:18
+#: epgsettings.h:139 keyactions.h:56 keyactions.h:119 settings_bluebutton.h:17
+#: settings_pluginbutton.h:18 settings_redbutton.h:18
+#: skin_default_skin.xml.h:254
 msgid "Graphic Multi EPG"
 msgstr ""
 
@@ -1465,8 +1461,7 @@ msgstr ""
 msgid "Registration needed, please contact Atemio !"
 msgstr ""
 
-#: global.h:6450 keyactions.h:224 global.h:6475 global.h:6478 global.h:6480
-#: keyactions.h:226 keyactions.h:227 global.h:6494 global.h:6481 global.h:6487
+#: global.h:6487 keyactions.h:227
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -1600,7 +1595,7 @@ msgstr ""
 msgid "backup"
 msgstr ""
 
-#: harddisk.h:531 rectimer.h:1027 rectimer.h:1028
+#: harddisk.h:531 rectimer.h:1028
 msgid "record"
 msgstr ""
 
@@ -1645,8 +1640,7 @@ msgstr ""
 msgid "Harddisk Sleep"
 msgstr ""
 
-#: harddisk.h:874 skin_default_skin.xml.h:649 skin_default_skin.xml.h:650
-#: skin_default_skin.xml.h:651
+#: harddisk.h:874 skin_default_skin.xml.h:651
 msgid "Time to sleep"
 msgstr ""
 
@@ -1846,8 +1840,7 @@ msgstr ""
 msgid "Email  \t\tinfo@atemio.de"
 msgstr ""
 
-#: info.h:27 plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9 titan.c:907
-#: titan.c:920 titan.c:921
+#: info.h:27 plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9 titan.c:921
 msgid "Info"
 msgstr ""
 
@@ -1876,7 +1869,7 @@ msgstr ""
 msgid "Change language needs reboot"
 msgstr ""
 
-#: lnbconfig.h:137 skin_default_skin.xml.h:447 skin_default_skin.xml.h:448
+#: lnbconfig.h:137 skin_default_skin.xml.h:448
 msgid "Polarization"
 msgstr ""
 
@@ -1900,7 +1893,7 @@ msgstr ""
 msgid "C-Band"
 msgstr ""
 
-#: lnbconfig.h:149 rectimer.h:1054 rectimer.h:1055
+#: lnbconfig.h:149 rectimer.h:1055
 msgid "user defined"
 msgstr ""
 
@@ -1927,15 +1920,14 @@ msgid ""
 "Save Screenshoot Path: /tmp/screenshot.jpg"
 msgstr ""
 
-#: mc_audioplayer.h:403 mc_global.h:1069 mc_pictureplayer.h:145
-#: mc_videoplayer.h:421 mc_global.h:1070
+#: mc_audioplayer.h:403 mc_global.h:1070 mc_pictureplayer.h:145
+#: mc_videoplayer.h:421
 msgid "Repeat-On"
 msgstr ""
 
-#: mc_audioplayer.h:410 mc_audioplayer.h:560 mc_global.h:1071
+#: mc_audioplayer.h:410 mc_audioplayer.h:560 mc_global.h:1072
 #: mc_pictureplayer.h:152 mc_pictureplayer.h:317 mc_videoplayer.h:428
 #: mc_videoplayer.h:659 plugins_mc_skin.xml.h:47 skins_mc_skin.xml.h:47
-#: mc_global.h:1072
 msgid "Repeat"
 msgstr ""
 
@@ -1947,15 +1939,14 @@ msgstr ""
 msgid "Filelist-Mode"
 msgstr ""
 
-#: mc_audioplayer.h:559 mc_global.h:552 mc_global.h:580 mc_global.h:1066
+#: mc_audioplayer.h:559 mc_global.h:552 mc_global.h:580 mc_global.h:1067
 #: mc_pictureplayer.h:316 mc_videoplayer.h:658 plugins_mc_skin.xml.h:46
-#: skins_mc_skin.xml.h:46 mc_global.h:1067
+#: skins_mc_skin.xml.h:46
 msgid "Random"
 msgstr ""
 
-#: mc_audioplayer.h:580 mc_global.h:269 mc_global.h:692 mc_global.h:925
-#: mc_global.h:939 mc_pictureplayer.h:336 mc_videoplayer.h:699 mc_global.h:693
-#: mc_global.h:926 mc_global.h:940
+#: mc_audioplayer.h:580 mc_global.h:269 mc_global.h:693 mc_global.h:926
+#: mc_global.h:940 mc_pictureplayer.h:336 mc_videoplayer.h:699
 msgid "Playlist-Mode"
 msgstr ""
 
@@ -1989,7 +1980,7 @@ msgstr ""
 msgid "Install File Manager Tpk first !"
 msgstr ""
 
-#: mc_global.h:541 mc_global.h:569 mc_global.h:1064 mc_global.h:1065
+#: mc_global.h:541 mc_global.h:569 mc_global.h:1065
 msgid "Random-On"
 msgstr ""
 
@@ -2236,16 +2227,15 @@ msgid ""
 "Press OK to create it"
 msgstr ""
 
-#: menu.h:879 menu.h:881 skin_default_skin.xml.h:530
-#: skin_default_skin.xml.h:531 menu.h:884 menu.h:886
+#: menu.h:884 menu.h:886 skin_default_skin.xml.h:531
 msgid "Save Settings"
 msgstr ""
 
-#: menu.h:879 menu.h:884
+#: menu.h:884
 msgid "Error in Save Settings"
 msgstr ""
 
-#: menu.h:881 menu.h:886
+#: menu.h:886
 msgid "Settings succesfull saved"
 msgstr ""
 
@@ -2427,10 +2417,10 @@ msgstr ""
 msgid "ERROR"
 msgstr ""
 
-#: network.h:284 network.h:299 plugins_mc_skin.xml.h:37
-#: plugins_panel_skin.xml.h:18 skin_default_skin.xml.h:393
-#: skins_mc_skin.xml.h:37 skins_panel_skin.xml.h:18 system_infos.h:91
-#: hwtest.h:181 hwtest.h:394
+#: hwtest.h:181 hwtest.h:394 network.h:284 network.h:299
+#: plugins_mc_skin.xml.h:37 plugins_panel_skin.xml.h:18
+#: skin_default_skin.xml.h:393 skins_mc_skin.xml.h:37
+#: skins_panel_skin.xml.h:18 system_infos.h:91
 msgid "Network"
 msgstr ""
 
@@ -2646,7 +2636,6 @@ msgid "Fsck Record"
 msgstr ""
 
 #: panel_settings_autostart.h:210 settings_autostart.h:291
-#: skin_default_skin.xml.h:616 skin_default_skin.xml.h:617
 #: skin_default_skin.xml.h:618
 msgid "Swap"
 msgstr ""
@@ -2832,11 +2821,11 @@ msgstr ""
 msgid "DEL"
 msgstr ""
 
-#: play.h:1609 play.h:1610
+#: play.h:1610
 msgid "Marker autoseek is started"
 msgstr ""
 
-#: play.h:1620 play.h:1621
+#: play.h:1621
 msgid "Marker autoseek is stopped"
 msgstr ""
 
@@ -3021,23 +3010,21 @@ msgstr ""
 msgid "Server Name"
 msgstr ""
 
-#: plugins_dlna_skin.xml.h:12 plugins_tsSchnitt_skin.xml.h:7
-#: skin_default_skin.xml.h:600 skins_dlna_skin.xml.h:12
-#: skins_tsSchnitt_skin.xml.h:7 skin_default_skin.xml.h:601
-#: skin_default_skin.xml.h:602
+#: plugins_dlna_skin.xml.h:12 plugins_instar_skin.xml.h:16
+#: plugins_tsSchnitt_skin.xml.h:7 skin_default_skin.xml.h:602
+#: skins_dlna_skin.xml.h:12 skins_instar_skin.xml.h:16
+#: skins_tsSchnitt_skin.xml.h:7
 msgid "START"
 msgstr ""
 
-#: plugins_dlna_skin.xml.h:13 skin_default_skin.xml.h:602
-#: skins_dlna_skin.xml.h:13 skin_default_skin.xml.h:603
-#: skin_default_skin.xml.h:604
+#: plugins_dlna_skin.xml.h:13 skin_default_skin.xml.h:604
+#: skins_dlna_skin.xml.h:13
 msgid "Start on boot"
 msgstr ""
 
 #: plugins_dlna_skin.xml.h:14 plugins_tsSchnitt_skin.xml.h:9
-#: skin_default_skin.xml.h:606 skins_dlna_skin.xml.h:14
-#: skins_tsSchnitt_skin.xml.h:9 skin_default_skin.xml.h:607
-#: skin_default_skin.xml.h:608 skin_default_skin.xml.h:609
+#: skin_default_skin.xml.h:609 skins_dlna_skin.xml.h:14
+#: skins_tsSchnitt_skin.xml.h:9
 msgid "STOP"
 msgstr ""
 
@@ -3107,20 +3094,19 @@ msgid "Release:"
 msgstr ""
 
 #: plugins_imdbapi_skin.xml.h:7 plugins_imdb_skin.xml.h:7
-#: plugins_panel_skin.xml.h:21 plugins_stock_skin.xml.h:5
-#: plugins_tmdb_skin.xml.h:7 skin_default_skin.xml.h:529
-#: skins_imdbapi_skin.xml.h:7 skins_imdb_skin.xml.h:7
+#: plugins_instar_skin.xml.h:15 plugins_panel_skin.xml.h:21
+#: plugins_stock_skin.xml.h:5 plugins_tmdb_skin.xml.h:7
+#: skin_default_skin.xml.h:530 skins_imdbapi_skin.xml.h:7
+#: skins_imdb_skin.xml.h:7 skins_instar_skin.xml.h:15
 #: skins_panel_skin.xml.h:21 skins_stock_skin.xml.h:5 skins_tmdb_skin.xml.h:7
-#: skin_default_skin.xml.h:530
 msgid "SAVE"
 msgstr ""
 
 #: plugins_imdbapi_skin.xml.h:8 plugins_imdb_skin.xml.h:8
 #: plugins_networkbrowser_skin.xml.h:25 plugins_tmdb_skin.xml.h:8
-#: skin_default_skin.xml.h:545 skins_imdbapi_skin.xml.h:8
+#: skin_default_skin.xml.h:547 skins_imdbapi_skin.xml.h:8
 #: skins_imdb_skin.xml.h:8 skins_networkbrowser_skin.xml.h:25
-#: skins_tmdb_skin.xml.h:8 skin_default_skin.xml.h:546
-#: skin_default_skin.xml.h:547
+#: skins_tmdb_skin.xml.h:8
 msgid "SEARCH"
 msgstr ""
 
@@ -3153,51 +3139,48 @@ msgstr ""
 msgid "direkter Start"
 msgstr ""
 
-#: plugins_instar_skin.xml.h:6 skins_instar_skin.xml.h:6
+#: plugins_instar_skin.xml.h:7 skins_instar_skin.xml.h:7
 msgid "IP-Kammera 1"
 msgstr ""
 
-#: plugins_instar_skin.xml.h:7 skins_instar_skin.xml.h:7
+#: plugins_instar_skin.xml.h:8 skins_instar_skin.xml.h:8
 msgid "IP-Kammera 2"
 msgstr ""
 
-#: plugins_instar_skin.xml.h:8 skins_instar_skin.xml.h:8
+#: plugins_instar_skin.xml.h:9 skins_instar_skin.xml.h:9
 msgid "Kammera 1"
 msgstr ""
 
-#: plugins_instar_skin.xml.h:9 skins_instar_skin.xml.h:9
+#: plugins_instar_skin.xml.h:10 skins_instar_skin.xml.h:10
 msgid "Kammera 2 (Umschalten mit Rot)"
 msgstr ""
 
-#: plugins_instar_skin.xml.h:10 skins_instar_skin.xml.h:10
+#: plugins_instar_skin.xml.h:11 skins_instar_skin.xml.h:11
 msgid "Passwort-Kammera 1"
 msgstr ""
 
-#: plugins_instar_skin.xml.h:11 skins_instar_skin.xml.h:11
+#: plugins_instar_skin.xml.h:12 skins_instar_skin.xml.h:12
 msgid "Passwort-Kammera 2"
 msgstr ""
 
-#: plugins_instar_skin.xml.h:12 skins_instar_skin.xml.h:12
+#: plugins_instar_skin.xml.h:13 skins_instar_skin.xml.h:13
 msgid "Port-Kammera 1"
 msgstr ""
 
-#: plugins_instar_skin.xml.h:13 skins_instar_skin.xml.h:13
+#: plugins_instar_skin.xml.h:14 skins_instar_skin.xml.h:14
 msgid "Port-Kammera 2"
 msgstr ""
 
-#: plugins_instar_skin.xml.h:18 skins_instar_skin.xml.h:18
 msgid ""
 "text=START halign=center valign=middle bordercol=blue bordersize=2 "
 "bordertype=2 posx=400 posy=0 width=200 height=30/>);"
 msgstr ""
 
-#: plugins_instar_skin.xml.h:16 skins_instar_skin.xml.h:16
 msgid ""
 "text=SAVE halign=center valign=middle bordercol=green bordersize=2 "
 "bordertype=2 posx=0 posy=0 width=150 height=30/>);"
 msgstr ""
 
-#: plugins_instar_skin.xml.h:14 skins_instar_skin.xml.h:14
 msgid ""
 "text=EXIT halign=center valign=middle bordercol=exitcol bordersize=2 "
 "bordertype=2 posx=160 posy=0 width=150 height=30/>);"
@@ -3399,9 +3382,8 @@ msgid "Screensaver"
 msgstr ""
 
 #: plugins_mc_skin.xml.h:52 plugins_panel_skin.xml.h:5
-#: plugins_panel_skin.xml.h:22 skin_default_skin.xml.h:557
+#: plugins_panel_skin.xml.h:22 skin_default_skin.xml.h:559
 #: skins_mc_skin.xml.h:52 skins_panel_skin.xml.h:5 skins_panel_skin.xml.h:22
-#: skin_default_skin.xml.h:558 skin_default_skin.xml.h:559
 msgid "Settings"
 msgstr ""
 
@@ -3417,8 +3399,7 @@ msgstr ""
 msgid "Sort"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:57 skin_default_skin.xml.h:585 skins_mc_skin.xml.h:57
-#: skin_default_skin.xml.h:586 skin_default_skin.xml.h:587
+#: plugins_mc_skin.xml.h:57 skin_default_skin.xml.h:587 skins_mc_skin.xml.h:57
 msgid "Sorting"
 msgstr ""
 
@@ -3565,9 +3546,8 @@ msgstr ""
 msgid "sharename"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:29 skin_default_skin.xml.h:682
-#: skins_networkbrowser_skin.xml.h:29 skin_default_skin.xml.h:683
-#: skin_default_skin.xml.h:684
+#: plugins_networkbrowser_skin.xml.h:29 skin_default_skin.xml.h:684
+#: skins_networkbrowser_skin.xml.h:29
 msgid "type"
 msgstr ""
 
@@ -3579,9 +3559,8 @@ msgstr ""
 msgid "useproxy"
 msgstr ""
 
-#: plugins_networkbrowser_skin.xml.h:32 skin_default_skin.xml.h:704
-#: skins_networkbrowser_skin.xml.h:32 skin_default_skin.xml.h:705
-#: skin_default_skin.xml.h:706
+#: plugins_networkbrowser_skin.xml.h:32 skin_default_skin.xml.h:706
+#: skins_networkbrowser_skin.xml.h:32
 msgid "User"
 msgstr ""
 
@@ -3703,21 +3682,18 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: plugins_panel_skin.xml.h:23 skin_default_skin.xml.h:590
-#: skins_panel_skin.xml.h:23 skin_default_skin.xml.h:591
-#: skin_default_skin.xml.h:592
+#: plugins_panel_skin.xml.h:23 skin_default_skin.xml.h:592
+#: skins_panel_skin.xml.h:23
 msgid "speed"
 msgstr ""
 
-#: plugins_panel_skin.xml.h:24 skin_default_skin.xml.h:639
-#: skins_panel_skin.xml.h:24 skin_default_skin.xml.h:640
-#: skin_default_skin.xml.h:641
+#: plugins_panel_skin.xml.h:24 skin_default_skin.xml.h:641
+#: skins_panel_skin.xml.h:24
 msgid "Test"
 msgstr ""
 
-#: plugins_panel_skin.xml.h:25 skin_default_skin.xml.h:698
-#: skins_panel_skin.xml.h:25 skin_default_skin.xml.h:699
-#: skin_default_skin.xml.h:700
+#: plugins_panel_skin.xml.h:25 skin_default_skin.xml.h:700
+#: skins_panel_skin.xml.h:25
 msgid "Usb Device"
 msgstr ""
 
@@ -3826,7 +3802,7 @@ msgstr ""
 msgid "Framerate"
 msgstr ""
 
-#: plugins_streaminfo_skin.xml.h:3 skins_streaminfo_skin.xml.h:3 play.h:670
+#: play.h:670 plugins_streaminfo_skin.xml.h:3 skins_streaminfo_skin.xml.h:3
 msgid "Streaminfo"
 msgstr ""
 
@@ -3842,7 +3818,6 @@ msgstr ""
 msgid "TiThek Menu"
 msgstr ""
 
-#: plugins_tithek_skin.xml.h:2 skins_tithek_skin.xml.h:2
 msgid "TiThek PlayList"
 msgstr ""
 
@@ -3871,8 +3846,8 @@ msgstr ""
 msgid "please wait..."
 msgstr ""
 
-#: plugins_tithek_skin.xml.h:9 skin_default_skin.xml.h:487
-#: skins_tithek_skin.xml.h:9 skin_default_skin.xml.h:488
+#: plugins_tithek_skin.xml.h:9 skin_default_skin.xml.h:488
+#: skins_tithek_skin.xml.h:9
 msgid "Red-Menu"
 msgstr ""
 
@@ -3880,16 +3855,13 @@ msgstr ""
 msgid "Show Pay Streams"
 msgstr ""
 
-#: plugins_tithek_skin.xml.h:12 skins_tithek_skin.xml.h:12
 msgid "TITHEK SETTINGS"
 msgstr ""
 
-#: plugins_tithek_skin.xml.h:13 skins_tithek_skin.xml.h:13
 #: plugins_tithek_skin.xml.h:12 skins_tithek_skin.xml.h:12
 msgid "View Cover"
 msgstr ""
 
-#: plugins_tithek_skin.xml.h:14 skins_tithek_skin.xml.h:14
 #: plugins_tithek_skin.xml.h:13 skins_tithek_skin.xml.h:13
 msgid "View Sections"
 msgstr ""
@@ -3930,8 +3902,8 @@ msgstr ""
 msgid "Runtime:"
 msgstr ""
 
-#: plugins_tmc_skin.xml.h:15 skin_default_skin.xml.h:532
-#: skins_tmc_skin.xml.h:15 skin_default_skin.xml.h:533
+#: plugins_tmc_skin.xml.h:15 skin_default_skin.xml.h:533
+#: skins_tmc_skin.xml.h:15
 msgid "Scan"
 msgstr ""
 
@@ -4207,7 +4179,7 @@ msgstr ""
 msgid "Timer Record start !\n"
 msgstr ""
 
-#: record.h:1272 record.h:1327 record.h:1281 record.h:1292 record.h:1336
+#: record.h:1272 record.h:1281 record.h:1292 record.h:1327 record.h:1336
 #: record.h:1368 stream.h:15 stream.h:37
 msgid "stop"
 msgstr ""
@@ -4248,94 +4220,87 @@ msgstr ""
 msgid "Timer transponder ID not ok"
 msgstr ""
 
-#: rectimer.h:545 rectimer.h:546
+#: rectimer.h:546
 msgid "not started akttime higher than timer endtime"
 msgstr ""
 
-#: rectimer.h:556 rectimer.h:557
+#: rectimer.h:557
 msgid "EPG Scan activate standby?"
 msgstr ""
 
-#: rectimer.h:663 rectimer.h:664
+#: rectimer.h:664
 msgid "stopped from user"
 msgstr ""
 
-#: rectimer.h:1028 rectimer.h:1029
+#: rectimer.h:1029
 msgid "switch channel"
 msgstr ""
 
-#: rectimer.h:1038 rectimer.h:1447 rectimer.h:1458 rectimer.h:1039
-#: rectimer.h:1448 rectimer.h:1459
+#: rectimer.h:1039 rectimer.h:1448 rectimer.h:1459
 msgid "once"
 msgstr ""
 
-#: rectimer.h:1039 rectimer.h:1449 rectimer.h:1460 rectimer.h:1040
-#: rectimer.h:1450 rectimer.h:1461
+#: rectimer.h:1040 rectimer.h:1450 rectimer.h:1461
 msgid "repeate"
 msgstr ""
 
-#: rectimer.h:1051 rectimer.h:1052
+#: rectimer.h:1052
 msgid "daily"
 msgstr ""
 
-#: rectimer.h:1052 rectimer.h:1053
+#: rectimer.h:1053
 msgid "weekly"
 msgstr ""
 
-#: rectimer.h:1053 rectimer.h:1054
+#: rectimer.h:1054
 msgid "workdays"
 msgstr ""
 
-#: rectimer.h:1058 skin_default_skin.xml.h:381 rectimer.h:1059
+#: rectimer.h:1059 skin_default_skin.xml.h:381
 msgid "Monday"
 msgstr ""
 
-#: rectimer.h:1059 skin_default_skin.xml.h:671 skin_default_skin.xml.h:672
-#: skin_default_skin.xml.h:673 rectimer.h:1060
+#: rectimer.h:1060 skin_default_skin.xml.h:673
 msgid "Tuesday"
 msgstr ""
 
-#: rectimer.h:1060 skin_default_skin.xml.h:723 skin_default_skin.xml.h:724
-#: skin_default_skin.xml.h:725 rectimer.h:1061
+#: rectimer.h:1061 skin_default_skin.xml.h:725
 msgid "Wednesday"
 msgstr ""
 
-#: rectimer.h:1061 skin_default_skin.xml.h:643 skin_default_skin.xml.h:644
-#: skin_default_skin.xml.h:645 rectimer.h:1062
+#: rectimer.h:1062 skin_default_skin.xml.h:645
 msgid "Thursday"
 msgstr ""
 
-#: rectimer.h:1062 skin_default_skin.xml.h:242 rectimer.h:1063
+#: rectimer.h:1063 skin_default_skin.xml.h:242
 msgid "Friday"
 msgstr ""
 
-#: rectimer.h:1063 skin_default_skin.xml.h:528 skin_default_skin.xml.h:529
-#: rectimer.h:1064
+#: rectimer.h:1064 skin_default_skin.xml.h:529
 msgid "Saturday"
 msgstr ""
 
-#: rectimer.h:1064 skin_default_skin.xml.h:615 skin_default_skin.xml.h:616
-#: skin_default_skin.xml.h:617 rectimer.h:1065
+#: rectimer.h:1065 skin_default_skin.xml.h:617
 msgid "Sunday"
 msgstr ""
 
-#: rectimer.h:1444 rectimer.h:1445
+#: rectimer.h:1445
 msgid "rec"
 msgstr ""
 
-#: rectimer.h:1455 rectimer.h:1456
+#: rectimer.h:1456
 msgid "switch"
 msgstr ""
 
-#: rectimer.h:1482 rectimer.h:1483
+#: rectimer.h:1483
 msgid "waiting"
 msgstr ""
 
-#: rectimer.h:1486 rectimer.h:1487
+#: rectimer.h:1487
 msgid "success"
 msgstr ""
 
-#: rectimer.h:1488 rectimer.h:1489
+#: rectimer.h:1489
 msgid "error"
 msgstr ""
 
@@ -4567,27 +4532,27 @@ msgstr ""
 msgid "Script execute"
 msgstr ""
 
-#: service.h:701 service.h:709
+#: service.h:701
 msgid ""
 "Timeshift is running !!!\n"
 "Stop it and switch ?"
 msgstr ""
 
-#: service.h:925 service.h:933
+#: service.h:925
 msgid ""
 "Can't find a Tuner.\n"
 "All Tuners in use or no Tuner defined."
 msgstr ""
 
-#: service.h:928 service.h:936
+#: service.h:928
 msgid "Tuning to Channel failed!"
 msgstr ""
 
-#: service.h:931 service.h:939
+#: service.h:931
 msgid "Can't open frontend dev or Frontend Type unknown!"
 msgstr ""
 
-#: service.h:936 service.h:944
+#: service.h:936
 msgid "Channellist empty or corrupt (channel not found)!"
 msgstr ""
 
@@ -5078,8 +5043,9 @@ msgstr ""
 msgid "Channel Service..."
 msgstr ""
 
-#: skin_default_skin.xml.h:134 keyactions.h:58 keyactions.h:133
-#: settings_bluebutton.h:19 settings_redbutton.h:20 settings_pluginbutton.h:20
+#: keyactions.h:58 keyactions.h:133 settings_bluebutton.h:19
+#: settings_pluginbutton.h:20 settings_redbutton.h:20
+#: skin_default_skin.xml.h:134
 msgid "Child Protection"
 msgstr ""
 
@@ -5283,9 +5249,9 @@ msgstr ""
 msgid "Download"
 msgstr ""
 
-#: skin_default_skin.xml.h:191 keyactions.h:60 keyactions.h:140 play.h:663
-#: play.h:706 play.h:758 settings_bluebutton.h:21 settings_redbutton.h:22
-#: settings_pluginbutton.h:22
+#: keyactions.h:60 keyactions.h:140 play.h:663 play.h:706 play.h:758
+#: settings_bluebutton.h:21 settings_pluginbutton.h:22 settings_redbutton.h:22
+#: skin_default_skin.xml.h:191
 msgid "Downloads"
 msgstr ""
 
@@ -5433,7 +5399,6 @@ msgstr ""
 msgid "Filesystem Check"
 msgstr ""
 
-#: skin_default_skin.xml.h:231
 msgid "Fine move"
 msgstr ""
 
@@ -5503,7 +5468,6 @@ msgstr ""
 msgid "Git Changelog"
 msgstr ""
 
-#: skin_default_skin.xml.h:249
 msgid "Go to startpos"
 msgstr ""
 
@@ -6033,7 +5997,7 @@ msgstr ""
 msgid "Media Center"
 msgstr ""
 
-#: skin_default_skin.xml.h:362 play.h:623 play.h:699
+#: play.h:623 play.h:699 skin_default_skin.xml.h:362
 msgid "MediaDB Edit"
 msgstr ""
 
@@ -6061,11 +6025,11 @@ msgstr ""
 msgid "Menulist"
 msgstr ""
 
-#: skin_default_skin.xml.h:369 skin_default_skin.xml.h:370
+#: skin_default_skin.xml.h:370
 msgid "MENUPROTECT"
 msgstr ""
 
-#: skin_default_skin.xml.h:370 skin_default_skin.xml.h:369
+#: skin_default_skin.xml.h:369
 msgid "Menu Protect"
 msgstr ""
 
@@ -6339,1182 +6303,1017 @@ msgstr ""
 msgid "Plot"
 msgstr ""
 
-#: skin_default_skin.xml.h:445 skin_default_skin.xml.h:446
+#: skin_default_skin.xml.h:446
 msgid "Plugins"
 msgstr ""
 
-#: skin_default_skin.xml.h:446 skin_default_skin.xml.h:447
+#: skin_default_skin.xml.h:447
 msgid "PMT PID:"
 msgstr ""
 
-#: skin_default_skin.xml.h:448 skin_default_skin.xml.h:449
+#: skin_default_skin.xml.h:449
 msgid "Polarization:"
 msgstr ""
 
-#: skin_default_skin.xml.h:449 skin_default_skin.xml.h:450
+#: skin_default_skin.xml.h:450
 msgid "Policy"
 msgstr ""
 
-#: skin_default_skin.xml.h:450 skin_default_skin.xml.h:451
+#: skin_default_skin.xml.h:451
 msgid "Polish"
 msgstr ""
 
-#: skin_default_skin.xml.h:451 skin_default_skin.xml.h:452
+#: skin_default_skin.xml.h:452
 msgid "Positioner Setup"
 msgstr ""
 
-#: skin_default_skin.xml.h:452 skin_default_skin.xml.h:453
+#: skin_default_skin.xml.h:453
 msgid "Power aktion"
 msgstr ""
 
-#: skin_default_skin.xml.h:454 skin_default_skin.xml.h:455
+#: skin_default_skin.xml.h:455
 msgid "Poweroff Timer"
 msgstr ""
 
-#: skin_default_skin.xml.h:455 skin_default_skin.xml.h:456
+#: skin_default_skin.xml.h:456
 msgid "Power Off Timer"
 msgstr ""
 
-#: skin_default_skin.xml.h:456 skin_default_skin.xml.h:457
+#: skin_default_skin.xml.h:457
 msgid "Program Info"
 msgstr ""
 
-#: skin_default_skin.xml.h:457 skin_default_skin.xml.h:458
+#: skin_default_skin.xml.h:458
 msgid "Protect Channel"
 msgstr ""
 
-#: skin_default_skin.xml.h:458 skin_default_skin.xml.h:459
+#: skin_default_skin.xml.h:459
 msgid "Protect Channel Freetime (min)"
 msgstr ""
 
-#: skin_default_skin.xml.h:459 skin_default_skin.xml.h:460
+#: skin_default_skin.xml.h:460
 msgid "Protect Menu"
 msgstr ""
 
-#: skin_default_skin.xml.h:460 skin_default_skin.xml.h:461
+#: skin_default_skin.xml.h:461
 msgid "protect service"
 msgstr ""
 
-#: skin_default_skin.xml.h:461 skin_default_skin.xml.h:462
+#: skin_default_skin.xml.h:462
 msgid "Prov"
 msgstr ""
 
-#: skin_default_skin.xml.h:462 skin_default_skin.xml.h:463
+#: skin_default_skin.xml.h:463
 msgid "Provider:"
 msgstr ""
 
-#: skin_default_skin.xml.h:463 skin_default_skin.xml.h:464
+#: skin_default_skin.xml.h:464
 msgid "Prozesslist"
 msgstr ""
 
-#: skin_default_skin.xml.h:464 skin_default_skin.xml.h:465
+#: skin_default_skin.xml.h:465
 msgid "q"
 msgstr ""
 
-#: skin_default_skin.xml.h:465 skin_default_skin.xml.h:466
+#: skin_default_skin.xml.h:466
 msgid "Q"
 msgstr ""
 
-#: skin_default_skin.xml.h:466 skin_default_skin.xml.h:467
+#: skin_default_skin.xml.h:467
 msgid "Quick Menu"
 msgstr ""
 
-#: skin_default_skin.xml.h:467 skin_default_skin.xml.h:468
+#: skin_default_skin.xml.h:468
 msgid "r"
 msgstr ""
 
-#: skin_default_skin.xml.h:468 skin_default_skin.xml.h:469
+#: skin_default_skin.xml.h:469
 msgid "R"
 msgstr ""
 
-#: skin_default_skin.xml.h:470 system_infos.h:103 skin_default_skin.xml.h:471
+#: skin_default_skin.xml.h:471 system_infos.h:103
 msgid "Ram"
 msgstr ""
 
-#: skin_default_skin.xml.h:471 skin_default_skin.xml.h:472
+#: skin_default_skin.xml.h:472
 msgid "Rating"
 msgstr ""
 
-#: skin_default_skin.xml.h:472 skin_default_skin.xml.h:473
+#: skin_default_skin.xml.h:473
 msgid "Receiver unlock"
 msgstr ""
 
-#: skin_default_skin.xml.h:473 skin_default_skin.xml.h:474 record.h:1290
-#: record.h:1364
+#: record.h:1290 record.h:1364 skin_default_skin.xml.h:474
 msgid "Record"
 msgstr ""
 
-#: skin_default_skin.xml.h:474 skin_default_skin.xml.h:475
+#: skin_default_skin.xml.h:475
 msgid "Record Forerun (min)"
 msgstr ""
 
-#: skin_default_skin.xml.h:475 skin_default_skin.xml.h:476
+#: skin_default_skin.xml.h:476
 msgid "Recording name"
 msgstr ""
 
-#: skin_default_skin.xml.h:476 skin_default_skin.xml.h:477
+#: skin_default_skin.xml.h:477
 msgid "Recordlist"
 msgstr ""
 
-#: skin_default_skin.xml.h:477 skin_default_skin.xml.h:478
+#: skin_default_skin.xml.h:478
 msgid "Record Overrun (min)"
 msgstr ""
 
-#: skin_default_skin.xml.h:478 skin_default_skin.xml.h:479
+#: skin_default_skin.xml.h:479
 msgid "Record path"
 msgstr ""
 
-#: skin_default_skin.xml.h:479 skin_default_skin.xml.h:480
+#: skin_default_skin.xml.h:480
 msgid "Record Path"
 msgstr ""
 
-#: skin_default_skin.xml.h:480 skin_default_skin.xml.h:481
+#: skin_default_skin.xml.h:481
 msgid "Record Path settings"
 msgstr ""
 
-#: skin_default_skin.xml.h:481 skin_default_skin.xml.h:482
+#: skin_default_skin.xml.h:482
 msgid "Records"
 msgstr ""
 
-#: skin_default_skin.xml.h:482 skin_default_skin.xml.h:483
+#: skin_default_skin.xml.h:483
 msgid "Records and EPG"
 msgstr ""
 
-#: skin_default_skin.xml.h:483 skin_default_skin.xml.h:484
+#: skin_default_skin.xml.h:484
 msgid "Records and EPG ..."
 msgstr ""
 
-#: skin_default_skin.xml.h:484 skin_default_skin.xml.h:485
+#: skin_default_skin.xml.h:485
 msgid "Record Split Size"
 msgstr ""
 
-#: skin_default_skin.xml.h:485 skin_default_skin.xml.h:486
+#: skin_default_skin.xml.h:486
 msgid "Record Timer"
 msgstr ""
 
-#: skin_default_skin.xml.h:486 skin_default_skin.xml.h:487
+#: skin_default_skin.xml.h:487
 msgid "Red Button"
 msgstr ""
 
-#: skin_default_skin.xml.h:488 softcam.h:292 skin_default_skin.xml.h:489
+#: skin_default_skin.xml.h:489 softcam.h:292
 msgid "Refresh"
 msgstr ""
 
-#: skin_default_skin.xml.h:489 skin_default_skin.xml.h:490
+#: skin_default_skin.xml.h:490
 msgid "Released"
 msgstr ""
 
-#: skin_default_skin.xml.h:490 skin_default_skin.xml.h:491
+#: skin_default_skin.xml.h:491
 msgid "RELOAD"
 msgstr ""
 
-#: skin_default_skin.xml.h:491 skin_default_skin.xml.h:492
+#: skin_default_skin.xml.h:492
 msgid "Remove emthy Bouquet"
 msgstr ""
 
-#: skin_default_skin.xml.h:492 skin_default_skin.xml.h:493
+#: skin_default_skin.xml.h:493
 msgid "REMOVE ENTRY"
 msgstr ""
 
-#: skin_default_skin.xml.h:493 skin_default_skin.xml.h:494
+#: skin_default_skin.xml.h:494
 msgid "remove service"
 msgstr ""
 
-#: skin_default_skin.xml.h:494 skin_default_skin.xml.h:495
+#: skin_default_skin.xml.h:495
 msgid "Remove unused Channels in Bouquets"
 msgstr ""
 
-#: skin_default_skin.xml.h:495 skin_default_skin.xml.h:496
+#: skin_default_skin.xml.h:496
 msgid "rename service"
 msgstr ""
 
-#: skin_default_skin.xml.h:496 skin_default_skin.xml.h:497
+#: skin_default_skin.xml.h:497
 msgid "Repeate"
 msgstr ""
 
-#: skin_default_skin.xml.h:497 skin_default_skin.xml.h:498
+#: skin_default_skin.xml.h:498
 msgid "Repeate type"
 msgstr ""
 
-#: skin_default_skin.xml.h:498 skin_default_skin.xml.h:499
+#: skin_default_skin.xml.h:499
 msgid "RESET"
 msgstr ""
 
-#: skin_default_skin.xml.h:499 skin_default_skin.xml.h:500
+#: skin_default_skin.xml.h:500
 msgid "Resolution:"
 msgstr ""
 
-#: skin_default_skin.xml.h:500 skin_default_skin.xml.h:501
+#: skin_default_skin.xml.h:501
 msgid "Resolution (current)"
 msgstr ""
 
-#: skin_default_skin.xml.h:501 skin_default_skin.xml.h:502
+#: skin_default_skin.xml.h:502
 msgid "Resolution (default)"
 msgstr ""
 
-#: skin_default_skin.xml.h:503 skin_default_skin.xml.h:504
+#: skin_default_skin.xml.h:504
 msgid "Restore"
 msgstr ""
 
-#: skin_default_skin.xml.h:504 skin_default_skin.xml.h:505 restoredefault.h:63
-#: restoredefault.h:67 restoredefault.h:71
+#: restoredefault.h:63 restoredefault.h:67 restoredefault.h:71
+#: skin_default_skin.xml.h:505
 msgid "Restore default settings"
 msgstr ""
 
-#: skin_default_skin.xml.h:505 skin_default_skin.xml.h:506
+#: skin_default_skin.xml.h:506
 msgid "Resync Recording immediately"
 msgstr ""
 
-#: skin_default_skin.xml.h:509 skin_default_skin.xml.h:510
+#: skin_default_skin.xml.h:510
 msgid "RGUID Port"
 msgstr ""
 
-#: skin_default_skin.xml.h:510 skin_default_skin.xml.h:511
+#: skin_default_skin.xml.h:511
 msgid "Rolloff"
 msgstr ""
 
-#: skin_default_skin.xml.h:511 skin_default_skin.xml.h:512
+#: skin_default_skin.xml.h:512
 msgid "Rolloff:"
 msgstr ""
 
-#: skin_default_skin.xml.h:512 skin_default_skin.xml.h:513
+#: skin_default_skin.xml.h:513
 msgid "Rotor Position"
 msgstr ""
 
-#: skin_default_skin.xml.h:513 skin_default_skin.xml.h:514
+#: skin_default_skin.xml.h:514
 msgid "Rotor Settings"
 msgstr ""
 
-#: skin_default_skin.xml.h:514 skin_default_skin.xml.h:515
+#: skin_default_skin.xml.h:515
 msgid "Runtime"
 msgstr ""
 
-#: skin_default_skin.xml.h:515 skin_default_skin.xml.h:516
+#: skin_default_skin.xml.h:516
 msgid "Russian"
 msgstr ""
 
-#: skin_default_skin.xml.h:516 skin_default_skin.xml.h:517
+#: skin_default_skin.xml.h:517
 msgid "s"
 msgstr ""
 
-#: skin_default_skin.xml.h:517 skin_default_skin.xml.h:518
+#: skin_default_skin.xml.h:518
 msgid "S"
 msgstr ""
 
-#: skin_default_skin.xml.h:518 skin_default_skin.xml.h:519
+#: skin_default_skin.xml.h:519
 msgid "Samba Server Settings"
 msgstr ""
 
-#: skin_default_skin.xml.h:519 skin_default_skin.xml.h:520
+#: skin_default_skin.xml.h:520
 msgid "SAT"
 msgstr ""
 
-#: skin_default_skin.xml.h:520 skin_default_skin.xml.h:521
+#: skin_default_skin.xml.h:521
 msgid "SATA Connector"
 msgstr ""
 
-#: skin_default_skin.xml.h:521 skin_default_skin.xml.h:522
+#: skin_default_skin.xml.h:522
 msgid "Sat Config"
 msgstr ""
 
-#: skin_default_skin.xml.h:522 skin_default_skin.xml.h:523
+#: skin_default_skin.xml.h:523
 msgid "SATCR Frequency"
 msgstr ""
 
-#: skin_default_skin.xml.h:523 skin_default_skin.xml.h:524
+#: skin_default_skin.xml.h:524
 msgid "SATCR Number"
 msgstr ""
 
-#: skin_default_skin.xml.h:524 skin_default_skin.xml.h:525
+#: skin_default_skin.xml.h:525
 msgid "Satellite"
 msgstr ""
 
-#: skin_default_skin.xml.h:525 skin_default_skin.xml.h:526
+#: skin_default_skin.xml.h:526
 msgid "Satfinder"
 msgstr ""
 
-#: skin_default_skin.xml.h:526 skin_default_skin.xml.h:527
+#: skin_default_skin.xml.h:527
 msgid "Sat Finder"
 msgstr ""
 
-#: skin_default_skin.xml.h:527 skin_default_skin.xml.h:528
+#: skin_default_skin.xml.h:528
 msgid "Saturation"
 msgstr ""
 
-#: skin_default_skin.xml.h:531 skin_default_skin.xml.h:532
+#: skin_default_skin.xml.h:532
 msgid "SAVETRANSPONDER"
 msgstr ""
 
-#: skin_default_skin.xml.h:533 skin_default_skin.xml.h:534
+#: skin_default_skin.xml.h:534
 msgid "Scan Config"
 msgstr ""
 
-#: skin_default_skin.xml.h:534 skin_default_skin.xml.h:535
+#: skin_default_skin.xml.h:535
 msgid "ScanList"
 msgstr ""
 
-#: skin_default_skin.xml.h:535 skin_default_skin.xml.h:536
+#: skin_default_skin.xml.h:536
 msgid "Scan locking"
 msgstr ""
 
-#: skin_default_skin.xml.h:536 skin_default_skin.xml.h:537
+#: skin_default_skin.xml.h:537
 msgid "SCANSTART"
 msgstr ""
 
-#: skin_default_skin.xml.h:537 skin_default_skin.xml.h:538
+#: skin_default_skin.xml.h:538
 msgid "screensaver"
 msgstr ""
 
-#: skin_default_skin.xml.h:538 skin_default_skin.xml.h:539
+#: skin_default_skin.xml.h:539
 msgid "Screensaver Adjust"
 msgstr ""
 
-#: skin_default_skin.xml.h:539 skin_default_skin.xml.h:540
+#: skin_default_skin.xml.h:540
 msgid "screensaver background"
 msgstr ""
 
-#: skin_default_skin.xml.h:540 skin_default_skin.xml.h:541
+#: skin_default_skin.xml.h:541
 msgid "screensaver delay"
 msgstr ""
 
-#: skin_default_skin.xml.h:541 skin_default_skin.xml.h:542
+#: skin_default_skin.xml.h:542
 msgid "screensaver interval"
 msgstr ""
 
-#: skin_default_skin.xml.h:542 skin_default_skin.xml.h:543
+#: skin_default_skin.xml.h:543
 msgid "screensaver pic"
 msgstr ""
 
-#: skin_default_skin.xml.h:543 skin_default_skin.xml.h:544
+#: skin_default_skin.xml.h:544
 msgid "screensaver type"
 msgstr ""
 
-#: skin_default_skin.xml.h:544 skin_default_skin.xml.h:545
+#: skin_default_skin.xml.h:545
 msgid "--- SD resolution"
 msgstr ""
 
-#: skin_default_skin.xml.h:546 skin_default_skin.xml.h:547
 #: skin_default_skin.xml.h:548
 msgid "Second Infobar"
 msgstr ""
 
-#: skin_default_skin.xml.h:547 skin_default_skin.xml.h:548
 #: skin_default_skin.xml.h:549
 msgid "Select backup:"
 msgstr ""
 
-#: skin_default_skin.xml.h:548 skin_default_skin.xml.h:549
 #: skin_default_skin.xml.h:550
 msgid "Select Path"
 msgstr ""
 
-#: skin_default_skin.xml.h:549 skin_default_skin.xml.h:550
 #: skin_default_skin.xml.h:551
 msgid "Select Unicable Manufacturer"
 msgstr ""
 
-#: skin_default_skin.xml.h:550 skin_default_skin.xml.h:551
 #: skin_default_skin.xml.h:552
 msgid "SEND"
 msgstr ""
 
-#: skin_default_skin.xml.h:551 skin_default_skin.xml.h:552
 #: skin_default_skin.xml.h:553
 msgid "Send all CAID to modules"
 msgstr ""
 
-#: skin_default_skin.xml.h:552 skin_default_skin.xml.h:553
 #: skin_default_skin.xml.h:554
 msgid "Serial Input"
 msgstr ""
 
-#: skin_default_skin.xml.h:553 skin_default_skin.xml.h:554
 #: skin_default_skin.xml.h:555
 msgid "Service"
 msgstr ""
 
-#: skin_default_skin.xml.h:554 skin_default_skin.xml.h:555
 #: skin_default_skin.xml.h:556
 msgid "Serviceinfo"
 msgstr ""
 
-#: skin_default_skin.xml.h:555 skin_default_skin.xml.h:556
 #: skin_default_skin.xml.h:557
 msgid "Set action after rec"
 msgstr ""
 
-#: skin_default_skin.xml.h:556 skin_default_skin.xml.h:557
 #: skin_default_skin.xml.h:558
 msgid "set startchannel"
 msgstr ""
 
-#: skin_default_skin.xml.h:558 skin_default_skin.xml.h:559
 #: skin_default_skin.xml.h:560
 msgid "Settings..."
 msgstr ""
 
-#: skin_default_skin.xml.h:559 skin_default_skin.xml.h:560
 #: skin_default_skin.xml.h:561
 msgid "Settings backup/restore"
 msgstr ""
 
-#: skin_default_skin.xml.h:560 skin_default_skin.xml.h:561
 #: skin_default_skin.xml.h:562
 msgid "Show EPG screen (EPG button)"
 msgstr ""
 
-#: skin_default_skin.xml.h:561 skin_default_skin.xml.h:562
 #: skin_default_skin.xml.h:563
 msgid "Show HDD freesize"
 msgstr ""
 
-#: skin_default_skin.xml.h:562 skin_default_skin.xml.h:563
 #: skin_default_skin.xml.h:564
 msgid "Show hidden files"
 msgstr ""
 
-#: skin_default_skin.xml.h:563 skin_default_skin.xml.h:564
 #: skin_default_skin.xml.h:565
 msgid "Show infobar on program change"
 msgstr ""
 
-#: skin_default_skin.xml.h:564 skin_default_skin.xml.h:565
 #: skin_default_skin.xml.h:566
 msgid "Show in Standby"
 msgstr ""
 
-#: skin_default_skin.xml.h:565 skin_default_skin.xml.h:566
 #: skin_default_skin.xml.h:567
 msgid "Show in VFD"
 msgstr ""
 
-#: skin_default_skin.xml.h:566 skin_default_skin.xml.h:567
 #: skin_default_skin.xml.h:568
 msgid "Show last pos Question"
 msgstr ""
 
-#: skin_default_skin.xml.h:567 skin_default_skin.xml.h:568
 #: skin_default_skin.xml.h:569
 msgid "Show Modules"
 msgstr ""
 
-#: skin_default_skin.xml.h:568 skin_default_skin.xml.h:569
 #: skin_default_skin.xml.h:570
 msgid "Show Timeline in Channellist"
 msgstr ""
 
-#: skin_default_skin.xml.h:569 skin_default_skin.xml.h:570
 #: skin_default_skin.xml.h:571
 msgid "SID:"
 msgstr ""
 
-#: skin_default_skin.xml.h:570 skin_default_skin.xml.h:571
 #: skin_default_skin.xml.h:572
 msgid "Signal:"
 msgstr ""
 
-#: skin_default_skin.xml.h:574 skin_default_skin.xml.h:575
 #: skin_default_skin.xml.h:576
 msgid "Skin"
 msgstr ""
 
-#: skin_default_skin.xml.h:575 skin_default_skin.xml.h:576
 #: skin_default_skin.xml.h:577
 msgid "Skin Adjust"
 msgstr ""
 
-#: skin_default_skin.xml.h:576 skin_default_skin.xml.h:577
 #: skin_default_skin.xml.h:578
 msgid "Skin Select"
 msgstr ""
 
-#: skin_default_skin.xml.h:577 skin_default_skin.xml.h:578
 #: skin_default_skin.xml.h:579
 msgid "Skip 1/3"
 msgstr ""
 
-#: skin_default_skin.xml.h:578 skin_default_skin.xml.h:579
 #: skin_default_skin.xml.h:580
 msgid "Skip 4/6"
 msgstr ""
 
-#: skin_default_skin.xml.h:579 skin_default_skin.xml.h:580
 #: skin_default_skin.xml.h:581
 msgid "Skip 7/9"
 msgstr ""
 
-#: skin_default_skin.xml.h:580 skin_default_skin.xml.h:581
 #: skin_default_skin.xml.h:582
 msgid "Skip privat CA descriptor"
 msgstr ""
 
-#: skin_default_skin.xml.h:581 skin_default_skin.xml.h:582
 #: skin_default_skin.xml.h:583
 msgid "SmartCard Reader"
 msgstr ""
 
-#: skin_default_skin.xml.h:582 skin_default_skin.xml.h:583
 #: skin_default_skin.xml.h:584
 msgid "SNR:"
 msgstr ""
 
-#: skin_default_skin.xml.h:583 skin_default_skin.xml.h:584
-#: skin_default_skin.xml.h:585 keyactions.h:53 keyactions.h:84
-#: settings_bluebutton.h:14 settings_redbutton.h:15 settings_pluginbutton.h:15
+#: keyactions.h:53 keyactions.h:84 settings_bluebutton.h:14
+#: settings_pluginbutton.h:15 settings_redbutton.h:15
+#: skin_default_skin.xml.h:585
 msgid "Softcam Panel"
 msgstr ""
 
-#: skin_default_skin.xml.h:584 skin_default_skin.xml.h:585
 #: skin_default_skin.xml.h:586
 msgid "Softcam Selection"
 msgstr ""
 
-#: skin_default_skin.xml.h:586 skin_default_skin.xml.h:587
 #: skin_default_skin.xml.h:588
 msgid "sort service"
 msgstr ""
 
-#: skin_default_skin.xml.h:587 skin_default_skin.xml.h:588
 #: skin_default_skin.xml.h:589
 msgid "Sound amplifier (external Player)"
 msgstr ""
 
-#: skin_default_skin.xml.h:588 skin_default_skin.xml.h:589
 #: skin_default_skin.xml.h:590
 msgid "Sound amplifier (TV-Modus / internal Player)"
 msgstr ""
 
-#: skin_default_skin.xml.h:589 skin_default_skin.xml.h:590
 #: skin_default_skin.xml.h:591
 msgid "Space"
 msgstr ""
 
-#: skin_default_skin.xml.h:591 skin_default_skin.xml.h:592
 #: skin_default_skin.xml.h:593
 msgid "Spinnerspeed"
 msgstr ""
 
-#: skin_default_skin.xml.h:592 skin_default_skin.xml.h:593
 #: skin_default_skin.xml.h:594
 msgid "Spinnertime"
 msgstr ""
 
-#: skin_default_skin.xml.h:593 skin_default_skin.xml.h:594
 #: skin_default_skin.xml.h:595
 msgid "SSID"
 msgstr ""
 
-#: skin_default_skin.xml.h:594 system_update.h:88 system_update.h:210
-#: skin_default_skin.xml.h:595 skin_default_skin.xml.h:596
+#: skin_default_skin.xml.h:596 system_update.h:88 system_update.h:210
 msgid "stable"
 msgstr ""
 
-#: skin_default_skin.xml.h:596 skin_default_skin.xml.h:597
 #: skin_default_skin.xml.h:598
 msgid "Standby Brightness"
 msgstr ""
 
-#: skin_default_skin.xml.h:597 skin_default_skin.xml.h:598
 #: skin_default_skin.xml.h:599
 msgid "StandBy Mode"
 msgstr ""
 
-#: skin_default_skin.xml.h:598 skin_default_skin.xml.h:599
 #: skin_default_skin.xml.h:600
 msgid "Standby / Poweroff"
 msgstr ""
 
-#: skin_default_skin.xml.h:599 skin_default_skin.xml.h:600
 #: skin_default_skin.xml.h:601
 msgid "Standby / Poweroff..."
 msgstr ""
 
-#: skin_default_skin.xml.h:601 skin_default_skin.xml.h:602
 #: skin_default_skin.xml.h:603
 msgid "Start HTTPD"
 msgstr ""
 
-#: skin_default_skin.xml.h:603 skin_default_skin.xml.h:604
 #: skin_default_skin.xml.h:605
 msgid "Start RGUID"
 msgstr ""
 
-#: skin_default_skin.xml.h:604 skin_default_skin.xml.h:605
 #: skin_default_skin.xml.h:606
 msgid "Step frequency"
 msgstr ""
 
-#: skin_default_skin.xml.h:605 skin_default_skin.xml.h:606
 #: skin_default_skin.xml.h:607
 msgid "Step signalrate"
 msgstr ""
 
-#: skin_default_skin.xml.h:607 skin_default_skin.xml.h:606
 #: skin_default_skin.xml.h:608
 msgid "(Stop)"
 msgstr ""
 
-#: skin_default_skin.xml.h:608 skin_default_skin.xml.h:609
 #: skin_default_skin.xml.h:610
 msgid "STOP/START"
 msgstr ""
 
-#: skin_default_skin.xml.h:609 skin_default_skin.xml.h:610
 #: skin_default_skin.xml.h:611
 msgid "Storage position"
 msgstr ""
 
-#: skin_default_skin.xml.h:610 skin_default_skin.xml.h:611
 #: skin_default_skin.xml.h:612 stream.h:36
 msgid "Streaming"
 msgstr ""
 
-#: skin_default_skin.xml.h:611 skin_default_skin.xml.h:612
 #: skin_default_skin.xml.h:613
 msgid "Stream Path"
 msgstr ""
 
-#: skin_default_skin.xml.h:612 skin_default_skin.xml.h:613
 #: skin_default_skin.xml.h:614
 msgid "Stream Port"
 msgstr ""
 
-#: skin_default_skin.xml.h:613 skin_default_skin.xml.h:614
 #: skin_default_skin.xml.h:615
 msgid "Subservices"
 msgstr ""
 
-#: skin_default_skin.xml.h:614 skin_default_skin.xml.h:615
 #: skin_default_skin.xml.h:616
 msgid "Subtitle"
 msgstr ""
 
-#: skin_default_skin.xml.h:617 skin_default_skin.xml.h:618
 #: skin_default_skin.xml.h:619
 msgid "Symbolrate"
 msgstr ""
 
-#: skin_default_skin.xml.h:618 skin_default_skin.xml.h:619
 #: skin_default_skin.xml.h:620
 msgid "Symbol rate:"
 msgstr ""
 
-#: skin_default_skin.xml.h:619 skin_default_skin.xml.h:620
 #: skin_default_skin.xml.h:621
 msgid "Sysinfo"
 msgstr ""
 
-#: skin_default_skin.xml.h:620 skin_default_skin.xml.h:621
 #: skin_default_skin.xml.h:622
 msgid "System"
 msgstr ""
 
-#: skin_default_skin.xml.h:621 skin_default_skin.xml.h:622
 #: skin_default_skin.xml.h:623
 msgid "System:"
 msgstr ""
 
-#: skin_default_skin.xml.h:622 skin_default_skin.xml.h:623
 #: skin_default_skin.xml.h:624
 msgid "System..."
 msgstr ""
 
-#: skin_default_skin.xml.h:623 skin_default_skin.xml.h:624
 #: skin_default_skin.xml.h:625
 msgid "System - Flashupdate (online)"
 msgstr ""
 
-#: skin_default_skin.xml.h:624 skin_default_skin.xml.h:625
 #: skin_default_skin.xml.h:626
 msgid "System - Flashupdate (tmp)"
 msgstr ""
 
-#: skin_default_skin.xml.h:625 skin_default_skin.xml.h:626
 #: skin_default_skin.xml.h:627
 msgid "System Info"
 msgstr ""
 
-#: skin_default_skin.xml.h:626 skin_default_skin.xml.h:627
 #: skin_default_skin.xml.h:628
 msgid "System Infos"
 msgstr ""
 
-#: skin_default_skin.xml.h:627 skin_default_skin.xml.h:628
 #: skin_default_skin.xml.h:629
 msgid "System_Status"
 msgstr ""
 
-#: skin_default_skin.xml.h:628 skin_default_skin.xml.h:629
 #: skin_default_skin.xml.h:630
 msgid "System Update"
 msgstr ""
 
-#: skin_default_skin.xml.h:629 skin_default_skin.xml.h:630
 #: skin_default_skin.xml.h:631
 msgid "systemupdate_flash_online_menu..."
 msgstr ""
 
-#: skin_default_skin.xml.h:630 skin_default_skin.xml.h:631
 #: skin_default_skin.xml.h:632
 msgid "systemupdate_flash_tmp_menu..."
 msgstr ""
 
-#: skin_default_skin.xml.h:631 skin_default_skin.xml.h:632
 #: skin_default_skin.xml.h:633
 msgid "systemupdate_usb_online_menu..."
 msgstr ""
 
-#: skin_default_skin.xml.h:632 skin_default_skin.xml.h:633
 #: skin_default_skin.xml.h:634
 msgid "systemupdate_usb_tmp_menu..."
 msgstr ""
 
-#: skin_default_skin.xml.h:633 skin_default_skin.xml.h:634
 #: skin_default_skin.xml.h:635
 msgid "System - Usbupdate (online)"
 msgstr ""
 
-#: skin_default_skin.xml.h:634 skin_default_skin.xml.h:635
 #: skin_default_skin.xml.h:636
 msgid "System - Usbupdate (tmp)"
 msgstr ""
 
-#: skin_default_skin.xml.h:635 skin_default_skin.xml.h:636
 #: skin_default_skin.xml.h:637
 msgid "sz"
 msgstr ""
 
-#: skin_default_skin.xml.h:636 skin_default_skin.xml.h:637
 #: skin_default_skin.xml.h:638
 msgid "SZ"
 msgstr ""
 
-#: skin_default_skin.xml.h:637 skin_default_skin.xml.h:638
 #: skin_default_skin.xml.h:639
 msgid "t"
 msgstr ""
 
-#: skin_default_skin.xml.h:638 skin_default_skin.xml.h:639
 #: skin_default_skin.xml.h:640
 msgid "T"
 msgstr ""
 
-#: skin_default_skin.xml.h:640 skin_default_skin.xml.h:641
 #: skin_default_skin.xml.h:642
 msgid "TEST"
 msgstr ""
 
-#: skin_default_skin.xml.h:641 skin_default_skin.xml.h:642
 #: skin_default_skin.xml.h:643
 msgid "thereafter on this Channel:"
 msgstr ""
 
-#: skin_default_skin.xml.h:642 skin_default_skin.xml.h:643
 #: skin_default_skin.xml.h:644
 msgid "Threshold"
 msgstr ""
 
-#: skin_default_skin.xml.h:644 skin_default_skin.xml.h:645
 #: skin_default_skin.xml.h:646
 msgid "Timer"
 msgstr ""
 
-#: skin_default_skin.xml.h:645 skin_default_skin.xml.h:646
 #: skin_default_skin.xml.h:647
 msgid "Timer Record Path"
 msgstr ""
 
-#: skin_default_skin.xml.h:646 skin_default_skin.xml.h:647
 #: skin_default_skin.xml.h:648
 msgid "Timeshift Path"
 msgstr ""
 
-#: skin_default_skin.xml.h:647 skin_default_skin.xml.h:648
 #: skin_default_skin.xml.h:649
 msgid "Timeshift Settings"
 msgstr ""
 
-#: skin_default_skin.xml.h:648 skin_default_skin.xml.h:649
 #: skin_default_skin.xml.h:650
 msgid "Timeshifttype"
 msgstr ""
 
-#: skin_default_skin.xml.h:650 skin_default_skin.xml.h:651
 #: skin_default_skin.xml.h:652
 msgid "--- Time to switch"
 msgstr ""
 
-#: skin_default_skin.xml.h:651 skin_default_skin.xml.h:652
 #: skin_default_skin.xml.h:653
 msgid "Time to wait after seek for fill buffer"
 msgstr ""
 
-#: skin_default_skin.xml.h:652 skin_default_skin.xml.h:653
 #: skin_default_skin.xml.h:654
 msgid "Timezone"
 msgstr ""
 
-#: skin_default_skin.xml.h:653 skin_default_skin.xml.h:654
 #: skin_default_skin.xml.h:655
 msgid "Tint"
 msgstr ""
 
-#: skin_default_skin.xml.h:654 skin_default_skin.xml.h:655
 #: skin_default_skin.xml.h:656
 msgid "Titan Changelog"
 msgstr ""
 
-#: skin_default_skin.xml.h:655 skin_default_skin.xml.h:656
 #: skin_default_skin.xml.h:657
 msgid "Title"
 msgstr ""
 
-#: skin_default_skin.xml.h:656 skin_default_skin.xml.h:657
 #: skin_default_skin.xml.h:658
 msgid "TITLE"
 msgstr ""
 
-#: skin_default_skin.xml.h:657 skin_default_skin.xml.h:658
 #: skin_default_skin.xml.h:659
 msgid "Tone Burst"
 msgstr ""
 
-#: skin_default_skin.xml.h:658 skin_default_skin.xml.h:659
 #: skin_default_skin.xml.h:660
 msgid "Tone Mode"
 msgstr ""
 
-#: skin_default_skin.xml.h:659 skin_default_skin.xml.h:660
 #: skin_default_skin.xml.h:661
 msgid "Top"
 msgstr ""
 
-#: skin_default_skin.xml.h:660 skin_default_skin.xml.h:661
 #: skin_default_skin.xml.h:662
 msgid "TPK install (online)"
 msgstr ""
 
-#: skin_default_skin.xml.h:661 skin_default_skin.xml.h:662
-#: skin_default_skin.xml.h:663 extensions.h:202
+#: extensions.h:202 skin_default_skin.xml.h:663
 msgid "Tpk Install - select file"
 msgstr ""
 
-#: skin_default_skin.xml.h:662 skin_default_skin.xml.h:663
 #: skin_default_skin.xml.h:664
 msgid "Tpk Install - select install medium"
 msgstr ""
 
-#: skin_default_skin.xml.h:663 skin_default_skin.xml.h:664
 #: skin_default_skin.xml.h:665
 msgid "TPK media (media)"
 msgstr ""
 
-#: skin_default_skin.xml.h:664 skin_default_skin.xml.h:665
 #: skin_default_skin.xml.h:666
 msgid "TPK remove"
 msgstr ""
 
-#: skin_default_skin.xml.h:665 skin_default_skin.xml.h:666
 #: skin_default_skin.xml.h:667
 msgid "TPK tmp (tmp)"
 msgstr ""
 
-#: skin_default_skin.xml.h:666 skin_default_skin.xml.h:667
 #: skin_default_skin.xml.h:668
 msgid "TPK upgrade (online)"
 msgstr ""
 
-#: skin_default_skin.xml.h:667 skin_default_skin.xml.h:668
 #: skin_default_skin.xml.h:669
 msgid "Transmission"
 msgstr ""
 
-#: skin_default_skin.xml.h:668 skin_default_skin.xml.h:669
 #: skin_default_skin.xml.h:670
 msgid "Transmission:"
 msgstr ""
 
-#: skin_default_skin.xml.h:669 skin_default_skin.xml.h:670
 #: skin_default_skin.xml.h:671
 msgid "TRANSPONDEREDIT"
 msgstr ""
 
-#: skin_default_skin.xml.h:670 skin_default_skin.xml.h:671
 #: skin_default_skin.xml.h:672
 msgid "TSID:"
 msgstr ""
 
-#: skin_default_skin.xml.h:673 skin_default_skin.xml.h:674
 #: skin_default_skin.xml.h:675
 msgid "Tuner:"
 msgstr ""
 
-#: skin_default_skin.xml.h:674 skin_default_skin.xml.h:675
 #: skin_default_skin.xml.h:676
 msgid "Tunerconfig"
 msgstr ""
 
-#: skin_default_skin.xml.h:675 skin_default_skin.xml.h:676
 #: skin_default_skin.xml.h:677
 msgid "Tuner Configuration"
 msgstr ""
 
-#: skin_default_skin.xml.h:676 skin_default_skin.xml.h:677
 #: skin_default_skin.xml.h:678
 msgid "Tuner Reception"
 msgstr ""
 
-#: skin_default_skin.xml.h:678 skin_default_skin.xml.h:679
 #: skin_default_skin.xml.h:680
 msgid "TV Resolution (h):"
 msgstr ""
 
-#: skin_default_skin.xml.h:679 skin_default_skin.xml.h:680
 #: skin_default_skin.xml.h:681
 msgid "TV Resolution (w):"
 msgstr ""
 
-#: skin_default_skin.xml.h:680 skin_default_skin.xml.h:681
 #: skin_default_skin.xml.h:682
 msgid "Two step mute"
 msgstr ""
 
-#: skin_default_skin.xml.h:681 skin_default_skin.xml.h:682
 #: skin_default_skin.xml.h:683
 msgid "TXT PID:"
 msgstr ""
 
-#: skin_default_skin.xml.h:683 skin_default_skin.xml.h:684
 #: skin_default_skin.xml.h:685
 msgid "Type"
 msgstr ""
 
-#: skin_default_skin.xml.h:684 skin_default_skin.xml.h:685
 #: skin_default_skin.xml.h:686
 msgid "Type:"
 msgstr ""
 
-#: skin_default_skin.xml.h:685 skin_default_skin.xml.h:686
 #: skin_default_skin.xml.h:687
 msgid "Type of Scan"
 msgstr ""
 
-#: skin_default_skin.xml.h:686 skin_default_skin.xml.h:687
 #: skin_default_skin.xml.h:688
 msgid "u"
 msgstr ""
 
-#: skin_default_skin.xml.h:687 skin_default_skin.xml.h:688
 #: skin_default_skin.xml.h:689
 msgid "U"
 msgstr ""
 
-#: skin_default_skin.xml.h:688 skin_default_skin.xml.h:689
 #: skin_default_skin.xml.h:690
 msgid "ue"
 msgstr ""
 
-#: skin_default_skin.xml.h:689 skin_default_skin.xml.h:690
 #: skin_default_skin.xml.h:691
 msgid "UE"
 msgstr ""
 
-#: skin_default_skin.xml.h:690 skin_default_skin.xml.h:691
 #: skin_default_skin.xml.h:692
 msgid "UNC:"
 msgstr ""
 
-#: skin_default_skin.xml.h:691 skin_default_skin.xml.h:692
 #: skin_default_skin.xml.h:693
 msgid "Uncommitted Diseqc command"
 msgstr ""
 
-#: skin_default_skin.xml.h:692 skin_default_skin.xml.h:693
 #: skin_default_skin.xml.h:694
 msgid "Unicable Configuration"
 msgstr ""
 
-#: skin_default_skin.xml.h:694 skin_default_skin.xml.h:695
 #: skin_default_skin.xml.h:696
 msgid "UNLOAD"
 msgstr ""
 
-#: skin_default_skin.xml.h:695 skin_default_skin.xml.h:696
 #: skin_default_skin.xml.h:697
 msgid "update"
 msgstr ""
 
-#: skin_default_skin.xml.h:696 skin_default_skin.xml.h:697
 #: skin_default_skin.xml.h:698
 msgid "Update entrys on scan"
 msgstr ""
 
-#: skin_default_skin.xml.h:697 skin_default_skin.xml.h:698
 #: skin_default_skin.xml.h:699
 msgid "USB"
 msgstr ""
 
-#: skin_default_skin.xml.h:699 skin_default_skin.xml.h:700
 #: skin_default_skin.xml.h:701
 msgid "Usbupdate (online)"
 msgstr ""
 
-#: skin_default_skin.xml.h:700 skin_default_skin.xml.h:701
 #: skin_default_skin.xml.h:702
 msgid "Usbupdate (tmp)"
 msgstr ""
 
-#: skin_default_skin.xml.h:701 skin_default_skin.xml.h:702
 #: skin_default_skin.xml.h:703
 msgid "Use cross control for fast zapping and vol"
 msgstr ""
 
-#: skin_default_skin.xml.h:702 skin_default_skin.xml.h:703
 #: skin_default_skin.xml.h:704
 msgid "Use EPG Endtime"
 msgstr ""
 
-#: skin_default_skin.xml.h:703 skin_default_skin.xml.h:704
 #: skin_default_skin.xml.h:705
 msgid "Use numeric keys"
 msgstr ""
 
-#: skin_default_skin.xml.h:705 skin_default_skin.xml.h:706
 #: skin_default_skin.xml.h:707
 msgid "v"
 msgstr ""
 
-#: skin_default_skin.xml.h:706 skin_default_skin.xml.h:707
 #: skin_default_skin.xml.h:708
 msgid "V"
 msgstr ""
 
-#: skin_default_skin.xml.h:707 skin_default_skin.xml.h:708
 #: skin_default_skin.xml.h:709
 msgid "VFDisplay"
 msgstr ""
 
-#: skin_default_skin.xml.h:708 tmc.h:399 skin_default_skin.xml.h:709
-#: skin_default_skin.xml.h:710
+#: skin_default_skin.xml.h:710 tmc.h:399
 msgid "Video"
 msgstr ""
 
-#: skin_default_skin.xml.h:709 skin_default_skin.xml.h:710
 #: skin_default_skin.xml.h:711
 msgid "VideoMode Aspect Settings"
 msgstr ""
 
-#: skin_default_skin.xml.h:710 skin_default_skin.xml.h:711
 #: skin_default_skin.xml.h:712
 msgid "VideoMode Resolution Settings"
 msgstr ""
 
-#: skin_default_skin.xml.h:711 skin_default_skin.xml.h:712
 #: skin_default_skin.xml.h:713
 msgid "VideoMode Settings"
 msgstr ""
 
-#: skin_default_skin.xml.h:712 skin_default_skin.xml.h:713
 #: skin_default_skin.xml.h:714
 msgid "Video PID:"
 msgstr ""
 
-#: skin_default_skin.xml.h:713 skin_default_skin.xml.h:714
-#: skin_default_skin.xml.h:715 play.h:618 play.h:685
+#: play.h:618 play.h:685 skin_default_skin.xml.h:715
 msgid "Video Settings"
 msgstr ""
 
-#: skin_default_skin.xml.h:714 skin_default_skin.xml.h:715
 #: skin_default_skin.xml.h:716
 msgid "Vietnamese"
 msgstr ""
 
-#: skin_default_skin.xml.h:715 skin_default_skin.xml.h:716
 #: skin_default_skin.xml.h:717
 msgid "Virtualzap Timeout"
 msgstr ""
 
-#: skin_default_skin.xml.h:716 skin_default_skin.xml.h:717
 #: skin_default_skin.xml.h:718
 msgid "Vol off"
 msgstr ""
 
-#: skin_default_skin.xml.h:717 skin_default_skin.xml.h:718
 #: skin_default_skin.xml.h:719
 msgid "Voltage Mode"
 msgstr ""
 
-#: skin_default_skin.xml.h:718 skin_default_skin.xml.h:719
 #: skin_default_skin.xml.h:720
 msgid "Volumebar Timeout"
 msgstr ""
 
-#: skin_default_skin.xml.h:719 skin_default_skin.xml.h:720
 #: skin_default_skin.xml.h:721
 msgid "Votes"
 msgstr ""
 
-#: skin_default_skin.xml.h:720 skin_default_skin.xml.h:721
 #: skin_default_skin.xml.h:722
 msgid "w"
 msgstr ""
 
-#: skin_default_skin.xml.h:721 skin_default_skin.xml.h:722
 #: skin_default_skin.xml.h:723
 msgid "W"
 msgstr ""
 
-#: skin_default_skin.xml.h:722 skin_default_skin.xml.h:723
 #: skin_default_skin.xml.h:724
 msgid "Wait for cam ready"
 msgstr ""
 
-#: skin_default_skin.xml.h:724 skin_default_skin.xml.h:725
 #: skin_default_skin.xml.h:726
 msgid "WLAN Settings"
 msgstr ""
 
-#: skin_default_skin.xml.h:725 skin_default_skin.xml.h:726
 #: skin_default_skin.xml.h:727
 msgid "Writer"
 msgstr ""
 
-#: skin_default_skin.xml.h:726 skin_default_skin.xml.h:727
 #: skin_default_skin.xml.h:728
 msgid "x"
 msgstr ""
 
-#: skin_default_skin.xml.h:727 skin_default_skin.xml.h:728
 #: skin_default_skin.xml.h:729
 msgid "X"
 msgstr ""
 
-#: skin_default_skin.xml.h:728 skin_default_skin.xml.h:729
 #: skin_default_skin.xml.h:730
 msgid "y"
 msgstr ""
 
-#: skin_default_skin.xml.h:729 skin_default_skin.xml.h:730
 #: skin_default_skin.xml.h:731
 msgid "Y"
 msgstr ""
 
-#: skin_default_skin.xml.h:730 skin_default_skin.xml.h:731
 #: skin_default_skin.xml.h:732
 msgid "Year"
 msgstr ""
 
-#: skin_default_skin.xml.h:731 skin_default_skin.xml.h:732
 #: skin_default_skin.xml.h:733
 msgid "z"
 msgstr ""
 
-#: skin_default_skin.xml.h:732 skin_default_skin.xml.h:733
 #: skin_default_skin.xml.h:734
 msgid "Z"
 msgstr ""
 
-#: skin_default_skin.xml.h:28
 msgid "\");"
 msgstr ""
 
@@ -7632,7 +7431,7 @@ msgstr ""
 msgid "Trade time: "
 msgstr ""
 
-#: stream.h:32 stream.h:33
+#: stream.h:33
 msgid "No Live Stream running"
 msgstr ""
 
@@ -7808,88 +7607,88 @@ msgstr ""
 msgid "never del file"
 msgstr ""
 
-#: titan.c:245 titan.c:246
+#: titan.c:246
 msgid "!!! This is a DEMO Version !!!"
 msgstr ""
 
-#: titan.c:309 titan.c:310
+#: titan.c:310
 msgid ""
 "Found running record\n"
 "or record is starting in next time.\n"
 "Really shutdown ?"
 msgstr ""
 
-#: titan.c:318 titan.c:319
+#: titan.c:319
 msgid ""
 "Found running download\n"
 "Really shutdown ?"
 msgstr ""
 
-#: titan.c:726 titan.c:739 titan.c:740
+#: titan.c:740
 msgid "Error: open rc device !!"
 msgstr ""
 
-#: titan.c:732 titan.c:745 titan.c:746
+#: titan.c:746
 msgid "Error: no frontend device found !!"
 msgstr ""
 
-#: titan.c:738 titan.c:751 titan.c:752
+#: titan.c:752
 msgid "Error: no demux device found !!"
 msgstr ""
 
-#: titan.c:744 titan.c:757 titan.c:758
+#: titan.c:758
 msgid "Error: no video device found !!"
 msgstr ""
 
-#: titan.c:750 titan.c:763 titan.c:764
+#: titan.c:764
 msgid "Error: no audio device found !!"
 msgstr ""
 
-#: titan.c:768 titan.c:781 titan.c:782
+#: titan.c:782
 msgid "Error: skin not found !!"
 msgstr ""
 
-#: titan.c:898 titan.c:911 titan.c:912
+#: titan.c:912
 msgid "First Wizzard"
 msgstr ""
 
-#: titan.c:898 titan.c:911 titan.c:912
+#: titan.c:912
 msgid "Settings OK ?"
 msgstr ""
 
-#: titan.c:1018 titan.c:1031 titan.c:1032
+#: titan.c:1032
 msgid "Receiver successful unlocked"
 msgstr ""
 
-#: titan.c:1039 titan.c:1052 titan.c:1053
+#: titan.c:1053
 msgid ""
 "Free space in /var to little!\n"
 "This can make problems!"
 msgstr ""
 
-#: titan.c:1045 titan.c:1058 titan.c:1059
+#: titan.c:1059
 msgid ""
 "/var not writeable!\n"
 "Repair it?"
 msgstr ""
 
-#: titan.c:1056 titan.c:1069 titan.c:1070
+#: titan.c:1070
 msgid ""
 "Free space in /mnt to little!\n"
 "This can make problems!"
 msgstr ""
 
-#: titan.c:1062 titan.c:1075 titan.c:1076
+#: titan.c:1076
 msgid ""
 "/mnt not writeable!\n"
 "Repair it?"
 msgstr ""
 
-#: titan.c:1109 titan.c:1111 titan.c:1124 titan.c:1125
+#: titan.c:1125
 msgid "Unknown Error."
 msgstr ""
 
-#: titan.c:1111 titan.c:1113 titan.c:1126 titan.c:1127
+#: titan.c:1127
 msgid "Automatic stop in 10 seconds."
 msgstr ""
 
@@ -8323,7 +8122,6 @@ msgstr ""
 msgid "add recording (enter duration)"
 msgstr ""
 
-#: record.h:1364
 msgid "recordlist"
 msgstr ""
 
@@ -8343,29 +8141,28 @@ msgstr ""
 msgid "Key Action - Plugins"
 msgstr ""
 
-#: keyactions.h:51 keyactions.h:98 settings_redbutton.h:13
-#: settings_pluginbutton.h:13
+#: keyactions.h:51 keyactions.h:98 settings_pluginbutton.h:13
+#: settings_redbutton.h:13
 msgid "Auto Resolution"
 msgstr ""
 
 #: keyactions.h:57 keyactions.h:126 settings_bluebutton.h:18
-#: settings_redbutton.h:19 settings_pluginbutton.h:19
+#: settings_pluginbutton.h:19 settings_redbutton.h:19
 msgid "Sleep Timer"
 msgstr ""
 
 #: keyactions.h:59 keyactions.h:91 settings_bluebutton.h:20
-#: settings_redbutton.h:21 videomode.h:17 videomode.h:34
-#: settings_pluginbutton.h:21
+#: settings_pluginbutton.h:21 settings_redbutton.h:21 videomode.h:17
+#: videomode.h:34
 msgid "Subchannel"
 msgstr ""
 
-#: keyactions.h:105 settings_bluebutton.h:15 settings_redbutton.h:12
-#: settings_redbutton.h:44 settings_pluginbutton.h:12
-#: settings_pluginbutton.h:44
+#: keyactions.h:105 settings_bluebutton.h:15 settings_pluginbutton.h:12
+#: settings_pluginbutton.h:44 settings_redbutton.h:12 settings_redbutton.h:44
 msgid "Extensions List"
 msgstr ""
 
-#: keyactions.h:147 play.h:629 play.h:697 keyactions.h:24
+#: keyactions.h:24 keyactions.h:147 play.h:629 play.h:697
 msgid "MediaDB Scan Info"
 msgstr ""
 
@@ -8585,8 +8382,8 @@ msgstr ""
 msgid "Blue Key Action - Setup"
 msgstr ""
 
-#: settings_bluebutton.h:12 settings_bluebutton.h:43 settings_redbutton.h:16
-#: settings_pluginbutton.h:16
+#: settings_bluebutton.h:12 settings_bluebutton.h:43
+#: settings_pluginbutton.h:16 settings_redbutton.h:16
 msgid "TV / Radio Switch"
 msgstr ""
 
@@ -8650,15 +8447,15 @@ msgstr ""
 msgid "SCART 4:3 / 16:9"
 msgstr ""
 
-#: titan.c:867 titan.c:868
+#: titan.c:868
 msgid "RemoteControl Old Version"
 msgstr ""
 
-#: titan.c:868 titan.c:869
+#: titan.c:869
 msgid "RemoteControl Long Version"
 msgstr ""
 
-#: titan.c:870 titan.c:871
+#: titan.c:871
 msgid "Select Your Remote Control"
 msgstr ""
 
@@ -8753,4 +8550,24 @@ msgstr ""
 
 #: settings_pluginbutton.h:6
 msgid "Plugin Key Action - Setup"
+msgstr ""
+
+#: network.h:295
+msgid "Restart Network ?"
+msgstr ""
+
+#: network.h:297
+msgid "Aktivate new network config ?"
+msgstr ""
+
+#: skin_default_skin.xml.h:28
+msgid "\\"
+msgstr ""
+
+#: skin_default_skin.xml.h:231
+msgid "Fine move1"
+msgstr ""
+
+#: skin_default_skin.xml.h:249
+msgid "Go to startpos test"
 msgstr ""
