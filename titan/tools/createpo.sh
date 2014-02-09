@@ -60,11 +60,11 @@ for ROUND in $POLIST; do
 
 		xgettext --omit-header -k_ *.* -o $ROUND_NEW
 		echo aaaa
-		msgmerge --backup=none $ROUND_UTF $ROUND_NEW > $ROUND_NEW_MERGE
+		msgmerge --backup=none -U $ROUND_UTF $ROUND_NEW > $ROUND_NEW_MERGE
 
 		iconv -f ISO-8859-1 -t UTF-8 $ROUND_EDIT > $ROUND_EDIT_UTF
 echo bbbb
-		msgmerge --backup=none $ROUND_NEW_MERGE $ROUND_EDIT_UTF > $ROUND_MERGE_UTF
+		msgmerge --backup=none -U $ROUND_NEW_MERGE $ROUND_EDIT_UTF > $ROUND_MERGE_UTF
 		iconv -f UTF-8 -t ISO-8859-1 $ROUND_MERGE_UTF > $ROUND_MERGE
 		
 		SEARCH=`cat $ROUND_MERGE | grep -n "Content-Transfer-Encoding: 8bit" | cut -d":" -f1`
