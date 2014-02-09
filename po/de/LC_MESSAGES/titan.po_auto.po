@@ -657,6 +657,14 @@ msgstr "Kabel"
 msgid "Terrestrial"
 msgstr "Terrestrisch"
 
+#: browser.h:191
+msgid "Home"
+msgstr ""
+
+#: browser.h:206
+msgid "Browser Favoriten"
+msgstr ""
+
 #: callmon_main.h:39
 msgid ""
 "Callmon Timeout !!!\n"
@@ -888,6 +896,7 @@ msgstr ""
 "PO-Revision-Date: 2014-02-07 17:47+0200\n"
 "Last-Translator: obi <_obiwan_@web.de>\n"
 "Language-Team: German <_obiwan_@web.de>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1267,6 +1276,22 @@ msgstr "Erfolgreich entfernt."
 msgid "Remove error"
 msgstr "FEHLER: Löschen fehlgeschlagen!"
 
+#: extensions.h:125
+msgid "Install to MNT"
+msgstr "MNT Installation (FLASH)"
+
+#: extensions.h:137
+msgid "Install to FLASH"
+msgstr "FLASH Installation (FLASH)"
+
+#: extensions.h:151
+msgid "Install to SWAP"
+msgstr "SWAP Installation (USB oder HDD)"
+
+#: extensions.h:164
+msgid "Choice Install Medium"
+msgstr "Installation Auswahl"
+
 #: extensions.h:170 extensions.h:221 extensions.h:478
 msgid "Tpk Install Info"
 msgstr "Installations Information"
@@ -1274,6 +1299,14 @@ msgstr "Installations Information"
 #: extensions.h:170
 msgid "Can't install Package. Package to big."
 msgstr "FEHLER: Paket zu groß, Installation fehlgeschlagen!"
+
+#: extensions.h:197
+msgid "Tpk Install - select section"
+msgstr "TPK installieren - Kategorie wählen"
+
+#: extensions.h:202 skin_default_skin.xml.h:663
+msgid "Tpk Install - select file"
+msgstr "TPK installieren - Datei wählen"
 
 #: extensions.h:207 extensions.h:234 extensions.h:386 tpk.h:2990
 msgid ""
@@ -1308,6 +1341,10 @@ msgid "TPK Install done, your system will reboot !"
 msgstr ""
 "Das Plugin wurde erfolgreich installiert.\n"
 "Das System startet jetzt neu."
+
+#: extensions.h:271
+msgid "Tpk Remove - select file"
+msgstr "Plugins löschen"
 
 #: extensions.h:277
 msgid "Removeing"
@@ -1438,6 +1475,10 @@ msgstr "Umbenennen"
 #: filemanager.h:62 filemanager.h:87 filemanager.h:97
 msgid "Create Folder"
 msgstr "Verzeichnis anlegen"
+
+#: filemanager.h:84 play.h:612
+msgid "Menu"
+msgstr "Menü"
 
 #: filemanager.h:95
 msgid "Can't rename file !"
@@ -1718,6 +1759,10 @@ msgstr ""
 "Sie können das HBBTV durch Betätigung der -RECORD- Taste auf Ihrer "
 "Fernbedienung beenden."
 
+#: hbbtv.h:742
+msgid "Channel HBBTV"
+msgstr ""
+
 #: hwtest.h:88
 msgid "testtransponder not found"
 msgstr "FEHLER: Testtransponder nicht gefunden!"
@@ -1746,12 +1791,71 @@ msgstr ""
 msgid "can't create new channel"
 msgstr "FEHLER: Testsender kann nicht angelegt werden!"
 
+#: hwtest.h:153 hwtest.h:195
+msgid "[S]Lock & Search"
+msgstr ""
+
+#: hwtest.h:160 hwtest.h:210
+msgid "[T]Lock & Search"
+msgstr ""
+
+#: hwtest.h:167 hwtest.h:215
+msgid "[C]Lock & Search"
+msgstr ""
+
+#: hwtest.h:176 hwtest.h:220
+msgid "Front Display"
+msgstr ""
+
+#: hwtest.h:177 hwtest.h:239
+msgid "Front Key"
+msgstr ""
+
+#: hwtest.h:180 hwtest.h:329
+msgid "Smartcard"
+msgstr ""
+
+#: hwtest.h:181 hwtest.h:394 network.h:284 network.h:299
+#: plugins_mc_skin.xml.h:37 plugins_panel_skin.xml.h:18
+#: skin_default_skin.xml.h:393 skins_mc_skin.xml.h:37
+#: skins_panel_skin.xml.h:18 system_infos.h:91
+msgid "Network"
+msgstr "Netzwerk"
+
+#: hwtest.h:182 hwtest.h:414
+msgid "USB Port"
+msgstr ""
+
+#: hwtest.h:183 hwtest.h:458
+msgid "CAM"
+msgstr ""
+
+#: hwtest.h:184 hwtest.h:495
+msgid "RS232"
+msgstr ""
+
+#: hwtest.h:185 hwtest.h:567
+msgid "LNB"
+msgstr ""
+
+#: hwtest.h:186 hwtest.h:612
+msgid "Flash/Nand Check"
+msgstr ""
+
+#: hwtest.h:190
+msgid "Hardware Test"
+msgstr ""
+
 #: hwtest.h:206
 msgid "Press OK or EXIT"
 msgstr "Drücken Sie bitte -OK- oder -EXIT-"
 
 #: hwtest.h:245
 msgid "Press Front Key"
+msgstr ""
+
+#: hwtest.h:267
+msgid "Color Bar"
 msgstr ""
 
 #: hwtest.h:279 tmc.h:702
@@ -1765,6 +1869,10 @@ msgstr "-GRÜN-"
 #: hwtest.h:289
 msgid "BLUE"
 msgstr "Blaue Taste"
+
+#: hwtest.h:305
+msgid "SCART 4:3 / 16:9"
+msgstr ""
 
 #: hwtest.h:368 hwtest.h:374
 msgid "Smartcard "
@@ -1915,6 +2023,53 @@ msgstr ""
 msgid "ein"
 msgstr ""
 
+#: keyactions.h:21
+msgid "Key Action - Plugins"
+msgstr ""
+
+#: keyactions.h:24 keyactions.h:147 play.h:629 play.h:697
+msgid "MediaDB Scan Info"
+msgstr ""
+
+#: keyactions.h:51 keyactions.h:98 settings_pluginbutton.h:13
+#: settings_redbutton.h:13
+msgid "Auto Resolution"
+msgstr "Automatische Auflösung"
+
+#: keyactions.h:53 keyactions.h:84 settings_bluebutton.h:14
+#: settings_pluginbutton.h:15 settings_redbutton.h:15
+#: skin_default_skin.xml.h:585
+msgid "Softcam Panel"
+msgstr "Softcam"
+
+#: keyactions.h:57 keyactions.h:126 settings_bluebutton.h:18
+#: settings_pluginbutton.h:19 settings_redbutton.h:19
+msgid "Sleep Timer"
+msgstr "Ausschalttimer"
+
+#: keyactions.h:58 keyactions.h:133 settings_bluebutton.h:19
+#: settings_pluginbutton.h:20 settings_redbutton.h:20
+#: skin_default_skin.xml.h:134
+msgid "Child Protection"
+msgstr "Jugendschutz"
+
+#: keyactions.h:59 keyactions.h:91 settings_bluebutton.h:20
+#: settings_pluginbutton.h:21 settings_redbutton.h:21 videomode.h:17
+#: videomode.h:34
+msgid "Subchannel"
+msgstr "Optionskanal"
+
+#: keyactions.h:60 keyactions.h:140 play.h:663 play.h:706 play.h:758
+#: settings_bluebutton.h:21 settings_pluginbutton.h:22 settings_redbutton.h:22
+#: skin_default_skin.xml.h:191
+msgid "Downloads"
+msgstr ""
+
+#: keyactions.h:105 settings_bluebutton.h:15 settings_pluginbutton.h:12
+#: settings_pluginbutton.h:44 settings_redbutton.h:12 settings_redbutton.h:44
+msgid "Extensions List"
+msgstr "Plugin Liste"
+
 #: kinox.h:292 movie4k.h:720 movie4k.h:846 movie4k.h:960 solarmovie.h:443
 msgid "Season"
 msgstr "Staffel"
@@ -2044,6 +2199,14 @@ msgstr "ACHTUNG: Sie müssen erst das Plugin 'Filemanager' installieren!"
 #: mc_global.h:541 mc_global.h:569 mc_global.h:1065
 msgid "Random-On"
 msgstr "Zufällig-An"
+
+#: mc_global.h:600 mc_global.h:609
+msgid "Load Playlist"
+msgstr "Playliste laden"
+
+#: mc_global.h:601
+msgid "Edit Playlist"
+msgstr "Playliste bearbeiten"
 
 #: mc_internetbrowser.h:38
 msgid "Install netsurf Internetbrowser Tpk first !"
@@ -2477,6 +2640,10 @@ msgstr "FEHLER: Netzwerkfreigabe mit diesem Namen existiert bereits!"
 msgid "Are you sure you want to save this network mount?"
 msgstr "Wollen Sie diese Netzwerkfreigabe wirklich speichern?"
 
+#: networkbrowser.h:1875
+msgid "Networkbrowser - show Shares"
+msgstr "Netzwerk Browser - zeige Freigaben"
+
 #: networkbrowser.h:1907
 msgid "Are you sure you want remove this share?"
 msgstr "ACHTUNG: Wollen Sie die Netzwerkfreigabe wirklich entfernen?"
@@ -2489,16 +2656,17 @@ msgstr "Bitte warten"
 msgid "ERROR"
 msgstr "FEHLER"
 
-#: hwtest.h:181 hwtest.h:394 network.h:284 network.h:299
-#: plugins_mc_skin.xml.h:37 plugins_panel_skin.xml.h:18
-#: skin_default_skin.xml.h:393 skins_mc_skin.xml.h:37
-#: skins_panel_skin.xml.h:18 system_infos.h:91
-msgid "Network"
-msgstr "Netzwerk"
-
 #: network.h:284
 msgid "comming soon..."
 msgstr "Folgt in Kürze"
+
+#: network.h:295
+msgid "Restart Network ?"
+msgstr ""
+
+#: network.h:297
+msgid "Aktivate new network config ?"
+msgstr ""
 
 #: network.h:335
 msgid "Restart Network"
@@ -2878,6 +3046,154 @@ msgstr ""
 msgid "iD3Tag"
 msgstr ""
 
+#: play.h:618 play.h:685 skin_default_skin.xml.h:715
+msgid "Video Settings"
+msgstr "Bildeinstellungen"
+
+#: play.h:619 play.h:687
+msgid "AV Settings"
+msgstr "AV Einstellungen"
+
+#: play.h:620 play.h:695
+msgid "iD3Tag Info"
+msgstr ""
+
+#: play.h:623 play.h:699 skin_default_skin.xml.h:362
+msgid "MediaDB Edit"
+msgstr "Bearbeiten"
+
+#: play.h:626 play.h:701
+msgid "Delete File"
+msgstr "Datei löschen"
+
+#: play.h:635
+msgid "Search on KinoX"
+msgstr "Suche diesen Titel bei KinoX"
+
+#: play.h:636
+msgid "Search on KinoX (local)"
+msgstr "Suche diesen Titel bei KinoX (lokal)"
+
+#: play.h:637 play.h:726
+msgid "Search on Movie4k"
+msgstr "Suche diesen Titel bei Movie4k"
+
+#: play.h:638 play.h:728
+msgid "Search on Movie4k (local)"
+msgstr "Suche diesen Titel Movie4k (lokal)"
+
+#: play.h:639 play.h:712
+msgid "Search on Solarmovies (movie)"
+msgstr "Suche diesen Titel bei Solarmovies (Filme)"
+
+#: play.h:640 play.h:714
+msgid "Search on Solarmovies (serie)"
+msgstr "Suche diesen Titel bei Solarmovies (Serien)"
+
+#: play.h:641 play.h:716
+msgid "Search on Solarmovies (local)"
+msgstr "Suche diesen Titel bei Solarmovies (lokal)"
+
+#: play.h:642 play.h:754
+msgid "Search on Mle-HD (local)"
+msgstr "Suche diesen Titel bei Mle-HD (lokal)"
+
+#: play.h:643 play.h:742
+msgid "Search on Beeg (local)"
+msgstr "Suche diesen Titel bei Beeg (lokal)"
+
+#: play.h:644 play.h:752
+msgid "Search on Xvideos (local)"
+msgstr "Suche diesen Titel bei XVideos (lokal)"
+
+#: play.h:646 play.h:756
+msgid "Search on Netzkino (local)"
+msgstr "Suche diesen Titel bei Netzkino (lokal)"
+
+#: play.h:647 play.h:718
+msgid "Search on Youtube"
+msgstr "Suche diesen Titel bei Youtube"
+
+#: play.h:648 play.h:720
+msgid "Search on Youtube (local)"
+msgstr "Suche diesen Titel bei Youtube (lokal)"
+
+#: play.h:649 play.h:722
+msgid "Search on MyVideo"
+msgstr "Suche diesen Titel bei MyVideo"
+
+#: play.h:650
+msgid "Search on Myvideo (local)"
+msgstr "Suche diesen Titel bei MyVideo (lokal)"
+
+#: play.h:651 play.h:734
+msgid "Search on ARD (local)"
+msgstr "Suche diesen Titel bei ARD (lokal)"
+
+#: play.h:652 play.h:736
+msgid "Search on ZDF (local)"
+msgstr "Suche diesen Titel bei ZDF (lokal)"
+
+#: play.h:653 play.h:738
+msgid "Search on TecTime (local)"
+msgstr "Suche diesen Titel bei TecTime TV (lokal)"
+
+#: play.h:654 play.h:740
+msgid "Search on Giga (local)"
+msgstr "Suche diesen Titel bei Giga (lokal)"
+
+#: play.h:655 play.h:746
+msgid "Search on Rtl-Now (local)"
+msgstr "Suche diesen Titel bei RTL-Now (lokal)"
+
+#: play.h:656 play.h:744
+msgid "Search on Rtl2-Now (local)"
+msgstr "Suche diesen Titel bei RTL2-Now (lokal)"
+
+#: play.h:657 play.h:748
+msgid "Search on SuperRTL-Now (local)"
+msgstr "Suche diesen Titel bei SuperRTL-Now (lokal)"
+
+#: play.h:658 play.h:750
+msgid "Search on VOX-Now (local)"
+msgstr "Suche diesen Titel bei VOX-Now (lokal)"
+
+#: play.h:659 play.h:732
+msgid "Search on InternetTv (local)"
+msgstr "Suche diesen Titel in InternetTV (lokal)"
+
+#: play.h:660 play.h:730
+msgid "Search on InternetRadio (local)"
+msgstr "Suche diesen Titel bei den Internet Radios (lokal)"
+
+#: play.h:670 plugins_streaminfo_skin.xml.h:3 skins_streaminfo_skin.xml.h:3
+msgid "Streaminfo"
+msgstr ""
+
+#: play.h:672 play.h:689
+msgid "IMDb"
+msgstr ""
+
+#: play.h:674 play.h:691
+msgid "IMDb-API"
+msgstr ""
+
+#: play.h:693
+msgid "TMDb"
+msgstr ""
+
+#: play.h:708
+msgid "Search on Kinox"
+msgstr "Suche diesen Titel bei Kinox"
+
+#: play.h:710
+msgid "Search on Kinox (local)"
+msgstr "Suche diesen Titel bei Kinox (lokal)"
+
+#: play.h:724
+msgid "Search on MyVideo (local)"
+msgstr "Suche diesen Titel bei MyVideo (lokal)"
+
 #: play.h:1163
 msgid "Jump To (min)"
 msgstr "Springe zu (Min)"
@@ -3252,21 +3568,6 @@ msgstr "Port-Kamera 1"
 #: plugins_instar_skin.xml.h:14 skins_instar_skin.xml.h:14
 msgid "Port-Kammera 2"
 msgstr "Port-Kamera 2"
-
-msgid ""
-"text=START halign=center valign=middle bordercol=blue bordersize=2 "
-"bordertype=2 posx=400 posy=0 width=200 height=30/>);"
-msgstr ""
-
-msgid ""
-"text=SAVE halign=center valign=middle bordercol=green bordersize=2 "
-"bordertype=2 posx=0 posy=0 width=150 height=30/>);"
-msgstr ""
-
-msgid ""
-"text=EXIT halign=center valign=middle bordercol=exitcol bordersize=2 "
-"bordertype=2 posx=160 posy=0 width=150 height=30/>);"
-msgstr ""
 
 #: plugins_lcdpearl1_skin.xml.h:1 skins_lcdpearl1_skin.xml.h:1
 msgid "Pearl LCD Settings"
@@ -3898,10 +4199,6 @@ msgstr "Perspektive"
 msgid "Framerate"
 msgstr "Bildfrequenz"
 
-#: play.h:670 plugins_streaminfo_skin.xml.h:3 skins_streaminfo_skin.xml.h:3
-msgid "Streaminfo"
-msgstr ""
-
 #: plugins_streaminfo_skin.xml.h:4 skins_streaminfo_skin.xml.h:4
 msgid "X-Resolution"
 msgstr "X-Auflösung"
@@ -3914,8 +4211,9 @@ msgstr "Y-Auflösung"
 msgid "TiThek Menu"
 msgstr "Tithek Menü"
 
-msgid "TiThek PlayList"
-msgstr "Tithek Wiedergabeliste"
+#: plugins_tithek_skin.xml.h:2 skins_tithek_skin.xml.h:2
+msgid "TiThek Settings"
+msgstr "TiThek Einstellungen"
 
 #: plugins_tithek_skin.xml.h:3 skins_tithek_skin.xml.h:3
 msgid "ADD FAV"
@@ -3950,9 +4248,6 @@ msgstr "Rot-Menü"
 #: plugins_tithek_skin.xml.h:11 skins_tithek_skin.xml.h:11
 msgid "Show Pay Streams"
 msgstr "Zeige Pay Streams"
-
-msgid "TITHEK SETTINGS"
-msgstr "Einstellungen"
 
 #: plugins_tithek_skin.xml.h:12 skins_tithek_skin.xml.h:12
 msgid "View Cover"
@@ -4165,6 +4460,22 @@ msgstr "Erster Schacht"
 msgid "second slot"
 msgstr "Zweiter Schacht"
 
+#: readerconfig.h:310
+msgid "Use config from Flash (permanent)"
+msgstr "Config vom Flash (permanent) verwenden"
+
+#: readerconfig.h:319
+msgid "Use config from Flash (temporary)"
+msgstr "Config vom Flash (temporär) verwenden"
+
+#: readerconfig.h:328
+msgid "Use config from Stick or HDD"
+msgstr "Config vom Stick / HDD verwenden"
+
+#: readerconfig.h:338
+msgid "Choice Config File"
+msgstr "Config File wählen"
+
 #: readerconfig.h:343
 msgid "No config file found."
 msgstr "Es wurde keine Konfiguratiosndatei gefunden."
@@ -4290,9 +4601,25 @@ msgstr "Timeraufnahme wurde gestartet !\n"
 msgid "stop"
 msgstr "Stopp"
 
+#: record.h:1290 record.h:1364 skin_default_skin.xml.h:474
+msgid "Record"
+msgstr "Aufnahmen"
+
 #: record.h:1342 record.h:1351 record.h:1374
 msgid "change"
 msgstr "ändern"
+
+#: record.h:1360 record.h:1390
+msgid "add recording (stop after current event)"
+msgstr "Aufnahme hinzufügen (diese Sendung)"
+
+#: record.h:1361 record.h:1403
+msgid "add recording (indefinitely)"
+msgstr "Aufnahme hinzufügen (unbegrenzt)"
+
+#: record.h:1362 record.h:1408
+msgid "add recording (enter duration)"
+msgstr "Aufnahme hinzufügen (Länge eingeben)"
 
 #: record.h:1397
 msgid "Can't get EPG time or EPG endtime not ok"
@@ -4435,6 +4762,19 @@ msgid ""
 "Do you really want to erase Swap (Settings are preserve)?\n"
 "The Box will reboot and the erase will be started!"
 msgstr ""
+
+#: restoredefault.h:63 restoredefault.h:67 restoredefault.h:71
+#: skin_default_skin.xml.h:505
+msgid "Restore default settings"
+msgstr "Werkseinstellungen herstellen"
+
+#: restoredefault.h:64 restoredefault.h:75
+msgid "Format MNT with Backup/Restore"
+msgstr "Formatiere MNT und sichere eigene Daten"
+
+#: restoredefault.h:65 restoredefault.h:79
+msgid "Format MNT (all)"
+msgstr "Formatiere MNT (komplett)"
 
 #: rgui.h:30
 msgid "Can't connect to server !"
@@ -4679,6 +5019,23 @@ msgstr "Senderliste fehlerhaft (Sender nicht gefunden)!"
 msgid "Cam Routing"
 msgstr ""
 
+#: settings_bluebutton.h:6
+msgid "Blue Key Action - Setup"
+msgstr "Blaue Taste - Belegungsmenü"
+
+#: settings_bluebutton.h:12 settings_bluebutton.h:43
+#: settings_pluginbutton.h:16 settings_redbutton.h:16
+msgid "TV / Radio Switch"
+msgstr "TV / Radio Umschalten"
+
+#: settings_pluginbutton.h:6
+msgid "Plugin Key Action - Setup"
+msgstr "Plugin Taste - Belegungsmenü"
+
+#: settings_redbutton.h:6
+msgid "Red Key Action - Setup"
+msgstr "Rote Taste - Belegungsmenü"
+
 #: skinadjust.h:23
 msgid "border"
 msgstr "Rahmen"
@@ -4817,6 +5174,10 @@ msgstr ""
 
 #: skin_default_skin.xml.h:27
 msgid "*"
+msgstr ""
+
+#: skin_default_skin.xml.h:28
+msgid "\\"
 msgstr ""
 
 #: skin_default_skin.xml.h:29
@@ -5168,12 +5529,6 @@ msgstr "Sendersuche"
 msgid "Channel Service..."
 msgstr "Sendersuche"
 
-#: keyactions.h:58 keyactions.h:133 settings_bluebutton.h:19
-#: settings_pluginbutton.h:20 settings_redbutton.h:20
-#: skin_default_skin.xml.h:134
-msgid "Child Protection"
-msgstr "Jugendschutz"
-
 #: skin_default_skin.xml.h:136
 msgid "Clear"
 msgstr "löschen"
@@ -5372,12 +5727,6 @@ msgstr "TV Bild beim schnellen Umschalten nicht löschen"
 
 #: skin_default_skin.xml.h:190
 msgid "Download"
-msgstr ""
-
-#: keyactions.h:60 keyactions.h:140 play.h:663 play.h:706 play.h:758
-#: settings_bluebutton.h:21 settings_pluginbutton.h:22 settings_redbutton.h:22
-#: skin_default_skin.xml.h:191
-msgid "Downloads"
 msgstr ""
 
 #: skin_default_skin.xml.h:192
@@ -6255,10 +6604,6 @@ msgstr "Maximale Signalrate"
 msgid "Media Center"
 msgstr ""
 
-#: play.h:623 play.h:699 skin_default_skin.xml.h:362
-msgid "MediaDB Edit"
-msgstr "Bearbeiten"
-
 #: skin_default_skin.xml.h:363
 msgid "MediaDB Path"
 msgstr "Pfad"
@@ -6283,13 +6628,13 @@ msgstr "MENÜ"
 msgid "Menulist"
 msgstr "Menüliste"
 
-#: skin_default_skin.xml.h:370
-msgid "MENUPROTECT"
-msgstr "Menüschutz"
-
 #: skin_default_skin.xml.h:369
 msgid "Menu Protect"
 msgstr "Menü schützen"
+
+#: skin_default_skin.xml.h:370
+msgid "MENUPROTECT"
+msgstr "Menüschutz"
 
 #: skin_default_skin.xml.h:371
 msgid "MHW2 EPG"
@@ -6565,6 +6910,10 @@ msgstr ""
 msgid "Plot"
 msgstr "darstellen"
 
+#: skin_default_skin.xml.h:445
+msgid "Plugin Button"
+msgstr ""
+
 #: skin_default_skin.xml.h:446
 msgid "Plugins"
 msgstr "Plugins"
@@ -6664,10 +7013,6 @@ msgstr "Bewertung"
 #: skin_default_skin.xml.h:473
 msgid "Receiver unlock"
 msgstr "Receiver freischalten"
-
-#: record.h:1290 record.h:1364 skin_default_skin.xml.h:474
-msgid "Record"
-msgstr "Aufnahmen"
 
 #: skin_default_skin.xml.h:475
 msgid "Record Forerun (min)"
@@ -6780,11 +7125,6 @@ msgstr "Standardauflösung"
 #: skin_default_skin.xml.h:504
 msgid "Restore"
 msgstr "wiederherstellen"
-
-#: restoredefault.h:63 restoredefault.h:67 restoredefault.h:71
-#: skin_default_skin.xml.h:505
-msgid "Restore default settings"
-msgstr "Werkseinstellungen herstellen"
 
 #: skin_default_skin.xml.h:506
 msgid "Resync Recording immediately"
@@ -6918,6 +7258,10 @@ msgstr "Typ"
 msgid "--- SD resolution"
 msgstr "---SD Auflösung"
 
+#: skin_default_skin.xml.h:546
+msgid "Search"
+msgstr "Suche"
+
 #: skin_default_skin.xml.h:548
 msgid "Second Infobar"
 msgstr "Zweite Infoleiste"
@@ -7049,12 +7393,6 @@ msgstr "Kartenleser"
 #: skin_default_skin.xml.h:584
 msgid "SNR:"
 msgstr ""
-
-#: keyactions.h:53 keyactions.h:84 settings_bluebutton.h:14
-#: settings_pluginbutton.h:15 settings_redbutton.h:15
-#: skin_default_skin.xml.h:585
-msgid "Softcam Panel"
-msgstr "Softcam"
 
 #: skin_default_skin.xml.h:586
 msgid "Softcam Selection"
@@ -7320,10 +7658,6 @@ msgstr "Oben"
 msgid "TPK install (online)"
 msgstr "TPK installieren (Online)"
 
-#: extensions.h:202 skin_default_skin.xml.h:663
-msgid "Tpk Install - select file"
-msgstr "TPK installieren - Datei wählen"
-
 #: skin_default_skin.xml.h:664
 msgid "Tpk Install - select install medium"
 msgstr "TPK installieren - Installationsmedium auswählen"
@@ -7500,10 +7834,6 @@ msgstr "Bild Einstellungen"
 msgid "Video PID:"
 msgstr "Video PID:"
 
-#: play.h:618 play.h:685 skin_default_skin.xml.h:715
-msgid "Video Settings"
-msgstr "Bildeinstellungen"
-
 #: skin_default_skin.xml.h:716
 msgid "Vietnamese"
 msgstr "Vietnamesisch"
@@ -7574,9 +7904,6 @@ msgstr ""
 
 #: skin_default_skin.xml.h:734
 msgid "Z"
-msgstr ""
-
-msgid "\");"
 msgstr ""
 
 #: skinselector.h:218
@@ -7702,6 +8029,37 @@ msgstr "Zeit des Handelns: "
 #: stream.h:33
 msgid "No Live Stream running"
 msgstr "Es wird kein Stream wiedergegeben"
+
+#: system_backup.h:15
+msgid ""
+"Backup to /tmp or /var/backup. If the free memory too small can a usb device "
+"will never use.\n"
+"There must be a folder backup."
+msgstr ""
+"Sicherung wird in /tmp oder /var/backup abgelegt. Falls der interne Speicher "
+"nicht ausreicht, kann die Sicherung auch auf einem USB Stick/HDD gespeichert "
+"werden.\n"
+"Es muss ein Ordner mit dem Namen backup auf dem Gerät sein."
+
+#: system_backup_restore.h:15
+msgid ""
+"Press -restore- and your saved settings will be restored from your "
+"swapstick / recording hdd! The Box will restart automatically for "
+"restoring!\n"
+"\n"
+"Press -backup- to save your actual settings to swapstick / recording hdd.\n"
+"WARNING: The old backup will be deleted!"
+msgstr ""
+"-Wiederherstellung- (Rot):\n"
+"Ihre Einstellungen werden aus einer zuvor erstellten Sicherung "
+"wiederhergestellt! Der Receiver wird dafür automatisch neugestartet! \n"
+"\n"
+"-Sicherung erstellen- (Grün):\n"
+"Ihre Einstellungen werden gesichert.\n"
+"WARNUNG: Die alten Sicherungen werden gelöscht!\n"
+"\n"
+"-Ergebnis- (Gelb):\n"
+"Überprüfung der Sicherung mittels Logdatei"
 
 #: system_backup_restore.h:31
 msgid "Restore Settings"
@@ -7948,6 +8306,18 @@ msgstr "FEHLER: Audio-Gerät wurde nicht gefunden!"
 msgid "Error: skin not found !!"
 msgstr "FEHLER: Skin wurde nicht gefunden!"
 
+#: titan.c:868
+msgid "RemoteControl Old Version"
+msgstr "Fernbedienung alte Version"
+
+#: titan.c:869
+msgid "RemoteControl Long Version"
+msgstr "Fernbedienung lange Version"
+
+#: titan.c:871
+msgid "Select Your Remote Control"
+msgstr "Fernbedienungsauswahl Menü"
+
 #: titan.c:912
 msgid "First Wizzard"
 msgstr "Erstinstallationsassistent"
@@ -8027,6 +8397,66 @@ msgid ""
 msgstr ""
 "Das Herunterladen der Datei ist nicht möglich!\n"
 "Bitte versuchen Sie es zu einem späteren Zeitpunkt erneut."
+
+#: tithek.h:1215
+msgid "Choice Playback"
+msgstr "Wiedergabe auswählen"
+
+#: tithek.h:1218 tithek.h:1252
+msgid "Streaming Playback (default)"
+msgstr "Direktes Streamen (standard)"
+
+#: tithek.h:1224 tithek.h:1258
+msgid "Streaming Playback Caching (0.5MB)"
+msgstr "Streamen mit Puffer (0.5MB)"
+
+#: tithek.h:1225 tithek.h:1264
+msgid "Streaming Playback Caching (1MB)"
+msgstr "Streamen mit Puffer (1MB)"
+
+#: tithek.h:1233 tithek.h:1288
+msgid "Streaming Playback Caching (5MB)"
+msgstr "Streamen mit Puffer (5MB)"
+
+#: tithek.h:1234 tithek.h:1294
+msgid "Streaming Playback Caching (7.5MB)"
+msgstr "Streamen mit Puffer (7.5MB)"
+
+#: tithek.h:1235 tithek.h:1300
+msgid "Streaming Playback Caching (10MB)"
+msgstr "Streamen mit Puffer (10MB)"
+
+#: tithek.h:1243 tithek.h:1318
+msgid "Download Full File"
+msgstr "Datei in Streampfad herunterladen"
+
+#: tithek.h:1244 tithek.h:1337
+msgid "Download Full File (background)"
+msgstr "Datei in Streampfad herunterladen (im Hintergrund)"
+
+#: tithek.h:1270
+msgid "Streaming Playback Caching (2MB)"
+msgstr "Streamen mit Puffer (2MB)"
+
+#: tithek.h:1276
+msgid "Streaming Playback Caching (3MB)"
+msgstr "Streamen mit Puffer (3MB)"
+
+#: tithek.h:1282
+msgid "Streaming Playback Caching (4MB)"
+msgstr "Streamen mit Puffer (4MB)"
+
+#: tithek.h:1306
+msgid "File Caching Playback (10MB / 120s)"
+msgstr "Im Cache Zwischenspeicherrn (10MB / 120 Sek)"
+
+#: tithek.h:1310
+msgid "File Caching Playback (20MB / 240s)"
+msgstr "Im Cache Wischenspeichern (20MB / 240 Sek)"
+
+#: tithek.h:1314
+msgid "File Caching Playback (30MB / 360s)"
+msgstr "Im Cache Zwischenspeichern (30MB / 360 Sek)"
 
 #: tithek.h:1327
 msgid "Start playback"
@@ -8332,6 +8762,18 @@ msgstr ""
 msgid "Tuner "
 msgstr ""
 
+#: unicable.h:197
+msgid "Unicable manufacturer"
+msgstr "Unicable Hersteller"
+
+#: unicable.h:212
+msgid "Unicable product"
+msgstr "Unicable Produkt"
+
+#: unicable.h:277
+msgid "Unicable SCR"
+msgstr ""
+
 #: unlock.h:20
 msgid "Spezialfunctions unlocked, no input required"
 msgstr "System freigeschaltet."
@@ -8406,6 +8848,18 @@ msgstr "Stern"
 msgid "blink star"
 msgstr "Blinkender Stern"
 
+#: videomode.h:18 videomode.h:40 videomode.h:47
+msgid "Resolution Settings"
+msgstr "Auflösung"
+
+#: videomode.h:19 videomode.h:62 videomode.h:69
+msgid "Aspect Settings"
+msgstr "Seitenverhältnis Einstellungen"
+
+#: videomode.h:25 videomode.h:27
+msgid "Videomode"
+msgstr "Bildqualität"
+
 #: weather.h:430 weather.h:448 weather.h:466 weather.h:484
 msgid "Day: "
 msgstr "Tag"
@@ -8422,485 +8876,8 @@ msgstr "Höchsttemperatur"
 msgid "Condition: "
 msgstr "Wetter:"
 
-#: skin_default_skin.xml.h:445
-msgid "Plugin Button"
-msgstr ""
-
-#: skin_default_skin.xml.h:546
-msgid "Search"
-msgstr "Suche"
-
-#: plugins_tithek_skin.xml.h:2 skins_tithek_skin.xml.h:2
-msgid "TiThek Settings"
-msgstr "TiThek Einstellungen"
-
-#: browser.h:191
-msgid "Home"
-msgstr ""
-
-#: browser.h:206
-msgid "Browser Favoriten"
-msgstr ""
-
-#: extensions.h:125
-msgid "Install to MNT"
-msgstr "MNT Installation (FLASH)"
-
-#: extensions.h:137
-msgid "Install to FLASH"
-msgstr "FLASH Installation (FLASH)"
-
-#: extensions.h:151
-msgid "Install to SWAP"
-msgstr "SWAP Installation (USB oder HDD)"
-
-#: extensions.h:164
-msgid "Choice Install Medium"
-msgstr "Installation Auswahl"
-
-#: extensions.h:197
-msgid "Tpk Install - select section"
-msgstr "TPK installieren - Kategorie wählen"
-
-#: extensions.h:271
-msgid "Tpk Remove - select file"
-msgstr "Plugins löschen"
-
-#: filemanager.h:84 play.h:612
-msgid "Menu"
-msgstr "Menü"
-
-#: hbbtv.h:742
-msgid "Channel HBBTV"
-msgstr ""
-
-#: hwtest.h:153 hwtest.h:195
-msgid "[S]Lock & Search"
-msgstr ""
-
-#: hwtest.h:160 hwtest.h:210
-msgid "[T]Lock & Search"
-msgstr ""
-
-#: hwtest.h:167 hwtest.h:215
-msgid "[C]Lock & Search"
-msgstr ""
-
-#: hwtest.h:176 hwtest.h:220
-msgid "Front Display"
-msgstr ""
-
-#: hwtest.h:177 hwtest.h:239
-msgid "Front Key"
-msgstr ""
-
-#: hwtest.h:180 hwtest.h:329
-msgid "Smartcard"
-msgstr ""
-
-#: hwtest.h:182 hwtest.h:414
-msgid "USB Port"
-msgstr ""
-
-#: hwtest.h:183 hwtest.h:458
-msgid "CAM"
-msgstr ""
-
-#: hwtest.h:184 hwtest.h:495
-msgid "RS232"
-msgstr ""
-
-#: hwtest.h:185 hwtest.h:567
-msgid "LNB"
-msgstr ""
-
-#: hwtest.h:186 hwtest.h:612
-msgid "Flash/Nand Check"
-msgstr ""
-
-#: hwtest.h:190
-msgid "Hardware Test"
-msgstr ""
-
-#: hwtest.h:267
-msgid "Color Bar"
-msgstr ""
-
-#: hwtest.h:305
-msgid "SCART 4:3 / 16:9"
-msgstr ""
-
-#: keyactions.h:21
-msgid "Key Action - Plugins"
-msgstr ""
-
-#: keyactions.h:24 keyactions.h:147 play.h:629 play.h:697
-msgid "MediaDB Scan Info"
-msgstr ""
-
-#: keyactions.h:51 keyactions.h:98 settings_pluginbutton.h:13
-#: settings_redbutton.h:13
-msgid "Auto Resolution"
-msgstr "Automatische Auflösung"
-
-#: keyactions.h:57 keyactions.h:126 settings_bluebutton.h:18
-#: settings_pluginbutton.h:19 settings_redbutton.h:19
-msgid "Sleep Timer"
-msgstr "Ausschalttimer"
-
-#: keyactions.h:59 keyactions.h:91 settings_bluebutton.h:20
-#: settings_pluginbutton.h:21 settings_redbutton.h:21 videomode.h:17
-#: videomode.h:34
-msgid "Subchannel"
-msgstr "Optionskanal"
-
-#: keyactions.h:105 settings_bluebutton.h:15 settings_pluginbutton.h:12
-#: settings_pluginbutton.h:44 settings_redbutton.h:12 settings_redbutton.h:44
-msgid "Extensions List"
-msgstr "Plugin Liste"
-
-#: mc_global.h:600 mc_global.h:609
-msgid "Load Playlist"
-msgstr "Playliste laden"
-
-#: mc_global.h:601
-msgid "Edit Playlist"
-msgstr "Playliste bearbeiten"
-
-#: networkbrowser.h:1875
-msgid "Networkbrowser - show Shares"
-msgstr "Netzwerk Browser - zeige Freigaben"
-
-#: play.h:619 play.h:687
-msgid "AV Settings"
-msgstr "AV Einstellungen"
-
-#: play.h:620 play.h:695
-msgid "iD3Tag Info"
-msgstr ""
-
-#: play.h:626 play.h:701
-msgid "Delete File"
-msgstr "Datei löschen"
-
-#: play.h:635
-msgid "Search on KinoX"
-msgstr "Suche diesen Titel bei KinoX"
-
-#: play.h:636
-msgid "Search on KinoX (local)"
-msgstr "Suche diesen Titel bei KinoX (lokal)"
-
-#: play.h:637 play.h:726
-msgid "Search on Movie4k"
-msgstr "Suche diesen Titel bei Movie4k"
-
-#: play.h:638 play.h:728
-msgid "Search on Movie4k (local)"
-msgstr "Suche diesen Titel Movie4k (lokal)"
-
-#: play.h:639 play.h:712
-msgid "Search on Solarmovies (movie)"
-msgstr "Suche diesen Titel bei Solarmovies (Filme)"
-
-#: play.h:640 play.h:714
-msgid "Search on Solarmovies (serie)"
-msgstr "Suche diesen Titel bei Solarmovies (Serien)"
-
-#: play.h:641 play.h:716
-msgid "Search on Solarmovies (local)"
-msgstr "Suche diesen Titel bei Solarmovies (lokal)"
-
-#: play.h:642 play.h:754
-msgid "Search on Mle-HD (local)"
-msgstr "Suche diesen Titel bei Mle-HD (lokal)"
-
-#: play.h:643 play.h:742
-msgid "Search on Beeg (local)"
-msgstr "Suche diesen Titel bei Beeg (lokal)"
-
-#: play.h:644 play.h:752
-msgid "Search on Xvideos (local)"
-msgstr "Suche diesen Titel bei XVideos (lokal)"
-
-#: play.h:646 play.h:756
-msgid "Search on Netzkino (local)"
-msgstr "Suche diesen Titel bei Netzkino (lokal)"
-
-#: play.h:647 play.h:718
-msgid "Search on Youtube"
-msgstr "Suche diesen Titel bei Youtube"
-
-#: play.h:648 play.h:720
-msgid "Search on Youtube (local)"
-msgstr "Suche diesen Titel bei Youtube (lokal)"
-
-#: play.h:649 play.h:722
-msgid "Search on MyVideo"
-msgstr "Suche diesen Titel bei MyVideo"
-
-#: play.h:650
-msgid "Search on Myvideo (local)"
-msgstr "Suche diesen Titel bei MyVideo (lokal)"
-
-#: play.h:651 play.h:734
-msgid "Search on ARD (local)"
-msgstr "Suche diesen Titel bei ARD (lokal)"
-
-#: play.h:652 play.h:736
-msgid "Search on ZDF (local)"
-msgstr "Suche diesen Titel bei ZDF (lokal)"
-
-#: play.h:653 play.h:738
-msgid "Search on TecTime (local)"
-msgstr "Suche diesen Titel bei TecTime TV (lokal)"
-
-#: play.h:654 play.h:740
-msgid "Search on Giga (local)"
-msgstr "Suche diesen Titel bei Giga (lokal)"
-
-#: play.h:655 play.h:746
-msgid "Search on Rtl-Now (local)"
-msgstr "Suche diesen Titel bei RTL-Now (lokal)"
-
-#: play.h:656 play.h:744
-msgid "Search on Rtl2-Now (local)"
-msgstr "Suche diesen Titel bei RTL2-Now (lokal)"
-
-#: play.h:657 play.h:748
-msgid "Search on SuperRTL-Now (local)"
-msgstr "Suche diesen Titel bei SuperRTL-Now (lokal)"
-
-#: play.h:658 play.h:750
-msgid "Search on VOX-Now (local)"
-msgstr "Suche diesen Titel bei VOX-Now (lokal)"
-
-#: play.h:659 play.h:732
-msgid "Search on InternetTv (local)"
-msgstr "Suche diesen Titel in InternetTV (lokal)"
-
-#: play.h:660 play.h:730
-msgid "Search on InternetRadio (local)"
-msgstr "Suche diesen Titel bei den Internet Radios (lokal)"
-
-#: play.h:672 play.h:689
-msgid "IMDb"
-msgstr ""
-
-#: play.h:674 play.h:691
-msgid "IMDb-API"
-msgstr ""
-
-#: play.h:693
-msgid "TMDb"
-msgstr ""
-
-#: play.h:708
-msgid "Search on Kinox"
-msgstr "Suche diesen Titel bei Kinox"
-
-#: play.h:710
-msgid "Search on Kinox (local)"
-msgstr "Suche diesen Titel bei Kinox (lokal)"
-
-#: play.h:724
-msgid "Search on MyVideo (local)"
-msgstr "Suche diesen Titel bei MyVideo (lokal)"
-
-#: readerconfig.h:310
-msgid "Use config from Flash (permanent)"
-msgstr "Config vom Flash (permanent) verwenden"
-
-#: readerconfig.h:319
-msgid "Use config from Flash (temporary)"
-msgstr "Config vom Flash (temporär) verwenden"
-
-#: readerconfig.h:328
-msgid "Use config from Stick or HDD"
-msgstr "Config vom Stick / HDD verwenden"
-
-#: readerconfig.h:338
-msgid "Choice Config File"
-msgstr "Config File wählen"
-
-#: record.h:1360 record.h:1390
-msgid "add recording (stop after current event)"
-msgstr "Aufnahme hinzufügen (diese Sendung)"
-
-#: record.h:1361 record.h:1403
-msgid "add recording (indefinitely)"
-msgstr "Aufnahme hinzufügen (unbegrenzt)"
-
-#: record.h:1362 record.h:1408
-msgid "add recording (enter duration)"
-msgstr "Aufnahme hinzufügen (Länge eingeben)"
-
-#: restoredefault.h:64 restoredefault.h:75
-msgid "Format MNT with Backup/Restore"
-msgstr "Formatiere MNT und sichere eigene Daten"
-
-#: restoredefault.h:65 restoredefault.h:79
-msgid "Format MNT (all)"
-msgstr "Formatiere MNT (komplett)"
-
-#: settings_bluebutton.h:6
-msgid "Blue Key Action - Setup"
-msgstr "Blaue Taste - Belegungsmenü"
-
-#: settings_bluebutton.h:12 settings_bluebutton.h:43
-#: settings_pluginbutton.h:16 settings_redbutton.h:16
-msgid "TV / Radio Switch"
-msgstr "TV / Radio Umschalten"
-
-#: settings_redbutton.h:6
-msgid "Red Key Action - Setup"
-msgstr "Rote Taste - Belegungsmenü"
-
-#: system_backup.h:15
-msgid ""
-"Backup to /tmp or /var/backup. If the free memory too small can a usb device "
-"will never use.\n"
-"There must be a folder backup."
-msgstr ""
-"Sicherung wird in /tmp oder /var/backup abgelegt. Falls der interne Speicher "
-"nicht ausreicht, kann die Sicherung auch auf einem USB Stick/HDD gespeichert "
-"werden.\n"
-"Es muss ein Ordner mit dem Namen backup auf dem Gerät sein."
-
-#: system_backup_restore.h:15
-msgid ""
-"Press -restore- and your saved settings will be restored from your "
-"swapstick / recording hdd! The Box will restart automatically for "
-"restoring!\n"
-"\n"
-"Press -backup- to save your actual settings to swapstick / recording hdd.\n"
-"WARNING: The old backup will be deleted!"
-msgstr ""
-"-Wiederherstellung- (Rot):\n"
-"Ihre Einstellungen werden aus einer zuvor erstellten Sicherung "
-"wiederhergestellt! Der Receiver wird dafür automatisch neugestartet! \n"
-"\n"
-"-Sicherung erstellen- (Grün):\n"
-"Ihre Einstellungen werden gesichert.\n"
-"WARNUNG: Die alten Sicherungen werden gelöscht!\n"
-"\n"
-"-Ergebnis- (Gelb):\n"
-"Überprüfung der Sicherung mittels Logdatei"
-
-#: titan.c:868
-msgid "RemoteControl Old Version"
-msgstr "Fernbedienung alte Version"
-
-#: titan.c:869
-msgid "RemoteControl Long Version"
-msgstr "Fernbedienung lange Version"
-
-#: titan.c:871
-msgid "Select Your Remote Control"
-msgstr "Fernbedienungsauswahl Menü"
-
-#: tithek.h:1215
-msgid "Choice Playback"
-msgstr "Wiedergabe auswählen"
-
-#: tithek.h:1218 tithek.h:1252
-msgid "Streaming Playback (default)"
-msgstr "Direktes Streamen (standard)"
-
-#: tithek.h:1224 tithek.h:1258
-msgid "Streaming Playback Caching (0.5MB)"
-msgstr "Streamen mit Puffer (0.5MB)"
-
-#: tithek.h:1225 tithek.h:1264
-msgid "Streaming Playback Caching (1MB)"
-msgstr "Streamen mit Puffer (1MB)"
-
-#: tithek.h:1233 tithek.h:1288
-msgid "Streaming Playback Caching (5MB)"
-msgstr "Streamen mit Puffer (5MB)"
-
-#: tithek.h:1234 tithek.h:1294
-msgid "Streaming Playback Caching (7.5MB)"
-msgstr "Streamen mit Puffer (7.5MB)"
-
-#: tithek.h:1235 tithek.h:1300
-msgid "Streaming Playback Caching (10MB)"
-msgstr "Streamen mit Puffer (10MB)"
-
-#: tithek.h:1243 tithek.h:1318
-msgid "Download Full File"
-msgstr "Datei in Streampfad herunterladen"
-
-#: tithek.h:1244 tithek.h:1337
-msgid "Download Full File (background)"
-msgstr "Datei in Streampfad herunterladen (im Hintergrund)"
-
-#: tithek.h:1270
-msgid "Streaming Playback Caching (2MB)"
-msgstr "Streamen mit Puffer (2MB)"
-
-#: tithek.h:1276
-msgid "Streaming Playback Caching (3MB)"
-msgstr "Streamen mit Puffer (3MB)"
-
-#: tithek.h:1282
-msgid "Streaming Playback Caching (4MB)"
-msgstr "Streamen mit Puffer (4MB)"
-
-#: tithek.h:1306
-msgid "File Caching Playback (10MB / 120s)"
-msgstr "Im Cache Zwischenspeicherrn (10MB / 120 Sek)"
-
-#: tithek.h:1310
-msgid "File Caching Playback (20MB / 240s)"
-msgstr "Im Cache Wischenspeichern (20MB / 240 Sek)"
-
-#: tithek.h:1314
-msgid "File Caching Playback (30MB / 360s)"
-msgstr "Im Cache Zwischenspeichern (30MB / 360 Sek)"
-
-#: unicable.h:197
-msgid "Unicable manufacturer"
-msgstr "Unicable Hersteller"
-
-#: unicable.h:212
-msgid "Unicable product"
-msgstr "Unicable Produkt"
-
-#: unicable.h:277
-msgid "Unicable SCR"
-msgstr ""
-
-#: videomode.h:18 videomode.h:40 videomode.h:47
-msgid "Resolution Settings"
-msgstr "Auflösung"
-
-#: videomode.h:19 videomode.h:62 videomode.h:69
-msgid "Aspect Settings"
-msgstr "Seitenverhältnis Einstellungen"
-
-#: videomode.h:25 videomode.h:27
-msgid "Videomode"
-msgstr "Bildqualität"
-
-#: settings_pluginbutton.h:6
-msgid "Plugin Key Action - Setup"
-msgstr "Plugin Taste - Belegungsmenü"
-
-#: network.h:295
-msgid "Restart Network ?"
-msgstr ""
-
-#: network.h:297
-msgid "Aktivate new network config ?"
-msgstr ""
-
-#: skin_default_skin.xml.h:28
-msgid "\\"
-msgstr ""
-
-msgid "Fine move1"
-msgstr ""
-
-msgid "Go to startpos test"
-msgstr ""
+#~ msgid "TiThek PlayList"
+#~ msgstr "Tithek Wiedergabeliste"
+
+#~ msgid "TITHEK SETTINGS"
+#~ msgstr "Einstellungen"
