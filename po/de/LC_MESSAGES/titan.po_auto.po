@@ -5874,8 +5874,8 @@ msgid "Filesystem Check"
 msgstr "Dateisystem prüfen"
 
 #: skin_default_skin.xml.h:231
-msgid "Fine move"
-msgstr "Rotor langsam bewegen"
+msgid "Fine move test"
+msgstr ""
 
 #: skin_default_skin.xml.h:232
 msgid "Fix Shutdown Time"
@@ -8876,8 +8876,5 @@ msgstr "Höchsttemperatur"
 msgid "Condition: "
 msgstr "Wetter:"
 
-#~ msgid "TiThek PlayList"
-#~ msgstr "Tithek Wiedergabeliste"
-
-#~ msgid "TITHEK SETTINGS"
-#~ msgstr "Einstellungen"
+#~ msgid "Fine move"
+#~ msgstr "Rotor langsam bewegen"
