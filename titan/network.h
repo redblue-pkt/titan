@@ -292,11 +292,11 @@ void screennetwork_restart(struct inetwork *net, int flag)
 	char* tmpstr = NULL, *cmd = NULL;
 
 	if(flag == 0)
-		tmpstr = ostrcat("Restart Network ?", NULL, 0, 0);
+		tmpstr = ostrcat(_("Restart Network ?"), NULL, 0, 0);
 	else if(flag == 1)
-		tmpstr = ostrcat("Aktivate new network config ?", NULL, 0, 0);
+		tmpstr = ostrcat(_("Aktivate new network config ?"), NULL, 0, 0);
 	
-	if(flag == 2 || textbox(_("Network"), _(tmpstr), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+	if(flag == 2 || textbox(_("Network"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 	{
 		debug(10, "%s", tmpstr);
 		free(tmpstr), tmpstr = NULL;
