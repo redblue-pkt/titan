@@ -58,12 +58,13 @@ for ROUND in $POLIST; do
 		iconv -f ISO-8859-1 -t UTF-8 $ROUND_CLEAN > $ROUND_UTF
 		xgettext --omit-header -j -k_ *.* -o $ROUND_UTF
 
+		echo "[createpo.sh] xgettext --omit-header -k_ *.* -o $ROUND_NEW"
 		xgettext --omit-header -k_ *.* -o $ROUND_NEW
-echo aaaa
-		msgmerge --backup=none -U $ROUND_UTF $ROUND_NEW > $ROUND_NEW_MERGE
+		echo "[createpo.sh] msgmerge $ROUND_UTF $ROUND_NEW > $ROUND_NEW_MERGE"
+		msgmerge $ROUND_UTF $ROUND_NEW > $ROUND_NEW_MERGE
 
 		iconv -f ISO-8859-1 -t UTF-8 $ROUND_EDIT > $ROUND_EDIT_UTF
-echo bbbb
+		echo "[createpo.sh] msgmerge $ROUND_NEW_MERGE $ROUND_EDIT_UTF > $ROUND_MERGE_UTF"
 		msgmerge $ROUND_NEW_MERGE $ROUND_EDIT_UTF > $ROUND_MERGE_UTF
 		iconv -f UTF-8 -t ISO-8859-1 $ROUND_MERGE_UTF > $ROUND_MERGE
 		
