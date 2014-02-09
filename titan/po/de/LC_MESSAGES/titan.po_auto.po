@@ -1290,7 +1290,7 @@ msgstr "SWAP Installation (USB oder HDD)"
 
 #: extensions.h:164
 msgid "Choice Install Medium"
-msgstr "Ziel Auswahl"
+msgstr "Installation Auswahl"
 
 #: extensions.h:170 extensions.h:221 extensions.h:478
 msgid "Tpk Install Info"
@@ -1302,11 +1302,11 @@ msgstr "FEHLER: Paket zu groß, Installation fehlgeschlagen!"
 
 #: extensions.h:197
 msgid "Tpk Install - select section"
-msgstr "Extra installieren - Kategorie wählen"
+msgstr "Installation - Kategorie wählen"
 
 #: extensions.h:202 skin_default_skin.xml.h:663
 msgid "Tpk Install - select file"
-msgstr "Extra installieren - Datei wählen"
+msgstr "Installation - Auswählen"
 
 #: extensions.h:207 extensions.h:234 extensions.h:386 tpk.h:2990
 msgid ""
@@ -1316,7 +1316,7 @@ msgid ""
 "then perform an update by Tpk to: "
 msgstr ""
 "Wenn Sie ein anderes Paket aus dieser Sektion installieren wollen, entfernen "
-"Sie zuerst das installierte. Ist nach einer Neuinstallation der das Extra "
+"Sie zuerst das installierte. Ist nach einer Neuinstallation das Plugin\n"
 "nicht im Menü sichtbar, führen Sie bitte eine Aktualisierung durch."
 
 #: extensions.h:212 extensions.h:353
@@ -1347,30 +1347,30 @@ msgstr "Löschen - auswählen"
 
 #: extensions.h:277
 msgid "Removeing"
-msgstr "entferne."
+msgstr "Das Plugin wird entfernt."
 
 #: extensions.h:282
 msgid "Tpk Remove Info"
-msgstr "Info zur dDinstallation"
+msgstr "Info zur Deinstallation"
 
 #: extensions.h:290
 msgid "Tpk Remove Info - Remove OK"
 msgstr ""
-"Info zur Deinstallation. Die Deinstallation wurde erfolgreich abgeschlossen."
+"INFORMATION: Die Deinstallation wurde erfolgreich abgeschlossen."
 
 #: extensions.h:297
 msgid "Tpk Remove Info - Remove ERROR"
-msgstr "FEHLER: Entfernen fehlgeschlagen!"
+msgstr "FEHLER: Deinstallation fehlgeschlagen!"
 
 #: extensions.h:304
 msgid "TPK Remove done, your system will reboot !"
 msgstr ""
-"Erfolgreich entfernt.\n"
+"Erfolgreich deinstalliert.\n"
 "Das System startet jetzt neu."
 
 #: extensions.h:336 extensions.h:478
 msgid "No plugin found."
-msgstr "FEHLER: Nicht gefunden!"
+msgstr "FEHLER: Kein Plugin gefunden!"
 
 #: extensions.h:392
 msgid ""
@@ -1378,19 +1378,19 @@ msgid ""
 "If the plugin is not active\n"
 "reboot the box."
 msgstr ""
-"Einige Extras benötigen einen Neustart.\n"
-"Sollten Ihre Extras nicht verfügbar sein,\n"
+"Einige Plugins benötigen einen Neustart.\n"
+"Sollten Ihre Plugins nicht verfügbar sein,\n"
 "starten Sie den Receiver neu."
 
 #: extensions.h:396
 msgid "TPK Tmp Install done, your system will reboot !"
 msgstr ""
 "Installation aus tmp wurde erfolgreich durchgeführt.\n"
-"Das System wird neu gestartet."
+"Das System startet jetzt neu."
 
 #: extensions.h:420 extensions.h:424
 msgid "Tpk Update Info - Update ERROR"
-msgstr "FEHLER: Aktualisierung fehlgeschlagen!"
+msgstr "FEHLER: Plugin aktualisierung fehlgeschlagen!"
 
 #: extensions.h:420
 msgid "Can't get all TPK index !"
@@ -1403,8 +1403,8 @@ msgstr "FEHLER: Aktualisierung fehlgeschlagen!"
 #: extensions.h:432
 msgid "TPK Upgrade done, your system will reboot !"
 msgstr ""
-"Alle Extras wurden erfolgreich aktualisiert.\n"
-"Das System wird neu gestartet."
+"Alle Plugins erfolgreich aktualisiert.\n"
+"Das System startet jetzt neu."
 
 #: facebook.h:66 facebook.h:167
 msgid "Can't get data from facebook"
@@ -1584,11 +1584,11 @@ msgstr "Laufwerk für Aufnahmen entfernen."
 
 #: harddisk.h:235 harddisk.h:720
 msgid "use medium for extension"
-msgstr "Laufwerk für Extras verwenden."
+msgstr "Laufwerk für Plugins verwenden."
 
 #: harddisk.h:240
 msgid "del medium for extension"
-msgstr "Laufwerk für Extras entfernen."
+msgstr "Laufwerk für Plugins entfernen."
 
 #: harddisk.h:245 harddisk.h:722
 msgid "use medium for swap"
@@ -1678,7 +1678,7 @@ msgid ""
 msgstr ""
 "FEHLER: Festplatten mit einer Speicherkapazität über 2 TB werden nicht "
 "unterstützt.\n"
-"Installieren Sie bitte erst das Extra 'parted' um die Festplatte zu nutzen!"
+"Installieren Sie bitte das Plugin 'parted' um die Festplatte zu nutzen!"
 
 #: harddisk.h:632
 msgid ""
@@ -2023,7 +2023,7 @@ msgstr ""
 
 #: keyactions.h:21
 msgid "Key Action - Plugins"
-msgstr "Tastenbelegung - Extras"
+msgstr "Tastenbelegung - Plugins"
 
 #: keyactions.h:24 keyactions.h:147 play.h:629 play.h:697
 msgid "MediaDB Scan Info"
@@ -2066,7 +2066,7 @@ msgstr ""
 #: keyactions.h:105 settings_bluebutton.h:15 settings_pluginbutton.h:12
 #: settings_pluginbutton.h:44 settings_redbutton.h:12 settings_redbutton.h:44
 msgid "Extensions List"
-msgstr "Extras Liste"
+msgstr "Pluginliste"
 
 #: kinox.h:292 movie4k.h:720 movie4k.h:846 movie4k.h:960 solarmovie.h:443
 msgid "Season"
@@ -2192,7 +2192,7 @@ msgstr "Datum/Uhrzeit"
 
 #: mc_dateibrowser.h:38
 msgid "Install File Manager Tpk first !"
-msgstr "ACHTUNG: Sie müssen erst den 'Filemanager' installieren!"
+msgstr "ACHTUNG: Sie müssen erst das Plugin 'Filemanager' installieren!"
 
 #: mc_global.h:541 mc_global.h:569 mc_global.h:1065
 msgid "Random-On"
@@ -2208,7 +2208,7 @@ msgstr "Playliste bearbeiten"
 
 #: mc_internetbrowser.h:38
 msgid "Install netsurf Internetbrowser Tpk first !"
-msgstr "ACHTUNG: Sie müssen erst den 'Netsurf Internetbrowser' installieren!"
+msgstr "ACHTUNG: Sie müssen erst das Plugin 'Netsurf Internetbrowser' installieren!"
 
 #: mc_main.h:37 mc_main.h:42 mc_main.h:47 mc_main.h:73 mc_main.h:78
 msgid "comming soon"
@@ -2220,7 +2220,7 @@ msgstr "ACHTUNG: Menü nicht verfügbar!"
 
 #: mc_mediathek.h:37
 msgid "Install Tithek Tpk first !"
-msgstr "ACHTUNG: Sie müssen erst 'Tithek' installieren!"
+msgstr "ACHTUNG: Sie müssen erst das Plugin 'Tithek' installieren!"
 
 #: mc_pictureplayer_settings.h:29 panel_settings_autostart.h:60
 #: panel_settings_autostart.h:132 settings_autostart.h:51
@@ -2305,7 +2305,7 @@ msgstr "5s (Standard)"
 
 #: mc_wetterinfo.h:38
 msgid "Install Weather Tpk first !"
-msgstr "ACHTUNG: Sie müssen erst 'Wetter' installieren!"
+msgstr "ACHTUNG: Sie müssen erst das Plugin 'Wetter' installieren!"
 
 #: mediadbedit.h:75
 msgid "unlock -> lock it"
@@ -2530,7 +2530,7 @@ msgid ""
 "For Better Win7 Support install please Tpk Install > Network > Smbclient"
 msgstr ""
 "ACHTUNG: Für eine bessere Kompatibilität mit Windows 7\n"
-"installieren Sie erst den 'SMB-Client'!"
+"installieren Sie erst das Plugin 'SMB-Client'!"
 
 #: networkbrowser.h:1005 networkbrowser.h:1011 networkbrowser.h:1021
 msgid "Anonymous login Access Denied !"
@@ -3473,7 +3473,7 @@ msgstr "Regisseur"
 
 #: plugins_imdbapi_skin.xml.h:4 skins_imdbapi_skin.xml.h:4
 msgid "IMDb-API - Plugin"
-msgstr "IMDb - API"
+msgstr ""
 
 #: plugins_imdbapi_skin.xml.h:5 plugins_imdb_skin.xml.h:5
 #: plugins_tmdb_skin.xml.h:4 skins_imdbapi_skin.xml.h:5
@@ -4359,7 +4359,7 @@ msgstr "Wetter anzeigen"
 
 #: plugins_wins3_skin.xml.h:2 skins_wins3_skin.xml.h:2
 msgid "NEW"
-msgstr ""
+msgstr "Neu"
 
 #: plugins_zapback_skin.xml.h:1 skins_zapback_skin.xml.h:1
 msgid "ZapBack"
@@ -5027,7 +5027,7 @@ msgstr "TV / Radio Umschalten"
 
 #: settings_pluginbutton.h:6
 msgid "Plugin Key Action - Setup"
-msgstr "Extras Taste - Belegungsmenü"
+msgstr "Plugins Taste - Belegungsmenü"
 
 #: settings_redbutton.h:6
 msgid "Red Key Action - Setup"
@@ -5824,11 +5824,11 @@ msgstr "Expertenmodus"
 
 #: skin_default_skin.xml.h:218
 msgid "Extensions"
-msgstr "Extras"
+msgstr "Erweiterungen"
 
 #: skin_default_skin.xml.h:219
 msgid "Extensions..."
-msgstr "Extras"
+msgstr "Erweiterungen"
 
 #: skin_default_skin.xml.h:220
 msgid "Ext. Modul detect (needs reboot)"
@@ -6909,11 +6909,11 @@ msgstr "darstellen"
 
 #: skin_default_skin.xml.h:445
 msgid "Plugin Button"
-msgstr "Extras Übersicht"
+msgstr "Plugin Übersicht"
 
 #: skin_default_skin.xml.h:446
 msgid "Plugins"
-msgstr "Extras"
+msgstr ""
 
 #: skin_default_skin.xml.h:447
 msgid "PMT PID:"
@@ -7653,27 +7653,27 @@ msgstr "Oben"
 
 #: skin_default_skin.xml.h:662
 msgid "TPK install (online)"
-msgstr "TPK installieren (Online)"
+msgstr "Installation (Online)"
 
 #: skin_default_skin.xml.h:664
 msgid "Tpk Install - select install medium"
-msgstr "TPK installieren - Installationsmedium auswählen"
+msgstr "Installieren - Installationsmedium auswählen"
 
 #: skin_default_skin.xml.h:665
 msgid "TPK media (media)"
-msgstr "Extras installieren (Lokal)"
+msgstr "Installieren (Lokal)"
 
 #: skin_default_skin.xml.h:666
 msgid "TPK remove"
-msgstr "Extras löschen"
+msgstr "Entfernen"
 
 #: skin_default_skin.xml.h:667
 msgid "TPK tmp (tmp)"
-msgstr "Extras installieren (tmp)"
+msgstr "Installieren (tmp)"
 
 #: skin_default_skin.xml.h:668
 msgid "TPK upgrade (online)"
-msgstr "Extras aktualisieren (Online)"
+msgstr "Aktualisieren (Online)"
 
 #: skin_default_skin.xml.h:669
 msgid "Transmission"
@@ -8094,7 +8094,7 @@ msgstr "FEHLER: Wiederherstellung fehlgeschlagen - siehe Logdatei"
 
 #: system_backup_restore.h:43
 msgid "Update Plugins to new Version?"
-msgstr "Installierte Extras aktualisieren?"
+msgstr "Installierte Plugins aktualisieren?"
 
 #: system_backup_restore.h:51
 msgid "RESTORE ERROR"
@@ -8485,23 +8485,23 @@ msgstr "Anzeige im automatischen Modus"
 
 #: tithek_settings.h:18 tithek_settings.h:26
 msgid "show 2 entrys"
-msgstr "Anzeige von je 2 Einträge"
+msgstr "Zeige 2 Einträge"
 
 #: tithek_settings.h:19 tithek_settings.h:27
 msgid "show 6 entrys"
-msgstr "Anzeige von je 6 Einträge"
+msgstr "Zeige 6 Einträge"
 
 #: tithek_settings.h:20 tithek_settings.h:28
 msgid "show 12 entrys"
-msgstr "Anzeige von je 12 Einträge"
+msgstr "Zeige 12 Einträge"
 
 #: tithek_settings.h:21 tithek_settings.h:29
 msgid "show 20 entrys"
-msgstr "Anzeige von je 20 Einträge"
+msgstr "Zeige 20 Einträge"
 
 #: tithek_settings.h:22 tithek_settings.h:30
 msgid "show 30 entrys"
-msgstr "Anzeige von je 30 Einträge"
+msgstr "Zeige 30 Einträge"
 
 #: tmc.h:387
 msgid "Status"
@@ -8591,7 +8591,7 @@ msgid ""
 msgstr ""
 "IMDB wurde nicht gefunden!\n"
 "Kann die angeforderten Details nicht abrufen.\n"
-"Bitte installieren Sie IMDB."
+"Bitte installieren Sie das Plugin."
 
 #: tmdb.h:922
 msgid "Error, found result without imdbid we can't this save in MediaDB"
@@ -8785,7 +8785,7 @@ msgid ""
 "Delete Plugins to free space"
 msgstr ""
 "Aktivierungscode kann nicht gespeichert werden.\n"
-"Bitte Speicherplatz freigeben."
+"Bitte löschen Sie Plugins um Speicherplatz freigeben."
 
 #: unlock.h:71
 msgid "Code ok"
