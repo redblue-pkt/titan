@@ -3556,7 +3556,7 @@ msgstr ""
 
 #: plugins_mc_skin.xml.h:62 skins_mc_skin.xml.h:62
 msgid "Video Player"
-msgstr ""Filme abspielen""
+msgstr "Filme abspielen"
 
 #: plugins_mc_skin.xml.h:63 skins_mc_skin.xml.h:63
 msgid "VIDEO SETTINGS"
