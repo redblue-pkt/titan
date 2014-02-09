@@ -43,6 +43,7 @@ for ROUND in $POLIST; do
 	echo "[createpo.sh] update $ROUND"
 	echo xgettext --omit-header -k_ *.* -o $ROUND
 	if [ "$2" == "update" ]; then
+		ROUND_CLEAN=`echo $ROUND | sed 's!titan.po_auto.po!titan.po_auto.clean.po!'`
 		ROUND_UTF=`echo $ROUND | sed 's!titan.po_auto.po!titan.po_auto.utf.po!'`
 		OUTFILE_MO=`echo $ROUND | sed 's!titan.po_auto.po!titan.mo!'`
 		OUTFILE_PO=`echo $ROUND | sed 's!titan.po_auto.po!titan.outfile.po!'`
@@ -51,10 +52,12 @@ for ROUND in $POLIST; do
 		ROUND_MERGE_UTF=`echo $ROUND | sed 's!titan.po_auto.po!titan.merge.utf.po!'`
 		ROUND_MERGE=`echo $ROUND | sed 's!titan.po_auto.po!titan.merge.po!'`
 
-		iconv -f ISO-8859-1 -t UTF-8 $ROUND > $ROUND_UTF
+		cat $ROUND | sed '/#.*/d' > $ROUND_CLEAN
+
+		iconv -f ISO-8859-1 -t UTF-8 $ROUND_CLEAN > $ROUND_UTF
 		xgettext --omit-header -j -k_ *.* -o $ROUND_UTF
 
-		iconv -f ISO-8859-1 -t UTF-8 $ROUND_EDIT > $ROUND_EDIT_UTF		
+		iconv -f ISO-8859-1 -t UTF-8 $ROUND_EDIT > $ROUND_EDIT_UTF
 #		msgmerge $ROUND_EDIT_UTF $ROUND_UTF > $ROUND_MERGE_UTF
 		msgmerge $ROUND_UTF $ROUND_EDIT_UTF > $ROUND_MERGE_UTF
 		iconv -f UTF-8 -t ISO-8859-1 $ROUND_MERGE_UTF > $ROUND_MERGE
@@ -69,6 +72,8 @@ for ROUND in $POLIST; do
 
 		echo "[createpo.sh] msgfmt -v $OUTFILE_PO -o $OUTFILE_MO"
 		msgfmt -v $OUTFILE_PO -o $OUTFILE_MO		
+
+		iconv -f UTF-8 -t ISO-8859-1 $ROUND_UTF > $ROUND
 	else
 		xgettext --omit-header -k_ *.* -o $ROUND
 	fi
