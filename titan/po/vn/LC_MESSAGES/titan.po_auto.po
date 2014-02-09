@@ -1,0 +1,4144 @@
+msgid "--- SD resolution"
+msgstr "---  phn gii SD"
+
+msgid "--- Time to switch"
+msgstr "--- Thi gian chuyn"
+
+msgid "---"
+msgstr "---"
+
+msgid "???"
+msgstr "???"
+
+msgid "1500rpm"
+msgstr "1500 vng/pht"
+
+msgid "3D Mode"
+msgstr "Ch  3D"
+
+msgid "3D-Mode Settings"
+msgstr "Thit lp ch  3D"
+
+msgid "500rpm"
+msgstr "500 vng/pht"
+
+msgid "a"
+msgstr "a"
+
+msgid "A"
+msgstr "A"
+
+msgid ""
+"A mount entry with this name already exists!\n"
+"Update existing entry and continue?"
+msgstr ""
+" c tn ny!\n"
+"Bn mun ghi  ln?"
+
+msgid "Are you sure you want remove this share?"
+msgstr "Bn c mun xa chia s ny?"
+
+msgid "Are you sure you want to save this network mount?"
+msgstr "Bn c mun lu li khng?"
+
+msgid ""
+"Are you sure you want to remove all Partitions\n"
+"on this device and create a new Partition 1?\n"
+"Box reboots after format"
+msgstr ""
+"Bn c mun xa tt c cc phn vng\n"
+"trn thit b ny v to mt phn vng mi ?\n"
+"u thu s khi ng li sau khi nh dng."
+
+msgid ""
+"Are you sure you want to format this Partition?\n"
+"Box reboots after format"
+msgstr ""
+"Bn mun nh dng phn vng ny?\n"
+" u thu s khi ng li sau khi nh dng."
+
+msgid ""
+"Are you sure you want to check this Partition?\n"
+"Box reboots after check"
+msgstr ""
+"Bn mun ki tra phn vng ny?\n"
+" u thu s khi ng li sau khi kim tra."
+
+msgid "A record hdd or a swapstick must be mounted!"
+msgstr "Kt ni  cng hoc USB"
+
+msgid "A/V Settings"
+msgstr "Ci t m thanh/hnh nh"
+
+msgid "Panel"
+msgstr "Panen"
+
+msgid "Wizard"
+msgstr "Wizard"
+
+msgid "Aborting restoring..."
+msgstr "Dng khi phc!"
+
+msgid "Aborting backup..."
+msgstr "Dng sao lu !"
+
+msgid "About"
+msgstr "Gii thiu"
+
+msgid "AC3 default"
+msgstr "Mc nh AC3"
+
+msgid "AC3 downmix"
+msgstr " AC3 downmix "
+
+msgid "AC3 Mode"
+msgstr "Ch  AC3"
+
+msgid "Action after"
+msgstr "Hnh ng sau "
+
+msgid "Aktion after"
+msgstr "Hnh ng sau "
+
+msgid "Activate"
+msgstr "Kch hot"
+
+msgid "Adapter Settings"
+msgstr "Thit lp adapter"
+
+msgid "add service"
+msgstr "thm dch v"
+
+msgid "add recording (stop after current event)"
+msgstr "thm bn ghi (sau s kin ny)"
+
+msgid "add recording (indefinitely)"
+msgstr "thm bn ghi (khng gii hn)"
+
+msgid "add recording (enter duration)"
+msgstr "thm bn ghi (nhp thi gian)"
+
+msgid "ADD"
+msgstr "THM"
+
+msgid "Add Nfs Network Share"
+msgstr "Thm mng chia s Nfs"
+
+msgid "Add Ftpfs Network Share"
+msgstr "Thm mng chia s Ftpfs"
+
+msgid "add new share"
+msgstr "Thm chia s mi"
+
+msgid "add cifs share"
+msgstr " Thm chia s cifs"
+
+msgid "add nfs share"
+msgstr " Thm chia s nfs"
+
+msgid "add ftp share"
+msgstr " Thm chia s ftp "
+
+msgid "Adjust"
+msgstr "iu chnh"
+
+msgid "Auto Scan"
+msgstr "T ng d"
+
+msgid "AUTO"
+msgstr "T NG"
+
+msgid "auto"
+msgstr "t ng"
+
+msgid "always"
+msgstr "lun lun"
+
+msgid "all"
+msgstr "tt c"
+
+msgid "All new channel added!"
+msgstr "Tt c cc chng trnh mi c thm vo!"
+
+msgid "ALL"
+msgstr "TT C"
+
+msgid "(ALL)"
+msgstr "(TT C)"
+
+msgid "All Channels"
+msgstr "Tt c cc chng trnh"
+
+msgid "alpha"
+msgstr "alpha"
+
+msgid "alt file"
+msgstr "tp tin khc"
+
+msgid "Are you sure you want to restore settings?"
+msgstr "Bn mun khi phc cc thit lp?"
+
+msgid "Apple Trailer"
+msgstr "Apple Trailer"
+
+msgid "Aspect Ratio:"
+msgstr "T l khun hnh:"
+
+msgid "Aspect Settings"
+msgstr "Ci t khun hnh"
+
+msgid "Aspect"
+msgstr "Khun hnh"
+
+msgid "Audio / Video / Sat"
+msgstr "Audio / Video / Sat "
+
+msgid "Audio PID:"
+msgstr "PID Audio:"
+
+msgid "Audio Player"
+msgstr "Audio Player"
+
+msgid "AUDIO SETTINGS"
+msgstr "THIT LP AUDIO"
+
+msgid "Audio Source"
+msgstr "Ngun Audio"
+
+msgid "Audio Tracks"
+msgstr "Audio Tracks"
+
+msgid "AUDIO"
+msgstr "AUDIO"
+
+msgid "Audio/Subt."
+msgstr "Audio/Ph "
+
+msgid "Auto resolution"
+msgstr " phn gii t ng"
+
+msgid "Auto Resolution"
+msgstr " phn gii t ng"
+
+msgid "Automatic Search"
+msgstr "T ng d"
+
+msgid "Automatic stop in 5 seconds."
+msgstr "T ng dng trong 5 giy !"
+
+msgid "Automount"
+msgstr "T ng tch hp"
+
+msgid "Autostart"
+msgstr "T ng khi ng"
+
+msgid "A-Z (Text)"
+msgstr "A-Z"
+
+msgid "b"
+msgstr "b"
+
+msgid "B"
+msgstr "B"
+
+msgid "bar"
+msgstr "bar"
+
+msgid "Backup / Restore Settings"
+msgstr "Sao lu / Khi phc ci t"
+
+msgid "Backup"
+msgstr "Sao lu"
+
+msgid "BACKUP ERROR"
+msgstr "!!! LI SAO LU !!!"
+
+msgid "Backup - Settings"
+msgstr "Thit lp sao lu"
+
+msgid ""
+"Backup startet\n"
+"\n"
+"Please wait..."
+msgstr ""
+"Bt u sao lu\n"
+"\n"
+"Vui lng i..."
+
+msgid "bbgain"
+msgstr "BBGain"
+
+msgid "BER:"
+msgstr "BER:"
+
+msgid "bestfit"
+msgstr "Ph hp nht"
+
+msgid "Beta Config"
+msgstr "Cu hnh Beta"
+
+msgid "betapass"
+msgstr "mt khu beta"
+
+msgid "betauser"
+msgstr "ngi s dng beta"
+
+msgid "big"
+msgstr "ln"
+
+msgid "black"
+msgstr "mu en"
+
+msgid "blue"
+msgstr "mu xanh da tri"
+
+msgid "Blue Button"
+msgstr "Nt mu xanh da tri"
+
+msgid "Blue Key Action - Setup"
+msgstr "Nt mu xanh da tri  Ci t"
+
+msgid "Blue Key Action - Plugins"
+msgstr "Nt mu xanh da tri  Plugins"
+
+msgid "border"
+msgstr "ng vin"
+
+msgid "bootlogos"
+msgstr "Logo khi ng"
+
+msgid "bootlogo"
+msgstr " Logo khi ng "
+
+msgid "Bootlogo"
+msgstr " Logo khi ng "
+
+msgid "BootResolution"
+msgstr " phn gii khi ng"
+
+msgid "Boot Resolution"
+msgstr "  phn gii khi ng "
+
+msgid "bootrgbfix"
+msgstr "hiu chng rgb khi khi ng"
+
+msgid "bootstop"
+msgstr "Dng khi ng"
+
+msgid "Bouquet List"
+msgstr "Danh sach nhm"
+
+msgid "Bouquets"
+msgstr "Nhm"
+
+msgid "Brightness"
+msgstr " sng"
+
+msgid "broadcast"
+msgstr "pht sng"
+
+msgid "browsers"
+msgstr "Trnh duyt"
+
+msgid "c"
+msgstr "c"
+
+msgid "C"
+msgstr "C"
+
+msgid "Cancel Shutdown"
+msgstr "Hy b tt u thu"
+
+msgid "cancel"
+msgstr "hy"
+
+msgid "Cancel"
+msgstr "Hy"
+
+msgid "Can't get EPG time or EPG endtime not ok"
+msgstr "Khng c EPG!"
+
+msgid "Can't start playback !"
+msgstr "Khng th pht li!"
+
+msgid "Can't start timeshift play !"
+msgstr "Khng th pht timeshift"
+
+msgid "Can't get Network Infos"
+msgstr "Khng c thng tin mng"
+
+msgid "can't create or delete directory"
+msgstr "Khng th to hoc xa th mc"
+
+msgid "Can't remove akive Service"
+msgstr "Khng th xa dch v hin ti"
+
+msgid "Can't restore settings"
+msgstr "Khng th khi phc li cc thit lp"
+
+msgid ""
+"Can't find a Tuner.\n"
+"Alle Tuners in use or no Tuner defined."
+msgstr ""
+"Khng c tuner.\n"
+" Tt c tuner  s dng hoc khng c tuner"
+
+msgid "Can't open frontend dev or Frontend Type unknown!"
+msgstr "Khng th m hoc khng bit loi u vo"
+
+msgid "CHANGE"
+msgstr "THAY I"
+
+msgid "change"
+msgstr "Thay i"
+
+msgid "Change Channelname auto."
+msgstr "T ng thay i tn chng trnh"
+
+msgid "Change language needs reboot"
+msgstr "Thay i ngn ng cn khi ng li!"
+
+msgid "Channels A-Z"
+msgstr "Chng trnh t A-Z"
+
+msgid "Channel Edit"
+msgstr "Sa chng trnh"
+
+msgid "Channel EPG"
+msgstr "EPG"
+
+msgid "Channellist empty or corrupt (channel not found)!"
+msgstr "Danh sch chng trnh rng(khng tm thy chng trnh) !"
+
+msgid "Channel Search"
+msgstr "D chng trnh"
+
+msgid "Channel Service"
+msgstr "Dch v chng trnh"
+
+msgid "Channel Service..."
+msgstr " Dch v chng trnh "
+
+msgid "Channel"
+msgstr "Chng trnh"
+
+msgid "channel"
+msgstr "chng trnh"
+
+msgid "channel + time"
+msgstr " chng trnh + thi gian"
+
+msgid "check your Secret Feed !"
+msgstr "kim tra ngun cung cp d liu ca bn!"
+
+msgid "Child Protection"
+msgstr "Kha tr em"
+
+msgid "Child safety"
+msgstr "Kha tr em"
+
+msgid "Clear before scan"
+msgstr "Xa trc khi d"
+
+msgid "Color Format Scart"
+msgstr "nh dng mu Scart"
+
+msgid "Color Format"
+msgstr " nh dng mu "
+
+msgid "comming soon"
+msgstr "sp n"
+
+msgid "comming soon..."
+msgstr " sp n..."
+
+msgid "Committed command"
+msgstr "Lnh iu khin"
+
+msgid "Contrast"
+msgstr " tng phn"
+
+msgid "Configure"
+msgstr "Cu hnh"
+
+msgid "copy service"
+msgstr "sao chp dch v"
+
+msgid "CPU"
+msgstr "CPU"
+
+msgid "CPU info"
+msgstr "Thng tin CPU"
+
+msgid "CPU frequency"
+msgstr "Tn s CPU"
+
+msgid "Create Backup"
+msgstr "Sao lu d liu"
+
+msgid "d"
+msgstr "d"
+
+msgid "D"
+msgstr "D"
+
+msgid "date"
+msgstr "ngy"
+
+msgid "Day"
+msgstr "Ngy"
+
+msgid "Deactivate"
+msgstr "Tt"
+
+msgid "debug"
+msgstr "debug"
+
+msgid ""
+"Detect hanging System !!!\n"
+"\n"
+"KILL = Red\n"
+"BOOT = Power"
+msgstr ""
+"Li h thng!!!\n"
+"\n"
+"KT THC QU TRNH = Nt mu \n"
+"KHI NG LI = Nt power"
+
+msgid "default"
+msgstr "mc nh"
+
+msgid "Default"
+msgstr "Mc nh"
+
+msgid "DEFAULT"
+msgstr "MC NH"
+
+msgid "Default Icon"
+msgstr "Biu tng mc nh"
+
+msgid "del startchannel"
+msgstr "bt u xa chng trnh"
+
+msgid "DEL"
+msgstr "Xa"
+
+msgid "del medium for record"
+msgstr "khng s dng cho vic ghi"
+
+msgid "del medium for extension"
+msgstr "khng s dng cho phn m rng"
+
+msgid "del medium for swap"
+msgstr "khng s dng cho cc tp tin trao i"
+
+msgid "del medium for backup"
+msgstr " khng s dng cho sao lu d liu"
+
+msgid "daily"
+msgstr "hng ngy"
+
+msgid "Delete EPG after read"
+msgstr "Xa EPG sau khi c"
+
+msgid "details"
+msgstr "chi tit"
+
+msgid "Device:"
+msgstr "Thit b:"
+
+msgid "Devices"
+msgstr " Thit b"
+
+msgid "deaktiv"
+msgstr "tt"
+
+msgid "dhcp"
+msgstr "dhcp"
+
+msgid "Dirsort"
+msgstr "Sp xp"
+
+msgid "direct connect"
+msgstr "kt ni trc tip"
+
+msgid "disable"
+msgstr "Tt"
+
+msgid "DiSEqC Command Order"
+msgstr "Th t lnh DiSEqC"
+
+msgid "DiSEqC Configuration"
+msgstr "Cu hnh DiSEqC"
+
+msgid "DiSEqC Mode"
+msgstr "Ch  DiSEqC"
+
+msgid "DiSEqC repeats"
+msgstr "lp li DiSEqC "
+
+msgid "Diseqc Settings"
+msgstr "Thit lp DiSEqC"
+
+msgid "DiSEqC Sat Settings"
+msgstr "Thit lp DiSEqC"
+
+msgid "DiSEqC"
+msgstr "DiSEqC"
+
+msgid "dnsserver 1"
+msgstr "DNS-Server 1"
+
+msgid "dnsserver 2"
+msgstr "DNS-Server 2"
+
+msgid ""
+"Do you really want to erase all datas and backups from Swap?\n"
+"The Box will reboot and the erase will be started!"
+msgstr ""
+"Swap Daten und Backup lschen?\n"
+"u thu s khi ng li v bt u xa"
+
+msgid ""
+"Do you really want to start the Wizard?\n"
+"The Box will reboot and the Wizard will be started!"
+msgstr ""
+"Bn mun khi ng wizard?\n"
+"u thu s khi ng li v wizard s c bt u"
+
+msgid "Don't clear TV on zap (only with fastzap)"
+msgstr "Khng th xa"
+
+msgid "download error"
+msgstr "Ti v li"
+
+msgid "DVB-T not supportet at the moment !"
+msgstr "Khng h tr DVB-T"
+
+msgid "e"
+msgstr "e"
+
+msgid "E"
+msgstr "E"
+
+msgid "East / West"
+msgstr "ng / Ty"
+
+msgid "edit share"
+msgstr "Freigabe bearbeiten"
+
+msgid "empty"
+msgstr "trng"
+
+msgid "enable"
+msgstr "Bt"
+
+msgid "End"
+msgstr "Kt thc"
+
+msgid "endless"
+msgstr "lin tc"
+
+msgid "English"
+msgstr "Ting Anh"
+
+msgid "EPG Info"
+msgstr "Thng tin EPG"
+
+msgid "Epg List Mode"
+msgstr "Ch  danh sch EPG"
+
+msgid "EPG Path"
+msgstr "ng dn EPG"
+
+msgid "Epg Refresh Time"
+msgstr "Thi gian cp nht EPG"
+
+msgid "EPG Reset"
+msgstr "Xa EPG"
+
+msgid "EPG Settings"
+msgstr "Thit lp"
+
+msgid "Epgfreespace (KB)"
+msgstr "Freier EPG Speicher"
+
+msgid "Error file not supported"
+msgstr "Li tp tin khng c h tr!"
+
+msgid "Error: create timer thread !!"
+msgstr "Li: to chui b nh thi!"
+
+msgid "Error: open rc device !!"
+msgstr " Li: m thit b rc !"
+
+msgid "Error: open rcsim device !!"
+msgstr "Li: m thit b rcsim!"
+
+msgid "Error: no frontend device found !!"
+msgstr "Li: khng tm thy thit b vo!"
+
+msgid "Error: no demux device found !!"
+msgstr "Li: khng tm thy cc thit b tch knh!"
+
+msgid "Error: no video device found !!"
+msgstr "Li: khng tm thy thit b video !!"
+
+msgid "Error: no audio device found !!"
+msgstr " Li: khng tm thy thit b audio!!"
+
+msgid "Error: skin not found !!"
+msgstr "Li: khng tm thy nn!"
+
+msgid "errorboot"
+msgstr "Li khi ng"
+
+msgid "errorstop"
+msgstr "Li khi ng"
+
+msgid "Erase Swap"
+msgstr "B hon i"
+
+msgid "ERROR cant read res"
+msgstr "Li khng th c"
+
+msgid "EXIT"
+msgstr "THOT"
+
+msgid "Exit"
+msgstr "Thot"
+
+msgid "Exit = abort restore"
+msgstr "Thot = hy b khi phc"
+
+msgid "Extensions List"
+msgstr "Danh sch m rng"
+
+msgid "Extensions Menu"
+msgstr "Menu m rng"
+
+msgid "Extensions"
+msgstr "M rng"
+
+msgid "Expert Sat Settings"
+msgstr "Ci t truyn hnh v tinh"
+
+msgid "f"
+msgstr "f"
+
+msgid "F"
+msgstr "F"
+
+msgid "Fancontrol"
+msgstr "iu khin qut"
+
+msgid "Fast DiSEqC"
+msgstr "DiSEqC nhanh"
+
+msgid "Fast Text Render"
+msgstr "Dch vn bn nhanh"
+
+msgid "fast"
+msgstr "Nhanh"
+
+msgid "Faststop"
+msgstr "Dng nhanh"
+
+msgid "Fastzap"
+msgstr "Schnelles Umschalten"
+
+msgid "Fav"
+msgstr "a thch"
+
+msgid "FEC"
+msgstr "FEC"
+
+msgid "FEC:"
+msgstr "FEC:"
+
+msgid "Feed"
+msgstr "Feed"
+
+msgid "FDMA bypass"
+msgstr "B qua FDMA"
+
+msgid "First Wizzard"
+msgstr "Wizzard u tin"
+
+msgid "File Browser"
+msgstr "Trnh duyt tp tin"
+
+msgid "file"
+msgstr "tp tin"
+
+msgid "filealtresult"
+msgstr "kt qu khc"
+
+msgid "Filelist-Mode"
+msgstr "Ch  danh sch tp tin"
+
+msgid "Filesystem Check"
+msgstr "Kim tra tp tin h thng"
+
+msgid "Flashupdate (online)"
+msgstr "Cp nht flash (trc tuyn)"
+
+msgid "Flashupdate (tmp)"
+msgstr "Cp nht flash (tmp)"
+
+msgid "fonts"
+msgstr "phng ch"
+
+msgid "Fontsize adjust in pixel"
+msgstr "C ch theo pixel"
+
+msgid "fontsize"
+msgstr "C ch"
+
+msgid "Format HDD"
+msgstr "nh dng  cng"
+
+msgid "Found Data:"
+msgstr "Tm thy d liu:"
+
+msgid "Found Radio:"
+msgstr "Tm thy Radio:"
+
+msgid "Found TV:"
+msgstr "Tm thy TV:"
+
+msgid ""
+"Found running Record.\n"
+"Realy shutdown ?"
+msgstr ""
+"Bn ghi ang chy.\n"
+"Bn mun tt?"
+
+msgid ""
+"Found running record\n"
+"or record is starting in next time.\n"
+"Really shutdown ?"
+msgstr ""
+"Bn ghi ang chy\n"
+"hoc ang bt u ghi.\n"
+"Bn mun tt ?"
+
+msgid "French"
+msgstr "Ting Php"
+
+msgid "free space"
+msgstr "Dung lng cn trng"
+
+msgid "Frequency"
+msgstr "Tn s"
+
+msgid "Frequency:"
+msgstr "Tn s:"
+
+msgid "Friday"
+msgstr "Th su"
+
+msgid "fsckrecord"
+msgstr "ghi fsck"
+
+msgid "fsckroot"
+msgstr "gc fsck"
+
+msgid "fsckswap"
+msgstr "swap fsck"
+
+msgid "ftdi"
+msgstr "ftdi"
+
+msgid "ftpd"
+msgstr "ftpd"
+
+msgid "ftpport"
+msgstr "Cng ftp"
+
+msgid "fullcover"
+msgstr "full cover"
+
+msgid "g"
+msgstr "g"
+
+msgid "G"
+msgstr "G"
+
+msgid "gateway"
+msgstr "gateway"
+
+msgid "Germany"
+msgstr "Ting c"
+
+msgid "Graphic Multi EPG"
+msgstr "Lch chng trnh"
+
+msgid "GRAPHIC MULTI EPG - Bouquets"
+msgstr "Nhm lch chng trnh"
+
+msgid "Graphic EPG"
+msgstr "Lch chng trnh"
+
+msgid "Graph. EPG"
+msgstr "Lch chng trnh"
+
+msgid "Graphic MULTI EPG - Bouquets -"
+msgstr "Nhm lch chng trnh"
+
+msgid "Graphic EPG Zoom"
+msgstr "Phng to lch chng trinh "
+
+msgid "Graphic EPG Picon"
+msgstr "Thu nh lch chng trnh"
+
+msgid "Greek"
+msgstr "Ting Hy Lp"
+
+msgid "grey"
+msgstr "mu xm"
+
+msgid "German"
+msgstr "Ting c"
+
+msgid "GUI Restart"
+msgstr "Khi ng li GUI"
+
+msgid "Goto startpos"
+msgstr "Ti v tr bt u"
+
+msgid "h"
+msgstr "h"
+
+msgid "H"
+msgstr "H"
+
+msgid "Hangtime"
+msgstr "Hang time"
+
+msgid "Harddisk Format - List Devices"
+msgstr "nh dng  cng  Danh sch cc thit b"
+
+msgid "Harddisk Fsck - List Devices"
+msgstr " cng  Danh sch cc thit b"
+
+msgid "Harddisk"
+msgstr " cng"
+
+msgid ""
+"HDD not configured\n"
+"can't find record path"
+msgstr ""
+"Khng cu hnh c  cng\n"
+"khng tm thy ng dn"
+
+msgid "hddreplacement"
+msgstr "thay  cng"
+
+msgid "HighSR"
+msgstr "High SR"
+
+msgid "How many days"
+msgstr "Bao nhiu ngy"
+
+msgid "HTTP Settings"
+msgstr "Thit lp HTTP"
+
+msgid "HTTPD Port"
+msgstr "Cng HTPTD"
+
+msgid "i"
+msgstr "i"
+
+msgid "I"
+msgstr "I"
+
+msgid "Image Information"
+msgstr "Thng tin"
+
+msgid "Imdb Directory"
+msgstr "Th mc Imdb"
+
+msgid "imdb mvis (network/hdd)"
+msgstr "imdb mvis (mng/ cng)"
+
+msgid "Increased Voltage"
+msgstr "Tng p"
+
+msgid "Info"
+msgstr "Thng tin"
+
+msgid "infos"
+msgstr "thng tin"
+
+msgid "Infobar Auto hide on call"
+msgstr "Thanh thng tin t ng hin th"
+
+msgid "Infobar Sleep"
+msgstr "Thi gian thanh thng tin hin th"
+
+msgid "Infobar Timeout"
+msgstr "Thi gian n thanh thng tin"
+
+msgid "Information"
+msgstr " Thng tin "
+
+msgid "Information..."
+msgstr "Thng tin"
+
+msgid "Infos"
+msgstr " Thng tin "
+
+msgid "initializing"
+msgstr "khi to"
+
+msgid "install"
+msgstr "ci t"
+
+msgid "Install"
+msgstr "Ci t"
+
+msgid "Internet Browser"
+msgstr "Trnh duyt mng"
+
+msgid "internet"
+msgstr "mng"
+
+msgid "Interval"
+msgstr "Intervall"
+
+msgid "Inversion"
+msgstr "Nghch o"
+
+msgid "Inversion:"
+msgstr "Nghch o:"
+
+msgid "ipaddress"
+msgstr "a ch IP"
+
+msgid "Is this Videomode ok ?"
+msgstr "Ch  ny ok?"
+
+msgid "Italian"
+msgstr "Ting "
+
+msgid "iwatch"
+msgstr "iwatch"
+
+msgid "j"
+msgstr "j"
+
+msgid "J"
+msgstr "J"
+
+msgid "k"
+msgstr "k"
+
+msgid "K"
+msgstr "K"
+
+msgid "Kernel"
+msgstr "Kernel"
+
+msgid "Keyboard"
+msgstr "Bn phm"
+
+msgid "keymaps"
+msgstr "keymaps"
+
+msgid "l"
+msgstr "l"
+
+msgid "L"
+msgstr "L"
+
+msgid "lan"
+msgstr "lan"
+
+msgid "Language"
+msgstr "Ngn ng"
+
+msgid "Latitude"
+msgstr "V "
+
+msgid "letterbox"
+msgstr "Hp th"
+
+msgid "Listbox Select"
+msgstr "La chn danh sch"
+
+msgid "LNB Configuration"
+msgstr "Cu hnh LNB"
+
+msgid "LNB Settings"
+msgstr "Thit lp LNB"
+
+msgid "LNB"
+msgstr "LNB"
+
+msgid "loadpartition"
+msgstr "phn vng ti"
+
+msgid "LOF"
+msgstr "LOF"
+
+msgid "LOF/H"
+msgstr "LOF/H"
+
+msgid "LOF/L"
+msgstr "LOF/L"
+
+msgid "LOG (Text)"
+msgstr "LOG (Text)"
+
+msgid "logto"
+msgstr "ng nhp"
+
+msgid "Longitude"
+msgstr "V "
+
+msgid "loop to Tuner"
+msgstr "loop to Tuner"
+
+msgid "Logo 1"
+msgstr "Logo 1"
+
+msgid "Logo 2"
+msgstr "Logo 2"
+
+msgid "m"
+msgstr "m"
+
+msgid "M"
+msgstr "M"
+
+msgid "Main Menu"
+msgstr "Menu chnh"
+
+msgid "Manual Search"
+msgstr "D bng tay"
+
+msgid "Manuel Scan"
+msgstr " D bng tay "
+
+msgid "maxdelay"
+msgstr " tr ln nht"
+
+msgid "maxrate"
+msgstr "T l ln nht"
+
+msgid "MC VideoPlayer Imdb Settings"
+msgstr "Ci t Imdb VideoPlayer MC"
+
+msgid "MC VideoPlayer Sort Settings"
+msgstr "Ci t sp xp VideoPlayer MC"
+
+msgid "MC VideoPlayer View Settings"
+msgstr "Ci t hin th VideoPlayer MC"
+
+msgid "Media Center"
+msgstr "Media Center"
+
+msgid "Media Player"
+msgstr "Media Player"
+
+msgid "MediaCenter Icon"
+msgstr "Biu tng Media Center"
+
+msgid "Memory"
+msgstr "B nh"
+
+msgid "Memory info"
+msgstr "Thng tin b nh"
+
+msgid "MENU"
+msgstr "MENU"
+
+msgid "Menu Protect"
+msgstr "Kha Menu"
+
+msgid "Menulist"
+msgstr "Danh sch menu"
+
+msgid "MENUPROTECT"
+msgstr "KHA MENU"
+
+msgid "Menu not implemented !"
+msgstr "Khng thc hin c!"
+
+msgid "Message"
+msgstr "Tin nhn"
+
+msgid "Minutes"
+msgstr " Pht"
+
+msgid "Minutes:"
+msgstr "Pht:"
+
+msgid "mixed mode"
+msgstr "ch  trn"
+
+msgid "Modulation"
+msgstr "iu ch"
+
+msgid "Modulation:"
+msgstr "iu ch:"
+
+msgid "Module"
+msgstr "Mun"
+
+msgid "Module info"
+msgstr "Thng tin mun"
+
+msgid "Module Config"
+msgstr "Cu hnh mun"
+
+msgid "Monday"
+msgstr "Th hai"
+
+msgid "Mounts"
+msgstr "Mounts"
+
+msgid "move service"
+msgstr "chuyn dch v"
+
+msgid "Moviepath"
+msgstr "Th mc phim"
+
+msgid "MTD"
+msgstr "MTD"
+
+msgid "MTD info"
+msgstr "Thng tin MTD"
+
+msgid "Multi EPG"
+msgstr "EPG"
+
+msgid "Multi (EPG)"
+msgstr "EPG"
+
+msgid "MULTI EPG - All Channels"
+msgstr "EPG  Tt c cc chng trnh"
+
+msgid "Multi Sat"
+msgstr "Nhiu v tinh"
+
+msgid "Single Service"
+msgstr "Mt dch v"
+
+msgid "Multiple Service"
+msgstr "Nhiu dch v"
+
+msgid "Module Type"
+msgstr "Loi mun"
+
+msgid "mvid"
+msgstr "mvid"
+
+msgid "My Video"
+msgstr "My Video"
+
+msgid "n"
+msgstr "n"
+
+msgid "N"
+msgstr "N"
+
+msgid "Name"
+msgstr "Tn"
+
+msgid "Name:"
+msgstr " Tn:"
+
+msgid "netmask"
+msgstr "netmask"
+
+msgid "Network Adapter Settings"
+msgstr "Ci t cc mng"
+
+msgid "Network Adapter Test"
+msgstr "Kim tra cc mng"
+
+msgid "Network Assistant"
+msgstr "H tr mng"
+
+msgid "Network Interfacelist"
+msgstr "Danh sch giao din mng"
+
+msgid "Network Restart"
+msgstr "Khi ng li mng"
+
+msgid "Network Scan"
+msgstr "D tm mng"
+
+msgid "Network Test"
+msgstr "Kim tra mng"
+
+msgid "Network"
+msgstr "Mng"
+
+msgid "network"
+msgstr "mng"
+
+msgid "Networkbrowser"
+msgstr "Trnh duyt mng"
+
+msgid "Networkbrowser - show scanned DNS-Shares"
+msgstr "Trnh duyt mng  D DNS-Chia s"
+
+msgid "Networkbrowser - show scanned cifs/nfs-Shares"
+msgstr "Trnh duyt mng  D cifs/nfs-Chia s "
+
+msgid "Next"
+msgstr "Tip theo"
+
+msgid "never"
+msgstr "khng bao gi"
+
+msgid "Nfs Server Settings"
+msgstr "Thit lp Server NFS"
+
+msgid "nfsserver"
+msgstr "NFS-Server"
+
+msgid "nfs server"
+msgstr "NFS-Server"
+
+msgid "No Live Stream running"
+msgstr "Khng c lung no ang pht"
+
+msgid "picture"
+msgstr "Hnh nh"
+
+msgid "No"
+msgstr "Khng"
+
+msgid "no"
+msgstr "khng"
+
+msgid ""
+"No skinconfig found in skin.\n"
+"Can't chage to selected skin."
+msgstr ""
+"Khng cu hnh c nn.\n"
+"Khng th thay i nn  chn"
+
+msgid "nothing"
+msgstr "khng"
+
+msgid "No backup folders found!!!"
+msgstr "Khng tm thy th mc  sao lu"
+
+msgid "non"
+msgstr "Khng"
+
+msgid "noaudiosync"
+msgstr "khng ng b audio"
+
+msgid "North / South"
+msgstr "Bc / Nam"
+
+msgid "nr_usbreaders"
+msgstr "nr_u c usb"
+
+msgid "o"
+msgstr "o"
+
+msgid "O"
+msgstr "O"
+
+msgid "OFF"
+msgstr "TT"
+
+msgid "Off"
+msgstr "Tt"
+
+msgid "off"
+msgstr "tt"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "OK = start restore"
+msgstr "OK = Khi phc"
+
+msgid "oldaudiofw"
+msgstr "firmware audio c"
+
+msgid "Old Audiofw"
+msgstr "Firmware audio c "
+
+msgid "oldvideofw"
+msgstr "firmware video c "
+
+msgid "ONID:"
+msgstr "ONID:"
+
+msgid "on"
+msgstr "bt"
+
+msgid "On"
+msgstr "Bt"
+
+msgid "ON"
+msgstr "BT"
+
+msgid "once"
+msgstr "mt ln"
+
+msgid "Only free scan"
+msgstr "D cc chng trnh min ph"
+
+msgid "Only free channel scan"
+msgstr "D cc chng trnh min ph"
+
+msgid "only_boot_overclock"
+msgstr "only_boot_overclock"
+
+msgid "Only Boot Overclock"
+msgstr "Only Boot Overclock"
+
+msgid "only on power off / restart"
+msgstr "tt ngun / khi ng li"
+
+msgid "options"
+msgstr "ty chn"
+
+msgid "Orbital Position:"
+msgstr "V tr qu o:"
+
+msgid "OSD Bottom Overscan"
+msgstr "Qut bn di"
+
+msgid "OSD Left Overscan"
+msgstr "Qut bn tri"
+
+msgid "OSD Right Overscan"
+msgstr "Qut bn phi"
+
+msgid "OSD Top Overscan"
+msgstr "Qut bn trn"
+
+msgid "OSD Transparent"
+msgstr " trong sut"
+
+msgid "OverClock Settings"
+msgstr "Thit lp p xung"
+
+msgid "Overclocking"
+msgstr "p xung"
+
+msgid "p"
+msgstr "p"
+
+msgid "P"
+msgstr "P"
+
+msgid "panscan"
+msgstr "dch chuyn v qut"
+
+msgid "password"
+msgstr "mt khu"
+
+msgid "Password"
+msgstr "Mt khu"
+
+msgid "PCR PID:"
+msgstr "PID PCR:"
+
+msgid "Piconpath"
+msgstr "Picon path"
+
+msgid "picons"
+msgstr "biu tng p"
+
+msgid "Picture Player"
+msgstr "Picture Player"
+
+msgid "PICTURE SETTINGS"
+msgstr "THIT LP HNH NH"
+
+msgid "PICTURE"
+msgstr "HNH NH"
+
+msgid "PIDs"
+msgstr "PIDs"
+
+msgid "Pilot"
+msgstr "Pilot"
+
+msgid "Pin Code Channel"
+msgstr "Mt khu ca chng trnh"
+
+msgid "Pin Code"
+msgstr "Mt khu"
+
+msgid "Pin Code menu"
+msgstr "Mt khu ca menu"
+
+msgid "PIN Settings"
+msgstr "Thit lp mt khu"
+
+msgid "Pin"
+msgstr "Mt khu"
+
+msgid "PIN:"
+msgstr "MT KHU:"
+
+msgid "pingserver"
+msgstr "kt ni server"
+
+msgid "pingtimeout"
+msgstr "mt kt ni"
+
+msgid "PinOn"
+msgstr "Pin On"
+
+msgid "player"
+msgstr "player"
+
+msgid "PlayList - select your playlist !"
+msgstr "Danh sch pht  chn danh sch ca bn!"
+
+msgid "Playlist-Mode"
+msgstr " Danh sch pht  Ch "
+
+msgid "PlayList"
+msgstr "Danh sch pht"
+
+msgid "playlist"
+msgstr "danh sch pht"
+
+msgid "Play Icon"
+msgstr "Biu tng pht"
+
+msgid "pll0_ndiv_mdiv"
+msgstr "pll0 ndiv mdiv"
+
+msgid "pll1_fdma_bypass"
+msgstr "pll1_fdma_bypass"
+
+msgid "pll1_ndiv_mdiv"
+msgstr "pll1_ndiv_mdiv"
+
+msgid "Plugins"
+msgstr "cdm ngun"
+
+msgid "plugload"
+msgstr "kt ni u vo"
+
+msgid "PMT PID:"
+msgstr "PID PMT:"
+
+msgid "Polarization"
+msgstr "Phn cc"
+
+msgid "Polarization:"
+msgstr "Phn cc:"
+
+msgid "Policy"
+msgstr "Chnh sch"
+
+msgid "Polish"
+msgstr "Ting Ba Lan"
+
+msgid "portmap"
+msgstr " port map "
+
+msgid "Power action"
+msgstr "Bt/tt ngun"
+
+msgid "Power aktion"
+msgstr "Bt/tt ngun"
+
+msgid "Power Off Timer"
+msgstr "Ausschalttimer"
+
+msgid "Power Off"
+msgstr "Tt ngun"
+
+msgid "power off"
+msgstr "tt ngun"
+
+msgid "Poweroff Timer"
+msgstr "Tt b nh thi"
+
+msgid "Poweroff"
+msgstr "Tt ngun"
+
+msgid "poweroff"
+msgstr "tt ngun"
+
+msgid "Power Menu"
+msgstr "ng menu"
+
+msgid "Prev"
+msgstr "trc "
+
+msgid "press red"
+msgstr "bm nt mu "
+
+msgid "profile"
+msgstr "profile"
+
+msgid "Program Info"
+msgstr "Thng tin chng trnh"
+
+msgid "progressbar"
+msgstr "thanh tin trnh"
+
+msgid "Protect Channel"
+msgstr "Kha chng trnh"
+
+msgid "Protect Menu"
+msgstr "Kha menu"
+
+msgid "protect service"
+msgstr "Kha dch v"
+
+msgid "protocol"
+msgstr "protocol"
+
+msgid "Prov"
+msgstr "Nh cung cp"
+
+msgid "Provider:"
+msgstr "Nh cung cp:"
+
+msgid "proxyauth"
+msgstr "Xc thc proxy"
+
+msgid "proxyip"
+msgstr "IP cho proxy"
+
+msgid "proxypass"
+msgstr "Mt khu cho proxy"
+
+msgid "proxyport"
+msgstr "Cng cho proxy"
+
+msgid "proxyuser"
+msgstr "proxy ngi s dng"
+
+msgid "q"
+msgstr "q"
+
+msgid "Q"
+msgstr "Q"
+
+msgid "QAM auto"
+msgstr "QAM t ng"
+
+msgid "QPSK auto"
+msgstr "QPSK t ng"
+
+msgid "r"
+msgstr "r"
+
+msgid "R"
+msgstr "R"
+
+msgid "Radio (Info)"
+msgstr "Radio (Thng tin)"
+
+msgid "radiologos"
+msgstr "logo radio"
+
+msgid "Radio Player"
+msgstr "Radio Player"
+
+msgid "Ram"
+msgstr "Ram"
+
+msgid "Random"
+msgstr "Ngu nhin"
+
+msgid "Random-On"
+msgstr "Ngu nhin-Bt"
+
+msgid "rcreboot"
+msgstr "khi ng li rc"
+
+msgid "Realy Delete ?"
+msgstr "Bn mun xa?"
+
+msgid "Realy restore default settings ?"
+msgstr "Bn mun khi phc li cc thit lp mc nh?"
+
+msgid "Receiver now reboot !!!"
+msgstr "u thu ang khi ng li !!!"
+
+msgid "record"
+msgstr "ghi"
+
+msgid "Record"
+msgstr "Ghi"
+
+msgid "ready"
+msgstr "sn sng"
+
+msgid "Record / Timeshift / Stream"
+msgstr "Record / Timeshift / Stream"
+
+msgid "Record Forerun (min)"
+msgstr "Thi gian ghi (pht)"
+
+msgid "Record Overrun (min)"
+msgstr "Thi gian theo di (pht)"
+
+msgid "Record Path"
+msgstr "Th mc cha bn ghi"
+
+msgid "Record Split Size"
+msgstr "Kch thc chia bn ghi"
+
+msgid "Record Timer"
+msgstr "B inh thi ghi"
+
+msgid "Records and EPG ..."
+msgstr "Ghi v EPG..."
+
+msgid "Records and EPG"
+msgstr "Ghi v EPG"
+
+msgid "record_max_sectors"
+msgstr "record_max_sectors "
+
+msgid "record_split_size"
+msgstr "record_split_size"
+
+msgid "record_split_type"
+msgstr "record_split_type"
+
+msgid "Records"
+msgstr "Bn ghi"
+
+msgid "red"
+msgstr "mu "
+
+msgid "Red Button"
+msgstr "Nt mu "
+
+msgid "Red Key Action - Setup"
+msgstr "Rote-Taste Belegungsmen "
+
+msgid "Red Key Action - Plugins"
+msgstr "Nt mu  - Plugins "
+
+msgid "Reduce Standby frequency"
+msgstr "Gim tn s  ch  ch"
+
+msgid "remove share"
+msgstr "xa chia s"
+
+msgid "Repeat-On"
+msgstr "Lp li"
+
+msgid "Repeate"
+msgstr "Lp li"
+
+msgid "repeate"
+msgstr "lp li"
+
+msgid "RESET"
+msgstr "KHI NG LI"
+
+msgid "Restore default settings"
+msgstr "Thit lp mc nh"
+
+msgid "RESTORE ERROR"
+msgstr "LI KHI PHC LI!"
+
+msgid "Restore Settings"
+msgstr "Thit lp khi phc li"
+
+msgid "Refresh"
+msgstr "Lm mi"
+
+msgid "RELOAD"
+msgstr "TI LI"
+
+msgid "remove service"
+msgstr "xa dch v"
+
+msgid "repairmodus"
+msgstr "kiu sa"
+
+msgid "Repeate type"
+msgstr "Ch  lp li"
+
+msgid "Repeat"
+msgstr "Lp li"
+
+msgid "Resolution (default)"
+msgstr "  phn gii (mc nh)"
+
+msgid "Resolution Settings"
+msgstr "Thit lp  phn gii "
+
+msgid "Resolution:"
+msgstr " phn gii"
+
+msgid "Restart Network ?"
+msgstr "Khi ng li mng?"
+
+msgid "Restart Network"
+msgstr " Khi ng li mng"
+
+msgid "Restart "
+msgstr "Khi ng li"
+
+msgid "Restart"
+msgstr "Khi ng li"
+
+msgid "Restore"
+msgstr "Khi phc"
+
+msgid "reverse alpha"
+msgstr "o ngc th t alpha"
+
+msgid "reverse date"
+msgstr "o ngc ngy"
+
+msgid "reverse size"
+msgstr "o ngc kch thc"
+
+msgid "rmcrashlog"
+msgstr " rm crash log "
+
+msgid "rmemthy"
+msgstr "xa th mc trng"
+
+msgid "Rolloff"
+msgstr " Roll off "
+
+msgid "Rolloff:"
+msgstr " Roll off:"
+
+msgid "Rotor Position"
+msgstr "V tr roto"
+
+msgid "Rotor Settings"
+msgstr "Thit lp roto"
+
+msgid "rsize"
+msgstr "rsize"
+
+msgid "Russian"
+msgstr "Ting Nga"
+
+msgid "s"
+msgstr "s"
+
+msgid "S"
+msgstr "S"
+
+msgid "Samba Server Settings"
+msgstr "Thit lp server Samba"
+
+msgid "sambaserver"
+msgstr "Server Samba"
+
+msgid "samba server"
+msgstr " server Samba "
+
+msgid "Sat Config"
+msgstr "Thit lp v tinh"
+
+msgid "Satelite Type"
+msgstr "Loi v tinh"
+
+msgid "sat_single"
+msgstr "mt v tinh"
+
+msgid "sat_diseqc_ab"
+msgstr " sat_diseqc_ab "
+
+msgid "sat_diseqc_abcd"
+msgstr " sat_diseqc_abcd "
+
+msgid "sat_diseqc_abcdefgh"
+msgstr " sat_diseqc_abcdefgh "
+
+msgid "sat_expert"
+msgstr " sat_expert "
+
+msgid "Satfinder"
+msgstr "Tm thy v tinh"
+
+msgid "SAT"
+msgstr "V tinh"
+
+msgid "Satellite"
+msgstr "V tinh"
+
+msgid "Satellites"
+msgstr "V tinh"
+
+msgid "Satelite Entrys"
+msgstr "Nhp v tinh"
+
+msgid "Saturation"
+msgstr " Saturation "
+
+msgid "Saturday"
+msgstr "Th by"
+
+msgid "Save Settings"
+msgstr "Lu cc thit lp"
+
+msgid "Save"
+msgstr "Lu"
+
+msgid "SAVE"
+msgstr "LU"
+
+msgid "save network settings ?"
+msgstr "lu thit lp mng?"
+
+msgid "sbs side by side"
+msgstr "side by side"
+
+msgid "Scan"
+msgstr "D"
+
+msgid "scan"
+msgstr "d"
+
+msgid "Tunerconfig is not allowed if record"
+msgstr "Cu hnh tuner ny khng cho php ghi"
+
+msgid "Scan Config"
+msgstr "Cu hnh d"
+
+msgid "scan wlan"
+msgstr "D Wlan"
+
+msgid "Scanning Network Shares, please wait !!"
+msgstr "D mng chia s, vui long i !!"
+
+msgid "scartonstandby"
+msgstr "Ch  ch scart"
+
+msgid "Scart-Recorder"
+msgstr "Ghi m scart"
+
+msgid "Screensaver Adjust"
+msgstr "iu chnh mn hnh ch"
+
+msgid "screensaver background"
+msgstr "nn mn hnh ch"
+
+msgid "screensaver delay"
+msgstr " tr mn hnh ch"
+
+msgid "screensaver interval"
+msgstr "khong thi gian mn hnh ch"
+
+msgid "screensaver pic"
+msgstr "hnh nh mn hnh ch"
+
+msgid "screensaver type"
+msgstr "kiu mn hnh ch"
+
+msgid "screensaver"
+msgstr "mn hnh ch"
+
+msgid "Screensaver"
+msgstr "Mn hnh ch"
+
+msgid "Second Infobar"
+msgstr "Thanh thng tin th hai"
+
+msgid "Select backup:"
+msgstr "Chn sao lu:"
+
+msgid "Select Path"
+msgstr "La chn ng dn"
+
+msgid "SELECT"
+msgstr "LA CHN"
+
+msgid "search EU VHF I"
+msgstr "d EU VHF I"
+
+msgid "Service"
+msgstr "Dch v"
+
+msgid "Serviceinfo"
+msgstr "Thng tin dch v"
+
+msgid "succesfull create or delelete directory"
+msgstr "to hoc xa th mc thnh cng"
+
+msgid "set startchannel"
+msgstr "thit lp chng trnh"
+
+msgid "Settings succesfull saved"
+msgstr " lu cc thit lp"
+
+msgid "Settings backup/restore"
+msgstr "Thit lp sao lu/khi phc li"
+
+msgid "Settings"
+msgstr " Thit lp "
+
+msgid "settings"
+msgstr "thit lp"
+
+msgid "Settings..."
+msgstr "Thit lp..."
+
+msgid "Settings OK ?"
+msgstr " Thit lp OK ?"
+
+msgid "Share Settings"
+msgstr "Thit lp chia s"
+
+msgid "sharedir"
+msgstr "sharedir"
+
+msgid "sharename"
+msgstr "tn chia s"
+
+msgid "Sharename"
+msgstr "Tn chia s"
+
+msgid "Should Timeshift File deleted ?"
+msgstr "Xa cc tp tin timeshift?"
+
+msgid "Show EPG screen (EPG button)"
+msgstr "Hin th EPG (nt EPG)"
+
+msgid "Show in Standby"
+msgstr "Hin th ch  ch"
+
+msgid "Show in VFD"
+msgstr "Hin th trong VFD"
+
+msgid "showip"
+msgstr "hin th a ch ip"
+
+msgid "showtvinfo"
+msgstr "hin th thng tin TV"
+
+msgid "Show Module Messages"
+msgstr "Hin th mun tin nhn"
+
+msgid "SID:"
+msgstr "SID:"
+
+msgid "Signal:"
+msgstr "Tn hiu:"
+
+msgid "Single Sat"
+msgstr "Mt v tinh"
+
+msgid "Single Satelite"
+msgstr "Mt v tinh"
+
+msgid "Single LNB"
+msgstr "LNB n"
+
+msgid "Single EPG"
+msgstr "EPG"
+
+msgid "Single Transponder"
+msgstr "Mt b pht p"
+
+msgid "Single (EPG)"
+msgstr "EPG"
+
+msgid "size"
+msgstr "kch thc"
+
+msgid "Skin Adjust"
+msgstr "iu chnh nn"
+
+msgid "Skin Select"
+msgstr "Chn nn"
+
+msgid "Skin"
+msgstr "Nn"
+
+msgid "skins"
+msgstr "Nn"
+
+msgid "Skip 1/3"
+msgstr "i 1/3"
+
+msgid "Skip 4/6"
+msgstr "i 4/6"
+
+msgid "Skip 7/9"
+msgstr "i 7/9"
+
+msgid "Sleep Timer"
+msgstr "Tt b nh thi"
+
+msgid "small"
+msgstr "nh"
+
+msgid "Sort"
+msgstr "Sp xp"
+
+msgid "SORT"
+msgstr "SP XP"
+
+msgid "Sorting"
+msgstr "Sp xp"
+
+msgid "sorry found no harddisk"
+msgstr "xin li khng tm thy  cng"
+
+msgid "Sound"
+msgstr "m thanh"
+
+msgid "Song TitleText"
+msgstr "Song Title Text"
+
+msgid "Space"
+msgstr "Khng gian"
+
+msgid "speed"
+msgstr "tc "
+
+msgid "Spinnerspeed"
+msgstr "Tc  quay"
+
+msgid "Spinnertime"
+msgstr "Thi gian quay"
+
+msgid "ssl"
+msgstr "ssl"
+
+msgid "Standby / Poweroff"
+msgstr "Standby / Tt ngun"
+
+msgid "Standby / Poweroff..."
+msgstr "Standby / Tt ngun..."
+
+msgid "Standby Brightness"
+msgstr " sng  ch  standby"
+
+msgid "Standby Mode"
+msgstr "Ch  standby"
+
+msgid "Standby"
+msgstr "Standby"
+
+msgid "standby_freq"
+msgstr "Tn s standby"
+
+msgid "Standby frequency"
+msgstr "Tn s standby"
+
+msgid "standby_overclock"
+msgstr "standby_overclock"
+
+msgid "Start HTTPD"
+msgstr "Bt u HTTPD"
+
+msgid "Start"
+msgstr "Bt u"
+
+msgid "starting Kernel Update ?"
+msgstr "Bt u cp nht Kernel?"
+
+msgid "starting Fw Update ?"
+msgstr " Bt u cp nht Firmware?"
+
+msgid "starting Root Update ?"
+msgstr " bt u cp nht root?"
+
+msgid "starting Var Update ?"
+msgstr " bt u cp nht var?"
+
+msgid "starting Full Update ?"
+msgstr "bt u cp nht?"
+
+msgid "starting Usb Update ?"
+msgstr "bt u cp nht t USB?"
+
+msgid "starting Fullusb Update ?"
+msgstr "bt u cp nht t USB?"
+
+msgid "starting Usb (unknown release grp) Update ?"
+msgstr "bt u cp nht t USB?"
+
+msgid "start QtBrowser now ?"
+msgstr "bt u trnh duyt Qt?"
+
+msgid "STOP/START"
+msgstr "STOP/START"
+
+msgid "stream is running !"
+msgstr "ang pht!"
+
+msgid "Stream Path"
+msgstr "Stream Path"
+
+msgid "Streaming"
+msgstr "Streaming"
+
+msgid "Stream Port"
+msgstr "Stream Port"
+
+msgid "Style"
+msgstr "Loi"
+
+msgid "Subtitle"
+msgstr "Ph "
+
+msgid "Sunday"
+msgstr "Ch nht"
+
+msgid "Subservices"
+msgstr "Cc dch v ph"
+
+msgid "Subchannel"
+msgstr "Cc chng trnh ph"
+
+msgid "Swap"
+msgstr "Trao i"
+
+msgid "swap"
+msgstr "trao i"
+
+msgid "swap_max_sectors"
+msgstr "swap_max_sectors"
+
+msgid "swapnetwork"
+msgstr "mng trao i"
+
+msgid "swapscreensaver"
+msgstr "swap screensaver"
+
+msgid "swapskins"
+msgstr "swapskins"
+
+msgid "swapsystem"
+msgstr "h thng trao i"
+
+msgid "swapsize"
+msgstr "Kch thc trao i"
+
+msgid "swapsystems"
+msgstr "H thng trao i"
+
+msgid "Switch"
+msgstr "Chuyn"
+
+msgid "switch channel"
+msgstr "chuyn chng trnh"
+
+msgid "swts"
+msgstr "swts"
+
+msgid "Symbol rate:"
+msgstr "Tc  mu:"
+
+msgid "Symbolrate"
+msgstr " Tc  mu"
+
+msgid "Sysinfo"
+msgstr "Thng tin h thng"
+
+msgid "System - Flashupdate (online)"
+msgstr " H thng  Cp nht qua flash (trc tuyn"
+
+msgid "System - Flashupdate (tmp)"
+msgstr " H thng  Cp nht qua flash (tmp)"
+
+msgid "System - Usbupdate (online)"
+msgstr " H thng  Cp nht qua USB (trc tuyn)"
+
+msgid "System - Usbupdate (tmp)"
+msgstr "H thng  Cp nht qua USB (tmp)"
+
+msgid "System Info"
+msgstr "Thng tin h thng"
+
+msgid "System"
+msgstr "H thng"
+
+msgid "System..."
+msgstr " H thng..."
+
+msgid "System:"
+msgstr "H thng:"
+
+msgid "szap"
+msgstr "szap"
+
+msgid "szap_diseqc_repeat"
+msgstr "szap_diseqc_repeat"
+
+msgid "szap_frontend"
+msgstr "szap_frontend"
+
+msgid "szaplong"
+msgstr "szaplong"
+
+msgid "t"
+msgstr "t"
+
+msgid "T"
+msgstr "T"
+
+msgid "tab"
+msgstr "tab"
+
+msgid "telnet"
+msgstr "telnet"
+
+msgid "Test frequency"
+msgstr "Tn s kim tra"
+
+msgid "TEST"
+msgstr "KIM TRA"
+
+msgid "text"
+msgstr "text"
+
+msgid "thereafter on this Channel:"
+msgstr "sau chng trnh ny:"
+
+msgid "Threshold"
+msgstr "Ngng"
+
+msgid "Thursday"
+msgstr "Th nm"
+
+msgid "Time to sleep"
+msgstr "Thi gian tt"
+
+msgid "Timer Record Path"
+msgstr "Bc dch cho b nh thi ghi"
+
+msgid "Timer"
+msgstr "B nh thi"
+
+msgid "time"
+msgstr "thi gian"
+
+msgid "time + channel"
+msgstr "thi gian + chng trnh"
+
+msgid "Timeshift Path"
+msgstr " Bc dch cho timeshift"
+
+msgid ""
+"Timeshift is running !!!\n"
+"Stop it and switch ?"
+msgstr ""
+"ang chy timeshift !!!\n"
+"Bn mun dng timeshift v chuyn?"
+
+msgid "Timezone"
+msgstr "Mi gi"
+
+msgid "Tint"
+msgstr "mu sc"
+
+msgid "Tone Burst"
+msgstr "Tone Burst"
+
+msgid "Tone Mode"
+msgstr "Ch  tone"
+
+msgid "Top"
+msgstr "V u"
+
+msgid "Transponder:"
+msgstr "B php p:"
+
+msgid "TSID:"
+msgstr "TSID:"
+
+msgid "Tuesday"
+msgstr "Th ba"
+
+msgid "Tuner Configuration"
+msgstr " Ci t tuner"
+
+msgid "Tuner Reception"
+msgstr "Nhn tuner"
+
+msgid "Tuner"
+msgstr "Tuner"
+
+msgid "Tuner:"
+msgstr "Tuner:"
+
+msgid "tuner_sleep_off"
+msgstr " tuner_sleep_off "
+
+msgid "Tunerconfig"
+msgstr "Ci t tuner"
+
+msgid "Tuning to Channel failed!"
+msgstr "Khng chuyn c chng trnh!"
+
+msgid " Teletext CPU Frequenz fix "
+msgstr "Sa tn s CPU teletext"
+
+msgid "TV (Info)"
+msgstr "TV (Thng tin)"
+
+msgid "TXT PID:"
+msgstr "PID TXT:"
+
+msgid "Type of Scan"
+msgstr "Kiu d"
+
+msgid "type"
+msgstr "kiu"
+
+msgid "Type"
+msgstr "Kiu"
+
+msgid "Type:"
+msgstr "Kiu:"
+
+msgid "type of channelsearch"
+msgstr "kiu d chng trnh"
+
+msgid "u"
+msgstr "u"
+
+msgid "U"
+msgstr "U"
+
+msgid "UNC:"
+msgstr "UNC:"
+
+msgid "undefined"
+msgstr "khng xc nh"
+
+msgid "Unicable Configuration"
+msgstr "Cu hnh cp n"
+
+msgid "unknown"
+msgstr "khng bit"
+
+msgid "Unknown Error."
+msgstr "Khng xc nh c li."
+
+msgid "UNLOAD"
+msgstr "KHNG TI C"
+
+msgid "update"
+msgstr "cp nht"
+
+msgid "Update"
+msgstr "Cp nht"
+
+msgid "updatelist"
+msgstr "Danh sch cp nht"
+
+msgid "Usb Device"
+msgstr "Thit b USB"
+
+msgid "Usbupdate (online)"
+msgstr "Cp nht USB (trc tuyn)"
+
+msgid "Usbupdate (tmp)"
+msgstr " Cp nht USB (tmp)"
+
+msgid "use medium for backup"
+msgstr "s dng cng c  sao lu"
+
+msgid "use medium for record"
+msgstr "s dng cng c  ghi"
+
+msgid "use medium for extension"
+msgstr "s dng cng c  m rng"
+
+msgid "use medium for swap"
+msgstr "S dng cng c  hon i"
+
+msgid "Use EPG Endtime"
+msgstr "s dng lch chng trnh"
+
+msgid "Use Teletxt Workaround"
+msgstr "s dng vn bn"
+
+msgid "use ssl"
+msgstr "s dng ssl"
+
+msgid "useproxy"
+msgstr "s dng proxy"
+
+msgid "userauth"
+msgstr "s dng thut ton"
+
+msgid "User"
+msgstr "Ngi dng"
+
+msgid "user defined"
+msgstr "nh ngha ngi dng"
+
+msgid "username"
+msgstr "tn ngi dng"
+
+msgid "v"
+msgstr "v"
+
+msgid "V"
+msgstr "V"
+
+msgid "VFDisplay"
+msgstr "Hin th VF"
+
+msgid "Video PID:"
+msgstr "PID video:"
+
+msgid "Video Player"
+msgstr "Pht video"
+
+msgid "Video Settings"
+msgstr "Thit lp hin th"
+
+msgid "VIDEO SETTINGS"
+msgstr "THIT LP HIN TH"
+
+msgid "Video"
+msgstr "Video"
+
+msgid "VIDEO"
+msgstr "VIDEO"
+
+msgid "VideoMode Aspect Settings"
+msgstr "thit lp khun hnh"
+
+msgid "VideoMode Resolution Settings"
+msgstr "thit lp  phn gii"
+
+msgid "VideoMode Settings"
+msgstr "thit lp ch  hin th"
+
+msgid "Videotune"
+msgstr "iu chnh video"
+
+msgid "View"
+msgstr "Hin th"
+
+msgid "Virtualzap Timeout"
+msgstr " Virtualzap Timeout"
+
+msgid "VLC Player"
+msgstr "Pht VLC"
+
+msgid "Voltage Mode"
+msgstr "Ch  in p"
+
+msgid "Volume off"
+msgstr "Tt m lng "
+
+msgid "Vol off"
+msgstr "Tt m lng"
+
+msgid "Volumebar Timeout"
+msgstr "Vt qu gii hn"
+
+msgid "w"
+msgstr "w"
+
+msgid "W"
+msgstr "W"
+
+msgid "Wait for channel scan end"
+msgstr "Vui long i."
+
+msgid "wait for stopping download"
+msgstr "vui long i  dng download."
+
+msgid "Weather Info"
+msgstr "thng tin thi tit"
+
+msgid "Web Radio Player"
+msgstr "Web Radio Player"
+
+msgid "webif"
+msgstr "Giao din web"
+
+msgid "Wednesday"
+msgstr "Ngy th t"
+
+msgid "weekly"
+msgstr "hng tun"
+
+msgid "wlan"
+msgstr "Mng khng dy"
+
+msgid "whitelist"
+msgstr "danh sch trng"
+
+msgid "white"
+msgstr "trng"
+
+msgid "workdays"
+msgstr "cc ngy lm vic"
+
+msgid "wsize"
+msgstr "wsize"
+
+msgid "x"
+msgstr "x"
+
+msgid "X"
+msgstr "X"
+
+msgid "y"
+msgstr "y"
+
+msgid "yes"
+msgstr "ng "
+
+msgid "Yes"
+msgstr "ng "
+
+msgid "YES"
+msgstr "ng "
+
+msgid "Y"
+msgstr "Y"
+
+msgid "yellow"
+msgstr "mu vng"
+
+msgid "z"
+msgstr "z"
+
+msgid "Z"
+msgstr "Z"
+
+msgid "DEU (DVB Subtitle)"
+msgstr "ph  "
+
+msgid "ENG (DVB-Subtitle)"
+msgstr "ting anh"
+
+msgid "FRA (DVB-Subtitle)"
+msgstr "ting php"
+
+msgid "Change Feed"
+msgstr "Change Feed"
+
+msgid "ADD ONE"
+msgstr "thm 1"
+
+msgid "ADD ALL"
+msgstr "thm tt c"
+
+msgid "Show Modules"
+msgstr "Cc module"
+
+msgid "Age Protect"
+msgstr "Kha tr em"
+
+msgid "Protect Channel Freetime (min)"
+msgstr "kha knh min ph"
+
+msgid " SELECT"
+msgstr "chn"
+
+msgid "rename service"
+msgstr "i tn chng trnh"
+
+msgid "Resolution (current)"
+msgstr " phn gii"
+
+msgid "virtualbox (text)"
+msgstr "virtualbox (text)"
+
+msgid "Two step mute"
+msgstr " Two step mute"
+
+msgid ""
+"Backup started\n"
+"\n"
+"Please wait..."
+msgstr ""
+"Bt u sao lu\n"
+"\n"
+"Vui lng i"
+
+msgid ""
+"No backup folders found!!!\n"
+"\n"
+"Aborting restoring..."
+msgstr ""
+"khng tm thy th mc!!!\n"
+"\n"
+" ang hy sao chp "
+
+msgid ""
+"A record hdd or a swapstick must be mounted!\n"
+"\n"
+"Aborting backup..."
+msgstr ""
+" cng phi c kt ni!\n"
+"\n"
+" ang hy sao chp"
+
+msgid ""
+"You find this Backup with timestamp on /tmp\n"
+"Connecting per ftp and copy this backup to your Pc !\n"
+"Please Waiting 2 Min ... and relax\n"
+" \n"
+"Next infos on LCD Display!"
+msgstr ""
+"Tm trong th mc /tmp \n"
+" kt ni ti ftp v copy v my tnh!\n"
+" vui lng i 2 pht\n"
+" cc thong tin tip theo s hin th trn mn hnh!"
+
+msgid ""
+"Some plugins needs restart.\n"
+"If the plugin is not active\n"
+"reboot the box."
+msgstr ""
+"Mt s kt ni cn khi ng li.\n"
+" nu kt ni khng c kch hot \n"
+" vui lng khi ng lai u thu"
+
+msgid "EDIT"
+msgstr "chnh sa"
+
+msgid "SCAN"
+msgstr "d"
+
+msgid "Install netsurf Internetbrowser Ipk first !"
+msgstr "ci t trnh duyt web"
+
+msgid "start Internet browser now ?"
+msgstr "Bt u trnh duyt web?"
+
+msgid "Move"
+msgstr "di chuyn"
+
+msgid "Fine move"
+msgstr "di chuyn chnh xc"
+
+msgid "Limit"
+msgstr "gii hn"
+
+msgid "Storage position"
+msgstr "v tr lu tr"
+
+msgid "move west"
+msgstr "dch chuyn sang phi"
+
+msgid "search west"
+msgstr "tm kim bn phi"
+
+msgid "move east"
+msgstr "dch chuyn sang tri"
+
+msgid "search east"
+msgstr "tm kim bn tri"
+
+msgid "Positioner Setup"
+msgstr "thit lp v tr"
+
+msgid "store position"
+msgstr "v tr lu tr"
+
+msgid "goto position"
+msgstr "n v tr"
+
+msgid "start position"
+msgstr "v tr bt u"
+
+msgid "step west"
+msgstr "dch phi"
+
+msgid "step east"
+msgstr "dch tri"
+
+msgid "limits off"
+msgstr "tt gii hn"
+
+msgid "limit west"
+msgstr "gii hn phi"
+
+msgid "limit east"
+msgstr "gii hn tri"
+
+msgid "limits on"
+msgstr "bt gii hn"
+
+msgid "Set action after rec"
+msgstr "thit lp sau khi ghi"
+
+msgid "Registration needed, please contact operator !"
+msgstr "Vui lng lin h nh cung cp"
+
+msgid "no description found"
+msgstr "Khng tm thy thng tin"
+
+msgid "EPG resetet and now clear."
+msgstr "khng c lch chng trnh"
+
+msgid "Show Pictitle"
+msgstr "hin th nh"
+
+msgid "Autostart Playlist"
+msgstr "t ng bt u danh sch"
+
+msgid "EPG button on EPG Screen"
+msgstr "lch chng trnh"
+
+msgid "east"
+msgstr "tri"
+
+msgid "west"
+msgstr "phi"
+
+msgid "Diseqc Command Order"
+msgstr "iu khin Diseqc"
+
+msgid "north"
+msgstr "ln"
+
+msgid "south"
+msgstr "xung"
+
+msgid "browser"
+msgstr "trnh duyt"
+
+msgid "swaptool"
+msgstr "dng c hon i"
+
+msgid "tools"
+msgstr "dng c"
+
+msgid "lcdpearlskins"
+msgstr "Pearl-LCD-Skins"
+
+msgid "lcdsamsungskins"
+msgstr "Samsung-LCD-Skins"
+
+msgid "Backup created successfully"
+msgstr "sao lu thanh cng"
+
+msgid "EPG Save Mode"
+msgstr "Ch  ghi lch chng trnh"
+
+msgid "OWN POS"
+msgstr "v tr ring"
+
+msgid "Own Position"
+msgstr " v tr ring "
+
+msgid "Player for .ts"
+msgstr "pht nh dng .ts"
+
+msgid "Action"
+msgstr "thc thi"
+
+msgid "Time to stop "
+msgstr "thi gian  dng li"
+
+msgid "NotUsed Settings"
+msgstr "cc thit lp khng s dng "
+
+msgid "ask"
+msgstr "hi"
+
+msgid "allways del file"
+msgstr "lun xa file"
+
+msgid "never del file"
+msgstr "khng xa file"
+
+msgid "After Timeshift"
+msgstr "Timeshift"
+
+msgid "Show Timeline in Channellist"
+msgstr "a thanh thi gian  danh sch knh"
+
+msgid "start, Playback"
+msgstr "bt u pht li"
+
+msgid "TiThek Menu"
+msgstr "Men "
+
+msgid ""
+"Please wait ...\n"
+"\n"
+"All Settings are saved.\n"
+"\n"
+"Box will start in few seconds."
+msgstr ""
+"Vui lng i ...\n"
+"\n"
+" Tt c cc thit lp  c lu li\n"
+"\n"
+" u thu s bt u sau vi giy."
+
+msgid "File exist, overwrite?"
+msgstr "file  tn ti, c ghi  khng?"
+
+msgid "animation 1"
+msgstr "hot hnh 1"
+
+msgid "Animated Screens"
+msgstr "mn hnh ng"
+
+msgid "anim. width"
+msgstr "chiu rng"
+
+msgid "anim. height"
+msgstr "chiu cao"
+
+msgid "anim. both"
+msgstr "c hai"
+
+msgid "no keycode"
+msgstr "khng c password"
+
+msgid ""
+"Before you can see Signal/SNR/Ber you must zap to a channel of the satellite "
+"you are searching."
+msgstr ""
+"trc khi bn c th xem mc tn hiu/SNR/bn phi d li chng trnhang d chng trnh."
+
+msgid "Can't get Streamurl !"
+msgstr "khng c tn hiu"
+
+msgid "This is a advertising Image !"
+msgstr "y l hnh nh qung co !"
+
+msgid "Inc. AC3 Audio in %"
+msgstr "Audio AC3 %"
+
+msgid "very fast"
+msgstr "rt nhanh"
+
+msgid "slow"
+msgstr "chm"
+
+msgid "very slow"
+msgstr "rt chm"
+
+msgid "Animated Speed"
+msgstr "tc  nh ng"
+
+msgid "time small"
+msgstr "thi gian ngn"
+
+msgid "Fix Shutdown Time"
+msgstr "t thi gian tt"
+
+msgid "Start playback"
+msgstr "bt u pht li?"
+
+msgid "not started akttime greater timer endtime"
+msgstr " khng bt u khi kt thc thi gian hn gi"
+
+msgid "Does you want delete all unused Bouquetentrys?"
+msgstr "bn c mun xa tt c khng?"
+
+msgid "EPG Search"
+msgstr "Tm lch chng trnh"
+
+msgid "DESC"
+msgstr "DESC"
+
+msgid "TITLE"
+msgstr "nhan "
+
+msgid "Search"
+msgstr "D"
+
+msgid "NONE"
+msgstr "khng"
+
+msgid ""
+"WLAN started.\n"
+" You can now configure the new interface."
+msgstr ""
+"bt u WLAN.\n"
+"bn c th cu hnh giao din mi"
+
+msgid ""
+"WLAN not started,\n"
+"Please check your config."
+msgstr ""
+"WLAN khng bt u\n"
+"Vui lng kim tra li cu hnh mng."
+
+msgid "searching..."
+msgstr "ang tm kim..."
+
+msgid "WLAN now stopped"
+msgstr "Dng WLAN"
+
+msgid "WLAN Settings"
+msgstr "thit lp WLAN"
+
+msgid "Key"
+msgstr "kha"
+
+msgid "DYNDNS started."
+msgstr "bt u DYNDNS"
+
+msgid ""
+"DYNDNS not started,\n"
+"Please check your config."
+msgstr ""
+"DYNDNS khng bt u,\n"
+"vui lng kim tra li cu hnh."
+
+msgid "DYNDNS now stopped"
+msgstr "DYNDNS  dng"
+
+msgid "Start on boot"
+msgstr "Bt u khi ng"
+
+msgid "NEW"
+msgstr "mi"
+
+msgid "Can't connect to server !"
+msgstr "khng th kt ni ti server!"
+
+msgid "Connection to server lost !"
+msgstr "Verbindung zum Server verloren!"
+
+msgid "Blindscan Adjust"
+msgstr "iu chnh qut mnh"
+
+msgid "Blindscan Settings"
+msgstr "Thit lp qut mnh"
+
+msgid "Maximal frequency"
+msgstr "Tn s cc i"
+
+msgid "Maximal signalrate"
+msgstr "Tc  tn hiu cc i"
+
+msgid "Minimal frequency"
+msgstr "Tn s nh nht"
+
+msgid "Minimal signalrate"
+msgstr "Tc   tn hiu nh nht"
+
+msgid "Step frequency"
+msgstr "dch tn s"
+
+msgid "Step signalrate"
+msgstr "dch tc  tn hiu"
+
+msgid "Channel History"
+msgstr "Danh sch knh"
+
+msgid "KILL"
+msgstr "xa"
+
+msgid "BOOT"
+msgstr "khi ng"
+
+msgid "SEARCH"
+msgstr "d"
+
+msgid "START"
+msgstr "bt u"
+
+msgid "STOP"
+msgstr "dng"
+
+msgid "LOG"
+msgstr "nhp"
+
+msgid "hold"
+msgstr "gi"
+
+msgid "delete"
+msgstr "xa"
+
+msgid "SatCount: "
+msgstr "s lng v tinh: "
+
+msgid "ChannelCount: "
+msgstr "s lng knh: "
+
+msgid "BouquetCount: "
+msgstr "s lng nhm: "
+
+msgid "BouquetEntrys: "
+msgstr "nhp s nhm: "
+
+msgid "EpgChannels: "
+msgstr "lch chng trnh knh: "
+
+msgid "ProviderCount: "
+msgstr "s lng nh cung cp: "
+
+msgid "Optimize"
+msgstr "Ti u ha"
+
+msgid "Send remote box into standby ?"
+msgstr "Bn c mun chuyn ch  ch khng?"
+
+msgid "BG-RUN"
+msgstr "BG-RUN"
+
+msgid "Script has no output or started in background."
+msgstr "Khng c u ra."
+
+msgid "Script execute"
+msgstr "cho php thc hin"
+
+msgid "No plugin found."
+msgstr "Khng tm thy"
+
+msgid "rw"
+msgstr ""
+
+msgid "ro"
+msgstr ""
+
+msgid "Sharename can't be empty!"
+msgstr "Tn khng c  trng!"
+
+msgid "A mount entry with this name already exists!"
+msgstr "Tn  tn ti!"
+
+msgid "--actors--"
+msgstr "din vin--"
+
+msgid "Actors:"
+msgstr "Din vin:"
+
+msgid "Picdenom Mode"
+msgstr "Ch  gii m phn mm"
+
+msgid "Pic HW-decode"
+msgstr "Hnh nh phn cng-gii m"
+
+msgid "COPY"
+msgstr "sao chp"
+
+msgid "DLNA started."
+msgstr "bt u DLNA"
+
+msgid ""
+"DLNA not started,\n"
+"Please check your config."
+msgstr ""
+"DLNA khng bt u,\n"
+"Vui lng kim tra li cu hnh."
+
+msgid "DLNA now stopped"
+msgstr "Dng DLNA"
+
+msgid "DLNA Settings"
+msgstr "Thit lp DLNA"
+
+msgid "Interface"
+msgstr "Giao din"
+
+msgid "Medie Dir 1"
+msgstr " Medie Dir 1"
+
+msgid "Medie Dir 2"
+msgstr " Medie Dir 2"
+
+msgid "Medie Dir 3"
+msgstr " Medie Dir 3"
+
+msgid "Medie Dir 4"
+msgstr " Medie Dir 4"
+
+msgid "Port"
+msgstr "cng"
+
+msgid "Server Name"
+msgstr "Tn server"
+
+msgid "News"
+msgstr "Mi"
+
+msgid "BROWSER"
+msgstr "trnh duyt"
+
+msgid "NEXT"
+msgstr "k tip"
+
+msgid "PREV"
+msgstr "tr li"
+
+msgid "Weather"
+msgstr "thi tit"
+
+msgid "Day: "
+msgstr "Ngy: "
+
+msgid "Lowest temp: "
+msgstr "Nhit  thp nht: "
+
+msgid "Highest temp: "
+msgstr "Nhit  cao nht: "
+
+msgid "Condition: "
+msgstr "trng thi: "
+
+msgid "Pearl LCD Settings"
+msgstr "thit lp LCD"
+
+msgid "Remove mode"
+msgstr "xa"
+
+msgid "Move mode"
+msgstr "di chuyn"
+
+msgid "Copy mode"
+msgstr "sao chp"
+
+msgid "Protect mode"
+msgstr "kha"
+
+msgid "Edit mode"
+msgstr "chnh sa"
+
+msgid "Channellist view"
+msgstr "xem trc"
+
+msgid "hidden"
+msgstr "n"
+
+msgid "deactive"
+msgstr "hy kch hot"
+
+msgid "No output found !"
+msgstr "khng tm thy u ra"
+
+msgid "swapplayer"
+msgstr " swap player "
+
+msgid "swaptools"
+msgstr "hon i"
+
+msgid "games"
+msgstr "tr ch"
+
+msgid "swapbrowser"
+msgstr "trnh duyt"
+
+msgid "Extensions..."
+msgstr "m rng"
+
+msgid "Harddisk Configure"
+msgstr "Cu hnh  cng"
+
+msgid "Harddisk Configure - List Devices"
+msgstr "Danh mc  cng"
+
+msgid "Record Path settings"
+msgstr "thit lp ghi"
+
+msgid ""
+"Here you can make your recording timer configuration. Use to navigate the "
+"control cross and the extra buttons displayed with your remote control to "
+"select."
+msgstr ""
+"Bn c th cu hnh b nh thi  ghi  y. s dng cc phm di chuyn v cc nt m rng trn iu "
+"khin  chn"
+
+msgid ""
+"Here you can in your EPG entries for specific search. Use to start a color "
+"button to search. Use to navigate the control cross and the extra buttons "
+"displayed with your remote control to select."
+msgstr ""
+"Bn c th tm kim theo lch chng trnh  y. s dng cc phm di chuyn v cc nt m rng "
+"trn iu khin  chn"
+
+msgid ""
+"Here you can start and manage your additional plug-ins. Use to navigate the "
+"control cross and the extra buttons displayed with your remote control to "
+"select."
+msgstr ""
+"Bn c th bt u v qun l cc kt ni  y. s dng cc phm di chuyn v cc nt m rng trn iu "
+"khin  chn"
+
+msgid ""
+"Here you can install from our current online offering plug-ins. Use to "
+"navigate the control cross and the extra buttons displayed with your remote "
+"control to select."
+msgstr ""
+"Bn c th ci t trc tuyn. S dng  iu khin cho v thm cc nt hin th bng cch dng iu "
+"khin t xa  chn "
+
+msgid ""
+"Here you can choose to configure your tuner. Use to navigate the control "
+"cross and the extra buttons displayed with your remote control to select."
+msgstr ""
+"Bn c th cu hnh tuner  y. S dng cc phm di chuyn v cc nt m rng trn iu khin  "
+"chn."
+
+msgid ""
+"Here they can do for your chosen tuner to receive settings. Use to navigate "
+"the control cross and the extra buttons displayed with your remote control "
+"to select."
+msgstr "Thit lp tuner. s dng cc phm di chuyn v cc nt m rng trn iu khin  chn."
+
+msgid ""
+"Here they can do for your chosen tuner to lnb settings. Use to navigate the "
+"control cross and the extra buttons displayed with your remote control to "
+"select."
+msgstr "Thit lp LNB.s dng cc phm di chuyn v cc nt m rng trn iu khin  chn."
+
+msgid ""
+"Here they can do for your chosen tuner to ownpos settings. Use to navigate "
+"the control cross and the extra buttons displayed with your remote control "
+"to select."
+msgstr "Thit lp ring  y. s dng cc phm di chuyn v cc nt m rng trn iu khin  chn."
+
+msgid ""
+"Here you can check the reception of the current station. Use to navigate the "
+"control cross and the extra buttons displayed with your remote control to "
+"select."
+msgstr ""
+"Bn c th kim tra mc tn hiu ca trng thi hin ti  y. s dng cc phm di chuyn v cc "
+"nt m rng trn iu khin  chn."
+
+msgid ""
+"Here you can do a blind scan, this process takes a long time. Use to "
+"navigate the control cross and the extra buttons displayed with your remote "
+"control to select."
+msgstr ""
+"Bn c th thc hin d  y, qu trnh d s mt vi pht.s dng cc phm di chuyn v cc nt m "
+"rng trn iu khin  chn."
+
+msgid ""
+"Here you can configure Ci-Modules. Use to navigate the control cross and the "
+"extra buttons displayed with your remote control to select."
+msgstr ""
+"Bn c th cu hnh moodun Ci  y. s dng cc phm di chuyn v cc nt m rng trn iu "
+"khin  chn."
+
+msgid ""
+"Here you can make your module settings. Use to navigate the control cross "
+"and the extra buttons displayed with your remote control to select."
+msgstr ""
+"Bn c th to cc thit lp ring ca bn  y. s dng cc phm di chuyn v cc nt m rng trn "
+"iu khin  chn."
+
+msgid ""
+"Here you can select your Network Interface. Use to navigate the control "
+"cross and the extra buttons displayed with your remote control to select."
+msgstr ""
+"Bn c th chn giao din mng  y. s dng cc phm di chuyn v cc nt m rng trn iu "
+"khin  chn."
+
+msgid ""
+"Here you can make for your selected network interface settings. Use to "
+"navigate the control cross and the extra buttons displayed with your remote "
+"control to select."
+msgstr ""
+"Bn c th to cc thit lp giao din mng  y. s dng cc phm di chuyn v cc nt m rng "
+"trn iu khin  chn."
+
+msgid ""
+"Here you can make for your wireless network settings. Use to navigate the "
+"control cross and the extra buttons displayed with your remote control to "
+"select."
+msgstr ""
+"Thit lp mng khng dy  y. s dng cc phm di chuyn v cc nt m rng trn iu khin  chn."
+
+msgid ""
+"Here you can test your network. Use to navigate the control cross and the "
+"extra buttons displayed with your remote control to select."
+msgstr ""
+"Bn c th kim tra kt ni mng. s dng cc phm di chuyn v cc nt m rng trn iu khin  "
+"chn."
+
+msgid ""
+"Here you can configure your network shares. Use to navigate the control "
+"cross and the extra buttons displayed with your remote control to select."
+msgstr ""
+" Bn c th cu hnh mng chia s  y. s dng cc phm di chuyn v cc nt m rng trn iu "
+"khin  chn."
+
+msgid ""
+"Here you can configure your web server. Use to navigate the control cross "
+"and the extra buttons displayed with your remote control to select."
+msgstr ""
+"Bn c th cu hnh my ch web  y.\n"
+"s dng cc phm di chuyn v cc nt m rng trn iu khin  chn."
+
+msgid "Here you can backup and restore your settings."
+msgstr "Bn c th sao chp v khi phc li cc thit lp  y."
+
+msgid ""
+"Here you can make your picture and sound settings. Use to navigate the "
+"control cross and the extra buttons displayed with your remote control to "
+"select."
+msgstr ""
+"Bn c th to cc thit lp hnh nh v m thanh  y.\n"
+"s dng cc phm di chuyn v cc nt m rng trn iu khin  chn."
+
+msgid ""
+"Here you can set your language. Use to navigate the control cross and the "
+"extra buttons displayed with your remote control to select."
+msgstr ""
+"Bn c th thit lp ngn ng  y. s dng cc phm di chuyn v cc nt m rng trn iu khin  "
+"chn."
+
+msgid ""
+"Here you can set your timezone. Use to navigate the control cross and the "
+"extra buttons displayed with your remote control to select."
+msgstr ""
+"Bn c th thit lp mi gi  y. s dng cc phm di chuyn v cc nt m rng trn iu khin  "
+"chn n."
+
+msgid ""
+"Here you can make your system settings. Use to navigate the control cross "
+"and the extra buttons displayed with your remote control to select."
+msgstr ""
+"Bn c th lm cc thit lp h thng  y. s dng cc phm di chuyn v cc nt m rng trn iu "
+"khin  chn."
+
+msgid ""
+"Here you can make your screensaver settings. Use to navigate the control "
+"cross and the extra buttons displayed with your remote control to select."
+msgstr ""
+"Bn c th lm cc thit lp bo v mn hnh  y. s dng cc phm di chuyn v cc nt m rng "
+"trn iu khin  chn."
+
+msgid ""
+"Here you can make your recordpath settings. Use to navigate the control "
+"cross and the extra buttons displayed with your remote control to select."
+msgstr ""
+"Bn c th to cc thit lp ng dn  ghi ti y. s dng cc phm di chuyn v cc nt m rng "
+"trn iu khin  chn."
+
+msgid ""
+"Here you can make your epg settings. Use to navigate the control cross and "
+"the extra buttons displayed with your remote control to select."
+msgstr ""
+"Bn c th to cc thit lp lch chng trnh  y. s dng cc phm di chuyn v cc nt m rng "
+"trn iu khin  chn."
+
+msgid ""
+"Here you can make your mediadb settings. Use to navigate the control cross "
+"and the extra buttons displayed with your remote control to select."
+msgstr ""
+"Bn c th to cc thit lp media  y. s dng cc phm di chuyn v cc nt m rng trn iu "
+"khin  chn."
+
+msgid ""
+"Here you can make your vfd settings. Use to navigate the control cross and "
+"the extra buttons displayed with your remote control to select."
+msgstr ""
+"bn c th to cc thit lp vfd  y. ns dng cc phm di chuyn v cc nt m rng trn iu "
+"khin  chn."
+
+msgid ""
+"Here you can select from the following list. Use to navigate the control "
+"cross and the extra buttons displayed with your remote control to select."
+msgstr ""
+"Bn c th chn theo danh sch  y. ns dng cc phm di chuyn v cc nt m rng trn iu "
+"khin  chn."
+
+msgid ""
+"Here you can edit the following channels from the EPG. Use to navigate the "
+"control cross and the extra buttons displayed with your remote control to "
+"select."
+msgstr ""
+"Bn c th chnh sa cc chng trnh sau theo lch chng trnh. ns dng cc phm di chuyn "
+"v cc nt m rng trn iu khin  chn."
+
+msgid ""
+"Here you can select from the following list a skin. Use to navigate the "
+"control cross and the extra buttons displayed with your remote control to "
+"select."
+msgstr ""
+"Bn c th chn t danh sch bn di. ns dng cc phm di chuyn v cc nt m rng trn iu "
+"khin  chn."
+
+msgid ""
+"Here you can create a new record timer. Use to navigate the control cross "
+"and the extra buttons displayed with your remote control to select."
+msgstr ""
+"Bn c th to mi b inh thi ghi  y. ns dng cc phm di chuyn v cc nt m rng trn iu "
+"khin  chn."
+
+msgid ""
+"Here you can make your PIN security settings. Use to navigate the control "
+"cross and the extra buttons displayed with your remote control to select."
+msgstr ""
+"Bn c th to cc thit lp bo mt  y. ns dng cc phm di chuyn v cc nt m rng trn iu "
+"khin  chn."
+
+msgid ""
+"Here you can make your PIN security for menus settings. Use to navigate the "
+"control cross and the extra buttons displayed with your remote control to "
+"select."
+msgstr ""
+"Bn c th to mt khu cho cc thit lp trong menu.\n"
+"s dng cc phm di chuyn v cc nt m rng trn iu khin  chn."
+
+msgid ""
+"No MediaDB Directory found\n"
+"Press OK to create it"
+msgstr ""
+" Khng tm thy th mc media!\n"
+" n Ok  to!"
+
+msgid ""
+"Free space in /var to little!\n"
+"This can make problems!"
+msgstr ""
+"Khng  khong trng\n"
+" iu ny c th dn n vn  !"
+
+msgid ""
+"Here you can select your hard disks and USB flash drives for configuration. "
+"Use to navigate the control cross and the extra buttons displayed with your "
+"remote control to select."
+msgstr ""
+"Bn c th chn  cng hoc USB  cu hnh  y. ns dng cc phm di chuyn v cc nt m rng "
+"trn iu khin  chn."
+
+msgid ""
+"Here you can view the current channel information. Use to navigate the "
+"control cross and the extra buttons displayed with your remote control to "
+"select."
+msgstr ""
+"Bn c th hin th thng tin ca chng trnh hin ti  y. ns dng cc phm di chuyn v cc "
+"nt m rng trn iu khin  chn."
+
+msgid ""
+"Here you can make your timeshift settings. Use to navigate the control cross "
+"and the extra buttons displayed with your remote control to select."
+msgstr ""
+"Bn c th to cc thit lp timeshift  y. s dng cc phm di chuyn v cc nt m rng trn "
+"iu khin  chn."
+
+msgid "please wait..."
+msgstr "Vui lng i "
+
+msgid "System Update"
+msgstr "Cp nht h thng"
+
+msgid "DYNDNS Settings"
+msgstr "Thit lp DYNDNS"
+
+msgid "MediaDB Settings"
+msgstr "Thit lp MediaDB"
+
+msgid "MediaDB Path"
+msgstr "ng dn MediaDB"
+
+msgid "Delete MediaDB before scan"
+msgstr "Xa MediaDB trc khi d"
+
+msgid "Delete unused entrys before scan"
+msgstr "Xa d liu khng s dng trc khi d"
+
+msgid "Update entrys on scan"
+msgstr "Cp nht d liu trong khi d"
+
+msgid "Create Thumb Picture"
+msgstr "To hnh nh"
+
+msgid "TV Resolution (w):"
+msgstr " phn gii TV (ngang):"
+
+msgid "TV Resolution (h):"
+msgstr " phn gii TV (dc):"
+
+msgid ""
+"Are you sure you want to restore settings?\n"
+"\n"
+"OK = start restore\n"
+"EXIT = abort restore"
+msgstr ""
+"Bn chc chn mun thit lp mc nh?\n"
+"\n"
+" Ok  bt u\n"
+" EXIT  hy"
+
+msgid "Backup failed, see log"
+msgstr "Sao lu li, xem nht k"
+
+msgid ""
+"Press -restore- and your saved settings will be restored from your "
+"swapstick / recording hdd! The Box will restart automatically for "
+"restoring!\n"
+"\n"
+"Press -backup- to save your actual settings to swapstick / recording hdd.\n"
+"WARNING: The old backup will be deleted!\n"
+"\n"
+"While using the update function, your settings will be saved and restored "
+"automatically, if possible!"
+msgstr ""
+"n khi phc- v d liu ca bn s c khi phc t mt bn sao lu trc ! u thu s t ng khi "
+"ng li!\n"
+"\n"
+" n sao lu-  ghi cc thit lp hin ti vo USB hoc  cng.\n"
+"Cnh bo: Bn sao c s c xa!\n"
+"\n"
+"Trong khi ang s dng chc nng cp nht, cc thit lp ca bn s c lu v khi phc t ng, "
+"nu c th!"
+
+msgid ""
+"Can't start system update\n"
+"Please remove Stick/HDD and try again"
+msgstr ""
+"Khng th bt u cp nht h thng!\n"
+" Vui lng rt USB/ cng ri th li."
+
+msgid "wireless"
+msgstr "khng dy"
+
+msgid "Install success"
+msgstr "Ci t thnh cng!"
+
+msgid "Install error"
+msgstr "Ci t li !"
+
+msgid "Installing"
+msgstr "ang ci t"
+
+msgid "starting"
+msgstr "ang bt u"
+
+msgid "Removing"
+msgstr "ang hy"
+
+msgid "Remove success"
+msgstr " hy thnh cng!"
+
+msgid "Remove error"
+msgstr "li"
+
+msgid "Networkbrowser - show Shares"
+msgstr "Trnh duyt web"
+
+msgid "Installed version:"
+msgstr "phin bn ci t:"
+
+msgid "active"
+msgstr "cho php"
+
+msgid "running"
+msgstr "ang chy"
+
+msgid "started"
+msgstr " bt u"
+
+msgid "Activate (autostart)"
+msgstr "Khi ng t ng"
+
+msgid "Load Playlist"
+msgstr "Ti danh sch"
+
+msgid "Edit Playlist"
+msgstr "Chnh sa danh sch"
+
+msgid "Aktivate new network config ?"
+msgstr " Kch hot tnh nng thit lp mng mi?"
+
+msgid "Spezialfunctions unlocked, no input required"
+msgstr "Chc nng  c bt, khng c u vo"
+
+msgid "Code not ok, please try again !"
+msgstr "Password khng ng, vui lng nhp li"
+
+msgid "Code ok"
+msgstr "Passwword ng"
+
+msgid "Serial Input"
+msgstr "u vo ni tip"
+
+msgid "Receiver unlock"
+msgstr "Kha u vo"
+
+msgid "Code1"
+msgstr "m 1:"
+
+msgid "Code2"
+msgstr "m 2: "
+
+msgid "RECEIVER ID: "
+msgstr "ID: "
+
+msgid ""
+"Alternativ Audio Firmware not working korrekt with all videos (DTSDOWNMIX)!"
+msgstr ""
+"Ngoi ra phn mm audio ny khng lm vic chnh xc vi tt c cc video(DTSDOWNMIX)!"
+
+msgid "To many read error or end of file"
+msgstr "file c nhiu li"
+
+msgid "date + time"
+msgstr "ngy + gi"
+
+msgid "Not enought space"
+msgstr "Khng  khong trng"
+
+msgid "Error create filename"
+msgstr "To tn file li"
+
+msgid "Can't open file"
+msgstr "Khng th m file"
+
+msgid "Can't open FRONTEND device"
+msgstr "Khng th m thit b FRONTEND"
+
+msgid "Can't open DMX device"
+msgstr "Khng th m thit b DMX"
+
+msgid "Pid's not ok"
+msgstr "Pid khng ng"
+
+msgid "Channel or Transponder is empty"
+msgstr "Danh sch knh trng"
+
+msgid "Write error"
+msgstr "ghi li"
+
+msgid "No memory"
+msgstr "Khng c b nh"
+
+msgid "Failed open split file"
+msgstr "Khng m c file"
+
+msgid "Frontend type unknown"
+msgstr "Khng bit kiu u vo"
+
+msgid "Tune to channel failed"
+msgstr "Tuner li"
+
+msgid "Can't create service"
+msgstr "Khng d c knh"
+
+msgid ""
+"Can't find free Tuner for Record.\n"
+"Switch to Recording/Timeshift Channel ?"
+msgstr ""
+"Khng tm thy tuner  ghi.\n"
+"Chuyn  ghi/Timeshift chng trnh"
+
+msgid "size (default)"
+msgstr "kch thc (mc nh)"
+
+msgid "datetime"
+msgstr "ngy gi"
+
+msgid "Transponder changed"
+msgstr "B pht p  thay i"
+
+msgid "Start at last position ?"
+msgstr "Bt u  v tr cui cng ?"
+
+msgid "Record started"
+msgstr "Bt u ghi"
+
+msgid "swapwireless"
+msgstr " swap wireless "
+
+msgid "found"
+msgstr "tm kim"
+
+msgid "Results"
+msgstr "Lin kt c tm thy"
+
+msgid "Page"
+msgstr "trang"
+
+msgid "show 2 entrys"
+msgstr "hin th 2 mc"
+
+msgid "show 6 entrys"
+msgstr " hin th 6 mc "
+
+msgid "show 12 entrys"
+msgstr "hin th 12 mc"
+
+msgid "show 20 entrys"
+msgstr " hin th 2 mc"
+
+msgid "show 30 entrys"
+msgstr " hin th 30 mc "
+
+msgid "show auto entrys"
+msgstr "hin th cc mc t ng"
+
+msgid "Pic Ratio"
+msgstr "t l hnh nh"
+
+msgid "Delete"
+msgstr "Xa"
+
+msgid "Copy"
+msgstr "Sao chp"
+
+msgid "Moven"
+msgstr "Di chuyn"
+
+msgid "Realy move this file/dir?"
+msgstr "Sn sng di chuyn file/th mc ny?"
+
+msgid "Realy copy this file/dir?"
+msgstr " Sn sng sao chp file/th mc ny?"
+
+msgid "Realy delete this file/dir?"
+msgstr " Sn sng xa file/th mc ny?"
+
+msgid "From"
+msgstr "t"
+
+msgid "To"
+msgstr "ti"
+
+msgid "FILELIST MANAGER"
+msgstr "Qun l danh sch file"
+
+msgid "Are you sure you want to delete this directory?"
+msgstr "Bn chc chn mun xa th mc ny ?"
+
+msgid "Wait for cam ready"
+msgstr "ang kim tra th vui lng i"
+
+msgid "middle"
+msgstr "trung bnh"
+
+msgid "Del EPG before scan"
+msgstr "Xa lch chng trnh trc khi d"
+
+msgid "ADD FAV"
+msgstr "Thm u thch"
+
+msgid "DEL FAV"
+msgstr "Xa u thch"
+
+msgid "Remove this Favorite ?"
+msgstr "Hy b u thch ny ?"
+
+msgid "Add this link as Favorite ?"
+msgstr " Mun thm vo mc a thch ny?"
+
+msgid "Copy providerlist successfull"
+msgstr " Sao chp cc nh cung cp dch v thnh cng "
+
+msgid "Copy providerlist not ok"
+msgstr " Sao chp cc nh cung cp dch v khng thnh cng "
+
+msgid "The hoster is not yet supported for the time !"
+msgstr "My ch cha c h tr !"
+
+msgid "CLEAR INPUT"
+msgstr "Xa u vo"
+
+msgid "REMOVE ENTRY"
+msgstr "Hy b d liu"
+
+msgid ""
+"Streaming version of this file is currently not available. You can download "
+"it below."
+msgstr "file ny hin cha c. Bn c th ti v."
+
+msgid "Enable Cable Tuner ?"
+msgstr "Bn c mun kch hot tuner khng ?"
+
+msgid "Show last pos Question"
+msgstr "a v tr qut cui cng"
+
+msgid "default Directory"
+msgstr "Th mc mc nh"
+
+msgid "use last Directory"
+msgstr "s dng th mc cui"
+
+msgid "Pic quality"
+msgstr "Cht lng hnh nh"
+
+msgid "low"
+msgstr "thp"
+
+msgid "best"
+msgstr "tt nht"
+
+msgid "Manual Search Cable"
+msgstr "D bng tay"
+
+msgid "Unicable manufacturer"
+msgstr "Nh sn xut cp n"
+
+msgid "Unicable product"
+msgstr "Sn phm cp n"
+
+msgid "Resync Recording immediately"
+msgstr "ng b khi ghi"
+
+msgid "Weather Infos"
+msgstr "Thng tin thi tit"
+
+msgid "Mediathek"
+msgstr "Th vin trc tuyn"
+
+msgid "Create Folder"
+msgstr "To th mc"
+
+msgid "Recording name"
+msgstr "ang ghi tn"
+
+msgid "Can't show this file!"
+msgstr "Khng th hin th file ny"
+
+msgid "Rename"
+msgstr "i tn"
+
+msgid "MediaDB scan finished"
+msgstr "Tm kim MediaDB hon thnh"
+
+msgid "This file doesn't exist, or has been removed"
+msgstr "File ny khng tn ti hoc  b xa"
+
+msgid ""
+"Here you can select your reader. Use to navigate the control cross and the "
+"extra buttons displayed with your remote control to select."
+msgstr ""
+"bn c th chn thit b c  y. ns dng cc phm di chuyn v cc nt m rng trn iu khin  "
+"chn."
+
+msgid ""
+"Here you can configure your reader. Use to navigate the control cross and "
+"the extra buttons displayed with your remote control to select."
+msgstr ""
+"Bn c th cu hnh thit b c  y. ns dng cc phm di chuyn v cc nt m rng trn iu "
+"khin  chn."
+
+msgid "Reader Config"
+msgstr "Cu hnh thit b c"
+
+msgid "Reader Selection"
+msgstr "Chn thit b c"
+
+msgid "Reader Configuration"
+msgstr "Cu hnh ca thit b c"
+
+msgid "Reader Config Plugin not installed !"
+msgstr "thit b c cha c ci t"
+
+msgid "Reader active"
+msgstr "cho php thit b c"
+
+msgid "Enable"
+msgstr "cho php"
+
+msgid "Device"
+msgstr "thit b"
+
+msgid "green"
+msgstr "mu xanh"
+
+msgid "Backdrop Download Count"
+msgstr "S lt ti hnh nn"
+
+msgid "Debug Modus"
+msgstr "Ch  g li"
+
+msgid "Backdrop Interval"
+msgstr "Backdrop Interval"
+
+msgid "MediaDB Debug"
+msgstr "Ch  g li MediaDB"
+
+msgid "MediaDB place"
+msgstr "V tr MediaDB"
+
+msgid "scan Directory"
+msgstr "Qut th mc"
+
+msgid "OTHER"
+msgstr "khc"
+
+msgid "Delete File"
+msgstr "Xa file"
+
+msgid "MediaDB Scan Info"
+msgstr "Thng tin qut MediaDB"
+
+msgid "MediaDB Edit"
+msgstr "Chnh sa MediaDB"
+
+msgid "AV Settings"
+msgstr "Thit lp AV"
+
+msgid "Red-Menu"
+msgstr "-Menu"
+
+msgid "Expert Modus"
+msgstr " Expert Modus "
+
+msgid "Create Record Picture"
+msgstr "Ghi m"
+
+msgid "Error, Internet Connection not found"
+msgstr "Li, Khng tm thy kt ni mng"
+
+msgid "No space left on device"
+msgstr "Li  cng/USB"
+
+msgid "Only default signalrate"
+msgstr " S dng t l tn hiu tiu chun "
+
+msgid "Only DVBS"
+msgstr "DVB-S"
+
+msgid "Only default FEC"
+msgstr "Mc nh FEC"
+
+msgid "Show infobar on program change"
+msgstr "Hin th thanh thng tin khi thay i chng trnh"
+
+msgid "Use cross control for fast zapping and vol"
+msgstr "S dng cc phm di chuyn  sa i"
+
+msgid "Deactivate MiniTV"
+msgstr "Tt ca s xem trc MIniTV"
+
+msgid "Caching Playback (10MB / 120s)"
+msgstr "B nh m pht li (10MB / 120s)"
+
+msgid "Caching Playback (20MB / 240s)"
+msgstr " B nh m pht li (20MB / 240s)"
+
+msgid "Caching Playback (30MB / 360s)"
+msgstr " B nh m pht li (30MB / 360s)"
+
+msgid "Download Full File"
+msgstr "Ti ton b file"
+
+msgid "Download Full File (background)"
+msgstr " Ti ton b file (hnh nn)"
+
+msgid "Remove Cachefile ?"
+msgstr "Xa tp tin lu tr ?"
+
+msgid "Playbackbuffer Size"
+msgstr "Kch thc b nh m"
+
+msgid "Time to wait after seek for fill buffer"
+msgstr "Thi gian i sau khi tm kim b m khc"
+
+msgid "Streaming Playback (default)"
+msgstr "lung pht li (mc nh)"
+
+msgid "Streaming Playback Caching (0.5MB)"
+msgstr "B nh cha lung pht li (0.5MB)"
+
+msgid "Streaming Playback Caching (1MB)"
+msgstr "B nh cha lung pht li (1MB)"
+
+msgid "Streaming Playback Caching (2MB)"
+msgstr "B nh cha lung pht li (2MB)"
+
+msgid "Streaming Playback Caching (3MB)"
+msgstr "B nh cha lung pht li (3MB)"
+
+msgid "Streaming Playback Caching (4MB)"
+msgstr "B nh cha lung pht li (4MB)"
+
+msgid "Streaming Playback Caching (5MB)"
+msgstr "B nh cha lung pht li (5MB)"
+
+msgid "Streaming Playback Caching (7.5MB)"
+msgstr "B nh cha lung pht li (7.5MB)"
+
+msgid "Streaming Playback Caching (10MB)"
+msgstr "B nh cha lung pht li (10MB)"
+
+msgid "ERROR... can't set maker in this file"
+msgstr "Li khng th thit lp nh sn xut trong file ny"
+
+msgid "Marker has been set."
+msgstr " thit lp nh sn xut"
+
+msgid "Download successful !"
+msgstr "Ti thnh cng !"
+
+msgid "dnsaddresse"
+msgstr "a ch DNS"
+
+msgid "usedns"
+msgstr "S dng DNS"
+
+msgid "Error, found result without imdbid we can't this save in MediaDB"
+msgstr ""
+"li, kt qu tm kim c mt imdbid khng hp l v do  khng th c lu tr trong cc "
+"MediaDB "
+
+msgid "EPG Scan activate standby?"
+msgstr " kch hot qut EPG  ch  ch?"
+
+msgid ""
+"Timeshift file to short\n"
+"please wait a little and try again"
+msgstr ""
+"Timeshift: tp tin ny ngn\n"
+" vui lng i mt lc ri th li"
+
+msgid "Behavior at recording"
+msgstr "Chy trong qu trnh ghi"
+
+msgid "Start Wlan ?"
+msgstr "Bt u Wlan ?"
+
+msgid "View Sections"
+msgstr "Xem cc menu"
+
+msgid "View Cover"
+msgstr " View Cover"
+
+msgid "deaktivate ethernet interface ?"
+msgstr "Tt giao din mng ?"
+
+msgid "EPG SHORT VIEW"
+msgstr "Xem lch chng trnh"
+
+msgid "Short EPG"
+msgstr "lch chng trnh rt gn "
+
+msgid "Timeshift Settings"
+msgstr "thit lp timeshift"
+
+msgid "Timeshifttype"
+msgstr "kiu timeshift"
+
+msgid "Ask on channel switch"
+msgstr "Hi khi chuyn knh"
+
+msgid "Send all CAID to modules"
+msgstr "Gi tt c ID CA ti mun"
+
+msgid "Automatic start last subtitle"
+msgstr "T ng bt u ph "
+
+msgid "Audio delay"
+msgstr "tr m thanh"
+
+msgid "Show hidden files"
+msgstr "a cc file n"
+
+msgid "Activate CEC"
+msgstr "kch hot CEC"
+
+msgid "Ext. Modul detect (needs reboot)"
+msgstr "Tm modul m rng (cn khi ng li)"
+
+msgid "Can't create Path"
+msgstr "Khng th to ng dn"
+
+msgid "Create Path"
+msgstr "To ng dn"
+
+msgid "Use numeric keys"
+msgstr "S dng cc phm s"

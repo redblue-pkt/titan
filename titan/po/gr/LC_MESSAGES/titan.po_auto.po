@@ -1,0 +1,1673 @@
+msgid "---"
+msgstr "---"
+
+msgid "???"
+msgstr ";;;"
+
+msgid "1500rpm"
+msgstr "1500 /"
+
+msgid "3D Mode"
+msgstr "3D Mode"
+
+msgid "500rpm"
+msgstr "500 /"
+
+msgid "a"
+msgstr "a"
+
+msgid "A"
+msgstr "A"
+
+msgid "Panel"
+msgstr "Panel"
+
+msgid "Wizard"
+msgstr " "
+
+msgid "About"
+msgstr ""
+
+msgid "AC3 default"
+msgstr "AC3 "
+
+msgid "AC3 Mode"
+msgstr "AC3 Mode"
+
+msgid "Activate"
+msgstr ""
+
+msgid "Adapter Settings"
+msgstr " Adapter"
+
+msgid "ADD"
+msgstr ""
+
+msgid "add service"
+msgstr " "
+
+msgid "Adjust"
+msgstr " "
+
+msgid "Action after"
+msgstr " "
+
+msgid "all"
+msgstr ""
+
+msgid "ALL"
+msgstr ""
+
+msgid "alpha"
+msgstr "alpha"
+
+msgid "Apple Trailer"
+msgstr "Apple Trailer"
+
+msgid "Aspect"
+msgstr ""
+
+msgid "Aspect Ratio:"
+msgstr " :"
+
+msgid "AUDIO"
+msgstr "AUDIO"
+
+msgid "Audio PID:"
+msgstr "Audio PID:"
+
+msgid "Audio Player"
+msgstr "Audio Player"
+
+msgid "AUDIO SETTINGS"
+msgstr " Audio"
+
+msgid "Audio Source"
+msgstr " Audio"
+
+msgid "Audio/Subt."
+msgstr "Audio/"
+
+msgid "Audio Tracks"
+msgstr " Audio"
+
+msgid "Audio / Video / Sat"
+msgstr "Audio / Video / Sat "
+
+msgid "Automatic Search"
+msgstr " "
+
+msgid "Automount"
+msgstr "Automount"
+
+msgid "Auto resolution"
+msgstr " "
+
+msgid "Autostart"
+msgstr " "
+
+msgid "A/V Settings"
+msgstr " Audio / Video"
+
+msgid "A-Z (Text)"
+msgstr "A-Z (TEXT)"
+
+msgid "b"
+msgstr "b"
+
+msgid "B"
+msgstr "B"
+
+msgid "bbgain"
+msgstr "bbgain"
+
+msgid "Backup"
+msgstr ". "
+
+msgid "Backup / Restore Settings"
+msgstr "./  "
+
+msgid "betapass"
+msgstr "Password  betatester"
+
+msgid "betauser"
+msgstr " beta"
+
+msgid "bootlogo"
+msgstr " "
+
+msgid "BootResolution"
+msgstr "   "
+
+msgid "bootstop"
+msgstr "  "
+
+msgid "bootrgbfix"
+msgstr " RGB   "
+
+msgid "BER:"
+msgstr "BER:"
+
+msgid "Beta Config"
+msgstr " Betatester"
+
+msgid "big"
+msgstr "M"
+
+msgid "Blue Button"
+msgstr " "
+
+msgid "Bouquet List"
+msgstr "Bouquet"
+
+msgid "Brightness"
+msgstr ""
+
+msgid "broadcast"
+msgstr ""
+
+msgid "c"
+msgstr "c"
+
+msgid "C"
+msgstr "C"
+
+msgid "Cam / Emu"
+msgstr "Cam / Emu"
+
+msgid "CAM PMT Mode"
+msgstr "CAM PMT Mode"
+
+msgid "cancel"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Cancel Shutdown"
+msgstr " "
+
+msgid "Channel"
+msgstr ""
+
+msgid "Channel Edit"
+msgstr "  "
+
+msgid "Channel EPG"
+msgstr "EPG "
+
+msgid "Channel Search"
+msgstr " "
+
+msgid "Channel Service"
+msgstr " -  "
+
+msgid "Create Backup"
+msgstr " backup"
+
+msgid "Child Protection"
+msgstr " "
+
+msgid "Child safety"
+msgstr " "
+
+msgid "Clear before scan"
+msgstr "   "
+
+msgid "Color Format"
+msgstr " "
+
+msgid "Color Format Scart"
+msgstr "   Scart"
+
+msgid "Committed command"
+msgstr "Committed command"
+
+msgid "Common Interface"
+msgstr "Common Interface"
+
+msgid "Contrast"
+msgstr ""
+
+msgid "copy service"
+msgstr " "
+
+msgid "CPU"
+msgstr "CPU"
+
+msgid "d"
+msgstr "d"
+
+msgid "D"
+msgstr "D"
+
+msgid "date"
+msgstr ""
+
+msgid "File Browser"
+msgstr "Browser "
+
+msgid "Day"
+msgstr ""
+
+msgid "Deactivate"
+msgstr ""
+
+msgid "debug"
+msgstr "Debug"
+
+msgid "default"
+msgstr ""
+
+msgid "Default"
+msgstr ""
+
+msgid "DEFAULT"
+msgstr ""
+
+msgid "DEL"
+msgstr ""
+
+msgid "Delete EPG after read"
+msgstr "  EPG   "
+
+msgid "del startchannel"
+msgstr "  "
+
+msgid "details"
+msgstr ""
+
+msgid "Device:"
+msgstr ":"
+
+msgid "Devices"
+msgstr ""
+
+msgid "dhcp"
+msgstr "dhcp"
+
+msgid "disable"
+msgstr ""
+
+msgid "Dirsort"
+msgstr " "
+
+msgid "DiSEqC"
+msgstr "DiSEqC"
+
+msgid "DiSEqC Command Order"
+msgstr "  DiSEqC"
+
+msgid "DiSEqC Configuration"
+msgstr "DiSEqC"
+
+msgid "DiSEqC Mode"
+msgstr "DiSEqC Mode"
+
+msgid "DiSEqC repeats"
+msgstr " DiSEqC"
+
+msgid "Diseqc Settings"
+msgstr " DiSEqC"
+
+msgid "dnsserver 1"
+msgstr "DNS Server 1"
+
+msgid "dnsserver 2"
+msgstr "DNS Server 2"
+
+msgid "Don't clear TV on zap (only with fastzap)"
+msgstr "   TV     zapping (   fastzap)"
+
+msgid "e"
+msgstr "e"
+
+msgid "E"
+msgstr "E"
+
+msgid "East / West"
+msgstr " / "
+
+msgid "enable"
+msgstr ""
+
+msgid "emu"
+msgstr "Emu"
+
+msgid "End"
+msgstr ""
+
+msgid "English"
+msgstr ""
+
+msgid "Epgfreespace (KB)"
+msgstr "  EPG ()"
+
+msgid "Epg List Mode"
+msgstr " EPG"
+
+msgid "EPG Path"
+msgstr "    EPG"
+
+msgid "Epg Refresh Time"
+msgstr "  EPG"
+
+msgid "EPG Reset"
+msgstr " EPG"
+
+msgid "EPG Settings"
+msgstr " EPG"
+
+msgid "errorboot"
+msgstr "Errorboot"
+
+msgid "errorstop"
+msgstr "Errorstop"
+
+msgid "EXIT"
+msgstr "EXIT"
+
+msgid "Extensions"
+msgstr ""
+
+msgid "Extensions Menu"
+msgstr " "
+
+msgid "emucontrol"
+msgstr " Emu"
+
+msgid "f"
+msgstr "f"
+
+msgid "F"
+msgstr "F"
+
+msgid "Fancontrol"
+msgstr " "
+
+msgid "fast"
+msgstr ""
+
+msgid "Fast DiSEqC"
+msgstr " DiSEqC"
+
+msgid "Faststop"
+msgstr "Faststop"
+
+msgid "Fast Text Render"
+msgstr "  "
+
+msgid "Fastzap"
+msgstr " zapping"
+
+msgid "Fav"
+msgstr ""
+
+msgid "FEC"
+msgstr "FEC"
+
+msgid "FEC:"
+msgstr "FEC:"
+
+msgid "file"
+msgstr ""
+
+msgid "alt file"
+msgstr " "
+
+msgid "filealtresult"
+msgstr "  x"
+
+msgid "Filelist-Mode"
+msgstr "Filelist Mode"
+
+msgid "Filesystem Check"
+msgstr "  "
+
+msgid "Flashupdate (online)"
+msgstr "  Flash (online)"
+
+msgid "Flashupdate (tmp)"
+msgstr "  Flash (tmp)"
+
+msgid "Fontsize adjust in pixel"
+msgstr " -    pixel"
+
+msgid "Format HDD"
+msgstr "Format  "
+
+msgid "Found Data:"
+msgstr " Data:"
+
+msgid "Found Radio:"
+msgstr " Radio:"
+
+msgid "Found TV:"
+msgstr " TV:"
+
+msgid "free space"
+msgstr " "
+
+msgid "Frequency"
+msgstr ""
+
+msgid "Frequency:"
+msgstr ":"
+
+msgid "Friday"
+msgstr ""
+
+msgid "ftpport"
+msgstr "ftpport"
+
+msgid "fullcover"
+msgstr "fullcover"
+
+msgid "ftdi"
+msgstr "  ftdi"
+
+msgid "fsckroot"
+msgstr "fsckroot"
+
+msgid "fsckswap"
+msgstr "fsckswap"
+
+msgid "fsckrecord"
+msgstr "fsckrecord"
+
+msgid "ftpd"
+msgstr "ftpd"
+
+msgid "fontsize"
+msgstr " "
+
+msgid "g"
+msgstr "g"
+
+msgid "G"
+msgstr "G"
+
+msgid "gateway"
+msgstr "Gateway"
+
+msgid "Germany"
+msgstr ""
+
+msgid "Restart Titan"
+msgstr " Titan"
+
+msgid "h"
+msgstr "h"
+
+msgid "H"
+msgstr "H"
+
+msgid "Hangtime"
+msgstr "Hangtime"
+
+msgid "Harddisk"
+msgstr " "
+
+msgid "Harddisk Format - List Devices"
+msgstr "Format   -  "
+
+msgid "Harddisk Fsck - List Devices"
+msgstr " HDD -  "
+
+msgid "hddreplacement"
+msgstr "  "
+
+msgid "How many days"
+msgstr " ;"
+
+msgid "HighSR"
+msgstr " SR"
+
+msgid "i"
+msgstr "i"
+
+msgid "I"
+msgstr "I"
+
+msgid "Image Information"
+msgstr "  Image"
+
+msgid "Imdb Directory"
+msgstr " Imdb"
+
+msgid "Increased Voltage"
+msgstr " "
+
+msgid "Infobar Auto hide on call"
+msgstr "   Infobar"
+
+msgid "Infobar Sleep"
+msgstr "   infobar (sec)"
+
+msgid "Infobar Timeout"
+msgstr "   infobar (sec)"
+
+msgid "Information..."
+msgstr "..."
+
+msgid "Info"
+msgstr "Info"
+
+msgid "Information"
+msgstr ""
+
+msgid "install"
+msgstr ""
+
+msgid "internet"
+msgstr "Internet"
+
+msgid "Internet Browser"
+msgstr "Internet Browser"
+
+msgid "Interval"
+msgstr "l"
+
+msgid "Inversion"
+msgstr ""
+
+msgid "Inversion:"
+msgstr ":"
+
+msgid "ipaddress"
+msgstr " IP"
+
+msgid "IPK install (online)"
+msgstr " IPK (online)"
+
+msgid "IPK remove"
+msgstr " IPK"
+
+msgid "IPK tmp (tmp)"
+msgstr " IPK  /tmp"
+
+msgid "Ipk Install - select file"
+msgstr " IPK -  "
+
+msgid "iwatch"
+msgstr "iwatch"
+
+msgid "j"
+msgstr "j"
+
+msgid "J"
+msgstr "J"
+
+msgid "k"
+msgstr "k"
+
+msgid "K"
+msgstr "K"
+
+msgid "Kernel"
+msgstr ""
+
+msgid "Keyboard"
+msgstr ""
+
+msgid "l"
+msgstr "l"
+
+msgid "L"
+msgstr "L"
+
+msgid "lan"
+msgstr "lan"
+
+msgid "Language"
+msgstr ""
+
+msgid "Latitude"
+msgstr " "
+
+msgid "Listbox Select"
+msgstr "   Listbox"
+
+msgid "LNB"
+msgstr "LNB"
+
+msgid "LNB Configuration"
+msgstr "LNB"
+
+msgid "LNB Settings"
+msgstr " LNB"
+
+msgid "LOF"
+msgstr "LOF"
+
+msgid "LOF/H"
+msgstr "LOF/H"
+
+msgid "LOF/L"
+msgstr "LOF/L"
+
+msgid "Longitude"
+msgstr " "
+
+msgid "LOG (Text)"
+msgstr "LOG ()"
+
+msgid "logto"
+msgstr "logto"
+
+msgid "load partition"
+msgstr " partition"
+
+msgid "m"
+msgstr "m"
+
+msgid "M"
+msgstr "M"
+
+msgid "Main Menu"
+msgstr " "
+
+msgid "Manuel Scan"
+msgstr " "
+
+msgid "Manual Search"
+msgstr " "
+
+msgid "maxrate"
+msgstr "maxrate"
+
+msgid "maxdelay"
+msgstr "maxdelay"
+
+msgid "MC VideoPlayer Imdb Settings"
+msgstr " Imdb  MC VideoPlayer"
+
+msgid "MC VideoPlayer Sort Settings"
+msgstr "MC VideoPlayer Sort settings"
+
+msgid "MC VideoPlayer View Settings"
+msgstr "MC VideoPlayer View settings"
+
+msgid "Media Center"
+msgstr "Media Center"
+
+msgid "Memory"
+msgstr ""
+
+msgid "Menulist"
+msgstr " "
+
+msgid "Menu Protect"
+msgstr " "
+
+msgid "MENUPROTECT"
+msgstr " "
+
+msgid "Minutes"
+msgstr ""
+
+msgid "Minutes:"
+msgstr ":"
+
+msgid "Modulation"
+msgstr ""
+
+msgid "Modulation:"
+msgstr ":"
+
+msgid "Module"
+msgstr "Module"
+
+msgid "Monday"
+msgstr ""
+
+msgid "Mounts"
+msgstr "Mounts"
+
+msgid "move service"
+msgstr " "
+
+msgid "Moviepath"
+msgstr "  "
+
+msgid "MTD"
+msgstr "MTD"
+
+msgid "Multi EPG"
+msgstr "Multi EPG"
+
+msgid "mvid"
+msgstr "mvid"
+
+msgid "My Video"
+msgstr "My Video"
+
+msgid "n"
+msgstr "n"
+
+msgid "N"
+msgstr "N"
+
+msgid "Name"
+msgstr ""
+
+msgid "Name:"
+msgstr ":"
+
+msgid "netmask"
+msgstr "Netmask"
+
+msgid "Network"
+msgstr ""
+
+msgid "Network Adapter Settings"
+msgstr "  "
+
+msgid "Network Adapter Test"
+msgstr "  "
+
+msgid "Network Assistant"
+msgstr " "
+
+msgid "Networkbrowser"
+msgstr "Browser "
+
+msgid "Network Interfacelist"
+msgstr "Network Interfacelist"
+
+msgid "Network Restart"
+msgstr " "
+
+msgid "Network Scan"
+msgstr " "
+
+msgid "Network Test"
+msgstr " "
+
+msgid "Next"
+msgstr ""
+
+msgid "Nfs Server Settings"
+msgstr " NFS Server"
+
+msgid "North / South"
+msgstr " / "
+
+msgid "noaudiosync"
+msgstr "noaudiosync"
+
+msgid "nfsserver"
+msgstr "NFS server"
+
+msgid "nr_usbreaders"
+msgstr " USB reader"
+
+msgid "o"
+msgstr "o"
+
+msgid "O"
+msgstr "O"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "ONID:"
+msgstr "ONID:"
+
+msgid "Only free channel scan"
+msgstr "    "
+
+msgid "options"
+msgstr ""
+
+msgid "Orbital Position:"
+msgstr " "
+
+msgid "OSD Bottom Overscan"
+msgstr "Overscan OSD "
+
+msgid "OSD Left Overscan"
+msgstr "Overscan OSD "
+
+msgid "OSD Right Overscan"
+msgstr "Overscan OSD "
+
+msgid "OSD Top Overscan"
+msgstr "Overscan OSD "
+
+msgid "OSD Transparent"
+msgstr " OSD"
+
+msgid "Overclocking"
+msgstr "Overclocking"
+
+msgid "Overclock settings"
+msgstr " Overclocking"
+
+msgid "oldaudiofw"
+msgstr "oldaudiofw"
+
+msgid "oldvideofw"
+msgstr "oldvideofw"
+
+msgid "only_boot_overclock"
+msgstr "only_boot_overclock"
+
+msgid "p"
+msgstr "p"
+
+msgid "P"
+msgstr "P"
+
+msgid "password"
+msgstr "Password"
+
+msgid "PCR PID:"
+msgstr "PCR PID:"
+
+msgid "Piconpath"
+msgstr "  Picons"
+
+msgid "PICTURE"
+msgstr ""
+
+msgid "Picture Player"
+msgstr "Picture Player"
+
+msgid "PICTURE SETTINGS"
+msgstr " "
+
+msgid "PIDs"
+msgstr "PIDs"
+
+msgid "Pilot"
+msgstr "Pilot"
+
+msgid "PIN:"
+msgstr "PIN:"
+
+msgid "Pin Code Channel"
+msgstr "PIN  l"
+
+msgid "Pin Code menu"
+msgstr "PIN   "
+
+msgid "PIN Settings"
+msgstr " PIN"
+
+msgid "PlayList"
+msgstr "PlayList"
+
+msgid "PlayList - select your playlist !"
+msgstr "PlayList -    "
+
+msgid "Plugins"
+msgstr "Plugins"
+
+msgid "PMT PID:"
+msgstr "PMT PID:"
+
+msgid "Polarization"
+msgstr ""
+
+msgid "Polarization:"
+msgstr ":"
+
+msgid "Policy"
+msgstr " "
+
+msgid "Power action"
+msgstr "Power action"
+
+msgid "Power Off"
+msgstr ""
+
+msgid "Power Off Timer"
+msgstr "  "
+
+msgid "Poweroff Timer"
+msgstr "  "
+
+msgid "Prev"
+msgstr ""
+
+msgid "Program Info"
+msgstr ". "
+
+msgid "Protect Channel"
+msgstr "   PIN"
+
+msgid "Protect Menu"
+msgstr "   PIN"
+
+msgid "protect service"
+msgstr "   PIN"
+
+msgid "protocol"
+msgstr ""
+
+msgid "Prov"
+msgstr ""
+
+msgid "Provider:"
+msgstr ":"
+
+msgid "proxyauth"
+msgstr " Proxy"
+
+msgid "proxyip"
+msgstr "IP  Proxyserver"
+
+msgid "proxypass"
+msgstr "Password  Proxyserver"
+
+msgid "proxyport"
+msgstr "  Proxyserver"
+
+msgid "proxyuser"
+msgstr "   Proxyserver"
+
+msgid "playlist"
+msgstr "playlist"
+
+msgid "plugload"
+msgstr "plugload"
+
+msgid "portmap"
+msgstr "portmap"
+
+msgid "poweroff"
+msgstr ""
+
+msgid "pingserver"
+msgstr "pingserver"
+
+msgid "pingtimeout"
+msgstr "pingtimeout"
+
+msgid "PinOn"
+msgstr " PIN"
+
+msgid "progressbar"
+msgstr "progressbar"
+
+msgid "pll0_ndiv_mdiv"
+msgstr "pll0_ndiv_mdiv"
+
+msgid "pl2303"
+msgstr "  PL2303"
+
+msgid "pll1_fdma_bypass"
+msgstr "pll1_fdma_bypass"
+
+msgid "pll1_ndiv_mdiv"
+msgstr "pll1_ndiv_mdiv"
+
+msgid "Pin"
+msgstr "PIN"
+
+msgid "profile"
+msgstr ""
+
+msgid "q"
+msgstr "q"
+
+msgid "Q"
+msgstr "Q"
+
+msgid "r"
+msgstr "r"
+
+msgid "R"
+msgstr "R"
+
+msgid "Radio Player"
+msgstr "Radio Player"
+
+msgid "Ram"
+msgstr "Ram"
+
+msgid "Random"
+msgstr ""
+
+msgid "rcreboot"
+msgstr "rcreboot"
+
+msgid "Record Forerun (min)"
+msgstr "   (min)"
+
+msgid "Record Overrun (min)"
+msgstr "   (min)"
+
+msgid "Record Path"
+msgstr "  "
+
+msgid "Record Split Size"
+msgstr "  "
+
+msgid "Record Timer"
+msgstr "Timer "
+
+msgid "record_split_size"
+msgstr "record_split_size"
+
+msgid "record_split_type"
+msgstr "record_split_type"
+
+msgid "record_max_sectors"
+msgstr "record_max_sectors"
+
+msgid "Red Button"
+msgstr " "
+
+msgid "Refresh"
+msgstr ""
+
+msgid "RELOAD"
+msgstr ""
+
+msgid "remove service"
+msgstr " "
+
+msgid "repairmodus"
+msgstr "Mode "
+
+msgid "Repeat"
+msgstr ""
+
+msgid "Repeat type"
+msgstr " "
+
+msgid "Resolution:"
+msgstr ""
+
+msgid "Resolution (default)"
+msgstr " ()"
+
+msgid "Restart"
+msgstr ""
+
+msgid "Restart Network ?"
+msgstr " ;"
+
+msgid "Restore"
+msgstr ""
+
+msgid "reverse alpha"
+msgstr " alpha"
+
+msgid "reverse date"
+msgstr " /"
+
+msgid "reverse size"
+msgstr " "
+
+msgid "rmcrashlog"
+msgstr "rmcrahlog"
+
+msgid "rmemthy"
+msgstr "rmemthy"
+
+msgid "Rolloff"
+msgstr "Rolloff"
+
+msgid "Rolloff:"
+msgstr "Rolloff:"
+
+msgid "Rotor Position"
+msgstr " "
+
+msgid "Rotor Settings"
+msgstr " "
+
+msgid "rsize"
+msgstr "rsize"
+
+msgid "s"
+msgstr "s"
+
+msgid "S"
+msgstr "S"
+
+msgid "Samba Server Settings"
+msgstr " Samba Server"
+
+msgid "SAT"
+msgstr "SAT"
+
+msgid "Sat Config"
+msgstr " "
+
+msgid "Satellite"
+msgstr ""
+
+msgid "Sat Finder"
+msgstr "Sat finder"
+
+msgid "Saturation"
+msgstr ""
+
+msgid "Saturday"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "SAVE"
+msgstr ""
+
+msgid "Save Settings"
+msgstr " "
+
+msgid "Scan"
+msgstr ""
+
+msgid "Scart-Recorder"
+msgstr " Scart"
+
+msgid "screensaver"
+msgstr " "
+
+msgid "Screensaver"
+msgstr " "
+
+msgid "Screensaver Adjust"
+msgstr "  "
+
+msgid "screensaver background"
+msgstr " . "
+
+msgid "screensaver delay"
+msgstr "  . "
+
+msgid "screensaver interval"
+msgstr "  "
+
+msgid "screensaver pic"
+msgstr " . "
+
+msgid "screensaver type"
+msgstr " . "
+
+msgid "--- SD resolution"
+msgstr "---  SD"
+
+msgid "Second Infobar"
+msgstr " Infobar"
+
+msgid "Select backup:"
+msgstr " backup:"
+
+msgid "Select Path"
+msgstr " "
+
+msgid "Service"
+msgstr ""
+
+msgid "Serviceinfo"
+msgstr " "
+
+msgid "set startchannel"
+msgstr "  "
+
+msgid "Settings"
+msgstr ""
+
+msgid "Settings..."
+msgstr "..."
+
+msgid "Settings backup/restore"
+msgstr " backup/"
+
+msgid "sharedir"
+msgstr "sharedir"
+
+msgid "sharename"
+msgstr "Sharename"
+
+msgid "Share Settings"
+msgstr " share"
+
+msgid "Show EPG screen (EPG button)"
+msgstr "  EPG ( EPG)"
+
+msgid "Show in Standby"
+msgstr "  Standby"
+
+msgid "Show in VFD"
+msgstr "  VFD"
+
+msgid "SID:"
+msgstr "SID"
+
+msgid "Signal:"
+msgstr ":"
+
+msgid "Single EPG"
+msgstr " EPG"
+
+msgid "size"
+msgstr ""
+
+msgid "Skin"
+msgstr "Skin"
+
+msgid "Skin djust"
+msgstr " Skin"
+
+msgid "Skin Select"
+msgstr " Skin"
+
+msgid "Skip 1/3"
+msgstr "Skip 1/3"
+
+msgid "Skip 4/6"
+msgstr "Skip 4/6"
+
+msgid "Skip 7/9"
+msgstr "Skip 7/9"
+
+msgid "small"
+msgstr ""
+
+msgid "SNR:"
+msgstr "SNR:"
+
+msgid "Softcam selection"
+msgstr " Softcam"
+
+msgid "Softcam Panel"
+msgstr " Softcam"
+
+msgid "Sort"
+msgstr ""
+
+msgid "Sorting"
+msgstr "Sorting"
+
+msgid "Sound"
+msgstr ""
+
+msgid "Space"
+msgstr ""
+
+msgid "speed"
+msgstr ""
+
+msgid "Spinnerspeed"
+msgstr " Spinner"
+
+msgid "Spinnertime"
+msgstr " Spinner"
+
+msgid "ssl"
+msgstr "ssl"
+
+msgid "Start"
+msgstr ""
+
+msgid "Standby"
+msgstr "Standby"
+
+msgid "Standby Brightness"
+msgstr " VFD  standby"
+
+msgid "Standby Mode"
+msgstr "Standby Mode"
+
+msgid "Standby / Poweroff..."
+msgstr "Standby / ..."
+
+msgid "Standby / Poweroff"
+msgstr "Standby / "
+
+msgid "Start HTTPD"
+msgstr " HTTPD"
+
+msgid "STOP/START"
+msgstr "STOP/START"
+
+msgid "Streaming"
+msgstr "Streaming"
+
+msgid "Stream Path"
+msgstr "  Stream"
+
+msgid "Style"
+msgstr "Style"
+
+msgid "Sunday"
+msgstr ""
+
+msgid "Swap"
+msgstr "Swap"
+
+msgid "Switch"
+msgstr ""
+
+msgid "Subtitle"
+msgstr ""
+
+msgid "Symbol rate:"
+msgstr "Symbol rate"
+
+msgid "Symbolrate"
+msgstr "Symbol rate"
+
+msgid "System"
+msgstr ""
+
+msgid "System:"
+msgstr ":"
+
+msgid "System..."
+msgstr "..."
+
+msgid "System - Flashupdate (online)"
+msgstr " Flash  (online)"
+
+msgid "System - Flashupdate (tmp)"
+msgstr " Flash  (tmp)"
+
+msgid "System Info"
+msgstr " "
+
+msgid "Sysinfo"
+msgstr " "
+
+msgid "System - Usbupdate (online)"
+msgstr "  - USB (online)"
+
+msgid "System - Usbupdate (tmp)"
+msgstr "  - USB (tmp)"
+
+msgid "sambaserver"
+msgstr "Samba Server"
+
+msgid "showip"
+msgstr " IP"
+
+msgid "showtvinfo"
+msgstr " . TV"
+
+msgid "szap"
+msgstr "szap"
+
+msgid "szaplong"
+msgstr "szaplong"
+
+msgid "szap_frontend"
+msgstr "szap_frontend"
+
+msgid "szap_emul"
+msgstr "szap_emul"
+
+msgid "standby_overclock"
+msgstr "standby_overclock"
+
+msgid "standby_freq"
+msgstr "standby_freq"
+
+msgid "swap_max_sectors"
+msgstr "swap_max_sectors"
+
+msgid "szap_diseqc_repeat"
+msgstr "szap_diseqc_repeat"
+
+msgid "swap"
+msgstr "swap"
+
+msgid "swapsize"
+msgstr "M swap"
+
+msgid "scartonstandby"
+msgstr "Scart  "
+
+msgid "swts"
+msgstr "swts"
+
+msgid "t"
+msgstr "t"
+
+msgid "T"
+msgstr "T"
+
+msgid "TEST"
+msgstr "TEST"
+
+msgid "Test frequency"
+msgstr " "
+
+msgid "Threshold"
+msgstr "Threshold"
+
+msgid "thereafter on this Channel:"
+msgstr " :"
+
+msgid "Thursday"
+msgstr ""
+
+msgid "Timer"
+msgstr "Timer"
+
+msgid "Timer Record Path"
+msgstr "   Timer"
+
+msgid "Timeshift Path"
+msgstr " Timeshift"
+
+msgid "Time to sleep"
+msgstr "   "
+
+msgid "--- Time to switch"
+msgstr "---    "
+
+msgid "Timezone"
+msgstr " "
+
+msgid "Tint"
+msgstr ""
+
+msgid "Tone Burst"
+msgstr "Tone Burst"
+
+msgid "Tone Mode"
+msgstr "Tone Mode"
+
+msgid "Top"
+msgstr ""
+
+msgid "Transponder:"
+msgstr "Transponder:"
+
+msgid "TSID:"
+msgstr "TSID:"
+
+msgid "Tuesday"
+msgstr ""
+
+msgid "Tuner"
+msgstr "Tuner"
+
+msgid "Tuner:"
+msgstr "Tuner:"
+
+msgid "Tunerconfig"
+msgstr " Tuner"
+
+msgid "Tuner Configuration"
+msgstr "Tuner"
+
+msgid "Tuner Reception"
+msgstr " Tuner"
+
+msgid "TXT PID:"
+msgstr "TXT PID:"
+
+msgid "type"
+msgstr ""
+
+msgid "Type"
+msgstr "Type"
+
+msgid "Type:"
+msgstr ":"
+
+msgid "Type of Scan"
+msgstr " "
+
+msgid "tuner_sleep_off"
+msgstr "tuner_sleep_off"
+
+msgid "tuxtxt_cpufrequ_workaround"
+msgstr "tuxtxt_cpufrequ_workaround"
+
+msgid "telnet"
+msgstr "Telnet"
+
+msgid "u"
+msgstr "u"
+
+msgid "U"
+msgstr "U"
+
+msgid "UNC:"
+msgstr "UNC:"
+
+msgid "Uncommitted Diseqc command"
+msgstr "Uncommitted Diseqc command"
+
+msgid "unknown"
+msgstr ""
+
+msgid "UNLOAD"
+msgstr "UNLOAD"
+
+msgid "update"
+msgstr ""
+
+msgid "Usb Device"
+msgstr " USB"
+
+msgid "Usbupdate (online)"
+msgstr " USB (online)"
+
+msgid "Usbupdate (tmp)"
+msgstr " USB (tmp)"
+
+msgid "Use EPG Endtime"
+msgstr "    EPG"
+
+msgid "useproxy"
+msgstr "use proxy"
+
+msgid "userauth"
+msgstr " "
+
+msgid "username"
+msgstr " "
+
+msgid "use ssl"
+msgstr " SSL"
+
+msgid "updatelist"
+msgstr " "
+
+msgid "v"
+msgstr "v"
+
+msgid "V"
+msgstr "V"
+
+msgid "VFDisplay"
+msgstr "VFDisplay"
+
+msgid "Video"
+msgstr "Video"
+
+msgid "VIDEO"
+msgstr "VIDEO"
+
+msgid "VideoMode Aspect Settings"
+msgstr "  Video"
+
+msgid "VideoMode Resolution Settings"
+msgstr "  Video"
+
+msgid "VideoMode Settings"
+msgstr " Video"
+
+msgid "Video PID:"
+msgstr "Video PID:"
+
+msgid "Video Player"
+msgstr "Video Player"
+
+msgid "Video Settings"
+msgstr " Video"
+
+msgid "VIDEO SETTINGS"
+msgstr " VIDEO"
+
+msgid "Videotune"
+msgstr " "
+
+msgid "View"
+msgstr ""
+
+msgid "Virtualzap Timeout"
+msgstr "Virtualzap Timeout"
+
+msgid "VLC Player"
+msgstr "VLC Player"
+
+msgid " "
+msgstr " "
+
+msgid "Voltage Mode"
+msgstr "Mode "
+
+msgid "Volumebar Timeout"
+msgstr "  .    (sec)"
+
+msgid "w"
+msgstr "w"
+
+msgid "W"
+msgstr "W"
+
+msgid "Web Radio Player"
+msgstr "Web Radio Player"
+
+msgid "Wednesday"
+msgstr ""
+
+msgid "Weather Info"
+msgstr " "
+
+msgid "wsize"
+msgstr "wsize"
+
+msgid "wlan"
+msgstr "WLAN"
+
+msgid "webif"
+msgstr "webif"
+
+msgid "x"
+msgstr "x"
+
+msgid "X"
+msgstr "X"
+
+msgid "y"
+msgstr "y"
+
+msgid "Y"
+msgstr "Y"
+
+msgid "z"
+msgstr "z"
+
+msgid "Z"
+msgstr "Z"
