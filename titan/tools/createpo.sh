@@ -64,7 +64,7 @@ for ROUND in $POLIST; do
 
 		iconv -f ISO-8859-1 -t UTF-8 $ROUND_EDIT > $ROUND_EDIT_UTF
 echo bbbb
-		msgmerge --backup=none -U $ROUND_NEW_MERGE $ROUND_EDIT_UTF > $ROUND_MERGE_UTF
+		msgmerge $ROUND_NEW_MERGE $ROUND_EDIT_UTF > $ROUND_MERGE_UTF
 		iconv -f UTF-8 -t ISO-8859-1 $ROUND_MERGE_UTF > $ROUND_MERGE
 		
 		SEARCH=`cat $ROUND_MERGE | grep -n "Content-Transfer-Encoding: 8bit" | cut -d":" -f1`
