@@ -1355,8 +1355,7 @@ msgstr "Info zur Deinstallation"
 
 #: extensions.h:290
 msgid "Tpk Remove Info - Remove OK"
-msgstr ""
-"INFORMATION: Die Deinstallation wurde erfolgreich abgeschlossen."
+msgstr "INFORMATION: Die Deinstallation wurde erfolgreich abgeschlossen."
 
 #: extensions.h:297
 msgid "Tpk Remove Info - Remove ERROR"
@@ -2208,7 +2207,8 @@ msgstr "Playliste bearbeiten"
 
 #: mc_internetbrowser.h:38
 msgid "Install netsurf Internetbrowser Tpk first !"
-msgstr "ACHTUNG: Sie müssen erst das Plugin 'Netsurf Internetbrowser' installieren!"
+msgstr ""
+"ACHTUNG: Sie müssen erst das Plugin 'Netsurf Internetbrowser' installieren!"
 
 #: mc_main.h:37 mc_main.h:42 mc_main.h:47 mc_main.h:73 mc_main.h:78
 msgid "comming soon"
