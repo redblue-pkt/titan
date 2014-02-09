@@ -5746,7 +5746,7 @@ msgid "Filesystem Check"
 msgstr ""
 
 #: skin_default_skin.xml.h:231
-msgid "Fine move test2"
+msgid "Fine move"
 msgstr ""
 
 #: skin_default_skin.xml.h:232
