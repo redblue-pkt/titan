@@ -1316,8 +1316,8 @@ msgid ""
 "then perform an update by Tpk to: "
 msgstr ""
 "Wenn Sie ein anderes Paket aus dieser Sektion installieren wollen, entfernen "
-"Sie zuerst das installierte. Ist nach einer Neuinstallation der "
-"das Extra nicht im Menü sichtbar, führen Sie bitte eine Aktualisierung durch."
+"Sie zuerst das installierte. Ist nach einer Neuinstallation der das Extra "
+"nicht im Menü sichtbar, führen Sie bitte eine Aktualisierung durch."
 
 #: extensions.h:212 extensions.h:353
 msgid "Installing"
@@ -1356,8 +1356,7 @@ msgstr "Info zur dDinstallation"
 #: extensions.h:290
 msgid "Tpk Remove Info - Remove OK"
 msgstr ""
-"Info zur Deinstallation. Die Deinstallation wurde erfolgreich "
-"abgeschlossen."
+"Info zur Deinstallation. Die Deinstallation wurde erfolgreich abgeschlossen."
 
 #: extensions.h:297
 msgid "Tpk Remove Info - Remove ERROR"
@@ -2209,8 +2208,7 @@ msgstr "Playliste bearbeiten"
 
 #: mc_internetbrowser.h:38
 msgid "Install netsurf Internetbrowser Tpk first !"
-msgstr ""
-"ACHTUNG: Sie müssen erst den 'Netsurf Internetbrowser' installieren!"
+msgstr "ACHTUNG: Sie müssen erst den 'Netsurf Internetbrowser' installieren!"
 
 #: mc_main.h:37 mc_main.h:42 mc_main.h:47 mc_main.h:73 mc_main.h:78
 msgid "comming soon"
@@ -4314,7 +4312,7 @@ msgid "Rating:"
 msgstr "Bewertung:"
 
 #: plugins_tmdb_skin.xml.h:10 skins_tmdb_skin.xml.h:10
-msgid "TMDb"
+msgid "TMDb - Plugin"
 msgstr ""
 
 #: plugins_tsSchnitt_skin.xml.h:1 skins_tsSchnitt_skin.xml.h:1
