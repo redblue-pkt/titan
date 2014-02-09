@@ -5524,6 +5524,7 @@ msgstr ""
 msgid "Filesystem Check"
 msgstr "Dateisystem prüfen"
 
+#: skin_default_skin.xml.h:231
 msgid "Fine move"
 msgstr "Rotor langsam bewegen"
 
@@ -5596,6 +5597,7 @@ msgstr "Deutsch"
 msgid "Git Changelog"
 msgstr ""
 
+#: skin_default_skin.xml.h:249
 msgid "Go to startpos"
 msgstr "gehe zur Startposition"
 
@@ -8897,10 +8899,8 @@ msgstr ""
 msgid "\\"
 msgstr ""
 
-#: skin_default_skin.xml.h:231
 msgid "Fine move1"
 msgstr ""
 
-#: skin_default_skin.xml.h:249
 msgid "Go to startpos test"
 msgstr ""
