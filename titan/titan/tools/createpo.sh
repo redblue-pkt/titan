@@ -59,8 +59,8 @@ for ROUND in $POLIST; do
 		xgettext --omit-header -j -k_ *.* -o $ROUND_UTF
 
 		xgettext --omit-header -k_ *.* -o $ROUND_NEW
-		echo aaaa
-		msgmerge $ROUND_UTF $ROUND_NEW > $ROUND_NEW_MERGE
+echo aaaa
+		msgmerge --backup=none -U $ROUND_UTF $ROUND_NEW > $ROUND_NEW_MERGE
 
 		iconv -f ISO-8859-1 -t UTF-8 $ROUND_EDIT > $ROUND_EDIT_UTF
 echo bbbb
