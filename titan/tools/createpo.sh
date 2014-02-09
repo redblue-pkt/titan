@@ -86,12 +86,11 @@ for ROUND in $POLIST; do
 	echo "[createpo.sh] ############################# end ##################################"
 done
 
-echo SVNUSER $SVNUSER
-echo 111111111111
+echo "[createpo.sh] check user"
+		
 cd "$HOME"/flashimg/source.titan/po
 if [ $SVNUSER = "aafsvn" ];then
-	echo 22222222222222
-
+	echo "[createpo.sh] svn commit -m [titan] autoupdate po files"
 	svn commit -m "[titan] autoupdate po files"
 	svn commit "$HOME"/flashimg/source.titan/po
 fi
