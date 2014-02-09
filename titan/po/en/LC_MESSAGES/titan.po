@@ -578,7 +578,7 @@ msgid "download error"
 msgstr "download error"
 
 msgid "DVB-T not supportet at the moment !"
-msgstr "DVB-T is not supportet at the moment"					msgstr "DVB-T is not supported at the moment"
+msgstr "DVB-T is not supportet at the moment"
 
 msgid "East / West"
 msgstr "East / West"
@@ -641,7 +641,7 @@ msgid "Error: open rc device !!"
 msgstr "Error: Remote Control can not be activated!"
 
 msgid "Error: open rcsim device !!"
-msgstr "Error: Can not connect Remote Cotrol SIM!"					msgstr "Error: Can not connect Remote Control SIM!"
+msgstr "Error: Can not connect Remote Cotrol SIM!"
 
 msgid "Error: no frontend device found !!"
 msgstr "Error: no frontend device found!"
@@ -767,13 +767,13 @@ msgid "Found TV:"
 msgstr "Found - TV: "
 
 msgid "Found running Record.\nRealy shutdown ?"
-msgstr "Found a active recording.\nReally shutdown ?"					msgstr "Found an active recording.\nReally shutdown ?"
+msgstr "Found a active recording.\nReally shutdown ?"
 
 msgid "Found running record\nor record is starting in next time.\nReally shutdown ?"
 msgstr "Found a active recording.\nor recording is starting soon.\nReally shutdown?"					msgstr "Found an active recording.\nor recording is starting soon.\nReally shutdown?"
 
 msgid "Found running download\nReally shutdown ?"
-msgstr "Found a active download\nReally shutdown?"					msgstr "Found an active download\nReally shutdown?"
+msgstr "Found a active download\nReally shutdown?"
 
 msgid "Really stop download ?"
 msgstr "Really stop download?"
@@ -875,7 +875,7 @@ msgid "Harddisk"
 msgstr "Harddisk"
 
 msgid "HDD not configured\ncan't find record path"
-msgstr "HDD not configured\ncan't find record path"\n"
+msgstr "HDD not configured\ncan't find record path\n"
 "Please configure harddisk"
 
 msgid "hddreplacement"
@@ -1619,7 +1619,7 @@ msgid "Records and EPG"
 msgstr "Timer and EPG"
 
 msgid "record_max_sectors"
-msgstr "Record Maximum Sektors"					msgstr "Record Maximum Sectors"
+msgstr "Record Maximum Sektors"
 
 msgid "record_split_size"
 msgstr "Record Split Size"
@@ -1877,13 +1877,13 @@ msgid "Serviceinfo"
 msgstr "Serviceinfo"
 
 msgid "succesfull create or delelete directory"
-msgstr "Succesfully created or deleted directory"					msgstr "Successfully created or deleted directory"
+msgstr "Succesfully created or deleted directory"
 
 msgid "set startchannel"
 msgstr "Set as start-channel"
 
 msgid "Settings succesfull saved"
-msgstr "Settings succesfull saved"					msgstr "Settings successfully saved"
+msgstr "Settings succesfull saved"
 
 msgid "Settings backup/restore"
 msgstr "Settings backup/restore"
@@ -2753,10 +2753,10 @@ msgid "Can't get Streamurl !"
 msgstr "Can't get Streamurl!"
 
 msgid "This is a advertising Image !"
-msgstr "This is a advertising Image!"					msgstr "This is an advertising Image!"
+msgstr "This is a advertising Image!"
 
 msgid "Inc. AC3 Audio in %"
-msgstr "Meet AC3 Audio Volume by reducing Steroe-audio in %"					msgstr "Meet AC3 Audio Volume by reducing Stereo-audio in %"
+msgstr "Meet AC3 Audio Volume by reducing Steroe-audio in %"
 
 msgid "very fast"
 msgstr "very fast"
@@ -2783,7 +2783,7 @@ msgid "not started akttime higher than timer endtime"
 msgstr "Not started, endtime already elapsed"
 
 msgid "Do you want to delete all unused Bouquetentrys?"
-msgstr "Do you want to delete all unused bouquet entrys?"					msgstr "Do you want to delete all unused bouquet entries?"
+msgstr "Do you want to delete all unused bouquet entrys?"
 
 msgid "EPG Search"
 msgstr "EPG-Search"
@@ -3236,10 +3236,10 @@ msgid "Delete MediaDB before scan"
 msgstr "Delete MediaDB before scan"
 
 msgid "Delete unused entrys before scan"
-msgstr "Delete unused entrys before scan"					msgstr "Delete unused entries before scan"
+msgstr "Delete unused entrys before scan"
 
 msgid "Update entrys on scan"
-msgstr "Update entrys on scan"								msgstr "Update entries on scan"
+msgstr "Update entrys on scan"
 
 msgid "Create Thumb Picture"
 msgstr "Create thumbnail"
@@ -3404,7 +3404,7 @@ msgid "No memory"
 msgstr "No memory"
 
 msgid "Failed open split file"
-msgstr "Failed open split file""
+msgstr "Failed open split file"
 
 msgid "Frontend type unknown"
 msgstr "Frontend type unknown"
@@ -3449,22 +3449,22 @@ msgid "Page"
 msgstr "Page"
 
 msgid "show 2 entrys"
-msgstr "show 2 entrys"					msgstr "show 2 entries"
+msgstr "show 2 entrys"
 
 msgid "show 6 entrys"
-msgstr "show 6 entrys"					msgstr "show 6 entries"
+msgstr "show 6 entrys"
 
 msgid "show 12 entrys"
-msgstr "show 12 entrys"					msgstr "show 12 entries"
+msgstr "show 12 entrys"
 
 msgid "show 20 entrys"
-msgstr "show 20 entrys"					msgstr "show 20 entries"
+msgstr "show 20 entrys"
 
 msgid "show 30 entrys"
-msgstr "show 30 entrys"					msgstr "show 30 entries"
+msgstr "show 30 entrys"
 
 msgid "show auto entrys"
-msgstr "show auto entrys"					msgstr "show auto entries"
+msgstr "show auto entrys"
 
 msgid "Pic Ratio"
 msgstr "Pic Ratio"
@@ -3530,16 +3530,13 @@ msgid "Add this link as Favorite ?"
 msgstr "Add this link as Favorite?"
 
 msgid "Copy providerlist successfull"
-msgstr "Copy providerlist successfull"					msgstr "Copy providerlist successful"
+msgstr "Copy providerlist successfull"
 
 msgid "Copy providerlist not ok"
 msgstr "Copy providerlist not ok"
 
 msgid "Copy satlist successfull"
-msgstr "Copy satlist successfull"						msgstr "Copy satlist successful"
-
-msgid "Copy satlist successfull"
-msgstr "Copy satlist successfull"						msgstr "Copy satlist successful"
+msgstr "Copy satlist successfull"
 
 msgid "The hoster is not yet supported !"
 msgstr "The hoster is not yet supported!"
@@ -3617,7 +3614,7 @@ msgid "Can't show this file!"
 msgstr "Can't show this file!"
 
 msgid "Skip privat CA descriptor"
-msgstr "Skip privat CA descriptor"					msgstr "Skip private CA descriptor"
+msgstr "Skip privat CA descriptor"
 
 msgid "Rename"
 msgstr "Rename"
@@ -3821,7 +3818,7 @@ msgid "Search on MyVideo"
 msgstr "Search on MyVideo"
 
 msgid "Error, found result without imdbid we can't this save in MediaDB"
-msgstr "Error, found result without imdbid, we can't this save in MediaDB"				msgstr "Error, found result without imdbid, we can't save this in MediaDB"
+msgstr "Error, found result without imdbid, we can't this save in MediaDB"
 
 msgid "EPG Scan activate standby?"
 msgstr "EPG-Scan activates standby"
@@ -3902,7 +3899,7 @@ msgid "Use numeric keys"
 msgstr "Use numeric keys"
 
 msgid "Mail send succesfull"
-msgstr "Mail sent succesfully"					msgstr "Mail sent successfully"
+msgstr "Mail sent succesfully"
 
 msgid "Can't send Mail"
 msgstr "Can't send Mail"
@@ -4169,7 +4166,7 @@ msgid "Delete All"
 msgstr "Delete All"
 
 msgid "Channel scan ended."
-msgstr "Channel scan finished.\nSave with color buttons."					msgstr "Channel scan finished.\nSave with colour buttons."
+msgstr "Channel scan finished.\nSave with color buttons."
 
 msgid "Channel scan ended.\nNothing found."
 msgstr "Channel scan finished.\nNothing found."
