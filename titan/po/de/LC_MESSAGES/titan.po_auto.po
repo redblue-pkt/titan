@@ -2026,7 +2026,7 @@ msgstr ""
 #: mc_audioplayer.h:403 mc_global.h:1069 mc_pictureplayer.h:145
 #: mc_videoplayer.h:421 mc_global.h:1070
 msgid "Repeat-On"
-msgstr "Wiederholung AN"
+msgstr "Wiederholen AN"
 
 #: mc_audioplayer.h:410 mc_audioplayer.h:560 mc_global.h:1071
 #: mc_pictureplayer.h:152 mc_pictureplayer.h:317 mc_videoplayer.h:428
@@ -2047,7 +2047,7 @@ msgstr "Dateilisten Modus"
 #: mc_pictureplayer.h:316 mc_videoplayer.h:658 plugins_mc_skin.xml.h:46
 #: skins_mc_skin.xml.h:46 mc_global.h:1067
 msgid "Random"
-msgstr "Zufällige Wiedergabe"
+msgstr "Zufällig"
 
 #: mc_audioplayer.h:580 mc_global.h:269 mc_global.h:692 mc_global.h:925
 #: mc_global.h:939 mc_pictureplayer.h:336 mc_videoplayer.h:699 mc_global.h:693
@@ -2087,7 +2087,7 @@ msgstr "ACHTUNG: Sie müssen erst das Plugin 'Filemanager' installieren!"
 
 #: mc_global.h:541 mc_global.h:569 mc_global.h:1064 mc_global.h:1065
 msgid "Random-On"
-msgstr "Zufällige Wiedergabe an"
+msgstr "Zufällig-An"
 
 #: mc_internetbrowser.h:38
 msgid "Install netsurf Internetbrowser Tpk first !"
@@ -2267,7 +2267,7 @@ msgstr "IMDBID"
 
 #: mediadb.h:2454
 msgid "Add iMDB manuel"
-msgstr "IMDBID manuell hinzufügen"
+msgstr "IMDB manuell hinzufügen"
 
 #: mediadbsettings.h:37
 msgid "older 1 day"
@@ -2775,11 +2775,11 @@ msgstr "Swap-Dateisystem prüfen"
 
 #: panel_settings_autostart.h:245 settings_autostart.h:326
 msgid "Record Max Sectors"
-msgstr ""
+msgstr "Max Sektoren Aufnahme"
 
 #: panel_settings_autostart.h:262 settings_autostart.h:343
 msgid "Swap Max Sectors"
-msgstr ""
+msgstr "Max Sektoren Swap"
 
 #: panel_settings_autostart.h:279
 msgid "Autostart EMU"
@@ -2811,7 +2811,7 @@ msgstr "WLAN suchen"
 
 #: panel_settings_autostart.h:344
 msgid "Autostart Child Safety"
-msgstr "Jugendschutz automatisch EIN"
+msgstr "Jugendschutz automatisch Ein"
 
 #: panel_settings_autostart.h:350 settings_autostart.h:477
 msgid "Parental"
@@ -3065,7 +3065,7 @@ msgstr ""
 
 #: plugins_callmonitor1_skin.xml.h:12 skins_callmonitor1_skin.xml.h:12
 msgid "Fritzbox Firmware... >= 05.50"
-msgstr ""
+msgstr "Fritzbox Firmware"
 
 #: plugins_callmonitor1_skin.xml.h:13 skins_callmonitor1_skin.xml.h:13
 msgid "IP-FritzBox"
@@ -3408,7 +3408,7 @@ msgstr "Audio"
 
 #: plugins_mc_skin.xml.h:10 skins_mc_skin.xml.h:10
 msgid "Audio Player"
-msgstr ""
+msgstr "Musik abspielen"
 
 #: plugins_mc_skin.xml.h:11 skins_mc_skin.xml.h:11
 msgid "AUDIO SETTINGS"
@@ -3499,7 +3499,7 @@ msgstr "Fotos"
 
 #: plugins_mc_skin.xml.h:43 skins_mc_skin.xml.h:43
 msgid "Picture Player"
-msgstr "Bildbetrachter"
+msgstr "Fotos anzeigen"
 
 #: plugins_mc_skin.xml.h:44 skins_mc_skin.xml.h:44
 msgid "PICTURE SETTINGS"
@@ -3556,7 +3556,7 @@ msgstr ""
 
 #: plugins_mc_skin.xml.h:62 skins_mc_skin.xml.h:62
 msgid "Video Player"
-msgstr ""
+msgstr ""Filme abspielen""
 
 #: plugins_mc_skin.xml.h:63 skins_mc_skin.xml.h:63
 msgid "VIDEO SETTINGS"
@@ -3568,7 +3568,7 @@ msgstr ""
 
 #: plugins_mc_skin.xml.h:66 skins_mc_skin.xml.h:66
 msgid "Weather Infos"
-msgstr "Wetter Infos"
+msgstr "Wetter anzeigen"
 
 #: plugins_mc_skin.xml.h:67 skins_mc_skin.xml.h:67
 msgid "Web Radio Player"
@@ -4125,7 +4125,7 @@ msgstr "ts - Schnitt"
 
 #: plugins_weather_skin.xml.h:3 skins_weather_skin.xml.h:3 weather.h:418
 msgid "Weather"
-msgstr "Wetter"
+msgstr "Wetter anzeigen"
 
 #: plugins_wins3_skin.xml.h:2 skins_wins3_skin.xml.h:2
 msgid "NEW"
@@ -5066,7 +5066,7 @@ msgstr "Automatisch überprüfen, ob Ihr CAM entschlüsseln kann?"
 
 #: skin_default_skin.xml.h:86
 msgid "Automatic Search"
-msgstr "Automatischer Sendersuchlauf"
+msgstr "Automatische Sendersuche"
 
 #: skin_default_skin.xml.h:87
 msgid "Automatic start last subtitle"
@@ -6297,7 +6297,7 @@ msgstr "Hauptmenü"
 
 #: skin_default_skin.xml.h:355
 msgid "Manual Search"
-msgstr "Manuelle Suche"
+msgstr "manuell"
 
 #: skin_default_skin.xml.h:356
 msgid "Manual Search Cable"
@@ -7005,7 +7005,7 @@ msgstr "Pfadauswahl"
 #: skin_default_skin.xml.h:549 skin_default_skin.xml.h:550
 #: skin_default_skin.xml.h:551
 msgid "Select Unicable Manufacturer"
-msgstr "Unikabel Hersteller auswählen"
+msgstr "Unikabel Hersteller wählen"
 
 #: skin_default_skin.xml.h:550 skin_default_skin.xml.h:551
 #: skin_default_skin.xml.h:552
@@ -7396,7 +7396,7 @@ msgstr ""
 #: skin_default_skin.xml.h:640 skin_default_skin.xml.h:641
 #: skin_default_skin.xml.h:642
 msgid "TEST"
-msgstr ""
+msgstr "Test"
 
 #: skin_default_skin.xml.h:641 skin_default_skin.xml.h:642
 #: skin_default_skin.xml.h:643
@@ -7691,7 +7691,7 @@ msgstr ""
 #: skin_default_skin.xml.h:708 tmc.h:399 skin_default_skin.xml.h:709
 #: skin_default_skin.xml.h:710
 msgid "Video"
-msgstr "Filme"
+msgstr "Bild"
 
 #: skin_default_skin.xml.h:709 skin_default_skin.xml.h:710
 #: skin_default_skin.xml.h:711
@@ -7960,7 +7960,7 @@ msgid ""
 "\n"
 "Box will start in few seconds."
 msgstr ""
-"Bitte warten...\n"
+"Bitte warten\n"
 "\n"
 "ALLE Einstellungen werden gesichert.\n"
 "\n"
