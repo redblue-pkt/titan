@@ -6607,7 +6607,7 @@ msgstr "Pfad"
 
 #: skin_default_skin.xml.h:364
 msgid "MediaDB Settings"
-msgstr "Einstellungen"
+msgstr "MediaDB"
 
 #: skin_default_skin.xml.h:365
 msgid "Media Player"
@@ -6827,7 +6827,7 @@ msgstr "OSD Transparenz"
 
 #: skin_default_skin.xml.h:423
 msgid "Overclocking Settings"
-msgstr "Übertaktungseinstellungen"
+msgstr "Übertakten"
 
 #: skin_default_skin.xml.h:424
 msgid "p"
