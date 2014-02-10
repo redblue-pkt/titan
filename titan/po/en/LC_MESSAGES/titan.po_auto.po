@@ -2414,7 +2414,8 @@ msgstr ""
 msgid ""
 "No MediaDB Directory found\n"
 "Press OK to create it"
-msgstr "ATTENTION: MedaiDB Directory was not found!\n"
+msgstr ""
+"ATTENTION: MedaiDB Directory was not found!\n"
 "Press -OK- to create one."
 
 #: menu.h:884 menu.h:886 skin_default_skin.xml.h:531
@@ -2492,7 +2493,8 @@ msgstr "Multi EPG - All Channels"
 #: networkbrowser.h:944
 msgid ""
 "For Better Win7 Support install please Tpk Install > Network > Smbclient"
-msgstr "ATTENTION: For better compatibility with Windows 7\n"
+msgstr ""
+"ATTENTION: For better compatibility with Windows 7\n"
 "please install the Plugin 'SMB-Client'!"
 
 #: networkbrowser.h:1005 networkbrowser.h:1011 networkbrowser.h:1021
