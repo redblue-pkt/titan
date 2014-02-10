@@ -495,7 +495,7 @@ msgstr "Ja / VZap 1 Sekunde"
 
 #: adjust.h:212
 msgid "yes / vzap 2 sec"
-msgstr "Ja / VZap 2 Sekunde"
+msgstr "Ja / VZap 2 Sekunden"
 
 #: adjust.h:213
 msgid "yes / vzap endless"
@@ -1716,7 +1716,7 @@ msgid ""
 "Box reboots after check"
 msgstr ""
 "Wollen Sie die ausgewählte Partition überprüfen?\n"
-"Der Receiver wird anschließend neugestartet."
+"Der Receiver wird anschließend neu gestartet."
 
 #: harddisk.h:867 harddisk.h:868
 msgid "Harddisk Sleep"
@@ -2667,7 +2667,7 @@ msgstr ""
 
 #: network.h:335
 msgid "Restart Network"
-msgstr "Netzwerk Neustarten"
+msgstr "Netzwerk Neustart"
 
 #: network.h:389
 msgid "dhcp"
@@ -2840,7 +2840,7 @@ msgstr "Audio-FW veraltet"
 
 #: panel_settings_autostart.h:122 settings_autostart.h:153
 msgid "No Audiosync"
-msgstr "FEHLER: Audiosynch fehlgeschlagen"
+msgstr "FEHLER: Audiosync fehlgeschlagen"
 
 #: panel_settings_autostart.h:131 settings_autostart.h:162
 msgid "Boot Resolution"
@@ -8226,8 +8226,8 @@ msgid ""
 "Timeshift file to short\n"
 "please wait a little and try again"
 msgstr ""
-"Timeshiftwiedergabe kann noch nicht wiedergegeben werden.\n"
-"Bitte versuchen Sie es in wenigen Minuten erneut."
+"Timeshift: Datei ist zu klein\n"
+"Bitte später versuchen."
 
 #: timeshift.h:162
 msgid "Can't start timeshift play !"
