@@ -2659,7 +2659,7 @@ msgstr "Folgt in Kürze"
 
 #: network.h:295
 msgid "Restart Network ?"
-msgstr ""
+msgstr "Netzwerk Neustarten"
 
 #: network.h:297
 msgid "Aktivate new network config ?"
@@ -5247,7 +5247,7 @@ msgstr "Darsteller"
 
 #: skin_default_skin.xml.h:57
 msgid "Adapter Settings"
-msgstr "IP-Addressen Einstellungen"
+msgstr "IP Einstellungen"
 
 #: skin_default_skin.xml.h:59
 msgid "ADD ALL"
@@ -5355,7 +5355,7 @@ msgstr "Automatisch überprüfen, ob Ihr CAM entschlüsseln kann?"
 
 #: skin_default_skin.xml.h:86
 msgid "Automatic Search"
-msgstr "Automatische Sendersuche"
+msgstr "Automatische Suche"
 
 #: skin_default_skin.xml.h:87
 msgid "Automatic start last subtitle"
@@ -6575,7 +6575,7 @@ msgstr "Hauptmenü"
 
 #: skin_default_skin.xml.h:355
 msgid "Manual Search"
-msgstr "manuell"
+msgstr "Manuelle Suche"
 
 #: skin_default_skin.xml.h:356
 msgid "Manual Search Cable"
@@ -6719,7 +6719,7 @@ msgstr "Einstellungen"
 
 #: skin_default_skin.xml.h:395
 msgid "Network Adapter Test"
-msgstr "Test"
+msgstr "Netzwerk Test"
 
 #: skin_default_skin.xml.h:396
 msgid "Networkbrowser"
@@ -7653,7 +7653,7 @@ msgstr "Oben"
 
 #: skin_default_skin.xml.h:662
 msgid "TPK install (online)"
-msgstr "Installation (Online)"
+msgstr "Installieren (Online)"
 
 #: skin_default_skin.xml.h:664
 msgid "Tpk Install - select install medium"
@@ -7697,7 +7697,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:676
 msgid "Tunerconfig"
-msgstr "Konfiguration"
+msgstr "Tuner Konfiguration"
 
 #: skin_default_skin.xml.h:677
 msgid "Tuner Configuration"
