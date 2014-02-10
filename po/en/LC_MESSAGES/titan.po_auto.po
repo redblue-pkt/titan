@@ -3808,24 +3808,24 @@ msgid ""
 "Here you can configure your Auth Data. Use to navigate the control cross and "
 "the extra buttons displayed with your remote control to select."
 msgstr ""
-"Here you can edit your authentication settings. Navigate with the control cross "
-"and the Buttons of your Remote Control as shown below"
+"Here you can edit your authentication settings. Navigate with the control "
+"cross and the Buttons of your Remote Control as shown below"
 
 #: plugins_networkbrowser_skin.xml.h:11 skins_networkbrowser_skin.xml.h:11
 msgid ""
 "Here you can configure your network shares. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
 msgstr ""
-"Here you can edit your Network shares. Navigate with the control cross "
-"and the Buttons of your Remote Control as shown below"
+"Here you can edit your Network shares. Navigate with the control cross and "
+"the Buttons of your Remote Control as shown below"
 
 #: plugins_networkbrowser_skin.xml.h:12 skins_networkbrowser_skin.xml.h:12
 msgid ""
 "If you don't find Windows shares you need to disable 'Password protected "
 "sharing' in the 'Network and Sharing Center'."
 msgstr ""
-"Should your Windows shares not be visible you need to disable "
-"'Password protected sharing' in the Network Settings"
+"Should your Windows shares not be visible you need to disable 'Password "
+"protected sharing' in the Network Settings"
 
 #: plugins_networkbrowser_skin.xml.h:13 skin_default_skin.xml.h:325
 #: skins_networkbrowser_skin.xml.h:13
@@ -4061,8 +4061,8 @@ msgid ""
 "Here you can configure your reader. Use to navigate the control cross and "
 "the extra buttons displayed with your remote control to select."
 msgstr ""
-"Here you can configure your reader. Navigate with the control cross "
-"and the Buttons of your Remote Control as shown below"
+"Here you can configure your reader. Navigate with the control cross and the "
+"Buttons of your Remote Control as shown below"
 
 #: plugins_readerconfig_skin.xml.h:6 skin_default_skin.xml.h:300
 #: skins_readerconfig_skin.xml.h:6
@@ -4070,8 +4070,8 @@ msgid ""
 "Here you can set your language. Use to navigate the control cross and the "
 "extra buttons displayed with your remote control to select."
 msgstr ""
-"Here you can set your Language. Navigate with the control cross "
-"and the Buttons of your Remote Control as shown below"
+"Here you can set your Language. Navigate with the control cross and the "
+"Buttons of your Remote Control as shown below"
 
 #: plugins_readerconfig_skin.xml.h:7 skins_readerconfig_skin.xml.h:7
 msgid "Reader Config"
@@ -4293,8 +4293,8 @@ msgid ""
 "Start movie in the internal player, set with 0 key marker during a movie. 5 "
 "key is for the marker overview. Then here select movie and start."
 msgstr ""
-"Start the movie in the internal Player. Set a marker with the -0- Key during"
-"the movie. For an overview of all markers press -5- on you Remote.\n"
+"Start the movie in the internal Player. Set a marker with the -0- Key "
+"duringthe movie. For an overview of all markers press -5- on you Remote.\n"
 "Press -Play- on your Remote Control."
 
 #: plugins_tsSchnitt_skin.xml.h:10 skins_tsSchnitt_skin.xml.h:10
@@ -4702,8 +4702,7 @@ msgid ""
 "The Box will reboot and the erase will be started!"
 msgstr ""
 "Do you really want to erase the Swap-Filesystem?\n"
-"Your Settings are retained."
-"Your Receiver will Reboot and perform the erase."
+"Your Settings are retained.Your Receiver will Reboot and perform the erase."
 
 #: restoredefault.h:63 restoredefault.h:67 restoredefault.h:71
 #: skin_default_skin.xml.h:505
@@ -4950,7 +4949,8 @@ msgstr "ERROR: Can't open Frontend Device or unknown device"
 
 #: service.h:936
 msgid "Channellist empty or corrupt (channel not found)!"
-msgstr "ERROR: Channellist empty or corrupt\n"
+msgstr ""
+"ERROR: Channellist empty or corrupt\n"
 "Channel not found!"
 
 #: settings_autostart.h:216
