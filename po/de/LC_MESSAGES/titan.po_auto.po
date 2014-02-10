@@ -3181,15 +3181,15 @@ msgstr ""
 
 #: play.h:708
 msgid "Search on Kinox"
-msgstr "Suche diesen Titel bei Kinox"
+msgstr "Suche bei Kinox"
 
 #: play.h:710
 msgid "Search on Kinox (local)"
-msgstr "Suche diesen Titel bei Kinox (lokal)"
+msgstr "Suche bei Kinox (lokal)"
 
 #: play.h:724
 msgid "Search on MyVideo (local)"
-msgstr "Suche diesen Titel bei MyVideo (lokal)"
+msgstr "Suche bei MyVideo (lokal)"
 
 #: play.h:1163
 msgid "Jump To (min)"
@@ -3333,7 +3333,7 @@ msgstr ""
 
 #: plugins_callmonitor1_skin.xml.h:12 skins_callmonitor1_skin.xml.h:12
 msgid "Fritzbox Firmware... >= 05.50"
-msgstr "Fritzbox Firmware"
+msgstr ""
 
 #: plugins_callmonitor1_skin.xml.h:13 skins_callmonitor1_skin.xml.h:13
 msgid "IP-FritzBox"
@@ -3365,35 +3365,35 @@ msgstr ""
 
 #: plugins_catcatch_skin.xml.h:5 skins_catcatch_skin.xml.h:5
 msgid "Level:"
-msgstr ""
+msgstr "Ebene:"
 
 #: plugins_catcatch_skin.xml.h:6 skins_catcatch_skin.xml.h:6
 msgid "Score:"
-msgstr ""
+msgstr "Punkte:"
 
 #: plugins_dlna_skin.xml.h:1 skins_dlna_skin.xml.h:1
 msgid "DLNA Settings"
-msgstr ""
+msgstr "DLNA Einstellungen"
 
 #: plugins_dlna_skin.xml.h:3 skins_dlna_skin.xml.h:3
 msgid "Interface"
-msgstr ""
+msgstr "Schnittstelle"
 
 #: plugins_dlna_skin.xml.h:4 skins_dlna_skin.xml.h:4
 msgid "Media Dir 1"
-msgstr ""
+msgstr "1. Pfad zu Medien "
 
 #: plugins_dlna_skin.xml.h:5 skins_dlna_skin.xml.h:5
 msgid "Media Dir 2"
-msgstr ""
+msgstr "2. Pfad zu Medien"
 
 #: plugins_dlna_skin.xml.h:6 skins_dlna_skin.xml.h:6
 msgid "Media Dir 3"
-msgstr ""
+msgstr "3. Pfad zu Medien"
 
 #: plugins_dlna_skin.xml.h:7 skins_dlna_skin.xml.h:7
 msgid "Media Dir 4"
-msgstr ""
+msgstr "4. Pfad zu Medien"
 
 #: plugins_dlna_skin.xml.h:9 skins_dlna_skin.xml.h:9
 msgid "Port"
@@ -3635,7 +3635,7 @@ msgstr ""
 
 #: plugins_mc_skin.xml.h:1 skins_mc_skin.xml.h:1
 msgid "MC VideoPlayer Imdb Settings"
-msgstr "Einstellungen"
+msgstr "IMDB Einstellungen"
 
 #: plugins_mc_skin.xml.h:2 skins_mc_skin.xml.h:2
 msgid "MC VideoPlayer Sort Settings"
@@ -3966,7 +3966,7 @@ msgstr "SSL Nutzen"
 
 #: plugins_networkbrowser_skin.xml.h:36 skins_networkbrowser_skin.xml.h:36
 msgid "wsize"
-msgstr "Breite"
+msgstr "Schreib Puffergröße"
 
 #: plugins_news_skin.xml.h:1 skins_news_skin.xml.h:1
 msgid "News"
@@ -4173,7 +4173,7 @@ msgstr "Aktie"
 
 #: plugins_stopifnotused_skin.xml.h:1 skins_stopifnotused_skin.xml.h:1
 msgid "NotUsed Settings"
-msgstr "Einstellungen"
+msgstr "Nicht verwenden"
 
 #: plugins_stopifnotused_skin.xml.h:3 skins_stopifnotused_skin.xml.h:3
 msgid "Auto start"
@@ -4210,7 +4210,7 @@ msgstr "Tithek Menü"
 
 #: plugins_tithek_skin.xml.h:2 skins_tithek_skin.xml.h:2
 msgid "TiThek Settings"
-msgstr "TiThek Einstellungen"
+msgstr "TiThek"
 
 #: plugins_tithek_skin.xml.h:3 skins_tithek_skin.xml.h:3
 msgid "ADD FAV"
@@ -4337,7 +4337,7 @@ msgstr "ausgewählt:"
 
 #: plugins_tsSchnitt_skin.xml.h:6 skins_tsSchnitt_skin.xml.h:6
 msgid "select movie"
-msgstr "Filmdatei asuwählen"
+msgstr "Filmdatei auswählen"
 
 #: plugins_tsSchnitt_skin.xml.h:8 skins_tsSchnitt_skin.xml.h:8
 msgid ""
@@ -4346,7 +4346,7 @@ msgid ""
 msgstr ""
 "Starten Sie die Wiedergabe der ts Datei im internen Player und drücken Sie "
 "die Taste 0 um eine Markierung zu setzen.\n"
-"Drücken Sie die Taste 5 für eine Übersicht der Markierungen anzuzeigen und "
+"Drücken Sie die Taste 5 um eine Übersicht der Markierungen anzuzeigen und "
 "starten Sie anschließend die Wiedergabe."
 
 #: plugins_tsSchnitt_skin.xml.h:10 skins_tsSchnitt_skin.xml.h:10
@@ -4547,7 +4547,7 @@ msgstr "!!! SCHREIBFEHLER !!!"
 
 #: record.h:64
 msgid "No memory"
-msgstr "Kein Speicher verfügbar"
+msgstr "FEHLER: Kein Speicher verfügbar"
 
 #: record.h:67
 msgid "Failed open split file"
@@ -4555,7 +4555,7 @@ msgstr "FEHLER: Teildatei kann nicht geöffnet werden"
 
 #: record.h:70
 msgid "Frontend type unknown"
-msgstr "FEHLER: Frontend Typ unbekannt"
+msgstr "FEHLER: Frontend unbekannt"
 
 #: record.h:73
 msgid "Tune to channel failed"
