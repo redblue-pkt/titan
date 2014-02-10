@@ -4758,9 +4758,10 @@ msgstr ""
 msgid ""
 "Do you really want to erase Swap (Settings are preserve)?\n"
 "The Box will reboot and the erase will be started!"
-msgstr "Wollen Sie wirklich das Swap-Dateisystem löschen\n"
-"Ihre Settings bleiben erhalten."
-"Der Receiver wird neugestartet und das löschen wird durchgeführt."
+msgstr ""
+"Wollen Sie wirklich das Swap-Dateisystem löschen\n"
+"Ihre Settings bleiben erhalten.Der Receiver wird neugestartet und das "
+"löschen wird durchgeführt."
 
 #: restoredefault.h:63 restoredefault.h:67 restoredefault.h:71
 #: skin_default_skin.xml.h:505
