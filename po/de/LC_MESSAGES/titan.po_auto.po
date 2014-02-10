@@ -2267,7 +2267,7 @@ msgstr ""
 
 #: mc_settings.h:13
 msgid "transparent (mvi)"
-msgstr ""
+msgstr "Transparent (mvi)"
 
 #: mc_settings.h:14
 msgid "skin (picmem jpg)"
@@ -2659,11 +2659,11 @@ msgstr "Folgt in Kürze"
 
 #: network.h:295
 msgid "Restart Network ?"
-msgstr "Netzwerk Neustarten"
+msgstr "Netzwerk Neustarten?"
 
 #: network.h:297
 msgid "Aktivate new network config ?"
-msgstr ""
+msgstr "Neue Netzwerkeinstellungen aktivieren?"
 
 #: network.h:335
 msgid "Restart Network"
@@ -2941,7 +2941,7 @@ msgstr ""
 
 #: panel_settings.h:21
 msgid "Automount Config"
-msgstr ""
+msgstr "Automount"
 
 #: panel_settings.h:27
 msgid "Ntfs Write"
@@ -2982,7 +2982,7 @@ msgstr "Standby Frequenz"
 
 #: panel_settings_overclocking.h:275 settings_overclocking.h:275
 msgid "Use Teletxt Workaround"
-msgstr ""
+msgstr "Teletext Umgehung nutzen"
 
 #: panel_settings_overclocking.h:276 settings_overclocking.h:276
 msgid "frequency"
@@ -3065,103 +3065,103 @@ msgstr "Datei löschen"
 
 #: play.h:635
 msgid "Search on KinoX"
-msgstr "Suche diesen Titel bei KinoX"
+msgstr "Suche bei KinoX"
 
 #: play.h:636
 msgid "Search on KinoX (local)"
-msgstr "Suche diesen Titel bei KinoX (lokal)"
+msgstr "Suche bei KinoX (lokal)"
 
 #: play.h:637 play.h:726
 msgid "Search on Movie4k"
-msgstr "Suche diesen Titel bei Movie4k"
+msgstr "Suche bei Movie4k"
 
 #: play.h:638 play.h:728
 msgid "Search on Movie4k (local)"
-msgstr "Suche diesen Titel Movie4k (lokal)"
+msgstr "Suche Movie4k (lokal)"
 
 #: play.h:639 play.h:712
 msgid "Search on Solarmovies (movie)"
-msgstr "Suche diesen Titel bei Solarmovies (Filme)"
+msgstr "Suche bei Solarmovies (Filme)"
 
 #: play.h:640 play.h:714
 msgid "Search on Solarmovies (serie)"
-msgstr "Suche diesen Titel bei Solarmovies (Serien)"
+msgstr "Suche bei Solarmovies (Serien)"
 
 #: play.h:641 play.h:716
 msgid "Search on Solarmovies (local)"
-msgstr "Suche diesen Titel bei Solarmovies (lokal)"
+msgstr "Suche bei Solarmovies (lokal)"
 
 #: play.h:642 play.h:754
 msgid "Search on Mle-HD (local)"
-msgstr "Suche diesen Titel bei Mle-HD (lokal)"
+msgstr "Suche bei Mle-HD (lokal)"
 
 #: play.h:643 play.h:742
 msgid "Search on Beeg (local)"
-msgstr "Suche diesen Titel bei Beeg (lokal)"
+msgstr "Suche bei Beeg (lokal)"
 
 #: play.h:644 play.h:752
 msgid "Search on Xvideos (local)"
-msgstr "Suche diesen Titel bei XVideos (lokal)"
+msgstr "Suche bei XVideos (lokal)"
 
 #: play.h:646 play.h:756
 msgid "Search on Netzkino (local)"
-msgstr "Suche diesen Titel bei Netzkino (lokal)"
+msgstr "Suche bei Netzkino (lokal)"
 
 #: play.h:647 play.h:718
 msgid "Search on Youtube"
-msgstr "Suche diesen Titel bei Youtube"
+msgstr "Suche bei Youtube"
 
 #: play.h:648 play.h:720
 msgid "Search on Youtube (local)"
-msgstr "Suche diesen Titel bei Youtube (lokal)"
+msgstr "Suche bei Youtube (lokal)"
 
 #: play.h:649 play.h:722
 msgid "Search on MyVideo"
-msgstr "Suche diesen Titel bei MyVideo"
+msgstr "Suche bei MyVideo"
 
 #: play.h:650
 msgid "Search on Myvideo (local)"
-msgstr "Suche diesen Titel bei MyVideo (lokal)"
+msgstr "Suche bei MyVideo (lokal)"
 
 #: play.h:651 play.h:734
 msgid "Search on ARD (local)"
-msgstr "Suche diesen Titel bei ARD (lokal)"
+msgstr "Suche bei ARD (lokal)"
 
 #: play.h:652 play.h:736
 msgid "Search on ZDF (local)"
-msgstr "Suche diesen Titel bei ZDF (lokal)"
+msgstr "Suche bei ZDF (lokal)"
 
 #: play.h:653 play.h:738
 msgid "Search on TecTime (local)"
-msgstr "Suche diesen Titel bei TecTime TV (lokal)"
+msgstr "Suche bei TecTime TV (lokal)"
 
 #: play.h:654 play.h:740
 msgid "Search on Giga (local)"
-msgstr "Suche diesen Titel bei Giga (lokal)"
+msgstr "Suche bei Giga (lokal)"
 
 #: play.h:655 play.h:746
 msgid "Search on Rtl-Now (local)"
-msgstr "Suche diesen Titel bei RTL-Now (lokal)"
+msgstr "Suche bei RTL-Now (lokal)"
 
 #: play.h:656 play.h:744
 msgid "Search on Rtl2-Now (local)"
-msgstr "Suche diesen Titel bei RTL2-Now (lokal)"
+msgstr "Suche bei RTL2-Now (lokal)"
 
 #: play.h:657 play.h:748
 msgid "Search on SuperRTL-Now (local)"
-msgstr "Suche diesen Titel bei SuperRTL-Now (lokal)"
+msgstr "Suche bei SuperRTL-Now (lokal)"
 
 #: play.h:658 play.h:750
 msgid "Search on VOX-Now (local)"
-msgstr "Suche diesen Titel bei VOX-Now (lokal)"
+msgstr "Suche bei VOX-Now (lokal)"
 
 #: play.h:659 play.h:732
 msgid "Search on InternetTv (local)"
-msgstr "Suche diesen Titel in InternetTV (lokal)"
+msgstr "Suche in InternetTV (lokal)"
 
 #: play.h:660 play.h:730
 msgid "Search on InternetRadio (local)"
-msgstr "Suche diesen Titel bei den Internet Radios (lokal)"
+msgstr "Suche bei den Internet Radios (lokal)"
 
 #: play.h:670 plugins_streaminfo_skin.xml.h:3 skins_streaminfo_skin.xml.h:3
 msgid "Streaminfo"
@@ -4126,7 +4126,7 @@ msgstr ""
 
 #: plugins_readerconfig_skin.xml.h:7 skins_readerconfig_skin.xml.h:7
 msgid "Reader Config"
-msgstr "Einstellungen"
+msgstr "Reader"
 
 #: plugins_readerconfig_skin.xml.h:8 readerconfig.h:268
 #: skins_readerconfig_skin.xml.h:8
@@ -6671,7 +6671,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:380
 msgid "Module Config"
-msgstr "Einstellungen"
+msgstr "Module"
 
 #: skin_default_skin.xml.h:382 system_infos.h:74
 msgid "Mounts"
@@ -6715,31 +6715,31 @@ msgstr "Netzmaske"
 
 #: skin_default_skin.xml.h:394
 msgid "Network Adapter Settings"
-msgstr "Einstellungen"
+msgstr "Netzwerk"
 
 #: skin_default_skin.xml.h:395
 msgid "Network Adapter Test"
-msgstr "Netzwerk Test"
+msgstr "Test"
 
 #: skin_default_skin.xml.h:396
 msgid "Networkbrowser"
-msgstr "Netzwerk Browser"
+msgstr "Browser"
 
 #: skin_default_skin.xml.h:397
 msgid "Network Interfacelist"
-msgstr "Adapterliste"
+msgstr "Adapter"
 
 #: skin_default_skin.xml.h:398
 msgid "Network Restart"
-msgstr "Netzwerk neu starten"
+msgstr "Neu starten"
 
 #: skin_default_skin.xml.h:399
 msgid "Network Scan"
-msgstr "Netzwerk durchsuchen"
+msgstr "Durchsuchen"
 
 #: skin_default_skin.xml.h:400
 msgid "Network Test"
-msgstr "Netzwerkverbindung testen"
+msgstr "Testen"
 
 #: skin_default_skin.xml.h:401
 msgid "Newsletter"
@@ -7041,7 +7041,7 @@ msgstr "Einstellungen"
 
 #: skin_default_skin.xml.h:482
 msgid "Records"
-msgstr "Aufnahmen"
+msgstr "Timer Aufnahmen"
 
 #: skin_default_skin.xml.h:483
 msgid "Records and EPG"
@@ -7177,7 +7177,7 @@ msgstr "SATA Anschluss"
 
 #: skin_default_skin.xml.h:522
 msgid "Sat Config"
-msgstr "Satelliten Einstellung"
+msgstr "Satelliten"
 
 #: skin_default_skin.xml.h:523
 msgid "SATCR Frequency"
@@ -7209,7 +7209,7 @@ msgstr "Transponder speichern"
 
 #: skin_default_skin.xml.h:534
 msgid "Scan Config"
-msgstr "Einstellungen"
+msgstr "Suche"
 
 #: skin_default_skin.xml.h:535
 msgid "ScanList"
@@ -7697,7 +7697,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:676
 msgid "Tunerconfig"
-msgstr "Tuner Konfiguration"
+msgstr "Tuner"
 
 #: skin_default_skin.xml.h:677
 msgid "Tuner Configuration"
