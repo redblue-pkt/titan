@@ -4652,11 +4652,11 @@ msgstr "FEHLER: Transponder ID stimmt nicht!"
 
 #: rectimer.h:546
 msgid "not started akttime higher than timer endtime"
-msgstr "nicht gestartet, Endzeit bereits vergangen"
+msgstr "FEHLER: Timer nicht gestartet, Endzeit bereits vergangen"
 
 #: rectimer.h:557
 msgid "EPG Scan activate standby?"
-msgstr "EPG Scan aktiviert Standby?"
+msgstr "EPG Scan startet bald. Standby aktivieren?"
 
 #: rectimer.h:664
 msgid "stopped from user"
@@ -4758,7 +4758,9 @@ msgstr ""
 msgid ""
 "Do you really want to erase Swap (Settings are preserve)?\n"
 "The Box will reboot and the erase will be started!"
-msgstr ""
+msgstr "Wollen Sie wirklich das Swap-Dateisystem löschen\n"
+"Ihre Settings bleiben erhalten."
+"Der Receiver wird neugestartet und das löschen wird durchgeführt."
 
 #: restoredefault.h:63 restoredefault.h:67 restoredefault.h:71
 #: skin_default_skin.xml.h:505
