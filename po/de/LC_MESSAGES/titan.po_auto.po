@@ -3583,7 +3583,7 @@ msgstr "Im Standby aktiv"
 #: plugins_lcdpearl1_skin.xml.h:5 plugins_lcdsamsung_skin.xml.h:5
 #: skins_lcdpearl1_skin.xml.h:5 skins_lcdsamsung_skin.xml.h:5
 msgid "alle Menus anzeigen"
-msgstr ""
+msgstr "Alle Menüs anzeigen"
 
 #: plugins_lcdpearl1_skin.xml.h:6 skins_lcdpearl1_skin.xml.h:6
 msgid "Auswahl"
@@ -4214,15 +4214,15 @@ msgstr "TiThek"
 
 #: plugins_tithek_skin.xml.h:3 skins_tithek_skin.xml.h:3
 msgid "ADD FAV"
-msgstr "Favoriten hinzufügen"
+msgstr "Hinzufügen"
 
 #: plugins_tithek_skin.xml.h:4 skins_tithek_skin.xml.h:4
 msgid "DEL FAV"
-msgstr "Favoriten entfernen"
+msgstr "Entfernen"
 
 #: plugins_tithek_skin.xml.h:5 skins_tithek_skin.xml.h:5
 msgid "Exit Tithek"
-msgstr "Tithek verlassen"
+msgstr "Beenden"
 
 #: plugins_tithek_skin.xml.h:6 skins_tithek_skin.xml.h:6
 msgid "Hid XXX Streams"
@@ -4240,7 +4240,7 @@ msgstr "Bitte warten"
 #: plugins_tithek_skin.xml.h:9 skin_default_skin.xml.h:488
 #: skins_tithek_skin.xml.h:9
 msgid "Red-Menu"
-msgstr "Rot-Menü"
+msgstr "Menü"
 
 #: plugins_tithek_skin.xml.h:11 skins_tithek_skin.xml.h:11
 msgid "Show Pay Streams"
@@ -4252,11 +4252,11 @@ msgstr "Ansicht Cover (Streams)"
 
 #: plugins_tithek_skin.xml.h:13 skins_tithek_skin.xml.h:13
 msgid "View Sections"
-msgstr "Ansicht Menüs"
+msgstr "Menü Ansicht"
 
 #: plugins_tiwakeup_skin.xml.h:1 skins_tiwakeup_skin.xml.h:1
 msgid "tiWakeup"
-msgstr ""
+msgstr "Wecker"
 
 #: plugins_tmc_skin.xml.h:2 skins_tmc_skin.xml.h:2
 msgid "Back Pic"
@@ -5346,7 +5346,7 @@ msgstr "Audio Quelle"
 
 #: skin_default_skin.xml.h:82
 msgid "Audio/Subt."
-msgstr "Audio/Untertitel"
+msgstr "Ton/Untertitel"
 
 #: skin_default_skin.xml.h:83
 msgid "Audio Tracks"
@@ -5703,7 +5703,7 @@ msgstr "DiSEqC"
 
 #: skin_default_skin.xml.h:184
 msgid "Diseqc Settings"
-msgstr "Einstellungen"
+msgstr "DiSEqC(s)"
 
 #: skin_default_skin.xml.h:185
 msgid "DNS Name"
@@ -5739,7 +5739,7 @@ msgstr "Holländisch"
 
 #: skin_default_skin.xml.h:194
 msgid "DYNDNS Settings"
-msgstr "DYNDNS Einstellungen"
+msgstr "DYNDNS"
 
 #: skin_default_skin.xml.h:195
 msgid "e"
@@ -6271,7 +6271,7 @@ msgid ""
 "control cross and the extra buttons displayed with your remote control to "
 "select."
 msgstr ""
-"Hier können Sie aus der folgenden Liste einen Skin auswählen.\n"
+"Hier können Sie einen Skin aus der folgenden Liste auswählen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6299,7 +6299,7 @@ msgid ""
 "Here you can select your Network Interface. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier können Sie Ihre Netzwerkschnittstelle auswählen.\n"
+"Hier können Sie Ihren Netzwerk Adapter auswählen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6322,7 +6322,7 @@ msgstr ""
 "Hier können Sie Ihren Sat Tuner einstellen.\n"
 "Stellen Sie zunächst Ihre Satelliten Auswahl ein. Bei Verwendung von DiSEqC "
 "weisen Sie zusätzlich den verwendeten Port zu. Für erweiterte Lnb / Unicam "
-"navigieren Sie zum Feld und drücken Sie die Rote Taste."
+"Einstellungen navigieren Sie zum Feld und drücken Sie die Rote Taste."
 
 #: skin_default_skin.xml.h:298
 msgid ""
@@ -6622,7 +6622,7 @@ msgstr "Speicher"
 
 #: skin_default_skin.xml.h:367
 msgid "MENU"
-msgstr "MENÜ"
+msgstr "Menü"
 
 #: skin_default_skin.xml.h:368
 msgid "Menulist"
@@ -6874,7 +6874,7 @@ msgstr "Sender mit PIN sperren"
 
 #: skin_default_skin.xml.h:436
 msgid "Pin Code menu"
-msgstr "PIN Einstellungsmenu"
+msgstr "PIN Einstellungsmenü"
 
 #: skin_default_skin.xml.h:437
 msgid "PIN Settings"
@@ -6964,7 +6964,7 @@ msgstr "Senderschutzzeit aus (min)"
 
 #: skin_default_skin.xml.h:460
 msgid "Protect Menu"
-msgstr "Menu sperren"
+msgstr "Menü sperren"
 
 #: skin_default_skin.xml.h:461
 msgid "protect service"
