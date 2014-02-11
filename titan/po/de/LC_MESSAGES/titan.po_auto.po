@@ -7788,7 +7788,7 @@ msgstr "USB-Aktualisierung (Online)"
 
 #: skin_default_skin.xml.h:702
 msgid "Usbupdate (tmp)"
-msgstr "USB-Aktualisierung (Lokal)"
+msgstr "Softwareaktualisierung (USB)"
 
 #: skin_default_skin.xml.h:703
 msgid "Use cross control for fast zapping and vol"
@@ -8822,7 +8822,7 @@ msgstr "Uhrzeit (klein)"
 
 #: vfdisplay.h:38
 msgid "channel number"
-msgstr "Programmplatz"
+msgstr "Sender Nr."
 
 #: vfdisplay.h:45
 msgid "date + time"
