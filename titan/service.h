@@ -411,7 +411,10 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		{
 			videoselectsource(videonode, VIDEO_SOURCE_DEMUX);
 			setencoding(chnode, videonode);
-			videoplay(videonode);
+			if(videoplay(videonode)!= 0) {
+				usleep(500000);
+				videoplay(videonode);
+			}
 		}
 		else
 			err("can't get free video dev");
