@@ -1,4 +1,4 @@
-﻿#: about.h:9
+#: about.h:9
 msgid "Image"
 msgstr ""
 
@@ -621,7 +621,8 @@ msgid "Is this Videomode ok ?"
 msgstr "Chế độ này ok?"
 
 #: betarobot.h:57
-msgid "This Plugin is only for Betatester and can change your Settings!\n"
+msgid ""
+"This Plugin is only for Betatester and can change your Settings!\n"
 "Realy run it?"
 msgstr ""
 
@@ -662,7 +663,8 @@ msgid "Browser Favoriten"
 msgstr ""
 
 #: callmon_main.h:39
-msgid "Callmon Timeout !!!\n"
+msgid ""
+"Callmon Timeout !!!\n"
 "\n"
 "check your parameter "
 msgstr ""
@@ -881,7 +883,8 @@ msgstr "---"
 #: skins_tsSchnitt_skin.xml.h:11 skins_weather_skin.xml.h:4
 #: skins_wins3_skin.xml.h:4 skins_zapback_skin.xml.h:7
 msgid ""
-msgstr "Project-Id-Version: TitanNit 1.49\n"
+msgstr ""
+"Project-Id-Version: TitanNit 1.49\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-07 10:44+0200\n"
 "PO-Revision-Date: 2014-02-07 17:47+0200\n"
@@ -891,7 +894,6 @@ msgstr "Project-Id-Version: TitanNit 1.49\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-""
 
 #: diseqcconfig.h:9 diseqcconfig.h:16
 msgid "committed, toneburst"
@@ -1039,7 +1041,8 @@ msgid "Hoster Url not http://"
 msgstr ""
 
 #: divxstage.h:79 novamov.h:80 nowvideo.h:87 primeshare.h:79 videoweed.h:80
-msgid "The file is being transfered to our other servers. This may take few minutes."
+msgid ""
+"The file is being transfered to our other servers. This may take few minutes."
 msgstr ""
 
 #: divxstage.h:150 faststream.h:79 faststream.h:90 faststream.h:102
@@ -1060,9 +1063,11 @@ msgid "DLNA started."
 msgstr "bắt đầu DLNA"
 
 #: dlna.h:336
-msgid "DLNA not started,\n"
+msgid ""
+"DLNA not started,\n"
 "Please check your config."
-msgstr "DLNA không bắt đầu,\n"
+msgstr ""
+"DLNA không bắt đầu,\n"
 "Vui lòng kiểm tra lại cấu hình."
 
 #: dlna.h:345
@@ -1296,7 +1301,11 @@ msgid "Tpk Install - select file"
 msgstr ""
 
 #: extensions.h:207 extensions.h:234 extensions.h:386 tpk.h:2990
-msgid "It may only be a package to be installed. If they want to install another package of this section, they only remove the installed packet. Is not the plugin after reinstalling the software TitanNit in TitanNit Menu Visible then perform an update by Tpk to: "
+msgid ""
+"It may only be a package to be installed. If they want to install another "
+"package of this section, they only remove the installed packet. Is not the "
+"plugin after reinstalling the software TitanNit in TitanNit Menu Visible "
+"then perform an update by Tpk to: "
 msgstr ""
 
 #: extensions.h:212 extensions.h:353
@@ -1348,10 +1357,12 @@ msgid "No plugin found."
 msgstr "Không tìm thấy"
 
 #: extensions.h:392
-msgid "Some plugins needs restart.\n"
+msgid ""
+"Some plugins needs restart.\n"
 "If the plugin is not active\n"
 "reboot the box."
-msgstr "Một số kết nối cần khởi động lại.\n"
+msgstr ""
+"Một số kết nối cần khởi động lại.\n"
 " nếu kết nối không được kích hoạt \n"
 " vui lòng khởi động lai đầu thu"
 
@@ -1380,7 +1391,8 @@ msgid "Can't get data from facebook"
 msgstr ""
 
 #: facebook.h:157
-msgid "Facebook allready registered,\n"
+msgid ""
+"Facebook allready registered,\n"
 "Make new registration ?"
 msgstr ""
 
@@ -1573,7 +1585,8 @@ msgid "Are you sure you want to delete this directory?"
 msgstr "Bạn chắc chắn muốn xóa thư mục này ?"
 
 #: harddisk.h:350
-msgid "Directory has content\n"
+msgid ""
+"Directory has content\n"
 "Really delete directory and content?"
 msgstr ""
 
@@ -1630,38 +1643,47 @@ msgid "record"
 msgstr "Ghi"
 
 #: harddisk.h:624
-msgid "HDD > 2TB unsupported.\n"
+msgid ""
+"HDD > 2TB unsupported.\n"
 "You must first install plugin parted, then you can use this panel."
 msgstr ""
 
 #: harddisk.h:632
-msgid "Are you sure you want to remove all Partitions\n"
+msgid ""
+"Are you sure you want to remove all Partitions\n"
 "on this device and create a new Partition 1?\n"
 "Box reboots after format"
-msgstr "Bạn có muốn xóa tất cả các phân vùng\n"
+msgstr ""
+"Bạn có muốn xóa tất cả các phân vùng\n"
 "trên thiết bị này và tạo một phân vùng mới ?\n"
 "Đầu thu sẽ khởi động lại sau khi định dạng."
 
 #: harddisk.h:666
-msgid "Are you sure you want to format this Partition?\n"
+msgid ""
+"Are you sure you want to format this Partition?\n"
 "Box reboots after format"
-msgstr "Bạn muốn định dạng phân vùng này?\n"
+msgstr ""
+"Bạn muốn định dạng phân vùng này?\n"
 " Đầu thu sẽ khởi động lại sau khi định dạng."
 
 #: harddisk.h:784
-msgid "ERROR\n"
+msgid ""
+"ERROR\n"
 "partition could not be created"
 msgstr ""
 
 #: harddisk.h:802
-msgid "Information: This hard drive size can take a file\n"
+msgid ""
+"Information: This hard drive size can take a file\n"
 "system check between 30 minutes and 1.5 hours."
 msgstr ""
 
 #: harddisk.h:805
-msgid "Are you sure you want to check this Partition?\n"
+msgid ""
+"Are you sure you want to check this Partition?\n"
 "Box reboots after check"
-msgstr "Bạn muốn kiể tra phân vùng này?\n"
+msgstr ""
+"Bạn muốn kiể tra phân vùng này?\n"
 " Đầu thu sẽ khởi động lại sau khi kiểm tra."
 
 #: harddisk.h:867 harddisk.h:868
@@ -1689,7 +1711,8 @@ msgid "60 min"
 msgstr ""
 
 #: harddisk.h:1035
-msgid "Found new Stick/HDD.\n"
+msgid ""
+"Found new Stick/HDD.\n"
 "You can configure it in Harddisk Menu."
 msgstr ""
 
@@ -1814,12 +1837,10 @@ msgstr ""
 
 #: hwtest.h:370
 msgid ": Present\n"
-""
 msgstr ""
 
 #: hwtest.h:376
 msgid ": Not Present\n"
-""
 msgstr ""
 
 #: hwtest.h:384
@@ -1860,42 +1881,34 @@ msgstr ""
 
 #: hwtest.h:575
 msgid "LNB off / 22K off: OK\n"
-""
 msgstr ""
 
 #: hwtest.h:577
 msgid "LNB off / 22K off: NOT OK\n"
-""
 msgstr ""
 
 #: hwtest.h:584
 msgid "LNB 18V / 22K off: OK\n"
-""
 msgstr ""
 
 #: hwtest.h:586
 msgid "LNB 18V / 22K off: NOT OK\n"
-""
 msgstr ""
 
 #: hwtest.h:593
 msgid "LNB 13V / 22K off: OK\n"
-""
 msgstr ""
 
 #: hwtest.h:595
 msgid "LNB 13V / 22K off: NOT OK\n"
-""
 msgstr ""
 
 #: hwtest.h:602
 msgid "LNB 13V / 22K on: OK\n"
-""
 msgstr ""
 
 #: hwtest.h:604
 msgid "LNB 13V / 22K on: NOT OK\n"
-""
 msgstr ""
 
 #: hwtest.h:652
@@ -1923,9 +1936,11 @@ msgid "DYNDNS started."
 msgstr "bắt đầu DYNDNS"
 
 #: inadyn.h:190
-msgid "DYNDNS not started,\n"
+msgid ""
+"DYNDNS not started,\n"
 "Please check your config."
-msgstr "DYNDNS không bắt đầu,\n"
+msgstr ""
+"DYNDNS không bắt đầu,\n"
 "vui lòng kiểm tra lại cấu hình."
 
 #: inadyn.h:200
@@ -1933,7 +1948,8 @@ msgid "DYNDNS now stopped"
 msgstr "DYNDNS đã dừng"
 
 #: info.h:23
-msgid "For next OnlineUpdate please contact Atemio and send this Serial Number\n"
+msgid ""
+"For next OnlineUpdate please contact Atemio and send this Serial Number\n"
 "and your Atemio Serial Number !!\n"
 "\n"
 "Board-ID SerialNr:"
@@ -2065,7 +2081,8 @@ msgstr "Đã thiết lập nhà sản xuất"
 
 #: mc_audioplayer.h:328 mc_main.h:200 mc_pictureplayer.h:119
 #: mc_videoplayer.h:325
-msgid "Shooting Background done !\n"
+msgid ""
+"Shooting Background done !\n"
 "Save Screenshoot Path: /tmp/screenshot.jpg"
 msgstr ""
 
@@ -2379,9 +2396,11 @@ msgid "20"
 msgstr ""
 
 #: mediadbsettings.h:95
-msgid "No MediaDB Directory found\n"
+msgid ""
+"No MediaDB Directory found\n"
 "Press OK to create it"
-msgstr " Không tìm thấy thư mục media!\n"
+msgstr ""
+" Không tìm thấy thư mục media!\n"
 " ấn Ok để tạo!"
 
 #: menu.h:884 menu.h:886 skin_default_skin.xml.h:531
@@ -2457,7 +2476,8 @@ msgid "MULTI EPG - All Channels"
 msgstr "EPG – Tất cả các chương trình"
 
 #: networkbrowser.h:944
-msgid "For Better Win7 Support install please Tpk Install > Network > Smbclient"
+msgid ""
+"For Better Win7 Support install please Tpk Install > Network > Smbclient"
 msgstr ""
 
 #: networkbrowser.h:1005 networkbrowser.h:1011 networkbrowser.h:1021
@@ -2634,15 +2654,19 @@ msgid "Start Wlan ?"
 msgstr "Bắt đầu Wlan ?"
 
 #: network.h:800
-msgid "WLAN started.\n"
+msgid ""
+"WLAN started.\n"
 " You can now configure the new interface."
-msgstr "bắt đầu WLAN.\n"
+msgstr ""
+"bắt đầu WLAN.\n"
 "bạn có thể cấu hình giao diện mới"
 
 #: network.h:804
-msgid "WLAN not started,\n"
+msgid ""
+"WLAN not started,\n"
 "Please check your config."
-msgstr "WLAN không bắt đầu\n"
+msgstr ""
+"WLAN không bắt đầu\n"
 "Vui lòng kiểm tra lại cấu hình mạng."
 
 #: network.h:827
@@ -2662,7 +2686,8 @@ msgid "Found Wlan Stick and driver for: "
 msgstr ""
 
 #: network.h:881
-msgid "Found Wlan Stick but no driver\n"
+msgid ""
+"Found Wlan Stick but no driver\n"
 "Please install driver: "
 msgstr ""
 
@@ -2910,9 +2935,11 @@ msgid "videmode"
 msgstr ""
 
 #: panel_settings_wizard.h:6
-msgid "Do you really want to start the Wizard?\n"
+msgid ""
+"Do you really want to start the Wizard?\n"
 "The Box will reboot and the Wizard will be started!"
-msgstr "Bạn muốn khởi động wizard?\n"
+msgstr ""
+"Bạn muốn khởi động wizard?\n"
 "Đầu thu sẽ khởi động lại và wizard sẽ được bắt đầu"
 
 #: play.h:396 play.h:430 plugins_imdbapi_skin.xml.h:9
@@ -3170,7 +3197,9 @@ msgstr ""
 #: plugins_stopifnotused_skin.xml.h:5 skins_autotimer_skin.xml.h:8
 #: skins_callmonitor1_skin.xml.h:16 skins_lcdpearl1_skin.xml.h:10
 #: skins_lcdsamsung_skin.xml.h:13 skins_stopifnotused_skin.xml.h:5
-msgid "text=EXIT halign=center valign=middle bordercol=exitcol bordersize=2 bordertype=2 posx=160 posy=0 width=150 height=30/>"
+msgid ""
+"text=EXIT halign=center valign=middle bordercol=exitcol bordersize=2 "
+"bordertype=2 posx=160 posy=0 width=150 height=30/>"
 msgstr ""
 
 #: plugins_autotimer_skin.xml.h:9 plugins_callmonitor1_skin.xml.h:18
@@ -3178,13 +3207,17 @@ msgstr ""
 #: plugins_stopifnotused_skin.xml.h:6 skins_autotimer_skin.xml.h:9
 #: skins_callmonitor1_skin.xml.h:18 skins_lcdpearl1_skin.xml.h:11
 #: skins_lcdsamsung_skin.xml.h:14 skins_stopifnotused_skin.xml.h:6
-msgid "text=SAVE halign=center valign=middle bordercol=green bordersize=2 bordertype=2 posx=0 posy=0 width=150 height=30/>"
+msgid ""
+"text=SAVE halign=center valign=middle bordercol=green bordersize=2 "
+"bordertype=2 posx=0 posy=0 width=150 height=30/>"
 msgstr ""
 
 #: plugins_autotimer_skin.xml.h:10 plugins_lcdpearl1_skin.xml.h:12
 #: plugins_lcdsamsung_skin.xml.h:15 skins_autotimer_skin.xml.h:10
 #: skins_lcdpearl1_skin.xml.h:12 skins_lcdsamsung_skin.xml.h:15
-msgid "text=START halign=center valign=middle bordercol=blue bordersize=2 bordertype=2 posx=400 posy=0 width=200 height=30/>"
+msgid ""
+"text=START halign=center valign=middle bordercol=blue bordersize=2 "
+"bordertype=2 posx=400 posy=0 width=200 height=30/>"
 msgstr ""
 
 #: plugins_autotimer_skin.xml.h:11 skins_autotimer_skin.xml.h:11
@@ -3257,7 +3290,9 @@ msgid "Passwort-FritzBox"
 msgstr ""
 
 #: plugins_callmonitor1_skin.xml.h:17 skins_callmonitor1_skin.xml.h:17
-msgid "text=LOAD-FritzBook halign=center valign=middle bordercol=blue bordersize=2 bordertype=2 posx=400 posy=0 width=200 height=30/>"
+msgid ""
+"text=LOAD-FritzBook halign=center valign=middle bordercol=blue bordersize=2 "
+"bordertype=2 posx=400 posy=0 width=200 height=30/>"
 msgstr ""
 
 #: plugins_catcatch_skin.xml.h:1 skins_catcatch_skin.xml.h:1
@@ -3337,7 +3372,9 @@ msgid "Facebook Register"
 msgstr ""
 
 #: plugins_facebook_skin.xml.h:3 skins_facebook_skin.xml.h:3
-msgid "Enter the shown url in your browser and enter the Code to register the receiver to facebook"
+msgid ""
+"Enter the shown url in your browser and enter the Code to register the "
+"receiver to facebook"
 msgstr ""
 
 #: plugins_filemanager_skin.xml.h:1 skins_filemanager_skin.xml.h:1
@@ -3754,15 +3791,23 @@ msgid "hddreplacement"
 msgstr "thay ổ cứng"
 
 #: plugins_networkbrowser_skin.xml.h:10 skins_networkbrowser_skin.xml.h:10
-msgid "Here you can configure your Auth Data. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgid ""
+"Here you can configure your Auth Data. Use to navigate the control cross and "
+"the extra buttons displayed with your remote control to select."
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:11 skins_networkbrowser_skin.xml.h:11
-msgid "Here you can configure your network shares. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr " Bạn có thể cấu hình mạng chia sẻ ở đây. sử dụng các phím di chuyển và các nút mở rộng trên điều khiển để chọn."
+msgid ""
+"Here you can configure your network shares. Use to navigate the control "
+"cross and the extra buttons displayed with your remote control to select."
+msgstr ""
+" Bạn có thể cấu hình mạng chia sẻ ở đây. sử dụng các phím "
+"di chuyển và các nút mở rộng trên điều khiển để chọn."
 
 #: plugins_networkbrowser_skin.xml.h:12 skins_networkbrowser_skin.xml.h:12
-msgid "If you don't find Windows shares you need to disable 'Password protected sharing' in the 'Network and Sharing Center'."
+msgid ""
+"If you don't find Windows shares you need to disable 'Password protected "
+"sharing' in the 'Network and Sharing Center'."
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:13 skin_default_skin.xml.h:325
@@ -3879,11 +3924,15 @@ msgid "Optimize"
 msgstr "Tối ưu hóa"
 
 #: plugins_optimize_skin.xml.h:2 skins_optimize_skin.xml.h:2
-msgid "text=EXIT halign=center valign=middle bordercol=exitcol bordersize=4 bordertype=2 posx=180 posy=0 width=150 height=30/>"
+msgid ""
+"text=EXIT halign=center valign=middle bordercol=exitcol bordersize=4 "
+"bordertype=2 posx=180 posy=0 width=150 height=30/>"
 msgstr ""
 
 #: plugins_optimize_skin.xml.h:3 skins_optimize_skin.xml.h:3
-msgid "text=OK halign=center valign=middle bordercol=okcol bordersize=4 bordertype=2 posx=20 posy=0 width=150 height=30/>"
+msgid ""
+"text=OK halign=center valign=middle bordercol=okcol bordersize=4 "
+"bordertype=2 posx=20 posy=0 width=150 height=30/>"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:1 plugins_panel_skin.xml.h:10
@@ -3991,13 +4040,21 @@ msgid "Enable"
 msgstr "cho phép"
 
 #: plugins_readerconfig_skin.xml.h:5 skins_readerconfig_skin.xml.h:5
-msgid "Here you can configure your reader. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Bạn có thể cấu hình thiết bị đọc ở đây. nsử dụng các phím di chuyển và các nút mở rộng trên điều khiển để chọn."
+msgid ""
+"Here you can configure your reader. Use to navigate the control cross and "
+"the extra buttons displayed with your remote control to select."
+msgstr ""
+"Bạn có thể cấu hình thiết bị đọc ở đây. nsử dụng các phím "
+"di chuyển và các nút mở rộng trên điều khiển để chọn."
 
 #: plugins_readerconfig_skin.xml.h:6 skin_default_skin.xml.h:300
 #: skins_readerconfig_skin.xml.h:6
-msgid "Here you can set your language. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Bạn có thể thiết lập ngôn ngữ ở đây. sử dụng các phím di chuyển và các nút mở rộng trên điều khiển để chọn."
+msgid ""
+"Here you can set your language. Use to navigate the control cross and the "
+"extra buttons displayed with your remote control to select."
+msgstr ""
+"Bạn có thể thiết lập ngôn ngữ ở đây. sử dụng các phím di "
+"chuyển và các nút mở rộng trên điều khiển để chọn."
 
 #: plugins_readerconfig_skin.xml.h:7 skins_readerconfig_skin.xml.h:7
 msgid "Reader Config"
@@ -4215,7 +4272,9 @@ msgid "select movie"
 msgstr ""
 
 #: plugins_tsSchnitt_skin.xml.h:8 skins_tsSchnitt_skin.xml.h:8
-msgid "Start movie in the internal player, set with 0 key marker during a movie. 5 key is for the marker overview. Then here select movie and start."
+msgid ""
+"Start movie in the internal player, set with 0 key marker during a movie. 5 "
+"key is for the marker overview. Then here select movie and start."
 msgstr ""
 
 #: plugins_tsSchnitt_skin.xml.h:10 skins_tsSchnitt_skin.xml.h:10
@@ -4303,7 +4362,8 @@ msgid "startposition"
 msgstr ""
 
 #: possetup.h:98
-msgid "Position Setup is not allowed if record\n"
+msgid ""
+"Position Setup is not allowed if record\n"
 "or stream is running !"
 msgstr ""
 
@@ -4372,9 +4432,11 @@ msgid "Oscam dvbapi config enabled !"
 msgstr ""
 
 #: record.h:37
-msgid "HDD not configured\n"
+msgid ""
+"HDD not configured\n"
 "can't find record path"
-msgstr "Không cấu hình được ổ cứng\n"
+msgstr ""
+"Không cấu hình được ổ cứng\n"
 "không tìm thấy đường dẫn"
 
 #: record.h:40
@@ -4446,14 +4508,15 @@ msgid "Box recording finished poweroff in 30sec !"
 msgstr ""
 
 #: record.h:971
-msgid "Can't find free Tuner for Record.\n"
+msgid ""
+"Can't find free Tuner for Record.\n"
 "Switch to Recording/Timeshift Channel ?"
-msgstr "Không tìm thấy tuner để ghi.\n"
+msgstr ""
+"Không tìm thấy tuner để ghi.\n"
 "Chuyển để ghi/Timeshift chương trình"
 
 #: record.h:1157
 msgid "Timer Record start !\n"
-""
 msgstr ""
 
 #: record.h:1272 record.h:1281 record.h:1292 record.h:1327 record.h:1336
@@ -4610,12 +4673,14 @@ msgid "Can't restore settings"
 msgstr "Không thể khôi phục lại các thiết lập"
 
 #: restoredefault.h:32
-msgid "Do you really want to erase all data and backups from Swap?\n"
+msgid ""
+"Do you really want to erase all data and backups from Swap?\n"
 "The Box will reboot and the erase will be started!"
 msgstr ""
 
 #: restoredefault.h:47
-msgid "Do you really want to erase Swap (Settings are preserve)?\n"
+msgid ""
+"Do you really want to erase Swap (Settings are preserve)?\n"
 "The Box will reboot and the erase will be started!"
 msgstr ""
 
@@ -4645,7 +4710,9 @@ msgid "Connection to server lost !"
 msgstr "Verbindung zum Server verloren!"
 
 #: rtl2now.h:28
-msgid "Found Pay Stream visit the official Website and Order this Stream and try this again !"
+msgid ""
+"Found Pay Stream visit the official Website and Order this Stream and try "
+"this again !"
 msgstr ""
 
 #: scan.h:532
@@ -4673,7 +4740,8 @@ msgid "Blindscan: "
 msgstr ""
 
 #: scan.h:1598 scan.h:1628
-msgid "Channel scan ended.\n"
+msgid ""
+"Channel scan ended.\n"
 "Nothing found."
 msgstr ""
 
@@ -4834,13 +4902,16 @@ msgid "Script execute"
 msgstr "cho phép thực hiện"
 
 #: service.h:704
-msgid "Timeshift is running !!!\n"
+msgid ""
+"Timeshift is running !!!\n"
 "Stop it and switch ?"
-msgstr "Đang chạy timeshift !!!\n"
+msgstr ""
+"Đang chạy timeshift !!!\n"
 "Bạn muốn dừng timeshift và chuyển?"
 
 #: service.h:928
-msgid "Can't find a Tuner.\n"
+msgid ""
+"Can't find a Tuner.\n"
 "All Tuners in use or no Tuner defined."
 msgstr ""
 
@@ -5126,7 +5197,11 @@ msgid "After EPG Scan"
 msgstr ""
 
 #: skin_default_skin.xml.h:67
-msgid "After the manual search, you have to if they want to save all the sender to save the search with the green button. To add a station manually have to select the sender in the right box and then save it with the red button that station. If you do not do this and go to exit out the search not saved."
+msgid ""
+"After the manual search, you have to if they want to save all the sender to "
+"save the search with the green button. To add a station manually have to "
+"select the sender in the right box and then save it with the red button that "
+"station. If you do not do this and go to exit out the search not saved."
 msgstr ""
 
 #: skin_default_skin.xml.h:68
@@ -5259,8 +5334,12 @@ msgid "Bandwidth:"
 msgstr ""
 
 #: skin_default_skin.xml.h:105
-msgid "Before you can see Signal/SNR/Ber you must zap to a channel of the satellite you are searching."
-msgstr "trước khi bạn có thể xem mức tín hiệu/SNR/bạn phải dò lại chương trìnhĐang dò chương trình."
+msgid ""
+"Before you can see Signal/SNR/Ber you must zap to a channel of the satellite "
+"you are searching."
+msgstr ""
+"trước khi bạn có thể xem mức tín hiệu/SNR/bạn phải dò lại ch�"
+"�ơng trìnhĐang dò chương trình."
 
 #: skin_default_skin.xml.h:106
 msgid "Begin"
@@ -5711,7 +5790,9 @@ msgid "Fix Shutdown Time"
 msgstr "đặt thời gian tắt"
 
 #: skin_default_skin.xml.h:233
-msgid "Flash: Flash range is deleted after update, mnt: flash range to permanently update available, swap: USB medium permanently"
+msgid ""
+"Flash: Flash range is deleted after update, mnt: flash range to permanently "
+"update available, swap: USB medium permanently"
 msgstr ""
 
 #: skin_default_skin.xml.h:234
@@ -5819,8 +5900,13 @@ msgid "Hangtime"
 msgstr "Hang time"
 
 #: skin_default_skin.xml.h:263
-msgid "Here they can do for your chosen tuner to lnb settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Thiết lập LNB.sử dụng các phím di chuyển và các nút mở rộng trên điều khiển để chọn."
+msgid ""
+"Here they can do for your chosen tuner to lnb settings. Use to navigate the "
+"control cross and the extra buttons displayed with your remote control to "
+"select."
+msgstr ""
+"Thiết lập LNB.sử dụng các phím di chuyển và các nút mở rộng "
+"trên điều khiển để chọn."
 
 #: skin_default_skin.xml.h:264
 msgid "Here to select your remote Model"
@@ -5828,162 +5914,327 @@ msgstr ""
 
 #: skin_default_skin.xml.h:265
 msgid "Here you can backup and restore your settings."
-msgstr "Bạn có thể sao chép và khôi phục lại các thiết lập ở đây."
+msgstr ""
+"Bạn có thể sao chép và khôi phục lại các thiết lập ở đây."
 
 #: skin_default_skin.xml.h:266
-msgid "Here you can check the reception of the current station. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Bạn có thể kiểm tra mức tín hiệu của trạng thái hiện tại ở đây. sử dụng các phím di chuyển và các nút mở rộng trên điều khiển để chọn."
+msgid ""
+"Here you can check the reception of the current station. Use to navigate the "
+"control cross and the extra buttons displayed with your remote control to "
+"select."
+msgstr ""
+"Bạn có thể kiểm tra mức tín hiệu của trạng thái hiện tại ở "
+"đây. sử dụng các phím di chuyển và các nút mở rộng trên điều "
+"khiển để chọn."
 
 #: skin_default_skin.xml.h:267
-msgid "Here you can choose to configure your tuner. For your channel search, you must edit their tuner and adjust depending on the connection. For engine systems require an additional engine settings making."
+msgid ""
+"Here you can choose to configure your tuner. For your channel search, you "
+"must edit their tuner and adjust depending on the connection. For engine "
+"systems require an additional engine settings making."
 msgstr ""
 
 #: skin_default_skin.xml.h:268
-msgid "Here you can configure access to your DynDNS. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgid ""
+"Here you can configure access to your DynDNS. Use to navigate the control "
+"cross and the extra buttons displayed with your remote control to select."
 msgstr ""
 
 #: skin_default_skin.xml.h:269
-msgid "Here you can configure Ci-Modules. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Bạn có thể cấu hình moodun Ci ở đây. sử dụng các phím di chuyển và các nút mở rộng trên điều khiển để chọn."
+msgid ""
+"Here you can configure Ci-Modules. Use to navigate the control cross and the "
+"extra buttons displayed with your remote control to select."
+msgstr ""
+"Bạn có thể cấu hình moodun Ci ở đây. sử dụng các phím di "
+"chuyển và các nút mở rộng trên điều khiển để chọn."
 
 #: skin_default_skin.xml.h:270
-msgid "Here you can configure the smartcard readers. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgid ""
+"Here you can configure the smartcard readers. Use to navigate the control "
+"cross and the extra buttons displayed with your remote control to select."
 msgstr ""
 
 #: skin_default_skin.xml.h:271
-msgid "Here you can configure your web server. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Bạn có thể cấu hình máy chủ web ở đây.\n"
-"sử dụng các phím di chuyển và các nút mở rộng trên điều khiển để chọn."
+msgid ""
+"Here you can configure your web server. Use to navigate the control cross "
+"and the extra buttons displayed with your remote control to select."
+msgstr ""
+"Bạn có thể cấu hình máy chủ web ở đây.\n"
+"sử dụng các phím di chuyển và các nút mở rộng trên điều khiển "
+"để chọn."
 
 #: skin_default_skin.xml.h:272
-msgid "Here you can create a new record timer. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Bạn có thể tạo mới bộ đinh thời ghi ở đây. nsử dụng các phím di chuyển và các nút mở rộng trên điều khiển để chọn."
+msgid ""
+"Here you can create a new record timer. Use to navigate the control cross "
+"and the extra buttons displayed with your remote control to select."
+msgstr ""
+"Bạn có thể tạo mới bộ đinh thời ghi ở đây. nsử dụng các phím "
+"di chuyển và các nút mở rộng trên điều khiển để chọn."
 
 #: skin_default_skin.xml.h:273
-msgid "Here you can do a blind scan, this process takes a long time. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Bạn có thể thực hiện dò ở đây, quá trình dò sẽ mất vài phút.sử dụng các phím di chuyển và các nút mở rộng trên điều khiển để chọn."
+msgid ""
+"Here you can do a blind scan, this process takes a long time. Use to "
+"navigate the control cross and the extra buttons displayed with your remote "
+"control to select."
+msgstr ""
+"Bạn có thể thực hiện dò ở đây, quá trình dò sẽ mất vài "
+"phút.sử dụng các phím di chuyển và các nút mở rộng trên điều "
+"khiển để chọn."
 
 #: skin_default_skin.xml.h:274
-msgid "Here you can edit the following channels from the EPG. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Bạn có thể chỉnh sửa các chương trình sau theo lịch chương trình. nsử dụng các phím di chuyển và các nút mở rộng trên điều khiển để chọn."
+msgid ""
+"Here you can edit the following channels from the EPG. Use to navigate the "
+"control cross and the extra buttons displayed with your remote control to "
+"select."
+msgstr ""
+"Bạn có thể chỉnh sửa các chương trình sau theo lịch chương "
+"trình. nsử dụng các phím di chuyển và các nút mở rộng trên điều "
+"khiển để chọn."
 
 #: skin_default_skin.xml.h:275
-msgid "Here you can install from our current online offering plug-ins. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Bạn có thể cài đặt trực tuyến. Sử dụng để điều khiển chéo và thêm các nút hiển thị bằng cách dùng điều khiển từ xa để chọn "
+msgid ""
+"Here you can install from our current online offering plug-ins. Use to "
+"navigate the control cross and the extra buttons displayed with your remote "
+"control to select."
+msgstr ""
+"Bạn có thể cài đặt trực tuyến. Sử dụng để điều khiển chéo "
+"và thêm các nút hiển thị bằng cách dùng điều khiển từ xa để "
+"chọn "
 
 #: skin_default_skin.xml.h:276
-msgid "Here you can in your EPG entries for specific search. Use to start a color button to search. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Bạn có thể tìm kiếm theo lịch chương trình ở đây. sử dụng các phím di chuyển và các nút mở rộng trên điều khiển để chọn"
+msgid ""
+"Here you can in your EPG entries for specific search. Use to start a color "
+"button to search. Use to navigate the control cross and the extra buttons "
+"displayed with your remote control to select."
+msgstr ""
+"Bạn có thể tìm kiếm theo lịch chương trình ở đây. sử dụng c�"
+"�c phím di chuyển và các nút mở rộng trên điều khiển để chọn"
 
 #: skin_default_skin.xml.h:277
-msgid "Here you can make for your selected network interface settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Bạn có thể tạo các thiết lập giao diện mạng ở đây. sử dụng các phím di chuyển và các nút mở rộng trên điều khiển để chọn."
+msgid ""
+"Here you can make for your selected network interface settings. Use to "
+"navigate the control cross and the extra buttons displayed with your remote "
+"control to select."
+msgstr ""
+"Bạn có thể tạo các thiết lập giao diện mạng ở đây. sử dụng "
+"các phím di chuyển và các nút mở rộng trên điều khiển để chọn."
 
 #: skin_default_skin.xml.h:278
-msgid "Here you can make for your wireless network settings. 1. Use Search button and select Your SSID (apoint / router) and Press ok 2. Make settings Type / Key confirm with ok and Note the following instructions 3. Disable Lan Yes, Activate Wlan Yes and use DHCP for easy setup."
+msgid ""
+"Here you can make for your wireless network settings. 1. Use Search button "
+"and select Your SSID (apoint / router) and Press ok 2. Make settings Type / "
+"Key confirm with ok and Note the following instructions 3. Disable Lan Yes, "
+"Activate Wlan Yes and use DHCP for easy setup."
 msgstr ""
 
 #: skin_default_skin.xml.h:279
-msgid "Here you can make your epg settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Bạn có thể tạo các thiết lập lịch chương trình ở đây. sử dụng các phím di chuyển và các nút mở rộng trên điều khiển để chọn."
+msgid ""
+"Here you can make your epg settings. Use to navigate the control cross and "
+"the extra buttons displayed with your remote control to select."
+msgstr ""
+"Bạn có thể tạo các thiết lập lịch chương trình ở đây. sử "
+"dụng các phím di chuyển và các nút mở rộng trên điều khiển để "
+"chọn."
 
 #: skin_default_skin.xml.h:280
-msgid "Here you can make your mediadb settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Bạn có thể tạo các thiết lập media ở đây. sử dụng các phím di chuyển và các nút mở rộng trên điều khiển để chọn."
+msgid ""
+"Here you can make your mediadb settings. Use to navigate the control cross "
+"and the extra buttons displayed with your remote control to select."
+msgstr ""
+"Bạn có thể tạo các thiết lập media ở đây. sử dụng các phím "
+"di chuyển và các nút mở rộng trên điều khiển để chọn."
 
 #: skin_default_skin.xml.h:281
-msgid "Here you can make your module settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Bạn có thể tạo các thiết lập riêng của bạn ở đây. sử dụng các phím di chuyển và các nút mở rộng trên điều khiển để chọn."
+msgid ""
+"Here you can make your module settings. Use to navigate the control cross "
+"and the extra buttons displayed with your remote control to select."
+msgstr ""
+"Bạn có thể tạo các thiết lập riêng của bạn ở đây. sử "
+"dụng các phím di chuyển và các nút mở rộng trên điều khiển để "
+"chọn."
 
 #: skin_default_skin.xml.h:282
-msgid "Here you can make your picture and sound settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Bạn có thể tạo các thiết lập hình ảnh và âm thanh ở đây.\n"
-"sử dụng các phím di chuyển và các nút mở rộng trên điều khiển để chọn."
+msgid ""
+"Here you can make your picture and sound settings. Use to navigate the "
+"control cross and the extra buttons displayed with your remote control to "
+"select."
+msgstr ""
+"Bạn có thể tạo các thiết lập hình ảnh và âm thanh ở đây.\n"
+"sử dụng các phím di chuyển và các nút mở rộng trên điều khiển "
+"để chọn."
 
 #: skin_default_skin.xml.h:283
-msgid "Here you can make your PIN security for menus settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Bạn có thể tạo mật khẩu cho các thiết lập trong menu.\n"
-"sử dụng các phím di chuyển và các nút mở rộng trên điều khiển để chọn."
+msgid ""
+"Here you can make your PIN security for menus settings. Use to navigate the "
+"control cross and the extra buttons displayed with your remote control to "
+"select."
+msgstr ""
+"Bạn có thể tạo mật khẩu cho các thiết lập trong menu.\n"
+"sử dụng các phím di chuyển và các nút mở rộng trên điều khiển "
+"để chọn."
 
 #: skin_default_skin.xml.h:284
-msgid "Here you can make your PIN security settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Bạn có thể tạo các thiết lập bảo mật ở đây. nsử dụng các phím di chuyển và các nút mở rộng trên điều khiển để chọn."
+msgid ""
+"Here you can make your PIN security settings. Use to navigate the control "
+"cross and the extra buttons displayed with your remote control to select."
+msgstr ""
+"Bạn có thể tạo các thiết lập bảo mật ở đây. nsử dụng các "
+"phím di chuyển và các nút mở rộng trên điều khiển để chọn."
 
 #: skin_default_skin.xml.h:285
-msgid "Here you can make your recording timer configuration. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Bạn có thể cấu hình bộ định thời để ghi ở đây. sử dụng các phím di chuyển và các nút mở rộng trên điều khiển để chọn"
+msgid ""
+"Here you can make your recording timer configuration. Use to navigate the "
+"control cross and the extra buttons displayed with your remote control to "
+"select."
+msgstr ""
+"Bạn có thể cấu hình bộ định thời để ghi ở đây. sử dụng các "
+"phím di chuyển và các nút mở rộng trên điều khiển để chọn"
 
 #: skin_default_skin.xml.h:286
-msgid "Here you can make your recordpath settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Bạn có thể tạo các thiết lập đường dẫn để ghi tại đây. sử dụng các phím di chuyển và các nút mở rộng trên điều khiển để chọn."
+msgid ""
+"Here you can make your recordpath settings. Use to navigate the control "
+"cross and the extra buttons displayed with your remote control to select."
+msgstr ""
+"Bạn có thể tạo các thiết lập đường dẫn để ghi tại đây. sử "
+"dụng các phím di chuyển và các nút mở rộng trên điều khiển để "
+"chọn."
 
 #: skin_default_skin.xml.h:287
-msgid "Here you can make your screensaver settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Bạn có thể làm các thiết lập bảo vệ màn hình ở đây. sử dụng các phím di chuyển và các nút mở rộng trên điều khiển để chọn."
+msgid ""
+"Here you can make your screensaver settings. Use to navigate the control "
+"cross and the extra buttons displayed with your remote control to select."
+msgstr ""
+"Bạn có thể làm các thiết lập bảo vệ màn hình ở đây. sử "
+"dụng các phím di chuyển và các nút mở rộng trên điều khiển để "
+"chọn."
 
 #: skin_default_skin.xml.h:288
-msgid "Here you can make your settings for your engine systems. To enter the latitude and longitude using the number keys."
+msgid ""
+"Here you can make your settings for your engine systems. To enter the "
+"latitude and longitude using the number keys."
 msgstr ""
 
 #: skin_default_skin.xml.h:289
-msgid "Here you can make your system settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Bạn có thể làm các thiết lập hệ thống ở đây. sử dụng các phím di chuyển và các nút mở rộng trên điều khiển để chọn."
+msgid ""
+"Here you can make your system settings. Use to navigate the control cross "
+"and the extra buttons displayed with your remote control to select."
+msgstr ""
+"Bạn có thể làm các thiết lập hệ thống ở đây. sử dụng các phí"
+"m di chuyển và các nút mở rộng trên điều khiển để chọn."
 
 #: skin_default_skin.xml.h:290
-msgid "Here you can make your timeshift settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Bạn có thể tạo các thiết lập timeshift ở đây. sử dụng các phím di chuyển và các nút mở rộng trên điều khiển để chọn."
+msgid ""
+"Here you can make your timeshift settings. Use to navigate the control cross "
+"and the extra buttons displayed with your remote control to select."
+msgstr ""
+"Bạn có thể tạo các thiết lập timeshift ở đây. sử dụng các phí"
+"m di chuyển và các nút mở rộng trên điều khiển để chọn."
 
 #: skin_default_skin.xml.h:291
-msgid "Here you can make your vfd settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "bạn có thể tạo các thiết lập vfd ở đây. nsử dụng các phím di chuyển và các nút mở rộng trên điều khiển để chọn."
+msgid ""
+"Here you can make your vfd settings. Use to navigate the control cross and "
+"the extra buttons displayed with your remote control to select."
+msgstr ""
+"bạn có thể tạo các thiết lập vfd ở đây. nsử dụng các phím di "
+"chuyển và các nút mở rộng trên điều khiển để chọn."
 
 #: skin_default_skin.xml.h:292
-msgid "Here you can select from the following list a skin. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Bạn có thể chọn từ danh sách bên dưới. nsử dụng các phím di chuyển và các nút mở rộng trên điều khiển để chọn."
+msgid ""
+"Here you can select from the following list a skin. Use to navigate the "
+"control cross and the extra buttons displayed with your remote control to "
+"select."
+msgstr ""
+"Bạn có thể chọn từ danh sách bên dưới. nsử dụng các phím di "
+"chuyển và các nút mở rộng trên điều khiển để chọn."
 
 #: skin_default_skin.xml.h:293
-msgid "Here you can select from the following list. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Bạn có thể chọn theo danh sách ở đây. nsử dụng các phím di chuyển và các nút mở rộng trên điều khiển để chọn."
+msgid ""
+"Here you can select from the following list. Use to navigate the control "
+"cross and the extra buttons displayed with your remote control to select."
+msgstr ""
+"Bạn có thể chọn theo danh sách ở đây. nsử dụng các phím di "
+"chuyển và các nút mở rộng trên điều khiển để chọn."
 
 #: skin_default_skin.xml.h:294
-msgid "Here you can select your hard disks and USB flash drives for configuration. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Bạn có thể chọn ổ cứng hoặc USB để cấu hình ở đây. nsử dụng các phím di chuyển và các nút mở rộng trên điều khiển để chọn."
+msgid ""
+"Here you can select your hard disks and USB flash drives for configuration. "
+"Use to navigate the control cross and the extra buttons displayed with your "
+"remote control to select."
+msgstr ""
+"Bạn có thể chọn ổ cứng hoặc USB để cấu hình ở đây. nsử "
+"dụng các phím di chuyển và các nút mở rộng trên điều khiển để "
+"chọn."
 
 #: skin_default_skin.xml.h:295
-msgid "Here you can select your Network Interface. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Bạn có thể chọn giao diện mạng ở đây. sử dụng các phím di chuyển và các nút mở rộng trên điều khiển để chọn."
+msgid ""
+"Here you can select your Network Interface. Use to navigate the control "
+"cross and the extra buttons displayed with your remote control to select."
+msgstr ""
+"Bạn có thể chọn giao diện mạng ở đây. sử dụng các phím di "
+"chuyển và các nút mở rộng trên điều khiển để chọn."
 
 #: skin_default_skin.xml.h:296
-msgid "Here you can set for your cable tuner. Ask your cable provider and make you connect an automatic search."
+msgid ""
+"Here you can set for your cable tuner. Ask your cable provider and make you "
+"connect an automatic search."
 msgstr ""
 
 #: skin_default_skin.xml.h:297
-msgid "Here you can set for your satellite tuner. First, make your satellite selection. When using DiSEqC They also point to the port used. For advanced Lnb / Unicam navigate to the field and press the Red button."
+msgid ""
+"Here you can set for your satellite tuner. First, make your satellite "
+"selection. When using DiSEqC They also point to the port used. For advanced "
+"Lnb / Unicam navigate to the field and press the Red button."
 msgstr ""
 
 #: skin_default_skin.xml.h:298
-msgid "Here you can set for your terrestrial tuner. Activate the terrestrial tuner and do you connect an automatic search."
+msgid ""
+"Here you can set for your terrestrial tuner. Activate the terrestrial tuner "
+"and do you connect an automatic search."
 msgstr ""
 
 #: skin_default_skin.xml.h:299
-msgid "Here you can set your Channel search options. Use to navigate the control cross and the extra buttons displayed with your remote control to select. Very important, before you start looking for a channel must be set to its tuner tuner settings."
+msgid ""
+"Here you can set your Channel search options. Use to navigate the control "
+"cross and the extra buttons displayed with your remote control to select. "
+"Very important, before you start looking for a channel must be set to its "
+"tuner tuner settings."
 msgstr ""
 
 #: skin_default_skin.xml.h:301
-msgid "Here you can set your timezone. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Bạn có thể thiết lập múi giờ ở đây. sử dụng các phím di chuyển và các nút mở rộng trên điều khiển để chọn n."
+msgid ""
+"Here you can set your timezone. Use to navigate the control cross and the "
+"extra buttons displayed with your remote control to select."
+msgstr ""
+"Bạn có thể thiết lập múi giờ ở đây. sử dụng các phím di "
+"chuyển và các nút mở rộng trên điều khiển để chọn n."
 
 #: skin_default_skin.xml.h:302
-msgid "Here you can start and manage your additional plug-ins. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Bạn có thể bắt đầu và quản lý các kết nối ở đây. sử dụng các phím di chuyển và các nút mở rộng trên điều khiển để chọn"
+msgid ""
+"Here you can start and manage your additional plug-ins. Use to navigate the "
+"control cross and the extra buttons displayed with your remote control to "
+"select."
+msgstr ""
+"Bạn có thể bắt đầu và quản lý các kết nối ở đây. sử "
+"dụng các phím di chuyển và các nút mở rộng trên điều khiển để "
+"chọn"
 
 #: skin_default_skin.xml.h:303
-msgid "Here you can test your network. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Bạn có thể kiểm tra kết nối mạng. sử dụng các phím di chuyển và các nút mở rộng trên điều khiển để chọn."
+msgid ""
+"Here you can test your network. Use to navigate the control cross and the "
+"extra buttons displayed with your remote control to select."
+msgstr ""
+"Bạn có thể kiểm tra kết nối mạng. sử dụng các phím di chuyển "
+"và các nút mở rộng trên điều khiển để chọn."
 
 #: skin_default_skin.xml.h:304
-msgid "Here you can view the current channel information. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Bạn có thể hiển thị thông tin của chương trình hiện tại ở đây. nsử dụng các phím di chuyển và các nút mở rộng trên điều khiển để chọn."
+msgid ""
+"Here you can view the current channel information. Use to navigate the "
+"control cross and the extra buttons displayed with your remote control to "
+"select."
+msgstr ""
+"Bạn có thể hiển thị thông tin của chương trình hiện tại ở đ�"
+"�y. nsử dụng các phím di chuyển và các nút mở rộng trên điều "
+"khiển để chọn."
 
 #: skin_default_skin.xml.h:305
 msgid "Hierarchy"
@@ -6498,7 +6749,9 @@ msgid "PlayList"
 msgstr "danh sách phát"
 
 #: skin_default_skin.xml.h:442
-msgid "Please contact Atemio for activation. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgid ""
+"Please contact Atemio for activation. Use to navigate the control cross and "
+"the extra buttons displayed with your remote control to select."
 msgstr ""
 
 #: skin_default_skin.xml.h:444
@@ -7502,7 +7755,8 @@ msgid "Z"
 msgstr "Z"
 
 #: skinselector.h:218
-msgid "No skinconfig found in skin.\n"
+msgid ""
+"No skinconfig found in skin.\n"
 "Can't change to selected skin."
 msgstr ""
 
@@ -7539,7 +7793,8 @@ msgid "This file doesn't exist, or has been removed"
 msgstr "File này không tồn tại hoặc đã bị xóa"
 
 #: spinner.h:18
-msgid "Detect hanging System !!!\n"
+msgid ""
+"Detect hanging System !!!\n"
 "\n"
 "KILL = Red\n"
 "BOOT = Green"
@@ -7618,12 +7873,17 @@ msgid "No Live Stream running"
 msgstr "Không có luồng nào đang phát"
 
 #: system_backup.h:15
-msgid "Backup to /tmp or /var/backup. If the free memory too small can a usb device will never use.\n"
+msgid ""
+"Backup to /tmp or /var/backup. If the free memory too small can a usb device "
+"will never use.\n"
 "There must be a folder backup."
 msgstr ""
 
 #: system_backup_restore.h:15
-msgid "Press -restore- and your saved settings will be restored from your swapstick / recording hdd! The Box will restart automatically for restoring!\n"
+msgid ""
+"Press -restore- and your saved settings will be restored from your "
+"swapstick / recording hdd! The Box will restart automatically for "
+"restoring!\n"
 "\n"
 "Press -backup- to save your actual settings to swapstick / recording hdd.\n"
 "WARNING: The old backup will be deleted!"
@@ -7634,22 +7894,26 @@ msgid "Restore Settings"
 msgstr "Thiết lập khôi phục lại"
 
 #: system_backup_restore.h:31
-msgid "Are you sure you want to restore settings?\n"
+msgid ""
+"Are you sure you want to restore settings?\n"
 "\n"
 "OK = start restore\n"
 "EXIT = abort restore"
-msgstr "Bạn chắc chắn muốn thiết lập mặc định?\n"
+msgstr ""
+"Bạn chắc chắn muốn thiết lập mặc định?\n"
 "\n"
 " Ok để bắt đầu\n"
 " EXIT để hủy"
 
 #: system_backup_restore.h:33
-msgid "Please wait ...\n"
+msgid ""
+"Please wait ...\n"
 "\n"
 "All Settings are saved.\n"
 "\n"
 "Box will start in few seconds."
-msgstr "Vui lòng đợi ...\n"
+msgstr ""
+"Vui lòng đợi ...\n"
 "\n"
 " Tất cả các thiết lập đã được lưu lại\n"
 "\n"
@@ -7668,10 +7932,12 @@ msgid "RESTORE ERROR"
 msgstr "LỖI KHÔI PHỤC LẠI!"
 
 #: system_backup_restore.h:51
-msgid "No backup folders found!!!\n"
+msgid ""
+"No backup folders found!!!\n"
 "\n"
 "Aborting restoring..."
-msgstr "không tìm thấy thư mục!!!\n"
+msgstr ""
+"không tìm thấy thư mục!!!\n"
 "\n"
 " đang hủy sao chép …"
 
@@ -7680,10 +7946,12 @@ msgid "Backup - Settings"
 msgstr "Thiết lập sao lưu"
 
 #: system_backup_restore.h:66
-msgid "Backup started\n"
+msgid ""
+"Backup started\n"
 "\n"
 "Please wait..."
-msgstr "Bắt đầu sao lưu\n"
+msgstr ""
+"Bắt đầu sao lưu\n"
 "\n"
 "Vui lòng đợi…"
 
@@ -7700,10 +7968,12 @@ msgid "BACKUP ERROR"
 msgstr "!!! LỖI SAO LƯU !!!"
 
 #: system_backup_restore.h:88
-msgid "A record hdd or a swapstick must be mounted!\n"
+msgid ""
+"A record hdd or a swapstick must be mounted!\n"
 "\n"
 "Aborting backup..."
-msgstr "ổ cứng phải được kết nối!\n"
+msgstr ""
+"ổ cứng phải được kết nối!\n"
 "\n"
 " đang hủy sao chép…"
 
@@ -7768,7 +8038,8 @@ msgid "Error file not supported"
 msgstr "Lỗi tập tin không được hỗ trợ!"
 
 #: system_update.h:333
-msgid "Can't start system update\n"
+msgid ""
+"Can't start system update\n"
 "Syntax Error on updatefile"
 msgstr ""
 
@@ -7777,9 +8048,11 @@ msgid "Should Timeshift File deleted ?"
 msgstr "Xóa các tập tin timeshift?"
 
 #: timeshift.h:155
-msgid "Timeshift file to short\n"
+msgid ""
+"Timeshift file to short\n"
 "please wait a little and try again"
-msgstr "Timeshift: tập tin này ngắn\n"
+msgstr ""
+"Timeshift: tập tin này ngắn\n"
 " vui lòng đợi một lúc rồi thử lại"
 
 #: timeshift.h:162
@@ -7787,7 +8060,8 @@ msgid "Can't start timeshift play !"
 msgstr "Không thể phát timeshift"
 
 #: timeshiftsettings.h:45
-msgid "Timeshiftsettings not allowed\n"
+msgid ""
+"Timeshiftsettings not allowed\n"
 "if timeshift is running !"
 msgstr ""
 
@@ -7812,15 +8086,18 @@ msgid "!!! This is a DEMO Version !!!"
 msgstr ""
 
 #: titan.c:310
-msgid "Found running record\n"
+msgid ""
+"Found running record\n"
 "or record is starting in next time.\n"
 "Really shutdown ?"
-msgstr "Bản ghi đang chạy\n"
+msgstr ""
+"Bản ghi đang chạy\n"
 "hoặc đang bắt đầu ghi.\n"
 "Bạn muốn tắt ?"
 
 #: titan.c:319
-msgid "Found running download\n"
+msgid ""
+"Found running download\n"
 "Really shutdown ?"
 msgstr ""
 
@@ -7873,23 +8150,28 @@ msgid "Receiver successful unlocked"
 msgstr ""
 
 #: titan.c:1053
-msgid "Free space in /var to little!\n"
+msgid ""
+"Free space in /var to little!\n"
 "This can make problems!"
-msgstr "Không đủ khoảng trống\n"
+msgstr ""
+"Không đủ khoảng trống\n"
 " Điều này có thể dẫn đến vấn đề !"
 
 #: titan.c:1059
-msgid "/var not writeable!\n"
+msgid ""
+"/var not writeable!\n"
 "Repair it?"
 msgstr ""
 
 #: titan.c:1070
-msgid "Free space in /mnt to little!\n"
+msgid ""
+"Free space in /mnt to little!\n"
 "This can make problems!"
 msgstr ""
 
 #: titan.c:1076
-msgid "/mnt not writeable!\n"
+msgid ""
+"/mnt not writeable!\n"
 "Repair it?"
 msgstr ""
 
@@ -7922,7 +8204,8 @@ msgid "Remove Cachefile ?"
 msgstr "Xóa tập tin lưu trữ ?"
 
 #: tithek.h:1100
-msgid "Can't start download.\n"
+msgid ""
+"Can't start download.\n"
 "Please try later."
 msgstr ""
 
@@ -8095,7 +8378,8 @@ msgid "Delete selected entry ?"
 msgstr ""
 
 #: tmc.h:1004
-msgid "MediaDB Path not found!\n"
+msgid ""
+"MediaDB Path not found!\n"
 "Configure it in MediaDB Settings"
 msgstr ""
 
@@ -8104,19 +8388,23 @@ msgid "Path: "
 msgstr ""
 
 #: tmc.h:1012
-msgid "MediaDB not found!\n"
+msgid ""
+"MediaDB not found!\n"
 "Scan your HDD in TMC Settings"
 msgstr ""
 
 #: tmc.h:1017
-msgid "IMDB Plugin not found!\n"
+msgid ""
+"IMDB Plugin not found!\n"
 "Can't get detail media infos\n"
 "Please install it"
 msgstr ""
 
 #: tmdb.h:922
 msgid "Error, found result without imdbid we can't this save in MediaDB"
-msgstr "lỗi, kết quả tìm kiếm có một imdbid không hợp lệ và do đó không thể được lưu trữ trong các MediaDB "
+msgstr ""
+"lỗi, kết quả tìm kiếm có một imdbid không hợp lệ và do đó kh�"
+"�ng thể được lưu trữ trong các MediaDB "
 
 #: tpchoice.h:21
 msgid "Transponderlist"
@@ -8268,7 +8556,8 @@ msgid "loop to Tuner"
 msgstr "loop to Tuner"
 
 #: tunerconfig.h:772
-msgid "Tunerconfig is not allowed if record\n"
+msgid ""
+"Tunerconfig is not allowed if record\n"
 "or stream is running !"
 msgstr ""
 
@@ -8297,7 +8586,8 @@ msgid "RECEIVER ID: "
 msgstr "ID: "
 
 #: unlock.h:66
-msgid "Can't save Code.\n"
+msgid ""
+"Can't save Code.\n"
 "Delete Plugins to free space"
 msgstr ""
 
@@ -8384,4 +8674,3 @@ msgstr "Nhiệt độ cao nhất: "
 #: weather.h:442 weather.h:460 weather.h:478 weather.h:496
 msgid "Condition: "
 msgstr "trạng thái: "
-
