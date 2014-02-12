@@ -8787,12 +8787,3 @@ msgstr "Maximum temperatuur: "
 #: weather.h:442 weather.h:460 weather.h:478 weather.h:496
 msgid "Condition: "
 msgstr "Weer:"
-
-#~ msgid "channel  time"
-#~ msgstr "Zendernaam  tijd"
-
-#~ msgid "time  channel"
-#~ msgstr "tijd  zendernaam"
-
-#~ msgid "date  time"
-#~ msgstr "Datum  Tijd"
