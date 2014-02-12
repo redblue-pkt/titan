@@ -1,4 +1,4 @@
-﻿#: about.h:9
+#: about.h:9
 msgid "Image"
 msgstr ""
 
@@ -621,7 +621,8 @@ msgid "Is this Videomode ok ?"
 msgstr "Is deze Video instelling ok?"
 
 #: betarobot.h:57
-msgid "This Plugin is only for Betatester and can change your Settings!\n"
+msgid ""
+"This Plugin is only for Betatester and can change your Settings!\n"
 "Realy run it?"
 msgstr ""
 
@@ -662,7 +663,8 @@ msgid "Browser Favoriten"
 msgstr ""
 
 #: callmon_main.h:39
-msgid "Callmon Timeout !!!\n"
+msgid ""
+"Callmon Timeout !!!\n"
 "\n"
 "check your parameter "
 msgstr ""
@@ -881,7 +883,8 @@ msgstr ""
 #: skins_tsSchnitt_skin.xml.h:11 skins_weather_skin.xml.h:4
 #: skins_wins3_skin.xml.h:4 skins_zapback_skin.xml.h:7
 msgid ""
-msgstr "Project-Id-Version: TitanNit 1.49\n"
+msgstr ""
+"Project-Id-Version: TitanNit 1.49\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-07 10:44퍭\n"
 "PO-Revision-Date: 2014-02-07 17:47퍭\n"
@@ -891,7 +894,6 @@ msgstr "Project-Id-Version: TitanNit 1.49\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-""
 
 #: diseqcconfig.h:9 diseqcconfig.h:16
 msgid "committed, toneburst"
@@ -1039,7 +1041,8 @@ msgid "Hoster Url not http://"
 msgstr ""
 
 #: divxstage.h:79 novamov.h:80 nowvideo.h:87 primeshare.h:79 videoweed.h:80
-msgid "The file is being transfered to our other servers. This may take few minutes."
+msgid ""
+"The file is being transfered to our other servers. This may take few minutes."
 msgstr ""
 
 #: divxstage.h:150 faststream.h:79 faststream.h:90 faststream.h:102
@@ -1060,9 +1063,11 @@ msgid "DLNA started."
 msgstr "DLNA gestart"
 
 #: dlna.h:336
-msgid "DLNA not started,\n"
+msgid ""
+"DLNA not started,\n"
 "Please check your config."
-msgstr "DLNA niet gestart,\n"
+msgstr ""
+"DLNA niet gestart,\n"
 "Controleer de instellingen"
 
 #: dlna.h:345
@@ -1249,22 +1254,26 @@ msgstr ""
 
 #: extensions.h:99
 msgid "Install success"
-msgstr "Installatie succesvol uitgevoerd.\n"
+msgstr ""
+"Installatie succesvol uitgevoerd.\n"
 "Er is geen installatie info gevonden!"
 
 #: extensions.h:101
 msgid "Install error"
-msgstr "Installatie niet succesvol uitgevoerd.\n"
+msgstr ""
+"Installatie niet succesvol uitgevoerd.\n"
 "Er is geen installatie info gevonden!"
 
 #: extensions.h:103
 msgid "Remove success"
-msgstr "Wissen succesvol uitgevoerd.\n"
+msgstr ""
+"Wissen succesvol uitgevoerd.\n"
 "Er is geen installatie info gevonden!"
 
 #: extensions.h:105
 msgid "Remove error"
-msgstr "Wissen niet succesvol uitgevoerd.\n"
+msgstr ""
+"Wissen niet succesvol uitgevoerd.\n"
 "Er is geen installatie info gevonden!"
 
 #: extensions.h:125
@@ -1300,7 +1309,11 @@ msgid "Tpk Install - select file"
 msgstr ""
 
 #: extensions.h:207 extensions.h:234 extensions.h:386 tpk.h:2990
-msgid "It may only be a package to be installed. If they want to install another package of this section, they only remove the installed packet. Is not the plugin after reinstalling the software TitanNit in TitanNit Menu Visible then perform an update by Tpk to: "
+msgid ""
+"It may only be a package to be installed. If they want to install another "
+"package of this section, they only remove the installed packet. Is not the "
+"plugin after reinstalling the software TitanNit in TitanNit Menu Visible "
+"then perform an update by Tpk to: "
 msgstr ""
 
 #: extensions.h:212 extensions.h:353
@@ -1321,7 +1334,8 @@ msgstr "TPK pakket installeer fout"
 
 #: extensions.h:247
 msgid "TPK Install done, your system will reboot !"
-msgstr "TPK installatie afgesloten\n"
+msgstr ""
+"TPK installatie afgesloten\n"
 "uw box wordt opnieuw gestart"
 
 #: extensions.h:271
@@ -1353,15 +1367,18 @@ msgid "No plugin found."
 msgstr "Geen applicatie gevonden"
 
 #: extensions.h:392
-msgid "Some plugins needs restart.\n"
+msgid ""
+"Some plugins needs restart.\n"
 "If the plugin is not active\n"
 "reboot the box."
-msgstr "Sommige applicaties  vereisen een reboot\n"
+msgstr ""
+"Sommige applicaties  vereisen een reboot\n"
 "Als de applicatie niet actief is reboot de box"
 
 #: extensions.h:396
 msgid "TPK Tmp Install done, your system will reboot !"
-msgstr "TPK Tmp installatie afgesloten\n"
+msgstr ""
+"TPK Tmp installatie afgesloten\n"
 "uw box wordt opnieuw gestart"
 
 #: extensions.h:420 extensions.h:424
@@ -1378,7 +1395,8 @@ msgstr "Es konnten nicht alle TPK Pakete aktualisiert werden!"
 
 #: extensions.h:432
 msgid "TPK Upgrade done, your system will reboot !"
-msgstr "TPK upgrade afgerond\n"
+msgstr ""
+"TPK upgrade afgerond\n"
 "Uw box wordt nieuw gestart"
 
 #: facebook.h:66 facebook.h:167
@@ -1386,7 +1404,8 @@ msgid "Can't get data from facebook"
 msgstr ""
 
 #: facebook.h:157
-msgid "Facebook allready registered,\n"
+msgid ""
+"Facebook allready registered,\n"
 "Make new registration ?"
 msgstr ""
 
@@ -1496,7 +1515,8 @@ msgstr "Het bestand kan niet getoond "
 
 #: filemanager.h:355 mc_internetbrowser.h:41 mc_wetterinfo.h:41 tithek.h:1354
 msgid "Registration needed, please contact Atemio !"
-msgstr "Registatie is noodzakelijk neem contact op met Atemio !\n"
+msgstr ""
+"Registatie is noodzakelijk neem contact op met Atemio !\n"
 "Informatie is te vinden in het Atemio-Panel > System > Serial-Information"
 
 #: global.h:6487 keyactions.h:227
@@ -1580,9 +1600,11 @@ msgid "Are you sure you want to delete this directory?"
 msgstr "Wilt u deze directory wissen"
 
 #: harddisk.h:350
-msgid "Directory has content\n"
+msgid ""
+"Directory has content\n"
 "Really delete directory and content?"
-msgstr "Verzeichnis ist nicht leer.\n"
+msgstr ""
+"Verzeichnis ist nicht leer.\n"
 "Wirklich löschen?"
 
 #: harddisk.h:377
@@ -1638,38 +1660,47 @@ msgid "record"
 msgstr "Opname"
 
 #: harddisk.h:624
-msgid "HDD > 2TB unsupported.\n"
+msgid ""
+"HDD > 2TB unsupported.\n"
 "You must first install plugin parted, then you can use this panel."
 msgstr ""
 
 #: harddisk.h:632
-msgid "Are you sure you want to remove all Partitions\n"
+msgid ""
+"Are you sure you want to remove all Partitions\n"
 "on this device and create a new Partition 1?\n"
 "Box reboots after format"
-msgstr "Wilt u alle partities verwijderen\n"
+msgstr ""
+"Wilt u alle partities verwijderen\n"
 "van dit apparaat en een nieuwe partitie maken?\n"
 "De box wordt vervolgens opnieuw opgestart."
 
 #: harddisk.h:666
-msgid "Are you sure you want to format this Partition?\n"
+msgid ""
+"Are you sure you want to format this Partition?\n"
 "Box reboots after format"
-msgstr "Weet u zeker dat u deze partitie wilt formatteren?\n"
+msgstr ""
+"Weet u zeker dat u deze partitie wilt formatteren?\n"
 "De box wordt vervolgens opnieuw opgestart."
 
 #: harddisk.h:784
-msgid "ERROR\n"
+msgid ""
+"ERROR\n"
 "partition could not be created"
 msgstr ""
 
 #: harddisk.h:802
-msgid "Information: This hard drive size can take a file\n"
+msgid ""
+"Information: This hard drive size can take a file\n"
 "system check between 30 minutes and 1.5 hours."
 msgstr ""
 
 #: harddisk.h:805
-msgid "Are you sure you want to check this Partition?\n"
+msgid ""
+"Are you sure you want to check this Partition?\n"
 "Box reboots after check"
-msgstr "Weet u zeker dat u de partitie wilt testen?\n"
+msgstr ""
+"Weet u zeker dat u de partitie wilt testen?\n"
 "De box wordt vervolgens opnieuw opgestart."
 
 #: harddisk.h:867 harddisk.h:868
@@ -1697,9 +1728,11 @@ msgid "60 min"
 msgstr ""
 
 #: harddisk.h:1035
-msgid "Found new Stick/HDD.\n"
+msgid ""
+"Found new Stick/HDD.\n"
 "You can configure it in Harddisk Menu."
-msgstr "Neuer Datenträger erkannt.\n"
+msgstr ""
+"Neuer Datenträger erkannt.\n"
 "Sie können diesen im Festplatten Menü konfigurieren."
 
 #: hbbtv.h:362
@@ -1823,12 +1856,10 @@ msgstr ""
 
 #: hwtest.h:370
 msgid ": Present\n"
-""
 msgstr ""
 
 #: hwtest.h:376
 msgid ": Not Present\n"
-""
 msgstr ""
 
 #: hwtest.h:384
@@ -1869,42 +1900,34 @@ msgstr ""
 
 #: hwtest.h:575
 msgid "LNB off / 22K off: OK\n"
-""
 msgstr ""
 
 #: hwtest.h:577
 msgid "LNB off / 22K off: NOT OK\n"
-""
 msgstr ""
 
 #: hwtest.h:584
 msgid "LNB 18V / 22K off: OK\n"
-""
 msgstr ""
 
 #: hwtest.h:586
 msgid "LNB 18V / 22K off: NOT OK\n"
-""
 msgstr ""
 
 #: hwtest.h:593
 msgid "LNB 13V / 22K off: OK\n"
-""
 msgstr ""
 
 #: hwtest.h:595
 msgid "LNB 13V / 22K off: NOT OK\n"
-""
 msgstr ""
 
 #: hwtest.h:602
 msgid "LNB 13V / 22K on: OK\n"
-""
 msgstr ""
 
 #: hwtest.h:604
 msgid "LNB 13V / 22K on: NOT OK\n"
-""
 msgstr ""
 
 #: hwtest.h:652
@@ -1932,9 +1955,11 @@ msgid "DYNDNS started."
 msgstr "DYNDNS gestart"
 
 #: inadyn.h:190
-msgid "DYNDNS not started,\n"
+msgid ""
+"DYNDNS not started,\n"
 "Please check your config."
-msgstr "DYNDNS niet gestart,\n"
+msgstr ""
+"DYNDNS niet gestart,\n"
 "controleer de instellingen."
 
 #: inadyn.h:200
@@ -1942,11 +1967,13 @@ msgid "DYNDNS now stopped"
 msgstr "DYNDNS gestopt"
 
 #: info.h:23
-msgid "For next OnlineUpdate please contact Atemio and send this Serial Number\n"
+msgid ""
+"For next OnlineUpdate please contact Atemio and send this Serial Number\n"
 "and your Atemio Serial Number !!\n"
 "\n"
 "Board-ID SerialNr:"
-msgstr "Mocht de Online Functie gedeactiveerd zijn, stuur dan het\n"
+msgstr ""
+"Mocht de Online Functie gedeactiveerd zijn, stuur dan het\n"
 "Board-ID Seriennummer (AA...)en het Seriennummer onder het\n"
 "apparaat (AM...) aan het  email addres. \n"
 "\n"
@@ -2078,7 +2105,8 @@ msgstr "Marker is niet gezet"
 
 #: mc_audioplayer.h:328 mc_main.h:200 mc_pictureplayer.h:119
 #: mc_videoplayer.h:325
-msgid "Shooting Background done !\n"
+msgid ""
+"Shooting Background done !\n"
 "Save Screenshoot Path: /tmp/screenshot.jpg"
 msgstr ""
 
@@ -2392,9 +2420,11 @@ msgid "20"
 msgstr ""
 
 #: mediadbsettings.h:95
-msgid "No MediaDB Directory found\n"
+msgid ""
+"No MediaDB Directory found\n"
 "Press OK to create it"
-msgstr "er is geen map gevonden voor de MedisDB!\n"
+msgstr ""
+"er is geen map gevonden voor de MedisDB!\n"
 "Wilt u deze maken?"
 
 #: menu.h:884 menu.h:886 skin_default_skin.xml.h:531
@@ -2470,7 +2500,8 @@ msgid "MULTI EPG - All Channels"
 msgstr "MULTI EPG - Alle zenders"
 
 #: networkbrowser.h:944
-msgid "For Better Win7 Support install please Tpk Install > Network > Smbclient"
+msgid ""
+"For Better Win7 Support install please Tpk Install > Network > Smbclient"
 msgstr ""
 
 #: networkbrowser.h:1005 networkbrowser.h:1011 networkbrowser.h:1021
@@ -2647,15 +2678,19 @@ msgid "Start Wlan ?"
 msgstr "Wollen Sie WLAN jetzt starten?"
 
 #: network.h:800
-msgid "WLAN started.\n"
+msgid ""
+"WLAN started.\n"
 " You can now configure the new interface."
-msgstr "WLAN is gestart.\n"
+msgstr ""
+"WLAN is gestart.\n"
 "verdere configuratie kan nu plaatsvinden"
 
 #: network.h:804
-msgid "WLAN not started,\n"
+msgid ""
+"WLAN not started,\n"
 "Please check your config."
-msgstr "WLAN kon niet gestart worden,\n"
+msgstr ""
+"WLAN kon niet gestart worden,\n"
 "controleer de instellingen."
 
 #: network.h:827
@@ -2675,7 +2710,8 @@ msgid "Found Wlan Stick and driver for: "
 msgstr ""
 
 #: network.h:881
-msgid "Found Wlan Stick but no driver\n"
+msgid ""
+"Found Wlan Stick but no driver\n"
 "Please install driver: "
 msgstr ""
 
@@ -2923,9 +2959,11 @@ msgid "videmode"
 msgstr ""
 
 #: panel_settings_wizard.h:6
-msgid "Do you really want to start the Wizard?\n"
+msgid ""
+"Do you really want to start the Wizard?\n"
 "The Box will reboot and the Wizard will be started!"
-msgstr "Wilt u de wizzard gestart worden?\n"
+msgstr ""
+"Wilt u de wizzard gestart worden?\n"
 "De box zal herstarten en de wizzard  wordt uitgevoerd!"
 
 #: play.h:396 play.h:430 plugins_imdbapi_skin.xml.h:9
@@ -3183,7 +3221,9 @@ msgstr ""
 #: plugins_stopifnotused_skin.xml.h:5 skins_autotimer_skin.xml.h:8
 #: skins_callmonitor1_skin.xml.h:16 skins_lcdpearl1_skin.xml.h:10
 #: skins_lcdsamsung_skin.xml.h:13 skins_stopifnotused_skin.xml.h:5
-msgid "text=EXIT halign=center valign=middle bordercol=exitcol bordersize=2 bordertype=2 posx=160 posy=0 width=150 height=30/>"
+msgid ""
+"text=EXIT halign=center valign=middle bordercol=exitcol bordersize=2 "
+"bordertype=2 posx=160 posy=0 width=150 height=30/>"
 msgstr ""
 
 #: plugins_autotimer_skin.xml.h:9 plugins_callmonitor1_skin.xml.h:18
@@ -3191,13 +3231,17 @@ msgstr ""
 #: plugins_stopifnotused_skin.xml.h:6 skins_autotimer_skin.xml.h:9
 #: skins_callmonitor1_skin.xml.h:18 skins_lcdpearl1_skin.xml.h:11
 #: skins_lcdsamsung_skin.xml.h:14 skins_stopifnotused_skin.xml.h:6
-msgid "text=SAVE halign=center valign=middle bordercol=green bordersize=2 bordertype=2 posx=0 posy=0 width=150 height=30/>"
+msgid ""
+"text=SAVE halign=center valign=middle bordercol=green bordersize=2 "
+"bordertype=2 posx=0 posy=0 width=150 height=30/>"
 msgstr ""
 
 #: plugins_autotimer_skin.xml.h:10 plugins_lcdpearl1_skin.xml.h:12
 #: plugins_lcdsamsung_skin.xml.h:15 skins_autotimer_skin.xml.h:10
 #: skins_lcdpearl1_skin.xml.h:12 skins_lcdsamsung_skin.xml.h:15
-msgid "text=START halign=center valign=middle bordercol=blue bordersize=2 bordertype=2 posx=400 posy=0 width=200 height=30/>"
+msgid ""
+"text=START halign=center valign=middle bordercol=blue bordersize=2 "
+"bordertype=2 posx=400 posy=0 width=200 height=30/>"
 msgstr ""
 
 #: plugins_autotimer_skin.xml.h:11 skins_autotimer_skin.xml.h:11
@@ -3270,7 +3314,9 @@ msgid "Passwort-FritzBox"
 msgstr ""
 
 #: plugins_callmonitor1_skin.xml.h:17 skins_callmonitor1_skin.xml.h:17
-msgid "text=LOAD-FritzBook halign=center valign=middle bordercol=blue bordersize=2 bordertype=2 posx=400 posy=0 width=200 height=30/>"
+msgid ""
+"text=LOAD-FritzBook halign=center valign=middle bordercol=blue bordersize=2 "
+"bordertype=2 posx=400 posy=0 width=200 height=30/>"
 msgstr ""
 
 #: plugins_catcatch_skin.xml.h:1 skins_catcatch_skin.xml.h:1
@@ -3350,7 +3396,9 @@ msgid "Facebook Register"
 msgstr ""
 
 #: plugins_facebook_skin.xml.h:3 skins_facebook_skin.xml.h:3
-msgid "Enter the shown url in your browser and enter the Code to register the receiver to facebook"
+msgid ""
+"Enter the shown url in your browser and enter the Code to register the "
+"receiver to facebook"
 msgstr ""
 
 #: plugins_filemanager_skin.xml.h:1 skins_filemanager_skin.xml.h:1
@@ -3767,19 +3815,28 @@ msgid "hddreplacement"
 msgstr "Netwerkkoppeling gebruiken als opname plek"
 
 #: plugins_networkbrowser_skin.xml.h:10 skins_networkbrowser_skin.xml.h:10
-msgid "Here you can configure your Auth Data. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgid ""
+"Here you can configure your Auth Data. Use to navigate the control cross and "
+"the extra buttons displayed with your remote control to select."
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:11 skins_networkbrowser_skin.xml.h:11
-msgid "Here you can configure your network shares. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw netwerk mappings controleren.\n"
+msgid ""
+"Here you can configure your network shares. Use to navigate the control "
+"cross and the extra buttons displayed with your remote control to select."
+msgstr ""
+"Hier kunt u uw netwerk mappings controleren.\n"
 "\n"
 "Gebruik het stuur-kruis en de extra getoonde knopppen op uw\n"
 "afstandsbediening om te navigeren."
 
 #: plugins_networkbrowser_skin.xml.h:12 skins_networkbrowser_skin.xml.h:12
-msgid "If you don't find Windows shares you need to disable 'Password protected sharing' in the 'Network and Sharing Center'."
-msgstr "Sollten keine Windows Freigaben sichtbar sein, muss 'Kennwortgeschützte Freigaben' im 'Netzwerk- und Freigabecenter' abgeschaltet werden."
+msgid ""
+"If you don't find Windows shares you need to disable 'Password protected "
+"sharing' in the 'Network and Sharing Center'."
+msgstr ""
+"Sollten keine Windows Freigaben sichtbar sein, muss 'Kennwortgeschützte "
+"Freigaben' im 'Netzwerk- und Freigabecenter' abgeschaltet werden."
 
 #: plugins_networkbrowser_skin.xml.h:13 skin_default_skin.xml.h:325
 #: skins_networkbrowser_skin.xml.h:13
@@ -3895,11 +3952,15 @@ msgid "Optimize"
 msgstr "optimaliseren"
 
 #: plugins_optimize_skin.xml.h:2 skins_optimize_skin.xml.h:2
-msgid "text=EXIT halign=center valign=middle bordercol=exitcol bordersize=4 bordertype=2 posx=180 posy=0 width=150 height=30/>"
+msgid ""
+"text=EXIT halign=center valign=middle bordercol=exitcol bordersize=4 "
+"bordertype=2 posx=180 posy=0 width=150 height=30/>"
 msgstr ""
 
 #: plugins_optimize_skin.xml.h:3 skins_optimize_skin.xml.h:3
-msgid "text=OK halign=center valign=middle bordercol=okcol bordersize=4 bordertype=2 posx=20 posy=0 width=150 height=30/>"
+msgid ""
+"text=OK halign=center valign=middle bordercol=okcol bordersize=4 "
+"bordertype=2 posx=20 posy=0 width=150 height=30/>"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:1 plugins_panel_skin.xml.h:10
@@ -4007,16 +4068,22 @@ msgid "Enable"
 msgstr "Enable"
 
 #: plugins_readerconfig_skin.xml.h:5 skins_readerconfig_skin.xml.h:5
-msgid "Here you can configure your reader. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw cardreader instellen.\n"
+msgid ""
+"Here you can configure your reader. Use to navigate the control cross and "
+"the extra buttons displayed with your remote control to select."
+msgstr ""
+"Hier kunt u uw cardreader instellen.\n"
 "\n"
 "Gebruik het stuur-kruis en de extra getoonde knopppen op uw\n"
 "afstandsbediening om te navigeren."
 
 #: plugins_readerconfig_skin.xml.h:6 skin_default_skin.xml.h:300
 #: skins_readerconfig_skin.xml.h:6
-msgid "Here you can set your language. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hierkunt u uw taal instellen.\n"
+msgid ""
+"Here you can set your language. Use to navigate the control cross and the "
+"extra buttons displayed with your remote control to select."
+msgstr ""
+"Hierkunt u uw taal instellen.\n"
 "\n"
 "Gebruik het stuur-kruis en de extra getoonde knopppen op uw\n"
 "afstandsbediening om te navigeren."
@@ -4237,7 +4304,9 @@ msgid "select movie"
 msgstr ""
 
 #: plugins_tsSchnitt_skin.xml.h:8 skins_tsSchnitt_skin.xml.h:8
-msgid "Start movie in the internal player, set with 0 key marker during a movie. 5 key is for the marker overview. Then here select movie and start."
+msgid ""
+"Start movie in the internal player, set with 0 key marker during a movie. 5 "
+"key is for the marker overview. Then here select movie and start."
 msgstr ""
 
 #: plugins_tsSchnitt_skin.xml.h:10 skins_tsSchnitt_skin.xml.h:10
@@ -4325,7 +4394,8 @@ msgid "startposition"
 msgstr ""
 
 #: possetup.h:98
-msgid "Position Setup is not allowed if record\n"
+msgid ""
+"Position Setup is not allowed if record\n"
 "or stream is running !"
 msgstr ""
 
@@ -4394,9 +4464,11 @@ msgid "Oscam dvbapi config enabled !"
 msgstr "Oscam dvbapi config aktiviert!"
 
 #: record.h:37
-msgid "HDD not configured\n"
+msgid ""
+"HDD not configured\n"
 "can't find record path"
-msgstr "Hardeschijf is niet ingesteld, er is geen opname pad !\n"
+msgstr ""
+"Hardeschijf is niet ingesteld, er is geen opname pad !\n"
 "aub hardeschijf inrichten."
 
 #: record.h:40
@@ -4468,16 +4540,16 @@ msgid "Box recording finished poweroff in 30sec !"
 msgstr "Aufnahme beendet. Box wird in 30sek ausgeschaltet!"
 
 #: record.h:971
-msgid "Can't find free Tuner for Record.\n"
+msgid ""
+"Can't find free Tuner for Record.\n"
 "Switch to Recording/Timeshift Channel ?"
-msgstr "Er is geen vrije Tuner .\n"
+msgstr ""
+"Er is geen vrije Tuner .\n"
 "zappen naar  opname/timeshift kanaal ?"
 
 #: record.h:1157
 msgid "Timer Record start !\n"
-""
 msgstr "Timer Aufnahme gestartet! \n"
-""
 
 #: record.h:1272 record.h:1281 record.h:1292 record.h:1327 record.h:1336
 #: record.h:1368 stream.h:15 stream.h:37
@@ -4633,15 +4705,19 @@ msgid "Can't restore settings"
 msgstr "Instellingen terugzetten lukt niet"
 
 #: restoredefault.h:32
-msgid "Do you really want to erase all data and backups from Swap?\n"
+msgid ""
+"Do you really want to erase all data and backups from Swap?\n"
 "The Box will reboot and the erase will be started!"
-msgstr "Alle backups en informatie op Swap wissen?\n"
+msgstr ""
+"Alle backups en informatie op Swap wissen?\n"
 "De box zal herstarten en de wis-actie wordt uitgevoerd!"
 
 #: restoredefault.h:47
-msgid "Do you really want to erase Swap (Settings are preserve)?\n"
+msgid ""
+"Do you really want to erase Swap (Settings are preserve)?\n"
 "The Box will reboot and the erase will be started!"
-msgstr "Internen Swap Speicher löschen (Konfiguration wird beibehalten)?\n"
+msgstr ""
+"Internen Swap Speicher löschen (Konfiguration wird beibehalten)?\n"
 "Box neu starten und Löschvorgang ausführen "
 
 #: restoredefault.h:63 restoredefault.h:67 restoredefault.h:71
@@ -4670,8 +4746,11 @@ msgid "Connection to server lost !"
 msgstr "Verbinding met de server verloren."
 
 #: rtl2now.h:28
-msgid "Found Pay Stream visit the official Website and Order this Stream and try this again !"
-msgstr "Pay-Stream gevonden bezoek de officiele Website en bestel\n"
+msgid ""
+"Found Pay Stream visit the official Website and Order this Stream and try "
+"this again !"
+msgstr ""
+"Pay-Stream gevonden bezoek de officiele Website en bestel\n"
 "deze Stream en probeer nog eens !"
 
 #: scan.h:532
@@ -4699,7 +4778,8 @@ msgid "Blindscan: "
 msgstr ""
 
 #: scan.h:1598 scan.h:1628
-msgid "Channel scan ended.\n"
+msgid ""
+"Channel scan ended.\n"
 "Nothing found."
 msgstr ""
 
@@ -4860,13 +4940,16 @@ msgid "Script execute"
 msgstr "Script uitvoeren"
 
 #: service.h:704
-msgid "Timeshift is running !!!\n"
+msgid ""
+"Timeshift is running !!!\n"
 "Stop it and switch ?"
-msgstr "Timeshift loopt !!!\n"
+msgstr ""
+"Timeshift loopt !!!\n"
 "Uitschakelen en zappen?"
 
 #: service.h:928
-msgid "Can't find a Tuner.\n"
+msgid ""
+"Can't find a Tuner.\n"
 "All Tuners in use or no Tuner defined."
 msgstr "Er is geen vrije tuner beschikbaar"
 
@@ -5056,18 +5139,8 @@ msgid "%"
 msgstr ""
 
 #: skin_default_skin.xml.h:31
-msgid ""
-msgstr "Project-Id-Version: TitanNit 1.49\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-07 10:44퍭\n"
-"PO-Revision-Date: 2014-02-07 17:47퍭\n"
-"Last-Translator: obi <_obiwan_@web.de>\n"
-"Language-Team: German <_obiwan_@web.de>\n"
-"Language: nl\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-""
+msgid "+"
+msgstr ""
 
 #: skin_default_skin.xml.h:36
 msgid "20:15"
@@ -5082,7 +5155,7 @@ msgid "3D-Mode Settings"
 msgstr "3D-Mode instellingen"
 
 #: skin_default_skin.xml.h:43
-msgid " 5 Min"
+msgid "+/- 5 Min"
 msgstr ""
 
 #: skin_default_skin.xml.h:45
@@ -5162,7 +5235,11 @@ msgid "After EPG Scan"
 msgstr "Nach EPG Suche"
 
 #: skin_default_skin.xml.h:67
-msgid "After the manual search, you have to if they want to save all the sender to save the search with the green button. To add a station manually have to select the sender in the right box and then save it with the red button that station. If you do not do this and go to exit out the search not saved."
+msgid ""
+"After the manual search, you have to if they want to save all the sender to "
+"save the search with the green button. To add a station manually have to "
+"select the sender in the right box and then save it with the red button that "
+"station. If you do not do this and go to exit out the search not saved."
 msgstr ""
 
 #: skin_default_skin.xml.h:68
@@ -5295,8 +5372,12 @@ msgid "Bandwidth:"
 msgstr ""
 
 #: skin_default_skin.xml.h:105
-msgid "Before you can see Signal/SNR/Ber you must zap to a channel of the satellite you are searching."
-msgstr "Voordat u Signal/SNR/Ber kunt zien moet u naar een zender schakelen die u zoekt"
+msgid ""
+"Before you can see Signal/SNR/Ber you must zap to a channel of the satellite "
+"you are searching."
+msgstr ""
+"Voordat u Signal/SNR/Ber kunt zien moet u naar een zender schakelen die u "
+"zoekt"
 
 #: skin_default_skin.xml.h:106
 msgid "Begin"
@@ -5747,7 +5828,9 @@ msgid "Fix Shutdown Time"
 msgstr "Vaste uitschakeltijd"
 
 #: skin_default_skin.xml.h:233
-msgid "Flash: Flash range is deleted after update, mnt: flash range to permanently update available, swap: USB medium permanently"
+msgid ""
+"Flash: Flash range is deleted after update, mnt: flash range to permanently "
+"update available, swap: USB medium permanently"
 msgstr ""
 
 #: skin_default_skin.xml.h:234
@@ -5855,8 +5938,12 @@ msgid "Hangtime"
 msgstr "Tijd voordat vast-loop-melding verschijnt"
 
 #: skin_default_skin.xml.h:263
-msgid "Here they can do for your chosen tuner to lnb settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u voor de door uw gekozen tuner de LNB-instellingen beheren.\n"
+msgid ""
+"Here they can do for your chosen tuner to lnb settings. Use to navigate the "
+"control cross and the extra buttons displayed with your remote control to "
+"select."
+msgstr ""
+"Hier kunt u voor de door uw gekozen tuner de LNB-instellingen beheren.\n"
 "\n"
 "Gebruik het stuur-kruis en de extra getoonde knopppen op uw\n"
 "afstandsbediening om te navigeren."
@@ -5870,245 +5957,374 @@ msgid "Here you can backup and restore your settings."
 msgstr "Hier kunt u uw instellingen backuppen en terugzetten"
 
 #: skin_default_skin.xml.h:266
-msgid "Here you can check the reception of the current station. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u de ontvangst van de actuele zender controleren.\n"
+msgid ""
+"Here you can check the reception of the current station. Use to navigate the "
+"control cross and the extra buttons displayed with your remote control to "
+"select."
+msgstr ""
+"Hier kunt u de ontvangst van de actuele zender controleren.\n"
 "\n"
 "Gebruik het stuur-kruis en de extra getoonde knopppen op uw\n"
 "afstandsbediening om te navigeren."
 
 #: skin_default_skin.xml.h:267
-msgid "Here you can choose to configure your tuner. For your channel search, you must edit their tuner and adjust depending on the connection. For engine systems require an additional engine settings making."
+msgid ""
+"Here you can choose to configure your tuner. For your channel search, you "
+"must edit their tuner and adjust depending on the connection. For engine "
+"systems require an additional engine settings making."
 msgstr ""
 
 #: skin_default_skin.xml.h:268
-msgid "Here you can configure access to your DynDNS. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw DynDns toegang beheren.\n"
+msgid ""
+"Here you can configure access to your DynDNS. Use to navigate the control "
+"cross and the extra buttons displayed with your remote control to select."
+msgstr ""
+"Hier kunt u uw DynDns toegang beheren.\n"
 "\n"
 "Gebruik het stuur-kruis en de extra getoonde knopppen op uw\n"
 "afstandsbediening om te navigeren."
 
 #: skin_default_skin.xml.h:269
-msgid "Here you can configure Ci-Modules. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw CI-Module configureren.\n"
+msgid ""
+"Here you can configure Ci-Modules. Use to navigate the control cross and the "
+"extra buttons displayed with your remote control to select."
+msgstr ""
+"Hier kunt u uw CI-Module configureren.\n"
 "\n"
 "Gebruik het stuur-kruis en de extra getoonde knopppen op uw\n"
 "afstandsbediening om te navigeren."
 
 #: skin_default_skin.xml.h:270
-msgid "Here you can configure the smartcard readers. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgid ""
+"Here you can configure the smartcard readers. Use to navigate the control "
+"cross and the extra buttons displayed with your remote control to select."
 msgstr ""
 
 #: skin_default_skin.xml.h:271
-msgid "Here you can configure your web server. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier u uw Webserver beheren.\n"
+msgid ""
+"Here you can configure your web server. Use to navigate the control cross "
+"and the extra buttons displayed with your remote control to select."
+msgstr ""
+"Hier u uw Webserver beheren.\n"
 "\n"
 "Gebruik het stuur-kruis en de extra getoonde knopppen op uw\n"
 "afstandsbediening om te navigeren."
 
 #: skin_default_skin.xml.h:272
-msgid "Here you can create a new record timer. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u een nieuwe timeropname programeren.\n"
+msgid ""
+"Here you can create a new record timer. Use to navigate the control cross "
+"and the extra buttons displayed with your remote control to select."
+msgstr ""
+"Hier kunt u een nieuwe timeropname programeren.\n"
 "\n"
 "Gebruik het stuur-kruis en de extra getoonde knopppen op uw\n"
 "afstandsbediening om te navigeren."
 
 #: skin_default_skin.xml.h:273
-msgid "Here you can do a blind scan, this process takes a long time. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u een blindscan uitvoeren, het uitvoeren van deze actie duurt zeer lang.\n"
+msgid ""
+"Here you can do a blind scan, this process takes a long time. Use to "
+"navigate the control cross and the extra buttons displayed with your remote "
+"control to select."
+msgstr ""
+"Hier kunt u een blindscan uitvoeren, het uitvoeren van deze actie duurt zeer "
+"lang.\n"
 "\n"
 "Gebruik het stuur-kruis en de extra getoonde knopppen op uw\n"
 "afstandsbediening om te navigeren."
 
 #: skin_default_skin.xml.h:274
-msgid "Here you can edit the following channels from the EPG. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u de EPG bewerken van de volgende kanalen.\n"
+msgid ""
+"Here you can edit the following channels from the EPG. Use to navigate the "
+"control cross and the extra buttons displayed with your remote control to "
+"select."
+msgstr ""
+"Hier kunt u de EPG bewerken van de volgende kanalen.\n"
 "\n"
 "Gebruik het stuur-kruis en de extra getoonde knopppen op uw\n"
 "afstandsbediening om te navigeren."
 
 #: skin_default_skin.xml.h:275
-msgid "Here you can install from our current online offering plug-ins. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u het actuele online aanbod van applicaties installeren.\n"
+msgid ""
+"Here you can install from our current online offering plug-ins. Use to "
+"navigate the control cross and the extra buttons displayed with your remote "
+"control to select."
+msgstr ""
+"Hier kunt u het actuele online aanbod van applicaties installeren.\n"
 "\n"
 "Gebruik het stuur-kruis en de extra getoonde knopppen op uw\n"
 "afstandsbediening om te navigeren."
 
 #: skin_default_skin.xml.h:276
-msgid "Here you can in your EPG entries for specific search. Use to start a color button to search. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u in de EPG zoeken. Gebruik een van de kleurknoppen om de\n"
+msgid ""
+"Here you can in your EPG entries for specific search. Use to start a color "
+"button to search. Use to navigate the control cross and the extra buttons "
+"displayed with your remote control to select."
+msgstr ""
+"Hier kunt u in de EPG zoeken. Gebruik een van de kleurknoppen om de\n"
 "zoekactie te starten.\n"
 "\n"
 "Gebruik het stuur-kruis en de extra getoonde knopppen op uw\n"
 "afstandsbediening om te navigeren."
 
 #: skin_default_skin.xml.h:277
-msgid "Here you can make for your selected network interface settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u voor de door u uitgekozen netwerkadaptor instellingen beheren.\n"
+msgid ""
+"Here you can make for your selected network interface settings. Use to "
+"navigate the control cross and the extra buttons displayed with your remote "
+"control to select."
+msgstr ""
+"Hier kunt u voor de door u uitgekozen netwerkadaptor instellingen beheren.\n"
 "\n"
 "Gebruik het stuur-kruis en de extra getoonde knopppen op uw\n"
 "afstandsbediening om te navigeren."
 
 #: skin_default_skin.xml.h:278
-msgid "Here you can make for your wireless network settings. 1. Use Search button and select Your SSID (apoint / router) and Press ok 2. Make settings Type / Key confirm with ok and Note the following instructions 3. Disable Lan Yes, Activate Wlan Yes and use DHCP for easy setup."
-msgstr "Hier kunt u uw WLAN instellingen beheren.\n"
+msgid ""
+"Here you can make for your wireless network settings. 1. Use Search button "
+"and select Your SSID (apoint / router) and Press ok 2. Make settings Type / "
+"Key confirm with ok and Note the following instructions 3. Disable Lan Yes, "
+"Activate Wlan Yes and use DHCP for easy setup."
+msgstr ""
+"Hier kunt u uw WLAN instellingen beheren.\n"
 "\n"
 "Gebruik het stuur-kruis en de extra getoonde knopppen op uw\n"
 "afstandsbediening om te navigeren."
 
 #: skin_default_skin.xml.h:279
-msgid "Here you can make your epg settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw EPG instellingen beheren.\n"
+msgid ""
+"Here you can make your epg settings. Use to navigate the control cross and "
+"the extra buttons displayed with your remote control to select."
+msgstr ""
+"Hier kunt u uw EPG instellingen beheren.\n"
 "\n"
 "Gebruik het stuur-kruis en de extra getoonde knopppen op uw\n"
 "afstandsbediening om te navigeren."
 
 #: skin_default_skin.xml.h:280
-msgid "Here you can make your mediadb settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw MediaDB instellingen beheren.\n"
+msgid ""
+"Here you can make your mediadb settings. Use to navigate the control cross "
+"and the extra buttons displayed with your remote control to select."
+msgstr ""
+"Hier kunt u uw MediaDB instellingen beheren.\n"
 "\n"
 "Gebruik het stuur-kruis en de extra getoonde knopppen op uw\n"
 "afstandsbediening om te navigeren."
 
 #: skin_default_skin.xml.h:281
-msgid "Here you can make your module settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie die Einstellungen für CI-Module anpassen.\n"
+msgid ""
+"Here you can make your module settings. Use to navigate the control cross "
+"and the extra buttons displayed with your remote control to select."
+msgstr ""
+"Hier können Sie die Einstellungen für CI-Module anpassen.\n"
 "\n"
-"Benutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+"Benutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit "
+"Ihrer Fernbedienung um zu navigieren."
 
 #: skin_default_skin.xml.h:282
-msgid "Here you can make your picture and sound settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw beeld en geluidsinstellingen beheren\n"
+msgid ""
+"Here you can make your picture and sound settings. Use to navigate the "
+"control cross and the extra buttons displayed with your remote control to "
+"select."
+msgstr ""
+"Hier kunt u uw beeld en geluidsinstellingen beheren\n"
 "\n"
 "Gebruik het stuur-kruis en de extra getoonde knopppen op uw\n"
 "afstandsbediening om te navigeren."
 
 #: skin_default_skin.xml.h:283
-msgid "Here you can make your PIN security for menus settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw PIN instellingen voor het menu beheren.\n"
+msgid ""
+"Here you can make your PIN security for menus settings. Use to navigate the "
+"control cross and the extra buttons displayed with your remote control to "
+"select."
+msgstr ""
+"Hier kunt u uw PIN instellingen voor het menu beheren.\n"
 "\n"
 "Gebruik het stuur-kruis en de extra getoonde knopppen op uw\n"
 "afstandsbediening om te navigeren."
 
 #: skin_default_skin.xml.h:284
-msgid "Here you can make your PIN security settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw PIN instellingen beheren.\n"
+msgid ""
+"Here you can make your PIN security settings. Use to navigate the control "
+"cross and the extra buttons displayed with your remote control to select."
+msgstr ""
+"Hier kunt u uw PIN instellingen beheren.\n"
 "\n"
 "Gebruik het stuur-kruis en de extra getoonde knopppen op uw\n"
 "afstandsbediening om te navigeren"
 
 #: skin_default_skin.xml.h:285
-msgid "Here you can make your recording timer configuration. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw opnames programmeren.\n"
+msgid ""
+"Here you can make your recording timer configuration. Use to navigate the "
+"control cross and the extra buttons displayed with your remote control to "
+"select."
+msgstr ""
+"Hier kunt u uw opnames programmeren.\n"
 "\n"
 "Gebruik het stuur-kruis en de extra getoonde knopppen op uw\n"
 "afstandsbediening om te navigeren."
 
 #: skin_default_skin.xml.h:286
-msgid "Here you can make your recordpath settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u het opname pad instellen.\n"
+msgid ""
+"Here you can make your recordpath settings. Use to navigate the control "
+"cross and the extra buttons displayed with your remote control to select."
+msgstr ""
+"Hier kunt u het opname pad instellen.\n"
 "\n"
 "Gebruik het stuur-kruis en de extra getoonde knopppen op uw\n"
 "afstandsbediening om te navigeren."
 
 #: skin_default_skin.xml.h:287
-msgid "Here you can make your screensaver settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw screensaver instellen.\n"
+msgid ""
+"Here you can make your screensaver settings. Use to navigate the control "
+"cross and the extra buttons displayed with your remote control to select."
+msgstr ""
+"Hier kunt u uw screensaver instellen.\n"
 "\n"
 "Gebruik het stuur-kruis en de extra getoonde knopppen op uw\n"
 "afstandsbediening om te navigeren."
 
 #: skin_default_skin.xml.h:288
-msgid "Here you can make your settings for your engine systems. To enter the latitude and longitude using the number keys."
+msgid ""
+"Here you can make your settings for your engine systems. To enter the "
+"latitude and longitude using the number keys."
 msgstr ""
 
 #: skin_default_skin.xml.h:289
-msgid "Here you can make your system settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw systeeem instellingen beheren.\n"
+msgid ""
+"Here you can make your system settings. Use to navigate the control cross "
+"and the extra buttons displayed with your remote control to select."
+msgstr ""
+"Hier kunt u uw systeeem instellingen beheren.\n"
 "\n"
 "Gebruik het stuur-kruis en de extra getoonde knopppen op uw\n"
 "afstandsbediening om te navigeren."
 
 #: skin_default_skin.xml.h:290
-msgid "Here you can make your timeshift settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie die Timeshift Einstellungen anpassen.\n"
+msgid ""
+"Here you can make your timeshift settings. Use to navigate the control cross "
+"and the extra buttons displayed with your remote control to select."
+msgstr ""
+"Hier können Sie die Timeshift Einstellungen anpassen.\n"
 "\n"
-"Benutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+"Benutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit "
+"Ihrer Fernbedienung um zu navigieren."
 
 #: skin_default_skin.xml.h:291
-msgid "Here you can make your vfd settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw VFD instellingen beheren.\n"
+msgid ""
+"Here you can make your vfd settings. Use to navigate the control cross and "
+"the extra buttons displayed with your remote control to select."
+msgstr ""
+"Hier kunt u uw VFD instellingen beheren.\n"
 "\n"
 "Gebruik het stuur-kruis en de extra getoonde knopppen op uw\n"
 "afstandsbediening om te navigeren."
 
 #: skin_default_skin.xml.h:292
-msgid "Here you can select from the following list a skin. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uit de lijst een skin selecteren.\n"
+msgid ""
+"Here you can select from the following list a skin. Use to navigate the "
+"control cross and the extra buttons displayed with your remote control to "
+"select."
+msgstr ""
+"Hier kunt u uit de lijst een skin selecteren.\n"
 "\n"
 "Gebruik het stuur-kruis en de extra getoonde knopppen op uw\n"
 "afstandsbediening om te navigeren."
 
 #: skin_default_skin.xml.h:293
-msgid "Here you can select from the following list. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u een selectie maken uit de lijst\n"
+msgid ""
+"Here you can select from the following list. Use to navigate the control "
+"cross and the extra buttons displayed with your remote control to select."
+msgstr ""
+"Hier kunt u een selectie maken uit de lijst\n"
 "\n"
 "Gebruik het stuur-kruis en de extra getoonde knopppen op uw\n"
 "afstandsbediening om te navigeren."
 
 #: skin_default_skin.xml.h:294
-msgid "Here you can select your hard disks and USB flash drives for configuration. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw hardeschijf of usb stick uitkiezen om te beheren.\n"
+msgid ""
+"Here you can select your hard disks and USB flash drives for configuration. "
+"Use to navigate the control cross and the extra buttons displayed with your "
+"remote control to select."
+msgstr ""
+"Hier kunt u uw hardeschijf of usb stick uitkiezen om te beheren.\n"
 "\n"
 "Gebruik het stuur-kruis en de extra getoonde knopppen op uw\n"
 "afstandsbediening om te navigeren."
 
 #: skin_default_skin.xml.h:295
-msgid "Here you can select your Network Interface. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw network adaptor uitkiezen.\n"
+msgid ""
+"Here you can select your Network Interface. Use to navigate the control "
+"cross and the extra buttons displayed with your remote control to select."
+msgstr ""
+"Hier kunt u uw network adaptor uitkiezen.\n"
 "\n"
 "Gebruik het stuur-kruis en de extra getoonde knopppen op uw\n"
 "afstandsbediening om te navigeren."
 
 #: skin_default_skin.xml.h:296
-msgid "Here you can set for your cable tuner. Ask your cable provider and make you connect an automatic search."
+msgid ""
+"Here you can set for your cable tuner. Ask your cable provider and make you "
+"connect an automatic search."
 msgstr ""
 
 #: skin_default_skin.xml.h:297
-msgid "Here you can set for your satellite tuner. First, make your satellite selection. When using DiSEqC They also point to the port used. For advanced Lnb / Unicam navigate to the field and press the Red button."
+msgid ""
+"Here you can set for your satellite tuner. First, make your satellite "
+"selection. When using DiSEqC They also point to the port used. For advanced "
+"Lnb / Unicam navigate to the field and press the Red button."
 msgstr ""
 
 #: skin_default_skin.xml.h:298
-msgid "Here you can set for your terrestrial tuner. Activate the terrestrial tuner and do you connect an automatic search."
+msgid ""
+"Here you can set for your terrestrial tuner. Activate the terrestrial tuner "
+"and do you connect an automatic search."
 msgstr ""
 
 #: skin_default_skin.xml.h:299
-msgid "Here you can set your Channel search options. Use to navigate the control cross and the extra buttons displayed with your remote control to select. Very important, before you start looking for a channel must be set to its tuner tuner settings."
+msgid ""
+"Here you can set your Channel search options. Use to navigate the control "
+"cross and the extra buttons displayed with your remote control to select. "
+"Very important, before you start looking for a channel must be set to its "
+"tuner tuner settings."
 msgstr ""
 
 #: skin_default_skin.xml.h:301
-msgid "Here you can set your timezone. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw tijdzone instellen.\n"
+msgid ""
+"Here you can set your timezone. Use to navigate the control cross and the "
+"extra buttons displayed with your remote control to select."
+msgstr ""
+"Hier kunt u uw tijdzone instellen.\n"
 "\n"
 "Gebruik het stuur-kruis en de extra getoonde knopppen op uw\n"
 "afstandsbediening om te navigeren."
 
 #: skin_default_skin.xml.h:302
-msgid "Here you can start and manage your additional plug-ins. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw extra applicaties starten en beheren.\n"
+msgid ""
+"Here you can start and manage your additional plug-ins. Use to navigate the "
+"control cross and the extra buttons displayed with your remote control to "
+"select."
+msgstr ""
+"Hier kunt u uw extra applicaties starten en beheren.\n"
 "\n"
 "Gebruik het stuur-kruis en de extra getoonde knopppen op uw\n"
 "afstandsbediening om te navigeren."
 
 #: skin_default_skin.xml.h:303
-msgid "Here you can test your network. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u uw netwerk testen.\n"
+msgid ""
+"Here you can test your network. Use to navigate the control cross and the "
+"extra buttons displayed with your remote control to select."
+msgstr ""
+"Hier kunt u uw netwerk testen.\n"
 "\n"
 "Gebruik het stuur-kruis en de extra getoonde knopppen op uw\n"
 "afstandsbediening om te navigeren."
 
 #: skin_default_skin.xml.h:304
-msgid "Here you can view the current channel information. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier kunt u de actuele zenderinfo oproepen.\n"
+msgid ""
+"Here you can view the current channel information. Use to navigate the "
+"control cross and the extra buttons displayed with your remote control to "
+"select."
+msgstr ""
+"Hier kunt u de actuele zenderinfo oproepen.\n"
 "\n"
 "Gebruik het stuur-kruis en de extra getoonde knopppen op uw\n"
 "afstandsbediening om te navigeren."
@@ -6626,8 +6842,11 @@ msgid "PlayList"
 msgstr "afspeellijst"
 
 #: skin_default_skin.xml.h:442
-msgid "Please contact Atemio for activation. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Neem Contact op met Atemio om te activeren\n"
+msgid ""
+"Please contact Atemio for activation. Use to navigate the control cross and "
+"the extra buttons displayed with your remote control to select."
+msgstr ""
+"Neem Contact op met Atemio om te activeren\n"
 "\n"
 "Gebruik het stuur-kruis en de extra getoonde knopppen op uw\n"
 "afstandsbediening om te navigeren."
@@ -7633,7 +7852,8 @@ msgid "Z"
 msgstr ""
 
 #: skinselector.h:218
-msgid "No skinconfig found in skin.\n"
+msgid ""
+"No skinconfig found in skin.\n"
 "Can't change to selected skin."
 msgstr ""
 
@@ -7670,7 +7890,8 @@ msgid "This file doesn't exist, or has been removed"
 msgstr "Bestand bestaat niet of is verplaatst"
 
 #: spinner.h:18
-msgid "Detect hanging System !!!\n"
+msgid ""
+"Detect hanging System !!!\n"
 "\n"
 "KILL = Red\n"
 "BOOT = Green"
@@ -7749,46 +7970,59 @@ msgid "No Live Stream running"
 msgstr "geen Live Stream actief"
 
 #: system_backup.h:15
-msgid "Backup to /tmp or /var/backup. If the free memory too small can a usb device will never use.\n"
+msgid ""
+"Backup to /tmp or /var/backup. If the free memory too small can a usb device "
+"will never use.\n"
 "There must be a folder backup."
-msgstr "Backup wordt opgeslagen in  /tmp\n"
+msgstr ""
+"Backup wordt opgeslagen in  /tmp\n"
 "Vanaf daar veilig stellen naar uw PC mbv van FTP"
 
 #: system_backup_restore.h:15
-msgid "Press -restore- and your saved settings will be restored from your swapstick / recording hdd! The Box will restart automatically for restoring!\n"
+msgid ""
+"Press -restore- and your saved settings will be restored from your "
+"swapstick / recording hdd! The Box will restart automatically for "
+"restoring!\n"
 "\n"
 "Press -backup- to save your actual settings to swapstick / recording hdd.\n"
 "WARNING: The old backup will be deleted!"
-msgstr "has to be Druk op -herstellen-(Rood)\n"
-"en uw instellingen worden hersteld uit een eerder gesaved herstelbestand! Uw box zal daarna automatisch herstarten!\n"
+msgstr ""
+"has to be Druk op -herstellen-(Rood)\n"
+"en uw instellingen worden hersteld uit een eerder gesaved herstelbestand! Uw "
+"box zal daarna automatisch herstarten!\n"
 "\n"
 "Druk op -herstelpunt maken -(Groen)\n"
 "dan word een herstelpunt gemaakt.\n"
 "LETOP: Eerdere herstelpunten worden verwijdert!\n"
 "\n"
-"Indien u de Systeem update  functie onder -Systeem- gebruikt, dan wordt dit herstelpunt automatisch gemaakt!"
+"Indien u de Systeem update  functie onder -Systeem- gebruikt, dan wordt dit "
+"herstelpunt automatisch gemaakt!"
 
 #: system_backup_restore.h:31
 msgid "Restore Settings"
 msgstr "Settings terugzetten"
 
 #: system_backup_restore.h:31
-msgid "Are you sure you want to restore settings?\n"
+msgid ""
+"Are you sure you want to restore settings?\n"
 "\n"
 "OK = start restore\n"
 "EXIT = abort restore"
-msgstr "Wilt u uw instellingen terugzetten??\n"
+msgstr ""
+"Wilt u uw instellingen terugzetten??\n"
 "\n"
 "OK = herstellen starten\n"
 "EXIT = Wiederherstellung abbrechen"
 
 #: system_backup_restore.h:33
-msgid "Please wait ...\n"
+msgid ""
+"Please wait ...\n"
 "\n"
 "All Settings are saved.\n"
 "\n"
 "Box will start in few seconds."
-msgstr "Even geduld ...\n"
+msgstr ""
+"Even geduld ...\n"
 "\n"
 "Alle instellingen worden opslagen\n"
 "\n"
@@ -7807,7 +8041,8 @@ msgid "RESTORE ERROR"
 msgstr "Fout bij terugzetten"
 
 #: system_backup_restore.h:51
-msgid "No backup folders found!!!\n"
+msgid ""
+"No backup folders found!!!\n"
 "\n"
 "Aborting restoring..."
 msgstr "Geen Backupmap gevonden"
@@ -7817,10 +8052,12 @@ msgid "Backup - Settings"
 msgstr "Backup wordt gemaakt"
 
 #: system_backup_restore.h:66
-msgid "Backup started\n"
+msgid ""
+"Backup started\n"
 "\n"
 "Please wait..."
-msgstr "Backup gestart\n"
+msgstr ""
+"Backup gestart\n"
 "\n"
 "Even wachten aub.."
 
@@ -7837,10 +8074,12 @@ msgid "BACKUP ERROR"
 msgstr "!!! Fout bij het maken van Backup !!!"
 
 #: system_backup_restore.h:88
-msgid "A record hdd or a swapstick must be mounted!\n"
+msgid ""
+"A record hdd or a swapstick must be mounted!\n"
 "\n"
 "Aborting backup..."
-msgstr "een hardeschijf of swapstick moet gemount zijn!\n"
+msgstr ""
+"een hardeschijf of swapstick moet gemount zijn!\n"
 "\n"
 "Backup wordt afgebroken..."
 
@@ -7905,9 +8144,11 @@ msgid "Error file not supported"
 msgstr "Fout, bestandsformaat wordt niet ondersteund!"
 
 #: system_update.h:333
-msgid "Can't start system update\n"
+msgid ""
+"Can't start system update\n"
 "Syntax Error on updatefile"
-msgstr "System Aktualisierung kann nicht gestartet werden!\n"
+msgstr ""
+"System Aktualisierung kann nicht gestartet werden!\n"
 "Syntax Fehler im Update File."
 
 #: timeshift.h:113
@@ -7915,9 +8156,11 @@ msgid "Should Timeshift File deleted ?"
 msgstr "Moet timeshift bestand verwijderd worden?"
 
 #: timeshift.h:155
-msgid "Timeshift file to short\n"
+msgid ""
+"Timeshift file to short\n"
 "please wait a little and try again"
-msgstr "Timeshift: Bestand is te klein\n"
+msgstr ""
+"Timeshift: Bestand is te klein\n"
 "wacht een moment en probeer op nieuw"
 
 #: timeshift.h:162
@@ -7925,7 +8168,8 @@ msgid "Can't start timeshift play !"
 msgstr "Timeshift kan niet gestart worden"
 
 #: timeshiftsettings.h:45
-msgid "Timeshiftsettings not allowed\n"
+msgid ""
+"Timeshiftsettings not allowed\n"
 "if timeshift is running !"
 msgstr ""
 
@@ -7950,14 +8194,17 @@ msgid "!!! This is a DEMO Version !!!"
 msgstr ""
 
 #: titan.c:310
-msgid "Found running record\n"
+msgid ""
+"Found running record\n"
 "or record is starting in next time.\n"
 "Really shutdown ?"
-msgstr "Letop! er loopt een opname, of start binnenkort.\n"
+msgstr ""
+"Letop! er loopt een opname, of start binnenkort.\n"
 "Wilt u nu werkelijk uitschakelen?"
 
 #: titan.c:319
-msgid "Found running download\n"
+msgid ""
+"Found running download\n"
 "Really shutdown ?"
 msgstr ""
 
@@ -8010,26 +8257,33 @@ msgid "Receiver successful unlocked"
 msgstr ""
 
 #: titan.c:1053
-msgid "Free space in /var to little!\n"
+msgid ""
+"Free space in /var to little!\n"
 "This can make problems!"
-msgstr "Geen geheugen ruimte meer in /var\n"
+msgstr ""
+"Geen geheugen ruimte meer in /var\n"
 "Dit kan tot problemen leiden!"
 
 #: titan.c:1059
-msgid "/var not writeable!\n"
+msgid ""
+"/var not writeable!\n"
 "Repair it?"
-msgstr "/var nicht beschreibbar!\n"
+msgstr ""
+"/var nicht beschreibbar!\n"
 "Reparieren?"
 
 #: titan.c:1070
-msgid "Free space in /mnt to little!\n"
+msgid ""
+"Free space in /mnt to little!\n"
 "This can make problems!"
 msgstr ""
 
 #: titan.c:1076
-msgid "/mnt not writeable!\n"
+msgid ""
+"/mnt not writeable!\n"
 "Repair it?"
-msgstr "/mnt nicht beschreibbar!\n"
+msgstr ""
+"/mnt nicht beschreibbar!\n"
 "Reparieren?"
 
 #: titan.c:1125
@@ -8061,7 +8315,8 @@ msgid "Remove Cachefile ?"
 msgstr "Cache bestand verwijderen"
 
 #: tithek.h:1100
-msgid "Can't start download.\n"
+msgid ""
+"Can't start download.\n"
 "Please try later."
 msgstr ""
 
@@ -8234,7 +8489,8 @@ msgid "Delete selected entry ?"
 msgstr ""
 
 #: tmc.h:1004
-msgid "MediaDB Path not found!\n"
+msgid ""
+"MediaDB Path not found!\n"
 "Configure it in MediaDB Settings"
 msgstr ""
 
@@ -8243,19 +8499,22 @@ msgid "Path: "
 msgstr ""
 
 #: tmc.h:1012
-msgid "MediaDB not found!\n"
+msgid ""
+"MediaDB not found!\n"
 "Scan your HDD in TMC Settings"
 msgstr ""
 
 #: tmc.h:1017
-msgid "IMDB Plugin not found!\n"
+msgid ""
+"IMDB Plugin not found!\n"
 "Can't get detail media infos\n"
 "Please install it"
 msgstr ""
 
 #: tmdb.h:922
 msgid "Error, found result without imdbid we can't this save in MediaDB"
-msgstr "Fout, gevonden zoek resultaat heeft geen IMDBid en kan daardoor niet\n"
+msgstr ""
+"Fout, gevonden zoek resultaat heeft geen IMDBid en kan daardoor niet\n"
 "in de MediaDB opgeslagen worden"
 
 #: tpchoice.h:21
@@ -8408,7 +8667,8 @@ msgid "loop to Tuner"
 msgstr "Verbonden met tuner"
 
 #: tunerconfig.h:772
-msgid "Tunerconfig is not allowed if record\n"
+msgid ""
+"Tunerconfig is not allowed if record\n"
 "or stream is running !"
 msgstr "Tunerconfig während einer Aufnahme/Streaming ist nicht erlaubt"
 
@@ -8437,9 +8697,11 @@ msgid "RECEIVER ID: "
 msgstr "Board-ID Serienummer: "
 
 #: unlock.h:66
-msgid "Can't save Code.\n"
+msgid ""
+"Can't save Code.\n"
 "Delete Plugins to free space"
-msgstr "Code kan niet opgeslagen worden.\n"
+msgstr ""
+"Code kan niet opgeslagen worden.\n"
 "Verwijder plugins om ruimte vrij te maken"
 
 #: unlock.h:71
@@ -8455,12 +8717,12 @@ msgid "channel"
 msgstr "Zendernaam"
 
 #: vfdisplay.h:33
-msgid "channel  time"
-msgstr "Zendernaam  tijd"
+msgid "channel + time"
+msgstr ""
 
 #: vfdisplay.h:34
-msgid "time  channel"
-msgstr "tijd  zendernaam"
+msgid "time + channel"
+msgstr ""
 
 #: vfdisplay.h:35 vfdisplay.h:41
 msgid "time"
@@ -8475,8 +8737,8 @@ msgid "channel number"
 msgstr ""
 
 #: vfdisplay.h:45
-msgid "date  time"
-msgstr "Datum  Tijd"
+msgid "date + time"
+msgstr ""
 
 #: vfdisplay.h:51
 msgid "blink"
@@ -8526,3 +8788,11 @@ msgstr "Maximum temperatuur: "
 msgid "Condition: "
 msgstr "Weer:"
 
+#~ msgid "channel  time"
+#~ msgstr "Zendernaam  tijd"
+
+#~ msgid "time  channel"
+#~ msgstr "tijd  zendernaam"
+
+#~ msgid "date  time"
+#~ msgstr "Datum  Tijd"
