@@ -438,9 +438,11 @@ unsigned char* dvbgetpmt(struct dvbdev* fenode, unsigned char* patbuf, int servi
 		}
 		if(serviceid == (((buf[3] & 0xff) << 8) + (buf[4] & 0xff)))
 		{
+			debug(200, "sid: %d = buf", serviceid);
 			dmxclose(dmxnode, -1);
 			if(pmtlen != NULL)
 			{
+				debug(200, "pmtlen=%d", *pmtlen);
 				*pmtlen =((buf[1] & 0xf) << 8) + ((buf[2] + 3) & 0xff);
 				buf = realloc(buf, *pmtlen);
 			}
