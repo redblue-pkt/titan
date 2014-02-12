@@ -442,8 +442,8 @@ unsigned char* dvbgetpmt(struct dvbdev* fenode, unsigned char* patbuf, int servi
 			dmxclose(dmxnode, -1);
 			if(pmtlen != NULL)
 			{
-				debug(200, "pmtlen=%d", *pmtlen);
 				*pmtlen =((buf[1] & 0xf) << 8) + ((buf[2] + 3) & 0xff);
+				debug(200, "pmtlen=%d", *pmtlen);
 				buf = realloc(buf, *pmtlen);
 			}
 			return buf;
