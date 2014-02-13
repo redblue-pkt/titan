@@ -222,6 +222,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 			patbuf = dvbgetpat(fenode, -1);
 			if(patbuf == NULL) status.secondzap = 1;
 		}
+		debug(200, "1-secondzap=%i", status.secondzap);
 		free(status.aktservice->pmtbuf);
 		status.aktservice->pmtbuf = NULL;
 		status.aktservice->pmtlen = 0;
@@ -231,6 +232,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 			status.aktservice->pmtbuf = dvbgetpmt(fenode, NULL, chnode->serviceid, &chnode->pmtpid, &status.aktservice->pmtlen, -1, 1);
 
 		if(status.aktservice->pmtbuf == NULL) status.secondzap = 2;
+		debug(200, "2-secondzap=%i", status.secondzap);
 		dvbgetinfo(status.aktservice->pmtbuf, chnode);
 
 		if(flag == 0)
@@ -456,6 +458,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		checkpmt = 1;
 		patbuf = dvbgetpat(fenode, -1);
 		if(patbuf == NULL) status.secondzap = 3;
+		debug(200, "3-secondzap=%i", status.secondzap);	
 		free(status.aktservice->pmtbuf);
 		status.aktservice->pmtbuf = NULL;
 		status.aktservice->pmtlen = 0;
@@ -465,6 +468,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 			status.aktservice->pmtbuf = dvbgetpmt(fenode, NULL, chnode->serviceid, &chnode->pmtpid, &status.aktservice->pmtlen, -1, 1);
 
 		if(status.aktservice->pmtbuf == NULL) status.secondzap = 4;
+		debug(200, "4-secondzap=%i", status.secondzap);
 		if(dvbgetinfo(status.aktservice->pmtbuf, chnode) == 1)
 		{
 			//audio or video pid or codec changed
@@ -516,6 +520,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		if(festatus != 0)
 		{
 			m_unlock(&status.servicemutex, 2);
+			err("festatus=%i", festatus );
 			return 2;
 		}
 	}
