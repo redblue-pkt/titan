@@ -6510,7 +6510,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:338
 msgid "lan"
-msgstr ""
+msgstr "LAN"
 
 #: skin_default_skin.xml.h:339
 msgid "Language"
@@ -6786,7 +6786,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:411
 msgid "Only default FEC"
-msgstr "Verwende Standard forward error correction (FEC)"
+msgstr "Verwende Standard Forward Error Correction (FEC)"
 
 #: skin_default_skin.xml.h:412
 msgid "Only default signalrate"
@@ -7092,7 +7092,7 @@ msgstr "Aus Favoriten entfernen"
 
 #: skin_default_skin.xml.h:495
 msgid "Remove unused Channels in Bouquets"
-msgstr "Lösche unbenutzte Kanäle in Favoriten"
+msgstr "Lösche unbenutzte Sender in Favoriten"
 
 #: skin_default_skin.xml.h:496
 msgid "rename service"
@@ -7560,11 +7560,11 @@ msgstr "USB Softwareaktualisierung (tmp)"
 
 #: skin_default_skin.xml.h:635
 msgid "System - Usbupdate (online)"
-msgstr "USB Softwareaktualisierung (Online)"
+msgstr "USB Systemaktualisierung (Online)"
 
 #: skin_default_skin.xml.h:636
 msgid "System - Usbupdate (tmp)"
-msgstr "USB Softwareaktualisierung (tmp)"
+msgstr "USB Systemaktualisierung (tmp)"
 
 #: skin_default_skin.xml.h:637
 msgid "sz"
@@ -7832,7 +7832,7 @@ msgstr "Bild Einstellungen"
 
 #: skin_default_skin.xml.h:714
 msgid "Video PID:"
-msgstr "Video PID:"
+msgstr ""
 
 #: skin_default_skin.xml.h:716
 msgid "Vietnamese"
@@ -8452,7 +8452,7 @@ msgstr "Im Cache Zwischenspeicherrn (10MB / 120 Sek)"
 
 #: tithek.h:1310
 msgid "File Caching Playback (20MB / 240s)"
-msgstr "Im Cache Wischenspeichern (20MB / 240 Sek)"
+msgstr "Im Cache Zwischenspeichern (20MB / 240 Sek)"
 
 #: tithek.h:1314
 msgid "File Caching Playback (30MB / 360s)"
