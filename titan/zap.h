@@ -396,7 +396,9 @@ void zap(int direction)
 {
 	char* tmpstr = NULL;
 	int zapret = 0;
-
+	
+	debug(200, "zap direction: %i", direction);
+	
 	if(status.servicetype == 0)
 		tmpstr = getconfig("channellist", NULL);
 	else

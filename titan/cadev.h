@@ -17,7 +17,7 @@ struct dvbdev* caopen(int adapter)
 	{
 		if((fd = open(node->dev, O_RDWR | O_NONBLOCK)) < 0)
 		{
-			debug(200, "open ca failed %s", node->dev);
+			debug(201, "open ca failed %s", node->dev);
 			node = NULL;
 		}
 		else
@@ -36,7 +36,7 @@ int caopendirect(char *cadev)
 
 	if((fd = open(cadev, O_RDWR | O_NONBLOCK)) < 0)
 	{
-		debug(200, "open ca failed %s", cadev);
+		debug(201, "open ca failed %s", cadev);
 	}
 
 	closeonexec(fd);
@@ -67,7 +67,7 @@ int cagetcaps(struct dvbdev* node, struct ca_caps* caps)
 	//caps.descr_num
 	//caps.descr_type
 
-	debug(200, "CA_GET_CAP");
+	debug(201, "CA_GET_CAP");
 	if(ioctl(node->fd, CA_GET_CAP, caps) < 0)
 	{
 		perr("CA_GET_CAP");
@@ -85,7 +85,7 @@ int cagetmsg(struct dvbdev* node, struct ca_msg *msg)
 		return 1;
 	}
 
-	debug(200, "CA_GET_MSG");
+	debug(201, "CA_GET_MSG");
 	if(ioctl(node->fd, CA_GET_MSG, msg) < 0)
 	{
 		perr("CA_GET_MSG");
@@ -103,7 +103,7 @@ int casendmsg(struct dvbdev* node, struct ca_msg *msg)
 		return 1;
 	}
 
-	debug(200, "CA_SEND_MSG");
+	debug(201, "CA_SEND_MSG");
 	if(ioctl(node->fd, CA_SEND_MSG, msg) < 0)
  	{
 		perr("CA_SEND_MSG");
@@ -121,7 +121,7 @@ int cagetdesc(struct dvbdev* node, struct ca_descr *descr)
 		return 1;
 	}
 
-	debug(200, "CA_GET_DESCR_INFO");
+	debug(201, "CA_GET_DESCR_INFO");
 	if(ioctl(node->fd, CA_GET_DESCR_INFO, descr) < 0)
 	{
 		perr("CA_GET_DESCR_INFO");
@@ -139,7 +139,7 @@ int casetdesc(struct dvbdev* node, struct ca_descr *descr)
 		return 1;
 	}
 
-	debug(200, "CA_SET_DESCR");
+	debug(201, "CA_SET_DESCR");
 	if(ioctl(node->fd, CA_SET_DESCR, descr) < 0)
 	{
 		perr("CA_SET_DESCR");
@@ -157,7 +157,7 @@ int casetpid(struct dvbdev* node, struct ca_pid *pid)
 		return 1;
 	}
 
-	debug(200, "CA_SET_PID");
+	debug(201, "CA_SET_PID");
 	if(ioctl(node->fd, CA_SET_PID, pid) < 0)
 	{
 		perr("CA_SET_PID");
@@ -175,7 +175,7 @@ int careset(struct dvbdev* node, int slot)
 		return 1;
 	}
 
-	debug(200, "CA_RESET");
+	debug(201, "CA_RESET");
 	if(ioctl(node->fd, CA_RESET, slot) < 0)
 	{
 		perr("CA_RESET");
@@ -197,7 +197,7 @@ int cagetslotinfo(struct dvbdev* node, ca_slot_info_t* info)
 	//info.type
 	//info.flags (1:no, 2:present, 3:ready)
 
-	debug(200, "CA_GET_SLOT_INFO");
+	debug(201, "CA_GET_SLOT_INFO");
 	if(ioctl(node->fd, CA_GET_SLOT_INFO, info) < 0)
 	{
 		perr("CA_GET_SLOT_INFO");
