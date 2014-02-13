@@ -7364,7 +7364,7 @@ msgstr "Skin-Auswahl"
 
 #: skin_default_skin.xml.h:577
 msgid "Skin Adjust"
-msgstr "Skin"
+msgstr "Skin-Einstellungen"
 
 #: skin_default_skin.xml.h:578
 msgid "Skin Select"
