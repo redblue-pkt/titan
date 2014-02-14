@@ -2077,7 +2077,8 @@ msgstr ""
 
 #: language.h:49
 msgid "Change language needs reboot"
-msgstr "ACHTUNG: Die Änderung der Spracheeinstellung\n"
+msgstr ""
+"ACHTUNG: Die Änderung der Spracheeinstellung\n"
 "erfordert einen Neustart!"
 
 #: lnbconfig.h:137 skin_default_skin.xml.h:448
