@@ -720,7 +720,9 @@ void dvbgetpmtthread()
 	if(status.play != 0 || status.playspeed != 0) return;
 	
 	if(status.aktservice->type != CHANNEL || status.aktservice->channel == NULL) return;
-
+	
+	debug(200, "dvbgetpmtthread started");
+	
 	int serviceid = status.aktservice->channel->serviceid;
 	uint64_t transponderid = status.aktservice->channel->transponderid;
 	int16_t pmtpid = status.aktservice->channel->pmtpid;
@@ -740,6 +742,7 @@ void dvbgetpmtthread()
 	//check if threre was a change from start funktion to lock
 	if(status.aktservice->type != CHANNEL || status.aktservice->channel == NULL || status.aktservice->channel->serviceid != serviceid || status.aktservice->channel->transponderid != transponderid)
 	{
+		debug(200, "change from start");
 		m_unlock(&status.servicemutex, 2);
 		free(pmtbuf);
 		return;
@@ -767,6 +770,8 @@ void dvbgetpmtthread()
 
 	if(change == 1)
 		servicestart(status.aktservice->channel, NULL, NULL, 3);
+		
+	debug(200, "dvbgetpmtthread ended... change=%i", change);
 }
 
 time_t dvbconvertdate(unsigned char *buf, int flag)
