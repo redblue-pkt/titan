@@ -33,7 +33,7 @@ msgstr ""
 msgid "System-Info"
 msgstr ""
 
-#: about.h:45 ard.h:31 avsettings.h:247 betarobot.h:57 bgdownload.h:176
+#: about.h:45 ard.h:31 avsettings.h:248 betarobot.h:57 bgdownload.h:176
 #: blindscanadjust.h:25 callmon_main.h:39 channellist.h:913 channellist.h:915
 #: channellist.h:920 channellist.h:922 channellist.h:1006 divxstage.h:36
 #: divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336 dlna.h:345
@@ -119,7 +119,7 @@ msgstr ""
 msgid "OK"
 msgstr "Ok"
 
-#: about.h:45 ard.h:31 avsettings.h:247 betarobot.h:57 bgdownload.h:176
+#: about.h:45 ard.h:31 avsettings.h:248 betarobot.h:57 bgdownload.h:176
 #: blindscanadjust.h:25 channellist.h:913 channellist.h:915 channellist.h:920
 #: channellist.h:922 channellist.h:1006 divxstage.h:36 divxstage.h:79
 #: divxstage.h:150 dlna.h:334 dlna.h:336 dlna.h:345 dvdplay.h:62
@@ -501,7 +501,7 @@ msgstr "Ja / VZAP 2 sek"
 msgid "yes / vzap endless"
 msgstr "Ja / VZAP unendlich"
 
-#: ard.h:31 avsettings.h:247 betarobot.h:57 bgdownload.h:176
+#: ard.h:31 avsettings.h:248 betarobot.h:57 bgdownload.h:176
 #: blindscanadjust.h:25 callmon_main.h:39 channellist.h:913 channellist.h:915
 #: channellist.h:920 channellist.h:922 channellist.h:1006 divxstage.h:36
 #: divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336 dlna.h:345
@@ -616,7 +616,7 @@ msgstr ""
 msgid "on"
 msgstr "AAN"
 
-#: avsettings.h:247 videomode.h:53
+#: avsettings.h:248 videomode.h:53
 msgid "Is this Videomode ok ?"
 msgstr "Is deze Video instelling ok?"
 
