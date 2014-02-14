@@ -5229,9 +5229,9 @@ msgid ""
 "select the sender in the right box and then save it with the red button that "
 "station. If you do not do this and go to exit out the search not saved."
 msgstr ""
-"After preforming a manual search, press the -Green- button to save all found "
-"channels. To add a channel manually, select the channel on the right and "
-"thenthe press red button to save.\n"
+"After preforming a manual search, press the -Green button- to save all "
+"found channels. To add a channel manually, select the channel on the right "
+"and press -Red button- to save in individually.\n"
 "Exit does not save anything!"
 
 #: skin_default_skin.xml.h:68
