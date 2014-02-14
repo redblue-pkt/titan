@@ -94,7 +94,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		m_unlock(&status.servicemutex, 2);
 		return 21;
 	}
-	
+	debug(200, "servicestartreal... started");
 	//stop running autoresolution
 	if(status.restimer != NULL)
 		status.restimer->aktion = STOP;
@@ -572,6 +572,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 		timeshiftpause(); //start permanent timeshift record
 	}
 	
+	debug(200, "servicestartreal... ended with 0");
 	return 0;
 }
 
@@ -579,15 +580,15 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 int servicestart(struct channel* chnode, char* channellist, char* pin, int flag)
 {
 	int ret = 0;
-
+	
 	ret = servicestartreal(chnode, channellist, pin, flag);
-
+	debug(200, "servicestart... started");
 	if(status.secondzap != 0 && ret == 0 && (flag == 0 || flag > 2))
 	{
 		debug(200, "first zap not ok, make second zap (%d)", status.secondzap);
 		ret = servicestartreal(chnode, channellist, pin, 6);
 	}
-
+	debug(200, "servicestart... ended");
 	return ret;
 }
 
