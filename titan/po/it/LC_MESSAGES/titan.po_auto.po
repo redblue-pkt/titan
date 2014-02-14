@@ -94,8 +94,8 @@ msgstr ""
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:28
 #: scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1888 scan.h:1979
-#: scan.h:2345 scart.h:12 scart.h:25 scriptexec.h:41 service.h:709
-#: service.h:950 skinadjust.h:133 skins_dlna_skin.xml.h:8 skinselector.h:218
+#: scan.h:2345 scart.h:12 scart.h:25 scriptexec.h:41 service.h:710
+#: service.h:951 skinadjust.h:133 skins_dlna_skin.xml.h:8 skinselector.h:218
 #: skins_facebook_skin.xml.h:5 skins_mboxinfo_skin.xml.h:2
 #: skins_mc_skin.xml.h:38 skins_rgui_skin.xml.h:3 skins_tiwakeup_skin.xml.h:3
 #: skins_wins3_skin.xml.h:3 sock.h:952 softcam.h:403 solarmovie.h:35
@@ -181,8 +181,8 @@ msgstr ""
 #: rectimer.h:1368 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:28 scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1888
-#: scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 scriptexec.h:41 service.h:709
-#: service.h:950 skin_default_skin.xml.h:216 skins_catcatch_skin.xml.h:4
+#: scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 scriptexec.h:41 service.h:710
+#: service.h:951 skin_default_skin.xml.h:216 skins_catcatch_skin.xml.h:4
 #: skins_dlna_skin.xml.h:2 skinselector.h:218 skins_facebook_skin.xml.h:4
 #: skins_instar_skin.xml.h:6 skins_mboxinfo_skin.xml.h:1
 #: skins_mc_skin.xml.h:22 skins_panel_skin.xml.h:15 skins_rgui_skin.xml.h:2
@@ -551,7 +551,7 @@ msgstr ""
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:28
 #: scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1640 scan.h:1888
-#: scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 service.h:709 service.h:950
+#: scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 service.h:710 service.h:951
 #: skinadjust.h:133 skinselector.h:218 sock.h:952 softcam.h:403
 #: solarmovie.h:35 solarmovie.h:47 solarmovie.h:295 spinner.h:18
 #: streamcloud.h:31 streamcloud.h:78 streamcloud.h:91 streamcloud.h:122
@@ -4859,27 +4859,27 @@ msgstr ""
 msgid "Script execute"
 msgstr ""
 
-#: service.h:709
+#: service.h:710
 msgid ""
 "Timeshift is running !!!\n"
 "Stop it and switch ?"
 msgstr ""
 
-#: service.h:933
+#: service.h:934
 msgid ""
 "Can't find a Tuner.\n"
 "All Tuners in use or no Tuner defined."
 msgstr ""
 
-#: service.h:936
+#: service.h:937
 msgid "Tuning to Channel failed!"
 msgstr ""
 
-#: service.h:939
+#: service.h:940
 msgid "Can't open frontend dev or Frontend Type unknown!"
 msgstr ""
 
-#: service.h:944
+#: service.h:945
 msgid "Channellist empty or corrupt (channel not found)!"
 msgstr ""
 
