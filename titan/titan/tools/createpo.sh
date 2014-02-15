@@ -47,6 +47,8 @@ for ROUND in $POLIST; do
 		ROUND_UTF=`echo $ROUND | sed 's!titan.po_auto.po!titan.po_auto.utf.po!'`
 		OUTFILE_MO=`echo $ROUND | sed 's!titan.po_auto.po!titan.mo!'`
 		OUTFILE_PO=`echo $ROUND | sed 's!titan.po_auto.po!titan.outfile.po!'`
+		OUTFILE_ERROR=`echo $ROUND | sed 's!titan.po_auto.po!titan.outfile.po.error!'`
+		OUTFILE_ERROR_AUTO=`echo $ROUND | sed 's!titan.po_auto.po!titan.outfile.po.auto.error!'`
 		ROUND_EDIT=`echo $ROUND | sed 's!titan.po_auto.po!titan.po!'`
 		ROUND_EDIT_UTF=`echo $ROUND | sed 's!titan.po_auto.po!titan.utf.po!'`
 		ROUND_MERGE_UTF=`echo $ROUND | sed 's!titan.po_auto.po!titan.merge.utf.po!'`
@@ -78,8 +80,13 @@ for ROUND in $POLIST; do
 
 		echo "[createpo.sh] msgfmt -v $OUTFILE_PO -o $OUTFILE_MO"
 		msgfmt -v $OUTFILE_PO -o $OUTFILE_MO		
-
+		
 		iconv -f UTF-8 -t ISO-8859-1 $ROUND_NEW_MERGE > $ROUND
+		if [ ! -e $OUTFILE_MO ];then
+			cp -a $OUTFILE_PO $OUTFILE_ERROR
+			cp -a $OUTFILE_PO $OUTFILE_ERROR_AUTO
+		fi
+
 	else
 		xgettext --omit-header -k_ *.* -o $ROUND
 	fi
