@@ -770,7 +770,7 @@ msgid "Found running Record.\nRealy shutdown ?"
 msgstr "Found a active recording.\nReally shutdown ?"
 
 msgid "Found running record\nor record is starting in next time.\nReally shutdown ?"
-msgstr "Found a active recording.\nor recording is starting soon.\nReally shutdown?"					msgstr "Found an active recording.\nor recording is starting soon.\nReally shutdown?"
+msgstr "Found a active recording.\nor recording is starting soon.\nReally shutdown?"
 
 msgid "Found running download\nReally shutdown ?"
 msgstr "Found a active download\nReally shutdown?"
