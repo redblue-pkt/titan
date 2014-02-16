@@ -4072,8 +4072,8 @@ msgid ""
 "cross and the extra buttons displayed with your remote control to select."
 msgstr ""
 "Here you can activate or deactivate your reader.\n"
-"Navigate with the control cross and the "
-"Buttons of your Remote Control as shown below"
+"Navigate with the control cross and the Buttons of your Remote Control as "
+"shown below"
 
 #: plugins_readerconfig_skin.xml.h:6 skins_readerconfig_skin.xml.h:6
 msgid ""

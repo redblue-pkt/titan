@@ -2077,7 +2077,8 @@ msgstr ""
 
 #: language.h:49
 msgid "Change language needs reboot"
-msgstr "ACHTUNG:\n"
+msgstr ""
+"ACHTUNG:\n"
 "Änderung der Spracheinstellung\n"
 "erfordert einen Neustart!"
 
