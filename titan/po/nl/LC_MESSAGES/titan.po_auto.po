@@ -4069,21 +4069,16 @@ msgstr "Enable"
 
 #: plugins_readerconfig_skin.xml.h:5 skins_readerconfig_skin.xml.h:5
 msgid ""
+"Here you can aktivate/deaktivate you readers. Use to navigate the control "
+"cross and the extra buttons displayed with your remote control to select."
+msgstr ""
+
+#: plugins_readerconfig_skin.xml.h:6 skins_readerconfig_skin.xml.h:6
+msgid ""
 "Here you can configure your reader. Use to navigate the control cross and "
 "the extra buttons displayed with your remote control to select."
 msgstr ""
 "Hier kunt u uw cardreader instellen.\n"
-"\n"
-"Gebruik het stuur-kruis en de extra getoonde knopppen op uw\n"
-"afstandsbediening om te navigeren."
-
-#: plugins_readerconfig_skin.xml.h:6 skin_default_skin.xml.h:300
-#: skins_readerconfig_skin.xml.h:6
-msgid ""
-"Here you can set your language. Use to navigate the control cross and the "
-"extra buttons displayed with your remote control to select."
-msgstr ""
-"Hierkunt u uw taal instellen.\n"
 "\n"
 "Gebruik het stuur-kruis en de extra getoonde knopppen op uw\n"
 "afstandsbediening om te navigeren."
@@ -6286,6 +6281,16 @@ msgid ""
 "Very important, before you start looking for a channel must be set to its "
 "tuner tuner settings."
 msgstr ""
+
+#: skin_default_skin.xml.h:300
+msgid ""
+"Here you can set your language. Use to navigate the control cross and the "
+"extra buttons displayed with your remote control to select."
+msgstr ""
+"Hierkunt u uw taal instellen.\n"
+"\n"
+"Gebruik het stuur-kruis en de extra getoonde knopppen op uw\n"
+"afstandsbediening om te navigeren."
 
 #: skin_default_skin.xml.h:301
 msgid ""
