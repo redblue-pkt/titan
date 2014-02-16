@@ -4071,6 +4071,9 @@ msgid ""
 "Here you can aktivate/deaktivate you readers. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
 msgstr ""
+"Here you can activate or deactivate your reader.\n"
+"Navigate with the control cross and the "
+"Buttons of your Remote Control as shown below"
 
 #: plugins_readerconfig_skin.xml.h:6 skins_readerconfig_skin.xml.h:6
 msgid ""
@@ -5215,7 +5218,7 @@ msgstr "Add Service"
 
 #: skin_default_skin.xml.h:63
 msgid "Adjust"
-msgstr ""
+msgstr "System Adjustment"
 
 #: skin_default_skin.xml.h:64
 msgid "ae"
@@ -5448,7 +5451,7 @@ msgstr "Auto Update Channelname"
 
 #: skin_default_skin.xml.h:126
 msgid "Change Feed"
-msgstr "Change Feed Address"
+msgstr "Add Feed Address"
 
 #: skin_default_skin.xml.h:128
 msgid "Channel Allocation"
@@ -5456,7 +5459,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:129
 msgid "Channel Edit"
-msgstr ""
+msgstr "Channellist Editor"
 
 #: skin_default_skin.xml.h:130
 msgid "Channel History"
@@ -6310,7 +6313,7 @@ msgid ""
 "Here you can set your language. Use to navigate the control cross and the "
 "extra buttons displayed with your remote control to select."
 msgstr ""
-"Here you can set your Language. Navigate with the control cross and the "
+"Here you can chose your Language. Navigate with the control cross and the "
 "Buttons of your Remote Control as shown below"
 
 #: skin_default_skin.xml.h:301
@@ -6657,7 +6660,7 @@ msgstr "Move within Favorites"
 
 #: skin_default_skin.xml.h:385
 msgid "Moviepath"
-msgstr "Path to Movies"
+msgstr "Path to Media"
 
 #: skin_default_skin.xml.h:386
 msgid "MTD"
@@ -7326,11 +7329,11 @@ msgstr ""
 
 #: skin_default_skin.xml.h:576
 msgid "Skin"
-msgstr ""
+msgstr "Skin Selection"
 
 #: skin_default_skin.xml.h:577
 msgid "Skin Adjust"
-msgstr ""
+msgstr "Skin Settings"
 
 #: skin_default_skin.xml.h:578
 msgid "Skin Select"

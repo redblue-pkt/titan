@@ -2077,8 +2077,8 @@ msgstr ""
 
 #: language.h:49
 msgid "Change language needs reboot"
-msgstr ""
-"ACHTUNG: Die Änderung der Spracheeinstellung\n"
+msgstr "ACHTUNG:\n"
+"Änderung der Spracheinstellung\n"
 "erfordert einen Neustart!"
 
 #: lnbconfig.h:137 skin_default_skin.xml.h:448
@@ -4112,6 +4112,9 @@ msgid ""
 "Here you can aktivate/deaktivate you readers. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
 msgstr ""
+"Hier können Sie ihren Reader aktivieren bzw. deaktivieren.\n"
+"\n"
+"Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
 #: plugins_readerconfig_skin.xml.h:6 skins_readerconfig_skin.xml.h:6
 msgid ""
@@ -8707,7 +8710,7 @@ msgstr ""
 
 #: transponder.h:572 transponder.h:579
 msgid "DVBS"
-msgstr ""
+msgstr "DVB-S"
 
 #: transponder.h:573 transponder.h:581
 msgid "DVBS2"
@@ -8779,7 +8782,7 @@ msgstr "Unicable Produkt"
 
 #: unicable.h:277
 msgid "Unicable SCR"
-msgstr ""
+msgstr "Unikabel SCR"
 
 #: unlock.h:20
 msgid "Spezialfunctions unlocked, no input required"
