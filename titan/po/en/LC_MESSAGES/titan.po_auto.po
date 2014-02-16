@@ -6313,7 +6313,7 @@ msgid ""
 "Here you can set your language. Use to navigate the control cross and the "
 "extra buttons displayed with your remote control to select."
 msgstr ""
-"Here you can chose your Language. Navigate with the control cross and the "
+"Here you can choose your Language. Navigate with the control cross and the "
 "Buttons of your Remote Control as shown below"
 
 #: skin_default_skin.xml.h:301
