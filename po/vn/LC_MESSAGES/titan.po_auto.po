@@ -4041,20 +4041,17 @@ msgstr "cho phép"
 
 #: plugins_readerconfig_skin.xml.h:5 skins_readerconfig_skin.xml.h:5
 msgid ""
+"Here you can aktivate/deaktivate you readers. Use to navigate the control "
+"cross and the extra buttons displayed with your remote control to select."
+msgstr ""
+
+#: plugins_readerconfig_skin.xml.h:6 skins_readerconfig_skin.xml.h:6
+msgid ""
 "Here you can configure your reader. Use to navigate the control cross and "
 "the extra buttons displayed with your remote control to select."
 msgstr ""
 "Bạn có thể cấu hình thiết bị đọc ở đây. nsử dụng các phím "
 "di chuyển và các nút mở rộng trên điều khiển để chọn."
-
-#: plugins_readerconfig_skin.xml.h:6 skin_default_skin.xml.h:300
-#: skins_readerconfig_skin.xml.h:6
-msgid ""
-"Here you can set your language. Use to navigate the control cross and the "
-"extra buttons displayed with your remote control to select."
-msgstr ""
-"Bạn có thể thiết lập ngôn ngữ ở đây. sử dụng các phím di "
-"chuyển và các nút mở rộng trên điều khiển để chọn."
 
 #: plugins_readerconfig_skin.xml.h:7 skins_readerconfig_skin.xml.h:7
 msgid "Reader Config"
@@ -6199,6 +6196,14 @@ msgid ""
 "Very important, before you start looking for a channel must be set to its "
 "tuner tuner settings."
 msgstr ""
+
+#: skin_default_skin.xml.h:300
+msgid ""
+"Here you can set your language. Use to navigate the control cross and the "
+"extra buttons displayed with your remote control to select."
+msgstr ""
+"Bạn có thể thiết lập ngôn ngữ ở đây. sử dụng các phím di "
+"chuyển và các nút mở rộng trên điều khiển để chọn."
 
 #: skin_default_skin.xml.h:301
 msgid ""
