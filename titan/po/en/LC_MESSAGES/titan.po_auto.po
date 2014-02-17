@@ -1352,7 +1352,7 @@ msgstr "Remove - Selection"
 
 #: extensions.h:277
 msgid "Removeing"
-msgstr ""
+msgstr "Removing"
 
 #: extensions.h:282
 msgid "Tpk Remove Info"
@@ -1635,7 +1635,7 @@ msgstr ""
 
 #: harddisk.h:446 harddisk.h:447
 msgid "Harddisk Fsck - List Devices"
-msgstr "Harddisk Filesystemcheck - List of devices"
+msgstr "Harddisk File system check - List of devices"
 
 #: harddisk.h:451 harddisk.h:452
 msgid "Harddisk Configure - List Devices"
@@ -1708,11 +1708,11 @@ msgstr ""
 
 #: harddisk.h:867 harddisk.h:868
 msgid "Harddisk Sleep"
-msgstr ""
+msgstr "Harddisk Powersave"
 
 #: harddisk.h:874 skin_default_skin.xml.h:651
 msgid "Time to sleep"
-msgstr ""
+msgstr "Powersave in"
 
 #: harddisk.h:876
 msgid "5 min"
@@ -2764,7 +2764,7 @@ msgstr ""
 
 #: panel_settings_autostart.h:34 settings_autostart.h:25
 msgid "fsckroot"
-msgstr "Root-partition Filesystemcheck"
+msgstr "Root-partition File system check"
 
 #: panel_settings_autostart.h:44 settings_autostart.h:35
 msgid "bootstop"
@@ -2841,7 +2841,7 @@ msgstr ""
 
 #: panel_settings_autostart.h:201 settings_autostart.h:282
 msgid "Fsck Record"
-msgstr "Record-partition Filesystemcheck"
+msgstr "Record-partition File system check"
 
 #: panel_settings_autostart.h:210 settings_autostart.h:291
 #: skin_default_skin.xml.h:618
@@ -2854,7 +2854,7 @@ msgstr ""
 
 #: panel_settings_autostart.h:236 settings_autostart.h:317
 msgid "Fsck Swap"
-msgstr "Swap-partition Filesystemcheck"
+msgstr "Swap-partition File system check"
 
 #: panel_settings_autostart.h:245 settings_autostart.h:326
 msgid "Record Max Sectors"
@@ -3681,7 +3681,7 @@ msgstr ""
 
 #: plugins_mc_skin.xml.h:34 skins_mc_skin.xml.h:34
 msgid "Mediathek"
-msgstr "Online Media centre"
+msgstr "Online Media Centre"
 
 #: plugins_mc_skin.xml.h:35 skins_mc_skin.xml.h:35
 msgid "mvid"
@@ -4466,6 +4466,8 @@ msgid ""
 "HDD not configured\n"
 "can't find record path"
 msgstr ""
+"ERROR: Harddsik not configured.\n"
+"Can't find path for recordings"
 
 #: record.h:40
 msgid "Not enought space"
@@ -4717,7 +4719,7 @@ msgstr ""
 #: restoredefault.h:63 restoredefault.h:67 restoredefault.h:71
 #: skin_default_skin.xml.h:505
 msgid "Restore default settings"
-msgstr "Restore Factory-settings"
+msgstr "Restore Factory settings"
 
 #: restoredefault.h:64 restoredefault.h:75
 msgid "Format MNT with Backup/Restore"
@@ -5358,7 +5360,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:101
 msgid "Backup"
-msgstr ""
+msgstr "System Backup"
 
 #: skin_default_skin.xml.h:102 system_backup_restore.h:18
 #: system_backup_restore.h:75
@@ -5387,7 +5389,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:107
 msgid "Behavior at recording"
-msgstr "Display during a Recording"
+msgstr "What to display during Recordings"
 
 #: skin_default_skin.xml.h:108
 msgid "BER:"
@@ -5715,7 +5717,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:202
 msgid "Engine Systems"
-msgstr "Motorised Sytem"
+msgstr "Rotor Sytem"
 
 #: skin_default_skin.xml.h:203
 msgid "English"
@@ -5735,15 +5737,15 @@ msgstr "Free Space in (KB)"
 
 #: skin_default_skin.xml.h:207
 msgid "Epg List Mode"
-msgstr "Backgroundscan"
+msgstr "Background scan"
 
 #: skin_default_skin.xml.h:208
 msgid "EPG Path"
-msgstr ""
+msgstr "Path for EPG storage"
 
 #: skin_default_skin.xml.h:209
 msgid "Epg Refresh Time"
-msgstr ""
+msgstr "EPG Refresh Time"
 
 #: skin_default_skin.xml.h:210
 msgid "EPG Reset"
@@ -5771,7 +5773,7 @@ msgstr "EPG Short-View"
 
 #: skin_default_skin.xml.h:217
 msgid "Expert Modus"
-msgstr ""
+msgstr "Expert Mode"
 
 #: skin_default_skin.xml.h:218
 msgid "Extensions"
@@ -5779,7 +5781,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:219
 msgid "Extensions..."
-msgstr "Extension"
+msgstr "Extensions"
 
 #: skin_default_skin.xml.h:220
 msgid "Ext. Modul detect (needs reboot)"
@@ -5819,7 +5821,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:230
 msgid "Filesystem Check"
-msgstr ""
+msgstr "File System Check"
 
 #: skin_default_skin.xml.h:231
 msgid "Fine move"
@@ -5840,11 +5842,11 @@ msgstr ""
 
 #: skin_default_skin.xml.h:234
 msgid "Flashupdate (online)"
-msgstr "Softwareupdate (Online)"
+msgstr "Software Update (Online)"
 
 #: skin_default_skin.xml.h:235
 msgid "Flashupdate (tmp)"
-msgstr "Softwareupdate (Lokal)"
+msgstr "Software Update (Local)"
 
 #: skin_default_skin.xml.h:236
 msgid "Fontsize adjust in pixel"
@@ -5852,7 +5854,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:237
 msgid "Format HDD"
-msgstr "Format Harddisk-Drive"
+msgstr "Format Device"
 
 #: skin_default_skin.xml.h:238
 msgid "free space"
@@ -5968,10 +5970,9 @@ msgid ""
 "control cross and the extra buttons displayed with your remote control to "
 "select."
 msgstr ""
-"Here you may check the signal quality.\n"
+"Here you can check the signal quality on the running channel.\n"
 "\n"
-"Navigate with the control cross and the Buttons of your Remote Control as "
-"shown below"
+"Press -OK- or -Exit- to return to the Menu"
 
 #: skin_default_skin.xml.h:267
 msgid ""
@@ -5980,7 +5981,7 @@ msgid ""
 "systems require an additional engine settings making."
 msgstr ""
 "Here you may configure your tuner. Edit the settings suiting your tuner and "
-"Connection-type. For Motorised systems configure 'Motor Systems'to suite "
+"Connection-type. For rotor systems configure 'rotor Systems to suite "
 "your Environment."
 
 #: skin_default_skin.xml.h:268
@@ -6147,7 +6148,7 @@ msgid ""
 "control cross and the extra buttons displayed with your remote control to "
 "select."
 msgstr ""
-"Here you may make your PIN security for menus settings.\n"
+"Here you can protect specific Menu items with a PIN.\n"
 "\n"
 "Navigate with the control cross and the Buttons of your Remote Control as "
 "shown below"
@@ -6157,7 +6158,7 @@ msgid ""
 "Here you can make your PIN security settings. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
 msgstr ""
-"Here you may setup your PIN security settings.\n"
+"Here you may setup PIN Code Protection.\n"
 "\n"
 "Navigate with the control cross and the Buttons of your Remote Control as "
 "shown below"
@@ -6198,7 +6199,7 @@ msgid ""
 "Here you can make your settings for your engine systems. To enter the "
 "latitude and longitude using the number keys."
 msgstr ""
-"Here you may setup your settings for your motorised system.\n"
+"Here you may setup your rotor system.\n"
 "\n"
 "Navigate with the control cross and the Buttons of your Remote Control as "
 "shown below"
@@ -6228,7 +6229,7 @@ msgid ""
 "Here you can make your vfd settings. Use to navigate the control cross and "
 "the extra buttons displayed with your remote control to select."
 msgstr ""
-"Here you may setup your VFDisplay settings.n\n"
+"Here you may setup your VFDisplay settings.\n"
 "Navigate with the control cross and the Buttons of your Remote Control as "
 "shown below"
 
@@ -6238,7 +6239,7 @@ msgid ""
 "control cross and the extra buttons displayed with your remote control to "
 "select."
 msgstr ""
-"Here you may select a skin from the following list.n\n"
+"Here you may select a skin from the following list.\n"
 "Navigate with the control cross and the Buttons of your Remote Control as "
 "shown below"
 
@@ -6247,7 +6248,7 @@ msgid ""
 "Here you can select from the following list. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
 msgstr ""
-"Her you may select from the following list.n\n"
+"Here you may select from the following list.\n"
 "Navigate with the control cross and the Buttons of your Remote Control as "
 "shown below"
 
@@ -6257,7 +6258,7 @@ msgid ""
 "Use to navigate the control cross and the extra buttons displayed with your "
 "remote control to select."
 msgstr ""
-"Here you may select your USB- and Harddisk drives for configuration.n\n"
+"Here you may select the Sleepmode for your Harddrive.\n"
 "Navigate with the control cross and the Buttons of your Remote Control as "
 "shown below"
 
@@ -6266,7 +6267,7 @@ msgid ""
 "Here you can select your Network Interface. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
 msgstr ""
-"Here you may select which Network Interface you would like to configure.n\n"
+"Here you may select which Network Interface you would like to configure.\n"
 "Navigate with the control cross and the Buttons of your Remote Control as "
 "shown below"
 
@@ -6321,7 +6322,7 @@ msgid ""
 "Here you can set your timezone. Use to navigate the control cross and the "
 "extra buttons displayed with your remote control to select."
 msgstr ""
-"Here can set the timezone for your Region.n\n"
+"Here can set the timezone for your Region.\n"
 "Navigate with the control cross and the Buttons of your Remote Control as "
 "shown below"
 
@@ -6331,7 +6332,7 @@ msgid ""
 "control cross and the extra buttons displayed with your remote control to "
 "select."
 msgstr ""
-"Here you have the options to manage and control your plugins.n\n"
+"Here you have the options to manage and control your plugins.\n"
 "Navigate with the control cross and the Buttons of your Remote Control as "
 "shown below"
 
@@ -6340,7 +6341,7 @@ msgid ""
 "Here you can test your network. Use to navigate the control cross and the "
 "extra buttons displayed with your remote control to select."
 msgstr ""
-"Here you can test your Network.n\n"
+"Here you can test your Network.\n"
 "Navigate with the control cross and the Buttons of your Remote Control as "
 "shown below"
 
@@ -6350,7 +6351,7 @@ msgid ""
 "control cross and the extra buttons displayed with your remote control to "
 "select."
 msgstr ""
-"Here you can view the current channel information.n\n"
+"Here you can view the current channel information.\n"
 "Navigate with the control cross and the Buttons of your Remote Control as "
 "shown below"
 
@@ -6396,15 +6397,15 @@ msgstr ""
 
 #: skin_default_skin.xml.h:315
 msgid "Inc. AC3 Audio in %"
-msgstr "Increase AC3 Audio by Stereo-reduction in %"
+msgstr "Increase AC3 Audio by stereo-reduction in %"
 
 #: skin_default_skin.xml.h:316
 msgid "Infobar Sleep"
-msgstr "Time for infobar to appear (Sec)"
+msgstr "Set Infobar fade-in (Seconds)"
 
 #: skin_default_skin.xml.h:317
 msgid "Infobar Timeout"
-msgstr "Time for Infobar to fade-out (Sec)"
+msgstr "Set Infobar to fade-out (Seconds)"
 
 #: skin_default_skin.xml.h:318
 msgid "Information"
@@ -6604,7 +6605,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:370
 msgid "MENUPROTECT"
-msgstr "Menu Protection"
+msgstr "Menu"
 
 #: skin_default_skin.xml.h:371
 msgid "MHW2 EPG"
@@ -6871,7 +6872,7 @@ msgid ""
 "Please contact Atemio for activation. Use to navigate the control cross and "
 "the extra buttons displayed with your remote control to select."
 msgstr ""
-"Please contact Atemio to activate Tian.n\n"
+"Please contact Atemio to activate Tian.\n"
 "Navigate with the control cross and the Buttons of your Remote Control as "
 "shown below"
 
@@ -7097,7 +7098,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:506
 msgid "Resync Recording immediately"
-msgstr "Resync Recordings immediately (dissable Chache)"
+msgstr "Resync Recordings immediately (dissable Cache)"
 
 #: skin_default_skin.xml.h:510
 msgid "RGUID Port"
@@ -7301,11 +7302,11 @@ msgstr ""
 
 #: skin_default_skin.xml.h:566
 msgid "Show in Standby"
-msgstr ""
+msgstr "What to display in standby"
 
 #: skin_default_skin.xml.h:567
 msgid "Show in VFD"
-msgstr "Show in VFDisplay"
+msgstr "What to display in operation"
 
 #: skin_default_skin.xml.h:568
 msgid "Show last pos Question"
@@ -7353,7 +7354,7 @@ msgstr "Jump ion Keys 7/9 (in Sec)"
 
 #: skin_default_skin.xml.h:582
 msgid "Skip privat CA descriptor"
-msgstr ""
+msgstr "Skip private CA descriptor"
 
 #: skin_default_skin.xml.h:583
 msgid "SmartCard Reader"
@@ -7377,7 +7378,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:590
 msgid "Sound amplifier (TV-Modus / internal Player)"
-msgstr ""
+msgstr "Sound amplifier (TV-mode / internal Player)"
 
 #: skin_default_skin.xml.h:591
 msgid "Space"
@@ -7409,11 +7410,11 @@ msgstr ""
 
 #: skin_default_skin.xml.h:600
 msgid "Standby / Poweroff"
-msgstr ""
+msgstr "Power Off / Reboot"
 
 #: skin_default_skin.xml.h:601
 msgid "Standby / Poweroff..."
-msgstr "Standby / Poweroff"
+msgstr "Power Off / Reboot"
 
 #: skin_default_skin.xml.h:603
 msgid "Start HTTPD"
@@ -7449,7 +7450,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:613
 msgid "Stream Path"
-msgstr ""
+msgstr "Path For Stream Storage"
 
 #: skin_default_skin.xml.h:614
 msgid "Stream Port"
@@ -7569,11 +7570,11 @@ msgstr ""
 
 #: skin_default_skin.xml.h:647
 msgid "Timer Record Path"
-msgstr ""
+msgstr "Path for Timer Recordings"
 
 #: skin_default_skin.xml.h:648
 msgid "Timeshift Path"
-msgstr ""
+msgstr "Path For Timeshift"
 
 #: skin_default_skin.xml.h:649
 msgid "Timeshift Settings"
@@ -7589,7 +7590,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:653
 msgid "Time to wait after seek for fill buffer"
-msgstr "Playbackbuffer - Time to wait befor Buffer fill"
+msgstr "Playback buffer - Time to wait before Buffer fill"
 
 #: skin_default_skin.xml.h:654
 msgid "Timezone"
@@ -7821,7 +7822,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:720
 msgid "Volumebar Timeout"
-msgstr "Time to Volumebar fade-out (seconds)"
+msgstr "Set Volumebar fade-out (Seconds)"
 
 #: skin_default_skin.xml.h:721
 msgid "Votes"
@@ -7997,7 +7998,7 @@ msgstr ""
 msgid ""
 "Backup to /tmp or /var/backup. If the free memory too small can a usb device "
 "will never use.\n"
-"There must be a folder backup."
+"There must be a folder 'backup'."
 msgstr ""
 "Backup to (tmp or /var/backup. Incase of insufficient free Memomory you must "
 "use a USB-Stick or Harddisk Drive. A Folder named 'backup' must exist on "
@@ -8097,7 +8098,7 @@ msgstr "Backup Log"
 
 #: system_infos.h:49
 msgid "Free Space"
-msgstr ""
+msgstr "Memory Overview"
 
 #: system_infos_sysinfo.h:16
 msgid "CPU info"
@@ -8695,7 +8696,7 @@ msgstr ""
 
 #: unlock.h:20
 msgid "Spezialfunctions unlocked, no input required"
-msgstr ""
+msgstr "Special Functions unlocked."
 
 #: unlock.h:26
 msgid "RECEIVER ID: "
