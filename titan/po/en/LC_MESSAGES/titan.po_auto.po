@@ -7741,7 +7741,7 @@ msgstr "Unload"
 
 #: skin_default_skin.xml.h:697
 msgid "update"
-msgstr "Update"
+msgstr "Refresh"
 
 #: skin_default_skin.xml.h:698
 msgid "Update entrys on scan"
