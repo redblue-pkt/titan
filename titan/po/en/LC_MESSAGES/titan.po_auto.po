@@ -8792,12 +8792,3 @@ msgstr "max Temp: "
 #: weather.h:442 weather.h:460 weather.h:478 weather.h:496
 msgid "Condition: "
 msgstr ""
-
-#~ msgid ""
-#~ "Backup to /tmp or /var/backup. If the free memory too small can a usb "
-#~ "device will never use.\n"
-#~ "There must be a folder 'backup'."
-#~ msgstr ""
-#~ "Backup to (tmp or /var/backup. Incase of insufficient free Memomory you "
-#~ "must use a USB-Stick or Harddisk Drive. A Folder named 'backup' must "
-#~ "exist on that medium."
