@@ -3419,7 +3419,7 @@ msgid "Start on boot"
 msgstr "Autostart"
 
 #: plugins_dlna_skin.xml.h:14 plugins_tsSchnitt_skin.xml.h:9
-#: skin_default_skin.xml.h:608 skins_dlna_skin.xml.h:14
+#: skin_default_skin.xml.h:609 skins_dlna_skin.xml.h:14
 #: skins_tsSchnitt_skin.xml.h:9
 msgid "STOP"
 msgstr "Stopp"
@@ -6640,12 +6640,12 @@ msgid "Menulist"
 msgstr "Menüliste"
 
 #: skin_default_skin.xml.h:369
-msgid "MENUPROTECT"
-msgstr "Menüschutz"
-
-#: skin_default_skin.xml.h:370
 msgid "Menu Protect"
 msgstr "Menü schützen"
+
+#: skin_default_skin.xml.h:370
+msgid "MENUPROTECT"
+msgstr "Menüschutz"
 
 #: skin_default_skin.xml.h:371
 msgid "MHW2 EPG"
@@ -7473,7 +7473,7 @@ msgstr "Frequenzratenschritt"
 msgid "Step signalrate"
 msgstr "Signalratenschritt"
 
-#: skin_default_skin.xml.h:609
+#: skin_default_skin.xml.h:608
 msgid "(Stop)"
 msgstr "(Stopp)"
 
