@@ -1,6 +1,7 @@
 #!/bin/sh
 
 SVNUSER=$1
+GROUP=$2
 
 if [ -z "$1" ]; then
 	echo "usage: createpo.sh <svnuser> <update|new>"
