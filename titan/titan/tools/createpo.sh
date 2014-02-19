@@ -97,7 +97,7 @@ done
 echo "[createpo.sh] check user"
 		
 cd "$HOME"/flashimg/source.titan/po
-if [ $SVNUSER = "aafsvn" ];then
+if [ $SVNUSER = "aafsvn" ] && [ "$GROUP" = "dev" ];then
 	echo "[createpo.sh] svn commit -m [titan] autoupdate po files"
 	svn commit -m "[titan] autoupdate po files"
 	svn commit "$HOME"/flashimg/source.titan/po
