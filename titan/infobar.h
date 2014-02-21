@@ -349,6 +349,10 @@ void screeninfobar()
 			subtitlepause(1);
 			status.infobar = 0;
 			clearscreen(infobar);
+			if(infobarm != infobar) {
+				infobar = infobarm;
+				clearscreen(infobar);
+			}
 			drawscreen(skin, 0, 0);
 			subtitlepause(0);
 			continue;
