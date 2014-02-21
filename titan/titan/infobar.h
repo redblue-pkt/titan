@@ -9,6 +9,7 @@ void screeninfobar()
 	struct skin* infobar1 = getscreen("infobar");
 	struct skin* infobar2 = getscreen("infobar2");
 	struct skin* infobar = infobar1;
+	struct skin* infobarm = infobar1;
 	struct skin* standbymenu = NULL;
 	char* tmpstr = NULL; char* tmpnr = NULL;
 	struct skin* pluginnode = NULL;
@@ -767,6 +768,10 @@ void screeninfobar()
 			else
 			{
 				clearscreen(infobar);
+				if(infobarm != infobar) {
+					infobar = infobarm;
+					clearscreen(infobar);
+				}
 				status.infobar = 0;
 				drawscreen(skin, 0, 0);
 				subtitlepause(0);
