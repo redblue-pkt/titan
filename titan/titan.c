@@ -679,8 +679,8 @@ int main(int argc, char *argv[])
 	openfont(getskinconfig("fontfile4", NULL));
 	openfont(getskinconfig("fontfile5", NULL));
 
-	if(checkbox("ATEMIO5000") != 1)
-		setvol(getconfigint("vol", NULL));
+	//if(checkbox("ATEMIO5000") != 1)
+	setvol(getconfigint("vol", NULL));
 	
 	setlang(getconfig("lang", NULL));
 	initlocale(getconfig("localepath", NULL));
@@ -838,7 +838,7 @@ int main(int argc, char *argv[])
 	//set volume on start
 	if(checkbox("ATEMIO5000") == 1)
 	{
-		setvol(getconfigint("vol", NULL));
+//		setvol(getconfigint("vol", NULL));
 //		system("fbset 1280x720-1");
 	}
 
