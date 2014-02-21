@@ -761,11 +761,12 @@ void screeninfobar()
 		{
 			if(getconfigint("infobartimeout", NULL) > infobartimeout)
 			{
-				clearscreen(infobar);
+				//clearscreen(infobar);
 				drawscreen(infobar, 0, 0);
 			}
 			else
 			{
+				clearscreen(infobar);
 				status.infobar = 0;
 				drawscreen(skin, 0, 0);
 				subtitlepause(0);
