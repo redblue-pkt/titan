@@ -65,7 +65,8 @@ void screeninfobar()
 			if(rcret == RCTIMEOUT)
 			{
 				if(playpic == 1) {
-					clearscreen(playinfobarpic);
+					if (checkbox("ATEMIO5000") != 1)
+						clearscreen(playinfobarpic);
 					drawscreen(playinfobarpic, 0, 0);
 				}
 				else
