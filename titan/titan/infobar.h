@@ -613,8 +613,14 @@ void screeninfobar()
 				}
 				else
 				{
-					infobar = infobar2;
-					drawscreen(infobar, 0, 0);
+					if(infobarm != infobar) {
+						clearscreen(infobar);
+						infobar = infobarm;
+					}
+					else {
+						infobar = infobar2;
+						drawscreen(infobar, 0, 0);
+					}
 				}
 			}
 			else
