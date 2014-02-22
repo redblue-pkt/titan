@@ -607,20 +607,19 @@ void screeninfobar()
 				}
 				else if(getconfigint("secondinfobar", NULL) == 0 || infobar2 == status.skinerr || infobar == infobar2)
 				{
+					if(infobarm != infobar) {
+						clearscreen(infobar);
+						infobar = infobarm;
+					}
+					clearscreen(infobar);
 					status.infobar = 0;
 					drawscreen(skin, 0, 0);
 					subtitlepause(0);
 				}
 				else
 				{
-					if(infobarm != infobar) {
-						clearscreen(infobar);
-						infobar = infobarm;
-					}
-					else {
-						infobar = infobar2;
-						drawscreen(infobar, 0, 0);
-					}
+					infobar = infobar2;
+					drawscreen(infobar, 0, 0);
 				}
 			}
 			else
