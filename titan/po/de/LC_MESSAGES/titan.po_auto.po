@@ -5064,7 +5064,7 @@ msgstr "Ja - Anzeige in MB"
 
 #: skinadjust.h:54 tunerconfig.h:302 tunerconfig.h:303
 msgid "press red"
-msgstr "Rote Tase drücken"
+msgstr "Rote Taste drücken"
 
 #: skinadjust.h:133
 msgid "Receiver now reboot !!!"
