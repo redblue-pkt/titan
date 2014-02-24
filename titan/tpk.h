@@ -1137,7 +1137,7 @@ int tpkchecksize(struct tpk* tpknode, char* installpath, int size)
 	else
 		tpksize = size;
 
-	if(tpksize != 0 && checkbox("ATEMIO5000") != 1)
+	if(tpksize != 0)
 	{
 		unsigned long long freesize = getfreespace(installpath) / 1024;
 		if(tpksize + TPKADDSIZE >= freesize)
