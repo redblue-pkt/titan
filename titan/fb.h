@@ -191,6 +191,19 @@ struct fb* openfb(char *fbdev, int devnr)
 
 #ifndef NOFB
 	fd = open(fbdev, O_RDWR);
+
+	// blinking work start
+	if(checkbox("ATEMIO5000") == 1)
+	{
+		g_fbFd = open(g_fbDevice, O_RDWR);
+		if (g_fbFd < 0)
+		{
+			perror(g_fbDevice);
+			goto nolfb;
+		}
+	}
+	// blinking work end
+		
 	if(fd == -1)
 	{
 		perr("failed to open %s", fbdev);
@@ -225,7 +238,6 @@ struct fb* openfb(char *fbdev, int devnr)
 		node = addfb(FB1, devnr, var_screeninfo.xres, var_screeninfo.yres, var_screeninfo.bits_per_pixel / 8, fd, mmapfb, fix_screeninfo.smem_len);
 
 #else
-
 	mmapfb = malloc(16 * 1024 * 1024);
 	if(devnr == 0)
 		node = addfb(FB, devnr, getconfigint("skinfbwidth", NULL), getconfigint("skinfbheight", NULL), 4, -1, mmapfb, 16*1024*1024);
@@ -235,6 +247,17 @@ struct fb* openfb(char *fbdev, int devnr)
 #endif
 
 	return node;
+
+// blinking work start
+nolfb:
+	if (g_fbFd >= 0)
+	{
+		close(g_fbFd);
+		g_fbFd = -1;
+	}
+	printf("framebuffer not available.\n");
+	return 0;
+// blinking work end
 }
 
 void closefb()

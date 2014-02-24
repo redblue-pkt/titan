@@ -2,9 +2,17 @@
 #define MIPSELPORT_H
 
 #ifndef FBIO_BLIT
-#define FBIO_SET_MANUAL_BLIT _IOW('F', 0x20, __u32)
+//#define FBIO_SET_MANUAL_BLIT _IOW('F', 0x20, __u32)
+#define FBIO_SET_MANUAL_BLIT _IOW('F', 0x21, __u8)
 #define FBIO_BLIT 0x22
 #endif
+
+int g_fbFd = -1;
+unsigned char *g_lfb = NULL;
+char g_fbDevice[] = "/dev/fb0";
+int g_manual_blit = 0;
+struct fb_var_screeninfo g_screeninfo_var;
+struct fb_fix_screeninfo g_screeninfo_fix;
 
 int setmixer(struct dvbdev* node, int left, int right)
 {
@@ -57,12 +65,20 @@ void setfbvarsize(struct fb* newnode)
 
 void enablemanualblit()
 {
-	int mblit = 1;
+	unsigned char tmp = 1;
+	if (ioctl(g_fbFd, FBIO_SET_MANUAL_BLIT, &tmp)<0)
+		perror("FBIO_SET_MANUAL_BLIT");
+	else
+		g_manual_blit = 1;
+}
 
-	if(ioctl(fb->fd, FBIO_SET_MANUAL_BLIT, &mblit) < 0)
-	{
-		perr("FBIO_SET_MANUAL_BLIT");
-	}
+void disablemanualblit()
+{
+	unsigned char tmp = 0;
+	if (ioctl(g_fbFd, FBIO_SET_MANUAL_BLIT, &tmp)<0)
+		perror("FBIO_SET_MANUAL_BLIT");
+	else
+		g_manual_blit = 0;
 }
 
 void fbsetoffset(int x, int y)
@@ -82,6 +98,8 @@ void fbsetoffset(int x, int y)
 //flag 1 = animation
 void blitfb2(struct fb* fbnode, int flag)
 {
+printf("#########  blitfb2  #########\n");
+/*
 	struct fb_var_screeninfo var_screeninfo;
 
 	var_screeninfo.xres_virtual = fb->width;
@@ -127,10 +145,11 @@ void blitfb2(struct fb* fbnode, int flag)
 			perr("FBIOPUT_VSCREENINFO");
 		}
 	}
-
-	if(ioctl(fb->fd, FBIO_BLIT) < 0)
-	{
-		perr("FBIO_BLIT");
+*/
+	if (g_manual_blit == 1) {
+	printf("#########  blitfb2  11111111\n");
+		if (ioctl(g_fbFd, FBIO_BLIT) < 0)
+			perr("FBIO_BLIT");
 	}
 
 /*
