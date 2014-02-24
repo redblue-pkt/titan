@@ -873,11 +873,14 @@ struct skin
 	uint8_t locked;
 	uint8_t picmem;
 	//bit 0: 1 = node is drawed
+	//bit 1: 1 = node is changed
 	uint8_t flag;
+	int hash;
 	struct skin *select;
 	struct skin *child;
 	struct skin *prev;
 	struct skin *next;
+	struct skin *drawnext;
 };
 
 struct style
