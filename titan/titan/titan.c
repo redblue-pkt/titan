@@ -7,33 +7,6 @@
 #define SYSCODE 0UL
 #define HTTPAUTH "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0="
 
-// mipsel start
-/* Apparently, surfaces must be 64-byte aligned */
-#define ACCEL_ALIGNMENT_SHIFT	6
-#define ACCEL_ALIGNMENT_MASK	((1<<ACCEL_ALIGNMENT_SHIFT)-1)
-
-#define ACCEL_DEBUG
-
-//gAccel *gAccel::instance;
-#define BCM_ACCEL
-
-#ifdef BCM_ACCEL
-extern int bcm_accel_init(void);
-extern void bcm_accel_close(void);
-extern void bcm_accel_blit(
-		int src_addr, int src_width, int src_height, int src_stride, int src_format,
-		int dst_addr, int dst_width, int dst_height, int dst_stride,
-		int src_x, int src_y, int width, int height,
-		int dst_x, int dst_y, int dwidth, int dheight,
-		int pal_addr, int flags);
-extern void bcm_accel_fill(
-		int dst_addr, int dst_width, int dst_height, int dst_stride,
-		int x, int y, int width, int height,
-		unsigned long color);
-extern bool bcm_accel_has_alphablending();
-#endif
-// mipsel end
-
 struct clist *config[LISTHASHSIZE] = {NULL};
 struct clist *ownconfig[LISTHASHSIZE] = {NULL};
 struct clist *rcconfig[LISTHASHSIZE] = {NULL};
@@ -268,6 +241,33 @@ struct channelslot *channelslot = NULL;
 #include "bcm.h"
 
 #define TIMECODE ""
+
+// mipsel start
+/* Apparently, surfaces must be 64-byte aligned */
+#define ACCEL_ALIGNMENT_SHIFT	6
+#define ACCEL_ALIGNMENT_MASK	((1<<ACCEL_ALIGNMENT_SHIFT)-1)
+
+#define ACCEL_DEBUG
+
+//gAccel *gAccel::instance;
+#define BCM_ACCEL
+
+#ifdef BCM_ACCEL
+extern int bcm_accel_init(void);
+extern void bcm_accel_close(void);
+extern void bcm_accel_blit(
+		int src_addr, int src_width, int src_height, int src_stride, int src_format,
+		int dst_addr, int dst_width, int dst_height, int dst_stride,
+		int src_x, int src_y, int width, int height,
+		int dst_x, int dst_y, int dwidth, int dheight,
+		int pal_addr, int flags);
+extern void bcm_accel_fill(
+		int dst_addr, int dst_width, int dst_height, int dst_stride,
+		int x, int y, int width, int height,
+		unsigned long color);
+extern bool bcm_accel_has_alphablending();
+#endif
+// mipsel end
 
 void demomodethread(struct stimerthread* self)
 {
