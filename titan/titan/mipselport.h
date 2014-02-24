@@ -98,7 +98,6 @@ void fbsetoffset(int x, int y)
 //flag 1 = animation
 void blitfb2(struct fb* fbnode, int flag)
 {
-printf("#########  blitfb2  #########\n");
 /*
 	struct fb_var_screeninfo var_screeninfo;
 
@@ -147,7 +146,6 @@ printf("#########  blitfb2  #########\n");
 	}
 */
 	if (g_manual_blit == 1) {
-	printf("#########  blitfb2  11111111\n");
 		if (ioctl(g_fbFd, FBIO_BLIT) < 0)
 			perr("FBIO_BLIT");
 	}
