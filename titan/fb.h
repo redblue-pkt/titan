@@ -44,7 +44,7 @@ long getfbsize(int dev)
 			fbmemcount = fbmemcount + node->varfbsize;
 		node = node->next;
 	}
-
+	
 	return fix_screeninfo.smem_len - fbmemcount;
 }
 
@@ -195,10 +195,9 @@ struct fb* openfb(char *fbdev, int devnr)
 	// blinking work start
 	if(checkbox("ATEMIO5000") == 1)
 	{
-		g_fbFd = open(g_fbDevice, O_RDWR);
-		if (g_fbFd < 0)
+		if (fd < 0)
 		{
-			perror(g_fbDevice);
+			perror(fbdev);
 			goto nolfb;
 		}
 	}
@@ -210,7 +209,7 @@ struct fb* openfb(char *fbdev, int devnr)
 		return NULL;
 	}
 	closeonexec(fd);
-
+	
 	if(ioctl(fd, FBIOGET_VSCREENINFO, &var_screeninfo) == -1)
 	{
 		perr("ioctl FBIOGET_VSCREENINFO failed");
@@ -250,11 +249,12 @@ struct fb* openfb(char *fbdev, int devnr)
 
 // blinking work start
 nolfb:
-	if (g_fbFd >= 0)
+	if (fd >= 0)
 	{
-		close(g_fbFd);
-		g_fbFd = -1;
+		close(fd);
+		fd = -1;
 	}
+
 	printf("framebuffer not available.\n");
 	return 0;
 // blinking work end
@@ -262,6 +262,24 @@ nolfb:
 
 void closefb()
 {
+
+	if(checkbox("ATEMIO5000") == 1)
+	{
+		if(lfb)
+		{
+		printf("33\n");
+			msync(lfb, fix_screeninfo.smem_len, MS_SYNC);
+			munmap(lfb, fix_screeninfo.smem_len);
+		}
+		if(fb->fd >= 0)
+		{
+		printf("44\n");
+			disablemanualblit();
+			close(fb->fd);
+			fb->fd = -1;
+		}
+	}
+
 	if(fb != NULL)
 	{
 		if(fb->fb != NULL)
