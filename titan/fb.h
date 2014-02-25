@@ -224,6 +224,7 @@ struct fb* openfb(char *fbdev, int devnr)
 		return NULL;
 	}
 
+	printf("[Framebuffer] %dk video mem\n", fix_screeninfo.smem_len/1024);
 	if(!(mmapfb = (unsigned char*)mmap(0, fix_screeninfo.smem_len, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0)))
 	{
 		perr("mmap framebuffer");
@@ -322,25 +323,40 @@ void changefbresolution(char *value, int flag)
 	{
 		fb->width = 720;
 		fb->height = 576;
-		fb->pitch = fb->width * fb->colbytes;
+		if(checkbox("ATEMIO5000") == 1)
+			fb->pitch = fb->width * (fb->colbytes * 8);
+		else
+			fb->pitch = fb->width * fb->colbytes;
 	}
 	else if(ostrncmp("576", value, 3) == 0)
 	{
 		fb->width = 720;
 		fb->height = 576;
-		fb->pitch = fb->width * fb->colbytes;
+		if(checkbox("ATEMIO5000") == 1)
+			fb->pitch = fb->width * (fb->colbytes * 8);
+		else
+			fb->pitch = fb->width * fb->colbytes;
+
 	}
 	else if(ostrncmp("720", value, 3) == 0)
 	{
 		fb->width = 1280;
 		fb->height = 720;
-		fb->pitch = fb->width * fb->colbytes;
+		if(checkbox("ATEMIO5000") == 1)
+			fb->pitch = fb->width * (fb->colbytes * 8);
+		else
+			fb->pitch = fb->width * fb->colbytes;
+
 	}
 	else if(ostrncmp("1080", value, 4) == 0)
 	{
 		fb->width = 1920;
 		fb->height = 1080;
-		fb->pitch = fb->width * fb->colbytes;
+		if(checkbox("ATEMIO5000") == 1)
+			fb->pitch = fb->width * (fb->colbytes * 8);
+		else
+			fb->pitch = fb->width * fb->colbytes;
+
 	}
 	if(skinfb == fb)
 	{

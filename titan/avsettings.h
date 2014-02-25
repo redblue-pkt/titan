@@ -241,7 +241,7 @@ void screenavsettings(int flag)
 				if(ostrcmp(ret, resolution->ret) != 0)
 				{
 					setvideomode(resolution->ret, 0);
-					if(checkbox("ATEMIO5000") != 1)
+//					if(checkbox("ATEMIO5000") != 1)
 						changefbresolution(resolution->ret, 0);
 					if(flag == 0)
 					{
@@ -249,7 +249,7 @@ void screenavsettings(int flag)
 						if(tret == 0 || tret == 2)
 						{
 							setvideomode(ret, 0);
-							if(checkbox("ATEMIO5000") != 1)
+//							if(checkbox("ATEMIO5000") != 1)
 								changefbresolution(ret, 0);
 						}
 						else
