@@ -6749,7 +6749,7 @@ msgstr "Neu starten"
 
 #: skin_default_skin.xml.h:399
 msgid "Network Scan"
-msgstr "Durchsuchen"
+msgstr "Netzwerk (NIT) Suche"
 
 #: skin_default_skin.xml.h:400
 msgid "Network Test"
