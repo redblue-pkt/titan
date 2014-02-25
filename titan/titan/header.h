@@ -10,6 +10,7 @@
 
 // mipselport.h
 int waitvsync():
+void blit();
 
 // settings_pluginbutton.h
 void screensettings_pluginbutton();
