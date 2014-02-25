@@ -224,13 +224,29 @@ struct fb* openfb(char *fbdev, int devnr)
 		return NULL;
 	}
 
-	printf("[Framebuffer] %dk video mem\n", fix_screeninfo.smem_len/1024);
 	if(!(mmapfb = (unsigned char*)mmap(0, fix_screeninfo.smem_len, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0)))
 	{
 		perr("mmap framebuffer");
 		close(fd);
 		return NULL;
 	}
+
+	debug(100, "%dk video mem", fix_screeninfo.smem_len/1024);
+
+	lfb = (unsigned char*)mmap(0, fix_screeninfo.smem_len, PROT_WRITE|PROT_READ, MAP_SHARED, fd, 0);
+	if (!lfb)
+	{
+		perror("mmap");
+		goto nolfb;
+	}
+
+	if (checkbox("ATEMIO5000") == 1 && var_screeninfo.bits_per_pixel != 32)
+	{
+		debug(100, "Only 32 bit per pixel supported. Framebuffer currently use %d", var_screeninfo.bits_per_pixel);
+		closefb();
+		return 0;
+	}
+
 
 	if(devnr == 0)
 		node = addfb(FB, devnr, var_screeninfo.xres, var_screeninfo.yres, var_screeninfo.bits_per_pixel / 8, fd, mmapfb, fix_screeninfo.smem_len);
@@ -256,25 +272,25 @@ nolfb:
 		fd = -1;
 	}
 
-	printf("framebuffer not available.\n");
+	debug(100, "framebuffer not available.");
+
 	return 0;
 // blinking work end
 }
 
 void closefb()
 {
-
 	if(checkbox("ATEMIO5000") == 1)
 	{
 		if(lfb)
 		{
-		printf("33\n");
+			debug(100, "ms_sync");
 			msync(lfb, fix_screeninfo.smem_len, MS_SYNC);
 			munmap(lfb, fix_screeninfo.smem_len);
 		}
 		if(fb->fd >= 0)
 		{
-		printf("44\n");
+			debug(100, "close");
 			disablemanualblit();
 			close(fb->fd);
 			fb->fd = -1;
@@ -319,44 +335,32 @@ void blitfb1()
 //flag 1: don't del skinfb
 void changefbresolution(char *value, int flag)
 {
+	debug(100, "fb->colbytes: %d", fb->colbytes);
+	if(checkbox("ATEMIO5000") == 1) return;
+
 	if(ostrcmp("pal", value) == 0)
 	{
 		fb->width = 720;
 		fb->height = 576;
-		if(checkbox("ATEMIO5000") == 1)
-			fb->pitch = fb->width * (fb->colbytes * 8);
-		else
-			fb->pitch = fb->width * fb->colbytes;
+		fb->pitch = fb->width * fb->colbytes;
 	}
 	else if(ostrncmp("576", value, 3) == 0)
 	{
 		fb->width = 720;
 		fb->height = 576;
-		if(checkbox("ATEMIO5000") == 1)
-			fb->pitch = fb->width * (fb->colbytes * 8);
-		else
-			fb->pitch = fb->width * fb->colbytes;
-
+		fb->pitch = fb->width * fb->colbytes;
 	}
 	else if(ostrncmp("720", value, 3) == 0)
 	{
 		fb->width = 1280;
 		fb->height = 720;
-		if(checkbox("ATEMIO5000") == 1)
-			fb->pitch = fb->width * (fb->colbytes * 8);
-		else
-			fb->pitch = fb->width * fb->colbytes;
-
+		fb->pitch = fb->width * fb->colbytes;
 	}
 	else if(ostrncmp("1080", value, 4) == 0)
 	{
 		fb->width = 1920;
 		fb->height = 1080;
-		if(checkbox("ATEMIO5000") == 1)
-			fb->pitch = fb->width * (fb->colbytes * 8);
-		else
-			fb->pitch = fb->width * fb->colbytes;
-
+		fb->pitch = fb->width * fb->colbytes;
 	}
 	if(skinfb == fb)
 	{
