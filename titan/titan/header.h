@@ -8,6 +8,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+// mipselport.h
+int waitvsync():
+
 // settings_pluginbutton.h
 void screensettings_pluginbutton();
 
