@@ -9,7 +9,7 @@
 #define HEADER_H
 
 // mipselport.h
-int waitvsync():
+int waitvsync();
 void blit();
 
 // settings_pluginbutton.h
