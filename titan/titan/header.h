@@ -478,6 +478,7 @@ void delfb(char *name);
 void fb2png_thread();
 int fb2png(unsigned char *buf_p, int width, int height, char *outfile);
 void clearfball();
+void closefb();
 
 //timerthread.h
 struct stimerthread* addtimer(void* func, int aktion, int delay, int count, void* param1, void* param2, struct stimerthread* last);
