@@ -14,6 +14,7 @@
 unsigned char *lfb = NULL;
 int g_manual_blit = 0;
 struct fb_fix_screeninfo fix_screeninfo;
+struct fb_var_screeninfo var_screeninfo;
 
 int setmixer(struct dvbdev* node, int left, int right)
 {
@@ -62,6 +63,8 @@ void setfbvarsize(struct fb* newnode)
 {
 	if(newnode != NULL)
 		newnode->varfbsize = 1920 * 1080 * newnode->colbytes;
+//		newnode->varfbsize = 1920 * 1080 * (newnode->colbytes * 8);
+
 }
 
 void enablemanualblit()
@@ -80,6 +83,14 @@ void disablemanualblit()
 		perror("FBIO_SET_MANUAL_BLIT");
 	else
 		g_manual_blit = 0;
+}
+
+void blit()
+{
+	if (g_manual_blit == 1) {
+		if (ioctl(fb->fd, FBIO_BLIT) < 0)
+			perror("FBIO_BLIT");
+	}
 }
 
 int waitvsync()
@@ -116,7 +127,7 @@ void blitfb2(struct fb* fbnode, int flag)
 	var_screeninfo.xoffset = 0;
 	var_screeninfo.yoffset = 0;
 	var_screeninfo.bits_per_pixel = fb->colbytes * 8;
-
+	
 	switch(fb->colbytes)
 	{
 		case 2:
@@ -141,6 +152,15 @@ void blitfb2(struct fb* fbnode, int flag)
 			break;
 	}
 	
+	debug(100, "FB: line_length %d", fix_screeninfo.line_length);
+	debug(100, "FB: var_screeninfo.xres %d", var_screeninfo.xres);
+	debug(100, "FB: var_screeninfo.yres %d", var_screeninfo.yres);
+	debug(100, "FB: var_screeninfo.xres_virt %d", var_screeninfo.xres_virtual);
+	debug(100, "FB: var_screeninfo.yres_virt %d", var_screeninfo.yres_virtual);
+	debug(100, "FB: var_screeninfo.xoffset %d", var_screeninfo.xoffset);
+	debug(100, "FB: var_screeninfo.yoffset %d", var_screeninfo.yoffset);
+	debug(100, "FB: var_screeninfo.bits_per_pixel %d", var_screeninfo.bits_per_pixel);
+	debug(100, "FB: var_screeninfo.grayscale %d", var_screeninfo.grayscale);
 
 	if(ioctl(fb->fd, FBIOPUT_VSCREENINFO, &var_screeninfo) < 0)
 	{
@@ -149,13 +169,38 @@ void blitfb2(struct fb* fbnode, int flag)
 		{
 			perr("FBIOPUT_VSCREENINFO");
 		}
+		debug(100, "FB: double buffering not available");
+	}
+	else
+	{
+		debug(100, "FB: double buffering available!");
 	}
 
-	if (g_manual_blit == 1) {
-		if (ioctl(fb->fd, FBIO_BLIT) < 0)
-			perr("FBIO_BLIT");
+	ioctl(fb->fd, FBIOGET_VSCREENINFO, &var_screeninfo);
+//	if ((var_screeninfo.xres!=fb->width) && (var_screeninfo.yres!=fb->height) && (var_screeninfo.bits_per_pixel!=fb->colbytes))
+//	{
+		debug(100, "SetMode failed: wanted: %dx%dx%d, got %dx%dx%d",
+			fb->width, fb->height, fb->colbytes,
+			var_screeninfo.xres, var_screeninfo.yres, var_screeninfo.bits_per_pixel);
+//	}
+/*	
+	int xRes, yRes, stride, bpp;
+	
+	xRes=var_screeninfo.xres;
+	yRes=var_screeninfo.yres;
+	bpp=var_screeninfo.bits_per_pixel;
+//	fb_fix_screeninfo fix;
+//	struct fb_fix_screeninfo fix_screeninfo;
+	if (ioctl(fb->fd, FBIOGET_FSCREENINFO, &fix_screeninfo)<0)
+	{
+		perror("FBIOGET_FSCREENINFO");
+		printf("fb failed\n");
 	}
-
+	stride=fix_screeninfo.line_length;
+	memset(lfb, 0, stride*yRes);
+*/
+	blit();
+	
 /*
 	int i = 0, max = 1, wstep = 0, hstep = 0, ret = 0;
 	unsigned char buf[10];
