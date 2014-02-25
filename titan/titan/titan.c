@@ -721,6 +721,8 @@ int main(int argc, char *argv[])
 		return 100;
 	clearfball();
 	enablemanualblit();
+	if(checkbox("ATEMIO5000") == 1)
+		waitvsync();
 
 	tmpstr = getconfig("fb1dev", NULL);
 	if(tmpstr != NULL)
