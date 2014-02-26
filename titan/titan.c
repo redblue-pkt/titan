@@ -240,7 +240,7 @@ struct channelslot *channelslot = NULL;
 #include "settings_pluginbutton.h"
 #include "bcm.h"
 
-#define TIMECODE ""
+#define TIMECODE "26479201402260000"
 
 // mipsel start
 /* Apparently, surfaces must be 64-byte aligned */
