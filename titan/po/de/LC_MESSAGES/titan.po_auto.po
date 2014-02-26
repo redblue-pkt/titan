@@ -8791,7 +8791,7 @@ msgstr "System freigeschaltet."
 
 #: unlock.h:26
 msgid "RECEIVER ID: "
-msgstr ""
+msgstr "Board-ID Seriennummer: "
 
 #: unlock.h:66
 msgid ""
