@@ -7299,7 +7299,7 @@ msgstr "Übermittle alle CAIDs an das Modul"
 
 #: skin_default_skin.xml.h:554
 msgid "Serial Input"
-msgstr "Serieller Ausgang"
+msgstr "Freischaltmenü"
 
 #: skin_default_skin.xml.h:555
 msgid "Service"
