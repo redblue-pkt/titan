@@ -241,16 +241,14 @@ void screenavsettings(int flag)
 				if(ostrcmp(ret, resolution->ret) != 0)
 				{
 					setvideomode(resolution->ret, 0);
-//					if(checkbox("ATEMIO5000") != 1)
-						changefbresolution(resolution->ret, 0);
+					changefbresolution(resolution->ret, 0);
 					if(flag == 0)
 					{
 						int tret = textbox(_("Message"), _("Is this Videomode ok ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
 						if(tret == 0 || tret == 2)
 						{
 							setvideomode(ret, 0);
-//							if(checkbox("ATEMIO5000") != 1)
-								changefbresolution(ret, 0);
+							changefbresolution(ret, 0);
 						}
 						else
 						{

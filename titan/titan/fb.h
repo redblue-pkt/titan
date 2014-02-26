@@ -192,16 +192,15 @@ struct fb* openfb(char *fbdev, int devnr)
 #ifndef NOFB
 	fd = open(fbdev, O_RDWR);
 
-	// blinking work start
-	if(checkbox("ATEMIO5000") == 1)
+// blinking work start
+#ifdef EPLAYER4
+	if (fd < 0)
 	{
-		if (fd < 0)
-		{
 			perror(fbdev);
 			goto nolfb;
 		}
-	}
-	// blinking work end
+#endif
+// blinking work end
 		
 	if(fd == -1)
 	{
@@ -240,12 +239,14 @@ struct fb* openfb(char *fbdev, int devnr)
 		goto nolfb;
 	}
 
-	if (checkbox("ATEMIO5000") == 1 && var_screeninfo.bits_per_pixel != 32)
+#ifdef EPLAYER4
+	if (var_screeninfo.bits_per_pixel != 32)
 	{
 		debug(100, "Only 32 bit per pixel supported. Framebuffer currently use %d", var_screeninfo.bits_per_pixel);
 		closefb();
 		return 0;
 	}
+#endif
 
 
 	if(devnr == 0)
@@ -280,22 +281,22 @@ nolfb:
 
 void closefb()
 {
-	if(checkbox("ATEMIO5000") == 1)
+
+#ifdef EPLAYER4
+	if(lfb)
 	{
-		if(lfb)
-		{
-			debug(100, "ms_sync");
-			msync(lfb, fix_screeninfo.smem_len, MS_SYNC);
-			munmap(lfb, fix_screeninfo.smem_len);
-		}
-		if(fb->fd >= 0)
-		{
-			debug(100, "close");
-			disablemanualblit();
-			close(fb->fd);
-			fb->fd = -1;
-		}
+		debug(100, "ms_sync");
+		msync(lfb, fix_screeninfo.smem_len, MS_SYNC);
+		munmap(lfb, fix_screeninfo.smem_len);
 	}
+	if(fb->fd >= 0)
+	{
+		debug(100, "close");
+		disablemanualblit();
+		close(fb->fd);
+		fb->fd = -1;
+	}
+#endif
 
 	if(fb != NULL)
 	{
@@ -336,7 +337,9 @@ void blitfb1()
 void changefbresolution(char *value, int flag)
 {
 	debug(100, "fb->colbytes: %d", fb->colbytes);
-	if(checkbox("ATEMIO5000") == 1) return;
+#ifdef EPLAYER4
+	return;
+#endif
 
 	if(ostrcmp("pal", value) == 0)
 	{

@@ -713,16 +713,19 @@ int main(int argc, char *argv[])
 	setlang(getconfig("lang", NULL));
 	initlocale(getconfig("localepath", NULL));
 
-	if(checkbox("ATEMIO5000") == 1)
-		bcm_accel_init();
+#ifdef EPLAYER4
+	bcm_accel_init();
+#endif
 
 	fb = openfb(getconfig("fbdev", NULL), 0);
 	if(fb == NULL)
 		return 100;
 	clearfball();
 	enablemanualblit();
-	if(checkbox("ATEMIO5000") == 1)
-		waitvsync();
+	
+#ifdef EPLAYER4
+	waitvsync();
+#endif
 
 	tmpstr = getconfig("fb1dev", NULL);
 	if(tmpstr != NULL)
