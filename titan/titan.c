@@ -623,7 +623,7 @@ int main(int argc, char *argv[])
 	ret = addinetworkall(NULL);
 	
 #ifndef SIMULATE
-	if(getconfigint("sos", NULL) == 0)
+	if(getconfigint("sos", NULL) == 0 && checkbox("ATEMIO5000") != 1 && checkbox("VUSOLO2") != 1)
 	{
 		if(ostrcmp(string_newline(gettimeinfo()), TIMECODE) == 1)
 		{
@@ -707,7 +707,7 @@ int main(int argc, char *argv[])
 	openfont(getskinconfig("fontfile4", NULL));
 	openfont(getskinconfig("fontfile5", NULL));
 
-	//if(checkbox("ATEMIO5000") != 1)
+	//if(checkbox("f") != 1)
 	setvol(getconfigint("vol", NULL));
 	
 	setlang(getconfig("lang", NULL));
