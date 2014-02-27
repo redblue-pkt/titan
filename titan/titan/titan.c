@@ -731,6 +731,12 @@ int main(int argc, char *argv[])
 	if(tmpstr != NULL)
 		fb1 = openfb(tmpstr, 1);
 	tmpstr = NULL;
+	
+#ifdef MIPSEL
+
+status.usedirectfb == 1
+
+#else
 
 	if(status.usedirectfb != 1)
 	{
@@ -747,6 +753,8 @@ int main(int argc, char *argv[])
 			status.usedirectfb = 1;
 		}
 	}
+	
+#endif
 
 	if(status.usedirectfb == 1)
 	{
