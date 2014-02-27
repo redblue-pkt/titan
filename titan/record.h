@@ -631,7 +631,24 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 					writeret = writeret + (pktcount * 4);
 				}
 				else
-						writeret = dvbwrite(servicenode->recdstfd, buf, readret, writetimeout);
+				{
+					if(buf[0] != 0x47)
+					{
+						debug(200, "resync");
+						i = 1;
+						while(i < 188)
+						{
+							if(buf[i] == 0x47) break;
+							i++;
+						}
+						if(i < 188)
+						{
+							memcpy(buf, buf + i, recbsize - i);
+							dvbreadfd(servicenode->recsrcfd, buf, recbsize - i, i, readtimeout, 0);
+						}
+					}
+					writeret = dvbwrite(servicenode->recdstfd, buf, readret, writetimeout);
+				}
 
 				//inject first pakets slower/smaler, so demux can start and read
 				if(servicenode->type == RECORDPLAY && count < 20)
