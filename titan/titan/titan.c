@@ -713,7 +713,7 @@ int main(int argc, char *argv[])
 	setlang(getconfig("lang", NULL));
 	initlocale(getconfig("localepath", NULL));
 
-#ifdef EPLAYER4
+#ifdef MIPSEL
 	bcm_accel_init();
 #endif
 
@@ -723,21 +723,15 @@ int main(int argc, char *argv[])
 	clearfball();
 	enablemanualblit();
 	
-#ifdef EPLAYER4
-	waitvsync();
-#endif
-
 	tmpstr = getconfig("fb1dev", NULL);
 	if(tmpstr != NULL)
 		fb1 = openfb(tmpstr, 1);
 	tmpstr = NULL;
 	
 #ifdef MIPSEL
-
-status.usedirectfb = 1;
-
+	status.usedirectfb = 1;
+	waitvsync();
 #else
-
 	if(status.usedirectfb != 1)
 	{
 		skinfb = addfb(SKINFB, 0, getconfigint("skinfbwidth", NULL), getconfigint("skinfbheight", NULL), 4, fb->fd, fb->fb + fb->varfbsize, fb->fixfbsize);
@@ -753,7 +747,6 @@ status.usedirectfb = 1;
 			status.usedirectfb = 1;
 		}
 	}
-	
 #endif
 
 	if(status.usedirectfb == 1)
