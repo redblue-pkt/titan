@@ -734,7 +734,7 @@ int main(int argc, char *argv[])
 	
 #ifdef MIPSEL
 
-status.usedirectfb == 1
+status.usedirectfb = 1;
 
 #else
 
