@@ -7663,7 +7663,7 @@ msgstr "Tone Modus"
 
 #: skin_default_skin.xml.h:661
 msgid "Top"
-msgstr "Oben"
+msgstr "Top Info"
 
 #: skin_default_skin.xml.h:662
 msgid "TPK install (online)"
