@@ -638,6 +638,16 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 	tmpstr = _("Search on VOX-Now (local)");
 	tmpstr = _("Search on InternetTv (local)");
 	tmpstr = _("Search on InternetRadio (local)");
+	tmpstr = _("Video Settings");
+	tmpstr = _("AV Settings");
+	tmpstr = _("iD3Tag Info");
+	tmpstr = _("MediaDB Edit");
+	tmpstr = _("Delete File");
+	tmpstr = _("MediaDB Scan Info");
+	tmpstr = _("Streaminfo");
+	tmpstr = _("IMDb");
+	tmpstr = _("IMDb-API");
+	tmpstr = _("TMDb");
 	free(tmpstr), tmpstr = NULL;
 		
 	if(flag < 99)
