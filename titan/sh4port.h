@@ -740,4 +740,106 @@ void sighandler(int sig, struct sigcontext ctx)
 	}
 }
 
+int setvmpeg(struct dvbdev* node, int posx, int posy, int width, int height)
+{
+	if(status.tvpic == 1 && (posx != 0 || posy != 0 || width != 0 || height != 0))
+		return 0;
+
+	if(getconfigint("minitv", NULL) == 1) 
+ 		return 0;
+ 	
+	char* vmpegdev = NULL, *tmpstr = NULL, *buf = NULL;
+	int ret = 0;
+
+	if(node == NULL) return 1;
+	vmpegdev = getconfig("vmpegalldev", NULL);
+
+	if(vmpegdev != NULL)
+	{
+		buf = malloc(MINMALLOC);
+		if(buf == NULL)
+		{
+			err("no mem");
+			return 1;
+		}
+		
+		tmpstr = malloc(MINMALLOC);
+		if(tmpstr == NULL)
+		{
+			err("no mem");
+			free(buf);
+			return 1;
+		}
+		
+		snprintf(buf, MINMALLOC, vmpegdev, node->devnr);
+		snprintf(tmpstr, MINMALLOC, "%x %x %x %x", posx, posy, width, height);
+		debug(100, "set %s to %s", buf, tmpstr);
+
+		status.tvpic = 1;
+		ret = writesys(buf, tmpstr, 1);
+
+		//reset
+		if(posx == 0 && posy == 0 && width == 0 && height == 0)
+			status.tvpic = 0;
+		
+		free(tmpstr);
+		free(buf);
+		return ret;
+	}
+
+	return 0;
+}
+
+//flag 0: wh = width
+//flag 1: wh = height
+int setvmpegrect(struct dvbdev* node, int posx, int posy, int wh, int flag)
+{
+	int ret = 0;
+	int leftoffset = status.leftoffset;
+	int rightoffset = status.rightoffset;
+	int topoffset = status.topoffset;
+	int bottomoffset = status.bottomoffset;
+
+	float rx = (float)fb->width / 720;
+	float ry = (float)fb->height / 576;
+
+	leftoffset = (float)leftoffset / rx;
+	rightoffset = (float)rightoffset / rx;
+	topoffset = (float)topoffset / ry;
+	bottomoffset = (float)bottomoffset / ry;
+
+	rx = (float)720 / (float)(720 - leftoffset - rightoffset);
+	ry = (float)576 / (float)(576 - topoffset - bottomoffset);
+
+	posx = (float)posx / rx;
+	posx += leftoffset;
+
+	posy = (float)posy / ry;
+	posy += topoffset;
+
+	if(flag == 0)
+	{
+		wh = ((float)wh / rx);
+		ret = setvmpeg(node, posx, posy, wh, (int)((float)wh / 1.2));
+	}
+
+	if(flag == 1)
+	{
+		wh = ((float)wh / ry);
+		ret = setvmpeg(node, posx, posy, (int)((float)wh * 1.2), wh);
+	}
+
+	return ret;
+}
+
+int resettvpic()
+{
+	int ret = 0;
+
+	if(status.tvpic > 0 && status.aktservice != NULL)
+		ret = setvmpeg(status.aktservice->videodev, 0, 0, 0, 0);
+
+	return ret;
+}
+
 #endif
