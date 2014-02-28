@@ -6753,7 +6753,7 @@ msgstr "Netzwerk (NIT) Suche"
 
 #: skin_default_skin.xml.h:400
 msgid "Network Test"
-msgstr "Testen"
+msgstr "Verbindungstest"
 
 #: skin_default_skin.xml.h:401
 msgid "Newsletter"
@@ -7119,7 +7119,7 @@ msgstr "Wiederholungsmodus"
 
 #: skin_default_skin.xml.h:499
 msgid "RESET"
-msgstr "Reset"
+msgstr "zurücksetzen"
 
 #: skin_default_skin.xml.h:500
 msgid "Resolution:"
