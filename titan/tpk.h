@@ -3420,13 +3420,16 @@ struct menulist* tpkmenulist(struct menulist* mlist, char* paramskinname, char* 
 				continue;
 			}
 			
-			tmpstr = ostrcat(tmpstr, node->showname, 1, 0);
+			tmpstr = ostrcat(tmpstr, _(node->showname), 1, 0);
 			tmpstr = ostrcat(tmpstr, " v.", 1, 0);
 			tmpstr = ostrcat(tmpstr, oitoa(node->version), 1, 1);
 
-			tmpinfo = ostrcat(tmpinfo, "\nSection: ", 1, 0);
-			tmpinfo = ostrcat(tmpinfo, node->section, 1, 0);
-			tmpinfo = ostrcat(tmpinfo, "\nDescription:\n", 1, 0);
+			tmpinfo = ostrcat(tmpinfo, "\n", 1, 0);
+			tmpinfo = ostrcat(tmpinfo, _("Section: "), 1, 0);
+			tmpinfo = ostrcat(tmpinfo, _(node->section), 1, 0);
+			tmpinfo = ostrcat(tmpinfo, "\n", 1, 0);
+			tmpinfo = ostrcat(tmpinfo, _("Description:"), 1, 0);
+			tmpinfo = ostrcat(tmpinfo, "\n", 1, 0);
 			if(node->desc != NULL)
 				tmpinfo = ostrcat(tmpinfo, node->desc, 1, 0);
 			else
@@ -3458,7 +3461,7 @@ struct menulist* tpkmenulist(struct menulist* mlist, char* paramskinname, char* 
 						tmpstr2 = ostrcat(tmpstr2, node->filename, 1, 0);
 						tmpstr2 = ostrcat(tmpstr2, ".png", 1, 0);
 	
-	          debug(130, "get http://%s/%s -> %s", ip, tmpstr2, tmpstr1);
+	          			debug(130, "get http://%s/%s -> %s", ip, tmpstr2, tmpstr1);
 						gethttp(ip, tmpstr2, port, tmpstr1, HTTPAUTH, 5000, NULL, 0);
 					}
 				}
