@@ -10272,6 +10272,3 @@ msgstr "Maximum temperatuur: "
 #: weather.h:442 weather.h:460 weather.h:478 weather.h:496
 msgid "Condition: "
 msgstr "Weer:"
-
-#~ msgid "Search on Kinox"
-#~ msgstr "Search on Kinox"
