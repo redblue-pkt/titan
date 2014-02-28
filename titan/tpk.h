@@ -3431,7 +3431,7 @@ struct menulist* tpkmenulist(struct menulist* mlist, char* paramskinname, char* 
 			tmpinfo = ostrcat(tmpinfo, _("Description:"), 1, 0);
 			tmpinfo = ostrcat(tmpinfo, "\n", 1, 0);
 			if(node->desc != NULL)
-				tmpinfo = ostrcat(tmpinfo, node->desc, 1, 0);
+				tmpinfo = ostrcat(tmpinfo, _(node->desc), 1, 0);
 			else
 				tmpinfo = ostrcat(tmpinfo, _("no description found"), 1, 0);
 			
