@@ -525,7 +525,7 @@ if [ "$TYPE" != "whitebox" ];then
 	echo "[titan]--------------------------------------------------------"
 	echo "[titan] Update Language Po files"
 	echo "[titan]--------------------------------------------------------"
-	"$HOME"/flashimg/source.titan/titan/tools/createpo.sh "$SVNUSER" update "$GROUP"
+	"$HOME"/flashimg/source.titan/titan/tools/createpo.sh "$SVNUSER" "$GROUP"
 	echo "[titan]--------------------------------------------------------"
 	echo "[titan] Update Language Po files done"
 	echo "[titan]--------------------------------------------------------"

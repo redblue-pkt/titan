@@ -4,12 +4,12 @@ SVNUSER=$1
 GROUP=$2
 
 if [ -z "$1" ]; then
-	echo "usage: createpo.sh <svnuser> <update|new>"
+	echo "usage: createpo.sh <svnuser> <group>"
 	exit
 fi
 
 if [ -z "$2" ]; then
-	echo "usage: createpo.sh <svnuser> <update|new>"
+	echo "usage: createpo.sh <svnuser> <group>"
 	exit
 fi
 
@@ -102,7 +102,7 @@ echo "[createpo.sh] check user $SVNUSER"
 echo "[createpo.sh] check group $GROUP"
 
 cd "$HOME"/flashimg/source.titan/po
-if [ $SVNUSER = "aafsvn" ] && [ "$GROUP" = "dev" ];then
+if [ "$SVNUSER" = "aafsvn" ] && [ "$GROUP" = "dev" ];then
 	echo "[createpo.sh] svn commit -m [titan] autoupdate po files"
 	svn commit -m "[titan] autoupdate po files"
 	svn commit "$HOME"/flashimg/source.titan/po
