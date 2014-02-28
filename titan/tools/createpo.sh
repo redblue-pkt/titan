@@ -98,8 +98,9 @@ for ROUND in $POLIST; do
 	echo "[createpo.sh] ############################# end ##################################"
 done
 
-echo "[createpo.sh] check user"
-		
+echo "[createpo.sh] check user $SVNUSER"
+echo "[createpo.sh] check group $GROUP"
+
 cd "$HOME"/flashimg/source.titan/po
 if [ $SVNUSER = "aafsvn" ] && [ "$GROUP" = "dev" ];then
 	echo "[createpo.sh] svn commit -m [titan] autoupdate po files"
