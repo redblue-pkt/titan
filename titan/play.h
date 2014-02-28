@@ -611,53 +611,82 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 	struct menulist* mlist = NULL, *mbox = NULL;
 	char* skintitle = _("Menu");
 
+// needed for autopo
+	char* tmpstr = NULL;
+	tmpstr = _("Search on KinoX");
+	tmpstr = _("Search on KinoX (local)");
+	tmpstr = _("Search on Movie4k");
+	tmpstr = _("Search on Movie4k (local)");
+	tmpstr = _("Search on Solarmovies (movie)");
+	tmpstr = _("Search on Solarmovies (serie)");
+	tmpstr = _("Search on Solarmovies (local)");
+	tmpstr = _("Search on Mle-HD (local)");
+	tmpstr = _("Search on Beeg (local)");
+	tmpstr = _("Search on Xvideos (local)");
+	tmpstr = _("Search on Netzkino (local)");
+	tmpstr = _("Search on Youtube");
+	tmpstr = _("Search on Youtube (local)");
+	tmpstr = _("Search on MyVideo");
+	tmpstr = _("Search on Myvideo (local)");
+	tmpstr = _("Search on ARD (local)");
+	tmpstr = _("Search on ZDF (local)");
+	tmpstr = _("Search on TecTime (local)");
+	tmpstr = _("Search on Giga (local)");
+	tmpstr = _("Search on Rtl-Now (local)");
+	tmpstr = _("Search on Rtl2-Now (local)");
+	tmpstr = _("Search on SuperRTL-Now (local)");
+	tmpstr = _("Search on VOX-Now (local)");
+	tmpstr = _("Search on InternetTv (local)");
+	tmpstr = _("Search on InternetRadio (local)");
+	free(tmpstr), tmpstr = NULL;
+		
 	if(flag < 99)
 	{
 		if(status.play == 1)
 		{
-			addmenulist(&mlist, _("Video Settings"), NULL, NULL, 0, 0);
-			addmenulist(&mlist, _("AV Settings"), NULL, NULL, 0, 0);
-			addmenulist(&mlist, _("iD3Tag Info"), NULL, NULL, 0, 0);
+			addmenulist(&mlist, "Video Settings", NULL, NULL, 0, 0);
+			addmenulist(&mlist, "AV Settings", NULL, NULL, 0, 0);
+			addmenulist(&mlist, "iD3Tag Info", NULL, NULL, 0, 0);
 		}
 
-		addmenulist(&mlist, _("MediaDB Edit"), NULL, NULL, 0, 0);
+		addmenulist(&mlist, "MediaDB Edit", NULL, NULL, 0, 0);
 	
 		if(status.play == 0)
-			addmenulist(&mlist, _("Delete File"), NULL, NULL, 0, 0);
+			addmenulist(&mlist, "Delete File", NULL, NULL, 0, 0);
 			
 		if(status.mediadbfiles > 0)
-			addmenulist(&mlist, _("MediaDB Scan Info"), NULL, NULL, 0, 0);
+			addmenulist(&mlist, "MediaDB Scan Info", NULL, NULL, 0, 0);
 	}
 	else
 	{
 		if(status.expertmodus >= 11 || file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack"))
 		{
-			addmenulist(&mlist, _("Search on KinoX"), NULL, NULL, 0, 0);
-			addmenulist(&mlist, _("Search on KinoX (local)"), NULL, NULL, 0, 0);
-			addmenulist(&mlist, _("Search on Movie4k"), NULL, NULL, 0, 0);
-			addmenulist(&mlist, _("Search on Movie4k (local)"), NULL, NULL, 0, 0);
-			addmenulist(&mlist, _("Search on Solarmovies (movie)"), NULL, NULL, 0, 0);
-			addmenulist(&mlist, _("Search on Solarmovies (serie)"), NULL, NULL, 0, 0);
-			addmenulist(&mlist, _("Search on Solarmovies (local)"), NULL, NULL, 0, 0);
-			addmenulist(&mlist, _("Search on Mle-HD (local)"), NULL, NULL, 0, 0);
-			addmenulist(&mlist, _("Search on Beeg (local)"), NULL, NULL, 0, 0);
-			addmenulist(&mlist, _("Search on Xvideos (local)"), NULL, NULL, 0, 0);
+			addmenulist(&mlist, "Search on KinoX", NULL, NULL, 0, 0);
+			addmenulist(&mlist, "Search on KinoX (local)", NULL, NULL, 0, 0);
+			addmenulist(&mlist, "Search on Movie4k", NULL, NULL, 0, 0);
+			addmenulist(&mlist, "Search on Movie4k (local)", NULL, NULL, 0, 0);
+			addmenulist(&mlist, "Search on Solarmovies (movie)", NULL, NULL, 0, 0);
+			addmenulist(&mlist, "Search on Solarmovies (serie)", NULL, NULL, 0, 0);
+			addmenulist(&mlist, "Search on Solarmovies (local)", NULL, NULL, 0, 0);
+			addmenulist(&mlist, "Search on Mle-HD (local)", NULL, NULL, 0, 0);
+			addmenulist(&mlist, "Search on Beeg (local)", NULL, NULL, 0, 0);
+			addmenulist(&mlist, "Search on Xvideos (local)", NULL, NULL, 0, 0);
 		}
-		addmenulist(&mlist, _("Search on Netzkino (local)"), NULL, NULL, 0, 0);
-		addmenulist(&mlist, _("Search on Youtube"), NULL, NULL, 0, 0);
-		addmenulist(&mlist, _("Search on Youtube (local)"), NULL, NULL, 0, 0);
-		addmenulist(&mlist, _("Search on MyVideo"), NULL, NULL, 0, 0);
-		addmenulist(&mlist, _("Search on Myvideo (local)"), NULL, NULL, 0, 0);
-		addmenulist(&mlist, _("Search on ARD (local)"), NULL, NULL, 0, 0);
-		addmenulist(&mlist, _("Search on ZDF (local)"), NULL, NULL, 0, 0);
-		addmenulist(&mlist, _("Search on TecTime (local)"), NULL, NULL, 0, 0);
-		addmenulist(&mlist, _("Search on Giga (local)"), NULL, NULL, 0, 0);
-		addmenulist(&mlist, _("Search on Rtl-Now (local)"), NULL, NULL, 0, 0);
-		addmenulist(&mlist, _("Search on Rtl2-Now (local)"), NULL, NULL, 0, 0);
-		addmenulist(&mlist, _("Search on SuperRTL-Now (local)"), NULL, NULL, 0, 0);
-		addmenulist(&mlist, _("Search on VOX-Now (local)"), NULL, NULL, 0, 0);
-		addmenulist(&mlist, _("Search on InternetTv (local)"), NULL, NULL, 0, 0);
-		addmenulist(&mlist, _("Search on InternetRadio (local)"), NULL, NULL, 0, 0);
+		addmenulist(&mlist, "Search on Netzkino (local)", NULL, NULL, 0, 0);
+		addmenulist(&mlist, "Search on Youtube", NULL, NULL, 0, 0);
+		addmenulist(&mlist, "Search on Youtube (local)", NULL, NULL, 0, 0);
+		addmenulist(&mlist, "Search on MyVideo", NULL, NULL, 0, 0);
+		addmenulist(&mlist, "Search on Myvideo (local)", NULL, NULL, 0, 0);
+		addmenulist(&mlist, "Search on ARD (local)", NULL, NULL, 0, 0);
+		addmenulist(&mlist, "Search on ZDF (local)", NULL, NULL, 0, 0);
+		addmenulist(&mlist, "Search on TecTime (local)", NULL, NULL, 0, 0);
+		addmenulist(&mlist, "Search on Giga (local)", NULL, NULL, 0, 0);
+		addmenulist(&mlist, "Search on Rtl-Now (local)", NULL, NULL, 0, 0);
+		addmenulist(&mlist, "Search on Rtl2-Now (local)", NULL, NULL, 0, 0);
+		addmenulist(&mlist, "Search on SuperRTL-Now (local)", NULL, NULL, 0, 0);
+		addmenulist(&mlist, "Search on VOX-Now (local)", NULL, NULL, 0, 0);
+		addmenulist(&mlist, "Search on InternetTv (local)", NULL, NULL, 0, 0);
+		addmenulist(&mlist, "Search on InternetRadio (local)", NULL, NULL, 0, 0);
 	}
 
 	addmenulist(&mlist, _("Downloads"), NULL, NULL, 0, 0);
@@ -667,13 +696,13 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 	{
 		if(child->del == PLUGINDELMARK && (status.security == 1 || (status.security == 0 && checkpluginskip(child->name) == 0)))
 		{
-			if(ostrcmp(child->name, _("Streaminfo")) == 0 && status.play == 1)
+			if(ostrcmp(child->name, "Streaminfo") == 0 && status.play == 1)
 				addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);
-			else if(ostrcmp(child->name, _("IMDb")) == 0)
+			else if(ostrcmp(child->name, "IMDb") == 0)
 				addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);
-			else if(ostrcmp(child->name, _("IMDb-API")) == 0)
+			else if(ostrcmp(child->name, "IMDb-API") == 0)
 				addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);
-//			else if(ostrcmp(child->name, _("TMDb")) == 0)
+//			else if(ostrcmp(child->name, "TMDb") == 0)
 //				addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);
 		}
 		child = child->next;
@@ -682,80 +711,80 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 	mbox = menulistbox(mlist, NULL, skintitle, NULL, NULL, 1, 0);
 	if(mbox != NULL)
 	{
-		if(ostrcmp(mbox->name, _("Video Settings")) == 0)
+		if(ostrcmp(mbox->name, "Video Settings") == 0)
 			screenvideosettings();
-		else if(ostrcmp(mbox->name, _("AV Settings")) == 0)
+		else if(ostrcmp(mbox->name, "AV Settings") == 0)
 			screenavsettings(0);
-		else if(ostrcmp(mbox->name, _("IMDb")) == 0)
+		else if(ostrcmp(mbox->name, "IMDb") == 0)
 			imdb_submenu(file, 0);
-		else if(ostrcmp(mbox->name, _("IMDb-API")) == 0)
+		else if(ostrcmp(mbox->name, "IMDb-API") == 0)
 			imdb_submenu(file, 1);
-		else if(ostrcmp(mbox->name, _("TMDb")) == 0)
+		else if(ostrcmp(mbox->name, "TMDb") == 0)
 			imdb_submenu(file, 2);
-		else if(ostrcmp(mbox->name, _("iD3Tag Info")) == 0)
+		else if(ostrcmp(mbox->name, "iD3Tag Info") == 0)
 			id3tag_info(file);
-		else if(ostrcmp(mbox->name, _("MediaDB Scan Info")) == 0)
+		else if(ostrcmp(mbox->name, "MediaDB Scan Info") == 0)
 			get_mediadb_scan_info();
-		else if(ostrcmp(mbox->name, _("MediaDB Edit")) == 0)
+		else if(ostrcmp(mbox->name, "MediaDB Edit") == 0)
 			screenmediadbedit(file, 0, 0);
-		else if(ostrcmp(mbox->name, _("Delete File")) == 0)
+		else if(ostrcmp(mbox->name, "Delete File") == 0)
 		{
 			playcheckdirrcret(file, 1);
 			ret = 7;
 		}
-		else if(ostrcmp(mbox->name, _("Downloads")) == 0)
+		else if(ostrcmp(mbox->name, "Downloads") == 0)
 			screenbgdownload(1);
-		else if(ostrcmp(mbox->name, _("Search on Kinox")) == 0)
+		else if(ostrcmp(mbox->name, "Search on Kinox") == 0)
 			ret = 2;
-		else if(ostrcmp(mbox->name, _("Search on Kinox (local)")) == 0)
+		else if(ostrcmp(mbox->name, "Search on Kinox (local)") == 0)
 			ret = 8;
-		else if(ostrcmp(mbox->name, _("Search on Solarmovies (movie)")) == 0)
+		else if(ostrcmp(mbox->name, "Search on Solarmovies (movie)") == 0)
 			ret = 3;
-		else if(ostrcmp(mbox->name, _("Search on Solarmovies (serie)")) == 0)
+		else if(ostrcmp(mbox->name, "Search on Solarmovies (serie)") == 0)
 			ret = 4;
-		else if(ostrcmp(mbox->name, _("Search on Solarmovies (local)")) == 0)
+		else if(ostrcmp(mbox->name, "Search on Solarmovies (local)") == 0)
 			ret = 9;
-		else if(ostrcmp(mbox->name, _("Search on Youtube")) == 0)
+		else if(ostrcmp(mbox->name, "Search on Youtube") == 0)
 			ret = 5;
-		else if(ostrcmp(mbox->name, _("Search on Youtube (local)")) == 0)
+		else if(ostrcmp(mbox->name, "Search on Youtube (local)") == 0)
 			ret = 10;
-		else if(ostrcmp(mbox->name, _("Search on MyVideo")) == 0)
+		else if(ostrcmp(mbox->name, "Search on MyVideo") == 0)
 			ret = 6;
-		else if(ostrcmp(mbox->name, _("Search on MyVideo (local)")) == 0)
+		else if(ostrcmp(mbox->name, "Search on MyVideo (local)") == 0)
 			ret = 11;
-		else if(ostrcmp(mbox->name, _("Search on Movie4k")) == 0)
+		else if(ostrcmp(mbox->name, "Search on Movie4k") == 0)
 			ret = 7;
-		else if(ostrcmp(mbox->name, _("Search on Movie4k (local)")) == 0)
+		else if(ostrcmp(mbox->name, "Search on Movie4k (local)") == 0)
 			ret = 12;
-		else if(ostrcmp(mbox->name, _("Search on InternetRadio (local)")) == 0)
+		else if(ostrcmp(mbox->name, "Search on InternetRadio (local)") == 0)
 			ret = 13;
-		else if(ostrcmp(mbox->name, _("Search on InternetTv (local)")) == 0)
+		else if(ostrcmp(mbox->name, "Search on InternetTv (local)") == 0)
 			ret = 14;
-		else if(ostrcmp(mbox->name, _("Search on ARD (local)")) == 0)
+		else if(ostrcmp(mbox->name, "Search on ARD (local)") == 0)
 			ret = 15;
-		else if(ostrcmp(mbox->name, _("Search on ZDF (local)")) == 0)
+		else if(ostrcmp(mbox->name, "Search on ZDF (local)") == 0)
 			ret = 16;
-		else if(ostrcmp(mbox->name, _("Search on TecTime (local)")) == 0)
+		else if(ostrcmp(mbox->name, "Search on TecTime (local)") == 0)
 			ret = 17;
-		else if(ostrcmp(mbox->name, _("Search on Giga (local)")) == 0)
+		else if(ostrcmp(mbox->name, "Search on Giga (local)") == 0)
 			ret = 18;
-		else if(ostrcmp(mbox->name, _("Search on Beeg (local)")) == 0)
+		else if(ostrcmp(mbox->name, "Search on Beeg (local)") == 0)
 			ret = 19;
-		else if(ostrcmp(mbox->name, _("Search on Rtl2-Now (local)")) == 0)
+		else if(ostrcmp(mbox->name, "Search on Rtl2-Now (local)") == 0)
 			ret = 20;
-		else if(ostrcmp(mbox->name, _("Search on Rtl-Now (local)")) == 0)
+		else if(ostrcmp(mbox->name, "Search on Rtl-Now (local)") == 0)
 			ret = 21;
-		else if(ostrcmp(mbox->name, _("Search on SuperRTL-Now (local)")) == 0)
+		else if(ostrcmp(mbox->name, "Search on SuperRTL-Now (local)") == 0)
 			ret = 22;
-		else if(ostrcmp(mbox->name, _("Search on VOX-Now (local)")) == 0)
+		else if(ostrcmp(mbox->name, "Search on VOX-Now (local)") == 0)
 			ret = 23;
-		else if(ostrcmp(mbox->name, _("Search on Xvideos (local)")) == 0)
+		else if(ostrcmp(mbox->name, "Search on Xvideos (local)") == 0)
 			ret = 24;
-		else if(ostrcmp(mbox->name, _("Search on Mle-HD (local)")) == 0)
+		else if(ostrcmp(mbox->name, "Search on Mle-HD (local)") == 0)
 			ret = 25;
-		else if(ostrcmp(mbox->name, _("Search on Netzkino (local)")) == 0)
+		else if(ostrcmp(mbox->name, "Search on Netzkino (local)") == 0)
 			ret = 26;
-		else if(ostrcmp(mbox->name, _("Downloads")) == 0)
+		else if(ostrcmp(mbox->name, "Downloads") == 0)
 		{
 			if(status.play == 1)
 				screenbgdownload(1);
