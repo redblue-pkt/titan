@@ -7055,15 +7055,15 @@ msgstr "Einstellungen"
 
 #: skin_default_skin.xml.h:482
 msgid "Records"
-msgstr "Aufnahmen(Timer)"
+msgstr "Aufnahmen (Timer)"
 
 #: skin_default_skin.xml.h:483
 msgid "Records and EPG"
-msgstr "Aufnahmen(Timer) und EPG"
+msgstr "Aufnahmen (Timer) und EPG"
 
 #: skin_default_skin.xml.h:484
 msgid "Records and EPG ..."
-msgstr "Aufnahmen(Timer) und EPG"
+msgstr "Aufnahmen (Timer) und EPG"
 
 #: skin_default_skin.xml.h:485
 msgid "Record Split Size"
@@ -7071,7 +7071,7 @@ msgstr "Größe der geteilten Dateien"
 
 #: skin_default_skin.xml.h:486
 msgid "Record Timer"
-msgstr "Zeitgesteuerte Aufnahmen(Timer)"
+msgstr "Zeitgesteuerte Aufnahmen (Timer)"
 
 #: skin_default_skin.xml.h:487
 msgid "Red Button"
