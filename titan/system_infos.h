@@ -14,7 +14,7 @@ void screensystem_infos(int mode)
 	{
 		char* tmpstr1 = NULL, *tmpstr2 = NULL;
 
-		changetitle(system_info, _("Default"));
+		changetitle(system_info, _("System_Status"));
 
 		tmpstr1 = ostrcat("Date = ", "", 0, 0);
 		tmpstr1 = ostrcat(tmpstr1, gettime(NULL, "%d %B %Y"), 1, 1);
