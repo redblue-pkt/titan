@@ -773,7 +773,7 @@ int setvmpeg(struct dvbdev* node, int posx, int posy, int width, int height)
 		
 		snprintf(buf, MINMALLOC, vmpegdev, node->devnr);
 		snprintf(tmpstr, MINMALLOC, "%x %x %x %x", posx, posy, width, height);
-		debug(100, "set %s to %s", buf, tmpstr);
+		debug(444, "set %s to %s", buf, tmpstr);
 
 		status.tvpic = 1;
 		ret = writesys(buf, tmpstr, 1);
