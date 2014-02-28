@@ -873,11 +873,11 @@ int main(int argc, char *argv[])
 	ret = readextepgconfig(getconfig("extepgfile", NULL));
 	
 	//set volume on start
-//	if(checkbox("ATEMIO5000") == 1)
-//	{
+	if(checkbox("VUSOLO2") == 1)
+	{
 //		setvol(getconfigint("vol", NULL));
-//		system("fbset 1280x720-1");
-//	}
+		system("fbset 1280x720-1");
+	}
 
 	//check to remove preinstalled tpk packages
 	ret = tpkupdatepre();
