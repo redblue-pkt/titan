@@ -5877,7 +5877,7 @@ msgstr "Dateisystem prüfen"
 
 #: skin_default_skin.xml.h:231
 msgid "Fine move"
-msgstr ""
+msgstr "Rotor langsam bewegen"
 
 #: skin_default_skin.xml.h:232
 msgid "Fix Shutdown Time"
