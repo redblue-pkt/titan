@@ -2,6 +2,7 @@
 
 SVNUSER=$1
 GROUP=$2
+TYPE=update
 
 if [ -z "$1" ]; then
 	echo "usage: createpo.sh <svnuser> <group>"
@@ -47,7 +48,7 @@ for ROUND in $POLIST; do
 	echo "[createpo.sh] ############################ start ###############################"
 	echo "[createpo.sh] update $ROUND"
 	echo xgettext --omit-header -k_ *.* -o $ROUND
-	if [ "$2" == "update" ]; then
+	if [ "TYPE" == "update" ]; then
 		ROUND_CLEAN=`echo $ROUND | sed 's!titan.po_auto.po!titan.po_auto.clean.po!'`
 		ROUND_UTF=`echo $ROUND | sed 's!titan.po_auto.po!titan.po_auto.utf.po!'`
 		OUTFILE_MO=`echo $ROUND | sed 's!titan.po_auto.po!titan.mo!'`
