@@ -152,15 +152,15 @@ void blitfb2(struct fb* fbnode, int flag)
 			break;
 	}
 	
-	debug(100, "FB: line_length %d", fix_screeninfo.line_length);
-	debug(100, "FB: var_screeninfo.xres %d", var_screeninfo.xres);
-	debug(100, "FB: var_screeninfo.yres %d", var_screeninfo.yres);
-	debug(100, "FB: var_screeninfo.xres_virt %d", var_screeninfo.xres_virtual);
-	debug(100, "FB: var_screeninfo.yres_virt %d", var_screeninfo.yres_virtual);
-	debug(100, "FB: var_screeninfo.xoffset %d", var_screeninfo.xoffset);
-	debug(100, "FB: var_screeninfo.yoffset %d", var_screeninfo.yoffset);
-	debug(100, "FB: var_screeninfo.bits_per_pixel %d", var_screeninfo.bits_per_pixel);
-	debug(100, "FB: var_screeninfo.grayscale %d", var_screeninfo.grayscale);
+	debug(444, "FB: line_length %d", fix_screeninfo.line_length);
+	debug(444, "FB: var_screeninfo.xres %d", var_screeninfo.xres);
+	debug(444, "FB: var_screeninfo.yres %d", var_screeninfo.yres);
+	debug(444, "FB: var_screeninfo.xres_virt %d", var_screeninfo.xres_virtual);
+	debug(444, "FB: var_screeninfo.yres_virt %d", var_screeninfo.yres_virtual);
+	debug(444, "FB: var_screeninfo.xoffset %d", var_screeninfo.xoffset);
+	debug(444, "FB: var_screeninfo.yoffset %d", var_screeninfo.yoffset);
+	debug(444, "FB: var_screeninfo.bits_per_pixel %d", var_screeninfo.bits_per_pixel);
+	debug(444, "FB: var_screeninfo.grayscale %d", var_screeninfo.grayscale);
 
 	if(ioctl(fb->fd, FBIOPUT_VSCREENINFO, &var_screeninfo) < 0)
 	{
@@ -169,17 +169,17 @@ void blitfb2(struct fb* fbnode, int flag)
 		{
 			perr("FBIOPUT_VSCREENINFO");
 		}
-		debug(100, "FB: double buffering not available");
+		debug(444, "FB: double buffering not available");
 	}
 	else
 	{
-		debug(100, "FB: double buffering available!");
+		debug(444, "FB: double buffering available!");
 	}
 
 	ioctl(fb->fd, FBIOGET_VSCREENINFO, &var_screeninfo);
 //	if ((var_screeninfo.xres!=fb->width) && (var_screeninfo.yres!=fb->height) && (var_screeninfo.bits_per_pixel!=fb->colbytes))
 //	{
-		debug(100, "SetMode failed: wanted: %dx%dx%d, got %dx%dx%d",
+		debug(444, "SetMode failed: wanted: %dx%dx%d, got %dx%dx%d",
 			fb->width, fb->height, fb->colbytes,
 			var_screeninfo.xres, var_screeninfo.yres, var_screeninfo.bits_per_pixel);
 //	}
@@ -871,7 +871,7 @@ void sighandler(int sig, struct sigcontext ctx)
 
 int setvmpeg(struct dvbdev* node, int value, int flag)
 {
-	debug(1000, "in");
+	debug(4440, "in");
 	char* vmpegdev = NULL, *tmpstr = NULL, *buf = NULL;
 	int ret = 0;
 
@@ -900,7 +900,7 @@ int setvmpeg(struct dvbdev* node, int value, int flag)
 		
 		snprintf(buf, MINMALLOC, vmpegdev, node->devnr);
 		snprintf(tmpstr, 10, "%x", value);
-		debug(100, "set %s to %s", buf, tmpstr);
+		debug(444, "set %s to %s", buf, tmpstr);
 		status.tvpic = 1;
 		ret = writesys(buf, tmpstr, 1);
 		
@@ -909,7 +909,7 @@ int setvmpeg(struct dvbdev* node, int value, int flag)
 		return ret;
 	}
 
-	debug(1000, "out");
+	debug(4440, "out");
 	return 0;
 }
 

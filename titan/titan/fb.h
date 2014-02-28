@@ -12,7 +12,7 @@ struct fb* getfb(char *name)
 
 		node = node->next;
 	}
-	debug(100, "framebuffer not found (%s)", name);
+	debug(444, "framebuffer not found (%s)", name);
 	return NULL;
 }
 
@@ -111,7 +111,7 @@ struct fb* addfb(char *fbname, int dev, int width, int height, int colbytes, int
 		return NULL;
 	}
 
-	debug(100, "fbname=%s, fbwidth=%d, fbheight=%d, fbcol=%d, fbsize=%ld", newnode->name, newnode->width, newnode->height, newnode->colbytes, newnode->varfbsize);
+	debug(444, "fbname=%s, fbwidth=%d, fbheight=%d, fbcol=%d, fbsize=%ld", newnode->name, newnode->width, newnode->height, newnode->colbytes, newnode->varfbsize);
 	return newnode;
 }
 
@@ -193,7 +193,7 @@ struct fb* openfb(char *fbdev, int devnr)
 	fd = open(fbdev, O_RDWR);
 
 // blinking work start
-#ifdef EPLAYER4
+#ifdef MIPSEL
 	if (fd < 0)
 	{
 			perror(fbdev);
@@ -230,8 +230,9 @@ struct fb* openfb(char *fbdev, int devnr)
 		return NULL;
 	}
 
-	debug(100, "%dk video mem", fix_screeninfo.smem_len/1024);
+	debug(444, "%dk video mem", fix_screeninfo.smem_len/1024);
 
+#ifdef MIPSEL
 	lfb = (unsigned char*)mmap(0, fix_screeninfo.smem_len, PROT_WRITE|PROT_READ, MAP_SHARED, fd, 0);
 	if (!lfb)
 	{
@@ -239,10 +240,9 @@ struct fb* openfb(char *fbdev, int devnr)
 		goto nolfb;
 	}
 
-#ifdef EPLAYER4
 	if (var_screeninfo.bits_per_pixel != 32)
 	{
-		debug(100, "Only 32 bit per pixel supported. Framebuffer currently use %d", var_screeninfo.bits_per_pixel);
+		debug(444, "Only 32 bit per pixel supported. Framebuffer currently use %d", var_screeninfo.bits_per_pixel);
 		closefb();
 		return 0;
 	}
@@ -265,7 +265,7 @@ struct fb* openfb(char *fbdev, int devnr)
 
 	return node;
 
-// blinking work start
+#ifdef MIPSEL
 nolfb:
 	if (fd >= 0)
 	{
@@ -273,8 +273,8 @@ nolfb:
 		fd = -1;
 	}
 
-	debug(100, "framebuffer not available.");
-
+	debug(444, "framebuffer not available.");
+#endif
 	return 0;
 // blinking work end
 }
@@ -282,16 +282,16 @@ nolfb:
 void closefb()
 {
 
-#ifdef EPLAYER4
+#ifdef MIPSEL
 	if(lfb)
 	{
-		debug(100, "ms_sync");
+		debug(444, "ms_sync");
 		msync(lfb, fix_screeninfo.smem_len, MS_SYNC);
 		munmap(lfb, fix_screeninfo.smem_len);
 	}
 	if(fb->fd >= 0)
 	{
-		debug(100, "close");
+		debug(444, "close");
 		disablemanualblit();
 		close(fb->fd);
 		fb->fd = -1;
@@ -336,8 +336,8 @@ void blitfb1()
 //flag 1: don't del skinfb
 void changefbresolution(char *value, int flag)
 {
-	debug(100, "fb->colbytes: %d", fb->colbytes);
-#ifdef EPLAYER4
+	debug(444, "fb->colbytes: %d", fb->colbytes);
+#ifdef MIPSEL
 	return;
 #endif
 
