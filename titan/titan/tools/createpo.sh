@@ -55,6 +55,7 @@ for ROUND in $POLIST; do
 	if [ "$TYPE" == "update" ]; then
 		ROUND_CLEAN=`echo $ROUND | sed 's!titan.po_auto.po!titan.po_auto.clean.po!'`
 		ROUND_UTF=`echo $ROUND | sed 's!titan.po_auto.po!titan.po_auto.utf.po!'`
+		ROUND_UTF=`echo $ROUND | sed 's!titan.po_auto.po!titan.po_auto.utf.po!'`
 		OUTFILE_MO=`echo $ROUND | sed 's!titan.po_auto.po!titan.mo!'`
 		OUTFILE_PO=`echo $ROUND | sed 's!titan.po_auto.po!titan.outfile.po!'`
 		OUTFILE_ERROR=`echo $ROUND | sed 's!titan.po_auto.po!titan.outfile.po.error!'`
@@ -65,38 +66,42 @@ for ROUND in $POLIST; do
 		ROUND_MERGE=`echo $ROUND | sed 's!titan.po_auto.po!titan.merge.po!'`
 		ROUND_NEW=`echo $ROUND | sed 's!titan.po_auto.po!titan.new.po!'`
 		ROUND_NEW_MERGE=`echo $ROUND | sed 's!titan.po_auto.po!titan.new.merge.po!'`
-
+		
 		cat $ROUND | sed '/#.*/d' > $ROUND_CLEAN
 		iconv -f ISO-8859-1 -t UTF-8 $ROUND_CLEAN > $ROUND_UTF
-		ret=$?
-		if [ $ret -eq 0 ] || [ ! -e "$ROUND_UTF" ]; then error="$error $ROUND_UTF $ret";fi
+		if [ ! -e "$ROUND_UTF" ] || [ `cat "$ROUND_UTF" | wc -l` -eq 0 ]; then error="$error $ROUND_UTF $ret"; break;fi
 
-		xgettext --omit-header -j -k_ *.* -o $ROUND_UTF
-		ret=$?
-		if [ $ret -eq 0 ] || [ ! -e "$ROUND_UTF" ]; then error="$error $ROUND_UTF $ret";fi
+#		rm -f "$HOME"/flashimg/source.titan/titan/tools/error/error.log
+		cmd="xgettext --omit-header -j -k_ *.* -o $ROUND_UTF"
+		echo "--------------------------------------" >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log
+		echo "[createpo.sh] $cmd" > "$HOME"/flashimg/source.titan/titan/tools/error/error.log
+		$cmd >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log 2>&1
+		log=`cat "$HOME"/flashimg/source.titan/titan/tools/error/error.log`
+		echo $log
+		if [ ! -e "$ROUND_UTF" ] || [ `cat "$ROUND_UTF" | wc -l` -eq 0 ]; then error="$error file:$ROUND_UTF ret:$ret log:$log"; break;fi
 
-		echo "[createpo.sh] xgettext --omit-header -k_ *.* -o $ROUND_NEW"
-		xgettext --omit-header -k_ *.* -o $ROUND_NEW
-		ret=$?
-		if [ $ret -eq 0 ] || [ ! -e "$ROUND_NEW" ]; then error="$error $ROUND_NEW $ret";fi
+#		rm -f "$HOME"/flashimg/source.titan/titan/tools/error/error.log
+		cmd="xgettext --omit-header -k_ *.* -o $ROUND_NEW"
+		echo "--------------------------------------" >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log
+		echo "[createpo.sh] $cmd" >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log
+		$cmd >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log 2>&1
+		log=`cat "$HOME"/flashimg/source.titan/titan/tools/error/error.log`
+		echo $log
+		if [ ! -e "$ROUND_NEW" ] || [ `cat "$ROUND_NEW" | wc -l` -eq 0 ]; then error="$error file:$ROUND_NEW ret:$ret log:$log"; break;fi
 
 		echo "[createpo.sh] msgmerge $ROUND_UTF $ROUND_NEW > $ROUND_NEW_MERGE"
 		msgmerge $ROUND_UTF $ROUND_NEW > $ROUND_NEW_MERGE
-		ret=$?
-		if [ $ret -eq 0 ] || [ ! -e "$ROUND_NEW_MERGE" ]; then error="$error $ROUND_NEW_MERGE $ret";fi
+		if [ ! -e "$ROUND_NEW_MERGE" ] || [ `cat "$ROUND_NEW_MERGE" | wc -l` -eq 0 ]; then error="$error $ROUND_NEW_MERGE $ret"; break;fi
 
 		iconv -f ISO-8859-1 -t UTF-8 $ROUND_EDIT > $ROUND_EDIT_UTF
-		ret=$?
-		if [ $ret -eq 0 ] || [ ! -e "$ROUND_EDIT_UTF" ]; then error="$error $ROUND_EDIT_UTF $ret";fi
+		if [ ! -e "$ROUND_EDIT_UTF" ] || [ `cat "$ROUND_EDIT_UTF" | wc -l` -eq 0 ]; then error="$error $ROUND_EDIT_UTF $ret"; break;fi
 
 		echo "[createpo.sh] msgmerge $ROUND_NEW_MERGE $ROUND_EDIT_UTF > $ROUND_MERGE_UTF $ret"
 		msgmerge $ROUND_NEW_MERGE $ROUND_EDIT_UTF > $ROUND_MERGE_UTF
-		ret=$?
-		if [ $ret -eq 0 ] || [ ! -e "$ROUND_MERGE_UTF" ]; then error="$error $ROUND_MERGE_UTF $ret";fi
+		if [ ! -e "$ROUND_MERGE_UTF" ] || [ `cat "$ROUND_EDIT_UTF" | wc -l` -eq 0 ]; then error="$error $ROUND_MERGE_UTF $ret"; break;fi
 
 		iconv -f UTF-8 -t ISO-8859-1 $ROUND_MERGE_UTF > $ROUND_MERGE
-		ret=$?
-		if [ $ret -eq 0 ] || [ ! -e "$ROUND_MERGE" ]; then error="$error $ROUND_MERGE $ret";fi
+		if [ ! -e "$ROUND_MERGE" ] || [ `cat "$ROUND_MERGE" | wc -l` -eq 0 ]; then error="$error $ROUND_MERGE $ret"; break;fi
 
 		SEARCH=`cat $ROUND_MERGE | grep -n "Content-Transfer-Encoding: 8bit" | cut -d":" -f1`
 
@@ -105,17 +110,19 @@ for ROUND in $POLIST; do
 		echo "[createpo.sh] CUT $CUT"
 
 		cat $ROUND_MERGE | sed "1,"$CUT"d" > $OUTFILE_PO
-		ret=$?
-		if [ $ret -eq 0 ] || [ ! -e "$OUTFILE_PO" ]; then error="$error $OUTFILE_PO $ret";fi
+		if [ ! -e "$OUTFILE_PO" ] || [ `cat "$OUTFILE_PO" | wc -l` -eq 0 ]; then error="$error $OUTFILE_PO $ret"; break;fi
 
-		echo "[createpo.sh] msgfmt -v $OUTFILE_PO -o $OUTFILE_MO"
-		msgfmt -v $OUTFILE_PO -o $OUTFILE_MO		
-		ret=$?
-		if [ $ret -eq 0 ] || [ ! -e "$OUTFILE_MO" ]; then error="$error $OUTFILE_MO $ret";fi
+#		rm -f "$HOME"/flashimg/source.titan/titan/tools/error/error.log
+		cmd="msgfmt -v $OUTFILE_PO -o $OUTFILE_MO"
+		echo "--------------------------------------" >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log
+		echo "[createpo.sh] $cmd" >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log
+		$cmd >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log 2>&1
+		log=`cat "$HOME"/flashimg/source.titan/titan/tools/error/error.log`
+		echo $log
+		if [ ! -e "$OUTFILE_MO" ] || [ `cat "$OUTFILE_MO" | wc -l` -eq 0 ]; then error="$error file:$OUTFILE_MO ret:$ret log:$log"; break;fi
 		
 		iconv -f UTF-8 -t ISO-8859-1 $ROUND_NEW_MERGE > $ROUND
-		ret=$?
-		if [ $ret -eq 0 ] || [ ! -e "$ROUND" ]; then error="$error $ROUND $ret";fi
+		if [ ! -e "$ROUND" ] || [ `cat "$ROUND" | wc -l` -eq 0 ]; then error="$error $ROUND $ret"; break;fi
 
 		if [ ! -e $OUTFILE_MO ];then
 			cp -a $OUTFILE_PO $OUTFILE_ERROR
