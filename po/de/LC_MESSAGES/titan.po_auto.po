@@ -13254,16 +13254,16 @@ msgstr ""
 #: tpk_description.h:114
 msgid ""
 "Screensaver FC Bayern pictures for MediaCenter Audioplayer and Radioplayer."
-msgstr ""
+msgstr "Screensaver FC Bayern Bilder für MediaCenter Audio- und Radioplayer"
 
 #: tpk_description.h:115
 msgid ""
 "Screensaver Hot Girls pictures for MediaCenter Audioplayer and Radioplayer."
-msgstr ""
+msgstr "Screensaver Hot Girls Bilder für MediaCenter Audio- und Radioplayer"
 
 #: tpk_description.h:116
 msgid "Screensaver pictures for MediaCenter Audioplayer and Radioplayer."
-msgstr ""
+msgstr "Screensaver Bilder für MediaCenter Audio- und Radioplayer"
 
 #: tpk_description.h:117
 msgid "scriptexec Plugin"
@@ -13271,15 +13271,15 @@ msgstr ""
 
 #: tpk_description.h:118
 msgid "Skin 0Acht5Zehn in black for tiTan. Please use black Picons."
-msgstr ""
+msgstr "Skin 0Acht5Zehn schwarz für schwarze Picons"
 
 #: tpk_description.h:119
 msgid "Skin 0Acht5Zehn in grey for tiTan. Please use grey Picons."
-msgstr ""
+msgstr "Skin 0Acht5Zehn grau für graue Picons"
 
 #: tpk_description.h:120
 msgid "Skin 0Acht5Zehn in white for tiTan. Please use white Picons."
-msgstr ""
+msgstr "Skin 0Acht5Zehn weiss für weisse Picons"
 
 #: tpk_description.h:121
 msgid "Skin tobayer01 for tiTan. Please use grey Picons."
@@ -13455,11 +13455,11 @@ msgstr "Bitte den Secret Feed überprüfen!"
 
 #: tpk.h:3428
 msgid "Section: "
-msgstr ""
+msgstr "Rubrik: "
 
 #: tpk.h:3431
 msgid "Description:"
-msgstr ""
+msgstr "Beschreibung: "
 
 #: tpk.h:3436 tpk.new.h:3411
 msgid "no description found"
