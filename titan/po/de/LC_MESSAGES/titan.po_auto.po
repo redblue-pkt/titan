@@ -5403,7 +5403,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:101
 msgid "Backup"
-msgstr "Sicherung erstellen"
+msgstr "sichern"
 
 #: skin_default_skin.xml.h:102 system_backup_restore.h:18
 #: system_backup_restore.h:75
@@ -8053,11 +8053,11 @@ msgid ""
 "Press -backup- to save your actual settings to swapstick / recording hdd.\n"
 "WARNING: The old backup will be deleted!"
 msgstr ""
-"-Wiederherstellung- (Rot):\n"
+"-wiederherstellen- (Rot):\n"
 "Ihre Einstellungen werden aus einer zuvor erstellten Sicherung "
 "wiederhergestellt! Der Receiver wird dafür automatisch neugestartet! \n"
 "\n"
-"-Sicherung erstellen- (Grün):\n"
+"-sichern- (Grün):\n"
 "Ihre Einstellungen werden gesichert.\n"
 "WARNUNG: Die alten Sicherungen werden gelöscht!\n"
 "\n"
