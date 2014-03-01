@@ -1,6 +1,6 @@
 #: about.h:9
 msgid "Image"
-msgstr "
+msgstr ""
 
 #: about.h:12
 msgid "Version"
