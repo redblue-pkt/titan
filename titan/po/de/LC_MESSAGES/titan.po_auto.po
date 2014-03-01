@@ -4198,11 +4198,11 @@ msgstr "Y-Auflösung"
 
 #: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1
 msgid "TiThek Menu"
-msgstr "Tithek Menü"
+msgstr "tiThek Menü"
 
 #: plugins_tithek_skin.xml.h:2 skins_tithek_skin.xml.h:2
 msgid "TiThek Settings"
-msgstr "TiThek"
+msgstr "tiThek"
 
 #: plugins_tithek_skin.xml.h:3 skins_tithek_skin.xml.h:3
 msgid "ADD FAV"
@@ -6469,7 +6469,7 @@ msgstr "Umkehrung:"
 
 #: skin_default_skin.xml.h:326
 msgid "IP for Stream"
-msgstr "IP Adresse für Stream"
+msgstr "Stream Adresse (IP)"
 
 #: skin_default_skin.xml.h:327
 msgid "Italian"
