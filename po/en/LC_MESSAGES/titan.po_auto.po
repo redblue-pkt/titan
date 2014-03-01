@@ -618,7 +618,7 @@ msgstr ""
 
 #: avsettings.h:247 videomode.h:53
 msgid "Is this Videomode ok ?"
-msgstr ""
+msgstr "Is this Videomode Ok?"
 
 #: betarobot.h:57
 msgid ""
