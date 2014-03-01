@@ -5624,7 +5624,7 @@ msgstr "Tag"
 
 #: skin_default_skin.xml.h:162 softcam.h:290
 msgid "Deactivate"
-msgstr "Deaktiviere"
+msgstr "Deaktivieren"
 
 #: skin_default_skin.xml.h:163
 msgid "Deactivate Crypt Support on Media Playback"
@@ -7047,7 +7047,7 @@ msgstr "Einstellungen"
 
 #: skin_default_skin.xml.h:482
 msgid "Records"
-msgstr "Aufnahmen"
+msgstr "Timer"
 
 #: skin_default_skin.xml.h:483
 msgid "Records and EPG"
