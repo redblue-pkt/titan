@@ -4182,7 +4182,7 @@ msgstr "Zeit bis Abschaltung (min)"
 #: plugins_streaminfo_skin.xml.h:1 skin_default_skin.xml.h:76
 #: skins_streaminfo_skin.xml.h:1
 msgid "Aspect"
-msgstr "Perspektive"
+msgstr "Seitenverhältnis"
 
 #: plugins_streaminfo_skin.xml.h:2 skins_streaminfo_skin.xml.h:2
 msgid "Framerate"
@@ -5528,7 +5528,7 @@ msgstr "löschen"
 
 #: skin_default_skin.xml.h:137
 msgid "Clear before scan"
-msgstr "Vor der Suche löschen?"
+msgstr "Vor der Suche löschen"
 
 #: skin_default_skin.xml.h:138
 msgid "CLEAR INPUT"
@@ -6200,7 +6200,8 @@ msgid ""
 "control cross and the extra buttons displayed with your remote control to "
 "select."
 msgstr ""
-"Hier können Sie Timer auswählen, löschen und bearbeiten.\n"
+"Hier können Sie Timer auswählen, löschen und\n
+"bearbeiten."
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
