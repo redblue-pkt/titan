@@ -6991,7 +6991,7 @@ msgstr "typ Screensaver-a"
 msgid "--- SD resolution"
 msgstr "rozdzielczość SD"
 
-#: skin_default_skin.xml.h:546 tithek_mainmenu.h:36
+#: skin_default_skin.xml.h:546 tithek_mainmenu.h:35
 msgid "Search"
 msgstr ""
 
@@ -8234,138 +8234,122 @@ msgid "HowTo Sky V13 Einrichten"
 msgstr ""
 
 #: tithek_mainmenu.h:23
-msgid "ice age 4 - 2013/3/110/movies/HD.smil"
-msgstr ""
-
-#: tithek_mainmenu.h:24
 msgid "Internet Radio"
 msgstr ""
 
-#: tithek_mainmenu.h:25
+#: tithek_mainmenu.h:24
 msgid "KinoX"
 msgstr ""
 
-#: tithek_mainmenu.h:26
+#: tithek_mainmenu.h:25
 msgid "Mediacenter AudioPlayer Playlisten Preview"
 msgstr ""
 
-#: tithek_mainmenu.h:27
+#: tithek_mainmenu.h:26
 msgid "Mediacenter AudioPlayer Screensaver Preview"
 msgstr ""
 
-#: tithek_mainmenu.h:28
+#: tithek_mainmenu.h:27
 msgid "Mediacenter Mediathek Kinox Preview"
 msgstr ""
 
-#: tithek_mainmenu.h:29
+#: tithek_mainmenu.h:28
 msgid "Mediacenter Mediathek Myvideo/Rtl2/InternetTv/Radio Preview"
 msgstr ""
 
-#: tithek_mainmenu.h:30
+#: tithek_mainmenu.h:29
 msgid "Mediacenter VideoPlayer Preview"
 msgstr ""
 
-#: tithek_mainmenu.h:31
+#: tithek_mainmenu.h:30
 msgid "Movie4k"
 msgstr ""
 
-#: tithek_mainmenu.h:32
+#: tithek_mainmenu.h:31
 msgid "MyVideo"
 msgstr ""
 
-#: tithek_mainmenu.h:33
+#: tithek_mainmenu.h:32
 msgid "Netzkino"
 msgstr ""
 
-#: tithek_mainmenu.h:34
+#: tithek_mainmenu.h:33
 msgid "RTL2-Now"
 msgstr ""
 
-#: tithek_mainmenu.h:35
+#: tithek_mainmenu.h:34
 msgid "RTL-Now"
 msgstr ""
 
-#: tithek_mainmenu.h:37
+#: tithek_mainmenu.h:36
 msgid "Search (10)"
 msgstr ""
 
-#: tithek_mainmenu.h:38
+#: tithek_mainmenu.h:37
 msgid "Search (20)"
 msgstr ""
 
-#: tithek_mainmenu.h:39
+#: tithek_mainmenu.h:38
 msgid "Search (25)"
 msgstr ""
 
-#: tithek_mainmenu.h:40
+#: tithek_mainmenu.h:39
 msgid "Search (50)"
 msgstr ""
 
-#: tithek_mainmenu.h:41
+#: tithek_mainmenu.h:40
 msgid "Search Cast"
 msgstr ""
 
-#: tithek_mainmenu.h:42
+#: tithek_mainmenu.h:41
 msgid "Search (local)"
 msgstr ""
 
-#: tithek_mainmenu.h:43
+#: tithek_mainmenu.h:42
 msgid "Search Movie"
 msgstr ""
 
-#: tithek_mainmenu.h:44
+#: tithek_mainmenu.h:43
 msgid "Search Serie"
 msgstr ""
 
-#: tithek_mainmenu.h:45
+#: tithek_mainmenu.h:44
 msgid "Solarmovie"
 msgstr ""
 
-#: tithek_mainmenu.h:46
+#: tithek_mainmenu.h:45
 msgid "SuperRTL-Now"
 msgstr ""
 
-#: tithek_mainmenu.h:47
+#: tithek_mainmenu.h:46
 msgid "TecTime"
 msgstr ""
 
-#: tithek_mainmenu.h:48
-msgid "Test2 VTCHD1/VTCHD1_live.smil"
-msgstr ""
-
-#: tithek_mainmenu.h:49
-msgid "Test3 2013/3/112/movies/HD.smil"
-msgstr ""
-
-#: tithek_mainmenu.h:50
-msgid "Test4 2013/2/105/movies/HD.smil"
-msgstr ""
-
-#: tithek_mainmenu.h:51
+#: tithek_mainmenu.h:47
 msgid "TimeTv"
 msgstr ""
 
-#: tithek_mainmenu.h:52
+#: tithek_mainmenu.h:48
 msgid "Tips und Tricks"
 msgstr ""
 
-#: tithek_mainmenu.h:53
+#: tithek_mainmenu.h:49
 msgid "VOX-Now"
 msgstr ""
 
-#: tithek_mainmenu.h:54
+#: tithek_mainmenu.h:50
 msgid "XXX-Beeg"
 msgstr ""
 
-#: tithek_mainmenu.h:55
+#: tithek_mainmenu.h:51
 msgid "XXX-XVIDEOS"
 msgstr ""
 
-#: tithek_mainmenu.h:56
+#: tithek_mainmenu.h:52
 msgid "Youtube"
 msgstr ""
 
-#: tithek_mainmenu.h:57
+#: tithek_mainmenu.h:53
 msgid "ZDF"
 msgstr ""
 
