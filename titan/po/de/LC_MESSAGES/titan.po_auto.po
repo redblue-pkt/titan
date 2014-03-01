@@ -12790,7 +12790,7 @@ msgstr "Position"
 
 #: tpk_description.h:1
 msgid "AAF MediaCenter the best multimedia Player on sh4."
-msgstr ""
+msgstr "AAF MediaCenter"
 
 #: tpk_description.h:2
 msgid ""
@@ -12800,16 +12800,16 @@ msgstr ""
 
 #: tpk_description.h:3
 msgid "Alternativer Skin fuer Pearl LCD"
-msgstr ""
+msgstr "Alternativer Skin für Pearl LCD"
 
 #: tpk_description.h:4
 msgid "Alternativer Skin fuer Pearl LCD "
-msgstr ""
+msgstr "Alternativer Skin für Pearl LCD"
 
 #: tpk_description.h:5
 msgid ""
 "Alternativer Skin fuer Samsung LCD - ohne Picons (extra zu installieren)"
-msgstr ""
+msgstr "Alternativer Skin für Samsung LCD - ohne Picons (extra zu installieren)"
 
 #: tpk_description.h:6
 msgid "Automatisch Timer setzen"
@@ -12817,75 +12817,75 @@ msgstr ""
 
 #: tpk_description.h:7
 msgid "Black 3D Picons for tiTan."
-msgstr ""
+msgstr "Black 3D Picons"
 
 #: tpk_description.h:8
 msgid "Black 3D Picons for tiTan - Astra 23.5E."
-msgstr ""
+msgstr "Black 3D Picons - Astra 23.5E"
 
 #: tpk_description.h:9
 msgid "Black 3D Picons for tiTan - Hotbird 13.0E."
-msgstr ""
+msgstr "Black 3D Picons - Hotbird 13.0E"
 
 #: tpk_description.h:10
 msgid "Bootlogo 'Bikergirl' for your AAF- Duckbox"
-msgstr ""
+msgstr "Bootlogo 'Bikergirl"
 
 #: tpk_description.h:11
 msgid "Bootlogo 'Blueskull' for your AAF- Duckbox"
-msgstr ""
+msgstr "Bootlogo 'Blueskull'"
 
 #: tpk_description.h:12
 msgid "Bootlogo 'Cityflash' for your AAF- Duckbox"
-msgstr ""
+msgstr "Bootlogo 'Cityflash'"
 
 #: tpk_description.h:13
 msgid "Bootlogo 'Enigma Linux' for your AAF- Duckbox"
-msgstr ""
+msgstr "Bootlogo 'Enigma Linux'"
 
 #: tpk_description.h:14
 msgid "Bootlogo 'Fantasygirl 2' for your AAF- Duckbox"
-msgstr ""
+msgstr "Bootlogo 'Fantasygirl 2'"
 
 #: tpk_description.h:15
 msgid "Bootlogo 'Fantasygirl' for your AAF- Duckbox"
-msgstr ""
+msgstr "Bootlogo 'Fantasygirl'"
 
 #: tpk_description.h:16
 msgid "Bootlogo 'Firelady' for your AAF- Duckbox"
-msgstr ""
+msgstr "Bootlogo 'Firelady'"
 
 #: tpk_description.h:17
 msgid "Bootlogo 'Fireskull' for your AAF- Duckbox"
-msgstr ""
+msgstr "Bootlogo 'Fireskull'"
 
 #: tpk_description.h:18
 msgid "Bootlogo 'Footballgirls' for your AAF- Duckbox"
-msgstr ""
+msgstr "Bootlogo 'Footballgirls'"
 
 #: tpk_description.h:19
 msgid "Bootlogo 'Ghostrider' for your AAF- Duckbox"
-msgstr ""
+msgstr "Bootlogo 'Ghostrider'"
 
 #: tpk_description.h:20
 msgid "Bootlogo 'Giantgirl' for your AAF- Duckbox"
-msgstr ""
+msgstr "Bootlogo 'Giantgirl'"
 
 #: tpk_description.h:21
 msgid "Bootlogo 'Ice Age Scrap likes UFS910' for your AAF- Duckbox"
-msgstr ""
+msgstr "Bootlogo 'Ice Age Scrap likes UFS910'"
 
 #: tpk_description.h:22
 msgid "Bootlogo 'Linuxgirl' for your AAF- Duckbox"
-msgstr ""
+msgstr "Bootlogo 'Linuxgirl'"
 
 #: tpk_description.h:23
 msgid "Bootlogo 'Planets' for your AAF- Duckbox"
-msgstr ""
+msgstr "Bootlogo 'Planets'"
 
 #: tpk_description.h:24
 msgid "Bootlogo 'The Grim Reaper' for your AAF- Duckbox"
-msgstr ""
+msgstr "Bootlogo 'The Grim Reaper'"
 
 #: tpk_description.h:25
 msgid "Bootlogo 'TitanNit Blood'"
@@ -12905,19 +12905,19 @@ msgstr ""
 
 #: tpk_description.h:29
 msgid "Bootlogo 'Zombie' for your AAF- Duckbox"
-msgstr ""
+msgstr "Bootlogo 'Zombie'"
 
 #: tpk_description.h:30
 msgid "Cable: default Settings Kabel Deutschland"
-msgstr ""
+msgstr "Kabel: Standard Senderliste Kabel Deutschland"
 
 #: tpk_description.h:31
 msgid "Cable: Settings Kabel Unitymedia"
-msgstr ""
+msgstr "Kabel: Standard Senderliste UnityMedia/KBW"
 
 #: tpk_description.h:32
 msgid "Cable: sofatester Settings Kabel BW"
-msgstr ""
+msgstr "Kabel: sofatester Senderliste KabelBW"
 
 #: tpk_description.h:33
 msgid "Callmonitor Plugin"
@@ -12931,51 +12931,51 @@ msgstr ""
 
 #: tpk_description.h:35
 msgid "codecpack for MediaCenter Dateiendungs-Update "
-msgstr ""
+msgstr "'codecpack' - MediaCenter Erweiterung"
 
 #: tpk_description.h:36
 msgid "coolMiniTV Skin. "
-msgstr ""
+msgstr "coolMiniTV Skin"
 
 #: tpk_description.h:37
 msgid "cool Skin."
-msgstr ""
+msgstr "cool Skin"
 
 #: tpk_description.h:38
 msgid "cut record files"
-msgstr ""
+msgstr "Aufnahmen schneiden (Anfang/Ende)"
 
 #: tpk_description.h:39
 msgid "Default Font "
-msgstr ""
+msgstr "Standard Schriftart"
 
 #: tpk_description.h:40
 msgid "default Settings 19.2 Astra"
-msgstr ""
+msgstr "Standard Senderliste 19.2 Astra"
 
 #: tpk_description.h:41
 msgid "Default Skin"
-msgstr ""
+msgstr "Standard Skin"
 
 #: tpk_description.h:42
 msgid "Default skin without MiniTV"
-msgstr ""
+msgstr "Standard Skin ohne MiniTV"
 
 #: tpk_description.h:43
 msgid "Digital Uhr blau - for tiTan - Samsung LCD Skin Channel."
-msgstr ""
+msgstr "Digital Uhr blau - Samsung LCD Skin von channel"
 
 #: tpk_description.h:44
 msgid "dlna Medien Server (upnp)"
-msgstr ""
+msgstr "dlna (UPnP) Server"
 
 #: tpk_description.h:45
 msgid "DTS-Downmix firmware "
-msgstr ""
+msgstr "DTS-Downmix firmware"
 
 #: tpk_description.h:46
 msgid "dvdplayer plugin."
-msgstr ""
+msgstr "DVD Player"
 
 #: tpk_description.h:47
 msgid ""
@@ -12985,19 +12985,19 @@ msgstr ""
 
 #: tpk_description.h:48
 msgid "Emu Camd3 v3.902 for your box"
-msgstr ""
+msgstr "Camd3 v3.902"
 
 #: tpk_description.h:49
 msgid "Emu MBox v0.6 build 0010 for your box"
-msgstr ""
+msgstr "MBox v0.6 build 0010"
 
 #: tpk_description.h:50
 msgid "Emu MGCamd v1.35 for your box"
-msgstr ""
+msgstr "MGCamd v1.35"
 
 #: tpk_description.h:51
 msgid "Emu MGCamd v1.38a and all Configs"
-msgstr ""
+msgstr "MGCamd v1.38a + configs"
 
 #: tpk_description.h:52
 msgid "extended config Panel"
@@ -13005,11 +13005,11 @@ msgstr ""
 
 #: tpk_description.h:53
 msgid "filemanager"
-msgstr ""
+msgstr "Dateimanager"
 
 #: tpk_description.h:54
 msgid "first titan game"
-msgstr ""
+msgstr "Das erste titan Spiel"
 
 #: tpk_description.h:55
 msgid "Font 'Action Man Italic' "
@@ -13073,35 +13073,35 @@ msgstr ""
 
 #: tpk_description.h:69
 msgid "Gold Picons for tiTan."
-msgstr ""
+msgstr "Gold Picons"
 
 #: tpk_description.h:70
 msgid "Gold Picons for tiTan - Astra 23.5E."
-msgstr ""
+msgstr "Gold Picons - Astra 23.5E"
 
 #: tpk_description.h:71
 msgid "Gold Picons for tiTan - Astra 28.2E."
-msgstr ""
+msgstr "Gold Picons - Astra 28.2E"
 
 #: tpk_description.h:72
 msgid "Gold Picons for tiTan - Hotbird 13.0E."
-msgstr ""
+msgstr "Gold Picons - Hotbird 13.0E"
 
 #: tpk_description.h:73
 msgid "Holzuhr - Standby for tiTan - Samsung LCD Skin Channel."
-msgstr ""
+msgstr "Holzuhr - Standby - Samsung LCD Skin von channel"
 
 #: tpk_description.h:74
 msgid "ImdBapi Info Plugin"
-msgstr ""
+msgstr "IMDbapi Info Plugin"
 
 #: tpk_description.h:75
 msgid "ImdB Info Plugin"
-msgstr ""
+msgstr "IMDb Info Plugin"
 
 #: tpk_description.h:76
 msgid "IncubusCamd_1.22 including all necessary config files."
-msgstr ""
+msgstr "IncubusCamd_1.22 + configs"
 
 #: tpk_description.h:77
 msgid "IP-Kamera zB. Firma INSTAR"
@@ -13109,19 +13109,19 @@ msgstr ""
 
 #: tpk_description.h:78
 msgid "Kabel BW transparent Picons for tiTan."
-msgstr ""
+msgstr "Kabel BW transparente Picons"
 
 #: tpk_description.h:79
 msgid "Kabel Deutschland Picons black3d for tiTan."
-msgstr ""
+msgstr "Kabel Deutschland Picons black3d"
 
 #: tpk_description.h:80
 msgid "Kabel Deutschland transparent Picons for tiTan."
-msgstr ""
+msgstr "Kabel Deutschland transparente Picons"
 
 #: tpk_description.h:81
 msgid "Lib extension for network (upnpfs/smbfs/ftpfs/rarfs)"
-msgstr ""
+msgstr "Erweiterung Netzwerkprotokolle (upnpfs/smbfs/ftpfs/rarfs)"
 
 #: tpk_description.h:82
 msgid "MegaStyle blue Mini TV Skin"
@@ -13141,7 +13141,7 @@ msgstr ""
 
 #: tpk_description.h:86
 msgid "MetrixHD skin for TitanNit. Use transparent XPicons."
-msgstr ""
+msgstr "MetrixHD skin. Für transparente XPicons"
 
 #: tpk_description.h:87
 msgid "Network browser extension for better Win7 compatibility"
