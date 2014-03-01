@@ -1,1 +1,12 @@
-0 file:/home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.new.merge.po ret: log:[createpo.sh] xgettext --omit-header -j -k_ error.log -o /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.po_auto.utf.po /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.po_auto.utf.po:12: end-of-line within string xgettext: found 1 fatal error -------------------------------------- [createpo.sh] xgettext --omit-header -k_ error.log -o /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.new.po
+[createpo.sh] xgettext --omit-header -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.utf.po
+tithek_submenu.h:70: warning: unterminated string literal
+tithek_submenu.h:901: warning: unterminated string literal
+--------------------------------------
+[createpo.sh] xgettext --omit-header -k_ *.* -o /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.new.po
+tithek_submenu.h:70: warning: unterminated string literal
+tithek_submenu.h:901: warning: unterminated string literal
+--------------------------------------
+[createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.mo
+/home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.outfile.po:4407: `msgid' and `msgstr' entries do not both end with '\n'
+msgfmt: found 1 fatal error
+721 translated messages, 125 fuzzy translations, 539 untranslated messages.
