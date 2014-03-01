@@ -3404,7 +3404,7 @@ msgstr "löschen"
 
 #: plugins_filemanager_skin.xml.h:3 skins_filemanager_skin.xml.h:3
 msgid "FILELIST MANAGER"
-msgstr "Dateilisten Manager"
+msgstr "Datei Manager"
 
 #: plugins_filemanager_skin.xml.h:4 skins_filemanager_skin.xml.h:4
 msgid "Moven"
@@ -6237,7 +6237,7 @@ msgid ""
 "Here you can select from the following list. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier können Sie aus der folgenden Liste auswählen.\n"
+"Hier können Sie ihre Favoriten bearbeiten.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -7586,7 +7586,7 @@ msgstr "--- Zeit bis zum Senderwechsel"
 
 #: skin_default_skin.xml.h:653
 msgid "Time to wait after seek for fill buffer"
-msgstr "Wiedergabepuffer - Zeit bis zum automatischen Laden nach einer Suche"
+msgstr "Wiedergabepuffer - Zeit bis zum automatischen Laden nach einem Seek"
 
 #: skin_default_skin.xml.h:654
 msgid "Timezone"
