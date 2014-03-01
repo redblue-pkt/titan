@@ -271,7 +271,7 @@ extern bool bcm_accel_has_alphablending();
 
 void demomodethread(struct stimerthread* self)
 {
-	textbox(_("Message"), _("!!! test This is a DEMO Version !!!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 600, 0, 1);
+	textbox(_("Message"), _("!!! This is a DEMO Version !!!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 600, 0, 1);
 }
 
 int createstartscreen()
