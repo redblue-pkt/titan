@@ -881,7 +881,7 @@ msgstr "---"
 #: skins_tithek_skin.xml.h:14 skins_tiwakeup_skin.xml.h:9
 #: skins_tmc_skin.xml.h:18 skins_tmdb_skin.xml.h:11
 #: skins_tsSchnitt_skin.xml.h:11 skins_weather_skin.xml.h:4
-#: skins_wins3_skin.xml.h:4 skins_zapback_skin.xml.h:7
+#: skins_wins3_skin.xml.h:4 skins_zapback_skin.xml.h:7 tithek_mainmenu.h:1
 msgid ""
 msgstr ""
 "Project-Id-Version: TitanNit 1.49\n"
@@ -5264,7 +5264,7 @@ msgstr ""
 msgid "A/V Settings"
 msgstr "Ρυθμίσεις Audio / Video"
 
-#: skin_default_skin.xml.h:97
+#: skin_default_skin.xml.h:97 tithek_mainmenu.h:15
 msgid "A-Z"
 msgstr ""
 
@@ -6993,7 +6993,7 @@ msgstr "Είδος προστ. οθόνης"
 msgid "--- SD resolution"
 msgstr "--- Ανάλυση SD"
 
-#: skin_default_skin.xml.h:546
+#: skin_default_skin.xml.h:546 tithek_mainmenu.h:36
 msgid "Search"
 msgstr ""
 
@@ -8153,6 +8153,222 @@ msgstr ""
 
 #: tithek.h:3090
 msgid "Add this link as Favorite ?"
+msgstr ""
+
+#: tithek_mainmenu.h:2
+msgid "All New first"
+msgstr ""
+
+#: tithek_mainmenu.h:3
+msgid "All Sorted"
+msgstr ""
+
+#: tithek_mainmenu.h:4
+msgid "ARD"
+msgstr ""
+
+#: tithek_mainmenu.h:5
+msgid "Atemio Cable Tuner scan"
+msgstr ""
+
+#: tithek_mainmenu.h:6
+msgid "Atemio Channelsearch 4xSat"
+msgstr ""
+
+#: tithek_mainmenu.h:7
+msgid "Atemio Harddisc formating"
+msgstr ""
+
+#: tithek_mainmenu.h:8
+msgid "Atemio Network configuration stable IP"
+msgstr ""
+
+#: tithek_mainmenu.h:9
+msgid "Atemio Series Recoding"
+msgstr ""
+
+#: tithek_mainmenu.h:10
+msgid "Atemio Skin (Gui Design)"
+msgstr ""
+
+#: tithek_mainmenu.h:11
+msgid "Atemio TitanNit Trailer"
+msgstr ""
+
+#: tithek_mainmenu.h:12
+msgid "Atemio TitanNit zap Menu"
+msgstr ""
+
+#: tithek_mainmenu.h:13
+msgid "Atemio Tuner configuration Sat"
+msgstr ""
+
+#: tithek_mainmenu.h:14
+msgid "Atemio WLAN configuration"
+msgstr ""
+
+#: tithek_mainmenu.h:16
+msgid "Category"
+msgstr ""
+
+#: tithek_mainmenu.h:17
+msgid "Favoriten"
+msgstr ""
+
+#: tithek_mainmenu.h:18
+msgid "Giga"
+msgstr ""
+
+#: tithek_mainmenu.h:19
+msgid "HowTo Feedadresse Eingeben"
+msgstr ""
+
+#: tithek_mainmenu.h:20
+msgid "HowTo Picons Einrichten"
+msgstr ""
+
+#: tithek_mainmenu.h:21
+msgid "HowTo Secret"
+msgstr ""
+
+#: tithek_mainmenu.h:22
+msgid "HowTo Sky V13 Einrichten"
+msgstr ""
+
+#: tithek_mainmenu.h:23
+msgid "ice age 4 - 2013/3/110/movies/HD.smil"
+msgstr ""
+
+#: tithek_mainmenu.h:24
+msgid "Internet Radio"
+msgstr ""
+
+#: tithek_mainmenu.h:25
+msgid "KinoX"
+msgstr ""
+
+#: tithek_mainmenu.h:26
+msgid "Mediacenter AudioPlayer Playlisten Preview"
+msgstr ""
+
+#: tithek_mainmenu.h:27
+msgid "Mediacenter AudioPlayer Screensaver Preview"
+msgstr ""
+
+#: tithek_mainmenu.h:28
+msgid "Mediacenter Mediathek Kinox Preview"
+msgstr ""
+
+#: tithek_mainmenu.h:29
+msgid "Mediacenter Mediathek Myvideo/Rtl2/InternetTv/Radio Preview"
+msgstr ""
+
+#: tithek_mainmenu.h:30
+msgid "Mediacenter VideoPlayer Preview"
+msgstr ""
+
+#: tithek_mainmenu.h:31
+msgid "Movie4k"
+msgstr ""
+
+#: tithek_mainmenu.h:32
+msgid "MyVideo"
+msgstr ""
+
+#: tithek_mainmenu.h:33
+msgid "Netzkino"
+msgstr ""
+
+#: tithek_mainmenu.h:34
+msgid "RTL2-Now"
+msgstr ""
+
+#: tithek_mainmenu.h:35
+msgid "RTL-Now"
+msgstr ""
+
+#: tithek_mainmenu.h:37
+msgid "Search (10)"
+msgstr ""
+
+#: tithek_mainmenu.h:38
+msgid "Search (20)"
+msgstr ""
+
+#: tithek_mainmenu.h:39
+msgid "Search (25)"
+msgstr ""
+
+#: tithek_mainmenu.h:40
+msgid "Search (50)"
+msgstr ""
+
+#: tithek_mainmenu.h:41
+msgid "Search Cast"
+msgstr ""
+
+#: tithek_mainmenu.h:42
+msgid "Search (local)"
+msgstr ""
+
+#: tithek_mainmenu.h:43
+msgid "Search Movie"
+msgstr ""
+
+#: tithek_mainmenu.h:44
+msgid "Search Serie"
+msgstr ""
+
+#: tithek_mainmenu.h:45
+msgid "Solarmovie"
+msgstr ""
+
+#: tithek_mainmenu.h:46
+msgid "SuperRTL-Now"
+msgstr ""
+
+#: tithek_mainmenu.h:47
+msgid "TecTime"
+msgstr ""
+
+#: tithek_mainmenu.h:48
+msgid "Test2 VTCHD1/VTCHD1_live.smil"
+msgstr ""
+
+#: tithek_mainmenu.h:49
+msgid "Test3 2013/3/112/movies/HD.smil"
+msgstr ""
+
+#: tithek_mainmenu.h:50
+msgid "Test4 2013/2/105/movies/HD.smil"
+msgstr ""
+
+#: tithek_mainmenu.h:51
+msgid "TimeTv"
+msgstr ""
+
+#: tithek_mainmenu.h:52
+msgid "Tips und Tricks"
+msgstr ""
+
+#: tithek_mainmenu.h:53
+msgid "VOX-Now"
+msgstr ""
+
+#: tithek_mainmenu.h:54
+msgid "XXX-Beeg"
+msgstr ""
+
+#: tithek_mainmenu.h:55
+msgid "XXX-XVIDEOS"
+msgstr ""
+
+#: tithek_mainmenu.h:56
+msgid "Youtube"
+msgstr ""
+
+#: tithek_mainmenu.h:57
+msgid "ZDF"
 msgstr ""
 
 #: tithek_settings.h:17 tithek_settings.h:25
