@@ -151,7 +151,14 @@ if [ "$SVNUSER" = "aafsvn" ] && [ "$GROUP" = "dev" ] && [ "$error" = "0" ];then
 else
 	echo "[createpo.sh] error: $error"
 	cd "$HOME"/flashimg/source.titan/titan/tools/error
-	echo $error > "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
-	svn commit -m "[titan] ERROR autoupdate po files"
-	svn commit "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
+	olderror=`cat "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code`
+	if [ "$error" != "$olderror" ];then
+		echo "[createpo.sh] svn commit -m [titan] ERROR autoupdate po files"
+		echo $error > "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
+		svn commit -m "[titan] ERROR autoupdate po files"
+		svn commit "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
+	else
+		echo "[createpo.sh] skip: svn commit -m [titan] ERROR autoupdate po files"
+#		echo $error > "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
+	fi	
 fi
