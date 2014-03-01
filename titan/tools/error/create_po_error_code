@@ -9,4 +9,4 @@ tithek_submenu.h:901: warning: unterminated string literal
 [createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.mo
 /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.outfile.po:4407: `msgid' and `msgstr' entries do not both end with '\n'
 msgfmt: found 1 fatal error
-727 translated messages, 125 fuzzy translations, 533 untranslated messages.
+728 translated messages, 125 fuzzy translations, 532 untranslated messages.
