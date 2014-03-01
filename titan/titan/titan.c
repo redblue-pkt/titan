@@ -707,8 +707,9 @@ int main(int argc, char *argv[])
 	openfont(getskinconfig("fontfile4", NULL));
 	openfont(getskinconfig("fontfile5", NULL));
 
-	//if(checkbox("f") != 1)
+#ifdef SH4
 	setvol(getconfigint("vol", NULL));
+#endif
 	
 	setlang(getconfig("lang", NULL));
 	initlocale(getconfig("localepath", NULL));
@@ -872,12 +873,13 @@ int main(int argc, char *argv[])
 	ret = settimezone(getconfig("timezone", NULL));
 	ret = readextepgconfig(getconfig("extepgfile", NULL));
 	
-	//set volume on start
 	if(checkbox("VUSOLO2") == 1)
-	{
-//		setvol(getconfigint("vol", NULL));
 		system("fbset 1280x720-1");
-	}
+
+	//set volume on start
+#ifdef MIPSEL
+		setvol(getconfigint("vol", NULL));
+#endif
 
 	//check to remove preinstalled tpk packages
 	ret = tpkupdatepre();
