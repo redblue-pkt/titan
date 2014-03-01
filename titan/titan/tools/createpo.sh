@@ -46,6 +46,8 @@ cat "$HOME"/ipk/source*/*/CONTROL/control | grep Description: | sort -u | sed 's
 cat "$HOME"/flashimg/source.titan/skins/tithek/tithekmainmenu/*.list | grep -v internettv | cut -d"#" -f1 | sort -u | sed -e 's/^/tmpstr = _("/' | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/source.titan/titan/tools/tmp/tithek_mainmenu.h
 cat /var/www/atemio/web/mediathek/*/*.category.list  | cut -d"#" -f1 | sort -u | sed -e 's/^/tmpstr = _("/' | grep -v link= | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/source.titan/titan/tools/tmp/tithek_submenu.h
 
+error=0
+
 for ROUND in $POLIST; do
 	echo "[createpo.sh] ############################ start ###############################"
 	echo "[createpo.sh] update $ROUND"
@@ -66,18 +68,29 @@ for ROUND in $POLIST; do
 
 		cat $ROUND | sed '/#.*/d' > $ROUND_CLEAN
 		iconv -f ISO-8859-1 -t UTF-8 $ROUND_CLEAN > $ROUND_UTF
+		if [ ! -e "$ROUND_UTF" ]; then error="$error $ROUND_UTF"; break;fi
+
 		xgettext --omit-header -j -k_ *.* -o $ROUND_UTF
+		if [ ! -e "$ROUND_UTF" ]; then error="$error $ROUND_UTF";fi
 
 		echo "[createpo.sh] xgettext --omit-header -k_ *.* -o $ROUND_NEW"
 		xgettext --omit-header -k_ *.* -o $ROUND_NEW
+		if [ ! -e "$ROUND_NEW" ]; then error="$error $ROUND_NEW"; break;fi
+
 		echo "[createpo.sh] msgmerge $ROUND_UTF $ROUND_NEW > $ROUND_NEW_MERGE"
 		msgmerge $ROUND_UTF $ROUND_NEW > $ROUND_NEW_MERGE
+		if [ ! -e "$ROUND_NEW_MERGE" ]; then error="$error $ROUND_NEW_MERGE"; break;fi
 
 		iconv -f ISO-8859-1 -t UTF-8 $ROUND_EDIT > $ROUND_EDIT_UTF
+		if [ ! -e "$ROUND_EDIT_UTF" ]; then error="$error $ROUND_EDIT_UTF"; break;fi
+
 		echo "[createpo.sh] msgmerge $ROUND_NEW_MERGE $ROUND_EDIT_UTF > $ROUND_MERGE_UTF"
 		msgmerge $ROUND_NEW_MERGE $ROUND_EDIT_UTF > $ROUND_MERGE_UTF
+		if [ ! -e "$ROUND_MERGE_UTF" ]; then error="$error $ROUND_MERGE_UTF"; break;fi
+
 		iconv -f UTF-8 -t ISO-8859-1 $ROUND_MERGE_UTF > $ROUND_MERGE
-		
+		if [ ! -e "$ROUND_MERGE" ]; then error="$error $ROUND_MERGE"; break;fi
+
 		SEARCH=`cat $ROUND_MERGE | grep -n "Content-Transfer-Encoding: 8bit" | cut -d":" -f1`
 
 		echo "[createpo.sh] SEARCH $SEARCH"
@@ -105,8 +118,10 @@ echo "[createpo.sh] check user $SVNUSER"
 echo "[createpo.sh] check group $GROUP"
 
 cd "$HOME"/flashimg/source.titan/po
-if [ "$SVNUSER" = "aafsvn" ] && [ "$GROUP" = "dev" ];then
+if [ "$SVNUSER" = "aafsvn" ] && [ "$GROUP" = "dev" ] && [ "$error" = "0" ];then
 	echo "[createpo.sh] svn commit -m [titan] autoupdate po files"
 	svn commit -m "[titan] autoupdate po files"
 	svn commit "$HOME"/flashimg/source.titan/po
+else
+	echo "[createpo.sh] error: $error"
 fi
