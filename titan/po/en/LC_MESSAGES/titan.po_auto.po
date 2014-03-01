@@ -786,7 +786,7 @@ msgstr "ATTENTION: Channels not copied"
 
 #: channellist.h:1006
 msgid "Can't remove akive Service"
-msgstr ""
+msgstr "Can't remove active Channel"
 
 #: channellist.h:1295 channellist.h:1296
 msgid "Channels A-Z"
