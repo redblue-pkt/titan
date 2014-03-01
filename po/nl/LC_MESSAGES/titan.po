@@ -32,7 +32,7 @@ msgstr "500 toeren"
 msgid "A mount entry with this name already exists!\n"
 "Update existing entry and continue?"
 msgstr "Eine Freigabe mit diesem Name existiert bereits!\n"
-"Wollen sie diese wirklich überschreiben?"
+"Wollen sie diese wirklich Ã¼berschreiben?"
 
 msgid "Are you sure you want remove this share?"
 msgstr "Weet u zeker dat u deze netwerkkoppeling wilt verwijderen?"
@@ -352,7 +352,7 @@ msgid "Can't get Network Infos"
 msgstr "Netwerkinformatie kan niet gevonden worden"
 
 msgid "can't create or delete directory"
-msgstr "Verzeichnis kann nicht verändert werden"
+msgstr "Verzeichnis kann nicht verÃ¤ndert werden"
 
 msgid "Can't remove akive Service"
 msgstr "Actuele zender kan niet gewist worden"
@@ -514,7 +514,7 @@ msgid "daily"
 msgstr "dagelijks"
 
 msgid "Delete EPG after read"
-msgstr "Lösche EPG nach dem einlesen"
+msgstr "LÃ¶sche EPG nach dem einlesen"
 
 msgid "details"
 msgstr "details"
@@ -2733,7 +2733,7 @@ msgid "animation 1"
 msgstr "Animatie  1"
 
 msgid "Animated Screens"
-msgstr "Geanimeerde menu´s"
+msgstr "Geanimeerde menuÂ´s"
 
 msgid "anim. width"
 msgstr "anim. width"
@@ -3137,7 +3137,7 @@ msgid "Here you can configure Ci-Modules. Use to navigate the control cross and 
 msgstr "Hier kunt u uw CI-Module configureren.\n\nGebruik het stuur-kruis en de extra getoonde knopppen op uw\nafstandsbediening om te navigeren."
 
 msgid "Here you can make your module settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie die Einstellungen für CI-Module anpassen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier kÃ¶nnen Sie die Einstellungen fÃ¼r CI-Module anpassen.\n\nBenutzen Sie das Steuerkreuz und die zusÃ¤tzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
 msgid "Here you can select your Network Interface. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
 msgstr "Hier kunt u uw network adaptor uitkiezen.\n\nGebruik het stuur-kruis en de extra getoonde knopppen op uw\nafstandsbediening om te navigeren."
@@ -3221,7 +3221,7 @@ msgid "Here you can view the current channel information. Use to navigate the co
 msgstr "Hier kunt u de actuele zenderinfo oproepen.\n\nGebruik het stuur-kruis en de extra getoonde knopppen op uw\nafstandsbediening om te navigeren."
 
 msgid "Here you can make your timeshift settings. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie die Timeshift Einstellungen anpassen.\n\nBenutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
+msgstr "Hier kÃ¶nnen Sie die Timeshift Einstellungen anpassen.\n\nBenutzen Sie das Steuerkreuz und die zusÃ¤tzlich angezeigten Tasten mit Ihrer Fernbedienung um zu navigieren."
 
 msgid "please wait..."
 msgstr "een ogenblik geduld alstublieft"
@@ -3872,7 +3872,7 @@ msgid "deaktivate ethernet interface ?"
 msgstr "LAN Verbindung ausschalten?"
 
 msgid "EPG SHORT VIEW"
-msgstr "EPG-Kurzübersicht"
+msgstr "EPG-KurzÃ¼bersicht"
 
 msgid "Short EPG"
 msgstr "Kurz-EPG"
@@ -3893,7 +3893,7 @@ msgid "Automatic start last subtitle"
 msgstr "Automatischer Untertitel Start"
 
 msgid "Audio delay"
-msgstr "Audio Verzögerung"
+msgstr "Audio VerzÃ¶gerung"
 
 msgid "Show hidden files"
 msgstr "Versteckte Dateien anzeigen"
@@ -3923,7 +3923,7 @@ msgid "SEND"
 msgstr "in Vorber."
 
 msgid "If you don't find Windows shares you need to disable 'Password protected sharing' in the 'Network and Sharing Center'."
-msgstr "Sollten keine Windows Freigaben sichtbar sein, muss 'Kennwortgeschützte Freigaben' im 'Netzwerk- und Freigabecenter' abgeschaltet werden."
+msgstr "Sollten keine Windows Freigaben sichtbar sein, muss 'KennwortgeschÃ¼tzte Freigaben' im 'Netzwerk- und Freigabecenter' abgeschaltet werden."
 
 msgid "Show HDD freesize"
 msgstr "Zeige freien Festplattenspeicher"
@@ -3950,7 +3950,7 @@ msgid "/mnt not writeable!\nRepair it?"
 msgstr "/mnt nicht beschreibbar!\nReparieren?"
 
 msgid "Can't install Package. Package to big."
-msgstr "Paket zu groß. Installation nicht möglich."
+msgstr "Paket zu groÃŸ. Installation nicht mÃ¶glich."
 
 msgid "Format and restore default settings"
 msgstr "Formatiere internen Speicher mit Werkseinstellung"
@@ -3959,16 +3959,16 @@ msgid "Format and backup/restore settings"
 msgstr "Formatiere internen Speicher ohne Werkseinstellung"
 
 msgid "Do you really want to erase Swap (Settings are preserve)?\nThe Box will reboot and the erase will be started!"
-msgstr "Internen Swap Speicher löschen (Konfiguration wird beibehalten)?\nBox neu starten und Löschvorgang ausführen "
+msgstr "Internen Swap Speicher lÃ¶schen (Konfiguration wird beibehalten)?\nBox neu starten und LÃ¶schvorgang ausfÃ¼hren "
 
 msgid "MediaDB entry for this file not found."
 msgstr "MediaDB Eintrag dieser Datei konnte nicht gefunden werden."
 
 msgid "Tunerconfig is not allowed if record\nor stream is running !"
-msgstr "Tunerconfig während einer Aufnahme/Streaming ist nicht erlaubt"
+msgstr "Tunerconfig wÃ¤hrend einer Aufnahme/Streaming ist nicht erlaubt"
 
 msgid "Can't change hostname !"
-msgstr "Fehler, Hostname kann nicht geändert werden!"
+msgstr "Fehler, Hostname kann nicht geÃ¤ndert werden!"
 
 msgid "HOSTNAME"
 msgstr "Hostname"
@@ -3989,7 +3989,7 @@ msgid "Channel Allocation"
 msgstr "Sender Zuordnung"
 
 msgid "ADD BOUQUET"
-msgstr "Favoriten hinzufügen"
+msgstr "Favoriten hinzufÃ¼gen"
 
 msgid "sort service"
 msgstr "Sender sortieren"
@@ -4001,19 +4001,19 @@ msgid "card not present"
 msgstr "Keine Karte gefunden"
 
 msgid "Directory has content\nReally delete directory and content?"
-msgstr "Verzeichnis ist nicht leer.\nWirklich löschen?"
+msgstr "Verzeichnis ist nicht leer.\nWirklich lÃ¶schen?"
 
 msgid "Hid XXX Streams"
 msgstr "XXX Streams ausblenden"
 
 msgid "Filesize (B): "
-msgstr "Dateigrösse (B): "
+msgstr "DateigrÃ¶sse (B): "
 
 msgid "Filesize (KB): "
-msgstr "Dateigrösse (KB): "
+msgstr "DateigrÃ¶sse (KB): "
 
 msgid "Filesize (MB): "
-msgstr "Dateigrösse (MB): "
+msgstr "DateigrÃ¶sse (MB): "
 
 msgid "Move (B): "
 msgstr "Verschoben (B): "
@@ -4049,7 +4049,7 @@ msgid "Can't create directory !"
 msgstr "Verzeichnis konnte nicht erstellt werden!"
 
 msgid "Can't remove file/dir !"
-msgstr "Datei/Verzeichnis konnte nicht gelöscht werden!"
+msgstr "Datei/Verzeichnis konnte nicht gelÃ¶scht werden!"
 
 msgid "stable"
 msgstr "Stabil"
@@ -4070,7 +4070,7 @@ msgid "Install to Flash (permanent)"
 msgstr "In Flash installieren (permanent)"
 
 msgid "Install to Flash (temporary)"
-msgstr "In Flash installieren (temporär)"
+msgstr "In Flash installieren (temporÃ¤r)"
 
 msgid "Install to Stick or HDD"
 msgstr "Auf Stick o. HDD installieren"
@@ -4079,7 +4079,7 @@ msgid "Flash (permanent)"
 msgstr "Flash (permanent)"
 
 msgid "Flash (temporary)"
-msgstr "Flash (temporär)"
+msgstr "Flash (temporÃ¤r)"
 
 msgid "Stick or HDD"
 msgstr "Stick oder HDD"
@@ -4094,13 +4094,13 @@ msgid "Use config from Flash (permanent)"
 msgstr "Config vom Flash (permanent) verwenden"
 
 msgid "Use config from Flash (temporary)"
-msgstr "Config vom Flash (temporär) verwenden"
+msgstr "Config vom Flash (temporÃ¤r) verwenden"
 
 msgid "Use config from Stick or HDD"
 msgstr "Config vom Stick / HDD verwenden"
 
 msgid "Choice Config File"
-msgstr "Config File wählen"
+msgstr "Config File wÃ¤hlen"
 
 msgid "No config file found."
 msgstr "Es wurde kein Config File gefunden."
@@ -4121,7 +4121,7 @@ msgid "After EPG Scan"
 msgstr "Nach EPG Suche"
 
 msgid "Found new Stick/HDD.\nYou can configure it in Harddisk Menu."
-msgstr "Neuer Datenträger erkannt.\nSie können diesen im Festplatten Menü konfigurieren."
+msgstr "Neuer DatentrÃ¤ger erkannt.\nSie kÃ¶nnen diesen im Festplatten MenÃ¼ konfigurieren."
 
 msgid "yes / vzap 1 sec"
 msgstr "Ja / VZAP 1 sek"
@@ -4148,7 +4148,7 @@ msgid "Child"
 msgstr "Kinder"
 
 msgid "Comedy"
-msgstr "Komödie"
+msgstr "KomÃ¶die"
 
 msgid "War"
 msgstr "Krieg"
