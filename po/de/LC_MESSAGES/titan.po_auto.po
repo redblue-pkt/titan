@@ -4182,7 +4182,7 @@ msgstr "Zeit bis Abschaltung (min)"
 #: plugins_streaminfo_skin.xml.h:1 skin_default_skin.xml.h:76
 #: skins_streaminfo_skin.xml.h:1
 msgid "Aspect"
-msgstr "Perspektive"
+msgstr "Seitenverhältnis"
 
 #: plugins_streaminfo_skin.xml.h:2 skins_streaminfo_skin.xml.h:2
 msgid "Framerate"
