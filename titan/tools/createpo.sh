@@ -81,6 +81,7 @@ for ROUND in $POLIST; do
 		log=`cat "$HOME"/flashimg/source.titan/titan/tools/error/error.log`
 #		echo $log
 		if [ ! -e "$ROUND_UTF" ] || [ `cat "$ROUND_UTF" | wc -l` -eq 0 ]; then error="$error file:$ROUND_UTF ret:$ret log:$log"; break;fi
+		if [ `echo $log | grep "fatal error" | wc -l` -gt 0 ]; then echo found fatal error; break;fi
 
 		echo "[createpo.sh] xgettext --omit-header -k_ *.* -o $ROUND_NEW"
 #		rm -f "$HOME"/flashimg/source.titan/titan/tools/error/error.log
@@ -91,6 +92,7 @@ for ROUND in $POLIST; do
 		log=`cat "$HOME"/flashimg/source.titan/titan/tools/error/error.log`
 #		echo $log
 		if [ ! -e "$ROUND_NEW" ] || [ `cat "$ROUND_NEW" | wc -l` -eq 0 ]; then error="$error file:$ROUND_NEW ret:$ret log:$log"; break;fi
+		if [ `echo $log | grep "fatal error" | wc -l` -gt 0 ]; then echo found fatal error; break;fi
 
 		echo "[createpo.sh] msgmerge $ROUND_UTF $ROUND_NEW > $ROUND_NEW_MERGE"
 		msgmerge $ROUND_UTF $ROUND_NEW > $ROUND_NEW_MERGE
@@ -124,6 +126,7 @@ for ROUND in $POLIST; do
 		log=`cat "$HOME"/flashimg/source.titan/titan/tools/error/error.log`
 #		echo $log
 		if [ ! -e "$OUTFILE_MO" ] || [ `cat "$OUTFILE_MO" | wc -l` -eq 0 ]; then error="$error file:$OUTFILE_MO ret:$ret log:$log"; break;fi
+		if [ `echo $log | grep "fatal error" | wc -l` -gt 0 ]; then echo found fatal error; break;fi
 		
 		iconv -f UTF-8 -t ISO-8859-1 $ROUND_NEW_MERGE > $ROUND
 		if [ ! -e "$ROUND" ] || [ `cat "$ROUND" | wc -l` -eq 0 ]; then error="$error file:$ROUND ret:$ret log:$log"; break;fi
@@ -148,17 +151,12 @@ if [ "$SVNUSER" = "aafsvn" ] && [ "$GROUP" = "dev" ] && [ "$error" = "0" ];then
 	echo "[createpo.sh] svn commit -m [titan] autoupdate po files"
 	svn commit -m "[titan] autoupdate po files"
 	svn commit "$HOME"/flashimg/source.titan/po
+elif [ "$SVNUSER" = "aafsvn" ] && [ "$GROUP" = "dev" ];then
+#	echo "[createpo.sh] error: $error"
+	echo "[createpo.sh] svn commit -m [titan] ERROR autoupdate po files"
+	echo $error > "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
+	svn commit -m "[titan] ERROR autoupdate po files"
+	svn commit "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
 else
-	echo "[createpo.sh] error: $error"
-	cd "$HOME"/flashimg/source.titan/titan/tools/error
-	olderror=`cat "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code`
-	if [ "$error" != "$olderror" ];then
-		echo "[createpo.sh] svn commit -m [titan] ERROR autoupdate po files"
-		echo $error > "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
-		svn commit -m "[titan] ERROR autoupdate po files"
-		svn commit "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
-	else
-		echo "[createpo.sh] skip: svn commit -m [titan] ERROR autoupdate po files"
-#		echo $error > "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
-	fi	
+	echo "[createpo.sh] skip: svn commit"
 fi
