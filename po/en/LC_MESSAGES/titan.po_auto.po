@@ -14416,3 +14416,6 @@ msgstr "max Temp: "
 #: weather.h:442 weather.h:460 weather.h:478 weather.h:496
 msgid "Condition: "
 msgstr ""
+
+#~ msgid "System_Status"
+#~ msgstr "System Status"
