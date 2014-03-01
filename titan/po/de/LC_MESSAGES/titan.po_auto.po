@@ -13466,79 +13466,79 @@ msgstr "Keine Beschreibung gefunden!"
 
 #: tpk_section.h:1
 msgid "bootlogos"
-msgstr ""
+msgstr "Bootlogos"
 
 #: tpk_section.h:2
 msgid "browser"
-msgstr ""
+msgstr "Web Browser"
 
 #: tpk_section.h:3
 msgid "emus"
-msgstr ""
+msgstr "Softcams"
 
 #: tpk_section.h:4
 msgid "fonts"
-msgstr ""
+msgstr "Schriftarten"
 
 #: tpk_section.h:5
 msgid "games"
-msgstr ""
+msgstr "Spiele"
 
 #: tpk_section.h:6
 msgid "infos"
-msgstr ""
+msgstr "Infos"
 
 #: tpk_section.h:7
 msgid "infos "
-msgstr ""
+msgstr "Infos "
 
 #: tpk_section.h:8
 msgid "keymaps"
-msgstr ""
+msgstr "FB Tastenbelegung"
 
 #: tpk_section.h:9
 msgid "lcdpearlskins"
-msgstr ""
+msgstr "LCD Pearl Skins"
 
 #: tpk_section.h:10
 msgid "lcdsamsungskins"
-msgstr ""
+msgstr "LCD Samsung Skins"
 
 #: tpk_section.h:11
 msgid "network"
-msgstr ""
+msgstr "Netzwerk"
 
 #: tpk_section.h:12
 msgid "picons"
-msgstr ""
+msgstr "Senderlogos"
 
 #: tpk_section.h:13
 msgid "player"
-msgstr ""
+msgstr "Multimedia"
 
 #: tpk_section.h:14
 msgid "player "
-msgstr ""
+msgstr "Multimedia "
 
 #: tpk_section.h:16
 msgid "settings"
-msgstr ""
+msgstr "Senderlisten"
 
 #: tpk_section.h:17
 msgid "skins"
-msgstr ""
+msgstr "Skins"
 
 #: tpk_section.h:18
 msgid "tools"
-msgstr ""
+msgstr "Tools"
 
 #: tpk_section.h:19
 msgid "tools "
-msgstr ""
+msgstr "Tools "
 
 #: tpk_section.h:20
 msgid "wireless"
-msgstr ""
+msgstr "WLAN"
 
 #: tpk_showname.h:1
 msgid "3 Wins"
