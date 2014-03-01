@@ -69,34 +69,34 @@ for ROUND in $POLIST; do
 		cat $ROUND | sed '/#.*/d' > $ROUND_CLEAN
 		iconv -f ISO-8859-1 -t UTF-8 $ROUND_CLEAN > $ROUND_UTF
 		ret=$?
-		if [ $ret -eq 0 ] || [ ! -e "$ROUND_UTF" ]; then error="$error $ROUND_UTF";fi
+		if [ $ret -eq 0 ] || [ ! -e "$ROUND_UTF" ]; then error="$error $ROUND_UTF $ret";fi
 
 		xgettext --omit-header -j -k_ *.* -o $ROUND_UTF
 		ret=$?
-		if [ $ret -eq 0 ] || [ ! -e "$ROUND_UTF" ]; then error="$error $ROUND_UTF";fi
+		if [ $ret -eq 0 ] || [ ! -e "$ROUND_UTF" ]; then error="$error $ROUND_UTF $ret";fi
 
 		echo "[createpo.sh] xgettext --omit-header -k_ *.* -o $ROUND_NEW"
 		xgettext --omit-header -k_ *.* -o $ROUND_NEW
 		ret=$?
-		if [ $ret -eq 0 ] || [ ! -e "$ROUND_NEW" ]; then error="$error $ROUND_NEW";fi
+		if [ $ret -eq 0 ] || [ ! -e "$ROUND_NEW" ]; then error="$error $ROUND_NEW $ret";fi
 
 		echo "[createpo.sh] msgmerge $ROUND_UTF $ROUND_NEW > $ROUND_NEW_MERGE"
 		msgmerge $ROUND_UTF $ROUND_NEW > $ROUND_NEW_MERGE
 		ret=$?
-		if [ $ret -eq 0 ] || [ ! -e "$ROUND_NEW_MERGE" ]; then error="$error $ROUND_NEW_MERGE";fi
+		if [ $ret -eq 0 ] || [ ! -e "$ROUND_NEW_MERGE" ]; then error="$error $ROUND_NEW_MERGE $ret";fi
 
 		iconv -f ISO-8859-1 -t UTF-8 $ROUND_EDIT > $ROUND_EDIT_UTF
 		ret=$?
-		if [ $ret -eq 0 ] || [ ! -e "$ROUND_EDIT_UTF" ]; then error="$error $ROUND_EDIT_UTF";fi
+		if [ $ret -eq 0 ] || [ ! -e "$ROUND_EDIT_UTF" ]; then error="$error $ROUND_EDIT_UTF $ret";fi
 
-		echo "[createpo.sh] msgmerge $ROUND_NEW_MERGE $ROUND_EDIT_UTF > $ROUND_MERGE_UTF"
+		echo "[createpo.sh] msgmerge $ROUND_NEW_MERGE $ROUND_EDIT_UTF > $ROUND_MERGE_UTF $ret"
 		msgmerge $ROUND_NEW_MERGE $ROUND_EDIT_UTF > $ROUND_MERGE_UTF
 		ret=$?
-		if [ $ret -eq 0 ] || [ ! -e "$ROUND_MERGE_UTF" ]; then error="$error $ROUND_MERGE_UTF";fi
+		if [ $ret -eq 0 ] || [ ! -e "$ROUND_MERGE_UTF" ]; then error="$error $ROUND_MERGE_UTF $ret";fi
 
 		iconv -f UTF-8 -t ISO-8859-1 $ROUND_MERGE_UTF > $ROUND_MERGE
 		ret=$?
-		if [ $ret -eq 0 ] || [ ! -e "$ROUND_MERGE" ]; then error="$error $ROUND_MERGE";fi
+		if [ $ret -eq 0 ] || [ ! -e "$ROUND_MERGE" ]; then error="$error $ROUND_MERGE $ret";fi
 
 		SEARCH=`cat $ROUND_MERGE | grep -n "Content-Transfer-Encoding: 8bit" | cut -d":" -f1`
 
@@ -106,16 +106,16 @@ for ROUND in $POLIST; do
 
 		cat $ROUND_MERGE | sed "1,"$CUT"d" > $OUTFILE_PO
 		ret=$?
-		if [ $ret -eq 0 ] || [ ! -e "$OUTFILE_PO" ]; then error="$error $OUTFILE_PO";fi
+		if [ $ret -eq 0 ] || [ ! -e "$OUTFILE_PO" ]; then error="$error $OUTFILE_PO $ret";fi
 
 		echo "[createpo.sh] msgfmt -v $OUTFILE_PO -o $OUTFILE_MO"
 		msgfmt -v $OUTFILE_PO -o $OUTFILE_MO		
 		ret=$?
-		if [ $ret -eq 0 ] || [ ! -e "$OUTFILE_MO" ]; then error="$error $OUTFILE_MO";fi
+		if [ $ret -eq 0 ] || [ ! -e "$OUTFILE_MO" ]; then error="$error $OUTFILE_MO $ret";fi
 		
 		iconv -f UTF-8 -t ISO-8859-1 $ROUND_NEW_MERGE > $ROUND
 		ret=$?
-		if [ $ret -eq 0 ] || [ ! -e "$ROUND" ]; then error="$error $ROUND";fi
+		if [ $ret -eq 0 ] || [ ! -e "$ROUND" ]; then error="$error $ROUND $ret";fi
 
 		if [ ! -e $OUTFILE_MO ];then
 			cp -a $OUTFILE_PO $OUTFILE_ERROR
