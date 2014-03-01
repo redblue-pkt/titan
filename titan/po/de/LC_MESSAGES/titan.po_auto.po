@@ -4593,7 +4593,7 @@ msgstr "Stopp"
 
 #: record.h:1307 record.h:1381 skin_default_skin.xml.h:474
 msgid "Record"
-msgstr "Aufnahmen"
+msgstr "Aufnahme"
 
 #: record.h:1359 record.h:1368 record.h:1391
 msgid "change"
@@ -7047,15 +7047,15 @@ msgstr "Einstellungen"
 
 #: skin_default_skin.xml.h:482
 msgid "Records"
-msgstr "Aufnahmen (Timer)"
+msgstr "Aufnahmen"
 
 #: skin_default_skin.xml.h:483
 msgid "Records and EPG"
-msgstr "Aufnahmen (Timer) und EPG"
+msgstr "Timer und EPG"
 
 #: skin_default_skin.xml.h:484
 msgid "Records and EPG ..."
-msgstr "Aufnahmen (Timer) und EPG"
+msgstr "Timer und EPG"
 
 #: skin_default_skin.xml.h:485
 msgid "Record Split Size"
@@ -7063,7 +7063,7 @@ msgstr "Größe der geteilten Dateien"
 
 #: skin_default_skin.xml.h:486
 msgid "Record Timer"
-msgstr "Zeitgesteuerte Aufnahmen (Timer)"
+msgstr "Zeitgesteuerte Aufnahmen"
 
 #: skin_default_skin.xml.h:487
 msgid "Red Button"
@@ -7599,11 +7599,11 @@ msgstr "Grenzwert"
 
 #: skin_default_skin.xml.h:646
 msgid "Timer"
-msgstr "Aufnahmen (Timer)"
+msgstr ""
 
 #: skin_default_skin.xml.h:647
 msgid "Timer Record Path"
-msgstr "Pfad für zeitgesteuerte Aufnahmen (Timer)"
+msgstr "Pfad für zeitgesteuerte Aufnahmen"
 
 #: skin_default_skin.xml.h:648
 msgid "Timeshift Path"
