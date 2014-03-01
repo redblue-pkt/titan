@@ -8186,7 +8186,7 @@ msgid "never del file"
 msgstr "TS bestand nooit wissen"
 
 #: titan.c:274
-msgid "!!! This is a DEMO Version !!!"
+msgid "!!! test This is a DEMO Version !!!"
 msgstr ""
 
 #: titan.c:338

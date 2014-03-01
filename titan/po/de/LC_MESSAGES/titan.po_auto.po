@@ -8264,8 +8264,8 @@ msgid "never del file"
 msgstr "Timeshiftdatei nie löschen"
 
 #: titan.c:274
-msgid "!!! This is a DEMO Version !!!"
-msgstr "!!! DIESE VERSION IST EINE TESTVERSION !!!"
+msgid "!!! test This is a DEMO Version !!!"
+msgstr ""
 
 #: titan.c:338
 msgid ""
@@ -14511,3 +14511,6 @@ msgstr "Höchsttemperatur"
 #: weather.h:442 weather.h:460 weather.h:478 weather.h:496
 msgid "Condition: "
 msgstr "Wetter:"
+
+#~ msgid "!!! This is a DEMO Version !!!"
+#~ msgstr "!!! DIESE VERSION IST EINE TESTVERSION !!!"
