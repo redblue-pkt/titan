@@ -13494,7 +13494,7 @@ msgstr "Infos "
 
 #: tpk_section.h:8
 msgid "keymaps"
-msgstr ""
+msgstr "FB Tastenbelegung"
 
 #: tpk_section.h:9
 msgid "lcdpearlskins"
@@ -13514,11 +13514,11 @@ msgstr "Picons"
 
 #: tpk_section.h:13
 msgid "player"
-msgstr ""
+msgstr "Multimedia"
 
 #: tpk_section.h:14
 msgid "player "
-msgstr ""
+msgstr "Multimedia "
 
 #: tpk_section.h:16
 msgid "settings"
@@ -13586,7 +13586,7 @@ msgstr ""
 
 #: tpk_showname.h:12
 msgid "Codepack"
-msgstr ""
+msgstr "Codecpack"
 
 #: tpk_showname.h:13
 msgid "Croissant"
@@ -13630,7 +13630,7 @@ msgstr ""
 
 #: tpk_showname.h:24
 msgid "File Manager"
-msgstr ""
+msgstr "Dateimanager"
 
 #: tpk_showname.h:25
 msgid "Firelady"
