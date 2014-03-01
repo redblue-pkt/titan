@@ -14511,15 +14511,3 @@ msgstr "Höchsttemperatur"
 #: weather.h:442 weather.h:460 weather.h:478 weather.h:496
 msgid "Condition: "
 msgstr "Wetter:"
-
-#~ msgid "Search on Kinox"
-#~ msgstr "Suche bei Kinox"
-
-#~ msgid "Search on Kinox (local)"
-#~ msgstr "Suche bei Kinox (lokal)"
-
-#~ msgid "Search on MyVideo (local)"
-#~ msgstr "Suche bei MyVideo (lokal)"
-
-#~ msgid "System_Status"
-#~ msgstr "System Status"
