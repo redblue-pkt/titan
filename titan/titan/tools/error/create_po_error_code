@@ -1,12 +1,3 @@
-[createpo.sh] xgettext --omit-header -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.utf.po
-tithek_submenu.h:70: warning: unterminated string literal
-tithek_submenu.h:901: warning: unterminated string literal
---------------------------------------
-[createpo.sh] xgettext --omit-header -k_ *.* -o /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.new.po
-tithek_submenu.h:70: warning: unterminated string literal
-tithek_submenu.h:901: warning: unterminated string literal
---------------------------------------
-[createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.mo
-/home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.outfile.po:4407: `msgid' and `msgstr' entries do not both end with '\n'
-msgfmt: found 1 fatal error
-722 translated messages, 125 fuzzy translations, 538 untranslated messages.
+[createpo.sh] xgettext --omit-header -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/it/LC_MESSAGES/titan.po_auto.utf.po
+/home/atemio/flashimg/source.titan/po/it/LC_MESSAGES/titan.po_auto.utf.po:2989:63: invalid control sequence
+xgettext: found 1 fatal error
