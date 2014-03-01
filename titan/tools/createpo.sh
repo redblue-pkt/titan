@@ -81,7 +81,7 @@ for ROUND in $POLIST; do
 		log=`cat "$HOME"/flashimg/source.titan/titan/tools/error/error.log`
 		echo 2: $log
 		if [ ! -e "$ROUND_UTF" ] || [ `cat "$ROUND_UTF" | wc -l` -eq 0 ]; then error="2"; break;fi
-		if [ `echo $log | grep "fatal error" | wc -l` -gt 0 ]; then echo "[createpo.sh] ($error) found fatal error"; break;fi
+		if [ `echo $log | grep "fatal error" | wc -l` -gt 0 ]; then error="3"; break;fi
 
 		echo "[createpo.sh] xgettext --omit-header -k_ *.* -o $ROUND_NEW"
 #		rm -f "$HOME"/flashimg/source.titan/titan/tools/error/error.log
@@ -92,21 +92,21 @@ for ROUND in $POLIST; do
 		log=`cat "$HOME"/flashimg/source.titan/titan/tools/error/error.log`
 		echo 3: $log
 		if [ ! -e "$ROUND_NEW" ] || [ `cat "$ROUND_NEW" | wc -l` -eq 0 ]; then error="3"; break;fi
-		if [ `echo $log | grep "fatal error" | wc -l` -gt 0 ]; then echo "[createpo.sh] ($error) found fatal error"; break;fi
+		if [ `echo $log | grep "fatal error" | wc -l` -gt 0 ]; then error="4";break;fi
 
 		echo "[createpo.sh] msgmerge $ROUND_UTF $ROUND_NEW > $ROUND_NEW_MERGE"
 		msgmerge $ROUND_UTF $ROUND_NEW > $ROUND_NEW_MERGE
-		if [ ! -e "$ROUND_NEW_MERGE" ] || [ `cat "$ROUND_NEW_MERGE" | wc -l` -eq 0 ]; then error="4"; break;fi
+		if [ ! -e "$ROUND_NEW_MERGE" ] || [ `cat "$ROUND_NEW_MERGE" | wc -l` -eq 0 ]; then error="5"; break;fi
 
 		iconv -f ISO-8859-1 -t UTF-8 $ROUND_EDIT > $ROUND_EDIT_UTF
-		if [ ! -e "$ROUND_EDIT_UTF" ] || [ `cat "$ROUND_EDIT_UTF" | wc -l` -eq 0 ]; then error="5"; break;fi
+		if [ ! -e "$ROUND_EDIT_UTF" ] || [ `cat "$ROUND_EDIT_UTF" | wc -l` -eq 0 ]; then error="6"; break;fi
 
 		echo "[createpo.sh] msgmerge $ROUND_NEW_MERGE $ROUND_EDIT_UTF > $ROUND_MERGE_UTF $ret"
 		msgmerge $ROUND_NEW_MERGE $ROUND_EDIT_UTF > $ROUND_MERGE_UTF
-		if [ ! -e "$ROUND_MERGE_UTF" ] || [ `cat "$ROUND_EDIT_UTF" | wc -l` -eq 0 ]; then error="6"; break;fi
+		if [ ! -e "$ROUND_MERGE_UTF" ] || [ `cat "$ROUND_EDIT_UTF" | wc -l` -eq 0 ]; then error="7"; break;fi
 
 		iconv -f UTF-8 -t ISO-8859-1 $ROUND_MERGE_UTF > $ROUND_MERGE
-		if [ ! -e "$ROUND_MERGE" ] || [ `cat "$ROUND_MERGE" | wc -l` -eq 0 ]; then error="7"; break;fi
+		if [ ! -e "$ROUND_MERGE" ] || [ `cat "$ROUND_MERGE" | wc -l` -eq 0 ]; then error="8"; break;fi
 
 		SEARCH=`cat $ROUND_MERGE | grep -n "Content-Transfer-Encoding: 8bit" | cut -d":" -f1`
 
@@ -115,7 +115,7 @@ for ROUND in $POLIST; do
 		echo "[createpo.sh] CUT $CUT"
 
 		cat $ROUND_MERGE | sed "1,"$CUT"d" > $OUTFILE_PO
-		if [ ! -e "$OUTFILE_PO" ] || [ `cat "$OUTFILE_PO" | wc -l` -eq 0 ]; then error="8"; break;fi
+		if [ ! -e "$OUTFILE_PO" ] || [ `cat "$OUTFILE_PO" | wc -l` -eq 0 ]; then error="9"; break;fi
 
 		echo "[createpo.sh] msgfmt -v $OUTFILE_PO -o $OUTFILE_MO"
 #		rm -f "$HOME"/flashimg/source.titan/titan/tools/error/error.log
@@ -125,16 +125,16 @@ for ROUND in $POLIST; do
 		$cmd >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log 2>&1
 		log=`cat "$HOME"/flashimg/source.titan/titan/tools/error/error.log`
 		echo 9: $log
-		if [ ! -e "$OUTFILE_MO" ] || [ `cat "$OUTFILE_MO" | wc -l` -eq 0 ]; then error="9"; break;fi
-		if [ `echo $log | grep "fatal error" | wc -l` -gt 0 ]; then echo "[createpo.sh] ($error) found fatal error"; break;fi
+		if [ ! -e "$OUTFILE_MO" ] || [ `cat "$OUTFILE_MO" | wc -l` -eq 0 ]; then error="10"; break;fi
+		if [ `echo $log | grep "fatal error" | wc -l` -gt 0 ]; then error="11"; break;fi
 		
 		iconv -f UTF-8 -t ISO-8859-1 $ROUND_NEW_MERGE > $ROUND
-		if [ ! -e "$ROUND" ] || [ `cat "$ROUND" | wc -l` -eq 0 ]; then error="1"; break;fi
+		if [ ! -e "$ROUND" ] || [ `cat "$ROUND" | wc -l` -eq 0 ]; then error="12"; break;fi
 
 		if [ ! -e $OUTFILE_MO ];then
 			cp -a $OUTFILE_PO $OUTFILE_ERROR
 			cp -a $OUTFILE_PO $OUTFILE_ERROR_AUTO
-			error="$error $OUTFILE_MO"
+			error="13"
 		fi
 
 	else
@@ -143,16 +143,19 @@ for ROUND in $POLIST; do
 	echo "[createpo.sh] ############################# end ##################################"
 done
 
+if [ $error != 0 ];then
+	echo "[createpo.sh] found error($error)"
+fi
+
 echo "[createpo.sh] check user $SVNUSER"
 echo "[createpo.sh] check group $GROUP"
-
+	
 cd "$HOME"/flashimg/source.titan/po
 if [ "$SVNUSER" = "aafsvn" ] && [ "$GROUP" = "dev" ] && [ "$error" = "0" ];then
 	echo "[createpo.sh] svn commit -m [titan] autoupdate po files"
 	svn commit -m "[titan] autoupdate po files"
 	svn commit "$HOME"/flashimg/source.titan/po
 elif [ "$SVNUSER" = "aafsvn" ] && [ "$GROUP" = "dev" ];then
-	echo "[createpo.sh] error: $error"
 	echo "[createpo.sh] svn commit -m [titan] ERROR autoupdate po files"
 	
 	echo 111111
