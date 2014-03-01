@@ -97,7 +97,7 @@ void start(void)
 //	if(checkbox("WHITEBOX") == 1)
 //		screentithekplay("http://atemio.dyndns.tv/mediathek/mainmenu.crenova.list", "Operator - Mainmenu", 1);
 //	else
-		screentithekplay("http://atemio.dyndns.tv/mediathek/mainmenu.list", "Tithek - Mainmenu", 1);
+		screentithekplay("http://atemio.dyndns.tv/mediathek/mainmenu.list", _("Tithek - Mainmenu"), 1);
 
 	//reset markcolor  
 	status.listboxselectcol = tmplistboxselectcol;
