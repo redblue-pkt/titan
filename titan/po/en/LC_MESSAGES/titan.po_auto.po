@@ -7495,9 +7495,9 @@ msgstr ""
 msgid "System Infos"
 msgstr ""
 
-#: skin_default_skin.xml.h:629
-msgid "System_Status"
-msgstr "System Status"
+#: skin_default_skin.xml.h:629 system_infos.h:17
+msgid "System Status"
+msgstr ""
 
 #: skin_default_skin.xml.h:630
 msgid "System Update"
@@ -8083,10 +8083,6 @@ msgstr ""
 #: system_backup_restore.h:95
 msgid "BACKUP LOG"
 msgstr "Backup Log"
-
-#: system_infos.h:17
-msgid "System Status"
-msgstr ""
 
 #: system_infos.h:49
 msgid "Free Space"
@@ -10260,3 +10256,6 @@ msgstr "max Temp: "
 #: weather.h:442 weather.h:460 weather.h:478 weather.h:496
 msgid "Condition: "
 msgstr ""
+
+#~ msgid "System_Status"
+#~ msgstr "System Status"

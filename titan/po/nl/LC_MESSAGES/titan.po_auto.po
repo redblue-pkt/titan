@@ -7475,8 +7475,8 @@ msgstr "System Infos"
 msgid "System Infos"
 msgstr ""
 
-#: skin_default_skin.xml.h:629
-msgid "System_Status"
+#: skin_default_skin.xml.h:629 system_infos.h:17
+msgid "System Status"
 msgstr ""
 
 #: skin_default_skin.xml.h:630
@@ -8081,10 +8081,6 @@ msgstr ""
 
 #: system_backup_restore.h:95
 msgid "BACKUP LOG"
-msgstr ""
-
-#: system_infos.h:17
-msgid "System Status"
 msgstr ""
 
 #: system_infos.h:49
