@@ -6697,7 +6697,7 @@ msgstr "Pfad zu Filmen"
 
 #: skin_default_skin.xml.h:386
 msgid "MTD"
-msgstr "Speicher Technologie Geräte  (MTD)"
+msgstr "MTD (Flash Partitionen)"
 
 #: skin_default_skin.xml.h:388
 msgid "n"
@@ -8061,7 +8061,7 @@ msgstr ""
 "Ihre Einstellungen werden gesichert.\n"
 "WARNUNG: Die alten Sicherungen werden gelöscht!\n"
 "\n"
-"-Ergebnis- (Gelb):\n"
+"-Log- (Gelb):\n"
 "Überprüfung der Sicherung mittels Logdatei"
 
 #: system_backup_restore.h:31
