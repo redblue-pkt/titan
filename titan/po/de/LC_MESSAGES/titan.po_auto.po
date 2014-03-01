@@ -2875,7 +2875,7 @@ msgstr ""
 
 #: panel_settings_autostart.h:192 settings_autostart.h:273
 msgid "Load Partition"
-msgstr ""
+msgstr "Lade Partition"
 
 #: panel_settings_autostart.h:201 settings_autostart.h:282
 msgid "Fsck Record"
