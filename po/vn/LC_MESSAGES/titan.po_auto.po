@@ -8078,7 +8078,7 @@ msgid "never del file"
 msgstr "không xóa file"
 
 #: titan.c:274
-msgid "!!! test This is a DEMO Version !!!"
+msgid "!!! This is a DEMO Version !!!"
 msgstr ""
 
 #: titan.c:338
