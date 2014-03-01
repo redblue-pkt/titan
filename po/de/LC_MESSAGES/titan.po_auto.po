@@ -12984,19 +12984,19 @@ msgstr ""
 
 #: tpk_description.h:48
 msgid "Emu Camd3 v3.902 for your box"
-msgstr ""
+msgstr "Camd3 v3.902"
 
 #: tpk_description.h:49
 msgid "Emu MBox v0.6 build 0010 for your box"
-msgstr ""
+msgstr "MBox v0.6 build 0010"
 
 #: tpk_description.h:50
 msgid "Emu MGCamd v1.35 for your box"
-msgstr ""
+msgstr "MGCamd v1.35"
 
 #: tpk_description.h:51
 msgid "Emu MGCamd v1.38a and all Configs"
-msgstr ""
+msgstr "MGCamd v1.38a and all Configs"
 
 #: tpk_description.h:52
 msgid "extended config Panel"
@@ -13454,11 +13454,11 @@ msgstr "Bitte den Secret Feed überprüfen!"
 
 #: tpk.h:3428
 msgid "Section: "
-msgstr ""
+msgstr "Rubrik: "
 
 #: tpk.h:3431
 msgid "Description:"
-msgstr ""
+msgstr "Beschreibung:"
 
 #: tpk.h:3436 tpk.new.h:3411
 msgid "no description found"
@@ -13466,31 +13466,31 @@ msgstr "Keine Beschreibung gefunden!"
 
 #: tpk_section.h:1
 msgid "bootlogos"
-msgstr ""
+msgstr "Bootlogos"
 
 #: tpk_section.h:2
 msgid "browser"
-msgstr ""
+msgstr "Web Browser"
 
 #: tpk_section.h:3
 msgid "emus"
-msgstr ""
+msgstr "Softcams"
 
 #: tpk_section.h:4
 msgid "fonts"
-msgstr ""
+msgstr "Schriftarten"
 
 #: tpk_section.h:5
 msgid "games"
-msgstr ""
+msgstr "Spiele"
 
 #: tpk_section.h:6
 msgid "infos"
-msgstr ""
+msgstr "Infos"
 
 #: tpk_section.h:7
 msgid "infos "
-msgstr ""
+msgstr "Infos "
 
 #: tpk_section.h:8
 msgid "keymaps"
@@ -13498,19 +13498,19 @@ msgstr ""
 
 #: tpk_section.h:9
 msgid "lcdpearlskins"
-msgstr ""
+msgstr "LCD Pearl Skins"
 
 #: tpk_section.h:10
 msgid "lcdsamsungskins"
-msgstr ""
+msgstr "LCD Samsung Skins"
 
 #: tpk_section.h:11
 msgid "network"
-msgstr ""
+msgstr "Netzwerk"
 
 #: tpk_section.h:12
 msgid "picons"
-msgstr ""
+msgstr "Picons"
 
 #: tpk_section.h:13
 msgid "player"
@@ -13522,23 +13522,23 @@ msgstr ""
 
 #: tpk_section.h:16
 msgid "settings"
-msgstr ""
+msgstr "Senderlisten"
 
 #: tpk_section.h:17
 msgid "skins"
-msgstr ""
+msgstr "Skins"
 
 #: tpk_section.h:18
 msgid "tools"
-msgstr ""
+msgstr "Tools"
 
 #: tpk_section.h:19
 msgid "tools "
-msgstr ""
+msgstr "Tools "
 
 #: tpk_section.h:20
 msgid "wireless"
-msgstr ""
+msgstr "Wireless"
 
 #: tpk_showname.h:1
 msgid "3 Wins"
