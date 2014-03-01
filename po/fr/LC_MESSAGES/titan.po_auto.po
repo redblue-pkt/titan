@@ -336,7 +336,7 @@ msgstr "alpha"
 #: mc_videoplayer_settings.h:24 plugins_mc_skin.xml.h:48
 #: skin_default_skin.xml.h:507 skins_mc_skin.xml.h:48
 msgid "reverse alpha"
-msgstr "Alpha InversÃ©"
+msgstr "Alpha Inversé"
 
 #: adjust.h:99 mc_audioplayer_settings.h:29 mc_pictureplayer_settings.h:44
 #: mc_videoplayer_settings.h:25 plugins_mc_skin.xml.h:54
@@ -348,7 +348,7 @@ msgstr "Taille"
 #: mc_videoplayer_settings.h:26 plugins_mc_skin.xml.h:50
 #: skin_default_skin.xml.h:509 skins_mc_skin.xml.h:50
 msgid "reverse size"
-msgstr "Taille InversÃ©"
+msgstr "Taille Inversé"
 
 #: adjust.h:101 mc_audioplayer_settings.h:31 mc_pictureplayer_settings.h:46
 #: mc_videoplayer_settings.h:27 plugins_mc_skin.xml.h:16
@@ -360,7 +360,7 @@ msgstr "Date"
 #: mc_videoplayer_settings.h:28 plugins_mc_skin.xml.h:49
 #: skin_default_skin.xml.h:508 skins_mc_skin.xml.h:49
 msgid "reverse date"
-msgstr "Date InversÃ©"
+msgstr "Date Inversé"
 
 #: adjust.h:105
 msgid "Power Menu"
@@ -368,7 +368,7 @@ msgstr ""
 
 #: adjust.h:106 skin_default_skin.xml.h:454
 msgid "Power Off"
-msgstr "ArrÃ©t"
+msgstr "Arrét"
 
 #: adjust.h:107 powerofftimer.h:118 skin_default_skin.xml.h:597
 msgid "Standby"
@@ -376,7 +376,7 @@ msgstr "Veille"
 
 #: adjust.h:108 skin_default_skin.xml.h:503 softcam.h:291
 msgid "Restart"
-msgstr "RedÃ©marrer"
+msgstr "Redémarrer"
 
 #: adjust.h:109
 msgid "Gui Restart"
@@ -443,7 +443,7 @@ msgstr "Veille"
 
 #: adjust.h:155 rectimer.h:1168
 msgid "power off"
-msgstr "ArrÃ©t"
+msgstr "Arrét"
 
 #: adjust.h:163
 msgid "anim. width"
@@ -1220,7 +1220,7 @@ msgstr ""
 
 #: epgsettings.h:214
 msgid "poweroff"
-msgstr "ArrÃ©t"
+msgstr "Arrét"
 
 #: epgsettings.h:258
 msgid "Deavtivate Refresh Time and After EPG in scan-mode"
@@ -1765,7 +1765,7 @@ msgstr ""
 #: skin_default_skin.xml.h:393 skins_mc_skin.xml.h:37
 #: skins_panel_skin.xml.h:18 system_infos.h:91
 msgid "Network"
-msgstr "RÃ©seau"
+msgstr "Réseau"
 
 #: hwtest.h:182 hwtest.h:414
 msgid "USB Port"
@@ -1973,7 +1973,7 @@ msgstr ""
 #: keyactions.h:51 keyactions.h:98 settings_pluginbutton.h:13
 #: settings_redbutton.h:13
 msgid "Auto Resolution"
-msgstr "RÃ©solution Automatique"
+msgstr "Résolution Automatique"
 
 #: keyactions.h:53 keyactions.h:84 settings_bluebutton.h:14
 #: settings_pluginbutton.h:15 settings_redbutton.h:15
@@ -2081,7 +2081,7 @@ msgstr ""
 #: mc_pictureplayer.h:152 mc_pictureplayer.h:317 mc_videoplayer.h:428
 #: mc_videoplayer.h:659 plugins_mc_skin.xml.h:47 skins_mc_skin.xml.h:47
 msgid "Repeat"
-msgstr "rÃ©pÃ©ter"
+msgstr "répéter"
 
 #: mc_audioplayer.h:515 mc_audioplayer.h:558 mc_audioplayer.h:678
 #: mc_global.h:336 mc_global.h:408 mc_pictureplayer.h:270
@@ -2095,7 +2095,7 @@ msgstr "Mode liste de fichier"
 #: mc_pictureplayer.h:316 mc_videoplayer.h:658 plugins_mc_skin.xml.h:46
 #: skins_mc_skin.xml.h:46
 msgid "Random"
-msgstr "AlÃ©atoire"
+msgstr "Aléatoire"
 
 #: mc_audioplayer.h:580 mc_global.h:269 mc_global.h:693 mc_global.h:926
 #: mc_global.h:940 mc_pictureplayer.h:336 mc_videoplayer.h:699
@@ -2116,7 +2116,7 @@ msgstr ""
 #: mc_audioplayer_settings.h:38 mc_videoplayer_settings.h:34
 #: plugins_mc_skin.xml.h:29 skins_mc_skin.xml.h:29
 msgid "fullcover"
-msgstr "Couverture complÃ¨te"
+msgstr "Couverture complète"
 
 #: mc_audioplayer_settings.h:39 mc_pictureplayer_settings.h:54
 #: mc_videoplayer_settings.h:35
@@ -2389,7 +2389,7 @@ msgstr ""
 
 #: menu.h:884 menu.h:886 skin_default_skin.xml.h:531
 msgid "Save Settings"
-msgstr "RÃ©glages Sauvegarde"
+msgstr "Réglages Sauvegarde"
 
 #: menu.h:884
 msgid "Error in Save Settings"
@@ -2587,7 +2587,7 @@ msgstr ""
 
 #: network.h:295
 msgid "Restart Network ?"
-msgstr "RedÃ©marrer RÃ©seau?"
+msgstr "Redémarrer Réseau?"
 
 #: network.h:297
 msgid "Aktivate new network config ?"
@@ -2721,11 +2721,11 @@ msgstr ""
 
 #: panel_settings_autostart.h:34 settings_autostart.h:25
 msgid "fsckroot"
-msgstr "VÃ©rificateur des fichiers Partition Root"
+msgstr "Vérificateur des fichiers Partition Root"
 
 #: panel_settings_autostart.h:44 settings_autostart.h:35
 msgid "bootstop"
-msgstr "Demarrage stopÃ©"
+msgstr "Demarrage stopé"
 
 #: panel_settings_autostart.h:59 settings_autostart.h:50
 msgid "debug"
@@ -2770,11 +2770,11 @@ msgstr ""
 
 #: panel_settings_autostart.h:140 settings_autostart.h:171
 msgid "Bootlogo"
-msgstr "Logo de dÃ©marrage"
+msgstr "Logo de démarrage"
 
 #: panel_settings_autostart.h:149 settings_autostart.h:180
 msgid "Poweroff"
-msgstr "ArrÃ©t"
+msgstr "Arrét"
 
 #: panel_settings_autostart.h:158 settings_autostart.h:189
 msgid "Scart On Standby"
@@ -2871,7 +2871,7 @@ msgstr ""
 
 #: panel_settings.h:29
 msgid "disable"
-msgstr "DÃ©sactiver"
+msgstr "Désactiver"
 
 #: panel_settings.h:30
 msgid "ntfs-3g"
@@ -2908,7 +2908,7 @@ msgstr ""
 
 #: panel_settings_overclocking.h:276 settings_overclocking.h:276
 msgid "frequency"
-msgstr "FrÃ©quence"
+msgstr "Fréquence"
 
 #: panel_settings_overclocking.h:276 settings_overclocking.h:276
 msgid "videmode"
@@ -3065,7 +3065,7 @@ msgstr ""
 
 #: play.h:641 skin_default_skin.xml.h:715
 msgid "Video Settings"
-msgstr "RÃ©glages VidÃ©o"
+msgstr "Réglages Vidéo"
 
 #: play.h:642
 msgid "AV Settings"
@@ -3317,7 +3317,7 @@ msgstr ""
 #: skins_dlna_skin.xml.h:12 skins_instar_skin.xml.h:16
 #: skins_tsSchnitt_skin.xml.h:7
 msgid "START"
-msgstr "DÃ©marre"
+msgstr "Démarre"
 
 #: plugins_dlna_skin.xml.h:13 skin_default_skin.xml.h:604
 #: skins_dlna_skin.xml.h:13
@@ -3542,15 +3542,15 @@ msgstr ""
 
 #: plugins_mc_skin.xml.h:1 skins_mc_skin.xml.h:1
 msgid "MC VideoPlayer Imdb Settings"
-msgstr "RÃ©glages MC VideoPlayer Imdb"
+msgstr "Réglages MC VideoPlayer Imdb"
 
 #: plugins_mc_skin.xml.h:2 skins_mc_skin.xml.h:2
 msgid "MC VideoPlayer Sort Settings"
-msgstr "RÃ©glages de tri MC VideoPlayer"
+msgstr "Réglages de tri MC VideoPlayer"
 
 #: plugins_mc_skin.xml.h:3 skins_mc_skin.xml.h:3
 msgid "MC VideoPlayer View Settings"
-msgstr "RÃ©glage affichage MC VideoPlayer"
+msgstr "Réglage affichage MC VideoPlayer"
 
 #: plugins_mc_skin.xml.h:8 skins_mc_skin.xml.h:8
 msgid "Apple Trailer"
@@ -3566,7 +3566,7 @@ msgstr "Audio Player"
 
 #: plugins_mc_skin.xml.h:11 skins_mc_skin.xml.h:11
 msgid "AUDIO SETTINGS"
-msgstr "RÃ©glages Audio"
+msgstr "Réglages Audio"
 
 #: plugins_mc_skin.xml.h:12 skins_mc_skin.xml.h:12
 msgid "Autostart Playlist"
@@ -3657,7 +3657,7 @@ msgstr "Photo Player"
 
 #: plugins_mc_skin.xml.h:44 skins_mc_skin.xml.h:44
 msgid "PICTURE SETTINGS"
-msgstr "RÃ©glages Photo"
+msgstr "Réglages Photo"
 
 #: plugins_mc_skin.xml.h:45 skins_mc_skin.xml.h:45
 msgid "Radio Player"
@@ -3672,7 +3672,7 @@ msgstr "Screensaver"
 #: plugins_panel_skin.xml.h:22 skin_default_skin.xml.h:559
 #: skins_mc_skin.xml.h:52 skins_panel_skin.xml.h:5 skins_panel_skin.xml.h:22
 msgid "Settings"
-msgstr "RÃ©glages"
+msgstr "Réglages"
 
 #: plugins_mc_skin.xml.h:53 skins_mc_skin.xml.h:53
 msgid "Show Pictitle"
@@ -3704,7 +3704,7 @@ msgstr ""
 
 #: plugins_mc_skin.xml.h:61 skins_mc_skin.xml.h:61
 msgid "VIDEO"
-msgstr "VidÃ©o"
+msgstr "Vidéo"
 
 #: plugins_mc_skin.xml.h:62 skins_mc_skin.xml.h:62
 msgid "Video Player"
@@ -3712,7 +3712,7 @@ msgstr "Video Player"
 
 #: plugins_mc_skin.xml.h:63 skins_mc_skin.xml.h:63
 msgid "VIDEO SETTINGS"
-msgstr "RÃ©glages VidÃ©o"
+msgstr "Réglages Vidéo"
 
 #: plugins_mc_skin.xml.h:65 skins_mc_skin.xml.h:65
 msgid "VLC Player"
@@ -3827,7 +3827,7 @@ msgstr "rTaille"
 
 #: plugins_networkbrowser_skin.xml.h:26 skins_networkbrowser_skin.xml.h:26
 msgid "sharedir"
-msgstr "RÃ©pertoire PaprtagÃ©"
+msgstr "Répertoire Paprtagé"
 
 #: plugins_networkbrowser_skin.xml.h:27 skins_networkbrowser_skin.xml.h:27
 msgid "sharename"
@@ -3882,7 +3882,7 @@ msgstr "Suivant"
 
 #: plugins_news_skin.xml.h:4 skins_news_skin.xml.h:4
 msgid "PREV"
-msgstr "PrÃ©cedent"
+msgstr "Précedent"
 
 #: plugins_optimize_skin.xml.h:1 skins_optimize_skin.xml.h:1 tpk_showname.h:72
 msgid "Optimize"
@@ -3903,7 +3903,7 @@ msgstr ""
 #: plugins_panel_skin.xml.h:1 plugins_panel_skin.xml.h:10
 #: skins_panel_skin.xml.h:1 skins_panel_skin.xml.h:10
 msgid "Autostart"
-msgstr "DÃ©marrage auto"
+msgstr "Démarrage auto"
 
 #: plugins_panel_skin.xml.h:2 skin_default_skin.xml.h:223
 #: skins_panel_skin.xml.h:2
@@ -3912,7 +3912,7 @@ msgstr "Controle de ventilateur"
 
 #: plugins_panel_skin.xml.h:3 skins_panel_skin.xml.h:3
 msgid "OverClock Settings"
-msgstr "RÃ©glages OverClock"
+msgstr "Réglages OverClock"
 
 #: plugins_panel_skin.xml.h:4 skins_panel_skin.xml.h:4 tpk_showname.h:81
 msgid "Panel"
@@ -3950,7 +3950,7 @@ msgstr "Annuler"
 #: plugins_panel_skin.xml.h:13 skin_default_skin.xml.h:135
 #: skins_panel_skin.xml.h:13
 msgid "Child safety"
-msgstr "La sÃ©curitÃ© d'enfant"
+msgstr "La sécurité d'enfant"
 
 #: plugins_panel_skin.xml.h:14 skins_panel_skin.xml.h:14
 msgid "Default"
@@ -3986,11 +3986,11 @@ msgstr "Adaptateur USB"
 
 #: plugins_panel_skin.xml.h:26 skins_panel_skin.xml.h:26
 msgid "Videotune"
-msgstr "Ajustement de VidÃ©o"
+msgstr "Ajustement de Vidéo"
 
 #: plugins_panel_skin.xml.h:27 skins_panel_skin.xml.h:27
 msgid "Wizard"
-msgstr "RÃ©glages assistÃ©"
+msgstr "Réglages assisté"
 
 #: plugins_readerconfig_skin.xml.h:1 skins_readerconfig_skin.xml.h:1
 msgid "Device"
@@ -4074,7 +4074,7 @@ msgstr ""
 
 #: plugins_stopifnotused_skin.xml.h:4 skins_stopifnotused_skin.xml.h:4
 msgid "start"
-msgstr "DÃ©marre"
+msgstr "Démarre"
 
 #: plugins_stopifnotused_skin.xml.h:7 skins_stopifnotused_skin.xml.h:7
 msgid "Time to stop "
@@ -5098,7 +5098,7 @@ msgstr "A Propos"
 
 #: skin_default_skin.xml.h:52
 msgid "AC3 default"
-msgstr "AC3 Par dÃ©fault"
+msgstr "AC3 Par défault"
 
 #: skin_default_skin.xml.h:53
 msgid "AC3 Mode"
@@ -5118,7 +5118,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:57
 msgid "Adapter Settings"
-msgstr "RÃ©glages Adaptateur"
+msgstr "Réglages Adaptateur"
 
 #: skin_default_skin.xml.h:59
 msgid "ADD ALL"
@@ -5230,7 +5230,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:88
 msgid "Auto resolution"
-msgstr "RÃ©solution Automatique"
+msgstr "Résolution Automatique"
 
 #: skin_default_skin.xml.h:89
 msgid "Autostart - Audio / Video / Sat"
@@ -5262,7 +5262,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:96
 msgid "A/V Settings"
-msgstr "RÃ©glages Audio/Video"
+msgstr "Réglages Audio/Video"
 
 #: skin_default_skin.xml.h:97 tithek_mainmenu.h:15
 msgid "A-Z"
@@ -5333,7 +5333,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:115
 msgid "Brightness"
-msgstr "LuminositÃ©"
+msgstr "Luminosité"
 
 #: skin_default_skin.xml.h:117
 msgid "c"
@@ -5397,7 +5397,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:137
 msgid "Clear before scan"
-msgstr "Effacer aprÃ¨s scan?"
+msgstr "Effacer après scan?"
 
 #: skin_default_skin.xml.h:138
 msgid "CLEAR INPUT"
@@ -5437,7 +5437,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:147
 msgid "Committed command"
-msgstr "Commande CommittÃ© "
+msgstr "Commande Committé "
 
 #: skin_default_skin.xml.h:148
 msgid "Common Interface"
@@ -5465,7 +5465,7 @@ msgstr "CPU"
 
 #: skin_default_skin.xml.h:154 system_backup.h:18
 msgid "Create Backup"
-msgstr "CrÃ©er Backup"
+msgstr "Créer Backup"
 
 #: skin_default_skin.xml.h:155
 msgid "Create Path"
@@ -5493,7 +5493,7 @@ msgstr "Jour"
 
 #: skin_default_skin.xml.h:162 softcam.h:290
 msgid "Deactivate"
-msgstr "DÃ©sactiver"
+msgstr "Désactiver"
 
 #: skin_default_skin.xml.h:163
 msgid "Deactivate Crypt Support on Media Playback"
@@ -5521,11 +5521,11 @@ msgstr ""
 
 #: skin_default_skin.xml.h:171
 msgid "Delete EPG after read"
-msgstr "Supprime EPG aprÃ¨s lecture"
+msgstr "Supprime EPG après lecture"
 
 #: skin_default_skin.xml.h:174
 msgid "del startchannel"
-msgstr "Supprime chaine de dÃ©marrage"
+msgstr "Supprime chaine de démarrage"
 
 #: skin_default_skin.xml.h:175
 msgid "DESC"
@@ -5557,7 +5557,7 @@ msgstr "Mode DiSEqC"
 
 #: skin_default_skin.xml.h:182
 msgid "Diseqc repeats"
-msgstr "RÃ©pÃ¨te DiSEqC"
+msgstr "Répète DiSEqC"
 
 #: skin_default_skin.xml.h:183
 msgid "diseqcscreen..."
@@ -5565,7 +5565,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:184
 msgid "Diseqc Settings"
-msgstr "RÃ©glages DiSEqC"
+msgstr "Réglages DiSEqC"
 
 #: skin_default_skin.xml.h:185
 msgid "DNS Name"
@@ -5585,7 +5585,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:189
 msgid "Don't clear TV on zap (only with fastzap)"
-msgstr "Ne quitte pas Tv aprÃ¨s Zap (seul avec zap rapide) "
+msgstr "Ne quitte pas Tv après Zap (seul avec zap rapide) "
 
 #: skin_default_skin.xml.h:190
 msgid "Download"
@@ -5661,7 +5661,7 @@ msgstr "Temps De refraichissemnt EPG"
 
 #: skin_default_skin.xml.h:210
 msgid "EPG Reset"
-msgstr "RedÃ©marrage EPG"
+msgstr "Redémarrage EPG"
 
 #: skin_default_skin.xml.h:211
 msgid "EPG Save Mode"
@@ -5677,7 +5677,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:214
 msgid "EPG Settings"
-msgstr "RÃ©glages EPG"
+msgstr "Réglages EPG"
 
 #: skin_default_skin.xml.h:215
 msgid "EPG SHORT VIEW"
@@ -5775,11 +5775,11 @@ msgstr ""
 
 #: skin_default_skin.xml.h:240
 msgid "Frequency"
-msgstr "FrÃ©quence"
+msgstr "Fréquence"
 
 #: skin_default_skin.xml.h:241
 msgid "Frequency:"
-msgstr "FrÃ©quence:"
+msgstr "Fréquence:"
 
 #: skin_default_skin.xml.h:243
 msgid "g"
@@ -6271,7 +6271,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:344
 msgid "Listbox Select"
-msgstr "SÃ©lection Listbox"
+msgstr "Sélection Listbox"
 
 #: skin_default_skin.xml.h:345
 msgid "Listbox Select Color"
@@ -6279,7 +6279,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:346
 msgid "LNB Settings"
-msgstr "RÃ©glages LNB"
+msgstr "Réglages LNB"
 
 #: skin_default_skin.xml.h:347
 msgid "LOF/H"
@@ -6355,7 +6355,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:366
 msgid "Memory"
-msgstr "MÃ©moire"
+msgstr "Mémoire"
 
 #: skin_default_skin.xml.h:367
 msgid "MENU"
@@ -6367,11 +6367,11 @@ msgstr "Liste de Menu"
 
 #: skin_default_skin.xml.h:369
 msgid "Menu Protect"
-msgstr "ProtÃ©ger Menu"
+msgstr "Protéger Menu"
 
 #: skin_default_skin.xml.h:370
 msgid "MENUPROTECT"
-msgstr "Menu protÃ©gÃ©"
+msgstr "Menu protégé"
 
 #: skin_default_skin.xml.h:371
 msgid "MHW2 EPG"
@@ -6423,7 +6423,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:384
 msgid "move service"
-msgstr "DÃ©plcer service"
+msgstr "Déplcer service"
 
 #: skin_default_skin.xml.h:385
 msgid "Moviepath"
@@ -6451,35 +6451,35 @@ msgstr "Nom:"
 
 #: skin_default_skin.xml.h:392
 msgid "netmask"
-msgstr "Masque sous rÃ©seau"
+msgstr "Masque sous réseau"
 
 #: skin_default_skin.xml.h:394
 msgid "Network Adapter Settings"
-msgstr "RÃ©glage adaptateur rÃ©seau"
+msgstr "Réglage adaptateur réseau"
 
 #: skin_default_skin.xml.h:395
 msgid "Network Adapter Test"
-msgstr "Test adaptateur rÃ©seau"
+msgstr "Test adaptateur réseau"
 
 #: skin_default_skin.xml.h:396 tpk_showname.h:66
 msgid "Networkbrowser"
-msgstr "Navigateur RÃ©seau"
+msgstr "Navigateur Réseau"
 
 #: skin_default_skin.xml.h:397
 msgid "Network Interfacelist"
-msgstr "Liste d'interface rÃ©seau"
+msgstr "Liste d'interface réseau"
 
 #: skin_default_skin.xml.h:398
 msgid "Network Restart"
-msgstr "RedÃ©marrer RÃ©seau"
+msgstr "Redémarrer Réseau"
 
 #: skin_default_skin.xml.h:399
 msgid "Network Scan"
-msgstr "Scan RÃ©seau"
+msgstr "Scan Réseau"
 
 #: skin_default_skin.xml.h:400
 msgid "Network Test"
-msgstr "Test de RÃ©seau"
+msgstr "Test de Réseau"
 
 #: skin_default_skin.xml.h:401
 msgid "Newsletter"
@@ -6491,7 +6491,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:403
 msgid "Nfs Server Settings"
-msgstr "RÃ©glages NFS Serveur"
+msgstr "Réglages NFS Serveur"
 
 #: skin_default_skin.xml.h:404
 msgid "Normal/Standby"
@@ -6615,7 +6615,7 @@ msgstr "PIN Code pour Menu"
 
 #: skin_default_skin.xml.h:437
 msgid "PIN Settings"
-msgstr "RÃ©glages PIN Code"
+msgstr "Réglages PIN Code"
 
 #: skin_default_skin.xml.h:438
 msgid "PLAY"
@@ -6677,11 +6677,11 @@ msgstr ""
 
 #: skin_default_skin.xml.h:455
 msgid "Poweroff Timer"
-msgstr "ArrÃ©t chronomÃ¨tre"
+msgstr "Arrét chronomètre"
 
 #: skin_default_skin.xml.h:456
 msgid "Power Off Timer"
-msgstr "ArrÃ©t chronomÃ¨trÃ©"
+msgstr "Arrét chronomètré"
 
 #: skin_default_skin.xml.h:457
 msgid "Program Info"
@@ -6689,7 +6689,7 @@ msgstr "Info de Programme"
 
 #: skin_default_skin.xml.h:458
 msgid "Protect Channel"
-msgstr "Chaine protÃ©gÃ©e par code PIN"
+msgstr "Chaine protégée par code PIN"
 
 #: skin_default_skin.xml.h:459
 msgid "Protect Channel Freetime (min)"
@@ -6697,11 +6697,11 @@ msgstr ""
 
 #: skin_default_skin.xml.h:460
 msgid "Protect Menu"
-msgstr "Menu protÃ©gÃ©e par code PIN"
+msgstr "Menu protégée par code PIN"
 
 #: skin_default_skin.xml.h:461
 msgid "protect service"
-msgstr "Service protÃ©gÃ©e par code PIN"
+msgstr "Service protégée par code PIN"
 
 #: skin_default_skin.xml.h:462
 msgid "Prov"
@@ -6749,7 +6749,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:475
 msgid "Record Forerun (min)"
-msgstr "Enregistrement prÃ©cÃ©dÃ© (min)"
+msgstr "Enregistrement précédé (min)"
 
 #: skin_default_skin.xml.h:476
 msgid "Recording name"
@@ -6793,7 +6793,7 @@ msgstr "Enregistrement par partie"
 
 #: skin_default_skin.xml.h:486
 msgid "Record Timer"
-msgstr "Enregistrement chronomÃ©trÃ©"
+msgstr "Enregistrement chronométré"
 
 #: skin_default_skin.xml.h:487
 msgid "Red Button"
@@ -6845,7 +6845,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:500
 msgid "Resolution:"
-msgstr "RÃ©solution"
+msgstr "Résolution"
 
 #: skin_default_skin.xml.h:501
 msgid "Resolution (current)"
@@ -6853,7 +6853,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:502
 msgid "Resolution (default)"
-msgstr "RÃ©solution (Standard)"
+msgstr "Résolution (Standard)"
 
 #: skin_default_skin.xml.h:504
 msgid "Restore"
@@ -6881,7 +6881,7 @@ msgstr "Position de Rotor "
 
 #: skin_default_skin.xml.h:514
 msgid "Rotor Settings"
-msgstr "RÃ©glages de Rotor"
+msgstr "Réglages de Rotor"
 
 #: skin_default_skin.xml.h:515
 msgid "Runtime"
@@ -6901,7 +6901,7 @@ msgstr "S"
 
 #: skin_default_skin.xml.h:519
 msgid "Samba Server Settings"
-msgstr "RÃ©glages Serveur Samba"
+msgstr "Réglages Serveur Samba"
 
 #: skin_default_skin.xml.h:520
 msgid "SAT"
@@ -6969,7 +6969,7 @@ msgstr "Ajuster Screensaver"
 
 #: skin_default_skin.xml.h:540
 msgid "screensaver background"
-msgstr "ArriÃ©re plan Screensaver"
+msgstr "Arriére plan Screensaver"
 
 #: skin_default_skin.xml.h:541
 msgid "screensaver delay"
@@ -6989,7 +6989,7 @@ msgstr "Screensaver type"
 
 #: skin_default_skin.xml.h:545
 msgid "--- SD resolution"
-msgstr "--- RÃ©solution SD "
+msgstr "--- Résolution SD "
 
 #: skin_default_skin.xml.h:546 tithek_mainmenu.h:35
 msgid "Search"
@@ -7001,11 +7001,11 @@ msgstr "Second Infobar"
 
 #: skin_default_skin.xml.h:549
 msgid "Select backup:"
-msgstr "SÃ©lÃ©ction de sauvegarde"
+msgstr "Séléction de sauvegarde"
 
 #: skin_default_skin.xml.h:550
 msgid "Select Path"
-msgstr "SÃ©lÃ©ction de chemin"
+msgstr "Séléction de chemin"
 
 #: skin_default_skin.xml.h:551
 msgid "Select Unicable Manufacturer"
@@ -7037,15 +7037,15 @@ msgstr ""
 
 #: skin_default_skin.xml.h:558
 msgid "set startchannel"
-msgstr "DÃ©finir Chaine de dÃ©marrage"
+msgstr "Définir Chaine de démarrage"
 
 #: skin_default_skin.xml.h:560
 msgid "Settings..."
-msgstr "RÃ©glages"
+msgstr "Réglages"
 
 #: skin_default_skin.xml.h:561
 msgid "Settings backup/restore"
-msgstr "RÃ©glages sauvegarde/restauration"
+msgstr "Réglages sauvegarde/restauration"
 
 #: skin_default_skin.xml.h:562
 msgid "Show EPG screen (EPG button)"
@@ -7101,7 +7101,7 @@ msgstr "Ajuster le Skin "
 
 #: skin_default_skin.xml.h:578
 msgid "Skin Select"
-msgstr "SÃ©lÃ©ctionner le Skin"
+msgstr "Séléctionner le Skin"
 
 #: skin_default_skin.xml.h:579
 msgid "Skip 1/3"
@@ -7129,7 +7129,7 @@ msgstr "SNR:"
 
 #: skin_default_skin.xml.h:586
 msgid "Softcam Selection"
-msgstr "SÃ©lÃ©ction Softcam:"
+msgstr "Séléction Softcam:"
 
 #: skin_default_skin.xml.h:588
 msgid "sort service"
@@ -7165,7 +7165,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:598
 msgid "Standby Brightness"
-msgstr "Veille LuminositÃ©"
+msgstr "Veille Luminosité"
 
 #: skin_default_skin.xml.h:599
 msgid "StandBy Mode"
@@ -7173,15 +7173,15 @@ msgstr "Mode Veille"
 
 #: skin_default_skin.xml.h:600
 msgid "Standby / Poweroff"
-msgstr "Veille / ArrÃ©t"
+msgstr "Veille / Arrét"
 
 #: skin_default_skin.xml.h:601
 msgid "Standby / Poweroff..."
-msgstr "Veille / ArrÃ©t"
+msgstr "Veille / Arrét"
 
 #: skin_default_skin.xml.h:603
 msgid "Start HTTPD"
-msgstr "DÃ©marre HTTPD"
+msgstr "Démarre HTTPD"
 
 #: skin_default_skin.xml.h:605
 msgid "Start RGUID"
@@ -7201,7 +7201,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:610
 msgid "STOP/START"
-msgstr "ArrÃ©ter/DÃ©marrer"
+msgstr "Arréter/Démarrer"
 
 #: skin_default_skin.xml.h:611
 msgid "Storage position"
@@ -7241,15 +7241,15 @@ msgstr "Information de System"
 
 #: skin_default_skin.xml.h:622
 msgid "System"
-msgstr "SystÃ¨me"
+msgstr "Système"
 
 #: skin_default_skin.xml.h:623
 msgid "System:"
-msgstr "SystÃ¨me:"
+msgstr "Système:"
 
 #: skin_default_skin.xml.h:624
 msgid "System..."
-msgstr "SystÃ¨me"
+msgstr "Système"
 
 #: skin_default_skin.xml.h:625
 msgid "System - Flashupdate (online)"
@@ -7261,7 +7261,7 @@ msgstr "System - Flashupdate (tmp)"
 
 #: skin_default_skin.xml.h:627
 msgid "System Info"
-msgstr "Infos de SystÃ¨me"
+msgstr "Infos de Système"
 
 #: skin_default_skin.xml.h:628
 msgid "System Infos"
@@ -7329,11 +7329,11 @@ msgstr "Seuill"
 
 #: skin_default_skin.xml.h:646
 msgid "Timer"
-msgstr "chronomÃ©tre"
+msgstr "chronométre"
 
 #: skin_default_skin.xml.h:647
 msgid "Timer Record Path"
-msgstr "Chemin enregistrement chronomÃ©trÃ©"
+msgstr "Chemin enregistrement chronométré"
 
 #: skin_default_skin.xml.h:648
 msgid "Timeshift Path"
@@ -7441,7 +7441,7 @@ msgstr "Configuration de Tuner"
 
 #: skin_default_skin.xml.h:678
 msgid "Tuner Reception"
-msgstr "RÃ©ception de Tuner"
+msgstr "Réception de Tuner"
 
 #: skin_default_skin.xml.h:680
 msgid "TV Resolution (h):"
@@ -7493,7 +7493,7 @@ msgstr "UNC:"
 
 #: skin_default_skin.xml.h:693
 msgid "Uncommitted Diseqc command"
-msgstr "Commande UncommitÃ© de Diseqc"
+msgstr "Commande Uncommité de Diseqc"
 
 #: skin_default_skin.xml.h:694
 msgid "Unicable Configuration"
@@ -7501,7 +7501,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:696
 msgid "UNLOAD"
-msgstr "DÃ©charge"
+msgstr "Décharge"
 
 #: skin_default_skin.xml.h:697
 msgid "update"
@@ -7549,19 +7549,19 @@ msgstr "Affichage VFD"
 
 #: skin_default_skin.xml.h:710 tmc.h:399
 msgid "Video"
-msgstr "VidÃ©o"
+msgstr "Vidéo"
 
 #: skin_default_skin.xml.h:711
 msgid "VideoMode Aspect Settings"
-msgstr "Aspect de mode vidÃ©o"
+msgstr "Aspect de mode vidéo"
 
 #: skin_default_skin.xml.h:712
 msgid "VideoMode Resolution Settings"
-msgstr "RÃ©solution de mode vidÃ©o"
+msgstr "Résolution de mode vidéo"
 
 #: skin_default_skin.xml.h:713
 msgid "VideoMode Settings"
-msgstr "RÃ©glage de mode vidÃ©o"
+msgstr "Réglage de mode vidéo"
 
 #: skin_default_skin.xml.h:714
 msgid "Video PID:"
@@ -12347,7 +12347,7 @@ msgstr "AUDIO"
 
 #: tmc.h:540
 msgid "video"
-msgstr "VidÃ©o"
+msgstr "Vidéo"
 
 #: tmc.h:541
 msgid "audio"
@@ -14140,11 +14140,11 @@ msgstr ""
 
 #: videomode.h:18 videomode.h:40 videomode.h:47
 msgid "Resolution Settings"
-msgstr "RÃ©glages RÃ©solution"
+msgstr "Réglages Résolution"
 
 #: videomode.h:19 videomode.h:62 videomode.h:69
 msgid "Aspect Settings"
-msgstr "RÃ©glages Aspect"
+msgstr "Réglages Aspect"
 
 #: videomode.h:25 videomode.h:27
 msgid "Videomode"
