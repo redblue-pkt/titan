@@ -12,7 +12,7 @@ msgstr ""
 
 #: about.h:25 skin_default_skin.xml.h:674
 msgid "Tuner"
-msgstr ""
+msgstr "
 
 #: about.h:30 bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2638
 #: httpdfunc.h:2650 hwtest.h:476 moduleconfig.h:345
