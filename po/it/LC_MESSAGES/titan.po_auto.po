@@ -3330,7 +3330,7 @@ msgstr ""
 msgid "STOP"
 msgstr ""
 
-#: plugins_facebook_skin.xml.h:1 skins_facebook_skin.xml.h:1
+#: plugins_facebook_skin.xml.h:1 skins_facebook_skin.xml.h:1 tpk_showname.h:21
 msgid "Facebook"
 msgstr ""
 
@@ -4855,7 +4855,7 @@ msgstr ""
 msgid "Script has no output or started in background."
 msgstr ""
 
-#: scriptexec.h:41
+#: scriptexec.h:41 tpk_showname.h:144
 msgid "Script execute"
 msgstr ""
 
@@ -6461,7 +6461,7 @@ msgstr ""
 msgid "Network Adapter Test"
 msgstr ""
 
-#: skin_default_skin.xml.h:396
+#: skin_default_skin.xml.h:396 tpk_showname.h:66
 msgid "Networkbrowser"
 msgstr ""
 
@@ -9070,7 +9070,7 @@ msgid "Blueskull"
 msgstr ""
 
 #: tpk_showname.h:7
-msgid "CallMonitorPackage: titan-plugin-tools-filemanager"
+msgid "CallMonitor"
 msgstr ""
 
 #: tpk_showname.h:8
@@ -9106,11 +9106,11 @@ msgid "Digiface Regular"
 msgstr ""
 
 #: tpk_showname.h:16
-msgid "DLNA (Minidlna Server)Package: titan-plugin-network-facebook"
+msgid "DLNA (Minidlna Server)"
 msgstr ""
 
 #: tpk_showname.h:17
-msgid "DTS DownmixPackage: titan-plugin-player-dvdplayer"
+msgid "DTS Downmix"
 msgstr ""
 
 #: tpk_showname.h:18
@@ -9123,10 +9123,6 @@ msgstr ""
 
 #: tpk_showname.h:20
 msgid "Enigmalinux"
-msgstr ""
-
-#: tpk_showname.h:21
-msgid "FacebookPackage: titan-plugin-network-e2webserv"
 msgstr ""
 
 #: tpk_showname.h:22
@@ -9170,7 +9166,7 @@ msgid "Giantgirl"
 msgstr ""
 
 #: tpk_showname.h:32
-msgid "GmediaRenderPackage: titan-plugin-player-mediacenter"
+msgid "GmediaRender"
 msgstr ""
 
 #: tpk_showname.h:33
@@ -9198,11 +9194,11 @@ msgid "IP-Kamera"
 msgstr ""
 
 #: tpk_showname.h:41
-msgid "KeyLockPackage: titan-plugin-tools-pearllcd"
+msgid "KeyLock"
 msgstr ""
 
 #: tpk_showname.h:42
-msgid "LCD PearlPackage: titan-plugin-tools-samsunglcd"
+msgid "LCD Pearl"
 msgstr ""
 
 #: tpk_showname.h:43
@@ -9254,7 +9250,7 @@ msgid "LCD Samsung Skin Holzuhr"
 msgstr ""
 
 #: tpk_showname.h:55
-msgid "LCD Samsung SPF..Package: titan-plugin-tools-optimize"
+msgid "LCD Samsung SPF.."
 msgstr ""
 
 #: tpk_showname.h:56
@@ -9278,7 +9274,7 @@ msgid "Mediacenter FolderIcons"
 msgstr ""
 
 #: tpk_showname.h:61
-msgid "MediacenterPackage: titan-plugin-player-codecpack"
+msgid "Mediacenter"
 msgstr ""
 
 #: tpk_showname.h:62
@@ -9297,10 +9293,6 @@ msgstr ""
 msgid "Monoglyceride DemiBold"
 msgstr ""
 
-#: tpk_showname.h:66
-msgid "NetworkbrowserPackage: titan-plugin-network-openvpn"
-msgstr ""
-
 #: tpk_showname.h:68
 msgid "Newcs"
 msgstr ""
@@ -9310,7 +9302,7 @@ msgid "New Gothic BT"
 msgstr ""
 
 #: tpk_showname.h:71
-msgid "Open VPN (Server)Package: enigma2-plugin-network-samba"
+msgid "Open VPN (Server)"
 msgstr ""
 
 #: tpk_showname.h:73
@@ -9346,7 +9338,7 @@ msgid "Parted"
 msgstr ""
 
 #: tpk_showname.h:83
-msgid "Permanent TimePackage: titan-plugin-tools-rgui"
+msgid "Permanent Time"
 msgstr ""
 
 #: tpk_showname.h:84
@@ -9482,7 +9474,7 @@ msgid "Screensaver Brands and Logos"
 msgstr ""
 
 #: tpk_showname.h:117
-msgid "Screensaver CarsPackage: titan-plugin-screensaver-celebrations"
+msgid "Screensaver Cars"
 msgstr ""
 
 #: tpk_showname.h:118
@@ -9587,10 +9579,6 @@ msgstr ""
 
 #: tpk_showname.h:143
 msgid "Screensaver Travel World"
-msgstr ""
-
-#: tpk_showname.h:144
-msgid "Script executePackage: titan-plugin-tools-stopifnotused"
 msgstr ""
 
 #: tpk_showname.h:145
@@ -9698,7 +9686,7 @@ msgid "SMB Client Lib v3.0.28b (/media/smbfs)"
 msgstr ""
 
 #: tpk_showname.h:171
-msgid "SmbClient (Win7)Package: titan-plugin-network-networkbrowser"
+msgid "SmbClient (Win7)"
 msgstr ""
 
 #: tpk_showname.h:173
@@ -9738,7 +9726,7 @@ msgid "USB-RESET"
 msgstr ""
 
 #: tpk_showname.h:185
-msgid "Webbrowser NetsurfPackage: titan-plugin-emus-camd3.v3.902"
+msgid "Webbrowser Netsurf"
 msgstr ""
 
 #: tpk_showname.h:186
@@ -9782,7 +9770,7 @@ msgid "XPicons LightTransparent (small - Astra 19.2E)"
 msgstr ""
 
 #: tpk_showname.h:196
-msgid "zapback (Werbezapper)Package: titan-plugin-wireless-8192cu"
+msgid "zapback (Werbezapper)"
 msgstr ""
 
 #: tpk_showname.h:197
