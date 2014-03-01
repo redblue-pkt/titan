@@ -6201,8 +6201,7 @@ msgid ""
 "select."
 msgstr ""
 "Hier können Sie Timer auswählen, löschen und\n"
-"bearbeiten."
-"\n"
+"bearbeiten.\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
 #: skin_default_skin.xml.h:286
