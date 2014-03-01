@@ -5728,7 +5728,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:193
 msgid "Dutch"
-msgstr "Holländisch"
+msgstr "Nederlands"
 
 #: skin_default_skin.xml.h:194
 msgid "DYNDNS Settings"
@@ -5764,7 +5764,7 @@ msgstr "Motorisierte Anlage"
 
 #: skin_default_skin.xml.h:203
 msgid "English"
-msgstr "Englisch"
+msgstr "English"
 
 #: skin_default_skin.xml.h:204
 msgid "EPG"
@@ -5905,7 +5905,7 @@ msgstr "Freier Speicherplatz"
 
 #: skin_default_skin.xml.h:239 tithek_submenu.h:372
 msgid "French"
-msgstr "Französisch"
+msgstr "Francais"
 
 #: skin_default_skin.xml.h:240
 msgid "Frequency"
@@ -5961,7 +5961,7 @@ msgstr "Vergrößerungsfaktor des grafischen EPG"
 
 #: skin_default_skin.xml.h:255 tithek_submenu.h:393
 msgid "Greek"
-msgstr "Griechisch"
+msgstr ""
 
 #: skin_default_skin.xml.h:256
 msgid "Guardinterval"
@@ -6473,7 +6473,7 @@ msgstr "Stream Adresse (IP)"
 
 #: skin_default_skin.xml.h:327
 msgid "Italian"
-msgstr "Italienisch"
+msgstr "Italiano"
 
 #: skin_default_skin.xml.h:328
 msgid "j"
@@ -6935,7 +6935,7 @@ msgstr "Bildeinstellungen"
 
 #: skin_default_skin.xml.h:451
 msgid "Polish"
-msgstr "Polnisch"
+msgstr "Polski"
 
 #: skin_default_skin.xml.h:452
 msgid "Positioner Setup"
@@ -7159,7 +7159,7 @@ msgstr "Laufzeit"
 
 #: skin_default_skin.xml.h:516
 msgid "Russian"
-msgstr "Russisch"
+msgstr "Ruski"
 
 #: skin_default_skin.xml.h:517
 msgid "s"
@@ -7839,7 +7839,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:716
 msgid "Vietnamese"
-msgstr "Vietnamesisch"
+msgstr ""
 
 #: skin_default_skin.xml.h:717
 msgid "Virtualzap Timeout"
