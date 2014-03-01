@@ -76,7 +76,7 @@ for ROUND in $POLIST; do
 #		rm -f "$HOME"/flashimg/source.titan/titan/tools/error/error.log
 		cmd="xgettext --omit-header -j -k_ *.* -o $ROUND_UTF"
 		echo "--------------------------------------" >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log
-		echo "[createpo.sh] $cmd" > "$HOME"/flashimg/source.titan/titan/tools/error/error.log
+		echo "[createpo.sh] $cmd#" > "$HOME"/flashimg/source.titan/titan/tools/error/error.log
 		$cmd >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log 2>&1
 		log=`cat "$HOME"/flashimg/source.titan/titan/tools/error/error.log`
 #		echo $log
@@ -87,7 +87,7 @@ for ROUND in $POLIST; do
 #		rm -f "$HOME"/flashimg/source.titan/titan/tools/error/error.log
 		cmd="xgettext --omit-header -k_ *.* -o $ROUND_NEW"
 		echo "--------------------------------------" >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log
-		echo "[createpo.sh] $cmd" >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log
+		echo "#[createpo.sh] $cmd#" >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log
 		$cmd >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log 2>&1
 		log=`cat "$HOME"/flashimg/source.titan/titan/tools/error/error.log`
 #		echo $log
@@ -121,7 +121,7 @@ for ROUND in $POLIST; do
 #		rm -f "$HOME"/flashimg/source.titan/titan/tools/error/error.log
 		cmd="msgfmt -v $OUTFILE_PO -o $OUTFILE_MO"
 		echo "--------------------------------------" >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log
-		echo "[createpo.sh] $cmd" >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log
+		echo "#[createpo.sh] $cmd#" >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log
 		$cmd >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log 2>&1
 		log=`cat "$HOME"/flashimg/source.titan/titan/tools/error/error.log`
 #		echo $log
@@ -154,7 +154,7 @@ if [ "$SVNUSER" = "aafsvn" ] && [ "$GROUP" = "dev" ] && [ "$error" = "0" ];then
 elif [ "$SVNUSER" = "aafsvn" ] && [ "$GROUP" = "dev" ];then
 #	echo "[createpo.sh] error: $error"
 	echo "[createpo.sh] svn commit -m [titan] ERROR autoupdate po files"
-	echo $error > "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
+	echo $error | tr '#' '\n' > "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
 	svn commit -m "[titan] ERROR autoupdate po files"
 	svn commit "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
 else
