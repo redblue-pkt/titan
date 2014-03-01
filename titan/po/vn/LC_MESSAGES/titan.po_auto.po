@@ -9020,70 +9020,74 @@ msgid "Treiber fuer Samsung LCD"
 msgstr ""
 
 #: tpk_description.h:145
-msgid "usbreset Plugin"
+msgid "UPNP Media Render"
 msgstr ""
 
 #: tpk_description.h:146
-msgid "weather Plugin"
+msgid "usbreset Plugin"
 msgstr ""
 
 #: tpk_description.h:147
-msgid "Webbrowser Plugin"
+msgid "weather Plugin"
 msgstr ""
 
 #: tpk_description.h:148
-msgid "Werbezapper"
+msgid "Webbrowser Plugin"
 msgstr ""
 
 #: tpk_description.h:149
-msgid "White 3D Picons for tiTan."
+msgid "Werbezapper"
 msgstr ""
 
 #: tpk_description.h:150
-msgid "White 3D Picons for tiTan - Astra 23.5E."
+msgid "White 3D Picons for tiTan."
 msgstr ""
 
 #: tpk_description.h:151
-msgid "White 3D Picons for tiTan - Astra 28.2E."
+msgid "White 3D Picons for tiTan - Astra 23.5E."
 msgstr ""
 
 #: tpk_description.h:152
-msgid "White 3D Picons for tiTan - Hotbird 13.0E."
+msgid "White 3D Picons for tiTan - Astra 28.2E."
 msgstr ""
 
 #: tpk_description.h:153
-msgid "White70 Picons for tiTan."
+msgid "White 3D Picons for tiTan - Hotbird 13.0E."
 msgstr ""
 
 #: tpk_description.h:154
-msgid "White70 Picons for tiTan - Astra 23.5E."
+msgid "White70 Picons for tiTan."
 msgstr ""
 
 #: tpk_description.h:155
-msgid "White70 Picons for tiTan - Astra 28.2E"
+msgid "White70 Picons for tiTan - Astra 23.5E."
 msgstr ""
 
 #: tpk_description.h:156
-msgid "White70 Picons for tiTan - Hotbird 13.0E."
+msgid "White70 Picons for tiTan - Astra 28.2E"
 msgstr ""
 
 #: tpk_description.h:157
-msgid "wireless 8192cu.ko model"
+msgid "White70 Picons for tiTan - Hotbird 13.0E."
 msgstr ""
 
 #: tpk_description.h:158
-msgid "wireless modul 8712u.ko"
+msgid "wireless 8192cu.ko model"
 msgstr ""
 
 #: tpk_description.h:159
-msgid "wireless modul rt2870sta.ko"
+msgid "wireless modul 8712u.ko"
 msgstr ""
 
 #: tpk_description.h:160
-msgid "wireless modul rt3070sta.ko"
+msgid "wireless modul rt2870sta.ko"
 msgstr ""
 
 #: tpk_description.h:161
+msgid "wireless modul rt3070sta.ko"
+msgstr ""
+
+#: tpk_description.h:162
 msgid "wireless modul rt5370sta.ko"
 msgstr ""
 
