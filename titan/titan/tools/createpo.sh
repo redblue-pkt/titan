@@ -118,7 +118,7 @@ for ROUND in $POLIST; do
 		if [ `echo $log | grep "fatal error" | wc -l` -gt 0 ]; then error="13"; break;fi
 
 #		iconv -f UTF-8 -t ISO-8859-1 $ROUND_NEW_MERGE > $ROUND
-		cp -a $ROUND_MERGE > $ROUND
+		cat $ROUND_MERGE > $ROUND
 		if [ ! -e "$ROUND" ] || [ `cat "$ROUND" | wc -l` -eq 0 ]; then error="14"; break;fi
 
 		if [ ! -e $OUTFILE_MO ];then
