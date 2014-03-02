@@ -45,20 +45,23 @@ msgid "Are you sure you want to remove all Partitions\n"
 "Box reboots after format"
 msgstr "Are you sure you want to remove all partitions\n"
 "on this device and create a new partition?\n"
-"Receiver will reboot after formatting the device"							"Your Receiver will reboot after formatting the device"	
+"Receiver will reboot after formatting the device
+"Your Receiver will reboot after formatting the device"	
 
 msgid "Are you sure you want to format this Partition?\n"
 "Box reboots after format"
 msgstr "Are you sure you want to format this partition?\n"
-"Receiver will reboot after formatting the device"							"Your Receiver will reboot after formatting the device"	
+"Receiver will reboot after formatting the device"
+"Your Receiver will reboot after formatting the device"	
 
 msgid "Are you sure you want to check this Partition?\n"
 "Box reboots after check"
 msgstr "Are you sure you want to check this partition?\n"
-"Receiver will reboot after checking the device"							"Your Receiver will reboot after formatting the device"	
+"Receiver will reboot after checking the device"
+"Your Receiver will reboot after formatting the device"	
 
 msgid "A record hdd or a swapstick must be mounted!"
-msgstr "A harddisk or a USB stick must be mounted!"							"A harddisk or an USB stick must be mounted!"
+msgstr "A harddisk or a USB stick must be mounted!"
 
 msgid "A/V Settings"
 msgstr "Audio/Video Settings"
@@ -340,7 +343,7 @@ msgid "Cancel"
 msgstr "cancel"
 
 msgid "Can't get EPG time or EPG endtime not ok"
-msgstr "Can't get EPG time or EPG endtime not ok"					"Can't get EPG time or EPG endtime is not correct"
+msgstr "Can't get EPG time or EPG endtime not ok"
 
 msgid "Can't start playback !"
 msgstr "Can't start playback!"
@@ -770,7 +773,7 @@ msgid "Found running Record.\nRealy shutdown ?"
 msgstr "Found a active recording.\nReally shutdown ?"
 
 msgid "Found running record\nor record is starting in next time.\nReally shutdown ?"
-msgstr "Found a active recording.\nor recording is starting soon.\nReally shutdown?"					msgstr "Found an active recording.\nor recording is starting soon.\nReally shutdown?"
+msgstr "Found a active recording.\nor recording is starting soon.\nReally shutdown?"
 
 msgid "Found running download\nReally shutdown ?"
 msgstr "Found a active download\nReally shutdown?"
