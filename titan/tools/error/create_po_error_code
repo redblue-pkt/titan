@@ -1,12 +1,26 @@
-[createpo.sh] xgettext --omit-header -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.utf.po
+[createpo.sh] xgettext --omit-header -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/gr/LC_MESSAGES/titan.po_auto.utf.po
+/home/atemio/flashimg/source.titan/po/gr/LC_MESSAGES/titan.po_auto.utf.po:1223:15: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/gr/LC_MESSAGES/titan.po_auto.utf.po:1540:15: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/gr/LC_MESSAGES/titan.po_auto.utf.po:1606:40: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/gr/LC_MESSAGES/titan.po_auto.utf.po:1610:30: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/gr/LC_MESSAGES/titan.po_auto.utf.po:1634:19: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/gr/LC_MESSAGES/titan.po_auto.utf.po:1972:13: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/gr/LC_MESSAGES/titan.po_auto.utf.po:1982:12: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/gr/LC_MESSAGES/titan.po_auto.utf.po:2085:16: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/gr/LC_MESSAGES/titan.po_auto.utf.po:2397:23: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/gr/LC_MESSAGES/titan.po_auto.utf.po:2746:10: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/gr/LC_MESSAGES/titan.po_auto.utf.po:2758:12: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/gr/LC_MESSAGES/titan.po_auto.utf.po:2782:15: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/gr/LC_MESSAGES/titan.po_auto.utf.po:3129:10: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/gr/LC_MESSAGES/titan.po_auto.utf.po:3129:14: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/gr/LC_MESSAGES/titan.po_auto.utf.po:3238:13: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/gr/LC_MESSAGES/titan.po_auto.utf.po:3550:12: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/gr/LC_MESSAGES/titan.po_auto.utf.po:3574:12: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/gr/LC_MESSAGES/titan.po_auto.utf.po:3598:14: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/gr/LC_MESSAGES/titan.po_auto.utf.po:3613:29: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/gr/LC_MESSAGES/titan.po_auto.utf.po:3625:15: invalid multibyte sequence
+xgettext: too many errors, aborting
+--------------------------------------
+[createpo.sh] xgettext --omit-header -k_ *.* -o /home/atemio/flashimg/source.titan/po/gr/LC_MESSAGES/titan.new.po
 tithek_submenu.h:70: warning: unterminated string literal
 tithek_submenu.h:905: warning: unterminated string literal
---------------------------------------
-[createpo.sh] xgettext --omit-header -k_ *.* -o /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.new.po
-tithek_submenu.h:70: warning: unterminated string literal
-tithek_submenu.h:905: warning: unterminated string literal
---------------------------------------
-[createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.mo
-/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.outfile.po:4933: end-of-file within string
-msgfmt: found 1 fatal error
-msgid "Greek"
