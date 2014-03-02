@@ -141,7 +141,11 @@ for ROUND in $POLIST; do
 		else
 			OUTFILE_MO=`echo $ROUND | sed 's!titan.po_auto.po!titan.mo!'`
 #			OUTFILE_PO=`echo $ROUND | sed 's!titan.po_auto.po!titan.outfile.po!'`
-			OUTFILE_PO=$ROUND
+#			OUTFILE_PO=$ROUND
+
+			echo "[createpo.sh] iconv -f UTF-8 -t ISO-8859-1 $ROUND > $OUTFILE_PO"
+			iconv -f UTF-8 -t ISO-8859-1 $ROUND > $OUTFILE_PO
+			if [ ! -e "$OUTFILE_PO" ] || [ `cat "$OUTFILE_PO" | wc -l` -eq 0 ]; then error="1"; break;fi
 
 			echo "[createpo.sh] msgfmt -v $OUTFILE_PO -o $OUTFILE_MO"
 	#		rm -f "$HOME"/flashimg/source.titan/titan/tools/error/error.log
@@ -151,11 +155,11 @@ for ROUND in $POLIST; do
 			$cmd >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log 2>&1
 			log=`cat "$HOME"/flashimg/source.titan/titan/tools/error/error.log`
 			echo 1: $log
-			if [ ! -e "$OUTFILE_MO" ] || [ `cat "$OUTFILE_MO" | wc -l` -eq 0 ]; then error="1"; break;fi
-			if [ `echo $log | grep "fatal error" | wc -l` -gt 0 ]; then error="2"; break;fi
+			if [ ! -e "$OUTFILE_MO" ] || [ `cat "$OUTFILE_MO" | wc -l` -eq 0 ]; then error="2"; break;fi
+			if [ `echo $log | grep "fatal error" | wc -l` -gt 0 ]; then error="3"; break;fi
 			
 #			iconv -f UTF-8 -t ISO-8859-1 $ROUND_NEW_MERGE > $ROUND
-#			if [ ! -e "$ROUND" ] || [ `cat "$ROUND" | wc -l` -eq 0 ]; then error="3"; break;fi
+#			if [ ! -e "$ROUND" ] || [ `cat "$ROUND" | wc -l` -eq 0 ]; then error="4"; break;fi
 
 		fi
 	else
