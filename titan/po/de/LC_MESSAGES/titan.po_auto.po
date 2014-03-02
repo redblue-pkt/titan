@@ -17,7 +17,7 @@ msgstr ""
 #: about.h:30 bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2638
 #: httpdfunc.h:2650 hwtest.h:478 moduleconfig.h:345
 #: skin_default_skin.xml.h:695 skinselector.h:138 stream.h:22
-#: tithek_submenu.h:947 transponder.h:122 transponder.h:158 transponder.h:194
+#: tithek_submenu.h:943 transponder.h:122 transponder.h:158 transponder.h:194
 #: transponder.h:227 transponder.h:259 transponder.h:295 transponder.h:330
 #: transponder.h:348 transponder.h:364 transponder.h:418 transponder.h:451
 #: transponder.h:480 transponder.h:493 transponder.h:504 transponder.h:574
@@ -342,13 +342,13 @@ msgstr "Alphabetisch absteigend"
 #: mc_videoplayer_settings.h:25 plugins_mc_skin.xml.h:55
 #: skin_default_skin.xml.h:575 skins_mc_skin.xml.h:55
 msgid "size"
-msgstr "GrÃ¶ÃŸe aufsteigend"
+msgstr "Größe aufsteigend"
 
 #: adjust.h:100 mc_audioplayer_settings.h:30 mc_pictureplayer_settings.h:45
 #: mc_videoplayer_settings.h:26 plugins_mc_skin.xml.h:51
 #: skin_default_skin.xml.h:509 skins_mc_skin.xml.h:51
 msgid "reverse size"
-msgstr "GrÃ¶ÃŸe absteigend"
+msgstr "Größe absteigend"
 
 #: adjust.h:101 mc_audioplayer_settings.h:31 mc_pictureplayer_settings.h:46
 #: mc_videoplayer_settings.h:27 plugins_mc_skin.xml.h:16
@@ -625,8 +625,8 @@ msgid ""
 "This Plugin is only for Betatester and can change your Settings!\n"
 "Realy run it?"
 msgstr ""
-"Diese Funktion ist nur fÃ¼r Betatester und kÃ¶nnte Ihre Einstellungen "
-"verÃ¤ndern!\n"
+"Diese Funktion ist nur für Betatester und könnte Ihre Einstellungen "
+"verändern!\n"
 "Trotzdem fortfahren?"
 
 #: bgdownload.h:176
@@ -673,7 +673,7 @@ msgid ""
 msgstr ""
 "Call Monitor Timeout!!!\n"
 "\n"
-"Bitte Ã¼berprÃ¼fen Sie Ihre Einstellungen!"
+"Bitte überprüfen Sie Ihre Einstellungen!"
 
 #: callmon_main.h:76 callmon_main.h:98 callmon_main.h:116 callmon_main.h:120
 #: callmon_main.h:124 callmon_main.h:128 instar.h:192
@@ -727,7 +727,7 @@ msgstr "bewegen"
 
 #: channellist.h:587
 msgid "Remove mode"
-msgstr "lÃ¶schen"
+msgstr "löschen"
 
 #: channellist.h:596
 msgid "Copy mode"
@@ -735,7 +735,7 @@ msgstr "kopieren"
 
 #: channellist.h:605
 msgid "Protect mode"
-msgstr "schÃ¼tzen"
+msgstr "schützen"
 
 #: channellist.h:614
 msgid "Edit mode"
@@ -787,7 +787,7 @@ msgstr "ACHTUNG: Kopieren der Senderliste abgebrochen"
 
 #: channellist.h:1006
 msgid "Can't remove akive Service"
-msgstr "FEHLER: Aktiver Sender kann nicht gelÃ¶scht werden!"
+msgstr "FEHLER: Aktiver Sender kann nicht gelöscht werden!"
 
 #: channellist.h:1295 channellist.h:1296
 msgid "Channels A-Z"
@@ -795,15 +795,15 @@ msgstr "Sender A-Z"
 
 #: copyfile.h:810
 msgid "Filesize (B): "
-msgstr "DateigrÃ¶ÃŸe (Bytes):"
+msgstr "Dateigröße (Bytes):"
 
 #: copyfile.h:812 download.h:73
 msgid "Filesize (KB): "
-msgstr "DateigrÃ¶ÃŸe (KB):"
+msgstr "Dateigröße (KB):"
 
 #: copyfile.h:814
 msgid "Filesize (MB): "
-msgstr "DateigrÃ¶ÃŸe (MB)"
+msgstr "Dateigröße (MB)"
 
 #: copyfile.h:821 copyfile.h:854
 msgid "Move (B): "
@@ -898,7 +898,7 @@ msgstr ""
 "Language-Team: German <_obiwan_@web.de>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: diseqcconfig.h:9 diseqcconfig.h:16
@@ -1029,7 +1029,7 @@ msgstr "Nord"
 
 #: diseqcconfig.h:255
 msgid "south"
-msgstr "SÃ¼d"
+msgstr "Süd"
 
 #: diseqcconfig.h:259
 msgid "east"
@@ -1050,8 +1050,8 @@ msgstr "die Hoster Url ist nicht http://"
 msgid ""
 "The file is being transfered to our other servers. This may take few minutes."
 msgstr ""
-"Die ausgewÃ¤hlte Datei ist vorÃ¼bergehend nicht verfÃ¼gbar.\n"
-"Bitte versuchen Sie es zu einem spÃ¤teren Zeitpunkt erneut."
+"Die ausgewählte Datei ist vorübergehend nicht verfügbar.\n"
+"Bitte versuchen Sie es zu einem späteren Zeitpunkt erneut."
 
 #: divxstage.h:150 faststream.h:79 faststream.h:90 faststream.h:102
 #: faststream.h:160 filenuke.h:84 filenuke.h:95 filenuke.h:107 filenuke.h:157
@@ -1064,7 +1064,7 @@ msgstr ""
 #: vidstream.h:86 vidstream.h:97 vidstream.h:167 xvidstage.h:100
 #: xvidstage.h:177
 msgid "The page is temporarily unavailable"
-msgstr "Die Aufgerufene Seite ist vorrÃ¼bergehend nicht erreichbar!"
+msgstr "Die Aufgerufene Seite ist vorrübergehend nicht erreichbar!"
 
 #: dlna.h:334
 msgid "DLNA started."
@@ -1076,7 +1076,7 @@ msgid ""
 "Please check your config."
 msgstr ""
 "DLNA nicht gestartet.\n"
-"Bitte Ã¼berprÃ¼fen Sie Ihre Konfiguration."
+"Bitte überprüfen Sie Ihre Konfiguration."
 
 #: dlna.h:345
 msgid "DLNA now stopped"
@@ -1101,7 +1101,7 @@ msgstr "Auswerfen"
 #: dvdplay.h:29 play.h:1417 plugins_dlna_skin.xml.h:10
 #: skins_dlna_skin.xml.h:10
 msgid "SELECT"
-msgstr "AuswÃ¤hlen"
+msgstr "Auswählen"
 
 #: dvdplay.h:62 mc_audioplayer.h:599 mc_audioplayer.h:702 mc_global.h:773
 #: mc_global.h:1020 mc_pictureplayer.h:95 mc_pictureplayer.h:237
@@ -1157,7 +1157,7 @@ msgstr ""
 
 #: epgsearch.h:292
 msgid "Comedy"
-msgstr "KomÃ¶die"
+msgstr "Komödie"
 
 #: epgsearch.h:300
 msgid "War"
@@ -1167,7 +1167,7 @@ msgstr "Krieg"
 msgid "Scifi"
 msgstr "Science-Fiction"
 
-#: epgsearch.h:316 tithek_submenu.h:841
+#: epgsearch.h:316 tithek_submenu.h:837
 msgid "Sport"
 msgstr ""
 
@@ -1205,11 +1205,11 @@ msgstr "durchsuchen"
 
 #: epgsettings.h:147
 msgid "whitelist"
-msgstr "WeiÃŸe Liste"
+msgstr "Weiße Liste"
 
 #: epgsettings.h:148
 msgid "scan and whitelist"
-msgstr "Scan-Liste und WeiÃŸe Liste"
+msgstr "Scan-Liste und Weiße Liste"
 
 #: epgsettings.h:189 epgsettings.h:200 epgsettings.h:205 epgsettings.h:210
 #: mediadbsettings.h:36
@@ -1226,7 +1226,7 @@ msgstr "Nie"
 
 #: epgsettings.h:199 epgsettings.h:204 epgsettings.h:209
 msgid "only for scan"
-msgstr "Nur fÃ¼r Scan"
+msgstr "Nur für Scan"
 
 #: epgsettings.h:214
 msgid "poweroff"
@@ -1238,7 +1238,7 @@ msgstr "Hintergrundsuche aktiv, Aktualisierungszeit wird deaktiviert"
 
 #: epgsettings.h:284
 msgid "EPG resetet and now clear."
-msgstr "EPG zurÃ¼ckgesetzt und gelÃ¶scht"
+msgstr "EPG zurückgesetzt und gelöscht"
 
 #: epgsettings.h:298
 msgid "EPG Scan Log"
@@ -1254,7 +1254,7 @@ msgstr "Installation gestartet"
 
 #: extensions.h:84
 msgid "Remove start"
-msgstr "LÃ¶schvorgang gestartet"
+msgstr "Löschvorgang gestartet"
 
 #: extensions.h:93
 msgid "New free space (KB): "
@@ -1274,7 +1274,7 @@ msgstr "Erfolgreich entfernt."
 
 #: extensions.h:105
 msgid "Remove error"
-msgstr "FEHLER: LÃ¶schen fehlgeschlagen!"
+msgstr "FEHLER: Löschen fehlgeschlagen!"
 
 #: extensions.h:125
 msgid "Install to MNT"
@@ -1298,15 +1298,15 @@ msgstr "Installations Information"
 
 #: extensions.h:170
 msgid "Can't install Package. Package to big."
-msgstr "FEHLER: Paket zu groÃŸ, Installation fehlgeschlagen!"
+msgstr "FEHLER: Paket zu groß, Installation fehlgeschlagen!"
 
 #: extensions.h:197
 msgid "Tpk Install - select section"
-msgstr "Installation - Kategorie wÃ¤hlen"
+msgstr "Installation - Kategorie wählen"
 
 #: extensions.h:202 skin_default_skin.xml.h:663
 msgid "Tpk Install - select file"
-msgstr "Installation - AuswÃ¤hlen"
+msgstr "Installation - Auswählen"
 
 #: extensions.h:207 extensions.h:234 extensions.h:386 tpk.h:2990
 msgid ""
@@ -1317,7 +1317,7 @@ msgid ""
 msgstr ""
 "Wenn Sie ein anderes Paket aus dieser Sektion installieren wollen, entfernen "
 "Sie zuerst das Installierte. Ist nach einer Neuinstallation das Plugin\n"
-"nicht im MenÃ¼ sichtbar, fÃ¼hren Sie bitte eine Aktualisierung durch."
+"nicht im Menü sichtbar, führen Sie bitte eine Aktualisierung durch."
 
 #: extensions.h:212 extensions.h:353
 msgid "Installing"
@@ -1343,7 +1343,7 @@ msgstr ""
 
 #: extensions.h:271
 msgid "Tpk Remove - select file"
-msgstr "LÃ¶schen - auswÃ¤hlen"
+msgstr "Löschen - auswählen"
 
 #: extensions.h:277
 msgid "Removeing"
@@ -1377,14 +1377,14 @@ msgid ""
 "If the plugin is not active\n"
 "reboot the box."
 msgstr ""
-"Einige Plugins benÃ¶tigen einen Neustart.\n"
-"Sollten Ihre Plugins nicht verfÃ¼gbar sein,\n"
+"Einige Plugins benötigen einen Neustart.\n"
+"Sollten Ihre Plugins nicht verfügbar sein,\n"
 "starten Sie den Receiver neu."
 
 #: extensions.h:396
 msgid "TPK Tmp Install done, your system will reboot !"
 msgstr ""
-"Installation aus tmp wurde erfolgreich durchgefÃ¼hrt.\n"
+"Installation aus tmp wurde erfolgreich durchgeführt.\n"
 "Das System startet jetzt neu."
 
 #: extensions.h:420 extensions.h:424
@@ -1393,7 +1393,7 @@ msgstr "FEHLER: Aktualisierung fehlgeschlagen!"
 
 #: extensions.h:420
 msgid "Can't get all TPK index !"
-msgstr "FEHLER: Inhalt unvollstÃ¤ndig!"
+msgstr "FEHLER: Inhalt unvollständig!"
 
 #: extensions.h:424
 msgid "Can't update all packages !"
@@ -1439,15 +1439,15 @@ msgstr "FEHLER: Erstellung fehlgeschlagen!"
 
 #: facebook.h:476
 msgid "Link postet"
-msgstr "Link verÃ¶ffentlicht."
+msgstr "Link veröffentlicht."
 
 #: facebook.h:477
 msgid "Video postet"
-msgstr "Video verÃ¶ffentlicht."
+msgstr "Video veröffentlicht."
 
 #: facebook.h:478
 msgid "Photos postet"
-msgstr "Bild verÃ¶ffentlicht"
+msgstr "Bild veröffentlicht"
 
 #: facebook.h:479 facebook.h:481
 msgid "App story"
@@ -1475,7 +1475,7 @@ msgstr "Verzeichnis anlegen"
 
 #: filemanager.h:84 play.h:612
 msgid "Menu"
-msgstr "MenÃ¼"
+msgstr "Menü"
 
 #: filemanager.h:95
 msgid "Can't rename file !"
@@ -1487,11 +1487,11 @@ msgstr "FEHLER: Verzeichnis kann nicht angelegt werden!"
 
 #: filemanager.h:180
 msgid "Really copy this file/dir?"
-msgstr "MÃ¶chten Sie tatsÃ¤chlich diese Datei/dieses Verzeichnis kopieren?"
+msgstr "Möchten Sie tatsächlich diese Datei/dieses Verzeichnis kopieren?"
 
 #: filemanager.h:188
 msgid "Really move this file/dir?"
-msgstr "MÃ¶chten Sie tatsÃ¤chlich diese Datei/dieses Verzeichnis verschieben?"
+msgstr "Möchten Sie tatsächlich diese Datei/dieses Verzeichnis verschieben?"
 
 #: filemanager.h:196
 msgid "From"
@@ -1511,11 +1511,11 @@ msgstr "Datei kopieren"
 
 #: filemanager.h:278
 msgid "Really delete this file/dir?"
-msgstr "MÃ¶chten Sie tatsÃ¤chlich diese Datei/dieses Verzeichnis lÃ¶schen?"
+msgstr "Möchten Sie tatsächlich diese Datei/dieses Verzeichnis löschen?"
 
 #: filemanager.h:291
 msgid "Can't remove file/dir !"
-msgstr "FEHLER: LÃ¶schen fehlgeschlagen!"
+msgstr "FEHLER: Löschen fehlgeschlagen!"
 
 #: filemanager.h:331
 msgid "Can't show this file!"
@@ -1529,7 +1529,7 @@ msgstr ""
 
 #: global.h:6385 keyactions.h:241
 msgid "ERROR cant read res"
-msgstr "FEHLER: AuflÃ¶sungsstatus nicht VerfÃ¼gbar!"
+msgstr "FEHLER: Auflösungsstatus nicht Verfügbar!"
 
 #: gmediarender.h:109
 msgid "Servername"
@@ -1575,56 +1575,56 @@ msgstr "Festplatte einrichten"
 
 #: harddisk.h:225 harddisk.h:715
 msgid "use medium for record"
-msgstr "Laufwerk fÃ¼r Aufnahmen verwenden."
+msgstr "Laufwerk für Aufnahmen verwenden."
 
 #: harddisk.h:230
 msgid "del medium for record"
-msgstr "Laufwerk fÃ¼r Aufnahmen entfernen."
+msgstr "Laufwerk für Aufnahmen entfernen."
 
 #: harddisk.h:235 harddisk.h:720
 msgid "use medium for extension"
-msgstr "Laufwerk fÃ¼r Plugins verwenden."
+msgstr "Laufwerk für Plugins verwenden."
 
 #: harddisk.h:240
 msgid "del medium for extension"
-msgstr "Laufwerk fÃ¼r Plugins entfernen."
+msgstr "Laufwerk für Plugins entfernen."
 
 #: harddisk.h:245 harddisk.h:722
 msgid "use medium for swap"
-msgstr "Laufwerk fÃ¼r Speichererweiterung (SWAP) verwenden."
+msgstr "Laufwerk für Speichererweiterung (SWAP) verwenden."
 
 #: harddisk.h:250
 msgid "del medium for swap"
-msgstr "Laufwerk fÃ¼r Speichererweiterung (SWAP) entfernen."
+msgstr "Laufwerk für Speichererweiterung (SWAP) entfernen."
 
 #: harddisk.h:255 harddisk.h:724
 msgid "use medium for backup"
-msgstr "Laufwerk fÃ¼r Datensicherung verwenden."
+msgstr "Laufwerk für Datensicherung verwenden."
 
 #: harddisk.h:260
 msgid "del medium for backup"
-msgstr "Laufwerk fÃ¼r Datensicherung entfernen."
+msgstr "Laufwerk für Datensicherung entfernen."
 
 #: harddisk.h:345
 msgid "Are you sure you want to delete this directory?"
-msgstr "Wollen Sie das ausgewÃ¤hlte Verzeichnis wirklich lÃ¶schen?"
+msgstr "Wollen Sie das ausgewählte Verzeichnis wirklich löschen?"
 
 #: harddisk.h:350
 msgid ""
 "Directory has content\n"
 "Really delete directory and content?"
 msgstr ""
-"ACHTUNG: Das ausgewÃ¤hlte Verzeichnis ist nicht leer!\n"
-"Verzeichnis trotzdem lÃ¶schen?\n"
+"ACHTUNG: Das ausgewählte Verzeichnis ist nicht leer!\n"
+"Verzeichnis trotzdem löschen?\n"
 "Alle darin befindlichen Daten gehen verloren!!!"
 
 #: harddisk.h:377
 msgid "can't create or delete directory"
-msgstr "FEHLER: Verzeichnis kann nicht erstellt/gelÃ¶scht werden!"
+msgstr "FEHLER: Verzeichnis kann nicht erstellt/gelöscht werden!"
 
 #: harddisk.h:381
 msgid "succesfull create or delelete directory"
-msgstr "Das Verzeichnis wurde erfolgreich erstellt/gelÃ¶scht."
+msgstr "Das Verzeichnis wurde erfolgreich erstellt/gelöscht."
 
 #: harddisk.h:433 skin_default_skin.xml.h:262
 msgid "Harddisk"
@@ -1636,15 +1636,15 @@ msgstr "FEHLER: Keine Festplatte gefunden!"
 
 #: harddisk.h:441 harddisk.h:442
 msgid "Harddisk Format - List Devices"
-msgstr "Festplatte formatieren - Ãœbersicht der Laufwerke"
+msgstr "Festplatte formatieren - Übersicht der Laufwerke"
 
 #: harddisk.h:446 harddisk.h:447
 msgid "Harddisk Fsck - List Devices"
-msgstr "Festplatten Dateisystem PrÃ¼fung - Ãœbersicht der Laufwerke"
+msgstr "Festplatten Dateisystem Prüfung - Übersicht der Laufwerke"
 
 #: harddisk.h:451 harddisk.h:452
 msgid "Harddisk Configure - List Devices"
-msgstr "Festplatte einrichten - Ãœbersicht der Laufwerke"
+msgstr "Festplatte einrichten - Übersicht der Laufwerke"
 
 #: harddisk.h:470
 msgid "HDD "
@@ -1675,8 +1675,8 @@ msgid ""
 "HDD > 2TB unsupported.\n"
 "You must first install plugin parted, then you can use this panel."
 msgstr ""
-"FEHLER: Festplatten mit einer SpeicherkapazitÃ¤t Ã¼ber 2 TB werden nicht "
-"unterstÃ¼tzt.\n"
+"FEHLER: Festplatten mit einer Speicherkapazität über 2 TB werden nicht "
+"unterstützt.\n"
 "Installieren Sie bitte das Plugin 'parted' um die Festplatte zu nutzen!"
 
 #: harddisk.h:632
@@ -1686,7 +1686,7 @@ msgid ""
 "Box reboots after format"
 msgstr ""
 "ACHTUNG: Sind Sie sicher, dass Sie alle Partitionen\n"
-"lÃ¶schen wollen und eine neue Partition 1 erstellen wollen?\n"
+"löschen wollen und eine neue Partition 1 erstellen wollen?\n"
 "Der Receiver wird nach dem Formatieren neu gestartet!"
 
 #: harddisk.h:666
@@ -1708,15 +1708,15 @@ msgid ""
 "Information: This hard drive size can take a file\n"
 "system check between 30 minutes and 1.5 hours."
 msgstr ""
-"INFORMATION: Eine ÃœberprÃ¼fung des Dateisystems dauert bis zu 1,5 Stunden!"
+"INFORMATION: Eine Überprüfung des Dateisystems dauert bis zu 1,5 Stunden!"
 
 #: harddisk.h:805
 msgid ""
 "Are you sure you want to check this Partition?\n"
 "Box reboots after check"
 msgstr ""
-"Wollen Sie die ausgewÃ¤hlte Partition Ã¼berprÃ¼fen?\n"
-"Der Receiver wird anschlieÃŸend neu gestartet."
+"Wollen Sie die ausgewählte Partition überprüfen?\n"
+"Der Receiver wird anschließend neu gestartet."
 
 #: harddisk.h:867 harddisk.h:868
 msgid "Harddisk Sleep"
@@ -1748,12 +1748,12 @@ msgid ""
 "You can configure it in Harddisk Menu."
 msgstr ""
 "Eine neue Festplatte/USB Speicher wurde gefunden.\n"
-"Sie kÃ¶nnen es im Festplatten MenÃ¼ einrichten."
+"Sie können es im Festplatten Menü einrichten."
 
 #: hbbtv.h:362
 msgid "You can leave HBBTV with Record Key."
 msgstr ""
-"Sie kÃ¶nnen das HBBTV durch BetÃ¤tigung der -RECORD- Taste auf Ihrer "
+"Sie können das HBBTV durch Betätigung der -RECORD- Taste auf Ihrer "
 "Fernbedienung beenden."
 
 #: hbbtv.h:742
@@ -1768,7 +1768,7 @@ msgstr "FEHLER: Testtransponder nicht gefunden!"
 msgid "testtransponder entry not ok"
 msgstr ""
 "FEHLER: Testtransponder fehlerhaft!\n"
-"Bitte Ã¼berprÃ¼fen Sie Ihre Angaben!"
+"Bitte überprüfen Sie Ihre Angaben!"
 
 #: hwtest.h:98
 msgid "can't create new transponer"
@@ -1782,7 +1782,7 @@ msgstr "FEHLER: Testsender nicht gefunden!"
 msgid "testchannel entry not ok"
 msgstr ""
 "FEHLER: Testsender-Eintrag ist fehlerhaft.\n"
-"Bitte Ã¼berprÃ¼fen Sie Ihre Angaben!"
+"Bitte überprüfen Sie Ihre Angaben!"
 
 #: hwtest.h:113
 msgid "can't create new channel"
@@ -1837,7 +1837,7 @@ msgstr ""
 
 #: hwtest.h:186 hwtest.h:639
 msgid "Flash/Nand Check"
-msgstr "Flash/Nand prÃ¼fen"
+msgstr "Flash/Nand prüfen"
 
 #: hwtest.h:190
 msgid "Hardware Test"
@@ -1845,7 +1845,7 @@ msgstr ""
 
 #: hwtest.h:206
 msgid "Press OK or EXIT"
-msgstr "DrÃ¼cken Sie bitte -OK- oder -EXIT-"
+msgstr "Drücken Sie bitte -OK- oder -EXIT-"
 
 #: hwtest.h:245
 msgid "Press Front Key"
@@ -1861,7 +1861,7 @@ msgstr "Rote Taste"
 
 #: hwtest.h:284
 msgid "GREEN"
-msgstr "-GRÃœN-"
+msgstr "-GRÜN-"
 
 #: hwtest.h:289
 msgid "BLUE"
@@ -1889,7 +1889,7 @@ msgstr "Smartcard Port gefunden: "
 
 #: hwtest.h:427
 msgid "USB Ports found: "
-msgstr "USB AnschluÃŸ gefunden: "
+msgstr "USB Anschluß gefunden: "
 
 #: hwtest.h:438 hwtest.h:451
 msgid "USB "
@@ -1913,11 +1913,11 @@ msgstr "CI-MODUL gefunden "
 
 #: hwtest.h:564
 msgid "SUCESS Serial Port"
-msgstr "Serieller AnschluÃŸ erfolgreich"
+msgstr "Serieller Anschluß erfolgreich"
 
 #: hwtest.h:566
 msgid "FAIL Serial Port"
-msgstr "Serieller AnschluÃŸ fehlerhaft"
+msgstr "Serieller Anschluß fehlerhaft"
 
 #: hwtest.h:578
 msgid "LNB off / 22K off: OK"
@@ -1981,7 +1981,7 @@ msgid ""
 "Please check your config."
 msgstr ""
 "FEHLER: DYNDNS nicht gestartet!\n"
-"Bitte Ã¼berprÃ¼fen Sie Ihre Eingaben."
+"Bitte überprüfen Sie Ihre Eingaben."
 
 #: inadyn.h:200
 msgid "DYNDNS now stopped"
@@ -1994,7 +1994,7 @@ msgid ""
 "\n"
 "Board-ID SerialNr:"
 msgstr ""
-"FÃ¼r die nÃ¤chste Online Aktualisierung Ã¼bermitteln Sie bitte Ihre "
+"Für die nächste Online Aktualisierung übermitteln Sie bitte Ihre "
 "Seriennummer\n"
 "Ihre Atemio Seriennumer\n"
 "und Ihre Board-ID Seriennummer:"
@@ -2027,7 +2027,7 @@ msgstr "Pluginliste"
 
 #: keyactions.h:22 settings_pluginbutton.h:13 settings_redbutton.h:13
 msgid "Auto Resolution"
-msgstr "Automatische AuflÃ¶sung"
+msgstr "Automatische Auflösung"
 
 #: keyactions.h:23 settings_bluebutton.h:12 settings_bluebutton.h:43
 #: settings_pluginbutton.h:16 settings_redbutton.h:16
@@ -2080,7 +2080,7 @@ msgstr ""
 msgid "Change language needs reboot"
 msgstr ""
 "ACHTUNG:\n"
-"Ã„nderung der Spracheinstellung\n"
+"Änderung der Spracheinstellung\n"
 "erfordert einen Neustart!"
 
 #: lnbconfig.h:137 skin_default_skin.xml.h:448
@@ -2159,7 +2159,7 @@ msgstr "Dateilisten Modus"
 #: mc_pictureplayer.h:316 mc_videoplayer.h:658 plugins_mc_skin.xml.h:47
 #: skins_mc_skin.xml.h:47
 msgid "Random"
-msgstr "ZufÃ¤llig"
+msgstr "Zufällig"
 
 #: mc_audioplayer.h:580 mc_pictureplayer.h:336 mc_videoplayer.h:699
 msgid "Playlist-Mode"
@@ -2169,7 +2169,7 @@ msgstr "Wiedergabelisten Modus"
 #: mc_videoplayer_settings.h:32 plugins_mc_skin.xml.h:14
 #: skins_mc_skin.xml.h:14
 msgid "big"
-msgstr "groÃŸ"
+msgstr "groß"
 
 #: mc_audioplayer_settings.h:37 mc_pictureplayer_settings.h:52
 #: mc_videoplayer_settings.h:33
@@ -2184,7 +2184,7 @@ msgstr "Vollbildansicht"
 #: mc_audioplayer_settings.h:39 mc_pictureplayer_settings.h:54
 #: mc_videoplayer_settings.h:35
 msgid "size (default)"
-msgstr "GrÃ¶ÃŸe (Standard)"
+msgstr "Größe (Standard)"
 
 #: mc_audioplayer_settings.h:40 mc_pictureplayer_settings.h:55
 #: mc_videoplayer_settings.h:36
@@ -2193,7 +2193,7 @@ msgstr "Datum/Uhrzeit"
 
 #: mc_dateibrowser.h:38
 msgid "Install File Manager Tpk first !"
-msgstr "ACHTUNG: Sie mÃ¼ssen erst das Plugin 'Filemanager' installieren!"
+msgstr "ACHTUNG: Sie müssen erst das Plugin 'Filemanager' installieren!"
 
 #: mc_global.h:270 mc_global.h:338 mc_global.h:413 mc_global.h:700
 #: mc_global.h:934 mc_global.h:949 plugins_mc_skin.xml.h:45
@@ -2203,7 +2203,7 @@ msgstr ""
 
 #: mc_global.h:547 mc_global.h:575 mc_global.h:1074
 msgid "Random-On"
-msgstr "ZufÃ¤llig-An"
+msgstr "Zufällig-An"
 
 #: mc_global.h:606 mc_global.h:615
 msgid "Load Playlist"
@@ -2216,33 +2216,33 @@ msgstr "Playliste bearbeiten"
 #: mc_internetbrowser.h:38
 msgid "Install netsurf Internetbrowser Tpk first !"
 msgstr ""
-"ACHTUNG: Sie mÃ¼ssen erst das Plugin 'Netsurf Internetbrowser' installieren!"
+"ACHTUNG: Sie müssen erst das Plugin 'Netsurf Internetbrowser' installieren!"
 
 #: mc_main.h:37 mc_main.h:42 mc_main.h:47 mc_main.h:73 mc_main.h:78
 msgid "comming soon"
-msgstr "Folgt in KÃ¼rze!"
+msgstr "Folgt in Kürze!"
 
 #: mc_main.h:209 menu.h:153 panel_main.h:29 panel_main.h:135
 msgid "Menu not implemented !"
-msgstr "ACHTUNG: MenÃ¼ nicht verfÃ¼gbar!"
+msgstr "ACHTUNG: Menü nicht verfügbar!"
 
 #: mc_mediathek.h:37
 msgid "Install Tithek Tpk first !"
-msgstr "ACHTUNG: Sie mÃ¼ssen erst das Plugin 'Tithek' installieren!"
+msgstr "ACHTUNG: Sie müssen erst das Plugin 'Tithek' installieren!"
 
 #: mc_pictureplayer_settings.h:29 panel_settings_autostart.h:60
 #: panel_settings_autostart.h:132 settings_autostart.h:51
 #: settings_autostart.h:163
 msgid "low"
-msgstr "niedrige QualitÃ¤t"
+msgstr "niedrige Qualität"
 
 #: mc_pictureplayer_settings.h:30 moduleconfig.h:247
 msgid "middle"
-msgstr "mittlere QualitÃ¤t"
+msgstr "mittlere Qualität"
 
 #: mc_pictureplayer_settings.h:31
 msgid "best"
-msgstr "beste QualitÃ¤t"
+msgstr "beste Qualität"
 
 #: mc_pictureplayer_settings.h:59 mc_pictureplayer_settings.h:65
 #: skin_default_skin.xml.h:330
@@ -2263,7 +2263,7 @@ msgstr ""
 
 #: mc_pictureplayer_settings.h:63
 msgid "Antenne Kaernten"
-msgstr "Antenne KÃ¤rnten"
+msgstr "Antenne Kärnten"
 
 #: mc_pictureplayer_settings.h:64
 msgid "Onkelz Rock Radio"
@@ -2313,23 +2313,23 @@ msgstr "5s (Standard)"
 
 #: mc_wetterinfo.h:38
 msgid "Install Weather Tpk first !"
-msgstr "ACHTUNG: Sie mÃ¼ssen erst das Plugin 'Wetter' installieren!"
+msgstr "ACHTUNG: Sie müssen erst das Plugin 'Wetter' installieren!"
 
 #: mediadbedit.h:75
 msgid "unlock -> lock it"
-msgstr "UngeschÃ¼tzt --> SchÃ¼tzen"
+msgstr "Ungeschützt --> Schützen"
 
 #: mediadbedit.h:76
 msgid "unlock -> leaf unlock"
-msgstr "UngeschÃ¼tzt --> Nicht Ã¤ndern"
+msgstr "Ungeschützt --> Nicht ändern"
 
 #: mediadbedit.h:77
 msgid "locked -> unlock it"
-msgstr "GeschÃ¼tzt --> Schutz aufheben"
+msgstr "Geschützt --> Schutz aufheben"
 
 #: mediadbedit.h:78
 msgid "locked -> leaf locked"
-msgstr "GeschÃ¼tzt --> Nicht Ã¤ndern"
+msgstr "Geschützt --> Nicht ändern"
 
 #: mediadbedit.h:333
 msgid "MediaDB entry for this file not found."
@@ -2341,11 +2341,11 @@ msgstr "MediaDB Hintergrundsuche wurde gestartet."
 
 #: mediadb.h:1080 play.h:557 skin_default_skin.xml.h:172
 msgid "Delete MediaDB before scan"
-msgstr "MediaDB Eintrag vor der Suche lÃ¶schen"
+msgstr "MediaDB Eintrag vor der Suche löschen"
 
 #: mediadb.h:1087 play.h:564 skin_default_skin.xml.h:173
 msgid "Delete unused entrys before scan"
-msgstr "LÃ¶sche ungenutze EintrÃ¤ge vor der Suche"
+msgstr "Lösche ungenutze Einträge vor der Suche"
 
 #: mediadb.h:1094 play.h:571
 msgid "scan Directory"
@@ -2361,7 +2361,7 @@ msgstr ""
 
 #: mediadb.h:1109 play.h:586 skin_default_skin.xml.h:100
 msgid "Backdrop Download Count"
-msgstr "ZÃ¤hler zurÃ¼cksetzen"
+msgstr "Zähler zurücksetzen"
 
 #: mediadb.h:1112 mediadbsettings.h:55 play.h:589 plugins_mc_skin.xml.h:6
 #: skins_mc_skin.xml.h:6 tmc.h:539
@@ -2390,51 +2390,51 @@ msgstr "IMDBID"
 
 #: mediadb.h:2454
 msgid "Add iMDB manuel"
-msgstr "IMDB manuell hinzufÃ¼gen"
+msgstr "IMDB manuell hinzufügen"
 
 #: mediadbsettings.h:37
 msgid "older 1 day"
-msgstr "Ã¤lter als 1 Tag"
+msgstr "älter als 1 Tag"
 
 #: mediadbsettings.h:38
 msgid "older 2 day"
-msgstr "Ã¤lter als 2 Tage"
+msgstr "älter als 2 Tage"
 
 #: mediadbsettings.h:39
 msgid "older 3 day"
-msgstr "Ã¤lter als 3 Tage"
+msgstr "älter als 3 Tage"
 
 #: mediadbsettings.h:40
 msgid "older 4 day"
-msgstr "Ã¤lter als 4 Tage"
+msgstr "älter als 4 Tage"
 
 #: mediadbsettings.h:41
 msgid "older 5 day"
-msgstr "Ã¤lter als 5 Tage"
+msgstr "älter als 5 Tage"
 
 #: mediadbsettings.h:42
 msgid "older 10 day"
-msgstr "Ã¤lter als 10 Tage"
+msgstr "älter als 10 Tage"
 
 #: mediadbsettings.h:43
 msgid "older 15 day"
-msgstr "Ã¤lter als 15 Tage"
+msgstr "älter als 15 Tage"
 
 #: mediadbsettings.h:44
 msgid "older 20 day"
-msgstr "Ã¤lter als 20 Tage"
+msgstr "älter als 20 Tage"
 
 #: mediadbsettings.h:45
 msgid "older 30 day"
-msgstr "Ã¤lter als 30 Tage"
+msgstr "älter als 30 Tage"
 
 #: mediadbsettings.h:46
 msgid "older 40 day"
-msgstr "Ã¤lter als 40 Tage"
+msgstr "älter als 40 Tage"
 
 #: mediadbsettings.h:47
 msgid "older 50 day"
-msgstr "Ã¤lter als 50 Tage"
+msgstr "älter als 50 Tage"
 
 #: mediadbsettings.h:56 plugins_catcatch_skin.xml.h:3
 #: skin_default_skin.xml.h:33 skins_catcatch_skin.xml.h:3
@@ -2459,7 +2459,7 @@ msgid ""
 "Press OK to create it"
 msgstr ""
 "ACHTUNG: Kein MediaDB Verzeichnis gefunden!\n"
-"DrÃ¼cken Sie auf -OK- um ein Verzeichnis anzulegen."
+"Drücken Sie auf -OK- um ein Verzeichnis anzulegen."
 
 #: menu.h:884 menu.h:886 skin_default_skin.xml.h:531
 msgid "Save Settings"
@@ -2537,7 +2537,7 @@ msgstr "Mutil EPG - Alle Sender"
 msgid ""
 "For Better Win7 Support install please Tpk Install > Network > Smbclient"
 msgstr ""
-"ACHTUNG: FÃ¼r eine bessere KompatibilitÃ¤t mit Windows 7\n"
+"ACHTUNG: Für eine bessere Kompatibilität mit Windows 7\n"
 "installieren Sie erst das Plugin 'SMB-Client'!"
 
 #: networkbrowser.h:1005 networkbrowser.h:1011 networkbrowser.h:1021
@@ -2570,15 +2570,15 @@ msgstr "Netzwerkbrowser - Anzeige der CIFS/NFS Freigaben"
 
 #: networkbrowser.h:1340
 msgid "Add Cifs Network Share"
-msgstr "CIFS Netzwerkfreigabe hinzufÃ¼gen"
+msgstr "CIFS Netzwerkfreigabe hinzufügen"
 
 #: networkbrowser.h:1390
 msgid "Add Nfs Network Share"
-msgstr "NFS Netzwerkfreigabe hinzufÃ¼gen"
+msgstr "NFS Netzwerkfreigabe hinzufügen"
 
 #: networkbrowser.h:1430
 msgid "Add Ftpfs Network Share"
-msgstr "FTPFS Netzwerkfreigabe hinzufÃ¼gen"
+msgstr "FTPFS Netzwerkfreigabe hinzufügen"
 
 #: networkbrowser.h:1559
 msgid "cifs"
@@ -2631,7 +2631,7 @@ msgstr "Lese/Schreibzugriff"
 
 #: networkbrowser.h:1664
 msgid "ro"
-msgstr "SchreibgeschÃ¼tzt"
+msgstr "Schreibgeschützt"
 
 #: networkbrowser.h:1743
 msgid "Sharename can't be empty!"
@@ -2663,7 +2663,7 @@ msgstr "FEHLER"
 
 #: network.h:284
 msgid "comming soon..."
-msgstr "Folgt in KÃ¼rze"
+msgstr "Folgt in Kürze"
 
 #: network.h:295
 msgid "Restart Network ?"
@@ -2691,7 +2691,7 @@ msgstr "Einstellungen speichern?"
 
 #: network.h:558
 msgid "Can't change hostname !"
-msgstr "FEHLER: Hostname kann nicht geÃ¤ndert werden!"
+msgstr "FEHLER: Hostname kann nicht geändert werden!"
 
 #: network.h:679
 msgid "NONE"
@@ -2723,7 +2723,7 @@ msgid ""
 " You can now configure the new interface."
 msgstr ""
 "WLAN erfolgreich gestartet.\n"
-"Sie kÃ¶nnen die Schnittstelle jetzt konfigurieren."
+"Sie können die Schnittstelle jetzt konfigurieren."
 
 #: network.h:804
 msgid ""
@@ -2731,7 +2731,7 @@ msgid ""
 "Please check your config."
 msgstr ""
 "FEHLER: WLAN nicht gestartet!\n"
-"ÃœberprÃ¼fen Sie Ihre Einstellungen."
+"Überprüfen Sie Ihre Einstellungen."
 
 #: network.h:827
 msgid "searching..."
@@ -2747,19 +2747,19 @@ msgstr "WLAN Log"
 
 #: network.h:876
 msgid "Found Wlan Stick and driver for: "
-msgstr "WLAN GerÃ¤t und Treiber wurden gefunden:"
+msgstr "WLAN Gerät und Treiber wurden gefunden:"
 
 #: network.h:881
 msgid ""
 "Found Wlan Stick but no driver\n"
 "Please install driver: "
 msgstr ""
-"ACHTUNG: WLAN GerÃ¤t gefunden.\n"
+"ACHTUNG: WLAN Gerät gefunden.\n"
 "Bitte installieren Sie den passenden Treiber!"
 
 #: network.h:884
 msgid "Wlan Stick not found"
-msgstr "FEHLER: WLAN GerÃ¤t nicht gefunden!"
+msgstr "FEHLER: WLAN Gerät nicht gefunden!"
 
 #: network.h:887
 msgid "WLAN Info"
@@ -2771,7 +2771,7 @@ msgstr "halten"
 
 #: optimize.h:254 skin_default_skin.xml.h:170
 msgid "delete"
-msgstr "lÃ¶schen"
+msgstr "löschen"
 
 #: optimize.h:264
 msgid "SatCount: "
@@ -2791,7 +2791,7 @@ msgstr "Favoriten: "
 
 #: optimize.h:296
 msgid "BouquetEntrys: "
-msgstr "Favoriten EintrÃ¤ge: "
+msgstr "Favoriten Einträge: "
 
 #: optimize.h:304
 msgid "EpgChannels: "
@@ -2807,7 +2807,7 @@ msgstr "Autostart"
 
 #: panel_settings_autostart.h:34 settings_autostart.h:25
 msgid "fsckroot"
-msgstr "ROOT-Dateisystem prÃ¼fen"
+msgstr "ROOT-Dateisystem prüfen"
 
 #: panel_settings_autostart.h:44 settings_autostart.h:35
 msgid "bootstop"
@@ -2852,7 +2852,7 @@ msgstr "FEHLER: Audiosync fehlgeschlagen"
 
 #: panel_settings_autostart.h:131 settings_autostart.h:162
 msgid "Boot Resolution"
-msgstr "Boot-AuflÃ¶sung"
+msgstr "Boot-Auflösung"
 
 #: panel_settings_autostart.h:140 settings_autostart.h:171
 msgid "Bootlogo"
@@ -2884,7 +2884,7 @@ msgstr "Lade Partition"
 
 #: panel_settings_autostart.h:201 settings_autostart.h:282
 msgid "Fsck Record"
-msgstr "Record-Dateisystem prÃ¼fen"
+msgstr "Record-Dateisystem prüfen"
 
 #: panel_settings_autostart.h:210 settings_autostart.h:291
 #: skin_default_skin.xml.h:618
@@ -2893,11 +2893,11 @@ msgstr ""
 
 #: panel_settings_autostart.h:219 settings_autostart.h:300
 msgid "Swap Size"
-msgstr "Swap GrÃ¶ÃŸe"
+msgstr "Swap Größe"
 
 #: panel_settings_autostart.h:236 settings_autostart.h:317
 msgid "Fsck Swap"
-msgstr "Swap-Dateisystem prÃ¼fen"
+msgstr "Swap-Dateisystem prüfen"
 
 #: panel_settings_autostart.h:245 settings_autostart.h:326
 msgid "Record Max Sectors"
@@ -2969,7 +2969,7 @@ msgstr "NTFS Einbindung"
 
 #: panel_settings_overclocking.h:213 settings_overclocking.h:213
 msgid "Only Boot Overclock"
-msgstr "Ãœbertakten nur bei Bootvorgang"
+msgstr "Übertakten nur bei Bootvorgang"
 
 #: panel_settings_overclocking.h:222 settings_overclocking.h:222
 msgid "CPU frequency"
@@ -3005,8 +3005,8 @@ msgid ""
 "Do you really want to start the Wizard?\n"
 "The Box will reboot and the Wizard will be started!"
 msgstr ""
-"ACHTUNG: Soll der Assistent ausgefÃ¼hrt werden?\n"
-"Ihr Reciever wird zum AusfÃ¼hren neugestartet."
+"ACHTUNG: Soll der Assistent ausgeführt werden?\n"
+"Ihr Reciever wird zum Ausführen neugestartet."
 
 #: play.h:396 play.h:430 plugins_imdbapi_skin.xml.h:9
 #: plugins_imdb_skin.xml.h:9 plugins_tmc_skin.xml.h:16
@@ -3169,7 +3169,7 @@ msgstr "Bearbeiten"
 
 #: play.h:645
 msgid "Delete File"
-msgstr "Datei lÃ¶schen"
+msgstr "Datei löschen"
 
 #: play.h:647 plugins_streaminfo_skin.xml.h:3 skins_streaminfo_skin.xml.h:3
 #: tpk_showname.h:174
@@ -3198,18 +3198,18 @@ msgstr ""
 
 #: play.h:1295
 msgid "Record in progress"
-msgstr "Aufnahme lÃ¤uft"
+msgstr "Aufnahme läuft"
 
 #: play.h:1296
 msgid "Really Delete ?"
-msgstr "ACHTUNG: Wirklich lÃ¶schen?"
+msgstr "ACHTUNG: Wirklich löschen?"
 
 #: play.h:1417 plugins_networkbrowser_skin.xml.h:5 plugins_stock_skin.xml.h:4
 #: plugins_weather_skin.xml.h:2 skin_default_skin.xml.h:168
 #: skins_networkbrowser_skin.xml.h:5 skins_stock_skin.xml.h:4
 #: skins_weather_skin.xml.h:2
 msgid "DEL"
-msgstr "LÃ¶schen"
+msgstr "Löschen"
 
 #: play.h:1649
 msgid "Marker autoseek is started"
@@ -3225,7 +3225,7 @@ msgstr "Einstellungen"
 
 #: plugins_autotimer_skin.xml.h:2 skins_autotimer_skin.xml.h:2
 msgid "afterevent"
-msgstr "AnschlieÃŸend"
+msgstr "Anschließend"
 
 #: plugins_autotimer_skin.xml.h:3 skins_autotimer_skin.xml.h:3
 msgid "begin search"
@@ -3431,7 +3431,7 @@ msgid ""
 "Enter the shown url in your browser and enter the Code to register the "
 "receiver to facebook"
 msgstr ""
-"Geben Sie den angezeigten Code Ã¼ber die dargestellte Adresse in Ihrem "
+"Geben Sie den angezeigten Code über die dargestellte Adresse in Ihrem "
 "Browser ein und registrieren Sie Ihren Receiver."
 
 #: plugins_filemanager_skin.xml.h:1 skins_filemanager_skin.xml.h:1
@@ -3441,7 +3441,7 @@ msgstr "kopieren"
 #: plugins_filemanager_skin.xml.h:2 plugins_tmc_skin.xml.h:3
 #: skins_filemanager_skin.xml.h:2 skins_tmc_skin.xml.h:3
 msgid "Delete"
-msgstr "lÃ¶schen"
+msgstr "löschen"
 
 #: plugins_filemanager_skin.xml.h:3 skins_filemanager_skin.xml.h:3
 msgid "FILELIST MANAGER"
@@ -3483,7 +3483,7 @@ msgstr "Handlung:"
 #: skins_imdbapi_skin.xml.h:6 skins_imdb_skin.xml.h:6 skins_tmc_skin.xml.h:13
 #: skins_tmdb_skin.xml.h:6
 msgid "Release:"
-msgstr "VerÃ¶ffentlicht:"
+msgstr "Veröffentlicht:"
 
 #: plugins_imdbapi_skin.xml.h:7 plugins_imdb_skin.xml.h:7
 #: plugins_instar_skin.xml.h:15 plugins_panel_skin.xml.h:21
@@ -3580,7 +3580,7 @@ msgstr "Im Standby aktiv"
 #: plugins_lcdpearl1_skin.xml.h:5 plugins_lcdsamsung_skin.xml.h:5
 #: skins_lcdpearl1_skin.xml.h:5 skins_lcdsamsung_skin.xml.h:5
 msgid "alle Menus anzeigen"
-msgstr "Alle MenÃ¼s anzeigen"
+msgstr "Alle Menüs anzeigen"
 
 #: plugins_lcdpearl1_skin.xml.h:6 skins_lcdpearl1_skin.xml.h:6
 msgid "Auswahl"
@@ -3668,7 +3668,7 @@ msgstr "Hintergrund Bilderwechsel Interval"
 
 #: plugins_mc_skin.xml.h:15 skins_mc_skin.xml.h:15
 msgid "Choice Menu"
-msgstr "AuswahlmenÃ¼"
+msgstr "Auswahlmenü"
 
 #: plugins_mc_skin.xml.h:17 skins_mc_skin.xml.h:17
 msgid "Datei Browser"
@@ -3735,7 +3735,7 @@ msgstr "Hardwarebilddecoder"
 
 #: plugins_mc_skin.xml.h:41 skins_mc_skin.xml.h:41
 msgid "Pic quality"
-msgstr "DarstellungsqualitÃ¤t von Fotos"
+msgstr "Darstellungsqualität von Fotos"
 
 #: plugins_mc_skin.xml.h:42 skin_default_skin.xml.h:429 skins_mc_skin.xml.h:42
 msgid "PICTURE"
@@ -3821,7 +3821,7 @@ msgstr "Web Radio"
 #: skins_networkbrowser_skin.xml.h:1 skins_stock_skin.xml.h:2
 #: skins_weather_skin.xml.h:1
 msgid "ADD"
-msgstr "HinzufÃ¼gen"
+msgstr "Hinzufügen"
 
 #: plugins_networkbrowser_skin.xml.h:2 skins_networkbrowser_skin.xml.h:2
 msgid "Auth Settings"
@@ -3852,7 +3852,7 @@ msgid ""
 "Here you can configure your Auth Data. Use to navigate the control cross and "
 "the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier kÃ¶nnen Sie Ihre User Authentifizierung konfigurieren.\n"
+"Hier können Sie Ihre User Authentifizierung konfigurieren.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -3861,7 +3861,7 @@ msgid ""
 "Here you can configure your network shares. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier kÃ¶nnen Sie Ihre Netzwerk Freigaben konfigurieren.\n"
+"Hier können Sie Ihre Netzwerk Freigaben konfigurieren.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -3870,7 +3870,7 @@ msgid ""
 "If you don't find Windows shares you need to disable 'Password protected "
 "sharing' in the 'Network and Sharing Center'."
 msgstr ""
-"Sollten keine Windows Freigaben sichtbar sein, muss 'KennwortgeschÃ¼tzte "
+"Sollten keine Windows Freigaben sichtbar sein, muss 'Kennwortgeschützte "
 "Freigaben' im 'Netzwerk- und Freigabecenter' abgeschaltet werden."
 
 #: plugins_networkbrowser_skin.xml.h:13 skin_default_skin.xml.h:325
@@ -3905,7 +3905,7 @@ msgstr "Proxy Authentifizierung"
 
 #: plugins_networkbrowser_skin.xml.h:20 skins_networkbrowser_skin.xml.h:20
 msgid "proxyip"
-msgstr "IP fÃ¼r Proxyserver"
+msgstr "IP für Proxyserver"
 
 #: plugins_networkbrowser_skin.xml.h:21 skins_networkbrowser_skin.xml.h:21
 msgid "proxypass"
@@ -3917,11 +3917,11 @@ msgstr "Port des Proxyservers"
 
 #: plugins_networkbrowser_skin.xml.h:23 skins_networkbrowser_skin.xml.h:23
 msgid "proxyuser"
-msgstr "Benutzername fÃ¼r Proxyserver"
+msgstr "Benutzername für Proxyserver"
 
 #: plugins_networkbrowser_skin.xml.h:24 skins_networkbrowser_skin.xml.h:24
 msgid "rsize"
-msgstr "Lese PuffergrÃ¶ÃŸe"
+msgstr "Lese Puffergröße"
 
 #: plugins_networkbrowser_skin.xml.h:26 skins_networkbrowser_skin.xml.h:26
 msgid "sharedir"
@@ -3963,7 +3963,7 @@ msgstr "SSL Nutzen"
 
 #: plugins_networkbrowser_skin.xml.h:36 skins_networkbrowser_skin.xml.h:36
 msgid "wsize"
-msgstr "Schreib PuffergrÃ¶ÃŸe"
+msgstr "Schreib Puffergröße"
 
 #: plugins_news_skin.xml.h:1 skins_news_skin.xml.h:1 tpk_showname.h:70
 msgid "News"
@@ -3976,7 +3976,7 @@ msgstr ""
 
 #: plugins_news_skin.xml.h:3 skins_news_skin.xml.h:3
 msgid "NEXT"
-msgstr "NÃ¤chster"
+msgstr "Nächster"
 
 #: plugins_news_skin.xml.h:4 skins_news_skin.xml.h:4
 msgid "PREV"
@@ -4006,11 +4006,11 @@ msgstr ""
 #: plugins_panel_skin.xml.h:2 skin_default_skin.xml.h:223
 #: skins_panel_skin.xml.h:2
 msgid "FanControl"
-msgstr "LÃ¼ftersteuerung"
+msgstr "Lüftersteuerung"
 
 #: plugins_panel_skin.xml.h:3 skins_panel_skin.xml.h:3
 msgid "OverClock Settings"
-msgstr "Ãœbertakten"
+msgstr "Übertakten"
 
 #: plugins_panel_skin.xml.h:4 skins_panel_skin.xml.h:4 tpk_showname.h:81
 msgid "Panel"
@@ -4056,12 +4056,12 @@ msgstr "Werkseinstellung"
 
 #: plugins_panel_skin.xml.h:16 skins_panel_skin.xml.h:16
 msgid "Fancontrol"
-msgstr "LÃ¼ftersteuerung"
+msgstr "Lüftersteuerung"
 
 #: plugins_panel_skin.xml.h:19 skin_default_skin.xml.h:422
 #: skins_panel_skin.xml.h:19
 msgid "Overclocking"
-msgstr "Ãœbertakten"
+msgstr "Übertakten"
 
 #: plugins_panel_skin.xml.h:20 skins_panel_skin.xml.h:20
 msgid "Save"
@@ -4080,7 +4080,7 @@ msgstr ""
 #: plugins_panel_skin.xml.h:25 skin_default_skin.xml.h:700
 #: skins_panel_skin.xml.h:25
 msgid "Usb Device"
-msgstr "USB GerÃ¤te"
+msgstr "USB Geräte"
 
 #: plugins_panel_skin.xml.h:26 skins_panel_skin.xml.h:26
 msgid "Videotune"
@@ -4092,7 +4092,7 @@ msgstr "Assistent"
 
 #: plugins_readerconfig_skin.xml.h:1 skins_readerconfig_skin.xml.h:1
 msgid "Device"
-msgstr "GerÃ¤t"
+msgstr "Gerät"
 
 #: plugins_readerconfig_skin.xml.h:2 skins_readerconfig_skin.xml.h:2
 msgid "Dvbapi"
@@ -4107,7 +4107,7 @@ msgid ""
 "Here you can aktivate/deaktivate you readers. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier kÃ¶nnen Sie ihren Reader aktivieren bzw. deaktivieren.\n"
+"Hier können Sie ihren Reader aktivieren bzw. deaktivieren.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -4116,7 +4116,7 @@ msgid ""
 "Here you can configure your reader. Use to navigate the control cross and "
 "the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier kÃ¶nnen Sie Ihre Reader auswÃ¤hlen.\n"
+"Hier können Sie Ihre Reader auswählen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -4187,7 +4187,7 @@ msgstr "Zeit bis Abschaltung (min)"
 #: plugins_streaminfo_skin.xml.h:1 skin_default_skin.xml.h:76
 #: skins_streaminfo_skin.xml.h:1
 msgid "Aspect"
-msgstr "SeitenverhÃ¤ltnis"
+msgstr "Seitenverhältnis"
 
 #: plugins_streaminfo_skin.xml.h:2 skins_streaminfo_skin.xml.h:2
 msgid "Framerate"
@@ -4195,15 +4195,15 @@ msgstr "Bildfrequenz"
 
 #: plugins_streaminfo_skin.xml.h:4 skins_streaminfo_skin.xml.h:4
 msgid "X-Resolution"
-msgstr "X-AuflÃ¶sung"
+msgstr "X-Auflösung"
 
 #: plugins_streaminfo_skin.xml.h:5 skins_streaminfo_skin.xml.h:5
 msgid "Y-Resolution"
-msgstr "Y-AuflÃ¶sung"
+msgstr "Y-Auflösung"
 
 #: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1
 msgid "TiThek Menu"
-msgstr "tiThek MenÃ¼"
+msgstr "tiThek Menü"
 
 #: plugins_tithek_skin.xml.h:2 skins_tithek_skin.xml.h:2
 msgid "TiThek Settings"
@@ -4211,7 +4211,7 @@ msgstr "tiThek"
 
 #: plugins_tithek_skin.xml.h:3 skins_tithek_skin.xml.h:3
 msgid "ADD FAV"
-msgstr "HinzufÃ¼gen"
+msgstr "Hinzufügen"
 
 #: plugins_tithek_skin.xml.h:4 skins_tithek_skin.xml.h:4
 msgid "DEL FAV"
@@ -4237,7 +4237,7 @@ msgstr "Bitte warten"
 #: plugins_tithek_skin.xml.h:9 skin_default_skin.xml.h:488
 #: skins_tithek_skin.xml.h:9
 msgid "Red-Menu"
-msgstr "MenÃ¼"
+msgstr "Menü"
 
 #: plugins_tithek_skin.xml.h:11 skins_tithek_skin.xml.h:11
 msgid "Show Pay Streams"
@@ -4249,7 +4249,7 @@ msgstr "Ansicht Cover (Streams)"
 
 #: plugins_tithek_skin.xml.h:13 skins_tithek_skin.xml.h:13
 msgid "View Sections"
-msgstr "MenÃ¼ Ansicht"
+msgstr "Menü Ansicht"
 
 #: plugins_tiwakeup_skin.xml.h:1 skins_tiwakeup_skin.xml.h:1
 msgid "tiWakeup"
@@ -4330,21 +4330,21 @@ msgstr "Fortschritt"
 
 #: plugins_tsSchnitt_skin.xml.h:5 skins_tsSchnitt_skin.xml.h:5
 msgid "Selected:"
-msgstr "ausgewÃ¤hlt:"
+msgstr "ausgewählt:"
 
 #: plugins_tsSchnitt_skin.xml.h:6 skins_tsSchnitt_skin.xml.h:6
 msgid "select movie"
-msgstr "Filmdatei auswÃ¤hlen"
+msgstr "Filmdatei auswählen"
 
 #: plugins_tsSchnitt_skin.xml.h:8 skins_tsSchnitt_skin.xml.h:8
 msgid ""
 "Start movie in the internal player, set with 0 key marker during a movie. 5 "
 "key is for the marker overview. Then here select movie and start."
 msgstr ""
-"Starten Sie die Wiedergabe der ts Datei im internen Player und drÃ¼cken Sie "
+"Starten Sie die Wiedergabe der ts Datei im internen Player und drücken Sie "
 "die Taste 0 um eine Markierung zu setzen.\n"
-"DrÃ¼cken Sie die Taste 5 um eine Ãœbersicht der Markierungen anzuzeigen und "
-"starten Sie anschlieÃŸend die Wiedergabe."
+"Drücken Sie die Taste 5 um eine Übersicht der Markierungen anzuzeigen und "
+"starten Sie anschließend die Wiedergabe."
 
 #: plugins_tsSchnitt_skin.xml.h:10 skins_tsSchnitt_skin.xml.h:10
 msgid "ts - cut"
@@ -4436,8 +4436,8 @@ msgid ""
 "Position Setup is not allowed if record\n"
 "or stream is running !"
 msgstr ""
-"Position darf wÃ¤hrend einer aktiven Aufnahme oder einer Streamwiedergabe "
-"nicht verÃ¤ndert werden."
+"Position darf während einer aktiven Aufnahme oder einer Streamwiedergabe "
+"nicht verändert werden."
 
 #: powerofftimer.h:117
 msgid "DeepStandby"
@@ -4445,7 +4445,7 @@ msgstr "Ausschalten"
 
 #: putlocker.h:85
 msgid "This file doesn't exist, or has been removed."
-msgstr "Die ausgewÃ¤hlte Datei existiert nicht oder wurde entfernt."
+msgstr "Die ausgewählte Datei existiert nicht oder wurde entfernt."
 
 #: readerconfig.h:258
 msgid "first slot"
@@ -4461,7 +4461,7 @@ msgstr "Config vom Flash (permanent) verwenden"
 
 #: readerconfig.h:319
 msgid "Use config from Flash (temporary)"
-msgstr "Config vom Flash (temporÃ¤r) verwenden"
+msgstr "Config vom Flash (temporär) verwenden"
 
 #: readerconfig.h:328
 msgid "Use config from Stick or HDD"
@@ -4469,7 +4469,7 @@ msgstr "Config vom Stick/HDD verwenden"
 
 #: readerconfig.h:338
 msgid "Choice Config File"
-msgstr "Config File wÃ¤hlen"
+msgstr "Config File wählen"
 
 #: readerconfig.h:343
 msgid "No config file found."
@@ -4521,15 +4521,15 @@ msgstr "FEHLER: Dateiname kann nicht erzeugt werden!"
 
 #: record.h:46
 msgid "Can't open file"
-msgstr "FEHLER: Kann Datei nicht Ã¶ffnen!"
+msgstr "FEHLER: Kann Datei nicht öffnen!"
 
 #: record.h:49
 msgid "Can't open FRONTEND device"
-msgstr "FEHLER: Frontend-GerÃ¤t kann nicht geÃ¶ffnet werden!"
+msgstr "FEHLER: Frontend-Gerät kann nicht geöffnet werden!"
 
 #: record.h:52
 msgid "Can't open DMX device"
-msgstr "FEHLER: Kann DMX GerÃ¤t nicht Ã¶ffnen!"
+msgstr "FEHLER: Kann DMX Gerät nicht öffnen!"
 
 #: record.h:55
 msgid "Pid's not ok"
@@ -4545,11 +4545,11 @@ msgstr "!!! SCHREIBFEHLER !!!"
 
 #: record.h:64
 msgid "No memory"
-msgstr "FEHLER: Kein Speicher verfÃ¼gbar"
+msgstr "FEHLER: Kein Speicher verfügbar"
 
 #: record.h:67
 msgid "Failed open split file"
-msgstr "FEHLER: Teildatei kann nicht geÃ¶ffnet werden"
+msgstr "FEHLER: Teildatei kann nicht geöffnet werden"
 
 #: record.h:70
 msgid "Frontend type unknown"
@@ -4569,7 +4569,7 @@ msgstr "FEHLER: Sender nicht gefunden!"
 
 #: record.h:84
 msgid "No space left on device"
-msgstr "FEHLER: Nicht genÃ¼gend freier Speicher auf Ziellaufwerk!"
+msgstr "FEHLER: Nicht genügend freier Speicher auf Ziellaufwerk!"
 
 #: record.h:90
 msgid "Record / Timeshift / Stream"
@@ -4602,19 +4602,19 @@ msgstr "Aufnahme"
 
 #: record.h:1359 record.h:1368 record.h:1391
 msgid "change"
-msgstr "Ã¤ndern"
+msgstr "ändern"
 
 #: record.h:1377 record.h:1407
 msgid "add recording (stop after current event)"
-msgstr "Aufnahme hinzufÃ¼gen (diese Sendung)"
+msgstr "Aufnahme hinzufügen (diese Sendung)"
 
 #: record.h:1378 record.h:1420
 msgid "add recording (indefinitely)"
-msgstr "Aufnahme hinzufÃ¼gen (unbegrenzt)"
+msgstr "Aufnahme hinzufügen (unbegrenzt)"
 
 #: record.h:1379 record.h:1425
 msgid "add recording (enter duration)"
-msgstr "Aufnahme hinzufÃ¼gen (LÃ¤nge eingeben)"
+msgstr "Aufnahme hinzufügen (Länge eingeben)"
 
 #: record.h:1414
 msgid "Can't get EPG time or EPG endtime not ok"
@@ -4674,11 +4674,11 @@ msgstr "wiederholen"
 
 #: rectimer.h:1052
 msgid "daily"
-msgstr "TÃ¤glich"
+msgstr "Täglich"
 
 #: rectimer.h:1053
 msgid "weekly"
-msgstr "WÃ¶chentlich"
+msgstr "Wöchentlich"
 
 #: rectimer.h:1054
 msgid "workdays"
@@ -4734,7 +4734,7 @@ msgstr "!!! FEHLER !!!"
 
 #: restoredefault.h:10
 msgid "Really restore default settings ?"
-msgstr "Soll auf Werkseinstellung zurÃ¼cksetzt werden?"
+msgstr "Soll auf Werkseinstellung zurücksetzt werden?"
 
 #: restoredefault.h:19
 msgid "Receiver reboots now !!!"
@@ -4742,24 +4742,24 @@ msgstr "Receiver startet jetzt neu!"
 
 #: restoredefault.h:23
 msgid "Can't restore settings"
-msgstr "FEHLER: Wiederherstellung kann nicht durchgefÃ¼hrt werden!"
+msgstr "FEHLER: Wiederherstellung kann nicht durchgeführt werden!"
 
 #: restoredefault.h:32
 msgid ""
 "Do you really want to erase all data and backups from Swap?\n"
 "The Box will reboot and the erase will be started!"
 msgstr ""
-"Internen Swap Speicher lÃ¶schen und Werkseinstellung durchfÃ¼hren?\n"
-"Box neu starten und LÃ¶schvorgang ausfÃ¼hren "
+"Internen Swap Speicher löschen und Werkseinstellung durchführen?\n"
+"Box neu starten und Löschvorgang ausführen "
 
 #: restoredefault.h:47
 msgid ""
 "Do you really want to erase Swap (Settings are preserve)?\n"
 "The Box will reboot and the erase will be started!"
 msgstr ""
-"Wollen Sie wirklich das Swap-Dateisystem lÃ¶schen\n"
+"Wollen Sie wirklich das Swap-Dateisystem löschen\n"
 "Ihre Settings bleiben erhalten.Der Receiver wird neugestartet und das "
-"lÃ¶schen wird durchgefÃ¼hrt."
+"löschen wird durchgeführt."
 
 #: restoredefault.h:63 restoredefault.h:67 restoredefault.h:71
 #: skin_default_skin.xml.h:505
@@ -4776,7 +4776,7 @@ msgstr "Formatiere MNT (komplett)"
 
 #: rgui.h:30
 msgid "Can't connect to server !"
-msgstr "FEHLER: Keine Verbindung zum Server mÃ¶glich!"
+msgstr "FEHLER: Keine Verbindung zum Server möglich!"
 
 #: rgui.h:118
 msgid "Send remote box into standby ?"
@@ -4825,7 +4825,7 @@ msgid ""
 "Nothing found."
 msgstr ""
 "Sendersuchlauf beendet.\n"
-"Es wurden keine KanÃ¤le gefunden."
+"Es wurden keine Kanäle gefunden."
 
 #: scan.h:1600
 msgid "Channel scan ended."
@@ -4873,7 +4873,7 @@ msgstr "automatisch"
 
 #: scan.h:2261
 msgid "Unchanged"
-msgstr "Nicht verÃ¤ndern"
+msgstr "Nicht verändern"
 
 #: scan.h:2262
 msgid "Create new"
@@ -4881,11 +4881,11 @@ msgstr "Neu erstellen"
 
 #: scan.h:2263
 msgid "Delete All"
-msgstr "Alle lÃ¶schen"
+msgstr "Alle löschen"
 
 #: scan.h:2345
 msgid "Transponder changed"
-msgstr "Transponder wurde geÃ¤ndert"
+msgstr "Transponder wurde geändert"
 
 #: scart.h:12
 msgid "Change to scart"
@@ -4893,7 +4893,7 @@ msgstr "Auf SCART-Ausgang wechseln"
 
 #: scart.h:25
 msgid "Videomode must be 576i for Scart"
-msgstr "Die AuflÃ¶sung des SCART-Anschlusses muss auf 576i eingestellt sein!!!"
+msgstr "Die Auflösung des SCART-Anschlusses muss auf 576i eingestellt sein!!!"
 
 #: scconfig.h:42
 msgid "card present"
@@ -4913,7 +4913,7 @@ msgstr "blau"
 
 #: screensaveradjust.h:31
 msgid "green"
-msgstr "grÃ¼n"
+msgstr "grün"
 
 #: screensaveradjust.h:32
 msgid "red"
@@ -4923,7 +4923,7 @@ msgstr "rot"
 msgid "yellow"
 msgstr "gelb"
 
-#: screensaveradjust.h:34 tithek_submenu.h:973
+#: screensaveradjust.h:34 tithek_submenu.h:969
 msgid "white"
 msgstr "weiss"
 
@@ -4977,7 +4977,7 @@ msgstr "Imdb Hintergrund Bilder (Netzwerk/Festplatte)"
 
 #: scriptexec.h:22
 msgid "BG-RUN"
-msgstr "AusfÃ¼hrung im Hintergrund"
+msgstr "Ausführung im Hintergrund"
 
 #: scriptexec.h:40
 msgid "Script has no output or started in background."
@@ -4985,14 +4985,14 @@ msgstr "Skript hat keine Ausgabe oder wurde im Hintergrund gestartet."
 
 #: scriptexec.h:41 tpk_showname.h:144
 msgid "Script execute"
-msgstr "Skript ausfÃ¼hren"
+msgstr "Skript ausführen"
 
 #: service.h:710
 msgid ""
 "Timeshift is running !!!\n"
 "Stop it and switch ?"
 msgstr ""
-"Timeshift lÃ¤uft!!!\n"
+"Timeshift läuft!!!\n"
 "Timeshift beenden und umschalten?"
 
 #: service.h:934
@@ -5003,11 +5003,11 @@ msgstr "Kein freier Tuner gefunden oder kein Tuner definiert."
 
 #: service.h:937
 msgid "Tuning to Channel failed!"
-msgstr "Sender nicht verfÃ¼gbar!"
+msgstr "Sender nicht verfügbar!"
 
 #: service.h:940
 msgid "Can't open frontend dev or Frontend Type unknown!"
-msgstr "Frontend kann nicht geÃ¶ffnet werden oder unbekannter Typ"
+msgstr "Frontend kann nicht geöffnet werden oder unbekannter Typ"
 
 #: service.h:945
 msgid "Channellist empty or corrupt (channel not found)!"
@@ -5019,15 +5019,15 @@ msgstr ""
 
 #: settings_bluebutton.h:6
 msgid "Blue Key Action - Setup"
-msgstr "Blaue Taste - BelegungsmenÃ¼"
+msgstr "Blaue Taste - Belegungsmenü"
 
 #: settings_pluginbutton.h:6
 msgid "Plugin Key Action - Setup"
-msgstr "Plugins Taste - BelegungsmenÃ¼"
+msgstr "Plugins Taste - Belegungsmenü"
 
 #: settings_redbutton.h:6
 msgid "Red Key Action - Setup"
-msgstr "Rote Taste - BelegungsmenÃ¼"
+msgstr "Rote Taste - Belegungsmenü"
 
 #: skinadjust.h:23
 msgid "border"
@@ -5055,7 +5055,7 @@ msgstr "Ja - Anzeige in MB"
 
 #: skinadjust.h:54 tunerconfig.h:302 tunerconfig.h:303
 msgid "press red"
-msgstr "Rote Taste drÃ¼cken"
+msgstr "Rote Taste drücken"
 
 #: skinadjust.h:133
 msgid "Receiver now reboot !!!"
@@ -5219,11 +5219,11 @@ msgstr ""
 
 #: skin_default_skin.xml.h:51
 msgid "About"
-msgstr "Ãœber"
+msgstr "Über"
 
 #: skin_default_skin.xml.h:52
 msgid "AC3 default"
-msgstr "Dolby Digital (AC3) standardmÃ¤ÃŸig"
+msgstr "Dolby Digital (AC3) standardmäßig"
 
 #: skin_default_skin.xml.h:53
 msgid "AC3 Mode"
@@ -5247,19 +5247,19 @@ msgstr "IP Einstellungen"
 
 #: skin_default_skin.xml.h:59
 msgid "ADD ALL"
-msgstr "Alle Sender hinzufÃ¼gen"
+msgstr "Alle Sender hinzufügen"
 
 #: skin_default_skin.xml.h:60
 msgid "ADD BOUQUET"
-msgstr "Favoriten hinzufÃ¼gen"
+msgstr "Favoriten hinzufügen"
 
 #: skin_default_skin.xml.h:61
 msgid "ADD ONE"
-msgstr "Einzeln hinzufÃ¼gen"
+msgstr "Einzeln hinzufügen"
 
 #: skin_default_skin.xml.h:62
 msgid "add service"
-msgstr "Eintrag hinzufÃ¼gen"
+msgstr "Eintrag hinzufügen"
 
 #: skin_default_skin.xml.h:63
 msgid "Adjust"
@@ -5267,11 +5267,11 @@ msgstr "Erweitert"
 
 #: skin_default_skin.xml.h:64
 msgid "ae"
-msgstr "Ã¤"
+msgstr "ä"
 
 #: skin_default_skin.xml.h:65
 msgid "AE"
-msgstr "Ã„"
+msgstr "Ä"
 
 #: skin_default_skin.xml.h:66
 msgid "After EPG Scan"
@@ -5284,8 +5284,8 @@ msgid ""
 "select the sender in the right box and then save it with the red button that "
 "station. If you do not do this and go to exit out the search not saved."
 msgstr ""
-"Nach der manuellen Suche mÃ¼ssen Sie mit -GrÃ¼n- die gefundenen Sender "
-"abspeichern. Um manuell einen Sender hinzuzufÃ¼gen, muss man den Sender im "
+"Nach der manuellen Suche müssen Sie mit -Grün- die gefundenen Sender "
+"abspeichern. Um manuell einen Sender hinzuzufügen, muss man den Sender im "
 "rechten Feld markieren und dann mit -Rot- abspeichern. Exit speichert das "
 "Suchergebnis nicht."
 
@@ -5299,7 +5299,7 @@ msgstr "Altersschutz ab"
 
 #: skin_default_skin.xml.h:70
 msgid "Aktion after"
-msgstr "Aktion anschlieÃŸend"
+msgstr "Aktion anschließend"
 
 #: skin_default_skin.xml.h:71
 msgid "ALL"
@@ -5307,7 +5307,7 @@ msgstr "Alle"
 
 #: skin_default_skin.xml.h:73
 msgid "Animated Screens"
-msgstr "Animierte MenÃ¼s"
+msgstr "Animierte Menüs"
 
 #: skin_default_skin.xml.h:74
 msgid "Animated Speed"
@@ -5319,7 +5319,7 @@ msgstr "Nachfragen bei Senderwechsel"
 
 #: skin_default_skin.xml.h:77
 msgid "Aspect Ratio:"
-msgstr "SeitenverhÃ¤ltnis:"
+msgstr "Seitenverhältnis:"
 
 #: skin_default_skin.xml.h:78
 msgid "Atemio (hotline)"
@@ -5327,7 +5327,7 @@ msgstr "Atemio Hotline"
 
 #: skin_default_skin.xml.h:79
 msgid "Audio delay"
-msgstr "Audio VerzÃ¶gerung"
+msgstr "Audio Verzögerung"
 
 #: skin_default_skin.xml.h:80
 msgid "Audio PID:"
@@ -5343,11 +5343,11 @@ msgstr "Ton/Untertitel"
 
 #: skin_default_skin.xml.h:83
 msgid "Audio Tracks"
-msgstr "Tonspur wÃ¤hlen"
+msgstr "Tonspur wählen"
 
 #: skin_default_skin.xml.h:85
 msgid "Autocheck cam can decrypt"
-msgstr "Automatisch Ã¼berprÃ¼fen, ob Ihr CAM entschlÃ¼sseln kann?"
+msgstr "Automatisch überprüfen, ob Ihr CAM entschlüsseln kann?"
 
 #: skin_default_skin.xml.h:86
 msgid "Automatic Search"
@@ -5359,7 +5359,7 @@ msgstr "Automatischer Untertitel Start"
 
 #: skin_default_skin.xml.h:88
 msgid "Auto resolution"
-msgstr "Automatische AuflÃ¶sung"
+msgstr "Automatische Auflösung"
 
 #: skin_default_skin.xml.h:89
 msgid "Autostart - Audio / Video / Sat"
@@ -5387,7 +5387,7 @@ msgstr "Autostart"
 
 #: skin_default_skin.xml.h:95
 msgid "Autostart - Usb Device"
-msgstr "USB-GerÃ¤t automatisch starten"
+msgstr "USB-Gerät automatisch starten"
 
 #: skin_default_skin.xml.h:96
 msgid "A/V Settings"
@@ -5423,7 +5423,7 @@ msgid ""
 "Before you can see Signal/SNR/Ber you must zap to a channel of the satellite "
 "you are searching."
 msgstr ""
-"Bevor Sie Signal/SNR/Ber sehen kÃ¶nnen, mÃ¼ssen Sie auf einen Sender des "
+"Bevor Sie Signal/SNR/Ber sehen können, müssen Sie auf einen Sender des "
 "Satelliten schalten, den Sie suchen."
 
 #: skin_default_skin.xml.h:106
@@ -5432,7 +5432,7 @@ msgstr "Anfang"
 
 #: skin_default_skin.xml.h:107
 msgid "Behavior at recording"
-msgstr "Anzeige wÃ¤hrend einer Aufnahme"
+msgstr "Anzeige während einer Aufnahme"
 
 #: skin_default_skin.xml.h:108
 msgid "BER:"
@@ -5460,7 +5460,7 @@ msgstr "Favoriten Liste"
 
 #: skin_default_skin.xml.h:114
 msgid "Bouquet Type"
-msgstr "Favoriten EintrÃ¤ge"
+msgstr "Favoriten Einträge"
 
 #: skin_default_skin.xml.h:115
 msgid "Brightness"
@@ -5496,7 +5496,7 @@ msgstr "Sendername automatisch aktualisieren"
 
 #: skin_default_skin.xml.h:126
 msgid "Change Feed"
-msgstr "Feedadresse hinzufÃ¼gen"
+msgstr "Feedadresse hinzufügen"
 
 #: skin_default_skin.xml.h:128
 msgid "Channel Allocation"
@@ -5512,7 +5512,7 @@ msgstr "Sender Verlauf"
 
 #: skin_default_skin.xml.h:131
 msgid "Channellist view"
-msgstr "Nichtempfangbare KanÃ¤le"
+msgstr "Nichtempfangbare Kanäle"
 
 #: skin_default_skin.xml.h:132
 msgid "Channel Search"
@@ -5524,15 +5524,15 @@ msgstr "Sendersuche"
 
 #: skin_default_skin.xml.h:136
 msgid "Clear"
-msgstr "lÃ¶schen"
+msgstr "löschen"
 
 #: skin_default_skin.xml.h:137
 msgid "Clear before scan"
-msgstr "Vor der Suche lÃ¶schen?"
+msgstr "Vor der Suche löschen?"
 
 #: skin_default_skin.xml.h:138
 msgid "CLEAR INPUT"
-msgstr "Eingabe lÃ¶schen"
+msgstr "Eingabe löschen"
 
 #: skin_default_skin.xml.h:139
 msgid "Code1"
@@ -5564,7 +5564,7 @@ msgstr "Farbformat"
 
 #: skin_default_skin.xml.h:146
 msgid "Color Format Scart / Composite"
-msgstr "Farbformat fÃ¼r Scart/Komponente"
+msgstr "Farbformat für Scart/Komponente"
 
 #: skin_default_skin.xml.h:147
 msgid "Committed command"
@@ -5628,7 +5628,7 @@ msgstr "Deaktivieren"
 
 #: skin_default_skin.xml.h:163
 msgid "Deactivate Crypt Support on Media Playback"
-msgstr "Deaktiviere Crypt Support wÃ¤hrend der Wiedergabe von Daten/Streams"
+msgstr "Deaktiviere Crypt Support während der Wiedergabe von Daten/Streams"
 
 #: skin_default_skin.xml.h:164
 msgid "Deactivate MiniTV"
@@ -5648,11 +5648,11 @@ msgstr "Allgemein"
 
 #: skin_default_skin.xml.h:169
 msgid "Del EPG before scan"
-msgstr "LÃ¶sche EPG vor dem Suchen"
+msgstr "Lösche EPG vor dem Suchen"
 
 #: skin_default_skin.xml.h:171
 msgid "Delete EPG after read"
-msgstr "LÃ¶sche EPG nach dem Einlesen"
+msgstr "Lösche EPG nach dem Einlesen"
 
 #: skin_default_skin.xml.h:174
 msgid "del startchannel"
@@ -5664,11 +5664,11 @@ msgstr "Beschreibung"
 
 #: skin_default_skin.xml.h:176
 msgid "Device:"
-msgstr "GerÃ¤t:"
+msgstr "Gerät:"
 
 #: skin_default_skin.xml.h:177 system_infos_sysinfo.h:56
 msgid "Devices"
-msgstr "GerÃ¤te"
+msgstr "Geräte"
 
 #: skin_default_skin.xml.h:178
 msgid "Director"
@@ -5680,7 +5680,7 @@ msgstr "Ordnersortierung"
 
 #: skin_default_skin.xml.h:180
 msgid "Diseqc Command Order"
-msgstr "DiSEqC Ãœbertragungsart"
+msgstr "DiSEqC Übertragungsart"
 
 #: skin_default_skin.xml.h:181
 msgid "DiSEqC Mode"
@@ -5716,7 +5716,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:189
 msgid "Don't clear TV on zap (only with fastzap)"
-msgstr "TV Bild beim schnellen Umschalten nicht lÃ¶schen"
+msgstr "TV Bild beim schnellen Umschalten nicht löschen"
 
 #: skin_default_skin.xml.h:190
 msgid "Download"
@@ -5764,7 +5764,7 @@ msgstr "Motorisierte Anlage"
 
 #: skin_default_skin.xml.h:203
 msgid "English"
-msgstr ""
+msgstr "English"
 
 #: skin_default_skin.xml.h:204
 msgid "EPG"
@@ -5792,7 +5792,7 @@ msgstr "Aktualisierungszeit"
 
 #: skin_default_skin.xml.h:210
 msgid "EPG Reset"
-msgstr "EPG lÃ¶schen"
+msgstr "EPG löschen"
 
 #: skin_default_skin.xml.h:211
 msgid "EPG Save Mode"
@@ -5812,7 +5812,7 @@ msgstr "EPG"
 
 #: skin_default_skin.xml.h:215
 msgid "EPG SHORT VIEW"
-msgstr "EPG-KurzÃ¼bersicht"
+msgstr "EPG-Kurzübersicht"
 
 #: skin_default_skin.xml.h:217
 msgid "Expert Modus"
@@ -5864,7 +5864,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:230
 msgid "Filesystem Check"
-msgstr "Dateisystem prÃ¼fen"
+msgstr "Dateisystem prüfen"
 
 #: skin_default_skin.xml.h:231
 msgid "Fine move"
@@ -5893,7 +5893,7 @@ msgstr "Softwareaktualisierung (Lokal)"
 
 #: skin_default_skin.xml.h:236
 msgid "Fontsize adjust in pixel"
-msgstr "SchriftgrÃ¶ÃŸe verÃ¤ndern in Pixel"
+msgstr "Schriftgröße verändern in Pixel"
 
 #: skin_default_skin.xml.h:237
 msgid "Format HDD"
@@ -5905,7 +5905,7 @@ msgstr "Freier Speicherplatz"
 
 #: skin_default_skin.xml.h:239 tithek_submenu.h:372
 msgid "French"
-msgstr "FranÃ§ais"
+msgstr "Francais"
 
 #: skin_default_skin.xml.h:240
 msgid "Frequency"
@@ -5957,11 +5957,11 @@ msgstr "Grafisches EPG Vorschaubilder"
 
 #: skin_default_skin.xml.h:253
 msgid "Graphic EPG Zoom"
-msgstr "VergrÃ¶ÃŸerungsfaktor des grafischen EPG"
+msgstr "Vergrößerungsfaktor des grafischen EPG"
 
 #: skin_default_skin.xml.h:255 tithek_submenu.h:393
 msgid "Greek"
-msgstr "Î•Î»Î»Î·Î½Î¹ÎºÎ¬"
+msgstr ""
 
 #: skin_default_skin.xml.h:256
 msgid "Guardinterval"
@@ -5993,18 +5993,18 @@ msgid ""
 "control cross and the extra buttons displayed with your remote control to "
 "select."
 msgstr ""
-"Hier kÃ¶nnen Sie fÃ¼r Ihren ausgewÃ¤hlten Tuner die LNB-Einstellungen\n"
+"Hier können Sie für Ihren ausgewählten Tuner die LNB-Einstellungen\n"
 "vornehmen.\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
 #: skin_default_skin.xml.h:264
 msgid "Here to select your remote Model"
 msgstr ""
-"Hier kÃ¶nnen Sie Ihr Fernbedienungsmodell auswÃ¤hlen und mit OK bestÃ¤tigen."
+"Hier können Sie Ihr Fernbedienungsmodell auswählen und mit OK bestätigen."
 
 #: skin_default_skin.xml.h:265
 msgid "Here you can backup and restore your settings."
-msgstr "Hier kÃ¶nnen Sie Ihre Einstellungen sichern und wiederherstellen."
+msgstr "Hier können Sie Ihre Einstellungen sichern und wiederherstellen."
 
 #: skin_default_skin.xml.h:266
 msgid ""
@@ -6012,9 +6012,9 @@ msgid ""
 "control cross and the extra buttons displayed with your remote control to "
 "select."
 msgstr ""
-"Hier kÃ¶nnen Sie den Empfang des aktuellen Senders Ã¼berprÃ¼fen.\n"
+"Hier können Sie den Empfang des aktuellen Senders überprüfen.\n"
 "\n"
-"DrÃ¼cken Sie -OK- oder -Exit- um ins MenÃ¼ zurÃ¼ckzukehren."
+"Drücken Sie -OK- oder -Exit- um ins Menü zurückzukehren."
 
 #: skin_default_skin.xml.h:267
 msgid ""
@@ -6022,9 +6022,9 @@ msgid ""
 "must edit their tuner and adjust depending on the connection. For engine "
 "systems require an additional engine settings making."
 msgstr ""
-"Hier kÃ¶nnen Sie Ihren Tuner fÃ¼r die Konfiguration auswÃ¤hlen.\n"
-"FÃ¼r Ihren Sendersuchlauf mÃ¼ssen Sie Ihre Tuner bearbeiten und je nach "
-"Anbindung einstellen. FÃ¼r motorisierte Anlagen bitte zusÃ¤tzlich Motor "
+"Hier können Sie Ihren Tuner für die Konfiguration auswählen.\n"
+"Für Ihren Sendersuchlauf müssen Sie Ihre Tuner bearbeiten und je nach "
+"Anbindung einstellen. Für motorisierte Anlagen bitte zusätzlich Motor "
 "Ansteuerung bearbeiten."
 
 #: skin_default_skin.xml.h:268
@@ -6032,7 +6032,7 @@ msgid ""
 "Here you can configure access to your DynDNS. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier kÃ¶nnen Sie Ihren DynDNS Zugang konfigurieren.\n"
+"Hier können Sie Ihren DynDNS Zugang konfigurieren.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6041,7 +6041,7 @@ msgid ""
 "Here you can configure Ci-Modules. Use to navigate the control cross and the "
 "extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier kÃ¶nnen Sie Ihre CI-Module konfigurieren.\n"
+"Hier können Sie Ihre CI-Module konfigurieren.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6050,7 +6050,7 @@ msgid ""
 "Here you can configure the smartcard readers. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier kÃ¶nnen Sie Ihre Smartkarten konfigurieren.\n"
+"Hier können Sie Ihre Smartkarten konfigurieren.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6059,7 +6059,7 @@ msgid ""
 "Here you can configure your web server. Use to navigate the control cross "
 "and the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier kÃ¶nnen Sie das Webinterface und den RGUI Service konfigurieren.\n"
+"Hier können Sie das Webinterface und den RGUI Service konfigurieren.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6068,7 +6068,7 @@ msgid ""
 "Here you can create a new record timer. Use to navigate the control cross "
 "and the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier kÃ¶nnen Sie Timer anlegen und bearbeiten.\n"
+"Hier können Sie Timer anlegen und bearbeiten.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6078,7 +6078,7 @@ msgid ""
 "navigate the control cross and the extra buttons displayed with your remote "
 "control to select."
 msgstr ""
-"Hier kÃ¶nnen Sie einen Blindscan durchfÃ¼hren, dieser Vorgang dauert sehr "
+"Hier können Sie einen Blindscan durchführen, dieser Vorgang dauert sehr "
 "lange.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
@@ -6089,7 +6089,7 @@ msgid ""
 "control cross and the extra buttons displayed with your remote control to "
 "select."
 msgstr ""
-"Hier kÃ¶nnen Sie Sender und Favoriten definieren, fÃ¼r die ein EPG Scan "
+"Hier können Sie Sender und Favoriten definieren, für die ein EPG Scan "
 "stattfinden soll.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
@@ -6100,7 +6100,7 @@ msgid ""
 "navigate the control cross and the extra buttons displayed with your remote "
 "control to select."
 msgstr ""
-"Hier kÃ¶nnen Sie von unseren aktuellen Online-Angebot Plug-Ins installieren.\n"
+"Hier können Sie von unseren aktuellen Online-Angebot Plug-Ins installieren.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6110,7 +6110,7 @@ msgid ""
 "button to search. Use to navigate the control cross and the extra buttons "
 "displayed with your remote control to select."
 msgstr ""
-"Hier kÃ¶nnen Sie im EPG nach bestimmten EintrÃ¤gen suchen. Verwenden Sie eine "
+"Hier können Sie im EPG nach bestimmten Einträgen suchen. Verwenden Sie eine "
 "der Farbtasten um die Suche zu starten.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
@@ -6121,7 +6121,7 @@ msgid ""
 "navigate the control cross and the extra buttons displayed with your remote "
 "control to select."
 msgstr ""
-"Hier kÃ¶nnen Sie fÃ¼r Ihre ausgewÃ¤hlte Netzwerkschnittstelle Einstellungen "
+"Hier können Sie für Ihre ausgewählte Netzwerkschnittstelle Einstellungen "
 "vornehmen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
@@ -6133,17 +6133,17 @@ msgid ""
 "Key confirm with ok and Note the following instructions 3. Disable Lan Yes, "
 "Activate Wlan Yes and use DHCP for easy setup."
 msgstr ""
-"Hier kÃ¶nnen Sie Ihre WLAN Einstellungen vornehmen.\n"
-"1. Suche starten, die eigene SSID (AP/Router) mit ok Ã¼bernehmen.\n"
-"2. SchlÃ¼ssel und Typ anpassen und mit ok bestÃ¤tigen (speichern).\n"
-"3. Deaktiviere LAN ja, Aktiviere Wlan und DHCP fÃ¼r einfache Einrichtung."
+"Hier können Sie Ihre WLAN Einstellungen vornehmen.\n"
+"1. Suche starten, die eigene SSID (AP/Router) mit ok übernehmen.\n"
+"2. Schlüssel und Typ anpassen und mit ok bestätigen (speichern).\n"
+"3. Deaktiviere LAN ja, Aktiviere Wlan und DHCP für einfache Einrichtung."
 
 #: skin_default_skin.xml.h:279
 msgid ""
 "Here you can make your epg settings. Use to navigate the control cross and "
 "the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier kÃ¶nnen Sie Ihre EPG Einstellungen vornehmen.\n"
+"Hier können Sie Ihre EPG Einstellungen vornehmen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6152,7 +6152,7 @@ msgid ""
 "Here you can make your mediadb settings. Use to navigate the control cross "
 "and the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier kÃ¶nnen Sie Ihre MediaDB Einstellungen vornehmen.\n"
+"Hier können Sie Ihre MediaDB Einstellungen vornehmen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6161,7 +6161,7 @@ msgid ""
 "Here you can make your module settings. Use to navigate the control cross "
 "and the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier kÃ¶nnen Sie die Einstellungen fÃ¼r CI-Module anpassen.\n"
+"Hier können Sie die Einstellungen für CI-Module anpassen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6171,7 +6171,7 @@ msgid ""
 "control cross and the extra buttons displayed with your remote control to "
 "select."
 msgstr ""
-"Hier kÃ¶nnen Sie Ihre Bild und Ton Einstellungen vornehmen.\n"
+"Hier können Sie Ihre Bild und Ton Einstellungen vornehmen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6181,7 +6181,7 @@ msgid ""
 "control cross and the extra buttons displayed with your remote control to "
 "select."
 msgstr ""
-"Hier kÃ¶nnen Sie Ihre PIN Sicherheitseinstellungen fÃ¼r MenÃ¼s vornehmen.\n"
+"Hier können Sie Ihre PIN Sicherheitseinstellungen für Menüs vornehmen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6190,7 +6190,7 @@ msgid ""
 "Here you can make your PIN security settings. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier kÃ¶nnen Sie Ihre PIN Sicherheitseinstellungen vornehmen.\n"
+"Hier können Sie Ihre PIN Sicherheitseinstellungen vornehmen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6200,7 +6200,7 @@ msgid ""
 "control cross and the extra buttons displayed with your remote control to "
 "select."
 msgstr ""
-"Hier kÃ¶nnen Sie Timer auswÃ¤hlen, lÃ¶schen und\n"
+"Hier können Sie Timer auswählen, löschen und\n"
 "bearbeiten.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
@@ -6210,7 +6210,7 @@ msgid ""
 "Here you can make your recordpath settings. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier kÃ¶nnen Sie Ihre Aufnahmepfad Einstellungen vornehmen.\n"
+"Hier können Sie Ihre Aufnahmepfad Einstellungen vornehmen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6219,7 +6219,7 @@ msgid ""
 "Here you can make your screensaver settings. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier kÃ¶nnen Sie Ihre Bildschirmschoner Einstellungen vornehmen.\n"
+"Hier können Sie Ihre Bildschirmschoner Einstellungen vornehmen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6228,16 +6228,16 @@ msgid ""
 "Here you can make your settings for your engine systems. To enter the "
 "latitude and longitude using the number keys."
 msgstr ""
-"Hier kÃ¶nnen Sie fÃ¼r Ihre motorisierte Sat-Anlage Ihre Einstellungen \n"
+"Hier können Sie für Ihre motorisierte Sat-Anlage Ihre Einstellungen \n"
 "vornehmen.\n"
-"Zur Eingabe der LÃ¤ngen und Breitengrade benutzen Sie die Ziffertasten."
+"Zur Eingabe der Längen und Breitengrade benutzen Sie die Ziffertasten."
 
 #: skin_default_skin.xml.h:289
 msgid ""
 "Here you can make your system settings. Use to navigate the control cross "
 "and the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier kÃ¶nnen Sie erweiterte Einstellungen vornehmen.\n"
+"Hier können Sie erweiterte Einstellungen vornehmen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6246,7 +6246,7 @@ msgid ""
 "Here you can make your timeshift settings. Use to navigate the control cross "
 "and the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier kÃ¶nnen Sie die Timeshift Einstellungen anpassen.\n"
+"Hier können Sie die Timeshift Einstellungen anpassen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6255,7 +6255,7 @@ msgid ""
 "Here you can make your vfd settings. Use to navigate the control cross and "
 "the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier kÃ¶nnen Sie Ihre VFDisplay Einstellungen vornehmen.\n"
+"Hier können Sie Ihre VFDisplay Einstellungen vornehmen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6265,7 +6265,7 @@ msgid ""
 "control cross and the extra buttons displayed with your remote control to "
 "select."
 msgstr ""
-"Hier kÃ¶nnen Sie einen Skin aus der folgenden Liste auswÃ¤hlen.\n"
+"Hier können Sie einen Skin aus der folgenden Liste auswählen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6274,7 +6274,7 @@ msgid ""
 "Here you can select from the following list. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier kÃ¶nnen Sie aus der folgenden Liste auswÃ¤hlen.\n"
+"Hier können Sie aus der folgenden Liste auswählen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6284,8 +6284,8 @@ msgid ""
 "Use to navigate the control cross and the extra buttons displayed with your "
 "remote control to select."
 msgstr ""
-"Hier kÃ¶nnen Sie Ihre Festplatten und USB-Sticks zur Konfiguration\n"
-"auswÃ¤hlen.\n"
+"Hier können Sie Ihre Festplatten und USB-Sticks zur Konfiguration\n"
+"auswählen.\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
 #: skin_default_skin.xml.h:295
@@ -6293,7 +6293,7 @@ msgid ""
 "Here you can select your Network Interface. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier kÃ¶nnen Sie Ihren Netzwerk Adapter auswÃ¤hlen.\n"
+"Hier können Sie Ihren Netzwerk Adapter auswählen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6302,9 +6302,9 @@ msgid ""
 "Here you can set for your cable tuner. Ask your cable provider and make you "
 "connect an automatic search."
 msgstr ""
-"Hier kÃ¶nnen Sie Ihren Kabel Tuner einstellen.\n"
+"Hier können Sie Ihren Kabel Tuner einstellen.\n"
 "\n"
-"Stellen Sie Ihren Kabel Anbieter ein und machen Sie anschlieÃŸend einen "
+"Stellen Sie Ihren Kabel Anbieter ein und machen Sie anschließend einen "
 "automatischen Suchlauf."
 
 #: skin_default_skin.xml.h:297
@@ -6313,19 +6313,19 @@ msgid ""
 "selection. When using DiSEqC They also point to the port used. For advanced "
 "Lnb / Unicam navigate to the field and press the Red button."
 msgstr ""
-"Hier kÃ¶nnen Sie Ihren Sat Tuner einstellen.\n"
-"Stellen Sie zunÃ¤chst Ihre Satelliten Auswahl ein. Bei Verwendung von DiSEqC "
-"weisen Sie zusÃ¤tzlich den verwendeten Port zu. FÃ¼r erweiterte LNB/Unicam "
-"Einstellungen navigieren Sie zum Feld und drÃ¼cken Sie die Rote Taste."
+"Hier können Sie Ihren Sat Tuner einstellen.\n"
+"Stellen Sie zunächst Ihre Satelliten Auswahl ein. Bei Verwendung von DiSEqC "
+"weisen Sie zusätzlich den verwendeten Port zu. Für erweiterte LNB/Unicam "
+"Einstellungen navigieren Sie zum Feld und drücken Sie die Rote Taste."
 
 #: skin_default_skin.xml.h:298
 msgid ""
 "Here you can set for your terrestrial tuner. Activate the terrestrial tuner "
 "and do you connect an automatic search."
 msgstr ""
-"Hier kÃ¶nnen Sie fÃ¼r Ihren Terrestrischen Tuner einstellen.\n"
+"Hier können Sie für Ihren Terrestrischen Tuner einstellen.\n"
 "\n"
-"Aktivieren Sie den Terrestrischen Tuner und machen Sie anschlieÃŸend einen "
+"Aktivieren Sie den Terrestrischen Tuner und machen Sie anschließend einen "
 "automatischen Suchlauf."
 
 #: skin_default_skin.xml.h:299
@@ -6335,9 +6335,9 @@ msgid ""
 "Very important, before you start looking for a channel must be set to its "
 "tuner tuner settings."
 msgstr ""
-"Hier kÃ¶nnen Sie Ihre Sendersuche einstellen. Navigieren Sie mit dem "
+"Hier können Sie Ihre Sendersuche einstellen. Navigieren Sie mit dem "
 "Steuerkreuz und den unten angezeigten Tasten.\n"
-"Sehr wichtig: Bevor Sie eine Sendersuche starten, mÃ¼ssen Sie Ihre Tuner "
+"Sehr wichtig: Bevor Sie eine Sendersuche starten, müssen Sie Ihre Tuner "
 "unter Tuner-Einstellungen (Kabel/Sat/Terrestrisch) einstellen."
 
 #: skin_default_skin.xml.h:300
@@ -6345,7 +6345,7 @@ msgid ""
 "Here you can set your language. Use to navigate the control cross and the "
 "extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier kÃ¶nnen Sie Ihre Sprache wÃ¤hlen.\n"
+"Hier können Sie Ihre Sprache wählen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6354,7 +6354,7 @@ msgid ""
 "Here you can set your timezone. Use to navigate the control cross and the "
 "extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier kÃ¶nnen Sie Ihre Zeitzone einstellen.\n"
+"Hier können Sie Ihre Zeitzone einstellen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6364,7 +6364,7 @@ msgid ""
 "control cross and the extra buttons displayed with your remote control to "
 "select."
 msgstr ""
-"Hier kÃ¶nnen Sie Ihre zusÃ¤tzlichen Plug-Ins starten und verwalten.\n"
+"Hier können Sie Ihre zusätzlichen Plug-Ins starten und verwalten.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6373,7 +6373,7 @@ msgid ""
 "Here you can test your network. Use to navigate the control cross and the "
 "extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier kÃ¶nnen Sie Ihr Netzwerk testen.\n"
+"Hier können Sie Ihr Netzwerk testen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6383,7 +6383,7 @@ msgid ""
 "control cross and the extra buttons displayed with your remote control to "
 "select."
 msgstr ""
-"Hier kÃ¶nnen Sie die aktuellen Senderinfos abrufen.\n"
+"Hier können Sie die aktuellen Senderinfos abrufen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6497,7 +6497,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:334
 msgid "Key"
-msgstr "SchlÃ¼ssel"
+msgstr "Schlüssel"
 
 #: skin_default_skin.xml.h:335
 msgid "Keyboard"
@@ -6565,7 +6565,7 @@ msgstr "Log"
 
 #: skin_default_skin.xml.h:351
 msgid "Longitude"
-msgstr "LÃ¤ngengrad"
+msgstr "Längengrad"
 
 #: skin_default_skin.xml.h:352
 msgid "m"
@@ -6577,7 +6577,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:354
 msgid "Main Menu"
-msgstr "HauptmenÃ¼"
+msgstr "Hauptmenü"
 
 #: skin_default_skin.xml.h:355
 msgid "Manual Search"
@@ -6617,7 +6617,7 @@ msgstr "MediaDB"
 
 #: skin_default_skin.xml.h:365
 msgid "Media Player"
-msgstr "MedienwiedergabegerÃ¤t"
+msgstr "Medienwiedergabegerät"
 
 #: skin_default_skin.xml.h:366
 msgid "Memory"
@@ -6625,19 +6625,19 @@ msgstr "Speicher"
 
 #: skin_default_skin.xml.h:367
 msgid "MENU"
-msgstr "MenÃ¼"
+msgstr "Menü"
 
 #: skin_default_skin.xml.h:368
 msgid "Menulist"
-msgstr "MenÃ¼liste"
+msgstr "Menüliste"
 
 #: skin_default_skin.xml.h:369
 msgid "Menu Protect"
-msgstr "MenÃ¼ schÃ¼tzen"
+msgstr "Menü schützen"
 
 #: skin_default_skin.xml.h:370
 msgid "MENUPROTECT"
-msgstr "MenÃ¼schutz"
+msgstr "Menüschutz"
 
 #: skin_default_skin.xml.h:371
 msgid "MHW2 EPG"
@@ -6681,7 +6681,7 @@ msgstr "Module"
 
 #: skin_default_skin.xml.h:382 system_infos.h:74
 msgid "Mounts"
-msgstr "GerÃ¤teanbindungen"
+msgstr "Geräteanbindungen"
 
 #: skin_default_skin.xml.h:383
 msgid "Move"
@@ -6773,11 +6773,11 @@ msgstr ""
 
 #: skin_default_skin.xml.h:407
 msgid "oe"
-msgstr "Ã¶"
+msgstr "ö"
 
 #: skin_default_skin.xml.h:408
 msgid "OE"
-msgstr "Ã–"
+msgstr "Ö"
 
 #: skin_default_skin.xml.h:409
 msgid "Ok"
@@ -6801,7 +6801,7 @@ msgstr "Nur DVB-S Sender"
 
 #: skin_default_skin.xml.h:414
 msgid "Only free scan"
-msgstr "Nur unverschlÃ¼sselte Sender"
+msgstr "Nur unverschlüsselte Sender"
 
 #: skin_default_skin.xml.h:415
 msgid "OpenTV EPG"
@@ -6833,7 +6833,7 @@ msgstr "OSD Transparenz"
 
 #: skin_default_skin.xml.h:423
 msgid "Overclocking Settings"
-msgstr "Ãœbertakten"
+msgstr "Übertakten"
 
 #: skin_default_skin.xml.h:424
 msgid "p"
@@ -6877,7 +6877,7 @@ msgstr "Sender mit PIN sperren"
 
 #: skin_default_skin.xml.h:436
 msgid "Pin Code menu"
-msgstr "PIN EinstellungsmenÃ¼"
+msgstr "PIN Einstellungsmenü"
 
 #: skin_default_skin.xml.h:437
 msgid "PIN Settings"
@@ -6889,11 +6889,11 @@ msgstr "Wiedergeben"
 
 #: skin_default_skin.xml.h:439
 msgid "Playbackbuffer Size"
-msgstr "Wiedergabepuffer - GrÃ¶sse (http) Streams"
+msgstr "Wiedergabepuffer - Grösse (http) Streams"
 
 #: skin_default_skin.xml.h:440
 msgid "Player for .ts"
-msgstr "WiedergabegerÃ¤t fÃ¼r .ts Dateien"
+msgstr "Wiedergabegerät für .ts Dateien"
 
 #: skin_default_skin.xml.h:441
 msgid "PlayList"
@@ -6915,7 +6915,7 @@ msgstr "darstellen"
 
 #: skin_default_skin.xml.h:445
 msgid "Plugin Button"
-msgstr "Plugin Ãœbersicht"
+msgstr "Plugin Übersicht"
 
 #: skin_default_skin.xml.h:446
 msgid "Plugins"
@@ -6943,7 +6943,7 @@ msgstr "Rotor Einstellungen"
 
 #: skin_default_skin.xml.h:453
 msgid "Power aktion"
-msgstr "Aktion bei BetÃ¤tigung der EIN/AUS Taste"
+msgstr "Aktion bei Betätigung der EIN/AUS Taste"
 
 #: skin_default_skin.xml.h:455
 msgid "Poweroff Timer"
@@ -6959,7 +6959,7 @@ msgstr "Programm Information"
 
 #: skin_default_skin.xml.h:458
 msgid "Protect Channel"
-msgstr "Sender mit PIN schÃ¼tzen"
+msgstr "Sender mit PIN schützen"
 
 #: skin_default_skin.xml.h:459
 msgid "Protect Channel Freetime (min)"
@@ -6967,7 +6967,7 @@ msgstr "Senderschutzzeit aus (min)"
 
 #: skin_default_skin.xml.h:460
 msgid "Protect Menu"
-msgstr "MenÃ¼ sperren"
+msgstr "Menü sperren"
 
 #: skin_default_skin.xml.h:461
 msgid "protect service"
@@ -6995,7 +6995,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:467
 msgid "Quick Menu"
-msgstr "SchnellmenÃ¼"
+msgstr "Schnellmenü"
 
 #: skin_default_skin.xml.h:468
 msgid "r"
@@ -7059,7 +7059,7 @@ msgstr "Timer und EPG"
 
 #: skin_default_skin.xml.h:485
 msgid "Record Split Size"
-msgstr "GrÃ¶ÃŸe der geteilten Dateien"
+msgstr "Größe der geteilten Dateien"
 
 #: skin_default_skin.xml.h:486
 msgid "Record Timer"
@@ -7075,7 +7075,7 @@ msgstr "Neu laden"
 
 #: skin_default_skin.xml.h:490
 msgid "Released"
-msgstr "VerÃ¶ffentlicht"
+msgstr "Veröffentlicht"
 
 #: skin_default_skin.xml.h:491
 msgid "RELOAD"
@@ -7083,11 +7083,11 @@ msgstr "Neu laden"
 
 #: skin_default_skin.xml.h:492
 msgid "Remove emthy Bouquet"
-msgstr "LÃ¶sche leere Favoriten"
+msgstr "Lösche leere Favoriten"
 
 #: skin_default_skin.xml.h:493
 msgid "REMOVE ENTRY"
-msgstr "LÃ¶sche Eintrag"
+msgstr "Lösche Eintrag"
 
 #: skin_default_skin.xml.h:494
 msgid "remove service"
@@ -7095,7 +7095,7 @@ msgstr "Aus Favoriten entfernen"
 
 #: skin_default_skin.xml.h:495
 msgid "Remove unused Channels in Bouquets"
-msgstr "LÃ¶sche unbenutzte Sender in Favoriten"
+msgstr "Lösche unbenutzte Sender in Favoriten"
 
 #: skin_default_skin.xml.h:496
 msgid "rename service"
@@ -7111,19 +7111,19 @@ msgstr "Wiederholungsmodus"
 
 #: skin_default_skin.xml.h:499
 msgid "RESET"
-msgstr "zurÃ¼cksetzen"
+msgstr "zurücksetzen"
 
 #: skin_default_skin.xml.h:500
 msgid "Resolution:"
-msgstr "AuflÃ¶sung"
+msgstr "Auflösung"
 
 #: skin_default_skin.xml.h:501
 msgid "Resolution (current)"
-msgstr "Aktuelle AuflÃ¶sung"
+msgstr "Aktuelle Auflösung"
 
 #: skin_default_skin.xml.h:502
 msgid "Resolution (default)"
-msgstr "StandardauflÃ¶sung"
+msgstr "Standardauflösung"
 
 #: skin_default_skin.xml.h:504
 msgid "Restore"
@@ -7159,7 +7159,7 @@ msgstr "Laufzeit"
 
 #: skin_default_skin.xml.h:516
 msgid "Russian"
-msgstr "Ğ ÑƒÑÑĞºĞ¸Ğ¹"
+msgstr "Russkiy"
 
 #: skin_default_skin.xml.h:517
 msgid "s"
@@ -7207,7 +7207,7 @@ msgstr "Satelliten Empfangswerte"
 
 #: skin_default_skin.xml.h:528
 msgid "Saturation"
-msgstr "SÃ¤ttigung"
+msgstr "Sättigung"
 
 #: skin_default_skin.xml.h:532
 msgid "SAVETRANSPONDER"
@@ -7243,7 +7243,7 @@ msgstr "Hintergrund"
 
 #: skin_default_skin.xml.h:541
 msgid "screensaver delay"
-msgstr "VerzÃ¶gerung"
+msgstr "Verzögerung"
 
 #: skin_default_skin.xml.h:542
 msgid "screensaver interval"
@@ -7259,7 +7259,7 @@ msgstr "Typ"
 
 #: skin_default_skin.xml.h:545
 msgid "--- SD resolution"
-msgstr "---SD AuflÃ¶sung"
+msgstr "---SD Auflösung"
 
 #: skin_default_skin.xml.h:546 tithek_mainmenu.h:35
 msgid "Search"
@@ -7271,7 +7271,7 @@ msgstr "Zweite Infoleiste"
 
 #: skin_default_skin.xml.h:549
 msgid "Select backup:"
-msgstr "Sicherung auswÃ¤hlen:"
+msgstr "Sicherung auswählen:"
 
 #: skin_default_skin.xml.h:550
 msgid "Select Path"
@@ -7279,7 +7279,7 @@ msgstr "Pfadauswahl"
 
 #: skin_default_skin.xml.h:551
 msgid "Select Unicable Manufacturer"
-msgstr "Unikabel Hersteller wÃ¤hlen"
+msgstr "Unikabel Hersteller wählen"
 
 #: skin_default_skin.xml.h:552
 msgid "SEND"
@@ -7287,11 +7287,11 @@ msgstr "Senden"
 
 #: skin_default_skin.xml.h:553
 msgid "Send all CAID to modules"
-msgstr "Ãœbermittle alle CAIDs an das Modul"
+msgstr "Übermittle alle CAIDs an das Modul"
 
 #: skin_default_skin.xml.h:554
 msgid "Serial Input"
-msgstr "FreischaltmenÃ¼"
+msgstr "Freischaltmenü"
 
 #: skin_default_skin.xml.h:555
 msgid "Service"
@@ -7371,7 +7371,7 @@ msgstr "Skin-Einstellungen"
 
 #: skin_default_skin.xml.h:578
 msgid "Skin Select"
-msgstr "Skin auswÃ¤hlen"
+msgstr "Skin auswählen"
 
 #: skin_default_skin.xml.h:579
 msgid "Skip 1/3"
@@ -7387,7 +7387,7 @@ msgstr "Sprungzeit der Tasten 7+9 (Sek)"
 
 #: skin_default_skin.xml.h:582
 msgid "Skip privat CA descriptor"
-msgstr "Ãœberspringe Private CA Descriptor"
+msgstr "Überspringe Private CA Descriptor"
 
 #: skin_default_skin.xml.h:583
 msgid "SmartCard Reader"
@@ -7407,11 +7407,11 @@ msgstr "Favoriten sortieren"
 
 #: skin_default_skin.xml.h:589
 msgid "Sound amplifier (external Player)"
-msgstr "Sound VerstÃ¤rkung (externer Player)"
+msgstr "Sound Verstärkung (externer Player)"
 
 #: skin_default_skin.xml.h:590
 msgid "Sound amplifier (TV-Modus / internal Player)"
-msgstr "Sound VerstÃ¤rkung (TV-Modus/interner Player)"
+msgstr "Sound Verstärkung (TV-Modus/interner Player)"
 
 #: skin_default_skin.xml.h:591
 msgid "Space"
@@ -7491,7 +7491,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:615
 msgid "Subservices"
-msgstr "UnterkanÃ¤le"
+msgstr "Unterkanäle"
 
 #: skin_default_skin.xml.h:616
 msgid "Subtitle"
@@ -7571,11 +7571,11 @@ msgstr "USB Systemaktualisierung (tmp)"
 
 #: skin_default_skin.xml.h:637
 msgid "sz"
-msgstr "ÃŸ"
+msgstr "ß"
 
 #: skin_default_skin.xml.h:638
 msgid "SZ"
-msgstr "ÃŸ"
+msgstr "ß"
 
 #: skin_default_skin.xml.h:639
 msgid "t"
@@ -7591,7 +7591,7 @@ msgstr "Test"
 
 #: skin_default_skin.xml.h:643
 msgid "thereafter on this Channel:"
-msgstr "AnschlieÃŸend auf diesem Sender:"
+msgstr "Anschließend auf diesem Sender:"
 
 #: skin_default_skin.xml.h:644
 msgid "Threshold"
@@ -7603,7 +7603,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:647
 msgid "Timer Record Path"
-msgstr "Pfad fÃ¼r zeitgesteuerte Aufnahmen"
+msgstr "Pfad für zeitgesteuerte Aufnahmen"
 
 #: skin_default_skin.xml.h:648
 msgid "Timeshift Path"
@@ -7631,7 +7631,7 @@ msgstr "Zeitzone"
 
 #: skin_default_skin.xml.h:655
 msgid "Tint"
-msgstr "SÃ¤ttigung"
+msgstr "Sättigung"
 
 #: skin_default_skin.xml.h:656
 msgid "Titan Changelog"
@@ -7663,7 +7663,7 @@ msgstr "Installieren (Online)"
 
 #: skin_default_skin.xml.h:664
 msgid "Tpk Install - select install medium"
-msgstr "Installieren - Installationsmedium auswÃ¤hlen"
+msgstr "Installieren - Installationsmedium auswählen"
 
 #: skin_default_skin.xml.h:665
 msgid "TPK media (media)"
@@ -7683,15 +7683,15 @@ msgstr "Aktualisieren (Online)"
 
 #: skin_default_skin.xml.h:669
 msgid "Transmission"
-msgstr "Ãœbertragung"
+msgstr "Übertragung"
 
 #: skin_default_skin.xml.h:670
 msgid "Transmission:"
-msgstr "Ãœbertragung:"
+msgstr "Übertragung:"
 
 #: skin_default_skin.xml.h:671
 msgid "TRANSPONDEREDIT"
-msgstr "Transponder auswÃ¤hlen"
+msgstr "Transponder auswählen"
 
 #: skin_default_skin.xml.h:672
 msgid "TSID:"
@@ -7715,11 +7715,11 @@ msgstr "Empfang"
 
 #: skin_default_skin.xml.h:680
 msgid "TV Resolution (h):"
-msgstr "TV AuflÃ¶sung (HÃ¶he):"
+msgstr "TV Auflösung (Höhe):"
 
 #: skin_default_skin.xml.h:681
 msgid "TV Resolution (w):"
-msgstr "TV AuflÃ¶sung (Breite):"
+msgstr "TV Auflösung (Breite):"
 
 #: skin_default_skin.xml.h:682
 msgid "Two step mute"
@@ -7751,11 +7751,11 @@ msgstr ""
 
 #: skin_default_skin.xml.h:690
 msgid "ue"
-msgstr "Ã¼"
+msgstr "ü"
 
 #: skin_default_skin.xml.h:691
 msgid "UE"
-msgstr "Ãœ"
+msgstr "Ü"
 
 #: skin_default_skin.xml.h:692
 msgid "UNC:"
@@ -7779,7 +7779,7 @@ msgstr "aktualisieren"
 
 #: skin_default_skin.xml.h:698
 msgid "Update entrys on scan"
-msgstr "Aktualisiere vorhandene EintrÃ¤ge"
+msgstr "Aktualisiere vorhandene Einträge"
 
 #: skin_default_skin.xml.h:699
 msgid "USB"
@@ -7795,7 +7795,7 @@ msgstr "Softwareaktualisierung (USB)"
 
 #: skin_default_skin.xml.h:703
 msgid "Use cross control for fast zapping and vol"
-msgstr "Benutze das Steuerkreuz fÃ¼r schnelles Umschalten und laut/leise"
+msgstr "Benutze das Steuerkreuz für schnelles Umschalten und laut/leise"
 
 #: skin_default_skin.xml.h:704
 msgid "Use EPG Endtime"
@@ -7823,11 +7823,11 @@ msgstr "Bild"
 
 #: skin_default_skin.xml.h:711
 msgid "VideoMode Aspect Settings"
-msgstr "Bild SeitenverhÃ¤ltnis Einstellungen"
+msgstr "Bild Seitenverhältnis Einstellungen"
 
 #: skin_default_skin.xml.h:712
 msgid "VideoMode Resolution Settings"
-msgstr "BildauflÃ¶sung"
+msgstr "Bildauflösung"
 
 #: skin_default_skin.xml.h:713
 msgid "VideoMode Settings"
@@ -7839,7 +7839,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:716
 msgid "Vietnamese"
-msgstr "Viet"
+msgstr ""
 
 #: skin_default_skin.xml.h:717
 msgid "Virtualzap Timeout"
@@ -7847,7 +7847,7 @@ msgstr "Virtuelles Umschalten"
 
 #: skin_default_skin.xml.h:718
 msgid "Vol off"
-msgstr "LautstÃ¤rke Aus"
+msgstr "Lautstärke Aus"
 
 #: skin_default_skin.xml.h:719
 msgid "Voltage Mode"
@@ -7855,7 +7855,7 @@ msgstr "Spannungsmodus"
 
 #: skin_default_skin.xml.h:720
 msgid "Volumebar Timeout"
-msgstr "Zeit bis LautstÃ¤rkeanzeige ausgeblendet wird (sek)"
+msgstr "Zeit bis Lautstärkeanzeige ausgeblendet wird (sek)"
 
 #: skin_default_skin.xml.h:721
 msgid "Votes"
@@ -7914,8 +7914,8 @@ msgid ""
 "No skinconfig found in skin.\n"
 "Can't change to selected skin."
 msgstr ""
-"FEHLER: Die Datei skinconfig.xml fehlt im ausgewÃ¤hlten Skin!\n"
-"Der ausgewÃ¤hlte Skin kann nicht geladen werden."
+"FEHLER: Die Datei skinconfig.xml fehlt im ausgewählten Skin!\n"
+"Der ausgewählte Skin kann nicht geladen werden."
 
 #: sock.h:950
 msgid "Download finished!"
@@ -7935,7 +7935,7 @@ msgstr "FEHLER: Softcam wurde nicht gefunden"
 
 #: softcam.h:289
 msgid "Softcam selection:"
-msgstr "Softcam auswÃ¤hlen:"
+msgstr "Softcam auswählen:"
 
 #: softcam.h:293
 msgid "Activate"
@@ -7959,7 +7959,7 @@ msgstr ""
 "Systemfehler!!!\n"
 "\n"
 "-ROT- = Prozess beenden\n"
-"-GRÃœN- = System neu starten"
+"-GRÜN- = System neu starten"
 
 #: spinner.h:18
 msgid "KILL"
@@ -7975,15 +7975,15 @@ msgstr "Gesellschaft: "
 
 #: stock.h:201
 msgid "Exchange: "
-msgstr "BÃ¶rse: "
+msgstr "Börse: "
 
 #: stock.h:205
 msgid "Exchange closing: "
-msgstr "BÃ¶rsenschluss: "
+msgstr "Börsenschluss: "
 
 #: stock.h:209
 msgid "Currency: "
-msgstr "WÃ¤hrung: "
+msgstr "Währung: "
 
 #: stock.h:213
 msgid "Last: "
@@ -8011,7 +8011,7 @@ msgstr "Marktanteil: "
 
 #: stock.h:237
 msgid "Open: "
-msgstr "ErÃ¶ffnung: "
+msgstr "Eröffnung: "
 
 #: stock.h:241
 msgid "Close: "
@@ -8019,11 +8019,11 @@ msgstr "Abschluss: "
 
 #: stock.h:245
 msgid "Change: "
-msgstr "Ã„nderung: "
+msgstr "Änderung: "
 
 #: stock.h:249
 msgid "Change in %: "
-msgstr "Ã„nderung in %: "
+msgstr "Änderung in %: "
 
 #: stock.h:253
 msgid "Trade time: "
@@ -8042,7 +8042,7 @@ msgstr ""
 "Sicherung wird in /tmp oder /var/backup abgelegt. Falls der interne Speicher "
 "nicht ausreicht, kann die Sicherung auch auf einem USB Stick/HDD gespeichert "
 "werden.\n"
-"Es muss ein Ordner mit dem Namen backup auf dem GerÃ¤t sein."
+"Es muss ein Ordner mit dem Namen backup auf dem Gerät sein."
 
 #: system_backup_restore.h:15
 msgid ""
@@ -8055,14 +8055,14 @@ msgid ""
 msgstr ""
 "-wiederherstellen- (Rot):\n"
 "Ihre Einstellungen werden aus einer zuvor erstellten Sicherung "
-"wiederhergestellt! Der Receiver wird dafÃ¼r automatisch neugestartet! \n"
+"wiederhergestellt! Der Receiver wird dafür automatisch neugestartet! \n"
 "\n"
-"-sichern- (GrÃ¼n):\n"
+"-sichern- (Grün):\n"
 "Ihre Einstellungen werden gesichert.\n"
-"WARNUNG: Die alten Sicherungen werden gelÃ¶scht!\n"
+"WARNUNG: Die alten Sicherungen werden gelöscht!\n"
 "\n"
 "-Log- (Gelb):\n"
-"ÃœberprÃ¼fung der Sicherung mittels Logdatei"
+"Überprüfung der Sicherung mittels Logdatei"
 
 #: system_backup_restore.h:31
 msgid "Restore Settings"
@@ -8150,7 +8150,7 @@ msgid ""
 "\n"
 "Aborting backup..."
 msgstr ""
-"ACHTUNG: Eine Festplatte oder ein USB GerÃ¤t muss fÃ¼r Aufnahmen angeschlossen "
+"ACHTUNG: Eine Festplatte oder ein USB Gerät muss für Aufnahmen angeschlossen "
 "sein!\n"
 "\n"
 "Sicherung wird abgebrochen."
@@ -8213,7 +8213,7 @@ msgstr "Beginne Flashvorgang eines gesicherten Systemabbilds"
 
 #: system_update.h:320
 msgid "Error file not supported"
-msgstr "FEHLER: Dateiformat wird nicht unterstÃ¼tzt!"
+msgstr "FEHLER: Dateiformat wird nicht unterstützt!"
 
 #: system_update.h:333
 msgid ""
@@ -8225,7 +8225,7 @@ msgstr ""
 
 #: timeshift.h:113
 msgid "Should Timeshift File deleted ?"
-msgstr "Soll die Timeshiftdatei gelÃ¶scht werden?"
+msgstr "Soll die Timeshiftdatei gelöscht werden?"
 
 #: timeshift.h:155
 msgid ""
@@ -8233,7 +8233,7 @@ msgid ""
 "please wait a little and try again"
 msgstr ""
 "Timeshift: Datei ist zu klein\n"
-"Bitte spÃ¤ter versuchen."
+"Bitte später versuchen."
 
 #: timeshift.h:162
 msgid "Can't start timeshift play !"
@@ -8244,8 +8244,8 @@ msgid ""
 "Timeshiftsettings not allowed\n"
 "if timeshift is running !"
 msgstr ""
-"Timeshifteinstellungen kÃ¶nnen nicht wÃ¤hrend eines\n"
-"aktiven Timeshift geÃ¤ndert werden."
+"Timeshifteinstellungen können nicht während eines\n"
+"aktiven Timeshift geändert werden."
 
 #: timeshiftsettings.h:50
 msgid "permanent"
@@ -8253,15 +8253,15 @@ msgstr "permanent"
 
 #: timeshiftsettings.h:53
 msgid "ask"
-msgstr "Nachfragen, ob Timeshiftdatei gelÃ¶scht werden soll"
+msgstr "Nachfragen, ob Timeshiftdatei gelöscht werden soll"
 
 #: timeshiftsettings.h:54
 msgid "allways del file"
-msgstr "Timeshiftdatei immer lÃ¶schen"
+msgstr "Timeshiftdatei immer löschen"
 
 #: timeshiftsettings.h:55
 msgid "never del file"
-msgstr "Timeshiftdatei nie lÃ¶schen"
+msgstr "Timeshiftdatei nie löschen"
 
 #: titan.c:274
 msgid "!!! This is a DEMO Version !!!"
@@ -8287,23 +8287,23 @@ msgstr ""
 
 #: titan.c:778
 msgid "Error: open rc device !!"
-msgstr "FEHLER: FernbedienungsgerÃ¤t wurde nicht gefunden!"
+msgstr "FEHLER: Fernbedienungsgerät wurde nicht gefunden!"
 
 #: titan.c:784
 msgid "Error: no frontend device found !!"
-msgstr "FEHLER: Frontend-GerÃ¤t wurde nicht gefunden!"
+msgstr "FEHLER: Frontend-Gerät wurde nicht gefunden!"
 
 #: titan.c:790
 msgid "Error: no demux device found !!"
-msgstr "Demux-GerÃ¤t wurde nicht gefunden!"
+msgstr "Demux-Gerät wurde nicht gefunden!"
 
 #: titan.c:796
 msgid "Error: no video device found !!"
-msgstr "FEHLER: Video-GerÃ¤t wurde nicht gefunden!"
+msgstr "FEHLER: Video-Gerät wurde nicht gefunden!"
 
 #: titan.c:802
 msgid "Error: no audio device found !!"
-msgstr "FEHLER: Audio-GerÃ¤t wurde nicht gefunden!"
+msgstr "FEHLER: Audio-Gerät wurde nicht gefunden!"
 
 #: titan.c:820
 msgid "Error: skin not found !!"
@@ -8319,7 +8319,7 @@ msgstr "Fernbedienung lange Version"
 
 #: titan.c:910
 msgid "Select Your Remote Control"
-msgstr "Fernbedienungsauswahl MenÃ¼"
+msgstr "Fernbedienungsauswahl Menü"
 
 #: titan.c:951
 msgid "First Wizzard"
@@ -8353,7 +8353,7 @@ msgid ""
 "This can make problems!"
 msgstr ""
 "FEHLER: Der Speicher in /mnt ist nicht ausreichend!\n"
-"Das kann zu Problemen fÃ¼hren!"
+"Das kann zu Problemen führen!"
 
 #: titan.c:1115
 msgid ""
@@ -8373,13 +8373,13 @@ msgstr "Automatisches Beenden in 10 Sekunden."
 
 #: tithek_global.h:238 tithek.h:3013
 msgid "The hoster is not yet supported !"
-msgstr "Der Anbieter wird zur Zeit nicht unterstÃ¼tzt!"
+msgstr "Der Anbieter wird zur Zeit nicht unterstützt!"
 
 #: tithek.h:620
 msgid "File exist, overwrite?"
 msgstr ""
 "Diese Datei existiert bereits.\n"
-"Soll die vorhandene Datei Ã¼berschrieben werden?"
+"Soll die vorhandene Datei überschrieben werden?"
 
 #: tithek.h:826
 msgid "found"
@@ -8398,12 +8398,12 @@ msgid ""
 "Can't start download.\n"
 "Please try later."
 msgstr ""
-"Das Herunterladen der Datei ist nicht mÃ¶glich!\n"
-"Bitte versuchen Sie es zu einem spÃ¤teren Zeitpunkt erneut."
+"Das Herunterladen der Datei ist nicht möglich!\n"
+"Bitte versuchen Sie es zu einem späteren Zeitpunkt erneut."
 
 #: tithek.h:1215
 msgid "Choice Playback"
-msgstr "Wiedergabe auswÃ¤hlen"
+msgstr "Wiedergabe auswählen"
 
 #: tithek.h:1220
 msgid "Streaming Playback (default)"
@@ -8479,11 +8479,11 @@ msgstr "Seite"
 
 #: tithek.h:3075
 msgid "Remove this Favorite ?"
-msgstr "Diesen Favoriten lÃ¶schen?"
+msgstr "Diesen Favoriten löschen?"
 
 #: tithek.h:3089
 msgid "Add this link as Favorite ?"
-msgstr "Diesen Link zu den Favoriten hinzufÃ¼gen?"
+msgstr "Diesen Link zu den Favoriten hinzufügen?"
 
 #: tithek_mainmenu.h:2
 msgid "All New first"
@@ -8691,23 +8691,23 @@ msgstr "Anzeige im automatischen Modus"
 
 #: tithek_settings.h:18 tithek_settings.h:26
 msgid "show 2 entrys"
-msgstr "Zeige 2 EintrÃ¤ge"
+msgstr "Zeige 2 Einträge"
 
 #: tithek_settings.h:19 tithek_settings.h:27
 msgid "show 6 entrys"
-msgstr "Zeige 6 EintrÃ¤ge"
+msgstr "Zeige 6 Einträge"
 
 #: tithek_settings.h:20 tithek_settings.h:28
 msgid "show 12 entrys"
-msgstr "Zeige 12 EintrÃ¤ge"
+msgstr "Zeige 12 Einträge"
 
 #: tithek_settings.h:21 tithek_settings.h:29
 msgid "show 20 entrys"
-msgstr "Zeige 20 EintrÃ¤ge"
+msgstr "Zeige 20 Einträge"
 
 #: tithek_settings.h:22 tithek_settings.h:30
 msgid "show 30 entrys"
-msgstr "Zeige 30 EintrÃ¤ge"
+msgstr "Zeige 30 Einträge"
 
 #: tithek_submenu.h:1
 msgid "18"
@@ -10542,2138 +10542,2122 @@ msgid "International-(African)"
 msgstr ""
 
 #: tithek_submenu.h:465
-msgid "International-(Afrikaans)"
-msgstr ""
-
-#: tithek_submenu.h:466
 msgid "International-(America)"
 msgstr ""
 
-#: tithek_submenu.h:467
+#: tithek_submenu.h:466
 msgid "International-(Arabic)"
 msgstr ""
 
-#: tithek_submenu.h:468
+#: tithek_submenu.h:467
 msgid "International-(Asian)"
 msgstr ""
 
-#: tithek_submenu.h:469
+#: tithek_submenu.h:468
 msgid "International-(Bollywood)"
 msgstr ""
 
-#: tithek_submenu.h:470
+#: tithek_submenu.h:469
 msgid "International-(Caribbean)"
 msgstr ""
 
-#: tithek_submenu.h:471
+#: tithek_submenu.h:470
 msgid "International-(Celtic)"
 msgstr ""
 
-#: tithek_submenu.h:472
+#: tithek_submenu.h:471
 msgid "International-(Chinese)"
 msgstr ""
 
-#: tithek_submenu.h:473
+#: tithek_submenu.h:472
 msgid "International-(European)"
 msgstr ""
 
-#: tithek_submenu.h:474
-msgid "International-(French)"
-msgstr ""
-
-#: tithek_submenu.h:475
+#: tithek_submenu.h:473
 msgid "International-(German)"
 msgstr ""
 
-#: tithek_submenu.h:476
+#: tithek_submenu.h:474
 msgid "International-(Greek)"
 msgstr ""
 
-#: tithek_submenu.h:477
+#: tithek_submenu.h:475
 msgid "International-(Hindi)"
 msgstr ""
 
-#: tithek_submenu.h:478
+#: tithek_submenu.h:476
 msgid "International-(Indian)"
 msgstr ""
 
-#: tithek_submenu.h:479
+#: tithek_submenu.h:477
 msgid "International-(Islamic)"
 msgstr ""
 
-#: tithek_submenu.h:480
+#: tithek_submenu.h:478
 msgid "International-(Italia)"
 msgstr ""
 
-#: tithek_submenu.h:481
+#: tithek_submenu.h:479
 msgid "International-(Japanese)"
 msgstr ""
 
-#: tithek_submenu.h:482
+#: tithek_submenu.h:480
 msgid "International-(Korea)"
 msgstr ""
 
-#: tithek_submenu.h:483
+#: tithek_submenu.h:481
 msgid "International-(Middle-Eastern)"
 msgstr ""
 
-#: tithek_submenu.h:484
+#: tithek_submenu.h:482
 msgid "International-(North-American)"
 msgstr ""
 
-#: tithek_submenu.h:485
+#: tithek_submenu.h:483
 msgid "International-(Russian)"
 msgstr ""
 
-#: tithek_submenu.h:486
+#: tithek_submenu.h:484
 msgid "International-(Soca)"
 msgstr ""
 
-#: tithek_submenu.h:487
-msgid "International-(South-American)"
-msgstr ""
-
-#: tithek_submenu.h:488
+#: tithek_submenu.h:485
 msgid "International-(Spanish)"
 msgstr ""
 
-#: tithek_submenu.h:489
+#: tithek_submenu.h:486
 msgid "International-(Tamil)"
 msgstr ""
 
-#: tithek_submenu.h:490
+#: tithek_submenu.h:487
 msgid "International-(Turkish)"
 msgstr ""
 
-#: tithek_submenu.h:491
+#: tithek_submenu.h:488
 msgid "International-(Zouk)"
 msgstr ""
 
-#: tithek_submenu.h:492
+#: tithek_submenu.h:489
 msgid "Interracial"
 msgstr ""
 
-#: tithek_submenu.h:493
+#: tithek_submenu.h:490
 msgid "investigativ"
 msgstr ""
 
-#: tithek_submenu.h:494
+#: tithek_submenu.h:491
 msgid "iron man marvel anime"
 msgstr ""
 
-#: tithek_submenu.h:495
+#: tithek_submenu.h:492
 msgid "Israel"
 msgstr ""
 
-#: tithek_submenu.h:496
+#: tithek_submenu.h:493
 msgid "Japan"
 msgstr ""
 
-#: tithek_submenu.h:497
+#: tithek_submenu.h:494
 msgid "Jazz"
 msgstr ""
 
-#: tithek_submenu.h:498
+#: tithek_submenu.h:495
 msgid "Jazz-(Avant-Garde)"
 msgstr ""
 
-#: tithek_submenu.h:499
+#: tithek_submenu.h:496
 msgid "Jazz-(Big-Band)"
 msgstr ""
 
-#: tithek_submenu.h:500
+#: tithek_submenu.h:497
 msgid "Jazz-(Bop)"
 msgstr ""
 
-#: tithek_submenu.h:501
+#: tithek_submenu.h:498
 msgid "Jazz-(Cool)"
 msgstr ""
 
-#: tithek_submenu.h:502
+#: tithek_submenu.h:499
 msgid "Jazz-(Fusion)"
 msgstr ""
 
-#: tithek_submenu.h:503
+#: tithek_submenu.h:500
 msgid "Jazz-(Latin)"
 msgstr ""
 
-#: tithek_submenu.h:504
+#: tithek_submenu.h:501
 msgid "Jazz-(Smooth)"
 msgstr ""
 
-#: tithek_submenu.h:505
+#: tithek_submenu.h:502
 msgid "Jazz-(Swing)"
 msgstr ""
 
-#: tithek_submenu.h:506
+#: tithek_submenu.h:503
 msgid "Jazz-(Vocal)"
 msgstr ""
 
-#: tithek_submenu.h:507
+#: tithek_submenu.h:504
 msgid "johann koenig live total bock auf remmi demmi"
 msgstr ""
 
-#: tithek_submenu.h:508
+#: tithek_submenu.h:505
 msgid "jordan carver"
 msgstr ""
 
-#: tithek_submenu.h:509
+#: tithek_submenu.h:506
 msgid "jugendliebe"
 msgstr ""
 
-#: tithek_submenu.h:510
+#: tithek_submenu.h:507
 msgid "jungen gegen maedchen"
 msgstr ""
 
-#: tithek_submenu.h:511
+#: tithek_submenu.h:508
 msgid "jungfrau sucht die grosse liebe"
 msgstr ""
 
-#: tithek_submenu.h:512
+#: tithek_submenu.h:509
 msgid "katzenjammer"
 msgstr ""
 
-#: tithek_submenu.h:513
+#: tithek_submenu.h:510
 msgid "kinderfilme"
 msgstr ""
 
-#: tithek_submenu.h:514
+#: tithek_submenu.h:511
 msgid "kinder fragen comedians antworten"
 msgstr ""
 
-#: tithek_submenu.h:515
+#: tithek_submenu.h:512
 msgid "king"
 msgstr ""
 
-#: tithek_submenu.h:516
+#: tithek_submenu.h:513
 msgid "Kino ab 18"
 msgstr ""
 
-#: tithek_submenu.h:517
+#: tithek_submenu.h:514
 msgid "Kino Filme (de)"
 msgstr ""
 
-#: tithek_submenu.h:518
+#: tithek_submenu.h:515
 msgid "Kino Filme (en)"
 msgstr ""
 
-#: tithek_submenu.h:519
+#: tithek_submenu.h:516
 msgid "Klassikerkino"
 msgstr ""
 
-#: tithek_submenu.h:520
+#: tithek_submenu.h:517
 msgid "kleine leute grosse welt"
 msgstr ""
 
-#: tithek_submenu.h:521
+#: tithek_submenu.h:518
 msgid "kocharena"
 msgstr ""
 
-#: tithek_submenu.h:522
+#: tithek_submenu.h:519
 msgid "koeln 50667"
 msgstr ""
 
-#: tithek_submenu.h:523
+#: tithek_submenu.h:520
 msgid "komodien"
 msgstr ""
 
-#: tithek_submenu.h:524
+#: tithek_submenu.h:521
 msgid "Korea"
 msgstr ""
 
-#: tithek_submenu.h:525
+#: tithek_submenu.h:522
 msgid "krieg"
 msgstr ""
 
-#: tithek_submenu.h:526
+#: tithek_submenu.h:523
 msgid "kuechenchefs uebernehmen sie"
 msgstr ""
 
-#: tithek_submenu.h:527
+#: tithek_submenu.h:524
 msgid "lasko die faust gottes"
 msgstr ""
 
-#: tithek_submenu.h:528
+#: tithek_submenu.h:525
 msgid "Latest Documentations"
 msgstr ""
 
-#: tithek_submenu.h:529
+#: tithek_submenu.h:526
 msgid "Latest Series"
 msgstr ""
 
-#: tithek_submenu.h:530
+#: tithek_submenu.h:527
 msgid "Latina"
 msgstr ""
 
-#: tithek_submenu.h:531
+#: tithek_submenu.h:528
 msgid "Latin-(Bachata)"
 msgstr ""
 
-#: tithek_submenu.h:532
+#: tithek_submenu.h:529
 msgid "Latin-(Bossa-Nova)"
 msgstr ""
 
-#: tithek_submenu.h:533
+#: tithek_submenu.h:530
 msgid "Latin-(Cumbia)"
 msgstr ""
 
-#: tithek_submenu.h:534
+#: tithek_submenu.h:531
 msgid "Latin-(Mariachi)"
 msgstr ""
 
-#: tithek_submenu.h:535
+#: tithek_submenu.h:532
 msgid "Latin-(Merengue)"
 msgstr ""
 
-#: tithek_submenu.h:536
+#: tithek_submenu.h:533
 msgid "Latin-(Ranchera)"
 msgstr ""
 
-#: tithek_submenu.h:537
+#: tithek_submenu.h:534
 msgid "Latin-(Reggaeton)"
 msgstr ""
 
-#: tithek_submenu.h:538
+#: tithek_submenu.h:535
 msgid "Latin-(Regional-Mexican)"
 msgstr ""
 
-#: tithek_submenu.h:539
+#: tithek_submenu.h:536
 msgid "Latin-(Salsa)"
 msgstr ""
 
-#: tithek_submenu.h:540
+#: tithek_submenu.h:537
 msgid "Latin-(Tango)"
 msgstr ""
 
-#: tithek_submenu.h:541
+#: tithek_submenu.h:538
 msgid "Latin-(Tropicalia)"
 msgstr ""
 
-#: tithek_submenu.h:542
+#: tithek_submenu.h:539
 msgid "lebe mein leben austausch mit folgen"
 msgstr ""
 
-#: tithek_submenu.h:543
+#: tithek_submenu.h:540
 msgid "lesbian"
 msgstr ""
 
-#: tithek_submenu.h:544
+#: tithek_submenu.h:541
 msgid "Lesbian"
 msgstr ""
 
-#: tithek_submenu.h:545
+#: tithek_submenu.h:542
 msgid "lesbian+teen"
 msgstr ""
 
-#: tithek_submenu.h:546
+#: tithek_submenu.h:543
 msgid "lets dance"
 msgstr ""
 
-#: tithek_submenu.h:547
+#: tithek_submenu.h:544
 msgid "letzte chance fuer unsere ehe"
 msgstr ""
 
-#: tithek_submenu.h:548
+#: tithek_submenu.h:545
 msgid "Letzte Updates (de)"
 msgstr ""
 
-#: tithek_submenu.h:549
+#: tithek_submenu.h:546
 msgid "Letzte Updates (en)"
 msgstr ""
 
-#: tithek_submenu.h:550
+#: tithek_submenu.h:547
 msgid "Letzte Uploads"
 msgstr ""
 
-#: tithek_submenu.h:551
+#: tithek_submenu.h:548
 msgid "leverage"
 msgstr ""
 
-#: tithek_submenu.h:552
+#: tithek_submenu.h:549
 msgid "lick"
 msgstr ""
 
-#: tithek_submenu.h:553
+#: tithek_submenu.h:550
 msgid "liebe im paradies"
 msgstr ""
 
-#: tithek_submenu.h:554
+#: tithek_submenu.h:551
 msgid "Liebesfilmkino"
 msgstr ""
 
-#: tithek_submenu.h:555
+#: tithek_submenu.h:552
 msgid "lie to me"
 msgstr ""
 
-#: tithek_submenu.h:556
+#: tithek_submenu.h:553
 msgid "lingerie"
 msgstr ""
 
-#: tithek_submenu.h:557
+#: tithek_submenu.h:554
 msgid "Live"
 msgstr ""
 
-#: tithek_submenu.h:558
+#: tithek_submenu.h:555
 msgid "live video chat rtl now"
 msgstr ""
 
-#: tithek_submenu.h:559
+#: tithek_submenu.h:556
 msgid "long+hair"
 msgstr ""
 
-#: tithek_submenu.h:560
+#: tithek_submenu.h:557
 msgid "long+legs"
 msgstr ""
 
-#: tithek_submenu.h:561
+#: tithek_submenu.h:558
 msgid "long+videos"
 msgstr ""
 
-#: tithek_submenu.h:562
+#: tithek_submenu.h:559
 msgid "lost girl"
 msgstr ""
 
-#: tithek_submenu.h:563
+#: tithek_submenu.h:560
 msgid "Lovesongs"
 msgstr ""
 
-#: tithek_submenu.h:564
+#: tithek_submenu.h:561
 msgid "macgyver"
 msgstr ""
 
-#: tithek_submenu.h:565
+#: tithek_submenu.h:562
 msgid "made in germany"
 msgstr ""
 
-#: tithek_submenu.h:566
+#: tithek_submenu.h:563
 msgid "major crimes"
 msgstr ""
 
-#: tithek_submenu.h:567
+#: tithek_submenu.h:564
 msgid "mama mia"
 msgstr ""
 
-#: tithek_submenu.h:568
+#: tithek_submenu.h:565
 msgid "mantrailer spuren des verbrechens"
 msgstr ""
 
-#: tithek_submenu.h:569
+#: tithek_submenu.h:566
 msgid "manuel horeth nichts ist unmoeglich"
 msgstr ""
 
-#: tithek_submenu.h:570
+#: tithek_submenu.h:567
 msgid "masturbation"
 msgstr ""
 
-#: tithek_submenu.h:571
+#: tithek_submenu.h:568
 msgid "mature"
 msgstr ""
 
-#: tithek_submenu.h:572
+#: tithek_submenu.h:569
 msgid "medical detectives"
 msgstr ""
 
-#: tithek_submenu.h:573
+#: tithek_submenu.h:570
 msgid "medicopter 117"
 msgstr ""
 
-#: tithek_submenu.h:574
+#: tithek_submenu.h:571
 msgid "mein baby"
 msgstr ""
 
-#: tithek_submenu.h:575
+#: tithek_submenu.h:572
 msgid "mein garten"
 msgstr ""
 
-#: tithek_submenu.h:576
+#: tithek_submenu.h:573
 msgid "mein himmlisches hotel"
 msgstr ""
 
-#: tithek_submenu.h:577
+#: tithek_submenu.h:574
 msgid "mein leben ich"
 msgstr ""
 
-#: tithek_submenu.h:578
+#: tithek_submenu.h:575
 msgid "mein leben ich superrtl"
 msgstr ""
 
-#: tithek_submenu.h:579
+#: tithek_submenu.h:576
 msgid "mein neuer alter"
 msgstr ""
 
-#: tithek_submenu.h:580
+#: tithek_submenu.h:577
 msgid "mein promi restaurant"
 msgstr ""
 
-#: tithek_submenu.h:581
+#: tithek_submenu.h:578
 msgid "- Meist gesehen"
 msgstr ""
 
-#: tithek_submenu.h:582
+#: tithek_submenu.h:579
 msgid "menschen tiere doktoren"
 msgstr ""
 
-#: tithek_submenu.h:583
+#: tithek_submenu.h:580
 msgid "merlin staffel 5"
 msgstr ""
 
-#: tithek_submenu.h:584
+#: tithek_submenu.h:581
 msgid "merlin super"
 msgstr ""
 
-#: tithek_submenu.h:585
+#: tithek_submenu.h:582
 msgid "Metal"
 msgstr ""
 
-#: tithek_submenu.h:586
+#: tithek_submenu.h:583
 msgid "Metal-(Black)"
 msgstr ""
 
-#: tithek_submenu.h:587
+#: tithek_submenu.h:584
 msgid "Metal-(Heavy)"
 msgstr ""
 
-#: tithek_submenu.h:588
+#: tithek_submenu.h:585
 msgid "mia gray die modelmacher"
 msgstr ""
 
-#: tithek_submenu.h:589
+#: tithek_submenu.h:586
 msgid "miami heiss anninas american dream"
 msgstr ""
 
-#: tithek_submenu.h:590
+#: tithek_submenu.h:587
 msgid "mieten kaufen wohnen"
 msgstr ""
 
-#: tithek_submenu.h:591
+#: tithek_submenu.h:588
 msgid "mieterzoff vox"
 msgstr ""
 
-#: tithek_submenu.h:592
+#: tithek_submenu.h:589
 msgid "mietprellern auf der spur"
 msgstr ""
 
-#: tithek_submenu.h:593
+#: tithek_submenu.h:590
 msgid "milf"
 msgstr ""
 
-#: tithek_submenu.h:594
+#: tithek_submenu.h:591
 msgid "Milf"
 msgstr ""
 
-#: tithek_submenu.h:595
+#: tithek_submenu.h:592
 msgid "mini"
 msgstr ""
 
-#: tithek_submenu.h:596
+#: tithek_submenu.h:593
 msgid "Misc"
 msgstr ""
 
-#: tithek_submenu.h:597
+#: tithek_submenu.h:594
 msgid "Misc-(Environmental)"
 msgstr ""
 
-#: tithek_submenu.h:598
+#: tithek_submenu.h:595
 msgid "Misc-(Ethnic-Fusion)"
 msgstr ""
 
-#: tithek_submenu.h:599
+#: tithek_submenu.h:596
 msgid "Misc-(Meditation)"
 msgstr ""
 
-#: tithek_submenu.h:600
+#: tithek_submenu.h:597
 msgid "Misc-(New-Age)"
 msgstr ""
 
-#: tithek_submenu.h:601
+#: tithek_submenu.h:598
 msgid "Misc-(Spiritual)"
 msgstr ""
 
-#: tithek_submenu.h:602
+#: tithek_submenu.h:599
 msgid "mitten im leben"
 msgstr ""
 
-#: tithek_submenu.h:603
+#: tithek_submenu.h:600
 msgid "Mixed"
 msgstr ""
 
-#: tithek_submenu.h:604
+#: tithek_submenu.h:601
 msgid "moan"
 msgstr ""
 
-#: tithek_submenu.h:605
+#: tithek_submenu.h:602
 msgid "mom"
 msgstr ""
 
-#: tithek_submenu.h:606
+#: tithek_submenu.h:603
 msgid "money"
 msgstr ""
 
-#: tithek_submenu.h:607
+#: tithek_submenu.h:604
 msgid "most viewed"
 msgstr ""
 
-#: tithek_submenu.h:608
+#: tithek_submenu.h:605
 msgid "Most Viewed"
 msgstr ""
 
-#: tithek_submenu.h:609
+#: tithek_submenu.h:606
 msgid "most viewed Music"
 msgstr ""
 
-#: tithek_submenu.h:610
+#: tithek_submenu.h:607
 msgid "mother"
 msgstr ""
 
-#: tithek_submenu.h:611
+#: tithek_submenu.h:608
 msgid "motorsport"
 msgstr ""
 
-#: tithek_submenu.h:612
+#: tithek_submenu.h:609
 msgid "Movie Highlights"
 msgstr ""
 
-#: tithek_submenu.h:613
+#: tithek_submenu.h:610
 msgid "Movies"
 msgstr ""
 
-#: tithek_submenu.h:614
+#: tithek_submenu.h:611
 msgid "movies of 1936"
 msgstr ""
 
-#: tithek_submenu.h:615
+#: tithek_submenu.h:612
 msgid "movies of 1942"
 msgstr ""
 
-#: tithek_submenu.h:616
+#: tithek_submenu.h:613
 msgid "movies of 1950"
 msgstr ""
 
-#: tithek_submenu.h:617
+#: tithek_submenu.h:614
 msgid "movies of 1953"
 msgstr ""
 
-#: tithek_submenu.h:618
+#: tithek_submenu.h:615
 msgid "movies of 1954"
 msgstr ""
 
-#: tithek_submenu.h:619
+#: tithek_submenu.h:616
 msgid "movies of 1955"
 msgstr ""
 
-#: tithek_submenu.h:620
+#: tithek_submenu.h:617
 msgid "movies of 1956"
 msgstr ""
 
-#: tithek_submenu.h:621
+#: tithek_submenu.h:618
 msgid "movies of 1957"
 msgstr ""
 
-#: tithek_submenu.h:622
+#: tithek_submenu.h:619
 msgid "movies of 1958"
 msgstr ""
 
-#: tithek_submenu.h:623
+#: tithek_submenu.h:620
 msgid "movies of 1959"
 msgstr ""
 
-#: tithek_submenu.h:624
+#: tithek_submenu.h:621
 msgid "movies of 1960"
 msgstr ""
 
-#: tithek_submenu.h:625
+#: tithek_submenu.h:622
 msgid "movies of 1961"
 msgstr ""
 
-#: tithek_submenu.h:626
+#: tithek_submenu.h:623
 msgid "movies of 1962"
 msgstr ""
 
-#: tithek_submenu.h:627
+#: tithek_submenu.h:624
 msgid "movies of 1963"
 msgstr ""
 
-#: tithek_submenu.h:628
+#: tithek_submenu.h:625
 msgid "movies of 1964"
 msgstr ""
 
-#: tithek_submenu.h:629
+#: tithek_submenu.h:626
 msgid "movies of 1965"
 msgstr ""
 
-#: tithek_submenu.h:630
+#: tithek_submenu.h:627
 msgid "movies of 1966"
 msgstr ""
 
-#: tithek_submenu.h:631
+#: tithek_submenu.h:628
 msgid "movies of 1967"
 msgstr ""
 
-#: tithek_submenu.h:632
+#: tithek_submenu.h:629
 msgid "movies of 1968"
 msgstr ""
 
-#: tithek_submenu.h:633
+#: tithek_submenu.h:630
 msgid "movies of 1969"
 msgstr ""
 
-#: tithek_submenu.h:634
+#: tithek_submenu.h:631
 msgid "movies of 1970"
 msgstr ""
 
-#: tithek_submenu.h:635
+#: tithek_submenu.h:632
 msgid "movies of 1971"
 msgstr ""
 
-#: tithek_submenu.h:636
+#: tithek_submenu.h:633
 msgid "movies of 1972"
 msgstr ""
 
-#: tithek_submenu.h:637
+#: tithek_submenu.h:634
 msgid "movies of 1973"
 msgstr ""
 
-#: tithek_submenu.h:638
+#: tithek_submenu.h:635
 msgid "movies of 1974"
 msgstr ""
 
-#: tithek_submenu.h:639
+#: tithek_submenu.h:636
 msgid "movies of 1975"
 msgstr ""
 
-#: tithek_submenu.h:640
+#: tithek_submenu.h:637
 msgid "movies of 1976"
 msgstr ""
 
-#: tithek_submenu.h:641
+#: tithek_submenu.h:638
 msgid "movies of 1977"
 msgstr ""
 
-#: tithek_submenu.h:642
+#: tithek_submenu.h:639
 msgid "movies of 1978"
 msgstr ""
 
-#: tithek_submenu.h:643
+#: tithek_submenu.h:640
 msgid "movies of 1979"
 msgstr ""
 
-#: tithek_submenu.h:644
+#: tithek_submenu.h:641
 msgid "movies of 1980"
 msgstr ""
 
-#: tithek_submenu.h:645
+#: tithek_submenu.h:642
 msgid "movies of 1981"
 msgstr ""
 
-#: tithek_submenu.h:646
+#: tithek_submenu.h:643
 msgid "movies of 1982"
 msgstr ""
 
-#: tithek_submenu.h:647
+#: tithek_submenu.h:644
 msgid "movies of 1983"
 msgstr ""
 
-#: tithek_submenu.h:648
+#: tithek_submenu.h:645
 msgid "movies of 1984"
 msgstr ""
 
-#: tithek_submenu.h:649
+#: tithek_submenu.h:646
 msgid "movies of 1985"
 msgstr ""
 
-#: tithek_submenu.h:650
+#: tithek_submenu.h:647
 msgid "movies of 1986"
 msgstr ""
 
-#: tithek_submenu.h:651
+#: tithek_submenu.h:648
 msgid "movies of 1987"
 msgstr ""
 
-#: tithek_submenu.h:652
+#: tithek_submenu.h:649
 msgid "movies of 1988"
 msgstr ""
 
-#: tithek_submenu.h:653
+#: tithek_submenu.h:650
 msgid "movies of 1989"
 msgstr ""
 
-#: tithek_submenu.h:654
+#: tithek_submenu.h:651
 msgid "movies of 1990"
 msgstr ""
 
-#: tithek_submenu.h:655
+#: tithek_submenu.h:652
 msgid "movies of 1991"
 msgstr ""
 
-#: tithek_submenu.h:656
+#: tithek_submenu.h:653
 msgid "movies of 1992"
 msgstr ""
 
-#: tithek_submenu.h:657
+#: tithek_submenu.h:654
 msgid "movies of 1993"
 msgstr ""
 
-#: tithek_submenu.h:658
+#: tithek_submenu.h:655
 msgid "movies of 1994"
 msgstr ""
 
-#: tithek_submenu.h:659
+#: tithek_submenu.h:656
 msgid "movies of 1995"
 msgstr ""
 
-#: tithek_submenu.h:660
+#: tithek_submenu.h:657
 msgid "movies of 1996"
 msgstr ""
 
-#: tithek_submenu.h:661
+#: tithek_submenu.h:658
 msgid "movies of 1997"
 msgstr ""
 
-#: tithek_submenu.h:662
+#: tithek_submenu.h:659
 msgid "movies of 1998"
 msgstr ""
 
-#: tithek_submenu.h:663
+#: tithek_submenu.h:660
 msgid "movies of 1999"
 msgstr ""
 
-#: tithek_submenu.h:664
+#: tithek_submenu.h:661
 msgid "movies of 2000"
 msgstr ""
 
-#: tithek_submenu.h:665
+#: tithek_submenu.h:662
 msgid "movies of 2001"
 msgstr ""
 
-#: tithek_submenu.h:666
+#: tithek_submenu.h:663
 msgid "movies of 2002"
 msgstr ""
 
-#: tithek_submenu.h:667
+#: tithek_submenu.h:664
 msgid "movies of 2003"
 msgstr ""
 
-#: tithek_submenu.h:668
+#: tithek_submenu.h:665
 msgid "movies of 2004"
 msgstr ""
 
-#: tithek_submenu.h:669
+#: tithek_submenu.h:666
 msgid "movies of 2005"
 msgstr ""
 
-#: tithek_submenu.h:670
+#: tithek_submenu.h:667
 msgid "movies of 2006"
 msgstr ""
 
-#: tithek_submenu.h:671
+#: tithek_submenu.h:668
 msgid "movies of 2007"
 msgstr ""
 
-#: tithek_submenu.h:672
+#: tithek_submenu.h:669
 msgid "movies of 2008"
 msgstr ""
 
-#: tithek_submenu.h:673
+#: tithek_submenu.h:670
 msgid "movies of 2009"
 msgstr ""
 
-#: tithek_submenu.h:674
+#: tithek_submenu.h:671
 msgid "movies of 2010"
 msgstr ""
 
-#: tithek_submenu.h:675
+#: tithek_submenu.h:672
 msgid "movies of 2011"
 msgstr ""
 
-#: tithek_submenu.h:676
+#: tithek_submenu.h:673
 msgid "movies of 2012"
 msgstr ""
 
-#: tithek_submenu.h:677
+#: tithek_submenu.h:674
 msgid "movies of 2013"
 msgstr ""
 
-#: tithek_submenu.h:678
+#: tithek_submenu.h:675
 msgid "mr bean"
 msgstr ""
 
-#: tithek_submenu.h:679
+#: tithek_submenu.h:676
 msgid "mrs miracle2"
 msgstr ""
 
-#: tithek_submenu.h:680
+#: tithek_submenu.h:677
 msgid "Musical"
 msgstr ""
 
-#: tithek_submenu.h:681
+#: tithek_submenu.h:678
 msgid "musik"
 msgstr ""
 
-#: tithek_submenu.h:682
+#: tithek_submenu.h:679
 msgid "Musik"
 msgstr ""
 
-#: tithek_submenu.h:683
+#: tithek_submenu.h:680
 msgid "my little deutschland"
 msgstr ""
 
-#: tithek_submenu.h:684
+#: tithek_submenu.h:681
 msgid "nachbarschaftsstreit"
 msgstr ""
 
-#: tithek_submenu.h:685
+#: tithek_submenu.h:682
 msgid "Nachrichten"
 msgstr ""
 
-#: tithek_submenu.h:686
+#: tithek_submenu.h:683
 msgid "natural"
 msgstr ""
 
-#: tithek_submenu.h:687
+#: tithek_submenu.h:684
 msgid "natural+tits"
 msgstr ""
 
-#: tithek_submenu.h:688
+#: tithek_submenu.h:685
 msgid "Neu bei Netzkino"
 msgstr ""
 
-#: tithek_submenu.h:689
+#: tithek_submenu.h:686
 msgid "neueste-videos"
 msgstr ""
 
-#: tithek_submenu.h:690
+#: tithek_submenu.h:687
 msgid "New"
 msgstr ""
 
-#: tithek_submenu.h:691
+#: tithek_submenu.h:688
 msgid "new+face"
 msgstr ""
 
-#: tithek_submenu.h:692
+#: tithek_submenu.h:689
 msgid "next+door"
 msgstr ""
 
-#: tithek_submenu.h:693
+#: tithek_submenu.h:690
 msgid "next please"
 msgstr ""
 
-#: tithek_submenu.h:694
+#: tithek_submenu.h:691
 msgid "nicht mit uns die grosse schnaeppchenluege"
 msgstr ""
 
-#: tithek_submenu.h:695
+#: tithek_submenu.h:692
 msgid "nikita"
 msgstr ""
 
-#: tithek_submenu.h:696
+#: tithek_submenu.h:693
 msgid "nikola"
 msgstr ""
 
-#: tithek_submenu.h:697
+#: tithek_submenu.h:694
 msgid "nikola superrtl"
 msgstr ""
 
-#: tithek_submenu.h:698
+#: tithek_submenu.h:695
 msgid "nofretete und das geheimnis der mumie"
 msgstr ""
 
-#: tithek_submenu.h:699
+#: tithek_submenu.h:696
 msgid "notruf rettung aus der luft"
 msgstr ""
 
-#: tithek_submenu.h:700
+#: tithek_submenu.h:697
 msgid "observe"
 msgstr ""
 
-#: tithek_submenu.h:701
+#: tithek_submenu.h:698
 msgid "office"
 msgstr ""
 
-#: tithek_submenu.h:702
+#: tithek_submenu.h:699
 msgid "Oiled"
 msgstr ""
 
-#: tithek_submenu.h:703
+#: tithek_submenu.h:700
 msgid "olaf schubert"
 msgstr ""
 
-#: tithek_submenu.h:704
+#: tithek_submenu.h:701
 msgid "old+%26+young"
 msgstr ""
 
-#: tithek_submenu.h:705
+#: tithek_submenu.h:702
 msgid "Oldskool"
 msgstr ""
 
-#: tithek_submenu.h:706
+#: tithek_submenu.h:703
 msgid "on+cam"
 msgstr ""
 
-#: tithek_submenu.h:707
+#: tithek_submenu.h:704
 msgid "once upon a time es war einmal"
 msgstr ""
 
-#: tithek_submenu.h:708
+#: tithek_submenu.h:705
 msgid "online"
 msgstr ""
 
-#: tithek_submenu.h:709
+#: tithek_submenu.h:706
 msgid "orgy"
 msgstr ""
 
-#: tithek_submenu.h:710
+#: tithek_submenu.h:707
 msgid "Other"
 msgstr ""
 
-#: tithek_submenu.h:711
+#: tithek_submenu.h:708
 msgid "panties"
 msgstr ""
 
-#: tithek_submenu.h:712
+#: tithek_submenu.h:709
 msgid "panties+off"
 msgstr ""
 
-#: tithek_submenu.h:713
+#: tithek_submenu.h:710
 msgid "party"
 msgstr ""
 
-#: tithek_submenu.h:714
+#: tithek_submenu.h:711
 msgid "pastewka in"
 msgstr ""
 
-#: tithek_submenu.h:715
+#: tithek_submenu.h:712
 msgid "pastewka in "
 msgstr ""
 
-#: tithek_submenu.h:716
+#: tithek_submenu.h:713
 msgid "patric heizmann live ich bin dann mal schlank"
 msgstr ""
 
-#: tithek_submenu.h:717
+#: tithek_submenu.h:714
 msgid "penetration"
 msgstr ""
 
-#: tithek_submenu.h:718
+#: tithek_submenu.h:715
 msgid "person of interest"
 msgstr ""
 
-#: tithek_submenu.h:719
+#: tithek_submenu.h:716
 msgid "pest die rueckkehr"
 msgstr ""
 
-#: tithek_submenu.h:720
+#: tithek_submenu.h:717
 msgid "petite"
 msgstr ""
 
-#: tithek_submenu.h:721
+#: tithek_submenu.h:718
 msgid "pixel"
 msgstr ""
 
-#: tithek_submenu.h:722
+#: tithek_submenu.h:719
 msgid "Polski Crash1"
 msgstr ""
 
-#: tithek_submenu.h:723
+#: tithek_submenu.h:720
 msgid "Pop"
 msgstr ""
 
-#: tithek_submenu.h:724
-msgid "Pop-(Idols)"
-msgstr ""
-
-#: tithek_submenu.h:725
+#: tithek_submenu.h:721
 msgid "Pop-(Soft)"
 msgstr ""
 
-#: tithek_submenu.h:726
+#: tithek_submenu.h:722
 msgid "Pop-(Teen)"
 msgstr ""
 
-#: tithek_submenu.h:727
+#: tithek_submenu.h:723
 msgid "Pop-(Top-40)"
 msgstr ""
 
-#: tithek_submenu.h:728
+#: tithek_submenu.h:724
 msgid "Popular Documentations"
 msgstr ""
 
-#: tithek_submenu.h:729
+#: tithek_submenu.h:725
 msgid "Popular Movies"
 msgstr ""
 
-#: tithek_submenu.h:730
+#: tithek_submenu.h:726
 msgid "Popular Series"
 msgstr ""
 
-#: tithek_submenu.h:731
+#: tithek_submenu.h:727
 msgid "pornstar"
 msgstr ""
 
-#: tithek_submenu.h:732
+#: tithek_submenu.h:728
 msgid "portalzine-tv"
 msgstr ""
 
-#: tithek_submenu.h:733
+#: tithek_submenu.h:729
 msgid "posing"
 msgstr ""
 
-#: tithek_submenu.h:734
+#: tithek_submenu.h:730
 msgid "postmortem"
 msgstr ""
 
-#: tithek_submenu.h:735
+#: tithek_submenu.h:731
 msgid "pov"
 msgstr ""
 
-#: tithek_submenu.h:736
+#: tithek_submenu.h:732
 msgid "praxis extrem"
 msgstr ""
 
-#: tithek_submenu.h:737
+#: tithek_submenu.h:733
 msgid "pretty"
 msgstr ""
 
-#: tithek_submenu.h:738
+#: tithek_submenu.h:734
 msgid "privatdetektive im einsatz"
 msgstr ""
 
-#: tithek_submenu.h:739
+#: tithek_submenu.h:735
 msgid "promi frauentausch"
 msgstr ""
 
-#: tithek_submenu.h:740
+#: tithek_submenu.h:736
 msgid "promi kocharena"
 msgstr ""
 
-#: tithek_submenu.h:741
+#: tithek_submenu.h:737
 msgid "prominent"
 msgstr ""
 
-#: tithek_submenu.h:742
+#: tithek_submenu.h:738
 msgid "promi shopping queen"
 msgstr ""
 
-#: tithek_submenu.h:743
+#: tithek_submenu.h:739
 msgid "promis suchen ein zuhause"
 msgstr ""
 
-#: tithek_submenu.h:744
+#: tithek_submenu.h:740
 msgid "promi undercover"
 msgstr ""
 
-#: tithek_submenu.h:745
+#: tithek_submenu.h:741
 msgid "Public-Radio"
 msgstr ""
 
-#: tithek_submenu.h:746
+#: tithek_submenu.h:742
 msgid "Public-Radio-(News)"
 msgstr ""
 
-#: tithek_submenu.h:747
+#: tithek_submenu.h:743
 msgid "Public-Radio-(Sports)"
 msgstr ""
 
-#: tithek_submenu.h:748
+#: tithek_submenu.h:744
 msgid "punkt 12"
 msgstr ""
 
-#: tithek_submenu.h:749
+#: tithek_submenu.h:745
 msgid "punkt 6"
 msgstr ""
 
-#: tithek_submenu.h:750
+#: tithek_submenu.h:746
 msgid "punkt 9"
 msgstr ""
 
-#: tithek_submenu.h:751
+#: tithek_submenu.h:747
 msgid "pussy"
 msgstr ""
 
-#: tithek_submenu.h:752
+#: tithek_submenu.h:748
 msgid "Queerkino"
 msgstr ""
 
-#: tithek_submenu.h:753
+#: tithek_submenu.h:749
 msgid "rach deckt auf"
 msgstr ""
 
-#: tithek_submenu.h:754
+#: tithek_submenu.h:750
 msgid "rach der restauranttester"
 msgstr ""
 
-#: tithek_submenu.h:755
+#: tithek_submenu.h:751
 msgid "rachs restaurantschule"
 msgstr ""
 
-#: tithek_submenu.h:756
+#: tithek_submenu.h:752
 msgid "Rap"
 msgstr ""
 
-#: tithek_submenu.h:757
+#: tithek_submenu.h:753
 msgid "Rap-(East-Coast)"
 msgstr ""
 
-#: tithek_submenu.h:758
+#: tithek_submenu.h:754
 msgid "Rap-(Gangsta)"
 msgstr ""
 
-#: tithek_submenu.h:759
+#: tithek_submenu.h:755
 msgid "Rap-(Hip-Hop)"
 msgstr ""
 
-#: tithek_submenu.h:760
+#: tithek_submenu.h:756
 msgid "Rap-(Old-School)"
 msgstr ""
 
-#: tithek_submenu.h:761
+#: tithek_submenu.h:757
 msgid "rare+face"
 msgstr ""
 
-#: tithek_submenu.h:762
+#: tithek_submenu.h:758
 msgid "raus aus den schulden"
 msgstr ""
 
-#: tithek_submenu.h:763
+#: tithek_submenu.h:759
 msgid "real cool runnings"
 msgstr ""
 
-#: tithek_submenu.h:764
+#: tithek_submenu.h:760
 msgid "reality"
 msgstr ""
 
-#: tithek_submenu.h:765
+#: tithek_submenu.h:761
 msgid "redhead"
 msgstr ""
 
-#: tithek_submenu.h:766
+#: tithek_submenu.h:762
 msgid "Redhead"
 msgstr ""
 
-#: tithek_submenu.h:767
+#: tithek_submenu.h:763
 msgid "Reggae"
 msgstr ""
 
-#: tithek_submenu.h:768
+#: tithek_submenu.h:764
 msgid "Reggae-(Dub)"
 msgstr ""
 
-#: tithek_submenu.h:769
+#: tithek_submenu.h:765
 msgid "Reggae-(Reggae-Roots)"
 msgstr ""
 
-#: tithek_submenu.h:770
+#: tithek_submenu.h:766
 msgid "reinschmidts wilde welt"
 msgstr ""
 
-#: tithek_submenu.h:771
+#: tithek_submenu.h:767
 msgid "revenge"
 msgstr ""
 
-#: tithek_submenu.h:772
+#: tithek_submenu.h:768
 msgid "ritas welt"
 msgstr ""
 
-#: tithek_submenu.h:773
+#: tithek_submenu.h:769
 msgid "ritas welt superrtl"
 msgstr ""
 
-#: tithek_submenu.h:774
+#: tithek_submenu.h:770
 msgid "rizzoli isles"
 msgstr ""
 
-#: tithek_submenu.h:775
+#: tithek_submenu.h:771
 msgid "robin hood superrtl"
 msgstr ""
 
-#: tithek_submenu.h:776
+#: tithek_submenu.h:772
 msgid "Rock-(Adult-Album-Alternative)"
 msgstr ""
 
-#: tithek_submenu.h:777
+#: tithek_submenu.h:773
 msgid "Rock-(Psychedelic)"
 msgstr ""
 
-#: tithek_submenu.h:778
+#: tithek_submenu.h:774
 msgid "romance movies"
 msgstr ""
 
-#: tithek_submenu.h:779
+#: tithek_submenu.h:775
 msgid "romantik"
 msgstr ""
 
-#: tithek_submenu.h:780
+#: tithek_submenu.h:776
 msgid "ross der kindergartenboss"
 msgstr ""
 
-#: tithek_submenu.h:781
+#: tithek_submenu.h:777
 msgid "rtl 2 spezial das magazin"
 msgstr ""
 
-#: tithek_submenu.h:782
+#: tithek_submenu.h:778
 msgid "rtl aktuell"
 msgstr ""
 
-#: tithek_submenu.h:783
+#: tithek_submenu.h:779
 msgid "rtl boxen"
 msgstr ""
 
-#: tithek_submenu.h:784
+#: tithek_submenu.h:780
 msgid "rtl ii news"
 msgstr ""
 
-#: tithek_submenu.h:785
+#: tithek_submenu.h:781
 msgid "rtl nachtjournal"
 msgstr ""
 
-#: tithek_submenu.h:786
+#: tithek_submenu.h:782
 msgid "rtl west"
 msgstr ""
 
-#: tithek_submenu.h:787
+#: tithek_submenu.h:783
 msgid "Rubriken"
 msgstr ""
 
-#: tithek_submenu.h:788
+#: tithek_submenu.h:784
 msgid "ruediger hoffmann live sex oder liebe"
 msgstr ""
 
-#: tithek_submenu.h:789
+#: tithek_submenu.h:785
 msgid "Russia"
 msgstr ""
 
-#: tithek_submenu.h:790
+#: tithek_submenu.h:786
 msgid "sags nicht der braut"
 msgstr ""
 
-#: tithek_submenu.h:791
+#: tithek_submenu.h:787
 msgid "saturday night"
 msgstr ""
 
-#: tithek_submenu.h:792
+#: tithek_submenu.h:788
 msgid "scandal"
 msgstr ""
 
-#: tithek_submenu.h:793
+#: tithek_submenu.h:789
 msgid "scene"
 msgstr ""
 
-#: tithek_submenu.h:794
+#: tithek_submenu.h:790
 msgid "schickeria deluxe"
 msgstr ""
 
-#: tithek_submenu.h:795
+#: tithek_submenu.h:791
 msgid "schmeckt nicht gibts nicht"
 msgstr ""
 
-#: tithek_submenu.h:796
+#: tithek_submenu.h:792
 msgid "schmidt chaos auf rezept"
 msgstr ""
 
-#: tithek_submenu.h:797
+#: tithek_submenu.h:793
 msgid "schmiede 21"
 msgstr ""
 
-#: tithek_submenu.h:798
+#: tithek_submenu.h:794
 msgid "schneller als die polizei erl"
 msgstr ""
 
-#: tithek_submenu.h:799
+#: tithek_submenu.h:795
 msgid "schwiegertochter gesucht"
 msgstr ""
 
-#: tithek_submenu.h:800
+#: tithek_submenu.h:796
 msgid "scifi"
 msgstr ""
 
-#: tithek_submenu.h:801
+#: tithek_submenu.h:797
 msgid "Sci-Fi"
 msgstr ""
 
-#: tithek_submenu.h:802
+#: tithek_submenu.h:798
 msgid "Scifikino"
 msgstr ""
 
-#: tithek_submenu.h:803
+#: tithek_submenu.h:799
 msgid "sci fi movies"
 msgstr ""
 
-#: tithek_submenu.h:804
+#: tithek_submenu.h:800
 msgid "secret millionaire"
 msgstr ""
 
-#: tithek_submenu.h:805
+#: tithek_submenu.h:801
 msgid "sehnsucht baby wir wollen endlich ein kind"
 msgstr ""
 
-#: tithek_submenu.h:806
+#: tithek_submenu.h:802
 msgid "sekretaerinnen ueberleben von neun bis fuenf"
 msgstr ""
 
-#: tithek_submenu.h:807
+#: tithek_submenu.h:803
 msgid "Sender"
 msgstr ""
 
-#: tithek_submenu.h:808
+#: tithek_submenu.h:804
 msgid "Sendungen A-Z"
 msgstr ""
 
-#: tithek_submenu.h:809
+#: tithek_submenu.h:805
 msgid "Sendung verpasst?"
 msgstr ""
 
-#: tithek_submenu.h:810
+#: tithek_submenu.h:806
 msgid "Serien"
 msgstr ""
 
-#: tithek_submenu.h:811
+#: tithek_submenu.h:807
 msgid "Serien (alle)"
 msgstr ""
 
-#: tithek_submenu.h:812
+#: tithek_submenu.h:808
 msgid "Serien (genre)"
 msgstr ""
 
-#: tithek_submenu.h:813
+#: tithek_submenu.h:809
 msgid "sex"
 msgstr ""
 
-#: tithek_submenu.h:814
+#: tithek_submenu.h:810
 msgid "shaved"
 msgstr ""
 
-#: tithek_submenu.h:815
+#: tithek_submenu.h:811
 msgid "Shemale"
 msgstr ""
 
-#: tithek_submenu.h:816
+#: tithek_submenu.h:812
 msgid "shooting stars promis an ihren grenzen"
 msgstr ""
 
-#: tithek_submenu.h:817
+#: tithek_submenu.h:813
 msgid "shopping queen"
 msgstr ""
 
-#: tithek_submenu.h:818
+#: tithek_submenu.h:814
 msgid "showing+off"
 msgstr ""
 
-#: tithek_submenu.h:819
+#: tithek_submenu.h:815
 msgid "sinan toprak"
 msgstr ""
 
-#: tithek_submenu.h:820
+#: tithek_submenu.h:816
 msgid "sindbad super"
 msgstr ""
 
-#: tithek_submenu.h:821
+#: tithek_submenu.h:817
 msgid "sitz platz aus die grosse hundeshow"
 msgstr ""
 
-#: tithek_submenu.h:822
+#: tithek_submenu.h:818
 msgid "skinny"
 msgstr ""
 
-#: tithek_submenu.h:823
+#: tithek_submenu.h:819
 msgid "skirt"
 msgstr ""
 
-#: tithek_submenu.h:824
+#: tithek_submenu.h:820
 msgid "small+tits"
 msgstr ""
 
-#: tithek_submenu.h:825
+#: tithek_submenu.h:821
 msgid "sofa"
 msgstr ""
 
-#: tithek_submenu.h:826
+#: tithek_submenu.h:822
 msgid "soko familie rtl"
 msgstr ""
 
-#: tithek_submenu.h:827
+#: tithek_submenu.h:823
 msgid "solo"
 msgstr ""
 
-#: tithek_submenu.h:828
+#: tithek_submenu.h:824
 msgid "Solo"
 msgstr ""
 
-#: tithek_submenu.h:829
+#: tithek_submenu.h:825
 msgid "sommer 2013"
 msgstr ""
 
-#: tithek_submenu.h:830
+#: tithek_submenu.h:826
 msgid "sonjas welt der tiere"
 msgstr ""
 
-#: tithek_submenu.h:831
+#: tithek_submenu.h:827
 msgid "Soul"
 msgstr ""
 
-#: tithek_submenu.h:832
+#: tithek_submenu.h:828
 msgid "Soundtracks"
 msgstr ""
 
-#: tithek_submenu.h:833
+#: tithek_submenu.h:829
 msgid "Soundtracks-(Anime)"
 msgstr ""
 
-#: tithek_submenu.h:834
+#: tithek_submenu.h:830
 msgid "Soundtracks-(Kids)"
 msgstr ""
 
-#: tithek_submenu.h:835
+#: tithek_submenu.h:831
 msgid "Soundtracks-(Original)"
 msgstr ""
 
-#: tithek_submenu.h:836
+#: tithek_submenu.h:832
 msgid "Soundtracks-(Video-Game-Music)"
 msgstr ""
 
-#: tithek_submenu.h:837
+#: tithek_submenu.h:833
 msgid "Spania"
 msgstr ""
 
-#: tithek_submenu.h:838
+#: tithek_submenu.h:834
 msgid "Spasskino"
 msgstr ""
 
-#: tithek_submenu.h:839
+#: tithek_submenu.h:835
 msgid "spiegel tv"
 msgstr ""
 
-#: tithek_submenu.h:840
+#: tithek_submenu.h:836
 msgid "sport"
 msgstr ""
 
-#: tithek_submenu.h:842
+#: tithek_submenu.h:838
 msgid "spreading"
 msgstr ""
 
-#: tithek_submenu.h:843
+#: tithek_submenu.h:839
 msgid "stadtklinik"
 msgstr ""
 
-#: tithek_submenu.h:844
+#: tithek_submenu.h:840
 msgid "standpunkt"
 msgstr ""
 
-#: tithek_submenu.h:845
+#: tithek_submenu.h:841
 msgid "stan lees superhumans"
 msgstr ""
 
-#: tithek_submenu.h:846
+#: tithek_submenu.h:842
 msgid "Starkino"
 msgstr ""
 
-#: tithek_submenu.h:847
+#: tithek_submenu.h:843
 msgid "starlet"
 msgstr ""
 
-#: tithek_submenu.h:848
+#: tithek_submenu.h:844
 msgid "star race"
 msgstr ""
 
-#: tithek_submenu.h:849
+#: tithek_submenu.h:845
 msgid "stars bei der arbeit"
 msgstr ""
 
-#: tithek_submenu.h:850
+#: tithek_submenu.h:846
 msgid "starship troopers"
 msgstr ""
 
-#: tithek_submenu.h:851
+#: tithek_submenu.h:847
 msgid "star wars the clone wars"
 msgstr ""
 
-#: tithek_submenu.h:852
+#: tithek_submenu.h:848
 msgid "stern tv"
 msgstr ""
 
-#: tithek_submenu.h:853
+#: tithek_submenu.h:849
 msgid "steven seagal lawman"
 msgstr ""
 
-#: tithek_submenu.h:854
+#: tithek_submenu.h:850
 msgid "stockings"
 msgstr ""
 
-#: tithek_submenu.h:855
+#: tithek_submenu.h:851
 msgid "Stockings"
 msgstr ""
 
-#: tithek_submenu.h:856
+#: tithek_submenu.h:852
 msgid "strip"
 msgstr ""
 
-#: tithek_submenu.h:857
+#: tithek_submenu.h:853
 msgid "student"
 msgstr ""
 
-#: tithek_submenu.h:858
+#: tithek_submenu.h:854
 msgid "style="
 msgstr ""
 
-#: tithek_submenu.h:859
+#: tithek_submenu.h:855
 msgid "stylish"
 msgstr ""
 
-#: tithek_submenu.h:860
+#: tithek_submenu.h:856
 msgid "superhirne von natur aus genial"
 msgstr ""
 
-#: tithek_submenu.h:861
+#: tithek_submenu.h:857
 msgid "sweet"
 msgstr ""
 
-#: tithek_submenu.h:862
+#: tithek_submenu.h:858
 msgid "table"
 msgstr ""
 
-#: tithek_submenu.h:863
+#: tithek_submenu.h:859
 msgid "take me out"
 msgstr ""
 
-#: tithek_submenu.h:864
+#: tithek_submenu.h:860
 msgid "Talk"
 msgstr ""
 
-#: tithek_submenu.h:865
+#: tithek_submenu.h:861
 msgid "Talk-(Comedy)"
 msgstr ""
 
-#: tithek_submenu.h:866
+#: tithek_submenu.h:862
 msgid "Talk-(Community)"
 msgstr ""
 
-#: tithek_submenu.h:867
+#: tithek_submenu.h:863
 msgid "Talk-(Government)"
 msgstr ""
 
-#: tithek_submenu.h:868
+#: tithek_submenu.h:864
 msgid "Talk-(Other)"
 msgstr ""
 
-#: tithek_submenu.h:869
+#: tithek_submenu.h:865
 msgid "Talk-(Political)"
 msgstr ""
 
-#: tithek_submenu.h:870
+#: tithek_submenu.h:866
 msgid "Talk-(Scanner)"
 msgstr ""
 
-#: tithek_submenu.h:871
+#: tithek_submenu.h:867
 msgid "Talk-(Spoken-Word)"
 msgstr ""
 
-#: tithek_submenu.h:872
+#: tithek_submenu.h:868
 msgid "tall"
 msgstr ""
 
-#: tithek_submenu.h:873
+#: tithek_submenu.h:869
 msgid "tanned"
 msgstr ""
 
-#: tithek_submenu.h:874
+#: tithek_submenu.h:870
 msgid "target="
 msgstr ""
 
-#: tithek_submenu.h:875
+#: tithek_submenu.h:871
 msgid "tatort ausland moerderische reise"
 msgstr ""
 
-#: tithek_submenu.h:876
+#: tithek_submenu.h:872
 msgid "tease"
 msgstr ""
 
-#: tithek_submenu.h:877
+#: tithek_submenu.h:873
 msgid "tectime"
 msgstr ""
 
-#: tithek_submenu.h:878
+#: tithek_submenu.h:874
 msgid "teen"
 msgstr ""
 
-#: tithek_submenu.h:879
+#: tithek_submenu.h:875
 msgid "Teen"
 msgstr ""
 
-#: tithek_submenu.h:880
+#: tithek_submenu.h:876
 msgid "teenage boss"
 msgstr ""
 
-#: tithek_submenu.h:881
+#: tithek_submenu.h:877
 msgid "teenager in not"
 msgstr ""
 
-#: tithek_submenu.h:882
+#: tithek_submenu.h:878
 msgid "teen+hardcore"
 msgstr ""
 
-#: tithek_submenu.h:883
+#: tithek_submenu.h:879
 msgid "teenie muetter wenn kinder kinder kriegen"
 msgstr ""
 
-#: tithek_submenu.h:884
+#: tithek_submenu.h:880
 msgid "teenies auf partyurlaub"
 msgstr ""
 
-#: tithek_submenu.h:885
+#: tithek_submenu.h:881
 msgid "teen+sex"
 msgstr ""
 
-#: tithek_submenu.h:886
+#: tithek_submenu.h:882
 msgid "the blacklist"
 msgstr ""
 
-#: tithek_submenu.h:887
+#: tithek_submenu.h:883
 msgid "the glades"
 msgstr ""
 
-#: tithek_submenu.h:888
+#: tithek_submenu.h:884
 msgid "Themen"
 msgstr ""
 
-#: tithek_submenu.h:889
+#: tithek_submenu.h:885
 msgid "Themes-(Best)"
 msgstr ""
 
-#: tithek_submenu.h:890
+#: tithek_submenu.h:886
 msgid "Themes-(Chill)"
 msgstr ""
 
-#: tithek_submenu.h:891
+#: tithek_submenu.h:887
 msgid "Themes-(Eclectic)"
 msgstr ""
 
-#: tithek_submenu.h:892
+#: tithek_submenu.h:888
 msgid "Themes-(Instrumental)"
 msgstr ""
 
-#: tithek_submenu.h:893
+#: tithek_submenu.h:889
 msgid "Themes-(Love-and-Romance)"
 msgstr ""
 
-#: tithek_submenu.h:894
+#: tithek_submenu.h:890
 msgid "Themes-(Party-Mix)"
 msgstr ""
 
-#: tithek_submenu.h:895
+#: tithek_submenu.h:891
 msgid "Themes-(Shuffle)"
 msgstr ""
 
-#: tithek_submenu.h:896
+#: tithek_submenu.h:892
 msgid "Themes-(Travel-Mix)"
 msgstr ""
 
-#: tithek_submenu.h:897
+#: tithek_submenu.h:893
 msgid "Themes-(Tribute)"
 msgstr ""
 
-#: tithek_submenu.h:898
+#: tithek_submenu.h:894
 msgid "the quest"
 msgstr ""
 
-#: tithek_submenu.h:899
+#: tithek_submenu.h:895
 msgid "the quest superrtl"
 msgstr ""
 
-#: tithek_submenu.h:900
+#: tithek_submenu.h:896
 msgid "threesome"
 msgstr ""
 
-#: tithek_submenu.h:901
+#: tithek_submenu.h:897
 msgid "thriller"
 msgstr ""
 
-#: tithek_submenu.h:902
+#: tithek_submenu.h:898
 msgid "Thrillerkino"
 msgstr ""
 
-#: tithek_submenu.h:903
+#: tithek_submenu.h:899
 msgid "thriller movies"
 msgstr ""
 
-#: tithek_submenu.h:904
+#: tithek_submenu.h:900
 msgid "titannit"
 msgstr ""
 
-#: tithek_submenu.h:906
+#: tithek_submenu.h:902
 msgid "Top100"
 msgstr ""
 
-#: tithek_submenu.h:907
+#: tithek_submenu.h:903
 msgid "Top 100"
 msgstr ""
 
-#: tithek_submenu.h:908
+#: tithek_submenu.h:904
 msgid "torchwood"
 msgstr ""
 
-#: tithek_submenu.h:909
+#: tithek_submenu.h:905
 msgid "tortenschlacht"
 msgstr ""
 
-#: tithek_submenu.h:910
+#: tithek_submenu.h:906
 msgid "total blackout stars im dunkeln"
 msgstr ""
 
-#: tithek_submenu.h:911
+#: tithek_submenu.h:907
 msgid "trailer 2012 deutsch"
 msgstr ""
 
-#: tithek_submenu.h:912
+#: tithek_submenu.h:908
 msgid "trailer 2013 deutsch"
 msgstr ""
 
-#: tithek_submenu.h:913
+#: tithek_submenu.h:909
 msgid "transgender mein weg in den richtigen koerper"
 msgstr ""
 
-#: tithek_submenu.h:914
+#: tithek_submenu.h:910
 msgid "transporter"
 msgstr ""
 
-#: tithek_submenu.h:915
+#: tithek_submenu.h:911
 msgid "traumfrau gesucht"
 msgstr ""
 
-#: tithek_submenu.h:916
+#: tithek_submenu.h:912
 msgid "traumhochzeit"
 msgstr ""
 
-#: tithek_submenu.h:917
+#: tithek_submenu.h:913
 msgid "traumretterin"
 msgstr ""
 
-#: tithek_submenu.h:918
+#: tithek_submenu.h:914
 msgid "turbo tacho"
 msgstr ""
 
-#: tithek_submenu.h:919
+#: tithek_submenu.h:915
 msgid "turbulent zum traualtar"
 msgstr ""
 
-#: tithek_submenu.h:920
+#: tithek_submenu.h:916
 msgid "Turkish"
 msgstr ""
 
-#: tithek_submenu.h:921
+#: tithek_submenu.h:917
 msgid "tv action tv shows"
 msgstr ""
 
-#: tithek_submenu.h:922
+#: tithek_submenu.h:918
 msgid "tv adventure tv shows"
 msgstr ""
 
-#: tithek_submenu.h:923
+#: tithek_submenu.h:919
 msgid "tv-alle-videos"
 msgstr ""
 
-#: tithek_submenu.h:924
+#: tithek_submenu.h:920
 msgid "tv animation tv shows"
 msgstr ""
 
-#: tithek_submenu.h:925
+#: tithek_submenu.h:921
 msgid "tv comedy tv shows"
 msgstr ""
 
-#: tithek_submenu.h:926
+#: tithek_submenu.h:922
 msgid "tv drama tv shows"
 msgstr ""
 
-#: tithek_submenu.h:927
+#: tithek_submenu.h:923
 msgid "tv-programm"
 msgstr ""
 
-#: tithek_submenu.h:928
+#: tithek_submenu.h:924
 msgid "tv romance tv shows"
 msgstr ""
 
-#: tithek_submenu.h:929
+#: tithek_submenu.h:925
 msgid "tv sci fi tv shows"
 msgstr ""
 
-#: tithek_submenu.h:930
+#: tithek_submenu.h:926
 msgid "tv thriller tv shows"
 msgstr ""
 
-#: tithek_submenu.h:931
+#: tithek_submenu.h:927
 msgid "tv tv shows 2004"
 msgstr ""
 
-#: tithek_submenu.h:932
+#: tithek_submenu.h:928
 msgid "tv tv shows 2005"
 msgstr ""
 
-#: tithek_submenu.h:933
+#: tithek_submenu.h:929
 msgid "tv tv shows 2006"
 msgstr ""
 
-#: tithek_submenu.h:934
+#: tithek_submenu.h:930
 msgid "tv tv shows 2007"
 msgstr ""
 
-#: tithek_submenu.h:935
+#: tithek_submenu.h:931
 msgid "tv tv shows 2008"
 msgstr ""
 
-#: tithek_submenu.h:936
+#: tithek_submenu.h:932
 msgid "tv tv shows 2009"
 msgstr ""
 
-#: tithek_submenu.h:937
+#: tithek_submenu.h:933
 msgid "tv tv shows 2010"
 msgstr ""
 
-#: tithek_submenu.h:938
+#: tithek_submenu.h:934
 msgid "tv tv shows 2011"
 msgstr ""
 
-#: tithek_submenu.h:939
+#: tithek_submenu.h:935
 msgid "tv tv shows 2012"
 msgstr ""
 
-#: tithek_submenu.h:940
+#: tithek_submenu.h:936
 msgid "tv tv shows 2013"
 msgstr ""
 
-#: tithek_submenu.h:941
+#: tithek_submenu.h:937
 msgid "typisch deutsch die kaya show"
 msgstr ""
 
-#: tithek_submenu.h:942
+#: tithek_submenu.h:938
 msgid "Uk"
 msgstr ""
 
-#: tithek_submenu.h:943
+#: tithek_submenu.h:939
 msgid "undercover boss"
 msgstr ""
 
-#: tithek_submenu.h:944
+#: tithek_submenu.h:940
 msgid "Underground"
 msgstr ""
 
-#: tithek_submenu.h:945
+#: tithek_submenu.h:941
 msgid "und tschuess"
 msgstr ""
 
-#: tithek_submenu.h:946
+#: tithek_submenu.h:942
 msgid "ungeklaerte morde dem taeter auf der spur"
 msgstr ""
 
-#: tithek_submenu.h:948
+#: tithek_submenu.h:944
 msgid "unschlagbar"
 msgstr ""
 
-#: tithek_submenu.h:949
+#: tithek_submenu.h:945
 msgid "unsere erste gem wohnung"
 msgstr ""
 
-#: tithek_submenu.h:950
+#: tithek_submenu.h:946
 msgid "unsere platte"
 msgstr ""
 
-#: tithek_submenu.h:951
+#: tithek_submenu.h:947
 msgid "unser erstes restaurant"
 msgstr ""
 
-#: tithek_submenu.h:952
+#: tithek_submenu.h:948
 msgid "unser traum vom haus"
 msgstr ""
 
-#: tithek_submenu.h:953
+#: tithek_submenu.h:949
 msgid "unter beobachtung"
 msgstr ""
 
-#: tithek_submenu.h:954
+#: tithek_submenu.h:950
 msgid "unter uns"
 msgstr ""
 
-#: tithek_submenu.h:955
+#: tithek_submenu.h:951
 msgid "unter volldampf"
 msgstr ""
 
-#: tithek_submenu.h:956
+#: tithek_submenu.h:952
 msgid "Urban"
 msgstr ""
 
-#: tithek_submenu.h:957
+#: tithek_submenu.h:953
 msgid "Usa"
 msgstr ""
 
-#: tithek_submenu.h:958
+#: tithek_submenu.h:954
 msgid "val flo in love"
 msgstr ""
 
-#: tithek_submenu.h:959
+#: tithek_submenu.h:955
 msgid "verdachtsfaelle"
 msgstr ""
 
-#: tithek_submenu.h:960
+#: tithek_submenu.h:956
 msgid "verklag mich doch"
 msgstr ""
 
-#: tithek_submenu.h:961
+#: tithek_submenu.h:957
 msgid "vermisst"
 msgstr ""
 
-#: tithek_submenu.h:962
+#: tithek_submenu.h:958
 msgid "verschollen"
 msgstr ""
 
-#: tithek_submenu.h:963
+#: tithek_submenu.h:959
 msgid "verzeih mir"
 msgstr ""
 
-#: tithek_submenu.h:964
+#: tithek_submenu.h:960
 msgid "Videos A Z"
 msgstr ""
 
-#: tithek_submenu.h:965
+#: tithek_submenu.h:961
 msgid "voxtours"
 msgstr ""
 
-#: tithek_submenu.h:966
+#: tithek_submenu.h:962
 msgid "wallace gromit"
 msgstr ""
 
-#: tithek_submenu.h:967
+#: tithek_submenu.h:963
 msgid "was verdienst du"
 msgstr ""
 
-#: tithek_submenu.h:968
+#: tithek_submenu.h:964
 msgid "Webcam"
 msgstr ""
 
-#: tithek_submenu.h:969
+#: tithek_submenu.h:965
 msgid "wer wird millionaer"
 msgstr ""
 
-#: tithek_submenu.h:970
+#: tithek_submenu.h:966
 msgid "western"
 msgstr ""
 
-#: tithek_submenu.h:971
+#: tithek_submenu.h:967
 msgid "Westernkino"
 msgstr ""
 
-#: tithek_submenu.h:972
+#: tithek_submenu.h:968
 msgid "westside wash"
 msgstr ""
 
-#: tithek_submenu.h:974
+#: tithek_submenu.h:970
 msgid "wie lebst denn"
 msgstr ""
 
-#: tithek_submenu.h:975
+#: tithek_submenu.h:971
 msgid "wife"
 msgstr ""
 
-#: tithek_submenu.h:976
+#: tithek_submenu.h:972
 msgid "wilde engel"
 msgstr ""
 
-#: tithek_submenu.h:977
+#: tithek_submenu.h:973
 msgid "wilde kreaturen"
 msgstr ""
 
-#: tithek_submenu.h:978
+#: tithek_submenu.h:974
 msgid "wildes kinderzimmer"
 msgstr ""
 
-#: tithek_submenu.h:979
+#: tithek_submenu.h:975
 msgid "wildes wohnzimmer"
 msgstr ""
 
-#: tithek_submenu.h:980
+#: tithek_submenu.h:976
 msgid "wild girls auf high heels durch afrika"
 msgstr ""
 
-#: tithek_submenu.h:981
+#: tithek_submenu.h:977
 msgid "willkommen bei mario barth"
 msgstr ""
 
-#: tithek_submenu.h:982
+#: tithek_submenu.h:978
 msgid "wir retten ihren urlaub"
 msgstr ""
 
-#: tithek_submenu.h:983
+#: tithek_submenu.h:979
 msgid "wir wollen freie menschen sein volksaufstand 1953"
 msgstr ""
 
-#: tithek_submenu.h:984
+#: tithek_submenu.h:980
 msgid "wissen"
 msgstr ""
 
-#: tithek_submenu.h:985
+#: tithek_submenu.h:981
 msgid "wohnen nach wunsch duo"
 msgstr ""
 
-#: tithek_submenu.h:986
+#: tithek_submenu.h:982
 msgid "wohnen nach wunschhaus"
 msgstr ""
 
-#: tithek_submenu.h:987
+#: tithek_submenu.h:983
 msgid "wolkenlos"
 msgstr ""
 
-#: tithek_submenu.h:988
+#: tithek_submenu.h:984
 msgid "wolverine marvel anime"
 msgstr ""
 
-#: tithek_submenu.h:989
+#: tithek_submenu.h:985
 msgid "world express atemlos durch mexiko"
 msgstr ""
 
-#: tithek_submenu.h:990
+#: tithek_submenu.h:986
 msgid "wunschkinder"
 msgstr ""
 
-#: tithek_submenu.h:991
+#: tithek_submenu.h:987
 msgid "x diaries"
 msgstr ""
 
-#: tithek_submenu.h:992
+#: tithek_submenu.h:988
 msgid "x diaries spezial"
 msgstr ""
 
-#: tithek_submenu.h:993
+#: tithek_submenu.h:989
 msgid "x factor"
 msgstr ""
 
-#: tithek_submenu.h:994
+#: tithek_submenu.h:990
 msgid "x men marvel anime"
 msgstr ""
 
-#: tithek_submenu.h:995
+#: tithek_submenu.h:991
 msgid "Xxx"
 msgstr ""
 
-#: tithek_submenu.h:996
+#: tithek_submenu.h:992
 msgid "yolo"
 msgstr ""
 
-#: tithek_submenu.h:997
+#: tithek_submenu.h:993
 msgid "young"
 msgstr ""
 
-#: tithek_submenu.h:998
+#: tithek_submenu.h:994
 msgid "young+couple"
 msgstr ""
 
-#: tithek_submenu.h:999
+#: tithek_submenu.h:995
 msgid "zugriff jede sekunde zaehlt"
 msgstr ""
 
-#: tithek_submenu.h:1000
+#: tithek_submenu.h:996
 msgid "zuhause im glueck"
 msgstr ""
 
-#: tithek_submenu.h:1001
+#: tithek_submenu.h:997
 msgid "zuzana light"
 msgstr ""
 
-#: tithek_submenu.h:905
+#: tithek_submenu.h:901
 msgid "title="
 msgstr ""
 
@@ -12739,7 +12723,7 @@ msgstr "Kein Bild"
 
 #: tmc.h:699
 msgid "Delete selected entry ?"
-msgstr "AusgewÃ¤hlten Eintrag lÃ¶schen?"
+msgstr "Ausgewählten Eintrag löschen?"
 
 #: tmc.h:1004
 msgid ""
@@ -12774,7 +12758,7 @@ msgstr ""
 #: tmdb.h:922
 msgid "Error, found result without imdbid we can't this save in MediaDB"
 msgstr ""
-"FEHLER: in der imdb-id ist ein Fehler und kann daher nicht Ã¼bernommen werden!"
+"FEHLER: in der imdb-id ist ein Fehler und kann daher nicht übernommen werden!"
 
 #: tpchoice.h:21
 msgid "Transponderlist"
@@ -12816,17 +12800,17 @@ msgstr ""
 
 #: tpk_description.h:3
 msgid "Alternativer Skin fuer Pearl LCD"
-msgstr "Alternativer Skin fÃ¼r Pearl LCD"
+msgstr "Alternativer Skin für Pearl LCD"
 
 #: tpk_description.h:4
 msgid "Alternativer Skin fuer Pearl LCD "
-msgstr "Alternativer Skin fÃ¼r Pearl LCD"
+msgstr "Alternativer Skin für Pearl LCD"
 
 #: tpk_description.h:5
 msgid ""
 "Alternativer Skin fuer Samsung LCD - ohne Picons (extra zu installieren)"
 msgstr ""
-"Alternativer Skin fÃ¼r Samsung LCD - ohne Picons (extra zu installieren)"
+"Alternativer Skin für Samsung LCD - ohne Picons (extra zu installieren)"
 
 #: tpk_description.h:6
 msgid "Automatisch Timer setzen"
@@ -13158,7 +13142,7 @@ msgstr ""
 
 #: tpk_description.h:86
 msgid "MetrixHD skin for TitanNit. Use transparent XPicons."
-msgstr "MetrixHD skin. FÃ¼r transparente XPicons"
+msgstr "MetrixHD skin. Für transparente XPicons"
 
 #: tpk_description.h:87
 msgid "Network browser extension for better Win7 compatibility"
@@ -13271,16 +13255,16 @@ msgstr ""
 #: tpk_description.h:114
 msgid ""
 "Screensaver FC Bayern pictures for MediaCenter Audioplayer and Radioplayer."
-msgstr "Screensaver FC Bayern Bilder fÃ¼r MediaCenter Audio- und Radioplayer"
+msgstr "Screensaver FC Bayern Bilder für MediaCenter Audio- und Radioplayer"
 
 #: tpk_description.h:115
 msgid ""
 "Screensaver Hot Girls pictures for MediaCenter Audioplayer and Radioplayer."
-msgstr "Screensaver Hot Girls Bilder fÃ¼r MediaCenter Audio- und Radioplayer"
+msgstr "Screensaver Hot Girls Bilder für MediaCenter Audio- und Radioplayer"
 
 #: tpk_description.h:116
 msgid "Screensaver pictures for MediaCenter Audioplayer and Radioplayer."
-msgstr "Screensaver Bilder fÃ¼r MediaCenter Audio- und Radioplayer"
+msgstr "Screensaver Bilder für MediaCenter Audio- und Radioplayer"
 
 #: tpk_description.h:117
 msgid "scriptexec Plugin"
@@ -13288,15 +13272,15 @@ msgstr ""
 
 #: tpk_description.h:118
 msgid "Skin 0Acht5Zehn in black for tiTan. Please use black Picons."
-msgstr "Skin 0Acht5Zehn schwarz fÃ¼r schwarze Picons"
+msgstr "Skin 0Acht5Zehn schwarz für schwarze Picons"
 
 #: tpk_description.h:119
 msgid "Skin 0Acht5Zehn in grey for tiTan. Please use grey Picons."
-msgstr "Skin 0Acht5Zehn grau fÃ¼r graue Picons"
+msgstr "Skin 0Acht5Zehn grau für graue Picons"
 
 #: tpk_description.h:120
 msgid "Skin 0Acht5Zehn in white for tiTan. Please use white Picons."
-msgstr "Skin 0Acht5Zehn weiss fÃ¼r weisse Picons"
+msgstr "Skin 0Acht5Zehn weiss für weisse Picons"
 
 #: tpk_description.h:121
 msgid "Skin tobayer01 for tiTan. Please use grey Picons."
@@ -13468,7 +13452,7 @@ msgstr ""
 
 #: tpk.h:3185 tpk.new.h:3167
 msgid "check your Secret Feed !"
-msgstr "Bitte den Secret Feed Ã¼berprÃ¼fen!"
+msgstr "Bitte den Secret Feed überprüfen!"
 
 #: tpk.h:3428
 msgid "Section: "
@@ -14408,7 +14392,7 @@ msgid ""
 "Tunerconfig is not allowed if record\n"
 "or stream is running !"
 msgstr ""
-"Tunerkonfiguration ist wÃ¤hrend einer aktiven Aufnahme\n"
+"Tunerkonfiguration ist während einer aktiven Aufnahme\n"
 "oder einer Streamwiedergabe nicht zugelassen."
 
 #: tunerconfig.h:786
@@ -14441,7 +14425,7 @@ msgid ""
 "Delete Plugins to free space"
 msgstr ""
 "Aktivierungscode kann nicht gespeichert werden.\n"
-"Bitte lÃ¶schen Sie Plugins um Speicherplatz freigeben."
+"Bitte löschen Sie Plugins um Speicherplatz freigeben."
 
 #: unlock.h:71
 msgid "Code ok"
@@ -14450,7 +14434,7 @@ msgstr "Aktivierungscode akzeptiert."
 #: unlock.h:75
 msgid "Code not ok, please try again !"
 msgstr ""
-"FEHLER: Der eingegebene Aktivierungscode ist nicht gÃ¼ltig!\n"
+"FEHLER: Der eingegebene Aktivierungscode ist nicht gültig!\n"
 "Bitte versuchen Sie Ihre Eingabe erneut."
 
 #: vfdisplay.h:32
@@ -14503,15 +14487,15 @@ msgstr "Blinkender Stern"
 
 #: videomode.h:18 videomode.h:40 videomode.h:47
 msgid "Resolution Settings"
-msgstr "AuflÃ¶sung"
+msgstr "Auflösung"
 
 #: videomode.h:19 videomode.h:62 videomode.h:69
 msgid "Aspect Settings"
-msgstr "SeitenverhÃ¤ltnis Einstellungen"
+msgstr "Seitenverhältnis Einstellungen"
 
 #: videomode.h:25 videomode.h:27
 msgid "Videomode"
-msgstr "BildqualitÃ¤t"
+msgstr "Bildqualität"
 
 #: weather.h:430 weather.h:448 weather.h:466 weather.h:484
 msgid "Day: "
@@ -14523,7 +14507,7 @@ msgstr "Tiefsttemperatur: "
 
 #: weather.h:438 weather.h:456 weather.h:474 weather.h:492
 msgid "Highest temp: "
-msgstr "HÃ¶chsttemperatur: "
+msgstr "Höchsttemperatur: "
 
 #: weather.h:442 weather.h:460 weather.h:478 weather.h:496
 msgid "Condition: "
