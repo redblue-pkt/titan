@@ -2345,7 +2345,7 @@ msgstr "MediaDB Eintrag vor der Suche löschen"
 
 #: mediadb.h:1087 play.h:564 skin_default_skin.xml.h:173
 msgid "Delete unused entrys before scan"
-msgstr "Lösche ungenutze Einträge vor der Suche"
+msgstr "Lösche ungenutzte Einträge vor der Suche"
 
 #: mediadb.h:1094 play.h:571
 msgid "scan Directory"
