@@ -2,3 +2,22 @@
 [createpo.sh] xgettext --omit-header -k_ *.* -o /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.new.po
 [createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.mo
 122 translated messages, 455 untranslated messages.
+[createpo.sh] xgettext --omit-header -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.utf.po
+[createpo.sh] xgettext --omit-header -k_ *.* -o /home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.new.po
+[createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.mo
+555 translated messages.
+[createpo.sh] xgettext --omit-header -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.utf.po
+[createpo.sh] xgettext --omit-header -k_ *.* -o /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.new.po
+[createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.mo
+245 translated messages, 1140 untranslated messages.
+[createpo.sh] xgettext --omit-header -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/vn/LC_MESSAGES/titan.po_auto.utf.po
+[createpo.sh] xgettext --omit-header -k_ *.* -o /home/atemio/flashimg/source.titan/po/vn/LC_MESSAGES/titan.new.po
+[createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/vn/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/vn/LC_MESSAGES/titan.mo
+1251 translated messages, 17 untranslated messages.
+[createpo.sh] xgettext --omit-header -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/it/LC_MESSAGES/titan.po_auto.utf.po
+[createpo.sh] xgettext --omit-header -k_ *.* -o /home/atemio/flashimg/source.titan/po/it/LC_MESSAGES/titan.new.po
+[createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/it/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/it/LC_MESSAGES/titan.mo
+/home/atemio/flashimg/source.titan/po/it/LC_MESSAGES/titan.outfile.po:4419: `msgid' and `msgstr' entries do not both end with '\n'
+msgfmt: found 1 fatal error
+1348 translated messages, 16 untranslated messages.
+msgstr "Timer Record Path"
