@@ -54,7 +54,7 @@ for ROUND in $POLIST; do
 	echo "[createpo.sh] update $ROUND"
 	echo xgettext --omit-header -k_ *.* -o $ROUND
 	if [ "$TYPE" == "update" ]; then
-	old=0
+	old=2
 		if [ $old = 1 ];then
 			ROUND_CLEAN=`echo $ROUND | sed 's!titan.po_auto.po!titan.po_auto.clean.po!'`
 			ROUND_UTF=`echo $ROUND | sed 's!titan.po_auto.po!titan.po_auto.utf.po!'`
@@ -139,13 +139,43 @@ for ROUND in $POLIST; do
 				error="13"
 			fi
 		elif [ $old = 2 ];then
+			ROUND_CLEAN=`echo $ROUND | sed 's!titan.po_auto.po!titan.po_auto.clean.po!'`
+			ROUND_UTF=`echo $ROUND | sed 's!titan.po_auto.po!titan.po_auto.utf.po!'`
+			ROUND_UTF=`echo $ROUND | sed 's!titan.po_auto.po!titan.po_auto.utf.po!'`
 			OUTFILE_MO=`echo $ROUND | sed 's!titan.po_auto.po!titan.mo!'`
-#			OUTFILE_PO=`echo $ROUND | sed 's!titan.po_auto.po!titan.outfile.po!'`
-			OUTFILE_PO=$ROUND
-
+			OUTFILE_PO=`echo $ROUND | sed 's!titan.po_auto.po!titan.outfile.po!'`
+			OUTFILE_ERROR=`echo $ROUND | sed 's!titan.po_auto.po!titan.outfile.po.error!'`
+			OUTFILE_ERROR_AUTO=`echo $ROUND | sed 's!titan.po_auto.po!titan.outfile.po.auto.error!'`
+			ROUND_EDIT=`echo $ROUND | sed 's!titan.po_auto.po!titan.po!'`
+			ROUND_EDIT_UTF=`echo $ROUND | sed 's!titan.po_auto.po!titan.utf.po!'`
+			ROUND_MERGE_UTF=`echo $ROUND | sed 's!titan.po_auto.po!titan.merge.utf.po!'`
+			ROUND_MERGE=`echo $ROUND | sed 's!titan.po_auto.po!titan.merge.po!'`
+			ROUND_NEW=`echo $ROUND | sed 's!titan.po_auto.po!titan.new.po!'`
+			ROUND_NEW_MERGE=`echo $ROUND | sed 's!titan.po_auto.po!titan.new.merge.po!'`
+		
 #			echo "[createpo.sh] iconv -f UTF-8 -t ISO-8859-1 $ROUND > $OUTFILE_PO"
 #			iconv -f UTF-8 -t ISO-8859-1 $ROUND > $OUTFILE_PO
 #			if [ ! -e "$OUTFILE_PO" ] || [ `cat "$OUTFILE_PO" | wc -l` -eq 0 ]; then error="1"; break;fi
+
+
+##############
+			echo "[createpo.sh] xgettext --omit-header -k_ *.* -o $ROUND_NEW"
+	#		rm -f "$HOME"/flashimg/source.titan/titan/tools/error/error.log
+			cmd="xgettext --omit-header -k_ *.* -o $ROUND_NEW"
+			echo "--------------------------------------" >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log
+			echo "[createpo.sh] $cmd" >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log
+			$cmd >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log 2>&1
+			log=`cat "$HOME"/flashimg/source.titan/titan/tools/error/error.log`
+			echo 3: $log
+			if [ ! -e "$ROUND_NEW" ] || [ `cat "$ROUND_NEW" | wc -l` -eq 0 ]; then error="3"; break;fi
+			if [ `echo $log | grep "fatal error" | wc -l` -gt 0 ]; then error="4";break;fi
+####
+			echo "[createpo.sh] msgmerge $ROUND_UTF $ROUND_NEW > $ROUND_NEW_MERGE"
+			msgmerge $ROUND_UTF $ROUND_NEW > $ROUND_NEW_MERGE
+			if [ ! -e "$ROUND_NEW_MERGE" ] || [ `cat "$ROUND_NEW_MERGE" | wc -l` -eq 0 ]; then error="5"; break;fi
+####
+cp -a $ROUND_NEW_MERGE $OUTFILE_PO
+#############
 
 			echo "[createpo.sh] msgfmt -v $OUTFILE_PO -o $OUTFILE_MO"
 #			rm -f "$HOME"/flashimg/source.titan/titan/tools/error/error.log
@@ -157,6 +187,8 @@ for ROUND in $POLIST; do
 			echo 1: $log
 			if [ ! -e "$OUTFILE_MO" ] || [ `cat "$OUTFILE_MO" | wc -l` -eq 0 ]; then error="2"; break;fi
 			if [ `echo $log | grep "fatal error" | wc -l` -gt 0 ]; then error="3"; break;fi
+
+cp -a $ROUND_NEW_MERGE $ROUND
 			
 #			iconv -f UTF-8 -t ISO-8859-1 $ROUND_NEW_MERGE > $ROUND
 #			if [ ! -e "$ROUND" ] || [ `cat "$ROUND" | wc -l` -eq 0 ]; then error="4"; break;fi
