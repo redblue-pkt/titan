@@ -4446,7 +4446,7 @@ msgstr "Record / Timeshift / Stream"
 
 #: record.h:355
 msgid "Box recording finished poweroff in 30sec !"
-msgstr "Registrazione Finita. Box sara spento in 30 secondi !\ "
+msgstr "Registrazione Finita. Box sara spento in 30 secondi !"
 
 #: record.h:971
 msgid "Can't find free Tuner for Record.\n"
