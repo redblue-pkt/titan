@@ -892,7 +892,7 @@ msgstr ""
 "Language-Team: German <_obiwan_@web.de>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: diseqcconfig.h:9 diseqcconfig.h:16
