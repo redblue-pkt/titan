@@ -266,6 +266,7 @@ msgstr "Start"
 msgid "BER:"
 msgstr "BER:"
 
+#, fuzzy
 msgid "Beta Config"
 msgstr "Konfiguracja satelit"
 
@@ -290,6 +291,7 @@ msgstr "C"
 msgid "Cam / Emu"
 msgstr "Cam / Emu"
 
+#, fuzzy
 msgid "CAM PMT Mode"
 msgstr "Tryb AC3"
 
@@ -323,6 +325,7 @@ msgstr "Czyś przes szukaniem"
 msgid "Color Format"
 msgstr "Format koloru"
 
+#, fuzzy
 msgid "Color Format Scart"
 msgstr "Format koloru"
 
@@ -398,6 +401,7 @@ msgstr "DiseqC"
 msgid "Diseqc Command Order"
 msgstr "Kolejność komend DiseqC"
 
+#, fuzzy
 msgid "DiSEqC Configuration"
 msgstr "Konfiguracja tunera"
 
@@ -455,6 +459,7 @@ msgstr "WYJŚCIE"
 msgid "Extensions"
 msgstr "Dodatki"
 
+#, fuzzy
 msgid "Extensions Menu"
 msgstr "Dodatki"
 
@@ -470,6 +475,7 @@ msgstr "Kontrola wentylatora"
 msgid "fast"
 msgstr "szybko"
 
+#, fuzzy
 msgid "Fast DiSEqC"
 msgstr "DiseqC"
 
@@ -584,6 +590,7 @@ msgstr "I"
 msgid "I"
 msgstr "I"
 
+#, fuzzy
 msgid "Image Information"
 msgstr "Informacje"
 
@@ -677,9 +684,11 @@ msgstr "Wybierz listę"
 msgid "LNB"
 msgstr "LNB"
 
+#, fuzzy
 msgid "LNB Configuration"
 msgstr "Konfiguracja tunera"
 
+#, fuzzy
 msgid "LOF"
 msgstr "LOF/H"
 
@@ -689,6 +698,7 @@ msgstr "LOF/H"
 msgid "LOF/L"
 msgstr "LOF/L"
 
+#, fuzzy
 msgid "Logitude"
 msgstr "Szerokość geogr."
 
@@ -701,6 +711,7 @@ msgstr "M"
 msgid "M"
 msgstr "M"
 
+#, fuzzy
 msgid "Manuell Search"
 msgstr "Szukaj kanał"
 
@@ -770,6 +781,7 @@ msgstr "maska sieci"
 msgid "Network"
 msgstr "Sieć"
 
+#, fuzzy
 msgid "Network Assistant"
 msgstr "Restart sieci"
 
@@ -848,6 +860,7 @@ msgstr "hasło"
 msgid "PCR PID:"
 msgstr "PCR PID:"
 
+#, fuzzy
 msgid "Piconpath"
 msgstr "Ścieżka nagrywania"
 
@@ -1067,6 +1080,7 @@ msgstr "ZAPISZ"
 msgid "Save Settings"
 msgstr "Zapisz ustawienia"
 
+#, fuzzy
 msgid "Scart-Recorder"
 msgstr "Timer nagrywania"
 
@@ -1124,6 +1138,7 @@ msgstr "katalog udostępniany"
 msgid "sharename"
 msgstr "nazwa udostępniana"
 
+#, fuzzy
 msgid "Share Settings"
 msgstr "Zapisz ustawienia"
 
@@ -1169,6 +1184,7 @@ msgstr "mały"
 msgid "SNR:"
 msgstr "SNR:"
 
+#, fuzzy
 msgid "Softcam auswahl:"
 msgstr "Panel EMU"
 
@@ -1232,6 +1248,7 @@ msgstr "Niedziela"
 msgid "Swap"
 msgstr "Swap"
 
+#, fuzzy
 msgid "Switch"
 msgstr "przełącznik"
 
@@ -1262,6 +1279,7 @@ msgstr "T"
 msgid "TEST"
 msgstr "TEST"
 
+#, fuzzy
 msgid "Test frequency"
 msgstr "Częstotliwość"
 
@@ -1301,6 +1319,7 @@ msgstr "Tryb tonowy"
 msgid "Top"
 msgstr "Góra"
 
+#, fuzzy
 msgid "Transponder:"
 msgstr "Transponder:"
 
@@ -1439,6 +1458,7 @@ msgstr "Odtwarzacz radia internetowego"
 msgid "Wednesday"
 msgstr "Środa"
 
+#, fuzzy
 msgid "Wetter Infos"
 msgstr "Info systemu"
 
@@ -1462,3 +1482,78 @@ msgstr "Z"
 
 msgid "Z"
 msgstr "Z"
+
+#~ msgid "Gui Restart"
+#~ msgstr "Restart GUI"
+
+#~ msgid "standby"
+#~ msgstr "uśpienie"
+
+#~ msgid "power off"
+#~ msgstr "Wyłączenia"
+
+#~ msgid "Sat"
+#~ msgstr "SAT"
+
+#~ msgid "scan"
+#~ msgstr "Skanowanie"
+
+#~ msgid "swap"
+#~ msgstr "Swap"
+
+#~ msgid "backup"
+#~ msgstr "Kopia"
+
+#~ msgid "Auto Resolution"
+#~ msgstr "Auto rozdzielczość"
+
+#~ msgid "activate"
+#~ msgstr "Aktywuj"
+
+#~ msgid "Password"
+#~ msgstr "hasło"
+
+#~ msgid "NEXT"
+#~ msgstr "Następny"
+
+#~ msgid "PREV"
+#~ msgstr "Poprzedni"
+
+#~ msgid "FanControl"
+#~ msgstr "Kontrola wentylatora"
+
+#~ msgid "Test"
+#~ msgstr "TEST"
+
+#~ msgid "repeate"
+#~ msgstr "Powtórz"
+
+#~ msgid "picture"
+#~ msgstr "ZDJĘCIE"
+
+#~ msgid "Ok"
+#~ msgstr "OK"
+
+#~ msgid "Picture"
+#~ msgstr "ZDJĘCIE"
+
+#~ msgid "Free Space"
+#~ msgstr "wolne miejsce"
+
+#~ msgid "Audio"
+#~ msgstr "AUDIO"
+
+#~ msgid "video"
+#~ msgstr "OBRAZ"
+
+#~ msgid "audio"
+#~ msgstr "AUDIO"
+
+#~ msgid "UNKNOWN"
+#~ msgstr "nieznany"
+
+#~ msgid "Tuner "
+#~ msgstr "Tuner"
+
+#~ msgid "channel"
+#~ msgstr "Kanał"

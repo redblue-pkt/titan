@@ -41,6 +41,7 @@ msgstr "A"
 msgid "A"
 msgstr "A"
 
+#, fuzzy
 msgid ""
 "A mount entry with this name already exists!\n"
 "Update existing entry and continue?"
@@ -75,6 +76,7 @@ msgstr ""
 "Bạn muốn kiể tra phân vùng này?\n"
 " Đầu thu sẽ khởi động lại sau khi kiểm tra."
 
+#, fuzzy
 msgid "A record hdd or a swapstick must be mounted!"
 msgstr ""
 "ổ cứng phải được kết nối!\n"
@@ -90,6 +92,7 @@ msgstr "Panen"
 msgid "Wizard"
 msgstr "Wizard"
 
+#, fuzzy
 msgid "Aborting restoring..."
 msgstr " sắp đến..."
 
@@ -108,6 +111,7 @@ msgstr " AC3 downmix "
 msgid "AC3 Mode"
 msgstr "Chế độ AC3"
 
+#, fuzzy
 msgid "Action after"
 msgstr "Hành động sau đó"
 
@@ -147,6 +151,7 @@ msgstr "Thêm chia sẻ mới"
 msgid "add cifs share"
 msgstr " Thêm chia sẻ cifs"
 
+#, fuzzy
 msgid "add nfs share"
 msgstr "NFS-Server"
 
@@ -171,6 +176,7 @@ msgstr "luôn luôn"
 msgid "all"
 msgstr "TẤT CẢ"
 
+#, fuzzy
 msgid "All new channel added!"
 msgstr "Tuner lỗi"
 
@@ -186,9 +192,11 @@ msgstr "Tất cả các chương trình"
 msgid "alpha"
 msgstr "alpha"
 
+#, fuzzy
 msgid "alt file"
 msgstr "tập tin"
 
+#, fuzzy
 msgid "Are you sure you want to restore settings?"
 msgstr "Bạn có muốn xóa chia sẻ này?"
 
@@ -270,6 +278,7 @@ msgstr "!!! LỖI SAO LƯU !!!"
 msgid "Backup - Settings"
 msgstr "Thiết lập sao lưu"
 
+#, fuzzy
 msgid ""
 "Backup startet\n"
 "\n"
@@ -285,9 +294,11 @@ msgstr "BBGain"
 msgid "BER:"
 msgstr "BER:"
 
+#, fuzzy
 msgid "bestfit"
 msgstr "tốt nhất"
 
+#, fuzzy
 msgid "Beta Config"
 msgstr "Thiết lập vệ tinh"
 
@@ -312,6 +323,7 @@ msgstr "Nút màu xanh da trời"
 msgid "Blue Key Action - Setup"
 msgstr "Nút màu xanh da trời – Cài đặt"
 
+#, fuzzy
 msgid "Blue Key Action - Plugins"
 msgstr "Nút màu xanh da trời – Cài đặt"
 
@@ -321,12 +333,14 @@ msgstr "đường viền"
 msgid "bootlogos"
 msgstr ""
 
+#, fuzzy
 msgid "bootlogo"
 msgstr " Logo khởi động "
 
 msgid "Bootlogo"
 msgstr " Logo khởi động "
 
+#, fuzzy
 msgid "BootResolution"
 msgstr " Độ phân giải khởi động "
 
@@ -351,6 +365,7 @@ msgstr "Độ sáng"
 msgid "broadcast"
 msgstr "phát sóng"
 
+#, fuzzy
 msgid "browsers"
 msgstr "Trình duyệt mạng"
 
@@ -427,6 +442,7 @@ msgstr "Danh sách chương trình rỗng(không tìm thấy chương trình) !"
 msgid "Channel Search"
 msgstr "Dò chương trình"
 
+#, fuzzy
 msgid "Channel Service"
 msgstr " Dịch vụ chương trình …"
 
@@ -454,6 +470,7 @@ msgstr "Khóa trẻ em"
 msgid "Clear before scan"
 msgstr "Xóa trước khi dò"
 
+#, fuzzy
 msgid "Color Format Scart"
 msgstr " Định dạng màu "
 
@@ -528,6 +545,7 @@ msgstr "MẶC ĐỊNH"
 msgid "DEFAULT"
 msgstr "MẶC ĐỊNH"
 
+#, fuzzy
 msgid "Default Icon"
 msgstr "MẶC ĐỊNH"
 
@@ -579,21 +597,25 @@ msgstr "kết nối trực tiếp"
 msgid "disable"
 msgstr "Tắt"
 
+#, fuzzy
 msgid "DiSEqC Command Order"
 msgstr "Điều khiển Diseqc"
 
+#, fuzzy
 msgid "DiSEqC Configuration"
 msgstr " Cài đặt tuner"
 
 msgid "DiSEqC Mode"
 msgstr "Chế độ DiSEqC"
 
+#, fuzzy
 msgid "DiSEqC repeats"
 msgstr "lập lại DiSEqC "
 
 msgid "Diseqc Settings"
 msgstr "Thiết lập DiSEqC"
 
+#, fuzzy
 msgid "DiSEqC Sat Settings"
 msgstr "Thiết lập DiSEqC"
 
@@ -606,6 +628,7 @@ msgstr "DNS-Server 1"
 msgid "dnsserver 2"
 msgstr "DNS-Server 2"
 
+#, fuzzy
 msgid ""
 "Do you really want to erase all datas and backups from Swap?\n"
 "The Box will reboot and the erase will be started!"
@@ -644,6 +667,7 @@ msgstr "Freigabe bearbeiten"
 msgid "empty"
 msgstr "trống"
 
+#, fuzzy
 msgid "enable"
 msgstr "cho phép"
 
@@ -680,12 +704,14 @@ msgstr "Freier EPG Speicher"
 msgid "Error file not supported"
 msgstr "Lỗi tập tin không được hỗ trợ!"
 
+#, fuzzy
 msgid "Error: create timer thread !!"
 msgstr "Tạo tên file lỗi"
 
 msgid "Error: open rc device !!"
 msgstr " Lỗi: mở thiết bị rc !"
 
+#, fuzzy
 msgid "Error: open rcsim device !!"
 msgstr " Lỗi: mở thiết bị rc !"
 
@@ -707,6 +733,7 @@ msgstr "Lỗi: không tìm thấy nền!"
 msgid "errorboot"
 msgstr "Lỗi khởi động"
 
+#, fuzzy
 msgid "errorstop"
 msgstr "dừng"
 
@@ -728,12 +755,14 @@ msgstr "Thoát = hủy bỏ khôi phục"
 msgid "Extensions List"
 msgstr "Danh sách mở rộng"
 
+#, fuzzy
 msgid "Extensions Menu"
 msgstr "Mở rộng"
 
 msgid "Extensions"
 msgstr "Mở rộng"
 
+#, fuzzy
 msgid "Expert Sat Settings"
 msgstr "Cài đặt khuôn hình"
 
@@ -746,6 +775,7 @@ msgstr "F"
 msgid "Fancontrol"
 msgstr "Điều khiển quạt"
 
+#, fuzzy
 msgid "Fast DiSEqC"
 msgstr "DiSEqC"
 
@@ -779,6 +809,7 @@ msgstr "Bỏ qua FDMA"
 msgid "First Wizzard"
 msgstr "Wizzard đầu tiên"
 
+#, fuzzy
 msgid "File Browser"
 msgstr "Trình duyệt mạng"
 
@@ -806,6 +837,7 @@ msgstr ""
 msgid "Fontsize adjust in pixel"
 msgstr "Cỡ chữ theo pixel"
 
+#, fuzzy
 msgid "fontsize"
 msgstr "kích thước"
 
@@ -821,6 +853,7 @@ msgstr "Tìm thấy Radio:"
 msgid "Found TV:"
 msgstr "Tìm thấy TV:"
 
+#, fuzzy
 msgid ""
 "Found running Record.\n"
 "Realy shutdown ?"
@@ -853,12 +886,14 @@ msgstr "Tần số:"
 msgid "Friday"
 msgstr "Thứ sáu"
 
+#, fuzzy
 msgid "fsckrecord"
 msgstr "Ghi"
 
 msgid "fsckroot"
 msgstr "gốc fsck"
 
+#, fuzzy
 msgid "fsckswap"
 msgstr "trao đổi"
 
@@ -883,6 +918,7 @@ msgstr "G"
 msgid "gateway"
 msgstr "gateway"
 
+#, fuzzy
 msgid "Germany"
 msgstr "Tiếng Đức"
 
@@ -898,6 +934,7 @@ msgstr "Lịch chương trình"
 msgid "Graph. EPG"
 msgstr "Lịch chương trình"
 
+#, fuzzy
 msgid "Graphic MULTI EPG - Bouquets -"
 msgstr "Nhóm lịch chương trình"
 
@@ -919,6 +956,7 @@ msgstr "Tiếng Đức"
 msgid "GUI Restart"
 msgstr "Khởi động lại GUI"
 
+#, fuzzy
 msgid "Goto startpos"
 msgstr "Tự động khởi động"
 
@@ -968,9 +1006,11 @@ msgstr "I"
 msgid "I"
 msgstr "I"
 
+#, fuzzy
 msgid "Image Information"
 msgstr " Thông tin "
 
+#, fuzzy
 msgid "Imdb Directory"
 msgstr "Quét thư mục"
 
@@ -1010,6 +1050,7 @@ msgstr "khởi tạo"
 msgid "install"
 msgstr "Cài đặt"
 
+#, fuzzy
 msgid "Install"
 msgstr "Cài đặt"
 
@@ -1082,6 +1123,7 @@ msgstr "Hộp thư"
 msgid "Listbox Select"
 msgstr "Lựa chọn danh sách"
 
+#, fuzzy
 msgid "LNB Configuration"
 msgstr " Cài đặt tuner"
 
@@ -1091,9 +1133,11 @@ msgstr "Thiết lập LNB"
 msgid "LNB"
 msgstr "LNB"
 
+#, fuzzy
 msgid "loadpartition"
 msgstr "Phân cực"
 
+#, fuzzy
 msgid "LOF"
 msgstr "LOF/H"
 
@@ -1133,6 +1177,7 @@ msgstr "Menu chính"
 msgid "Manual Search"
 msgstr "Dò bằng tay"
 
+#, fuzzy
 msgid "Manuel Scan"
 msgstr "Dò bằng tay"
 
@@ -1157,6 +1202,7 @@ msgstr "Media Center"
 msgid "Media Player"
 msgstr "Media Player"
 
+#, fuzzy
 msgid "MediaCenter Icon"
 msgstr "Media Center"
 
@@ -1274,6 +1320,7 @@ msgstr "Cài đặt cạc mạng"
 msgid "Network Adapter Test"
 msgstr "Kiểm tra cạc mạng"
 
+#, fuzzy
 msgid "Network Assistant"
 msgstr "Khởi động lại mạng"
 
@@ -1313,6 +1360,7 @@ msgstr "không bao giờ"
 msgid "Nfs Server Settings"
 msgstr "Thiết lập Server NFS"
 
+#, fuzzy
 msgid "nfsserver"
 msgstr "NFS-Server"
 
@@ -1325,6 +1373,7 @@ msgstr "Không có luồng nào đang phát"
 msgid "picture"
 msgstr "HÌNH ẢNH"
 
+#, fuzzy
 msgid "No"
 msgstr "N"
 
@@ -1341,15 +1390,18 @@ msgstr ""
 msgid "nothing"
 msgstr "không"
 
+#, fuzzy
 msgid "No backup folders found!!!"
 msgstr ""
 "không tìm thấy thư mục!!!\n"
 "\n"
 " đang hủy sao chép …"
 
+#, fuzzy
 msgid "non"
 msgstr "không"
 
+#, fuzzy
 msgid "noaudiosync"
 msgstr "AUDIO"
 
@@ -1368,6 +1420,7 @@ msgstr "O"
 msgid "OFF"
 msgstr "TẮT"
 
+#, fuzzy
 msgid "Off"
 msgstr "tắt"
 
@@ -1377,15 +1430,18 @@ msgstr "tắt"
 msgid "OK"
 msgstr "OK"
 
+#, fuzzy
 msgid "OK = start restore"
 msgstr " Khởi động lại mạng"
 
+#, fuzzy
 msgid "oldaudiofw"
 msgstr "Firmware audio cũ "
 
 msgid "Old Audiofw"
 msgstr "Firmware audio cũ "
 
+#, fuzzy
 msgid "oldvideofw"
 msgstr "VIDEO"
 
@@ -1395,9 +1451,11 @@ msgstr "ONID:"
 msgid "on"
 msgstr "BẬT"
 
+#, fuzzy
 msgid "On"
 msgstr "N"
 
+#, fuzzy
 msgid "ON"
 msgstr "N"
 
@@ -1407,9 +1465,11 @@ msgstr "một lần"
 msgid "Only free scan"
 msgstr "Dò các chương trình miễn phí"
 
+#, fuzzy
 msgid "Only free channel scan"
 msgstr "Dò các chương trình miễn phí"
 
+#, fuzzy
 msgid "only_boot_overclock"
 msgstr "Only Boot Overclock"
 
@@ -1452,6 +1512,7 @@ msgstr "P"
 msgid "P"
 msgstr "P"
 
+#, fuzzy
 msgid "panscan"
 msgstr "dò"
 
@@ -1464,6 +1525,7 @@ msgstr "Mật khẩu"
 msgid "PCR PID:"
 msgstr "PID PCR:"
 
+#, fuzzy
 msgid "Piconpath"
 msgstr "Thư mục chứa bản ghi"
 
@@ -1503,9 +1565,11 @@ msgstr "Mật khẩu"
 msgid "PIN:"
 msgstr "MẬT KHẨU:"
 
+#, fuzzy
 msgid "pingserver"
 msgstr "NFS-Server"
 
+#, fuzzy
 msgid "pingtimeout"
 msgstr "Thời gian quay"
 
@@ -1524,6 +1588,7 @@ msgstr " Danh sách phát – Chế độ"
 msgid "PlayList"
 msgstr "danh sách phát"
 
+#, fuzzy
 msgid "playlist"
 msgstr " Danh sách phát – Chế độ"
 
@@ -1563,6 +1628,7 @@ msgstr "Tiếng Ba Lan"
 msgid "portmap"
 msgstr " port map "
 
+#, fuzzy
 msgid "Power action"
 msgstr "Bật/tắt nguồn"
 
@@ -1596,12 +1662,14 @@ msgstr "trước đó"
 msgid "press red"
 msgstr "bấm nút màu đỏ"
 
+#, fuzzy
 msgid "profile"
 msgstr "tập tin"
 
 msgid "Program Info"
 msgstr "Thông tin chương trình"
 
+#, fuzzy
 msgid "progressbar"
 msgstr "bấm nút màu đỏ"
 
@@ -1647,6 +1715,7 @@ msgstr "Q"
 msgid "QAM auto"
 msgstr "QAM tự động"
 
+#, fuzzy
 msgid "QPSK auto"
 msgstr "QAM tự động"
 
@@ -1677,9 +1746,11 @@ msgstr "Ngẫu nhiên-Bật"
 msgid "rcreboot"
 msgstr "khởi động lại rc"
 
+#, fuzzy
 msgid "Realy Delete ?"
 msgstr "Xóa"
 
+#, fuzzy
 msgid "Realy restore default settings ?"
 msgstr "Thiết lập mặc định"
 
@@ -1722,6 +1793,7 @@ msgstr "Ghi và EPG"
 msgid "record_max_sectors"
 msgstr "record_max_sectors "
 
+#, fuzzy
 msgid "record_split_size"
 msgstr "Kích thước chia bản ghi"
 
@@ -1740,12 +1812,14 @@ msgstr "Nút màu đỏ"
 msgid "Red Key Action - Setup"
 msgstr "Rote-Taste Belegungsmenü "
 
+#, fuzzy
 msgid "Red Key Action - Plugins"
 msgstr "Rote-Taste Belegungsmenü "
 
 msgid "Reduce Standby frequency"
 msgstr "Giảm tần số ở chế độ chờ"
 
+#, fuzzy
 msgid "remove share"
 msgstr "xóa dịch vụ"
 
@@ -1803,6 +1877,7 @@ msgstr "Khởi động lại mạng?"
 msgid "Restart Network"
 msgstr " Khởi động lại mạng"
 
+#, fuzzy
 msgid "Restart "
 msgstr "Khởi động lại"
 
@@ -1854,6 +1929,7 @@ msgstr "S"
 msgid "Samba Server Settings"
 msgstr "Thiết lập server Samba"
 
+#, fuzzy
 msgid "sambaserver"
 msgstr " server Samba "
 
@@ -1893,6 +1969,7 @@ msgstr "Vệ tinh"
 msgid "Satellites"
 msgstr "Vệ tinh"
 
+#, fuzzy
 msgid "Satelite Entrys"
 msgstr "Vệ tinh"
 
@@ -1935,9 +2012,11 @@ msgstr "Dò Wlan"
 msgid "Scanning Network Shares, please wait !!"
 msgstr "Dò mạng chia sẻ, vui long đợi !!"
 
+#, fuzzy
 msgid "scartonstandby"
 msgstr "Standby"
 
+#, fuzzy
 msgid "Scart-Recorder"
 msgstr "Bộ đinh thời ghi"
 
@@ -2010,6 +2089,7 @@ msgstr "Thiết lập..."
 msgid "Settings OK ?"
 msgstr " Thiết lập OK ?"
 
+#, fuzzy
 msgid "Share Settings"
 msgstr "Lưu các thiết lập"
 
@@ -2019,6 +2099,7 @@ msgstr "sharedir"
 msgid "sharename"
 msgstr "Tên chia sẻ"
 
+#, fuzzy
 msgid "Sharename"
 msgstr "Tên chia sẻ"
 
@@ -2037,9 +2118,11 @@ msgstr "Hiển thị trong VFD"
 msgid "showip"
 msgstr "hiển thị địa chỉ ip"
 
+#, fuzzy
 msgid "showtvinfo"
 msgstr "hiển thị địa chỉ ip"
 
+#, fuzzy
 msgid "Show Module Messages"
 msgstr "Các module"
 
@@ -2052,6 +2135,7 @@ msgstr "Tín hiệu:"
 msgid "Single Sat"
 msgstr "Một vệ tinh"
 
+#, fuzzy
 msgid "Single Satelite"
 msgstr "Một vệ tinh"
 
@@ -2139,48 +2223,59 @@ msgstr "Standby / Tắt nguồn..."
 msgid "Standby Brightness"
 msgstr "Độ sáng ở chế độ standby"
 
+#, fuzzy
 msgid "Standby Mode"
 msgstr "Chế độ standby"
 
 msgid "Standby"
 msgstr "Standby"
 
+#, fuzzy
 msgid "standby_freq"
 msgstr "Standby"
 
 msgid "Standby frequency"
 msgstr "Tần số standby"
 
+#, fuzzy
 msgid "standby_overclock"
 msgstr "Only Boot Overclock"
 
 msgid "Start HTTPD"
 msgstr "Bắt đầu HTTPD"
 
+#, fuzzy
 msgid "Start"
 msgstr "bắt đầu"
 
+#, fuzzy
 msgid "starting Kernel Update ?"
 msgstr "bắt đầu cập nhật?"
 
+#, fuzzy
 msgid "starting Fw Update ?"
 msgstr "bắt đầu cập nhật?"
 
+#, fuzzy
 msgid "starting Root Update ?"
 msgstr "bắt đầu cập nhật?"
 
+#, fuzzy
 msgid "starting Var Update ?"
 msgstr "bắt đầu cập nhật?"
 
 msgid "starting Full Update ?"
 msgstr "bắt đầu cập nhật?"
 
+#, fuzzy
 msgid "starting Usb Update ?"
 msgstr "bắt đầu cập nhật?"
 
+#, fuzzy
 msgid "starting Fullusb Update ?"
 msgstr "bắt đầu cập nhật?"
 
+#, fuzzy
 msgid "starting Usb (unknown release grp) Update ?"
 msgstr "bắt đầu cập nhật?"
 
@@ -2190,6 +2285,7 @@ msgstr "bắt đầu trình duyệt Qt?"
 msgid "STOP/START"
 msgstr "STOP/START"
 
+#, fuzzy
 msgid "stream is running !"
 msgstr "Không có luồng nào đang phát"
 
@@ -2226,24 +2322,30 @@ msgstr "trao đổi"
 msgid "swap_max_sectors"
 msgstr "swap_max_sectors"
 
+#, fuzzy
 msgid "swapnetwork"
 msgstr "mạng"
 
+#, fuzzy
 msgid "swapscreensaver"
 msgstr "Màn hình chờ"
 
+#, fuzzy
 msgid "swapskins"
 msgstr "trao đổi"
 
+#, fuzzy
 msgid "swapsystem"
 msgstr "Hệ thống"
 
+#, fuzzy
 msgid "swapsize"
 msgstr "wsize"
 
 msgid "swapsystems"
 msgstr "Hệ thống trao đổi"
 
+#, fuzzy
 msgid "Switch"
 msgstr "Chuyển"
 
@@ -2289,6 +2391,7 @@ msgstr "Hệ thống:"
 msgid "szap"
 msgstr "szap"
 
+#, fuzzy
 msgid "szap_diseqc_repeat"
 msgstr "lập lại DiSEqC "
 
@@ -2304,12 +2407,14 @@ msgstr "T"
 msgid "T"
 msgstr "T"
 
+#, fuzzy
 msgid "tab"
 msgstr "Standby"
 
 msgid "telnet"
 msgstr "telnet"
 
+#, fuzzy
 msgid "Test frequency"
 msgstr "dịch tần số"
 
@@ -2368,6 +2473,7 @@ msgstr "Chế độ tone"
 msgid "Top"
 msgstr "Về đầu"
 
+#, fuzzy
 msgid "Transponder:"
 msgstr "Bộ pháp đáp:"
 
@@ -2401,6 +2507,7 @@ msgstr "Không chuyển được chương trình!"
 msgid " Teletext CPU Frequenz fix "
 msgstr "Sửa tần số CPU teletext"
 
+#, fuzzy
 msgid "TV (Info)"
 msgstr "Thông tin"
 
@@ -2419,6 +2526,7 @@ msgstr "Kiểu"
 msgid "Type:"
 msgstr "Kiểu:"
 
+#, fuzzy
 msgid "type of channelsearch"
 msgstr "Dò chương trình"
 
@@ -2449,6 +2557,7 @@ msgstr "KHÔNG TẢI ĐƯỢC"
 msgid "update"
 msgstr "Cập nhật"
 
+#, fuzzy
 msgid "Update"
 msgstr "Cập nhật"
 
@@ -2551,6 +2660,7 @@ msgstr "Phát VLC"
 msgid "Voltage Mode"
 msgstr "Chế độ điện áp"
 
+#, fuzzy
 msgid "Volume off"
 msgstr "Tắt âm lượng"
 
@@ -2572,6 +2682,7 @@ msgstr "Vui long đợi."
 msgid "wait for stopping download"
 msgstr "vui long đợi để dừng download."
 
+#, fuzzy
 msgid "Weather Info"
 msgstr "Thông tin thời tiết"
 
@@ -2587,6 +2698,7 @@ msgstr "Ngày thứ tư"
 msgid "weekly"
 msgstr "hàng tuần"
 
+#, fuzzy
 msgid "wlan"
 msgstr "Dò Wlan"
 
@@ -2614,6 +2726,7 @@ msgstr "Y"
 msgid "yes"
 msgstr "đồng ý"
 
+#, fuzzy
 msgid "Yes"
 msgstr "đồng ý"
 
@@ -2632,12 +2745,15 @@ msgstr "Z"
 msgid "Z"
 msgstr "Z"
 
+#, fuzzy
 msgid "DEU (DVB Subtitle)"
 msgstr "Phụ đề"
 
+#, fuzzy
 msgid "ENG (DVB-Subtitle)"
 msgstr "Phụ đề"
 
+#, fuzzy
 msgid "FRA (DVB-Subtitle)"
 msgstr "Phụ đề"
 
@@ -2659,6 +2775,7 @@ msgstr "Khóa trẻ em"
 msgid "Protect Channel Freetime (min)"
 msgstr "khóa kênh miễn phí"
 
+#, fuzzy
 msgid " SELECT"
 msgstr "LỰA CHỌN"
 
@@ -2731,6 +2848,7 @@ msgstr "dò"
 msgid "Install netsurf Internetbrowser Ipk first !"
 msgstr "cài đặt trình duyệt web"
 
+#, fuzzy
 msgid "start Internet browser now ?"
 msgstr "Trình duyệt mạng"
 
@@ -2767,6 +2885,7 @@ msgstr "vị trí lưu trữ"
 msgid "goto position"
 msgstr "đến vị trí"
 
+#, fuzzy
 msgid "start position"
 msgstr "vị trí lưu trữ"
 
@@ -2827,6 +2946,7 @@ msgstr "xuống"
 msgid "browser"
 msgstr ""
 
+#, fuzzy
 msgid "swaptool"
 msgstr "trao đổi"
 
@@ -2848,6 +2968,7 @@ msgstr "Chế độ ghi lịch chương trình"
 msgid "OWN POS"
 msgstr "vị trí riêng"
 
+#, fuzzy
 msgid "Own Position"
 msgstr "Vị trí roto"
 
@@ -2878,6 +2999,7 @@ msgstr "Timeshift"
 msgid "Show Timeline in Channellist"
 msgstr "đưa thanh thời gian ở danh sách kênh"
 
+#, fuzzy
 msgid "start, Playback"
 msgstr "bắt đầu phát lại?"
 
@@ -2900,6 +3022,7 @@ msgstr ""
 msgid "File exist, overwrite?"
 msgstr "file đã tồn tại, có ghi đè không?"
 
+#, fuzzy
 msgid "animation 1"
 msgstr " Thông tin "
 
@@ -3229,21 +3352,25 @@ msgstr "xem trước"
 msgid "hidden"
 msgstr "ẩn"
 
+#, fuzzy
 msgid "deactive"
 msgstr "cho phép"
 
+#, fuzzy
 msgid "No output found !"
 msgstr "Không tìm thấy"
 
 msgid "swapplayer"
 msgstr " swap player "
 
+#, fuzzy
 msgid "swaptools"
 msgstr "trao đổi"
 
 msgid "games"
 msgstr ""
 
+#, fuzzy
 msgid "swapbrowser"
 msgstr "Trình duyệt mạng"
 
@@ -3293,6 +3420,7 @@ msgstr ""
 "và thêm các nút hiển thị bằng cách dùng điều khiển từ xa để "
 "chọn "
 
+#, fuzzy
 msgid ""
 "Here you can choose to configure your tuner. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
@@ -3300,6 +3428,7 @@ msgstr ""
 "Bạn có thể cấu hình thiết bị đọc ở đây. nsử dụng các phím "
 "di chuyển và các nút mở rộng trên điều khiển để chọn."
 
+#, fuzzy
 msgid ""
 "Here they can do for your chosen tuner to receive settings. Use to navigate "
 "the control cross and the extra buttons displayed with your remote control "
@@ -3316,6 +3445,7 @@ msgstr ""
 "Thiết lập LNB.sử dụng các phím di chuyển và các nút mở rộng "
 "trên điều khiển để chọn."
 
+#, fuzzy
 msgid ""
 "Here they can do for your chosen tuner to ownpos settings. Use to navigate "
 "the control cross and the extra buttons displayed with your remote control "
@@ -3372,6 +3502,7 @@ msgstr ""
 "Bạn có thể tạo các thiết lập giao diện mạng ở đây. sử dụng "
 "các phím di chuyển và các nút mở rộng trên điều khiển để chọn."
 
+#, fuzzy
 msgid ""
 "Here you can make for your wireless network settings. Use to navigate the "
 "control cross and the extra buttons displayed with your remote control to "
@@ -3663,6 +3794,7 @@ msgstr "lỗi"
 msgid "Networkbrowser - show Shares"
 msgstr "Trình duyệt web"
 
+#, fuzzy
 msgid "Installed version:"
 msgstr "Nghịch đảo:"
 
@@ -3826,6 +3958,7 @@ msgstr "Sao chép"
 msgid "Moven"
 msgstr "Di chuyển"
 
+#, fuzzy
 msgid "Realy move this file/dir?"
 msgstr "Hủy bỏ ưu thích này ?"
 
@@ -3945,6 +4078,7 @@ msgstr "Tìm kiếm MediaDB hoàn thành"
 msgid "This file doesn't exist, or has been removed"
 msgstr "File này không tồn tại hoặc đã bị xóa"
 
+#, fuzzy
 msgid ""
 "Here you can select your reader. Use to navigate the control cross and the "
 "extra buttons displayed with your remote control to select."
@@ -4049,12 +4183,15 @@ msgstr "Sử dụng các phím di chuyển để sửa đổi"
 msgid "Deactivate MiniTV"
 msgstr "Tắt cửa sổ xem trước MIniTV"
 
+#, fuzzy
 msgid "Caching Playback (10MB / 120s)"
 msgstr "Bộ nhớ chứa luồng phát lại (10MB)"
 
+#, fuzzy
 msgid "Caching Playback (20MB / 240s)"
 msgstr "Bộ nhớ chứa luồng phát lại (2MB)"
 
+#, fuzzy
 msgid "Caching Playback (30MB / 360s)"
 msgstr "Bộ nhớ chứa luồng phát lại (3MB)"
 
@@ -4106,6 +4243,7 @@ msgstr "Lỗi… không thể thiết lập nhà sản xuất trong file này"
 msgid "Marker has been set."
 msgstr "Đã thiết lập nhà sản xuất"
 
+#, fuzzy
 msgid "Download successful !"
 msgstr "Tải toàn bộ file"
 
@@ -4178,6 +4316,7 @@ msgstr "kích hoạt CEC"
 msgid "Ext. Modul detect (needs reboot)"
 msgstr "Tìm modul mở rộng (cần khởi động lại)"
 
+#, fuzzy
 msgid "Can't create Path"
 msgstr "Tạo đường dẫn"
 
@@ -4186,3 +4325,63 @@ msgstr "Tạo đường dẫn"
 
 msgid "Use numeric keys"
 msgstr "Sử dụng các phím số"
+
+#~ msgid "Gui Restart"
+#~ msgstr "Khởi động lại GUI"
+
+#~ msgid "Sat"
+#~ msgstr "Vệ tinh"
+
+#~ msgid "Menu"
+#~ msgstr "MENU"
+
+#~ msgid "backup"
+#~ msgstr "Sao lưu"
+
+#~ msgid "RED"
+#~ msgstr "màu đỏ"
+
+#~ msgid "GREEN"
+#~ msgstr "màu xanh"
+
+#~ msgid "BLUE"
+#~ msgstr "màu xanh da trời"
+
+#~ msgid "title"
+#~ msgstr "nhan đề"
+
+#~ msgid "activate"
+#~ msgstr "Kích hoạt"
+
+#~ msgid "frequency"
+#~ msgstr "Tần số"
+
+#~ msgid "FanControl"
+#~ msgstr "Điều khiển quạt"
+
+#~ msgid "Test"
+#~ msgstr "KIỂM TRA"
+
+#~ msgid "Edit"
+#~ msgstr "chỉnh sửa"
+
+#~ msgid "Ok"
+#~ msgstr "OK"
+
+#~ msgid "Picture"
+#~ msgstr "HÌNH ẢNH"
+
+#~ msgid "Title"
+#~ msgstr "nhan đề"
+
+#~ msgid "Free Space"
+#~ msgstr "Dung lượng còn trống"
+
+#~ msgid "Audio"
+#~ msgstr "AUDIO"
+
+#~ msgid "UNKNOWN"
+#~ msgstr "không biết"
+
+#~ msgid "Tuner "
+#~ msgstr "Tuner"
