@@ -71,13 +71,13 @@ for ROUND in $POLIST; do
 		if [ ! -e "$ROUND_UTF" ] || [ `cat "$ROUND_UTF" | wc -l` -eq 0 ]; then error="2"; break;fi
 
 		echo "[createpo.sh] xgettext --omit-header -k_ *.* -o $ROUND_NEW"
-		xgettext --omit-header -j -k_ *.* -o $ROUND_UTF >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log
+		xgettext --omit-header -j -k_ *.* -o $ROUND_UTF >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log 2>&1
 		if [ ! -e "$ROUND_UTF" ] || [ `cat "$ROUND_UTF" | wc -l` -eq 0 ]; then error="3"; break;fi
 		log=`cat "$HOME"/flashimg/source.titan/titan/tools/error/error.log`
 		if [ `echo $log | grep "fatal error" | wc -l` -gt 0 ]; then error="4"; break;fi
 
 		echo "[createpo.sh] xgettext --omit-header -k_ *.* -o $ROUND_NEW"
-		xgettext --omit-header -k_ *.* -o $ROUND_NEW >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log
+		xgettext --omit-header -k_ *.* -o $ROUND_NEW >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log 2>&1
 		if [ ! -e "$ROUND_NEW" ] || [ `cat "$ROUND_NEW" | wc -l` -eq 0 ]; then error="5"; break;fi
 		log=`cat "$HOME"/flashimg/source.titan/titan/tools/error/error.log`
 		if [ `echo $log | grep "fatal error" | wc -l` -gt 0 ]; then error="6";break;fi
@@ -109,7 +109,7 @@ for ROUND in $POLIST; do
 		if [ ! -e "$OUTFILE_PO" ] || [ `cat "$OUTFILE_PO" | wc -l` -eq 0 ]; then error="11"; break;fi
 
 		echo "[createpo.sh] msgfmt -v $OUTFILE_PO -o $OUTFILE_MO"
-		msgfmt -v $OUTFILE_PO -o $OUTFILE_MO >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log		
+		msgfmt -v $OUTFILE_PO -o $OUTFILE_MO >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log 2>&1
 		if [ ! -e "$OUTFILE_MO" ] || [ `cat "$OUTFILE_MO" | wc -l` -eq 0 ]; then error="12"; break;fi
 		log=`cat "$HOME"/flashimg/source.titan/titan/tools/error/error.log`
 		if [ `echo $log | grep "fatal error" | wc -l` -gt 0 ]; then error="13"; break;fi
