@@ -1,3 +1,23 @@
 --------------------------------------
 [createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.po -o /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.mo
-0 translated messages.
+494 translated messages, 2833 untranslated messages.
+--------------------------------------
+[createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.po -o /home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.mo
+489 translated messages, 2837 untranslated messages.
+--------------------------------------
+[createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.po -o /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.mo
+873 translated messages, 2454 untranslated messages.
+--------------------------------------
+[createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/vn/LC_MESSAGES/titan.po_auto.po -o /home/atemio/flashimg/source.titan/po/vn/LC_MESSAGES/titan.mo
+1034 translated messages, 2293 untranslated messages.
+--------------------------------------
+[createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/it/LC_MESSAGES/titan.po_auto.po -o /home/atemio/flashimg/source.titan/po/it/LC_MESSAGES/titan.mo
+1150 translated messages, 2177 untranslated messages.
+--------------------------------------
+[createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/pl/LC_MESSAGES/titan.po_auto.po -o /home/atemio/flashimg/source.titan/po/pl/LC_MESSAGES/titan.mo
+478 translated messages, 2849 untranslated messages.
+--------------------------------------
+[createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.po_auto.po -o /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.mo
+/home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.po_auto.po:4: end-of-line within string
+msgfmt: found 1 fatal error
+msgstr "
