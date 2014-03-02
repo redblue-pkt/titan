@@ -1,1673 +1,2244 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: TitanNit 1.49\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-07 10:44+0200\n"
+"PO-Revision-Date: 2014-02-07 17:47+0200\n"
+"Last-Translator: obi <_obiwan_@web.de>\n"
+"Language-Team: German <_obiwan_@web.de>\n"
+"Language: gr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
 msgid "---"
+
 msgstr "---"
 
 msgid "???"
+
 msgstr ";;;"
 
 msgid "1500rpm"
-msgstr "1500 σ/λ"
+
+msgstr "1500 Οƒ/Ξ»"
 
 msgid "3D Mode"
+
 msgstr "3D Mode"
 
 msgid "500rpm"
-msgstr "500 σ/λ"
+
+msgstr "500 Οƒ/Ξ»"
 
 msgid "a"
+
 msgstr "a"
 
 msgid "A"
+
 msgstr "A"
 
 msgid "Panel"
+
 msgstr "Panel"
 
 msgid "Wizard"
-msgstr "Βοηθός εγκατάστασης"
+
+msgstr "Ξ’ΞΏΞ·ΞΈΟΟ‚ ΞµΞ³ΞΊΞ±Ο„Ξ¬ΟƒΟ„Ξ±ΟƒΞ·Ο‚"
 
 msgid "About"
-msgstr "Περί"
+
+msgstr "Ξ ΞµΟΞ―"
 
 msgid "AC3 default"
-msgstr "AC3 προεπιλογή"
+
+msgstr "AC3 Ο€ΟΞΏΞµΟ€ΞΉΞ»ΞΏΞ³Ξ®"
 
 msgid "AC3 Mode"
+
 msgstr "AC3 Mode"
 
 msgid "Activate"
-msgstr "Ενεργοποίηση"
+
+msgstr "Ξ•Ξ½ΞµΟΞ³ΞΏΟ€ΞΏΞ―Ξ·ΟƒΞ·"
 
 msgid "Adapter Settings"
-msgstr "Ρυθμίσεις Adapter"
+
+msgstr "Ξ΅Ο…ΞΈΞΌΞ―ΟƒΞµΞΉΟ‚ Adapter"
 
 msgid "ADD"
-msgstr "Προσθήκη"
+
+msgstr "Ξ ΟΞΏΟƒΞΈΞ®ΞΊΞ·"
 
 msgid "add service"
-msgstr "Προσθήκη Καναλιού"
+
+msgstr "Ξ ΟΞΏΟƒΞΈΞ®ΞΊΞ· ΞΞ±Ξ½Ξ±Ξ»ΞΉΞΏΟ"
 
 msgid "Adjust"
-msgstr "Ρύθμιση Συστήματος"
+
+msgstr "Ξ΅ΟΞΈΞΌΞΉΟƒΞ· Ξ£Ο…ΟƒΟ„Ξ®ΞΌΞ±Ο„ΞΏΟ‚"
 
 msgid "Action after"
-msgstr "Ενέργεια μετά"
+
+msgstr "Ξ•Ξ½Ξ­ΟΞ³ΞµΞΉΞ± ΞΌΞµΟ„Ξ¬"
 
 msgid "all"
-msgstr "Όλα"
+
+msgstr "ΞΞ»Ξ±"
 
 msgid "ALL"
-msgstr "ΌΛΑ"
+
+msgstr "ΞΞ›Ξ‘"
 
 msgid "alpha"
+
 msgstr "alpha"
 
 msgid "Apple Trailer"
+
 msgstr "Apple Trailer"
 
 msgid "Aspect"
-msgstr "Αναλογία"
+
+msgstr "Ξ‘Ξ½Ξ±Ξ»ΞΏΞ³Ξ―Ξ±"
 
 msgid "Aspect Ratio:"
-msgstr "Αναλογία πλευρών:"
+
+msgstr "Ξ‘Ξ½Ξ±Ξ»ΞΏΞ³Ξ―Ξ± Ο€Ξ»ΞµΟ…ΟΟΞ½:"
 
 msgid "AUDIO"
+
 msgstr "AUDIO"
 
 msgid "Audio PID:"
+
 msgstr "Audio PID:"
 
 msgid "Audio Player"
+
 msgstr "Audio Player"
 
 msgid "AUDIO SETTINGS"
-msgstr "Ρυθμίσεις Audio"
+
+msgstr "Ξ΅Ο…ΞΈΞΌΞ―ΟƒΞµΞΉΟ‚ Audio"
 
 msgid "Audio Source"
-msgstr "Πηγή Audio"
+
+msgstr "Ξ Ξ·Ξ³Ξ® Audio"
 
 msgid "Audio/Subt."
-msgstr "Audio/Υπότιτλοι"
+
+msgstr "Audio/Ξ¥Ο€ΟΟ„ΞΉΟ„Ξ»ΞΏΞΉ"
 
 msgid "Audio Tracks"
-msgstr "Επιλογή Audio"
+
+msgstr "Ξ•Ο€ΞΉΞ»ΞΏΞ³Ξ® Audio"
 
 msgid "Audio / Video / Sat"
+
 msgstr "Audio / Video / Sat "
 
 msgid "Automatic Search"
-msgstr "Αυτόματη αναζήτηση"
+
+msgstr "Ξ‘Ο…Ο„ΟΞΌΞ±Ο„Ξ· Ξ±Ξ½Ξ±Ξ¶Ξ®Ο„Ξ·ΟƒΞ·"
 
 msgid "Automount"
+
 msgstr "Automount"
 
 msgid "Auto resolution"
-msgstr "Αυτόματη Ανάλυση"
+
+msgstr "Ξ‘Ο…Ο„ΟΞΌΞ±Ο„Ξ· Ξ‘Ξ½Ξ¬Ξ»Ο…ΟƒΞ·"
 
 msgid "Autostart"
-msgstr "Επιλογή εκκίνησης"
+
+msgstr "Ξ•Ο€ΞΉΞ»ΞΏΞ³Ξ® ΞµΞΊΞΊΞ―Ξ½Ξ·ΟƒΞ·Ο‚"
 
 msgid "A/V Settings"
-msgstr "Ρυθμίσεις Audio / Video"
+
+msgstr "Ξ΅Ο…ΞΈΞΌΞ―ΟƒΞµΞΉΟ‚ Audio / Video"
 
 msgid "A-Z (Text)"
+
 msgstr "A-Z (TEXT)"
 
 msgid "b"
+
 msgstr "b"
 
 msgid "B"
+
 msgstr "B"
 
 msgid "bbgain"
+
 msgstr "bbgain"
 
 msgid "Backup"
-msgstr "Αποθ. Δεδομένων"
+
+msgstr "Ξ‘Ο€ΞΏΞΈ. Ξ”ΞµΞ΄ΞΏΞΌΞ­Ξ½Ο‰Ξ½"
 
 msgid "Backup / Restore Settings"
-msgstr "Αποθ./ Επαναφορά Ρυθμίσεων"
+
+msgstr "Ξ‘Ο€ΞΏΞΈ./ Ξ•Ο€Ξ±Ξ½Ξ±Ο†ΞΏΟΞ¬ Ξ΅Ο…ΞΈΞΌΞ―ΟƒΞµΟ‰Ξ½"
 
 msgid "betapass"
-msgstr "Password γιά betatester"
+
+msgstr "Password Ξ³ΞΉΞ¬ betatester"
 
 msgid "betauser"
-msgstr "Χρήστης beta"
+
+msgstr "Ξ§ΟΞ®ΟƒΟ„Ξ·Ο‚ beta"
 
 msgid "bootlogo"
-msgstr "Εικόνα εκκίνησης"
+
+msgstr "Ξ•ΞΉΞΊΟΞ½Ξ± ΞµΞΊΞΊΞ―Ξ½Ξ·ΟƒΞ·Ο‚"
 
 msgid "BootResolution"
-msgstr "Ανάλυση κατά την εκκίνηση"
+
+msgstr "Ξ‘Ξ½Ξ¬Ξ»Ο…ΟƒΞ· ΞΊΞ±Ο„Ξ¬ Ο„Ξ·Ξ½ ΞµΞΊΞΊΞ―Ξ½Ξ·ΟƒΞ·"
 
 msgid "bootstop"
-msgstr "Διακοπή της εκκίνησης"
+
+msgstr "Ξ”ΞΉΞ±ΞΊΞΏΟ€Ξ® Ο„Ξ·Ο‚ ΞµΞΊΞΊΞ―Ξ½Ξ·ΟƒΞ·Ο‚"
 
 msgid "bootrgbfix"
-msgstr "Διόρθωση RGB για την εκκίνηση"
+
+msgstr "Ξ”ΞΉΟΟΞΈΟ‰ΟƒΞ· RGB Ξ³ΞΉΞ± Ο„Ξ·Ξ½ ΞµΞΊΞΊΞ―Ξ½Ξ·ΟƒΞ·"
 
 msgid "BER:"
+
 msgstr "BER:"
 
 msgid "Beta Config"
-msgstr "Ρυθμίσεις Betatester"
+
+msgstr "Ξ΅Ο…ΞΈΞΌΞ―ΟƒΞµΞΉΟ‚ Betatester"
 
 msgid "big"
-msgstr "Mεγάλο"
+
+msgstr "MΞµΞ³Ξ¬Ξ»ΞΏ"
 
 msgid "Blue Button"
-msgstr "Μπλε κουμπί"
+
+msgstr "ΞΟ€Ξ»Ξµ ΞΊΞΏΟ…ΞΌΟ€Ξ―"
 
 msgid "Bouquet List"
+
 msgstr "Bouquet"
 
 msgid "Brightness"
-msgstr "Φωτεινότητα"
+
+msgstr "Ξ¦Ο‰Ο„ΞµΞΉΞ½ΟΟ„Ξ·Ο„Ξ±"
 
 msgid "broadcast"
-msgstr "Εκπομπή"
+
+msgstr "Ξ•ΞΊΟ€ΞΏΞΌΟ€Ξ®"
 
 msgid "c"
+
 msgstr "c"
 
 msgid "C"
+
 msgstr "C"
 
 msgid "Cam / Emu"
+
 msgstr "Cam / Emu"
 
 msgid "CAM PMT Mode"
+
 msgstr "CAM PMT Mode"
 
 msgid "cancel"
-msgstr "Ακύρωση"
+
+msgstr "Ξ‘ΞΊΟΟΟ‰ΟƒΞ·"
 
 msgid "Cancel"
-msgstr "Ακύρωση"
+
+msgstr "Ξ‘ΞΊΟΟΟ‰ΟƒΞ·"
 
 msgid "Cancel Shutdown"
-msgstr "Ακύρωση κλεισίματος"
+
+msgstr "Ξ‘ΞΊΟΟΟ‰ΟƒΞ· ΞΊΞ»ΞµΞΉΟƒΞ―ΞΌΞ±Ο„ΞΏΟ‚"
 
 msgid "Channel"
-msgstr "Κανάλι"
+
+msgstr "ΞΞ±Ξ½Ξ¬Ξ»ΞΉ"
 
 msgid "Channel Edit"
-msgstr "Επεξεργασία λίστας καναλιών"
+
+msgstr "Ξ•Ο€ΞµΞΎΞµΟΞ³Ξ±ΟƒΞ―Ξ± Ξ»Ξ―ΟƒΟ„Ξ±Ο‚ ΞΊΞ±Ξ½Ξ±Ξ»ΞΉΟΞ½"
 
 msgid "Channel EPG"
-msgstr "EPG καναλιού"
+
+msgstr "EPG ΞΊΞ±Ξ½Ξ±Ξ»ΞΉΞΏΟ"
 
 msgid "Channel Search"
-msgstr "Αναζήτηση Καναλιών"
+
+msgstr "Ξ‘Ξ½Ξ±Ξ¶Ξ®Ο„Ξ·ΟƒΞ· ΞΞ±Ξ½Ξ±Ξ»ΞΉΟΞ½"
 
 msgid "Channel Service"
-msgstr "Ρύθμιση - Αναζήτηση Καναλιών"
+
+msgstr "Ξ΅ΟΞΈΞΌΞΉΟƒΞ· - Ξ‘Ξ½Ξ±Ξ¶Ξ®Ο„Ξ·ΟƒΞ· ΞΞ±Ξ½Ξ±Ξ»ΞΉΟΞ½"
 
 msgid "Create Backup"
-msgstr "Δημιουργία backup"
+
+msgstr "Ξ”Ξ·ΞΌΞΉΞΏΟ…ΟΞ³Ξ―Ξ± backup"
 
 msgid "Child Protection"
-msgstr "Γονικός έλεγχος"
+
+msgstr "Ξ“ΞΏΞ½ΞΉΞΊΟΟ‚ Ξ­Ξ»ΞµΞ³Ο‡ΞΏΟ‚"
 
 msgid "Child safety"
-msgstr "Παιδική προστασία"
+
+msgstr "Ξ Ξ±ΞΉΞ΄ΞΉΞΊΞ® Ο€ΟΞΏΟƒΟ„Ξ±ΟƒΞ―Ξ±"
 
 msgid "Clear before scan"
-msgstr "Σβήσιμο πριν την σάρωση"
+
+msgstr "Ξ£Ξ²Ξ®ΟƒΞΉΞΌΞΏ Ο€ΟΞΉΞ½ Ο„Ξ·Ξ½ ΟƒΞ¬ΟΟ‰ΟƒΞ·"
 
 msgid "Color Format"
-msgstr "Μορφή Χρωμάτων"
+
+msgstr "ΞΞΏΟΟ†Ξ® Ξ§ΟΟ‰ΞΌΞ¬Ο„Ο‰Ξ½"
 
 msgid "Color Format Scart"
-msgstr "Μορφή χρωμάτων στο Scart"
+
+msgstr "ΞΞΏΟΟ†Ξ® Ο‡ΟΟ‰ΞΌΞ¬Ο„Ο‰Ξ½ ΟƒΟ„ΞΏ Scart"
 
 msgid "Committed command"
+
 msgstr "Committed command"
 
 msgid "Common Interface"
+
 msgstr "Common Interface"
 
 msgid "Contrast"
-msgstr "Αντίθεση"
+
+msgstr "Ξ‘Ξ½Ο„Ξ―ΞΈΞµΟƒΞ·"
 
 msgid "copy service"
-msgstr "Αντιγραφή καναλιού"
+
+msgstr "Ξ‘Ξ½Ο„ΞΉΞ³ΟΞ±Ο†Ξ® ΞΊΞ±Ξ½Ξ±Ξ»ΞΉΞΏΟ"
 
 msgid "CPU"
+
 msgstr "CPU"
 
 msgid "d"
+
 msgstr "d"
 
 msgid "D"
+
 msgstr "D"
 
 msgid "date"
-msgstr "Ημερομηνία"
+
+msgstr "Ξ—ΞΌΞµΟΞΏΞΌΞ·Ξ½Ξ―Ξ±"
 
 msgid "File Browser"
-msgstr "Browser αρχείων"
+
+msgstr "Browser Ξ±ΟΟ‡ΞµΞ―Ο‰Ξ½"
 
 msgid "Day"
-msgstr "Ημέρα"
+
+msgstr "Ξ—ΞΌΞ­ΟΞ±"
 
 msgid "Deactivate"
-msgstr "Απενεργοποίηση"
+
+msgstr "Ξ‘Ο€ΞµΞ½ΞµΟΞ³ΞΏΟ€ΞΏΞ―Ξ·ΟƒΞ·"
 
 msgid "debug"
+
 msgstr "Debug"
 
 msgid "default"
-msgstr "προρυθμίσεις"
+
+msgstr "Ο€ΟΞΏΟΟ…ΞΈΞΌΞ―ΟƒΞµΞΉΟ‚"
 
 msgid "Default"
-msgstr "Προρυθμίσεις"
+
+msgstr "Ξ ΟΞΏΟΟ…ΞΈΞΌΞ―ΟƒΞµΞΉΟ‚"
 
 msgid "DEFAULT"
-msgstr "Προρυθμίσεις"
+
+msgstr "Ξ ΟΞΏΟΟ…ΞΈΞΌΞ―ΟƒΞµΞΉΟ‚"
 
 msgid "DEL"
-msgstr "Σβήσιμο"
+
+msgstr "Ξ£Ξ²Ξ®ΟƒΞΉΞΌΞΏ"
 
 msgid "Delete EPG after read"
-msgstr "Σβήσιμο του EPG μετά την ανάγνωση"
+
+msgstr "Ξ£Ξ²Ξ®ΟƒΞΉΞΌΞΏ Ο„ΞΏΟ… EPG ΞΌΞµΟ„Ξ¬ Ο„Ξ·Ξ½ Ξ±Ξ½Ξ¬Ξ³Ξ½Ο‰ΟƒΞ·"
 
 msgid "del startchannel"
-msgstr "Ακύρωση καναλιού εκκίνησης"
+
+msgstr "Ξ‘ΞΊΟΟΟ‰ΟƒΞ· ΞΊΞ±Ξ½Ξ±Ξ»ΞΉΞΏΟ ΞµΞΊΞΊΞ―Ξ½Ξ·ΟƒΞ·Ο‚"
 
 msgid "details"
-msgstr "Λεπτομέριες"
+
+msgstr "Ξ›ΞµΟ€Ο„ΞΏΞΌΞ­ΟΞΉΞµΟ‚"
 
 msgid "Device:"
-msgstr "Συσκευή:"
+
+msgstr "Ξ£Ο…ΟƒΞΊΞµΟ…Ξ®:"
 
 msgid "Devices"
-msgstr "Συσκευές"
+
+msgstr "Ξ£Ο…ΟƒΞΊΞµΟ…Ξ­Ο‚"
 
 msgid "dhcp"
+
 msgstr "dhcp"
 
 msgid "disable"
-msgstr "Απενεργοποίηση"
+
+msgstr "Ξ‘Ο€ΞµΞ½ΞµΟΞ³ΞΏΟ€ΞΏΞ―Ξ·ΟƒΞ·"
 
 msgid "Dirsort"
-msgstr "Ταξινόμηση φακέλων"
+
+msgstr "Ξ¤Ξ±ΞΎΞΉΞ½ΟΞΌΞ·ΟƒΞ· Ο†Ξ±ΞΊΞ­Ξ»Ο‰Ξ½"
 
 msgid "DiSEqC"
+
 msgstr "DiSEqC"
 
 msgid "DiSEqC Command Order"
-msgstr "Σειρά εντολών DiSEqC"
+
+msgstr "Ξ£ΞµΞΉΟΞ¬ ΞµΞ½Ο„ΞΏΞ»ΟΞ½ DiSEqC"
 
 msgid "DiSEqC Configuration"
+
 msgstr "DiSEqC"
 
 msgid "DiSEqC Mode"
+
 msgstr "DiSEqC Mode"
 
 msgid "DiSEqC repeats"
-msgstr "Επαναλήψεις DiSEqC"
+
+msgstr "Ξ•Ο€Ξ±Ξ½Ξ±Ξ»Ξ®ΟΞµΞΉΟ‚ DiSEqC"
 
 msgid "Diseqc Settings"
-msgstr "Ρυθμίσεις DiSEqC"
+
+msgstr "Ξ΅Ο…ΞΈΞΌΞ―ΟƒΞµΞΉΟ‚ DiSEqC"
 
 msgid "dnsserver 1"
+
 msgstr "DNS Server 1"
 
 msgid "dnsserver 2"
+
 msgstr "DNS Server 2"
 
 msgid "Don't clear TV on zap (only with fastzap)"
-msgstr "Η εικόνα της TV να παραμένει κατά το zapping (μόνο με το fastzap)"
+
+msgstr "Ξ— ΞµΞΉΞΊΟΞ½Ξ± Ο„Ξ·Ο‚ TV Ξ½Ξ± Ο€Ξ±ΟΞ±ΞΌΞ­Ξ½ΞµΞΉ ΞΊΞ±Ο„Ξ¬ Ο„ΞΏ zapping (ΞΌΟΞ½ΞΏ ΞΌΞµ Ο„ΞΏ fastzap)"
 
 msgid "e"
+
 msgstr "e"
 
 msgid "E"
+
 msgstr "E"
 
 msgid "East / West"
-msgstr "Ανατολή / Δύση"
+
+msgstr "Ξ‘Ξ½Ξ±Ο„ΞΏΞ»Ξ® / Ξ”ΟΟƒΞ·"
 
 msgid "enable"
-msgstr "Ενεργοποίηση"
+
+msgstr "Ξ•Ξ½ΞµΟΞ³ΞΏΟ€ΞΏΞ―Ξ·ΟƒΞ·"
 
 msgid "emu"
+
 msgstr "Emu"
 
 msgid "End"
-msgstr "Τέλος"
+
+msgstr "Ξ¤Ξ­Ξ»ΞΏΟ‚"
 
 msgid "English"
-msgstr "English"
+
+msgstr "Ξ‘Ξ³Ξ³Ξ»ΞΉΞΊΞ¬"
 
 msgid "Epgfreespace (KB)"
-msgstr "Ελεύθερη μνήμη EPG (ΚΒ)"
+
+msgstr "Ξ•Ξ»ΞµΟΞΈΞµΟΞ· ΞΌΞ½Ξ®ΞΌΞ· EPG (ΞΞ’)"
 
 msgid "Epg List Mode"
-msgstr "Λίστα EPG"
+
+msgstr "Ξ›Ξ―ΟƒΟ„Ξ± EPG"
 
 msgid "EPG Path"
-msgstr "Διαδρομή αποθήκευσης  του EPG"
+
+msgstr "Ξ”ΞΉΞ±Ξ΄ΟΞΏΞΌΞ® Ξ±Ο€ΞΏΞΈΞ®ΞΊΞµΟ…ΟƒΞ·Ο‚  Ο„ΞΏΟ… EPG"
 
 msgid "Epg Refresh Time"
-msgstr "Χρόνος ανανέωσης EPG"
+
+msgstr "Ξ§ΟΟΞ½ΞΏΟ‚ Ξ±Ξ½Ξ±Ξ½Ξ­Ο‰ΟƒΞ·Ο‚ EPG"
 
 msgid "EPG Reset"
-msgstr "Επαναφορά EPG"
+
+msgstr "Ξ•Ο€Ξ±Ξ½Ξ±Ο†ΞΏΟΞ¬ EPG"
 
 msgid "EPG Settings"
-msgstr "Ρυθμίσεις EPG"
+
+msgstr "Ξ΅Ο…ΞΈΞΌΞ―ΟƒΞµΞΉΟ‚ EPG"
 
 msgid "errorboot"
+
 msgstr "Errorboot"
 
 msgid "errorstop"
+
 msgstr "Errorstop"
 
 msgid "EXIT"
+
 msgstr "EXIT"
 
 msgid "Extensions"
-msgstr "Επεκτάσεις"
+
+msgstr "Ξ•Ο€ΞµΞΊΟ„Ξ¬ΟƒΞµΞΉΟ‚"
 
 msgid "Extensions Menu"
-msgstr "Μενού επεκτάσεων"
+
+msgstr "ΞΞµΞ½ΞΏΟ ΞµΟ€ΞµΞΊΟ„Ξ¬ΟƒΞµΟ‰Ξ½"
 
 msgid "emucontrol"
-msgstr "Έλεγχος Emu"
+
+msgstr "ΞΞ»ΞµΞ³Ο‡ΞΏΟ‚ Emu"
 
 msgid "f"
+
 msgstr "f"
 
 msgid "F"
+
 msgstr "F"
 
 msgid "Fancontrol"
-msgstr "Έλεγχος ανεμιστήρα"
+
+msgstr "ΞΞ»ΞµΞ³Ο‡ΞΏΟ‚ Ξ±Ξ½ΞµΞΌΞΉΟƒΟ„Ξ®ΟΞ±"
 
 msgid "fast"
-msgstr "Γρήγορο"
+
+msgstr "Ξ“ΟΞ®Ξ³ΞΏΟΞΏ"
 
 msgid "Fast DiSEqC"
-msgstr "Γρήγορο DiSEqC"
+
+msgstr "Ξ“ΟΞ®Ξ³ΞΏΟΞΏ DiSEqC"
 
 msgid "Faststop"
+
 msgstr "Faststop"
 
 msgid "Fast Text Render"
-msgstr "Γρήγορη απόδοση κειμένου"
+
+msgstr "Ξ“ΟΞ®Ξ³ΞΏΟΞ· Ξ±Ο€ΟΞ΄ΞΏΟƒΞ· ΞΊΞµΞΉΞΌΞ­Ξ½ΞΏΟ…"
 
 msgid "Fastzap"
-msgstr "Γρήγορο zapping"
+
+msgstr "Ξ“ΟΞ®Ξ³ΞΏΟΞΏ zapping"
 
 msgid "Fav"
-msgstr "Αγαπημένα"
+
+msgstr "Ξ‘Ξ³Ξ±Ο€Ξ·ΞΌΞ­Ξ½Ξ±"
 
 msgid "FEC"
+
 msgstr "FEC"
 
 msgid "FEC:"
+
 msgstr "FEC:"
 
 msgid "file"
-msgstr "Αρχείο"
+
+msgstr "Ξ‘ΟΟ‡ΞµΞ―ΞΏ"
 
 msgid "alt file"
-msgstr "Εναλλακτικό αρχείο"
+
+msgstr "Ξ•Ξ½Ξ±Ξ»Ξ»Ξ±ΞΊΟ„ΞΉΞΊΟ Ξ±ΟΟ‡ΞµΞ―ΞΏ"
 
 msgid "filealtresult"
-msgstr "Εναλλακτικό αποτέλεσμα αρxείου"
+
+msgstr "Ξ•Ξ½Ξ±Ξ»Ξ»Ξ±ΞΊΟ„ΞΉΞΊΟ Ξ±Ο€ΞΏΟ„Ξ­Ξ»ΞµΟƒΞΌΞ± Ξ±ΟxΞµΞ―ΞΏΟ…"
 
 msgid "Filelist-Mode"
+
 msgstr "Filelist Mode"
 
 msgid "Filesystem Check"
-msgstr "Έλεγχος αρχείων συστήματος"
+
+msgstr "ΞΞ»ΞµΞ³Ο‡ΞΏΟ‚ Ξ±ΟΟ‡ΞµΞ―Ο‰Ξ½ ΟƒΟ…ΟƒΟ„Ξ®ΞΌΞ±Ο„ΞΏΟ‚"
 
 msgid "Flashupdate (online)"
-msgstr "Αναβάθμιση της Flash (online)"
+
+msgstr "Ξ‘Ξ½Ξ±Ξ²Ξ¬ΞΈΞΌΞΉΟƒΞ· Ο„Ξ·Ο‚ Flash (online)"
 
 msgid "Flashupdate (tmp)"
-msgstr "Αναβάθμιση της Flash (tmp)"
+
+msgstr "Ξ‘Ξ½Ξ±Ξ²Ξ¬ΞΈΞΌΞΉΟƒΞ· Ο„Ξ·Ο‚ Flash (tmp)"
 
 msgid "Fontsize adjust in pixel"
-msgstr "Γραμματοσειρά - ρύθμιση μεγέθους σε pixel"
+
+msgstr "Ξ“ΟΞ±ΞΌΞΌΞ±Ο„ΞΏΟƒΞµΞΉΟΞ¬ - ΟΟΞΈΞΌΞΉΟƒΞ· ΞΌΞµΞ³Ξ­ΞΈΞΏΟ…Ο‚ ΟƒΞµ pixel"
 
 msgid "Format HDD"
-msgstr "Format Σκληρού Δίσκου"
+
+msgstr "Format Ξ£ΞΊΞ»Ξ·ΟΞΏΟ Ξ”Ξ―ΟƒΞΊΞΏΟ…"
 
 msgid "Found Data:"
-msgstr "Ευρεθέντα Data:"
+
+msgstr "Ξ•Ο…ΟΞµΞΈΞ­Ξ½Ο„Ξ± Data:"
 
 msgid "Found Radio:"
-msgstr "Ευρεθέντα Radio:"
+
+msgstr "Ξ•Ο…ΟΞµΞΈΞ­Ξ½Ο„Ξ± Radio:"
 
 msgid "Found TV:"
-msgstr "Ευρεθέντα TV:"
+
+msgstr "Ξ•Ο…ΟΞµΞΈΞ­Ξ½Ο„Ξ± TV:"
 
 msgid "free space"
-msgstr "Ελεύθερη μνήμη"
+
+msgstr "Ξ•Ξ»ΞµΟΞΈΞµΟΞ· ΞΌΞ½Ξ®ΞΌΞ·"
 
 msgid "Frequency"
-msgstr "Συχνότητα"
+
+msgstr "Ξ£Ο…Ο‡Ξ½ΟΟ„Ξ·Ο„Ξ±"
 
 msgid "Frequency:"
-msgstr "Συχνότητα:"
+
+msgstr "Ξ£Ο…Ο‡Ξ½ΟΟ„Ξ·Ο„Ξ±:"
 
 msgid "Friday"
-msgstr "Παρασκευή"
+
+msgstr "Ξ Ξ±ΟΞ±ΟƒΞΊΞµΟ…Ξ®"
 
 msgid "ftpport"
+
 msgstr "ftpport"
 
 msgid "fullcover"
+
 msgstr "fullcover"
 
 msgid "ftdi"
-msgstr "Ενεργοποίηση οδηγών ftdi"
+
+msgstr "Ξ•Ξ½ΞµΟΞ³ΞΏΟ€ΞΏΞ―Ξ·ΟƒΞ· ΞΏΞ΄Ξ·Ξ³ΟΞ½ ftdi"
 
 msgid "fsckroot"
+
 msgstr "fsckroot"
 
 msgid "fsckswap"
+
 msgstr "fsckswap"
 
 msgid "fsckrecord"
+
 msgstr "fsckrecord"
 
 msgid "ftpd"
+
 msgstr "ftpd"
 
 msgid "fontsize"
-msgstr "Μέγεθος γραμματοσειράς"
+
+msgstr "ΞΞ­Ξ³ΞµΞΈΞΏΟ‚ Ξ³ΟΞ±ΞΌΞΌΞ±Ο„ΞΏΟƒΞµΞΉΟΞ¬Ο‚"
 
 msgid "g"
+
 msgstr "g"
 
 msgid "G"
+
 msgstr "G"
 
 msgid "gateway"
+
 msgstr "Gateway"
 
 msgid "Germany"
-msgstr "Γερμανικά"
+
+msgstr "Ξ“ΞµΟΞΌΞ±Ξ½ΞΉΞΊΞ¬"
 
 msgid "Restart Titan"
-msgstr "Επανεκκίνηση Titan"
+
+msgstr "Ξ•Ο€Ξ±Ξ½ΞµΞΊΞΊΞ―Ξ½Ξ·ΟƒΞ· Titan"
 
 msgid "h"
+
 msgstr "h"
 
 msgid "H"
+
 msgstr "H"
 
 msgid "Hangtime"
+
 msgstr "Hangtime"
 
 msgid "Harddisk"
-msgstr "Σκληρός Δίσκος"
+
+msgstr "Ξ£ΞΊΞ»Ξ·ΟΟΟ‚ Ξ”Ξ―ΟƒΞΊΞΏΟ‚"
 
 msgid "Harddisk Format - List Devices"
-msgstr "Format Σκληρού Δίσκου - συνδεδεμένες συσκευές"
+
+msgstr "Format Ξ£ΞΊΞ»Ξ·ΟΞΏΟ Ξ”Ξ―ΟƒΞΊΞΏΟ… - ΟƒΟ…Ξ½Ξ΄ΞµΞ΄ΞµΞΌΞ­Ξ½ΞµΟ‚ ΟƒΟ…ΟƒΞΊΞµΟ…Ξ­Ο‚"
 
 msgid "Harddisk Fsck - List Devices"
-msgstr "Έλεγχος HDD - συνδεδεμένες συσκευές"
+
+msgstr "ΞΞ»ΞµΞ³Ο‡ΞΏΟ‚ HDD - ΟƒΟ…Ξ½Ξ΄ΞµΞ΄ΞµΞΌΞ­Ξ½ΞµΟ‚ ΟƒΟ…ΟƒΞΊΞµΟ…Ξ­Ο‚"
 
 msgid "hddreplacement"
-msgstr "Αντικατάσταση Σκληρού Δίσκου"
+
+msgstr "Ξ‘Ξ½Ο„ΞΉΞΊΞ±Ο„Ξ¬ΟƒΟ„Ξ±ΟƒΞ· Ξ£ΞΊΞ»Ξ·ΟΞΏΟ Ξ”Ξ―ΟƒΞΊΞΏΟ…"
 
 msgid "How many days"
-msgstr "Πόσες ημέρες;"
+
+msgstr "Ξ ΟΟƒΞµΟ‚ Ξ·ΞΌΞ­ΟΞµΟ‚;"
 
 msgid "HighSR"
-msgstr "Υψηλό SR"
+
+msgstr "Ξ¥ΟΞ·Ξ»Ο SR"
 
 msgid "i"
+
 msgstr "i"
 
 msgid "I"
+
 msgstr "I"
 
 msgid "Image Information"
-msgstr "Πληροφορίες του Image"
+
+msgstr "Ξ Ξ»Ξ·ΟΞΏΟ†ΞΏΟΞ―ΞµΟ‚ Ο„ΞΏΟ… Image"
 
 msgid "Imdb Directory"
-msgstr "Κατάλογος Imdb"
+
+msgstr "ΞΞ±Ο„Ξ¬Ξ»ΞΏΞ³ΞΏΟ‚ Imdb"
 
 msgid "Increased Voltage"
-msgstr "Αυξημένη Τάση"
+
+msgstr "Ξ‘Ο…ΞΎΞ·ΞΌΞ­Ξ½Ξ· Ξ¤Ξ¬ΟƒΞ·"
 
 msgid "Infobar Auto hide on call"
-msgstr "Αυτόματη απόκρυψη του Infobar"
+
+msgstr "Ξ‘Ο…Ο„ΟΞΌΞ±Ο„Ξ· Ξ±Ο€ΟΞΊΟΟ…ΟΞ· Ο„ΞΏΟ… Infobar"
 
 msgid "Infobar Sleep"
-msgstr "Χρόνος εμφάνισης του infobar (sec)"
+
+msgstr "Ξ§ΟΟΞ½ΞΏΟ‚ ΞµΞΌΟ†Ξ¬Ξ½ΞΉΟƒΞ·Ο‚ Ο„ΞΏΟ… infobar (sec)"
 
 msgid "Infobar Timeout"
-msgstr "Χρόνος εξαφάνισης του infobar (sec)"
+
+msgstr "Ξ§ΟΟΞ½ΞΏΟ‚ ΞµΞΎΞ±Ο†Ξ¬Ξ½ΞΉΟƒΞ·Ο‚ Ο„ΞΏΟ… infobar (sec)"
 
 msgid "Information..."
-msgstr "Πληροφορίες..."
+
+msgstr "Ξ Ξ»Ξ·ΟΞΏΟ†ΞΏΟΞ―ΞµΟ‚..."
 
 msgid "Info"
+
 msgstr "Info"
 
 msgid "Information"
-msgstr "Πληροφορίες"
+
+msgstr "Ξ Ξ»Ξ·ΟΞΏΟ†ΞΏΟΞ―ΞµΟ‚"
 
 msgid "install"
-msgstr "Εγκατάσταση"
+
+msgstr "Ξ•Ξ³ΞΊΞ±Ο„Ξ¬ΟƒΟ„Ξ±ΟƒΞ·"
 
 msgid "internet"
+
 msgstr "Internet"
 
 msgid "Internet Browser"
+
 msgstr "Internet Browser"
 
 msgid "Interval"
-msgstr "Διάστημαl"
+
+msgstr "Ξ”ΞΉΞ¬ΟƒΟ„Ξ·ΞΌΞ±l"
 
 msgid "Inversion"
-msgstr "Αναστροφή"
+
+msgstr "Ξ‘Ξ½Ξ±ΟƒΟ„ΟΞΏΟ†Ξ®"
 
 msgid "Inversion:"
-msgstr "Αναστροφή:"
+
+msgstr "Ξ‘Ξ½Ξ±ΟƒΟ„ΟΞΏΟ†Ξ®:"
 
 msgid "ipaddress"
-msgstr "Διεύθυνση IP"
+
+msgstr "Ξ”ΞΉΞµΟΞΈΟ…Ξ½ΟƒΞ· IP"
 
 msgid "IPK install (online)"
-msgstr "Εγκατάσταση IPK (online)"
+
+msgstr "Ξ•Ξ³ΞΊΞ±Ο„Ξ¬ΟƒΟ„Ξ±ΟƒΞ· IPK (online)"
 
 msgid "IPK remove"
-msgstr "Σβήσιμο IPK"
+
+msgstr "Ξ£Ξ²Ξ®ΟƒΞΉΞΌΞΏ IPK"
 
 msgid "IPK tmp (tmp)"
-msgstr "Εγκατάσταση IPK από /tmp"
+
+msgstr "Ξ•Ξ³ΞΊΞ±Ο„Ξ¬ΟƒΟ„Ξ±ΟƒΞ· IPK Ξ±Ο€Ο /tmp"
 
 msgid "Ipk Install - select file"
-msgstr "Εγκατάσταση IPK - επιλογή φακέλλου"
+
+msgstr "Ξ•Ξ³ΞΊΞ±Ο„Ξ¬ΟƒΟ„Ξ±ΟƒΞ· IPK - ΞµΟ€ΞΉΞ»ΞΏΞ³Ξ® Ο†Ξ±ΞΊΞ­Ξ»Ξ»ΞΏΟ…"
 
 msgid "iwatch"
+
 msgstr "iwatch"
 
 msgid "j"
+
 msgstr "j"
 
 msgid "J"
+
 msgstr "J"
 
 msgid "k"
+
 msgstr "k"
 
 msgid "K"
+
 msgstr "K"
 
 msgid "Kernel"
-msgstr "Πυρήνας"
+
+msgstr "Ξ Ο…ΟΞ®Ξ½Ξ±Ο‚"
 
 msgid "Keyboard"
-msgstr "Πληκτρολόγιο"
+
+msgstr "Ξ Ξ»Ξ·ΞΊΟ„ΟΞΏΞ»ΟΞ³ΞΉΞΏ"
 
 msgid "l"
+
 msgstr "l"
 
 msgid "L"
+
 msgstr "L"
 
 msgid "lan"
+
 msgstr "lan"
 
 msgid "Language"
-msgstr "Γλώσσα"
+
+msgstr "Ξ“Ξ»ΟΟƒΟƒΞ±"
 
 msgid "Latitude"
-msgstr "Γεωγραφικό Πλάτος"
+
+msgstr "Ξ“ΞµΟ‰Ξ³ΟΞ±Ο†ΞΉΞΊΟ Ξ Ξ»Ξ¬Ο„ΞΏΟ‚"
 
 msgid "Listbox Select"
-msgstr "Επιλογές εμφάνισης του Listbox"
+
+msgstr "Ξ•Ο€ΞΉΞ»ΞΏΞ³Ξ­Ο‚ ΞµΞΌΟ†Ξ¬Ξ½ΞΉΟƒΞ·Ο‚ Ο„ΞΏΟ… Listbox"
 
 msgid "LNB"
+
 msgstr "LNB"
 
 msgid "LNB Configuration"
+
 msgstr "LNB"
 
 msgid "LNB Settings"
-msgstr "Ρυθμίσεις LNB"
+
+msgstr "Ξ΅Ο…ΞΈΞΌΞ―ΟƒΞµΞΉΟ‚ LNB"
 
 msgid "LOF"
+
 msgstr "LOF"
 
 msgid "LOF/H"
+
 msgstr "LOF/H"
 
 msgid "LOF/L"
+
 msgstr "LOF/L"
 
 msgid "Longitude"
-msgstr "Γεωγραφικό Μήκος"
+
+msgstr "Ξ“ΞµΟ‰Ξ³ΟΞ±Ο†ΞΉΞΊΟ ΞΞ®ΞΊΞΏΟ‚"
 
 msgid "LOG (Text)"
-msgstr "LOG (Κείμενο)"
+
+msgstr "LOG (ΞΞµΞ―ΞΌΞµΞ½ΞΏ)"
 
 msgid "logto"
+
 msgstr "logto"
 
 msgid "load partition"
-msgstr "Φόρτωση partition"
+
+msgstr "Ξ¦ΟΟΟ„Ο‰ΟƒΞ· partition"
 
 msgid "m"
+
 msgstr "m"
 
 msgid "M"
+
 msgstr "M"
 
 msgid "Main Menu"
-msgstr "Κύριο Μενού"
+
+msgstr "ΞΟΟΞΉΞΏ ΞΞµΞ½ΞΏΟ"
 
 msgid "Manuel Scan"
-msgstr "Χειροκίνητη σάρωση"
+
+msgstr "Ξ§ΞµΞΉΟΞΏΞΊΞ―Ξ½Ξ·Ο„Ξ· ΟƒΞ¬ΟΟ‰ΟƒΞ·"
 
 msgid "Manual Search"
-msgstr "Χειροκίνητη αναζήτηση"
+
+msgstr "Ξ§ΞµΞΉΟΞΏΞΊΞ―Ξ½Ξ·Ο„Ξ· Ξ±Ξ½Ξ±Ξ¶Ξ®Ο„Ξ·ΟƒΞ·"
 
 msgid "maxrate"
+
 msgstr "maxrate"
 
 msgid "maxdelay"
+
 msgstr "maxdelay"
 
 msgid "MC VideoPlayer Imdb Settings"
-msgstr "Ρυθμίσεις Imdb του MC VideoPlayer"
+
+msgstr "Ξ΅Ο…ΞΈΞΌΞ―ΟƒΞµΞΉΟ‚ Imdb Ο„ΞΏΟ… MC VideoPlayer"
 
 msgid "MC VideoPlayer Sort Settings"
+
 msgstr "MC VideoPlayer Sort settings"
 
 msgid "MC VideoPlayer View Settings"
+
 msgstr "MC VideoPlayer View settings"
 
 msgid "Media Center"
+
 msgstr "Media Center"
 
 msgid "Memory"
-msgstr "Μνήμη"
+
+msgstr "ΞΞ½Ξ®ΞΌΞ·"
 
 msgid "Menulist"
-msgstr "Λίστα Μενού"
+
+msgstr "Ξ›Ξ―ΟƒΟ„Ξ± ΞΞµΞ½ΞΏΟ"
 
 msgid "Menu Protect"
-msgstr "Προστασία Μενού"
+
+msgstr "Ξ ΟΞΏΟƒΟ„Ξ±ΟƒΞ―Ξ± ΞΞµΞ½ΞΏΟ"
 
 msgid "MENUPROTECT"
-msgstr "Προστασία ΜΕΝΟΥ"
+
+msgstr "Ξ ΟΞΏΟƒΟ„Ξ±ΟƒΞ―Ξ± ΞΞ•ΞΞΞ¥"
 
 msgid "Minutes"
-msgstr "Λεπτά"
+
+msgstr "Ξ›ΞµΟ€Ο„Ξ¬"
 
 msgid "Minutes:"
-msgstr "Λεπτά:"
+
+msgstr "Ξ›ΞµΟ€Ο„Ξ¬:"
 
 msgid "Modulation"
-msgstr "Διαμόρφωση"
+
+msgstr "Ξ”ΞΉΞ±ΞΌΟΟΟ†Ο‰ΟƒΞ·"
 
 msgid "Modulation:"
-msgstr "Διαμόρφωση:"
+
+msgstr "Ξ”ΞΉΞ±ΞΌΟΟΟ†Ο‰ΟƒΞ·:"
 
 msgid "Module"
+
 msgstr "Module"
 
 msgid "Monday"
-msgstr "Δευτέρα"
+
+msgstr "Ξ”ΞµΟ…Ο„Ξ­ΟΞ±"
 
 msgid "Mounts"
+
 msgstr "Mounts"
 
 msgid "move service"
-msgstr "Μετακίνηση καναλιού"
+
+msgstr "ΞΞµΟ„Ξ±ΞΊΞ―Ξ½Ξ·ΟƒΞ· ΞΊΞ±Ξ½Ξ±Ξ»ΞΉΞΏΟ"
 
 msgid "Moviepath"
-msgstr "Διαδρομή αρχείου ταινιών"
+
+msgstr "Ξ”ΞΉΞ±Ξ΄ΟΞΏΞΌΞ® Ξ±ΟΟ‡ΞµΞ―ΞΏΟ… Ο„Ξ±ΞΉΞ½ΞΉΟΞ½"
 
 msgid "MTD"
+
 msgstr "MTD"
 
 msgid "Multi EPG"
+
 msgstr "Multi EPG"
 
 msgid "mvid"
+
 msgstr "mvid"
 
 msgid "My Video"
+
 msgstr "My Video"
 
 msgid "n"
+
 msgstr "n"
 
 msgid "N"
+
 msgstr "N"
 
 msgid "Name"
-msgstr "Όνομα"
+
+msgstr "ΞΞ½ΞΏΞΌΞ±"
 
 msgid "Name:"
-msgstr "Όνομα:"
+
+msgstr "ΞΞ½ΞΏΞΌΞ±:"
 
 msgid "netmask"
+
 msgstr "Netmask"
 
 msgid "Network"
-msgstr "Δύκτιο"
+
+msgstr "Ξ”ΟΞΊΟ„ΞΉΞΏ"
 
 msgid "Network Adapter Settings"
-msgstr "Ρυθμίσεις προσαρμογέα Δικτύου"
+
+msgstr "Ξ΅Ο…ΞΈΞΌΞ―ΟƒΞµΞΉΟ‚ Ο€ΟΞΏΟƒΞ±ΟΞΌΞΏΞ³Ξ­Ξ± Ξ”ΞΉΞΊΟ„ΟΞΏΟ…"
 
 msgid "Network Adapter Test"
-msgstr "Έλεγχος προσαρμογέα Δικτύου"
+
+msgstr "ΞΞ»ΞµΞ³Ο‡ΞΏΟ‚ Ο€ΟΞΏΟƒΞ±ΟΞΌΞΏΞ³Ξ­Ξ± Ξ”ΞΉΞΊΟ„ΟΞΏΟ…"
 
 msgid "Network Assistant"
-msgstr "Βοηθός Δικτύου"
+
+msgstr "Ξ’ΞΏΞ·ΞΈΟΟ‚ Ξ”ΞΉΞΊΟ„ΟΞΏΟ…"
 
 msgid "Networkbrowser"
-msgstr "Browser Δικτύου"
+
+msgstr "Browser Ξ”ΞΉΞΊΟ„ΟΞΏΟ…"
 
 msgid "Network Interfacelist"
+
 msgstr "Network Interfacelist"
 
 msgid "Network Restart"
-msgstr "Επανεκκίνηση Δικτύου"
+
+msgstr "Ξ•Ο€Ξ±Ξ½ΞµΞΊΞΊΞ―Ξ½Ξ·ΟƒΞ· Ξ”ΞΉΞΊΟ„ΟΞΏΟ…"
 
 msgid "Network Scan"
-msgstr "Σάρωση Δικτύου"
+
+msgstr "Ξ£Ξ¬ΟΟ‰ΟƒΞ· Ξ”ΞΉΞΊΟ„ΟΞΏΟ…"
 
 msgid "Network Test"
-msgstr "Έλεγχος Δικτύου"
+
+msgstr "ΞΞ»ΞµΞ³Ο‡ΞΏΟ‚ Ξ”ΞΉΞΊΟ„ΟΞΏΟ…"
 
 msgid "Next"
-msgstr "Συνέχεια"
+
+msgstr "Ξ£Ο…Ξ½Ξ­Ο‡ΞµΞΉΞ±"
 
 msgid "Nfs Server Settings"
-msgstr "Ρυθμίσεις NFS Server"
+
+msgstr "Ξ΅Ο…ΞΈΞΌΞ―ΟƒΞµΞΉΟ‚ NFS Server"
 
 msgid "North / South"
-msgstr "Βορράς / Νότος"
+
+msgstr "Ξ’ΞΏΟΟΞ¬Ο‚ / ΞΟΟ„ΞΏΟ‚"
 
 msgid "noaudiosync"
+
 msgstr "noaudiosync"
 
 msgid "nfsserver"
+
 msgstr "NFS server"
 
 msgid "nr_usbreaders"
-msgstr "Αριθμός USB reader"
+
+msgstr "Ξ‘ΟΞΉΞΈΞΌΟΟ‚ USB reader"
 
 msgid "o"
+
 msgstr "o"
 
 msgid "O"
+
 msgstr "O"
 
 msgid "OK"
+
 msgstr "OK"
 
 msgid "ONID:"
+
 msgstr "ONID:"
 
 msgid "Only free channel scan"
-msgstr "Σάρωση μόνο για ελεύθερα κανάλια"
+
+msgstr "Ξ£Ξ¬ΟΟ‰ΟƒΞ· ΞΌΟΞ½ΞΏ Ξ³ΞΉΞ± ΞµΞ»ΞµΟΞΈΞµΟΞ± ΞΊΞ±Ξ½Ξ¬Ξ»ΞΉΞ±"
 
 msgid "options"
-msgstr "Επιλογές"
+
+msgstr "Ξ•Ο€ΞΉΞ»ΞΏΞ³Ξ­Ο‚"
 
 msgid "Orbital Position:"
-msgstr "Τροχιακή θέση"
+
+msgstr "Ξ¤ΟΞΏΟ‡ΞΉΞ±ΞΊΞ® ΞΈΞ­ΟƒΞ·"
 
 msgid "OSD Bottom Overscan"
-msgstr "Overscan OSD κάτω"
+
+msgstr "Overscan OSD ΞΊΞ¬Ο„Ο‰"
 
 msgid "OSD Left Overscan"
-msgstr "Overscan OSD αριστερά"
+
+msgstr "Overscan OSD Ξ±ΟΞΉΟƒΟ„ΞµΟΞ¬"
 
 msgid "OSD Right Overscan"
-msgstr "Overscan OSD δεξιά"
+
+msgstr "Overscan OSD Ξ΄ΞµΞΎΞΉΞ¬"
 
 msgid "OSD Top Overscan"
-msgstr "Overscan OSD επάνω"
+
+msgstr "Overscan OSD ΞµΟ€Ξ¬Ξ½Ο‰"
 
 msgid "OSD Transparent"
-msgstr "Διαφάνεια OSD"
+
+msgstr "Ξ”ΞΉΞ±Ο†Ξ¬Ξ½ΞµΞΉΞ± OSD"
 
 msgid "Overclocking"
+
 msgstr "Overclocking"
 
 msgid "Overclock settings"
-msgstr "Ρυθμίσεις Overclocking"
+
+msgstr "Ξ΅Ο…ΞΈΞΌΞ―ΟƒΞµΞΉΟ‚ Overclocking"
 
 msgid "oldaudiofw"
+
 msgstr "oldaudiofw"
 
 msgid "oldvideofw"
+
 msgstr "oldvideofw"
 
 msgid "only_boot_overclock"
+
 msgstr "only_boot_overclock"
 
 msgid "p"
+
 msgstr "p"
 
 msgid "P"
+
 msgstr "P"
 
 msgid "password"
+
 msgstr "Password"
 
 msgid "PCR PID:"
+
 msgstr "PCR PID:"
 
 msgid "Piconpath"
-msgstr "Διαδρομή αρχείου Picons"
+
+msgstr "Ξ”ΞΉΞ±Ξ΄ΟΞΏΞΌΞ® Ξ±ΟΟ‡ΞµΞ―ΞΏΟ… Picons"
 
 msgid "PICTURE"
-msgstr "Φωτογραφία"
+
+msgstr "Ξ¦Ο‰Ο„ΞΏΞ³ΟΞ±Ο†Ξ―Ξ±"
 
 msgid "Picture Player"
+
 msgstr "Picture Player"
 
 msgid "PICTURE SETTINGS"
-msgstr "Ρυθμίσεις Φωτογραφιών"
+
+msgstr "Ξ΅Ο…ΞΈΞΌΞ―ΟƒΞµΞΉΟ‚ Ξ¦Ο‰Ο„ΞΏΞ³ΟΞ±Ο†ΞΉΟΞ½"
 
 msgid "PIDs"
+
 msgstr "PIDs"
 
 msgid "Pilot"
+
 msgstr "Pilot"
 
 msgid "PIN:"
+
 msgstr "PIN:"
 
 msgid "Pin Code Channel"
-msgstr "PIN προστασίας καναλιούl"
+
+msgstr "PIN Ο€ΟΞΏΟƒΟ„Ξ±ΟƒΞ―Ξ±Ο‚ ΞΊΞ±Ξ½Ξ±Ξ»ΞΉΞΏΟl"
 
 msgid "Pin Code menu"
-msgstr "PIN προστασίας του Μενού"
+
+msgstr "PIN Ο€ΟΞΏΟƒΟ„Ξ±ΟƒΞ―Ξ±Ο‚ Ο„ΞΏΟ… ΞΞµΞ½ΞΏΟ"
 
 msgid "PIN Settings"
-msgstr "Ρυθμίσεις PIN"
+
+msgstr "Ξ΅Ο…ΞΈΞΌΞ―ΟƒΞµΞΉΟ‚ PIN"
 
 msgid "PlayList"
+
 msgstr "PlayList"
 
 msgid "PlayList - select your playlist !"
-msgstr "PlayList - διάλεξε την λίστα σου"
+
+msgstr "PlayList - Ξ΄ΞΉΞ¬Ξ»ΞµΞΎΞµ Ο„Ξ·Ξ½ Ξ»Ξ―ΟƒΟ„Ξ± ΟƒΞΏΟ…"
 
 msgid "Plugins"
+
 msgstr "Plugins"
 
 msgid "PMT PID:"
+
 msgstr "PMT PID:"
 
 msgid "Polarization"
-msgstr "Πόλωση"
+
+msgstr "Ξ ΟΞ»Ο‰ΟƒΞ·"
 
 msgid "Polarization:"
-msgstr "Πόλωση:"
+
+msgstr "Ξ ΟΞ»Ο‰ΟƒΞ·:"
 
 msgid "Policy"
-msgstr "Εμφάνιση εικόνας"
+
+msgstr "Ξ•ΞΌΟ†Ξ¬Ξ½ΞΉΟƒΞ· ΞµΞΉΞΊΟΞ½Ξ±Ο‚"
 
 msgid "Power action"
+
 msgstr "Power action"
 
 msgid "Power Off"
-msgstr "Σβήσιμο"
+
+msgstr "Ξ£Ξ²Ξ®ΟƒΞΉΞΌΞΏ"
 
 msgid "Power Off Timer"
-msgstr "Σβήσιμο του Χρονοδιακόπτη"
+
+msgstr "Ξ£Ξ²Ξ®ΟƒΞΉΞΌΞΏ Ο„ΞΏΟ… Ξ§ΟΞΏΞ½ΞΏΞ΄ΞΉΞ±ΞΊΟΟ€Ο„Ξ·"
 
 msgid "Poweroff Timer"
-msgstr "Σβήσιμο του χρονοδιακόπτη"
+
+msgstr "Ξ£Ξ²Ξ®ΟƒΞΉΞΌΞΏ Ο„ΞΏΟ… Ο‡ΟΞΏΞ½ΞΏΞ΄ΞΉΞ±ΞΊΟΟ€Ο„Ξ·"
 
 msgid "Prev"
-msgstr "Πίσω"
+
+msgstr "Ξ Ξ―ΟƒΟ‰"
 
 msgid "Program Info"
-msgstr "Πληρ. προγράμματος"
+
+msgstr "Ξ Ξ»Ξ·Ο. Ο€ΟΞΏΞ³ΟΞ¬ΞΌΞΌΞ±Ο„ΞΏΟ‚"
 
 msgid "Protect Channel"
-msgstr "Προστασία καναλιού με PIN"
+
+msgstr "Ξ ΟΞΏΟƒΟ„Ξ±ΟƒΞ―Ξ± ΞΊΞ±Ξ½Ξ±Ξ»ΞΉΞΏΟ ΞΌΞµ PIN"
 
 msgid "Protect Menu"
-msgstr "Προστασία Μενού με PIN"
+
+msgstr "Ξ ΟΞΏΟƒΟ„Ξ±ΟƒΞ―Ξ± ΞΞµΞ½ΞΏΟ ΞΌΞµ PIN"
 
 msgid "protect service"
-msgstr "Προστασία σταθμού με PIN"
+
+msgstr "Ξ ΟΞΏΟƒΟ„Ξ±ΟƒΞ―Ξ± ΟƒΟ„Ξ±ΞΈΞΌΞΏΟ ΞΌΞµ PIN"
 
 msgid "protocol"
-msgstr "Πρωτόκολλο"
+
+msgstr "Ξ ΟΟ‰Ο„ΟΞΊΞΏΞ»Ξ»ΞΏ"
 
 msgid "Prov"
-msgstr "Παροχέας"
+
+msgstr "Ξ Ξ±ΟΞΏΟ‡Ξ­Ξ±Ο‚"
 
 msgid "Provider:"
-msgstr "Παροχέας:"
+
+msgstr "Ξ Ξ±ΟΞΏΟ‡Ξ­Ξ±Ο‚:"
 
 msgid "proxyauth"
-msgstr "Πιστοποίηση Proxy"
+
+msgstr "Ξ ΞΉΟƒΟ„ΞΏΟ€ΞΏΞ―Ξ·ΟƒΞ· Proxy"
 
 msgid "proxyip"
-msgstr "IP για Proxyserver"
+
+msgstr "IP Ξ³ΞΉΞ± Proxyserver"
 
 msgid "proxypass"
-msgstr "Password για Proxyserver"
+
+msgstr "Password Ξ³ΞΉΞ± Proxyserver"
 
 msgid "proxyport"
-msgstr "Πύλη για Proxyserver"
+
+msgstr "Ξ ΟΞ»Ξ· Ξ³ΞΉΞ± Proxyserver"
 
 msgid "proxyuser"
-msgstr "Ονομα χρήστη για Proxyserver"
+
+msgstr "ΞΞ½ΞΏΞΌΞ± Ο‡ΟΞ®ΟƒΟ„Ξ· Ξ³ΞΉΞ± Proxyserver"
 
 msgid "playlist"
+
 msgstr "playlist"
 
 msgid "plugload"
+
 msgstr "plugload"
 
 msgid "portmap"
+
 msgstr "portmap"
 
 msgid "poweroff"
-msgstr "κλείσιμο"
+
+msgstr "ΞΊΞ»ΞµΞ―ΟƒΞΉΞΌΞΏ"
 
 msgid "pingserver"
+
 msgstr "pingserver"
 
 msgid "pingtimeout"
+
 msgstr "pingtimeout"
 
 msgid "PinOn"
-msgstr "Ενεργοποίηση PIN"
+
+msgstr "Ξ•Ξ½ΞµΟΞ³ΞΏΟ€ΞΏΞ―Ξ·ΟƒΞ· PIN"
 
 msgid "progressbar"
+
 msgstr "progressbar"
 
 msgid "pll0_ndiv_mdiv"
+
 msgstr "pll0_ndiv_mdiv"
 
 msgid "pl2303"
-msgstr "Ενεργοποίηση οδηγών PL2303"
+
+msgstr "Ξ•Ξ½ΞµΟΞ³ΞΏΟ€ΞΏΞ―Ξ·ΟƒΞ· ΞΏΞ΄Ξ·Ξ³ΟΞ½ PL2303"
 
 msgid "pll1_fdma_bypass"
+
 msgstr "pll1_fdma_bypass"
 
 msgid "pll1_ndiv_mdiv"
+
 msgstr "pll1_ndiv_mdiv"
 
 msgid "Pin"
+
 msgstr "PIN"
 
 msgid "profile"
-msgstr "Προφίλ"
+
+msgstr "Ξ ΟΞΏΟ†Ξ―Ξ»"
 
 msgid "q"
+
 msgstr "q"
 
 msgid "Q"
+
 msgstr "Q"
 
 msgid "r"
+
 msgstr "r"
 
 msgid "R"
+
 msgstr "R"
 
 msgid "Radio Player"
+
 msgstr "Radio Player"
 
 msgid "Ram"
+
 msgstr "Ram"
 
 msgid "Random"
-msgstr "Τυχαία"
+
+msgstr "Ξ¤Ο…Ο‡Ξ±Ξ―Ξ±"
 
 msgid "rcreboot"
+
 msgstr "rcreboot"
 
 msgid "Record Forerun (min)"
-msgstr "Έναρξη εγγραφής νωρίτερα (min)"
+
+msgstr "ΞΞ½Ξ±ΟΞΎΞ· ΞµΞ³Ξ³ΟΞ±Ο†Ξ®Ο‚ Ξ½Ο‰ΟΞ―Ο„ΞµΟΞ± (min)"
 
 msgid "Record Overrun (min)"
-msgstr "Επιπλέον χρόνος εγγραφής (min)"
+
+msgstr "Ξ•Ο€ΞΉΟ€Ξ»Ξ­ΞΏΞ½ Ο‡ΟΟΞ½ΞΏΟ‚ ΞµΞ³Ξ³ΟΞ±Ο†Ξ®Ο‚ (min)"
 
 msgid "Record Path"
-msgstr "Διαδρομή φακέλλου εγγραφών"
+
+msgstr "Ξ”ΞΉΞ±Ξ΄ΟΞΏΞΌΞ® Ο†Ξ±ΞΊΞ­Ξ»Ξ»ΞΏΟ… ΞµΞ³Ξ³ΟΞ±Ο†ΟΞ½"
 
 msgid "Record Split Size"
-msgstr "Μέγεθος χωρισμού εγγραφών"
+
+msgstr "ΞΞ­Ξ³ΞµΞΈΞΏΟ‚ Ο‡Ο‰ΟΞΉΟƒΞΌΞΏΟ ΞµΞ³Ξ³ΟΞ±Ο†ΟΞ½"
 
 msgid "Record Timer"
-msgstr "Timer εγγραφής"
+
+msgstr "Timer ΞµΞ³Ξ³ΟΞ±Ο†Ξ®Ο‚"
 
 msgid "record_split_size"
+
 msgstr "record_split_size"
 
 msgid "record_split_type"
+
 msgstr "record_split_type"
 
 msgid "record_max_sectors"
+
 msgstr "record_max_sectors"
 
 msgid "Red Button"
-msgstr "Κόκκινο Κουμπί"
+
+msgstr "ΞΟΞΊΞΊΞΉΞ½ΞΏ ΞΞΏΟ…ΞΌΟ€Ξ―"
 
 msgid "Refresh"
-msgstr "Ανανέωση"
+
+msgstr "Ξ‘Ξ½Ξ±Ξ½Ξ­Ο‰ΟƒΞ·"
 
 msgid "RELOAD"
-msgstr "Επαναφόρτιση"
+
+msgstr "Ξ•Ο€Ξ±Ξ½Ξ±Ο†ΟΟΟ„ΞΉΟƒΞ·"
 
 msgid "remove service"
-msgstr "Διαγραφή σταθμού"
+
+msgstr "Ξ”ΞΉΞ±Ξ³ΟΞ±Ο†Ξ® ΟƒΟ„Ξ±ΞΈΞΌΞΏΟ"
 
 msgid "repairmodus"
-msgstr "Mode επισκευής"
+
+msgstr "Mode ΞµΟ€ΞΉΟƒΞΊΞµΟ…Ξ®Ο‚"
 
 msgid "Repeat"
-msgstr "Επανέλαβε"
+
+msgstr "Ξ•Ο€Ξ±Ξ½Ξ­Ξ»Ξ±Ξ²Ξµ"
 
 msgid "Repeat type"
-msgstr "Είδος επανάληψης"
+
+msgstr "Ξ•Ξ―Ξ΄ΞΏΟ‚ ΞµΟ€Ξ±Ξ½Ξ¬Ξ»Ξ·ΟΞ·Ο‚"
 
 msgid "Resolution:"
-msgstr "Ανάλυση"
+
+msgstr "Ξ‘Ξ½Ξ¬Ξ»Ο…ΟƒΞ·"
 
 msgid "Resolution (default)"
-msgstr "Ανάλυση (προεπιλεγμένη)"
+
+msgstr "Ξ‘Ξ½Ξ¬Ξ»Ο…ΟƒΞ· (Ο€ΟΞΏΞµΟ€ΞΉΞ»ΞµΞ³ΞΌΞ­Ξ½Ξ·)"
 
 msgid "Restart"
-msgstr "Επανεκκίνηση"
+
+msgstr "Ξ•Ο€Ξ±Ξ½ΞµΞΊΞΊΞ―Ξ½Ξ·ΟƒΞ·"
 
 msgid "Restart Network ?"
-msgstr "Επανεκκίνηση Δικτύου;"
+
+msgstr "Ξ•Ο€Ξ±Ξ½ΞµΞΊΞΊΞ―Ξ½Ξ·ΟƒΞ· Ξ”ΞΉΞΊΟ„ΟΞΏΟ…;"
 
 msgid "Restore"
-msgstr "Επαναφορά"
+
+msgstr "Ξ•Ο€Ξ±Ξ½Ξ±Ο†ΞΏΟΞ¬"
 
 msgid "reverse alpha"
-msgstr "Αναστροφή alpha"
+
+msgstr "Ξ‘Ξ½Ξ±ΟƒΟ„ΟΞΏΟ†Ξ® alpha"
 
 msgid "reverse date"
-msgstr "Επαναφορά ημερ/νιας"
+
+msgstr "Ξ•Ο€Ξ±Ξ½Ξ±Ο†ΞΏΟΞ¬ Ξ·ΞΌΞµΟ/Ξ½ΞΉΞ±Ο‚"
 
 msgid "reverse size"
-msgstr "Επαναφορά μεγέθους"
+
+msgstr "Ξ•Ο€Ξ±Ξ½Ξ±Ο†ΞΏΟΞ¬ ΞΌΞµΞ³Ξ­ΞΈΞΏΟ…Ο‚"
 
 msgid "rmcrashlog"
+
 msgstr "rmcrahlog"
 
 msgid "rmemthy"
+
 msgstr "rmemthy"
 
 msgid "Rolloff"
+
 msgstr "Rolloff"
 
 msgid "Rolloff:"
+
 msgstr "Rolloff:"
 
 msgid "Rotor Position"
-msgstr "Θέση μοτέρ"
+
+msgstr "ΞΞ­ΟƒΞ· ΞΌΞΏΟ„Ξ­Ο"
 
 msgid "Rotor Settings"
-msgstr "Ρυθμίσεις μοτέρ"
+
+msgstr "Ξ΅Ο…ΞΈΞΌΞ―ΟƒΞµΞΉΟ‚ ΞΌΞΏΟ„Ξ­Ο"
 
 msgid "rsize"
+
 msgstr "rsize"
 
 msgid "s"
+
 msgstr "s"
 
 msgid "S"
+
 msgstr "S"
 
 msgid "Samba Server Settings"
-msgstr "Ρυθμίσεις Samba Server"
+
+msgstr "Ξ΅Ο…ΞΈΞΌΞ―ΟƒΞµΞΉΟ‚ Samba Server"
 
 msgid "SAT"
+
 msgstr "SAT"
 
 msgid "Sat Config"
-msgstr "Ρύθμιση Δορυφόρων"
+
+msgstr "Ξ΅ΟΞΈΞΌΞΉΟƒΞ· Ξ”ΞΏΟΟ…Ο†ΟΟΟ‰Ξ½"
 
 msgid "Satellite"
-msgstr "Δορυφόρος"
+
+msgstr "Ξ”ΞΏΟΟ…Ο†ΟΟΞΏΟ‚"
 
 msgid "Sat Finder"
+
 msgstr "Sat finder"
 
 msgid "Saturation"
-msgstr "Κορεσμός"
+
+msgstr "ΞΞΏΟΞµΟƒΞΌΟΟ‚"
 
 msgid "Saturday"
-msgstr "Σάββατο"
+
+msgstr "Ξ£Ξ¬Ξ²Ξ²Ξ±Ο„ΞΏ"
 
 msgid "Save"
-msgstr "Αποθήκευση"
+
+msgstr "Ξ‘Ο€ΞΏΞΈΞ®ΞΊΞµΟ…ΟƒΞ·"
 
 msgid "SAVE"
-msgstr "Αποθήκευση"
+
+msgstr "Ξ‘Ο€ΞΏΞΈΞ®ΞΊΞµΟ…ΟƒΞ·"
 
 msgid "Save Settings"
-msgstr "Αποθήκευση Ρυθμίσεων"
+
+msgstr "Ξ‘Ο€ΞΏΞΈΞ®ΞΊΞµΟ…ΟƒΞ· Ξ΅Ο…ΞΈΞΌΞ―ΟƒΞµΟ‰Ξ½"
 
 msgid "Scan"
-msgstr "Σάρωση"
+
+msgstr "Ξ£Ξ¬ΟΟ‰ΟƒΞ·"
 
 msgid "Scart-Recorder"
-msgstr "Εγγραφέας Scart"
+
+msgstr "Ξ•Ξ³Ξ³ΟΞ±Ο†Ξ­Ξ±Ο‚ Scart"
 
 msgid "screensaver"
-msgstr "Προστασία οθόνης"
+
+msgstr "Ξ ΟΞΏΟƒΟ„Ξ±ΟƒΞ―Ξ± ΞΏΞΈΟΞ½Ξ·Ο‚"
 
 msgid "Screensaver"
-msgstr "Προστασία οθόνης"
+
+msgstr "Ξ ΟΞΏΟƒΟ„Ξ±ΟƒΞ―Ξ± ΞΏΞΈΟΞ½Ξ·Ο‚"
 
 msgid "Screensaver Adjust"
-msgstr "Ρυθμίσεις προστασίας οθόνης"
+
+msgstr "Ξ΅Ο…ΞΈΞΌΞ―ΟƒΞµΞΉΟ‚ Ο€ΟΞΏΟƒΟ„Ξ±ΟƒΞ―Ξ±Ο‚ ΞΏΞΈΟΞ½Ξ·Ο‚"
 
 msgid "screensaver background"
-msgstr "Φόντο προστ. οθόνης"
+
+msgstr "Ξ¦ΟΞ½Ο„ΞΏ Ο€ΟΞΏΟƒΟ„. ΞΏΞΈΟΞ½Ξ·Ο‚"
 
 msgid "screensaver delay"
-msgstr "Καθυστέρηση για προστ. οθόνης"
+
+msgstr "ΞΞ±ΞΈΟ…ΟƒΟ„Ξ­ΟΞ·ΟƒΞ· Ξ³ΞΉΞ± Ο€ΟΞΏΟƒΟ„. ΞΏΞΈΟΞ½Ξ·Ο‚"
 
 msgid "screensaver interval"
-msgstr "Διάστημα μεταξύ εικόνων"
+
+msgstr "Ξ”ΞΉΞ¬ΟƒΟ„Ξ·ΞΌΞ± ΞΌΞµΟ„Ξ±ΞΎΟ ΞµΞΉΞΊΟΞ½Ο‰Ξ½"
 
 msgid "screensaver pic"
-msgstr "Έικόνα προστ. οθόνης"
+
+msgstr "ΞΞΉΞΊΟΞ½Ξ± Ο€ΟΞΏΟƒΟ„. ΞΏΞΈΟΞ½Ξ·Ο‚"
 
 msgid "screensaver type"
-msgstr "Είδος προστ. οθόνης"
+
+msgstr "Ξ•Ξ―Ξ΄ΞΏΟ‚ Ο€ΟΞΏΟƒΟ„. ΞΏΞΈΟΞ½Ξ·Ο‚"
 
 msgid "--- SD resolution"
-msgstr "--- Ανάλυση SD"
+
+msgstr "--- Ξ‘Ξ½Ξ¬Ξ»Ο…ΟƒΞ· SD"
 
 msgid "Second Infobar"
-msgstr "Δεύτερο Infobar"
+
+msgstr "Ξ”ΞµΟΟ„ΞµΟΞΏ Infobar"
 
 msgid "Select backup:"
-msgstr "Επιλογή backup:"
+
+msgstr "Ξ•Ο€ΞΉΞ»ΞΏΞ³Ξ® backup:"
 
 msgid "Select Path"
-msgstr "Επιλογή διαδρομής"
+
+msgstr "Ξ•Ο€ΞΉΞ»ΞΏΞ³Ξ® Ξ΄ΞΉΞ±Ξ΄ΟΞΏΞΌΞ®Ο‚"
 
 msgid "Service"
-msgstr "Κανάλι"
+
+msgstr "ΞΞ±Ξ½Ξ¬Ξ»ΞΉ"
 
 msgid "Serviceinfo"
-msgstr "Πληροφορίες καναλιού"
+
+msgstr "Ξ Ξ»Ξ·ΟΞΏΟ†ΞΏΟΞ―ΞµΟ‚ ΞΊΞ±Ξ½Ξ±Ξ»ΞΉΞΏΟ"
 
 msgid "set startchannel"
-msgstr "Επιλογή καναλιού εκκίνησης"
+
+msgstr "Ξ•Ο€ΞΉΞ»ΞΏΞ³Ξ® ΞΊΞ±Ξ½Ξ±Ξ»ΞΉΞΏΟ ΞµΞΊΞΊΞ―Ξ½Ξ·ΟƒΞ·Ο‚"
 
 msgid "Settings"
-msgstr "Ρυθμίσεις"
+
+msgstr "Ξ΅Ο…ΞΈΞΌΞ―ΟƒΞµΞΉΟ‚"
 
 msgid "Settings..."
-msgstr "Ρυθμίσεις..."
+
+msgstr "Ξ΅Ο…ΞΈΞΌΞ―ΟƒΞµΞΉΟ‚..."
 
 msgid "Settings backup/restore"
-msgstr "Ρυθμίσεις backup/επαναφοράς"
+
+msgstr "Ξ΅Ο…ΞΈΞΌΞ―ΟƒΞµΞΉΟ‚ backup/ΞµΟ€Ξ±Ξ½Ξ±Ο†ΞΏΟΞ¬Ο‚"
 
 msgid "sharedir"
+
 msgstr "sharedir"
 
 msgid "sharename"
+
 msgstr "Sharename"
 
 msgid "Share Settings"
-msgstr "Ρυθμίσεις share"
+
+msgstr "Ξ΅Ο…ΞΈΞΌΞ―ΟƒΞµΞΉΟ‚ share"
 
 msgid "Show EPG screen (EPG button)"
-msgstr "Ένδειξη οθόνης EPG (κουμπί EPG)"
+
+msgstr "ΞΞ½Ξ΄ΞµΞΉΞΎΞ· ΞΏΞΈΟΞ½Ξ·Ο‚ EPG (ΞΊΞΏΟ…ΞΌΟ€Ξ― EPG)"
 
 msgid "Show in Standby"
-msgstr "Ένδειξη σε Standby"
+
+msgstr "ΞΞ½Ξ΄ΞµΞΉΞΎΞ· ΟƒΞµ Standby"
 
 msgid "Show in VFD"
-msgstr "Ένδειξη στο VFD"
+
+msgstr "ΞΞ½Ξ΄ΞµΞΉΞΎΞ· ΟƒΟ„ΞΏ VFD"
 
 msgid "SID:"
+
 msgstr "SID"
 
 msgid "Signal:"
-msgstr "Σήμα:"
+
+msgstr "Ξ£Ξ®ΞΌΞ±:"
 
 msgid "Single EPG"
-msgstr "Μονό EPG"
+
+msgstr "ΞΞΏΞ½Ο EPG"
 
 msgid "size"
-msgstr "Μέγεθος"
+
+msgstr "ΞΞ­Ξ³ΞµΞΈΞΏΟ‚"
 
 msgid "Skin"
+
 msgstr "Skin"
 
-msgid "Skin αdjust"
-msgstr "Ρύθμιση Skin"
+msgid "Skin Ξ±djust"
+
+msgstr "Ξ΅ΟΞΈΞΌΞΉΟƒΞ· Skin"
 
 msgid "Skin Select"
-msgstr "Επιλογή Skin"
+
+msgstr "Ξ•Ο€ΞΉΞ»ΞΏΞ³Ξ® Skin"
 
 msgid "Skip 1/3"
+
 msgstr "Skip 1/3"
 
 msgid "Skip 4/6"
+
 msgstr "Skip 4/6"
 
 msgid "Skip 7/9"
+
 msgstr "Skip 7/9"
 
 msgid "small"
-msgstr "Μικρό"
+
+msgstr "ΞΞΉΞΊΟΟ"
 
 msgid "SNR:"
+
 msgstr "SNR:"
 
 msgid "Softcam selection"
-msgstr "Επιλογή Softcam"
+
+msgstr "Ξ•Ο€ΞΉΞ»ΞΏΞ³Ξ® Softcam"
 
 msgid "Softcam Panel"
-msgstr "Ρυθμίσεις Softcam"
+
+msgstr "Ξ΅Ο…ΞΈΞΌΞ―ΟƒΞµΞΉΟ‚ Softcam"
 
 msgid "Sort"
-msgstr "Διαλογή"
+
+msgstr "Ξ”ΞΉΞ±Ξ»ΞΏΞ³Ξ®"
 
 msgid "Sorting"
+
 msgstr "Sorting"
 
 msgid "Sound"
-msgstr "Ήχος"
+
+msgstr "Ξ‰Ο‡ΞΏΟ‚"
 
 msgid "Space"
-msgstr "Κενό"
+
+msgstr "ΞΞµΞ½Ο"
 
 msgid "speed"
-msgstr "Ταχύτητα"
+
+msgstr "Ξ¤Ξ±Ο‡ΟΟ„Ξ·Ο„Ξ±"
 
 msgid "Spinnerspeed"
-msgstr "Ταχύτητα Spinner"
+
+msgstr "Ξ¤Ξ±Ο‡ΟΟ„Ξ·Ο„Ξ± Spinner"
 
 msgid "Spinnertime"
-msgstr "Χρόνος Spinner"
+
+msgstr "Ξ§ΟΟΞ½ΞΏΟ‚ Spinner"
 
 msgid "ssl"
+
 msgstr "ssl"
 
 msgid "Start"
-msgstr "Αρχή"
+
+msgstr "Ξ‘ΟΟ‡Ξ®"
 
 msgid "Standby"
+
 msgstr "Standby"
 
 msgid "Standby Brightness"
-msgstr "Φωτεινότητα VFD στο standby"
+
+msgstr "Ξ¦Ο‰Ο„ΞµΞΉΞ½ΟΟ„Ξ·Ο„Ξ± VFD ΟƒΟ„ΞΏ standby"
 
 msgid "Standby Mode"
+
 msgstr "Standby Mode"
 
 msgid "Standby / Poweroff..."
-msgstr "Standby / Κλείσιμο..."
+
+msgstr "Standby / ΞΞ»ΞµΞ―ΟƒΞΉΞΌΞΏ..."
 
 msgid "Standby / Poweroff"
-msgstr "Standby / Κλείσιμο"
+
+msgstr "Standby / ΞΞ»ΞµΞ―ΟƒΞΉΞΌΞΏ"
 
 msgid "Start HTTPD"
-msgstr "Εκκίνηση HTTPD"
+
+msgstr "Ξ•ΞΊΞΊΞ―Ξ½Ξ·ΟƒΞ· HTTPD"
 
 msgid "STOP/START"
+
 msgstr "STOP/START"
 
 msgid "Streaming"
+
 msgstr "Streaming"
 
 msgid "Stream Path"
-msgstr "Διαδρομή αποθήκευσης Stream"
+
+msgstr "Ξ”ΞΉΞ±Ξ΄ΟΞΏΞΌΞ® Ξ±Ο€ΞΏΞΈΞ®ΞΊΞµΟ…ΟƒΞ·Ο‚ Stream"
 
 msgid "Style"
+
 msgstr "Style"
 
 msgid "Sunday"
-msgstr "Κυριακή"
+
+msgstr "ΞΟ…ΟΞΉΞ±ΞΊΞ®"
 
 msgid "Swap"
+
 msgstr "Swap"
 
 msgid "Switch"
-msgstr "Εναλλαγή"
+
+msgstr "Ξ•Ξ½Ξ±Ξ»Ξ»Ξ±Ξ³Ξ®"
 
 msgid "Subtitle"
-msgstr "Υπότιτλος"
+
+msgstr "Ξ¥Ο€ΟΟ„ΞΉΟ„Ξ»ΞΏΟ‚"
 
 msgid "Symbol rate:"
+
 msgstr "Symbol rate"
 
 msgid "Symbolrate"
+
 msgstr "Symbol rate"
 
 msgid "System"
-msgstr "Σύστημα"
+
+msgstr "Ξ£ΟΟƒΟ„Ξ·ΞΌΞ±"
 
 msgid "System:"
-msgstr "Σύστημα:"
+
+msgstr "Ξ£ΟΟƒΟ„Ξ·ΞΌΞ±:"
 
 msgid "System..."
-msgstr "Σύστημα..."
+
+msgstr "Ξ£ΟΟƒΟ„Ξ·ΞΌΞ±..."
 
 msgid "System - Flashupdate (online)"
-msgstr "Αναβάθμιση Flash συστήματος (online)"
+
+msgstr "Ξ‘Ξ½Ξ±Ξ²Ξ¬ΞΈΞΌΞΉΟƒΞ· Flash ΟƒΟ…ΟƒΟ„Ξ®ΞΌΞ±Ο„ΞΏΟ‚ (online)"
 
 msgid "System - Flashupdate (tmp)"
-msgstr "Αναβάθμιση Flash συστήματος (tmp)"
+
+msgstr "Ξ‘Ξ½Ξ±Ξ²Ξ¬ΞΈΞΌΞΉΟƒΞ· Flash ΟƒΟ…ΟƒΟ„Ξ®ΞΌΞ±Ο„ΞΏΟ‚ (tmp)"
 
 msgid "System Info"
-msgstr "Πληροφορίες Συστήματος"
+
+msgstr "Ξ Ξ»Ξ·ΟΞΏΟ†ΞΏΟΞ―ΞµΟ‚ Ξ£Ο…ΟƒΟ„Ξ®ΞΌΞ±Ο„ΞΏΟ‚"
 
 msgid "Sysinfo"
-msgstr "Πληροφορίες Συστήματος"
+
+msgstr "Ξ Ξ»Ξ·ΟΞΏΟ†ΞΏΟΞ―ΞµΟ‚ Ξ£Ο…ΟƒΟ„Ξ®ΞΌΞ±Ο„ΞΏΟ‚"
 
 msgid "System - Usbupdate (online)"
-msgstr "Αναβάθμιση συστήματος - USB (online)"
+
+msgstr "Ξ‘Ξ½Ξ±Ξ²Ξ¬ΞΈΞΌΞΉΟƒΞ· ΟƒΟ…ΟƒΟ„Ξ®ΞΌΞ±Ο„ΞΏΟ‚ - USB (online)"
 
 msgid "System - Usbupdate (tmp)"
-msgstr "Αναβάθμιση συστήματος - USB (tmp)"
+
+msgstr "Ξ‘Ξ½Ξ±Ξ²Ξ¬ΞΈΞΌΞΉΟƒΞ· ΟƒΟ…ΟƒΟ„Ξ®ΞΌΞ±Ο„ΞΏΟ‚ - USB (tmp)"
 
 msgid "sambaserver"
+
 msgstr "Samba Server"
 
 msgid "showip"
-msgstr "Εμφάνιση IP"
+
+msgstr "Ξ•ΞΌΟ†Ξ¬Ξ½ΞΉΟƒΞ· IP"
 
 msgid "showtvinfo"
-msgstr "Εμφάνιση πληρ. TV"
+
+msgstr "Ξ•ΞΌΟ†Ξ¬Ξ½ΞΉΟƒΞ· Ο€Ξ»Ξ·Ο. TV"
 
 msgid "szap"
+
 msgstr "szap"
 
 msgid "szaplong"
+
 msgstr "szaplong"
 
 msgid "szap_frontend"
+
 msgstr "szap_frontend"
 
 msgid "szap_emul"
+
 msgstr "szap_emul"
 
 msgid "standby_overclock"
+
 msgstr "standby_overclock"
 
 msgid "standby_freq"
+
 msgstr "standby_freq"
 
 msgid "swap_max_sectors"
+
 msgstr "swap_max_sectors"
 
 msgid "szap_diseqc_repeat"
+
 msgstr "szap_diseqc_repeat"
 
 msgid "swap"
+
 msgstr "swap"
 
 msgid "swapsize"
-msgstr "Mέγεθος swap"
+
+msgstr "MΞ­Ξ³ΞµΞΈΞΏΟ‚ swap"
 
 msgid "scartonstandby"
-msgstr "Scart σε αναμονή"
+
+msgstr "Scart ΟƒΞµ Ξ±Ξ½Ξ±ΞΌΞΏΞ½Ξ®"
 
 msgid "swts"
+
 msgstr "swts"
 
 msgid "t"
+
 msgstr "t"
 
 msgid "T"
+
 msgstr "T"
 
 msgid "TEST"
+
 msgstr "TEST"
 
 msgid "Test frequency"
-msgstr "Συχνότητα ελέγχου"
+
+msgstr "Ξ£Ο…Ο‡Ξ½ΟΟ„Ξ·Ο„Ξ± ΞµΞ»Ξ­Ξ³Ο‡ΞΏΟ…"
 
 msgid "Threshold"
+
 msgstr "Threshold"
 
 msgid "thereafter on this Channel:"
-msgstr "Επόμενες εκπομπές:"
+
+msgstr "Ξ•Ο€ΟΞΌΞµΞ½ΞµΟ‚ ΞµΞΊΟ€ΞΏΞΌΟ€Ξ­Ο‚:"
 
 msgid "Thursday"
-msgstr "Πέμπτη"
+
+msgstr "Ξ Ξ­ΞΌΟ€Ο„Ξ·"
 
 msgid "Timer"
+
 msgstr "Timer"
 
 msgid "Timer Record Path"
-msgstr "Διαδρομή εγγραφών του Timer"
+
+msgstr "Ξ”ΞΉΞ±Ξ΄ΟΞΏΞΌΞ® ΞµΞ³Ξ³ΟΞ±Ο†ΟΞ½ Ο„ΞΏΟ… Timer"
 
 msgid "Timeshift Path"
-msgstr "Διαδρομή Timeshift"
+
+msgstr "Ξ”ΞΉΞ±Ξ΄ΟΞΏΞΌΞ® Timeshift"
 
 msgid "Time to sleep"
-msgstr "Χρόνος εως το τέλος"
+
+msgstr "Ξ§ΟΟΞ½ΞΏΟ‚ ΞµΟ‰Ο‚ Ο„ΞΏ Ο„Ξ­Ξ»ΞΏΟ‚"
 
 msgid "--- Time to switch"
-msgstr "--- Χρόνος εως την εναλλαγή"
+
+msgstr "--- Ξ§ΟΟΞ½ΞΏΟ‚ ΞµΟ‰Ο‚ Ο„Ξ·Ξ½ ΞµΞ½Ξ±Ξ»Ξ»Ξ±Ξ³Ξ®"
 
 msgid "Timezone"
-msgstr "Ζώνη ώρας"
+
+msgstr "Ξ–ΟΞ½Ξ· ΟΟΞ±Ο‚"
 
 msgid "Tint"
-msgstr "Απόχρωση"
+
+msgstr "Ξ‘Ο€ΟΟ‡ΟΟ‰ΟƒΞ·"
 
 msgid "Tone Burst"
+
 msgstr "Tone Burst"
 
 msgid "Tone Mode"
+
 msgstr "Tone Mode"
 
 msgid "Top"
-msgstr "Επάνω"
+
+msgstr "Ξ•Ο€Ξ¬Ξ½Ο‰"
 
 msgid "Transponder:"
+
 msgstr "Transponder:"
 
 msgid "TSID:"
+
 msgstr "TSID:"
 
 msgid "Tuesday"
-msgstr "Τρίτη"
+
+msgstr "Ξ¤ΟΞ―Ο„Ξ·"
 
 msgid "Tuner"
+
 msgstr "Tuner"
 
 msgid "Tuner:"
+
 msgstr "Tuner:"
 
 msgid "Tunerconfig"
-msgstr "Ρυθμίσεις Tuner"
+
+msgstr "Ξ΅Ο…ΞΈΞΌΞ―ΟƒΞµΞΉΟ‚ Tuner"
 
 msgid "Tuner Configuration"
+
 msgstr "Tuner"
 
 msgid "Tuner Reception"
-msgstr "Λήψη Tuner"
+
+msgstr "Ξ›Ξ®ΟΞ· Tuner"
 
 msgid "TXT PID:"
+
 msgstr "TXT PID:"
 
 msgid "type"
-msgstr "Πληκτρολόγησε"
+
+msgstr "Ξ Ξ»Ξ·ΞΊΟ„ΟΞΏΞ»ΟΞ³Ξ·ΟƒΞµ"
 
 msgid "Type"
+
 msgstr "Type"
 
 msgid "Type:"
-msgstr "Είδος:"
+
+msgstr "Ξ•Ξ―Ξ΄ΞΏΟ‚:"
 
 msgid "Type of Scan"
-msgstr "Είδος Σάρωσης"
+
+msgstr "Ξ•Ξ―Ξ΄ΞΏΟ‚ Ξ£Ξ¬ΟΟ‰ΟƒΞ·Ο‚"
 
 msgid "tuner_sleep_off"
+
 msgstr "tuner_sleep_off"
 
 msgid "tuxtxt_cpufrequ_workaround"
+
 msgstr "tuxtxt_cpufrequ_workaround"
 
 msgid "telnet"
+
 msgstr "Telnet"
 
 msgid "u"
+
 msgstr "u"
 
 msgid "U"
+
 msgstr "U"
 
 msgid "UNC:"
+
 msgstr "UNC:"
 
 msgid "Uncommitted Diseqc command"
+
 msgstr "Uncommitted Diseqc command"
 
 msgid "unknown"
-msgstr "¶γνωστο"
+
+msgstr "Ξ†Ξ³Ξ½Ο‰ΟƒΟ„ΞΏ"
 
 msgid "UNLOAD"
+
 msgstr "UNLOAD"
 
 msgid "update"
-msgstr "Ενημέρωση"
+
+msgstr "Ξ•Ξ½Ξ·ΞΌΞ­ΟΟ‰ΟƒΞ·"
 
 msgid "Usb Device"
-msgstr "Συσκευή USB"
+
+msgstr "Ξ£Ο…ΟƒΞΊΞµΟ…Ξ® USB"
 
 msgid "Usbupdate (online)"
-msgstr "Ενημέρωση USB (online)"
+
+msgstr "Ξ•Ξ½Ξ·ΞΌΞ­ΟΟ‰ΟƒΞ· USB (online)"
 
 msgid "Usbupdate (tmp)"
-msgstr "Ενημέρωση USB (tmp)"
+
+msgstr "Ξ•Ξ½Ξ·ΞΌΞ­ΟΟ‰ΟƒΞ· USB (tmp)"
 
 msgid "Use EPG Endtime"
-msgstr "Χρησιμοποίηση τέλους από το EPG"
+
+msgstr "Ξ§ΟΞ·ΟƒΞΉΞΌΞΏΟ€ΞΏΞ―Ξ·ΟƒΞ· Ο„Ξ­Ξ»ΞΏΟ…Ο‚ Ξ±Ο€Ο Ο„ΞΏ EPG"
 
 msgid "useproxy"
+
 msgstr "use proxy"
 
 msgid "userauth"
-msgstr "Επιβεβαίωση χρήστη"
+
+msgstr "Ξ•Ο€ΞΉΞ²ΞµΞ²Ξ±Ξ―Ο‰ΟƒΞ· Ο‡ΟΞ®ΟƒΟ„Ξ·"
 
 msgid "username"
-msgstr "Όνομα χρήστη"
+
+msgstr "ΞΞ½ΞΏΞΌΞ± Ο‡ΟΞ®ΟƒΟ„Ξ·"
 
 msgid "use ssl"
-msgstr "Χρησιμοποίηση SSL"
+
+msgstr "Ξ§ΟΞ·ΟƒΞΉΞΌΞΏΟ€ΞΏΞ―Ξ·ΟƒΞ· SSL"
 
 msgid "updatelist"
-msgstr "Ενημέρωση λίστας"
+
+msgstr "Ξ•Ξ½Ξ·ΞΌΞ­ΟΟ‰ΟƒΞ· Ξ»Ξ―ΟƒΟ„Ξ±Ο‚"
 
 msgid "v"
+
 msgstr "v"
 
 msgid "V"
+
 msgstr "V"
 
 msgid "VFDisplay"
+
 msgstr "VFDisplay"
 
 msgid "Video"
+
 msgstr "Video"
 
 msgid "VIDEO"
+
 msgstr "VIDEO"
 
 msgid "VideoMode Aspect Settings"
-msgstr "Ρύθμιση αναλογιών Video"
+
+msgstr "Ξ΅ΟΞΈΞΌΞΉΟƒΞ· Ξ±Ξ½Ξ±Ξ»ΞΏΞ³ΞΉΟΞ½ Video"
 
 msgid "VideoMode Resolution Settings"
-msgstr "Ρυθμίσεις Ανάλυσης Video"
+
+msgstr "Ξ΅Ο…ΞΈΞΌΞ―ΟƒΞµΞΉΟ‚ Ξ‘Ξ½Ξ¬Ξ»Ο…ΟƒΞ·Ο‚ Video"
 
 msgid "VideoMode Settings"
-msgstr "Ρυθμίσεις Video"
+
+msgstr "Ξ΅Ο…ΞΈΞΌΞ―ΟƒΞµΞΉΟ‚ Video"
 
 msgid "Video PID:"
+
 msgstr "Video PID:"
 
 msgid "Video Player"
+
 msgstr "Video Player"
 
 msgid "Video Settings"
-msgstr "Ρυθμίσεις Video"
+
+msgstr "Ξ΅Ο…ΞΈΞΌΞ―ΟƒΞµΞΉΟ‚ Video"
 
 msgid "VIDEO SETTINGS"
-msgstr "ΡΥΘΜΙΣΕΙΣ VIDEO"
+
+msgstr "Ξ΅Ξ¥ΞΞΞ™Ξ£Ξ•Ξ™Ξ£ VIDEO"
 
 msgid "Videotune"
-msgstr "Ρύθμιση χρωμάτων"
+
+msgstr "Ξ΅ΟΞΈΞΌΞΉΟƒΞ· Ο‡ΟΟ‰ΞΌΞ¬Ο„Ο‰Ξ½"
 
 msgid "View"
-msgstr "Δείξε"
+
+msgstr "Ξ”ΞµΞ―ΞΎΞµ"
 
 msgid "Virtualzap Timeout"
+
 msgstr "Virtualzap Timeout"
 
 msgid "VLC Player"
+
 msgstr "VLC Player"
 
-msgid "Ήχος κλειστός"
-msgstr "Ένταση κλειστή"
+msgid "Ξ‰Ο‡ΞΏΟ‚ ΞΊΞ»ΞµΞΉΟƒΟ„ΟΟ‚"
+
+msgstr "ΞΞ½Ο„Ξ±ΟƒΞ· ΞΊΞ»ΞµΞΉΟƒΟ„Ξ®"
 
 msgid "Voltage Mode"
-msgstr "Mode Τάσης"
+
+msgstr "Mode Ξ¤Ξ¬ΟƒΞ·Ο‚"
 
 msgid "Volumebar Timeout"
-msgstr "Χρονικό όριο απόκρ. της ένδειξης έντασης (sec)"
+
+msgstr "Ξ§ΟΞΏΞ½ΞΉΞΊΟ ΟΟΞΉΞΏ Ξ±Ο€ΟΞΊΟ. Ο„Ξ·Ο‚ Ξ­Ξ½Ξ΄ΞµΞΉΞΎΞ·Ο‚ Ξ­Ξ½Ο„Ξ±ΟƒΞ·Ο‚ (sec)"
 
 msgid "w"
+
 msgstr "w"
 
 msgid "W"
+
 msgstr "W"
 
 msgid "Web Radio Player"
+
 msgstr "Web Radio Player"
 
 msgid "Wednesday"
-msgstr "Τετάρτη"
+
+msgstr "Ξ¤ΞµΟ„Ξ¬ΟΟ„Ξ·"
 
 msgid "Weather Info"
-msgstr "Πληροφορίες Καιρού"
+
+msgstr "Ξ Ξ»Ξ·ΟΞΏΟ†ΞΏΟΞ―ΞµΟ‚ ΞΞ±ΞΉΟΞΏΟ"
 
 msgid "wsize"
+
 msgstr "wsize"
 
 msgid "wlan"
+
 msgstr "WLAN"
 
 msgid "webif"
+
 msgstr "webif"
 
 msgid "x"
+
 msgstr "x"
 
 msgid "X"
+
 msgstr "X"
 
 msgid "y"
+
 msgstr "y"
 
 msgid "Y"
+
 msgstr "Y"
 
 msgid "z"
+
 msgstr "z"
 
 msgid "Z"
+
 msgstr "Z"
