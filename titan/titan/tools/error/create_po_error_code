@@ -10,3 +10,4 @@ tithek_submenu.h:901: warning: unterminated string literal
 /home/atemio/flashimg/source.titan/po/it/LC_MESSAGES/titan.outfile.po:4574: `msgid' and `msgstr' entries do not both end with '\n'
 msgfmt: found 1 fatal error
 1203 translated messages, 161 fuzzy translations.
+msgid "Timer Record start !\n"
