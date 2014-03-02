@@ -45,7 +45,7 @@ msgid "Are you sure you want to remove all Partitions\n"
 "Box reboots after format"
 msgstr "Are you sure you want to remove all partitions\n"
 "on this device and create a new partition?\n"
-"Receiver will reboot after formatting the device
+"Receiver will reboot after formatting the device"
 "Your Receiver will reboot after formatting the device"	
 
 msgid "Are you sure you want to format this Partition?\n"
