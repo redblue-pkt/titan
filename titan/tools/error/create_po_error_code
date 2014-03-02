@@ -1,3 +1,6 @@
+[createpo.sh] xgettext --omit-header -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.utf.po
+tithek_submenu.h:70: warning: unterminated string literal
+tithek_submenu.h:905: warning: unterminated string literal
 --------------------------------------
 [createpo.sh] xgettext --omit-header -k_ *.* -o /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.new.po
 tithek_submenu.h:70: warning: unterminated string literal
