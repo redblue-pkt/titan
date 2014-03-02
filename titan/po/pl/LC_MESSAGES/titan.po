@@ -1,33 +1,20 @@
-msgid ""
-msgstr ""
-"Project-Id-Version: TitanNit 1.49\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-07 10:44+0200\n"
-"PO-Revision-Date: 2014-02-07 17:47+0200\n"
-"Last-Translator: obi <_obiwan_@web.de>\n"
-"Language-Team: German <_obiwan_@web.de>\n"
-"Language: pl\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-
 msgid "Audio Tracks"
-msgstr "WybÃ³r Å›cieÅ¼ki audio"
+msgstr "Wybór ¶cie¿ki audio"
 
 msgid "Backup / Restore Settings"
 msgstr "ustawienia kopii/ odzyskiwania"
 
 msgid "Bouquet List"
-msgstr "Lista pakietÃ³w"
+msgstr "Lista pakietów"
 
 msgid "Channel Edit"
-msgstr "Edycja kanaÅ‚u"
+msgstr "Edycja kana³u"
 
 msgid "Channel Search"
-msgstr "Szukaj kanaÅ‚"
+msgstr "Szukaj kana³"
 
 msgid "Create Backup"
-msgstr "UtwÃ³rz kopiÄ™"
+msgstr "Utwórz kopiê"
 
 msgid "Diseqc Settings"
 msgstr "Ustawienia DiseqC"
@@ -45,10 +32,10 @@ msgid "LNB Settings"
 msgstr "Ustawienia LNB"
 
 msgid "Main Menu"
-msgstr "Menu gÅ‚Ã³wne"
+msgstr "Menu g³ówne"
 
 msgid "Manuel Scan"
-msgstr "Skanowanie rÄ™czne"
+msgstr "Skanowanie rêczne"
 
 msgid "MC VideoPlayer Imdb Settings"
 msgstr "Media Center - ustawienia Imdb"
@@ -57,13 +44,13 @@ msgid "MC VideoPlayer Sort Settings"
 msgstr "Media Center - ustawienia sortowania"
 
 msgid "MC VideoPlayer View Settings"
-msgstr "Media Center - ustawienia podglÄ…du"
+msgstr "Media Center - ustawienia podgl±du"
 
 msgid "Menulist"
 msgstr "Menulist"
 
 msgid "Menu Protect"
-msgstr "Menu ZabezpieczeÅ„"
+msgstr "Menu Zabezpieczeñ"
 
 msgid "Network Adapter Settings"
 msgstr "Ustawienia sieci"
@@ -84,10 +71,10 @@ msgid "PlayList"
 msgstr "Lista odtwarzania"
 
 msgid "PlayList - select your playlist !"
-msgstr "Lista odtwarzania - wybÃ³r listy"
+msgstr "Lista odtwarzania - wybór listy"
 
 msgid "Poweroff Timer"
-msgstr "Timer wyÅ‚Ä…czenia"
+msgstr "Timer wy³±czenia"
 
 msgid "Record Timer"
 msgstr "Timer nagrywania"
@@ -96,16 +83,16 @@ msgid "Scan"
 msgstr "Skanowanie"
 
 msgid "Select Path"
-msgstr "WybÃ³r Å›cieÅ¼ki"
+msgstr "Wybór ¶cie¿ki"
 
 msgid "Serviceinfo"
 msgstr "Informacja o serwisie"
 
 msgid "Skin Select"
-msgstr "WybÃ³r skÃ³rki"
+msgstr "Wybór skórki"
 
 msgid "Standby / Poweroff"
-msgstr "UÅ›pienie / WyÅ‚Ä…czenie"
+msgstr "U¶pienie / Wy³±czenie"
 
 msgid "Subtitle"
 msgstr "Napisy"
@@ -129,13 +116,13 @@ msgid "Tunerconfig"
 msgstr "Konfiguracja tunera"
 
 msgid "Tuner Reception"
-msgstr "OdbiÃ³r z tunera"
+msgstr "Odbiór z tunera"
 
 msgid "VideoMode Aspect Settings"
 msgstr "Ustawienia proporcji obrazu"
 
 msgid "VideoMode Resolution Settings"
-msgstr "Ustawienia rozdzielczoÅ›ci obrazu"
+msgstr "Ustawienia rozdzielczo¶ci obrazu"
 
 msgid "VideoMode Settings"
 msgstr "Ustawienia obrazu"
@@ -222,10 +209,10 @@ msgid "Audio Player"
 msgstr "Odtwarzacz audio"
 
 msgid "AUDIO SETTINGS"
-msgstr "USTAWIENIA DÅ¹WIÄ˜KU"
+msgstr "USTAWIENIA D¬WIÊKU"
 
 msgid "Audio Source"
-msgstr "Å¹rÃ³dÅ‚o dÅºwiÄ™ku"
+msgstr "¬ród³o d¼wiêku"
 
 msgid "Audio/Subt."
 msgstr "Audio/Napisy"
@@ -240,7 +227,7 @@ msgid "Automount"
 msgstr "Auto montowanie"
 
 msgid "Auto resolution"
-msgstr "Auto rozdzielczoÅ›Ä‡"
+msgstr "Auto rozdzielczo¶æ"
 
 msgid "Autostart"
 msgstr "Autostart"
@@ -270,13 +257,13 @@ msgid "Beta Config"
 msgstr "Konfiguracja Beta"
 
 msgid "big"
-msgstr "duÅ¼y"
+msgstr "du¿y"
 
 msgid "Blue Button"
 msgstr "Niebieski klawisz"
 
 msgid "Brightness"
-msgstr "JasnoÅ›Ä‡"
+msgstr "Jasno¶æ"
 
 msgid "broadcast"
 msgstr "transmisja"
@@ -303,10 +290,10 @@ msgid "Cancel Shutdown"
 msgstr "Anuluj zamykanie"
 
 msgid "Channel"
-msgstr "KanaÅ‚"
+msgstr "Kana³"
 
 msgid "Channel Service..."
-msgstr "Serwis kanaÅ‚u..."
+msgstr "Serwis kana³u..."
 
 msgid "Child Protection"
 msgstr "Kontrola rodzicielska"
@@ -318,13 +305,13 @@ msgid "Clear"
 msgstr "Czysty"
 
 msgid "Clear before scan"
-msgstr "CzyÅ› przes szukaniem"
+msgstr "Czy¶ przes szukaniem"
 
 msgid "Color Format"
 msgstr "Format koloru"
 
 msgid "Color Format Scart"
-msgstr "Format Koloru zÅ‚Ä…cza SCART"
+msgstr "Format Koloru z³±cza SCART"
 
 msgid "Committed command"
 msgstr "Wykoanan komeda"
@@ -351,10 +338,10 @@ msgid "date"
 msgstr "data"
 
 msgid "Datei Browser"
-msgstr "PrzeglÄ…darka plikÃ³w"
+msgstr "Przegl±darka plików"
 
 msgid "Day"
-msgstr "DzieÅ„"
+msgstr "Dzieñ"
 
 msgid "Deactivate"
 msgstr "Deaktywuj"
@@ -375,16 +362,16 @@ msgid "Delete EPG after read"
 msgstr "Kasuj EPG po przeczyatniu"
 
 msgid "del startchannel"
-msgstr "kasuj kanaÅ‚ startowy"
+msgstr "kasuj kana³ startowy"
 
 msgid "details"
-msgstr "szczegÃ³Å‚y"
+msgstr "szczegó³y"
 
 msgid "Device:"
-msgstr "UrzÄ…dzenie:"
+msgstr "Urz±dzenie:"
 
 msgid "Devices"
-msgstr "UrzÄ…dzenia"
+msgstr "Urz±dzenia"
 
 msgid "dhcp"
 msgstr "dhcp"
@@ -396,7 +383,7 @@ msgid "DiSEqC"
 msgstr "DiseqC"
 
 msgid "Diseqc Command Order"
-msgstr "KolejnoÅ›Ä‡ komend DiseqC"
+msgstr "Kolejno¶æ komend DiseqC"
 
 msgid "DiSEqC Configuration"
 msgstr "Konfiguracja DiseqC"
@@ -405,7 +392,7 @@ msgid "DiSEqC Mode"
 msgstr "Tryp DiseqC"
 
 msgid "Diseqc repeats"
-msgstr "PowtÃ³zenia DisegC"
+msgstr "Powtózenia DisegC"
 
 msgid "dnsserver 1"
 msgstr "Serwer nazw 1"
@@ -414,7 +401,7 @@ msgid "dnsserver 2"
 msgstr "Serwer nazw 2"
 
 msgid "Don't clear TV on zap (only with fastzap)"
-msgstr "Nie czyÅ›Ä‡ TV przy przeÅ‚Ä…czeniu (tylko z fastzap)"
+msgstr "Nie czy¶æ TV przy prze³±czeniu (tylko z fastzap)"
 
 msgid "e"
 msgstr "e"
@@ -423,7 +410,7 @@ msgid "E"
 msgstr "E"
 
 msgid "East / West"
-msgstr "WschÃ³d / ZachÃ³d"
+msgstr "Wschód / Zachód"
 
 msgid "End"
 msgstr "Koniec"
@@ -435,13 +422,13 @@ msgid "Epgfreespace (KB)"
 msgstr "Wolne miejsce dla EPG (KB)"
 
 msgid "Epg List Mode"
-msgstr "Tryb wyÅ›wietlania EPG"
+msgstr "Tryb wy¶wietlania EPG"
 
 msgid "EPG Path"
-msgstr "ÅšcieÅ¼ka EPG"
+msgstr "¦cie¿ka EPG"
 
 msgid "Epg Refresh Time"
-msgstr "Czas odÅ›wierzania EPG"
+msgstr "Czas od¶wierzania EPG"
 
 msgid "EPG Reset"
 msgstr "Kasowanie EPG"
@@ -450,13 +437,13 @@ msgid "EPG Settings"
 msgstr "Ustawienia EPG"
 
 msgid "EXIT"
-msgstr "WYJÅšCIE"
+msgstr "WYJ¦CIE"
 
 msgid "Extensions"
 msgstr "Dodatki"
 
 msgid "Extensions Menu"
-msgstr "Menu dodatkÃ³w"
+msgstr "Menu dodatków"
 
 msgid "f"
 msgstr "f"
@@ -471,13 +458,13 @@ msgid "fast"
 msgstr "szybko"
 
 msgid "Fast DiSEqC"
-msgstr "SzybkoÅ›Ä‡ DiseqC"
+msgstr "Szybko¶æ DiseqC"
 
 msgid "Faststop"
 msgstr "Faststop"
 
 msgid "Fast Text Render"
-msgstr "Szybkie wyÅ›wietlanie tekstu"
+msgstr "Szybkie wy¶wietlanie tekstu"
 
 msgid "Fastzap"
 msgstr "Fastzap"
@@ -501,10 +488,10 @@ msgid "filealtresult"
 msgstr "filealtresult"
 
 msgid "Filelist-Mode"
-msgstr "Tryb listy plikÃ³w"
+msgstr "Tryb listy plików"
 
 msgid "Filesystem Check"
-msgstr "Sprawdzanie systemu plikÃ³w"
+msgstr "Sprawdzanie systemu plików"
 
 msgid "Flashupdate (online)"
 msgstr "Flashupdate (poprzez web)"
@@ -513,7 +500,7 @@ msgid "Flashupdate (tmp)"
 msgstr "Flashupdate (tmp)"
 
 msgid "Fontsize adjust in pixel"
-msgstr "WielkoÅ›Ä‡ czcionki w pikselach"
+msgstr "Wielko¶æ czcionki w pikselach"
 
 msgid "Format HDD"
 msgstr "Format HDD"
@@ -531,13 +518,13 @@ msgid "free space"
 msgstr "wolne miejsce"
 
 msgid "Frequency"
-msgstr "CzÄ™stotliwoÅ›Ä‡"
+msgstr "Czêstotliwo¶æ"
 
 msgid "Frequency:"
-msgstr "CzÄ™stotliwoÅ›Ä‡:"
+msgstr "Czêstotliwo¶æ:"
 
 msgid "Friday"
-msgstr "PiÄ…tek"
+msgstr "Pi±tek"
 
 msgid "ftpport"
 msgstr "Port ftp"
@@ -591,16 +578,16 @@ msgid "Imdb Directory"
 msgstr "Katalog Imdb"
 
 msgid "Increased Voltage"
-msgstr "ZwiÄ™kszone napiÄ™cie"
+msgstr "Zwiêkszone napiêcie"
 
 msgid "Infobar Auto hide on call"
-msgstr "Ukryj belkÄ™ informacyjnÄ… przy wywoÅ‚aniu"
+msgstr "Ukryj belkê informacyjn± przy wywo³aniu"
 
 msgid "Infobar Sleep"
-msgstr "WyÅ›wietl belkÄ™ po czasie"
+msgstr "Wy¶wietl belkê po czasie"
 
 msgid "Infobar Timeout"
-msgstr "Ukryj belkÄ™ po czasie"
+msgstr "Ukryj belkê po czasie"
 
 msgid "Information..."
 msgstr "Informacje..."
@@ -615,10 +602,10 @@ msgid "internet"
 msgstr "internet"
 
 msgid "Internet Browser"
-msgstr "PrzeglÄ…darka internetu"
+msgstr "Przegl±darka internetu"
 
 msgid "Interval"
-msgstr "InterwaÅ‚"
+msgstr "Interwa³"
 
 msgid "Inversion"
 msgstr "Inwersja"
@@ -633,7 +620,7 @@ msgid "IPK install (online)"
 msgstr "Instaluj IPK (poprzez web)"
 
 msgid "IPK remove"
-msgstr "usuÅ„ IPK"
+msgstr "usuñ IPK"
 
 msgid "IPK tmp (tmp)"
 msgstr "Instaluj IPK (tmp)"
@@ -663,16 +650,16 @@ msgid "L"
 msgstr "L"
 
 msgid "lan"
-msgstr "sieÄ‡"
+msgstr "sieæ"
 
 msgid "Language"
-msgstr "JÄ™zyk"
+msgstr "Jêzyk"
 
 msgid "Latitude"
-msgstr "SzerokoÅ›Ä‡ geogr."
+msgstr "Szeroko¶æ geogr."
 
 msgid "Listbox Select"
-msgstr "Wybierz listÄ™"
+msgstr "Wybierz listê"
 
 msgid "LNB"
 msgstr "LNB"
@@ -690,7 +677,7 @@ msgid "LOF/L"
 msgstr "LOF/L"
 
 msgid "Logitude"
-msgstr "DÅ‚ugoÅ›Ä‡ geogr."
+msgstr "D³ugo¶æ geogr."
 
 msgid "LOG (Text)"
 msgstr "LOG (tekst)"
@@ -702,13 +689,13 @@ msgid "M"
 msgstr "M"
 
 msgid "Manuell Search"
-msgstr "Szukaj rÄ™cznie"
+msgstr "Szukaj rêcznie"
 
 msgid "Media Center"
-msgstr "Centum mediÃ³w"
+msgstr "Centum mediów"
 
 msgid "Memory"
-msgstr "PamiÄ™Ä‡"
+msgstr "Pamiêæ"
 
 msgid "MENUPROTECT"
 msgstr "MENUPROTECT"
@@ -726,19 +713,19 @@ msgid "Modulation:"
 msgstr "Modulacja:"
 
 msgid "Module"
-msgstr "ModuÅ‚"
+msgstr "Modu³"
 
 msgid "Monday"
-msgstr "PoniedziaÅ‚ek"
+msgstr "Poniedzia³ek"
 
 msgid "Mounts"
 msgstr "Zamontowano"
 
 msgid "move service"
-msgstr "przenieÅ› serwis"
+msgstr "przenie¶ serwis"
 
 msgid "Moviepath"
-msgstr "ÅšcieÅ¼ka do filmÃ³w"
+msgstr "¦cie¿ka do filmów"
 
 msgid "MTD"
 msgstr "MTD"
@@ -768,13 +755,13 @@ msgid "netmask"
 msgstr "maska sieci"
 
 msgid "Network"
-msgstr "SieÄ‡"
+msgstr "Sieæ"
 
 msgid "Network Assistant"
 msgstr "Asystent sieci"
 
 msgid "Networkbrowser"
-msgstr "PrzeglÄ…darka sieci"
+msgstr "Przegl±darka sieci"
 
 msgid "Network Restart"
 msgstr "Restart sieci"
@@ -786,7 +773,7 @@ msgid "Network Test"
 msgstr "Test sieci"
 
 msgid "Next"
-msgstr "NastÄ™pny"
+msgstr "Nastêpny"
 
 msgid "Nfs Server Settings"
 msgstr "ustawienia serwera NFS"
@@ -795,7 +782,7 @@ msgid "nfs server"
 msgstr "Serwer NFS"
 
 msgid "Nordh / South"
-msgstr "PÃ³Å‚noc/PoÅ‚udnie"
+msgstr "Pó³noc/Po³udnie"
 
 msgid "o"
 msgstr "o"
@@ -819,19 +806,19 @@ msgid "Orbital Position:"
 msgstr "Pozycja na orbicie:"
 
 msgid "OSD Bottom Overscan"
-msgstr "Dolna krawÄ™dÅº OSD"
+msgstr "Dolna krawêd¼ OSD"
 
 msgid "OSD Left Overscan"
-msgstr "Lewa krawÄ™dÅº OSD"
+msgstr "Lewa krawêd¼ OSD"
 
 msgid "OSD Right Overscan"
-msgstr "Prawa krawÄ™dÅº OSD"
+msgstr "Prawa krawêd¼ OSD"
 
 msgid "OSD Top Overscan"
-msgstr "GÃ³rna krawÄ™dÅº OSD"
+msgstr "Górna krawêd¼ OSD"
 
 msgid "OSD Transparent"
-msgstr "PrzeÅºroczystoÅ›Ä‡ OSD"
+msgstr "Prze¼roczysto¶æ OSD"
 
 msgid "Overclocking"
 msgstr "Taktowanie CPU"
@@ -843,22 +830,22 @@ msgid "P"
 msgstr "P"
 
 msgid "password"
-msgstr "hasÅ‚o"
+msgstr "has³o"
 
 msgid "PCR PID:"
 msgstr "PCR PID:"
 
 msgid "Piconpath"
-msgstr "ÅšcieÅ¼ka do pikon"
+msgstr "¦cie¿ka do pikon"
 
 msgid "PICTURE"
-msgstr "ZDJÄ˜CIE"
+msgstr "ZDJÊCIE"
 
 msgid "Picture Player"
-msgstr "PrzeglÄ…darka zdjÄ™Ä‡"
+msgstr "Przegl±darka zdjêæ"
 
 msgid "PICTURE SETTINGS"
-msgstr "Ustawienia zdjÄ™Ä‡"
+msgstr "Ustawienia zdjêæ"
 
 msgid "PIDs"
 msgstr "PIDy"
@@ -873,7 +860,7 @@ msgid "PIN:"
 msgstr "PIN:"
 
 msgid "Pin Code Channel"
-msgstr "Kod Pin kanaÅ‚u"
+msgstr "Kod Pin kana³u"
 
 msgid "Pin Code menu"
 msgstr "Kod PIN menu"
@@ -894,13 +881,13 @@ msgid "Policy"
 msgstr "Zasady"
 
 msgid "Power aktion"
-msgstr "WÅ‚Ä…czenie"
+msgstr "W³±czenie"
 
 msgid "Power Off"
-msgstr "WyÅ‚Ä…czenia"
+msgstr "Wy³±czenia"
 
 msgid "Power Off Timer"
-msgstr "Timer wyÅ‚Ä…czenia"
+msgstr "Timer wy³±czenia"
 
 msgid "Prev"
 msgstr "Poprzedni"
@@ -909,16 +896,16 @@ msgid "Program Info"
 msgstr "Info o programie"
 
 msgid "Protect Channel"
-msgstr "Zabezpiecz kanaÅ‚"
+msgstr "Zabezpiecz kana³"
 
 msgid "Protect Menu"
-msgstr "Manu zabezpieczeÅ„"
+msgstr "Manu zabezpieczeñ"
 
 msgid "protect service"
 msgstr "Zabezpiecz serwis"
 
 msgid "protocol"
-msgstr "protokÃ³Å‚"
+msgstr "protokó³"
 
 msgid "Prov"
 msgstr "Nadawca"
@@ -963,13 +950,13 @@ msgid "Random"
 msgstr "Losowy"
 
 msgid "Record Forerun (min)"
-msgstr "Nagrywanie wczeÅ›niej o (min)"
+msgstr "Nagrywanie wcze¶niej o (min)"
 
 msgid "Record Overrun (min)"
-msgstr "Koniec nagrywania pÃ³Åºniej o (min)"
+msgstr "Koniec nagrywania pó¼niej o (min)"
 
 msgid "Record Path"
-msgstr "ÅšcieÅ¼ka nagrywania"
+msgstr "¦cie¿ka nagrywania"
 
 msgid "Record Split Size"
 msgstr "Dziel nagrywane pliki"
@@ -978,43 +965,43 @@ msgid "Red Button"
 msgstr "Czerwony"
 
 msgid "Refresh"
-msgstr "OdÅ›wierz"
+msgstr "Od¶wierz"
 
 msgid "RELOAD"
-msgstr "PRZEÅADUJ"
+msgstr "PRZE£ADUJ"
 
 msgid "remove service"
-msgstr "unuÅ› serwis"
+msgstr "unu¶ serwis"
 
 msgid "Repeat"
-msgstr "PowtÃ³z"
+msgstr "Powtóz"
 
 msgid "Repeate"
-msgstr "PowtÃ³rz"
+msgstr "Powtórz"
 
 msgid "Repeate type"
-msgstr "PowtÃ³rz typ"
+msgstr "Powtórz typ"
 
 msgid "Resolution:"
-msgstr "RozdzielczoÅ›Ä‡:"
+msgstr "Rozdzielczo¶æ:"
 
 msgid "Resolution (default)"
-msgstr "RozdzielczoÅ›Ä‡ (standard)"
+msgstr "Rozdzielczo¶æ (standard)"
 
 msgid "Restart"
 msgstr "Restart"
 
 msgid "Restore"
-msgstr "PrzywrÃ³Ä‡"
+msgstr "Przywróæ"
 
 msgid "reverse alpha"
-msgstr "odwrÃ³Ä‡ alpha"
+msgstr "odwróæ alpha"
 
 msgid "reverse date"
-msgstr "odwrÃ³Ä‡ datÄ™"
+msgstr "odwróæ datê"
 
 msgid "reverse size"
-msgstr "odwrÃ³Ä‡ wielkoÅ›Ä‡"
+msgstr "odwróæ wielko¶æ"
 
 msgid "Rolloff"
 msgstr "Rolloff"
@@ -1080,34 +1067,34 @@ msgid "Screensaver Adjust"
 msgstr "Dostosuj screensaver"
 
 msgid "screensaver background"
-msgstr "tÅ‚o Screensaver-a"
+msgstr "t³o Screensaver-a"
 
 msgid "screensaver delay"
-msgstr "OpÃ³Åºnienie Screensaver-a"
+msgstr "Opó¼nienie Screensaver-a"
 
 msgid "screensaver interval"
-msgstr "InterwaÅ‚ Screensaver-a"
+msgstr "Interwa³ Screensaver-a"
 
 msgid "screensaver pic"
-msgstr "ZdjÄ™cie Screensaver-a"
+msgstr "Zdjêcie Screensaver-a"
 
 msgid "screensaver type"
 msgstr "typ Screensaver-a"
 
 msgid "--- SD resolution"
-msgstr "rozdzielczoÅ›Ä‡ SD"
+msgstr "rozdzielczo¶æ SD"
 
 msgid "Second Infobar"
 msgstr "Druga belka info"
 
 msgid "Select backup:"
-msgstr "Wybierz kopiÄ™"
+msgstr "Wybierz kopiê"
 
 msgid "Service"
 msgstr "Serwis"
 
 msgid "set startchannel"
-msgstr "ustaw kanaÅ‚ startowy"
+msgstr "ustaw kana³ startowy"
 
 msgid "Settings"
 msgstr "Ustawienia"
@@ -1119,58 +1106,58 @@ msgid "Settings backup/restore"
 msgstr "ustawienia kopii/odzyskiwania"
 
 msgid "sharedir"
-msgstr "katalog udostÄ™pniany"
+msgstr "katalog udostêpniany"
 
 msgid "sharename"
-msgstr "nazwa udostÄ™pniana"
+msgstr "nazwa udostêpniana"
 
 msgid "Share Settings"
-msgstr "ustawienia udostÄ™pniania"
+msgstr "ustawienia udostêpniania"
 
 msgid "Show EPG screen (EPG button)"
-msgstr "PokaÅ¼ EPG"
+msgstr "Poka¿ EPG"
 
 msgid "Show in Standby"
-msgstr "PokaÅ¼ w uÅ›pieniu"
+msgstr "Poka¿ w u¶pieniu"
 
 msgid "Show in VFD"
-msgstr "PokaÅ¼ na VFD"
+msgstr "Poka¿ na VFD"
 
 msgid "SID:"
 msgstr "SID"
 
 msgid "Signal:"
-msgstr "SygnaÅ‚:"
+msgstr "Sygna³:"
 
 msgid "Single EPG"
-msgstr "PojedyÅ„cze EPG"
+msgstr "Pojedyñcze EPG"
 
 msgid "size"
-msgstr "wielkoÅ›Ä‡"
+msgstr "wielko¶æ"
 
 msgid "Skin"
-msgstr "SkÃ³rka"
+msgstr "Skórka"
 
 msgid "Skin Adjust"
-msgstr "Dostosuj skÃ³rkÄ™"
+msgstr "Dostosuj skórkê"
 
 msgid "Skip 1/3"
-msgstr "OpuÅ›Ä‡ 1/2"
+msgstr "Opu¶æ 1/2"
 
 msgid "Skip 4/6"
-msgstr "OpuÅ›Ä‡ 4/6"
+msgstr "Opu¶æ 4/6"
 
 msgid "Skip 7/9"
-msgstr "OpuÅ›Ä‡ 7/9"
+msgstr "Opu¶æ 7/9"
 
 msgid "small"
-msgstr "maÅ‚y"
+msgstr "ma³y"
 
 msgid "SNR:"
 msgstr "SNR:"
 
 msgid "Softcam auswahl:"
-msgstr "WybÃ³r EMU"
+msgstr "Wybór EMU"
 
 msgid "Softcam Panel"
 msgstr "Panel EMU"
@@ -1179,19 +1166,19 @@ msgid "Sort"
 msgstr "Sortuj"
 
 msgid "Sorting"
-msgstr "SortujÄ™"
+msgstr "Sortujê"
 
 msgid "Sound"
-msgstr "DÅºwiÄ™k"
+msgstr "D¼wiêk"
 
 msgid "Space"
 msgstr "miejsce"
 
 msgid "speed"
-msgstr "prÄ™dkoÅ›Ä‡"
+msgstr "prêdko¶æ"
 
 msgid "Spinnerspeed"
-msgstr "prÄ™dkoÅ›Ä‡ spinera"
+msgstr "prêdko¶æ spinera"
 
 msgid "Spinnertime"
 msgstr "czas spinera"
@@ -1200,16 +1187,16 @@ msgid "ssl"
 msgstr "ssl"
 
 msgid "Standby"
-msgstr "uÅ›pienie"
+msgstr "u¶pienie"
 
 msgid "Standby Brightness"
-msgstr "JasnoÅ›Ä‡ podczas uÅ›pienia"
+msgstr "Jasno¶æ podczas u¶pienia"
 
 msgid "StandBy Mode"
-msgstr "Tryb uÅ›pienia"
+msgstr "Tryb u¶pienia"
 
 msgid "Standby / Poweroff..."
-msgstr "uÅ›pienie/wyÅ‚Ä…czenie"
+msgstr "u¶pienie/wy³±czenie"
 
 msgid "Start HTTPD"
 msgstr "start serwera HTTP"
@@ -1221,7 +1208,7 @@ msgid "Streaming"
 msgstr "Streaming"
 
 msgid "Stream Path"
-msgstr "Å›cieÅ¼ka do streamu"
+msgstr "¶cie¿ka do streamu"
 
 msgid "Style"
 msgstr "Styl"
@@ -1233,7 +1220,7 @@ msgid "Swap"
 msgstr "Swap"
 
 msgid "Switch"
-msgstr "przeÅ‚Ä…cznik"
+msgstr "prze³±cznik"
 
 msgid "Symbol rate:"
 msgstr "Symbol rate:"
@@ -1263,7 +1250,7 @@ msgid "TEST"
 msgstr "TEST"
 
 msgid "Test frequency"
-msgstr "CzÄ™Å›totliwoÅ›Ä‡ testowa"
+msgstr "Czê¶totliwo¶æ testowa"
 
 msgid "Threshold"
 msgstr "Threshold"
@@ -1275,16 +1262,16 @@ msgid "Timer"
 msgstr "Timer"
 
 msgid "Timer Record Path"
-msgstr "ÅšcieÅ¼ka nagrywania z timera"
+msgstr "¦cie¿ka nagrywania z timera"
 
 msgid "Timeshift Path"
-msgstr "ÅšcieÅ¼ka timeshift"
+msgstr "¦cie¿ka timeshift"
 
 msgid "Time to sleep"
-msgstr "Czas do uÅ›pienia"
+msgstr "Czas do u¶pienia"
 
 msgid "--- Time to switch"
-msgstr "--- czas do przeÅ‚Ä…czenia"
+msgstr "--- czas do prze³±czenia"
 
 msgid "Timezone"
 msgstr "Streafa czasowa"
@@ -1299,7 +1286,7 @@ msgid "Tone Mode"
 msgstr "Tryb tonowy"
 
 msgid "Top"
-msgstr "GÃ³ra"
+msgstr "Góra"
 
 msgid "Transponder:"
 msgstr "Transponder:"
@@ -1356,7 +1343,7 @@ msgid "update"
 msgstr "update"
 
 msgid "Usb Device"
-msgstr "UrzÄ…dzenia USB"
+msgstr "Urz±dzenia USB"
 
 msgid "Usbupdate (online)"
 msgstr "Update USB (poprzez web)"
@@ -1365,7 +1352,7 @@ msgid "Usbupdate (tmp)"
 msgstr "Update USB (tmp)"
 
 msgid "Use EPG Endtime"
-msgstr "Czas zakoÅ„czenia z EPG"
+msgstr "Czas zakoñczenia z EPG"
 
 msgid "useproxy"
 msgstr "useproxy"
@@ -1386,7 +1373,7 @@ msgid "V"
 msgstr "V"
 
 msgid "VFDisplay"
-msgstr "WyÅ›wietlacz VFD"
+msgstr "Wy¶wietlacz VFD"
 
 msgid "Video"
 msgstr "Obraz"
@@ -1398,7 +1385,7 @@ msgid "Video PID:"
 msgstr "Video PID:"
 
 msgid "Video Player"
-msgstr "Odtwarzacz filmÃ³w"
+msgstr "Odtwarzacz filmów"
 
 msgid "Video Settings"
 msgstr "Ustawienia obrazu"
@@ -1422,10 +1409,10 @@ msgid "Vol off"
 msgstr "Wycisz"
 
 msgid "Voltage Mode"
-msgstr "Tryb napiÄ™ciowy"
+msgstr "Tryb napiêciowy"
 
 msgid "Volumebar Timeout"
-msgstr "Okryj okno gÅ‚oÅ›noÅ›ci po"
+msgstr "Okryj okno g³o¶no¶ci po"
 
 msgid "w"
 msgstr "w"
@@ -1437,7 +1424,7 @@ msgid "Web Radio Player"
 msgstr "Odtwarzacz radia internetowego"
 
 msgid "Wednesday"
-msgstr "Åšroda"
+msgstr "¦roda"
 
 msgid "Wetter Infos"
 msgstr "Pogoda..."
