@@ -84,30 +84,31 @@ msgstr ""
 #: play.h:1295 play.h:1296 play.h:1489 play.h:1649 play.h:1660
 #: plugins_dlna_skin.xml.h:8 plugins_facebook_skin.xml.h:5
 #: plugins_mboxinfo_skin.xml.h:2 plugins_mc_skin.xml.h:38
-#: plugins_rgui_skin.xml.h:3 plugins_tiwakeup_skin.xml.h:3
-#: plugins_wins3_skin.xml.h:3 possetup.h:98 primeshare.h:29 primeshare.h:73
-#: primeshare.h:79 primeshare.h:124 putlocker.h:32 putlocker.h:79
-#: putlocker.h:85 putlocker.h:136 putlocker.h:146 putlocker.h:219
-#: readerconfig.h:343 readerconfig.h:443 readerconfig.h:444 readerconfig.h:488
-#: readerconfig.h:489 record.h:355 record.h:988 record.h:1439 rectimer.h:557
-#: rectimer.h:1210 rectimer.h:1356 rectimer.h:1368 restoredefault.h:10
-#: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
-#: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:28
-#: scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1888 scan.h:1979
-#: scan.h:2345 scart.h:12 scart.h:25 scriptexec.h:41 service.h:710
+#: plugins_optimize_skin.xml.h:3 plugins_rgui_skin.xml.h:3
+#: plugins_tiwakeup_skin.xml.h:3 plugins_wins3_skin.xml.h:3 possetup.h:98
+#: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
+#: putlocker.h:32 putlocker.h:79 putlocker.h:85 putlocker.h:136
+#: putlocker.h:146 putlocker.h:219 readerconfig.h:343 readerconfig.h:443
+#: readerconfig.h:444 readerconfig.h:488 readerconfig.h:489 record.h:355
+#: record.h:988 record.h:1439 rectimer.h:557 rectimer.h:1210 rectimer.h:1356
+#: rectimer.h:1368 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
+#: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
+#: rtl2now.h:28 scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1888
+#: scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 scriptexec.h:41 service.h:710
 #: service.h:951 skinadjust.h:133 skins_dlna_skin.xml.h:8 skinselector.h:218
 #: skins_facebook_skin.xml.h:5 skins_mboxinfo_skin.xml.h:2
-#: skins_mc_skin.xml.h:38 skins_rgui_skin.xml.h:3 skins_tiwakeup_skin.xml.h:3
-#: skins_wins3_skin.xml.h:3 sock.h:952 softcam.h:403 solarmovie.h:35
-#: solarmovie.h:47 solarmovie.h:295 spinner.h:18 streamcloud.h:31
-#: streamcloud.h:78 streamcloud.h:91 streamcloud.h:122 streamcloud.h:161
-#: stream.h:33 system_backup_restore.h:31 system_backup_restore.h:40
-#: system_backup_restore.h:43 system_backup_restore.h:51
-#: system_backup_restore.h:80 system_backup_restore.h:82
-#: system_backup_restore.h:88 system_backup_restore.h:95 system_update.h:320
-#: system_update.h:326 system_update.h:333 timeshift.h:113 timeshift.h:155
-#: timeshift.h:162 timeshiftsettings.h:45 titan.c:274 titan.c:338 titan.c:347
-#: titan.c:951 titan.c:960 titan.c:1071 titan.c:1092 titan.c:1098 titan.c:1109
+#: skins_mc_skin.xml.h:38 skins_optimize_skin.xml.h:3 skins_rgui_skin.xml.h:3
+#: skins_tiwakeup_skin.xml.h:3 skins_wins3_skin.xml.h:3 sock.h:952
+#: softcam.h:403 solarmovie.h:35 solarmovie.h:47 solarmovie.h:295 spinner.h:18
+#: streamcloud.h:31 streamcloud.h:78 streamcloud.h:91 streamcloud.h:122
+#: streamcloud.h:161 stream.h:33 system_backup_restore.h:31
+#: system_backup_restore.h:40 system_backup_restore.h:43
+#: system_backup_restore.h:51 system_backup_restore.h:80
+#: system_backup_restore.h:82 system_backup_restore.h:88
+#: system_backup_restore.h:95 system_update.h:320 system_update.h:326
+#: system_update.h:333 timeshift.h:113 timeshift.h:155 timeshift.h:162
+#: timeshiftsettings.h:45 titan.c:274 titan.c:338 titan.c:347 titan.c:951
+#: titan.c:960 titan.c:1071 titan.c:1092 titan.c:1098 titan.c:1109
 #: titan.c:1115 tithek_global.h:238 tithek.h:620 tithek.h:1057 tithek.h:1100
 #: tithek.h:1345 tithek.h:1367 tithek.h:1372 tithek.h:1386 tithek.h:3013
 #: tithek.h:3075 tithek.h:3089 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
@@ -170,22 +171,24 @@ msgstr ""
 #: play.h:1489 play.h:1649 play.h:1660 plugins_catcatch_skin.xml.h:4
 #: plugins_dlna_skin.xml.h:2 plugins_facebook_skin.xml.h:4
 #: plugins_instar_skin.xml.h:6 plugins_mboxinfo_skin.xml.h:1
-#: plugins_mc_skin.xml.h:22 plugins_panel_skin.xml.h:15
-#: plugins_rgui_skin.xml.h:2 plugins_tiwakeup_skin.xml.h:2
-#: plugins_wins3_skin.xml.h:1 possetup.h:98 primeshare.h:29 primeshare.h:73
-#: primeshare.h:79 primeshare.h:124 putlocker.h:32 putlocker.h:79
-#: putlocker.h:85 putlocker.h:136 putlocker.h:146 putlocker.h:219
-#: readerconfig.h:343 readerconfig.h:443 readerconfig.h:444 readerconfig.h:488
-#: readerconfig.h:489 record.h:90 record.h:355 record.h:988 record.h:1175
-#: record.h:1414 record.h:1439 rectimer.h:557 rectimer.h:1210 rectimer.h:1356
-#: rectimer.h:1368 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
+#: plugins_mc_skin.xml.h:22 plugins_optimize_skin.xml.h:2
+#: plugins_panel_skin.xml.h:15 plugins_rgui_skin.xml.h:2
+#: plugins_tiwakeup_skin.xml.h:2 plugins_wins3_skin.xml.h:1 possetup.h:98
+#: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
+#: putlocker.h:32 putlocker.h:79 putlocker.h:85 putlocker.h:136
+#: putlocker.h:146 putlocker.h:219 readerconfig.h:343 readerconfig.h:443
+#: readerconfig.h:444 readerconfig.h:488 readerconfig.h:489 record.h:90
+#: record.h:355 record.h:988 record.h:1175 record.h:1414 record.h:1439
+#: rectimer.h:557 rectimer.h:1210 rectimer.h:1356 rectimer.h:1368
+#: restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:28 scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1888
 #: scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 scriptexec.h:41 service.h:710
 #: service.h:951 skin_default_skin.xml.h:216 skins_catcatch_skin.xml.h:4
 #: skins_dlna_skin.xml.h:2 skinselector.h:218 skins_facebook_skin.xml.h:4
 #: skins_instar_skin.xml.h:6 skins_mboxinfo_skin.xml.h:1
-#: skins_mc_skin.xml.h:22 skins_panel_skin.xml.h:15 skins_rgui_skin.xml.h:2
+#: skins_mc_skin.xml.h:22 skins_optimize_skin.xml.h:2
+#: skins_panel_skin.xml.h:15 skins_rgui_skin.xml.h:2
 #: skins_tiwakeup_skin.xml.h:2 skins_wins3_skin.xml.h:1 sock.h:952
 #: softcam.h:403 solarmovie.h:35 solarmovie.h:47 solarmovie.h:295 spinner.h:18
 #: streamcloud.h:31 streamcloud.h:78 streamcloud.h:91 streamcloud.h:122
@@ -3891,18 +3894,6 @@ msgstr ""
 
 #: plugins_optimize_skin.xml.h:1 skins_optimize_skin.xml.h:1 tpk_showname.h:72
 msgid "Optimize"
-msgstr ""
-
-#: plugins_optimize_skin.xml.h:2 skins_optimize_skin.xml.h:2
-msgid ""
-"text=EXIT halign=center valign=middle bordercol=exitcol bordersize=4 "
-"bordertype=2 posx=180 posy=0 width=150 height=30/>"
-msgstr ""
-
-#: plugins_optimize_skin.xml.h:3 skins_optimize_skin.xml.h:3
-msgid ""
-"text=OK halign=center valign=middle bordercol=okcol bordersize=4 "
-"bordertype=2 posx=20 posy=0 width=150 height=30/>"
 msgstr ""
 
 #: plugins_panel_skin.xml.h:1 plugins_panel_skin.xml.h:10
