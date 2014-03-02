@@ -55,7 +55,7 @@ for ROUND in $POLIST; do
 	echo xgettext --omit-header -k_ *.* -o $ROUND
 	if [ "$TYPE" == "update" ]; then
 	old=0
-		if [ $old = 1];then
+		if [ $old = 1 ];then
 			ROUND_CLEAN=`echo $ROUND | sed 's!titan.po_auto.po!titan.po_auto.clean.po!'`
 			ROUND_UTF=`echo $ROUND | sed 's!titan.po_auto.po!titan.po_auto.utf.po!'`
 			ROUND_UTF=`echo $ROUND | sed 's!titan.po_auto.po!titan.po_auto.utf.po!'`
