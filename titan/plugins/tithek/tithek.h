@@ -1217,21 +1217,20 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 
 			// needed for autopo
 			char* tmptxt = NULL;
-			tmptxt = _("Streaming Playback (default)");
-			tmptxt = _("Streaming Playback Caching (0.5MB)");
-			tmptxt = _("Streaming Playback Caching (1MB)");
-			tmptxt = _("Streaming Playback Caching (1MB)");
-			tmptxt = _("Streaming Playback Caching (2MB)");
-			tmptxt = _("Streaming Playback Caching (3MB)");
-			tmptxt = _("Streaming Playback Caching (4MB)");
-			tmptxt = _("Streaming Playback Caching (5MB)");
-			tmptxt = _("Streaming Playback Caching (7.5MB)");
-			tmptxt = _("Streaming Playback Caching (10MB)");
-			tmptxt = _("File Caching Playback (10MB / 120s)");
-			tmptxt = _("File Caching Playback (20MB / 240s)");
-			tmptxt = _("File Caching Playback (30MB / 360s)");
-			tmptxt = _("Download Full File");
-			tmptxt = _("Download Full File (background)");
+			tmptxt = ostrcat(tmptxt, _("Streaming Playback (default)"), 1, 0);
+			tmptxt = ostrcat(tmptxt, _("Streaming Playback Caching (0.5MB)"), 1, 0);
+			tmptxt = ostrcat(tmptxt, _("Streaming Playback Caching (1MB)"), 1, 0);
+			tmptxt = ostrcat(tmptxt, _("Streaming Playback Caching (2MB)"), 1, 0);
+			tmptxt = ostrcat(tmptxt, _("Streaming Playback Caching (3MB)"), 1, 0);
+			tmptxt = ostrcat(tmptxt, _("Streaming Playback Caching (4MB)"), 1, 0);
+			tmptxt = ostrcat(tmptxt, _("Streaming Playback Caching (5MB)"), 1, 0);
+			tmptxt = ostrcat(tmptxt, _("Streaming Playback Caching (7.5MB)"), 1, 0);
+			tmptxt = ostrcat(tmptxt, _("Streaming Playback Caching (10MB)"), 1, 0);
+			tmptxt = ostrcat(tmptxt, _("File Caching Playback (10MB / 120s)"), 1, 0);
+			tmptxt = ostrcat(tmptxt, _("File Caching Playback (20MB / 240s)"), 1, 0);
+			tmptxt = ostrcat(tmptxt, _("File Caching Playback (30MB / 360s)"), 1, 0);
+			tmptxt = ostrcat(tmptxt, _("Download Full File"), 1, 0);
+			tmptxt = ostrcat(tmptxt, _("Download Full File (background)"), 1, 0);
 			free(tmptxt), tmptxt = NULL;
 	
 			addmenulist(&mlist, "Streaming Playback (default)", NULL, NULL, 0, 0);
