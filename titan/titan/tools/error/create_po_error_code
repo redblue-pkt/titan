@@ -1,5 +1,3 @@
 --------------------------------------
-[createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.mo
-/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.outfile.po:339: end-of-file within string
-msgfmt: found 1 fatal error
-msgid "reverse alpha"
+[createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.po -o /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.mo
+0 translated messages.
