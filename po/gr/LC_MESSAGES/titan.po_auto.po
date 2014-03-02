@@ -14181,3 +14181,24 @@ msgstr ""
 msgid "Condition: "
 msgstr ""
 
+#: about.h:30 bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2638
+#: httpdfunc.h:2650 hwtest.h:478 moduleconfig.h:345
+#: skin_default_skin.xml.h:695 skinselector.h:138 stream.h:22
+#: tithek_submenu.h:943 transponder.h:122 transponder.h:158 transponder.h:194
+#: transponder.h:227 transponder.h:259 transponder.h:295 transponder.h:330
+#: transponder.h:348 transponder.h:364 transponder.h:418 transponder.h:451
+#: transponder.h:480 transponder.h:493 transponder.h:504 transponder.h:574
+#: youtube.h:149 zdf.h:86
+msgid ""
+msgstr ""
+"Project-Id-Version: TitanNit 1.49\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-07 10:44+0200\n"
+"PO-Revision-Date: 2014-02-07 17:47+0200\n"
+"Last-Translator: obi <_obiwan_@web.de>\n"
+"Language-Team: German <_obiwan_@web.de>\n"
+"Language: gr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
