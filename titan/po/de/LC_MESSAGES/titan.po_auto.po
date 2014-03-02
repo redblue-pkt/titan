@@ -1868,7 +1868,7 @@ msgid "BLUE"
 msgstr "Blaue Taste"
 
 #: hwtest.h:305
-msgid "SCART 4:3/16:9"
+msgid "SCART 4:3 / 16:9"
 msgstr ""
 
 #: hwtest.h:368
