@@ -164,7 +164,7 @@ elif [ "$SVNUSER" = "aafsvn" ] && [ "$GROUP" = "dev" ];then
 	LINE=`expr $LINE - 1`
 	FILE=`cat "$HOME"/flashimg/source.titan/titan/tools/error/error.log | sed -ne ""$LINE"p" | cut -d: -f1`
 	LINE=`cat "$HOME"/flashimg/source.titan/titan/tools/error/error.log | sed -ne ""$LINE"p" | cut -d: -f2`
-#	LINE=`expr $LINE - 1`
+	LINE=`expr $LINE - 1`
 	ERROR=`cat "$FILE" | sed -ne ""$LINE"p"`
 	#ERROR=`cat "$FILE" | sed -ne ""$LINESTART","$LINEEND"p"`
 
