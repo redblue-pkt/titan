@@ -143,12 +143,12 @@ for ROUND in $POLIST; do
 #			OUTFILE_PO=`echo $ROUND | sed 's!titan.po_auto.po!titan.outfile.po!'`
 			OUTFILE_PO=$ROUND
 
-			echo "[createpo.sh] iconv -f UTF-8 -t ISO-8859-1 $ROUND > $OUTFILE_PO"
-			iconv -f UTF-8 -t ISO-8859-1 $ROUND > $OUTFILE_PO
+#			echo "[createpo.sh] iconv -f UTF-8 -t ISO-8859-1 $ROUND > $OUTFILE_PO"
+#			iconv -f UTF-8 -t ISO-8859-1 $ROUND > $OUTFILE_PO
 #			if [ ! -e "$OUTFILE_PO" ] || [ `cat "$OUTFILE_PO" | wc -l` -eq 0 ]; then error="1"; break;fi
 
 			echo "[createpo.sh] msgfmt -v $OUTFILE_PO -o $OUTFILE_MO"
-	#		rm -f "$HOME"/flashimg/source.titan/titan/tools/error/error.log
+#			rm -f "$HOME"/flashimg/source.titan/titan/tools/error/error.log
 			cmd="msgfmt -v $OUTFILE_PO -o $OUTFILE_MO"
 			echo "--------------------------------------" >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log
 			echo "[createpo.sh] $cmd" >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log
@@ -161,6 +161,18 @@ for ROUND in $POLIST; do
 #			iconv -f UTF-8 -t ISO-8859-1 $ROUND_NEW_MERGE > $ROUND
 #			if [ ! -e "$ROUND" ] || [ `cat "$ROUND" | wc -l` -eq 0 ]; then error="4"; break;fi
 			if [ ! -e "$OUTFILE_MO" ] || [ `cat "$OUTFILE_MO" | wc -l` -eq 0 ]; then error="5"; break;fi
+
+if [ $test = 2222 ];then
+msgfmt -v /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.po_auto.po -o /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.mo
+msgfmt -v /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.po -o /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.mo
+msgfmt -v /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.po -o /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.mo
+msgfmt -v /home/atemio/flashimg/source.titan/po/gr/LC_MESSAGES/titan.po_auto.po -o /home/atemio/flashimg/source.titan/po/gr/LC_MESSAGES/titan.mo
+msgfmt -v /home/atemio/flashimg/source.titan/po/it/LC_MESSAGES/titan.po_auto.po -o /home/atemio/flashimg/source.titan/po/it/LC_MESSAGES/titan.mo
+msgfmt -v /home/atemio/flashimg/source.titan/po/nl/LC_MESSAGES/titan.po_auto.po -o /home/atemio/flashimg/source.titan/po/nl/LC_MESSAGES/titan.mo
+msgfmt -v /home/atemio/flashimg/source.titan/po/pl/LC_MESSAGES/titan.po_auto.po -o /home/atemio/flashimg/source.titan/po/pl/LC_MESSAGES/titan.mo
+msgfmt -v /home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.po -o /home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.mo
+msgfmt -v /home/atemio/flashimg/source.titan/po/vn/LC_MESSAGES/titan.po_auto.po -o /home/atemio/flashimg/source.titan/po/vn/LC_MESSAGES/titan.mo
+fi
 		fi
 	else
 		xgettext --omit-header -k_ *.* -o $ROUND
