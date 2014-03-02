@@ -5,3 +5,8 @@ tithek_submenu.h:905: warning: unterminated string literal
 [createpo.sh] xgettext --omit-header -k_ *.* -o /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.new.po
 tithek_submenu.h:70: warning: unterminated string literal
 tithek_submenu.h:905: warning: unterminated string literal
+--------------------------------------
+[createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.mo
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.outfile.po:4933: end-of-file within string
+msgfmt: found 1 fatal error
+msgid "Greek"
