@@ -17,7 +17,15 @@
 [createpo.sh] xgettext --omit-header -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/it/LC_MESSAGES/titan.po_auto.utf.po
 [createpo.sh] xgettext --omit-header -k_ *.* -o /home/atemio/flashimg/source.titan/po/it/LC_MESSAGES/titan.new.po
 [createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/it/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/it/LC_MESSAGES/titan.mo
-/home/atemio/flashimg/source.titan/po/it/LC_MESSAGES/titan.outfile.po:4419: `msgid' and `msgstr' entries do not both end with '\n'
-msgfmt: found 1 fatal error
 1348 translated messages, 16 untranslated messages.
-msgstr "Timer Record Path"
+[createpo.sh] xgettext --omit-header -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/pl/LC_MESSAGES/titan.po_auto.utf.po
+[createpo.sh] xgettext --omit-header -k_ *.* -o /home/atemio/flashimg/source.titan/po/pl/LC_MESSAGES/titan.new.po
+[createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/pl/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/pl/LC_MESSAGES/titan.mo
+484 translated messages.
+[createpo.sh] xgettext --omit-header -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.po_auto.utf.po
+[createpo.sh] xgettext --omit-header -k_ *.* -o /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.new.po
+[createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.mo
+/home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.outfile.po:4445: `msgid' and `msgstr' entries do not both end with '\n'
+msgfmt: found 1 fatal error
+1329 translated messages, 96 untranslated messages.
+msgstr "Pfad für zeitgesteuerte Aufnahmen (Timer)"
