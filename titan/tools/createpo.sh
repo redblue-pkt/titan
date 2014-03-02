@@ -47,7 +47,7 @@ cat "$HOME"/flashimg/source.titan/skins/tithek/tithekmainmenu/*.list | grep -v i
 #cat /var/www/atemio/web/mediathek/*/*.category.list  | cut -d"#" -f1 | sort -u | sed -e 's/^/tmpstr = _("/' | grep -v link= | grep -v title= | tr '\0' '#' | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/source.titan/titan/tools/tmp/tithek_submenu.h
 
 error=0
-
+rm -rf /home/atemio/flashimg/source.titan/po/fr
 for ROUND in $POLIST; do
 	echo "[createpo.sh] ############################ start ###############################"
 	echo "[createpo.sh] update $ROUND"
