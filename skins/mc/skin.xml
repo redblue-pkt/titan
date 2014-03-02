@@ -100,7 +100,7 @@
 <node name="b5" picmem="skin/key_ok_70x40.png"   posx="50"  posy="665" width="70" height="40">
 <node name="b6" picmem="skin/key_exit_70x40.png" posx="125" posy="665" width="70" height="40">
 <node name="b1" text="Sorting" picmem="skin/key_red_30x30.png"     textposx="40" valign="middle" fontcol="black" fontsize="25" posx="205" posy="670" width="180" height="30">
-//<node name="b2" text="Filelist-Mode" picmem="skin/key_green_30x30.png"   textposx="40" valign="middle" fontcol="black" fontsize="25" posx="395" posy="670" width="200" height="30">
+#<node name="b2" text="Filelist-Mode" picmem="skin/key_green_30x30.png"   textposx="40" valign="middle" fontcol="black" fontsize="25" posx="395" posy="670" width="200" height="30">
 <node name="b2" text="Playlist" picmem="skin/key_green_30x30.png"   textposx="40" valign="middle" fontcol="black" fontsize="25" posx="380" posy="670" width="230" height="30">
 <node name="b3" text="Random"  picmem="skin/key_yellow_30x30.png"  textposx="40" valign="middle" fontcol="black" fontsize="25" posx="615" posy="670" width="200" height="30">
 <node name="b4" text="Repeat"   picmem="skin/key_blue_30x30.png"    textposx="40" valign="middle" fontcol="black" fontsize="25" posx="780" posy="670" width="200" height="30">
@@ -165,7 +165,7 @@
 <node name="b5" picmem="skin/key_ok_70x40.png"   posx="50"  posy="665" width="70" height="40">
 <node name="b6" picmem="skin/key_exit_70x40.png" posx="125" posy="665" width="70" height="40">
 <node name="b1" text="Sorting" picmem="skin/key_red_30x30.png"     textposx="40" valign="middle" fontcol="black" fontsize="25" posx="205" posy="670" width="180" height="30">
-//<node name="b2" text="Filelist-Mode" picmem="skin/key_green_30x30.png"   textposx="40" valign="middle" fontcol="black" fontsize="25" posx="395" posy="670" width="200" height="30">
+#<node name="b2" text="Filelist-Mode" picmem="skin/key_green_30x30.png"   textposx="40" valign="middle" fontcol="black" fontsize="25" posx="395" posy="670" width="200" height="30">
 <node name="b2" text="Playlist" picmem="skin/key_green_30x30.png"   textposx="40" valign="middle" fontcol="black" fontsize="25" posx="380" posy="670" width="230" height="30">
 <node name="b3" text="Random"  picmem="skin/key_yellow_30x30.png"  textposx="40" valign="middle" fontcol="black" fontsize="25" posx="615" posy="670" width="200" height="30">
 <node name="b4" text="Repeat"   picmem="skin/key_blue_30x30.png"    textposx="40" valign="middle" fontcol="black" fontsize="25" posx="780" posy="670" width="200" height="30">
