@@ -1,3 +1,4 @@
-tithek_submenu.h:70: warning: unterminated string literal
-tithek_submenu.h:70: warning: unterminated string literal
-0 translated messages, 3209 untranslated messages.
+[createpo.sh] xgettext --omit-header -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.utf.po
+[createpo.sh] xgettext --omit-header -k_ *.* -o /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.new.po
+[createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.mo
+122 translated messages, 455 untranslated messages.
