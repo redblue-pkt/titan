@@ -4579,7 +4579,7 @@ msgid "Box recording finished poweroff in 30sec !"
 msgstr "Registrazione Finita. Box sara spento in 30 secondi !"
 
 #, fuzzy
-msgid "Timer Record start !\n"
+msgid "Timer Record start !"
 msgstr "Timer Record Path"
 
 msgid "Choice Install Medium"
