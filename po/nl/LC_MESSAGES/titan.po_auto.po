@@ -14436,18 +14436,3 @@ msgstr "Maximum temperatuur: "
 #: weather.h:442 weather.h:460 weather.h:478 weather.h:496
 msgid "Condition: "
 msgstr "Weer:"
-
-#~ msgid "Search on Kinox"
-#~ msgstr "Search on Kinox"
-
-#~ msgid "Timer Record start !\n"
-#~ msgstr "Timer Aufnahme gestartet! \n"
-
-#~ msgid "channel  time"
-#~ msgstr "Zendernaam  tijd"
-
-#~ msgid "time  channel"
-#~ msgstr "tijd  zendernaam"
-
-#~ msgid "date  time"
-#~ msgstr "Datum  Tijd"

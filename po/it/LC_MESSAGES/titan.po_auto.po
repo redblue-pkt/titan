@@ -14360,9 +14360,3 @@ msgstr "Highest temp: "
 #: weather.h:442 weather.h:460 weather.h:478 weather.h:496
 msgid "Condition: "
 msgstr "Meteo: "
-
-#~ msgid "Search on Kinox"
-#~ msgstr "Search on Kinox"
-
-#~ msgid "Timer Record start !\n"
-#~ msgstr "Timer registrazione partita ! \n"
