@@ -1,21 +1,5 @@
 --------------------------------------
-[createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.po -o /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.mo
-494 translated messages, 2833 untranslated messages.
---------------------------------------
-[createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.po -o /home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.mo
-489 translated messages, 2837 untranslated messages.
---------------------------------------
-[createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.po -o /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.mo
-873 translated messages, 2454 untranslated messages.
---------------------------------------
-[createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/vn/LC_MESSAGES/titan.po_auto.po -o /home/atemio/flashimg/source.titan/po/vn/LC_MESSAGES/titan.mo
-/home/atemio/flashimg/source.titan/po/vn/LC_MESSAGES/titan.po_auto.po:5329:62: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/vn/LC_MESSAGES/titan.po_auto.po:5330:2: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/vn/LC_MESSAGES/titan.po_auto.po:5998:61: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/vn/LC_MESSAGES/titan.po_auto.po:5999:2: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/vn/LC_MESSAGES/titan.po_auto.po:6231:61: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/vn/LC_MESSAGES/titan.po_auto.po:6232:2: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/vn/LC_MESSAGES/titan.po_auto.po:12558:62: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/vn/LC_MESSAGES/titan.po_auto.po:12559:2: invalid multibyte sequence
-msgfmt: found 8 fatal errors
-"lỗi, kết quả tìm kiếm có một imdbid không hợp lệ và do đó kh�"
+[createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.mo
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.outfile.po:339: end-of-file within string
+msgfmt: found 1 fatal error
+msgid "reverse alpha"
