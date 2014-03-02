@@ -367,13 +367,15 @@ void screenhwtest()
 						{
 							tmpstr1 = ostrcat(tmpstr1, _("Smartcard "), 1, 0);
 							tmpstr1 = ostrcat(tmpstr1, oitoa(smartcardcount), 1, 1);
-							tmpstr1 = ostrcat(tmpstr1, _(": Present\n"), 1, 0);
+							tmpstr1 = ostrcat(tmpstr1, ": ", 1, 0);
+							tmpstr1 = ostrcat(tmpstr1, _("Present"), 1, 0);
+							tmpstr1 = ostrcat(tmpstr1, "\n", 1, 0);
 						}
 						else
 						{
-							tmpstr1 = ostrcat(tmpstr1, _("Smartcard "), 1, 0);
-							tmpstr1 = ostrcat(tmpstr1, oitoa(smartcardcount), 1, 1);
-							tmpstr1 = ostrcat(tmpstr1, _(": Not Present\n"), 1, 0);
+							tmpstr1 = ostrcat(tmpstr1, ": ", 1, 0);
+							tmpstr1 = ostrcat(tmpstr1, _("Not Present"), 1, 0);
+							tmpstr1 = ostrcat(tmpstr1, "\n", 1, 0);
 						}
 					}
 					
@@ -572,36 +574,61 @@ void screenhwtest()
 				ret1 = fesetvoltage(status.aktservice->fedev, SEC_VOLTAGE_OFF, 15);
 				ret2 = fesettone(status.aktservice->fedev, SEC_TONE_OFF, 15);
 				if(ret1 == 0 && ret2 == 0)
-					tmpstr = ostrcat(tmpstr, _("LNB off / 22K off: OK\n"), 1, 0);
+				{
+					tmpstr = ostrcat(tmpstr, _("LNB off / 22K off: OK"), 1, 0);
+					tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+				}
 				else
-					tmpstr = ostrcat(tmpstr, _("LNB off / 22K off: NOT OK\n"), 1, 0);
+				{
+					tmpstr = ostrcat(tmpstr, _("LNB off / 22K off: NOT OK"), 1, 0);
+					tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+				}
 				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
+
 				free(tmpstr); tmpstr = NULL;
 				
 				ret1 = fesetvoltage(status.aktservice->fedev, SEC_VOLTAGE_18, 15);
 				ret2 = fesettone(status.aktservice->fedev, SEC_TONE_OFF, 15);
 				if(ret1 == 0 && ret2 == 0)
-					tmpstr = ostrcat(tmpstr, _("LNB 18V / 22K off: OK\n"), 1, 0);
+				{
+					tmpstr = ostrcat(tmpstr, _("LNB 18V / 22K off: OK"), 1, 0);
+					tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+				}
 				else
-					tmpstr = ostrcat(tmpstr, _("LNB 18V / 22K off: NOT OK\n"), 1, 0);
+				{
+					tmpstr = ostrcat(tmpstr, _("LNB 18V / 22K off: NOT OK"), 1, 0);
+					tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+				}
 				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 				free(tmpstr); tmpstr = NULL;
 				
 				ret1 = fesetvoltage(status.aktservice->fedev, SEC_VOLTAGE_13, 15);
 				ret2 = fesettone(status.aktservice->fedev, SEC_TONE_OFF, 15);
 				if(ret1 == 0 && ret2 == 0)
-					tmpstr = ostrcat(tmpstr, _("LNB 13V / 22K off: OK\n"), 1, 0);
+				{
+					tmpstr = ostrcat(tmpstr, _("LNB 13V / 22K off: OK"), 1, 0);
+					tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+				}
 				else
-					tmpstr = ostrcat(tmpstr, _("LNB 13V / 22K off: NOT OK\n"), 1, 0);
+				{
+					tmpstr = ostrcat(tmpstr, _("LNB 13V / 22K off: NOT OK"), 1, 0);
+					tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+				}
 				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 				free(tmpstr); tmpstr = NULL;
 				
 				ret1 = fesetvoltage(status.aktservice->fedev, SEC_VOLTAGE_13, 15);
 				ret2 = fesettone(status.aktservice->fedev, SEC_TONE_ON, 15);
 				if(ret1 == 0 && ret2 == 0)
-					tmpstr = ostrcat(tmpstr, _("LNB 13V / 22K on: OK\n"), 1, 0);
+				{
+					tmpstr = ostrcat(tmpstr, _("LNB 13V / 22K on: OK"), 1, 0);
+					tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+				}
 				else
-					tmpstr = ostrcat(tmpstr, _("LNB 13V / 22K on: NOT OK\n"), 1, 0);
+				{
+					tmpstr = ostrcat(tmpstr, _("LNB 13V / 22K on: NOT OK"), 1, 0);
+					tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+				}
 				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 				free(tmpstr); tmpstr = NULL;
 				
