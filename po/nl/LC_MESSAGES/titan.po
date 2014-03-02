@@ -1,3 +1,16 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: TitanNit 1.49\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-07 10:44+0200\n"
+"PO-Revision-Date: 2014-02-07 17:47+0200\n"
+"Last-Translator: obi <_obiwan_@web.de>\n"
+"Language-Team: German <_obiwan_@web.de>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
 msgid "--- SD resolution"
 msgstr "--- SD resolutie"
 
@@ -601,7 +614,7 @@ msgid "endless"
 msgstr "onbegrensd"
 
 msgid "English"
-msgstr "English"
+msgstr "Engels"
 
 msgid "EPG Info"
 msgstr "EPG Info"
@@ -772,7 +785,7 @@ msgstr "Letop! er loopt een opname, of start binnenkort.\n"
 "Wilt u nu werkelijk uitschakelen?"
 
 msgid "French"
-msgstr "Francais"
+msgstr "Frans"
 
 msgid "free space"
 msgstr "Vrije opslagruimte"
@@ -835,16 +848,16 @@ msgid "Graphic EPG Picon"
 msgstr "Grafisches Multi-EPG picon"
 
 msgid "Greek"
-msgstr "Greek"
+msgstr "Grieks"
 
 msgid "grey"
 msgstr "grijs"
 
 msgid "German"
-msgstr "Deutsch"
+msgstr "Duits"
 
 msgid "Dutch"
-msgstr "Nederlands"
+msgstr "Dutch"
 
 msgid "GUI Restart"
 msgstr "GUI herstart"
@@ -975,7 +988,7 @@ msgid "Is this Videomode ok ?"
 msgstr "Is deze Video instelling ok?"
 
 msgid "Italian"
-msgstr "Italiano"
+msgstr "Italiaans"
 
 msgid "iwatch"
 msgstr "iWatch"
@@ -1457,7 +1470,7 @@ msgid "Policy"
 msgstr "Beeldinstellingen"
 
 msgid "Polish"
-msgstr "Polski"
+msgstr "Pools"
 
 msgid "portmap"
 msgstr "portmap"
@@ -1733,7 +1746,7 @@ msgid "rsize"
 msgstr "rsize"
 
 msgid "Russian"
-msgstr "Russkiy"
+msgstr "Russisch"
 
 msgid "Samba Server Settings"
 msgstr "Samba Server instellingen"
