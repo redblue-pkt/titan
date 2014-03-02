@@ -58,7 +58,7 @@ msgstr ""
 #: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
 #: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626
-#: inadyn.h:188 inadyn.h:190 inadyn.h:200 info.h:27 keyactions.h:227 log.h:46
+#: inadyn.h:188 inadyn.h:190 inadyn.h:200 info.h:27 keyactions.h:241 log.h:46
 #: log.h:48 mc_audioplayer.h:328 mc_audioplayer.h:599 mc_audioplayer.h:702
 #: mc_dateibrowser.h:38 mc_global.h:766 mc_global.h:1011
 #: mc_internetbrowser.h:38 mc_internetbrowser.h:41 mc_main.h:37 mc_main.h:42
@@ -144,7 +144,7 @@ msgstr "OK"
 #: hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566 hwtest.h:586
 #: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
 #: hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626 inadyn.h:188
-#: inadyn.h:190 inadyn.h:200 info.h:27 keyactions.h:227 log.h:46 log.h:48
+#: inadyn.h:190 inadyn.h:200 info.h:27 keyactions.h:241 log.h:46 log.h:48
 #: marker.h:215 marker.h:229 mc_audioplayer.h:328 mc_audioplayer.h:599
 #: mc_audioplayer.h:702 mc_dateibrowser.h:38 mc_global.h:766 mc_global.h:1011
 #: mc_internetbrowser.h:38 mc_internetbrowser.h:41 mc_main.h:37 mc_main.h:42
@@ -521,7 +521,7 @@ msgstr ""
 #: hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566 hwtest.h:586
 #: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
 #: hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626 inadyn.h:188
-#: inadyn.h:190 inadyn.h:200 keyactions.h:227 language.h:49 log.h:46 log.h:48
+#: inadyn.h:190 inadyn.h:200 keyactions.h:241 language.h:49 log.h:46 log.h:48
 #: marker.h:215 marker.h:229 mc_audioplayer.h:328 mc_audioplayer.h:599
 #: mc_audioplayer.h:702 mc_dateibrowser.h:38 mc_global.h:766 mc_global.h:1011
 #: mc_internetbrowser.h:38 mc_internetbrowser.h:41 mc_main.h:37 mc_main.h:42
@@ -1179,13 +1179,13 @@ msgstr ""
 msgid "Single EPG"
 msgstr "EPG"
 
-#: epgsettings.h:138 epgsettings.h:179 keyactions.h:55 keyactions.h:112
+#: epgsettings.h:138 epgsettings.h:179 keyactions.h:25
 #: settings_bluebutton.h:16 settings_pluginbutton.h:17 settings_redbutton.h:17
 #: skin_default_skin.xml.h:387
 msgid "Multi EPG"
 msgstr "EPG"
 
-#: epgsettings.h:139 keyactions.h:56 keyactions.h:119 settings_bluebutton.h:17
+#: epgsettings.h:139 keyactions.h:26 settings_bluebutton.h:17
 #: settings_pluginbutton.h:18 settings_redbutton.h:18
 #: skin_default_skin.xml.h:254
 msgid "Graphic Multi EPG"
@@ -1504,7 +1504,7 @@ msgstr "Không thể hiển thị file này"
 msgid "Registration needed, please contact Atemio !"
 msgstr ""
 
-#: global.h:6385 keyactions.h:227
+#: global.h:6385 keyactions.h:241
 msgid "ERROR cant read res"
 msgstr "Lỗi không thể đọc"
 
@@ -1976,52 +1976,53 @@ msgstr ""
 msgid "ein"
 msgstr ""
 
-#: keyactions.h:21
-msgid "Key Action - Plugins"
-msgstr ""
+#: keyactions.h:21 settings_bluebutton.h:15 settings_pluginbutton.h:12
+#: settings_pluginbutton.h:44 settings_redbutton.h:12 settings_redbutton.h:44
+msgid "Extensions List"
+msgstr "Danh sách mở rộng"
 
-#: keyactions.h:24 keyactions.h:147 play.h:646
-msgid "MediaDB Scan Info"
-msgstr "Thông tin quét MediaDB"
-
-#: keyactions.h:51 keyactions.h:98 settings_pluginbutton.h:13
-#: settings_redbutton.h:13
+#: keyactions.h:22 settings_pluginbutton.h:13 settings_redbutton.h:13
 msgid "Auto Resolution"
 msgstr "Độ phân giải tự động"
 
-#: keyactions.h:53 keyactions.h:84 settings_bluebutton.h:14
-#: settings_pluginbutton.h:15 settings_redbutton.h:15
-#: skin_default_skin.xml.h:585
+#: keyactions.h:23 settings_bluebutton.h:12 settings_bluebutton.h:43
+#: settings_pluginbutton.h:16 settings_redbutton.h:16
+msgid "TV / Radio Switch"
+msgstr ""
+
+#: keyactions.h:24 settings_bluebutton.h:14 settings_pluginbutton.h:15
+#: settings_redbutton.h:15 skin_default_skin.xml.h:585
 msgid "Softcam Panel"
 msgstr ""
 
-#: keyactions.h:57 keyactions.h:126 settings_bluebutton.h:18
-#: settings_pluginbutton.h:19 settings_redbutton.h:19
+#: keyactions.h:27 settings_bluebutton.h:18 settings_pluginbutton.h:19
+#: settings_redbutton.h:19
 msgid "Sleep Timer"
 msgstr "Tắt bộ định thời"
 
-#: keyactions.h:58 keyactions.h:133 settings_bluebutton.h:19
-#: settings_pluginbutton.h:20 settings_redbutton.h:20
-#: skin_default_skin.xml.h:134
+#: keyactions.h:28 settings_bluebutton.h:19 settings_pluginbutton.h:20
+#: settings_redbutton.h:20 skin_default_skin.xml.h:134
 msgid "Child Protection"
 msgstr "Khóa trẻ em"
 
-#: keyactions.h:59 keyactions.h:91 settings_bluebutton.h:20
-#: settings_pluginbutton.h:21 settings_redbutton.h:21 videomode.h:17
-#: videomode.h:34
+#: keyactions.h:29 settings_bluebutton.h:20 settings_pluginbutton.h:21
+#: settings_redbutton.h:21 videomode.h:17 videomode.h:34
 msgid "Subchannel"
 msgstr "Các chương trình phụ"
 
-#: keyactions.h:60 keyactions.h:140 play.h:702 settings_bluebutton.h:21
+#: keyactions.h:30 play.h:702 settings_bluebutton.h:21
 #: settings_pluginbutton.h:22 settings_redbutton.h:22
 #: skin_default_skin.xml.h:191
 msgid "Downloads"
 msgstr ""
 
-#: keyactions.h:105 settings_bluebutton.h:15 settings_pluginbutton.h:12
-#: settings_pluginbutton.h:44 settings_redbutton.h:12 settings_redbutton.h:44
-msgid "Extensions List"
-msgstr "Danh sách mở rộng"
+#: keyactions.h:35
+msgid "Key Action - Plugins"
+msgstr ""
+
+#: keyactions.h:38 play.h:646
+msgid "MediaDB Scan Info"
+msgstr "Thông tin quét MediaDB"
 
 #: kinox.h:292 movie4k.h:720 movie4k.h:846 movie4k.h:960 solarmovie.h:443
 msgid "Season"
@@ -4922,11 +4923,6 @@ msgstr ""
 #: settings_bluebutton.h:6
 msgid "Blue Key Action - Setup"
 msgstr "Nút màu xanh da trời – Cài đặt"
-
-#: settings_bluebutton.h:12 settings_bluebutton.h:43
-#: settings_pluginbutton.h:16 settings_redbutton.h:16
-msgid "TV / Radio Switch"
-msgstr ""
 
 #: settings_pluginbutton.h:6
 msgid "Plugin Key Action - Setup"
