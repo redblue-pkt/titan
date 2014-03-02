@@ -4504,7 +4504,7 @@ msgstr ""
 "Chuyển để ghi/Timeshift chương trình"
 
 #: record.h:1174
-msgid "Timer Record start !\n"
+msgid "Timer Record start !"
 msgstr ""
 
 #: record.h:1289 record.h:1298 record.h:1309 record.h:1344 record.h:1353

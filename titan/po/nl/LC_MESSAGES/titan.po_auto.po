@@ -4534,8 +4534,8 @@ msgstr ""
 "zappen naar  opname/timeshift kanaal ?"
 
 #: record.h:1174
-msgid "Timer Record start !\n"
-msgstr "Timer Aufnahme gestartet! \n"
+msgid "Timer Record start !"
+msgstr ""
 
 #: record.h:1289 record.h:1298 record.h:1309 record.h:1344 record.h:1353
 #: record.h:1385 stream.h:15 stream.h:37
@@ -6102,8 +6102,8 @@ msgid ""
 msgstr ""
 "Hier können Sie die Einstellungen für CI-Module anpassen.\n"
 "\n"
-"Benutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit "
-"Ihrer Fernbedienung um zu navigieren."
+"Benutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer "
+"Fernbedienung um zu navigieren."
 
 #: skin_default_skin.xml.h:282
 msgid ""
@@ -6191,8 +6191,8 @@ msgid ""
 msgstr ""
 "Hier können Sie die Timeshift Einstellungen anpassen.\n"
 "\n"
-"Benutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit "
-"Ihrer Fernbedienung um zu navigieren."
+"Benutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer "
+"Fernbedienung um zu navigieren."
 
 #: skin_default_skin.xml.h:291
 msgid ""
@@ -14416,3 +14416,6 @@ msgstr "Maximum temperatuur: "
 #: weather.h:442 weather.h:460 weather.h:478 weather.h:496
 msgid "Condition: "
 msgstr "Weer:"
+
+#~ msgid "Timer Record start !\n"
+#~ msgstr "Timer Aufnahme gestartet! \n"

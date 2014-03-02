@@ -4583,8 +4583,8 @@ msgstr ""
 "Zum Aufnahme/Timeshift-Sender wechseln?"
 
 #: record.h:1174
-msgid "Timer Record start !\n"
-msgstr "Timeraufnahme wurde gestartet !\n"
+msgid "Timer Record start !"
+msgstr ""
 
 #: record.h:1289 record.h:1298 record.h:1309 record.h:1344 record.h:1353
 #: record.h:1385 stream.h:15 stream.h:37
@@ -12809,7 +12809,8 @@ msgstr "Alternativer Skin für Pearl LCD"
 #: tpk_description.h:5
 msgid ""
 "Alternativer Skin fuer Samsung LCD - ohne Picons (extra zu installieren)"
-msgstr "Alternativer Skin für Samsung LCD - ohne Picons (extra zu installieren)"
+msgstr ""
+"Alternativer Skin für Samsung LCD - ohne Picons (extra zu installieren)"
 
 #: tpk_description.h:6
 msgid "Automatisch Timer setzen"
@@ -14511,3 +14512,6 @@ msgstr "Höchsttemperatur"
 #: weather.h:442 weather.h:460 weather.h:478 weather.h:496
 msgid "Condition: "
 msgstr "Wetter:"
+
+#~ msgid "Timer Record start !\n"
+#~ msgstr "Timeraufnahme wurde gestartet !\n"
