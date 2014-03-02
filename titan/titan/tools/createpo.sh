@@ -190,9 +190,23 @@ for ROUND in $POLIST; do
 			msgmerge $ROUND_UTF $ROUND_NEW > $ROUND_NEW_MERGE
 			if [ ! -e "$ROUND_NEW_MERGE" ] || [ `cat "$ROUND_NEW_MERGE" | wc -l` -eq 0 ]; then error="5"; break;fi
 ####
-cp -a $ROUND_NEW_MERGE $OUTFILE_PO
+#cp -a $ROUND_NEW_MERGE $OUTFILE_PO
 #############
+##################################
+			iconv -f UTF-8 -t ISO-8859-1 $ROUND_MERGE_UTF > $ROUND_MERGE
+			if [ ! -e "$ROUND_MERGE" ] || [ `cat "$ROUND_MERGE" | wc -l` -eq 0 ]; then error="8"; break;fi
+	
+			SEARCH=`cat $ROUND_MERGE | grep -n "Content-Transfer-Encoding: 8bit" | cut -d":" -f1`
+	
+			echo "[createpo.sh] SEARCH $SEARCH"
+			CUT=`expr $SEARCH + 1`
+			echo "[createpo.sh] CUT $CUT"
+	
+			cat $ROUND_MERGE | sed "1,"$CUT"d" > $OUTFILE_PO
+			if [ ! -e "$OUTFILE_PO" ] || [ `cat "$OUTFILE_PO" | wc -l` -eq 0 ]; then error="9"; break;fi
 
+
+##################################
 			echo "[createpo.sh] msgfmt -v $OUTFILE_PO -o $OUTFILE_MO"
 #			rm -f "$HOME"/flashimg/source.titan/titan/tools/error/error.log
 			cmd="msgfmt -v $OUTFILE_PO -o $OUTFILE_MO"
