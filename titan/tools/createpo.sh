@@ -165,7 +165,7 @@ for ROUND in $POLIST; do
 
 			echo "[createpo.sh] xgettext --omit-header -j -k_ *.* -o $ROUND_UTF"
 	#		rm -f "$HOME"/flashimg/source.titan/titan/tools/error/error.log
-			cmd="xgettext --omit-header -j -k_ *.* -o $ROUND_UTF"
+			cmd="xgettext --strict --omit-header -j -k_ *.* -o $ROUND_UTF"
 			echo "--------------------------------------" >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log
 			echo "[createpo.sh] $cmd" > "$HOME"/flashimg/source.titan/titan/tools/error/error.log
 			$cmd >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log 2>&1
@@ -179,7 +179,7 @@ for ROUND in $POLIST; do
 	
 			echo "[createpo.sh] xgettext --omit-header -k_ *.* -o $ROUND_NEW"
 	#		rm -f "$HOME"/flashimg/source.titan/titan/tools/error/error.log
-			cmd="xgettext --omit-header -k_ *.* -o $ROUND_NEW"
+			cmd="xgettext --strict --omit-header -k_ *.* -o $ROUND_NEW"
 			echo "--------------------------------------" >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log
 			echo "[createpo.sh] $cmd" >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log
 			$cmd >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log 2>&1
