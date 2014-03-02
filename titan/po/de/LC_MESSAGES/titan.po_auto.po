@@ -364,7 +364,7 @@ msgstr "Datum absteigend"
 
 #: adjust.h:105
 msgid "Power Menu"
-msgstr "Ausschalten / Neustarten"
+msgstr "Ausschalten / Neustart"
 
 #: adjust.h:106 skin_default_skin.xml.h:454
 msgid "Power Off"
@@ -376,7 +376,7 @@ msgstr ""
 
 #: adjust.h:108 skin_default_skin.xml.h:503 softcam.h:291
 msgid "Restart"
-msgstr "Neustarten"
+msgstr "neu starten"
 
 #: adjust.h:109
 msgid "Gui Restart"
@@ -1218,7 +1218,7 @@ msgstr "immer"
 
 #: epgsettings.h:190
 msgid "only on power off / restart"
-msgstr "Nur beim Ausschalten/Neustarten"
+msgstr "Nur beim Ausschalten/Neustart"
 
 #: epgsettings.h:191 mediadbsettings.h:48
 msgid "never"
@@ -2662,7 +2662,7 @@ msgstr "Folgt in Kürze"
 
 #: network.h:295
 msgid "Restart Network ?"
-msgstr "Netzwerk Neustarten?"
+msgstr "Netzwerk neu starten?"
 
 #: network.h:297
 msgid "Aktivate new network config ?"
