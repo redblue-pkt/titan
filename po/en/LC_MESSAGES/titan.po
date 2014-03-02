@@ -4048,8 +4048,8 @@ msgstr "Unstable"
 msgid "Box recording finished poweroff in 30sec !"
 msgstr "Recording finished. Poweroff in 30sec!"
 
-msgid "Timer Record start !\n"
-msgstr "Timer Recording started! \n"
+msgid "Timer Record start !"
+msgstr "Timer Recording started!"
 
 msgid "Choice Install Medium"
 msgstr "Choose Install Medium"
