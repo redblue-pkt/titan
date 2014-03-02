@@ -4500,7 +4500,7 @@ msgstr "Record / Timeshift / Stream"
 
 #: record.h:355
 msgid "Box recording finished poweroff in 30sec !"
-msgstr "Registrazione Finita. Box sara spento in 30 secondi !\ "
+msgstr "Registrazione Finita. Box sara spento in 30 secondi !"
 
 #: record.h:988
 msgid ""
@@ -4512,7 +4512,7 @@ msgstr ""
 
 #: record.h:1174
 msgid "Timer Record start !\n"
-msgstr "Timer registrazione partita ! \n"
+msgstr "Timer registrazione partita !"
 
 #: record.h:1289 record.h:1298 record.h:1309 record.h:1344 record.h:1353
 #: record.h:1385 stream.h:15 stream.h:37
