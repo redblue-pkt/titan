@@ -29,7 +29,6 @@ msgstr "3D - Einstellungen"
 msgid "500rpm"
 msgstr "500 U/Min"
 
-#, fuzzy
 msgid ""
 "A mount entry with this name already exists!\n"
 "Update existing entry and continue?"
@@ -64,7 +63,6 @@ msgstr ""
 "Wollen Sie die ausgewählte Partition überprüfen?\n"
 "Der Receiver wird anschließend neu gestartet."
 
-#, fuzzy
 msgid "A record hdd or a swapstick must be mounted!"
 msgstr ""
 "ACHTUNG: Eine Festplatte oder ein USB Gerät muss für Aufnahmen angeschlossen "
@@ -78,7 +76,6 @@ msgstr "Audio/Video"
 msgid "Wizard"
 msgstr "Assistent"
 
-#, fuzzy
 msgid "Aborting restoring..."
 msgstr "Folgt in Kürze"
 
@@ -97,7 +94,6 @@ msgstr "Dolby Digital (AC3) downmix"
 msgid "AC3 Mode"
 msgstr "Dolby Digital (AC3) Modus"
 
-#, fuzzy
 msgid "Action after"
 msgstr "Aktion anschließend"
 
@@ -137,11 +133,9 @@ msgstr "FTPFS Netzwerkfreigabe hinzufügen"
 msgid "add new share"
 msgstr "Neue Freigabe hinzufügen"
 
-#, fuzzy
 msgid "add cifs share"
 msgstr "CIFS Netzwerkfreigabe hinzufügen"
 
-#, fuzzy
 msgid "add nfs share"
 msgstr "NFS Server"
 
@@ -181,11 +175,9 @@ msgstr "Alle Sender"
 msgid "alpha"
 msgstr "Alphabetisch aufsteigend"
 
-#, fuzzy
 msgid "alt file"
 msgstr "Datei"
 
-#, fuzzy
 msgid "Are you sure you want to restore settings?"
 msgstr "ACHTUNG: Wollen Sie die Netzwerkfreigabe wirklich entfernen?"
 
@@ -234,7 +226,6 @@ msgstr "Automatische Auflösung"
 msgid "Automatic Search"
 msgstr "Automatische Suche"
 
-#, fuzzy
 msgid "Automatic stop in 5 seconds."
 msgstr "Automatisches Beenden in 10 Sekunden."
 
@@ -262,7 +253,6 @@ msgstr "SICHERUNGS FEHLER!!!"
 msgid "Backup - Settings"
 msgstr "Einstellungen sichern"
 
-#, fuzzy
 msgid ""
 "Backup startet\n"
 "\n"
@@ -278,7 +268,6 @@ msgstr "BBGain"
 msgid "BER:"
 msgstr ""
 
-#, fuzzy
 msgid "bestfit"
 msgstr "beste Qualität"
 
@@ -297,7 +286,6 @@ msgstr "Blaue Taste"
 msgid "Blue Key Action - Setup"
 msgstr "Blaue Taste - Belegungsmenü"
 
-#, fuzzy
 msgid "Blue Key Action - Plugins"
 msgstr "Tastenbelegung - Plugins"
 
@@ -307,14 +295,12 @@ msgstr "Rahmen"
 msgid "bootlogos"
 msgstr ""
 
-#, fuzzy
 msgid "bootlogo"
 msgstr "Boot Stopp"
 
 msgid "Bootlogo"
 msgstr ""
 
-#, fuzzy
 msgid "BootResolution"
 msgstr "Boot-Auflösung"
 
@@ -339,14 +325,12 @@ msgstr "Helligkeit"
 msgid "broadcast"
 msgstr ""
 
-#, fuzzy
 msgid "browsers"
 msgstr "Browser"
 
 msgid "Cam / Emu"
 msgstr "Softcam"
 
-#, fuzzy
 msgid "CAM PMT Mode"
 msgstr "Dolby Digital (AC3) Modus"
 
@@ -418,7 +402,6 @@ msgstr "Senderliste fehlerhaft (Sender nicht gefunden)!"
 msgid "Channel Search"
 msgstr "Sendersuche"
 
-#, fuzzy
 msgid "Channel Service"
 msgstr "Sendersuche"
 
@@ -517,7 +500,6 @@ msgstr "Werkseinstellung"
 msgid "DEFAULT"
 msgstr "Voreinstellung"
 
-#, fuzzy
 msgid "Default Icon"
 msgstr "Werkseinstellung"
 
@@ -569,25 +551,21 @@ msgstr "Direkte Verbindung"
 msgid "disable"
 msgstr "deaktivieren"
 
-#, fuzzy
 msgid "DiSEqC Command Order"
 msgstr "DiSEqC Übertragungsart"
 
-#, fuzzy
 msgid "DiSEqC Configuration"
 msgstr "Tuner Konfiguration"
 
 msgid "DiSEqC Mode"
 msgstr "DiSEqC Modus"
 
-#, fuzzy
 msgid "DiSEqC repeats"
 msgstr "DiSEqC Wiederholungen"
 
 msgid "Diseqc Settings"
 msgstr "DiSEqC(s)"
 
-#, fuzzy
 msgid "DiSEqC Sat Settings"
 msgstr "DiSEqC(s)"
 
@@ -635,11 +613,9 @@ msgstr "Softcam"
 msgid "emus"
 msgstr ""
 
-#, fuzzy
 msgid "emucontrol"
 msgstr "Softcam Kontrolle"
 
-#, fuzzy
 msgid "enable"
 msgstr "aktivieren"
 
@@ -676,14 +652,12 @@ msgstr "Freier EPG Speicher (KB)"
 msgid "Error file not supported"
 msgstr "FEHLER: Dateiformat wird nicht unterstützt!"
 
-#, fuzzy
 msgid "Error: create timer thread !!"
 msgstr "FEHLER: Dateiname kann nicht erzeugt werden!"
 
 msgid "Error: open rc device !!"
 msgstr "FEHLER: Fernbedienungsgerät wurde nicht gefunden!"
 
-#, fuzzy
 msgid "Error: open rcsim device !!"
 msgstr "FEHLER: Fernbedienungsgerät wurde nicht gefunden!"
 
@@ -702,11 +676,9 @@ msgstr "FEHLER: Audio-Gerät wurde nicht gefunden!"
 msgid "Error: skin not found !!"
 msgstr "FEHLER: Skin wurde nicht gefunden!"
 
-#, fuzzy
 msgid "errorboot"
 msgstr "!!! FEHLER !!!"
 
-#, fuzzy
 msgid "errorstop"
 msgstr "!!! FEHLER !!!"
 
@@ -725,14 +697,12 @@ msgstr "Exit = Wiederherstellung beenden"
 msgid "Extensions List"
 msgstr "Pluginliste"
 
-#, fuzzy
 msgid "Extensions Menu"
 msgstr "Erweiterungen"
 
 msgid "Extensions"
 msgstr "Erweiterungen"
 
-#, fuzzy
 msgid "Expert Sat Settings"
 msgstr "Seitenverhältnis Einstellungen"
 
@@ -799,7 +769,6 @@ msgstr ""
 msgid "Fontsize adjust in pixel"
 msgstr "Schriftgröße verändern in Pixel"
 
-#, fuzzy
 msgid "fontsize"
 msgstr "Größe aufsteigend"
 
@@ -815,7 +784,6 @@ msgstr "Gefundene - Radio:"
 msgid "Found TV:"
 msgstr "Gefundene - TV:"
 
-#, fuzzy
 msgid ""
 "Found running Record.\n"
 "Realy shutdown ?"
@@ -857,7 +825,6 @@ msgstr "Frequenz:"
 msgid "Friday"
 msgstr "Freitag"
 
-#, fuzzy
 msgid "fsckrecord"
 msgstr "Record-Dateisystem prüfen"
 
@@ -882,7 +849,6 @@ msgstr "Vollbildansicht"
 msgid "gateway"
 msgstr "Gateway"
 
-#, fuzzy
 msgid "Germany"
 msgstr "Deutsch"
 
@@ -898,7 +864,6 @@ msgstr "Grafisches-EPG"
 msgid "Graph. EPG"
 msgstr "Grafisches-EPG"
 
-#, fuzzy
 msgid "Graphic MULTI EPG - Bouquets -"
 msgstr "Multi EPG - Favoriten"
 
@@ -923,7 +888,6 @@ msgstr "Holländisch"
 msgid "GUI Restart"
 msgstr "Titan Neustart"
 
-#, fuzzy
 msgid "Goto startpos"
 msgstr "gehe zur Startposition"
 
@@ -964,11 +928,9 @@ msgstr "HTTP Einstellungen"
 msgid "HTTPD Port"
 msgstr ""
 
-#, fuzzy
 msgid "Image Information"
 msgstr "Informationen"
 
-#, fuzzy
 msgid "Imdb Directory"
 msgstr "Regisseur"
 
@@ -1008,7 +970,6 @@ msgstr "Initialiserung"
 msgid "install"
 msgstr "installieren"
 
-#, fuzzy
 msgid "Install"
 msgstr "installieren"
 
@@ -1087,7 +1048,6 @@ msgstr "Letterbox"
 msgid "Listbox Select"
 msgstr "Listbox Auswahl"
 
-#, fuzzy
 msgid "LNB Configuration"
 msgstr "Tuner Konfiguration"
 
@@ -1097,11 +1057,9 @@ msgstr "LNB Einstellungen"
 msgid "LNB"
 msgstr ""
 
-#, fuzzy
 msgid "loadpartition"
 msgstr "Polarisation:"
 
-#, fuzzy
 msgid "LOF"
 msgstr "Log"
 
@@ -1135,14 +1093,12 @@ msgstr "Hauptmenü"
 msgid "Manual Search"
 msgstr "Manuelle Suche"
 
-#, fuzzy
 msgid "Manuel Scan"
 msgstr "Manuelle Suche"
 
 msgid "maxdelay"
 msgstr "Maximale Verzögerung"
 
-#, fuzzy
 msgid "maxrate"
 msgstr "Bildfrequenz"
 
@@ -1272,7 +1228,6 @@ msgstr "Netzwerk"
 msgid "Network Adapter Test"
 msgstr "Test"
 
-#, fuzzy
 msgid "Network Assistant"
 msgstr "Neu starten"
 
@@ -1312,7 +1267,6 @@ msgstr "Nie"
 msgid "Nfs Server Settings"
 msgstr "NFS Server Einstellungen"
 
-#, fuzzy
 msgid "nfsserver"
 msgstr "NFS Server"
 
@@ -1344,18 +1298,15 @@ msgstr ""
 msgid "nothing"
 msgstr "nichts tun"
 
-#, fuzzy
 msgid "No backup folders found!!!"
 msgstr ""
 "FEHLER: Der Ordner backup wurde nicht gefunden!\n"
 "\n"
 "Wiederherstellung wurde abgebrochen."
 
-#, fuzzy
 msgid "non"
 msgstr "Null"
 
-#, fuzzy
 msgid "noaudiosync"
 msgstr "FEHLER: Audiosync fehlgeschlagen"
 
@@ -1368,7 +1319,6 @@ msgstr "Anzahl USB-Kartenleser"
 msgid "OFF"
 msgstr "aus"
 
-#, fuzzy
 msgid "Off"
 msgstr "Abgeschaltet"
 
@@ -1378,18 +1328,15 @@ msgstr "Abgeschaltet"
 msgid "OK"
 msgstr "Ok"
 
-#, fuzzy
 msgid "OK = start restore"
 msgstr "Netzwerk Neustart"
 
-#, fuzzy
 msgid "oldaudiofw"
 msgstr "Audio-FW veraltet"
 
 msgid "Old Audiofw"
 msgstr "Audio-FW veraltet"
 
-#, fuzzy
 msgid "oldvideofw"
 msgstr "Video"
 
@@ -1402,7 +1349,6 @@ msgstr "aktiv"
 msgid "On"
 msgstr "ein"
 
-#, fuzzy
 msgid "ON"
 msgstr "OHNE"
 
@@ -1412,11 +1358,9 @@ msgstr "Einmal"
 msgid "Only free scan"
 msgstr "Nur unverschlüsselte Sender"
 
-#, fuzzy
 msgid "Only free channel scan"
 msgstr "Nur unverschlüsselte Sender"
 
-#, fuzzy
 msgid "only_boot_overclock"
 msgstr "Übertakten nur bei Bootvorgang"
 
@@ -1453,7 +1397,6 @@ msgstr "Übertakten"
 msgid "Overclocking"
 msgstr "Übertakten"
 
-#, fuzzy
 msgid "panscan"
 msgstr "durchsuchen"
 
@@ -1466,7 +1409,6 @@ msgstr "Passwort"
 msgid "PCR PID:"
 msgstr ""
 
-#, fuzzy
 msgid "Piconpath"
 msgstr "Pfad"
 
@@ -1506,11 +1448,9 @@ msgstr ""
 msgid "PIN:"
 msgstr ""
 
-#, fuzzy
 msgid "pingserver"
 msgstr "NFS Server"
 
-#, fuzzy
 msgid "pingtimeout"
 msgstr "Zeit bis zum Ausblenden"
 
@@ -1532,7 +1472,6 @@ msgstr "Wiedergabelisten Modus"
 msgid "PlayList"
 msgstr "Wiedergabeliste"
 
-#, fuzzy
 msgid "playlist"
 msgstr "Wiedergabelisten Modus"
 
@@ -1572,7 +1511,6 @@ msgstr "Polnisch"
 msgid "portmap"
 msgstr "Port Weiterleitung"
 
-#, fuzzy
 msgid "Power action"
 msgstr "Aktion bei Betätigung der EIN/AUS Taste"
 
@@ -1600,21 +1538,18 @@ msgstr "Ausschalten"
 msgid "Power Menu"
 msgstr "Ausschalten / Neustarten"
 
-#, fuzzy
 msgid "Prev"
 msgstr "Vorschau"
 
 msgid "press red"
 msgstr "Rote Taste drücken"
 
-#, fuzzy
 msgid "profile"
 msgstr "Datei"
 
 msgid "Program Info"
 msgstr "Programm Information"
 
-#, fuzzy
 msgid "progressbar"
 msgstr "Fortschritt"
 
@@ -1651,18 +1586,15 @@ msgstr "Port des Proxyservers"
 msgid "proxyuser"
 msgstr "Benutzername für Proxyserver"
 
-#, fuzzy
 msgid "PSK auto"
 msgstr "automatisch"
 
 msgid "QAM auto"
 msgstr ""
 
-#, fuzzy
 msgid "QPSK auto"
 msgstr "automatisch"
 
-#, fuzzy
 msgid "Radio (Info)"
 msgstr "Top Informationen"
 
@@ -1726,11 +1658,9 @@ msgstr "Aufnahmen (Timer) und EPG"
 msgid "Records and EPG"
 msgstr "Aufnahmen (Timer) und EPG"
 
-#, fuzzy
 msgid "record_max_sectors"
 msgstr "Max Sektoren Aufnahme"
 
-#, fuzzy
 msgid "record_split_size"
 msgstr "Größe der geteilten Dateien"
 
@@ -1749,14 +1679,12 @@ msgstr "Rote Taste"
 msgid "Red Key Action - Setup"
 msgstr "Rote Taste - Belegungsmenü"
 
-#, fuzzy
 msgid "Red Key Action - Plugins"
 msgstr "Tastenbelegung - Plugins"
 
 msgid "Reduce Standby frequency"
 msgstr "CPU im Standby heruntertakten"
 
-#, fuzzy
 msgid "remove share"
 msgstr "Aus Favoriten entfernen"
 
@@ -1814,7 +1742,6 @@ msgstr "Netzwerk Neustarten?"
 msgid "Restart Network"
 msgstr "Netzwerk Neustart"
 
-#, fuzzy
 msgid "Restart tiTan"
 msgstr "Neustarten"
 
@@ -1860,7 +1787,6 @@ msgstr "Russisch"
 msgid "Samba Server Settings"
 msgstr "Samba Server Einstellungen"
 
-#, fuzzy
 msgid "sambaserver"
 msgstr "SAMBA Server"
 
@@ -1885,7 +1811,6 @@ msgstr "DiSEqC A/B/B/C Einstellungen"
 msgid "sat_diseqc_abcdefgh"
 msgstr "DiSEqC A/B/B/C/E/F/G/H Einstellungen"
 
-#, fuzzy
 msgid "sat_expert"
 msgstr "Expertenmodus"
 
@@ -1901,7 +1826,6 @@ msgstr "Satellit"
 msgid "Satellites"
 msgstr "Satelliten"
 
-#, fuzzy
 msgid "Satelite Entrys"
 msgstr "Satelliten"
 
@@ -1923,7 +1847,6 @@ msgstr "Speichern"
 msgid "save network settings ?"
 msgstr "Einstellungen speichern?"
 
-#, fuzzy
 msgid "sbs"
 msgstr "SSL"
 
@@ -1944,11 +1867,9 @@ msgstr ""
 "Suche nach Netzwerkfreigaben.\n"
 "Bitte warten"
 
-#, fuzzy
 msgid "scartonstandby"
 msgstr "Standby"
 
-#, fuzzy
 msgid "Scart-Recorder"
 msgstr "Zeitgesteuerte Aufnahmen (Timer)"
 
@@ -2021,7 +1942,6 @@ msgstr "Einstellungen"
 msgid "Settings OK ?"
 msgstr "Senderlisten in Ordnung?"
 
-#, fuzzy
 msgid "Share Settings"
 msgstr "Einstellungen speichern"
 
@@ -2031,7 +1951,6 @@ msgstr "Speicherort auf entferntem Rechner"
 msgid "sharename"
 msgstr "Name der Freigabe"
 
-#, fuzzy
 msgid "Sharename"
 msgstr "Name der Freigabe"
 
@@ -2050,11 +1969,9 @@ msgstr "Im Display anzeigen"
 msgid "showip"
 msgstr "Zeige IP"
 
-#, fuzzy
 msgid "showtvinfo"
 msgstr "Zeige IP"
 
-#, fuzzy
 msgid "Show Module Messages"
 msgstr "Zeige Modul Informationen"
 
@@ -2067,7 +1984,6 @@ msgstr ""
 msgid "Single Sat"
 msgstr "Einzelner Satellit"
 
-#, fuzzy
 msgid "Single Satelite"
 msgstr "Einzelner Satellit"
 
@@ -2164,59 +2080,48 @@ msgstr "Standby / Ausschalten"
 msgid "Standby Brightness"
 msgstr "Helligkeit im Standby"
 
-#, fuzzy
 msgid "Standby Mode"
 msgstr "Standby-Modus"
 
 msgid "Standby"
 msgstr ""
 
-#, fuzzy
 msgid "standby_freq"
 msgstr "Standby"
 
 msgid "Standby frequency"
 msgstr "Standby Frequenz"
 
-#, fuzzy
 msgid "standby_overclock"
 msgstr "Übertakten nur bei Bootvorgang"
 
 msgid "Start HTTPD"
 msgstr "Autostart Webinterface"
 
-#, fuzzy
 msgid "Start"
 msgstr "Start"
 
-#, fuzzy
 msgid "starting Kernel Update ?"
 msgstr "Flashvorgang starten?"
 
-#, fuzzy
 msgid "starting Fw Update ?"
 msgstr "Flashvorgang starten?"
 
-#, fuzzy
 msgid "starting Root Update ?"
 msgstr "Flashvorgang starten?"
 
-#, fuzzy
 msgid "starting Var Update ?"
 msgstr "Flashvorgang starten?"
 
 msgid "starting Full Update ?"
 msgstr "Flashvorgang starten?"
 
-#, fuzzy
 msgid "starting Usb Update ?"
 msgstr "Flashvorgang starten?"
 
-#, fuzzy
 msgid "starting Fullusb Update ?"
 msgstr "Flashvorgang starten?"
 
-#, fuzzy
 msgid "starting Usb (unknown release grp) Update ?"
 msgstr "Flashvorgang starten?"
 
@@ -2226,7 +2131,6 @@ msgstr "Soll der QtBrowser gestartet werden?"
 msgid "STOP/START"
 msgstr "Start/Stopp"
 
-#, fuzzy
 msgid "stream is running !"
 msgstr "Es wird kein Stream wiedergegeben"
 
@@ -2260,15 +2164,12 @@ msgstr ""
 msgid "swap"
 msgstr ""
 
-#, fuzzy
 msgid "swap_max_sectors"
 msgstr "Max Sektoren Swap"
 
-#, fuzzy
 msgid "swapsize"
 msgstr "Schreib Puffergröße"
 
-#, fuzzy
 msgid "Switch"
 msgstr "umschalten"
 
@@ -2311,14 +2212,12 @@ msgstr "System"
 msgid "System:"
 msgstr ""
 
-#, fuzzy
 msgid "System_Status"
 msgstr "Status"
 
 msgid "szap"
 msgstr "sZap"
 
-#, fuzzy
 msgid "szap_diseqc_repeat"
 msgstr "DiSEqC Wiederholungen"
 
@@ -2331,14 +2230,12 @@ msgstr "sZap Front-End"
 msgid "szaplong"
 msgstr "langer sZap "
 
-#, fuzzy
 msgid "tab"
 msgstr "UPDATE-Img"
 
 msgid "telnet"
 msgstr "Telnet"
 
-#, fuzzy
 msgid "Test frequency"
 msgstr "Frequenzratenschritt"
 
@@ -2400,7 +2297,6 @@ msgstr "Tone Modus"
 msgid "Top"
 msgstr "Top Info"
 
-#, fuzzy
 msgid "Transponder:"
 msgstr "Transponderliste"
 
@@ -2434,7 +2330,6 @@ msgstr "Sender nicht verfügbar!"
 msgid "tuxtxt_cpufrequ_workaround"
 msgstr "Teletext CPU Frequenz fix"
 
-#, fuzzy
 msgid "TV (Info)"
 msgstr "Top Informationen"
 
@@ -2453,7 +2348,6 @@ msgstr "Typ"
 msgid "Type:"
 msgstr "TYP:"
 
-#, fuzzy
 msgid "type of channelsearch"
 msgstr "Sendersuche"
 
@@ -2478,7 +2372,6 @@ msgstr "Deaktivieren"
 msgid "update"
 msgstr "aktualisieren"
 
-#, fuzzy
 msgid "Update"
 msgstr "aktualisieren"
 
@@ -2575,7 +2468,6 @@ msgstr ""
 msgid "Voltage Mode"
 msgstr "Spannungsmodus"
 
-#, fuzzy
 msgid "Volume off"
 msgstr "Lautstärke Aus"
 
@@ -2591,7 +2483,6 @@ msgstr "Bitte Warten, Sendersuchlauf wird abgebrochen."
 msgid "wait for stopping download"
 msgstr "ACHTUNG: Bitte warten Sie bis das Herunterladen beendet wurde."
 
-#, fuzzy
 msgid "Weather Info"
 msgstr "Wetter anzeigen"
 
@@ -2607,7 +2498,6 @@ msgstr "Mittwoch"
 msgid "weekly"
 msgstr "Wöchentlich"
 
-#, fuzzy
 msgid "wlan"
 msgstr "WLAN suchen"
 
@@ -2626,7 +2516,6 @@ msgstr "Schreib Puffergröße"
 msgid "yes"
 msgstr "Ja"
 
-#, fuzzy
 msgid "Yes"
 msgstr "Ja"
 
@@ -2636,15 +2525,12 @@ msgstr "Ja"
 msgid "yellow"
 msgstr "gelb"
 
-#, fuzzy
 msgid "DEU (DVB Subtitle)"
 msgstr "Untertitel"
 
-#, fuzzy
 msgid "ENG (DVB-Subtitle)"
 msgstr "Untertitel"
 
-#, fuzzy
 msgid "FRA (DVB-Subtitle)"
 msgstr "Untertitel"
 
@@ -2666,7 +2552,6 @@ msgstr "Altersschutz ab"
 msgid "Protect Channel Freetime (min)"
 msgstr "Senderschutzzeit aus (min)"
 
-#, fuzzy
 msgid " SELECT"
 msgstr "Auswählen"
 
@@ -2732,7 +2617,6 @@ msgstr ""
 msgid "EDIT"
 msgstr "Bearbeiten"
 
-#, fuzzy
 msgid "SCAN"
 msgstr "Suchlauf beginnen"
 
@@ -2740,7 +2624,6 @@ msgid "Install netsurf Internetbrowser Tpk first !"
 msgstr ""
 "ACHTUNG: Sie müssen erst das Plugin 'Netsurf Internetbrowser' installieren!"
 
-#, fuzzy
 msgid "start Internet browser now ?"
 msgstr ""
 "ACHTUNG: Sie müssen erst das Plugin 'Netsurf Internetbrowser' installieren!"
@@ -2778,7 +2661,6 @@ msgstr "Position speichern"
 msgid "goto position"
 msgstr "Position wechseln"
 
-#, fuzzy
 msgid "start position"
 msgstr "Startposition"
 
@@ -2897,11 +2779,9 @@ msgstr "Aktion nach Timeshift"
 msgid "Show Timeline in Channellist"
 msgstr "Zeige Fortschrittsbalken in Senderliste"
 
-#, fuzzy
 msgid "TiThek PlayList"
 msgstr "Wiedergabeliste"
 
-#, fuzzy
 msgid "start, Playback"
 msgstr "Beginne Wiedergabe"
 
@@ -2926,7 +2806,6 @@ msgstr ""
 "Diese Datei existiert bereits.\n"
 "Soll die vorhandene Datei überschrieben werden?"
 
-#, fuzzy
 msgid "animation 1"
 msgstr "Wetter:"
 
@@ -3156,7 +3035,6 @@ msgstr "FEHLER: Ein Freigabename muss eingetragen sein!"
 msgid "A mount entry with this name already exists!"
 msgstr "FEHLER: Netzwerkfreigabe mit diesem Namen existiert bereits!"
 
-#, fuzzy
 msgid "--actors--"
 msgstr "Darsteller"
 
@@ -3191,19 +3069,15 @@ msgstr "DLNA Einstellungen"
 msgid "Interface"
 msgstr "Schnittstelle"
 
-#, fuzzy
 msgid "Medie Dir 1"
 msgstr "1. Pfad zu Medien "
 
-#, fuzzy
 msgid "Medie Dir 2"
 msgstr "2. Pfad zu Medien"
 
-#, fuzzy
 msgid "Medie Dir 3"
 msgstr "3. Pfad zu Medien"
 
-#, fuzzy
 msgid "Medie Dir 4"
 msgstr "4. Pfad zu Medien"
 
@@ -3276,7 +3150,6 @@ msgstr "Nichtempfangbare Kanäle"
 msgid "hidden"
 msgstr "Versteckt"
 
-#, fuzzy
 msgid "deactive"
 msgstr "Autostart aktiviert"
 
@@ -3286,7 +3159,6 @@ msgstr "Aktualisieren (Online)"
 msgid "TPK media (media)"
 msgstr "Installieren (Lokal)"
 
-#, fuzzy
 msgid "No output found !"
 msgstr "FEHLER: Kein Plugin gefunden!"
 
@@ -3730,7 +3602,6 @@ msgstr ""
 "-Ergebnis- (Gelb):\n"
 "Überprüfung der Sicherung mittels Logdatei"
 
-#, fuzzy
 msgid ""
 "Can't start system update\n"
 "Please remove Stick/HDD and try again"
@@ -3777,11 +3648,9 @@ msgstr "Erfolgreich entfernt."
 msgid "Remove error"
 msgstr "FEHLER: Löschen fehlgeschlagen!"
 
-#, fuzzy
 msgid "Tpk Tmp Info"
 msgstr "Info zur Deinstallation"
 
-#, fuzzy
 msgid "Tpk Media Info"
 msgstr "Info zur Deinstallation"
 
@@ -4110,7 +3979,6 @@ msgstr ""
 "Erfolgreich installiert.\n"
 "Das System startet jetzt neu."
 
-#, fuzzy
 msgid "TPK Remove done your system will reboot !"
 msgstr ""
 "Erfolgreich deinstalliert.\n"
@@ -4143,7 +4011,6 @@ msgstr "MediaDB Suche abgeschlossen"
 msgid "This file doesn't exist, or has been removed"
 msgstr "FEHLER: Diese Datei existiert nicht oder wurde entfernt."
 
-#, fuzzy
 msgid ""
 "Here you can select your reader. Use to navigate the control cross and the "
 "extra buttons displayed with your remote control to select."
@@ -4265,15 +4132,12 @@ msgstr "Benutze das Steuerkreuz für schnelles Umschalten und laut/leise"
 msgid "Deactivate MiniTV"
 msgstr "Deaktiviere MiniTV Vorschau Fenster"
 
-#, fuzzy
 msgid "Caching Playback (10MB / 120s)"
 msgstr "Im Cache Zwischenspeicherrn (10MB / 120 Sek)"
 
-#, fuzzy
 msgid "Caching Playback (20MB / 240s)"
 msgstr "Im Cache Zwischenspeichern (20MB / 240 Sek)"
 
-#, fuzzy
 msgid "Caching Playback (30MB / 360s)"
 msgstr "Im Cache Zwischenspeichern (30MB / 360 Sek)"
 
@@ -4411,7 +4275,6 @@ msgstr "CEC Aktivieren:"
 msgid "Ext. Modul detect (needs reboot)"
 msgstr "Erw. Modulerkennung (Neustart erforderlich)"
 
-#, fuzzy
 msgid "Can't create Path"
 msgstr "Verzeichnis anlegen"
 
@@ -4421,11 +4284,9 @@ msgstr "Verzeichnis anlegen"
 msgid "Use numeric keys"
 msgstr "Numerische Tasten zur Eingabe nutzen"
 
-#, fuzzy
 msgid "Mail send succesfull"
 msgstr "Die Sicherung wurde erfolgreich erstellt."
 
-#, fuzzy
 msgid "Can't send Mail"
 msgstr "FEHLER: Kann Datei nicht öffnen!"
 
@@ -4611,15 +4472,12 @@ msgstr "MNT Installation (FLASH)"
 msgid "Install to SWAP"
 msgstr "SWAP Installation (USB oder HDD)"
 
-#, fuzzy
 msgid "Flash (permanent)"
 msgstr "permanent"
 
-#, fuzzy
 msgid "Flash (temporary)"
 msgstr "Config vom Flash (temporär) verwenden"
 
-#, fuzzy
 msgid "Stick or HDD"
 msgstr "Config vom Stick / HDD verwenden"
 
@@ -4803,7 +4661,6 @@ msgstr "Wiedergabe auswählen"
 msgid "wait 20 seconds"
 msgstr "warten Sie 20 Sekunden"
 
-#, fuzzy
 msgid "wait 10 seconds"
 msgstr "Automatisches Beenden in 10 Sekunden."
 
@@ -4989,1219 +4846,3 @@ msgstr "Fernbedienung lange Version"
 msgid "Here to select your remote Model"
 msgstr ""
 "Hier können Sie Ihr Fernbedienungsmodell auswählen und mit OK bestätigen."
-
-#~ msgid "Tunertype"
-#~ msgstr "Tunerart"
-
-#~ msgid "infobar"
-#~ msgstr "Informationsleiste"
-
-#~ msgid "epg"
-#~ msgstr "EPG"
-
-#~ msgid "medium"
-#~ msgstr "medium"
-
-#~ msgid "Gui Restart"
-#~ msgstr "Titan Neustart"
-
-#~ msgid "1 sec"
-#~ msgstr "1 Sekunde"
-
-#~ msgid "2 sec"
-#~ msgstr "2 Sekunden"
-
-#~ msgid "normal"
-#~ msgstr "Normal"
-
-#~ msgid "channel-movie"
-#~ msgstr "Sender - Titel"
-
-#~ msgid "movie-channel"
-#~ msgstr "Titel - Sender"
-
-#~ msgid "expert (11)"
-#~ msgstr "Experten Modus (11)"
-
-#~ msgid "redKey"
-#~ msgstr "Rote Taste"
-
-#~ msgid "4 sec"
-#~ msgstr "4 Sekunden"
-
-#~ msgid "6 sec"
-#~ msgstr "6 Sekunden"
-
-#~ msgid "8 sec"
-#~ msgstr "8 Sekunden"
-
-#~ msgid "10 sec"
-#~ msgstr "10 Sekunden"
-
-#~ msgid ""
-#~ "This Plugin is only for Betatester and can change your Settings!\n"
-#~ "Realy run it?"
-#~ msgstr ""
-#~ "Diese Funktion ist nur für Betatester und könnte Ihre Einstellungen "
-#~ "verändern!\n"
-#~ "Trotzdem fortfahren?"
-
-#~ msgid "Sat: "
-#~ msgstr "Satellit: "
-
-#~ msgid "Cable: "
-#~ msgstr "Kabel: "
-
-#~ msgid "Terrestrial: "
-#~ msgstr "Terrestrisch: "
-
-#~ msgid "Sat"
-#~ msgstr "Satellit"
-
-#~ msgid "Cable"
-#~ msgstr "Kabel"
-
-#~ msgid "Terrestrial"
-#~ msgstr "Terrestrisch"
-
-#~ msgid "Home"
-#~ msgstr "Startseite"
-
-#~ msgid ""
-#~ "Callmon Timeout !!!\n"
-#~ "\n"
-#~ "check your parameter "
-#~ msgstr ""
-#~ "Call Monitor Timeout!!!\n"
-#~ "\n"
-#~ "Bitte überprüfen Sie Ihre Einstellungen!"
-
-#~ msgid "Provider"
-#~ msgstr "Anbieter"
-
-#~ msgid "wait for stopping"
-#~ msgstr "Bitte warten, der Vorgang wird abgebrochen."
-
-#~ msgid "Input 1"
-#~ msgstr "Eingang 1"
-
-#~ msgid "Input 2"
-#~ msgstr "Eingang 2"
-
-#~ msgid "Input 3"
-#~ msgstr "Eingang 3"
-
-#~ msgid "Input 4"
-#~ msgstr "Eingang 4"
-
-#~ msgid "Input 5"
-#~ msgstr "Eingang 5"
-
-#~ msgid "Input 6"
-#~ msgstr "Eingang 6"
-
-#~ msgid "Input 7"
-#~ msgstr "Eingang 7"
-
-#~ msgid "Input 8"
-#~ msgstr "Eingang 8"
-
-#~ msgid "Input 9"
-#~ msgstr "Eingang 9"
-
-#~ msgid "Input 10"
-#~ msgstr "Eingang 10"
-
-#~ msgid "Input 11"
-#~ msgstr "Eingang 11"
-
-#~ msgid "Input 12"
-#~ msgstr "Eingang 12"
-
-#~ msgid "Input 13"
-#~ msgstr "Eingang 13"
-
-#~ msgid "Input 14"
-#~ msgstr "Eingang 14"
-
-#~ msgid "Input 15"
-#~ msgstr "Eingang 15"
-
-#~ msgid "Input 16"
-#~ msgstr "Eingang 16"
-
-#~ msgid "Hoster Url not http://"
-#~ msgstr "die Hoster Url ist nicht http://"
-
-#~ msgid ""
-#~ "The file is being transfered to our other servers. This may take few "
-#~ "minutes."
-#~ msgstr ""
-#~ "Die ausgewählte Datei ist vorübergehend nicht verfügbar.\n"
-#~ "Bitte versuchen Sie es zu einem späteren Zeitpunkt erneut."
-
-#~ msgid "EJECT"
-#~ msgstr "Auswerfen"
-
-#~ msgid "History"
-#~ msgstr "Geschichte"
-
-#~ msgid "Doku"
-#~ msgstr "Dokumentation"
-
-#~ msgid "Fantasy"
-#~ msgstr "Fantasie"
-
-#~ msgid "Scifi"
-#~ msgstr "Science-Fiction"
-
-#~ msgid "scan and whitelist"
-#~ msgstr "Scan-Liste und Weiße Liste"
-
-#~ msgid "only for scan"
-#~ msgstr "Nur für Scan"
-
-#~ msgid "Installation start"
-#~ msgstr "Installation gestartet"
-
-#~ msgid "Remove start"
-#~ msgstr "Löschvorgang gestartet"
-
-#~ msgid "New free space (KB): "
-#~ msgstr "Neuer freier Speicherplatz (KB):"
-
-#~ msgid "Can't get data from facebook"
-#~ msgstr "FEHLER: Facebook fehlgeschlagen!"
-
-#~ msgid ""
-#~ "Facebook allready registered,\n"
-#~ "Make new registration ?"
-#~ msgstr ""
-#~ "Sind Sie bereits bei Facebook registriert?\n"
-#~ "Neu Anmelden?"
-
-#~ msgid "Group created"
-#~ msgstr "Gruppe wurde erfolgreich erstellt."
-
-#~ msgid "Event created"
-#~ msgstr "Ereignis erfolgreich erstellt."
-
-#~ msgid "Status update"
-#~ msgstr "Status aktualisiert."
-
-#~ msgid "Post on wall from another user"
-#~ msgstr "Jemand hat an Ihre Pinnwand geschrieben."
-
-#~ msgid "Note created"
-#~ msgstr "FEHLER: Erstellung fehlgeschlagen!"
-
-#~ msgid "Link postet"
-#~ msgstr "Link veröffentlicht."
-
-#~ msgid "Video postet"
-#~ msgstr "Video veröffentlicht."
-
-#~ msgid "Photos postet"
-#~ msgstr "Bild veröffentlicht"
-
-#~ msgid "App story"
-#~ msgstr "Verlauf"
-
-#~ msgid "Coment created"
-#~ msgstr "Kommentar abgegeben"
-
-#~ msgid "Checkin to a place"
-#~ msgstr "Ortsmarkierung wurde gesetzt"
-
-#~ msgid "Post in group"
-#~ msgstr "In Gruppe schreiben"
-
-#~ msgid "Menu"
-#~ msgstr "Menü"
-
-#~ msgid "Wait for connect or press EXIT"
-#~ msgstr ""
-#~ "Warten Sie, bis die Verbindung hergestellt wurde\n"
-#~ "oder -EXIT- zum abbrechen."
-
-#~ msgid "GRAPHIC MULTI EPG - Channel"
-#~ msgstr "Grafisches Multi EPG - Senderliste"
-
-#~ msgid "GRAPHIC MULTI EPG - Satellites"
-#~ msgstr "Grafisches Multi EPG - Satelliten"
-
-#~ msgid "GRAPHIC MULTI EPG - Provider"
-#~ msgstr "Grafisches Multi EPG - Anbieter"
-
-#~ msgid "GRAPHIC MULTI EPG - All Channels"
-#~ msgstr "Grafisches Multi EPG - Alle Sender"
-
-#~ msgid "HDD "
-#~ msgstr "Festplatte"
-
-#~ msgid "STICK "
-#~ msgstr "USB-Speicher"
-
-#~ msgid ""
-#~ "HDD > 2TB unsupported.\n"
-#~ "You must first install plugin parted, then you can use this panel."
-#~ msgstr ""
-#~ "FEHLER: Festplatten mit einer Speicherkapazität über 2 TB werden nicht "
-#~ "unterstützt.\n"
-#~ "Installieren Sie bitte das Plugin 'parted' um die Festplatte zu nutzen!"
-
-#~ msgid ""
-#~ "ERROR\n"
-#~ "partition could not be created"
-#~ msgstr "FEHLER: Die Partition konnte nicht erstellt werden!"
-
-#~ msgid "5 min"
-#~ msgstr "5 Minuten"
-
-#~ msgid "10 min"
-#~ msgstr "10 Minuten"
-
-#~ msgid "15 min"
-#~ msgstr "15 Minuten"
-
-#~ msgid "60 min"
-#~ msgstr "60 Minuten"
-
-#~ msgid "testtransponder not found"
-#~ msgstr "FEHLER: Testtransponder nicht gefunden!"
-
-#~ msgid "testtransponder entry not ok"
-#~ msgstr ""
-#~ "FEHLER: Testtransponder fehlerhaft!\n"
-#~ "Bitte überprüfen Sie Ihre Angaben!"
-
-#~ msgid "can't create new transponer"
-#~ msgstr "FEHLER: Transponder kann nicht angelegt werden!"
-
-#~ msgid "testchannel not found"
-#~ msgstr "FEHLER: Testsender nicht gefunden!"
-
-#~ msgid "testchannel entry not ok"
-#~ msgstr ""
-#~ "FEHLER: Testsender-Eintrag ist fehlerhaft.\n"
-#~ "Bitte überprüfen Sie Ihre Angaben!"
-
-#~ msgid "can't create new channel"
-#~ msgstr "FEHLER: Testsender kann nicht angelegt werden!"
-
-#~ msgid "Press OK or EXIT"
-#~ msgstr "Drücken Sie bitte -OK- oder -EXIT-"
-
-#~ msgid "RED"
-#~ msgstr "Rote Taste"
-
-#~ msgid "GREEN"
-#~ msgstr "-GRÜN-"
-
-#~ msgid "BLUE"
-#~ msgstr "Blaue Taste"
-
-#~ msgid "Smartcard Ports found: "
-#~ msgstr "Smartcard Port gefunden: "
-
-#~ msgid "USB Ports found: "
-#~ msgstr "USB Anschluß gefunden: "
-
-#~ msgid " - OKAY!"
-#~ msgstr " - OK!"
-
-#~ msgid " : NOT OKAY!"
-#~ msgstr " : NICHT OK!"
-
-#~ msgid "Slot "
-#~ msgstr "Einschub"
-
-#~ msgid "CAM Ports found: "
-#~ msgstr "CI-MODUL gefunden"
-
-#~ msgid "SUCESS Serial Port"
-#~ msgstr "Serieller Anschluß erfolgreich"
-
-#~ msgid "FAIL Serial Port"
-#~ msgstr "Serieller Anschluß fehlerhaft"
-
-#~ msgid "TV / Radio Switch"
-#~ msgstr "TV / Radio Umschalten"
-
-#~ msgid "universal"
-#~ msgstr "Universal"
-
-#~ msgid "unicable"
-#~ msgstr "Unikabel"
-
-#~ msgid "user unicable"
-#~ msgstr "Unikabel benutzerdefiniert"
-
-#~ msgid "cover"
-#~ msgstr "Cover"
-
-#~ msgid "Antenne Kaernten"
-#~ msgstr "Antenne Kärnten"
-
-#~ msgid "transparent (mvi)"
-#~ msgstr "Transparent (mvi)"
-
-#~ msgid "skin (picmem jpg)"
-#~ msgstr "Aussehen (Skin) picmem"
-
-#~ msgid "5s (default)"
-#~ msgstr "5s (Standard)"
-
-#~ msgid "unlock -> lock it"
-#~ msgstr "Ungeschützt --> Schützen"
-
-#~ msgid "unlock -> leaf unlock"
-#~ msgstr "Ungeschützt --> Nicht ändern"
-
-#~ msgid "locked -> unlock it"
-#~ msgstr "Geschützt --> Schutz aufheben"
-
-#~ msgid "locked -> leaf locked"
-#~ msgstr "Geschützt --> Nicht ändern"
-
-#~ msgid "MediaDB directory scan started in Background !"
-#~ msgstr "MediaDB Hintergrundsuche wurde gestartet."
-
-#~ msgid "title"
-#~ msgstr "Titel"
-
-#~ msgid "imdbid"
-#~ msgstr "IMDBID"
-
-#~ msgid "Add iMDB manuel"
-#~ msgstr "IMDB manuell hinzufügen"
-
-#~ msgid "older 1 day"
-#~ msgstr "älter als 1 Tag"
-
-#~ msgid "older 2 day"
-#~ msgstr "älter als 2 Tage"
-
-#~ msgid "older 3 day"
-#~ msgstr "älter als 3 Tage"
-
-#~ msgid "older 4 day"
-#~ msgstr "älter als 4 Tage"
-
-#~ msgid "older 5 day"
-#~ msgstr "älter als 5 Tage"
-
-#~ msgid "older 10 day"
-#~ msgstr "älter als 10 Tage"
-
-#~ msgid "older 15 day"
-#~ msgstr "älter als 15 Tage"
-
-#~ msgid "older 20 day"
-#~ msgstr "älter als 20 Tage"
-
-#~ msgid "older 30 day"
-#~ msgstr "älter als 30 Tage"
-
-#~ msgid "older 40 day"
-#~ msgstr "älter als 40 Tage"
-
-#~ msgid "older 50 day"
-#~ msgstr "älter als 50 Tage"
-
-#~ msgid "Error in Save Settings"
-#~ msgstr "FEHLER: Speichern fehlgeschlagen!!!"
-
-#~ msgid "double"
-#~ msgstr "doppel"
-
-#~ msgid "activate"
-#~ msgstr "aktivieren"
-
-#~ msgid "deaktivate"
-#~ msgstr "deaktivieren"
-
-#~ msgid "MULTI EPG - Channel"
-#~ msgstr "Multi EPG - Sender"
-
-#~ msgid "MULTI EPG - Satellites"
-#~ msgstr "Multi EPG - Satelliten"
-
-#~ msgid "MULTI EPG - Provider"
-#~ msgstr "Multi EPG - Anbieter"
-
-#~ msgid "cifs"
-#~ msgstr "CIFS"
-
-#~ msgid "nfs"
-#~ msgstr "NFS"
-
-#~ msgid "ftpfs"
-#~ msgstr "FTPFS"
-
-#~ msgid "ssl_try"
-#~ msgstr "SSL Versuch"
-
-#~ msgid "ssl_control"
-#~ msgstr "SSL Kontrolle"
-
-#~ msgid "socks5"
-#~ msgstr "SOCKS5"
-
-#~ msgid "socks4"
-#~ msgstr "SOCKS4"
-
-#~ msgid "html"
-#~ msgstr "HTML"
-
-#~ msgid "udp"
-#~ msgstr "UDP"
-
-#~ msgid "tcp"
-#~ msgstr "TCP"
-
-#~ msgid "Wait"
-#~ msgstr "Bitte warten"
-
-#~ msgid "ERROR"
-#~ msgstr "FEHLER"
-
-#~ msgid "static"
-#~ msgstr "Statisch"
-
-#~ msgid "WLAN LOG"
-#~ msgstr "WLAN Log"
-
-#~ msgid "Found Wlan Stick and driver for: "
-#~ msgstr "WLAN Gerät und Treiber wurden gefunden:"
-
-#~ msgid ""
-#~ "Found Wlan Stick but no driver\n"
-#~ "Please install driver: "
-#~ msgstr ""
-#~ "ACHTUNG: WLAN Gerät gefunden.\n"
-#~ "Bitte installieren Sie den passenden Treiber!"
-
-#~ msgid "Wlan Stick not found"
-#~ msgstr "FEHLER: WLAN Gerät nicht gefunden!"
-
-#~ msgid "WLAN Info"
-#~ msgstr "WLAN Information"
-
-#~ msgid "Autostart Defaults"
-#~ msgstr "Autostart"
-
-#~ msgid "high"
-#~ msgstr "hoch"
-
-#~ msgid "ip"
-#~ msgstr "IP"
-
-#~ msgid "Swap Size"
-#~ msgstr "Swap Größe"
-
-#~ msgid "Fsck Swap"
-#~ msgstr "Swap-Dateisystem prüfen"
-
-#~ msgid "Autostart EMU"
-#~ msgstr "Softcam Autostart"
-
-#~ msgid "Autostart Child Safety"
-#~ msgstr "Jugendschutz automatisch Ein"
-
-#~ msgid "Parental"
-#~ msgstr "Jugendschutz"
-
-#~ msgid "Automount Config"
-#~ msgstr "Automount"
-
-#~ msgid "Ntfs Write"
-#~ msgstr "NTFS schreiben"
-
-#~ msgid "ntfs-3g"
-#~ msgstr "NTFS-3G"
-
-#~ msgid "ntfsmount"
-#~ msgstr "NTFS Einbindung"
-
-#~ msgid "frequency"
-#~ msgstr "Frequenz"
-
-#~ msgid "videmode"
-#~ msgstr "Videomode"
-
-#~ msgid "Title:"
-#~ msgstr "Titel:"
-
-#~ msgid "Artist:"
-#~ msgstr "Interpret:"
-
-#~ msgid "Year:"
-#~ msgstr "Jahr:"
-
-#~ msgid "Track:"
-#~ msgstr "Titel:"
-
-#~ msgid "Record in progress"
-#~ msgstr "Aufnahme läuft"
-
-#~ msgid "Marker autoseek is started"
-#~ msgstr "Automarker gestartet"
-
-#~ msgid "Marker autoseek is stopped"
-#~ msgstr "Automarker gestoppt"
-
-#~ msgid "AutoTimer Settings"
-#~ msgstr "Einstellungen"
-
-#~ msgid "afterevent"
-#~ msgstr "Anschließend"
-
-#~ msgid "begin search"
-#~ msgstr "Suche starten"
-
-#~ msgid "channel (EPG=Current channel)"
-#~ msgstr "Sender EPG"
-
-#~ msgid "end search"
-#~ msgstr "Suche beenden"
-
-#~ msgid "event"
-#~ msgstr "Ereignis"
-
-#~ msgid "search string"
-#~ msgstr "Suchparameter"
-
-#~ msgid "Timer1 activ"
-#~ msgstr "Timer 1 aktiv"
-
-#~ msgid "Timer2 activ"
-#~ msgstr "Timer 2 aktiv"
-
-#~ msgid "CallMonitor Settings"
-#~ msgstr "Einstellungen"
-
-#~ msgid "Level:"
-#~ msgstr "Ebene:"
-
-#~ msgid "Score:"
-#~ msgstr "Punkte:"
-
-#~ msgid "Facebook Register"
-#~ msgstr "Auf Facebook registrieren"
-
-#~ msgid ""
-#~ "Enter the shown url in your browser and enter the Code to register the "
-#~ "receiver to facebook"
-#~ msgstr ""
-#~ "Geben Sie den angezeigten Code über die dargestellte Adresse in Ihrem "
-#~ "Browser ein und registrieren Sie Ihren Receiver."
-
-#~ msgid "Director:"
-#~ msgstr "Regisseur"
-
-#~ msgid "Plot:"
-#~ msgstr "Handlung:"
-
-#~ msgid "Release:"
-#~ msgstr "Veröffentlicht:"
-
-#~ msgid "Writers:"
-#~ msgstr "Autor:"
-
-#~ msgid "IMDb - Plugin"
-#~ msgstr "IMDb"
-
-#~ msgid "IP-Kammera Einstellungen"
-#~ msgstr "Einstellungen"
-
-#~ msgid "Benutzer-Kammera 1"
-#~ msgstr "Benutzer-Kamera 1"
-
-#~ msgid "Benutzer-Kammera 2"
-#~ msgstr "Benutzer-Kamera 2"
-
-#~ msgid "IP-Kammera 1"
-#~ msgstr "IP-Kamera 1"
-
-#~ msgid "IP-Kammera 2"
-#~ msgstr "IP-Kamera 2"
-
-#~ msgid "Kammera 1"
-#~ msgstr "Kamera 1"
-
-#~ msgid "Kammera 2 (Umschalten mit Rot)"
-#~ msgstr "Kamera 2 (Umschalten mit Rot)"
-
-#~ msgid "Passwort-Kammera 1"
-#~ msgstr "Passwort-Kamera 1"
-
-#~ msgid "Passwort-Kammera 2"
-#~ msgstr "Passwort-Kamera 2"
-
-#~ msgid "Port-Kammera 1"
-#~ msgstr "Port-Kamera 1"
-
-#~ msgid "Port-Kammera 2"
-#~ msgstr "Port-Kamera 2"
-
-#~ msgid "aktiv im Standby"
-#~ msgstr "Im Standby aktiv"
-
-#~ msgid "alle Menus anzeigen"
-#~ msgstr "Alle Menüs anzeigen"
-
-#~ msgid "Samsung SPF.. Settings"
-#~ msgstr "Einstellungen"
-
-#~ msgid "Choice Menu"
-#~ msgstr "Auswahlmenü"
-
-#~ msgid "filealt"
-#~ msgstr "Alternativdatei"
-
-#~ msgid "Filename:"
-#~ msgstr "Dateiname:"
-
-#~ msgid "proxy"
-#~ msgstr "Proxy"
-
-#~ msgid "usessl"
-#~ msgstr "SSL Nutzen"
-
-#~ msgid "FanControl"
-#~ msgstr "Lüftersteuerung"
-
-#~ msgid "Dvbapi"
-#~ msgstr "DVBapi"
-
-#~ msgid ""
-#~ "Here you can aktivate/deaktivate you readers. Use to navigate the control "
-#~ "cross and the extra buttons displayed with your remote control to select."
-#~ msgstr ""
-#~ "Hier können Sie ihren Reader aktivieren bzw. deaktivieren.\n"
-#~ "\n"
-#~ "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
-
-#~ msgid "RGUI Client"
-#~ msgstr "RGUI Klient"
-
-#~ msgid "Stock"
-#~ msgstr "Aktie"
-
-#~ msgid "Auto start"
-#~ msgstr "Autostart"
-
-#~ msgid "X-Resolution"
-#~ msgstr "X-Auflösung"
-
-#~ msgid "Y-Resolution"
-#~ msgstr "Y-Auflösung"
-
-#~ msgid "TiThek Settings"
-#~ msgstr "TiThek"
-
-#~ msgid "Exit Tithek"
-#~ msgstr "Beenden"
-
-#~ msgid "tiWakeup"
-#~ msgstr "Wecker"
-
-#~ msgid "Back Pic"
-#~ msgstr "Hintergrundbild"
-
-#~ msgid "Edit"
-#~ msgstr "Bearbeiten"
-
-#~ msgid "Full Pic"
-#~ msgstr "Vollbildmodus"
-
-#~ msgid "IMDB Search"
-#~ msgstr "IMDB Suche"
-
-#~ msgid "Pic Name"
-#~ msgstr "Bildername"
-
-#~ msgid "Runtime:"
-#~ msgstr "Laufzeit:"
-
-#~ msgid "Votes:"
-#~ msgstr "Stimmen:"
-
-#~ msgid "Orgname:"
-#~ msgstr "Name der Organisation:"
-
-#~ msgid "Rating:"
-#~ msgstr "Bewertung:"
-
-#~ msgid "Cutstatus:"
-#~ msgstr "Fortschritt:"
-
-#~ msgid "in background"
-#~ msgstr "im Hintergrund"
-
-#~ msgid "Marker found:"
-#~ msgstr "Markierung gefunden:"
-
-#~ msgid "Selected:"
-#~ msgstr "ausgewählt:"
-
-#~ msgid "select movie"
-#~ msgstr "Filmdatei auswählen"
-
-#~ msgid ""
-#~ "Start movie in the internal player, set with 0 key marker during a movie. "
-#~ "5 key is for the marker overview. Then here select movie and start."
-#~ msgstr ""
-#~ "Starten Sie die Wiedergabe der ts Datei im internen Player und drücken "
-#~ "Sie die Taste 0 um eine Markierung zu setzen.\n"
-#~ "Drücken Sie die Taste 5 um eine Übersicht der Markierungen anzuzeigen und "
-#~ "starten Sie anschließend die Wiedergabe."
-
-#~ msgid "ts - cut"
-#~ msgstr "ts - Schnitt"
-
-#~ msgid ""
-#~ "Position Setup is not allowed if record\n"
-#~ "or stream is running !"
-#~ msgstr ""
-#~ "Position darf während einer aktiven Aufnahme oder einer Streamwiedergabe "
-#~ "nicht verändert werden."
-
-#~ msgid "DeepStandby"
-#~ msgstr "Ausschalten"
-
-#~ msgid "This file doesn't exist, or has been removed."
-#~ msgstr "Die ausgewählte Datei existiert nicht oder wurde entfernt."
-
-#~ msgid "stop"
-#~ msgstr "Stopp"
-
-#~ msgid "undefined error"
-#~ msgstr "!!! Unbekannter Fehler !!!"
-
-#~ msgid "Timer starttime or endtime not ok"
-#~ msgstr "FEHLER: Start- oder Endzeit ist fehlerhaft!"
-
-#~ msgid "Timer endtime shorter than aktual time"
-#~ msgstr "FEHLER: Endzeit liegt in der Vergangenheit!"
-
-#~ msgid "Timer endtime shorter than start time"
-#~ msgstr "FEHLER: Endzeit liegt vor Startzeit!"
-
-#~ msgid "Timer service ID not ok"
-#~ msgstr "FEHLER: Sender ID stimmt nicht!"
-
-#~ msgid "Timer transponder ID not ok"
-#~ msgstr "FEHLER: Transponder ID stimmt nicht!"
-
-#~ msgid "stopped from user"
-#~ msgstr "Abbruch durch Benutzer"
-
-#~ msgid "rec"
-#~ msgstr "Aufnahme"
-
-#~ msgid "waiting"
-#~ msgstr "warte"
-
-#~ msgid "success"
-#~ msgstr "Erfolgreich"
-
-#~ msgid "Single Provider"
-#~ msgstr "Einzelner Anbieter"
-
-#~ msgid "Change to scart"
-#~ msgstr "Auf SCART-Ausgang wechseln"
-
-#~ msgid "Videomode must be 576i for Scart"
-#~ msgstr ""
-#~ "Die Auflösung des SCART-Anschlusses muss auf 576i eingestellt sein!!!"
-
-#~ msgid "Plugin Key Action - Setup"
-#~ msgstr "Plugins Taste - Belegungsmenü"
-
-#~ msgid "Receiver now reboot !!!"
-#~ msgstr "Receiver wir neu gestartet !!!"
-
-#~ msgid "Help"
-#~ msgstr "Hilfe"
-
-#~ msgid "ae"
-#~ msgstr "ä"
-
-#~ msgid "AE"
-#~ msgstr "Ä"
-
-#~ msgid "Atemio (hotline)"
-#~ msgstr "Atemio Hotline"
-
-#~ msgid "Autostart - Cam / Emu"
-#~ msgstr "Autostart - Softcam"
-
-#~ msgid "Autostart - Child safety"
-#~ msgstr "Autostart - Jugendschutz"
-
-#~ msgid "Autostart Default"
-#~ msgstr "Autostart Werkseinstellungen"
-
-#~ msgid "Autostart - Network"
-#~ msgstr "Autostart - Netzwerk"
-
-#~ msgid "Autostart - Usb Device"
-#~ msgstr "USB-Gerät automatisch starten"
-
-#~ msgid "Bandwidth"
-#~ msgstr "Bandbreite"
-
-#~ msgid "Bandwidth:"
-#~ msgstr "Bandbreite:"
-
-#~ msgid "Begin"
-#~ msgstr "Anfang"
-
-#~ msgid "CAID Lock"
-#~ msgstr "CAID Sperren"
-
-#~ msgid "Clear"
-#~ msgstr "löschen"
-
-#~ msgid "Copy / Move"
-#~ msgstr "Kopieren / Verschieben"
-
-#~ msgid "diseqcscreen..."
-#~ msgstr "DiSEqC"
-
-#~ msgid "EPG Scanlist"
-#~ msgstr "Scanliste"
-
-#~ msgid "Guardinterval"
-#~ msgstr "Schutzintervall"
-
-#~ msgid "Guardinterval:"
-#~ msgstr "Schutzintervall:"
-
-#~ msgid "Hierarchy"
-#~ msgstr "Hierarchie"
-
-#~ msgid "Hierarchy:"
-#~ msgstr "Hierarchie:"
-
-#~ msgid "IP for Stream"
-#~ msgstr "IP Adresse für Stream"
-
-#~ msgid "LED - brightness running"
-#~ msgstr "LED - Helligkeit im Betrieb"
-
-#~ msgid "LED - brightness standby"
-#~ msgstr "LED - Helligkeit in Standby"
-
-#~ msgid "Listbox Select Color"
-#~ msgstr "Listbox Auswahl Farbe"
-
-#~ msgid "Manual Search Terrestrial"
-#~ msgstr "Manuelle terrestrische Suche"
-
-#~ msgid "Normal/Standby"
-#~ msgstr "Betrieb / Standby"
-
-#~ msgid "oe"
-#~ msgstr "ö"
-
-#~ msgid "OE"
-#~ msgstr "Ö"
-
-#~ msgid "Picture"
-#~ msgstr "Bild"
-
-#~ msgid "Plot"
-#~ msgstr "darstellen"
-
-#~ msgid "Plugin Button"
-#~ msgstr "Plugin Übersicht"
-
-#~ msgid "Prozesslist"
-#~ msgstr "Prozessliste"
-
-#~ msgid "Quick Menu"
-#~ msgstr "Schnellmenü"
-
-#~ msgid "Rating"
-#~ msgstr "Bewertung"
-
-#~ msgid "Recordlist"
-#~ msgstr "Liste der Aufnahmen"
-
-#~ msgid "Record path"
-#~ msgstr "Aufnahmepfad"
-
-#~ msgid "Released"
-#~ msgstr "Veröffentlicht"
-
-#~ msgid "Runtime"
-#~ msgstr "Laufzeit"
-
-#~ msgid "SATA Connector"
-#~ msgstr "SATA Anschluss"
-
-#~ msgid "SATCR Frequency"
-#~ msgstr "Satellite-Channel-Router Frequenz"
-
-#~ msgid "SATCR Number"
-#~ msgstr "Satellite-Channel-Router Nummer"
-
-#~ msgid "Sat Finder"
-#~ msgstr "Satelliten Empfangswerte"
-
-#~ msgid "ScanList"
-#~ msgstr "Scanliste"
-
-#~ msgid "Scan locking"
-#~ msgstr "Suche sperren"
-
-#~ msgid "SmartCard Reader"
-#~ msgstr "Kartenleser"
-
-#~ msgid "Softcam Selection"
-#~ msgstr "Softcam Auswahl"
-
-#~ msgid "(Stop)"
-#~ msgstr "(Stopp)"
-
-#~ msgid "systemupdate_flash_online_menu..."
-#~ msgstr "Softwareaktualisierung (Online)"
-
-#~ msgid "systemupdate_flash_tmp_menu..."
-#~ msgstr "Softwareaktualisierung (tmp)"
-
-#~ msgid "systemupdate_usb_online_menu..."
-#~ msgstr "USB Softwareaktualisierung (Online)"
-
-#~ msgid "systemupdate_usb_tmp_menu..."
-#~ msgstr "USB Softwareaktualisierung (tmp)"
-
-#~ msgid "sz"
-#~ msgstr "ß"
-
-#~ msgid "SZ"
-#~ msgstr "ß"
-
-#~ msgid "Title"
-#~ msgstr "Titel"
-
-#~ msgid "Transmission"
-#~ msgstr "Übertragung"
-
-#~ msgid "Transmission:"
-#~ msgstr "Übertragung:"
-
-#~ msgid "ue"
-#~ msgstr "ü"
-
-#~ msgid "UE"
-#~ msgstr "Ü"
-
-#~ msgid "Uncommitted Diseqc command"
-#~ msgstr "Ungebundener DiSEqC Befehl"
-
-#~ msgid "Votes"
-#~ msgstr "Punkte"
-
-#~ msgid "Writer"
-#~ msgstr "Autor"
-
-#~ msgid "Year"
-#~ msgstr "Jahr"
-
-#~ msgid "Company: "
-#~ msgstr "Gesellschaft: "
-
-#~ msgid "Exchange: "
-#~ msgstr "Börse: "
-
-#~ msgid "Exchange closing: "
-#~ msgstr "Börsenschluss: "
-
-#~ msgid "Currency: "
-#~ msgstr "Währung: "
-
-#~ msgid "Last: "
-#~ msgstr "Letzte: "
-
-#~ msgid "High: "
-#~ msgstr "Hoch: "
-
-#~ msgid "Low: "
-#~ msgstr "Tief: "
-
-#~ msgid "Volume: "
-#~ msgstr "Anzahl: "
-
-#~ msgid "Avg volume: "
-#~ msgstr "Durchschnittliche Anzahl: "
-
-#~ msgid "Market cap: "
-#~ msgstr "Marktanteil: "
-
-#~ msgid "Open: "
-#~ msgstr "Eröffnung: "
-
-#~ msgid "Close: "
-#~ msgstr "Abschluss: "
-
-#~ msgid "Change: "
-#~ msgstr "Änderung: "
-
-#~ msgid "Change in %: "
-#~ msgstr "Änderung in %: "
-
-#~ msgid "Trade time: "
-#~ msgstr "Zeit des Handelns: "
-
-#~ msgid "Restore failed, see log"
-#~ msgstr "FEHLER: Wiederherstellung fehlgeschlagen - siehe Logdatei"
-
-#~ msgid "BACKUP LOG"
-#~ msgstr "Backup Log"
-
-#~ msgid "Free Space"
-#~ msgstr "Freier Speicher"
-
-#~ msgid "Swap info"
-#~ msgstr "SWAP Informationen"
-
-#~ msgid "Prozess Info"
-#~ msgstr "Prozess Informationen"
-
-#~ msgid "USB Info"
-#~ msgstr "USB Informationen"
-
-#~ msgid "starting Full Update (from backup) ?"
-#~ msgstr "Beginne Flashvorgang eines gesicherten Systemabbilds"
-
-#~ msgid ""
-#~ "Timeshiftsettings not allowed\n"
-#~ "if timeshift is running !"
-#~ msgstr ""
-#~ "Timeshifteinstellungen können nicht während eines\n"
-#~ "aktiven Timeshift geändert werden."
-
-#~ msgid "!!! This is a DEMO Version !!!"
-#~ msgstr "!!! DIESE VERSION IST EINE TESTVERSION !!!"
-
-#~ msgid "Receiver successful unlocked"
-#~ msgstr "Ihr Receiver wurde erfolgreich freigeschaltet."
-
-#~ msgid ""
-#~ "Free space in /mnt to little!\n"
-#~ "This can make problems!"
-#~ msgstr ""
-#~ "FEHLER: Der Speicher in /mnt ist nicht ausreichend!\n"
-#~ "Das kann zu Problemen führen!"
-
-#~ msgid ""
-#~ "Can't start download.\n"
-#~ "Please try later."
-#~ msgstr ""
-#~ "Das Herunterladen der Datei ist nicht möglich!\n"
-#~ "Bitte versuchen Sie es zu einem späteren Zeitpunkt erneut."
-
-#~ msgid "TitanNit Tithek disclaimer"
-#~ msgstr "TitanNit Tithek Haftungsausschluss:"
-
-#~ msgid "idle"
-#~ msgstr "Wartend"
-
-#~ msgid "audio"
-#~ msgstr "Audio"
-
-#~ msgid "video / audio"
-#~ msgstr "Video / Audio"
-
-#~ msgid "video / picture"
-#~ msgstr "Video / Bild"
-
-#~ msgid "audio / picture"
-#~ msgstr "Audio / Bild"
-
-#~ msgid "no pic"
-#~ msgstr "Kein Bild"
-
-#~ msgid "Delete selected entry ?"
-#~ msgstr "Ausgewählten Eintrag löschen?"
-
-#~ msgid ""
-#~ "MediaDB Path not found!\n"
-#~ "Configure it in MediaDB Settings"
-#~ msgstr ""
-#~ "Pfad zur MediaDB wurde nicht konfiguriert!\n"
-#~ "Bitte definieren Sie einen Pfad in den MediaDB Einstellungen."
-
-#~ msgid "Path: "
-#~ msgstr "Pfad: "
-
-#~ msgid ""
-#~ "MediaDB not found!\n"
-#~ "Scan your HDD in TMC Settings"
-#~ msgstr ""
-#~ "MediaDB wurde nicht gefunden!\n"
-#~ "Scannen Sie Ihre Festplatte innerhalb des TMC"
-
-#~ msgid ""
-#~ "IMDB Plugin not found!\n"
-#~ "Can't get detail media infos\n"
-#~ "Please install it"
-#~ msgstr ""
-#~ "IMDB wurde nicht gefunden!\n"
-#~ "Kann die angeforderten Details nicht abrufen.\n"
-#~ "Bitte installieren Sie das Plugin."
-
-#~ msgid "FREQU"
-#~ msgstr "Frequenz"
-
-#~ msgid "CABLE"
-#~ msgstr "Kabel"
-
-#~ msgid "TERR"
-#~ msgstr "Terrestrisch"
-
-#~ msgid "UNKNOWN"
-#~ msgstr "Unbekannt!"
-
-#~ msgid "POS"
-#~ msgstr "Position"
-
-#~ msgid "PSK 8"
-#~ msgstr "8PSK"
-
-#~ msgid "DVBS"
-#~ msgstr "DVB-S"
-
-#~ msgid "DVBS2"
-#~ msgstr "DVB-S2"
-
-#~ msgid "Lnb / Unicable"
-#~ msgstr "LNB / Unikabel"
-
-#~ msgid "Terrestrisch"
-#~ msgstr "Terrestrisch"
-
-#~ msgid "Unicable SCR"
-#~ msgstr "Unikabel SCR"
-
-#~ msgid "channel number"
-#~ msgstr "Sender Nr."
-
-#~ msgid "Videomode"
-#~ msgstr "Bildqualität"
-
-#~ msgid ": Present\n"
-#~ msgstr ": vorhanden\n"
-
-#~ msgid ": Not Present\n"
-#~ msgstr ": nicht vorhanden\n"
-
-#~ msgid "Search on Myvideo (local)"
-#~ msgstr "Suche bei MyVideo (lokal)"
-
-#~ msgid "Timer Record start !\n"
-#~ msgstr "Timeraufnahme wurde gestartet !\n"
