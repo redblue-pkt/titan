@@ -266,7 +266,8 @@ void playereof(struct skin* apskin, struct skin* filelist, struct skin* listbox,
 		//playlist
 		if(*playlist == 1)
 		{
-			changetext(b2, _("Playlist-Mode"));
+//			changetext(b2, _("Playlist-Mode"));
+			changetext(b2, _("Playlist"));
 
 			if(screensaver != NULL && screensaver->type == 3 && flag == 2)
 				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
@@ -333,8 +334,11 @@ void playereof(struct skin* apskin, struct skin* filelist, struct skin* listbox,
 								}
 
 								singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
-								changetext(b2, _("Filelist-Mode"));
-								writevfdmenu("Filelist-Mode");
+//								changetext(b2, _("Filelist-Mode"));
+								changetext(b2, _("Playlist"));
+//								writevfdmenu("Filelist-Mode");
+								writevfdmenu("Playlist");
+
 								switchtofilelist = 1;
 	
 								drawscreen(skin, 0, 0);
@@ -405,7 +409,9 @@ void playereof(struct skin* apskin, struct skin* filelist, struct skin* listbox,
 		}
 		else
 		{
-			changetext(b2, _("Filelist-Mode"));
+//			changetext(b2, _("Filelist-Mode"));
+			changetext(b2, _("Playlist"));
+			
 		
 			if(screensaver != NULL && screensaver->type == 3 && flag == 2)
 				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
@@ -690,7 +696,8 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 							firsttitle = ostrcat("", "dummy no read title", 0, 0);						
 
 						title = ostrcat("", firsttitle, 0, 0);
-						changetext(b2, _("Playlist-Mode"));
+//						changetext(b2, _("Playlist-Mode"));
+						changetext(b2, _("Playlist"));
 
 						if(screensaver != NULL && screensaver->type == 0)
 							screensaver->value = title;
@@ -923,7 +930,8 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 		filelist->hidden = YES;
 		listbox->hidden = NO;
 
-		changetext(b2, _("Playlist-Mode"));
+//		changetext(b2, _("Playlist-Mode"));
+		changetext(b2, _("Playlist"));
 		delownerrc(apskin);
 		addscreenrc(apskin, listbox);
 		drawscreen(apskin, 0, 0);
@@ -937,7 +945,8 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 			title = ostrcat("", firsttitle, 0, 0);
 
 			//if(flag == 2)
-				changetext(b2, _("Playlist-Mode"));
+//				changetext(b2, _("Playlist-Mode"));
+				changetext(b2, _("Playlist"));
 
 			if(screensaver != NULL && screensaver->type == 0 && flag == 2)
 				screensaver->value = title;
