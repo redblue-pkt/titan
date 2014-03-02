@@ -242,7 +242,7 @@ fi
 			if [ ! -e "$OUTFILE_MO" ] || [ `cat "$OUTFILE_MO" | wc -l` -eq 0 ]; then error="10"; break;fi
 			if [ `echo $log | grep "fatal error" | wc -l` -gt 0 ]; then error="11"; break;fi
 			
-			iconv -f UTF-8 -t ISO-8859-1 $ROUND_NEW_MERGE > $ROUND
+			iconv -f UTF-8 -t ISO-8859-1 $ROUND_MERGE > $ROUND
 			if [ ! -e "$ROUND" ] || [ `cat "$ROUND" | wc -l` -eq 0 ]; then error="12"; break;fi
 	
 			if [ ! -e $OUTFILE_MO ];then
