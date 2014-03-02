@@ -160,7 +160,7 @@ for ROUND in $POLIST; do
 			
 #			iconv -f UTF-8 -t ISO-8859-1 $ROUND_NEW_MERGE > $ROUND
 #			if [ ! -e "$ROUND" ] || [ `cat "$ROUND" | wc -l` -eq 0 ]; then error="4"; break;fi
-
+			if [ ! -e "$OUTFILE_MO" ] || [ `cat "$OUTFILE_MO" | wc -l` -eq 0 ]; then error="5"; break;fi
 		fi
 	else
 		xgettext --omit-header -k_ *.* -o $ROUND
