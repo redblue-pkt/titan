@@ -4140,7 +4140,7 @@ msgstr "non stabile"
 msgid "Box recording finished poweroff in 30sec !"
 msgstr "Registrazione Finita. Box sara spento in 30 secondi !"
 
-msgid "Timer Record start !\n"
+msgid "Timer Record start !"
 msgstr "Timer registrazione partita !"
 
 msgid "Choice Install Medium"
