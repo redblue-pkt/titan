@@ -1869,7 +1869,7 @@ msgstr "Blaue Taste"
 
 #: hwtest.h:305
 msgid "SCART 4:3 / 16:9"
-msgstr ""
+msgstr "SCART 4:3/16:9"
 
 #: hwtest.h:368
 msgid "Smartcard "
