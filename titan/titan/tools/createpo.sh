@@ -44,7 +44,7 @@ cat "$HOME"/ipk/source*/*/CONTROL/control | grep Section: | sort -u | sed 's!Sec
 cat "$HOME"/ipk/source*/*/CONTROL/control | grep Showname: | sort -u | sed 's!Showname: !tmpstr = _("!g' | sed 's!Package:!\nPackage!g' | grep ^tmpstr | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/source.titan/titan/tools/tmp/tpk_showname.h
 cat "$HOME"/ipk/source*/*/CONTROL/control | grep Description: | sort -u | sed 's!Description: !tmpstr = _("!g' | sed 's!Package:!\nPackage!g' | grep ^tmpstr | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/source.titan/titan/tools/tmp/tpk_description.h
 cat "$HOME"/flashimg/source.titan/skins/tithek/tithekmainmenu/*.list | grep -v internettv | cut -d"#" -f1 | sort -u | sed -e 's/^/tmpstr = _("/' | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/source.titan/titan/tools/tmp/tithek_mainmenu.h
-cat /var/www/atemio/web/mediathek/*/*.category.list  | cut -d"#" -f1 | sort -u | sed -e 's/^/tmpstr = _("/' | grep -v link= | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/source.titan/titan/tools/tmp/tithek_submenu.h
+cat /var/www/atemio/web/mediathek/*/*.category.list  | cut -d"#" -f1 | sort -u | sed -e 's/^/tmpstr = _("/' | grep -v link= | grep -v title= | tr '\0' '#' | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/source.titan/titan/tools/tmp/tithek_submenu.h
 
 error=0
 
@@ -73,27 +73,32 @@ for ROUND in $POLIST; do
 		echo "[createpo.sh] xgettext --omit-header -k_ *.* -o $ROUND_NEW"
 		xgettext --omit-header -j -k_ *.* -o $ROUND_UTF >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log
 		if [ ! -e "$ROUND_UTF" ] || [ `cat "$ROUND_UTF" | wc -l` -eq 0 ]; then error="3"; break;fi
+		log=`cat "$HOME"/flashimg/source.titan/titan/tools/error/error.log`
 		if [ `echo $log | grep "fatal error" | wc -l` -gt 0 ]; then error="4"; break;fi
 
 		echo "[createpo.sh] xgettext --omit-header -k_ *.* -o $ROUND_NEW"
 		xgettext --omit-header -k_ *.* -o $ROUND_NEW >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log
 		if [ ! -e "$ROUND_NEW" ] || [ `cat "$ROUND_NEW" | wc -l` -eq 0 ]; then error="5"; break;fi
+		log=`cat "$HOME"/flashimg/source.titan/titan/tools/error/error.log`
 		if [ `echo $log | grep "fatal error" | wc -l` -gt 0 ]; then error="6";break;fi
 
 		echo "[createpo.sh] msgmerge $ROUND_UTF $ROUND_NEW > $ROUND_NEW_MERGE"
 		msgmerge $ROUND_UTF $ROUND_NEW > $ROUND_NEW_MERGE
 		if [ ! -e "$ROUND_NEW_MERGE" ] || [ `cat "$ROUND_NEW_MERGE" | wc -l` -eq 0 ]; then error="7"; break;fi
 
-		iconv -f ISO-8859-1 -t UTF-8 $ROUND_EDIT > $ROUND_EDIT_UTF
-		if [ ! -e "$ROUND_EDIT_UTF" ] || [ `cat "$ROUND_EDIT_UTF" | wc -l` -eq 0 ]; then error="8"; break;fi
-
-		echo "[createpo.sh] msgmerge $ROUND_NEW_MERGE $ROUND_EDIT_UTF > $ROUND_MERGE_UTF"
-		msgmerge $ROUND_NEW_MERGE $ROUND_EDIT_UTF > $ROUND_MERGE_UTF
-		if [ ! -e "$ROUND_NEW_MERGE" ] || [ `cat "$ROUND_NEW_MERGE" | wc -l` -eq 0 ]; then error="9"; break;fi
-
-		iconv -f UTF-8 -t ISO-8859-1 $ROUND_MERGE_UTF > $ROUND_MERGE
+#		iconv -f ISO-8859-1 -t UTF-8 $ROUND_EDIT > $ROUND_EDIT_UTF
+#		if [ ! -e "$ROUND_EDIT_UTF" ] || [ `cat "$ROUND_EDIT_UTF" | wc -l` -eq 0 ]; then error="8"; break;fi
+#
+#		echo "[createpo.sh] msgmerge $ROUND_NEW_MERGE $ROUND_EDIT_UTF > $ROUND_MERGE_UTF"
+#		msgmerge $ROUND_NEW_MERGE $ROUND_EDIT_UTF > $ROUND_MERGE_UTF
+#		if [ ! -e "$ROUND_NEW_MERGE" ] || [ `cat "$ROUND_NEW_MERGE" | wc -l` -eq 0 ]; then error="9"; break;fi
+#
+#		iconv -f UTF-8 -t ISO-8859-1 $ROUND_MERGE_UTF > $ROUND_MERGE
+#		if [ ! -e "$ROUND_MERGE" ] || [ `cat "$ROUND_MERGE" | wc -l` -eq 0 ]; then error="10"; break;fi
+###
+		iconv -f UTF-8 -t ISO-8859-1 $ROUND_NEW_MERGE > $ROUND_MERGE
 		if [ ! -e "$ROUND_MERGE" ] || [ `cat "$ROUND_MERGE" | wc -l` -eq 0 ]; then error="10"; break;fi
-
+###
 		SEARCH=`cat $ROUND_MERGE | grep -n "Content-Transfer-Encoding: 8bit" | cut -d":" -f1`
 
 		echo "[createpo.sh] SEARCH $SEARCH"
@@ -106,6 +111,7 @@ for ROUND in $POLIST; do
 		echo "[createpo.sh] msgfmt -v $OUTFILE_PO -o $OUTFILE_MO"
 		msgfmt -v $OUTFILE_PO -o $OUTFILE_MO >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log		
 		if [ ! -e "$OUTFILE_MO" ] || [ `cat "$OUTFILE_MO" | wc -l` -eq 0 ]; then error="12"; break;fi
+		log=`cat "$HOME"/flashimg/source.titan/titan/tools/error/error.log`
 		if [ `echo $log | grep "fatal error" | wc -l` -gt 0 ]; then error="13"; break;fi
 
 		iconv -f UTF-8 -t ISO-8859-1 $ROUND_NEW_MERGE > $ROUND
