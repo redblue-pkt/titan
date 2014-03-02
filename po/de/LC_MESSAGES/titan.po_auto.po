@@ -1758,7 +1758,7 @@ msgstr ""
 
 #: hbbtv.h:742
 msgid "Channel HBBTV"
-msgstr ""
+msgstr "HBBTV Sender"
 
 #: hwtest.h:88
 msgid "testtransponder not found"
@@ -1837,7 +1837,7 @@ msgstr ""
 
 #: hwtest.h:186 hwtest.h:639
 msgid "Flash/Nand Check"
-msgstr ""
+msgstr "Flash/Nand prüfen"
 
 #: hwtest.h:190
 msgid "Hardware Test"
@@ -1877,11 +1877,11 @@ msgstr ""
 
 #: hwtest.h:371
 msgid "Present"
-msgstr ""
+msgstr "vorhanden"
 
 #: hwtest.h:377
 msgid "Not Present"
-msgstr ""
+msgstr "nicht vorhanden"
 
 #: hwtest.h:386
 msgid "Smartcard Ports found: "
@@ -1905,11 +1905,11 @@ msgstr " : NICHT OK!"
 
 #: hwtest.h:472 moduleconfig.h:338 scconfig.h:31
 msgid "Slot "
-msgstr "Einschub"
+msgstr "Einschub "
 
 #: hwtest.h:489
 msgid "CAM Ports found: "
-msgstr "CI-MODUL gefunden"
+msgstr "CI-MODUL gefunden "
 
 #: hwtest.h:564
 msgid "SUCESS Serial Port"
@@ -1921,51 +1921,51 @@ msgstr "Serieller Anschluß fehlerhaft"
 
 #: hwtest.h:578
 msgid "LNB off / 22K off: OK"
-msgstr ""
+msgstr "LNB Aus / 22K Aus: OK"
 
 #: hwtest.h:583
 msgid "LNB off / 22K off: NOT OK"
-msgstr ""
+msgstr "LNB Aus / 22K Aus: Fehler"
 
 #: hwtest.h:594
 msgid "LNB 18V / 22K off: OK"
-msgstr ""
+msgstr "LNB 18V / 22K Aus: OK"
 
 #: hwtest.h:599
 msgid "LNB 18V / 22K off: NOT OK"
-msgstr ""
+msgstr "LNB 18V / 22K Aus: Fehler"
 
 #: hwtest.h:609
 msgid "LNB 13V / 22K off: OK"
-msgstr ""
+msgstr "LNB 13V / 22K Aus: OK"
 
 #: hwtest.h:614
 msgid "LNB 13V / 22K off: NOT OK"
-msgstr ""
+msgstr "LNB 13V / 22K Aus: Fehler"
 
 #: hwtest.h:624
 msgid "LNB 13V / 22K on: OK"
-msgstr ""
+msgstr "LNB 13V / 22K AN: OK"
 
 #: hwtest.h:629
 msgid "LNB 13V / 22K on: NOT OK"
-msgstr ""
+msgstr "LNB 13V / 22K An: Fehler"
 
 #: hwtest.h:679
 msgid "SUCESS Flash/Nand"
-msgstr ""
+msgstr "Flash/Nand Erfolgreich"
 
 #: hwtest.h:681
 msgid "FAIL Flash/Nand (/var and /mnt)"
-msgstr ""
+msgstr "Flash/Nand Fehler (/var und /mnt)"
 
 #: hwtest.h:683
 msgid "FAIL Flash/Nand (/var)"
-msgstr ""
+msgstr "Flash/Nand Fehler (/var)"
 
 #: hwtest.h:685
 msgid "FAIL Flash/Nand (/mnt)"
-msgstr ""
+msgstr "Flash/Nand Fehler (/mnt)"
 
 #: imdbapi.h:200 imdb.h:626 tmdb.h:759
 msgid "Error, Internet Connection not found"
@@ -4584,7 +4584,7 @@ msgstr ""
 
 #: record.h:1174
 msgid "Timer Record start !"
-msgstr ""
+msgstr "Timeraufnahme wurde gestartet!"
 
 #: record.h:1289 record.h:1298 record.h:1309 record.h:1344 record.h:1353
 #: record.h:1385 stream.h:15 stream.h:37
@@ -14499,16 +14499,16 @@ msgstr "Bildqualität"
 
 #: weather.h:430 weather.h:448 weather.h:466 weather.h:484
 msgid "Day: "
-msgstr "Tag"
+msgstr "Tag: "
 
 #: weather.h:434 weather.h:452 weather.h:470 weather.h:488
 msgid "Lowest temp: "
-msgstr "Tiefsttemperatur"
+msgstr "Tiefsttemperatur: "
 
 #: weather.h:438 weather.h:456 weather.h:474 weather.h:492
 msgid "Highest temp: "
-msgstr "Höchsttemperatur"
+msgstr "Höchsttemperatur: "
 
 #: weather.h:442 weather.h:460 weather.h:478 weather.h:496
 msgid "Condition: "
-msgstr "Wetter:"
+msgstr "Wetter: "
