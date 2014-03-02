@@ -109,8 +109,8 @@ msgstr ""
 #: timeshift.h:162 timeshiftsettings.h:45 titan.c:274 titan.c:338 titan.c:347
 #: titan.c:951 titan.c:960 titan.c:1071 titan.c:1092 titan.c:1098 titan.c:1109
 #: titan.c:1115 tithek_global.h:238 tithek.h:620 tithek.h:1057 tithek.h:1100
-#: tithek.h:1346 tithek.h:1368 tithek.h:1373 tithek.h:1387 tithek.h:3014
-#: tithek.h:3076 tithek.h:3090 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
+#: tithek.h:1345 tithek.h:1367 tithek.h:1372 tithek.h:1386 tithek.h:3013
+#: tithek.h:3075 tithek.h:3089 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922 tpk.h:3185
 #: tpk.new.h:3167 tunerconfig.h:772 unlock.h:20 unlock.h:66 unlock.h:71
 #: unlock.h:75 videomode.h:53 videoweed.h:35 videoweed.h:80 vidstream.h:45
@@ -198,8 +198,8 @@ msgstr "OK"
 #: timeshiftsettings.h:45 titan.c:274 titan.c:338 titan.c:347 titan.c:951
 #: titan.c:960 titan.c:1071 titan.c:1092 titan.c:1098 titan.c:1109
 #: titan.c:1115 tithek_global.h:238 tithek.h:620 tithek.h:1057 tithek.h:1100
-#: tithek.h:1346 tithek.h:1368 tithek.h:1373 tithek.h:1387 tithek.h:3014
-#: tithek.h:3076 tithek.h:3090 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
+#: tithek.h:1345 tithek.h:1367 tithek.h:1372 tithek.h:1386 tithek.h:3013
+#: tithek.h:3075 tithek.h:3089 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922 tpk.h:3185
 #: tpk.new.h:3167 tunerconfig.h:772 unlock.h:20 unlock.h:66 unlock.h:71
 #: unlock.h:75 videomode.h:53 videoweed.h:35 videoweed.h:80 vidstream.h:45
@@ -561,8 +561,8 @@ msgstr ""
 #: system_update.h:333 timeshift.h:113 timeshift.h:155 timeshift.h:162
 #: timeshiftsettings.h:45 titan.c:274 titan.c:338 titan.c:347 titan.c:1071
 #: titan.c:1092 titan.c:1098 titan.c:1109 titan.c:1115 tithek_global.h:238
-#: tithek.h:620 tithek.h:1057 tithek.h:1100 tithek.h:1346 tithek.h:1368
-#: tithek.h:1373 tithek.h:3014 tithek.h:3076 tithek.h:3090 tiwakeup.h:66
+#: tithek.h:620 tithek.h:1057 tithek.h:1100 tithek.h:1345 tithek.h:1367
+#: tithek.h:1372 tithek.h:3013 tithek.h:3075 tithek.h:3089 tiwakeup.h:66
 #: tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759
 #: tmdb.h:922 tpk.h:3185 tpk.new.h:3167 tunerconfig.h:772 unlock.h:20
 #: unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:53 videoweed.h:35
@@ -1500,7 +1500,7 @@ msgstr ""
 msgid "Can't show this file!"
 msgstr "Không thể hiển thị file này"
 
-#: filemanager.h:355 mc_internetbrowser.h:41 mc_wetterinfo.h:41 tithek.h:1373
+#: filemanager.h:355 mc_internetbrowser.h:41 mc_wetterinfo.h:41 tithek.h:1372
 msgid "Registration needed, please contact Atemio !"
 msgstr ""
 
@@ -3042,7 +3042,7 @@ msgid "Search on MyVideo"
 msgstr ""
 
 #: play.h:630
-msgid "Search on Myvideo (local)"
+msgid "Search on MyVideo (local)"
 msgstr ""
 
 #: play.h:631
@@ -8179,7 +8179,7 @@ msgstr "Không xác định được lỗi."
 msgid "Automatic stop in 10 seconds."
 msgstr ""
 
-#: tithek_global.h:238 tithek.h:3014
+#: tithek_global.h:238 tithek.h:3013
 msgid "The hoster is not yet supported !"
 msgstr ""
 
@@ -8217,75 +8217,75 @@ msgstr "luồng phát lại (mặc định)"
 msgid "Streaming Playback Caching (0.5MB)"
 msgstr "Bộ nhớ chứa luồng phát lại (0.5MB)"
 
-#: tithek.h:1222 tithek.h:1223
+#: tithek.h:1222
 msgid "Streaming Playback Caching (1MB)"
 msgstr "Bộ nhớ chứa luồng phát lại (1MB)"
 
-#: tithek.h:1224
+#: tithek.h:1223
 msgid "Streaming Playback Caching (2MB)"
 msgstr "Bộ nhớ chứa luồng phát lại (2MB)"
 
-#: tithek.h:1225
+#: tithek.h:1224
 msgid "Streaming Playback Caching (3MB)"
 msgstr "Bộ nhớ chứa luồng phát lại (3MB)"
 
-#: tithek.h:1226
+#: tithek.h:1225
 msgid "Streaming Playback Caching (4MB)"
 msgstr "Bộ nhớ chứa luồng phát lại (4MB)"
 
-#: tithek.h:1227
+#: tithek.h:1226
 msgid "Streaming Playback Caching (5MB)"
 msgstr "Bộ nhớ chứa luồng phát lại (5MB)"
 
-#: tithek.h:1228
+#: tithek.h:1227
 msgid "Streaming Playback Caching (7.5MB)"
 msgstr "Bộ nhớ chứa luồng phát lại (7.5MB)"
 
-#: tithek.h:1229
+#: tithek.h:1228
 msgid "Streaming Playback Caching (10MB)"
 msgstr "Bộ nhớ chứa luồng phát lại (10MB)"
 
-#: tithek.h:1230
+#: tithek.h:1229
 msgid "File Caching Playback (10MB / 120s)"
 msgstr ""
 
-#: tithek.h:1231
+#: tithek.h:1230
 msgid "File Caching Playback (20MB / 240s)"
 msgstr ""
 
-#: tithek.h:1232
+#: tithek.h:1231
 msgid "File Caching Playback (30MB / 360s)"
 msgstr ""
 
-#: tithek.h:1233
+#: tithek.h:1232
 msgid "Download Full File"
 msgstr "Tải toàn bộ file"
 
-#: tithek.h:1234
+#: tithek.h:1233
 msgid "Download Full File (background)"
 msgstr " Tải toàn bộ file (hình nền)"
 
-#: tithek.h:1346
+#: tithek.h:1345
 msgid "Start playback"
 msgstr "bắt đầu phát lại?"
 
-#: tithek.h:1368
+#: tithek.h:1367
 msgid "Can't get Streamurl !"
 msgstr "không có tín hiệu"
 
-#: tithek.h:1387
+#: tithek.h:1386
 msgid "TitanNit Tithek disclaimer"
 msgstr ""
 
-#: tithek.h:1451
+#: tithek.h:1450
 msgid "Page"
 msgstr "trang"
 
-#: tithek.h:3076
+#: tithek.h:3075
 msgid "Remove this Favorite ?"
 msgstr "Hủy bỏ ưu thích này ?"
 
-#: tithek.h:3090
+#: tithek.h:3089
 msgid "Add this link as Favorite ?"
 msgstr " Muốn thêm vào mục ưa thích này?"
 
