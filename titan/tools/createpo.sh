@@ -193,7 +193,7 @@ for ROUND in $POLIST; do
 #cp -a $ROUND_NEW_MERGE $OUTFILE_PO
 #############
 ##################################
-			iconv -f UTF-8 -t ISO-8859-1 $ROUND_MERGE_UTF > $ROUND_MERGE
+			iconv -f UTF-8 -t ISO-8859-1 $ROUND_NEW_MERGE > $ROUND_MERGE
 			if [ ! -e "$ROUND_MERGE" ] || [ `cat "$ROUND_MERGE" | wc -l` -eq 0 ]; then error="8"; break;fi
 	
 			SEARCH=`cat $ROUND_MERGE | grep -n "Content-Transfer-Encoding: 8bit" | cut -d":" -f1`
