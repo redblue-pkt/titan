@@ -25,7 +25,11 @@
 [createpo.sh] xgettext --omit-header -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.po_auto.utf.po
 [createpo.sh] xgettext --omit-header -k_ *.* -o /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.new.po
 [createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.mo
-/home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.outfile.po:4445: `msgid' and `msgstr' entries do not both end with '\n'
+1189 translated messages, 143 fuzzy translations, 93 untranslated messages.
+[createpo.sh] xgettext --omit-header -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/nl/LC_MESSAGES/titan.po_auto.utf.po
+[createpo.sh] xgettext --omit-header -k_ *.* -o /home/atemio/flashimg/source.titan/po/nl/LC_MESSAGES/titan.new.po
+[createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/nl/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/nl/LC_MESSAGES/titan.mo
+/home/atemio/flashimg/source.titan/po/nl/LC_MESSAGES/titan.outfile.po:4499: `msgid' and `msgstr' entries do not both end with '\n'
 msgfmt: found 1 fatal error
-1329 translated messages, 96 untranslated messages.
-msgstr "Pfad für zeitgesteuerte Aufnahmen (Timer)"
+1348 translated messages, 20 untranslated messages.
+msgstr "Map voor Timeropname"
