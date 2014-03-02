@@ -4474,7 +4474,7 @@ msgid ""
 msgstr ""
 
 #: record.h:1174
-msgid "Timer Record start !\n"
+msgid "Timer Record start !"
 msgstr ""
 
 #: record.h:1289 record.h:1298 record.h:1309 record.h:1344 record.h:1353
@@ -5585,9 +5585,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:189
 msgid "Don't clear TV on zap (only with fastzap)"
-msgstr ""
-"? e????a t?? TV ?a pa?aµ??e? ?at? t? zapping (µ??? µe "
-"t? fastzap)"
+msgstr "? e????a t?? TV ?a pa?aµ??e? ?at? t? zapping (µ??? µe t? fastzap)"
 
 #: skin_default_skin.xml.h:190
 msgid "Download"
