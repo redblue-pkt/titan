@@ -5667,7 +5667,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:193
 msgid "Dutch"
-msgstr "Dutch"
+msgstr "Nederlands"
 
 #: skin_default_skin.xml.h:194
 msgid "DYNDNS Settings"
@@ -5703,7 +5703,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:203
 msgid "English"
-msgstr "Engels"
+msgstr ""
 
 #: skin_default_skin.xml.h:204
 msgid "EPG"
@@ -5841,7 +5841,7 @@ msgstr "Vrije opslagruimte"
 
 #: skin_default_skin.xml.h:239 tithek_submenu.h:372
 msgid "French"
-msgstr "Frans"
+msgstr "Francais"
 
 #: skin_default_skin.xml.h:240
 msgid "Frequency"
@@ -5869,7 +5869,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:247 tithek_submenu.h:383
 msgid "German"
-msgstr "Duits"
+msgstr "Deutsch"
 
 #: skin_default_skin.xml.h:248
 msgid "Git Changelog"
@@ -5897,7 +5897,7 @@ msgstr "Grafische Multi-EPG Zoom Factor"
 
 #: skin_default_skin.xml.h:255 tithek_submenu.h:393
 msgid "Greek"
-msgstr "Grieks"
+msgstr "Greek"
 
 #: skin_default_skin.xml.h:256
 msgid "Guardinterval"
@@ -6411,7 +6411,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:327
 msgid "Italian"
-msgstr "Italiaans"
+msgstr "Italiano"
 
 #: skin_default_skin.xml.h:328
 msgid "j"
@@ -6873,7 +6873,7 @@ msgstr "Beeldinstellingen"
 
 #: skin_default_skin.xml.h:451
 msgid "Polish"
-msgstr "Pools"
+msgstr "Polski"
 
 #: skin_default_skin.xml.h:452
 msgid "Positioner Setup"
@@ -7097,7 +7097,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:516
 msgid "Russian"
-msgstr "Russisch"
+msgstr "Russkiy"
 
 #: skin_default_skin.xml.h:517
 msgid "s"
@@ -7777,7 +7777,7 @@ msgstr "Video PID:"
 
 #: skin_default_skin.xml.h:716
 msgid "Vietnamese"
-msgstr "Vietnamesisch"
+msgstr ""
 
 #: skin_default_skin.xml.h:717
 msgid "Virtualzap Timeout"

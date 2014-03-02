@@ -5597,7 +5597,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:193
 msgid "Dutch"
-msgstr ""
+msgstr "Nederlands"
 
 #: skin_default_skin.xml.h:194
 msgid "DYNDNS Settings"
@@ -5633,7 +5633,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:203
 msgid "English"
-msgstr "Anglais"
+msgstr "English"
 
 #: skin_default_skin.xml.h:204
 msgid "EPG"
@@ -5771,7 +5771,7 @@ msgstr "Esapce Libre"
 
 #: skin_default_skin.xml.h:239 tithek_submenu.h:372
 msgid "French"
-msgstr ""
+msgstr "Français"
 
 #: skin_default_skin.xml.h:240
 msgid "Frequency"
@@ -5799,7 +5799,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:247 tithek_submenu.h:383
 msgid "German"
-msgstr "Allmand"
+msgstr "Deutsch"
 
 #: skin_default_skin.xml.h:248
 msgid "Git Changelog"
@@ -5827,7 +5827,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:255 tithek_submenu.h:393
 msgid "Greek"
-msgstr "Grecque"
+msgstr "Greek"
 
 #: skin_default_skin.xml.h:256
 msgid "Guardinterval"
@@ -6207,7 +6207,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:327
 msgid "Italian"
-msgstr ""
+msgstr "Italiano"
 
 #: skin_default_skin.xml.h:328
 msgid "j"
@@ -6665,7 +6665,7 @@ msgstr "Police"
 
 #: skin_default_skin.xml.h:451
 msgid "Polish"
-msgstr ""
+msgstr "Polski"
 
 #: skin_default_skin.xml.h:452
 msgid "Positioner Setup"
@@ -6889,7 +6889,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:516
 msgid "Russian"
-msgstr ""
+msgstr "Russkiy"
 
 #: skin_default_skin.xml.h:517
 msgid "s"

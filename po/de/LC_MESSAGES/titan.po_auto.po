@@ -7159,7 +7159,7 @@ msgstr "Laufzeit"
 
 #: skin_default_skin.xml.h:516
 msgid "Russian"
-msgstr "Ruski"
+msgstr "Russkiy"
 
 #: skin_default_skin.xml.h:517
 msgid "s"

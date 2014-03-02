@@ -1,18 +1,5 @@
-msgid ""
-msgstr ""
-"Project-Id-Version: TitanNit 1.49\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-07 10:44+0200\n"
-"PO-Revision-Date: 2014-02-07 17:47+0200\n"
-"Last-Translator: obi <_obiwan_@web.de>\n"
-"Language-Team: German <_obiwan_@web.de>\n"
-"Language: fr\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-
 msgid "--- SD resolution"
-msgstr "--- RÃ©solution SD "
+msgstr "--- Résolution SD "
 
 msgid "--- Time to switch"
 msgstr "--- Temps de changement"
@@ -39,19 +26,19 @@ msgid "A"
 msgstr "A"
 
 msgid "A/V Settings"
-msgstr "RÃ©glages Audio/Video"
+msgstr "Réglages Audio/Video"
 
 msgid "Panel"
 msgstr "Panneau"
 
 msgid "Wizard"
-msgstr "RÃ©glages assistÃ©"
+msgstr "Réglages assisté"
 
 msgid "About"
 msgstr "A Propos"
 
 msgid "AC3 default"
-msgstr "AC3 Par dÃ©fault"
+msgstr "AC3 Par défault"
 
 msgid "AC3 downmix"
 msgstr "AC3 downmix"
@@ -66,7 +53,7 @@ msgid "Activate"
 msgstr "Activer"
 
 msgid "Adapter Settings"
-msgstr "RÃ©glages Adaptateur"
+msgstr "Réglages Adaptateur"
 
 msgid "add service"
 msgstr "Ajouter service"
@@ -96,7 +83,7 @@ msgid "Aspect Ratio:"
 msgstr "Aspect Ratio:"
 
 msgid "Aspect Settings"
-msgstr "RÃ©glages Aspect"
+msgstr "Réglages Aspect"
 
 msgid "Aspect"
 msgstr "Aspect"
@@ -111,7 +98,7 @@ msgid "Audio Player"
 msgstr "Audio Player"
 
 msgid "AUDIO SETTINGS"
-msgstr "RÃ©glages Audio"
+msgstr "Réglages Audio"
 
 msgid "Audio Source"
 msgstr "Source Audio"
@@ -126,7 +113,7 @@ msgid "Audio/Subt."
 msgstr "AUDIO/soustitre."
 
 msgid "Auto resolution"
-msgstr "RÃ©solution Automatique"
+msgstr "Résolution Automatique"
 
 msgid "Automatic Search"
 msgstr "RechercheAutomatique"
@@ -135,7 +122,7 @@ msgid "Automount"
 msgstr "Automount"
 
 msgid "Autostart"
-msgstr "DÃ©marrage auto"
+msgstr "Démarrage auto"
 
 msgid "A-Z (Text)"
 msgstr "A-Z (Text)"
@@ -159,16 +146,16 @@ msgid "BER:"
 msgstr "BER:"
 
 msgid "bestfit"
-msgstr "Mieux adaptÃ©s"
+msgstr "Mieux adaptés"
 
 msgid "Beta Config"
-msgstr "Configuration BÃ©ta"
+msgstr "Configuration Béta"
 
 msgid "betapass"
-msgstr "Mot de passe BÃ©ta"
+msgstr "Mot de passe Béta"
 
 msgid "betauser"
-msgstr "Nom utilisateur BÃ©ta"
+msgstr "Nom utilisateur Béta"
 
 msgid "big"
 msgstr "Grand"
@@ -177,22 +164,22 @@ msgid "Blue Button"
 msgstr "Bouton Bleu"
 
 msgid "bootlogo"
-msgstr "Logo de dÃ©marrage"
+msgstr "Logo de démarrage"
 
 msgid "BootResolution"
-msgstr "RÃ©solution de dÃ©marrage"
+msgstr "Résolution de démarrage"
 
 msgid "bootrgbfix"
-msgstr "RÃ©glage RGB au dÃ©marrage"
+msgstr "Réglage RGB au démarrage"
 
 msgid "bootstop"
-msgstr "Demarrage stopÃ©"
+msgstr "Demarrage stopé"
 
 msgid "Bouquet List"
 msgstr "Bouquets"
 
 msgid "Brightness"
-msgstr "LuminositÃ©"
+msgstr "Luminosité"
 
 msgid "broadcast"
 msgstr "Emission"
@@ -210,7 +197,7 @@ msgid "CAM PMT Mode"
 msgstr "CAM PMT Mode"
 
 msgid "Cancel Shutdown"
-msgstr "Annuler arrÃªt "
+msgstr "Annuler arrêt "
 
 msgid "cancel"
 msgstr "Annuler"
@@ -246,10 +233,10 @@ msgid "Child Protection"
 msgstr "Protection parentale"
 
 msgid "Child safety"
-msgstr "La sÃ©curitÃ© d'enfant"
+msgstr "La sécurité d'enfant"
 
 msgid "Clear before scan"
-msgstr "Effacer aprÃ¨s scan?"
+msgstr "Effacer après scan?"
 
 msgid "Color Format Scart"
 msgstr "Format couleur Scart"
@@ -258,7 +245,7 @@ msgid "Color Format"
 msgstr "Format couleur"
 
 msgid "Committed command"
-msgstr "Commande CommittÃ© "
+msgstr "Commande Committé "
 
 msgid "Common Interface"
 msgstr "Interface Commune"
@@ -273,7 +260,7 @@ msgid "CPU"
 msgstr "CPU"
 
 msgid "Create Backup"
-msgstr "CrÃ©er Backup"
+msgstr "Créer Backup"
 
 msgid "d"
 msgstr "d"
@@ -288,7 +275,7 @@ msgid "Day"
 msgstr "Jour"
 
 msgid "Deactivate"
-msgstr "DÃ©sactiver"
+msgstr "Désactiver"
 
 msgid "debug"
 msgstr "Debug"
@@ -303,13 +290,13 @@ msgid "DEFAULT"
 msgstr "Standard"
 
 msgid "del startchannel"
-msgstr "Supprime chaine de dÃ©marrage"
+msgstr "Supprime chaine de démarrage"
 
 msgid "DEL"
 msgstr "Supprimer"
 
 msgid "Delete EPG after read"
-msgstr "Supprime EPG aprÃ¨s lecture"
+msgstr "Supprime EPG après lecture"
 
 msgid "details"
 msgstr "details"
@@ -327,7 +314,7 @@ msgid "Dirsort"
 msgstr "Trier"
 
 msgid "disable"
-msgstr "DÃ©sactiver"
+msgstr "Désactiver"
 
 msgid "DiSEqC Command Order"
 msgstr "Ordre Commande DiSEqC"
@@ -339,10 +326,10 @@ msgid "DiSEqC Mode"
 msgstr "Mode DiSEqC"
 
 msgid "DiSEqC repeats"
-msgstr "RÃ©pÃ¨te DiSEqC"
+msgstr "Répète DiSEqC"
 
 msgid "Diseqc Settings"
-msgstr "RÃ©glages DiSEqC"
+msgstr "Réglages DiSEqC"
 
 msgid "DiSEqC"
 msgstr "DiSEqC"
@@ -354,7 +341,7 @@ msgid "dnsserver 2"
 msgstr "Serveur-DNS 2"
 
 msgid "Don't clear TV on zap (only with fastzap)"
-msgstr "Ne quitte pas Tv aprÃ¨s Zap (seul avec zap rapide) "
+msgstr "Ne quitte pas Tv après Zap (seul avec zap rapide) "
 
 msgid "e"
 msgstr "e"
@@ -378,7 +365,7 @@ msgid "End"
 msgstr "Fin"
 
 msgid "English"
-msgstr "Anglais"
+msgstr "English"
 
 msgid "Epg List Mode"
 msgstr "List en Mode EPG"
@@ -390,16 +377,16 @@ msgid "Epg Refresh Time"
 msgstr "Temps De refraichissemnt EPG"
 
 msgid "EPG Reset"
-msgstr "RedÃ©marrage EPG"
+msgstr "Redémarrage EPG"
 
 msgid "EPG Settings"
-msgstr "RÃ©glages EPG"
+msgstr "Réglages EPG"
 
 msgid "Epgfreespace (KB)"
 msgstr "Espace libre EPG"
 
 msgid "errorboot"
-msgstr "Erreur dÃ©marrage"
+msgstr "Erreur démarrage"
 
 msgid "errorstop"
 msgstr "Erreur stop"
@@ -480,34 +467,34 @@ msgid "Format HDD"
 msgstr "Disque Dur Format"
 
 msgid "Found Data:"
-msgstr "Fichiers trouvÃ©s:"
+msgstr "Fichiers trouvés:"
 
 msgid "Found Radio:"
-msgstr "Radio trouvÃ©es:"
+msgstr "Radio trouvées:"
 
 msgid "Found TV:"
-msgstr "TV trouvÃ©es:"
+msgstr "TV trouvées:"
 
 msgid "free space"
 msgstr "Esapce Libre"
 
 msgid "Frequency"
-msgstr "FrÃ©quence"
+msgstr "Fréquence"
 
 msgid "Frequency:"
-msgstr "FrÃ©quence:"
+msgstr "Fréquence:"
 
 msgid "Friday"
 msgstr "Vendredi"
 
 msgid "fsckrecord"
-msgstr "VÃ©rificateur des fichiers Partition de l'enregistrement "
+msgstr "Vérificateur des fichiers Partition de l'enregistrement "
 
 msgid "fsckroot"
-msgstr "VÃ©rificateur des fichiers Partition Root"
+msgstr "Vérificateur des fichiers Partition Root"
 
 msgid "fsckswap"
-msgstr "VÃ©rificateur des fichiers Partition SWAP"
+msgstr "Vérificateur des fichiers Partition SWAP"
 
 msgid "ftdi"
 msgstr "Activer  pilote ftdi"
@@ -519,7 +506,7 @@ msgid "ftpport"
 msgstr "Port ftp"
 
 msgid "fullcover"
-msgstr "Couverture complÃ¨te"
+msgstr "Couverture complète"
 
 msgid "g"
 msgstr "g"
@@ -534,10 +521,10 @@ msgid "Germany"
 msgstr "Allmagne"
 
 msgid "Greek"
-msgstr "Grecque"
+msgstr "Greek"
 
 msgid "German"
-msgstr "Allmand"
+msgstr "Deutsch"
 
 msgid "h"
 msgstr "h"
@@ -627,7 +614,7 @@ msgid "ipaddress"
 msgstr "Adresse IP"
 
 msgid "Ipk Install - select file"
-msgstr "Ipk installation - SÃ©lectionne un fichier"
+msgstr "Ipk installation - Sélectionne un fichier"
 
 msgid "IPK install (online)"
 msgstr "Installion IPK online "
@@ -678,13 +665,13 @@ msgid "letterbox"
 msgstr "letterbox"
 
 msgid "Listbox Select"
-msgstr "SÃ©lection Listbox"
+msgstr "Sélection Listbox"
 
 msgid "LNB Configuration"
 msgstr "Configuration LNB"
 
 msgid "LNB Settings"
-msgstr "RÃ©glages LNB"
+msgstr "Réglages LNB"
 
 msgid "LNB"
 msgstr "LNB"
@@ -732,28 +719,28 @@ msgid "maxrate"
 msgstr "Taux Maximale"
 
 msgid "MC VideoPlayer Imdb Settings"
-msgstr "RÃ©glages MC VideoPlayer Imdb"
+msgstr "Réglages MC VideoPlayer Imdb"
 
 msgid "MC VideoPlayer Sort Settings"
-msgstr "RÃ©glages de tri MC VideoPlayer"
+msgstr "Réglages de tri MC VideoPlayer"
 
 msgid "MC VideoPlayer View Settings"
-msgstr "RÃ©glage affichage MC VideoPlayer"
+msgstr "Réglage affichage MC VideoPlayer"
 
 msgid "Media Center"
 msgstr "Media Center"
 
 msgid "Memory"
-msgstr "MÃ©moire"
+msgstr "Mémoire"
 
 msgid "Menu Protect"
-msgstr "ProtÃ©ger Menu"
+msgstr "Protéger Menu"
 
 msgid "Menulist"
 msgstr "Liste de Menu"
 
 msgid "MENUPROTECT"
-msgstr "Menu protÃ©gÃ©"
+msgstr "Menu protégé"
 
 msgid "Minutes"
 msgstr "Minutes"
@@ -777,7 +764,7 @@ msgid "Mounts"
 msgstr "Mounts"
 
 msgid "move service"
-msgstr "DÃ©plcer service"
+msgstr "Déplcer service"
 
 msgid "Moviepath"
 msgstr "Chemin de film"
@@ -807,40 +794,40 @@ msgid "Name:"
 msgstr "Nom:"
 
 msgid "netmask"
-msgstr "Masque sous rÃ©seau"
+msgstr "Masque sous réseau"
 
 msgid "Network Adapter Settings"
-msgstr "RÃ©glage adaptateur rÃ©seau"
+msgstr "Réglage adaptateur réseau"
 
 msgid "Network Adapter Test"
-msgstr "Test adaptateur rÃ©seau"
+msgstr "Test adaptateur réseau"
 
 msgid "Network Assistant"
-msgstr "Assistant rÃ©seau"
+msgstr "Assistant réseau"
 
 msgid "Network Interfacelist"
-msgstr "Liste d'interface rÃ©seau"
+msgstr "Liste d'interface réseau"
 
 msgid "Network Restart"
-msgstr "RedÃ©marrer RÃ©seau"
+msgstr "Redémarrer Réseau"
 
 msgid "Network Scan"
-msgstr "Scan RÃ©seau"
+msgstr "Scan Réseau"
 
 msgid "Network Test"
-msgstr "Test de RÃ©seau"
+msgstr "Test de Réseau"
 
 msgid "Network"
-msgstr "RÃ©seau"
+msgstr "Réseau"
 
 msgid "Networkbrowser"
-msgstr "Navigateur RÃ©seau"
+msgstr "Navigateur Réseau"
 
 msgid "Next"
 msgstr "Suivant"
 
 msgid "Nfs Server Settings"
-msgstr "RÃ©glages NFS Serveur"
+msgstr "Réglages NFS Serveur"
 
 msgid "nfsserver"
 msgstr "NFS Serveur"
@@ -873,7 +860,7 @@ msgid "oldaudiofw"
 msgstr "oldaudio Firmware"
 
 msgid "oldvideofw"
-msgstr "vieille VidÃ©o Firmware"
+msgstr "vieille Vidéo Firmware"
 
 msgid "ONID:"
 msgstr "ONID:"
@@ -882,7 +869,7 @@ msgid "Only free channel scan"
 msgstr "Scan chaine libre seulement"
 
 msgid "only_boot_overclock"
-msgstr "DÃ©marrage Seulement overclock"
+msgstr "Démarrage Seulement overclock"
 
 msgid "options"
 msgstr "Options"
@@ -906,7 +893,7 @@ msgid "OSD Transparent"
 msgstr "OSD Transparent"
 
 msgid "OverClock Settings"
-msgstr "RÃ©glages OverClock"
+msgstr "Réglages OverClock"
 
 msgid "Overclocking"
 msgstr "Overclocking"
@@ -933,7 +920,7 @@ msgid "Picture Player"
 msgstr "Photo Player"
 
 msgid "PICTURE SETTINGS"
-msgstr "RÃ©glages Photo"
+msgstr "Réglages Photo"
 
 msgid "PICTURE"
 msgstr "Photo"
@@ -951,7 +938,7 @@ msgid "Pin Code menu"
 msgstr "PIN Code pour Menu"
 
 msgid "PIN Settings"
-msgstr "RÃ©glages PIN Code"
+msgstr "Réglages PIN Code"
 
 msgid "Pin"
 msgstr "Pin"
@@ -972,7 +959,7 @@ msgid "pl2303"
 msgstr "Pilote-PL2303"
 
 msgid "PlayList - select your playlist !"
-msgstr "Liste de lecture - SÃ©lection de fichier"
+msgstr "Liste de lecture - Sélection de fichier"
 
 msgid "PlayList"
 msgstr "Liste de lecture"
@@ -1014,19 +1001,19 @@ msgid "Power action"
 msgstr "Action alimentation"
 
 msgid "Power Off Timer"
-msgstr "ArrÃ©t chronomÃ¨trÃ©"
+msgstr "Arrét chronomètré"
 
 msgid "Power Off"
-msgstr "ArrÃ©t"
+msgstr "Arrét"
 
 msgid "Poweroff Timer"
-msgstr "ArrÃ©t chronomÃ¨tre"
+msgstr "Arrét chronomètre"
 
 msgid "poweroff"
-msgstr "ArrÃ©t"
+msgstr "Arrét"
 
 msgid "Prev"
-msgstr "PrÃ©cedent"
+msgstr "Précedent"
 
 msgid "profile"
 msgstr "Profile"
@@ -1038,13 +1025,13 @@ msgid "progressbar"
 msgstr "bar de progression "
 
 msgid "Protect Channel"
-msgstr "Chaine protÃ©gÃ©e par code PIN"
+msgstr "Chaine protégée par code PIN"
 
 msgid "Protect Menu"
-msgstr "Menu protÃ©gÃ©e par code PIN"
+msgstr "Menu protégée par code PIN"
 
 msgid "protect service"
-msgstr "Service protÃ©gÃ©e par code PIN"
+msgstr "Service protégée par code PIN"
 
 msgid "protocol"
 msgstr "protocole"
@@ -1089,13 +1076,13 @@ msgid "Ram"
 msgstr "Ram"
 
 msgid "Random"
-msgstr "AlÃ©atoire"
+msgstr "Aléatoire"
 
 msgid "rcreboot"
-msgstr "RC RedÃ©marre"
+msgstr "RC Redémarre"
 
 msgid "Record Forerun (min)"
-msgstr "Enregistrement prÃ©cÃ©dÃ© (min)"
+msgstr "Enregistrement précédé (min)"
 
 msgid "Record Overrun (min)"
 msgstr "Enregistrement suivant (min)"
@@ -1107,7 +1094,7 @@ msgid "Record Split Size"
 msgstr "Enregistrement par partie"
 
 msgid "Record Timer"
-msgstr "Enregistrement chronomÃ©trÃ©"
+msgstr "Enregistrement chronométré"
 
 msgid "record_max_sectors"
 msgstr "Enregistrement Max par Secteur"
@@ -1134,40 +1121,40 @@ msgid "repairmodus"
 msgstr "Reparation de mode"
 
 msgid "Repeat type"
-msgstr "Type de rÃ©pÃ©tition"
+msgstr "Type de répétition"
 
 msgid "Repeat"
-msgstr "rÃ©pÃ©ter"
+msgstr "répéter"
 
 msgid "Resolution (default)"
-msgstr "RÃ©solution (Standard)"
+msgstr "Résolution (Standard)"
 
 msgid "Resolution Settings"
-msgstr "RÃ©glages RÃ©solution"
+msgstr "Réglages Résolution"
 
 msgid "Resolution:"
-msgstr "RÃ©solution"
+msgstr "Résolution"
 
 msgid "Restart Network ?"
-msgstr "RedÃ©marrer RÃ©seau?"
+msgstr "Redémarrer Réseau?"
 
 msgid "Restart Titan"
-msgstr "RedÃ©marrer Titan"
+msgstr "Redémarrer Titan"
 
 msgid "Restart"
-msgstr "RedÃ©marrer"
+msgstr "Redémarrer"
 
 msgid "Restore"
 msgstr "Restaurer"
 
 msgid "reverse alpha"
-msgstr "Alpha InversÃ©"
+msgstr "Alpha Inversé"
 
 msgid "reverse date"
-msgstr "Date InversÃ©"
+msgstr "Date Inversé"
 
 msgid "reverse size"
-msgstr "Taille InversÃ©"
+msgstr "Taille Inversé"
 
 msgid "rmcrashlog"
 msgstr "rm Crashlog"
@@ -1185,7 +1172,7 @@ msgid "Rotor Position"
 msgstr "Position de Rotor "
 
 msgid "Rotor Settings"
-msgstr "RÃ©glages de Rotor"
+msgstr "Réglages de Rotor"
 
 msgid "rsize"
 msgstr "rTaille"
@@ -1197,7 +1184,7 @@ msgid "S"
 msgstr "S"
 
 msgid "Samba Server Settings"
-msgstr "RÃ©glages Serveur Samba"
+msgstr "Réglages Serveur Samba"
 
 msgid "sambaserver"
 msgstr "Serveur Samba"
@@ -1221,7 +1208,7 @@ msgid "Saturday"
 msgstr "Samedi"
 
 msgid "Save Settings"
-msgstr "RÃ©glages Sauvegarde"
+msgstr "Réglages Sauvegarde"
 
 msgid "Save"
 msgstr "Sauvegarde"
@@ -1242,7 +1229,7 @@ msgid "Screensaver Adjust"
 msgstr "Ajuster Screensaver"
 
 msgid "screensaver background"
-msgstr "ArriÃ©re plan Screensaver"
+msgstr "Arriére plan Screensaver"
 
 msgid "screensaver delay"
 msgstr "Delais Screensaver"
@@ -1266,10 +1253,10 @@ msgid "Second Infobar"
 msgstr "Second Infobar"
 
 msgid "Select backup:"
-msgstr "SÃ©lÃ©ction de sauvegarde"
+msgstr "Séléction de sauvegarde"
 
 msgid "Select Path"
-msgstr "SÃ©lÃ©ction de chemin"
+msgstr "Séléction de chemin"
 
 msgid "Service"
 msgstr "Service"
@@ -1278,22 +1265,22 @@ msgid "Serviceinfo"
 msgstr "Info Service"
 
 msgid "set startchannel"
-msgstr "DÃ©finir Chaine de dÃ©marrage"
+msgstr "Définir Chaine de démarrage"
 
 msgid "Settings backup/restore"
-msgstr "RÃ©glages sauvegarde/restauration"
+msgstr "Réglages sauvegarde/restauration"
 
 msgid "Settings"
-msgstr "RÃ©glages"
+msgstr "Réglages"
 
 msgid "Settings..."
-msgstr "RÃ©glages"
+msgstr "Réglages"
 
 msgid "Share Settings"
-msgstr "RÃ©glages Partages"
+msgstr "Réglages Partages"
 
 msgid "sharedir"
-msgstr "RÃ©pertoire PaprtagÃ©"
+msgstr "Répertoire Paprtagé"
 
 msgid "sharename"
 msgstr "Nom de Paprtage"
@@ -1329,7 +1316,7 @@ msgid "Skin Adjust"
 msgstr "Ajuster le Skin "
 
 msgid "Skin Select"
-msgstr "SÃ©lÃ©ctionner le Skin"
+msgstr "Séléctionner le Skin"
 
 msgid "Skin"
 msgstr "Skin"
@@ -1353,7 +1340,7 @@ msgid "Softcam Panel"
 msgstr "Softcam Panel"
 
 msgid "Softcam selection"
-msgstr "SÃ©lÃ©ction Softcam:"
+msgstr "Séléction Softcam:"
 
 msgid "Sort"
 msgstr "Trier"
@@ -1380,13 +1367,13 @@ msgid "ssl"
 msgstr "ssl"
 
 msgid "Standby / Poweroff"
-msgstr "Veille / ArrÃ©t"
+msgstr "Veille / Arrét"
 
 msgid "Standby / Poweroff..."
-msgstr "Veille / ArrÃ©t"
+msgstr "Veille / Arrét"
 
 msgid "Standby Brightness"
-msgstr "Veille LuminositÃ©"
+msgstr "Veille Luminosité"
 
 msgid "Standby Mode"
 msgstr "Mode Veille"
@@ -1395,19 +1382,19 @@ msgid "Standby"
 msgstr "Veille"
 
 msgid "standby_freq"
-msgstr "Veille FrÃ©quence"
+msgstr "Veille Fréquence"
 
 msgid "standby_overclock"
 msgstr "overclock en Veille"
 
 msgid "Start HTTPD"
-msgstr "DÃ©marre HTTPD"
+msgstr "Démarre HTTPD"
 
 msgid "Start"
-msgstr "DÃ©marre"
+msgstr "Démarre"
 
 msgid "STOP/START"
-msgstr "ArrÃ©ter/DÃ©marrer"
+msgstr "Arréter/Démarrer"
 
 msgid "Stream Path"
 msgstr "Chemin pour Stream"
@@ -1464,22 +1451,22 @@ msgid "System - Usbupdate (tmp)"
 msgstr "System - USB-Update (tmp)"
 
 msgid "System Info"
-msgstr "Infos de SystÃ¨me"
+msgstr "Infos de Système"
 
 msgid "System"
-msgstr "SystÃ¨me"
+msgstr "Système"
 
 msgid "System..."
-msgstr "SystÃ¨me"
+msgstr "Système"
 
 msgid "System:"
-msgstr "SystÃ¨me:"
+msgstr "Système:"
 
 msgid "szap"
 msgstr "sZap"
 
 msgid "szap_diseqc_repeat"
-msgstr "szap_diseqc_rÃ©pÃ©t"
+msgstr "szap_diseqc_répét"
 
 msgid "szap_emul"
 msgstr "sZap EMU"
@@ -1500,7 +1487,7 @@ msgid "telnet"
 msgstr "Telnet"
 
 msgid "Test frequency"
-msgstr "Teste frÃ©quence"
+msgstr "Teste fréquence"
 
 msgid "TEST"
 msgstr "TESTE"
@@ -1518,10 +1505,10 @@ msgid "Time to sleep"
 msgstr "Temps pour Dormir"
 
 msgid "Timer Record Path"
-msgstr "Chemin enregistrement chronomÃ©trÃ©"
+msgstr "Chemin enregistrement chronométré"
 
 msgid "Timer"
-msgstr "chronomÃ©tre"
+msgstr "chronométre"
 
 msgid "time"
 msgstr "Temps"
@@ -1560,7 +1547,7 @@ msgid "Tuner Configuration"
 msgstr "Configuration de Tuner"
 
 msgid "Tuner Reception"
-msgstr "RÃ©ception de Tuner"
+msgstr "Réception de Tuner"
 
 msgid "Tuner"
 msgstr "Tuner"
@@ -1575,7 +1562,7 @@ msgid "Tunerconfig"
 msgstr "Config Tuner"
 
 msgid "tuxtxt_cpufrequ_workaround"
-msgstr "Fix FrÃ©quence Teletext CPU  "
+msgstr "Fix Fréquence Teletext CPU  "
 
 msgid "TXT PID:"
 msgstr "TXT PID:"
@@ -1602,13 +1589,13 @@ msgid "UNC:"
 msgstr "UNC:"
 
 msgid "Uncommitted Diseqc command"
-msgstr "Commande UncommitÃ© de  Diseqc"
+msgstr "Commande Uncommité de  Diseqc"
 
 msgid "unknown"
 msgstr "inconnu"
 
 msgid "UNLOAD"
-msgstr "DÃ©charge"
+msgstr "Décharge"
 
 msgid "update"
 msgstr "Actualiser"
@@ -1659,28 +1646,28 @@ msgid "Video Player"
 msgstr "Video Player"
 
 msgid "Video Settings"
-msgstr "RÃ©glages VidÃ©o"
+msgstr "Réglages Vidéo"
 
 msgid "VIDEO SETTINGS"
-msgstr "RÃ©glages VidÃ©o"
+msgstr "Réglages Vidéo"
 
 msgid "Video"
-msgstr "VidÃ©o"
+msgstr "Vidéo"
 
 msgid "VIDEO"
-msgstr "VidÃ©o"
+msgstr "Vidéo"
 
 msgid "VideoMode Aspect Settings"
-msgstr "Aspect de mode vidÃ©o"
+msgstr "Aspect de mode vidéo"
 
 msgid "VideoMode Resolution Settings"
-msgstr "RÃ©solution de mode vidÃ©o"
+msgstr "Résolution de mode vidéo"
 
 msgid "VideoMode Settings"
-msgstr "RÃ©glage de mode vidÃ©o"
+msgstr "Réglage de mode vidéo"
 
 msgid "Videotune"
-msgstr "Ajustement de VidÃ©o"
+msgstr "Ajustement de Vidéo"
 
 msgid "View"
 msgstr "Afficher"
@@ -1695,7 +1682,7 @@ msgid "Voltage Mode"
 msgstr "Mode de Voltage"
 
 msgid "Volume off"
-msgstr "DÃ©sactive Volume"
+msgstr "Désactive Volume"
 
 msgid "Volumebar Timeout"
 msgstr "Temps mort bar de volume"
@@ -1707,7 +1694,7 @@ msgid "W"
 msgstr "W"
 
 msgid "Weather Info"
-msgstr "Infos de MÃ©tÃ©o"
+msgstr "Infos de Météo"
 
 msgid "Web Radio Player"
 msgstr "Web Radio Player"

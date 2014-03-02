@@ -5676,7 +5676,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:193
 msgid "Dutch"
-msgstr ""
+msgstr "Nederlands"
 
 #: skin_default_skin.xml.h:194
 msgid "DYNDNS Settings"
@@ -5853,7 +5853,7 @@ msgstr "Available Free Memory"
 
 #: skin_default_skin.xml.h:239 tithek_submenu.h:372
 msgid "French"
-msgstr ""
+msgstr "Francais"
 
 #: skin_default_skin.xml.h:240
 msgid "Frequency"
@@ -6432,7 +6432,7 @@ msgstr "IP Address for Stream"
 
 #: skin_default_skin.xml.h:327
 msgid "Italian"
-msgstr ""
+msgstr "Italiano"
 
 #: skin_default_skin.xml.h:328
 msgid "j"
@@ -6893,7 +6893,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:451
 msgid "Polish"
-msgstr ""
+msgstr "Polski"
 
 #: skin_default_skin.xml.h:452
 msgid "Positioner Setup"
@@ -7117,7 +7117,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:516
 msgid "Russian"
-msgstr ""
+msgstr "Russkiy"
 
 #: skin_default_skin.xml.h:517
 msgid "s"
