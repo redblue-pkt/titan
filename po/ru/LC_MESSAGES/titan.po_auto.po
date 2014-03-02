@@ -15,7 +15,7 @@ msgid "Tuner"
 msgstr "?????"
 
 #: about.h:30 bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2638
-#: httpdfunc.h:2650 hwtest.h:478 moduleconfig.h:345
+#: httpdfunc.h:2650 hwtest.h:476 moduleconfig.h:345
 #: skin_default_skin.xml.h:695 skinselector.h:138 stream.h:22
 #: tithek_submenu.h:943 transponder.h:122 transponder.h:158 transponder.h:194
 #: transponder.h:227 transponder.h:259 transponder.h:295 transponder.h:330
@@ -54,13 +54,13 @@ msgstr ""
 #: harddisk.h:666 harddisk.h:715 harddisk.h:720 harddisk.h:722 harddisk.h:724
 #: harddisk.h:784 harddisk.h:802 harddisk.h:805 harddisk.h:1035 hbbtv.h:362
 #: httpdfunc.h:1098 httpdfunc.h:3021 hwtest.h:88 hwtest.h:93 hwtest.h:98
-#: hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390
-#: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
-#: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
-#: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626
-#: inadyn.h:188 inadyn.h:190 inadyn.h:200 info.h:27 keyactions.h:241 log.h:46
+#: hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:388
+#: hwtest.h:409 hwtest.h:454 hwtest.h:490 hwtest.h:562 hwtest.h:564
+#: hwtest.h:578 hwtest.h:587 hwtest.h:596 hwtest.h:605 hwtest.h:652
+#: hwtest.h:654 hwtest.h:656 hwtest.h:658 imdbapi.h:200 imdb.h:626
+#: inadyn.h:188 inadyn.h:190 inadyn.h:200 info.h:27 keyactions.h:227 log.h:46
 #: log.h:48 mc_audioplayer.h:328 mc_audioplayer.h:599 mc_audioplayer.h:702
-#: mc_dateibrowser.h:38 mc_global.h:773 mc_global.h:1020
+#: mc_dateibrowser.h:38 mc_global.h:766 mc_global.h:1011
 #: mc_internetbrowser.h:38 mc_internetbrowser.h:41 mc_main.h:37 mc_main.h:42
 #: mc_main.h:47 mc_main.h:73 mc_main.h:78 mc_main.h:200 mc_main.h:209
 #: mc_mediathek.h:37 mc_pictureplayer.h:95 mc_pictureplayer.h:119
@@ -109,8 +109,8 @@ msgstr ""
 #: timeshift.h:162 timeshiftsettings.h:45 titan.c:274 titan.c:338 titan.c:347
 #: titan.c:951 titan.c:960 titan.c:1071 titan.c:1092 titan.c:1098 titan.c:1109
 #: titan.c:1115 tithek_global.h:238 tithek.h:620 tithek.h:1057 tithek.h:1100
-#: tithek.h:1345 tithek.h:1367 tithek.h:1372 tithek.h:1386 tithek.h:3013
-#: tithek.h:3075 tithek.h:3089 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
+#: tithek.h:1346 tithek.h:1368 tithek.h:1373 tithek.h:1387 tithek.h:3014
+#: tithek.h:3076 tithek.h:3090 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922 tpk.h:3185
 #: tpk.new.h:3167 tunerconfig.h:772 unlock.h:20 unlock.h:66 unlock.h:71
 #: unlock.h:75 videomode.h:53 videoweed.h:35 videoweed.h:80 vidstream.h:45
@@ -140,13 +140,13 @@ msgstr "??"
 #: harddisk.h:715 harddisk.h:720 harddisk.h:722 harddisk.h:724 harddisk.h:784
 #: harddisk.h:802 harddisk.h:805 harddisk.h:1035 hbbtv.h:362 httpdfunc.h:1098
 #: httpdfunc.h:3021 hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103
-#: hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390 hwtest.h:411
-#: hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566 hwtest.h:586
-#: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
-#: hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626 inadyn.h:188
-#: inadyn.h:190 inadyn.h:200 info.h:27 keyactions.h:241 log.h:46 log.h:48
+#: hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:388 hwtest.h:409
+#: hwtest.h:454 hwtest.h:490 hwtest.h:562 hwtest.h:564 hwtest.h:578
+#: hwtest.h:587 hwtest.h:596 hwtest.h:605 hwtest.h:652 hwtest.h:654
+#: hwtest.h:656 hwtest.h:658 imdbapi.h:200 imdb.h:626 inadyn.h:188
+#: inadyn.h:190 inadyn.h:200 info.h:27 keyactions.h:227 log.h:46 log.h:48
 #: marker.h:215 marker.h:229 mc_audioplayer.h:328 mc_audioplayer.h:599
-#: mc_audioplayer.h:702 mc_dateibrowser.h:38 mc_global.h:773 mc_global.h:1020
+#: mc_audioplayer.h:702 mc_dateibrowser.h:38 mc_global.h:766 mc_global.h:1011
 #: mc_internetbrowser.h:38 mc_internetbrowser.h:41 mc_main.h:37 mc_main.h:42
 #: mc_main.h:47 mc_main.h:73 mc_main.h:78 mc_main.h:200 mc_main.h:209
 #: mc_mediathek.h:37 mc_pictureplayer.h:95 mc_pictureplayer.h:119
@@ -198,8 +198,8 @@ msgstr "??"
 #: timeshiftsettings.h:45 titan.c:274 titan.c:338 titan.c:347 titan.c:951
 #: titan.c:960 titan.c:1071 titan.c:1092 titan.c:1098 titan.c:1109
 #: titan.c:1115 tithek_global.h:238 tithek.h:620 tithek.h:1057 tithek.h:1100
-#: tithek.h:1345 tithek.h:1367 tithek.h:1372 tithek.h:1386 tithek.h:3013
-#: tithek.h:3075 tithek.h:3089 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
+#: tithek.h:1346 tithek.h:1368 tithek.h:1373 tithek.h:1387 tithek.h:3014
+#: tithek.h:3076 tithek.h:3090 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922 tpk.h:3185
 #: tpk.new.h:3167 tunerconfig.h:772 unlock.h:20 unlock.h:66 unlock.h:71
 #: unlock.h:75 videomode.h:53 videoweed.h:35 videoweed.h:80 vidstream.h:45
@@ -333,20 +333,20 @@ msgid "alpha"
 msgstr "alpha"
 
 #: adjust.h:98 mc_audioplayer_settings.h:28 mc_pictureplayer_settings.h:43
-#: mc_videoplayer_settings.h:24 plugins_mc_skin.xml.h:49
-#: skin_default_skin.xml.h:507 skins_mc_skin.xml.h:49
+#: mc_videoplayer_settings.h:24 plugins_mc_skin.xml.h:48
+#: skin_default_skin.xml.h:507 skins_mc_skin.xml.h:48
 msgid "reverse alpha"
 msgstr "????? alpha"
 
 #: adjust.h:99 mc_audioplayer_settings.h:29 mc_pictureplayer_settings.h:44
-#: mc_videoplayer_settings.h:25 plugins_mc_skin.xml.h:55
-#: skin_default_skin.xml.h:575 skins_mc_skin.xml.h:55
+#: mc_videoplayer_settings.h:25 plugins_mc_skin.xml.h:54
+#: skin_default_skin.xml.h:575 skins_mc_skin.xml.h:54
 msgid "size"
 msgstr "??????"
 
 #: adjust.h:100 mc_audioplayer_settings.h:30 mc_pictureplayer_settings.h:45
-#: mc_videoplayer_settings.h:26 plugins_mc_skin.xml.h:51
-#: skin_default_skin.xml.h:509 skins_mc_skin.xml.h:51
+#: mc_videoplayer_settings.h:26 plugins_mc_skin.xml.h:50
+#: skin_default_skin.xml.h:509 skins_mc_skin.xml.h:50
 msgid "reverse size"
 msgstr "????? ???????"
 
@@ -357,8 +357,8 @@ msgid "date"
 msgstr "????"
 
 #: adjust.h:102 mc_audioplayer_settings.h:32 mc_pictureplayer_settings.h:47
-#: mc_videoplayer_settings.h:28 plugins_mc_skin.xml.h:50
-#: skin_default_skin.xml.h:508 skins_mc_skin.xml.h:50
+#: mc_videoplayer_settings.h:28 plugins_mc_skin.xml.h:49
+#: skin_default_skin.xml.h:508 skins_mc_skin.xml.h:49
 msgid "reverse date"
 msgstr "????? ????"
 
@@ -517,13 +517,13 @@ msgstr ""
 #: harddisk.h:632 harddisk.h:666 harddisk.h:715 harddisk.h:720 harddisk.h:722
 #: harddisk.h:724 harddisk.h:784 harddisk.h:802 harddisk.h:805 hbbtv.h:362
 #: httpdfunc.h:1098 hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103
-#: hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390 hwtest.h:411
-#: hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566 hwtest.h:586
-#: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
-#: hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626 inadyn.h:188
-#: inadyn.h:190 inadyn.h:200 keyactions.h:241 language.h:49 log.h:46 log.h:48
+#: hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:388 hwtest.h:409
+#: hwtest.h:454 hwtest.h:490 hwtest.h:562 hwtest.h:564 hwtest.h:578
+#: hwtest.h:587 hwtest.h:596 hwtest.h:605 hwtest.h:652 hwtest.h:654
+#: hwtest.h:656 hwtest.h:658 imdbapi.h:200 imdb.h:626 inadyn.h:188
+#: inadyn.h:190 inadyn.h:200 keyactions.h:227 language.h:49 log.h:46 log.h:48
 #: marker.h:215 marker.h:229 mc_audioplayer.h:328 mc_audioplayer.h:599
-#: mc_audioplayer.h:702 mc_dateibrowser.h:38 mc_global.h:773 mc_global.h:1020
+#: mc_audioplayer.h:702 mc_dateibrowser.h:38 mc_global.h:766 mc_global.h:1011
 #: mc_internetbrowser.h:38 mc_internetbrowser.h:41 mc_main.h:37 mc_main.h:42
 #: mc_main.h:47 mc_main.h:73 mc_main.h:78 mc_main.h:200 mc_main.h:209
 #: mc_mediathek.h:37 mc_pictureplayer.h:95 mc_pictureplayer.h:119
@@ -561,8 +561,8 @@ msgstr ""
 #: system_update.h:333 timeshift.h:113 timeshift.h:155 timeshift.h:162
 #: timeshiftsettings.h:45 titan.c:274 titan.c:338 titan.c:347 titan.c:1071
 #: titan.c:1092 titan.c:1098 titan.c:1109 titan.c:1115 tithek_global.h:238
-#: tithek.h:620 tithek.h:1057 tithek.h:1100 tithek.h:1345 tithek.h:1367
-#: tithek.h:1372 tithek.h:3013 tithek.h:3075 tithek.h:3089 tiwakeup.h:66
+#: tithek.h:620 tithek.h:1057 tithek.h:1100 tithek.h:1346 tithek.h:1368
+#: tithek.h:1373 tithek.h:3014 tithek.h:3076 tithek.h:3090 tiwakeup.h:66
 #: tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759
 #: tmdb.h:922 tpk.h:3185 tpk.new.h:3167 tunerconfig.h:772 unlock.h:20
 #: unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:53 videoweed.h:35
@@ -855,7 +855,7 @@ msgstr "---"
 #: plugins_imdbapi_skin.xml.h:11 plugins_imdb_skin.xml.h:11
 #: plugins_instar_skin.xml.h:17 plugins_keylock_skin.xml.h:1
 #: plugins_lcdpearl1_skin.xml.h:14 plugins_lcdsamsung_skin.xml.h:18
-#: plugins_mboxinfo_skin.xml.h:3 plugins_mc_skin.xml.h:70
+#: plugins_mboxinfo_skin.xml.h:3 plugins_mc_skin.xml.h:69
 #: plugins_networkbrowser_skin.xml.h:37 plugins_news_skin.xml.h:5
 #: plugins_optimize_skin.xml.h:4 plugins_panel_skin.xml.h:28
 #: plugins_permtime_skin.xml.h:1 plugins_readerconfig_skin.xml.h:10
@@ -872,7 +872,7 @@ msgstr "---"
 #: skins_imdbapi_skin.xml.h:11 skins_imdb_skin.xml.h:11
 #: skins_instar_skin.xml.h:17 skins_keylock_skin.xml.h:1
 #: skins_lcdpearl1_skin.xml.h:14 skins_lcdsamsung_skin.xml.h:18
-#: skins_mboxinfo_skin.xml.h:3 skins_mc_skin.xml.h:70
+#: skins_mboxinfo_skin.xml.h:3 skins_mc_skin.xml.h:69
 #: skins_networkbrowser_skin.xml.h:37 skins_news_skin.xml.h:5
 #: skins_optimize_skin.xml.h:4 skins_panel_skin.xml.h:28
 #: skins_permtime_skin.xml.h:1 skins_readerconfig_skin.xml.h:10
@@ -1093,8 +1093,8 @@ msgstr ""
 msgid "SELECT"
 msgstr ""
 
-#: dvdplay.h:62 mc_audioplayer.h:599 mc_audioplayer.h:702 mc_global.h:773
-#: mc_global.h:1020 mc_pictureplayer.h:95 mc_pictureplayer.h:237
+#: dvdplay.h:62 mc_audioplayer.h:599 mc_audioplayer.h:702 mc_global.h:766
+#: mc_global.h:1011 mc_pictureplayer.h:95 mc_pictureplayer.h:237
 #: mc_pictureplayer.h:363 mc_pictureplayer.h:456 mc_videoplayer.h:739
 #: mc_videoplayer.h:876 play.h:1489
 msgid "Can't start playback !"
@@ -1177,13 +1177,13 @@ msgstr ""
 msgid "Single EPG"
 msgstr "??????? EPG"
 
-#: epgsettings.h:138 epgsettings.h:179 keyactions.h:25
+#: epgsettings.h:138 epgsettings.h:179 keyactions.h:55 keyactions.h:112
 #: settings_bluebutton.h:16 settings_pluginbutton.h:17 settings_redbutton.h:17
 #: skin_default_skin.xml.h:387
 msgid "Multi EPG"
 msgstr "Multi EPG"
 
-#: epgsettings.h:139 keyactions.h:26 settings_bluebutton.h:17
+#: epgsettings.h:139 keyactions.h:56 keyactions.h:119 settings_bluebutton.h:17
 #: settings_pluginbutton.h:18 settings_redbutton.h:18
 #: skin_default_skin.xml.h:254
 msgid "Graphic Multi EPG"
@@ -1495,11 +1495,11 @@ msgstr ""
 msgid "Can't show this file!"
 msgstr ""
 
-#: filemanager.h:355 mc_internetbrowser.h:41 mc_wetterinfo.h:41 tithek.h:1372
+#: filemanager.h:355 mc_internetbrowser.h:41 mc_wetterinfo.h:41 tithek.h:1373
 msgid "Registration needed, please contact Atemio !"
 msgstr ""
 
-#: global.h:6385 keyactions.h:241
+#: global.h:6385 keyactions.h:227
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -1760,30 +1760,30 @@ msgstr ""
 msgid "Smartcard"
 msgstr ""
 
-#: hwtest.h:181 hwtest.h:396 network.h:284 network.h:299
+#: hwtest.h:181 hwtest.h:394 network.h:284 network.h:299
 #: plugins_mc_skin.xml.h:37 plugins_panel_skin.xml.h:18
 #: skin_default_skin.xml.h:393 skins_mc_skin.xml.h:37
 #: skins_panel_skin.xml.h:18 system_infos.h:91
 msgid "Network"
 msgstr "????"
 
-#: hwtest.h:182 hwtest.h:416
+#: hwtest.h:182 hwtest.h:414
 msgid "USB Port"
 msgstr ""
 
-#: hwtest.h:183 hwtest.h:460
+#: hwtest.h:183 hwtest.h:458
 msgid "CAM"
 msgstr ""
 
-#: hwtest.h:184 hwtest.h:497
+#: hwtest.h:184 hwtest.h:495
 msgid "RS232"
 msgstr ""
 
-#: hwtest.h:185 hwtest.h:569
+#: hwtest.h:185 hwtest.h:567
 msgid "LNB"
 msgstr "LNB"
 
-#: hwtest.h:186 hwtest.h:639
+#: hwtest.h:186 hwtest.h:612
 msgid "Flash/Nand Check"
 msgstr ""
 
@@ -1819,99 +1819,99 @@ msgstr ""
 msgid "SCART 4:3 / 16:9"
 msgstr ""
 
-#: hwtest.h:368
+#: hwtest.h:368 hwtest.h:374
 msgid "Smartcard "
 msgstr ""
 
-#: hwtest.h:371
-msgid "Present"
+#: hwtest.h:370
+msgid ": Present\n"
 msgstr ""
 
-#: hwtest.h:377
-msgid "Not Present"
+#: hwtest.h:376
+msgid ": Not Present\n"
 msgstr ""
 
-#: hwtest.h:386
+#: hwtest.h:384
 msgid "Smartcard Ports found: "
 msgstr ""
 
-#: hwtest.h:427
+#: hwtest.h:425
 msgid "USB Ports found: "
 msgstr ""
 
-#: hwtest.h:438 hwtest.h:451
+#: hwtest.h:436 hwtest.h:449
 msgid "USB "
 msgstr ""
 
-#: hwtest.h:442
+#: hwtest.h:440
 msgid " - OKAY!"
 msgstr ""
 
-#: hwtest.h:453
+#: hwtest.h:451
 msgid " : NOT OKAY!"
 msgstr ""
 
-#: hwtest.h:472 moduleconfig.h:338 scconfig.h:31
+#: hwtest.h:470 moduleconfig.h:338 scconfig.h:31
 msgid "Slot "
 msgstr ""
 
-#: hwtest.h:489
+#: hwtest.h:487
 msgid "CAM Ports found: "
 msgstr ""
 
-#: hwtest.h:564
+#: hwtest.h:562
 msgid "SUCESS Serial Port"
 msgstr ""
 
-#: hwtest.h:566
+#: hwtest.h:564
 msgid "FAIL Serial Port"
 msgstr ""
 
-#: hwtest.h:578
-msgid "LNB off / 22K off: OK"
+#: hwtest.h:575
+msgid "LNB off / 22K off: OK\n"
 msgstr ""
 
-#: hwtest.h:583
-msgid "LNB off / 22K off: NOT OK"
+#: hwtest.h:577
+msgid "LNB off / 22K off: NOT OK\n"
 msgstr ""
 
-#: hwtest.h:594
-msgid "LNB 18V / 22K off: OK"
+#: hwtest.h:584
+msgid "LNB 18V / 22K off: OK\n"
 msgstr ""
 
-#: hwtest.h:599
-msgid "LNB 18V / 22K off: NOT OK"
+#: hwtest.h:586
+msgid "LNB 18V / 22K off: NOT OK\n"
 msgstr ""
 
-#: hwtest.h:609
-msgid "LNB 13V / 22K off: OK"
+#: hwtest.h:593
+msgid "LNB 13V / 22K off: OK\n"
 msgstr ""
 
-#: hwtest.h:614
-msgid "LNB 13V / 22K off: NOT OK"
+#: hwtest.h:595
+msgid "LNB 13V / 22K off: NOT OK\n"
 msgstr ""
 
-#: hwtest.h:624
-msgid "LNB 13V / 22K on: OK"
+#: hwtest.h:602
+msgid "LNB 13V / 22K on: OK\n"
 msgstr ""
 
-#: hwtest.h:629
-msgid "LNB 13V / 22K on: NOT OK"
+#: hwtest.h:604
+msgid "LNB 13V / 22K on: NOT OK\n"
 msgstr ""
 
-#: hwtest.h:679
+#: hwtest.h:652
 msgid "SUCESS Flash/Nand"
 msgstr ""
 
-#: hwtest.h:681
+#: hwtest.h:654
 msgid "FAIL Flash/Nand (/var and /mnt)"
 msgstr ""
 
-#: hwtest.h:683
+#: hwtest.h:656
 msgid "FAIL Flash/Nand (/var)"
 msgstr ""
 
-#: hwtest.h:685
+#: hwtest.h:658
 msgid "FAIL Flash/Nand (/mnt)"
 msgstr ""
 
@@ -1962,52 +1962,51 @@ msgstr ""
 msgid "ein"
 msgstr ""
 
-#: keyactions.h:21 settings_bluebutton.h:15 settings_pluginbutton.h:12
-#: settings_pluginbutton.h:44 settings_redbutton.h:12 settings_redbutton.h:44
-msgid "Extensions List"
+#: keyactions.h:21
+msgid "Key Action - Plugins"
 msgstr ""
 
-#: keyactions.h:22 settings_pluginbutton.h:13 settings_redbutton.h:13
+#: keyactions.h:24 keyactions.h:147 play.h:646
+msgid "MediaDB Scan Info"
+msgstr ""
+
+#: keyactions.h:51 keyactions.h:98 settings_pluginbutton.h:13
+#: settings_redbutton.h:13
 msgid "Auto Resolution"
 msgstr "???? ??????????"
 
-#: keyactions.h:23 settings_bluebutton.h:12 settings_bluebutton.h:43
-#: settings_pluginbutton.h:16 settings_redbutton.h:16
-msgid "TV / Radio Switch"
-msgstr ""
-
-#: keyactions.h:24 settings_bluebutton.h:14 settings_pluginbutton.h:15
-#: settings_redbutton.h:15 skin_default_skin.xml.h:585
+#: keyactions.h:53 keyactions.h:84 settings_bluebutton.h:14
+#: settings_pluginbutton.h:15 settings_redbutton.h:15
+#: skin_default_skin.xml.h:585
 msgid "Softcam Panel"
 msgstr "Softcam ??????"
 
-#: keyactions.h:27 settings_bluebutton.h:18 settings_pluginbutton.h:19
-#: settings_redbutton.h:19
+#: keyactions.h:57 keyactions.h:126 settings_bluebutton.h:18
+#: settings_pluginbutton.h:19 settings_redbutton.h:19
 msgid "Sleep Timer"
 msgstr ""
 
-#: keyactions.h:28 settings_bluebutton.h:19 settings_pluginbutton.h:20
-#: settings_redbutton.h:20 skin_default_skin.xml.h:134
+#: keyactions.h:58 keyactions.h:133 settings_bluebutton.h:19
+#: settings_pluginbutton.h:20 settings_redbutton.h:20
+#: skin_default_skin.xml.h:134
 msgid "Child Protection"
 msgstr "?????? ?? ?????"
 
-#: keyactions.h:29 settings_bluebutton.h:20 settings_pluginbutton.h:21
-#: settings_redbutton.h:21 videomode.h:17 videomode.h:34
+#: keyactions.h:59 keyactions.h:91 settings_bluebutton.h:20
+#: settings_pluginbutton.h:21 settings_redbutton.h:21 videomode.h:17
+#: videomode.h:34
 msgid "Subchannel"
 msgstr ""
 
-#: keyactions.h:30 play.h:702 settings_bluebutton.h:21
+#: keyactions.h:60 keyactions.h:140 play.h:702 settings_bluebutton.h:21
 #: settings_pluginbutton.h:22 settings_redbutton.h:22
 #: skin_default_skin.xml.h:191
 msgid "Downloads"
 msgstr ""
 
-#: keyactions.h:35
-msgid "Key Action - Plugins"
-msgstr ""
-
-#: keyactions.h:38 play.h:646
-msgid "MediaDB Scan Info"
+#: keyactions.h:105 settings_bluebutton.h:15 settings_pluginbutton.h:12
+#: settings_pluginbutton.h:44 settings_redbutton.h:12 settings_redbutton.h:44
+msgid "Extensions List"
 msgstr ""
 
 #: kinox.h:292 movie4k.h:720 movie4k.h:846 movie4k.h:960 solarmovie.h:443
@@ -2073,31 +2072,33 @@ msgid ""
 "Save Screenshoot Path: /tmp/screenshot.jpg"
 msgstr ""
 
-#: mc_audioplayer.h:403 mc_global.h:1079 mc_pictureplayer.h:145
+#: mc_audioplayer.h:403 mc_global.h:1070 mc_pictureplayer.h:145
 #: mc_videoplayer.h:421
 msgid "Repeat-On"
 msgstr ""
 
-#: mc_audioplayer.h:410 mc_audioplayer.h:560 mc_global.h:1081
+#: mc_audioplayer.h:410 mc_audioplayer.h:560 mc_global.h:1072
 #: mc_pictureplayer.h:152 mc_pictureplayer.h:317 mc_videoplayer.h:428
-#: mc_videoplayer.h:659 plugins_mc_skin.xml.h:48 skins_mc_skin.xml.h:48
+#: mc_videoplayer.h:659 plugins_mc_skin.xml.h:47 skins_mc_skin.xml.h:47
 msgid "Repeat"
 msgstr "??????"
 
 #: mc_audioplayer.h:515 mc_audioplayer.h:558 mc_audioplayer.h:678
-#: mc_pictureplayer.h:270 mc_pictureplayer.h:315 mc_pictureplayer.h:425
-#: mc_videoplayer.h:585 mc_videoplayer.h:657 mc_videoplayer.h:842
-#: plugins_mc_skin.xml.h:27 skins_mc_skin.xml.h:27
+#: mc_global.h:336 mc_global.h:408 mc_pictureplayer.h:270
+#: mc_pictureplayer.h:315 mc_pictureplayer.h:425 mc_videoplayer.h:585
+#: mc_videoplayer.h:657 mc_videoplayer.h:842 plugins_mc_skin.xml.h:27
+#: skins_mc_skin.xml.h:27
 msgid "Filelist-Mode"
 msgstr "????? ?????? ??????"
 
-#: mc_audioplayer.h:559 mc_global.h:558 mc_global.h:586 mc_global.h:1076
-#: mc_pictureplayer.h:316 mc_videoplayer.h:658 plugins_mc_skin.xml.h:47
-#: skins_mc_skin.xml.h:47
+#: mc_audioplayer.h:559 mc_global.h:552 mc_global.h:580 mc_global.h:1067
+#: mc_pictureplayer.h:316 mc_videoplayer.h:658 plugins_mc_skin.xml.h:46
+#: skins_mc_skin.xml.h:46
 msgid "Random"
 msgstr "?????????"
 
-#: mc_audioplayer.h:580 mc_pictureplayer.h:336 mc_videoplayer.h:699
+#: mc_audioplayer.h:580 mc_global.h:269 mc_global.h:693 mc_global.h:926
+#: mc_global.h:940 mc_pictureplayer.h:336 mc_videoplayer.h:699
 msgid "Playlist-Mode"
 msgstr ""
 
@@ -2131,21 +2132,15 @@ msgstr ""
 msgid "Install File Manager Tpk first !"
 msgstr ""
 
-#: mc_global.h:270 mc_global.h:338 mc_global.h:413 mc_global.h:700
-#: mc_global.h:934 mc_global.h:949 plugins_mc_skin.xml.h:45
-#: skins_mc_skin.xml.h:45
-msgid "Playlist"
-msgstr "Playlist"
-
-#: mc_global.h:547 mc_global.h:575 mc_global.h:1074
+#: mc_global.h:541 mc_global.h:569 mc_global.h:1065
 msgid "Random-On"
 msgstr ""
 
-#: mc_global.h:606 mc_global.h:615
+#: mc_global.h:600 mc_global.h:609
 msgid "Load Playlist"
 msgstr ""
 
-#: mc_global.h:607
+#: mc_global.h:601
 msgid "Edit Playlist"
 msgstr ""
 
@@ -2940,7 +2935,7 @@ msgstr ""
 msgid "Album:"
 msgstr ""
 
-#: play.h:411 play.h:445 plugins_mc_skin.xml.h:69 skins_mc_skin.xml.h:69
+#: play.h:411 play.h:445 plugins_mc_skin.xml.h:68 skins_mc_skin.xml.h:68
 msgid "Year:"
 msgstr ""
 
@@ -3025,7 +3020,7 @@ msgid "Search on MyVideo"
 msgstr ""
 
 #: play.h:630
-msgid "Search on MyVideo (local)"
+msgid "Search on Myvideo (local)"
 msgstr ""
 
 #: play.h:631
@@ -3366,8 +3361,8 @@ msgstr ""
 msgid "Moven"
 msgstr ""
 
-#: plugins_filemanager_skin.xml.h:5 plugins_mc_skin.xml.h:65
-#: skins_filemanager_skin.xml.h:5 skins_mc_skin.xml.h:65
+#: plugins_filemanager_skin.xml.h:5 plugins_mc_skin.xml.h:64
+#: skins_filemanager_skin.xml.h:5 skins_mc_skin.xml.h:64
 msgid "View"
 msgstr "????????"
 
@@ -3664,70 +3659,70 @@ msgstr "Picture Player"
 msgid "PICTURE SETTINGS"
 msgstr "????????? ???????????"
 
-#: plugins_mc_skin.xml.h:46 skins_mc_skin.xml.h:46
+#: plugins_mc_skin.xml.h:45 skins_mc_skin.xml.h:45
 msgid "Radio Player"
 msgstr "????? Player"
 
-#: plugins_mc_skin.xml.h:52 plugins_tithek_skin.xml.h:10
-#: skins_mc_skin.xml.h:52 skins_tithek_skin.xml.h:10
+#: plugins_mc_skin.xml.h:51 plugins_tithek_skin.xml.h:10
+#: skins_mc_skin.xml.h:51 skins_tithek_skin.xml.h:10
 msgid "Screensaver"
 msgstr "????????"
 
-#: plugins_mc_skin.xml.h:53 plugins_panel_skin.xml.h:5
+#: plugins_mc_skin.xml.h:52 plugins_panel_skin.xml.h:5
 #: plugins_panel_skin.xml.h:22 skin_default_skin.xml.h:559
-#: skins_mc_skin.xml.h:53 skins_panel_skin.xml.h:5 skins_panel_skin.xml.h:22
+#: skins_mc_skin.xml.h:52 skins_panel_skin.xml.h:5 skins_panel_skin.xml.h:22
 msgid "Settings"
 msgstr "?????????"
 
-#: plugins_mc_skin.xml.h:54 skins_mc_skin.xml.h:54
+#: plugins_mc_skin.xml.h:53 skins_mc_skin.xml.h:53
 msgid "Show Pictitle"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:56 skins_mc_skin.xml.h:56
+#: plugins_mc_skin.xml.h:55 skins_mc_skin.xml.h:55
 msgid "small"
 msgstr "?????????"
 
-#: plugins_mc_skin.xml.h:57 skins_mc_skin.xml.h:57
+#: plugins_mc_skin.xml.h:56 skins_mc_skin.xml.h:56
 msgid "Sort"
 msgstr "???????????"
 
-#: plugins_mc_skin.xml.h:58 skin_default_skin.xml.h:587 skins_mc_skin.xml.h:58
+#: plugins_mc_skin.xml.h:57 skin_default_skin.xml.h:587 skins_mc_skin.xml.h:57
 msgid "Sorting"
 msgstr "??????????"
 
-#: plugins_mc_skin.xml.h:59 skins_mc_skin.xml.h:59
+#: plugins_mc_skin.xml.h:58 skins_mc_skin.xml.h:58
 msgid "Sound"
 msgstr "????"
 
-#: plugins_mc_skin.xml.h:60 skins_mc_skin.xml.h:60
+#: plugins_mc_skin.xml.h:59 skins_mc_skin.xml.h:59
 msgid "Style"
 msgstr "?????"
 
-#: plugins_mc_skin.xml.h:61 skins_mc_skin.xml.h:61
+#: plugins_mc_skin.xml.h:60 skins_mc_skin.xml.h:60
 msgid "use last Directory"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:62 skins_mc_skin.xml.h:62
+#: plugins_mc_skin.xml.h:61 skins_mc_skin.xml.h:61
 msgid "VIDEO"
 msgstr "?????"
 
-#: plugins_mc_skin.xml.h:63 skins_mc_skin.xml.h:63
+#: plugins_mc_skin.xml.h:62 skins_mc_skin.xml.h:62
 msgid "Video Player"
 msgstr "Video Player"
 
-#: plugins_mc_skin.xml.h:64 skins_mc_skin.xml.h:64
+#: plugins_mc_skin.xml.h:63 skins_mc_skin.xml.h:63
 msgid "VIDEO SETTINGS"
 msgstr "????????? ?????"
 
-#: plugins_mc_skin.xml.h:66 skins_mc_skin.xml.h:66
+#: plugins_mc_skin.xml.h:65 skins_mc_skin.xml.h:65
 msgid "VLC Player"
 msgstr "VLC Player"
 
-#: plugins_mc_skin.xml.h:67 skins_mc_skin.xml.h:67
+#: plugins_mc_skin.xml.h:66 skins_mc_skin.xml.h:66
 msgid "Weather Infos"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:68 skins_mc_skin.xml.h:68
+#: plugins_mc_skin.xml.h:67 skins_mc_skin.xml.h:67
 msgid "Web Radio Player"
 msgstr "Web Radio Player"
 
@@ -4479,7 +4474,7 @@ msgid ""
 msgstr ""
 
 #: record.h:1174
-msgid "Timer Record start !"
+msgid "Timer Record start !\n"
 msgstr ""
 
 #: record.h:1289 record.h:1298 record.h:1309 record.h:1344 record.h:1353
@@ -4894,6 +4889,11 @@ msgstr ""
 
 #: settings_bluebutton.h:6
 msgid "Blue Key Action - Setup"
+msgstr ""
+
+#: settings_bluebutton.h:12 settings_bluebutton.h:43
+#: settings_pluginbutton.h:16 settings_redbutton.h:16
+msgid "TV / Radio Switch"
 msgstr ""
 
 #: settings_pluginbutton.h:6
@@ -5585,7 +5585,9 @@ msgstr ""
 
 #: skin_default_skin.xml.h:189
 msgid "Don't clear TV on zap (only with fastzap)"
-msgstr "?? ???????? ?????? ????? ??? ???????????? (?????? ? fastzap)"
+msgstr ""
+"?? ???????? ?????? ????? ??? ???????????? (?????? "
+"? fastzap)"
 
 #: skin_default_skin.xml.h:190
 msgid "Download"
@@ -5597,7 +5599,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:193
 msgid "Dutch"
-msgstr ""
+msgstr "Nederlands"
 
 #: skin_default_skin.xml.h:194
 msgid "DYNDNS Settings"
@@ -5633,7 +5635,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:203
 msgid "English"
-msgstr "??????????"
+msgstr ""
 
 #: skin_default_skin.xml.h:204
 msgid "EPG"
@@ -5771,7 +5773,7 @@ msgstr "???????? ?????"
 
 #: skin_default_skin.xml.h:239 tithek_submenu.h:372
 msgid "French"
-msgstr ""
+msgstr "Francais"
 
 #: skin_default_skin.xml.h:240
 msgid "Frequency"
@@ -5799,7 +5801,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:247 tithek_submenu.h:383
 msgid "German"
-msgstr ""
+msgstr "Deutsch"
 
 #: skin_default_skin.xml.h:248
 msgid "Git Changelog"
@@ -6207,7 +6209,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:327
 msgid "Italian"
-msgstr ""
+msgstr "Italiano"
 
 #: skin_default_skin.xml.h:328
 msgid "j"
@@ -6665,7 +6667,7 @@ msgstr "?????? ??????"
 
 #: skin_default_skin.xml.h:451
 msgid "Polish"
-msgstr ""
+msgstr "Polski"
 
 #: skin_default_skin.xml.h:452
 msgid "Positioner Setup"
@@ -6889,7 +6891,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:516
 msgid "Russian"
-msgstr ""
+msgstr "???????"
 
 #: skin_default_skin.xml.h:517
 msgid "s"
@@ -7766,8 +7768,9 @@ msgstr ""
 
 #: system_backup_restore.h:15
 msgid ""
-"Press -restore- and your saved settings will be restored from your swapstick "
-"/ recording hdd! The Box will restart automatically for restoring!\n"
+"Press -restore- and your saved settings will be restored from your "
+"swapstick / recording hdd! The Box will restart automatically for "
+"restoring!\n"
 "\n"
 "Press -backup- to save your actual settings to swapstick / recording hdd.\n"
 "WARNING: The old backup will be deleted!"
@@ -8042,7 +8045,7 @@ msgstr ""
 msgid "Automatic stop in 10 seconds."
 msgstr ""
 
-#: tithek_global.h:238 tithek.h:3013
+#: tithek_global.h:238 tithek.h:3014
 msgid "The hoster is not yet supported !"
 msgstr ""
 
@@ -8080,75 +8083,75 @@ msgstr ""
 msgid "Streaming Playback Caching (0.5MB)"
 msgstr ""
 
-#: tithek.h:1222
+#: tithek.h:1222 tithek.h:1223
 msgid "Streaming Playback Caching (1MB)"
 msgstr ""
 
-#: tithek.h:1223
+#: tithek.h:1224
 msgid "Streaming Playback Caching (2MB)"
 msgstr ""
 
-#: tithek.h:1224
+#: tithek.h:1225
 msgid "Streaming Playback Caching (3MB)"
 msgstr ""
 
-#: tithek.h:1225
+#: tithek.h:1226
 msgid "Streaming Playback Caching (4MB)"
 msgstr ""
 
-#: tithek.h:1226
+#: tithek.h:1227
 msgid "Streaming Playback Caching (5MB)"
 msgstr ""
 
-#: tithek.h:1227
+#: tithek.h:1228
 msgid "Streaming Playback Caching (7.5MB)"
 msgstr ""
 
-#: tithek.h:1228
+#: tithek.h:1229
 msgid "Streaming Playback Caching (10MB)"
 msgstr ""
 
-#: tithek.h:1229
+#: tithek.h:1230
 msgid "File Caching Playback (10MB / 120s)"
 msgstr ""
 
-#: tithek.h:1230
+#: tithek.h:1231
 msgid "File Caching Playback (20MB / 240s)"
 msgstr ""
 
-#: tithek.h:1231
+#: tithek.h:1232
 msgid "File Caching Playback (30MB / 360s)"
 msgstr ""
 
-#: tithek.h:1232
+#: tithek.h:1233
 msgid "Download Full File"
 msgstr ""
 
-#: tithek.h:1233
+#: tithek.h:1234
 msgid "Download Full File (background)"
 msgstr ""
 
-#: tithek.h:1345
+#: tithek.h:1346
 msgid "Start playback"
 msgstr ""
 
-#: tithek.h:1367
+#: tithek.h:1368
 msgid "Can't get Streamurl !"
 msgstr ""
 
-#: tithek.h:1386
+#: tithek.h:1387
 msgid "TitanNit Tithek disclaimer"
 msgstr ""
 
-#: tithek.h:1450
+#: tithek.h:1451
 msgid "Page"
 msgstr ""
 
-#: tithek.h:3075
+#: tithek.h:3076
 msgid "Remove this Favorite ?"
 msgstr ""
 
-#: tithek.h:3089
+#: tithek.h:3090
 msgid "Add this link as Favorite ?"
 msgstr ""
 
@@ -10209,3975 +10212,3958 @@ msgid "International-(African)"
 msgstr ""
 
 #: tithek_submenu.h:465
-msgid "International-(Afrikaans)"
-msgstr ""
-
-#: tithek_submenu.h:466
 msgid "International-(America)"
 msgstr ""
 
-#: tithek_submenu.h:467
+#: tithek_submenu.h:466
 msgid "International-(Arabic)"
 msgstr ""
 
-#: tithek_submenu.h:468
+#: tithek_submenu.h:467
 msgid "International-(Asian)"
 msgstr ""
 
-#: tithek_submenu.h:469
+#: tithek_submenu.h:468
 msgid "International-(Bollywood)"
 msgstr ""
 
-#: tithek_submenu.h:470
+#: tithek_submenu.h:469
 msgid "International-(Caribbean)"
 msgstr ""
 
-#: tithek_submenu.h:471
+#: tithek_submenu.h:470
 msgid "International-(Celtic)"
 msgstr ""
 
-#: tithek_submenu.h:472
+#: tithek_submenu.h:471
 msgid "International-(Chinese)"
 msgstr ""
 
-#: tithek_submenu.h:473
+#: tithek_submenu.h:472
 msgid "International-(European)"
 msgstr ""
 
-#: tithek_submenu.h:474
-msgid "International-(French)"
-msgstr ""
-
-#: tithek_submenu.h:475
+#: tithek_submenu.h:473
 msgid "International-(German)"
 msgstr ""
 
-#: tithek_submenu.h:476
+#: tithek_submenu.h:474
 msgid "International-(Greek)"
 msgstr ""
 
-#: tithek_submenu.h:477
+#: tithek_submenu.h:475
 msgid "International-(Hindi)"
 msgstr ""
 
-#: tithek_submenu.h:478
+#: tithek_submenu.h:476
 msgid "International-(Indian)"
 msgstr ""
 
-#: tithek_submenu.h:479
+#: tithek_submenu.h:477
 msgid "International-(Islamic)"
 msgstr ""
 
-#: tithek_submenu.h:480
+#: tithek_submenu.h:478
 msgid "International-(Italia)"
 msgstr ""
 
-#: tithek_submenu.h:481
+#: tithek_submenu.h:479
 msgid "International-(Japanese)"
 msgstr ""
 
-#: tithek_submenu.h:482
+#: tithek_submenu.h:480
 msgid "International-(Korea)"
 msgstr ""
 
-#: tithek_submenu.h:483
+#: tithek_submenu.h:481
 msgid "International-(Middle-Eastern)"
 msgstr ""
 
-#: tithek_submenu.h:484
+#: tithek_submenu.h:482
 msgid "International-(North-American)"
 msgstr ""
 
-#: tithek_submenu.h:485
+#: tithek_submenu.h:483
 msgid "International-(Russian)"
 msgstr ""
 
-#: tithek_submenu.h:486
+#: tithek_submenu.h:484
 msgid "International-(Soca)"
 msgstr ""
 
-#: tithek_submenu.h:487
-msgid "International-(South-American)"
-msgstr ""
-
-#: tithek_submenu.h:488
+#: tithek_submenu.h:485
 msgid "International-(Spanish)"
 msgstr ""
 
-#: tithek_submenu.h:489
+#: tithek_submenu.h:486
 msgid "International-(Tamil)"
 msgstr ""
 
-#: tithek_submenu.h:490
+#: tithek_submenu.h:487
 msgid "International-(Turkish)"
 msgstr ""
 
-#: tithek_submenu.h:491
+#: tithek_submenu.h:488
 msgid "International-(Zouk)"
 msgstr ""
 
-#: tithek_submenu.h:492
+#: tithek_submenu.h:489
 msgid "Interracial"
 msgstr ""
 
-#: tithek_submenu.h:493
+#: tithek_submenu.h:490
 msgid "investigativ"
 msgstr ""
 
-#: tithek_submenu.h:494
+#: tithek_submenu.h:491
 msgid "iron man marvel anime"
 msgstr ""
 
-#: tithek_submenu.h:495
+#: tithek_submenu.h:492
 msgid "Israel"
 msgstr ""
 
-#: tithek_submenu.h:496
+#: tithek_submenu.h:493
 msgid "Japan"
 msgstr ""
 
-#: tithek_submenu.h:497
+#: tithek_submenu.h:494
 msgid "Jazz"
 msgstr ""
 
-#: tithek_submenu.h:498
+#: tithek_submenu.h:495
 msgid "Jazz-(Avant-Garde)"
 msgstr ""
 
-#: tithek_submenu.h:499
+#: tithek_submenu.h:496
 msgid "Jazz-(Big-Band)"
 msgstr ""
 
-#: tithek_submenu.h:500
+#: tithek_submenu.h:497
 msgid "Jazz-(Bop)"
 msgstr ""
 
-#: tithek_submenu.h:501
+#: tithek_submenu.h:498
 msgid "Jazz-(Cool)"
 msgstr ""
 
-#: tithek_submenu.h:502
+#: tithek_submenu.h:499
 msgid "Jazz-(Fusion)"
 msgstr ""
 
-#: tithek_submenu.h:503
+#: tithek_submenu.h:500
 msgid "Jazz-(Latin)"
 msgstr ""
 
-#: tithek_submenu.h:504
+#: tithek_submenu.h:501
 msgid "Jazz-(Smooth)"
 msgstr ""
 
-#: tithek_submenu.h:505
+#: tithek_submenu.h:502
 msgid "Jazz-(Swing)"
 msgstr ""
 
-#: tithek_submenu.h:506
+#: tithek_submenu.h:503
 msgid "Jazz-(Vocal)"
 msgstr ""
 
-#: tithek_submenu.h:507
+#: tithek_submenu.h:504
 msgid "johann koenig live total bock auf remmi demmi"
 msgstr ""
 
-#: tithek_submenu.h:508
+#: tithek_submenu.h:505
 msgid "jordan carver"
 msgstr ""
 
-#: tithek_submenu.h:509
+#: tithek_submenu.h:506
 msgid "jugendliebe"
 msgstr ""
 
-#: tithek_submenu.h:510
+#: tithek_submenu.h:507
 msgid "jungen gegen maedchen"
 msgstr ""
 
-#: tithek_submenu.h:511
+#: tithek_submenu.h:508
 msgid "jungfrau sucht die grosse liebe"
 msgstr ""
 
-#: tithek_submenu.h:512
+#: tithek_submenu.h:509
 msgid "katzenjammer"
 msgstr ""
 
-#: tithek_submenu.h:513
+#: tithek_submenu.h:510
 msgid "kinderfilme"
 msgstr ""
 
-#: tithek_submenu.h:514
+#: tithek_submenu.h:511
 msgid "kinder fragen comedians antworten"
 msgstr ""
 
-#: tithek_submenu.h:515
+#: tithek_submenu.h:512
 msgid "king"
 msgstr ""
 
-#: tithek_submenu.h:516
+#: tithek_submenu.h:513
 msgid "Kino ab 18"
 msgstr ""
 
-#: tithek_submenu.h:517
+#: tithek_submenu.h:514
 msgid "Kino Filme (de)"
 msgstr ""
 
-#: tithek_submenu.h:518
+#: tithek_submenu.h:515
 msgid "Kino Filme (en)"
 msgstr ""
 
-#: tithek_submenu.h:519
+#: tithek_submenu.h:516
 msgid "Klassikerkino"
 msgstr ""
 
-#: tithek_submenu.h:520
+#: tithek_submenu.h:517
 msgid "kleine leute grosse welt"
 msgstr ""
 
-#: tithek_submenu.h:521
+#: tithek_submenu.h:518
 msgid "kocharena"
 msgstr ""
 
-#: tithek_submenu.h:522
+#: tithek_submenu.h:519
 msgid "koeln 50667"
 msgstr ""
 
-#: tithek_submenu.h:523
+#: tithek_submenu.h:520
 msgid "komodien"
 msgstr ""
 
-#: tithek_submenu.h:524
+#: tithek_submenu.h:521
 msgid "Korea"
 msgstr ""
 
-#: tithek_submenu.h:525
+#: tithek_submenu.h:522
 msgid "krieg"
 msgstr ""
 
-#: tithek_submenu.h:526
+#: tithek_submenu.h:523
 msgid "kuechenchefs uebernehmen sie"
 msgstr ""
 
-#: tithek_submenu.h:527
+#: tithek_submenu.h:524
 msgid "lasko die faust gottes"
 msgstr ""
 
-#: tithek_submenu.h:528
+#: tithek_submenu.h:525
 msgid "Latest Documentations"
 msgstr ""
 
-#: tithek_submenu.h:529
+#: tithek_submenu.h:526
 msgid "Latest Series"
 msgstr ""
 
-#: tithek_submenu.h:530
+#: tithek_submenu.h:527
 msgid "Latina"
 msgstr ""
 
-#: tithek_submenu.h:531
+#: tithek_submenu.h:528
 msgid "Latin-(Bachata)"
 msgstr ""
 
-#: tithek_submenu.h:532
+#: tithek_submenu.h:529
 msgid "Latin-(Bossa-Nova)"
 msgstr ""
 
-#: tithek_submenu.h:533
+#: tithek_submenu.h:530
 msgid "Latin-(Cumbia)"
 msgstr ""
 
-#: tithek_submenu.h:534
+#: tithek_submenu.h:531
 msgid "Latin-(Mariachi)"
 msgstr ""
 
-#: tithek_submenu.h:535
+#: tithek_submenu.h:532
 msgid "Latin-(Merengue)"
 msgstr ""
 
-#: tithek_submenu.h:536
+#: tithek_submenu.h:533
 msgid "Latin-(Ranchera)"
 msgstr ""
 
-#: tithek_submenu.h:537
+#: tithek_submenu.h:534
 msgid "Latin-(Reggaeton)"
 msgstr ""
 
-#: tithek_submenu.h:538
+#: tithek_submenu.h:535
 msgid "Latin-(Regional-Mexican)"
 msgstr ""
 
-#: tithek_submenu.h:539
+#: tithek_submenu.h:536
 msgid "Latin-(Salsa)"
 msgstr ""
 
-#: tithek_submenu.h:540
+#: tithek_submenu.h:537
 msgid "Latin-(Tango)"
 msgstr ""
 
-#: tithek_submenu.h:541
+#: tithek_submenu.h:538
 msgid "Latin-(Tropicalia)"
 msgstr ""
 
-#: tithek_submenu.h:542
+#: tithek_submenu.h:539
 msgid "lebe mein leben austausch mit folgen"
 msgstr ""
 
-#: tithek_submenu.h:543
+#: tithek_submenu.h:540
 msgid "lesbian"
 msgstr ""
 
-#: tithek_submenu.h:544
+#: tithek_submenu.h:541
 msgid "Lesbian"
 msgstr ""
 
-#: tithek_submenu.h:545
+#: tithek_submenu.h:542
 msgid "lesbian+teen"
 msgstr ""
 
-#: tithek_submenu.h:546
+#: tithek_submenu.h:543
 msgid "lets dance"
 msgstr ""
 
-#: tithek_submenu.h:547
+#: tithek_submenu.h:544
 msgid "letzte chance fuer unsere ehe"
 msgstr ""
 
-#: tithek_submenu.h:548
+#: tithek_submenu.h:545
 msgid "Letzte Updates (de)"
 msgstr ""
 
-#: tithek_submenu.h:549
+#: tithek_submenu.h:546
 msgid "Letzte Updates (en)"
 msgstr ""
 
-#: tithek_submenu.h:550
+#: tithek_submenu.h:547
 msgid "Letzte Uploads"
 msgstr ""
 
-#: tithek_submenu.h:551
+#: tithek_submenu.h:548
 msgid "leverage"
 msgstr ""
 
-#: tithek_submenu.h:552
+#: tithek_submenu.h:549
 msgid "lick"
 msgstr ""
 
-#: tithek_submenu.h:553
+#: tithek_submenu.h:550
 msgid "liebe im paradies"
 msgstr ""
 
-#: tithek_submenu.h:554
+#: tithek_submenu.h:551
 msgid "Liebesfilmkino"
 msgstr ""
 
-#: tithek_submenu.h:555
+#: tithek_submenu.h:552
 msgid "lie to me"
 msgstr ""
 
-#: tithek_submenu.h:556
+#: tithek_submenu.h:553
 msgid "lingerie"
 msgstr ""
 
-#: tithek_submenu.h:557
+#: tithek_submenu.h:554
 msgid "Live"
 msgstr ""
 
-#: tithek_submenu.h:558
+#: tithek_submenu.h:555
 msgid "live video chat rtl now"
 msgstr ""
 
-#: tithek_submenu.h:559
+#: tithek_submenu.h:556
 msgid "long+hair"
 msgstr ""
 
-#: tithek_submenu.h:560
+#: tithek_submenu.h:557
 msgid "long+legs"
 msgstr ""
 
-#: tithek_submenu.h:561
+#: tithek_submenu.h:558
 msgid "long+videos"
 msgstr ""
 
-#: tithek_submenu.h:562
+#: tithek_submenu.h:559
 msgid "lost girl"
 msgstr ""
 
-#: tithek_submenu.h:563
+#: tithek_submenu.h:560
 msgid "Lovesongs"
 msgstr ""
 
-#: tithek_submenu.h:564
+#: tithek_submenu.h:561
 msgid "macgyver"
 msgstr ""
 
-#: tithek_submenu.h:565
+#: tithek_submenu.h:562
 msgid "made in germany"
 msgstr ""
 
-#: tithek_submenu.h:566
+#: tithek_submenu.h:563
 msgid "major crimes"
 msgstr ""
 
-#: tithek_submenu.h:567
+#: tithek_submenu.h:564
 msgid "mama mia"
 msgstr ""
 
-#: tithek_submenu.h:568
+#: tithek_submenu.h:565
 msgid "mantrailer spuren des verbrechens"
 msgstr ""
 
-#: tithek_submenu.h:569
+#: tithek_submenu.h:566
 msgid "manuel horeth nichts ist unmoeglich"
 msgstr ""
 
-#: tithek_submenu.h:570
+#: tithek_submenu.h:567
 msgid "masturbation"
 msgstr ""
 
-#: tithek_submenu.h:571
+#: tithek_submenu.h:568
 msgid "mature"
 msgstr ""
 
-#: tithek_submenu.h:572
+#: tithek_submenu.h:569
 msgid "medical detectives"
 msgstr ""
 
-#: tithek_submenu.h:573
+#: tithek_submenu.h:570
 msgid "medicopter 117"
 msgstr ""
 
-#: tithek_submenu.h:574
+#: tithek_submenu.h:571
 msgid "mein baby"
 msgstr ""
 
-#: tithek_submenu.h:575
+#: tithek_submenu.h:572
 msgid "mein garten"
 msgstr ""
 
-#: tithek_submenu.h:576
+#: tithek_submenu.h:573
 msgid "mein himmlisches hotel"
 msgstr ""
 
-#: tithek_submenu.h:577
+#: tithek_submenu.h:574
 msgid "mein leben ich"
 msgstr ""
 
-#: tithek_submenu.h:578
+#: tithek_submenu.h:575
 msgid "mein leben ich superrtl"
 msgstr ""
 
-#: tithek_submenu.h:579
+#: tithek_submenu.h:576
 msgid "mein neuer alter"
 msgstr ""
 
-#: tithek_submenu.h:580
+#: tithek_submenu.h:577
 msgid "mein promi restaurant"
 msgstr ""
 
-#: tithek_submenu.h:581
+#: tithek_submenu.h:578
 msgid "- Meist gesehen"
 msgstr ""
 
-#: tithek_submenu.h:582
+#: tithek_submenu.h:579
 msgid "menschen tiere doktoren"
 msgstr ""
 
-#: tithek_submenu.h:583
+#: tithek_submenu.h:580
 msgid "merlin staffel 5"
 msgstr ""
 
-#: tithek_submenu.h:584
+#: tithek_submenu.h:581
 msgid "merlin super"
 msgstr ""
 
-#: tithek_submenu.h:585
+#: tithek_submenu.h:582
 msgid "Metal"
 msgstr ""
 
-#: tithek_submenu.h:586
+#: tithek_submenu.h:583
 msgid "Metal-(Black)"
 msgstr ""
 
-#: tithek_submenu.h:587
+#: tithek_submenu.h:584
 msgid "Metal-(Heavy)"
 msgstr ""
 
-#: tithek_submenu.h:588
+#: tithek_submenu.h:585
 msgid "mia gray die modelmacher"
 msgstr ""
 
-#: tithek_submenu.h:589
+#: tithek_submenu.h:586
 msgid "miami heiss anninas american dream"
 msgstr ""
 
-#: tithek_submenu.h:590
+#: tithek_submenu.h:587
 msgid "mieten kaufen wohnen"
 msgstr ""
 
-#: tithek_submenu.h:591
+#: tithek_submenu.h:588
 msgid "mieterzoff vox"
 msgstr ""
 
-#: tithek_submenu.h:592
+#: tithek_submenu.h:589
 msgid "mietprellern auf der spur"
 msgstr ""
 
-#: tithek_submenu.h:593
+#: tithek_submenu.h:590
 msgid "milf"
 msgstr ""
 
-#: tithek_submenu.h:594
+#: tithek_submenu.h:591
 msgid "Milf"
 msgstr ""
 
-#: tithek_submenu.h:595
+#: tithek_submenu.h:592
 msgid "mini"
 msgstr ""
 
-#: tithek_submenu.h:596
+#: tithek_submenu.h:593
 msgid "Misc"
 msgstr ""
 
-#: tithek_submenu.h:597
+#: tithek_submenu.h:594
 msgid "Misc-(Environmental)"
 msgstr ""
 
-#: tithek_submenu.h:598
+#: tithek_submenu.h:595
 msgid "Misc-(Ethnic-Fusion)"
 msgstr ""
 
-#: tithek_submenu.h:599
+#: tithek_submenu.h:596
 msgid "Misc-(Meditation)"
 msgstr ""
 
-#: tithek_submenu.h:600
+#: tithek_submenu.h:597
 msgid "Misc-(New-Age)"
 msgstr ""
 
-#: tithek_submenu.h:601
+#: tithek_submenu.h:598
 msgid "Misc-(Spiritual)"
 msgstr ""
 
-#: tithek_submenu.h:602
+#: tithek_submenu.h:599
 msgid "mitten im leben"
 msgstr ""
 
-#: tithek_submenu.h:603
+#: tithek_submenu.h:600
 msgid "Mixed"
 msgstr ""
 
-#: tithek_submenu.h:604
+#: tithek_submenu.h:601
 msgid "moan"
 msgstr ""
 
-#: tithek_submenu.h:605
+#: tithek_submenu.h:602
 msgid "mom"
 msgstr ""
 
-#: tithek_submenu.h:606
+#: tithek_submenu.h:603
 msgid "money"
 msgstr ""
 
-#: tithek_submenu.h:607
+#: tithek_submenu.h:604
 msgid "most viewed"
 msgstr ""
 
-#: tithek_submenu.h:608
+#: tithek_submenu.h:605
 msgid "Most Viewed"
 msgstr ""
 
-#: tithek_submenu.h:609
+#: tithek_submenu.h:606
 msgid "most viewed Music"
 msgstr ""
 
-#: tithek_submenu.h:610
+#: tithek_submenu.h:607
 msgid "mother"
 msgstr ""
 
-#: tithek_submenu.h:611
+#: tithek_submenu.h:608
 msgid "motorsport"
 msgstr ""
 
-#: tithek_submenu.h:612
+#: tithek_submenu.h:609
 msgid "Movie Highlights"
 msgstr ""
 
-#: tithek_submenu.h:613
+#: tithek_submenu.h:610
 msgid "Movies"
 msgstr ""
 
-#: tithek_submenu.h:614
+#: tithek_submenu.h:611
 msgid "movies of 1936"
 msgstr ""
 
-#: tithek_submenu.h:615
+#: tithek_submenu.h:612
 msgid "movies of 1942"
 msgstr ""
 
-#: tithek_submenu.h:616
+#: tithek_submenu.h:613
 msgid "movies of 1950"
 msgstr ""
 
-#: tithek_submenu.h:617
+#: tithek_submenu.h:614
 msgid "movies of 1953"
 msgstr ""
 
-#: tithek_submenu.h:618
+#: tithek_submenu.h:615
 msgid "movies of 1954"
 msgstr ""
 
-#: tithek_submenu.h:619
+#: tithek_submenu.h:616
 msgid "movies of 1955"
 msgstr ""
 
-#: tithek_submenu.h:620
+#: tithek_submenu.h:617
 msgid "movies of 1956"
 msgstr ""
 
-#: tithek_submenu.h:621
+#: tithek_submenu.h:618
 msgid "movies of 1957"
 msgstr ""
 
-#: tithek_submenu.h:622
+#: tithek_submenu.h:619
 msgid "movies of 1958"
 msgstr ""
 
-#: tithek_submenu.h:623
+#: tithek_submenu.h:620
 msgid "movies of 1959"
 msgstr ""
 
-#: tithek_submenu.h:624
+#: tithek_submenu.h:621
 msgid "movies of 1960"
 msgstr ""
 
-#: tithek_submenu.h:625
+#: tithek_submenu.h:622
 msgid "movies of 1961"
 msgstr ""
 
-#: tithek_submenu.h:626
+#: tithek_submenu.h:623
 msgid "movies of 1962"
 msgstr ""
 
-#: tithek_submenu.h:627
+#: tithek_submenu.h:624
 msgid "movies of 1963"
 msgstr ""
 
-#: tithek_submenu.h:628
+#: tithek_submenu.h:625
 msgid "movies of 1964"
 msgstr ""
 
-#: tithek_submenu.h:629
+#: tithek_submenu.h:626
 msgid "movies of 1965"
 msgstr ""
 
-#: tithek_submenu.h:630
+#: tithek_submenu.h:627
 msgid "movies of 1966"
 msgstr ""
 
-#: tithek_submenu.h:631
+#: tithek_submenu.h:628
 msgid "movies of 1967"
 msgstr ""
 
-#: tithek_submenu.h:632
+#: tithek_submenu.h:629
 msgid "movies of 1968"
 msgstr ""
 
-#: tithek_submenu.h:633
+#: tithek_submenu.h:630
 msgid "movies of 1969"
 msgstr ""
 
-#: tithek_submenu.h:634
+#: tithek_submenu.h:631
 msgid "movies of 1970"
 msgstr ""
 
-#: tithek_submenu.h:635
+#: tithek_submenu.h:632
 msgid "movies of 1971"
 msgstr ""
 
-#: tithek_submenu.h:636
+#: tithek_submenu.h:633
 msgid "movies of 1972"
 msgstr ""
 
-#: tithek_submenu.h:637
+#: tithek_submenu.h:634
 msgid "movies of 1973"
 msgstr ""
 
-#: tithek_submenu.h:638
+#: tithek_submenu.h:635
 msgid "movies of 1974"
 msgstr ""
 
-#: tithek_submenu.h:639
+#: tithek_submenu.h:636
 msgid "movies of 1975"
 msgstr ""
 
-#: tithek_submenu.h:640
+#: tithek_submenu.h:637
 msgid "movies of 1976"
 msgstr ""
 
-#: tithek_submenu.h:641
+#: tithek_submenu.h:638
 msgid "movies of 1977"
 msgstr ""
 
-#: tithek_submenu.h:642
+#: tithek_submenu.h:639
 msgid "movies of 1978"
 msgstr ""
 
-#: tithek_submenu.h:643
+#: tithek_submenu.h:640
 msgid "movies of 1979"
 msgstr ""
 
-#: tithek_submenu.h:644
+#: tithek_submenu.h:641
 msgid "movies of 1980"
 msgstr ""
 
-#: tithek_submenu.h:645
+#: tithek_submenu.h:642
 msgid "movies of 1981"
 msgstr ""
 
-#: tithek_submenu.h:646
+#: tithek_submenu.h:643
 msgid "movies of 1982"
 msgstr ""
 
-#: tithek_submenu.h:647
+#: tithek_submenu.h:644
 msgid "movies of 1983"
 msgstr ""
 
-#: tithek_submenu.h:648
+#: tithek_submenu.h:645
 msgid "movies of 1984"
 msgstr ""
 
-#: tithek_submenu.h:649
+#: tithek_submenu.h:646
 msgid "movies of 1985"
 msgstr ""
 
-#: tithek_submenu.h:650
+#: tithek_submenu.h:647
 msgid "movies of 1986"
 msgstr ""
 
-#: tithek_submenu.h:651
+#: tithek_submenu.h:648
 msgid "movies of 1987"
 msgstr ""
 
-#: tithek_submenu.h:652
+#: tithek_submenu.h:649
 msgid "movies of 1988"
 msgstr ""
 
-#: tithek_submenu.h:653
+#: tithek_submenu.h:650
 msgid "movies of 1989"
 msgstr ""
 
-#: tithek_submenu.h:654
+#: tithek_submenu.h:651
 msgid "movies of 1990"
 msgstr ""
 
-#: tithek_submenu.h:655
+#: tithek_submenu.h:652
 msgid "movies of 1991"
 msgstr ""
 
-#: tithek_submenu.h:656
+#: tithek_submenu.h:653
 msgid "movies of 1992"
 msgstr ""
 
-#: tithek_submenu.h:657
+#: tithek_submenu.h:654
 msgid "movies of 1993"
 msgstr ""
 
-#: tithek_submenu.h:658
+#: tithek_submenu.h:655
 msgid "movies of 1994"
 msgstr ""
 
-#: tithek_submenu.h:659
+#: tithek_submenu.h:656
 msgid "movies of 1995"
 msgstr ""
 
-#: tithek_submenu.h:660
+#: tithek_submenu.h:657
 msgid "movies of 1996"
 msgstr ""
 
-#: tithek_submenu.h:661
+#: tithek_submenu.h:658
 msgid "movies of 1997"
 msgstr ""
 
-#: tithek_submenu.h:662
+#: tithek_submenu.h:659
 msgid "movies of 1998"
 msgstr ""
 
-#: tithek_submenu.h:663
+#: tithek_submenu.h:660
 msgid "movies of 1999"
 msgstr ""
 
-#: tithek_submenu.h:664
+#: tithek_submenu.h:661
 msgid "movies of 2000"
 msgstr ""
 
-#: tithek_submenu.h:665
+#: tithek_submenu.h:662
 msgid "movies of 2001"
 msgstr ""
 
-#: tithek_submenu.h:666
+#: tithek_submenu.h:663
 msgid "movies of 2002"
 msgstr ""
 
-#: tithek_submenu.h:667
+#: tithek_submenu.h:664
 msgid "movies of 2003"
 msgstr ""
 
-#: tithek_submenu.h:668
+#: tithek_submenu.h:665
 msgid "movies of 2004"
 msgstr ""
 
-#: tithek_submenu.h:669
+#: tithek_submenu.h:666
 msgid "movies of 2005"
 msgstr ""
 
-#: tithek_submenu.h:670
+#: tithek_submenu.h:667
 msgid "movies of 2006"
 msgstr ""
 
-#: tithek_submenu.h:671
+#: tithek_submenu.h:668
 msgid "movies of 2007"
 msgstr ""
 
-#: tithek_submenu.h:672
+#: tithek_submenu.h:669
 msgid "movies of 2008"
 msgstr ""
 
-#: tithek_submenu.h:673
+#: tithek_submenu.h:670
 msgid "movies of 2009"
 msgstr ""
 
-#: tithek_submenu.h:674
+#: tithek_submenu.h:671
 msgid "movies of 2010"
 msgstr ""
 
-#: tithek_submenu.h:675
+#: tithek_submenu.h:672
 msgid "movies of 2011"
 msgstr ""
 
-#: tithek_submenu.h:676
+#: tithek_submenu.h:673
 msgid "movies of 2012"
 msgstr ""
 
-#: tithek_submenu.h:677
+#: tithek_submenu.h:674
 msgid "movies of 2013"
 msgstr ""
 
-#: tithek_submenu.h:678
+#: tithek_submenu.h:675
 msgid "mr bean"
 msgstr ""
 
-#: tithek_submenu.h:679
+#: tithek_submenu.h:676
 msgid "mrs miracle2"
 msgstr ""
 
-#: tithek_submenu.h:680
+#: tithek_submenu.h:677
 msgid "Musical"
 msgstr ""
 
-#: tithek_submenu.h:681
+#: tithek_submenu.h:678
 msgid "musik"
 msgstr ""
 
-#: tithek_submenu.h:682
+#: tithek_submenu.h:679
 msgid "Musik"
 msgstr ""
 
-#: tithek_submenu.h:683
+#: tithek_submenu.h:680
 msgid "my little deutschland"
 msgstr ""
 
-#: tithek_submenu.h:684
+#: tithek_submenu.h:681
 msgid "nachbarschaftsstreit"
 msgstr ""
 
-#: tithek_submenu.h:685
+#: tithek_submenu.h:682
 msgid "Nachrichten"
 msgstr ""
 
-#: tithek_submenu.h:686
+#: tithek_submenu.h:683
 msgid "natural"
 msgstr ""
 
-#: tithek_submenu.h:687
+#: tithek_submenu.h:684
 msgid "natural+tits"
 msgstr ""
 
-#: tithek_submenu.h:688
+#: tithek_submenu.h:685
 msgid "Neu bei Netzkino"
 msgstr ""
 
-#: tithek_submenu.h:689
+#: tithek_submenu.h:686
 msgid "neueste-videos"
 msgstr ""
 
-#: tithek_submenu.h:690
+#: tithek_submenu.h:687
 msgid "New"
 msgstr ""
 
-#: tithek_submenu.h:691
+#: tithek_submenu.h:688
 msgid "new+face"
 msgstr ""
 
-#: tithek_submenu.h:692
+#: tithek_submenu.h:689
 msgid "next+door"
 msgstr ""
 
-#: tithek_submenu.h:693
+#: tithek_submenu.h:690
 msgid "next please"
 msgstr ""
 
-#: tithek_submenu.h:694
+#: tithek_submenu.h:691
 msgid "nicht mit uns die grosse schnaeppchenluege"
 msgstr ""
 
-#: tithek_submenu.h:695
+#: tithek_submenu.h:692
 msgid "nikita"
 msgstr ""
 
-#: tithek_submenu.h:696
+#: tithek_submenu.h:693
 msgid "nikola"
 msgstr ""
 
-#: tithek_submenu.h:697
+#: tithek_submenu.h:694
 msgid "nikola superrtl"
 msgstr ""
 
-#: tithek_submenu.h:698
+#: tithek_submenu.h:695
 msgid "nofretete und das geheimnis der mumie"
 msgstr ""
 
-#: tithek_submenu.h:699
+#: tithek_submenu.h:696
 msgid "notruf rettung aus der luft"
 msgstr ""
 
-#: tithek_submenu.h:700
+#: tithek_submenu.h:697
 msgid "observe"
 msgstr ""
 
-#: tithek_submenu.h:701
+#: tithek_submenu.h:698
 msgid "office"
 msgstr ""
 
-#: tithek_submenu.h:702
+#: tithek_submenu.h:699
 msgid "Oiled"
 msgstr ""
 
-#: tithek_submenu.h:703
+#: tithek_submenu.h:700
 msgid "olaf schubert"
 msgstr ""
 
-#: tithek_submenu.h:704
+#: tithek_submenu.h:701
 msgid "old+%26+young"
 msgstr ""
 
-#: tithek_submenu.h:705
+#: tithek_submenu.h:702
 msgid "Oldskool"
 msgstr ""
 
-#: tithek_submenu.h:706
+#: tithek_submenu.h:703
 msgid "on+cam"
 msgstr ""
 
-#: tithek_submenu.h:707
+#: tithek_submenu.h:704
 msgid "once upon a time es war einmal"
 msgstr ""
 
-#: tithek_submenu.h:708
+#: tithek_submenu.h:705
 msgid "online"
 msgstr ""
 
-#: tithek_submenu.h:709
+#: tithek_submenu.h:706
 msgid "orgy"
 msgstr ""
 
-#: tithek_submenu.h:710
+#: tithek_submenu.h:707
 msgid "Other"
 msgstr ""
 
-#: tithek_submenu.h:711
+#: tithek_submenu.h:708
 msgid "panties"
 msgstr ""
 
-#: tithek_submenu.h:712
+#: tithek_submenu.h:709
 msgid "panties+off"
 msgstr ""
 
-#: tithek_submenu.h:713
+#: tithek_submenu.h:710
 msgid "party"
 msgstr ""
 
-#: tithek_submenu.h:714
+#: tithek_submenu.h:711
 msgid "pastewka in"
 msgstr ""
 
-#: tithek_submenu.h:715
+#: tithek_submenu.h:712
 msgid "pastewka in "
 msgstr ""
 
-#: tithek_submenu.h:716
+#: tithek_submenu.h:713
 msgid "patric heizmann live ich bin dann mal schlank"
 msgstr ""
 
-#: tithek_submenu.h:717
+#: tithek_submenu.h:714
 msgid "penetration"
 msgstr ""
 
-#: tithek_submenu.h:718
+#: tithek_submenu.h:715
 msgid "person of interest"
 msgstr ""
 
-#: tithek_submenu.h:719
+#: tithek_submenu.h:716
 msgid "pest die rueckkehr"
 msgstr ""
 
-#: tithek_submenu.h:720
+#: tithek_submenu.h:717
 msgid "petite"
 msgstr ""
 
-#: tithek_submenu.h:721
+#: tithek_submenu.h:718
 msgid "pixel"
 msgstr ""
 
-#: tithek_submenu.h:722
+#: tithek_submenu.h:719
 msgid "Polski Crash1"
 msgstr ""
 
-#: tithek_submenu.h:723
+#: tithek_submenu.h:720
 msgid "Pop"
 msgstr ""
 
-#: tithek_submenu.h:724
-msgid "Pop-(Idols)"
-msgstr ""
-
-#: tithek_submenu.h:725
+#: tithek_submenu.h:721
 msgid "Pop-(Soft)"
 msgstr ""
 
-#: tithek_submenu.h:726
+#: tithek_submenu.h:722
 msgid "Pop-(Teen)"
 msgstr ""
 
-#: tithek_submenu.h:727
+#: tithek_submenu.h:723
 msgid "Pop-(Top-40)"
 msgstr ""
 
-#: tithek_submenu.h:728
+#: tithek_submenu.h:724
 msgid "Popular Documentations"
 msgstr ""
 
-#: tithek_submenu.h:729
+#: tithek_submenu.h:725
 msgid "Popular Movies"
 msgstr ""
 
-#: tithek_submenu.h:730
+#: tithek_submenu.h:726
 msgid "Popular Series"
 msgstr ""
 
-#: tithek_submenu.h:731
+#: tithek_submenu.h:727
 msgid "pornstar"
 msgstr ""
 
-#: tithek_submenu.h:732
+#: tithek_submenu.h:728
 msgid "portalzine-tv"
 msgstr ""
 
-#: tithek_submenu.h:733
+#: tithek_submenu.h:729
 msgid "posing"
 msgstr ""
 
-#: tithek_submenu.h:734
+#: tithek_submenu.h:730
 msgid "postmortem"
 msgstr ""
 
-#: tithek_submenu.h:735
+#: tithek_submenu.h:731
 msgid "pov"
 msgstr ""
 
-#: tithek_submenu.h:736
+#: tithek_submenu.h:732
 msgid "praxis extrem"
 msgstr ""
 
-#: tithek_submenu.h:737
+#: tithek_submenu.h:733
 msgid "pretty"
 msgstr ""
 
-#: tithek_submenu.h:738
+#: tithek_submenu.h:734
 msgid "privatdetektive im einsatz"
 msgstr ""
 
-#: tithek_submenu.h:739
+#: tithek_submenu.h:735
 msgid "promi frauentausch"
 msgstr ""
 
-#: tithek_submenu.h:740
+#: tithek_submenu.h:736
 msgid "promi kocharena"
 msgstr ""
 
-#: tithek_submenu.h:741
+#: tithek_submenu.h:737
 msgid "prominent"
 msgstr ""
 
-#: tithek_submenu.h:742
+#: tithek_submenu.h:738
 msgid "promi shopping queen"
 msgstr ""
 
-#: tithek_submenu.h:743
+#: tithek_submenu.h:739
 msgid "promis suchen ein zuhause"
 msgstr ""
 
-#: tithek_submenu.h:744
+#: tithek_submenu.h:740
 msgid "promi undercover"
 msgstr ""
 
-#: tithek_submenu.h:745
+#: tithek_submenu.h:741
 msgid "Public-Radio"
 msgstr ""
 
-#: tithek_submenu.h:746
+#: tithek_submenu.h:742
 msgid "Public-Radio-(News)"
 msgstr ""
 
-#: tithek_submenu.h:747
+#: tithek_submenu.h:743
 msgid "Public-Radio-(Sports)"
 msgstr ""
 
-#: tithek_submenu.h:748
+#: tithek_submenu.h:744
 msgid "punkt 12"
 msgstr ""
 
-#: tithek_submenu.h:749
+#: tithek_submenu.h:745
 msgid "punkt 6"
 msgstr ""
 
-#: tithek_submenu.h:750
+#: tithek_submenu.h:746
 msgid "punkt 9"
 msgstr ""
 
-#: tithek_submenu.h:751
+#: tithek_submenu.h:747
 msgid "pussy"
 msgstr ""
 
-#: tithek_submenu.h:752
+#: tithek_submenu.h:748
 msgid "Queerkino"
 msgstr ""
 
-#: tithek_submenu.h:753
+#: tithek_submenu.h:749
 msgid "rach deckt auf"
 msgstr ""
 
-#: tithek_submenu.h:754
+#: tithek_submenu.h:750
 msgid "rach der restauranttester"
 msgstr ""
 
-#: tithek_submenu.h:755
+#: tithek_submenu.h:751
 msgid "rachs restaurantschule"
 msgstr ""
 
-#: tithek_submenu.h:756
+#: tithek_submenu.h:752
 msgid "Rap"
 msgstr ""
 
-#: tithek_submenu.h:757
+#: tithek_submenu.h:753
 msgid "Rap-(East-Coast)"
 msgstr ""
 
-#: tithek_submenu.h:758
+#: tithek_submenu.h:754
 msgid "Rap-(Gangsta)"
 msgstr ""
 
-#: tithek_submenu.h:759
+#: tithek_submenu.h:755
 msgid "Rap-(Hip-Hop)"
 msgstr ""
 
-#: tithek_submenu.h:760
+#: tithek_submenu.h:756
 msgid "Rap-(Old-School)"
 msgstr ""
 
-#: tithek_submenu.h:761
+#: tithek_submenu.h:757
 msgid "rare+face"
 msgstr ""
 
-#: tithek_submenu.h:762
+#: tithek_submenu.h:758
 msgid "raus aus den schulden"
 msgstr ""
 
-#: tithek_submenu.h:763
+#: tithek_submenu.h:759
 msgid "real cool runnings"
 msgstr ""
 
-#: tithek_submenu.h:764
+#: tithek_submenu.h:760
 msgid "reality"
 msgstr ""
 
-#: tithek_submenu.h:765
+#: tithek_submenu.h:761
 msgid "redhead"
 msgstr ""
 
-#: tithek_submenu.h:766
+#: tithek_submenu.h:762
 msgid "Redhead"
 msgstr ""
 
-#: tithek_submenu.h:767
+#: tithek_submenu.h:763
 msgid "Reggae"
 msgstr ""
 
-#: tithek_submenu.h:768
+#: tithek_submenu.h:764
 msgid "Reggae-(Dub)"
 msgstr ""
 
-#: tithek_submenu.h:769
+#: tithek_submenu.h:765
 msgid "Reggae-(Reggae-Roots)"
 msgstr ""
 
-#: tithek_submenu.h:770
+#: tithek_submenu.h:766
 msgid "reinschmidts wilde welt"
 msgstr ""
 
-#: tithek_submenu.h:771
+#: tithek_submenu.h:767
 msgid "revenge"
 msgstr ""
 
-#: tithek_submenu.h:772
+#: tithek_submenu.h:768
 msgid "ritas welt"
 msgstr ""
 
-#: tithek_submenu.h:773
+#: tithek_submenu.h:769
 msgid "ritas welt superrtl"
 msgstr ""
 
-#: tithek_submenu.h:774
+#: tithek_submenu.h:770
 msgid "rizzoli isles"
 msgstr ""
 
-#: tithek_submenu.h:775
+#: tithek_submenu.h:771
 msgid "robin hood superrtl"
 msgstr ""
 
-#: tithek_submenu.h:776
+#: tithek_submenu.h:772
 msgid "Rock-(Adult-Album-Alternative)"
 msgstr ""
 
-#: tithek_submenu.h:777
+#: tithek_submenu.h:773
 msgid "Rock-(Psychedelic)"
 msgstr ""
 
-#: tithek_submenu.h:778
+#: tithek_submenu.h:774
 msgid "romance movies"
 msgstr ""
 
-#: tithek_submenu.h:779
+#: tithek_submenu.h:775
 msgid "romantik"
 msgstr ""
 
-#: tithek_submenu.h:780
+#: tithek_submenu.h:776
 msgid "ross der kindergartenboss"
 msgstr ""
 
-#: tithek_submenu.h:781
+#: tithek_submenu.h:777
 msgid "rtl 2 spezial das magazin"
 msgstr ""
 
-#: tithek_submenu.h:782
+#: tithek_submenu.h:778
 msgid "rtl aktuell"
 msgstr ""
 
-#: tithek_submenu.h:783
+#: tithek_submenu.h:779
 msgid "rtl boxen"
 msgstr ""
 
-#: tithek_submenu.h:784
+#: tithek_submenu.h:780
 msgid "rtl ii news"
 msgstr ""
 
-#: tithek_submenu.h:785
+#: tithek_submenu.h:781
 msgid "rtl nachtjournal"
 msgstr ""
 
-#: tithek_submenu.h:786
+#: tithek_submenu.h:782
 msgid "rtl west"
 msgstr ""
 
-#: tithek_submenu.h:787
+#: tithek_submenu.h:783
 msgid "Rubriken"
 msgstr ""
 
-#: tithek_submenu.h:788
+#: tithek_submenu.h:784
 msgid "ruediger hoffmann live sex oder liebe"
 msgstr ""
 
-#: tithek_submenu.h:789
+#: tithek_submenu.h:785
 msgid "Russia"
 msgstr ""
 
-#: tithek_submenu.h:790
+#: tithek_submenu.h:786
 msgid "sags nicht der braut"
 msgstr ""
 
-#: tithek_submenu.h:791
+#: tithek_submenu.h:787
 msgid "saturday night"
 msgstr ""
 
-#: tithek_submenu.h:792
+#: tithek_submenu.h:788
 msgid "scandal"
 msgstr ""
 
-#: tithek_submenu.h:793
+#: tithek_submenu.h:789
 msgid "scene"
 msgstr ""
 
-#: tithek_submenu.h:794
+#: tithek_submenu.h:790
 msgid "schickeria deluxe"
 msgstr ""
 
-#: tithek_submenu.h:795
+#: tithek_submenu.h:791
 msgid "schmeckt nicht gibts nicht"
 msgstr ""
 
-#: tithek_submenu.h:796
+#: tithek_submenu.h:792
 msgid "schmidt chaos auf rezept"
 msgstr ""
 
-#: tithek_submenu.h:797
+#: tithek_submenu.h:793
 msgid "schmiede 21"
 msgstr ""
 
-#: tithek_submenu.h:798
+#: tithek_submenu.h:794
 msgid "schneller als die polizei erl"
 msgstr ""
 
-#: tithek_submenu.h:799
+#: tithek_submenu.h:795
 msgid "schwiegertochter gesucht"
 msgstr ""
 
-#: tithek_submenu.h:800
+#: tithek_submenu.h:796
 msgid "scifi"
 msgstr ""
 
-#: tithek_submenu.h:801
+#: tithek_submenu.h:797
 msgid "Sci-Fi"
 msgstr ""
 
-#: tithek_submenu.h:802
+#: tithek_submenu.h:798
 msgid "Scifikino"
 msgstr ""
 
-#: tithek_submenu.h:803
+#: tithek_submenu.h:799
 msgid "sci fi movies"
 msgstr ""
 
-#: tithek_submenu.h:804
+#: tithek_submenu.h:800
 msgid "secret millionaire"
 msgstr ""
 
-#: tithek_submenu.h:805
+#: tithek_submenu.h:801
 msgid "sehnsucht baby wir wollen endlich ein kind"
 msgstr ""
 
-#: tithek_submenu.h:806
+#: tithek_submenu.h:802
 msgid "sekretaerinnen ueberleben von neun bis fuenf"
 msgstr ""
 
-#: tithek_submenu.h:807
+#: tithek_submenu.h:803
 msgid "Sender"
 msgstr ""
 
-#: tithek_submenu.h:808
+#: tithek_submenu.h:804
 msgid "Sendungen A-Z"
 msgstr ""
 
-#: tithek_submenu.h:809
+#: tithek_submenu.h:805
 msgid "Sendung verpasst?"
 msgstr ""
 
-#: tithek_submenu.h:810
+#: tithek_submenu.h:806
 msgid "Serien"
 msgstr ""
 
-#: tithek_submenu.h:811
+#: tithek_submenu.h:807
 msgid "Serien (alle)"
 msgstr ""
 
-#: tithek_submenu.h:812
+#: tithek_submenu.h:808
 msgid "Serien (genre)"
 msgstr ""
 
-#: tithek_submenu.h:813
+#: tithek_submenu.h:809
 msgid "sex"
 msgstr ""
 
-#: tithek_submenu.h:814
+#: tithek_submenu.h:810
 msgid "shaved"
 msgstr ""
 
-#: tithek_submenu.h:815
+#: tithek_submenu.h:811
 msgid "Shemale"
 msgstr ""
 
-#: tithek_submenu.h:816
+#: tithek_submenu.h:812
 msgid "shooting stars promis an ihren grenzen"
 msgstr ""
 
-#: tithek_submenu.h:817
+#: tithek_submenu.h:813
 msgid "shopping queen"
 msgstr ""
 
-#: tithek_submenu.h:818
+#: tithek_submenu.h:814
 msgid "showing+off"
 msgstr ""
 
-#: tithek_submenu.h:819
+#: tithek_submenu.h:815
 msgid "sinan toprak"
 msgstr ""
 
-#: tithek_submenu.h:820
+#: tithek_submenu.h:816
 msgid "sindbad super"
 msgstr ""
 
-#: tithek_submenu.h:821
+#: tithek_submenu.h:817
 msgid "sitz platz aus die grosse hundeshow"
 msgstr ""
 
-#: tithek_submenu.h:822
+#: tithek_submenu.h:818
 msgid "skinny"
 msgstr ""
 
-#: tithek_submenu.h:823
+#: tithek_submenu.h:819
 msgid "skirt"
 msgstr ""
 
-#: tithek_submenu.h:824
+#: tithek_submenu.h:820
 msgid "small+tits"
 msgstr ""
 
-#: tithek_submenu.h:825
+#: tithek_submenu.h:821
 msgid "sofa"
 msgstr ""
 
-#: tithek_submenu.h:826
+#: tithek_submenu.h:822
 msgid "soko familie rtl"
 msgstr ""
 
-#: tithek_submenu.h:827
+#: tithek_submenu.h:823
 msgid "solo"
 msgstr ""
 
-#: tithek_submenu.h:828
+#: tithek_submenu.h:824
 msgid "Solo"
 msgstr ""
 
-#: tithek_submenu.h:829
+#: tithek_submenu.h:825
 msgid "sommer 2013"
 msgstr ""
 
-#: tithek_submenu.h:830
+#: tithek_submenu.h:826
 msgid "sonjas welt der tiere"
 msgstr ""
 
-#: tithek_submenu.h:831
+#: tithek_submenu.h:827
 msgid "Soul"
 msgstr ""
 
-#: tithek_submenu.h:832
+#: tithek_submenu.h:828
 msgid "Soundtracks"
 msgstr ""
 
-#: tithek_submenu.h:833
+#: tithek_submenu.h:829
 msgid "Soundtracks-(Anime)"
 msgstr ""
 
-#: tithek_submenu.h:834
+#: tithek_submenu.h:830
 msgid "Soundtracks-(Kids)"
 msgstr ""
 
-#: tithek_submenu.h:835
+#: tithek_submenu.h:831
 msgid "Soundtracks-(Original)"
 msgstr ""
 
-#: tithek_submenu.h:836
+#: tithek_submenu.h:832
 msgid "Soundtracks-(Video-Game-Music)"
 msgstr ""
 
-#: tithek_submenu.h:838
+#: tithek_submenu.h:833
 msgid "Spania"
 msgstr ""
 
-#: tithek_submenu.h:839
+#: tithek_submenu.h:834
 msgid "Spasskino"
 msgstr ""
 
-#: tithek_submenu.h:840
+#: tithek_submenu.h:835
 msgid "spiegel tv"
 msgstr ""
 
-#: tithek_submenu.h:841
+#: tithek_submenu.h:836
 msgid "sport"
 msgstr ""
 
-#: tithek_submenu.h:842
+#: tithek_submenu.h:838
 msgid "spreading"
 msgstr ""
 
-#: tithek_submenu.h:843
+#: tithek_submenu.h:839
 msgid "stadtklinik"
 msgstr ""
 
-#: tithek_submenu.h:844
+#: tithek_submenu.h:840
 msgid "standpunkt"
 msgstr ""
 
-#: tithek_submenu.h:845
+#: tithek_submenu.h:841
 msgid "stan lees superhumans"
 msgstr ""
 
-#: tithek_submenu.h:846
+#: tithek_submenu.h:842
 msgid "Starkino"
 msgstr ""
 
-#: tithek_submenu.h:847
+#: tithek_submenu.h:843
 msgid "starlet"
 msgstr ""
 
-#: tithek_submenu.h:848
+#: tithek_submenu.h:844
 msgid "star race"
 msgstr ""
 
-#: tithek_submenu.h:849
+#: tithek_submenu.h:845
 msgid "stars bei der arbeit"
 msgstr ""
 
-#: tithek_submenu.h:850
+#: tithek_submenu.h:846
 msgid "starship troopers"
 msgstr ""
 
-#: tithek_submenu.h:851
+#: tithek_submenu.h:847
 msgid "star wars the clone wars"
 msgstr ""
 
-#: tithek_submenu.h:852
+#: tithek_submenu.h:848
 msgid "stern tv"
 msgstr ""
 
-#: tithek_submenu.h:853
+#: tithek_submenu.h:849
 msgid "steven seagal lawman"
 msgstr ""
 
-#: tithek_submenu.h:854
+#: tithek_submenu.h:850
 msgid "stockings"
 msgstr ""
 
-#: tithek_submenu.h:855
+#: tithek_submenu.h:851
 msgid "Stockings"
 msgstr ""
 
-#: tithek_submenu.h:856
+#: tithek_submenu.h:852
 msgid "strip"
 msgstr ""
 
-#: tithek_submenu.h:857
+#: tithek_submenu.h:853
 msgid "student"
 msgstr ""
 
-#: tithek_submenu.h:858
+#: tithek_submenu.h:854
 msgid "style="
 msgstr ""
 
-#: tithek_submenu.h:859
+#: tithek_submenu.h:855
 msgid "stylish"
 msgstr ""
 
-#: tithek_submenu.h:860
+#: tithek_submenu.h:856
 msgid "superhirne von natur aus genial"
 msgstr ""
 
-#: tithek_submenu.h:861
+#: tithek_submenu.h:857
 msgid "sweet"
 msgstr ""
 
-#: tithek_submenu.h:862
+#: tithek_submenu.h:858
 msgid "table"
 msgstr ""
 
-#: tithek_submenu.h:863
+#: tithek_submenu.h:859
 msgid "take me out"
 msgstr ""
 
-#: tithek_submenu.h:864
+#: tithek_submenu.h:860
 msgid "Talk"
 msgstr ""
 
-#: tithek_submenu.h:865
+#: tithek_submenu.h:861
 msgid "Talk-(Comedy)"
 msgstr ""
 
-#: tithek_submenu.h:866
+#: tithek_submenu.h:862
 msgid "Talk-(Community)"
 msgstr ""
 
-#: tithek_submenu.h:867
+#: tithek_submenu.h:863
 msgid "Talk-(Government)"
 msgstr ""
 
-#: tithek_submenu.h:868
+#: tithek_submenu.h:864
 msgid "Talk-(Other)"
 msgstr ""
 
-#: tithek_submenu.h:869
+#: tithek_submenu.h:865
 msgid "Talk-(Political)"
 msgstr ""
 
-#: tithek_submenu.h:870
+#: tithek_submenu.h:866
 msgid "Talk-(Scanner)"
 msgstr ""
 
-#: tithek_submenu.h:871
+#: tithek_submenu.h:867
 msgid "Talk-(Spoken-Word)"
 msgstr ""
 
-#: tithek_submenu.h:872
+#: tithek_submenu.h:868
 msgid "tall"
 msgstr ""
 
-#: tithek_submenu.h:873
+#: tithek_submenu.h:869
 msgid "tanned"
 msgstr ""
 
-#: tithek_submenu.h:874
+#: tithek_submenu.h:870
 msgid "target="
 msgstr ""
 
-#: tithek_submenu.h:875
+#: tithek_submenu.h:871
 msgid "tatort ausland moerderische reise"
 msgstr ""
 
-#: tithek_submenu.h:876
+#: tithek_submenu.h:872
 msgid "tease"
 msgstr ""
 
-#: tithek_submenu.h:877
+#: tithek_submenu.h:873
 msgid "tectime"
 msgstr ""
 
-#: tithek_submenu.h:878
+#: tithek_submenu.h:874
 msgid "teen"
 msgstr ""
 
-#: tithek_submenu.h:879
+#: tithek_submenu.h:875
 msgid "Teen"
 msgstr ""
 
-#: tithek_submenu.h:880
+#: tithek_submenu.h:876
 msgid "teenage boss"
 msgstr ""
 
-#: tithek_submenu.h:881
+#: tithek_submenu.h:877
 msgid "teenager in not"
 msgstr ""
 
-#: tithek_submenu.h:882
+#: tithek_submenu.h:878
 msgid "teen+hardcore"
 msgstr ""
 
-#: tithek_submenu.h:883
+#: tithek_submenu.h:879
 msgid "teenie muetter wenn kinder kinder kriegen"
 msgstr ""
 
-#: tithek_submenu.h:884
+#: tithek_submenu.h:880
 msgid "teenies auf partyurlaub"
 msgstr ""
 
-#: tithek_submenu.h:885
+#: tithek_submenu.h:881
 msgid "teen+sex"
 msgstr ""
 
-#: tithek_submenu.h:886
+#: tithek_submenu.h:882
 msgid "the blacklist"
 msgstr ""
 
-#: tithek_submenu.h:887
+#: tithek_submenu.h:883
 msgid "the glades"
 msgstr ""
 
-#: tithek_submenu.h:888
+#: tithek_submenu.h:884
 msgid "Themen"
 msgstr ""
 
-#: tithek_submenu.h:889
+#: tithek_submenu.h:885
 msgid "Themes-(Best)"
 msgstr ""
 
-#: tithek_submenu.h:890
+#: tithek_submenu.h:886
 msgid "Themes-(Chill)"
 msgstr ""
 
-#: tithek_submenu.h:891
+#: tithek_submenu.h:887
 msgid "Themes-(Eclectic)"
 msgstr ""
 
-#: tithek_submenu.h:892
+#: tithek_submenu.h:888
 msgid "Themes-(Instrumental)"
 msgstr ""
 
-#: tithek_submenu.h:893
+#: tithek_submenu.h:889
 msgid "Themes-(Love-and-Romance)"
 msgstr ""
 
-#: tithek_submenu.h:894
+#: tithek_submenu.h:890
 msgid "Themes-(Party-Mix)"
 msgstr ""
 
-#: tithek_submenu.h:895
+#: tithek_submenu.h:891
 msgid "Themes-(Shuffle)"
 msgstr ""
 
-#: tithek_submenu.h:896
+#: tithek_submenu.h:892
 msgid "Themes-(Travel-Mix)"
 msgstr ""
 
-#: tithek_submenu.h:897
+#: tithek_submenu.h:893
 msgid "Themes-(Tribute)"
 msgstr ""
 
-#: tithek_submenu.h:898
+#: tithek_submenu.h:894
 msgid "the quest"
 msgstr ""
 
-#: tithek_submenu.h:899
+#: tithek_submenu.h:895
 msgid "the quest superrtl"
 msgstr ""
 
-#: tithek_submenu.h:900
+#: tithek_submenu.h:896
 msgid "threesome"
 msgstr ""
 
-#: tithek_submenu.h:902
+#: tithek_submenu.h:897
 msgid "thriller"
 msgstr ""
 
-#: tithek_submenu.h:903
+#: tithek_submenu.h:898
 msgid "Thrillerkino"
 msgstr ""
 
-#: tithek_submenu.h:904
+#: tithek_submenu.h:899
 msgid "thriller movies"
 msgstr ""
 
-#: tithek_submenu.h:905
+#: tithek_submenu.h:900
 msgid "titannit"
 msgstr ""
 
-#: tithek_submenu.h:906
+#: tithek_submenu.h:902
 msgid "Top100"
 msgstr ""
 
-#: tithek_submenu.h:907
+#: tithek_submenu.h:903
 msgid "Top 100"
 msgstr ""
 
-#: tithek_submenu.h:908
+#: tithek_submenu.h:904
 msgid "torchwood"
 msgstr ""
 
-#: tithek_submenu.h:909
+#: tithek_submenu.h:905
 msgid "tortenschlacht"
 msgstr ""
 
-#: tithek_submenu.h:910
+#: tithek_submenu.h:906
 msgid "total blackout stars im dunkeln"
 msgstr ""
 
-#: tithek_submenu.h:911
+#: tithek_submenu.h:907
 msgid "trailer 2012 deutsch"
 msgstr ""
 
-#: tithek_submenu.h:912
+#: tithek_submenu.h:908
 msgid "trailer 2013 deutsch"
 msgstr ""
 
-#: tithek_submenu.h:913
+#: tithek_submenu.h:909
 msgid "transgender mein weg in den richtigen koerper"
 msgstr ""
 
-#: tithek_submenu.h:914
+#: tithek_submenu.h:910
 msgid "transporter"
 msgstr ""
 
-#: tithek_submenu.h:915
+#: tithek_submenu.h:911
 msgid "traumfrau gesucht"
 msgstr ""
 
-#: tithek_submenu.h:916
+#: tithek_submenu.h:912
 msgid "traumhochzeit"
 msgstr ""
 
-#: tithek_submenu.h:917
+#: tithek_submenu.h:913
 msgid "traumretterin"
 msgstr ""
 
-#: tithek_submenu.h:918
+#: tithek_submenu.h:914
 msgid "turbo tacho"
 msgstr ""
 
-#: tithek_submenu.h:919
+#: tithek_submenu.h:915
 msgid "turbulent zum traualtar"
 msgstr ""
 
-#: tithek_submenu.h:920
+#: tithek_submenu.h:916
 msgid "Turkish"
 msgstr ""
 
-#: tithek_submenu.h:921
+#: tithek_submenu.h:917
 msgid "tv action tv shows"
 msgstr ""
 
-#: tithek_submenu.h:922
+#: tithek_submenu.h:918
 msgid "tv adventure tv shows"
 msgstr ""
 
-#: tithek_submenu.h:923
+#: tithek_submenu.h:919
 msgid "tv-alle-videos"
 msgstr ""
 
-#: tithek_submenu.h:924
+#: tithek_submenu.h:920
 msgid "tv animation tv shows"
 msgstr ""
 
-#: tithek_submenu.h:925
+#: tithek_submenu.h:921
 msgid "tv comedy tv shows"
 msgstr ""
 
-#: tithek_submenu.h:926
+#: tithek_submenu.h:922
 msgid "tv drama tv shows"
 msgstr ""
 
-#: tithek_submenu.h:927
+#: tithek_submenu.h:923
 msgid "tv-programm"
 msgstr ""
 
-#: tithek_submenu.h:928
+#: tithek_submenu.h:924
 msgid "tv romance tv shows"
 msgstr ""
 
-#: tithek_submenu.h:929
+#: tithek_submenu.h:925
 msgid "tv sci fi tv shows"
 msgstr ""
 
-#: tithek_submenu.h:930
+#: tithek_submenu.h:926
 msgid "tv thriller tv shows"
 msgstr ""
 
-#: tithek_submenu.h:931
+#: tithek_submenu.h:927
 msgid "tv tv shows 2004"
 msgstr ""
 
-#: tithek_submenu.h:932
+#: tithek_submenu.h:928
 msgid "tv tv shows 2005"
 msgstr ""
 
-#: tithek_submenu.h:933
+#: tithek_submenu.h:929
 msgid "tv tv shows 2006"
 msgstr ""
 
-#: tithek_submenu.h:934
+#: tithek_submenu.h:930
 msgid "tv tv shows 2007"
 msgstr ""
 
-#: tithek_submenu.h:935
+#: tithek_submenu.h:931
 msgid "tv tv shows 2008"
 msgstr ""
 
-#: tithek_submenu.h:936
+#: tithek_submenu.h:932
 msgid "tv tv shows 2009"
 msgstr ""
 
-#: tithek_submenu.h:937
+#: tithek_submenu.h:933
 msgid "tv tv shows 2010"
 msgstr ""
 
-#: tithek_submenu.h:938
+#: tithek_submenu.h:934
 msgid "tv tv shows 2011"
 msgstr ""
 
-#: tithek_submenu.h:939
+#: tithek_submenu.h:935
 msgid "tv tv shows 2012"
 msgstr ""
 
-#: tithek_submenu.h:940
+#: tithek_submenu.h:936
 msgid "tv tv shows 2013"
 msgstr ""
 
-#: tithek_submenu.h:941
+#: tithek_submenu.h:937
 msgid "typisch deutsch die kaya show"
 msgstr ""
 
-#: tithek_submenu.h:942
+#: tithek_submenu.h:938
 msgid "Uk"
 msgstr ""
 
-#: tithek_submenu.h:944
+#: tithek_submenu.h:939
 msgid "undercover boss"
 msgstr ""
 
-#: tithek_submenu.h:945
+#: tithek_submenu.h:940
 msgid "Underground"
 msgstr ""
 
-#: tithek_submenu.h:946
+#: tithek_submenu.h:941
 msgid "und tschuess"
 msgstr ""
 
-#: tithek_submenu.h:947
+#: tithek_submenu.h:942
 msgid "ungeklaerte morde dem taeter auf der spur"
 msgstr ""
 
-#: tithek_submenu.h:948
+#: tithek_submenu.h:944
 msgid "unschlagbar"
 msgstr ""
 
-#: tithek_submenu.h:949
+#: tithek_submenu.h:945
 msgid "unsere erste gem wohnung"
 msgstr ""
 
-#: tithek_submenu.h:950
+#: tithek_submenu.h:946
 msgid "unsere platte"
 msgstr ""
 
-#: tithek_submenu.h:951
+#: tithek_submenu.h:947
 msgid "unser erstes restaurant"
 msgstr ""
 
-#: tithek_submenu.h:952
+#: tithek_submenu.h:948
 msgid "unser traum vom haus"
 msgstr ""
 
-#: tithek_submenu.h:953
+#: tithek_submenu.h:949
 msgid "unter beobachtung"
 msgstr ""
 
-#: tithek_submenu.h:954
+#: tithek_submenu.h:950
 msgid "unter uns"
 msgstr ""
 
-#: tithek_submenu.h:955
+#: tithek_submenu.h:951
 msgid "unter volldampf"
 msgstr ""
 
-#: tithek_submenu.h:956
+#: tithek_submenu.h:952
 msgid "Urban"
 msgstr ""
 
-#: tithek_submenu.h:957
+#: tithek_submenu.h:953
 msgid "Usa"
 msgstr ""
 
-#: tithek_submenu.h:958
+#: tithek_submenu.h:954
 msgid "val flo in love"
 msgstr ""
 
-#: tithek_submenu.h:959
+#: tithek_submenu.h:955
 msgid "verdachtsfaelle"
 msgstr ""
 
-#: tithek_submenu.h:960
+#: tithek_submenu.h:956
 msgid "verklag mich doch"
 msgstr ""
 
-#: tithek_submenu.h:961
+#: tithek_submenu.h:957
 msgid "vermisst"
 msgstr ""
 
-#: tithek_submenu.h:962
+#: tithek_submenu.h:958
 msgid "verschollen"
 msgstr ""
 
-#: tithek_submenu.h:963
+#: tithek_submenu.h:959
 msgid "verzeih mir"
 msgstr ""
 
-#: tithek_submenu.h:964
+#: tithek_submenu.h:960
 msgid "Videos A Z"
 msgstr ""
 
-#: tithek_submenu.h:965
+#: tithek_submenu.h:961
 msgid "voxtours"
 msgstr ""
 
-#: tithek_submenu.h:966
+#: tithek_submenu.h:962
 msgid "wallace gromit"
 msgstr ""
 
-#: tithek_submenu.h:967
+#: tithek_submenu.h:963
 msgid "was verdienst du"
 msgstr ""
 
-#: tithek_submenu.h:968
+#: tithek_submenu.h:964
 msgid "Webcam"
 msgstr ""
 
-#: tithek_submenu.h:970
+#: tithek_submenu.h:965
 msgid "wer wird millionaer"
 msgstr ""
 
-#: tithek_submenu.h:971
+#: tithek_submenu.h:966
 msgid "western"
 msgstr ""
 
-#: tithek_submenu.h:972
+#: tithek_submenu.h:967
 msgid "Westernkino"
 msgstr ""
 
-#: tithek_submenu.h:973
+#: tithek_submenu.h:968
 msgid "westside wash"
 msgstr ""
 
-#: tithek_submenu.h:974
+#: tithek_submenu.h:970
 msgid "wie lebst denn"
 msgstr ""
 
-#: tithek_submenu.h:975
+#: tithek_submenu.h:971
 msgid "wife"
 msgstr ""
 
-#: tithek_submenu.h:976
+#: tithek_submenu.h:972
 msgid "wilde engel"
 msgstr ""
 
-#: tithek_submenu.h:977
+#: tithek_submenu.h:973
 msgid "wilde kreaturen"
 msgstr ""
 
-#: tithek_submenu.h:978
+#: tithek_submenu.h:974
 msgid "wildes kinderzimmer"
 msgstr ""
 
-#: tithek_submenu.h:979
+#: tithek_submenu.h:975
 msgid "wildes wohnzimmer"
 msgstr ""
 
-#: tithek_submenu.h:980
+#: tithek_submenu.h:976
 msgid "wild girls auf high heels durch afrika"
 msgstr ""
 
-#: tithek_submenu.h:981
+#: tithek_submenu.h:977
 msgid "willkommen bei mario barth"
 msgstr ""
 
-#: tithek_submenu.h:982
+#: tithek_submenu.h:978
 msgid "wir retten ihren urlaub"
 msgstr ""
 
-#: tithek_submenu.h:983
+#: tithek_submenu.h:979
 msgid "wir wollen freie menschen sein volksaufstand 1953"
 msgstr ""
 
-#: tithek_submenu.h:984
+#: tithek_submenu.h:980
 msgid "wissen"
 msgstr ""
 
-#: tithek_submenu.h:985
+#: tithek_submenu.h:981
 msgid "wohnen nach wunsch duo"
 msgstr ""
 
-#: tithek_submenu.h:986
+#: tithek_submenu.h:982
 msgid "wohnen nach wunschhaus"
 msgstr ""
 
-#: tithek_submenu.h:987
+#: tithek_submenu.h:983
 msgid "wolkenlos"
 msgstr ""
 
-#: tithek_submenu.h:988
+#: tithek_submenu.h:984
 msgid "wolverine marvel anime"
 msgstr ""
 
-#: tithek_submenu.h:989
+#: tithek_submenu.h:985
 msgid "world express atemlos durch mexiko"
 msgstr ""
 
-#: tithek_submenu.h:990
+#: tithek_submenu.h:986
 msgid "wunschkinder"
 msgstr ""
 
-#: tithek_submenu.h:991
+#: tithek_submenu.h:987
 msgid "x diaries"
 msgstr ""
 
-#: tithek_submenu.h:992
+#: tithek_submenu.h:988
 msgid "x diaries spezial"
 msgstr ""
 
-#: tithek_submenu.h:993
+#: tithek_submenu.h:989
 msgid "x factor"
 msgstr ""
 
-#: tithek_submenu.h:994
+#: tithek_submenu.h:990
 msgid "x men marvel anime"
 msgstr ""
 
-#: tithek_submenu.h:995
+#: tithek_submenu.h:991
 msgid "Xxx"
 msgstr ""
 
-#: tithek_submenu.h:996
+#: tithek_submenu.h:992
 msgid "yolo"
 msgstr ""
 
-#: tithek_submenu.h:997
+#: tithek_submenu.h:993
 msgid "young"
 msgstr ""
 
-#: tithek_submenu.h:901
+#: tithek_submenu.h:994
 msgid "young+couple"
 msgstr ""
 
-#: tithek_submenu.h:69
+#: tithek_submenu.h:995
 msgid "zugriff jede sekunde zaehlt"
 msgstr ""
 
-#: tmc.h:387
+#: tithek_submenu.h:996
 msgid "zuhause im glueck"
 msgstr ""
 
-#: tmc.h:391
+#: tithek_submenu.h:997
 msgid "zuzana light"
 msgstr ""
 
-#: tmc.h:408
+#: tithek_submenu.h:901
 msgid "title="
 msgstr ""
 
-#: tmc.h:540
+#: tithek_submenu.h:69
 msgid "ansehen"
 msgstr ""
 
-#: tmc.h:541
+#: tmc.h:387
 msgid "Status"
 msgstr ""
 
-#: tmc.h:543
+#: tmc.h:391
 msgid "idle"
 msgstr ""
 
-#: tmc.h:544
+#: tmc.h:408
 msgid "Audio"
 msgstr "?????"
 
-#: tmc.h:545
+#: tmc.h:540
 msgid "video"
 msgstr "?????"
 
-#: tmc.h:548
+#: tmc.h:541
 msgid "audio"
 msgstr "?????"
 
-#: tmc.h:549
+#: tmc.h:543
 msgid "video / audio"
 msgstr ""
 
-#: tmc.h:550
+#: tmc.h:544
 msgid "video / picture"
 msgstr ""
 
-#: tmc.h:551
+#: tmc.h:545
 msgid "audio / picture"
 msgstr ""
 
-#: tmc.h:552
+#: tmc.h:548
 msgid "pic1"
 msgstr ""
 
-#: tmc.h:553
+#: tmc.h:549
 msgid "pic2"
 msgstr ""
 
-#: tmc.h:699
+#: tmc.h:550
 msgid "pic3"
 msgstr ""
 
-#: tmc.h:1004
+#: tmc.h:551
 msgid "pic4"
 msgstr ""
 
-#: tmc.h:1005
+#: tmc.h:552
 msgid "pic5"
 msgstr ""
 
-#: tmc.h:1012
+#: tmc.h:553
 msgid "no pic"
 msgstr ""
 
-#: tmc.h:1017
+#: tmc.h:699
 msgid "Delete selected entry ?"
 msgstr ""
 
-#: tmdb.h:922
+#: tmc.h:1004
 msgid ""
 "MediaDB Path not found!\n"
 "Configure it in MediaDB Settings"
 msgstr ""
 
-#: tpchoice.h:21
+#: tmc.h:1005
 msgid "Path: "
 msgstr ""
 
-#: tpchoice.h:56
+#: tmc.h:1012
 msgid ""
 "MediaDB not found!\n"
 "Scan your HDD in TMC Settings"
 msgstr ""
 
-#: tpchoice.h:70
+#: tmc.h:1017
 msgid ""
 "IMDB Plugin not found!\n"
 "Can't get detail media infos\n"
 "Please install it"
 msgstr ""
 
-#: tpchoice.h:72
+#: tmdb.h:922
 msgid "Error, found result without imdbid we can't this save in MediaDB"
 msgstr ""
 
-#: tpchoice.h:74
+#: tpchoice.h:21
 msgid "Transponderlist"
 msgstr ""
 
-#: tpchoice.h:81
+#: tpchoice.h:56
 msgid "FREQU"
 msgstr ""
 
-#: tpchoice.h:87
+#: tpchoice.h:70
 msgid "CABLE"
 msgstr ""
 
-#: tpk_description.h:1
+#: tpchoice.h:72
 msgid "TERR"
 msgstr ""
 
-#: tpk_description.h:2
+#: tpchoice.h:74
 msgid "UNKNOWN"
 msgstr "???????????"
 
-#: tpk_description.h:3
+#: tpchoice.h:81
 msgid "SR"
 msgstr ""
 
-#: tpk_description.h:4
+#: tpchoice.h:87
 msgid "POS"
 msgstr ""
 
-#: tpk_description.h:5
+#: tpk_description.h:1
 msgid "AAF MediaCenter the best multimedia Player on sh4."
 msgstr ""
 
-#: tpk_description.h:6
+#: tpk_description.h:2
 msgid ""
 "A collection of really nice folder icons for MediaCenter Videoplayer "
 "Coverview!"
 msgstr ""
 
-#: tpk_description.h:7
+#: tpk_description.h:3
 msgid "Alternativer Skin fuer Pearl LCD"
 msgstr ""
 
-#: tpk_description.h:8
+#: tpk_description.h:4
 msgid "Alternativer Skin fuer Pearl LCD "
 msgstr ""
 
-#: tpk_description.h:9
+#: tpk_description.h:5
 msgid ""
 "Alternativer Skin fuer Samsung LCD - ohne Picons (extra zu installieren)"
 msgstr ""
 
-#: tpk_description.h:10
+#: tpk_description.h:6
 msgid "Automatisch Timer setzen"
 msgstr ""
 
-#: tpk_description.h:11
+#: tpk_description.h:7
 msgid "Black 3D Picons for tiTan."
 msgstr ""
 
-#: tpk_description.h:12
+#: tpk_description.h:8
 msgid "Black 3D Picons for tiTan - Astra 23.5E."
 msgstr ""
 
-#: tpk_description.h:13
+#: tpk_description.h:9
 msgid "Black 3D Picons for tiTan - Hotbird 13.0E."
 msgstr ""
 
-#: tpk_description.h:14
+#: tpk_description.h:10
 msgid "Bootlogo 'Bikergirl' for your AAF- Duckbox"
 msgstr ""
 
-#: tpk_description.h:15
+#: tpk_description.h:11
 msgid "Bootlogo 'Blueskull' for your AAF- Duckbox"
 msgstr ""
 
-#: tpk_description.h:16
+#: tpk_description.h:12
 msgid "Bootlogo 'Cityflash' for your AAF- Duckbox"
 msgstr ""
 
-#: tpk_description.h:17
+#: tpk_description.h:13
 msgid "Bootlogo 'Enigma Linux' for your AAF- Duckbox"
 msgstr ""
 
-#: tpk_description.h:18
+#: tpk_description.h:14
 msgid "Bootlogo 'Fantasygirl 2' for your AAF- Duckbox"
 msgstr ""
 
-#: tpk_description.h:19
+#: tpk_description.h:15
 msgid "Bootlogo 'Fantasygirl' for your AAF- Duckbox"
 msgstr ""
 
-#: tpk_description.h:20
+#: tpk_description.h:16
 msgid "Bootlogo 'Firelady' for your AAF- Duckbox"
 msgstr ""
 
-#: tpk_description.h:21
+#: tpk_description.h:17
 msgid "Bootlogo 'Fireskull' for your AAF- Duckbox"
 msgstr ""
 
-#: tpk_description.h:22
+#: tpk_description.h:18
 msgid "Bootlogo 'Footballgirls' for your AAF- Duckbox"
 msgstr ""
 
-#: tpk_description.h:23
+#: tpk_description.h:19
 msgid "Bootlogo 'Ghostrider' for your AAF- Duckbox"
 msgstr ""
 
-#: tpk_description.h:24
+#: tpk_description.h:20
 msgid "Bootlogo 'Giantgirl' for your AAF- Duckbox"
 msgstr ""
 
-#: tpk_description.h:25
+#: tpk_description.h:21
 msgid "Bootlogo 'Ice Age Scrap likes UFS910' for your AAF- Duckbox"
 msgstr ""
 
-#: tpk_description.h:26
+#: tpk_description.h:22
 msgid "Bootlogo 'Linuxgirl' for your AAF- Duckbox"
 msgstr ""
 
-#: tpk_description.h:27
+#: tpk_description.h:23
 msgid "Bootlogo 'Planets' for your AAF- Duckbox"
 msgstr ""
 
-#: tpk_description.h:28
+#: tpk_description.h:24
 msgid "Bootlogo 'The Grim Reaper' for your AAF- Duckbox"
 msgstr ""
 
-#: tpk_description.h:29
+#: tpk_description.h:25
 msgid "Bootlogo 'TitanNit Blood'"
 msgstr ""
 
-#: tpk_description.h:30
+#: tpk_description.h:26
 msgid "Bootlogo 'TitanNit Design 1'"
 msgstr ""
 
-#: tpk_description.h:31
+#: tpk_description.h:27
 msgid "Bootlogo 'TitanNit Design 3'"
 msgstr ""
 
-#: tpk_description.h:32
+#: tpk_description.h:28
 msgid "Bootlogo 'TitanNit_on_Fire'"
 msgstr ""
 
-#: tpk_description.h:33
+#: tpk_description.h:29
 msgid "Bootlogo 'Zombie' for your AAF- Duckbox"
 msgstr ""
 
-#: tpk_description.h:34
+#: tpk_description.h:30
 msgid "Cable: default Settings Kabel Deutschland"
 msgstr ""
 
-#: tpk_description.h:35
+#: tpk_description.h:31
 msgid "Cable: Settings Kabel Unitymedia"
 msgstr ""
 
-#: tpk_description.h:36
+#: tpk_description.h:32
 msgid "Cable: sofatester Settings Kabel BW"
 msgstr ""
 
-#: tpk_description.h:37
+#: tpk_description.h:33
 msgid "Callmonitor Plugin"
 msgstr ""
 
-#: tpk_description.h:38
+#: tpk_description.h:34
 msgid ""
 "CCcam 2.3.0 autoident for card hd+ and skyde including all necessary config "
 "files."
 msgstr ""
 
-#: tpk_description.h:39
+#: tpk_description.h:35
 msgid "codecpack for MediaCenter Dateiendungs-Update "
 msgstr ""
 
-#: tpk_description.h:40
+#: tpk_description.h:36
 msgid "coolMiniTV Skin. "
 msgstr ""
 
-#: tpk_description.h:41
+#: tpk_description.h:37
 msgid "cool Skin."
 msgstr ""
 
-#: tpk_description.h:42
+#: tpk_description.h:38
 msgid "cut record files"
 msgstr ""
 
-#: tpk_description.h:43
+#: tpk_description.h:39
 msgid "Default Font "
 msgstr ""
 
-#: tpk_description.h:44
+#: tpk_description.h:40
 msgid "default Settings 19.2 Astra"
 msgstr ""
 
-#: tpk_description.h:45
+#: tpk_description.h:41
 msgid "Default Skin"
 msgstr ""
 
-#: tpk_description.h:46
+#: tpk_description.h:42
 msgid "Default skin without MiniTV"
 msgstr ""
 
-#: tpk_description.h:47
+#: tpk_description.h:43
 msgid "Digital Uhr blau - for tiTan - Samsung LCD Skin Channel."
 msgstr ""
 
-#: tpk_description.h:48
+#: tpk_description.h:44
 msgid "dlna Medien Server (upnp)"
 msgstr ""
 
-#: tpk_description.h:49
+#: tpk_description.h:45
 msgid "DTS-Downmix firmware "
 msgstr ""
 
-#: tpk_description.h:50
+#: tpk_description.h:46
 msgid "dvdplayer plugin."
 msgstr ""
 
-#: tpk_description.h:51
+#: tpk_description.h:47
 msgid ""
 "E2 WebIf API erlaubt den Zugriff auf TitanNit mittels eines E2-Clients (z.B. "
 "dreaMote-App auf iPhone oder iPad bzw. XBMC mit VU+)"
 msgstr ""
 
-#: tpk_description.h:52
+#: tpk_description.h:48
 msgid "Emu Camd3 v3.902 for your box"
 msgstr ""
 
-#: tpk_description.h:53
+#: tpk_description.h:49
 msgid "Emu MBox v0.6 build 0010 for your box"
 msgstr ""
 
-#: tpk_description.h:54
+#: tpk_description.h:50
 msgid "Emu MGCamd v1.35 for your box"
 msgstr ""
 
-#: tpk_description.h:55
+#: tpk_description.h:51
 msgid "Emu MGCamd v1.38a and all Configs"
 msgstr ""
 
-#: tpk_description.h:56
+#: tpk_description.h:52
 msgid "extended config Panel"
 msgstr ""
 
-#: tpk_description.h:57
+#: tpk_description.h:53
 msgid "filemanager"
 msgstr ""
 
-#: tpk_description.h:58
+#: tpk_description.h:54
 msgid "first titan game"
 msgstr ""
 
-#: tpk_description.h:59
+#: tpk_description.h:55
 msgid "Font 'Action Man Italic' "
 msgstr ""
 
-#: tpk_description.h:60
+#: tpk_description.h:56
 msgid "Font 'Alpha Romanie G98'"
 msgstr ""
 
-#: tpk_description.h:61
+#: tpk_description.h:57
 msgid "Font 'Croissant' "
 msgstr ""
 
-#: tpk_description.h:62
+#: tpk_description.h:58
 msgid "Font 'Digiface Regular' "
 msgstr ""
 
-#: tpk_description.h:63
+#: tpk_description.h:59
 msgid "Font 'Goodtime'"
 msgstr ""
 
-#: tpk_description.h:64
+#: tpk_description.h:60
 msgid "Font 'I Hate Comic Sans'"
 msgstr ""
 
-#: tpk_description.h:65
+#: tpk_description.h:61
 msgid "Font 'Lydian Bolt Italic BT' "
 msgstr ""
 
-#: tpk_description.h:66
+#: tpk_description.h:62
 msgid "Font 'Mighty Zeo Caps'"
 msgstr ""
 
-#: tpk_description.h:67
+#: tpk_description.h:63
 msgid "Font 'Monoglyceride DemiBold'"
 msgstr ""
 
-#: tpk_description.h:68
+#: tpk_description.h:64
 msgid "Font 'New Gothic BT'"
 msgstr ""
 
-#: tpk_description.h:69
+#: tpk_description.h:65
 msgid "Font 'Paddington Bold'"
 msgstr ""
 
-#: tpk_description.h:70
+#: tpk_description.h:66
 msgid "Font 'Plover Bold'"
 msgstr ""
 
-#: tpk_description.h:71
+#: tpk_description.h:67
 msgid ""
 "gbox 800 with autoident for card hd+ and skyde including all necessary "
 "config files."
 msgstr ""
 
-#: tpk_description.h:72
+#: tpk_description.h:68
 msgid ""
 "gbox 806 with autoident for card hd+ and skyde including all necessary "
 "config files."
 msgstr ""
 
-#: tpk_description.h:73
+#: tpk_description.h:69
 msgid "Gold Picons for tiTan."
 msgstr ""
 
-#: tpk_description.h:74
+#: tpk_description.h:70
 msgid "Gold Picons for tiTan - Astra 23.5E."
 msgstr ""
 
-#: tpk_description.h:75
+#: tpk_description.h:71
 msgid "Gold Picons for tiTan - Astra 28.2E."
 msgstr ""
 
-#: tpk_description.h:76
+#: tpk_description.h:72
 msgid "Gold Picons for tiTan - Hotbird 13.0E."
 msgstr ""
 
-#: tpk_description.h:77
+#: tpk_description.h:73
 msgid "Holzuhr - Standby for tiTan - Samsung LCD Skin Channel."
 msgstr ""
 
-#: tpk_description.h:78
+#: tpk_description.h:74
 msgid "ImdBapi Info Plugin"
 msgstr ""
 
-#: tpk_description.h:79
+#: tpk_description.h:75
 msgid "ImdB Info Plugin"
 msgstr ""
 
-#: tpk_description.h:80
+#: tpk_description.h:76
 msgid "IncubusCamd_1.22 including all necessary config files."
 msgstr ""
 
-#: tpk_description.h:81
+#: tpk_description.h:77
 msgid "IP-Kamera zB. Firma INSTAR"
 msgstr ""
 
-#: tpk_description.h:82
+#: tpk_description.h:78
 msgid "Kabel BW transparent Picons for tiTan."
 msgstr ""
 
-#: tpk_description.h:83
+#: tpk_description.h:79
 msgid "Kabel Deutschland Picons black3d for tiTan."
 msgstr ""
 
-#: tpk_description.h:84
+#: tpk_description.h:80
 msgid "Kabel Deutschland transparent Picons for tiTan."
 msgstr ""
 
-#: tpk_description.h:85
+#: tpk_description.h:81
 msgid "Lib extension for network (upnpfs/smbfs/ftpfs/rarfs)"
 msgstr ""
 
-#: tpk_description.h:86
+#: tpk_description.h:82
 msgid "MegaStyle blue Mini TV Skin"
 msgstr ""
 
-#: tpk_description.h:87
+#: tpk_description.h:83
 msgid "MegaStyle blue Skin"
 msgstr ""
 
-#: tpk_description.h:88
+#: tpk_description.h:84
 msgid "MegaStyle grey MiniTV Skin"
 msgstr ""
 
-#: tpk_description.h:89
+#: tpk_description.h:85
 msgid "MegaStyle grey Skin"
 msgstr ""
 
-#: tpk_description.h:90 tpk_showname.h:67
+#: tpk_description.h:86
 msgid "MetrixHD skin for TitanNit. Use transparent XPicons."
 msgstr ""
 
-#: tpk_description.h:91
+#: tpk_description.h:87
 msgid "Network browser extension for better Win7 compatibility"
 msgstr ""
 
-#: tpk_description.h:92
+#: tpk_description.h:88
 msgid "Networkbrowser scanning an manage cifs/nfs/ftp shares."
 msgstr ""
 
-#: tpk_description.h:93
+#: tpk_description.h:89
 msgid "Networkfile libsmbclient 3.0.28b"
 msgstr ""
 
-#: tpk_description.h:94
+#: tpk_description.h:90 tpk_showname.h:67
 msgid "Neutrino Keymap"
 msgstr ""
 
-#: tpk_description.h:95
+#: tpk_description.h:91
 msgid "newcs including all necessary config files."
 msgstr ""
 
-#: tpk_description.h:96
+#: tpk_description.h:92
 msgid "New Downloadfeed for your AAF - Duckbox"
 msgstr ""
 
-#: tpk_description.h:97
+#: tpk_description.h:93
 msgid "news Plugin"
 msgstr ""
 
-#: tpk_description.h:98
+#: tpk_description.h:94
 msgid "Nightly Version 9157 of oscam 2xSlot intern + 1xUSB"
 msgstr ""
 
-#: tpk_description.h:99
+#: tpk_description.h:95
 msgid "Nightly Version of OSCam 8755"
 msgstr ""
 
-#: tpk_description.h:100
+#: tpk_description.h:96
 msgid "Nightly Version of OSCam 8755 small Version"
 msgstr ""
 
-#: tpk_description.h:101
+#: tpk_description.h:97
 msgid "Nightly Version of OSCam 8933 2xSlot intern"
 msgstr ""
 
-#: tpk_description.h:102
+#: tpk_description.h:98
 msgid "Nogfx grey Skin for your box."
 msgstr ""
 
-#: tpk_description.h:103 tpk_showname.h:79
+#: tpk_description.h:99
 msgid "Nogfx Skin in black for tiTan. Please use black Picons."
 msgstr ""
 
-#: tpk_description.h:104
+#: tpk_description.h:100
 msgid "Older Version of OSCam"
 msgstr ""
 
-#: tpk_description.h:105
+#: tpk_description.h:101
 msgid "Openvpn Server Tool for external Network access"
 msgstr ""
 
-#: tpk_description.h:106
+#: tpk_description.h:102
 msgid "optimize Plugin"
 msgstr ""
 
-#: tpk_description.h:107
+#: tpk_description.h:103 tpk_showname.h:79
 msgid "oscam spezial"
 msgstr ""
 
-#: tpk_description.h:108
+#: tpk_description.h:104
 msgid "Partitions Tool fuer HDD > 2TB"
 msgstr ""
 
-#: tpk_description.h:109
+#: tpk_description.h:105
 msgid "Permanente Uhrzeit am Bildschirm"
 msgstr ""
 
-#: tpk_description.h:110
+#: tpk_description.h:106
 msgid "Picons for Samsung LCD Skins 320x240 (Astra 19.2E)"
 msgstr ""
 
-#: tpk_description.h:111
+#: tpk_description.h:107
 msgid "Power off if box not used"
 msgstr ""
 
-#: tpk_description.h:112
+#: tpk_description.h:108
 msgid "remote Desktop Plugin"
 msgstr ""
 
-#: tpk_description.h:113
+#: tpk_description.h:109
 msgid "Samba"
 msgstr ""
 
-#: tpk_description.h:114
+#: tpk_description.h:110
 msgid "Sat: Bulldog Settings 3x Sat"
 msgstr ""
 
-#: tpk_description.h:115
+#: tpk_description.h:111
 msgid "Sat: matze70 Settings Astra 19.2"
 msgstr ""
 
-#: tpk_description.h:116
+#: tpk_description.h:112
 msgid "Sat: Settings matze70 neue Design Astra 19.2"
 msgstr ""
 
-#: tpk_description.h:117
+#: tpk_description.h:113
 msgid "Sat: uljanow Settings Sat 19.2"
 msgstr ""
 
-#: tpk_description.h:118
+#: tpk_description.h:114
 msgid ""
 "Screensaver FC Bayern pictures for MediaCenter Audioplayer and Radioplayer."
 msgstr ""
 
-#: tpk_description.h:119
+#: tpk_description.h:115
 msgid ""
 "Screensaver Hot Girls pictures for MediaCenter Audioplayer and Radioplayer."
 msgstr ""
 
-#: tpk_description.h:120
+#: tpk_description.h:116
 msgid "Screensaver pictures for MediaCenter Audioplayer and Radioplayer."
 msgstr ""
 
-#: tpk_description.h:121
+#: tpk_description.h:117
 msgid "scriptexec Plugin"
 msgstr ""
 
-#: tpk_description.h:122
+#: tpk_description.h:118
 msgid "Skin 0Acht5Zehn in black for tiTan. Please use black Picons."
 msgstr ""
 
-#: tpk_description.h:123
+#: tpk_description.h:119
 msgid "Skin 0Acht5Zehn in grey for tiTan. Please use grey Picons."
 msgstr ""
 
-#: tpk_description.h:124
+#: tpk_description.h:120
 msgid "Skin 0Acht5Zehn in white for tiTan. Please use white Picons."
 msgstr ""
 
-#: tpk_description.h:125
+#: tpk_description.h:121
 msgid "Skin tobayer01 for tiTan. Please use grey Picons."
 msgstr ""
 
-#: tpk_description.h:126
+#: tpk_description.h:122
 msgid "Skin ufs912 for tiTan. Use white Picons."
 msgstr ""
 
-#: tpk_description.h:127
+#: tpk_description.h:123
 msgid "smartTV Skin. Please use alternate Picons."
 msgstr ""
 
-#: tpk_description.h:128
+#: tpk_description.h:124
 msgid "Social Network Client for Facebook."
 msgstr ""
 
-#: tpk_description.h:129
+#: tpk_description.h:125
 msgid "Stable Version of OSCam V13unten"
 msgstr ""
 
-#: tpk_description.h:130
+#: tpk_description.h:126
 msgid "stock Plugin"
 msgstr ""
 
-#: tpk_description.h:131
+#: tpk_description.h:127
 msgid "streaminfo Plugin"
 msgstr ""
 
-#: tpk_description.h:132
+#: tpk_description.h:128
 msgid "Tastensperre Plugin - entsperren mit rot/rot/gruen"
 msgstr ""
 
-#: tpk_description.h:133
+#: tpk_description.h:129
 msgid "Titan Mediacenter"
 msgstr ""
 
-#: tpk_description.h:134
+#: tpk_description.h:130
 msgid "TiThek the Multimedia-thek."
 msgstr ""
 
-#: tpk_description.h:135
+#: tpk_description.h:131
 msgid "TMDb Movie Database Plugin"
 msgstr ""
 
-#: tpk_description.h:136
+#: tpk_description.h:132
 msgid "Transparent Picons for tiTan 19_2 (dark skins)."
 msgstr ""
 
-#: tpk_description.h:137
+#: tpk_description.h:133
 msgid "Transparent Picons for tiTan. (dark Skins)"
 msgstr ""
 
-#: tpk_description.h:138
+#: tpk_description.h:134
 msgid "Transparent Picons for tiTan (dark skins) - Astra 23.5E."
 msgstr ""
 
-#: tpk_description.h:139
+#: tpk_description.h:135
 msgid "Transparent Picons for tiTan (dark skins) - Astra 28.2E."
 msgstr ""
 
-#: tpk_description.h:140
+#: tpk_description.h:136
 msgid "Transparent Picons for tiTan (dark skins) - Hotbird 13.0E."
 msgstr ""
 
-#: tpk_description.h:141
+#: tpk_description.h:137
 msgid "Transparent small black-Skins 19,2 swap Picons for tiTan."
 msgstr ""
 
-#: tpk_description.h:142
+#: tpk_description.h:138
 msgid "Transparent XPicons - Astra 19.2E"
 msgstr ""
 
-#: tpk_description.h:143
+#: tpk_description.h:139
 msgid "Transparent XPicons - Astra 23.5E"
 msgstr ""
 
-#: tpk_description.h:144
+#: tpk_description.h:140
 msgid "Transparent XPicons - Astra 28.2E"
 msgstr ""
 
-#: tpk_description.h:145
+#: tpk_description.h:141
 msgid "Transparent XPicons - Hotbird 13.0E"
 msgstr ""
 
-#: tpk_description.h:146
+#: tpk_description.h:142
 msgid "Transparent XPicons - small - Astra 19.2E"
 msgstr ""
 
-#: tpk_description.h:147
+#: tpk_description.h:143
 msgid "Treiber fuer Pearl LCD V4.0"
 msgstr ""
 
-#: tpk_description.h:148
+#: tpk_description.h:144
 msgid "Treiber fuer Samsung LCD"
 msgstr ""
 
-#: tpk_description.h:149
+#: tpk_description.h:145
 msgid "UPNP Media Render"
 msgstr ""
 
-#: tpk_description.h:150
+#: tpk_description.h:146
 msgid "usbreset Plugin"
 msgstr ""
 
-#: tpk_description.h:151
+#: tpk_description.h:147
 msgid "weather Plugin"
 msgstr ""
 
-#: tpk_description.h:152
+#: tpk_description.h:148
 msgid "Webbrowser Plugin"
 msgstr ""
 
-#: tpk_description.h:153
+#: tpk_description.h:149
 msgid "Werbezapper"
 msgstr ""
 
-#: tpk_description.h:154
+#: tpk_description.h:150
 msgid "White 3D Picons for tiTan."
 msgstr ""
 
-#: tpk_description.h:155
+#: tpk_description.h:151
 msgid "White 3D Picons for tiTan - Astra 23.5E."
 msgstr ""
 
-#: tpk_description.h:156
+#: tpk_description.h:152
 msgid "White 3D Picons for tiTan - Astra 28.2E."
 msgstr ""
 
-#: tpk_description.h:157
+#: tpk_description.h:153
 msgid "White 3D Picons for tiTan - Hotbird 13.0E."
 msgstr ""
 
-#: tpk_description.h:158
+#: tpk_description.h:154
 msgid "White70 Picons for tiTan."
 msgstr ""
 
-#: tpk_description.h:159
+#: tpk_description.h:155
 msgid "White70 Picons for tiTan - Astra 23.5E."
 msgstr ""
 
-#: tpk_description.h:160
+#: tpk_description.h:156
 msgid "White70 Picons for tiTan - Astra 28.2E"
 msgstr ""
 
-#: tpk_description.h:161
+#: tpk_description.h:157
 msgid "White70 Picons for tiTan - Hotbird 13.0E."
 msgstr ""
 
-#: tpk_description.h:162
+#: tpk_description.h:158
 msgid "wireless 8192cu.ko model"
 msgstr ""
 
-#: tpk.h:3185 tpk.new.h:3167
+#: tpk_description.h:159
 msgid "wireless modul 8712u.ko"
 msgstr ""
 
-#: tpk.h:3428
+#: tpk_description.h:160
 msgid "wireless modul rt2870sta.ko"
 msgstr ""
 
-#: tpk.h:3431
+#: tpk_description.h:161
 msgid "wireless modul rt3070sta.ko"
 msgstr ""
 
-#: tpk.h:3436 tpk.new.h:3411
+#: tpk_description.h:162
 msgid "wireless modul rt5370sta.ko"
 msgstr ""
 
-#: tpk_section.h:1
+#: tpk.h:3185 tpk.new.h:3167
 msgid "check your Secret Feed !"
 msgstr ""
 
-#: tpk_section.h:2
+#: tpk.h:3428
 msgid "Section: "
 msgstr ""
 
-#: tpk_section.h:3
+#: tpk.h:3431
 msgid "Description:"
 msgstr ""
 
-#: tpk_section.h:4
+#: tpk.h:3436 tpk.new.h:3411
 msgid "no description found"
 msgstr ""
 
-#: tpk_section.h:5
+#: tpk_section.h:1
 msgid "bootlogos"
 msgstr ""
 
-#: tpk_section.h:6
+#: tpk_section.h:2
 msgid "browser"
 msgstr ""
 
-#: tpk_section.h:7
+#: tpk_section.h:3
 msgid "emus"
 msgstr ""
 
-#: tpk_section.h:8
+#: tpk_section.h:4
 msgid "fonts"
 msgstr ""
 
-#: tpk_section.h:9
+#: tpk_section.h:5
 msgid "games"
 msgstr ""
 
-#: tpk_section.h:10
+#: tpk_section.h:6
 msgid "infos"
-msgstr "????"
+msgstr ""
 
-#: tpk_section.h:11
+#: tpk_section.h:7
 msgid "infos "
-msgstr "????"
+msgstr ""
 
-#: tpk_section.h:12
+#: tpk_section.h:8
 msgid "keymaps"
 msgstr ""
 
-#: tpk_section.h:13
+#: tpk_section.h:9
 msgid "lcdpearlskins"
 msgstr ""
 
-#: tpk_section.h:14
+#: tpk_section.h:10
 msgid "lcdsamsungskins"
 msgstr ""
 
-#: tpk_section.h:16
+#: tpk_section.h:11
 msgid "network"
-msgstr "????"
+msgstr ""
 
-#: tpk_section.h:17
+#: tpk_section.h:12
 msgid "picons"
 msgstr ""
 
-#: tpk_section.h:18
+#: tpk_section.h:13
 msgid "player"
 msgstr ""
 
-#: tpk_section.h:19
+#: tpk_section.h:14
 msgid "player "
 msgstr ""
 
-#: tpk_section.h:20
+#: tpk_section.h:16
 msgid "settings"
-msgstr "?????????"
+msgstr ""
 
-#: tpk_showname.h:1
+#: tpk_section.h:17
 msgid "skins"
 msgstr ""
 
-#: tpk_showname.h:2
+#: tpk_section.h:18
 msgid "tools"
 msgstr ""
 
-#: tpk_showname.h:3
+#: tpk_section.h:19
 msgid "tools "
 msgstr ""
 
-#: tpk_showname.h:4
+#: tpk_section.h:20
 msgid "wireless"
 msgstr ""
 
-#: tpk_showname.h:5
+#: tpk_showname.h:1
 msgid "3 Wins"
 msgstr ""
 
-#: tpk_showname.h:6
+#: tpk_showname.h:2
 msgid "Action Man Italic"
 msgstr ""
 
-#: tpk_showname.h:7
+#: tpk_showname.h:3
 msgid "Alpha Romanie G98"
 msgstr ""
 
-#: tpk_showname.h:8
+#: tpk_showname.h:4
 msgid "Auto Timer"
 msgstr ""
 
-#: tpk_showname.h:9
+#: tpk_showname.h:5
 msgid "Bikergirl"
 msgstr ""
 
-#: tpk_showname.h:10
+#: tpk_showname.h:6
 msgid "Blueskull"
 msgstr ""
 
-#: tpk_showname.h:11
+#: tpk_showname.h:7
 msgid "CallMonitor"
 msgstr ""
 
-#: tpk_showname.h:12
+#: tpk_showname.h:8
 msgid "Camd3 v3.902 "
 msgstr ""
 
-#: tpk_showname.h:13
+#: tpk_showname.h:9
 msgid "Cat Catch "
 msgstr ""
 
-#: tpk_showname.h:14
+#: tpk_showname.h:10
 msgid "CCcam 2.3.0"
 msgstr ""
 
-#: tpk_showname.h:15
+#: tpk_showname.h:11
 msgid "Cityflash"
 msgstr ""
 
-#: tpk_showname.h:16
+#: tpk_showname.h:12
 msgid "Codepack"
 msgstr ""
 
-#: tpk_showname.h:17
+#: tpk_showname.h:13
 msgid "Croissant"
 msgstr ""
 
-#: tpk_showname.h:18
+#: tpk_showname.h:14
 msgid "Default Font"
 msgstr ""
 
-#: tpk_showname.h:19
+#: tpk_showname.h:15
 msgid "Digiface Regular"
 msgstr ""
 
-#: tpk_showname.h:20
+#: tpk_showname.h:16
 msgid "DLNA (Minidlna Server)"
 msgstr ""
 
-#: tpk_showname.h:22
+#: tpk_showname.h:17
 msgid "DTS Downmix"
 msgstr ""
 
-#: tpk_showname.h:23
+#: tpk_showname.h:18
 msgid "DVD Player"
 msgstr ""
 
-#: tpk_showname.h:24
+#: tpk_showname.h:19
 msgid "Enigma2 WebIf API (Dreambox)"
 msgstr ""
 
-#: tpk_showname.h:25
+#: tpk_showname.h:20
 msgid "Enigmalinux"
 msgstr ""
 
-#: tpk_showname.h:26
+#: tpk_showname.h:22
 msgid "Fantasygirl"
 msgstr ""
 
-#: tpk_showname.h:27
+#: tpk_showname.h:23
 msgid "Fantasygirl 2"
 msgstr ""
 
-#: tpk_showname.h:28
+#: tpk_showname.h:24
 msgid "File Manager"
 msgstr ""
 
-#: tpk_showname.h:29
+#: tpk_showname.h:25
 msgid "Firelady"
 msgstr ""
 
-#: tpk_showname.h:30
+#: tpk_showname.h:26
 msgid "Fireskull"
 msgstr ""
 
-#: tpk_showname.h:31
+#: tpk_showname.h:27
 msgid "Footballgirls"
 msgstr ""
 
-#: tpk_showname.h:32
+#: tpk_showname.h:28
 msgid "Gbox 800"
 msgstr ""
 
-#: tpk_showname.h:33
+#: tpk_showname.h:29
 msgid "Gbox 806"
 msgstr ""
 
-#: tpk_showname.h:34
+#: tpk_showname.h:30
 msgid "Ghostrider"
 msgstr ""
 
-#: tpk_showname.h:35
+#: tpk_showname.h:31
 msgid "Giantgirl"
 msgstr ""
 
-#: tpk_showname.h:36
+#: tpk_showname.h:32
 msgid "GmediaRender"
 msgstr ""
 
-#: tpk_showname.h:39
+#: tpk_showname.h:33
 msgid "Goodtime"
 msgstr ""
 
-#: tpk_showname.h:40
+#: tpk_showname.h:34
 msgid "hbbtv Browser"
 msgstr ""
 
-#: tpk_showname.h:41
+#: tpk_showname.h:35
 msgid "Ice Age Scrap likes UFS910"
 msgstr ""
 
-#: tpk_showname.h:42
+#: tpk_showname.h:36
 msgid "I Hate Comic Sans"
 msgstr ""
 
-#: tpk_showname.h:43
+#: tpk_showname.h:39
 msgid "Incubus 1.22"
 msgstr ""
 
-#: tpk_showname.h:44
+#: tpk_showname.h:40
 msgid "IP-Kamera"
 msgstr ""
 
-#: tpk_showname.h:45
+#: tpk_showname.h:41
 msgid "KeyLock"
 msgstr ""
 
-#: tpk_showname.h:46
+#: tpk_showname.h:42
 msgid "LCD Pearl"
 msgstr ""
 
-#: tpk_showname.h:47
+#: tpk_showname.h:43
 msgid "LCD Pearl Skin Atemio"
 msgstr ""
 
-#: tpk_showname.h:48
+#: tpk_showname.h:44
 msgid "LCD Pearl Skin Blau"
 msgstr ""
 
-#: tpk_showname.h:49
+#: tpk_showname.h:45
 msgid "LCD Pearl Skin Gross/Schwarz"
 msgstr ""
 
-#: tpk_showname.h:50
+#: tpk_showname.h:46
 msgid "LCD Pearl Skin MRP"
 msgstr ""
 
-#: tpk_showname.h:51
+#: tpk_showname.h:47
 msgid "LCD Pearl Skin Picon"
 msgstr ""
 
-#: tpk_showname.h:52
+#: tpk_showname.h:48
 msgid "LCD Pearl Skin Schwarz"
 msgstr ""
 
-#: tpk_showname.h:53
+#: tpk_showname.h:49
 msgid "LCD Samsung PICON 320x240 (Astra 19.2E)"
 msgstr ""
 
-#: tpk_showname.h:54
+#: tpk_showname.h:50
 msgid "LCD Samsung Skin Analog Uhr"
 msgstr ""
 
-#: tpk_showname.h:55
+#: tpk_showname.h:51
 msgid "LCD Samsung Skin DigitalUhr (blau) - operating Mode"
 msgstr ""
 
-#: tpk_showname.h:56
+#: tpk_showname.h:52
 msgid "LCD Samsung Skin Digital Uhr gelb"
 msgstr ""
 
-#: tpk_showname.h:57
+#: tpk_showname.h:53
 msgid "LCD Samsung Skin Digital Uhr Trikots"
 msgstr ""
 
-#: tpk_showname.h:58
+#: tpk_showname.h:54
 msgid "LCD Samsung Skin Holzuhr"
 msgstr ""
 
-#: tpk_showname.h:59
+#: tpk_showname.h:55
 msgid "LCD Samsung SPF.."
 msgstr ""
 
-#: tpk_showname.h:60
+#: tpk_showname.h:56
 msgid "Lib Pack (ufs910/ufs922)"
 msgstr ""
 
-#: tpk_showname.h:61
+#: tpk_showname.h:57
 msgid "Linuxgirl"
 msgstr ""
 
-#: tpk_showname.h:62
+#: tpk_showname.h:58
 msgid "Lydian Bolt Italic BT"
 msgstr ""
 
-#: tpk_showname.h:63
+#: tpk_showname.h:59
 msgid "Mbox v0.6b0010"
 msgstr ""
 
-#: tpk_showname.h:64
+#: tpk_showname.h:60
 msgid "Mediacenter FolderIcons"
 msgstr ""
 
-#: tpk_showname.h:65
+#: tpk_showname.h:61
 msgid "Mediacenter"
 msgstr ""
 
-#: tpk_showname.h:68
+#: tpk_showname.h:62
 msgid "Mgcamd v1.35"
 msgstr ""
 
-#: tpk_showname.h:69
+#: tpk_showname.h:63
 msgid "Mgcamd v1.38a"
 msgstr ""
 
-#: tpk_showname.h:71
+#: tpk_showname.h:64
 msgid "Mighty Zeo Caps"
 msgstr ""
 
-#: tpk_showname.h:73
+#: tpk_showname.h:65
 msgid "Monoglyceride DemiBold"
 msgstr ""
 
-#: tpk_showname.h:74
+#: tpk_showname.h:68
 msgid "Newcs"
 msgstr ""
 
-#: tpk_showname.h:75
+#: tpk_showname.h:69
 msgid "New Gothic BT"
 msgstr ""
 
-#: tpk_showname.h:76
+#: tpk_showname.h:71
 msgid "Open VPN (Server)"
 msgstr ""
 
-#: tpk_showname.h:77
+#: tpk_showname.h:73
 msgid "Oscam 4736v13"
 msgstr ""
 
-#: tpk_showname.h:78
+#: tpk_showname.h:74
 msgid "Oscam 7209"
 msgstr ""
 
-#: tpk_showname.h:80
+#: tpk_showname.h:75
 msgid "Oscam 8755"
 msgstr ""
 
-#: tpk_showname.h:82
+#: tpk_showname.h:76
 msgid "Oscam 8755small"
 msgstr ""
 
-#: tpk_showname.h:83
+#: tpk_showname.h:77
 msgid "Oscam 8933 "
 msgstr ""
 
-#: tpk_showname.h:84
+#: tpk_showname.h:78
 msgid "oscam Nightly"
 msgstr ""
 
-#: tpk_showname.h:85
+#: tpk_showname.h:80
 msgid "Paddington Bold"
 msgstr ""
 
-#: tpk_showname.h:86
+#: tpk_showname.h:82
 msgid "Parted"
 msgstr ""
 
-#: tpk_showname.h:87
+#: tpk_showname.h:83
 msgid "Permanent Time"
 msgstr ""
 
-#: tpk_showname.h:88
+#: tpk_showname.h:84
 msgid "Picons Black3D (ASTRA 19.2)"
 msgstr ""
 
-#: tpk_showname.h:89
+#: tpk_showname.h:85
 msgid "Picons Black3D (Astra 23.5)"
 msgstr ""
 
-#: tpk_showname.h:90
+#: tpk_showname.h:86
 msgid "Picons Black3D (Hotbird)"
 msgstr ""
 
-#: tpk_showname.h:91
+#: tpk_showname.h:87
 msgid "Picons Gold Nugget  (ASTRA 19.2)"
 msgstr ""
 
-#: tpk_showname.h:92
+#: tpk_showname.h:88
 msgid "Picons Gold Nugget (Astra 23.5)"
 msgstr ""
 
-#: tpk_showname.h:93
+#: tpk_showname.h:89
 msgid "Picons Gold Nugget (Astra 28.2)"
 msgstr ""
 
-#: tpk_showname.h:94
+#: tpk_showname.h:90
 msgid "Picons Gold Nugget (Hotbird 13.0)"
 msgstr ""
 
-#: tpk_showname.h:95
+#: tpk_showname.h:91
 msgid "Picons Kabel Black3D"
 msgstr ""
 
-#: tpk_showname.h:96
+#: tpk_showname.h:92
 msgid "Picons Kabel BW"
 msgstr ""
 
-#: tpk_showname.h:97
+#: tpk_showname.h:93
 msgid "Picons Kabel Transparent"
 msgstr ""
 
-#: tpk_showname.h:98
+#: tpk_showname.h:94
 msgid "Picons Spiegel (ASTRA 19.2)"
 msgstr ""
 
-#: tpk_showname.h:99
+#: tpk_showname.h:95
 msgid "Picons Transparent (ASTRA 19.2)"
 msgstr ""
 
-#: tpk_showname.h:100
+#: tpk_showname.h:96
 msgid "Picons Transparent (Astra 23.5)"
 msgstr ""
 
-#: tpk_showname.h:101
+#: tpk_showname.h:97
 msgid "Picons Transparent (Astra 28.2)"
 msgstr ""
 
-#: tpk_showname.h:102
+#: tpk_showname.h:98
 msgid "Picons Transparent (Hotbird 13.0)"
 msgstr ""
 
-#: tpk_showname.h:103
+#: tpk_showname.h:99
 msgid "Picons Transparent (small-uljanow)"
 msgstr ""
 
-#: tpk_showname.h:104
+#: tpk_showname.h:100
 msgid "Picons White3D  (ASTRA 19.2)"
 msgstr ""
 
-#: tpk_showname.h:105
+#: tpk_showname.h:101
 msgid "Picons White3D (Astra 23.5)"
 msgstr ""
 
-#: tpk_showname.h:106
+#: tpk_showname.h:102
 msgid "Picons White3D (Astra 28.2)"
 msgstr ""
 
-#: tpk_showname.h:107
+#: tpk_showname.h:103
 msgid "Picons White3D (Hotbird 13.0)"
 msgstr ""
 
-#: tpk_showname.h:108
+#: tpk_showname.h:104
 msgid "Picons White70  (ASTRA 19.2)"
 msgstr ""
 
-#: tpk_showname.h:109
+#: tpk_showname.h:105
 msgid "Picons White70 (Astra 23.5)"
 msgstr ""
 
-#: tpk_showname.h:110
+#: tpk_showname.h:106
 msgid "Picons White70 (Astra 28.2)"
 msgstr ""
 
-#: tpk_showname.h:111
+#: tpk_showname.h:107
 msgid "Picons White70 (Hotbird 13.0)"
 msgstr ""
 
-#: tpk_showname.h:112
+#: tpk_showname.h:108
 msgid "Planets"
 msgstr ""
 
-#: tpk_showname.h:113
+#: tpk_showname.h:109
 msgid "Plover Bold"
 msgstr ""
 
-#: tpk_showname.h:114
+#: tpk_showname.h:110
 msgid "Record cut"
 msgstr ""
 
-#: tpk_showname.h:115
+#: tpk_showname.h:111
 msgid "RGUI"
 msgstr ""
 
-#: tpk_showname.h:116
+#: tpk_showname.h:112
 msgid "Samba (Server)"
 msgstr ""
 
-#: tpk_showname.h:117
+#: tpk_showname.h:113
 msgid "Screensaver Animation Kidds"
 msgstr ""
 
-#: tpk_showname.h:118
+#: tpk_showname.h:114
 msgid "Screensaver Beach"
 msgstr ""
 
-#: tpk_showname.h:119
+#: tpk_showname.h:115
 msgid "Screensaver Bikes and Motorcycles"
 msgstr ""
 
-#: tpk_showname.h:120
+#: tpk_showname.h:116
 msgid "Screensaver Brands and Logos"
 msgstr ""
 
-#: tpk_showname.h:121
+#: tpk_showname.h:117
 msgid "Screensaver Cars"
 msgstr ""
 
-#: tpk_showname.h:122
+#: tpk_showname.h:118
 msgid "Screensaver Celebrations"
 msgstr ""
 
-#: tpk_showname.h:123
+#: tpk_showname.h:119
 msgid "Screensaver Celebrities"
 msgstr ""
 
-#: tpk_showname.h:124
+#: tpk_showname.h:120
 msgid "Screensaver Christmas"
 msgstr ""
 
-#: tpk_showname.h:125
+#: tpk_showname.h:121
 msgid "Screensaver Creative Graphics"
 msgstr ""
 
-#: tpk_showname.h:126
+#: tpk_showname.h:122
 msgid "Screensaver Cute"
 msgstr ""
 
-#: tpk_showname.h:127
+#: tpk_showname.h:123
 msgid "Screensaver Default"
 msgstr ""
 
-#: tpk_showname.h:128
+#: tpk_showname.h:124
 msgid "Screensaver Digital Universe"
 msgstr ""
 
-#: tpk_showname.h:129
+#: tpk_showname.h:125
 msgid "Screensaver Dreamy Fantasy"
 msgstr ""
 
-#: tpk_showname.h:130
+#: tpk_showname.h:126
 msgid "Screensaver Eisriesenwelt"
 msgstr ""
 
-#: tpk_showname.h:131
+#: tpk_showname.h:127
 msgid "Screensaver Fantasy Girls"
 msgstr ""
 
-#: tpk_showname.h:132
+#: tpk_showname.h:128
 msgid "Screensaver FCBayern"
 msgstr ""
 
-#: tpk_showname.h:133
+#: tpk_showname.h:129
 msgid "Screensaver Flowers"
 msgstr ""
 
-#: tpk_showname.h:134
+#: tpk_showname.h:130
 msgid "Screensaver Games"
 msgstr ""
 
-#: tpk_showname.h:135
+#: tpk_showname.h:131
 msgid "Screensaver HDR-Pictures"
 msgstr ""
 
-#: tpk_showname.h:136
+#: tpk_showname.h:132
 msgid "Screensaver Hotgirls"
 msgstr ""
 
-#: tpk_showname.h:137
+#: tpk_showname.h:133
 msgid "Screensaver Hotgirls 2"
 msgstr ""
 
-#: tpk_showname.h:138
+#: tpk_showname.h:134
 msgid "Screensaver Inspirational"
 msgstr ""
 
-#: tpk_showname.h:139
+#: tpk_showname.h:135
 msgid "Screensaver Love"
 msgstr ""
 
-#: tpk_showname.h:140
+#: tpk_showname.h:136
 msgid "Screensaver Movies"
 msgstr ""
 
-#: tpk_showname.h:141
+#: tpk_showname.h:137
 msgid "Screensaver Nature and Landscape"
 msgstr ""
 
-#: tpk_showname.h:142
+#: tpk_showname.h:138
 msgid "Screensaver Others"
 msgstr ""
 
-#: tpk_showname.h:143
+#: tpk_showname.h:139
 msgid "Screensaver Photography"
 msgstr ""
 
-#: tpk_showname.h:145
+#: tpk_showname.h:140
 msgid "Screensaver Planes"
 msgstr ""
 
-#: tpk_showname.h:146
+#: tpk_showname.h:141
 msgid "Screensaver Radio"
 msgstr ""
 
-#: tpk_showname.h:147
+#: tpk_showname.h:142
 msgid "Screensaver Sports"
 msgstr ""
 
-#: tpk_showname.h:148
+#: tpk_showname.h:143
 msgid "Screensaver Travel World"
 msgstr ""
 
-#: tpk_showname.h:149
+#: tpk_showname.h:145
 msgid "Settings 19.2 Astra"
 msgstr ""
 
-#: tpk_showname.h:150
+#: tpk_showname.h:146
 msgid "Settings Astra 19.2, hotbird 13.0, Astra 28.2E"
 msgstr ""
 
-#: tpk_showname.h:151
+#: tpk_showname.h:147
 msgid "Settings Astra 19.2 (matze70)"
 msgstr ""
 
-#: tpk_showname.h:152
+#: tpk_showname.h:148
 msgid "Settings Astra 19.2 - NEU (matze70)"
 msgstr ""
 
-#: tpk_showname.h:153
+#: tpk_showname.h:149
 msgid "Settings Astra 19.2 (uljanow) plus transponder hotbird 13.0"
 msgstr ""
 
-#: tpk_showname.h:154
+#: tpk_showname.h:150
 msgid "Settings Kabel BW (sofatester)"
 msgstr ""
 
-#: tpk_showname.h:155
+#: tpk_showname.h:151
 msgid "Settings Kabel Deutschland"
 msgstr ""
 
-#: tpk_showname.h:156
+#: tpk_showname.h:152
 msgid "Settings Kabel Unitymedia"
 msgstr ""
 
-#: tpk_showname.h:157
+#: tpk_showname.h:153
 msgid "Skin 0Acht5Zehn (grau)"
 msgstr ""
 
-#: tpk_showname.h:158
+#: tpk_showname.h:154
 msgid "Skin 0Acht5Zehn (schwarz)"
 msgstr ""
 
-#: tpk_showname.h:159
+#: tpk_showname.h:155
 msgid "Skin 0Acht5Zehn (white)"
 msgstr ""
 
-#: tpk_showname.h:160
+#: tpk_showname.h:156
 msgid "Skin Cool"
 msgstr ""
 
-#: tpk_showname.h:161
+#: tpk_showname.h:157
 msgid "Skin CoolMiniTV"
 msgstr ""
 
-#: tpk_showname.h:162
+#: tpk_showname.h:158
 msgid "Skin Default"
 msgstr ""
 
-#: tpk_showname.h:163
+#: tpk_showname.h:159
 msgid "Skin DefNoMiniTV"
 msgstr ""
 
-#: tpk_showname.h:164
+#: tpk_showname.h:160
 msgid "Skin MegaStyle blue"
 msgstr ""
 
-#: tpk_showname.h:165
+#: tpk_showname.h:161
 msgid "Skin MegaStyle blue Mini TV"
 msgstr ""
 
-#: tpk_showname.h:166
+#: tpk_showname.h:162
 msgid "Skin MegaStyle grey"
 msgstr ""
 
-#: tpk_showname.h:167
+#: tpk_showname.h:163
 msgid "Skin MegaStyle grey MiniTV"
 msgstr ""
 
-#: tpk_showname.h:168
+#: tpk_showname.h:164
 msgid "Skin MetrixHD"
 msgstr ""
 
-#: tpk_showname.h:169
+#: tpk_showname.h:165
 msgid "Skin Nogfx"
 msgstr ""
 
-#: tpk_showname.h:170
+#: tpk_showname.h:166
 msgid "Skin Nogfx (grau)"
 msgstr ""
 
-#: tpk_showname.h:171
+#: tpk_showname.h:167
 msgid "Skin SmartTV"
 msgstr ""
 
-#: tpk_showname.h:173
+#: tpk_showname.h:168
 msgid "Skin Tobayer01"
 msgstr ""
 
-#: tpk_showname.h:175
+#: tpk_showname.h:169
 msgid "Skin UFS912"
 msgstr ""
 
-#: tpk_showname.h:176
+#: tpk_showname.h:170
 msgid "SMB Client Lib v3.0.28b (/media/smbfs)"
 msgstr ""
 
-#: tpk_showname.h:177
+#: tpk_showname.h:171
 msgid "SmbClient (Win7)"
 msgstr ""
 
-#: tpk_showname.h:178
+#: tpk_showname.h:173
 msgid "Stop if not used"
 msgstr ""
 
-#: tpk_showname.h:179
+#: tpk_showname.h:175
 msgid "The Grim Reaper"
 msgstr ""
 
-#: tpk_showname.h:180
+#: tpk_showname.h:176
 msgid "Titan Media Center"
 msgstr ""
 
-#: tpk_showname.h:181
+#: tpk_showname.h:177
 msgid "TiTan Mediathek"
 msgstr ""
 
-#: tpk_showname.h:183
+#: tpk_showname.h:178
 msgid "TitanNit Blood"
 msgstr ""
 
-#: tpk_showname.h:185
+#: tpk_showname.h:179
 msgid "TitanNit Design 1"
 msgstr ""
 
-#: tpk_showname.h:186
+#: tpk_showname.h:180
 msgid "TitanNit Design 3"
 msgstr ""
 
-#: tpk_showname.h:187
+#: tpk_showname.h:181
 msgid "TitanNit on fire"
 msgstr ""
 
-#: tpk_showname.h:188
+#: tpk_showname.h:183
 msgid "USB-RESET"
 msgstr ""
 
-#: tpk_showname.h:189
+#: tpk_showname.h:185
 msgid "Webbrowser Netsurf"
 msgstr ""
 
-#: tpk_showname.h:190
+#: tpk_showname.h:186
 msgid "Wlan 8192cu"
 msgstr ""
 
-#: tpk_showname.h:191
+#: tpk_showname.h:187
 msgid "Wlan 8712u"
 msgstr ""
 
-#: tpk_showname.h:192
+#: tpk_showname.h:188
 msgid "Wlan rt2870sta"
 msgstr ""
 
-#: tpk_showname.h:193
+#: tpk_showname.h:189
 msgid "Wlan rt3070sta"
 msgstr ""
 
-#: tpk_showname.h:194
+#: tpk_showname.h:190
 msgid "Wlan rt5370sta"
 msgstr ""
 
-#: tpk_showname.h:195
+#: tpk_showname.h:191
 msgid "XPicons LightTransparent (Astra 19.2E)"
 msgstr ""
 
-#: tpk_showname.h:196
+#: tpk_showname.h:192
 msgid "XPicons LightTransparent (Astra 23.5E)"
 msgstr ""
 
-#: tpk_showname.h:197
+#: tpk_showname.h:193
 msgid "XPicons LightTransparent (Astra 28.2E)"
 msgstr ""
 
-#: transponder.h:118 transponder.h:127
+#: tpk_showname.h:194
 msgid "XPicons LightTransparent (Hotbird 13.0E)"
 msgstr ""
 
-#: transponder.h:119 transponder.h:129
+#: tpk_showname.h:195
 msgid "XPicons LightTransparent (small - Astra 19.2E)"
 msgstr ""
 
-#: transponder.h:120 transponder.h:131
+#: tpk_showname.h:196
 msgid "zapback (Werbezapper)"
 msgstr ""
 
-#: transponder.h:155 transponder.h:163
+#: tpk_showname.h:197
 msgid "Zombie"
 msgstr ""
 
-#: transponder.h:156 transponder.h:165
+#: transponder.h:118 transponder.h:127
 msgid "8 Mhz"
 msgstr ""
 
-#: transponder.h:449 transponder.h:456
+#: transponder.h:119 transponder.h:129
 msgid "7 Mhz"
 msgstr ""
 
-#: transponder.h:450 transponder.h:458
+#: transponder.h:120 transponder.h:131
 msgid "6 Mhz"
 msgstr ""
 
-#: transponder.h:477 transponder.h:500 transponder.h:514 transponder.h:536
+#: transponder.h:155 transponder.h:163
 msgid "2 Khz"
 msgstr ""
 
-#: transponder.h:478 transponder.h:516
+#: transponder.h:156 transponder.h:165
 msgid "8 Khz"
+msgstr ""
+
+#: transponder.h:449 transponder.h:456
+msgid "Horizontal"
+msgstr ""
+
+#: transponder.h:450 transponder.h:458
+msgid "Vertikal"
+msgstr ""
+
+#: transponder.h:477 transponder.h:500 transponder.h:514 transponder.h:536
+msgid "QPSK"
+msgstr ""
+
+#: transponder.h:478 transponder.h:516
+msgid "PSK 8"
 msgstr ""
 
 #: transponder.h:479 transponder.h:488 transponder.h:501 transponder.h:518
 #: transponder.h:524 transponder.h:538
-msgid "Horizontal"
-msgstr ""
-
-#: transponder.h:487 transponder.h:503 transponder.h:522 transponder.h:542
-msgid "Vertikal"
-msgstr ""
-
-#: transponder.h:489 transponder.h:526
-msgid "QPSK"
-msgstr ""
-
-#: transponder.h:490 transponder.h:502 transponder.h:528 transponder.h:540
-msgid "PSK 8"
-msgstr ""
-
-#: transponder.h:491 transponder.h:530
 msgid "QAM 16"
 msgstr ""
 
-#: transponder.h:492 transponder.h:532
+#: transponder.h:487 transponder.h:503 transponder.h:522 transponder.h:542
 msgid "QAM auto"
 msgstr ""
 
-#: transponder.h:572 transponder.h:579
+#: transponder.h:489 transponder.h:526
 msgid "QAM 32"
 msgstr ""
 
-#: transponder.h:573 transponder.h:581
+#: transponder.h:490 transponder.h:502 transponder.h:528 transponder.h:540
 msgid "QAM 64"
 msgstr ""
 
-#: tunerconfig.h:107
+#: transponder.h:491 transponder.h:530
 msgid "QAM 128"
 msgstr ""
 
-#: tunerconfig.h:109
+#: transponder.h:492 transponder.h:532
 msgid "QAM 256"
 msgstr ""
 
-#: tunerconfig.h:110
+#: transponder.h:572 transponder.h:579
 msgid "DVBS"
 msgstr ""
 
-#: tunerconfig.h:112
+#: transponder.h:573 transponder.h:581
 msgid "DVBS2"
 msgstr ""
 
-#: tunerconfig.h:114
+#: tunerconfig.h:107
 msgid "Satelite Type"
 msgstr ""
 
-#: tunerconfig.h:116
+#: tunerconfig.h:109
 msgid "Single LNB"
 msgstr ""
 
-#: tunerconfig.h:183 tunerconfig.h:212 tunerconfig.h:243 tunerconfig.h:276
+#: tunerconfig.h:110
 msgid "DiSEqC A/B"
 msgstr ""
 
-#: tunerconfig.h:301
+#: tunerconfig.h:112
 msgid "DiSEqC A/B/C/D"
 msgstr ""
 
-#: tunerconfig.h:379
+#: tunerconfig.h:114
 msgid "DiSEqC A/B/C/D/E/F/G/H"
 msgstr ""
 
-#: tunerconfig.h:645
+#: tunerconfig.h:116
 msgid "Expert"
 msgstr ""
 
-#: tunerconfig.h:656
+#: tunerconfig.h:183 tunerconfig.h:212 tunerconfig.h:243 tunerconfig.h:276
 msgid "DiSEqC"
 msgstr "DiSEqC"
 
-#: tunerconfig.h:772
+#: tunerconfig.h:301
 msgid "Lnb / Unicable"
 msgstr ""
 
-#: tunerconfig.h:786
+#: tunerconfig.h:379
 msgid "Terrestrisch"
 msgstr ""
 
-#: unicable.h:197
+#: tunerconfig.h:645
 msgid "direct connect"
 msgstr ""
 
-#: unicable.h:212
+#: tunerconfig.h:656
 msgid "loop to Tuner"
 msgstr ""
 
-#: unicable.h:277
+#: tunerconfig.h:772
 msgid ""
 "Tunerconfig is not allowed if record\n"
 "or stream is running !"
 msgstr ""
 
-#: unlock.h:20
+#: tunerconfig.h:786
 msgid "Tuner "
 msgstr "?????"
 
-#: unlock.h:26
+#: unicable.h:197
 msgid "Unicable manufacturer"
 msgstr ""
 
-#: unlock.h:66
+#: unicable.h:212
 msgid "Unicable product"
 msgstr ""
 
-#: unlock.h:71
+#: unicable.h:277
 msgid "Unicable SCR"
 msgstr ""
 
-#: unlock.h:75
+#: unlock.h:20
 msgid "Spezialfunctions unlocked, no input required"
 msgstr ""
 
-#: vfdisplay.h:32
+#: unlock.h:26
 msgid "RECEIVER ID: "
 msgstr ""
 
-#: vfdisplay.h:33
+#: unlock.h:66
 msgid ""
 "Can't save Code.\n"
 "Delete Plugins to free space"
 msgstr ""
 
-#: vfdisplay.h:34
+#: unlock.h:71
 msgid "Code ok"
 msgstr ""
 
-#: vfdisplay.h:35 vfdisplay.h:41
+#: unlock.h:75
 msgid "Code not ok, please try again !"
 msgstr ""
 
-#: vfdisplay.h:36
+#: vfdisplay.h:32
 msgid "channel"
 msgstr "?????"
 
-#: vfdisplay.h:38
+#: vfdisplay.h:33
 msgid "channel + time"
 msgstr ""
 
-#: vfdisplay.h:45
+#: vfdisplay.h:34
 msgid "time + channel"
 msgstr ""
 
-#: vfdisplay.h:51
+#: vfdisplay.h:35 vfdisplay.h:41
 msgid "time"
 msgstr ""
 
-#: vfdisplay.h:52
+#: vfdisplay.h:36
 msgid "time small"
 msgstr ""
 
-#: vfdisplay.h:53
+#: vfdisplay.h:38
 msgid "channel number"
 msgstr ""
 
-#: vfdisplay.h:54
+#: vfdisplay.h:45
 msgid "date + time"
 msgstr ""
 
-#: vfdisplay.h:55
+#: vfdisplay.h:51
 msgid "blink"
 msgstr ""
 
-#: videomode.h:18 videomode.h:40 videomode.h:47
+#: vfdisplay.h:52
 msgid "fade out/in"
 msgstr ""
 
-#: videomode.h:19 videomode.h:62 videomode.h:69
+#: vfdisplay.h:53
 msgid "show record"
 msgstr ""
 
-#: videomode.h:25 videomode.h:27
+#: vfdisplay.h:54
 msgid "star"
 msgstr ""
 
-#: weather.h:430 weather.h:448 weather.h:466 weather.h:484
+#: vfdisplay.h:55
 msgid "blink star"
 msgstr ""
 
-#: weather.h:434 weather.h:452 weather.h:470 weather.h:488
+#: videomode.h:18 videomode.h:40 videomode.h:47
 msgid "Resolution Settings"
 msgstr ""
 
-#: weather.h:438 weather.h:456 weather.h:474 weather.h:492
+#: videomode.h:19 videomode.h:62 videomode.h:69
 msgid "Aspect Settings"
 msgstr ""
 
-#: weather.h:442 weather.h:460 weather.h:478 weather.h:496
+#: videomode.h:25 videomode.h:27
 msgid "Videomode"
 msgstr ""
 
-#: about.h:9
+#: weather.h:430 weather.h:448 weather.h:466 weather.h:484
 msgid "Day: "
 msgstr ""
 
-#: about.h:12
+#: weather.h:434 weather.h:452 weather.h:470 weather.h:488
 msgid "Lowest temp: "
 msgstr ""
 
-#: about.h:16
+#: weather.h:438 weather.h:456 weather.h:474 weather.h:492
 msgid "Highest temp: "
 msgstr ""
 
-#: about.h:25 skin_default_skin.xml.h:674
+#: weather.h:442 weather.h:460 weather.h:478 weather.h:496
 msgid "Condition: "
 msgstr ""
-
