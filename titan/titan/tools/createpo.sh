@@ -49,6 +49,8 @@ cat /var/www/atemio/web/mediathek/*/*.category.list  | cut -d"#" -f1 | sort -u |
 error=0
 rm -f "$HOME"/flashimg/source.titan/titan/tools/error/error.log
 
+rm -f "$HOME"/flashimg/source.titan/titan/po/gr
+
 for ROUND in $POLIST; do
 	echo "[createpo.sh] ############################ start ###############################"
 	echo "[createpo.sh] update $ROUND"
@@ -193,7 +195,7 @@ for ROUND in $POLIST; do
 #cp -a $ROUND_NEW_MERGE $OUTFILE_PO
 #############
 ##################################
-			iconv -f UTF-8 -t ISO-8859-1 $ROUND_NEW_MERGE > $ROUND_MERGE
+			iconv -f ISO-8859-1 -t UTF-8 $ROUND_NEW_MERGE > $ROUND_MERGE
 			if [ ! -e "$ROUND_MERGE" ] || [ `cat "$ROUND_MERGE" | wc -l` -eq 0 ]; then error="8"; break;fi
 	
 			SEARCH=`cat $ROUND_MERGE | grep -n "Content-Transfer-Encoding: 8bit" | cut -d":" -f1`
