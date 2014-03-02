@@ -158,14 +158,17 @@ if [ "$SVNUSER" = "aafsvn" ] && [ "$GROUP" = "dev" ] && [ "$error" = "0" ];then
 elif [ "$SVNUSER" = "aafsvn" ] && [ "$GROUP" = "dev" ];then
 	echo "[createpo.sh] svn commit -m [titan] ERROR autoupdate po files"
 	
-	echo 111111
-	cat "$HOME"/flashimg/source.titan/titan/tools/error/error.log
-	echo 222222
-	cat "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
-	
 	cp -a "$HOME"/flashimg/source.titan/titan/tools/error/error.log "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
-	echo 333333
-	cat "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
+	
+	LINE=`cat "$HOME"/flashimg/source.titan/titan/tools/error/error.log | grep -n "fatal error" | cut -d: -f1`
+	LINE=`expr $LINE - 1`
+	FILE=`cat "$HOME"/flashimg/source.titan/titan/tools/error/error.log | sed -ne ""$LINE"p" | cut -d: -f1`
+	LINE=`cat "$HOME"/flashimg/source.titan/titan/tools/error/error.log | sed -ne ""$LINE"p" | cut -d: -f2`
+	LINE=`expr $LINE - 1`
+	ERROR=`cat "$FILE" | sed -ne ""$LINE"p"`
+	#ERROR=`cat "$FILE" | sed -ne ""$LINESTART","$LINEEND"p"`
+
+	echo "$ERROR" >> "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
 	
 	cd "$HOME"/flashimg/source.titan/titan/tools/error
 	svn commit -m "[titan] ERROR autoupdate po files"
