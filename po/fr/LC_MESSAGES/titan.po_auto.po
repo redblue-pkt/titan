@@ -1,4 +1,4 @@
-#: about.h:9
+﻿#: about.h:9
 msgid "Image"
 msgstr ""
 
