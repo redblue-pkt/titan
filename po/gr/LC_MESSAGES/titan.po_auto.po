@@ -62,6 +62,7 @@ msgstr "Προσθήκη Καναλιού"
 msgid "Adjust"
 msgstr "Ρύθμιση Συστήματος"
 
+#, fuzzy
 msgid "Action after"
 msgstr "Ενεργοποίηση"
 
@@ -146,9 +147,11 @@ msgstr "Password γιά betatester"
 msgid "betauser"
 msgstr "Χρήστης beta"
 
+#, fuzzy
 msgid "bootlogo"
 msgstr "Εικόνα εκκίνησης"
 
+#, fuzzy
 msgid "BootResolution"
 msgstr "Ανάλυση"
 
@@ -161,6 +164,7 @@ msgstr "Διόρθωση RGB για την εκκίνηση"
 msgid "BER:"
 msgstr "BER:"
 
+#, fuzzy
 msgid "Beta Config"
 msgstr "Ρύθμιση Δορυφόρων"
 
@@ -188,6 +192,7 @@ msgstr "C"
 msgid "Cam / Emu"
 msgstr "Cam / Emu"
 
+#, fuzzy
 msgid "CAM PMT Mode"
 msgstr "AC3 Mode"
 
@@ -212,6 +217,7 @@ msgstr "EPG καναλιού"
 msgid "Channel Search"
 msgstr "Αναζήτηση Καναλιών"
 
+#, fuzzy
 msgid "Channel Service"
 msgstr "Αναζήτηση Καναλιών"
 
@@ -230,6 +236,7 @@ msgstr "Σβήσιμο πριν την σάρωση"
 msgid "Color Format"
 msgstr "Μορφή Χρωμάτων"
 
+#, fuzzy
 msgid "Color Format Scart"
 msgstr "Μορφή Χρωμάτων"
 
@@ -257,6 +264,7 @@ msgstr "D"
 msgid "date"
 msgstr "Ημερομηνία"
 
+#, fuzzy
 msgid "File Browser"
 msgstr "Internet Browser"
 
@@ -308,15 +316,18 @@ msgstr "Ταξινόμηση φακέλων"
 msgid "DiSEqC"
 msgstr "DiSEqC"
 
+#, fuzzy
 msgid "DiSEqC Command Order"
 msgstr "Σειρά εντολών DiSEqC"
 
+#, fuzzy
 msgid "DiSEqC Configuration"
 msgstr "Tuner"
 
 msgid "DiSEqC Mode"
 msgstr "DiSEqC Mode"
 
+#, fuzzy
 msgid "DiSEqC repeats"
 msgstr "Επαναλήψεις DiSEqC"
 
@@ -343,6 +354,7 @@ msgstr "E"
 msgid "East / West"
 msgstr "Ανατολή / Δύση"
 
+#, fuzzy
 msgid "enable"
 msgstr "Ενεργοποίηση"
 
@@ -385,9 +397,11 @@ msgstr "EXIT"
 msgid "Extensions"
 msgstr "Επεκτάσεις"
 
+#, fuzzy
 msgid "Extensions Menu"
 msgstr "Επεκτάσεις"
 
+#, fuzzy
 msgid "emucontrol"
 msgstr "Έλεγχος ανεμιστήρα"
 
@@ -403,6 +417,7 @@ msgstr "Έλεγχος ανεμιστήρα"
 msgid "fast"
 msgstr "Γρήγορο"
 
+#, fuzzy
 msgid "Fast DiSEqC"
 msgstr "DiSEqC"
 
@@ -427,6 +442,7 @@ msgstr "FEC:"
 msgid "file"
 msgstr "Αρχείο"
 
+#, fuzzy
 msgid "alt file"
 msgstr "Αρχείο"
 
@@ -484,15 +500,18 @@ msgstr "Ενεργοποίηση οδηγών ftdi"
 msgid "fsckroot"
 msgstr "fsckroot"
 
+#, fuzzy
 msgid "fsckswap"
 msgstr "swap"
 
+#, fuzzy
 msgid "fsckrecord"
 msgstr "fsckroot"
 
 msgid "ftpd"
 msgstr "ftpd"
 
+#, fuzzy
 msgid "fontsize"
 msgstr "Μέγεθος"
 
@@ -508,6 +527,7 @@ msgstr "Gateway"
 msgid "Germany"
 msgstr "Γερμανικά"
 
+#, fuzzy
 msgid "Restart Titan"
 msgstr "Επανεκκίνηση"
 
@@ -544,6 +564,7 @@ msgstr "I"
 msgid "I"
 msgstr "I"
 
+#, fuzzy
 msgid "Image Information"
 msgstr "Πληροφορίες"
 
@@ -646,12 +667,14 @@ msgstr "Επιλογές εμφάνισης του Listbox"
 msgid "LNB"
 msgstr "LNB"
 
+#, fuzzy
 msgid "LNB Configuration"
 msgstr "Tuner"
 
 msgid "LNB Settings"
 msgstr "Ρυθμίσεις LNB"
 
+#, fuzzy
 msgid "LOF"
 msgstr "LOF/H"
 
@@ -670,6 +693,7 @@ msgstr "LOG (Κείμενο)"
 msgid "logto"
 msgstr "logto"
 
+#, fuzzy
 msgid "load partition"
 msgstr "Φόρτωση partition"
 
@@ -682,6 +706,7 @@ msgstr "M"
 msgid "Main Menu"
 msgstr "Κύριο Μενού"
 
+#, fuzzy
 msgid "Manuel Scan"
 msgstr "Χειροκίνητη αναζήτηση"
 
@@ -781,6 +806,7 @@ msgstr "Ρυθμίσεις προσαρμογέα Δικτύου"
 msgid "Network Adapter Test"
 msgstr "Έλεγχος προσαρμογέα Δικτύου"
 
+#, fuzzy
 msgid "Network Assistant"
 msgstr "Επανεκκίνηση Δικτύου"
 
@@ -808,9 +834,11 @@ msgstr "Ρυθμίσεις NFS Server"
 msgid "North / South"
 msgstr "Βορράς / Νότος"
 
+#, fuzzy
 msgid "noaudiosync"
 msgstr "AUDIO"
 
+#, fuzzy
 msgid "nfsserver"
 msgstr "DNS Server 1"
 
@@ -856,12 +884,15 @@ msgstr "Διαφάνεια OSD"
 msgid "Overclocking"
 msgstr "Overclocking"
 
+#, fuzzy
 msgid "Overclock settings"
 msgstr "Ρυθμίσεις Overclocking"
 
+#, fuzzy
 msgid "oldaudiofw"
 msgstr "AUDIO"
 
+#, fuzzy
 msgid "oldvideofw"
 msgstr "VIDEO"
 
@@ -880,6 +911,7 @@ msgstr "Password"
 msgid "PCR PID:"
 msgstr "PCR PID:"
 
+#, fuzzy
 msgid "Piconpath"
 msgstr "Διαδρομή φακέλλου εγγραφών"
 
@@ -931,6 +963,7 @@ msgstr "Πόλωση:"
 msgid "Policy"
 msgstr "Εμφάνιση εικόνας"
 
+#, fuzzy
 msgid "Power action"
 msgstr "Πόλωση"
 
@@ -982,6 +1015,7 @@ msgstr "Πύλη για Proxyserver"
 msgid "proxyuser"
 msgstr "Ονομα χρήστη για Proxyserver"
 
+#, fuzzy
 msgid "playlist"
 msgstr "Ενημέρωση λίστας"
 
@@ -994,9 +1028,11 @@ msgstr "portmap"
 msgid "poweroff"
 msgstr "κλείσιμο"
 
+#, fuzzy
 msgid "pingserver"
 msgstr "DNS Server 1"
 
+#, fuzzy
 msgid "pingtimeout"
 msgstr "Χρόνος Spinner"
 
@@ -1021,6 +1057,7 @@ msgstr "pll1_ndiv_mdiv"
 msgid "Pin"
 msgstr "PIN"
 
+#, fuzzy
 msgid "profile"
 msgstr "Αρχείο"
 
@@ -1063,6 +1100,7 @@ msgstr "Μέγεθος χωρισμού εγγραφών"
 msgid "Record Timer"
 msgstr "Timer εγγραφής"
 
+#, fuzzy
 msgid "record_split_size"
 msgstr "Μέγεθος χωρισμού εγγραφών"
 
@@ -1090,6 +1128,7 @@ msgstr "Mode επισκευής"
 msgid "Repeat"
 msgstr "Επανέλαβε"
 
+#, fuzzy
 msgid "Repeat type"
 msgstr "Επανέλαβε"
 
@@ -1177,6 +1216,7 @@ msgstr "Αποθήκευση Ρυθμίσεων"
 msgid "Scan"
 msgstr "Σάρωση"
 
+#, fuzzy
 msgid "Scart-Recorder"
 msgstr "Timer εγγραφής"
 
@@ -1240,6 +1280,7 @@ msgstr "sharedir"
 msgid "sharename"
 msgstr "Sharename"
 
+#, fuzzy
 msgid "Share Settings"
 msgstr "Αποθήκευση Ρυθμίσεων"
 
@@ -1288,6 +1329,7 @@ msgstr "Μικρό"
 msgid "SNR:"
 msgstr "SNR:"
 
+#, fuzzy
 msgid "Softcam selection"
 msgstr "Επιλογή Softcam"
 
@@ -1318,6 +1360,7 @@ msgstr "Χρόνος Spinner"
 msgid "ssl"
 msgstr "ssl"
 
+#, fuzzy
 msgid "Start"
 msgstr "Αρχή"
 
@@ -1327,6 +1370,7 @@ msgstr "Standby"
 msgid "Standby Brightness"
 msgstr "Φωτεινότητα VFD στο standby"
 
+#, fuzzy
 msgid "Standby Mode"
 msgstr "Standby Mode"
 
@@ -1357,6 +1401,7 @@ msgstr "Κυριακή"
 msgid "Swap"
 msgstr "swap"
 
+#, fuzzy
 msgid "Switch"
 msgstr "Εναλλαγή"
 
@@ -1396,12 +1441,14 @@ msgstr "Αναβάθμιση συστήματος - USB (online)"
 msgid "System - Usbupdate (tmp)"
 msgstr "Αναβάθμιση συστήματος - USB (tmp)"
 
+#, fuzzy
 msgid "sambaserver"
 msgstr "DNS Server 1"
 
 msgid "showip"
 msgstr "Εμφάνιση IP"
 
+#, fuzzy
 msgid "showtvinfo"
 msgstr "Εμφάνιση IP"
 
@@ -1420,21 +1467,25 @@ msgstr "szap_emul"
 msgid "standby_overclock"
 msgstr "standby_overclock"
 
+#, fuzzy
 msgid "standby_freq"
 msgstr "Standby"
 
 msgid "swap_max_sectors"
 msgstr "swap_max_sectors"
 
+#, fuzzy
 msgid "szap_diseqc_repeat"
 msgstr "Επαναλήψεις DiSEqC"
 
 msgid "swap"
 msgstr "swap"
 
+#, fuzzy
 msgid "swapsize"
 msgstr "wsize"
 
+#, fuzzy
 msgid "scartonstandby"
 msgstr "Standby"
 
@@ -1450,6 +1501,7 @@ msgstr "T"
 msgid "TEST"
 msgstr "TEST"
 
+#, fuzzy
 msgid "Test frequency"
 msgstr "Συχνότητα"
 
@@ -1492,6 +1544,7 @@ msgstr "Tone Mode"
 msgid "Top"
 msgstr "Επάνω"
 
+#, fuzzy
 msgid "Transponder:"
 msgstr "Transponder:"
 
@@ -1657,6 +1710,7 @@ msgstr "Web Radio Player"
 msgid "Wednesday"
 msgstr "Τετάρτη"
 
+#, fuzzy
 msgid "Weather Info"
 msgstr "Πληροφορίες Συστήματος"
 
@@ -1686,3 +1740,66 @@ msgstr "z"
 
 msgid "Z"
 msgstr "z"
+
+#~ msgid "power off"
+#~ msgstr "Σβήσιμο"
+
+#~ msgid "Sat"
+#~ msgstr "SAT"
+
+#~ msgid "scan"
+#~ msgstr "Σάρωση"
+
+#~ msgid "backup"
+#~ msgstr "Αποθ. Δεδομένων"
+
+#~ msgid "Auto Resolution"
+#~ msgstr "Αυτόματη Ανάλυση"
+
+#~ msgid "activate"
+#~ msgstr "Ενεργοποίηση"
+
+#~ msgid "Poweroff"
+#~ msgstr "κλείσιμο"
+
+#~ msgid "START"
+#~ msgstr "Αρχή"
+
+#~ msgid "Password"
+#~ msgstr "Password"
+
+#~ msgid "NEXT"
+#~ msgstr "Συνέχεια"
+
+#~ msgid "PREV"
+#~ msgstr "Πίσω"
+
+#~ msgid "FanControl"
+#~ msgstr "Έλεγχος ανεμιστήρα"
+
+#~ msgid "Test"
+#~ msgstr "TEST"
+
+#~ msgid "picture"
+#~ msgstr "Φωτογραφία"
+
+#~ msgid "Ok"
+#~ msgstr "OK"
+
+#~ msgid "Picture"
+#~ msgstr "Φωτογραφία"
+
+#~ msgid "Free Space"
+#~ msgstr "Ελεύθερη μνήμη"
+
+#~ msgid "Audio"
+#~ msgstr "AUDIO"
+
+#~ msgid "UNKNOWN"
+#~ msgstr "Άγνωστο"
+
+#~ msgid "Tuner "
+#~ msgstr "Tuner"
+
+#~ msgid "channel"
+#~ msgstr "Κανάλι"

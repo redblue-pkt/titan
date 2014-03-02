@@ -29,6 +29,7 @@ msgstr "3D-Mode instellingen"
 msgid "500rpm"
 msgstr "500 toeren"
 
+#, fuzzy
 msgid ""
 "A mount entry with this name already exists!\n"
 "Update existing entry and continue?"
@@ -63,6 +64,7 @@ msgstr ""
 "Weet u zeker dat u de partitie wilt testen?\n"
 "De box wordt vervolgens opnieuw opgestart."
 
+#, fuzzy
 msgid "A record hdd or a swapstick must be mounted!"
 msgstr ""
 "een hardeschijf of swapstick moet gemount zijn!\n"
@@ -78,6 +80,7 @@ msgstr "Atemio Panel"
 msgid "Wizard"
 msgstr "Setup-Assistent"
 
+#, fuzzy
 msgid "Aborting restoring..."
 msgstr "binnenkort beschikbaar..."
 
@@ -96,6 +99,7 @@ msgstr "Dolby Digital (AC3) downmix"
 msgid "AC3 Mode"
 msgstr "Dolby Digital (AC3) Modus"
 
+#, fuzzy
 msgid "Action after"
 msgstr "Na de opname"
 
@@ -135,9 +139,11 @@ msgstr "FTP Network Share toevoegen"
 msgid "add new share"
 msgstr "Nieuwe koppeling toevoegen"
 
+#, fuzzy
 msgid "add cifs share"
 msgstr "Cifs Network Share toevoegen"
 
+#, fuzzy
 msgid "add nfs share"
 msgstr "NFS-Server"
 
@@ -177,9 +183,11 @@ msgstr "Alle kanalen"
 msgid "alpha"
 msgstr "alfabetisch"
 
+#, fuzzy
 msgid "alt file"
 msgstr "bestand"
 
+#, fuzzy
 msgid "Are you sure you want to restore settings?"
 msgstr "Weet u zeker dat u deze netwerkkoppeling wilt verwijderen?"
 
@@ -255,6 +263,7 @@ msgstr "!!! Fout bij het maken van Backup !!!"
 msgid "Backup - Settings"
 msgstr "Backup wordt gemaakt"
 
+#, fuzzy
 msgid ""
 "Backup startet\n"
 "\n"
@@ -270,9 +279,11 @@ msgstr "BBGain"
 msgid "BER:"
 msgstr "BER:"
 
+#, fuzzy
 msgid "bestfit"
 msgstr "beste"
 
+#, fuzzy
 msgid "Beta Config"
 msgstr "Satellieten instellingen"
 
@@ -297,6 +308,7 @@ msgstr "Blauwe knop"
 msgid "Blue Key Action - Setup"
 msgstr "Blauweknop - functievastlegging"
 
+#, fuzzy
 msgid "Blue Key Action - Plugins"
 msgstr "Blauweknop - functievastlegging"
 
@@ -306,12 +318,14 @@ msgstr "Kaderkleur"
 msgid "bootlogos"
 msgstr ""
 
+#, fuzzy
 msgid "bootlogo"
 msgstr "Bootlogo"
 
 msgid "Bootlogo"
 msgstr "Bootlogo"
 
+#, fuzzy
 msgid "BootResolution"
 msgstr "Start resolutie"
 
@@ -336,12 +350,14 @@ msgstr "Helderheid"
 msgid "broadcast"
 msgstr "Uitzending"
 
+#, fuzzy
 msgid "browsers"
 msgstr "Netwerk browser"
 
 msgid "Cam / Emu"
 msgstr "CAM/EMU"
 
+#, fuzzy
 msgid "CAM PMT Mode"
 msgstr "Dolby Digital (AC3) Modus"
 
@@ -410,6 +426,7 @@ msgstr "Zenderlijst is leeg of corrupt (zender niet gevonden)!"
 msgid "Channel Search"
 msgstr "Zender zoeken"
 
+#, fuzzy
 msgid "Channel Service"
 msgstr "Zender zoeken"
 
@@ -437,6 +454,7 @@ msgstr "Kinderbescherming"
 msgid "Clear before scan"
 msgstr "Wissen voor zoeken"
 
+#, fuzzy
 msgid "Color Format Scart"
 msgstr "Kleurformat"
 
@@ -508,6 +526,7 @@ msgstr "Standaardinstelling"
 msgid "DEFAULT"
 msgstr "Standaardinstelling"
 
+#, fuzzy
 msgid "Default Icon"
 msgstr "Standaardinstelling"
 
@@ -559,21 +578,25 @@ msgstr "Direkte verbinding"
 msgid "disable"
 msgstr "uit"
 
+#, fuzzy
 msgid "DiSEqC Command Order"
 msgstr "DiSEqC-commandovolgorde"
 
+#, fuzzy
 msgid "DiSEqC Configuration"
 msgstr "Tuner Instellingen"
 
 msgid "DiSEqC Mode"
 msgstr "DiSEqC Modus"
 
+#, fuzzy
 msgid "DiSEqC repeats"
 msgstr "DiSEqC herhalingen"
 
 msgid "Diseqc Settings"
 msgstr "DiSEqC instellingen"
 
+#, fuzzy
 msgid "DiSEqC Sat Settings"
 msgstr "DiSEqC instellingen"
 
@@ -624,9 +647,11 @@ msgstr "Emu"
 msgid "emus"
 msgstr ""
 
+#, fuzzy
 msgid "emucontrol"
 msgstr "Ventilatoraansturing"
 
+#, fuzzy
 msgid "enable"
 msgstr "Enable"
 
@@ -663,12 +688,14 @@ msgstr "EPG opslagruimte"
 msgid "Error file not supported"
 msgstr "Fout, bestandsformaat wordt niet ondersteund!"
 
+#, fuzzy
 msgid "Error: create timer thread !!"
 msgstr "Bestand kan niet gemaakt worden"
 
 msgid "Error: open rc device !!"
 msgstr "Fout, afstandbediening kan niet geopend worden!"
 
+#, fuzzy
 msgid "Error: open rcsim device !!"
 msgstr "Fout, afstandbediening kan niet geopend worden!"
 
@@ -690,6 +717,7 @@ msgstr "Fout, skin kan niet geopend worden!"
 msgid "errorboot"
 msgstr "Errorboot"
 
+#, fuzzy
 msgid "errorstop"
 msgstr "STOP"
 
@@ -708,18 +736,21 @@ msgstr "Exit = restore afbreken"
 msgid "Extensions List"
 msgstr "Overzichtslijst van applicaties"
 
+#, fuzzy
 msgid "Extensions Menu"
 msgstr "Applicaties"
 
 msgid "Extensions"
 msgstr "Applicaties"
 
+#, fuzzy
 msgid "Expert Sat Settings"
 msgstr "Beeldverhouding instellen"
 
 msgid "Fancontrol"
 msgstr "Ventilatoraansturing"
 
+#, fuzzy
 msgid "Fast DiSEqC"
 msgstr "DiSEqC"
 
@@ -753,6 +784,7 @@ msgstr "FDMA bypass"
 msgid "First Wizzard"
 msgstr "Start assistent"
 
+#, fuzzy
 msgid "File Browser"
 msgstr "Internet Browser"
 
@@ -780,6 +812,7 @@ msgstr ""
 msgid "Fontsize adjust in pixel"
 msgstr "Tekengrootte aanpassen in pixels"
 
+#, fuzzy
 msgid "fontsize"
 msgstr "grootte"
 
@@ -795,6 +828,7 @@ msgstr "Gevonden radio"
 msgid "Found TV:"
 msgstr "Gevonden TV"
 
+#, fuzzy
 msgid ""
 "Found running Record.\n"
 "Realy shutdown ?"
@@ -825,12 +859,14 @@ msgstr "Frequentie:"
 msgid "Friday"
 msgstr "Vrijdag"
 
+#, fuzzy
 msgid "fsckrecord"
 msgstr "Opname"
 
 msgid "fsckroot"
 msgstr "Bestandssysteemcontrole Root partitie"
 
+#, fuzzy
 msgid "fsckswap"
 msgstr "Swap"
 
@@ -849,6 +885,7 @@ msgstr "Complete achtergrond met cover"
 msgid "gateway"
 msgstr "Gateway"
 
+#, fuzzy
 msgid "Germany"
 msgstr "Duits"
 
@@ -864,6 +901,7 @@ msgstr "Grafische EPG"
 msgid "Graph. EPG"
 msgstr "Graf. EPG"
 
+#, fuzzy
 msgid "Graphic MULTI EPG - Bouquets -"
 msgstr "Grafische Multi-EPG - Favorieten"
 
@@ -888,6 +926,7 @@ msgstr "Dutch"
 msgid "GUI Restart"
 msgstr "GUI herstart"
 
+#, fuzzy
 msgid "Goto startpos"
 msgstr "Autostart"
 
@@ -928,9 +967,11 @@ msgstr "Webserver instellingen"
 msgid "HTTPD Port"
 msgstr "Webserver poort"
 
+#, fuzzy
 msgid "Image Information"
 msgstr "Informatie"
 
+#, fuzzy
 msgid "Imdb Directory"
 msgstr "scan Directory"
 
@@ -970,6 +1011,7 @@ msgstr "initialiseren"
 msgid "install"
 msgstr "Installeren"
 
+#, fuzzy
 msgid "Install"
 msgstr "Installeren"
 
@@ -988,15 +1030,19 @@ msgstr "Omkering"
 msgid "Inversion:"
 msgstr "Omkering:"
 
+#, fuzzy
 msgid "ipaddresse"
 msgstr "DNS Adres"
 
+#, fuzzy
 msgid "Ipk Install Info"
 msgstr "TPK Pakket is succesvol geinstalleerd"
 
+#, fuzzy
 msgid "Ipk Install - select file"
 msgstr "TPK installeren - Kies categorie"
 
+#, fuzzy
 msgid "IPK install (online)"
 msgstr "TPK upgrade (online)"
 
@@ -1006,6 +1052,7 @@ msgstr "IPK Pakketten verwijderen"
 msgid "Ipk Remove - select file"
 msgstr "IPK Pakketten verwijderen - kies bestand"
 
+#, fuzzy
 msgid "Ipk Remove Info"
 msgstr "TPK Pakket succesvol gewist"
 
@@ -1045,6 +1092,7 @@ msgstr "letterbox"
 msgid "Listbox Select"
 msgstr "Listbox keuze"
 
+#, fuzzy
 msgid "LNB Configuration"
 msgstr "Tuner Instellingen"
 
@@ -1054,9 +1102,11 @@ msgstr "LNB instellingen"
 msgid "LNB"
 msgstr "LNB"
 
+#, fuzzy
 msgid "loadpartition"
 msgstr "Polarization"
 
+#, fuzzy
 msgid "LOF"
 msgstr "LOF/H"
 
@@ -1090,6 +1140,7 @@ msgstr "Hoofdmenu"
 msgid "Manual Search"
 msgstr "Handmatig zoeken"
 
+#, fuzzy
 msgid "Manuel Scan"
 msgstr "Handmatig zoeken"
 
@@ -1114,6 +1165,7 @@ msgstr "Media Center"
 msgid "Media Player"
 msgstr "Media afspelen"
 
+#, fuzzy
 msgid "MediaCenter Icon"
 msgstr "Media Center"
 
@@ -1225,6 +1277,7 @@ msgstr "Network Adapter Settings"
 msgid "Network Adapter Test"
 msgstr "Netzwerkadapter Test"
 
+#, fuzzy
 msgid "Network Assistant"
 msgstr "Netwerk opnieuw opstarten"
 
@@ -1264,6 +1317,7 @@ msgstr "nooit"
 msgid "Nfs Server Settings"
 msgstr "NFS Server instellingen"
 
+#, fuzzy
 msgid "nfsserver"
 msgstr "NFS-Server"
 
@@ -1295,12 +1349,15 @@ msgstr ""
 msgid "nothing"
 msgstr "niks doen"
 
+#, fuzzy
 msgid "No backup folders found!!!"
 msgstr "Geen Backupmap gevonden"
 
+#, fuzzy
 msgid "non"
 msgstr "geen"
 
+#, fuzzy
 msgid "noaudiosync"
 msgstr "MUSIK"
 
@@ -1313,6 +1370,7 @@ msgstr "Aantal USB-Kaartlezers"
 msgid "OFF"
 msgstr "uit"
 
+#, fuzzy
 msgid "Off"
 msgstr "uit"
 
@@ -1322,15 +1380,18 @@ msgstr "uit"
 msgid "OK"
 msgstr "Ok"
 
+#, fuzzy
 msgid "OK = start restore"
 msgstr "Het netwerk wordt opnieuw gestart"
 
+#, fuzzy
 msgid "oldaudiofw"
 msgstr "Old Audiofw"
 
 msgid "Old Audiofw"
 msgstr "Old Audiofw"
 
+#, fuzzy
 msgid "oldvideofw"
 msgstr "FILMEN"
 
@@ -1343,6 +1404,7 @@ msgstr "AAN"
 msgid "On"
 msgstr "Aan"
 
+#, fuzzy
 msgid "ON"
 msgstr "geen"
 
@@ -1352,9 +1414,11 @@ msgstr "eenmalig"
 msgid "Only free scan"
 msgstr "Alleen niet gecodeerde zenders"
 
+#, fuzzy
 msgid "Only free channel scan"
 msgstr "Alleen niet gecodeerde zenders"
 
+#, fuzzy
 msgid "only_boot_overclock"
 msgstr "Alleen bij opstarten overklokken"
 
@@ -1391,6 +1455,7 @@ msgstr "Overklok instellingen"
 msgid "Overclocking"
 msgstr "Overklokken"
 
+#, fuzzy
 msgid "panscan"
 msgstr "starten"
 
@@ -1403,6 +1468,7 @@ msgstr "Wachtwoord"
 msgid "PCR PID:"
 msgstr "PCR PID:"
 
+#, fuzzy
 msgid "Piconpath"
 msgstr "Opnamepad instellen"
 
@@ -1442,9 +1508,11 @@ msgstr "Pin"
 msgid "PIN:"
 msgstr "PIN:"
 
+#, fuzzy
 msgid "pingserver"
 msgstr "NFS-Server"
 
+#, fuzzy
 msgid "pingtimeout"
 msgstr "Spinnertime"
 
@@ -1466,6 +1534,7 @@ msgstr "Afspeellijst modus"
 msgid "PlayList"
 msgstr "afspeellijst"
 
+#, fuzzy
 msgid "playlist"
 msgstr "Afspeellijst modus"
 
@@ -1505,6 +1574,7 @@ msgstr "Pools"
 msgid "portmap"
 msgstr "portmap"
 
+#, fuzzy
 msgid "Power action"
 msgstr "Aktie bij het indrukken van de aan/uit knop"
 
@@ -1538,12 +1608,14 @@ msgstr "Terug"
 msgid "press red"
 msgstr "druk rode toets"
 
+#, fuzzy
 msgid "profile"
 msgstr "bestand"
 
 msgid "Program Info"
 msgstr "Programa informatie"
 
+#, fuzzy
 msgid "progressbar"
 msgstr "druk rode toets"
 
@@ -1580,12 +1652,14 @@ msgstr "Poort voor proxyserver"
 msgid "proxyuser"
 msgstr "Gebruikersnaam voor Proxyserver"
 
+#, fuzzy
 msgid "PSK auto"
 msgstr "automatisch"
 
 msgid "QAM auto"
 msgstr "QAM automatisch"
 
+#, fuzzy
 msgid "QPSK auto"
 msgstr "QAM automatisch"
 
@@ -1610,9 +1684,11 @@ msgstr "Random-on"
 msgid "rcreboot"
 msgstr "RC herstart"
 
+#, fuzzy
 msgid "Realy Delete ?"
 msgstr "Wilt u dit bestand wissen?"
 
+#, fuzzy
 msgid "Realy restore default settings ?"
 msgstr "Fabrieksinstelling terugzetten"
 
@@ -1655,6 +1731,7 @@ msgstr "Opname en EPG"
 msgid "record_max_sectors"
 msgstr "record_max_sectors"
 
+#, fuzzy
 msgid "record_split_size"
 msgstr "Opname bestandsgrootte splitsen na"
 
@@ -1673,12 +1750,14 @@ msgstr "Rode knop"
 msgid "Red Key Action - Setup"
 msgstr "Rode knop - functievastlegging"
 
+#, fuzzy
 msgid "Red Key Action - Plugins"
 msgstr "Rode knop - functievastlegging"
 
 msgid "Reduce Standby frequency"
 msgstr "CPU onderklokken in standby"
 
+#, fuzzy
 msgid "remove share"
 msgstr "Service verwijderen"
 
@@ -1736,6 +1815,7 @@ msgstr "Netwerk herstarten?"
 msgid "Restart Network"
 msgstr "Het netwerk wordt opnieuw gestart"
 
+#, fuzzy
 msgid "Restart tiTan"
 msgstr "Herstart"
 
@@ -1781,6 +1861,7 @@ msgstr "Russisch"
 msgid "Samba Server Settings"
 msgstr "Samba Server instellingen"
 
+#, fuzzy
 msgid "sambaserver"
 msgstr "Samba Server"
 
@@ -1820,6 +1901,7 @@ msgstr "Satelliet"
 msgid "Satellites"
 msgstr "Satellieten"
 
+#, fuzzy
 msgid "Satelite Entrys"
 msgstr "Satellieten"
 
@@ -1841,6 +1923,7 @@ msgstr "OPSLAAN"
 msgid "save network settings ?"
 msgstr "Netwerkinstellingen opslaan? "
 
+#, fuzzy
 msgid "sbs"
 msgstr "ssl"
 
@@ -1859,9 +1942,11 @@ msgstr "scan wlan"
 msgid "Scanning Network Shares, please wait !!"
 msgstr "Zoeken naar netwerk shares, ogenblik aub !!"
 
+#, fuzzy
 msgid "scartonstandby"
 msgstr "Standby"
 
+#, fuzzy
 msgid "Scart-Recorder"
 msgstr "Opname Timer"
 
@@ -1934,6 +2019,7 @@ msgstr "Instellingen..."
 msgid "Settings OK ?"
 msgstr "Instellingen Ok?"
 
+#, fuzzy
 msgid "Share Settings"
 msgstr "Instellingen opslaan"
 
@@ -1943,6 +2029,7 @@ msgstr "sharedir"
 msgid "sharename"
 msgstr "Sharename"
 
+#, fuzzy
 msgid "Sharename"
 msgstr "Sharename"
 
@@ -1961,9 +2048,11 @@ msgstr "In Display tonen"
 msgid "showip"
 msgstr "Toon IP adres"
 
+#, fuzzy
 msgid "showtvinfo"
 msgstr "Toon IP adres"
 
+#, fuzzy
 msgid "Show Module Messages"
 msgstr "Toon CI-Modules"
 
@@ -1976,6 +2065,7 @@ msgstr "Signaal:"
 msgid "Single Sat"
 msgstr "Enkele Satellieten"
 
+#, fuzzy
 msgid "Single Satelite"
 msgstr "Enkele Satellieten"
 
@@ -2072,48 +2162,59 @@ msgstr "Standby / Uitschakelen"
 msgid "Standby Brightness"
 msgstr "Standby Helderheid"
 
+#, fuzzy
 msgid "Standby Mode"
 msgstr "Standby Mode"
 
 msgid "Standby"
 msgstr "Standby"
 
+#, fuzzy
 msgid "standby_freq"
 msgstr "Standby"
 
 msgid "Standby frequency"
 msgstr "Ingestelde CPU frequentie in standby"
 
+#, fuzzy
 msgid "standby_overclock"
 msgstr "Alleen bij opstarten overklokken"
 
 msgid "Start HTTPD"
 msgstr "Start Webserver"
 
+#, fuzzy
 msgid "Start"
 msgstr "START"
 
+#, fuzzy
 msgid "starting Kernel Update ?"
 msgstr "Complete update starten?"
 
+#, fuzzy
 msgid "starting Fw Update ?"
 msgstr "Complete update starten?"
 
+#, fuzzy
 msgid "starting Root Update ?"
 msgstr "Complete update starten?"
 
+#, fuzzy
 msgid "starting Var Update ?"
 msgstr "Complete update starten?"
 
 msgid "starting Full Update ?"
 msgstr "Complete update starten?"
 
+#, fuzzy
 msgid "starting Usb Update ?"
 msgstr "Complete update starten?"
 
+#, fuzzy
 msgid "starting Fullusb Update ?"
 msgstr "Complete update starten?"
 
+#, fuzzy
 msgid "starting Usb (unknown release grp) Update ?"
 msgstr "Complete update starten?"
 
@@ -2123,6 +2224,7 @@ msgstr "QtBrowser starten?"
 msgid "STOP/START"
 msgstr "STOP/START"
 
+#, fuzzy
 msgid "stream is running !"
 msgstr "geen Live Stream actief"
 
@@ -2156,33 +2258,40 @@ msgstr "Swap"
 msgid "swap"
 msgstr "Swap"
 
+#, fuzzy
 msgid "swapemus"
 msgstr "Swap"
 
 msgid "swap_max_sectors"
 msgstr "max. Swap Sectoren"
 
+#, fuzzy
 msgid "swapnetwork"
 msgstr "netwerk"
 
 msgid "swappicons"
 msgstr "Swap-Picons"
 
+#, fuzzy
 msgid "swapscreensaver"
 msgstr "Screensaver type"
 
+#, fuzzy
 msgid "swapskins"
 msgstr "Swap"
 
+#, fuzzy
 msgid "swapsystem"
 msgstr "Systeem"
 
+#, fuzzy
 msgid "swapsize"
 msgstr "wsize"
 
 msgid "swapsystems"
 msgstr "Swap-System"
 
+#, fuzzy
 msgid "Switch"
 msgstr "Omschakelen"
 
@@ -2228,6 +2337,7 @@ msgstr "Systeem:"
 msgid "szap"
 msgstr "sZap"
 
+#, fuzzy
 msgid "szap_diseqc_repeat"
 msgstr "DiSEqC herhalingen"
 
@@ -2240,12 +2350,14 @@ msgstr "sZap Front-End"
 msgid "szaplong"
 msgstr "lange sZap "
 
+#, fuzzy
 msgid "tab"
 msgstr "Stabil"
 
 msgid "telnet"
 msgstr "Telnet"
 
+#, fuzzy
 msgid "Test frequency"
 msgstr "Frequentie stap"
 
@@ -2307,6 +2419,7 @@ msgstr "Tone Modus"
 msgid "Top"
 msgstr "Top (Processen)"
 
+#, fuzzy
 msgid "Transponder:"
 msgstr "Transponder:"
 
@@ -2340,6 +2453,7 @@ msgstr "Kanaal niet beschikbaar !"
 msgid "tuxtxt_cpufrequ_workaround"
 msgstr "Teletext CPU Frequentie fix"
 
+#, fuzzy
 msgid "TV (Info)"
 msgstr "Info"
 
@@ -2358,6 +2472,7 @@ msgstr "Type"
 msgid "Type:"
 msgstr "Type:"
 
+#, fuzzy
 msgid "type of channelsearch"
 msgstr "Zender zoeken"
 
@@ -2382,6 +2497,7 @@ msgstr "Deactiveren"
 msgid "update"
 msgstr "Update"
 
+#, fuzzy
 msgid "Update"
 msgstr "Update"
 
@@ -2478,6 +2594,7 @@ msgstr "VLC Player"
 msgid "Voltage Mode"
 msgstr "Voltage Mode"
 
+#, fuzzy
 msgid "Volume off"
 msgstr "Volume uit"
 
@@ -2493,6 +2610,7 @@ msgstr "Zenderoeken, wacht op einde"
 msgid "wait for stopping download"
 msgstr "Wachten, de download wordt gestopt"
 
+#, fuzzy
 msgid "Weather Info"
 msgstr "Weer tonen"
 
@@ -2508,6 +2626,7 @@ msgstr "Woensdag"
 msgid "weekly"
 msgstr "Weekelijks"
 
+#, fuzzy
 msgid "wlan"
 msgstr "scan wlan"
 
@@ -2526,6 +2645,7 @@ msgstr "wsize"
 msgid "yes"
 msgstr "Ja"
 
+#, fuzzy
 msgid "Yes"
 msgstr "Ja"
 
@@ -2535,12 +2655,15 @@ msgstr "Ja"
 msgid "yellow"
 msgstr "geel"
 
+#, fuzzy
 msgid "DEU (DVB Subtitle)"
 msgstr "Ondertiteling"
 
+#, fuzzy
 msgid "ENG (DVB-Subtitle)"
 msgstr "Ondertiteling"
 
+#, fuzzy
 msgid "FRA (DVB-Subtitle)"
 msgstr "Ondertiteling"
 
@@ -2562,6 +2685,7 @@ msgstr "Age Protect"
 msgid "Protect Channel Freetime (min)"
 msgstr "Protect Channel Freetime (min)"
 
+#, fuzzy
 msgid " SELECT"
 msgstr "SELECTEER"
 
@@ -2626,6 +2750,7 @@ msgstr "starten"
 msgid "Install netsurf Internetbrowser Tpk first !"
 msgstr "Internetbrowser netsurf is niet geinstalleerd."
 
+#, fuzzy
 msgid "start Internet browser now ?"
 msgstr "Internet Browser"
 
@@ -2662,6 +2787,7 @@ msgstr "sla positie op"
 msgid "goto position"
 msgstr "ga naar positie"
 
+#, fuzzy
 msgid "start position"
 msgstr "sla positie op"
 
@@ -2733,6 +2859,7 @@ msgstr "noord"
 msgid "south"
 msgstr "zuid"
 
+#, fuzzy
 msgid "swaptool"
 msgstr "Swap"
 
@@ -2754,6 +2881,7 @@ msgstr "Wanneer moeten de epg opgeslagen worden"
 msgid "OWN POS"
 msgstr "Eigen Positie"
 
+#, fuzzy
 msgid "Own Position"
 msgstr "Rotor Positie"
 
@@ -2784,9 +2912,11 @@ msgstr "Aktie na timeshift"
 msgid "Show Timeline in Channellist"
 msgstr "Zeige Fortschritsbalken in Kanalliste"
 
+#, fuzzy
 msgid "TiThek PlayList"
 msgstr "afspeellijst"
 
+#, fuzzy
 msgid "start, Playback"
 msgstr "Weergave starten"
 
@@ -2809,6 +2939,7 @@ msgstr ""
 msgid "File exist, overwrite?"
 msgstr "Bestand bestaat reeds, overschrijven?"
 
+#, fuzzy
 msgid "animation 1"
 msgstr "Informatie"
 
@@ -3072,15 +3203,19 @@ msgstr "DLNA instellingen"
 msgid "Interface"
 msgstr "Interface"
 
+#, fuzzy
 msgid "Medie Dir 1"
 msgstr "Media map 1"
 
+#, fuzzy
 msgid "Medie Dir 2"
 msgstr "Media map 2"
 
+#, fuzzy
 msgid "Medie Dir 3"
 msgstr "Media map 3"
 
+#, fuzzy
 msgid "Medie Dir 4"
 msgstr "Media map 4"
 
@@ -3153,6 +3288,7 @@ msgstr "Channellist view"
 msgid "hidden"
 msgstr "verbergen"
 
+#, fuzzy
 msgid "deactive"
 msgstr "Autostart geactiveerd"
 
@@ -3162,18 +3298,21 @@ msgstr "TPK upgrade (online)"
 msgid "TPK media (media)"
 msgstr "TPK media (media)"
 
+#, fuzzy
 msgid "No output found !"
 msgstr "Geen applicatie gevonden"
 
 msgid "swapplayer"
 msgstr "Swap-Multimedia Player"
 
+#, fuzzy
 msgid "swaptools"
 msgstr "Swap"
 
 msgid "games"
 msgstr ""
 
+#, fuzzy
 msgid "swapbrowser"
 msgstr "Netwerk browser"
 
@@ -3233,6 +3372,7 @@ msgstr ""
 "Gebruik het stuur-kruis en de extra getoonde knopppen op uw\n"
 "afstandsbediening om te navigeren."
 
+#, fuzzy
 msgid ""
 "Here you can choose to configure your tuner. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
@@ -3242,6 +3382,7 @@ msgstr ""
 "Gebruik het stuur-kruis en de extra getoonde knopppen op uw\n"
 "afstandsbediening om te navigeren."
 
+#, fuzzy
 msgid ""
 "Here they can do for your chosen tuner to receive settings. Use to navigate "
 "the control cross and the extra buttons displayed with your remote control "
@@ -3262,6 +3403,7 @@ msgstr ""
 "Gebruik het stuur-kruis en de extra getoonde knopppen op uw\n"
 "afstandsbediening om te navigeren."
 
+#, fuzzy
 msgid ""
 "Here they can do for your chosen tuner to ownpos settings. Use to navigate "
 "the control cross and the extra buttons displayed with your remote control "
@@ -3628,6 +3770,7 @@ msgstr ""
 "Indien u de Systeem update  functie onder -Systeem- gebruikt, dan wordt dit "
 "herstelpunt automatisch gemaakt!"
 
+#, fuzzy
 msgid ""
 "Can't start system update\n"
 "Please remove Stick/HDD and try again"
@@ -3685,12 +3828,14 @@ msgstr ""
 msgid "Tpk Tmp Info"
 msgstr "Tpk Tmp Info"
 
+#, fuzzy
 msgid "Tpk Media Info"
 msgstr "MediaDB Scan informatie"
 
 msgid "Networkbrowser - show Shares"
 msgstr "Netwerk Browser - toon koppelingen"
 
+#, fuzzy
 msgid "Installed version:"
 msgstr "Omkering:"
 
@@ -4016,6 +4161,7 @@ msgstr ""
 "TPK installatie afgesloten\n"
 "uw box wordt opnieuw gestart"
 
+#, fuzzy
 msgid "TPK Remove done your system will reboot !"
 msgstr ""
 "TPK upgrade afgerond\n"
@@ -4048,6 +4194,7 @@ msgstr "MediaDB scan gestopt"
 msgid "This file doesn't exist, or has been removed"
 msgstr "Bestand bestaat niet of is verplaatst"
 
+#, fuzzy
 msgid ""
 "Here you can select your reader. Use to navigate the control cross and the "
 "extra buttons displayed with your remote control to select."
@@ -4171,12 +4318,15 @@ msgstr "Gebruik het stuur-kruis voor snel zappen en volume regeling"
 msgid "Deactivate MiniTV"
 msgstr "Deactivate MiniTV"
 
+#, fuzzy
 msgid "Caching Playback (10MB / 120s)"
 msgstr "Streaming Playback Caching (10MB)"
 
+#, fuzzy
 msgid "Caching Playback (20MB / 240s)"
 msgstr "Streaming Playback Caching (2MB)"
 
+#, fuzzy
 msgid "Caching Playback (30MB / 360s)"
 msgstr "Streaming Playback Caching (3MB)"
 
@@ -4237,6 +4387,7 @@ msgstr "DNS Adres"
 msgid "usedns"
 msgstr "usedns"
 
+#, fuzzy
 msgid "Search on Kinox"
 msgstr "Search on Kinox"
 
@@ -4330,6 +4481,7 @@ msgstr "CEC einschalten"
 msgid "Ext. Modul detect (needs reboot)"
 msgstr "Erw. Modulerkennung (reboot erforderlich)"
 
+#, fuzzy
 msgid "Can't create Path"
 msgstr "Verzeichnis anlegen"
 
@@ -4339,9 +4491,11 @@ msgstr "Verzeichnis anlegen"
 msgid "Use numeric keys"
 msgstr "Benutze Nummerntasten"
 
+#, fuzzy
 msgid "Mail send succesfull"
 msgstr "Backup gelukt"
 
+#, fuzzy
 msgid "Can't send Mail"
 msgstr "Bestand kan niet geopend worden"
 
@@ -4390,9 +4544,11 @@ msgstr ""
 msgid "Can't install Package. Package to big."
 msgstr "Paket zu groß. Installation nicht möglich."
 
+#, fuzzy
 msgid "Format and restore default settings"
 msgstr "Fabrieksinstelling terugzetten"
 
+#, fuzzy
 msgid "Format and backup/restore settings"
 msgstr "Instellingen terugzetten lukt niet"
 
@@ -4508,27 +4664,34 @@ msgstr "Unstabil"
 msgid "Box recording finished poweroff in 30sec !"
 msgstr "Aufnahme beendet. Box wird in 30sek ausgeschaltet!"
 
+#, fuzzy
 msgid "Timer Record start !"
 msgstr "Map voor Timeropname"
 
 msgid "Choice Install Medium"
 msgstr "Installation Auswahl"
 
+#, fuzzy
 msgid "Install to Flash (permanent)"
 msgstr "Config vom Flash (permanent) verwenden"
 
+#, fuzzy
 msgid "Install to Flash (temporary)"
 msgstr "Config vom Flash (temporär) verwenden"
 
+#, fuzzy
 msgid "Install to Stick or HDD"
 msgstr "Config vom Stick / HDD verwenden"
 
+#, fuzzy
 msgid "Flash (permanent)"
 msgstr "Config vom Flash (permanent) verwenden"
 
+#, fuzzy
 msgid "Flash (temporary)"
 msgstr "Config vom Flash (temporär) verwenden"
 
+#, fuzzy
 msgid "Stick or HDD"
 msgstr "Config vom Stick / HDD verwenden"
 
@@ -4611,3 +4774,63 @@ msgstr "Krieg"
 
 msgid "Music"
 msgstr ""
+
+#~ msgid "Gui Restart"
+#~ msgstr "GUI herstart"
+
+#~ msgid "Sat"
+#~ msgstr "Satellieten"
+
+#~ msgid "Menu"
+#~ msgstr "Menu"
+
+#~ msgid "backup"
+#~ msgstr "Backup opslaan"
+
+#~ msgid "RED"
+#~ msgstr "rood"
+
+#~ msgid "GREEN"
+#~ msgstr "groen"
+
+#~ msgid "BLUE"
+#~ msgstr "blauw"
+
+#~ msgid "title"
+#~ msgstr "Titel"
+
+#~ msgid "activate"
+#~ msgstr "Activeren"
+
+#~ msgid "frequency"
+#~ msgstr "Frequentie"
+
+#~ msgid "FanControl"
+#~ msgstr "Ventilatoraansturing"
+
+#~ msgid "Test"
+#~ msgstr "TEST"
+
+#~ msgid "Edit"
+#~ msgstr "Bewerken"
+
+#~ msgid "Ok"
+#~ msgstr "Ok"
+
+#~ msgid "Picture"
+#~ msgstr "PICTURE"
+
+#~ msgid "Title"
+#~ msgstr "Titel"
+
+#~ msgid "Free Space"
+#~ msgstr "Vrije opslagruimte"
+
+#~ msgid "Audio"
+#~ msgstr "MUSIK"
+
+#~ msgid "UNKNOWN"
+#~ msgstr "onbekend"
+
+#~ msgid "Tuner "
+#~ msgstr "Tuner"
