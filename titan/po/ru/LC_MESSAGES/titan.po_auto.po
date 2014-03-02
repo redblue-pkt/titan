@@ -152,7 +152,6 @@ msgstr "Начало"
 msgid "BER:"
 msgstr "BER:"
 
-#, fuzzy
 msgid "Beta Config"
 msgstr "Sat Конфигурация"
 
@@ -168,11 +167,9 @@ msgstr "Большой"
 msgid "Blue Button"
 msgstr "Синяя кнопка"
 
-#, fuzzy
 msgid "bootlogo"
 msgstr "Загружать лого"
 
-#, fuzzy
 msgid "BootResolution"
 msgstr "Разрешение"
 
@@ -200,7 +197,6 @@ msgstr "C"
 msgid "Cam / Emu"
 msgstr "Cam / Emu"
 
-#, fuzzy
 msgid "CAM PMT Mode"
 msgstr "AC3 режим"
 
@@ -237,7 +233,6 @@ msgstr "Очистить перед поиском"
 msgid "Clear"
 msgstr "Очистить"
 
-#, fuzzy
 msgid "Color Format Scart"
 msgstr "Формат цвета"
 
@@ -319,7 +314,6 @@ msgstr "Сортировка папок"
 msgid "Diseqc Command Order"
 msgstr "Diseqc порядок"
 
-#, fuzzy
 msgid "DiSEqC Configuration"
 msgstr "Конфигурация тюнера"
 
@@ -358,7 +352,6 @@ msgstr "Восток / Запад"
 msgid "emu"
 msgstr "Эмулятор"
 
-#, fuzzy
 msgid "emucontrol"
 msgstr "Управление охлаждением"
 
@@ -395,7 +388,6 @@ msgstr "Ошибка остановки"
 msgid "EXIT"
 msgstr "Выход"
 
-#, fuzzy
 msgid "Extensions Menu"
 msgstr "Плагины"
 
@@ -411,7 +403,6 @@ msgstr "F"
 msgid "Fancontrol"
 msgstr "Управление охлаждением"
 
-#, fuzzy
 msgid "Fast DiSEqC"
 msgstr "DiSEqC"
 
@@ -460,7 +451,6 @@ msgstr "Flashupdate (tmp)"
 msgid "Fontsize adjust in pixel"
 msgstr "Установить размер шрифта в пикселях"
 
-#, fuzzy
 msgid "fontsize"
 msgstr "Размер"
 
@@ -488,14 +478,12 @@ msgstr "Частота"
 msgid "Friday"
 msgstr "Пятница"
 
-#, fuzzy
 msgid "fsckrecord"
 msgstr "Проверка файлофой системы root"
 
 msgid "fsckroot"
 msgstr "Проверка файлофой системы root"
 
-#, fuzzy
 msgid "fsckswap"
 msgstr "swap"
 
@@ -553,7 +541,6 @@ msgstr "I"
 msgid "I"
 msgstr "I"
 
-#, fuzzy
 msgid "Image Information"
 msgstr "Информация"
 
@@ -656,7 +643,6 @@ msgstr "Ширина"
 msgid "Listbox Select"
 msgstr "Listbox выбор"
 
-#, fuzzy
 msgid "LNB Configuration"
 msgstr "Конфигурация тюнера"
 
@@ -666,11 +652,9 @@ msgstr "LNB настройки"
 msgid "LNB"
 msgstr "LNB"
 
-#, fuzzy
 msgid "loadpartition"
 msgstr "Поляризация"
 
-#, fuzzy
 msgid "LOF"
 msgstr "LOF/H"
 
@@ -683,7 +667,6 @@ msgstr "LOF/L"
 msgid "LOG (Text)"
 msgstr "LOG (Текст)"
 
-#, fuzzy
 msgid "Logitude"
 msgstr "Ширина"
 
@@ -702,7 +685,6 @@ msgstr "Главное меню"
 msgid "Manuel Scan"
 msgstr "Ручной поиск"
 
-#, fuzzy
 msgid "Manuell Search"
 msgstr "Поиск каналов"
 
@@ -796,7 +778,6 @@ msgstr "Настройка сетевого адаптера"
 msgid "Network Adapter Test"
 msgstr "Тест сетевого адаптера"
 
-#, fuzzy
 msgid "Network Assistant"
 msgstr "Перезапуск сети"
 
@@ -824,11 +805,9 @@ msgstr "Следующий"
 msgid "Nfs Server Settings"
 msgstr "Настройки NFS сервера"
 
-#, fuzzy
 msgid "nfsserver"
 msgstr "DNS сервер 1"
 
-#, fuzzy
 msgid "noaudiosync"
 msgstr "Аудио"
 
@@ -847,11 +826,9 @@ msgstr "O"
 msgid "OK"
 msgstr "ОК"
 
-#, fuzzy
 msgid "oldaudiofw"
 msgstr "Аудио"
 
-#, fuzzy
 msgid "oldvideofw"
 msgstr "Видео"
 
@@ -903,7 +880,6 @@ msgstr "Пароль"
 msgid "PCR PID:"
 msgstr "PCR PID:"
 
-#, fuzzy
 msgid "Piconpath"
 msgstr "Место хранения записи"
 
@@ -940,11 +916,9 @@ msgstr "Pin"
 msgid "PIN:"
 msgstr "PIN:"
 
-#, fuzzy
 msgid "pingserver"
 msgstr "DNS сервер 1"
 
-#, fuzzy
 msgid "pingtimeout"
 msgstr "Время spinner"
 
@@ -960,7 +934,6 @@ msgstr "Playlist - выберите свой playlist !"
 msgid "PlayList"
 msgstr "Playlist"
 
-#, fuzzy
 msgid "playlist"
 msgstr "Список обновлений"
 
@@ -1012,7 +985,6 @@ msgstr "Выключение"
 msgid "Prev"
 msgstr "Предыдущий"
 
-#, fuzzy
 msgid "profile"
 msgstr "Файл"
 
@@ -1097,7 +1069,6 @@ msgstr "Таймер записи"
 msgid "record_max_sectors"
 msgstr "Максимальный сектор записи"
 
-#, fuzzy
 msgid "record_split_size"
 msgstr "Split размер для записи"
 
@@ -1179,7 +1150,6 @@ msgstr "S"
 msgid "Samba Server Settings"
 msgstr "Настройка Samba сервера"
 
-#, fuzzy
 msgid "sambaserver"
 msgstr "DNS сервер 1"
 
@@ -1213,11 +1183,9 @@ msgstr "Сохранить"
 msgid "Scan"
 msgstr "Поиск"
 
-#, fuzzy
 msgid "scartonstandby"
 msgstr "Standby"
 
-#, fuzzy
 msgid "Scart-Recorder"
 msgstr "Таймер записи"
 
@@ -1272,7 +1240,6 @@ msgstr "Настройки"
 msgid "Settings..."
 msgstr "Настройки..."
 
-#, fuzzy
 msgid "Share Settings"
 msgstr "Сохранить Settings"
 
@@ -1294,7 +1261,6 @@ msgstr "Показывать на дисплее"
 msgid "showip"
 msgstr "Показывать IP"
 
-#, fuzzy
 msgid "showtvinfo"
 msgstr "Показывать IP"
 
@@ -1334,7 +1300,6 @@ msgstr "Маленький"
 msgid "SNR:"
 msgstr "SNR:"
 
-#, fuzzy
 msgid "Softcam auswahl:"
 msgstr "Softcam панель"
 
@@ -1380,7 +1345,6 @@ msgstr "Режим Standby"
 msgid "Standby"
 msgstr "Standby"
 
-#, fuzzy
 msgid "standby_freq"
 msgstr "Standby"
 
@@ -1417,11 +1381,9 @@ msgstr "swap"
 msgid "swap_max_sectors"
 msgstr "Максимальный сектор swap"
 
-#, fuzzy
 msgid "swapsize"
 msgstr "wsize"
 
-#, fuzzy
 msgid "Switch"
 msgstr "Переключатель"
 
@@ -1464,7 +1426,6 @@ msgstr "Система:"
 msgid "szap"
 msgstr "szap"
 
-#, fuzzy
 msgid "szap_diseqc_repeat"
 msgstr "Diseqc повторы"
 
@@ -1486,7 +1447,6 @@ msgstr "T"
 msgid "telnet"
 msgstr "Телнет"
 
-#, fuzzy
 msgid "Test frequency"
 msgstr "Частота"
 
@@ -1526,7 +1486,6 @@ msgstr "Tone режим"
 msgid "Top"
 msgstr "Вверх"
 
-#, fuzzy
 msgid "Transponder:"
 msgstr "Транспондер:"
 
@@ -1692,7 +1651,6 @@ msgstr "WEB-интерфейс"
 msgid "Wednesday"
 msgstr "Среда"
 
-#, fuzzy
 msgid "Wether Infos"
 msgstr "Информация о системе"
 
@@ -1719,69 +1677,3 @@ msgstr "Z"
 
 msgid "Z"
 msgstr "Z"
-
-#~ msgid "Gui Restart"
-#~ msgstr "GUI перезапуск"
-
-#~ msgid "power off"
-#~ msgstr "Выключение"
-
-#~ msgid "Sat"
-#~ msgstr "SAT"
-
-#~ msgid "scan"
-#~ msgstr "Поиск"
-
-#~ msgid "backup"
-#~ msgstr "Сохранение данных"
-
-#~ msgid "Auto Resolution"
-#~ msgstr "Авто разрешение"
-
-#~ msgid "activate"
-#~ msgstr "Активировать"
-
-#~ msgid "Poweroff"
-#~ msgstr "Выключение"
-
-#~ msgid "Password"
-#~ msgstr "Пароль"
-
-#~ msgid "NEXT"
-#~ msgstr "Следующий"
-
-#~ msgid "PREV"
-#~ msgstr "Предыдущий"
-
-#~ msgid "FanControl"
-#~ msgstr "Управление охлаждением"
-
-#~ msgid "Test"
-#~ msgstr "Тест"
-
-#~ msgid "repeate"
-#~ msgstr "Повторы"
-
-#~ msgid "picture"
-#~ msgstr "Изображение"
-
-#~ msgid "Ok"
-#~ msgstr "ОК"
-
-#~ msgid "Picture"
-#~ msgstr "Изображение"
-
-#~ msgid "Free Space"
-#~ msgstr "Свободно место"
-
-#~ msgid "Audio"
-#~ msgstr "Аудио"
-
-#~ msgid "UNKNOWN"
-#~ msgstr "Неизвестный"
-
-#~ msgid "Tuner "
-#~ msgstr "Тюнер"
-
-#~ msgid "channel"
-#~ msgstr "Канал"
