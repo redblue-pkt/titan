@@ -1,13 +1,23 @@
-[createpo.sh] xgettext --omit-header -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/it/LC_MESSAGES/titan.po_auto.utf.po
-tithek_submenu.h:70: warning: unterminated string literal
-tithek_submenu.h:901: warning: unterminated string literal
 --------------------------------------
-[createpo.sh] xgettext --omit-header -k_ *.* -o /home/atemio/flashimg/source.titan/po/it/LC_MESSAGES/titan.new.po
-tithek_submenu.h:70: warning: unterminated string literal
-tithek_submenu.h:901: warning: unterminated string literal
---------------------------------------
-[createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/it/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/it/LC_MESSAGES/titan.mo
-/home/atemio/flashimg/source.titan/po/it/LC_MESSAGES/titan.outfile.po:4574: `msgid' and `msgstr' entries do not both end with '\n'
-msgfmt: found 1 fatal error
-1203 translated messages, 161 fuzzy translations.
-msgstr "Timer registrazione partita !"
+[createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.po -o /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.mo
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.po:1223:12: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.po:1768:10: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.po:1972:10: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.po:2085:10: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.po:2085:12: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.po:2098:11: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.po:2118:25: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.po:2397:10: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.po:2595:12: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.po:2595:21: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.po:2729:10: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.po:2733:23: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.po:2778:18: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.po:2782:12: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.po:2879:10: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.po:2916:11: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.po:3073:10: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.po:3073:21: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.po:3325:10: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.po:3550:10: invalid multibyte sequence
+msgfmt: too many errors, aborting
