@@ -4665,7 +4665,7 @@ msgid "Box recording finished poweroff in 30sec !"
 msgstr "Aufnahme beendet. Box wird in 30sek ausgeschaltet!"
 
 #, fuzzy
-msgid "Timer Record start !\n"
+msgid "Timer Record start !"
 msgstr "Map voor Timeropname"
 
 msgid "Choice Install Medium"

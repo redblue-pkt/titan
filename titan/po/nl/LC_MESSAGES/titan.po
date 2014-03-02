@@ -4060,8 +4060,8 @@ msgstr "Unstabil"
 msgid "Box recording finished poweroff in 30sec !"
 msgstr "Aufnahme beendet. Box wird in 30sek ausgeschaltet!"
 
-msgid "Timer Record start !\n"
-msgstr "Timer Aufnahme gestartet! \n"
+msgid "Timer Record start !"
+msgstr "Timer Aufnahme gestartet!"
 
 msgid "Choice Install Medium"
 msgstr "Installation Auswahl"
