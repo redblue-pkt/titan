@@ -15,7 +15,7 @@ msgid "Tuner"
 msgstr "Tuner"
 
 #: about.h:30 bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2638
-#: httpdfunc.h:2650 hwtest.h:476 moduleconfig.h:345
+#: httpdfunc.h:2650 hwtest.h:478 moduleconfig.h:345
 #: skin_default_skin.xml.h:695 skinselector.h:138 stream.h:22
 #: tithek_submenu.h:943 transponder.h:122 transponder.h:158 transponder.h:194
 #: transponder.h:227 transponder.h:259 transponder.h:295 transponder.h:330
@@ -54,10 +54,10 @@ msgstr ""
 #: harddisk.h:666 harddisk.h:715 harddisk.h:720 harddisk.h:722 harddisk.h:724
 #: harddisk.h:784 harddisk.h:802 harddisk.h:805 harddisk.h:1035 hbbtv.h:362
 #: httpdfunc.h:1098 httpdfunc.h:3021 hwtest.h:88 hwtest.h:93 hwtest.h:98
-#: hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:388
-#: hwtest.h:409 hwtest.h:454 hwtest.h:490 hwtest.h:562 hwtest.h:564
-#: hwtest.h:578 hwtest.h:587 hwtest.h:596 hwtest.h:605 hwtest.h:652
-#: hwtest.h:654 hwtest.h:656 hwtest.h:658 imdbapi.h:200 imdb.h:626
+#: hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390
+#: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
+#: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
+#: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626
 #: inadyn.h:188 inadyn.h:190 inadyn.h:200 info.h:27 keyactions.h:227 log.h:46
 #: log.h:48 mc_audioplayer.h:328 mc_audioplayer.h:599 mc_audioplayer.h:702
 #: mc_dateibrowser.h:38 mc_global.h:766 mc_global.h:1011
@@ -140,10 +140,10 @@ msgstr "OK"
 #: harddisk.h:715 harddisk.h:720 harddisk.h:722 harddisk.h:724 harddisk.h:784
 #: harddisk.h:802 harddisk.h:805 harddisk.h:1035 hbbtv.h:362 httpdfunc.h:1098
 #: httpdfunc.h:3021 hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103
-#: hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:388 hwtest.h:409
-#: hwtest.h:454 hwtest.h:490 hwtest.h:562 hwtest.h:564 hwtest.h:578
-#: hwtest.h:587 hwtest.h:596 hwtest.h:605 hwtest.h:652 hwtest.h:654
-#: hwtest.h:656 hwtest.h:658 imdbapi.h:200 imdb.h:626 inadyn.h:188
+#: hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390 hwtest.h:411
+#: hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566 hwtest.h:586
+#: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
+#: hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626 inadyn.h:188
 #: inadyn.h:190 inadyn.h:200 info.h:27 keyactions.h:227 log.h:46 log.h:48
 #: marker.h:215 marker.h:229 mc_audioplayer.h:328 mc_audioplayer.h:599
 #: mc_audioplayer.h:702 mc_dateibrowser.h:38 mc_global.h:766 mc_global.h:1011
@@ -517,10 +517,10 @@ msgstr ""
 #: harddisk.h:632 harddisk.h:666 harddisk.h:715 harddisk.h:720 harddisk.h:722
 #: harddisk.h:724 harddisk.h:784 harddisk.h:802 harddisk.h:805 hbbtv.h:362
 #: httpdfunc.h:1098 hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103
-#: hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:388 hwtest.h:409
-#: hwtest.h:454 hwtest.h:490 hwtest.h:562 hwtest.h:564 hwtest.h:578
-#: hwtest.h:587 hwtest.h:596 hwtest.h:605 hwtest.h:652 hwtest.h:654
-#: hwtest.h:656 hwtest.h:658 imdbapi.h:200 imdb.h:626 inadyn.h:188
+#: hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390 hwtest.h:411
+#: hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566 hwtest.h:586
+#: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
+#: hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626 inadyn.h:188
 #: inadyn.h:190 inadyn.h:200 keyactions.h:227 language.h:49 log.h:46 log.h:48
 #: marker.h:215 marker.h:229 mc_audioplayer.h:328 mc_audioplayer.h:599
 #: mc_audioplayer.h:702 mc_dateibrowser.h:38 mc_global.h:766 mc_global.h:1011
@@ -1760,30 +1760,30 @@ msgstr ""
 msgid "Smartcard"
 msgstr ""
 
-#: hwtest.h:181 hwtest.h:394 network.h:284 network.h:299
+#: hwtest.h:181 hwtest.h:396 network.h:284 network.h:299
 #: plugins_mc_skin.xml.h:37 plugins_panel_skin.xml.h:18
 #: skin_default_skin.xml.h:393 skins_mc_skin.xml.h:37
 #: skins_panel_skin.xml.h:18 system_infos.h:91
 msgid "Network"
 msgstr "Siec"
 
-#: hwtest.h:182 hwtest.h:414
+#: hwtest.h:182 hwtest.h:416
 msgid "USB Port"
 msgstr ""
 
-#: hwtest.h:183 hwtest.h:458
+#: hwtest.h:183 hwtest.h:460
 msgid "CAM"
 msgstr ""
 
-#: hwtest.h:184 hwtest.h:495
+#: hwtest.h:184 hwtest.h:497
 msgid "RS232"
 msgstr ""
 
-#: hwtest.h:185 hwtest.h:567
+#: hwtest.h:185 hwtest.h:569
 msgid "LNB"
 msgstr "LNB"
 
-#: hwtest.h:186 hwtest.h:612
+#: hwtest.h:186 hwtest.h:639
 msgid "Flash/Nand Check"
 msgstr ""
 
@@ -1819,99 +1819,99 @@ msgstr ""
 msgid "SCART 4:3 / 16:9"
 msgstr ""
 
-#: hwtest.h:368 hwtest.h:374
+#: hwtest.h:368
 msgid "Smartcard "
 msgstr ""
 
-#: hwtest.h:370
-msgid ": Present\n"
+#: hwtest.h:371
+msgid "Present"
 msgstr ""
 
-#: hwtest.h:376
-msgid ": Not Present\n"
+#: hwtest.h:377
+msgid "Not Present"
 msgstr ""
 
-#: hwtest.h:384
+#: hwtest.h:386
 msgid "Smartcard Ports found: "
 msgstr ""
 
-#: hwtest.h:425
+#: hwtest.h:427
 msgid "USB Ports found: "
 msgstr ""
 
-#: hwtest.h:436 hwtest.h:449
+#: hwtest.h:438 hwtest.h:451
 msgid "USB "
 msgstr ""
 
-#: hwtest.h:440
+#: hwtest.h:442
 msgid " - OKAY!"
 msgstr ""
 
-#: hwtest.h:451
+#: hwtest.h:453
 msgid " : NOT OKAY!"
 msgstr ""
 
-#: hwtest.h:470 moduleconfig.h:338 scconfig.h:31
+#: hwtest.h:472 moduleconfig.h:338 scconfig.h:31
 msgid "Slot "
 msgstr ""
 
-#: hwtest.h:487
+#: hwtest.h:489
 msgid "CAM Ports found: "
 msgstr ""
 
-#: hwtest.h:562
+#: hwtest.h:564
 msgid "SUCESS Serial Port"
 msgstr ""
 
-#: hwtest.h:564
+#: hwtest.h:566
 msgid "FAIL Serial Port"
 msgstr ""
 
-#: hwtest.h:575
-msgid "LNB off / 22K off: OK\n"
+#: hwtest.h:578
+msgid "LNB off / 22K off: OK"
 msgstr ""
 
-#: hwtest.h:577
-msgid "LNB off / 22K off: NOT OK\n"
+#: hwtest.h:583
+msgid "LNB off / 22K off: NOT OK"
 msgstr ""
 
-#: hwtest.h:584
-msgid "LNB 18V / 22K off: OK\n"
+#: hwtest.h:594
+msgid "LNB 18V / 22K off: OK"
 msgstr ""
 
-#: hwtest.h:586
-msgid "LNB 18V / 22K off: NOT OK\n"
+#: hwtest.h:599
+msgid "LNB 18V / 22K off: NOT OK"
 msgstr ""
 
-#: hwtest.h:593
-msgid "LNB 13V / 22K off: OK\n"
+#: hwtest.h:609
+msgid "LNB 13V / 22K off: OK"
 msgstr ""
 
-#: hwtest.h:595
-msgid "LNB 13V / 22K off: NOT OK\n"
+#: hwtest.h:614
+msgid "LNB 13V / 22K off: NOT OK"
 msgstr ""
 
-#: hwtest.h:602
-msgid "LNB 13V / 22K on: OK\n"
+#: hwtest.h:624
+msgid "LNB 13V / 22K on: OK"
 msgstr ""
 
-#: hwtest.h:604
-msgid "LNB 13V / 22K on: NOT OK\n"
+#: hwtest.h:629
+msgid "LNB 13V / 22K on: NOT OK"
 msgstr ""
 
-#: hwtest.h:652
+#: hwtest.h:679
 msgid "SUCESS Flash/Nand"
 msgstr ""
 
-#: hwtest.h:654
+#: hwtest.h:681
 msgid "FAIL Flash/Nand (/var and /mnt)"
 msgstr ""
 
-#: hwtest.h:656
+#: hwtest.h:683
 msgid "FAIL Flash/Nand (/var)"
 msgstr ""
 
-#: hwtest.h:658
+#: hwtest.h:685
 msgid "FAIL Flash/Nand (/mnt)"
 msgstr ""
 
