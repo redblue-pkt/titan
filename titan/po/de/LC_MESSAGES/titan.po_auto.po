@@ -14524,24 +14524,3 @@ msgstr "Höchsttemperatur"
 #: weather.h:442 weather.h:460 weather.h:478 weather.h:496
 msgid "Condition: "
 msgstr "Wetter:"
-
-#~ msgid ": Present\n"
-#~ msgstr ": vorhanden\n"
-
-#~ msgid ": Not Present\n"
-#~ msgstr ": nicht vorhanden\n"
-
-#~ msgid "Search on Myvideo (local)"
-#~ msgstr "Suche bei MyVideo (lokal)"
-
-#~ msgid "Search on Kinox"
-#~ msgstr "Suche bei Kinox"
-
-#~ msgid "Search on Kinox (local)"
-#~ msgstr "Suche bei Kinox (lokal)"
-
-#~ msgid "Timer Record start !\n"
-#~ msgstr "Timeraufnahme wurde gestartet !\n"
-
-#~ msgid "System_Status"
-#~ msgstr "System Status"
