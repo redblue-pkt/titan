@@ -140,12 +140,12 @@ for ROUND in $POLIST; do
 			fi
 		else
 			OUTFILE_MO=`echo $ROUND | sed 's!titan.po_auto.po!titan.mo!'`
-			OUTFILE_PO=`echo $ROUND | sed 's!titan.po_auto.po!titan.outfile.po!'`
-#			OUTFILE_PO=$ROUND
+#			OUTFILE_PO=`echo $ROUND | sed 's!titan.po_auto.po!titan.outfile.po!'`
+			OUTFILE_PO=$ROUND
 
 			echo "[createpo.sh] iconv -f UTF-8 -t ISO-8859-1 $ROUND > $OUTFILE_PO"
 			iconv -f UTF-8 -t ISO-8859-1 $ROUND > $OUTFILE_PO
-			if [ ! -e "$OUTFILE_PO" ] || [ `cat "$OUTFILE_PO" | wc -l` -eq 0 ]; then error="1"; break;fi
+#			if [ ! -e "$OUTFILE_PO" ] || [ `cat "$OUTFILE_PO" | wc -l` -eq 0 ]; then error="1"; break;fi
 
 			echo "[createpo.sh] msgfmt -v $OUTFILE_PO -o $OUTFILE_MO"
 	#		rm -f "$HOME"/flashimg/source.titan/titan/tools/error/error.log
