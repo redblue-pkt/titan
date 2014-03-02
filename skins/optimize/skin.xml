@@ -1,14 +1,14 @@
 <screen fontcol=fontcol valign=bottom titlealign=center name="optimize" hspace=5 vspace=5 fontsize=30 title="Optimize" posx=center posy=center width=80% height=80% bordercol=bordercol bordersize=2 bgcol=bgcol>
 <node fontsize=30 bordercol=bordercol scrollbar=auto type=listbox name=listbox posy=1 width=100% height=-130>
-<node name=c1 posx=0 posy=400 width=330 height=30/>
-<node name=c2 posx=330 posy=400 width=330 height=30/>
-<node name=c3 posx=660 posy=400 width=330 height=30/>
-<node name=c4 posx=0 posy=430 width=330 height=30/>
-<node name=c5 posx=330 posy=430 width=330 height=30/>
-<node name=c6 posx=660 posy=430 width=330 height=30/>
-<node name=c7 posx=0 posy=460 width=330 height=30/>
-<node name=c8 posx=330 posy=460 width=330 height=30/>
-<node name=c9 posx=660 posy=460 width=330 height=30/>
-<node name=b1 text=OK halign=center valign=middle bordercol=okcol bordersize=4 bordertype=2 posx=20 posy=0 width=150 height=30/>
-<node name=b2 text=EXIT halign=center valign=middle bordercol=exitcol bordersize=4 bordertype=2 posx=180 posy=0 width=150 height=30/>
+<node name="c1" posx=0 posy=400 width=330 height=30/>
+<node name="c2" posx=330 posy=400 width=330 height=30/>
+<node name="c3" posx=660 posy=400 width=330 height=30/>
+<node name="c4" posx=0 posy=430 width=330 height=30/>
+<node name="c5" posx=330 posy=430 width=330 height=30/>
+<node name="c6" posx=660 posy=430 width=330 height=30/>
+<node name="c7" posx=0 posy=460 width=330 height=30/>
+<node name="c8" posx=330 posy=460 width=330 height=30/>
+<node name="c9" posx=660 posy=460 width=330 height=30/>
+<node name="b1" text="OK" halign=center valign=middle bordercol=okcol bordersize=4 bordertype=2 posx=20 posy=0 width=150 height=30/>
+<node name="b2" text="EXIT" halign=center valign=middle bordercol=exitcol bordersize=4 bordertype=2 posx=180 posy=0 width=150 height=30/>
 </screen>
