@@ -364,7 +364,7 @@ msgstr "Datum absteigend"
 
 #: adjust.h:105
 msgid "Power Menu"
-msgstr "Ausschalten / Neustart"
+msgstr "Ausschalten/Neustart"
 
 #: adjust.h:106 skin_default_skin.xml.h:454
 msgid "Power Off"
@@ -491,15 +491,15 @@ msgstr "Experten Modus (11)"
 
 #: adjust.h:211
 msgid "yes / vzap 1 sec"
-msgstr "Ja / VZap 1 Sekunde"
+msgstr "Ja/VZap 1 Sekunde"
 
 #: adjust.h:212
 msgid "yes / vzap 2 sec"
-msgstr "Ja / VZap 2 Sekunden"
+msgstr "Ja/VZap 2 Sekunden"
 
 #: adjust.h:213
 msgid "yes / vzap endless"
-msgstr "Ja / VZap unendlich"
+msgstr "Ja/VZap unendlich"
 
 #: ard.h:31 avsettings.h:247 betarobot.h:57 bgdownload.h:176
 #: blindscanadjust.h:25 callmon_main.h:39 channellist.h:913 channellist.h:915
@@ -1487,11 +1487,11 @@ msgstr "FEHLER: Verzeichnis kann nicht angelegt werden!"
 
 #: filemanager.h:180
 msgid "Really copy this file/dir?"
-msgstr "Möchten Sie tatsächlich diese Datei / dieses Verzeichnis kopieren?"
+msgstr "Möchten Sie tatsächlich diese Datei/dieses Verzeichnis kopieren?"
 
 #: filemanager.h:188
 msgid "Really move this file/dir?"
-msgstr "Möchten Sie tatsächlich diese Datei / dieses Verzeichnis verschieben?"
+msgstr "Möchten Sie tatsächlich diese Datei/dieses Verzeichnis verschieben?"
 
 #: filemanager.h:196
 msgid "From"
@@ -1511,7 +1511,7 @@ msgstr "Datei kopieren"
 
 #: filemanager.h:278
 msgid "Really delete this file/dir?"
-msgstr "Möchten Sie tatsächlich diese Datei / dieses Verzeichnis löschen?"
+msgstr "Möchten Sie tatsächlich diese Datei/dieses Verzeichnis löschen?"
 
 #: filemanager.h:291
 msgid "Can't remove file/dir !"
@@ -1620,11 +1620,11 @@ msgstr ""
 
 #: harddisk.h:377
 msgid "can't create or delete directory"
-msgstr "FEHLER: Verzeichnis kann nicht erstellt / gelöscht werden!"
+msgstr "FEHLER: Verzeichnis kann nicht erstellt/gelöscht werden!"
 
 #: harddisk.h:381
 msgid "succesfull create or delelete directory"
-msgstr "Das Verzeichnis wurde erfolgreich erstellt / gelöscht."
+msgstr "Das Verzeichnis wurde erfolgreich erstellt/gelöscht."
 
 #: harddisk.h:433 skin_default_skin.xml.h:262
 msgid "Harddisk"
@@ -1747,7 +1747,7 @@ msgid ""
 "Found new Stick/HDD.\n"
 "You can configure it in Harddisk Menu."
 msgstr ""
-"Eine neue Festplatte / USB Speicher wurde gefunden.\n"
+"Eine neue Festplatte/USB Speicher wurde gefunden.\n"
 "Sie können es im Festplatten Menü einrichten."
 
 #: hbbtv.h:362
@@ -1868,7 +1868,7 @@ msgid "BLUE"
 msgstr "Blaue Taste"
 
 #: hwtest.h:305
-msgid "SCART 4:3 / 16:9"
+msgid "SCART 4:3/16:9"
 msgstr ""
 
 #: hwtest.h:368
@@ -1921,35 +1921,35 @@ msgstr "Serieller Anschluß fehlerhaft"
 
 #: hwtest.h:578
 msgid "LNB off / 22K off: OK"
-msgstr "LNB Aus / 22K Aus: OK"
+msgstr "LNB Aus/22K Aus: OK"
 
 #: hwtest.h:583
 msgid "LNB off / 22K off: NOT OK"
-msgstr "LNB Aus / 22K Aus: Fehler"
+msgstr "LNB Aus/22K Aus: Fehler"
 
 #: hwtest.h:594
 msgid "LNB 18V / 22K off: OK"
-msgstr "LNB 18V / 22K Aus: OK"
+msgstr "LNB 18V/22K Aus: OK"
 
 #: hwtest.h:599
 msgid "LNB 18V / 22K off: NOT OK"
-msgstr "LNB 18V / 22K Aus: Fehler"
+msgstr "LNB 18V/22K Aus: Fehler"
 
 #: hwtest.h:609
 msgid "LNB 13V / 22K off: OK"
-msgstr "LNB 13V / 22K Aus: OK"
+msgstr "LNB 13V/22K Aus: OK"
 
 #: hwtest.h:614
 msgid "LNB 13V / 22K off: NOT OK"
-msgstr "LNB 13V / 22K Aus: Fehler"
+msgstr "LNB 13V/22K Aus: Fehler"
 
 #: hwtest.h:624
 msgid "LNB 13V / 22K on: OK"
-msgstr "LNB 13V / 22K AN: OK"
+msgstr "LNB 13V/22K AN: OK"
 
 #: hwtest.h:629
 msgid "LNB 13V / 22K on: NOT OK"
-msgstr "LNB 13V / 22K An: Fehler"
+msgstr "LNB 13V/22K An: Fehler"
 
 #: hwtest.h:679
 msgid "SUCESS Flash/Nand"
@@ -2032,7 +2032,7 @@ msgstr "Automatische Auflösung"
 #: keyactions.h:23 settings_bluebutton.h:12 settings_bluebutton.h:43
 #: settings_pluginbutton.h:16 settings_redbutton.h:16
 msgid "TV / Radio Switch"
-msgstr "TV / Radio Umschalten"
+msgstr "TV/Radio Umschalten"
 
 #: keyactions.h:24 settings_bluebutton.h:14 settings_pluginbutton.h:15
 #: settings_redbutton.h:15 skin_default_skin.xml.h:585
@@ -4025,7 +4025,7 @@ msgstr "500 U/Min"
 #: plugins_panel_skin.xml.h:8 skin_default_skin.xml.h:84
 #: skins_panel_skin.xml.h:8
 msgid "Audio / Video / Sat"
-msgstr "Audio / Video / Satellit"
+msgstr "Audio/Video/Satellit"
 
 #: plugins_panel_skin.xml.h:9 skins_panel_skin.xml.h:9
 msgid "Automount"
@@ -4461,7 +4461,7 @@ msgstr "Config vom Flash (temporär) verwenden"
 
 #: readerconfig.h:328
 msgid "Use config from Stick or HDD"
-msgstr "Config vom Stick / HDD verwenden"
+msgstr "Config vom Stick/HDD verwenden"
 
 #: readerconfig.h:338
 msgid "Choice Config File"
@@ -4569,7 +4569,7 @@ msgstr "FEHLER: Nicht genügend freier Speicher auf Ziellaufwerk!"
 
 #: record.h:90
 msgid "Record / Timeshift / Stream"
-msgstr "Aufnahme / Timeshift / Stream"
+msgstr "Aufnahme/Timeshift/Stream"
 
 #: record.h:355
 msgid "Box recording finished poweroff in 30sec !"
@@ -5359,7 +5359,7 @@ msgstr "Automatische Auflösung"
 
 #: skin_default_skin.xml.h:89
 msgid "Autostart - Audio / Video / Sat"
-msgstr ""
+msgstr "Autostart - Audio/Video/Sat"
 
 #: skin_default_skin.xml.h:90
 msgid "Autostart - Cam / Emu"
@@ -5560,7 +5560,7 @@ msgstr "Farbformat"
 
 #: skin_default_skin.xml.h:146
 msgid "Color Format Scart / Composite"
-msgstr "Farbformat für Scart / Komponente"
+msgstr "Farbformat für Scart/Komponente"
 
 #: skin_default_skin.xml.h:147
 msgid "Committed command"
@@ -5580,7 +5580,7 @@ msgstr "Kontrast"
 
 #: skin_default_skin.xml.h:151
 msgid "Copy / Move"
-msgstr "Kopieren / Verschieben"
+msgstr "Kopieren/Verschieben"
 
 #: skin_default_skin.xml.h:152
 msgid "copy service"
@@ -5740,7 +5740,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:198
 msgid "EDIT LNB / UNICABLE"
-msgstr "LNB / Unikabel bearbeiten"
+msgstr "LNB/Unikabel bearbeiten"
 
 #: skin_default_skin.xml.h:199
 msgid "EDIT MOTOR"
@@ -6130,7 +6130,7 @@ msgid ""
 "Activate Wlan Yes and use DHCP for easy setup."
 msgstr ""
 "Hier können Sie Ihre WLAN Einstellungen vornehmen.\n"
-"1. Suche starten, die eigene SSID (apoint / router) mit ok übernehmen.\n"
+"1. Suche starten, die eigene SSID (AP/Router) mit ok übernehmen.\n"
 "2. Schlüssel und Typ anpassen und mit ok bestätigen (speichern).\n"
 "3. Deaktiviere LAN ja, Aktiviere Wlan und DHCP für einfache Einrichtung."
 
@@ -6311,7 +6311,7 @@ msgid ""
 msgstr ""
 "Hier können Sie Ihren Sat Tuner einstellen.\n"
 "Stellen Sie zunächst Ihre Satelliten Auswahl ein. Bei Verwendung von DiSEqC "
-"weisen Sie zusätzlich den verwendeten Port zu. Für erweiterte Lnb / Unicam "
+"weisen Sie zusätzlich den verwendeten Port zu. Für erweiterte LNB/Unicam "
 "Einstellungen navigieren Sie zum Feld und drücken Sie die Rote Taste."
 
 #: skin_default_skin.xml.h:298
@@ -6553,7 +6553,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:349
 msgid "LOF / UNICABLE"
-msgstr ""
+msgstr "LOF/UNICABLE"
 
 #: skin_default_skin.xml.h:350
 msgid "LOG"
@@ -6757,7 +6757,7 @@ msgstr "NFS Server Einstellungen"
 
 #: skin_default_skin.xml.h:404
 msgid "Normal/Standby"
-msgstr "Betrieb / Standby"
+msgstr "Betrieb/Standby"
 
 #: skin_default_skin.xml.h:405
 msgid "o"
@@ -7407,7 +7407,7 @@ msgstr "Sound Verstärkung (externer Player)"
 
 #: skin_default_skin.xml.h:590
 msgid "Sound amplifier (TV-Modus / internal Player)"
-msgstr "Sound Verstärkung (TV-Modus / interner Player)"
+msgstr "Sound Verstärkung (TV-Modus/interner Player)"
 
 #: skin_default_skin.xml.h:591
 msgid "Space"
@@ -7439,11 +7439,11 @@ msgstr "Standby-Modus"
 
 #: skin_default_skin.xml.h:600
 msgid "Standby / Poweroff"
-msgstr "Standby / Ausschalten"
+msgstr "Standby/Ausschalten"
 
 #: skin_default_skin.xml.h:601
 msgid "Standby / Poweroff..."
-msgstr "Standby / Ausschalten"
+msgstr "Standby/Ausschalten"
 
 #: skin_default_skin.xml.h:603
 msgid "Start HTTPD"
@@ -8439,15 +8439,15 @@ msgstr "Streamen mit Puffer (10MB)"
 
 #: tithek.h:1229
 msgid "File Caching Playback (10MB / 120s)"
-msgstr "Im Cache Zwischenspeicherrn (10MB / 120 Sek)"
+msgstr "Im Cache Zwischenspeicherrn (10MB/120 Sek)"
 
 #: tithek.h:1230
 msgid "File Caching Playback (20MB / 240s)"
-msgstr "Im Cache Zwischenspeichern (20MB / 240 Sek)"
+msgstr "Im Cache Zwischenspeichern (20MB/240 Sek)"
 
 #: tithek.h:1231
 msgid "File Caching Playback (30MB / 360s)"
-msgstr "Im Cache Zwischenspeichern (30MB / 360 Sek)"
+msgstr "Im Cache Zwischenspeichern (30MB/360 Sek)"
 
 #: tithek.h:1232
 msgid "Download Full File"
@@ -12683,15 +12683,15 @@ msgstr "Audio"
 
 #: tmc.h:543
 msgid "video / audio"
-msgstr "Video / Audio"
+msgstr "Video/Audio"
 
 #: tmc.h:544
 msgid "video / picture"
-msgstr "Video / Bild"
+msgstr "Video/Bild"
 
 #: tmc.h:545
 msgid "audio / picture"
-msgstr "Audio / Bild"
+msgstr "Audio/Bild"
 
 #: tmc.h:548
 msgid "pic1"
@@ -14369,7 +14369,7 @@ msgstr ""
 
 #: tunerconfig.h:301
 msgid "Lnb / Unicable"
-msgstr "LNB / Unikabel"
+msgstr "LNB/Unikabel"
 
 #: tunerconfig.h:379
 msgid "Terrestrisch"
@@ -14467,7 +14467,7 @@ msgstr "blinken"
 
 #: vfdisplay.h:52
 msgid "fade out/in"
-msgstr "Ein- / Ausblenden"
+msgstr "Ein-/Ausblenden"
 
 #: vfdisplay.h:53
 msgid "show record"
