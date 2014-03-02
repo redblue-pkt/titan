@@ -162,6 +162,7 @@ for ROUND in $POLIST; do
 #			if [ ! -e "$ROUND" ] || [ `cat "$ROUND" | wc -l` -eq 0 ]; then error="4"; break;fi
 			if [ ! -e "$OUTFILE_MO" ] || [ `cat "$OUTFILE_MO" | wc -l` -eq 0 ]; then error="5"; break;fi
 
+test=222222222
 if [ $test = 2222 ];then
 msgfmt -v /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.po_auto.po -o /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.mo
 msgfmt -v /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.po -o /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.mo
