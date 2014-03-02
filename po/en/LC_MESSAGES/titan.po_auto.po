@@ -5853,7 +5853,7 @@ msgstr "Available Free Memory"
 
 #: skin_default_skin.xml.h:239 tithek_submenu.h:372
 msgid "French"
-msgstr "Francais"
+msgstr "Français"
 
 #: skin_default_skin.xml.h:240
 msgid "Frequency"
@@ -5909,7 +5909,7 @@ msgstr "Zoomfactor for Graphical EPG"
 
 #: skin_default_skin.xml.h:255 tithek_submenu.h:393
 msgid "Greek"
-msgstr ""
+msgstr "Ελληνικά"
 
 #: skin_default_skin.xml.h:256
 msgid "Guardinterval"
@@ -7117,7 +7117,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:516
 msgid "Russian"
-msgstr "Russkiy"
+msgstr "Русский"
 
 #: skin_default_skin.xml.h:517
 msgid "s"
@@ -7797,7 +7797,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:716
 msgid "Vietnamese"
-msgstr ""
+msgstr "Viet"
 
 #: skin_default_skin.xml.h:717
 msgid "Virtualzap Timeout"
