@@ -792,15 +792,15 @@ msgstr "Zenders A-Z"
 
 #: copyfile.h:810
 msgid "Filesize (B): "
-msgstr "DateigrÃ¶sse (B): "
+msgstr "DateigrÃƒÂ¶sse (B): "
 
 #: copyfile.h:812 download.h:73
 msgid "Filesize (KB): "
-msgstr "DateigrÃ¶sse (KB): "
+msgstr "DateigrÃƒÂ¶sse (KB): "
 
 #: copyfile.h:814
 msgid "Filesize (MB): "
-msgstr "DateigrÃ¶sse (MB): "
+msgstr "DateigrÃƒÂ¶sse (MB): "
 
 #: copyfile.h:821 copyfile.h:854
 msgid "Move (B): "
@@ -889,8 +889,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TitanNit 1.49\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-07 10:44í­\n"
-"PO-Revision-Date: 2014-02-07 17:47í­\n"
+"POT-Creation-Date: 2014-02-07 10:44Ã­ÂÂ­\n"
+"PO-Revision-Date: 2014-02-07 17:47Ã­ÂÂ­\n"
 "Last-Translator: obi <_obiwan_@web.de>\n"
 "Language-Team: German <_obiwan_@web.de>\n"
 "Language: nl\n"
@@ -1152,7 +1152,7 @@ msgstr ""
 
 #: epgsearch.h:292
 msgid "Comedy"
-msgstr "Komödie"
+msgstr "KomÃ¶die"
 
 #: epgsearch.h:300
 msgid "War"
@@ -1305,7 +1305,7 @@ msgstr "IPK installatie informatie"
 
 #: extensions.h:170
 msgid "Can't install Package. Package to big."
-msgstr "Paket zu groß. Installation nicht möglich."
+msgstr "Paket zu groÃŸ. Installation nicht mÃ¶glich."
 
 #: extensions.h:197
 msgid "Tpk Install - select section"
@@ -1516,7 +1516,7 @@ msgstr "Wilt u dit bestand wissen?"
 
 #: filemanager.h:291
 msgid "Can't remove file/dir !"
-msgstr "Datei/Verzeichnis konnte nicht gelöscht werden!"
+msgstr "Datei/Verzeichnis konnte nicht gelÃ¶scht werden!"
 
 #: filemanager.h:331
 msgid "Can't show this file!"
@@ -1614,11 +1614,11 @@ msgid ""
 "Really delete directory and content?"
 msgstr ""
 "Verzeichnis ist nicht leer.\n"
-"Wirklich löschen?"
+"Wirklich lÃ¶schen?"
 
 #: harddisk.h:377
 msgid "can't create or delete directory"
-msgstr "Verzeichnis kann nicht verändert werden"
+msgstr "Verzeichnis kann nicht verÃ¤ndert werden"
 
 #: harddisk.h:381
 msgid "succesfull create or delelete directory"
@@ -1741,8 +1741,8 @@ msgid ""
 "Found new Stick/HDD.\n"
 "You can configure it in Harddisk Menu."
 msgstr ""
-"Neuer Datenträger erkannt.\n"
-"Sie können diesen im Festplatten Menü konfigurieren."
+"Neuer DatentrÃ¤ger erkannt.\n"
+"Sie kÃ¶nnen diesen im Festplatten MenÃ¼ konfigurieren."
 
 #: hbbtv.h:362
 msgid "You can leave HBBTV with Record Key."
@@ -2665,7 +2665,7 @@ msgstr "Netwerkinstellingen opslaan? "
 
 #: network.h:558
 msgid "Can't change hostname !"
-msgstr "Fehler, Hostname kann nicht geändert werden!"
+msgstr "Fehler, Hostname kann nicht geÃ¤ndert werden!"
 
 #: network.h:679
 msgid "NONE"
@@ -3842,7 +3842,7 @@ msgid ""
 "If you don't find Windows shares you need to disable 'Password protected "
 "sharing' in the 'Network and Sharing Center'."
 msgstr ""
-"Sollten keine Windows Freigaben sichtbar sein, muss 'Kennwortgeschützte "
+"Sollten keine Windows Freigaben sichtbar sein, muss 'KennwortgeschÃ¼tzte "
 "Freigaben' im 'Netzwerk- und Freigabecenter' abgeschaltet werden."
 
 #: plugins_networkbrowser_skin.xml.h:13 skin_default_skin.xml.h:325
@@ -4393,7 +4393,7 @@ msgstr "start positie"
 msgid ""
 "Position Setup is not allowed if record\n"
 "or stream is running !"
-msgstr "Tunerconfig während einer Aufnahme/Streaming ist nicht erlaubt"
+msgstr "Tunerconfig wÃ¤hrend einer Aufnahme/Streaming ist nicht erlaubt"
 
 #: powerofftimer.h:117
 msgid "DeepStandby"
@@ -4417,7 +4417,7 @@ msgstr "Config vom Flash (permanent) verwenden"
 
 #: readerconfig.h:319
 msgid "Use config from Flash (temporary)"
-msgstr "Config vom Flash (temporär) verwenden"
+msgstr "Config vom Flash (temporÃ¤r) verwenden"
 
 #: readerconfig.h:328
 msgid "Use config from Stick or HDD"
@@ -4425,7 +4425,7 @@ msgstr "Config vom Stick / HDD verwenden"
 
 #: readerconfig.h:338
 msgid "Choice Config File"
-msgstr "Config File wählen"
+msgstr "Config File wÃ¤hlen"
 
 #: readerconfig.h:343
 msgid "No config file found."
@@ -4715,8 +4715,8 @@ msgid ""
 "Do you really want to erase Swap (Settings are preserve)?\n"
 "The Box will reboot and the erase will be started!"
 msgstr ""
-"Internen Swap Speicher löschen (Konfiguration wird beibehalten)?\n"
-"Box neu starten und Löschvorgang ausführen "
+"Internen Swap Speicher lÃ¶schen (Konfiguration wird beibehalten)?\n"
+"Box neu starten und LÃ¶schvorgang ausfÃ¼hren "
 
 #: restoredefault.h:63 restoredefault.h:67 restoredefault.h:71
 #: skin_default_skin.xml.h:505
@@ -4795,7 +4795,7 @@ msgstr "Zenderoeken, wacht op einde"
 
 #: scan.h:1888
 msgid "Scan is not allowed if record or stream is running !"
-msgstr "Tunerconfig während einer Aufnahme/Streaming ist nicht erlaubt"
+msgstr "Tunerconfig wÃ¤hrend einer Aufnahme/Streaming ist nicht erlaubt"
 
 #: scan.h:1979
 msgid "No Tuner configured"
@@ -5201,7 +5201,7 @@ msgstr "uitkiezen"
 
 #: skin_default_skin.xml.h:60
 msgid "ADD BOUQUET"
-msgstr "Favoriten hinzufügen"
+msgstr "Favoriten hinzufÃ¼gen"
 
 #: skin_default_skin.xml.h:61
 msgid "ADD ONE"
@@ -5253,7 +5253,7 @@ msgstr "Alle"
 
 #: skin_default_skin.xml.h:73
 msgid "Animated Screens"
-msgstr "Geanimeerde menu´s"
+msgstr "Geanimeerde menuÂ´s"
 
 #: skin_default_skin.xml.h:74
 msgid "Animated Speed"
@@ -5273,7 +5273,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:79
 msgid "Audio delay"
-msgstr "Audio Verzögerung"
+msgstr "Audio VerzÃ¶gerung"
 
 #: skin_default_skin.xml.h:80
 msgid "Audio PID:"
@@ -5598,7 +5598,7 @@ msgstr "Verwijder EPG voor scan"
 
 #: skin_default_skin.xml.h:171
 msgid "Delete EPG after read"
-msgstr "Lösche EPG nach dem einlesen"
+msgstr "LÃ¶sche EPG nach dem einlesen"
 
 #: skin_default_skin.xml.h:174
 msgid "del startchannel"
@@ -5758,7 +5758,7 @@ msgstr "EPG instellingen"
 
 #: skin_default_skin.xml.h:215
 msgid "EPG SHORT VIEW"
-msgstr "EPG-Kurzübersicht"
+msgstr "EPG-KurzÃ¼bersicht"
 
 #: skin_default_skin.xml.h:217
 msgid "Expert Modus"
@@ -6111,9 +6111,9 @@ msgid ""
 "Here you can make your module settings. Use to navigate the control cross "
 "and the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier können Sie die Einstellungen für CI-Module anpassen.\n"
+"Hier kÃ¶nnen Sie die Einstellungen fÃ¼r CI-Module anpassen.\n"
 "\n"
-"Benutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer "
+"Benutzen Sie das Steuerkreuz und die zusÃ¤tzlich angezeigten Tasten mit Ihrer "
 "Fernbedienung um zu navigieren."
 
 #: skin_default_skin.xml.h:282
@@ -6200,9 +6200,9 @@ msgid ""
 "Here you can make your timeshift settings. Use to navigate the control cross "
 "and the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier können Sie die Timeshift Einstellungen anpassen.\n"
+"Hier kÃ¶nnen Sie die Timeshift Einstellungen anpassen.\n"
 "\n"
-"Benutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer "
+"Benutzen Sie das Steuerkreuz und die zusÃ¤tzlich angezeigten Tasten mit Ihrer "
 "Fernbedienung um zu navigieren."
 
 #: skin_default_skin.xml.h:291
@@ -8188,7 +8188,7 @@ msgstr "Timeshift kan niet gestart worden"
 msgid ""
 "Timeshiftsettings not allowed\n"
 "if timeshift is running !"
-msgstr "Tunerconfig während einer Aufnahme/Streaming ist nicht erlaubt"
+msgstr "Tunerconfig wÃ¤hrend einer Aufnahme/Streaming ist nicht erlaubt"
 
 #: timeshiftsettings.h:50
 msgid "permanent"
@@ -10369,7 +10369,7 @@ msgstr "Verbonden met tuner"
 msgid ""
 "Tunerconfig is not allowed if record\n"
 "or stream is running !"
-msgstr "Tunerconfig während einer Aufnahme/Streaming ist nicht erlaubt"
+msgstr "Tunerconfig wÃ¤hrend einer Aufnahme/Streaming ist nicht erlaubt"
 
 #: tunerconfig.h:786
 msgid "Tuner "
