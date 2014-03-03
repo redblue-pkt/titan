@@ -6113,8 +6113,8 @@ msgid ""
 msgstr ""
 "Hier können Sie die Einstellungen für CI-Module anpassen.\n"
 "\n"
-"Benutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer "
-"Fernbedienung um zu navigieren."
+"Benutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit "
+"Ihrer Fernbedienung um zu navigieren."
 
 #: skin_default_skin.xml.h:282
 msgid ""
@@ -6202,8 +6202,8 @@ msgid ""
 msgstr ""
 "Hier können Sie die Timeshift Einstellungen anpassen.\n"
 "\n"
-"Benutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit Ihrer "
-"Fernbedienung um zu navigieren."
+"Benutzen Sie das Steuerkreuz und die zusätzlich angezeigten Tasten mit "
+"Ihrer Fernbedienung um zu navigieren."
 
 #: skin_default_skin.xml.h:291
 msgid ""
