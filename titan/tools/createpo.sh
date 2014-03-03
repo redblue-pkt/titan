@@ -166,9 +166,13 @@ elif [ "$SVNUSER" = "aafsvn" ] && [ "$GROUP" = "dev" ];then
 		LINE=`expr $LINE - 1`
 		FILE=`cat "$HOME"/flashimg/source.titan/titan/tools/error/error.log | sed -ne ""$LINE"p" | cut -d: -f1`
 		LINE=`cat "$HOME"/flashimg/source.titan/titan/tools/error/error.log | sed -ne ""$LINE"p" | cut -d: -f2`
-#		LINE=`expr $LINE - 1`
-		ERROR=`cat "$FILE" | sed -ne ""$LINE"p"`
-		echo "$ERROR" >> "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
+		LINE1=`expr $LINE - 1`
+		LINE2=`expr $LINE + 1`
+		echo "[createpo.sh] ############################################" >> "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
+		echo "[createpo.sh] ###### error should be in the middle #######" >> "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
+		echo "[createpo.sh] ############################################" >> "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
+		cat "$FILE" | sed -ne ""$LINE1","$LINE2"p"` >> "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
+		echo "[createpo.sh] ############################################" >> "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
 	fi
 
 	cd "$HOME"/flashimg/source.titan/titan/tools/error
