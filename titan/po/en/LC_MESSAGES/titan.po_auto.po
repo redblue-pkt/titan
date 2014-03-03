@@ -5870,7 +5870,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:247
 msgid "German"
-msgstr "German"
+msgstr "Deutsch"
 
 #: skin_default_skin.xml.h:248
 msgid "Git Changelog"

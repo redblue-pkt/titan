@@ -851,7 +851,7 @@ msgid "grey"
 msgstr "grey"
 
 msgid "German"
-msgstr "German"
+msgstr "Deutsch"
 
 msgid "Dutch"
 msgstr "Dutch"
