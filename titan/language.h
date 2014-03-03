@@ -46,7 +46,7 @@ int screenlanguage(int flag)
 
 				if(flag == 0 && change == 1)
 				{
-					textbox(_("Message"), _("Change language needs reboot"), NULL, 0, NULL, 0, NULL, 0, NULL, 0, 600, 200, 5, 0);
+					textbox(_("Message"), _("Change language needs reboot"), NULL, 0, NULL, 0, NULL, 0, NULL, 0, 1000, 200, 5, 0);
 					oshutdown(3, 1);
 				}
 				if(flag == 2 && change == 1)
