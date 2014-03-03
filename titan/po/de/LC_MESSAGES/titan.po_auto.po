@@ -3484,7 +3484,7 @@ msgstr "IMBD"
 
 #: plugins_instar_skin.xml.h:1 skins_instar_skin.xml.h:1
 msgid "IP-Kammera Einstellungen"
-msgstr "EInstellungen"
+msgstr "Einstellungen"
 
 #: plugins_instar_skin.xml.h:2 skins_instar_skin.xml.h:2
 msgid "Benutzer-Kammera 1"
@@ -6517,7 +6517,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:349
 msgid "LOF / UNICABLE"
-msgstr "LOF/UNICABLE"
+msgstr "LOF/Unikabel"
 
 #: skin_default_skin.xml.h:350
 msgid "LOG"
@@ -8051,7 +8051,7 @@ msgid ""
 msgstr ""
 "Bitte warten\n"
 "\n"
-"ALLE Einstellungen werden gesichert.\n"
+"Alle Einstellungen werden gesichert.\n"
 "\n"
 "Receiver startet in wenigen Sekunden neu."
 
@@ -8073,7 +8073,7 @@ msgid ""
 "\n"
 "Aborting restoring..."
 msgstr ""
-"FEHLER: Der Ordner backup wurde nicht gefunden!\n"
+"FEHLER: Der Ordner 'backup' wurde nicht gefunden!\n"
 "\n"
 "Wiederherstellung wurde abgebrochen."
 
@@ -8324,7 +8324,7 @@ msgid ""
 "Repair it?"
 msgstr ""
 "FEHLER: /mnt ist nicht beschreibbar!\n"
-"Soll ein Reparaturversuch gestartet werden??"
+"Soll ein Reparaturversuch gestartet werden?"
 
 #: titan.c:1164
 msgid "Unknown Error."
@@ -8765,7 +8765,7 @@ msgstr ""
 #: tmdb.h:922
 msgid "Error, found result without imdbid we can't this save in MediaDB"
 msgstr ""
-"FEHLER: in der imdb-id ist ein Fehler und kann daher nicht übernommen werden!"
+"FEHLER: in der IMDB-ID ist ein Fehler und kann daher nicht übernommen werden!"
 
 #: tpchoice.h:21
 msgid "Transponderlist"
@@ -9262,7 +9262,7 @@ msgstr "Matze70 Satellitenliste für ASTRA 19.2"
 
 #: tpk_description.h:112
 msgid "Sat: Settings matze70 neue Design Astra 19.2"
-msgstr "Matz70 Satellitenliste neues Design für ASTRA 19.2"
+msgstr "Matze70 Satellitenliste neues Design für ASTRA 19.2"
 
 #: tpk_description.h:113
 msgid "Sat: uljanow Settings Sat 19.2"
