@@ -1,5 +1,5 @@
 [createpo.sh] xgettext --omit-header -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.utf.po
-/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.utf.po:1:2: syntax error
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.utf.po:1:1: syntax error
 /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.utf.po:1: keyword "m" unknown
 /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.utf.po:1: keyword "s" unknown
 /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.utf.po:1: keyword "g" unknown
