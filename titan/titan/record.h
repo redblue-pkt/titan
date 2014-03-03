@@ -517,7 +517,9 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 		dmxstart(servicenode->dmxvideodev);
 		servicenode->recdmxstart = 1;
 	}
-	
+#ifdef MIPSEL
+	sleep(3);
+#endif	
 	while(1)
 	{	
 #ifdef SIMULATE
