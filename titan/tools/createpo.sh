@@ -46,7 +46,7 @@ cat "$HOME"/ipk/source*/*/CONTROL/control | grep Description: | sort -u | sed 's
 cat "$HOME"/flashimg/source.titan/skins/tithek/tithekmainmenu/*.list | grep -v internettv | cut -d"#" -f1 | sort -u | sed -e 's/^/tmpstr = _("/' | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/source.titan/titan/tools/tmp/tithek_mainmenu.h
 #cat /var/www/atemio/web/mediathek/*/*.category.list  | cut -d"#" -f1 | sort -u | sed -e 's/^/tmpstr = _("/' | grep -v link= | grep -v title= | tr '\0' '#' | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/source.titan/titan/tools/tmp/tithek_submenu.h
 
-file --mime-encoding "$HOME"/flashimg/source.titan/po/*/*/*.po >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log 2>&1
+file --mime-encoding "$HOME"/flashimg/source.titan/po/*/*/*.po >> "$HOME"/flashimg/source.titan/titan/tools/error/coding.log 2>&1
 
 error=0
 #rm -rf /home/atemio/flashimg/source.titan/po/fr
@@ -146,7 +146,7 @@ if [ $error != 0 ];then
 	echo "[createpo.sh] found error($error)"
 fi
 
-file --mime-encoding "$HOME"/flashimg/source.titan/po/*/*/*.po >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log 2>&1
+file --mime-encoding "$HOME"/flashimg/source.titan/po/*/*/*.po >> "$HOME"/flashimg/source.titan/titan/tools/error/coding.log 2>&1
 
 echo "[createpo.sh] ###################### error log start ##########################"
 cat "$HOME"/flashimg/source.titan/titan/tools/error/error.log
@@ -178,6 +178,9 @@ elif [ "$SVNUSER" = "aafsvn" ] && [ "$GROUP" = "dev" ];then
 		cat -n "$FILE" | sed -ne ""$LINE1","$LINE2"p" >> "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
 		echo "[createpo.sh] ############################################" >> "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
 	fi
+
+	echo "[createpo.sh] ################## coding #################" >> "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
+	cat "$HOME"/flashimg/source.titan/titan/tools/error/coding.log >> "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
 
 	cd "$HOME"/flashimg/source.titan/titan/tools/error
 	svn commit -m "[titan] ERROR autoupdate po files"
