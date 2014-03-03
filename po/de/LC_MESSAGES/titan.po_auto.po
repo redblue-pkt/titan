@@ -1,4 +1,4 @@
-﻿#: about.h:9
+#: about.h:9
 msgid "Image"
 msgstr ""
 
@@ -90,7 +90,7 @@ msgstr ""
 #: putlocker.h:32 putlocker.h:79 putlocker.h:85 putlocker.h:136
 #: putlocker.h:146 putlocker.h:219 readerconfig.h:343 readerconfig.h:443
 #: readerconfig.h:444 readerconfig.h:488 readerconfig.h:489 record.h:355
-#: record.h:988 record.h:1439 rectimer.h:557 rectimer.h:1210 rectimer.h:1356
+#: record.h:994 record.h:1445 rectimer.h:557 rectimer.h:1210 rectimer.h:1356
 #: rectimer.h:1368 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:28 scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1888
@@ -178,7 +178,7 @@ msgstr ""
 #: putlocker.h:32 putlocker.h:79 putlocker.h:85 putlocker.h:136
 #: putlocker.h:146 putlocker.h:219 readerconfig.h:343 readerconfig.h:443
 #: readerconfig.h:444 readerconfig.h:488 readerconfig.h:489 record.h:90
-#: record.h:355 record.h:988 record.h:1175 record.h:1414 record.h:1439
+#: record.h:355 record.h:994 record.h:1181 record.h:1420 record.h:1445
 #: rectimer.h:557 rectimer.h:1210 rectimer.h:1356 rectimer.h:1368
 #: restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
@@ -549,7 +549,7 @@ msgstr ""
 #: putlocker.h:32 putlocker.h:79 putlocker.h:85 putlocker.h:136
 #: putlocker.h:146 putlocker.h:219 readerconfig.h:343 readerconfig.h:443
 #: readerconfig.h:444 readerconfig.h:488 readerconfig.h:489 record.h:355
-#: record.h:988 record.h:1175 record.h:1414 record.h:1439 rectimer.h:557
+#: record.h:994 record.h:1181 record.h:1420 record.h:1445 rectimer.h:557
 #: rectimer.h:1210 rectimer.h:1356 rectimer.h:1368 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:28
@@ -2337,7 +2337,8 @@ msgstr "Datenbank vor dem scannen lÃ¶schen"
 
 #: mediadb.h:1087 play.h:564 skin_default_skin.xml.h:173
 msgid "Delete unused entrys before scan"
-msgstr "Datenbank vor dem scannen Ã¼berprÃ¼fen (unbenutzte EintrÃ¤ge lÃ¶schen)"
+msgstr ""
+"Datenbank vor dem scannen Ã¼berprÃ¼fen (unbenutzte EintrÃ¤ge lÃ¶schen)"
 
 #: mediadb.h:1094 play.h:571
 msgid "scan Directory"
@@ -2529,7 +2530,8 @@ msgstr "MULTI EPG - Alle Sender"
 msgid ""
 "For Better Win7 Support install please Tpk Install > Network > Smbclient"
 msgstr ""
-"FÃ¼r eine bessere UnterstÃ¼tzung von Win7 Freigaben installieren Sie bitte\n"
+"FÃ¼r eine bessere UnterstÃ¼tzung von Win7 Freigaben installieren Sie "
+"bitte\n"
 "Tpk Installieren > Netzwerk > Smbclient (Win7)"
 
 #: networkbrowser.h:1005 networkbrowser.h:1011 networkbrowser.h:1021
@@ -4554,7 +4556,7 @@ msgstr "Aufnahme/Timeshift/Stream"
 msgid "Box recording finished poweroff in 30sec !"
 msgstr "Aufnahme beendet. Box wird in 30sek ausgeschaltet!"
 
-#: record.h:988
+#: record.h:994
 msgid ""
 "Can't find free Tuner for Record.\n"
 "Switch to Recording/Timeshift Channel ?"
@@ -4562,40 +4564,40 @@ msgstr ""
 "Es ist kein freier Tuner vorhanden.\n"
 "Zum Aufnahme/Timeshift Kanal wechseln?"
 
-#: record.h:1174
+#: record.h:1180
 msgid "Timer Record start !"
 msgstr "Timer Aufnahme gestartet!"
 
-#: record.h:1289 record.h:1298 record.h:1309 record.h:1344 record.h:1353
-#: record.h:1385 stream.h:15 stream.h:37
+#: record.h:1295 record.h:1304 record.h:1315 record.h:1350 record.h:1359
+#: record.h:1391 stream.h:15 stream.h:37
 msgid "stop"
 msgstr "Startabbruch"
 
-#: record.h:1307 record.h:1381 skin_default_skin.xml.h:474
+#: record.h:1313 record.h:1387 skin_default_skin.xml.h:474
 msgid "Record"
 msgstr "Aufnahme"
 
-#: record.h:1359 record.h:1368 record.h:1391
+#: record.h:1365 record.h:1374 record.h:1397
 msgid "change"
 msgstr "Ã„ndern"
 
-#: record.h:1377 record.h:1407
+#: record.h:1383 record.h:1413
 msgid "add recording (stop after current event)"
 msgstr "Aufnahme hinzufÃ¼gen (diese Sendung)"
 
-#: record.h:1378 record.h:1420
+#: record.h:1384 record.h:1426
 msgid "add recording (indefinitely)"
 msgstr "Aufnahme hinzufÃ¼gen (unbegrenzt)"
 
-#: record.h:1379 record.h:1425
+#: record.h:1385 record.h:1431
 msgid "add recording (enter duration)"
 msgstr "Aufnahme hinzufÃ¼gen (LÃ¤nge eingeben)"
 
-#: record.h:1414
+#: record.h:1420
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr "EPG Zeit kann nicht gefunden werden, oder ist nicht korrekt!"
 
-#: record.h:1439
+#: record.h:1445
 msgid "Record started"
 msgstr "Aufnahme wurde gestartet"
 
@@ -4866,7 +4868,8 @@ msgstr "Sender Zuordnung"
 
 #: scart.h:25
 msgid "Videomode must be 576i for Scart"
-msgstr "Die AuflÃ¶sung des SCART-Anschlusses muss auf 576i eingestellt sein!!!"
+msgstr ""
+"Die AuflÃ¶sung des SCART-Anschlusses muss auf 576i eingestellt sein!!!"
 
 #: scconfig.h:42
 msgid "card present"
@@ -5973,7 +5976,8 @@ msgstr ""
 #: skin_default_skin.xml.h:264
 msgid "Here to select your remote Model"
 msgstr ""
-"Hier kÃ¶nnen Sie Ihr Fernbedienungsmodell auswÃ¤hlen und mit OK bestÃ¤tigen."
+"Hier kÃ¶nnen Sie Ihr Fernbedienungsmodell auswÃ¤hlen und mit OK bestÃ�"
+"�tigen."
 
 #: skin_default_skin.xml.h:265
 msgid "Here you can backup and restore your settings."
@@ -6095,8 +6099,8 @@ msgid ""
 "navigate the control cross and the extra buttons displayed with your remote "
 "control to select."
 msgstr ""
-"Hier kÃ¶nnen Sie fÃ¼r Ihre ausgewÃ¤hlte Netzwerkschnittstelle Einstellungen "
-"vornehmen.\n"
+"Hier kÃ¶nnen Sie fÃ¼r Ihre ausgewÃ¤hlte Netzwerkschnittstelle "
+"Einstellungen vornehmen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6155,7 +6159,8 @@ msgid ""
 "control cross and the extra buttons displayed with your remote control to "
 "select."
 msgstr ""
-"Hier kÃ¶nnen Sie Ihre PIN Sicherheitseinstellungen fÃ¼r MenÃ¼s vornehmen.\n"
+"Hier kÃ¶nnen Sie Ihre PIN Sicherheitseinstellungen fÃ¼r MenÃ¼s "
+"vornehmen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6287,9 +6292,9 @@ msgid ""
 "Lnb / Unicam navigate to the field and press the Red button."
 msgstr ""
 "Hier kÃ¶nnen Sie fÃ¼r Ihren Sat Tuner einstellen.\n"
-"Stellen Sie zunÃ¤chst Ihre Satteliten Auswahl ein. Bei Verwendung von DiSEqC "
-"weisen Sie zusÃ¤tzlich den verwendeten Port zu. FÃ¼r erweiterte Lnb / Unicam "
-"navigieren Sie zum Feld und drÃ¼cken Sie die Rote Taste."
+"Stellen Sie zunÃ¤chst Ihre Satteliten Auswahl ein. Bei Verwendung von "
+"DiSEqC weisen Sie zusÃ¤tzlich den verwendeten Port zu. FÃ¼r erweiterte "
+"Lnb / Unicam navigieren Sie zum Feld und drÃ¼cken Sie die Rote Taste."
 
 #: skin_default_skin.xml.h:298
 msgid ""
@@ -8020,8 +8025,9 @@ msgstr ""
 
 #: system_backup_restore.h:15
 msgid ""
-"Press -restore- and your saved settings will be restored from your swapstick "
-"/ recording hdd! The Box will restart automatically for restoring!\n"
+"Press -restore- and your saved settings will be restored from your "
+"swapstick / recording hdd! The Box will restart automatically for "
+"restoring!\n"
 "\n"
 "Press -backup- to save your actual settings to swapstick / recording hdd.\n"
 "WARNING: The old backup will be deleted!"
@@ -8209,7 +8215,8 @@ msgstr "Timeshift kann nicht gestartet werden"
 msgid ""
 "Timeshiftsettings not allowed\n"
 "if timeshift is running !"
-msgstr "Tuner Konfiguration wÃ¤hrend einer Aufnahme/Streaming ist nicht erlaubt"
+msgstr ""
+"Tuner Konfiguration wÃ¤hrend einer Aufnahme/Streaming ist nicht erlaubt"
 
 #: timeshiftsettings.h:50
 msgid "permanent"
@@ -8730,7 +8737,8 @@ msgstr "Kein Bild"
 
 #: tmc.h:699
 msgid "Delete selected entry ?"
-msgstr "Datenbank vor dem scannen Ã¼berprÃ¼fen (unbenutzte EintrÃ¤ge lÃ¶schen)"
+msgstr ""
+"Datenbank vor dem scannen Ã¼berprÃ¼fen (unbenutzte EintrÃ¤ge lÃ¶schen)"
 
 #: tmc.h:1004
 msgid ""
@@ -10398,7 +10406,8 @@ msgstr "Verbunden mit Tuner"
 msgid ""
 "Tunerconfig is not allowed if record\n"
 "or stream is running !"
-msgstr "Tuner Konfiguration wÃ¤hrend einer Aufnahme/Streaming ist nicht erlaubt"
+msgstr ""
+"Tuner Konfiguration wÃ¤hrend einer Aufnahme/Streaming ist nicht erlaubt"
 
 #: tunerconfig.h:786
 msgid "Tuner "
@@ -10516,4 +10525,3 @@ msgstr "HÃ¶chsttemperatur: "
 #: weather.h:442 weather.h:460 weather.h:478 weather.h:496
 msgid "Condition: "
 msgstr "Wetter: "
-
