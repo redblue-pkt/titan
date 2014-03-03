@@ -89,7 +89,7 @@ for ROUND in $POLIST; do
 		if [ ! -e "$ROUND_NEW_MERGE" ] || [ `cat "$ROUND_NEW_MERGE" | wc -l` -eq 0 ]; then error="7"; break;fi
 ###
 
-use_edit_po=1
+use_edit_po=0
 if [ "$use_edit_po" = "1" ];then
 		iconv -f ISO-8859-1 -t UTF-8 $ROUND_EDIT > $ROUND_EDIT_UTF
 		if [ ! -e "$ROUND_EDIT_UTF" ] || [ `cat "$ROUND_EDIT_UTF" | wc -l` -eq 0 ]; then error="8"; break;fi
@@ -103,7 +103,7 @@ if [ "$use_edit_po" = "1" ];then
 		if [ ! -e "$ROUND_MERGE" ] || [ `cat "$ROUND_MERGE" | wc -l` -eq 0 ]; then error="10"; break;fi
 else
 ###
-		cp -a $ROUND_NEW_MERGE $ROUND_MERGE
+#		cat $ROUND_NEW_MERGE >$ROUND_MERGE
 		iconv -f UTF-8 -t ISO-8859-1 $ROUND_NEW_MERGE > $ROUND_MERGE
 		if [ ! -e "$ROUND_MERGE" ] || [ `cat "$ROUND_MERGE" | wc -l` -eq 0 ]; then error="10"; break;fi
 ###
@@ -150,8 +150,8 @@ echo "[createpo.sh] check group $GROUP"
 cd "$HOME"/flashimg/source.titan/po
 if [ "$SVNUSER" = "aafsvn" ] && [ "$GROUP" = "dev" ] && [ "$error" = "0" ];then
 	echo "[createpo.sh] svn commit -m [titan] autoupdate po files"
-	svn commit -m "[titan] autoupdate po files"
-	svn commit "$HOME"/flashimg/source.titan/po
+#	svn commit -m "[titan] autoupdate po files"
+#	svn commit "$HOME"/flashimg/source.titan/po
 elif [ "$SVNUSER" = "aafsvn" ] && [ "$GROUP" = "dev" ];then
 	echo "[createpo.sh] svn commit -m [titan] ERROR autoupdate po files"
 	
@@ -168,8 +168,8 @@ elif [ "$SVNUSER" = "aafsvn" ] && [ "$GROUP" = "dev" ];then
 	fi
 
 	cd "$HOME"/flashimg/source.titan/titan/tools/error
-	svn commit -m "[titan] ERROR autoupdate po files"
-	svn commit "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
+#	svn commit -m "[titan] ERROR autoupdate po files"
+#	svn commit "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
 else
 	echo "[createpo.sh] skip: svn commit"
 fi
