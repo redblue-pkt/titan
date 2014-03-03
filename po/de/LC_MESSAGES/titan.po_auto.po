@@ -1,4 +1,4 @@
-#: about.h:9
+﻿#: about.h:9
 msgid "Image"
 msgstr ""
 
@@ -90,7 +90,7 @@ msgstr ""
 #: putlocker.h:32 putlocker.h:79 putlocker.h:85 putlocker.h:136
 #: putlocker.h:146 putlocker.h:219 readerconfig.h:343 readerconfig.h:443
 #: readerconfig.h:444 readerconfig.h:488 readerconfig.h:489 record.h:355
-#: record.h:994 record.h:1445 rectimer.h:557 rectimer.h:1210 rectimer.h:1356
+#: record.h:988 record.h:1439 rectimer.h:557 rectimer.h:1210 rectimer.h:1356
 #: rectimer.h:1368 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:28 scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1888
@@ -178,7 +178,7 @@ msgstr ""
 #: putlocker.h:32 putlocker.h:79 putlocker.h:85 putlocker.h:136
 #: putlocker.h:146 putlocker.h:219 readerconfig.h:343 readerconfig.h:443
 #: readerconfig.h:444 readerconfig.h:488 readerconfig.h:489 record.h:90
-#: record.h:355 record.h:994 record.h:1181 record.h:1420 record.h:1445
+#: record.h:355 record.h:988 record.h:1175 record.h:1414 record.h:1439
 #: rectimer.h:557 rectimer.h:1210 rectimer.h:1356 rectimer.h:1368
 #: restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
@@ -549,7 +549,7 @@ msgstr ""
 #: putlocker.h:32 putlocker.h:79 putlocker.h:85 putlocker.h:136
 #: putlocker.h:146 putlocker.h:219 readerconfig.h:343 readerconfig.h:443
 #: readerconfig.h:444 readerconfig.h:488 readerconfig.h:489 record.h:355
-#: record.h:994 record.h:1181 record.h:1420 record.h:1445 rectimer.h:557
+#: record.h:988 record.h:1175 record.h:1414 record.h:1439 rectimer.h:557
 #: rectimer.h:1210 rectimer.h:1356 rectimer.h:1368 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:28
@@ -1026,7 +1026,7 @@ msgstr "Nord"
 
 #: diseqcconfig.h:255
 msgid "south"
-msgstr "Süd"
+msgstr "SÃ¼d"
 
 #: diseqcconfig.h:259
 msgid "east"
@@ -1047,8 +1047,8 @@ msgstr "die Hoster Url ist nicht http://"
 msgid ""
 "The file is being transfered to our other servers. This may take few minutes."
 msgstr ""
-"Die ausgewählte Datei ist vorübergehend nicht verfügbar.\n"
-"Bitte versuchen Sie es zu einem späteren Zeitpunkt erneut."
+"Die ausgewÃ¤hlte Datei ist vorÃ¼bergehend nicht verfÃ¼gbar.\n"
+"Bitte versuchen Sie es zu einem spÃ¤teren Zeitpunkt erneut."
 
 #: divxstage.h:150 faststream.h:79 faststream.h:90 faststream.h:102
 #: faststream.h:160 filenuke.h:84 filenuke.h:95 filenuke.h:107 filenuke.h:157
@@ -1061,7 +1061,7 @@ msgstr ""
 #: vidstream.h:86 vidstream.h:97 vidstream.h:167 xvidstage.h:100
 #: xvidstage.h:177
 msgid "The page is temporarily unavailable"
-msgstr "Die Seite ist vorübergehend nicht erreichbar"
+msgstr "Die Seite ist vorÃ¼bergehend nicht erreichbar"
 
 #: dlna.h:334
 msgid "DLNA started."
@@ -1073,7 +1073,7 @@ msgid ""
 "Please check your config."
 msgstr ""
 "DLNA nicht gestartet,\n"
-"Bitte Konfiguration überprüfen."
+"Bitte Konfiguration Ã¼berprÃ¼fen."
 
 #: dlna.h:345
 msgid "DLNA now stopped"
@@ -1098,7 +1098,7 @@ msgstr "Auswerfen"
 #: dvdplay.h:29 play.h:1417 plugins_dlna_skin.xml.h:10
 #: skins_dlna_skin.xml.h:10
 msgid "SELECT"
-msgstr "auswählen"
+msgstr "auswÃ¤hlen"
 
 #: dvdplay.h:62 mc_audioplayer.h:599 mc_audioplayer.h:702 mc_global.h:773
 #: mc_global.h:1020 mc_pictureplayer.h:95 mc_pictureplayer.h:237
@@ -1154,7 +1154,7 @@ msgstr ""
 
 #: epgsearch.h:292
 msgid "Comedy"
-msgstr "Komödie"
+msgstr "KomÃ¶die"
 
 #: epgsearch.h:300
 msgid "War"
@@ -1202,11 +1202,11 @@ msgstr "Suche"
 
 #: epgsettings.h:147
 msgid "whitelist"
-msgstr "Weiße Liste"
+msgstr "WeiÃŸe Liste"
 
 #: epgsettings.h:148
 msgid "scan and whitelist"
-msgstr "Weiße Liste"
+msgstr "WeiÃŸe Liste"
 
 #: epgsettings.h:189 epgsettings.h:200 epgsettings.h:205 epgsettings.h:210
 #: mediadbsettings.h:36
@@ -1223,7 +1223,7 @@ msgstr "nie"
 
 #: epgsettings.h:199 epgsettings.h:204 epgsettings.h:209
 msgid "only for scan"
-msgstr "Nur unverschlüsselte Sender"
+msgstr "Nur unverschlÃ¼sselte Sender"
 
 #: epgsettings.h:214
 msgid "poweroff"
@@ -1235,7 +1235,7 @@ msgstr "Deaktiviere Aktualisierungszeit und Nach Suche im Suche-Modus"
 
 #: epgsettings.h:284
 msgid "EPG resetet and now clear."
-msgstr "EPG zurückgesetzt und gelöscht"
+msgstr "EPG zurÃ¼ckgesetzt und gelÃ¶scht"
 
 #: epgsettings.h:298
 msgid "EPG Scan Log"
@@ -1251,7 +1251,7 @@ msgstr "Installation von"
 
 #: extensions.h:84
 msgid "Remove start"
-msgstr "Freigabe löschen"
+msgstr "Freigabe lÃ¶schen"
 
 #: extensions.h:93
 msgid "New free space (KB): "
@@ -1259,19 +1259,19 @@ msgstr "Freier EPG Speicher (KB)"
 
 #: extensions.h:99
 msgid "Install success"
-msgstr "Installation erfolgreich durchgeführt."
+msgstr "Installation erfolgreich durchgefÃ¼hrt."
 
 #: extensions.h:101
 msgid "Install error"
-msgstr "Installation nicht erfolgreich durchgeführt."
+msgstr "Installation nicht erfolgreich durchgefÃ¼hrt."
 
 #: extensions.h:103
 msgid "Remove success"
-msgstr "Löschen erfolgreich durchgeführt."
+msgstr "LÃ¶schen erfolgreich durchgefÃ¼hrt."
 
 #: extensions.h:105
 msgid "Remove error"
-msgstr "Löschen nicht erfolgreich durchgeführt."
+msgstr "LÃ¶schen nicht erfolgreich durchgefÃ¼hrt."
 
 #: extensions.h:125
 msgid "Install to MNT"
@@ -1295,15 +1295,15 @@ msgstr "Info zur TPK installation"
 
 #: extensions.h:170
 msgid "Can't install Package. Package to big."
-msgstr "Paket zu groß. Installation nicht möglich."
+msgstr "Paket zu groÃŸ. Installation nicht mÃ¶glich."
 
 #: extensions.h:197
 msgid "Tpk Install - select section"
-msgstr "TPK installieren - Kategorie wählen"
+msgstr "TPK installieren - Kategorie wÃ¤hlen"
 
 #: extensions.h:202 skin_default_skin.xml.h:663
 msgid "Tpk Install - select file"
-msgstr "TPK installieren - Datei wählen"
+msgstr "TPK installieren - Datei wÃ¤hlen"
 
 #: extensions.h:207 extensions.h:234 extensions.h:386 tpk.h:2990
 msgid ""
@@ -1313,9 +1313,9 @@ msgid ""
 "then perform an update by Tpk to: "
 msgstr ""
 "Wenn Sie ein anderes Paket aus dieser Sektion installieren wollen, entfernen "
-"Sie zuerst das installierte Paket. Ist das gewünschte Plugin nach einer "
+"Sie zuerst das installierte Paket. Ist das gewÃ¼nschte Plugin nach einer "
 "Neuinstallation der Titannit Software im TitanNit Menu nicht sichtbar, dann "
-"führen Sie bitte eine Tpk Aktualisierung durch. "
+"fÃ¼hren Sie bitte eine Tpk Aktualisierung durch. "
 
 #: extensions.h:212 extensions.h:353
 msgid "Installing"
@@ -1323,7 +1323,7 @@ msgstr "Installation von"
 
 #: extensions.h:218 extensions.h:357
 msgid "starting"
-msgstr "durchführen"
+msgstr "durchfÃ¼hren"
 
 #: extensions.h:230
 msgid "Tpk Install Info - Install OK"
@@ -1341,11 +1341,11 @@ msgstr ""
 
 #: extensions.h:271
 msgid "Tpk Remove - select file"
-msgstr "TPK Pakete löschen"
+msgstr "TPK Pakete lÃ¶schen"
 
 #: extensions.h:277
 msgid "Removeing"
-msgstr "Löschen von"
+msgstr "LÃ¶schen von"
 
 #: extensions.h:282
 msgid "Tpk Remove Info"
@@ -1353,16 +1353,16 @@ msgstr "Info zur TPK Deinstallation"
 
 #: extensions.h:290
 msgid "Tpk Remove Info - Remove OK"
-msgstr "Paket erfolgreich gelöscht"
+msgstr "Paket erfolgreich gelÃ¶scht"
 
 #: extensions.h:297
 msgid "Tpk Remove Info - Remove ERROR"
-msgstr "Paket konnte nicht gelöscht werden"
+msgstr "Paket konnte nicht gelÃ¶scht werden"
 
 #: extensions.h:304
 msgid "TPK Remove done, your system will reboot !"
 msgstr ""
-"TPK Löschen abgeschlossen\n"
+"TPK LÃ¶schen abgeschlossen\n"
 "Ihre Box wird neu gestartet"
 
 #: extensions.h:336 extensions.h:478
@@ -1375,8 +1375,8 @@ msgid ""
 "If the plugin is not active\n"
 "reboot the box."
 msgstr ""
-"Einige Erweiterungen benötigen einen Neustart.\n"
-"Wenn das Plugin nicht verfügbar ist, bitte neustarten"
+"Einige Erweiterungen benÃ¶tigen einen Neustart.\n"
+"Wenn das Plugin nicht verfÃ¼gbar ist, bitte neustarten"
 
 #: extensions.h:396
 msgid "TPK Tmp Install done, your system will reboot !"
@@ -1436,7 +1436,7 @@ msgstr "FEHLER: Erstellung fehlgeschlagen!"
 
 #: facebook.h:476
 msgid "Link postet"
-msgstr "Link veröffentlicht."
+msgstr "Link verÃ¶ffentlicht."
 
 #: facebook.h:477
 msgid "Video postet"
@@ -1472,7 +1472,7 @@ msgstr "Verzeichnis anlegen"
 
 #: filemanager.h:84 play.h:612
 msgid "Menu"
-msgstr "Menüliste"
+msgstr "MenÃ¼liste"
 
 #: filemanager.h:95
 msgid "Can't rename file !"
@@ -1508,11 +1508,11 @@ msgstr "Datei(en) kopieren"
 
 #: filemanager.h:278
 msgid "Really delete this file/dir?"
-msgstr "Wollen Sie diese Datei löschen?"
+msgstr "Wollen Sie diese Datei lÃ¶schen?"
 
 #: filemanager.h:291
 msgid "Can't remove file/dir !"
-msgstr "Datei/Verzeichnis konnte nicht gelöscht werden!"
+msgstr "Datei/Verzeichnis konnte nicht gelÃ¶scht werden!"
 
 #: filemanager.h:331
 msgid "Can't show this file!"
@@ -1526,7 +1526,7 @@ msgstr ""
 
 #: global.h:6385 keyactions.h:241
 msgid "ERROR cant read res"
-msgstr "Abbruch, Auflösungsstatus nicht Verfügbar"
+msgstr "Abbruch, AuflÃ¶sungsstatus nicht VerfÃ¼gbar"
 
 #: gmediarender.h:109
 msgid "Servername"
@@ -1572,39 +1572,39 @@ msgstr "Festplatte konfigurieren"
 
 #: harddisk.h:225 harddisk.h:715
 msgid "use medium for record"
-msgstr "Laufwerk für Aufnahmen benutzen"
+msgstr "Laufwerk fÃ¼r Aufnahmen benutzen"
 
 #: harddisk.h:230
 msgid "del medium for record"
-msgstr "Laufwerk nicht für Aufnahmen benutzen"
+msgstr "Laufwerk nicht fÃ¼r Aufnahmen benutzen"
 
 #: harddisk.h:235 harddisk.h:720
 msgid "use medium for extension"
-msgstr "Laufwerk für Erweiterungen benutzen"
+msgstr "Laufwerk fÃ¼r Erweiterungen benutzen"
 
 #: harddisk.h:240
 msgid "del medium for extension"
-msgstr "Laufwerk nicht für Erweiterungen benutzen"
+msgstr "Laufwerk nicht fÃ¼r Erweiterungen benutzen"
 
 #: harddisk.h:245 harddisk.h:722
 msgid "use medium for swap"
-msgstr "Laufwerk für SWAP-DATEI benutzen"
+msgstr "Laufwerk fÃ¼r SWAP-DATEI benutzen"
 
 #: harddisk.h:250
 msgid "del medium for swap"
-msgstr "Laufwerk nicht für Swap-Datei benutzen"
+msgstr "Laufwerk nicht fÃ¼r Swap-Datei benutzen"
 
 #: harddisk.h:255 harddisk.h:724
 msgid "use medium for backup"
-msgstr "Laufwerk für Sicherungen und Wiederherstellung benutzen"
+msgstr "Laufwerk fÃ¼r Sicherungen und Wiederherstellung benutzen"
 
 #: harddisk.h:260
 msgid "del medium for backup"
-msgstr "Laufwerk nicht für Sicherungen und Wiederherstellung benutzen"
+msgstr "Laufwerk nicht fÃ¼r Sicherungen und Wiederherstellung benutzen"
 
 #: harddisk.h:345
 msgid "Are you sure you want to delete this directory?"
-msgstr "Wollen Sie dieses Verzeichnis löschen?"
+msgstr "Wollen Sie dieses Verzeichnis lÃ¶schen?"
 
 #: harddisk.h:350
 msgid ""
@@ -1612,15 +1612,15 @@ msgid ""
 "Really delete directory and content?"
 msgstr ""
 "Verzeichnis ist nicht leer.\n"
-"Wirklich löschen?"
+"Wirklich lÃ¶schen?"
 
 #: harddisk.h:377
 msgid "can't create or delete directory"
-msgstr "Verzeichnis kann nicht verändert werden"
+msgstr "Verzeichnis kann nicht verÃ¤ndert werden"
 
 #: harddisk.h:381
 msgid "succesfull create or delelete directory"
-msgstr "Verzeichnis wurde erfolgreich verändert"
+msgstr "Verzeichnis wurde erfolgreich verÃ¤ndert"
 
 #: harddisk.h:433 skin_default_skin.xml.h:262
 msgid "Harddisk"
@@ -1632,15 +1632,15 @@ msgstr "Keine Festplatte/USB-Stick gefunden"
 
 #: harddisk.h:441 harddisk.h:442
 msgid "Harddisk Format - List Devices"
-msgstr "Festplatte formatieren - angeschlossene Geräte"
+msgstr "Festplatte formatieren - angeschlossene GerÃ¤te"
 
 #: harddisk.h:446 harddisk.h:447
 msgid "Harddisk Fsck - List Devices"
-msgstr "Dateisystem prüfen- angeschl. Geräte"
+msgstr "Dateisystem prÃ¼fen- angeschl. GerÃ¤te"
 
 #: harddisk.h:451 harddisk.h:452
 msgid "Harddisk Configure - List Devices"
-msgstr "Festplatte konfigurieren - angeschlossene Geräte"
+msgstr "Festplatte konfigurieren - angeschlossene GerÃ¤te"
 
 #: harddisk.h:470
 msgid "HDD "
@@ -1671,8 +1671,8 @@ msgid ""
 "HDD > 2TB unsupported.\n"
 "You must first install plugin parted, then you can use this panel."
 msgstr ""
-"FEHLER: Festplatten mit einer Speicherkapazität über 2 TB werden nicht "
-"unterstützt.\n"
+"FEHLER: Festplatten mit einer SpeicherkapazitÃ¤t Ã¼ber 2 TB werden nicht "
+"unterstÃ¼tzt.\n"
 "Installieren Sie bitte das Plugin 'parted' um die Festplatte zu nutzen!"
 
 #: harddisk.h:632
@@ -1681,7 +1681,7 @@ msgid ""
 "on this device and create a new Partition 1?\n"
 "Box reboots after format"
 msgstr ""
-"Wollen Sie alle Partitionen auf diesem Gerät\n"
+"Wollen Sie alle Partitionen auf diesem GerÃ¤t\n"
 "entfernen und eine neue Partition erstellen?\n"
 "Die Box wird danach neu gestartet."
 
@@ -1704,7 +1704,7 @@ msgid ""
 "Information: This hard drive size can take a file\n"
 "system check between 30 minutes and 1.5 hours."
 msgstr ""
-"Information: Bei dieser Festplattengröße kann ein\n"
+"Information: Bei dieser FestplattengrÃ¶ÃŸe kann ein\n"
 "Filesystemcheck zwischen 30min und 1,5 Stunden dauern."
 
 #: harddisk.h:805
@@ -1712,7 +1712,7 @@ msgid ""
 "Are you sure you want to check this Partition?\n"
 "Box reboots after check"
 msgstr ""
-"Wollen Sie die Partition prüfen?\n"
+"Wollen Sie die Partition prÃ¼fen?\n"
 "Die Box wird danach neu gestartet."
 
 #: harddisk.h:867 harddisk.h:868
@@ -1744,8 +1744,8 @@ msgid ""
 "Found new Stick/HDD.\n"
 "You can configure it in Harddisk Menu."
 msgstr ""
-"Neuer Datenträger erkannt.\n"
-"Sie können diesen im Festplatten Menü konfigurieren."
+"Neuer DatentrÃ¤ger erkannt.\n"
+"Sie kÃ¶nnen diesen im Festplatten MenÃ¼ konfigurieren."
 
 #: hbbtv.h:362
 msgid "You can leave HBBTV with Record Key."
@@ -1765,7 +1765,7 @@ msgstr "FEHLER: Testtransponder nicht gefunden!"
 msgid "testtransponder entry not ok"
 msgstr ""
 "FEHLER: Testtransponder fehlerhaft!\n"
-"Bitte überprüfen Sie Ihre Angaben!"
+"Bitte Ã¼berprÃ¼fen Sie Ihre Angaben!"
 
 #: hwtest.h:98
 msgid "can't create new transponer"
@@ -1779,7 +1779,7 @@ msgstr "FEHLER: Testsender nicht gefunden!"
 msgid "testchannel entry not ok"
 msgstr ""
 "FEHLER: Testsender-Eintrag ist fehlerhaft.\n"
-"Bitte überprüfen Sie Ihre Angaben!"
+"Bitte Ã¼berprÃ¼fen Sie Ihre Angaben!"
 
 #: hwtest.h:113
 msgid "can't create new channel"
@@ -1818,7 +1818,7 @@ msgstr "Netzwerk"
 
 #: hwtest.h:182 hwtest.h:416
 msgid "USB Port"
-msgstr "Übertragungen Port"
+msgstr "Ãœbertragungen Port"
 
 #: hwtest.h:183 hwtest.h:460
 msgid "CAM"
@@ -1842,7 +1842,7 @@ msgstr ""
 
 #: hwtest.h:206
 msgid "Press OK or EXIT"
-msgstr "Drücken Sie bitte -OK- oder -EXIT-"
+msgstr "DrÃ¼cken Sie bitte -OK- oder -EXIT-"
 
 #: hwtest.h:245
 msgid "Press Front Key"
@@ -1858,7 +1858,7 @@ msgstr "Neu laden"
 
 #: hwtest.h:284
 msgid "GREEN"
-msgstr "-GRÜN-"
+msgstr "-GRÃœN-"
 
 #: hwtest.h:289
 msgid "BLUE"
@@ -1910,11 +1910,11 @@ msgstr "kein Softcam gefunden"
 
 #: hwtest.h:564
 msgid "SUCESS Serial Port"
-msgstr "Serieller Anschluß erfolgreich"
+msgstr "Serieller AnschluÃŸ erfolgreich"
 
 #: hwtest.h:566
 msgid "FAIL Serial Port"
-msgstr "Serieller Anschluß fehlerhaft"
+msgstr "Serieller AnschluÃŸ fehlerhaft"
 
 #: hwtest.h:578
 msgid "LNB off / 22K off: OK"
@@ -1966,7 +1966,7 @@ msgstr ""
 
 #: imdbapi.h:200 imdb.h:626 tmdb.h:759
 msgid "Error, Internet Connection not found"
-msgstr "Fehler: keine Internet Verbindung verfügbar"
+msgstr "Fehler: keine Internet Verbindung verfÃ¼gbar"
 
 #: inadyn.h:188
 msgid "DYNDNS started."
@@ -1978,7 +1978,7 @@ msgid ""
 "Please check your config."
 msgstr ""
 "DYNDNS nicht gestartet,\n"
-"bitte Konfiguration überprüfen."
+"bitte Konfiguration Ã¼berprÃ¼fen."
 
 #: inadyn.h:200
 msgid "DYNDNS now stopped"
@@ -1994,7 +1994,7 @@ msgstr ""
 "Sollten die Online Funktionen deaktiviert sein, senden Sie bitte die hier "
 "angezeigte\n"
 "Board-ID Seriennummer (AA...)und die Seriennummer unterhalb des\n"
-"Gerätes (AM...) an die eingeblendete E-Mail Addresse. \n"
+"GerÃ¤tes (AM...) an die eingeblendete E-Mail Addresse. \n"
 "\n"
 "Board-ID Seriennummer:"
 
@@ -2026,7 +2026,7 @@ msgstr "Erweiterungsliste"
 
 #: keyactions.h:22 settings_pluginbutton.h:13 settings_redbutton.h:13
 msgid "Auto Resolution"
-msgstr "Automatische Auflösung"
+msgstr "Automatische AuflÃ¶sung"
 
 #: keyactions.h:23 settings_bluebutton.h:12 settings_bluebutton.h:43
 #: settings_pluginbutton.h:16 settings_redbutton.h:16
@@ -2051,7 +2051,7 @@ msgstr "Jugendschutz"
 #: keyactions.h:29 settings_bluebutton.h:20 settings_pluginbutton.h:21
 #: settings_redbutton.h:21 videomode.h:17 videomode.h:34
 msgid "Subchannel"
-msgstr "Unterkanäle"
+msgstr "UnterkanÃ¤le"
 
 #: keyactions.h:30 play.h:702 settings_bluebutton.h:21
 #: settings_pluginbutton.h:22 settings_redbutton.h:22
@@ -2077,7 +2077,7 @@ msgstr "Folge"
 
 #: language.h:49
 msgid "Change language needs reboot"
-msgstr "Änderung der Sprache benötigt einen Neustart!"
+msgstr "Ã„nderung der Sprache benÃ¶tigt einen Neustart!"
 
 #: lnbconfig.h:137 skin_default_skin.xml.h:448
 msgid "Polarization"
@@ -2117,7 +2117,7 @@ msgstr "Benutzername"
 
 #: marker.h:215
 msgid "ERROR... can't set marker in this file"
-msgstr "Fehler: Für diese Datei kann kein Marker gesetzt werden"
+msgstr "Fehler: FÃ¼r diese Datei kann kein Marker gesetzt werden"
 
 #: marker.h:229
 msgid "Marker has been set."
@@ -2154,7 +2154,7 @@ msgstr "Datei-Modus"
 #: mc_pictureplayer.h:316 mc_videoplayer.h:658 plugins_mc_skin.xml.h:47
 #: skins_mc_skin.xml.h:47
 msgid "Random"
-msgstr "Zufällig"
+msgstr "ZufÃ¤llig"
 
 #: mc_audioplayer.h:580 mc_pictureplayer.h:336 mc_videoplayer.h:699
 msgid "Playlist-Mode"
@@ -2164,7 +2164,7 @@ msgstr "Playlist-Modus"
 #: mc_videoplayer_settings.h:32 plugins_mc_skin.xml.h:14
 #: skins_mc_skin.xml.h:14
 msgid "big"
-msgstr "groß"
+msgstr "groÃŸ"
 
 #: mc_audioplayer_settings.h:37 mc_pictureplayer_settings.h:52
 #: mc_videoplayer_settings.h:33
@@ -2179,7 +2179,7 @@ msgstr "Kompletter Hintergrund mit Cover"
 #: mc_audioplayer_settings.h:39 mc_pictureplayer_settings.h:54
 #: mc_videoplayer_settings.h:35
 msgid "size (default)"
-msgstr "Größe (Voreinstellung)"
+msgstr "GrÃ¶ÃŸe (Voreinstellung)"
 
 #: mc_audioplayer_settings.h:40 mc_pictureplayer_settings.h:55
 #: mc_videoplayer_settings.h:36
@@ -2198,7 +2198,7 @@ msgstr "Playlist"
 
 #: mc_global.h:547 mc_global.h:575 mc_global.h:1074
 msgid "Random-On"
-msgstr "Zufällig-An"
+msgstr "ZufÃ¤llig-An"
 
 #: mc_global.h:606 mc_global.h:615
 msgid "Load Playlist"
@@ -2214,11 +2214,11 @@ msgstr "Internetbrowser Netsurf ist nicht installiert"
 
 #: mc_main.h:37 mc_main.h:42 mc_main.h:47 mc_main.h:73 mc_main.h:78
 msgid "comming soon"
-msgstr "folgt demnächst, das Team arbeitet dran"
+msgstr "folgt demnÃ¤chst, das Team arbeitet dran"
 
 #: mc_main.h:209 menu.h:153 panel_main.h:29 panel_main.h:135
 msgid "Menu not implemented !"
-msgstr "Menü noch nicht verfügbar!"
+msgstr "MenÃ¼ noch nicht verfÃ¼gbar!"
 
 #: mc_mediathek.h:37
 msgid "Install Tithek Tpk first !"
@@ -2257,7 +2257,7 @@ msgstr ""
 
 #: mc_pictureplayer_settings.h:63
 msgid "Antenne Kaernten"
-msgstr "Antenne Kärnten"
+msgstr "Antenne KÃ¤rnten"
 
 #: mc_pictureplayer_settings.h:64
 msgid "Onkelz Rock Radio"
@@ -2301,7 +2301,7 @@ msgstr ""
 
 #: mc_videoplayer_settings.h:58
 msgid "5s (default)"
-msgstr "Größe (Voreinstellung)"
+msgstr "GrÃ¶ÃŸe (Voreinstellung)"
 
 #: mc_wetterinfo.h:38
 msgid "Install Weather Tpk first !"
@@ -2309,19 +2309,19 @@ msgstr "Installieren Sie bitte das Wetter Plugin unter Erweiterungen"
 
 #: mediadbedit.h:75
 msgid "unlock -> lock it"
-msgstr "Ungeschützt --> Schützen"
+msgstr "UngeschÃ¼tzt --> SchÃ¼tzen"
 
 #: mediadbedit.h:76
 msgid "unlock -> leaf unlock"
-msgstr "Ungeschützt --> Nicht ändern"
+msgstr "UngeschÃ¼tzt --> Nicht Ã¤ndern"
 
 #: mediadbedit.h:77
 msgid "locked -> unlock it"
-msgstr "Geschützt --> Schutz aufheben"
+msgstr "GeschÃ¼tzt --> Schutz aufheben"
 
 #: mediadbedit.h:78
 msgid "locked -> leaf locked"
-msgstr "Geschützt --> Nicht ändern"
+msgstr "GeschÃ¼tzt --> Nicht Ã¤ndern"
 
 #: mediadbedit.h:333
 msgid "MediaDB entry for this file not found."
@@ -2333,11 +2333,11 @@ msgstr "MediaDB Hintergrundsuche wurde gestartet."
 
 #: mediadb.h:1080 play.h:557 skin_default_skin.xml.h:172
 msgid "Delete MediaDB before scan"
-msgstr "Datenbank vor dem scannen löschen"
+msgstr "Datenbank vor dem scannen lÃ¶schen"
 
 #: mediadb.h:1087 play.h:564 skin_default_skin.xml.h:173
 msgid "Delete unused entrys before scan"
-msgstr "Datenbank vor dem scannen überprüfen (unbenutzte Einträge löschen)"
+msgstr "Datenbank vor dem scannen Ã¼berprÃ¼fen (unbenutzte EintrÃ¤ge lÃ¶schen)"
 
 #: mediadb.h:1094 play.h:571
 msgid "scan Directory"
@@ -2370,7 +2370,7 @@ msgstr "Datei"
 
 #: mediadb.h:2443
 msgid "path"
-msgstr "Ordner für Filme"
+msgstr "Ordner fÃ¼r Filme"
 
 #: mediadb.h:2447
 msgid "title"
@@ -2382,51 +2382,51 @@ msgstr "IMDBID"
 
 #: mediadb.h:2454
 msgid "Add iMDB manuel"
-msgstr "IMDB manuell hinzufügen"
+msgstr "IMDB manuell hinzufÃ¼gen"
 
 #: mediadbsettings.h:37
 msgid "older 1 day"
-msgstr "älter als 1 Tag"
+msgstr "Ã¤lter als 1 Tag"
 
 #: mediadbsettings.h:38
 msgid "older 2 day"
-msgstr "älter als 2 Tage"
+msgstr "Ã¤lter als 2 Tage"
 
 #: mediadbsettings.h:39
 msgid "older 3 day"
-msgstr "älter als 3 Tage"
+msgstr "Ã¤lter als 3 Tage"
 
 #: mediadbsettings.h:40
 msgid "older 4 day"
-msgstr "älter als 4 Tage"
+msgstr "Ã¤lter als 4 Tage"
 
 #: mediadbsettings.h:41
 msgid "older 5 day"
-msgstr "älter als 5 Tage"
+msgstr "Ã¤lter als 5 Tage"
 
 #: mediadbsettings.h:42
 msgid "older 10 day"
-msgstr "älter als 10 Tage"
+msgstr "Ã¤lter als 10 Tage"
 
 #: mediadbsettings.h:43
 msgid "older 15 day"
-msgstr "älter als 15 Tage"
+msgstr "Ã¤lter als 15 Tage"
 
 #: mediadbsettings.h:44
 msgid "older 20 day"
-msgstr "älter als 20 Tage"
+msgstr "Ã¤lter als 20 Tage"
 
 #: mediadbsettings.h:45
 msgid "older 30 day"
-msgstr "älter als 30 Tage"
+msgstr "Ã¤lter als 30 Tage"
 
 #: mediadbsettings.h:46
 msgid "older 40 day"
-msgstr "älter als 40 Tage"
+msgstr "Ã¤lter als 40 Tage"
 
 #: mediadbsettings.h:47
 msgid "older 50 day"
-msgstr "älter als 50 Tage"
+msgstr "Ã¤lter als 50 Tage"
 
 #: mediadbsettings.h:56 plugins_catcatch_skin.xml.h:3
 #: skin_default_skin.xml.h:33 skins_catcatch_skin.xml.h:3
@@ -2529,7 +2529,7 @@ msgstr "MULTI EPG - Alle Sender"
 msgid ""
 "For Better Win7 Support install please Tpk Install > Network > Smbclient"
 msgstr ""
-"Für eine bessere Unterstützung von Win7 Freigaben installieren Sie bitte\n"
+"FÃ¼r eine bessere UnterstÃ¼tzung von Win7 Freigaben installieren Sie bitte\n"
 "Tpk Installieren > Netzwerk > Smbclient (Win7)"
 
 #: networkbrowser.h:1005 networkbrowser.h:1011 networkbrowser.h:1021
@@ -2558,15 +2558,15 @@ msgstr "Netzwerk Browser - gefundene cifs/nfs Freigaben"
 
 #: networkbrowser.h:1340
 msgid "Add Cifs Network Share"
-msgstr "Hinzufügen einer Cifs Freigabe"
+msgstr "HinzufÃ¼gen einer Cifs Freigabe"
 
 #: networkbrowser.h:1390
 msgid "Add Nfs Network Share"
-msgstr "Hinzufügen einer Nfs Freigabe"
+msgstr "HinzufÃ¼gen einer Nfs Freigabe"
 
 #: networkbrowser.h:1430
 msgid "Add Ftpfs Network Share"
-msgstr "Hinzufügen einer Ftp Freigabe"
+msgstr "HinzufÃ¼gen einer Ftp Freigabe"
 
 #: networkbrowser.h:1559
 msgid "cifs"
@@ -2639,7 +2639,7 @@ msgstr "Netzwerk Browser - zeige Freigaben"
 
 #: networkbrowser.h:1907
 msgid "Are you sure you want remove this share?"
-msgstr "Wollen Sie diese Freigabe wirklich löschen?"
+msgstr "Wollen Sie diese Freigabe wirklich lÃ¶schen?"
 
 #: network.h:256 network.h:257
 msgid "Wait"
@@ -2651,7 +2651,7 @@ msgstr "FEHLER"
 
 #: network.h:284
 msgid "comming soon..."
-msgstr "folgt demnächst, das Team arbeitet dran"
+msgstr "folgt demnÃ¤chst, das Team arbeitet dran"
 
 #: network.h:295
 msgid "Restart Network ?"
@@ -2679,7 +2679,7 @@ msgstr "Netzwerkeinstellungen speichern?"
 
 #: network.h:558
 msgid "Can't change hostname !"
-msgstr "Fehler: Hostname kann nicht geändert werden!"
+msgstr "Fehler: Hostname kann nicht geÃ¤ndert werden!"
 
 #: network.h:679
 msgid "NONE"
@@ -2711,7 +2711,7 @@ msgid ""
 " You can now configure the new interface."
 msgstr ""
 "WLAN gestartet.\n"
-"Sie können den Adapter nun konfigurieren"
+"Sie kÃ¶nnen den Adapter nun konfigurieren"
 
 #: network.h:804
 msgid ""
@@ -2719,7 +2719,7 @@ msgid ""
 "Please check your config."
 msgstr ""
 "WLAN konnte nicht gestartet werden,\n"
-"bitte überprüfen Sie Ihre Konfiguration."
+"bitte Ã¼berprÃ¼fen Sie Ihre Konfiguration."
 
 #: network.h:827
 msgid "searching..."
@@ -2735,14 +2735,14 @@ msgstr "WLAN Log"
 
 #: network.h:876
 msgid "Found Wlan Stick and driver for: "
-msgstr "WLAN Gerät und Treiber wurden gefunden:"
+msgstr "WLAN GerÃ¤t und Treiber wurden gefunden:"
 
 #: network.h:881
 msgid ""
 "Found Wlan Stick but no driver\n"
 "Please install driver: "
 msgstr ""
-"ACHTUNG: WLAN Gerät gefunden.\n"
+"ACHTUNG: WLAN GerÃ¤t gefunden.\n"
 "Bitte installieren Sie den passenden Treiber!"
 
 #: network.h:884
@@ -2759,7 +2759,7 @@ msgstr "behalten"
 
 #: optimize.h:254 skin_default_skin.xml.h:170
 msgid "delete"
-msgstr "löschen"
+msgstr "lÃ¶schen"
 
 #: optimize.h:264
 msgid "SatCount: "
@@ -2771,7 +2771,7 @@ msgstr "Transponder:"
 
 #: optimize.h:280
 msgid "ChannelCount: "
-msgstr "Kanäle: "
+msgstr "KanÃ¤le: "
 
 #: optimize.h:288
 msgid "BouquetCount: "
@@ -2779,11 +2779,11 @@ msgstr "Bouquets: "
 
 #: optimize.h:296
 msgid "BouquetEntrys: "
-msgstr "Bouqueteinträge: "
+msgstr "BouqueteintrÃ¤ge: "
 
 #: optimize.h:304
 msgid "EpgChannels: "
-msgstr "EPG Kanäle: "
+msgstr "EPG KanÃ¤le: "
 
 #: optimize.h:312
 msgid "ProviderCount: "
@@ -2795,7 +2795,7 @@ msgstr "Playlist automatisch starten"
 
 #: panel_settings_autostart.h:34 settings_autostart.h:25
 msgid "fsckroot"
-msgstr "Dateisystemprüfung Root-Partition"
+msgstr "DateisystemprÃ¼fung Root-Partition"
 
 #: panel_settings_autostart.h:44 settings_autostart.h:35
 msgid "bootstop"
@@ -2840,7 +2840,7 @@ msgstr "noaudiosync"
 
 #: panel_settings_autostart.h:131 settings_autostart.h:162
 msgid "Boot Resolution"
-msgstr "Startauflösung"
+msgstr "StartauflÃ¶sung"
 
 #: panel_settings_autostart.h:140 settings_autostart.h:171
 msgid "Bootlogo"
@@ -2872,7 +2872,7 @@ msgstr "Lade Partition"
 
 #: panel_settings_autostart.h:201 settings_autostart.h:282
 msgid "Fsck Record"
-msgstr "Dateisystemprüfung Aufnahme-Partition"
+msgstr "DateisystemprÃ¼fung Aufnahme-Partition"
 
 #: panel_settings_autostart.h:210 settings_autostart.h:291
 #: skin_default_skin.xml.h:618
@@ -2957,7 +2957,7 @@ msgstr "Automatische Einbindung"
 
 #: panel_settings_overclocking.h:213 settings_overclocking.h:213
 msgid "Only Boot Overclock"
-msgstr "Nur beim Start übertakten"
+msgstr "Nur beim Start Ã¼bertakten"
 
 #: panel_settings_overclocking.h:222 settings_overclocking.h:222
 msgid "CPU frequency"
@@ -2978,7 +2978,7 @@ msgstr "Eingestellte CPU Frequenz im Standby"
 
 #: panel_settings_overclocking.h:275 settings_overclocking.h:275
 msgid "Use Teletxt Workaround"
-msgstr "Workaround für Videotext nutzen"
+msgstr "Workaround fÃ¼r Videotext nutzen"
 
 #: panel_settings_overclocking.h:276 settings_overclocking.h:276
 msgid "frequency"
@@ -2994,7 +2994,7 @@ msgid ""
 "The Box will reboot and the Wizard will be started!"
 msgstr ""
 "Soll der Assistent gestartet werden?\n"
-"Die Box wird neu gestartet und der Assistent wird ausgeführt"
+"Die Box wird neu gestartet und der Assistent wird ausgefÃ¼hrt"
 
 #: play.h:396 play.h:430 plugins_imdbapi_skin.xml.h:9
 #: plugins_imdb_skin.xml.h:9 plugins_tmc_skin.xml.h:16
@@ -3157,7 +3157,7 @@ msgstr "MediaDB Eintrag bearbeiten"
 
 #: play.h:645
 msgid "Delete File"
-msgstr "Datei löschen"
+msgstr "Datei lÃ¶schen"
 
 #: play.h:647 plugins_streaminfo_skin.xml.h:3 skins_streaminfo_skin.xml.h:3
 #: tpk_showname.h:174
@@ -3190,14 +3190,14 @@ msgstr "Aufnahme Titel"
 
 #: play.h:1296
 msgid "Really Delete ?"
-msgstr "wirklich löschen?"
+msgstr "wirklich lÃ¶schen?"
 
 #: play.h:1417 plugins_networkbrowser_skin.xml.h:5 plugins_stock_skin.xml.h:4
 #: plugins_weather_skin.xml.h:2 skin_default_skin.xml.h:168
 #: skins_networkbrowser_skin.xml.h:5 skins_stock_skin.xml.h:4
 #: skins_weather_skin.xml.h:2
 msgid "DEL"
-msgstr "Löschen"
+msgstr "LÃ¶schen"
 
 #: play.h:1649
 msgid "Marker autoseek is started"
@@ -3213,7 +3213,7 @@ msgstr "Autostart Einstellungen"
 
 #: plugins_autotimer_skin.xml.h:2 skins_autotimer_skin.xml.h:2
 msgid "afterevent"
-msgstr "Anschließend"
+msgstr "AnschlieÃŸend"
 
 #: plugins_autotimer_skin.xml.h:3 skins_autotimer_skin.xml.h:3
 msgid "begin search"
@@ -3419,7 +3419,7 @@ msgid ""
 "Enter the shown url in your browser and enter the Code to register the "
 "receiver to facebook"
 msgstr ""
-"Geben Sie den angezeigten Code über die dargestellte Adresse in Ihrem "
+"Geben Sie den angezeigten Code Ã¼ber die dargestellte Adresse in Ihrem "
 "Browser ein und registrieren Sie Ihren Receiver."
 
 #: plugins_filemanager_skin.xml.h:1 skins_filemanager_skin.xml.h:1
@@ -3429,7 +3429,7 @@ msgstr "Kopieren"
 #: plugins_filemanager_skin.xml.h:2 plugins_tmc_skin.xml.h:3
 #: skins_filemanager_skin.xml.h:2 skins_tmc_skin.xml.h:3
 msgid "Delete"
-msgstr "Löschen"
+msgstr "LÃ¶schen"
 
 #: plugins_filemanager_skin.xml.h:3 skins_filemanager_skin.xml.h:3
 msgid "FILELIST MANAGER"
@@ -3471,7 +3471,7 @@ msgstr "Handlung:"
 #: skins_imdbapi_skin.xml.h:6 skins_imdb_skin.xml.h:6 skins_tmc_skin.xml.h:13
 #: skins_tmdb_skin.xml.h:6
 msgid "Release:"
-msgstr "Veröffentlicht:"
+msgstr "VerÃ¶ffentlicht:"
 
 #: plugins_imdbapi_skin.xml.h:7 plugins_imdb_skin.xml.h:7
 #: plugins_instar_skin.xml.h:15 plugins_panel_skin.xml.h:21
@@ -3568,7 +3568,7 @@ msgstr "Im Standby anzeigen"
 #: plugins_lcdpearl1_skin.xml.h:5 plugins_lcdsamsung_skin.xml.h:5
 #: skins_lcdpearl1_skin.xml.h:5 skins_lcdsamsung_skin.xml.h:5
 msgid "alle Menus anzeigen"
-msgstr "Alle Menüs anzeigen"
+msgstr "Alle MenÃ¼s anzeigen"
 
 #: plugins_lcdpearl1_skin.xml.h:6 skins_lcdpearl1_skin.xml.h:6
 msgid "Auswahl"
@@ -3723,7 +3723,7 @@ msgstr "Hardwarebilddecoder"
 
 #: plugins_mc_skin.xml.h:41 skins_mc_skin.xml.h:41
 msgid "Pic quality"
-msgstr "Darstellungsqualität von Fotos"
+msgstr "DarstellungsqualitÃ¤t von Fotos"
 
 #: plugins_mc_skin.xml.h:42 skin_default_skin.xml.h:429 skins_mc_skin.xml.h:42
 msgid "PICTURE"
@@ -3809,7 +3809,7 @@ msgstr "Web Radio Player"
 #: skins_networkbrowser_skin.xml.h:1 skins_stock_skin.xml.h:2
 #: skins_weather_skin.xml.h:1
 msgid "ADD"
-msgstr "Hinzufügen"
+msgstr "HinzufÃ¼gen"
 
 #: plugins_networkbrowser_skin.xml.h:2 skins_networkbrowser_skin.xml.h:2
 msgid "Auth Settings"
@@ -3840,7 +3840,7 @@ msgid ""
 "Here you can configure your Auth Data. Use to navigate the control cross and "
 "the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier können Sie Ihre User Authentifizierung konfigurieren.\n"
+"Hier kÃ¶nnen Sie Ihre User Authentifizierung konfigurieren.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -3849,7 +3849,7 @@ msgid ""
 "Here you can configure your network shares. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier können Sie Ihre Netzwerk Freigaben konfigurieren.\n"
+"Hier kÃ¶nnen Sie Ihre Netzwerk Freigaben konfigurieren.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -3858,7 +3858,7 @@ msgid ""
 "If you don't find Windows shares you need to disable 'Password protected "
 "sharing' in the 'Network and Sharing Center'."
 msgstr ""
-"Sollten keine Windows Freigaben sichtbar sein, muss 'Kennwortgeschützte "
+"Sollten keine Windows Freigaben sichtbar sein, muss 'KennwortgeschÃ¼tzte "
 "Freigaben' im 'Netzwerk- und Freigabecenter' abgeschaltet werden."
 
 #: plugins_networkbrowser_skin.xml.h:13 skin_default_skin.xml.h:325
@@ -3885,7 +3885,7 @@ msgstr "Protokoll"
 
 #: plugins_networkbrowser_skin.xml.h:18 skins_networkbrowser_skin.xml.h:18
 msgid "proxy"
-msgstr "IP für Proxyserver"
+msgstr "IP fÃ¼r Proxyserver"
 
 #: plugins_networkbrowser_skin.xml.h:19 skins_networkbrowser_skin.xml.h:19
 msgid "proxyauth"
@@ -3893,19 +3893,19 @@ msgstr "Proxy Authentifizierung"
 
 #: plugins_networkbrowser_skin.xml.h:20 skins_networkbrowser_skin.xml.h:20
 msgid "proxyip"
-msgstr "IP für Proxyserver"
+msgstr "IP fÃ¼r Proxyserver"
 
 #: plugins_networkbrowser_skin.xml.h:21 skins_networkbrowser_skin.xml.h:21
 msgid "proxypass"
-msgstr "Passwort für Proxyserver"
+msgstr "Passwort fÃ¼r Proxyserver"
 
 #: plugins_networkbrowser_skin.xml.h:22 skins_networkbrowser_skin.xml.h:22
 msgid "proxyport"
-msgstr "Port für Proxyserver"
+msgstr "Port fÃ¼r Proxyserver"
 
 #: plugins_networkbrowser_skin.xml.h:23 skins_networkbrowser_skin.xml.h:23
 msgid "proxyuser"
-msgstr "Benutzername für Proxyserver"
+msgstr "Benutzername fÃ¼r Proxyserver"
 
 #: plugins_networkbrowser_skin.xml.h:24 skins_networkbrowser_skin.xml.h:24
 msgid "rsize"
@@ -3968,7 +3968,7 @@ msgstr "Weiter"
 
 #: plugins_news_skin.xml.h:4 skins_news_skin.xml.h:4
 msgid "PREV"
-msgstr "Zurück"
+msgstr "ZurÃ¼ck"
 
 #: plugins_optimize_skin.xml.h:1 skins_optimize_skin.xml.h:1 tpk_showname.h:72
 msgid "Optimize"
@@ -3982,7 +3982,7 @@ msgstr "Boot Optionen"
 #: plugins_panel_skin.xml.h:2 skin_default_skin.xml.h:223
 #: skins_panel_skin.xml.h:2
 msgid "FanControl"
-msgstr "Lüftersteuerung"
+msgstr "LÃ¼ftersteuerung"
 
 #: plugins_panel_skin.xml.h:3 skins_panel_skin.xml.h:3
 msgid "OverClock Settings"
@@ -4032,12 +4032,12 @@ msgstr "standard"
 
 #: plugins_panel_skin.xml.h:16 skins_panel_skin.xml.h:16
 msgid "Fancontrol"
-msgstr "Lüftersteuerung"
+msgstr "LÃ¼ftersteuerung"
 
 #: plugins_panel_skin.xml.h:19 skin_default_skin.xml.h:422
 #: skins_panel_skin.xml.h:19
 msgid "Overclocking"
-msgstr "Übertakten"
+msgstr "Ãœbertakten"
 
 #: plugins_panel_skin.xml.h:20 skins_panel_skin.xml.h:20
 msgid "Save"
@@ -4056,7 +4056,7 @@ msgstr ""
 #: plugins_panel_skin.xml.h:25 skin_default_skin.xml.h:700
 #: skins_panel_skin.xml.h:25
 msgid "Usb Device"
-msgstr "USB Geräte"
+msgstr "USB GerÃ¤te"
 
 #: plugins_panel_skin.xml.h:26 skins_panel_skin.xml.h:26
 msgid "Videotune"
@@ -4083,7 +4083,7 @@ msgid ""
 "Here you can aktivate/deaktivate you readers. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier können Sie Ihre Reader auswählen.\n"
+"Hier kÃ¶nnen Sie Ihre Reader auswÃ¤hlen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -4092,7 +4092,7 @@ msgid ""
 "Here you can configure your reader. Use to navigate the control cross and "
 "the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier können Sie Ihre Reader Konfiguration vornehmen.\n"
+"Hier kÃ¶nnen Sie Ihre Reader Konfiguration vornehmen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -4163,7 +4163,7 @@ msgstr "Zeit bis Aktion (min)"
 #: plugins_streaminfo_skin.xml.h:1 skin_default_skin.xml.h:76
 #: skins_streaminfo_skin.xml.h:1
 msgid "Aspect"
-msgstr "Seitenverhältnis"
+msgstr "SeitenverhÃ¤ltnis"
 
 #: plugins_streaminfo_skin.xml.h:2 skins_streaminfo_skin.xml.h:2
 msgid "Framerate"
@@ -4171,15 +4171,15 @@ msgstr "Maximale Rate"
 
 #: plugins_streaminfo_skin.xml.h:4 skins_streaminfo_skin.xml.h:4
 msgid "X-Resolution"
-msgstr "Auflösung"
+msgstr "AuflÃ¶sung"
 
 #: plugins_streaminfo_skin.xml.h:5 skins_streaminfo_skin.xml.h:5
 msgid "Y-Resolution"
-msgstr "Auflösung"
+msgstr "AuflÃ¶sung"
 
 #: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1
 msgid "TiThek Menu"
-msgstr "TiThek Menü"
+msgstr "TiThek MenÃ¼"
 
 #: plugins_tithek_skin.xml.h:2 skins_tithek_skin.xml.h:2
 msgid "TiThek Settings"
@@ -4187,11 +4187,11 @@ msgstr "Webinterface und RGUI Einstellungen"
 
 #: plugins_tithek_skin.xml.h:3 skins_tithek_skin.xml.h:3
 msgid "ADD FAV"
-msgstr "Fav hinzufügen"
+msgstr "Fav hinzufÃ¼gen"
 
 #: plugins_tithek_skin.xml.h:4 skins_tithek_skin.xml.h:4
 msgid "DEL FAV"
-msgstr "Fav löschen"
+msgstr "Fav lÃ¶schen"
 
 #: plugins_tithek_skin.xml.h:5 skins_tithek_skin.xml.h:5
 msgid "Exit Tithek"
@@ -4225,7 +4225,7 @@ msgstr "Ansicht Cover (streams)"
 
 #: plugins_tithek_skin.xml.h:13 skins_tithek_skin.xml.h:13
 msgid "View Sections"
-msgstr "Ansicht Menüs"
+msgstr "Ansicht MenÃ¼s"
 
 #: plugins_tiwakeup_skin.xml.h:1 skins_tiwakeup_skin.xml.h:1
 msgid "tiWakeup"
@@ -4253,11 +4253,11 @@ msgstr "Name"
 
 #: plugins_tmc_skin.xml.h:11 skins_tmc_skin.xml.h:11
 msgid "Pic Timeout"
-msgstr "Ping Zeitüberschreitung"
+msgstr "Ping ZeitÃ¼berschreitung"
 
 #: plugins_tmc_skin.xml.h:12 skins_tmc_skin.xml.h:12
 msgid "Preview"
-msgstr "Zurück"
+msgstr "ZurÃ¼ck"
 
 #: plugins_tmc_skin.xml.h:14 skins_tmc_skin.xml.h:14
 msgid "Runtime:"
@@ -4282,7 +4282,7 @@ msgstr "mehr"
 
 #: plugins_tmdb_skin.xml.h:5 skins_tmdb_skin.xml.h:5
 msgid "Rating:"
-msgstr "durchführen"
+msgstr "durchfÃ¼hren"
 
 #: plugins_tmdb_skin.xml.h:10 skins_tmdb_skin.xml.h:10
 msgid "TMDb - Plugin"
@@ -4306,21 +4306,21 @@ msgstr "Fortschrittsbalken"
 
 #: plugins_tsSchnitt_skin.xml.h:5 skins_tsSchnitt_skin.xml.h:5
 msgid "Selected:"
-msgstr "Sicherung auswählen:"
+msgstr "Sicherung auswÃ¤hlen:"
 
 #: plugins_tsSchnitt_skin.xml.h:6 skins_tsSchnitt_skin.xml.h:6
 msgid "select movie"
-msgstr "Filmdatei auswählen"
+msgstr "Filmdatei auswÃ¤hlen"
 
 #: plugins_tsSchnitt_skin.xml.h:8 skins_tsSchnitt_skin.xml.h:8
 msgid ""
 "Start movie in the internal player, set with 0 key marker during a movie. 5 "
 "key is for the marker overview. Then here select movie and start."
 msgstr ""
-"Starten Sie die Wiedergabe der ts Datei im internen Player und drücken Sie "
+"Starten Sie die Wiedergabe der ts Datei im internen Player und drÃ¼cken Sie "
 "die Taste 0 um eine Markierung zu setzen.\n"
-"Drücken Sie die Taste 5 um eine Übersicht der Markierungen anzuzeigen und "
-"starten Sie anschließend die Wiedergabe."
+"DrÃ¼cken Sie die Taste 5 um eine Ãœbersicht der Markierungen anzuzeigen und "
+"starten Sie anschlieÃŸend die Wiedergabe."
 
 #: plugins_tsSchnitt_skin.xml.h:10 skins_tsSchnitt_skin.xml.h:10
 msgid "ts - cut"
@@ -4420,7 +4420,7 @@ msgstr "Standby"
 
 #: putlocker.h:85
 msgid "This file doesn't exist, or has been removed."
-msgstr "Dieser Stream ist zur Zeit nicht verfügbar oder entfernt worden"
+msgstr "Dieser Stream ist zur Zeit nicht verfÃ¼gbar oder entfernt worden"
 
 #: readerconfig.h:258
 msgid "first slot"
@@ -4436,7 +4436,7 @@ msgstr "Config vom Flash (permanent) verwenden"
 
 #: readerconfig.h:319
 msgid "Use config from Flash (temporary)"
-msgstr "Config vom Flash (temporär) verwenden"
+msgstr "Config vom Flash (temporÃ¤r) verwenden"
 
 #: readerconfig.h:328
 msgid "Use config from Stick or HDD"
@@ -4444,7 +4444,7 @@ msgstr "Config vom Stick / HDD verwenden"
 
 #: readerconfig.h:338
 msgid "Choice Config File"
-msgstr "Config File wählen"
+msgstr "Config File wÃ¤hlen"
 
 #: readerconfig.h:343
 msgid "No config file found."
@@ -4496,15 +4496,15 @@ msgstr "Es kann keine Datei angelegt werden"
 
 #: record.h:46
 msgid "Can't open file"
-msgstr "Die Datei kann nicht geöffnet werden"
+msgstr "Die Datei kann nicht geÃ¶ffnet werden"
 
 #: record.h:49
 msgid "Can't open FRONTEND device"
-msgstr "Das FRONTEND device kann nicht geöffnet werden"
+msgstr "Das FRONTEND device kann nicht geÃ¶ffnet werden"
 
 #: record.h:52
 msgid "Can't open DMX device"
-msgstr "Das DMX device kann nicht geöffnet werden"
+msgstr "Das DMX device kann nicht geÃ¶ffnet werden"
 
 #: record.h:55
 msgid "Pid's not ok"
@@ -4520,11 +4520,11 @@ msgstr "Schreibfehler"
 
 #: record.h:64
 msgid "No memory"
-msgstr "Kein Speicher verfügbar"
+msgstr "Kein Speicher verfÃ¼gbar"
 
 #: record.h:67
 msgid "Failed open split file"
-msgstr "Split Datei kann nicht geöffnet werden"
+msgstr "Split Datei kann nicht geÃ¶ffnet werden"
 
 #: record.h:70
 msgid "Frontend type unknown"
@@ -4554,7 +4554,7 @@ msgstr "Aufnahme/Timeshift/Stream"
 msgid "Box recording finished poweroff in 30sec !"
 msgstr "Aufnahme beendet. Box wird in 30sek ausgeschaltet!"
 
-#: record.h:994
+#: record.h:988
 msgid ""
 "Can't find free Tuner for Record.\n"
 "Switch to Recording/Timeshift Channel ?"
@@ -4562,40 +4562,40 @@ msgstr ""
 "Es ist kein freier Tuner vorhanden.\n"
 "Zum Aufnahme/Timeshift Kanal wechseln?"
 
-#: record.h:1180
+#: record.h:1174
 msgid "Timer Record start !"
 msgstr "Timer Aufnahme gestartet!"
 
-#: record.h:1295 record.h:1304 record.h:1315 record.h:1350 record.h:1359
-#: record.h:1391 stream.h:15 stream.h:37
+#: record.h:1289 record.h:1298 record.h:1309 record.h:1344 record.h:1353
+#: record.h:1385 stream.h:15 stream.h:37
 msgid "stop"
 msgstr "Startabbruch"
 
-#: record.h:1313 record.h:1387 skin_default_skin.xml.h:474
+#: record.h:1307 record.h:1381 skin_default_skin.xml.h:474
 msgid "Record"
 msgstr "Aufnahme"
 
-#: record.h:1365 record.h:1374 record.h:1397
+#: record.h:1359 record.h:1368 record.h:1391
 msgid "change"
-msgstr "Ändern"
+msgstr "Ã„ndern"
 
-#: record.h:1383 record.h:1413
+#: record.h:1377 record.h:1407
 msgid "add recording (stop after current event)"
-msgstr "Aufnahme hinzufügen (diese Sendung)"
+msgstr "Aufnahme hinzufÃ¼gen (diese Sendung)"
 
-#: record.h:1384 record.h:1426
+#: record.h:1378 record.h:1420
 msgid "add recording (indefinitely)"
-msgstr "Aufnahme hinzufügen (unbegrenzt)"
+msgstr "Aufnahme hinzufÃ¼gen (unbegrenzt)"
 
-#: record.h:1385 record.h:1431
+#: record.h:1379 record.h:1425
 msgid "add recording (enter duration)"
-msgstr "Aufnahme hinzufügen (Länge eingeben)"
+msgstr "Aufnahme hinzufÃ¼gen (LÃ¤nge eingeben)"
 
-#: record.h:1420
+#: record.h:1414
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr "EPG Zeit kann nicht gefunden werden, oder ist nicht korrekt!"
 
-#: record.h:1445
+#: record.h:1439
 msgid "Record started"
 msgstr "Aufnahme wurde gestartet"
 
@@ -4649,11 +4649,11 @@ msgstr "Wiederholen"
 
 #: rectimer.h:1052
 msgid "daily"
-msgstr "täglich"
+msgstr "tÃ¤glich"
 
 #: rectimer.h:1053
 msgid "weekly"
-msgstr "Wöchentlich"
+msgstr "WÃ¶chentlich"
 
 #: rectimer.h:1054
 msgid "workdays"
@@ -4697,11 +4697,11 @@ msgstr "Umschalten"
 
 #: rectimer.h:1483
 msgid "waiting"
-msgstr "durchführen"
+msgstr "durchfÃ¼hren"
 
 #: rectimer.h:1487
 msgid "success"
-msgstr "Löschen erfolgreich durchgeführt."
+msgstr "LÃ¶schen erfolgreich durchgefÃ¼hrt."
 
 #: rectimer.h:1489
 msgid "error"
@@ -4709,7 +4709,7 @@ msgstr "Errorboot"
 
 #: restoredefault.h:10
 msgid "Really restore default settings ?"
-msgstr "Soll auf Werkseinstellung zurücksetzt werden?"
+msgstr "Soll auf Werkseinstellung zurÃ¼cksetzt werden?"
 
 #: restoredefault.h:19
 msgid "Receiver reboots now !!!"
@@ -4717,23 +4717,23 @@ msgstr "Receiver startet jetzt neu!"
 
 #: restoredefault.h:23
 msgid "Can't restore settings"
-msgstr "Wiederherstellung kann nicht durchgeführt werden"
+msgstr "Wiederherstellung kann nicht durchgefÃ¼hrt werden"
 
 #: restoredefault.h:32
 msgid ""
 "Do you really want to erase all data and backups from Swap?\n"
 "The Box will reboot and the erase will be started!"
 msgstr ""
-"Internen Swap Speicher löschen und Werkseinstellung durchführen?\n"
-"Box neu starten und Löschvorgang ausführen "
+"Internen Swap Speicher lÃ¶schen und Werkseinstellung durchfÃ¼hren?\n"
+"Box neu starten und LÃ¶schvorgang ausfÃ¼hren "
 
 #: restoredefault.h:47
 msgid ""
 "Do you really want to erase Swap (Settings are preserve)?\n"
 "The Box will reboot and the erase will be started!"
 msgstr ""
-"Internen Swap Speicher löschen (Konfiguration wird beibehalten)?\n"
-"Box neu starten und Löschvorgang ausführen "
+"Internen Swap Speicher lÃ¶schen (Konfiguration wird beibehalten)?\n"
+"Box neu starten und LÃ¶schvorgang ausfÃ¼hren "
 
 #: restoredefault.h:63 restoredefault.h:67 restoredefault.h:71
 #: skin_default_skin.xml.h:505
@@ -4750,7 +4750,7 @@ msgstr "Formatiere MNT (komplett)"
 
 #: rgui.h:30
 msgid "Can't connect to server !"
-msgstr "Keine Verbindung zum Server möglich!"
+msgstr "Keine Verbindung zum Server mÃ¶glich!"
 
 #: rgui.h:118
 msgid "Send remote box into standby ?"
@@ -4799,7 +4799,7 @@ msgid ""
 "Nothing found."
 msgstr ""
 "Kanalsuchlauf wurde beendet.\n"
-"Es wurden keine Kanäle gefunden."
+"Es wurden keine KanÃ¤le gefunden."
 
 #: scan.h:1600
 msgid "Channel scan ended."
@@ -4809,7 +4809,7 @@ msgstr ""
 
 #: scan.h:1630
 msgid "All new channels added!"
-msgstr "Alle neuen Kanäle gespeichert!"
+msgstr "Alle neuen KanÃ¤le gespeichert!"
 
 #: scan.h:1640
 msgid "Wait for channel scan end"
@@ -4846,7 +4846,7 @@ msgstr "automatisch"
 
 #: scan.h:2261
 msgid "Unchanged"
-msgstr "nicht verändern"
+msgstr "nicht verÃ¤ndern"
 
 #: scan.h:2262
 msgid "Create new"
@@ -4854,11 +4854,11 @@ msgstr "neu erstellen"
 
 #: scan.h:2263
 msgid "Delete All"
-msgstr "alle löschen"
+msgstr "alle lÃ¶schen"
 
 #: scan.h:2345
 msgid "Transponder changed"
-msgstr "Transponder wurde geändert"
+msgstr "Transponder wurde geÃ¤ndert"
 
 #: scart.h:12
 msgid "Change to scart"
@@ -4866,7 +4866,7 @@ msgstr "Sender Zuordnung"
 
 #: scart.h:25
 msgid "Videomode must be 576i for Scart"
-msgstr "Die Auflösung des SCART-Anschlusses muss auf 576i eingestellt sein!!!"
+msgstr "Die AuflÃ¶sung des SCART-Anschlusses muss auf 576i eingestellt sein!!!"
 
 #: scconfig.h:42
 msgid "card present"
@@ -4886,7 +4886,7 @@ msgstr "blau"
 
 #: screensaveradjust.h:31
 msgid "green"
-msgstr "grün"
+msgstr "grÃ¼n"
 
 #: screensaveradjust.h:32
 msgid "red"
@@ -4898,7 +4898,7 @@ msgstr "gelb"
 
 #: screensaveradjust.h:34
 msgid "white"
-msgstr "weiß"
+msgstr "weiÃŸ"
 
 #: screensaveradjust.h:35
 msgid "grey"
@@ -4950,7 +4950,7 @@ msgstr "Imdb Hintergrund Bilder (Netzwerk/Festplatte)"
 
 #: scriptexec.h:22
 msgid "BG-RUN"
-msgstr "Ausführung im Hintergrund"
+msgstr "AusfÃ¼hrung im Hintergrund"
 
 #: scriptexec.h:40
 msgid "Script has no output or started in background."
@@ -4958,14 +4958,14 @@ msgstr "Skript hat keine Ausgabe oder wurde im Hintergrund gestartet."
 
 #: scriptexec.h:41 tpk_showname.h:144
 msgid "Script execute"
-msgstr "Skript ausführen"
+msgstr "Skript ausfÃ¼hren"
 
 #: service.h:710
 msgid ""
 "Timeshift is running !!!\n"
 "Stop it and switch ?"
 msgstr ""
-"Timeshift läuft!\n"
+"Timeshift lÃ¤uft!\n"
 "Ausschalten und umschalten?"
 
 #: service.h:934
@@ -4976,11 +4976,11 @@ msgstr "Kein freier Tuner gefunden oder kein Tuner definiert."
 
 #: service.h:937
 msgid "Tuning to Channel failed!"
-msgstr "Kanal nicht verfügbar!"
+msgstr "Kanal nicht verfÃ¼gbar!"
 
 #: service.h:940
 msgid "Can't open frontend dev or Frontend Type unknown!"
-msgstr "Frontend kann nicht geöffnet werden oder unbekannter Typ"
+msgstr "Frontend kann nicht geÃ¶ffnet werden oder unbekannter Typ"
 
 #: service.h:945
 msgid "Channellist empty or corrupt (channel not found)!"
@@ -4992,15 +4992,15 @@ msgstr ""
 
 #: settings_bluebutton.h:6
 msgid "Blue Key Action - Setup"
-msgstr "Blaue Taste - Belegungsmenü"
+msgstr "Blaue Taste - BelegungsmenÃ¼"
 
 #: settings_pluginbutton.h:6
 msgid "Plugin Key Action - Setup"
-msgstr "Blaue Taste - Belegungsmenü"
+msgstr "Blaue Taste - BelegungsmenÃ¼"
 
 #: settings_redbutton.h:6
 msgid "Red Key Action - Setup"
-msgstr "Rote Taste - Belegungsmenü "
+msgstr "Rote Taste - BelegungsmenÃ¼ "
 
 #: skinadjust.h:23
 msgid "border"
@@ -5028,7 +5028,7 @@ msgstr "Ja (Text in MB)"
 
 #: skinadjust.h:54 tunerconfig.h:302 tunerconfig.h:303
 msgid "press red"
-msgstr "Drücke -Rot-"
+msgstr "DrÃ¼cke -Rot-"
 
 #: skinadjust.h:133
 msgid "Receiver now reboot !!!"
@@ -5192,11 +5192,11 @@ msgstr ""
 
 #: skin_default_skin.xml.h:51
 msgid "About"
-msgstr "Über"
+msgstr "Ãœber"
 
 #: skin_default_skin.xml.h:52
 msgid "AC3 default"
-msgstr "Dolby Digital (AC3) standardmäßig"
+msgstr "Dolby Digital (AC3) standardmÃ¤ÃŸig"
 
 #: skin_default_skin.xml.h:53
 msgid "AC3 Mode"
@@ -5224,7 +5224,7 @@ msgstr "alle gefundenen Sender speichern"
 
 #: skin_default_skin.xml.h:60
 msgid "ADD BOUQUET"
-msgstr "Favoriten hinzufügen"
+msgstr "Favoriten hinzufÃ¼gen"
 
 #: skin_default_skin.xml.h:61
 msgid "ADD ONE"
@@ -5232,7 +5232,7 @@ msgstr "markierte Sender speichern"
 
 #: skin_default_skin.xml.h:62
 msgid "add service"
-msgstr "Eintrag hinzufügen"
+msgstr "Eintrag hinzufÃ¼gen"
 
 #: skin_default_skin.xml.h:63
 msgid "Adjust"
@@ -5257,8 +5257,8 @@ msgid ""
 "select the sender in the right box and then save it with the red button that "
 "station. If you do not do this and go to exit out the search not saved."
 msgstr ""
-"Nach der manuellen Suche müssen Sie mit -Grün- die gefundenen Kanäle "
-"abspeichern. Um manuell einen Kanal hinzuzufügen, muss man den Kanal im "
+"Nach der manuellen Suche mÃ¼ssen Sie mit -GrÃ¼n- die gefundenen KanÃ¤le "
+"abspeichern. Um manuell einen Kanal hinzuzufÃ¼gen, muss man den Kanal im "
 "rechten Feld markieren und dann mit -Rot- abspeichern. Exit speichert das "
 "Suchergebnis nicht."
 
@@ -5280,7 +5280,7 @@ msgstr "Alle"
 
 #: skin_default_skin.xml.h:73
 msgid "Animated Screens"
-msgstr "Animierte Menüs"
+msgstr "Animierte MenÃ¼s"
 
 #: skin_default_skin.xml.h:74
 msgid "Animated Speed"
@@ -5292,7 +5292,7 @@ msgstr "Nachfragen bei Kanalwechsel"
 
 #: skin_default_skin.xml.h:77
 msgid "Aspect Ratio:"
-msgstr "Seitenverhältnis:"
+msgstr "SeitenverhÃ¤ltnis:"
 
 #: skin_default_skin.xml.h:78
 msgid "Atemio (hotline)"
@@ -5300,7 +5300,7 @@ msgstr "Atemio Hotline"
 
 #: skin_default_skin.xml.h:79
 msgid "Audio delay"
-msgstr "Audio Verzögerung"
+msgstr "Audio VerzÃ¶gerung"
 
 #: skin_default_skin.xml.h:80
 msgid "Audio PID:"
@@ -5316,11 +5316,11 @@ msgstr "Ton/Untertitel"
 
 #: skin_default_skin.xml.h:83
 msgid "Audio Tracks"
-msgstr "Tonspur wählen"
+msgstr "Tonspur wÃ¤hlen"
 
 #: skin_default_skin.xml.h:85
 msgid "Autocheck cam can decrypt"
-msgstr "Automatisch überprüfen, ob Ihr CAM entschlüsseln kann?"
+msgstr "Automatisch Ã¼berprÃ¼fen, ob Ihr CAM entschlÃ¼sseln kann?"
 
 #: skin_default_skin.xml.h:86
 msgid "Automatic Search"
@@ -5332,7 +5332,7 @@ msgstr "Automatischer Untertitel Start"
 
 #: skin_default_skin.xml.h:88
 msgid "Auto resolution"
-msgstr "Automatische Auflösung"
+msgstr "Automatische AuflÃ¶sung"
 
 #: skin_default_skin.xml.h:89
 msgid "Autostart - Audio / Video / Sat"
@@ -5360,7 +5360,7 @@ msgstr "Autostart Einstellungen"
 
 #: skin_default_skin.xml.h:95
 msgid "Autostart - Usb Device"
-msgstr "USB Geräte"
+msgstr "USB GerÃ¤te"
 
 #: skin_default_skin.xml.h:96
 msgid "A/V Settings"
@@ -5396,7 +5396,7 @@ msgid ""
 "Before you can see Signal/SNR/Ber you must zap to a channel of the satellite "
 "you are searching."
 msgstr ""
-"Bevor Sie Signal/SNR/Ber sehen können, müssen Sie auf einen Kanal des "
+"Bevor Sie Signal/SNR/Ber sehen kÃ¶nnen, mÃ¼ssen Sie auf einen Kanal des "
 "Satelliten schalten, den Sie suchen."
 
 #: skin_default_skin.xml.h:106
@@ -5405,7 +5405,7 @@ msgstr "Anfang"
 
 #: skin_default_skin.xml.h:107
 msgid "Behavior at recording"
-msgstr "Verhalten während Aufnahme"
+msgstr "Verhalten wÃ¤hrend Aufnahme"
 
 #: skin_default_skin.xml.h:108
 msgid "BER:"
@@ -5465,11 +5465,11 @@ msgstr "Kanalnamen aktualisieren"
 
 #: skin_default_skin.xml.h:125
 msgid "Change Channelname auto."
-msgstr "Kanalname automatisch ändern"
+msgstr "Kanalname automatisch Ã¤ndern"
 
 #: skin_default_skin.xml.h:126
 msgid "Change Feed"
-msgstr "Feedadresse hinzufügen"
+msgstr "Feedadresse hinzufÃ¼gen"
 
 #: skin_default_skin.xml.h:128
 msgid "Channel Allocation"
@@ -5485,7 +5485,7 @@ msgstr "Kanal Verlauf"
 
 #: skin_default_skin.xml.h:131
 msgid "Channellist view"
-msgstr "Nichtempfangbare Kanäle"
+msgstr "Nichtempfangbare KanÃ¤le"
 
 #: skin_default_skin.xml.h:132
 msgid "Channel Search"
@@ -5497,23 +5497,23 @@ msgstr "Kanalsuche"
 
 #: skin_default_skin.xml.h:136
 msgid "Clear"
-msgstr "löschen"
+msgstr "lÃ¶schen"
 
 #: skin_default_skin.xml.h:137
 msgid "Clear before scan"
-msgstr "Vor der Suche löschen?"
+msgstr "Vor der Suche lÃ¶schen?"
 
 #: skin_default_skin.xml.h:138
 msgid "CLEAR INPUT"
-msgstr "Eingabefeld löschen"
+msgstr "Eingabefeld lÃ¶schen"
 
 #: skin_default_skin.xml.h:139
 msgid "Code1"
-msgstr "Schlüssel 1:"
+msgstr "SchlÃ¼ssel 1:"
 
 #: skin_default_skin.xml.h:140
 msgid "Code2"
-msgstr "Schlüssel 2: "
+msgstr "SchlÃ¼ssel 2: "
 
 #: skin_default_skin.xml.h:141
 msgid "Coderate HP"
@@ -5537,7 +5537,7 @@ msgstr "Farbformat"
 
 #: skin_default_skin.xml.h:146
 msgid "Color Format Scart / Composite"
-msgstr "Farbformat für Scart / Komponente"
+msgstr "Farbformat fÃ¼r Scart / Komponente"
 
 #: skin_default_skin.xml.h:147
 msgid "Committed command"
@@ -5601,7 +5601,7 @@ msgstr "Stoppen"
 
 #: skin_default_skin.xml.h:163
 msgid "Deactivate Crypt Support on Media Playback"
-msgstr "Deaktiviere Crypt Support während der Wiedergabe von Daten/Streams"
+msgstr "Deaktiviere Crypt Support wÃ¤hrend der Wiedergabe von Daten/Streams"
 
 #: skin_default_skin.xml.h:164
 msgid "Deactivate MiniTV"
@@ -5621,15 +5621,15 @@ msgstr "Allgemein"
 
 #: skin_default_skin.xml.h:169
 msgid "Del EPG before scan"
-msgstr "Lösche EPG vor der Suche"
+msgstr "LÃ¶sche EPG vor der Suche"
 
 #: skin_default_skin.xml.h:171
 msgid "Delete EPG after read"
-msgstr "Lösche EPG nach dem Einlesen"
+msgstr "LÃ¶sche EPG nach dem Einlesen"
 
 #: skin_default_skin.xml.h:174
 msgid "del startchannel"
-msgstr "lösche Startkanal"
+msgstr "lÃ¶sche Startkanal"
 
 #: skin_default_skin.xml.h:175
 msgid "DESC"
@@ -5637,11 +5637,11 @@ msgstr "Beschreibung"
 
 #: skin_default_skin.xml.h:176
 msgid "Device:"
-msgstr "Gerät:"
+msgstr "GerÃ¤t:"
 
 #: skin_default_skin.xml.h:177 system_infos_sysinfo.h:56
 msgid "Devices"
-msgstr "Geräte"
+msgstr "GerÃ¤te"
 
 #: skin_default_skin.xml.h:178
 msgid "Director"
@@ -5689,7 +5689,7 @@ msgstr "System"
 
 #: skin_default_skin.xml.h:189
 msgid "Don't clear TV on zap (only with fastzap)"
-msgstr "TV Bild beim schnellen Umschalten nicht löschen"
+msgstr "TV Bild beim schnellen Umschalten nicht lÃ¶schen"
 
 #: skin_default_skin.xml.h:190
 msgid "Download"
@@ -5701,7 +5701,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:193
 msgid "Dutch"
-msgstr "Niederländisch"
+msgstr "NiederlÃ¤ndisch"
 
 #: skin_default_skin.xml.h:194
 msgid "DYNDNS Settings"
@@ -5765,7 +5765,7 @@ msgstr "EPG Aktualisierungszeit"
 
 #: skin_default_skin.xml.h:210
 msgid "EPG Reset"
-msgstr "EPG löschen"
+msgstr "EPG lÃ¶schen"
 
 #: skin_default_skin.xml.h:211
 msgid "EPG Save Mode"
@@ -5785,7 +5785,7 @@ msgstr "EPG Einstellungen"
 
 #: skin_default_skin.xml.h:215
 msgid "EPG SHORT VIEW"
-msgstr "EPG-Kurzübersicht"
+msgstr "EPG-KurzÃ¼bersicht"
 
 #: skin_default_skin.xml.h:217
 msgid "Expert Modus"
@@ -5829,7 +5829,7 @@ msgstr "Favoriten"
 
 #: skin_default_skin.xml.h:228
 msgid "FEC"
-msgstr "Vorwärtsfehlerkorrektur (FEC)"
+msgstr "VorwÃ¤rtsfehlerkorrektur (FEC)"
 
 #: skin_default_skin.xml.h:229
 msgid "FEC:"
@@ -5837,7 +5837,7 @@ msgstr "FEC:"
 
 #: skin_default_skin.xml.h:230
 msgid "Filesystem Check"
-msgstr "Dateisystem prüfen"
+msgstr "Dateisystem prÃ¼fen"
 
 #: skin_default_skin.xml.h:231
 msgid "Fine move"
@@ -5866,7 +5866,7 @@ msgstr "Softwareaktualisierung (Lokal)"
 
 #: skin_default_skin.xml.h:236
 msgid "Fontsize adjust in pixel"
-msgstr "Schriftgröße verändern in Pixel"
+msgstr "SchriftgrÃ¶ÃŸe verÃ¤ndern in Pixel"
 
 #: skin_default_skin.xml.h:237
 msgid "Format HDD"
@@ -5878,7 +5878,7 @@ msgstr "Freier Speicherplatz"
 
 #: skin_default_skin.xml.h:239
 msgid "French"
-msgstr "Französisch"
+msgstr "FranzÃ¶sisch"
 
 #: skin_default_skin.xml.h:240
 msgid "Frequency"
@@ -5966,18 +5966,18 @@ msgid ""
 "control cross and the extra buttons displayed with your remote control to "
 "select."
 msgstr ""
-"Hier können Sie für Ihren ausgewählten Tuner die LNB-Einstellungen\n"
+"Hier kÃ¶nnen Sie fÃ¼r Ihren ausgewÃ¤hlten Tuner die LNB-Einstellungen\n"
 "vornehmen.\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
 #: skin_default_skin.xml.h:264
 msgid "Here to select your remote Model"
 msgstr ""
-"Hier können Sie Ihr Fernbedienungsmodell auswählen und mit OK bestätigen."
+"Hier kÃ¶nnen Sie Ihr Fernbedienungsmodell auswÃ¤hlen und mit OK bestÃ¤tigen."
 
 #: skin_default_skin.xml.h:265
 msgid "Here you can backup and restore your settings."
-msgstr "Hier können Sie Ihre Einstellungen sichern und wiederherstellen."
+msgstr "Hier kÃ¶nnen Sie Ihre Einstellungen sichern und wiederherstellen."
 
 #: skin_default_skin.xml.h:266
 msgid ""
@@ -5985,7 +5985,7 @@ msgid ""
 "control cross and the extra buttons displayed with your remote control to "
 "select."
 msgstr ""
-"Hier können Sie den Empfang des aktuellen Senders überprüfen.\n"
+"Hier kÃ¶nnen Sie den Empfang des aktuellen Senders Ã¼berprÃ¼fen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -5995,9 +5995,9 @@ msgid ""
 "must edit their tuner and adjust depending on the connection. For engine "
 "systems require an additional engine settings making."
 msgstr ""
-"Hier können Sie Ihren Tuner für die Konfiguration auswählen.\n"
-"Für Ihren Kanalsuchlauf müssen Sie Ihre Tuner bearbeiten und je nach "
-"Anbindung einstellen. Für motorisierte Anlagen bitte zusätzlich Motor "
+"Hier kÃ¶nnen Sie Ihren Tuner fÃ¼r die Konfiguration auswÃ¤hlen.\n"
+"FÃ¼r Ihren Kanalsuchlauf mÃ¼ssen Sie Ihre Tuner bearbeiten und je nach "
+"Anbindung einstellen. FÃ¼r motorisierte Anlagen bitte zusÃ¤tzlich Motor "
 "Ansteuerung bearbeiten."
 
 #: skin_default_skin.xml.h:268
@@ -6005,7 +6005,7 @@ msgid ""
 "Here you can configure access to your DynDNS. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier können Sie Ihren DynDNS Zugang konfigurieren.\n"
+"Hier kÃ¶nnen Sie Ihren DynDNS Zugang konfigurieren.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6014,7 +6014,7 @@ msgid ""
 "Here you can configure Ci-Modules. Use to navigate the control cross and the "
 "extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier können Sie Ihre CI-Module konfigurieren.\n"
+"Hier kÃ¶nnen Sie Ihre CI-Module konfigurieren.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6023,7 +6023,7 @@ msgid ""
 "Here you can configure the smartcard readers. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier können Sie Ihre Smartkarten konfigurieren.\n"
+"Hier kÃ¶nnen Sie Ihre Smartkarten konfigurieren.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6032,7 +6032,7 @@ msgid ""
 "Here you can configure your web server. Use to navigate the control cross "
 "and the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier können Sie das Webinterface und den RGUI Service konfigurieren.\n"
+"Hier kÃ¶nnen Sie das Webinterface und den RGUI Service konfigurieren.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6041,7 +6041,7 @@ msgid ""
 "Here you can create a new record timer. Use to navigate the control cross "
 "and the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier können sie einen neuen Aufnahme-Timer anlegen.\n"
+"Hier kÃ¶nnen sie einen neuen Aufnahme-Timer anlegen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6051,7 +6051,7 @@ msgid ""
 "navigate the control cross and the extra buttons displayed with your remote "
 "control to select."
 msgstr ""
-"Hier können Sie einen Blindscan durchführen, dieser Vorgang dauert sehr "
+"Hier kÃ¶nnen Sie einen Blindscan durchfÃ¼hren, dieser Vorgang dauert sehr "
 "lange.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
@@ -6062,7 +6062,7 @@ msgid ""
 "control cross and the extra buttons displayed with your remote control to "
 "select."
 msgstr ""
-"Hier können Sie Sender und Favoriten definieren, für die ein EPG Scan "
+"Hier kÃ¶nnen Sie Sender und Favoriten definieren, fÃ¼r die ein EPG Scan "
 "stattfinden soll.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
@@ -6073,7 +6073,7 @@ msgid ""
 "navigate the control cross and the extra buttons displayed with your remote "
 "control to select."
 msgstr ""
-"Hier können Sie von unseren aktuellen Online-Angebot Plug-Ins "
+"Hier kÃ¶nnen Sie von unseren aktuellen Online-Angebot Plug-Ins "
 "installieren.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
@@ -6084,7 +6084,7 @@ msgid ""
 "button to search. Use to navigate the control cross and the extra buttons "
 "displayed with your remote control to select."
 msgstr ""
-"Hier können Sie im EPG nach bestimmten Einträgen suchen. Verwenden Sie "
+"Hier kÃ¶nnen Sie im EPG nach bestimmten EintrÃ¤gen suchen. Verwenden Sie "
 "eine der Farbtasten um die Suche zu starten.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
@@ -6095,7 +6095,7 @@ msgid ""
 "navigate the control cross and the extra buttons displayed with your remote "
 "control to select."
 msgstr ""
-"Hier können Sie für Ihre ausgewählte Netzwerkschnittstelle Einstellungen "
+"Hier kÃ¶nnen Sie fÃ¼r Ihre ausgewÃ¤hlte Netzwerkschnittstelle Einstellungen "
 "vornehmen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
@@ -6107,17 +6107,17 @@ msgid ""
 "Key confirm with ok and Note the following instructions 3. Disable Lan Yes, "
 "Activate Wlan Yes and use DHCP for easy setup."
 msgstr ""
-"Hier können Sie Ihre WLAN Einstellungen vornehmen.\n"
-"1. Suche starten, die eigene SSID (apoint / router) mit ok übernehmen.\n"
-"2. Schlüssel und Typ anpassen und mit ok bestätigen (speichern).\n"
-"3. Deaktiviere LAN ja, Aktiviere Wlan und DHCP für einfache Einrichtung."
+"Hier kÃ¶nnen Sie Ihre WLAN Einstellungen vornehmen.\n"
+"1. Suche starten, die eigene SSID (apoint / router) mit ok Ã¼bernehmen.\n"
+"2. SchlÃ¼ssel und Typ anpassen und mit ok bestÃ¤tigen (speichern).\n"
+"3. Deaktiviere LAN ja, Aktiviere Wlan und DHCP fÃ¼r einfache Einrichtung."
 
 #: skin_default_skin.xml.h:279
 msgid ""
 "Here you can make your epg settings. Use to navigate the control cross and "
 "the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier können Sie Ihre EPG Einstellungen vornehmen.\n"
+"Hier kÃ¶nnen Sie Ihre EPG Einstellungen vornehmen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6126,7 +6126,7 @@ msgid ""
 "Here you can make your mediadb settings. Use to navigate the control cross "
 "and the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier können Sie Ihre MediaDB Einstellungen vornehmen.\n"
+"Hier kÃ¶nnen Sie Ihre MediaDB Einstellungen vornehmen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6135,7 +6135,7 @@ msgid ""
 "Here you can make your module settings. Use to navigate the control cross "
 "and the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier können Sie die Einstellungen für CI-Module anpassen.\n"
+"Hier kÃ¶nnen Sie die Einstellungen fÃ¼r CI-Module anpassen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6145,7 +6145,7 @@ msgid ""
 "control cross and the extra buttons displayed with your remote control to "
 "select."
 msgstr ""
-"Hier können Sie Ihre Bild und Ton Einstellungen vornehmen.\n"
+"Hier kÃ¶nnen Sie Ihre Bild und Ton Einstellungen vornehmen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6155,7 +6155,7 @@ msgid ""
 "control cross and the extra buttons displayed with your remote control to "
 "select."
 msgstr ""
-"Hier können Sie Ihre PIN Sicherheitseinstellungen für Menüs vornehmen.\n"
+"Hier kÃ¶nnen Sie Ihre PIN Sicherheitseinstellungen fÃ¼r MenÃ¼s vornehmen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6164,7 +6164,7 @@ msgid ""
 "Here you can make your PIN security settings. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier können Sie Ihre PIN Sicherheitseinstellungen vornehmen.\n"
+"Hier kÃ¶nnen Sie Ihre PIN Sicherheitseinstellungen vornehmen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6174,7 +6174,7 @@ msgid ""
 "control cross and the extra buttons displayed with your remote control to "
 "select."
 msgstr ""
-"Hier können Sie Ihre Aufnahme-Timer Konfiguration vornehmen.\n"
+"Hier kÃ¶nnen Sie Ihre Aufnahme-Timer Konfiguration vornehmen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6183,7 +6183,7 @@ msgid ""
 "Here you can make your recordpath settings. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier können Sie Ihre Aufnahmepfad Einstellungen vornehmen.\n"
+"Hier kÃ¶nnen Sie Ihre Aufnahmepfad Einstellungen vornehmen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6192,7 +6192,7 @@ msgid ""
 "Here you can make your screensaver settings. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier können Sie Ihre Bildschirmschoner Einstellungen vornehmen.\n"
+"Hier kÃ¶nnen Sie Ihre Bildschirmschoner Einstellungen vornehmen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6201,16 +6201,16 @@ msgid ""
 "Here you can make your settings for your engine systems. To enter the "
 "latitude and longitude using the number keys."
 msgstr ""
-"Hier können Sie für Ihre Motorisierte Sat-Anlage Ihre Einstellungen \n"
+"Hier kÃ¶nnen Sie fÃ¼r Ihre Motorisierte Sat-Anlage Ihre Einstellungen \n"
 "vornehmen.\n"
-"Zur Eingabe der Längen und Breitengrade benutzen Sie die Ziffertasten."
+"Zur Eingabe der LÃ¤ngen und Breitengrade benutzen Sie die Ziffertasten."
 
 #: skin_default_skin.xml.h:289
 msgid ""
 "Here you can make your system settings. Use to navigate the control cross "
 "and the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier können Sie Ihre System Einstellungen vornehmen.\n"
+"Hier kÃ¶nnen Sie Ihre System Einstellungen vornehmen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6219,7 +6219,7 @@ msgid ""
 "Here you can make your timeshift settings. Use to navigate the control cross "
 "and the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier können Sie die Timeshift Einstellungen anpassen.\n"
+"Hier kÃ¶nnen Sie die Timeshift Einstellungen anpassen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6228,7 +6228,7 @@ msgid ""
 "Here you can make your vfd settings. Use to navigate the control cross and "
 "the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier können Sie Ihre VFDisplay Einstellungen vornehmen.\n"
+"Hier kÃ¶nnen Sie Ihre VFDisplay Einstellungen vornehmen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6238,7 +6238,7 @@ msgid ""
 "control cross and the extra buttons displayed with your remote control to "
 "select."
 msgstr ""
-"Hier können Sie aus der folgenden Liste einen Skin auswählen.\n"
+"Hier kÃ¶nnen Sie aus der folgenden Liste einen Skin auswÃ¤hlen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6247,7 +6247,7 @@ msgid ""
 "Here you can select from the following list. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier können Sie aus der folgenden Liste auswählen.\n"
+"Hier kÃ¶nnen Sie aus der folgenden Liste auswÃ¤hlen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6257,8 +6257,8 @@ msgid ""
 "Use to navigate the control cross and the extra buttons displayed with your "
 "remote control to select."
 msgstr ""
-"Hier können Sie Ihre Festplatten und USB-Sticks zur Konfiguration\n"
-"auswählen.\n"
+"Hier kÃ¶nnen Sie Ihre Festplatten und USB-Sticks zur Konfiguration\n"
+"auswÃ¤hlen.\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
 #: skin_default_skin.xml.h:295
@@ -6266,7 +6266,7 @@ msgid ""
 "Here you can select your Network Interface. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier können Sie Ihre Netzwerkschnittstelle auswählen.\n"
+"Hier kÃ¶nnen Sie Ihre Netzwerkschnittstelle auswÃ¤hlen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6275,9 +6275,9 @@ msgid ""
 "Here you can set for your cable tuner. Ask your cable provider and make you "
 "connect an automatic search."
 msgstr ""
-"Hier können Sie für Ihren Kabel Tuner einstellen.\n"
+"Hier kÃ¶nnen Sie fÃ¼r Ihren Kabel Tuner einstellen.\n"
 "\n"
-"Stellen Sie Ihren Kabel Anbieter ein und machen Sie anschließend einen "
+"Stellen Sie Ihren Kabel Anbieter ein und machen Sie anschlieÃŸend einen "
 "Automatischen Suchlauf."
 
 #: skin_default_skin.xml.h:297
@@ -6286,19 +6286,19 @@ msgid ""
 "selection. When using DiSEqC They also point to the port used. For advanced "
 "Lnb / Unicam navigate to the field and press the Red button."
 msgstr ""
-"Hier können Sie für Ihren Sat Tuner einstellen.\n"
-"Stellen Sie zunächst Ihre Satteliten Auswahl ein. Bei Verwendung von DiSEqC "
-"weisen Sie zusätzlich den verwendeten Port zu. Für erweiterte Lnb / Unicam "
-"navigieren Sie zum Feld und drücken Sie die Rote Taste."
+"Hier kÃ¶nnen Sie fÃ¼r Ihren Sat Tuner einstellen.\n"
+"Stellen Sie zunÃ¤chst Ihre Satteliten Auswahl ein. Bei Verwendung von DiSEqC "
+"weisen Sie zusÃ¤tzlich den verwendeten Port zu. FÃ¼r erweiterte Lnb / Unicam "
+"navigieren Sie zum Feld und drÃ¼cken Sie die Rote Taste."
 
 #: skin_default_skin.xml.h:298
 msgid ""
 "Here you can set for your terrestrial tuner. Activate the terrestrial tuner "
 "and do you connect an automatic search."
 msgstr ""
-"Hier können Sie für Ihren Terrestrischen Tuner einstellen.\n"
+"Hier kÃ¶nnen Sie fÃ¼r Ihren Terrestrischen Tuner einstellen.\n"
 "\n"
-"Aktivieren Sie den Terrestrischen Tuner und machen Sie anschließend einen "
+"Aktivieren Sie den Terrestrischen Tuner und machen Sie anschlieÃŸend einen "
 "Automatischen Suchlauf."
 
 #: skin_default_skin.xml.h:299
@@ -6308,9 +6308,9 @@ msgid ""
 "Very important, before you start looking for a channel must be set to its "
 "tuner tuner settings."
 msgstr ""
-"Hier können Sie Ihre Kanalsuche einstellen. Navigieren Sie mit dem "
+"Hier kÃ¶nnen Sie Ihre Kanalsuche einstellen. Navigieren Sie mit dem "
 "Steuerkreuz und den unten angezeigten Tasten.\n"
-"Sehr wichtig: Bevor Sie eine Kanalsuche starten, müssen Sie Ihre Tuner "
+"Sehr wichtig: Bevor Sie eine Kanalsuche starten, mÃ¼ssen Sie Ihre Tuner "
 "unter Tuner-Einstellungen (Kabel/Sat/Terrestrisch) einstellen."
 
 #: skin_default_skin.xml.h:300
@@ -6318,7 +6318,7 @@ msgid ""
 "Here you can set your language. Use to navigate the control cross and the "
 "extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier können Sie Ihre Sprache einstellen.\n"
+"Hier kÃ¶nnen Sie Ihre Sprache einstellen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6327,7 +6327,7 @@ msgid ""
 "Here you can set your timezone. Use to navigate the control cross and the "
 "extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier können Sie Ihre Zeitzone einstellen.\n"
+"Hier kÃ¶nnen Sie Ihre Zeitzone einstellen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6337,7 +6337,7 @@ msgid ""
 "control cross and the extra buttons displayed with your remote control to "
 "select."
 msgstr ""
-"Hier können Sie Ihre zusätzlichen Plug-Ins starten und verwalten.\n"
+"Hier kÃ¶nnen Sie Ihre zusÃ¤tzlichen Plug-Ins starten und verwalten.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6346,7 +6346,7 @@ msgid ""
 "Here you can test your network. Use to navigate the control cross and the "
 "extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier können Sie Ihr Netzwerk testen.\n"
+"Hier kÃ¶nnen Sie Ihr Netzwerk testen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6356,7 +6356,7 @@ msgid ""
 "control cross and the extra buttons displayed with your remote control to "
 "select."
 msgstr ""
-"Hier können Sie die aktuellen Senderinfos abrufen.\n"
+"Hier kÃ¶nnen Sie die aktuellen Senderinfos abrufen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6442,7 +6442,7 @@ msgstr "Umkehrung:"
 
 #: skin_default_skin.xml.h:326
 msgid "IP for Stream"
-msgstr "IP Adresse für Stream"
+msgstr "IP Adresse fÃ¼r Stream"
 
 #: skin_default_skin.xml.h:327
 msgid "Italian"
@@ -6470,7 +6470,7 @@ msgstr "Kernel"
 
 #: skin_default_skin.xml.h:334
 msgid "Key"
-msgstr "Schlüssel"
+msgstr "SchlÃ¼ssel"
 
 #: skin_default_skin.xml.h:335
 msgid "Keyboard"
@@ -6538,7 +6538,7 @@ msgstr "Log"
 
 #: skin_default_skin.xml.h:351
 msgid "Longitude"
-msgstr "Längengrad"
+msgstr "LÃ¤ngengrad"
 
 #: skin_default_skin.xml.h:352
 msgid "m"
@@ -6550,7 +6550,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:354
 msgid "Main Menu"
-msgstr "Hauptmenü"
+msgstr "HauptmenÃ¼"
 
 #: skin_default_skin.xml.h:355
 msgid "Manual Search"
@@ -6598,19 +6598,19 @@ msgstr "Speicher"
 
 #: skin_default_skin.xml.h:367
 msgid "MENU"
-msgstr "Menü"
+msgstr "MenÃ¼"
 
 #: skin_default_skin.xml.h:368
 msgid "Menulist"
-msgstr "Menüliste"
+msgstr "MenÃ¼liste"
 
 #: skin_default_skin.xml.h:369
 msgid "Menu Protect"
-msgstr "Menü schützen"
+msgstr "MenÃ¼ schÃ¼tzen"
 
 #: skin_default_skin.xml.h:370
 msgid "MENUPROTECT"
-msgstr "Menüschutz"
+msgstr "MenÃ¼schutz"
 
 #: skin_default_skin.xml.h:371
 msgid "MHW2 EPG"
@@ -6654,7 +6654,7 @@ msgstr "Modul Einstellungen"
 
 #: skin_default_skin.xml.h:382 system_infos.h:74
 msgid "Mounts"
-msgstr "Geräteanbindungen"
+msgstr "GerÃ¤teanbindungen"
 
 #: skin_default_skin.xml.h:383
 msgid "Move"
@@ -6666,7 +6666,7 @@ msgstr "Eintrag verschieben"
 
 #: skin_default_skin.xml.h:385
 msgid "Moviepath"
-msgstr "Ordner für Filme"
+msgstr "Ordner fÃ¼r Filme"
 
 #: skin_default_skin.xml.h:386
 msgid "MTD"
@@ -6774,7 +6774,7 @@ msgstr "Nur DVBS verwenden"
 
 #: skin_default_skin.xml.h:414
 msgid "Only free scan"
-msgstr "Nur unverschlüsselte Sender"
+msgstr "Nur unverschlÃ¼sselte Sender"
 
 #: skin_default_skin.xml.h:415
 msgid "OpenTV EPG"
@@ -6830,11 +6830,11 @@ msgstr "PIDs"
 
 #: skin_default_skin.xml.h:431
 msgid "Pilot"
-msgstr "Pilot (für HD Empfang 'ein' auswählen)"
+msgstr "Pilot (fÃ¼r HD Empfang 'ein' auswÃ¤hlen)"
 
 #: skin_default_skin.xml.h:432
 msgid "Pilot:"
-msgstr "Pilot (für HD Empfang 'ein' auswählen)"
+msgstr "Pilot (fÃ¼r HD Empfang 'ein' auswÃ¤hlen)"
 
 #: skin_default_skin.xml.h:433
 msgid "PIN:"
@@ -6846,11 +6846,11 @@ msgstr "PIN Schutz"
 
 #: skin_default_skin.xml.h:435
 msgid "Pin Code Channel"
-msgstr "PIN Schutz für Kanal"
+msgstr "PIN Schutz fÃ¼r Kanal"
 
 #: skin_default_skin.xml.h:436
 msgid "Pin Code menu"
-msgstr "PIN Schutz für Menü"
+msgstr "PIN Schutz fÃ¼r MenÃ¼"
 
 #: skin_default_skin.xml.h:437
 msgid "PIN Settings"
@@ -6862,11 +6862,11 @@ msgstr "Abspielen"
 
 #: skin_default_skin.xml.h:439
 msgid "Playbackbuffer Size"
-msgstr "Wiedergabepuffer - Grösse (http) Streams"
+msgstr "Wiedergabepuffer - GrÃ¶sse (http) Streams"
 
 #: skin_default_skin.xml.h:440
 msgid "Player for .ts"
-msgstr "Player für .ts"
+msgstr "Player fÃ¼r .ts"
 
 #: skin_default_skin.xml.h:441
 msgid "PlayList"
@@ -6932,7 +6932,7 @@ msgstr "Programm Information"
 
 #: skin_default_skin.xml.h:458
 msgid "Protect Channel"
-msgstr "Kanal mit PIN schützen"
+msgstr "Kanal mit PIN schÃ¼tzen"
 
 #: skin_default_skin.xml.h:459
 msgid "Protect Channel Freetime (min)"
@@ -6940,11 +6940,11 @@ msgstr "Kanalschutzzeit aus (min)"
 
 #: skin_default_skin.xml.h:460
 msgid "Protect Menu"
-msgstr "Menü mit PIN schützen"
+msgstr "MenÃ¼ mit PIN schÃ¼tzen"
 
 #: skin_default_skin.xml.h:461
 msgid "protect service"
-msgstr "Sender mit PIN schützen"
+msgstr "Sender mit PIN schÃ¼tzen"
 
 #: skin_default_skin.xml.h:462
 msgid "Prov"
@@ -6968,7 +6968,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:467
 msgid "Quick Menu"
-msgstr "TiThek Menü"
+msgstr "TiThek MenÃ¼"
 
 #: skin_default_skin.xml.h:468
 msgid "r"
@@ -6984,7 +6984,7 @@ msgstr "Freier Speicher"
 
 #: skin_default_skin.xml.h:472
 msgid "Rating"
-msgstr "durchführen"
+msgstr "durchfÃ¼hren"
 
 #: skin_default_skin.xml.h:473
 msgid "Receiver unlock"
@@ -7032,7 +7032,7 @@ msgstr "Aufnahme und EPG"
 
 #: skin_default_skin.xml.h:485
 msgid "Record Split Size"
-msgstr "Teile Aufnahmen ab einer Größe von"
+msgstr "Teile Aufnahmen ab einer GrÃ¶ÃŸe von"
 
 #: skin_default_skin.xml.h:486
 msgid "Record Timer"
@@ -7048,7 +7048,7 @@ msgstr "Aktualisieren"
 
 #: skin_default_skin.xml.h:490
 msgid "Released"
-msgstr "Veröffentlicht"
+msgstr "VerÃ¶ffentlicht"
 
 #: skin_default_skin.xml.h:491
 msgid "RELOAD"
@@ -7056,19 +7056,19 @@ msgstr "Neu laden"
 
 #: skin_default_skin.xml.h:492
 msgid "Remove emthy Bouquet"
-msgstr "Lösche leere Favoriten Ordner"
+msgstr "LÃ¶sche leere Favoriten Ordner"
 
 #: skin_default_skin.xml.h:493
 msgid "REMOVE ENTRY"
-msgstr "Eintrag löschen"
+msgstr "Eintrag lÃ¶schen"
 
 #: skin_default_skin.xml.h:494
 msgid "remove service"
-msgstr "Eintrag löschen"
+msgstr "Eintrag lÃ¶schen"
 
 #: skin_default_skin.xml.h:495
 msgid "Remove unused Channels in Bouquets"
-msgstr "Lösche unbenutzte Kanäle in Favoriten"
+msgstr "LÃ¶sche unbenutzte KanÃ¤le in Favoriten"
 
 #: skin_default_skin.xml.h:496
 msgid "rename service"
@@ -7084,19 +7084,19 @@ msgstr "Wiederholungsart"
 
 #: skin_default_skin.xml.h:499
 msgid "RESET"
-msgstr "zurücksetzen"
+msgstr "zurÃ¼cksetzen"
 
 #: skin_default_skin.xml.h:500
 msgid "Resolution:"
-msgstr "Auflösung"
+msgstr "AuflÃ¶sung"
 
 #: skin_default_skin.xml.h:501
 msgid "Resolution (current)"
-msgstr "Aktuelle Auflösung"
+msgstr "Aktuelle AuflÃ¶sung"
 
 #: skin_default_skin.xml.h:502
 msgid "Resolution (default)"
-msgstr "Auflösung (Standard)"
+msgstr "AuflÃ¶sung (Standard)"
 
 #: skin_default_skin.xml.h:504
 msgid "Restore"
@@ -7180,7 +7180,7 @@ msgstr "Satellitenfinder"
 
 #: skin_default_skin.xml.h:528
 msgid "Saturation"
-msgstr "Sättigung"
+msgstr "SÃ¤ttigung"
 
 #: skin_default_skin.xml.h:532
 msgid "SAVETRANSPONDER"
@@ -7216,7 +7216,7 @@ msgstr "Bildschirmschoner Hintergrund"
 
 #: skin_default_skin.xml.h:541
 msgid "screensaver delay"
-msgstr "Bildschirmschoner Verzögerung"
+msgstr "Bildschirmschoner VerzÃ¶gerung"
 
 #: skin_default_skin.xml.h:542
 msgid "screensaver interval"
@@ -7232,7 +7232,7 @@ msgstr "Bildschirmschoner Typ"
 
 #: skin_default_skin.xml.h:545
 msgid "--- SD resolution"
-msgstr "--- SD Auflösung"
+msgstr "--- SD AuflÃ¶sung"
 
 #: skin_default_skin.xml.h:546 tithek_mainmenu.h:35
 msgid "Search"
@@ -7244,7 +7244,7 @@ msgstr "Zweite Infobar"
 
 #: skin_default_skin.xml.h:549
 msgid "Select backup:"
-msgstr "Sicherung auswählen:"
+msgstr "Sicherung auswÃ¤hlen:"
 
 #: skin_default_skin.xml.h:550
 msgid "Select Path"
@@ -7252,7 +7252,7 @@ msgstr "Pfadauswahl"
 
 #: skin_default_skin.xml.h:551
 msgid "Select Unicable Manufacturer"
-msgstr "Unicable Hersteller auswählen"
+msgstr "Unicable Hersteller auswÃ¤hlen"
 
 #: skin_default_skin.xml.h:552
 msgid "SEND"
@@ -7264,7 +7264,7 @@ msgstr "Alle CAIDs an CI-Modul schicken"
 
 #: skin_default_skin.xml.h:554
 msgid "Serial Input"
-msgstr "Freischaltmenü"
+msgstr "FreischaltmenÃ¼"
 
 #: skin_default_skin.xml.h:555
 msgid "Service"
@@ -7360,7 +7360,7 @@ msgstr "Sprungzeit auf den Tasten 7+9 (sek)"
 
 #: skin_default_skin.xml.h:582
 msgid "Skip privat CA descriptor"
-msgstr "Überspringe Private CA descriptor"
+msgstr "Ãœberspringe Private CA descriptor"
 
 #: skin_default_skin.xml.h:583
 msgid "SmartCard Reader"
@@ -7372,7 +7372,7 @@ msgstr "SNR:"
 
 #: skin_default_skin.xml.h:586
 msgid "Softcam Selection"
-msgstr "Softcam auswählen:"
+msgstr "Softcam auswÃ¤hlen:"
 
 #: skin_default_skin.xml.h:588
 msgid "sort service"
@@ -7380,11 +7380,11 @@ msgstr "Sender sortieren"
 
 #: skin_default_skin.xml.h:589
 msgid "Sound amplifier (external Player)"
-msgstr "Sound Verstärkung (externer Player)"
+msgstr "Sound VerstÃ¤rkung (externer Player)"
 
 #: skin_default_skin.xml.h:590
 msgid "Sound amplifier (TV-Modus / internal Player)"
-msgstr "Sound Verstärkung (TV-Modus / interner Player)"
+msgstr "Sound VerstÃ¤rkung (TV-Modus / interner Player)"
 
 #: skin_default_skin.xml.h:591
 msgid "Space"
@@ -7456,15 +7456,15 @@ msgstr "Streaming"
 
 #: skin_default_skin.xml.h:613
 msgid "Stream Path"
-msgstr "Ordner für Stream"
+msgstr "Ordner fÃ¼r Stream"
 
 #: skin_default_skin.xml.h:614
 msgid "Stream Port"
-msgstr "Übertragungen Port"
+msgstr "Ãœbertragungen Port"
 
 #: skin_default_skin.xml.h:615
 msgid "Subservices"
-msgstr "Unterkanäle"
+msgstr "UnterkanÃ¤le"
 
 #: skin_default_skin.xml.h:616
 msgid "Subtitle"
@@ -7544,11 +7544,11 @@ msgstr "System - USB Softwareaktualisierung (Lokal)"
 
 #: skin_default_skin.xml.h:637
 msgid "sz"
-msgstr "Größe"
+msgstr "GrÃ¶ÃŸe"
 
 #: skin_default_skin.xml.h:638
 msgid "SZ"
-msgstr "ß"
+msgstr "ÃŸ"
 
 #: skin_default_skin.xml.h:639
 msgid "t"
@@ -7576,11 +7576,11 @@ msgstr "Aufnahme"
 
 #: skin_default_skin.xml.h:647
 msgid "Timer Record Path"
-msgstr "Ordner für Timeraufnahme"
+msgstr "Ordner fÃ¼r Timeraufnahme"
 
 #: skin_default_skin.xml.h:648
 msgid "Timeshift Path"
-msgstr "Ordner für Timeshift"
+msgstr "Ordner fÃ¼r Timeshift"
 
 #: skin_default_skin.xml.h:649
 msgid "Timeshift Settings"
@@ -7604,7 +7604,7 @@ msgstr "Zeitzone"
 
 #: skin_default_skin.xml.h:655
 msgid "Tint"
-msgstr "Sättigung"
+msgstr "SÃ¤ttigung"
 
 #: skin_default_skin.xml.h:656
 msgid "Titan Changelog"
@@ -7636,7 +7636,7 @@ msgstr "TPK Pakete installieren (Online)"
 
 #: skin_default_skin.xml.h:664
 msgid "Tpk Install - select install medium"
-msgstr "TPK installieren - Installationsmedium auswählen"
+msgstr "TPK installieren - Installationsmedium auswÃ¤hlen"
 
 #: skin_default_skin.xml.h:665
 msgid "TPK media (media)"
@@ -7644,7 +7644,7 @@ msgstr "TPK installieren (HDD/USB)"
 
 #: skin_default_skin.xml.h:666
 msgid "TPK remove"
-msgstr "TPK Pakete löschen"
+msgstr "TPK Pakete lÃ¶schen"
 
 #: skin_default_skin.xml.h:667
 msgid "TPK tmp (tmp)"
@@ -7656,7 +7656,7 @@ msgstr "TPK Pakete aktualisieren (Online)"
 
 #: skin_default_skin.xml.h:669
 msgid "Transmission"
-msgstr "Übertragung"
+msgstr "Ãœbertragung"
 
 #: skin_default_skin.xml.h:670
 msgid "Transmission:"
@@ -7664,7 +7664,7 @@ msgstr "Transponder:"
 
 #: skin_default_skin.xml.h:671
 msgid "TRANSPONDEREDIT"
-msgstr "Transponder auswählen"
+msgstr "Transponder auswÃ¤hlen"
 
 #: skin_default_skin.xml.h:672
 msgid "TSID:"
@@ -7688,11 +7688,11 @@ msgstr "Tunerempfang"
 
 #: skin_default_skin.xml.h:680
 msgid "TV Resolution (h):"
-msgstr "TV Auflösung (H):"
+msgstr "TV AuflÃ¶sung (H):"
 
 #: skin_default_skin.xml.h:681
 msgid "TV Resolution (w):"
-msgstr "TV Auflösung (B):"
+msgstr "TV AuflÃ¶sung (B):"
 
 #: skin_default_skin.xml.h:682
 msgid "Two step mute"
@@ -7728,7 +7728,7 @@ msgstr "blau"
 
 #: skin_default_skin.xml.h:691
 msgid "UE"
-msgstr "Ü"
+msgstr "Ãœ"
 
 #: skin_default_skin.xml.h:692
 msgid "UNC:"
@@ -7768,7 +7768,7 @@ msgstr "USB Software Aktualisierung (Lokal)"
 
 #: skin_default_skin.xml.h:703
 msgid "Use cross control for fast zapping and vol"
-msgstr "Benutze das Steuerkreuz für schnelles Umschalten und laut/leise"
+msgstr "Benutze das Steuerkreuz fÃ¼r schnelles Umschalten und laut/leise"
 
 #: skin_default_skin.xml.h:704
 msgid "Use EPG Endtime"
@@ -7796,11 +7796,11 @@ msgstr "Bild"
 
 #: skin_default_skin.xml.h:711
 msgid "VideoMode Aspect Settings"
-msgstr "Bild Seitenverhältnis Einstellungen"
+msgstr "Bild SeitenverhÃ¤ltnis Einstellungen"
 
 #: skin_default_skin.xml.h:712
 msgid "VideoMode Resolution Settings"
-msgstr "Bild Auflösung Einstellungen"
+msgstr "Bild AuflÃ¶sung Einstellungen"
 
 #: skin_default_skin.xml.h:713
 msgid "VideoMode Settings"
@@ -7820,7 +7820,7 @@ msgstr "Virtuelles Umschalten"
 
 #: skin_default_skin.xml.h:718
 msgid "Vol off"
-msgstr "Lautstärke aus"
+msgstr "LautstÃ¤rke aus"
 
 #: skin_default_skin.xml.h:719
 msgid "Voltage Mode"
@@ -7828,7 +7828,7 @@ msgstr "Spannung Modus"
 
 #: skin_default_skin.xml.h:720
 msgid "Volumebar Timeout"
-msgstr "Zeit bis Lautstärkeanzeige ausblendet (sek)"
+msgstr "Zeit bis LautstÃ¤rkeanzeige ausblendet (sek)"
 
 #: skin_default_skin.xml.h:721
 msgid "Votes"
@@ -7844,7 +7844,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:724
 msgid "Wait for cam ready"
-msgstr "Wartezeit für CI-Module"
+msgstr "Wartezeit fÃ¼r CI-Module"
 
 #: skin_default_skin.xml.h:726
 msgid "WLAN Settings"
@@ -7888,7 +7888,7 @@ msgid ""
 "Can't change to selected skin."
 msgstr ""
 "Keine Skinkonfiguration gefunden.\n"
-"Kann Skin nicht auswählen"
+"Kann Skin nicht auswÃ¤hlen"
 
 #: sock.h:950
 msgid "Download finished!"
@@ -7908,7 +7908,7 @@ msgstr "kein Softcam gefunden"
 
 #: softcam.h:289
 msgid "Softcam selection:"
-msgstr "Softcam auswählen:"
+msgstr "Softcam auswÃ¤hlen:"
 
 #: softcam.h:293
 msgid "Activate"
@@ -7921,7 +7921,7 @@ msgstr ""
 
 #: solarmovie.h:295
 msgid "This file doesn't exist, or has been removed"
-msgstr "Dieser Stream ist zur Zeit nicht verfügbar oder entfernt worden"
+msgstr "Dieser Stream ist zur Zeit nicht verfÃ¼gbar oder entfernt worden"
 
 #: spinner.h:18
 msgid ""
@@ -7933,7 +7933,7 @@ msgstr ""
 "Systemfehler!!!\n"
 "\n"
 "Rot = Prozess beenden\n"
-"Grün = System neustarten"
+"GrÃ¼n = System neustarten"
 
 #: spinner.h:18
 msgid "KILL"
@@ -7941,7 +7941,7 @@ msgstr "Rot"
 
 #: spinner.h:18
 msgid "BOOT"
-msgstr "Grün"
+msgstr "GrÃ¼n"
 
 #: stock.h:197
 msgid "Company: "
@@ -7949,11 +7949,11 @@ msgstr "Gesellschaft: "
 
 #: stock.h:201
 msgid "Exchange: "
-msgstr "Ändern"
+msgstr "Ã„ndern"
 
 #: stock.h:205
 msgid "Exchange closing: "
-msgstr "Börsenschluss: "
+msgstr "BÃ¶rsenschluss: "
 
 #: stock.h:209
 msgid "Currency: "
@@ -7973,7 +7973,7 @@ msgstr "Tief: "
 
 #: stock.h:225
 msgid "Volume: "
-msgstr "Lautstärke aus"
+msgstr "LautstÃ¤rke aus"
 
 #: stock.h:229
 msgid "Avg volume: "
@@ -7985,7 +7985,7 @@ msgstr "Marktanteil: "
 
 #: stock.h:237
 msgid "Open: "
-msgstr "Eröffnung: "
+msgstr "ErÃ¶ffnung: "
 
 #: stock.h:241
 msgid "Close: "
@@ -7993,11 +7993,11 @@ msgstr "Abschluss: "
 
 #: stock.h:245
 msgid "Change: "
-msgstr "Feedadresse hinzufügen"
+msgstr "Feedadresse hinzufÃ¼gen"
 
 #: stock.h:249
 msgid "Change in %: "
-msgstr "Änderung in %: "
+msgstr "Ã„nderung in %: "
 
 #: stock.h:253
 msgid "Trade time: "
@@ -8016,27 +8016,26 @@ msgstr ""
 "Sicherung wird in /tmp oder /var/backup abgelegt. Falls der interne Speicher "
 "nicht ausreicht, kann die Sicherung auch auf einem USB Stick/HDD gespeichert "
 "werden.\n"
-"Es muss ein Ordner mit dem Namen backup auf dem Gerät sein."
+"Es muss ein Ordner mit dem Namen backup auf dem GerÃ¤t sein."
 
 #: system_backup_restore.h:15
 msgid ""
-"Press -restore- and your saved settings will be restored from your "
-"swapstick / recording hdd! The Box will restart automatically for "
-"restoring!\n"
+"Press -restore- and your saved settings will be restored from your swapstick "
+"/ recording hdd! The Box will restart automatically for restoring!\n"
 "\n"
 "Press -backup- to save your actual settings to swapstick / recording hdd.\n"
 "WARNING: The old backup will be deleted!"
 msgstr ""
 "-Wiederherstellung- (Rot):\n"
 "Ihre Einstellungen werden aus einer zuvor erstellten Sicherung "
-"wiederhergestellt! Der Receiver wird dafür automatisch neugestartet! \n"
+"wiederhergestellt! Der Receiver wird dafÃ¼r automatisch neugestartet! \n"
 "\n"
-"-Sicherung erstellen- (Grün):\n"
+"-Sicherung erstellen- (GrÃ¼n):\n"
 "Ihre Einstellungen werden gesichert.\n"
-"WARNUNG: Die alten Sicherungen werden gelöscht!\n"
+"WARNUNG: Die alten Sicherungen werden gelÃ¶scht!\n"
 "\n"
 "-Ergebnis- (Gelb):\n"
-"Überprüfung der Sicherung mittels Logdatei"
+"ÃœberprÃ¼fung der Sicherung mittels Logdatei"
 
 #: system_backup_restore.h:31
 msgid "Restore Settings"
@@ -8180,7 +8179,7 @@ msgstr "Komplette Aktualisierung starten?"
 
 #: system_update.h:320
 msgid "Error file not supported"
-msgstr "Fehler: Datei wird nicht unterstützt!"
+msgstr "Fehler: Datei wird nicht unterstÃ¼tzt!"
 
 #: system_update.h:333
 msgid ""
@@ -8192,7 +8191,7 @@ msgstr ""
 
 #: timeshift.h:113
 msgid "Should Timeshift File deleted ?"
-msgstr "Soll die Timeshift Datei gelöscht werden?"
+msgstr "Soll die Timeshift Datei gelÃ¶scht werden?"
 
 #: timeshift.h:155
 msgid ""
@@ -8200,7 +8199,7 @@ msgid ""
 "please wait a little and try again"
 msgstr ""
 "Timeshift: Datei ist zu klein\n"
-"Bitte später versuchen"
+"Bitte spÃ¤ter versuchen"
 
 #: timeshift.h:162
 msgid "Can't start timeshift play !"
@@ -8210,8 +8209,7 @@ msgstr "Timeshift kann nicht gestartet werden"
 msgid ""
 "Timeshiftsettings not allowed\n"
 "if timeshift is running !"
-msgstr ""
-"Tuner Konfiguration während einer Aufnahme/Streaming ist nicht erlaubt"
+msgstr "Tuner Konfiguration wÃ¤hrend einer Aufnahme/Streaming ist nicht erlaubt"
 
 #: timeshiftsettings.h:50
 msgid "permanent"
@@ -8223,11 +8221,11 @@ msgstr "Nachfragen"
 
 #: timeshiftsettings.h:54
 msgid "allways del file"
-msgstr "TS Datei immer löschen"
+msgstr "TS Datei immer lÃ¶schen"
 
 #: timeshiftsettings.h:55
 msgid "never del file"
-msgstr "TS Datei nie löschen"
+msgstr "TS Datei nie lÃ¶schen"
 
 #: titan.c:274
 msgid "!!! This is a DEMO Version !!!"
@@ -8239,7 +8237,7 @@ msgid ""
 "or record is starting in next time.\n"
 "Really shutdown ?"
 msgstr ""
-"Vorsicht eine Aufnahme läuft, oder startet bald.\n"
+"Vorsicht eine Aufnahme lÃ¤uft, oder startet bald.\n"
 "Wollen Sie wirklich ausschalten?"
 
 #: titan.c:347
@@ -8247,28 +8245,28 @@ msgid ""
 "Found running download\n"
 "Really shutdown ?"
 msgstr ""
-"Vorsicht ein Download läuft.\n"
+"Vorsicht ein Download lÃ¤uft.\n"
 "Wollen Sie wirklich ausschalten?"
 
 #: titan.c:778
 msgid "Error: open rc device !!"
-msgstr "Fehler: Fernbedienungs Gerät kann nicht geöffnet werden!"
+msgstr "Fehler: Fernbedienungs GerÃ¤t kann nicht geÃ¶ffnet werden!"
 
 #: titan.c:784
 msgid "Error: no frontend device found !!"
-msgstr "Fehler: Frontend kann nicht geöffnet werden!"
+msgstr "Fehler: Frontend kann nicht geÃ¶ffnet werden!"
 
 #: titan.c:790
 msgid "Error: no demux device found !!"
-msgstr "Fehler: Demux Gerät kann nicht geöffnet werden!"
+msgstr "Fehler: Demux GerÃ¤t kann nicht geÃ¶ffnet werden!"
 
 #: titan.c:796
 msgid "Error: no video device found !!"
-msgstr "Fehler: Video Gerät kann nicht geöffnet werden!"
+msgstr "Fehler: Video GerÃ¤t kann nicht geÃ¶ffnet werden!"
 
 #: titan.c:802
 msgid "Error: no audio device found !!"
-msgstr "Fehler: Audio Gerät kann nicht geöffnet werden!"
+msgstr "Fehler: Audio GerÃ¤t kann nicht geÃ¶ffnet werden!"
 
 #: titan.c:820
 msgid "Error: skin not found !!"
@@ -8284,7 +8282,7 @@ msgstr "Fernbedienung lange Version"
 
 #: titan.c:910
 msgid "Select Your Remote Control"
-msgstr "Fernbedienungsauswahl Menü"
+msgstr "Fernbedienungsauswahl MenÃ¼"
 
 #: titan.c:951
 msgid "First Wizzard"
@@ -8304,7 +8302,7 @@ msgid ""
 "This can make problems!"
 msgstr ""
 "Kein freier Speicher in /var\n"
-"Dies kann zu Problemen führen!"
+"Dies kann zu Problemen fÃ¼hren!"
 
 #: titan.c:1098
 msgid ""
@@ -8320,7 +8318,7 @@ msgid ""
 "This can make problems!"
 msgstr ""
 "Kein freier Speicher in /var\n"
-"Dies kann zu Problemen führen!"
+"Dies kann zu Problemen fÃ¼hren!"
 
 #: titan.c:1115
 msgid ""
@@ -8340,11 +8338,11 @@ msgstr "Automatischer Neustart wird in 5 Sekunden eingeleitet!"
 
 #: tithek_global.h:238 tithek.h:3013
 msgid "The hoster is not yet supported !"
-msgstr "Der Hoster wird zur Zeit noch nicht unterstützt!"
+msgstr "Der Hoster wird zur Zeit noch nicht unterstÃ¼tzt!"
 
 #: tithek.h:620
 msgid "File exist, overwrite?"
-msgstr "Datei existiert, überschreiben?"
+msgstr "Datei existiert, Ã¼berschreiben?"
 
 #: tithek.h:826
 msgid "found"
@@ -8356,19 +8354,19 @@ msgstr "Links gefunden"
 
 #: tithek.h:1053
 msgid "Remove Cachefile ?"
-msgstr "Zwischengespeicherte Datei löschen?"
+msgstr "Zwischengespeicherte Datei lÃ¶schen?"
 
 #: tithek.h:1100
 msgid ""
 "Can't start download.\n"
 "Please try later."
 msgstr ""
-"Das Herunterladen der Datei ist nicht möglich!\n"
-"Bitte versuchen Sie es zu einem späteren Zeitpunkt erneut."
+"Das Herunterladen der Datei ist nicht mÃ¶glich!\n"
+"Bitte versuchen Sie es zu einem spÃ¤teren Zeitpunkt erneut."
 
 #: tithek.h:1215
 msgid "Choice Playback"
-msgstr "Wiedergabe auswählen"
+msgstr "Wiedergabe auswÃ¤hlen"
 
 #: tithek.h:1220
 msgid "Streaming Playback (default)"
@@ -8444,11 +8442,11 @@ msgstr "Seite"
 
 #: tithek.h:3075
 msgid "Remove this Favorite ?"
-msgstr "Wollen Sie diesen Favoriten löschen?"
+msgstr "Wollen Sie diesen Favoriten lÃ¶schen?"
 
 #: tithek.h:3089
 msgid "Add this link as Favorite ?"
-msgstr "Wollen Sie diesen Favoriten hinzufügen?"
+msgstr "Wollen Sie diesen Favoriten hinzufÃ¼gen?"
 
 #: tithek_mainmenu.h:2
 msgid "All New first"
@@ -8460,7 +8458,7 @@ msgstr ""
 
 #: tithek_mainmenu.h:4
 msgid "ARD"
-msgstr "Hinzufügen"
+msgstr "HinzufÃ¼gen"
 
 #: tithek_mainmenu.h:5
 msgid "Atemio Cable Tuner scan"
@@ -8560,7 +8558,7 @@ msgstr ""
 
 #: tithek_mainmenu.h:30
 msgid "Movie4k"
-msgstr "Ordner für Filme"
+msgstr "Ordner fÃ¼r Filme"
 
 #: tithek_mainmenu.h:31
 msgid "MyVideo"
@@ -8732,7 +8730,7 @@ msgstr "Kein Bild"
 
 #: tmc.h:699
 msgid "Delete selected entry ?"
-msgstr "Datenbank vor dem scannen überprüfen (unbenutzte Einträge löschen)"
+msgstr "Datenbank vor dem scannen Ã¼berprÃ¼fen (unbenutzte EintrÃ¤ge lÃ¶schen)"
 
 #: tmc.h:1004
 msgid ""
@@ -8767,7 +8765,7 @@ msgstr ""
 #: tmdb.h:922
 msgid "Error, found result without imdbid we can't this save in MediaDB"
 msgstr ""
-"Fehler: Ihr TMBb Suchergebnis hat eine ungültige imdbid und kann\n"
+"Fehler: Ihr TMBb Suchergebnis hat eine ungÃ¼ltige imdbid und kann\n"
 "dadurch nicht in der MediaDB abgespeichert werden"
 
 #: tpchoice.h:21
@@ -9277,7 +9275,7 @@ msgstr ""
 
 #: tpk_description.h:117
 msgid "scriptexec Plugin"
-msgstr "Skript ausführen"
+msgstr "Skript ausfÃ¼hren"
 
 #: tpk_description.h:118
 msgid "Skin 0Acht5Zehn in black for tiTan. Please use black Picons."
@@ -9461,7 +9459,7 @@ msgstr ""
 
 #: tpk.h:3185 tpk.new.h:3167
 msgid "check your Secret Feed !"
-msgstr "Bitte den Secret Feed überprüfen!"
+msgstr "Bitte den Secret Feed Ã¼berprÃ¼fen!"
 
 #: tpk.h:3428
 msgid "Section: "
@@ -9597,7 +9595,7 @@ msgstr ""
 
 #: tpk_showname.h:12
 msgid "Codepack"
-msgstr "Ihr Schlüssel wurde erfolgreich aktiviert"
+msgstr "Ihr SchlÃ¼ssel wurde erfolgreich aktiviert"
 
 #: tpk_showname.h:13
 msgid "Croissant"
@@ -9985,7 +9983,7 @@ msgstr "Bildschirmschoner"
 
 #: tpk_showname.h:118
 msgid "Screensaver Celebrations"
-msgstr "Bildschirmschoner Verzögerung"
+msgstr "Bildschirmschoner VerzÃ¶gerung"
 
 #: tpk_showname.h:119
 msgid "Screensaver Celebrities"
@@ -10013,7 +10011,7 @@ msgstr "Bildschirmschoner Intervall"
 
 #: tpk_showname.h:125
 msgid "Screensaver Dreamy Fantasy"
-msgstr "Bildschirmschoner Verzögerung"
+msgstr "Bildschirmschoner VerzÃ¶gerung"
 
 #: tpk_showname.h:126
 msgid "Screensaver Eisriesenwelt"
@@ -10225,11 +10223,11 @@ msgstr ""
 
 #: tpk_showname.h:181
 msgid "TitanNit on fire"
-msgstr "Die Datei kann nicht geöffnet werden"
+msgstr "Die Datei kann nicht geÃ¶ffnet werden"
 
 #: tpk_showname.h:183
 msgid "USB-RESET"
-msgstr "zurücksetzen"
+msgstr "zurÃ¼cksetzen"
 
 #: tpk_showname.h:185
 msgid "Webbrowser Netsurf"
@@ -10400,8 +10398,7 @@ msgstr "Verbunden mit Tuner"
 msgid ""
 "Tunerconfig is not allowed if record\n"
 "or stream is running !"
-msgstr ""
-"Tuner Konfiguration während einer Aufnahme/Streaming ist nicht erlaubt"
+msgstr "Tuner Konfiguration wÃ¤hrend einer Aufnahme/Streaming ist nicht erlaubt"
 
 #: tunerconfig.h:786
 msgid "Tuner "
@@ -10432,17 +10429,17 @@ msgid ""
 "Can't save Code.\n"
 "Delete Plugins to free space"
 msgstr ""
-"Ihr Schlüssel kann nicht gespeichert werden.\n"
-"Löschen Sie bitte eine der von Ihnen installierten Erweiterungen\n"
+"Ihr SchlÃ¼ssel kann nicht gespeichert werden.\n"
+"LÃ¶schen Sie bitte eine der von Ihnen installierten Erweiterungen\n"
 "um freien Speicherplatz zu erhalten."
 
 #: unlock.h:71
 msgid "Code ok"
-msgstr "Ihr Schlüssel wurde erfolgreich aktiviert"
+msgstr "Ihr SchlÃ¼ssel wurde erfolgreich aktiviert"
 
 #: unlock.h:75
 msgid "Code not ok, please try again !"
-msgstr "Ihr Schlüssel wurde nicht akzeptiert, bitte versuchen Sie es erneut"
+msgstr "Ihr SchlÃ¼ssel wurde nicht akzeptiert, bitte versuchen Sie es erneut"
 
 #: vfdisplay.h:32
 msgid "channel"
@@ -10494,11 +10491,11 @@ msgstr "Stern blinkend"
 
 #: videomode.h:18 videomode.h:40 videomode.h:47
 msgid "Resolution Settings"
-msgstr "Auflösung"
+msgstr "AuflÃ¶sung"
 
 #: videomode.h:19 videomode.h:62 videomode.h:69
 msgid "Aspect Settings"
-msgstr "Bildverhältnis Einstellungen"
+msgstr "BildverhÃ¤ltnis Einstellungen"
 
 #: videomode.h:25 videomode.h:27
 msgid "Videomode"
@@ -10514,8 +10511,9 @@ msgstr "Tiefsttemperatur: "
 
 #: weather.h:438 weather.h:456 weather.h:474 weather.h:492
 msgid "Highest temp: "
-msgstr "Höchsttemperatur: "
+msgstr "HÃ¶chsttemperatur: "
 
 #: weather.h:442 weather.h:460 weather.h:478 weather.h:496
 msgid "Condition: "
 msgstr "Wetter: "
+
