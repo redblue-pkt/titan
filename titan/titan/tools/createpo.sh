@@ -88,6 +88,7 @@ for ROUND in $POLIST; do
 		msgmerge $ROUND_UTF $ROUND_NEW > $ROUND_NEW_MERGE
 		if [ ! -e "$ROUND_NEW_MERGE" ] || [ `cat "$ROUND_NEW_MERGE" | wc -l` -eq 0 ]; then error="7"; break;fi
 ###
+
 use_edit_po=1
 if [ "$use_edit_po" = "1" ];then
 		iconv -f ISO-8859-1 -t UTF-8 $ROUND_EDIT > $ROUND_EDIT_UTF
