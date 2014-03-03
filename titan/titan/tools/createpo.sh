@@ -67,7 +67,7 @@ for ROUND in $POLIST; do
 		cat $ROUND | sed '/#.*/d' > $ROUND_CLEAN
 		if [ ! -e "$ROUND_CLEAN" ] || [ `cat "$ROUND_CLEAN" | wc -l` -eq 0 ]; then error="1"; break;fi
 
-		iconv -f ISO-8859-1 -t UTF-16 $ROUND_CLEAN > $ROUND_UTF
+		iconv -f ISO-8859-1 -t UTF-8 $ROUND_CLEAN > $ROUND_UTF
 		if [ ! -e "$ROUND_UTF" ] || [ `cat "$ROUND_UTF" | wc -l` -eq 0 ]; then error="2"; break;fi
 
 		cmd="xgettext --omit-header -j -k_ *.* -o $ROUND_UTF"
@@ -91,7 +91,7 @@ for ROUND in $POLIST; do
 
 use_edit_po=0
 if [ "$use_edit_po" = "1" ];then
-		iconv -f ISO-8859-1 -t UTF-16 $ROUND_EDIT > $ROUND_EDIT_UTF
+		iconv -f ISO-8859-1 -t UTF-8 $ROUND_EDIT > $ROUND_EDIT_UTF
 		if [ ! -e "$ROUND_EDIT_UTF" ] || [ `cat "$ROUND_EDIT_UTF" | wc -l` -eq 0 ]; then error="8"; break;fi
 
 #		echo "[createpo.sh] msgmerge $ROUND_NEW_MERGE $ROUND_EDIT_UTF > $ROUND_MERGE_UTF"
@@ -99,12 +99,12 @@ if [ "$use_edit_po" = "1" ];then
 		msgmerge $ROUND_EDIT_UTF $ROUND_NEW_MERGE > $ROUND_MERGE_UTF
 		if [ ! -e "$ROUND_NEW_MERGE" ] || [ `cat "$ROUND_NEW_MERGE" | wc -l` -eq 0 ]; then error="9"; break;fi
 
-		iconv -f UTF-16 -t ISO-8859-1 $ROUND_MERGE_UTF > $ROUND_MERGE
+		iconv -f UTF-8 -t ISO-8859-1 $ROUND_MERGE_UTF > $ROUND_MERGE
 		if [ ! -e "$ROUND_MERGE" ] || [ `cat "$ROUND_MERGE" | wc -l` -eq 0 ]; then error="10"; break;fi
 else
 ###
 #		cat $ROUND_NEW_MERGE >$ROUND_MERGE
-		iconv -f UTF-16 -t ISO-8859-1 $ROUND_NEW_MERGE > $ROUND_MERGE
+		iconv -f UTF-8 -t ISO-8859-1 $ROUND_NEW_MERGE > $ROUND_MERGE
 		if [ ! -e "$ROUND_MERGE" ] || [ `cat "$ROUND_MERGE" | wc -l` -eq 0 ]; then error="10"; break;fi
 ###
 fi
@@ -124,8 +124,8 @@ fi
 		log=`cat "$HOME"/flashimg/source.titan/titan/tools/error/error.log`
 		if [ `echo $log | grep "fatal error" | wc -l` -gt 0 ]; then error="13"; break;fi
 
-		iconv -f UTF-16 -t ISO-8859-1 $ROUND_NEW_MERGE > $ROUND
-#		iconv -f UTF-16 -t ISO-8859-1 $ROUND_MERGE > $ROUND
+		iconv -f UTF-8 -t ISO-8859-1 $ROUND_NEW_MERGE > $ROUND
+#		iconv -f UTF-8 -t ISO-8859-1 $ROUND_MERGE > $ROUND
 #		cat $ROUND_MERGE > $ROUND
 		if [ ! -e "$ROUND" ] || [ `cat "$ROUND" | wc -l` -eq 0 ]; then error="14"; break;fi
 
