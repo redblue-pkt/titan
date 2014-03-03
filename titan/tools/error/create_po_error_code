@@ -1,31 +1,23 @@
 [createpo.sh] xgettext --omit-header -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.utf.po
-[createpo.sh] xgettext --omit-header -k_ *.* -o /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.new.po
-[createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.mo
-918 translated messages, 1298 untranslated messages.
-[createpo.sh] xgettext --omit-header -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.utf.po
-[createpo.sh] xgettext --omit-header -k_ *.* -o /home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.new.po
-[createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.mo
-894 translated messages, 1322 untranslated messages.
-[createpo.sh] xgettext --omit-header -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.utf.po
-/home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.utf.po:1:1: syntax error
-/home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.utf.po:1: keyword "m" unknown
-/home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.utf.po:1: keyword "s" unknown
-/home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.utf.po:1: keyword "g" unknown
-/home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.utf.po:1: keyword "i" unknown
-/home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.utf.po:1: keyword "d" unknown
-/home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.utf.po:2: keyword "m" unknown
-/home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.utf.po:2: keyword "s" unknown
-/home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.utf.po:2: keyword "g" unknown
-/home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.utf.po:2: keyword "s" unknown
-/home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.utf.po:2: keyword "t" unknown
-/home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.utf.po:2: keyword "r" unknown
-/home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.utf.po:4: keyword "m" unknown
-/home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.utf.po:4: keyword "s" unknown
-/home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.utf.po:4: keyword "g" unknown
-/home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.utf.po:4: keyword "i" unknown
-/home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.utf.po:4: keyword "d" unknown
-/home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.utf.po:5: keyword "m" unknown
-/home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.utf.po:5: keyword "s" unknown
-/home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.utf.po:5: keyword "g" unknown
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.utf.po:1:2: syntax error
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.utf.po:1: keyword "m" unknown
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.utf.po:1: keyword "s" unknown
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.utf.po:1: keyword "g" unknown
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.utf.po:1: keyword "i" unknown
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.utf.po:1: keyword "d" unknown
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.utf.po:2: keyword "m" unknown
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.utf.po:2: keyword "s" unknown
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.utf.po:2: keyword "g" unknown
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.utf.po:2: keyword "s" unknown
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.utf.po:2: keyword "t" unknown
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.utf.po:2: keyword "r" unknown
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.utf.po:4: keyword "m" unknown
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.utf.po:4: keyword "s" unknown
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.utf.po:4: keyword "g" unknown
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.utf.po:4: keyword "i" unknown
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.utf.po:4: keyword "d" unknown
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.utf.po:5: keyword "m" unknown
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.utf.po:5: keyword "s" unknown
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.utf.po:5: keyword "g" unknown
 xgettext: too many errors, aborting
-[createpo.sh] xgettext --omit-header -k_ *.* -o /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.new.po
+[createpo.sh] xgettext --omit-header -k_ *.* -o /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.new.po
