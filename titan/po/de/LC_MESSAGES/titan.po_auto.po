@@ -17,11 +17,11 @@ msgstr "Tuner"
 #: about.h:30 bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2638
 #: httpdfunc.h:2650 hwtest.h:478 moduleconfig.h:345
 #: skin_default_skin.xml.h:695 skinselector.h:138 stream.h:22
-#: tithek_submenu.h:947 transponder.h:122 transponder.h:158 transponder.h:194
-#: transponder.h:227 transponder.h:259 transponder.h:295 transponder.h:330
-#: transponder.h:348 transponder.h:364 transponder.h:418 transponder.h:451
-#: transponder.h:480 transponder.h:493 transponder.h:504 transponder.h:574
-#: youtube.h:149 zdf.h:86
+#: transponder.h:122 transponder.h:158 transponder.h:194 transponder.h:227
+#: transponder.h:259 transponder.h:295 transponder.h:330 transponder.h:348
+#: transponder.h:364 transponder.h:418 transponder.h:451 transponder.h:480
+#: transponder.h:493 transponder.h:504 transponder.h:574 youtube.h:149
+#: zdf.h:86
 msgid "unknown"
 msgstr "unbekannt"
 
@@ -1162,7 +1162,7 @@ msgstr "Krieg"
 msgid "Scifi"
 msgstr ""
 
-#: epgsearch.h:316 tithek_submenu.h:841
+#: epgsearch.h:316
 msgid "Sport"
 msgstr ""
 
@@ -2426,7 +2426,7 @@ msgstr ""
 msgid "15"
 msgstr ""
 
-#: mediadbsettings.h:63 tithek_submenu.h:8
+#: mediadbsettings.h:63
 msgid "20"
 msgstr ""
 
@@ -4546,7 +4546,7 @@ msgstr ""
 "FEHLER: Es ist kein freier Tuner vorhanden.\n"
 "Zum Aufnahme/Timeshift-Sender wechseln?"
 
-#: record.h:1174
+#: record.h:1180
 msgid "Timer Record start !"
 msgstr "Timeraufnahme wurde gestartet!"
 
@@ -4882,7 +4882,7 @@ msgstr "rot"
 msgid "yellow"
 msgstr "gelb"
 
-#: screensaveradjust.h:34 tithek_submenu.h:973
+#: screensaveradjust.h:34
 msgid "white"
 msgstr "weiß"
 
@@ -5862,7 +5862,7 @@ msgstr "Festplatte formatieren"
 msgid "free space"
 msgstr "Freier Speicherplatz"
 
-#: skin_default_skin.xml.h:239 tithek_submenu.h:372
+#: skin_default_skin.xml.h:239
 msgid "French"
 msgstr "Français"
 
@@ -5890,7 +5890,7 @@ msgstr "Gateway"
 msgid "Genre"
 msgstr ""
 
-#: skin_default_skin.xml.h:247 tithek_submenu.h:383
+#: skin_default_skin.xml.h:247
 msgid "German"
 msgstr "Deutsch"
 
@@ -5918,7 +5918,7 @@ msgstr "Grafisches EPG Vorschaubilder"
 msgid "Graphic EPG Zoom"
 msgstr "Vergrößerungsfaktor des grafischen EPG"
 
-#: skin_default_skin.xml.h:255 tithek_submenu.h:393
+#: skin_default_skin.xml.h:255
 msgid "Greek"
 msgstr "Ελληνικά"
 
@@ -7903,8 +7903,7 @@ msgstr "Aktivieren"
 
 #: softcam.h:403
 msgid "Reader Config Plugin not installed !"
-msgstr ""
-"FEHLER: Reader Konfigurationsdatei ist nicht installiert!"
+msgstr "FEHLER: Reader Konfigurationsdatei ist nicht installiert!"
 
 #: solarmovie.h:295
 msgid "This file doesn't exist, or has been removed"
@@ -8111,8 +8110,8 @@ msgid ""
 "\n"
 "Aborting backup..."
 msgstr ""
-"ACHTUNG: Eine Festplatte oder ein USB Gerät muss für Aufnahmen angeschlossen "
-"sein!\n"
+"ACHTUNG: Eine Festplatte oder ein USB Gerät muss für Aufnahmen "
+"angeschlossen sein!\n"
 "\n"
 "Sicherung wird abgebrochen."
 
@@ -8765,7 +8764,8 @@ msgstr ""
 #: tmdb.h:922
 msgid "Error, found result without imdbid we can't this save in MediaDB"
 msgstr ""
-"FEHLER: in der IMDB-ID ist ein Fehler und kann daher nicht übernommen werden!"
+"FEHLER: in der IMDB-ID ist ein Fehler und kann daher nicht übernommen "
+"werden!"
 
 #: tpchoice.h:21
 msgid "Transponderlist"
@@ -8938,8 +8938,8 @@ msgid ""
 "CCcam 2.3.0 autoident for card hd+ and skyde including all necessary config "
 "files."
 msgstr ""
-"CCcam 2.3.0 Autoidentifizierung für HD+ und SkyDe SmatCard inklusive "
-"aller notwendigen Einstellungen."
+"CCcam 2.3.0 Autoidentifizierung für HD+ und SkyDe SmatCard inklusive aller "
+"notwendigen Einstellungen."
 
 #: tpk_description.h:35
 msgid "codecpack for MediaCenter Dateiendungs-Update "
@@ -9076,16 +9076,16 @@ msgid ""
 "gbox 800 with autoident for card hd+ and skyde including all necessary "
 "config files."
 msgstr ""
-"Gbox 800 Autoidentifizierung für HD+ und SkyDe SmatCard inklusive "
-"aller notwendigen Einstellungen."
+"Gbox 800 Autoidentifizierung für HD+ und SkyDe SmatCard inklusive aller "
+"notwendigen Einstellungen."
 
 #: tpk_description.h:68
 msgid ""
 "gbox 806 with autoident for card hd+ and skyde including all necessary "
 "config files."
 msgstr ""
-"Gbox 806 Autoidentifizierung für HD+ und SkyDe SmatCard inklusive "
-"aller notwendigen Einstellungen."
+"Gbox 806 Autoidentifizierung für HD+ und SkyDe SmatCard inklusive aller "
+"notwendigen Einstellungen."
 
 #: tpk_description.h:69
 msgid "Gold Picons for tiTan."
@@ -9177,8 +9177,7 @@ msgstr "Neutrino Fernbedienungsbelegung"
 
 #: tpk_description.h:91
 msgid "newcs including all necessary config files."
-msgstr ""
-"Newcs inklusive aller notwendigen Einstellungen."
+msgstr "Newcs inklusive aller notwendigen Einstellungen."
 
 #: tpk_description.h:92
 msgid "New Downloadfeed for your AAF - Duckbox"
