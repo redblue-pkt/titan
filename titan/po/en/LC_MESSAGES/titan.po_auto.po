@@ -8,7 +8,7 @@ msgstr ""
 
 #: about.h:16
 msgid "Copyright"
-msgstr ""
+msgstr "© Copyright"
 
 #: about.h:25 skin_default_skin.xml.h:674
 msgid "Tuner"
@@ -5666,7 +5666,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:193
 msgid "Dutch"
-msgstr "Dutch"
+msgstr "Nederlands"
 
 #: skin_default_skin.xml.h:194
 msgid "DYNDNS Settings"
@@ -5842,7 +5842,7 @@ msgstr "Free space"
 
 #: skin_default_skin.xml.h:239
 msgid "French"
-msgstr "French"
+msgstr "Français"
 
 #: skin_default_skin.xml.h:240
 msgid "Frequency"
@@ -5898,7 +5898,7 @@ msgstr "Graphic EPG Zoom"
 
 #: skin_default_skin.xml.h:255
 msgid "Greek"
-msgstr "Greek"
+msgstr "Ελληνικά"
 
 #: skin_default_skin.xml.h:256
 msgid "Guardinterval"
@@ -6414,7 +6414,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:327
 msgid "Italian"
-msgstr "Italian"
+msgstr "Italiano"
 
 #: skin_default_skin.xml.h:328
 msgid "j"
@@ -6876,7 +6876,7 @@ msgstr "Policy"
 
 #: skin_default_skin.xml.h:451
 msgid "Polish"
-msgstr "Polish"
+msgstr "Polski"
 
 #: skin_default_skin.xml.h:452
 msgid "Positioner Setup"
@@ -7100,7 +7100,7 @@ msgstr "Time"
 
 #: skin_default_skin.xml.h:516
 msgid "Russian"
-msgstr "Russian"
+msgstr "Русский"
 
 #: skin_default_skin.xml.h:517
 msgid "s"
@@ -7780,7 +7780,7 @@ msgstr "Video PID: "
 
 #: skin_default_skin.xml.h:716
 msgid "Vietnamese"
-msgstr "Vietnamese"
+msgstr "Viet"
 
 #: skin_default_skin.xml.h:717
 msgid "Virtualzap Timeout"
