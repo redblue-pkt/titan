@@ -7291,7 +7291,7 @@ msgstr "Versteckte Dateien anzeigen?"
 
 #: skin_default_skin.xml.h:565
 msgid "Show infobar on program change"
-msgstr "Infoleiste bei Sendungswechsel anzeigen?""
+msgstr "Infoleiste bei Sendungswechsel anzeigen?"
 
 #: skin_default_skin.xml.h:566
 msgid "Show in Standby"
