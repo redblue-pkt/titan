@@ -150,8 +150,8 @@ echo "[createpo.sh] check group $GROUP"
 cd "$HOME"/flashimg/source.titan/po
 if [ "$SVNUSER" = "aafsvn" ] && [ "$GROUP" = "dev" ] && [ "$error" = "0" ];then
 	echo "[createpo.sh] svn commit -m [titan] autoupdate po files"
-#	svn commit -m "[titan] autoupdate po files"
-#	svn commit "$HOME"/flashimg/source.titan/po
+	svn commit -m "[titan] autoupdate po files"
+	svn commit "$HOME"/flashimg/source.titan/po
 elif [ "$SVNUSER" = "aafsvn" ] && [ "$GROUP" = "dev" ];then
 	echo "[createpo.sh] svn commit -m [titan] ERROR autoupdate po files"
 	
@@ -168,8 +168,8 @@ elif [ "$SVNUSER" = "aafsvn" ] && [ "$GROUP" = "dev" ];then
 	fi
 
 	cd "$HOME"/flashimg/source.titan/titan/tools/error
-#	svn commit -m "[titan] ERROR autoupdate po files"
-#	svn commit "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
+	svn commit -m "[titan] ERROR autoupdate po files"
+	svn commit "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
 else
 	echo "[createpo.sh] skip: svn commit"
 fi
