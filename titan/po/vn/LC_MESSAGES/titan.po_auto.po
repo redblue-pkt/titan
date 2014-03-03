@@ -923,17 +923,14 @@ msgid "toneburst, uncommitted, committed"
 msgstr ""
 
 #: diseqcconfig.h:128
-#, fuzzy
 msgid "DiSEqC 1.0"
 msgstr "DiSEqC"
 
 #: diseqcconfig.h:129
-#, fuzzy
 msgid "DiSEqC 1.1"
 msgstr "DiSEqC"
 
 #: diseqcconfig.h:130
-#, fuzzy
 msgid "DiSEqC 1.2"
 msgstr "DiSEqC"
 
@@ -942,7 +939,6 @@ msgid "DiSEqC 1.3 (USALS)"
 msgstr ""
 
 #: diseqcconfig.h:132
-#, fuzzy
 msgid "Tonburst A/B"
 msgstr "Tone Burst"
 
@@ -1082,7 +1078,6 @@ msgid "DLNA now stopped"
 msgstr "Dừng DLNA"
 
 #: download.h:77 download.h:87
-#, fuzzy
 msgid "Download (KB): "
 msgstr "Tải toàn bộ file"
 
@@ -1128,12 +1123,10 @@ msgid "Action"
 msgstr "thực thi"
 
 #: epgsearch.h:236
-#, fuzzy
 msgid "Animation"
 msgstr "hoạt hình 1"
 
 #: epgsearch.h:244
-#, fuzzy
 msgid "History"
 msgstr "Danh sách kênh"
 
@@ -1162,7 +1155,6 @@ msgid "Comedy"
 msgstr ""
 
 #: epgsearch.h:300
-#, fuzzy
 msgid "War"
 msgstr "bar"
 
@@ -1171,7 +1163,6 @@ msgid "Scifi"
 msgstr ""
 
 #: epgsearch.h:316
-#, fuzzy
 msgid "Sport"
 msgstr "Cổng ftp"
 
@@ -1212,7 +1203,6 @@ msgid "whitelist"
 msgstr "danh sách trắng"
 
 #: epgsettings.h:148
-#, fuzzy
 msgid "scan and whitelist"
 msgstr "danh sách trắng"
 
@@ -1230,7 +1220,6 @@ msgid "never"
 msgstr "không bao giờ"
 
 #: epgsettings.h:199 epgsettings.h:204 epgsettings.h:209
-#, fuzzy
 msgid "only for scan"
 msgstr "Dò các chương trình miễn phí"
 
@@ -1247,7 +1236,6 @@ msgid "EPG resetet and now clear."
 msgstr "không có lịch chương trình"
 
 #: epgsettings.h:298
-#, fuzzy
 msgid "EPG Scan Log"
 msgstr "Chế độ ghi lịch chương trình"
 
@@ -1256,17 +1244,14 @@ msgid "Feed"
 msgstr "Feed"
 
 #: extensions.h:82
-#, fuzzy
 msgid "Installation start"
 msgstr "Đang cài đặt"
 
 #: extensions.h:84
-#, fuzzy
 msgid "Remove start"
 msgstr "xóa chia sẻ"
 
 #: extensions.h:93
-#, fuzzy
 msgid "New free space (KB): "
 msgstr "Freier EPG Speicher"
 
@@ -1287,17 +1272,14 @@ msgid "Remove error"
 msgstr "lỗi"
 
 #: extensions.h:125
-#, fuzzy
 msgid "Install to MNT"
 msgstr "Cài đặt lỗi !"
 
 #: extensions.h:137
-#, fuzzy
 msgid "Install to FLASH"
 msgstr "Cài đặt lỗi !"
 
 #: extensions.h:151
-#, fuzzy
 msgid "Install to SWAP"
 msgstr "Cài đặt lỗi !"
 
@@ -1306,7 +1288,6 @@ msgid "Choice Install Medium"
 msgstr ""
 
 #: extensions.h:170 extensions.h:221 extensions.h:478
-#, fuzzy
 msgid "Tpk Install Info"
 msgstr "Cài đặt lỗi !"
 
@@ -1355,12 +1336,10 @@ msgid "Tpk Remove - select file"
 msgstr ""
 
 #: extensions.h:277
-#, fuzzy
 msgid "Removeing"
 msgstr "Đang hủy"
 
 #: extensions.h:282
-#, fuzzy
 msgid "Tpk Remove Info"
 msgstr "xóa"
 
@@ -1399,12 +1378,10 @@ msgid "Tpk Update Info - Update ERROR"
 msgstr ""
 
 #: extensions.h:420
-#, fuzzy
 msgid "Can't get all TPK index !"
 msgstr "không có tín hiệu"
 
 #: extensions.h:424
-#, fuzzy
 msgid "Can't update all packages !"
 msgstr "Không thể phát lại!"
 
@@ -1423,17 +1400,14 @@ msgid ""
 msgstr ""
 
 #: facebook.h:471
-#, fuzzy
 msgid "Group created"
 msgstr "lập lại"
 
 #: facebook.h:472
-#, fuzzy
 msgid "Event created"
 msgstr "Không thể tạo đường dẫn"
 
 #: facebook.h:473
-#, fuzzy
 msgid "Status update"
 msgstr "cập nhật"
 
@@ -1450,12 +1424,10 @@ msgid "Link postet"
 msgstr ""
 
 #: facebook.h:477
-#, fuzzy
 msgid "Video postet"
 msgstr "điều chỉnh video"
 
 #: facebook.h:478
-#, fuzzy
 msgid "Photos postet"
 msgstr "đến vị trí"
 
@@ -1464,7 +1436,6 @@ msgid "App story"
 msgstr ""
 
 #: facebook.h:480
-#, fuzzy
 msgid "Coment created"
 msgstr "Không thể tạo đường dẫn"
 
@@ -1485,27 +1456,22 @@ msgid "Create Folder"
 msgstr "Tạo thư mục"
 
 #: filemanager.h:84 play.h:612
-#, fuzzy
 msgid "Menu"
 msgstr "Danh sách menu"
 
 #: filemanager.h:95
-#, fuzzy
 msgid "Can't rename file !"
 msgstr "Không thể mở file"
 
 #: filemanager.h:100
-#, fuzzy
 msgid "Can't create directory !"
 msgstr "Không thể tạo hoặc xóa thư mục"
 
 #: filemanager.h:180
-#, fuzzy
 msgid "Really copy this file/dir?"
 msgstr " Sẵn sàng sao chép file/thư mục này?"
 
 #: filemanager.h:188
-#, fuzzy
 msgid "Really move this file/dir?"
 msgstr "Sẵn sàng di chuyển file/thư mục này?"
 
@@ -1518,22 +1484,18 @@ msgid "To"
 msgstr "tới"
 
 #: filemanager.h:219 filemanager.h:226
-#, fuzzy
 msgid "Move File"
 msgstr "di chuyển"
 
 #: filemanager.h:233 filemanager.h:235
-#, fuzzy
 msgid "Copy File"
 msgstr "sao chép"
 
 #: filemanager.h:278
-#, fuzzy
 msgid "Really delete this file/dir?"
 msgstr " Sẵn sàng xóa file/thư mục này?"
 
 #: filemanager.h:291
-#, fuzzy
 msgid "Can't remove file/dir !"
 msgstr "Không thể mở file"
 
@@ -1542,7 +1504,6 @@ msgid "Can't show this file!"
 msgstr "Không thể hiển thị file này"
 
 #: filemanager.h:355 mc_internetbrowser.h:41 mc_wetterinfo.h:41 tithek.h:1372
-#, fuzzy
 msgid "Registration needed, please contact Atemio !"
 msgstr "Vui lòng liên hệ nhà cung cấp"
 
@@ -1551,7 +1512,6 @@ msgid "ERROR cant read res"
 msgstr "Lỗi không thể đọc"
 
 #: gmediarender.h:109
-#, fuzzy
 msgid "Servername"
 msgstr "Tên server"
 
@@ -1564,27 +1524,22 @@ msgid "GRAPHIC MULTI EPG - Bouquets"
 msgstr "Nhóm lịch chương trình"
 
 #: gmultiepg.h:559
-#, fuzzy
 msgid "GRAPHIC MULTI EPG - Channel"
 msgstr "Nhóm lịch chương trình"
 
 #: gmultiepg.h:572
-#, fuzzy
 msgid "GRAPHIC MULTI EPG - Satellites"
 msgstr "Nhóm lịch chương trình"
 
 #: gmultiepg.h:585
-#, fuzzy
 msgid "GRAPHIC MULTI EPG - Provider"
 msgstr "Nhóm lịch chương trình"
 
 #: gmultiepg.h:598
-#, fuzzy
 msgid "GRAPHIC MULTI EPG - All Channels"
 msgstr "EPG – Tất cả các chương trình"
 
 #: harddisk.h:126 harddisk.h:127
-#, fuzzy
 msgid "Harddisk Format - Filesystem"
 msgstr "Định dạng ổ cứng – Danh sách các thiết bị"
 
@@ -1675,7 +1630,6 @@ msgid "STICK "
 msgstr ""
 
 #: harddisk.h:495
-#, fuzzy
 msgid "ext"
 msgstr "Tiếp theo"
 
@@ -1684,7 +1638,6 @@ msgid "swap"
 msgstr "trao đổi"
 
 #: harddisk.h:519
-#, fuzzy
 msgid "backup"
 msgstr "Sao lưu"
 
@@ -1737,7 +1690,6 @@ msgstr ""
 " Đầu thu sẽ khởi động lại sau khi kiểm tra."
 
 #: harddisk.h:867 harddisk.h:868
-#, fuzzy
 msgid "Harddisk Sleep"
 msgstr "Ổ cứng"
 
@@ -1772,7 +1724,6 @@ msgid "You can leave HBBTV with Record Key."
 msgstr ""
 
 #: hbbtv.h:742
-#, fuzzy
 msgid "Channel HBBTV"
 msgstr "Chương trình"
 
@@ -1785,7 +1736,6 @@ msgid "testtransponder entry not ok"
 msgstr ""
 
 #: hwtest.h:98
-#, fuzzy
 msgid "can't create new transponer"
 msgstr "Không dò được kênh"
 
@@ -1798,7 +1748,6 @@ msgid "testchannel entry not ok"
 msgstr ""
 
 #: hwtest.h:113
-#, fuzzy
 msgid "can't create new channel"
 msgstr "Không dò được kênh"
 
@@ -1815,7 +1764,6 @@ msgid "[C]Lock & Search"
 msgstr ""
 
 #: hwtest.h:176 hwtest.h:220
-#, fuzzy
 msgid "Front Display"
 msgstr "Hiển thị VF"
 
@@ -1835,7 +1783,6 @@ msgid "Network"
 msgstr "Mạng"
 
 #: hwtest.h:182 hwtest.h:416
-#, fuzzy
 msgid "USB Port"
 msgstr "cổng"
 
@@ -1868,12 +1815,10 @@ msgid "Press Front Key"
 msgstr ""
 
 #: hwtest.h:267
-#, fuzzy
 msgid "Color Bar"
 msgstr " Định dạng màu "
 
 #: hwtest.h:279 tmc.h:702
-#, fuzzy
 msgid "RED"
 msgstr "TẢI LẠI"
 
@@ -2027,12 +1972,10 @@ msgid "Infos"
 msgstr " Thông tin "
 
 #: instar.h:196 instar.h:208
-#, fuzzy
 msgid "aus"
 msgstr "hỏi"
 
 #: instar.h:197 instar.h:209
-#, fuzzy
 msgid "ein"
 msgstr "Mật khẩu"
 
@@ -2073,12 +2016,10 @@ msgstr "Các chương trình phụ"
 #: keyactions.h:30 play.h:702 settings_bluebutton.h:21
 #: settings_pluginbutton.h:22 settings_redbutton.h:22
 #: skin_default_skin.xml.h:191
-#, fuzzy
 msgid "Downloads"
 msgstr "Tải về lỗi"
 
 #: keyactions.h:35
-#, fuzzy
 msgid "Key Action - Plugins"
 msgstr "Nút màu đỏ - Plugins "
 
@@ -2127,17 +2068,14 @@ msgid "user defined"
 msgstr "Định nghĩa người dùng"
 
 #: lnbconfig.h:150
-#, fuzzy
 msgid "unicable"
 msgstr "Bật"
 
 #: lnbconfig.h:151
-#, fuzzy
 msgid "user unicable"
 msgstr "tên người dùng"
 
 #: marker.h:215
-#, fuzzy
 msgid "ERROR... can't set marker in this file"
 msgstr "Lỗi… không thể thiết lập nhà sản xuất trong file này"
 
@@ -2188,7 +2126,6 @@ msgstr "lớn"
 
 #: mc_audioplayer_settings.h:37 mc_pictureplayer_settings.h:52
 #: mc_videoplayer_settings.h:33
-#, fuzzy
 msgid "cover"
 msgstr "full cover"
 
@@ -2208,14 +2145,12 @@ msgid "datetime"
 msgstr "ngày giờ"
 
 #: mc_dateibrowser.h:38
-#, fuzzy
 msgid "Install File Manager Tpk first !"
 msgstr "cài đặt trình duyệt web"
 
 #: mc_global.h:270 mc_global.h:338 mc_global.h:413 mc_global.h:700
 #: mc_global.h:934 mc_global.h:949 plugins_mc_skin.xml.h:45
 #: skins_mc_skin.xml.h:45
-#, fuzzy
 msgid "Playlist"
 msgstr "danh sách phát"
 
@@ -2232,7 +2167,6 @@ msgid "Edit Playlist"
 msgstr "Chỉnh sửa danh sách"
 
 #: mc_internetbrowser.h:38
-#, fuzzy
 msgid "Install netsurf Internetbrowser Tpk first !"
 msgstr "cài đặt trình duyệt web"
 
@@ -2245,7 +2179,6 @@ msgid "Menu not implemented !"
 msgstr "Không thực hiện được!"
 
 #: mc_mediathek.h:37
-#, fuzzy
 msgid "Install Tithek Tpk first !"
 msgstr "cài đặt trình duyệt web"
 
@@ -2293,7 +2226,6 @@ msgid "Raute Musik FM"
 msgstr ""
 
 #: mc_settings.h:13
-#, fuzzy
 msgid "transparent (mvi)"
 msgstr "Độ trong suốt"
 
@@ -2310,32 +2242,26 @@ msgid "Start at last position ?"
 msgstr "Bắt đầu ở vị trí cuối cùng ?"
 
 #: mc_videoplayer_settings.h:54
-#, fuzzy
 msgid "1s"
 msgstr "s"
 
 #: mc_videoplayer_settings.h:55
-#, fuzzy
 msgid "2s"
 msgstr "s"
 
 #: mc_videoplayer_settings.h:56
-#, fuzzy
 msgid "3s"
 msgstr "s"
 
 #: mc_videoplayer_settings.h:57
-#, fuzzy
 msgid "4s"
 msgstr "s"
 
 #: mc_videoplayer_settings.h:58
-#, fuzzy
 msgid "5s (default)"
 msgstr "kích thước (mặc định)"
 
 #: mc_wetterinfo.h:38
-#, fuzzy
 msgid "Install Weather Tpk first !"
 msgstr "cài đặt trình duyệt web"
 
@@ -2401,12 +2327,10 @@ msgid "file"
 msgstr "tập tin"
 
 #: mediadb.h:2443
-#, fuzzy
 msgid "path"
 msgstr "Thư mục phim"
 
 #: mediadb.h:2447
-#, fuzzy
 msgid "title"
 msgstr "Phụ đề"
 
@@ -2492,7 +2416,6 @@ msgid "Save Settings"
 msgstr "Lưu các thiết lập"
 
 #: menu.h:884
-#, fuzzy
 msgid "Error in Save Settings"
 msgstr "Lưu các thiết lập"
 
@@ -2505,12 +2428,10 @@ msgid "double"
 msgstr ""
 
 #: moduleconfig.h:168
-#, fuzzy
 msgid "activate"
 msgstr "Tắt"
 
 #: moduleconfig.h:169
-#, fuzzy
 msgid "deaktivate"
 msgstr "tắt"
 
@@ -2543,17 +2464,14 @@ msgid "Multiple Service"
 msgstr "Nhiều dịch vụ"
 
 #: multiepg.h:437 multiepg.h:627
-#, fuzzy
 msgid "MULTI EPG - Bouquets"
 msgstr "Nhóm lịch chương trình"
 
 #: multiepg.h:450
-#, fuzzy
 msgid "MULTI EPG - Channel"
 msgstr "EPG – Tất cả các chương trình"
 
 #: multiepg.h:463
-#, fuzzy
 msgid "MULTI EPG - Satellites"
 msgstr "EPG – Tất cả các chương trình"
 
@@ -2575,7 +2493,6 @@ msgid "Anonymous login Access Denied !"
 msgstr ""
 
 #: networkbrowser.h:1009 networkbrowser.h:1025
-#, fuzzy
 msgid "Anonymous login successful"
 msgstr "Tải thành công !"
 
@@ -2596,7 +2513,6 @@ msgid "Networkbrowser - show scanned cifs/nfs-Shares"
 msgstr "Trình duyệt mạng – Dò cifs/nfs-Chia sẻ "
 
 #: networkbrowser.h:1340
-#, fuzzy
 msgid "Add Cifs Network Share"
 msgstr "Thêm mạng chia sẻ Nfs"
 
@@ -2613,7 +2529,6 @@ msgid "cifs"
 msgstr ""
 
 #: networkbrowser.h:1560
-#, fuzzy
 msgid "nfs"
 msgstr "thông tin"
 
@@ -2626,7 +2541,6 @@ msgid "ssl_try"
 msgstr ""
 
 #: networkbrowser.h:1597
-#, fuzzy
 msgid "ssl_control"
 msgstr "Điều khiển quạt"
 
@@ -2720,7 +2634,6 @@ msgid "save network settings ?"
 msgstr "lưu thiết lập mạng?"
 
 #: network.h:558
-#, fuzzy
 msgid "Can't change hostname !"
 msgstr "không có tín hiệu"
 
@@ -2791,7 +2704,6 @@ msgid "Wlan Stick not found"
 msgstr ""
 
 #: network.h:887
-#, fuzzy
 msgid "WLAN Info"
 msgstr "Thông tin"
 
@@ -2808,7 +2720,6 @@ msgid "SatCount: "
 msgstr "số lượng vệ tinh: "
 
 #: optimize.h:272 scan.h:1544
-#, fuzzy
 msgid "Transponder: "
 msgstr "Bộ pháp đáp:"
 
@@ -2833,7 +2744,6 @@ msgid "ProviderCount: "
 msgstr "số lượng nhà cung cấp: "
 
 #: panel_settings_autostart.h:26 panel_settings_autostart.h:104
-#, fuzzy
 msgid "Autostart Defaults"
 msgstr "tự động bắt đầu danh sách"
 
@@ -2863,7 +2773,6 @@ msgid "status"
 msgstr ""
 
 #: panel_settings_autostart.h:70 settings_autostart.h:61
-#, fuzzy
 msgid "ip"
 msgstr "i"
 
@@ -2872,7 +2781,6 @@ msgid "updatelist"
 msgstr "Danh sách cập nhật"
 
 #: panel_settings_autostart.h:95 settings_autostart.h:86
-#, fuzzy
 msgid "useUnknown910"
 msgstr "không biết"
 
@@ -2881,7 +2789,6 @@ msgid "Old Audiofw"
 msgstr "Firmware audio cũ "
 
 #: panel_settings_autostart.h:122 settings_autostart.h:153
-#, fuzzy
 msgid "No Audiosync"
 msgstr "không đồng bộ audio"
 
@@ -2898,7 +2805,6 @@ msgid "Poweroff"
 msgstr "Tắt nguồn"
 
 #: panel_settings_autostart.h:158 settings_autostart.h:189
-#, fuzzy
 msgid "Scart On Standby"
 msgstr "Chế độ chờ scart"
 
@@ -2911,17 +2817,14 @@ msgid "Boot RGB Fix"
 msgstr ""
 
 #: panel_settings_autostart.h:186
-#, fuzzy
 msgid "Autostart USB"
 msgstr "Tự động khởi động"
 
 #: panel_settings_autostart.h:192 settings_autostart.h:273
-#, fuzzy
 msgid "Load Partition"
 msgstr "phân vùng tải"
 
 #: panel_settings_autostart.h:201 settings_autostart.h:282
-#, fuzzy
 msgid "Fsck Record"
 msgstr "ghi fsck"
 
@@ -2931,27 +2834,22 @@ msgid "Swap"
 msgstr "Trao đổi"
 
 #: panel_settings_autostart.h:219 settings_autostart.h:300
-#, fuzzy
 msgid "Swap Size"
 msgstr "Trao đổi"
 
 #: panel_settings_autostart.h:236 settings_autostart.h:317
-#, fuzzy
 msgid "Fsck Swap"
 msgstr "Bỏ hoán đổi"
 
 #: panel_settings_autostart.h:245 settings_autostart.h:326
-#, fuzzy
 msgid "Record Max Sectors"
 msgstr "record_max_sectors "
 
 #: panel_settings_autostart.h:262 settings_autostart.h:343
-#, fuzzy
 msgid "Swap Max Sectors"
 msgstr "swap_max_sectors"
 
 #: panel_settings_autostart.h:279
-#, fuzzy
 msgid "Autostart EMU"
 msgstr "Tự động khởi động"
 
@@ -2980,7 +2878,6 @@ msgid "scan wlan"
 msgstr "Dò Wlan"
 
 #: panel_settings_autostart.h:344
-#, fuzzy
 msgid "Autostart Child Safety"
 msgstr "tự động bắt đầu danh sách"
 
@@ -2993,7 +2890,6 @@ msgid "Pin"
 msgstr "Mật khẩu"
 
 #: panel_settings.h:21
-#, fuzzy
 msgid "Automount Config"
 msgstr "Tự động tích hợp"
 
@@ -3010,7 +2906,6 @@ msgid "ntfs-3g"
 msgstr ""
 
 #: panel_settings.h:31
-#, fuzzy
 msgid "ntfsmount"
 msgstr "Tự động tích hợp"
 
@@ -3040,12 +2935,10 @@ msgid "Use Teletxt Workaround"
 msgstr "sử dụng văn bản"
 
 #: panel_settings_overclocking.h:276 settings_overclocking.h:276
-#, fuzzy
 msgid "frequency"
 msgstr "Tần số"
 
 #: panel_settings_overclocking.h:276 settings_overclocking.h:276
-#, fuzzy
 msgid "videmode"
 msgstr "di chuyển"
 
@@ -3145,7 +3038,6 @@ msgid "Search on Netzkino (local)"
 msgstr ""
 
 #: play.h:627
-#, fuzzy
 msgid "Search on Youtube"
 msgstr "Bắt đầu khởi động"
 
@@ -3210,7 +3102,6 @@ msgid "AV Settings"
 msgstr "Thiết lập AV"
 
 #: play.h:643
-#, fuzzy
 msgid "iD3Tag Info"
 msgstr "TV (Thông tin)"
 
@@ -3224,7 +3115,6 @@ msgstr "Xóa file"
 
 #: play.h:647 plugins_streaminfo_skin.xml.h:3 skins_streaminfo_skin.xml.h:3
 #: tpk_showname.h:174
-#, fuzzy
 msgid "Streaminfo"
 msgstr "Streaming"
 
@@ -3249,12 +3139,10 @@ msgid "EPG Info"
 msgstr "Thông tin EPG"
 
 #: play.h:1295
-#, fuzzy
 msgid "Record in progress"
 msgstr "Đang ghi tên"
 
 #: play.h:1296
-#, fuzzy
 msgid "Really Delete ?"
 msgstr "Bạn muốn xóa?"
 
@@ -3266,17 +3154,14 @@ msgid "DEL"
 msgstr "Xóa"
 
 #: play.h:1649
-#, fuzzy
 msgid "Marker autoseek is started"
 msgstr "Đã thiết lập nhà sản xuất"
 
 #: play.h:1660
-#, fuzzy
 msgid "Marker autoseek is stopped"
 msgstr "Đã thiết lập nhà sản xuất"
 
 #: plugins_autotimer_skin.xml.h:1 skins_autotimer_skin.xml.h:1
-#, fuzzy
 msgid "AutoTimer Settings"
 msgstr "Thiết lập adapter"
 
@@ -3293,7 +3178,6 @@ msgid "channel (EPG=Current channel)"
 msgstr ""
 
 #: plugins_autotimer_skin.xml.h:5 skins_autotimer_skin.xml.h:5
-#, fuzzy
 msgid "end search"
 msgstr "Dò"
 
@@ -3302,7 +3186,6 @@ msgid "event"
 msgstr ""
 
 #: plugins_autotimer_skin.xml.h:7 skins_autotimer_skin.xml.h:7
-#, fuzzy
 msgid "search string"
 msgstr "tìm kiếm bên phải"
 
@@ -3335,17 +3218,14 @@ msgid ""
 msgstr ""
 
 #: plugins_autotimer_skin.xml.h:11 skins_autotimer_skin.xml.h:11
-#, fuzzy
 msgid "Timer1 activ"
 msgstr "cho phép thiết bị đọc"
 
 #: plugins_autotimer_skin.xml.h:12 skins_autotimer_skin.xml.h:12
-#, fuzzy
 msgid "Timer2 activ"
 msgstr "cho phép thiết bị đọc"
 
 #: plugins_callmonitor1_skin.xml.h:1 skins_callmonitor1_skin.xml.h:1
-#, fuzzy
 msgid "CallMonitor Settings"
 msgstr "Thiết lập roto"
 
@@ -3358,7 +3238,6 @@ msgid "2.Rufnummer"
 msgstr ""
 
 #: plugins_callmonitor1_skin.xml.h:4 skins_callmonitor1_skin.xml.h:4
-#, fuzzy
 msgid "Aktion wenn standby"
 msgstr "Chế độ chờ scart"
 
@@ -3440,22 +3319,18 @@ msgid "Interface"
 msgstr "Giao diện"
 
 #: plugins_dlna_skin.xml.h:4 skins_dlna_skin.xml.h:4
-#, fuzzy
 msgid "Media Dir 1"
 msgstr " Medie Dir 1"
 
 #: plugins_dlna_skin.xml.h:5 skins_dlna_skin.xml.h:5
-#, fuzzy
 msgid "Media Dir 2"
 msgstr " Medie Dir 2"
 
 #: plugins_dlna_skin.xml.h:6 skins_dlna_skin.xml.h:6
-#, fuzzy
 msgid "Media Dir 3"
 msgstr " Medie Dir 3"
 
 #: plugins_dlna_skin.xml.h:7 skins_dlna_skin.xml.h:7
-#, fuzzy
 msgid "Media Dir 4"
 msgstr " Medie Dir 4"
 
@@ -3486,7 +3361,6 @@ msgid "STOP"
 msgstr "dừng"
 
 #: plugins_facebook_skin.xml.h:1 skins_facebook_skin.xml.h:1 tpk_showname.h:21
-#, fuzzy
 msgid "Facebook"
 msgstr "khởi động lại rc"
 
@@ -3531,7 +3405,6 @@ msgstr "Diễn viên:"
 #: plugins_imdbapi_skin.xml.h:2 plugins_imdb_skin.xml.h:2
 #: plugins_tmc_skin.xml.h:4 skins_imdbapi_skin.xml.h:2 skins_imdb_skin.xml.h:2
 #: skins_tmc_skin.xml.h:4
-#, fuzzy
 msgid "Director:"
 msgstr "Thư mục Imdb"
 
@@ -3571,12 +3444,10 @@ msgstr "dò"
 
 #: plugins_imdbapi_skin.xml.h:10 plugins_imdb_skin.xml.h:10
 #: skins_imdbapi_skin.xml.h:10 skins_imdb_skin.xml.h:10
-#, fuzzy
 msgid "Writers:"
 msgstr "ghi lỗi"
 
 #: plugins_imdb_skin.xml.h:4 skins_imdb_skin.xml.h:4
-#, fuzzy
 msgid "IMDb - Plugin"
 msgstr "cdắm nguồn"
 
@@ -3643,7 +3514,6 @@ msgstr ""
 
 #: plugins_lcdpearl1_skin.xml.h:4 plugins_lcdsamsung_skin.xml.h:4
 #: skins_lcdpearl1_skin.xml.h:4 skins_lcdsamsung_skin.xml.h:4
-#, fuzzy
 msgid "aktiv im Standby"
 msgstr "Hiển thị chế độ chờ"
 
@@ -3677,27 +3547,22 @@ msgid "Wettervorhersage"
 msgstr ""
 
 #: plugins_lcdsamsung_skin.xml.h:1 skins_lcdsamsung_skin.xml.h:1
-#, fuzzy
 msgid "Samsung SPF.. Settings"
 msgstr "Thiết lập server Samba"
 
 #: plugins_lcdsamsung_skin.xml.h:6 skins_lcdsamsung_skin.xml.h:6
-#, fuzzy
 msgid "DI"
 msgstr "D"
 
 #: plugins_lcdsamsung_skin.xml.h:7 skins_lcdsamsung_skin.xml.h:7
-#, fuzzy
 msgid "DO"
 msgstr "D"
 
 #: plugins_lcdsamsung_skin.xml.h:9 skins_lcdsamsung_skin.xml.h:9
-#, fuzzy
 msgid "MI"
 msgstr "I"
 
 #: plugins_lcdsamsung_skin.xml.h:10 skins_lcdsamsung_skin.xml.h:10
-#, fuzzy
 msgid "MO"
 msgstr "M"
 
@@ -3742,12 +3607,10 @@ msgid "Backdrop Interval"
 msgstr "Backdrop Interval"
 
 #: plugins_mc_skin.xml.h:15 skins_mc_skin.xml.h:15
-#, fuzzy
 msgid "Choice Menu"
 msgstr "Đóng menu"
 
 #: plugins_mc_skin.xml.h:17 skins_mc_skin.xml.h:17
-#, fuzzy
 msgid "Datei Browser"
 msgstr "Trình duyệt tập tin"
 
@@ -3767,7 +3630,6 @@ msgid "EDIT"
 msgstr "chỉnh sửa"
 
 #: plugins_mc_skin.xml.h:25 skins_mc_skin.xml.h:25
-#, fuzzy
 msgid "filealt"
 msgstr "tập tin"
 
@@ -3776,7 +3638,6 @@ msgid "filealtresult"
 msgstr "kết quả khác"
 
 #: plugins_mc_skin.xml.h:28 skins_mc_skin.xml.h:28
-#, fuzzy
 msgid "Filename:"
 msgstr "Đổi tên"
 
@@ -3789,7 +3650,6 @@ msgid "Interval"
 msgstr "Intervall"
 
 #: plugins_mc_skin.xml.h:33 skins_mc_skin.xml.h:33
-#, fuzzy
 msgid "MediaDB autoscan"
 msgstr "Đường dẫn MediaDB"
 
@@ -3904,12 +3764,10 @@ msgid "ADD"
 msgstr "THÊM"
 
 #: plugins_networkbrowser_skin.xml.h:2 skins_networkbrowser_skin.xml.h:2
-#, fuzzy
 msgid "Auth Settings"
 msgstr "Thiết lập AV"
 
 #: plugins_networkbrowser_skin.xml.h:3 skins_networkbrowser_skin.xml.h:3
-#, fuzzy
 msgid "AUTH SETTINGS"
 msgstr "THIẾT LẬP AUDIO"
 
@@ -3930,7 +3788,6 @@ msgid "hddreplacement"
 msgstr "thay ổ cứng"
 
 #: plugins_networkbrowser_skin.xml.h:10 skins_networkbrowser_skin.xml.h:10
-#, fuzzy
 msgid ""
 "Here you can configure your Auth Data. Use to navigate the control cross and "
 "the extra buttons displayed with your remote control to select."
@@ -3975,7 +3832,6 @@ msgid "protocol"
 msgstr "protocol"
 
 #: plugins_networkbrowser_skin.xml.h:18 skins_networkbrowser_skin.xml.h:18
-#, fuzzy
 msgid "proxy"
 msgstr "IP cho proxy"
 
@@ -4073,7 +3929,6 @@ msgstr "Tự động khởi động"
 
 #: plugins_panel_skin.xml.h:2 skin_default_skin.xml.h:223
 #: skins_panel_skin.xml.h:2
-#, fuzzy
 msgid "FanControl"
 msgstr "Điều khiển quạt"
 
@@ -4172,7 +4027,6 @@ msgid "Enable"
 msgstr "cho phép"
 
 #: plugins_readerconfig_skin.xml.h:5 skins_readerconfig_skin.xml.h:5
-#, fuzzy
 msgid ""
 "Here you can aktivate/deaktivate you readers. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
@@ -4208,31 +4062,26 @@ msgstr ""
 
 #: plugins_rgui_skin.xml.h:4 plugins_tiwakeup_skin.xml.h:4
 #: skins_rgui_skin.xml.h:4 skins_tiwakeup_skin.xml.h:4
-#, fuzzy
 msgid "Server 1"
 msgstr "DNS-Server 1"
 
 #: plugins_rgui_skin.xml.h:5 plugins_tiwakeup_skin.xml.h:5
 #: skins_rgui_skin.xml.h:5 skins_tiwakeup_skin.xml.h:5
-#, fuzzy
 msgid "Server 2"
 msgstr "DNS-Server 2"
 
 #: plugins_rgui_skin.xml.h:6 plugins_tiwakeup_skin.xml.h:6
 #: skins_rgui_skin.xml.h:6 skins_tiwakeup_skin.xml.h:6
-#, fuzzy
 msgid "Server 3"
 msgstr "Tên server"
 
 #: plugins_rgui_skin.xml.h:7 plugins_tiwakeup_skin.xml.h:7
 #: skins_rgui_skin.xml.h:7 skins_tiwakeup_skin.xml.h:7
-#, fuzzy
 msgid "Server 4"
 msgstr "Tên server"
 
 #: plugins_rgui_skin.xml.h:8 plugins_tiwakeup_skin.xml.h:8
 #: skins_rgui_skin.xml.h:8 skins_tiwakeup_skin.xml.h:8
-#, fuzzy
 msgid "Server 5"
 msgstr "Tên server"
 
@@ -4246,12 +4095,10 @@ msgid "NotUsed Settings"
 msgstr "các thiết lập không sử dụng "
 
 #: plugins_stopifnotused_skin.xml.h:3 skins_stopifnotused_skin.xml.h:3
-#, fuzzy
 msgid "Auto start"
 msgstr "Tự động khởi động"
 
 #: plugins_stopifnotused_skin.xml.h:4 skins_stopifnotused_skin.xml.h:4
-#, fuzzy
 msgid "start"
 msgstr "Khởi động lại"
 
@@ -4265,17 +4112,14 @@ msgid "Aspect"
 msgstr "Khuôn hình"
 
 #: plugins_streaminfo_skin.xml.h:2 skins_streaminfo_skin.xml.h:2
-#, fuzzy
 msgid "Framerate"
 msgstr "Tỷ lệ lớn nhất"
 
 #: plugins_streaminfo_skin.xml.h:4 skins_streaminfo_skin.xml.h:4
-#, fuzzy
 msgid "X-Resolution"
 msgstr "Độ phân giải"
 
 #: plugins_streaminfo_skin.xml.h:5 skins_streaminfo_skin.xml.h:5
-#, fuzzy
 msgid "Y-Resolution"
 msgstr "Độ phân giải"
 
@@ -4284,7 +4128,6 @@ msgid "TiThek Menu"
 msgstr "Menü …"
 
 #: plugins_tithek_skin.xml.h:2 skins_tithek_skin.xml.h:2
-#, fuzzy
 msgid "TiThek Settings"
 msgstr "Thiết lập HTTP"
 
@@ -4339,7 +4182,6 @@ msgid "Back Pic"
 msgstr ""
 
 #: plugins_tmc_skin.xml.h:5 skins_tmc_skin.xml.h:5
-#, fuzzy
 msgid "Edit"
 msgstr "chỉnh sửa"
 
@@ -4348,27 +4190,22 @@ msgid "Full Pic"
 msgstr ""
 
 #: plugins_tmc_skin.xml.h:8 skins_tmc_skin.xml.h:8
-#, fuzzy
 msgid "IMDB Search"
 msgstr "Dò"
 
 #: plugins_tmc_skin.xml.h:10 skins_tmc_skin.xml.h:10
-#, fuzzy
 msgid "Pic Name"
 msgstr "Tên"
 
 #: plugins_tmc_skin.xml.h:11 skins_tmc_skin.xml.h:11
-#, fuzzy
 msgid "Pic Timeout"
 msgstr "mất kết nối"
 
 #: plugins_tmc_skin.xml.h:12 skins_tmc_skin.xml.h:12
-#, fuzzy
 msgid "Preview"
 msgstr "trước đó"
 
 #: plugins_tmc_skin.xml.h:14 skins_tmc_skin.xml.h:14
-#, fuzzy
 msgid "Runtime:"
 msgstr "thời gian"
 
@@ -4382,7 +4219,6 @@ msgid "Votes:"
 msgstr ""
 
 #: plugins_tmdb_skin.xml.h:2 skins_tmdb_skin.xml.h:2
-#, fuzzy
 msgid "Orgname:"
 msgstr "tên người dùng"
 
@@ -4391,12 +4227,10 @@ msgid "OTHER"
 msgstr "khác"
 
 #: plugins_tmdb_skin.xml.h:5 skins_tmdb_skin.xml.h:5
-#, fuzzy
 msgid "Rating:"
 msgstr "Đang bắt đầu"
 
 #: plugins_tmdb_skin.xml.h:10 skins_tmdb_skin.xml.h:10
-#, fuzzy
 msgid "TMDb - Plugin"
 msgstr "cdắm nguồn"
 
@@ -4405,7 +4239,6 @@ msgid "Cutstatus:"
 msgstr ""
 
 #: plugins_tsSchnitt_skin.xml.h:2 skins_tsSchnitt_skin.xml.h:2
-#, fuzzy
 msgid "in background"
 msgstr "nền màn hình chờ"
 
@@ -4414,12 +4247,10 @@ msgid "Marker found:"
 msgstr ""
 
 #: plugins_tsSchnitt_skin.xml.h:4 skins_tsSchnitt_skin.xml.h:4
-#, fuzzy
 msgid "progress"
 msgstr "thanh tiến trình"
 
 #: plugins_tsSchnitt_skin.xml.h:5 skins_tsSchnitt_skin.xml.h:5
-#, fuzzy
 msgid "Selected:"
 msgstr "Chọn sao lưu:"
 
@@ -4447,17 +4278,14 @@ msgid "NEW"
 msgstr "mới"
 
 #: plugins_zapback_skin.xml.h:1 skins_zapback_skin.xml.h:1
-#, fuzzy
 msgid "ZapBack"
 msgstr "Sao lưu"
 
 #: plugins_zapback_skin.xml.h:3 skins_zapback_skin.xml.h:3
-#, fuzzy
 msgid "in"
 msgstr "Mật khẩu"
 
 #: plugins_zapback_skin.xml.h:4 skins_zapback_skin.xml.h:4
-#, fuzzy
 msgid "Minuten"
 msgstr " Phút"
 
@@ -4466,7 +4294,6 @@ msgid "schaltet zurueck auf Sender"
 msgstr ""
 
 #: plugins_zapback_skin.xml.h:6 skins_zapback_skin.xml.h:6
-#, fuzzy
 msgid "Start-> OK"
 msgstr "Bắt đầu"
 
@@ -4519,7 +4346,6 @@ msgid "goto position"
 msgstr "đến vị trí"
 
 #: possetup.h:63
-#, fuzzy
 msgid "startposition"
 msgstr "vị trí bắt đầu"
 
@@ -4530,12 +4356,10 @@ msgid ""
 msgstr ""
 
 #: powerofftimer.h:117
-#, fuzzy
 msgid "DeepStandby"
 msgstr "Standby"
 
 #: putlocker.h:85
-#, fuzzy
 msgid "This file doesn't exist, or has been removed."
 msgstr "File này không tồn tại hoặc đã bị xóa"
 
@@ -4564,7 +4388,6 @@ msgid "Choice Config File"
 msgstr ""
 
 #: readerconfig.h:343
-#, fuzzy
 msgid "No config file found."
 msgstr "Không tìm thấy"
 
@@ -4585,7 +4408,6 @@ msgid "Oscam config written to medium !"
 msgstr ""
 
 #: readerconfig.h:444 readerconfig.h:489
-#, fuzzy
 msgid "Restart Oscam ?"
 msgstr "Khởi động lại"
 
@@ -4682,13 +4504,11 @@ msgstr ""
 "Chuyển để ghi/Timeshift chương trình"
 
 #: record.h:1174
-#, fuzzy
 msgid "Timer Record start !"
 msgstr "Bước dịch cho bộ định thời ghi"
 
 #: record.h:1289 record.h:1298 record.h:1309 record.h:1344 record.h:1353
 #: record.h:1385 stream.h:15 stream.h:37
-#, fuzzy
 msgid "stop"
 msgstr "Dừng khởi động"
 
@@ -4721,12 +4541,10 @@ msgid "Record started"
 msgstr "Bắt đầu ghi"
 
 #: rectimer.h:129
-#, fuzzy
 msgid "undefined error"
 msgstr "không xác định"
 
 #: rectimer.h:134
-#, fuzzy
 msgid "Timer starttime or endtime not ok"
 msgstr "Không có EPG!"
 
@@ -4747,7 +4565,6 @@ msgid "Timer transponder ID not ok"
 msgstr ""
 
 #: rectimer.h:546
-#, fuzzy
 msgid "not started akttime higher than timer endtime"
 msgstr " không bắt đầu khi kết thúc thời gian hẹn giờ"
 
@@ -4812,37 +4629,30 @@ msgid "Sunday"
 msgstr "Chủ nhật"
 
 #: rectimer.h:1445
-#, fuzzy
 msgid "rec"
 msgstr "màu đỏ"
 
 #: rectimer.h:1456
-#, fuzzy
 msgid "switch"
 msgstr "Chuyển"
 
 #: rectimer.h:1483
-#, fuzzy
 msgid "waiting"
 msgstr "Đang bắt đầu"
 
 #: rectimer.h:1487
-#, fuzzy
 msgid "success"
 msgstr "Đã hủy thành công!"
 
 #: rectimer.h:1489
-#, fuzzy
 msgid "error"
 msgstr "Lỗi khởi động"
 
 #: restoredefault.h:10
-#, fuzzy
 msgid "Really restore default settings ?"
 msgstr "Bạn muốn khôi phục lại các thiết lập mặc định?"
 
 #: restoredefault.h:19
-#, fuzzy
 msgid "Receiver reboots now !!!"
 msgstr "Đầu thu đang khởi động lại !!!"
 
@@ -4851,7 +4661,6 @@ msgid "Can't restore settings"
 msgstr "Không thể khôi phục lại các thiết lập"
 
 #: restoredefault.h:32
-#, fuzzy
 msgid ""
 "Do you really want to erase all data and backups from Swap?\n"
 "The Box will reboot and the erase will be started!"
@@ -4860,7 +4669,6 @@ msgstr ""
 "Đầu thu sẽ khởi động lại và bắt đầu xóa"
 
 #: restoredefault.h:47
-#, fuzzy
 msgid ""
 "Do you really want to erase Swap (Settings are preserve)?\n"
 "The Box will reboot and the erase will be started!"
@@ -4904,7 +4712,6 @@ msgid "Data"
 msgstr ""
 
 #: scan.h:1538
-#, fuzzy
 msgid "Sat/Provider: "
 msgstr "Nhà cung cấp:"
 
@@ -4913,7 +4720,6 @@ msgid "TV: "
 msgstr ""
 
 #: scan.h:1562
-#, fuzzy
 msgid "Radio: "
 msgstr "Tìm thấy Radio:"
 
@@ -4922,7 +4728,6 @@ msgid "Data: "
 msgstr ""
 
 #: scan.h:1578
-#, fuzzy
 msgid "Blindscan: "
 msgstr "Điều chỉnh quét mành"
 
@@ -4933,12 +4738,10 @@ msgid ""
 msgstr ""
 
 #: scan.h:1600
-#, fuzzy
 msgid "Channel scan ended."
 msgstr "Vui long đợi."
 
 #: scan.h:1630
-#, fuzzy
 msgid "All new channels added!"
 msgstr "Tất cả các chương trình mới được thêm vào!"
 
@@ -4947,12 +4750,10 @@ msgid "Wait for channel scan end"
 msgstr "Vui long đợi."
 
 #: scan.h:1888
-#, fuzzy
 msgid "Scan is not allowed if record or stream is running !"
 msgstr "Cấu hình tuner này không cho phép ghi"
 
 #: scan.h:1979
-#, fuzzy
 msgid "No Tuner configured"
 msgstr "Cài đặt tuner"
 
@@ -4969,7 +4770,6 @@ msgid "Multi Sat"
 msgstr "Nhiều vệ tinh"
 
 #: scan.h:2006
-#, fuzzy
 msgid "Single Provider"
 msgstr "Một dịch vụ"
 
@@ -4978,17 +4778,14 @@ msgid "Auto Scan"
 msgstr "Tự động dò"
 
 #: scan.h:2261
-#, fuzzy
 msgid "Unchanged"
 msgstr "Thay đổi"
 
 #: scan.h:2262
-#, fuzzy
 msgid "Create new"
 msgstr "Tạo thư mục"
 
 #: scan.h:2263
-#, fuzzy
 msgid "Delete All"
 msgstr "Xóa file"
 
@@ -4997,7 +4794,6 @@ msgid "Transponder changed"
 msgstr "Bộ phát đáp đã thay đổi"
 
 #: scart.h:12
-#, fuzzy
 msgid "Change to scart"
 msgstr "Danh sách kênh"
 
@@ -5106,7 +4902,6 @@ msgstr ""
 "Bạn muốn dừng timeshift và chuyển?"
 
 #: service.h:934
-#, fuzzy
 msgid ""
 "Can't find a Tuner.\n"
 "All Tuners in use or no Tuner defined."
@@ -5135,7 +4930,6 @@ msgid "Blue Key Action - Setup"
 msgstr "Nút màu xanh da trời – Cài đặt"
 
 #: settings_pluginbutton.h:6
-#, fuzzy
 msgid "Plugin Key Action - Setup"
 msgstr "Nút màu xanh da trời – Cài đặt"
 
@@ -5352,7 +5146,6 @@ msgid "Activate CEC"
 msgstr "kích hoạt CEC"
 
 #: skin_default_skin.xml.h:56
-#, fuzzy
 msgid "Actors"
 msgstr "Diễn viên:"
 
@@ -5365,7 +5158,6 @@ msgid "ADD ALL"
 msgstr "thêm tất cả"
 
 #: skin_default_skin.xml.h:60
-#, fuzzy
 msgid "ADD BOUQUET"
 msgstr "thêm 1"
 
@@ -5382,17 +5174,14 @@ msgid "Adjust"
 msgstr "Điều chỉnh"
 
 #: skin_default_skin.xml.h:64
-#, fuzzy
 msgid "ae"
 msgstr "a"
 
 #: skin_default_skin.xml.h:65
-#, fuzzy
 msgid "AE"
 msgstr "A"
 
 #: skin_default_skin.xml.h:66
-#, fuzzy
 msgid "After EPG Scan"
 msgstr "Tự động dò"
 
@@ -5477,37 +5266,30 @@ msgid "Auto resolution"
 msgstr "Độ phân giải tự động"
 
 #: skin_default_skin.xml.h:89
-#, fuzzy
 msgid "Autostart - Audio / Video / Sat"
 msgstr "Audio / Video / Sat "
 
 #: skin_default_skin.xml.h:90
-#, fuzzy
 msgid "Autostart - Cam / Emu"
 msgstr "Tự động khởi động"
 
 #: skin_default_skin.xml.h:91
-#, fuzzy
 msgid "Autostart - Child safety"
 msgstr "Khóa trẻ em"
 
 #: skin_default_skin.xml.h:92
-#, fuzzy
 msgid "Autostart Default"
 msgstr "tự động bắt đầu danh sách"
 
 #: skin_default_skin.xml.h:93
-#, fuzzy
 msgid "Autostart - Network"
 msgstr " Khởi động lại mạng"
 
 #: skin_default_skin.xml.h:94
-#, fuzzy
 msgid "Autostart Settings"
 msgstr "Thiết lập roto"
 
 #: skin_default_skin.xml.h:95
-#, fuzzy
 msgid "Autostart - Usb Device"
 msgstr "Thiết bị USB"
 
@@ -5533,12 +5315,10 @@ msgid "Backup / Restore Settings"
 msgstr "Sao lưu / Khôi phục cài đặt"
 
 #: skin_default_skin.xml.h:103
-#, fuzzy
 msgid "Bandwidth"
 msgstr "chiều rộng"
 
 #: skin_default_skin.xml.h:104
-#, fuzzy
 msgid "Bandwidth:"
 msgstr "chiều rộng"
 
@@ -5563,7 +5343,6 @@ msgid "BER:"
 msgstr "BER:"
 
 #: skin_default_skin.xml.h:109
-#, fuzzy
 msgid "Blindscan"
 msgstr "Điều chỉnh quét mành"
 
@@ -5584,7 +5363,6 @@ msgid "Bouquet List"
 msgstr "Danh sach nhóm"
 
 #: skin_default_skin.xml.h:114
-#, fuzzy
 msgid "Bouquet Type"
 msgstr "Nhóm"
 
@@ -5613,7 +5391,6 @@ msgid "cancel"
 msgstr "hủy"
 
 #: skin_default_skin.xml.h:124
-#, fuzzy
 msgid "Change Channelname"
 msgstr "Tự động thay đổi tên chương trình"
 
@@ -5626,7 +5403,6 @@ msgid "Change Feed"
 msgstr "Change Feed"
 
 #: skin_default_skin.xml.h:128
-#, fuzzy
 msgid "Channel Allocation"
 msgstr "Danh sách kênh"
 
@@ -5671,22 +5447,18 @@ msgid "Code2"
 msgstr "mã 2: "
 
 #: skin_default_skin.xml.h:141
-#, fuzzy
 msgid "Coderate HP"
 msgstr "Tạo đường dẫn"
 
 #: skin_default_skin.xml.h:142
-#, fuzzy
 msgid "Coderate HP:"
 msgstr "Tạo đường dẫn"
 
 #: skin_default_skin.xml.h:143
-#, fuzzy
 msgid "Coderate LP"
 msgstr "Tạo đường dẫn"
 
 #: skin_default_skin.xml.h:144
-#, fuzzy
 msgid "Coderate LP:"
 msgstr "Tạo đường dẫn"
 
@@ -5695,7 +5467,6 @@ msgid "Color Format"
 msgstr " Định dạng màu "
 
 #: skin_default_skin.xml.h:146
-#, fuzzy
 msgid "Color Format Scart / Composite"
 msgstr "Định dạng màu Scart"
 
@@ -5704,7 +5475,6 @@ msgid "Committed command"
 msgstr "Lệnh điều khiển"
 
 #: skin_default_skin.xml.h:148
-#, fuzzy
 msgid "Common Interface"
 msgstr "Giao diện"
 
@@ -5717,7 +5487,6 @@ msgid "Contrast"
 msgstr "Độ tương phản"
 
 #: skin_default_skin.xml.h:151
-#, fuzzy
 msgid "Copy / Move"
 msgstr "sao chép"
 
@@ -5778,7 +5547,6 @@ msgid "DEFAULT"
 msgstr "MẶC ĐỊNH"
 
 #: skin_default_skin.xml.h:167
-#, fuzzy
 msgid "Default Autostart"
 msgstr "Tự động khởi động"
 
@@ -5807,7 +5575,6 @@ msgid "Devices"
 msgstr " Thiết bị"
 
 #: skin_default_skin.xml.h:178
-#, fuzzy
 msgid "Director"
 msgstr "Thư mục Imdb"
 
@@ -5824,7 +5591,6 @@ msgid "DiSEqC Mode"
 msgstr "Chế độ DiSEqC"
 
 #: skin_default_skin.xml.h:182
-#, fuzzy
 msgid "Diseqc repeats"
 msgstr "lập lại DiSEqC "
 
@@ -5837,7 +5603,6 @@ msgid "Diseqc Settings"
 msgstr "Thiết lập DiSEqC"
 
 #: skin_default_skin.xml.h:185
-#, fuzzy
 msgid "DNS Name"
 msgstr "Tên"
 
@@ -5850,7 +5615,6 @@ msgid "dnsserver 2"
 msgstr "DNS-Server 2"
 
 #: skin_default_skin.xml.h:188
-#, fuzzy
 msgid "DNS System"
 msgstr "Hệ thống"
 
@@ -5859,7 +5623,6 @@ msgid "Don't clear TV on zap (only with fastzap)"
 msgstr "Không thể xóa"
 
 #: skin_default_skin.xml.h:190
-#, fuzzy
 msgid "Download"
 msgstr "Tải về lỗi"
 
@@ -5900,7 +5663,6 @@ msgid "End"
 msgstr "Kết thúc"
 
 #: skin_default_skin.xml.h:202
-#, fuzzy
 msgid "Engine Systems"
 msgstr "Hệ thống"
 
@@ -5941,7 +5703,6 @@ msgid "EPG Save Mode"
 msgstr "Chế độ ghi lịch chương trình"
 
 #: skin_default_skin.xml.h:212
-#, fuzzy
 msgid "EPG Scanlist"
 msgstr "Đường dẫn EPG"
 
@@ -6076,12 +5837,10 @@ msgid "German"
 msgstr "Tiếng Đức"
 
 #: skin_default_skin.xml.h:248
-#, fuzzy
 msgid "Git Changelog"
 msgstr "Chương trình"
 
 #: skin_default_skin.xml.h:249
-#, fuzzy
 msgid "Go to startpos"
 msgstr "Tới vị trí bắt đầu"
 
@@ -6106,12 +5865,10 @@ msgid "Greek"
 msgstr "Tiếng Hy Lạp"
 
 #: skin_default_skin.xml.h:256
-#, fuzzy
 msgid "Guardinterval"
 msgstr "Intervall"
 
 #: skin_default_skin.xml.h:257
-#, fuzzy
 msgid "Guardinterval:"
 msgstr "Intervall"
 
@@ -6167,7 +5924,6 @@ msgid ""
 msgstr ""
 
 #: skin_default_skin.xml.h:268
-#, fuzzy
 msgid ""
 "Here you can configure access to your DynDNS. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
@@ -6184,7 +5940,6 @@ msgstr ""
 "chuyển và các nút mở rộng trên điều khiển để chọn."
 
 #: skin_default_skin.xml.h:270
-#, fuzzy
 msgid ""
 "Here you can configure the smartcard readers. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
@@ -6431,7 +6186,6 @@ msgid ""
 msgstr ""
 
 #: skin_default_skin.xml.h:299
-#, fuzzy
 msgid ""
 "Here you can set your Channel search options. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select. "
@@ -6487,12 +6241,10 @@ msgstr ""
 "khiển để chọn."
 
 #: skin_default_skin.xml.h:305
-#, fuzzy
 msgid "Hierarchy"
 msgstr "Dò"
 
 #: skin_default_skin.xml.h:306
-#, fuzzy
 msgid "Hierarchy:"
 msgstr "Dò"
 
@@ -6521,12 +6273,10 @@ msgid "I"
 msgstr "I"
 
 #: skin_default_skin.xml.h:313 tpchoice.h:52
-#, fuzzy
 msgid "ID"
 msgstr "D"
 
 #: skin_default_skin.xml.h:314
-#, fuzzy
 msgid "ID:"
 msgstr "SID:"
 
@@ -6555,7 +6305,6 @@ msgid "install"
 msgstr "cài đặt"
 
 #: skin_default_skin.xml.h:321
-#, fuzzy
 msgid "Installed:"
 msgstr "Cài đặt"
 
@@ -6644,7 +6393,6 @@ msgid "Listbox Select"
 msgstr "Lựa chọn danh sách"
 
 #: skin_default_skin.xml.h:345
-#, fuzzy
 msgid "Listbox Select Color"
 msgstr "Lựa chọn danh sách"
 
@@ -6693,7 +6441,6 @@ msgid "Manual Search Cable"
 msgstr "Dò bằng tay"
 
 #: skin_default_skin.xml.h:357
-#, fuzzy
 msgid "Manual Search Terrestrial"
 msgstr "Dò bằng tay"
 
@@ -6750,7 +6497,6 @@ msgid "MHW2 EPG"
 msgstr ""
 
 #: skin_default_skin.xml.h:372
-#, fuzzy
 msgid "MHW EPG"
 msgstr "EPG"
 
@@ -6855,12 +6601,10 @@ msgid "Network Test"
 msgstr "Kiểm tra mạng"
 
 #: skin_default_skin.xml.h:401
-#, fuzzy
 msgid "Newsletter"
 msgstr "Hộp thư"
 
 #: skin_default_skin.xml.h:402
-#, fuzzy
 msgid "Next EPG Time"
 msgstr "sử dụng lịch chương trình"
 
@@ -6869,7 +6613,6 @@ msgid "Nfs Server Settings"
 msgstr "Thiết lập Server NFS"
 
 #: skin_default_skin.xml.h:404
-#, fuzzy
 msgid "Normal/Standby"
 msgstr "Standby"
 
@@ -6882,17 +6625,14 @@ msgid "O"
 msgstr "O"
 
 #: skin_default_skin.xml.h:407
-#, fuzzy
 msgid "oe"
 msgstr "e"
 
 #: skin_default_skin.xml.h:408
-#, fuzzy
 msgid "OE"
 msgstr "E"
 
 #: skin_default_skin.xml.h:409
-#, fuzzy
 msgid "Ok"
 msgstr "k"
 
@@ -6945,7 +6685,6 @@ msgid "OSD Transparent"
 msgstr "Độ trong suốt"
 
 #: skin_default_skin.xml.h:423
-#, fuzzy
 msgid "Overclocking Settings"
 msgstr "Thiết lập ép xung"
 
@@ -6962,7 +6701,6 @@ msgid "PCR PID:"
 msgstr "PID PCR:"
 
 #: skin_default_skin.xml.h:428 tmc.h:417
-#, fuzzy
 msgid "Picture"
 msgstr "Hình ảnh"
 
@@ -6975,7 +6713,6 @@ msgid "Pilot"
 msgstr "Pilot"
 
 #: skin_default_skin.xml.h:432
-#, fuzzy
 msgid "Pilot:"
 msgstr "Pilot"
 
@@ -7016,7 +6753,6 @@ msgid "PlayList"
 msgstr "Danh sách phát"
 
 #: skin_default_skin.xml.h:442
-#, fuzzy
 msgid ""
 "Please contact Atemio for activation. Use to navigate the control cross and "
 "the extra buttons displayed with your remote control to select."
@@ -7029,7 +6765,6 @@ msgid "Plot"
 msgstr ""
 
 #: skin_default_skin.xml.h:445
-#, fuzzy
 msgid "Plugin Button"
 msgstr "Nút màu xanh da trời"
 
@@ -7110,7 +6845,6 @@ msgid "Q"
 msgstr "Q"
 
 #: skin_default_skin.xml.h:467
-#, fuzzy
 msgid "Quick Menu"
 msgstr "Menü …"
 
@@ -7127,7 +6861,6 @@ msgid "Ram"
 msgstr "Ram"
 
 #: skin_default_skin.xml.h:472
-#, fuzzy
 msgid "Rating"
 msgstr "Đang bắt đầu"
 
@@ -7144,7 +6877,6 @@ msgid "Recording name"
 msgstr "Đang ghi tên"
 
 #: skin_default_skin.xml.h:477
-#, fuzzy
 msgid "Recordlist"
 msgstr "Bản ghi"
 
@@ -7153,7 +6885,6 @@ msgid "Record Overrun (min)"
 msgstr "Thời gian theo dõi (phút)"
 
 #: skin_default_skin.xml.h:479
-#, fuzzy
 msgid "Record path"
 msgstr "Thư mục chứa bản ghi"
 
@@ -7202,7 +6933,6 @@ msgid "RELOAD"
 msgstr "TẢI LẠI"
 
 #: skin_default_skin.xml.h:492
-#, fuzzy
 msgid "Remove emthy Bouquet"
 msgstr "xóa"
 
@@ -7255,7 +6985,6 @@ msgid "Resync Recording immediately"
 msgstr "Đồng bộ khi ghi"
 
 #: skin_default_skin.xml.h:510
-#, fuzzy
 msgid "RGUID Port"
 msgstr "Cổng HTPTD"
 
@@ -7276,7 +7005,6 @@ msgid "Rotor Settings"
 msgstr "Thiết lập roto"
 
 #: skin_default_skin.xml.h:515
-#, fuzzy
 msgid "Runtime"
 msgstr "thời gian"
 
@@ -7309,7 +7037,6 @@ msgid "Sat Config"
 msgstr "Thiết lập vệ tinh"
 
 #: skin_default_skin.xml.h:523
-#, fuzzy
 msgid "SATCR Frequency"
 msgstr "Tần số"
 
@@ -7326,7 +7053,6 @@ msgid "Satfinder"
 msgstr "Tìm thấy vệ tinh"
 
 #: skin_default_skin.xml.h:527
-#, fuzzy
 msgid "Sat Finder"
 msgstr "Tìm thấy vệ tinh"
 
@@ -7343,17 +7069,14 @@ msgid "Scan Config"
 msgstr "Cấu hình dò"
 
 #: skin_default_skin.xml.h:535
-#, fuzzy
 msgid "ScanList"
 msgstr "Dò"
 
 #: skin_default_skin.xml.h:536
-#, fuzzy
 msgid "Scan locking"
 msgstr "Cấu hình dò"
 
 #: skin_default_skin.xml.h:537
-#, fuzzy
 msgid "SCANSTART"
 msgstr "bắt đầu"
 
@@ -7406,7 +7129,6 @@ msgid "Select Path"
 msgstr "Lựa chọn đường dẫn"
 
 #: skin_default_skin.xml.h:551
-#, fuzzy
 msgid "Select Unicable Manufacturer"
 msgstr "Nhà sản xuất cáp đơn"
 
@@ -7527,12 +7249,10 @@ msgid "SNR:"
 msgstr ""
 
 #: skin_default_skin.xml.h:586
-#, fuzzy
 msgid "Softcam Selection"
 msgstr "Chọn thiết bị đọc"
 
 #: skin_default_skin.xml.h:588
-#, fuzzy
 msgid "sort service"
 msgstr "sao chép dịch vụ"
 
@@ -7561,7 +7281,6 @@ msgid "SSID"
 msgstr ""
 
 #: skin_default_skin.xml.h:596 system_update.h:88 system_update.h:210
-#, fuzzy
 msgid "stable"
 msgstr "Tắt"
 
@@ -7570,7 +7289,6 @@ msgid "Standby Brightness"
 msgstr "Độ sáng ở chế độ standby"
 
 #: skin_default_skin.xml.h:599
-#, fuzzy
 msgid "StandBy Mode"
 msgstr "Chế độ standby"
 
@@ -7587,7 +7305,6 @@ msgid "Start HTTPD"
 msgstr "Bắt đầu HTTPD"
 
 #: skin_default_skin.xml.h:605
-#, fuzzy
 msgid "Start RGUID"
 msgstr "Bắt đầu HTTPD"
 
@@ -7668,12 +7385,10 @@ msgid "System Info"
 msgstr "Thông tin hệ thống"
 
 #: skin_default_skin.xml.h:628
-#, fuzzy
 msgid "System Infos"
 msgstr "Thông tin hệ thống"
 
 #: skin_default_skin.xml.h:629 system_infos.h:17
-#, fuzzy
 msgid "System Status"
 msgstr "Cập nhật hệ thống"
 
@@ -7706,12 +7421,10 @@ msgid "System - Usbupdate (tmp)"
 msgstr "Hệ thống – Cập nhật qua USB (tmp)"
 
 #: skin_default_skin.xml.h:637
-#, fuzzy
 msgid "sz"
 msgstr "s"
 
 #: skin_default_skin.xml.h:638
-#, fuzzy
 msgid "SZ"
 msgstr "S"
 
@@ -7776,7 +7489,6 @@ msgid "Titan Changelog"
 msgstr ""
 
 #: skin_default_skin.xml.h:657
-#, fuzzy
 msgid "Title"
 msgstr "Phụ đề"
 
@@ -7817,7 +7529,6 @@ msgid "TPK tmp (tmp)"
 msgstr ""
 
 #: skin_default_skin.xml.h:668
-#, fuzzy
 msgid "TPK upgrade (online)"
 msgstr "Cập nhật USB (trực tuyến)"
 
@@ -7826,7 +7537,6 @@ msgid "Transmission"
 msgstr ""
 
 #: skin_default_skin.xml.h:670
-#, fuzzy
 msgid "Transmission:"
 msgstr "Bộ pháp đáp:"
 
@@ -7891,12 +7601,10 @@ msgid "U"
 msgstr "U"
 
 #: skin_default_skin.xml.h:690
-#, fuzzy
 msgid "ue"
 msgstr "e"
 
 #: skin_default_skin.xml.h:691
-#, fuzzy
 msgid "UE"
 msgstr "E"
 
@@ -7905,7 +7613,6 @@ msgid "UNC:"
 msgstr "UNC:"
 
 #: skin_default_skin.xml.h:693
-#, fuzzy
 msgid "Uncommitted Diseqc command"
 msgstr "Lệnh điều khiển"
 
@@ -7982,7 +7689,6 @@ msgid "Video PID:"
 msgstr "PID video:"
 
 #: skin_default_skin.xml.h:716
-#, fuzzy
 msgid "Vietnamese"
 msgstr "Đổi tên"
 
@@ -8023,7 +7729,6 @@ msgid "WLAN Settings"
 msgstr "thiết lập WLAN"
 
 #: skin_default_skin.xml.h:727
-#, fuzzy
 msgid "Writer"
 msgstr "ghi lỗi"
 
@@ -8056,7 +7761,6 @@ msgid "Z"
 msgstr "Z"
 
 #: skinselector.h:218
-#, fuzzy
 msgid ""
 "No skinconfig found in skin.\n"
 "Can't change to selected skin."
@@ -8065,7 +7769,6 @@ msgstr ""
 "Không thể thay đổi nền đã chọn"
 
 #: sock.h:950
-#, fuzzy
 msgid "Download finished!"
 msgstr "Tải thành công !"
 
@@ -8078,7 +7781,6 @@ msgid "active"
 msgstr "cho phép"
 
 #: softcam.h:119
-#, fuzzy
 msgid "Emu not found"
 msgstr "không tìm thấy đầu ra"
 
@@ -8099,7 +7801,6 @@ msgid "This file doesn't exist, or has been removed"
 msgstr "File này không tồn tại hoặc đã bị xóa"
 
 #: spinner.h:18
-#, fuzzy
 msgid ""
 "Detect hanging System !!!\n"
 "\n"
@@ -8124,7 +7825,6 @@ msgid "Company: "
 msgstr ""
 
 #: stock.h:201
-#, fuzzy
 msgid "Exchange: "
 msgstr "Thay đổi"
 
@@ -8133,7 +7833,6 @@ msgid "Exchange closing: "
 msgstr ""
 
 #: stock.h:209
-#, fuzzy
 msgid "Currency: "
 msgstr "Tần số:"
 
@@ -8142,7 +7841,6 @@ msgid "Last: "
 msgstr ""
 
 #: stock.h:217
-#, fuzzy
 msgid "High: "
 msgstr "High SR"
 
@@ -8151,7 +7849,6 @@ msgid "Low: "
 msgstr ""
 
 #: stock.h:225
-#, fuzzy
 msgid "Volume: "
 msgstr "Tắt âm lượng "
 
@@ -8172,7 +7869,6 @@ msgid "Close: "
 msgstr ""
 
 #: stock.h:245
-#, fuzzy
 msgid "Change: "
 msgstr "Change Feed"
 
@@ -8181,7 +7877,6 @@ msgid "Change in %: "
 msgstr ""
 
 #: stock.h:253
-#, fuzzy
 msgid "Trade time: "
 msgstr "ngày + giờ"
 
@@ -8197,7 +7892,6 @@ msgid ""
 msgstr ""
 
 #: system_backup_restore.h:15
-#, fuzzy
 msgid ""
 "Press -restore- and your saved settings will be restored from your "
 "swapstick / recording hdd! The Box will restart automatically for "
@@ -8248,7 +7942,6 @@ msgstr ""
 " đầu thu sẽ bắt đầu sau vài giây."
 
 #: system_backup_restore.h:40
-#, fuzzy
 msgid "Restore failed, see log"
 msgstr "Sao lưu lỗi, xem nhật ký"
 
@@ -8307,12 +8000,10 @@ msgstr ""
 " đang hủy sao chép…"
 
 #: system_backup_restore.h:95
-#, fuzzy
 msgid "BACKUP LOG"
 msgstr "!!! LỖI SAO LƯU !!!"
 
 #: system_infos.h:49
-#, fuzzy
 msgid "Free Space"
 msgstr "Dung lượng còn trống"
 
@@ -8333,32 +8024,26 @@ msgid "Module info"
 msgstr "Thông tin môđun"
 
 #: system_infos_sysinfo.h:70
-#, fuzzy
 msgid "Swap info"
 msgstr "Thông tin hệ thống"
 
 #: system_infos_sysinfo.h:108
-#, fuzzy
 msgid "Top Info"
 msgstr "TV (Thông tin)"
 
 #: system_infos_sysinfo.h:118
-#, fuzzy
 msgid "Prozess Info"
 msgstr "Thông tin chương trình"
 
 #: system_infos_sysinfo.h:128
-#, fuzzy
 msgid "USB Info"
 msgstr "Thông tin"
 
 #: system_update.h:90 system_update.h:216
-#, fuzzy
 msgid "unstable"
 msgstr "Bật"
 
 #: system_update.h:123
-#, fuzzy
 msgid "non-version"
 msgstr "Nghịch đảo"
 
@@ -8367,7 +8052,6 @@ msgid "starting Full Update ?"
 msgstr "bắt đầu cập nhật?"
 
 #: system_update.h:313
-#, fuzzy
 msgid "starting Full Update (from backup) ?"
 msgstr "bắt đầu cập nhật?"
 
@@ -8376,7 +8060,6 @@ msgid "Error file not supported"
 msgstr "Lỗi tập tin không được hỗ trợ!"
 
 #: system_update.h:333
-#, fuzzy
 msgid ""
 "Can't start system update\n"
 "Syntax Error on updatefile"
@@ -8407,7 +8090,6 @@ msgid ""
 msgstr ""
 
 #: timeshiftsettings.h:50
-#, fuzzy
 msgid "permanent"
 msgstr "Tiếng Đức"
 
@@ -8438,7 +8120,6 @@ msgstr ""
 "Bạn muốn tắt ?"
 
 #: titan.c:347
-#, fuzzy
 msgid ""
 "Found running download\n"
 "Really shutdown ?"
@@ -8491,7 +8172,6 @@ msgid "Settings OK ?"
 msgstr " Thiết lập OK ?"
 
 #: titan.c:1071
-#, fuzzy
 msgid "Receiver successful unlocked"
 msgstr "Khóa đầu vào"
 
@@ -8510,7 +8190,6 @@ msgid ""
 msgstr ""
 
 #: titan.c:1109
-#, fuzzy
 msgid ""
 "Free space in /mnt to little!\n"
 "This can make problems!"
@@ -8529,12 +8208,10 @@ msgid "Unknown Error."
 msgstr "Không xác định được lỗi."
 
 #: titan.c:1166
-#, fuzzy
 msgid "Automatic stop in 10 seconds."
 msgstr "Tự động dừng trong 5 giây !"
 
 #: tithek_global.h:238 tithek.h:3013
-#, fuzzy
 msgid "The hoster is not yet supported !"
 msgstr "Máy chủ chưa được hỗ trợ !"
 
@@ -8561,7 +8238,6 @@ msgid ""
 msgstr ""
 
 #: tithek.h:1215
-#, fuzzy
 msgid "Choice Playback"
 msgstr "bắt đầu phát lại"
 
@@ -8602,17 +8278,14 @@ msgid "Streaming Playback Caching (10MB)"
 msgstr "Bộ nhớ chứa luồng phát lại (10MB)"
 
 #: tithek.h:1229
-#, fuzzy
 msgid "File Caching Playback (10MB / 120s)"
 msgstr "Bộ nhớ đệm phát lại (10MB / 120s)"
 
 #: tithek.h:1230
-#, fuzzy
 msgid "File Caching Playback (20MB / 240s)"
 msgstr " Bộ nhớ đệm phát lại (20MB / 240s)"
 
 #: tithek.h:1231
-#, fuzzy
 msgid "File Caching Playback (30MB / 360s)"
 msgstr " Bộ nhớ đệm phát lại (30MB / 360s)"
 
@@ -8657,17 +8330,14 @@ msgid "All Sorted"
 msgstr ""
 
 #: tithek_mainmenu.h:4
-#, fuzzy
 msgid "ARD"
 msgstr "THÊM"
 
 #: tithek_mainmenu.h:5
-#, fuzzy
 msgid "Atemio Cable Tuner scan"
 msgstr "Bạn có muốn kích hoạt tuner không ?"
 
 #: tithek_mainmenu.h:6
-#, fuzzy
 msgid "Atemio Channelsearch 4xSat"
 msgstr "kiểu dò chương trình"
 
@@ -8696,12 +8366,10 @@ msgid "Atemio TitanNit zap Menu"
 msgstr ""
 
 #: tithek_mainmenu.h:13
-#, fuzzy
 msgid "Atemio Tuner configuration Sat"
 msgstr " Cài đặt tuner"
 
 #: tithek_mainmenu.h:14
-#, fuzzy
 msgid "Atemio WLAN configuration"
 msgstr "Cấu hình LNB"
 
@@ -8734,7 +8402,6 @@ msgid "HowTo Sky V13 Einrichten"
 msgstr ""
 
 #: tithek_mainmenu.h:23
-#, fuzzy
 msgid "Internet Radio"
 msgstr "Trình duyệt mạng"
 
@@ -8763,12 +8430,10 @@ msgid "Mediacenter VideoPlayer Preview"
 msgstr ""
 
 #: tithek_mainmenu.h:30
-#, fuzzy
 msgid "Movie4k"
 msgstr "Thư mục phim"
 
 #: tithek_mainmenu.h:31
-#, fuzzy
 msgid "MyVideo"
 msgstr "My Video"
 
@@ -8785,42 +8450,34 @@ msgid "RTL-Now"
 msgstr ""
 
 #: tithek_mainmenu.h:36
-#, fuzzy
 msgid "Search (10)"
 msgstr "Dò"
 
 #: tithek_mainmenu.h:37
-#, fuzzy
 msgid "Search (20)"
 msgstr "Dò"
 
 #: tithek_mainmenu.h:38
-#, fuzzy
 msgid "Search (25)"
 msgstr "Dò"
 
 #: tithek_mainmenu.h:39
-#, fuzzy
 msgid "Search (50)"
 msgstr "Dò"
 
 #: tithek_mainmenu.h:40
-#, fuzzy
 msgid "Search Cast"
 msgstr "tìm kiếm bên trái"
 
 #: tithek_mainmenu.h:41
-#, fuzzy
 msgid "Search (local)"
 msgstr "Dò"
 
 #: tithek_mainmenu.h:42
-#, fuzzy
 msgid "Search Movie"
 msgstr "Dò"
 
 #: tithek_mainmenu.h:43
-#, fuzzy
 msgid "Search Serie"
 msgstr "Dò"
 
@@ -8833,12 +8490,10 @@ msgid "SuperRTL-Now"
 msgstr ""
 
 #: tithek_mainmenu.h:46
-#, fuzzy
 msgid "TecTime"
 msgstr "Bộ định thời"
 
 #: tithek_mainmenu.h:47
-#, fuzzy
 msgid "TimeTv"
 msgstr "Bộ định thời"
 
@@ -8855,7 +8510,6 @@ msgid "XXX-Beeg"
 msgstr ""
 
 #: tithek_mainmenu.h:51
-#, fuzzy
 msgid "XXX-XVIDEOS"
 msgstr "VIDEO"
 
@@ -8900,17 +8554,14 @@ msgid "idle"
 msgstr ""
 
 #: tmc.h:408
-#, fuzzy
 msgid "Audio"
 msgstr "PID Audio:"
 
 #: tmc.h:540
-#, fuzzy
 msgid "video"
 msgstr "Video"
 
 #: tmc.h:541
-#, fuzzy
 msgid "audio"
 msgstr "firmware audio cũ"
 
@@ -8919,12 +8570,10 @@ msgid "video / audio"
 msgstr ""
 
 #: tmc.h:544
-#, fuzzy
 msgid "video / picture"
 msgstr "Hình ảnh"
 
 #: tmc.h:545
-#, fuzzy
 msgid "audio / picture"
 msgstr "Hình ảnh"
 
@@ -8953,7 +8602,6 @@ msgid "no pic"
 msgstr ""
 
 #: tmc.h:699
-#, fuzzy
 msgid "Delete selected entry ?"
 msgstr "Xóa dữ liệu không sử dụng trước khi dò"
 
@@ -8987,7 +8635,6 @@ msgstr ""
 "�ng thể được lưu trữ trong các MediaDB "
 
 #: tpchoice.h:21
-#, fuzzy
 msgid "Transponderlist"
 msgstr "Bộ pháp đáp:"
 
@@ -9008,12 +8655,10 @@ msgid "UNKNOWN"
 msgstr "không biết"
 
 #: tpchoice.h:81
-#, fuzzy
 msgid "SR"
 msgstr "R"
 
 #: tpchoice.h:87
-#, fuzzy
 msgid "POS"
 msgstr "vị trí riêng"
 
@@ -9041,7 +8686,6 @@ msgid ""
 msgstr ""
 
 #: tpk_description.h:6
-#, fuzzy
 msgid "Automatisch Timer setzen"
 msgstr "Tự động dò"
 
@@ -9176,7 +8820,6 @@ msgid "cut record files"
 msgstr ""
 
 #: tpk_description.h:39
-#, fuzzy
 msgid "Default Font "
 msgstr "Biểu tượng mặc định"
 
@@ -9185,7 +8828,6 @@ msgid "default Settings 19.2 Astra"
 msgstr ""
 
 #: tpk_description.h:41
-#, fuzzy
 msgid "Default Skin"
 msgstr "Biểu tượng mặc định"
 
@@ -9380,7 +9022,6 @@ msgid "Network browser extension for better Win7 compatibility"
 msgstr ""
 
 #: tpk_description.h:88
-#, fuzzy
 msgid "Networkbrowser scanning an manage cifs/nfs/ftp shares."
 msgstr "Trình duyệt mạng – Dò cifs/nfs-Chia sẻ "
 
@@ -9401,7 +9042,6 @@ msgid "New Downloadfeed for your AAF - Duckbox"
 msgstr ""
 
 #: tpk_description.h:93
-#, fuzzy
 msgid "news Plugin"
 msgstr "cdắm nguồn"
 
@@ -9438,7 +9078,6 @@ msgid "Openvpn Server Tool for external Network access"
 msgstr ""
 
 #: tpk_description.h:102
-#, fuzzy
 msgid "optimize Plugin"
 msgstr "Tối ưu hóa"
 
@@ -9501,7 +9140,6 @@ msgid "Screensaver pictures for MediaCenter Audioplayer and Radioplayer."
 msgstr ""
 
 #: tpk_description.h:117
-#, fuzzy
 msgid "scriptexec Plugin"
 msgstr "cho phép thực hiện"
 
@@ -9538,12 +9176,10 @@ msgid "Stable Version of OSCam V13unten"
 msgstr ""
 
 #: tpk_description.h:126
-#, fuzzy
 msgid "stock Plugin"
 msgstr "cdắm nguồn"
 
 #: tpk_description.h:127
-#, fuzzy
 msgid "streaminfo Plugin"
 msgstr "Streaming"
 
@@ -9552,7 +9188,6 @@ msgid "Tastensperre Plugin - entsperren mit rot/rot/gruen"
 msgstr ""
 
 #: tpk_description.h:129
-#, fuzzy
 msgid "Titan Mediacenter"
 msgstr "Media Center"
 
@@ -9617,7 +9252,6 @@ msgid "Treiber fuer Samsung LCD"
 msgstr ""
 
 #: tpk_description.h:145
-#, fuzzy
 msgid "UPNP Media Render"
 msgstr "Media Center"
 
@@ -9626,7 +9260,6 @@ msgid "usbreset Plugin"
 msgstr ""
 
 #: tpk_description.h:147
-#, fuzzy
 msgid "weather Plugin"
 msgstr "thông tin thời tiết"
 
@@ -9695,12 +9328,10 @@ msgid "check your Secret Feed !"
 msgstr "kiểm tra nguồn cung cấp dữ liệu của bạn!"
 
 #: tpk.h:3428
-#, fuzzy
 msgid "Section: "
 msgstr "thực thi"
 
 #: tpk.h:3431
-#, fuzzy
 msgid "Description:"
 msgstr "Không tìm thấy thông tin"
 
@@ -9733,7 +9364,6 @@ msgid "infos"
 msgstr "thông tin"
 
 #: tpk_section.h:7
-#, fuzzy
 msgid "infos "
 msgstr "thông tin"
 
@@ -9762,7 +9392,6 @@ msgid "player"
 msgstr "player"
 
 #: tpk_section.h:14
-#, fuzzy
 msgid "player "
 msgstr "player"
 
@@ -9779,7 +9408,6 @@ msgid "tools"
 msgstr "dụng cụ"
 
 #: tpk_section.h:19
-#, fuzzy
 msgid "tools "
 msgstr "dụng cụ"
 
@@ -9792,7 +9420,6 @@ msgid "3 Wins"
 msgstr ""
 
 #: tpk_showname.h:2
-#, fuzzy
 msgid "Action Man Italic"
 msgstr "Hành động sau đó"
 
@@ -9801,7 +9428,6 @@ msgid "Alpha Romanie G98"
 msgstr ""
 
 #: tpk_showname.h:4
-#, fuzzy
 msgid "Auto Timer"
 msgstr "Bộ định thời"
 
@@ -9834,7 +9460,6 @@ msgid "Cityflash"
 msgstr ""
 
 #: tpk_showname.h:12
-#, fuzzy
 msgid "Codepack"
 msgstr "Passwword đúng"
 
@@ -9843,7 +9468,6 @@ msgid "Croissant"
 msgstr ""
 
 #: tpk_showname.h:14
-#, fuzzy
 msgid "Default Font"
 msgstr "Biểu tượng mặc định"
 
@@ -9856,12 +9480,10 @@ msgid "DLNA (Minidlna Server)"
 msgstr ""
 
 #: tpk_showname.h:17
-#, fuzzy
 msgid "DTS Downmix"
 msgstr " AC3 downmix "
 
 #: tpk_showname.h:18
-#, fuzzy
 msgid "DVD Player"
 msgstr "Phát VLC"
 
@@ -9914,17 +9536,14 @@ msgid "Giantgirl"
 msgstr ""
 
 #: tpk_showname.h:32
-#, fuzzy
 msgid "GmediaRender"
 msgstr "Media Center"
 
 #: tpk_showname.h:33
-#, fuzzy
 msgid "Goodtime"
 msgstr "thời gian"
 
 #: tpk_showname.h:34
-#, fuzzy
 msgid "hbbtv Browser"
 msgstr "trình duyệt"
 
@@ -10021,12 +9640,10 @@ msgid "Mbox v0.6b0010"
 msgstr ""
 
 #: tpk_showname.h:60
-#, fuzzy
 msgid "Mediacenter FolderIcons"
 msgstr "Biểu tượng Media Center"
 
 #: tpk_showname.h:61
-#, fuzzy
 msgid "Mediacenter"
 msgstr "Media Center"
 
@@ -10087,7 +9704,6 @@ msgid "Paddington Bold"
 msgstr ""
 
 #: tpk_showname.h:82
-#, fuzzy
 msgid "Parted"
 msgstr "Đã bắt đầu"
 
@@ -10132,7 +9748,6 @@ msgid "Picons Kabel BW"
 msgstr ""
 
 #: tpk_showname.h:93
-#, fuzzy
 msgid "Picons Kabel Transparent"
 msgstr "Độ trong suốt"
 
@@ -10201,7 +9816,6 @@ msgid "Plover Bold"
 msgstr ""
 
 #: tpk_showname.h:110
-#, fuzzy
 msgid "Record cut"
 msgstr "Thư mục chứa bản ghi"
 
@@ -10210,127 +9824,102 @@ msgid "RGUI"
 msgstr ""
 
 #: tpk_showname.h:112
-#, fuzzy
 msgid "Samba (Server)"
 msgstr " server Samba "
 
 #: tpk_showname.h:113
-#, fuzzy
 msgid "Screensaver Animation Kidds"
 msgstr "Điều chỉnh màn hình chờ"
 
 #: tpk_showname.h:114
-#, fuzzy
 msgid "Screensaver Beach"
 msgstr "Màn hình chờ"
 
 #: tpk_showname.h:115
-#, fuzzy
 msgid "Screensaver Bikes and Motorcycles"
 msgstr "khoảng thời gian màn hình chờ"
 
 #: tpk_showname.h:116
-#, fuzzy
 msgid "Screensaver Brands and Logos"
 msgstr "Điều chỉnh màn hình chờ"
 
 #: tpk_showname.h:117
-#, fuzzy
 msgid "Screensaver Cars"
 msgstr "Màn hình chờ"
 
 #: tpk_showname.h:118
-#, fuzzy
 msgid "Screensaver Celebrations"
 msgstr "độ trễ màn hình chờ"
 
 #: tpk_showname.h:119
-#, fuzzy
 msgid "Screensaver Celebrities"
 msgstr "kiểu màn hình chờ"
 
 #: tpk_showname.h:120
-#, fuzzy
 msgid "Screensaver Christmas"
 msgstr "Điều chỉnh màn hình chờ"
 
 #: tpk_showname.h:121
-#, fuzzy
 msgid "Screensaver Creative Graphics"
 msgstr "hình ảnh màn hình chờ"
 
 #: tpk_showname.h:122
-#, fuzzy
 msgid "Screensaver Cute"
 msgstr "Điều chỉnh màn hình chờ"
 
 #: tpk_showname.h:123
-#, fuzzy
 msgid "Screensaver Default"
 msgstr "Điều chỉnh màn hình chờ"
 
 #: tpk_showname.h:124
-#, fuzzy
 msgid "Screensaver Digital Universe"
 msgstr "khoảng thời gian màn hình chờ"
 
 #: tpk_showname.h:125
-#, fuzzy
 msgid "Screensaver Dreamy Fantasy"
 msgstr "độ trễ màn hình chờ"
 
 #: tpk_showname.h:126
-#, fuzzy
 msgid "Screensaver Eisriesenwelt"
 msgstr "khoảng thời gian màn hình chờ"
 
 #: tpk_showname.h:127
-#, fuzzy
 msgid "Screensaver Fantasy Girls"
 msgstr "khoảng thời gian màn hình chờ"
 
 #: tpk_showname.h:128
-#, fuzzy
 msgid "Screensaver FCBayern"
 msgstr "kiểu màn hình chờ"
 
 #: tpk_showname.h:129
-#, fuzzy
 msgid "Screensaver Flowers"
 msgstr "Màn hình chờ"
 
 #: tpk_showname.h:130
-#, fuzzy
 msgid "Screensaver Games"
 msgstr "Màn hình chờ"
 
 #: tpk_showname.h:131
-#, fuzzy
 msgid "Screensaver HDR-Pictures"
 msgstr "Điều chỉnh màn hình chờ"
 
 #: tpk_showname.h:132
-#, fuzzy
 msgid "Screensaver Hotgirls"
 msgstr "Màn hình chờ"
 
 #: tpk_showname.h:133
-#, fuzzy
 msgid "Screensaver Hotgirls 2"
 msgstr "khoảng thời gian màn hình chờ"
 
 #: tpk_showname.h:134
-#, fuzzy
 msgid "Screensaver Inspirational"
 msgstr "khoảng thời gian màn hình chờ"
 
 #: tpk_showname.h:135
-#, fuzzy
 msgid "Screensaver Love"
 msgstr "Màn hình chờ"
 
 #: tpk_showname.h:136
-#, fuzzy
 msgid "Screensaver Movies"
 msgstr "Màn hình chờ"
 
@@ -10339,37 +9928,30 @@ msgid "Screensaver Nature and Landscape"
 msgstr ""
 
 #: tpk_showname.h:138
-#, fuzzy
 msgid "Screensaver Others"
 msgstr "kiểu màn hình chờ"
 
 #: tpk_showname.h:139
-#, fuzzy
 msgid "Screensaver Photography"
 msgstr "kiểu màn hình chờ"
 
 #: tpk_showname.h:140
-#, fuzzy
 msgid "Screensaver Planes"
 msgstr "Màn hình chờ"
 
 #: tpk_showname.h:141
-#, fuzzy
 msgid "Screensaver Radio"
 msgstr "Màn hình chờ"
 
 #: tpk_showname.h:142
-#, fuzzy
 msgid "Screensaver Sports"
 msgstr "Màn hình chờ"
 
 #: tpk_showname.h:143
-#, fuzzy
 msgid "Screensaver Travel World"
 msgstr "khoảng thời gian màn hình chờ"
 
 #: tpk_showname.h:145
-#, fuzzy
 msgid "Settings 19.2 Astra"
 msgstr " Thiết lập OK ?"
 
@@ -10414,7 +9996,6 @@ msgid "Skin 0Acht5Zehn (white)"
 msgstr ""
 
 #: tpk_showname.h:156
-#, fuzzy
 msgid "Skin Cool"
 msgstr "Nền"
 
@@ -10423,7 +10004,6 @@ msgid "Skin CoolMiniTV"
 msgstr ""
 
 #: tpk_showname.h:158
-#, fuzzy
 msgid "Skin Default"
 msgstr "Mặc định"
 
@@ -10432,7 +10012,6 @@ msgid "Skin DefNoMiniTV"
 msgstr ""
 
 #: tpk_showname.h:160
-#, fuzzy
 msgid "Skin MegaStyle blue"
 msgstr "Chọn nền"
 
@@ -10461,7 +10040,6 @@ msgid "Skin Nogfx (grau)"
 msgstr ""
 
 #: tpk_showname.h:167
-#, fuzzy
 msgid "Skin SmartTV"
 msgstr "Chọn nền"
 
@@ -10490,12 +10068,10 @@ msgid "The Grim Reaper"
 msgstr ""
 
 #: tpk_showname.h:176
-#, fuzzy
 msgid "Titan Media Center"
 msgstr "Media Center"
 
 #: tpk_showname.h:177
-#, fuzzy
 msgid "TiTan Mediathek"
 msgstr "Thư viện trực tuyến"
 
@@ -10512,17 +10088,14 @@ msgid "TitanNit Design 3"
 msgstr ""
 
 #: tpk_showname.h:181
-#, fuzzy
 msgid "TitanNit on fire"
 msgstr "Không thể mở file"
 
 #: tpk_showname.h:183
-#, fuzzy
 msgid "USB-RESET"
 msgstr "KHỞI ĐỘNG LẠI"
 
 #: tpk_showname.h:185
-#, fuzzy
 msgid "Webbrowser Netsurf"
 msgstr "Trình duyệt"
 
@@ -10603,7 +10176,6 @@ msgid "Vertikal"
 msgstr ""
 
 #: transponder.h:477 transponder.h:500 transponder.h:514 transponder.h:536
-#, fuzzy
 msgid "QPSK"
 msgstr "QPSK tự động"
 
@@ -10637,7 +10209,6 @@ msgid "QAM 256"
 msgstr ""
 
 #: transponder.h:572 transponder.h:579
-#, fuzzy
 msgid "DVBS"
 msgstr "DVB-S"
 
@@ -10654,12 +10225,10 @@ msgid "Single LNB"
 msgstr "LNB đơn"
 
 #: tunerconfig.h:110
-#, fuzzy
 msgid "DiSEqC A/B"
 msgstr "DiSEqC"
 
 #: tunerconfig.h:112
-#, fuzzy
 msgid "DiSEqC A/B/C/D"
 msgstr "DiSEqC"
 
@@ -10668,7 +10237,6 @@ msgid "DiSEqC A/B/C/D/E/F/G/H"
 msgstr ""
 
 #: tunerconfig.h:116
-#, fuzzy
 msgid "Expert"
 msgstr " Expert Modus "
 
@@ -10693,14 +10261,12 @@ msgid "loop to Tuner"
 msgstr "loop to Tuner"
 
 #: tunerconfig.h:772
-#, fuzzy
 msgid ""
 "Tunerconfig is not allowed if record\n"
 "or stream is running !"
 msgstr "Cấu hình tuner này không cho phép ghi"
 
 #: tunerconfig.h:786
-#, fuzzy
 msgid "Tuner "
 msgstr "Tuner"
 
@@ -10713,7 +10279,6 @@ msgid "Unicable product"
 msgstr "Sản phẩm cáp đơn"
 
 #: unicable.h:277
-#, fuzzy
 msgid "Unicable SCR"
 msgstr "Sản phẩm cáp đơn"
 
@@ -10760,7 +10325,6 @@ msgid "time small"
 msgstr "thời gian ngắn"
 
 #: vfdisplay.h:38
-#, fuzzy
 msgid "channel number"
 msgstr " chương trình + thời gian"
 
@@ -10777,12 +10341,10 @@ msgid "fade out/in"
 msgstr ""
 
 #: vfdisplay.h:53
-#, fuzzy
 msgid "show record"
 msgstr "ghi"
 
 #: vfdisplay.h:54
-#, fuzzy
 msgid "star"
 msgstr "Khởi động lại"
 
@@ -10799,7 +10361,6 @@ msgid "Aspect Settings"
 msgstr "Cài đặt khuôn hình"
 
 #: videomode.h:25 videomode.h:27
-#, fuzzy
 msgid "Videomode"
 msgstr "Video"
 
@@ -10818,551 +10379,3 @@ msgstr "Nhiệt độ cao nhất: "
 #: weather.h:442 weather.h:460 weather.h:478 weather.h:496
 msgid "Condition: "
 msgstr "trạng thái: "
-
-#~ msgid ""
-#~ "A mount entry with this name already exists!\n"
-#~ "Update existing entry and continue?"
-#~ msgstr ""
-#~ "Đã có tên này!\n"
-#~ "Bạn muốn ghi đè lên?"
-
-#~ msgid "A record hdd or a swapstick must be mounted!"
-#~ msgstr "Kết nối ổ cứng hoặc USB"
-
-#~ msgid "Aborting restoring..."
-#~ msgstr "Dừng khôi phục…!"
-
-#~ msgid "Aborting backup..."
-#~ msgstr "Dừng sao lưu !"
-
-#~ msgid "add new share"
-#~ msgstr "Thêm chia sẻ mới"
-
-#~ msgid "add cifs share"
-#~ msgstr " Thêm chia sẻ cifs"
-
-#~ msgid "add nfs share"
-#~ msgstr " Thêm chia sẻ nfs"
-
-#~ msgid "add ftp share"
-#~ msgstr " Thêm chia sẻ ftp "
-
-#~ msgid "AUTO"
-#~ msgstr "TỰ ĐỘNG"
-
-#~ msgid "(ALL)"
-#~ msgstr "(TẤT CẢ)"
-
-#~ msgid "alt file"
-#~ msgstr "tập tin khác"
-
-#~ msgid "Are you sure you want to restore settings?"
-#~ msgstr "Bạn muốn khôi phục các thiết lập?"
-
-#~ msgid "A-Z (Text)"
-#~ msgstr "A-Z"
-
-#~ msgid ""
-#~ "Backup startet\n"
-#~ "\n"
-#~ "Please wait..."
-#~ msgstr ""
-#~ "Bắt đầu sao lưu\n"
-#~ "\n"
-#~ "Vui lòng đợi..."
-
-#~ msgid "bbgain"
-#~ msgstr "BBGain"
-
-#~ msgid "bestfit"
-#~ msgstr "Phù hợp nhất"
-
-#~ msgid "Beta Config"
-#~ msgstr "Cấu hình Beta"
-
-#~ msgid "betapass"
-#~ msgstr "mật khẩu beta"
-
-#~ msgid "betauser"
-#~ msgstr "người sử dụng beta"
-
-#~ msgid "Blue Key Action - Plugins"
-#~ msgstr "Nút màu xanh da trời – Plugins"
-
-#~ msgid "bootlogo"
-#~ msgstr " Logo khởi động "
-
-#~ msgid "BootResolution"
-#~ msgstr "Độ phân giải khởi động"
-
-#~ msgid "bootrgbfix"
-#~ msgstr "hiệu chỉng rgb khi khởi động"
-
-#~ msgid "Cancel Shutdown"
-#~ msgstr "Hủy bỏ tắt đầu thu"
-
-#~ msgid "Can't get Network Infos"
-#~ msgstr "Không có thông tin mạng"
-
-#~ msgid "CHANGE"
-#~ msgstr "THAY ĐỔI"
-
-#~ msgid "Channel Service"
-#~ msgstr "Dịch vụ chương trình"
-
-#~ msgid "DiSEqC Command Order"
-#~ msgstr "Thứ tự lệnh DiSEqC"
-
-#~ msgid "DiSEqC Configuration"
-#~ msgstr "Cấu hình DiSEqC"
-
-#~ msgid "DiSEqC Sat Settings"
-#~ msgstr "Thiết lập DiSEqC"
-
-#~ msgid "DVB-T not supportet at the moment !"
-#~ msgstr "Không hỗ trợ DVB-T"
-
-#~ msgid "East / West"
-#~ msgstr "Đông / Tây"
-
-#~ msgid "edit share"
-#~ msgstr "Freigabe bearbeiten"
-
-#~ msgid "Error: create timer thread !!"
-#~ msgstr "Lỗi: tạo chuỗi bộ định thời!"
-
-#~ msgid "Error: open rcsim device !!"
-#~ msgstr "Lỗi: mở thiết bị rcsim!"
-
-#~ msgid "errorstop"
-#~ msgstr "Lỗi khởi động"
-
-#~ msgid "Exit"
-#~ msgstr "Thoát"
-
-#~ msgid "Exit = abort restore"
-#~ msgstr "Thoát = hủy bỏ khôi phục"
-
-#~ msgid "Extensions Menu"
-#~ msgstr "Menu mở rộng"
-
-#~ msgid "Expert Sat Settings"
-#~ msgstr "Cài đặt truyền hình vệ tinh"
-
-#~ msgid "Fast DiSEqC"
-#~ msgstr "DiSEqC nhanh"
-
-#~ msgid "fontsize"
-#~ msgstr "Cỡ chữ"
-
-#~ msgid "Found Data:"
-#~ msgstr "Tìm thấy dữ liệu:"
-
-#~ msgid "Found TV:"
-#~ msgstr "Tìm thấy TV:"
-
-#~ msgid "fsckswap"
-#~ msgstr "swap fsck"
-
-#~ msgid "ftpd"
-#~ msgstr "ftpd"
-
-#~ msgid "Germany"
-#~ msgstr "Tiếng Đức"
-
-#~ msgid "Graphic MULTI EPG - Bouquets -"
-#~ msgstr "Nhóm lịch chương trình"
-
-#~ msgid "Image Information"
-#~ msgstr "Thông tin"
-
-#~ msgid "Increased Voltage"
-#~ msgstr "Tăng áp"
-
-#~ msgid "Infobar Auto hide on call"
-#~ msgstr "Thanh thông tin tự động hiển thị"
-
-#~ msgid "iwatch"
-#~ msgstr "iwatch"
-
-#~ msgid "LOF"
-#~ msgstr "LOF"
-
-#~ msgid "LOG (Text)"
-#~ msgstr "LOG (Text)"
-
-#~ msgid "logto"
-#~ msgstr "Đăng nhập"
-
-#~ msgid "Manuel Scan"
-#~ msgstr " Dò bằng tay "
-
-#~ msgid "maxdelay"
-#~ msgstr "Độ trễ lớn nhất"
-
-#~ msgid "Network Assistant"
-#~ msgstr "Hỗ trợ mạng"
-
-#~ msgid "nfsserver"
-#~ msgstr "NFS-Server"
-
-#~ msgid "No"
-#~ msgstr "Không"
-
-#~ msgid "No backup folders found!!!"
-#~ msgstr "Không tìm thấy thư mục để sao lưu"
-
-#~ msgid "non"
-#~ msgstr "Không"
-
-#~ msgid "North / South"
-#~ msgstr "Bắc / Nam"
-
-#~ msgid "nr_usbreaders"
-#~ msgstr "nr_đầu đọc usb"
-
-#~ msgid "OFF"
-#~ msgstr "TẮT"
-
-#~ msgid "Off"
-#~ msgstr "Tắt"
-
-#~ msgid "OK = start restore"
-#~ msgstr "OK = Khôi phục"
-
-#~ msgid "oldvideofw"
-#~ msgstr "firmware video cũ "
-
-#~ msgid "On"
-#~ msgstr "Bật"
-
-#~ msgid "ON"
-#~ msgstr "BẬT"
-
-#~ msgid "Only free channel scan"
-#~ msgstr "Dò các chương trình miễn phí"
-
-#~ msgid "only_boot_overclock"
-#~ msgstr "only_boot_overclock"
-
-#~ msgid "panscan"
-#~ msgstr "dịch chuyển và quét"
-
-#~ msgid "Piconpath"
-#~ msgstr "Picon path"
-
-#~ msgid "pingserver"
-#~ msgstr "kết nối server"
-
-#~ msgid "PinOn"
-#~ msgstr "Pin On"
-
-#~ msgid "PlayList - select your playlist !"
-#~ msgstr "Danh sách phát – chọn danh sách của bạn!"
-
-#~ msgid "Play Icon"
-#~ msgstr "Biểu tượng phát"
-
-#~ msgid "pll0_ndiv_mdiv"
-#~ msgstr "pll0 ndiv mdiv"
-
-#~ msgid "pll1_fdma_bypass"
-#~ msgstr "pll1_fdma_bypass"
-
-#~ msgid "pll1_ndiv_mdiv"
-#~ msgstr "pll1_ndiv_mdiv"
-
-#~ msgid "plugload"
-#~ msgstr "kết nối đầu vào"
-
-#~ msgid "portmap"
-#~ msgstr " port map "
-
-#~ msgid "Power action"
-#~ msgstr "Bật/tắt nguồn"
-
-#~ msgid "profile"
-#~ msgstr "profile"
-
-#~ msgid "Radio (Info)"
-#~ msgstr "Radio (Thông tin)"
-
-#~ msgid "radiologos"
-#~ msgstr "logo radio"
-
-#~ msgid "record_split_size"
-#~ msgstr "record_split_size"
-
-#~ msgid "record_split_type"
-#~ msgstr "record_split_type"
-
-#~ msgid "repairmodus"
-#~ msgstr "kiểu sửa"
-
-#~ msgid "rmcrashlog"
-#~ msgstr " rm crash log "
-
-#~ msgid "rmemthy"
-#~ msgstr "xóa thư mục trống"
-
-#~ msgid "sambaserver"
-#~ msgstr "Server Samba"
-
-#~ msgid "sat_single"
-#~ msgstr "một vệ tinh"
-
-#~ msgid "sat_diseqc_ab"
-#~ msgstr " sat_diseqc_ab "
-
-#~ msgid "sat_diseqc_abcd"
-#~ msgstr " sat_diseqc_abcd "
-
-#~ msgid "sat_diseqc_abcdefgh"
-#~ msgstr " sat_diseqc_abcdefgh "
-
-#~ msgid "sat_expert"
-#~ msgstr " sat_expert "
-
-#~ msgid "Satelite Entrys"
-#~ msgstr "Nhập vệ tinh"
-
-#~ msgid "sbs side by side"
-#~ msgstr "side by side"
-
-#~ msgid "Scart-Recorder"
-#~ msgstr "Ghi âm scart"
-
-#~ msgid "search EU VHF I"
-#~ msgstr "dò EU VHF I"
-
-#~ msgid "Share Settings"
-#~ msgstr "Thiết lập chia sẻ"
-
-#~ msgid "Sharename"
-#~ msgstr "Tên chia sẻ"
-
-#~ msgid "showtvinfo"
-#~ msgstr "hiển thị thông tin TV"
-
-#~ msgid "Show Module Messages"
-#~ msgstr "Hiển thị môđun tin nhắn"
-
-#~ msgid "Single Satelite"
-#~ msgstr "Một vệ tinh"
-
-#~ msgid "SORT"
-#~ msgstr "SẮP XẾP"
-
-#~ msgid "standby_freq"
-#~ msgstr "Tần số standby"
-
-#~ msgid "standby_overclock"
-#~ msgstr "standby_overclock"
-
-#~ msgid "starting Kernel Update ?"
-#~ msgstr "Bắt đầu cập nhật Kernel?"
-
-#~ msgid "starting Fw Update ?"
-#~ msgstr " Bắt đầu cập nhật Firmware?"
-
-#~ msgid "starting Root Update ?"
-#~ msgstr " bắt đầu cập nhật root?"
-
-#~ msgid "starting Var Update ?"
-#~ msgstr " bắt đầu cập nhật var?"
-
-#~ msgid "starting Usb Update ?"
-#~ msgstr "bắt đầu cập nhật từ USB?"
-
-#~ msgid "starting Fullusb Update ?"
-#~ msgstr "bắt đầu cập nhật từ USB?"
-
-#~ msgid "starting Usb (unknown release grp) Update ?"
-#~ msgstr "bắt đầu cập nhật từ USB?"
-
-#~ msgid "start QtBrowser now ?"
-#~ msgstr "bắt đầu trình duyệt Qt?"
-
-#~ msgid "stream is running !"
-#~ msgstr "đang phát!"
-
-#~ msgid "swapnetwork"
-#~ msgstr "mạng trao đổi"
-
-#~ msgid "swapscreensaver"
-#~ msgstr "swap screensaver"
-
-#~ msgid "swapskins"
-#~ msgstr "swapskins"
-
-#~ msgid "swapsystem"
-#~ msgstr "hệ thống trao đổi"
-
-#~ msgid "swapsize"
-#~ msgstr "Kích thước trao đổi"
-
-#~ msgid "swapsystems"
-#~ msgstr "Hệ thống trao đổi"
-
-#~ msgid "swts"
-#~ msgstr "swts"
-
-#~ msgid "szap"
-#~ msgstr "szap"
-
-#~ msgid "szap_diseqc_repeat"
-#~ msgstr "szap_diseqc_repeat"
-
-#~ msgid "szap_frontend"
-#~ msgstr "szap_frontend"
-
-#~ msgid "szaplong"
-#~ msgstr "szaplong"
-
-#~ msgid "tab"
-#~ msgstr "tab"
-
-#~ msgid "telnet"
-#~ msgstr "telnet"
-
-#~ msgid "Test frequency"
-#~ msgstr "Tần số kiểm tra"
-
-#~ msgid "tuner_sleep_off"
-#~ msgstr " tuner_sleep_off "
-
-#~ msgid " Teletext CPU Frequenz fix "
-#~ msgstr "Sửa tần số CPU teletext"
-
-#~ msgid "Update"
-#~ msgstr "Cập nhật"
-
-#~ msgid "use ssl"
-#~ msgstr "sử dụng ssl"
-
-#~ msgid "webif"
-#~ msgstr "Giao diện web"
-
-#~ msgid "wlan"
-#~ msgstr "Mạng không dây"
-
-#~ msgid "Yes"
-#~ msgstr "đồng ý"
-
-#~ msgid "YES"
-#~ msgstr "đồng ý"
-
-#~ msgid "DEU (DVB Subtitle)"
-#~ msgstr "phụ đề "
-
-#~ msgid "ENG (DVB-Subtitle)"
-#~ msgstr "tiếng anh"
-
-#~ msgid "FRA (DVB-Subtitle)"
-#~ msgstr "tiếng pháp"
-
-#~ msgid " SELECT"
-#~ msgstr "chọn"
-
-#~ msgid "virtualbox (text)"
-#~ msgstr "virtualbox (text)"
-
-#~ msgid ""
-#~ "You find this Backup with timestamp on /tmp\n"
-#~ "Connecting per ftp and copy this backup to your Pc !\n"
-#~ "Please Waiting 2 Min ... and relax\n"
-#~ " \n"
-#~ "Next infos on LCD Display!"
-#~ msgstr ""
-#~ "Tìm trong thư mục /tmp \n"
-#~ " kết nối tới ftp và copy về máy tính!\n"
-#~ " vui lòng đợi 2 phút\n"
-#~ " các thong tin tiếp theo sẽ hiển thị trên màn hình!"
-
-#~ msgid "SCAN"
-#~ msgstr "dò"
-
-#~ msgid "start Internet browser now ?"
-#~ msgstr "Bắt đầu trình duyệt web?"
-
-#~ msgid "swaptool"
-#~ msgstr "dụng cụ hoán đổi"
-
-#~ msgid "Own Position"
-#~ msgstr " vị trí riêng "
-
-#~ msgid "no keycode"
-#~ msgstr "không có password"
-
-#~ msgid "This is a advertising Image !"
-#~ msgstr "Đây là hình ảnh quảng cáo !"
-
-#~ msgid "Does you want delete all unused Bouquetentrys?"
-#~ msgstr "bạn có muốn xóa tất cả không?"
-
-#~ msgid "--actors--"
-#~ msgstr "—diễn viên--"
-
-#~ msgid "deactive"
-#~ msgstr "hủy kích hoạt"
-
-#~ msgid "swapplayer"
-#~ msgstr " swap player "
-
-#~ msgid "swaptools"
-#~ msgstr "hoán đổi"
-
-#~ msgid "swapbrowser"
-#~ msgstr "trình duyệt"
-
-#~ msgid ""
-#~ "Here you can choose to configure your tuner. Use to navigate the control "
-#~ "cross and the extra buttons displayed with your remote control to select."
-#~ msgstr ""
-#~ "Bạn có thể cấu hình tuner ở đây. Sử dụng các phím di chuyển "
-#~ "và các nút mở rộng trên điều khiển để chọn."
-
-#~ msgid ""
-#~ "Here they can do for your chosen tuner to receive settings. Use to "
-#~ "navigate the control cross and the extra buttons displayed with your "
-#~ "remote control to select."
-#~ msgstr ""
-#~ "Thiết lập tuner. sử dụng các phím di chuyển và các nút mở "
-#~ "rộng trên điều khiển để chọn."
-
-#~ msgid ""
-#~ "Here they can do for your chosen tuner to ownpos settings. Use to "
-#~ "navigate the control cross and the extra buttons displayed with your "
-#~ "remote control to select."
-#~ msgstr ""
-#~ "Thiết lập riêng ở đây. sử dụng các phím di chuyển và các "
-#~ "nút mở rộng trên điều khiển để chọn."
-
-#~ msgid ""
-#~ "Here you can make for your wireless network settings. Use to navigate the "
-#~ "control cross and the extra buttons displayed with your remote control to "
-#~ "select."
-#~ msgstr ""
-#~ "Thiết lập mạng không dây ở đây. sử dụng các phím di chuyển "
-#~ "và các nút mở rộng trên điều khiển để chọn."
-
-#~ msgid "Installed version:"
-#~ msgstr "phiên bản cài đặt:"
-
-#~ msgid ""
-#~ "Alternativ Audio Firmware not working korrekt with all videos "
-#~ "(DTSDOWNMIX)!"
-#~ msgstr ""
-#~ "Ngoài ra phần mềm audio này không làm việc chính xác với tất "
-#~ "cả các video(DTSDOWNMIX)!"
-
-#~ msgid "swapwireless"
-#~ msgstr " swap wireless "
-
-#~ msgid ""
-#~ "Streaming version of this file is currently not available. You can "
-#~ "download it below."
-#~ msgstr "file này hiện chưa có. Bạn có thể tải về."
-
-#~ msgid "Short EPG"
-#~ msgstr "lịch chương trình rút gọn "
