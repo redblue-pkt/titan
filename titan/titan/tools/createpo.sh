@@ -171,7 +171,7 @@ elif [ "$SVNUSER" = "aafsvn" ] && [ "$GROUP" = "dev" ];then
 		echo "[createpo.sh] ############################################" >> "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
 		echo "[createpo.sh] ###### error should be in the middle #######" >> "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
 		echo "[createpo.sh] ############################################" >> "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
-		cat "$FILE" | sed -ne ""$LINE1","$LINE2"p"` >> "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
+		cat "$FILE" | sed -ne ""$LINE1","$LINE2"p" >> "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
 		echo "[createpo.sh] ############################################" >> "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
 	fi
 
