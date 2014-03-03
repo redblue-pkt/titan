@@ -518,7 +518,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 		servicenode->recdmxstart = 1;
 	}
 #ifdef MIPSEL
-	sleep(3);
+	sleep(1);
 #endif	
 	while(1)
 	{	
@@ -656,7 +656,11 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 				if(servicenode->type == RECORDPLAY && count < 20)
 				{
 					if(status.timeshift == 0)
+#ifdef MIPSEL
+						usleep(100000);
+#else
 						usleep(50000);
+#endif
 					else
 						count = 19;
 					if(count == 19)
