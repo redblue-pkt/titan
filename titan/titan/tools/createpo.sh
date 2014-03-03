@@ -144,9 +144,13 @@ if [ $error != 0 ];then
 	echo "[createpo.sh] found error($error)"
 fi
 
+echo "[createpo.sh] ###################### error log start ##########################"
+cat "$HOME"/flashimg/source.titan/titan/tools/error/error.log
+echo "[createpo.sh] ####################### error log end ###########################"
+
 echo "[createpo.sh] check user $SVNUSER"
 echo "[createpo.sh] check group $GROUP"
-	
+
 cd "$HOME"/flashimg/source.titan/po
 if [ "$SVNUSER" = "aafsvn" ] && [ "$GROUP" = "dev" ] && [ "$error" = "0" ];then
 	echo "[createpo.sh] svn commit -m [titan] autoupdate po files"
