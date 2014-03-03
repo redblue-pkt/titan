@@ -592,7 +592,7 @@ msgid "endless"
 msgstr "endlos"
 
 msgid "English"
-msgstr "Englisch"
+msgstr "English"
 
 msgid "EPG Info"
 msgstr "EPG Info"
@@ -763,7 +763,7 @@ msgid "Really stop download ?"
 msgstr "Download wirklich beenden?"
 
 msgid "French"
-msgstr "Französisch"
+msgstr "Francais"
 
 msgid "free space"
 msgstr "Freier Speicherplatz"
@@ -826,7 +826,7 @@ msgid "Graphic EPG Picon"
 msgstr "Grafisches Multi-EPG Vorschaubilder"
 
 msgid "Greek"
-msgstr "Griechisch"
+msgstr "Ελληνικά"
 
 msgid "grey"
 msgstr "grau"
@@ -835,7 +835,7 @@ msgid "German"
 msgstr "Deutsch"
 
 msgid "Dutch"
-msgstr "Niederländisch"
+msgstr "Nederlands"
 
 msgid "GUI Restart"
 msgstr "GUI Neustart"
@@ -968,7 +968,7 @@ msgid "Is this Videomode ok ?"
 msgstr "Ist dieser Videomodus ok?"
 
 msgid "Italian"
-msgstr "Italienisch"
+msgstr "Italiano"
 
 msgid "iwatch"
 msgstr "iWatch"
@@ -1450,7 +1450,7 @@ msgid "Policy"
 msgstr "Bild Einstellungen"
 
 msgid "Polish"
-msgstr "Polnisch"
+msgstr "Polski"
 
 msgid "portmap"
 msgstr "Port Weiterleitung"
@@ -1726,7 +1726,7 @@ msgid "rsize"
 msgstr "rsize"
 
 msgid "Russian"
-msgstr "Russisch"
+msgstr "Русский"
 
 msgid "Samba Server Settings"
 msgstr "Samba Server Einstellungen"
@@ -3883,7 +3883,7 @@ msgid "Episode"
 msgstr "Folge"
 
 msgid "Vietnamese"
-msgstr "Vietnamesisch"
+msgstr "Viet"
 
 msgid "/var not writeable!\nRepair it?"
 msgstr "/var nicht beschreibbar!\nReparieren?"
