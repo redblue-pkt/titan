@@ -90,7 +90,7 @@ msgstr ""
 #: putlocker.h:32 putlocker.h:79 putlocker.h:85 putlocker.h:136
 #: putlocker.h:146 putlocker.h:219 readerconfig.h:343 readerconfig.h:443
 #: readerconfig.h:444 readerconfig.h:488 readerconfig.h:489 record.h:355
-#: record.h:990 record.h:1441 rectimer.h:557 rectimer.h:1210 rectimer.h:1356
+#: record.h:994 record.h:1445 rectimer.h:557 rectimer.h:1210 rectimer.h:1356
 #: rectimer.h:1368 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:28 scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1888
@@ -178,7 +178,7 @@ msgstr "Ok"
 #: putlocker.h:32 putlocker.h:79 putlocker.h:85 putlocker.h:136
 #: putlocker.h:146 putlocker.h:219 readerconfig.h:343 readerconfig.h:443
 #: readerconfig.h:444 readerconfig.h:488 readerconfig.h:489 record.h:90
-#: record.h:355 record.h:990 record.h:1177 record.h:1416 record.h:1441
+#: record.h:355 record.h:994 record.h:1181 record.h:1420 record.h:1445
 #: rectimer.h:557 rectimer.h:1210 rectimer.h:1356 rectimer.h:1368
 #: restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
@@ -549,7 +549,7 @@ msgstr "yes / vzap endless"
 #: putlocker.h:32 putlocker.h:79 putlocker.h:85 putlocker.h:136
 #: putlocker.h:146 putlocker.h:219 readerconfig.h:343 readerconfig.h:443
 #: readerconfig.h:444 readerconfig.h:488 readerconfig.h:489 record.h:355
-#: record.h:990 record.h:1177 record.h:1416 record.h:1441 rectimer.h:557
+#: record.h:994 record.h:1181 record.h:1420 record.h:1445 rectimer.h:557
 #: rectimer.h:1210 rectimer.h:1356 rectimer.h:1368 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:28
@@ -4504,7 +4504,7 @@ msgstr "Record / Timeshift / Stream"
 msgid "Box recording finished poweroff in 30sec !"
 msgstr "Registrazione Finita. Box sara spento in 30 secondi !\" "
 
-#: record.h:990
+#: record.h:994
 msgid ""
 "Can't find free Tuner for Record.\n"
 "Switch to Recording/Timeshift Channel ?"
@@ -4512,40 +4512,40 @@ msgstr ""
 "nessun tener trovato.\n"
 "per registrazione/Timeschift cambiare canale ?"
 
-#: record.h:1176
+#: record.h:1180
 msgid "Timer Record start !"
 msgstr "Timer registrazione partita !"
 
-#: record.h:1291 record.h:1300 record.h:1311 record.h:1346 record.h:1355
-#: record.h:1387 stream.h:15 stream.h:37
+#: record.h:1295 record.h:1304 record.h:1315 record.h:1350 record.h:1359
+#: record.h:1391 stream.h:15 stream.h:37
 msgid "stop"
 msgstr "bootstop"
 
-#: record.h:1309 record.h:1383 skin_default_skin.xml.h:474
+#: record.h:1313 record.h:1387 skin_default_skin.xml.h:474
 msgid "Record"
 msgstr "Registra"
 
-#: record.h:1361 record.h:1370 record.h:1393
+#: record.h:1365 record.h:1374 record.h:1397
 msgid "change"
 msgstr "modifica"
 
-#: record.h:1379 record.h:1409
+#: record.h:1383 record.h:1413
 msgid "add recording (stop after current event)"
 msgstr "aggiungere registrazione (questa trasmissione)"
 
-#: record.h:1380 record.h:1422
+#: record.h:1384 record.h:1426
 msgid "add recording (indefinitely)"
 msgstr "aggiungere registrazione (all infinito)"
 
-#: record.h:1381 record.h:1427
+#: record.h:1385 record.h:1431
 msgid "add recording (enter duration)"
 msgstr "aggiungere registrazione (dare durata)"
 
-#: record.h:1416
+#: record.h:1420
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr "EPG non puo essere trovato oppure non e ok"
 
-#: record.h:1441
+#: record.h:1445
 msgid "Record started"
 msgstr "Partita registrazione"
 
