@@ -3,17 +3,14 @@ msgid "Image"
 msgstr ""
 
 #: about.h:12
-#, fuzzy
 msgid "Version"
 msgstr "Umkehrung"
 
 #: about.h:16
-#, fuzzy
 msgid "Copyright"
 msgstr "Kopieren"
 
 #: about.h:25 skin_default_skin.xml.h:674
-#, fuzzy
 msgid "Tuner"
 msgstr "Tuner:"
 
@@ -25,17 +22,14 @@ msgstr "Tuner:"
 #: transponder.h:364 transponder.h:418 transponder.h:451 transponder.h:480
 #: transponder.h:493 transponder.h:504 transponder.h:574 youtube.h:149
 #: zdf.h:86
-#, fuzzy
 msgid "unknown"
 msgstr "unbekannt"
 
 #: about.h:32 skin_default_skin.xml.h:679
-#, fuzzy
 msgid "Tunertype"
 msgstr "Tuner:"
 
 #: about.h:45
-#, fuzzy
 msgid "System-Info"
 msgstr "System Infos"
 
@@ -123,7 +117,6 @@ msgstr "System Infos"
 #: unlock.h:75 videomode.h:53 videoweed.h:35 videoweed.h:80 vidstream.h:45
 #: vidstream.h:86 vidstream.h:98 vidstream.h:167 xvidstage.h:54
 #: xvidstage.h:100 xvidstage.h:177 youtube.h:197 zdf.h:29
-#, fuzzy
 msgid "OK"
 msgstr "Ok"
 
@@ -265,12 +258,10 @@ msgstr ""
 #: timeshiftsettings.h:63 tithek_settings.h:33 tithek_settings.h:37
 #: tithek_settings.h:41 tmc.h:531 tmc.h:535 tunerconfig.h:184
 #: tunerconfig.h:213 tunerconfig.h:244 tunerconfig.h:277
-#, fuzzy
 msgid "no"
 msgstr "Nein"
 
 #: adjust.h:65
-#, fuzzy
 msgid "infobar"
 msgstr "Infos"
 
@@ -279,7 +270,6 @@ msgid "epg"
 msgstr ""
 
 #: adjust.h:67 epgsettings.h:136
-#, fuzzy
 msgid "Channel EPG"
 msgstr "Senderliste bearbeiten"
 
@@ -354,21 +344,18 @@ msgstr ""
 #: adjust.h:99 mc_audioplayer_settings.h:29 mc_pictureplayer_settings.h:44
 #: mc_videoplayer_settings.h:25 plugins_mc_skin.xml.h:55
 #: skin_default_skin.xml.h:575 skins_mc_skin.xml.h:55
-#, fuzzy
 msgid "size"
 msgstr "rsize"
 
 #: adjust.h:100 mc_audioplayer_settings.h:30 mc_pictureplayer_settings.h:45
 #: mc_videoplayer_settings.h:26 plugins_mc_skin.xml.h:51
 #: skin_default_skin.xml.h:509 skins_mc_skin.xml.h:51
-#, fuzzy
 msgid "reverse size"
 msgstr "TS Datei nie lschen"
 
 #: adjust.h:101 mc_audioplayer_settings.h:31 mc_pictureplayer_settings.h:46
 #: mc_videoplayer_settings.h:27 plugins_mc_skin.xml.h:16
 #: skin_default_skin.xml.h:160 skins_mc_skin.xml.h:16 vfdisplay.h:46
-#, fuzzy
 msgid "date"
 msgstr "aktualisieren"
 
@@ -379,33 +366,27 @@ msgid "reverse date"
 msgstr ""
 
 #: adjust.h:105
-#, fuzzy
 msgid "Power Menu"
 msgstr "Men mit PIN schtzen"
 
 #: adjust.h:106 skin_default_skin.xml.h:454
-#, fuzzy
 msgid "Power Off"
 msgstr "Ausschalten"
 
 #: adjust.h:107 powerofftimer.h:118 skin_default_skin.xml.h:597
-#, fuzzy
 msgid "Standby"
 msgstr "Standby"
 
 #: adjust.h:108 skin_default_skin.xml.h:503 softcam.h:291
-#, fuzzy
 msgid "Restart"
 msgstr "Stern"
 
 #: adjust.h:109
-#, fuzzy
 msgid "Gui Restart"
 msgstr "GUI Neustart"
 
 #: adjust.h:112 adjust.h:122 adjust.h:176 epgsettings.h:145 epgsettings.h:151
 #: network.h:593
-#, fuzzy
 msgid "deaktiv"
 msgstr "ausgeschaltet"
 
@@ -418,7 +399,6 @@ msgid "2 sec"
 msgstr ""
 
 #: adjust.h:115 pin.h:188
-#, fuzzy
 msgid "endless"
 msgstr "WLAN Module"
 
@@ -443,7 +423,6 @@ msgid "extern"
 msgstr ""
 
 #: adjust.h:145 adjust.h:242 httpdsettings.h:42
-#, fuzzy
 msgid "intern"
 msgstr "Internet"
 
@@ -454,7 +433,6 @@ msgstr "Internet"
 #: transponder.h:337 transponder.h:363 transponder.h:372 transponder.h:378
 #: transponder.h:385 transponder.h:417 transponder.h:427 transponder.h:476
 #: transponder.h:512
-#, fuzzy
 msgid "auto"
 msgstr "QAM automatisch"
 
@@ -463,17 +441,14 @@ msgid "nothing"
 msgstr ""
 
 #: adjust.h:154 rectimer.h:1167
-#, fuzzy
 msgid "standby"
 msgstr "Standby"
 
 #: adjust.h:155 rectimer.h:1168
-#, fuzzy
 msgid "power off"
 msgstr "Ausschalten"
 
 #: adjust.h:163
-#, fuzzy
 msgid "anim. width"
 msgstr "anim. Breite"
 
@@ -506,12 +481,10 @@ msgid "hidden"
 msgstr ""
 
 #: adjust.h:187
-#, fuzzy
 msgid "channel-movie"
 msgstr "Sendername"
 
 #: adjust.h:188
-#, fuzzy
 msgid "movie-channel"
 msgstr "Sendername"
 
@@ -607,7 +580,6 @@ msgstr ""
 
 #: audiotrack.h:116 play.h:253 subtitle.h:1745 tunerconfig.h:157
 #: tunerconfig.h:341 tunerconfig.h:381
-#, fuzzy
 msgid "undefined"
 msgstr "Benutzer definiert"
 
@@ -618,7 +590,6 @@ msgstr "Benutzer definiert"
 #: readerconfig.h:413 settings_autostart.h:52 settings_overclocking.h:276
 #: transponder.h:256 transponder.h:264 transponder.h:415 transponder.h:423
 #: tunerconfig.h:671 vfdisplay.h:42 vfdisplay.h:50
-#, fuzzy
 msgid "off"
 msgstr "Abtastfrequenz"
 
@@ -645,7 +616,6 @@ msgstr ""
 #: avsettings.h:84 lnbconfig.h:143 mc_pictureplayer_settings.h:35
 #: mc_pictureplayer_settings.h:39 readerconfig.h:416 transponder.h:257
 #: transponder.h:266 transponder.h:416 transponder.h:425
-#, fuzzy
 msgid "on"
 msgstr "Nein"
 
@@ -660,7 +630,6 @@ msgid ""
 msgstr ""
 
 #: bgdownload.h:176
-#, fuzzy
 msgid "Really stop download ?"
 msgstr "Warten, Download wird beendet."
 
@@ -669,27 +638,22 @@ msgid "Sat: "
 msgstr ""
 
 #: blindscanadjust.h:17
-#, fuzzy
 msgid "Cable: "
 msgstr "Enable"
 
 #: blindscanadjust.h:21
-#, fuzzy
 msgid "Terrestrial: "
 msgstr "Terrestrisch"
 
 #: blindscanadjust.h:120
-#, fuzzy
 msgid "Sat"
 msgstr "Systemstatus"
 
 #: blindscanadjust.h:121 tunerconfig.h:339
-#, fuzzy
 msgid "Cable"
 msgstr "Enable"
 
 #: blindscanadjust.h:122
-#, fuzzy
 msgid "Terrestrial"
 msgstr "Terrestrisch"
 
@@ -755,67 +719,54 @@ msgid "12"
 msgstr ""
 
 #: channellist.h:578
-#, fuzzy
 msgid "Move mode"
 msgstr "Verschiebe Modus"
 
 #: channellist.h:587
-#, fuzzy
 msgid "Remove mode"
 msgstr "Lschen nicht erfolgreich durchgefhrt."
 
 #: channellist.h:596
-#, fuzzy
 msgid "Copy mode"
 msgstr "Kopier Modus"
 
 #: channellist.h:605
-#, fuzzy
 msgid "Protect mode"
 msgstr "Men mit PIN schtzen"
 
 #: channellist.h:614
-#, fuzzy
 msgid "Edit mode"
 msgstr "gemischter Modus"
 
 #: channellist.h:689 channellist.h:1764 scan.h:530 skin_default_skin.xml.h:470
-#, fuzzy
 msgid "Radio"
 msgstr "Gefundene - Radio:"
 
 #: channellist.h:694 channellist.h:1759 scan.h:528
-#, fuzzy
 msgid "TV"
 msgstr "nach"
 
 #: channellist.h:702 channellist.h:1227 channellist.h:1228 channellist.h:1440
-#, fuzzy
 msgid "Bouquets"
 msgstr "Favoriten Liste"
 
 #: channellist.h:719 channellist.h:1580 skin_default_skin.xml.h:127
-#, fuzzy
 msgid "Channel"
 msgstr "Sendername"
 
 #: channellist.h:735 channellist.h:1261 channellist.h:1262 channellist.h:1514
-#, fuzzy
 msgid "Satellites"
 msgstr "Satellit"
 
 #: channellist.h:752 channellist.h:1329 channellist.h:1330 channellist.h:1654
-#, fuzzy
 msgid "Provider"
 msgstr "Provider:"
 
 #: channellist.h:771 channellist.h:772 channellist.h:1211 channellist.h:1212
-#, fuzzy
 msgid "All Channels"
 msgstr "MULTI EPG - Alle Sender"
 
 #: channellist.h:913
-#, fuzzy
 msgid "Copy providerlist successfull"
 msgstr "Sicherung erfolgreich erstellt"
 
@@ -824,7 +775,6 @@ msgid "Copy providerlist not ok"
 msgstr ""
 
 #: channellist.h:920
-#, fuzzy
 msgid "Copy satlist successfull"
 msgstr "Anonymous Login erfolgreich"
 
@@ -833,12 +783,10 @@ msgid "Copy satlist not ok"
 msgstr ""
 
 #: channellist.h:1006
-#, fuzzy
 msgid "Can't remove akive Service"
 msgstr "Es kann kein Service angelegt werden"
 
 #: channellist.h:1295 channellist.h:1296
-#, fuzzy
 msgid "Channels A-Z"
 msgstr "EPG Kanle: "
 
@@ -859,7 +807,6 @@ msgid "Move (B): "
 msgstr ""
 
 #: copyfile.h:823 copyfile.h:856
-#, fuzzy
 msgid "Move (KB): "
 msgstr "Verschoben (KB): "
 
@@ -872,7 +819,6 @@ msgid "Copy (B): "
 msgstr ""
 
 #: copyfile.h:832 copyfile.h:865
-#, fuzzy
 msgid "Copy (KB): "
 msgstr "Verschoben (KB): "
 
@@ -881,22 +827,18 @@ msgid "Copy (MB): "
 msgstr ""
 
 #: copyfile.h:839
-#, fuzzy
 msgid "Amount of files: "
 msgstr "Automatische Einbindung"
 
 #: copyfile.h:881 copyfile.h:882
-#, fuzzy
 msgid "file move error"
 msgstr "Lschen nicht erfolgreich durchgefhrt."
 
 #: copyfile.h:886 copyfile.h:887
-#, fuzzy
 msgid "file copy error"
 msgstr "Schreibfehler"
 
 #: copyfile.h:893 copyfile.h:894
-#, fuzzy
 msgid "wait for stopping"
 msgstr "Warten, Download wird beendet."
 
@@ -904,6 +846,46 @@ msgstr "Warten, Download wird beendet."
 #: plugins_lcdsamsung_skin.xml.h:2 skins_lcdpearl1_skin.xml.h:2
 #: skins_lcdsamsung_skin.xml.h:2
 msgid "---"
+msgstr ""
+
+#: dirsort.h:18 dirsort.h:19 dirsort.h:20 dirsort.h:21 dirsort.h:22
+#: dirsort.h:23 mc_imdb.h:78 mc_imdb.h:79 mc_imdb.h:80 mc_imdb.h:81
+#: mc_imdb.h:82 mc_view.h:17 mc_view.h:18 mc_view.h:19 mc_view.h:20
+#: mc_view.h:21 mc_view.h:22 plugins_autotimer_skin.xml.h:13
+#: plugins_callmonitor1_skin.xml.h:19 plugins_catcatch_skin.xml.h:7
+#: plugins_dlna_skin.xml.h:15 plugins_facebook_skin.xml.h:6
+#: plugins_filemanager_skin.xml.h:6 plugins_gmediarender_skin.xml.h:1
+#: plugins_imdbapi_skin.xml.h:11 plugins_imdb_skin.xml.h:11
+#: plugins_instar_skin.xml.h:17 plugins_keylock_skin.xml.h:1
+#: plugins_lcdpearl1_skin.xml.h:14 plugins_lcdsamsung_skin.xml.h:18
+#: plugins_mboxinfo_skin.xml.h:3 plugins_mc_skin.xml.h:70
+#: plugins_networkbrowser_skin.xml.h:37 plugins_news_skin.xml.h:5
+#: plugins_optimize_skin.xml.h:4 plugins_panel_skin.xml.h:28
+#: plugins_permtime_skin.xml.h:1 plugins_readerconfig_skin.xml.h:10
+#: plugins_rgui_skin.xml.h:9 plugins_stock_skin.xml.h:6
+#: plugins_stopifnotused_skin.xml.h:8 plugins_streaminfo_skin.xml.h:6
+#: plugins_tithek_skin.xml.h:14 plugins_tiwakeup_skin.xml.h:9
+#: plugins_tmc_skin.xml.h:18 plugins_tmdb_skin.xml.h:11
+#: plugins_tsSchnitt_skin.xml.h:11 plugins_weather_skin.xml.h:4
+#: plugins_wins3_skin.xml.h:4 plugins_zapback_skin.xml.h:7
+#: skin_default_skin.xml.h:735 skins_autotimer_skin.xml.h:13
+#: skins_callmonitor1_skin.xml.h:19 skins_catcatch_skin.xml.h:7
+#: skins_dlna_skin.xml.h:15 skins_facebook_skin.xml.h:6
+#: skins_filemanager_skin.xml.h:6 skins_gmediarender_skin.xml.h:1
+#: skins_imdbapi_skin.xml.h:11 skins_imdb_skin.xml.h:11
+#: skins_instar_skin.xml.h:17 skins_keylock_skin.xml.h:1
+#: skins_lcdpearl1_skin.xml.h:14 skins_lcdsamsung_skin.xml.h:18
+#: skins_mboxinfo_skin.xml.h:3 skins_mc_skin.xml.h:70
+#: skins_networkbrowser_skin.xml.h:37 skins_news_skin.xml.h:5
+#: skins_optimize_skin.xml.h:4 skins_panel_skin.xml.h:28
+#: skins_permtime_skin.xml.h:1 skins_readerconfig_skin.xml.h:10
+#: skins_rgui_skin.xml.h:9 skins_stock_skin.xml.h:6
+#: skins_stopifnotused_skin.xml.h:8 skins_streaminfo_skin.xml.h:6
+#: skins_tithek_skin.xml.h:14 skins_tiwakeup_skin.xml.h:9
+#: skins_tmc_skin.xml.h:18 skins_tmdb_skin.xml.h:11
+#: skins_tsSchnitt_skin.xml.h:11 skins_weather_skin.xml.h:4
+#: skins_wins3_skin.xml.h:4 skins_zapback_skin.xml.h:7 tithek_mainmenu.h:1
+msgid ""
 msgstr ""
 
 #: diseqcconfig.h:9 diseqcconfig.h:16
