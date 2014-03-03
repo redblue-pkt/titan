@@ -46,7 +46,7 @@ cat "$HOME"/ipk/source*/*/CONTROL/control | grep Description: | sort -u | sed 's
 cat "$HOME"/flashimg/source.titan/skins/tithek/tithekmainmenu/*.list | grep -v internettv | cut -d"#" -f1 | sort -u | sed -e 's/^/tmpstr = _("/' | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/source.titan/titan/tools/tmp/tithek_mainmenu.h
 #cat /var/www/atemio/web/mediathek/*/*.category.list  | cut -d"#" -f1 | sort -u | sed -e 's/^/tmpstr = _("/' | grep -v link= | grep -v title= | tr '\0' '#' | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/source.titan/titan/tools/tmp/tithek_submenu.h
 
-file --mime-encoding "$HOME"/flashimg/source.titan/po/*/*/*.po >> "$HOME"/flashimg/source.titan/titan/tools/error/coding.log 2>&1
+file --mime-encoding "$HOME"/flashimg/source.titan/po/*/*/*.po >> "$HOME"/flashimg/source.titan/error/coding.log 2>&1
 
 error=0
 #rm -rf /home/atemio/flashimg/source.titan/po/fr
@@ -73,17 +73,17 @@ for ROUND in $POLIST; do
 		if [ ! -e "$ROUND_UTF" ] || [ `cat "$ROUND_UTF" | wc -l` -eq 0 ]; then error="2"; break;fi
 
 		cmd="xgettext --omit-header -j -k_ *.* -o $ROUND_UTF"
-		echo "[createpo.sh] $cmd" >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log
-		$cmd >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log 2>&1
+		echo "[createpo.sh] $cmd" >> "$HOME"/flashimg/source.titan/error/po.log
+		$cmd >> "$HOME"/flashimg/source.titan/error/po.log 2>&1
 		if [ ! -e "$ROUND_UTF" ] || [ `cat "$ROUND_UTF" | wc -l` -eq 0 ]; then error="3"; break;fi
-		log=`cat "$HOME"/flashimg/source.titan/titan/tools/error/error.log`
+		log=`cat "$HOME"/flashimg/source.titan/error/po.log`
 		if [ `echo $log | grep "fatal error" | wc -l` -gt 0 ]; then error="4"; break;fi
 
 		cmd="xgettext --omit-header -k_ *.* -o $ROUND_NEW"
-		echo "[createpo.sh] $cmd" >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log
-		$cmd >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log 2>&1
+		echo "[createpo.sh] $cmd" >> "$HOME"/flashimg/source.titan/error/po.log
+		$cmd >> "$HOME"/flashimg/source.titan/error/po.log 2>&1
 		if [ ! -e "$ROUND_NEW" ] || [ `cat "$ROUND_NEW" | wc -l` -eq 0 ]; then error="5"; break;fi
-		log=`cat "$HOME"/flashimg/source.titan/titan/tools/error/error.log`
+		log=`cat "$HOME"/flashimg/source.titan/error/po.log`
 		if [ `echo $log | grep "fatal error" | wc -l` -gt 0 ]; then error="6";break;fi
 
 		echo "[createpo.sh] msgmerge $ROUND_UTF $ROUND_NEW > $ROUND_NEW_MERGE"
@@ -120,10 +120,10 @@ fi
 		if [ ! -e "$OUTFILE_PO" ] || [ `cat "$OUTFILE_PO" | wc -l` -eq 0 ]; then error="11"; break;fi
 
 		cmd="msgfmt -v $OUTFILE_PO -o $OUTFILE_MO"
-		echo "[createpo.sh] $cmd" >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log
-		$cmd >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log 2>&1
+		echo "[createpo.sh] $cmd" >> "$HOME"/flashimg/source.titan/error/po.log
+		$cmd >> "$HOME"/flashimg/source.titan/error/po.log 2>&1
 		if [ ! -e "$OUTFILE_MO" ] || [ `cat "$OUTFILE_MO" | wc -l` -eq 0 ]; then error="12"; break;fi
-		log=`cat "$HOME"/flashimg/source.titan/titan/tools/error/error.log`
+		log=`cat "$HOME"/flashimg/source.titan/error/po.log`
 		if [ `echo $log | grep "fatal error" | wc -l` -gt 0 ]; then error="13"; break;fi
 
 		iconv -f UTF-8 -t ISO-8859-1 $ROUND_NEW_MERGE > $ROUND
@@ -146,10 +146,10 @@ if [ $error != 0 ];then
 	echo "[createpo.sh] found error($error)"
 fi
 
-file --mime-encoding "$HOME"/flashimg/source.titan/po/*/*/*.po >> "$HOME"/flashimg/source.titan/titan/tools/error/coding.log 2>&1
+file --mime-encoding "$HOME"/flashimg/source.titan/po/*/*/*.po >> "$HOME"/flashimg/source.titan/error/coding.log 2>&1
 
 echo "[createpo.sh] ###################### error log start ##########################"
-cat "$HOME"/flashimg/source.titan/titan/tools/error/error.log
+cat "$HOME"/flashimg/source.titan/error/po.log
 echo "[createpo.sh] ####################### error log end ###########################"
 
 echo "[createpo.sh] check user $SVNUSER"
@@ -163,28 +163,28 @@ if [ "$SVNUSER" = "aafsvn" ] && [ "$GROUP" = "dev" ] && [ "$error" = "0" ];then
 elif [ "$SVNUSER" = "aafsvn" ] && [ "$GROUP" = "dev" ];then
 	echo "[createpo.sh] svn commit -m [titan] ERROR autoupdate po files"
 	
-	cp -a "$HOME"/flashimg/source.titan/titan/tools/error/error.log "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
+	cp -a "$HOME"/flashimg/source.titan/error/po.log "$HOME"/flashimg/source.titan/error/create_po_error_code
 	
-	LINE=`cat "$HOME"/flashimg/source.titan/titan/tools/error/error.log | grep -n "fatal error" | cut -d: -f1`
+	LINE=`cat "$HOME"/flashimg/source.titan/error/po.log | grep -n "fatal error" | cut -d: -f1`
 	if [ ! -z "$LINE" ];then
 		LINE=`expr $LINE - 1`
-		FILE=`cat "$HOME"/flashimg/source.titan/titan/tools/error/error.log | sed -ne ""$LINE"p" | cut -d: -f1`
-		LINE=`cat "$HOME"/flashimg/source.titan/titan/tools/error/error.log | sed -ne ""$LINE"p" | cut -d: -f2`
+		FILE=`cat "$HOME"/flashimg/source.titan/error/po.log | sed -ne ""$LINE"p" | cut -d: -f1`
+		LINE=`cat "$HOME"/flashimg/source.titan/error/po.log | sed -ne ""$LINE"p" | cut -d: -f2`
 		LINE1=`expr $LINE - 1`
 		LINE2=`expr $LINE + 1`
-		echo "[createpo.sh] ############################################" >> "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
-		echo "[createpo.sh] ###### error should be in the middle #######" >> "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
-		echo "[createpo.sh] ############################################" >> "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
-		cat -n "$FILE" | sed -ne ""$LINE1","$LINE2"p" >> "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
-		echo "[createpo.sh] ############################################" >> "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
+		echo "[createpo.sh] ############################################" >> "$HOME"/flashimg/source.titan/error/create_po_error_code
+		echo "[createpo.sh] ###### error should be in the middle #######" >> "$HOME"/flashimg/source.titan/error/create_po_error_code
+		echo "[createpo.sh] ############################################" >> "$HOME"/flashimg/source.titan/error/create_po_error_code
+		cat -n "$FILE" | sed -ne ""$LINE1","$LINE2"p" >> "$HOME"/flashimg/source.titan/error/create_po_error_code
+		echo "[createpo.sh] ############################################" >> "$HOME"/flashimg/source.titan/error/create_po_error_code
 	fi
 
-	echo "[createpo.sh] ################## coding #################" >> "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
-	cat "$HOME"/flashimg/source.titan/titan/tools/error/coding.log >> "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
+	echo "[createpo.sh] ################## coding #################" >> "$HOME"/flashimg/source.titan/error/create_po_error_code
+	cat "$HOME"/flashimg/source.titan/error/coding.log >> "$HOME"/flashimg/source.titan/error/create_po_error_code
 
-	cd "$HOME"/flashimg/source.titan/titan/tools/error
+	cd "$HOME"/flashimg/source.titan/error
 	svn commit -m "[titan] ERROR autoupdate po files"
-	svn commit "$HOME"/flashimg/source.titan/titan/tools/error/create_po_error_code
+	svn commit "$HOME"/flashimg/source.titan/error/create_po_error_code
 else
 	echo "[createpo.sh] skip: svn commit"
 fi
