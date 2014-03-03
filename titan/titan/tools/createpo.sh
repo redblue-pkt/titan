@@ -46,6 +46,8 @@ cat "$HOME"/ipk/source*/*/CONTROL/control | grep Description: | sort -u | sed 's
 cat "$HOME"/flashimg/source.titan/skins/tithek/tithekmainmenu/*.list | grep -v internettv | cut -d"#" -f1 | sort -u | sed -e 's/^/tmpstr = _("/' | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/source.titan/titan/tools/tmp/tithek_mainmenu.h
 #cat /var/www/atemio/web/mediathek/*/*.category.list  | cut -d"#" -f1 | sort -u | sed -e 's/^/tmpstr = _("/' | grep -v link= | grep -v title= | tr '\0' '#' | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/source.titan/titan/tools/tmp/tithek_submenu.h
 
+file --mime-encoding "$HOME"/flashimg/source.titan/po/*/*/*.po >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log 2>&1
+
 error=0
 #rm -rf /home/atemio/flashimg/source.titan/po/fr
 for ROUND in $POLIST; do
@@ -143,6 +145,8 @@ done
 if [ $error != 0 ];then
 	echo "[createpo.sh] found error($error)"
 fi
+
+file --mime-encoding "$HOME"/flashimg/source.titan/po/*/*/*.po >> "$HOME"/flashimg/source.titan/titan/tools/error/error.log 2>&1
 
 echo "[createpo.sh] ###################### error log start ##########################"
 cat "$HOME"/flashimg/source.titan/titan/tools/error/error.log
