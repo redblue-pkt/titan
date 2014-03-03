@@ -25,4 +25,10 @@
 [createpo.sh] xgettext --omit-header -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.po_auto.utf.po
 /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.po_auto.utf.po:24: end-of-line within string
 xgettext: found 1 fatal error
+[createpo.sh] ############################################
+[createpo.sh] ###### error should be in the middle #######
+[createpo.sh] ############################################
+msgstr "
 
+msgid "EXIT"
+[createpo.sh] ############################################
