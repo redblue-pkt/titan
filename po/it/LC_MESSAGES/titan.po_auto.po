@@ -720,7 +720,7 @@ msgstr ""
 
 #: channellist.h:578
 msgid "Move mode"
-msgstr "Modalitï¿½ spostamento"
+msgstr "ModalitÃ¯Â¿Â½ spostamento"
 
 #: channellist.h:587
 msgid "Remove mode"
@@ -1103,7 +1103,7 @@ msgstr "seleziona"
 #: mc_pictureplayer.h:363 mc_pictureplayer.h:456 mc_videoplayer.h:739
 #: mc_videoplayer.h:876 play.h:1489
 msgid "Can't start playback !"
-msgstr "Non è possibile riprodurre!"
+msgstr "Non Ã¨ possibile riprodurre!"
 
 #: epg.h:182 skin_default_skin.xml.h:574
 msgid "Single (EPG)"
@@ -1482,7 +1482,7 @@ msgstr "A"
 
 #: filemanager.h:219 filemanager.h:226
 msgid "Move File"
-msgstr "Modalità spostamento"
+msgstr "ModalitÃ  spostamento"
 
 #: filemanager.h:233 filemanager.h:235
 msgid "Copy File"
@@ -1578,7 +1578,7 @@ msgstr "use medium for backup"
 
 #: harddisk.h:260
 msgid "del medium for backup"
-msgstr "L'unità non viene utilizzata il backup e il ripristino"
+msgstr "L'unitÃ  non viene utilizzata il backup e il ripristino"
 
 #: harddisk.h:345
 msgid "Are you sure you want to delete this directory?"
@@ -2945,7 +2945,7 @@ msgstr "Frequenza"
 
 #: panel_settings_overclocking.h:276 settings_overclocking.h:276
 msgid "videmode"
-msgstr "Modalità spostamento"
+msgstr "ModalitÃ  spostamento"
 
 #: panel_settings_wizard.h:6
 msgid ""
@@ -3860,7 +3860,7 @@ msgstr "Port per Proxyserver"
 
 #: plugins_networkbrowser_skin.xml.h:23 skins_networkbrowser_skin.xml.h:23
 msgid "proxyuser"
-msgstr "User für Proxyserver"
+msgstr "User fÃ¼r Proxyserver"
 
 #: plugins_networkbrowser_skin.xml.h:24 skins_networkbrowser_skin.xml.h:24
 msgid "rsize"
@@ -3910,7 +3910,7 @@ msgstr "wsize"
 
 #: plugins_news_skin.xml.h:1 skins_news_skin.xml.h:1 tpk_showname.h:70
 msgid "News"
-msgstr "Novità"
+msgstr "NovitÃ "
 
 #: plugins_news_skin.xml.h:2 plugins_stock_skin.xml.h:3
 #: skins_news_skin.xml.h:2 skins_stock_skin.xml.h:3
@@ -4611,23 +4611,23 @@ msgstr "Giorni della settimana"
 
 #: rectimer.h:1059 skin_default_skin.xml.h:381
 msgid "Monday"
-msgstr "Lunedì"
+msgstr "LunedÃ¬"
 
 #: rectimer.h:1060 skin_default_skin.xml.h:673
 msgid "Tuesday"
-msgstr "Martedì"
+msgstr "MartedÃ¬"
 
 #: rectimer.h:1061 skin_default_skin.xml.h:725
 msgid "Wednesday"
-msgstr "Mercoledì"
+msgstr "MercoledÃ¬"
 
 #: rectimer.h:1062 skin_default_skin.xml.h:645
 msgid "Thursday"
-msgstr "Giovedì"
+msgstr "GiovedÃ¬"
 
 #: rectimer.h:1063 skin_default_skin.xml.h:242
 msgid "Friday"
-msgstr "Venerdì"
+msgstr "VenerdÃ¬"
 
 #: rectimer.h:1064 skin_default_skin.xml.h:529
 msgid "Saturday"
@@ -4926,7 +4926,7 @@ msgstr "canale non trovato !"
 
 #: service.h:940
 msgid "Can't open frontend dev or Frontend Type unknown!"
-msgstr "Frontend non può essere aperto o tipo sconosciuto"
+msgstr "Frontend non puÃ² essere aperto o tipo sconosciuto"
 
 #: service.h:945
 msgid "Channellist empty or corrupt (channel not found)!"
@@ -5210,7 +5210,7 @@ msgstr "Azione dopoTimeshift"
 
 #: skin_default_skin.xml.h:69
 msgid "Age Protect"
-msgstr "Protezione Età da"
+msgstr "Protezione EtÃ  da"
 
 #: skin_default_skin.xml.h:70
 msgid "Aktion after"
@@ -5379,7 +5379,7 @@ msgstr "Favoriti"
 
 #: skin_default_skin.xml.h:115
 msgid "Brightness"
-msgstr "Luminosità"
+msgstr "LuminositÃ "
 
 #: skin_default_skin.xml.h:117
 msgid "c"
@@ -6770,7 +6770,7 @@ msgid ""
 "Please contact Atemio for activation. Use to navigate the control cross and "
 "the extra buttons displayed with your remote control to select."
 msgstr ""
-"Si prega di contattare Atemio, in caso che l Attivazione non è ancora in "
+"Si prega di contattare Atemio, in caso che l Attivazione non Ã¨ ancora in "
 "vigore.\n"
 "Utilizzare il controllo a croce ed i pulsanti aggiuntivi visualizzati con il "
 "telecomando per navigare. "
@@ -7157,7 +7157,7 @@ msgstr "Send all CAID to modules"
 
 #: skin_default_skin.xml.h:554
 msgid "Serial Input"
-msgstr "Sblocca menù"
+msgstr "Sblocca menÃ¹"
 
 #: skin_default_skin.xml.h:555
 msgid "Service"

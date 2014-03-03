@@ -1,4 +1,4 @@
-Ôªømsgid ""
+msgid ""
 msgstr ""
 "Project-Id-Version: TitanNit 1.49\n"
 "Report-Msgid-Bugs-To: \n"
@@ -320,7 +320,7 @@ msgid "Bouquets"
 msgstr "Favoriti"
 
 msgid "Brightness"
-msgstr "Luminosit‡"
+msgstr "Luminosit√†"
 
 msgid "broadcast"
 msgstr "Trassmissione"
@@ -347,13 +347,13 @@ msgid "Can't get EPG time or EPG endtime not ok"
 msgstr "EPG non puo essere trovato oppure non e ok"
 
 msgid "Can't start playback !"
-msgstr "Non Ë possibile riprodurre!"
+msgstr "Non √® possibile riprodurre!"
 
 msgid "Can't start timeshift play !"
 msgstr "Impossibile avviare Timeshift"
 
 msgid "Can't get Network Infos"
-msgstr "Non Ë possibile ottenere informazioni di rete"
+msgstr "Non √® possibile ottenere informazioni di rete"
 
 msgid "can't create or delete directory"
 msgstr "Cartella non puo essere cambiata"
@@ -370,7 +370,7 @@ msgid
 msgstr "Nessun Tuner libero trovato"
 
 msgid "Can't open frontend dev or Frontend Type unknown!"
-msgstr "Frontend non puÚ essere aperto o tipo sconosciuto"
+msgstr "Frontend non pu√≤ essere aperto o tipo sconosciuto"
 
 msgid "CHANGE"
 msgstr "Modifica"
@@ -514,7 +514,7 @@ msgid "del medium for swap"
 msgstr "Non usare l unita per lo Swap"
 
 msgid "del medium for backup"
-msgstr "L'unit‡ non viene utilizzata il backup e il ripristino"
+msgstr "L'unit√† non viene utilizzata il backup e il ripristino"
 
 msgid "daily"
 msgstr "giornagliero"
@@ -647,7 +647,7 @@ msgid "Error file not supported"
 msgstr "Errore File non Supportato!"
 
 msgid "Error: create timer thread !!"
-msgstr "Errore: timer non puÚ essere creato!"
+msgstr "Errore: timer non pu√≤ essere creato!"
 
 msgid "Error: open rc device !!"
 msgstr "Error: open rc device!"
@@ -810,7 +810,7 @@ msgid "Frequency:"
 msgstr "Frequenza:"
 
 msgid "Friday"
-msgstr "VenerdÏ"
+msgstr "Venerd√¨"
 
 msgid "fsckrecord"
 msgstr "fsckrecord"
@@ -1151,7 +1151,7 @@ msgid "Module Config"
 msgstr "Impostazione Moduli"
 
 msgid "Monday"
-msgstr "LunedÏ"
+msgstr "Luned√¨"
 
 msgid "Mounts"
 msgstr "Mounts"
@@ -1561,7 +1561,7 @@ msgid "proxyport"
 msgstr "Port per Proxyserver"
 
 msgid "proxyuser"
-msgstr "User f¸r Proxyserver"
+msgstr "User f√ºr Proxyserver"
 
 msgid "PSK auto"
 msgstr "PSK automatico"
@@ -2245,7 +2245,7 @@ msgid "Threshold"
 msgstr "Threshold"
 
 msgid "Thursday"
-msgstr "GiovedÏ"
+msgstr "Gioved√¨"
 
 msgid "Time to sleep"
 msgstr "standby HDD"
@@ -2297,7 +2297,7 @@ msgid "TSID:"
 msgstr "TSID:"
 
 msgid "Tuesday"
-msgstr "MartedÏ"
+msgstr "Marted√¨"
 
 msgid "Tuner Configuration"
 msgstr "Impostazione Tuner"
@@ -2486,7 +2486,7 @@ msgid "webif"
 msgstr "Web Interface"
 
 msgid "Wednesday"
-msgstr "MercoledÏ"
+msgstr "Mercoled√¨"
 
 msgid "weekly"
 msgstr "Giorno della settimana"
@@ -2507,10 +2507,10 @@ msgid "wsize"
 msgstr "wsize"
 
 msgid "yes"
-msgstr "sÏ"
+msgstr "s√¨"
 
 msgid "Yes"
-msgstr "SÏ"
+msgstr "S√¨"
 
 msgid "YES"
 msgstr "SI"
@@ -2540,7 +2540,7 @@ msgid "Show Modules"
 msgstr "Mostra Moduli CI"
 
 msgid "Age Protect"
-msgstr "Protezione Et‡ da"
+msgstr "Protezione Et√† da"
 
 msgid "Protect Channel Freetime (min)"
 msgstr "Protect Channel Freetime (min)"
@@ -3044,7 +3044,7 @@ msgid "Server Name"
 msgstr "Nome del server"
 
 msgid "News"
-msgstr "Novit‡"
+msgstr "Novit√†"
 
 msgid "BROWSER"
 msgstr "Internetbrowser"
@@ -3089,7 +3089,7 @@ msgid "Remove mode"
 msgstr "Remove mode"
 
 msgid "Move mode"
-msgstr "Modalit‡ spostamento"
+msgstr "Modalit√† spostamento"
 
 msgid "Copy mode"
 msgstr "Copy mode"
@@ -3325,7 +3325,7 @@ msgstr "Press -restore- and your saved settings will be restored from your swaps
 
 msgid "Can't start system update\n"
 "Please remove Stick/HDD and try again"
-msgstr "Aggiornamento del sistema non puÚ essere avviato!\n"
+msgstr "Aggiornamento del sistema non pu√≤ essere avviato!\n"
 "Si prega di rimuovere tutti i dispositivi USB e riprova."
 
 msgid "wireless"
@@ -3413,7 +3413,7 @@ msgid "Code ok"
 msgstr "Il suo codice e stato accetato"
 
 msgid "Serial Input"
-msgstr "Sblocca men˘"
+msgstr "Sblocca men√π"
 
 msgid "Receiver unlock"
 msgstr "Sbloccare Ricevitore"
@@ -3434,7 +3434,7 @@ msgstr "il codice non puo essere salvato.\n"
 "Per avere piu spazio libero."
 
 msgid "Please contact Atemio for activation. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
-msgstr "Si prega di contattare Atemio, in caso che l Attivazione non Ë ancora in vigore.\n"
+msgstr "Si prega di contattare Atemio, in caso che l Attivazione non √® ancora in vigore.\n"
 "Utilizzare il controllo a croce ed i pulsanti aggiuntivi visualizzati con il telecomando per navigare. "
 
 msgid "Alternativ Audio Firmware not working korrekt with all videos (DTSDOWNMIX)!"
