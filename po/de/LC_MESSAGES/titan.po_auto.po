@@ -3189,7 +3189,7 @@ msgstr "EPG Info"
 
 #: play.h:1295
 msgid "Record in progress"
-msgstr ""
+msgstr "Aufnahme läuft"
 
 #: play.h:1296
 msgid "Really Delete ?"
@@ -3212,7 +3212,7 @@ msgstr ""
 
 #: plugins_autotimer_skin.xml.h:1 skins_autotimer_skin.xml.h:1
 msgid "AutoTimer Settings"
-msgstr ""
+msgstr "AutoTimer Einstellungen"
 
 #: plugins_autotimer_skin.xml.h:2 skins_autotimer_skin.xml.h:2
 msgid "afterevent"
@@ -3220,7 +3220,7 @@ msgstr ""
 
 #: plugins_autotimer_skin.xml.h:3 skins_autotimer_skin.xml.h:3
 msgid "begin search"
-msgstr ""
+msgstr "Suche starten"
 
 #: plugins_autotimer_skin.xml.h:4 skins_autotimer_skin.xml.h:4
 msgid "channel (EPG=Current channel)"
@@ -3228,7 +3228,7 @@ msgstr ""
 
 #: plugins_autotimer_skin.xml.h:5 skins_autotimer_skin.xml.h:5
 msgid "end search"
-msgstr ""
+msgstr "Suche beenden"
 
 #: plugins_autotimer_skin.xml.h:6 skins_autotimer_skin.xml.h:6
 msgid "event"
@@ -3268,15 +3268,15 @@ msgstr ""
 
 #: plugins_autotimer_skin.xml.h:11 skins_autotimer_skin.xml.h:11
 msgid "Timer1 activ"
-msgstr ""
+msgstr "Timer1 aktiv"
 
 #: plugins_autotimer_skin.xml.h:12 skins_autotimer_skin.xml.h:12
 msgid "Timer2 activ"
-msgstr ""
+msgstr "Timer2 aktiv"
 
 #: plugins_callmonitor1_skin.xml.h:1 skins_callmonitor1_skin.xml.h:1
 msgid "CallMonitor Settings"
-msgstr ""
+msgstr "CallMonitor Einstellungen"
 
 #: plugins_callmonitor1_skin.xml.h:2 skins_callmonitor1_skin.xml.h:2
 msgid "1.Rufnummer"
