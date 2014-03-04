@@ -367,7 +367,7 @@ msgstr "Datum umgekehrt"
 
 #: adjust.h:105
 msgid "Power Menu"
-msgstr "Ausschaltmenu"
+msgstr "Ausschaltmenü"
 
 #: adjust.h:106 skin_default_skin.xml.h:454
 msgid "Power Off"
@@ -450,15 +450,15 @@ msgstr "Ausschalten"
 
 #: adjust.h:163
 msgid "anim. width"
-msgstr "anim. Breite"
+msgstr "Anim. Breite"
 
 #: adjust.h:164
 msgid "anim. height"
-msgstr "anim. Höhe"
+msgstr "Anim. Höhe"
 
 #: adjust.h:165
 msgid "anim. both"
-msgstr "anim. beides"
+msgstr "Anim. beides"
 
 #: adjust.h:168
 msgid "very fast"
@@ -494,11 +494,11 @@ msgstr ""
 
 #: adjust.h:211
 msgid "yes / vzap 1 sec"
-msgstr "Ja / VZAP 1 sek"
+msgstr "Ja / VZAP 1 Sek"
 
 #: adjust.h:212
 msgid "yes / vzap 2 sec"
-msgstr "Ja / VZAP 2 sek"
+msgstr "Ja / VZAP 2 Sek"
 
 #: adjust.h:213
 msgid "yes / vzap endless"
@@ -595,7 +595,7 @@ msgstr "aus"
 
 #: avsettings.h:69
 msgid "redKey"
-msgstr "ROte Taste"
+msgstr "Rote Taste"
 
 #: avsettings.h:78
 msgid "4 sec"
@@ -798,15 +798,15 @@ msgstr "Sender A-Z"
 
 #: copyfile.h:810
 msgid "Filesize (B): "
-msgstr "Dateigrösse (B): "
+msgstr "Dateigröße (B): "
 
 #: copyfile.h:812 download.h:73
 msgid "Filesize (KB): "
-msgstr "Dateigrösse (KB): "
+msgstr "Dateigröße (KB): "
 
 #: copyfile.h:814
 msgid "Filesize (MB): "
-msgstr "Dateigrösse (MB): "
+msgstr "Dateigröße (MB): "
 
 #: copyfile.h:821 copyfile.h:854
 msgid "Move (B): "
@@ -908,27 +908,27 @@ msgstr ""
 
 #: diseqcconfig.h:9 diseqcconfig.h:16
 msgid "committed, toneburst"
-msgstr ""
+msgstr "Toneburst ausgeführt"
 
 #: diseqcconfig.h:10 diseqcconfig.h:17
 msgid "toneburst, committed"
-msgstr ""
+msgstr "Toneburst ausgeführt"
 
 #: diseqcconfig.h:18
 msgid "committed, uncommitted, toneburst"
-msgstr ""
+msgstr "Toneburst ausgeführt, nicht ausgeführt"
 
 #: diseqcconfig.h:19
 msgid "toneburst, committed, uncommitted"
-msgstr ""
+msgstr "Toneburst ausgeführt, nicht ausgeführt"
 
 #: diseqcconfig.h:20
 msgid "uncommitted, committed, toneburst"
-msgstr ""
+msgstr "Toneburst ausgeführt, nicht ausgeführt"
 
 #: diseqcconfig.h:21
 msgid "toneburst, uncommitted, committed"
-msgstr ""
+msgstr "Toneburst ausgeführt, nicht ausgeführt"
 
 #: diseqcconfig.h:128
 msgid "DiSEqC 1.0"
@@ -948,7 +948,7 @@ msgstr ""
 
 #: diseqcconfig.h:132
 msgid "Tonburst A/B"
-msgstr ""
+msgstr "Toneburst A/B"
 
 #: diseqcconfig.h:135 diseqcconfig.h:140 diseqcconfig.h:159 transponder.h:222
 #: transponder.h:232 transponder.h:329 transponder.h:347 transponder.h:374
@@ -1106,7 +1106,7 @@ msgstr "Auswerfen"
 #: dvdplay.h:29 play.h:1417 plugins_dlna_skin.xml.h:10
 #: skins_dlna_skin.xml.h:10
 msgid "SELECT"
-msgstr "auswählen"
+msgstr "Auswählen"
 
 #: dvdplay.h:62 mc_audioplayer.h:599 mc_audioplayer.h:702 mc_global.h:773
 #: mc_global.h:1020 mc_pictureplayer.h:95 mc_pictureplayer.h:237
@@ -1255,11 +1255,11 @@ msgstr "Bitte Feed Addresse eingeben"
 
 #: extensions.h:82
 msgid "Installation start"
-msgstr "Installation begonnen"
+msgstr "Installation gestartet"
 
 #: extensions.h:84
 msgid "Remove start"
-msgstr "Entfernen begonnen"
+msgstr "Entfernen gestartet"
 
 #: extensions.h:93
 msgid "New free space (KB): "
@@ -1271,7 +1271,7 @@ msgstr "Installation erfolgreich durchgeführt."
 
 #: extensions.h:101
 msgid "Install error"
-msgstr "Installation nicht erfolgreich durchgeführt."
+msgstr "Installation fehlgeschlagen."
 
 #: extensions.h:103
 msgid "Remove success"
@@ -1279,7 +1279,7 @@ msgstr "Löschen erfolgreich durchgeführt."
 
 #: extensions.h:105
 msgid "Remove error"
-msgstr "Löschen nicht erfolgreich durchgeführt."
+msgstr "Löschen fehlgeschlagen."
 
 #: extensions.h:125
 msgid "Install to MNT"
@@ -1299,7 +1299,7 @@ msgstr "Installation Auswahl"
 
 #: extensions.h:170 extensions.h:221 extensions.h:478
 msgid "Tpk Install Info"
-msgstr "Info zur TPK installation"
+msgstr "Info zur TPK Installation"
 
 #: extensions.h:170
 msgid "Can't install Package. Package to big."
@@ -1419,7 +1419,7 @@ msgid ""
 "Facebook allready registered,\n"
 "Make new registration ?"
 msgstr ""
-"Sind Sie bereits bei Facebook angemeldet?Möchten Sie sich Registrieren?"
+"Sind Sie bereits bei Facebook angemeldet? Möchten Sie sich Registrieren?"
 
 #: facebook.h:471
 msgid "Group created"
@@ -1431,7 +1431,7 @@ msgstr "Ereignis angelegt"
 
 #: facebook.h:473
 msgid "Status update"
-msgstr "STatus aktualisiert"
+msgstr "Status aktualisiert"
 
 #: facebook.h:474
 msgid "Post on wall from another user"
@@ -1533,7 +1533,7 @@ msgstr ""
 
 #: global.h:6385 keyactions.h:241
 msgid "ERROR cant read res"
-msgstr "Abbruch, Auflösungsstatus nicht Verfügbar"
+msgstr "Abbruch, Auflösungsstatus nicht verfügbar"
 
 #: gmediarender.h:109
 msgid "Servername"
@@ -1679,7 +1679,7 @@ msgid ""
 "You must first install plugin parted, then you can use this panel."
 msgstr ""
 "Festplattengröße über 2TB werden nicht unterstützt!\n"
-"Sie müßen erst die Erweiterung 'parted' installieren!\n"
+"Sie müssen erst die Erweiterung 'parted' installieren!\n"
 "Anschließend können Sie die Festplatte einrichten."
 
 #: harddisk.h:632
@@ -1712,7 +1712,7 @@ msgid ""
 "system check between 30 minutes and 1.5 hours."
 msgstr ""
 "Information: Bei dieser Festplattengröße kann ein\n"
-"Filesystemcheck zwischen 30min und 1,5 Stunden dauern."
+"Filesystemcheck zwischen 30 Min und 1,5 Stunden dauern."
 
 #: harddisk.h:805
 msgid ""
@@ -1786,7 +1786,7 @@ msgstr "Testsender Eintrag fehlerhaft"
 
 #: hwtest.h:113
 msgid "can't create new channel"
-msgstr "Neuer Sender kan nnciht angelegt werden"
+msgstr "Neuer Sender kann nicht angelegt werden"
 
 #: hwtest.h:153 hwtest.h:195
 msgid "[S]Lock & Search"
@@ -1885,7 +1885,7 @@ msgstr "nicht vorhanden"
 
 #: hwtest.h:386
 msgid "Smartcard Ports found: "
-msgstr ""
+msgstr "Smartcard Ports gefunden"
 
 #: hwtest.h:427
 msgid "USB Ports found: "
@@ -1917,7 +1917,7 @@ msgstr "Serieller Anschluß OK"
 
 #: hwtest.h:566
 msgid "FAIL Serial Port"
-msgstr "Serieller Anschluß Fehlerhaft"
+msgstr "Serieller Anschluß fehlerhaft"
 
 #: hwtest.h:578
 msgid "LNB off / 22K off: OK"
@@ -1953,7 +1953,7 @@ msgstr "LNB 13V/22K An: Fehler"
 
 #: hwtest.h:679
 msgid "SUCESS Flash/Nand"
-msgstr "Flash/Nand Erfolgreich"
+msgstr "Flash/Nand erfolgreich"
 
 #: hwtest.h:681
 msgid "FAIL Flash/Nand (/var and /mnt)"
@@ -6869,7 +6869,7 @@ msgstr "Wiedergeben"
 
 #: skin_default_skin.xml.h:439
 msgid "Playbackbuffer Size"
-msgstr "Wiedergabepuffer - Grösse (http) Streams"
+msgstr "Wiedergabepuffer - Größe (http) Streams"
 
 #: skin_default_skin.xml.h:440
 msgid "Player for .ts"
