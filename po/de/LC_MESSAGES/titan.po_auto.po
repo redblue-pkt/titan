@@ -908,27 +908,27 @@ msgstr ""
 
 #: diseqcconfig.h:9 diseqcconfig.h:16
 msgid "committed, toneburst"
-msgstr "Toneburst ausgeführt"
+msgstr ""
 
 #: diseqcconfig.h:10 diseqcconfig.h:17
 msgid "toneburst, committed"
-msgstr "Toneburst ausgeführt"
+msgstr ""
 
 #: diseqcconfig.h:18
 msgid "committed, uncommitted, toneburst"
-msgstr "Toneburst ausgeführt, nicht ausgeführt"
+msgstr ""
 
 #: diseqcconfig.h:19
 msgid "toneburst, committed, uncommitted"
-msgstr "Toneburst ausgeführt, nicht ausgeführt"
+msgstr ""
 
 #: diseqcconfig.h:20
 msgid "uncommitted, committed, toneburst"
-msgstr "Toneburst ausgeführt, nicht ausgeführt"
+msgstr ""
 
 #: diseqcconfig.h:21
 msgid "toneburst, uncommitted, committed"
-msgstr "Toneburst ausgeführt, nicht ausgeführt"
+msgstr ""
 
 #: diseqcconfig.h:128
 msgid "DiSEqC 1.0"
