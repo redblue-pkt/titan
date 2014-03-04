@@ -846,7 +846,8 @@ msgstr "Fehler beim Kopieren"
 
 #: copyfile.h:893 copyfile.h:894
 msgid "wait for stopping"
-msgstr "Vorgang Abgebrochen\n"
+msgstr ""
+"Vorgang Abgebrochen\n"
 "Bitte warten!"
 
 #: dir.h:83 dir.h:92 dir.h:101 dir.h:110 plugins_lcdpearl1_skin.xml.h:2
@@ -1368,7 +1369,8 @@ msgstr "Erweiterung konnte nicht gelöscht werden"
 
 #: extensions.h:304
 msgid "TPK Remove done, your system will reboot !"
-msgstr "Die Erweiterung wurde erfolgreich entfernt.\n"
+msgstr ""
+"Die Erweiterung wurde erfolgreich entfernt.\n"
 "Ihr Receiver wird jetzt neu starten."
 
 #: extensions.h:336 extensions.h:478
@@ -1417,8 +1419,7 @@ msgid ""
 "Facebook allready registered,\n"
 "Make new registration ?"
 msgstr ""
-"Sind Sie bereits bei Facebook angemeldet?"
-"Möchten Sie sich Registrieren?"
+"Sind Sie bereits bei Facebook angemeldet?Möchten Sie sich Registrieren?"
 
 #: facebook.h:471
 msgid "Group created"
@@ -1540,7 +1541,8 @@ msgstr ""
 
 #: gmediarender.h:113
 msgid "Wait for connect or press EXIT"
-msgstr "Warten Sie, bis die Verbindung hergestellt wurde\n"
+msgstr ""
+"Warten Sie, bis die Verbindung hergestellt wurde\n"
 "oder brechen Sie durch -Exit- den Vorgang ab!"
 
 #: gmultiepg.h:546 gmultiepg.h:746
@@ -1702,8 +1704,7 @@ msgstr ""
 msgid ""
 "ERROR\n"
 "partition could not be created"
-msgstr ""
-"FEHLER: Partition konnte nicht erstellt werden!"
+msgstr "FEHLER: Partition konnte nicht erstellt werden!"
 
 #: harddisk.h:802
 msgid ""
