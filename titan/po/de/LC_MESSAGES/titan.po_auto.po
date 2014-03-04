@@ -90,7 +90,7 @@ msgstr ""
 #: putlocker.h:32 putlocker.h:79 putlocker.h:85 putlocker.h:136
 #: putlocker.h:146 putlocker.h:219 readerconfig.h:343 readerconfig.h:443
 #: readerconfig.h:444 readerconfig.h:488 readerconfig.h:489 record.h:355
-#: record.h:994 record.h:1445 rectimer.h:557 rectimer.h:1210 rectimer.h:1356
+#: record.h:987 record.h:1438 rectimer.h:557 rectimer.h:1210 rectimer.h:1356
 #: rectimer.h:1368 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:28 scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1888
@@ -178,7 +178,7 @@ msgstr "Ok"
 #: putlocker.h:32 putlocker.h:79 putlocker.h:85 putlocker.h:136
 #: putlocker.h:146 putlocker.h:219 readerconfig.h:343 readerconfig.h:443
 #: readerconfig.h:444 readerconfig.h:488 readerconfig.h:489 record.h:90
-#: record.h:355 record.h:994 record.h:1181 record.h:1420 record.h:1445
+#: record.h:355 record.h:987 record.h:1174 record.h:1413 record.h:1438
 #: rectimer.h:557 rectimer.h:1210 rectimer.h:1356 rectimer.h:1368
 #: restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
@@ -549,7 +549,7 @@ msgstr "Ja / VZAP unendlich"
 #: putlocker.h:32 putlocker.h:79 putlocker.h:85 putlocker.h:136
 #: putlocker.h:146 putlocker.h:219 readerconfig.h:343 readerconfig.h:443
 #: readerconfig.h:444 readerconfig.h:488 readerconfig.h:489 record.h:355
-#: record.h:994 record.h:1181 record.h:1420 record.h:1445 rectimer.h:557
+#: record.h:987 record.h:1174 record.h:1413 record.h:1438 rectimer.h:557
 #: rectimer.h:1210 rectimer.h:1356 rectimer.h:1368 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:28
@@ -4538,7 +4538,7 @@ msgstr "Aufnahme/Timeshift/Stream"
 msgid "Box recording finished poweroff in 30sec !"
 msgstr "Aufnahme beendet. Receiver wird in 30sek ausgeschaltet!"
 
-#: record.h:994
+#: record.h:987
 msgid ""
 "Can't find free Tuner for Record.\n"
 "Switch to Recording/Timeshift Channel ?"
@@ -4546,40 +4546,40 @@ msgstr ""
 "FEHLER: Es ist kein freier Tuner vorhanden.\n"
 "Zum Aufnahme/Timeshift-Sender wechseln?"
 
-#: record.h:1180
+#: record.h:1173
 msgid "Timer Record start !"
 msgstr "Timeraufnahme wurde gestartet!"
 
-#: record.h:1295 record.h:1304 record.h:1315 record.h:1350 record.h:1359
-#: record.h:1391 stream.h:15 stream.h:37
+#: record.h:1288 record.h:1297 record.h:1308 record.h:1343 record.h:1352
+#: record.h:1384 stream.h:15 stream.h:37
 msgid "stop"
 msgstr "Stoppen"
 
-#: record.h:1313 record.h:1387 skin_default_skin.xml.h:474
+#: record.h:1306 record.h:1380 skin_default_skin.xml.h:474
 msgid "Record"
 msgstr "Aufnahme"
 
-#: record.h:1365 record.h:1374 record.h:1397
+#: record.h:1358 record.h:1367 record.h:1390
 msgid "change"
 msgstr "ändern"
 
-#: record.h:1383 record.h:1413
+#: record.h:1376 record.h:1406
 msgid "add recording (stop after current event)"
 msgstr "Aufnahme hinzufügen (diese Sendung)"
 
-#: record.h:1384 record.h:1426
+#: record.h:1377 record.h:1419
 msgid "add recording (indefinitely)"
 msgstr "Aufnahme hinzufügen (unbegrenzt)"
 
-#: record.h:1385 record.h:1431
+#: record.h:1378 record.h:1424
 msgid "add recording (enter duration)"
 msgstr "Aufnahme hinzufügen (Länge eingeben)"
 
-#: record.h:1420
+#: record.h:1413
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr "EPG Zeit kann nicht gefunden werden, oder ist nicht korrekt!"
 
-#: record.h:1445
+#: record.h:1438
 msgid "Record started"
 msgstr "Aufnahme gestartet"
 
