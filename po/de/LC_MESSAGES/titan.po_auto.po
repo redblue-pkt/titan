@@ -2034,7 +2034,7 @@ msgstr "Automatische Auflösung"
 #: keyactions.h:23 settings_bluebutton.h:12 settings_bluebutton.h:43
 #: settings_pluginbutton.h:16 settings_redbutton.h:16
 msgid "TV / Radio Switch"
-msgstr "TV/Radio Umschalten"
+msgstr "TV/Radio umschalten"
 
 #: keyactions.h:24 settings_bluebutton.h:14 settings_pluginbutton.h:15
 #: settings_redbutton.h:15 skin_default_skin.xml.h:585
@@ -2260,7 +2260,7 @@ msgstr ""
 
 #: mc_pictureplayer_settings.h:63
 msgid "Antenne Kaernten"
-msgstr ""
+msgstr "Antenne Kärnten"
 
 #: mc_pictureplayer_settings.h:64
 msgid "Onkelz Rock Radio"
@@ -2312,7 +2312,7 @@ msgstr "Installieren Sie bitte das Wetter Plugin unter Erweiterungen"
 
 #: mediadbedit.h:75
 msgid "unlock -> lock it"
-msgstr "Ungesichert -> sichern"
+msgstr "ungesichert -> sichern"
 
 #: mediadbedit.h:76
 msgid "unlock -> leaf unlock"
@@ -2332,15 +2332,15 @@ msgstr "MediaDB Eintrag dieser Datei konnte nicht gefunden werden."
 
 #: mediadb.h:1078 play.h:555
 msgid "MediaDB directory scan started in Background !"
-msgstr ""
+msgstr "MediaDB Verzeichnis Suche im Hintergrund gestartet!"
 
 #: mediadb.h:1080 play.h:557 skin_default_skin.xml.h:172
 msgid "Delete MediaDB before scan"
-msgstr "Datenbank vor dem scannen löschen"
+msgstr "Datenbank vor dem Scannen löschen"
 
 #: mediadb.h:1087 play.h:564 skin_default_skin.xml.h:173
 msgid "Delete unused entrys before scan"
-msgstr "Datenbank vor dem scannen überprüfen (unbenutzte Einträge löschen)"
+msgstr "Datenbank vor dem Scannen überprüfen (unbenutzte Einträge löschen)"
 
 #: mediadb.h:1094 play.h:571
 msgid "scan Directory"
@@ -2462,7 +2462,7 @@ msgstr "Einstellungen speichern"
 
 #: menu.h:884
 msgid "Error in Save Settings"
-msgstr "Fehler beim speichern der Einstellungen"
+msgstr "Fehler beim Speichern der Einstellungen"
 
 #: menu.h:886
 msgid "Settings succesfull saved"
@@ -2537,11 +2537,11 @@ msgstr ""
 
 #: networkbrowser.h:1005 networkbrowser.h:1011 networkbrowser.h:1021
 msgid "Anonymous login Access Denied !"
-msgstr "Anonymous Login Zugriff verweigert!"
+msgstr "Anonymer Login Zugriff verweigert!"
 
 #: networkbrowser.h:1009 networkbrowser.h:1025
 msgid "Anonymous login successful"
-msgstr "Anonymous Login erfolgreich"
+msgstr "Anonymer Login erfolgreich"
 
 #: networkbrowser.h:1160 networkbrowser.h:1161
 msgid "Scanning Network Shares, please wait !!"
@@ -2758,7 +2758,7 @@ msgstr ""
 
 #: optimize.h:253
 msgid "hold"
-msgstr "behalten"
+msgstr "Behalten"
 
 #: optimize.h:254 skin_default_skin.xml.h:170
 msgid "delete"
