@@ -3204,19 +3204,19 @@ msgstr "Löschen"
 
 #: play.h:1649
 msgid "Marker autoseek is started"
-msgstr ""
+msgstr "Automatische Suche nach Markierungen gestartet."
 
 #: play.h:1660
 msgid "Marker autoseek is stopped"
-msgstr ""
+msgstr "Automatischte Suche nach Markierungen gestoppt."
 
 #: plugins_autotimer_skin.xml.h:1 skins_autotimer_skin.xml.h:1
 msgid "AutoTimer Settings"
-msgstr "AutoTimer Einstellungen"
+msgstr "Einstellungen"
 
 #: plugins_autotimer_skin.xml.h:2 skins_autotimer_skin.xml.h:2
 msgid "afterevent"
-msgstr ""
+msgstr "Nach der Aufnahme"
 
 #: plugins_autotimer_skin.xml.h:3 skins_autotimer_skin.xml.h:3
 msgid "begin search"
@@ -3224,7 +3224,7 @@ msgstr "Suche starten"
 
 #: plugins_autotimer_skin.xml.h:4 skins_autotimer_skin.xml.h:4
 msgid "channel (EPG=Current channel)"
-msgstr ""
+msgstr "Sender (EPG=akviter Sender)"
 
 #: plugins_autotimer_skin.xml.h:5 skins_autotimer_skin.xml.h:5
 msgid "end search"
@@ -3232,11 +3232,11 @@ msgstr "Suche beenden"
 
 #: plugins_autotimer_skin.xml.h:6 skins_autotimer_skin.xml.h:6
 msgid "event"
-msgstr ""
+msgstr "Ereignis"
 
 #: plugins_autotimer_skin.xml.h:7 skins_autotimer_skin.xml.h:7
 msgid "search string"
-msgstr ""
+msgstr "Suchmuster"
 
 #: plugins_autotimer_skin.xml.h:8 plugins_callmonitor1_skin.xml.h:16
 #: plugins_lcdpearl1_skin.xml.h:10 plugins_lcdsamsung_skin.xml.h:13
@@ -3246,7 +3246,7 @@ msgstr ""
 msgid ""
 "text=EXIT halign=center valign=middle bordercol=exitcol bordersize=2 "
 "bordertype=2 posx=160 posy=0 width=150 height=30/>"
-msgstr ""
+msgstr "Exit"
 
 #: plugins_autotimer_skin.xml.h:9 plugins_callmonitor1_skin.xml.h:18
 #: plugins_lcdpearl1_skin.xml.h:11 plugins_lcdsamsung_skin.xml.h:14
@@ -3256,7 +3256,7 @@ msgstr ""
 msgid ""
 "text=SAVE halign=center valign=middle bordercol=green bordersize=2 "
 "bordertype=2 posx=0 posy=0 width=150 height=30/>"
-msgstr ""
+msgstr "Speichern"
 
 #: plugins_autotimer_skin.xml.h:10 plugins_lcdpearl1_skin.xml.h:12
 #: plugins_lcdsamsung_skin.xml.h:15 skins_autotimer_skin.xml.h:10
@@ -3264,15 +3264,15 @@ msgstr ""
 msgid ""
 "text=START halign=center valign=middle bordercol=blue bordersize=2 "
 "bordertype=2 posx=400 posy=0 width=200 height=30/>"
-msgstr ""
+msgstr "Start"
 
 #: plugins_autotimer_skin.xml.h:11 skins_autotimer_skin.xml.h:11
 msgid "Timer1 activ"
-msgstr "Timer1 aktiv"
+msgstr "Timer 1 aktiv"
 
 #: plugins_autotimer_skin.xml.h:12 skins_autotimer_skin.xml.h:12
 msgid "Timer2 activ"
-msgstr "Timer2 aktiv"
+msgstr "Timer 2 aktiv"
 
 #: plugins_callmonitor1_skin.xml.h:1 skins_callmonitor1_skin.xml.h:1
 msgid "CallMonitor Settings"
@@ -3288,7 +3288,7 @@ msgstr ""
 
 #: plugins_callmonitor1_skin.xml.h:4 skins_callmonitor1_skin.xml.h:4
 msgid "Aktion wenn standby"
-msgstr ""
+msgstr "Verhalten im Standby"
 
 #: plugins_callmonitor1_skin.xml.h:5 skins_callmonitor1_skin.xml.h:5
 msgid "alle Nummern"
@@ -3339,7 +3339,7 @@ msgstr ""
 msgid ""
 "text=LOAD-FritzBook halign=center valign=middle bordercol=blue bordersize=2 "
 "bordertype=2 posx=400 posy=0 width=200 height=30/>"
-msgstr ""
+msgstr "Fritzbook laden"
 
 #: plugins_catcatch_skin.xml.h:1 skins_catcatch_skin.xml.h:1
 msgid "Cat-Catch"
@@ -3461,7 +3461,7 @@ msgstr "Regisseur:"
 
 #: plugins_imdbapi_skin.xml.h:4 skins_imdbapi_skin.xml.h:4
 msgid "IMDb-API - Plugin"
-msgstr ""
+msgstr "IMDB-API"
 
 #: plugins_imdbapi_skin.xml.h:5 plugins_imdb_skin.xml.h:5
 #: plugins_tmdb_skin.xml.h:4 skins_imdbapi_skin.xml.h:5
@@ -3647,7 +3647,7 @@ msgstr "Musik abspielen"
 
 #: plugins_mc_skin.xml.h:11 skins_mc_skin.xml.h:11
 msgid "AUDIO SETTINGS"
-msgstr "Audio Einstellungen"
+msgstr "Audio"
 
 #: plugins_mc_skin.xml.h:12 skins_mc_skin.xml.h:12
 msgid "Autostart Playlist"
@@ -3702,7 +3702,7 @@ msgstr "Intervall"
 
 #: plugins_mc_skin.xml.h:33 skins_mc_skin.xml.h:33
 msgid "MediaDB autoscan"
-msgstr ""
+msgstr "Automatischer Suchlauf MediaDB"
 
 #: plugins_mc_skin.xml.h:34 skins_mc_skin.xml.h:34
 msgid "Mediathek"
@@ -3773,7 +3773,7 @@ msgstr "Sortierung"
 
 #: plugins_mc_skin.xml.h:59 skins_mc_skin.xml.h:59
 msgid "Sound"
-msgstr ""
+msgstr "Klang"
 
 #: plugins_mc_skin.xml.h:60 skins_mc_skin.xml.h:60
 msgid "Style"
@@ -3797,7 +3797,7 @@ msgstr "Einstellungen"
 
 #: plugins_mc_skin.xml.h:66 skins_mc_skin.xml.h:66
 msgid "VLC Player"
-msgstr ""
+msgstr "Video abspielen"
 
 #: plugins_mc_skin.xml.h:67 skins_mc_skin.xml.h:67
 msgid "Weather Infos"
@@ -3832,7 +3832,7 @@ msgstr "DNS Adresse"
 
 #: plugins_networkbrowser_skin.xml.h:8 skins_networkbrowser_skin.xml.h:8
 msgid "ftpport"
-msgstr "Ftp Port"
+msgstr "FTP Port"
 
 #: plugins_networkbrowser_skin.xml.h:9 skins_networkbrowser_skin.xml.h:9
 msgid "hddreplacement"
@@ -3888,7 +3888,7 @@ msgstr "Protokoll"
 
 #: plugins_networkbrowser_skin.xml.h:18 skins_networkbrowser_skin.xml.h:18
 msgid "proxy"
-msgstr ""
+msgstr "Proxy"
 
 #: plugins_networkbrowser_skin.xml.h:19 skins_networkbrowser_skin.xml.h:19
 msgid "proxyauth"
@@ -3950,7 +3950,7 @@ msgstr "Benutzername"
 
 #: plugins_networkbrowser_skin.xml.h:35 skins_networkbrowser_skin.xml.h:35
 msgid "usessl"
-msgstr "SSL Nutzen"
+msgstr "SSL verwenden"
 
 #: plugins_networkbrowser_skin.xml.h:36 skins_networkbrowser_skin.xml.h:36
 msgid "wsize"
@@ -4079,7 +4079,7 @@ msgstr "DVBapi"
 
 #: plugins_readerconfig_skin.xml.h:4 skins_readerconfig_skin.xml.h:4
 msgid "Enable"
-msgstr "Enable"
+msgstr "aktiviert"
 
 #: plugins_readerconfig_skin.xml.h:5 skins_readerconfig_skin.xml.h:5
 msgid ""
@@ -4220,7 +4220,7 @@ msgstr "Rot-Menü"
 
 #: plugins_tithek_skin.xml.h:11 skins_tithek_skin.xml.h:11
 msgid "Show Pay Streams"
-msgstr "Zeige Pay und Englische Streams"
+msgstr "Zeige Kostenpflichtige und Englische Streams"
 
 #: plugins_tithek_skin.xml.h:12 skins_tithek_skin.xml.h:12
 msgid "View Cover"
@@ -4289,7 +4289,7 @@ msgstr "Bewertung:"
 
 #: plugins_tmdb_skin.xml.h:10 skins_tmdb_skin.xml.h:10
 msgid "TMDb - Plugin"
-msgstr ""
+msgstr "TMDb"
 
 #: plugins_tsSchnitt_skin.xml.h:1 skins_tsSchnitt_skin.xml.h:1
 msgid "Cutstatus:"
@@ -4436,23 +4436,23 @@ msgstr "zweiter Kartenschacht (oben)"
 
 #: readerconfig.h:310
 msgid "Use config from Flash (permanent)"
-msgstr "Config vom Flash (permanent) verwenden"
+msgstr "Konfiguration vom Flash (permanent) verwenden"
 
 #: readerconfig.h:319
 msgid "Use config from Flash (temporary)"
-msgstr "Config vom Flash (temporär) verwenden"
+msgstr "Konfiguration vom Flash (temporär) verwenden"
 
 #: readerconfig.h:328
 msgid "Use config from Stick or HDD"
-msgstr "Config vom Stick/HDD verwenden"
+msgstr "Konfiguration vom Stick/HDD verwenden"
 
 #: readerconfig.h:338
 msgid "Choice Config File"
-msgstr "Config Datei wählen"
+msgstr "Konfiguration auswählen"
 
 #: readerconfig.h:343
 msgid "No config file found."
-msgstr "Es wurde keine Konfiguratiosndatei gefunden."
+msgstr "Es wurde keine Konfigurationsdatei gefunden."
 
 #: readerconfig.h:389 readerconfig.h:482
 msgid "Dvbapi (enabled)"
@@ -4464,7 +4464,7 @@ msgstr "DVBapi (deaktiviert)"
 
 #: readerconfig.h:418
 msgid "Reader active"
-msgstr "Reader aktiviert"
+msgstr "aktiviert"
 
 #: readerconfig.h:443
 msgid "Oscam config written to medium !"
@@ -4476,11 +4476,11 @@ msgstr "Soll OScam neu gestartet werden?"
 
 #: readerconfig.h:474
 msgid "Oscam dvbapi config disabled !"
-msgstr "Oscam DVBapi Einstellung deaktiviert!"
+msgstr "OScam DVBapi Einstellung deaktiviert!"
 
 #: readerconfig.h:481
 msgid "Oscam dvbapi config enabled !"
-msgstr "Oscam DVBapi Einstellung aktiviert!"
+msgstr "OScam DVBapi Einstellung aktiviert!"
 
 #: record.h:37
 msgid ""
@@ -4737,7 +4737,7 @@ msgid ""
 "The Box will reboot and the erase will be started!"
 msgstr ""
 "Wollen Sie wirklich das Swap-Dateisystem löschen\n"
-"Ihre Settings bleiben erhalten. Der Receiver wird neu gestartet und das "
+"Ihre Einstellungen bleiben erhalten. Der Receiver wird neu gestartet und das "
 "Löschen wird durchgeführt."
 
 #: restoredefault.h:63 restoredefault.h:67 restoredefault.h:71
@@ -4770,9 +4770,9 @@ msgid ""
 "Found Pay Stream visit the official Website and Order this Stream and try "
 "this again !"
 msgstr ""
-"Pay-Stream gefunden, besuchen Sie die offizielle Website, um diesen Stream "
-"zu\n"
-"bestellen und versuchen Sie es nochmal!"
+"Kostenpflichtigen Stream gefunden.\n"
+"besuchen Sie die offizielle Website, um diesen Stream zu bestellen\n"
+"und versuchen Sie es erneut!"
 
 #: scan.h:532
 msgid "Data"
@@ -4780,7 +4780,7 @@ msgstr ""
 
 #: scan.h:1538
 msgid "Sat/Provider: "
-msgstr ""
+msgstr "Satellit/Anbieter:"
 
 #: scan.h:1554
 msgid "TV: "
@@ -4823,8 +4823,8 @@ msgstr "Bitte Warten, Sendersuchlauf wird abgebrochen."
 #: scan.h:1888
 msgid "Scan is not allowed if record or stream is running !"
 msgstr ""
-"FEHLER: Beenden Sie laufende Aufnahmen oder Streams und versuchen Sie es "
-"dann erneut!"
+"FEHLER: Beenden Sie laufende Aufnahmen oder Streams\n"
+"und versuchen Sie es dann erneut!"
 
 #: scan.h:1979
 msgid "No Tuner configured"
@@ -4940,7 +4940,7 @@ msgstr ""
 
 #: screensaveradjust.h:47
 msgid "Song TitleText"
-msgstr "Musik Titel Text anzeigen"
+msgstr "Musiktitel Text anzeigen"
 
 #: screensaveradjust.h:48
 msgid "Logo 1"
@@ -4994,7 +4994,7 @@ msgstr "Senderliste fehlerhaft (Kanal nicht gefunden)!"
 
 #: settings_autostart.h:216
 msgid "Cam Routing"
-msgstr ""
+msgstr "Verwende CI-Modul"
 
 #: settings_bluebutton.h:6
 msgid "Blue Key Action - Setup"
@@ -5002,7 +5002,7 @@ msgstr "Blaue Taste - Belegungsmenü"
 
 #: settings_pluginbutton.h:6
 msgid "Plugin Key Action - Setup"
-msgstr "Plugins Taste - Belegungsmenü"
+msgstr "Plugin Taste - Belegungsmenü"
 
 #: settings_redbutton.h:6
 msgid "Red Key Action - Setup"
@@ -5038,7 +5038,7 @@ msgstr "Rote Taste drücken"
 
 #: skinadjust.h:133
 msgid "Receiver now reboot !!!"
-msgstr "Receiver wir neu gestartet !!!"
+msgstr "Receiver wird neu gestartet !!!"
 
 #: skin_default_skin.xml.h:1
 msgid "Help"
@@ -5198,7 +5198,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:51
 msgid "About"
-msgstr "Über"
+msgstr "Über Titan"
 
 #: skin_default_skin.xml.h:52
 msgid "AC3 default"
@@ -5214,7 +5214,7 @@ msgstr "Aktivieren (Autostart)"
 
 #: skin_default_skin.xml.h:55
 msgid "Activate CEC"
-msgstr "CEC einschalten:"
+msgstr "CEC einschalten"
 
 #: skin_default_skin.xml.h:56
 msgid "Actors"
@@ -5270,7 +5270,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:68
 msgid "After Timeshift"
-msgstr "Aktion nach Timeshift"
+msgstr "Verhalten nach Timeshift"
 
 #: skin_default_skin.xml.h:69
 msgid "Age Protect"
@@ -5342,23 +5342,23 @@ msgstr "Automatische Auflösung"
 
 #: skin_default_skin.xml.h:89
 msgid "Autostart - Audio / Video / Sat"
-msgstr "Autostart - Audio/Video/Sat"
+msgstr "Audio/Video/Sat"
 
 #: skin_default_skin.xml.h:90
 msgid "Autostart - Cam / Emu"
-msgstr "Autostart - Softcam"
+msgstr "Softcam"
 
 #: skin_default_skin.xml.h:91
 msgid "Autostart - Child safety"
-msgstr "Autostart - Jugendschutz"
+msgstr "Jugendschutz"
 
 #: skin_default_skin.xml.h:92
 msgid "Autostart Default"
-msgstr "Autostart Werkseinstellungen"
+msgstr "Werkseinstellungen"
 
 #: skin_default_skin.xml.h:93
 msgid "Autostart - Network"
-msgstr "Autostart - Netzwerk"
+msgstr "Netzwerk"
 
 #: skin_default_skin.xml.h:94
 msgid "Autostart Settings"
@@ -5491,7 +5491,7 @@ msgstr "Sender Verlauf"
 
 #: skin_default_skin.xml.h:131
 msgid "Channellist view"
-msgstr "Nichtempfangbare Kanäle"
+msgstr "Nichtempfangbare Sender"
 
 #: skin_default_skin.xml.h:132
 msgid "Channel Search"
@@ -5651,7 +5651,7 @@ msgstr "Geräte"
 
 #: skin_default_skin.xml.h:178
 msgid "Director"
-msgstr ""
+msgstr "Direktor"
 
 #: skin_default_skin.xml.h:179
 msgid "Dirsort"
@@ -5675,7 +5675,7 @@ msgstr "DiSEqC"
 
 #: skin_default_skin.xml.h:184
 msgid "Diseqc Settings"
-msgstr "DiSEqC Einstellungen"
+msgstr "DiSEqC"
 
 #: skin_default_skin.xml.h:185
 msgid "DNS Name"
@@ -5779,7 +5779,7 @@ msgstr "Wann sollen die EPG Daten gesichert werden"
 
 #: skin_default_skin.xml.h:212
 msgid "EPG Scanlist"
-msgstr ""
+msgstr "EPG Scanliste"
 
 #: skin_default_skin.xml.h:213
 msgid "EPG Search"
@@ -6381,7 +6381,7 @@ msgstr "Hostname"
 
 #: skin_default_skin.xml.h:308
 msgid "How many days"
-msgstr "Wie viele Tage EPG im Voraus speichern"
+msgstr "Wieviele Tage EPG im Voraus speichern"
 
 #: skin_default_skin.xml.h:309
 msgid "HTTPD Port"
@@ -6521,7 +6521,7 @@ msgstr "Listbox Auswahl"
 
 #: skin_default_skin.xml.h:345
 msgid "Listbox Select Color"
-msgstr "Listbox Auswahl Farbe"
+msgstr "Listbox Farbauswahl"
 
 #: skin_default_skin.xml.h:346
 msgid "LNB Settings"
@@ -6729,7 +6729,7 @@ msgstr "Verbindungstest"
 
 #: skin_default_skin.xml.h:401
 msgid "Newsletter"
-msgstr ""
+msgstr "Aktuelles"
 
 #: skin_default_skin.xml.h:402
 msgid "Next EPG Time"
