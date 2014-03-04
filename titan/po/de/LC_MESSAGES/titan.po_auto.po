@@ -27,7 +27,7 @@ msgstr "unbekannt"
 
 #: about.h:32 skin_default_skin.xml.h:679
 msgid "Tunertype"
-msgstr ""
+msgstr "Tunerart"
 
 #: about.h:45
 msgid "System-Info"
@@ -263,11 +263,11 @@ msgstr "Nein"
 
 #: adjust.h:65
 msgid "infobar"
-msgstr ""
+msgstr "Informationsleiste"
 
 #: adjust.h:66
 msgid "epg"
-msgstr ""
+msgstr "EPG"
 
 #: adjust.h:67 epgsettings.h:136
 msgid "Channel EPG"
@@ -321,7 +321,7 @@ msgstr "Ja"
 
 #: adjust.h:89
 msgid "medium"
-msgstr ""
+msgstr "mittel"
 
 #: adjust.h:90 adjust.h:169 mc_audioplayer_settings.h:35
 #: mc_pictureplayer_settings.h:50 mc_videoplayer_settings.h:31
@@ -375,7 +375,7 @@ msgstr "Ausschalten"
 
 #: adjust.h:107 powerofftimer.h:118 skin_default_skin.xml.h:597
 msgid "Standby"
-msgstr "Standby"
+msgstr ""
 
 #: adjust.h:108 skin_default_skin.xml.h:503 softcam.h:291
 msgid "Restart"
@@ -383,7 +383,7 @@ msgstr "Neustart"
 
 #: adjust.h:109
 msgid "Gui Restart"
-msgstr "GUI Neustart"
+msgstr "Titan Neustart"
 
 #: adjust.h:112 adjust.h:122 adjust.h:176 epgsettings.h:145 epgsettings.h:151
 #: network.h:593
@@ -392,11 +392,11 @@ msgstr "ausgeschaltet"
 
 #: adjust.h:113
 msgid "1 sec"
-msgstr ""
+msgstr "1 Sekunde"
 
 #: adjust.h:114 avsettings.h:77
 msgid "2 sec"
-msgstr ""
+msgstr "2 Sekunden"
 
 #: adjust.h:115 pin.h:188
 msgid "endless"
@@ -482,11 +482,11 @@ msgstr "ausblenden"
 
 #: adjust.h:187
 msgid "channel-movie"
-msgstr ""
+msgstr "Sender-Titel"
 
 #: adjust.h:188
 msgid "movie-channel"
-msgstr ""
+msgstr "Titel-Sender"
 
 #: adjust.h:202
 msgid "expert (11)"
@@ -595,23 +595,23 @@ msgstr "aus"
 
 #: avsettings.h:69
 msgid "redKey"
-msgstr ""
+msgstr "ROte Taste"
 
 #: avsettings.h:78
 msgid "4 sec"
-msgstr ""
+msgstr "4 Sekunden"
 
 #: avsettings.h:79
 msgid "6 sec"
-msgstr ""
+msgstr "6 Sekunden"
 
 #: avsettings.h:80
 msgid "8 sec"
-msgstr ""
+msgstr "8 Sekunden"
 
 #: avsettings.h:81
 msgid "10 sec"
-msgstr ""
+msgstr "10 Sekunden"
 
 #: avsettings.h:84 lnbconfig.h:143 mc_pictureplayer_settings.h:35
 #: mc_pictureplayer_settings.h:39 readerconfig.h:416 transponder.h:257
@@ -628,6 +628,9 @@ msgid ""
 "This Plugin is only for Betatester and can change your Settings!\n"
 "Realy run it?"
 msgstr ""
+"Diese Erweiterung ist nur für Betatester bestimmt und\n"
+"könnte Ihre Einstellungen ändern.\n"
+"Möchten Sie es dennoch ausführen?"
 
 #: bgdownload.h:176
 msgid "Really stop download ?"
@@ -639,11 +642,11 @@ msgstr ""
 
 #: blindscanadjust.h:17
 msgid "Cable: "
-msgstr ""
+msgstr "Kabel: "
 
 #: blindscanadjust.h:21
 msgid "Terrestrial: "
-msgstr ""
+msgstr "Terrestrisch: "
 
 #: blindscanadjust.h:120
 msgid "Sat"
@@ -651,15 +654,15 @@ msgstr "Satelliten"
 
 #: blindscanadjust.h:121 tunerconfig.h:339
 msgid "Cable"
-msgstr ""
+msgstr "Kabel"
 
 #: blindscanadjust.h:122
 msgid "Terrestrial"
-msgstr ""
+msgstr "Terrestrisch"
 
 #: browser.h:191
 msgid "Home"
-msgstr ""
+msgstr "Startseite"
 
 #: browser.h:206
 msgid "Browser Favoriten"
@@ -671,20 +674,23 @@ msgid ""
 "\n"
 "check your parameter "
 msgstr ""
+"Callmonitor Zeitüberschreitung!\n"
+"\n"
+"Bitte überprüfen Sie Ihre Einstellungen!"
 
 #: callmon_main.h:76 callmon_main.h:98 callmon_main.h:116 callmon_main.h:120
 #: callmon_main.h:124 callmon_main.h:128 instar.h:192
 msgid "nein"
-msgstr ""
+msgstr "Nein"
 
 #: callmon_main.h:77 callmon_main.h:97 callmon_main.h:115 callmon_main.h:119
 #: callmon_main.h:123 callmon_main.h:127 instar.h:193
 msgid "ja"
-msgstr ""
+msgstr "Ja"
 
 #: callmon_main.h:131
 msgid "puffern"
-msgstr ""
+msgstr "Zwischenspeichern"
 
 #: callmon_main.h:132
 msgid "verwerfen"
@@ -720,23 +726,23 @@ msgstr ""
 
 #: channellist.h:578
 msgid "Move mode"
-msgstr "Verschiebe Modus"
+msgstr "Verschieben"
 
 #: channellist.h:587
 msgid "Remove mode"
-msgstr "Lösch Modus"
+msgstr "Löschen"
 
 #: channellist.h:596
 msgid "Copy mode"
-msgstr "Kopier Modus"
+msgstr "Kopieren"
 
 #: channellist.h:605
 msgid "Protect mode"
-msgstr "Schutz Modus"
+msgstr "Schützen"
 
 #: channellist.h:614
 msgid "Edit mode"
-msgstr "Umbennen Modus"
+msgstr "Umbennenen"
 
 #: channellist.h:689 channellist.h:1764 scan.h:530 skin_default_skin.xml.h:470
 msgid "Radio"
@@ -760,7 +766,7 @@ msgstr "Satelliten"
 
 #: channellist.h:752 channellist.h:1329 channellist.h:1330 channellist.h:1654
 msgid "Provider"
-msgstr ""
+msgstr "Anbieter"
 
 #: channellist.h:771 channellist.h:772 channellist.h:1211 channellist.h:1212
 msgid "All Channels"
@@ -768,7 +774,7 @@ msgstr "Alle Sender"
 
 #: channellist.h:913
 msgid "Copy providerlist successfull"
-msgstr "Kopieren des Anbieters erfolgreich abgeschlossen"
+msgstr "Anbieter erfolgreich kopiert"
 
 #: channellist.h:915
 msgid "Copy providerlist not ok"
@@ -776,7 +782,7 @@ msgstr "Kopieren des Anbieters abgebrochen"
 
 #: channellist.h:920
 msgid "Copy satlist successfull"
-msgstr "Kopieren des Satelliten erfolgreich abgeschlossen"
+msgstr "Satelliten erfolgreich kopiert"
 
 #: channellist.h:922
 msgid "Copy satlist not ok"
@@ -784,7 +790,7 @@ msgstr "Kopieren des Satelliten abgebrochen"
 
 #: channellist.h:1006
 msgid "Can't remove akive Service"
-msgstr "Aktueller Sender kann nicht gelöscht werden"
+msgstr "Aktiver Sender kann nicht gelöscht werden!"
 
 #: channellist.h:1295 channellist.h:1296
 msgid "Channels A-Z"
@@ -840,7 +846,8 @@ msgstr "Fehler beim Kopieren"
 
 #: copyfile.h:893 copyfile.h:894
 msgid "wait for stopping"
-msgstr ""
+msgstr "Vorgang Abgebrochen\n"
+"Bitte warten!"
 
 #: dir.h:83 dir.h:92 dir.h:101 dir.h:110 plugins_lcdpearl1_skin.xml.h:2
 #: plugins_lcdsamsung_skin.xml.h:2 skins_lcdpearl1_skin.xml.h:2
@@ -958,67 +965,67 @@ msgstr ""
 
 #: diseqcconfig.h:141 diseqcconfig.h:160
 msgid "Input 1"
-msgstr ""
+msgstr "Anschluß 1"
 
 #: diseqcconfig.h:142 diseqcconfig.h:161
 msgid "Input 2"
-msgstr ""
+msgstr "Anschluß 2"
 
 #: diseqcconfig.h:143 diseqcconfig.h:162
 msgid "Input 3"
-msgstr ""
+msgstr "Anschluß 3"
 
 #: diseqcconfig.h:144 diseqcconfig.h:163
 msgid "Input 4"
-msgstr ""
+msgstr "Anschluß 4"
 
 #: diseqcconfig.h:145 diseqcconfig.h:164
 msgid "Input 5"
-msgstr ""
+msgstr "Anschluß 5"
 
 #: diseqcconfig.h:146 diseqcconfig.h:165
 msgid "Input 6"
-msgstr ""
+msgstr "Anschluß 6"
 
 #: diseqcconfig.h:147 diseqcconfig.h:166
 msgid "Input 7"
-msgstr ""
+msgstr "Anschluß 7"
 
 #: diseqcconfig.h:148 diseqcconfig.h:167
 msgid "Input 8"
-msgstr ""
+msgstr "Anschluß 8"
 
 #: diseqcconfig.h:149 diseqcconfig.h:168
 msgid "Input 9"
-msgstr ""
+msgstr "Anschluß 9"
 
 #: diseqcconfig.h:150 diseqcconfig.h:169
 msgid "Input 10"
-msgstr ""
+msgstr "Anschluß 10"
 
 #: diseqcconfig.h:151 diseqcconfig.h:170
 msgid "Input 11"
-msgstr ""
+msgstr "Anschluß 11"
 
 #: diseqcconfig.h:152 diseqcconfig.h:171
 msgid "Input 12"
-msgstr ""
+msgstr "Anschluß 12"
 
 #: diseqcconfig.h:153 diseqcconfig.h:172
 msgid "Input 13"
-msgstr ""
+msgstr "Anschluß 13"
 
 #: diseqcconfig.h:154 diseqcconfig.h:173
 msgid "Input 14"
-msgstr ""
+msgstr "Anschluß 14"
 
 #: diseqcconfig.h:155 diseqcconfig.h:174
 msgid "Input 15"
-msgstr ""
+msgstr "Anschluß 15"
 
 #: diseqcconfig.h:156 diseqcconfig.h:175
 msgid "Input 16"
-msgstr ""
+msgstr "Anschluß 16"
 
 #: diseqcconfig.h:254
 msgid "north"
@@ -1041,12 +1048,14 @@ msgstr "West"
 #: putlocker.h:32 streamcloud.h:31 videoweed.h:35 vidstream.h:45
 #: xvidstage.h:54
 msgid "Hoster Url not http://"
-msgstr ""
+msgstr "Die eingegebene http Adresse wird nicht unterstützt!"
 
 #: divxstage.h:79 novamov.h:80 nowvideo.h:87 primeshare.h:79 videoweed.h:80
 msgid ""
 "The file is being transfered to our other servers. This may take few minutes."
 msgstr ""
+"Die gewünschte Datei wird verschoben.\n"
+"Bitte versuchen Sie es in wenigen Minuten erneut!"
 
 #: divxstage.h:150 faststream.h:79 faststream.h:90 faststream.h:102
 #: faststream.h:160 filenuke.h:84 filenuke.h:95 filenuke.h:107 filenuke.h:157
@@ -1059,7 +1068,7 @@ msgstr ""
 #: vidstream.h:86 vidstream.h:97 vidstream.h:167 xvidstage.h:100
 #: xvidstage.h:177
 msgid "The page is temporarily unavailable"
-msgstr "Die Seite ist vorübergehend nicht erreichbar"
+msgstr "Die gewünschte Seite ist vorübergehend nicht erreichbar"
 
 #: dlna.h:334
 msgid "DLNA started."
@@ -1091,7 +1100,7 @@ msgstr "Warten, Download wird beendet."
 
 #: dvdplay.h:29
 msgid "EJECT"
-msgstr ""
+msgstr "Auswerfen"
 
 #: dvdplay.h:29 play.h:1417 plugins_dlna_skin.xml.h:10
 #: skins_dlna_skin.xml.h:10
@@ -1120,7 +1129,7 @@ msgstr "Nur im EPG des aktuellen Senders suchen?"
 #: epgsearch.h:228 plugins_stopifnotused_skin.xml.h:2
 #: skins_stopifnotused_skin.xml.h:2
 msgid "Action"
-msgstr "Aktion"
+msgstr ""
 
 #: epgsearch.h:236
 msgid "Animation"
@@ -1128,11 +1137,11 @@ msgstr ""
 
 #: epgsearch.h:244
 msgid "History"
-msgstr ""
+msgstr "Geschichte"
 
 #: epgsearch.h:252
 msgid "Doku"
-msgstr ""
+msgstr "Dokumentation"
 
 #: epgsearch.h:260
 msgid "Thriller"
@@ -1144,7 +1153,7 @@ msgstr "Kinder"
 
 #: epgsearch.h:276
 msgid "Fantasy"
-msgstr ""
+msgstr "Fantasie"
 
 #: epgsearch.h:284
 msgid "Horror"
@@ -1160,7 +1169,7 @@ msgstr "Krieg"
 
 #: epgsearch.h:308
 msgid "Scifi"
-msgstr ""
+msgstr "Science Fiction"
 
 #: epgsearch.h:316
 msgid "Sport"
@@ -1204,7 +1213,7 @@ msgstr "Weiße Liste"
 
 #: epgsettings.h:148
 msgid "scan and whitelist"
-msgstr ""
+msgstr "Suchlauf und Weiße Liste"
 
 #: epgsettings.h:189 epgsettings.h:200 epgsettings.h:205 epgsettings.h:210
 #: mediadbsettings.h:36
@@ -1221,7 +1230,7 @@ msgstr "nie"
 
 #: epgsettings.h:199 epgsettings.h:204 epgsettings.h:209
 msgid "only for scan"
-msgstr ""
+msgstr "Nur für Suchlauf"
 
 #: epgsettings.h:214
 msgid "poweroff"
@@ -1229,7 +1238,7 @@ msgstr "Ausschalten"
 
 #: epgsettings.h:258
 msgid "Deavtivate Refresh Time and After EPG in scan-mode"
-msgstr "Deaktiviere Aktualisierungszeit und Nach Suche im Suche-Modus"
+msgstr "Deaktiviere Aktualisierungszeit und 'Nach Suche im Suche-Modus'"
 
 #: epgsettings.h:284
 msgid "EPG resetet and now clear."
@@ -1245,15 +1254,15 @@ msgstr "Bitte Feed Addresse eingeben"
 
 #: extensions.h:82
 msgid "Installation start"
-msgstr ""
+msgstr "Installation begonnen"
 
 #: extensions.h:84
 msgid "Remove start"
-msgstr ""
+msgstr "Entfernen begonnen"
 
 #: extensions.h:93
 msgid "New free space (KB): "
-msgstr ""
+msgstr "Neuer freier Speicher (KB): "
 
 #: extensions.h:99
 msgid "Install success"
@@ -1335,35 +1344,36 @@ msgstr "Paket konnte nicht installiert werden"
 msgid "TPK Install done, your system will reboot !"
 msgstr ""
 "TPK Installation abgeschlossen\n"
-"Ihre Box wird neu gestartet"
+"Ihr Receiver wird neu gestartet"
 
 #: extensions.h:271
 msgid "Tpk Remove - select file"
-msgstr "TPK Pakete löschen"
+msgstr "Erweiterung löschen"
 
 #: extensions.h:277
 msgid "Removeing"
-msgstr "Löschen von"
+msgstr "Lösche"
 
 #: extensions.h:282
 msgid "Tpk Remove Info"
-msgstr "Info zur TPK Deinstallation"
+msgstr "Information zur Deinstallation der Erweiterung"
 
 #: extensions.h:290
 msgid "Tpk Remove Info - Remove OK"
-msgstr "Paket erfolgreich gelöscht"
+msgstr "Erweiterung erfolgreich gelöscht"
 
 #: extensions.h:297
 msgid "Tpk Remove Info - Remove ERROR"
-msgstr "Paket konnte nicht gelöscht werden"
+msgstr "Erweiterung konnte nicht gelöscht werden"
 
 #: extensions.h:304
 msgid "TPK Remove done, your system will reboot !"
-msgstr ""
+msgstr "Die Erweiterung wurde erfolgreich entfernt.\n"
+"Ihr Receiver wird jetzt neu starten."
 
 #: extensions.h:336 extensions.h:478
 msgid "No plugin found."
-msgstr "Kein Plugin gefunden"
+msgstr "Keine Erweiterung gefunden"
 
 #: extensions.h:392
 msgid ""
@@ -1372,89 +1382,91 @@ msgid ""
 "reboot the box."
 msgstr ""
 "Einige Erweiterungen benötigen einen Neustart.\n"
-"Wenn das Plugin nicht verfügbar ist, bitte neustarten"
+"Wenn die Erweiterung nicht verfügbar ist, bitte neu starten"
 
 #: extensions.h:396
 msgid "TPK Tmp Install done, your system will reboot !"
 msgstr ""
-"TPK Tmp Installation abgeschlossen\n"
-"Ihre Box wird neu gestartet"
+"Erweiterung Tmp Installation abgeschlossen\n"
+"Ihr Receiver wird neu gestartet"
 
 #: extensions.h:420 extensions.h:424
 msgid "Tpk Update Info - Update ERROR"
-msgstr "Tpk Update Info - Update Fehler"
+msgstr "Erweiterung Update Info - Update Fehler"
 
 #: extensions.h:420
 msgid "Can't get all TPK index !"
-msgstr "Fehler beim Download der TPK Index Dateien!"
+msgstr "Fehler beim Download der Erweiterung Index Dateien!"
 
 #: extensions.h:424
 msgid "Can't update all packages !"
-msgstr "Es konnten nicht alle TPK Pakete aktualisiert werden!"
+msgstr "Es konnten nicht alle Erweiterungen aktualisiert werden!"
 
 #: extensions.h:432
 msgid "TPK Upgrade done, your system will reboot !"
 msgstr ""
-"TPK Aktualisierung abgeschlossen\n"
-"Ihre Box wird neu gestartet"
+"Aktualisierung abgeschlossen\n"
+"Ihr Receiver wird neu gestartet"
 
 #: facebook.h:66 facebook.h:167
 msgid "Can't get data from facebook"
-msgstr ""
+msgstr "Keine Verbindung zu Facebook"
 
 #: facebook.h:157
 msgid ""
 "Facebook allready registered,\n"
 "Make new registration ?"
 msgstr ""
+"Sind Sie bereits bei Facebook angemeldet?"
+"Möchten Sie sich Registrieren?"
 
 #: facebook.h:471
 msgid "Group created"
-msgstr ""
+msgstr "Gruppe abgelenht"
 
 #: facebook.h:472
 msgid "Event created"
-msgstr ""
+msgstr "Ereignis angelegt"
 
 #: facebook.h:473
 msgid "Status update"
-msgstr ""
+msgstr "STatus aktualisiert"
 
 #: facebook.h:474
 msgid "Post on wall from another user"
-msgstr ""
+msgstr "An die Pinnwand schreiben"
 
 #: facebook.h:475
 msgid "Note created"
-msgstr ""
+msgstr "nicht angelegt"
 
 #: facebook.h:476
 msgid "Link postet"
-msgstr ""
+msgstr "Link veröffentlicht"
 
 #: facebook.h:477
 msgid "Video postet"
-msgstr ""
+msgstr "Video veröffentlicht"
 
 #: facebook.h:478
 msgid "Photos postet"
-msgstr ""
+msgstr "Bild veröffentlicht"
 
 #: facebook.h:479 facebook.h:481
 msgid "App story"
-msgstr ""
+msgstr "App Hintergrund"
 
 #: facebook.h:480
 msgid "Coment created"
-msgstr ""
+msgstr "Bemerkung angelegt"
 
 #: facebook.h:482
 msgid "Checkin to a place"
-msgstr ""
+msgstr "Am Ort angemeldet"
 
 #: facebook.h:483
 msgid "Post in group"
-msgstr ""
+msgstr "In der Gruppe schreiben"
 
 #: filemanager.h:23 filemanager.h:86 filemanager.h:92
 msgid "Rename"
@@ -1528,7 +1540,8 @@ msgstr ""
 
 #: gmediarender.h:113
 msgid "Wait for connect or press EXIT"
-msgstr ""
+msgstr "Warten Sie, bis die Verbindung hergestellt wurde\n"
+"oder brechen Sie durch -Exit- den Vorgang ab!"
 
 #: gmultiepg.h:546 gmultiepg.h:746
 msgid "GRAPHIC MULTI EPG - Bouquets"
@@ -1536,19 +1549,19 @@ msgstr "Grafisches-Multi-EPG - Favoriten"
 
 #: gmultiepg.h:559
 msgid "GRAPHIC MULTI EPG - Channel"
-msgstr ""
+msgstr "Grafisches-Multi-EPG - Sender"
 
 #: gmultiepg.h:572
 msgid "GRAPHIC MULTI EPG - Satellites"
-msgstr ""
+msgstr "Grafisches-Multi-EPG - Satellit"
 
 #: gmultiepg.h:585
 msgid "GRAPHIC MULTI EPG - Provider"
-msgstr ""
+msgstr "Grafisches-Multi-EPG - Anbieter"
 
 #: gmultiepg.h:598
 msgid "GRAPHIC MULTI EPG - All Channels"
-msgstr ""
+msgstr "Grafisches-Multi-EPG - Alle Sender"
 
 #: harddisk.h:126 harddisk.h:127
 msgid "Harddisk Format - Filesystem"
@@ -1556,35 +1569,35 @@ msgstr "Festplatte formatieren - Dateisystem"
 
 #: harddisk.h:165 plugins_mc_skin.xml.h:18 skins_mc_skin.xml.h:18
 msgid "default"
-msgstr "Voreinstellung"
+msgstr "Werkseinstellung"
 
 #: harddisk.h:213 harddisk.h:214
 msgid "Harddisk Configure"
-msgstr "Festplatte konfigurieren"
+msgstr "Festplatte einrichten"
 
 #: harddisk.h:225 harddisk.h:715
 msgid "use medium for record"
-msgstr "Laufwerk für Aufnahmen benutzen"
+msgstr "Laufwerk für Aufnahmen (record) benutzen"
 
 #: harddisk.h:230
 msgid "del medium for record"
-msgstr "Laufwerk nicht für Aufnahmen benutzen"
+msgstr "Aufnahmen (record) vom Laufwerk entfernen"
 
 #: harddisk.h:235 harddisk.h:720
 msgid "use medium for extension"
-msgstr "Laufwerk für Erweiterungen benutzen"
+msgstr "Laufwerk für Erweiterungen (swapextensions) benutzen"
 
 #: harddisk.h:240
 msgid "del medium for extension"
-msgstr "Laufwerk nicht für Erweiterungen benutzen"
+msgstr "Erweiterungen (swapextensions) vom Laufwerk entfernen"
 
 #: harddisk.h:245 harddisk.h:722
 msgid "use medium for swap"
-msgstr "Laufwerk für SWAP-DATEI benutzen"
+msgstr "Laufwerk für Speicher (swap) benutzen"
 
 #: harddisk.h:250
 msgid "del medium for swap"
-msgstr "Laufwerk nicht für Swap-Datei benutzen"
+msgstr "Speicher (swap) vom Laufwerk entfernen"
 
 #: harddisk.h:255 harddisk.h:724
 msgid "use medium for backup"
@@ -1592,7 +1605,7 @@ msgstr "Laufwerk für Sicherungen und Wiederherstellung benutzen"
 
 #: harddisk.h:260
 msgid "del medium for backup"
-msgstr "Laufwerk nicht für Sicherungen und Wiederherstellung benutzen"
+msgstr "'Sicherungen und Wiederherstellung' vom Laufwerk entfernen"
 
 #: harddisk.h:345
 msgid "Are you sure you want to delete this directory?"
@@ -1663,6 +1676,9 @@ msgid ""
 "HDD > 2TB unsupported.\n"
 "You must first install plugin parted, then you can use this panel."
 msgstr ""
+"Festplattengröße über 2TB werden nicht unterstützt!\n"
+"Sie müßen erst die Erweiterung 'parted' installieren!\n"
+"Anschließend können Sie die Festplatte einrichten."
 
 #: harddisk.h:632
 msgid ""
@@ -1687,6 +1703,7 @@ msgid ""
 "ERROR\n"
 "partition could not be created"
 msgstr ""
+"FEHLER: Partition konnte nicht erstellt werden!"
 
 #: harddisk.h:802
 msgid ""
@@ -1706,27 +1723,27 @@ msgstr ""
 
 #: harddisk.h:867 harddisk.h:868
 msgid "Harddisk Sleep"
-msgstr "Festplattenstandby"
+msgstr "Festplattenstandby (Sleep)"
 
 #: harddisk.h:874 skin_default_skin.xml.h:651
 msgid "Time to sleep"
-msgstr "Festplattenstandby"
+msgstr "Zeit bis HDD-Standby (Sleep)"
 
 #: harddisk.h:876
 msgid "5 min"
-msgstr ""
+msgstr "5 Minuten"
 
 #: harddisk.h:876
 msgid "10 min"
-msgstr ""
+msgstr "10 Minuten"
 
 #: harddisk.h:877
 msgid "15 min"
-msgstr ""
+msgstr "15 Minuten"
 
 #: harddisk.h:877
 msgid "60 min"
-msgstr ""
+msgstr "60 Minuten"
 
 #: harddisk.h:1035
 msgid ""
@@ -1748,27 +1765,27 @@ msgstr "HBBTV Sender"
 
 #: hwtest.h:88
 msgid "testtransponder not found"
-msgstr ""
+msgstr "Test-Transponder nicht gefunden"
 
 #: hwtest.h:93
 msgid "testtransponder entry not ok"
-msgstr ""
+msgstr "Test-Transponder Eintrag fehlerhaft"
 
 #: hwtest.h:98
 msgid "can't create new transponer"
-msgstr ""
+msgstr "Transponder kann nicht angelegt werden"
 
 #: hwtest.h:103
 msgid "testchannel not found"
-msgstr ""
+msgstr "Testsender nicht gefunden"
 
 #: hwtest.h:108
 msgid "testchannel entry not ok"
-msgstr ""
+msgstr "Testsender Eintrag fehlerhaft"
 
 #: hwtest.h:113
 msgid "can't create new channel"
-msgstr ""
+msgstr "Neuer Sender kan nnciht angelegt werden"
 
 #: hwtest.h:153 hwtest.h:195
 msgid "[S]Lock & Search"
@@ -1803,7 +1820,7 @@ msgstr "Netzwerk"
 
 #: hwtest.h:182 hwtest.h:416
 msgid "USB Port"
-msgstr ""
+msgstr "USB Anschluß"
 
 #: hwtest.h:183 hwtest.h:460
 msgid "CAM"
@@ -1815,7 +1832,7 @@ msgstr ""
 
 #: hwtest.h:185 hwtest.h:569
 msgid "LNB"
-msgstr "LNB"
+msgstr ""
 
 #: hwtest.h:186 hwtest.h:639
 msgid "Flash/Nand Check"
@@ -1827,15 +1844,15 @@ msgstr ""
 
 #: hwtest.h:206
 msgid "Press OK or EXIT"
-msgstr ""
+msgstr "Drücken Sie OK oder Exit"
 
 #: hwtest.h:245
 msgid "Press Front Key"
-msgstr ""
+msgstr "Drücken Sie eine Gerätetaste"
 
 #: hwtest.h:267
 msgid "Color Bar"
-msgstr ""
+msgstr "Balkenfarbe"
 
 #: hwtest.h:279 tmc.h:702
 msgid "RED"
@@ -1871,7 +1888,7 @@ msgstr ""
 
 #: hwtest.h:427
 msgid "USB Ports found: "
-msgstr ""
+msgstr "USB Anschluß gefunden: "
 
 #: hwtest.h:438 hwtest.h:451
 msgid "USB "
@@ -1883,7 +1900,7 @@ msgstr ""
 
 #: hwtest.h:453
 msgid " : NOT OKAY!"
-msgstr ""
+msgstr " : Fehlerhaft!"
 
 #: hwtest.h:472 moduleconfig.h:338 scconfig.h:31
 msgid "Slot "
@@ -1895,11 +1912,11 @@ msgstr "CI-MODUL gefunden "
 
 #: hwtest.h:564
 msgid "SUCESS Serial Port"
-msgstr ""
+msgstr "Serieller Anschluß OK"
 
 #: hwtest.h:566
 msgid "FAIL Serial Port"
-msgstr ""
+msgstr "Serieller Anschluß Fehlerhaft"
 
 #: hwtest.h:578
 msgid "LNB off / 22K off: OK"
@@ -2154,7 +2171,7 @@ msgstr "groß"
 #: mc_audioplayer_settings.h:37 mc_pictureplayer_settings.h:52
 #: mc_videoplayer_settings.h:33
 msgid "cover"
-msgstr ""
+msgstr "Cover"
 
 #: mc_audioplayer_settings.h:38 mc_videoplayer_settings.h:34
 #: plugins_mc_skin.xml.h:29 skins_mc_skin.xml.h:29
@@ -2179,19 +2196,19 @@ msgstr "Installieren Sie bitte das Datei Browser Plugin unter Erweiterungen"
 #: mc_global.h:934 mc_global.h:949 plugins_mc_skin.xml.h:45
 #: skins_mc_skin.xml.h:45
 msgid "Playlist"
-msgstr ""
+msgstr "Wiedergabeliste"
 
 #: mc_global.h:547 mc_global.h:575 mc_global.h:1074
 msgid "Random-On"
-msgstr "Zufällig-An"
+msgstr "Zufällige Wiedergabe-An"
 
 #: mc_global.h:606 mc_global.h:615
 msgid "Load Playlist"
-msgstr "Playliste laden"
+msgstr "Wiedergabeliste laden"
 
 #: mc_global.h:607
 msgid "Edit Playlist"
-msgstr "Playliste bearbeiten"
+msgstr "Wiedergabeliste bearbeiten"
 
 #: mc_internetbrowser.h:38
 msgid "Install netsurf Internetbrowser Tpk first !"
@@ -2270,23 +2287,23 @@ msgstr "An letzter Stelle beginnen?"
 
 #: mc_videoplayer_settings.h:54
 msgid "1s"
-msgstr ""
+msgstr "1 Sek"
 
 #: mc_videoplayer_settings.h:55
 msgid "2s"
-msgstr ""
+msgstr "2 Sek"
 
 #: mc_videoplayer_settings.h:56
 msgid "3s"
-msgstr ""
+msgstr "3 Sek"
 
 #: mc_videoplayer_settings.h:57
 msgid "4s"
-msgstr ""
+msgstr "4 Sek"
 
 #: mc_videoplayer_settings.h:58
 msgid "5s (default)"
-msgstr ""
+msgstr "5 Sek (Standard)"
 
 #: mc_wetterinfo.h:38
 msgid "Install Weather Tpk first !"
@@ -2294,19 +2311,19 @@ msgstr "Installieren Sie bitte das Wetter Plugin unter Erweiterungen"
 
 #: mediadbedit.h:75
 msgid "unlock -> lock it"
-msgstr ""
+msgstr "Ungesichert -> sichern"
 
 #: mediadbedit.h:76
 msgid "unlock -> leaf unlock"
-msgstr ""
+msgstr "ungesichert -> belassen"
 
 #: mediadbedit.h:77
 msgid "locked -> unlock it"
-msgstr ""
+msgstr "gesichert -> öffnen"
 
 #: mediadbedit.h:78
 msgid "locked -> leaf locked"
-msgstr ""
+msgstr "gesichert -> belassen"
 
 #: mediadbedit.h:333
 msgid "MediaDB entry for this file not found."
@@ -2363,55 +2380,55 @@ msgstr "Titel"
 
 #: mediadb.h:2451
 msgid "imdbid"
-msgstr ""
+msgstr "IMDB-ID"
 
 #: mediadb.h:2454
 msgid "Add iMDB manuel"
-msgstr ""
+msgstr "Manuell IMBD hinzufügen"
 
 #: mediadbsettings.h:37
 msgid "older 1 day"
-msgstr ""
+msgstr "Älter als 1 Tag"
 
 #: mediadbsettings.h:38
 msgid "older 2 day"
-msgstr ""
+msgstr "Älter als 2 Tage"
 
 #: mediadbsettings.h:39
 msgid "older 3 day"
-msgstr ""
+msgstr "Älter als 3 Tage"
 
 #: mediadbsettings.h:40
 msgid "older 4 day"
-msgstr ""
+msgstr "Älter als 4 Tage"
 
 #: mediadbsettings.h:41
 msgid "older 5 day"
-msgstr ""
+msgstr "Älter als 5 Tage"
 
 #: mediadbsettings.h:42
 msgid "older 10 day"
-msgstr ""
+msgstr "Älter als 10 Tage"
 
 #: mediadbsettings.h:43
 msgid "older 15 day"
-msgstr ""
+msgstr "Älter als 15 Tage"
 
 #: mediadbsettings.h:44
 msgid "older 20 day"
-msgstr ""
+msgstr "Älter als 20 Tage"
 
 #: mediadbsettings.h:45
 msgid "older 30 day"
-msgstr ""
+msgstr "Älter als 30 Tage"
 
 #: mediadbsettings.h:46
 msgid "older 40 day"
-msgstr ""
+msgstr "Älter als 40 Tage"
 
 #: mediadbsettings.h:47
 msgid "older 50 day"
-msgstr ""
+msgstr "Älter als 50 Tage"
 
 #: mediadbsettings.h:56 plugins_catcatch_skin.xml.h:3
 #: skin_default_skin.xml.h:33 skins_catcatch_skin.xml.h:3
@@ -2444,7 +2461,7 @@ msgstr "Einstellungen speichern"
 
 #: menu.h:884
 msgid "Error in Save Settings"
-msgstr ""
+msgstr "Fehler beim speichern der Einstellungen"
 
 #: menu.h:886
 msgid "Settings succesfull saved"
@@ -2452,7 +2469,7 @@ msgstr "Einstellungen wurden erfolgreich gespeichert"
 
 #: moduleconfig.h:159
 msgid "double"
-msgstr ""
+msgstr "doppel"
 
 #: moduleconfig.h:168
 msgid "activate"
@@ -2460,7 +2477,7 @@ msgstr "Aktivieren"
 
 #: moduleconfig.h:169
 msgid "deaktivate"
-msgstr ""
+msgstr "Deaktivieren"
 
 #: moduleconfig.h:350
 msgid "Status: "
@@ -2492,23 +2509,23 @@ msgstr "mehrere Sender gleichzeitig"
 
 #: multiepg.h:437 multiepg.h:627
 msgid "MULTI EPG - Bouquets"
-msgstr ""
+msgstr "Multi-EPG - Favoriten"
 
 #: multiepg.h:450
 msgid "MULTI EPG - Channel"
-msgstr ""
+msgstr "Multi-EPG - Sender"
 
 #: multiepg.h:463
 msgid "MULTI EPG - Satellites"
-msgstr ""
+msgstr "Multi-EPG - Satelliten"
 
 #: multiepg.h:476
 msgid "MULTI EPG - Provider"
-msgstr ""
+msgstr "Multi-EPG - Anbieter"
 
 #: multiepg.h:489
 msgid "MULTI EPG - All Channels"
-msgstr "MULTI EPG - Alle Sender"
+msgstr "Multi-EPG - Alle Sender"
 
 #: networkbrowser.h:944
 msgid ""
@@ -2555,28 +2572,28 @@ msgstr "Hinzufügen einer Ftp Freigabe"
 
 #: networkbrowser.h:1559
 msgid "cifs"
-msgstr ""
+msgstr "CIFS"
 
 #: networkbrowser.h:1560
 msgid "nfs"
-msgstr ""
+msgstr "NFS"
 
 #: networkbrowser.h:1561
 msgid "ftpfs"
-msgstr ""
+msgstr "FTPFS"
 
 #: networkbrowser.h:1596
 msgid "ssl_try"
-msgstr ""
+msgstr "SSL versuchen"
 
 #: networkbrowser.h:1597
 msgid "ssl_control"
-msgstr ""
+msgstr "SSL Einstellungen"
 
 #: networkbrowser.h:1598 plugins_networkbrowser_skin.xml.h:28
 #: skins_networkbrowser_skin.xml.h:28
 msgid "ssl"
-msgstr "ssl"
+msgstr "SSL"
 
 #: networkbrowser.h:1601
 msgid "socks5"
@@ -2588,23 +2605,23 @@ msgstr ""
 
 #: networkbrowser.h:1603
 msgid "html"
-msgstr ""
+msgstr "HTML"
 
 #: networkbrowser.h:1659
 msgid "udp"
-msgstr ""
+msgstr "UDP"
 
 #: networkbrowser.h:1660
 msgid "tcp"
-msgstr ""
+msgstr "TCP"
 
 #: networkbrowser.h:1663
 msgid "rw"
-msgstr ""
+msgstr "Lesen/Schreiben"
 
 #: networkbrowser.h:1664
 msgid "ro"
-msgstr ""
+msgstr "Schreibgeschützt"
 
 #: networkbrowser.h:1743
 msgid "Sharename can't be empty!"
@@ -2628,11 +2645,11 @@ msgstr "Wollen Sie diese Freigabe wirklich löschen?"
 
 #: network.h:256 network.h:257
 msgid "Wait"
-msgstr ""
+msgstr "Warten"
 
 #: network.h:265 network.h:273
 msgid "ERROR"
-msgstr ""
+msgstr "FEHLER"
 
 #: network.h:284
 msgid "comming soon..."
@@ -2656,7 +2673,7 @@ msgstr "Automatisch (dhcp)"
 
 #: network.h:390
 msgid "static"
-msgstr ""
+msgstr "statisch"
 
 #: network.h:426
 msgid "save network settings ?"
@@ -2720,17 +2737,19 @@ msgstr ""
 
 #: network.h:876
 msgid "Found Wlan Stick and driver for: "
-msgstr ""
+msgstr "WLAN Modul und Treiber gefunden für: "
 
 #: network.h:881
 msgid ""
 "Found Wlan Stick but no driver\n"
 "Please install driver: "
 msgstr ""
+"Ein WLAN Stick wurde gefunden, jedoch kein passender Treiber.\n"
+"Bitte installieren Sie den passenden Treiber!"
 
 #: network.h:884
 msgid "Wlan Stick not found"
-msgstr ""
+msgstr "WLAN Modul nicht gefunden!"
 
 #: network.h:887
 msgid "WLAN Info"
@@ -2774,7 +2793,7 @@ msgstr "Provideranzahl: "
 
 #: panel_settings_autostart.h:26 panel_settings_autostart.h:104
 msgid "Autostart Defaults"
-msgstr ""
+msgstr "Grundeinstellungen"
 
 #: panel_settings_autostart.h:34 settings_autostart.h:25
 msgid "fsckroot"
@@ -2791,7 +2810,7 @@ msgstr "Debug"
 #: panel_settings_autostart.h:60 panel_settings_autostart.h:132
 #: settings_autostart.h:51 settings_autostart.h:163 tmc.h:558
 msgid "high"
-msgstr ""
+msgstr "hoch"
 
 #: panel_settings_autostart.h:69 settings_autostart.h:60
 msgid "showip"
@@ -2799,11 +2818,11 @@ msgstr "Zeige IP Adresse"
 
 #: panel_settings_autostart.h:70 settings_autostart.h:61
 msgid "status"
-msgstr ""
+msgstr "Status"
 
 #: panel_settings_autostart.h:70 settings_autostart.h:61
 msgid "ip"
-msgstr ""
+msgstr "IP"
 
 #: panel_settings_autostart.h:78 settings_autostart.h:69
 msgid "updatelist"
@@ -2819,7 +2838,7 @@ msgstr "Alte Audio Firmware"
 
 #: panel_settings_autostart.h:122 settings_autostart.h:153
 msgid "No Audiosync"
-msgstr ""
+msgstr "Tonsynchronisation aus"
 
 #: panel_settings_autostart.h:131 settings_autostart.h:162
 msgid "Boot Resolution"
@@ -2835,7 +2854,7 @@ msgstr "Ausschalten"
 
 #: panel_settings_autostart.h:158 settings_autostart.h:189
 msgid "Scart On Standby"
-msgstr ""
+msgstr "Scartausgabe im Standby"
 
 #: panel_settings_autostart.h:167 settings_autostart.h:198
 msgid "HighSR"
@@ -2843,11 +2862,11 @@ msgstr "HighSR"
 
 #: panel_settings_autostart.h:176 settings_autostart.h:207
 msgid "Boot RGB Fix"
-msgstr ""
+msgstr "RGB Fix beim Startvorgang"
 
 #: panel_settings_autostart.h:186
 msgid "Autostart USB"
-msgstr ""
+msgstr "USB"
 
 #: panel_settings_autostart.h:192 settings_autostart.h:273
 msgid "Load Partition"
@@ -2855,7 +2874,7 @@ msgstr "Lade Partition"
 
 #: panel_settings_autostart.h:201 settings_autostart.h:282
 msgid "Fsck Record"
-msgstr ""
+msgstr "Partitionsprüfung 'record'"
 
 #: panel_settings_autostart.h:210 settings_autostart.h:291
 #: skin_default_skin.xml.h:618
@@ -2864,27 +2883,27 @@ msgstr "Swap"
 
 #: panel_settings_autostart.h:219 settings_autostart.h:300
 msgid "Swap Size"
-msgstr ""
+msgstr "Swap Größe"
 
 #: panel_settings_autostart.h:236 settings_autostart.h:317
 msgid "Fsck Swap"
-msgstr ""
+msgstr "Partitionsprüfung 'swap'"
 
 #: panel_settings_autostart.h:245 settings_autostart.h:326
 msgid "Record Max Sectors"
-msgstr ""
+msgstr "Maximale Sektorengröße für 'record'"
 
 #: panel_settings_autostart.h:262 settings_autostart.h:343
 msgid "Swap Max Sectors"
-msgstr ""
+msgstr "Maximale Sektorengröße für 'swap'"
 
 #: panel_settings_autostart.h:279
 msgid "Autostart EMU"
-msgstr ""
+msgstr "Softcam"
 
 #: panel_settings_autostart.h:285 settings_autostart.h:405
 msgid "Emu Control"
-msgstr ""
+msgstr "Softcam Kontrolle"
 
 #: panel_settings_autostart.h:294 settings_autostart.h:414
 msgid "ftdi"
@@ -2908,11 +2927,11 @@ msgstr "Suche WLAN"
 
 #: panel_settings_autostart.h:344
 msgid "Autostart Child Safety"
-msgstr ""
+msgstr "Jugendschutz"
 
 #: panel_settings_autostart.h:350 settings_autostart.h:477
 msgid "Parental"
-msgstr ""
+msgstr "Altersbeschränkung"
 
 #: panel_settings_autostart.h:359 settings_autostart.h:486
 msgid "Pin"
@@ -2920,11 +2939,11 @@ msgstr "PIN"
 
 #: panel_settings.h:21
 msgid "Automount Config"
-msgstr ""
+msgstr "Einstellungen"
 
 #: panel_settings.h:27
 msgid "Ntfs Write"
-msgstr ""
+msgstr "NTFS schreiben"
 
 #: panel_settings.h:29
 msgid "disable"
@@ -2936,7 +2955,7 @@ msgstr ""
 
 #: panel_settings.h:31
 msgid "ntfsmount"
-msgstr ""
+msgstr "NTFS-Freigabe"
 
 #: panel_settings_overclocking.h:213 settings_overclocking.h:213
 msgid "Only Boot Overclock"
@@ -2969,7 +2988,7 @@ msgstr "Frequenz"
 
 #: panel_settings_overclocking.h:276 settings_overclocking.h:276
 msgid "videmode"
-msgstr ""
+msgstr "Bildauflösung"
 
 #: panel_settings_wizard.h:6
 msgid ""
@@ -2984,11 +3003,11 @@ msgstr ""
 #: plugins_tmdb_skin.xml.h:9 skins_imdbapi_skin.xml.h:9
 #: skins_imdb_skin.xml.h:9 skins_tmc_skin.xml.h:16 skins_tmdb_skin.xml.h:9
 msgid "Title:"
-msgstr ""
+msgstr "Titel: "
 
 #: play.h:401 play.h:435
 msgid "Artist:"
-msgstr ""
+msgstr "Interpret:"
 
 #: play.h:406 play.h:440 plugins_mc_skin.xml.h:5 skins_mc_skin.xml.h:5
 msgid "Album:"
@@ -2996,7 +3015,7 @@ msgstr ""
 
 #: play.h:411 play.h:445 plugins_mc_skin.xml.h:69 skins_mc_skin.xml.h:69
 msgid "Year:"
-msgstr ""
+msgstr "Jahr:"
 
 #: play.h:416 play.h:450 plugins_imdbapi_skin.xml.h:3
 #: plugins_imdb_skin.xml.h:3 plugins_mc_skin.xml.h:30 plugins_tmc_skin.xml.h:7
@@ -3008,7 +3027,7 @@ msgstr ""
 
 #: play.h:421 play.h:455
 msgid "Comment:"
-msgstr ""
+msgstr "Bemerkung:"
 
 #: play.h:460
 msgid "Track:"
@@ -3733,7 +3752,7 @@ msgstr "Bildschirmschoner"
 #: plugins_panel_skin.xml.h:22 skin_default_skin.xml.h:559
 #: skins_mc_skin.xml.h:53 skins_panel_skin.xml.h:5 skins_panel_skin.xml.h:22
 msgid "Settings"
-msgstr "Senderlisten"
+msgstr "Einstellungen"
 
 #: plugins_mc_skin.xml.h:54 skins_mc_skin.xml.h:54
 msgid "Show Pictitle"
