@@ -427,12 +427,14 @@ unsigned char* dvbgetpmt(struct dvbdev* fenode, unsigned char* patbuf, int servi
 	}
 
 	dmxsetsource(dmxnode, fenode->fedmxsource);
-#ifdef MIPSEL	
+	int input = DMX_IN_FRONTEND;
 	if(fenode->fedmxsource >= 16 && fenode->fedmxsource <= 19)
+		input = DMX_IN_DVR;
+#ifdef MIPSEL	
 #if DVB_API_VERSION > 3
-			dmxsetpesfilter(dmxnode, 0, DMX_IN_DVR, DMX_OUT_TAP, DMX_PES_OTHER, 1);
+	dmxsetpesfilter(dmxnode, 0, input, DMX_OUT_TAP, DMX_PES_OTHER, 1);
 #else
-			dmxsetpesfilter(dmxnode, 0, DMX_IN_DVR, DMX_OUT_TAP, 0, 1);
+	dmxsetpesfilter(dmxnode, 0, input, DMX_OUT_TAP, 0, 1);
 #endif
 #endif
 	dmxsetfilter(dmxnode, *pmtpid, 0, 2);
