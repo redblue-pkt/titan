@@ -623,7 +623,7 @@ int main(int argc, char *argv[])
 	ret = addinetworkall(NULL);
 	
 #ifndef SIMULATE
-	if(getconfigint("sos", NULL) == 0 && checkbox("ATEMIO5000") != 1 && checkbox("VUSOLO2") != 1)
+	if(getconfigint("sos", NULL) == 0 && checkbox("ATEMIO5000") != 1 && checkbox("ATEMIO5200") != 1 && checkbox("VUSOLO2") != 1)
 	{
 		if(ostrcmp(string_newline(gettimeinfo()), TIMECODE) == 1)
 		{
