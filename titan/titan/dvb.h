@@ -426,10 +426,10 @@ unsigned char* dvbgetpmt(struct dvbdev* fenode, unsigned char* patbuf, int servi
 		return NULL;
 	}
 
+#ifdef MIPSEL    
 	if(fenode->fedmxsource >= 16 && fenode->fedmxsource <= 20) 
-	#ifdef MIPSEL    
 		dmxsetpesfilter(dmxnode, 0, DMX_IN_DVR, DMX_OUT_TSDEMUX_TAP, DMX_PES_OTHER, 1); 
-	#endif 
+#endif 
 	
 	dmxsetsource(dmxnode, fenode->fedmxsource);
 	dmxsetfilter(dmxnode, *pmtpid, 0, 2);
