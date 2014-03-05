@@ -261,11 +261,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	}
 	audiostop(status.aktservice->audiodev);
 	//demux pcr start
-#ifdef MIPSEL	
-	if((flag == 0 || flag == 1) && chnode->pcrpid > 0)
-#else
 	if(flag == 0 && chnode->pcrpid > 0)
-#endif
 	{
 		if(status.aktservice->dmxpcrdev != NULL && status.aktservice->dmxpcrdev->fd >= 0 && status.aktservice->dmxpcrdev->adapter == fenode->adapter && status.aktservice->dmxpcrdev->devnr == fenode->devnr)
 			dmxpcrnode = status.aktservice->dmxpcrdev;
