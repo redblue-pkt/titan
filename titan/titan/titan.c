@@ -707,9 +707,9 @@ int main(int argc, char *argv[])
 	openfont(getskinconfig("fontfile4", NULL));
 	openfont(getskinconfig("fontfile5", NULL));
 
-#ifdef SH4
+
 	setvol(getconfigint("vol", NULL));
-#endif
+
 	
 	setlang(getconfig("lang", NULL));
 	initlocale(getconfig("localepath", NULL));
@@ -876,10 +876,6 @@ int main(int argc, char *argv[])
 	if(checkbox("VUSOLO2") == 1)
 		system("fbset 1280x720-1");
 
-	//set volume on start
-#ifdef MIPSEL
-		setvol(getconfigint("vol", NULL));
-#endif
 
 	//check to remove preinstalled tpk packages
 	ret = tpkupdatepre();
