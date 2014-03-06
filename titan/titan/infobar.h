@@ -141,7 +141,7 @@ void screeninfobar()
 			}
 		}
 
-		if(rcret == getrcconfigint("rcpause", NULL) || ((checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1) && rcret == getrcconfigint("rcplay", NULL) && status.pause == 0 && status.slowspeed == 0 && status.playspeed == 0 && ostrcmp(getconfig("remotecontrol", NULL), "0") == 0))
+		if(rcret == getrcconfigint("rcpause", NULL) || ((checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1 || checkbox("ATEMIO5000") == 1) && rcret == getrcconfigint("rcplay", NULL) && status.pause == 0 && status.slowspeed == 0 && status.playspeed == 0 && ostrcmp(getconfig("remotecontrol", NULL), "0") == 0))
 		{
 			//timeshift
 			if(playpic == 1) {
@@ -191,7 +191,7 @@ void screeninfobar()
 					clearscreen(playinfobarpic);
 					playpic = 0;
 				}		
-				if(((checkbox("ATEMIO520") != 1 && checkbox("ATEMIO530") != 1) || ostrcmp(getconfig("remotecontrol", NULL), "1") == 1)  && status.timeshifttype == 1)
+				if(((checkbox("ATEMIO520") != 1 && checkbox("ATEMIO530") != 1 && checkbox("ATEMIO530") != 1) || ostrcmp(getconfig("remotecontrol", NULL), "1") == 1)  && status.timeshifttype == 1)
 				{
 					if(status.playing == 0 || (status.playspeed == 0 && status.slowspeed == 0 && status.pause == 0))
 					{
