@@ -110,13 +110,14 @@ else
 		if [ ! -e "$ROUND_MERGE" ] || [ `cat "$ROUND_MERGE" | wc -l` -eq 0 ]; then error="10"; break;fi
 ###
 fi
-		SEARCH=`cat $ROUND_MERGE | grep -n "Content-Transfer-Encoding: 8bit" | cut -d":" -f1`
+#		SEARCH=`cat $ROUND_MERGE | grep -n "Content-Transfer-Encoding: 8bit" | cut -d":" -f1`
 
-		echo "[createpo.sh] SEARCH $SEARCH"
-		CUT=`expr $SEARCH + 1`
-		echo "[createpo.sh] CUT $CUT"
+#		echo "[createpo.sh] SEARCH $SEARCH"
+#		CUT=`expr $SEARCH + 1`
+#		echo "[createpo.sh] CUT $CUT"
 
-		cat $ROUND_MERGE | sed "1,"$CUT"d" > $OUTFILE_PO
+#		cat $ROUND_MERGE | sed "1,"$CUT"d" > $OUTFILE_PO
+		cat $ROUND_MERGE > $OUTFILE_PO 
 		if [ ! -e "$OUTFILE_PO" ] || [ `cat "$OUTFILE_PO" | wc -l` -eq 0 ]; then error="11"; break;fi
 
 		cmd="msgfmt -v $OUTFILE_PO -o $OUTFILE_MO"
