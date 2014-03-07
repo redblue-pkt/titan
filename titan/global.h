@@ -1779,6 +1779,7 @@ void setskinnodeslocked(int flag)
 			{
 				child->locked = tmpflag;
 				if(status.timeshifttype == 1) child->locked = 0;
+				if(checkbox("UFS910") == 1) child->locked = 0;
 			}
 			
 			child = child->next;
