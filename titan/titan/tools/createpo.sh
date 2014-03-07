@@ -111,7 +111,9 @@ else
 ###
 fi
 echo ROUND: $ROUND
-if[ "$ROUND" = "/home/atemio/flashimg/source.titan/po/vn/LC_MESSAGES/titan.po_auto.po" ];then
+
+if [ "$ROUND" = "/home/atemio/flashimg/source.titan/po/vn/LC_MESSAGES/titan.po_auto.po" ];then
+
 		SEARCH=`cat $ROUND_MERGE | grep -n "Content-Transfer-Encoding: 8bit" | cut -d":" -f1`
 
 		echo "[createpo.sh] SEARCH $SEARCH"
