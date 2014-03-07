@@ -17,6 +17,8 @@ fi
 rm -rf "$HOME"/flashimg/source.titan/titan/tools/tmp
 mkdir -p "$HOME"/flashimg/source.titan/titan/tools/tmp
 
+rm -rf /home/atemio/flashimg/source.titan/po/vn
+
 LIST=`find "$HOME"/flashimg/source.titan/titan "$HOME"/flashimg/source.titan/plugins -type f -name "*.h"`
 LIST="$LIST $HOME/flashimg/source.titan/titan/titan.c"
 POLIST=`find "$HOME"/flashimg/source.titan/po -type f -name "*_auto.po"`
@@ -49,7 +51,6 @@ cat "$HOME"/flashimg/source.titan/skins/tithek/tithekmainmenu/*.list | grep -v i
 file --mime-encoding "$HOME"/flashimg/source.titan/po/*/*/*.po >> "$HOME"/flashimg/source.titan/error/coding.log 2>&1
 
 error=0
-rm -rf /home/atemio/flashimg/source.titan/po/vn
 
 for ROUND in $POLIST; do
 	echo "[createpo.sh] ############################ start ###############################"
