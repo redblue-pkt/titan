@@ -20,7 +20,7 @@ msgstr "Tuner"
 #: transponder.h:122 transponder.h:158 transponder.h:194 transponder.h:227
 #: transponder.h:259 transponder.h:295 transponder.h:330 transponder.h:348
 #: transponder.h:364 transponder.h:418 transponder.h:451 transponder.h:480
-#: transponder.h:493 transponder.h:504 transponder.h:574 youtube.h:149
+#: transponder.h:493 transponder.h:504 transponder.h:574 youtube.h:150
 #: zdf.h:86
 msgid "unknown"
 msgstr "Άγνωστο"
@@ -116,7 +116,7 @@ msgstr ""
 #: tpk.new.h:3167 tunerconfig.h:772 unlock.h:20 unlock.h:66 unlock.h:71
 #: unlock.h:75 videomode.h:53 videoweed.h:35 videoweed.h:80 vidstream.h:45
 #: vidstream.h:86 vidstream.h:98 vidstream.h:167 xvidstage.h:54
-#: xvidstage.h:100 xvidstage.h:177 youtube.h:197 zdf.h:29
+#: xvidstage.h:100 xvidstage.h:177 youtube.h:198 zdf.h:29
 msgid "OK"
 msgstr "OK"
 
@@ -207,7 +207,7 @@ msgstr "OK"
 #: tpk.new.h:3167 tunerconfig.h:772 unlock.h:20 unlock.h:66 unlock.h:71
 #: unlock.h:75 videomode.h:53 videoweed.h:35 videoweed.h:80 vidstream.h:45
 #: vidstream.h:86 vidstream.h:98 vidstream.h:167 xvidstage.h:54
-#: xvidstage.h:100 xvidstage.h:177 youtube.h:197 zdf.h:29
+#: xvidstage.h:100 xvidstage.h:177 youtube.h:198 zdf.h:29
 msgid "EXIT"
 msgstr "EXIT"
 
@@ -570,7 +570,7 @@ msgstr ""
 #: tmdb.h:922 tpk.h:3185 tpk.new.h:3167 tunerconfig.h:772 unlock.h:20
 #: unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:53 videoweed.h:35
 #: videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98 vidstream.h:167
-#: xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:197 zdf.h:29
+#: xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:198 zdf.h:29
 msgid "Message"
 msgstr ""
 
