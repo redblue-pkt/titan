@@ -17,8 +17,6 @@ fi
 rm -rf "$HOME"/flashimg/source.titan/titan/tools/tmp
 mkdir -p "$HOME"/flashimg/source.titan/titan/tools/tmp
 
-rm -rf /home/atemio/flashimg/source.titan/po/vn
-
 LIST=`find "$HOME"/flashimg/source.titan/titan "$HOME"/flashimg/source.titan/plugins -type f -name "*.h"`
 LIST="$LIST $HOME/flashimg/source.titan/titan/titan.c"
 POLIST=`find "$HOME"/flashimg/source.titan/po -type f -name "*_auto.po"`
@@ -112,15 +110,18 @@ else
 		if [ ! -e "$ROUND_MERGE" ] || [ `cat "$ROUND_MERGE" | wc -l` -eq 0 ]; then error="10"; break;fi
 ###
 fi
-#		SEARCH=`cat $ROUND_MERGE | grep -n "Content-Transfer-Encoding: 8bit" | cut -d":" -f1`
+echo ROUND: $ROUND
+if[ "$ROUND" = "/home/atemio/flashimg/source.titan/po/vn/LC_MESSAGES/titan.po_auto.po" ];then
+		SEARCH=`cat $ROUND_MERGE | grep -n "Content-Transfer-Encoding: 8bit" | cut -d":" -f1`
 
-#		echo "[createpo.sh] SEARCH $SEARCH"
-#		CUT=`expr $SEARCH + 1`
-#		echo "[createpo.sh] CUT $CUT"
+		echo "[createpo.sh] SEARCH $SEARCH"
+		CUT=`expr $SEARCH + 1`
+		echo "[createpo.sh] CUT $CUT"
 
-#		cat $ROUND_MERGE | sed "1,"$CUT"d" > $OUTFILE_PO
+		cat $ROUND_MERGE | sed "1,"$CUT"d" > $OUTFILE_PO
+else
 		cat $ROUND_MERGE | "sed s/Content-Transfer-Encoding:.*//g" | sed "s/Content-Type:.*//g" > $OUTFILE_PO
-
+fi
 		cat $ROUND_MERGE > $OUTFILE_PO 
 		if [ ! -e "$OUTFILE_PO" ] || [ `cat "$OUTFILE_PO" | wc -l` -eq 0 ]; then error="11"; break;fi
 
