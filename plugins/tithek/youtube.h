@@ -66,7 +66,8 @@ and get to youtube
 						sig = string_resub("sig=","&",ret1[i].part,0);
 						
 						free(streamurl), streamurl = NULL;
-						if(murl != NULL && sig != NULL)
+//						if(murl != NULL && sig != NULL)
+						if(murl != NULL)
 						{					
 							streamurl = ostrcat(murl, NULL, 0, 0);
 							streamurl = ostrcat(streamurl, "&signature=", 1, 0);
