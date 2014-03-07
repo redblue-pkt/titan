@@ -110,9 +110,14 @@ else
 		if [ ! -e "$ROUND_MERGE" ] || [ `cat "$ROUND_MERGE" | wc -l` -eq 0 ]; then error="10"; break;fi
 ###
 fi
+echo ROUND: $ROUND
+
+if [ "$ROUND" = "/home/atemio/flashimg/source.titan/po/vn/LC_MESSAGES/titan.po_auto.po" ];then
 
 		cat $ROUND_MERGE | sed 's/Content-Transfer-Encoding:.*//g' > $OUTFILE_PO
-
+else
+		cat $ROUND_MERGE > $OUTFILE_PO 
+fi
 		if [ ! -e "$OUTFILE_PO" ] || [ `cat "$OUTFILE_PO" | wc -l` -eq 0 ]; then error="11"; break;fi
 
 		cmd="msgfmt -v $OUTFILE_PO -o $OUTFILE_MO"
