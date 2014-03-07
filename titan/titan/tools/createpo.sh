@@ -117,6 +117,8 @@ fi
 #		echo "[createpo.sh] CUT $CUT"
 
 #		cat $ROUND_MERGE | sed "1,"$CUT"d" > $OUTFILE_PO
+		cat $ROUND_MERGE | "sed s/Content-Transfer-Encoding:.*//" | sed "s/Content-Type:.*//" > $OUTFILE_PO
+
 		cat $ROUND_MERGE > $OUTFILE_PO 
 		if [ ! -e "$OUTFILE_PO" ] || [ `cat "$OUTFILE_PO" | wc -l` -eq 0 ]; then error="11"; break;fi
 
