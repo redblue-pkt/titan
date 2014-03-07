@@ -430,21 +430,30 @@ start:
 	drawscreen(tunerreceptiondvbs, 0, 0);
 	addscreenrc(tunerreceptiondvbs, listbox);
 
+printf("11\n");
 	tmp = listbox->select;
 	while(1)
 	{
+printf("22\n");
+
 		addscreenrc(tunerreceptiondvbs, tmp);
 		rcret = waitrc(tunerreceptiondvbs, 0, 0);
 		tmp = listbox->select;
 
 		if(rcret == getrcconfigint("rcexit", NULL))
 		{
+printf("33\n");
+
 			break;
 		}
 		if(ostrcmp(listbox->select->name, "sat_type") == 0)
 		{
+printf("44\n");
+		
 			if((ostrcmp(listbox->select->ret, "0") == 0) && (maxsat != 1))
 			{
+printf("55\n");
+
 				delconfigtmpall();
 				delmarkedscreennodes(tunerreceptiondvbs, 1);
 				delmarkedscreennodes(tunerreceptiondvbs, 2);
@@ -455,6 +464,8 @@ start:
 			}
 			else if((ostrcmp(listbox->select->ret, "1") == 0) && (maxsat != 2))
 			{
+printf("66\n");
+
 				delconfigtmpall();
 				delmarkedscreennodes(tunerreceptiondvbs, 1);
 				delmarkedscreennodes(tunerreceptiondvbs, 2);
@@ -465,6 +476,8 @@ start:
 			}
 			else if((ostrcmp(listbox->select->ret, "2") == 0) && (maxsat != 4))
 			{
+printf("77\n");
+
 				delconfigtmpall();
 				delmarkedscreennodes(tunerreceptiondvbs, 1);
 				delmarkedscreennodes(tunerreceptiondvbs, 2);
@@ -475,6 +488,8 @@ start:
 			}
 			else if((ostrcmp(listbox->select->ret, "3") == 0) && (maxsat != 8))
 			{
+printf("88\n");
+
 				delconfigtmpall();
 				delmarkedscreennodes(tunerreceptiondvbs, 1);
 				delmarkedscreennodes(tunerreceptiondvbs, 2);
@@ -485,6 +500,8 @@ start:
 			}
 			else if((ostrcmp(listbox->select->ret, "4") == 0) && (maxsat != MAXSAT))
 			{
+printf("99\n");
+
 				delconfigtmpall();
 				delmarkedscreennodes(tunerreceptiondvbs, 1);
 				delmarkedscreennodes(tunerreceptiondvbs, 2);
@@ -496,14 +513,20 @@ start:
 		}
 		if(rcret == getrcconfigint("rcred", NULL))
 		{
+printf("aa\n");
+
 			if(listbox->select != NULL && ostrcmp(listbox->select->text, "Lnb / Unicable") == 0 && listbox->select->ret != NULL && ostrcmp(listbox->select->ret, "0") != 0)
 			{
+printf("bb\n");
+
 				clearscreen(tunerreceptiondvbs);
 				screenlnb(tuner->feshortname, listbox->select->handle);
 				drawscreen(tunerreceptiondvbs, 0, 0);
 			}
 			if(listbox->select != NULL && ostrcmp(listbox->select->text, "DiSEqC") == 0 && listbox->select->ret != NULL && ostrcmp(listbox->select->ret, "0") != 0)
 			{
+printf("cc\n");
+
 				clearscreen(tunerreceptiondvbs);
 				screendiseqc(tuner->feshortname, listbox->select->handle);
 				drawscreen(tunerreceptiondvbs, 0, 0);
@@ -511,6 +534,8 @@ start:
 		}
 		else if(rcret == getrcconfigint("rcok", NULL))
 		{
+printf("dd\n");
+
 			ret = 1;
 			deltranspondertunablestatus();
 			writetunerconfigsat(tuner, tunerreceptiondvbs);
@@ -520,7 +545,10 @@ start:
 			writeallconfig(1);
 			break;
 		}
+printf("ee\n");
+
 	}
+printf("ff\n");
 
 	delconfigtmpall();
 	delmarkedscreennodes(tunerreceptiondvbs, 1);
