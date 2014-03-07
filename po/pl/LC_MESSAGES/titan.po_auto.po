@@ -113,7 +113,7 @@ msgstr ""
 #: tithek.h:1345 tithek.h:1367 tithek.h:1372 tithek.h:1386 tithek.h:3013
 #: tithek.h:3075 tithek.h:3089 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922 tpk.h:3185
-#: tpk.new.h:3167 tunerconfig.h:800 unlock.h:20 unlock.h:66 unlock.h:71
+#: tpk.new.h:3167 tunerconfig.h:772 unlock.h:20 unlock.h:66 unlock.h:71
 #: unlock.h:75 videomode.h:53 videoweed.h:35 videoweed.h:80 vidstream.h:45
 #: vidstream.h:86 vidstream.h:98 vidstream.h:167 xvidstage.h:54
 #: xvidstage.h:100 xvidstage.h:177 youtube.h:197 zdf.h:29
@@ -204,7 +204,7 @@ msgstr "OK"
 #: tithek.h:1345 tithek.h:1367 tithek.h:1372 tithek.h:1386 tithek.h:3013
 #: tithek.h:3075 tithek.h:3089 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922 tpk.h:3185
-#: tpk.new.h:3167 tunerconfig.h:800 unlock.h:20 unlock.h:66 unlock.h:71
+#: tpk.new.h:3167 tunerconfig.h:772 unlock.h:20 unlock.h:66 unlock.h:71
 #: unlock.h:75 videomode.h:53 videoweed.h:35 videoweed.h:80 vidstream.h:45
 #: vidstream.h:86 vidstream.h:98 vidstream.h:167 xvidstage.h:54
 #: xvidstage.h:100 xvidstage.h:177 youtube.h:197 zdf.h:29
@@ -567,7 +567,7 @@ msgstr ""
 #: tithek.h:620 tithek.h:1057 tithek.h:1100 tithek.h:1345 tithek.h:1367
 #: tithek.h:1372 tithek.h:3013 tithek.h:3075 tithek.h:3089 tiwakeup.h:66
 #: tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759
-#: tmdb.h:922 tpk.h:3185 tpk.new.h:3167 tunerconfig.h:800 unlock.h:20
+#: tmdb.h:922 tpk.h:3185 tpk.new.h:3167 tunerconfig.h:772 unlock.h:20
 #: unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:53 videoweed.h:35
 #: videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98 vidstream.h:167
 #: xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:197 zdf.h:29
@@ -589,7 +589,7 @@ msgstr ""
 #: panel_settings_autostart.h:61 panel_settings_overclocking.h:276
 #: readerconfig.h:413 settings_autostart.h:52 settings_overclocking.h:276
 #: transponder.h:256 transponder.h:264 transponder.h:415 transponder.h:423
-#: tunerconfig.h:699 vfdisplay.h:42 vfdisplay.h:50
+#: tunerconfig.h:671 vfdisplay.h:42 vfdisplay.h:50
 msgid "off"
 msgstr ""
 
@@ -10062,10 +10062,11 @@ msgid "Expert"
 msgstr ""
 
 #: tunerconfig.h:183 tunerconfig.h:212 tunerconfig.h:243 tunerconfig.h:276
+#: tunerconfig.h:505
 msgid "DiSEqC"
 msgstr "DiseqC"
 
-#: tunerconfig.h:301
+#: tunerconfig.h:301 tunerconfig.h:499
 msgid "Lnb / Unicable"
 msgstr ""
 
@@ -10073,21 +10074,21 @@ msgstr ""
 msgid "Terrestrisch"
 msgstr ""
 
-#: tunerconfig.h:673
+#: tunerconfig.h:645
 msgid "direct connect"
 msgstr ""
 
-#: tunerconfig.h:684
+#: tunerconfig.h:656
 msgid "loop to Tuner"
 msgstr ""
 
-#: tunerconfig.h:800
+#: tunerconfig.h:772
 msgid ""
 "Tunerconfig is not allowed if record\n"
 "or stream is running !"
 msgstr ""
 
-#: tunerconfig.h:814
+#: tunerconfig.h:786
 msgid "Tuner "
 msgstr "Tuner"
 
