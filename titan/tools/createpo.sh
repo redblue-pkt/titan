@@ -49,7 +49,8 @@ cat "$HOME"/flashimg/source.titan/skins/tithek/tithekmainmenu/*.list | grep -v i
 file --mime-encoding "$HOME"/flashimg/source.titan/po/*/*/*.po >> "$HOME"/flashimg/source.titan/error/coding.log 2>&1
 
 error=0
-#rm -rf /home/atemio/flashimg/source.titan/po/fr
+rm -rf /home/atemio/flashimg/source.titan/po/vn
+
 for ROUND in $POLIST; do
 	echo "[createpo.sh] ############################ start ###############################"
 	echo "[createpo.sh] update $ROUND"
