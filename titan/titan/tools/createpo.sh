@@ -114,7 +114,7 @@ echo ROUND: $ROUND
 
 if [ "$ROUND" = "/home/atemio/flashimg/source.titan/po/vn/LC_MESSAGES/titan.po_auto.po" ];then
 
-		cat $ROUND_MERGE | sed 's/Content-Transfer-Encoding:.*//g' > $OUTFILE_PO
+		cat $ROUND_MERGE | sed 's/"Content-Type:.*//g' > $OUTFILE_PO
 else
 		cat $ROUND_MERGE > $OUTFILE_PO 
 fi
