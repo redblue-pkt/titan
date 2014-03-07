@@ -112,12 +112,11 @@ else
 fi
 echo ROUND: $ROUND
 
-#if [ "$ROUND" = "/home/atemio/flashimg/source.titan/po/vn/LC_MESSAGES/titan.po_auto.po" ];then
-
+if [ "$ROUND" = "/home/atemio/flashimg/source.titan/po/vn/LC_MESSAGES/titan.po_auto.po" ];then
 		cat $ROUND_MERGE | sed 's/"Content-Type:.*//g' > $OUTFILE_PO
-#else
-#		cat $ROUND_MERGE > $OUTFILE_PO 
-#fi
+else
+		cat $ROUND_MERGE > $OUTFILE_PO 
+fi
 		if [ ! -e "$OUTFILE_PO" ] || [ `cat "$OUTFILE_PO" | wc -l` -eq 0 ]; then error="11"; break;fi
 
 		cmd="msgfmt -v $OUTFILE_PO -o $OUTFILE_MO"
