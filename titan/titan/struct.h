@@ -106,9 +106,9 @@
 #define PLUGINDELMARK 254
 #define MAXDVBADAPTER 1
 //#ifndef MIPSEL
-//#define MAXFRONTENDDEV 4
+#define MAXFRONTENDDEV 4
 //#else
-#define MAXFRONTENDDEV 2
+//#define MAXFRONTENDDEV 2
 //#endif
 #define MAXDEMUXDEVOPEN 10
 #define MAXAUDIODEV 1
