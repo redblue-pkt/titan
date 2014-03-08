@@ -10534,15 +10534,3 @@ msgstr "Höchsttemperatur: "
 #: weather.h:442 weather.h:460 weather.h:478 weather.h:496
 msgid "Condition: "
 msgstr "Wetter: "
-
-#~ msgid "systemupdate_flash_online_menu..."
-#~ msgstr "Softwareaktualisierung (Online)"
-
-#~ msgid "systemupdate_flash_tmp_menu..."
-#~ msgstr "Softwareaktualisierung (tmp)"
-
-#~ msgid "systemupdate_usb_online_menu..."
-#~ msgstr "USB Softwareaktualisierung (Online)"
-
-#~ msgid "systemupdate_usb_tmp_menu..."
-#~ msgstr "USB Softwareaktualisierung (tmp)"
