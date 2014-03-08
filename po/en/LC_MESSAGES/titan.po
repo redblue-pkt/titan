@@ -11,6 +11,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#msgid "Copyright"
+#msgstr "© Copyright"
+
 msgid "--- SD resolution"
 msgstr "--- SD resolution"
 
@@ -782,7 +785,7 @@ msgid "Really stop download ?"
 msgstr "Really stop download?"
 
 msgid "French"
-msgstr "French"
+msgstr "Français"
 
 msgid "free space"
 msgstr "Free space"
@@ -845,7 +848,7 @@ msgid "Graphic EPG Picon"
 msgstr "Graphic EPG Picon"
 
 msgid "Greek"
-msgstr "Greek"
+msgstr "Ελληνικά"
 
 msgid "grey"
 msgstr "grey"
@@ -854,7 +857,7 @@ msgid "German"
 msgstr "Deutsch"
 
 msgid "Dutch"
-msgstr "Dutch"
+msgstr "Nederlands"
 
 msgid "GUI Restart"
 msgstr "GUI Restart"
@@ -987,7 +990,7 @@ msgid "Is this Videomode ok ?"
 msgstr "Is this Videomode ok?"
 
 msgid "Italian"
-msgstr "Italian"
+msgstr "Italiano"
 
 msgid "iwatch"
 msgstr "iWatch"
@@ -1469,7 +1472,7 @@ msgid "Policy"
 msgstr "Policy"
 
 msgid "Polish"
-msgstr "Polish"
+msgstr "Polski"
 
 msgid "portmap"
 msgstr "Port Map"
@@ -1745,7 +1748,7 @@ msgid "rsize"
 msgstr "rsize"
 
 msgid "Russian"
-msgstr "Russian"
+msgstr "Русский"
 
 msgid "Samba Server Settings"
 msgstr "Samba Server Settings"
@@ -3929,7 +3932,7 @@ msgid "Episode"
 msgstr "Episode"
 
 msgid "Vietnamese"
-msgstr "Vietnamese"
+msgstr "Viet"
 
 msgid "/var not writeable!\nRepair it?"
 msgstr "/var not writeable!\nRepair?"
