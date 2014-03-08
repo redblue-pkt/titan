@@ -10534,6 +10534,3 @@ msgstr "Höchsttemperatur: "
 #: weather.h:442 weather.h:460 weather.h:478 weather.h:496
 msgid "Condition: "
 msgstr "Wetter: "
-
-#~ msgid "Nightly Version 9157 of oscam 2xSlot intern + 1xUSB"
-#~ msgstr "OScam Nightly Version 9157 für 2xKartenschacht und 1xUSB"
