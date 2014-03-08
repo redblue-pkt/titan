@@ -105,11 +105,11 @@
 #define FILELISTDELMARK 255
 #define PLUGINDELMARK 254
 #define MAXDVBADAPTER 1
-#ifndef MIPSEL
-#define MAXFRONTENDDEV 4
-#else
+//#ifndef MIPSEL
+//#define MAXFRONTENDDEV 4
+//#else
 #define MAXFRONTENDDEV 2
-#endif
+//#endif
 #define MAXDEMUXDEVOPEN 10
 #define MAXAUDIODEV 1
 #define MAXVIDEODEV 2
