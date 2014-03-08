@@ -9193,8 +9193,8 @@ msgid "news Plugin"
 msgstr "Nachrichten Erweiterung"
 
 #: tpk_description.h:94
-msgid "Nightly Version 9157 of oscam 2xSlot intern + 1xUSB"
-msgstr "OScam Nightly Version 9157 für 2xKartenschacht und 1xUSB"
+msgid "Nightly Version of oscam 2xSlot intern + 1xUSB"
+msgstr ""
 
 #: tpk_description.h:95
 msgid "Nightly Version of OSCam 8755"
@@ -10534,3 +10534,6 @@ msgstr "Höchsttemperatur: "
 #: weather.h:442 weather.h:460 weather.h:478 weather.h:496
 msgid "Condition: "
 msgstr "Wetter: "
+
+#~ msgid "Nightly Version 9157 of oscam 2xSlot intern + 1xUSB"
+#~ msgstr "OScam Nightly Version 9157 für 2xKartenschacht und 1xUSB"

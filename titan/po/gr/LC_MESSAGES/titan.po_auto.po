@@ -8853,7 +8853,7 @@ msgid "news Plugin"
 msgstr "Plugins"
 
 #: tpk_description.h:94
-msgid "Nightly Version 9157 of oscam 2xSlot intern + 1xUSB"
+msgid "Nightly Version of oscam 2xSlot intern + 1xUSB"
 msgstr ""
 
 #: tpk_description.h:95
