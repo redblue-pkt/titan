@@ -1415,9 +1415,22 @@ void screentithekplay(char* titheklink, char* title, int first)
 	struct skin* listbox = getscreennode(grid, "listbox");
 	struct skin* countlabel = getscreennode(grid, "countlabel");
 	struct skin* countpage = getscreennode(grid, "countpage");
+	struct skin* b5 = getscreennode(grid, "b4");
+	struct skin* b4 = getscreennode(grid, "b5");
 	struct skin* load = getscreen("loading");
 	struct skin* tmp = NULL;
 	char* tithekpic = NULL;
+
+	if (ostrcmp(title, "TiThek - Favoriten") == 0)
+	{
+		b4->hidden = YES;
+		b5->hidden = NO;
+	}
+	else
+	{
+		b4->hidden = NO;
+		b5->hidden = YES;
+	}		
 	
 	drawscreen(load, 0, 0);
 	
