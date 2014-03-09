@@ -1,3 +1,20 @@
+<<<<<<< .mine
+msgid ""
+msgstr ""
+"Project-Id-Version: TitanNit 1.50\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-07 10:44+0200\n"
+"PO-Revision-Date: 2014-03-09 21:38+0100\n"
+"Last-Translator: caliban <aaf-caliban@e.mail.de>\n"
+"Language-Team: German <_obiwan_@web.de>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+
+=======
+>>>>>>> .r27298
 #: about.h:9
 msgid "Image"
 msgstr ""
@@ -3983,19 +4000,13 @@ msgstr "Netzwerk Freigabe als Aufnahmeort"
 msgid ""
 "Here you can configure your Auth Data. Use to navigate the control cross and "
 "the extra buttons displayed with your remote control to select."
-msgstr ""
-"Hier können Sie Ihre User Authentifizierung konfigurieren.\n"
-"\n"
-"Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
+msgstr "Hier können Sie Ihre User Authentifizierung konfigurieren."
 
 #: plugins_networkbrowser_skin.xml.h:11 skins_networkbrowser_skin.xml.h:11
 msgid ""
 "Here you can configure your network shares. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
-msgstr ""
-"Hier können Sie Ihre Netzwerk Freigaben konfigurieren.\n"
-"\n"
-"Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
+msgstr "Hier können Sie Ihre Netzwerk Freigaben konfigurieren."
 
 #: plugins_networkbrowser_skin.xml.h:12 skins_networkbrowser_skin.xml.h:12
 msgid ""
@@ -4226,19 +4237,13 @@ msgstr "aktiviert"
 msgid ""
 "Here you can aktivate/deaktivate you readers. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
-msgstr ""
-"Hier können Sie ihren Kartenleser aktivieren bzw. deaktivieren.\n"
-"\n"
-"Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
+msgstr "Hier können Sie ihren Kartenleser aktivieren bzw. deaktivieren."
 
 #: plugins_readerconfig_skin.xml.h:6 skins_readerconfig_skin.xml.h:6
 msgid ""
 "Here you can configure your reader. Use to navigate the control cross and "
 "the extra buttons displayed with your remote control to select."
-msgstr ""
-"Hier können Sie Ihre Kartenleser auswählen.\n"
-"\n"
-"Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
+msgstr "Hier können Sie Ihre Kartenleser auswählen."
 
 #: plugins_readerconfig_skin.xml.h:7 skins_readerconfig_skin.xml.h:7
 msgid "Reader Config"
@@ -6110,13 +6115,11 @@ msgid ""
 "select."
 msgstr ""
 "Hier können Sie für Ihren ausgewählten Tuner die LNB-Einstellungen\n"
-"vornehmen.\n"
-"Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
+"vornehmen."
 
 #: skin_default_skin.xml.h:264
 msgid "Here to select your remote Model"
-msgstr ""
-"Hier können Sie Ihr Fernbedienungsmodell auswählen und mit OK bestätigen."
+msgstr "Hier können Sie Ihr Fernbedienungsmodell auswählen."
 
 #: skin_default_skin.xml.h:265
 msgid ""
@@ -6146,54 +6149,39 @@ msgid ""
 "systems require an additional engine settings making."
 msgstr ""
 "Hier können Sie Ihren Tuner für die Konfiguration auswählen.\n"
-"Für Ihren Kanalsuchlauf müssen Sie Ihre Tuner bearbeiten und je nach "
-"Anbindung einstellen. Für motorisierte Anlagen bitte zusätzlich Motor "
-"Ansteuerung bearbeiten."
+"Für den Kanalsuchlauf müssen Sie Ihre Tuner bearbeiten und je nach Anbindung "
+"einstellen. Für motorisierte Anlagen bitte zusätzlich Motor Ansteuerung "
+"bearbeiten."
 
 #: skin_default_skin.xml.h:269
 msgid ""
 "Here you can configure access to your DynDNS. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
-msgstr ""
-"Hier können Sie Ihren DynDNS Zugang konfigurieren.\n"
-"\n"
-"Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
+msgstr "Hier können Sie Ihren DynDNS Zugang konfigurieren."
 
 #: skin_default_skin.xml.h:270
 msgid ""
 "Here you can configure Ci-Modules. Use to navigate the control cross and the "
 "extra buttons displayed with your remote control to select."
-msgstr ""
-"Hier können Sie Ihre CI-Module konfigurieren.\n"
-"\n"
-"Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
+msgstr "Hier können Sie Ihre CI-Module konfigurieren."
 
 #: skin_default_skin.xml.h:271
 msgid ""
 "Here you can configure the smartcard readers. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
-msgstr ""
-"Hier können Sie Ihre Smartcards konfigurieren.\n"
-"\n"
-"Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
+msgstr "Hier können Sie Ihre Smartcards konfigurieren."
 
 #: skin_default_skin.xml.h:272
 msgid ""
 "Here you can configure your web server. Use to navigate the control cross "
 "and the extra buttons displayed with your remote control to select."
-msgstr ""
-"Hier können Sie das Webinterface und den RGUI Service konfigurieren.\n"
-"\n"
-"Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
+msgstr "Hier können Sie das Webinterface und den RGUI Service konfigurieren."
 
 #: skin_default_skin.xml.h:273
 msgid ""
 "Here you can create a new record timer. Use to navigate the control cross "
 "and the extra buttons displayed with your remote control to select."
-msgstr ""
-"Hier können sie einen neuen Aufnahme-Timer anlegen.\n"
-"\n"
-"Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
+msgstr "Hier können sie einen neuen Timer anlegen."
 
 #: skin_default_skin.xml.h:274
 msgid ""
@@ -6202,9 +6190,7 @@ msgid ""
 "control to select."
 msgstr ""
 "Hier können Sie einen Blindscan durchführen, dieser Vorgang dauert sehr "
-"lange.\n"
-"\n"
-"Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
+"lange."
 
 #: skin_default_skin.xml.h:275
 msgid ""
@@ -6213,9 +6199,7 @@ msgid ""
 "select."
 msgstr ""
 "Hier können Sie Sender und Favoriten definieren, für die ein EPG Scan "
-"stattfinden soll.\n"
-"\n"
-"Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
+"stattfinden soll."
 
 #: skin_default_skin.xml.h:276
 msgid ""
@@ -6223,9 +6207,7 @@ msgid ""
 "navigate the control cross and the extra buttons displayed with your remote "
 "control to select."
 msgstr ""
-"Hier können Sie von unserem aktuellen Online-Angebot Plugins installieren.\n"
-"\n"
-"Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
+"Hier können Sie von unserem aktuellen Online-Angebot Plugins installieren."
 
 #: skin_default_skin.xml.h:277
 msgid ""
@@ -6233,10 +6215,15 @@ msgid ""
 "button to search. Use to navigate the control cross and the extra buttons "
 "displayed with your remote control to select."
 msgstr ""
+<<<<<<< .mine
+"Hier können Sie im EPG nach bestimmten Einträgen suchen. Verwenden Sie eine "
+"der Farbtasten um die Suche zu starten."
+=======
 "Hier können Sie im EPG nach bestimmten Einträgen suchen. Verwenden Sie "
 "eine der Farbtasten um die Suche zu starten.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
+>>>>>>> .r27298
 
 #: skin_default_skin.xml.h:278
 msgid ""
@@ -6245,9 +6232,7 @@ msgid ""
 "control to select."
 msgstr ""
 "Hier können Sie für Ihre ausgewählte Netzwerkschnittstelle Einstellungen "
-"vornehmen.\n"
-"\n"
-"Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
+"vornehmen."
 
 #: skin_default_skin.xml.h:279
 msgid ""
@@ -6265,28 +6250,19 @@ msgstr ""
 msgid ""
 "Here you can make your epg settings. Use to navigate the control cross and "
 "the extra buttons displayed with your remote control to select."
-msgstr ""
-"Hier können Sie Ihre EPG Einstellungen vornehmen.\n"
-"\n"
-"Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
+msgstr "Hier können Sie die EPG Einstellungen konfigurieren."
 
 #: skin_default_skin.xml.h:281
 msgid ""
 "Here you can make your mediadb settings. Use to navigate the control cross "
 "and the extra buttons displayed with your remote control to select."
-msgstr ""
-"Hier können Sie Ihre MediaDB Einstellungen vornehmen.\n"
-"\n"
-"Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
+msgstr "Hier können Sie die MediaDB konfigurieren."
 
 #: skin_default_skin.xml.h:282
 msgid ""
 "Here you can make your module settings. Use to navigate the control cross "
 "and the extra buttons displayed with your remote control to select."
-msgstr ""
-"Hier können Sie die Einstellungen für CI-Module anpassen.\n"
-"\n"
-"Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
+msgstr "Hier können Sie die Einstellungen für CI-Module anpassen."
 
 #: skin_default_skin.xml.h:283
 msgid ""
@@ -6295,27 +6271,21 @@ msgid ""
 "select."
 msgstr ""
 "Hier können Sie Ihre Bild und Ton Einstellungen vornehmen.\n"
-"\n"
-"Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
+"Hinweis: Die neue Auflösung muss bestätigt werden. Bei falscher Auflösung "
+"wird nach 5 Sekunden in den ursprünglichen Modus zurückgeschaltet."
 
 #: skin_default_skin.xml.h:284
 msgid ""
 "Here you can make your PIN security for menus settings. Use to navigate the "
 "control cross and the extra buttons displayed with your remote control to "
 "select."
-msgstr ""
-"Hier können Sie Ihre PIN Sicherheitseinstellungen für Menüs vornehmen.\n"
-"\n"
-"Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
+msgstr "Hier können Sie Ihre PIN Sicherheitseinstellungen für Menüs vornehmen."
 
 #: skin_default_skin.xml.h:285
 msgid ""
 "Here you can make your PIN security settings. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
-msgstr ""
-"Hier können Sie Ihre PIN Sicherheitseinstellungen vornehmen.\n"
-"\n"
-"Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
+msgstr "Hier können Sie Ihre PIN Sicherheitseinstellungen vornehmen."
 
 #: skin_default_skin.xml.h:286
 msgid ""
@@ -6324,82 +6294,58 @@ msgid ""
 "select."
 msgstr ""
 "Hier können Sie Timer auswählen, löschen und\n"
-"bearbeiten.\n"
-"\n"
-"Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
+"bearbeiten."
 
 #: skin_default_skin.xml.h:287
 msgid ""
 "Here you can make your recordpath settings. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
-msgstr ""
-"Hier können Sie Ihre Aufnahmepfad Einstellungen vornehmen.\n"
-"\n"
-"Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
+msgstr "Hier können Sie den Aufnahmepfad konfigurieren"
 
 #: skin_default_skin.xml.h:288
 msgid ""
 "Here you can make your screensaver settings. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
-msgstr ""
-"Hier können Sie Ihre Bildschirmschoner Einstellungen vornehmen.\n"
-"\n"
-"Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
+msgstr "Hier können Sie Ihre Bildschirmschoner konfigurieren."
 
 #: skin_default_skin.xml.h:289
 msgid ""
 "Here you can make your settings for your engine systems. To enter the "
 "latitude and longitude using the number keys."
 msgstr ""
-"Hier können Sie für Ihre Motorisierte Sat-Anlage Ihre Einstellungen \n"
-"vornehmen.\n"
+"Hier können Sie Ihre motorisierte Sat-Anlage konfigurieren.\n"
 "Zur Eingabe der Längen und Breitengrade benutzen Sie die Zifferntasten."
 
 #: skin_default_skin.xml.h:290
 msgid ""
 "Here you can make your system settings. Use to navigate the control cross "
 "and the extra buttons displayed with your remote control to select."
-msgstr ""
-"Hier können Sie Ihre erweiterte System Einstellungen vornehmen.\n"
-"\n"
-"Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
+msgstr "Hier können Sie Ihre erweiterte System Einstellungen vornehmen."
 
 #: skin_default_skin.xml.h:291
 msgid ""
 "Here you can make your timeshift settings. Use to navigate the control cross "
 "and the extra buttons displayed with your remote control to select."
-msgstr ""
-"Hier können Sie die Timeshift Einstellungen anpassen.\n"
-"\n"
-"Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
+msgstr "Hier können Sie die Timeshift Einstellungen anpassen."
 
 #: skin_default_skin.xml.h:292
 msgid ""
 "Here you can make your vfd settings. Use to navigate the control cross and "
 "the extra buttons displayed with your remote control to select."
-msgstr ""
-"Hier können Sie Ihre VFDisplay Einstellungen vornehmen.\n"
-"\n"
-"Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
+msgstr "Hier können Sie das VFDisplay konfigurieren."
 
 #: skin_default_skin.xml.h:293
 msgid ""
 "Here you can select from the following list a skin. Use to navigate the "
 "control cross and the extra buttons displayed with your remote control to "
 "select."
-msgstr ""
-"Hier können Sie einen Skin aus der folgenden Liste auswählen.\n"
-"\n"
-"Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
+msgstr "Hier können Sie einen Skin aus der folgenden Liste auswählen."
 
 #: skin_default_skin.xml.h:294
 msgid ""
 "Here you can select from the following list. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
-msgstr ""
-"Hier können Sie aus der folgenden Liste auswählen.\n"
-"\n"
-"Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
+msgstr "Hier können Sie aus der folgenden Liste auswählen."
 
 #: skin_default_skin.xml.h:295
 msgid ""
@@ -6408,24 +6354,20 @@ msgid ""
 "remote control to select."
 msgstr ""
 "Hier können Sie Ihre Festplatten und USB-Sticks zur Konfiguration\n"
-"auswählen.\n"
-"Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
+"auswählen."
 
 #: skin_default_skin.xml.h:296
 msgid ""
 "Here you can select your Network Interface. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
-msgstr ""
-"Hier können Sie Ihre Netzwerkschnittstelle auswählen.\n"
-"\n"
-"Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
+msgstr "Hier können Sie Ihre Netzwerkschnittstelle auswählen."
 
 #: skin_default_skin.xml.h:297
 msgid ""
 "Here you can set for your cable tuner. Ask your cable provider and make you "
 "connect an automatic search."
 msgstr ""
-"Hier können Sie für Ihren Kabel Tuner einstellen.\n"
+"Hier können Sie Ihren Kabel Tuner einstellen.\n"
 "\n"
 "Stellen Sie Ihren Kabel Anbieter ein und führen Sie anschließend einen "
 "automatischen Suchlauf durch."
@@ -6436,19 +6378,19 @@ msgid ""
 "selection. When using DiSEqC They also point to the port used. For advanced "
 "Lnb / Unicam navigate to the field and press the Red button."
 msgstr ""
-"Hier können Sie für Ihren Sat Tuner einstellen.\n"
-"Stellen Sie zunächst Ihre Satelliten Auswahl ein. Bei Verwendung von DiSEqC "
-"weisen Sie zusätzlich den verwendeten Port zu. Für erweiterte LNB/Unicable "
-"navigieren Sie zum Feld und drücken Sie die Rote Taste."
+"Hier können Sie Ihren Sat Tuner einstellen.\n"
+"Stellen Sie zunächst den Satelliten ein. Bei Verwendung von DiSEqC weisen "
+"Sie zusätzlich den verwendeten Port zu. Für erweiterte LNB/Unicable "
+"Konfiguration navigieren Sie zum Feld und drücken Sie die Rote Taste."
 
 #: skin_default_skin.xml.h:299
 msgid ""
 "Here you can set for your terrestrial tuner. Activate the terrestrial tuner "
 "and do you connect an automatic search."
 msgstr ""
-"Hier können Sie für Ihren Terrestrischen Tuner einstellen.\n"
+"Hier können Sie den DVB-T Tuner einstellen.\n"
 "\n"
-"Aktivieren Sie den Terrestrischen Tuner und führen Sie anschließend einen "
+"Aktivieren Sie den DVB-T Tuner und führen Sie anschließend einen "
 "automatischen Suchlauf durch."
 
 #: skin_default_skin.xml.h:300
@@ -6458,8 +6400,7 @@ msgid ""
 "Very important, before you start looking for a channel must be set to its "
 "tuner tuner settings."
 msgstr ""
-"Hier können Sie Ihre Kanalsuche einstellen. Navigieren Sie mit dem "
-"Steuerkreuz und den unten angezeigten Tasten.\n"
+"Hier können Sie Ihre Kanalsuche einstellen.\n"
 "Sehr wichtig: Bevor Sie eine Kanalsuche starten, müssen Sie Ihre Tuner "
 "unter Tuner-Einstellungen (Kabel/Sat/Terrestrisch) einstellen."
 
@@ -6467,48 +6408,33 @@ msgstr ""
 msgid ""
 "Here you can set your language. Use to navigate the control cross and the "
 "extra buttons displayed with your remote control to select."
-msgstr ""
-"Hier können Sie Ihre Sprache einstellen.\n"
-"\n"
-"Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
+msgstr "Hier können Sie Ihre Sprache einstellen."
 
 #: skin_default_skin.xml.h:302
 msgid ""
 "Here you can set your timezone. Use to navigate the control cross and the "
 "extra buttons displayed with your remote control to select."
-msgstr ""
-"Hier können Sie Ihre Zeitzone einstellen.\n"
-"\n"
-"Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
+msgstr "Hier können Sie Ihre Zeitzone einstellen."
 
 #: skin_default_skin.xml.h:303
 msgid ""
 "Here you can start and manage your additional plug-ins. Use to navigate the "
 "control cross and the extra buttons displayed with your remote control to "
 "select."
-msgstr ""
-"Hier können Sie Ihre zusätzlichen Plugins starten und verwalten.\n"
-"\n"
-"Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
+msgstr "Hier können Sie Ihre zusätzlichen Plugins starten und verwalten."
 
 #: skin_default_skin.xml.h:304
 msgid ""
 "Here you can test your network. Use to navigate the control cross and the "
 "extra buttons displayed with your remote control to select."
-msgstr ""
-"Hier können Sie Ihr Netzwerk testen.\n"
-"\n"
-"Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
+msgstr "Hier können Sie die Netzwerkverbindung testen."
 
 #: skin_default_skin.xml.h:305
 msgid ""
 "Here you can view the current channel information. Use to navigate the "
 "control cross and the extra buttons displayed with your remote control to "
 "select."
-msgstr ""
-"Hier können Sie die aktuellen Senderinfos abrufen.\n"
-"\n"
-"Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
+msgstr "Hier können Sie die aktuellen Senderinfos abrufen."
 
 #: skin_default_skin.xml.h:306
 msgid "Hierarchy"
@@ -10746,11 +10672,11 @@ msgstr "Auflösung"
 
 #: videomode.h:19 videomode.h:62 videomode.h:69
 msgid "Aspect Settings"
-msgstr "Seitenverhältnis Einstellungen"
+msgstr "Seitenverhältnis"
 
 #: videomode.h:25 videomode.h:27
 msgid "Videomode"
-msgstr "Bildqualität"
+msgstr "Video Modus"
 
 #: weather.h:430 weather.h:448 weather.h:466 weather.h:484
 msgid "Day: "
