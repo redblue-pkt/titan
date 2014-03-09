@@ -1553,6 +1553,9 @@ waitrcstart:
 			drawscreen(grid, 0, 0);
 		}
 
+printf("title struct: %s\n",((struct tithek*)listbox->select->handle)->title);
+printf("title var: %s\n",title);
+
 		if (ostrcmp(((struct tithek*)listbox->select->handle)->title, "TiThek - Favoriten") == 0)
 		{
 			b4->hidden = NO;
