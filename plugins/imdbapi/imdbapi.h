@@ -262,13 +262,13 @@ start:
 	}
 	else
 	{
-		changetext(skin_plot, "--plot--");
-		changetext(skin_title, "--title--");
-		changetext(skin_director, "--director--");
-		changetext(skin_writers, "--writers--");
-		changetext(skin_genre, "--genre--");
-		changetext(skin_releasetime, "--releasetime--");
-		changetext(skin_actors, "--actors--");
+		changetext(skin_plot, _("--plot--"));
+		changetext(skin_title, _("--title--"));
+		changetext(skin_director, _("--director--"));
+		changetext(skin_writers, _("--writers--"));
+		changetext(skin_genre, _("--genre--"));
+		changetext(skin_releasetime, _("--releasetime--"));
+		changetext(skin_actors, _("--actors--"));
 		skin_cover->hidden = YES;
 	}
 	
@@ -284,7 +284,7 @@ start:
 
 		if(rcret == getrcconfigint("rcred", NULL))
     	{
-			search = textinput("Search", searchstr);
+			search = textinput(_("Search"), searchstr);
 			if(search != NULL)
 			{
 				freeimdbapi(&node, 0); node = NULL;

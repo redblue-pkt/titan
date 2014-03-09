@@ -75,9 +75,9 @@ int movie4k_search(struct skin* grid, struct skin* listbox, struct skin* countla
 	if(flag == 0)
 	{
 		if(searchstr == NULL)
-			search = textinputhist("Search", " ", "searchhist");
+			search = textinputhist(_("Search"), " ", "searchhist");
 		else
-			search = textinputhist("Search", searchstr, "searchhist");
+			search = textinputhist(_("Search"), searchstr, "searchhist");
 	}
 	else
 		search = ostrcat(link, NULL, 0, 0);
@@ -231,9 +231,9 @@ int movie4k_search_local(struct skin* grid, struct skin* listbox, struct skin* c
 		return ret;
 
 	if(searchstr == NULL)
-		search = textinputhist("Search", " ", "searchhist");
+		search = textinputhist(_("Search"), " ", "searchhist");
 	else
-		search = textinputhist("Search", searchstr, "searchhist");
+		search = textinputhist(_("Search"), searchstr, "searchhist");
 
 	if(search != NULL)
 	{

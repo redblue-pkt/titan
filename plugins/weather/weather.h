@@ -511,7 +511,7 @@ start:
 		if(rcret == getrcconfigint("rcred", NULL))
 		{
 			free(location); location = NULL;
-			location = textinput("Location", NULL);
+			location = textinput(_("Location"), NULL);
 			if(location != NULL)
 			{
 				struct skin* tmp = addlistbox(weather, listbox, NULL, 1);

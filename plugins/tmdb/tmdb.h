@@ -836,13 +836,13 @@ start:
 	}
 	else
 	{
-		changetext(skin_plot, "--plot--");
-		changetext(skin_title, "--title--");
-		changetext(skin_orgname, "--orgname--");
-		changetext(skin_rating, "--rating--");
-		changetext(skin_genre, "--genre--");
-		changetext(skin_released, "--releasetime--");
-		changetext(skin_votes, "( --votes-- )");		
+		changetext(skin_plot, _("--plot--"));
+		changetext(skin_title, _("--title--"));
+		changetext(skin_orgname, _("--orgname--"));
+		changetext(skin_rating, _("--rating--"));
+		changetext(skin_genre, _("--genre--"));
+		changetext(skin_released, _("--releasetime--"));
+		changetext(skin_votes, _("( --votes-- )"));		
 		skin_cover->hidden = YES;
 	}
 
@@ -857,7 +857,7 @@ start:
 
 		if(rcret == getrcconfigint("rcred", NULL))
 		{
-			search = textinput("Search", searchstr);
+			search = textinput(_("Search"), searchstr);
 			if(search != NULL)
 			{
 				freetmdb(&node, 0), node = NULL;
