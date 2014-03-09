@@ -3459,7 +3459,7 @@ msgstr ""
 
 #: plugins_callmonitor1_skin.xml.h:12 skins_callmonitor1_skin.xml.h:12
 msgid "FritzBook"
-msgstr ""
+msgstr "Fritzbook"
 
 #: plugins_callmonitor1_skin.xml.h:13 skins_callmonitor1_skin.xml.h:13
 msgid "Fritzbox Firmware... >= 05.50"
@@ -3471,7 +3471,7 @@ msgstr ""
 
 #: plugins_callmonitor1_skin.xml.h:15 skins_callmonitor1_skin.xml.h:15
 msgid "LOAD-FritzBook"
-msgstr ""
+msgstr "Fritzbook laden"
 
 #: plugins_callmonitor1_skin.xml.h:16 skins_callmonitor1_skin.xml.h:16
 msgid "Nutzername-Fritzbox (optional)"
