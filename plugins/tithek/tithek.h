@@ -1552,7 +1552,18 @@ waitrcstart:
 			addscreenrc(grid, listbox);
 			drawscreen(grid, 0, 0);
 		}
-		
+
+		if (ostrcmp(((struct tithek*)listbox->select->handle)->title, "TiThek - Favoriten") == 0)
+		{
+			b4->hidden = NO;
+			b5->hidden = YES;
+		}
+		else
+		{
+			b4->hidden = YES;
+			b5->hidden = NO;
+		}
+
 		if(rcret == getrcconfigint("rcred", NULL))
 		{
 			if(listbox->select != NULL && listbox->select->handle != NULL)
@@ -3104,17 +3115,6 @@ why ?
 					addfav(((struct tithek*)listbox->select->handle)->title, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, ((struct tithek*)listbox->select->handle)->menutitle, ((struct tithek*)listbox->select->handle)->flag);		
 				}
 			}
-		}
-
-		if (ostrcmp(((struct tithek*)listbox->select->handle)->title, "TiThek - Favoriten") == 0)
-		{
-			b4->hidden = NO;
-			b5->hidden = YES;
-		}
-		else
-		{
-			b4->hidden = YES;
-			b5->hidden = NO;
 		}
 	}
 
