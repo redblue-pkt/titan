@@ -10775,8 +10775,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid ""
-#~ "text=LOAD-FritzBook halign=center valign=middle bordercol=blue "
-#~ "bordersize=2 bordertype=2 posx=400 posy=0 width=200 height=30/>"
-#~ msgstr "Fritzbook laden"
