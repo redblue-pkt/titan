@@ -1,3 +1,17 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: TitanNit 1.50\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-07 10:44+0200\n"
+"PO-Revision-Date: 2014-03-09 10:07+0100\n"
+"Last-Translator: caliban <aaf-caliban@e.mail.de>\n"
+"Language-Team: German <_obiwan_@web.de>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+
 #: about.h:9
 msgid "Image"
 msgstr ""
@@ -856,57 +870,6 @@ msgstr ""
 msgid "---"
 msgstr ""
 
-#: dirsort.h:18 dirsort.h:19 dirsort.h:20 dirsort.h:21 dirsort.h:22
-#: dirsort.h:23 mc_imdb.h:78 mc_imdb.h:79 mc_imdb.h:80 mc_imdb.h:81
-#: mc_imdb.h:82 mc_view.h:17 mc_view.h:18 mc_view.h:19 mc_view.h:20
-#: mc_view.h:21 mc_view.h:22 plugins_autotimer_skin.xml.h:13
-#: plugins_callmonitor1_skin.xml.h:19 plugins_catcatch_skin.xml.h:7
-#: plugins_dlna_skin.xml.h:15 plugins_facebook_skin.xml.h:6
-#: plugins_filemanager_skin.xml.h:6 plugins_gmediarender_skin.xml.h:1
-#: plugins_imdbapi_skin.xml.h:11 plugins_imdb_skin.xml.h:11
-#: plugins_instar_skin.xml.h:17 plugins_keylock_skin.xml.h:1
-#: plugins_lcdpearl1_skin.xml.h:14 plugins_lcdsamsung_skin.xml.h:18
-#: plugins_mboxinfo_skin.xml.h:3 plugins_mc_skin.xml.h:70
-#: plugins_networkbrowser_skin.xml.h:37 plugins_news_skin.xml.h:5
-#: plugins_optimize_skin.xml.h:4 plugins_panel_skin.xml.h:28
-#: plugins_permtime_skin.xml.h:1 plugins_readerconfig_skin.xml.h:10
-#: plugins_rgui_skin.xml.h:9 plugins_stock_skin.xml.h:6
-#: plugins_stopifnotused_skin.xml.h:8 plugins_streaminfo_skin.xml.h:6
-#: plugins_tithek_skin.xml.h:14 plugins_tiwakeup_skin.xml.h:9
-#: plugins_tmc_skin.xml.h:18 plugins_tmdb_skin.xml.h:11
-#: plugins_tsSchnitt_skin.xml.h:11 plugins_weather_skin.xml.h:4
-#: plugins_wins3_skin.xml.h:4 plugins_zapback_skin.xml.h:7
-#: skin_default_skin.xml.h:731 skins_autotimer_skin.xml.h:13
-#: skins_callmonitor1_skin.xml.h:19 skins_catcatch_skin.xml.h:7
-#: skins_dlna_skin.xml.h:15 skins_facebook_skin.xml.h:6
-#: skins_filemanager_skin.xml.h:6 skins_gmediarender_skin.xml.h:1
-#: skins_imdbapi_skin.xml.h:11 skins_imdb_skin.xml.h:11
-#: skins_instar_skin.xml.h:17 skins_keylock_skin.xml.h:1
-#: skins_lcdpearl1_skin.xml.h:14 skins_lcdsamsung_skin.xml.h:18
-#: skins_mboxinfo_skin.xml.h:3 skins_mc_skin.xml.h:70
-#: skins_networkbrowser_skin.xml.h:37 skins_news_skin.xml.h:5
-#: skins_optimize_skin.xml.h:4 skins_panel_skin.xml.h:28
-#: skins_permtime_skin.xml.h:1 skins_readerconfig_skin.xml.h:10
-#: skins_rgui_skin.xml.h:9 skins_stock_skin.xml.h:6
-#: skins_stopifnotused_skin.xml.h:8 skins_streaminfo_skin.xml.h:6
-#: skins_tithek_skin.xml.h:14 skins_tiwakeup_skin.xml.h:9
-#: skins_tmc_skin.xml.h:18 skins_tmdb_skin.xml.h:11
-#: skins_tsSchnitt_skin.xml.h:11 skins_weather_skin.xml.h:4
-#: skins_wins3_skin.xml.h:4 skins_zapback_skin.xml.h:7 tithek_mainmenu.h:1
-msgid ""
-msgstr ""
-"Project-Id-Version: TitanNit 1.50\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-07 10:44+0200\n"
-"PO-Revision-Date: 2014-03-06 16:31+0100\n"
-"Last-Translator: caliban <aaf-caliban@e.mail.de>\n"
-"Language-Team: German <_obiwan_@web.de>\n"
-"Language: de\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
-
 #: diseqcconfig.h:9 diseqcconfig.h:16
 msgid "committed, toneburst"
 msgstr ""
@@ -1268,19 +1231,19 @@ msgstr "Neuer freier Speicher (KB): "
 
 #: extensions.h:99
 msgid "Install success"
-msgstr "Installation erfolgreich durchgeführt."
+msgstr "Installation erfolgreich"
 
 #: extensions.h:101
 msgid "Install error"
-msgstr "Installation fehlgeschlagen."
+msgstr "Installation fehlgeschlagen"
 
 #: extensions.h:103
 msgid "Remove success"
-msgstr "Löschen erfolgreich durchgeführt."
+msgstr "Löschen erfolgreich"
 
 #: extensions.h:105
 msgid "Remove error"
-msgstr "Löschen fehlgeschlagen."
+msgstr "Löschen fehlgeschlagen"
 
 #: extensions.h:125
 msgid "Install to MNT"
@@ -1328,7 +1291,7 @@ msgstr ""
 
 #: extensions.h:212 extensions.h:353
 msgid "Installing"
-msgstr "Installation von"
+msgstr "Installiere"
 
 #: extensions.h:218 extensions.h:357
 msgid "starting"
@@ -1358,7 +1321,7 @@ msgstr "Lösche"
 
 #: extensions.h:282
 msgid "Tpk Remove Info"
-msgstr "Information zur Deinstallation der Erweiterung"
+msgstr "Info zur TPK Deinstallation"
 
 #: extensions.h:290
 msgid "Tpk Remove Info - Remove OK"
@@ -1424,7 +1387,7 @@ msgstr ""
 
 #: facebook.h:471
 msgid "Group created"
-msgstr "Gruppe abgelenht"
+msgstr "Gruppe erstellt"
 
 #: facebook.h:472
 msgid "Event created"
@@ -1970,7 +1933,7 @@ msgstr "Flash/Nand Fehler (/mnt)"
 
 #: imdbapi.h:200 imdb.h:626 tmdb.h:759
 msgid "Error, Internet Connection not found"
-msgstr "Fehler: keine Internet Verbindung verfügbar"
+msgstr "FEHLER: keine Internet Verbindung verfügbar"
 
 #: inadyn.h:188
 msgid "DYNDNS started."
@@ -2121,7 +2084,7 @@ msgstr ""
 
 #: marker.h:215
 msgid "ERROR... can't set marker in this file"
-msgstr "Fehler: Für diese Datei kann kein Marker gesetzt werden"
+msgstr "FEHLER: Für diese Datei kann kein Marker gesetzt werden"
 
 #: marker.h:229
 msgid "Marker has been set."
@@ -2683,7 +2646,7 @@ msgstr "Einstellungen speichern?"
 
 #: network.h:558
 msgid "Can't change hostname !"
-msgstr "Fehler: Hostname kann nicht geändert werden!"
+msgstr "FEHLER: Hostname kann nicht geändert werden!"
 
 #: network.h:679
 msgid "NONE"
@@ -3656,7 +3619,7 @@ msgstr "Wiedergabeliste automatisch starten"
 
 #: plugins_mc_skin.xml.h:13 skins_mc_skin.xml.h:13
 msgid "Backdrop Interval"
-msgstr "Hintergrund Bilderwechsel Interval"
+msgstr "Hintergrund Bilderwechsel Intervall"
 
 #: plugins_mc_skin.xml.h:15 skins_mc_skin.xml.h:15
 msgid "Choice Menu"
@@ -5039,7 +5002,7 @@ msgstr "Rote Taste drücken"
 
 #: skinadjust.h:133
 msgid "Receiver now reboot !!!"
-msgstr "Receiver wird neu gestartet !!!"
+msgstr "Receiver wird neu gestartet!!!"
 
 #: skin_default_skin.xml.h:1
 msgid "Help"
@@ -5860,8 +5823,8 @@ msgid ""
 "update available, swap: USB medium permanently"
 msgstr ""
 "MNT: Installation im Flashspeicher: permanent\n"
-"FLASH: Installation im Flashspeicher, Verlust durch Update\n"
-"SWAP: Installation auf USB/HDD, permanent"
+"FLASH: Installation im Flashspeicher: Verlust durch Update\n"
+"SWAP: Installation auf USB/HDD: permanent"
 
 #: skin_default_skin.xml.h:234
 msgid "Flashupdate (online)"
@@ -6080,8 +6043,7 @@ msgid ""
 "navigate the control cross and the extra buttons displayed with your remote "
 "control to select."
 msgstr ""
-"Hier können Sie von unserem aktuellen Online-Angebot Plug-Ins "
-"installieren.\n"
+"Hier können Sie von unserem aktuellen Online-Angebot Plug-Ins installieren.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6091,8 +6053,8 @@ msgid ""
 "button to search. Use to navigate the control cross and the extra buttons "
 "displayed with your remote control to select."
 msgstr ""
-"Hier können Sie im EPG nach bestimmten Einträgen suchen. Verwenden Sie "
-"eine der Farbtasten um die Suche zu starten.\n"
+"Hier können Sie im EPG nach bestimmten Einträgen suchen. Verwenden Sie eine "
+"der Farbtasten um die Suche zu starten.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6318,8 +6280,8 @@ msgid ""
 msgstr ""
 "Hier können Sie Ihre Kanalsuche einstellen. Navigieren Sie mit dem "
 "Steuerkreuz und den unten angezeigten Tasten.\n"
-"Sehr wichtig: Bevor Sie eine Kanalsuche starten, müssen Sie Ihre Tuner "
-"unter Tuner-Einstellungen (Kabel/Sat/Terrestrisch) einstellen."
+"Sehr wichtig: Bevor Sie eine Kanalsuche starten, müssen Sie Ihre Tuner unter "
+"Tuner-Einstellungen (Kabel/Sat/Terrestrisch) einstellen."
 
 #: skin_default_skin.xml.h:300
 msgid ""
@@ -7040,7 +7002,7 @@ msgstr "Timer und EPG"
 
 #: skin_default_skin.xml.h:485
 msgid "Record Split Size"
-msgstr "Teile Aufnahmen ab einer Größe von"
+msgstr "Splitte Aufnahmen bei "
 
 #: skin_default_skin.xml.h:486
 msgid "Record Timer"
@@ -8115,8 +8077,8 @@ msgid ""
 "\n"
 "Aborting backup..."
 msgstr ""
-"ACHTUNG: Eine Festplatte oder ein USB Gerät muss für Aufnahmen "
-"angeschlossen sein!\n"
+"ACHTUNG: Eine Festplatte oder ein USB Gerät muss für Aufnahmen angeschlossen "
+"sein!\n"
 "\n"
 "Sicherung wird abgebrochen."
 
@@ -8506,7 +8468,7 @@ msgstr "Atemio WLAN Konfiguration"
 
 #: tithek_mainmenu.h:16
 msgid "Category"
-msgstr "Kathegorie"
+msgstr "Kategorie"
 
 #: tithek_mainmenu.h:17
 msgid "Favoriten"
@@ -8769,8 +8731,7 @@ msgstr ""
 #: tmdb.h:922
 msgid "Error, found result without imdbid we can't this save in MediaDB"
 msgstr ""
-"FEHLER: in der IMDB-ID ist ein Fehler und kann daher nicht übernommen "
-"werden!"
+"FEHLER: in der IMDB-ID ist ein Fehler und kann daher nicht übernommen werden!"
 
 #: tpchoice.h:21
 msgid "Transponderlist"
@@ -8809,8 +8770,7 @@ msgid ""
 "A collection of really nice folder icons for MediaCenter Videoplayer "
 "Coverview!"
 msgstr ""
-"Eine hübsche Bilderauswahl für den Mediacenter Videoplayer und "
-"Covervorschau!"
+"Eine hübsche Bilderauswahl für den Mediacenter Videoplayer und Covervorschau!"
 
 #: tpk_description.h:3
 msgid "Alternativer Skin fuer Pearl LCD"
@@ -9496,7 +9456,7 @@ msgstr "Internetbrowser"
 
 #: tpk_section.h:3
 msgid "emus"
-msgstr "Softcam"
+msgstr "Softcams"
 
 #: tpk_section.h:4
 msgid "fonts"
