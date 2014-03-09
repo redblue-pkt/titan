@@ -1,3 +1,17 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: TitanNit 1.50\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-07 10:44+0200\n"
+"PO-Revision-Date: 2014-03-09 13:15+0100\n"
+"Last-Translator: caliban <aaf-caliban@e.mail.de>\n"
+"Language-Team: German <_obiwan_@web.de>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+
 #: about.h:9
 msgid "Image"
 msgstr ""
@@ -450,15 +464,15 @@ msgstr "Ausschalten"
 
 #: adjust.h:163
 msgid "anim. width"
-msgstr "Anim. Breite"
+msgstr "horizontal"
 
 #: adjust.h:164
 msgid "anim. height"
-msgstr "Anim. Höhe"
+msgstr "vertikal"
 
 #: adjust.h:165
 msgid "anim. both"
-msgstr "Anim. beides"
+msgstr "zoom"
 
 #: adjust.h:168
 msgid "very fast"
@@ -742,7 +756,7 @@ msgstr "Schützen"
 
 #: channellist.h:614
 msgid "Edit mode"
-msgstr "Umbennenen"
+msgstr "Umbenennen"
 
 #: channellist.h:689 channellist.h:1764 scan.h:530 skin_default_skin.xml.h:470
 msgid "Radio"
@@ -758,7 +772,7 @@ msgstr "Favoriten"
 
 #: channellist.h:719 channellist.h:1580 skin_default_skin.xml.h:127
 msgid "Channel"
-msgstr "Sendername"
+msgstr "Sender"
 
 #: channellist.h:735 channellist.h:1261 channellist.h:1262 channellist.h:1514
 msgid "Satellites"
@@ -856,57 +870,6 @@ msgstr ""
 msgid "---"
 msgstr ""
 
-#: dirsort.h:18 dirsort.h:19 dirsort.h:20 dirsort.h:21 dirsort.h:22
-#: dirsort.h:23 mc_imdb.h:78 mc_imdb.h:79 mc_imdb.h:80 mc_imdb.h:81
-#: mc_imdb.h:82 mc_view.h:17 mc_view.h:18 mc_view.h:19 mc_view.h:20
-#: mc_view.h:21 mc_view.h:22 plugins_autotimer_skin.xml.h:13
-#: plugins_callmonitor1_skin.xml.h:19 plugins_catcatch_skin.xml.h:7
-#: plugins_dlna_skin.xml.h:15 plugins_facebook_skin.xml.h:6
-#: plugins_filemanager_skin.xml.h:6 plugins_gmediarender_skin.xml.h:1
-#: plugins_imdbapi_skin.xml.h:11 plugins_imdb_skin.xml.h:11
-#: plugins_instar_skin.xml.h:17 plugins_keylock_skin.xml.h:1
-#: plugins_lcdpearl1_skin.xml.h:14 plugins_lcdsamsung_skin.xml.h:18
-#: plugins_mboxinfo_skin.xml.h:3 plugins_mc_skin.xml.h:70
-#: plugins_networkbrowser_skin.xml.h:37 plugins_news_skin.xml.h:5
-#: plugins_optimize_skin.xml.h:4 plugins_panel_skin.xml.h:28
-#: plugins_permtime_skin.xml.h:1 plugins_readerconfig_skin.xml.h:10
-#: plugins_rgui_skin.xml.h:9 plugins_stock_skin.xml.h:6
-#: plugins_stopifnotused_skin.xml.h:8 plugins_streaminfo_skin.xml.h:6
-#: plugins_tithek_skin.xml.h:14 plugins_tiwakeup_skin.xml.h:9
-#: plugins_tmc_skin.xml.h:18 plugins_tmdb_skin.xml.h:11
-#: plugins_tsSchnitt_skin.xml.h:11 plugins_weather_skin.xml.h:4
-#: plugins_wins3_skin.xml.h:4 plugins_zapback_skin.xml.h:7
-#: skin_default_skin.xml.h:731 skins_autotimer_skin.xml.h:13
-#: skins_callmonitor1_skin.xml.h:19 skins_catcatch_skin.xml.h:7
-#: skins_dlna_skin.xml.h:15 skins_facebook_skin.xml.h:6
-#: skins_filemanager_skin.xml.h:6 skins_gmediarender_skin.xml.h:1
-#: skins_imdbapi_skin.xml.h:11 skins_imdb_skin.xml.h:11
-#: skins_instar_skin.xml.h:17 skins_keylock_skin.xml.h:1
-#: skins_lcdpearl1_skin.xml.h:14 skins_lcdsamsung_skin.xml.h:18
-#: skins_mboxinfo_skin.xml.h:3 skins_mc_skin.xml.h:70
-#: skins_networkbrowser_skin.xml.h:37 skins_news_skin.xml.h:5
-#: skins_optimize_skin.xml.h:4 skins_panel_skin.xml.h:28
-#: skins_permtime_skin.xml.h:1 skins_readerconfig_skin.xml.h:10
-#: skins_rgui_skin.xml.h:9 skins_stock_skin.xml.h:6
-#: skins_stopifnotused_skin.xml.h:8 skins_streaminfo_skin.xml.h:6
-#: skins_tithek_skin.xml.h:14 skins_tiwakeup_skin.xml.h:9
-#: skins_tmc_skin.xml.h:18 skins_tmdb_skin.xml.h:11
-#: skins_tsSchnitt_skin.xml.h:11 skins_weather_skin.xml.h:4
-#: skins_wins3_skin.xml.h:4 skins_zapback_skin.xml.h:7 tithek_mainmenu.h:1
-msgid ""
-msgstr ""
-"Project-Id-Version: TitanNit 1.50\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-07 10:44+0200\n"
-"PO-Revision-Date: 2014-03-09 10:29+0100\n"
-"Last-Translator: caliban <aaf-caliban@e.mail.de>\n"
-"Language-Team: German <_obiwan_@web.de>\n"
-"Language: de\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
-
 #: diseqcconfig.h:9 diseqcconfig.h:16
 msgid "committed, toneburst"
 msgstr ""
@@ -967,67 +930,67 @@ msgstr ""
 
 #: diseqcconfig.h:141 diseqcconfig.h:160
 msgid "Input 1"
-msgstr "Anschluß 1"
+msgstr "Anschluss 1"
 
 #: diseqcconfig.h:142 diseqcconfig.h:161
 msgid "Input 2"
-msgstr "Anschluß 2"
+msgstr "Anschluss 2"
 
 #: diseqcconfig.h:143 diseqcconfig.h:162
 msgid "Input 3"
-msgstr "Anschluß 3"
+msgstr "Anschluss 3"
 
 #: diseqcconfig.h:144 diseqcconfig.h:163
 msgid "Input 4"
-msgstr "Anschluß 4"
+msgstr "Anschluss 4"
 
 #: diseqcconfig.h:145 diseqcconfig.h:164
 msgid "Input 5"
-msgstr "Anschluß 5"
+msgstr "Anschluss 5"
 
 #: diseqcconfig.h:146 diseqcconfig.h:165
 msgid "Input 6"
-msgstr "Anschluß 6"
+msgstr "Anschluss 6"
 
 #: diseqcconfig.h:147 diseqcconfig.h:166
 msgid "Input 7"
-msgstr "Anschluß 7"
+msgstr "Anschluss 7"
 
 #: diseqcconfig.h:148 diseqcconfig.h:167
 msgid "Input 8"
-msgstr "Anschluß 8"
+msgstr "Anschluss 8"
 
 #: diseqcconfig.h:149 diseqcconfig.h:168
 msgid "Input 9"
-msgstr "Anschluß 9"
+msgstr "Anschluss 9"
 
 #: diseqcconfig.h:150 diseqcconfig.h:169
 msgid "Input 10"
-msgstr "Anschluß 10"
+msgstr "Anschluss 10"
 
 #: diseqcconfig.h:151 diseqcconfig.h:170
 msgid "Input 11"
-msgstr "Anschluß 11"
+msgstr "Anschluss 11"
 
 #: diseqcconfig.h:152 diseqcconfig.h:171
 msgid "Input 12"
-msgstr "Anschluß 12"
+msgstr "Anschluss 12"
 
 #: diseqcconfig.h:153 diseqcconfig.h:172
 msgid "Input 13"
-msgstr "Anschluß 13"
+msgstr "Anschluss 13"
 
 #: diseqcconfig.h:154 diseqcconfig.h:173
 msgid "Input 14"
-msgstr "Anschluß 14"
+msgstr "Anschluss 14"
 
 #: diseqcconfig.h:155 diseqcconfig.h:174
 msgid "Input 15"
-msgstr "Anschluß 15"
+msgstr "Anschluss 15"
 
 #: diseqcconfig.h:156 diseqcconfig.h:175
 msgid "Input 16"
-msgstr "Anschluß 16"
+msgstr "Anschluss 16"
 
 #: diseqcconfig.h:254
 msgid "north"
@@ -1252,7 +1215,7 @@ msgstr ""
 
 #: extensions.h:20
 msgid "Feed"
-msgstr "Bitte Feed Addresse eingeben"
+msgstr "Bitte Feed Adresse eingeben"
 
 #: extensions.h:82
 msgid "Installation start"
@@ -1323,12 +1286,12 @@ msgid ""
 msgstr ""
 "Wenn Sie ein anderes Paket aus dieser Sektion installieren wollen, entfernen "
 "Sie zuerst das installierte Paket. Ist das gewünschte Plugin nach einer "
-"Neuinstallation der Titannit Software im TitanNit Menu nicht sichtbar, dann "
-"führen Sie bitte eine Tpk Aktualisierung durch. "
+"Neuinstallation der TitanNit Software im TitanNit Menü nicht sichtbar, dann "
+"führen Sie bitte eine TPK Aktualisierung durch. "
 
 #: extensions.h:212 extensions.h:353
 msgid "Installing"
-msgstr "Installiere"
+msgstr "Installation von"
 
 #: extensions.h:218 extensions.h:357
 msgid "starting"
@@ -1713,7 +1676,7 @@ msgid ""
 "system check between 30 minutes and 1.5 hours."
 msgstr ""
 "Information: Bei dieser Festplattengröße kann ein\n"
-"Filesystemcheck zwischen 30 Min und 1,5 Stunden dauern."
+"Filesystemcheck zwischen 30 Minuten und 1,5 Stunden dauern."
 
 #: harddisk.h:805
 msgid ""
@@ -1822,7 +1785,7 @@ msgstr "Netzwerk"
 
 #: hwtest.h:182 hwtest.h:416
 msgid "USB Port"
-msgstr "USB Anschluß"
+msgstr "USB Anschluss"
 
 #: hwtest.h:183 hwtest.h:460
 msgid "CAM"
@@ -1890,7 +1853,7 @@ msgstr "Smartcard Ports gefunden"
 
 #: hwtest.h:427
 msgid "USB Ports found: "
-msgstr "USB Anschluß gefunden: "
+msgstr "USB Anschluss gefunden: "
 
 #: hwtest.h:438 hwtest.h:451
 msgid "USB "
@@ -1910,15 +1873,15 @@ msgstr "Einschub "
 
 #: hwtest.h:489
 msgid "CAM Ports found: "
-msgstr "CI-MODUL gefunden "
+msgstr "CI-Modul gefunden "
 
 #: hwtest.h:564
 msgid "SUCESS Serial Port"
-msgstr "Serieller Anschluß OK"
+msgstr "Serieller Anschluss OK"
 
 #: hwtest.h:566
 msgid "FAIL Serial Port"
-msgstr "Serieller Anschluß fehlerhaft"
+msgstr "Serieller Anschluss fehlerhaft"
 
 #: hwtest.h:578
 msgid "LNB off / 22K off: OK"
@@ -1998,7 +1961,7 @@ msgstr ""
 "Sollten die Online Funktionen deaktiviert sein, senden Sie bitte die hier "
 "angezeigte\n"
 "Board-ID Seriennummer (AA...)und die Seriennummer unterhalb des\n"
-"Gerätes (AM...) an die eingeblendete E-Mail Addresse. \n"
+"Gerätes (AM...) an die eingeblendete E-Mail Adresse. \n"
 "\n"
 "Board-ID Seriennummer:"
 
@@ -2226,7 +2189,7 @@ msgstr "Menü noch nicht verfügbar!"
 
 #: mc_mediathek.h:37
 msgid "Install Tithek Tpk first !"
-msgstr "Installieren Sie bitte das Tithek Plugin unter Erweiterungen"
+msgstr "Installieren Sie bitte das tiThek Plugin unter Erweiterungen"
 
 #: mc_pictureplayer_settings.h:29 panel_settings_autostart.h:60
 #: panel_settings_autostart.h:132 settings_autostart.h:51
@@ -2386,7 +2349,7 @@ msgstr "IMDb-ID"
 
 #: mediadb.h:2454
 msgid "Add iMDB manuel"
-msgstr "Manuell IMBD hinzufügen"
+msgstr "Manuell IMDb hinzufügen"
 
 #: mediadbsettings.h:37
 msgid "older 1 day"
@@ -2534,7 +2497,7 @@ msgid ""
 "For Better Win7 Support install please Tpk Install > Network > Smbclient"
 msgstr ""
 "Für eine bessere Unterstützung von Win7 Freigaben installieren Sie bitte\n"
-"Tpk Installieren > Netzwerk > Smbclient (Win7)"
+"TPK Installieren > Netzwerk > Smbclient (Win7)"
 
 #: networkbrowser.h:1005 networkbrowser.h:1011 networkbrowser.h:1021
 msgid "Anonymous login Access Denied !"
@@ -2562,15 +2525,15 @@ msgstr "Netzwerk Browser - gefundene cifs/nfs Freigaben"
 
 #: networkbrowser.h:1340
 msgid "Add Cifs Network Share"
-msgstr "Hinzufügen einer Cifs Freigabe"
+msgstr "Hinzufügen einer CIFS Freigabe"
 
 #: networkbrowser.h:1390
 msgid "Add Nfs Network Share"
-msgstr "Hinzufügen einer Nfs Freigabe"
+msgstr "Hinzufügen einer NFS Freigabe"
 
 #: networkbrowser.h:1430
 msgid "Add Ftpfs Network Share"
-msgstr "Hinzufügen einer Ftp Freigabe"
+msgstr "Hinzufügen einer FTP Freigabe"
 
 #: networkbrowser.h:1559
 msgid "cifs"
@@ -2864,7 +2827,7 @@ msgstr "HighSR"
 
 #: panel_settings_autostart.h:176 settings_autostart.h:207
 msgid "Boot RGB Fix"
-msgstr "RGB Fix beim Startvorgang"
+msgstr "RGB Fix beim Start"
 
 #: panel_settings_autostart.h:186
 msgid "Autostart USB"
@@ -2978,7 +2941,7 @@ msgstr "CPU Frequenz im Standby reduzieren"
 #: panel_settings_overclocking.h:253 panel_settings_overclocking.h:319
 #: settings_overclocking.h:253 settings_overclocking.h:321
 msgid "Standby frequency"
-msgstr "Eingestellte CPU Frequenz im Standby"
+msgstr "CPU Frequenz im Standby"
 
 #: panel_settings_overclocking.h:275 settings_overclocking.h:275
 msgid "Use Teletxt Workaround"
@@ -3205,11 +3168,11 @@ msgstr "Löschen"
 
 #: play.h:1649
 msgid "Marker autoseek is started"
-msgstr "Automatische Suche nach Markierungen gestartet."
+msgstr "Automatische Suche nach Markierungen gestartet"
 
 #: play.h:1660
 msgid "Marker autoseek is stopped"
-msgstr "Automatischte Suche nach Markierungen gestoppt."
+msgstr "Automatische Suche nach Markierungen gestoppt"
 
 #: plugins_autotimer_skin.xml.h:1 skins_autotimer_skin.xml.h:1
 msgid "AutoTimer Settings"
@@ -3624,7 +3587,7 @@ msgstr ""
 
 #: plugins_mc_skin.xml.h:1 skins_mc_skin.xml.h:1
 msgid "MC VideoPlayer Imdb Settings"
-msgstr "IMDB Einstellungen"
+msgstr "IMDb Einstellungen"
 
 #: plugins_mc_skin.xml.h:2 skins_mc_skin.xml.h:2
 msgid "MC VideoPlayer Sort Settings"
@@ -4087,7 +4050,7 @@ msgid ""
 "Here you can aktivate/deaktivate you readers. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier können Sie ihren Reader aktivieren bzw. deaktivieren.\n"
+"Hier können Sie ihren Kartenleser aktivieren bzw. deaktivieren.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -4096,7 +4059,7 @@ msgid ""
 "Here you can configure your reader. Use to navigate the control cross and "
 "the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier können Sie Ihre Reader auswählen.\n"
+"Hier können Sie Ihre Kartenleser auswählen.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -4150,7 +4113,7 @@ msgstr "Aktie"
 
 #: plugins_stopifnotused_skin.xml.h:1 skins_stopifnotused_skin.xml.h:1
 msgid "NotUsed Settings"
-msgstr "IfNotUsed Einstellungen"
+msgstr "StopIfNotUsed Einstellungen"
 
 #: plugins_stopifnotused_skin.xml.h:3 skins_stopifnotused_skin.xml.h:3
 msgid "Auto start"
@@ -4207,7 +4170,7 @@ msgstr "XXX Streams ausblenden"
 
 #: plugins_tithek_skin.xml.h:7 skins_tithek_skin.xml.h:7
 msgid "Pic Ratio"
-msgstr "Bilder im Orginalformat darstellen"
+msgstr "Bilder im Originalformat darstellen"
 
 #: plugins_tithek_skin.xml.h:8 skin_default_skin.xml.h:443
 #: skins_tithek_skin.xml.h:8 tithek.h:1040
@@ -4324,7 +4287,7 @@ msgstr ""
 "Starten Sie die Wiedergabe der ts Datei im internen Player und drücken Sie "
 "die Taste 0 um eine Markierung zu setzen.\n"
 "Drücken Sie die Taste 5 um eine Übersicht der Markierungen anzuzeigen und "
-"starten Sie anschließend die Wiedergabe."
+"starten Sie anschliessend die Wiedergabe."
 
 #: plugins_tsSchnitt_skin.xml.h:10 skins_tsSchnitt_skin.xml.h:10
 msgid "ts - cut"
@@ -4819,7 +4782,7 @@ msgstr "Alle neuen Sender gespeichert!"
 
 #: scan.h:1640
 msgid "Wait for channel scan end"
-msgstr "Bitte Warten, Sendersuchlauf wird abgebrochen."
+msgstr "Bitte warten, Sendersuchlauf wird abgebrochen."
 
 #: scan.h:1888
 msgid "Scan is not allowed if record or stream is running !"
@@ -5327,7 +5290,7 @@ msgstr "Tonspur wählen"
 
 #: skin_default_skin.xml.h:85
 msgid "Autocheck cam can decrypt"
-msgstr "Automatisch überprüfen, ob Ihr CAM entschlüsseln kann?"
+msgstr "Automatisch überprüfen, ob Ihr CI-Modul entschlüsseln kann?"
 
 #: skin_default_skin.xml.h:86
 msgid "Automatic Search"
@@ -5403,8 +5366,8 @@ msgid ""
 "Before you can see Signal/SNR/Ber you must zap to a channel of the satellite "
 "you are searching."
 msgstr ""
-"Bevor Sie Signal/SNR/Ber sehen können, müssen Sie auf einen Kanal des "
-"Satelliten schalten, den Sie suchen."
+"Zur Anzeige von Signal/SNR/BER müssen Sie auf einen Kanal des Satelliten "
+"schalten, den Sie suchen."
 
 #: skin_default_skin.xml.h:106
 msgid "Begin"
@@ -5460,7 +5423,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:120
 msgid "CAID Lock"
-msgstr "CAID Sperren"
+msgstr "CAID sperren"
 
 #: skin_default_skin.xml.h:122
 msgid "cancel"
@@ -5544,7 +5507,7 @@ msgstr "Farbformat"
 
 #: skin_default_skin.xml.h:146
 msgid "Color Format Scart / Composite"
-msgstr "Farbformat für Scart/Komponente"
+msgstr "Farbformat für SCART/FBAS"
 
 #: skin_default_skin.xml.h:147
 msgid "Committed command"
@@ -5724,7 +5687,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:198
 msgid "EDIT LNB / UNICABLE"
-msgstr "LNB/Unikabel bearbeiten"
+msgstr "LNB/Unicable bearbeiten"
 
 #: skin_default_skin.xml.h:199
 msgid "EDIT MOTOR"
@@ -5836,7 +5799,7 @@ msgstr "Favoriten"
 
 #: skin_default_skin.xml.h:228
 msgid "FEC"
-msgstr "Vorwärtsfehlerkorrektur (FEC)"
+msgstr "FEC"
 
 #: skin_default_skin.xml.h:229
 msgid "FEC:"
@@ -6030,7 +5993,7 @@ msgid ""
 "Here you can configure the smartcard readers. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
 msgstr ""
-"Hier können Sie Ihre Smartkarten konfigurieren.\n"
+"Hier können Sie Ihre Smartcards konfigurieren.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6080,8 +6043,7 @@ msgid ""
 "navigate the control cross and the extra buttons displayed with your remote "
 "control to select."
 msgstr ""
-"Hier können Sie von unserem aktuellen Online-Angebot Plug-Ins "
-"installieren.\n"
+"Hier können Sie von unserem aktuellen Online-Angebot Plugins installieren.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6091,8 +6053,8 @@ msgid ""
 "button to search. Use to navigate the control cross and the extra buttons "
 "displayed with your remote control to select."
 msgstr ""
-"Hier können Sie im EPG nach bestimmten Einträgen suchen. Verwenden Sie "
-"eine der Farbtasten um die Suche zu starten.\n"
+"Hier können Sie im EPG nach bestimmten Einträgen suchen. Verwenden Sie eine "
+"der Farbtasten um die Suche zu starten.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6211,7 +6173,7 @@ msgid ""
 msgstr ""
 "Hier können Sie für Ihre Motorisierte Sat-Anlage Ihre Einstellungen \n"
 "vornehmen.\n"
-"Zur Eingabe der Längen und Breitengrade benutzen Sie die Ziffertasten."
+"Zur Eingabe der Längen und Breitengrade benutzen Sie die Zifferntasten."
 
 #: skin_default_skin.xml.h:289
 msgid ""
@@ -6295,8 +6257,8 @@ msgid ""
 "Lnb / Unicam navigate to the field and press the Red button."
 msgstr ""
 "Hier können Sie für Ihren Sat Tuner einstellen.\n"
-"Stellen Sie zunächst Ihre Satteliten Auswahl ein. Bei Verwendung von DiSEqC "
-"weisen Sie zusätzlich den verwendeten Port zu. Für erweiterte LNB/Unicam "
+"Stellen Sie zunächst Ihre Satelliten Auswahl ein. Bei Verwendung von DiSEqC "
+"weisen Sie zusätzlich den verwendeten Port zu. Für erweiterte LNB/Unicable "
 "navigieren Sie zum Feld und drücken Sie die Rote Taste."
 
 #: skin_default_skin.xml.h:298
@@ -6307,7 +6269,7 @@ msgstr ""
 "Hier können Sie für Ihren Terrestrischen Tuner einstellen.\n"
 "\n"
 "Aktivieren Sie den Terrestrischen Tuner und führen Sie anschließend einen "
-"Automatischen Suchlauf durch."
+"automatischen Suchlauf durch."
 
 #: skin_default_skin.xml.h:299
 msgid ""
@@ -6318,8 +6280,8 @@ msgid ""
 msgstr ""
 "Hier können Sie Ihre Kanalsuche einstellen. Navigieren Sie mit dem "
 "Steuerkreuz und den unten angezeigten Tasten.\n"
-"Sehr wichtig: Bevor Sie eine Kanalsuche starten, müssen Sie Ihre Tuner "
-"unter Tuner-Einstellungen (Kabel/Sat/Terrestrisch) einstellen."
+"Sehr wichtig: Bevor Sie eine Kanalsuche starten, müssen Sie Ihre Tuner unter "
+"Tuner-Einstellungen (Kabel/Sat/Terrestrisch) einstellen."
 
 #: skin_default_skin.xml.h:300
 msgid ""
@@ -6345,7 +6307,7 @@ msgid ""
 "control cross and the extra buttons displayed with your remote control to "
 "select."
 msgstr ""
-"Hier können Sie Ihre zusätzlichen Plug-Ins starten und verwalten.\n"
+"Hier können Sie Ihre zusätzlichen Plugins starten und verwalten.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -6382,7 +6344,7 @@ msgstr "Hostname"
 
 #: skin_default_skin.xml.h:308
 msgid "How many days"
-msgstr "Wieviele Tage EPG im Voraus speichern"
+msgstr "Wie viele Tage EPG im Voraus speichern"
 
 #: skin_default_skin.xml.h:309
 msgid "HTTPD Port"
@@ -6538,7 +6500,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:349
 msgid "LOF / UNICABLE"
-msgstr "LOF/Unikabel"
+msgstr "LOF/Unicable"
 
 #: skin_default_skin.xml.h:350
 msgid "LOG"
@@ -6710,7 +6672,7 @@ msgstr "Test"
 
 #: skin_default_skin.xml.h:396 tpk_showname.h:66
 msgid "Networkbrowser"
-msgstr "Browser"
+msgstr "Netzwerk Browser"
 
 #: skin_default_skin.xml.h:397
 msgid "Network Interfacelist"
@@ -7080,7 +7042,7 @@ msgstr "Lösche unbenutzte Sender in Favoriten"
 
 #: skin_default_skin.xml.h:496
 msgid "rename service"
-msgstr "Sender umbennen"
+msgstr "Sender umbenennen"
 
 #: skin_default_skin.xml.h:497
 msgid "Repeate"
@@ -7168,11 +7130,11 @@ msgstr "Satelliten"
 
 #: skin_default_skin.xml.h:523
 msgid "SATCR Frequency"
-msgstr "Satellite-Channel-Router Frequenz"
+msgstr "SatCR Frequenz"
 
 #: skin_default_skin.xml.h:524
 msgid "SATCR Number"
-msgstr "Satellite-Channel-Router Nummer"
+msgstr "SatCR Nummer"
 
 #: skin_default_skin.xml.h:525
 msgid "Satellite"
@@ -7732,7 +7694,7 @@ msgstr "Ungebundener DiSEqC Befehl"
 
 #: skin_default_skin.xml.h:690
 msgid "Unicable Configuration"
-msgstr "Unikabel Einstellungen"
+msgstr "Unicable Einstellungen"
 
 #: skin_default_skin.xml.h:692
 msgid "UNLOAD"
@@ -8020,7 +7982,7 @@ msgid ""
 msgstr ""
 "-wiederherstellen- (Rot):\n"
 "Ihre Einstellungen werden aus einer zuvor erstellten Sicherung "
-"wiederhergestellt! Der Receiver wird dafür automatisch neugestartet! \n"
+"wiederhergestellt! Der Receiver wird dafür automatisch neu gestartet! \n"
 "\n"
 "-sichern- (Grün):\n"
 "Ihre Einstellungen werden gesichert.\n"
@@ -8115,8 +8077,8 @@ msgid ""
 "\n"
 "Aborting backup..."
 msgstr ""
-"ACHTUNG: Eine Festplatte oder ein USB Gerät muss für Aufnahmen "
-"angeschlossen sein!\n"
+"ACHTUNG: Eine Festplatte oder ein USB Gerät muss für Aufnahmen angeschlossen "
+"sein!\n"
 "\n"
 "Sicherung wird abgebrochen."
 
@@ -8365,7 +8327,7 @@ msgid ""
 "Can't start download.\n"
 "Please try later."
 msgstr ""
-"Das Herunterladen der Datei ist nicht möglich!\n"
+"Herunterladen der Datei ist nicht möglich!\n"
 "Bitte versuchen Sie es zu einem späteren Zeitpunkt erneut."
 
 #: tithek.h:1215
@@ -8410,7 +8372,7 @@ msgstr "Direktes Streamen mit Puffer (10MB)"
 
 #: tithek.h:1229
 msgid "File Caching Playback (10MB / 120s)"
-msgstr "Im Cache Zwischenspeicherrn (10MB/120 Sek)"
+msgstr "Im Cache zwischenspeichern (10MB/120 Sek)"
 
 #: tithek.h:1230
 msgid "File Caching Playback (20MB / 240s)"
@@ -8466,7 +8428,7 @@ msgstr ""
 
 #: tithek_mainmenu.h:5
 msgid "Atemio Cable Tuner scan"
-msgstr "Atemio Kabel Tuner suche"
+msgstr "Atemio Kabel Tuner Suche"
 
 #: tithek_mainmenu.h:6
 msgid "Atemio Channelsearch 4xSat"
@@ -8498,7 +8460,7 @@ msgstr "Atemio TitanNit zap Menü"
 
 #: tithek_mainmenu.h:13
 msgid "Atemio Tuner configuration Sat"
-msgstr "Atemio Tunerkonfiguration für Satellelit"
+msgstr "Atemio Tunerkonfiguration für Satellit"
 
 #: tithek_mainmenu.h:14
 msgid "Atemio WLAN configuration"
@@ -8762,15 +8724,14 @@ msgid ""
 "Can't get detail media infos\n"
 "Please install it"
 msgstr ""
-"IMDB wurde nicht gefunden!\n"
+"IMDb wurde nicht gefunden!\n"
 "Kann die angeforderten Details nicht abrufen.\n"
 "Bitte installieren Sie das Plugin."
 
 #: tmdb.h:922
 msgid "Error, found result without imdbid we can't this save in MediaDB"
 msgstr ""
-"FEHLER: in der IMDB-ID ist ein Fehler und kann daher nicht übernommen "
-"werden!"
+"FEHLER: in der IMDB-ID ist ein Fehler und kann daher nicht übernommen werden!"
 
 #: tpchoice.h:21
 msgid "Transponderlist"
@@ -8809,8 +8770,8 @@ msgid ""
 "A collection of really nice folder icons for MediaCenter Videoplayer "
 "Coverview!"
 msgstr ""
-"Eine hübsche Bilderauswahl für den Mediacenter Videoplayer und "
-"Covervorschau!"
+"Eine hübsche Bilderauswahl für den Mediacenter Videoplayer und Cover "
+"Vorschau!"
 
 #: tpk_description.h:3
 msgid "Alternativer Skin fuer Pearl LCD"
@@ -8936,14 +8897,14 @@ msgstr "Kabel: sofatester Senderliste KabelBW"
 
 #: tpk_description.h:33
 msgid "Callmonitor Plugin"
-msgstr "Anrufmonitor zum anzeigen ein- und ausgehender Anrufe"
+msgstr "Anrufmonitor zum Anzeigen ein- und ausgehender Anrufe"
 
 #: tpk_description.h:34
 msgid ""
 "CCcam 2.3.0 autoident for card hd+ and skyde including all necessary config "
 "files."
 msgstr ""
-"CCcam 2.3.0 Autoidentifizierung für HD+ und SkyDe SmatCard inklusive aller "
+"CCcam 2.3.0 Autoidentifizierung für HD+ und SkyDe SmartCard inklusive aller "
 "notwendigen Einstellungen."
 
 #: tpk_description.h:35
@@ -9081,7 +9042,7 @@ msgid ""
 "gbox 800 with autoident for card hd+ and skyde including all necessary "
 "config files."
 msgstr ""
-"Gbox 800 Autoidentifizierung für HD+ und SkyDe SmatCard inklusive aller "
+"Gbox 800 Autoidentifizierung für HD+ und SkyDe SmartCard inklusive aller "
 "notwendigen Einstellungen."
 
 #: tpk_description.h:68
@@ -9089,7 +9050,7 @@ msgid ""
 "gbox 806 with autoident for card hd+ and skyde including all necessary "
 "config files."
 msgstr ""
-"Gbox 806 Autoidentifizierung für HD+ und SkyDe SmatCard inklusive aller "
+"Gbox 806 Autoidentifizierung für HD+ und SkyDe SmartCard inklusive aller "
 "notwendigen Einstellungen."
 
 #: tpk_description.h:69
@@ -9166,11 +9127,11 @@ msgstr "MetrixHD skin. Für transparente XPicons"
 
 #: tpk_description.h:87
 msgid "Network browser extension for better Win7 compatibility"
-msgstr "Browsererweiterung für bessere Windows  7 Unterstützung"
+msgstr "Netzwerk Browser Erweiterung für bessere Windows  7 Unterstützung"
 
 #: tpk_description.h:88
 msgid "Networkbrowser scanning an manage cifs/nfs/ftp shares."
-msgstr "Browser zum scannen und verwenden von CIFS/NFSFTP Freigaben."
+msgstr "Browser zum scannen und verwenden von CIFS/NFS/FTP Freigaben."
 
 #: tpk_description.h:89
 msgid "Networkfile libsmbclient 3.0.28b"
@@ -9234,7 +9195,7 @@ msgstr "OScam Spezial"
 
 #: tpk_description.h:104
 msgid "Partitions Tool fuer HDD > 2TB"
-msgstr "Partitionserweiterung für Festplattengrößen über 2TB"
+msgstr "Partitionierungstool für Festplatten größer 2TB"
 
 #: tpk_description.h:105
 msgid "Permanente Uhrzeit am Bildschirm"
@@ -9300,7 +9261,7 @@ msgstr "Skin 0Acht5Zehn grau für graue Picons"
 
 #: tpk_description.h:120
 msgid "Skin 0Acht5Zehn in white for tiTan. Please use white Picons."
-msgstr "Skin 0Acht5Zehn weiss für weisse Picons"
+msgstr "Skin 0Acht5Zehn weiß für weisse Picons"
 
 #: tpk_description.h:121
 msgid "Skin tobayer01 for tiTan. Please use grey Picons."
@@ -10394,7 +10355,7 @@ msgstr ""
 
 #: tunerconfig.h:301 tunerconfig.h:499
 msgid "Lnb / Unicable"
-msgstr "LNB/Unikabel"
+msgstr "LNB/Unicable"
 
 #: tunerconfig.h:379
 msgid "Terrestrisch"
@@ -10422,15 +10383,15 @@ msgstr ""
 
 #: unicable.h:197
 msgid "Unicable manufacturer"
-msgstr "Unikabel Hersteller"
+msgstr "Unicable Hersteller"
 
 #: unicable.h:212
 msgid "Unicable product"
-msgstr "UniKabel Produkt"
+msgstr "Unicable Produkt"
 
 #: unicable.h:277
 msgid "Unicable SCR"
-msgstr "Unikabel SCR"
+msgstr "Unicable SCR"
 
 #: unlock.h:20
 msgid "Spezialfunctions unlocked, no input required"
@@ -10461,7 +10422,7 @@ msgstr ""
 
 #: vfdisplay.h:32
 msgid "channel"
-msgstr "Sendername"
+msgstr "Sender"
 
 #: vfdisplay.h:33
 msgid "channel + time"
