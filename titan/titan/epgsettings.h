@@ -226,11 +226,6 @@ void screenepgsettings()
 		rcret = waitrc(epgsettings, 0, 0);
 		tmp = listbox->select;
 
-		if(ostrcmp(listbox->select->name, "epgpath") == 0)
-			b4->hidden = NO;
-		else
-			b4->hidden = YES;
-
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
@@ -306,6 +301,11 @@ void screenepgsettings()
 			free(log); log = NULL;
 			drawscreen(epgsettings, 0, 0);
 		}
+
+		if(ostrcmp(listbox->select->name, "epgpath") == 0)
+			b4->hidden = YES;
+		else
+			b4->hidden = NO;
 	}
 
 	delownerrc(epgsettings);
