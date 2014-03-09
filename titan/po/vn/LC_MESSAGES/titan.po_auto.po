@@ -574,6 +574,21 @@ msgstr ""
 msgid "Message"
 msgstr "Tin nhắn"
 
+#: ard.h:133 ard.h:135 beeg.h:50 beeg.h:52 epgsearch.h:179 epgsearch.h:193
+#: epgsearch.h:207 giga.h:13 giga.h:15 imdbapi.h:287 imdb.h:712
+#: internetradio.h:13 internetradio.h:15 internettv.h:13 internettv.h:15
+#: kinox.h:33 kinox.h:35 kinox.h:177 kinox.h:179 kinox.h:784 kinox.h:786
+#: mlehd.h:59 mlehd.h:61 movie4k.h:78 movie4k.h:80 movie4k.h:234 movie4k.h:236
+#: myvideo.h:188 myvideo.h:190 myvideo.h:293 myvideo.h:295 netzkino.h:13
+#: netzkino.h:15 rtl2now.h:119 rtl2now.h:121 rtl2now.h:183 rtl2now.h:185
+#: rtl2now.h:247 rtl2now.h:249 rtl2now.h:311 rtl2now.h:313
+#: skin_default_skin.xml.h:546 solarmovie.h:97 solarmovie.h:99
+#: solarmovie.h:210 solarmovie.h:212 tectime.h:13 tectime.h:15
+#: tithek_mainmenu.h:35 tmdb.h:860 xvideos.h:56 xvideos.h:58 youtube.h:223
+#: youtube.h:225 youtube.h:315 youtube.h:317 zdf.h:147 zdf.h:149
+msgid "Search"
+msgstr "Dò"
+
 #: audiotrack.h:48 play.h:271 rectimer.h:1485 subtitle.h:1624
 msgid "running"
 msgstr "Đang chạy"
@@ -1933,6 +1948,34 @@ msgstr ""
 #: imdbapi.h:200 imdb.h:626 tmdb.h:759
 msgid "Error, Internet Connection not found"
 msgstr "Lỗi, Không tìm thấy kết nối mạng"
+
+#: imdbapi.h:265 imdb.h:691 tmdb.h:839
+msgid "--plot--"
+msgstr ""
+
+#: imdbapi.h:266 imdb.h:692 tmdb.h:840
+msgid "--title--"
+msgstr ""
+
+#: imdbapi.h:267 imdb.h:693
+msgid "--director--"
+msgstr ""
+
+#: imdbapi.h:268 imdb.h:694
+msgid "--writers--"
+msgstr ""
+
+#: imdbapi.h:269 imdb.h:695 tmdb.h:843
+msgid "--genre--"
+msgstr ""
+
+#: imdbapi.h:270 imdb.h:696 tmdb.h:844
+msgid "--releasetime--"
+msgstr ""
+
+#: imdbapi.h:271 imdb.h:697
+msgid "--actors--"
+msgstr ""
 
 #: inadyn.h:188
 msgid "DYNDNS started."
@@ -6560,7 +6603,7 @@ msgstr "n"
 msgid "N"
 msgstr "N"
 
-#: skin_default_skin.xml.h:390
+#: skin_default_skin.xml.h:390 stock.h:270
 msgid "Name"
 msgstr "Tên"
 
@@ -7111,10 +7154,6 @@ msgstr "kiểu màn hình chờ"
 #: skin_default_skin.xml.h:545
 msgid "--- SD resolution"
 msgstr "--- Độ phân giải SD"
-
-#: skin_default_skin.xml.h:546 tithek_mainmenu.h:35
-msgid "Search"
-msgstr "Dò"
 
 #: skin_default_skin.xml.h:548
 msgid "Second Infobar"
@@ -8281,6 +8320,10 @@ msgstr "Tải toàn bộ file"
 msgid "Download Full File (background)"
 msgstr " Tải toàn bộ file (hình nền)"
 
+#: tithek.h:1338 tithek.h:1357
+msgid "Filename"
+msgstr ""
+
 #: tithek.h:1345
 msgid "Start playback"
 msgstr "bắt đầu phát lại?"
@@ -8610,6 +8653,18 @@ msgid ""
 "IMDB Plugin not found!\n"
 "Can't get detail media infos\n"
 "Please install it"
+msgstr ""
+
+#: tmdb.h:841
+msgid "--orgname--"
+msgstr ""
+
+#: tmdb.h:842
+msgid "--rating--"
+msgstr ""
+
+#: tmdb.h:845
+msgid "( --votes-- )"
 msgstr ""
 
 #: tmdb.h:922
@@ -10364,3 +10419,7 @@ msgstr "Nhiệt độ cao nhất: "
 #: weather.h:442 weather.h:460 weather.h:478 weather.h:496
 msgid "Condition: "
 msgstr "trạng thái: "
+
+#: weather.h:514
+msgid "Location"
+msgstr ""
