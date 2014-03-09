@@ -224,6 +224,11 @@ void screenepgsettings()
 		rcret = waitrc(epgsettings, 0, 0);
 		tmp = listbox->select;
 
+		if(ostrcmp(listbox->select->name, "epgpath") == 0)
+			epgpath->hidden = NO;
+		else
+			epgpath->hidden = YES;
+
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
