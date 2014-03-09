@@ -1423,14 +1423,14 @@ void screentithekplay(char* titheklink, char* title, int first)
 
 	if (ostrcmp(title, "TiThek - Favoriten") == 0)
 	{
-		b4->hidden = YES;
-		b5->hidden = NO;
+		b4->hidden = NO;
+		b5->hidden = YES;
 	}
 	else
 	{
-		b4->hidden = NO;
-		b5->hidden = YES;
-	}		
+		b4->hidden = YES;
+		b5->hidden = NO;
+	}
 	
 	drawscreen(load, 0, 0);
 	
@@ -3104,6 +3104,17 @@ why ?
 					addfav(((struct tithek*)listbox->select->handle)->title, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, ((struct tithek*)listbox->select->handle)->menutitle, ((struct tithek*)listbox->select->handle)->flag);		
 				}
 			}
+		}
+
+		if (ostrcmp(((struct tithek*)listbox->select->handle)->title, "TiThek - Favoriten") == 0)
+		{
+			b4->hidden = NO;
+			b5->hidden = YES;
+		}
+		else
+		{
+			b4->hidden = YES;
+			b5->hidden = NO;
 		}
 	}
 
