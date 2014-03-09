@@ -38,8 +38,8 @@ msgstr ""
 #: bgdownload.h:176 blindscanadjust.h:25 callmon_main.h:39 channellist.h:913
 #: channellist.h:915 channellist.h:920 channellist.h:922 channellist.h:1006
 #: divxstage.h:36 divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336
-#: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:263 epgsettings.h:289
-#: epgsettings.h:303 extensions.h:170 extensions.h:221 extensions.h:230
+#: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:265 epgsettings.h:291
+#: epgsettings.h:305 extensions.h:170 extensions.h:221 extensions.h:230
 #: extensions.h:234 extensions.h:239 extensions.h:247 extensions.h:282
 #: extensions.h:290 extensions.h:297 extensions.h:304 extensions.h:336
 #: extensions.h:360 extensions.h:389 extensions.h:396 extensions.h:420
@@ -130,8 +130,8 @@ msgstr "ОК"
 #: bgdownload.h:176 blindscanadjust.h:25 channellist.h:913 channellist.h:915
 #: channellist.h:920 channellist.h:922 channellist.h:1006 divxstage.h:36
 #: divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336 dlna.h:345
-#: dvdplay.h:62 epgsearch.h:27 epgsettings.h:263 epgsettings.h:289
-#: epgsettings.h:303 extensions.h:170 extensions.h:221 extensions.h:230
+#: dvdplay.h:62 epgsearch.h:27 epgsettings.h:265 epgsettings.h:291
+#: epgsettings.h:305 extensions.h:170 extensions.h:221 extensions.h:230
 #: extensions.h:234 extensions.h:239 extensions.h:247 extensions.h:282
 #: extensions.h:290 extensions.h:297 extensions.h:304 extensions.h:336
 #: extensions.h:360 extensions.h:389 extensions.h:396 extensions.h:420
@@ -228,8 +228,8 @@ msgstr "Выход"
 #: adjust.h:220 adjust.h:224 adjust.h:250 autotimer.c:453 autotimer.c:486
 #: avsettings.h:147 avsettings.h:168 avsettings.h:172 blindscanadjust.h:150
 #: blindscanadjust.h:154 blindscanadjust.h:158 blindscanadjust.h:187
-#: blindscanadjust.h:191 dlna.h:276 epgsettings.h:132 epgsettings.h:185
-#: epgsettings.h:194 epgsettings.h:198 epgsettings.h:203 epgsettings.h:208
+#: blindscanadjust.h:191 dlna.h:276 epgsettings.h:134 epgsettings.h:187
+#: epgsettings.h:196 epgsettings.h:200 epgsettings.h:205 epgsettings.h:210
 #: httpdsettings.h:20 httpdsettings.h:50 inadyn.h:138
 #: mc_audioplayer_settings.h:45 mc_audioplayer_settings.h:51
 #: mc_audioplayer_settings.h:55 mc_pictureplayer_settings.h:75
@@ -280,7 +280,7 @@ msgstr ""
 msgid "epg"
 msgstr ""
 
-#: adjust.h:67 epgsettings.h:136
+#: adjust.h:67 epgsettings.h:138
 msgid "Channel EPG"
 msgstr ""
 
@@ -289,8 +289,8 @@ msgstr ""
 #: adjust.h:210 adjust.h:217 adjust.h:221 adjust.h:225 autotimer.c:454
 #: autotimer.c:487 avsettings.h:148 avsettings.h:169 blindscanadjust.h:151
 #: blindscanadjust.h:155 blindscanadjust.h:159 blindscanadjust.h:188
-#: blindscanadjust.h:192 dlna.h:277 epgsettings.h:133 epgsettings.h:186
-#: epgsettings.h:195 httpdsettings.h:21 httpdsettings.h:51 inadyn.h:139
+#: blindscanadjust.h:192 dlna.h:277 epgsettings.h:135 epgsettings.h:188
+#: epgsettings.h:197 httpdsettings.h:21 httpdsettings.h:51 inadyn.h:139
 #: mc_audioplayer_settings.h:46 mc_audioplayer_settings.h:52
 #: mc_audioplayer_settings.h:56 mc_pictureplayer_settings.h:76
 #: mc_videoplayer_settings.h:40 mc_videoplayer_settings.h:44
@@ -396,7 +396,7 @@ msgstr "Перезапуск"
 msgid "Gui Restart"
 msgstr "GUI перезапуск"
 
-#: adjust.h:112 adjust.h:122 adjust.h:176 epgsettings.h:145 epgsettings.h:151
+#: adjust.h:112 adjust.h:122 adjust.h:176 epgsettings.h:147 epgsettings.h:153
 #: network.h:593
 msgid "deaktiv"
 msgstr ""
@@ -447,7 +447,7 @@ msgstr ""
 msgid "auto"
 msgstr ""
 
-#: adjust.h:153 autotimer.c:480 autotimer.c:513 epgsettings.h:213
+#: adjust.h:153 autotimer.c:480 autotimer.c:513 epgsettings.h:215
 #: rectimer.h:1166
 msgid "nothing"
 msgstr ""
@@ -522,7 +522,7 @@ msgstr ""
 #: blindscanadjust.h:25 callmon_main.h:39 channellist.h:913 channellist.h:915
 #: channellist.h:920 channellist.h:922 channellist.h:1006 divxstage.h:36
 #: divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336 dlna.h:345
-#: dvdplay.h:62 epgsearch.h:27 epgsettings.h:263 epgsettings.h:289
+#: dvdplay.h:62 epgsearch.h:27 epgsettings.h:265 epgsettings.h:291
 #: extensions.h:247 extensions.h:304 extensions.h:336 extensions.h:392
 #: extensions.h:396 extensions.h:432 facebook.h:66 facebook.h:157
 #: facebook.h:167 faststream.h:30 faststream.h:79 faststream.h:91
@@ -1251,64 +1251,64 @@ msgstr ""
 msgid "Music"
 msgstr ""
 
-#: epgsettings.h:137 epgsettings.h:178 skin_default_skin.xml.h:574
+#: epgsettings.h:139 epgsettings.h:180 skin_default_skin.xml.h:574
 msgid "Single EPG"
 msgstr "Простое EPG"
 
-#: epgsettings.h:138 epgsettings.h:179 keyactions.h:25
+#: epgsettings.h:140 epgsettings.h:181 keyactions.h:25
 #: settings_bluebutton.h:16 settings_pluginbutton.h:17 settings_redbutton.h:17
 #: skin_default_skin.xml.h:388
 msgid "Multi EPG"
 msgstr "Multi EPG"
 
-#: epgsettings.h:139 keyactions.h:26 settings_bluebutton.h:17
+#: epgsettings.h:141 keyactions.h:26 settings_bluebutton.h:17
 #: settings_pluginbutton.h:18 settings_redbutton.h:18
 #: skin_default_skin.xml.h:254
 msgid "Graphic Multi EPG"
 msgstr "Multi EPG"
 
-#: epgsettings.h:146 tmc.h:389
+#: epgsettings.h:148 tmc.h:389
 msgid "scan"
 msgstr "Поиск"
 
-#: epgsettings.h:147
+#: epgsettings.h:149
 msgid "whitelist"
 msgstr "Список обновлений"
 
-#: epgsettings.h:148
+#: epgsettings.h:150
 msgid "scan and whitelist"
 msgstr ""
 
-#: epgsettings.h:189 epgsettings.h:200 epgsettings.h:205 epgsettings.h:210
+#: epgsettings.h:191 epgsettings.h:202 epgsettings.h:207 epgsettings.h:212
 #: mediadbsettings.h:36
 msgid "always"
 msgstr ""
 
-#: epgsettings.h:190
+#: epgsettings.h:192
 msgid "only on power off / restart"
 msgstr ""
 
-#: epgsettings.h:191 mediadbsettings.h:48
+#: epgsettings.h:193 mediadbsettings.h:48
 msgid "never"
 msgstr ""
 
-#: epgsettings.h:199 epgsettings.h:204 epgsettings.h:209
+#: epgsettings.h:201 epgsettings.h:206 epgsettings.h:211
 msgid "only for scan"
 msgstr "Поиск только открытых каналов"
 
-#: epgsettings.h:214
+#: epgsettings.h:216
 msgid "poweroff"
 msgstr "Выключение"
 
-#: epgsettings.h:263
+#: epgsettings.h:265
 msgid "Deavtivate Refresh Time and After EPG in scan-mode"
 msgstr ""
 
-#: epgsettings.h:289
+#: epgsettings.h:291
 msgid "EPG resetet and now clear."
 msgstr ""
 
-#: epgsettings.h:303
+#: epgsettings.h:305
 msgid "EPG Scan Log"
 msgstr ""
 
