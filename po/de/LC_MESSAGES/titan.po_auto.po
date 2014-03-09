@@ -176,31 +176,32 @@ msgstr "Ok"
 #: panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6 played.h:30
 #: played.h:79 played.h:91 played.h:103 played.h:160 player.h:99 play.h:476
 #: play.h:593 play.h:1280 play.h:1286 play.h:1295 play.h:1296 play.h:1489
-#: play.h:1649 play.h:1660 plugins_catcatch_skin.xml.h:4
-#: plugins_dlna_skin.xml.h:2 plugins_facebook_skin.xml.h:4
-#: plugins_instar_skin.xml.h:6 plugins_mboxinfo_skin.xml.h:1
-#: plugins_mc_skin.xml.h:22 plugins_optimize_skin.xml.h:2
-#: plugins_panel_skin.xml.h:15 plugins_rgui_skin.xml.h:2
-#: plugins_tiwakeup_skin.xml.h:2 plugins_wins3_skin.xml.h:1 possetup.h:98
-#: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
-#: putlocker.h:32 putlocker.h:79 putlocker.h:85 putlocker.h:136
-#: putlocker.h:146 putlocker.h:219 readerconfig.h:343 readerconfig.h:443
-#: readerconfig.h:444 readerconfig.h:488 readerconfig.h:489 record.h:90
-#: record.h:355 record.h:987 record.h:1174 record.h:1413 record.h:1438
-#: rectimer.h:557 rectimer.h:1210 rectimer.h:1356 rectimer.h:1368
-#: restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
+#: play.h:1649 play.h:1660 plugins_callmonitor1_skin.xml.h:11
+#: plugins_catcatch_skin.xml.h:4 plugins_dlna_skin.xml.h:2
+#: plugins_facebook_skin.xml.h:4 plugins_instar_skin.xml.h:6
+#: plugins_mboxinfo_skin.xml.h:1 plugins_mc_skin.xml.h:22
+#: plugins_optimize_skin.xml.h:2 plugins_panel_skin.xml.h:15
+#: plugins_rgui_skin.xml.h:2 plugins_tiwakeup_skin.xml.h:2
+#: plugins_wins3_skin.xml.h:1 possetup.h:98 primeshare.h:29 primeshare.h:73
+#: primeshare.h:79 primeshare.h:124 putlocker.h:32 putlocker.h:79
+#: putlocker.h:85 putlocker.h:136 putlocker.h:146 putlocker.h:219
+#: readerconfig.h:343 readerconfig.h:443 readerconfig.h:444 readerconfig.h:488
+#: readerconfig.h:489 record.h:90 record.h:355 record.h:987 record.h:1174
+#: record.h:1413 record.h:1438 rectimer.h:557 rectimer.h:1210 rectimer.h:1356
+#: rectimer.h:1368 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:28 scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1888
 #: scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 scriptexec.h:41 service.h:710
-#: service.h:951 skin_default_skin.xml.h:216 skins_catcatch_skin.xml.h:4
-#: skins_dlna_skin.xml.h:2 skinselector.h:218 skins_facebook_skin.xml.h:4
-#: skins_instar_skin.xml.h:6 skins_mboxinfo_skin.xml.h:1
-#: skins_mc_skin.xml.h:22 skins_optimize_skin.xml.h:2
-#: skins_panel_skin.xml.h:15 skins_rgui_skin.xml.h:2
-#: skins_tiwakeup_skin.xml.h:2 skins_wins3_skin.xml.h:1 sock.h:952
-#: softcam.h:403 solarmovie.h:35 solarmovie.h:47 solarmovie.h:295 spinner.h:18
-#: stopifnotused.c:32 streamcloud.h:31 streamcloud.h:78 streamcloud.h:91
-#: streamcloud.h:122 streamcloud.h:161 stream.h:33 system_backup_restore.h:31
+#: service.h:951 skin_default_skin.xml.h:216 skins_callmonitor1_skin.xml.h:11
+#: skins_catcatch_skin.xml.h:4 skins_dlna_skin.xml.h:2 skinselector.h:218
+#: skins_facebook_skin.xml.h:4 skins_instar_skin.xml.h:6
+#: skins_mboxinfo_skin.xml.h:1 skins_mc_skin.xml.h:22
+#: skins_optimize_skin.xml.h:2 skins_panel_skin.xml.h:15
+#: skins_rgui_skin.xml.h:2 skins_tiwakeup_skin.xml.h:2
+#: skins_wins3_skin.xml.h:1 sock.h:952 softcam.h:403 solarmovie.h:35
+#: solarmovie.h:47 solarmovie.h:295 spinner.h:18 stopifnotused.c:32
+#: streamcloud.h:31 streamcloud.h:78 streamcloud.h:91 streamcloud.h:122
+#: streamcloud.h:161 stream.h:33 system_backup_restore.h:31
 #: system_backup_restore.h:40 system_backup_restore.h:43
 #: system_backup_restore.h:51 system_backup_restore.h:80
 #: system_backup_restore.h:82 system_backup_restore.h:88
@@ -3381,20 +3382,18 @@ msgstr "Ereignis"
 msgid "search string"
 msgstr "Suchmuster"
 
-#: plugins_autotimer_skin.xml.h:8 plugins_callmonitor1_skin.xml.h:16
-#: plugins_lcdpearl1_skin.xml.h:10 plugins_lcdsamsung_skin.xml.h:13
-#: plugins_stopifnotused_skin.xml.h:5 skins_autotimer_skin.xml.h:8
-#: skins_callmonitor1_skin.xml.h:16 skins_lcdpearl1_skin.xml.h:10
+#: plugins_autotimer_skin.xml.h:8 plugins_lcdpearl1_skin.xml.h:10
+#: plugins_lcdsamsung_skin.xml.h:13 plugins_stopifnotused_skin.xml.h:5
+#: skins_autotimer_skin.xml.h:8 skins_lcdpearl1_skin.xml.h:10
 #: skins_lcdsamsung_skin.xml.h:13 skins_stopifnotused_skin.xml.h:5
 msgid ""
 "text=EXIT halign=center valign=middle bordercol=exitcol bordersize=2 "
 "bordertype=2 posx=160 posy=0 width=150 height=30/>"
 msgstr "Exit"
 
-#: plugins_autotimer_skin.xml.h:9 plugins_callmonitor1_skin.xml.h:18
-#: plugins_lcdpearl1_skin.xml.h:11 plugins_lcdsamsung_skin.xml.h:14
-#: plugins_stopifnotused_skin.xml.h:6 skins_autotimer_skin.xml.h:9
-#: skins_callmonitor1_skin.xml.h:18 skins_lcdpearl1_skin.xml.h:11
+#: plugins_autotimer_skin.xml.h:9 plugins_lcdpearl1_skin.xml.h:11
+#: plugins_lcdsamsung_skin.xml.h:14 plugins_stopifnotused_skin.xml.h:6
+#: skins_autotimer_skin.xml.h:9 skins_lcdpearl1_skin.xml.h:11
 #: skins_lcdsamsung_skin.xml.h:14 skins_stopifnotused_skin.xml.h:6
 msgid ""
 "text=SAVE halign=center valign=middle bordercol=green bordersize=2 "
@@ -3458,31 +3457,39 @@ msgstr "Broadcast Adresse"
 msgid "eingehende Anrufe"
 msgstr ""
 
-#: plugins_callmonitor1_skin.xml.h:11 skins_callmonitor1_skin.xml.h:11
+#: plugins_callmonitor1_skin.xml.h:12 skins_callmonitor1_skin.xml.h:12
 msgid "FritzBook"
 msgstr ""
 
-#: plugins_callmonitor1_skin.xml.h:12 skins_callmonitor1_skin.xml.h:12
+#: plugins_callmonitor1_skin.xml.h:13 skins_callmonitor1_skin.xml.h:13
 msgid "Fritzbox Firmware... >= 05.50"
 msgstr ""
 
-#: plugins_callmonitor1_skin.xml.h:13 skins_callmonitor1_skin.xml.h:13
+#: plugins_callmonitor1_skin.xml.h:14 skins_callmonitor1_skin.xml.h:14
 msgid "IP-FritzBox"
 msgstr ""
 
-#: plugins_callmonitor1_skin.xml.h:14 skins_callmonitor1_skin.xml.h:14
+#: plugins_callmonitor1_skin.xml.h:15 skins_callmonitor1_skin.xml.h:15
+msgid "LOAD-FritzBook"
+msgstr ""
+
+#: plugins_callmonitor1_skin.xml.h:16 skins_callmonitor1_skin.xml.h:16
 msgid "Nutzername-Fritzbox (optional)"
 msgstr ""
 
-#: plugins_callmonitor1_skin.xml.h:15 skins_callmonitor1_skin.xml.h:15
+#: plugins_callmonitor1_skin.xml.h:17 skins_callmonitor1_skin.xml.h:17
 msgid "Passwort-FritzBox"
 msgstr ""
 
-#: plugins_callmonitor1_skin.xml.h:17 skins_callmonitor1_skin.xml.h:17
-msgid ""
-"text=LOAD-FritzBook halign=center valign=middle bordercol=blue bordersize=2 "
-"bordertype=2 posx=400 posy=0 width=200 height=30/>"
-msgstr "Fritzbook laden"
+#: plugins_callmonitor1_skin.xml.h:18 plugins_imdbapi_skin.xml.h:7
+#: plugins_imdb_skin.xml.h:7 plugins_instar_skin.xml.h:15
+#: plugins_panel_skin.xml.h:21 plugins_stock_skin.xml.h:5
+#: plugins_tmdb_skin.xml.h:7 skin_default_skin.xml.h:531
+#: skins_callmonitor1_skin.xml.h:18 skins_imdbapi_skin.xml.h:7
+#: skins_imdb_skin.xml.h:7 skins_instar_skin.xml.h:15
+#: skins_panel_skin.xml.h:21 skins_stock_skin.xml.h:5 skins_tmdb_skin.xml.h:7
+msgid "SAVE"
+msgstr "Speichern"
 
 #: plugins_catcatch_skin.xml.h:1 skins_catcatch_skin.xml.h:1
 msgid "Cat-Catch"
@@ -3618,15 +3625,6 @@ msgstr "Handlung:"
 #: skins_tmdb_skin.xml.h:6
 msgid "Release:"
 msgstr "Veröffentlicht:"
-
-#: plugins_imdbapi_skin.xml.h:7 plugins_imdb_skin.xml.h:7
-#: plugins_instar_skin.xml.h:15 plugins_panel_skin.xml.h:21
-#: plugins_stock_skin.xml.h:5 plugins_tmdb_skin.xml.h:7
-#: skin_default_skin.xml.h:531 skins_imdbapi_skin.xml.h:7
-#: skins_imdb_skin.xml.h:7 skins_instar_skin.xml.h:15
-#: skins_panel_skin.xml.h:21 skins_stock_skin.xml.h:5 skins_tmdb_skin.xml.h:7
-msgid "SAVE"
-msgstr "Speichern"
 
 #: plugins_imdbapi_skin.xml.h:8 plugins_imdb_skin.xml.h:8
 #: plugins_networkbrowser_skin.xml.h:25 plugins_tmdb_skin.xml.h:8
@@ -10777,3 +10775,8 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
+
+#~ msgid ""
+#~ "text=LOAD-FritzBook halign=center valign=middle bordercol=blue "
+#~ "bordersize=2 bordertype=2 posx=400 posy=0 width=200 height=30/>"
+#~ msgstr "Fritzbook laden"
