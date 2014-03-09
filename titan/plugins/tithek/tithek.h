@@ -1421,6 +1421,10 @@ void screentithekplay(char* titheklink, char* title, int first)
 	struct skin* tmp = NULL;
 	char* tithekpic = NULL;
 
+	b4->hidden = YES;
+	b5->hidden = YES;
+
+/*
 	if (ostrcmp(title, "TiThek - Favoriten") == 0)
 	{
 		b4->hidden = NO;
@@ -1431,7 +1435,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 		b4->hidden = YES;
 		b5->hidden = NO;
 	}
-	
+*/	
 	drawscreen(load, 0, 0);
 	
 	if(titheklink == NULL) return;
@@ -1556,13 +1560,17 @@ waitrcstart:
 printf("title struct: %s\n",((struct tithek*)listbox->select->handle)->title);
 printf("title var: %s\n",title);
 
-		if (ostrcmp(((struct tithek*)listbox->select->handle)->title, "TiThek - Favoriten") == 0)
+		if (ostrcmp(title, "TiThek - Favoriten") == 0)
 		{
+printf("if\n");
+			
 			b4->hidden = NO;
 			b5->hidden = YES;
 		}
 		else
 		{
+printf("else\n");
+
 			b4->hidden = YES;
 			b5->hidden = NO;
 		}
