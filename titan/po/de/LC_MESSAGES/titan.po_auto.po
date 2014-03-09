@@ -114,7 +114,7 @@ msgstr ""
 #: titan.c:956 titan.c:1067 titan.c:1088 titan.c:1094 titan.c:1105
 #: titan.c:1111 tithek.c:79 tithek_global.h:238 tithek.h:620 tithek.h:1057
 #: tithek.h:1100 tithek.h:1345 tithek.h:1367 tithek.h:1372 tithek.h:1386
-#: tithek.h:3037 tithek.h:3099 tithek.h:3113 tiwakeup.h:66 tiwakeup.h:68
+#: tithek.h:3040 tithek.h:3102 tithek.h:3116 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922
 #: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3185 tpk.new.h:3167 tsSchnitt.c:108
 #: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
@@ -211,7 +211,7 @@ msgstr "Ok"
 #: titan.c:956 titan.c:1067 titan.c:1088 titan.c:1094 titan.c:1105
 #: titan.c:1111 tithek.c:79 tithek_global.h:238 tithek.h:620 tithek.h:1057
 #: tithek.h:1100 tithek.h:1345 tithek.h:1367 tithek.h:1372 tithek.h:1386
-#: tithek.h:3037 tithek.h:3099 tithek.h:3113 tiwakeup.h:66 tiwakeup.h:68
+#: tithek.h:3040 tithek.h:3102 tithek.h:3116 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922
 #: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3185 tpk.new.h:3167 tsSchnitt.c:108
 #: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
@@ -580,7 +580,7 @@ msgstr "Ja / VZAP unendlich"
 #: timeshiftsettings.h:45 titan.c:274 titan.c:338 titan.c:347 titan.c:1067
 #: titan.c:1088 titan.c:1094 titan.c:1105 titan.c:1111 tithek.c:79
 #: tithek_global.h:238 tithek.h:620 tithek.h:1057 tithek.h:1100 tithek.h:1345
-#: tithek.h:1367 tithek.h:1372 tithek.h:3037 tithek.h:3099 tithek.h:3113
+#: tithek.h:1367 tithek.h:1372 tithek.h:3040 tithek.h:3102 tithek.h:3116
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
 #: tmdb.h:759 tmdb.h:922 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3185
 #: tpk.new.h:3167 tunerconfig.h:772 unlock.h:20 unlock.h:66 unlock.h:71
@@ -8516,7 +8516,7 @@ msgstr ""
 msgid "Tithek - Mainmenu"
 msgstr ""
 
-#: tithek_global.h:238 tithek.h:3037
+#: tithek_global.h:238 tithek.h:3040
 msgid "The hoster is not yet supported !"
 msgstr "Der Anbieter wird zur Zeit nicht unterstützt!"
 
@@ -8626,11 +8626,11 @@ msgstr "TiThek Haftungsausschluss:"
 msgid "Page"
 msgstr "Seite"
 
-#: tithek.h:3099
+#: tithek.h:3102
 msgid "Remove this Favorite ?"
 msgstr "Wollen Sie diesen Favoriten löschen?"
 
-#: tithek.h:3113
+#: tithek.h:3116
 msgid "Add this link as Favorite ?"
 msgstr "Wollen Sie diesen Favoriten hinzufügen?"
 
