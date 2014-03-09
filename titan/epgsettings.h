@@ -121,6 +121,8 @@ void screenepgsettings()
 	struct skin* mhw2epg = getscreennode(epgsettings, "mhw2epg");
 	struct skin* opentv = getscreennode(epgsettings, "opentv");
 	struct skin* epg_afterevent = getscreennode(epgsettings, "epg_afterevent");
+	struct skin* b4 = getscreennode(epgsettings, "b4");
+
 	struct skin* load = getscreen("loading");
 	struct skin* tmp = NULL;
 
@@ -225,9 +227,9 @@ void screenepgsettings()
 		tmp = listbox->select;
 
 		if(ostrcmp(listbox->select->name, "epgpath") == 0)
-			epgpath->hidden = NO;
+			b4->hidden = NO;
 		else
-			epgpath->hidden = YES;
+			b3->hidden = YES;
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL))
