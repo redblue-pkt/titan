@@ -229,7 +229,7 @@ void screenepgsettings()
 		if(ostrcmp(listbox->select->name, "epgpath") == 0)
 			b4->hidden = NO;
 		else
-			b3->hidden = YES;
+			b4->hidden = YES;
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL))
