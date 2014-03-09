@@ -8417,7 +8417,7 @@ msgstr ""
 
 #: tithek.c:100
 msgid "Tithek - Mainmenu"
-msgstr ""
+msgstr "TiThek - Hauptmenü"
 
 #: tithek_global.h:238 tithek.h:3040
 msgid "The hoster is not yet supported !"
