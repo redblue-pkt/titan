@@ -18,7 +18,8 @@ rm -rf "$HOME"/flashimg/source.titan/titan/tools/tmp
 mkdir -p "$HOME"/flashimg/source.titan/titan/tools/tmp
 
 LIST=`find "$HOME"/flashimg/source.titan/titan "$HOME"/flashimg/source.titan/plugins -type f -name "*.h"`
-LIST="$LIST $HOME/flashimg/source.titan/titan/titan.c"
+#LIST="$LIST $HOME/flashimg/source.titan/titan/titan.c"
+LIST="$LIST "`find "$HOME"/flashimg/source.titan/titan "$HOME"/flashimg/source.titan/plugins -type f -name "*.c"`
 POLIST=`find "$HOME"/flashimg/source.titan/po -type f -name "*_auto.po"`
 SKINLIST=`find "$HOME"/flashimg/source.titan -type f -name "*kin.xml"`
 
