@@ -30,9 +30,9 @@ int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabe
 	if(flag == 0)
 	{
 		if(searchstr == NULL)
-			search = textinputhist("Search", " ", "searchhist");
+			search = textinputhist(_("Search"), " ", "searchhist");
 		else
-			search = textinputhist("Search", searchstr, "searchhist");
+			search = textinputhist(_("Search"), searchstr, "searchhist");
 	}
 	else
 		search = ostrcat(link, NULL, 0, 0);
@@ -174,9 +174,9 @@ int kinox_search_local(struct skin* grid, struct skin* listbox, struct skin* cou
 		return ret;
 
 	if(searchstr == NULL)
-		search = textinputhist("Search", " ", "searchhist");
+		search = textinputhist(_("Search"), " ", "searchhist");
 	else
-		search = textinputhist("Search", searchstr, "searchhist");
+		search = textinputhist(_("Search"), searchstr, "searchhist");
 
 	if(search != NULL)
 	{
@@ -781,9 +781,9 @@ int kinox_search_cast(struct skin* grid, struct skin* listbox, struct skin* coun
 
 	char* search = NULL;
 	if(searchstr == NULL)
-		search = textinputhist("Search", " ", "searchhist");
+		search = textinputhist(_("Search"), " ", "searchhist");
 	else
-		search = textinputhist("Search", searchstr, "searchhist");
+		search = textinputhist(_("Search"), searchstr, "searchhist");
 	
 	if(search != NULL)
 	{

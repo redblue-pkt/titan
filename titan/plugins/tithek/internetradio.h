@@ -10,9 +10,9 @@ int internetradio_search_local(struct skin* grid, struct skin* listbox, struct s
 		return ret;
 
 	if(searchstr == NULL)
-		search = textinputhist("Search", " ", "searchhist");
+		search = textinputhist(_("Search"), " ", "searchhist");
 	else
-		search = textinputhist("Search", searchstr, "searchhist");
+		search = textinputhist(_("Search"), searchstr, "searchhist");
 
 	if(search != NULL)
 	{

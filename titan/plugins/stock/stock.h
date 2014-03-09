@@ -267,7 +267,7 @@ start:
 		if(rcret == getrcconfigint("rcred", NULL))
     {
 			free(name); name = NULL;
-			name = textinput("Name", NULL);
+			name = textinput(_("Name"), NULL);
       if(name != NULL)
       {
 				struct skin* tmp = addlistbox(stock, listbox, NULL, 1);

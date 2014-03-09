@@ -176,7 +176,7 @@ void screenepgsearch(char* text)
     
 		if(rcret == getrcconfigint("rcgreen", NULL))
 		{
-			search = textinput("Search", NULL);
+			search = textinput(_("Search"), NULL);
 			if(search != NULL)
 			{
 				genre = 0;
@@ -190,7 +190,7 @@ void screenepgsearch(char* text)
     
 		if(rcret == getrcconfigint("rcyellow", NULL))
 		{
-			search = textinput("Search", NULL);
+			search = textinput(_("Search"), NULL);
 			if(search != NULL)
 			{
 				genre = 0;
@@ -204,7 +204,7 @@ void screenepgsearch(char* text)
     
 		if(rcret == getrcconfigint("rcblue", NULL))
 		{
-			search = textinput("Search", NULL);
+			search = textinput(_("Search"), NULL);
 			if(search != NULL)
 			{
 				genre = 0;
