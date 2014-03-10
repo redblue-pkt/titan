@@ -176,12 +176,14 @@ msgstr ""
 #: panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6 played.h:30
 #: played.h:79 played.h:91 played.h:103 played.h:160 player.h:99 play.h:476
 #: play.h:593 play.h:1280 play.h:1286 play.h:1295 play.h:1296 play.h:1489
-#: play.h:1649 play.h:1660 plugins_callmonitor1_skin.xml.h:11
-#: plugins_catcatch_skin.xml.h:4 plugins_dlna_skin.xml.h:2
-#: plugins_facebook_skin.xml.h:4 plugins_instar_skin.xml.h:6
-#: plugins_mboxinfo_skin.xml.h:1 plugins_mc_skin.xml.h:22
-#: plugins_optimize_skin.xml.h:2 plugins_panel_skin.xml.h:15
-#: plugins_rgui_skin.xml.h:2 plugins_tiwakeup_skin.xml.h:2
+#: play.h:1649 play.h:1660 plugins_autotimer_skin.xml.h:7
+#: plugins_callmonitor1_skin.xml.h:11 plugins_catcatch_skin.xml.h:4
+#: plugins_dlna_skin.xml.h:2 plugins_facebook_skin.xml.h:4
+#: plugins_instar_skin.xml.h:6 plugins_lcdpearl1_skin.xml.h:7
+#: plugins_lcdsamsung_skin.xml.h:8 plugins_mboxinfo_skin.xml.h:1
+#: plugins_mc_skin.xml.h:22 plugins_optimize_skin.xml.h:2
+#: plugins_panel_skin.xml.h:15 plugins_rgui_skin.xml.h:2
+#: plugins_stopifnotused_skin.xml.h:4 plugins_tiwakeup_skin.xml.h:2
 #: plugins_wins3_skin.xml.h:1 possetup.h:98 primeshare.h:29 primeshare.h:73
 #: primeshare.h:79 primeshare.h:124 putlocker.h:32 putlocker.h:79
 #: putlocker.h:85 putlocker.h:136 putlocker.h:146 putlocker.h:219
@@ -192,12 +194,14 @@ msgstr ""
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:28 scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1888
 #: scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 scriptexec.h:41 service.h:710
-#: service.h:951 skin_default_skin.xml.h:216 skins_callmonitor1_skin.xml.h:11
-#: skins_catcatch_skin.xml.h:4 skins_dlna_skin.xml.h:2 skinselector.h:218
-#: skins_facebook_skin.xml.h:4 skins_instar_skin.xml.h:6
-#: skins_mboxinfo_skin.xml.h:1 skins_mc_skin.xml.h:22
-#: skins_optimize_skin.xml.h:2 skins_panel_skin.xml.h:15
-#: skins_rgui_skin.xml.h:2 skins_tiwakeup_skin.xml.h:2
+#: service.h:951 skin_default_skin.xml.h:216 skins_autotimer_skin.xml.h:7
+#: skins_callmonitor1_skin.xml.h:11 skins_catcatch_skin.xml.h:4
+#: skins_dlna_skin.xml.h:2 skinselector.h:218 skins_facebook_skin.xml.h:4
+#: skins_instar_skin.xml.h:6 skins_lcdpearl1_skin.xml.h:7
+#: skins_lcdsamsung_skin.xml.h:8 skins_mboxinfo_skin.xml.h:1
+#: skins_mc_skin.xml.h:22 skins_optimize_skin.xml.h:2
+#: skins_panel_skin.xml.h:15 skins_rgui_skin.xml.h:2
+#: skins_stopifnotused_skin.xml.h:4 skins_tiwakeup_skin.xml.h:2
 #: skins_wins3_skin.xml.h:1 sock.h:952 softcam.h:403 solarmovie.h:35
 #: solarmovie.h:47 solarmovie.h:295 spinner.h:18 stopifnotused.c:32
 #: streamcloud.h:31 streamcloud.h:78 streamcloud.h:91 streamcloud.h:122
@@ -3306,35 +3310,35 @@ msgstr "Recharche Manuelle"
 msgid "event"
 msgstr ""
 
-#: plugins_autotimer_skin.xml.h:7 skins_autotimer_skin.xml.h:7
+#: plugins_autotimer_skin.xml.h:8 plugins_callmonitor1_skin.xml.h:18
+#: plugins_imdbapi_skin.xml.h:7 plugins_imdb_skin.xml.h:7
+#: plugins_instar_skin.xml.h:15 plugins_lcdpearl1_skin.xml.h:11
+#: plugins_lcdsamsung_skin.xml.h:14 plugins_panel_skin.xml.h:21
+#: plugins_stock_skin.xml.h:5 plugins_stopifnotused_skin.xml.h:5
+#: plugins_tmdb_skin.xml.h:7 skin_default_skin.xml.h:531
+#: skins_autotimer_skin.xml.h:8 skins_callmonitor1_skin.xml.h:18
+#: skins_imdbapi_skin.xml.h:7 skins_imdb_skin.xml.h:7
+#: skins_instar_skin.xml.h:15 skins_lcdpearl1_skin.xml.h:11
+#: skins_lcdsamsung_skin.xml.h:14 skins_panel_skin.xml.h:21
+#: skins_stock_skin.xml.h:5 skins_stopifnotused_skin.xml.h:5
+#: skins_tmdb_skin.xml.h:7
+msgid "SAVE"
+msgstr "Sauvegarde"
+
+#: plugins_autotimer_skin.xml.h:9 skins_autotimer_skin.xml.h:9
 msgid "search string"
 msgstr ""
 
-#: plugins_autotimer_skin.xml.h:8 plugins_lcdpearl1_skin.xml.h:10
-#: plugins_lcdsamsung_skin.xml.h:13 plugins_stopifnotused_skin.xml.h:5
-#: skins_autotimer_skin.xml.h:8 skins_lcdpearl1_skin.xml.h:10
-#: skins_lcdsamsung_skin.xml.h:13 skins_stopifnotused_skin.xml.h:5
-msgid ""
-"text=EXIT halign=center valign=middle bordercol=exitcol bordersize=2 "
-"bordertype=2 posx=160 posy=0 width=150 height=30/>"
-msgstr ""
-
-#: plugins_autotimer_skin.xml.h:9 plugins_lcdpearl1_skin.xml.h:11
-#: plugins_lcdsamsung_skin.xml.h:14 plugins_stopifnotused_skin.xml.h:6
-#: skins_autotimer_skin.xml.h:9 skins_lcdpearl1_skin.xml.h:11
-#: skins_lcdsamsung_skin.xml.h:14 skins_stopifnotused_skin.xml.h:6
-msgid ""
-"text=SAVE halign=center valign=middle bordercol=green bordersize=2 "
-"bordertype=2 posx=0 posy=0 width=150 height=30/>"
-msgstr ""
-
-#: plugins_autotimer_skin.xml.h:10 plugins_lcdpearl1_skin.xml.h:12
-#: plugins_lcdsamsung_skin.xml.h:15 skins_autotimer_skin.xml.h:10
-#: skins_lcdpearl1_skin.xml.h:12 skins_lcdsamsung_skin.xml.h:15
-msgid ""
-"text=START halign=center valign=middle bordercol=blue bordersize=2 "
-"bordertype=2 posx=400 posy=0 width=200 height=30/>"
-msgstr ""
+#: plugins_autotimer_skin.xml.h:10 plugins_dlna_skin.xml.h:12
+#: plugins_instar_skin.xml.h:16 plugins_lcdpearl1_skin.xml.h:12
+#: plugins_lcdsamsung_skin.xml.h:15 plugins_stopifnotused_skin.xml.h:6
+#: plugins_tsSchnitt_skin.xml.h:7 skin_default_skin.xml.h:603
+#: skins_autotimer_skin.xml.h:10 skins_dlna_skin.xml.h:12
+#: skins_instar_skin.xml.h:16 skins_lcdpearl1_skin.xml.h:12
+#: skins_lcdsamsung_skin.xml.h:15 skins_stopifnotused_skin.xml.h:6
+#: skins_tsSchnitt_skin.xml.h:7
+msgid "START"
+msgstr "Arréter/Démarrer"
 
 #: plugins_autotimer_skin.xml.h:11 skins_autotimer_skin.xml.h:11
 msgid "Timer1 activ"
@@ -3409,16 +3413,6 @@ msgstr ""
 msgid "Passwort-FritzBox"
 msgstr ""
 
-#: plugins_callmonitor1_skin.xml.h:18 plugins_imdbapi_skin.xml.h:7
-#: plugins_imdb_skin.xml.h:7 plugins_instar_skin.xml.h:15
-#: plugins_panel_skin.xml.h:21 plugins_stock_skin.xml.h:5
-#: plugins_tmdb_skin.xml.h:7 skin_default_skin.xml.h:531
-#: skins_callmonitor1_skin.xml.h:18 skins_imdbapi_skin.xml.h:7
-#: skins_imdb_skin.xml.h:7 skins_instar_skin.xml.h:15
-#: skins_panel_skin.xml.h:21 skins_stock_skin.xml.h:5 skins_tmdb_skin.xml.h:7
-msgid "SAVE"
-msgstr "Sauvegarde"
-
 #: plugins_catcatch_skin.xml.h:1 skins_catcatch_skin.xml.h:1
 msgid "Cat-Catch"
 msgstr ""
@@ -3468,13 +3462,6 @@ msgstr ""
 #: plugins_dlna_skin.xml.h:11 skins_dlna_skin.xml.h:11
 msgid "Server Name"
 msgstr ""
-
-#: plugins_dlna_skin.xml.h:12 plugins_instar_skin.xml.h:16
-#: plugins_tsSchnitt_skin.xml.h:7 skin_default_skin.xml.h:603
-#: skins_dlna_skin.xml.h:12 skins_instar_skin.xml.h:16
-#: skins_tsSchnitt_skin.xml.h:7
-msgid "START"
-msgstr "Arréter/Démarrer"
 
 #: plugins_dlna_skin.xml.h:13 skin_default_skin.xml.h:605
 #: skins_dlna_skin.xml.h:13
@@ -3644,18 +3631,18 @@ msgstr ""
 msgid "Auswahl"
 msgstr ""
 
-#: plugins_lcdpearl1_skin.xml.h:7 plugins_lcdsamsung_skin.xml.h:8
-#: skins_lcdpearl1_skin.xml.h:7 skins_lcdsamsung_skin.xml.h:8
+#: plugins_lcdpearl1_skin.xml.h:8 plugins_lcdsamsung_skin.xml.h:9
+#: skins_lcdpearl1_skin.xml.h:8 skins_lcdsamsung_skin.xml.h:9
 msgid "--- Land"
-msgstr ""
-
-#: plugins_lcdpearl1_skin.xml.h:8 plugins_lcdsamsung_skin.xml.h:11
-#: skins_lcdpearl1_skin.xml.h:8 skins_lcdsamsung_skin.xml.h:11
-msgid "--- Ort"
 msgstr ""
 
 #: plugins_lcdpearl1_skin.xml.h:9 plugins_lcdsamsung_skin.xml.h:12
 #: skins_lcdpearl1_skin.xml.h:9 skins_lcdsamsung_skin.xml.h:12
+msgid "--- Ort"
+msgstr ""
+
+#: plugins_lcdpearl1_skin.xml.h:10 plugins_lcdsamsung_skin.xml.h:13
+#: skins_lcdpearl1_skin.xml.h:10 skins_lcdsamsung_skin.xml.h:13
 msgid "--- PLZ"
 msgstr ""
 
@@ -3676,11 +3663,11 @@ msgstr "D"
 msgid "DO"
 msgstr "D"
 
-#: plugins_lcdsamsung_skin.xml.h:9 skins_lcdsamsung_skin.xml.h:9
+#: plugins_lcdsamsung_skin.xml.h:10 skins_lcdsamsung_skin.xml.h:10
 msgid "MI"
 msgstr "I"
 
-#: plugins_lcdsamsung_skin.xml.h:10 skins_lcdsamsung_skin.xml.h:10
+#: plugins_lcdsamsung_skin.xml.h:11 skins_lcdsamsung_skin.xml.h:11
 msgid "MO"
 msgstr "M"
 
@@ -4207,10 +4194,6 @@ msgstr "Réglages de Rotor"
 #: plugins_stopifnotused_skin.xml.h:3 skins_stopifnotused_skin.xml.h:3
 msgid "Auto start"
 msgstr "Démarrage auto"
-
-#: plugins_stopifnotused_skin.xml.h:4 skins_stopifnotused_skin.xml.h:4
-msgid "start"
-msgstr "Redémarrer"
 
 #: plugins_stopifnotused_skin.xml.h:7 skins_stopifnotused_skin.xml.h:7
 msgid "Time to stop "
@@ -10431,3 +10414,6 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
+
+#~ msgid "start"
+#~ msgstr "Redémarrer"
