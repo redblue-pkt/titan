@@ -43,16 +43,14 @@
 [createpo.sh] xgettext --omit-header -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/nl/LC_MESSAGES/titan.po_auto.utf.po
 /home/atemio/flashimg/source.titan/po/nl/LC_MESSAGES/titan.po_auto.utf.po:704: end-of-line within string
 /home/atemio/flashimg/source.titan/po/nl/LC_MESSAGES/titan.po_auto.utf.po:791: end-of-line within string
-/home/atemio/flashimg/source.titan/po/nl/LC_MESSAGES/titan.po_auto.utf.po:805:16: syntax error
 /home/atemio/flashimg/source.titan/po/nl/LC_MESSAGES/titan.po_auto.utf.po:2192: missing `msgstr' section
-/home/atemio/flashimg/source.titan/po/nl/LC_MESSAGES/titan.po_auto.utf.po:2213:16: syntax error
-xgettext: found 5 fatal errors
+xgettext: found 3 fatal errors
 [createpo.sh] ############################################
 [createpo.sh] ###### error should be in the middle #######
 [createpo.sh] ############################################
-  2212	msgid "bei Anruf stumm"
-  2213	msgstr ""msgstr "bij gesprek dempen"
-  2214	
+  2191	
+  2192	msgid "CallMonitor Settings"
+  2193	
 [createpo.sh] ############################################
 [createpo.sh] ################## coding #################
 /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.po:         utf-8
