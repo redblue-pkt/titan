@@ -73,7 +73,10 @@ void screenmc_videoplayer()
 
 	debug(50, "start screenmc_videoplayer view=%d", view);
 
-	singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
+//	singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
+	char* defaultmvi = NULL;
+	defaultmvi = createpluginpath("/mc/skin/default.mvi", 0);
+	singlepicstart(defaultmvi, 0);
 
 	if(getconfigint("screensaver", NULL) == 1)
 		initscreensaver();
@@ -280,7 +283,8 @@ void screenmc_videoplayer()
 			if(!file_exist(cmd))
 			{
 				free(cmd), cmd = NULL;
-				cmd = ostrcat(cmd, "/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 1, 0);
+//				cmd = ostrcat(cmd, "/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 1, 0);
+				cmd = ostrcat(cmd, defaultmvi, 1, 0);
 				mviwait = waittime;
 				if(foundthumb == 0)
 					thumb->hidden = YES;
@@ -483,7 +487,8 @@ void screenmc_videoplayer()
 			{
 				refresh = 1;
 				debug(50, "rcmenu: settings");
-				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
+//				singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
+				singlepicstart(defaultmvi, 0);
 				view = getconfigint("mc_vp_view", NULL);
 				printf("view in: %d\n", view);
 				printf("tmpview in: %d\n", tmpview);
@@ -573,7 +578,8 @@ void screenmc_videoplayer()
 			drawscreen(blackscreen, 0, 0);
 			drawscreen(loadmediadb, 0, 0);
 			sleep(2);
-			singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
+//			singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
+			singlepicstart(defaultmvi, 0);
 
 			// show skin
 			setfbtransparent(255);
@@ -647,7 +653,8 @@ void screenmc_videoplayer()
 			drawscreen(blackscreen, 0, 0);
 			drawscreen(loadmediadb, 0, 0);
 			sleep(2);
-			singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
+//			singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
+			singlepicstart(defaultmvi, 0);
 
 			// show skin
 			setfbtransparent(255);
@@ -784,7 +791,8 @@ void screenmc_videoplayer()
 							}
 						}
 						drawscreen(apskin, 0, 0);
-						singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
+//						singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
+						singlepicstart(defaultmvi, 0);
 					}
 					else
 					{
@@ -825,8 +833,9 @@ void screenmc_videoplayer()
 
 					mc_mounter_main(0,filename,filelistpath,filelist,apskin,filemask,tmpview,currentdirectory);
 					debug(50, "mc_mounter_main done");
-	
-					singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
+
+//					singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
+					singlepicstart(defaultmvi, 0);
 					continue;
 				}
 				else if(cmpfilenameext(filename, ".m3u") == 0 || cmpfilenameext(filename, ".pls") == 0)
@@ -992,6 +1001,8 @@ void screenmc_videoplayer()
 	clearscreen(loadmediadb);
 
 	system("umount -a -f -t fuse.rarfs,iso9660,fuse.djmount,fuse.fusesmb,fuse.curlftpfs");
+
+	free(defaultmvi), defaultmvi = NULL;
 
 	writevfdmenu("Mediacenter");
 	debug(50, "closed");
