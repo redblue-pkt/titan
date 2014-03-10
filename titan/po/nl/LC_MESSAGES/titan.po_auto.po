@@ -1386,7 +1386,7 @@ msgstr "TPK installeren - kies categorie"
 
 #: extensions.h:202 skin_default_skin.xml.h:660
 msgid "Tpk Install - select file"
-msgstr "TPK installatie - selecteer bestand
+msgstr "TPK installatie - selecteer bestand"
 
 #: extensions.h:207 extensions.h:234 extensions.h:386 tpk.h:2990
 msgid ""
@@ -1495,7 +1495,7 @@ msgstr ""
 
 #: facebook.h:471
 msgid "Group created"
-msgstr "Groep gemaakt""
+msgstr "Groep gemaakt"
 
 #: facebook.h:472
 msgid "Event created"
@@ -3408,6 +3408,7 @@ msgstr "Timer2 aktief"
 
 #: plugins_callmonitor1_skin.xml.h:1 skins_callmonitor1_skin.xml.h:1
 msgid "CallMonitor Settings"
+msgstr ""
 
 #: plugins_callmonitor1_skin.xml.h:2 skins_callmonitor1_skin.xml.h:2
 msgid "1.Rufnummer"
@@ -6421,8 +6422,9 @@ msgid ""
 "Lnb / Unicam navigate to the field and press the Red button."
 msgstr ""
 "Hier kunt u uw satelliet tuner instellen. Maak eerst uw satelliet keuze. Als "
-"u DiSEqC gebruikt ook de juiste poort selecteren. Voor uitgebreide LNB/"
-"UniCam instelingen navigeer naar het juiste veld en druk op de RODE toets."
+"u DiSEqC gebruikt ook de juiste poort selecteren. Voor uitgebreide "
+"LNB/UniCam instelingen navigeer naar het juiste veld en druk op de RODE "
+"toets."
 
 #: skin_default_skin.xml.h:299
 msgid ""
@@ -8168,9 +8170,8 @@ msgstr ""
 
 #: system_backup_restore.h:15
 msgid ""
-"Press -restore- and your saved settings will be restored from your "
-"swapstick / recording hdd! The Box will restart automatically for "
-"restoring!\n"
+"Press -restore- and your saved settings will be restored from your swapstick "
+"/ recording hdd! The Box will restart automatically for restoring!\n"
 "\n"
 "Press -backup- to save your actual settings to swapstick / recording hdd.\n"
 "WARNING: The old backup will be deleted!"
