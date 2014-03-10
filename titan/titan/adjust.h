@@ -302,7 +302,7 @@ void screenadjust()
 			addconfigscreencheck("dirsort", dirsort, "0");
 			addconfigscreencheck("poweraktion", poweraktion, "0");
 			addconfigscreencheck("recforerun", forerun, "0");
-			addconfigscreencheck("recoverrun", overrun, "0");
+			addconfigscreencheck("overrun", overrun, "0");
 			addconfigscreencheck("virtualzap", virtualzap, "0");
 			status.virtualzap = getconfigint("virtualzap", NULL);
 			if(fasttextrender->ret != NULL)

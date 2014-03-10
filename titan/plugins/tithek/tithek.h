@@ -950,6 +950,54 @@ void addfav(char* title, char* link, char* pic, char* localname, char* menutitle
 	free(input); input = NULL;
 }
 
+void editfav(char* title, char* link, char* pic, char* localname, char* menutitle, int flag)
+{
+	int rcret = 0, type = 0;
+	struct skin* tithekedit = getscreen("tithekedit");
+	struct skin* listbox = getscreennode(tithekedit, "listbox");
+	struct skin* skin_title = getscreennode(tithekedit, "title");
+	struct skin* skin_link = getscreennode(tithekedit, "link");
+	struct skin* skin_pic = getscreennode(tithekedit, "pic");
+	struct skin* skin_localname = getscreennode(tithekedit, "localname");
+	struct skin* skin_menutitle = getscreennode(tithekedit, "menutitle");
+	struct skin* skin_type = getscreennode(tithekedit, "type");
+
+	struct skin* tmp = NULL;
+	struct skin* load = getscreen("loading");
+
+	changeinput(skin_title, title);
+	changeinput(skin_link, link);
+	changeinput(skin_pic, pic);
+	changeinput(skin_localname, localname);
+	changeinput(skin_menutitle, menutitle);
+	changeinput(skin_type, oitoa(type));
+
+	addscreenrc(tithekedit, listbox);
+	drawscreen(tithekedit, 0, 0);
+
+	tmp = listbox->select;
+	while(1)
+	{
+		addscreenrc(tithekedit, tmp);
+		rcret = waitrcext(tithekedit, 0, 0, 1000);
+		delownerrc(tithekedit);
+		addscreenrc(tithekedit, listbox);
+		tmp = listbox->select;
+
+		if(rcret == getrcconfigint("rcexit", NULL)) break;
+		if(rcret == getrcconfigint("rcok", NULL))
+		{
+			drawscreen(load, 0, 0);
+			addfav(skin_title->ret, skin_link->ret, skin_pic->ret, skin_localname->ret, skin_menutitle->ret, atoi(skin_type->ret));
+			clearscreen(load);
+			break;
+		}
+	}
+
+	delownerrc(tithekedit);
+	clearscreen(tithekedit);
+}
+
 void cacheplay(char* link, char* filename, int flag)
 {
 	struct skin* load = getscreen("loadingproz");
@@ -1426,27 +1474,23 @@ void screentithekplay(char* titheklink, char* title, int first)
 	struct skin* listbox = getscreennode(grid, "listbox");
 	struct skin* countlabel = getscreennode(grid, "countlabel");
 	struct skin* countpage = getscreennode(grid, "countpage");
-	struct skin* b5 = getscreennode(grid, "b4");
-	struct skin* b4 = getscreennode(grid, "b5");
+	struct skin* b4 = getscreennode(grid, "b4");
+	struct skin* b5 = getscreennode(grid, "b5");
 	struct skin* load = getscreen("loading");
 	struct skin* tmp = NULL;
 	char* tithekpic = NULL;
 
-	b4->hidden = YES;
-	b5->hidden = YES;
-
-
 	if (ostrcmp(title, "TiThek - Favoriten") == 0)
 	{
-		b4->hidden = NO;
-		b5->hidden = YES;
+		changetext(b4, _("EDIT FAV"));
+		b5->hidden = NO;
 	}
 	else
 	{
-		b4->hidden = YES;
-		b5->hidden = NO;
+		changetext(b4, _("ADD FAV"));
+		b5->hidden = YES;
 	}
-	
+
 	drawscreen(load, 0, 0);
 	
 	if(titheklink == NULL) return;
@@ -1483,11 +1527,9 @@ void screentithekplay(char* titheklink, char* title, int first)
 				tmpstr = ostrcat(tmpstr, " )", 1, 0);
 				changetext(countpage, tmpstr);
 				free(tmpstr); tmpstr = NULL;
-	printf("111111\n");
+
 				if(tmp->handle != NULL && getconfigint("tithek_view", NULL) != 6 && getconfigint("tithek_cover", NULL) != 6)
 				{
-	printf("222222\n");
-
 					tithekpic = tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0);
 
 					/* not working with thread download
@@ -1509,14 +1551,9 @@ void screentithekplay(char* titheklink, char* title, int first)
 			if(tmp != NULL) tmp = tmp->next;
 			while(tmp != NULL)
 			{
-			
-	printf("333333\n");
-
 				if(tmp->pagecount != listbox->aktpage) break;
 				if(tmp->handle != NULL && getconfigint("tithek_view", NULL) != 6 && getconfigint("tithek_cover", NULL) != 6)
 				{
-	printf("444444\n");
-
 					tithekpic = tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0);
 
 					/* not working with thread download
@@ -1577,13 +1614,13 @@ waitrcstart:
 
 		if (ostrcmp(title, "TiThek - Favoriten") == 0)
 		{
-			b4->hidden = NO;
-			b5->hidden = YES;
+			changetext(b4, _("EDIT FAV"));
+			b5->hidden = NO;
 		}
 		else
 		{
-			b4->hidden = YES;
-			b5->hidden = NO;
+			changetext(b4, _("ADD FAV"));
+			b5->hidden = YES;
 		}
 
 		if(rcret == getrcconfigint("rcred", NULL))
@@ -3139,16 +3176,30 @@ why ?
 				}
 			}
 		}
+		else if(rcret == getrcconfigint("rcgreen", NULL) && ostrcmp(title, "TiThek - Favoriten") == 0)
+		{
+			if(listbox->select != NULL && listbox->select->handle != NULL)
+			{
+				if(textbox(_("Message"), _("Edit this Favorite ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0) == 1)
+				{
+					editfav(((struct tithek*)listbox->select->handle)->title, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, ((struct tithek*)listbox->select->handle)->menutitle, ((struct tithek*)listbox->select->handle)->flag);		
+					pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
+					if(pagecount == 0) return;
+						
+					drawscreen(grid, 0, 0);
+				}
+			}
+		}
 
 		if (ostrcmp(title, "TiThek - Favoriten") == 0)
 		{
-			b4->hidden = NO;
-			b5->hidden = YES;
+			changetext(b4, _("EDIT FAV"));
+			b5->hidden = NO;
 		}
 		else
 		{
-			b4->hidden = YES;
-			b5->hidden = NO;
+			changetext(b4, _("ADD FAV"));
+			b5->hidden = YES;
 		}
 	}
 
