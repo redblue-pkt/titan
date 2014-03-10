@@ -20,6 +20,7 @@ void screentithek_settings()
 	addchoicebox(cover, "3", _("show 12 entrys"));	
 	addchoicebox(cover, "4", _("show 20 entrys"));
 	addchoicebox(cover, "5", _("show 30 entrys"));
+	addchoicebox(cover, "6", _("show in list"));
 	setchoiceboxselection(cover, getconfig("tithek_cover", NULL));
 
 	addchoicebox(view, "0", _("show auto entrys"));
@@ -28,6 +29,7 @@ void screentithek_settings()
 	addchoicebox(view, "3", _("show 12 entrys"));	
 	addchoicebox(view, "4", _("show 20 entrys"));
 	addchoicebox(view, "5", _("show 30 entrys"));
+	addchoicebox(view, "6", _("show in list"));
 	setchoiceboxselection(view, getconfig("tithek_view", NULL));
 
 	addchoicebox(picratio, "0", _("no"));
