@@ -663,17 +663,6 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 
 	if(getconfigint("tithek_cover", NULL) == 0 || getconfigint("tithek_view", NULL) == 0)
 	{
-		if(linecount > 0)
-		{
-			height = 50;
-			width = 1160;
-			picheight = 48;
-			picwidth = 1100;
-			zcount = 1;
-			fontsize = 25;
-			pcount = 1;
-		}
-
 		if(linecount > 2)
 		{
 			height = 280;
