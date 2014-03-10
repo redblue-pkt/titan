@@ -1483,9 +1483,11 @@ void screentithekplay(char* titheklink, char* title, int first)
 				tmpstr = ostrcat(tmpstr, " )", 1, 0);
 				changetext(countpage, tmpstr);
 				free(tmpstr); tmpstr = NULL;
-	
+	printf("111111\n");
 				if(tmp->handle != NULL && getconfigint("tithek_view", NULL) != 6 && getconfigint("tithek_cover", NULL) != 6)
 				{
+	printf("222222\n");
+
 					tithekpic = tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0);
 
 					/* not working with thread download
@@ -1507,9 +1509,14 @@ void screentithekplay(char* titheklink, char* title, int first)
 			if(tmp != NULL) tmp = tmp->next;
 			while(tmp != NULL)
 			{
+			
+	printf("333333\n");
+
 				if(tmp->pagecount != listbox->aktpage) break;
 				if(tmp->handle != NULL && getconfigint("tithek_view", NULL) != 6 && getconfigint("tithek_cover", NULL) != 6)
 				{
+	printf("444444\n");
+
 					tithekpic = tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0);
 
 					/* not working with thread download
