@@ -112,9 +112,9 @@ msgstr ""
 #: system_update.h:333 timeshift.h:113 timeshift.h:155 timeshift.h:162
 #: timeshiftsettings.h:45 titan.c:274 titan.c:338 titan.c:347 titan.c:947
 #: titan.c:956 titan.c:1067 titan.c:1088 titan.c:1094 titan.c:1105
-#: titan.c:1111 tithek.c:79 tithek_global.h:238 tithek.h:620 tithek.h:1057
-#: tithek.h:1100 tithek.h:1345 tithek.h:1367 tithek.h:1372 tithek.h:1386
-#: tithek.h:3041 tithek.h:3103 tithek.h:3117 tiwakeup.h:66 tiwakeup.h:68
+#: titan.c:1111 tithek.c:79 tithek_global.h:238 tithek.h:620 tithek.h:1068
+#: tithek.h:1111 tithek.h:1356 tithek.h:1378 tithek.h:1383 tithek.h:1397
+#: tithek.h:3052 tithek.h:3115 tithek.h:3129 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922
 #: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3185 tpk.new.h:3167 tsSchnitt.c:108
 #: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
@@ -209,9 +209,9 @@ msgstr "Ok"
 #: system_update.h:333 timeshift.h:113 timeshift.h:155 timeshift.h:162
 #: timeshiftsettings.h:45 titan.c:274 titan.c:338 titan.c:347 titan.c:947
 #: titan.c:956 titan.c:1067 titan.c:1088 titan.c:1094 titan.c:1105
-#: titan.c:1111 tithek.c:79 tithek_global.h:238 tithek.h:620 tithek.h:1057
-#: tithek.h:1100 tithek.h:1345 tithek.h:1367 tithek.h:1372 tithek.h:1386
-#: tithek.h:3041 tithek.h:3103 tithek.h:3117 tiwakeup.h:66 tiwakeup.h:68
+#: titan.c:1111 tithek.c:79 tithek_global.h:238 tithek.h:620 tithek.h:1068
+#: tithek.h:1111 tithek.h:1356 tithek.h:1378 tithek.h:1383 tithek.h:1397
+#: tithek.h:3052 tithek.h:3115 tithek.h:3129 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922
 #: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3185 tpk.new.h:3167 tsSchnitt.c:108
 #: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
@@ -266,8 +266,8 @@ msgstr "Exit"
 #: settings_autostart.h:544 settings_autostart.h:553 settings_autostart.h:562
 #: settings_overclocking.h:214 settings_overclocking.h:234
 #: settings_overclocking.h:244 skinadjust.h:49 stopifnotused.c:95
-#: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:33
-#: tithek_settings.h:37 tithek_settings.h:41 tmc.h:531 tmc.h:535
+#: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:35
+#: tithek_settings.h:39 tithek_settings.h:43 tmc.h:531 tmc.h:535
 #: tunerconfig.h:184 tunerconfig.h:213 tunerconfig.h:244 tunerconfig.h:277
 msgid "no"
 msgstr "nee"
@@ -325,8 +325,8 @@ msgstr "Zender EPG"
 #: settings_autostart.h:544 settings_autostart.h:553 settings_autostart.h:562
 #: settings_overclocking.h:214 settings_overclocking.h:234
 #: settings_overclocking.h:244 stopifnotused.c:94 timeshiftsettings.h:58
-#: timeshiftsettings.h:62 tithek_settings.h:34 tithek_settings.h:38
-#: tithek_settings.h:42 tmc.h:532 tmc.h:536
+#: timeshiftsettings.h:62 tithek_settings.h:36 tithek_settings.h:40
+#: tithek_settings.h:44 tmc.h:532 tmc.h:536
 msgid "yes"
 msgstr "Ja"
 
@@ -579,8 +579,8 @@ msgstr "Ja / VZAP unendlich"
 #: system_update.h:333 timeshift.h:113 timeshift.h:155 timeshift.h:162
 #: timeshiftsettings.h:45 titan.c:274 titan.c:338 titan.c:347 titan.c:1067
 #: titan.c:1088 titan.c:1094 titan.c:1105 titan.c:1111 tithek.c:79
-#: tithek_global.h:238 tithek.h:620 tithek.h:1057 tithek.h:1100 tithek.h:1345
-#: tithek.h:1367 tithek.h:1372 tithek.h:3041 tithek.h:3103 tithek.h:3117
+#: tithek_global.h:238 tithek.h:620 tithek.h:1068 tithek.h:1111 tithek.h:1356
+#: tithek.h:1378 tithek.h:1383 tithek.h:3052 tithek.h:3115 tithek.h:3129
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
 #: tmdb.h:759 tmdb.h:922 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3185
 #: tpk.new.h:3167 tunerconfig.h:772 unlock.h:20 unlock.h:66 unlock.h:71
@@ -1597,7 +1597,7 @@ msgstr "Datei/Verzeichnis konnte nicht gelöscht werden!"
 msgid "Can't show this file!"
 msgstr "Het bestand kan niet getoond "
 
-#: filemanager.h:355 mc_internetbrowser.h:41 mc_wetterinfo.h:41 tithek.h:1372
+#: filemanager.h:355 mc_internetbrowser.h:41 mc_wetterinfo.h:41 tithek.h:1383
 msgid "Registration needed, please contact Atemio !"
 msgstr ""
 "Registatie is noodzakelijk neem contact op met Atemio !\n"
@@ -4332,7 +4332,7 @@ msgid "Pic Ratio"
 msgstr "Pic Ratio"
 
 #: plugins_tithek_skin.xml.h:8 skin_default_skin.xml.h:444
-#: skins_tithek_skin.xml.h:8 tithek.h:1040
+#: skins_tithek_skin.xml.h:8 tithek.h:1051
 msgid "please wait..."
 msgstr "een ogenblik geduld alstublieft"
 
@@ -8479,7 +8479,7 @@ msgstr ""
 msgid "Tithek - Mainmenu"
 msgstr ""
 
-#: tithek_global.h:238 tithek.h:3041
+#: tithek_global.h:238 tithek.h:3052
 msgid "The hoster is not yet supported !"
 msgstr "De hoster wordt momenteel nog niet ondersteund"
 
@@ -8487,109 +8487,109 @@ msgstr "De hoster wordt momenteel nog niet ondersteund"
 msgid "File exist, overwrite?"
 msgstr "Bestand bestaat reeds, overschrijven?"
 
-#: tithek.h:826
+#: tithek.h:837
 msgid "found"
 msgstr "gevonden"
 
-#: tithek.h:831
+#: tithek.h:842
 msgid "Results"
 msgstr "Links gevonden"
 
-#: tithek.h:1053
+#: tithek.h:1064
 msgid "Remove Cachefile ?"
 msgstr "Cache bestand verwijderen"
 
-#: tithek.h:1100
+#: tithek.h:1111
 msgid ""
 "Can't start download.\n"
 "Please try later."
 msgstr ""
 
-#: tithek.h:1215
+#: tithek.h:1226
 msgid "Choice Playback"
 msgstr "start, weergave"
 
-#: tithek.h:1220
+#: tithek.h:1231
 msgid "Streaming Playback (default)"
 msgstr "Streaming Playback (default)"
 
-#: tithek.h:1221
+#: tithek.h:1232
 msgid "Streaming Playback Caching (0.5MB)"
 msgstr "Streaming Playback Caching (0.5MB)"
 
-#: tithek.h:1222
+#: tithek.h:1233
 msgid "Streaming Playback Caching (1MB)"
 msgstr "Streaming Playback Caching (1MB)"
 
-#: tithek.h:1223
+#: tithek.h:1234
 msgid "Streaming Playback Caching (2MB)"
 msgstr "Streaming Playback Caching (2MB)"
 
-#: tithek.h:1224
+#: tithek.h:1235
 msgid "Streaming Playback Caching (3MB)"
 msgstr "Streaming Playback Caching (3MB)"
 
-#: tithek.h:1225
+#: tithek.h:1236
 msgid "Streaming Playback Caching (4MB)"
 msgstr "Streaming Playback Caching (4MB)"
 
-#: tithek.h:1226
+#: tithek.h:1237
 msgid "Streaming Playback Caching (5MB)"
 msgstr "Streaming Playback Caching (5MB)"
 
-#: tithek.h:1227
+#: tithek.h:1238
 msgid "Streaming Playback Caching (7.5MB)"
 msgstr "Streaming Playback Caching (7.5MB)"
 
-#: tithek.h:1228
+#: tithek.h:1239
 msgid "Streaming Playback Caching (10MB)"
 msgstr "Streaming Playback Caching (10MB)"
 
-#: tithek.h:1229
+#: tithek.h:1240
 msgid "File Caching Playback (10MB / 120s)"
 msgstr "Caching Playback (10MB / 120s)"
 
-#: tithek.h:1230
+#: tithek.h:1241
 msgid "File Caching Playback (20MB / 240s)"
 msgstr "Caching Playback (20MB / 240s)"
 
-#: tithek.h:1231
+#: tithek.h:1242
 msgid "File Caching Playback (30MB / 360s)"
 msgstr "Caching Playback (30MB / 360s)"
 
-#: tithek.h:1232
+#: tithek.h:1243
 msgid "Download Full File"
 msgstr "Download Full File"
 
-#: tithek.h:1233
+#: tithek.h:1244
 msgid "Download Full File (background)"
 msgstr "Download Full File (background)"
 
-#: tithek.h:1338 tithek.h:1357
+#: tithek.h:1349 tithek.h:1368
 msgid "Filename"
 msgstr ""
 
-#: tithek.h:1345
+#: tithek.h:1356
 msgid "Start playback"
 msgstr "Weergave starten"
 
-#: tithek.h:1367
+#: tithek.h:1378
 msgid "Can't get Streamurl !"
 msgstr "Streamurl kan niet geopend worden !"
 
-#: tithek.h:1386
+#: tithek.h:1397
 msgid "TitanNit Tithek disclaimer"
 msgstr ""
 
-#: tithek.h:1467
+#: tithek.h:1478
 msgid "Page"
 msgstr "Pagina"
 
-#: tithek.h:3103
+#: tithek.h:3115
 msgid "Remove this Favorite ?"
 msgstr "Wilt u deze favoriet wissen ?"
 
-#: tithek.h:3117
+#: tithek.h:3129
 msgid "Add this link as Favorite ?"
 msgstr "Wilt u deze favoriet toevoegen?"
 
@@ -8793,29 +8793,33 @@ msgstr ""
 msgid "ZDF"
 msgstr ""
 
-#: tithek_settings.h:17 tithek_settings.h:25
+#: tithek_settings.h:17 tithek_settings.h:26
 msgid "show auto entrys"
 msgstr "Afhankelijk van aantal automatisch aanpassen"
 
-#: tithek_settings.h:18 tithek_settings.h:26
+#: tithek_settings.h:18 tithek_settings.h:27
 msgid "show 2 entrys"
 msgstr "Zeer groot (2 afbeeldingen)"
 
-#: tithek_settings.h:19 tithek_settings.h:27
+#: tithek_settings.h:19 tithek_settings.h:28
 msgid "show 6 entrys"
 msgstr "Groot (6 afbeeldingen)"
 
-#: tithek_settings.h:20 tithek_settings.h:28
+#: tithek_settings.h:20 tithek_settings.h:29
 msgid "show 12 entrys"
 msgstr "Klein (12 afbeeldingen)"
 
-#: tithek_settings.h:21 tithek_settings.h:29
+#: tithek_settings.h:21 tithek_settings.h:30
 msgid "show 20 entrys"
 msgstr "Zeer klein (20 afbeeldingen)"
 
-#: tithek_settings.h:22 tithek_settings.h:30
+#: tithek_settings.h:22 tithek_settings.h:31
 msgid "show 30 entrys"
 msgstr "ganz klein (30 afbeeldingen)"
+
+#: tithek_settings.h:23 tithek_settings.h:32
+msgid "show in list"
+msgstr ""
 
 #: tmc.h:387
 msgid "Status"
