@@ -663,6 +663,17 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 
 	if(getconfigint("tithek_cover", NULL) == 0 || getconfigint("tithek_view", NULL) == 0)
 	{
+		if(linecount > 0)
+		{
+			height = 50;
+			width = 1160;
+			picheight = 48;
+			picwidth = 1100;
+			zcount = 1;
+			fontsize = 25;
+			pcount = 1;
+		}
+
 		if(linecount > 2)
 		{
 			height = 280;
@@ -763,12 +774,23 @@ int createtithekplay(char* titheklink, struct skin* grid, struct skin* listbox, 
 		pcount = 30;
 	}
 
+	if((getconfigint("tithek_cover", NULL) == 6 && flag == 3) || (getconfigint("tithek_view", NULL) == 6 && flag != 3))
+	{
+		height = 50;
+		width = 1160;
+		picheight = 48;
+		picwidth = 1100;
+		zcount = 1;
+		fontsize = 25;
+		pcount = 1;
+	}
+
 	if(getconfigint("tithek_pic_ratio", NULL) == 1)
 	{
 		picwidth = 2;
 		picheight = 2;
 	}
-			
+
 	while(titheknode != NULL)
 	{
 		tmp = addlistbox(grid, listbox, tmp, 1);
@@ -1473,7 +1495,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 				changetext(countpage, tmpstr);
 				free(tmpstr); tmpstr = NULL;
 	
-				if(tmp->handle != NULL)
+				if(tmp->handle != NULL && getconfigint("tithek_view", NULL) != 6 && getconfigint("tithek_cover", NULL) != 6)
 				{
 					tithekpic = tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0);
 
@@ -1497,7 +1519,7 @@ void screentithekplay(char* titheklink, char* title, int first)
 			while(tmp != NULL)
 			{
 				if(tmp->pagecount != listbox->aktpage) break;
-				if(tmp->handle != NULL)
+				if(tmp->handle != NULL && getconfigint("tithek_view", NULL) != 6 && getconfigint("tithek_cover", NULL) != 6)
 				{
 					tithekpic = tithekdownload(((struct tithek*)tmp->handle)->pic, ((struct tithek*)tmp->handle)->localname, "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0=", 1, 0);
 
@@ -3081,6 +3103,7 @@ why ?
 						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);					
 						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
 						screentithekplay(tmpstr, tmpstr2, 0);
+						
 						free(tmpstr); tmpstr = NULL;
 						free(tmpstr2); tmpstr2 = NULL;	
 
