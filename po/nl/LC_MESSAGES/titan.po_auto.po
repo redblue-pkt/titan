@@ -1515,7 +1515,7 @@ msgstr "Notitie gemaakt"
 
 #: facebook.h:476
 msgid "Link postet"
-msgstr ""msgstr "Link gepost"
+msgstr "Link gepost"
 
 #: facebook.h:477
 msgid "Video postet"
@@ -3435,7 +3435,7 @@ msgstr "uitgaand gesprek"
 
 #: plugins_callmonitor1_skin.xml.h:8 skins_callmonitor1_skin.xml.h:8
 msgid "bei Anruf stumm"
-msgstr ""msgstr "bij gesprek dempen"
+msgstr "bij gesprek dempen"
 
 #: plugins_callmonitor1_skin.xml.h:9 skin_default_skin.xml.h:116
 #: skins_callmonitor1_skin.xml.h:9
