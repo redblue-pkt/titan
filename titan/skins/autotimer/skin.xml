@@ -15,7 +15,7 @@
 <node name=end2 type=inputboxnum parent=listbox valign=middle posx=0 text="end search" bordercol=bordercol bordersize=2 width=100% height=25>
 <node name=event2 type=choicebox parent=listbox valign=middle posx=0 text="event" bordercol=bordercol bordersize=2 width=100% height=25>
 <node name=afterevent2 type=choicebox parent=listbox valign=middle posx=0 text="afterevent" bordercol=bordercol bordersize=2 width=100% height=25>
-<node name=b1 text=SAVE halign=center valign=middle bordercol=green bordersize=2 bordertype=2 posx=0 posy=0 width=150 height=30/>
-<node name=b2 text=EXIT halign=center valign=middle bordercol=exitcol bordersize=2 bordertype=2 posx=160 posy=0 width=150 height=30/>
-<node name=blue text=START halign=center valign=middle bordercol=blue bordersize=2 bordertype=2 posx=400 posy=0 width=200 height=30/>
+<node name=b1 text="SAVE" halign=center valign=middle bordercol=green bordersize=2 bordertype=2 posx=0 posy=0 width=150 height=30/>
+<node name=b2 text="EXIT" halign=center valign=middle bordercol=exitcol bordersize=2 bordertype=2 posx=160 posy=0 width=150 height=30/>
+<node name=blue text="START" halign=center valign=middle bordercol=blue bordersize=2 bordertype=2 posx=400 posy=0 width=200 height=30/>
 </screen>
