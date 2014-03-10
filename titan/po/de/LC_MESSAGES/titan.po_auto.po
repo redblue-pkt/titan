@@ -10665,21 +10665,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid ""
-#~ "text=EXIT halign=center valign=middle bordercol=exitcol bordersize=2 "
-#~ "bordertype=2 posx=160 posy=0 width=150 height=30/>"
-#~ msgstr "Exit"
-
-#~ msgid ""
-#~ "text=SAVE halign=center valign=middle bordercol=green bordersize=2 "
-#~ "bordertype=2 posx=0 posy=0 width=150 height=30/>"
-#~ msgstr "Speichern"
-
-#~ msgid ""
-#~ "text=START halign=center valign=middle bordercol=blue bordersize=2 "
-#~ "bordertype=2 posx=400 posy=0 width=200 height=30/>"
-#~ msgstr "Start"
-
-#~ msgid "start"
-#~ msgstr "Starten"
