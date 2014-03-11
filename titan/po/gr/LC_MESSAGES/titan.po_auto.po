@@ -3239,7 +3239,7 @@ msgid "Delete File"
 msgstr ""
 
 #: play.h:647 plugins_streaminfo_skin.xml.h:3 skins_streaminfo_skin.xml.h:3
-#: tpk_showname.h:174
+#: tpk_showname.h:175
 msgid "Streaminfo"
 msgstr "Streaming"
 
@@ -3251,7 +3251,7 @@ msgstr ""
 msgid "IMDb-API"
 msgstr ""
 
-#: play.h:650 tpk_showname.h:182
+#: play.h:650 tpk_showname.h:183
 msgid "TMDb"
 msgstr ""
 
@@ -4185,7 +4185,7 @@ msgid "Server 5"
 msgstr "Κανάλι"
 
 #: plugins_stock_skin.xml.h:1 skins_stock_skin.xml.h:1 stock.h:187
-#: tpk_showname.h:172
+#: tpk_showname.h:173
 msgid "Stock"
 msgstr ""
 
@@ -4394,7 +4394,7 @@ msgstr ""
 msgid "ts - cut"
 msgstr ""
 
-#: plugins_weather_skin.xml.h:3 skins_weather_skin.xml.h:3 tpk_showname.h:184
+#: plugins_weather_skin.xml.h:3 skins_weather_skin.xml.h:3 tpk_showname.h:185
 #: weather.h:418
 msgid "Weather"
 msgstr "Πληροφορίες Καιρού"
@@ -8819,540 +8819,544 @@ msgid "Cable: default Settings Kabel Deutschland"
 msgstr ""
 
 #: tpk_description.h:31
-msgid "Cable: Settings Kabel Unitymedia"
+msgid "Cable: Settings Kabel Primacom"
 msgstr ""
 
 #: tpk_description.h:32
-msgid "Cable: sofatester Settings Kabel BW"
+msgid "Cable: Settings Kabel Unitymedia"
 msgstr ""
 
 #: tpk_description.h:33
-msgid "Callmonitor Plugin"
+msgid "Cable: sofatester Settings Kabel BW"
 msgstr ""
 
 #: tpk_description.h:34
+msgid "Callmonitor Plugin"
+msgstr ""
+
+#: tpk_description.h:35
 msgid ""
 "CCcam 2.3.0 autoident for card hd+ and skyde including all necessary config "
 "files."
 msgstr ""
 
-#: tpk_description.h:35
+#: tpk_description.h:36
 msgid "codecpack for MediaCenter Dateiendungs-Update "
 msgstr ""
 
-#: tpk_description.h:36
+#: tpk_description.h:37
 msgid "coolMiniTV Skin. "
 msgstr ""
 
-#: tpk_description.h:37
+#: tpk_description.h:38
 msgid "cool Skin."
 msgstr ""
 
-#: tpk_description.h:38
+#: tpk_description.h:39
 msgid "cut record files"
 msgstr ""
 
-#: tpk_description.h:39
+#: tpk_description.h:40
 msgid "Default Font "
 msgstr "Προρυθμίσεις"
 
-#: tpk_description.h:40
+#: tpk_description.h:41
 msgid "default Settings 19.2 Astra"
 msgstr ""
 
-#: tpk_description.h:41
+#: tpk_description.h:42
 msgid "Default Skin"
 msgstr "Προρυθμίσεις"
 
-#: tpk_description.h:42
+#: tpk_description.h:43
 msgid "Default skin without MiniTV"
 msgstr ""
 
-#: tpk_description.h:43
+#: tpk_description.h:44
 msgid "Digital Uhr blau - for tiTan - Samsung LCD Skin Channel."
 msgstr ""
 
-#: tpk_description.h:44
+#: tpk_description.h:45
 msgid "dlna Medien Server (upnp)"
 msgstr ""
 
-#: tpk_description.h:45
+#: tpk_description.h:46
 msgid "DTS-Downmix firmware "
 msgstr ""
 
-#: tpk_description.h:46
+#: tpk_description.h:47
 msgid "dvdplayer plugin."
 msgstr ""
 
-#: tpk_description.h:47
+#: tpk_description.h:48
 msgid ""
 "E2 WebIf API erlaubt den Zugriff auf TitanNit mittels eines E2-Clients (z.B. "
 "dreaMote-App auf iPhone oder iPad bzw. XBMC mit VU+)"
 msgstr ""
 
-#: tpk_description.h:48
+#: tpk_description.h:49
 msgid "Emu Camd3 v3.902 for your box"
 msgstr ""
 
-#: tpk_description.h:49
+#: tpk_description.h:50
 msgid "Emu MBox v0.6 build 0010 for your box"
 msgstr ""
 
-#: tpk_description.h:50
+#: tpk_description.h:51
 msgid "Emu MGCamd v1.35 for your box"
 msgstr ""
 
-#: tpk_description.h:51
+#: tpk_description.h:52
 msgid "Emu MGCamd v1.38a and all Configs"
 msgstr ""
 
-#: tpk_description.h:52
+#: tpk_description.h:53
 msgid "extended config Panel"
 msgstr ""
 
-#: tpk_description.h:53
+#: tpk_description.h:54
 msgid "filemanager"
 msgstr ""
 
-#: tpk_description.h:54
+#: tpk_description.h:55
 msgid "first titan game"
 msgstr ""
 
-#: tpk_description.h:55
+#: tpk_description.h:56
 msgid "Font 'Action Man Italic' "
 msgstr ""
 
-#: tpk_description.h:56
+#: tpk_description.h:57
 msgid "Font 'Alpha Romanie G98'"
 msgstr ""
 
-#: tpk_description.h:57
+#: tpk_description.h:58
 msgid "Font 'Croissant' "
 msgstr ""
 
-#: tpk_description.h:58
+#: tpk_description.h:59
 msgid "Font 'Digiface Regular' "
 msgstr ""
 
-#: tpk_description.h:59
+#: tpk_description.h:60
 msgid "Font 'Goodtime'"
 msgstr ""
 
-#: tpk_description.h:60
+#: tpk_description.h:61
 msgid "Font 'I Hate Comic Sans'"
 msgstr ""
 
-#: tpk_description.h:61
+#: tpk_description.h:62
 msgid "Font 'Lydian Bolt Italic BT' "
 msgstr ""
 
-#: tpk_description.h:62
+#: tpk_description.h:63
 msgid "Font 'Mighty Zeo Caps'"
 msgstr ""
 
-#: tpk_description.h:63
+#: tpk_description.h:64
 msgid "Font 'Monoglyceride DemiBold'"
 msgstr ""
 
-#: tpk_description.h:64
+#: tpk_description.h:65
 msgid "Font 'New Gothic BT'"
 msgstr ""
 
-#: tpk_description.h:65
+#: tpk_description.h:66
 msgid "Font 'Paddington Bold'"
 msgstr ""
 
-#: tpk_description.h:66
+#: tpk_description.h:67
 msgid "Font 'Plover Bold'"
 msgstr ""
 
-#: tpk_description.h:67
+#: tpk_description.h:68
 msgid ""
 "gbox 800 with autoident for card hd+ and skyde including all necessary "
 "config files."
 msgstr ""
 
-#: tpk_description.h:68
+#: tpk_description.h:69
 msgid ""
 "gbox 806 with autoident for card hd+ and skyde including all necessary "
 "config files."
 msgstr ""
 
-#: tpk_description.h:69
+#: tpk_description.h:70
 msgid "Gold Picons for tiTan."
 msgstr ""
 
-#: tpk_description.h:70
+#: tpk_description.h:71
 msgid "Gold Picons for tiTan - Astra 23.5E."
 msgstr ""
 
-#: tpk_description.h:71
+#: tpk_description.h:72
 msgid "Gold Picons for tiTan - Astra 28.2E."
 msgstr ""
 
-#: tpk_description.h:72
+#: tpk_description.h:73
 msgid "Gold Picons for tiTan - Hotbird 13.0E."
 msgstr ""
 
-#: tpk_description.h:73
+#: tpk_description.h:74
 msgid "Holzuhr - Standby for tiTan - Samsung LCD Skin Channel."
 msgstr ""
 
-#: tpk_description.h:74
+#: tpk_description.h:75
 msgid "ImdBapi Info Plugin"
 msgstr ""
 
-#: tpk_description.h:75
+#: tpk_description.h:76
 msgid "ImdB Info Plugin"
 msgstr ""
 
-#: tpk_description.h:76
+#: tpk_description.h:77
 msgid "IncubusCamd_1.22 including all necessary config files."
 msgstr ""
 
-#: tpk_description.h:77
+#: tpk_description.h:78
 msgid "IP-Kamera zB. Firma INSTAR"
 msgstr ""
 
-#: tpk_description.h:78
+#: tpk_description.h:79
 msgid "Kabel BW transparent Picons for tiTan."
 msgstr ""
 
-#: tpk_description.h:79
+#: tpk_description.h:80
 msgid "Kabel Deutschland Picons black3d for tiTan."
 msgstr ""
 
-#: tpk_description.h:80
+#: tpk_description.h:81
 msgid "Kabel Deutschland transparent Picons for tiTan."
 msgstr ""
 
-#: tpk_description.h:81
+#: tpk_description.h:82
 msgid "Lib extension for network (upnpfs/smbfs/ftpfs/rarfs)"
 msgstr ""
 
-#: tpk_description.h:82
+#: tpk_description.h:83
 msgid "MegaStyle blue Mini TV Skin"
 msgstr ""
 
-#: tpk_description.h:83
+#: tpk_description.h:84
 msgid "MegaStyle blue Skin"
 msgstr ""
 
-#: tpk_description.h:84
+#: tpk_description.h:85
 msgid "MegaStyle grey MiniTV Skin"
 msgstr ""
 
-#: tpk_description.h:85
+#: tpk_description.h:86
 msgid "MegaStyle grey Skin"
 msgstr ""
 
-#: tpk_description.h:86
+#: tpk_description.h:87
 msgid "MetrixHD skin for TitanNit. Use transparent XPicons."
 msgstr ""
 
-#: tpk_description.h:87
+#: tpk_description.h:88
 msgid "Network browser extension for better Win7 compatibility"
 msgstr ""
 
-#: tpk_description.h:88
+#: tpk_description.h:89
 msgid "Networkbrowser scanning an manage cifs/nfs/ftp shares."
 msgstr ""
 
-#: tpk_description.h:89
+#: tpk_description.h:90
 msgid "Networkfile libsmbclient 3.0.28b"
 msgstr ""
 
-#: tpk_description.h:90 tpk_showname.h:67
+#: tpk_description.h:91 tpk_showname.h:67
 msgid "Neutrino Keymap"
 msgstr ""
 
-#: tpk_description.h:91
+#: tpk_description.h:92
 msgid "newcs including all necessary config files."
 msgstr ""
 
-#: tpk_description.h:92
+#: tpk_description.h:93
 msgid "New Downloadfeed for your AAF - Duckbox"
 msgstr ""
 
-#: tpk_description.h:93
+#: tpk_description.h:94
 msgid "news Plugin"
 msgstr "Plugins"
 
-#: tpk_description.h:94
+#: tpk_description.h:95
 msgid "Nightly Version of oscam 2xSlot intern + 1xUSB"
 msgstr ""
 
-#: tpk_description.h:95
+#: tpk_description.h:96
 msgid "Nightly Version of OSCam 8755"
 msgstr ""
 
-#: tpk_description.h:96
+#: tpk_description.h:97
 msgid "Nightly Version of OSCam 8755 small Version"
 msgstr ""
 
-#: tpk_description.h:97
+#: tpk_description.h:98
 msgid "Nightly Version of OSCam 8933 2xSlot intern"
 msgstr ""
 
-#: tpk_description.h:98
+#: tpk_description.h:99
 msgid "Nogfx grey Skin for your box."
 msgstr ""
 
-#: tpk_description.h:99
+#: tpk_description.h:100
 msgid "Nogfx Skin in black for tiTan. Please use black Picons."
 msgstr ""
 
-#: tpk_description.h:100
+#: tpk_description.h:101
 msgid "Older Version of OSCam"
 msgstr ""
 
-#: tpk_description.h:101
+#: tpk_description.h:102
 msgid "Openvpn Server Tool for external Network access"
 msgstr ""
 
-#: tpk_description.h:102
+#: tpk_description.h:103
 msgid "optimize Plugin"
 msgstr ""
 
-#: tpk_description.h:103 tpk_showname.h:79
+#: tpk_description.h:104 tpk_showname.h:79
 msgid "oscam spezial"
 msgstr ""
 
-#: tpk_description.h:104
+#: tpk_description.h:105
 msgid "Partitions Tool fuer HDD > 2TB"
 msgstr ""
 
-#: tpk_description.h:105
+#: tpk_description.h:106
 msgid "Permanente Uhrzeit am Bildschirm"
 msgstr ""
 
-#: tpk_description.h:106
+#: tpk_description.h:107
 msgid "Picons for Samsung LCD Skins 320x240 (Astra 19.2E)"
 msgstr ""
 
-#: tpk_description.h:107
+#: tpk_description.h:108
 msgid "Power off if box not used"
 msgstr ""
 
-#: tpk_description.h:108
+#: tpk_description.h:109
 msgid "remote Desktop Plugin"
 msgstr ""
 
-#: tpk_description.h:109
+#: tpk_description.h:110
 msgid "Samba"
 msgstr ""
 
-#: tpk_description.h:110
+#: tpk_description.h:111
 msgid "Sat: Bulldog Settings 3x Sat"
 msgstr ""
 
-#: tpk_description.h:111
+#: tpk_description.h:112
 msgid "Sat: matze70 Settings Astra 19.2"
 msgstr ""
 
-#: tpk_description.h:112
+#: tpk_description.h:113
 msgid "Sat: Settings matze70 neue Design Astra 19.2"
 msgstr ""
 
-#: tpk_description.h:113
-msgid "Sat: uljanow Settings Sat 19.2"
-msgstr ""
-
 #: tpk_description.h:114
-msgid ""
-"Screensaver FC Bayern pictures for MediaCenter Audioplayer and Radioplayer."
+msgid "Sat: uljanow Settings Sat 19.2"
 msgstr ""
 
 #: tpk_description.h:115
 msgid ""
-"Screensaver Hot Girls pictures for MediaCenter Audioplayer and Radioplayer."
+"Screensaver FC Bayern pictures for MediaCenter Audioplayer and Radioplayer."
 msgstr ""
 
 #: tpk_description.h:116
-msgid "Screensaver pictures for MediaCenter Audioplayer and Radioplayer."
+msgid ""
+"Screensaver Hot Girls pictures for MediaCenter Audioplayer and Radioplayer."
 msgstr ""
 
 #: tpk_description.h:117
-msgid "scriptexec Plugin"
+msgid "Screensaver pictures for MediaCenter Audioplayer and Radioplayer."
 msgstr ""
 
 #: tpk_description.h:118
-msgid "Skin 0Acht5Zehn in black for tiTan. Please use black Picons."
+msgid "scriptexec Plugin"
 msgstr ""
 
 #: tpk_description.h:119
-msgid "Skin 0Acht5Zehn in grey for tiTan. Please use grey Picons."
+msgid "Skin 0Acht5Zehn in black for tiTan. Please use black Picons."
 msgstr ""
 
 #: tpk_description.h:120
-msgid "Skin 0Acht5Zehn in white for tiTan. Please use white Picons."
+msgid "Skin 0Acht5Zehn in grey for tiTan. Please use grey Picons."
 msgstr ""
 
 #: tpk_description.h:121
-msgid "Skin tobayer01 for tiTan. Please use grey Picons."
+msgid "Skin 0Acht5Zehn in white for tiTan. Please use white Picons."
 msgstr ""
 
 #: tpk_description.h:122
-msgid "Skin ufs912 for tiTan. Use white Picons."
+msgid "Skin tobayer01 for tiTan. Please use grey Picons."
 msgstr ""
 
 #: tpk_description.h:123
-msgid "smartTV Skin. Please use alternate Picons."
+msgid "Skin ufs912 for tiTan. Use white Picons."
 msgstr ""
 
 #: tpk_description.h:124
-msgid "Social Network Client for Facebook."
+msgid "smartTV Skin. Please use alternate Picons."
 msgstr ""
 
 #: tpk_description.h:125
-msgid "Stable Version of OSCam V13unten"
+msgid "Social Network Client for Facebook."
 msgstr ""
 
 #: tpk_description.h:126
+msgid "Stable Version of OSCam V13unten"
+msgstr ""
+
+#: tpk_description.h:127
 msgid "stock Plugin"
 msgstr "Plugins"
 
-#: tpk_description.h:127
+#: tpk_description.h:128
 msgid "streaminfo Plugin"
 msgstr "Streaming"
 
-#: tpk_description.h:128
+#: tpk_description.h:129
 msgid "Tastensperre Plugin - entsperren mit rot/rot/gruen"
 msgstr ""
 
-#: tpk_description.h:129
+#: tpk_description.h:130
 msgid "Titan Mediacenter"
 msgstr "Media Center"
 
-#: tpk_description.h:130
+#: tpk_description.h:131
 msgid "TiThek the Multimedia-thek."
 msgstr ""
 
-#: tpk_description.h:131
+#: tpk_description.h:132
 msgid "TMDb Movie Database Plugin"
 msgstr ""
 
-#: tpk_description.h:132
+#: tpk_description.h:133
 msgid "Transparent Picons for tiTan 19_2 (dark skins)."
 msgstr ""
 
-#: tpk_description.h:133
+#: tpk_description.h:134
 msgid "Transparent Picons for tiTan. (dark Skins)"
 msgstr ""
 
-#: tpk_description.h:134
+#: tpk_description.h:135
 msgid "Transparent Picons for tiTan (dark skins) - Astra 23.5E."
 msgstr ""
 
-#: tpk_description.h:135
+#: tpk_description.h:136
 msgid "Transparent Picons for tiTan (dark skins) - Astra 28.2E."
 msgstr ""
 
-#: tpk_description.h:136
+#: tpk_description.h:137
 msgid "Transparent Picons for tiTan (dark skins) - Hotbird 13.0E."
 msgstr ""
 
-#: tpk_description.h:137
+#: tpk_description.h:138
 msgid "Transparent small black-Skins 19,2 swap Picons for tiTan."
 msgstr ""
 
-#: tpk_description.h:138
+#: tpk_description.h:139
 msgid "Transparent XPicons - Astra 19.2E"
 msgstr ""
 
-#: tpk_description.h:139
+#: tpk_description.h:140
 msgid "Transparent XPicons - Astra 23.5E"
 msgstr ""
 
-#: tpk_description.h:140
+#: tpk_description.h:141
 msgid "Transparent XPicons - Astra 28.2E"
 msgstr ""
 
-#: tpk_description.h:141
+#: tpk_description.h:142
 msgid "Transparent XPicons - Hotbird 13.0E"
 msgstr ""
 
-#: tpk_description.h:142
+#: tpk_description.h:143
 msgid "Transparent XPicons - small - Astra 19.2E"
 msgstr ""
 
-#: tpk_description.h:143
+#: tpk_description.h:144
 msgid "Treiber fuer Pearl LCD V4.0"
 msgstr ""
 
-#: tpk_description.h:144
+#: tpk_description.h:145
 msgid "Treiber fuer Samsung LCD"
 msgstr ""
 
-#: tpk_description.h:145
+#: tpk_description.h:146
 msgid "UPNP Media Render"
 msgstr "Media Center"
 
-#: tpk_description.h:146
+#: tpk_description.h:147
 msgid "usbreset Plugin"
 msgstr ""
 
-#: tpk_description.h:147
+#: tpk_description.h:148
 msgid "weather Plugin"
 msgstr "Πληροφορίες Καιρού"
 
-#: tpk_description.h:148
+#: tpk_description.h:149
 msgid "Webbrowser Plugin"
 msgstr ""
 
-#: tpk_description.h:149
+#: tpk_description.h:150
 msgid "Werbezapper"
 msgstr ""
 
-#: tpk_description.h:150
+#: tpk_description.h:151
 msgid "White 3D Picons for tiTan."
 msgstr ""
 
-#: tpk_description.h:151
+#: tpk_description.h:152
 msgid "White 3D Picons for tiTan - Astra 23.5E."
 msgstr ""
 
-#: tpk_description.h:152
+#: tpk_description.h:153
 msgid "White 3D Picons for tiTan - Astra 28.2E."
 msgstr ""
 
-#: tpk_description.h:153
+#: tpk_description.h:154
 msgid "White 3D Picons for tiTan - Hotbird 13.0E."
 msgstr ""
 
-#: tpk_description.h:154
+#: tpk_description.h:155
 msgid "White70 Picons for tiTan."
 msgstr ""
 
-#: tpk_description.h:155
+#: tpk_description.h:156
 msgid "White70 Picons for tiTan - Astra 23.5E."
 msgstr ""
 
-#: tpk_description.h:156
+#: tpk_description.h:157
 msgid "White70 Picons for tiTan - Astra 28.2E"
 msgstr ""
 
-#: tpk_description.h:157
+#: tpk_description.h:158
 msgid "White70 Picons for tiTan - Hotbird 13.0E."
 msgstr ""
 
-#: tpk_description.h:158
+#: tpk_description.h:159
 msgid "wireless 8192cu.ko model"
 msgstr ""
 
-#: tpk_description.h:159
+#: tpk_description.h:160
 msgid "wireless modul 8712u.ko"
 msgstr ""
 
-#: tpk_description.h:160
+#: tpk_description.h:161
 msgid "wireless modul rt2870sta.ko"
 msgstr ""
 
-#: tpk_description.h:161
+#: tpk_description.h:162
 msgid "wireless modul rt3070sta.ko"
 msgstr ""
 
-#: tpk_description.h:162
+#: tpk_description.h:163
 msgid "wireless modul rt5370sta.ko"
 msgstr ""
 
@@ -10013,170 +10017,174 @@ msgid "Settings Kabel Deutschland"
 msgstr ""
 
 #: tpk_showname.h:152
-msgid "Settings Kabel Unitymedia"
+msgid "Settings Kabel Primacom"
 msgstr ""
 
 #: tpk_showname.h:153
-msgid "Skin 0Acht5Zehn (grau)"
+msgid "Settings Kabel Unitymedia"
 msgstr ""
 
 #: tpk_showname.h:154
-msgid "Skin 0Acht5Zehn (schwarz)"
+msgid "Skin 0Acht5Zehn (grau)"
 msgstr ""
 
 #: tpk_showname.h:155
-msgid "Skin 0Acht5Zehn (white)"
+msgid "Skin 0Acht5Zehn (schwarz)"
 msgstr ""
 
 #: tpk_showname.h:156
+msgid "Skin 0Acht5Zehn (white)"
+msgstr ""
+
+#: tpk_showname.h:157
 msgid "Skin Cool"
 msgstr "Skin"
 
-#: tpk_showname.h:157
+#: tpk_showname.h:158
 msgid "Skin CoolMiniTV"
 msgstr ""
 
-#: tpk_showname.h:158
+#: tpk_showname.h:159
 msgid "Skin Default"
 msgstr "Προρυθμίσεις"
 
-#: tpk_showname.h:159
+#: tpk_showname.h:160
 msgid "Skin DefNoMiniTV"
 msgstr ""
 
-#: tpk_showname.h:160
+#: tpk_showname.h:161
 msgid "Skin MegaStyle blue"
 msgstr "Επιλογή Skin"
 
-#: tpk_showname.h:161
+#: tpk_showname.h:162
 msgid "Skin MegaStyle blue Mini TV"
 msgstr ""
 
-#: tpk_showname.h:162
+#: tpk_showname.h:163
 msgid "Skin MegaStyle grey"
 msgstr ""
 
-#: tpk_showname.h:163
+#: tpk_showname.h:164
 msgid "Skin MegaStyle grey MiniTV"
 msgstr ""
 
-#: tpk_showname.h:164
+#: tpk_showname.h:165
 msgid "Skin MetrixHD"
 msgstr ""
 
-#: tpk_showname.h:165
+#: tpk_showname.h:166
 msgid "Skin Nogfx"
 msgstr ""
 
-#: tpk_showname.h:166
+#: tpk_showname.h:167
 msgid "Skin Nogfx (grau)"
 msgstr ""
 
-#: tpk_showname.h:167
+#: tpk_showname.h:168
 msgid "Skin SmartTV"
 msgstr "Επιλογή Skin"
 
-#: tpk_showname.h:168
+#: tpk_showname.h:169
 msgid "Skin Tobayer01"
 msgstr ""
 
-#: tpk_showname.h:169
+#: tpk_showname.h:170
 msgid "Skin UFS912"
 msgstr ""
 
-#: tpk_showname.h:170
+#: tpk_showname.h:171
 msgid "SMB Client Lib v3.0.28b (/media/smbfs)"
 msgstr ""
 
-#: tpk_showname.h:171
+#: tpk_showname.h:172
 msgid "SmbClient (Win7)"
 msgstr ""
 
-#: tpk_showname.h:173
+#: tpk_showname.h:174
 msgid "Stop if not used"
 msgstr ""
 
-#: tpk_showname.h:175
+#: tpk_showname.h:176
 msgid "The Grim Reaper"
 msgstr ""
 
-#: tpk_showname.h:176
+#: tpk_showname.h:177
 msgid "Titan Media Center"
 msgstr "Media Center"
 
-#: tpk_showname.h:177
+#: tpk_showname.h:178
 msgid "TiTan Mediathek"
 msgstr ""
 
-#: tpk_showname.h:178
+#: tpk_showname.h:179
 msgid "TitanNit Blood"
 msgstr ""
 
-#: tpk_showname.h:179
+#: tpk_showname.h:180
 msgid "TitanNit Design 1"
 msgstr ""
 
-#: tpk_showname.h:180
+#: tpk_showname.h:181
 msgid "TitanNit Design 3"
 msgstr ""
 
-#: tpk_showname.h:181
+#: tpk_showname.h:182
 msgid "TitanNit on fire"
 msgstr ""
 
-#: tpk_showname.h:183
+#: tpk_showname.h:184
 msgid "USB-RESET"
 msgstr ""
 
-#: tpk_showname.h:185
+#: tpk_showname.h:186
 msgid "Webbrowser Netsurf"
 msgstr ""
 
-#: tpk_showname.h:186
+#: tpk_showname.h:187
 msgid "Wlan 8192cu"
 msgstr ""
 
-#: tpk_showname.h:187
+#: tpk_showname.h:188
 msgid "Wlan 8712u"
 msgstr ""
 
-#: tpk_showname.h:188
+#: tpk_showname.h:189
 msgid "Wlan rt2870sta"
 msgstr ""
 
-#: tpk_showname.h:189
+#: tpk_showname.h:190
 msgid "Wlan rt3070sta"
 msgstr ""
 
-#: tpk_showname.h:190
+#: tpk_showname.h:191
 msgid "Wlan rt5370sta"
 msgstr ""
 
-#: tpk_showname.h:191
+#: tpk_showname.h:192
 msgid "XPicons LightTransparent (Astra 19.2E)"
 msgstr ""
 
-#: tpk_showname.h:192
+#: tpk_showname.h:193
 msgid "XPicons LightTransparent (Astra 23.5E)"
 msgstr ""
 
-#: tpk_showname.h:193
+#: tpk_showname.h:194
 msgid "XPicons LightTransparent (Astra 28.2E)"
 msgstr ""
 
-#: tpk_showname.h:194
+#: tpk_showname.h:195
 msgid "XPicons LightTransparent (Hotbird 13.0E)"
 msgstr ""
 
-#: tpk_showname.h:195
+#: tpk_showname.h:196
 msgid "XPicons LightTransparent (small - Astra 19.2E)"
 msgstr ""
 
-#: tpk_showname.h:196
+#: tpk_showname.h:197
 msgid "zapback (Werbezapper)"
 msgstr ""
 
-#: tpk_showname.h:197
+#: tpk_showname.h:198
 msgid "Zombie"
 msgstr ""
 
