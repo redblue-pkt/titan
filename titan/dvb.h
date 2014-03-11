@@ -841,32 +841,24 @@ int dvbgetdate(time_t* time, int timeout)
 		free(buf);
 		return 1;
 	}
-printf("aaaa\n");
+
 	dmxsetsource(dmxnode, status.aktservice->fedev->fedmxsource);
 	dmxsetfilter(dmxnode, 0x14, 0, 3);
 
 	if((length = dvbread(dmxnode, buf, 0, MINMALLOC, timeout)) < 0)
 	if(length < 3)
 	{
-printf("bbbb length:%d\n", length);
-
 		dmxclose(dmxnode, -1);
 		free(buf);
 		err("read dvb date");
 		return 1;
 	}
 
-printf("cccc length:%d\n", length);
-
 	sectionlength = ((buf[1] & 0x0f) << 8) | (buf[2] & 0xff);
 	if(length == sectionlength + 3)
-	{
-printf("dddd\n");
 		*time = dvbconvertdate(&(buf[3]), 0);
-	}
 	else
 	{
-printf("eeee\n");
 		dmxclose(dmxnode, -1);
 		free(buf);
 		err("read dvb date");
