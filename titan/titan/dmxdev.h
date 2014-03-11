@@ -174,7 +174,8 @@ int dmxsetfilter(struct dvbdev* node, int pid, int secnr, int flag)
 		sctflt.filter.mask[0] = 0xff;
 		sctflt.timeout = 0;
 		sctflt.pid = pid;
-		sctflt.flags = DMX_IMMEDIATE_START | DMX_CHECK_CRC;
+		// DMX_CHECK_CRC not working on mipsel
+		sctflt.flags = DMX_IMMEDIATE_START;// | DMX_CHECK_CRC;
 	}
 	if(flag == 4) //nit filter (pid 0x10)
 	{
