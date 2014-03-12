@@ -185,28 +185,6 @@ int careset(struct dvbdev* node, int slot)
 	return 0;
 }
 
-int cagetslotinfo(struct dvbdev* node, ca_slot_info_t* info)
-{
-	if(node == NULL)
-	{
-		err("NULL detect");
-		return 1;
-	}
-
-	//info.num
-	//info.type
-	//info.flags (1:no, 2:present, 3:ready)
-
-	debug(201, "CA_GET_SLOT_INFO");
-	if(ioctl(node->fd, CA_GET_SLOT_INFO, info) < 0)
-	{
-		perr("CA_GET_SLOT_INFO");
-		return 1;
-	}
-
-	return 0;
-}
-
 //workaround for atemio500 and orf1 with unicam and orf card
 //without this artefakte
 void cainit(int fd)
