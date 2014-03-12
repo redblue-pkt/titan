@@ -5644,7 +5644,7 @@ msgstr "Sendersuche"
 
 #: skin_default_skin.xml.h:136
 msgid "Clear"
-msgstr "löschen"
+msgstr "entfernen"
 
 #: skin_default_skin.xml.h:137
 msgid "Clear before scan"
