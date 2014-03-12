@@ -7089,7 +7089,7 @@ msgstr "Einstellungen"
 
 #: skin_default_skin.xml.h:483
 msgid "Records"
-msgstr "Timer"
+msgstr "Aufnahmen"
 
 #: skin_default_skin.xml.h:484
 msgid "Records and EPG"
@@ -7101,7 +7101,7 @@ msgstr "Timer und EPG"
 
 #: skin_default_skin.xml.h:486
 msgid "Record Split Size"
-msgstr "Splitte Aufnahmen bei "
+msgstr "Teile Aufnahmen bei (Größe in MB)"
 
 #: skin_default_skin.xml.h:487
 msgid "Record Timer"
