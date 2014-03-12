@@ -2433,7 +2433,8 @@ msgstr ""
 
 #: mc_videoplayer.h:781
 msgid "Found VIDEO_TS Folder, start with DVD-Player ?"
-msgstr "A VIDEO_TS path was found.\n"
+msgstr ""
+"A VIDEO_TS path was found.\n"
 "Start playback with the DVD player?"
 
 #: mc_videoplayer.h:901 player.h:99
