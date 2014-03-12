@@ -2240,11 +2240,11 @@ msgstr "User defined"
 
 #: lnbconfig.h:150
 msgid "unicable"
-msgstr "Unstable"
+msgstr ""
 
 #: lnbconfig.h:151
 msgid "user unicable"
-msgstr "Username"
+msgstr ""
 
 #: marker.h:215
 msgid "ERROR... can't set marker in this file"
@@ -2355,7 +2355,7 @@ msgstr "Menu not implemented!"
 
 #: mc_mediathek.h:37
 msgid "Install Tithek Tpk first !"
-msgstr "Install TiTan Mediathek TPK first!"
+msgstr "Install Titan Mediathek TPK first!"
 
 #: mc_pictureplayer_settings.h:29 panel_settings_autostart.h:60
 #: panel_settings_autostart.h:132 settings_autostart.h:51
@@ -2470,7 +2470,7 @@ msgstr "Delete MediaDB before scan"
 
 #: mediadb.h:1087 play.h:564 skin_default_skin.xml.h:173
 msgid "Delete unused entrys before scan"
-msgstr "Delete unused entrys before scan"
+msgstr "Delete unused entries before scan"
 
 #: mediadb.h:1094 play.h:571
 msgid "scan Directory"
@@ -2596,11 +2596,11 @@ msgstr ""
 
 #: moduleconfig.h:168
 msgid "activate"
-msgstr "Deactivate"
+msgstr ""
 
 #: moduleconfig.h:169
 msgid "deaktivate"
-msgstr "deactivated"
+msgstr "deactivate"
 
 #: moduleconfig.h:350
 msgid "Status: "
@@ -2654,6 +2654,7 @@ msgstr "MULTI EPG - All Channels"
 msgid ""
 "For Better Win7 Support install please Tpk Install > Network > Smbclient"
 msgstr ""
+"For Better Win7 Support please install the Install > Network > Smbclient TPK"
 
 #: networkbrowser.h:1005 networkbrowser.h:1011 networkbrowser.h:1021
 msgid "Anonymous login Access Denied !"
@@ -2661,7 +2662,7 @@ msgstr ""
 
 #: networkbrowser.h:1009 networkbrowser.h:1025
 msgid "Anonymous login successful"
-msgstr "Copy satlist successfull"
+msgstr ""
 
 #: networkbrowser.h:1160 networkbrowser.h:1161
 msgid "Scanning Network Shares, please wait !!"
@@ -2673,7 +2674,7 @@ msgstr "Networkbrowser - show scanned DNS-Shares"
 
 #: networkbrowser.h:1189
 msgid "Use User authentication ?"
-msgstr ""
+msgstr "Use User authentification?"
 
 #: networkbrowser.h:1207
 msgid "Networkbrowser - show scanned cifs/nfs-Shares"
@@ -2697,7 +2698,7 @@ msgstr ""
 
 #: networkbrowser.h:1560
 msgid "nfs"
-msgstr "Infos"
+msgstr ""
 
 #: networkbrowser.h:1561
 msgid "ftpfs"
@@ -2709,7 +2710,7 @@ msgstr ""
 
 #: networkbrowser.h:1597
 msgid "ssl_control"
-msgstr "Softcam control"
+msgstr "SSL control"
 
 #: networkbrowser.h:1598 plugins_networkbrowser_skin.xml.h:28
 #: skins_networkbrowser_skin.xml.h:28
@@ -2868,7 +2869,7 @@ msgstr ""
 
 #: network.h:884
 msgid "Wlan Stick not found"
-msgstr "Softcam not found"
+msgstr ""
 
 #: network.h:887
 msgid "WLAN Info"
