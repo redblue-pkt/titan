@@ -632,7 +632,7 @@ msgstr ""
 
 #: autotimer.c:537
 msgid "AutoTimer succesfull stopped"
-msgstr ""
+msgstr "AutoTimer successfully stopped"
 
 #: autotimer.c:543
 msgid "ERROR... AutoTimer not stopped"
@@ -644,7 +644,7 @@ msgstr ""
 
 #: autotimer.c:568
 msgid "AutoTimer succesfull started"
-msgstr ""
+msgstr "AutoTimer successfully started"
 
 #: autotimer.c:575
 msgid "ERROR... AutoTimer not started"
@@ -656,7 +656,7 @@ msgstr "Save Settings"
 
 #: autotimer.c:603 menu.h:886
 msgid "Settings succesfull saved"
-msgstr "Settings succesfull saved"
+msgstr "Settings succesfully saved"
 
 #: avsettings.h:67 avsettings.h:83 harddisk.h:875 lnbconfig.h:144
 #: mc_pictureplayer_settings.h:34 mc_pictureplayer_settings.h:38
@@ -703,6 +703,8 @@ msgid ""
 "This Plugin is only for Betatester and can change your Settings!\n"
 "Realy run it?"
 msgstr ""
+"This Plugin is only for Betatester and can change your Settings!\n"
+"Really run it?"
 
 #: bgdownload.h:176
 msgid "Really stop download ?"
@@ -738,7 +740,7 @@ msgstr ""
 
 #: browser.h:206
 msgid "Browser Favoriten"
-msgstr ""
+msgstr "Browser favourites"
 
 #: callmon_main.h:39
 msgid ""
@@ -752,22 +754,22 @@ msgstr ""
 #: lcdpearl1.c:508 lcdpearl1.c:512 lcdsamsung.c:978 lcdsamsung.c:982
 #: lcdsamsung.c:986
 msgid "nein"
-msgstr ""
+msgstr "no"
 
 #: callmon_main.h:77 callmon_main.h:97 callmon_main.h:115 callmon_main.h:119
 #: callmon_main.h:123 callmon_main.h:127 instar.h:193 lcdpearl1.c:505
 #: lcdpearl1.c:509 lcdpearl1.c:513 lcdsamsung.c:979 lcdsamsung.c:983
 #: lcdsamsung.c:987
 msgid "ja"
-msgstr ""
+msgstr "yes"
 
 #: callmon_main.h:131
 msgid "puffern"
-msgstr ""
+msgstr "buffering"
 
 #: callmon_main.h:132
 msgid "verwerfen"
-msgstr ""
+msgstr "reject"
 
 #: callmon_main.h:135 mediadbsettings.h:58 skin_default_skin.xml.h:37
 msgid "3"
@@ -863,7 +865,7 @@ msgstr ""
 
 #: channellist.h:1006
 msgid "Can't remove akive Service"
-msgstr ""
+msgstr "Can't remove active Service"
 
 #: channellist.h:1295 channellist.h:1296
 msgid "Channels A-Z"
@@ -1243,7 +1245,7 @@ msgstr ""
 
 #: epgsearch.h:316
 msgid "Sport"
-msgstr "Ftp Port"
+msgstr ""
 
 #: epgsearch.h:324
 msgid "Western"
@@ -1308,7 +1310,7 @@ msgstr "Power Off"
 
 #: epgsettings.h:260
 msgid "Deavtivate Refresh Time and After EPG in scan-mode"
-msgstr "Deacvtivate Refresh Time and After EPG in scan-mode"
+msgstr "Deactivate Refresh Time and After EPG in scan-mode"
 
 #: epgsettings.h:286
 msgid "EPG resetet and now clear."
@@ -1389,7 +1391,10 @@ msgid ""
 "plugin after reinstalling the software TitanNit in TitanNit Menu Visible "
 "then perform an update by Tpk to: "
 msgstr ""
-
+"its only possible to install one package. If you want to install another "
+"package of this section, you have to remove the previously installed package first."
+"If the plugin is not listed after reinstalling the TitanNit Software"
+"then perform a Tpk upgrade (Online)"
 #: extensions.h:212 extensions.h:353
 msgid "Installing"
 msgstr "Installing"
@@ -1500,15 +1505,15 @@ msgstr ""
 
 #: facebook.h:476
 msgid "Link postet"
-msgstr ""
+msgstr "Link posted"
 
 #: facebook.h:477
 msgid "Video postet"
-msgstr "Videotune"
+msgstr "Video posted"
 
 #: facebook.h:478
 msgid "Photos postet"
-msgstr "goto Position"
+msgstr "Photos posted"
 
 #: facebook.h:479 facebook.h:481
 msgid "App story"
@@ -1516,7 +1521,7 @@ msgstr ""
 
 #: facebook.h:480
 msgid "Coment created"
-msgstr "Can't create Path"
+msgstr ""
 
 #: facebook.h:482
 msgid "Checkin to a place"
@@ -1654,7 +1659,7 @@ msgstr "Use medium for swap-file"
 
 #: harddisk.h:250
 msgid "del medium for swap"
-msgstr "Do not use medium for swap"
+msgstr "Do not use medium for swap-file"
 
 #: harddisk.h:255 harddisk.h:724
 msgid "use medium for backup"
@@ -1729,6 +1734,8 @@ msgid ""
 "HDD > 2TB unsupported.\n"
 "You must first install plugin parted, then you can use this panel."
 msgstr ""
+"HDD > 2TB unsupported.\n"
+"You must first install the plugin parted, then you can use this panel."
 
 #: harddisk.h:632
 msgid ""
@@ -1738,8 +1745,7 @@ msgid ""
 msgstr ""
 "Are you sure you want to remove all partitions\n"
 "on this device and create a new partition?\n"
-"Receiver will reboot after formatting the deviceYour Receiver will reboot "
-"after formatting the device"
+"Your Receiver will reboot after formatting the device"
 
 #: harddisk.h:666
 msgid ""
@@ -1747,8 +1753,7 @@ msgid ""
 "Box reboots after format"
 msgstr ""
 "Are you sure you want to format this partition?\n"
-"Receiver will reboot after formatting the deviceYour Receiver will reboot "
-"after formatting the device"
+"Your Receiver will reboot after formatting the device"
 
 #: harddisk.h:784
 msgid ""
@@ -1761,6 +1766,8 @@ msgid ""
 "Information: This hard drive size can take a file\n"
 "system check between 30 minutes and 1.5 hours."
 msgstr ""
+"Information: With this hard drive size a file\n"
+"system check can take between 30 minutes and 1.5 hours."
 
 #: harddisk.h:805
 msgid ""
@@ -1768,8 +1775,7 @@ msgid ""
 "Box reboots after check"
 msgstr ""
 "Are you sure you want to check this partition?\n"
-"Receiver will reboot after checking the deviceYour Receiver will reboot "
-"after formatting the device"
+"Your Receiver will reboot after formatting the device"
 
 #: harddisk.h:867 harddisk.h:868
 msgid "Harddisk Sleep"
@@ -1801,11 +1807,11 @@ msgid ""
 "You can configure it in Harddisk Menu."
 msgstr ""
 "Found new Stick/HDD.\n"
-"You can configure it in Harddisk Menu."
+"You can configure it in the Harddisk Menu."
 
 #: hbbtv.h:362
 msgid "You can leave HBBTV with Record Key."
-msgstr "You can exit HBBTV with Record Key."
+msgstr "You can exit HBBTV with the Record Key."
 
 #: hbbtv.h:742
 msgid "Channel HBBTV"
@@ -1964,7 +1970,7 @@ msgstr "Softcam not found"
 
 #: hwtest.h:564
 msgid "SUCESS Serial Port"
-msgstr ""
+msgstr "SUCCESS Serial Port"
 
 #: hwtest.h:566
 msgid "FAIL Serial Port"
@@ -2004,7 +2010,7 @@ msgstr ""
 
 #: hwtest.h:679
 msgid "SUCESS Flash/Nand"
-msgstr ""
+msgstr "SUCCESS Flash/Nand"
 
 #: hwtest.h:681
 msgid "FAIL Flash/Nand (/var and /mnt)"
