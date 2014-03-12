@@ -1383,7 +1383,7 @@ msgstr "Install Information"
 msgid "Can't install Package. Package to big."
 msgstr ""
 "ERROR: The designated package is too big\n"
-"and cannot be installed.\n"
+"and cannot be installed."
 
 #: extensions.h:197
 msgid "Tpk Install - select section"
