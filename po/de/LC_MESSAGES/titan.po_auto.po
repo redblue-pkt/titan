@@ -611,7 +611,7 @@ msgstr "Suchen"
 
 #: audiotrack.h:48 play.h:271 rectimer.h:1485 subtitle.h:1624
 msgid "running"
-msgstr "an"
+msgstr "aktiv"
 
 #: audiotrack.h:116 play.h:253 subtitle.h:1745 tunerconfig.h:157
 #: tunerconfig.h:341 tunerconfig.h:381
@@ -628,27 +628,27 @@ msgstr "Sender umschalten"
 
 #: autotimer.c:537 autotimer.c:543
 msgid "Stop AutoTimer"
-msgstr ""
+msgstr "Autotimer beenden"
 
 #: autotimer.c:537
 msgid "AutoTimer succesfull stopped"
-msgstr ""
+msgstr "Autotimer wurde erfolgreich beendet"
 
 #: autotimer.c:543
 msgid "ERROR... AutoTimer not stopped"
-msgstr ""
+msgstr "FELER: Autotimer konnte nicht beendet werden!"
 
 #: autotimer.c:568 autotimer.c:575
 msgid "Start AutoTimer"
-msgstr ""
+msgstr "Autotimer starten"
 
 #: autotimer.c:568
 msgid "AutoTimer succesfull started"
-msgstr ""
+msgstr "Autotimer erfolgreich gestartet"
 
 #: autotimer.c:575
 msgid "ERROR... AutoTimer not started"
-msgstr ""
+msgstr "FEHLER: Autotimer konnte nicht gestartet werden!"
 
 #: autotimer.c:603 menu.h:884 menu.h:886 skin_default_skin.xml.h:532
 msgid "Save Settings"
@@ -1989,7 +1989,7 @@ msgstr "Einschub "
 
 #: hwtest.h:489
 msgid "CAM Ports found: "
-msgstr "CI-Modul gefunden "
+msgstr "CI-Modul gefunden: "
 
 #: hwtest.h:564
 msgid "SUCESS Serial Port"
@@ -2053,31 +2053,31 @@ msgstr "FEHLER: keine Internet Verbindung verfügbar"
 
 #: imdbapi.h:265 imdb.h:691 tmdb.h:839
 msgid "--plot--"
-msgstr ""
+msgstr "--Handlung--"
 
 #: imdbapi.h:266 imdb.h:692 tmdb.h:840
 msgid "--title--"
-msgstr ""
+msgstr "--Titel--"
 
 #: imdbapi.h:267 imdb.h:693
 msgid "--director--"
-msgstr ""
+msgstr "--Regisseur--"
 
 #: imdbapi.h:268 imdb.h:694
 msgid "--writers--"
-msgstr ""
+msgstr "--Autor--"
 
 #: imdbapi.h:269 imdb.h:695 tmdb.h:843
 msgid "--genre--"
-msgstr ""
+msgstr "--Genre--"
 
 #: imdbapi.h:270 imdb.h:696 tmdb.h:844
 msgid "--releasetime--"
-msgstr ""
+msgstr "--Veröffentlicht--"
 
 #: imdbapi.h:271 imdb.h:697
 msgid "--actors--"
-msgstr ""
+msgstr "--Schauspieler--"
 
 #: inadyn.h:188
 msgid "DYNDNS started."
