@@ -224,7 +224,7 @@ msgstr ""
 #: vidstream.h:45 vidstream.h:86 vidstream.h:98 vidstream.h:167 xvidstage.h:54
 #: xvidstage.h:100 xvidstage.h:177 youtube.h:198 zapback.c:79 zdf.h:29
 msgid "EXIT"
-msgstr ""
+msgstr "Exit"
 
 #: adjust.h:64 adjust.h:79 adjust.h:88 adjust.h:93 adjust.h:118 adjust.h:148
 #: adjust.h:158 adjust.h:162 adjust.h:179 adjust.h:183 adjust.h:191
@@ -274,15 +274,15 @@ msgstr ""
 #: tithek_settings.h:39 tithek_settings.h:43 tmc.h:531 tmc.h:535
 #: tunerconfig.h:184 tunerconfig.h:213 tunerconfig.h:244 tunerconfig.h:277
 msgid "no"
-msgstr ""
+msgstr "No"
 
 #: adjust.h:65
 msgid "infobar"
-msgstr ""
+msgstr "Infobar"
 
 #: adjust.h:66
 msgid "epg"
-msgstr ""
+msgstr "EPG"
 
 #: adjust.h:67 epgsettings.h:138
 msgid "Channel EPG"
@@ -348,13 +348,13 @@ msgstr ""
 #: mc_videoplayer_settings.h:23 plugins_mc_skin.xml.h:7
 #: skin_default_skin.xml.h:72 skins_mc_skin.xml.h:7
 msgid "alpha"
-msgstr ""
+msgstr "alphabetic"
 
 #: adjust.h:98 mc_audioplayer_settings.h:28 mc_pictureplayer_settings.h:43
 #: mc_videoplayer_settings.h:24 plugins_mc_skin.xml.h:49
 #: skin_default_skin.xml.h:508 skins_mc_skin.xml.h:49
 msgid "reverse alpha"
-msgstr ""
+msgstr "descending alphabetic"
 
 #: adjust.h:99 mc_audioplayer_settings.h:29 mc_pictureplayer_settings.h:44
 #: mc_videoplayer_settings.h:25 plugins_mc_skin.xml.h:55
@@ -366,7 +366,7 @@ msgstr ""
 #: mc_videoplayer_settings.h:26 plugins_mc_skin.xml.h:51
 #: skin_default_skin.xml.h:510 skins_mc_skin.xml.h:51
 msgid "reverse size"
-msgstr ""
+msgstr "descending size"
 
 #: adjust.h:101 mc_audioplayer_settings.h:31 mc_pictureplayer_settings.h:46
 #: mc_videoplayer_settings.h:27 plugins_mc_skin.xml.h:16
@@ -378,7 +378,7 @@ msgstr ""
 #: mc_videoplayer_settings.h:28 plugins_mc_skin.xml.h:50
 #: skin_default_skin.xml.h:509 skins_mc_skin.xml.h:50
 msgid "reverse date"
-msgstr ""
+msgstr "descending date"
 
 #: adjust.h:105
 msgid "Power Menu"
@@ -398,12 +398,12 @@ msgstr ""
 
 #: adjust.h:109
 msgid "Gui Restart"
-msgstr ""
+msgstr "Restart Titan"
 
 #: adjust.h:112 adjust.h:122 adjust.h:176 epgsettings.h:147 epgsettings.h:153
 #: network.h:593
 msgid "deaktiv"
-msgstr ""
+msgstr "deactivate"
 
 #: adjust.h:113
 msgid "1 sec"
@@ -435,11 +435,11 @@ msgstr ""
 
 #: adjust.h:144 adjust.h:241 httpdsettings.h:43
 msgid "extern"
-msgstr ""
+msgstr "external"
 
 #: adjust.h:145 adjust.h:242 httpdsettings.h:42
 msgid "intern"
-msgstr ""
+msgstr "internal"
 
 #: adjust.h:152 autotimer.c:479 autotimer.c:512 avsettings.h:68
 #: rectimer.h:1165 transponder.h:121 transponder.h:133 transponder.h:157
@@ -449,7 +449,7 @@ msgstr ""
 #: transponder.h:372 transponder.h:378 transponder.h:385 transponder.h:417
 #: transponder.h:427 transponder.h:476 transponder.h:512
 msgid "auto"
-msgstr ""
+msgstr "automatic"
 
 #: adjust.h:153 autotimer.c:480 autotimer.c:513 epgsettings.h:215
 #: rectimer.h:1166
@@ -459,24 +459,24 @@ msgstr ""
 #: adjust.h:154 autotimer.c:481 autotimer.c:514 rectimer.h:1167
 #: stopifnotused.c:113
 msgid "standby"
-msgstr ""
+msgstr "Standby"
 
 #: adjust.h:155 autotimer.c:482 autotimer.c:515 rectimer.h:1168
 #: stopifnotused.c:112
 msgid "power off"
-msgstr ""
+msgstr "Power Off"
 
 #: adjust.h:163
 msgid "anim. width"
-msgstr ""
+msgstr "width of animation"
 
 #: adjust.h:164
 msgid "anim. height"
-msgstr ""
+msgstr "height of animation"
 
 #: adjust.h:165
 msgid "anim. both"
-msgstr ""
+msgstr "zoom"
 
 #: adjust.h:168
 msgid "very fast"
@@ -500,15 +500,15 @@ msgstr ""
 
 #: adjust.h:187
 msgid "channel-movie"
-msgstr ""
+msgstr "Channel - Title"
 
 #: adjust.h:188
 msgid "movie-channel"
-msgstr ""
+msgstr "Title - Channel"
 
 #: adjust.h:202
 msgid "expert (11)"
-msgstr ""
+msgstr "Expert mode (11)"
 
 #: adjust.h:211
 msgid "yes / vzap 1 sec"
@@ -607,7 +607,7 @@ msgstr ""
 #: tithek_mainmenu.h:35 tmdb.h:860 xvideos.h:56 xvideos.h:58 youtube.h:223
 #: youtube.h:225 youtube.h:315 youtube.h:317 zdf.h:147 zdf.h:149
 msgid "Search"
-msgstr "Search"
+msgstr ""
 
 #: audiotrack.h:48 play.h:271 rectimer.h:1485 subtitle.h:1624
 msgid "running"
@@ -628,19 +628,19 @@ msgstr "Switch channel"
 
 #: autotimer.c:537 autotimer.c:543
 msgid "Stop AutoTimer"
-msgstr ""
+msgstr "Stop autotimer"
 
 #: autotimer.c:537
 msgid "AutoTimer succesfull stopped"
-msgstr "AutoTimer successfully stopped"
+msgstr "Autotimer successfully stopped"
 
 #: autotimer.c:543
 msgid "ERROR... AutoTimer not stopped"
-msgstr ""
+msgstr "ERROR: Autotimer was not stopped"
 
 #: autotimer.c:568 autotimer.c:575
 msgid "Start AutoTimer"
-msgstr ""
+msgstr "Start autotimer"
 
 #: autotimer.c:568
 msgid "AutoTimer succesfull started"
@@ -648,7 +648,7 @@ msgstr "AutoTimer successfully started"
 
 #: autotimer.c:575
 msgid "ERROR... AutoTimer not started"
-msgstr ""
+msgstr "ERROR: Autotimer could not be started"
 
 #: autotimer.c:603 menu.h:884 menu.h:886 skin_default_skin.xml.h:532
 msgid "Save Settings"
@@ -666,27 +666,27 @@ msgstr "Settings succesfully saved"
 #: transponder.h:256 transponder.h:264 transponder.h:415 transponder.h:423
 #: tunerconfig.h:671 vfdisplay.h:42 vfdisplay.h:50
 msgid "off"
-msgstr ""
+msgstr "Off"
 
 #: avsettings.h:69
 msgid "redKey"
-msgstr ""
+msgstr "Red button"
 
 #: avsettings.h:78
 msgid "4 sec"
-msgstr ""
+msgstr "4 seconds"
 
 #: avsettings.h:79
 msgid "6 sec"
-msgstr ""
+msgstr "6 seconds"
 
 #: avsettings.h:80
 msgid "8 sec"
-msgstr ""
+msgstr "8 seconds"
 
 #: avsettings.h:81
 msgid "10 sec"
-msgstr ""
+msgstr "10 seconds"
 
 #: avsettings.h:84 lnbconfig.h:143 mc_pictureplayer_settings.h:35
 #: mc_pictureplayer_settings.h:39 readerconfig.h:416 transponder.h:257
@@ -703,16 +703,16 @@ msgid ""
 "This Plugin is only for Betatester and can change your Settings!\n"
 "Realy run it?"
 msgstr ""
-"This Plugin is only for Betatester and can change your Settings!\n"
-"Really run it?"
+"This Plugin is only for Betatesters and could apply changes\n"
+"to your settings. Do you want to run the application?"
 
 #: bgdownload.h:176
 msgid "Really stop download ?"
-msgstr ""
+msgstr "ATTENTION: Do you want to abort the download?"
 
 #: blindscanadjust.h:13
 msgid "Sat: "
-msgstr ""
+msgstr "Satellite: "
 
 #: blindscanadjust.h:17
 msgid "Cable: "
@@ -724,7 +724,7 @@ msgstr ""
 
 #: blindscanadjust.h:120
 msgid "Sat"
-msgstr ""
+msgstr "Satellite"
 
 #: blindscanadjust.h:121 tunerconfig.h:339
 msgid "Cable"
@@ -748,6 +748,9 @@ msgid ""
 "\n"
 "check your parameter "
 msgstr ""
+"Callmonitor Timeout !!!\n"
+"\n"
+"Check your settings "
 
 #: callmon_main.h:76 callmon_main.h:98 callmon_main.h:116 callmon_main.h:120
 #: callmon_main.h:124 callmon_main.h:128 instar.h:192 lcdpearl1.c:504
@@ -801,23 +804,23 @@ msgstr ""
 
 #: channellist.h:578
 msgid "Move mode"
-msgstr ""
+msgstr "Move"
 
 #: channellist.h:587
 msgid "Remove mode"
-msgstr ""
+msgstr "Remove"
 
 #: channellist.h:596
 msgid "Copy mode"
-msgstr ""
+msgstr "Copy"
 
 #: channellist.h:605
 msgid "Protect mode"
-msgstr ""
+msgstr "Protect"
 
 #: channellist.h:614
 msgid "Edit mode"
-msgstr ""
+msgstr "Edit"
 
 #: channellist.h:689 channellist.h:1764 scan.h:530 skin_default_skin.xml.h:471
 msgid "Radio"
@@ -829,7 +832,7 @@ msgstr ""
 
 #: channellist.h:702 channellist.h:1227 channellist.h:1228 channellist.h:1440
 msgid "Bouquets"
-msgstr ""
+msgstr "Favourites"
 
 #: channellist.h:719 channellist.h:1580 skin_default_skin.xml.h:127
 msgid "Channel"
@@ -849,19 +852,19 @@ msgstr ""
 
 #: channellist.h:913
 msgid "Copy providerlist successfull"
-msgstr ""
+msgstr "Successfully copied Providers"
 
 #: channellist.h:915
 msgid "Copy providerlist not ok"
-msgstr ""
+msgstr "ATTENTION: Providers not copied"
 
 #: channellist.h:920
 msgid "Copy satlist successfull"
-msgstr ""
+msgstr "Successfully copied channels"
 
 #: channellist.h:922
 msgid "Copy satlist not ok"
-msgstr ""
+msgstr "ATTENTION: Channels not copied"
 
 #: channellist.h:1006
 msgid "Can't remove akive Service"
@@ -909,19 +912,19 @@ msgstr ""
 
 #: copyfile.h:839
 msgid "Amount of files: "
-msgstr ""
+msgstr "Total of Files: "
 
 #: copyfile.h:881 copyfile.h:882
 msgid "file move error"
-msgstr ""
+msgstr "ATTENTION: File move failed!"
 
 #: copyfile.h:886 copyfile.h:887
 msgid "file copy error"
-msgstr ""
+msgstr "ATTENTION: File copy failed!"
 
 #: copyfile.h:893 copyfile.h:894
 msgid "wait for stopping"
-msgstr ""
+msgstr "Please wait for operation to stop"
 
 #: dir.h:83 dir.h:92 dir.h:101 dir.h:110 plugins_lcdpearl1_skin.xml.h:2
 #: plugins_lcdsamsung_skin.xml.h:2 skins_lcdpearl1_skin.xml.h:2
@@ -968,11 +971,11 @@ msgstr ""
 #: skins_wins3_skin.xml.h:4 skins_zapback_skin.xml.h:7 tithek_mainmenu.h:1
 msgid ""
 msgstr ""
-"Project-Id-Version: TitanNit 1.49\n"
+"Project-Id-Version: TitanNit 1.50\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-07 10:44+0200\n"
 "PO-Revision-Date: 2014-02-07 17:47+0200\n"
-"Last-Translator: obi <_obiwan_@web.de>\n"
+"Last-Translator: Bulldog <_obiwan_@web.de>\n"
 "Language-Team: German <_obiwan_@web.de>\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
@@ -1005,15 +1008,15 @@ msgstr ""
 
 #: diseqcconfig.h:128
 msgid "DiSEqC 1.0"
-msgstr "DiSEqC"
+msgstr ""
 
 #: diseqcconfig.h:129
 msgid "DiSEqC 1.1"
-msgstr "DiSEqC"
+msgstr ""
 
 #: diseqcconfig.h:130
 msgid "DiSEqC 1.2"
-msgstr "DiSEqC"
+msgstr ""
 
 #: diseqcconfig.h:131
 msgid "DiSEqC 1.3 (USALS)"
@@ -1021,13 +1024,13 @@ msgstr ""
 
 #: diseqcconfig.h:132
 msgid "Tonburst A/B"
-msgstr "Tone Burst"
+msgstr ""
 
 #: diseqcconfig.h:135 diseqcconfig.h:140 diseqcconfig.h:159 transponder.h:222
 #: transponder.h:232 transponder.h:329 transponder.h:347 transponder.h:374
 #: transponder.h:380
 msgid "none"
-msgstr ""
+msgstr "None"
 
 #: diseqcconfig.h:136 skin_default_skin.xml.h:49
 msgid "A"
@@ -1122,12 +1125,14 @@ msgstr "West"
 #: putlocker.h:32 streamcloud.h:31 videoweed.h:35 vidstream.h:45
 #: xvidstage.h:54
 msgid "Hoster Url not http://"
-msgstr ""
+msgstr "The hosters URL is not http://"
 
 #: divxstage.h:79 novamov.h:80 nowvideo.h:87 primeshare.h:79 videoweed.h:80
 msgid ""
 "The file is being transfered to our other servers. This may take few minutes."
 msgstr ""
+"The designated file is being transfered to our other Servers.\n"
+"This may take a few Minutes. Please try again later."
 
 #: divxstage.h:150 faststream.h:79 faststream.h:90 faststream.h:102
 #: faststream.h:160 filenuke.h:84 filenuke.h:95 filenuke.h:107 filenuke.h:157
@@ -1140,39 +1145,39 @@ msgstr ""
 #: vidstream.h:86 vidstream.h:97 vidstream.h:167 xvidstage.h:100
 #: xvidstage.h:177
 msgid "The page is temporarily unavailable"
-msgstr "This page is temporarily unavailable."
+msgstr "The designated page is temporarily unavailable."
 
 #: dlna.h:334
 msgid "DLNA started."
-msgstr "DLNA started"
+msgstr ""
 
 #: dlna.h:336
 msgid ""
 "DLNA not started,\n"
 "Please check your config."
 msgstr ""
-"DLNA not started,\n"
-"Please check your config."
+"DLNA not started.\n"
+"Please check your configuration."
 
 #: dlna.h:345
 msgid "DLNA now stopped"
-msgstr "DLNA now stopped"
+msgstr "DLNA stopped"
 
 #: download.h:77 download.h:87
 msgid "Download (KB): "
-msgstr "Moved (KB): "
+msgstr ""
 
 #: download.h:97
 msgid "download error"
-msgstr "download error"
+msgstr "ERROR: Download failed!"
 
 #: download.h:101
 msgid "wait for stopping download"
-msgstr "Wait! stopping download"
+msgstr "ATTENTION: Wait for Download to stop."
 
 #: dvdplay.h:29
 msgid "EJECT"
-msgstr ""
+msgstr "Eject"
 
 #: dvdplay.h:29 play.h:1417 plugins_dlna_skin.xml.h:10
 #: skins_dlna_skin.xml.h:10
@@ -1184,15 +1189,15 @@ msgstr "Select"
 #: mc_pictureplayer.h:363 mc_pictureplayer.h:456 mc_videoplayer.h:746
 #: mc_videoplayer.h:885 play.h:1489
 msgid "Can't start playback !"
-msgstr "Can't start playback!"
+msgstr ""
 
 #: epg.h:182 skin_default_skin.xml.h:575
 msgid "Single (EPG)"
-msgstr "Single (EPG)"
+msgstr ""
 
 #: epg.h:184
 msgid "Multi (EPG)"
-msgstr "Multi (EPG)"
+msgstr ""
 
 #: epgsearch.h:27
 msgid "Search only aktual epg ?"
@@ -1201,19 +1206,19 @@ msgstr "Only search in current EPG?"
 #: epgsearch.h:228 plugins_stopifnotused_skin.xml.h:2
 #: skins_stopifnotused_skin.xml.h:2
 msgid "Action"
-msgstr "Action"
+msgstr ""
 
 #: epgsearch.h:236
 msgid "Animation"
-msgstr "Animation 1"
+msgstr ""
 
 #: epgsearch.h:244
 msgid "History"
-msgstr "Channel History"
+msgstr ""
 
 #: epgsearch.h:252
 msgid "Doku"
-msgstr ""
+msgstr "Documentation"
 
 #: epgsearch.h:260
 msgid "Thriller"
@@ -1233,15 +1238,15 @@ msgstr ""
 
 #: epgsearch.h:292
 msgid "Comedy"
-msgstr "Comedy"
+msgstr ""
 
 #: epgsearch.h:300
 msgid "War"
-msgstr "War"
+msgstr ""
 
 #: epgsearch.h:308
 msgid "Scifi"
-msgstr ""
+msgstr "Science Fiction"
 
 #: epgsearch.h:316
 msgid "Sport"
@@ -1257,23 +1262,23 @@ msgstr ""
 
 #: epgsearch.h:340
 msgid "Music"
-msgstr "Music"
+msgstr ""
 
 #: epgsettings.h:139 epgsettings.h:180 skin_default_skin.xml.h:574
 msgid "Single EPG"
-msgstr "Single EPG"
+msgstr ""
 
 #: epgsettings.h:140 epgsettings.h:181 keyactions.h:25
 #: settings_bluebutton.h:16 settings_pluginbutton.h:17 settings_redbutton.h:17
 #: skin_default_skin.xml.h:388
 msgid "Multi EPG"
-msgstr "Multi-EPG"
+msgstr ""
 
 #: epgsettings.h:141 keyactions.h:26 settings_bluebutton.h:17
 #: settings_pluginbutton.h:18 settings_redbutton.h:18
 #: skin_default_skin.xml.h:254
 msgid "Graphic Multi EPG"
-msgstr "Graphical Multi-EPG"
+msgstr "Graphical Multi EPG"
 
 #: epgsettings.h:148 tmc.h:389
 msgid "scan"
@@ -1285,12 +1290,12 @@ msgstr "White List"
 
 #: epgsettings.h:150
 msgid "scan and whitelist"
-msgstr "White List"
+msgstr "Scan and White List"
 
 #: epgsettings.h:191 epgsettings.h:202 epgsettings.h:207 epgsettings.h:212
 #: mediadbsettings.h:36
 msgid "always"
-msgstr "always"
+msgstr "Always"
 
 #: epgsettings.h:192
 msgid "only on power off / restart"
@@ -1302,7 +1307,7 @@ msgstr "Never"
 
 #: epgsettings.h:201 epgsettings.h:206 epgsettings.h:211
 msgid "only for scan"
-msgstr "Only FTA scan"
+msgstr "Only for scan"
 
 #: epgsettings.h:216
 msgid "poweroff"
@@ -1310,15 +1315,17 @@ msgstr "Power Off"
 
 #: epgsettings.h:260
 msgid "Deavtivate Refresh Time and After EPG in scan-mode"
-msgstr "Deactivate Refresh Time and After EPG in scan-mode"
+msgstr ""
+"Background scan activated.\n"
+"Timer scan and 'action after scan' is deactivated."
 
 #: epgsettings.h:286
 msgid "EPG resetet and now clear."
-msgstr "EPG reset and cleared"
+msgstr "EPG cleared"
 
 #: epgsettings.h:300
 msgid "EPG Scan Log"
-msgstr "EPG save time"
+msgstr ""
 
 #: extensions.h:20
 msgid "Feed"
@@ -1326,31 +1333,31 @@ msgstr "Please enter feed address"
 
 #: extensions.h:82
 msgid "Installation start"
-msgstr "Installing"
+msgstr "Installation started"
 
 #: extensions.h:84
 msgid "Remove start"
-msgstr "Remove Share"
+msgstr "Removing started"
 
 #: extensions.h:93
 msgid "New free space (KB): "
-msgstr "Epgfreespace (KB)"
+msgstr ""
 
 #: extensions.h:99
 msgid "Install success"
-msgstr "Installation successful"
+msgstr "Installation accomplished successfully"
 
 #: extensions.h:101
 msgid "Install error"
-msgstr "Install Error"
+msgstr "ERROR: Installation failed!"
 
 #: extensions.h:103
 msgid "Remove success"
-msgstr "Remove success."
+msgstr "Removing accomplished successfully"
 
 #: extensions.h:105
 msgid "Remove error"
-msgstr "Remove Error"
+msgstr "ERROR: Removing failed!"
 
 #: extensions.h:125
 msgid "Install to MNT"
@@ -1366,23 +1373,25 @@ msgstr "Install to SWAP (USB oder HDD)"
 
 #: extensions.h:164
 msgid "Choice Install Medium"
-msgstr "Choose Install Medium"
+msgstr "Choose the installation medium"
 
 #: extensions.h:170 extensions.h:221 extensions.h:478
 msgid "Tpk Install Info"
-msgstr "TPK Install Info"
+msgstr "Install Information"
 
 #: extensions.h:170
 msgid "Can't install Package. Package to big."
-msgstr "Can't install Package. Package to big."
+msgstr ""
+"ERROR: The designated package is too big\n"
+"and cannot be installed.\n"
 
 #: extensions.h:197
 msgid "Tpk Install - select section"
-msgstr "TPK Install - select section"
+msgstr "Installation - Choose Category"
 
 #: extensions.h:202 skin_default_skin.xml.h:660
 msgid "Tpk Install - select file"
-msgstr "TPK Install - select file"
+msgstr "Installation - Selection"
 
 #: extensions.h:207 extensions.h:234 extensions.h:386 tpk.h:2990
 msgid ""
@@ -1391,58 +1400,63 @@ msgid ""
 "plugin after reinstalling the software TitanNit in TitanNit Menu Visible "
 "then perform an update by Tpk to: "
 msgstr ""
-"its only possible to install one package. If you want to install another "
-"package of this section, you have to remove the previously installed package "
-"first.If the plugin is not listed after reinstalling the TitanNit "
-"Softwarethen perform a Tpk upgrade (Online)"
+"You may only install one Plugin from this section.\n"
+"If you want to install a plugin other than the one installed\n"
+"you will have to remove the installed one first. Should the installed\n"
+"plugin not be visible after updating to a new version of TitanNit you will\n"
+"have to perform an online plugin update."
 
 #: extensions.h:212 extensions.h:353
 msgid "Installing"
-msgstr "Installing"
+msgstr ""
 
 #: extensions.h:218 extensions.h:357
 msgid "starting"
-msgstr "starting"
+msgstr ""
 
 #: extensions.h:230
 msgid "Tpk Install Info - Install OK"
-msgstr "TPK Install Info - Install OK"
+msgstr "Installed successfully"
 
 #: extensions.h:234 extensions.h:239
 msgid "Tpk Install Info - Install ERROR"
-msgstr "TPK Install Info - Install ERROR"
+msgstr "ERROR: Installation failed!"
 
 #: extensions.h:247
 msgid "TPK Install done, your system will reboot !"
-msgstr "TPK Install done, your system will reboot!"
+msgstr ""
+"Installed successfully.\n"
+"Your Receiver will restart now"
 
 #: extensions.h:271
 msgid "Tpk Remove - select file"
-msgstr "TPK Remove - select file"
+msgstr "Remove - Selection"
 
 #: extensions.h:277
 msgid "Removeing"
-msgstr "Remove"
+msgstr ""
 
 #: extensions.h:282
 msgid "Tpk Remove Info"
-msgstr "TPK Remove Info"
+msgstr "Remove Information"
 
 #: extensions.h:290
 msgid "Tpk Remove Info - Remove OK"
-msgstr "TPK Remove Info - Remove OK"
+msgstr "Revoved successfully"
 
 #: extensions.h:297
 msgid "Tpk Remove Info - Remove ERROR"
-msgstr "TPK Remove Info - Remove ERROR"
+msgstr "ERROR: Removing failed"
 
 #: extensions.h:304
 msgid "TPK Remove done, your system will reboot !"
-msgstr "TPK Remove done, your system will reboot!"
+msgstr ""
+"Removed successfully.\n"
+"Your Receiver will restart now"
 
 #: extensions.h:336 extensions.h:478
 msgid "No plugin found."
-msgstr "No plugin found"
+msgstr ""
 
 #: extensions.h:392
 msgid ""
@@ -1451,28 +1465,31 @@ msgid ""
 "reboot the box."
 msgstr ""
 "Some plugins need a restart.\n"
-"If the plugin is not active\n"
-"reboot the box."
+"Your Receiver will restart now"
 
 #: extensions.h:396
 msgid "TPK Tmp Install done, your system will reboot !"
-msgstr "TPK Tmp Install done, your system will reboot!"
+msgstr ""
+"Installed successfully from tmp.\n"
+"Your Receiver will restart now"
 
 #: extensions.h:420 extensions.h:424
 msgid "Tpk Update Info - Update ERROR"
-msgstr "TPK Update Info - Update ERROR"
+msgstr "ERROR: Update failed!"
 
 #: extensions.h:420
 msgid "Can't get all TPK index !"
-msgstr "Can't get all TPK index files!"
+msgstr "ATTENTION: Can't retrieve full plugin index!"
 
 #: extensions.h:424
 msgid "Can't update all packages !"
-msgstr "Can't update all packages!"
+msgstr "ERROR: Not all plugins were updated!"
 
 #: extensions.h:432
 msgid "TPK Upgrade done, your system will reboot !"
-msgstr "TPK Upgrade done, your system will reboot!"
+msgstr ""
+"Updated successfully.\n"
+"Your Receiver will restart now"
 
 #: facebook.h:66 facebook.h:167
 msgid "Can't get data from facebook"
@@ -1483,22 +1500,24 @@ msgid ""
 "Facebook allready registered,\n"
 "Make new registration ?"
 msgstr ""
+"Are you already registered in Facebook?\n"
+"Do you want to register with Facebook?"
 
 #: facebook.h:471
 msgid "Group created"
-msgstr "Repeat"
+msgstr ""
 
 #: facebook.h:472
 msgid "Event created"
-msgstr "Can't create Path"
+msgstr ""
 
 #: facebook.h:473
 msgid "Status update"
-msgstr "update"
+msgstr ""
 
 #: facebook.h:474
 msgid "Post on wall from another user"
-msgstr ""
+msgstr "Post on the wall of other User(s)"
 
 #: facebook.h:475
 msgid "Note created"
@@ -1522,7 +1541,7 @@ msgstr ""
 
 #: facebook.h:480
 msgid "Coment created"
-msgstr ""
+msgstr "Comment created"
 
 #: facebook.h:482
 msgid "Checkin to a place"
@@ -1534,15 +1553,15 @@ msgstr ""
 
 #: filemanager.h:23 filemanager.h:86 filemanager.h:92
 msgid "Rename"
-msgstr "Rename"
+msgstr ""
 
 #: filemanager.h:62 filemanager.h:87 filemanager.h:97
 msgid "Create Folder"
-msgstr "Create Folder"
+msgstr ""
 
 #: filemanager.h:84 play.h:612
 msgid "Menu"
-msgstr "Menulist"
+msgstr ""
 
 #: filemanager.h:95
 msgid "Can't rename file !"
@@ -1554,19 +1573,19 @@ msgstr "Can't create directory!"
 
 #: filemanager.h:180
 msgid "Really copy this file/dir?"
-msgstr "Really copy this file/dir?"
+msgstr ""
 
 #: filemanager.h:188
 msgid "Really move this file/dir?"
-msgstr "Really move this file/dir?"
+msgstr ""
 
 #: filemanager.h:196
 msgid "From"
-msgstr "From"
+msgstr ""
 
 #: filemanager.h:200
 msgid "To"
-msgstr "To"
+msgstr ""
 
 #: filemanager.h:219 filemanager.h:226
 msgid "Move File"
@@ -1578,7 +1597,7 @@ msgstr "Copy File(s)"
 
 #: filemanager.h:278
 msgid "Really delete this file/dir?"
-msgstr "Really delete this file/dir?"
+msgstr ""
 
 #: filemanager.h:291
 msgid "Can't remove file/dir !"
@@ -1586,17 +1605,18 @@ msgstr "Can't remove file/dir!"
 
 #: filemanager.h:331
 msgid "Can't show this file!"
-msgstr "Can't show this file!"
+msgstr ""
 
 #: filemanager.h:355 mc_internetbrowser.h:41 mc_wetterinfo.h:41 tithek.h:1431
 msgid "Registration needed, please contact Atemio !"
 msgstr ""
 "Registration needed, please contact Atemio!\n"
-"Infos: Atemio-Panel > System > Serial-Information"
+"For information go to:\n"
+"Atemio-Panel > System > Serial-Information"
 
 #: global.h:6387 keyactions.h:241
 msgid "ERROR cant read res"
-msgstr "ERROR: cant read resolution"
+msgstr "ERROR: can't read resolution"
 
 #: gmediarender.h:109
 msgid "Servername"
@@ -1608,31 +1628,31 @@ msgstr ""
 
 #: gmultiepg.h:546 gmultiepg.h:746
 msgid "GRAPHIC MULTI EPG - Bouquets"
-msgstr "GRAPHIC MULTI EPG - Bouquets"
+msgstr "Graphic Multi EPG - Favourites"
 
 #: gmultiepg.h:559
 msgid "GRAPHIC MULTI EPG - Channel"
-msgstr "GRAPHIC MULTI EPG - Bouquets"
+msgstr "Graphic Multi EPG - Channels"
 
 #: gmultiepg.h:572
 msgid "GRAPHIC MULTI EPG - Satellites"
-msgstr "GRAPHIC MULTI EPG - Bouquets"
+msgstr "Graphic Multi EPG - Satellites"
 
 #: gmultiepg.h:585
 msgid "GRAPHIC MULTI EPG - Provider"
-msgstr "GRAPHIC MULTI EPG - Bouquets"
+msgstr "Graphic Multi EPG - Providers"
 
 #: gmultiepg.h:598
 msgid "GRAPHIC MULTI EPG - All Channels"
-msgstr "MULTI EPG - All Channels"
+msgstr "Graphic Multi EPG - All Channels"
 
 #: harddisk.h:126 harddisk.h:127
 msgid "Harddisk Format - Filesystem"
-msgstr "Harddisk Format - Filesystem"
+msgstr "Format Harddisk - Filesystem"
 
 #: harddisk.h:165 plugins_mc_skin.xml.h:18 skins_mc_skin.xml.h:18
 msgid "default"
-msgstr "System Status"
+msgstr ""
 
 #: harddisk.h:213 harddisk.h:214
 msgid "Harddisk Configure"
@@ -1640,39 +1660,39 @@ msgstr "Harddisk Configuration"
 
 #: harddisk.h:225 harddisk.h:715
 msgid "use medium for record"
-msgstr "Use medium for record"
+msgstr "Use as Recordings-device"
 
 #: harddisk.h:230
 msgid "del medium for record"
-msgstr "Do not use medium for records"
+msgstr "Remove Recordings-device"
 
 #: harddisk.h:235 harddisk.h:720
 msgid "use medium for extension"
-msgstr "Use medium for extensions"
+msgstr "Use as plugins-device"
 
 #: harddisk.h:240
 msgid "del medium for extension"
-msgstr "Do not use medium for extensions"
+msgstr "Remove extensions-device"
 
 #: harddisk.h:245 harddisk.h:722
 msgid "use medium for swap"
-msgstr "Use medium for swap-file"
+msgstr "Use as swap-device"
 
 #: harddisk.h:250
 msgid "del medium for swap"
-msgstr "Do not use medium for swap-file"
+msgstr "Remove swap-device"
 
 #: harddisk.h:255 harddisk.h:724
 msgid "use medium for backup"
-msgstr "Use medium for backup"
+msgstr "Use Backups-device"
 
 #: harddisk.h:260
 msgid "del medium for backup"
-msgstr "Do not use medium for backup"
+msgstr "Remove Backup-device"
 
 #: harddisk.h:345
 msgid "Are you sure you want to delete this directory?"
-msgstr "Are you sure you want to delete this directory?"
+msgstr ""
 
 #: harddisk.h:350
 msgid ""
@@ -1680,11 +1700,11 @@ msgid ""
 "Really delete directory and content?"
 msgstr ""
 "Directory has content\n"
-"Really delete directory and content?"
+"Really delete the directory and the content?"
 
 #: harddisk.h:377
 msgid "can't create or delete directory"
-msgstr "Can't create or delete directory"
+msgstr "ERROR: Can't create or delete directory"
 
 #: harddisk.h:381
 msgid "succesfull create or delelete directory"
@@ -1692,39 +1712,39 @@ msgstr "Succesfully created or deleted directory"
 
 #: harddisk.h:433 skin_default_skin.xml.h:262
 msgid "Harddisk"
-msgstr "Harddisk"
+msgstr ""
 
 #: harddisk.h:433
 msgid "sorry found no harddisk"
-msgstr "No harddisk found"
+msgstr "Sorry, no Harddisk found!"
 
 #: harddisk.h:441 harddisk.h:442
 msgid "Harddisk Format - List Devices"
-msgstr "Harddisk Format - List Devices"
+msgstr ""
 
 #: harddisk.h:446 harddisk.h:447
 msgid "Harddisk Fsck - List Devices"
-msgstr "Harddisk File System Check - List Devices"
+msgstr "Harddisk File System Check - List of Devices"
 
 #: harddisk.h:451 harddisk.h:452
 msgid "Harddisk Configure - List Devices"
-msgstr "Harddisk Configuration - Device List"
+msgstr "Harddisk setup - List of devices"
 
 #: harddisk.h:470
 msgid "HDD "
-msgstr ""
+msgstr "Harddisk"
 
 #: harddisk.h:476
 msgid "STICK "
-msgstr ""
+msgstr "Stick"
 
 #: harddisk.h:495
 msgid "ext"
-msgstr "Next"
+msgstr ""
 
 #: harddisk.h:507
 msgid "swap"
-msgstr "Swap"
+msgstr ""
 
 #: harddisk.h:519
 msgid "backup"
@@ -1735,8 +1755,8 @@ msgid ""
 "HDD > 2TB unsupported.\n"
 "You must first install plugin parted, then you can use this panel."
 msgstr ""
-"HDD > 2TB unsupported.\n"
-"You must first install the plugin parted, then you can use this panel."
+"Harddisk with a capacity larger than 2 TB are not supported.\n"
+"You must install plugin 'parted' then you can use the Harddisk."
 
 #: harddisk.h:632
 msgid ""
@@ -1761,6 +1781,8 @@ msgid ""
 "ERROR\n"
 "partition could not be created"
 msgstr ""
+"ERROR:\n"
+"Partition could not be created"
 
 #: harddisk.h:802
 msgid ""
@@ -1768,7 +1790,7 @@ msgid ""
 "system check between 30 minutes and 1.5 hours."
 msgstr ""
 "Information: With this hard drive size a file\n"
-"system check can take between 30 minutes and 1.5 hours."
+"system check can take between 30 Minutes and 1.5 Hours."
 
 #: harddisk.h:805
 msgid ""
@@ -1776,47 +1798,47 @@ msgid ""
 "Box reboots after check"
 msgstr ""
 "Are you sure you want to check this partition?\n"
-"Your Receiver will reboot after formatting the device"
+"Your Receiver will reboot after checking the device"
 
 #: harddisk.h:867 harddisk.h:868
 msgid "Harddisk Sleep"
-msgstr "Harddisk Sleep"
+msgstr "Harddisk Powersave"
 
 #: harddisk.h:874 skin_default_skin.xml.h:648
 msgid "Time to sleep"
-msgstr "Time to sleep"
+msgstr "Powersave in"
 
 #: harddisk.h:876
 msgid "5 min"
-msgstr ""
+msgstr "5 Minutes"
 
 #: harddisk.h:876
 msgid "10 min"
-msgstr ""
+msgstr "10 Minutes"
 
 #: harddisk.h:877
 msgid "15 min"
-msgstr ""
+msgstr "15 Minutes"
 
 #: harddisk.h:877
 msgid "60 min"
-msgstr ""
+msgstr "60 Minutes"
 
 #: harddisk.h:1035
 msgid ""
 "Found new Stick/HDD.\n"
 "You can configure it in Harddisk Menu."
 msgstr ""
-"Found new Stick/HDD.\n"
+"A new Stick/Harddisk was found.\n"
 "You can configure it in the Harddisk Menu."
 
 #: hbbtv.h:362
 msgid "You can leave HBBTV with Record Key."
-msgstr "You can exit HBBTV with the Record Key."
+msgstr "You can exit HBBTV with the Record button."
 
 #: hbbtv.h:742
 msgid "Channel HBBTV"
-msgstr "Channel"
+msgstr ""
 
 #: hello.c:36
 msgid "Hello World !"
@@ -1832,7 +1854,7 @@ msgstr ""
 
 #: hwtest.h:98
 msgid "can't create new transponer"
-msgstr "Can't create service"
+msgstr ""
 
 #: hwtest.h:103
 msgid "testchannel not found"
@@ -1844,7 +1866,7 @@ msgstr ""
 
 #: hwtest.h:113
 msgid "can't create new channel"
-msgstr "Can't create service"
+msgstr ""
 
 #: hwtest.h:153 hwtest.h:195
 msgid "[S]Lock & Search"
@@ -1875,15 +1897,15 @@ msgstr ""
 #: skin_default_skin.xml.h:394 skins_mc_skin.xml.h:37
 #: skins_panel_skin.xml.h:18 system_infos.h:91
 msgid "Network"
-msgstr "Network"
+msgstr ""
 
 #: hwtest.h:182 hwtest.h:416
 msgid "USB Port"
-msgstr "Port"
+msgstr ""
 
 #: hwtest.h:183 hwtest.h:460
 msgid "CAM"
-msgstr ""
+msgstr "Module"
 
 #: hwtest.h:184 hwtest.h:497
 msgid "RS232"
@@ -1891,7 +1913,7 @@ msgstr ""
 
 #: hwtest.h:185 hwtest.h:569
 msgid "LNB"
-msgstr "LNB"
+msgstr ""
 
 #: hwtest.h:186 hwtest.h:639
 msgid "Flash/Nand Check"
@@ -1911,19 +1933,19 @@ msgstr ""
 
 #: hwtest.h:267
 msgid "Color Bar"
-msgstr "Color Format"
+msgstr ""
 
 #: hwtest.h:279 tmc.h:702
 msgid "RED"
-msgstr "RELOAD"
+msgstr "Red Button"
 
 #: hwtest.h:284
 msgid "GREEN"
-msgstr ""
+msgstr "Green Button"
 
 #: hwtest.h:289
 msgid "BLUE"
-msgstr ""
+msgstr "Blue Button"
 
 #: hwtest.h:305
 msgid "SCART 4:3 / 16:9"
@@ -1947,7 +1969,7 @@ msgstr ""
 
 #: hwtest.h:427
 msgid "USB Ports found: "
-msgstr "Softcam not found"
+msgstr ""
 
 #: hwtest.h:438 hwtest.h:451
 msgid "USB "
@@ -1967,15 +1989,15 @@ msgstr ""
 
 #: hwtest.h:489
 msgid "CAM Ports found: "
-msgstr "Softcam not found"
+msgstr "CI-Module found: "
 
 #: hwtest.h:564
 msgid "SUCESS Serial Port"
-msgstr "SUCCESS Serial Port"
+msgstr "Serial Port is OK"
 
 #: hwtest.h:566
 msgid "FAIL Serial Port"
-msgstr ""
+msgstr "Serial Port Failed"
 
 #: hwtest.h:578
 msgid "LNB off / 22K off: OK"
@@ -2011,55 +2033,55 @@ msgstr ""
 
 #: hwtest.h:679
 msgid "SUCESS Flash/Nand"
-msgstr "SUCCESS Flash/Nand"
+msgstr "Flash/Nand OK"
 
 #: hwtest.h:681
 msgid "FAIL Flash/Nand (/var and /mnt)"
-msgstr ""
+msgstr "Flash/Nand (/var and /mnt) Failed"
 
 #: hwtest.h:683
 msgid "FAIL Flash/Nand (/var)"
-msgstr ""
+msgstr "Flash/Nand (/var) Failed"
 
 #: hwtest.h:685
 msgid "FAIL Flash/Nand (/mnt)"
-msgstr ""
+msgstr "Flash/Nand (/mnt) Failed"
 
 #: imdbapi.h:200 imdb.h:626 tmdb.h:759
 msgid "Error, Internet Connection not found"
-msgstr "Error: No Internet Connection"
+msgstr "ERROR: Internet Connection not found"
 
 #: imdbapi.h:265 imdb.h:691 tmdb.h:839
 msgid "--plot--"
-msgstr ""
+msgstr "--Plot--"
 
 #: imdbapi.h:266 imdb.h:692 tmdb.h:840
 msgid "--title--"
-msgstr ""
+msgstr "--Title--"
 
 #: imdbapi.h:267 imdb.h:693
 msgid "--director--"
-msgstr ""
+msgstr "--Director--"
 
 #: imdbapi.h:268 imdb.h:694
 msgid "--writers--"
-msgstr ""
+msgstr "--Author--"
 
 #: imdbapi.h:269 imdb.h:695 tmdb.h:843
 msgid "--genre--"
-msgstr ""
+msgstr "--Genre--"
 
 #: imdbapi.h:270 imdb.h:696 tmdb.h:844
 msgid "--releasetime--"
-msgstr ""
+msgstr "--Released--"
 
 #: imdbapi.h:271 imdb.h:697
 msgid "--actors--"
-msgstr ""
+msgstr "-_Actors--"
 
 #: inadyn.h:188
 msgid "DYNDNS started."
-msgstr "DYNDNS started"
+msgstr ""
 
 #: inadyn.h:190
 msgid ""
@@ -2067,11 +2089,11 @@ msgid ""
 "Please check your config."
 msgstr ""
 "DYNDNS not started,\n"
-"Please check your config."
+"Please check your configuration."
 
 #: inadyn.h:200
 msgid "DYNDNS now stopped"
-msgstr "DYNDNS now stopped"
+msgstr ""
 
 #: info.h:23
 msgid ""
