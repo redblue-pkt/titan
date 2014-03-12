@@ -636,7 +636,7 @@ msgstr "Autotimer wurde erfolgreich beendet"
 
 #: autotimer.c:543
 msgid "ERROR... AutoTimer not stopped"
-msgstr "FELER: Autotimer konnte nicht beendet werden!"
+msgstr "FEHLER: Autotimer konnte nicht beendet werden!"
 
 #: autotimer.c:568 autotimer.c:575
 msgid "Start AutoTimer"
