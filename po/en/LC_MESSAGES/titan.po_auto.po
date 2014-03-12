@@ -1392,9 +1392,10 @@ msgid ""
 "then perform an update by Tpk to: "
 msgstr ""
 "its only possible to install one package. If you want to install another "
-"package of this section, you have to remove the previously installed package first."
-"If the plugin is not listed after reinstalling the TitanNit Software"
-"then perform a Tpk upgrade (Online)"
+"package of this section, you have to remove the previously installed package "
+"first.If the plugin is not listed after reinstalling the TitanNit "
+"Softwarethen perform a Tpk upgrade (Online)"
+
 #: extensions.h:212 extensions.h:353
 msgid "Installing"
 msgstr "Installing"
