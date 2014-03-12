@@ -842,4 +842,26 @@ int resettvpic()
 	return ret;
 }
 
+int cagetslotinfo(struct dvbdev* node, ca_slot_info_t* info)
+{
+	if(node == NULL)
+	{
+		err("NULL detect");
+		return 1;
+	}
+
+	//info.num
+	//info.type
+	//info.flags (1:no, 2:present, 3:ready)
+
+	debug(201, "CA_GET_SLOT_INFO");
+	if(ioctl(node->fd, CA_GET_SLOT_INFO, info) < 0)
+	{
+		perr("CA_GET_SLOT_INFO");
+		return 1;
+	}
+
+	return 0;
+}
+
 #endif

@@ -968,4 +968,41 @@ int resettvpic()
 	return ret;
 }
 
+int cagetslotinfo(struct dvbdev* node, ca_slot_info_t* info)
+{
+	int ret = 0;
+	
+	if(node == NULL || info == NULL)
+	{
+		err("NULL detect");
+		return 1;
+	}
+	
+	struct pollfd fds;
+	
+	fds.fd = node->fd;
+	fds.events = POLLPRI | POLLIN;
+	
+	info->flags = 0;
+	
+	ret = TEMP_FAILURE_RETRY(poll(&fds, 1, 300));
+	
+	if(ret < 0)
+	{
+		err("poll data");
+		return 1; //error
+	}
+	else if(ret == 0)
+		return 0; //timeout
+	else if(ret > 0)
+	{
+		if(fds.revents & POLLIN)
+			info->flags = 0;
+		if(fds.revents & POLLPRI)
+			info->flags = CA_CI_MODULE_READY;
+	}
+
+	return 0;
+}
+
 #endif
