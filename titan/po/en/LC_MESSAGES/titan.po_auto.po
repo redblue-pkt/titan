@@ -2439,7 +2439,7 @@ msgstr ""
 
 #: mc_videoplayer.h:901 player.h:99
 msgid "Start at last position ?"
-msgstr "REsume at last position?"
+msgstr "Resume at last position?"
 
 #: mc_videoplayer_settings.h:54
 msgid "1s"
@@ -2511,7 +2511,7 @@ msgstr "MediaDB Debug"
 
 #: mediadb.h:1109 play.h:586 skin_default_skin.xml.h:100
 msgid "Backdrop Download Count"
-msgstr "HOw many background Pictures should be loaded?"
+msgstr "How many background Pictures should be loaded?"
 
 #: mediadb.h:1112 mediadbsettings.h:55 play.h:589 plugins_mc_skin.xml.h:6
 #: skins_mc_skin.xml.h:6 tmc.h:539
@@ -2661,11 +2661,11 @@ msgstr "Multi EPG - Favourites"
 
 #: multiepg.h:450
 msgid "MULTI EPG - Channel"
-msgstr "Multi EPG - Cannels"
+msgstr "Multi EPG - Channels"
 
 #: multiepg.h:463
 msgid "MULTI EPG - Satellites"
-msgstr "Multi EPG - Sattelites"
+msgstr "Multi EPG - Satellites"
 
 #: multiepg.h:476
 msgid "MULTI EPG - Provider"
@@ -2704,7 +2704,7 @@ msgstr "Use User authentification?"
 
 #: networkbrowser.h:1207
 msgid "Networkbrowser - show scanned cifs/nfs-Shares"
-msgstr "Show scanned cifs/nfs-Shares"
+msgstr "Show scanned CIFS/NFS-Shares"
 
 #: networkbrowser.h:1340
 msgid "Add Cifs Network Share"
@@ -2869,7 +2869,7 @@ msgid ""
 "Please check your config."
 msgstr ""
 "WLAN not started,\n"
-"Please check your config!"
+"Please check your configuration!"
 
 #: network.h:827
 msgid "searching..."
@@ -3000,7 +3000,7 @@ msgstr "Power Off"
 
 #: panel_settings_autostart.h:158 settings_autostart.h:189
 msgid "Scart On Standby"
-msgstr "Scart on Standby"
+msgstr "Scart output during Standby"
 
 #: panel_settings_autostart.h:167 settings_autostart.h:198
 msgid "HighSR"
@@ -3061,7 +3061,7 @@ msgstr "PL2303 Module"
 
 #: panel_settings_autostart.h:318 settings_autostart.h:543
 msgid "nfs server"
-msgstr "NFS-Server"
+msgstr "NFS Server"
 
 #: panel_settings_autostart.h:327 settings_autostart.h:552
 msgid "samba server"
@@ -3097,7 +3097,7 @@ msgstr "disabled"
 
 #: panel_settings.h:30
 msgid "ntfs-3g"
-msgstr ""
+msgstr "NTFS-3g"
 
 #: panel_settings.h:31
 msgid "ntfsmount"
@@ -3142,7 +3142,7 @@ msgid ""
 "The Box will reboot and the Wizard will be started!"
 msgstr ""
 "Do you really want to start the Wizard?\n"
-"The Box will reboot and the Wizard will be performed!"
+"The Receiver will reboot and the Wizard will be performed!"
 
 #: play.h:396 play.h:430 plugins_imdbapi_skin.xml.h:9
 #: plugins_imdb_skin.xml.h:9 plugins_tmc_skin.xml.h:16
@@ -3189,23 +3189,23 @@ msgstr ""
 
 #: play.h:616
 msgid "Search on KinoX"
-msgstr "Search on Kinox"
+msgstr ""
 
 #: play.h:617
 msgid "Search on KinoX (local)"
-msgstr "Search on Kinox"
+msgstr ""
 
 #: play.h:618
 msgid "Search on Movie4k"
-msgstr "Search on MyVideo"
+msgstr ""
 
 #: play.h:619
 msgid "Search on Movie4k (local)"
-msgstr "Search on Solarmovies (movie)"
+msgstr ""
 
 #: play.h:620
 msgid "Search on Solarmovies (movie)"
-msgstr "Search on Solarmovies (movie)"
+msgstr "Search on Solarmovies (movies)"
 
 #: play.h:621
 msgid "Search on Solarmovies (serie)"
@@ -3213,55 +3213,55 @@ msgstr "Search on Solarmovies (series)"
 
 #: play.h:622
 msgid "Search on Solarmovies (local)"
-msgstr "Search on Solarmovies (movie)"
+msgstr ""
 
 #: play.h:623
 msgid "Search on Mle-HD (local)"
-msgstr "Search on MyVideo"
+msgstr ""
 
 #: play.h:624
 msgid "Search on Beeg (local)"
-msgstr "Search on MyVideo"
+msgstr ""
 
 #: play.h:625
 msgid "Search on Xvideos (local)"
-msgstr "Search on MyVideo"
+msgstr ""
 
 #: play.h:626
 msgid "Search on Netzkino (local)"
-msgstr "Search on Kinox"
+msgstr ""
 
 #: play.h:627
 msgid "Search on Youtube"
-msgstr "Search on Youtube"
+msgstr ""
 
 #: play.h:628
 msgid "Search on Youtube (local)"
-msgstr "Search on Youtube"
+msgstr ""
 
 #: play.h:629
 msgid "Search on MyVideo"
-msgstr "Search on MyVideo"
+msgstr ""
 
 #: play.h:630
 msgid "Search on MyVideo (local)"
-msgstr "Search on MyVideo"
+msgstr ""
 
 #: play.h:631
 msgid "Search on ARD (local)"
-msgstr "Search on Kinox"
+msgstr ""
 
 #: play.h:632
 msgid "Search on ZDF (local)"
-msgstr "Search on Kinox"
+msgstr ""
 
 #: play.h:633
 msgid "Search on TecTime (local)"
-msgstr "Search on MyVideo"
+msgstr ""
 
 #: play.h:634
 msgid "Search on Giga (local)"
-msgstr "Search on Kinox"
+msgstr ""
 
 #: play.h:635
 msgid "Search on Rtl-Now (local)"
@@ -3289,7 +3289,7 @@ msgstr ""
 
 #: play.h:641 skin_default_skin.xml.h:712
 msgid "Video Settings"
-msgstr "Video Settings"
+msgstr ""
 
 #: play.h:642
 msgid "AV Settings"
@@ -3297,20 +3297,20 @@ msgstr "Audio/Video Settings"
 
 #: play.h:643
 msgid "iD3Tag Info"
-msgstr "TV (Info)"
+msgstr ""
 
 #: play.h:644 skin_default_skin.xml.h:363
 msgid "MediaDB Edit"
-msgstr "MediaDB Edit"
+msgstr ""
 
 #: play.h:645
 msgid "Delete File"
-msgstr "Delete File"
+msgstr ""
 
 #: play.h:647 plugins_streaminfo_skin.xml.h:3 skins_streaminfo_skin.xml.h:3
 #: tpk_showname.h:175
 msgid "Streaminfo"
-msgstr "Streaming"
+msgstr "Stream Information"
 
 #: play.h:648 tpk_showname.h:37
 msgid "IMDb"
@@ -3326,15 +3326,15 @@ msgstr ""
 
 #: play.h:1202
 msgid "Jump To (min)"
-msgstr "Jump To (min)"
+msgstr "Jump to (min)"
 
 #: play.h:1280 play.h:1286 plugins_tmc_skin.xml.h:1 skins_tmc_skin.xml.h:1
 msgid "EPG Info"
-msgstr "EPG Info"
+msgstr ""
 
 #: play.h:1295
 msgid "Record in progress"
-msgstr "Recording title"
+msgstr "Recording active"
 
 #: play.h:1296
 msgid "Really Delete ?"
@@ -3349,19 +3349,19 @@ msgstr "Delete"
 
 #: play.h:1649
 msgid "Marker autoseek is started"
-msgstr "Marker has been set."
+msgstr "Marker autoseek started"
 
 #: play.h:1660
 msgid "Marker autoseek is stopped"
-msgstr "Marker has been set."
+msgstr "Marker autoseek stopped"
 
 #: plugins_autotimer_skin.xml.h:1 skins_autotimer_skin.xml.h:1
 msgid "AutoTimer Settings"
-msgstr "Adapter Settings"
+msgstr ""
 
 #: plugins_autotimer_skin.xml.h:2 skins_autotimer_skin.xml.h:2
 msgid "afterevent"
-msgstr ""
+msgstr "After the Event"
 
 #: plugins_autotimer_skin.xml.h:3 skins_autotimer_skin.xml.h:3
 msgid "begin search"
@@ -3373,7 +3373,7 @@ msgstr ""
 
 #: plugins_autotimer_skin.xml.h:5 skins_autotimer_skin.xml.h:5
 msgid "end search"
-msgstr "Search"
+msgstr ""
 
 #: plugins_autotimer_skin.xml.h:6 skins_autotimer_skin.xml.h:6
 msgid "event"
@@ -3396,7 +3396,7 @@ msgstr "Save"
 
 #: plugins_autotimer_skin.xml.h:9 skins_autotimer_skin.xml.h:9
 msgid "search string"
-msgstr "Search West"
+msgstr ""
 
 #: plugins_autotimer_skin.xml.h:10 plugins_dlna_skin.xml.h:12
 #: plugins_instar_skin.xml.h:16 plugins_lcdpearl1_skin.xml.h:12
@@ -3411,43 +3411,43 @@ msgstr "Start"
 
 #: plugins_autotimer_skin.xml.h:11 skins_autotimer_skin.xml.h:11
 msgid "Timer1 activ"
-msgstr "Reader active"
+msgstr "Timer 1 active"
 
 #: plugins_autotimer_skin.xml.h:12 skins_autotimer_skin.xml.h:12
 msgid "Timer2 activ"
-msgstr "Reader active"
+msgstr "Timer 2 active"
 
 #: plugins_callmonitor1_skin.xml.h:1 skins_callmonitor1_skin.xml.h:1
 msgid "CallMonitor Settings"
-msgstr "Rotor Settings"
+msgstr "Settings"
 
 #: plugins_callmonitor1_skin.xml.h:2 skins_callmonitor1_skin.xml.h:2
 msgid "1.Rufnummer"
-msgstr ""
+msgstr "1st Number"
 
 #: plugins_callmonitor1_skin.xml.h:3 skins_callmonitor1_skin.xml.h:3
 msgid "2.Rufnummer"
-msgstr ""
+msgstr "2nd Number"
 
 #: plugins_callmonitor1_skin.xml.h:4 skins_callmonitor1_skin.xml.h:4
 msgid "Aktion wenn standby"
-msgstr "Scart on Standby"
+msgstr "Behaviour during Standby"
 
 #: plugins_callmonitor1_skin.xml.h:5 skins_callmonitor1_skin.xml.h:5
 msgid "alle Nummern"
-msgstr ""
+msgstr "All Numbers"
 
 #: plugins_callmonitor1_skin.xml.h:6 skins_callmonitor1_skin.xml.h:6
 msgid "Anzeige in Sekunden"
-msgstr ""
+msgstr "Display for seconds"
 
 #: plugins_callmonitor1_skin.xml.h:7 skins_callmonitor1_skin.xml.h:7
 msgid "ausgehende Anrufe"
-msgstr ""
+msgstr "Outgoing calls"
 
 #: plugins_callmonitor1_skin.xml.h:8 skins_callmonitor1_skin.xml.h:8
 msgid "bei Anruf stumm"
-msgstr ""
+msgstr "Mute on incoming call"
 
 #: plugins_callmonitor1_skin.xml.h:9 skin_default_skin.xml.h:116
 #: skins_callmonitor1_skin.xml.h:9
@@ -3456,7 +3456,7 @@ msgstr "Broadcast address"
 
 #: plugins_callmonitor1_skin.xml.h:10 skins_callmonitor1_skin.xml.h:10
 msgid "eingehende Anrufe"
-msgstr ""
+msgstr "Incoming call"
 
 #: plugins_callmonitor1_skin.xml.h:12 skins_callmonitor1_skin.xml.h:12
 msgid "FritzBook"
@@ -3472,15 +3472,15 @@ msgstr ""
 
 #: plugins_callmonitor1_skin.xml.h:15 skins_callmonitor1_skin.xml.h:15
 msgid "LOAD-FritzBook"
-msgstr ""
+msgstr "Load Fritzbook"
 
 #: plugins_callmonitor1_skin.xml.h:16 skins_callmonitor1_skin.xml.h:16
 msgid "Nutzername-Fritzbox (optional)"
-msgstr ""
+msgstr "Fritzbox Username (optional)"
 
 #: plugins_callmonitor1_skin.xml.h:17 skins_callmonitor1_skin.xml.h:17
 msgid "Passwort-FritzBox"
-msgstr ""
+msgstr "Fritzbox Password"
 
 #: plugins_catcatch_skin.xml.h:1 skins_catcatch_skin.xml.h:1
 msgid "Cat-Catch"
@@ -3502,11 +3502,11 @@ msgstr ""
 
 #: plugins_dlna_skin.xml.h:1 skins_dlna_skin.xml.h:1
 msgid "DLNA Settings"
-msgstr "DLNA Settings"
+msgstr ""
 
 #: plugins_dlna_skin.xml.h:3 skins_dlna_skin.xml.h:3
 msgid "Interface"
-msgstr "Interface"
+msgstr ""
 
 #: plugins_dlna_skin.xml.h:4 skins_dlna_skin.xml.h:4
 msgid "Media Dir 1"
@@ -3530,12 +3530,12 @@ msgstr "Port"
 
 #: plugins_dlna_skin.xml.h:11 skins_dlna_skin.xml.h:11
 msgid "Server Name"
-msgstr "Server Name"
+msgstr ""
 
 #: plugins_dlna_skin.xml.h:13 skin_default_skin.xml.h:605
 #: skins_dlna_skin.xml.h:13
 msgid "Start on boot"
-msgstr "Start on boot"
+msgstr ""
 
 #: plugins_dlna_skin.xml.h:14 plugins_tsSchnitt_skin.xml.h:9
 #: skin_default_skin.xml.h:610 skins_dlna_skin.xml.h:14
@@ -3545,7 +3545,7 @@ msgstr "Stop"
 
 #: plugins_facebook_skin.xml.h:1 skins_facebook_skin.xml.h:1 tpk_showname.h:21
 msgid "Facebook"
-msgstr "RC Reboot"
+msgstr ""
 
 #: plugins_facebook_skin.xml.h:2 skins_facebook_skin.xml.h:2
 msgid "Facebook Register"
