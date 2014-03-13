@@ -240,7 +240,7 @@ struct channelslot *channelslot = NULL;
 #include "settings_pluginbutton.h"
 #include "bcm.h"
 
-#define TIMECODE "26479201402260000"
+#define TIMECODE ""
 
 // mipsel start
 /* Apparently, surfaces must be 64-byte aligned */
@@ -728,11 +728,14 @@ int main(int argc, char *argv[])
 	if(tmpstr != NULL)
 		fb1 = openfb(tmpstr, 1);
 	tmpstr = NULL;
-	
+
 #ifdef MIPSEL
-	status.usedirectfb = 1;
+// disable... with this jpg not working
+//	status.usedirectfb = 1;
 	waitvsync();
-#else
+#endif
+// disable... with this jpg not working	
+//#else
 	if(status.usedirectfb != 1)
 	{
 		skinfb = addfb(SKINFB, 0, getconfigint("skinfbwidth", NULL), getconfigint("skinfbheight", NULL), 4, fb->fd, fb->fb + fb->varfbsize, fb->fixfbsize);
@@ -748,7 +751,8 @@ int main(int argc, char *argv[])
 			status.usedirectfb = 1;
 		}
 	}
-#endif
+// disable... with this jpg not working	
+//#endif
 
 	if(status.usedirectfb == 1)
 	{
