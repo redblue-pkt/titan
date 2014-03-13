@@ -7629,7 +7629,7 @@ msgstr "Grenzwert"
 
 #: skin_default_skin.xml.h:643
 msgid "Timer"
-msgstr ""
+msgstr "Aufnahme"
 
 #: skin_default_skin.xml.h:644
 msgid "Timer Record Path"
