@@ -1551,7 +1551,7 @@ msgstr "In der Gruppe schreiben"
 
 #: faststream.h:107 played.h:107
 msgid "Connect with Hoster wait 10 seconds"
-msgstr ""
+msgstr "Verbinde mit dem Hoster, warten Sie 10 Sekunden"
 
 #: filemanager.h:23 filemanager.h:86 filemanager.h:92
 msgid "Rename"
@@ -4573,7 +4573,7 @@ msgstr "Ausschalten"
 
 #: primeshare.h:82
 msgid "Connect with Hoster wait 20 seconds"
-msgstr ""
+msgstr "Verbinde mit dem Hoster, warten Sie 20 Sekunden"
 
 #: putlocker.h:85
 msgid "This file doesn't exist, or has been removed."
@@ -8084,7 +8084,7 @@ msgstr ""
 
 #: streamcloud.h:72
 msgid "Connect with Hoster wait 16 seconds"
-msgstr ""
+msgstr "Verbinde mit dem Hoster, warten Sie 16 Sekunden"
 
 #: stream.h:33
 msgid "No Live Stream running"
