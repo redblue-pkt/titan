@@ -98,7 +98,7 @@ void waitmsgbar(int sec, int exit, char* text, int flag)
 	if(text == NULL)
 		tmpstr = ostrcat("0%", NULL, 0, 0);
 	else
-		tmpstr = ostrcat(_(text), " (0%)", 0, 0);
+		tmpstr = ostrcat(text, " (0%)", 0, 0);
 	changetext(waitmsgbar, tmpstr);
 	free(tmpstr); tmpstr = NULL;
 	
@@ -126,7 +126,7 @@ void waitmsgbar(int sec, int exit, char* text, int flag)
 			tmpstr = ostrcat(oitoa(waitmsgbar->progresssize), "%", 1, 0);
 		else
 		{
-			tmpstr = ostrcat(_(text), " (", 0, 0);
+			tmpstr = ostrcat(text, " (", 0, 0);
 			tmpstr = ostrcat(tmpstr, oitoa(waitmsgbar->progresssize), 1, 1);
 			tmpstr = ostrcat(tmpstr, "%)", 1, 0);
 		}

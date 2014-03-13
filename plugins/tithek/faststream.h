@@ -104,7 +104,7 @@ char* faststream(char* link)
 		goto end;
 	}
 
-	waitmsgbar(20, 0, "wait 10 seconds", 1);
+	waitmsgbar(10, 0, _("Connect with Hoster wait 10 seconds"), 1);
 
 	//get hash from tmpstr
 	char* pos1 = ostrstr(tmpstr, "<input type=\"hidden\" name=\"fname\" value=");
