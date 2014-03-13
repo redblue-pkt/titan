@@ -177,12 +177,12 @@ void blitfb2(struct fb* fbnode, int flag)
 	}
 
 	ioctl(fb->fd, FBIOGET_VSCREENINFO, &var_screeninfo);
-//	if ((var_screeninfo.xres!=fb->width) && (var_screeninfo.yres!=fb->height) && (var_screeninfo.bits_per_pixel!=fb->colbytes))
-//	{
+	if ((var_screeninfo.xres!=fb->width) && (var_screeninfo.yres!=fb->height) && (var_screeninfo.bits_per_pixel!=fb->colbytes))
+	{
 		debug(444, "SetMode failed: wanted: %dx%dx%d, got %dx%dx%d",
 			fb->width, fb->height, fb->colbytes,
 			var_screeninfo.xres, var_screeninfo.yres, var_screeninfo.bits_per_pixel);
-//	}
+	}
 /*	
 	int xRes, yRes, stride, bpp;
 	
