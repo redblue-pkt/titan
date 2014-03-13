@@ -153,8 +153,8 @@ void mc_main()
 	writesysint("/proc/sys/vm/drop_caches", 3, 0);
 	
 	debug(50, "[mc_main] umounting: fuse, (rarfs,isofs,imgfs)");
-//	system("/bin/umount -fl `mount | grep fuse | grep rarfs | grep -v '/dev/' | cut -d ' ' -f3`; killall -9 rarfs");
-//	system("/bin/umount -fl `mount | grep fuse | grep -v '/dev/' | cut -d ' ' -f3`; /bin/umount -fl `mount | grep iso9660 | cut -d ' ' -f3`; killall -9 rarfs fusesmb curlftpfs");
+	system("/bin/umount -fl `mount | grep fuse | grep rarfs | grep -v '/dev/' | cut -d ' ' -f3`; killall -9 rarfs");
+	system("/bin/umount -fl `mount | grep fuse | grep -v '/dev/' | cut -d ' ' -f3`; /bin/umount -fl `mount | grep iso9660 | cut -d ' ' -f3`; killall -9 rarfs fusesmb curlftpfs");
 	system("umount -a -f -t fuse.rarfs,iso9660,fuse.djmount,fuse.fusesmb,fuse.curlftpfs");
 
 	char* tmpstr = NULL;

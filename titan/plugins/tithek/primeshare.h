@@ -79,7 +79,7 @@ char* primeshare(char* link)
 		textbox(_("Message"), _("The file is being transfered to our other servers. This may take few minutes.") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
 		goto end;
 	}
-	waitmsgbar(20, 0, "wait 20 seconds", 1);
+	waitmsgbar(20, 0, _("Connect with Hoster wait 20 seconds"), 1);
 
 	phpsessid = getxmlentry(tmpstr, "PHPSESSID=");
 	debug(99, "phpsessid: %s", phpsessid);
