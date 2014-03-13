@@ -3130,7 +3130,7 @@ msgstr "Standby CPU Frequency"
 
 #: panel_settings_overclocking.h:275 settings_overclocking.h:275
 msgid "Use Teletxt Workaround"
-msgstr ""
+msgstr "Use Teletext workaround"
 
 #: panel_settings_overclocking.h:276 settings_overclocking.h:276
 msgid "frequency"
@@ -3138,7 +3138,7 @@ msgstr "Frequency"
 
 #: panel_settings_overclocking.h:276 settings_overclocking.h:276
 msgid "videmode"
-msgstr ""
+msgstr "Videomode"
 
 #: panel_settings_wizard.h:6
 msgid ""
@@ -3593,7 +3593,7 @@ msgstr "Actors: "
 #: plugins_tmc_skin.xml.h:4 skins_imdbapi_skin.xml.h:2 skins_imdb_skin.xml.h:2
 #: skins_tmc_skin.xml.h:4
 msgid "Director:"
-msgstr "Imdb Verzeichnis"
+msgstr ""
 
 #: plugins_imdbapi_skin.xml.h:4 skins_imdbapi_skin.xml.h:4
 msgid "IMDb-API - Plugin"
@@ -3623,7 +3623,7 @@ msgstr "Search"
 #: plugins_imdbapi_skin.xml.h:10 plugins_imdb_skin.xml.h:10
 #: skins_imdbapi_skin.xml.h:10 skins_imdb_skin.xml.h:10
 msgid "Writers:"
-msgstr "Write error"
+msgstr ""
 
 #: plugins_imdb_skin.xml.h:4 skins_imdb_skin.xml.h:4
 msgid "IMDb - Plugin"
@@ -3631,15 +3631,15 @@ msgstr "Plugins"
 
 #: plugins_instar_skin.xml.h:1 skins_instar_skin.xml.h:1
 msgid "IP-Kammera Einstellungen"
-msgstr ""
+msgstr "IP camera settings"
 
 #: plugins_instar_skin.xml.h:2 skins_instar_skin.xml.h:2
 msgid "Benutzer-Kammera 1"
-msgstr ""
+msgstr "user camera 1"
 
 #: plugins_instar_skin.xml.h:3 skins_instar_skin.xml.h:3
 msgid "Benutzer-Kammera 2"
-msgstr ""
+msgstr "user camera 2"
 
 #: plugins_instar_skin.xml.h:4 skins_instar_skin.xml.h:4
 msgid "CAMx"
@@ -3647,39 +3647,39 @@ msgstr ""
 
 #: plugins_instar_skin.xml.h:5 skins_instar_skin.xml.h:5
 msgid "direkter Start"
-msgstr ""
+msgstr "direct start"
 
 #: plugins_instar_skin.xml.h:7 skins_instar_skin.xml.h:7
 msgid "IP-Kammera 1"
-msgstr ""
+msgstr "IP camera 1"
 
 #: plugins_instar_skin.xml.h:8 skins_instar_skin.xml.h:8
 msgid "IP-Kammera 2"
-msgstr ""
+msgstr "IP camera 2"
 
 #: plugins_instar_skin.xml.h:9 skins_instar_skin.xml.h:9
 msgid "Kammera 1"
-msgstr ""
+msgstr "camera 1"
 
 #: plugins_instar_skin.xml.h:10 skins_instar_skin.xml.h:10
 msgid "Kammera 2 (Umschalten mit Rot)"
-msgstr ""
+msgstr "camera 2 (switch with red button)"
 
 #: plugins_instar_skin.xml.h:11 skins_instar_skin.xml.h:11
 msgid "Passwort-Kammera 1"
-msgstr ""
+msgstr "password camera 1"
 
 #: plugins_instar_skin.xml.h:12 skins_instar_skin.xml.h:12
 msgid "Passwort-Kammera 2"
-msgstr ""
+msgstr "password camera 2"
 
 #: plugins_instar_skin.xml.h:13 skins_instar_skin.xml.h:13
 msgid "Port-Kammera 1"
-msgstr ""
+msgstr "Port camera 1"
 
 #: plugins_instar_skin.xml.h:14 skins_instar_skin.xml.h:14
 msgid "Port-Kammera 2"
-msgstr ""
+msgstr "Port camera 2"
 
 #: plugins_lcdpearl1_skin.xml.h:1 skins_lcdpearl1_skin.xml.h:1
 msgid "Pearl LCD Settings"
@@ -3698,31 +3698,31 @@ msgstr "Show in Standby"
 #: plugins_lcdpearl1_skin.xml.h:5 plugins_lcdsamsung_skin.xml.h:5
 #: skins_lcdpearl1_skin.xml.h:5 skins_lcdsamsung_skin.xml.h:5
 msgid "alle Menus anzeigen"
-msgstr ""
+msgstr "show all menues"
 
 #: plugins_lcdpearl1_skin.xml.h:6 skins_lcdpearl1_skin.xml.h:6
 msgid "Auswahl"
-msgstr ""
+msgstr "selection"
 
 #: plugins_lcdpearl1_skin.xml.h:8 plugins_lcdsamsung_skin.xml.h:9
 #: skins_lcdpearl1_skin.xml.h:8 skins_lcdsamsung_skin.xml.h:9
 msgid "--- Land"
-msgstr ""
+msgstr "--- country"
 
 #: plugins_lcdpearl1_skin.xml.h:9 plugins_lcdsamsung_skin.xml.h:12
 #: skins_lcdpearl1_skin.xml.h:9 skins_lcdsamsung_skin.xml.h:12
 msgid "--- Ort"
-msgstr ""
+msgstr "--- location"
 
 #: plugins_lcdpearl1_skin.xml.h:10 plugins_lcdsamsung_skin.xml.h:13
 #: skins_lcdpearl1_skin.xml.h:10 skins_lcdsamsung_skin.xml.h:13
 msgid "--- PLZ"
-msgstr ""
+msgstr "--- postal code"
 
 #: plugins_lcdpearl1_skin.xml.h:13 plugins_lcdsamsung_skin.xml.h:17
 #: skins_lcdpearl1_skin.xml.h:13 skins_lcdsamsung_skin.xml.h:17
 msgid "Wettervorhersage"
-msgstr ""
+msgstr "weatherforecast"
 
 #: plugins_lcdsamsung_skin.xml.h:1 skins_lcdsamsung_skin.xml.h:1
 msgid "Samsung SPF.. Settings"
@@ -3730,15 +3730,15 @@ msgstr "Samba Server Settings"
 
 #: plugins_lcdsamsung_skin.xml.h:6 skins_lcdsamsung_skin.xml.h:6
 msgid "DI"
-msgstr "Edit"
+msgstr "TU"
 
 #: plugins_lcdsamsung_skin.xml.h:7 skins_lcdsamsung_skin.xml.h:7
 msgid "DO"
-msgstr ""
+msgstr "THU"
 
 #: plugins_lcdsamsung_skin.xml.h:10 skins_lcdsamsung_skin.xml.h:10
 msgid "MI"
-msgstr ""
+msgstr "WED"
 
 #: plugins_lcdsamsung_skin.xml.h:11 skins_lcdsamsung_skin.xml.h:11
 msgid "MO"
@@ -3746,19 +3746,19 @@ msgstr ""
 
 #: plugins_lcdsamsung_skin.xml.h:16 skins_lcdsamsung_skin.xml.h:16
 msgid "Typenbezeichnung"
-msgstr ""
+msgstr "LCD Type"
 
 #: plugins_mc_skin.xml.h:1 skins_mc_skin.xml.h:1
 msgid "MC VideoPlayer Imdb Settings"
-msgstr "MC VideoPlayer Imdb Settings"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:2 skins_mc_skin.xml.h:2
 msgid "MC VideoPlayer Sort Settings"
-msgstr "MC VideoPlayer Sort Settings"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:3 skins_mc_skin.xml.h:3
 msgid "MC VideoPlayer View Settings"
-msgstr "MC VideoPlayer View Settings"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:8 skins_mc_skin.xml.h:8
 msgid "Apple Trailer"
@@ -3766,27 +3766,27 @@ msgstr "Apple Movie Trailer"
 
 #: plugins_mc_skin.xml.h:9 skins_mc_skin.xml.h:9
 msgid "AUDIO"
-msgstr "AUDIO"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:10 skins_mc_skin.xml.h:10
 msgid "Audio Player"
-msgstr "Audio Player"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:11 skins_mc_skin.xml.h:11
 msgid "AUDIO SETTINGS"
-msgstr "AUDIO SETTINGS"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:12 skins_mc_skin.xml.h:12
 msgid "Autostart Playlist"
-msgstr "Autostart Playlist"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:13 skins_mc_skin.xml.h:13
 msgid "Backdrop Interval"
-msgstr "Backdrop Interval"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:15 skins_mc_skin.xml.h:15
 msgid "Choice Menu"
-msgstr "Power Menu"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:17 skins_mc_skin.xml.h:17
 msgid "Datei Browser"
@@ -3794,7 +3794,7 @@ msgstr "File Browser"
 
 #: plugins_mc_skin.xml.h:19 skins_mc_skin.xml.h:19
 msgid "default Directory"
-msgstr "default Directory"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:20 skins_mc_skin.xml.h:20
 msgid "details"
@@ -3817,31 +3817,31 @@ msgstr "Alternative file result"
 
 #: plugins_mc_skin.xml.h:28 skins_mc_skin.xml.h:28
 msgid "Filename:"
-msgstr "Rename"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:31 skins_mc_skin.xml.h:31
 msgid "Internet Browser"
-msgstr "Internet Browser"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:32 skins_mc_skin.xml.h:32
 msgid "Interval"
-msgstr "Interval"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:33 skins_mc_skin.xml.h:33
 msgid "MediaDB autoscan"
-msgstr "MediaDB Path"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:34 skins_mc_skin.xml.h:34
 msgid "Mediathek"
-msgstr "Mediathek"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:35 skins_mc_skin.xml.h:35
 msgid "mvid"
-msgstr "mvid"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:36 skins_mc_skin.xml.h:36
 msgid "My Video"
-msgstr "My Video"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:39 skins_mc_skin.xml.h:39
 msgid "Picdenom Mode"
@@ -3849,7 +3849,7 @@ msgstr "Pic SW-decode"
 
 #: plugins_mc_skin.xml.h:40 skins_mc_skin.xml.h:40
 msgid "Pic HW-decode"
-msgstr "Pic HW-decode"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:41 skins_mc_skin.xml.h:41
 msgid "Pic quality"
@@ -3859,82 +3859,82 @@ msgstr "Picture quality"
 #: skin_default_skin.xml.h:430 skins_mc_skin.xml.h:42
 #: skins_tithek_skin.xml.h:11
 msgid "PICTURE"
-msgstr "PICTURE"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:43 skins_mc_skin.xml.h:43
 msgid "Picture Player"
-msgstr "Picture Player"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:44 skins_mc_skin.xml.h:44
 msgid "PICTURE SETTINGS"
-msgstr "PICTURE SETTINGS"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:46 skins_mc_skin.xml.h:46
 msgid "Radio Player"
-msgstr "Radio Player"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:52 plugins_tithek_skin.xml.h:14
 #: skins_mc_skin.xml.h:52 skins_tithek_skin.xml.h:14
 msgid "Screensaver"
-msgstr "Screensaver"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:53 plugins_panel_skin.xml.h:5
 #: plugins_panel_skin.xml.h:22 skin_default_skin.xml.h:560
 #: skins_mc_skin.xml.h:53 skins_panel_skin.xml.h:5 skins_panel_skin.xml.h:22
 msgid "Settings"
-msgstr "Settings"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:54 skins_mc_skin.xml.h:54
 msgid "Show Pictitle"
-msgstr "Show Pictitle"
+msgstr "Show Picture title"
 
 #: plugins_mc_skin.xml.h:56 skins_mc_skin.xml.h:56
 msgid "small"
-msgstr "small"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:57 skins_mc_skin.xml.h:57
 msgid "Sort"
-msgstr "Sort"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:58 skin_default_skin.xml.h:588 skins_mc_skin.xml.h:58
 msgid "Sorting"
-msgstr "Sorting"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:59 skins_mc_skin.xml.h:59
 msgid "Sound"
-msgstr "Sound"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:60 skins_mc_skin.xml.h:60
 msgid "Style"
-msgstr "Style"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:61 skins_mc_skin.xml.h:61
 msgid "use last Directory"
-msgstr "use last Directory"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:62 skins_mc_skin.xml.h:62
 msgid "VIDEO"
-msgstr "VIDEO"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:63 skins_mc_skin.xml.h:63
 msgid "Video Player"
-msgstr "Video Player"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:64 skins_mc_skin.xml.h:64
 msgid "VIDEO SETTINGS"
-msgstr "VIDEO SETTINGS"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:66 skins_mc_skin.xml.h:66
 msgid "VLC Player"
-msgstr "VLC Player"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:67 skins_mc_skin.xml.h:67
 msgid "Weather Infos"
-msgstr "Weather Infos"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:68 skins_mc_skin.xml.h:68
 msgid "Web Radio Player"
-msgstr "Web Radio Player"
+msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:1 plugins_stock_skin.xml.h:2
 #: plugins_weather_skin.xml.h:1 skin_default_skin.xml.h:58
@@ -3945,11 +3945,11 @@ msgstr "Add"
 
 #: plugins_networkbrowser_skin.xml.h:2 skins_networkbrowser_skin.xml.h:2
 msgid "Auth Settings"
-msgstr "Audio/Video Settings"
+msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:3 skins_networkbrowser_skin.xml.h:3
 msgid "AUTH SETTINGS"
-msgstr "AUDIO SETTINGS"
+msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:4 skins_networkbrowser_skin.xml.h:4
 msgid "COPY"
