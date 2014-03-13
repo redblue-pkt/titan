@@ -1523,6 +1523,10 @@ msgstr ""
 msgid "Post in group"
 msgstr ""
 
+#: faststream.h:107 played.h:107
+msgid "Connect with Hoster wait 10 seconds"
+msgstr ""
+
 #: filemanager.h:23 filemanager.h:86 filemanager.h:92
 msgid "Rename"
 msgstr "Rinomina"
@@ -4523,6 +4527,10 @@ msgstr ""
 #: powerofftimer.h:117
 msgid "DeepStandby"
 msgstr "Standby"
+
+#: primeshare.h:82
+msgid "Connect with Hoster wait 20 seconds"
+msgstr ""
 
 #: putlocker.h:85
 msgid "This file doesn't exist, or has been removed."
@@ -8055,6 +8063,10 @@ msgstr ""
 
 #: stopifnotused.c:106
 msgid "240"
+msgstr ""
+
+#: streamcloud.h:72
+msgid "Connect with Hoster wait 16 seconds"
 msgstr ""
 
 #: stream.h:33
