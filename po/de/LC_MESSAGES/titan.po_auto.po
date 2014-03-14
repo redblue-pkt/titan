@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: TitanNit 1.50\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-07 10:44+0200\n"
-"PO-Revision-Date: 2014-03-14 16:43+0100\n"
+"PO-Revision-Date: 2014-03-14 23:07+0100\n"
 "Last-Translator: caliban <aaf-caliban@e.mail.de>\n"
 "Language-Team: German <_obiwan_@web.de>\n"
 "Language: de\n"
@@ -5090,7 +5090,9 @@ msgstr ""
 msgid ""
 "Can't find a Tuner.\n"
 "All Tuners in use or no Tuner defined."
-msgstr "Kein freier Tuner gefunden oder kein Tuner definiert."
+msgstr ""
+"Kein freier Tuner gefunden oder\n"
+"kein Tuner definiert."
 
 #: service.h:937
 msgid "Tuning to Channel failed!"
@@ -5494,7 +5496,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:101
 msgid "Backup"
-msgstr "Image sichern"
+msgstr "Einstellungen sichern"
 
 #: skin_default_skin.xml.h:102 system_backup_restore.h:18
 #: system_backup_restore.h:75
@@ -7591,7 +7593,7 @@ msgstr "Grenzwert"
 
 #: skin_default_skin.xml.h:643
 msgid "Timer"
-msgstr "Aufnahme"
+msgstr ""
 
 #: skin_default_skin.xml.h:644
 msgid "Timer Record Path"
