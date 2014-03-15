@@ -8495,7 +8495,7 @@ msgstr "Automatic stop in 5 Seconds"
 #: tithek.c:79
 msgid ""
 "Alternativ Audio Firmware not working korrekt with all videos (DTSDOWNMIX)!"
-msgstr ""
+msgstr "Alternativ Audio Firmware is not working correctly with all videos (DTSDOWNMIX)!"
 
 #: tithek.c:100
 msgid "Tithek - Mainmenu"
