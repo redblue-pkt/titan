@@ -10776,12 +10776,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid "Records"
-#~ msgstr "Records"
-
-#~ msgid "Records and EPG"
-#~ msgstr "Timer and EPG"
-
-#~ msgid "Records and EPG ..."
-#~ msgstr "Timer and EPG"

@@ -10463,9 +10463,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid "Records"
-#~ msgstr "Ścieżka nagrywania"
-
-#~ msgid "Records and EPG"
-#~ msgstr "Ścieżka nagrywania"

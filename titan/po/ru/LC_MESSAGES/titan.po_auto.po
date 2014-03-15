@@ -10465,9 +10465,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid "Records"
-#~ msgstr "Место хранения записи"
-
-#~ msgid "Records and EPG"
-#~ msgstr "Место хранения записи"
