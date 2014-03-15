@@ -10695,27 +10695,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid "Channel Service..."
-#~ msgstr "Sendersuche"
-
-#~ msgid "diseqcscreen..."
-#~ msgstr "DiSEqC"
-
-#~ msgid "Extensions..."
-#~ msgstr "Erweiterungen"
-
-#~ msgid "Information..."
-#~ msgstr "Informationen"
-
-#~ msgid "Settings..."
-#~ msgstr "Einstellungen"
-
-#~ msgid "Standby / Poweroff..."
-#~ msgstr "Neustart/Ausschalten"
-
-#~ msgid "System..."
-#~ msgstr "System"
-
-#~ msgid "Timer and EPG ..."
-#~ msgstr "Timer und EPG"

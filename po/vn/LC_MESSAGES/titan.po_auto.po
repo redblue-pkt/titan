@@ -10621,21 +10621,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid "Channel Service..."
-#~ msgstr " Dịch vụ chương trình …"
-
-#~ msgid "Extensions..."
-#~ msgstr "mở rộng"
-
-#~ msgid "Information..."
-#~ msgstr "Thông tin…"
-
-#~ msgid "Settings..."
-#~ msgstr "Thiết lập..."
-
-#~ msgid "Standby / Poweroff..."
-#~ msgstr "Standby / Tắt nguồn..."
-
-#~ msgid "System..."
-#~ msgstr " Hệ thống..."

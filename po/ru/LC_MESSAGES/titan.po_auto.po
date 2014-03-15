@@ -10444,21 +10444,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid "Channel Service..."
-#~ msgstr "Настройки приема..."
-
-#~ msgid "Extensions..."
-#~ msgstr "Плагины"
-
-#~ msgid "Information..."
-#~ msgstr "Информация..."
-
-#~ msgid "Settings..."
-#~ msgstr "Настройки..."
-
-#~ msgid "Standby / Poweroff..."
-#~ msgstr "Standby / Выключить"
-
-#~ msgid "System..."
-#~ msgstr "Система..."

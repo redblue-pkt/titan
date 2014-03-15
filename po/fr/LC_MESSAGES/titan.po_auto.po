@@ -10442,21 +10442,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid "Channel Service..."
-#~ msgstr "Service chaine"
-
-#~ msgid "Extensions..."
-#~ msgstr "Extensions"
-
-#~ msgid "Information..."
-#~ msgstr "Information"
-
-#~ msgid "Settings..."
-#~ msgstr "Réglages"
-
-#~ msgid "Standby / Poweroff..."
-#~ msgstr "Veille / Arrét"
-
-#~ msgid "System..."
-#~ msgstr "Système"

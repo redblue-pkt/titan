@@ -10444,21 +10444,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid "Channel Service..."
-#~ msgstr "Ρύθμιση - Αναζήτηση Καναλιών"
-
-#~ msgid "Extensions..."
-#~ msgstr "Επεκτάσεις"
-
-#~ msgid "Information..."
-#~ msgstr "Πληροφορίες..."
-
-#~ msgid "Settings..."
-#~ msgstr "Ρυθμίσεις..."
-
-#~ msgid "Standby / Poweroff..."
-#~ msgstr "Standby / Κλείσιμο..."
-
-#~ msgid "System..."
-#~ msgstr "Σύστημα..."
