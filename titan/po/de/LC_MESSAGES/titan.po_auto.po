@@ -8410,7 +8410,9 @@ msgstr "Automatisches Beenden in 10 Sekunden."
 #: tithek.c:79
 msgid ""
 "Alternativ Audio Firmware not working korrekt with all videos (DTSDOWNMIX)!"
-msgstr "Die Alternativ Audio Firmware funktioniert nicht mit allen Videos (DTSDOWNMIX) "
+msgstr ""
+"Die Alternativ Audio Firmware funktioniert nicht mit allen Videos "
+"(DTSDOWNMIX) "
 
 #: tithek.c:100
 msgid "Tithek - Mainmenu"
