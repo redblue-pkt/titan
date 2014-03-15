@@ -10642,12 +10642,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid "Records"
-#~ msgstr "Bản ghi"
-
-#~ msgid "Records and EPG"
-#~ msgstr "Ghi và EPG"
-
-#~ msgid "Records and EPG ..."
-#~ msgstr "Ghi và EPG..."
