@@ -5649,7 +5649,7 @@ msgstr "Sendersuche"
 
 #: skin_default_skin.xml.h:133
 msgid "Channel Service"
-msgstr ""
+msgstr "Sendersuche"
 
 #: skin_default_skin.xml.h:136
 msgid "Clear"
@@ -5821,7 +5821,7 @@ msgstr "DiSEqC Wiederholungen"
 
 #: skin_default_skin.xml.h:183
 msgid "diseqcscreen"
-msgstr ""
+msgstr "DiSEqC"
 
 #: skin_default_skin.xml.h:184
 msgid "Diseqc Settings"
