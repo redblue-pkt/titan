@@ -10776,24 +10776,3 @@ msgstr "Plaats"
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid "Channel Service..."
-#~ msgstr "Zender zoeken"
-
-#~ msgid "diseqcscreen..."
-#~ msgstr "diseqcscherm"
-
-#~ msgid "Extensions..."
-#~ msgstr "Plugins"
-
-#~ msgid "Information..."
-#~ msgstr "Informatie"
-
-#~ msgid "Settings..."
-#~ msgstr "Instellingen"
-
-#~ msgid "Standby / Poweroff..."
-#~ msgstr "Standby / Uitschakelen"
-
-#~ msgid "System..."
-#~ msgstr "Systeem"
