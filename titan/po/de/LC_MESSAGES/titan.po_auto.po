@@ -2196,7 +2196,7 @@ msgstr "Änderung der Sprache benötigt einen Neustart!"
 
 #: lcdpearl1.c:45 lcdsamsung.c:101
 msgid "ERROR cant start LCD driver"
-msgstr ""
+msgstr "FEHLER: Kann LCD Treiber nicht laden"
 
 #: lcdsamsung.c:966
 msgid "SPF-72H"
@@ -2284,7 +2284,7 @@ msgstr "Ihr Marker wurde erfolgreich gesetzt"
 
 #: mboxinfo.c:49
 msgid "File not found !!"
-msgstr ""
+msgstr "Datei nicht gefunden"
 
 #: mc_audioplayer.h:328 mc_main.h:252 mc_pictureplayer.h:119
 #: mc_videoplayer.h:329
@@ -2533,7 +2533,7 @@ msgstr "Datei"
 
 #: mediadb.h:2443
 msgid "path"
-msgstr ""
+msgstr "Pfad"
 
 #: mediadb.h:2447
 msgid "title"
@@ -4329,7 +4329,7 @@ msgstr ""
 
 #: plugins_tithek_skin.xml.h:8 skins_tithek_skin.xml.h:8
 msgid "Menu Title"
-msgstr ""
+msgstr "Menü Titel"
 
 #: plugins_tithek_skin.xml.h:9 skins_tithek_skin.xml.h:9
 msgid "Pic Link"
@@ -4358,7 +4358,7 @@ msgstr ""
 
 #: plugins_tithek_skin.xml.h:17 skins_tithek_skin.xml.h:17
 msgid "TiThek - Favorite Edit"
-msgstr ""
+msgstr "TiThek - Favoriten bearbeiten"
 
 #: plugins_tithek_skin.xml.h:18 skin_default_skin.xml.h:647
 #: skins_tithek_skin.xml.h:18
@@ -6954,7 +6954,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:442
 msgid "please wait"
-msgstr ""
+msgstr "bitte warten"
 
 #: skin_default_skin.xml.h:443
 msgid "Plot"
@@ -8410,7 +8410,7 @@ msgstr "Automatisches Beenden in 10 Sekunden."
 #: tithek.c:79
 msgid ""
 "Alternativ Audio Firmware not working korrekt with all videos (DTSDOWNMIX)!"
-msgstr ""
+msgstr "Die Alternativ Audio Firmware funktioniert nicht mit allen Videos (DTSDOWNMIX) "
 
 #: tithek.c:100
 msgid "Tithek - Mainmenu"
@@ -8508,7 +8508,7 @@ msgstr "Datei in Streampfad herunterladen (im Hintergrund)"
 
 #: tithek.h:1397 tithek.h:1416
 msgid "Filename"
-msgstr ""
+msgstr "Dateiname"
 
 #: tithek.h:1404
 msgid "Start playback"
@@ -8524,7 +8524,7 @@ msgstr "TiThek Haftungsausschluss:"
 
 #: tithek.h:1485 tithek.h:1617 tithek.h:3196
 msgid "EDIT FAV"
-msgstr ""
+msgstr "FAV bearbeiten"
 
 #: tithek.h:1522
 msgid "Page"
@@ -8540,7 +8540,7 @@ msgstr "Wollen Sie diesen Favoriten hinzufügen?"
 
 #: tithek.h:3183
 msgid "Edit this Favorite ?"
-msgstr ""
+msgstr "Diesen Favoriten bearbeiten?"
 
 #: tithek_mainmenu.h:2
 msgid "All New first"
@@ -8720,7 +8720,7 @@ msgstr ""
 
 #: tithek_mainmenu.h:48
 msgid "Tips und Tricks"
-msgstr ""
+msgstr "Tipps und Tricks"
 
 #: tithek_mainmenu.h:49
 msgid "VOX-Now"
@@ -8768,7 +8768,7 @@ msgstr "sehr klein (30 Bilder)"
 
 #: tithek_settings.h:23 tithek_settings.h:32
 msgid "show in list"
-msgstr ""
+msgstr "in Liste zeigen"
 
 #: tmc.h:387
 msgid "Status"
@@ -8870,7 +8870,7 @@ msgstr ""
 
 #: tmdb.h:845
 msgid "( --votes-- )"
-msgstr ""
+msgstr "( --Stimmen-- )"
 
 #: tmdb.h:922
 msgid "Error, found result without imdbid we can't this save in MediaDB"
@@ -9045,7 +9045,7 @@ msgstr "Kabel: Standard Senderliste Kabel Deutschland"
 
 #: tpk_description.h:31
 msgid "Cable: Settings Kabel Primacom"
-msgstr ""
+msgstr "Kabel: Senderliste Primacom"
 
 #: tpk_description.h:32
 msgid "Cable: Settings Kabel Unitymedia"
@@ -10690,7 +10690,7 @@ msgstr "Wetter: "
 
 #: weather.h:514
 msgid "Location"
-msgstr ""
+msgstr "Ort"
 
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
