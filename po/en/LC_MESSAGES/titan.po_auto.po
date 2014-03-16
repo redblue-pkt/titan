@@ -42,8 +42,8 @@ msgstr ""
 #: epgsettings.h:300 extensions.h:170 extensions.h:221 extensions.h:230
 #: extensions.h:234 extensions.h:239 extensions.h:247 extensions.h:282
 #: extensions.h:290 extensions.h:297 extensions.h:304 extensions.h:336
-#: extensions.h:360 extensions.h:389 extensions.h:396 extensions.h:420
-#: extensions.h:424 extensions.h:432 extensions.h:478 facebook.h:66
+#: extensions.h:362 extensions.h:393 extensions.h:400 extensions.h:424
+#: extensions.h:428 extensions.h:436 extensions.h:482 facebook.h:66
 #: facebook.h:157 facebook.h:167 faststream.h:30 faststream.h:79
 #: faststream.h:91 faststream.h:103 faststream.h:160 filemanager.h:95
 #: filemanager.h:100 filemanager.h:208 filemanager.h:281 filemanager.h:291
@@ -134,8 +134,8 @@ msgstr ""
 #: epgsettings.h:300 extensions.h:170 extensions.h:221 extensions.h:230
 #: extensions.h:234 extensions.h:239 extensions.h:247 extensions.h:282
 #: extensions.h:290 extensions.h:297 extensions.h:304 extensions.h:336
-#: extensions.h:360 extensions.h:389 extensions.h:396 extensions.h:420
-#: extensions.h:424 extensions.h:432 extensions.h:478 facebook.h:66
+#: extensions.h:362 extensions.h:393 extensions.h:400 extensions.h:424
+#: extensions.h:428 extensions.h:436 extensions.h:482 facebook.h:66
 #: facebook.h:157 facebook.h:167 faststream.h:30 faststream.h:79
 #: faststream.h:91 faststream.h:103 faststream.h:160 filemanager.h:95
 #: filemanager.h:100 filemanager.h:208 filemanager.h:281 filemanager.h:291
@@ -527,8 +527,8 @@ msgstr ""
 #: channellist.h:920 channellist.h:922 channellist.h:1006 divxstage.h:36
 #: divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336 dlna.h:345
 #: dvdplay.h:62 epgsearch.h:27 epgsettings.h:260 epgsettings.h:286
-#: extensions.h:247 extensions.h:304 extensions.h:336 extensions.h:392
-#: extensions.h:396 extensions.h:432 facebook.h:66 facebook.h:157
+#: extensions.h:247 extensions.h:304 extensions.h:336 extensions.h:396
+#: extensions.h:400 extensions.h:436 facebook.h:66 facebook.h:157
 #: facebook.h:167 faststream.h:30 faststream.h:79 faststream.h:91
 #: faststream.h:103 faststream.h:160 filemanager.h:95 filemanager.h:100
 #: filemanager.h:208 filemanager.h:281 filemanager.h:291 filemanager.h:331
@@ -1375,7 +1375,7 @@ msgstr "Install to SWAP (USB oder HDD)"
 msgid "Choice Install Medium"
 msgstr "Choose the installation medium"
 
-#: extensions.h:170 extensions.h:221 extensions.h:478
+#: extensions.h:170 extensions.h:221 extensions.h:482
 msgid "Tpk Install Info"
 msgstr "Install Information"
 
@@ -1393,7 +1393,7 @@ msgstr "Installation - Choose Category"
 msgid "Tpk Install - select file"
 msgstr "Installation - Selection"
 
-#: extensions.h:207 extensions.h:234 extensions.h:386 tpk.h:2990
+#: extensions.h:207 extensions.h:234 extensions.h:390 tpk.h:2990
 msgid ""
 "It may only be a package to be installed. If they want to install another "
 "package of this section, they only remove the installed packet. Is not the "
@@ -1406,11 +1406,11 @@ msgstr ""
 "plugin not be visible after updating to a new version of TitanNit you will\n"
 "have to perform an online plugin update."
 
-#: extensions.h:212 extensions.h:353
+#: extensions.h:212 extensions.h:354
 msgid "Installing"
 msgstr ""
 
-#: extensions.h:218 extensions.h:357
+#: extensions.h:218 extensions.h:358
 msgid "starting"
 msgstr ""
 
@@ -1454,11 +1454,11 @@ msgstr ""
 "Removed successfully.\n"
 "Your Receiver will restart now"
 
-#: extensions.h:336 extensions.h:478
+#: extensions.h:336 extensions.h:482
 msgid "No plugin found."
 msgstr ""
 
-#: extensions.h:392
+#: extensions.h:396
 msgid ""
 "Some plugins needs restart.\n"
 "If the plugin is not active\n"
@@ -1467,25 +1467,25 @@ msgstr ""
 "Some plugins need a restart.\n"
 "Your Receiver will restart now"
 
-#: extensions.h:396
+#: extensions.h:400
 msgid "TPK Tmp Install done, your system will reboot !"
 msgstr ""
 "Installed successfully from tmp.\n"
 "Your Receiver will restart now"
 
-#: extensions.h:420 extensions.h:424
+#: extensions.h:424 extensions.h:428
 msgid "Tpk Update Info - Update ERROR"
 msgstr "ERROR: Update failed!"
 
-#: extensions.h:420
+#: extensions.h:424
 msgid "Can't get all TPK index !"
 msgstr "ATTENTION: Can't retrieve full plugin index!"
 
-#: extensions.h:424
+#: extensions.h:428
 msgid "Can't update all packages !"
 msgstr "ERROR: Not all plugins were updated!"
 
-#: extensions.h:432
+#: extensions.h:436
 msgid "TPK Upgrade done, your system will reboot !"
 msgstr ""
 "Updated successfully.\n"
