@@ -346,6 +346,7 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 		if(mbox != NULL)
 		{
 			installpath = getinstallpath(NULL, 0);
+			debug(130, "installpath: %s", installpath);
 			if(installpath != NULL)
 			{
 				debug(130, "file: %s", mbox->name);
@@ -356,6 +357,7 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 				tmpinfo = ostrcat(tmpinfo, " ", 1, 0);
 				tmpinfo = ostrcat(tmpinfo, _("starting"), 1, 0);
 				tmpinfo = ostrcat(tmpinfo, " ?", 1, 0);
+				debug(130, "tmpinfo: %s", tmpinfo);
 	
 				if(textbox(_(text2), _(tmpinfo), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0) == 2)
 				{
@@ -368,6 +370,7 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 						tmpstr = ostrcat(tmpstr, "/tmp", 1, 0);
 						tmpstr = ostrcat(tmpstr, "/", 1, 0);
 						tmpstr = ostrcat(tmpstr, mbox->name, 1, 0);
+						debug(130, "tmpstr: %s", tmpstr);
 						ret = tpkinstall(tmpstr, installpath, 0);
 						free(tmpstr); tmpstr = NULL;
 					}
@@ -376,6 +379,7 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 						tmpstr = ostrcat(tmpstr, path, 1, 0);
 						tmpstr = ostrcat(tmpstr, "/", 1, 0);
 						tmpstr = ostrcat(tmpstr, mbox->name, 1, 0);
+						debug(130, "tmpstr: %s", tmpstr);
 						ret = tpkinstall(tmpstr, installpath, 0);
 						free(tmpstr); tmpstr = NULL;
 					}
