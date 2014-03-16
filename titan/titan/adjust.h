@@ -23,8 +23,8 @@ void screenadjust()
 	struct skin* virtualzap = getscreennode(adjust, "virtualzap");
 	struct skin* fasttextrender = getscreennode(adjust, "fasttextrender");
 	struct skin* recsplitsize = getscreennode(adjust, "recsplitsize");
-	struct skin* forerun = getscreennode(adjust, "recforerun");
-	struct skin* overrun = getscreennode(adjust, "recoverrun");
+	struct skin* recforerun = getscreennode(adjust, "recforerun");
+	struct skin* recoverrun = getscreennode(adjust, "recoverrun");
 	struct skin* skip13 = getscreennode(adjust, "skip13");
 	struct skin* skip46 = getscreennode(adjust, "skip46");
 	struct skin* skip79 = getscreennode(adjust, "skip79");
@@ -126,11 +126,11 @@ void screenadjust()
 	addchoicebox(recsplitsize, "4", _("4 GB"));
 	setchoiceboxselection(recsplitsize, getconfig("recsplitsize", NULL));
 
-	changeinput(forerun, "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n15\n20\n25\n30\n35\n40\n45\n50\n55\n60");
-	setchoiceboxselection(forerun, getconfig("recforerun", NULL));
+	changeinput(recforerun, "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n15\n20\n25\n30\n35\n40\n45\n50\n55\n60");
+	setchoiceboxselection(recforerun, getconfig("recforerun", NULL));
 
-	changeinput(overrun, "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n15\n20\n25\n30\n35\n40\n45\n50\n55\n60");
-	setchoiceboxselection(overrun, getconfig("recoverrun", NULL));
+	changeinput(recoverrun, "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n15\n20\n25\n30\n35\n40\n45\n50\n55\n60");
+	setchoiceboxselection(recoverrun, getconfig("recoverrun", NULL));
 
 	changeinput(skip13, "15\n20\n30\n45\n60\n90\n120\n180\n300\n600\n900\n1200");
 	setchoiceboxselection(skip13, getconfig("skip13", NULL));
@@ -301,8 +301,8 @@ void screenadjust()
 			addconfigscreencheck("faststop", faststop, "0");
 			addconfigscreencheck("dirsort", dirsort, "0");
 			addconfigscreencheck("poweraktion", poweraktion, "0");
-			addconfigscreencheck("recforerun", forerun, "0");
-			addconfigscreencheck("overrun", overrun, "0");
+			addconfigscreencheck("recforerun", recforerun, "0");
+			addconfigscreencheck("recoverrun", recoverrun, "0");
 			addconfigscreencheck("virtualzap", virtualzap, "0");
 			status.virtualzap = getconfigint("virtualzap", NULL);
 			if(fasttextrender->ret != NULL)
