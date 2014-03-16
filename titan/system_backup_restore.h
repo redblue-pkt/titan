@@ -30,7 +30,7 @@ void screensystem_backup_restore()
 			clearscreen(backup_restore);
 			if(textbox(_("Restore Settings"), _("Are you sure you want to restore settings?\n\nOK = start restore\nEXIT = abort restore"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 700, 250, 0, 0) == 1)
 			{
-				changetext(info, _("Please wait ...\n\nAll Settings are saved.\n\nBox will start in few seconds."));
+				changetext(info, _("Please wait ...\n\nAll Settings are restored.\n\nBox will start in few seconds."));
 				drawscreen(backup_restore, 0, 0);
 
 				if(isfile("/tmp/.backupdev"))
