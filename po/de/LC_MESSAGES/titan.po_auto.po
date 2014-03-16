@@ -1,3 +1,17 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: TitanNit 1.50\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-07 10:44+0200\n"
+"PO-Revision-Date: 2014-03-16 22:30+0100\n"
+"Last-Translator: caliban <aaf-caliban@e.mail.de>\n"
+"Language-Team: German <_obiwan_@web.de>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+
 #: about.h:9
 msgid "Image"
 msgstr ""
@@ -935,57 +949,6 @@ msgstr ""
 msgid "---"
 msgstr ""
 
-#: dirsort.h:18 dirsort.h:19 dirsort.h:20 dirsort.h:21 dirsort.h:22
-#: dirsort.h:23 mboxinfo.c:77 mc_imdb.h:78 mc_imdb.h:79 mc_imdb.h:80
-#: mc_imdb.h:81 mc_imdb.h:82 mc_view.h:17 mc_view.h:18 mc_view.h:19
-#: mc_view.h:20 mc_view.h:21 mc_view.h:22 plugins_autotimer_skin.xml.h:13
-#: plugins_callmonitor1_skin.xml.h:19 plugins_catcatch_skin.xml.h:7
-#: plugins_dlna_skin.xml.h:15 plugins_facebook_skin.xml.h:6
-#: plugins_filemanager_skin.xml.h:6 plugins_gmediarender_skin.xml.h:1
-#: plugins_imdbapi_skin.xml.h:11 plugins_imdb_skin.xml.h:11
-#: plugins_instar_skin.xml.h:17 plugins_keylock_skin.xml.h:1
-#: plugins_lcdpearl1_skin.xml.h:14 plugins_lcdsamsung_skin.xml.h:18
-#: plugins_mboxinfo_skin.xml.h:3 plugins_mc_skin.xml.h:70
-#: plugins_networkbrowser_skin.xml.h:37 plugins_news_skin.xml.h:5
-#: plugins_optimize_skin.xml.h:4 plugins_panel_skin.xml.h:28
-#: plugins_permtime_skin.xml.h:1 plugins_readerconfig_skin.xml.h:10
-#: plugins_rgui_skin.xml.h:9 plugins_stock_skin.xml.h:6
-#: plugins_stopifnotused_skin.xml.h:8 plugins_streaminfo_skin.xml.h:6
-#: plugins_tithek_skin.xml.h:22 plugins_tiwakeup_skin.xml.h:9
-#: plugins_tmc_skin.xml.h:18 plugins_tmdb_skin.xml.h:11
-#: plugins_tsSchnitt_skin.xml.h:11 plugins_weather_skin.xml.h:4
-#: plugins_wins3_skin.xml.h:4 plugins_zapback_skin.xml.h:7
-#: skin_default_skin.xml.h:727 skins_autotimer_skin.xml.h:13
-#: skins_callmonitor1_skin.xml.h:19 skins_catcatch_skin.xml.h:7
-#: skins_dlna_skin.xml.h:15 skins_facebook_skin.xml.h:6
-#: skins_filemanager_skin.xml.h:6 skins_gmediarender_skin.xml.h:1
-#: skins_imdbapi_skin.xml.h:11 skins_imdb_skin.xml.h:11
-#: skins_instar_skin.xml.h:17 skins_keylock_skin.xml.h:1
-#: skins_lcdpearl1_skin.xml.h:14 skins_lcdsamsung_skin.xml.h:18
-#: skins_mboxinfo_skin.xml.h:3 skins_mc_skin.xml.h:70
-#: skins_networkbrowser_skin.xml.h:37 skins_news_skin.xml.h:5
-#: skins_optimize_skin.xml.h:4 skins_panel_skin.xml.h:28
-#: skins_permtime_skin.xml.h:1 skins_readerconfig_skin.xml.h:10
-#: skins_rgui_skin.xml.h:9 skins_stock_skin.xml.h:6
-#: skins_stopifnotused_skin.xml.h:8 skins_streaminfo_skin.xml.h:6
-#: skins_tithek_skin.xml.h:22 skins_tiwakeup_skin.xml.h:9
-#: skins_tmc_skin.xml.h:18 skins_tmdb_skin.xml.h:11
-#: skins_tsSchnitt_skin.xml.h:11 skins_weather_skin.xml.h:4
-#: skins_wins3_skin.xml.h:4 skins_zapback_skin.xml.h:7 tithek_mainmenu.h:1
-msgid ""
-msgstr ""
-"Project-Id-Version: TitanNit 1.50\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-07 10:44+0200\n"
-"PO-Revision-Date: 2014-03-16 19:36+0100\n"
-"Last-Translator: caliban <aaf-caliban@e.mail.de>\n"
-"Language-Team: German <_obiwan_@web.de>\n"
-"Language: de\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
-
 #: diseqcconfig.h:9 diseqcconfig.h:16
 msgid "committed, toneburst"
 msgstr ""
@@ -1651,7 +1614,7 @@ msgstr "Grafisches-Multi-EPG - Alle Sender"
 
 #: harddisk.h:126 harddisk.h:127
 msgid "Harddisk Format - Filesystem"
-msgstr "Festplatte formatieren - Dateisystem"
+msgstr "Datenträger formatieren - Dateisystem"
 
 #: harddisk.h:165 plugins_mc_skin.xml.h:18 skins_mc_skin.xml.h:18
 msgid "default"
@@ -1659,7 +1622,7 @@ msgstr "Werkseinstellung"
 
 #: harddisk.h:213 harddisk.h:214
 msgid "Harddisk Configure"
-msgstr "Festplatte einrichten"
+msgstr "Datenträger einrichten"
 
 #: harddisk.h:225 harddisk.h:715
 msgid "use medium for record"
@@ -1715,7 +1678,7 @@ msgstr "Das Verzeichnis wurde erfolgreich erstellt/gelöscht."
 
 #: harddisk.h:433 skin_default_skin.xml.h:262
 msgid "Harddisk"
-msgstr "Festplatte"
+msgstr "Datenträger"
 
 #: harddisk.h:433
 msgid "sorry found no harddisk"
@@ -1723,7 +1686,7 @@ msgstr "Keine Festplatte/USB-Stick gefunden"
 
 #: harddisk.h:441 harddisk.h:442
 msgid "Harddisk Format - List Devices"
-msgstr "Festplatte formatieren - angeschlossene Geräte"
+msgstr "Datenträger formatieren - angeschlossene Geräte"
 
 #: harddisk.h:446 harddisk.h:447
 msgid "Harddisk Fsck - List Devices"
@@ -1731,7 +1694,7 @@ msgstr "Dateisystem prüfen- angeschl. Geräte"
 
 #: harddisk.h:451 harddisk.h:452
 msgid "Harddisk Configure - List Devices"
-msgstr "Festplatte konfigurieren - angeschlossene Geräte"
+msgstr "Datenträger konfigurieren - angeschlossene Geräte"
 
 #: harddisk.h:470
 msgid "HDD "
@@ -5713,7 +5676,7 @@ msgstr "CI-Module"
 
 #: skin_default_skin.xml.h:150
 msgid "Configure"
-msgstr "Festplatte konfigurieren"
+msgstr "Datenträger konfigurieren"
 
 #: skin_default_skin.xml.h:151
 msgid "Contrast"
@@ -6030,7 +5993,7 @@ msgstr "Schriftgröße verändern in Pixel"
 
 #: skin_default_skin.xml.h:237
 msgid "Format HDD"
-msgstr "Festplatte formatieren"
+msgstr "Datenträger formatieren"
 
 #: skin_default_skin.xml.h:238
 msgid "free space"
@@ -6279,7 +6242,7 @@ msgid ""
 "control cross and the extra buttons displayed with your remote control to "
 "select."
 msgstr ""
-"Hier können Sie Ihre Bild und Ton Einstellungen vornehmen.\n"
+"Bild und Ton Konfiguration:\n"
 "Hinweis: Die neue Auflösung muss bestätigt werden. Bei falscher Auflösung "
 "wird nach 5 Sekunden in den ursprünglichen Modus zurückgeschaltet."
 
@@ -6288,8 +6251,7 @@ msgid ""
 "Here you can make your PIN security for menus settings. Use to navigate the "
 "control cross and the extra buttons displayed with your remote control to "
 "select."
-msgstr ""
-"Hier können Sie Ihre PIN Sicherheitseinstellungen für Menüs vornehmen."
+msgstr "Hier können Sie Ihre PIN Sicherheitseinstellungen für Menüs vornehmen."
 
 #: skin_default_skin.xml.h:285
 msgid ""
@@ -6356,7 +6318,7 @@ msgid ""
 "Here you can select from the following list a skin. Use to navigate the "
 "control cross and the extra buttons displayed with your remote control to "
 "select."
-msgstr "Hier können Sie einen Skin aus der folgenden Liste auswählen."
+msgstr "Skin Auswahl:"
 
 #: skin_default_skin.xml.h:295
 msgid ""
