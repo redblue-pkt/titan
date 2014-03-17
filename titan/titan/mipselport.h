@@ -981,11 +981,11 @@ int cagetslotinfo(struct dvbdev* node, ca_slot_info_t* info)
 	struct pollfd fds;
 	
 	fds.fd = node->fd;
-	fds.events = POLLPRI | POLLIN;
+	fds.events = POLLOUT | POLLPRI | POLLIN;
 	
 	info->flags = 0;
 	
-	ret = TEMP_FAILURE_RETRY(poll(&fds, 1, 300));
+	ret = TEMP_FAILURE_RETRY(poll(&fds, 1, 1000));
 	
 	if(ret < 0)
 	{
@@ -996,10 +996,12 @@ int cagetslotinfo(struct dvbdev* node, ca_slot_info_t* info)
 		return 0; //timeout
 	else if(ret > 0)
 	{
-		if(fds.revents & POLLIN)
-			info->flags = 0;
-		if(fds.revents & POLLPRI)
+		if(fds.revents & POLLOUT)
 			info->flags = CA_CI_MODULE_READY;
+		if(fds.revents & POLLIN)
+			info->flags = CA_CI_MODULE_READY;
+		if(fds.revents & POLLPRI)
+			info->flags = 0;
 	}
 
 	return 0;

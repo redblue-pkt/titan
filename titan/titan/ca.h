@@ -159,7 +159,10 @@ int casend(struct dvbdev* dvbnode, unsigned char* buf, int len)
 		err("no mem");
 		return 1;
 	}
-
+	
+#ifdef MIPSEL
+	memcpy(tmpbuf, buf, len);
+#else
 	// should we send a data last ?
 	if(buf != NULL)
 	{
@@ -191,7 +194,25 @@ int casend(struct dvbdev* dvbnode, unsigned char* buf, int len)
 		len = 5;
 		flag = 1;
 	}
+#endif
 
+	if(debug_level == 620)
+	{
+		int i = 0;
+		printf("CA casend to queue (slot %d fd %d): > ", dvbnode->devnr, dvbnode->fd);
+		for(i = 0; i < len; i++)
+			printf("%02x ", tmpbuf[i]);
+		printf("\n");
+	}
+	
+#ifdef MIPSEL
+	int ret = cawrite(dvbnode, dvbnode->fd, tmpbuf, len, flag, -1);
+	if(ret < 0 || ret != len)
+	{
+		err("writing data to queue, slot %d", dvbnode->devnr);
+		return 1; //error
+	}
+#else
 	struct queue* qe = addqueue(dvbnode->devnr, tmpbuf, len, NULL, 0, flag, NULL);
 	free(tmpbuf); tmpbuf = NULL;
 	if(qe == NULL)
@@ -199,6 +220,7 @@ int casend(struct dvbdev* dvbnode, unsigned char* buf, int len)
 		err("writing data to queue, slot %d", dvbnode->devnr);
 		return 1; //error
 	}
+#endif
 
 	return 0; //ready
 }
@@ -546,7 +568,7 @@ int cammiAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *d
 					tmpstr1 = ostrcat(tmpstr1, casession->mmitext, 1, 0);
 					
 					addmenulistall(&mlist, tmpstr1, NULL, 0, NULL);
-					mbox = menulistbox(mlist, "cimenulist", tmpstr, NULL, NULL, 1, 0);
+					mbox = menulistbox(mlist, "menulist", tmpstr, NULL, NULL, 1, 0);
 					if(mbox == NULL) //exit
 						cammistop(dvbnode, sessionnr);
 					else //got selnr
@@ -1071,7 +1093,7 @@ int casessionpoll(struct dvbdev* dvbnode)
 	casession = dvbnode->caslot->casession;
 
 	for(sessionnr = 1; sessionnr < MAXCASESSION; ++sessionnr)
-        {
+	{
 		if(casession[sessionnr].inuse > 0)
 		{
 			if(casession[sessionnr].state == CASESSIONDEL)
@@ -1485,6 +1507,13 @@ void processtpdu(struct dvbdev* dvbnode, unsigned char tpdutag, unsigned char* b
 			}
 			break;
 		}
+		case 0x13: //MIPSEL
+		{
+			debug(620, "got mipsel session data (slot %d, conn %d)", dvbnode->devnr, canode->connid);
+			casessionreceive(dvbnode, buf, asnlen);
+			casessionpoll(dvbnode);
+			break;
+		}
 		default:
 			debug(620, "unknown tpdu tag 0x%0x (slot %d, conn %d)", tpdutag, dvbnode->devnr, canode->connid);
 	}
@@ -1558,6 +1587,11 @@ void cacheck(struct stimerthread* self, struct dvbdev* dvbnode)
 			if(ret == 0) //ready
 			{
 				//debug(620, "read, slot %d, ret %d", dvbnode->devnr, ret);
+#ifdef MIPSEL
+				canode->poll = 1;
+				canode->connid = dvbnode->devnr + 1;
+				processtpdu(dvbnode, 0x13, buf, len);
+#else
 				tmpbuf = buf;
 				int buflen = len - 2;
 				tmpbuf += 2; //remove leading slot and connection id
@@ -1586,15 +1620,42 @@ void cacheck(struct stimerthread* self, struct dvbdev* dvbnode)
 					//skip over the consumed data
 					tmpbuf += asnlen;
 					buflen -= asnlen;
-
 				}
+#endif
 			}
 			else if(ret == 1 && canode->poll == 1) //write
 			{
+#ifdef MIPSEL
+				int count = 0;
+				struct queue* qe = getqueue(dvbnode->devnr);
+				if(qe != NULL)
+				{
+					while(qe != NULL && count < 10)
+					{
+						//debug(620, "write (queue), slot %d, ret %d", dvbnode->devnr, ret);
+						
+						int writeret = cawrite(dvbnode, dvbnode->fd, qe->data, qe->len, qe->flag, -1);
+						if(writeret >= 0 && writeret == qe->len)
+						{
+							delqueue(qe, 0);
+							qe = getqueue(dvbnode->devnr);
+						}
+						else
+							count++;
+					}
+				}
+				else
+				{
+					//debug(620, "write (poll), slot %d, ret %d", dvbnode->devnr, ret);
+					casend(dvbnode, NULL, 0);
+					if(canode->fastrun > 0) canode->fastrun--;
+				}
+#else			
 				struct queue* qe = getqueue(dvbnode->devnr);
 				if(qe != NULL)
 				{
 					//debug(620, "write (queue), slot %d, ret %d", dvbnode->devnr, ret);
+					
 					int writeret = cawrite(dvbnode, dvbnode->fd, qe->data, qe->len, qe->flag, -1);
 					if(writeret >= 0 && writeret == qe->len)
 					{
@@ -1607,6 +1668,7 @@ void cacheck(struct stimerthread* self, struct dvbdev* dvbnode)
 					casend(dvbnode, NULL, 0);
 					if(canode->fastrun > 0) canode->fastrun--;
 				}
+#endif
 			}
 			else if(ret == 1 && canode->poll == 0)
 			{
