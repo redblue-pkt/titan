@@ -15,12 +15,12 @@ int screendirsort()
 	struct skin* date = getscreennode(dirsort, "date");
 	struct skin* reversedate = getscreennode(dirsort, "reversedate");
 	
-	addchoicebox(alpha, "0", _(""));
-	addchoicebox(reversealpha, "1", _(""));
+	addchoicebox(alpha, "0", "");
+	addchoicebox(reversealpha, "1", "");
 	addchoicebox(size, "2", _(""));
-	addchoicebox(reversesize, "3", _(""));
+	addchoicebox(reversesize, "3", "");
 	addchoicebox(date, "4", _(""));
-	addchoicebox(reversedate, "5", _(""));
+	addchoicebox(reversedate, "5", "");
 
 	drawscreen(dirsort, 0, 0);
 	addscreenrc(dirsort, listbox);
