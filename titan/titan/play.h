@@ -1414,7 +1414,7 @@ playerstart:
 			startdir = dirname(tmpstr1);
 		}
 		free(file); file = NULL;
-		file = screendirreal(startdir, formats, basename(tmpstr), &dirrcret, ".epg", _("DEL"), getrcconfigint("rcred", NULL), _("SELECT"), 0, "EPG", getrcconfigint("rcyellow", NULL), "SORT", getrcconfigint("rcblue", NULL), 90, 1, 90, 1, holdselection, 64);
+		file = screendirreal(startdir, formats, basename(tmpstr), &dirrcret, ".epg", _("DEL"), getrcconfigint("rcred", NULL), _("SELECT"), 0, _("EPG"), getrcconfigint("rcyellow", NULL), _("SORT"), getrcconfigint("rcblue", NULL), 90, 1, 90, 1, holdselection, 64);
 		holdselection = 0;
 		free(tmpstr); tmpstr = NULL;
 		free(tmpstr1); tmpstr1 = NULL;
