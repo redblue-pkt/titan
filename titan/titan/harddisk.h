@@ -442,17 +442,17 @@ start:
 	if(mode == 0)
 	{
 		changetitle(screen, _("Harddisk Format - List Devices"));
-		if(titletext != status.skinerr) changetext(titletext, _("Harddisk Format - List Devices"));
+		/*if(titletext != status.skinerr)*/ changetext(titletext, _("Harddisk Format - List Devices"));
 	}
 	else if(mode == 1)
 	{
 		changetitle(screen, _("Harddisk Fsck - List Devices"));
-		if(titletext != status.skinerr) changetext(titletext, _("Harddisk Fsck - List Devices"));
+		/*if(titletext != status.skinerr)*/ changetext(titletext, _("Harddisk Fsck - List Devices"));
 	}
 	else if(mode == 2)
 	{
 		changetitle(screen, _("Harddisk Configure - List Devices"));
-		if(titletext != status.skinerr) changetext(titletext, _("Harddisk Configure - List Devices"));
+		/*if(titletext != status.skinerr)*/ changetext(titletext, _("Harddisk Configure - List Devices"));
 	}
 
 	listbox->aktpage = -1;
