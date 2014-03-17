@@ -48,7 +48,7 @@ void ciclose(struct dvbdev* node, int fd)
 
 int cigetdev()
 {
-	int i, y, fd = -1, count = 0;
+	int i = 0, y = 0, fd = -1, count = 0;
 	char *buf = NULL, *cidev = NULL;
 
 	cidev = getconfig("cidev", NULL);
@@ -65,6 +65,18 @@ int cigetdev()
 		return count;
 	}
 
+#ifdef MIPSEL
+	for(y = 0; y < MAXCIDEV; y++)
+	{
+		sprintf(buf, cidev, y);
+		fd = ciopendirect(buf);
+		if(fd >= 0)
+		{
+			count++;
+			adddvbdev(buf, i, y, fd, CIDEV, NULL, NULL, 0);
+		}
+	}
+#else
 	for(i = 0; i < MAXDVBADAPTER; i++)
 	{
 		for(y = 0; y < MAXCIDEV; y++)
@@ -78,6 +90,7 @@ int cigetdev()
 			}
 		}
 	}
+#endif
 
 	free(buf);
 	return count;
