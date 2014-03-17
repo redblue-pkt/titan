@@ -7006,7 +7006,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:431
 msgid "PIDs"
-msgstr "PIDs"
+msgstr ""
 
 #: skin_default_skin.xml.h:432
 msgid "Pilot"
@@ -7046,11 +7046,11 @@ msgstr "Playbackbuffer Size (http) Streams"
 
 #: skin_default_skin.xml.h:441
 msgid "Player for .ts"
-msgstr "Player for .ts"
+msgstr ""
 
 #: skin_default_skin.xml.h:442
 msgid "PlayList"
-msgstr "PlayList"
+msgstr ""
 
 #: skin_default_skin.xml.h:443
 msgid ""
@@ -7072,11 +7072,11 @@ msgstr ""
 
 #: skin_default_skin.xml.h:446
 msgid "Plugin Button"
-msgstr "Blue Button"
+msgstr ""
 
 #: skin_default_skin.xml.h:447
 msgid "Plugins"
-msgstr "Plugins"
+msgstr ""
 
 #: skin_default_skin.xml.h:448
 msgid "PMT PID:"
@@ -7088,7 +7088,7 @@ msgstr "Polarization: "
 
 #: skin_default_skin.xml.h:451
 msgid "Policy"
-msgstr "Policy"
+msgstr ""
 
 #: skin_default_skin.xml.h:452
 msgid "Polish"
@@ -7096,7 +7096,7 @@ msgstr "Polski"
 
 #: skin_default_skin.xml.h:453
 msgid "Positioner Setup"
-msgstr "Positioner Setup"
+msgstr ""
 
 #: skin_default_skin.xml.h:454
 msgid "Power aktion"
@@ -7108,7 +7108,7 @@ msgstr "Power Off Timer"
 
 #: skin_default_skin.xml.h:457
 msgid "Power Off Timer"
-msgstr "Power Off Timer"
+msgstr ""
 
 #: skin_default_skin.xml.h:458
 msgid "Program Info"
@@ -7116,15 +7116,15 @@ msgstr "Program Information"
 
 #: skin_default_skin.xml.h:459
 msgid "Protect Channel"
-msgstr "Protect Channel"
+msgstr ""
 
 #: skin_default_skin.xml.h:460
 msgid "Protect Channel Freetime (min)"
-msgstr "Protect Channel Freetime (min)"
+msgstr ""
 
 #: skin_default_skin.xml.h:461
 msgid "Protect Menu"
-msgstr "Protect Menu"
+msgstr ""
 
 #: skin_default_skin.xml.h:462
 msgid "protect service"
@@ -7152,11 +7152,11 @@ msgstr ""
 
 #: skin_default_skin.xml.h:468
 msgid "Quick Menu"
-msgstr "TiTan Mediathek Menu"
+msgstr ""
 
 #: skin_default_skin.xml.h:469
 msgid "r"
-msgstr "read/write"
+msgstr ""
 
 #: skin_default_skin.xml.h:470
 msgid "R"
@@ -7168,15 +7168,15 @@ msgstr "Free RAM"
 
 #: skin_default_skin.xml.h:473
 msgid "Rating"
-msgstr "starting"
+msgstr ""
 
 #: skin_default_skin.xml.h:474
 msgid "Receiver unlock"
-msgstr "Receiver unlock"
+msgstr ""
 
 #: skin_default_skin.xml.h:476
 msgid "Record Forerun (min)"
-msgstr "Record Forerun (min)"
+msgstr ""
 
 #: skin_default_skin.xml.h:477
 msgid "Recording name"
@@ -7188,7 +7188,7 @@ msgstr "Records"
 
 #: skin_default_skin.xml.h:479
 msgid "Record Overrun (min)"
-msgstr "Record Overrun (min)"
+msgstr ""
 
 #: skin_default_skin.xml.h:480
 msgid "Record path"
@@ -7196,7 +7196,7 @@ msgstr "Record Path"
 
 #: skin_default_skin.xml.h:481
 msgid "Record Path"
-msgstr "Record Path"
+msgstr ""
 
 #: skin_default_skin.xml.h:482
 msgid "Record Path settings"
@@ -7208,15 +7208,15 @@ msgstr "Record Split Size"
 
 #: skin_default_skin.xml.h:484
 msgid "Record Timer"
-msgstr "Record Timer"
+msgstr ""
 
 #: skin_default_skin.xml.h:485
 msgid "Red Button"
-msgstr "Red Button"
+msgstr ""
 
 #: skin_default_skin.xml.h:487 softcam.h:292
 msgid "Refresh"
-msgstr "Refresh"
+msgstr ""
 
 #: skin_default_skin.xml.h:488
 msgid "Released"
@@ -7224,7 +7224,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:489
 msgid "RELOAD"
-msgstr "RELOAD"
+msgstr ""
 
 #: skin_default_skin.xml.h:490
 msgid "Remove emthy Bouquet"
@@ -7232,7 +7232,7 @@ msgstr "Remove empty Bouquets"
 
 #: skin_default_skin.xml.h:491
 msgid "REMOVE ENTRY"
-msgstr "REMOVE ENTRY"
+msgstr ""
 
 #: skin_default_skin.xml.h:492
 msgid "remove service"
@@ -7240,11 +7240,11 @@ msgstr "Remove Service"
 
 #: skin_default_skin.xml.h:493
 msgid "Remove unused Channels in Bouquets"
-msgstr "Remove unused Channels in Bouquets"
+msgstr ""
 
 #: skin_default_skin.xml.h:494
 msgid "rename service"
-msgstr "rename service"
+msgstr ""
 
 #: skin_default_skin.xml.h:495
 msgid "Repeate"
@@ -7264,15 +7264,15 @@ msgstr "Resolution: "
 
 #: skin_default_skin.xml.h:499
 msgid "Resolution (current)"
-msgstr "Resolution (current)"
+msgstr ""
 
 #: skin_default_skin.xml.h:500
 msgid "Resolution (default)"
-msgstr "Resolution (default)"
+msgstr ""
 
 #: skin_default_skin.xml.h:502
 msgid "Restore"
-msgstr "Restore"
+msgstr ""
 
 #: skin_default_skin.xml.h:504
 msgid "Resync Recording immediately"
@@ -7280,11 +7280,11 @@ msgstr "Resync Recording immediately (No write cache)"
 
 #: skin_default_skin.xml.h:508
 msgid "RGUID Port"
-msgstr "Webserver Port"
+msgstr ""
 
 #: skin_default_skin.xml.h:509
 msgid "Rolloff"
-msgstr "Rolloff"
+msgstr ""
 
 #: skin_default_skin.xml.h:510
 msgid "Rolloff:"
@@ -7292,11 +7292,11 @@ msgstr "Rolloff: "
 
 #: skin_default_skin.xml.h:511
 msgid "Rotor Position"
-msgstr "Rotor Position"
+msgstr ""
 
 #: skin_default_skin.xml.h:512
 msgid "Rotor Settings"
-msgstr "Rotor Settings"
+msgstr ""
 
 #: skin_default_skin.xml.h:513
 msgid "Runtime"
@@ -7316,7 +7316,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:517
 msgid "Samba Server Settings"
-msgstr "Samba Server Settings"
+msgstr ""
 
 #: skin_default_skin.xml.h:518
 msgid "SAT"
@@ -7340,7 +7340,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:523
 msgid "Satellite"
-msgstr "Satellite"
+msgstr ""
 
 #: skin_default_skin.xml.h:524
 msgid "Satfinder"
@@ -7352,15 +7352,15 @@ msgstr "Satellitefinder"
 
 #: skin_default_skin.xml.h:526
 msgid "Saturation"
-msgstr "Saturation"
+msgstr ""
 
 #: skin_default_skin.xml.h:530
 msgid "SAVETRANSPONDER"
-msgstr "SAVETRANSPONDER"
+msgstr ""
 
 #: skin_default_skin.xml.h:532
 msgid "Scan Config"
-msgstr "Scan Config"
+msgstr ""
 
 #: skin_default_skin.xml.h:533
 msgid "ScanList"
@@ -7368,11 +7368,11 @@ msgstr "Scan"
 
 #: skin_default_skin.xml.h:534
 msgid "Scan locking"
-msgstr "Scan Config"
+msgstr ""
 
 #: skin_default_skin.xml.h:535
 msgid "SCANSTART"
-msgstr "SCANSTART"
+msgstr ""
 
 #: skin_default_skin.xml.h:536 tpk_section.h:15
 msgid "screensaver"
@@ -7380,7 +7380,7 @@ msgstr "Screensaver"
 
 #: skin_default_skin.xml.h:537
 msgid "Screensaver Adjust"
-msgstr "Screensaver Adjust"
+msgstr ""
 
 #: skin_default_skin.xml.h:538
 msgid "screensaver background"
@@ -7404,11 +7404,11 @@ msgstr "Screensaver Type"
 
 #: skin_default_skin.xml.h:543
 msgid "--- SD resolution"
-msgstr "--- SD resolution"
+msgstr ""
 
 #: skin_default_skin.xml.h:546
 msgid "Second Infobar"
-msgstr "Second Infobar"
+msgstr ""
 
 #: skin_default_skin.xml.h:547
 msgid "Select backup:"
@@ -7416,7 +7416,7 @@ msgstr "Select backup: "
 
 #: skin_default_skin.xml.h:548
 msgid "Select Path"
-msgstr "Select Path"
+msgstr ""
 
 #: skin_default_skin.xml.h:549
 msgid "Select Unicable Manufacturer"
@@ -7424,23 +7424,23 @@ msgstr "Unicable manufacturer"
 
 #: skin_default_skin.xml.h:550
 msgid "SEND"
-msgstr "wip"
+msgstr ""
 
 #: skin_default_skin.xml.h:551
 msgid "Send all CAID to modules"
-msgstr "Send all CAID to modules"
+msgstr ""
 
 #: skin_default_skin.xml.h:552
 msgid "Serial Input"
-msgstr "Serial Input"
+msgstr ""
 
 #: skin_default_skin.xml.h:553
 msgid "Service"
-msgstr "Service"
+msgstr ""
 
 #: skin_default_skin.xml.h:554
 msgid "Serviceinfo"
-msgstr "Serviceinfo"
+msgstr ""
 
 #: skin_default_skin.xml.h:555
 msgid "Set action after rec"
@@ -7452,31 +7452,31 @@ msgstr "Set as start-channel"
 
 #: skin_default_skin.xml.h:558
 msgid "Settings backup/restore"
-msgstr "Settings backup/restore"
+msgstr ""
 
 #: skin_default_skin.xml.h:559
 msgid "Show EPG screen (EPG button)"
-msgstr "Show EPG screen (EPG button)"
+msgstr ""
 
 #: skin_default_skin.xml.h:560
 msgid "Show HDD freesize"
-msgstr "Show HDD freesize"
+msgstr ""
 
 #: skin_default_skin.xml.h:561
 msgid "Show hidden files"
-msgstr "Show hidden files"
+msgstr ""
 
 #: skin_default_skin.xml.h:562
 msgid "Show infobar on program change"
-msgstr "Show infobar on program change"
+msgstr ""
 
 #: skin_default_skin.xml.h:563
 msgid "Show in Standby"
-msgstr "Show in Standby"
+msgstr ""
 
 #: skin_default_skin.xml.h:564
 msgid "Show in VFD"
-msgstr "Show in VFD"
+msgstr ""
 
 #: skin_default_skin.xml.h:565
 msgid "Show last pos Question"
@@ -7500,15 +7500,15 @@ msgstr "Signal: "
 
 #: skin_default_skin.xml.h:573
 msgid "Skin"
-msgstr "Skin"
+msgstr ""
 
 #: skin_default_skin.xml.h:574
 msgid "Skin Adjust"
-msgstr "Skin Adjust"
+msgstr ""
 
 #: skin_default_skin.xml.h:575
 msgid "Skin Select"
-msgstr "Skin Select"
+msgstr ""
 
 #: skin_default_skin.xml.h:576
 msgid "Skip 1/3"
@@ -7524,7 +7524,7 @@ msgstr "Skip 7/9 (sec)"
 
 #: skin_default_skin.xml.h:579
 msgid "Skip privat CA descriptor"
-msgstr "Skip privat CA descriptor"
+msgstr "Skip private CA descriptor"
 
 #: skin_default_skin.xml.h:580
 msgid "SmartCard Reader"
@@ -7552,15 +7552,15 @@ msgstr ""
 
 #: skin_default_skin.xml.h:588
 msgid "Space"
-msgstr "Space"
+msgstr ""
 
 #: skin_default_skin.xml.h:590
 msgid "Spinnerspeed"
-msgstr "Spinnerspeed"
+msgstr ""
 
 #: skin_default_skin.xml.h:591
 msgid "Spinnertime"
-msgstr "Spinnertime"
+msgstr ""
 
 #: skin_default_skin.xml.h:592
 msgid "SSID"
@@ -7572,7 +7572,7 @@ msgstr "Stable"
 
 #: skin_default_skin.xml.h:595
 msgid "Standby Brightness"
-msgstr "Standby Brightness"
+msgstr ""
 
 #: skin_default_skin.xml.h:596
 msgid "StandBy Mode"
@@ -7612,7 +7612,7 @@ msgstr "Saved Position"
 
 #: skin_default_skin.xml.h:608 stream.h:36
 msgid "Streaming"
-msgstr "Streaming"
+msgstr ""
 
 #: skin_default_skin.xml.h:609
 msgid "Stream Path"
@@ -7620,19 +7620,19 @@ msgstr "Path for Stream"
 
 #: skin_default_skin.xml.h:610
 msgid "Stream Port"
-msgstr "Stream Port"
+msgstr ""
 
 #: skin_default_skin.xml.h:611
 msgid "Subservices"
-msgstr "Subservices"
+msgstr ""
 
 #: skin_default_skin.xml.h:612
 msgid "Subtitle"
-msgstr "Subtitle"
+msgstr ""
 
 #: skin_default_skin.xml.h:615
 msgid "Symbolrate"
-msgstr "Symbolrate"
+msgstr ""
 
 #: skin_default_skin.xml.h:616
 msgid "Symbol rate:"
@@ -7644,7 +7644,7 @@ msgstr "System Information"
 
 #: skin_default_skin.xml.h:618
 msgid "System"
-msgstr "System"
+msgstr ""
 
 #: skin_default_skin.xml.h:619
 msgid "System:"
