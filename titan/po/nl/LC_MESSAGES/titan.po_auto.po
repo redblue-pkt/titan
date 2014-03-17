@@ -10809,12 +10809,3 @@ msgstr "Plaats"
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid "Harddisk Format - List Devices"
-#~ msgstr "Formatteer hardeschijf - aangesloten apparaten"
-
-#~ msgid "Harddisk Fsck - List Devices"
-#~ msgstr "Controleer hardeschijf - aangesloten apparaten"
-
-#~ msgid "Harddisk Configure - List Devices"
-#~ msgstr "Hardeschijf configureren - aangesloten apparaten"
