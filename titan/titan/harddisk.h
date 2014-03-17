@@ -123,8 +123,9 @@ void screenfilesystem(char* dev)
 	delmarkedscreennodes(screen, 1);
 	listbox->aktpage = -1;
 	listbox->aktline = 1;
+	drawscreen(screen, 0, 0);
 	changetitle(screen, _("Harddisk Format - Filesystem"));
-	if(titletext != status.skinerr) changetext(titletext, _("Harddisk Format - Filesystem"));
+	if(titletext != status.skinerr) changetext(titletext, _("Harddisk Format - Filesystem detail text dummy"));
 
 	if(status.expertmodus > 9) count = 5;
 
@@ -210,8 +211,10 @@ void screenconfigurehdd(char* dev)
 	delmarkedscreennodes(screen, 1);
 	listbox->aktpage = -1;
 	listbox->aktline = 1;
+
+	drawscreen(screen, 0, 0);
 	changetitle(screen, _("Harddisk Configure"));
-	if(titletext != status.skinerr) changetext(titletext, _("Harddisk Configure"));
+	if(titletext != status.skinerr) changetext(titletext, _("Harddisk Configure detail text dummy"));
 
 	if(status.expertmodus > 9) y = 8;
 
