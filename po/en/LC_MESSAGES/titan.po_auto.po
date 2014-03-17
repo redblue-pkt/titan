@@ -5018,7 +5018,7 @@ msgstr ""
 
 #: scart.h:12
 msgid "Change to scart"
-msgstr "Channel Allocation"
+msgstr ""
 
 #: scart.h:25
 msgid "Videomode must be 576i for Scart"
@@ -5034,31 +5034,31 @@ msgstr "Card not present"
 
 #: screensaveradjust.h:29
 msgid "black"
-msgstr "black"
+msgstr ""
 
 #: screensaveradjust.h:30
 msgid "blue"
-msgstr "blue"
+msgstr ""
 
 #: screensaveradjust.h:31
 msgid "green"
-msgstr "green"
+msgstr ""
 
 #: screensaveradjust.h:32
 msgid "red"
-msgstr "red"
+msgstr ""
 
 #: screensaveradjust.h:33
 msgid "yellow"
-msgstr "Yellow"
+msgstr ""
 
 #: screensaveradjust.h:34
 msgid "white"
-msgstr "white"
+msgstr ""
 
 #: screensaveradjust.h:35
 msgid "grey"
-msgstr "grey"
+msgstr ""
 
 #: screensaveradjust.h:36
 msgid "burlywood1"
@@ -5070,7 +5070,7 @@ msgstr ""
 
 #: screensaveradjust.h:38
 msgid "mixed mode"
-msgstr "mixed mode"
+msgstr ""
 
 #: screensaveradjust.h:41
 msgid "Icon 1"
@@ -5094,11 +5094,11 @@ msgstr "Song Title Text"
 
 #: screensaveradjust.h:48
 msgid "Logo 1"
-msgstr "Logo 1"
+msgstr ""
 
 #: screensaveradjust.h:49
 msgid "Logo 2"
-msgstr "Logo 2"
+msgstr ""
 
 #: screensaveradjust.h:58
 msgid "imdb mvis (network/hdd)"
@@ -5110,11 +5110,11 @@ msgstr "Run in background"
 
 #: scriptexec.h:40
 msgid "Script has no output or started in background."
-msgstr "Script has no output or started in background"
+msgstr ""
 
 #: scriptexec.h:41 tpk_showname.h:144
 msgid "Script execute"
-msgstr "Script execute"
+msgstr ""
 
 #: service.h:710
 msgid ""
@@ -5129,12 +5129,10 @@ msgid ""
 "Can't find a Tuner.\n"
 "All Tuners in use or no Tuner defined."
 msgstr ""
-"Can't find a Tuner.\n"
-"All Tuners in use or no Tuner defined"
 
 #: service.h:937
 msgid "Tuning to Channel failed!"
-msgstr "Tuning to Channel failed!"
+msgstr ""
 
 #: service.h:940
 msgid "Can't open frontend dev or Frontend Type unknown!"
@@ -5142,7 +5140,7 @@ msgstr "Can't open frontend device or frontend type unknown!"
 
 #: service.h:945
 msgid "Channellist empty or corrupt (channel not found)!"
-msgstr "Channellist empty or corrupt (channel not found)!"
+msgstr ""
 
 #: settings_autostart.h:216
 msgid "Cam Routing"
@@ -5150,15 +5148,15 @@ msgstr ""
 
 #: settings_bluebutton.h:6
 msgid "Blue Key Action - Setup"
-msgstr "Blue Key Action - Setup"
+msgstr ""
 
 #: settings_pluginbutton.h:6
 msgid "Plugin Key Action - Setup"
-msgstr "Blue Key Action - Setup"
+msgstr ""
 
 #: settings_redbutton.h:6
 msgid "Red Key Action - Setup"
-msgstr "Red Key Action - Setup"
+msgstr ""
 
 #: skinadjust.h:23
 msgid "border"
@@ -5322,11 +5320,11 @@ msgstr ""
 
 #: skin_default_skin.xml.h:38 videomode.h:20 videomode.h:75 videomode.h:82
 msgid "3D Mode"
-msgstr "3D Mode"
+msgstr ""
 
 #: skin_default_skin.xml.h:39
 msgid "3D-Mode Settings"
-msgstr "3D-Mode Settings"
+msgstr ""
 
 #: skin_default_skin.xml.h:43
 msgid "+/- 5 Min"
@@ -5350,11 +5348,11 @@ msgstr ""
 
 #: skin_default_skin.xml.h:51
 msgid "About"
-msgstr "About"
+msgstr ""
 
 #: skin_default_skin.xml.h:52
 msgid "AC3 default"
-msgstr "AC3 default"
+msgstr ""
 
 #: skin_default_skin.xml.h:53
 msgid "AC3 Mode"
@@ -5362,11 +5360,11 @@ msgstr "AC3 mode"
 
 #: skin_default_skin.xml.h:54
 msgid "Activate (autostart)"
-msgstr "Activate (autostart)"
+msgstr ""
 
 #: skin_default_skin.xml.h:55
 msgid "Activate CEC"
-msgstr "Activate CEC"
+msgstr ""
 
 #: skin_default_skin.xml.h:56
 msgid "Actors"
@@ -5374,19 +5372,19 @@ msgstr "Actors: "
 
 #: skin_default_skin.xml.h:57
 msgid "Adapter Settings"
-msgstr "Adapter Settings"
+msgstr ""
 
 #: skin_default_skin.xml.h:59
 msgid "ADD ALL"
-msgstr "ADD ALL"
+msgstr ""
 
 #: skin_default_skin.xml.h:60
 msgid "ADD BOUQUET"
-msgstr "ADD BOUQUET"
+msgstr ""
 
 #: skin_default_skin.xml.h:61
 msgid "ADD ONE"
-msgstr "ADD ONE"
+msgstr ""
 
 #: skin_default_skin.xml.h:62
 msgid "add service"
@@ -5398,15 +5396,15 @@ msgstr "System Settings"
 
 #: skin_default_skin.xml.h:64
 msgid "ae"
-msgstr "Date"
+msgstr "ä"
 
 #: skin_default_skin.xml.h:65
 msgid "AE"
-msgstr "Save"
+msgstr "Ä"
 
 #: skin_default_skin.xml.h:66
 msgid "After EPG Scan"
-msgstr "After EPG Scan"
+msgstr ""
 
 #: skin_default_skin.xml.h:67
 msgid ""
@@ -5416,16 +5414,16 @@ msgid ""
 "station. If you do not do this and go to exit out the search not saved."
 msgstr ""
 "After manual search, press green button to save all found channels. To add a "
-"channel manually, select the channel in the box to the right and then the "
-"press red button to save. Exit does not save!"
+"channel manually, select the channel in the box to the right and then "
+"press the red button to save. Exit does not save!"
 
 #: skin_default_skin.xml.h:68
 msgid "After Timeshift"
-msgstr "After Timeshift"
+msgstr ""
 
 #: skin_default_skin.xml.h:69
 msgid "Age Protect"
-msgstr "Age Protect"
+msgstr ""
 
 #: skin_default_skin.xml.h:70
 msgid "Aktion after"
@@ -5445,11 +5443,11 @@ msgstr "Animation Speed"
 
 #: skin_default_skin.xml.h:75
 msgid "Ask on channel switch"
-msgstr "Ask on channel switch"
+msgstr ""
 
 #: skin_default_skin.xml.h:77
 msgid "Aspect Ratio:"
-msgstr "Aspect Ratio: "
+msgstr ""
 
 #: skin_default_skin.xml.h:78
 msgid "Atemio (hotline)"
@@ -5457,7 +5455,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:79
 msgid "Audio delay"
-msgstr "Audio delay"
+msgstr ""
 
 #: skin_default_skin.xml.h:80
 msgid "Audio PID:"
@@ -5465,7 +5463,7 @@ msgstr "Audio PID: "
 
 #: skin_default_skin.xml.h:81
 msgid "Audio Source"
-msgstr "Audio Source"
+msgstr ""
 
 #: skin_default_skin.xml.h:82
 msgid "Audio/Subt."
@@ -5473,7 +5471,7 @@ msgstr "Audio/Subtitle"
 
 #: skin_default_skin.xml.h:83
 msgid "Audio Tracks"
-msgstr "Audio Tracks"
+msgstr ""
 
 #: skin_default_skin.xml.h:85
 msgid "Autocheck cam can decrypt"
@@ -5481,15 +5479,15 @@ msgstr "Autocheck cam for decrypt"
 
 #: skin_default_skin.xml.h:86
 msgid "Automatic Search"
-msgstr "Automatic Search"
+msgstr ""
 
 #: skin_default_skin.xml.h:87
 msgid "Automatic start last subtitle"
-msgstr "Automatic start last subtitle"
+msgstr ""
 
 #: skin_default_skin.xml.h:88
 msgid "Auto resolution"
-msgstr "Auto resolution"
+msgstr ""
 
 #: skin_default_skin.xml.h:89
 msgid "Autostart - Audio / Video / Sat"
@@ -5505,15 +5503,15 @@ msgstr "Parental control"
 
 #: skin_default_skin.xml.h:92
 msgid "Autostart Default"
-msgstr "Autostart Playlist"
+msgstr "factory settings"
 
 #: skin_default_skin.xml.h:93
 msgid "Autostart - Network"
-msgstr "Network Restart"
+msgstr "Network"
 
 #: skin_default_skin.xml.h:94
 msgid "Autostart Settings"
-msgstr "Rotor Settings"
+msgstr "Autostart"
 
 #: skin_default_skin.xml.h:95
 msgid "Autostart - Usb Device"
@@ -5533,20 +5531,20 @@ msgstr ""
 
 #: skin_default_skin.xml.h:101
 msgid "Backup"
-msgstr "Backup"
+msgstr ""
 
 #: skin_default_skin.xml.h:102 system_backup_restore.h:18
 #: system_backup_restore.h:75
 msgid "Backup / Restore Settings"
-msgstr "Backup / Restore Settings"
+msgstr ""
 
 #: skin_default_skin.xml.h:103
 msgid "Bandwidth"
-msgstr "anim. width"
+msgstr ""
 
 #: skin_default_skin.xml.h:104
 msgid "Bandwidth:"
-msgstr "anim. width"
+msgstr ""
 
 #: skin_default_skin.xml.h:105
 msgid ""
@@ -5582,19 +5580,19 @@ msgstr "Blindscan Settings"
 
 #: skin_default_skin.xml.h:112
 msgid "Blue Button"
-msgstr "Blue Button"
+msgstr ""
 
 #: skin_default_skin.xml.h:113
 msgid "Bouquet List"
-msgstr "Bouquet List"
+msgstr ""
 
 #: skin_default_skin.xml.h:114
 msgid "Bouquet Type"
-msgstr "Bouquet Type"
+msgstr ""
 
 #: skin_default_skin.xml.h:115
 msgid "Brightness"
-msgstr "Brightness"
+msgstr ""
 
 #: skin_default_skin.xml.h:117
 msgid "c"
@@ -5614,11 +5612,11 @@ msgstr ""
 
 #: skin_default_skin.xml.h:122
 msgid "cancel"
-msgstr "cancel"
+msgstr ""
 
 #: skin_default_skin.xml.h:124
 msgid "Change Channelname"
-msgstr "Change Channelname"
+msgstr ""
 
 #: skin_default_skin.xml.h:125
 msgid "Change Channelname auto."
@@ -5630,15 +5628,15 @@ msgstr "Change Feed Address"
 
 #: skin_default_skin.xml.h:128
 msgid "Channel Allocation"
-msgstr "Channel Allocation"
+msgstr ""
 
 #: skin_default_skin.xml.h:129
 msgid "Channel Edit"
-msgstr "Channel Edit"
+msgstr ""
 
 #: skin_default_skin.xml.h:130
 msgid "Channel History"
-msgstr "Channel History"
+msgstr ""
 
 #: skin_default_skin.xml.h:131
 msgid "Channellist view"
@@ -5646,7 +5644,7 @@ msgstr "Not available channels"
 
 #: skin_default_skin.xml.h:132
 msgid "Channel Search"
-msgstr "Channel Search"
+msgstr ""
 
 #: skin_default_skin.xml.h:133
 msgid "Channel Service"
@@ -5666,7 +5664,7 @@ msgstr "Clear before scan?"
 
 #: skin_default_skin.xml.h:139
 msgid "CLEAR INPUT"
-msgstr "CLEAR INPUT"
+msgstr ""
 
 #: skin_default_skin.xml.h:140
 msgid "Code1"
@@ -5678,23 +5676,23 @@ msgstr "Code 2: "
 
 #: skin_default_skin.xml.h:142
 msgid "Coderate HP"
-msgstr "Create Path"
+msgstr ""
 
 #: skin_default_skin.xml.h:143
 msgid "Coderate HP:"
-msgstr "Create Path"
+msgstr ""
 
 #: skin_default_skin.xml.h:144
 msgid "Coderate LP"
-msgstr "Create Path"
+msgstr ""
 
 #: skin_default_skin.xml.h:145
 msgid "Coderate LP:"
-msgstr "Create Path"
+msgstr ""
 
 #: skin_default_skin.xml.h:146
 msgid "Color Format"
-msgstr "Color Format"
+msgstr ""
 
 #: skin_default_skin.xml.h:147
 msgid "Color Format Scart / Composite"
@@ -5702,7 +5700,7 @@ msgstr "Color Format SCART"
 
 #: skin_default_skin.xml.h:148
 msgid "Committed command"
-msgstr "Committed command"
+msgstr ""
 
 #: skin_default_skin.xml.h:149
 msgid "Common Interface"
@@ -5714,7 +5712,7 @@ msgstr "Configure harddisk"
 
 #: skin_default_skin.xml.h:151
 msgid "Contrast"
-msgstr "Contrast"
+msgstr ""
 
 #: skin_default_skin.xml.h:152
 msgid "Copy / Move"
@@ -5726,15 +5724,15 @@ msgstr "Copy service to favorites"
 
 #: skin_default_skin.xml.h:154
 msgid "CPU"
-msgstr "CPU"
+msgstr ""
 
 #: skin_default_skin.xml.h:155 system_backup.h:18
 msgid "Create Backup"
-msgstr "Create Backup"
+msgstr ""
 
 #: skin_default_skin.xml.h:156
 msgid "Create Path"
-msgstr "Create Path"
+msgstr ""
 
 #: skin_default_skin.xml.h:157
 msgid "Create Record Picture"
@@ -5754,23 +5752,23 @@ msgstr ""
 
 #: skin_default_skin.xml.h:162
 msgid "Day"
-msgstr "Day"
+msgstr ""
 
 #: skin_default_skin.xml.h:163 softcam.h:290
 msgid "Deactivate"
-msgstr "Deactivate"
+msgstr ""
 
 #: skin_default_skin.xml.h:164
 msgid "Deactivate Crypt Support on Media Playback"
-msgstr "Deactivate Crypt Support on Media Playback"
+msgstr ""
 
 #: skin_default_skin.xml.h:165
 msgid "Deactivate MiniTV"
-msgstr "Deactivate MiniTV"
+msgstr ""
 
 #: skin_default_skin.xml.h:166
 msgid "Debug Modus"
-msgstr "Debug Modus"
+msgstr "Debug Mode"
 
 #: skin_default_skin.xml.h:167
 msgid "DEFAULT"
@@ -5802,11 +5800,11 @@ msgstr "Device: "
 
 #: skin_default_skin.xml.h:178 system_infos_sysinfo.h:56
 msgid "Devices"
-msgstr "Devices"
+msgstr ""
 
 #: skin_default_skin.xml.h:179
 msgid "Director"
-msgstr "Imdb Verzeichnis"
+msgstr ""
 
 #: skin_default_skin.xml.h:180
 msgid "Dirsort"
@@ -5818,7 +5816,7 @@ msgstr "DiSEqC Command order"
 
 #: skin_default_skin.xml.h:182
 msgid "DiSEqC Mode"
-msgstr "DiSEqC Mode"
+msgstr ""
 
 #: skin_default_skin.xml.h:183
 msgid "Diseqc repeats"
@@ -5826,7 +5824,7 @@ msgstr "DiSEqC Repeats"
 
 #: skin_default_skin.xml.h:184
 msgid "diseqcscreen"
-msgstr ""
+msgstr "DiSEqC Screen"
 
 #: skin_default_skin.xml.h:185
 msgid "Diseqc Settings"
@@ -5850,11 +5848,11 @@ msgstr "System"
 
 #: skin_default_skin.xml.h:190
 msgid "Don't clear TV on zap (only with fastzap)"
-msgstr "Don't clear TV on zap (only with fastzap)"
+msgstr ""
 
 #: skin_default_skin.xml.h:191
 msgid "Download"
-msgstr "download error"
+msgstr ""
 
 #: skin_default_skin.xml.h:193
 msgid "dummy"
@@ -5866,7 +5864,7 @@ msgstr "Nederlands"
 
 #: skin_default_skin.xml.h:195
 msgid "DYNDNS Settings"
-msgstr "DYNDNS Settings"
+msgstr ""
 
 #: skin_default_skin.xml.h:196
 msgid "e"
@@ -5894,11 +5892,11 @@ msgstr "End"
 
 #: skin_default_skin.xml.h:203
 msgid "Engine Systems"
-msgstr "System"
+msgstr ""
 
 #: skin_default_skin.xml.h:204
 msgid "English"
-msgstr "English"
+msgstr ""
 
 #: skin_default_skin.xml.h:205
 msgid "EPG"
@@ -5906,11 +5904,11 @@ msgstr ""
 
 #: skin_default_skin.xml.h:206
 msgid "EPG button on EPG Screen"
-msgstr "EPG button on EPG Screen"
+msgstr ""
 
 #: skin_default_skin.xml.h:207
 msgid "Epgfreespace (KB)"
-msgstr "Epgfreespace (KB)"
+msgstr "free EPG space (KB)"
 
 #: skin_default_skin.xml.h:208
 msgid "Epg List Mode"
@@ -5926,7 +5924,7 @@ msgstr "EPG Refresh Time"
 
 #: skin_default_skin.xml.h:211
 msgid "EPG Reset"
-msgstr "EPG Reset"
+msgstr ""
 
 #: skin_default_skin.xml.h:212
 msgid "EPG Save Mode"
@@ -5934,7 +5932,7 @@ msgstr "EPG save time"
 
 #: skin_default_skin.xml.h:213
 msgid "EPG Scanlist"
-msgstr "After EPG Scan"
+msgstr ""
 
 #: skin_default_skin.xml.h:214
 msgid "EPG Search"
@@ -5942,11 +5940,11 @@ msgstr "EPG-Search"
 
 #: skin_default_skin.xml.h:215
 msgid "EPG Settings"
-msgstr "EPG Settings"
+msgstr ""
 
 #: skin_default_skin.xml.h:216
 msgid "EPG SHORT VIEW"
-msgstr "EPG SHORT VIEW"
+msgstr ""
 
 #: skin_default_skin.xml.h:218
 msgid "Expert Modus"
@@ -5954,7 +5952,7 @@ msgstr "Expert Mode"
 
 #: skin_default_skin.xml.h:219
 msgid "Extensions"
-msgstr "Extensions"
+msgstr ""
 
 #: skin_default_skin.xml.h:220
 msgid "Ext. Modul detect (needs reboot)"
@@ -5974,11 +5972,11 @@ msgstr "Fast GUI restart"
 
 #: skin_default_skin.xml.h:225
 msgid "Fast Text Render"
-msgstr "Fast Text Render"
+msgstr ""
 
 #: skin_default_skin.xml.h:226
 msgid "Fastzap"
-msgstr "Fastzap"
+msgstr ""
 
 #: skin_default_skin.xml.h:227
 msgid "Fav"
@@ -5994,11 +5992,11 @@ msgstr "FEC: "
 
 #: skin_default_skin.xml.h:230
 msgid "Filesystem Check"
-msgstr "Filesystem Check"
+msgstr ""
 
 #: skin_default_skin.xml.h:231
 msgid "Fine move"
-msgstr "Fine move"
+msgstr ""
 
 #: skin_default_skin.xml.h:232
 msgid "Fix Shutdown Time"
