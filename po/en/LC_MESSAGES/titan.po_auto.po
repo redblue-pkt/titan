@@ -4081,15 +4081,15 @@ msgstr "Username"
 
 #: plugins_networkbrowser_skin.xml.h:35 skins_networkbrowser_skin.xml.h:35
 msgid "usessl"
-msgstr ""
+msgstr "use ssl"
 
 #: plugins_networkbrowser_skin.xml.h:36 skins_networkbrowser_skin.xml.h:36
 msgid "wsize"
-msgstr "wsize"
+msgstr ""
 
 #: plugins_news_skin.xml.h:1 skins_news_skin.xml.h:1 tpk_showname.h:70
 msgid "News"
-msgstr "News"
+msgstr ""
 
 #: plugins_news_skin.xml.h:2 plugins_stock_skin.xml.h:3
 #: skins_news_skin.xml.h:2 skins_stock_skin.xml.h:3
@@ -4106,12 +4106,12 @@ msgstr "Previous"
 
 #: plugins_optimize_skin.xml.h:1 skins_optimize_skin.xml.h:1 tpk_showname.h:72
 msgid "Optimize"
-msgstr "Optimize"
+msgstr ""
 
 #: plugins_panel_skin.xml.h:1 plugins_panel_skin.xml.h:10
 #: skins_panel_skin.xml.h:1 skins_panel_skin.xml.h:10
 msgid "Autostart"
-msgstr "Autostart"
+msgstr ""
 
 #: plugins_panel_skin.xml.h:2 skin_default_skin.xml.h:223
 #: skins_panel_skin.xml.h:2
@@ -4120,7 +4120,7 @@ msgstr "Fan control"
 
 #: plugins_panel_skin.xml.h:3 skins_panel_skin.xml.h:3
 msgid "OverClock Settings"
-msgstr "OverClock Settings"
+msgstr ""
 
 #: plugins_panel_skin.xml.h:4 skins_panel_skin.xml.h:4 tpk_showname.h:81
 msgid "Panel"
@@ -4143,7 +4143,7 @@ msgstr "Audio/Video/Sat"
 
 #: plugins_panel_skin.xml.h:9 skins_panel_skin.xml.h:9
 msgid "Automount"
-msgstr "Automount"
+msgstr ""
 
 #: plugins_panel_skin.xml.h:11 skin_default_skin.xml.h:121
 #: skins_panel_skin.xml.h:11
@@ -4171,11 +4171,11 @@ msgstr "Fan control"
 #: plugins_panel_skin.xml.h:19 skin_default_skin.xml.h:423
 #: skins_panel_skin.xml.h:19
 msgid "Overclocking"
-msgstr "Overclocking"
+msgstr ""
 
 #: plugins_panel_skin.xml.h:20 skins_panel_skin.xml.h:20
 msgid "Save"
-msgstr "Save"
+msgstr ""
 
 #: plugins_panel_skin.xml.h:23 skin_default_skin.xml.h:589
 #: skins_panel_skin.xml.h:23
@@ -4194,7 +4194,7 @@ msgstr "USB Device"
 
 #: plugins_panel_skin.xml.h:26 skins_panel_skin.xml.h:26
 msgid "Videotune"
-msgstr "Videotune"
+msgstr ""
 
 #: plugins_panel_skin.xml.h:27 skins_panel_skin.xml.h:27
 msgid "Wizard"
@@ -4202,7 +4202,7 @@ msgstr "Setup wizard"
 
 #: plugins_readerconfig_skin.xml.h:1 skins_readerconfig_skin.xml.h:1
 msgid "Device"
-msgstr "Device"
+msgstr ""
 
 #: plugins_readerconfig_skin.xml.h:2 skins_readerconfig_skin.xml.h:2
 msgid "Dvbapi"
@@ -4210,7 +4210,7 @@ msgstr ""
 
 #: plugins_readerconfig_skin.xml.h:4 skins_readerconfig_skin.xml.h:4
 msgid "Enable"
-msgstr "Enable"
+msgstr ""
 
 #: plugins_readerconfig_skin.xml.h:5 skins_readerconfig_skin.xml.h:5
 msgid ""
@@ -4234,17 +4234,17 @@ msgstr ""
 
 #: plugins_readerconfig_skin.xml.h:7 skins_readerconfig_skin.xml.h:7
 msgid "Reader Config"
-msgstr "Reader Config"
+msgstr ""
 
 #: plugins_readerconfig_skin.xml.h:8 readerconfig.h:268
 #: skins_readerconfig_skin.xml.h:8
 msgid "Reader Configuration"
-msgstr "Reader Configuration"
+msgstr ""
 
 #: plugins_readerconfig_skin.xml.h:9 readerconfig.h:383
 #: skins_readerconfig_skin.xml.h:9
 msgid "Reader Selection"
-msgstr "Reader Selection"
+msgstr ""
 
 #: plugins_rgui_skin.xml.h:1 skins_rgui_skin.xml.h:1
 msgid "RGUI Client"
@@ -4253,27 +4253,27 @@ msgstr ""
 #: plugins_rgui_skin.xml.h:4 plugins_tiwakeup_skin.xml.h:4
 #: skins_rgui_skin.xml.h:4 skins_tiwakeup_skin.xml.h:4
 msgid "Server 1"
-msgstr "DNS-Server 1"
+msgstr ""
 
 #: plugins_rgui_skin.xml.h:5 plugins_tiwakeup_skin.xml.h:5
 #: skins_rgui_skin.xml.h:5 skins_tiwakeup_skin.xml.h:5
 msgid "Server 2"
-msgstr "DNS-Server 2"
+msgstr ""
 
 #: plugins_rgui_skin.xml.h:6 plugins_tiwakeup_skin.xml.h:6
 #: skins_rgui_skin.xml.h:6 skins_tiwakeup_skin.xml.h:6
 msgid "Server 3"
-msgstr "Server Name"
+msgstr ""
 
 #: plugins_rgui_skin.xml.h:7 plugins_tiwakeup_skin.xml.h:7
 #: skins_rgui_skin.xml.h:7 skins_tiwakeup_skin.xml.h:7
 msgid "Server 4"
-msgstr "Server Name"
+msgstr ""
 
 #: plugins_rgui_skin.xml.h:8 plugins_tiwakeup_skin.xml.h:8
 #: skins_rgui_skin.xml.h:8 skins_tiwakeup_skin.xml.h:8
 msgid "Server 5"
-msgstr "Server Name"
+msgstr ""
 
 #: plugins_stock_skin.xml.h:1 skins_stock_skin.xml.h:1 stock.h:187
 #: tpk_showname.h:173
@@ -4295,7 +4295,7 @@ msgstr "Time to stop (min)"
 #: plugins_streaminfo_skin.xml.h:1 skin_default_skin.xml.h:76
 #: skins_streaminfo_skin.xml.h:1
 msgid "Aspect"
-msgstr "Aspect"
+msgstr ""
 
 #: plugins_streaminfo_skin.xml.h:2 skins_streaminfo_skin.xml.h:2
 msgid "Framerate"
@@ -4303,32 +4303,32 @@ msgstr "Maximum Rate"
 
 #: plugins_streaminfo_skin.xml.h:4 skins_streaminfo_skin.xml.h:4
 msgid "X-Resolution"
-msgstr "Resolution: "
+msgstr "X-Resolution: "
 
 #: plugins_streaminfo_skin.xml.h:5 skins_streaminfo_skin.xml.h:5
 msgid "Y-Resolution"
-msgstr "Resolution: "
+msgstr "Y-Resolution: "
 
 #: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1
 msgid "TiThek Menu"
-msgstr "TiTan Mediathek Menu"
+msgstr ""
 
 #: plugins_tithek_skin.xml.h:2 skins_tithek_skin.xml.h:2
 msgid "TiThek Settings"
-msgstr "Webinterface and RGUI settings"
+msgstr "Tithek"
 
 #: plugins_tithek_skin.xml.h:3 skins_tithek_skin.xml.h:3 tithek.h:1490
 #: tithek.h:1622 tithek.h:3201
 msgid "ADD FAV"
-msgstr "ADD FAV"
+msgstr ""
 
 #: plugins_tithek_skin.xml.h:4 skins_tithek_skin.xml.h:4
 msgid "DEL FAV"
-msgstr "DEL FAV"
+msgstr ""
 
 #: plugins_tithek_skin.xml.h:5 skins_tithek_skin.xml.h:5
 msgid "Exit Tithek"
-msgstr ""
+msgstr "Exit TiThek"
 
 #: plugins_tithek_skin.xml.h:6 skins_tithek_skin.xml.h:6
 msgid "Hid XXX Streams"
@@ -4348,7 +4348,7 @@ msgstr ""
 
 #: plugins_tithek_skin.xml.h:10 skins_tithek_skin.xml.h:10
 msgid "Pic Ratio"
-msgstr "Pic Ratio"
+msgstr ""
 
 #: plugins_tithek_skin.xml.h:12 skins_tithek_skin.xml.h:12 tithek.h:1099
 msgid "please wait..."
@@ -4357,11 +4357,11 @@ msgstr "Please wait ..."
 #: plugins_tithek_skin.xml.h:13 skin_default_skin.xml.h:486
 #: skins_tithek_skin.xml.h:13
 msgid "Red-Menu"
-msgstr "Red-Menu"
+msgstr ""
 
 #: plugins_tithek_skin.xml.h:15 skins_tithek_skin.xml.h:15
 msgid "Show Pay Streams"
-msgstr "Show Pay Streams"
+msgstr ""
 
 #: plugins_tithek_skin.xml.h:16 skins_tithek_skin.xml.h:16
 msgid "Stream Link"
@@ -4379,15 +4379,15 @@ msgstr "Subtitle"
 #: plugins_tithek_skin.xml.h:19 skin_default_skin.xml.h:677
 #: skins_tithek_skin.xml.h:19
 msgid "Type"
-msgstr "Type"
+msgstr ""
 
 #: plugins_tithek_skin.xml.h:20 skins_tithek_skin.xml.h:20
 msgid "View Cover"
-msgstr "View Cover"
+msgstr ""
 
 #: plugins_tithek_skin.xml.h:21 skins_tithek_skin.xml.h:21
 msgid "View Sections"
-msgstr "View Sections"
+msgstr ""
 
 #: plugins_tiwakeup_skin.xml.h:1 skins_tiwakeup_skin.xml.h:1
 msgid "tiWakeup"
@@ -4407,28 +4407,28 @@ msgstr ""
 
 #: plugins_tmc_skin.xml.h:8 skins_tmc_skin.xml.h:8
 msgid "IMDB Search"
-msgstr "Search"
+msgstr "IMDb Search"
 
 #: plugins_tmc_skin.xml.h:10 skins_tmc_skin.xml.h:10
 msgid "Pic Name"
-msgstr "Name"
+msgstr ""
 
 #: plugins_tmc_skin.xml.h:11 skins_tmc_skin.xml.h:11
 msgid "Pic Timeout"
-msgstr "Ping Timeout"
+msgstr ""
 
 #: plugins_tmc_skin.xml.h:12 skins_tmc_skin.xml.h:12
 msgid "Preview"
-msgstr "Previous"
+msgstr ""
 
 #: plugins_tmc_skin.xml.h:14 skins_tmc_skin.xml.h:14
 msgid "Runtime:"
-msgstr "Time"
+msgstr ""
 
 #: plugins_tmc_skin.xml.h:15 skin_default_skin.xml.h:531
 #: skins_tmc_skin.xml.h:15
 msgid "Scan"
-msgstr "Scan"
+msgstr ""
 
 #: plugins_tmc_skin.xml.h:17 skins_tmc_skin.xml.h:17
 msgid "Votes:"
@@ -4436,19 +4436,19 @@ msgstr ""
 
 #: plugins_tmdb_skin.xml.h:2 skins_tmdb_skin.xml.h:2
 msgid "Orgname:"
-msgstr "Username"
+msgstr "Organisation name"
 
 #: plugins_tmdb_skin.xml.h:3 skins_tmdb_skin.xml.h:3
 msgid "OTHER"
-msgstr "OTHER"
+msgstr ""
 
 #: plugins_tmdb_skin.xml.h:5 skins_tmdb_skin.xml.h:5
 msgid "Rating:"
-msgstr "starting"
+msgstr ""
 
 #: plugins_tmdb_skin.xml.h:10 skins_tmdb_skin.xml.h:10
 msgid "TMDb - Plugin"
-msgstr "Plugins"
+msgstr ""
 
 #: plugins_tsSchnitt_skin.xml.h:1 skins_tsSchnitt_skin.xml.h:1
 msgid "Cutstatus:"
@@ -4456,7 +4456,7 @@ msgstr ""
 
 #: plugins_tsSchnitt_skin.xml.h:2 skins_tsSchnitt_skin.xml.h:2
 msgid "in background"
-msgstr "Screensaver Background"
+msgstr ""
 
 #: plugins_tsSchnitt_skin.xml.h:3 skins_tsSchnitt_skin.xml.h:3
 msgid "Marker found:"
@@ -4464,11 +4464,11 @@ msgstr ""
 
 #: plugins_tsSchnitt_skin.xml.h:4 skins_tsSchnitt_skin.xml.h:4
 msgid "progress"
-msgstr "Progressbar"
+msgstr ""
 
 #: plugins_tsSchnitt_skin.xml.h:5 skins_tsSchnitt_skin.xml.h:5
 msgid "Selected:"
-msgstr "Select backup: "
+msgstr ""
 
 #: plugins_tsSchnitt_skin.xml.h:6 skins_tsSchnitt_skin.xml.h:6
 msgid "select movie"
@@ -4487,7 +4487,7 @@ msgstr ""
 #: plugins_weather_skin.xml.h:3 skins_weather_skin.xml.h:3 tpk_showname.h:185
 #: weather.h:418
 msgid "Weather"
-msgstr "Weather"
+msgstr ""
 
 #: plugins_wins3_skin.xml.h:2 skins_wins3_skin.xml.h:2
 msgid "NEW"
@@ -4495,11 +4495,11 @@ msgstr "New"
 
 #: plugins_zapback_skin.xml.h:1 skins_zapback_skin.xml.h:1
 msgid "ZapBack"
-msgstr "Backup"
+msgstr ""
 
 #: plugins_zapback_skin.xml.h:3 skins_zapback_skin.xml.h:3
 msgid "in"
-msgstr "PIN"
+msgstr ""
 
 #: plugins_zapback_skin.xml.h:4 skins_zapback_skin.xml.h:4
 msgid "Minuten"
@@ -4507,7 +4507,7 @@ msgstr "Minutes"
 
 #: plugins_zapback_skin.xml.h:5 skins_zapback_skin.xml.h:5
 msgid "schaltet zurueck auf Sender"
-msgstr ""
+msgstr "returns to the previous Channel"
 
 #: plugins_zapback_skin.xml.h:6 skins_zapback_skin.xml.h:6
 msgid "Start-> OK"
@@ -4569,7 +4569,7 @@ msgstr "Start Position"
 msgid ""
 "Position Setup is not allowed if record\n"
 "or stream is running !"
-msgstr "Scan is not allowed, if recording or stream is running!"
+msgstr "Scan is not allowed, if a recording or stream is running!"
 
 #: powerofftimer.h:117
 msgid "DeepStandby"
@@ -4593,15 +4593,15 @@ msgstr "Lower slot"
 
 #: readerconfig.h:310
 msgid "Use config from Flash (permanent)"
-msgstr "Use config from Flash (permanent)"
+msgstr ""
 
 #: readerconfig.h:319
 msgid "Use config from Flash (temporary)"
-msgstr "Use config from Flash (temporary)"
+msgstr ""
 
 #: readerconfig.h:328
 msgid "Use config from Stick or HDD"
-msgstr "Use config from Stick or HDD"
+msgstr ""
 
 #: readerconfig.h:338
 msgid "Choice Config File"
@@ -4609,19 +4609,19 @@ msgstr "Choose Config File"
 
 #: readerconfig.h:343
 msgid "No config file found."
-msgstr "No config file found."
+msgstr ""
 
 #: readerconfig.h:389 readerconfig.h:482
 msgid "Dvbapi (enabled)"
-msgstr "Dvbapi (enabled)"
+msgstr ""
 
 #: readerconfig.h:391 readerconfig.h:475
 msgid "Dvbapi (disabled)"
-msgstr "Dvbapi (disabled)"
+msgstr ""
 
 #: readerconfig.h:418
 msgid "Reader active"
-msgstr "Reader active"
+msgstr ""
 
 #: readerconfig.h:443
 msgid "Oscam config written to medium !"
@@ -4654,47 +4654,47 @@ msgstr "Not enough space"
 
 #: record.h:43
 msgid "Error create filename"
-msgstr "Error create filename"
+msgstr ""
 
 #: record.h:46
 msgid "Can't open file"
-msgstr "Can't open file"
+msgstr ""
 
 #: record.h:49
 msgid "Can't open FRONTEND device"
-msgstr "Can't open FRONTEND device"
+msgstr ""
 
 #: record.h:52
 msgid "Can't open DMX device"
-msgstr "Can't open DMX device"
+msgstr ""
 
 #: record.h:55
 msgid "Pid's not ok"
-msgstr "Pid's not ok"
+msgstr ""
 
 #: record.h:58
 msgid "Channel or Transponder is empty"
-msgstr "Channel or Transponder is empty"
+msgstr ""
 
 #: record.h:61
 msgid "Write error"
-msgstr "Write error"
+msgstr ""
 
 #: record.h:64
 msgid "No memory"
-msgstr "No memory"
+msgstr ""
 
 #: record.h:67
 msgid "Failed open split file"
-msgstr "Failed open split file"
+msgstr ""
 
 #: record.h:70
 msgid "Frontend type unknown"
-msgstr "Frontend type unknown"
+msgstr ""
 
 #: record.h:73
 msgid "Tune to channel failed"
-msgstr "Tune to channel failed"
+msgstr ""
 
 #: record.h:78
 msgid "To many read error or end of file"
@@ -4702,15 +4702,15 @@ msgstr "Too many read errors or end of file"
 
 #: record.h:81
 msgid "Can't create service"
-msgstr "Can't create service"
+msgstr ""
 
 #: record.h:84
 msgid "No space left on device"
-msgstr "No space left on device"
+msgstr ""
 
 #: record.h:90
 msgid "Record / Timeshift / Stream"
-msgstr "Record / Timeshift / Stream"
+msgstr ""
 
 #: record.h:355
 msgid "Box recording finished poweroff in 30sec !"
@@ -4731,11 +4731,11 @@ msgstr "Timer Recording started!"
 #: record.h:1288 record.h:1297 record.h:1308 record.h:1343 record.h:1352
 #: record.h:1384 stream.h:15 stream.h:37
 msgid "stop"
-msgstr "Boot stop"
+msgstr ""
 
 #: record.h:1306 record.h:1380 skin_default_skin.xml.h:475
 msgid "Record"
-msgstr "Record"
+msgstr ""
 
 #: record.h:1358 record.h:1367 record.h:1390
 msgid "change"
@@ -4755,7 +4755,7 @@ msgstr "Add recording (enter duration)"
 
 #: record.h:1413
 msgid "Can't get EPG time or EPG endtime not ok"
-msgstr "Can't get EPG time or EPG endtime not ok"
+msgstr ""
 
 #: record.h:1438
 msgid "Record started"
@@ -4771,11 +4771,11 @@ msgstr "Can't get EPG time or EPG endtime not ok"
 
 #: rectimer.h:139
 msgid "Timer endtime shorter than aktual time"
-msgstr ""
+msgstr "Timer endtime is in the past!"
 
 #: rectimer.h:144
 msgid "Timer endtime shorter than start time"
-msgstr ""
+msgstr "Timer endtime is earlier than the starttime"
 
 #: rectimer.h:149
 msgid "Timer service ID not ok"
@@ -4799,7 +4799,7 @@ msgstr ""
 
 #: rectimer.h:1039 rectimer.h:1448 rectimer.h:1459
 msgid "once"
-msgstr "once"
+msgstr ""
 
 #: rectimer.h:1040 rectimer.h:1450 rectimer.h:1461
 msgid "repeate"
@@ -4819,35 +4819,35 @@ msgstr "Workdays"
 
 #: rectimer.h:1059 skin_default_skin.xml.h:382
 msgid "Monday"
-msgstr "Monday"
+msgstr ""
 
 #: rectimer.h:1060 skin_default_skin.xml.h:665
 msgid "Tuesday"
-msgstr "Tuesday"
+msgstr ""
 
 #: rectimer.h:1061 skin_default_skin.xml.h:717
 msgid "Wednesday"
-msgstr "Wednesday"
+msgstr ""
 
 #: rectimer.h:1062 skin_default_skin.xml.h:636
 msgid "Thursday"
-msgstr "Thursday"
+msgstr ""
 
 #: rectimer.h:1063 skin_default_skin.xml.h:242
 msgid "Friday"
-msgstr "Friday"
+msgstr ""
 
 #: rectimer.h:1064 skin_default_skin.xml.h:527
 msgid "Saturday"
-msgstr "Saturday"
+msgstr ""
 
 #: rectimer.h:1065 skin_default_skin.xml.h:613
 msgid "Sunday"
-msgstr "Sunday"
+msgstr ""
 
 #: rectimer.h:1445
 msgid "rec"
-msgstr "red"
+msgstr ""
 
 #: rectimer.h:1456
 msgid "switch"
@@ -4859,11 +4859,11 @@ msgstr "starting"
 
 #: rectimer.h:1487
 msgid "success"
-msgstr "Remove success."
+msgstr ""
 
 #: rectimer.h:1489
 msgid "error"
-msgstr "Errorboot"
+msgstr ""
 
 #: restoredefault.h:10
 msgid "Really restore default settings ?"
@@ -4875,7 +4875,7 @@ msgstr "Receiver reboots now!"
 
 #: restoredefault.h:23
 msgid "Can't restore settings"
-msgstr "Can't restore settings"
+msgstr ""
 
 #: restoredefault.h:32
 msgid ""
@@ -4896,7 +4896,7 @@ msgstr ""
 #: restoredefault.h:63 restoredefault.h:67 restoredefault.h:71
 #: skin_default_skin.xml.h:503
 msgid "Restore default settings"
-msgstr "Restore default settings"
+msgstr ""
 
 #: restoredefault.h:64 restoredefault.h:75
 msgid "Format MNT with Backup/Restore"
@@ -4978,11 +4978,11 @@ msgstr "Scan is not allowed, if recording or stream is running!"
 
 #: scan.h:1979
 msgid "No Tuner configured"
-msgstr "No Tuner configured"
+msgstr ""
 
 #: scan.h:1998 scan.h:2005
 msgid "Single Transponder"
-msgstr "Single Transponder"
+msgstr ""
 
 #: scan.h:1999
 msgid "Single Sat"
@@ -4990,7 +4990,7 @@ msgstr "Single Satellite"
 
 #: scan.h:2000
 msgid "Multi Sat"
-msgstr "Multi Sat"
+msgstr ""
 
 #: scan.h:2006
 msgid "Single Provider"
@@ -4998,7 +4998,7 @@ msgstr "Single Service"
 
 #: scan.h:2011
 msgid "Auto Scan"
-msgstr "Auto Scan"
+msgstr ""
 
 #: scan.h:2261
 msgid "Unchanged"
@@ -5006,15 +5006,15 @@ msgstr "Don't change"
 
 #: scan.h:2262
 msgid "Create new"
-msgstr "Create new"
+msgstr ""
 
 #: scan.h:2263
 msgid "Delete All"
-msgstr "Delete All"
+msgstr ""
 
 #: scan.h:2345
 msgid "Transponder changed"
-msgstr "Transponder changed"
+msgstr ""
 
 #: scart.h:12
 msgid "Change to scart"
