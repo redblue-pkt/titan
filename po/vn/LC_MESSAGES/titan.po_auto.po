@@ -10648,12 +10648,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid "Harddisk Format - List Devices"
-#~ msgstr "Định dạng ổ cứng – Danh sách các thiết bị"
-
-#~ msgid "Harddisk Fsck - List Devices"
-#~ msgstr "Ổ cứng – Danh sách các thiết bị"
-
-#~ msgid "Harddisk Configure - List Devices"
-#~ msgstr "Danh mục ổ cứng"

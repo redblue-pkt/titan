@@ -10797,9 +10797,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid "Harddisk Fsck - List Devices"
-#~ msgstr "Harddisk File System Check - List of Devices"
-
-#~ msgid "Harddisk Configure - List Devices"
-#~ msgstr "Harddisk setup - List of devices"

@@ -10474,12 +10474,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid "Harddisk Format - List Devices"
-#~ msgstr "Disque Dur format - Liste . Pilotes"
-
-#~ msgid "Harddisk Fsck - List Devices"
-#~ msgstr "Disque Dur Fsck- Liste . Pilotes"
-
-#~ msgid "Harddisk Configure - List Devices"
-#~ msgstr "Disque Dur format - Liste . Pilotes"
