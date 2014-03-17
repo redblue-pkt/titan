@@ -4315,7 +4315,7 @@ msgstr ""
 
 #: plugins_tithek_skin.xml.h:2 skins_tithek_skin.xml.h:2
 msgid "TiThek Settings"
-msgstr "Tithek"
+msgstr "TiThek"
 
 #: plugins_tithek_skin.xml.h:3 skins_tithek_skin.xml.h:3 tithek.h:1490
 #: tithek.h:1622 tithek.h:3201
@@ -4369,7 +4369,7 @@ msgstr ""
 
 #: plugins_tithek_skin.xml.h:17 skins_tithek_skin.xml.h:17
 msgid "TiThek - Favorite Edit"
-msgstr ""
+msgstr "TiThek - Edit Favourite"
 
 #: plugins_tithek_skin.xml.h:18 skin_default_skin.xml.h:649
 #: skins_tithek_skin.xml.h:18
@@ -5720,7 +5720,7 @@ msgstr "Copy Mode"
 
 #: skin_default_skin.xml.h:153
 msgid "copy service"
-msgstr "Copy service to favorites"
+msgstr "Copy service to favourites"
 
 #: skin_default_skin.xml.h:154
 msgid "CPU"
@@ -6012,11 +6012,11 @@ msgstr ""
 
 #: skin_default_skin.xml.h:234
 msgid "Flashupdate (online)"
-msgstr "Flashupdate (online)"
+msgstr ""
 
 #: skin_default_skin.xml.h:235
 msgid "Flashupdate (tmp)"
-msgstr "Flashupdate (tmp)"
+msgstr ""
 
 #: skin_default_skin.xml.h:236
 msgid "Fontsize adjust in pixel"
@@ -6036,7 +6036,7 @@ msgstr "Français"
 
 #: skin_default_skin.xml.h:240
 msgid "Frequency"
-msgstr "Frequency"
+msgstr ""
 
 #: skin_default_skin.xml.h:241
 msgid "Frequency:"
@@ -6064,7 +6064,7 @@ msgstr "Deutsch"
 
 #: skin_default_skin.xml.h:248
 msgid "Git Changelog"
-msgstr "Channel"
+msgstr ""
 
 #: skin_default_skin.xml.h:249
 msgid "Go to startpos"
@@ -6072,7 +6072,7 @@ msgstr "Goto start position"
 
 #: skin_default_skin.xml.h:250
 msgid "Graph. EPG"
-msgstr "Graph. EPG"
+msgstr ""
 
 #: skin_default_skin.xml.h:251
 msgid "Graphic EPG"
@@ -6080,11 +6080,11 @@ msgstr "Graphical Multi-EPG"
 
 #: skin_default_skin.xml.h:252
 msgid "Graphic EPG Picon"
-msgstr "Graphic EPG Picon"
+msgstr ""
 
 #: skin_default_skin.xml.h:253
 msgid "Graphic EPG Zoom"
-msgstr "Graphic EPG Zoom"
+msgstr ""
 
 #: skin_default_skin.xml.h:255
 msgid "Greek"
@@ -6100,7 +6100,7 @@ msgstr "Interval"
 
 #: skin_default_skin.xml.h:258
 msgid "GUI Restart"
-msgstr "GUI Restart"
+msgstr ""
 
 #: skin_default_skin.xml.h:259
 msgid "h"
@@ -6127,7 +6127,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:264
 msgid "Here to select your remote Model"
-msgstr ""
+msgstr "Select your remote model"
 
 #: skin_default_skin.xml.h:265
 msgid ""
@@ -6135,6 +6135,10 @@ msgid ""
 "control cross and the extra buttons displayed with your remote control to "
 "select."
 msgstr ""
+"Here you can assign channels for their ci modules.\n"
+"\n"
+"Use the control cross and the extra buttons displayed to navigate with your "
+"remote control."
 
 #: skin_default_skin.xml.h:266
 msgid "Here you can backup and restore your settings."
@@ -6157,6 +6161,9 @@ msgid ""
 "must edit their tuner and adjust depending on the connection. For engine "
 "systems require an additional engine settings making."
 msgstr ""
+"Here you can choose your tuner for configuration. For your channel search, you "
+"have to configure your tuner / tuners. For engine "
+"systems an additional engine configuration is required."
 
 #: skin_default_skin.xml.h:269
 msgid ""
@@ -6225,7 +6232,7 @@ msgid ""
 "control cross and the extra buttons displayed with your remote control to "
 "select."
 msgstr ""
-"Here you can define channels and favorites, which will be scanned during the "
+"Here you can define channels and favourites, which will be scanned during the "
 "EPG Scan.\n"
 "\n"
 "Use the control cross and the extra buttons displayed to navigate with your "
@@ -6403,7 +6410,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:293
 msgid "Here you can manage your Ci-Modul or Card Infos."
-msgstr ""
+msgstr "Here you can manage your CI-Module or Card Infos"
 
 #: skin_default_skin.xml.h:294
 msgid ""
@@ -6451,7 +6458,7 @@ msgstr ""
 msgid ""
 "Here you can set for your cable tuner. Ask your cable provider and make you "
 "connect an automatic search."
-msgstr ""
+msgstr "Here you can set your cable tuner. Choose your cable provider and perform an automatic search."
 
 #: skin_default_skin.xml.h:299
 msgid ""
@@ -6459,12 +6466,17 @@ msgid ""
 "selection. When using DiSEqC They also point to the port used. For advanced "
 "Lnb / Unicam navigate to the field and press the Red button."
 msgstr ""
-
+"Satellite tuner configuration: Choose your Satellite,\n"
+"if you use DiSEqC then define the ports. For extended LNB/ Unicable"
+"configuration navigate to the LNB/Unicable option and press the red button."
+ 
 #: skin_default_skin.xml.h:300
 msgid ""
 "Here you can set for your terrestrial tuner. Activate the terrestrial tuner "
 "and do you connect an automatic search."
 msgstr ""
+"Here you can set for your terrestrial tuner. Activate the terrestrial tuner "
+"and perform an automatic search."
 
 #: skin_default_skin.xml.h:301
 msgid ""
@@ -6563,15 +6575,15 @@ msgstr ""
 
 #: skin_default_skin.xml.h:315 tpchoice.h:52
 msgid "ID"
-msgstr "PIDs"
+msgstr ""
 
 #: skin_default_skin.xml.h:316
 msgid "ID:"
-msgstr "SID: "
+msgstr ""
 
 #: skin_default_skin.xml.h:317
 msgid "Inc. AC3 Audio in %"
-msgstr "Meet AC3 Audio Volume by reducing Steroe-audio in %"
+msgstr "Meet AC3 Audio Volume by reducing Stereo-audio in %"
 
 #: skin_default_skin.xml.h:318
 msgid "Infobar Sleep"
@@ -6583,15 +6595,15 @@ msgstr "Infobar fade after (sec)"
 
 #: skin_default_skin.xml.h:320 tsSchnitt.c:108
 msgid "Information"
-msgstr "Information"
+msgstr ""
 
 #: skin_default_skin.xml.h:321
 msgid "install"
-msgstr "install"
+msgstr ""
 
 #: skin_default_skin.xml.h:322
 msgid "Installed:"
-msgstr "Install"
+msgstr ""
 
 #: skin_default_skin.xml.h:323
 msgid "internet"
@@ -6599,7 +6611,7 @@ msgstr "Internet"
 
 #: skin_default_skin.xml.h:324
 msgid "Inversion"
-msgstr "Inversion"
+msgstr ""
 
 #: skin_default_skin.xml.h:325
 msgid "Inversion:"
@@ -6627,19 +6639,19 @@ msgstr ""
 
 #: skin_default_skin.xml.h:333
 msgid "K"
-msgstr "Ok"
+msgstr ""
 
 #: skin_default_skin.xml.h:334 system_infos.h:64
 msgid "Kernel"
-msgstr "Kernel"
+msgstr ""
 
 #: skin_default_skin.xml.h:335
 msgid "Key"
-msgstr "Key"
+msgstr ""
 
 #: skin_default_skin.xml.h:336
 msgid "Keyboard"
-msgstr "Keyboard"
+msgstr ""
 
 #: skin_default_skin.xml.h:337
 msgid "l"
@@ -6655,11 +6667,11 @@ msgstr "LAN"
 
 #: skin_default_skin.xml.h:340
 msgid "Language"
-msgstr "Language"
+msgstr ""
 
 #: skin_default_skin.xml.h:341
 msgid "Latitude"
-msgstr "Latitude"
+msgstr ""
 
 #: skin_default_skin.xml.h:342
 msgid "LED - brightness running"
@@ -6671,27 +6683,27 @@ msgstr ""
 
 #: skin_default_skin.xml.h:344
 msgid "Limit"
-msgstr "Limit"
+msgstr ""
 
 #: skin_default_skin.xml.h:345
 msgid "Listbox Select"
-msgstr "Listbox Select"
+msgstr ""
 
 #: skin_default_skin.xml.h:346
 msgid "Listbox Select Color"
-msgstr "Listbox Select"
+msgstr ""
 
 #: skin_default_skin.xml.h:347
 msgid "LNB Settings"
-msgstr "LNB Settings"
+msgstr ""
 
 #: skin_default_skin.xml.h:348
 msgid "LOF/H"
-msgstr "LOF/H"
+msgstr ""
 
 #: skin_default_skin.xml.h:349
 msgid "LOF/L"
-msgstr "LOF/L"
+msgstr ""
 
 #: skin_default_skin.xml.h:350
 msgid "LOF / UNICABLE"
@@ -6703,7 +6715,7 @@ msgstr "Log"
 
 #: skin_default_skin.xml.h:352
 msgid "Longitude"
-msgstr "Longitude"
+msgstr ""
 
 #: skin_default_skin.xml.h:353
 msgid "m"
@@ -6715,11 +6727,11 @@ msgstr ""
 
 #: skin_default_skin.xml.h:355
 msgid "Main Menu"
-msgstr "Main Menu"
+msgstr ""
 
 #: skin_default_skin.xml.h:356
 msgid "Manual Search"
-msgstr "Manual Search"
+msgstr ""
 
 #: skin_default_skin.xml.h:357
 msgid "Manual Search Cable"
@@ -6727,7 +6739,7 @@ msgstr "Manual cable search"
 
 #: skin_default_skin.xml.h:358
 msgid "Manual Search Terrestrial"
-msgstr "Manual cable search"
+msgstr "Manual terrestrial search"
 
 #: skin_default_skin.xml.h:359
 msgid "Marker"
@@ -6743,23 +6755,23 @@ msgstr "Maximum Signalrate"
 
 #: skin_default_skin.xml.h:362
 msgid "Media Center"
-msgstr "Media Center"
+msgstr ""
 
 #: skin_default_skin.xml.h:364
 msgid "MediaDB Path"
-msgstr "MediaDB Path"
+msgstr ""
 
 #: skin_default_skin.xml.h:365
 msgid "MediaDB Settings"
-msgstr "MediaDB Settings"
+msgstr ""
 
 #: skin_default_skin.xml.h:366
 msgid "Media Player"
-msgstr "Media Player"
+msgstr ""
 
 #: skin_default_skin.xml.h:367
 msgid "Memory"
-msgstr "Memory"
+msgstr ""
 
 #: skin_default_skin.xml.h:368
 msgid "MENU"
@@ -6767,15 +6779,15 @@ msgstr "Menu"
 
 #: skin_default_skin.xml.h:369
 msgid "Menulist"
-msgstr "Menulist"
+msgstr ""
 
 #: skin_default_skin.xml.h:370
 msgid "Menu Protect"
-msgstr "Menu Protect"
+msgstr ""
 
 #: skin_default_skin.xml.h:371
 msgid "MENUPROTECT"
-msgstr "MENUPROTECT"
+msgstr ""
 
 #: skin_default_skin.xml.h:372
 msgid "MHW2 EPG"
@@ -6783,7 +6795,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:373
 msgid "MHW EPG"
-msgstr "Multi-EPG"
+msgstr ""
 
 #: skin_default_skin.xml.h:374
 msgid "Minimal frequency"
@@ -6795,7 +6807,7 @@ msgstr "Minimal Signalrate"
 
 #: skin_default_skin.xml.h:376
 msgid "Minutes"
-msgstr "Minutes"
+msgstr ""
 
 #: skin_default_skin.xml.h:377
 msgid "Minutes:"
@@ -6803,7 +6815,7 @@ msgstr "Minutes: "
 
 #: skin_default_skin.xml.h:378
 msgid "Modulation"
-msgstr "Modulation"
+msgstr ""
 
 #: skin_default_skin.xml.h:379
 msgid "Modulation:"
@@ -6811,7 +6823,7 @@ msgstr "Modulation: "
 
 #: skin_default_skin.xml.h:380
 msgid "Module"
-msgstr "Module"
+msgstr ""
 
 #: skin_default_skin.xml.h:381
 msgid "Module Config"
@@ -6819,11 +6831,11 @@ msgstr "Modul Configuration"
 
 #: skin_default_skin.xml.h:383 system_infos.h:74
 msgid "Mounts"
-msgstr "Mounts"
+msgstr ""
 
 #: skin_default_skin.xml.h:384
 msgid "Move"
-msgstr "Move"
+msgstr ""
 
 #: skin_default_skin.xml.h:385
 msgid "move service"
@@ -6831,23 +6843,23 @@ msgstr "Move service"
 
 #: skin_default_skin.xml.h:386
 msgid "Moviepath"
-msgstr "Moviepath"
+msgstr ""
 
 #: skin_default_skin.xml.h:387
 msgid "MTD"
-msgstr "MTD"
+msgstr ""
 
 #: skin_default_skin.xml.h:389
 msgid "n"
-msgstr "No"
+msgstr ""
 
 #: skin_default_skin.xml.h:390
 msgid "N"
-msgstr "No"
+msgstr ""
 
 #: skin_default_skin.xml.h:391 stock.h:270
 msgid "Name"
-msgstr "Name"
+msgstr ""
 
 #: skin_default_skin.xml.h:392
 msgid "Name:"
@@ -6859,15 +6871,15 @@ msgstr "Netmask"
 
 #: skin_default_skin.xml.h:395
 msgid "Network Adapter Settings"
-msgstr "Network Adapter Settings"
+msgstr ""
 
 #: skin_default_skin.xml.h:396
 msgid "Network Adapter Test"
-msgstr "Network Adapter Test"
+msgstr ""
 
 #: skin_default_skin.xml.h:397 tpk_showname.h:66
 msgid "Networkbrowser"
-msgstr "Networkbrowser"
+msgstr ""
 
 #: skin_default_skin.xml.h:398
 msgid "Network Interfacelist"
@@ -6875,15 +6887,15 @@ msgstr "Network Interface list"
 
 #: skin_default_skin.xml.h:399
 msgid "Network Restart"
-msgstr "Network Restart"
+msgstr ""
 
 #: skin_default_skin.xml.h:400
 msgid "Network Scan"
-msgstr "Network Scan"
+msgstr ""
 
 #: skin_default_skin.xml.h:401
 msgid "Network Test"
-msgstr "Network Test"
+msgstr ""
 
 #: skin_default_skin.xml.h:402
 msgid "Newsletter"
@@ -6903,19 +6915,19 @@ msgstr "Standby"
 
 #: skin_default_skin.xml.h:406
 msgid "o"
-msgstr "No"
+msgstr ""
 
 #: skin_default_skin.xml.h:407
 msgid "O"
-msgstr "Ok"
+msgstr ""
 
 #: skin_default_skin.xml.h:408
 msgid "oe"
-msgstr "once"
+msgstr "ö"
 
 #: skin_default_skin.xml.h:409
 msgid "OE"
-msgstr "None"
+msgstr "Ö"
 
 #: skin_default_skin.xml.h:410
 msgid "Ok"
@@ -6927,11 +6939,11 @@ msgstr "ONID: "
 
 #: skin_default_skin.xml.h:412
 msgid "Only default FEC"
-msgstr "Only default FEC"
+msgstr ""
 
 #: skin_default_skin.xml.h:413
 msgid "Only default signalrate"
-msgstr "Only default signalrate"
+msgstr ""
 
 #: skin_default_skin.xml.h:414
 msgid "Only DVBS"
@@ -6951,23 +6963,23 @@ msgstr "Orbital Position: "
 
 #: skin_default_skin.xml.h:418
 msgid "OSD Bottom Overscan"
-msgstr "OSD Bottom Overscan"
+msgstr ""
 
 #: skin_default_skin.xml.h:419
 msgid "OSD Left Overscan"
-msgstr "OSD Left Overscan"
+msgstr ""
 
 #: skin_default_skin.xml.h:420
 msgid "OSD Right Overscan"
-msgstr "OSD Right Overscan"
+msgstr ""
 
 #: skin_default_skin.xml.h:421
 msgid "OSD Top Overscan"
-msgstr "OSD Top Overscan"
+msgstr ""
 
 #: skin_default_skin.xml.h:422
 msgid "OSD Transparent"
-msgstr "OSD Transparent"
+msgstr ""
 
 #: skin_default_skin.xml.h:424
 msgid "Overclocking Settings"
@@ -6987,7 +6999,7 @@ msgstr "PCR PID: "
 
 #: skin_default_skin.xml.h:429 tmc.h:417
 msgid "Picture"
-msgstr "Picture"
+msgstr ""
 
 #: skin_default_skin.xml.h:431
 msgid "PIDs"
@@ -8502,7 +8514,7 @@ msgstr ""
 
 #: tithek.c:100
 msgid "Tithek - Mainmenu"
-msgstr ""
+msgstr "TiThek - Mainmenu"
 
 #: tithek_global.h:238 tithek.h:3096
 msgid "The hoster is not yet supported !"
@@ -8604,7 +8616,7 @@ msgstr "Can't get Streamurl!"
 
 #: tithek.h:1445
 msgid "TitanNit Tithek disclaimer"
-msgstr ""
+msgstr "TitanNit TiThek disclaimer"
 
 #: tithek.h:1485 tithek.h:1617 tithek.h:3196
 msgid "EDIT FAV"
@@ -8616,15 +8628,15 @@ msgstr "Page"
 
 #: tithek.h:3159
 msgid "Remove this Favorite ?"
-msgstr "Remove this Favorite?"
+msgstr "Remove this Favourite?"
 
 #: tithek.h:3173
 msgid "Add this link as Favorite ?"
-msgstr "Add this link as Favorite?"
+msgstr "Add this link as Favourite?"
 
 #: tithek.h:3183
 msgid "Edit this Favorite ?"
-msgstr ""
+msgstr "Edit this Favourite?"
 
 #: tithek_mainmenu.h:2
 msgid "All New first"
@@ -8684,7 +8696,7 @@ msgstr ""
 
 #: tithek_mainmenu.h:17
 msgid "Favoriten"
-msgstr ""
+msgstr "Favourites"
 
 #: tithek_mainmenu.h:18
 msgid "Giga"
