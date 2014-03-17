@@ -116,6 +116,7 @@ void screenfilesystem(char* dev)
 	int i, rcret = 0, count = 1;
 	struct skin* screen = getscreen("harddisk_main");
 	struct skin* titletext = getscreennode(screen, "titletext");
+	struct skin* details = getscreennode(screen, "details");
 	struct skin* listbox = getscreennode(screen, "listbox");
 	struct skin* tmp = NULL;
 	char* tmpstr = NULL, *tmpstr1 = NULL;
@@ -123,10 +124,10 @@ void screenfilesystem(char* dev)
 	delmarkedscreennodes(screen, 1);
 	listbox->aktpage = -1;
 	listbox->aktline = 1;
-	drawscreen(screen, 0, 0);
 	changetitle(screen, _("Harddisk Format - Filesystem"));
-	if(titletext != status.skinerr) changetext(titletext, _("Harddisk Format - Filesystem detail text dummy"));
-
+	if(titletext != status.skinerr) changetext(titletext, _("Harddisk Format - Filesystem"));
+	if(details != status.skinerr) changetext(details, _("select the format filesystem type for your media drive"));
+		
 	if(status.expertmodus > 9) count = 5;
 
 	for(i = 0; i < count; i++)
@@ -202,7 +203,9 @@ void screenconfigurehdd(char* dev)
 	int i, y = 2, rcret = 0, ret = 0, mode = 0;
 	struct skin* screen = getscreen("harddisk_main");
 	struct skin* titletext = getscreennode(screen, "titletext");
+	struct skin* details = getscreennode(screen, "details");
 	struct skin* listbox = getscreennode(screen, "listbox");
+
 	struct skin* load = getscreen("loading");
 	struct skin* tmp = NULL;
 	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL;
@@ -211,11 +214,10 @@ void screenconfigurehdd(char* dev)
 	delmarkedscreennodes(screen, 1);
 	listbox->aktpage = -1;
 	listbox->aktline = 1;
-
-	drawscreen(screen, 0, 0);
 	changetitle(screen, _("Harddisk Configure"));
-	if(titletext != status.skinerr) changetext(titletext, _("Harddisk Configure detail text dummy"));
-
+	if(titletext != status.skinerr) changetext(titletext, _("Harddisk Configure"));
+	if(details != status.skinerr) changetext(details, _("select the media drive from Device List for configuration"));
+		
 	if(status.expertmodus > 9) y = 8;
 
 	for(i = 0; i < y; i++)
@@ -421,6 +423,7 @@ void screenharddisk(int mode)
 	struct skin* screen = getscreen("harddisk_main");
 	struct skin* listbox = getscreennode(screen, "listbox");
 	struct skin* titletext = getscreennode(screen, "titletext");
+	struct skin* details = getscreennode(screen, "details");
 	struct skin* tmp = NULL;
 	struct hdd* hddnode = NULL;
 	int tmphangtime = 999999, rcret = 0;
@@ -441,18 +444,21 @@ start:
 	delmarkedscreennodes(screen, 1);
 	if(mode == 0)
 	{
-		changetitle(screen, _("Harddisk Format - List Devices"));
-		/*if(titletext != status.skinerr)*/ changetext(titletext, _("Harddisk Format - List Devices"));
+		changetitle(screen, _("Harddisk Format"));
+		if(titletext != status.skinerr) changetext(titletext, _("Harddisk Format"));
+		if(details != status.skinerr) changetext(details, _("select the media drive from Device List for formating"));
 	}
 	else if(mode == 1)
 	{
-		changetitle(screen, _("Harddisk Fsck - List Devices"));
-		/*if(titletext != status.skinerr)*/ changetext(titletext, _("Harddisk Fsck - List Devices"));
+		changetitle(screen, _("Harddisk Fsck"));
+		if(titletext != status.skinerr) changetext(titletext, _("Harddisk Fsck"));
+		if(details != status.skinerr) changetext(details, _("select the media drive from Device List for fsck"));
 	}
 	else if(mode == 2)
 	{
-		changetitle(screen, _("Harddisk Configure - List Devices"));
-		/*if(titletext != status.skinerr)*/ changetext(titletext, _("Harddisk Configure - List Devices"));
+		changetitle(screen, _("Harddisk Configure"));
+		if(titletext != status.skinerr) changetext(titletext, _("Harddisk Configure"));
+		if(details != status.skinerr) changetext(details, _("select the media drive from Device List for configuration"));
 	}
 
 	listbox->aktpage = -1;
@@ -850,6 +856,7 @@ void screenharddisksleep()
 	int rcret = 0;
 	struct skin* sleep_config = getscreen("harddisk_main");
 	struct skin* titletext = getscreennode(sleep_config, "titletext");
+	struct skin* details = getscreennode(sleep_config, "details");
 	struct skin* listbox = getscreennode(sleep_config, "listbox");
 	struct skin* node = NULL;
 	struct skin* tmp = NULL;
@@ -869,6 +876,7 @@ void screenharddisksleep()
 	listbox->aktline = 1;
 	changetitle(sleep_config, _("Harddisk Sleep"));
 	if(titletext != status.skinerr) changetext(titletext, _("Harddisk Sleep"));
+	if(details != status.skinerr) changetext(details, _("set here the default sleeptime for all your media drives"));
 	
 	node = addlistbox(sleep_config, listbox, node, 1);
 	if(node != NULL)
