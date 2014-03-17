@@ -13,7 +13,10 @@ void screenrecordpath()
 	struct skin* streampath = getscreennode(recordpath, "streampath");
 	char* ret = NULL;
 
-	changeinput(moviepath, getconfig("rec_moviepath", NULL));
+
+	if(checkbox("UFS910") == 1 || checkbox("UFS922") == 1 || status.expertmodus >= 11)
+		changeinput(moviepath, getconfig("rec_moviepath", NULL));
+
 	changeinput(timerpath, getconfig("rec_timerpath", NULL));
 	changeinput(recpath, getconfig("rec_path", NULL));
 	changeinput(timeshiftpath, getconfig("rec_timeshiftpath", NULL));
@@ -29,7 +32,8 @@ void screenrecordpath()
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
-			addconfigscreen("rec_moviepath", moviepath);
+			if(checkbox("UFS910") == 1 || checkbox("UFS922") == 1 || status.expertmodus >= 11)
+				addconfigscreen("rec_moviepath", moviepath);
 			addconfigscreen("rec_timerpath", timerpath);
 			addconfigscreen("rec_path", recpath);
 			addconfigscreen("rec_timeshiftpath", timeshiftpath);
