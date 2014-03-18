@@ -1,29 +1,12 @@
 [createpo.sh] xgettext --omit-header -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.utf.po
-[createpo.sh] xgettext --omit-header -k_ *.* -o /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.new.po
-[createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.mo
-/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.outfile.po: warning: Charset missing in header.
-                                                                                Message conversion to user's charset will not work.
-917 translated messages, 1472 untranslated messages.
-[createpo.sh] xgettext --omit-header -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.utf.po
-[createpo.sh] xgettext --omit-header -k_ *.* -o /home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.new.po
-[createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.mo
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.outfile.po: warning: Charset missing in header.
-                                                                                Message conversion to user's charset will not work.
-913 translated messages, 1476 untranslated messages.
-[createpo.sh] xgettext --omit-header -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.utf.po
-[createpo.sh] xgettext --omit-header -k_ *.* -o /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.new.po
-[createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.mo
-/home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.outfile.po: warning: Charset missing in header.
-                                                                                Message conversion to user's charset will not work.
-/home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.outfile.po:1384: `msgid' and `msgstr' entries do not both end with '\n'
-msgfmt: found 1 fatal error
-1500 translated messages, 889 untranslated messages.
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.utf.po:123: end-of-line within string
+xgettext: found 1 fatal error
 [createpo.sh] ############################################
 [createpo.sh] ###### error should be in the middle #######
 [createpo.sh] ############################################
-  1383	msgid "Can't install Package. Package to big."
-  1384	msgstr ""
-  1385	"ERROR: The designated package is too big\n"
+   122	msgstr "ArrÃ©t""
+   123	
+   124	msgid "anim. width"
 [createpo.sh] ############################################
 [createpo.sh] ################## coding #################
 /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.po:         utf-8
@@ -46,18 +29,8 @@ msgfmt: found 1 fatal error
 /home/atemio/flashimg/source.titan/po/vn/LC_MESSAGES/titan.po_auto.po: utf-8
 /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.po:               utf-8
 /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.po_auto.po:       utf-8
-/home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.merge.po:         utf-8
-/home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.new.merge.po:     utf-8
-/home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.new.po:           us-ascii
-/home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.outfile.po:       utf-8
 /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po:               utf-8
-/home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.clean.po: utf-8
 /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.po:       utf-8
-/home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.utf.po:   utf-8
-/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.merge.po:         utf-8
-/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.new.merge.po:     utf-8
-/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.new.po:           us-ascii
-/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.outfile.po:       utf-8
 /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po:               utf-8
 /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.clean.po: utf-8
 /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.po:       utf-8
@@ -70,13 +43,7 @@ msgfmt: found 1 fatal error
 /home/atemio/flashimg/source.titan/po/nl/LC_MESSAGES/titan.po_auto.po:       utf-8
 /home/atemio/flashimg/source.titan/po/pl/LC_MESSAGES/titan.po:               utf-8
 /home/atemio/flashimg/source.titan/po/pl/LC_MESSAGES/titan.po_auto.po:       utf-8
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.merge.po:         utf-8
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.new.merge.po:     utf-8
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.new.po:           us-ascii
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.outfile.po:       utf-8
 /home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po:               utf-8
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.clean.po: utf-8
 /home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.po:       utf-8
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.utf.po:   utf-8
 /home/atemio/flashimg/source.titan/po/vn/LC_MESSAGES/titan.po:               utf-8
 /home/atemio/flashimg/source.titan/po/vn/LC_MESSAGES/titan.po_auto.po:       utf-8
