@@ -354,7 +354,7 @@ msgstr "Transparence"
 #: mc_videoplayer_settings.h:24 plugins_mc_skin.xml.h:49
 #: skin_default_skin.xml.h:505 skins_mc_skin.xml.h:49
 msgid "reverse alpha"
-msgstr ""
+msgstr "Alpha Inversé"
 
 #: adjust.h:99 mc_audioplayer_settings.h:29 mc_pictureplayer_settings.h:44
 #: mc_videoplayer_settings.h:25 plugins_mc_skin.xml.h:55
@@ -366,7 +366,7 @@ msgstr "taille"
 #: mc_videoplayer_settings.h:26 plugins_mc_skin.xml.h:51
 #: skin_default_skin.xml.h:507 skins_mc_skin.xml.h:51
 msgid "reverse size"
-msgstr ""
+msgstr "Taille Inversé"
 
 #: adjust.h:101 mc_audioplayer_settings.h:31 mc_pictureplayer_settings.h:46
 #: mc_videoplayer_settings.h:27 plugins_mc_skin.xml.h:16
@@ -378,7 +378,7 @@ msgstr ""
 #: mc_videoplayer_settings.h:28 plugins_mc_skin.xml.h:50
 #: skin_default_skin.xml.h:506 skins_mc_skin.xml.h:50
 msgid "reverse date"
-msgstr ""
+msgstr "Date Inversé"
 
 #: adjust.h:105
 msgid "Power Menu"
@@ -973,7 +973,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-07 10:44+0200\n"
 "PO-Revision-Date: 2014-02-07 17:47+0200\n"
-"Last-Translator: obi <_obiwan_@web.de>\n"
+"Last-Translator: channel <_obiwan_@web.de>\n"
 "Language-Team: German <_obiwan_@web.de>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -1022,21 +1022,21 @@ msgstr ""
 
 #: diseqcconfig.h:132
 msgid "Tonburst A/B"
-msgstr "Son Burst"
+msgstr ""
 
 #: diseqcconfig.h:135 diseqcconfig.h:140 diseqcconfig.h:159 transponder.h:222
 #: transponder.h:232 transponder.h:329 transponder.h:347 transponder.h:374
 #: transponder.h:380
 msgid "none"
-msgstr ""
+msgstr "aucun"
 
 #: diseqcconfig.h:136 skin_default_skin.xml.h:49
 msgid "A"
-msgstr "A"
+msgstr ""
 
 #: diseqcconfig.h:137 skin_default_skin.xml.h:99
 msgid "B"
-msgstr "B"
+msgstr ""
 
 #: diseqcconfig.h:141 diseqcconfig.h:160
 msgid "Input 1"
@@ -1276,7 +1276,7 @@ msgstr "Graphic Multi EPG"
 
 #: epgsettings.h:148 tmc.h:389
 msgid "scan"
-msgstr "Panscan"
+msgstr "Scan"
 
 #: epgsettings.h:149
 msgid "whitelist"
@@ -2127,7 +2127,7 @@ msgstr "Protection parentale"
 #: keyactions.h:29 settings_bluebutton.h:20 settings_pluginbutton.h:21
 #: settings_redbutton.h:21 videomode.h:17 videomode.h:34
 msgid "Subchannel"
-msgstr "Chaine"
+msgstr ""
 
 #: keyactions.h:30 play.h:702 settings_bluebutton.h:21
 #: settings_pluginbutton.h:22 settings_redbutton.h:22
@@ -2583,7 +2583,7 @@ msgstr ""
 
 #: moduleconfig.h:168
 msgid "activate"
-msgstr "Désactiver"
+msgstr "Activer"
 
 #: moduleconfig.h:169
 msgid "deaktivate"
@@ -2924,7 +2924,7 @@ msgstr ""
 
 #: panel_settings_autostart.h:70 settings_autostart.h:61
 msgid "ip"
-msgstr "i"
+msgstr ""
 
 #: panel_settings_autostart.h:78 settings_autostart.h:69
 msgid "updatelist"
@@ -2981,15 +2981,15 @@ msgstr "Vérificateur des fichiers Partition de l'enregistrement "
 #: panel_settings_autostart.h:210 settings_autostart.h:291
 #: skin_default_skin.xml.h:614
 msgid "Swap"
-msgstr "Swap"
+msgstr ""
 
 #: panel_settings_autostart.h:219 settings_autostart.h:300
 msgid "Swap Size"
-msgstr "Swap"
+msgstr ""
 
 #: panel_settings_autostart.h:236 settings_autostart.h:317
 msgid "Fsck Swap"
-msgstr "Swap"
+msgstr ""
 
 #: panel_settings_autostart.h:245 settings_autostart.h:326
 msgid "Record Max Sectors"
@@ -3037,7 +3037,7 @@ msgstr ""
 
 #: panel_settings_autostart.h:359 settings_autostart.h:486
 msgid "Pin"
-msgstr "Pin"
+msgstr ""
 
 #: panel_settings.h:21
 msgid "Automount Config"
@@ -3264,7 +3264,7 @@ msgstr "Effacer fichier"
 #: play.h:647 plugins_streaminfo_skin.xml.h:3 skins_streaminfo_skin.xml.h:3
 #: tpk_showname.h:175
 msgid "Streaminfo"
-msgstr "Streaming"
+msgstr ""
 
 #: play.h:648 tpk_showname.h:37
 msgid "IMDb"
@@ -3307,7 +3307,7 @@ msgstr ""
 
 #: play.h:1417
 msgid "SORT"
-msgstr ""
+msgstr "Trier"
 
 #: play.h:1649
 msgid "Marker autoseek is started"
@@ -3507,7 +3507,7 @@ msgstr ""
 
 #: plugins_facebook_skin.xml.h:1 skins_facebook_skin.xml.h:1 tpk_showname.h:21
 msgid "Facebook"
-msgstr "RC Redémarre"
+msgstr ""
 
 #: plugins_facebook_skin.xml.h:2 skins_facebook_skin.xml.h:2
 msgid "Facebook Register"
@@ -3551,7 +3551,7 @@ msgstr ""
 #: plugins_tmc_skin.xml.h:4 skins_imdbapi_skin.xml.h:2 skins_imdb_skin.xml.h:2
 #: skins_tmc_skin.xml.h:4
 msgid "Director:"
-msgstr "Repertoire Imdb"
+msgstr ""
 
 #: plugins_imdbapi_skin.xml.h:4 skins_imdbapi_skin.xml.h:4
 msgid "IMDb-API - Plugin"
@@ -3720,15 +3720,15 @@ msgstr "Réglage affichage MC VideoPlayer"
 
 #: plugins_mc_skin.xml.h:8 skins_mc_skin.xml.h:8
 msgid "Apple Trailer"
-msgstr "Apple Trailer"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:9 skins_mc_skin.xml.h:9
 msgid "AUDIO"
-msgstr "AUDIO"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:10 skins_mc_skin.xml.h:10
 msgid "Audio Player"
-msgstr "Audio Player"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:11 skins_mc_skin.xml.h:11
 msgid "AUDIO SETTINGS"
@@ -3756,7 +3756,7 @@ msgstr "Repertoire Imdb"
 
 #: plugins_mc_skin.xml.h:20 skins_mc_skin.xml.h:20
 msgid "details"
-msgstr "details"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:21 plugins_networkbrowser_skin.xml.h:7
 #: plugins_readerconfig_skin.xml.h:3 skin_default_skin.xml.h:198
@@ -3791,7 +3791,7 @@ msgstr ""
 
 #: plugins_mc_skin.xml.h:34 skins_mc_skin.xml.h:34
 msgid "Mediathek"
-msgstr "Media Center"
+msgstr "TiThek"
 
 #: plugins_mc_skin.xml.h:35 skins_mc_skin.xml.h:35
 msgid "mvid"
@@ -3799,7 +3799,7 @@ msgstr "mvid"
 
 #: plugins_mc_skin.xml.h:36 skins_mc_skin.xml.h:36
 msgid "My Video"
-msgstr "My Video"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:39 skins_mc_skin.xml.h:39
 msgid "Picdenom Mode"
@@ -3829,12 +3829,12 @@ msgstr "Réglages Photo"
 
 #: plugins_mc_skin.xml.h:46 skins_mc_skin.xml.h:46
 msgid "Radio Player"
-msgstr "Radio Player"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:52 plugins_tithek_skin.xml.h:14
 #: skins_mc_skin.xml.h:52 skins_tithek_skin.xml.h:14
 msgid "Screensaver"
-msgstr "Screensaver"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:53 plugins_panel_skin.xml.h:5
 #: plugins_panel_skin.xml.h:22 skin_default_skin.xml.h:557
@@ -3868,7 +3868,7 @@ msgstr "Style"
 
 #: plugins_mc_skin.xml.h:61 skins_mc_skin.xml.h:61
 msgid "use last Directory"
-msgstr "Repertoire Imdb"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:62 skins_mc_skin.xml.h:62
 msgid "VIDEO"
@@ -3903,11 +3903,11 @@ msgstr "Ajouter"
 
 #: plugins_networkbrowser_skin.xml.h:2 skins_networkbrowser_skin.xml.h:2
 msgid "Auth Settings"
-msgstr "Réglages Audio/Video"
+msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:3 skins_networkbrowser_skin.xml.h:3
 msgid "AUTH SETTINGS"
-msgstr "Réglages Audio"
+msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:4 skins_networkbrowser_skin.xml.h:4
 msgid "COPY"
@@ -3915,7 +3915,7 @@ msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:6 skins_networkbrowser_skin.xml.h:6
 msgid "dnsaddresse"
-msgstr "Adresse IP"
+msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:8 skins_networkbrowser_skin.xml.h:8
 msgid "ftpport"
@@ -4082,21 +4082,21 @@ msgstr "1500 U/min"
 #: plugins_panel_skin.xml.h:7 skin_default_skin.xml.h:42
 #: skins_panel_skin.xml.h:7
 msgid "500rpm"
-msgstr "500r/m"
+msgstr "500 U/min"
 
 #: plugins_panel_skin.xml.h:8 skin_default_skin.xml.h:84
 #: skins_panel_skin.xml.h:8
 msgid "Audio / Video / Sat"
-msgstr "Audio / Video / Sat "
+msgstr ""
 
 #: plugins_panel_skin.xml.h:9 skins_panel_skin.xml.h:9
 msgid "Automount"
-msgstr "Automount"
+msgstr ""
 
 #: plugins_panel_skin.xml.h:11 skin_default_skin.xml.h:121
 #: skins_panel_skin.xml.h:11
 msgid "Cam / Emu"
-msgstr "Cam / Emu"
+msgstr ""
 
 #: plugins_panel_skin.xml.h:12 skin_default_skin.xml.h:123
 #: skins_panel_skin.xml.h:12
@@ -4119,7 +4119,7 @@ msgstr "Controle de ventilateur"
 #: plugins_panel_skin.xml.h:19 skin_default_skin.xml.h:423
 #: skins_panel_skin.xml.h:19
 msgid "Overclocking"
-msgstr "Overclocking"
+msgstr ""
 
 #: plugins_panel_skin.xml.h:20 skins_panel_skin.xml.h:20
 msgid "Save"
@@ -4174,12 +4174,12 @@ msgstr ""
 
 #: plugins_readerconfig_skin.xml.h:7 skins_readerconfig_skin.xml.h:7
 msgid "Reader Config"
-msgstr "Configuration Béta"
+msgstr ""
 
 #: plugins_readerconfig_skin.xml.h:8 readerconfig.h:268
 #: skins_readerconfig_skin.xml.h:8
 msgid "Reader Configuration"
-msgstr "Configuration de Tuner"
+msgstr ""
 
 #: plugins_readerconfig_skin.xml.h:9 readerconfig.h:383
 #: skins_readerconfig_skin.xml.h:9
@@ -4193,27 +4193,27 @@ msgstr ""
 #: plugins_rgui_skin.xml.h:4 plugins_tiwakeup_skin.xml.h:4
 #: skins_rgui_skin.xml.h:4 skins_tiwakeup_skin.xml.h:4
 msgid "Server 1"
-msgstr "Serveur-DNS 1"
+msgstr "Serveur 1"
 
 #: plugins_rgui_skin.xml.h:5 plugins_tiwakeup_skin.xml.h:5
 #: skins_rgui_skin.xml.h:5 skins_tiwakeup_skin.xml.h:5
 msgid "Server 2"
-msgstr "Serveur-DNS 2"
+msgstr "Serveur 2"
 
 #: plugins_rgui_skin.xml.h:6 plugins_tiwakeup_skin.xml.h:6
 #: skins_rgui_skin.xml.h:6 skins_tiwakeup_skin.xml.h:6
 msgid "Server 3"
-msgstr "Service"
+msgstr "Service 3"
 
 #: plugins_rgui_skin.xml.h:7 plugins_tiwakeup_skin.xml.h:7
 #: skins_rgui_skin.xml.h:7 skins_tiwakeup_skin.xml.h:7
 msgid "Server 4"
-msgstr "Service"
+msgstr "Service 4"
 
 #: plugins_rgui_skin.xml.h:8 plugins_tiwakeup_skin.xml.h:8
 #: skins_rgui_skin.xml.h:8 skins_tiwakeup_skin.xml.h:8
 msgid "Server 5"
-msgstr "Service"
+msgstr "Service 5"
 
 #: plugins_stock_skin.xml.h:1 skins_stock_skin.xml.h:1 stock.h:187
 #: tpk_showname.h:173
@@ -4222,7 +4222,7 @@ msgstr ""
 
 #: plugins_stopifnotused_skin.xml.h:1 skins_stopifnotused_skin.xml.h:1
 msgid "NotUsed Settings"
-msgstr "Réglages de Rotor"
+msgstr ""
 
 #: plugins_stopifnotused_skin.xml.h:3 skins_stopifnotused_skin.xml.h:3
 msgid "Auto start"
@@ -4235,7 +4235,7 @@ msgstr "Temps pour Dormir"
 #: plugins_streaminfo_skin.xml.h:1 skin_default_skin.xml.h:76
 #: skins_streaminfo_skin.xml.h:1
 msgid "Aspect"
-msgstr "Aspect"
+msgstr ""
 
 #: plugins_streaminfo_skin.xml.h:2 skins_streaminfo_skin.xml.h:2
 msgid "Framerate"
@@ -4243,19 +4243,19 @@ msgstr "Taux Maximale"
 
 #: plugins_streaminfo_skin.xml.h:4 skins_streaminfo_skin.xml.h:4
 msgid "X-Resolution"
-msgstr "Résolution"
+msgstr "Résolution X"
 
 #: plugins_streaminfo_skin.xml.h:5 skins_streaminfo_skin.xml.h:5
 msgid "Y-Resolution"
-msgstr "Résolution"
+msgstr "Résolution Y"
 
 #: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1
 msgid "TiThek Menu"
-msgstr "Menu Principale"
+msgstr ""
 
 #: plugins_tithek_skin.xml.h:2 skins_tithek_skin.xml.h:2
 msgid "TiThek Settings"
-msgstr "Réglages Partages"
+msgstr "Réglages TiThek"
 
 #: plugins_tithek_skin.xml.h:3 skins_tithek_skin.xml.h:3 tithek.h:1490
 #: tithek.h:1622 tithek.h:3201
@@ -4288,7 +4288,7 @@ msgstr ""
 
 #: plugins_tithek_skin.xml.h:10 skins_tithek_skin.xml.h:10
 msgid "Pic Ratio"
-msgstr "Aspect Ratio:"
+msgstr ""
 
 #: plugins_tithek_skin.xml.h:12 skins_tithek_skin.xml.h:12 tithek.h:1099
 msgid "please wait..."
@@ -4314,7 +4314,7 @@ msgstr ""
 #: plugins_tithek_skin.xml.h:18 skin_default_skin.xml.h:649
 #: skins_tithek_skin.xml.h:18
 msgid "Title"
-msgstr "Sous Titre"
+msgstr "Titre"
 
 #: plugins_tithek_skin.xml.h:19 skin_default_skin.xml.h:678
 #: skins_tithek_skin.xml.h:19
@@ -4359,7 +4359,7 @@ msgstr "Temps mort de Ping"
 
 #: plugins_tmc_skin.xml.h:12 skins_tmc_skin.xml.h:12
 msgid "Preview"
-msgstr "Précedent"
+msgstr "Prévue"
 
 #: plugins_tmc_skin.xml.h:14 skins_tmc_skin.xml.h:14
 msgid "Runtime:"
@@ -4368,7 +4368,7 @@ msgstr "Temps"
 #: plugins_tmc_skin.xml.h:15 skin_default_skin.xml.h:531
 #: skins_tmc_skin.xml.h:15
 msgid "Scan"
-msgstr "Scan"
+msgstr ""
 
 #: plugins_tmc_skin.xml.h:17 skins_tmc_skin.xml.h:17
 msgid "Votes:"
@@ -4388,7 +4388,7 @@ msgstr ""
 
 #: plugins_tmdb_skin.xml.h:10 skins_tmdb_skin.xml.h:10
 msgid "TMDb - Plugin"
-msgstr "Plugins"
+msgstr ""
 
 #: plugins_tsSchnitt_skin.xml.h:1 skins_tsSchnitt_skin.xml.h:1
 msgid "Cutstatus:"
@@ -4435,11 +4435,11 @@ msgstr "Nouvelle"
 
 #: plugins_zapback_skin.xml.h:1 skins_zapback_skin.xml.h:1
 msgid "ZapBack"
-msgstr "Sauvegarde"
+msgstr ""
 
 #: plugins_zapback_skin.xml.h:3 skins_zapback_skin.xml.h:3
 msgid "in"
-msgstr "Pin"
+msgstr ""
 
 #: plugins_zapback_skin.xml.h:4 skins_zapback_skin.xml.h:4
 msgid "Minuten"
@@ -5095,7 +5095,7 @@ msgstr ""
 
 #: skinadjust.h:26 tmc.h:542
 msgid "picture"
-msgstr ""
+msgstr "Photo"
 
 #: skinadjust.h:50
 msgid "yes (Text in %)"
@@ -7941,9 +7941,8 @@ msgstr ""
 
 #: system_backup_restore.h:15
 msgid ""
-"Press -restore- and your saved settings will be restored from your "
-"swapstick / recording hdd! The Box will restart automatically for "
-"restoring!\n"
+"Press -restore- and your saved settings will be restored from your swapstick "
+"/ recording hdd! The Box will restart automatically for restoring!\n"
 "\n"
 "Press -backup- to save your actual settings to swapstick / recording hdd.\n"
 "WARNING: The old backup will be deleted!"
@@ -10477,3 +10476,4 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
+
