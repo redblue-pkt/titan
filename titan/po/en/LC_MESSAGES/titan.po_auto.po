@@ -8368,7 +8368,7 @@ msgid ""
 "Timeshiftsettings not allowed\n"
 "if timeshift is running !"
 msgstr ""
-msgstr "ERROR: You cannot change Timeshift settings during an "
+"ERROR: You cannot change Timeshift settings during an "
 "active timeshift event!"
 
 #: timeshiftsettings.h:50
