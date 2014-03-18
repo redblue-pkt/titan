@@ -16,7 +16,7 @@ msgstr ""
 
 #: about.h:30 bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2638
 #: httpdfunc.h:2650 hwtest.h:478 moduleconfig.h:345
-#: skin_default_skin.xml.h:687 skinselector.h:138 stream.h:22
+#: skin_default_skin.xml.h:688 skinselector.h:138 stream.h:22
 #: transponder.h:122 transponder.h:158 transponder.h:194 transponder.h:227
 #: transponder.h:259 transponder.h:295 transponder.h:330 transponder.h:348
 #: transponder.h:364 transponder.h:418 transponder.h:451 transponder.h:480
@@ -25,7 +25,7 @@ msgstr ""
 msgid "unknown"
 msgstr ""
 
-#: about.h:32 skin_default_skin.xml.h:671
+#: about.h:32 skin_default_skin.xml.h:672
 msgid "Tunertype"
 msgstr ""
 
@@ -50,10 +50,10 @@ msgstr ""
 #: filemanager.h:321 filemanager.h:331 filemanager.h:355 filenuke.h:37
 #: filenuke.h:84 filenuke.h:96 filenuke.h:108 filenuke.h:157 flashx.h:26
 #: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:6387 gmediarender.h:115 harddisk.h:345 harddisk.h:350
-#: harddisk.h:377 harddisk.h:381 harddisk.h:433 harddisk.h:624 harddisk.h:632
-#: harddisk.h:666 harddisk.h:715 harddisk.h:720 harddisk.h:722 harddisk.h:724
-#: harddisk.h:784 harddisk.h:802 harddisk.h:805 harddisk.h:1035 hbbtv.h:362
+#: global.h:6387 gmediarender.h:115 harddisk.h:350 harddisk.h:355
+#: harddisk.h:382 harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641
+#: harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733
+#: harddisk.h:793 harddisk.h:811 harddisk.h:814 harddisk.h:1046 hbbtv.h:362
 #: httpdfunc.h:1098 httpdfunc.h:3021 hwtest.h:88 hwtest.h:93 hwtest.h:98
 #: hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390
 #: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
@@ -142,10 +142,10 @@ msgstr ""
 #: filemanager.h:321 filemanager.h:331 filemanager.h:355 filenuke.h:37
 #: filenuke.h:84 filenuke.h:96 filenuke.h:108 filenuke.h:157 flashx.h:26
 #: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:6387 gmediarender.h:115 harddisk.h:345 harddisk.h:350
-#: harddisk.h:377 harddisk.h:381 harddisk.h:433 harddisk.h:624 harddisk.h:632
-#: harddisk.h:666 harddisk.h:715 harddisk.h:720 harddisk.h:722 harddisk.h:724
-#: harddisk.h:784 harddisk.h:802 harddisk.h:805 harddisk.h:1035 hbbtv.h:362
+#: global.h:6387 gmediarender.h:115 harddisk.h:350 harddisk.h:355
+#: harddisk.h:382 harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641
+#: harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733
+#: harddisk.h:793 harddisk.h:811 harddisk.h:814 harddisk.h:1046 hbbtv.h:362
 #: hello.c:36 httpdfunc.h:1098 httpdfunc.h:3021 hwtest.h:88 hwtest.h:93
 #: hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206
 #: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
@@ -534,9 +534,9 @@ msgstr ""
 #: filemanager.h:208 filemanager.h:281 filemanager.h:291 filemanager.h:331
 #: filemanager.h:355 filenuke.h:37 filenuke.h:84 filenuke.h:96 filenuke.h:108
 #: filenuke.h:157 flashx.h:26 flashx.h:84 flashx.h:138 flashx.h:195
-#: flashx.h:233 flashx.h:270 global.h:6387 gmediarender.h:115 harddisk.h:624
-#: harddisk.h:632 harddisk.h:666 harddisk.h:715 harddisk.h:720 harddisk.h:722
-#: harddisk.h:724 harddisk.h:784 harddisk.h:802 harddisk.h:805 hbbtv.h:362
+#: flashx.h:233 flashx.h:270 global.h:6387 gmediarender.h:115 harddisk.h:633
+#: harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731
+#: harddisk.h:733 harddisk.h:793 harddisk.h:811 harddisk.h:814 hbbtv.h:362
 #: hello.c:36 httpdfunc.h:1098 hwtest.h:88 hwtest.h:93 hwtest.h:98
 #: hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390
 #: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
@@ -618,7 +618,7 @@ msgstr ""
 msgid "undefined"
 msgstr ""
 
-#: autotimer.c:475 autotimer.c:508 harddisk.h:531 rectimer.h:1028
+#: autotimer.c:475 autotimer.c:508 harddisk.h:540 rectimer.h:1028
 msgid "record"
 msgstr "Record"
 
@@ -658,7 +658,7 @@ msgstr ""
 msgid "Settings succesfull saved"
 msgstr "Settings saved succesfully"
 
-#: avsettings.h:67 avsettings.h:83 harddisk.h:875 lnbconfig.h:144
+#: avsettings.h:67 avsettings.h:83 harddisk.h:886 lnbconfig.h:144
 #: mc_pictureplayer_settings.h:34 mc_pictureplayer_settings.h:38
 #: mc_pictureplayer_settings.h:67 mc_videoplayer_settings.h:53 network.h:391
 #: panel_settings_autostart.h:61 panel_settings_overclocking.h:276
@@ -932,43 +932,43 @@ msgstr "Please wait for operation to stop"
 msgid "---"
 msgstr ""
 
-#: dirsort.h:18 dirsort.h:19 dirsort.h:20 dirsort.h:21 dirsort.h:22
-#: dirsort.h:23 mboxinfo.c:77 mc_imdb.h:78 mc_imdb.h:79 mc_imdb.h:80
-#: mc_imdb.h:81 mc_imdb.h:82 mc_view.h:17 mc_view.h:18 mc_view.h:19
-#: mc_view.h:20 mc_view.h:21 mc_view.h:22 plugins_autotimer_skin.xml.h:13
-#: plugins_callmonitor1_skin.xml.h:19 plugins_catcatch_skin.xml.h:7
-#: plugins_dlna_skin.xml.h:15 plugins_facebook_skin.xml.h:6
-#: plugins_filemanager_skin.xml.h:6 plugins_gmediarender_skin.xml.h:1
-#: plugins_imdbapi_skin.xml.h:11 plugins_imdb_skin.xml.h:11
-#: plugins_instar_skin.xml.h:17 plugins_keylock_skin.xml.h:1
-#: plugins_lcdpearl1_skin.xml.h:14 plugins_lcdsamsung_skin.xml.h:18
-#: plugins_mboxinfo_skin.xml.h:3 plugins_mc_skin.xml.h:70
-#: plugins_networkbrowser_skin.xml.h:37 plugins_news_skin.xml.h:5
-#: plugins_optimize_skin.xml.h:4 plugins_panel_skin.xml.h:28
-#: plugins_permtime_skin.xml.h:1 plugins_readerconfig_skin.xml.h:10
-#: plugins_rgui_skin.xml.h:9 plugins_stock_skin.xml.h:6
-#: plugins_stopifnotused_skin.xml.h:8 plugins_streaminfo_skin.xml.h:6
-#: plugins_tithek_skin.xml.h:22 plugins_tiwakeup_skin.xml.h:9
-#: plugins_tmc_skin.xml.h:18 plugins_tmdb_skin.xml.h:11
-#: plugins_tsSchnitt_skin.xml.h:11 plugins_weather_skin.xml.h:4
-#: plugins_wins3_skin.xml.h:4 plugins_zapback_skin.xml.h:7
-#: skin_default_skin.xml.h:727 skins_autotimer_skin.xml.h:13
-#: skins_callmonitor1_skin.xml.h:19 skins_catcatch_skin.xml.h:7
-#: skins_dlna_skin.xml.h:15 skins_facebook_skin.xml.h:6
-#: skins_filemanager_skin.xml.h:6 skins_gmediarender_skin.xml.h:1
-#: skins_imdbapi_skin.xml.h:11 skins_imdb_skin.xml.h:11
-#: skins_instar_skin.xml.h:17 skins_keylock_skin.xml.h:1
-#: skins_lcdpearl1_skin.xml.h:14 skins_lcdsamsung_skin.xml.h:18
-#: skins_mboxinfo_skin.xml.h:3 skins_mc_skin.xml.h:70
-#: skins_networkbrowser_skin.xml.h:37 skins_news_skin.xml.h:5
-#: skins_optimize_skin.xml.h:4 skins_panel_skin.xml.h:28
-#: skins_permtime_skin.xml.h:1 skins_readerconfig_skin.xml.h:10
-#: skins_rgui_skin.xml.h:9 skins_stock_skin.xml.h:6
-#: skins_stopifnotused_skin.xml.h:8 skins_streaminfo_skin.xml.h:6
-#: skins_tithek_skin.xml.h:22 skins_tiwakeup_skin.xml.h:9
-#: skins_tmc_skin.xml.h:18 skins_tmdb_skin.xml.h:11
-#: skins_tsSchnitt_skin.xml.h:11 skins_weather_skin.xml.h:4
-#: skins_wins3_skin.xml.h:4 skins_zapback_skin.xml.h:7 tithek_mainmenu.h:1
+#: dirsort.h:20 dirsort.h:22 mboxinfo.c:77 mc_imdb.h:78 mc_imdb.h:79
+#: mc_imdb.h:80 mc_imdb.h:81 mc_imdb.h:82 mc_view.h:17 mc_view.h:18
+#: mc_view.h:19 mc_view.h:20 mc_view.h:21 mc_view.h:22
+#: plugins_autotimer_skin.xml.h:13 plugins_callmonitor1_skin.xml.h:19
+#: plugins_catcatch_skin.xml.h:7 plugins_dlna_skin.xml.h:15
+#: plugins_facebook_skin.xml.h:6 plugins_filemanager_skin.xml.h:6
+#: plugins_gmediarender_skin.xml.h:1 plugins_imdbapi_skin.xml.h:11
+#: plugins_imdb_skin.xml.h:11 plugins_instar_skin.xml.h:17
+#: plugins_keylock_skin.xml.h:1 plugins_lcdpearl1_skin.xml.h:14
+#: plugins_lcdsamsung_skin.xml.h:18 plugins_mboxinfo_skin.xml.h:3
+#: plugins_mc_skin.xml.h:70 plugins_networkbrowser_skin.xml.h:37
+#: plugins_news_skin.xml.h:5 plugins_optimize_skin.xml.h:4
+#: plugins_panel_skin.xml.h:28 plugins_permtime_skin.xml.h:1
+#: plugins_readerconfig_skin.xml.h:10 plugins_rgui_skin.xml.h:9
+#: plugins_stock_skin.xml.h:6 plugins_stopifnotused_skin.xml.h:8
+#: plugins_streaminfo_skin.xml.h:6 plugins_tithek_skin.xml.h:22
+#: plugins_tiwakeup_skin.xml.h:9 plugins_tmc_skin.xml.h:18
+#: plugins_tmdb_skin.xml.h:11 plugins_tsSchnitt_skin.xml.h:11
+#: plugins_weather_skin.xml.h:4 plugins_wins3_skin.xml.h:4
+#: plugins_zapback_skin.xml.h:7 skin_default_skin.xml.h:728
+#: skins_autotimer_skin.xml.h:13 skins_callmonitor1_skin.xml.h:19
+#: skins_catcatch_skin.xml.h:7 skins_dlna_skin.xml.h:15
+#: skins_facebook_skin.xml.h:6 skins_filemanager_skin.xml.h:6
+#: skins_gmediarender_skin.xml.h:1 skins_imdbapi_skin.xml.h:11
+#: skins_imdb_skin.xml.h:11 skins_instar_skin.xml.h:17
+#: skins_keylock_skin.xml.h:1 skins_lcdpearl1_skin.xml.h:14
+#: skins_lcdsamsung_skin.xml.h:18 skins_mboxinfo_skin.xml.h:3
+#: skins_mc_skin.xml.h:70 skins_networkbrowser_skin.xml.h:37
+#: skins_news_skin.xml.h:5 skins_optimize_skin.xml.h:4
+#: skins_panel_skin.xml.h:28 skins_permtime_skin.xml.h:1
+#: skins_readerconfig_skin.xml.h:10 skins_rgui_skin.xml.h:9
+#: skins_stock_skin.xml.h:6 skins_stopifnotused_skin.xml.h:8
+#: skins_streaminfo_skin.xml.h:6 skins_tithek_skin.xml.h:22
+#: skins_tiwakeup_skin.xml.h:9 skins_tmc_skin.xml.h:18
+#: skins_tmdb_skin.xml.h:11 skins_tsSchnitt_skin.xml.h:11
+#: skins_weather_skin.xml.h:4 skins_wins3_skin.xml.h:4
+#: skins_zapback_skin.xml.h:7 tithek_mainmenu.h:1
 msgid ""
 msgstr ""
 "Project-Id-Version: TitanNit 1.50\n"
@@ -1553,7 +1553,8 @@ msgstr ""
 
 #: faststream.h:107 played.h:107
 msgid "Connect with Hoster wait 10 seconds"
-msgstr "Connecting to Host\n"
+msgstr ""
+"Connecting to Host\n"
 "Please wait 10 Seconds."
 
 #: filemanager.h:23 filemanager.h:86 filemanager.h:92
@@ -1651,55 +1652,63 @@ msgstr "Graphic Multi EPG - Providers"
 msgid "GRAPHIC MULTI EPG - All Channels"
 msgstr "Graphic Multi EPG - All Channels"
 
-#: harddisk.h:126 harddisk.h:127
+#: harddisk.h:127 harddisk.h:128
 msgid "Harddisk Format - Filesystem"
 msgstr "Format Drive - Filesystem"
 
-#: harddisk.h:165 plugins_mc_skin.xml.h:18 skins_mc_skin.xml.h:18
+#: harddisk.h:129
+msgid "select the format filesystem type for your media drive"
+msgstr ""
+
+#: harddisk.h:167 plugins_mc_skin.xml.h:18 skins_mc_skin.xml.h:18
 msgid "default"
 msgstr ""
 
-#: harddisk.h:213 harddisk.h:214
+#: harddisk.h:217 harddisk.h:218 harddisk.h:459 harddisk.h:460
 msgid "Harddisk Configure"
 msgstr "Configure Drive"
 
-#: harddisk.h:225 harddisk.h:715
+#: harddisk.h:219
+msgid "select the function for the specified device"
+msgstr ""
+
+#: harddisk.h:230 harddisk.h:724
 msgid "use medium for record"
 msgstr "Use as Recordings-device"
 
-#: harddisk.h:230
+#: harddisk.h:235
 msgid "del medium for record"
 msgstr "Remove as Recordings-device"
 
-#: harddisk.h:235 harddisk.h:720
+#: harddisk.h:240 harddisk.h:729
 msgid "use medium for extension"
 msgstr "Use as plugins-device"
 
-#: harddisk.h:240
+#: harddisk.h:245
 msgid "del medium for extension"
 msgstr "Remove as extensions-device"
 
-#: harddisk.h:245 harddisk.h:722
+#: harddisk.h:250 harddisk.h:731
 msgid "use medium for swap"
 msgstr "Use as swap-device"
 
-#: harddisk.h:250
+#: harddisk.h:255
 msgid "del medium for swap"
 msgstr "Remove as swap-device"
 
-#: harddisk.h:255 harddisk.h:724
+#: harddisk.h:260 harddisk.h:733
 msgid "use medium for backup"
 msgstr "Use as Backup-device"
 
-#: harddisk.h:260
+#: harddisk.h:265
 msgid "del medium for backup"
 msgstr "Remove as Backup-device"
 
-#: harddisk.h:345
+#: harddisk.h:350
 msgid "Are you sure you want to delete this directory?"
 msgstr ""
 
-#: harddisk.h:350
+#: harddisk.h:355
 msgid ""
 "Directory has content\n"
 "Really delete directory and content?"
@@ -1707,55 +1716,63 @@ msgstr ""
 "Directory has content\n"
 "Really delete the directory and the content?"
 
-#: harddisk.h:377
+#: harddisk.h:382
 msgid "can't create or delete directory"
 msgstr "ERROR: Can't create or delete directory"
 
-#: harddisk.h:381
+#: harddisk.h:386
 msgid "succesfull create or delelete directory"
 msgstr "Succesfully created or deleted directory"
 
-#: harddisk.h:433 skin_default_skin.xml.h:262
+#: harddisk.h:439 skin_default_skin.xml.h:262
 msgid "Harddisk"
 msgstr "Devices"
 
-#: harddisk.h:433
+#: harddisk.h:439
 msgid "sorry found no harddisk"
 msgstr "Sorry, no attached device found!"
 
-#: harddisk.h:441 harddisk.h:442
-msgid "Harddisk Format - List Devices"
-msgstr "Format device - drivelist"
+#: harddisk.h:447 harddisk.h:448
+msgid "Harddisk Format"
+msgstr ""
 
-#: harddisk.h:446 harddisk.h:447
-msgid "Harddisk Fsck - List Devices"
-msgstr "File System Check - List of Devices"
+#: harddisk.h:449
+msgid "select the media drive from Device List for formating"
+msgstr ""
 
-#: harddisk.h:451 harddisk.h:452
-msgid "Harddisk Configure - List Devices"
-msgstr "Devices setup - List of devices"
+#: harddisk.h:453 harddisk.h:454
+msgid "Harddisk Fsck"
+msgstr ""
 
-#: harddisk.h:470
+#: harddisk.h:455
+msgid "select the media drive from Device List for fsck"
+msgstr ""
+
+#: harddisk.h:461
+msgid "select the media drive from Device List for configuration"
+msgstr ""
+
+#: harddisk.h:479
 msgid "HDD "
 msgstr "Harddisk"
 
-#: harddisk.h:476
+#: harddisk.h:485
 msgid "STICK "
 msgstr "Stick"
 
-#: harddisk.h:495
+#: harddisk.h:504
 msgid "ext"
 msgstr ""
 
-#: harddisk.h:507
+#: harddisk.h:516
 msgid "swap"
 msgstr ""
 
-#: harddisk.h:519
+#: harddisk.h:528
 msgid "backup"
 msgstr ""
 
-#: harddisk.h:624
+#: harddisk.h:633
 msgid ""
 "HDD > 2TB unsupported.\n"
 "You must first install plugin parted, then you can use this panel."
@@ -1763,7 +1780,7 @@ msgstr ""
 "Harddisks with a capacity larger than 2 TB are not supported.\n"
 "You must install plugin 'parted' then you can use the Harddisk."
 
-#: harddisk.h:632
+#: harddisk.h:641
 msgid ""
 "Are you sure you want to remove all Partitions\n"
 "on this device and create a new Partition 1?\n"
@@ -1773,7 +1790,7 @@ msgstr ""
 "on this device and create a new partition?\n"
 "Your Receiver will reboot after formatting the device"
 
-#: harddisk.h:666
+#: harddisk.h:675
 msgid ""
 "Are you sure you want to format this Partition?\n"
 "Box reboots after format"
@@ -1781,7 +1798,7 @@ msgstr ""
 "Are you sure you want to format this partition?\n"
 "Your Receiver will reboot after formatting the device"
 
-#: harddisk.h:784
+#: harddisk.h:793
 msgid ""
 "ERROR\n"
 "partition could not be created"
@@ -1789,7 +1806,7 @@ msgstr ""
 "ERROR:\n"
 "Partition could not be created!"
 
-#: harddisk.h:802
+#: harddisk.h:811
 msgid ""
 "Information: This hard drive size can take a file\n"
 "system check between 30 minutes and 1.5 hours."
@@ -1797,7 +1814,7 @@ msgstr ""
 "Information: With the attached device size a file\n"
 "system check can take between 30 Minutes and 1.5 Hours."
 
-#: harddisk.h:805
+#: harddisk.h:814
 msgid ""
 "Are you sure you want to check this Partition?\n"
 "Box reboots after check"
@@ -1805,31 +1822,35 @@ msgstr ""
 "Are you sure you want to check this partition?\n"
 "Your Receiver will reboot after checking the device."
 
-#: harddisk.h:867 harddisk.h:868
+#: harddisk.h:877 harddisk.h:878
 msgid "Harddisk Sleep"
 msgstr "Harddisk Powersave (Sleep)"
 
-#: harddisk.h:874 skin_default_skin.xml.h:643
+#: harddisk.h:879
+msgid "set here the default sleeptime for all your media drives"
+msgstr ""
+
+#: harddisk.h:885 skin_default_skin.xml.h:643
 msgid "Time to sleep"
 msgstr "Powersave (Sleep) in"
 
-#: harddisk.h:876
+#: harddisk.h:887
 msgid "5 min"
 msgstr "5 Minutes"
 
-#: harddisk.h:876
+#: harddisk.h:887
 msgid "10 min"
 msgstr "10 Minutes"
 
-#: harddisk.h:877
+#: harddisk.h:888
 msgid "15 min"
 msgstr "15 Minutes"
 
-#: harddisk.h:877
+#: harddisk.h:888
 msgid "60 min"
 msgstr "60 Minutes"
 
-#: harddisk.h:1035
+#: harddisk.h:1046
 msgid ""
 "Found new Stick/HDD.\n"
 "You can configure it in Harddisk Menu."
@@ -3296,7 +3317,7 @@ msgstr ""
 msgid "Search on InternetRadio (local)"
 msgstr ""
 
-#: play.h:641 skin_default_skin.xml.h:707
+#: play.h:641 skin_default_skin.xml.h:708
 msgid "Video Settings"
 msgstr ""
 
@@ -3355,6 +3376,14 @@ msgstr "Really Delete?"
 #: skins_weather_skin.xml.h:2
 msgid "DEL"
 msgstr "Delete"
+
+#: play.h:1417 skin_default_skin.xml.h:205
+msgid "EPG"
+msgstr ""
+
+#: play.h:1417
+msgid "SORT"
+msgstr ""
 
 #: play.h:1649
 msgid "Marker autoseek is started"
@@ -4057,7 +4086,7 @@ msgstr "Share Directory"
 msgid "sharename"
 msgstr "Share Name"
 
-#: plugins_networkbrowser_skin.xml.h:29 skin_default_skin.xml.h:676
+#: plugins_networkbrowser_skin.xml.h:29 skin_default_skin.xml.h:677
 #: skins_networkbrowser_skin.xml.h:29
 msgid "type"
 msgstr "Type"
@@ -4070,7 +4099,7 @@ msgstr "Use DNS Address"
 msgid "useproxy"
 msgstr "Use Proxy"
 
-#: plugins_networkbrowser_skin.xml.h:32 skin_default_skin.xml.h:698
+#: plugins_networkbrowser_skin.xml.h:32 skin_default_skin.xml.h:699
 #: skins_networkbrowser_skin.xml.h:32
 msgid "User"
 msgstr "User"
@@ -4191,7 +4220,7 @@ msgstr "Speed"
 msgid "Test"
 msgstr ""
 
-#: plugins_panel_skin.xml.h:25 skin_default_skin.xml.h:692
+#: plugins_panel_skin.xml.h:25 skin_default_skin.xml.h:693
 #: skins_panel_skin.xml.h:25
 msgid "Usb Device"
 msgstr "USB Device(s)"
@@ -4378,7 +4407,7 @@ msgstr "Edit Favourite"
 msgid "Title"
 msgstr ""
 
-#: plugins_tithek_skin.xml.h:19 skin_default_skin.xml.h:677
+#: plugins_tithek_skin.xml.h:19 skin_default_skin.xml.h:678
 #: skins_tithek_skin.xml.h:19
 msgid "Type"
 msgstr ""
@@ -4481,8 +4510,8 @@ msgid ""
 "Start movie in the internal player, set with 0 key marker during a movie. 5 "
 "key is for the marker overview. Then here select movie and start."
 msgstr ""
-"Start the movie in the internal Player. Set a marker with the -0- Key "
-"during the playback.\n"
+"Start the movie in the internal Player. Set a marker with the -0- Key during "
+"the playback.\n"
 "For an overview of all markers press -5- on you Remote.\n"
 "Press -Play- on your Remote Control to start the resulting cut."
 
@@ -4831,7 +4860,7 @@ msgstr ""
 msgid "Tuesday"
 msgstr ""
 
-#: rectimer.h:1061 skin_default_skin.xml.h:717
+#: rectimer.h:1061 skin_default_skin.xml.h:718
 msgid "Wednesday"
 msgstr ""
 
@@ -5144,7 +5173,8 @@ msgstr "ERROR: Channel not available"
 
 #: service.h:940
 msgid "Can't open frontend dev or Frontend Type unknown!"
-msgstr "ERROR: Can't open Frontend Device or\n"
+msgstr ""
+"ERROR: Can't open Frontend Device or\n"
 "Frontend Type is unknown ."
 
 #: service.h:945
@@ -5910,10 +5940,6 @@ msgstr ""
 msgid "English"
 msgstr ""
 
-#: skin_default_skin.xml.h:205
-msgid "EPG"
-msgstr ""
-
 #: skin_default_skin.xml.h:206
 msgid "EPG button on EPG Screen"
 msgstr ""
@@ -6173,8 +6199,8 @@ msgid ""
 "systems require an additional engine settings making."
 msgstr ""
 "Here you may configure your tuner. Edit the settings suiting your tuner and "
-"Connection-type. For motorized systems configure 'motorized Systems' to suite your "
-"Environment."
+"Connection-type. For motorized systems configure 'motorized Systems' to "
+"suite your Environment."
 
 #: skin_default_skin.xml.h:269
 msgid ""
@@ -6281,7 +6307,8 @@ msgstr ""
 "Here you may configure the Wireless Network (WLAN).\n"
 "1. Start search, select SSID and press -OK-\n"
 "2. Choose encryption type, enter passphrase, confirm with -OK-\n"
-"3. Disable Lan. Activate WLAN. Use DHCP for easy setup or Static for manual Setup."
+"3. Disable Lan. Activate WLAN. Use DHCP for easy setup or Static for manual "
+"Setup."
 
 #: skin_default_skin.xml.h:280
 msgid ""
@@ -6405,7 +6432,8 @@ msgstr ""
 
 #: skin_default_skin.xml.h:293
 msgid "Here you can manage your Ci-Modul or Card Infos."
-msgstr "Here you may configure your Module.\n"
+msgstr ""
+"Here you may configure your Module.\n"
 "\n"
 "For details please refere to your Module Documentation."
 
@@ -6451,8 +6479,7 @@ msgstr ""
 msgid ""
 "Here you can set for your cable tuner. Ask your cable provider and make you "
 "connect an automatic search."
-msgstr ""
-"Here you may set up your cable tuner and perform a channel scan."
+msgstr "Here you may set up your cable tuner and perform a channel scan."
 
 #: skin_default_skin.xml.h:299
 msgid ""
@@ -7809,198 +7836,202 @@ msgid "Tuner Configuration"
 msgstr "Configuration"
 
 #: skin_default_skin.xml.h:670
+msgid "Tuner List"
+msgstr ""
+
+#: skin_default_skin.xml.h:671
 msgid "Tuner Reception"
 msgstr "Reception"
 
-#: skin_default_skin.xml.h:672
+#: skin_default_skin.xml.h:673
 msgid "TV Resolution (h):"
 msgstr "TV Resolution (h): "
 
-#: skin_default_skin.xml.h:673
+#: skin_default_skin.xml.h:674
 msgid "TV Resolution (w):"
 msgstr "TV Resolution (w): "
 
-#: skin_default_skin.xml.h:674
+#: skin_default_skin.xml.h:675
 msgid "Two step mute"
 msgstr ""
 
-#: skin_default_skin.xml.h:675
+#: skin_default_skin.xml.h:676
 msgid "TXT PID:"
 msgstr "TXT PID: "
 
-#: skin_default_skin.xml.h:678
+#: skin_default_skin.xml.h:679
 msgid "Type:"
 msgstr "Type: "
 
-#: skin_default_skin.xml.h:679
+#: skin_default_skin.xml.h:680
 msgid "Type of Scan"
 msgstr ""
 
-#: skin_default_skin.xml.h:680
+#: skin_default_skin.xml.h:681
 msgid "u"
 msgstr ""
 
-#: skin_default_skin.xml.h:681
+#: skin_default_skin.xml.h:682
 msgid "U"
 msgstr ""
 
-#: skin_default_skin.xml.h:682
+#: skin_default_skin.xml.h:683
 msgid "ue"
 msgstr ""
 
-#: skin_default_skin.xml.h:683
+#: skin_default_skin.xml.h:684
 msgid "UE"
 msgstr ""
 
-#: skin_default_skin.xml.h:684
+#: skin_default_skin.xml.h:685
 msgid "UNC:"
 msgstr "UNC: "
 
-#: skin_default_skin.xml.h:685
+#: skin_default_skin.xml.h:686
 msgid "Uncommitted Diseqc command"
 msgstr "Uncommitted DiSEqC command"
 
-#: skin_default_skin.xml.h:686
+#: skin_default_skin.xml.h:687
 msgid "Unicable Configuration"
 msgstr ""
 
-#: skin_default_skin.xml.h:688
+#: skin_default_skin.xml.h:689
 msgid "UNLOAD"
 msgstr "Unload"
 
-#: skin_default_skin.xml.h:689
+#: skin_default_skin.xml.h:690
 msgid "update"
 msgstr ""
 
-#: skin_default_skin.xml.h:690
+#: skin_default_skin.xml.h:691
 msgid "Update entrys on scan"
 msgstr ""
 
-#: skin_default_skin.xml.h:691
+#: skin_default_skin.xml.h:692
 msgid "USB"
 msgstr ""
 
-#: skin_default_skin.xml.h:693
+#: skin_default_skin.xml.h:694
 msgid "Usbupdate (online)"
 msgstr "USB Update (online)"
 
-#: skin_default_skin.xml.h:694
+#: skin_default_skin.xml.h:695
 msgid "Usbupdate (tmp)"
 msgstr "USB Update (tmp)"
 
-#: skin_default_skin.xml.h:695
+#: skin_default_skin.xml.h:696
 msgid "Use cross control for fast zapping and vol"
 msgstr "Use control cross for fast zapping and volume control"
 
-#: skin_default_skin.xml.h:696
+#: skin_default_skin.xml.h:697
 msgid "Use EPG Endtime"
 msgstr ""
 
-#: skin_default_skin.xml.h:697
+#: skin_default_skin.xml.h:698
 msgid "Use numeric keys"
 msgstr ""
 
-#: skin_default_skin.xml.h:699
+#: skin_default_skin.xml.h:700
 msgid "v"
 msgstr ""
 
-#: skin_default_skin.xml.h:700
+#: skin_default_skin.xml.h:701
 msgid "V"
 msgstr ""
 
-#: skin_default_skin.xml.h:701
+#: skin_default_skin.xml.h:702
 msgid "VFDisplay"
 msgstr "VF-Display"
 
-#: skin_default_skin.xml.h:702 tmc.h:399
+#: skin_default_skin.xml.h:703 tmc.h:399
 msgid "Video"
 msgstr ""
 
-#: skin_default_skin.xml.h:703
+#: skin_default_skin.xml.h:704
 msgid "VideoMode Aspect Settings"
 msgstr "Video Mode Aspect Settings"
 
-#: skin_default_skin.xml.h:704
+#: skin_default_skin.xml.h:705
 msgid "VideoMode Resolution Settings"
 msgstr "Resolution"
 
-#: skin_default_skin.xml.h:705
+#: skin_default_skin.xml.h:706
 msgid "VideoMode Settings"
 msgstr "Settings"
 
-#: skin_default_skin.xml.h:706
+#: skin_default_skin.xml.h:707
 msgid "Video PID:"
 msgstr "Video PID: "
 
-#: skin_default_skin.xml.h:708
+#: skin_default_skin.xml.h:709
 msgid "Vietnamese"
 msgstr "Viet"
 
-#: skin_default_skin.xml.h:709
+#: skin_default_skin.xml.h:710
 msgid "Virtualzap Timeout"
 msgstr ""
 
-#: skin_default_skin.xml.h:710
+#: skin_default_skin.xml.h:711
 msgid "Vol off"
 msgstr "Volume off"
 
-#: skin_default_skin.xml.h:711
+#: skin_default_skin.xml.h:712
 msgid "Voltage Mode"
 msgstr ""
 
-#: skin_default_skin.xml.h:712
+#: skin_default_skin.xml.h:713
 msgid "Volumebar Timeout"
 msgstr "Time to Volumebar Fadeout (sec)"
 
-#: skin_default_skin.xml.h:713
+#: skin_default_skin.xml.h:714
 msgid "Votes"
 msgstr ""
 
-#: skin_default_skin.xml.h:714
+#: skin_default_skin.xml.h:715
 msgid "w"
 msgstr ""
 
-#: skin_default_skin.xml.h:715
+#: skin_default_skin.xml.h:716
 msgid "W"
 msgstr ""
 
-#: skin_default_skin.xml.h:716
+#: skin_default_skin.xml.h:717
 msgid "Wait for cam ready"
 msgstr "Wait for the CAM to be ready"
 
-#: skin_default_skin.xml.h:718
+#: skin_default_skin.xml.h:719
 msgid "WLAN Settings"
 msgstr "WLAN"
 
-#: skin_default_skin.xml.h:719
+#: skin_default_skin.xml.h:720
 msgid "Writer"
 msgstr "Author"
 
-#: skin_default_skin.xml.h:720
+#: skin_default_skin.xml.h:721
 msgid "x"
 msgstr ""
 
-#: skin_default_skin.xml.h:721
+#: skin_default_skin.xml.h:722
 msgid "X"
 msgstr ""
 
-#: skin_default_skin.xml.h:722
+#: skin_default_skin.xml.h:723
 msgid "y"
 msgstr ""
 
-#: skin_default_skin.xml.h:723
+#: skin_default_skin.xml.h:724
 msgid "Y"
 msgstr ""
 
-#: skin_default_skin.xml.h:724
+#: skin_default_skin.xml.h:725
 msgid "Year"
 msgstr ""
 
-#: skin_default_skin.xml.h:725
+#: skin_default_skin.xml.h:726
 msgid "z"
 msgstr ""
 
-#: skin_default_skin.xml.h:726
+#: skin_default_skin.xml.h:727
 msgid "Z"
 msgstr ""
 
@@ -8368,8 +8399,7 @@ msgid ""
 "Timeshiftsettings not allowed\n"
 "if timeshift is running !"
 msgstr ""
-"ERROR: You cannot change Timeshift settings during an "
-"active timeshift event!"
+"ERROR: You cannot change Timeshift settings during an active timeshift event!"
 
 #: timeshiftsettings.h:50
 msgid "permanent"
@@ -8514,7 +8544,8 @@ msgstr "The hoster is not supported at present!"
 
 #: tithek.h:620
 msgid "File exist, overwrite?"
-msgstr "File allready exists.\n"
+msgstr ""
+"File allready exists.\n"
 "Do you want to overwrite the existing one?"
 
 #: tithek.h:837
@@ -9015,8 +9046,9 @@ msgstr "AAF Mediacenter"
 msgid ""
 "A collection of really nice folder icons for MediaCenter Videoplayer "
 "Coverview!"
-msgstr "A collection of nice folder icons for\n"
-"the Mediacenter Videoplayer Coverview." 
+msgstr ""
+"A collection of nice folder icons for\n"
+"the Mediacenter Videoplayer Coverview."
 
 #: tpk_description.h:3
 msgid "Alternativer Skin fuer Pearl LCD"
@@ -9147,7 +9179,8 @@ msgstr "Cable: Settings for Kabel BW"
 
 #: tpk_description.h:34
 msgid "Callmonitor Plugin"
-msgstr "Call Monitor Extension to show incoming and outgoing\n"
+msgstr ""
+"Call Monitor Extension to show incoming and outgoing\n"
 "phone calls on your screen."
 
 #: tpk_description.h:35
@@ -9211,7 +9244,8 @@ msgid ""
 "E2 WebIf API erlaubt den Zugriff auf TitanNit mittels eines E2-Clients (z.B. "
 "dreaMote-App auf iPhone oder iPad bzw. XBMC mit VU+)"
 msgstr ""
-"E2 Web Interface - allows a remote access to titanNit from a remote E2 client\n"
+"E2 Web Interface - allows a remote access to titanNit from a remote E2 "
+"client\n"
 "e.g. dreamMote installed on an iPhone, iPad or XBMC on a VU+"
 
 #: tpk_description.h:49
@@ -9472,7 +9506,8 @@ msgstr ""
 
 #: tpk_description.h:111
 msgid "Sat: Bulldog Settings 3x Sat"
-msgstr "Satellite: Settings by Bulldog for\n"
+msgstr ""
+"Satellite: Settings by Bulldog for\n"
 "HOTBIRD 13°East, ASTRA 19.2°East and ASTRA 28.2°East"
 
 #: tpk_description.h:112
@@ -9481,7 +9516,8 @@ msgstr "Satellite: Settings by matze70 for ASTRA 19.2°East"
 
 #: tpk_description.h:113
 msgid "Sat: Settings matze70 neue Design Astra 19.2"
-msgstr "Satellite: Settings by matze70 for ASTRA 19.2°East\n"
+msgstr ""
+"Satellite: Settings by matze70 for ASTRA 19.2°East\n"
 "New Design"
 
 #: tpk_description.h:114
@@ -9492,7 +9528,8 @@ msgstr "Satellite: Settings by Uljanow for ASTRA 19.2°East"
 msgid ""
 "Screensaver FC Bayern pictures for MediaCenter Audioplayer and Radioplayer."
 msgstr ""
-"Screensaver FC Bayern Munich pictures for Mediacenter Audioplayer and Radioplayer."
+"Screensaver FC Bayern Munich pictures for Mediacenter Audioplayer and "
+"Radioplayer."
 
 #: tpk_description.h:116
 msgid ""
@@ -10791,3 +10828,12 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Zapback is activated. Do you want to stop it?"
+
+#~ msgid "Harddisk Format - List Devices"
+#~ msgstr "Format device - drivelist"
+
+#~ msgid "Harddisk Fsck - List Devices"
+#~ msgstr "File System Check - List of Devices"
+
+#~ msgid "Harddisk Configure - List Devices"
+#~ msgstr "Devices setup - List of devices"

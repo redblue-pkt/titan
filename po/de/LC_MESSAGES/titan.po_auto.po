@@ -10754,12 +10754,3 @@ msgstr "Ort"
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid "Harddisk Format - List Devices"
-#~ msgstr "Datenträger formatieren - Geräteliste"
-
-#~ msgid "Harddisk Fsck - List Devices"
-#~ msgstr "Dateisystem prüfen- angeschl. Geräte"
-
-#~ msgid "Harddisk Configure - List Devices"
-#~ msgstr "Datenträger konfigurieren - Geräteliste"
