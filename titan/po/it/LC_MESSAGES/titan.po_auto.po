@@ -1635,8 +1635,8 @@ msgstr "Valore predefinito"
 msgid "Harddisk Configure"
 msgstr "Impostazioni HDD"
 
-#: harddisk.h:219 harddisk.h:461
-msgid "select the media drive from Device List for configuration"
+#: harddisk.h:219
+msgid "select the function for the specified device"
 msgstr ""
 
 #: harddisk.h:230 harddisk.h:724
@@ -1713,6 +1713,10 @@ msgstr ""
 
 #: harddisk.h:455
 msgid "select the media drive from Device List for fsck"
+msgstr ""
+
+#: harddisk.h:461
+msgid "select the media drive from Device List for configuration"
 msgstr ""
 
 #: harddisk.h:479
