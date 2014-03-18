@@ -1669,9 +1669,9 @@ msgstr "Werkseinstellung"
 msgid "Harddisk Configure"
 msgstr "Datenträger Konfiguration"
 
-#: harddisk.h:219 harddisk.h:461
-msgid "select the media drive from Device List for configuration"
-msgstr "Auswahl des Datenträgers zur weiteren Konfiguration"
+#: harddisk.h:219
+msgid "select the function for the specified device"
+msgstr ""
 
 #: harddisk.h:230 harddisk.h:724
 msgid "use medium for record"
@@ -1748,6 +1748,10 @@ msgstr "Dateisystemprüfung"
 #: harddisk.h:455
 msgid "select the media drive from Device List for fsck"
 msgstr "Auswahl des Datenträgers zur Dateisystemüberprüfung"
+
+#: harddisk.h:461
+msgid "select the media drive from Device List for configuration"
+msgstr "Auswahl des Datenträgers zur weiteren Konfiguration"
 
 #: harddisk.h:479
 msgid "HDD "
