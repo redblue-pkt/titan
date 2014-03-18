@@ -745,29 +745,31 @@ msgid ""
 "Callmon Timeout !!!\n"
 "\n"
 "check your parameter "
-msgstr ""
+msgstr "Callmonitor  Délai d'attente!\n"
+"\n"
+"Vérifiez votre paramètre"
 
 #: callmon_main.h:76 callmon_main.h:98 callmon_main.h:116 callmon_main.h:120
 #: callmon_main.h:124 callmon_main.h:128 instar.h:192 lcdpearl1.c:504
 #: lcdpearl1.c:508 lcdpearl1.c:512 lcdsamsung.c:978 lcdsamsung.c:982
 #: lcdsamsung.c:986
 msgid "nein"
-msgstr ""
+msgstr "non"
 
 #: callmon_main.h:77 callmon_main.h:97 callmon_main.h:115 callmon_main.h:119
 #: callmon_main.h:123 callmon_main.h:127 instar.h:193 lcdpearl1.c:505
 #: lcdpearl1.c:509 lcdpearl1.c:513 lcdsamsung.c:979 lcdsamsung.c:983
 #: lcdsamsung.c:987
 msgid "ja"
-msgstr ""
+msgstr "oui"
 
 #: callmon_main.h:131
 msgid "puffern"
-msgstr ""
+msgstr "bouffer"
 
 #: callmon_main.h:132
 msgid "verwerfen"
-msgstr ""
+msgstr "jeter"
 
 #: callmon_main.h:135 mediadbsettings.h:58 skin_default_skin.xml.h:37
 msgid "3"
@@ -799,23 +801,23 @@ msgstr ""
 
 #: channellist.h:578
 msgid "Move mode"
-msgstr ""
+msgstr "déplacer"
 
 #: channellist.h:587
 msgid "Remove mode"
-msgstr ""
+msgstr "supprimer"
 
 #: channellist.h:596
 msgid "Copy mode"
-msgstr ""
+msgstr "copier"
 
 #: channellist.h:605
 msgid "Protect mode"
-msgstr ""
+msgstr "protéger"
 
 #: channellist.h:614
 msgid "Edit mode"
-msgstr ""
+msgstr "modifier"
 
 #: channellist.h:689 channellist.h:1764 scan.h:530 skin_default_skin.xml.h:471
 msgid "Radio"
@@ -831,7 +833,7 @@ msgstr ""
 
 #: channellist.h:719 channellist.h:1580 skin_default_skin.xml.h:127
 msgid "Channel"
-msgstr ""
+msgstr "Chaine"
 
 #: channellist.h:735 channellist.h:1261 channellist.h:1262 channellist.h:1514
 msgid "Satellites"
@@ -843,23 +845,23 @@ msgstr ""
 
 #: channellist.h:771 channellist.h:772 channellist.h:1211 channellist.h:1212
 msgid "All Channels"
-msgstr ""
+msgstr "tous les chaines"
 
 #: channellist.h:913
 msgid "Copy providerlist successfull"
-msgstr ""
+msgstr "copier la liste de provider avec succès"
 
 #: channellist.h:915
 msgid "Copy providerlist not ok"
-msgstr ""
+msgstr "copier la liste de provider sans succès"
 
 #: channellist.h:920
 msgid "Copy satlist successfull"
-msgstr ""
+msgstr "copier la liste de satellite avec succès"
 
 #: channellist.h:922
 msgid "Copy satlist not ok"
-msgstr ""
+msgstr "copier la liste de satellite sans succès"
 
 #: channellist.h:1006
 msgid "Can't remove akive Service"
@@ -867,59 +869,59 @@ msgstr ""
 
 #: channellist.h:1295 channellist.h:1296
 msgid "Channels A-Z"
-msgstr ""
+msgstr "Chaines A-Z"
 
 #: copyfile.h:810
 msgid "Filesize (B): "
-msgstr ""
+msgstr "Taille du fichier (B): "
 
 #: copyfile.h:812 download.h:73
 msgid "Filesize (KB): "
-msgstr ""
+msgstr "Taille du fichier (KB): "
 
 #: copyfile.h:814
 msgid "Filesize (MB): "
-msgstr ""
+msgstr "Taille du fichier (MB): "
 
 #: copyfile.h:821 copyfile.h:854
 msgid "Move (B): "
-msgstr ""
+msgstr "déplacer (B): "
 
 #: copyfile.h:823 copyfile.h:856
 msgid "Move (KB): "
-msgstr ""
+msgstr "déplacer (KB): "
 
 #: copyfile.h:825 copyfile.h:858
 msgid "Move (MB): "
-msgstr ""
+msgstr "déplacer (MB): "
 
 #: copyfile.h:830 copyfile.h:863
 msgid "Copy (B): "
-msgstr ""
+msgstr "copier (B): "
 
 #: copyfile.h:832 copyfile.h:865
 msgid "Copy (KB): "
-msgstr ""
+msgstr "copier (KB): "
 
 #: copyfile.h:834 copyfile.h:867
 msgid "Copy (MB): "
-msgstr ""
+msgstr "copier (MB): "
 
 #: copyfile.h:839
 msgid "Amount of files: "
-msgstr ""
+msgstr " Nombre de fichiers: "
 
 #: copyfile.h:881 copyfile.h:882
 msgid "file move error"
-msgstr ""
+msgstr "erreur de déplacement de fichier"
 
 #: copyfile.h:886 copyfile.h:887
 msgid "file copy error"
-msgstr ""
+msgstr "erreur de copie de fichier"
 
 #: copyfile.h:893 copyfile.h:894
 msgid "wait for stopping"
-msgstr ""
+msgstr "attendre pour s'arrêter"
 
 #: dir.h:83 dir.h:92 dir.h:101 dir.h:110 plugins_lcdpearl1_skin.xml.h:2
 #: plugins_lcdsamsung_skin.xml.h:2 skins_lcdpearl1_skin.xml.h:2

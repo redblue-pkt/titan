@@ -777,7 +777,7 @@ msgid "Mounts"
 msgstr "Mounts"
 
 msgid "move service"
-msgstr "Déplcer service"
+msgstr "Déplacer service"
 
 msgid "Moviepath"
 msgstr "Chemin de film"
