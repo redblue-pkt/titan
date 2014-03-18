@@ -1,12 +1,15 @@
 [createpo.sh] xgettext --omit-header -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.utf.po
-/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.utf.po:123: end-of-line within string
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.utf.po: warning: Charset missing in header.
+                                                                                    Message conversion to user's charset will not work.
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.utf.po:7481: duplicate message definition...
+/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.utf.po:403: ...this is the location of the first definition
 xgettext: found 1 fatal error
 [createpo.sh] ############################################
 [createpo.sh] ###### error should be in the middle #######
 [createpo.sh] ############################################
-   122	msgstr "ArrÃ©t""
-   123	
-   124	msgid "anim. width"
+   402	msgid ""
+   403	msgstr ""
+   404	"Project-Id-Version: TitanNit 1.49\n"
 [createpo.sh] ############################################
 [createpo.sh] ################## coding #################
 /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.po:         utf-8
