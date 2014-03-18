@@ -8,7 +8,7 @@ msgstr ""
 
 #: about.h:16
 msgid "Copyright"
-msgstr "Droit d'auteur"
+msgstr "© Copyright"
 
 #: about.h:25 skin_default_skin.xml.h:666
 msgid "Tuner"
@@ -123,7 +123,7 @@ msgstr ""
 #: vidstream.h:45 vidstream.h:86 vidstream.h:98 vidstream.h:167 xvidstage.h:54
 #: xvidstage.h:100 xvidstage.h:177 youtube.h:198 zapback.c:79 zdf.h:29
 msgid "OK"
-msgstr "D'accord"
+msgstr "OK"
 
 #: about.h:45 ard.h:31 autotimer.c:537 autotimer.c:543 autotimer.c:568
 #: autotimer.c:575 autotimer.c:603 avsettings.h:247 betarobot.h:57
