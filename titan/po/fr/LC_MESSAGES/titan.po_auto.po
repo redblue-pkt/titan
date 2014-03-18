@@ -8,7 +8,7 @@ msgstr ""
 
 #: about.h:16
 msgid "Copyright"
-msgstr ""
+msgstr "Droit d'auteur"
 
 #: about.h:25 skin_default_skin.xml.h:666
 msgid "Tuner"
@@ -23,11 +23,11 @@ msgstr ""
 #: transponder.h:493 transponder.h:504 transponder.h:574 youtube.h:150
 #: zdf.h:86
 msgid "unknown"
-msgstr ""
+msgstr "inconnu"
 
 #: about.h:32 skin_default_skin.xml.h:672
 msgid "Tunertype"
-msgstr ""
+msgstr "type de tuner"
 
 #: about.h:45
 msgid "System-Info"
@@ -123,7 +123,7 @@ msgstr ""
 #: vidstream.h:45 vidstream.h:86 vidstream.h:98 vidstream.h:167 xvidstage.h:54
 #: xvidstage.h:100 xvidstage.h:177 youtube.h:198 zapback.c:79 zdf.h:29
 msgid "OK"
-msgstr ""
+msgstr "D'accord"
 
 #: about.h:45 ard.h:31 autotimer.c:537 autotimer.c:543 autotimer.c:568
 #: autotimer.c:575 autotimer.c:603 avsettings.h:247 betarobot.h:57
@@ -224,7 +224,7 @@ msgstr ""
 #: vidstream.h:45 vidstream.h:86 vidstream.h:98 vidstream.h:167 xvidstage.h:54
 #: xvidstage.h:100 xvidstage.h:177 youtube.h:198 zapback.c:79 zdf.h:29
 msgid "EXIT"
-msgstr ""
+msgstr "SORTIE"
 
 #: adjust.h:64 adjust.h:79 adjust.h:88 adjust.h:93 adjust.h:118 adjust.h:148
 #: adjust.h:158 adjust.h:162 adjust.h:179 adjust.h:183 adjust.h:191
@@ -274,7 +274,7 @@ msgstr ""
 #: tithek_settings.h:39 tithek_settings.h:43 tmc.h:531 tmc.h:535
 #: tunerconfig.h:184 tunerconfig.h:213 tunerconfig.h:244 tunerconfig.h:277
 msgid "no"
-msgstr ""
+msgstr "non"
 
 #: adjust.h:65
 msgid "infobar"
@@ -286,7 +286,7 @@ msgstr ""
 
 #: adjust.h:67 epgsettings.h:138
 msgid "Channel EPG"
-msgstr ""
+msgstr "EPG Canal"
 
 #: adjust.h:80 adjust.h:94 adjust.h:119 adjust.h:149 adjust.h:159 adjust.h:180
 #: adjust.h:184 adjust.h:192 adjust.h:196 adjust.h:200 adjust.h:206
@@ -332,17 +332,17 @@ msgstr ""
 #: timeshiftsettings.h:62 tithek_settings.h:36 tithek_settings.h:40
 #: tithek_settings.h:44 tmc.h:532 tmc.h:536
 msgid "yes"
-msgstr ""
+msgstr "oui"
 
 #: adjust.h:89
 msgid "medium"
-msgstr ""
+msgstr "médium"
 
 #: adjust.h:90 adjust.h:169 mc_audioplayer_settings.h:35
 #: mc_pictureplayer_settings.h:50 mc_videoplayer_settings.h:31
 #: moduleconfig.h:248 plugins_mc_skin.xml.h:23 skins_mc_skin.xml.h:23
 msgid "fast"
-msgstr ""
+msgstr "rapide"
 
 #: adjust.h:97 mc_audioplayer_settings.h:27 mc_pictureplayer_settings.h:42
 #: mc_videoplayer_settings.h:23 plugins_mc_skin.xml.h:7
@@ -360,7 +360,7 @@ msgstr ""
 #: mc_videoplayer_settings.h:25 plugins_mc_skin.xml.h:55
 #: skin_default_skin.xml.h:572 skins_mc_skin.xml.h:55
 msgid "size"
-msgstr ""
+msgstr "taille"
 
 #: adjust.h:100 mc_audioplayer_settings.h:30 mc_pictureplayer_settings.h:45
 #: mc_videoplayer_settings.h:26 plugins_mc_skin.xml.h:51
@@ -382,28 +382,28 @@ msgstr ""
 
 #: adjust.h:105
 msgid "Power Menu"
-msgstr ""
+msgstr "Menu d'éteindre "
 
 #: adjust.h:106 skin_default_skin.xml.h:455
 msgid "Power Off"
-msgstr ""
+msgstr "éteindre"
 
 #: adjust.h:107 powerofftimer.h:118 skin_default_skin.xml.h:594
 msgid "Standby"
-msgstr ""
+msgstr "Veille"
 
 #: adjust.h:108 skin_default_skin.xml.h:501 softcam.h:291
 msgid "Restart"
-msgstr ""
+msgstr "redémarrer"
 
 #: adjust.h:109
 msgid "Gui Restart"
-msgstr ""
+msgstr "redémarrer Titan"
 
 #: adjust.h:112 adjust.h:122 adjust.h:176 epgsettings.h:147 epgsettings.h:153
 #: network.h:593
 msgid "deaktiv"
-msgstr ""
+msgstr "inactif"
 
 #: adjust.h:113
 msgid "1 sec"
@@ -415,7 +415,7 @@ msgstr ""
 
 #: adjust.h:115 pin.h:188
 msgid "endless"
-msgstr ""
+msgstr "sans fin"
 
 #: adjust.h:123
 msgid "1 GB"
@@ -435,11 +435,11 @@ msgstr ""
 
 #: adjust.h:144 adjust.h:241 httpdsettings.h:43
 msgid "extern"
-msgstr ""
+msgstr "externe"
 
 #: adjust.h:145 adjust.h:242 httpdsettings.h:42
 msgid "intern"
-msgstr ""
+msgstr "interne"
 
 #: adjust.h:152 autotimer.c:479 autotimer.c:512 avsettings.h:68
 #: rectimer.h:1165 transponder.h:121 transponder.h:133 transponder.h:157
@@ -454,33 +454,33 @@ msgstr ""
 #: adjust.h:153 autotimer.c:480 autotimer.c:513 epgsettings.h:215
 #: rectimer.h:1166
 msgid "nothing"
-msgstr ""
+msgstr "rien"
 
 #: adjust.h:154 autotimer.c:481 autotimer.c:514 rectimer.h:1167
 #: stopifnotused.c:113
 msgid "standby"
-msgstr ""
+msgstr "Veille"
 
 #: adjust.h:155 autotimer.c:482 autotimer.c:515 rectimer.h:1168
 #: stopifnotused.c:112
 msgid "power off"
-msgstr ""
+msgstr "Arrét""
 
 #: adjust.h:163
 msgid "anim. width"
-msgstr ""
+msgstr "Animation largeur"
 
 #: adjust.h:164
 msgid "anim. height"
-msgstr ""
+msgstr "Animation hauteur"
 
 #: adjust.h:165
 msgid "anim. both"
-msgstr ""
+msgstr "Animation tous les deux"
 
 #: adjust.h:168
 msgid "very fast"
-msgstr ""
+msgstr "très rapide"
 
 #: adjust.h:170 timeshiftsettings.h:49 tmc.h:557
 msgid "normal"
@@ -488,15 +488,15 @@ msgstr ""
 
 #: adjust.h:171 moduleconfig.h:246 tmc.h:556
 msgid "slow"
-msgstr ""
+msgstr "lente"
 
 #: adjust.h:172
 msgid "very slow"
-msgstr ""
+msgstr "très lent"
 
 #: adjust.h:175 pin.h:106
 msgid "hidden"
-msgstr ""
+msgstr "caché"
 
 #: adjust.h:187
 msgid "channel-movie"
@@ -512,15 +512,15 @@ msgstr ""
 
 #: adjust.h:211
 msgid "yes / vzap 1 sec"
-msgstr ""
+msgstr "oui / vzap 1 sec"
 
 #: adjust.h:212
 msgid "yes / vzap 2 sec"
-msgstr ""
+msgstr "oui / vzap 2 sec"
 
 #: adjust.h:213
 msgid "yes / vzap endless"
-msgstr ""
+msgstr "oui / vzap sans fin"
 
 #: ard.h:31 avsettings.h:247 betarobot.h:57 bgdownload.h:176
 #: blindscanadjust.h:25 callmon_main.h:39 channellist.h:913 channellist.h:915
