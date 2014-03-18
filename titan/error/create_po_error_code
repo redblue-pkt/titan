@@ -12,14 +12,13 @@
 905 translated messages, 1490 untranslated messages.
 [createpo.sh] xgettext --omit-header -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.utf.po
 /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.utf.po:3456: end-of-line within string
-/home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.utf.po:5962:7: syntax error
-xgettext: found 2 fatal errors
+xgettext: found 1 fatal error
 [createpo.sh] ############################################
 [createpo.sh] ###### error should be in the middle #######
 [createpo.sh] ############################################
-  5961	msgstr ""
-  5962	msgstr "ERROR: You cannot change Timeshift settings during an "
-  5963	"active timeshift event!"
+  3455	"All Tuners are in use or no Tuner defined.
+  3456	
+  3457	msgid "Tuning to Channel failed!"
 [createpo.sh] ############################################
 [createpo.sh] ################## coding #################
 /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.po:         utf-8
