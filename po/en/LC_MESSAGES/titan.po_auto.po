@@ -1553,7 +1553,7 @@ msgstr ""
 
 #: faststream.h:107 played.h:107
 msgid "Connect with Hoster wait 10 seconds"
-msgstr ""
+msgstr "Connecting with Hoster, wait 10 seconds"
 
 #: filemanager.h:23 filemanager.h:86 filemanager.h:92
 msgid "Rename"
@@ -4601,7 +4601,7 @@ msgstr "Standby"
 
 #: primeshare.h:82
 msgid "Connect with Hoster wait 20 seconds"
-msgstr ""
+msgstr "Connecting with Hoster, wait 20 seconds"
 
 #: putlocker.h:85
 msgid "This file doesn't exist, or has been removed."
@@ -8047,20 +8047,18 @@ msgid ""
 "No skinconfig found in skin.\n"
 "Can't change to selected skin."
 msgstr ""
-"No skinconfig found in skin.\n"
-"Can't change to selected skin."
 
 #: sock.h:950
 msgid "Download finished!"
-msgstr "Download finished!"
+msgstr ""
 
 #: softcam.h:91 softcam.h:99
 msgid "started"
-msgstr "started"
+msgstr ""
 
 #: softcam.h:93 softcam.h:105
 msgid "active"
-msgstr "active"
+msgstr ""
 
 #: softcam.h:119
 msgid "Emu not found"
@@ -8072,7 +8070,7 @@ msgstr "Softcam selection: "
 
 #: softcam.h:293
 msgid "Activate"
-msgstr "Activate"
+msgstr ""
 
 #: softcam.h:403
 msgid "Reader Config Plugin not installed !"
@@ -8080,7 +8078,7 @@ msgstr "Reader Config Plugin not installed!"
 
 #: solarmovie.h:295
 msgid "This file doesn't exist, or has been removed"
-msgstr "This file doesn't exist, or has been removed"
+msgstr ""
 
 #: spinner.h:18
 msgid ""
@@ -8089,18 +8087,14 @@ msgid ""
 "KILL = Red\n"
 "BOOT = Green"
 msgstr ""
-"Detect hanging System !!!\n"
-"\n"
-"KILL = Red\n"
-"BOOT = Green"
 
 #: spinner.h:18
 msgid "KILL"
-msgstr "Red"
+msgstr ""
 
 #: spinner.h:18
 msgid "BOOT"
-msgstr "green"
+msgstr ""
 
 #: stock.h:197
 msgid "Company: "
@@ -8116,7 +8110,7 @@ msgstr ""
 
 #: stock.h:209
 msgid "Currency: "
-msgstr "Frequency: "
+msgstr ""
 
 #: stock.h:213
 msgid "Last: "
@@ -8124,7 +8118,7 @@ msgstr ""
 
 #: stock.h:217
 msgid "High: "
-msgstr "HighSR"
+msgstr ""
 
 #: stock.h:221
 msgid "Low: "
@@ -8132,7 +8126,7 @@ msgstr ""
 
 #: stock.h:225
 msgid "Volume: "
-msgstr "Volume off"
+msgstr ""
 
 #: stock.h:229
 msgid "Avg volume: "
@@ -8152,7 +8146,7 @@ msgstr ""
 
 #: stock.h:245
 msgid "Change: "
-msgstr "Change Feed Address"
+msgstr ""
 
 #: stock.h:249
 msgid "Change in %: "
@@ -8160,7 +8154,7 @@ msgstr ""
 
 #: stock.h:253
 msgid "Trade time: "
-msgstr "Date + Time"
+msgstr ""
 
 #: stopifnotused.c:32
 msgid ""
@@ -8195,11 +8189,11 @@ msgstr ""
 
 #: streamcloud.h:72
 msgid "Connect with Hoster wait 16 seconds"
-msgstr ""
+msgstr "Connecting with Hoster, wait 16 seconds"
 
 #: stream.h:33
 msgid "No Live Stream running"
-msgstr "No Live Stream running"
+msgstr ""
 
 #: system_backup.h:15
 msgid ""
@@ -8233,7 +8227,7 @@ msgstr ""
 
 #: system_backup_restore.h:31
 msgid "Restore Settings"
-msgstr "Restore Settings"
+msgstr ""
 
 #: system_backup_restore.h:31
 msgid ""
@@ -8242,10 +8236,6 @@ msgid ""
 "OK = start restore\n"
 "EXIT = abort restore"
 msgstr ""
-"Are you sure you want to restore settings?\n"
-"\n"
-"OK = start restore\n"
-"EXIT = abort restore"
 
 #: system_backup_restore.h:33
 msgid ""
@@ -8258,15 +8248,15 @@ msgstr ""
 
 #: system_backup_restore.h:40
 msgid "Restore failed, see log"
-msgstr "Backup failed, see log"
+msgstr ""
 
 #: system_backup_restore.h:43
 msgid "Update Plugins to new Version?"
-msgstr "Update Plugins to new Version?"
+msgstr ""
 
 #: system_backup_restore.h:51
 msgid "RESTORE ERROR"
-msgstr "RESTORE ERROR"
+msgstr ""
 
 #: system_backup_restore.h:51
 msgid ""
@@ -8274,13 +8264,10 @@ msgid ""
 "\n"
 "Aborting restoring..."
 msgstr ""
-"No backup folder found!\n"
-"\n"
-"Aborting restore ..."
 
 #: system_backup_restore.h:65
 msgid "Backup - Settings"
-msgstr "Backup - Settings"
+msgstr ""
 
 #: system_backup_restore.h:66
 msgid ""
@@ -8288,21 +8275,18 @@ msgid ""
 "\n"
 "Please wait..."
 msgstr ""
-"Backup started\n"
-"\n"
-"Please wait ..."
 
 #: system_backup_restore.h:80
 msgid "Backup failed, see log"
-msgstr "Backup failed, see log"
+msgstr ""
 
 #: system_backup_restore.h:82
 msgid "Backup created successfully"
-msgstr "Backup created successfully"
+msgstr ""
 
 #: system_backup_restore.h:88
 msgid "BACKUP ERROR"
-msgstr "BACKUP ERROR"
+msgstr ""
 
 #: system_backup_restore.h:88
 msgid ""
@@ -8316,11 +8300,11 @@ msgstr ""
 
 #: system_backup_restore.h:95
 msgid "BACKUP LOG"
-msgstr "BACKUP ERROR"
+msgstr ""
 
 #: system_infos.h:49
 msgid "Free Space"
-msgstr "Free space"
+msgstr ""
 
 #: system_infos_sysinfo.h:16
 msgid "CPU info"
