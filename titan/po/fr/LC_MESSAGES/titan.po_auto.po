@@ -973,7 +973,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-07 10:44+0200\n"
 "PO-Revision-Date: 2014-02-07 17:47+0200\n"
-"Last-Translator: obi <_obiwan_@web.de>\n" 
+"Last-Translator: channel <_obiwan_@web.de>\n"
 "Language-Team: German <_obiwan_@web.de>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -5263,7 +5263,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:48
 msgid "a"
-msgstr ""
+msgstr "a"
 
 #: skin_default_skin.xml.h:50
 msgid "abc/ABC"
@@ -5271,7 +5271,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:51
 msgid "About"
-msgstr "A Propos"
+msgstr "À propos"
 
 #: skin_default_skin.xml.h:52
 msgid "AC3 default"
@@ -5566,7 +5566,7 @@ msgstr "Recherche de chaine"
 
 #: skin_default_skin.xml.h:133
 msgid "Channel Service"
-msgstr "Service chaine"
+msgstr ""
 
 #: skin_default_skin.xml.h:136
 msgid "Ci-Modul internal Menu"
@@ -6739,7 +6739,7 @@ msgstr "balayage droite OSD"
 
 #: skin_default_skin.xml.h:421
 msgid "OSD Top Overscan"
-msgstr "balayage haut OSD"
+msgstr "balayage Haut OSD"
 
 #: skin_default_skin.xml.h:422
 msgid "OSD Transparent"
@@ -7041,11 +7041,11 @@ msgstr ""
 
 #: skin_default_skin.xml.h:509
 msgid "Rolloff"
-msgstr ""
+msgstr "Rolloff"
 
 #: skin_default_skin.xml.h:510
 msgid "Rolloff:"
-msgstr ""
+msgstr "Rolloff:"
 
 #: skin_default_skin.xml.h:511
 msgid "Rotor Position"
@@ -7105,7 +7105,7 @@ msgstr "Sat Finder"
 
 #: skin_default_skin.xml.h:525
 msgid "Sat Finder"
-msgstr ""
+msgstr "Sat Finder"
 
 #: skin_default_skin.xml.h:526
 msgid "Saturation"
@@ -7249,7 +7249,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:568
 msgid "SID:"
-msgstr ""
+msgstr "SID"
 
 #: skin_default_skin.xml.h:569
 msgid "Signal:"
@@ -7345,7 +7345,7 @@ msgstr "Démarre HTTPD"
 
 #: skin_default_skin.xml.h:601
 msgid "Start RGUID"
-msgstr "Démarre RGUID"
+msgstr "Démarre HTTPD"
 
 #: skin_default_skin.xml.h:602
 msgid "Step frequency"
@@ -7941,8 +7941,9 @@ msgstr ""
 
 #: system_backup_restore.h:15
 msgid ""
-"Press -restore- and your saved settings will be restored from your swapstick "
-"/ recording hdd! The Box will restart automatically for restoring!\n"
+"Press -restore- and your saved settings will be restored from your "
+"swapstick / recording hdd! The Box will restart automatically for "
+"restoring!\n"
 "\n"
 "Press -backup- to save your actual settings to swapstick / recording hdd.\n"
 "WARNING: The old backup will be deleted!"
@@ -10407,7 +10408,7 @@ msgstr "Temps + Chaine"
 
 #: vfdisplay.h:35 vfdisplay.h:41
 msgid "time"
-msgstr "Temps"
+msgstr "Heure"
 
 #: vfdisplay.h:36
 msgid "time small"
@@ -10476,7 +10477,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-msgid ""
-msgstr ""
-
