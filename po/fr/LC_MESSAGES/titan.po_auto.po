@@ -464,7 +464,7 @@ msgstr "Veille"
 #: adjust.h:155 autotimer.c:482 autotimer.c:515 rectimer.h:1168
 #: stopifnotused.c:112
 msgid "power off"
-msgstr "Arrét""
+msgstr "Arrét"
 
 #: adjust.h:163
 msgid "anim. width"
@@ -607,16 +607,16 @@ msgstr ""
 #: tithek_mainmenu.h:35 tmdb.h:860 xvideos.h:56 xvideos.h:58 youtube.h:223
 #: youtube.h:225 youtube.h:315 youtube.h:317 zdf.h:147 zdf.h:149
 msgid "Search"
-msgstr "Recharche Manuelle"
+msgstr "Recharche"
 
 #: audiotrack.h:48 play.h:271 rectimer.h:1485 subtitle.h:1624
 msgid "running"
-msgstr ""
+msgstr "en cours d'exécution"
 
 #: audiotrack.h:116 play.h:253 subtitle.h:1745 tunerconfig.h:157
 #: tunerconfig.h:341 tunerconfig.h:381
 msgid "undefined"
-msgstr ""
+msgstr "indéfini"
 
 #: autotimer.c:475 autotimer.c:508 harddisk.h:540 rectimer.h:1028
 msgid "record"
@@ -624,31 +624,31 @@ msgstr "Vérificateur des fichiers Partition de l'enregistrement "
 
 #: autotimer.c:476 autotimer.c:509 rectimer.h:1029
 msgid "switch channel"
-msgstr "Chaine"
+msgstr "échanger Chaine"
 
 #: autotimer.c:537 autotimer.c:543
 msgid "Stop AutoTimer"
-msgstr ""
+msgstr "terminé AutoTimer"
 
 #: autotimer.c:537
 msgid "AutoTimer succesfull stopped"
-msgstr ""
+msgstr "Autotimer terminé avec succès"
 
 #: autotimer.c:543
 msgid "ERROR... AutoTimer not stopped"
-msgstr ""
+msgstr "ERREUR.. Autotimer terminé sans succès "
 
 #: autotimer.c:568 autotimer.c:575
 msgid "Start AutoTimer"
-msgstr ""
+msgstr "redémarrer l'AutoTimer"
 
 #: autotimer.c:568
 msgid "AutoTimer succesfull started"
-msgstr ""
+msgstr "redémarrer l'AutoTimer avec succès"
 
 #: autotimer.c:575
 msgid "ERROR... AutoTimer not started"
-msgstr ""
+msgstr "ERREUR.. Autotimer pas commencé"
 
 #: autotimer.c:603 menu.h:884 menu.h:886 skin_default_skin.xml.h:529
 msgid "Save Settings"
@@ -656,7 +656,7 @@ msgstr "Réglages Sauvegarde"
 
 #: autotimer.c:603 menu.h:886
 msgid "Settings succesfull saved"
-msgstr ""
+msgstr "sauvegarder les réglages avec succès"
 
 #: avsettings.h:67 avsettings.h:83 harddisk.h:886 lnbconfig.h:144
 #: mc_pictureplayer_settings.h:34 mc_pictureplayer_settings.h:38
@@ -666,11 +666,11 @@ msgstr ""
 #: transponder.h:256 transponder.h:264 transponder.h:415 transponder.h:423
 #: tunerconfig.h:671 vfdisplay.h:42 vfdisplay.h:50
 msgid "off"
-msgstr ""
+msgstr " arrêt"
 
 #: avsettings.h:69
 msgid "redKey"
-msgstr ""
+msgstr "touche rouge"
 
 #: avsettings.h:78
 msgid "4 sec"
@@ -692,21 +692,21 @@ msgstr ""
 #: mc_pictureplayer_settings.h:39 readerconfig.h:416 transponder.h:257
 #: transponder.h:266 transponder.h:416 transponder.h:425
 msgid "on"
-msgstr ""
+msgstr "actif"
 
 #: avsettings.h:247 videomode.h:53
 msgid "Is this Videomode ok ?"
-msgstr ""
+msgstr "mode vidéo est correcte?"
 
 #: betarobot.h:57
 msgid ""
 "This Plugin is only for Betatester and can change your Settings!\n"
 "Realy run it?"
-msgstr ""
+msgstr "ce plugin est seulement pour les bêta-testeurs.  "
 
 #: bgdownload.h:176
 msgid "Really stop download ?"
-msgstr ""
+msgstr "arrêter le Télécharger?"
 
 #: blindscanadjust.h:13
 msgid "Sat: "
@@ -714,11 +714,11 @@ msgstr ""
 
 #: blindscanadjust.h:17
 msgid "Cable: "
-msgstr ""
+msgstr " Câble:"
 
 #: blindscanadjust.h:21
 msgid "Terrestrial: "
-msgstr ""
+msgstr "Terrestres: "
 
 #: blindscanadjust.h:120
 msgid "Sat"
@@ -726,19 +726,19 @@ msgstr ""
 
 #: blindscanadjust.h:121 tunerconfig.h:339
 msgid "Cable"
-msgstr ""
+msgstr "Câble"
 
 #: blindscanadjust.h:122
 msgid "Terrestrial"
-msgstr ""
+msgstr "Terrestres"
 
 #: browser.h:191
 msgid "Home"
-msgstr ""
+msgstr "accueil"
 
 #: browser.h:206
 msgid "Browser Favoriten"
-msgstr ""
+msgstr "favori Navigateur Internet "
 
 #: callmon_main.h:39
 msgid ""
