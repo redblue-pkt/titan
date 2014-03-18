@@ -5136,7 +5136,7 @@ msgid ""
 "All Tuners in use or no Tuner defined."
 msgstr ""
 "No free Tuner available.\n"
-"All Tuners are in use or no Tuner defined.
+"All Tuners are in use or no Tuner defined."
 
 #: service.h:937
 msgid "Tuning to Channel failed!"
