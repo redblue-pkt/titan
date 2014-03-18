@@ -216,7 +216,7 @@ void screenconfigurehdd(char* dev)
 	listbox->aktline = 1;
 	changetitle(screen, _("Harddisk Configure"));
 	if(titletext != status.skinerr) changetext(titletext, _("Harddisk Configure"));
-	if(details != status.skinerr) changetext(details, _("select the media drive from Device List for configuration"));
+	if(details != status.skinerr) changetext(details, _("select the function for the specified device"));
 		
 	if(status.expertmodus > 9) y = 8;
 
