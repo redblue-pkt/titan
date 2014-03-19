@@ -2213,7 +2213,8 @@ msgstr ""
 
 #: language.h:49
 msgid "Change language needs reboot"
-msgstr "Changing the language requires a System reboot\n"
+msgstr ""
+"Changing the language requires a System reboot\n"
 "Your Receiver will automatically reboot in a few Seconds.\n"
 "Please wait."
 
