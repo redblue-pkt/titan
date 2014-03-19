@@ -974,8 +974,8 @@ msgstr ""
 "Project-Id-Version: TitanNit 1.50\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-07 10:44+0200\n"
-"PO-Revision-Date: 2014-02-07 17:47+0200\n"
-"Last-Translator: Bulldog <_obiwan_@web.de>\n"
+"PO-Revision-Date: 2014-03-19 17:47+0200\n"
+"Last-Translator: Bulldog <_Bulldog@aaf.info>\n"
 "Language-Team: German <_obiwan_@web.de>\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
@@ -1726,7 +1726,7 @@ msgstr "Succesfully created or deleted directory"
 
 #: harddisk.h:439 skin_default_skin.xml.h:262
 msgid "Harddisk"
-msgstr "Devices"
+msgstr "Storage Device"
 
 #: harddisk.h:439
 msgid "sorry found no harddisk"
@@ -1734,7 +1734,7 @@ msgstr "Sorry, no attached device found!"
 
 #: harddisk.h:447 harddisk.h:448
 msgid "Harddisk Format"
-msgstr ""
+msgstr "Format Device"
 
 #: harddisk.h:449
 msgid "select the media drive from Device List for formating"
@@ -1742,7 +1742,7 @@ msgstr ""
 
 #: harddisk.h:453 harddisk.h:454
 msgid "Harddisk Fsck"
-msgstr ""
+msgstr "File System Check"
 
 #: harddisk.h:455
 msgid "select the media drive from Device List for fsck"
@@ -2213,7 +2213,9 @@ msgstr ""
 
 #: language.h:49
 msgid "Change language needs reboot"
-msgstr "Changing the language requires a System reboot"
+msgstr "Changing the language requires a System reboot\n"
+"Your Receiver will automatically reboot in a few Seconds.\n"
+"Please wait."
 
 #: lcdpearl1.c:45 lcdsamsung.c:101
 msgid "ERROR cant start LCD driver"
