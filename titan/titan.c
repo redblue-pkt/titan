@@ -903,9 +903,15 @@ int main(int argc, char *argv[])
 	{
 		if(checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1)
 		{
+			//autopo work
+			char* tmptext = NULL;
+			tmptext = ostrcat(tmptext, _("RemoteControl Old Version"), 0, 0);
+			tmptext = ostrcat(tmptext, _("RemoteControl Long Version"), 0, 0);
+			free(tmptxt), tmptxt = NULL;
+
 			struct menulist* mlist = NULL, *mbox = NULL;
-			addmenulist(&mlist, _("RemoteControl Old Version"), "0", NULL, 0, 0);
-			addmenulist(&mlist, _("RemoteControl Long Version"), "1", NULL, 0, 0);
+			addmenulist(&mlist, "RemoteControl Old Version", "0", NULL, 0, 0);
+			addmenulist(&mlist, "RemoteControl Long Version", "1", NULL, 0, 0);
 			
 			mbox = menulistbox(mlist, "remotecontrol", _("Select Your Remote Control"), NULL, NULL, 3, 0);
 			if(mbox != NULL)
