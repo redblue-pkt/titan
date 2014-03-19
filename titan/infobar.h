@@ -430,10 +430,8 @@ void screeninfobar()
 		{
 			subtitlepause(1);
 			status.infobar = 0;
-			status.infobaraktiv = 0;
 			clearscreen(infobar);
-			screenkeyactions(2, 0);
-			status.infobaraktiv = 1;
+			screenkeyactions(0, 0);
 			status.updatevfd = START;
 			drawscreen(skin, 0, 0);
 			subtitlepause(0);
