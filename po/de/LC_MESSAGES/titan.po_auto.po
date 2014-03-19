@@ -7018,7 +7018,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:446
 msgid "Plugin Button"
-msgstr "Plugin Übersicht"
+msgstr "Plugin Taste"
 
 #: skin_default_skin.xml.h:447
 msgid "Plugins"
