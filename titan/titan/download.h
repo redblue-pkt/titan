@@ -33,7 +33,6 @@ int screendownload(char* title, char* host, char* page, int port, char* filename
 		delrc(getrcconfigint("rcvolup", NULL), NULL, NULL);
 		delrc(getrcconfigint("rcvoldown", NULL), NULL, NULL);
 		delrc(getrcconfigint("rcmute", NULL), NULL, NULL);
-		delrc(getrcconfigint("rcmute1", NULL), NULL, NULL);
 		m_lock(&status.drawingmutex, 0);
 		m_lock(&status.rcmutex, 10);
 		setnodeattr(download, framebuffer, 2);
@@ -131,7 +130,6 @@ int screendownload(char* title, char* host, char* page, int port, char* filename
 		addrc(getrcconfigint("rcvolup", NULL), screenvolumeup, NULL, NULL);
 		addrc(getrcconfigint("rcvoldown", NULL), screenvolumedown, NULL, NULL);
 		addrc(getrcconfigint("rcmute", NULL), screenmute, NULL, NULL);
-		addrc(getrcconfigint("rcmute1", NULL), screenmute, NULL, NULL);
 	}
 	else
 	{

@@ -275,7 +275,6 @@ struct menulist* menulistboxext(struct menulist* mlist, char* paramskinname, cha
 		delrc(getrcconfigint("rcvolup", NULL), NULL, NULL);
 		delrc(getrcconfigint("rcvoldown", NULL), NULL, NULL);
 		delrc(getrcconfigint("rcmute", NULL), NULL, NULL);
-		delrc(getrcconfigint("rcmute1", NULL), NULL, NULL);
 		m_lock(&status.drawingmutex, 0);
 		m_lock(&status.rcmutex, 10);
 		setnodeattr(screen, framebuffer, 2);
@@ -328,7 +327,6 @@ struct menulist* menulistboxext(struct menulist* mlist, char* paramskinname, cha
 		addrc(getrcconfigint("rcvolup", NULL), screenvolumeup, NULL, NULL);
 		addrc(getrcconfigint("rcvoldown", NULL), screenvolumedown, NULL, NULL);
 		addrc(getrcconfigint("rcmute", NULL), screenmute, NULL, NULL);
-		addrc(getrcconfigint("rcmute1", NULL), screenmute, NULL, NULL);
 	}
 	else
 		clearscreen(screen);
