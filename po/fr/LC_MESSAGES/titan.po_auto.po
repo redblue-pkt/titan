@@ -6833,7 +6833,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:446
 msgid "Plugin Button"
-msgstr "Bouton Bleu"
+msgstr "Bouton Plugins"
 
 #: skin_default_skin.xml.h:447
 msgid "Plugins"
