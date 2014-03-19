@@ -110,9 +110,9 @@ msgstr ""
 #: system_backup_restore.h:82 system_backup_restore.h:88
 #: system_backup_restore.h:95 system_update.h:320 system_update.h:326
 #: system_update.h:333 timeshift.h:113 timeshift.h:155 timeshift.h:162
-#: timeshiftsettings.h:45 titan.c:274 titan.c:338 titan.c:347 titan.c:951
-#: titan.c:960 titan.c:1071 titan.c:1092 titan.c:1098 titan.c:1109
-#: titan.c:1115 tithek.c:79 tithek_global.h:238 tithek.h:620 tithek.h:1116
+#: timeshiftsettings.h:45 titan.c:274 titan.c:338 titan.c:347 titan.c:957
+#: titan.c:966 titan.c:1077 titan.c:1098 titan.c:1104 titan.c:1115
+#: titan.c:1121 tithek.c:79 tithek_global.h:238 tithek.h:620 tithek.h:1116
 #: tithek.h:1159 tithek.h:1404 tithek.h:1426 tithek.h:1431 tithek.h:1445
 #: tithek.h:3096 tithek.h:3159 tithek.h:3173 tithek.h:3183 tiwakeup.h:66
 #: tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759
@@ -211,9 +211,9 @@ msgstr "Ok"
 #: system_backup_restore.h:82 system_backup_restore.h:88
 #: system_backup_restore.h:95 system_update.h:320 system_update.h:326
 #: system_update.h:333 timeshift.h:113 timeshift.h:155 timeshift.h:162
-#: timeshiftsettings.h:45 titan.c:274 titan.c:338 titan.c:347 titan.c:951
-#: titan.c:960 titan.c:1071 titan.c:1092 titan.c:1098 titan.c:1109
-#: titan.c:1115 tithek.c:79 tithek_global.h:238 tithek.h:620 tithek.h:1116
+#: timeshiftsettings.h:45 titan.c:274 titan.c:338 titan.c:347 titan.c:957
+#: titan.c:966 titan.c:1077 titan.c:1098 titan.c:1104 titan.c:1115
+#: titan.c:1121 tithek.c:79 tithek_global.h:238 tithek.h:620 tithek.h:1116
 #: tithek.h:1159 tithek.h:1404 tithek.h:1426 tithek.h:1431 tithek.h:1445
 #: tithek.h:3096 tithek.h:3159 tithek.h:3173 tithek.h:3183 tiwakeup.h:66
 #: tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759
@@ -581,8 +581,8 @@ msgstr "yes / vzap endless"
 #: system_backup_restore.h:43 system_backup_restore.h:80
 #: system_backup_restore.h:82 system_update.h:320 system_update.h:326
 #: system_update.h:333 timeshift.h:113 timeshift.h:155 timeshift.h:162
-#: timeshiftsettings.h:45 titan.c:274 titan.c:338 titan.c:347 titan.c:1071
-#: titan.c:1092 titan.c:1098 titan.c:1109 titan.c:1115 tithek.c:79
+#: timeshiftsettings.h:45 titan.c:274 titan.c:338 titan.c:347 titan.c:1077
+#: titan.c:1098 titan.c:1104 titan.c:1115 titan.c:1121 tithek.c:79
 #: tithek_global.h:238 tithek.h:620 tithek.h:1116 tithek.h:1159 tithek.h:1404
 #: tithek.h:1426 tithek.h:1431 tithek.h:3096 tithek.h:3159 tithek.h:3173
 #: tithek.h:3183 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012
@@ -2098,7 +2098,7 @@ msgstr ""
 msgid "Email  \t\tinfo@atemio.de"
 msgstr ""
 
-#: info.h:27 plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9 titan.c:960
+#: info.h:27 plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9 titan.c:966
 msgid "Info"
 msgstr "Info"
 
@@ -8340,31 +8340,31 @@ msgstr "Error: no audio device found!"
 msgid "Error: skin not found !!"
 msgstr "Errore, Skin non trovato!"
 
-#: titan.c:907
+#: titan.c:908
 msgid "RemoteControl Old Version"
 msgstr ""
 
-#: titan.c:908
+#: titan.c:909
 msgid "RemoteControl Long Version"
 msgstr ""
 
-#: titan.c:910
+#: titan.c:916
 msgid "Select Your Remote Control"
 msgstr ""
 
-#: titan.c:951
+#: titan.c:957
 msgid "First Wizzard"
 msgstr "Start Assistent"
 
-#: titan.c:951
+#: titan.c:957
 msgid "Settings OK ?"
 msgstr "Salvare Impostazioni?"
 
-#: titan.c:1071
+#: titan.c:1077
 msgid "Receiver successful unlocked"
 msgstr "Sbloccare Ricevitore"
 
-#: titan.c:1092
+#: titan.c:1098
 msgid ""
 "Free space in /var to little!\n"
 "This can make problems!"
@@ -8372,7 +8372,7 @@ msgstr ""
 "non abbastanza spazio libero in /var\n"
 "questo puo prtare problemi !"
 
-#: titan.c:1098
+#: titan.c:1104
 msgid ""
 "/var not writeable!\n"
 "Repair it?"
@@ -8380,7 +8380,7 @@ msgstr ""
 "/var not writeable!\n"
 "Repair it?"
 
-#: titan.c:1109
+#: titan.c:1115
 msgid ""
 "Free space in /mnt to little!\n"
 "This can make problems!"
@@ -8388,7 +8388,7 @@ msgstr ""
 "non abbastanza spazio libero in /var\n"
 "questo puo prtare problemi !"
 
-#: titan.c:1115
+#: titan.c:1121
 msgid ""
 "/mnt not writeable!\n"
 "Repair it?"
@@ -8396,11 +8396,11 @@ msgstr ""
 "/mnt not writeable!\n"
 "Repair it?"
 
-#: titan.c:1164
+#: titan.c:1170
 msgid "Unknown Error."
 msgstr "Errore Sconosciuto"
 
-#: titan.c:1166
+#: titan.c:1172
 msgid "Automatic stop in 10 seconds."
 msgstr "Restart in 5 Secondi !"
 
