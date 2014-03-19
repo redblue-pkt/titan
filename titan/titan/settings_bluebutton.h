@@ -8,17 +8,30 @@ void screensettings_bluebutton()
 	struct skin* child = plugin->child;
 	char* tmpstr = NULL;
 	struct menulist* mlist = NULL, *mbox = NULL;
-	
-	addmenulist(&mlist, _("TV / Radio Switch"), NULL, NULL, 0, 0);
+
+// needed for translation
+	char* tmptxt = NULL;
+	tmptxt = ostrcat(tmptxt, _("TV / Radio Switch"), 1, 0);
+	tmptxt = ostrcat(tmptxt, _("Softcam Panel"), 1, 0);
+	tmptxt = ostrcat(tmptxt, _("Extensions List"), 1, 0);
+	tmptxt = ostrcat(tmptxt, _("Multi EPG"), 1, 0);
+	tmptxt = ostrcat(tmptxt, _("Graphic Multi EPG"), 1, 0);
+	tmptxt = ostrcat(tmptxt, _("Sleep Timer"), 1, 0);
+	tmptxt = ostrcat(tmptxt, _("Child Protection"), 1, 0);
+	tmptxt = ostrcat(tmptxt, _("Subchannel"), 1, 0);
+	tmptxt = ostrcat(tmptxt, _("Downloads"), 1, 0);
+	free(tmptxt), tmptxt = NULL;
+
+	addmenulist(&mlist, "TV / Radio Switch", NULL, NULL, 0, 0);
 	if(checkemu() == 1)
-		addmenulist(&mlist, _("Softcam Panel"), NULL, NULL, 0, 0);
-	addmenulist(&mlist, _("Extensions List"), NULL, NULL, 0, 0);
-	addmenulist(&mlist, _("Multi EPG"), NULL, NULL, 0, 0);
-	addmenulist(&mlist, _("Graphic Multi EPG"), NULL, NULL, 0, 0);
-	addmenulist(&mlist, _("Sleep Timer"), NULL, NULL, 0, 0);
-	addmenulist(&mlist, _("Child Protection"), NULL, NULL, 0, 0);
-	addmenulist(&mlist, _("Subchannel"), NULL, NULL, 0, 0);
-	addmenulist(&mlist, _("Downloads"), NULL, NULL, 0, 0);
+		addmenulist(&mlist, "Softcam Panel", NULL, NULL, 0, 0);
+	addmenulist(&mlist, "Extensions List", NULL, NULL, 0, 0);
+	addmenulist(&mlist, "Multi EPG", NULL, NULL, 0, 0);
+	addmenulist(&mlist, "Graphic Multi EPG", NULL, NULL, 0, 0);
+	addmenulist(&mlist, "Sleep Timer", NULL, NULL, 0, 0);
+	addmenulist(&mlist, "Child Protection", NULL, NULL, 0, 0);
+	addmenulist(&mlist, "Subchannel", NULL, NULL, 0, 0);
+	addmenulist(&mlist, "Downloads", NULL, NULL, 0, 0);
 
 	while(child != NULL)
 	{
@@ -40,7 +53,7 @@ void screensettings_bluebutton()
 	}
 	debug(60, "(new) Bluekey=%s", mbox->name);
 
-	if(ostrcmp(mbox->name, _("TV / Radio Switch")) == 0)
+	if(ostrcmp(mbox->name, "TV / Radio Switch") == 0)
 		delconfig("bluekey");
 	else
 		addconfig("bluekey", mbox->name);
