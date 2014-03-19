@@ -71,8 +71,8 @@ msgstr ""
 #: mc_videoplayer.h:329 mc_videoplayer.h:746 mc_videoplayer.h:781
 #: mc_videoplayer.h:885 mc_videoplayer.h:901 mc_wetterinfo.h:38
 #: mc_wetterinfo.h:41 mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477
-#: mediadb.h:2454 mediadbsettings.h:95 menu.h:153 menu.h:187 menu.h:209
-#: menu.h:941 menu.h:943 movreel.h:30 movreel.h:79 movreel.h:91 movreel.h:103
+#: mediadb.h:2454 mediadbsettings.h:95 menu.h:153 menu.h:208 menu.h:940
+#: menu.h:942 movreel.h:30 movreel.h:79 movreel.h:91 movreel.h:103
 #: movreel.h:154 movreel.h:202 movshare.h:35 movshare.h:149 myvideo.h:50
 #: networkbrowser.h:944 networkbrowser.h:1005 networkbrowser.h:1009
 #: networkbrowser.h:1011 networkbrowser.h:1021 networkbrowser.h:1025
@@ -163,8 +163,8 @@ msgstr "Ok"
 #: mc_videoplayer.h:329 mc_videoplayer.h:746 mc_videoplayer.h:781
 #: mc_videoplayer.h:885 mc_videoplayer.h:901 mc_wetterinfo.h:38
 #: mc_wetterinfo.h:41 mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477
-#: mediadb.h:2454 mediadbsettings.h:95 menu.h:153 menu.h:187 menu.h:209
-#: menu.h:941 menu.h:943 movreel.h:30 movreel.h:79 movreel.h:91 movreel.h:103
+#: mediadb.h:2454 mediadbsettings.h:95 menu.h:153 menu.h:208 menu.h:940
+#: menu.h:942 movreel.h:30 movreel.h:79 movreel.h:91 movreel.h:103
 #: movreel.h:154 movreel.h:202 movshare.h:35 movshare.h:149 myvideo.h:50
 #: networkbrowser.h:944 networkbrowser.h:1005 networkbrowser.h:1009
 #: networkbrowser.h:1011 networkbrowser.h:1021 networkbrowser.h:1025
@@ -554,44 +554,44 @@ msgstr "Ja / VZAP unendlich"
 #: mc_videoplayer.h:746 mc_videoplayer.h:781 mc_videoplayer.h:885
 #: mc_videoplayer.h:901 mc_wetterinfo.h:38 mc_wetterinfo.h:41
 #: mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477 mediadbsettings.h:95
-#: menu.h:153 menu.h:187 menu.h:209 movreel.h:30 movreel.h:79 movreel.h:91
-#: movreel.h:103 movreel.h:154 movreel.h:202 movshare.h:35 movshare.h:149
-#: myvideo.h:50 networkbrowser.h:944 networkbrowser.h:1005
-#: networkbrowser.h:1009 networkbrowser.h:1011 networkbrowser.h:1021
-#: networkbrowser.h:1025 networkbrowser.h:1189 networkbrowser.h:1743
-#: networkbrowser.h:1750 networkbrowser.h:1755 networkbrowser.h:1907
-#: network.h:426 network.h:558 network.h:766 network.h:774 network.h:800
-#: network.h:804 network.h:858 novamov.h:35 novamov.h:80 nowvideo.h:35
-#: nowvideo.h:87 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
-#: played.h:30 played.h:79 played.h:91 played.h:103 played.h:160 player.h:99
-#: play.h:593 play.h:1295 play.h:1489 play.h:1649 play.h:1660 possetup.h:98
-#: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
-#: putlocker.h:32 putlocker.h:79 putlocker.h:85 putlocker.h:136
-#: putlocker.h:146 putlocker.h:219 readerconfig.h:343 readerconfig.h:443
-#: readerconfig.h:444 readerconfig.h:488 readerconfig.h:489 record.h:355
-#: record.h:987 record.h:1174 record.h:1413 record.h:1438 rectimer.h:557
-#: rectimer.h:1210 rectimer.h:1356 rectimer.h:1368 restoredefault.h:10
-#: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
-#: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:28
-#: scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1640 scan.h:1888
-#: scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 service.h:710 service.h:951
-#: skinadjust.h:133 skinselector.h:218 sock.h:952 softcam.h:403
-#: solarmovie.h:35 solarmovie.h:47 solarmovie.h:295 spinner.h:18
-#: stopifnotused.c:32 streamcloud.h:31 streamcloud.h:78 streamcloud.h:91
-#: streamcloud.h:122 streamcloud.h:161 stream.h:33 system_backup_restore.h:40
-#: system_backup_restore.h:43 system_backup_restore.h:80
-#: system_backup_restore.h:82 system_update.h:320 system_update.h:326
-#: system_update.h:333 timeshift.h:113 timeshift.h:155 timeshift.h:162
-#: timeshiftsettings.h:45 titan.c:274 titan.c:338 titan.c:347 titan.c:1077
-#: titan.c:1098 titan.c:1104 titan.c:1115 titan.c:1121 tithek.c:79
-#: tithek_global.h:238 tithek.h:620 tithek.h:1116 tithek.h:1159 tithek.h:1404
-#: tithek.h:1426 tithek.h:1431 tithek.h:3096 tithek.h:3159 tithek.h:3173
-#: tithek.h:3183 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012
-#: tmc.h:1017 tmdb.h:759 tmdb.h:922 TopfieldVFD.c:68 TopfieldVFD.c:72
-#: tpk.h:3185 tpk.new.h:3167 tunerconfig.h:772 unlock.h:20 unlock.h:66
-#: unlock.h:71 unlock.h:75 videomode.h:53 videoweed.h:35 videoweed.h:80
-#: vidstream.h:45 vidstream.h:86 vidstream.h:98 vidstream.h:167 xvidstage.h:54
-#: xvidstage.h:100 xvidstage.h:177 youtube.h:198 zapback.c:79 zdf.h:29
+#: menu.h:153 menu.h:208 movreel.h:30 movreel.h:79 movreel.h:91 movreel.h:103
+#: movreel.h:154 movreel.h:202 movshare.h:35 movshare.h:149 myvideo.h:50
+#: networkbrowser.h:944 networkbrowser.h:1005 networkbrowser.h:1009
+#: networkbrowser.h:1011 networkbrowser.h:1021 networkbrowser.h:1025
+#: networkbrowser.h:1189 networkbrowser.h:1743 networkbrowser.h:1750
+#: networkbrowser.h:1755 networkbrowser.h:1907 network.h:426 network.h:558
+#: network.h:766 network.h:774 network.h:800 network.h:804 network.h:858
+#: novamov.h:35 novamov.h:80 nowvideo.h:35 nowvideo.h:87 panel_main.h:29
+#: panel_main.h:135 panel_settings_wizard.h:6 played.h:30 played.h:79
+#: played.h:91 played.h:103 played.h:160 player.h:99 play.h:593 play.h:1295
+#: play.h:1489 play.h:1649 play.h:1660 possetup.h:98 primeshare.h:29
+#: primeshare.h:73 primeshare.h:79 primeshare.h:124 putlocker.h:32
+#: putlocker.h:79 putlocker.h:85 putlocker.h:136 putlocker.h:146
+#: putlocker.h:219 readerconfig.h:343 readerconfig.h:443 readerconfig.h:444
+#: readerconfig.h:488 readerconfig.h:489 record.h:355 record.h:987
+#: record.h:1174 record.h:1413 record.h:1438 rectimer.h:557 rectimer.h:1210
+#: rectimer.h:1356 rectimer.h:1368 restoredefault.h:10 restoredefault.h:19
+#: restoredefault.h:23 restoredefault.h:32 restoredefault.h:47 rgui.h:30
+#: rgui.h:118 rgui.h:134 rtl2now.h:28 scan.h:1598 scan.h:1600 scan.h:1628
+#: scan.h:1630 scan.h:1640 scan.h:1888 scan.h:1979 scan.h:2345 scart.h:12
+#: scart.h:25 service.h:710 service.h:951 skinadjust.h:133 skinselector.h:218
+#: sock.h:952 softcam.h:403 solarmovie.h:35 solarmovie.h:47 solarmovie.h:295
+#: spinner.h:18 stopifnotused.c:32 streamcloud.h:31 streamcloud.h:78
+#: streamcloud.h:91 streamcloud.h:122 streamcloud.h:161 stream.h:33
+#: system_backup_restore.h:40 system_backup_restore.h:43
+#: system_backup_restore.h:80 system_backup_restore.h:82 system_update.h:320
+#: system_update.h:326 system_update.h:333 timeshift.h:113 timeshift.h:155
+#: timeshift.h:162 timeshiftsettings.h:45 titan.c:274 titan.c:338 titan.c:347
+#: titan.c:1077 titan.c:1098 titan.c:1104 titan.c:1115 titan.c:1121
+#: tithek.c:79 tithek_global.h:238 tithek.h:620 tithek.h:1116 tithek.h:1159
+#: tithek.h:1404 tithek.h:1426 tithek.h:1431 tithek.h:3096 tithek.h:3159
+#: tithek.h:3173 tithek.h:3183 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
+#: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922 TopfieldVFD.c:68
+#: TopfieldVFD.c:72 tpk.h:3185 tpk.new.h:3167 tunerconfig.h:772 unlock.h:20
+#: unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:53 videoweed.h:35
+#: videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98 vidstream.h:167
+#: xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:198 zapback.c:79
+#: zdf.h:29
 msgid "Message"
 msgstr "Mitteilung"
 
@@ -651,11 +651,11 @@ msgstr "Autotimer erfolgreich gestartet"
 msgid "ERROR... AutoTimer not started"
 msgstr "FEHLER: Autotimer konnte nicht gestartet werden!"
 
-#: autotimer.c:603 menu.h:941 menu.h:943 skin_default_skin.xml.h:529
+#: autotimer.c:603 menu.h:940 menu.h:942 skin_default_skin.xml.h:529
 msgid "Save Settings"
 msgstr "Einstellungen speichern"
 
-#: autotimer.c:603 menu.h:943
+#: autotimer.c:603 menu.h:942
 msgid "Settings succesfull saved"
 msgstr "Einstellungen wurden erfolgreich gespeichert"
 
@@ -2128,7 +2128,7 @@ msgid "DYNDNS now stopped"
 msgstr "DYNDNS gestoppt"
 
 #: infobar.h:426 mc_audioplayer.h:328 mc_main.h:252 mc_pictureplayer.h:119
-#: mc_videoplayer.h:329 menu.h:209
+#: mc_videoplayer.h:329 menu.h:208
 msgid ""
 "Shooting Background done !\n"
 "Save Screenshoot Path: /tmp/screenshot.jpg"
@@ -2414,7 +2414,7 @@ msgstr "Internetbrowser Netsurf ist nicht installiert"
 msgid "comming soon"
 msgstr "folgt demnächst, das Team arbeitet dran"
 
-#: mc_main.h:261 menu.h:153 menu.h:187 panel_main.h:29 panel_main.h:135
+#: mc_main.h:261 menu.h:153 panel_main.h:29 panel_main.h:135
 msgid "Menu not implemented !"
 msgstr "Menü noch nicht verfügbar!"
 
@@ -2651,7 +2651,7 @@ msgstr ""
 "Kein MediaDB Verzeichnis gefunden!\n"
 "Wollen Sie es erstellen?"
 
-#: menu.h:941
+#: menu.h:940
 msgid "Error in Save Settings"
 msgstr "Fehler beim Speichern der Einstellungen"
 
