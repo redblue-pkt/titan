@@ -60,7 +60,7 @@ msgstr ""
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
 #: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626
 #: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:426 infobar.h:548
-#: info.h:27 keyactions.h:241 lcdpearl1.c:45 lcdsamsung.c:101 log.h:46
+#: info.h:27 keyactions.h:242 lcdpearl1.c:45 lcdsamsung.c:101 log.h:46
 #: log.h:48 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
 #: mc_audioplayer.h:328 mc_audioplayer.h:599 mc_audioplayer.h:702
 #: mc_dateibrowser.h:38 mc_global.h:773 mc_global.h:1020
@@ -152,7 +152,7 @@ msgstr "Ok"
 #: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
 #: hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200
 #: imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:426
-#: infobar.h:548 info.h:27 keyactions.h:241 log.h:46 log.h:48 marker.h:215
+#: infobar.h:548 info.h:27 keyactions.h:242 log.h:46 log.h:48 marker.h:215
 #: marker.h:229 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
 #: mc_audioplayer.h:328 mc_audioplayer.h:599 mc_audioplayer.h:702
 #: mc_dateibrowser.h:38 mc_global.h:773 mc_global.h:1020
@@ -543,7 +543,7 @@ msgstr "Ja / VZAP unendlich"
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
 #: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626
 #: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:426 infobar.h:548
-#: keyactions.h:241 language.h:49 lcdpearl1.c:45 lcdsamsung.c:101 log.h:46
+#: keyactions.h:242 language.h:49 lcdpearl1.c:45 lcdsamsung.c:101 log.h:46
 #: log.h:48 marker.h:215 marker.h:229 mc_audioplayer.h:328
 #: mc_audioplayer.h:599 mc_audioplayer.h:702 mc_dateibrowser.h:38
 #: mc_global.h:773 mc_global.h:1020 mc_internetbrowser.h:38
@@ -1616,7 +1616,7 @@ msgstr ""
 "Registrierung erforderlich, bitte kontaktieren Sie Atemio!\n"
 "Infos erhalten Sie im Atemio-Panel > System > Serial-Information"
 
-#: global.h:6387 keyactions.h:241
+#: global.h:6387 keyactions.h:242
 msgid "ERROR cant read res"
 msgstr "Abbruch, Auflösungsstatus nicht verfügbar"
 
@@ -2215,13 +2215,13 @@ msgstr "Unterkanäle"
 msgid "Downloads"
 msgstr ""
 
-#: keyactions.h:35
-msgid "Key Action - Plugins"
-msgstr "Schnellstart"
-
-#: keyactions.h:38 play.h:646
+#: keyactions.h:31 play.h:646
 msgid "MediaDB Scan Info"
 msgstr "MediaDB Scan Informationen"
+
+#: keyactions.h:36
+msgid "Key Action - Plugins"
+msgstr "Schnellstart"
 
 #: kinox.h:292 movie4k.h:720 movie4k.h:846 movie4k.h:960 solarmovie.h:443
 msgid "Season"
