@@ -28,6 +28,7 @@ void screenkeyactions(int key, int flag)
 	tmptxt = ostrcat(tmptxt, _("Child Protection"), 1, 0);
 	tmptxt = ostrcat(tmptxt, _("Subchannel"), 1, 0);
 	tmptxt = ostrcat(tmptxt, _("Downloads"), 1, 0);
+	tmptxt = ostrcat(tmptxt, _("MediaDB Scan Info"), 1, 0);
 	free(tmptxt), tmptxt = NULL;
 		
 	if(flag == 1)
@@ -35,7 +36,7 @@ void screenkeyactions(int key, int flag)
 		char* skintitle = _("Key Action - Plugins");
 
 		if(status.mediadbfiles > 0)
-			addmenulist(&mlist, _("MediaDB Scan Info"), NULL, NULL, 0, 0);
+			addmenulist(&mlist, "MediaDB Scan Info", NULL, NULL, 0, 0);
 			
 		if(key == 1)
 		{
@@ -95,7 +96,7 @@ void screenkeyactions(int key, int flag)
 	if(status.security == 0 && checkpluginskip(keyconf) == 1) return;
 						
 	debug(60, "key=%s", keyconf);
-	if(ostrcmp(keyconf, "Softcam") == 0)
+	if(ostrcmp(keyconf, "Softcam Panel") == 0)
 	{
 		screensoftcam();
 		freemenulist(mlist, 1); mlist = NULL;
