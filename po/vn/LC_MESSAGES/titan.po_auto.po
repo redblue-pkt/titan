@@ -1263,13 +1263,13 @@ msgid "Single EPG"
 msgstr "EPG"
 
 #: epgsettings.h:140 epgsettings.h:181 keyactions.h:25
-#: settings_bluebutton.h:16 settings_pluginbutton.h:17 settings_redbutton.h:17
+#: settings_bluebutton.h:17 settings_pluginbutton.h:18 settings_redbutton.h:18
 #: skin_default_skin.xml.h:388
 msgid "Multi EPG"
 msgstr "EPG"
 
-#: epgsettings.h:141 keyactions.h:26 settings_bluebutton.h:17
-#: settings_pluginbutton.h:18 settings_redbutton.h:18
+#: epgsettings.h:141 keyactions.h:26 settings_bluebutton.h:18
+#: settings_pluginbutton.h:19 settings_redbutton.h:19
 #: skin_default_skin.xml.h:254
 msgid "Graphic Multi EPG"
 msgstr "Lịch chương trình"
@@ -2122,42 +2122,42 @@ msgstr "hỏi"
 msgid "ein"
 msgstr "Mật khẩu"
 
-#: keyactions.h:21 settings_bluebutton.h:15 settings_pluginbutton.h:12
-#: settings_pluginbutton.h:44 settings_redbutton.h:12 settings_redbutton.h:44
+#: keyactions.h:21 settings_bluebutton.h:16 settings_pluginbutton.h:14
+#: settings_pluginbutton.h:17 settings_pluginbutton.h:58
+#: settings_redbutton.h:14 settings_redbutton.h:17
 msgid "Extensions List"
 msgstr "Danh sách mở rộng"
 
-#: keyactions.h:22 settings_pluginbutton.h:13 settings_redbutton.h:13
+#: keyactions.h:22 settings_pluginbutton.h:15 settings_redbutton.h:15
 msgid "Auto Resolution"
 msgstr "Độ phân giải tự động"
 
-#: keyactions.h:23 settings_bluebutton.h:12 settings_bluebutton.h:43
-#: settings_pluginbutton.h:16 settings_redbutton.h:16
+#: keyactions.h:23 settings_bluebutton.h:14
 msgid "TV / Radio Switch"
 msgstr ""
 
-#: keyactions.h:24 settings_bluebutton.h:14 settings_pluginbutton.h:15
-#: settings_redbutton.h:15 skin_default_skin.xml.h:582
+#: keyactions.h:24 settings_bluebutton.h:15 settings_pluginbutton.h:16
+#: settings_redbutton.h:16 skin_default_skin.xml.h:582
 msgid "Softcam Panel"
 msgstr ""
 
-#: keyactions.h:27 settings_bluebutton.h:18 settings_pluginbutton.h:19
-#: settings_redbutton.h:19
+#: keyactions.h:27 settings_bluebutton.h:19 settings_pluginbutton.h:20
+#: settings_redbutton.h:20
 msgid "Sleep Timer"
 msgstr "Tắt bộ định thời"
 
-#: keyactions.h:28 settings_bluebutton.h:19 settings_pluginbutton.h:20
-#: settings_redbutton.h:20 skin_default_skin.xml.h:134
+#: keyactions.h:28 settings_bluebutton.h:20 settings_pluginbutton.h:21
+#: settings_redbutton.h:21 skin_default_skin.xml.h:134
 msgid "Child Protection"
 msgstr "Khóa trẻ em"
 
-#: keyactions.h:29 settings_bluebutton.h:20 settings_pluginbutton.h:21
-#: settings_redbutton.h:21 videomode.h:17 videomode.h:34
+#: keyactions.h:29 settings_bluebutton.h:21 settings_pluginbutton.h:22
+#: settings_redbutton.h:22 videomode.h:17 videomode.h:34
 msgid "Subchannel"
 msgstr "Các chương trình phụ"
 
-#: keyactions.h:30 play.h:702 settings_bluebutton.h:21
-#: settings_pluginbutton.h:22 settings_redbutton.h:22
+#: keyactions.h:30 play.h:702 settings_bluebutton.h:22
+#: settings_pluginbutton.h:23 settings_redbutton.h:23
 #: skin_default_skin.xml.h:192
 msgid "Downloads"
 msgstr "Tải về lỗi"
