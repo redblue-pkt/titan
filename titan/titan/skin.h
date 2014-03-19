@@ -1950,7 +1950,6 @@ void drawpic(const char* filename, int posx, int posy, int scalewidth, int scale
 	picnode = getpic((char*)filename);
 	if(picnode == NULL)
 	{
-printf("skin: pictype=%d add=%d\n",pictype,add);
 		if(pictype == 0)
 			buf = readpng(filename, &width, &height, &rowbytes, &channels, 0, 0, 0, 0, 0, 0);
 		else if(pictype == 1)
