@@ -423,7 +423,7 @@ void screeninfobar()
 			status.updatevfd = START;
 			drawscreen(skin, 0, 0);
 			subtitlepause(0);
-			textbox(_("Message"), _("Screenshoot created on /tmp/screenshoot.png !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
+			textbox(_("Message"), _("Shooting Background done !\nSave Screenshoot Path: /tmp/screenshot.jpg"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
 			continue;
 		}
 
