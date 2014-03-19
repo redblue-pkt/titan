@@ -59,29 +59,29 @@ msgstr ""
 #: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
 #: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626
-#: inadyn.h:188 inadyn.h:190 inadyn.h:200 info.h:27 keyactions.h:241
-#: lcdpearl1.c:45 lcdsamsung.c:101 log.h:46 log.h:48 mboxinfo.c:49
-#: mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163 mc_audioplayer.h:328
-#: mc_audioplayer.h:599 mc_audioplayer.h:702 mc_dateibrowser.h:38
-#: mc_global.h:773 mc_global.h:1020 mc_internetbrowser.h:38
-#: mc_internetbrowser.h:41 mc_main.h:47 mc_main.h:52 mc_main.h:57 mc_main.h:92
-#: mc_main.h:97 mc_main.h:252 mc_main.h:261 mc_mediathek.h:37
-#: mc_pictureplayer.h:95 mc_pictureplayer.h:119 mc_pictureplayer.h:237
-#: mc_pictureplayer.h:363 mc_pictureplayer.h:456 mc_videoplayer.h:329
-#: mc_videoplayer.h:746 mc_videoplayer.h:781 mc_videoplayer.h:885
-#: mc_videoplayer.h:901 mc_wetterinfo.h:38 mc_wetterinfo.h:41
-#: mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477 mediadb.h:2454
-#: mediadbsettings.h:95 menu.h:153 menu.h:884 menu.h:886 movreel.h:30
-#: movreel.h:79 movreel.h:91 movreel.h:103 movreel.h:154 movreel.h:202
-#: movshare.h:35 movshare.h:149 myvideo.h:50 networkbrowser.h:944
-#: networkbrowser.h:1005 networkbrowser.h:1009 networkbrowser.h:1011
-#: networkbrowser.h:1021 networkbrowser.h:1025 networkbrowser.h:1189
-#: networkbrowser.h:1743 networkbrowser.h:1750 networkbrowser.h:1755
-#: networkbrowser.h:1907 network.h:263 network.h:271 network.h:284
-#: network.h:299 network.h:335 network.h:426 network.h:558 network.h:766
-#: network.h:774 network.h:800 network.h:804 network.h:858 network.h:865
-#: network.h:887 newsletter.h:252 newsletter.h:292 novamov.h:35 novamov.h:80
-#: nowvideo.h:35 nowvideo.h:87 panel_main.h:29 panel_main.h:135
+#: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:547 info.h:27
+#: keyactions.h:241 lcdpearl1.c:45 lcdsamsung.c:101 log.h:46 log.h:48
+#: mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
+#: mc_audioplayer.h:328 mc_audioplayer.h:599 mc_audioplayer.h:702
+#: mc_dateibrowser.h:38 mc_global.h:773 mc_global.h:1020
+#: mc_internetbrowser.h:38 mc_internetbrowser.h:41 mc_main.h:47 mc_main.h:52
+#: mc_main.h:57 mc_main.h:92 mc_main.h:97 mc_main.h:252 mc_main.h:261
+#: mc_mediathek.h:37 mc_pictureplayer.h:95 mc_pictureplayer.h:119
+#: mc_pictureplayer.h:237 mc_pictureplayer.h:363 mc_pictureplayer.h:456
+#: mc_videoplayer.h:329 mc_videoplayer.h:746 mc_videoplayer.h:781
+#: mc_videoplayer.h:885 mc_videoplayer.h:901 mc_wetterinfo.h:38
+#: mc_wetterinfo.h:41 mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477
+#: mediadb.h:2454 mediadbsettings.h:95 menu.h:153 menu.h:884 menu.h:886
+#: movreel.h:30 movreel.h:79 movreel.h:91 movreel.h:103 movreel.h:154
+#: movreel.h:202 movshare.h:35 movshare.h:149 myvideo.h:50
+#: networkbrowser.h:944 networkbrowser.h:1005 networkbrowser.h:1009
+#: networkbrowser.h:1011 networkbrowser.h:1021 networkbrowser.h:1025
+#: networkbrowser.h:1189 networkbrowser.h:1743 networkbrowser.h:1750
+#: networkbrowser.h:1755 networkbrowser.h:1907 network.h:263 network.h:271
+#: network.h:284 network.h:299 network.h:335 network.h:426 network.h:558
+#: network.h:766 network.h:774 network.h:800 network.h:804 network.h:858
+#: network.h:865 network.h:887 newsletter.h:252 newsletter.h:292 novamov.h:35
+#: novamov.h:80 nowvideo.h:35 nowvideo.h:87 panel_main.h:29 panel_main.h:135
 #: panel_settings_wizard.h:6 played.h:30 played.h:79 played.h:91 played.h:103
 #: played.h:160 player.h:99 play.h:476 play.h:593 play.h:1280 play.h:1286
 #: play.h:1295 play.h:1296 play.h:1489 play.h:1649 play.h:1660
@@ -151,7 +151,7 @@ msgstr ""
 #: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
 #: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
 #: hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200
-#: imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200 info.h:27
+#: imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:547 info.h:27
 #: keyactions.h:241 log.h:46 log.h:48 marker.h:215 marker.h:229 mboxinfo.c:49
 #: mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163 mc_audioplayer.h:328
 #: mc_audioplayer.h:599 mc_audioplayer.h:702 mc_dateibrowser.h:38
@@ -542,10 +542,10 @@ msgstr ""
 #: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
 #: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626
-#: inadyn.h:188 inadyn.h:190 inadyn.h:200 keyactions.h:241 language.h:49
-#: lcdpearl1.c:45 lcdsamsung.c:101 log.h:46 log.h:48 marker.h:215 marker.h:229
-#: mc_audioplayer.h:328 mc_audioplayer.h:599 mc_audioplayer.h:702
-#: mc_dateibrowser.h:38 mc_global.h:773 mc_global.h:1020
+#: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:547 keyactions.h:241
+#: language.h:49 lcdpearl1.c:45 lcdsamsung.c:101 log.h:46 log.h:48
+#: marker.h:215 marker.h:229 mc_audioplayer.h:328 mc_audioplayer.h:599
+#: mc_audioplayer.h:702 mc_dateibrowser.h:38 mc_global.h:773 mc_global.h:1020
 #: mc_internetbrowser.h:38 mc_internetbrowser.h:41 mc_main.h:47 mc_main.h:52
 #: mc_main.h:57 mc_main.h:92 mc_main.h:97 mc_main.h:252 mc_main.h:261
 #: mc_mediathek.h:37 mc_pictureplayer.h:95 mc_pictureplayer.h:119
@@ -2119,6 +2119,10 @@ msgstr ""
 
 #: inadyn.h:200
 msgid "DYNDNS now stopped"
+msgstr ""
+
+#: infobar.h:547
+msgid "Internet Browser Plugin not installed !"
 msgstr ""
 
 #: info.h:23
