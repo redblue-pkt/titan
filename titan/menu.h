@@ -156,6 +156,8 @@ struct skin* menu(struct skin* menu, int flag)
 
 		if(rcret == getrcconfigint("rcpower", NULL))
 		{
+		
+printf("listbox->select: %s\n",listbox->select);
 			subtitlepause(1);
 			status.infobar = 0;
 			status.infobaraktiv = 0;
@@ -176,7 +178,9 @@ struct skin* menu(struct skin* menu, int flag)
 					oshutdown(3, 1);
 					break;
 				default:
-					ret = menucall(menu, "standby", 0);
+//not working !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+					listbox->select = "standby";
+					ret = menucall(menu, listbox->select, 0);
 					if(status.standby == 1 || status.menurelease == 1) break;
 		
 					if(ret != 0)
