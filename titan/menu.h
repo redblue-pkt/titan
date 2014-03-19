@@ -153,6 +153,40 @@ struct skin* menu(struct skin* menu, int flag)
 				textbox(_("Message"), _("Menu not implemented !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 			drawscreen(menu, 0, 0);
 		}
+
+		if(rcret == getrcconfigint("rcpower", NULL))
+		{
+			subtitlepause(1);
+			status.infobar = 0;
+			status.infobaraktiv = 0;
+			clearscreen(menu);
+			drawscreen(skin, 0, 0);
+			switch(getconfigint("poweraktion", NULL))
+			{
+				case 1: //power off
+					oshutdown(1, 1);
+					break;
+				case 2: //standby
+					status.standby = 1;
+					break;
+				case 3: //restart
+					oshutdown(2, 1);
+					break;
+				case 4: //Gui restart
+					oshutdown(3, 1);
+					break;
+				default:
+					standbymenu = getscreen("standbymenu");
+					menu(standbymenu, 1);
+					break;
+			}
+			status.updatevfd = START;
+			drawscreen(skin, 0, 0);
+			status.infobaraktiv = 1;
+			subtitlepause(0);
+			continue;
+		}
+		
 		if(listbox->select != NULL)
 		{
 			writevfdmenu(listbox->select->text);
