@@ -95,7 +95,7 @@ void screenkeyactions(int key, int flag)
 	if(status.security == 0 && checkpluginskip(keyconf) == 1) return;
 						
 	debug(60, "key=%s", keyconf);
-	if(ostrcmp(keyconf, "Softcam Panel") == 0)
+	if(ostrcmp(keyconf, "Softcam") == 0)
 	{
 		screensoftcam();
 		freemenulist(mlist, 1); mlist = NULL;
