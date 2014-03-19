@@ -196,7 +196,7 @@ struct skin* menu(struct skin* menu, int flag)
 			subtitlepause(1);
 			status.infobar = 0;
 			status.infobaraktiv = 0;
-			clearscreen(infobar);
+			clearscreen(menu);
 			screenshoot(0);
 			status.infobaraktiv = 1;
 			status.updatevfd = START;
