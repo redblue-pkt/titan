@@ -83,6 +83,7 @@ struct skin* menu(struct skin* menu, int flag)
 	struct skin* listbox = getscreennode(menu, "listbox");
 	struct skin* menutext = getscreennode(menu, "menutext");
 	struct skin* details = getscreennode(menu, "details");
+	struct skin* standbymenu = NULL;
 
 	struct skin* child = NULL;
 	char* tmpstr = NULL;
