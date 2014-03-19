@@ -83,7 +83,6 @@ struct skin* menu(struct skin* menu, int flag)
 	struct skin* listbox = getscreennode(menu, "listbox");
 	struct skin* menutext = getscreennode(menu, "menutext");
 	struct skin* details = getscreennode(menu, "details");
-	struct skin* standbymenu = NULL;
 
 	struct skin* child = NULL;
 	char* tmpstr = NULL;
@@ -177,8 +176,12 @@ struct skin* menu(struct skin* menu, int flag)
 					oshutdown(3, 1);
 					break;
 				default:
-					standbymenu = getscreen("standbymenu");
-					menu(standbymenu, 1);
+					ret = menucall(menu, "standby", 0);
+					if(status.standby == 1 || status.menurelease == 1) break;
+		
+					if(ret != 0)
+						textbox(_("Message"), _("Menu not implemented !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+					drawscreen(menu, 0, 0);
 					break;
 			}
 			status.updatevfd = START;
