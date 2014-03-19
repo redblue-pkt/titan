@@ -71,8 +71,8 @@ msgstr ""
 #: mc_videoplayer.h:329 mc_videoplayer.h:746 mc_videoplayer.h:781
 #: mc_videoplayer.h:885 mc_videoplayer.h:901 mc_wetterinfo.h:38
 #: mc_wetterinfo.h:41 mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477
-#: mediadb.h:2454 mediadbsettings.h:95 menu.h:153 menu.h:183 menu.h:205
-#: menu.h:937 menu.h:939 movreel.h:30 movreel.h:79 movreel.h:91 movreel.h:103
+#: mediadb.h:2454 mediadbsettings.h:95 menu.h:153 menu.h:187 menu.h:209
+#: menu.h:941 menu.h:943 movreel.h:30 movreel.h:79 movreel.h:91 movreel.h:103
 #: movreel.h:154 movreel.h:202 movshare.h:35 movshare.h:149 myvideo.h:50
 #: networkbrowser.h:944 networkbrowser.h:1005 networkbrowser.h:1009
 #: networkbrowser.h:1011 networkbrowser.h:1021 networkbrowser.h:1025
@@ -163,8 +163,8 @@ msgstr "OK"
 #: mc_videoplayer.h:329 mc_videoplayer.h:746 mc_videoplayer.h:781
 #: mc_videoplayer.h:885 mc_videoplayer.h:901 mc_wetterinfo.h:38
 #: mc_wetterinfo.h:41 mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477
-#: mediadb.h:2454 mediadbsettings.h:95 menu.h:153 menu.h:183 menu.h:205
-#: menu.h:937 menu.h:939 movreel.h:30 movreel.h:79 movreel.h:91 movreel.h:103
+#: mediadb.h:2454 mediadbsettings.h:95 menu.h:153 menu.h:187 menu.h:209
+#: menu.h:941 menu.h:943 movreel.h:30 movreel.h:79 movreel.h:91 movreel.h:103
 #: movreel.h:154 movreel.h:202 movshare.h:35 movshare.h:149 myvideo.h:50
 #: networkbrowser.h:944 networkbrowser.h:1005 networkbrowser.h:1009
 #: networkbrowser.h:1011 networkbrowser.h:1021 networkbrowser.h:1025
@@ -554,7 +554,7 @@ msgstr ""
 #: mc_videoplayer.h:746 mc_videoplayer.h:781 mc_videoplayer.h:885
 #: mc_videoplayer.h:901 mc_wetterinfo.h:38 mc_wetterinfo.h:41
 #: mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477 mediadbsettings.h:95
-#: menu.h:153 menu.h:183 menu.h:205 movreel.h:30 movreel.h:79 movreel.h:91
+#: menu.h:153 menu.h:187 menu.h:209 movreel.h:30 movreel.h:79 movreel.h:91
 #: movreel.h:103 movreel.h:154 movreel.h:202 movshare.h:35 movshare.h:149
 #: myvideo.h:50 networkbrowser.h:944 networkbrowser.h:1005
 #: networkbrowser.h:1009 networkbrowser.h:1011 networkbrowser.h:1021
@@ -651,11 +651,11 @@ msgstr ""
 msgid "ERROR... AutoTimer not started"
 msgstr ""
 
-#: autotimer.c:603 menu.h:937 menu.h:939 skin_default_skin.xml.h:529
+#: autotimer.c:603 menu.h:941 menu.h:943 skin_default_skin.xml.h:529
 msgid "Save Settings"
 msgstr "Αποθήκευση Ρυθμίσεων"
 
-#: autotimer.c:603 menu.h:939
+#: autotimer.c:603 menu.h:943
 msgid "Settings succesfull saved"
 msgstr ""
 
@@ -2069,7 +2069,7 @@ msgid "DYNDNS now stopped"
 msgstr ""
 
 #: infobar.h:426 mc_audioplayer.h:328 mc_main.h:252 mc_pictureplayer.h:119
-#: mc_videoplayer.h:329 menu.h:205
+#: mc_videoplayer.h:329 menu.h:209
 msgid ""
 "Shooting Background done !\n"
 "Save Screenshoot Path: /tmp/screenshot.jpg"
@@ -2344,7 +2344,7 @@ msgstr ""
 msgid "comming soon"
 msgstr ""
 
-#: mc_main.h:261 menu.h:153 menu.h:183 panel_main.h:29 panel_main.h:135
+#: mc_main.h:261 menu.h:153 menu.h:187 panel_main.h:29 panel_main.h:135
 msgid "Menu not implemented !"
 msgstr ""
 
@@ -2579,7 +2579,7 @@ msgid ""
 "Press OK to create it"
 msgstr ""
 
-#: menu.h:937
+#: menu.h:941
 msgid "Error in Save Settings"
 msgstr "Αποθήκευση Ρυθμίσεων"
 
