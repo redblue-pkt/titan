@@ -2219,7 +2219,8 @@ msgstr "Folge"
 
 #: language.h:49
 msgid "Change language needs reboot"
-msgstr "Die Änderung der Sprache benötigt einen Neustart!\n"
+msgstr ""
+"Die Änderung der Sprache benötigt einen Neustart!\n"
 "Der Receiver wird automatisch neu gestartet.\n"
 "Einen Moment Geduld bitte."
 
