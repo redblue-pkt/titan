@@ -23,7 +23,6 @@ void screeninfobar()
 	addrc(getrcconfigint("rcvolup", NULL), screenvolumeup, NULL, NULL);
 	addrc(getrcconfigint("rcvoldown", NULL), screenvolumedown, NULL, NULL);
 	addrc(getrcconfigint("rcmute", NULL), screenmute, NULL, NULL);
-	addrc(getrcconfigint("rcmute1", NULL), screenmute, NULL, NULL);
 
 	status.infobaraktiv = 1;
 	status.mcaktiv = 0;
