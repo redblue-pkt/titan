@@ -904,9 +904,9 @@ int main(int argc, char *argv[])
 		if(checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1)
 		{
 			//autopo work
-			char* tmptext = NULL;
-			tmptext = ostrcat(tmptext, _("RemoteControl Old Version"), 0, 0);
-			tmptext = ostrcat(tmptext, _("RemoteControl Long Version"), 0, 0);
+			char* tmptxt = NULL;
+			tmptxt = ostrcat(tmptxt, _("RemoteControl Old Version"), 0, 0);
+			tmptxt = ostrcat(tmptxt, _("RemoteControl Long Version"), 0, 0);
 			free(tmptxt), tmptxt = NULL;
 
 			struct menulist* mlist = NULL, *mbox = NULL;
