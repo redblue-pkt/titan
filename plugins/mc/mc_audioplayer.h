@@ -116,7 +116,7 @@ void screenmc_audioplayer()
 		rcret = waitrcext(apskin, rcwait, 0, tmpview);
 		debug(50, "while status play=%d", status.play);
 
-		if(rcret != RCTIMEOUT && rcret != getrcconfigint("rcvolup", NULL) && rcret != getrcconfigint("rcvoldown", NULL) && rcret != getrcconfigint("rcmute", NULL))
+		if(rcret != RCTIMEOUT && rcret != getrcconfigint("rcvolup", NULL) && rcret != getrcconfigint("rcvoldown", NULL) && rcret != getrcconfigint("rcmute", NULL) && rcret != getrcconfigint("rcmute1", NULL))
 		{
 			if(count > screensaver_delay && screensaver != NULL)
 			{

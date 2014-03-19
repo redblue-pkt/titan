@@ -33,6 +33,7 @@ void screenvolume(int direction, int flag)
 	delrc(getrcconfigint("rcvolup", NULL), NULL, NULL);
 	delrc(getrcconfigint("rcvoldown", NULL), NULL, NULL);	
 	delrc(getrcconfigint("rcmute", NULL), NULL, NULL);
+	delrc(getrcconfigint("rcmute1", NULL), NULL, NULL);
 
 	if(status.mute == 1)
 	{
@@ -82,6 +83,7 @@ void screenvolume(int direction, int flag)
 	addrc(getrcconfigint("rcvoldown", NULL), screenvolumedown, NULL, NULL);
 
 	addrc(getrcconfigint("rcmute", NULL), screenmute, NULL, NULL);
+	addrc(getrcconfigint("rcmute1", NULL), screenmute, NULL, NULL);
 	restorescreen(bg, volume);
 	blitfb(0);
 }
