@@ -431,7 +431,7 @@ void screeninfobar()
 			subtitlepause(1);
 			status.infobar = 0;
 			clearscreen(infobar);
-			screenkeyactions(0, 0);
+			screenkeyactions(2, 0);
 			status.updatevfd = START;
 			drawscreen(skin, 0, 0);
 			subtitlepause(0);
@@ -529,6 +529,22 @@ void screeninfobar()
 			drawscreen(skin, 0, 0);
 			subtitlepause(0);
 			continue;
+		}
+		if(rcret == getrcconfigint("rcwww", NULL))
+		{
+			subtitlepause(1);
+			status.infobar = 0;
+			clearscreen(infobar);
+			
+			pluginnode = getplugin("Internet Browser");
+			if(pluginnode != NULL)
+			{
+				startplugin = dlsym(pluginnode->pluginhandle, "screenbrowser");
+				if(startplugin != NULL)
+					startplugin();
+			}
+			else
+				textbox(_("Message"), _("Internet Browser Plugin not installed !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
 		}
 		if(rcret == getrcconfigint("rcmedia", NULL))
 		{
