@@ -59,7 +59,7 @@ msgstr ""
 #: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
 #: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626
-#: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:426 infobar.h:548
+#: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:427 infobar.h:549
 #: info.h:27 keyactions.h:241 lcdpearl1.c:45 lcdsamsung.c:101 log.h:46
 #: log.h:48 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
 #: mc_audioplayer.h:328 mc_audioplayer.h:599 mc_audioplayer.h:702
@@ -151,8 +151,8 @@ msgstr "Ok"
 #: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
 #: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
 #: hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200
-#: imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:426
-#: infobar.h:548 info.h:27 keyactions.h:241 log.h:46 log.h:48 marker.h:215
+#: imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:427
+#: infobar.h:549 info.h:27 keyactions.h:241 log.h:46 log.h:48 marker.h:215
 #: marker.h:229 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
 #: mc_audioplayer.h:328 mc_audioplayer.h:599 mc_audioplayer.h:702
 #: mc_dateibrowser.h:38 mc_global.h:773 mc_global.h:1020
@@ -542,7 +542,7 @@ msgstr "yes / vzap endless"
 #: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
 #: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626
-#: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:426 infobar.h:548
+#: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:427 infobar.h:549
 #: keyactions.h:241 language.h:49 lcdpearl1.c:45 lcdsamsung.c:101 log.h:46
 #: log.h:48 marker.h:215 marker.h:229 mc_audioplayer.h:328
 #: mc_audioplayer.h:599 mc_audioplayer.h:702 mc_dateibrowser.h:38
@@ -870,55 +870,55 @@ msgstr "il canale corrente non puo essere cancellato"
 msgid "Channels A-Z"
 msgstr "Canali A-Z"
 
-#: copyfile.h:810
+#: copyfile.h:811
 msgid "Filesize (B): "
 msgstr "Filesize (B): "
 
-#: copyfile.h:812 download.h:73
+#: copyfile.h:813 download.h:74
 msgid "Filesize (KB): "
 msgstr "Filesize (KB): "
 
-#: copyfile.h:814
+#: copyfile.h:815
 msgid "Filesize (MB): "
 msgstr "Filesize (MB): "
 
-#: copyfile.h:821 copyfile.h:854
+#: copyfile.h:822 copyfile.h:855
 msgid "Move (B): "
 msgstr "Move (B): "
 
-#: copyfile.h:823 copyfile.h:856
+#: copyfile.h:824 copyfile.h:857
 msgid "Move (KB): "
 msgstr "Move (KB): "
 
-#: copyfile.h:825 copyfile.h:858
+#: copyfile.h:826 copyfile.h:859
 msgid "Move (MB): "
 msgstr "Move (MB): "
 
-#: copyfile.h:830 copyfile.h:863
+#: copyfile.h:831 copyfile.h:864
 msgid "Copy (B): "
 msgstr "Copy (B): "
 
-#: copyfile.h:832 copyfile.h:865
+#: copyfile.h:833 copyfile.h:866
 msgid "Copy (KB): "
 msgstr "Copy (KB): "
 
-#: copyfile.h:834 copyfile.h:867
+#: copyfile.h:835 copyfile.h:868
 msgid "Copy (MB): "
 msgstr "Copy (MB): "
 
-#: copyfile.h:839
+#: copyfile.h:840
 msgid "Amount of files: "
 msgstr "Amount of files: "
 
-#: copyfile.h:881 copyfile.h:882
+#: copyfile.h:882 copyfile.h:883
 msgid "file move error"
 msgstr "file move error"
 
-#: copyfile.h:886 copyfile.h:887
+#: copyfile.h:887 copyfile.h:888
 msgid "file copy error"
 msgstr "file copy error"
 
-#: copyfile.h:893 copyfile.h:894
+#: copyfile.h:894 copyfile.h:895
 msgid "wait for stopping"
 msgstr ""
 
@@ -1157,15 +1157,15 @@ msgstr ""
 msgid "DLNA now stopped"
 msgstr "DLNA Stoppato"
 
-#: download.h:77 download.h:87
+#: download.h:78 download.h:88
 msgid "Download (KB): "
 msgstr "Move (KB): "
 
-#: download.h:97
+#: download.h:98
 msgid "download error"
 msgstr "errore nel download"
 
-#: download.h:101
+#: download.h:102
 msgid "wait for stopping download"
 msgstr "wait for stopping download"
 
@@ -2083,14 +2083,14 @@ msgstr ""
 msgid "DYNDNS now stopped"
 msgstr "DYNDNS stoppato"
 
-#: infobar.h:426 mc_audioplayer.h:328 mc_main.h:252 mc_pictureplayer.h:119
+#: infobar.h:427 mc_audioplayer.h:328 mc_main.h:252 mc_pictureplayer.h:119
 #: mc_videoplayer.h:329 menu.h:208
 msgid ""
 "Shooting Background done !\n"
 "Save Screenshoot Path: /tmp/screenshot.jpg"
 msgstr ""
 
-#: infobar.h:548
+#: infobar.h:549
 msgid "Internet Browser Plugin not installed !"
 msgstr ""
 
