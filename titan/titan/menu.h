@@ -187,7 +187,22 @@ struct skin* menu(struct skin* menu, int flag)
 			subtitlepause(0);
 			continue;
 		}
-		
+
+		if(rcret == getrcconfigint("rcshoot", NULL))
+		{
+			subtitlepause(1);
+			status.infobar = 0;
+			status.infobaraktiv = 0;
+			clearscreen(infobar);
+			screenshoot(0);
+			status.infobaraktiv = 1;
+			status.updatevfd = START;
+			drawscreen(skin, 0, 0);
+			subtitlepause(0);
+			textbox(_("Message"), _("Shooting Background done !\nSave Screenshoot Path: /tmp/screenshot.jpg"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
+			continue;
+		}
+	
 		if(listbox->select != NULL)
 		{
 			writevfdmenu(listbox->select->text);
