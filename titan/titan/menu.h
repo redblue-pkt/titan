@@ -154,10 +154,9 @@ struct skin* menu(struct skin* menu, int flag)
 			drawscreen(menu, 0, 0);
 		}
 
+/*
 		if(rcret == getrcconfigint("rcpower", NULL))
 		{
-		
-printf("listbox->select: %s\n",listbox->select);
 			subtitlepause(1);
 			status.infobar = 0;
 			status.infobaraktiv = 0;
@@ -194,7 +193,7 @@ printf("listbox->select: %s\n",listbox->select);
 			subtitlepause(0);
 			continue;
 		}
-
+*/
 		if(rcret == getrcconfigint("rcshoot", NULL))
 		{
 			subtitlepause(1);
