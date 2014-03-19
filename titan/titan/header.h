@@ -651,7 +651,6 @@ void screenmute(struct skin* screen, struct skin* node, int flag);
 
 //menu.h
 int menucall(struct skin* menunode, struct skin* menuentry, int check);
-struct skin* menu(struct skin* menu, int flag);
 
 //textbox.h
 int textbox(char* title, char* text, char* b1, int rc1, char* b2, int rc2, char* b3, int rc3, char* b4, int rc4, int width, int height, int timeout, int flag);
