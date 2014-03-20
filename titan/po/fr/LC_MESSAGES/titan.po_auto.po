@@ -261,12 +261,12 @@ msgstr "SORTIE"
 #: rectimer.h:1084 rectimer.h:1089 rectimer.h:1094 rectimer.h:1099 scan.h:1768
 #: scan.h:2241 scan.h:2245 scan.h:2249 scan.h:2253 scan.h:2257 scan.h:2266
 #: scan.h:2270 screensaveradjust.h:19 settings_autostart.h:26
-#: settings_autostart.h:88 settings_autostart.h:145 settings_autostart.h:155
-#: settings_autostart.h:173 settings_autostart.h:200 settings_autostart.h:209
-#: settings_autostart.h:218 settings_autostart.h:227 settings_autostart.h:284
-#: settings_autostart.h:302 settings_autostart.h:416 settings_autostart.h:425
-#: settings_autostart.h:434 settings_autostart.h:554 settings_autostart.h:563
-#: settings_autostart.h:572 settings_overclocking.h:214
+#: settings_autostart.h:134 settings_autostart.h:144 settings_autostart.h:162
+#: settings_autostart.h:189 settings_autostart.h:198 settings_autostart.h:207
+#: settings_autostart.h:216 settings_autostart.h:227 settings_autostart.h:285
+#: settings_autostart.h:316 settings_autostart.h:430 settings_autostart.h:439
+#: settings_autostart.h:448 settings_autostart.h:568 settings_autostart.h:577
+#: settings_autostart.h:586 settings_overclocking.h:214
 #: settings_overclocking.h:234 settings_overclocking.h:244 skinadjust.h:49
 #: stopifnotused.c:95 timeshiftsettings.h:59 timeshiftsettings.h:63
 #: tithek_settings.h:35 tithek_settings.h:39 tithek_settings.h:43 tmc.h:531
@@ -319,12 +319,12 @@ msgstr "EPG Canal"
 #: rectimer.h:1080 rectimer.h:1085 rectimer.h:1090 rectimer.h:1095
 #: rectimer.h:1100 scan.h:1769 scan.h:2242 scan.h:2246 scan.h:2250 scan.h:2254
 #: scan.h:2258 scan.h:2267 scan.h:2271 screensaveradjust.h:20
-#: settings_autostart.h:26 settings_autostart.h:88 settings_autostart.h:145
-#: settings_autostart.h:155 settings_autostart.h:173 settings_autostart.h:200
-#: settings_autostart.h:209 settings_autostart.h:218 settings_autostart.h:227
-#: settings_autostart.h:284 settings_autostart.h:302 settings_autostart.h:416
-#: settings_autostart.h:425 settings_autostart.h:434 settings_autostart.h:554
-#: settings_autostart.h:563 settings_autostart.h:572
+#: settings_autostart.h:26 settings_autostart.h:134 settings_autostart.h:144
+#: settings_autostart.h:162 settings_autostart.h:189 settings_autostart.h:198
+#: settings_autostart.h:207 settings_autostart.h:216 settings_autostart.h:227
+#: settings_autostart.h:285 settings_autostart.h:316 settings_autostart.h:430
+#: settings_autostart.h:439 settings_autostart.h:448 settings_autostart.h:568
+#: settings_autostart.h:577 settings_autostart.h:586
 #: settings_overclocking.h:214 settings_overclocking.h:234
 #: settings_overclocking.h:244 stopifnotused.c:94 timeshiftsettings.h:58
 #: timeshiftsettings.h:62 tithek_settings.h:36 tithek_settings.h:40
@@ -2936,15 +2936,15 @@ msgstr ""
 msgid "updatelist"
 msgstr "Liste de Mise a jour"
 
-#: panel_settings_autostart.h:95 settings_autostart.h:87
+#: panel_settings_autostart.h:95 settings_autostart.h:226
 msgid "useUnknown910"
 msgstr "inconnu"
 
-#: panel_settings_autostart.h:112 settings_autostart.h:144
+#: panel_settings_autostart.h:112 settings_autostart.h:133
 msgid "Old Audiofw"
 msgstr "oldaudio Firmware"
 
-#: panel_settings_autostart.h:122 settings_autostart.h:154
+#: panel_settings_autostart.h:122 settings_autostart.h:143
 msgid "No Audiosync"
 msgstr "No audio sync"
 
@@ -2952,7 +2952,7 @@ msgstr "No audio sync"
 msgid "Boot Resolution"
 msgstr "Résolution de démarrage"
 
-#: panel_settings_autostart.h:140 settings_autostart.h:172
+#: panel_settings_autostart.h:140 settings_autostart.h:161
 msgid "Bootlogo"
 msgstr "Logo de démarrage"
 
@@ -2964,11 +2964,11 @@ msgstr "Arrét"
 msgid "Scart On Standby"
 msgstr "SCART en Veille"
 
-#: panel_settings_autostart.h:167 settings_autostart.h:199
+#: panel_settings_autostart.h:167 settings_autostart.h:188
 msgid "HighSR"
 msgstr "HighSR"
 
-#: panel_settings_autostart.h:176 settings_autostart.h:217
+#: panel_settings_autostart.h:176 settings_autostart.h:206
 msgid "Boot RGB Fix"
 msgstr ""
 
@@ -2976,7 +2976,7 @@ msgstr ""
 msgid "Autostart USB"
 msgstr "Démarrage auto"
 
-#: panel_settings_autostart.h:192 settings_autostart.h:283
+#: panel_settings_autostart.h:192 settings_autostart.h:284
 msgid "Load Partition"
 msgstr "Chargement de Partition"
 
@@ -2984,12 +2984,12 @@ msgstr "Chargement de Partition"
 msgid "Fsck Record"
 msgstr "Vérificateur des fichiers Partition de l'enregistrement "
 
-#: panel_settings_autostart.h:210 settings_autostart.h:301
+#: panel_settings_autostart.h:210 settings_autostart.h:315
 #: skin_default_skin.xml.h:614
 msgid "Swap"
 msgstr ""
 
-#: panel_settings_autostart.h:219 settings_autostart.h:310
+#: panel_settings_autostart.h:219 settings_autostart.h:324
 msgid "Swap Size"
 msgstr ""
 
@@ -3009,27 +3009,27 @@ msgstr "max secteur par Swap"
 msgid "Autostart EMU"
 msgstr "Démarrage auto"
 
-#: panel_settings_autostart.h:285 settings_autostart.h:415
+#: panel_settings_autostart.h:285 settings_autostart.h:429
 msgid "Emu Control"
 msgstr "Controle Emu"
 
-#: panel_settings_autostart.h:294 settings_autostart.h:424
+#: panel_settings_autostart.h:294 settings_autostart.h:438
 msgid "ftdi"
 msgstr "Activer  pilote ftdi"
 
-#: panel_settings_autostart.h:303 settings_autostart.h:433
+#: panel_settings_autostart.h:303 settings_autostart.h:447
 msgid "pl2303"
 msgstr "Pilote-PL2303"
 
-#: panel_settings_autostart.h:318 settings_autostart.h:553
+#: panel_settings_autostart.h:318 settings_autostart.h:567
 msgid "nfs server"
 msgstr "NFS Serveur"
 
-#: panel_settings_autostart.h:327 settings_autostart.h:562
+#: panel_settings_autostart.h:327 settings_autostart.h:576
 msgid "samba server"
 msgstr "Serveur Samba"
 
-#: panel_settings_autostart.h:336 settings_autostart.h:571
+#: panel_settings_autostart.h:336 settings_autostart.h:585
 msgid "scan wlan"
 msgstr "W-Lan"
 
@@ -3049,19 +3049,19 @@ msgstr ""
 msgid "Automount Config"
 msgstr "Automount"
 
-#: panel_settings.h:27
+#: panel_settings.h:27 settings_autostart.h:303
 msgid "Ntfs Write"
 msgstr ""
 
-#: panel_settings.h:29
+#: panel_settings.h:29 settings_autostart.h:305
 msgid "disable"
 msgstr "Désactiver"
 
-#: panel_settings.h:30
+#: panel_settings.h:30 settings_autostart.h:306
 msgid "ntfs-3g"
 msgstr ""
 
-#: panel_settings.h:31
+#: panel_settings.h:31 settings_autostart.h:307
 msgid "ntfsmount"
 msgstr "Automount"
 
@@ -5071,11 +5071,11 @@ msgstr ""
 msgid "Channellist empty or corrupt (channel not found)!"
 msgstr ""
 
-#: settings_autostart.h:208
+#: settings_autostart.h:197
 msgid "swts"
 msgstr ""
 
-#: settings_autostart.h:226
+#: settings_autostart.h:215
 msgid "Cam Routing"
 msgstr ""
 
