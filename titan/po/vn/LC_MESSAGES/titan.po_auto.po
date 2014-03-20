@@ -261,12 +261,12 @@ msgstr "Thoát"
 #: rectimer.h:1084 rectimer.h:1089 rectimer.h:1094 rectimer.h:1099 scan.h:1768
 #: scan.h:2241 scan.h:2245 scan.h:2249 scan.h:2253 scan.h:2257 scan.h:2266
 #: scan.h:2270 screensaveradjust.h:19 settings_autostart.h:26
-#: settings_autostart.h:134 settings_autostart.h:144 settings_autostart.h:162
-#: settings_autostart.h:189 settings_autostart.h:198 settings_autostart.h:207
-#: settings_autostart.h:216 settings_autostart.h:227 settings_autostart.h:285
-#: settings_autostart.h:316 settings_autostart.h:430 settings_autostart.h:439
-#: settings_autostart.h:448 settings_autostart.h:502 settings_autostart.h:511
-#: settings_autostart.h:568 settings_autostart.h:577 settings_autostart.h:586
+#: settings_autostart.h:132 settings_autostart.h:141 settings_autostart.h:162
+#: settings_autostart.h:198 settings_autostart.h:207 settings_autostart.h:216
+#: settings_autostart.h:227 settings_autostart.h:285 settings_autostart.h:316
+#: settings_autostart.h:430 settings_autostart.h:439 settings_autostart.h:448
+#: settings_autostart.h:502 settings_autostart.h:511 settings_autostart.h:568
+#: settings_autostart.h:577 settings_autostart.h:586
 #: settings_overclocking.h:214 settings_overclocking.h:234
 #: settings_overclocking.h:244 skinadjust.h:49 stopifnotused.c:95
 #: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:35
@@ -319,12 +319,12 @@ msgstr "EPG"
 #: rectimer.h:1080 rectimer.h:1085 rectimer.h:1090 rectimer.h:1095
 #: rectimer.h:1100 scan.h:1769 scan.h:2242 scan.h:2246 scan.h:2250 scan.h:2254
 #: scan.h:2258 scan.h:2267 scan.h:2271 screensaveradjust.h:20
-#: settings_autostart.h:26 settings_autostart.h:134 settings_autostart.h:144
-#: settings_autostart.h:162 settings_autostart.h:189 settings_autostart.h:198
-#: settings_autostart.h:207 settings_autostart.h:216 settings_autostart.h:227
-#: settings_autostart.h:285 settings_autostart.h:316 settings_autostart.h:430
-#: settings_autostart.h:439 settings_autostart.h:448 settings_autostart.h:502
-#: settings_autostart.h:568 settings_autostart.h:577 settings_autostart.h:586
+#: settings_autostart.h:26 settings_autostart.h:132 settings_autostart.h:141
+#: settings_autostart.h:162 settings_autostart.h:198 settings_autostart.h:207
+#: settings_autostart.h:216 settings_autostart.h:227 settings_autostart.h:285
+#: settings_autostart.h:316 settings_autostart.h:430 settings_autostart.h:439
+#: settings_autostart.h:448 settings_autostart.h:502 settings_autostart.h:568
+#: settings_autostart.h:577 settings_autostart.h:586
 #: settings_overclocking.h:214 settings_overclocking.h:234
 #: settings_overclocking.h:244 stopifnotused.c:94 timeshiftsettings.h:58
 #: timeshiftsettings.h:62 tithek_settings.h:36 tithek_settings.h:40
@@ -2957,11 +2957,11 @@ msgstr "Danh sách cập nhật"
 msgid "useUnknown910"
 msgstr "không biết"
 
-#: panel_settings_autostart.h:112 settings_autostart.h:133
+#: panel_settings_autostart.h:112
 msgid "Old Audiofw"
 msgstr "Firmware audio cũ "
 
-#: panel_settings_autostart.h:122 settings_autostart.h:143
+#: panel_settings_autostart.h:122 settings_autostart.h:161
 msgid "No Audiosync"
 msgstr "không đồng bộ audio"
 
@@ -2969,7 +2969,7 @@ msgstr "không đồng bộ audio"
 msgid "Boot Resolution"
 msgstr " Độ phân giải khởi động "
 
-#: panel_settings_autostart.h:140 settings_autostart.h:161
+#: panel_settings_autostart.h:140 settings_autostart.h:131
 msgid "Bootlogo"
 msgstr " Logo khởi động "
 
@@ -2981,11 +2981,11 @@ msgstr "Tắt nguồn"
 msgid "Scart On Standby"
 msgstr "Chế độ chờ scart"
 
-#: panel_settings_autostart.h:167 settings_autostart.h:188
+#: panel_settings_autostart.h:167 settings_autostart.h:197
 msgid "HighSR"
 msgstr "High SR"
 
-#: panel_settings_autostart.h:176 settings_autostart.h:206
+#: panel_settings_autostart.h:176 settings_autostart.h:140
 msgid "Boot RGB Fix"
 msgstr ""
 
@@ -5110,7 +5110,7 @@ msgstr "Không thể mở hoặc không biết loại đầu vào"
 msgid "Channellist empty or corrupt (channel not found)!"
 msgstr "Danh sách chương trình rỗng(không tìm thấy chương trình) !"
 
-#: settings_autostart.h:197
+#: settings_autostart.h:206
 msgid "swts"
 msgstr ""
 
