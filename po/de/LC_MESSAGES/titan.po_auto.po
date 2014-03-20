@@ -4351,11 +4351,11 @@ msgstr "TiThek"
 #: plugins_tithek_skin.xml.h:3 skins_tithek_skin.xml.h:3 tithek.h:1490
 #: tithek.h:1622 tithek.h:3201
 msgid "ADD FAV"
-msgstr "Hinzufügen"
+msgstr "Fav Hinzufügen"
 
 #: plugins_tithek_skin.xml.h:4 skins_tithek_skin.xml.h:4
 msgid "DEL FAV"
-msgstr "Entfernen"
+msgstr "Fav Entfernen"
 
 #: plugins_tithek_skin.xml.h:5 skins_tithek_skin.xml.h:5
 msgid "Exit Tithek"
@@ -8590,7 +8590,7 @@ msgstr "TiThek Haftungsausschluss:"
 
 #: tithek.h:1485 tithek.h:1617 tithek.h:3196
 msgid "EDIT FAV"
-msgstr "FAV bearbeiten"
+msgstr "Fav bearbeiten"
 
 #: tithek.h:1522
 msgid "Page"
