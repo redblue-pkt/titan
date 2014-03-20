@@ -302,7 +302,7 @@ void screensettings_autostart_usb()
 		node->type = CHOICEBOX;
 		changetext(node, _("Ntfs Write"));
 		changename(node, "ntfs_write");
-		addchoicebox(node, "0", _("disable"));
+		addchoicebox(node, "0", _("no"));
 		addchoicebox(node, "1", _("ntfs-3g"));
 		addchoicebox(node, "2", _("ntfsmount"));
 		setchoiceboxselection(node, getownconfig(node->name));
