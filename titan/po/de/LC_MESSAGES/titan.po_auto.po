@@ -2988,7 +2988,7 @@ msgstr ""
 
 #: panel_settings_autostart.h:59 settings_autostart.h:51
 msgid "debug"
-msgstr "Debug"
+msgstr "System Debug Modus beim (Booten)"
 
 #: panel_settings_autostart.h:60 panel_settings_autostart.h:132
 #: settings_autostart.h:52 tmc.h:558
@@ -2997,7 +2997,7 @@ msgstr "hoch"
 
 #: panel_settings_autostart.h:69 settings_autostart.h:61
 msgid "showip"
-msgstr "Zeige IP Adresse"
+msgstr "Zeige IP Adresse im Lcd Display beim (Booten)"
 
 #: panel_settings_autostart.h:70 settings_autostart.h:62
 msgid "status"
@@ -3021,7 +3021,7 @@ msgstr "Alte Audio Firmware"
 
 #: panel_settings_autostart.h:122 settings_autostart.h:154
 msgid "No Audiosync"
-msgstr "Tonsynchronisation aus"
+msgstr "Lade player2.ko mit der noaudiosync Option"
 
 #: panel_settings_autostart.h:131
 msgid "Boot Resolution"
@@ -3029,7 +3029,7 @@ msgstr "Startauflösung"
 
 #: panel_settings_autostart.h:140 settings_autostart.h:172
 msgid "Bootlogo"
-msgstr "Bootlogo"
+msgstr "Bootlogo anzeigen beim (Booten)"
 
 #: panel_settings_autostart.h:149
 msgid "Poweroff"
@@ -3041,11 +3041,11 @@ msgstr "Scartausgabe im Standby"
 
 #: panel_settings_autostart.h:167 settings_autostart.h:199
 msgid "HighSR"
-msgstr ""
+msgstr "Lade stmdvb.ko mit der HighSR Option"
 
 #: panel_settings_autostart.h:176 settings_autostart.h:208
 msgid "Boot RGB Fix"
-msgstr "RGB Fix beim Start"
+msgstr "aktiviere RGB Fix beim (Booten)"
 
 #: panel_settings_autostart.h:186
 msgid "Autostart USB"
@@ -3053,7 +3053,7 @@ msgstr "USB"
 
 #: panel_settings_autostart.h:192 settings_autostart.h:274
 msgid "Load Partition"
-msgstr "Lade Partition"
+msgstr "Lade Partitionen beim initialisieren per Hdparm"
 
 #: panel_settings_autostart.h:201
 msgid "Fsck Record"
@@ -3062,11 +3062,11 @@ msgstr "Partitionsprüfung 'record'"
 #: panel_settings_autostart.h:210 settings_autostart.h:292
 #: skin_default_skin.xml.h:614
 msgid "Swap"
-msgstr ""
+msgstr "benutze Swap (Erweiterungs Datei)"
 
 #: panel_settings_autostart.h:219 settings_autostart.h:301
 msgid "Swap Size"
-msgstr "Swap Größe"
+msgstr "Swap Größe (Erweiterungs Datei) in kb"
 
 #: panel_settings_autostart.h:236
 msgid "Fsck Swap"
@@ -3086,27 +3086,27 @@ msgstr "Softcam"
 
 #: panel_settings_autostart.h:285 settings_autostart.h:406
 msgid "Emu Control"
-msgstr "Softcam Kontrolle"
+msgstr "Softcam Kontrolle (auto start/stop) im MediaCenter"
 
 #: panel_settings_autostart.h:294 settings_autostart.h:415
 msgid "ftdi"
-msgstr "Aktiviere ftdi-Treiber"
+msgstr "Aktiviere FTDI Kartenleser Treiber"
 
 #: panel_settings_autostart.h:303 settings_autostart.h:424
 msgid "pl2303"
-msgstr "PL2303-Treiber"
+msgstr "Aktiviere PL2303 Kartenleser Treiber"
 
 #: panel_settings_autostart.h:318 settings_autostart.h:544
 msgid "nfs server"
-msgstr "NFS-Server"
+msgstr "NFSD Kernel Server autostart"
 
 #: panel_settings_autostart.h:327 settings_autostart.h:553
 msgid "samba server"
-msgstr "Samba Server"
+msgstr "Samba Server autostart"
 
 #: panel_settings_autostart.h:336 settings_autostart.h:562
 msgid "scan wlan"
-msgstr "Suche WLAN"
+msgstr "WLAN autostart"
 
 #: panel_settings_autostart.h:344
 msgid "Autostart Child Safety"
@@ -5188,7 +5188,7 @@ msgstr "Senderliste fehlerhaft (Kanal nicht gefunden)!"
 
 #: settings_autostart.h:217
 msgid "Cam Routing"
-msgstr "Verwende CI-Modul"
+msgstr "Lade stmdvb.ko mit der camRouting Option"
 
 #: settings_bluebutton.h:6
 msgid "Blue Key Action - Setup"
