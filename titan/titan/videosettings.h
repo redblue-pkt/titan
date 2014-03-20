@@ -57,7 +57,7 @@ void screenvideosettings()
 			addconfigint("vs_brightness", ibrightness);
 			addconfigint("vs_contrast", icontrast);
 			addconfigint("vs_tint", itint);
-			//addconfigint("vs_saturation", isaturation);
+			addconfigint("vs_saturation", isaturation);
 			break;
 		}
 		if(rcret == getrcconfigint("rcred", NULL))
@@ -70,7 +70,7 @@ void screenvideosettings()
 			brightness->progresssize = (int)ceil(((float)ibrightness / 2.56));
 			contrast->progresssize = (int)ceil(((float)icontrast / 2.56));
 			tint->progresssize = (int)ceil(((float)itint / 2.56));
-			//saturation->progresssize = (int)ceil(((float)isaturation / 2.56));
+			saturation->progresssize = (int)ceil(((float)isaturation / 2.56));
 
 			drawscreen(videosettings, 0, 0);
 		}
@@ -78,13 +78,13 @@ void screenvideosettings()
 		setbrightness(ibrightness);
 		setcontrast(icontrast);
 		settint(itint);
-		//setsaturation(isaturation);
+		setsaturation(isaturation);
 	}
 
 	setbrightness(getconfigint("vs_brightness", NULL));
 	setcontrast(getconfigint("vs_contrast", NULL));
 	settint(getconfigint("vs_tint", NULL));
-	//setsaturation(getconfigint("vs_saturation", NULL));
+	setsaturation(getconfigint("vs_saturation", NULL));
 	delownerrc(videosettings);
 	clearscreen(videosettings);
 }
