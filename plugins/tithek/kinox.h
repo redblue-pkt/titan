@@ -150,7 +150,9 @@ int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabe
 			if(line != NULL)
 			{
 				line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
-				menu = ostrcat("/tmp/tithek/kinox.search.list", NULL, 0, 0);
+				menu = ostrcat("/tmp/tithek/kinox.search.", oitoa(time(NULL)), 0, 1);
+				menu = ostrcat(menu, ".list", 1, 0);
+
 				writesys(menu, line, 0);
 				struct tithek* tnode = (struct tithek*)listbox->select->handle;
 				createtithek(tnode, tnode->title,  menu, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);
@@ -216,7 +218,9 @@ int kinox_search_local(struct skin* grid, struct skin* listbox, struct skin* cou
 			if(line != NULL)
 			{
 				line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
-				menu = ostrcat("/tmp/tithek/kinox.search.list", NULL, 0, 0);
+				menu = ostrcat("/tmp/tithek/kinox.search.", oitoa(time(NULL)), 0, 1);
+				menu = ostrcat(menu, ".list", 1, 0);
+
 				writesys(menu, line, 0);
 				struct tithek* tnode = (struct tithek*)listbox->select->handle;
 				createtithek(tnode, tnode->title, menu, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);
@@ -592,9 +596,15 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 	{
 		line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 		if(series == 0)
-			tmpstr = ostrcat("/tmp/tithek/kinox.hoster.list", NULL, 0, 0);
+		{
+			tmpstr = ostrcat("/tmp/tithek/kinox.hoster.", oitoa(time(NULL)), 0, 1);
+			tmpstr = ostrcat(tmpstr, ".list", 1, 0);
+		}
 		else
-			tmpstr = ostrcat("/tmp/tithek/kinox.hoster.ser.list", NULL, 0, 0);
+		{
+			tmpstr = ostrcat("/tmp/tithek/kinox.hoster.ser.", oitoa(time(NULL)), 0, 1);
+			tmpstr = ostrcat(tmpstr, ".list", 1, 0);
+		}
 		writesys(tmpstr, line, 0);
 
 		titheklog(debuglevel, "/tmp/kinox8_line", NULL, line);
@@ -759,7 +769,9 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 	if(line != NULL)
 	{
 		line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
-		tmpstr = ostrcat("/tmp/tithek/kinox.hoster.series.list", NULL, 0, 0);
+		tmpstr = ostrcat("/tmp/tithek/kinox.hoster.series.", oitoa(time(NULL)), 0, 1);
+		tmpstr = ostrcat(tmpstr, ".list", 1, 0);
+			
 		writesys(tmpstr, line, 0);
 
 		titheklog(debuglevel, "/tmp/kinox9_line", NULL, line);
@@ -842,7 +854,7 @@ int kinox_search_cast(struct skin* grid, struct skin* listbox, struct skin* coun
 
 				if(url != NULL)
 				{
-					incount += 1;
+					incount++;
 					line = ostrcat(line, name, 1, 0);
 					line = ostrcat(line, "#http://kinox.to/People/", 1, 0);
 					line = ostrcat(line, url, 1, 0);
@@ -863,7 +875,9 @@ int kinox_search_cast(struct skin* grid, struct skin* listbox, struct skin* coun
 			if(line != NULL)
 			{
 				line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
-				menu = ostrcat("/tmp/tithek/kinox.search.cast.list", NULL, 0, 0);
+				menu = ostrcat("/tmp/tithek/kinox.search.cast.", oitoa(time(NULL)), 0, 1);
+				menu = ostrcat(menu, ".list", 1, 0);
+			
 				writesys(menu, line, 0);
 				struct tithek* tnode = (struct tithek*)listbox->select->handle;
 				createtithek(tnode, tnode->title,  menu, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);

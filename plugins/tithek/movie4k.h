@@ -141,7 +141,7 @@ int movie4k_search(struct skin* grid, struct skin* listbox, struct skin* countla
 					int rcret = waitrc(NULL, 10, 0);
 					if(rcret == getrcconfigint("rcexit", NULL)) break;
 
-					incount += 1;
+					incount++;
 					link = string_resub("<a href=\"", "\">", ret1[j].part, 0);
 					name = string_resub(".html\">", "</a>", ret1[j].part, 0);
 					char* id = string_resub("online-film-", ".html", link, 0);
@@ -206,7 +206,8 @@ int movie4k_search(struct skin* grid, struct skin* listbox, struct skin* countla
 		if(line != NULL)
 		{
 			line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
-			menu = ostrcat("/tmp/tithek/movie4k.search.list", NULL, 0, 0);
+			menu = ostrcat("/tmp/tithek/movie4k.search.", oitoa(time(NULL)), 0, 1);
+			menu = ostrcat(menu, ".list", 1, 0);
 			writesys(menu, line, 0);
 			free(line); line = NULL;
 			
@@ -273,7 +274,8 @@ int movie4k_search_local(struct skin* grid, struct skin* listbox, struct skin* c
 			if(line != NULL)
 			{
 				line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
-				menu = ostrcat("/tmp/tithek/movie4k.search.list", NULL, 0, 0);
+				menu = ostrcat("/tmp/tithek/movie4k.search.", oitoa(time(NULL)), 0, 1);
+				menu = ostrcat(menu, ".list", 1, 0);
 				writesys(menu, line, 0);
 				struct tithek* tnode = (struct tithek*)listbox->select->handle;
 				createtithek(tnode, tnode->title, menu, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);
@@ -614,7 +616,9 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 	if(line != NULL)
 	{
 		line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
-		tmpstr = ostrcat("/tmp/tithek/movie4k.hoster.list", NULL, 0, 0);
+		tmpstr = ostrcat("/tmp/tithek/movie4k.hoster.", oitoa(time(NULL)), 0, 1);
+		tmpstr = ostrcat(tmpstr, ".list", 1, 0);
+
 		writesys(tmpstr, line, 0);
 		free(line); line = NULL;
 					
@@ -761,9 +765,15 @@ int movie4k_hoster_series(struct skin* grid, struct skin* listbox, struct skin* 
 	{
 		line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
 		if(series == 0)
-			tmpstr = ostrcat("/tmp/tithek/movie4k.hoster.list", NULL, 0, 0);
+		{
+			tmpstr = ostrcat("/tmp/tithek/movie4k.hoster.", oitoa(time(NULL)), 0, 1);
+			tmpstr = ostrcat(tmpstr, ".list", 1, 0);
+		}
 		else
-			tmpstr = ostrcat("/tmp/tithek/movie4k.hoster.ser.list", NULL, 0, 0);
+		{
+			tmpstr = ostrcat("/tmp/tithek/movie4k.hoster.ser.", oitoa(time(NULL)), 0, 1);
+			tmpstr = ostrcat(tmpstr, ".list", 1, 0);
+		}
 		writesys(tmpstr, line, 0);
 
 		titheklog(debuglevel, "/tmp/movie4k8_line", NULL, line);
@@ -875,7 +885,9 @@ int movie4k_series(struct skin* grid, struct skin* listbox, struct skin* countla
 	if(line != NULL)
 	{
 		line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
-		tmpstr = ostrcat("/tmp/tithek/movie4k.series.list", NULL, 0, 0);
+		tmpstr = ostrcat("/tmp/tithek/movie4k.series.", oitoa(time(NULL)), 0, 1);
+		tmpstr = ostrcat(tmpstr, ".list", 1, 0);
+
 		writesys(tmpstr, line, 0);
 
 		titheklog(debuglevel, "/tmp/movie4k8_line", NULL, line);
@@ -997,7 +1009,9 @@ int movie4k_series_listed(struct skin* grid, struct skin* listbox, struct skin* 
 	if(line != NULL)
 	{
 		line = string_replace_all("http://atemio.dyndns.tv/", "http://imageshack.us/md/up/grd/", line, 1);
-		tmpstr = ostrcat("/tmp/tithek/movie4k.series.listed.list", NULL, 0, 0);
+		tmpstr = ostrcat("/tmp/tithek/movie4k.series.listed.", oitoa(time(NULL)), 0, 1);
+		tmpstr = ostrcat(tmpstr, ".list", 1, 0);
+
 		writesys(tmpstr, line, 0);
 
 		titheklog(debuglevel, "/tmp/movie4k8_line", NULL, line);
