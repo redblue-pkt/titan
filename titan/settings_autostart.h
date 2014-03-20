@@ -124,6 +124,24 @@ void screensettings_autostart_audiovideo()
 
 //		changetitletext(settings_autostart, _("Autostart Defaults"));
 
+	node = addlistbox(settings_autostart, listbox, node, 1);
+	if(node != NULL)
+	{
+		node->type = CHOICEBOX;
+		changetext(node, _("Bootlogo")); changename(node, "bootlogo");
+		addchoicebox(node, "y", _("yes")); addchoicebox(node, "n", _("no"));
+		setchoiceboxselection(node, getownconfig(node->name));
+	}
+
+	node = addlistbox(settings_autostart, listbox, node, 1);
+	if(node != NULL)
+	{
+		node->type = CHOICEBOX;
+		changetext(node, _("Boot RGB Fix")); changename(node, "bootrgbfix");
+		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
+		setchoiceboxselection(node, getownconfig(node->name));
+	}
+/*
 	if(isfile("/var/bin/audio.elf") || isfile("/boot/audio.old.elf"))
 	{
 		node = addlistbox(settings_autostart, listbox, node, 1);
@@ -135,7 +153,7 @@ void screensettings_autostart_audiovideo()
 			setchoiceboxselection(node, getownconfig(node->name));
 		}
 	}
-
+*/
 	node = addlistbox(settings_autostart, listbox, node, 1);
 	if(node != NULL)
 	{
@@ -153,16 +171,7 @@ void screensettings_autostart_audiovideo()
 		addchoicebox(node, "low", _("low")); addchoicebox(node, "high", _("high"));
 		setchoiceboxselection(node, getownconfig(node->name));
 	}
-*/
-	node = addlistbox(settings_autostart, listbox, node, 1);
-	if(node != NULL)
-	{
-		node->type = CHOICEBOX;
-		changetext(node, _("Bootlogo")); changename(node, "bootlogo");
-		addchoicebox(node, "y", _("yes")); addchoicebox(node, "n", _("no"));
-		setchoiceboxselection(node, getownconfig(node->name));
-	}
-/*
+
 	node = addlistbox(settings_autostart, listbox, node, 1);
 	if(node != NULL)
 	{
@@ -195,15 +204,6 @@ void screensettings_autostart_audiovideo()
 	{
 		node->type = CHOICEBOX;
 		changetext(node, _("swts")); changename(node, "swts");
-		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
-		setchoiceboxselection(node, getownconfig(node->name));
-	}
-
-	node = addlistbox(settings_autostart, listbox, node, 1);
-	if(node != NULL)
-	{
-		node->type = CHOICEBOX;
-		changetext(node, _("Boot RGB Fix")); changename(node, "bootrgbfix");
 		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
 		setchoiceboxselection(node, getownconfig(node->name));
 	}
