@@ -320,6 +320,20 @@ void recordstop(struct service* node, int ret)
 		if(dname != NULL && filename != NULL && getconfigint("recordpicture", NULL) == 1)
 			recthumblastthread = addtimer(&createrecthumblastthread, START, 1000, 1, (void*)ostrcat(dname, NULL, 0, 0), (void*)ostrcat(filename, NULL, 0, 0), NULL);
 
+		if(file_exist(getconfig("skriptafterrec", NULL)))
+		{
+			char* cmd = NULL;
+			cmd = ostrcat(getconfig("skriptafterrec", NULL), " ", 1, 0);
+			cmd = ostrcat(cmd, ostrcat(dname, NULL, 0, 0), 1, 0);
+			cmd = ostrcat(cmd, "/", 1, 0);
+			cmd = ostrcat(cmd, ostrcat(filename, NULL, 0, 0), 1, 0);
+			cmd = ostrcat(cmd, " &", 1, 0);
+			debug(250, "start cmd: %s", cmd);
+			system(cmd);
+			debug(250, "done cmd: %s", cmd);		
+			free(cmd), cmd = NULL;
+		}
+
 		free(dname); dname = NULL;
 		free(filename); filename = NULL;
 
