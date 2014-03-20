@@ -23,7 +23,7 @@ msgstr ""
 #: transponder.h:493 transponder.h:504 transponder.h:574 youtube.h:150
 #: zdf.h:86
 msgid "unknown"
-msgstr "onbekend"
+msgstr "Onbekend"
 
 #: about.h:32 skin_default_skin.xml.h:672
 msgid "Tunertype"
@@ -278,7 +278,7 @@ msgstr "Nee"
 
 #: adjust.h:65
 msgid "infobar"
-msgstr "infobalk"
+msgstr "Infobalk"
 
 #: adjust.h:66
 msgid "epg"
@@ -336,49 +336,49 @@ msgstr "Ja"
 
 #: adjust.h:89
 msgid "medium"
-msgstr "gemiddeld"
+msgstr "Gemiddeld"
 
 #: adjust.h:90 adjust.h:169 mc_audioplayer_settings.h:35
 #: mc_pictureplayer_settings.h:50 mc_videoplayer_settings.h:31
 #: moduleconfig.h:248 plugins_mc_skin.xml.h:23 skins_mc_skin.xml.h:23
 msgid "fast"
-msgstr "snel"
+msgstr "Snel"
 
 #: adjust.h:97 mc_audioplayer_settings.h:27 mc_pictureplayer_settings.h:42
 #: mc_videoplayer_settings.h:23 plugins_mc_skin.xml.h:7
 #: skin_default_skin.xml.h:72 skins_mc_skin.xml.h:7
 msgid "alpha"
-msgstr "alfabetisch"
+msgstr "Alfabetisch"
 
 #: adjust.h:98 mc_audioplayer_settings.h:28 mc_pictureplayer_settings.h:43
 #: mc_videoplayer_settings.h:24 plugins_mc_skin.xml.h:49
 #: skin_default_skin.xml.h:505 skins_mc_skin.xml.h:49
 msgid "reverse alpha"
-msgstr "alphabetisch omgekeerd"
+msgstr "Alphabetisch omgekeerd"
 
 #: adjust.h:99 mc_audioplayer_settings.h:29 mc_pictureplayer_settings.h:44
 #: mc_videoplayer_settings.h:25 plugins_mc_skin.xml.h:55
 #: skin_default_skin.xml.h:572 skins_mc_skin.xml.h:55
 msgid "size"
-msgstr "grootte"
+msgstr "Grootte"
 
 #: adjust.h:100 mc_audioplayer_settings.h:30 mc_pictureplayer_settings.h:45
 #: mc_videoplayer_settings.h:26 plugins_mc_skin.xml.h:51
 #: skin_default_skin.xml.h:507 skins_mc_skin.xml.h:51
 msgid "reverse size"
-msgstr "grootte omgkeerd"
+msgstr "Grootte omgkeerd"
 
 #: adjust.h:101 mc_audioplayer_settings.h:31 mc_pictureplayer_settings.h:46
 #: mc_videoplayer_settings.h:27 plugins_mc_skin.xml.h:16
 #: skin_default_skin.xml.h:161 skins_mc_skin.xml.h:16 vfdisplay.h:46
 msgid "date"
-msgstr "datum"
+msgstr "Datum"
 
 #: adjust.h:102 mc_audioplayer_settings.h:32 mc_pictureplayer_settings.h:47
 #: mc_videoplayer_settings.h:28 plugins_mc_skin.xml.h:50
 #: skin_default_skin.xml.h:506 skins_mc_skin.xml.h:50
 msgid "reverse date"
-msgstr "datum omgekeerd"
+msgstr "Datum omgekeerd"
 
 #: adjust.h:105
 msgid "Power Menu"
@@ -403,7 +403,7 @@ msgstr "Titan herstart"
 #: adjust.h:112 adjust.h:122 adjust.h:176 epgsettings.h:147 epgsettings.h:153
 #: network.h:593
 msgid "deaktiv"
-msgstr "uitgeschakeld"
+msgstr "Uitgeschakeld"
 
 #: adjust.h:113
 msgid "1 sec"
@@ -415,7 +415,7 @@ msgstr ""
 
 #: adjust.h:115 pin.h:188
 msgid "endless"
-msgstr "onbegrensd"
+msgstr "Onbegrensd"
 
 #: adjust.h:123
 msgid "1 GB"
@@ -449,12 +449,12 @@ msgstr ""
 #: transponder.h:372 transponder.h:378 transponder.h:385 transponder.h:417
 #: transponder.h:427 transponder.h:476 transponder.h:512
 msgid "auto"
-msgstr "automatisch"
+msgstr "Automatisch"
 
 #: adjust.h:153 autotimer.c:480 autotimer.c:513 epgsettings.h:215
 #: rectimer.h:1166
 msgid "nothing"
-msgstr "niets doen"
+msgstr "Niets doen"
 
 #: adjust.h:154 autotimer.c:481 autotimer.c:514 rectimer.h:1167
 #: stopifnotused.c:113
@@ -468,43 +468,43 @@ msgstr "Uitschakelen"
 
 #: adjust.h:163
 msgid "anim. width"
-msgstr "anim. breedte"
+msgstr "Anim. breedte"
 
 #: adjust.h:164
 msgid "anim. height"
-msgstr "anim. hoogte"
+msgstr "Anim. hoogte"
 
 #: adjust.h:165
 msgid "anim. both"
-msgstr "anim. beidden"
+msgstr "Anim. beidden"
 
 #: adjust.h:168
 msgid "very fast"
-msgstr "zeer snel"
+msgstr "Zeer snel"
 
 #: adjust.h:170 timeshiftsettings.h:49 tmc.h:557
 msgid "normal"
-msgstr "normaal"
+msgstr "Normaal"
 
 #: adjust.h:171 moduleconfig.h:246 tmc.h:556
 msgid "slow"
-msgstr "langzaam"
+msgstr "Langzaam"
 
 #: adjust.h:172
 msgid "very slow"
-msgstr "zeer langzaam"
+msgstr "Zeer langzaam"
 
 #: adjust.h:175 pin.h:106
 msgid "hidden"
-msgstr "verborgen"
+msgstr "Verborgen"
 
 #: adjust.h:187
 msgid "channel-movie"
-msgstr "kanaal-naam"
+msgstr "Kanaal-naam"
 
 #: adjust.h:188
 msgid "movie-channel"
-msgstr "naam-kanaal"
+msgstr "Naam-kanaal"
 
 #: adjust.h:202
 msgid "expert (11)"
@@ -612,12 +612,12 @@ msgstr "Zoek"
 
 #: audiotrack.h:48 play.h:271 rectimer.h:1485 subtitle.h:1624
 msgid "running"
-msgstr "wordt uitgevoerd"
+msgstr "Wordt uitgevoerd"
 
 #: audiotrack.h:116 play.h:253 subtitle.h:1745 tunerconfig.h:157
 #: tunerconfig.h:341 tunerconfig.h:381
 msgid "undefined"
-msgstr "ongedefinieerd"
+msgstr "Ongedefinieerd"
 
 #: autotimer.c:475 autotimer.c:508 harddisk.h:540 rectimer.h:1028
 msgid "record"
@@ -671,7 +671,7 @@ msgstr "Uit"
 
 #: avsettings.h:69
 msgid "redKey"
-msgstr "rode knop"
+msgstr "Rode knop"
 
 #: avsettings.h:78
 msgid "4 sec"
@@ -758,22 +758,22 @@ msgstr ""
 #: lcdpearl1.c:508 lcdpearl1.c:512 lcdsamsung.c:978 lcdsamsung.c:982
 #: lcdsamsung.c:986
 msgid "nein"
-msgstr "nee"
+msgstr "Nee"
 
 #: callmon_main.h:77 callmon_main.h:97 callmon_main.h:115 callmon_main.h:119
 #: callmon_main.h:123 callmon_main.h:127 instar.h:193 lcdpearl1.c:505
 #: lcdpearl1.c:509 lcdpearl1.c:513 lcdsamsung.c:979 lcdsamsung.c:983
 #: lcdsamsung.c:987
 msgid "ja"
-msgstr ""
+msgstr "Ja"
 
 #: callmon_main.h:131
 msgid "puffern"
-msgstr "bufferen"
+msgstr "Bufferen"
 
 #: callmon_main.h:132
 msgid "verwerfen"
-msgstr "verwerpen"
+msgstr "Verwerpen"
 
 #: callmon_main.h:135 mediadbsettings.h:58 skin_default_skin.xml.h:37
 msgid "3"
@@ -925,7 +925,7 @@ msgstr "Fout bij bestand kopiëren"
 
 #: copyfile.h:893 copyfile.h:894
 msgid "wait for stopping"
-msgstr "wacht tot stop"
+msgstr "Wacht tot stop"
 
 #: dir.h:83 dir.h:92 dir.h:101 dir.h:110 plugins_lcdpearl1_skin.xml.h:2
 #: plugins_lcdsamsung_skin.xml.h:2 skins_lcdpearl1_skin.xml.h:2
@@ -1107,19 +1107,19 @@ msgstr ""
 
 #: diseqcconfig.h:254
 msgid "north"
-msgstr "noord"
+msgstr "Noord"
 
 #: diseqcconfig.h:255
 msgid "south"
-msgstr "zuid"
+msgstr "Zuid"
 
 #: diseqcconfig.h:259
 msgid "east"
-msgstr "oost"
+msgstr "Oost"
 
 #: diseqcconfig.h:260
 msgid "west"
-msgstr ""
+msgstr "West"
 
 #: divxstage.h:36 faststream.h:30 filenuke.h:37 flashx.h:26 movreel.h:30
 #: movshare.h:35 novamov.h:35 nowvideo.h:35 played.h:30 primeshare.h:29
@@ -1132,8 +1132,7 @@ msgstr "Host Url, geen http://"
 msgid ""
 "The file is being transfered to our other servers. This may take few minutes."
 msgstr ""
-"Het bestand wordt geüpload naar onze servers. Dit kan een paar minuten "
-"duren."
+"Het bestand wordt geüpload naar onze servers. Dit kan een paar minuten duren."
 
 #: divxstage.h:150 faststream.h:79 faststream.h:90 faststream.h:102
 #: faststream.h:160 filenuke.h:84 filenuke.h:95 filenuke.h:107 filenuke.h:157
@@ -1170,7 +1169,7 @@ msgstr ""
 
 #: download.h:97
 msgid "download error"
-msgstr "fout bij downloaden"
+msgstr "Fout bij downloaden"
 
 #: download.h:101
 msgid "wait for stopping download"
@@ -1291,12 +1290,12 @@ msgstr ""
 
 #: epgsettings.h:150
 msgid "scan and whitelist"
-msgstr "scan & whitelist"
+msgstr "Scan & whitelist"
 
 #: epgsettings.h:191 epgsettings.h:202 epgsettings.h:207 epgsettings.h:212
 #: mediadbsettings.h:36
 msgid "always"
-msgstr "altijd"
+msgstr "Altijd"
 
 #: epgsettings.h:192
 msgid "only on power off / restart"
@@ -1304,7 +1303,7 @@ msgstr "Alleen bij uitschakelen/herstarten"
 
 #: epgsettings.h:193 mediadbsettings.h:48
 msgid "never"
-msgstr "nooit"
+msgstr "Nooit"
 
 #: epgsettings.h:201 epgsettings.h:206 epgsettings.h:211
 msgid "only for scan"
@@ -1328,7 +1327,7 @@ msgstr ""
 
 #: extensions.h:20
 msgid "Feed"
-msgstr "feed adres ingaven AUB"
+msgstr "Feed adres ingaven AUB"
 
 #: extensions.h:82
 msgid "Installation start"
@@ -1398,9 +1397,8 @@ msgid ""
 "then perform an update by Tpk to: "
 msgstr ""
 "Er mag slechts 1 plugin uit deze sectie geïnstalleerd worden, wilt u een "
-"andere selecteren zult u eerst een geïnstalleerde plugin moeten "
-"verwijderen. Is de plugin niet in het TitanNit menu zichtbaar voer dan een "
-"TPK update uit:"
+"andere selecteren zult u eerst een geïnstalleerde plugin moeten verwijderen. "
+"Is de plugin niet in het TitanNit menu zichtbaar voer dan een TPK update uit:"
 
 #: extensions.h:212 extensions.h:354
 msgid "Installing"
@@ -1408,7 +1406,7 @@ msgstr "Installeren van"
 
 #: extensions.h:218 extensions.h:358
 msgid "starting"
-msgstr "starten"
+msgstr "Starten"
 
 #: extensions.h:230
 msgid "Tpk Install Info - Install OK"
@@ -1578,11 +1576,11 @@ msgstr "Wilt u dit bestand/map verplaatsen?"
 
 #: filemanager.h:196
 msgid "From"
-msgstr "van"
+msgstr "Van"
 
 #: filemanager.h:200
 msgid "To"
-msgstr "naar"
+msgstr "Naar"
 
 #: filemanager.h:219 filemanager.h:226
 msgid "Move File"
@@ -1646,7 +1644,7 @@ msgstr "Formatteer hardeschijf - Bestandssysteem"
 
 #: harddisk.h:129
 msgid "select the format filesystem type for your media drive"
-msgstr ""
+msgstr "Selecteer bestands-systeem type voor uw schijf"
 
 #: harddisk.h:167 plugins_mc_skin.xml.h:18 skins_mc_skin.xml.h:18
 msgid "default"
@@ -1658,7 +1656,7 @@ msgstr "Hardeschijf configureren"
 
 #: harddisk.h:219
 msgid "select the function for the specified device"
-msgstr ""
+msgstr "Selecteer de functie voor uw schijf"
 
 #: harddisk.h:230 harddisk.h:724
 msgid "use medium for record"
@@ -1722,23 +1720,23 @@ msgstr "Geen hardeschijf gevonden"
 
 #: harddisk.h:447 harddisk.h:448
 msgid "Harddisk Format"
-msgstr ""
+msgstr "Hardeschijf formatteren"
 
 #: harddisk.h:449
 msgid "select the media drive from Device List for formating"
-msgstr ""
+msgstr "Selecteer de schijf uit de lijst om te formatteren"
 
 #: harddisk.h:453 harddisk.h:454
 msgid "Harddisk Fsck"
-msgstr ""
+msgstr "Hardeschijf controle"
 
 #: harddisk.h:455
 msgid "select the media drive from Device List for fsck"
-msgstr ""
+msgstr "Selecteer de schijf uit de lijst om te controleren"
 
 #: harddisk.h:461
 msgid "select the media drive from Device List for configuration"
-msgstr ""
+msgstr "Selecteer de schijf uit de lijst om te configureren"
 
 #: harddisk.h:479
 msgid "HDD "
@@ -1816,7 +1814,7 @@ msgstr "Hardeschijf slaapstand"
 
 #: harddisk.h:879
 msgid "set here the default sleeptime for all your media drives"
-msgstr ""
+msgstr "Bepaal de standaard slaaptijd voor alle schijven"
 
 #: harddisk.h:885 skin_default_skin.xml.h:643
 msgid "Time to sleep"
@@ -1951,15 +1949,15 @@ msgstr "Gekleurde balk"
 
 #: hwtest.h:279 tmc.h:702
 msgid "RED"
-msgstr "rood"
+msgstr "Rood"
 
 #: hwtest.h:284
 msgid "GREEN"
-msgstr "groen"
+msgstr "Groen"
 
 #: hwtest.h:289
 msgid "BLUE"
-msgstr "blauw"
+msgstr "Blauw"
 
 #: hwtest.h:305
 msgid "SCART 4:3 / 16:9"
@@ -2150,11 +2148,11 @@ msgstr "Infos"
 
 #: instar.h:196 instar.h:208
 msgid "aus"
-msgstr "uit"
+msgstr "Uit"
 
 #: instar.h:197 instar.h:209
 msgid "ein"
-msgstr "aan"
+msgstr "Aan"
 
 #: keyactions.h:21 settings_bluebutton.h:16 settings_pluginbutton.h:14
 #: settings_pluginbutton.h:17 settings_pluginbutton.h:58
@@ -2278,7 +2276,7 @@ msgstr ""
 
 #: lnbconfig.h:147
 msgid "universal"
-msgstr "universeel"
+msgstr "Universeel"
 
 #: lnbconfig.h:148
 msgid "C-Band"
@@ -2306,7 +2304,7 @@ msgstr "Markering is geplaatst."
 
 #: mboxinfo.c:49
 msgid "File not found !!"
-msgstr ""
+msgstr "Bestand niet gevonden!"
 
 #: mc_audioplayer.h:403 mc_global.h:1079 mc_pictureplayer.h:145
 #: mc_videoplayer.h:425
@@ -2340,12 +2338,12 @@ msgstr "Afspeellijst modus"
 #: mc_videoplayer_settings.h:32 plugins_mc_skin.xml.h:14
 #: skins_mc_skin.xml.h:14
 msgid "big"
-msgstr "groot"
+msgstr "Groot"
 
 #: mc_audioplayer_settings.h:37 mc_pictureplayer_settings.h:52
 #: mc_videoplayer_settings.h:33
 msgid "cover"
-msgstr "hoes"
+msgstr "Hoes"
 
 #: mc_audioplayer_settings.h:38 mc_videoplayer_settings.h:34
 #: plugins_mc_skin.xml.h:29 skins_mc_skin.xml.h:29
@@ -2390,7 +2388,7 @@ msgstr "Installeer de NetSurf plugin!"
 
 #: mc_main.h:47 mc_main.h:52 mc_main.h:57 mc_main.h:92 mc_main.h:97
 msgid "comming soon"
-msgstr "binnenkort beschikbaar..."
+msgstr "Binnenkort beschikbaar..."
 
 #: mc_main.h:261 menu.h:153 panel_main.h:29 panel_main.h:135
 msgid "Menu not implemented !"
@@ -2404,15 +2402,15 @@ msgstr "Installeer de Tithek plugin!"
 #: panel_settings_autostart.h:132 settings_autostart.h:51
 #: settings_autostart.h:163
 msgid "low"
-msgstr "gering"
+msgstr "Gering"
 
 #: mc_pictureplayer_settings.h:30 moduleconfig.h:247
 msgid "middle"
-msgstr "middel"
+msgstr "Middel"
 
 #: mc_pictureplayer_settings.h:31
 msgid "best"
-msgstr "beste"
+msgstr "Beste"
 
 #: mc_pictureplayer_settings.h:59 mc_pictureplayer_settings.h:65
 #: skin_default_skin.xml.h:331
@@ -2433,7 +2431,7 @@ msgstr ""
 
 #: mc_pictureplayer_settings.h:63
 msgid "Antenne Kaernten"
-msgstr "Antenne Kaarten"
+msgstr ""
 
 #: mc_pictureplayer_settings.h:64
 msgid "Onkelz Rock Radio"
@@ -2445,7 +2443,7 @@ msgstr ""
 
 #: mc_settings.h:13
 msgid "transparent (mvi)"
-msgstr "OSD transparantie"
+msgstr ""
 
 #: mc_settings.h:14
 msgid "skin (picmem jpg)"
@@ -2505,7 +2503,7 @@ msgstr "MediaDB ingang van bestand niet gevonden."
 
 #: mediadb.h:1078 play.h:555
 msgid "MediaDB directory scan started in Background !"
-msgstr "scannen MediaDB map in achtergrond gestart!"
+msgstr "Scannen MediaDB map in achtergrond gestart!"
 
 #: mediadb.h:1080 play.h:557 skin_default_skin.xml.h:173
 msgid "Delete MediaDB before scan"
@@ -2517,7 +2515,7 @@ msgstr "Verwijder niet gebruikte ingangen voor scan"
 
 #: mediadb.h:1094 play.h:571
 msgid "scan Directory"
-msgstr "scan map"
+msgstr "Scan map"
 
 #: mediadb.h:1098 play.h:575
 msgid "MediaDB place"
@@ -2542,7 +2540,7 @@ msgstr "MediaDB scan klaar"
 
 #: mediadb.h:2439 plugins_mc_skin.xml.h:24 skins_mc_skin.xml.h:24
 msgid "file"
-msgstr "bestand"
+msgstr "Bestand"
 
 #: mediadb.h:2443
 msgid "path"
@@ -2635,7 +2633,7 @@ msgstr "Fout bij instellingen opslaan"
 
 #: moduleconfig.h:159
 msgid "double"
-msgstr "dubbel"
+msgstr "Dubbel"
 
 #: moduleconfig.h:168
 msgid "activate"
@@ -2643,7 +2641,7 @@ msgstr "Activeren"
 
 #: moduleconfig.h:169
 msgid "deaktivate"
-msgstr "deactiveren"
+msgstr "Deactiveren"
 
 #: moduleconfig.h:350
 msgid "Status: "
@@ -2651,15 +2649,15 @@ msgstr ""
 
 #: moduleconfig.h:354
 msgid "empty"
-msgstr "leeg"
+msgstr "Leeg"
 
 #: moduleconfig.h:356
 msgid "initializing"
-msgstr "initialiseren"
+msgstr "Initialiseren"
 
 #: moduleconfig.h:358
 msgid "ready"
-msgstr "klaar"
+msgstr "Klaar"
 
 #: moduleconfig.h:373
 msgid "Module Type"
@@ -2819,7 +2817,7 @@ msgstr "FOUT"
 
 #: network.h:284
 msgid "comming soon..."
-msgstr "binnenkort beschikbaar..."
+msgstr "Binnenkort beschikbaar..."
 
 #: network.h:295
 msgid "Restart Network ?"
@@ -2891,7 +2889,7 @@ msgstr ""
 
 #: network.h:827
 msgid "searching..."
-msgstr "zoeken..."
+msgstr "Zoeken..."
 
 #: network.h:858
 msgid "WLAN now stopped"
@@ -2976,7 +2974,7 @@ msgstr "Debug"
 #: panel_settings_autostart.h:60 panel_settings_autostart.h:132
 #: settings_autostart.h:51 settings_autostart.h:163 tmc.h:558
 msgid "high"
-msgstr "hoog"
+msgstr "Hoog"
 
 #: panel_settings_autostart.h:69 settings_autostart.h:60
 msgid "showip"
@@ -3113,7 +3111,7 @@ msgstr "NTFS schrijven"
 
 #: panel_settings.h:29
 msgid "disable"
-msgstr "uit"
+msgstr "Uit"
 
 #: panel_settings.h:30
 msgid "ntfs-3g"
@@ -3154,7 +3152,7 @@ msgstr "Frequentie"
 
 #: panel_settings_overclocking.h:276 settings_overclocking.h:276
 msgid "videmode"
-msgstr "video modus"
+msgstr "Video modus"
 
 #: panel_settings_wizard.h:6
 msgid ""
@@ -3309,7 +3307,7 @@ msgstr "Zoek op InternetRadio (lokaal)"
 
 #: play.h:641 skin_default_skin.xml.h:708
 msgid "Video Settings"
-msgstr "Film instellingen"
+msgstr "Beeldscherm instellingen"
 
 #: play.h:642
 msgid "AV Settings"
@@ -3373,7 +3371,7 @@ msgstr "EPG"
 
 #: play.h:1417
 msgid "SORT"
-msgstr ""
+msgstr "Sorteren"
 
 #: play.h:1649
 msgid "Marker autoseek is started"
@@ -3389,11 +3387,11 @@ msgstr "Auto timer instellingen"
 
 #: plugins_autotimer_skin.xml.h:2 skins_autotimer_skin.xml.h:2
 msgid "afterevent"
-msgstr "na gebeurtenis"
+msgstr "Na gebeurtenis"
 
 #: plugins_autotimer_skin.xml.h:3 skins_autotimer_skin.xml.h:3
 msgid "begin search"
-msgstr "start zoeken"
+msgstr "Start zoeken"
 
 #: plugins_autotimer_skin.xml.h:4 skins_autotimer_skin.xml.h:4
 msgid "channel (EPG=Current channel)"
@@ -3401,11 +3399,11 @@ msgstr "zender (EPG=Huidige zender)"
 
 #: plugins_autotimer_skin.xml.h:5 skins_autotimer_skin.xml.h:5
 msgid "end search"
-msgstr "beëindig zoeken"
+msgstr "Beëindig zoeken"
 
 #: plugins_autotimer_skin.xml.h:6 skins_autotimer_skin.xml.h:6
 msgid "event"
-msgstr "gebeurtenis"
+msgstr "Gebeurtenis"
 
 #: plugins_autotimer_skin.xml.h:8 plugins_callmonitor1_skin.xml.h:18
 #: plugins_imdbapi_skin.xml.h:7 plugins_imdb_skin.xml.h:7
@@ -3424,7 +3422,7 @@ msgstr "Opslaan"
 
 #: plugins_autotimer_skin.xml.h:9 skins_autotimer_skin.xml.h:9
 msgid "search string"
-msgstr "zoekterm"
+msgstr "Zoekterm"
 
 #: plugins_autotimer_skin.xml.h:10 plugins_dlna_skin.xml.h:12
 #: plugins_instar_skin.xml.h:16 plugins_lcdpearl1_skin.xml.h:12
@@ -3463,7 +3461,7 @@ msgstr "Actie bij Standby"
 
 #: plugins_callmonitor1_skin.xml.h:5 skins_callmonitor1_skin.xml.h:5
 msgid "alle Nummern"
-msgstr "alle nummers"
+msgstr "Alle nummers"
 
 #: plugins_callmonitor1_skin.xml.h:6 skins_callmonitor1_skin.xml.h:6
 msgid "Anzeige in Sekunden"
@@ -3471,20 +3469,20 @@ msgstr "Aankondiging in seconden"
 
 #: plugins_callmonitor1_skin.xml.h:7 skins_callmonitor1_skin.xml.h:7
 msgid "ausgehende Anrufe"
-msgstr "uitgaand gesprek"
+msgstr "Uitgaand gesprek"
 
 #: plugins_callmonitor1_skin.xml.h:8 skins_callmonitor1_skin.xml.h:8
 msgid "bei Anruf stumm"
-msgstr "bij gesprek dempen"
+msgstr "Bij gesprek dempen"
 
 #: plugins_callmonitor1_skin.xml.h:9 skin_default_skin.xml.h:116
 #: skins_callmonitor1_skin.xml.h:9
 msgid "broadcast"
-msgstr "uitzending"
+msgstr "Uitzending"
 
 #: plugins_callmonitor1_skin.xml.h:10 skins_callmonitor1_skin.xml.h:10
 msgid "eingehende Anrufe"
-msgstr "inkomend gesprek"
+msgstr "Inkomend gesprek"
 
 #: plugins_callmonitor1_skin.xml.h:12 skins_callmonitor1_skin.xml.h:12
 msgid "FritzBook"
@@ -3719,12 +3717,12 @@ msgstr ""
 #: plugins_lcdpearl1_skin.xml.h:4 plugins_lcdsamsung_skin.xml.h:4
 #: skins_lcdpearl1_skin.xml.h:4 skins_lcdsamsung_skin.xml.h:4
 msgid "aktiv im Standby"
-msgstr "actief in Standby"
+msgstr "Actief in Standby"
 
 #: plugins_lcdpearl1_skin.xml.h:5 plugins_lcdsamsung_skin.xml.h:5
 #: skins_lcdpearl1_skin.xml.h:5 skins_lcdsamsung_skin.xml.h:5
 msgid "alle Menus anzeigen"
-msgstr "alle menu's tonen"
+msgstr "Alle menu's tonen"
 
 #: plugins_lcdpearl1_skin.xml.h:6 skins_lcdpearl1_skin.xml.h:6
 msgid "Auswahl"
@@ -3835,7 +3833,7 @@ msgstr "Bewerken"
 
 #: plugins_mc_skin.xml.h:25 skins_mc_skin.xml.h:25
 msgid "filealt"
-msgstr "bestand"
+msgstr "Bestand"
 
 #: plugins_mc_skin.xml.h:26 skins_mc_skin.xml.h:26
 msgid "filealtresult"
@@ -3916,7 +3914,7 @@ msgstr "Toon beeldnaam"
 
 #: plugins_mc_skin.xml.h:56 skins_mc_skin.xml.h:56
 msgid "small"
-msgstr "klein"
+msgstr "Klein"
 
 #: plugins_mc_skin.xml.h:57 skins_mc_skin.xml.h:57
 msgid "Sort"
@@ -3948,7 +3946,7 @@ msgstr "Film afspelen"
 
 #: plugins_mc_skin.xml.h:64 skins_mc_skin.xml.h:64
 msgid "VIDEO SETTINGS"
-msgstr "Film instellingen"
+msgstr "Beeldscherm instellingen"
 
 #: plugins_mc_skin.xml.h:66 skins_mc_skin.xml.h:66
 msgid "VLC Player"
@@ -3971,11 +3969,11 @@ msgstr "Toevoegen"
 
 #: plugins_networkbrowser_skin.xml.h:2 skins_networkbrowser_skin.xml.h:2
 msgid "Auth Settings"
-msgstr "instellingen"
+msgstr "Instellingen"
 
 #: plugins_networkbrowser_skin.xml.h:3 skins_networkbrowser_skin.xml.h:3
 msgid "AUTH SETTINGS"
-msgstr "instellingen"
+msgstr "Instellingen"
 
 #: plugins_networkbrowser_skin.xml.h:4 skins_networkbrowser_skin.xml.h:4
 msgid "COPY"
@@ -4179,7 +4177,7 @@ msgstr "Softcam"
 #: plugins_panel_skin.xml.h:12 skin_default_skin.xml.h:123
 #: skins_panel_skin.xml.h:12
 msgid "Cancel"
-msgstr "annuleren"
+msgstr "Annuleren"
 
 #: plugins_panel_skin.xml.h:13 skin_default_skin.xml.h:135
 #: skins_panel_skin.xml.h:13
@@ -4378,7 +4376,7 @@ msgstr "Afbeelding Ratio"
 
 #: plugins_tithek_skin.xml.h:12 skins_tithek_skin.xml.h:12 tithek.h:1099
 msgid "please wait..."
-msgstr "een ogenblik alstublieft..."
+msgstr "Een ogenblik alstublieft..."
 
 #: plugins_tithek_skin.xml.h:13 skin_default_skin.xml.h:486
 #: skins_tithek_skin.xml.h:13
@@ -4482,7 +4480,7 @@ msgstr "Knipstatus:"
 
 #: plugins_tsSchnitt_skin.xml.h:2 skins_tsSchnitt_skin.xml.h:2
 msgid "in background"
-msgstr "in achtergrond"
+msgstr "In achtergrond"
 
 #: plugins_tsSchnitt_skin.xml.h:3 skins_tsSchnitt_skin.xml.h:3
 msgid "Marker found:"
@@ -4490,7 +4488,7 @@ msgstr "Markering gevonden:"
 
 #: plugins_tsSchnitt_skin.xml.h:4 skins_tsSchnitt_skin.xml.h:4
 msgid "progress"
-msgstr "voortgang"
+msgstr "Voortgang"
 
 #: plugins_tsSchnitt_skin.xml.h:5 skins_tsSchnitt_skin.xml.h:5
 msgid "Selected:"
@@ -4792,7 +4790,7 @@ msgstr "Opname is gestart"
 
 #: rectimer.h:129
 msgid "undefined error"
-msgstr "onbekende fout"
+msgstr "Onbekende fout"
 
 #: rectimer.h:134
 msgid "Timer starttime or endtime not ok"
@@ -4824,7 +4822,7 @@ msgstr "EPG Scan activeerd standby?"
 
 #: rectimer.h:664
 msgid "stopped from user"
-msgstr "gestopt door gebruiker"
+msgstr "Gestopt door gebruiker"
 
 #: rectimer.h:1039 rectimer.h:1448 rectimer.h:1459
 msgid "once"
@@ -4836,15 +4834,15 @@ msgstr "Herhalen"
 
 #: rectimer.h:1052
 msgid "daily"
-msgstr "dagelijks"
+msgstr "Dagelijks"
 
 #: rectimer.h:1053
 msgid "weekly"
-msgstr "weekelijks"
+msgstr "Weekelijks"
 
 #: rectimer.h:1054
 msgid "workdays"
-msgstr "werkdagen"
+msgstr "Werkdagen"
 
 #: rectimer.h:1059 skin_default_skin.xml.h:382
 msgid "Monday"
@@ -4876,7 +4874,7 @@ msgstr "Zondag"
 
 #: rectimer.h:1445
 msgid "rec"
-msgstr "opname"
+msgstr "Opname"
 
 #: rectimer.h:1456
 msgid "switch"
@@ -4884,11 +4882,11 @@ msgstr "Omschakelen"
 
 #: rectimer.h:1483
 msgid "waiting"
-msgstr "wacht"
+msgstr "Wacht"
 
 #: rectimer.h:1487
 msgid "success"
-msgstr "succes"
+msgstr "Succes"
 
 #: rectimer.h:1489
 msgid "error"
@@ -5055,39 +5053,39 @@ msgstr "Beeld instelling voor SCART moet 576i zijn"
 
 #: scconfig.h:42
 msgid "card present"
-msgstr "kaart gevonden"
+msgstr "Kaart gevonden"
 
 #: scconfig.h:44
 msgid "card not present"
-msgstr "geen kaart gevonden"
+msgstr "Geen kaart gevonden"
 
 #: screensaveradjust.h:29
 msgid "black"
-msgstr "zwart"
+msgstr "Zwart"
 
 #: screensaveradjust.h:30
 msgid "blue"
-msgstr "blauw"
+msgstr "Blauw"
 
 #: screensaveradjust.h:31
 msgid "green"
-msgstr "groen"
+msgstr "Groen"
 
 #: screensaveradjust.h:32
 msgid "red"
-msgstr "rood"
+msgstr "Rood"
 
 #: screensaveradjust.h:33
 msgid "yellow"
-msgstr "geel"
+msgstr "Geel"
 
 #: screensaveradjust.h:34
 msgid "white"
-msgstr "wit"
+msgstr "Wit"
 
 #: screensaveradjust.h:35
 msgid "grey"
-msgstr "grijs"
+msgstr "Grijs"
 
 #: screensaveradjust.h:36
 msgid "burlywood1"
@@ -5099,7 +5097,7 @@ msgstr ""
 
 #: screensaveradjust.h:38
 msgid "mixed mode"
-msgstr "gemixte modus"
+msgstr "Gemixte modus"
 
 #: screensaveradjust.h:41
 msgid "Icon 1"
@@ -5135,7 +5133,7 @@ msgstr "Imdb achtergrond beelden (netwerk/hardeschijf)"
 
 #: scriptexec.h:22
 msgid "BG-RUN"
-msgstr "uitvoeren in achtergrond"
+msgstr "Uitvoeren in achtergrond"
 
 #: scriptexec.h:40
 msgid "Script has no output or started in background."
@@ -5423,7 +5421,7 @@ msgstr "Service toevoegen"
 
 #: skin_default_skin.xml.h:63
 msgid "Adjust"
-msgstr "Aanpassen"
+msgstr "Titan instellingen"
 
 #: skin_default_skin.xml.h:64
 msgid "ae"
@@ -5644,7 +5642,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:122
 msgid "cancel"
-msgstr "annuleren"
+msgstr "Annuleren"
 
 #: skin_default_skin.xml.h:124
 msgid "Change Channelname"
@@ -5752,7 +5750,7 @@ msgstr "Kopiëren/verplaatsen"
 
 #: skin_default_skin.xml.h:153
 msgid "copy service"
-msgstr "naar favorieten kopiëren"
+msgstr "Naar favorieten kopiëren"
 
 #: skin_default_skin.xml.h:154
 msgid "CPU"
@@ -5820,7 +5818,7 @@ msgstr "EPG na lezen verwijderen"
 
 #: skin_default_skin.xml.h:175
 msgid "del startchannel"
-msgstr "verwijder startzender"
+msgstr "Verwijder startzender"
 
 #: skin_default_skin.xml.h:176
 msgid "DESC"
@@ -6503,8 +6501,9 @@ msgid ""
 "Lnb / Unicam navigate to the field and press the Red button."
 msgstr ""
 "Hier kunt u uw satelliet tuner instellen. Maak eerst uw satelliet keuze. Als "
-"u DiSEqC gebruikt ook de juiste poort selecteren. Voor uitgebreide LNB/"
-"UniCam instelingen navigeer naar het juiste veld en druk op de RODE toets."
+"u DiSEqC gebruikt ook de juiste poort selecteren. Voor uitgebreide "
+"LNB/UniCam instelingen navigeer naar het juiste veld en druk op de RODE "
+"toets."
 
 #: skin_default_skin.xml.h:300
 msgid ""
@@ -7280,7 +7279,7 @@ msgstr "Verwijder ongebruikte zenders in favorieten lijst"
 
 #: skin_default_skin.xml.h:494
 msgid "rename service"
-msgstr "service hernoemen"
+msgstr "Service hernoemen"
 
 #: skin_default_skin.xml.h:495
 msgid "Repeate"
@@ -7384,7 +7383,7 @@ msgstr "Sat zoeker"
 
 #: skin_default_skin.xml.h:525
 msgid "Sat Finder"
-msgstr ""
+msgstr "Sat zoeker"
 
 #: skin_default_skin.xml.h:526
 msgid "Saturation"
@@ -8072,15 +8071,15 @@ msgstr "Download geslaagd!"
 
 #: softcam.h:91 softcam.h:99
 msgid "started"
-msgstr "gestart"
+msgstr "Gestart"
 
 #: softcam.h:93 softcam.h:105
 msgid "active"
-msgstr "aktief"
+msgstr "Aktief"
 
 #: softcam.h:119
 msgid "Emu not found"
-msgstr "geen Softcam gevonden"
+msgstr "Geen Softcam gevonden"
 
 #: softcam.h:289
 msgid "Softcam selection:"
@@ -8230,9 +8229,8 @@ msgstr ""
 
 #: system_backup_restore.h:15
 msgid ""
-"Press -restore- and your saved settings will be restored from your "
-"swapstick / recording hdd! The Box will restart automatically for "
-"restoring!\n"
+"Press -restore- and your saved settings will be restored from your swapstick "
+"/ recording hdd! The Box will restart automatically for restoring!\n"
 "\n"
 "Press -backup- to save your actual settings to swapstick / recording hdd.\n"
 "WARNING: The old backup will be deleted!"
@@ -8371,7 +8369,7 @@ msgstr "USB informatie"
 
 #: system_update.h:90 system_update.h:216
 msgid "unstable"
-msgstr "onstabiel"
+msgstr "Onstabiel"
 
 #: system_update.h:123
 msgid "non-version"
@@ -8423,7 +8421,7 @@ msgstr ""
 
 #: timeshiftsettings.h:50
 msgid "permanent"
-msgstr "permanent"
+msgstr "Permanent"
 
 #: timeshiftsettings.h:53
 msgid "ask"
@@ -8761,7 +8759,7 @@ msgstr ""
 
 #: tithek_mainmenu.h:23
 msgid "Internet Radio"
-msgstr "Internet Browser"
+msgstr ""
 
 #: tithek_mainmenu.h:24
 msgid "KinoX"
@@ -8789,11 +8787,11 @@ msgstr ""
 
 #: tithek_mainmenu.h:30
 msgid "Movie4k"
-msgstr "Map voor films"
+msgstr ""
 
 #: tithek_mainmenu.h:31
 msgid "MyVideo"
-msgstr "Mijn Video"
+msgstr ""
 
 #: tithek_mainmenu.h:32
 msgid "Netzkino"
@@ -8809,35 +8807,35 @@ msgstr ""
 
 #: tithek_mainmenu.h:36
 msgid "Search (10)"
-msgstr "Zoek"
+msgstr "Zoek (10)"
 
 #: tithek_mainmenu.h:37
 msgid "Search (20)"
-msgstr "Zoek"
+msgstr "Zoek (20)"
 
 #: tithek_mainmenu.h:38
 msgid "Search (25)"
-msgstr "Zoek"
+msgstr "Zoek (25)"
 
 #: tithek_mainmenu.h:39
 msgid "Search (50)"
-msgstr "Zoek"
+msgstr "Zoek (50)"
 
 #: tithek_mainmenu.h:40
 msgid "Search Cast"
-msgstr "zoek oost"
+msgstr "Zoek cast"
 
 #: tithek_mainmenu.h:41
 msgid "Search (local)"
-msgstr "Zoek"
+msgstr "Zoek (lokaal)"
 
 #: tithek_mainmenu.h:42
 msgid "Search Movie"
-msgstr "Suche diesen Titel bei MyVideo"
+msgstr "Zoek film"
 
 #: tithek_mainmenu.h:43
 msgid "Search Serie"
-msgstr "Zoek"
+msgstr "Zoek serie"
 
 #: tithek_mainmenu.h:44
 msgid "Solarmovie"
@@ -8849,11 +8847,11 @@ msgstr ""
 
 #: tithek_mainmenu.h:46
 msgid "TecTime"
-msgstr "Timer"
+msgstr ""
 
 #: tithek_mainmenu.h:47
 msgid "TimeTv"
-msgstr "Timer"
+msgstr ""
 
 #: tithek_mainmenu.h:48
 msgid "Tips und Tricks"
@@ -8869,7 +8867,7 @@ msgstr ""
 
 #: tithek_mainmenu.h:51
 msgid "XXX-XVIDEOS"
-msgstr "FILMEN"
+msgstr ""
 
 #: tithek_mainmenu.h:52
 msgid "Youtube"
@@ -9028,7 +9026,7 @@ msgstr ""
 
 #: tpchoice.h:21
 msgid "Transponderlist"
-msgstr "Transponder:"
+msgstr "Transponderlijst"
 
 #: tpchoice.h:56
 msgid "FREQU"
@@ -9044,7 +9042,7 @@ msgstr ""
 
 #: tpchoice.h:74
 msgid "UNKNOWN"
-msgstr "onbekend"
+msgstr "Onbekend"
 
 #: tpchoice.h:81
 msgid "SR"
@@ -9079,7 +9077,7 @@ msgstr ""
 
 #: tpk_description.h:6
 msgid "Automatisch Timer setzen"
-msgstr "Automatisch zoeken"
+msgstr "Automatisch Timer plaatsen"
 
 #: tpk_description.h:7
 msgid "Black 3D Picons for tiTan."
@@ -9213,11 +9211,11 @@ msgstr ""
 
 #: tpk_description.h:39
 msgid "cut record files"
-msgstr "Anzahl Dateien: "
+msgstr "Geknipte opnames"
 
 #: tpk_description.h:40
 msgid "Default Font "
-msgstr "Standaard Icoon"
+msgstr "Standaard lettertype"
 
 #: tpk_description.h:41
 msgid "default Settings 19.2 Astra"
@@ -9225,7 +9223,7 @@ msgstr ""
 
 #: tpk_description.h:42
 msgid "Default Skin"
-msgstr "Standaard Icoon"
+msgstr ""
 
 #: tpk_description.h:43
 msgid "Default skin without MiniTV"
@@ -9439,7 +9437,7 @@ msgstr ""
 
 #: tpk_description.h:94
 msgid "news Plugin"
-msgstr "Applicaties"
+msgstr "Nieuws plugin"
 
 #: tpk_description.h:95
 msgid "Nightly Version of oscam 2xSlot intern + 1xUSB"
@@ -9475,7 +9473,7 @@ msgstr ""
 
 #: tpk_description.h:103
 msgid "optimize Plugin"
-msgstr "optimaliseren"
+msgstr "optimalisatie plugin"
 
 #: tpk_description.h:104 tpk_showname.h:79
 msgid "oscam spezial"
@@ -9537,7 +9535,7 @@ msgstr ""
 
 #: tpk_description.h:118
 msgid "scriptexec Plugin"
-msgstr "Script uitvoeren"
+msgstr "Script plugin"
 
 #: tpk_description.h:119
 msgid "Skin 0Acht5Zehn in black for tiTan. Please use black Picons."
@@ -9573,11 +9571,11 @@ msgstr ""
 
 #: tpk_description.h:127
 msgid "stock Plugin"
-msgstr "Applicaties"
+msgstr "Beurs plugin"
 
 #: tpk_description.h:128
 msgid "streaminfo Plugin"
-msgstr "Streaming"
+msgstr "Streaminfo plugin"
 
 #: tpk_description.h:129
 msgid "Tastensperre Plugin - entsperren mit rot/rot/gruen"
@@ -9585,7 +9583,7 @@ msgstr ""
 
 #: tpk_description.h:130
 msgid "Titan Mediacenter"
-msgstr "Media Center"
+msgstr ""
 
 #: tpk_description.h:131
 msgid "TiThek the Multimedia-thek."
@@ -9649,7 +9647,7 @@ msgstr ""
 
 #: tpk_description.h:146
 msgid "UPNP Media Render"
-msgstr "Media Center"
+msgstr ""
 
 #: tpk_description.h:147
 msgid "usbreset Plugin"
@@ -9657,7 +9655,7 @@ msgstr ""
 
 #: tpk_description.h:148
 msgid "weather Plugin"
-msgstr "Weerinformatie"
+msgstr "Weerinformatie plugin"
 
 #: tpk_description.h:149
 msgid "Webbrowser Plugin"
@@ -9725,15 +9723,15 @@ msgstr "Controleer de Secret Feed!"
 
 #: tpk.h:3428
 msgid "Section: "
-msgstr ""
+msgstr "Sectie:"
 
 #: tpk.h:3431
 msgid "Description:"
-msgstr "Geen beschrijving is gevonden"
+msgstr "Beschrijving:"
 
 #: tpk.h:3436 tpk.new.h:3411
 msgid "no description found"
-msgstr "Geen beschrijving is gevonden"
+msgstr "Geen beschrijving gevonden"
 
 #: tpk_section.h:1
 msgid "bootlogos"
@@ -9785,11 +9783,11 @@ msgstr "Zenderlogo's"
 
 #: tpk_section.h:13
 msgid "player"
-msgstr "Multimedia Player"
+msgstr "Multimedia speler"
 
 #: tpk_section.h:14
 msgid "player "
-msgstr "Multimedia Player"
+msgstr "Multimedia speler"
 
 #: tpk_section.h:16
 msgid "settings"
@@ -9817,7 +9815,7 @@ msgstr ""
 
 #: tpk_showname.h:2
 msgid "Action Man Italic"
-msgstr "Aktie na"
+msgstr ""
 
 #: tpk_showname.h:3
 msgid "Alpha Romanie G98"
@@ -9825,7 +9823,7 @@ msgstr ""
 
 #: tpk_showname.h:4
 msgid "Auto Timer"
-msgstr "Timer"
+msgstr "Auto Timer"
 
 #: tpk_showname.h:5
 msgid "Bikergirl"
@@ -9857,7 +9855,7 @@ msgstr ""
 
 #: tpk_showname.h:12
 msgid "Codepack"
-msgstr "Code is ok"
+msgstr ""
 
 #: tpk_showname.h:13
 msgid "Croissant"
@@ -9865,7 +9863,7 @@ msgstr ""
 
 #: tpk_showname.h:14
 msgid "Default Font"
-msgstr "Standaard Icoon"
+msgstr "Standaard lettertype"
 
 #: tpk_showname.h:15
 msgid "Digiface Regular"
@@ -9881,7 +9879,7 @@ msgstr "Dolby Digital (AC3) downmix"
 
 #: tpk_showname.h:18
 msgid "DVD Player"
-msgstr "VLC Player"
+msgstr ""
 
 #: tpk_showname.h:19
 msgid "Enigma2 WebIf API (Dreambox)"
@@ -9933,15 +9931,15 @@ msgstr ""
 
 #: tpk_showname.h:32
 msgid "GmediaRender"
-msgstr "Media Center"
+msgstr ""
 
 #: tpk_showname.h:33
 msgid "Goodtime"
-msgstr "Tijd"
+msgstr ""
 
 #: tpk_showname.h:34
 msgid "hbbtv Browser"
-msgstr "Internetbrowser"
+msgstr ""
 
 #: tpk_showname.h:35
 msgid "Ice Age Scrap likes UFS910"
@@ -10037,7 +10035,7 @@ msgstr ""
 
 #: tpk_showname.h:60
 msgid "Mediacenter FolderIcons"
-msgstr "MediaCenter icoon"
+msgstr "MediaCenter iconen"
 
 #: tpk_showname.h:61
 msgid "Mediacenter"
@@ -10101,7 +10099,7 @@ msgstr ""
 
 #: tpk_showname.h:82
 msgid "Parted"
-msgstr "gestart"
+msgstr ""
 
 #: tpk_showname.h:83
 msgid "Permanent Time"
@@ -10145,7 +10143,7 @@ msgstr ""
 
 #: tpk_showname.h:93
 msgid "Picons Kabel Transparent"
-msgstr "OSD transparantie"
+msgstr ""
 
 #: tpk_showname.h:94
 msgid "Picons Spiegel (ASTRA 19.2)"
@@ -10213,7 +10211,7 @@ msgstr ""
 
 #: tpk_showname.h:110
 msgid "Record cut"
-msgstr "Opnamepad instellen"
+msgstr ""
 
 #: tpk_showname.h:111
 msgid "RGUI"
@@ -10221,103 +10219,103 @@ msgstr ""
 
 #: tpk_showname.h:112
 msgid "Samba (Server)"
-msgstr "Samba Server"
+msgstr ""
 
 #: tpk_showname.h:113
 msgid "Screensaver Animation Kidds"
-msgstr "Screensaver Aanpassen"
+msgstr ""
 
 #: tpk_showname.h:114
 msgid "Screensaver Beach"
-msgstr "Screensaver type"
+msgstr ""
 
 #: tpk_showname.h:115
 msgid "Screensaver Bikes and Motorcycles"
-msgstr "screensaver interval"
+msgstr ""
 
 #: tpk_showname.h:116
 msgid "Screensaver Brands and Logos"
-msgstr "Screensaver Aanpassen"
+msgstr ""
 
 #: tpk_showname.h:117
 msgid "Screensaver Cars"
-msgstr "Screensaver type"
+msgstr ""
 
 #: tpk_showname.h:118
 msgid "Screensaver Celebrations"
-msgstr "screensaver vertraging"
+msgstr ""
 
 #: tpk_showname.h:119
 msgid "Screensaver Celebrities"
-msgstr "screensaver type"
+msgstr ""
 
 #: tpk_showname.h:120
 msgid "Screensaver Christmas"
-msgstr "Screensaver Aanpassen"
+msgstr ""
 
 #: tpk_showname.h:121
 msgid "Screensaver Creative Graphics"
-msgstr "screensaver pic"
+msgstr ""
 
 #: tpk_showname.h:122
 msgid "Screensaver Cute"
-msgstr "Screensaver Aanpassen"
+msgstr ""
 
 #: tpk_showname.h:123
 msgid "Screensaver Default"
-msgstr "Screensaver Aanpassen"
+msgstr ""
 
 #: tpk_showname.h:124
 msgid "Screensaver Digital Universe"
-msgstr "screensaver interval"
+msgstr ""
 
 #: tpk_showname.h:125
 msgid "Screensaver Dreamy Fantasy"
-msgstr "screensaver vertraging"
+msgstr ""
 
 #: tpk_showname.h:126
 msgid "Screensaver Eisriesenwelt"
-msgstr "screensaver interval"
+msgstr ""
 
 #: tpk_showname.h:127
 msgid "Screensaver Fantasy Girls"
-msgstr "screensaver interval"
+msgstr ""
 
 #: tpk_showname.h:128
 msgid "Screensaver FCBayern"
-msgstr "screensaver type"
+msgstr ""
 
 #: tpk_showname.h:129
 msgid "Screensaver Flowers"
-msgstr "Screensaver type"
+msgstr ""
 
 #: tpk_showname.h:130
 msgid "Screensaver Games"
-msgstr "Screensaver type"
+msgstr ""
 
 #: tpk_showname.h:131
 msgid "Screensaver HDR-Pictures"
-msgstr "Screensaver Aanpassen"
+msgstr ""
 
 #: tpk_showname.h:132
 msgid "Screensaver Hotgirls"
-msgstr "Screensaver type"
+msgstr ""
 
 #: tpk_showname.h:133
 msgid "Screensaver Hotgirls 2"
-msgstr "screensaver interval"
+msgstr ""
 
 #: tpk_showname.h:134
 msgid "Screensaver Inspirational"
-msgstr "screensaver interval"
+msgstr ""
 
 #: tpk_showname.h:135
 msgid "Screensaver Love"
-msgstr "Screensaver type"
+msgstr ""
 
 #: tpk_showname.h:136
 msgid "Screensaver Movies"
-msgstr "Screensaver type"
+msgstr ""
 
 #: tpk_showname.h:137
 msgid "Screensaver Nature and Landscape"
@@ -10325,31 +10323,31 @@ msgstr ""
 
 #: tpk_showname.h:138
 msgid "Screensaver Others"
-msgstr "screensaver type"
+msgstr ""
 
 #: tpk_showname.h:139
 msgid "Screensaver Photography"
-msgstr "screensaver type"
+msgstr ""
 
 #: tpk_showname.h:140
 msgid "Screensaver Planes"
-msgstr "Screensaver type"
+msgstr ""
 
 #: tpk_showname.h:141
 msgid "Screensaver Radio"
-msgstr "Screensaver type"
+msgstr ""
 
 #: tpk_showname.h:142
 msgid "Screensaver Sports"
-msgstr "Screensaver type"
+msgstr ""
 
 #: tpk_showname.h:143
 msgid "Screensaver Travel World"
-msgstr "screensaver interval"
+msgstr ""
 
 #: tpk_showname.h:145
 msgid "Settings 19.2 Astra"
-msgstr "Instellingen Ok?"
+msgstr ""
 
 #: tpk_showname.h:146
 msgid "Settings Astra 19.2, hotbird 13.0, Astra 28.2E"
@@ -10397,7 +10395,7 @@ msgstr ""
 
 #: tpk_showname.h:157
 msgid "Skin Cool"
-msgstr "Skinauswahl"
+msgstr ""
 
 #: tpk_showname.h:158
 msgid "Skin CoolMiniTV"
@@ -10405,7 +10403,7 @@ msgstr ""
 
 #: tpk_showname.h:159
 msgid "Skin Default"
-msgstr "Standaardinstelling"
+msgstr ""
 
 #: tpk_showname.h:160
 msgid "Skin DefNoMiniTV"
@@ -10413,7 +10411,7 @@ msgstr ""
 
 #: tpk_showname.h:161
 msgid "Skin MegaStyle blue"
-msgstr "Skin keuze"
+msgstr ""
 
 #: tpk_showname.h:162
 msgid "Skin MegaStyle blue Mini TV"
@@ -10441,7 +10439,7 @@ msgstr ""
 
 #: tpk_showname.h:168
 msgid "Skin SmartTV"
-msgstr "Skin keuze"
+msgstr ""
 
 #: tpk_showname.h:169
 msgid "Skin Tobayer01"
@@ -10469,11 +10467,11 @@ msgstr ""
 
 #: tpk_showname.h:177
 msgid "Titan Media Center"
-msgstr "Media Center"
+msgstr ""
 
 #: tpk_showname.h:178
 msgid "TiTan Mediathek"
-msgstr "Online Mediatheek"
+msgstr ""
 
 #: tpk_showname.h:179
 msgid "TitanNit Blood"
@@ -10489,15 +10487,15 @@ msgstr ""
 
 #: tpk_showname.h:182
 msgid "TitanNit on fire"
-msgstr "Bestand kan niet geopend worden"
+msgstr ""
 
 #: tpk_showname.h:184
 msgid "USB-RESET"
-msgstr "reset"
+msgstr ""
 
 #: tpk_showname.h:186
 msgid "Webbrowser Netsurf"
-msgstr "Internet Browser"
+msgstr ""
 
 #: tpk_showname.h:187
 msgid "Wlan 8192cu"
@@ -10687,7 +10685,7 @@ msgstr "Direkte verbinding"
 
 #: tunerconfig.h:656
 msgid "loop to Tuner"
-msgstr "doorgelust met tuner"
+msgstr "Doorgelust met tuner"
 
 #: tunerconfig.h:772
 msgid ""
@@ -10745,7 +10743,7 @@ msgstr "Zendernaam + tijd"
 
 #: vfdisplay.h:34
 msgid "time + channel"
-msgstr "tijd + zendernaam"
+msgstr "Tijd + zendernaam"
 
 #: vfdisplay.h:35 vfdisplay.h:41
 msgid "time"
@@ -10765,7 +10763,7 @@ msgstr "Datum + Tijd"
 
 #: vfdisplay.h:51
 msgid "blink"
-msgstr "knipperen"
+msgstr "Knipperen"
 
 #: vfdisplay.h:52
 msgid "fade out/in"
@@ -10781,7 +10779,7 @@ msgstr "Ster"
 
 #: vfdisplay.h:55
 msgid "blink star"
-msgstr "knipperende ster"
+msgstr "Knipperende ster"
 
 #: videomode.h:18 videomode.h:40 videomode.h:47
 msgid "Resolution Settings"
@@ -10818,3 +10816,4 @@ msgstr "Plaats"
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
+
