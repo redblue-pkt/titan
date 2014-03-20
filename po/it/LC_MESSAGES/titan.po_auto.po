@@ -598,8 +598,8 @@ msgstr "Messaggio"
 #: ard.h:133 ard.h:135 beeg.h:50 beeg.h:52 epgsearch.h:179 epgsearch.h:193
 #: epgsearch.h:207 giga.h:13 giga.h:15 imdbapi.h:287 imdb.h:712
 #: internetradio.h:13 internetradio.h:15 internettv.h:13 internettv.h:15
-#: kinox.h:33 kinox.h:35 kinox.h:177 kinox.h:179 kinox.h:784 kinox.h:786
-#: mlehd.h:59 mlehd.h:61 movie4k.h:78 movie4k.h:80 movie4k.h:234 movie4k.h:236
+#: kinox.h:33 kinox.h:35 kinox.h:179 kinox.h:181 kinox.h:796 kinox.h:798
+#: mlehd.h:59 mlehd.h:61 movie4k.h:78 movie4k.h:80 movie4k.h:235 movie4k.h:237
 #: myvideo.h:188 myvideo.h:190 myvideo.h:293 myvideo.h:295 netzkino.h:13
 #: netzkino.h:15 rtl2now.h:119 rtl2now.h:121 rtl2now.h:183 rtl2now.h:185
 #: rtl2now.h:247 rtl2now.h:249 rtl2now.h:311 rtl2now.h:313
@@ -2175,11 +2175,11 @@ msgstr "MediaDB Scan Informationi"
 msgid "Key Action - Plugins"
 msgstr "Azione Tasto Rosso - Plugins"
 
-#: kinox.h:292 movie4k.h:720 movie4k.h:846 movie4k.h:960 solarmovie.h:443
+#: kinox.h:296 movie4k.h:724 movie4k.h:856 movie4k.h:972 solarmovie.h:443
 msgid "Season"
 msgstr "Season"
 
-#: kinox.h:296 movie4k.h:724 movie4k.h:964 solarmovie.h:447
+#: kinox.h:300 movie4k.h:728 movie4k.h:976 solarmovie.h:447
 msgid "Episode"
 msgstr "Episodio"
 
