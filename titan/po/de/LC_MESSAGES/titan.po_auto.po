@@ -3128,7 +3128,7 @@ msgstr "Einstellungen"
 
 #: panel_settings.h:27 settings_autostart.h:303
 msgid "Ntfs Write"
-msgstr "NTFS schreiben"
+msgstr "mounte NTFS USB Datentr‰ger mit Schreibunterst√ºtzung"
 
 #: panel_settings.h:29 settings_autostart.h:305
 msgid "disable"
