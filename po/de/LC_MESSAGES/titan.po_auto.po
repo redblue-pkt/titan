@@ -3015,7 +3015,7 @@ msgstr "Update Liste"
 
 #: panel_settings_autostart.h:95 settings_autostart.h:226
 msgid "useUnknown910"
-msgstr ""
+msgstr "Lade stmdvb.ko mit der useUnknown910 Option"
 
 #: panel_settings_autostart.h:112 settings_autostart.h:133
 msgid "Old Audiofw"
@@ -5190,7 +5190,7 @@ msgstr "Senderliste fehlerhaft (Kanal nicht gefunden)!"
 
 #: settings_autostart.h:197
 msgid "swts"
-msgstr ""
+msgstr "Lade stmdvb.ko mit der swts Option"
 
 #: settings_autostart.h:215
 msgid "Cam Routing"
