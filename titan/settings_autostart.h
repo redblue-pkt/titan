@@ -77,18 +77,7 @@ void screensettings_autostart_default()
 		}
 		setchoiceboxselection(node, getownconfig(node->name));
 	}
-*/	
-	if(checkbox("UFS910") == 1)
-	{
-		node = addlistbox(settings_autostart, listbox, node, 1);
-		if(node != NULL)
-		{
-			node->type = CHOICEBOX;
-			changetext(node, _("useUnknown910")); changename(node, "useUnknown910");
-			addchoicebox(node, "1", _("yes")); addchoicebox(node, "0", _("no"));
-			setchoiceboxselection(node, getownconfig(node->name));
-		}
-	}
+*/
 
 	drawscreen(settings_autostart, 0, 0);
 	tmp = listbox->select;
@@ -228,6 +217,18 @@ void screensettings_autostart_audiovideo()
 		setchoiceboxselection(node, getownconfig(node->name));
 	}
 
+	if(checkbox("UFS910") == 1)
+	{
+		node = addlistbox(settings_autostart, listbox, node, 1);
+		if(node != NULL)
+		{
+			node->type = CHOICEBOX;
+			changetext(node, _("useUnknown910")); changename(node, "useUnknown910");
+			addchoicebox(node, "1", _("yes")); addchoicebox(node, "0", _("no"));
+			setchoiceboxselection(node, getownconfig(node->name));
+		}
+	}
+
 	drawscreen(settings_autostart, 0, 0);
 	tmp = listbox->select;
 
@@ -294,6 +295,19 @@ void screensettings_autostart_usb()
 		setchoiceboxselection(node, getownconfig(node->name));
 	}
 */
+
+	node = addlistbox(settings_autostart, listbox, node, 1);
+	if(node != NULL)
+	{
+		node->type = CHOICEBOX;
+		changetext(node, _("Ntfs Write"));
+		changename(node, "ntfs_write");
+		addchoicebox(node, "0", _("disable"));
+		addchoicebox(node, "1", _("ntfs-3g"));
+		addchoicebox(node, "2", _("ntfsmount"));
+		setchoiceboxselection(node, getownconfig(node->name));
+	}
+		
 	node = addlistbox(settings_autostart, listbox, node, 1);
 	if(node != NULL)
 	{
