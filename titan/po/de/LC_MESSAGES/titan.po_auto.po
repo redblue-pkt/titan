@@ -7701,7 +7701,7 @@ msgstr "Zeitzone"
 
 #: skin_default_skin.xml.h:647
 msgid "Tint"
-msgstr "Sättigung"
+msgstr "Temperatur"
 
 #: skin_default_skin.xml.h:648
 msgid "Titan Changelog"
