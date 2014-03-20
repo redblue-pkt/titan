@@ -263,14 +263,15 @@ msgstr "Выход"
 #: scan.h:2270 screensaveradjust.h:19 settings_autostart.h:26
 #: settings_autostart.h:88 settings_autostart.h:145 settings_autostart.h:155
 #: settings_autostart.h:173 settings_autostart.h:200 settings_autostart.h:209
-#: settings_autostart.h:218 settings_autostart.h:275 settings_autostart.h:293
-#: settings_autostart.h:407 settings_autostart.h:416 settings_autostart.h:425
-#: settings_autostart.h:545 settings_autostart.h:554 settings_autostart.h:563
-#: settings_overclocking.h:214 settings_overclocking.h:234
-#: settings_overclocking.h:244 skinadjust.h:49 stopifnotused.c:95
-#: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:35
-#: tithek_settings.h:39 tithek_settings.h:43 tmc.h:531 tmc.h:535
-#: tunerconfig.h:184 tunerconfig.h:213 tunerconfig.h:244 tunerconfig.h:277
+#: settings_autostart.h:218 settings_autostart.h:227 settings_autostart.h:284
+#: settings_autostart.h:302 settings_autostart.h:416 settings_autostart.h:425
+#: settings_autostart.h:434 settings_autostart.h:554 settings_autostart.h:563
+#: settings_autostart.h:572 settings_overclocking.h:214
+#: settings_overclocking.h:234 settings_overclocking.h:244 skinadjust.h:49
+#: stopifnotused.c:95 timeshiftsettings.h:59 timeshiftsettings.h:63
+#: tithek_settings.h:35 tithek_settings.h:39 tithek_settings.h:43 tmc.h:531
+#: tmc.h:535 tunerconfig.h:184 tunerconfig.h:213 tunerconfig.h:244
+#: tunerconfig.h:277
 msgid "no"
 msgstr ""
 
@@ -320,13 +321,14 @@ msgstr ""
 #: scan.h:2258 scan.h:2267 scan.h:2271 screensaveradjust.h:20
 #: settings_autostart.h:26 settings_autostart.h:88 settings_autostart.h:145
 #: settings_autostart.h:155 settings_autostart.h:173 settings_autostart.h:200
-#: settings_autostart.h:209 settings_autostart.h:218 settings_autostart.h:275
-#: settings_autostart.h:293 settings_autostart.h:407 settings_autostart.h:416
-#: settings_autostart.h:425 settings_autostart.h:545 settings_autostart.h:554
-#: settings_autostart.h:563 settings_overclocking.h:214
-#: settings_overclocking.h:234 settings_overclocking.h:244 stopifnotused.c:94
-#: timeshiftsettings.h:58 timeshiftsettings.h:62 tithek_settings.h:36
-#: tithek_settings.h:40 tithek_settings.h:44 tmc.h:532 tmc.h:536
+#: settings_autostart.h:209 settings_autostart.h:218 settings_autostart.h:227
+#: settings_autostart.h:284 settings_autostart.h:302 settings_autostart.h:416
+#: settings_autostart.h:425 settings_autostart.h:434 settings_autostart.h:554
+#: settings_autostart.h:563 settings_autostart.h:572
+#: settings_overclocking.h:214 settings_overclocking.h:234
+#: settings_overclocking.h:244 stopifnotused.c:94 timeshiftsettings.h:58
+#: timeshiftsettings.h:62 tithek_settings.h:36 tithek_settings.h:40
+#: tithek_settings.h:44 tmc.h:532 tmc.h:536
 msgid "yes"
 msgstr ""
 
@@ -2963,7 +2965,7 @@ msgstr "Scart в standby вкл."
 msgid "HighSR"
 msgstr "Высокая символьная скорость"
 
-#: panel_settings_autostart.h:176 settings_autostart.h:208
+#: panel_settings_autostart.h:176 settings_autostart.h:217
 msgid "Boot RGB Fix"
 msgstr ""
 
@@ -2971,7 +2973,7 @@ msgstr ""
 msgid "Autostart USB"
 msgstr "Автоматический запуск"
 
-#: panel_settings_autostart.h:192 settings_autostart.h:274
+#: panel_settings_autostart.h:192 settings_autostart.h:283
 msgid "Load Partition"
 msgstr "Загрузка раздела"
 
@@ -2979,12 +2981,12 @@ msgstr "Загрузка раздела"
 msgid "Fsck Record"
 msgstr "Проверка файловой системы записи"
 
-#: panel_settings_autostart.h:210 settings_autostart.h:292
+#: panel_settings_autostart.h:210 settings_autostart.h:301
 #: skin_default_skin.xml.h:614
 msgid "Swap"
 msgstr "Swap"
 
-#: panel_settings_autostart.h:219 settings_autostart.h:301
+#: panel_settings_autostart.h:219 settings_autostart.h:310
 msgid "Swap Size"
 msgstr "Swap"
 
@@ -3004,27 +3006,27 @@ msgstr "Максимальный сектор swap"
 msgid "Autostart EMU"
 msgstr "Автоматический запуск"
 
-#: panel_settings_autostart.h:285 settings_autostart.h:406
+#: panel_settings_autostart.h:285 settings_autostart.h:415
 msgid "Emu Control"
 msgstr "Контроль эмулятора"
 
-#: panel_settings_autostart.h:294 settings_autostart.h:415
+#: panel_settings_autostart.h:294 settings_autostart.h:424
 msgid "ftdi"
 msgstr "ftdi"
 
-#: panel_settings_autostart.h:303 settings_autostart.h:424
+#: panel_settings_autostart.h:303 settings_autostart.h:433
 msgid "pl2303"
 msgstr "pl2303"
 
-#: panel_settings_autostart.h:318 settings_autostart.h:544
+#: panel_settings_autostart.h:318 settings_autostart.h:553
 msgid "nfs server"
 msgstr "NFS сервер"
 
-#: panel_settings_autostart.h:327 settings_autostart.h:553
+#: panel_settings_autostart.h:327 settings_autostart.h:562
 msgid "samba server"
 msgstr "Samba сервер"
 
-#: panel_settings_autostart.h:336 settings_autostart.h:562
+#: panel_settings_autostart.h:336 settings_autostart.h:571
 msgid "scan wlan"
 msgstr "WLAN"
 
@@ -5066,7 +5068,11 @@ msgstr ""
 msgid "Channellist empty or corrupt (channel not found)!"
 msgstr ""
 
-#: settings_autostart.h:217
+#: settings_autostart.h:208
+msgid "swts"
+msgstr ""
+
+#: settings_autostart.h:226
 msgid "Cam Routing"
 msgstr ""
 
