@@ -205,6 +205,15 @@ void screensettings_autostart_audiovideo()
 	if(node != NULL)
 	{
 		node->type = CHOICEBOX;
+		changetext(node, _("swts")); changename(node, "swts");
+		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
+		setchoiceboxselection(node, getownconfig(node->name));
+	}
+
+	node = addlistbox(settings_autostart, listbox, node, 1);
+	if(node != NULL)
+	{
+		node->type = CHOICEBOX;
 		changetext(node, _("Boot RGB Fix")); changename(node, "bootrgbfix");
 		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
 		setchoiceboxselection(node, getownconfig(node->name));
