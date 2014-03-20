@@ -261,12 +261,12 @@ msgstr "Exit"
 #: rectimer.h:1084 rectimer.h:1089 rectimer.h:1094 rectimer.h:1099 scan.h:1768
 #: scan.h:2241 scan.h:2245 scan.h:2249 scan.h:2253 scan.h:2257 scan.h:2266
 #: scan.h:2270 screensaveradjust.h:19 settings_autostart.h:26
-#: settings_autostart.h:134 settings_autostart.h:144 settings_autostart.h:162
-#: settings_autostart.h:189 settings_autostart.h:198 settings_autostart.h:207
-#: settings_autostart.h:216 settings_autostart.h:227 settings_autostart.h:285
-#: settings_autostart.h:316 settings_autostart.h:430 settings_autostart.h:439
-#: settings_autostart.h:448 settings_autostart.h:502 settings_autostart.h:511
-#: settings_autostart.h:568 settings_autostart.h:577 settings_autostart.h:586
+#: settings_autostart.h:132 settings_autostart.h:141 settings_autostart.h:162
+#: settings_autostart.h:198 settings_autostart.h:207 settings_autostart.h:216
+#: settings_autostart.h:227 settings_autostart.h:285 settings_autostart.h:316
+#: settings_autostart.h:430 settings_autostart.h:439 settings_autostart.h:448
+#: settings_autostart.h:502 settings_autostart.h:511 settings_autostart.h:568
+#: settings_autostart.h:577 settings_autostart.h:586
 #: settings_overclocking.h:214 settings_overclocking.h:234
 #: settings_overclocking.h:244 skinadjust.h:49 stopifnotused.c:95
 #: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:35
@@ -319,12 +319,12 @@ msgstr "EPG Canale"
 #: rectimer.h:1080 rectimer.h:1085 rectimer.h:1090 rectimer.h:1095
 #: rectimer.h:1100 scan.h:1769 scan.h:2242 scan.h:2246 scan.h:2250 scan.h:2254
 #: scan.h:2258 scan.h:2267 scan.h:2271 screensaveradjust.h:20
-#: settings_autostart.h:26 settings_autostart.h:134 settings_autostart.h:144
-#: settings_autostart.h:162 settings_autostart.h:189 settings_autostart.h:198
-#: settings_autostart.h:207 settings_autostart.h:216 settings_autostart.h:227
-#: settings_autostart.h:285 settings_autostart.h:316 settings_autostart.h:430
-#: settings_autostart.h:439 settings_autostart.h:448 settings_autostart.h:502
-#: settings_autostart.h:568 settings_autostart.h:577 settings_autostart.h:586
+#: settings_autostart.h:26 settings_autostart.h:132 settings_autostart.h:141
+#: settings_autostart.h:162 settings_autostart.h:198 settings_autostart.h:207
+#: settings_autostart.h:216 settings_autostart.h:227 settings_autostart.h:285
+#: settings_autostart.h:316 settings_autostart.h:430 settings_autostart.h:439
+#: settings_autostart.h:448 settings_autostart.h:502 settings_autostart.h:568
+#: settings_autostart.h:577 settings_autostart.h:586
 #: settings_overclocking.h:214 settings_overclocking.h:234
 #: settings_overclocking.h:244 stopifnotused.c:94 timeshiftsettings.h:58
 #: timeshiftsettings.h:62 tithek_settings.h:36 tithek_settings.h:40
@@ -2962,11 +2962,11 @@ msgstr "Aggiorna Lista"
 msgid "useUnknown910"
 msgstr "sconosciuto"
 
-#: panel_settings_autostart.h:112 settings_autostart.h:133
+#: panel_settings_autostart.h:112
 msgid "Old Audiofw"
 msgstr "Old Audiofw"
 
-#: panel_settings_autostart.h:122 settings_autostart.h:143
+#: panel_settings_autostart.h:122 settings_autostart.h:161
 msgid "No Audiosync"
 msgstr "noaudiosync"
 
@@ -2974,7 +2974,7 @@ msgstr "noaudiosync"
 msgid "Boot Resolution"
 msgstr "Boot Resolution"
 
-#: panel_settings_autostart.h:140 settings_autostart.h:161
+#: panel_settings_autostart.h:140 settings_autostart.h:131
 msgid "Bootlogo"
 msgstr "Bootlogo"
 
@@ -2986,11 +2986,11 @@ msgstr "Spegnere"
 msgid "Scart On Standby"
 msgstr "Scart in Standby"
 
-#: panel_settings_autostart.h:167 settings_autostart.h:188
+#: panel_settings_autostart.h:167 settings_autostart.h:197
 msgid "HighSR"
 msgstr "HighSR"
 
-#: panel_settings_autostart.h:176 settings_autostart.h:206
+#: panel_settings_autostart.h:176 settings_autostart.h:140
 msgid "Boot RGB Fix"
 msgstr ""
 
@@ -5121,7 +5121,7 @@ msgstr "Frontend non può essere aperto o tipo sconosciuto"
 msgid "Channellist empty or corrupt (channel not found)!"
 msgstr "Lista canali con errori (Nessun canale trovato)!"
 
-#: settings_autostart.h:197
+#: settings_autostart.h:206
 msgid "swts"
 msgstr ""
 
