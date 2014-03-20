@@ -8590,7 +8590,7 @@ msgstr "TiThek Haftungsausschluss:"
 
 #: tithek.h:1485 tithek.h:1617 tithek.h:3196
 msgid "EDIT FAV"
-msgstr "Fav bearbeiten"
+msgstr "Fav Bearbeiten"
 
 #: tithek.h:1522
 msgid "Page"
