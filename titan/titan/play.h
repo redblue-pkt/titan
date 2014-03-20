@@ -744,9 +744,9 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 		}
 		else if(ostrcmp(mbox->name, "Downloads") == 0)
 			screenbgdownload(1);
-		else if(ostrcmp(mbox->name, "Search on Kinox") == 0)
+		else if(ostrcmp(mbox->name, "Search on KinoX") == 0)
 			ret = 2;
-		else if(ostrcmp(mbox->name, "Search on Kinox (local)") == 0)
+		else if(ostrcmp(mbox->name, "Search on KinoX (local)") == 0)
 			ret = 8;
 		else if(ostrcmp(mbox->name, "Search on Solarmovies (movie)") == 0)
 			ret = 3;
