@@ -1128,8 +1128,7 @@ msgstr "Host Url, geen http://"
 msgid ""
 "The file is being transfered to our other servers. This may take few minutes."
 msgstr ""
-"Het bestand wordt geüpload naar onze servers. Dit kan een paar minuten "
-"duren."
+"Het bestand wordt geüpload naar onze servers. Dit kan een paar minuten duren."
 
 #: divxstage.h:150 faststream.h:79 faststream.h:90 faststream.h:102
 #: faststream.h:160 filenuke.h:84 filenuke.h:95 filenuke.h:107 filenuke.h:157
@@ -1394,9 +1393,8 @@ msgid ""
 "then perform an update by Tpk to: "
 msgstr ""
 "Er mag slechts 1 plugin uit deze sectie geïnstalleerd worden, wilt u een "
-"andere selecteren zult u eerst een geïnstalleerde plugin moeten "
-"verwijderen. Is de plugin niet in het TitanNit menu zichtbaar voer dan een "
-"TPK update uit:"
+"andere selecteren zult u eerst een geïnstalleerde plugin moeten verwijderen. "
+"Is de plugin niet in het TitanNit menu zichtbaar voer dan een TPK update uit:"
 
 #: extensions.h:212 extensions.h:354
 msgid "Installing"
@@ -2670,7 +2668,7 @@ msgstr "Multi service"
 
 #: multiepg.h:437 multiepg.h:627
 msgid "MULTI EPG - Bouquets"
-msgstr "Multi EPG - Favoriten"
+msgstr "Multi EPG - Favorieten"
 
 #: multiepg.h:450
 msgid "MULTI EPG - Channel"
@@ -2686,7 +2684,7 @@ msgstr "Multi EPG - Providers"
 
 #: multiepg.h:489
 msgid "MULTI EPG - All Channels"
-msgstr "MULTI EPG - Alle zenders"
+msgstr "Multi EPG - Alle zenders"
 
 #: networkbrowser.h:944
 msgid ""
@@ -2987,7 +2985,7 @@ msgstr ""
 
 #: panel_settings_autostart.h:78
 msgid "updatelist"
-msgstr "Update Lijst"
+msgstr "Update lijst"
 
 #: panel_settings_autostart.h:95 settings_autostart.h:87
 msgid "useUnknown910"
@@ -2995,7 +2993,7 @@ msgstr ""
 
 #: panel_settings_autostart.h:112 settings_autostart.h:144
 msgid "Old Audiofw"
-msgstr "Oude Audiofw"
+msgstr "Oude ausio firmware"
 
 #: panel_settings_autostart.h:122 settings_autostart.h:154
 msgid "No Audiosync"
@@ -3866,7 +3864,7 @@ msgstr "Mijn Video"
 
 #: plugins_mc_skin.xml.h:39 skins_mc_skin.xml.h:39
 msgid "Picdenom Mode"
-msgstr "Picdenom Modus"
+msgstr "Picdenom modus"
 
 #: plugins_mc_skin.xml.h:40 skins_mc_skin.xml.h:40
 msgid "Pic HW-decode"
@@ -3982,11 +3980,11 @@ msgstr "DNS Adres"
 
 #: plugins_networkbrowser_skin.xml.h:8 skins_networkbrowser_skin.xml.h:8
 msgid "ftpport"
-msgstr "ftp poort"
+msgstr "FTP poort"
 
 #: plugins_networkbrowser_skin.xml.h:9 skins_networkbrowser_skin.xml.h:9
 msgid "hddreplacement"
-msgstr "hardeschijf vervanging"
+msgstr "Netwerkschijf als opname medium"
 
 #: plugins_networkbrowser_skin.xml.h:10 skins_networkbrowser_skin.xml.h:10
 msgid ""
@@ -4530,7 +4528,7 @@ msgstr ""
 
 #: plugins_zapback_skin.xml.h:5 skins_zapback_skin.xml.h:5
 msgid "schaltet zurueck auf Sender"
-msgstr "terug schakelen naar zender"
+msgstr "Terug schakelen naar zender"
 
 #: plugins_zapback_skin.xml.h:6 skins_zapback_skin.xml.h:6
 msgid "Start-> OK"
@@ -4538,55 +4536,55 @@ msgstr ""
 
 #: possetup.h:35
 msgid "move west"
-msgstr "beweeg naar west"
+msgstr "Beweeg naar west"
 
 #: possetup.h:36
 msgid "search west"
-msgstr "zoek west"
+msgstr "Zoek west"
 
 #: possetup.h:37
 msgid "search east"
-msgstr "zoek oost"
+msgstr "Zoek oost"
 
 #: possetup.h:38
 msgid "move east"
-msgstr "beweeg naar oost"
+msgstr "Beweeg naar oost"
 
 #: possetup.h:43
 msgid "step west"
-msgstr "stap west"
+msgstr "Stap west"
 
 #: possetup.h:44
 msgid "step east"
-msgstr "stap oost"
+msgstr "Stap oost"
 
 #: possetup.h:49
 msgid "limits off"
-msgstr "limieten uit"
+msgstr "Limieten uit"
 
 #: possetup.h:50
 msgid "limit west"
-msgstr "limiet west"
+msgstr "Limiet west"
 
 #: possetup.h:51
 msgid "limit east"
-msgstr "limiet oost"
+msgstr "Limiet oost"
 
 #: possetup.h:52
 msgid "limits on"
-msgstr "limiet aan"
+msgstr "Limiet aan"
 
 #: possetup.h:57
 msgid "store position"
-msgstr "sla positie op"
+msgstr "Sla positie op"
 
 #: possetup.h:58
 msgid "goto position"
-msgstr "ga naar positie"
+msgstr "Ga naar positie"
 
 #: possetup.h:63
 msgid "startposition"
-msgstr "startpositie"
+msgstr "Startpositie"
 
 #: possetup.h:98
 msgid ""
@@ -5635,7 +5633,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:120
 msgid "CAID Lock"
-msgstr ""
+msgstr "CAID slot"
 
 #: skin_default_skin.xml.h:122
 msgid "cancel"
@@ -5675,11 +5673,11 @@ msgstr "Zender zoeken"
 
 #: skin_default_skin.xml.h:133
 msgid "Channel Service"
-msgstr ""
+msgstr "Zender service"
 
 #: skin_default_skin.xml.h:136
 msgid "Ci-Modul internal Menu"
-msgstr ""
+msgstr "CI-module menu"
 
 #: skin_default_skin.xml.h:137
 msgid "Clear"
@@ -5851,7 +5849,7 @@ msgstr "DiSEqC herhalingen"
 
 #: skin_default_skin.xml.h:184
 msgid "diseqcscreen"
-msgstr ""
+msgstr "DiSEqC scherm"
 
 #: skin_default_skin.xml.h:185
 msgid "Diseqc Settings"
@@ -6498,8 +6496,9 @@ msgid ""
 "Lnb / Unicam navigate to the field and press the Red button."
 msgstr ""
 "Hier kunt u uw satelliet tuner instellen. Maak eerst uw satelliet keuze. Als "
-"u DiSEqC gebruikt ook de juiste poort selecteren. Voor uitgebreide LNB/"
-"UniCam instelingen navigeer naar het juiste veld en druk op de RODE toets."
+"u DiSEqC gebruikt ook de juiste poort selecteren. Voor uitgebreide "
+"LNB/UniCam instelingen navigeer naar het juiste veld en druk op de RODE "
+"toets."
 
 #: skin_default_skin.xml.h:300
 msgid ""
@@ -7095,7 +7094,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:444
 msgid "please wait"
-msgstr ""
+msgstr "Een ogenblik gedult"
 
 #: skin_default_skin.xml.h:445
 msgid "Plot"
@@ -7367,7 +7366,7 @@ msgstr "Frequentie"
 
 #: skin_default_skin.xml.h:522
 msgid "SATCR Number"
-msgstr ""
+msgstr "SATCR nummer"
 
 #: skin_default_skin.xml.h:523
 msgid "Satellite"
@@ -7559,7 +7558,7 @@ msgstr "Sla privé CA beschrijving over"
 
 #: skin_default_skin.xml.h:580
 msgid "SmartCard Reader"
-msgstr ""
+msgstr "Smartcard lezer"
 
 #: skin_default_skin.xml.h:581
 msgid "SNR:"
@@ -7747,7 +7746,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:638
 msgid "Timer and EPG"
-msgstr ""
+msgstr "Timer & EPG"
 
 #: skin_default_skin.xml.h:639
 msgid "Timer Record Path"
@@ -7855,7 +7854,7 @@ msgstr "Tuner instellingen"
 
 #: skin_default_skin.xml.h:670
 msgid "Tuner List"
-msgstr ""
+msgstr "Tuner lijst"
 
 #: skin_default_skin.xml.h:671
 msgid "Tuner Reception"
@@ -8225,9 +8224,8 @@ msgstr ""
 
 #: system_backup_restore.h:15
 msgid ""
-"Press -restore- and your saved settings will be restored from your "
-"swapstick / recording hdd! The Box will restart automatically for "
-"restoring!\n"
+"Press -restore- and your saved settings will be restored from your swapstick "
+"/ recording hdd! The Box will restart automatically for restoring!\n"
 "\n"
 "Press -backup- to save your actual settings to swapstick / recording hdd.\n"
 "WARNING: The old backup will be deleted!"
@@ -8900,7 +8898,7 @@ msgstr "Zeer klein (30 afbeeldingen)"
 
 #: tithek_settings.h:23 tithek_settings.h:32
 msgid "show in list"
-msgstr ""
+msgstr "Laat in lijst zien"
 
 #: tmc.h:387
 msgid "Status"
@@ -8924,39 +8922,39 @@ msgstr "Muziek"
 
 #: tmc.h:543
 msgid "video / audio"
-msgstr ""
+msgstr "film/muziek"
 
 #: tmc.h:544
 msgid "video / picture"
-msgstr ""
+msgstr "film/foto"
 
 #: tmc.h:545
 msgid "audio / picture"
-msgstr ""
+msgstr "muziek/foto"
 
 #: tmc.h:548
 msgid "pic1"
-msgstr ""
+msgstr "foto1"
 
 #: tmc.h:549
 msgid "pic2"
-msgstr ""
+msgstr "foto2"
 
 #: tmc.h:550
 msgid "pic3"
-msgstr ""
+msgstr "foto3"
 
 #: tmc.h:551
 msgid "pic4"
-msgstr ""
+msgstr "foto4"
 
 #: tmc.h:552
 msgid "pic5"
-msgstr ""
+msgstr "foto5"
 
 #: tmc.h:553
 msgid "no pic"
-msgstr ""
+msgstr "geen foto"
 
 #: tmc.h:699
 msgid "Delete selected entry ?"
@@ -9016,10 +9014,13 @@ msgid ""
 "\n"
 "Coming soon ..."
 msgstr ""
+"TopfieldVFD instellingen nog niet beschikbaart!\n"
+"\n"
+"Komt binnenkort ..."
 
 #: TopfieldVFD.c:72
 msgid "TopfieldVFD plugin not available, wrong box!"
-msgstr ""
+msgstr "TopfieldVFD plugin niet beschikbaar, foute ontvanger!"
 
 #: tpchoice.h:21
 msgid "Transponderlist"
@@ -9266,11 +9267,11 @@ msgstr ""
 
 #: tpk_description.h:53
 msgid "extended config Panel"
-msgstr ""
+msgstr "Uitgebreid configuratie paneel"
 
 #: tpk_description.h:54
 msgid "filemanager"
-msgstr ""
+msgstr "Bestandsbeheerder"
 
 #: tpk_description.h:55
 msgid "first titan game"
@@ -9410,7 +9411,7 @@ msgstr ""
 
 #: tpk_description.h:88
 msgid "Network browser extension for better Win7 compatibility"
-msgstr ""
+msgstr "Netwerk browser extensie voor betere Win7 ondersteuning"
 
 #: tpk_description.h:89
 msgid "Networkbrowser scanning an manage cifs/nfs/ftp shares."
@@ -9470,7 +9471,7 @@ msgstr ""
 
 #: tpk_description.h:103
 msgid "optimize Plugin"
-msgstr "optimalisatie plugin"
+msgstr "Optimalisatie plugin"
 
 #: tpk_description.h:104 tpk_showname.h:79
 msgid "oscam spezial"
@@ -9820,7 +9821,7 @@ msgstr ""
 
 #: tpk_showname.h:4
 msgid "Auto Timer"
-msgstr "Auto Timer"
+msgstr ""
 
 #: tpk_showname.h:5
 msgid "Bikergirl"
@@ -9896,7 +9897,7 @@ msgstr ""
 
 #: tpk_showname.h:24
 msgid "File Manager"
-msgstr ""
+msgstr "Bestandsbeheerder"
 
 #: tpk_showname.h:25
 msgid "Firelady"
@@ -9956,7 +9957,7 @@ msgstr ""
 
 #: tpk_showname.h:41
 msgid "KeyLock"
-msgstr ""
+msgstr "Toetsenblokkering"
 
 #: tpk_showname.h:42
 msgid "LCD Pearl"
@@ -10032,7 +10033,7 @@ msgstr ""
 
 #: tpk_showname.h:60
 msgid "Mediacenter FolderIcons"
-msgstr "MediaCenter iconen"
+msgstr "Media Center iconen"
 
 #: tpk_showname.h:61
 msgid "Mediacenter"
@@ -10100,7 +10101,7 @@ msgstr ""
 
 #: tpk_showname.h:83
 msgid "Permanent Time"
-msgstr ""
+msgstr "Permanente tijd"
 
 #: tpk_showname.h:84
 msgid "Picons Black3D (ASTRA 19.2)"
@@ -10633,7 +10634,7 @@ msgstr ""
 
 #: tsSchnitt.c:347
 msgid "Frage"
-msgstr ""
+msgstr "Vraag"
 
 #: tsSchnitt.c:347
 msgid "Soll der Schnitt wirklich abgebrochen werden?"
@@ -10748,7 +10749,7 @@ msgstr "Tijd"
 
 #: vfdisplay.h:36
 msgid "time small"
-msgstr "tijd klein"
+msgstr "Tijd klein"
 
 #: vfdisplay.h:38
 msgid "channel number"
@@ -10764,7 +10765,7 @@ msgstr "Knipperen"
 
 #: vfdisplay.h:52
 msgid "fade out/in"
-msgstr "in/uit faden"
+msgstr "In/uit faden"
 
 #: vfdisplay.h:53
 msgid "show record"
@@ -10812,4 +10813,5 @@ msgstr "Plaats"
 
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
-msgstr ""
+msgstr "Zapback is reeds actief... Stoppen?"
+
