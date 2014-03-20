@@ -28,13 +28,13 @@ void screenvideosettings()
 		itint = getconfigint("vs_tint", NULL);
 		tint->progresssize = (int)ceil(((float)itint / 2.56));
 	}
-/*
+
 	if(saturation != NULL)
 	{
 		isaturation = getconfigint("vs_saturation", NULL);
 		saturation->progresssize = (int)ceil(((float)isaturation / 2.56));
 	}
-*/
+
 
 	drawscreen(videosettings, 0, 0);
 	addscreenrc(videosettings, listbox);
