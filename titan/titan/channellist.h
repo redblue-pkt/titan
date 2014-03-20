@@ -1048,6 +1048,7 @@ start:
 				else
 				{
 					status.markmodus = 0;
+					status.moveblockcount = 0;
 					movesel = NULL;
 				}
 				changebutton(listmode, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, flag);
@@ -1055,7 +1056,7 @@ start:
 			}
 			if(listmode == MVMODE && listbox->select != NULL && movesel != NULL && (rcret == getrcconfigint("rcup", NULL) || rcret == getrcconfigint("rcdown", NULL) || rcret == getrcconfigint("rcchdown", NULL) || rcret == getrcconfigint("rcchup", NULL)))
 			{
-				if(rcret == getrcconfigint("rcchdown", NULL))
+				if(rcret == getrcconfigint("rcchdown", NULL) && listbox->linecount != (listbox->aktline + status.moveblockcount))
 				{
 					struct skin* tmp = listbox->select;
 					int i = 0, count = 0;
