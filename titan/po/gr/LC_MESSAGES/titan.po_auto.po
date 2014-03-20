@@ -261,13 +261,11 @@ msgstr "EXIT"
 #: rectimer.h:1084 rectimer.h:1089 rectimer.h:1094 rectimer.h:1099 scan.h:1768
 #: scan.h:2241 scan.h:2245 scan.h:2249 scan.h:2253 scan.h:2257 scan.h:2266
 #: scan.h:2270 screensaveradjust.h:19 settings_autostart.h:26
-#: settings_autostart.h:87 settings_autostart.h:144 settings_autostart.h:154
-#: settings_autostart.h:172 settings_autostart.h:181 settings_autostart.h:190
-#: settings_autostart.h:199 settings_autostart.h:208 settings_autostart.h:217
-#: settings_autostart.h:274 settings_autostart.h:283 settings_autostart.h:292
-#: settings_autostart.h:318 settings_autostart.h:406 settings_autostart.h:415
-#: settings_autostart.h:424 settings_autostart.h:478 settings_autostart.h:487
-#: settings_autostart.h:544 settings_autostart.h:553 settings_autostart.h:562
+#: settings_autostart.h:88 settings_autostart.h:145 settings_autostart.h:155
+#: settings_autostart.h:173 settings_autostart.h:200 settings_autostart.h:209
+#: settings_autostart.h:218 settings_autostart.h:275 settings_autostart.h:293
+#: settings_autostart.h:407 settings_autostart.h:416 settings_autostart.h:425
+#: settings_autostart.h:545 settings_autostart.h:554 settings_autostart.h:563
 #: settings_overclocking.h:214 settings_overclocking.h:234
 #: settings_overclocking.h:244 skinadjust.h:49 stopifnotused.c:95
 #: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:35
@@ -320,17 +318,15 @@ msgstr "EPG καναλιού"
 #: rectimer.h:1080 rectimer.h:1085 rectimer.h:1090 rectimer.h:1095
 #: rectimer.h:1100 scan.h:1769 scan.h:2242 scan.h:2246 scan.h:2250 scan.h:2254
 #: scan.h:2258 scan.h:2267 scan.h:2271 screensaveradjust.h:20
-#: settings_autostart.h:26 settings_autostart.h:87 settings_autostart.h:144
-#: settings_autostart.h:154 settings_autostart.h:172 settings_autostart.h:181
-#: settings_autostart.h:190 settings_autostart.h:199 settings_autostart.h:208
-#: settings_autostart.h:217 settings_autostart.h:274 settings_autostart.h:283
-#: settings_autostart.h:292 settings_autostart.h:318 settings_autostart.h:406
-#: settings_autostart.h:415 settings_autostart.h:424 settings_autostart.h:478
-#: settings_autostart.h:544 settings_autostart.h:553 settings_autostart.h:562
-#: settings_overclocking.h:214 settings_overclocking.h:234
-#: settings_overclocking.h:244 stopifnotused.c:94 timeshiftsettings.h:58
-#: timeshiftsettings.h:62 tithek_settings.h:36 tithek_settings.h:40
-#: tithek_settings.h:44 tmc.h:532 tmc.h:536
+#: settings_autostart.h:26 settings_autostart.h:88 settings_autostart.h:145
+#: settings_autostart.h:155 settings_autostart.h:173 settings_autostart.h:200
+#: settings_autostart.h:209 settings_autostart.h:218 settings_autostart.h:275
+#: settings_autostart.h:293 settings_autostart.h:407 settings_autostart.h:416
+#: settings_autostart.h:425 settings_autostart.h:545 settings_autostart.h:554
+#: settings_autostart.h:563 settings_overclocking.h:214
+#: settings_overclocking.h:234 settings_overclocking.h:244 stopifnotused.c:94
+#: timeshiftsettings.h:58 timeshiftsettings.h:62 tithek_settings.h:36
+#: tithek_settings.h:40 tithek_settings.h:44 tmc.h:532 tmc.h:536
 msgid "yes"
 msgstr ""
 
@@ -663,7 +659,7 @@ msgstr ""
 #: mc_pictureplayer_settings.h:34 mc_pictureplayer_settings.h:38
 #: mc_pictureplayer_settings.h:67 mc_videoplayer_settings.h:53 network.h:391
 #: panel_settings_autostart.h:61 panel_settings_overclocking.h:276
-#: readerconfig.h:413 settings_autostart.h:52 settings_overclocking.h:276
+#: readerconfig.h:413 settings_autostart.h:53 settings_overclocking.h:276
 #: transponder.h:256 transponder.h:264 transponder.h:415 transponder.h:423
 #: tunerconfig.h:671 vfdisplay.h:42 vfdisplay.h:50
 msgid "off"
@@ -818,31 +814,31 @@ msgstr ""
 msgid "Edit mode"
 msgstr ""
 
-#: channellist.h:689 channellist.h:1764 scan.h:530 skin_default_skin.xml.h:471
+#: channellist.h:689 channellist.h:1765 scan.h:530 skin_default_skin.xml.h:471
 msgid "Radio"
 msgstr ""
 
-#: channellist.h:694 channellist.h:1759 scan.h:528
+#: channellist.h:694 channellist.h:1760 scan.h:528
 msgid "TV"
 msgstr ""
 
-#: channellist.h:702 channellist.h:1227 channellist.h:1228 channellist.h:1440
+#: channellist.h:702 channellist.h:1228 channellist.h:1229 channellist.h:1441
 msgid "Bouquets"
 msgstr ""
 
-#: channellist.h:719 channellist.h:1580 skin_default_skin.xml.h:127
+#: channellist.h:719 channellist.h:1581 skin_default_skin.xml.h:127
 msgid "Channel"
 msgstr "Κανάλι"
 
-#: channellist.h:735 channellist.h:1261 channellist.h:1262 channellist.h:1514
+#: channellist.h:735 channellist.h:1262 channellist.h:1263 channellist.h:1515
 msgid "Satellites"
 msgstr ""
 
-#: channellist.h:752 channellist.h:1329 channellist.h:1330 channellist.h:1654
+#: channellist.h:752 channellist.h:1330 channellist.h:1331 channellist.h:1655
 msgid "Provider"
 msgstr ""
 
-#: channellist.h:771 channellist.h:772 channellist.h:1211 channellist.h:1212
+#: channellist.h:771 channellist.h:772 channellist.h:1212 channellist.h:1213
 msgid "All Channels"
 msgstr ""
 
@@ -866,7 +862,7 @@ msgstr ""
 msgid "Can't remove akive Service"
 msgstr ""
 
-#: channellist.h:1295 channellist.h:1296
+#: channellist.h:1296 channellist.h:1297
 msgid "Channels A-Z"
 msgstr ""
 
@@ -2353,8 +2349,7 @@ msgid "Install Tithek Tpk first !"
 msgstr ""
 
 #: mc_pictureplayer_settings.h:29 panel_settings_autostart.h:60
-#: panel_settings_autostart.h:132 settings_autostart.h:51
-#: settings_autostart.h:163
+#: panel_settings_autostart.h:132 settings_autostart.h:52
 msgid "low"
 msgstr ""
 
@@ -2907,68 +2902,68 @@ msgstr "Επιλογή εκκίνησης"
 msgid "fsckroot"
 msgstr "fsckroot"
 
-#: panel_settings_autostart.h:44 settings_autostart.h:35
+#: panel_settings_autostart.h:44
 msgid "bootstop"
 msgstr "Διακοπή της εκκίνησης"
 
-#: panel_settings_autostart.h:59 settings_autostart.h:50
+#: panel_settings_autostart.h:59 settings_autostart.h:51
 msgid "debug"
 msgstr "Debug"
 
 #: panel_settings_autostart.h:60 panel_settings_autostart.h:132
-#: settings_autostart.h:51 settings_autostart.h:163 tmc.h:558
+#: settings_autostart.h:52 tmc.h:558
 msgid "high"
 msgstr ""
 
-#: panel_settings_autostart.h:69 settings_autostart.h:60
+#: panel_settings_autostart.h:69 settings_autostart.h:61
 msgid "showip"
 msgstr "Εμφάνιση IP"
 
-#: panel_settings_autostart.h:70 settings_autostart.h:61
+#: panel_settings_autostart.h:70 settings_autostart.h:62
 msgid "status"
 msgstr ""
 
-#: panel_settings_autostart.h:70 settings_autostart.h:61
+#: panel_settings_autostart.h:70 settings_autostart.h:62
 msgid "ip"
 msgstr "i"
 
-#: panel_settings_autostart.h:78 settings_autostart.h:69
+#: panel_settings_autostart.h:78
 msgid "updatelist"
 msgstr "Ενημέρωση λίστας"
 
-#: panel_settings_autostart.h:95 settings_autostart.h:86
+#: panel_settings_autostart.h:95 settings_autostart.h:87
 msgid "useUnknown910"
 msgstr "Άγνωστο"
 
-#: panel_settings_autostart.h:112 settings_autostart.h:143
+#: panel_settings_autostart.h:112 settings_autostart.h:144
 msgid "Old Audiofw"
 msgstr "oldaudiofw"
 
-#: panel_settings_autostart.h:122 settings_autostart.h:153
+#: panel_settings_autostart.h:122 settings_autostart.h:154
 msgid "No Audiosync"
 msgstr "noaudiosync"
 
-#: panel_settings_autostart.h:131 settings_autostart.h:162
+#: panel_settings_autostart.h:131
 msgid "Boot Resolution"
 msgstr "Ανάλυση κατά την εκκίνηση"
 
-#: panel_settings_autostart.h:140 settings_autostart.h:171
+#: panel_settings_autostart.h:140 settings_autostart.h:172
 msgid "Bootlogo"
 msgstr "Εικόνα εκκίνησης"
 
-#: panel_settings_autostart.h:149 settings_autostart.h:180
+#: panel_settings_autostart.h:149
 msgid "Poweroff"
 msgstr "κλείσιμο"
 
-#: panel_settings_autostart.h:158 settings_autostart.h:189
+#: panel_settings_autostart.h:158
 msgid "Scart On Standby"
 msgstr "Scart σε αναμονή"
 
-#: panel_settings_autostart.h:167 settings_autostart.h:198
+#: panel_settings_autostart.h:167 settings_autostart.h:199
 msgid "HighSR"
 msgstr "Υψηλό SR"
 
-#: panel_settings_autostart.h:176 settings_autostart.h:207
+#: panel_settings_autostart.h:176 settings_autostart.h:208
 msgid "Boot RGB Fix"
 msgstr ""
 
@@ -2976,32 +2971,32 @@ msgstr ""
 msgid "Autostart USB"
 msgstr "Επιλογή εκκίνησης"
 
-#: panel_settings_autostart.h:192 settings_autostart.h:273
+#: panel_settings_autostart.h:192 settings_autostart.h:274
 msgid "Load Partition"
 msgstr "Φόρτωση partition"
 
-#: panel_settings_autostart.h:201 settings_autostart.h:282
+#: panel_settings_autostart.h:201
 msgid "Fsck Record"
 msgstr "fsckrecord"
 
-#: panel_settings_autostart.h:210 settings_autostart.h:291
+#: panel_settings_autostart.h:210 settings_autostart.h:292
 #: skin_default_skin.xml.h:614
 msgid "Swap"
 msgstr "Swap"
 
-#: panel_settings_autostart.h:219 settings_autostart.h:300
+#: panel_settings_autostart.h:219 settings_autostart.h:301
 msgid "Swap Size"
 msgstr "Swap"
 
-#: panel_settings_autostart.h:236 settings_autostart.h:317
+#: panel_settings_autostart.h:236
 msgid "Fsck Swap"
 msgstr "Swap"
 
-#: panel_settings_autostart.h:245 settings_autostart.h:326
+#: panel_settings_autostart.h:245
 msgid "Record Max Sectors"
 msgstr "record_max_sectors"
 
-#: panel_settings_autostart.h:262 settings_autostart.h:343
+#: panel_settings_autostart.h:262
 msgid "Swap Max Sectors"
 msgstr "swap_max_sectors"
 
@@ -3009,27 +3004,27 @@ msgstr "swap_max_sectors"
 msgid "Autostart EMU"
 msgstr "Επιλογή εκκίνησης"
 
-#: panel_settings_autostart.h:285 settings_autostart.h:405
+#: panel_settings_autostart.h:285 settings_autostart.h:406
 msgid "Emu Control"
 msgstr "Έλεγχος Emu"
 
-#: panel_settings_autostart.h:294 settings_autostart.h:414
+#: panel_settings_autostart.h:294 settings_autostart.h:415
 msgid "ftdi"
 msgstr "Ενεργοποίηση οδηγών ftdi"
 
-#: panel_settings_autostart.h:303 settings_autostart.h:423
+#: panel_settings_autostart.h:303 settings_autostart.h:424
 msgid "pl2303"
 msgstr "Ενεργοποίηση οδηγών PL2303"
 
-#: panel_settings_autostart.h:318 settings_autostart.h:543
+#: panel_settings_autostart.h:318 settings_autostart.h:544
 msgid "nfs server"
 msgstr "NFS server"
 
-#: panel_settings_autostart.h:327 settings_autostart.h:552
+#: panel_settings_autostart.h:327 settings_autostart.h:553
 msgid "samba server"
 msgstr "Samba Server"
 
-#: panel_settings_autostart.h:336 settings_autostart.h:561
+#: panel_settings_autostart.h:336 settings_autostart.h:562
 msgid "scan wlan"
 msgstr "WLAN"
 
@@ -3037,11 +3032,11 @@ msgstr "WLAN"
 msgid "Autostart Child Safety"
 msgstr "Παιδική προστασία"
 
-#: panel_settings_autostart.h:350 settings_autostart.h:477
+#: panel_settings_autostart.h:350
 msgid "Parental"
 msgstr ""
 
-#: panel_settings_autostart.h:359 settings_autostart.h:486
+#: panel_settings_autostart.h:359
 msgid "Pin"
 msgstr "PIN"
 
@@ -5071,7 +5066,7 @@ msgstr ""
 msgid "Channellist empty or corrupt (channel not found)!"
 msgstr ""
 
-#: settings_autostart.h:216
+#: settings_autostart.h:217
 msgid "Cam Routing"
 msgstr ""
 
