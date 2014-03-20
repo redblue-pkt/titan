@@ -6858,7 +6858,7 @@ msgstr "Verbindungstest"
 
 #: skin_default_skin.xml.h:402
 msgid "Newsletter"
-msgstr "Aktuelles"
+msgstr "Neuigkeiten"
 
 #: skin_default_skin.xml.h:403
 msgid "Next EPG Time"
