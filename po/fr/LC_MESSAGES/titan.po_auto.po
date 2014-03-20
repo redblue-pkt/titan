@@ -263,10 +263,10 @@ msgstr "SORTIE"
 #: scan.h:2270 screensaveradjust.h:19 settings_autostart.h:26
 #: settings_autostart.h:132 settings_autostart.h:141 settings_autostart.h:162
 #: settings_autostart.h:198 settings_autostart.h:207 settings_autostart.h:216
-#: settings_autostart.h:227 settings_autostart.h:285 settings_autostart.h:316
-#: settings_autostart.h:430 settings_autostart.h:439 settings_autostart.h:448
-#: settings_autostart.h:502 settings_autostart.h:511 settings_autostart.h:568
-#: settings_autostart.h:577 settings_autostart.h:586
+#: settings_autostart.h:227 settings_autostart.h:285 settings_autostart.h:305
+#: settings_autostart.h:316 settings_autostart.h:430 settings_autostart.h:439
+#: settings_autostart.h:448 settings_autostart.h:502 settings_autostart.h:511
+#: settings_autostart.h:568 settings_autostart.h:577 settings_autostart.h:586
 #: settings_overclocking.h:214 settings_overclocking.h:234
 #: settings_overclocking.h:244 skinadjust.h:49 stopifnotused.c:95
 #: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:35
@@ -3053,7 +3053,7 @@ msgstr "Automount"
 msgid "Ntfs Write"
 msgstr ""
 
-#: panel_settings.h:29 settings_autostart.h:305
+#: panel_settings.h:29
 msgid "disable"
 msgstr "Désactiver"
 
