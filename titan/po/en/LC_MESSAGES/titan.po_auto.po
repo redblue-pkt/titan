@@ -92,8 +92,8 @@ msgstr ""
 #: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
 #: putlocker.h:32 putlocker.h:79 putlocker.h:85 putlocker.h:136
 #: putlocker.h:146 putlocker.h:219 readerconfig.h:343 readerconfig.h:443
-#: readerconfig.h:444 readerconfig.h:488 readerconfig.h:489 record.h:355
-#: record.h:987 record.h:1438 rectimer.h:557 rectimer.h:1210 rectimer.h:1356
+#: readerconfig.h:444 readerconfig.h:488 readerconfig.h:489 record.h:369
+#: record.h:1001 record.h:1452 rectimer.h:557 rectimer.h:1210 rectimer.h:1356
 #: rectimer.h:1368 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:28 scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1888
@@ -188,8 +188,8 @@ msgstr ""
 #: primeshare.h:79 primeshare.h:124 putlocker.h:32 putlocker.h:79
 #: putlocker.h:85 putlocker.h:136 putlocker.h:146 putlocker.h:219
 #: readerconfig.h:343 readerconfig.h:443 readerconfig.h:444 readerconfig.h:488
-#: readerconfig.h:489 record.h:90 record.h:355 record.h:987 record.h:1174
-#: record.h:1413 record.h:1438 rectimer.h:557 rectimer.h:1210 rectimer.h:1356
+#: readerconfig.h:489 record.h:90 record.h:369 record.h:1001 record.h:1188
+#: record.h:1427 record.h:1452 rectimer.h:557 rectimer.h:1210 rectimer.h:1356
 #: rectimer.h:1368 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:28 scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1888
@@ -568,8 +568,8 @@ msgstr ""
 #: primeshare.h:73 primeshare.h:79 primeshare.h:124 putlocker.h:32
 #: putlocker.h:79 putlocker.h:85 putlocker.h:136 putlocker.h:146
 #: putlocker.h:219 readerconfig.h:343 readerconfig.h:443 readerconfig.h:444
-#: readerconfig.h:488 readerconfig.h:489 record.h:355 record.h:987
-#: record.h:1174 record.h:1413 record.h:1438 rectimer.h:557 rectimer.h:1210
+#: readerconfig.h:488 readerconfig.h:489 record.h:369 record.h:1001
+#: record.h:1188 record.h:1427 record.h:1452 rectimer.h:557 rectimer.h:1210
 #: rectimer.h:1356 rectimer.h:1368 restoredefault.h:10 restoredefault.h:19
 #: restoredefault.h:23 restoredefault.h:32 restoredefault.h:47 rgui.h:30
 #: rgui.h:118 rgui.h:134 rtl2now.h:28 scan.h:1598 scan.h:1600 scan.h:1628
@@ -4755,11 +4755,11 @@ msgstr "ERROR: No free space on device"
 msgid "Record / Timeshift / Stream"
 msgstr ""
 
-#: record.h:355
+#: record.h:369
 msgid "Box recording finished poweroff in 30sec !"
 msgstr "Recording finished. Receiver will Power-Off in 30 Seconds"
 
-#: record.h:987
+#: record.h:1001
 msgid ""
 "Can't find free Tuner for Record.\n"
 "Switch to Recording/Timeshift Channel ?"
@@ -4767,40 +4767,40 @@ msgstr ""
 "ERROR: Can't find a free Tuner for the recording.\n"
 "Switch to Recording/Timeshift Channel?"
 
-#: record.h:1173
+#: record.h:1187
 msgid "Timer Record start !"
 msgstr "Timer Recording started!"
 
-#: record.h:1288 record.h:1297 record.h:1308 record.h:1343 record.h:1352
-#: record.h:1384 stream.h:15 stream.h:37
+#: record.h:1302 record.h:1311 record.h:1322 record.h:1357 record.h:1366
+#: record.h:1398 stream.h:15 stream.h:37
 msgid "stop"
 msgstr "Stop"
 
-#: record.h:1306 record.h:1380 skin_default_skin.xml.h:475
+#: record.h:1320 record.h:1394 skin_default_skin.xml.h:475
 msgid "Record"
 msgstr ""
 
-#: record.h:1358 record.h:1367 record.h:1390
+#: record.h:1372 record.h:1381 record.h:1404
 msgid "change"
 msgstr "Change"
 
-#: record.h:1376 record.h:1406
+#: record.h:1390 record.h:1420
 msgid "add recording (stop after current event)"
 msgstr "Add recording (stop after current event)"
 
-#: record.h:1377 record.h:1419
+#: record.h:1391 record.h:1433
 msgid "add recording (indefinitely)"
 msgstr "Add recording (Unlimited)"
 
-#: record.h:1378 record.h:1424
+#: record.h:1392 record.h:1438
 msgid "add recording (enter duration)"
 msgstr "Add recording (Enter duration)"
 
-#: record.h:1413
+#: record.h:1427
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr "Can't get EPG time or the EPG Endtime is faulty."
 
-#: record.h:1438
+#: record.h:1452
 msgid "Record started"
 msgstr "Recording started"
 
