@@ -7777,7 +7777,7 @@ msgstr "Konfiguration"
 
 #: skin_default_skin.xml.h:670
 msgid "Tuner List"
-msgstr ""
+msgstr "Verfügbare Tuner"
 
 #: skin_default_skin.xml.h:671
 msgid "Tuner Reception"
