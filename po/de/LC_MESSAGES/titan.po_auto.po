@@ -6372,7 +6372,7 @@ msgstr ""
 msgid ""
 "Here you can make your system settings. Use to navigate the control cross "
 "and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie Ihre erweiterte System Einstellungen vornehmen."
+msgstr "Hier können Sie Ihre Autostart Einstellungen vornehmen. Diese werden beim Systemstart (Booten) einmalig verwendet."
 
 #: skin_default_skin.xml.h:291
 msgid ""
