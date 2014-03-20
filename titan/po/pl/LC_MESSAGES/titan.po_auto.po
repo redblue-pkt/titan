@@ -265,13 +265,13 @@ msgstr "WYJŚCIE"
 #: settings_autostart.h:189 settings_autostart.h:198 settings_autostart.h:207
 #: settings_autostart.h:216 settings_autostart.h:227 settings_autostart.h:285
 #: settings_autostart.h:316 settings_autostart.h:430 settings_autostart.h:439
-#: settings_autostart.h:448 settings_autostart.h:568 settings_autostart.h:577
-#: settings_autostart.h:586 settings_overclocking.h:214
-#: settings_overclocking.h:234 settings_overclocking.h:244 skinadjust.h:49
-#: stopifnotused.c:95 timeshiftsettings.h:59 timeshiftsettings.h:63
-#: tithek_settings.h:35 tithek_settings.h:39 tithek_settings.h:43 tmc.h:531
-#: tmc.h:535 tunerconfig.h:184 tunerconfig.h:213 tunerconfig.h:244
-#: tunerconfig.h:277
+#: settings_autostart.h:448 settings_autostart.h:502 settings_autostart.h:511
+#: settings_autostart.h:568 settings_autostart.h:577 settings_autostart.h:586
+#: settings_overclocking.h:214 settings_overclocking.h:234
+#: settings_overclocking.h:244 skinadjust.h:49 stopifnotused.c:95
+#: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:35
+#: tithek_settings.h:39 tithek_settings.h:43 tmc.h:531 tmc.h:535
+#: tunerconfig.h:184 tunerconfig.h:213 tunerconfig.h:244 tunerconfig.h:277
 msgid "no"
 msgstr ""
 
@@ -323,8 +323,8 @@ msgstr ""
 #: settings_autostart.h:162 settings_autostart.h:189 settings_autostart.h:198
 #: settings_autostart.h:207 settings_autostart.h:216 settings_autostart.h:227
 #: settings_autostart.h:285 settings_autostart.h:316 settings_autostart.h:430
-#: settings_autostart.h:439 settings_autostart.h:448 settings_autostart.h:568
-#: settings_autostart.h:577 settings_autostart.h:586
+#: settings_autostart.h:439 settings_autostart.h:448 settings_autostart.h:502
+#: settings_autostart.h:568 settings_autostart.h:577 settings_autostart.h:586
 #: settings_overclocking.h:214 settings_overclocking.h:234
 #: settings_overclocking.h:244 stopifnotused.c:94 timeshiftsettings.h:58
 #: timeshiftsettings.h:62 tithek_settings.h:36 tithek_settings.h:40
@@ -3034,11 +3034,11 @@ msgstr ""
 msgid "Autostart Child Safety"
 msgstr "Blokada rodzicielska"
 
-#: panel_settings_autostart.h:350
+#: panel_settings_autostart.h:350 settings_autostart.h:501
 msgid "Parental"
 msgstr ""
 
-#: panel_settings_autostart.h:359
+#: panel_settings_autostart.h:359 settings_autostart.h:510
 msgid "Pin"
 msgstr "Wtyczki"
 
