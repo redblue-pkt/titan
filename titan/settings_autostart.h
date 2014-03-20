@@ -28,6 +28,7 @@ void screensettings_autostart_default()
 		}
 	}
 
+/*
 	node = addlistbox(settings_autostart, listbox, node, 1);
 	if(node != NULL)
 	{
@@ -42,7 +43,7 @@ void screensettings_autostart_default()
 		}
 		setchoiceboxselection(node, getownconfig(node->name));
 	}
-
+*/
 	node = addlistbox(settings_autostart, listbox, node, 1);
 	if(node != NULL)
 	{
@@ -61,7 +62,7 @@ void screensettings_autostart_default()
 		addchoicebox(node, "status", _("status")); addchoicebox(node, "ip", _("ip"));
 		setchoiceboxselection(node, getownconfig(node->name));
 	}
-
+/*
 	node = addlistbox(settings_autostart, listbox, node, 1);
 	if(node != NULL)
 	{
@@ -76,7 +77,7 @@ void screensettings_autostart_default()
 		}
 		setchoiceboxselection(node, getownconfig(node->name));
 	}
-	
+*/	
 	if(checkbox("UFS910") == 1)
 	{
 		node = addlistbox(settings_autostart, listbox, node, 1);
@@ -154,7 +155,7 @@ void screensettings_autostart_audiovideo()
 		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
 		setchoiceboxselection(node, getownconfig(node->name));
 	}
-
+/*
 	node = addlistbox(settings_autostart, listbox, node, 1);
 	if(node != NULL)
 	{
@@ -163,7 +164,7 @@ void screensettings_autostart_audiovideo()
 		addchoicebox(node, "low", _("low")); addchoicebox(node, "high", _("high"));
 		setchoiceboxselection(node, getownconfig(node->name));
 	}
-
+*/
 	node = addlistbox(settings_autostart, listbox, node, 1);
 	if(node != NULL)
 	{
@@ -172,7 +173,7 @@ void screensettings_autostart_audiovideo()
 		addchoicebox(node, "y", _("yes")); addchoicebox(node, "n", _("no"));
 		setchoiceboxselection(node, getownconfig(node->name));
 	}
-
+/*
 	node = addlistbox(settings_autostart, listbox, node, 1);
 	if(node != NULL)
 	{
@@ -190,7 +191,7 @@ void screensettings_autostart_audiovideo()
 		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
 		setchoiceboxselection(node, getownconfig(node->name));
 	}
-
+*/
 	node = addlistbox(settings_autostart, listbox, node, 1);
 	if(node != NULL)
 	{
@@ -274,7 +275,7 @@ void screensettings_autostart_usb()
 		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
 		setchoiceboxselection(node, getownconfig(node->name));
 	}
-
+/*
 	node = addlistbox(settings_autostart, listbox, node, 1);
 	if(node != NULL)
 	{
@@ -283,7 +284,7 @@ void screensettings_autostart_usb()
 		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
 		setchoiceboxselection(node, getownconfig(node->name));
 	}
-
+*/
 	node = addlistbox(settings_autostart, listbox, node, 1);
 	if(node != NULL)
 	{
@@ -309,7 +310,7 @@ void screensettings_autostart_usb()
 		}
 		setchoiceboxselection(node, getownconfig(node->name));
 	 }
-
+/*
 	node = addlistbox(settings_autostart, listbox, node, 1);
 	if(node != NULL)
 	{
@@ -352,7 +353,7 @@ void screensettings_autostart_usb()
 		}
 		setchoiceboxselection(node, getownconfig(node->name));
 	}
-
+*/
 	drawscreen(settings_autostart, 0, 0);
 	tmp = listbox->select;
 
@@ -469,7 +470,7 @@ void screensettings_autostart_safety()
 	listbox->aktpage = 1;
 
 //		changetitletext(settings_autostart, _("Autostart Child Safety"));
-
+/*
 	node = addlistbox(settings_autostart, listbox, node, 1);
 	if(node != NULL)
 	{
@@ -490,7 +491,7 @@ void screensettings_autostart_safety()
 		else
 			changeinput(node, "0000");
 	}
-
+*/
 	drawscreen(settings_autostart, 0, 0);
 	tmp = listbox->select;
 
