@@ -13,7 +13,7 @@ void screensettings_autostart_default()
 	listbox->aktline = 1;
 	listbox->aktpage = 1;
 
-	int i = 0;
+//	int i = 0;
 //	changetitletext(settings_autostart, _("Autostart Defaults"));
 
 	if(file_exist("/etc/.usbimage"))
@@ -493,7 +493,7 @@ void screensettings_autostart_safety()
 	listbox->aktpage = 1;
 
 //		changetitletext(settings_autostart, _("Autostart Child Safety"));
-/*
+
 	node = addlistbox(settings_autostart, listbox, node, 1);
 	if(node != NULL)
 	{
@@ -514,7 +514,7 @@ void screensettings_autostart_safety()
 		else
 			changeinput(node, "0000");
 	}
-*/
+
 	drawscreen(settings_autostart, 0, 0);
 	tmp = listbox->select;
 
