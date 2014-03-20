@@ -1128,7 +1128,8 @@ msgstr "Host Url, geen http://"
 msgid ""
 "The file is being transfered to our other servers. This may take few minutes."
 msgstr ""
-"Het bestand wordt geüpload naar onze servers. Dit kan een paar minuten duren."
+"Het bestand wordt geüpload naar onze servers. Dit kan een paar minuten "
+"duren."
 
 #: divxstage.h:150 faststream.h:79 faststream.h:90 faststream.h:102
 #: faststream.h:160 filenuke.h:84 filenuke.h:95 filenuke.h:107 filenuke.h:157
@@ -1393,8 +1394,9 @@ msgid ""
 "then perform an update by Tpk to: "
 msgstr ""
 "Er mag slechts 1 plugin uit deze sectie geïnstalleerd worden, wilt u een "
-"andere selecteren zult u eerst een geïnstalleerde plugin moeten verwijderen. "
-"Is de plugin niet in het TitanNit menu zichtbaar voer dan een TPK update uit:"
+"andere selecteren zult u eerst een geïnstalleerde plugin moeten "
+"verwijderen. Is de plugin niet in het TitanNit menu zichtbaar voer dan een "
+"TPK update uit:"
 
 #: extensions.h:212 extensions.h:354
 msgid "Installing"
@@ -6496,9 +6498,8 @@ msgid ""
 "Lnb / Unicam navigate to the field and press the Red button."
 msgstr ""
 "Hier kunt u uw satelliet tuner instellen. Maak eerst uw satelliet keuze. Als "
-"u DiSEqC gebruikt ook de juiste poort selecteren. Voor uitgebreide "
-"LNB/UniCam instelingen navigeer naar het juiste veld en druk op de RODE "
-"toets."
+"u DiSEqC gebruikt ook de juiste poort selecteren. Voor uitgebreide LNB/"
+"UniCam instelingen navigeer naar het juiste veld en druk op de RODE toets."
 
 #: skin_default_skin.xml.h:300
 msgid ""
@@ -8224,8 +8225,9 @@ msgstr ""
 
 #: system_backup_restore.h:15
 msgid ""
-"Press -restore- and your saved settings will be restored from your swapstick "
-"/ recording hdd! The Box will restart automatically for restoring!\n"
+"Press -restore- and your saved settings will be restored from your "
+"swapstick / recording hdd! The Box will restart automatically for "
+"restoring!\n"
 "\n"
 "Press -backup- to save your actual settings to swapstick / recording hdd.\n"
 "WARNING: The old backup will be deleted!"
@@ -10814,4 +10816,3 @@ msgstr "Plaats"
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Zapback is reeds actief... Stoppen?"
-
