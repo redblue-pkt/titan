@@ -49,6 +49,7 @@ void screenadjust()
 	struct skin* playerbuffersize = getscreennode(adjust, "playerbuffersize");
 	struct skin* playerbufferseektime = getscreennode(adjust, "playerbufferseektime");
 	struct skin* sataswitch = getscreennode(adjust, "sataswitch");
+	struct skin* dualboot = getscreennode(adjust, "dualboot");
 
 	struct skin* tmp = NULL;
 
@@ -225,6 +226,15 @@ void screenadjust()
 	addchoicebox(usecec, "1", _("yes"));
 	setchoiceboxselection(usecec, getconfig("usecec", NULL));
 
+	addchoicebox(dualboot, "0", _("no"));
+	addchoicebox(dualboot, "1", _("yes"));
+	setchoiceboxselection(dualboot, getconfig("dualboot", NULL));
+
+	if(checkbox("ATEMIO5000") == 1 || checkbox("ATEMIO5200") == 1)
+		dualboot->hidden = NO;
+	else
+		dualboot->hidden = YES;
+
 	if(status.security == 1)
 		emucontrol->hidden = NO;
 	else
@@ -365,8 +375,13 @@ void screenadjust()
 					addownconfig("sataswitch", sataswitch->ret);
 					setsataswitch(sataswitch->ret);
 				}
-			}
-			
+			}	
+			addconfigscreen("dualboot", dualboot);
+			if(dualboot->ret != NULL && ostrcmp(dualboot->ret, "0") == 0)
+				unlink("/mnt/config/dualboot");
+			else
+				system("touch /mnt/config/dualboot");
+
 			addconfigscreen("playerbuffersize", playerbuffersize);
 			addconfigscreen("playerbufferseektime", playerbufferseektime);
 			
