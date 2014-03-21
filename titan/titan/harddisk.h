@@ -132,8 +132,8 @@ void screenfilesystem(char* dev)
 
 	for(i = 0; i < count; i++)
 	{
-		if(i == 0 && checkfilesystemexist("ext3") == 0) continue;
-		else if(i == 1 && checkfilesystemexist("ext4") == 0) continue;
+		if(i == 0 && checkfilesystemexist("ext4") == 0) continue;
+		else if(i == 1 && checkfilesystemexist("ext3") == 0) continue;
 		else if(i == 2 && checkfilesystemexist("ext2") == 0) continue;
 		else if(i == 3 && checkfilesystemexist("jfs") == 0) continue;
 		else if(i == 4 && checkfilesystemexist("vfat") == 0) continue;
@@ -141,8 +141,8 @@ void screenfilesystem(char* dev)
 		tmp = addlistbox(screen, listbox, tmp, 1);
 		if(tmp != NULL)
 		{
-			if(i == 0) tmpstr = "ext3";
-			else if(i == 1) tmpstr = "ext4";	
+			if(i == 0) tmpstr = "ext4";
+			else if(i == 1) tmpstr = "ext3";	
 			else if(i == 2) tmpstr = "ext2";
 			else if(i == 3) tmpstr = "jfs";
 			else if(i == 4) tmpstr = "vfat";
