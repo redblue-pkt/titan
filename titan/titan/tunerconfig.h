@@ -427,10 +427,11 @@ int screentunerreceptiondvbs(struct dvbdev* tuner)
 
 start:
 	createsatlist(tuner, tunerreceptiondvbs, listbox, maxsat);
-
+	b3->hidden = YES;
 	drawscreen(tunerreceptiondvbs, 0, 0);
 	addscreenrc(tunerreceptiondvbs, listbox);
 
+			
 	tmp = listbox->select;
 	while(1)
 	{
@@ -443,24 +444,16 @@ start:
 			break;
 		}
 
-		printf("listbox->select->text: %s\n",listbox->select->text);
-		
 		if(ostrcmp(listbox->select->text, _("Lnb / Unicable")) == 0)
-		{
-		printf("1111111\n");
 			b3->hidden = NO;
-		}
 		else
-		{
-			printf("2222222\n");
 			b3->hidden = YES;	
-		}
-				
+		drawscreen(tunerreceptiondvbs, 0, 0);
+					
 		if(ostrcmp(listbox->select->name, "sat_type") == 0)
 		{
 			if((ostrcmp(listbox->select->ret, "0") == 0) && (maxsat != 1))
 			{
-printf("333333\n");
 				delconfigtmpall();
 				delmarkedscreennodes(tunerreceptiondvbs, 1);
 				delmarkedscreennodes(tunerreceptiondvbs, 2);
@@ -471,7 +464,6 @@ printf("333333\n");
 			}
 			else if((ostrcmp(listbox->select->ret, "1") == 0) && (maxsat != 2))
 			{
-printf("444444\n");
 				delconfigtmpall();
 				delmarkedscreennodes(tunerreceptiondvbs, 1);
 				delmarkedscreennodes(tunerreceptiondvbs, 2);
@@ -482,8 +474,6 @@ printf("444444\n");
 			}
 			else if((ostrcmp(listbox->select->ret, "2") == 0) && (maxsat != 4))
 			{
-printf("555555\n");
-
 				delconfigtmpall();
 				delmarkedscreennodes(tunerreceptiondvbs, 1);
 				delmarkedscreennodes(tunerreceptiondvbs, 2);
@@ -494,8 +484,6 @@ printf("555555\n");
 			}
 			else if((ostrcmp(listbox->select->ret, "3") == 0) && (maxsat != 8))
 			{
-printf("666666\n");
-			
 				delconfigtmpall();
 				delmarkedscreennodes(tunerreceptiondvbs, 1);
 				delmarkedscreennodes(tunerreceptiondvbs, 2);
@@ -506,8 +494,6 @@ printf("666666\n");
 			}
 			else if((ostrcmp(listbox->select->ret, "4") == 0) && (maxsat != MAXSAT))
 			{
-printf("77777\n");
-
 				delconfigtmpall();
 				delmarkedscreennodes(tunerreceptiondvbs, 1);
 				delmarkedscreennodes(tunerreceptiondvbs, 2);
@@ -516,9 +502,8 @@ printf("77777\n");
 				maxsat = MAXSAT;
 				goto start;
 			}
-printf("888888\n");
 		}
-printf("999999\n");
+
 		if(rcret == getrcconfigint("rcred", NULL))
 		{
 			if(listbox->select != NULL && ostrcmp(listbox->select->text, _("Lnb / Unicable")) == 0 && listbox->select->ret != NULL && ostrcmp(listbox->select->ret, "0") != 0)
