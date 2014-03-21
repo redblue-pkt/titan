@@ -81,8 +81,10 @@ void screenskinadjust()
 		status.bottomoffset = getconfigint("fbbottomoffset", NULL);
 		
 		if(offsetchange == 1 && (ostrcmp(getconfig("av_mode3d", NULL), "sbs") == 0 || ostrcmp(getconfig("av_mode3d", NULL), "tab") == 0)) clearfball();
-		
-		drawscreen(skinadjust, 0, 0);
+
+		// disable box is very slow...
+		if(checkbox("ATEVIO5200") != 1)
+			drawscreen(skinadjust, 0, 0);
 
 		if(rcret == getrcconfigint("rcexit", NULL))
 		{
@@ -127,8 +129,8 @@ void screenskinadjust()
 			addconfigscreencheck("showrecfreesize", showrecfreesize, "0");
 			status.showrecfreesize = getconfigint("showrecfreesize", NULL);
 
-      writeskinconfigtmp();
-      if(reboot == 1)
+			writeskinconfigtmp();
+			if(reboot == 1)
 			{
 				textbox(_("Message"), _("Receiver now reboot !!!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 				oshutdown(3, 0);
@@ -138,7 +140,7 @@ void screenskinadjust()
 		}
 	}
 
-  delskinconfigtmpall();
+	delskinconfigtmpall();
 	delownerrc(skinadjust);
 	clearscreen(skinadjust);
 }
