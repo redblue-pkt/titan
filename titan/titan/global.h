@@ -1111,7 +1111,7 @@ int checkflash()
 	else if(checkbox("ATEMIO5000") == 1 || checkbox("ATEMIO5200") == 1)
 	{
 		dev = ostrcat(dev, "rootfs", 1, 0);
-		dir = ostrcat(dir, " type", 1, 0);
+		dir = ostrcat(dir, "/", 1, 0);
 	}
 	else
 	{
@@ -1128,9 +1128,7 @@ int checkflash()
 		cmd = ostrcat(cmd, dev, 1, 0);
 		cmd = ostrcat(cmd, " | ", 1, 0);
 		cmd = ostrcat(cmd, "grep", 1, 0);
-		cmd = ostrcat(cmd, " \"/", 1, 0);
-		cmd = ostrcat(cmd, dir, 1, 0);
-		cmd = ostrcat(cmd, "\" | ", 1, 0);
+		cmd = ostrcat(cmd, " \"/ type\" | ", 1, 0);
 		cmd = ostrcat(cmd, "awk {'print $3'}", 1, 0);
 	}
 	else
