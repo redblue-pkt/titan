@@ -113,8 +113,8 @@ msgstr ""
 #: timeshiftsettings.h:45 titan.c:274 titan.c:338 titan.c:347 titan.c:957
 #: titan.c:966 titan.c:1077 titan.c:1098 titan.c:1104 titan.c:1115
 #: titan.c:1121 tithek.c:79 tithek_global.h:238 tithek.h:620 tithek.h:1116
-#: tithek.h:1159 tithek.h:1409 tithek.h:1431 tithek.h:1436 tithek.h:1450
-#: tithek.h:3101 tithek.h:3164 tithek.h:3178 tithek.h:3188 tiwakeup.h:66
+#: tithek.h:1159 tithek.h:1411 tithek.h:1433 tithek.h:1438 tithek.h:1452
+#: tithek.h:3103 tithek.h:3166 tithek.h:3180 tithek.h:3190 tiwakeup.h:66
 #: tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759
 #: tmdb.h:922 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3185 tpk.new.h:3167
 #: tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327
@@ -214,8 +214,8 @@ msgstr "Ok"
 #: timeshiftsettings.h:45 titan.c:274 titan.c:338 titan.c:347 titan.c:957
 #: titan.c:966 titan.c:1077 titan.c:1098 titan.c:1104 titan.c:1115
 #: titan.c:1121 tithek.c:79 tithek_global.h:238 tithek.h:620 tithek.h:1116
-#: tithek.h:1159 tithek.h:1409 tithek.h:1431 tithek.h:1436 tithek.h:1450
-#: tithek.h:3101 tithek.h:3164 tithek.h:3178 tithek.h:3188 tiwakeup.h:66
+#: tithek.h:1159 tithek.h:1411 tithek.h:1433 tithek.h:1438 tithek.h:1452
+#: tithek.h:3103 tithek.h:3166 tithek.h:3180 tithek.h:3190 tiwakeup.h:66
 #: tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759
 #: tmdb.h:922 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3185 tpk.new.h:3167
 #: tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327
@@ -584,8 +584,8 @@ msgstr "Ja / VZAP unendlich"
 #: timeshift.h:162 timeshiftsettings.h:45 titan.c:274 titan.c:338 titan.c:347
 #: titan.c:1077 titan.c:1098 titan.c:1104 titan.c:1115 titan.c:1121
 #: tithek.c:79 tithek_global.h:238 tithek.h:620 tithek.h:1116 tithek.h:1159
-#: tithek.h:1409 tithek.h:1431 tithek.h:1436 tithek.h:3101 tithek.h:3164
-#: tithek.h:3178 tithek.h:3188 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
+#: tithek.h:1411 tithek.h:1433 tithek.h:1438 tithek.h:3103 tithek.h:3166
+#: tithek.h:3180 tithek.h:3190 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922 TopfieldVFD.c:68
 #: TopfieldVFD.c:72 tpk.h:3185 tpk.new.h:3167 tunerconfig.h:782 unlock.h:20
 #: unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:53 videoweed.h:35
@@ -1626,7 +1626,7 @@ msgstr "Datei/Verzeichnis konnte nicht gelöscht werden!"
 msgid "Can't show this file!"
 msgstr "Diese Datei kann nicht angezeigt werden"
 
-#: filemanager.h:355 mc_internetbrowser.h:41 mc_wetterinfo.h:41 tithek.h:1436
+#: filemanager.h:355 mc_internetbrowser.h:41 mc_wetterinfo.h:41 tithek.h:1438
 msgid "Registration needed, please contact Atemio !"
 msgstr ""
 "Registrierung erforderlich, bitte kontaktieren Sie Atemio!\n"
@@ -4400,8 +4400,8 @@ msgstr "TiThek Menü"
 msgid "TiThek Settings"
 msgstr "TiThek"
 
-#: plugins_tithek_skin.xml.h:3 skins_tithek_skin.xml.h:3 tithek.h:1495
-#: tithek.h:1627 tithek.h:3206
+#: plugins_tithek_skin.xml.h:3 skins_tithek_skin.xml.h:3 tithek.h:1497
+#: tithek.h:1629 tithek.h:3208
 msgid "ADD FAV"
 msgstr "Fav Hinzufügen"
 
@@ -8516,7 +8516,7 @@ msgstr ""
 msgid "Tithek - Mainmenu"
 msgstr "TiThek - Hauptmenü"
 
-#: tithek_global.h:238 tithek.h:3101
+#: tithek_global.h:238 tithek.h:3103
 msgid "The hoster is not yet supported !"
 msgstr "Der Anbieter wird zur Zeit nicht unterstützt!"
 
@@ -8606,43 +8606,43 @@ msgstr "Datei in Streampfad herunterladen"
 msgid "Download Full File (background)"
 msgstr "Datei in Streampfad herunterladen (im Hintergrund)"
 
-#: tithek.h:1331
+#: tithek.h:1333
 msgid "Choose your Streaming Playback Modus from the following list"
 msgstr ""
 
-#: tithek.h:1402 tithek.h:1421
+#: tithek.h:1404 tithek.h:1423
 msgid "Filename"
 msgstr "Dateiname"
 
-#: tithek.h:1409
+#: tithek.h:1411
 msgid "Start playback"
 msgstr "Beginne Wiedergabe"
 
-#: tithek.h:1431
+#: tithek.h:1433
 msgid "Can't get Streamurl !"
 msgstr "Streamadresse ist nicht erreichbar!"
 
-#: tithek.h:1450
+#: tithek.h:1452
 msgid "TitanNit Tithek disclaimer"
 msgstr "TiThek Haftungsausschluss:"
 
-#: tithek.h:1490 tithek.h:1622 tithek.h:3201
+#: tithek.h:1492 tithek.h:1624 tithek.h:3203
 msgid "EDIT FAV"
 msgstr "Fav Bearbeiten"
 
-#: tithek.h:1527
+#: tithek.h:1529
 msgid "Page"
 msgstr "Seite"
 
-#: tithek.h:3164
+#: tithek.h:3166
 msgid "Remove this Favorite ?"
 msgstr "Wollen Sie diesen Eintrag aus Ihren Favoriten löschen?"
 
-#: tithek.h:3178
+#: tithek.h:3180
 msgid "Add this link as Favorite ?"
 msgstr "Wollen Sie diesen Link zu Ihren Favoriten hinzufügen?"
 
-#: tithek.h:3188
+#: tithek.h:3190
 msgid "Edit this Favorite ?"
 msgstr "Diesen Favoriten bearbeiten?"
 
