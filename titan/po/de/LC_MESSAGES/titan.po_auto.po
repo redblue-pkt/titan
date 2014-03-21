@@ -6299,7 +6299,7 @@ msgstr "Hier können Sie den Netzwerk Autostart konfigurieren."
 
 #: skin_default_skin.xml.h:288
 msgid "Here you can make your Overclocking settings."
-msgstr "Hier können Sie die Cpu �bertacktung konfigurieren."
+msgstr "Hier können Sie die Cpu Übertacktung konfigurieren."
 
 #: skin_default_skin.xml.h:289
 msgid "Here you can make your picture and sound settings."
