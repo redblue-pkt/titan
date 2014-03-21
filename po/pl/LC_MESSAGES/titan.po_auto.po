@@ -98,7 +98,7 @@ msgstr ""
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:28 scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1888
 #: scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 scriptexec.h:41 service.h:710
-#: service.h:951 skinadjust.h:135 skins_dlna_skin.xml.h:8 skinselector.h:218
+#: service.h:951 skinadjust.h:133 skins_dlna_skin.xml.h:8 skinselector.h:218
 #: skins_facebook_skin.xml.h:5 skins_mboxinfo_skin.xml.h:2
 #: skins_mc_skin.xml.h:38 skins_optimize_skin.xml.h:3 skins_rgui_skin.xml.h:3
 #: skins_tiwakeup_skin.xml.h:3 skins_wins3_skin.xml.h:3 sock.h:952
@@ -574,7 +574,7 @@ msgstr ""
 #: restoredefault.h:23 restoredefault.h:32 restoredefault.h:47 rgui.h:30
 #: rgui.h:118 rgui.h:134 rtl2now.h:28 scan.h:1598 scan.h:1600 scan.h:1628
 #: scan.h:1630 scan.h:1640 scan.h:1888 scan.h:1979 scan.h:2345 scart.h:12
-#: scart.h:25 service.h:710 service.h:951 skinadjust.h:135 skinselector.h:218
+#: scart.h:25 service.h:710 service.h:951 skinadjust.h:133 skinselector.h:218
 #: sock.h:952 softcam.h:403 solarmovie.h:35 solarmovie.h:47 solarmovie.h:295
 #: spinner.h:18 stopifnotused.c:32 streamcloud.h:31 streamcloud.h:78
 #: streamcloud.h:91 streamcloud.h:122 streamcloud.h:161 stream.h:33
@@ -5188,7 +5188,7 @@ msgstr ""
 msgid "press red"
 msgstr ""
 
-#: skinadjust.h:135
+#: skinadjust.h:133
 msgid "Receiver now reboot !!!"
 msgstr ""
 
