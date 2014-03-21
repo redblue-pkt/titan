@@ -1313,8 +1313,10 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 					if(checkbox("UFS910") == 1 && !file_exist("/var/swap/swapfile"))
 						addmenulist(&mlist, "Streaming Playback Caching (5MB)", NULL, NULL, 0, 0);
 					else
+					{
 //						addmenulist(&mlist, "Streaming Playback Caching (7.5MB)", NULL, NULL, 0, 0);
 						addmenulist(&mlist, "Streaming Playback Caching (10MB)", NULL, NULL, 0, 0);
+					}
 #endif
 					if(file_exist(getconfig("rec_streampath", NULL)) && status.expertmodus >= 11 || file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack"))
 					{
