@@ -87,8 +87,7 @@ msgstr ""
 #: play.h:1295 play.h:1296 play.h:1489 play.h:1649 play.h:1660
 #: plugins_dlna_skin.xml.h:8 plugins_facebook_skin.xml.h:5
 #: plugins_mboxinfo_skin.xml.h:2 plugins_mc_skin.xml.h:38
-#: plugins_optimize_skin.xml.h:3 plugins_rgui_skin.xml.h:3
-#: plugins_tiwakeup_skin.xml.h:3 plugins_wins3_skin.xml.h:3 possetup.h:98
+#: plugins_optimize_skin.xml.h:3 plugins_rgui_skin.xml.h:3 possetup.h:98
 #: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
 #: putlocker.h:32 putlocker.h:79 putlocker.h:85 putlocker.h:136
 #: putlocker.h:146 putlocker.h:219 readerconfig.h:343 readerconfig.h:443
@@ -183,17 +182,17 @@ msgstr "OK"
 #: plugins_lcdsamsung_skin.xml.h:8 plugins_mboxinfo_skin.xml.h:1
 #: plugins_mc_skin.xml.h:22 plugins_optimize_skin.xml.h:2
 #: plugins_panel_skin.xml.h:15 plugins_rgui_skin.xml.h:2
-#: plugins_stopifnotused_skin.xml.h:4 plugins_tiwakeup_skin.xml.h:2
-#: plugins_wins3_skin.xml.h:1 possetup.h:98 primeshare.h:29 primeshare.h:73
-#: primeshare.h:79 primeshare.h:124 putlocker.h:32 putlocker.h:79
-#: putlocker.h:85 putlocker.h:136 putlocker.h:146 putlocker.h:219
-#: readerconfig.h:343 readerconfig.h:443 readerconfig.h:444 readerconfig.h:488
-#: readerconfig.h:489 record.h:90 record.h:369 record.h:1001 record.h:1188
-#: record.h:1427 record.h:1452 rectimer.h:557 rectimer.h:1210 rectimer.h:1356
-#: rectimer.h:1368 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
-#: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
-#: rtl2now.h:28 scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1888
-#: scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 scriptexec.h:41 service.h:710
+#: plugins_stopifnotused_skin.xml.h:4 possetup.h:98 primeshare.h:29
+#: primeshare.h:73 primeshare.h:79 primeshare.h:124 putlocker.h:32
+#: putlocker.h:79 putlocker.h:85 putlocker.h:136 putlocker.h:146
+#: putlocker.h:219 readerconfig.h:343 readerconfig.h:443 readerconfig.h:444
+#: readerconfig.h:488 readerconfig.h:489 record.h:90 record.h:369
+#: record.h:1001 record.h:1188 record.h:1427 record.h:1452 rectimer.h:557
+#: rectimer.h:1210 rectimer.h:1356 rectimer.h:1368 restoredefault.h:10
+#: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
+#: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:28
+#: scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1888 scan.h:1979
+#: scan.h:2345 scart.h:12 scart.h:25 scriptexec.h:41 service.h:710
 #: service.h:951 skin_default_skin.xml.h:218 skins_autotimer_skin.xml.h:7
 #: skins_callmonitor1_skin.xml.h:11 skins_catcatch_skin.xml.h:4
 #: skins_dlna_skin.xml.h:2 skinselector.h:218 skins_facebook_skin.xml.h:4
@@ -955,11 +954,11 @@ msgstr "---"
 #: plugins_panel_skin.xml.h:28 plugins_permtime_skin.xml.h:1
 #: plugins_readerconfig_skin.xml.h:10 plugins_rgui_skin.xml.h:9
 #: plugins_stock_skin.xml.h:6 plugins_stopifnotused_skin.xml.h:8
-#: plugins_streaminfo_skin.xml.h:6 plugins_tithek_skin.xml.h:22
-#: plugins_tiwakeup_skin.xml.h:9 plugins_tmc_skin.xml.h:18
-#: plugins_tmdb_skin.xml.h:11 plugins_tsSchnitt_skin.xml.h:11
-#: plugins_weather_skin.xml.h:4 plugins_wins3_skin.xml.h:4
-#: plugins_zapback_skin.xml.h:7 skin_default_skin.xml.h:736
+#: plugins_streaminfo_skin.xml.h:6 plugins_tithek_skin.xml.h:1
+#: plugins_tiwakeup_skin.xml.h:1 plugins_tmc_skin.xml.h:1
+#: plugins_tmdb_skin.xml.h:1 plugins_tsSchnitt_skin.xml.h:1
+#: plugins_weather_skin.xml.h:1 plugins_wins3_skin.xml.h:1
+#: plugins_zapback_skin.xml.h:1 skin_default_skin.xml.h:736
 #: skins_autotimer_skin.xml.h:13 skins_callmonitor1_skin.xml.h:19
 #: skins_catcatch_skin.xml.h:7 skins_dlna_skin.xml.h:15
 #: skins_facebook_skin.xml.h:6 skins_filemanager_skin.xml.h:6
@@ -2129,7 +2128,7 @@ msgstr ""
 msgid "Email  \t\tinfo@atemio.de"
 msgstr ""
 
-#: info.h:27 plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9 titan.c:966
+#: info.h:27 skins_tmc_skin.xml.h:9 titan.c:966
 msgid "Info"
 msgstr "Thông tin"
 
@@ -3170,8 +3169,7 @@ msgstr ""
 "Đầu thu sẽ khởi động lại và wizard sẽ được bắt đầu"
 
 #: play.h:396 play.h:430 plugins_imdbapi_skin.xml.h:9
-#: plugins_imdb_skin.xml.h:9 plugins_tmc_skin.xml.h:16
-#: plugins_tmdb_skin.xml.h:9 skins_imdbapi_skin.xml.h:9
+#: plugins_imdb_skin.xml.h:9 skins_imdbapi_skin.xml.h:9
 #: skins_imdb_skin.xml.h:9 skins_tmc_skin.xml.h:16 skins_tmdb_skin.xml.h:9
 msgid "Title:"
 msgstr ""
@@ -3189,10 +3187,9 @@ msgid "Year:"
 msgstr ""
 
 #: play.h:416 play.h:450 plugins_imdbapi_skin.xml.h:3
-#: plugins_imdb_skin.xml.h:3 plugins_mc_skin.xml.h:30 plugins_tmc_skin.xml.h:7
-#: plugins_tmdb_skin.xml.h:1 skins_imdbapi_skin.xml.h:3
-#: skins_imdb_skin.xml.h:3 skins_mc_skin.xml.h:30 skins_tmc_skin.xml.h:7
-#: skins_tmdb_skin.xml.h:1
+#: plugins_imdb_skin.xml.h:3 plugins_mc_skin.xml.h:30
+#: skins_imdbapi_skin.xml.h:3 skins_imdb_skin.xml.h:3 skins_mc_skin.xml.h:30
+#: skins_tmc_skin.xml.h:7 skins_tmdb_skin.xml.h:1
 msgid "Genre:"
 msgstr ""
 
@@ -3357,7 +3354,7 @@ msgstr ""
 msgid "Jump To (min)"
 msgstr ""
 
-#: play.h:1280 play.h:1286 plugins_tmc_skin.xml.h:1 skins_tmc_skin.xml.h:1
+#: play.h:1280 play.h:1286 skins_tmc_skin.xml.h:1
 msgid "EPG Info"
 msgstr "Thông tin EPG"
 
@@ -3370,9 +3367,8 @@ msgid "Really Delete ?"
 msgstr "Bạn muốn xóa?"
 
 #: play.h:1417 plugins_networkbrowser_skin.xml.h:5 plugins_stock_skin.xml.h:4
-#: plugins_weather_skin.xml.h:2 skin_default_skin.xml.h:169
-#: skins_networkbrowser_skin.xml.h:5 skins_stock_skin.xml.h:4
-#: skins_weather_skin.xml.h:2
+#: skin_default_skin.xml.h:169 skins_networkbrowser_skin.xml.h:5
+#: skins_stock_skin.xml.h:4 skins_weather_skin.xml.h:2
 msgid "DEL"
 msgstr "Xóa"
 
@@ -3421,13 +3417,12 @@ msgstr ""
 #: plugins_instar_skin.xml.h:15 plugins_lcdpearl1_skin.xml.h:11
 #: plugins_lcdsamsung_skin.xml.h:14 plugins_panel_skin.xml.h:21
 #: plugins_stock_skin.xml.h:5 plugins_stopifnotused_skin.xml.h:5
-#: plugins_tmdb_skin.xml.h:7 skin_default_skin.xml.h:536
-#: skins_autotimer_skin.xml.h:8 skins_callmonitor1_skin.xml.h:18
-#: skins_imdbapi_skin.xml.h:7 skins_imdb_skin.xml.h:7
-#: skins_instar_skin.xml.h:15 skins_lcdpearl1_skin.xml.h:11
-#: skins_lcdsamsung_skin.xml.h:14 skins_panel_skin.xml.h:21
-#: skins_stock_skin.xml.h:5 skins_stopifnotused_skin.xml.h:5
-#: skins_tmdb_skin.xml.h:7
+#: skin_default_skin.xml.h:536 skins_autotimer_skin.xml.h:8
+#: skins_callmonitor1_skin.xml.h:18 skins_imdbapi_skin.xml.h:7
+#: skins_imdb_skin.xml.h:7 skins_instar_skin.xml.h:15
+#: skins_lcdpearl1_skin.xml.h:11 skins_lcdsamsung_skin.xml.h:14
+#: skins_panel_skin.xml.h:21 skins_stock_skin.xml.h:5
+#: skins_stopifnotused_skin.xml.h:5 skins_tmdb_skin.xml.h:7
 msgid "SAVE"
 msgstr "LƯU"
 
@@ -3438,11 +3433,10 @@ msgstr "tìm kiếm bên phải"
 #: plugins_autotimer_skin.xml.h:10 plugins_dlna_skin.xml.h:12
 #: plugins_instar_skin.xml.h:16 plugins_lcdpearl1_skin.xml.h:12
 #: plugins_lcdsamsung_skin.xml.h:15 plugins_stopifnotused_skin.xml.h:6
-#: plugins_tsSchnitt_skin.xml.h:7 skin_default_skin.xml.h:606
-#: skins_autotimer_skin.xml.h:10 skins_dlna_skin.xml.h:12
-#: skins_instar_skin.xml.h:16 skins_lcdpearl1_skin.xml.h:12
-#: skins_lcdsamsung_skin.xml.h:15 skins_stopifnotused_skin.xml.h:6
-#: skins_tsSchnitt_skin.xml.h:7
+#: skin_default_skin.xml.h:606 skins_autotimer_skin.xml.h:10
+#: skins_dlna_skin.xml.h:12 skins_instar_skin.xml.h:16
+#: skins_lcdpearl1_skin.xml.h:12 skins_lcdsamsung_skin.xml.h:15
+#: skins_stopifnotused_skin.xml.h:6 skins_tsSchnitt_skin.xml.h:7
 msgid "START"
 msgstr "bắt đầu"
 
@@ -3523,9 +3517,8 @@ msgstr ""
 msgid "Cat-Catch"
 msgstr ""
 
-#: plugins_catcatch_skin.xml.h:2 plugins_zapback_skin.xml.h:2
-#: skin_default_skin.xml.h:32 skins_catcatch_skin.xml.h:2
-#: skins_zapback_skin.xml.h:2
+#: plugins_catcatch_skin.xml.h:2 skin_default_skin.xml.h:32
+#: skins_catcatch_skin.xml.h:2 skins_zapback_skin.xml.h:2
 msgid "0"
 msgstr ""
 
@@ -3574,9 +3567,8 @@ msgstr "Tên server"
 msgid "Start on boot"
 msgstr "Bắt đầu khởi động"
 
-#: plugins_dlna_skin.xml.h:14 plugins_tsSchnitt_skin.xml.h:9
-#: skin_default_skin.xml.h:613 skins_dlna_skin.xml.h:14
-#: skins_tsSchnitt_skin.xml.h:9
+#: plugins_dlna_skin.xml.h:14 skin_default_skin.xml.h:613
+#: skins_dlna_skin.xml.h:14 skins_tsSchnitt_skin.xml.h:9
 msgid "STOP"
 msgstr "dừng"
 
@@ -3598,8 +3590,8 @@ msgstr ""
 msgid "Copy"
 msgstr "Sao chép"
 
-#: plugins_filemanager_skin.xml.h:2 plugins_tmc_skin.xml.h:3
-#: skins_filemanager_skin.xml.h:2 skins_tmc_skin.xml.h:3
+#: plugins_filemanager_skin.xml.h:2 skins_filemanager_skin.xml.h:2
+#: skins_tmc_skin.xml.h:3
 msgid "Delete"
 msgstr "Xóa"
 
@@ -3623,8 +3615,7 @@ msgid "Actors:"
 msgstr "Diễn viên:"
 
 #: plugins_imdbapi_skin.xml.h:2 plugins_imdb_skin.xml.h:2
-#: plugins_tmc_skin.xml.h:4 skins_imdbapi_skin.xml.h:2 skins_imdb_skin.xml.h:2
-#: skins_tmc_skin.xml.h:4
+#: skins_imdbapi_skin.xml.h:2 skins_imdb_skin.xml.h:2 skins_tmc_skin.xml.h:4
 msgid "Director:"
 msgstr "Thư mục Imdb"
 
@@ -3633,23 +3624,20 @@ msgid "IMDb-API - Plugin"
 msgstr ""
 
 #: plugins_imdbapi_skin.xml.h:5 plugins_imdb_skin.xml.h:5
-#: plugins_tmdb_skin.xml.h:4 skins_imdbapi_skin.xml.h:5
-#: skins_imdb_skin.xml.h:5 skins_tmdb_skin.xml.h:4
+#: skins_imdbapi_skin.xml.h:5 skins_imdb_skin.xml.h:5 skins_tmdb_skin.xml.h:4
 msgid "Plot:"
 msgstr ""
 
 #: plugins_imdbapi_skin.xml.h:6 plugins_imdb_skin.xml.h:6
-#: plugins_tmc_skin.xml.h:13 plugins_tmdb_skin.xml.h:6
 #: skins_imdbapi_skin.xml.h:6 skins_imdb_skin.xml.h:6 skins_tmc_skin.xml.h:13
 #: skins_tmdb_skin.xml.h:6
 msgid "Release:"
 msgstr ""
 
 #: plugins_imdbapi_skin.xml.h:8 plugins_imdb_skin.xml.h:8
-#: plugins_networkbrowser_skin.xml.h:25 plugins_tmdb_skin.xml.h:8
-#: skin_default_skin.xml.h:553 skins_imdbapi_skin.xml.h:8
-#: skins_imdb_skin.xml.h:8 skins_networkbrowser_skin.xml.h:25
-#: skins_tmdb_skin.xml.h:8
+#: plugins_networkbrowser_skin.xml.h:25 skin_default_skin.xml.h:553
+#: skins_imdbapi_skin.xml.h:8 skins_imdb_skin.xml.h:8
+#: skins_networkbrowser_skin.xml.h:25 skins_tmdb_skin.xml.h:8
 msgid "SEARCH"
 msgstr "dò"
 
@@ -3888,8 +3876,7 @@ msgstr "Hình ảnh phần cứng-giải mã"
 msgid "Pic quality"
 msgstr "Chất lượng hình ảnh"
 
-#: plugins_mc_skin.xml.h:42 plugins_tithek_skin.xml.h:11
-#: skin_default_skin.xml.h:438 skins_mc_skin.xml.h:42
+#: plugins_mc_skin.xml.h:42 skin_default_skin.xml.h:438 skins_mc_skin.xml.h:42
 #: skins_tithek_skin.xml.h:11
 msgid "PICTURE"
 msgstr "HÌNH ẢNH"
@@ -3906,8 +3893,7 @@ msgstr "THIẾT LẬP HÌNH ẢNH"
 msgid "Radio Player"
 msgstr "Radio Player"
 
-#: plugins_mc_skin.xml.h:52 plugins_tithek_skin.xml.h:14
-#: skins_mc_skin.xml.h:52 skins_tithek_skin.xml.h:14
+#: plugins_mc_skin.xml.h:52 skins_mc_skin.xml.h:52 skins_tithek_skin.xml.h:14
 msgid "Screensaver"
 msgstr "Màn hình chờ"
 
@@ -3970,9 +3956,8 @@ msgid "Web Radio Player"
 msgstr "Web Radio Player"
 
 #: plugins_networkbrowser_skin.xml.h:1 plugins_stock_skin.xml.h:2
-#: plugins_weather_skin.xml.h:1 skin_default_skin.xml.h:58
-#: skins_networkbrowser_skin.xml.h:1 skins_stock_skin.xml.h:2
-#: skins_weather_skin.xml.h:1
+#: skin_default_skin.xml.h:58 skins_networkbrowser_skin.xml.h:1
+#: skins_stock_skin.xml.h:2 skins_weather_skin.xml.h:1
 msgid "ADD"
 msgstr "THÊM"
 
@@ -4273,28 +4258,28 @@ msgstr "Chọn thiết bị đọc"
 msgid "RGUI Client"
 msgstr ""
 
-#: plugins_rgui_skin.xml.h:4 plugins_tiwakeup_skin.xml.h:4
-#: skins_rgui_skin.xml.h:4 skins_tiwakeup_skin.xml.h:4
+#: plugins_rgui_skin.xml.h:4 skins_rgui_skin.xml.h:4
+#: skins_tiwakeup_skin.xml.h:4
 msgid "Server 1"
 msgstr "DNS-Server 1"
 
-#: plugins_rgui_skin.xml.h:5 plugins_tiwakeup_skin.xml.h:5
-#: skins_rgui_skin.xml.h:5 skins_tiwakeup_skin.xml.h:5
+#: plugins_rgui_skin.xml.h:5 skins_rgui_skin.xml.h:5
+#: skins_tiwakeup_skin.xml.h:5
 msgid "Server 2"
 msgstr "DNS-Server 2"
 
-#: plugins_rgui_skin.xml.h:6 plugins_tiwakeup_skin.xml.h:6
-#: skins_rgui_skin.xml.h:6 skins_tiwakeup_skin.xml.h:6
+#: plugins_rgui_skin.xml.h:6 skins_rgui_skin.xml.h:6
+#: skins_tiwakeup_skin.xml.h:6
 msgid "Server 3"
 msgstr "Tên server"
 
-#: plugins_rgui_skin.xml.h:7 plugins_tiwakeup_skin.xml.h:7
-#: skins_rgui_skin.xml.h:7 skins_tiwakeup_skin.xml.h:7
+#: plugins_rgui_skin.xml.h:7 skins_rgui_skin.xml.h:7
+#: skins_tiwakeup_skin.xml.h:7
 msgid "Server 4"
 msgstr "Tên server"
 
-#: plugins_rgui_skin.xml.h:8 plugins_tiwakeup_skin.xml.h:8
-#: skins_rgui_skin.xml.h:8 skins_tiwakeup_skin.xml.h:8
+#: plugins_rgui_skin.xml.h:8 skins_rgui_skin.xml.h:8
+#: skins_tiwakeup_skin.xml.h:8
 msgid "Server 5"
 msgstr "Tên server"
 
@@ -4331,210 +4316,6 @@ msgstr "Độ phân giải"
 #: plugins_streaminfo_skin.xml.h:5 skins_streaminfo_skin.xml.h:5
 msgid "Y-Resolution"
 msgstr "Độ phân giải"
-
-#: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1
-msgid "TiThek Menu"
-msgstr "Menü …"
-
-#: plugins_tithek_skin.xml.h:2 skins_tithek_skin.xml.h:2
-msgid "TiThek Settings"
-msgstr "Thiết lập HTTP"
-
-#: plugins_tithek_skin.xml.h:3 skins_tithek_skin.xml.h:3 tithek.h:1497
-#: tithek.h:1629 tithek.h:3208
-msgid "ADD FAV"
-msgstr "Thêm ưu thích"
-
-#: plugins_tithek_skin.xml.h:4 skins_tithek_skin.xml.h:4
-msgid "DEL FAV"
-msgstr "Xóa ưu thích"
-
-#: plugins_tithek_skin.xml.h:5 skins_tithek_skin.xml.h:5
-msgid "Exit Tithek"
-msgstr ""
-
-#: plugins_tithek_skin.xml.h:6 skins_tithek_skin.xml.h:6
-msgid "Hid XXX Streams"
-msgstr ""
-
-#: plugins_tithek_skin.xml.h:7 skins_tithek_skin.xml.h:7
-msgid "localname"
-msgstr ""
-
-#: plugins_tithek_skin.xml.h:8 skins_tithek_skin.xml.h:8
-msgid "Menu Title"
-msgstr ""
-
-#: plugins_tithek_skin.xml.h:9 skins_tithek_skin.xml.h:9
-msgid "Pic Link"
-msgstr ""
-
-#: plugins_tithek_skin.xml.h:10 skins_tithek_skin.xml.h:10
-msgid "Pic Ratio"
-msgstr "tỷ lệ hình ảnh"
-
-#: plugins_tithek_skin.xml.h:12 skins_tithek_skin.xml.h:12 tithek.h:1099
-msgid "please wait..."
-msgstr "Vui lòng đợi …"
-
-#: plugins_tithek_skin.xml.h:13 skin_default_skin.xml.h:494
-#: skins_tithek_skin.xml.h:13
-msgid "Red-Menu"
-msgstr "Đỏ-Menu"
-
-#: plugins_tithek_skin.xml.h:15 skins_tithek_skin.xml.h:15
-msgid "Show Pay Streams"
-msgstr ""
-
-#: plugins_tithek_skin.xml.h:16 skins_tithek_skin.xml.h:16
-msgid "Stream Link"
-msgstr ""
-
-#: plugins_tithek_skin.xml.h:17 skins_tithek_skin.xml.h:17
-msgid "TiThek - Favorite Edit"
-msgstr ""
-
-#: plugins_tithek_skin.xml.h:18 skin_default_skin.xml.h:657
-#: skins_tithek_skin.xml.h:18
-msgid "Title"
-msgstr "Phụ đề"
-
-#: plugins_tithek_skin.xml.h:19 skin_default_skin.xml.h:686
-#: skins_tithek_skin.xml.h:19
-msgid "Type"
-msgstr "Kiểu"
-
-#: plugins_tithek_skin.xml.h:20 skins_tithek_skin.xml.h:20
-msgid "View Cover"
-msgstr " View Cover"
-
-#: plugins_tithek_skin.xml.h:21 skins_tithek_skin.xml.h:21
-msgid "View Sections"
-msgstr "Xem các menu"
-
-#: plugins_tiwakeup_skin.xml.h:1 skins_tiwakeup_skin.xml.h:1
-msgid "tiWakeup"
-msgstr ""
-
-#: plugins_tmc_skin.xml.h:2 skins_tmc_skin.xml.h:2
-msgid "Back Pic"
-msgstr ""
-
-#: plugins_tmc_skin.xml.h:5 skins_tmc_skin.xml.h:5
-msgid "Edit"
-msgstr "chỉnh sửa"
-
-#: plugins_tmc_skin.xml.h:6 skins_tmc_skin.xml.h:6
-msgid "Full Pic"
-msgstr ""
-
-#: plugins_tmc_skin.xml.h:8 skins_tmc_skin.xml.h:8
-msgid "IMDB Search"
-msgstr "Dò"
-
-#: plugins_tmc_skin.xml.h:10 skins_tmc_skin.xml.h:10
-msgid "Pic Name"
-msgstr "Tên"
-
-#: plugins_tmc_skin.xml.h:11 skins_tmc_skin.xml.h:11
-msgid "Pic Timeout"
-msgstr "mất kết nối"
-
-#: plugins_tmc_skin.xml.h:12 skins_tmc_skin.xml.h:12
-msgid "Preview"
-msgstr "trước đó"
-
-#: plugins_tmc_skin.xml.h:14 skins_tmc_skin.xml.h:14
-msgid "Runtime:"
-msgstr "thời gian"
-
-#: plugins_tmc_skin.xml.h:15 skin_default_skin.xml.h:539
-#: skins_tmc_skin.xml.h:15
-msgid "Scan"
-msgstr "Dò"
-
-#: plugins_tmc_skin.xml.h:17 skins_tmc_skin.xml.h:17
-msgid "Votes:"
-msgstr ""
-
-#: plugins_tmdb_skin.xml.h:2 skins_tmdb_skin.xml.h:2
-msgid "Orgname:"
-msgstr "tên người dùng"
-
-#: plugins_tmdb_skin.xml.h:3 skins_tmdb_skin.xml.h:3
-msgid "OTHER"
-msgstr "khác"
-
-#: plugins_tmdb_skin.xml.h:5 skins_tmdb_skin.xml.h:5
-msgid "Rating:"
-msgstr "Đang bắt đầu"
-
-#: plugins_tmdb_skin.xml.h:10 skins_tmdb_skin.xml.h:10
-msgid "TMDb - Plugin"
-msgstr "cdắm nguồn"
-
-#: plugins_tsSchnitt_skin.xml.h:1 skins_tsSchnitt_skin.xml.h:1
-msgid "Cutstatus:"
-msgstr ""
-
-#: plugins_tsSchnitt_skin.xml.h:2 skins_tsSchnitt_skin.xml.h:2
-msgid "in background"
-msgstr "nền màn hình chờ"
-
-#: plugins_tsSchnitt_skin.xml.h:3 skins_tsSchnitt_skin.xml.h:3
-msgid "Marker found:"
-msgstr ""
-
-#: plugins_tsSchnitt_skin.xml.h:4 skins_tsSchnitt_skin.xml.h:4
-msgid "progress"
-msgstr "thanh tiến trình"
-
-#: plugins_tsSchnitt_skin.xml.h:5 skins_tsSchnitt_skin.xml.h:5
-msgid "Selected:"
-msgstr "Chọn sao lưu:"
-
-#: plugins_tsSchnitt_skin.xml.h:6 skins_tsSchnitt_skin.xml.h:6
-msgid "select movie"
-msgstr ""
-
-#: plugins_tsSchnitt_skin.xml.h:8 skins_tsSchnitt_skin.xml.h:8
-msgid ""
-"Start movie in the internal player, set with 0 key marker during a movie. 5 "
-"key is for the marker overview. Then here select movie and start."
-msgstr ""
-
-#: plugins_tsSchnitt_skin.xml.h:10 skins_tsSchnitt_skin.xml.h:10
-msgid "ts - cut"
-msgstr ""
-
-#: plugins_weather_skin.xml.h:3 skins_weather_skin.xml.h:3 tpk_showname.h:185
-#: weather.h:418
-msgid "Weather"
-msgstr "thời tiết"
-
-#: plugins_wins3_skin.xml.h:2 skins_wins3_skin.xml.h:2
-msgid "NEW"
-msgstr "mới"
-
-#: plugins_zapback_skin.xml.h:1 skins_zapback_skin.xml.h:1
-msgid "ZapBack"
-msgstr "Sao lưu"
-
-#: plugins_zapback_skin.xml.h:3 skins_zapback_skin.xml.h:3
-msgid "in"
-msgstr "Mật khẩu"
-
-#: plugins_zapback_skin.xml.h:4 skins_zapback_skin.xml.h:4
-msgid "Minuten"
-msgstr " Phút"
-
-#: plugins_zapback_skin.xml.h:5 skins_zapback_skin.xml.h:5
-msgid "schaltet zurueck auf Sender"
-msgstr ""
-
-#: plugins_zapback_skin.xml.h:6 skins_zapback_skin.xml.h:6
-msgid "Start-> OK"
-msgstr "Bắt đầu"
 
 #: possetup.h:35
 msgid "move west"
@@ -7043,6 +6824,10 @@ msgstr "Bộ đinh thời ghi"
 msgid "Red Button"
 msgstr "Nút màu đỏ"
 
+#: skin_default_skin.xml.h:494 skins_tithek_skin.xml.h:13
+msgid "Red-Menu"
+msgstr "Đỏ-Menu"
+
 #: skin_default_skin.xml.h:495 softcam.h:292
 msgid "Refresh"
 msgstr "Làm mới"
@@ -7186,6 +6971,10 @@ msgstr " Saturation "
 #: skin_default_skin.xml.h:538
 msgid "SAVETRANSPONDER"
 msgstr ""
+
+#: skin_default_skin.xml.h:539 skins_tmc_skin.xml.h:15
+msgid "Scan"
+msgstr "Dò"
 
 #: skin_default_skin.xml.h:540
 msgid "Scan Config"
@@ -7583,6 +7372,10 @@ msgstr "màu sắc"
 msgid "Titan Changelog"
 msgstr ""
 
+#: skin_default_skin.xml.h:657 skins_tithek_skin.xml.h:18
+msgid "Title"
+msgstr "Phụ đề"
+
 #: skin_default_skin.xml.h:658
 msgid "TITLE"
 msgstr "nhan đề"
@@ -7674,6 +7467,10 @@ msgstr " Two step mute"
 #: skin_default_skin.xml.h:684
 msgid "TXT PID:"
 msgstr "PID TXT:"
+
+#: skin_default_skin.xml.h:686 skins_tithek_skin.xml.h:19
+msgid "Type"
+msgstr "Kiểu"
 
 #: skin_default_skin.xml.h:687
 msgid "Type:"
@@ -7858,6 +7655,188 @@ msgid ""
 msgstr ""
 "Không cấu hình được nền.\n"
 "Không thể thay đổi nền đã chọn"
+
+#: skins_tithek_skin.xml.h:1
+msgid "TiThek Menu"
+msgstr "Menü …"
+
+#: skins_tithek_skin.xml.h:2
+msgid "TiThek Settings"
+msgstr "Thiết lập HTTP"
+
+#: skins_tithek_skin.xml.h:3 tithek.h:1497 tithek.h:1629 tithek.h:3208
+msgid "ADD FAV"
+msgstr "Thêm ưu thích"
+
+#: skins_tithek_skin.xml.h:4
+msgid "DEL FAV"
+msgstr "Xóa ưu thích"
+
+#: skins_tithek_skin.xml.h:5
+msgid "Exit Tithek"
+msgstr ""
+
+#: skins_tithek_skin.xml.h:6
+msgid "Hid XXX Streams"
+msgstr ""
+
+#: skins_tithek_skin.xml.h:7
+msgid "localname"
+msgstr ""
+
+#: skins_tithek_skin.xml.h:8
+msgid "Menu Title"
+msgstr ""
+
+#: skins_tithek_skin.xml.h:9
+msgid "Pic Link"
+msgstr ""
+
+#: skins_tithek_skin.xml.h:10
+msgid "Pic Ratio"
+msgstr "tỷ lệ hình ảnh"
+
+#: skins_tithek_skin.xml.h:12 tithek.h:1099
+msgid "please wait..."
+msgstr "Vui lòng đợi …"
+
+#: skins_tithek_skin.xml.h:15
+msgid "Show Pay Streams"
+msgstr ""
+
+#: skins_tithek_skin.xml.h:16
+msgid "Stream Link"
+msgstr ""
+
+#: skins_tithek_skin.xml.h:17
+msgid "TiThek - Favorite Edit"
+msgstr ""
+
+#: skins_tithek_skin.xml.h:20
+msgid "View Cover"
+msgstr " View Cover"
+
+#: skins_tithek_skin.xml.h:21
+msgid "View Sections"
+msgstr "Xem các menu"
+
+#: skins_tiwakeup_skin.xml.h:1
+msgid "tiWakeup"
+msgstr ""
+
+#: skins_tmc_skin.xml.h:2
+msgid "Back Pic"
+msgstr ""
+
+#: skins_tmc_skin.xml.h:5
+msgid "Edit"
+msgstr "chỉnh sửa"
+
+#: skins_tmc_skin.xml.h:6
+msgid "Full Pic"
+msgstr ""
+
+#: skins_tmc_skin.xml.h:8
+msgid "IMDB Search"
+msgstr "Dò"
+
+#: skins_tmc_skin.xml.h:10
+msgid "Pic Name"
+msgstr "Tên"
+
+#: skins_tmc_skin.xml.h:11
+msgid "Pic Timeout"
+msgstr "mất kết nối"
+
+#: skins_tmc_skin.xml.h:12
+msgid "Preview"
+msgstr "trước đó"
+
+#: skins_tmc_skin.xml.h:14
+msgid "Runtime:"
+msgstr "thời gian"
+
+#: skins_tmc_skin.xml.h:17
+msgid "Votes:"
+msgstr ""
+
+#: skins_tmdb_skin.xml.h:2
+msgid "Orgname:"
+msgstr "tên người dùng"
+
+#: skins_tmdb_skin.xml.h:3
+msgid "OTHER"
+msgstr "khác"
+
+#: skins_tmdb_skin.xml.h:5
+msgid "Rating:"
+msgstr "Đang bắt đầu"
+
+#: skins_tmdb_skin.xml.h:10
+msgid "TMDb - Plugin"
+msgstr "cdắm nguồn"
+
+#: skins_tsSchnitt_skin.xml.h:1
+msgid "Cutstatus:"
+msgstr ""
+
+#: skins_tsSchnitt_skin.xml.h:2
+msgid "in background"
+msgstr "nền màn hình chờ"
+
+#: skins_tsSchnitt_skin.xml.h:3
+msgid "Marker found:"
+msgstr ""
+
+#: skins_tsSchnitt_skin.xml.h:4
+msgid "progress"
+msgstr "thanh tiến trình"
+
+#: skins_tsSchnitt_skin.xml.h:5
+msgid "Selected:"
+msgstr "Chọn sao lưu:"
+
+#: skins_tsSchnitt_skin.xml.h:6
+msgid "select movie"
+msgstr ""
+
+#: skins_tsSchnitt_skin.xml.h:8
+msgid ""
+"Start movie in the internal player, set with 0 key marker during a movie. 5 "
+"key is for the marker overview. Then here select movie and start."
+msgstr ""
+
+#: skins_tsSchnitt_skin.xml.h:10
+msgid "ts - cut"
+msgstr ""
+
+#: skins_weather_skin.xml.h:3 tpk_showname.h:185 weather.h:418
+msgid "Weather"
+msgstr "thời tiết"
+
+#: skins_wins3_skin.xml.h:2
+msgid "NEW"
+msgstr "mới"
+
+#: skins_zapback_skin.xml.h:1
+msgid "ZapBack"
+msgstr "Sao lưu"
+
+#: skins_zapback_skin.xml.h:3
+msgid "in"
+msgstr "Mật khẩu"
+
+#: skins_zapback_skin.xml.h:4
+msgid "Minuten"
+msgstr " Phút"
+
+#: skins_zapback_skin.xml.h:5
+msgid "schaltet zurueck auf Sender"
+msgstr ""
+
+#: skins_zapback_skin.xml.h:6
+msgid "Start-> OK"
+msgstr "Bắt đầu"
 
 #: sock.h:950
 msgid "Download finished!"
