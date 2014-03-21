@@ -6165,6 +6165,8 @@ msgstr "Zeit bis Warnmeldung erscheint (sek)"
 #: skin_default_skin.xml.h:263
 msgid "Here they can do for your chosen tuner to lnb settings."
 msgstr ""
+"Hier können Sie für Ihren ausgewählten Tuner die LNB-Einstellungen\n"
+"vornehmen."
 
 #: skin_default_skin.xml.h:264
 msgid "Here to select your remote Model"
@@ -6173,6 +6175,8 @@ msgstr "Hier können Sie Ihr Fernbedienungsmodell auswählen."
 #: skin_default_skin.xml.h:265
 msgid "Here you can assign channels for their ci modules."
 msgstr ""
+"Sender -> Modul Zuordnung\n"
+"OK zum Verlassen"
 
 #: skin_default_skin.xml.h:266
 msgid "Here you can backup and restore your settings."
@@ -6181,6 +6185,9 @@ msgstr "Hier können Sie Ihre Einstellungen sichern und wiederherstellen."
 #: skin_default_skin.xml.h:267
 msgid "Here you can check the reception of the current station."
 msgstr ""
+"Hier können Sie die Signalqualität des aktuellen Senders überprüfen.\n"
+"\n"
+"Drücken Sie -OK- oder -Exit- um ins Menü zurückzukehren."
 
 #: skin_default_skin.xml.h:268
 msgid ""
@@ -6195,44 +6202,56 @@ msgstr ""
 #: skin_default_skin.xml.h:269
 msgid "Here you can configure access to your DynDNS."
 msgstr ""
+"DynDNS Dienste Konfiguration:\n"
+"Folgende Dienste werden unterstützt:\n"
+"dyndns.org, freedns.afraid.org, zoneedit.com, no-ip.com"
 
 #: skin_default_skin.xml.h:270
 msgid "Here you can configure Ci-Modules."
-msgstr ""
+msgstr "Hier können Sie Ihre CI-Module konfigurieren."
 
 #: skin_default_skin.xml.h:271
 msgid "Here you can configure the smartcard readers."
-msgstr ""
+msgstr "Hier können Sie Ihre Smartcards konfigurieren."
 
 #: skin_default_skin.xml.h:272
 msgid "Here you can configure your web server."
-msgstr ""
+msgstr "Hier können Sie das Webinterface und den RGUI Service konfigurieren."
 
 #: skin_default_skin.xml.h:273
 msgid "Here you can create a new record timer."
-msgstr ""
+msgstr "Hier können sie einen neuen Timer anlegen."
 
 #: skin_default_skin.xml.h:274
 msgid "Here you can do a blind scan, this process takes a long time."
 msgstr ""
+"Hier können Sie einen Blindscan durchführen, dieser Vorgang dauert sehr "
+"lange."
 
 #: skin_default_skin.xml.h:275
 msgid "Here you can edit the following channels from the EPG."
 msgstr ""
+"Hier können Sie Sender und Favoriten definieren, für die ein EPG Scan "
+"stattfinden soll."
 
 #: skin_default_skin.xml.h:276
 msgid "Here you can install from our current online offering plug-ins."
 msgstr ""
+"Hier können Sie von unserem aktuellen Online-Angebot Plugins installieren."
 
 #: skin_default_skin.xml.h:277
 msgid ""
 "Here you can in your EPG entries for specific search. Use to start a color "
 "button to search."
 msgstr ""
+"Hier können Sie im EPG nach bestimmten Einträgen suchen.\n"
+"Verwenden Sie eine der Farbtasten um die Suche zu starten."
 
 #: skin_default_skin.xml.h:278
 msgid "Here you can make for your selected network interface settings."
 msgstr ""
+"Hier können Sie für Ihre ausgewählte Netzwerkschnittstelle Einstellungen "
+"vornehmen."
 
 #: skin_default_skin.xml.h:279
 msgid ""
@@ -6264,15 +6283,15 @@ msgstr ""
 
 #: skin_default_skin.xml.h:284
 msgid "Here you can make your epg settings."
-msgstr ""
+msgstr "Hier können Sie die EPG Einstellungen konfigurieren."
 
 #: skin_default_skin.xml.h:285
 msgid "Here you can make your mediadb settings."
-msgstr ""
+msgstr "Hier können Sie die MediaDB konfigurieren."
 
 #: skin_default_skin.xml.h:286
 msgid "Here you can make your module settings."
-msgstr ""
+msgstr "Hier können Sie die Einstellungen für CI-Module anpassen."
 
 #: skin_default_skin.xml.h:287
 msgid "Here you can make your network autostart settings."
@@ -6285,30 +6304,36 @@ msgstr ""
 #: skin_default_skin.xml.h:289
 msgid "Here you can make your picture and sound settings."
 msgstr ""
+"Bild und Ton Konfiguration:\n"
+"Hinweis: Die neue Auflösung muss bestätigt werden. Bei falscher Auflösung "
+"wird nach 5 Sekunden in den ursprünglichen Modus zurückgeschaltet."
 
 #: skin_default_skin.xml.h:290
 msgid "Here you can make your PIN security for menus settings."
 msgstr ""
+"Hier können Sie Ihre PIN Sicherheitseinstellungen für Menüs vornehmen."
 
 #: skin_default_skin.xml.h:291
 msgid "Here you can make your PIN security settings."
-msgstr ""
+msgstr "Hier können Sie Ihre PIN Sicherheitseinstellungen vornehmen."
 
 #: skin_default_skin.xml.h:292
 msgid "Here you can make your recording timer configuration."
 msgstr ""
+"Hier können Sie Timer auswählen, löschen und\n"
+"bearbeiten."
 
 #: skin_default_skin.xml.h:293
 msgid "Here you can make your recordpath settings."
-msgstr ""
+msgstr "Hier können Sie Aufnahmepfade konfigurieren."
 
 #: skin_default_skin.xml.h:294
 msgid "Here you can make your safety child autostart settings."
-msgstr ""
+msgstr "Hier können Sie dem Jugendschutz Autostart konfigurieren."
 
 #: skin_default_skin.xml.h:295
 msgid "Here you can make your screensaver settings."
-msgstr ""
+msgstr "Hier können Sie Ihre Bildschirmschoner konfigurieren."
 
 #: skin_default_skin.xml.h:296
 msgid ""
@@ -6320,15 +6345,15 @@ msgstr ""
 
 #: skin_default_skin.xml.h:297
 msgid "Here you can make your timeshift settings."
-msgstr ""
+msgstr "Hier können Sie die Timeshift Einstellungen anpassen."
 
 #: skin_default_skin.xml.h:298
 msgid "Here you can make your usb autostart settings."
-msgstr ""
+msgstr "Hier können Sie USB Autostart konfigurieren."
 
 #: skin_default_skin.xml.h:299
 msgid "Here you can make your vfd settings."
-msgstr ""
+msgstr "Hier können Sie das VFDisplay konfigurieren."
 
 #: skin_default_skin.xml.h:300
 msgid "Here you can manage your Ci-Modul or Card Infos."
@@ -6339,20 +6364,22 @@ msgstr ""
 
 #: skin_default_skin.xml.h:301
 msgid "Here you can select from the following list."
-msgstr ""
+msgstr "Hier können Sie aus der folgenden Liste auswählen."
 
 #: skin_default_skin.xml.h:302
 msgid "Here you can select from the following list a skin."
-msgstr ""
+msgstr "Skin Auswahl:"
 
 #: skin_default_skin.xml.h:303
 msgid ""
 "Here you can select your hard disks and USB flash drives for configuration."
 msgstr ""
+"Hier können Sie Ihre Festplatten und USB-Sticks zur Konfiguration\n"
+"auswählen."
 
 #: skin_default_skin.xml.h:304
 msgid "Here you can select your Network Interface."
-msgstr ""
+msgstr "Hier können Sie Ihre Netzwerkschnittstelle auswählen."
 
 #: skin_default_skin.xml.h:305
 msgid ""
@@ -6390,26 +6417,32 @@ msgid ""
 "Here you can set your Channel search options. Very important, before you "
 "start looking for a channel must be set to its tuner tuner settings."
 msgstr ""
+"Hier können Sie den automatischen Sendersuchlauf einstellen und starten.\n"
+"Sehr wichtig: Vor dem Suchlauf müssen die Tuner unter System/Sendersuche/"
+"Konfiguration (Kabel/Sat/Terrestrisch) konfiguriert werden."
 
 #: skin_default_skin.xml.h:309
 msgid "Here you can set your language."
-msgstr ""
+msgstr "Hier können Sie Ihre Sprache einstellen."
 
 #: skin_default_skin.xml.h:310
 msgid "Here you can set your timezone."
-msgstr ""
+msgstr "Hier können Sie Ihre Zeitzone einstellen."
 
 #: skin_default_skin.xml.h:311
 msgid "Here you can start and manage your additional plug-ins."
-msgstr ""
+msgstr "Hier können Sie Ihre zusätzlichen Plugins starten und verwalten."
 
 #: skin_default_skin.xml.h:312
 msgid "Here you can test your network."
 msgstr ""
+"Netzwerk Test:\n"
+"LAN Test (ping gateway) Fehler: IP Adresse oder Gateway falsch\n"
+"Internet Test (ping www.google.de) Fehler: DNS oder Gateway falsch"
 
 #: skin_default_skin.xml.h:313
 msgid "Here you can view the current channel information."
-msgstr ""
+msgstr "Hier können Sie die aktuellen Senderinfos abrufen."
 
 #: skin_default_skin.xml.h:314
 msgid "Hierarchy"
@@ -6922,6 +6955,10 @@ msgstr "Wiedergabeliste"
 #: skin_default_skin.xml.h:450
 msgid "Please contact Atemio for activation."
 msgstr ""
+"Bitte wenden Sie sich an Atemio, falls Ihre Freischaltung noch nicht wirksam "
+"ist.\n"
+"\n"
+"Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
 #: skin_default_skin.xml.h:451
 msgid "please wait"
