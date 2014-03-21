@@ -492,6 +492,7 @@ int checkhighflash()
 {
 	char* tmpstr = NULL;
 	char* cmd = NULL;
+	char* size = NULL;
 	cmd = ostrcat(cmd, "cat", 1, 0); 
 	cmd = ostrcat(cmd, " ", 1, 0); 
 	cmd = ostrcat(cmd, "/", 1, 0); 
@@ -502,8 +503,17 @@ int checkhighflash()
 	cmd = ostrcat(cmd, "|", 1, 0); 
 	cmd = ostrcat(cmd, " ", 1, 0); 
 	cmd = ostrcat(cmd, "grep", 1, 0); 
-	cmd = ostrcat(cmd, " ", 1, 0); 
-	cmd = ostrcat(cmd, "mtd5", 1, 0); 
+	cmd = ostrcat(cmd, " ", 1, 0);
+	if(checkbox("ATEMIO5000") == 1 || checkbox("ATEMIO5200") == 1)
+	{
+		cmd = ostrcat(cmd, "mtd0", 1, 0); 
+		size = ostrcat("1f900000", NULL, 0, 0); 
+	}
+	else
+	{
+		cmd = ostrcat(cmd, "mtd5", 1, 0); 
+		size = ostrcat("1ce40000", NULL, 0, 0); 
+	}
 	cmd = ostrcat(cmd, " ", 1, 0); 
 	cmd = ostrcat(cmd, "|", 1, 0); 
 	cmd = ostrcat(cmd, " ", 1, 0); 
@@ -518,11 +528,16 @@ int checkhighflash()
 		return 1;
 	}
 
-	if(ostrcmp(tmpstr, "1ce40000") == 0)
+	if(ostrcmp(tmpstr, size) == 0)
 	{
 		free(tmpstr), tmpstr = NULL;
+		free(size), size = NULL;
 		return 0;
 	}
+	
+	free(tmpstr), tmpstr = NULL;
+	free(size), size = NULL;
+
 	return 1;	
 }
 
@@ -912,7 +927,7 @@ void ckeckkillnetthread()
 
 int checkreseller()
 {
-	if(checkbox("UFS910") == 1 || checkbox("UFS922") == 1)
+	if(checkbox("UFS910") == 1 || checkbox("UFS922") == 1 || checkbox("ATEMIO5000") == 1 || checkbox("ATEMIO5200") == 1)
 	{
 		debug(10, "ResellerId: skipped");
 		debug(10, "boxtype: %s", getboxtype());
@@ -1090,28 +1105,49 @@ int checkflash()
 	}
 	else if(checkbox("UFS912") == 1)
 	{
-//		dev = ostrcat(dev, "5", 1, 0);
 		dev = ostrcat(dev, "4", 1, 0);
 		dir = ostrcat(dir, "var", 1, 0);
+	}
+	else if(checkbox("ATEMIO5000") == 1 || checkbox("ATEMIO5200") == 1)
+	{
+		dev = ostrcat(dev, "rootfs", 1, 0);
+		dir = ostrcat(dir, " type", 1, 0);
 	}
 	else
 	{
 		dev = ostrcat(dev, "9", 1, 0);
 		dir = ostrcat(dir, "var", 1, 0);
 	}
-						
-	cmd = ostrcat(cmd, "mount", 1, 0);
-	cmd = ostrcat(cmd, " | ", 1, 0);
-	cmd = ostrcat(cmd, "grep", 1, 0);
-	cmd = ostrcat(cmd, " /dev/", 1, 0);
-	cmd = ostrcat(cmd, "mtdblock", 1, 0);
-	cmd = ostrcat(cmd, dev, 1, 1);	
-	cmd = ostrcat(cmd, " | ", 1, 0);
-	cmd = ostrcat(cmd, "grep", 1, 0);
-	cmd = ostrcat(cmd, " /", 1, 0);
-	cmd = ostrcat(cmd, dir, 1, 0);
-	cmd = ostrcat(cmd, " | ", 1, 0);
-	cmd = ostrcat(cmd, "awk {'print $3'}", 1, 0);
+	
+	if(checkbox("ATEMIO5000") == 1 || checkbox("ATEMIO5200") == 1)
+	{
+		cmd = ostrcat(cmd, "mount", 1, 0);
+		cmd = ostrcat(cmd, " | ", 1, 0);
+		cmd = ostrcat(cmd, "grep", 1, 0);
+		cmd = ostrcat(cmd, " ubi0:", 1, 0);
+		cmd = ostrcat(cmd, dev, 1, 0);
+		cmd = ostrcat(cmd, " | ", 1, 0);
+		cmd = ostrcat(cmd, "grep", 1, 0);
+		cmd = ostrcat(cmd, " \"/", 1, 0);
+		cmd = ostrcat(cmd, dir, 1, 0);
+		cmd = ostrcat(cmd, "\" | ", 1, 0);
+		cmd = ostrcat(cmd, "awk {'print $3'}", 1, 0);
+	}
+	else
+	{
+		cmd = ostrcat(cmd, "mount", 1, 0);
+		cmd = ostrcat(cmd, " | ", 1, 0);
+		cmd = ostrcat(cmd, "grep", 1, 0);
+		cmd = ostrcat(cmd, " /dev/", 1, 0);
+		cmd = ostrcat(cmd, "mtdblock", 1, 0);
+		cmd = ostrcat(cmd, dev, 1, 1);	
+		cmd = ostrcat(cmd, " | ", 1, 0);
+		cmd = ostrcat(cmd, "grep", 1, 0);
+		cmd = ostrcat(cmd, " /", 1, 0);
+		cmd = ostrcat(cmd, dir, 1, 0);
+		cmd = ostrcat(cmd, " | ", 1, 0);
+		cmd = ostrcat(cmd, "awk {'print $3'}", 1, 0);
+	}
 
 	tmpstr = string_newline(command(cmd));
 	free(cmd), cmd = NULL;
@@ -1122,7 +1158,8 @@ int checkflash()
 		return 1;
 	}
 
-	dir = ostrcat("/", dir, 0, 1);
+	if(checkbox("ATEMIO5000") != 1 && checkbox("ATEMIO5200") != 1)
+		dir = ostrcat("/", dir, 0, 1);
 
 	if(ostrcmp(tmpstr, dir) == 0)
 	{
