@@ -82,9 +82,7 @@ void screenskinadjust()
 		
 		if(offsetchange == 1 && (ostrcmp(getconfig("av_mode3d", NULL), "sbs") == 0 || ostrcmp(getconfig("av_mode3d", NULL), "tab") == 0)) clearfball();
 
-		// disable box is very slow...
-		if(checkbox("ATEVIO5200") != 1)
-			drawscreen(skinadjust, 0, 0);
+		drawscreen(skinadjust, 0, 0);
 
 		if(rcret == getrcconfigint("rcexit", NULL))
 		{
