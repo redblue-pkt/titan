@@ -80,7 +80,7 @@ void screenusbreset()
 	
 	addusbreset(USBRESETPATH, &mlist);
 	
-	mbox = menulistbox(mlist, NULL, _("USB Reset"), _("Choose your Devices from the following list"), NULL, 1, 0);
+	mbox = menulistbox(mlist, NULL, _("USB Reset"), _("Choose your Devices from the following list"), NULL, NULL, 1, 0);
 	
 	if(mbox != NULL)
 	{
