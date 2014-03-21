@@ -178,8 +178,8 @@ struct menulist* menulistboxext(struct menulist* mlist, char* paramskinname, cha
 	listbox->aktline = 1;
 
 	changetitle(screen, _(skintitle));
-	if(titletext != status.skinerr) changetext(titletext, _(skintitle));
-	if(details != status.skinerr) changetext(details, _(skindetails));
+	if(titletext != status.skinerr && skintitle != NULL) changetext(titletext, _(skintitle));
+	if(details != status.skinerr && skindetails != NULL) changetext(details, _(skindetails));
 
 	while(mlist != NULL)
 	{
