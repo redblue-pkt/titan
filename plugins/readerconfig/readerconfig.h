@@ -335,7 +335,7 @@ char* getoscamconfig()
 	if(count > 1)
 	{
 		free(tmpstr); tmpstr = NULL;
-		mbox = menulistbox(mlist, NULL, _("Choice Config File"), NULL, NULL, 0, 0);
+		mbox = menulistbox(mlist, NULL, _("Reader Configuration"), _("Choose your Config File from the following list"), NULL, NULL, 0, 0);
 		if(mbox != NULL)
 			tmpstr = ostrcat(mbox->param, NULL, 0, 0);
 	}

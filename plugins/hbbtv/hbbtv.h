@@ -755,7 +755,7 @@ void screenoperafav()
 
 start:
 	drawscreen(skin, 0, 0);
-	mbox = menulistbox(mlist, "menulist", "HBBTV Favoriten", NULL, NULL, 0, 0);
+	mbox = menulistbox(mlist, "menulist", _("HBBTV Favoriten"), _("Choose your HBBTV Favorite from the following list"), NULL, NULL, 0, 0);
 	if(mbox != NULL)
 	{
 		if(mbox->param != NULL)

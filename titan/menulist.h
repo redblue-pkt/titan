@@ -141,7 +141,7 @@ struct menulist* addmenulist(struct menulist** mlist, char* name, char* text, ch
 // showpng = 1 (smal icon)
 // showpng = 2 (big icon)
 //flag 1: rcgreen = subchannel
-struct menulist* menulistboxext(struct menulist* mlist, char* paramskinname, char* skintitle, char* paramskinpath, char* defaultpic, int showpng, int* rcreturn, int flag)
+struct menulist* menulistboxext(struct menulist* mlist, char* paramskinname, char* skintitle, char* skindetails, char* paramskinpath, char* defaultpic, int showpng, int* rcreturn, int flag)
 {
 	int rcret = 0, fromthread = 0;
 	struct skin* framebuffer = getscreen("framebuffer");
@@ -172,12 +172,14 @@ struct menulist* menulistboxext(struct menulist* mlist, char* paramskinname, cha
 	struct skin* screen = getscreen(skinname);
 	struct skin* listbox = getscreennode(screen, "listbox");
 	struct skin* titletext = getscreennode(screen, "titletext");
+	struct skin* details = getscreennode(screen, "details");
 	
 	listbox->aktpage = -1;
 	listbox->aktline = 1;
 
 	changetitle(screen, _(skintitle));
 	if(titletext != status.skinerr) changetext(titletext, _(skintitle));
+	if(details != status.skinerr) changetext(details, _(skindetails));
 
 	while(mlist != NULL)
 	{
@@ -334,8 +336,8 @@ struct menulist* menulistboxext(struct menulist* mlist, char* paramskinname, cha
 	return ret;
 }
 
-struct menulist* menulistbox(struct menulist* mlist, char* paramskinname, char* skintitle, char* paramskinpath, char* defaultpic, int showpng, int flag)
+struct menulist* menulistbox(struct menulist* mlist, char* paramskinname, char* skintitle, char* skindetails, char* paramskinpath, char* defaultpic, int showpng, int flag)
 {
-	return menulistboxext(mlist, paramskinname, skintitle, paramskinpath, defaultpic, showpng, NULL, flag);
+	return menulistboxext(mlist, paramskinname, skintitle, skindetails, paramskinpath, defaultpic, showpng, NULL, flag);
 }
 #endif

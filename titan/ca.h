@@ -568,7 +568,7 @@ int cammiAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *d
 					tmpstr1 = ostrcat(tmpstr1, casession->mmitext, 1, 0);
 					
 					addmenulistall(&mlist, tmpstr1, NULL, 0, NULL);
-					mbox = menulistbox(mlist, "menulist", tmpstr, NULL, NULL, 1, 0);
+					mbox = menulistbox(mlist, "menulist", tmpstr, NULL, NULL, NULL, 1, 0);
 					if(mbox == NULL) //exit
 						cammistop(dvbnode, sessionnr);
 					else //got selnr

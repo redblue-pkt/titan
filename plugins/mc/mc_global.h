@@ -606,7 +606,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 		addmenulist(&mlist, _("Load Playlist"), NULL, NULL, 0, 0);
 		addmenulist(&mlist, _("Edit Playlist"), NULL, NULL, 0, 0);
 		
-		mbox = menulistbox(mlist, "playlistmenu", NULL, "%pluginpath%/mc/skin", NULL, 1, 0);
+		mbox = menulistbox(mlist, "playlistmenu", _("Playlist Menu"), _("Choose your Playlist Mode from the following list"), "%pluginpath%/mc/skin", NULL, 1, 0);
 
 		drawscreen(apskin, 0, 0);
 

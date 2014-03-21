@@ -99,7 +99,7 @@ char* ard(char* link)
 
 		if(mlist != NULL)
 		{
-			mbox = menulistbox(mlist, NULL, NULL, NULL, NULL, 1, 0);
+			mbox = menulistbox(mlist, NULL, _("Stream Menu"), _("Choose your Streaming link from the following list"), NULL, NULL, 1, 0);
 			if(mbox != NULL)
 			{
 				free(streamurl), streamurl = NULL;

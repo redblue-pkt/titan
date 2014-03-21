@@ -1323,7 +1323,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 					}
 				}
 			}
-			mbox = menulistbox(mlist, NULL, skintitle, NULL, NULL, 1, 0);
+			mbox = menulistbox(mlist, NULL, skintitle, _("Choose your Streaming Playback Modus from the following list"), NULL, NULL, 1, 0);
 			if(mbox != NULL) keyconf = mbox->name;
 			debug(99, "tmpstr1: %s filename: %s flag: %d", tmpstr1, filename, flag);
 			if(ostrcmp(keyconf, "Streaming Playback (default)") == 0)
