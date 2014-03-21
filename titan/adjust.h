@@ -226,8 +226,16 @@ void screenadjust()
 	addchoicebox(usecec, "1", _("yes"));
 	setchoiceboxselection(usecec, getconfig("usecec", NULL));
 
-	addchoicebox(dualboot, "0", _("no"));
-	addchoicebox(dualboot, "1", _("yes"));
+	if(!file_exist("/mnt/config/dualboot"))
+	{
+		addchoicebox(dualboot, "0", _("no"));
+		addchoicebox(dualboot, "1", _("yes"));
+	}
+	else
+	{
+		addchoicebox(dualboot, "1", _("yes"));
+		addchoicebox(dualboot, "0", _("no"));
+	}
 	setchoiceboxselection(dualboot, getconfig("dualboot", NULL));
 
 	if(checkbox("ATEMIO5000") == 1 || checkbox("ATEMIO5200") == 1)
