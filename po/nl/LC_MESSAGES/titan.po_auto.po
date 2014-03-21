@@ -50,7 +50,7 @@ msgstr "Systeem informatie"
 #: filemanager.h:321 filemanager.h:331 filemanager.h:355 filenuke.h:37
 #: filenuke.h:84 filenuke.h:96 filenuke.h:108 filenuke.h:157 flashx.h:26
 #: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:6387 gmediarender.h:115 harddisk.h:350 harddisk.h:355
+#: global.h:6392 gmediarender.h:115 harddisk.h:350 harddisk.h:355
 #: harddisk.h:382 harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641
 #: harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733
 #: harddisk.h:793 harddisk.h:811 harddisk.h:814 harddisk.h:1046 hbbtv.h:362
@@ -98,7 +98,7 @@ msgstr "Systeem informatie"
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:28 scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1888
 #: scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 scriptexec.h:41 service.h:710
-#: service.h:951 skinadjust.h:133 skins_dlna_skin.xml.h:8 skinselector.h:218
+#: service.h:951 skinadjust.h:135 skins_dlna_skin.xml.h:8 skinselector.h:218
 #: skins_facebook_skin.xml.h:5 skins_mboxinfo_skin.xml.h:2
 #: skins_mc_skin.xml.h:38 skins_optimize_skin.xml.h:3 skins_rgui_skin.xml.h:3
 #: skins_tiwakeup_skin.xml.h:3 skins_wins3_skin.xml.h:3 sock.h:952
@@ -113,8 +113,8 @@ msgstr "Systeem informatie"
 #: timeshiftsettings.h:45 titan.c:274 titan.c:338 titan.c:347 titan.c:957
 #: titan.c:966 titan.c:1077 titan.c:1098 titan.c:1104 titan.c:1115
 #: titan.c:1121 tithek.c:79 tithek_global.h:238 tithek.h:620 tithek.h:1116
-#: tithek.h:1159 tithek.h:1404 tithek.h:1426 tithek.h:1431 tithek.h:1445
-#: tithek.h:3096 tithek.h:3159 tithek.h:3173 tithek.h:3183 tiwakeup.h:66
+#: tithek.h:1159 tithek.h:1409 tithek.h:1431 tithek.h:1436 tithek.h:1450
+#: tithek.h:3101 tithek.h:3164 tithek.h:3178 tithek.h:3188 tiwakeup.h:66
 #: tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759
 #: tmdb.h:922 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3185 tpk.new.h:3167
 #: tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327
@@ -142,7 +142,7 @@ msgstr "Ok"
 #: filemanager.h:321 filemanager.h:331 filemanager.h:355 filenuke.h:37
 #: filenuke.h:84 filenuke.h:96 filenuke.h:108 filenuke.h:157 flashx.h:26
 #: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:6387 gmediarender.h:115 harddisk.h:350 harddisk.h:355
+#: global.h:6392 gmediarender.h:115 harddisk.h:350 harddisk.h:355
 #: harddisk.h:382 harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641
 #: harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733
 #: harddisk.h:793 harddisk.h:811 harddisk.h:814 harddisk.h:1046 hbbtv.h:362
@@ -214,8 +214,8 @@ msgstr "Ok"
 #: timeshiftsettings.h:45 titan.c:274 titan.c:338 titan.c:347 titan.c:957
 #: titan.c:966 titan.c:1077 titan.c:1098 titan.c:1104 titan.c:1115
 #: titan.c:1121 tithek.c:79 tithek_global.h:238 tithek.h:620 tithek.h:1116
-#: tithek.h:1159 tithek.h:1404 tithek.h:1426 tithek.h:1431 tithek.h:1445
-#: tithek.h:3096 tithek.h:3159 tithek.h:3173 tithek.h:3183 tiwakeup.h:66
+#: tithek.h:1159 tithek.h:1409 tithek.h:1431 tithek.h:1436 tithek.h:1450
+#: tithek.h:3101 tithek.h:3164 tithek.h:3178 tithek.h:3188 tiwakeup.h:66
 #: tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759
 #: tmdb.h:922 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3185 tpk.new.h:3167
 #: tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327
@@ -534,7 +534,7 @@ msgstr "Ja / VZAP oneindig"
 #: filemanager.h:208 filemanager.h:281 filemanager.h:291 filemanager.h:331
 #: filemanager.h:355 filenuke.h:37 filenuke.h:84 filenuke.h:96 filenuke.h:108
 #: filenuke.h:157 flashx.h:26 flashx.h:84 flashx.h:138 flashx.h:195
-#: flashx.h:233 flashx.h:270 global.h:6387 gmediarender.h:115 harddisk.h:633
+#: flashx.h:233 flashx.h:270 global.h:6392 gmediarender.h:115 harddisk.h:633
 #: harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731
 #: harddisk.h:733 harddisk.h:793 harddisk.h:811 harddisk.h:814 hbbtv.h:362
 #: hello.c:36 httpdfunc.h:1098 hwtest.h:88 hwtest.h:93 hwtest.h:98
@@ -574,7 +574,7 @@ msgstr "Ja / VZAP oneindig"
 #: restoredefault.h:23 restoredefault.h:32 restoredefault.h:47 rgui.h:30
 #: rgui.h:118 rgui.h:134 rtl2now.h:28 scan.h:1598 scan.h:1600 scan.h:1628
 #: scan.h:1630 scan.h:1640 scan.h:1888 scan.h:1979 scan.h:2345 scart.h:12
-#: scart.h:25 service.h:710 service.h:951 skinadjust.h:133 skinselector.h:218
+#: scart.h:25 service.h:710 service.h:951 skinadjust.h:135 skinselector.h:218
 #: sock.h:952 softcam.h:403 solarmovie.h:35 solarmovie.h:47 solarmovie.h:295
 #: spinner.h:18 stopifnotused.c:32 streamcloud.h:31 streamcloud.h:78
 #: streamcloud.h:91 streamcloud.h:122 streamcloud.h:161 stream.h:33
@@ -584,8 +584,8 @@ msgstr "Ja / VZAP oneindig"
 #: timeshift.h:162 timeshiftsettings.h:45 titan.c:274 titan.c:338 titan.c:347
 #: titan.c:1077 titan.c:1098 titan.c:1104 titan.c:1115 titan.c:1121
 #: tithek.c:79 tithek_global.h:238 tithek.h:620 tithek.h:1116 tithek.h:1159
-#: tithek.h:1404 tithek.h:1426 tithek.h:1431 tithek.h:3096 tithek.h:3159
-#: tithek.h:3173 tithek.h:3183 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
+#: tithek.h:1409 tithek.h:1431 tithek.h:1436 tithek.h:3101 tithek.h:3164
+#: tithek.h:3178 tithek.h:3188 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922 TopfieldVFD.c:68
 #: TopfieldVFD.c:72 tpk.h:3185 tpk.new.h:3167 tunerconfig.h:782 unlock.h:20
 #: unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:53 videoweed.h:35
@@ -1620,11 +1620,11 @@ msgstr "Map/bestand kan niet verwijderd worden!"
 msgid "Can't show this file!"
 msgstr "Bestand kan niet getoond worden!"
 
-#: filemanager.h:355 mc_internetbrowser.h:41 mc_wetterinfo.h:41 tithek.h:1431
+#: filemanager.h:355 mc_internetbrowser.h:41 mc_wetterinfo.h:41 tithek.h:1436
 msgid "Registration needed, please contact Atemio !"
 msgstr "Registratie is noodzakelijk, neem AUB contact op met Atemio !"
 
-#: global.h:6387 keyactions.h:242
+#: global.h:6392 keyactions.h:242
 msgid "ERROR cant read res"
 msgstr "Fout, resolutie kan niet worden vastgesteld."
 
@@ -4390,8 +4390,8 @@ msgstr ""
 msgid "TiThek Settings"
 msgstr "TiThek Instellingen"
 
-#: plugins_tithek_skin.xml.h:3 skins_tithek_skin.xml.h:3 tithek.h:1490
-#: tithek.h:1622 tithek.h:3201
+#: plugins_tithek_skin.xml.h:3 skins_tithek_skin.xml.h:3 tithek.h:1495
+#: tithek.h:1627 tithek.h:3206
 msgid "ADD FAV"
 msgstr "Favorieten toevoegen"
 
@@ -5290,7 +5290,7 @@ msgstr "Ja (Text in MB)"
 msgid "press red"
 msgstr "Druk op rode toets"
 
-#: skinadjust.h:133
+#: skinadjust.h:135
 msgid "Receiver now reboot !!!"
 msgstr "Ontvanger herstart nu!!"
 
@@ -8436,7 +8436,7 @@ msgstr "De hoster wordt momenteel nog niet ondersteund!"
 msgid "Tithek - Mainmenu"
 msgstr "Tithek - Hoofdmenu"
 
-#: tithek_global.h:238 tithek.h:3096
+#: tithek_global.h:238 tithek.h:3101
 msgid "The hoster is not yet supported !"
 msgstr "De hoster wordt momenteel nog niet ondersteund"
 
@@ -8524,43 +8524,43 @@ msgstr "Volledig bestand downloaden"
 msgid "Download Full File (background)"
 msgstr "Volledig bestand downloaden (achtergrond)"
 
-#: tithek.h:1326
+#: tithek.h:1331
 msgid "Choose your Streaming Playback Modus from the following list"
 msgstr ""
 
-#: tithek.h:1397 tithek.h:1416
+#: tithek.h:1402 tithek.h:1421
 msgid "Filename"
 msgstr "Bestandsnaam"
 
-#: tithek.h:1404
+#: tithek.h:1409
 msgid "Start playback"
 msgstr "Weergave starten"
 
-#: tithek.h:1426
+#: tithek.h:1431
 msgid "Can't get Streamurl !"
 msgstr "Streamurl kan niet geopend worden !"
 
-#: tithek.h:1445
+#: tithek.h:1450
 msgid "TitanNit Tithek disclaimer"
 msgstr ""
 
-#: tithek.h:1485 tithek.h:1617 tithek.h:3196
+#: tithek.h:1490 tithek.h:1622 tithek.h:3201
 msgid "EDIT FAV"
 msgstr "Favorieten bewerken"
 
-#: tithek.h:1522
+#: tithek.h:1527
 msgid "Page"
 msgstr "Pagina"
 
-#: tithek.h:3159
+#: tithek.h:3164
 msgid "Remove this Favorite ?"
 msgstr "Wilt u deze favoriet wissen ?"
 
-#: tithek.h:3173
+#: tithek.h:3178
 msgid "Add this link as Favorite ?"
 msgstr "Wilt u deze favoriet toevoegen?"
 
-#: tithek.h:3183
+#: tithek.h:3188
 msgid "Edit this Favorite ?"
 msgstr "Wilt u deze favoriet bewerken?"
 
