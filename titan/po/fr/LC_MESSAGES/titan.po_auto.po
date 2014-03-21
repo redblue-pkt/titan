@@ -593,12 +593,12 @@ msgstr "oui / vzap sans fin"
 msgid "Message"
 msgstr ""
 
-#: ard.h:102 youtube.h:174
+#: ard.h:102 youtube.h:174 zdf.h:112
 msgid "Stream Menu"
 msgstr ""
 
-#: ard.h:102 stream.h:36 youtube.h:174
-msgid "Choose your Streaming link from the following list"
+#: ard.h:102 youtube.h:174 zdf.h:112
+msgid "Choose your Streaming Format from the following list"
 msgstr ""
 
 #: ard.h:133 ard.h:135 beeg.h:50 beeg.h:52 epgsearch.h:179 epgsearch.h:193
@@ -7954,6 +7954,10 @@ msgstr ""
 
 #: stream.h:33
 msgid "No Live Stream running"
+msgstr ""
+
+#: stream.h:36
+msgid "Choose your Streaming link from the following list"
 msgstr ""
 
 #: system_backup.h:15
