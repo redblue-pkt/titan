@@ -407,6 +407,7 @@ int screentunerreceptiondvbs(struct dvbdev* tuner)
 	int rcret = 0, ret = 0, maxsat = 1;
 	struct skin* tunerreceptiondvbs = getscreen("tunerreceptiondvbs");
 	struct skin* listbox = getscreennode(tunerreceptiondvbs, "listbox");
+	struct skin* b3 = getscreennode(tunerreceptiondvbs, "b3");
 	struct skin* tmp = NULL;
 	char* tmpstr = NULL;
 	
@@ -443,6 +444,12 @@ start:
 		}
 		if(ostrcmp(listbox->select->name, "sat_type") == 0)
 		{
+
+			if(ostrcmp(listbox->select->text, _("Lnb / Unicable")) == 0)
+				b3->hidden = NO;
+			else
+				b3->hidden = YES;				
+
 			if((ostrcmp(listbox->select->ret, "0") == 0) && (maxsat != 1))
 			{
 				delconfigtmpall();
