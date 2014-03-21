@@ -646,7 +646,7 @@ void hddformat(char* dev, char* filesystem)
 			if(large == 1)
 				cmd = ostrcat(cmd , " large", 1, 0);
 
-			if(checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1 || checkbox("UFS912") == 1 || checkbox("ATEMIO7600") == 1)
+			if(checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1 || checkbox("UFS912") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("ATEMIO5000") == 1 || checkbox("ATEMIO5200") == 1)
 			{
 				if(!file_exist("/mnt/logs"))
 					 mkdir("/mnt/logs", 777);
@@ -693,7 +693,7 @@ void hddformat(char* dev, char* filesystem)
 			if(large == 1)
 				cmd = ostrcat(cmd , " large", 1, 0);
 
-			if(checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1 || checkbox("UFS912") == 1 || checkbox("ATEMIO7600") == 1)
+			if(checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1 || checkbox("UFS912") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("ATEMIO5000") == 1 || checkbox("ATEMIO5200") == 1)
 			{
 				if(!file_exist("/mnt/logs"))
 					 mkdir("/mnt/logs", 777);
@@ -768,7 +768,7 @@ void hddformat(char* dev, char* filesystem)
 		else
 			cmd = ostrcat(cmd , " 0", 1, 0);
 
-		if(checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1 || checkbox("UFS912") == 1 || checkbox("ATEMIO7600") == 1)
+		if(checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1 || checkbox("UFS912") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("ATEMIO5000") == 1 || checkbox("ATEMIO5200") == 1)
 		{
 			if(!file_exist("/mnt/logs"))
 				 mkdir("/mnt/logs", 777);
@@ -824,7 +824,7 @@ int hddfsck(char* dev)
 		else if(ostrcmp(node->filesystem, "ext4") == 0)
 			cmd = ostrcat("/sbin/cmd.sh \"fsck.ext4.gui -f -p\" /dev/" , dev, 0, 0);
 
-		if(checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1 || checkbox("UFS912") == 1 || checkbox("ATEMIO7600") == 1)
+		if(checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1 || checkbox("UFS912") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("ATEMIO5000") == 1 || checkbox("ATEMIO5200") == 1)
 		{
 			if(!file_exist("/mnt/logs"))
 				 mkdir("/mnt/logs", 777);
