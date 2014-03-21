@@ -593,6 +593,14 @@ msgstr "oui / vzap sans fin"
 msgid "Message"
 msgstr ""
 
+#: ard.h:102 youtube.h:174
+msgid "Stream Menu"
+msgstr ""
+
+#: ard.h:102 stream.h:36 youtube.h:174
+msgid "Choose your Streaming link from the following list"
+msgstr ""
+
 #: ard.h:133 ard.h:135 beeg.h:50 beeg.h:52 epgsearch.h:179 epgsearch.h:193
 #: epgsearch.h:207 giga.h:13 giga.h:15 imdbapi.h:287 imdb.h:712
 #: internetradio.h:13 internetradio.h:15 internettv.h:13 internettv.h:15
@@ -738,6 +746,10 @@ msgstr "accueil"
 #: browser.h:206
 msgid "Browser Favoriten"
 msgstr "favori Navigateur Internet "
+
+#: browser.h:206
+msgid "Choose your Internet Favorite from the following list"
+msgstr ""
 
 #: callmon_main.h:39
 msgid ""
@@ -1539,6 +1551,10 @@ msgstr ""
 msgid "Menu"
 msgstr "menu"
 
+#: filemanager.h:89
+msgid "Choose your Filemanager Option from the following list"
+msgstr ""
+
 #: filemanager.h:95
 msgid "Can't rename file !"
 msgstr ""
@@ -1815,6 +1831,14 @@ msgstr ""
 #: hbbtv.h:742
 msgid "Channel HBBTV"
 msgstr "Chaine"
+
+#: hbbtv.h:758
+msgid "HBBTV Favoriten"
+msgstr ""
+
+#: hbbtv.h:758
+msgid "Choose your HBBTV Favorite from the following list"
+msgstr ""
 
 #: hello.c:36
 msgid "Hello World !"
@@ -2337,6 +2361,14 @@ msgstr "Charger liste lecture"
 msgid "Edit Playlist"
 msgstr "modifier la Liste de lecture"
 
+#: mc_global.h:609
+msgid "Playlist Menu"
+msgstr ""
+
+#: mc_global.h:609
+msgid "Choose your Playlist Mode from the following list"
+msgstr ""
+
 #: mc_internetbrowser.h:38
 msgid "Install netsurf Internetbrowser Tpk first !"
 msgstr ""
@@ -2664,12 +2696,20 @@ msgstr ""
 msgid "Networkbrowser - show scanned DNS-Shares"
 msgstr ""
 
+#: networkbrowser.h:1181
+msgid "Choose your DNS-Share from the following list"
+msgstr ""
+
 #: networkbrowser.h:1189
 msgid "Use User authentication ?"
 msgstr ""
 
 #: networkbrowser.h:1207
 msgid "Networkbrowser - show scanned cifs/nfs-Shares"
+msgstr ""
+
+#: networkbrowser.h:1207
+msgid "Choose your cifs/nfs Share from the following list"
 msgstr ""
 
 #: networkbrowser.h:1340
@@ -2752,6 +2792,10 @@ msgstr ""
 #: networkbrowser.h:1875
 msgid "Networkbrowser - show Shares"
 msgstr "Navigateur Réseau"
+
+#: networkbrowser.h:1875
+msgid "Choose your Shares from the following list"
+msgstr ""
 
 #: networkbrowser.h:1907
 msgid "Are you sure you want remove this share?"
@@ -3282,6 +3326,10 @@ msgstr ""
 
 #: play.h:650 tpk_showname.h:183
 msgid "TMDb"
+msgstr ""
+
+#: play.h:721
+msgid "Choose your Red-Menu entry from the following list"
 msgstr ""
 
 #: play.h:1202
@@ -4182,7 +4230,7 @@ msgstr ""
 msgid "Reader Config"
 msgstr ""
 
-#: plugins_readerconfig_skin.xml.h:8 readerconfig.h:268
+#: plugins_readerconfig_skin.xml.h:8 readerconfig.h:268 readerconfig.h:338
 #: skins_readerconfig_skin.xml.h:8
 msgid "Reader Configuration"
 msgstr ""
@@ -4550,7 +4598,7 @@ msgid "Use config from Stick or HDD"
 msgstr ""
 
 #: readerconfig.h:338
-msgid "Choice Config File"
+msgid "Choose your Config File from the following list"
 msgstr ""
 
 #: readerconfig.h:343
@@ -4843,6 +4891,10 @@ msgstr ""
 msgid "Format MNT (all)"
 msgstr ""
 
+#: restoredefault.h:67
+msgid "Choose your Restore Mode from the following list."
+msgstr ""
+
 #: rgui.h:30
 msgid "Can't connect to server !"
 msgstr ""
@@ -5083,12 +5135,30 @@ msgstr ""
 msgid "Blue Key Action - Setup"
 msgstr ""
 
+#: settings_bluebutton.h:47
+msgid ""
+"Choose your plugin / menu item from the following list and show it so the "
+"blue button"
+msgstr ""
+
 #: settings_pluginbutton.h:6
 msgid "Plugin Key Action - Setup"
 msgstr ""
 
+#: settings_pluginbutton.h:49
+msgid ""
+"Choose your plugin / menu item from the following list and show it so the "
+"plugin button"
+msgstr ""
+
 #: settings_redbutton.h:6
 msgid "Red Key Action - Setup"
+msgstr ""
+
+#: settings_redbutton.h:49
+msgid ""
+"Choose your plugin / menu item from the following list and show it so the "
+"red button"
 msgstr ""
 
 #: skinadjust.h:23
@@ -8128,6 +8198,10 @@ msgstr ""
 msgid "Select Your Remote Control"
 msgstr ""
 
+#: titan.c:916
+msgid "Choose your Remotecontrol Model from the following list"
+msgstr ""
+
 #: titan.c:957
 msgid "First Wizzard"
 msgstr "Réglages assisté"
@@ -8265,6 +8339,10 @@ msgstr ""
 
 #: tithek.h:1292
 msgid "Download Full File (background)"
+msgstr ""
+
+#: tithek.h:1326
+msgid "Choose your Streaming Playback Modus from the following list"
 msgstr ""
 
 #: tithek.h:1397 tithek.h:1416
@@ -8624,6 +8702,14 @@ msgstr ""
 
 #: tmdb.h:845
 msgid "( --votes-- )"
+msgstr ""
+
+#: tmdb.h:886
+msgid "Result List"
+msgstr ""
+
+#: tmdb.h:886
+msgid "Choose your Title from the following list"
 msgstr ""
 
 #: tmdb.h:922
@@ -10318,12 +10404,24 @@ msgstr ""
 msgid "Unicable manufacturer"
 msgstr ""
 
+#: unicable.h:197
+msgid "Choose your manufacturer from the following list"
+msgstr ""
+
 #: unicable.h:212
 msgid "Unicable product"
 msgstr ""
 
+#: unicable.h:212
+msgid "Choose your Unicable product from the following list"
+msgstr ""
+
 #: unicable.h:277
 msgid "Unicable SCR"
+msgstr ""
+
+#: unicable.h:277
+msgid "Choose your Unicable SCR from the following list"
 msgstr ""
 
 #: unlock.h:20
@@ -10346,6 +10444,14 @@ msgstr ""
 
 #: unlock.h:75
 msgid "Code not ok, please try again !"
+msgstr ""
+
+#: usbreset.h:83
+msgid "USB Reset"
+msgstr ""
+
+#: usbreset.h:83
+msgid "Choose your Devices from the following list"
 msgstr ""
 
 #: vfdisplay.h:32
