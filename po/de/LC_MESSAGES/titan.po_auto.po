@@ -6267,19 +6267,19 @@ msgstr ""
 
 #: skin_default_skin.xml.h:280
 msgid "Here you can make your adjust settings."
-msgstr ""
+msgstr "Hier können Sie die erweiterte System Einstellungen vornehmen."
 
 #: skin_default_skin.xml.h:281
 msgid "Here you can make your audio/video autostart settings."
-msgstr ""
+msgstr "Hier können Sie den Audio/Video Autostart konfigurieren."
 
 #: skin_default_skin.xml.h:282
 msgid "Here you can make your cam/emu autostart settings."
-msgstr ""
+msgstr "Hier können Sie den Cam/Emu Autostart konfigurieren."
 
 #: skin_default_skin.xml.h:283
 msgid "Here you can make your default autostart settings."
-msgstr ""
+msgstr "Hier können Sie den Allgemeinen Autostart konfigurieren."
 
 #: skin_default_skin.xml.h:284
 msgid "Here you can make your epg settings."
@@ -6295,11 +6295,11 @@ msgstr "Hier können Sie die Einstellungen für CI-Module anpassen."
 
 #: skin_default_skin.xml.h:287
 msgid "Here you can make your network autostart settings."
-msgstr ""
+msgstr "Hier können Sie den Netzwerk Autostart konfigurieren."
 
 #: skin_default_skin.xml.h:288
 msgid "Here you can make your Overclocking settings."
-msgstr ""
+msgstr "Hier können Sie die Cpu �bertacktung konfigurieren."
 
 #: skin_default_skin.xml.h:289
 msgid "Here you can make your picture and sound settings."
