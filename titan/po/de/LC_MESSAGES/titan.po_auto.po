@@ -226,15 +226,15 @@ msgstr "Ok"
 msgid "EXIT"
 msgstr "Exit"
 
-#: adjust.h:64 adjust.h:79 adjust.h:88 adjust.h:93 adjust.h:118 adjust.h:148
-#: adjust.h:158 adjust.h:162 adjust.h:179 adjust.h:183 adjust.h:191
-#: adjust.h:195 adjust.h:199 adjust.h:205 adjust.h:209 adjust.h:216
-#: adjust.h:220 adjust.h:224 adjust.h:250 autotimer.c:453 autotimer.c:486
-#: avsettings.h:147 avsettings.h:168 avsettings.h:172 blindscanadjust.h:150
-#: blindscanadjust.h:154 blindscanadjust.h:158 blindscanadjust.h:187
-#: blindscanadjust.h:191 dlna.h:276 epgsettings.h:134 epgsettings.h:187
-#: epgsettings.h:196 epgsettings.h:200 epgsettings.h:205 epgsettings.h:210
-#: httpdsettings.h:20 httpdsettings.h:50 inadyn.h:138
+#: adjust.h:65 adjust.h:80 adjust.h:89 adjust.h:94 adjust.h:119 adjust.h:149
+#: adjust.h:159 adjust.h:163 adjust.h:180 adjust.h:184 adjust.h:192
+#: adjust.h:196 adjust.h:200 adjust.h:206 adjust.h:210 adjust.h:217
+#: adjust.h:221 adjust.h:225 adjust.h:229 adjust.h:260 autotimer.c:453
+#: autotimer.c:486 avsettings.h:147 avsettings.h:168 avsettings.h:172
+#: blindscanadjust.h:150 blindscanadjust.h:154 blindscanadjust.h:158
+#: blindscanadjust.h:187 blindscanadjust.h:191 dlna.h:276 epgsettings.h:134
+#: epgsettings.h:187 epgsettings.h:196 epgsettings.h:200 epgsettings.h:205
+#: epgsettings.h:210 httpdsettings.h:20 httpdsettings.h:50 inadyn.h:138
 #: mc_audioplayer_settings.h:45 mc_audioplayer_settings.h:51
 #: mc_audioplayer_settings.h:55 mc_pictureplayer_settings.h:75
 #: mc_videoplayer_settings.h:39 mc_videoplayer_settings.h:43
@@ -275,26 +275,26 @@ msgstr "Exit"
 msgid "no"
 msgstr "Nein"
 
-#: adjust.h:65
+#: adjust.h:66
 msgid "infobar"
 msgstr "Informationsleiste"
 
-#: adjust.h:66
+#: adjust.h:67
 msgid "epg"
 msgstr "EPG"
 
-#: adjust.h:67 epgsettings.h:138
+#: adjust.h:68 epgsettings.h:138
 msgid "Channel EPG"
 msgstr "Sender EPG"
 
-#: adjust.h:80 adjust.h:94 adjust.h:119 adjust.h:149 adjust.h:159 adjust.h:180
-#: adjust.h:184 adjust.h:192 adjust.h:196 adjust.h:200 adjust.h:206
-#: adjust.h:210 adjust.h:217 adjust.h:221 adjust.h:225 autotimer.c:454
-#: autotimer.c:487 avsettings.h:148 avsettings.h:169 blindscanadjust.h:151
-#: blindscanadjust.h:155 blindscanadjust.h:159 blindscanadjust.h:188
-#: blindscanadjust.h:192 dlna.h:277 epgsettings.h:135 epgsettings.h:188
-#: epgsettings.h:197 httpdsettings.h:21 httpdsettings.h:51 inadyn.h:139
-#: mc_audioplayer_settings.h:46 mc_audioplayer_settings.h:52
+#: adjust.h:81 adjust.h:95 adjust.h:120 adjust.h:150 adjust.h:160 adjust.h:181
+#: adjust.h:185 adjust.h:193 adjust.h:197 adjust.h:201 adjust.h:207
+#: adjust.h:211 adjust.h:218 adjust.h:222 adjust.h:226 adjust.h:230
+#: autotimer.c:454 autotimer.c:487 avsettings.h:148 avsettings.h:169
+#: blindscanadjust.h:151 blindscanadjust.h:155 blindscanadjust.h:159
+#: blindscanadjust.h:188 blindscanadjust.h:192 dlna.h:277 epgsettings.h:135
+#: epgsettings.h:188 epgsettings.h:197 httpdsettings.h:21 httpdsettings.h:51
+#: inadyn.h:139 mc_audioplayer_settings.h:46 mc_audioplayer_settings.h:52
 #: mc_audioplayer_settings.h:56 mc_pictureplayer_settings.h:76
 #: mc_videoplayer_settings.h:40 mc_videoplayer_settings.h:44
 #: mc_videoplayer_settings.h:50 mediadb.h:1083 mediadb.h:1090 mediadb.h:1105
@@ -332,114 +332,114 @@ msgstr "Sender EPG"
 msgid "yes"
 msgstr "Ja"
 
-#: adjust.h:89
+#: adjust.h:90
 msgid "medium"
 msgstr "mittel"
 
-#: adjust.h:90 adjust.h:169 mc_audioplayer_settings.h:35
+#: adjust.h:91 adjust.h:170 mc_audioplayer_settings.h:35
 #: mc_pictureplayer_settings.h:50 mc_videoplayer_settings.h:31
 #: moduleconfig.h:248 plugins_mc_skin.xml.h:23 skins_mc_skin.xml.h:23
 msgid "fast"
 msgstr "schnell"
 
-#: adjust.h:97 mc_audioplayer_settings.h:27 mc_pictureplayer_settings.h:42
+#: adjust.h:98 mc_audioplayer_settings.h:27 mc_pictureplayer_settings.h:42
 #: mc_videoplayer_settings.h:23 plugins_mc_skin.xml.h:7
 #: skin_default_skin.xml.h:72 skins_mc_skin.xml.h:7
 msgid "alpha"
 msgstr "Alphabetisch"
 
-#: adjust.h:98 mc_audioplayer_settings.h:28 mc_pictureplayer_settings.h:43
+#: adjust.h:99 mc_audioplayer_settings.h:28 mc_pictureplayer_settings.h:43
 #: mc_videoplayer_settings.h:24 plugins_mc_skin.xml.h:49
 #: skin_default_skin.xml.h:512 skins_mc_skin.xml.h:49
 msgid "reverse alpha"
 msgstr "Alphabetisch umgekehrt"
 
-#: adjust.h:99 mc_audioplayer_settings.h:29 mc_pictureplayer_settings.h:44
+#: adjust.h:100 mc_audioplayer_settings.h:29 mc_pictureplayer_settings.h:44
 #: mc_videoplayer_settings.h:25 plugins_mc_skin.xml.h:55
 #: skin_default_skin.xml.h:579 skins_mc_skin.xml.h:55
 msgid "size"
 msgstr "Größe"
 
-#: adjust.h:100 mc_audioplayer_settings.h:30 mc_pictureplayer_settings.h:45
+#: adjust.h:101 mc_audioplayer_settings.h:30 mc_pictureplayer_settings.h:45
 #: mc_videoplayer_settings.h:26 plugins_mc_skin.xml.h:51
 #: skin_default_skin.xml.h:514 skins_mc_skin.xml.h:51
 msgid "reverse size"
 msgstr "Größe umgekehrt"
 
-#: adjust.h:101 mc_audioplayer_settings.h:31 mc_pictureplayer_settings.h:46
+#: adjust.h:102 mc_audioplayer_settings.h:31 mc_pictureplayer_settings.h:46
 #: mc_videoplayer_settings.h:27 plugins_mc_skin.xml.h:16
 #: skin_default_skin.xml.h:161 skins_mc_skin.xml.h:16 vfdisplay.h:46
 msgid "date"
 msgstr "Datum"
 
-#: adjust.h:102 mc_audioplayer_settings.h:32 mc_pictureplayer_settings.h:47
+#: adjust.h:103 mc_audioplayer_settings.h:32 mc_pictureplayer_settings.h:47
 #: mc_videoplayer_settings.h:28 plugins_mc_skin.xml.h:50
 #: skin_default_skin.xml.h:513 skins_mc_skin.xml.h:50
 msgid "reverse date"
 msgstr "Datum umgekehrt"
 
-#: adjust.h:105
+#: adjust.h:106
 msgid "Power Menu"
 msgstr "Ausschaltmenü"
 
-#: adjust.h:106 skin_default_skin.xml.h:462
+#: adjust.h:107 skin_default_skin.xml.h:462
 msgid "Power Off"
 msgstr "Ausschalten"
 
-#: adjust.h:107 powerofftimer.h:118 skin_default_skin.xml.h:601
+#: adjust.h:108 powerofftimer.h:118 skin_default_skin.xml.h:601
 msgid "Standby"
 msgstr ""
 
-#: adjust.h:108 skin_default_skin.xml.h:508 softcam.h:291
+#: adjust.h:109 skin_default_skin.xml.h:508 softcam.h:291
 msgid "Restart"
 msgstr "Neustart"
 
-#: adjust.h:109
+#: adjust.h:110
 msgid "Gui Restart"
 msgstr "Titan Neustart"
 
-#: adjust.h:112 adjust.h:122 adjust.h:176 epgsettings.h:147 epgsettings.h:153
+#: adjust.h:113 adjust.h:123 adjust.h:177 epgsettings.h:147 epgsettings.h:153
 #: network.h:593
 msgid "deaktiv"
 msgstr "ausgeschaltet"
 
-#: adjust.h:113
+#: adjust.h:114
 msgid "1 sec"
 msgstr "1 Sekunde"
 
-#: adjust.h:114 avsettings.h:77
+#: adjust.h:115 avsettings.h:77
 msgid "2 sec"
 msgstr "2 Sekunden"
 
-#: adjust.h:115 pin.h:188
+#: adjust.h:116 pin.h:188
 msgid "endless"
 msgstr "endlos"
 
-#: adjust.h:123
+#: adjust.h:124
 msgid "1 GB"
 msgstr ""
 
-#: adjust.h:124
+#: adjust.h:125
 msgid "2 GB"
 msgstr ""
 
-#: adjust.h:125
+#: adjust.h:126
 msgid "3 GB"
 msgstr ""
 
-#: adjust.h:126
+#: adjust.h:127
 msgid "4 GB"
 msgstr ""
 
-#: adjust.h:144 adjust.h:241 httpdsettings.h:43
+#: adjust.h:145 adjust.h:251 httpdsettings.h:43
 msgid "extern"
 msgstr ""
 
-#: adjust.h:145 adjust.h:242 httpdsettings.h:42
+#: adjust.h:146 adjust.h:252 httpdsettings.h:42
 msgid "intern"
 msgstr ""
 
-#: adjust.h:152 autotimer.c:479 autotimer.c:512 avsettings.h:68
+#: adjust.h:153 autotimer.c:479 autotimer.c:512 avsettings.h:68
 #: rectimer.h:1165 transponder.h:121 transponder.h:133 transponder.h:157
 #: transponder.h:167 transponder.h:193 transponder.h:200 transponder.h:226
 #: transponder.h:234 transponder.h:258 transponder.h:268 transponder.h:294
@@ -449,74 +449,74 @@ msgstr ""
 msgid "auto"
 msgstr "automatisch"
 
-#: adjust.h:153 autotimer.c:480 autotimer.c:513 epgsettings.h:215
+#: adjust.h:154 autotimer.c:480 autotimer.c:513 epgsettings.h:215
 #: rectimer.h:1166
 msgid "nothing"
 msgstr "nichts tun"
 
-#: adjust.h:154 autotimer.c:481 autotimer.c:514 rectimer.h:1167
+#: adjust.h:155 autotimer.c:481 autotimer.c:514 rectimer.h:1167
 #: stopifnotused.c:113
 msgid "standby"
 msgstr "Standby"
 
-#: adjust.h:155 autotimer.c:482 autotimer.c:515 rectimer.h:1168
+#: adjust.h:156 autotimer.c:482 autotimer.c:515 rectimer.h:1168
 #: stopifnotused.c:112
 msgid "power off"
 msgstr "Ausschalten"
 
-#: adjust.h:163
+#: adjust.h:164
 msgid "anim. width"
 msgstr "horizontal"
 
-#: adjust.h:164
+#: adjust.h:165
 msgid "anim. height"
 msgstr "vertikal"
 
-#: adjust.h:165
+#: adjust.h:166
 msgid "anim. both"
 msgstr "zoom"
 
-#: adjust.h:168
+#: adjust.h:169
 msgid "very fast"
 msgstr "sehr schnell"
 
-#: adjust.h:170 timeshiftsettings.h:49 tmc.h:557
+#: adjust.h:171 timeshiftsettings.h:49 tmc.h:557
 msgid "normal"
 msgstr ""
 
-#: adjust.h:171 moduleconfig.h:246 tmc.h:556
+#: adjust.h:172 moduleconfig.h:246 tmc.h:556
 msgid "slow"
 msgstr "langsam"
 
-#: adjust.h:172
+#: adjust.h:173
 msgid "very slow"
 msgstr "sehr langsam"
 
-#: adjust.h:175 pin.h:106
+#: adjust.h:176 pin.h:106
 msgid "hidden"
 msgstr "ausblenden"
 
-#: adjust.h:187
+#: adjust.h:188
 msgid "channel-movie"
 msgstr "Sender-Titel"
 
-#: adjust.h:188
+#: adjust.h:189
 msgid "movie-channel"
 msgstr "Titel-Sender"
 
-#: adjust.h:202
+#: adjust.h:203
 msgid "expert (11)"
 msgstr ""
 
-#: adjust.h:211
+#: adjust.h:212
 msgid "yes / vzap 1 sec"
 msgstr "Ja / VZAP 1 Sek"
 
-#: adjust.h:212
+#: adjust.h:213
 msgid "yes / vzap 2 sec"
 msgstr "Ja / VZAP 2 Sek"
 
-#: adjust.h:213
+#: adjust.h:214
 msgid "yes / vzap endless"
 msgstr "Ja / VZAP unendlich"
 
