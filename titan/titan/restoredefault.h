@@ -64,7 +64,7 @@ void screenrestoredefaultchoice()
 	addmenulist(&mlist, _("Format MNT with Backup/Restore"), NULL, NULL, 0, 0);
 	addmenulist(&mlist, _("Format MNT (all)"), NULL, NULL, 0, 0);
 
-	mbox = menulistbox(mlist, NULL, _("Restore default settings"), NULL, NULL, 1, 0);
+	mbox = menulistbox(mlist, NULL, _("Restore default settings"), _("Choose your Restore Mode from the following list."), NULL, NULL, 1, 0);
 
 	if(mbox != NULL)
 	{

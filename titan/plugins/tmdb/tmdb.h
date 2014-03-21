@@ -883,7 +883,7 @@ start:
 				tnode = tnode->next;
 			}
 
-			mbox = menulistbox(mlist, NULL, NULL, NULL, NULL, 0, 0);
+			mbox = menulistbox(mlist, NULL, _("Result List"), _("Choose your Title from the following list"), NULL, NULL, 0, 0);
 			if(mbox != NULL)
 			{
 				search = ostrcat(mbox->text, NULL, 0, 0);

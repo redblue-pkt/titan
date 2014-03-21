@@ -44,7 +44,7 @@ void screensettings_bluebutton()
 	debug(60, "Bluekey: %s (default)", bluekey);
 
 	setmenulistdefault(mlist, bluekey);
-	mbox = menulistbox(mlist, NULL, skintitle, NULL, NULL, 1, 0);
+	mbox = menulistbox(mlist, NULL, skintitle, _("Choose your plugin / menu item from the following list and show it so the blue button"), NULL, NULL, 1, 0);
 
 	if(mbox == NULL)
 	{

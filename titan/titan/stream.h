@@ -33,7 +33,7 @@ void screenstreaming()
 		textbox(_("Message"), _("No Live Stream running"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 	else
 	{
-		mbox = menulistbox(mlist, "menulist", _("Streaming"), NULL, NULL, 0, 0);
+		mbox = menulistbox(mlist, "menulist", _("Streaming"), _("Choose your Streaming link from the following list"), NULL, NULL, 0, 0);
 		if(mbox != NULL && ostrstr(mbox->name, _("stop")) == mbox->name)
 		{
 			servicenode = getrecordbyname(mbox->name, RECORDSTREAM);

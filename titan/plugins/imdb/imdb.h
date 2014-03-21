@@ -183,7 +183,7 @@ current not working
 			}
 			free(ret); ret = NULL;
 				
-			mbox = menulistbox(mlist, NULL, NULL, NULL, NULL, 1, 0);
+			mbox = menulistbox(mlist, NULL, NULL, NULL, NULL, NULL, 1, 0);
 			if(mbox != NULL)
 			{
 				free(title), title = NULL;

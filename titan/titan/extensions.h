@@ -161,7 +161,7 @@ char* getinstallpath(char* path, char* size)
 	if(count > 0) // show always choicebox
 	{
 		free(tmpstr); tmpstr = NULL;
-		mbox = menulistbox(mlist, "tpkinstallinfo", _("Choice Install Medium"), NULL, NULL, 0, 0);
+		mbox = menulistbox(mlist, "tpkinstallinfo", _("Choice Install Medium"), NULL, NULL, NULL, 0, 0);
 		if(mbox != NULL)
 			tmpstr = ostrcat(mbox->param, NULL, 0, 0);
 	}
@@ -338,7 +338,7 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 		else
 		{
 			addmenulistall(&mlist, tmpstr, NULL, 0, defentry);
-			mbox = menulistbox(mlist, NULL, text1, NULL, "/skin/plugin.png", 1, 0);
+			mbox = menulistbox(mlist, NULL, text1, NULL, NULL, "/skin/plugin.png", 1, 0);
 		}
 		
 		free(tmpstr); tmpstr = NULL;

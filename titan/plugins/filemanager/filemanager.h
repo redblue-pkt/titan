@@ -86,7 +86,7 @@ void filemanagermenu(int aktfilelist, struct skin* filelist1, struct skin* filel
 	addmenulist(&mlist, _("Rename"), NULL, NULL, 0, 0);
 	addmenulist(&mlist, _("Create Folder"), NULL, NULL, 0, 0);
 
-	mbox = menulistbox(mlist, NULL, skintitle, NULL, NULL, 1, 0);
+	mbox = menulistbox(mlist, NULL, skintitle, _("Choose your Filemanager Option from the following list"), NULL, NULL, 1, 0);
 	if(mbox != NULL)
 	{
 		if(ostrcmp(mbox->name, _("Rename")) == 0)

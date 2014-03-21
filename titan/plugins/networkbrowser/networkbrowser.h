@@ -1178,7 +1178,7 @@ start:
 	b1->hidden = NO;
 	b2->hidden = NO;
 
-	mbox = menulistbox(mlist, "networkbrowser_scan", _("Networkbrowser - show scanned DNS-Shares"), "%pluginpath%/networkbrowser/skin/", NULL, 1, 0);
+	mbox = menulistbox(mlist, "networkbrowser_scan", _("Networkbrowser - show scanned DNS-Shares"), _("Choose your DNS-Share from the following list"), "%pluginpath%/networkbrowser/skin/", NULL, 1, 0);
 
 	if(mbox != NULL)
 	{
@@ -1204,7 +1204,7 @@ start:
 		getnetworkbrowser_nfs(&mlist1, mbox->param, mbox->param1);
 		clearscreen(load);
 start1:
-		mbox1 = menulistboxext(mlist1, "networkbrowser_scan", _("Networkbrowser - show scanned cifs/nfs-Shares"), "%pluginpath%/networkbrowser/skin/", NULL, 1, NULL, 0);
+		mbox1 = menulistboxext(mlist1, "networkbrowser_scan", _("Networkbrowser - show scanned cifs/nfs-Shares"), _("Choose your cifs/nfs Share from the following list"), "%pluginpath%/networkbrowser/skin/", NULL, 1, NULL, 0);
 		if(mbox1 != NULL && mbox->name != NULL)
 		{
 			if(ostrstr(mbox1->name, "(cifs)") != NULL)
@@ -1872,7 +1872,7 @@ start:
 		node = node->next;
 	}
 	
-	mbox = menulistboxext(mlist, "networkbrowser", _("Networkbrowser - show Shares"), "%pluginpath%/networkbrowser/skin/", NULL, 1, &rcret, 0);
+	mbox = menulistboxext(mlist, "networkbrowser", _("Networkbrowser - show Shares"), _("Choose your Shares from the following list"), "%pluginpath%/networkbrowser/skin/", NULL, 1, &rcret, 0);
 
 	if(rcret == getrcconfigint("rcred", NULL))
 	{

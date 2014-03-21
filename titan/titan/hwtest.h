@@ -187,7 +187,7 @@ void screenhwtest()
 	
 	while(1)
 	{
-		mbox = menulistbox(mlist, NULL, _("Hardware Test"), NULL, NULL, 1, 0);
+		mbox = menulistbox(mlist, NULL, _("Hardware Test"), NULL, NULL, NULL, 1, 0);
 		
 		if(mbox != NULL)
 		{

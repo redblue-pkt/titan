@@ -3494,7 +3494,7 @@ struct menulist* tpkmenulist(struct menulist* mlist, char* paramskinname, char* 
 	}
 
   setmenulistdefault(mlist, defentry);
-	return menulistbox(mlist, paramskinname, skintitle, paramskinpath, "/skin/plugin.png", showpng, 0);
+	return menulistbox(mlist, paramskinname, skintitle, NULL, paramskinpath, "/skin/plugin.png", showpng, 0);
 }
 
 char* gettpktmplist(char* path)

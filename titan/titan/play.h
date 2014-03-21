@@ -718,7 +718,7 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 		child = child->next;
 	}
 
-	mbox = menulistbox(mlist, NULL, skintitle, NULL, NULL, 1, 0);
+	mbox = menulistbox(mlist, NULL, skintitle, _("Choose your Red-Menu entry from the following list"), NULL, NULL, 1, 0);
 	if(mbox != NULL)
 	{
 		if(ostrcmp(mbox->name, "Video Settings") == 0)
