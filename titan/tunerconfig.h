@@ -442,14 +442,13 @@ start:
 		{
 			break;
 		}
+		if(ostrcmp(listbox->select->text, _("Lnb / Unicable")) == 0)
+			b3->hidden = NO;
+		else
+			b3->hidden = YES;	
+				
 		if(ostrcmp(listbox->select->name, "sat_type") == 0)
 		{
-
-			if(ostrcmp(listbox->select->text, _("Lnb / Unicable")) == 0)
-				b3->hidden = NO;
-			else
-				b3->hidden = YES;				
-
 			if((ostrcmp(listbox->select->ret, "0") == 0) && (maxsat != 1))
 			{
 				delconfigtmpall();
