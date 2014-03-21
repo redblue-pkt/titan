@@ -118,7 +118,7 @@ msgstr ""
 #: tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759
 #: tmdb.h:922 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3185 tpk.new.h:3167
 #: tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327
-#: tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:779 unlock.h:20 unlock.h:66
+#: tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:778 unlock.h:20 unlock.h:66
 #: unlock.h:71 unlock.h:75 videomode.h:53 videoweed.h:35 videoweed.h:80
 #: vidstream.h:45 vidstream.h:86 vidstream.h:98 vidstream.h:167 xvidstage.h:54
 #: xvidstage.h:100 xvidstage.h:177 youtube.h:198 zapback.c:79 zdf.h:29
@@ -219,7 +219,7 @@ msgstr "Ok"
 #: tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759
 #: tmdb.h:922 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3185 tpk.new.h:3167
 #: tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327
-#: tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:779 unlock.h:20 unlock.h:66
+#: tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:778 unlock.h:20 unlock.h:66
 #: unlock.h:71 unlock.h:75 videomode.h:53 videoweed.h:35 videoweed.h:80
 #: vidstream.h:45 vidstream.h:86 vidstream.h:98 vidstream.h:167 xvidstage.h:54
 #: xvidstage.h:100 xvidstage.h:177 youtube.h:198 zapback.c:79 zdf.h:29
@@ -585,7 +585,7 @@ msgstr "Ja / VZAP unendlich"
 #: tithek.h:1404 tithek.h:1426 tithek.h:1431 tithek.h:3096 tithek.h:3159
 #: tithek.h:3173 tithek.h:3183 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922 TopfieldVFD.c:68
-#: TopfieldVFD.c:72 tpk.h:3185 tpk.new.h:3167 tunerconfig.h:779 unlock.h:20
+#: TopfieldVFD.c:72 tpk.h:3185 tpk.new.h:3167 tunerconfig.h:778 unlock.h:20
 #: unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:53 videoweed.h:35
 #: videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98 vidstream.h:167
 #: xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:198 zapback.c:79
@@ -671,7 +671,7 @@ msgstr "Einstellungen wurden erfolgreich gespeichert"
 #: panel_settings_autostart.h:61 panel_settings_overclocking.h:276
 #: readerconfig.h:413 settings_autostart.h:53 settings_overclocking.h:276
 #: transponder.h:256 transponder.h:264 transponder.h:415 transponder.h:423
-#: tunerconfig.h:678 vfdisplay.h:42 vfdisplay.h:50
+#: tunerconfig.h:677 vfdisplay.h:42 vfdisplay.h:50
 msgid "off"
 msgstr "aus"
 
@@ -10652,11 +10652,11 @@ msgid "Expert"
 msgstr ""
 
 #: tunerconfig.h:183 tunerconfig.h:212 tunerconfig.h:243 tunerconfig.h:276
-#: tunerconfig.h:512
+#: tunerconfig.h:511
 msgid "DiSEqC"
 msgstr ""
 
-#: tunerconfig.h:301 tunerconfig.h:448 tunerconfig.h:506
+#: tunerconfig.h:301 tunerconfig.h:445 tunerconfig.h:505
 msgid "Lnb / Unicable"
 msgstr "LNB/Unicable"
 
@@ -10664,15 +10664,15 @@ msgstr "LNB/Unicable"
 msgid "Terrestrisch"
 msgstr ""
 
-#: tunerconfig.h:652
+#: tunerconfig.h:651
 msgid "direct connect"
 msgstr "Direkte Verbindung"
 
-#: tunerconfig.h:663
+#: tunerconfig.h:662
 msgid "loop to Tuner"
 msgstr "Verbunden mit Tuner"
 
-#: tunerconfig.h:779
+#: tunerconfig.h:778
 msgid ""
 "Tunerconfig is not allowed if record\n"
 "or stream is running !"
@@ -10680,7 +10680,7 @@ msgstr ""
 "Tunerkonfiguration ist während einer aktiven Aufnahme\n"
 "oder einer Streamwiedergabe nicht zugelassen."
 
-#: tunerconfig.h:793
+#: tunerconfig.h:792
 msgid "Tuner "
 msgstr ""
 
