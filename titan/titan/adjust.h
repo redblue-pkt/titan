@@ -383,13 +383,15 @@ void screenadjust()
 					addownconfig("sataswitch", sataswitch->ret);
 					setsataswitch(sataswitch->ret);
 				}
-			}	
-			addconfigscreen("dualboot", dualboot);
-			if(dualboot->ret != NULL && ostrcmp(dualboot->ret, "0") == 0)
-				unlink("/mnt/config/dualboot");
-			else
-				system("touch /mnt/config/dualboot");
-
+			}
+			if(checkbox("ATEMIO5000") == 1 || checkbox("ATEMIO5200") == 1)
+			{
+				addconfigscreen("dualboot", dualboot);
+				if(dualboot->ret != NULL && ostrcmp(dualboot->ret, "0") == 0)
+					unlink("/mnt/config/dualboot");
+				else
+					system("touch /mnt/config/dualboot");
+			}
 			addconfigscreen("playerbuffersize", playerbuffersize);
 			addconfigscreen("playerbufferseektime", playerbufferseektime);
 			

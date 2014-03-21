@@ -1298,28 +1298,33 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 			{
 				if(flag == 4)
 				{
+#ifdef EPLAYER3
 					addmenulist(&mlist, "Streaming Playback Caching (0.5MB)", NULL, NULL, 0, 0);
 					addmenulist(&mlist, "Streaming Playback Caching (1MB)", NULL, NULL, 0, 0);
+#endif
 				}	
 				else if(!ostrncmp("http://", tmpstr1, 7))
 				{
+#ifdef EPLAYER3
 //					addmenulist(&mlist, "Streaming Playback Caching (1MB)", NULL, NULL, 0, 0);
 //					addmenulist(&mlist, "Streaming Playback Caching (2MB)", NULL, NULL, 0, 0);
 //					addmenulist(&mlist, "Streaming Playback Caching (3MB)", NULL, NULL, 0, 0);
 //					addmenulist(&mlist, "Streaming Playback Caching (4MB)", NULL, NULL, 0, 0);
-					addmenulist(&mlist, "Streaming Playback Caching (5MB)", NULL, NULL, 0, 0);
-					addmenulist(&mlist, "Streaming Playback Caching (7.5MB)", NULL, NULL, 0, 0);
-					addmenulist(&mlist, "Streaming Playback Caching (10MB)", NULL, NULL, 0, 0);
-					if(file_exist(getconfig("rec_streampath", NULL)))
+					if(checkbox("UFS910") == 1 && !file_exist("/var/swap/swapfile"))
+						addmenulist(&mlist, "Streaming Playback Caching (5MB)", NULL, NULL, 0, 0);
+					else
+//						addmenulist(&mlist, "Streaming Playback Caching (7.5MB)", NULL, NULL, 0, 0);
+						addmenulist(&mlist, "Streaming Playback Caching (10MB)", NULL, NULL, 0, 0);
+#endif
+					if(file_exist(getconfig("rec_streampath", NULL)) && status.expertmodus >= 11 || file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack"))
 					{
-//						addmenulist(&mlist, "File Caching Playback (10MB / 120s)", NULL, NULL, 0, 0);
-//						addmenulist(&mlist, "File Caching Playback (20MB / 240s)", NULL, NULL, 0, 0);
-//						addmenulist(&mlist, "File Caching Playback (30MB / 360s)", NULL, NULL, 0, 0);
-						if(status.expertmodus >= 11 || file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack"))
-						{
-							addmenulist(&mlist, "Download Full File", NULL, NULL, 0, 0);
-							addmenulist(&mlist, "Download Full File (background)", NULL, NULL, 0, 0);
-						}
+#ifndef EPLAYER3
+						addmenulist(&mlist, "File Caching Playback (10MB / 120s)", NULL, NULL, 0, 0);
+						addmenulist(&mlist, "File Caching Playback (20MB / 240s)", NULL, NULL, 0, 0);
+						addmenulist(&mlist, "File Caching Playback (30MB / 360s)", NULL, NULL, 0, 0);
+#endif
+						addmenulist(&mlist, "Download Full File", NULL, NULL, 0, 0);
+						addmenulist(&mlist, "Download Full File (background)", NULL, NULL, 0, 0);
 					}
 				}
 			}
