@@ -21,7 +21,7 @@ int mc_mounter_umount()
 
 	if(isoFS == 1)
 	{
-		cmd = ostrcat(cmd, "/bin/umount -fl `mount | grep iso9660 | cut -d ' ' -f3`", 1, 0);
+		cmd = ostrcat(cmd, "/bin/umount -fl `mount | grep iso9660 | cut -d ' ' -f3` `mount | grep udf | cut -d ' ' -f3`", 1, 0);
 		debug(50, "cmd: %s", cmd);
 		system(cmd);
 		free(isoMountDir), isoMountDir = NULL;
@@ -30,7 +30,7 @@ int mc_mounter_umount()
 	}
 	else if(imgFS == 1)
 	{
-		cmd = ostrcat(cmd, "/bin/umount -fl `mount | grep iso9660 | cut -d ' ' -f3`", 1, 0);
+		cmd = ostrcat(cmd, "/bin/umount -fl `mount | grep iso9660 | cut -d ' ' -f3` `mount | grep udf | cut -d ' ' -f3`", 1, 0);
 		debug(50, "cmd: %s", cmd);
 		system(cmd);
 		free(imgMountDir), imgMountDir = NULL;
