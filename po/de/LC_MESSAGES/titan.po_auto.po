@@ -1822,7 +1822,7 @@ msgstr ""
 
 #: harddisk.h:731
 msgid "use medium for swapfile"
-msgstr ""
+msgstr "Datenträger für Swapfile nutzen"
 
 #: harddisk.h:793
 msgid ""
