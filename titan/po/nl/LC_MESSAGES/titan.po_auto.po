@@ -50,7 +50,7 @@ msgstr "Systeem informatie"
 #: filemanager.h:321 filemanager.h:331 filemanager.h:355 filenuke.h:37
 #: filenuke.h:84 filenuke.h:96 filenuke.h:108 filenuke.h:157 flashx.h:26
 #: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:6434 gmediarender.h:115 harddisk.h:350 harddisk.h:355
+#: global.h:6440 gmediarender.h:115 harddisk.h:350 harddisk.h:355
 #: harddisk.h:382 harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641
 #: harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733
 #: harddisk.h:793 harddisk.h:811 harddisk.h:814 harddisk.h:1046 hbbtv.h:362
@@ -142,7 +142,7 @@ msgstr "Ok"
 #: filemanager.h:321 filemanager.h:331 filemanager.h:355 filenuke.h:37
 #: filenuke.h:84 filenuke.h:96 filenuke.h:108 filenuke.h:157 flashx.h:26
 #: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:6434 gmediarender.h:115 harddisk.h:350 harddisk.h:355
+#: global.h:6440 gmediarender.h:115 harddisk.h:350 harddisk.h:355
 #: harddisk.h:382 harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641
 #: harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733
 #: harddisk.h:793 harddisk.h:811 harddisk.h:814 harddisk.h:1046 hbbtv.h:362
@@ -534,7 +534,7 @@ msgstr "Ja / VZAP oneindig"
 #: filemanager.h:208 filemanager.h:281 filemanager.h:291 filemanager.h:331
 #: filemanager.h:355 filenuke.h:37 filenuke.h:84 filenuke.h:96 filenuke.h:108
 #: filenuke.h:157 flashx.h:26 flashx.h:84 flashx.h:138 flashx.h:195
-#: flashx.h:233 flashx.h:270 global.h:6434 gmediarender.h:115 harddisk.h:633
+#: flashx.h:233 flashx.h:270 global.h:6440 gmediarender.h:115 harddisk.h:633
 #: harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731
 #: harddisk.h:733 harddisk.h:793 harddisk.h:811 harddisk.h:814 hbbtv.h:362
 #: hello.c:36 httpdfunc.h:1098 hwtest.h:88 hwtest.h:93 hwtest.h:98
@@ -1624,7 +1624,7 @@ msgstr "Bestand kan niet getoond worden!"
 msgid "Registration needed, please contact Atemio !"
 msgstr "Registratie is noodzakelijk, neem AUB contact op met Atemio !"
 
-#: global.h:6434 keyactions.h:242
+#: global.h:6440 keyactions.h:242
 msgid "ERROR cant read res"
 msgstr "Fout, resolutie kan niet worden vastgesteld."
 
@@ -1692,7 +1692,7 @@ msgstr "Gebruik apparaat voor plugins"
 msgid "del medium for extension"
 msgstr "Apparaat niet gebruiken voor plugins"
 
-#: harddisk.h:250
+#: harddisk.h:250 harddisk.h:731
 msgid "use medium for swap"
 msgstr "Gebruik apparaat voor wisselbestand"
 
@@ -1801,10 +1801,6 @@ msgid ""
 msgstr ""
 "Weet u zeker dat u deze partitie wilt formatteren?\n"
 "De ontvanger wordt vervolgens opnieuw opgestart."
-
-#: harddisk.h:731
-msgid "use medium for swapfile"
-msgstr ""
 
 #: harddisk.h:793
 msgid ""
