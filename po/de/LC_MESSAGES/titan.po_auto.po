@@ -10894,10 +10894,3 @@ msgstr "Ort"
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid ""
-#~ "CCcam 2.3.0 autoident for card hd+ and skyde including all necessary "
-#~ "config files."
-#~ msgstr ""
-#~ "CCcam 2.3.0 Autoidentifizierung für HD+ und SkyDe SmartCard inklusive "
-#~ "aller notwendigen Einstellungen."
