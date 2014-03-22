@@ -1815,6 +1815,12 @@ void setskinnodeslocked(int flag)
 			if(checkbox("ATEVIO5200") == 1)
 			{
 				if(ostrcmp("skinadjust", child->name) == 0) child->locked = 1;
+				if(ostrcmp("system_backup", child->name) == 0) child->locked = 1;
+			}
+
+			if(checkbox("ATEVIO5000") == 1)
+			{
+				if(ostrcmp("system_backup", child->name) == 0) child->locked = 1;
 			}
 
 			if(ostrcmp("savesettings", child->name) == 0) child->locked = tmpflag;
