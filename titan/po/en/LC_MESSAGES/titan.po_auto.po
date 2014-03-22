@@ -10845,10 +10845,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Zapback is activated. Do you want to stop it?"
-
-#~ msgid ""
-#~ "CCcam 2.3.0 autoident for card hd+ and skyde including all necessary "
-#~ "config files."
-#~ msgstr ""
-#~ "CCcam 2.3.0 including automatic identification for hd+ and skyde\n"
-#~ "smartcards including all necessary configuration files."
