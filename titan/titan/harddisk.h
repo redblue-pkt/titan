@@ -628,7 +628,7 @@ void hddformat(char* dev, char* filesystem)
 	
 	if(node->size > 4294967295UL)
 	{	
-		if(!file_exist("/var/bin/parted") && !file_exist("/var/swap/bin/parted") && !file_exist("/mnt/swapextensions/bin/parted"))
+		if(!file_exist("/var/bin/parted") && !file_exist("/var/swap/bin/parted") && !file_exist("/mnt/swapextensions/bin/parted") && !file_exist("/usr/sbin/parted"))
 		{
 			textbox(_("Message"), _("HDD > 2TB unsupported.\nYou must first install plugin parted, then you can use this panel."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
 			return;
@@ -728,7 +728,7 @@ void hddformat(char* dev, char* filesystem)
 		{
 			if(textbox(_("Message"), _("use medium for extension"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
 				ext = 1;
-			if(textbox(_("Message"), _("use medium for swap"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
+			if(textbox(_("Message"), _("use medium for swapfile"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
 				swap = 1;
 			if(textbox(_("Message"), _("use medium for backup"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
 				backup = 1;
