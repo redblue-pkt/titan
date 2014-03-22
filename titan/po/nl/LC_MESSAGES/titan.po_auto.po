@@ -1692,7 +1692,7 @@ msgstr "Gebruik apparaat voor plugins"
 msgid "del medium for extension"
 msgstr "Apparaat niet gebruiken voor plugins"
 
-#: harddisk.h:250 harddisk.h:731
+#: harddisk.h:250
 msgid "use medium for swap"
 msgstr "Gebruik apparaat voor wisselbestand"
 
@@ -1801,6 +1801,10 @@ msgid ""
 msgstr ""
 "Weet u zeker dat u deze partitie wilt formatteren?\n"
 "De ontvanger wordt vervolgens opnieuw opgestart."
+
+#: harddisk.h:731
+msgid "use medium for swapfile"
+msgstr ""
 
 #: harddisk.h:793
 msgid ""
@@ -4969,20 +4973,20 @@ msgstr ""
 "Wilt u het wisselbestand echt wissen? (instellingen worden behouden)\n"
 "De ontvanger zal herstarten en wissen wordt gestart!"
 
-#: restoredefault.h:63 restoredefault.h:67 restoredefault.h:71
+#: restoredefault.h:63 restoredefault.h:70 restoredefault.h:74
 #: skin_default_skin.xml.h:511
 msgid "Restore default settings"
 msgstr "Fabrieksinstelling terugzetten"
 
-#: restoredefault.h:64 restoredefault.h:75
+#: restoredefault.h:66 restoredefault.h:78
 msgid "Format MNT with Backup/Restore"
 msgstr "Formatteer MNT tijdens Backup/Restore"
 
-#: restoredefault.h:65 restoredefault.h:79
+#: restoredefault.h:67 restoredefault.h:82
 msgid "Format MNT (all)"
 msgstr "Formatteer MNT (alles)"
 
-#: restoredefault.h:67
+#: restoredefault.h:70
 msgid "Choose your Restore Mode from the following list."
 msgstr ""
 

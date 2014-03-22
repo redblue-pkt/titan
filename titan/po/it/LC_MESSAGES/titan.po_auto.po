@@ -1672,7 +1672,7 @@ msgstr "use medium for extension"
 msgid "del medium for extension"
 msgstr "non usare l unita per estensioni"
 
-#: harddisk.h:250 harddisk.h:731
+#: harddisk.h:250
 msgid "use medium for swap"
 msgstr "use medium for swap"
 
@@ -1779,6 +1779,10 @@ msgid ""
 msgstr ""
 "formatare partizione?\n"
 "Il ricevitore fara subito dopo restart."
+
+#: harddisk.h:731
+msgid "use medium for swapfile"
+msgstr ""
 
 #: harddisk.h:793
 msgid ""
@@ -4924,20 +4928,20 @@ msgstr ""
 "Do you really want to erase Swap (Settings are preserve)?\n"
 "The Box will reboot and the erase will be started!"
 
-#: restoredefault.h:63 restoredefault.h:67 restoredefault.h:71
+#: restoredefault.h:63 restoredefault.h:70 restoredefault.h:74
 #: skin_default_skin.xml.h:511
 msgid "Restore default settings"
 msgstr "Impostazioni di fabbrica"
 
-#: restoredefault.h:64 restoredefault.h:75
+#: restoredefault.h:66 restoredefault.h:78
 msgid "Format MNT with Backup/Restore"
 msgstr "Format and backup/restore settings"
 
-#: restoredefault.h:65 restoredefault.h:79
+#: restoredefault.h:67 restoredefault.h:82
 msgid "Format MNT (all)"
 msgstr ""
 
-#: restoredefault.h:67
+#: restoredefault.h:70
 msgid "Choose your Restore Mode from the following list."
 msgstr ""
 

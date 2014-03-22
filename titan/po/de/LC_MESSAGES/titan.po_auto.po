@@ -1709,7 +1709,7 @@ msgstr "Datenträger für Erweiterungen (swapextensions) nutzen"
 msgid "del medium for extension"
 msgstr "Datenträger nicht für Erweiterungen (swapextensions) nutzen"
 
-#: harddisk.h:250 harddisk.h:731
+#: harddisk.h:250
 msgid "use medium for swap"
 msgstr "Datenträger für RAM Erweiterung (swap) nutzen"
 
@@ -1819,6 +1819,10 @@ msgid ""
 msgstr ""
 "Wollen sie die Partition formatieren?\n"
 "Die Box wird danach neu gestartet."
+
+#: harddisk.h:731
+msgid "use medium for swapfile"
+msgstr ""
 
 #: harddisk.h:793
 msgid ""
@@ -4988,20 +4992,20 @@ msgstr ""
 "Ihre Einstellungen bleiben erhalten. Der Receiver wird neu gestartet und das "
 "Löschen wird durchgeführt."
 
-#: restoredefault.h:63 restoredefault.h:67 restoredefault.h:71
+#: restoredefault.h:63 restoredefault.h:70 restoredefault.h:74
 #: skin_default_skin.xml.h:511
 msgid "Restore default settings"
 msgstr "Werkseinstellungen"
 
-#: restoredefault.h:64 restoredefault.h:75
+#: restoredefault.h:66 restoredefault.h:78
 msgid "Format MNT with Backup/Restore"
 msgstr "Formatiere MNT und sichere eigene Daten"
 
-#: restoredefault.h:65 restoredefault.h:79
+#: restoredefault.h:67 restoredefault.h:82
 msgid "Format MNT (all)"
 msgstr "Formatiere MNT (komplett)"
 
-#: restoredefault.h:67
+#: restoredefault.h:70
 msgid "Choose your Restore Mode from the following list."
 msgstr ""
 

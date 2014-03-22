@@ -1670,7 +1670,7 @@ msgstr ""
 msgid "del medium for extension"
 msgstr ""
 
-#: harddisk.h:250 harddisk.h:731
+#: harddisk.h:250
 msgid "use medium for swap"
 msgstr ""
 
@@ -1769,6 +1769,10 @@ msgstr ""
 msgid ""
 "Are you sure you want to format this Partition?\n"
 "Box reboots after format"
+msgstr ""
+
+#: harddisk.h:731
+msgid "use medium for swapfile"
 msgstr ""
 
 #: harddisk.h:793
@@ -4877,20 +4881,20 @@ msgid ""
 "The Box will reboot and the erase will be started!"
 msgstr ""
 
-#: restoredefault.h:63 restoredefault.h:67 restoredefault.h:71
+#: restoredefault.h:63 restoredefault.h:70 restoredefault.h:74
 #: skin_default_skin.xml.h:511
 msgid "Restore default settings"
 msgstr "Ρυθμίσεις προσαρμογέα Δικτύου"
 
-#: restoredefault.h:64 restoredefault.h:75
+#: restoredefault.h:66 restoredefault.h:78
 msgid "Format MNT with Backup/Restore"
 msgstr ""
 
-#: restoredefault.h:65 restoredefault.h:79
+#: restoredefault.h:67 restoredefault.h:82
 msgid "Format MNT (all)"
 msgstr ""
 
-#: restoredefault.h:67
+#: restoredefault.h:70
 msgid "Choose your Restore Mode from the following list."
 msgstr ""
 
