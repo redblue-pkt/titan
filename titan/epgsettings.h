@@ -306,6 +306,7 @@ void screenepgsettings()
 			b4->hidden = YES;
 		else
 			b4->hidden = NO;
+		drawscreen(epgsettings, 0, 0);
 	}
 
 	delownerrc(epgsettings);
