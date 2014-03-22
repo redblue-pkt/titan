@@ -10894,6 +10894,3 @@ msgstr "Ort"
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid "use medium for swapfile"
-#~ msgstr "Datenträger für Swapfile nutzen"
