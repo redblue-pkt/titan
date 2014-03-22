@@ -18,7 +18,7 @@ void screensystem_backup_restore()
 	changetitle(backup_restore, _("Backup / Restore Settings"));
 
 	drawscreen(backup_restore, 0, 0);
-
+				
 	while(1)
 	{
 		rcret = waitrc(backup_restore, 0, 0);
@@ -33,13 +33,13 @@ void screensystem_backup_restore()
 				changetext(info, _("Please wait ...\n\nAll Settings are restored.\n\nBox will start in few seconds."));
 				drawscreen(backup_restore, 0, 0);
 
-				if(isfile("/tmp/.backupdev"))
+				if(isfile("/tmp/.backupdev") || file_exist("/var/backup"))
 				{
 					ret = system("/sbin/settings.sh restore > /tmp/backup.log 2>&1");
 					if(ret != 0)
 						textbox(_("Message"), _("Restore failed, see log"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
-				  else
-				  {
+					else
+					{
 						if(textbox(_("Message"), _("Update Plugins to new Version?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 							screenextensions(3, NULL, NULL, 1); 
 						ret = system("init 6");
@@ -60,7 +60,7 @@ void screensystem_backup_restore()
 		}
 		if(rcret == getrcconfigint("rcgreen", NULL))
 		{
-			if(isfile("/tmp/.backupdev"))
+			if(isfile("/tmp/.backupdev") || file_exist("/var/backup"))
 			{
 				changetitle(backup_restore, _("Backup - Settings"));
 				changetext(info, _("Backup started\n\nPlease wait..."));
