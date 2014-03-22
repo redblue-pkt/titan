@@ -1675,7 +1675,7 @@ msgstr "sử dụng công cụ để mở rộng"
 msgid "del medium for extension"
 msgstr "không sử dụng cho phần mở rộng"
 
-#: harddisk.h:250 harddisk.h:731
+#: harddisk.h:250
 msgid "use medium for swap"
 msgstr "Sử dụng công cụ để hoán đổi"
 
@@ -1780,6 +1780,10 @@ msgid ""
 msgstr ""
 "Bạn muốn định dạng phân vùng này?\n"
 " Đầu thu sẽ khởi động lại sau khi định dạng."
+
+#: harddisk.h:731
+msgid "use medium for swapfile"
+msgstr ""
 
 #: harddisk.h:793
 msgid ""
@@ -4915,20 +4919,20 @@ msgstr ""
 "Swap Daten und Backup löschen?\n"
 "Đầu thu sẽ khởi động lại và bắt đầu xóa"
 
-#: restoredefault.h:63 restoredefault.h:67 restoredefault.h:71
+#: restoredefault.h:63 restoredefault.h:70 restoredefault.h:74
 #: skin_default_skin.xml.h:511
 msgid "Restore default settings"
 msgstr "Thiết lập mặc định"
 
-#: restoredefault.h:64 restoredefault.h:75
+#: restoredefault.h:66 restoredefault.h:78
 msgid "Format MNT with Backup/Restore"
 msgstr ""
 
-#: restoredefault.h:65 restoredefault.h:79
+#: restoredefault.h:67 restoredefault.h:82
 msgid "Format MNT (all)"
 msgstr ""
 
-#: restoredefault.h:67
+#: restoredefault.h:70
 msgid "Choose your Restore Mode from the following list."
 msgstr ""
 

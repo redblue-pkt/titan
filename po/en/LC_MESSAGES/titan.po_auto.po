@@ -1705,7 +1705,7 @@ msgstr "Use as plugins-device"
 msgid "del medium for extension"
 msgstr "Remove as extensions-device"
 
-#: harddisk.h:250 harddisk.h:731
+#: harddisk.h:250
 msgid "use medium for swap"
 msgstr "Use as swap-device"
 
@@ -1814,6 +1814,10 @@ msgid ""
 msgstr ""
 "Are you sure you want to format this partition?\n"
 "Your Receiver will reboot after formatting the device"
+
+#: harddisk.h:731
+msgid "use medium for swapfile"
+msgstr ""
 
 #: harddisk.h:793
 msgid ""
@@ -4983,20 +4987,20 @@ msgstr ""
 "Do you really want to erase the Swap-Filesystem?\n"
 "Your Settings are retained. Your Receiver will Reboot and perform the erase."
 
-#: restoredefault.h:63 restoredefault.h:67 restoredefault.h:71
+#: restoredefault.h:63 restoredefault.h:70 restoredefault.h:74
 #: skin_default_skin.xml.h:511
 msgid "Restore default settings"
 msgstr "Restore Factory settings"
 
-#: restoredefault.h:64 restoredefault.h:75
+#: restoredefault.h:66 restoredefault.h:78
 msgid "Format MNT with Backup/Restore"
 msgstr "Format MNT Filesystem with a settings backup/restore"
 
-#: restoredefault.h:65 restoredefault.h:79
+#: restoredefault.h:67 restoredefault.h:82
 msgid "Format MNT (all)"
 msgstr "Format complete MNT Filesystem"
 
-#: restoredefault.h:67
+#: restoredefault.h:70
 msgid "Choose your Restore Mode from the following list."
 msgstr ""
 
