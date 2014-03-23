@@ -16,11 +16,11 @@ DESC="xupnpd-$model"
 DAEMON=xupnpd
 USER=root
 GROUP=root
-
+IP=`ifconfig | grep inet | grep Bcast | awk '{print $2}' | cut -d":" -f2`
  
 case $1 in
   start)
-	bouquet2m3u -o $2/playlists
+	bouquet2m3u http://$IP:22222/ $2/playlists
     start-stop-daemon --verbose --start --exec xupnpd
   ;;
   stop)
