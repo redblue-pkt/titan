@@ -9323,8 +9323,10 @@ msgstr ""
 "gbox version 800 including automatic identification for hd+ and skyde\n"
 "smartcards including all necessary configuration files."
 
-#: tpk_description.h:79 tpk_showname.h:35
-msgid "gbox_804"
+#: tpk_description.h:79
+msgid ""
+"gbox 804 with autoident for card hd+ and skyde including all necessary "
+"config files."
 msgstr ""
 
 #: tpk_description.h:80
@@ -9724,6 +9726,10 @@ msgstr "Wireless module rt3070sta.ko"
 msgid "wireless modul rt5370sta.ko"
 msgstr "Wireless module rt5370sta.ko"
 
+#: tpk_description.h:176
+msgid "xupnpd Medien Server (upnp)"
+msgstr ""
+
 #: tpk.h:3185 tpk.new.h:3167
 msgid "check your Secret Feed !"
 msgstr "Check the secret feed address!"
@@ -9918,6 +9924,10 @@ msgstr ""
 
 #: tpk_showname.h:34
 msgid "Gbox 800"
+msgstr ""
+
+#: tpk_showname.h:35
+msgid "Gbox 804"
 msgstr ""
 
 #: tpk_showname.h:36
@@ -10557,10 +10567,14 @@ msgid "XPicons LightTransparent (small - Astra 19.2E)"
 msgstr ""
 
 #: tpk_showname.h:209
+msgid "xupnpd"
+msgstr ""
+
+#: tpk_showname.h:210
 msgid "zapback (Werbezapper)"
 msgstr "zapback - Add zapper"
 
-#: tpk_showname.h:210
+#: tpk_showname.h:211
 msgid "Zombie"
 msgstr ""
 
