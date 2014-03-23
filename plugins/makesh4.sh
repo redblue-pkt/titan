@@ -125,6 +125,7 @@ compile "tiwakeup" "tiwakeup" "" ""
 compile "autotimer" "autotimer" "" ""
 compile "usbreset" "usbreset" "" ""
 compile "tsSchnitt" "tsSchnitt" "" ""
+compile "xupnpd" "xupnpd" "" ""
 
 cd "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/cdk
 echo make curl
