@@ -20,11 +20,11 @@ GROUP=root
  
 case $1 in
   start)
-    start-bouquet2m3u=`which bouquet2m3u`
-    $start-bouquet2m3u
+	bouquet2m3u -o $2/playlists
     start-stop-daemon --verbose --start --exec xupnpd
   ;;
   stop)
+  	killall -9 bouquet2m3u
     start-stop-daemon --verbose --stop --exec xupnpd
   ;;
   restart)
