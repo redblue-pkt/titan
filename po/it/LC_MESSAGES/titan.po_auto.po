@@ -236,40 +236,40 @@ msgstr "Exit"
 #: avsettings.h:172 blindscanadjust.h:150 blindscanadjust.h:154
 #: blindscanadjust.h:158 blindscanadjust.h:187 blindscanadjust.h:191
 #: dlna.h:276 epgsettings.h:134 epgsettings.h:187 epgsettings.h:196
-#: epgsettings.h:200 epgsettings.h:205 epgsettings.h:210 httpdsettings.h:20
-#: httpdsettings.h:50 inadyn.h:138 mc_audioplayer_settings.h:45
-#: mc_audioplayer_settings.h:51 mc_audioplayer_settings.h:55
-#: mc_pictureplayer_settings.h:75 mc_videoplayer_settings.h:39
-#: mc_videoplayer_settings.h:43 mc_videoplayer_settings.h:49 mediadb.h:1085
-#: mediadb.h:1092 mediadb.h:1107 mediadbsettings.h:28 mediadbsettings.h:32
-#: mediadbsettings.h:51 mediadbsettings.h:66 mediadbsettings.h:70
-#: moduleconfig.h:243 moduleconfig.h:251 moduleconfig.h:255 moduleconfig.h:259
-#: moduleconfig.h:263 networkbrowser.h:1606 networkbrowser.h:1610
-#: networkbrowser.h:1619 networkbrowser.h:1624 networkbrowser.h:1628
-#: networkbrowser.h:1654 network.h:672 panel_settings_autostart.h:35
-#: panel_settings_autostart.h:96 panel_settings_autostart.h:113
-#: panel_settings_autostart.h:123 panel_settings_autostart.h:141
-#: panel_settings_autostart.h:150 panel_settings_autostart.h:159
-#: panel_settings_autostart.h:168 panel_settings_autostart.h:177
-#: panel_settings_autostart.h:193 panel_settings_autostart.h:202
-#: panel_settings_autostart.h:211 panel_settings_autostart.h:237
-#: panel_settings_autostart.h:286 panel_settings_autostart.h:295
-#: panel_settings_autostart.h:304 panel_settings_autostart.h:319
-#: panel_settings_autostart.h:328 panel_settings_autostart.h:337
-#: panel_settings_autostart.h:351 panel_settings_autostart.h:360
-#: panel_settings_overclocking.h:214 panel_settings_overclocking.h:234
-#: panel_settings_overclocking.h:244 pin.h:104 pin.h:176 pin.h:180 pin.h:194
-#: play.h:562 play.h:569 play.h:584 readerconfig.h:254 rectimer.h:1069
-#: rectimer.h:1074 rectimer.h:1079 rectimer.h:1084 rectimer.h:1089
-#: rectimer.h:1094 rectimer.h:1099 scan.h:1768 scan.h:2241 scan.h:2245
-#: scan.h:2249 scan.h:2253 scan.h:2257 scan.h:2266 scan.h:2270
-#: screensaveradjust.h:19 settings_autostart.h:26 settings_autostart.h:132
-#: settings_autostart.h:141 settings_autostart.h:162 settings_autostart.h:198
-#: settings_autostart.h:207 settings_autostart.h:216 settings_autostart.h:227
-#: settings_autostart.h:285 settings_autostart.h:305 settings_autostart.h:316
-#: settings_autostart.h:430 settings_autostart.h:439 settings_autostart.h:448
-#: settings_autostart.h:502 settings_autostart.h:511 settings_autostart.h:568
-#: settings_autostart.h:577 settings_autostart.h:586
+#: epgsettings.h:200 epgsettings.h:205 epgsettings.h:210 httpdsettings.h:22
+#: httpdsettings.h:52 httpdsettings.h:60 inadyn.h:138
+#: mc_audioplayer_settings.h:45 mc_audioplayer_settings.h:51
+#: mc_audioplayer_settings.h:55 mc_pictureplayer_settings.h:75
+#: mc_videoplayer_settings.h:39 mc_videoplayer_settings.h:43
+#: mc_videoplayer_settings.h:49 mediadb.h:1085 mediadb.h:1092 mediadb.h:1107
+#: mediadbsettings.h:28 mediadbsettings.h:32 mediadbsettings.h:51
+#: mediadbsettings.h:66 mediadbsettings.h:70 moduleconfig.h:243
+#: moduleconfig.h:251 moduleconfig.h:255 moduleconfig.h:259 moduleconfig.h:263
+#: networkbrowser.h:1606 networkbrowser.h:1610 networkbrowser.h:1619
+#: networkbrowser.h:1624 networkbrowser.h:1628 networkbrowser.h:1654
+#: network.h:672 panel_settings_autostart.h:35 panel_settings_autostart.h:96
+#: panel_settings_autostart.h:113 panel_settings_autostart.h:123
+#: panel_settings_autostart.h:141 panel_settings_autostart.h:150
+#: panel_settings_autostart.h:159 panel_settings_autostart.h:168
+#: panel_settings_autostart.h:177 panel_settings_autostart.h:193
+#: panel_settings_autostart.h:202 panel_settings_autostart.h:211
+#: panel_settings_autostart.h:237 panel_settings_autostart.h:286
+#: panel_settings_autostart.h:295 panel_settings_autostart.h:304
+#: panel_settings_autostart.h:319 panel_settings_autostart.h:328
+#: panel_settings_autostart.h:337 panel_settings_autostart.h:351
+#: panel_settings_autostart.h:360 panel_settings_overclocking.h:214
+#: panel_settings_overclocking.h:234 panel_settings_overclocking.h:244
+#: pin.h:104 pin.h:176 pin.h:180 pin.h:194 play.h:562 play.h:569 play.h:584
+#: readerconfig.h:254 rectimer.h:1069 rectimer.h:1074 rectimer.h:1079
+#: rectimer.h:1084 rectimer.h:1089 rectimer.h:1094 rectimer.h:1099 scan.h:1768
+#: scan.h:2241 scan.h:2245 scan.h:2249 scan.h:2253 scan.h:2257 scan.h:2266
+#: scan.h:2270 screensaveradjust.h:19 settings_autostart.h:26
+#: settings_autostart.h:132 settings_autostart.h:141 settings_autostart.h:162
+#: settings_autostart.h:198 settings_autostart.h:207 settings_autostart.h:216
+#: settings_autostart.h:227 settings_autostart.h:285 settings_autostart.h:305
+#: settings_autostart.h:316 settings_autostart.h:430 settings_autostart.h:439
+#: settings_autostart.h:448 settings_autostart.h:502 settings_autostart.h:511
+#: settings_autostart.h:568 settings_autostart.h:577 settings_autostart.h:586
 #: settings_overclocking.h:214 settings_overclocking.h:234
 #: settings_overclocking.h:244 skinadjust.h:49 stopifnotused.c:95
 #: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:35
@@ -298,7 +298,7 @@ msgstr "EPG Canale"
 #: avsettings.h:169 blindscanadjust.h:151 blindscanadjust.h:155
 #: blindscanadjust.h:159 blindscanadjust.h:188 blindscanadjust.h:192
 #: dlna.h:277 epgsettings.h:135 epgsettings.h:188 epgsettings.h:197
-#: httpdsettings.h:21 httpdsettings.h:51 inadyn.h:139
+#: httpdsettings.h:23 httpdsettings.h:53 httpdsettings.h:61 inadyn.h:139
 #: mc_audioplayer_settings.h:46 mc_audioplayer_settings.h:52
 #: mc_audioplayer_settings.h:56 mc_pictureplayer_settings.h:76
 #: mc_videoplayer_settings.h:40 mc_videoplayer_settings.h:44
@@ -436,11 +436,11 @@ msgstr ""
 msgid "4 GB"
 msgstr ""
 
-#: adjust.h:145 adjust.h:259 httpdsettings.h:43
+#: adjust.h:145 adjust.h:259 httpdsettings.h:45
 msgid "extern"
 msgstr ""
 
-#: adjust.h:146 adjust.h:260 httpdsettings.h:42
+#: adjust.h:146 adjust.h:260 httpdsettings.h:44
 msgid "intern"
 msgstr ""
 
