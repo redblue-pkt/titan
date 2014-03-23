@@ -14,6 +14,8 @@ void screenhttpdsettings()
 	struct skin* rguidstart = getscreennode(httpdsettings, "rguidstart");
 	struct skin* rguidport = getscreennode(httpdsettings, "rguidport");
 	struct skin* webifip = getscreennode(httpdsettings, "webifip");
+	struct skin* streamzapping = getscreennode(httpdsettings, "streamzapping");
+
 	struct skin* tmp = NULL;
 	char* tmpstr = NULL, *pos = NULL;
 
@@ -54,6 +56,10 @@ void screenhttpdsettings()
 	changemask(rguidport, "00000");
 	changeinput(rguidport, getconfig("rguidport", NULL));
 	rguidport->input = mask(rguidport->input, 5, "0");
+
+	addchoicebox(streamzapping, "0", _("no"));
+	addchoicebox(streamzapping, "1", _("yes"));
+	setchoiceboxselection(streamzapping, getconfig("streamzapping", NULL));
 
 	drawscreen(httpdsettings, 0, 0);
 	addscreenrc(httpdsettings, listbox);
@@ -98,6 +104,7 @@ void screenhttpdsettings()
 			}
 
 			addconfigscreencheck("webifip", webifip, "0");
+			addconfigscreencheck("streamzapping", streamzapping, "0");
 
 			if(streamport->ret != NULL)
 			{
