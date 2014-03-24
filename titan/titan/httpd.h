@@ -223,6 +223,10 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 	{
 		buf = webadjust(param, fmt);
 	}
+	else if(ostrcmp(query, "adjustsend") == 0)
+	{
+		buf = webadjustsend(param, fmt);
+	}
 	else if(ostrcmp(query, "setvol") == 0)
 		buf = websetvol(param, fmt);
 	else if(ostrcmp(query, "setmute") == 0)
