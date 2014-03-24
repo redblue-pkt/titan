@@ -219,6 +219,10 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 		buf = webgetrectimer(param, 1, fmt);
 		m_unlock(&status.waitrcmutex, 24);
 	}
+	else if(ostrcmp(query, "adjust") == 0)
+	{
+		buf = webadjust(param, fmt);
+	}
 	else if(ostrcmp(query, "setvol") == 0)
 		buf = websetvol(param, fmt);
 	else if(ostrcmp(query, "setmute") == 0)

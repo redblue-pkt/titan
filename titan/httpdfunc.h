@@ -3344,4 +3344,1074 @@ char* webgetbouquetepg(char* param, int fmt)
 	return buf;
 }
 
+char* webadjust(char* param, int fmt)
+{
+	char* buf = NULL, *param1 = NULL, *param2 = NULL, *tmpstr = NULL, *tmpstr1 = NULL;
+	int i = 0, max = 0, count = 0, maxlen = 0, pos = 0;
+
+	struct channel* chnode = NULL;
+	struct epg* epgnode = NULL;
+
+	if(param != NULL)
+	{
+		//create param1 + 2
+		param1 = strchr(param, '&');
+		if(param1 != NULL)
+		{
+			*param1++ = '\0';
+			param2 = strchr(param1, '&');
+			if(param2 != NULL)
+				*param2++ = '\0';
+		}
+		if(param1 == NULL || param2 == NULL) return NULL;
+		chnode = getchannel(atoi(param), strtoull(param1, NULL, 10));
+		if(chnode == NULL) return NULL;
+
+		epgnode = getepg(chnode, atoi(param2), 0);
+		if(epgnode == NULL) return NULL;
+	}
+
+	ostrcatbig(&buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><link rel=\"stylesheet\" type=\"text/css\" href=\"titan.css\"></head>", &maxlen, &pos);
+	ostrcatbig(&buf, "<body class=body ><center>", &maxlen, &pos);
+	ostrcatbig(&buf, "<table>", &maxlen, &pos);
+
+///////////////////
+//	ostrcatbig(&buf, "<tr><td><font class=\"label\">Volbartimeout:&nbsp;</font></td><td><select name=\"volbartimeout\" border=\"0\"><option value=\"1\" selected>1</option><option value=\"2\">2</option><option value=\"3\">3</option><option value=\"4\">4</option><option value=\"5\">5</option><option value=\"6\">6</option><option value=\"7\">7</option><option value=\"8\">8</option><option value=\"9\">9</option><option value=\"10\">10</option></select></td></tr>", &maxlen, &pos);
+	max = 10;
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Volumebar Timeout"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"volbartimeout\" border=\"0\"> <option value=\"", &maxlen, &pos);
+	for(i = 1; i <= max; i++)
+	{
+		ostrcatbig(&buf, "<option value=\"", &maxlen, &pos);
+		ostrcatbig(&buf, oitoa(i), &maxlen, &pos);		
+		if(getconfigint("volbartimeout", NULL) == i)
+			ostrcatbig(&buf, "\" selected>", &maxlen, &pos);		
+		else
+			ostrcatbig(&buf, "\">", &maxlen, &pos);
+		ostrcatbig(&buf, oitoa(i), &maxlen, &pos);
+		ostrcatbig(&buf, "</option>", &maxlen, &pos);
+	}
+
+///////////////////
+//	ostrcatbig(&buf, "<tr><td><font class=\"label\">Infobartimeout:&nbsp;</font></td><td><select name=\"infobartimeout\" border=\"0\"><option value=\"1\" selected>1</option><option value=\"2\">2</option><option value=\"3\">3</option><option value=\"4\">4</option><option value=\"5\">5</option><option value=\"6\">6</option><option value=\"7\">7</option><option value=\"8\">8</option><option value=\"9\">9</option><option value=\"10\">10</option></select></td></tr>", &maxlen, &pos);
+	max = 10;
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Infobar Timeout"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"infobartimeout\" border=\"0\"> <option value=\"", &maxlen, &pos);
+	for(i = 1; i <= max; i++)
+	{
+		ostrcatbig(&buf, "<option value=\"", &maxlen, &pos);
+		ostrcatbig(&buf, oitoa(i), &maxlen, &pos);	
+		if(getconfigint("infobartimeout", NULL) == i)
+			ostrcatbig(&buf, "\" selected>", &maxlen, &pos);		
+		else
+			ostrcatbig(&buf, "\">", &maxlen, &pos);
+		ostrcatbig(&buf, oitoa(i), &maxlen, &pos);
+		ostrcatbig(&buf, "</option>", &maxlen, &pos);
+	}
+
+///////////////////
+//	ostrcatbig(&buf, "<tr><td><font class=\"label\">Infobar Sleep:&nbsp;</font></td><td><select name=\"infobarsleep\" border=\"0\"><option value=\"0\">0</option><option value=\"1\" selected>1</option><option value=\"2\">2</option><option value=\"3\">3</option><option value=\"4\">4</option><option value=\"5\">5</option></select></td></tr>", &maxlen, &pos);
+	max = 5;
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Infobar Sleep"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"infobarsleep\" border=\"0\"> <option value=\"", &maxlen, &pos);
+	for(i = 0; i <= max; i++)
+	{
+		ostrcatbig(&buf, "<option value=\"", &maxlen, &pos);
+		ostrcatbig(&buf, oitoa(i), &maxlen, &pos);		
+		if(getconfigint("infobarsleep", NULL) == i)
+			ostrcatbig(&buf, "\" selected>", &maxlen, &pos);		
+		else
+			ostrcatbig(&buf, "\">", &maxlen, &pos);
+		ostrcatbig(&buf, oitoa(i), &maxlen, &pos);
+		ostrcatbig(&buf, "</option>", &maxlen, &pos);
+	}
+
+///////////////////
+//	ostrcatbig(&buf, "<tr><td><font class=\"label\">Infobar Sleep:&nbsp;</font></td><td><select name=\"infobarsleep\" border=\"0\"><option value=\"0\">0</option><option value=\"1\" selected>1</option><option value=\"2\">2</option><option value=\"3\">3</option><option value=\"4\">4</option><option value=\"5\">5</option></select></td></tr>", &maxlen, &pos);
+	max = 5;
+	tmpstr = ostrcat("1\n3\n9\n12\n15\n18\n21\n24\n27\n30", NULL, 0, 0);
+
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Spinnerspeed"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"spinnerspeed\" border=\"0\"> <option value=\"", &maxlen, &pos);
+
+	count = 0;
+	struct splitstr* ret1 = NULL;
+	ret1 = strsplit(tmpstr, "\n", &count);
+	max = count - 1;
+
+	if(ret1 != NULL)
+	{
+		for(i = 0; i <= max; i++)
+		{
+			ostrcatbig(&buf, "<option value=\"", &maxlen, &pos);
+			ostrcatbig(&buf, ret1[i].part, &maxlen, &pos);
+			tmpstr1 = ostrcat(ret1[i].part, NULL, 0, 0);
+			if(getconfigint("spinnerspeed", NULL) == atoi(tmpstr1))
+				ostrcatbig(&buf, "\" selected>", &maxlen, &pos);		
+			else
+				ostrcatbig(&buf, "\">", &maxlen, &pos);
+			ostrcatbig(&buf, ret1[i].part, &maxlen, &pos);
+			ostrcatbig(&buf, "</option>", &maxlen, &pos);
+		}
+	}
+	free(ret1), ret1 = NULL;
+	free(tmpstr), tmpstr = NULL;
+	free(tmpstr1), tmpstr1 = NULL;
+
+///////////////////
+	tmpstr = ostrcat("1\n2\n3\n4\n5\n6\n7\n8\n10000", NULL, 0, 0);
+
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Spinnertime"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"spinnertime\" border=\"0\"> <option value=\"", &maxlen, &pos);
+
+	count = 0;
+	ret1 = strsplit(tmpstr, "\n", &count);
+	max = count - 1;
+
+	if(ret1 != NULL)
+	{
+		for(i = 0; i <= max; i++)
+		{
+			ostrcatbig(&buf, "<option value=\"", &maxlen, &pos);
+			ostrcatbig(&buf, ret1[i].part, &maxlen, &pos);
+			tmpstr1 = ostrcat(ret1[i].part, NULL, 0, 0);
+			if(getconfigint("spinnertime", NULL) == atoi(tmpstr1))	
+				ostrcatbig(&buf, "\" selected>", &maxlen, &pos);		
+			else
+				ostrcatbig(&buf, "\">", &maxlen, &pos);
+			ostrcatbig(&buf, ret1[i].part, &maxlen, &pos);
+			ostrcatbig(&buf, "</option>", &maxlen, &pos);
+		}
+	}
+	free(ret1), ret1 = NULL;
+	free(tmpstr), tmpstr = NULL;
+	free(tmpstr1), tmpstr1 = NULL;
+
+///////////////////
+	tmpstr = ostrcat("5\n10\n15\n30\n60\n120\n10000", NULL, 0, 0);
+
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Hangtime"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"hangtime\" border=\"0\"> <option value=\"", &maxlen, &pos);
+
+	count = 0;
+	ret1 = strsplit(tmpstr, "\n", &count);
+	max = count - 1;
+
+	if(ret1 != NULL)
+	{
+		for(i = 0; i <= max; i++)
+		{
+			ostrcatbig(&buf, "<option value=\"", &maxlen, &pos);
+			ostrcatbig(&buf, ret1[i].part, &maxlen, &pos);		
+			tmpstr1 = ostrcat(ret1[i].part, NULL, 0, 0);
+			if(getconfigint("hangtime", NULL) == atoi(tmpstr1))
+				ostrcatbig(&buf, "\" selected>", &maxlen, &pos);		
+			else
+				ostrcatbig(&buf, "\">", &maxlen, &pos);
+			ostrcatbig(&buf, ret1[i].part, &maxlen, &pos);
+			ostrcatbig(&buf, "</option>", &maxlen, &pos);
+		}
+	}
+	free(ret1), ret1 = NULL;
+	free(tmpstr), tmpstr = NULL;
+	free(tmpstr1), tmpstr1 = NULL;
+
+///////////////////
+//	ostrcatbig(&buf, "<tr><td><font class=\"label\">Second Infobar:&nbsp;</font></td><td><select name=\"secondinfobar\" border=\"0\"><option value=\"0\">no</option><option value=\"1\" selected>infobar</option><option value=\"2\">epg</option><option value=\"3\">channel epg</option></select></td></tr>", &maxlen, &pos);
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Second Infobar"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"secondinfobar\" border=\"0\">", &maxlen, &pos);
+	
+	if(getconfigint("secondinfobar", NULL) == 0)
+		ostrcatbig(&buf, "<option value=\"0\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"0\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("no"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("secondinfobar", NULL) == 1)
+		ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("infobar"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("secondinfobar", NULL) == 2)
+		ostrcatbig(&buf, "<option value=\"2\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"2\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("epg"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("secondinfobar", NULL) == 3)
+		ostrcatbig(&buf, "<option value=\"3\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"3\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Channel EPG"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+///////////////////
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Don't clear TV on zap (only with fastzap)"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"nozapclear\" border=\"0\">", &maxlen, &pos);
+	
+	if(getconfigint("nozapclear", NULL) == 0)
+		ostrcatbig(&buf, "<option value=\"0\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"0\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("no"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("nozapclear", NULL) == 1)
+		ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("yes"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+///////////////////
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Fastzap"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"fastzap\" border=\"0\">", &maxlen, &pos);
+	
+	if(getconfigint("fastzap", NULL) == 0)
+		ostrcatbig(&buf, "<option value=\"0\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"0\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("no"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("fastzap", NULL) == 1)
+		ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("medium"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("fastzap", NULL) == 2)
+		ostrcatbig(&buf, "<option value=\"2\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"2\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("fast"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+///////////////////
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Faststop"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"faststop\" border=\"0\">", &maxlen, &pos);
+	
+	if(getconfigint("faststop", NULL) == 0)
+		ostrcatbig(&buf, "<option value=\"0\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"0\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("no"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("faststop", NULL) == 1)
+		ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("yes"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+///////////////////
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Dirsort"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"dirsort\" border=\"0\">", &maxlen, &pos);
+	
+	if(getconfigint("dirsort", NULL) == 0)
+		ostrcatbig(&buf, "<option value=\"0\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"0\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("alpha"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("dirsort", NULL) == 1)
+		ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("reverse alpha"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("dirsort", NULL) == 2)
+		ostrcatbig(&buf, "<option value=\"2\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"2\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("size"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("dirsort", NULL) == 3)
+		ostrcatbig(&buf, "<option value=\"3\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"3\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("reverse size"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("dirsort", NULL) == 4)
+		ostrcatbig(&buf, "<option value=\"4\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"4\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("date"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);	
+
+	if(getconfigint("dirsort", NULL) == 5)
+		ostrcatbig(&buf, "<option value=\"5\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"5\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("reverse date"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+///////////////////
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Power aktion"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"poweraktion\" border=\"0\">", &maxlen, &pos);
+	
+	if(getconfigint("poweraktion", NULL) == 0)
+		ostrcatbig(&buf, "<option value=\"0\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"0\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Power Menu"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("poweraktion", NULL) == 1)
+		ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Power Off"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("poweraktion", NULL) == 2)
+		ostrcatbig(&buf, "<option value=\"2\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"2\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Standby"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("poweraktion", NULL) == 3)
+		ostrcatbig(&buf, "<option value=\"3\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"3\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Restart"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("poweraktion", NULL) == 4)
+		ostrcatbig(&buf, "<option value=\"4\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"4\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Gui Restart"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);	
+
+///////////////////
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Virtualzap Timeout"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"virtualzap\" border=\"0\">", &maxlen, &pos);
+	
+	if(getconfigint("virtualzap", NULL) == 0)
+		ostrcatbig(&buf, "<option value=\"0\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"0\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("deaktiv"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("virtualzap", NULL) == 1)
+		ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("1 sec"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("virtualzap", NULL) == 2)
+		ostrcatbig(&buf, "<option value=\"2\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"2\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("2 sec"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("virtualzap", NULL) == 3)
+		ostrcatbig(&buf, "<option value=\"3\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"3\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("endless"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+	
+///////////////////
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Fast Text Render"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"fasttextrender\" border=\"0\">", &maxlen, &pos);
+	
+	if(getconfigint("fasttextrender", NULL) == 0)
+		ostrcatbig(&buf, "<option value=\"0\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"0\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("no"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("fasttextrender", NULL) == 1)
+		ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("yes"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+///////////////////
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Record Split Size"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"recsplitsize\" border=\"0\">", &maxlen, &pos);
+	
+	if(getconfigint("recsplitsize", NULL) == 0)
+		ostrcatbig(&buf, "<option value=\"0\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"0\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("deaktiv"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("recsplitsize", NULL) == 1)
+		ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("1 GB"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("recsplitsize", NULL) == 2)
+		ostrcatbig(&buf, "<option value=\"2\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"2\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("2 GB"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("recsplitsize", NULL) == 3)
+		ostrcatbig(&buf, "<option value=\"3\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"3\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("3 GB"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("recsplitsize", NULL) == 4)
+		ostrcatbig(&buf, "<option value=\"4\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"4\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("4 GB"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);	
+
+///////////////////
+	tmpstr = ostrcat("0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n15\n20\n25\n30\n35\n40\n45\n50\n55\n60", NULL, 0, 0);
+
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Record Forerun (min)"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"recforerun\" border=\"0\"> <option value=\"", &maxlen, &pos);
+
+	count = 0;
+	ret1 = strsplit(tmpstr, "\n", &count);
+	max = count - 1;
+
+	if(ret1 != NULL)
+	{
+		for(i = 0; i <= max; i++)
+		{
+			ostrcatbig(&buf, "<option value=\"", &maxlen, &pos);
+			ostrcatbig(&buf, ret1[i].part, &maxlen, &pos);		
+			tmpstr1 = ostrcat(ret1[i].part, NULL, 0, 0);
+			if(getconfigint("recforerun", NULL) == atoi(tmpstr1))
+				ostrcatbig(&buf, "\" selected>", &maxlen, &pos);		
+			else
+				ostrcatbig(&buf, "\">", &maxlen, &pos);
+			ostrcatbig(&buf, ret1[i].part, &maxlen, &pos);
+			ostrcatbig(&buf, "</option>", &maxlen, &pos);
+		}
+	}
+	free(ret1), ret1 = NULL;
+	free(tmpstr), tmpstr = NULL;
+	free(tmpstr1), tmpstr1 = NULL;
+
+///////////////////
+	tmpstr = ostrcat("0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n15\n20\n25\n30\n35\n40\n45\n50\n55\n60", NULL, 0, 0);
+
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Record Overrun (min)"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"recoverrun\" border=\"0\"> <option value=\"", &maxlen, &pos);
+
+	count = 0;
+	ret1 = strsplit(tmpstr, "\n", &count);
+	max = count - 1;
+
+	if(ret1 != NULL)
+	{
+		for(i = 0; i <= max; i++)
+		{
+			ostrcatbig(&buf, "<option value=\"", &maxlen, &pos);
+			ostrcatbig(&buf, ret1[i].part, &maxlen, &pos);		
+			tmpstr1 = ostrcat(ret1[i].part, NULL, 0, 0);
+			if(getconfigint("recoverrun", NULL) == atoi(tmpstr1))
+				ostrcatbig(&buf, "\" selected>", &maxlen, &pos);		
+			else
+				ostrcatbig(&buf, "\">", &maxlen, &pos);
+			ostrcatbig(&buf, ret1[i].part, &maxlen, &pos);
+			ostrcatbig(&buf, "</option>", &maxlen, &pos);
+		}
+	}
+	free(ret1), ret1 = NULL;
+	free(tmpstr), tmpstr = NULL;
+	free(tmpstr1), tmpstr1 = NULL;
+
+///////////////////
+	tmpstr = ostrcat("0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n15\n20\n25\n30\n35\n40\n45\n50\n55\n60", NULL, 0, 0);
+
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Skip 1/3"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"skip13\" border=\"0\"> <option value=\"", &maxlen, &pos);
+
+	count = 0;
+	ret1 = strsplit(tmpstr, "\n", &count);
+	max = count - 1;
+
+	if(ret1 != NULL)
+	{
+		for(i = 0; i <= max; i++)
+		{
+			ostrcatbig(&buf, "<option value=\"", &maxlen, &pos);
+			ostrcatbig(&buf, ret1[i].part, &maxlen, &pos);		
+			tmpstr1 = ostrcat(ret1[i].part, NULL, 0, 0);
+			if(getconfigint("skip13", NULL) == atoi(tmpstr1))
+				ostrcatbig(&buf, "\" selected>", &maxlen, &pos);		
+			else
+				ostrcatbig(&buf, "\">", &maxlen, &pos);
+			ostrcatbig(&buf, ret1[i].part, &maxlen, &pos);
+			ostrcatbig(&buf, "</option>", &maxlen, &pos);
+		}
+	}
+	free(ret1), ret1 = NULL;
+	free(tmpstr), tmpstr = NULL;
+	free(tmpstr1), tmpstr1 = NULL;
+
+///////////////////
+	tmpstr = ostrcat("0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n15\n20\n25\n30\n35\n40\n45\n50\n55\n60", NULL, 0, 0);
+
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Skip 4/6"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"skip46\" border=\"0\"> <option value=\"", &maxlen, &pos);
+
+	count = 0;
+	ret1 = strsplit(tmpstr, "\n", &count);
+	max = count - 1;
+
+	if(ret1 != NULL)
+	{
+		for(i = 0; i <= max; i++)
+		{
+			ostrcatbig(&buf, "<option value=\"", &maxlen, &pos);
+			ostrcatbig(&buf, ret1[i].part, &maxlen, &pos);		
+			tmpstr1 = ostrcat(ret1[i].part, NULL, 0, 0);
+			if(getconfigint("skip46", NULL) == atoi(tmpstr1))
+				ostrcatbig(&buf, "\" selected>", &maxlen, &pos);		
+			else
+				ostrcatbig(&buf, "\">", &maxlen, &pos);
+			ostrcatbig(&buf, ret1[i].part, &maxlen, &pos);
+			ostrcatbig(&buf, "</option>", &maxlen, &pos);
+		}
+	}
+	free(ret1), ret1 = NULL;
+	free(tmpstr), tmpstr = NULL;
+	free(tmpstr1), tmpstr1 = NULL;
+	
+///////////////////
+	tmpstr = ostrcat("0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n15\n20\n25\n30\n35\n40\n45\n50\n55\n60", NULL, 0, 0);
+
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Skip 7/9"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"skip79\" border=\"0\"> <option value=\"", &maxlen, &pos);
+
+	count = 0;
+	ret1 = strsplit(tmpstr, "\n", &count);
+	max = count - 1;
+
+	if(ret1 != NULL)
+	{
+		for(i = 0; i <= max; i++)
+		{
+			ostrcatbig(&buf, "<option value=\"", &maxlen, &pos);
+			ostrcatbig(&buf, ret1[i].part, &maxlen, &pos);		
+			tmpstr1 = ostrcat(ret1[i].part, NULL, 0, 0);
+			if(getconfigint("skip79", NULL) == atoi(tmpstr1))
+				ostrcatbig(&buf, "\" selected>", &maxlen, &pos);		
+			else
+				ostrcatbig(&buf, "\">", &maxlen, &pos);
+			ostrcatbig(&buf, ret1[i].part, &maxlen, &pos);
+			ostrcatbig(&buf, "</option>", &maxlen, &pos);
+		}
+	}
+	free(ret1), ret1 = NULL;
+	free(tmpstr), tmpstr = NULL;
+	free(tmpstr1), tmpstr1 = NULL;
+	
+///////////////////
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Player for .ts"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"playertype\" border=\"0\">", &maxlen, &pos);
+	
+	if(getconfigint("playertype", NULL) == 0)
+		ostrcatbig(&buf, "<option value=\"0\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"0\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("extern"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("faststop", NULL) == 1)
+		ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("intern"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+///////////////////
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Change Channelname auto."), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"autochangechannelname\" border=\"0\">", &maxlen, &pos);
+	
+	if(getconfigint("autochangechannelname", NULL) == 0)
+		ostrcatbig(&buf, "<option value=\"0\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"0\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("no"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("autochangechannelname", NULL) == 1)
+		ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("yes"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+///////////////////
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Set action after rec"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"def_rectimer_after\" border=\"0\">", &maxlen, &pos);
+	
+	if(getconfigint("def_rectimer_after", NULL) == 0)
+		ostrcatbig(&buf, "<option value=\"0\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"0\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("auto"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("def_rectimer_after", NULL) == 1)
+		ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("nothing"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("def_rectimer_after", NULL) == 2)
+		ostrcatbig(&buf, "<option value=\"2\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"2\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("standby"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("def_rectimer_after", NULL) == 3)
+		ostrcatbig(&buf, "<option value=\"3\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"3\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("power off"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+///////////////////
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Show Timeline in Channellist"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"showchanneltimeline\" border=\"0\">", &maxlen, &pos);
+	
+	if(getconfigint("showchanneltimeline", NULL) == 0)
+		ostrcatbig(&buf, "<option value=\"0\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"0\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("no"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("showchanneltimeline", NULL) == 1)
+		ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("yes"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+///////////////////
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Animated Screens"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"screenanim\" border=\"0\">", &maxlen, &pos);
+	
+	if(getconfigint("screenanim", NULL) == 0)
+		ostrcatbig(&buf, "<option value=\"0\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"0\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("no"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("screenanim", NULL) == 1)
+		ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("anim. width"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("screenanim", NULL) == 2)
+		ostrcatbig(&buf, "<option value=\"2\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"2\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("anim. height"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("screenanim", NULL) == 3)
+		ostrcatbig(&buf, "<option value=\"3\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"3\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("anim. both"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+///////////////////
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Animated Speed"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"screenanimspeed\" border=\"0\">", &maxlen, &pos);
+	
+	if(getconfigint("screenanimspeed", NULL) == 1)
+		ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("very fast"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("screenanimspeed", NULL) == 5)
+		ostrcatbig(&buf, "<option value=\"5\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"5\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("fast"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("screenanimspeed", NULL) == 10)
+		ostrcatbig(&buf, "<option value=\"10\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"10\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("normal"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("screenanimspeed", NULL) == 15)
+		ostrcatbig(&buf, "<option value=\"15\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"15\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("slow"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("screenanimspeed", NULL) == 20)
+		ostrcatbig(&buf, "<option value=\"20\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"20\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("very slow"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+///////////////////
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Channellist view"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"channellistview\" border=\"0\">", &maxlen, &pos);
+	
+	if(getconfigint("channellistview", NULL) == 0)
+		ostrcatbig(&buf, "<option value=\"0\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"0\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("hidden"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("channellistview", NULL) == 1)
+		ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("deaktiv"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+///////////////////
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Show last pos Question"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"showlastpos\" border=\"0\">", &maxlen, &pos);
+	
+	if(getconfigint("showlastpos", NULL) == 0)
+		ostrcatbig(&buf, "<option value=\"0\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"0\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("no"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("showlastpos", NULL) == 1)
+		ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("yes"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+///////////////////
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Resync Recording immediately"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"recsync\" border=\"0\">", &maxlen, &pos);
+	
+	if(getconfigint("recsync", NULL) == 0)
+		ostrcatbig(&buf, "<option value=\"0\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"0\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("no"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("recsync", NULL) == 1)
+		ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("yes"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+///////////////////
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Recording name"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"recordnamefmt\" border=\"0\">", &maxlen, &pos);
+	
+	if(getconfigint("recordnamefmt", NULL) == 0)
+		ostrcatbig(&buf, "<option value=\"0\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"0\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("channel-movie"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("recordnamefmt", NULL) == 1)
+		ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("movie-channel"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+///////////////////
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Newsletter"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"newsletter\" border=\"0\">", &maxlen, &pos);
+	
+	if(getconfigint("newsletter", NULL) == 0)
+		ostrcatbig(&buf, "<option value=\"0\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"0\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("no"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("newsletter", NULL) == 1)
+		ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("yes"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+///////////////////
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Show hidden files"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"showhiddenfiles\" border=\"0\">", &maxlen, &pos);
+	
+	if(getconfigint("showhiddenfiles", NULL) == 0)
+		ostrcatbig(&buf, "<option value=\"0\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"0\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("no"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("showhiddenfiles", NULL) == 1)
+		ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("yes"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+///////////////////
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Expert Modus"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"expertmodus\" border=\"0\">", &maxlen, &pos);
+	
+	if(getconfigint("expertmodus", NULL) == 0)
+		ostrcatbig(&buf, "<option value=\"0\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"0\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("no"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("expertmodus", NULL) == 10)
+		ostrcatbig(&buf, "<option value=\"10\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"10\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("yes"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("expertmodus", NULL) == 11)
+		ostrcatbig(&buf, "<option value=\"11\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"11\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("expert (11)"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+///////////////////
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Show infobar on program change"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"infobarprogram\" border=\"0\">", &maxlen, &pos);
+	
+	if(getconfigint("infobarprogram", NULL) == 0)
+		ostrcatbig(&buf, "<option value=\"0\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"0\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("no"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("infobarprogram", NULL) == 1)
+		ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("yes"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+///////////////////
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Use cross control for fast zapping and vol"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"crosscontrol\" border=\"0\">", &maxlen, &pos);
+	
+	if(getconfigint("crosscontrol", NULL) == 0)
+		ostrcatbig(&buf, "<option value=\"0\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"0\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("no"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("crosscontrol", NULL) == 1)
+		ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("yes"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("crosscontrol", NULL) == 2)
+		ostrcatbig(&buf, "<option value=\"2\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"2\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("yes / vzap 1 sec"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("crosscontrol", NULL) == 3)
+		ostrcatbig(&buf, "<option value=\"3\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"3\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("yes / vzap 2 sec"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("crosscontrol", NULL) == 9999)
+		ostrcatbig(&buf, "<option value=\"9999\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"9999\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("yes / vzap endless"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+///////////////////
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Deactivate Crypt Support on Media Playback"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"emucontrol\" border=\"0\">", &maxlen, &pos);
+	
+	if(getconfigint("emucontrol", NULL) == 0)
+		ostrcatbig(&buf, "<option value=\"0\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"0\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("no"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("emucontrol", NULL) == 1)
+		ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("yes"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+///////////////////
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Deactivate MiniTV"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"choiceminitv\" border=\"0\">", &maxlen, &pos);
+	
+	if(getconfigint("choiceminitv", NULL) == 0)
+		ostrcatbig(&buf, "<option value=\"0\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"0\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("no"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("choiceminitv", NULL) == 1)
+		ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("yes"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+///////////////////
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Activate CEC"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"usecec\" border=\"0\">", &maxlen, &pos);
+	
+	if(getconfigint("usecec", NULL) == 0)
+		ostrcatbig(&buf, "<option value=\"0\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"0\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("no"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("usecec", NULL) == 1)
+		ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("yes"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+
+///////////////////
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("SATA Connector"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"sataswitch\" border=\"0\">", &maxlen, &pos);
+	
+	if(getconfigint("sataswitch", NULL) == 0)
+		ostrcatbig(&buf, "<option value=\"0\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"0\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("extern"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("sataswitch", NULL) == 1)
+		ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("intern"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+///////////////////
+//	ostrcatbig(&buf, "<tr><td><font class=\"label\">Volbartimeout:&nbsp;</font></td><td><select name=\"volbartimeout\" border=\"0\"><option value=\"1\" selected>1</option><option value=\"2\">2</option><option value=\"3\">3</option><option value=\"4\">4</option><option value=\"5\">5</option><option value=\"6\">6</option><option value=\"7\">7</option><option value=\"8\">8</option><option value=\"9\">9</option><option value=\"10\">10</option></select></td></tr>", &maxlen, &pos);
+	max = 10;
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Time to wait after seek for fill buffer"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"playerbufferseektime\" border=\"0\"> <option value=\"", &maxlen, &pos);
+	for(i = 1; i <= max; i++)
+	{
+		ostrcatbig(&buf, "<option value=\"", &maxlen, &pos);
+		ostrcatbig(&buf, oitoa(i), &maxlen, &pos);		
+		if(getconfigint("playerbufferseektime", NULL) == i)
+			ostrcatbig(&buf, "\" selected>", &maxlen, &pos);		
+		else
+			ostrcatbig(&buf, "\">", &maxlen, &pos);
+		ostrcatbig(&buf, oitoa(i), &maxlen, &pos);
+		ostrcatbig(&buf, "</option>", &maxlen, &pos);
+	}	
+
+
+	ostrcatbig(&buf, "</select></td></tr>", &maxlen, &pos);
+	ostrcatbig(&buf, "</table><br><br><input class=button type=submit name=send value=\"Send\" onClick=\"return checkdaytime(begin.value, end.value)\"></input>&nbsp;<input class=button type=reset name=reset value=\"Reset\"></input></form></center></body></html>", &maxlen, &pos);
+
+	//ostrcatbig(&buf, param, &maxlen, &pos);
+	return buf;
+}
+
 #endif
