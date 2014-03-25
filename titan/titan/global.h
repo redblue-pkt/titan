@@ -2079,6 +2079,14 @@ int ostrftime(char* buf, int count, char* format, struct tm* t)
 	else
 		ret = strftime(buf, count, "%d-%m-%Y %H:%M", t);
 
+	buf1 = string_replace("Mon", "Mon", buf1, 1);
+	buf1 = string_replace("Tue", "Die", buf1, 1);
+	buf1 = string_replace("Wed", "Mit", buf1, 1);
+	buf1 = string_replace("Thu", "Don", buf1, 1);
+	buf1 = string_replace("Fri", "Fre", buf1, 1);
+	buf1 = string_replace("Sat", "Sam", buf1, 1);
+	buf1 = string_replace("Sun", "Son", buf1, 1);
+
 	return ret;
 }
 
