@@ -720,6 +720,16 @@ char* gettime(struct skin* node, char* format)
 		buf1 = ostrcat(buf, NULL, 1, 0);
 	}
 
+printf("1buf1: %s\n",buf1);
+//buf1 = string_replace("Mon", "Mon", buf1, 1);
+buf1 = string_replace("Tue", "Die", buf1, 1);
+buf1 = string_replace("Wed", "Mit", buf1, 1);
+buf1 = string_replace("Thu", "Don", buf1, 1);
+buf1 = string_replace("Fri", "Fre", buf1, 1);
+buf1 = string_replace("Sat", "Sam", buf1, 1);
+buf1 = string_replace("Sun", "Son", buf1, 1);
+printf("2buf1: %s\n",buf1);
+
 	free(loctime);
 	return buf1;
 }
