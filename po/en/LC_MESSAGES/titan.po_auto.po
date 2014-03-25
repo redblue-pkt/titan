@@ -38,8 +38,8 @@ msgstr ""
 #: bgdownload.h:176 blindscanadjust.h:25 callmon_main.h:39 channellist.h:913
 #: channellist.h:915 channellist.h:920 channellist.h:922 channellist.h:1006
 #: divxstage.h:36 divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336
-#: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:260 epgsettings.h:286
-#: epgsettings.h:300 extensions.h:173 extensions.h:224 extensions.h:233
+#: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:262 epgsettings.h:288
+#: epgsettings.h:302 extensions.h:173 extensions.h:224 extensions.h:233
 #: extensions.h:237 extensions.h:242 extensions.h:250 extensions.h:285
 #: extensions.h:293 extensions.h:300 extensions.h:307 extensions.h:339
 #: extensions.h:365 extensions.h:396 extensions.h:403 extensions.h:427
@@ -131,8 +131,8 @@ msgstr ""
 #: bgdownload.h:176 blindscanadjust.h:25 channellist.h:913 channellist.h:915
 #: channellist.h:920 channellist.h:922 channellist.h:1006 divxstage.h:36
 #: divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336 dlna.h:345
-#: dvdplay.h:62 epgsearch.h:27 epgsettings.h:260 epgsettings.h:286
-#: epgsettings.h:300 extensions.h:173 extensions.h:224 extensions.h:233
+#: dvdplay.h:62 epgsearch.h:27 epgsettings.h:262 epgsettings.h:288
+#: epgsettings.h:302 extensions.h:173 extensions.h:224 extensions.h:233
 #: extensions.h:237 extensions.h:242 extensions.h:250 extensions.h:285
 #: extensions.h:293 extensions.h:300 extensions.h:307 extensions.h:339
 #: extensions.h:365 extensions.h:396 extensions.h:403 extensions.h:427
@@ -542,7 +542,7 @@ msgstr ""
 #: blindscanadjust.h:25 callmon_main.h:39 channellist.h:913 channellist.h:915
 #: channellist.h:920 channellist.h:922 channellist.h:1006 divxstage.h:36
 #: divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336 dlna.h:345
-#: dvdplay.h:62 epgsearch.h:27 epgsettings.h:260 epgsettings.h:286
+#: dvdplay.h:62 epgsearch.h:27 epgsettings.h:262 epgsettings.h:288
 #: extensions.h:250 extensions.h:307 extensions.h:339 extensions.h:399
 #: extensions.h:403 extensions.h:439 facebook.h:66 facebook.h:157
 #: facebook.h:167 faststream.h:30 faststream.h:79 faststream.h:91
@@ -1292,17 +1292,17 @@ msgstr "Only for scan"
 msgid "poweroff"
 msgstr "Power Off"
 
-#: epgsettings.h:260
+#: epgsettings.h:262
 msgid "Deavtivate Refresh Time and After EPG in scan-mode"
 msgstr ""
 "Background scan activated.\n"
 "Timer scan and 'action after scan' is deactivated."
 
-#: epgsettings.h:286
+#: epgsettings.h:288
 msgid "EPG resetet and now clear."
 msgstr "EPG cleared"
 
-#: epgsettings.h:300
+#: epgsettings.h:302
 msgid "EPG Scan Log"
 msgstr ""
 
