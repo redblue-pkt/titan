@@ -216,6 +216,8 @@ void screenepgsettings()
 	addchoicebox(epg_afterevent, "1", _("poweroff"));
 	setchoiceboxselection(epg_afterevent, getconfig("epg_afterevent", NULL));
 
+	b4->hidden = NO;
+
 	drawscreen(epgsettings, 0, 0);
 	addscreenrc(epgsettings, listbox);
 
@@ -303,9 +305,9 @@ void screenepgsettings()
 		}
 
 		if(ostrcmp(listbox->select->name, "epgpath") == 0)
-			b4->hidden = YES;
-		else
 			b4->hidden = NO;
+		else
+			b4->hidden = YES;
 		drawscreen(epgsettings, 0, 0);
 	}
 
