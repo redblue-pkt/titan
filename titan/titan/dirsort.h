@@ -17,9 +17,9 @@ int screendirsort()
 	
 	addchoicebox(alpha, "0", "");
 	addchoicebox(reversealpha, "1", "");
-	addchoicebox(size, "2", _(""));
+	addchoicebox(size, "2", "");
 	addchoicebox(reversesize, "3", "");
-	addchoicebox(date, "4", _(""));
+	addchoicebox(date, "4", "");
 	addchoicebox(reversedate, "5", "");
 
 	drawscreen(dirsort, 0, 0);
