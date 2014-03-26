@@ -5388,8 +5388,31 @@ int setvol(int value)
 		{
 			status.volmute = -1;
 			ret = writesysint(voldev, value, 0);
+
+#ifdef MIPSEL
+			struct dvbdev *audionode = NULL;
+			int openaudio = 0;
+	
+			if(ret == 0 && status.aktservice != NULL)
+			{
+				if(status.aktservice->audiodev == NULL)
+				{
+					audionode = audioopen(0); //we must open the audio device for change volume in external player
+					openaudio = 1;
+				}
+				else
+					audionode = status.aktservice->audiodev;
+		
+				if(ret == 0 && audionode != NULL)
+					ret = setmixer(audionode, value, value);
+				
+				if(openaudio == 1)
+					audioclose(audionode, -1);
+			}
+#else
 			if(ret == 0 && status.aktservice != NULL)
 				ret = setmixer(status.aktservice->audiodev, value, value);
+#endif
 		}
 		if(ret == 0 && status.mute != 2) addconfigint("vol", tmpvol);
 		return ret;
