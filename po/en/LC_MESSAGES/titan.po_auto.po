@@ -1657,7 +1657,7 @@ msgstr ""
 
 #: global.h:6680
 msgid "Sat"
-msgstr "Satellite"
+msgstr ""
 
 #: global.h:6681
 msgid "Sun"
