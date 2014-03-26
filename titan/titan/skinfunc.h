@@ -721,12 +721,12 @@ char* gettime(struct skin* node, char* format)
 	}
 
 	buf1 = string_replace("Mon", "Montag", buf1, 1);
-	buf1 = string_replace("Tue", "Dienstag", buf1, 1);
-	buf1 = string_replace("Wed", "Mittwoch", buf1, 1);
-	buf1 = string_replace("Thu", "Donnerstag", buf1, 1);
-	buf1 = string_replace("Fri", "Freitag", buf1, 1);
-	buf1 = string_replace("Sat", "Samstag", buf1, 1);
-	buf1 = string_replace("Sun", "Sonntag", buf1, 1);
+	buf1 = string_replace("Die", "Dienstag", buf1, 1);
+	buf1 = string_replace("Mit", "Mittwoch", buf1, 1);
+	buf1 = string_replace("Don", "Donnerstag", buf1, 1);
+	buf1 = string_replace("Fre", "Freitag", buf1, 1);
+	buf1 = string_replace("Sam", "Samstag", buf1, 1);
+	buf1 = string_replace("Son", "Sonntag", buf1, 1);
 
 	free(loctime);
 	return buf1;
