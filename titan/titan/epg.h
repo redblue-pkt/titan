@@ -57,6 +57,7 @@ start:
 
 			loctime = localtime(&epgnode->starttime);
 			ostrftime(buf, MINMALLOC, listbox->param1, loctime);
+			buf = translate_time(buf, 0);
 			changetext(tmp, buf);
 			changetext2(tmp, epgnode->title);
 			tmp->handle = (char*)epgnode;
@@ -236,6 +237,7 @@ start:
 		if(loctime != NULL)
 		{
 			ostrftime(buf, MINMALLOC, epgstart->param1, loctime);
+			buf = translate_time(buf, 0);
 			changetext(epgstart, buf);
 			free(loctime); loctime = NULL;
 		}
@@ -243,6 +245,7 @@ start:
 		if(loctime != NULL)
 		{
 			ostrftime(buf, MINMALLOC, epgend->param1, loctime);
+			buf = translate_time(buf, 0);
 			changetext(epgend, buf);
 			free(loctime); loctime = NULL;
 		}
