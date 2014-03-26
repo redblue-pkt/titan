@@ -505,6 +505,8 @@ char* getepgtime(struct skin* node, char* format, int akt, int type)
 				ostrftime(buf, MINMALLOC, format, loctime);
 			buf1 = ostrcat(buf, NULL, 1, 0);
 
+			buf1 = translate_time(buf1, 0);
+
 			free(loctime); loctime = NULL;
 			return buf1;
 		}
@@ -720,13 +722,7 @@ char* gettime(struct skin* node, char* format)
 		buf1 = ostrcat(buf, NULL, 1, 0);
 	}
 
-	buf1 = string_replace("Mon", "Montag", buf1, 1);
-	buf1 = string_replace("Die", "Dienstag", buf1, 1);
-	buf1 = string_replace("Mit", "Mittwoch", buf1, 1);
-	buf1 = string_replace("Don", "Donnerstag", buf1, 1);
-	buf1 = string_replace("Fre", "Freitag", buf1, 1);
-	buf1 = string_replace("Sam", "Samstag", buf1, 1);
-	buf1 = string_replace("Son", "Sonntag", buf1, 1);
+	buf1 = translate_time(buf1, 1);
 
 	free(loctime);
 	return buf1;

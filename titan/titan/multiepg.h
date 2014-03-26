@@ -99,8 +99,10 @@ int showallmepgchannel(struct skin* multiepg, struct skin* listbox, int epgnr)
 					loctime = localtime(&epgnode->endtime);
 					ostrftime(buf, MINMALLOC, listbox->param2, loctime);
 					tmpstr = ostrcat(tmpstr, buf, 1, 0);
+					tmpstr = translate_time(tmpstr, 0);
 					tmpstr = ostrcat(tmpstr, " - ", 1, 0);
 					tmpstr = ostrcat(tmpstr, epgnode->title, 1, 0);
+						
 					changetext2(chnode, tmpstr);
 					free(tmpstr); tmpstr = NULL;
 					chnode->textposx2 = TEXTPOSEPG;					
@@ -172,10 +174,13 @@ int showbouquetmepgchannel(struct skin* multiepg, struct skin* listbox, struct b
 						loctime = localtime(&epgnode->starttime);
 						ostrftime(buf, MINMALLOC, listbox->param1, loctime);
 						tmpstr = ostrcat(tmpstr, buf, 1, 0);
+						tmpstr = translate_time(tmpstr, 1);
 
 						loctime = localtime(&epgnode->endtime);
 						ostrftime(buf, MINMALLOC, listbox->param2, loctime);
 						tmpstr = ostrcat(tmpstr, buf, 1, 0);
+						tmpstr = translate_time(tmpstr, 1);
+
 						tmpstr = ostrcat(tmpstr, " - ", 1, 0);
 						tmpstr = ostrcat(tmpstr, epgnode->title, 1, 0);
 						changetext2(chnode, tmpstr);
@@ -240,6 +245,7 @@ int showprovidermepgchannel(struct skin* multiepg, struct skin* listbox, struct 
 						loctime = localtime(&epgnode->endtime);
 						ostrftime(buf, MINMALLOC, listbox->param2, loctime);
 						tmpstr = ostrcat(tmpstr, buf, 1, 0);
+						tmpstr = translate_time(tmpstr, 0);
 						tmpstr = ostrcat(tmpstr, " - ", 1, 0);
 						tmpstr = ostrcat(tmpstr, epgnode->title, 1, 0);
 						changetext2(chnode, tmpstr);
@@ -307,6 +313,7 @@ int showsatmepgchannel(struct skin* multiepg, struct skin* listbox, struct sat* 
 						loctime = localtime(&epgnode->endtime);
 						ostrftime(buf, MINMALLOC, listbox->param2, loctime);
 						tmpstr = ostrcat(tmpstr, buf, 1, 0);
+						tmpstr = translate_time(tmpstr, 0);
 						tmpstr = ostrcat(tmpstr, " - ", 1, 0);
 						tmpstr = ostrcat(tmpstr, epgnode->title, 1, 0);
 						changetext2(chnode, tmpstr);
@@ -370,6 +377,7 @@ int showazmepgchannel(struct skin* multiepg, struct skin* listbox, int character
 						loctime = localtime(&epgnode->endtime);
 						ostrftime(buf, MINMALLOC, listbox->param2, loctime);
 						tmpstr = ostrcat(tmpstr, buf, 1, 0);
+						tmpstr = translate_time(tmpstr, 0);
 						tmpstr = ostrcat(tmpstr, " - ", 1, 0);
 						tmpstr = ostrcat(tmpstr, epgnode->title, 1, 0);
 						changetext2(chnode, tmpstr);
