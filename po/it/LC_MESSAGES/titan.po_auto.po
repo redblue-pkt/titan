@@ -745,8 +745,8 @@ msgstr ""
 msgid "Terrestrial: "
 msgstr ""
 
-#: blindscanadjust.h:120 global.h:6682
-msgid "Sat"
+#: blindscanadjust.h:120 skin_default_skin.xml.h:528
+msgid "SAT"
 msgstr "SAT"
 
 #: blindscanadjust.h:121 tunerconfig.h:339
@@ -1621,6 +1621,10 @@ msgstr ""
 #: global.h:6681
 msgid "Fri"
 msgstr ""
+
+#: global.h:6682
+msgid "Sat"
+msgstr "SAT"
 
 #: global.h:6683
 msgid "Sun"
@@ -7282,10 +7286,6 @@ msgstr ""
 #: skin_default_skin.xml.h:527
 msgid "Samba Server Settings"
 msgstr "Impostazioni Samba Server"
-
-#: skin_default_skin.xml.h:528
-msgid "SAT"
-msgstr "SAT"
 
 #: skin_default_skin.xml.h:530
 msgid "Sat Config"

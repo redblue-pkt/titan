@@ -748,9 +748,9 @@ msgstr "Kabel: "
 msgid "Terrestrial: "
 msgstr "Terrestrisch: "
 
-#: blindscanadjust.h:120 global.h:6682
-msgid "Sat"
-msgstr "Sam"
+#: blindscanadjust.h:120 skin_default_skin.xml.h:528
+msgid "SAT"
+msgstr "Satelliten"
 
 #: blindscanadjust.h:121 tunerconfig.h:339
 msgid "Cable"
@@ -1650,6 +1650,10 @@ msgstr "Don"
 #: global.h:6681
 msgid "Fri"
 msgstr "Fre"
+
+#: global.h:6682
+msgid "Sat"
+msgstr "Sam"
 
 #: global.h:6683
 msgid "Sun"
@@ -7434,10 +7438,6 @@ msgstr ""
 #: skin_default_skin.xml.h:527
 msgid "Samba Server Settings"
 msgstr "Samba Server Einstellungen"
-
-#: skin_default_skin.xml.h:528
-msgid "SAT"
-msgstr "Satelliten"
 
 #: skin_default_skin.xml.h:530
 msgid "Sat Config"
