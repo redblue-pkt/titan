@@ -117,7 +117,7 @@ void screenblindscanadjust()
 	
 	struct skin* tmp = NULL;
 	
-	addchoicebox(tunertype, "0", _("Sat"));
+	addchoicebox(tunertype, "0", _("SAT"));
 	addchoicebox(tunertype, "1", _("Cable"));
 	addchoicebox(tunertype, "2", _("Terrestrial"));
 	setchoiceboxselection(tunertype, "0");
