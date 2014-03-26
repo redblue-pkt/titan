@@ -750,7 +750,7 @@ msgstr "Terrestrisch: "
 
 #: blindscanadjust.h:120 global.h:6682
 msgid "Sat"
-msgstr "Sat"
+msgstr "Sam"
 
 #: blindscanadjust.h:121 tunerconfig.h:339
 msgid "Cable"
