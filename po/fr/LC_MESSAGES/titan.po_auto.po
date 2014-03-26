@@ -1575,59 +1575,59 @@ msgstr ""
 msgid "ERROR cant read res"
 msgstr ""
 
-#: global.h:6665 global.h:6669 rectimer.h:1061 skin_default_skin.xml.h:729
-msgid "Wednesday"
-msgstr "Mercredi"
-
-#: global.h:6667 rectimer.h:1059 skin_default_skin.xml.h:392
+#: global.h:6665 rectimer.h:1059 skin_default_skin.xml.h:392
 msgid "Monday"
 msgstr "Lundi"
 
-#: global.h:6668 rectimer.h:1060 skin_default_skin.xml.h:676
+#: global.h:6666 rectimer.h:1060 skin_default_skin.xml.h:676
 msgid "Tuesday"
 msgstr "Mardi"
 
-#: global.h:6670 rectimer.h:1062 skin_default_skin.xml.h:647
+#: global.h:6667 rectimer.h:1061 skin_default_skin.xml.h:729
+msgid "Wednesday"
+msgstr "Mercredi"
+
+#: global.h:6668 rectimer.h:1062 skin_default_skin.xml.h:647
 msgid "Thursday"
 msgstr "Jeudi"
 
-#: global.h:6671 rectimer.h:1063 skin_default_skin.xml.h:244
+#: global.h:6669 rectimer.h:1063 skin_default_skin.xml.h:244
 msgid "Friday"
 msgstr "Vendredi"
 
-#: global.h:6672 rectimer.h:1064 skin_default_skin.xml.h:537
+#: global.h:6670 rectimer.h:1064 skin_default_skin.xml.h:537
 msgid "Saturday"
 msgstr "Samedi"
 
-#: global.h:6673 rectimer.h:1065 skin_default_skin.xml.h:623
+#: global.h:6671 rectimer.h:1065 skin_default_skin.xml.h:623
 msgid "Sunday"
 msgstr "Dimanche"
 
-#: global.h:6677
+#: global.h:6675
 msgid "Mon"
 msgstr ""
 
-#: global.h:6678
+#: global.h:6676
 msgid "Tue"
 msgstr ""
 
-#: global.h:6679
+#: global.h:6677
 msgid "Wed"
 msgstr ""
 
-#: global.h:6680
+#: global.h:6678
 msgid "Thu"
 msgstr ""
 
-#: global.h:6681
+#: global.h:6679
 msgid "Fri"
 msgstr ""
 
-#: global.h:6682
+#: global.h:6680
 msgid "Sat"
 msgstr ""
 
-#: global.h:6683
+#: global.h:6681
 msgid "Sun"
 msgstr ""
 
