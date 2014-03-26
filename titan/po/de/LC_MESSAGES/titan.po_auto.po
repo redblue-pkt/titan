@@ -111,8 +111,8 @@ msgstr ""
 #: system_backup_restore.h:95 system_update.h:320 system_update.h:326
 #: system_update.h:333 timeshift.h:113 timeshift.h:155 timeshift.h:162
 #: timeshiftsettings.h:45 titan.c:274 titan.c:338 titan.c:347 titan.c:957
-#: titan.c:966 titan.c:1077 titan.c:1098 titan.c:1104 titan.c:1115
-#: titan.c:1121 tithek.c:79 tithek_global.h:238 tithek.h:620 tithek.h:1116
+#: titan.c:966 titan.c:1088 titan.c:1109 titan.c:1115 titan.c:1126
+#: titan.c:1132 tithek.c:79 tithek_global.h:238 tithek.h:620 tithek.h:1116
 #: tithek.h:1159 tithek.h:1411 tithek.h:1433 tithek.h:1438 tithek.h:1452
 #: tithek.h:3103 tithek.h:3166 tithek.h:3180 tithek.h:3190 tiwakeup.h:66
 #: tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759
@@ -213,8 +213,8 @@ msgstr "Ok"
 #: system_backup_restore.h:95 system_update.h:320 system_update.h:326
 #: system_update.h:333 timeshift.h:113 timeshift.h:155 timeshift.h:162
 #: timeshiftsettings.h:45 titan.c:274 titan.c:338 titan.c:347 titan.c:957
-#: titan.c:966 titan.c:1077 titan.c:1098 titan.c:1104 titan.c:1115
-#: titan.c:1121 tithek.c:79 tithek_global.h:238 tithek.h:620 tithek.h:1116
+#: titan.c:966 titan.c:1088 titan.c:1109 titan.c:1115 titan.c:1126
+#: titan.c:1132 tithek.c:79 tithek_global.h:238 tithek.h:620 tithek.h:1116
 #: tithek.h:1159 tithek.h:1411 tithek.h:1433 tithek.h:1438 tithek.h:1452
 #: tithek.h:3103 tithek.h:3166 tithek.h:3180 tithek.h:3190 tiwakeup.h:66
 #: tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759
@@ -598,7 +598,7 @@ msgstr "Ja / VZAP unendlich"
 #: system_backup_restore.h:80 system_backup_restore.h:82 system_update.h:320
 #: system_update.h:326 system_update.h:333 timeshift.h:113 timeshift.h:155
 #: timeshift.h:162 timeshiftsettings.h:45 titan.c:274 titan.c:338 titan.c:347
-#: titan.c:1077 titan.c:1098 titan.c:1104 titan.c:1115 titan.c:1121
+#: titan.c:1088 titan.c:1109 titan.c:1115 titan.c:1126 titan.c:1132
 #: tithek.c:79 tithek_global.h:238 tithek.h:620 tithek.h:1116 tithek.h:1159
 #: tithek.h:1411 tithek.h:1433 tithek.h:1438 tithek.h:3103 tithek.h:3166
 #: tithek.h:3180 tithek.h:3190 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
@@ -8548,11 +8548,11 @@ msgstr "Erstinstallationsassistent"
 msgid "Settings OK ?"
 msgstr "Einstellungen speichern?"
 
-#: titan.c:1077
+#: titan.c:1088
 msgid "Receiver successful unlocked"
 msgstr "Ihr Receiver wurde erfolgreich freigeschaltet."
 
-#: titan.c:1098
+#: titan.c:1109
 msgid ""
 "Free space in /var to little!\n"
 "This can make problems!"
@@ -8560,7 +8560,7 @@ msgstr ""
 "FEHLER: Der freie Speicher in /var reicht nicht aus!\n"
 "Dies kann zu Problemen führen!"
 
-#: titan.c:1104
+#: titan.c:1115
 msgid ""
 "/var not writeable!\n"
 "Repair it?"
@@ -8568,7 +8568,7 @@ msgstr ""
 "FEHLER: /var ist nicht beschreibbar!\n"
 "Soll es repariert werden?"
 
-#: titan.c:1115
+#: titan.c:1126
 msgid ""
 "Free space in /mnt to little!\n"
 "This can make problems!"
@@ -8576,7 +8576,7 @@ msgstr ""
 "FEHLER: Der Speicher in /mnt ist nicht ausreichend!\n"
 "Das kann zu Problemen führen!"
 
-#: titan.c:1121
+#: titan.c:1132
 msgid ""
 "/mnt not writeable!\n"
 "Repair it?"
@@ -8584,11 +8584,11 @@ msgstr ""
 "FEHLER: /mnt ist nicht beschreibbar!\n"
 "Soll ein Reparaturversuch gestartet werden?"
 
-#: titan.c:1170
+#: titan.c:1181
 msgid "Unknown Error."
 msgstr "unbekannter Fehler."
 
-#: titan.c:1172
+#: titan.c:1183
 msgid "Automatic stop in 10 seconds."
 msgstr "Automatisches Beenden in 10 Sekunden."
 
