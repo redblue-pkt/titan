@@ -50,7 +50,7 @@ msgstr "Systeem informatie"
 #: filemanager.h:321 filemanager.h:331 filemanager.h:355 filenuke.h:37
 #: filenuke.h:84 filenuke.h:96 filenuke.h:108 filenuke.h:157 flashx.h:26
 #: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:6448 gmediarender.h:115 harddisk.h:350 harddisk.h:355
+#: global.h:6440 gmediarender.h:115 harddisk.h:350 harddisk.h:355
 #: harddisk.h:382 harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641
 #: harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733
 #: harddisk.h:793 harddisk.h:811 harddisk.h:814 harddisk.h:1046 hbbtv.h:362
@@ -143,7 +143,7 @@ msgstr "Ok"
 #: filemanager.h:321 filemanager.h:331 filemanager.h:355 filenuke.h:37
 #: filenuke.h:84 filenuke.h:96 filenuke.h:108 filenuke.h:157 flashx.h:26
 #: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:6448 gmediarender.h:115 harddisk.h:350 harddisk.h:355
+#: global.h:6440 gmediarender.h:115 harddisk.h:350 harddisk.h:355
 #: harddisk.h:382 harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641
 #: harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733
 #: harddisk.h:793 harddisk.h:811 harddisk.h:814 harddisk.h:1046 hbbtv.h:362
@@ -550,7 +550,7 @@ msgstr "Ja / VZAP oneindig"
 #: filemanager.h:208 filemanager.h:281 filemanager.h:291 filemanager.h:331
 #: filemanager.h:355 filenuke.h:37 filenuke.h:84 filenuke.h:96 filenuke.h:108
 #: filenuke.h:157 flashx.h:26 flashx.h:84 flashx.h:138 flashx.h:195
-#: flashx.h:233 flashx.h:270 global.h:6448 gmediarender.h:115 harddisk.h:633
+#: flashx.h:233 flashx.h:270 global.h:6440 gmediarender.h:115 harddisk.h:633
 #: harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731
 #: harddisk.h:733 harddisk.h:793 harddisk.h:811 harddisk.h:814 hbbtv.h:362
 #: hello.c:36 httpdfunc.h:1098 hwtest.h:88 hwtest.h:93 hwtest.h:98
@@ -747,7 +747,7 @@ msgstr "Kabel: "
 msgid "Terrestrial: "
 msgstr "Ether (digitenne): "
 
-#: blindscanadjust.h:120
+#: blindscanadjust.h:120 global.h:6682
 msgid "Sat"
 msgstr "Satellieten"
 
@@ -1590,9 +1590,61 @@ msgstr "Bestand kan niet getoond worden!"
 msgid "Registration needed, please contact Atemio !"
 msgstr "Registratie is noodzakelijk, neem AUB contact op met Atemio !"
 
-#: global.h:6448 keyactions.h:242
+#: global.h:6440 keyactions.h:242
 msgid "ERROR cant read res"
 msgstr "Fout, resolutie kan niet worden vastgesteld."
+
+#: global.h:6665 global.h:6669 rectimer.h:1061 skin_default_skin.xml.h:729
+msgid "Wednesday"
+msgstr "Woensdag"
+
+#: global.h:6667 rectimer.h:1059 skin_default_skin.xml.h:392
+msgid "Monday"
+msgstr "Maandag"
+
+#: global.h:6668 rectimer.h:1060 skin_default_skin.xml.h:676
+msgid "Tuesday"
+msgstr "Dinsdag"
+
+#: global.h:6670 rectimer.h:1062 skin_default_skin.xml.h:647
+msgid "Thursday"
+msgstr "Donderdag"
+
+#: global.h:6671 rectimer.h:1063 skin_default_skin.xml.h:244
+msgid "Friday"
+msgstr "Vrijdag"
+
+#: global.h:6672 rectimer.h:1064 skin_default_skin.xml.h:537
+msgid "Saturday"
+msgstr "Zaterdag"
+
+#: global.h:6673 rectimer.h:1065 skin_default_skin.xml.h:623
+msgid "Sunday"
+msgstr "Zondag"
+
+#: global.h:6677
+msgid "Mon"
+msgstr ""
+
+#: global.h:6678
+msgid "Tue"
+msgstr ""
+
+#: global.h:6679
+msgid "Wed"
+msgstr ""
+
+#: global.h:6680
+msgid "Thu"
+msgstr ""
+
+#: global.h:6681
+msgid "Fri"
+msgstr ""
+
+#: global.h:6683
+msgid "Sun"
+msgstr ""
 
 #: gmediarender.h:109
 msgid "Servername"
@@ -2880,23 +2932,23 @@ msgstr "Enkele Service"
 msgid "Multiple Service"
 msgstr "Multi service"
 
-#: multiepg.h:437 multiepg.h:627
+#: multiepg.h:445 multiepg.h:635
 msgid "MULTI EPG - Bouquets"
 msgstr "Multi EPG - Favorieten"
 
-#: multiepg.h:450
+#: multiepg.h:458
 msgid "MULTI EPG - Channel"
 msgstr "Multi EPG - Zenders"
 
-#: multiepg.h:463
+#: multiepg.h:471
 msgid "MULTI EPG - Satellites"
 msgstr "Multi EPG - Satellieten"
 
-#: multiepg.h:476
+#: multiepg.h:484
 msgid "MULTI EPG - Provider"
 msgstr "Multi EPG - Providers"
 
-#: multiepg.h:489
+#: multiepg.h:497
 msgid "MULTI EPG - All Channels"
 msgstr "Multi EPG - Alle zenders"
 
@@ -5078,34 +5130,6 @@ msgstr "Weekelijks"
 #: rectimer.h:1054
 msgid "workdays"
 msgstr "Werkdagen"
-
-#: rectimer.h:1059 skin_default_skin.xml.h:392
-msgid "Monday"
-msgstr "Maandag"
-
-#: rectimer.h:1060 skin_default_skin.xml.h:676
-msgid "Tuesday"
-msgstr "Dinsdag"
-
-#: rectimer.h:1061 skin_default_skin.xml.h:729
-msgid "Wednesday"
-msgstr "Woensdag"
-
-#: rectimer.h:1062 skin_default_skin.xml.h:647
-msgid "Thursday"
-msgstr "Donderdag"
-
-#: rectimer.h:1063 skin_default_skin.xml.h:244
-msgid "Friday"
-msgstr "Vrijdag"
-
-#: rectimer.h:1064 skin_default_skin.xml.h:537
-msgid "Saturday"
-msgstr "Zaterdag"
-
-#: rectimer.h:1065 skin_default_skin.xml.h:623
-msgid "Sunday"
-msgstr "Zondag"
 
 #: rectimer.h:1445
 msgid "rec"
