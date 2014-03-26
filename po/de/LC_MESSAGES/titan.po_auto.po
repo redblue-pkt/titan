@@ -750,7 +750,7 @@ msgstr "Terrestrisch: "
 
 #: blindscanadjust.h:120 global.h:6682
 msgid "Sat"
-msgstr "Satellit"
+msgstr "Sat"
 
 #: blindscanadjust.h:121 tunerconfig.h:339
 msgid "Cable"
@@ -1637,23 +1637,23 @@ msgstr ""
 
 #: global.h:6678
 msgid "Tue"
-msgstr ""
+msgstr "Die"
 
 #: global.h:6679
 msgid "Wed"
-msgstr ""
+msgstr "Mit"
 
 #: global.h:6680
 msgid "Thu"
-msgstr ""
+msgstr "Don"
 
 #: global.h:6681
 msgid "Fri"
-msgstr ""
+msgstr "Fre"
 
 #: global.h:6683
 msgid "Sun"
-msgstr ""
+msgstr "Son"
 
 #: gmediarender.h:109
 msgid "Servername"
