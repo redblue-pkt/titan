@@ -395,6 +395,7 @@ void screenadjust()
 			addconfigscreen("playerbuffersize", playerbuffersize);
 			addconfigscreen("playerbufferseektime", playerbufferseektime);
 			
+			writeallconfig(1);
 			break;
 		}
 	}

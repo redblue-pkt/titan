@@ -4631,6 +4631,7 @@ printf("webadjustsend fmt: %d\n",fmt);
 
 	buf = webadjust(NULL, fmt);
 
+	writeallconfig(1);
 //param: node=0&volbartimeout=<option+value=&infobartimeout=4&infobarsleep=<option+value=&spinnerspeed=12&spinnertime=5&hangtime=60&secondinfobar=1&nozapclear=0&fastzap=0&faststop=1&dirsort=4&poweraktion=0&virtualzap=0&fasttextrender=0&recsplitsize=0&recforerun=2&recoverrun=<option+value=&skip13=<option+value=&skip46=<option+value=&skip79=<option+value=&playertype=1&autochangechannelname=0&def_rectimer_after=0&showchanneltimeline=1&screenanim=0&screenanimspeed=1&channellistview=0&showlastpos=1&recsync=0&recordnamefmt=0&newsletter=1&showhiddenfiles=1&expertmodus=0&infobarprogram=0&crosscontrol=0&emucontrol=0&choiceminitv=0&usecec=0&sataswitch=0&playerbufferseektime=3&send=Send
 //playerbufferseektime.value\"></input>&nbsp;<input class=button type=reset name=reset value=\"Reset\"></input></form></center></body></html>", &maxlen, &pos);
 //writesys("/tmp/tmpstr2", buf, 1);
