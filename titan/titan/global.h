@@ -6662,11 +6662,9 @@ char* translate_time(char* input, int flag)
 
 	if(flag == 0)
 	{
-		tmpstr = string_replace_all("Wed", _("Wednesday"), tmpstr, 1);
-
 		tmpstr = string_replace_all("Mon", _("Monday"), tmpstr, 1);
 		tmpstr = string_replace_all("Tue", _("Tuesday"), tmpstr, 1);
-		tmpstr = string_replace_all("(Wed)", _("Wednesday"), tmpstr, 1);
+		tmpstr = string_replace_all("Wed", _("Wednesday"), tmpstr, 1);
 		tmpstr = string_replace_all("Thu", _("Thursday"), tmpstr, 1);
 		tmpstr = string_replace_all("Fri", _("Friday"), tmpstr, 1);
 		tmpstr = string_replace_all("Sat", _("Saturday"), tmpstr, 1);
