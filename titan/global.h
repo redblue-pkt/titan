@@ -2079,14 +2079,6 @@ int ostrftime(char* buf, int count, char* format, struct tm* t)
 	else
 		ret = strftime(buf, count, "%d-%m-%Y %H:%M", t);
 
-	buf = string_replace("Mon", "Mon", buf, 1);
-	buf = string_replace("Tue", "Die", buf, 1);
-	buf = string_replace("Wed", "Mit", buf, 1);
-	buf = string_replace("Thu", "Don", buf, 1);
-	buf = string_replace("Fri", "Fre", buf, 1);
-	buf = string_replace("Sat", "Sam", buf, 1);
-	buf = string_replace("Sun", "Son", buf, 1);
-
 	return ret;
 }
 
@@ -6657,6 +6649,40 @@ char* fixport(char* input, int flag)
 	
 		tmpstr = ostrcat(tmpstr, input, 1, 0);		
 	}
+	return tmpstr;
+}
+
+//flag 0: Mon > Montag
+//flag 1: Mon > Mon
+char* translate_time(char* input, int flag)
+{
+	char* tmpstr = NULL;
+	if(input == NULL) return tmpstr;
+	tmpstr = ostrcat(tmpstr, input, 1, 1);	
+
+	if(flag == 0)
+	{
+		tmpstr = string_replace_all("Wed", _("Wednesday"), tmpstr, 1);
+
+		tmpstr = string_replace_all("Mon", _("Monday"), tmpstr, 1);
+		tmpstr = string_replace_all("Tue", _("Tuesday"), tmpstr, 1);
+		tmpstr = string_replace_all("(Wed)", _("Wednesday"), tmpstr, 1);
+		tmpstr = string_replace_all("Thu", _("Thursday"), tmpstr, 1);
+		tmpstr = string_replace_all("Fri", _("Friday"), tmpstr, 1);
+		tmpstr = string_replace_all("Sat", _("Saturday"), tmpstr, 1);
+		tmpstr = string_replace_all("Sun", _("Sunday"), tmpstr, 1);
+	}
+	else
+	{	
+		tmpstr = string_replace("Mon", _("Mon"), tmpstr, 1);
+		tmpstr = string_replace("Tue", _("Tue"), tmpstr, 1);
+		tmpstr = string_replace("Wed", _("Wed"), tmpstr, 1);
+		tmpstr = string_replace("Thu", _("Thu"), tmpstr, 1);
+		tmpstr = string_replace("Fri", _("Fri"), tmpstr, 1);
+		tmpstr = string_replace("Sat", _("Sat"), tmpstr, 1);
+		tmpstr = string_replace("Sun", _("Sun"), tmpstr, 1);
+	}
+
 	return tmpstr;
 }
 

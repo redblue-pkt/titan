@@ -114,6 +114,7 @@ start:
 								ostrftime(buf, MINMALLOC, "%H:%M ", loctime);
 								free(loctime); loctime = NULL;
 								tmpstr = ostrcat(tmpstr, buf, 1, 0);
+								tmpstr = translate_time(tmpstr, 0);
 							}
 							tmpstr = ostrcat(tmpstr, epgnode->title, 1, 0);
 						}
