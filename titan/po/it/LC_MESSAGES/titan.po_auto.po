@@ -50,7 +50,7 @@ msgstr ""
 #: filemanager.h:321 filemanager.h:331 filemanager.h:355 filenuke.h:37
 #: filenuke.h:84 filenuke.h:96 filenuke.h:108 filenuke.h:157 flashx.h:26
 #: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:6440 gmediarender.h:115 harddisk.h:350 harddisk.h:355
+#: global.h:6463 gmediarender.h:115 harddisk.h:350 harddisk.h:355
 #: harddisk.h:382 harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641
 #: harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733
 #: harddisk.h:793 harddisk.h:811 harddisk.h:814 harddisk.h:1046 hbbtv.h:362
@@ -143,7 +143,7 @@ msgstr "Ok"
 #: filemanager.h:321 filemanager.h:331 filemanager.h:355 filenuke.h:37
 #: filenuke.h:84 filenuke.h:96 filenuke.h:108 filenuke.h:157 flashx.h:26
 #: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:6440 gmediarender.h:115 harddisk.h:350 harddisk.h:355
+#: global.h:6463 gmediarender.h:115 harddisk.h:350 harddisk.h:355
 #: harddisk.h:382 harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641
 #: harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733
 #: harddisk.h:793 harddisk.h:811 harddisk.h:814 harddisk.h:1046 hbbtv.h:362
@@ -550,7 +550,7 @@ msgstr "yes / vzap endless"
 #: filemanager.h:208 filemanager.h:281 filemanager.h:291 filemanager.h:331
 #: filemanager.h:355 filenuke.h:37 filenuke.h:84 filenuke.h:96 filenuke.h:108
 #: filenuke.h:157 flashx.h:26 flashx.h:84 flashx.h:138 flashx.h:195
-#: flashx.h:233 flashx.h:270 global.h:6440 gmediarender.h:115 harddisk.h:633
+#: flashx.h:233 flashx.h:270 global.h:6463 gmediarender.h:115 harddisk.h:633
 #: harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731
 #: harddisk.h:733 harddisk.h:793 harddisk.h:811 harddisk.h:814 hbbtv.h:362
 #: hello.c:36 httpdfunc.h:1098 hwtest.h:88 hwtest.h:93 hwtest.h:98
@@ -1570,63 +1570,63 @@ msgstr "Can't show this file!"
 msgid "Registration needed, please contact Atemio !"
 msgstr "Registration needed, please contact Atemio !"
 
-#: global.h:6440 keyactions.h:242
+#: global.h:6463 keyactions.h:242
 msgid "ERROR cant read res"
 msgstr "ERROR cant read res"
 
-#: global.h:6665 rectimer.h:1059 skin_default_skin.xml.h:392
+#: global.h:6688 rectimer.h:1059 skin_default_skin.xml.h:392
 msgid "Monday"
 msgstr "Lunedì"
 
-#: global.h:6666 rectimer.h:1060 skin_default_skin.xml.h:676
+#: global.h:6689 rectimer.h:1060 skin_default_skin.xml.h:676
 msgid "Tuesday"
 msgstr "Martedì"
 
-#: global.h:6667 rectimer.h:1061 skin_default_skin.xml.h:729
+#: global.h:6690 rectimer.h:1061 skin_default_skin.xml.h:729
 msgid "Wednesday"
 msgstr "Mercoledì"
 
-#: global.h:6668 rectimer.h:1062 skin_default_skin.xml.h:647
+#: global.h:6691 rectimer.h:1062 skin_default_skin.xml.h:647
 msgid "Thursday"
 msgstr "Giovedì"
 
-#: global.h:6669 rectimer.h:1063 skin_default_skin.xml.h:244
+#: global.h:6692 rectimer.h:1063 skin_default_skin.xml.h:244
 msgid "Friday"
 msgstr "Venerdì"
 
-#: global.h:6670 rectimer.h:1064 skin_default_skin.xml.h:537
+#: global.h:6693 rectimer.h:1064 skin_default_skin.xml.h:537
 msgid "Saturday"
 msgstr "Sabato"
 
-#: global.h:6671 rectimer.h:1065 skin_default_skin.xml.h:623
+#: global.h:6694 rectimer.h:1065 skin_default_skin.xml.h:623
 msgid "Sunday"
 msgstr "Domenica"
 
-#: global.h:6675
+#: global.h:6698
 msgid "Mon"
 msgstr ""
 
-#: global.h:6676
+#: global.h:6699
 msgid "Tue"
 msgstr ""
 
-#: global.h:6677
+#: global.h:6700
 msgid "Wed"
 msgstr ""
 
-#: global.h:6678
+#: global.h:6701
 msgid "Thu"
 msgstr ""
 
-#: global.h:6679
+#: global.h:6702
 msgid "Fri"
 msgstr ""
 
-#: global.h:6680
+#: global.h:6703
 msgid "Sat"
 msgstr "SAT"
 
-#: global.h:6681
+#: global.h:6704
 msgid "Sun"
 msgstr ""
 
