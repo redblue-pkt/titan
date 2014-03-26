@@ -1050,11 +1050,22 @@ firstwizzardstep1:
 
 	system(getconfig("skriptaftertv", NULL));
 
+	char* cmd = NULL;
+#ifdef SH4
+	cmd = ostrcat("/media/hdd/movie/titankey.sh4", NULL, 0, 0);
+#endif
+
+#ifdef MIPSEL
+	cmd = ostrcat("/media/hdd/movie/titankey.mipsel", NULL, 0, 0);
+#endif
+
 	//for atemio to unlock box with stick
-	if(file_exist("/media/hdd/movie/titankey"))
+	if(file_exist(cmd))
 	{
 		char* cpuid = getcpuid();
-		char* cmd = ostrcat("/media/hdd/movie/titankey ", cpuid, 0, 0);
+		cmd = ostrcat(cmd, " ", 1, 0);
+		cmd = ostrcat(cmd, cpuid, 1, 0);
+
 		system(cmd);
 		checkserial(cpuid);
 		free(cmd); cmd = NULL;
@@ -1078,8 +1089,8 @@ firstwizzardstep1:
 		}
 
 		free(cpuid); cpuid = NULL;
-		free(cmd); cmd = NULL;
 	}
+	free(cmd); cmd = NULL;
 
 	//must called direct befor screeninfobar
 	if(getconfigint("saverun", NULL) == 1)
