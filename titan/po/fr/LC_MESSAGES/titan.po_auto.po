@@ -1164,11 +1164,11 @@ msgstr "sélectionner"
 msgid "Can't start playback !"
 msgstr ""
 
-#: epg.h:182 skin_default_skin.xml.h:581
+#: epg.h:183 skin_default_skin.xml.h:581
 msgid "Single (EPG)"
 msgstr "EPG Simple"
 
-#: epg.h:184
+#: epg.h:185
 msgid "Multi (EPG)"
 msgstr "Multi EPG"
 
