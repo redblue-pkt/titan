@@ -497,7 +497,7 @@ void screeninfobar()
 			subtitlepause(0);
 			continue;
 		}
-		if(rcret == getrcconfigint("rcyellow", NULL) || getrcconfigint("rcaudio", NULL))
+		if(rcret == getrcconfigint("rcyellow", NULL) || rcret == getrcconfigint("rcaudio", NULL))
 		{
 			subtitlepause(1);
 			status.infobar = 0;
