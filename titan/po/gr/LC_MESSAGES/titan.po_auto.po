@@ -59,7 +59,7 @@ msgstr ""
 #: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
 #: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626
-#: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:426 infobar.h:548
+#: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:432 infobar.h:554
 #: info.h:27 keyactions.h:242 lcdpearl1.c:45 lcdsamsung.c:101 log.h:46
 #: log.h:48 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
 #: mc_audioplayer.h:328 mc_audioplayer.h:599 mc_audioplayer.h:702
@@ -152,8 +152,8 @@ msgstr "OK"
 #: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
 #: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
 #: hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200
-#: imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:426
-#: infobar.h:548 info.h:27 keyactions.h:242 log.h:46 log.h:48 marker.h:215
+#: imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:432
+#: infobar.h:554 info.h:27 keyactions.h:242 log.h:46 log.h:48 marker.h:215
 #: marker.h:229 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
 #: mc_audioplayer.h:328 mc_audioplayer.h:599 mc_audioplayer.h:702
 #: mc_dateibrowser.h:38 mc_global.h:773 mc_global.h:1020
@@ -558,7 +558,7 @@ msgstr ""
 #: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
 #: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626
-#: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:426 infobar.h:548
+#: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:432 infobar.h:554
 #: keyactions.h:242 language.h:49 lcdpearl1.c:45 lcdsamsung.c:101 log.h:46
 #: log.h:48 marker.h:215 marker.h:229 mc_audioplayer.h:328
 #: mc_audioplayer.h:599 mc_audioplayer.h:702 mc_dateibrowser.h:38
@@ -2276,14 +2276,14 @@ msgstr ""
 msgid "DYNDNS now stopped"
 msgstr ""
 
-#: infobar.h:426 mc_audioplayer.h:328 mc_main.h:252 mc_pictureplayer.h:119
+#: infobar.h:432 mc_audioplayer.h:328 mc_main.h:252 mc_pictureplayer.h:119
 #: mc_videoplayer.h:329 menu.h:208
 msgid ""
 "Shooting Background done !\n"
 "Save Screenshoot Path: /tmp/screenshot.jpg"
 msgstr ""
 
-#: infobar.h:548
+#: infobar.h:554
 msgid "Internet Browser Plugin not installed !"
 msgstr ""
 
