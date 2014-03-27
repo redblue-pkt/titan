@@ -1388,14 +1388,14 @@ start:
 			}
 			continue;
 		}
-		if(list == BOUQUETCHANNEL && (rcret == getrcconfigint("rcff", NULL) || rcret == getrcconfigint("rcfr", NULL))) 
+		if(list == BOUQUETCHANNEL && (rcret == getrcconfigint("rcff", NULL) || rcret == getrcconfigint("rcfr", NULL) || rcret == getrcconfigint("rclast", NULL) || rcret == getrcconfigint("rcprev", NULL))) 
 		{
 			struct mainbouquet* tmpaktlist = ((struct mainbouquet*)aktlist);
 
 			int round = 0;
 			while(tmpaktlist != NULL)
 			{
-				if(rcret == getrcconfigint("rcff", NULL))
+				if(rcret == getrcconfigint("rcff", NULL) || (rcret == getrcconfigint("rcprev", NULL))
 				{
 					tmpaktlist = tmpaktlist->next;
 					if(tmpaktlist == NULL && round == 0)	
@@ -1404,7 +1404,7 @@ start:
 						tmpaktlist = mainbouquet;
 					}
 				}
-				else if(rcret == getrcconfigint("rcfr", NULL))
+				else if(rcret == getrcconfigint("rcfr", NULL) || (rcret == getrcconfigint("rclast", NULL))
 				{
 					tmpaktlist = tmpaktlist->prev;
 					if(tmpaktlist == NULL && round == 0)	
