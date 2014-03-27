@@ -1784,7 +1784,7 @@ void setskinnodeslocked(int flag)
 			if(ostrcmp("Reader Config", child->name) == 0) child->locked = 1;
 
 			// hide this menu on all boxes without ATEMIO530
-			if(checkbox("ATEMIO530") != 1)
+			if(checkbox("ATEMIO520") == 1 && checkbox("ATEMIO530") != 1 && checkbox("ATEMIO5200") != 1 && checkbox("ATEMIO5000") != 1)
 			{
 				if(ostrcmp("settings_pluginbutton", child->name) == 0) child->locked = 1;
 			}
