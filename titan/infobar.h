@@ -318,7 +318,7 @@ void screeninfobar()
 		}
 		if(rcret == getrcconfigint("rcblue", NULL) && getconfig("bluekey", NULL) == NULL)
 			rcret = getrcconfigint("rctvradio", NULL);
-		if(rcret == getrcconfigint("rcok", NULL) || rcret == getrcconfigint("rctvradio", NULL) || rcret == getrcconfigint("rcfav", NULL) || (status.crosscontrol == 0 && status.play == 0 && status.pause == 0 && (rcret == getrcconfigint("rcup", NULL) || rcret == getrcconfigint("rcdown", NULL) || rcret == getrcconfigint("rcleft", NULL) || rcret == getrcconfigint("rcright", NULL))))
+		if(rcret == getrcconfigint("rcok", NULL) || rcret == getrcconfigint("rctvradio", NULL) || rcret == getrcconfigint("rcfav", NULL) || rcret == getrcconfigint("rctv", NULL) || rcret == getrcconfigint("rcradio", NULL) || (status.crosscontrol == 0 && status.play == 0 && status.pause == 0 && (rcret == getrcconfigint("rcup", NULL) || rcret == getrcconfigint("rcdown", NULL) || rcret == getrcconfigint("rcleft", NULL) || rcret == getrcconfigint("rcright", NULL))))
 		{
 			int tmpservicetype = status.servicetype;
 			status.infobaraktiv = 0;
@@ -331,6 +331,12 @@ void screeninfobar()
 				else
 					status.servicetype = 0;
 			}
+
+			if(rcret == getrcconfigint("rctv", NULL))
+				status.servicetype = 0;
+			if(rcret == getrcconfigint("rcradio", NULL))
+				status.servicetype = 1;
+
 			drawscreen(skin, 0, 0);
 			if(rcret == getrcconfigint("rcfav", NULL))	
 				ret = screenchannellist(NULL, NULL, 2);
@@ -491,7 +497,7 @@ void screeninfobar()
 			subtitlepause(0);
 			continue;
 		}
-		if(rcret == getrcconfigint("rcyellow", NULL))
+		if(rcret == getrcconfigint("rcyellow", NULL) || getrcconfigint("rcaudio", NULL))
 		{
 			subtitlepause(1);
 			status.infobar = 0;
@@ -577,6 +583,18 @@ void screeninfobar()
 			status.updatevfd = START;
 			status.infobaraktiv = 1;
 			drawscreen(skin, 0, 0);
+			subtitlepause(0);
+			continue;
+		}
+		if(rcret == getrcconfigint("rctimer", NULL))
+		{
+			subtitlepause(1);
+			status.infobar = 0;
+			status.infobaraktiv = 0;
+			clearscreen(infobar);
+			screenrectimer();
+			drawscreen(skin, 0, 0);
+			status.infobaraktiv = 1;
 			subtitlepause(0);
 			continue;
 		}
