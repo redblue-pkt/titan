@@ -5461,16 +5461,16 @@ msgid "Media Key Action - Setup"
 msgstr ""
 
 #: settings_mediabutton.h:13
-msgid "RecordPlayer"
+msgid "Record Player"
 msgstr ""
 
 #: settings_mediabutton.h:14
 msgid "Media Plugins List"
 msgstr ""
 
-#: settings_mediabutton.h:15
-msgid "MediaPlayer"
-msgstr ""
+#: settings_mediabutton.h:15 skin_default_skin.xml.h:377
+msgid "Media Player"
+msgstr "Media speler"
 
 #: settings_mediabutton.h:55
 msgid ""
@@ -6866,10 +6866,6 @@ msgstr "MediaDB Pad"
 #: skin_default_skin.xml.h:376
 msgid "MediaDB Settings"
 msgstr "MediaDB instellingen"
-
-#: skin_default_skin.xml.h:377
-msgid "Media Player"
-msgstr "Media speler"
 
 #: skin_default_skin.xml.h:378
 msgid "Memory"
