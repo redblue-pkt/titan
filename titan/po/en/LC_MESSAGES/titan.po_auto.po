@@ -60,7 +60,7 @@ msgstr ""
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
 #: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626
 #: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:432 infobar.h:554
-#: info.h:27 keyactions.h:286 lcdpearl1.c:45 lcdsamsung.c:101 log.h:46
+#: info.h:27 keyactions.h:294 lcdpearl1.c:45 lcdsamsung.c:101 log.h:46
 #: log.h:48 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
 #: mc_audioplayer.h:328 mc_audioplayer.h:599 mc_audioplayer.h:702
 #: mc_dateibrowser.h:38 mc_global.h:773 mc_global.h:1020
@@ -153,7 +153,7 @@ msgstr ""
 #: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
 #: hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200
 #: imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:432
-#: infobar.h:554 info.h:27 keyactions.h:286 log.h:46 log.h:48 marker.h:215
+#: infobar.h:554 info.h:27 keyactions.h:294 log.h:46 log.h:48 marker.h:215
 #: marker.h:229 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
 #: mc_audioplayer.h:328 mc_audioplayer.h:599 mc_audioplayer.h:702
 #: mc_dateibrowser.h:38 mc_global.h:773 mc_global.h:1020
@@ -559,7 +559,7 @@ msgstr ""
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
 #: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626
 #: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:432 infobar.h:554
-#: keyactions.h:286 language.h:49 lcdpearl1.c:45 lcdsamsung.c:101 log.h:46
+#: keyactions.h:294 language.h:49 lcdpearl1.c:45 lcdsamsung.c:101 log.h:46
 #: log.h:48 marker.h:215 marker.h:229 mc_audioplayer.h:328
 #: mc_audioplayer.h:599 mc_audioplayer.h:702 mc_dateibrowser.h:38
 #: mc_global.h:773 mc_global.h:1020 mc_internetbrowser.h:38
@@ -1603,7 +1603,7 @@ msgstr ""
 "For information go to:\n"
 "Atemio-Panel > System > Serial-Information"
 
-#: global.h:6463 keyactions.h:286
+#: global.h:6463 keyactions.h:294
 msgid "ERROR cant read res"
 msgstr "ERROR: can't read resolution"
 
@@ -5482,7 +5482,7 @@ msgstr ""
 msgid "RecordPlayer"
 msgstr ""
 
-#: settings_mediabutton.h:44
+#: settings_mediabutton.h:52
 msgid ""
 "Choose your Media plugin item from the following list and show it so the "
 "plugin button"
