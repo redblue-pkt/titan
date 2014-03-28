@@ -12,6 +12,8 @@ char* textinput(char* title, char* text)
 	if(pthread_self() != status.mainthread)
 		fromthread = 1;
 
+	if(title == NULL) title = ostrcat(_("Input field"), NULL, 0, 0);
+
 	changetitle(textinput, title);
 	height = textinput->height;
 	if(title != NULL)

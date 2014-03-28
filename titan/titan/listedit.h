@@ -80,7 +80,7 @@ int screenlistedit(int list, struct channel* chnode, void* aktlist)
 				ret = EDITMODE;
 			if(ostrcmp(listbox->select->name, "addmode") == 0)
 			{
-				newentry = textinput(NULL, "bouquet");
+				newentry = textinput(_("Bouquet Name"), "bouquet");
 				if(newentry != NULL)
 				{
 					newentry = stringreplacechar(newentry, '#', '_');

@@ -119,6 +119,8 @@ char* textinputhist(char* title, char* text, char* histname)
 	if(pthread_self() != status.mainthread)
 	fromthread = 1;
 
+	if(title == NULL) title = ostrcat(_("Input field"), NULL, 0, 0);
+
 	changetitle(textinputhist, _(title));
 	height = textinputhist->height;
 	if(title != NULL)
