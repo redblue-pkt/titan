@@ -6935,7 +6935,7 @@ msgstr "Maximale Signalrate"
 
 #: skin_default_skin.xml.h:372
 msgid "Media Button"
-msgstr ""
+msgstr "Media Taste"
 
 #: skin_default_skin.xml.h:373
 msgid "Media Center"
