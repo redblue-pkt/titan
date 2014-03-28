@@ -17,9 +17,9 @@ void screensettings_mediabutton()
 	free(tmptxt), tmptxt = NULL;
 
 	addmenulist(&mlist, "MediaCenter", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "VideoPlayer", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "AudioPlayer", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "PicturePlayer", NULL, NULL, 0, 0);
+//	addmenulist(&mlist, "VideoPlayer", NULL, NULL, 0, 0);
+//	addmenulist(&mlist, "AudioPlayer", NULL, NULL, 0, 0);
+//	addmenulist(&mlist, "PicturePlayer", NULL, NULL, 0, 0);
 	addmenulist(&mlist, "MediaThek", NULL, NULL, 0, 0);
 	addmenulist(&mlist, "MiniPlayer", NULL, NULL, 0, 0);
 	addmenulist(&mlist, "RecordPlayer", NULL, NULL, 0, 0);

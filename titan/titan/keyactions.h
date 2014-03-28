@@ -63,17 +63,30 @@ void screenkeyactions(int key, int flag)
 			}
 		}
 	
-		//addmenulist(&mlist, "Extensions List", NULL, NULL, 0, 0);
-		addmenulist(&mlist, "Auto Resolution", NULL, "resolution.png", 0, 0);
-		if(checkemu() == 1)
-			addmenulist(&mlist, "Softcam Panel", NULL, NULL, 0, 0);
-		//addmenulist(&mlist, "TV / Radio Switch", NULL, NULL, 0, 0);
-		addmenulist(&mlist, "Multi EPG", NULL, NULL, 0, 0);
-		addmenulist(&mlist, "Graphic Multi EPG", NULL, NULL, 0, 0);
-		addmenulist(&mlist, "Sleep Timer", NULL, NULL, 0, 0);
-		addmenulist(&mlist, "Child Protection", NULL, NULL, 0, 0);
-		addmenulist(&mlist, "Subchannel", NULL, NULL, 0, 0);
-		addmenulist(&mlist, "Downloads", NULL, NULL, 0, 0);
+		if(key == 3)
+		{
+			addmenulist(&mlist, "MediaCenter", NULL, NULL, 0, 0);
+		//	addmenulist(&mlist, "VideoPlayer", NULL, NULL, 0, 0);
+		//	addmenulist(&mlist, "AudioPlayer", NULL, NULL, 0, 0);
+		//	addmenulist(&mlist, "PicturePlayer", NULL, NULL, 0, 0);
+			addmenulist(&mlist, "MediaThek", NULL, NULL, 0, 0);
+			addmenulist(&mlist, "MiniPlayer", NULL, NULL, 0, 0);
+			addmenulist(&mlist, "RecordPlayer", NULL, NULL, 0, 0);
+		}
+		else
+		{
+			//addmenulist(&mlist, "Extensions List", NULL, NULL, 0, 0);
+			addmenulist(&mlist, "Auto Resolution", NULL, "resolution.png", 0, 0);
+			if(checkemu() == 1)
+				addmenulist(&mlist, "Softcam Panel", NULL, NULL, 0, 0);
+			//addmenulist(&mlist, "TV / Radio Switch", NULL, NULL, 0, 0);
+			addmenulist(&mlist, "Multi EPG", NULL, NULL, 0, 0);
+			addmenulist(&mlist, "Graphic Multi EPG", NULL, NULL, 0, 0);
+			addmenulist(&mlist, "Sleep Timer", NULL, NULL, 0, 0);
+			addmenulist(&mlist, "Child Protection", NULL, NULL, 0, 0);
+			addmenulist(&mlist, "Subchannel", NULL, NULL, 0, 0);
+			addmenulist(&mlist, "Downloads", NULL, NULL, 0, 0);
+		}
 	
 		mbox = menulistbox(mlist, NULL, skintitle, NULL, NULL, NULL, 1, 0);
 		if(mbox != NULL) keyconf = mbox->name;
@@ -186,6 +199,28 @@ void screenkeyactions(int key, int flag)
 	else if(ostrcmp(keyconf, "MediaCenter") == 0)
 	{
 		struct skin* pluginnode = getplugin("Media Center");
+		void (*startplugin)(void);
+		status.infobaraktiv = 0;
+		subtitlepause(1);
+		status.infobar = 0;
+
+		if(pluginnode != NULL)
+		{
+			startplugin = dlsym(pluginnode->pluginhandle, "start");
+			if(startplugin != NULL)
+			startplugin();
+		}
+		status.infobaraktiv = 1;
+		drawscreen(skin, 0, 0);
+		subtitlepause(0);
+
+		freemenulist(mlist, 1); mlist = NULL;
+		resettvpic();
+		return;
+	}
+	else if(ostrcmp(keyconf, "Mediathek") == 0)
+	{
+		struct skin* pluginnode = getplugin("TiTan Mediathek");
 		void (*startplugin)(void);
 		status.infobaraktiv = 0;
 		subtitlepause(1);
