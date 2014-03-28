@@ -386,7 +386,59 @@ void screeninfobar()
         
 				drawscreen(skin, 0, 0);
 				status.tuxtxt = 1;
+				disablemanualblit();
+#ifdef MIPSEL
+				int tmprcret = -1;
+				tmpstr = ostrcat(tmpstr, " &", 1, 0);
 				system(tmpstr);
+
+				while(1)
+				{
+					rcret = waitrc(infobar, 0, 0);
+					
+					if(rcret == getrcconfigint("rc0", NULL)) tmprcret = 0x00;
+					else if(rcret == getrcconfigint("rc1", NULL)) tmprcret = 0x01;
+					else if(rcret == getrcconfigint("rc2", NULL)) tmprcret = 0x02;
+					else if(rcret == getrcconfigint("rc3", NULL)) tmprcret = 0x03;
+					else if(rcret == getrcconfigint("rc4", NULL)) tmprcret = 0x04;
+					else if(rcret == getrcconfigint("rc5", NULL)) tmprcret = 0x05;
+					else if(rcret == getrcconfigint("rc6", NULL)) tmprcret = 0x06;
+					else if(rcret == getrcconfigint("rc7", NULL)) tmprcret = 0x07;
+					else if(rcret == getrcconfigint("rc8", NULL)) tmprcret = 0x08;
+					else if(rcret == getrcconfigint("rc9", NULL)) tmprcret = 0x09;	
+					else if(rcret == getrcconfigint("rcright", NULL)) tmprcret = 0x0A;
+					else if(rcret == getrcconfigint("rcleft", NULL)) tmprcret = 0x0B;
+					else if(rcret == getrcconfigint("rcup", NULL)) tmprcret = 0x0C;
+					else if(rcret == getrcconfigint("rcdown", NULL)) tmprcret = 0x0D;
+					else if(rcret == getrcconfigint("rcok", NULL)) tmprcret = 0x0E;
+					else if(rcret == getrcconfigint("rcmute", NULL)) tmprcret = 0x0F;	
+					else if(rcret == getrcconfigint("rcpower", NULL)) tmprcret = 0x10;
+					else if(rcret == getrcconfigint("rcgreen", NULL)) tmprcret = 0x11;
+					else if(rcret == getrcconfigint("rcyellow", NULL)) tmprcret = 0x12;
+					else if(rcret == getrcconfigint("rcred", NULL)) tmprcret = 0x13;		
+					else if(rcret == getrcconfigint("rcblue", NULL)) tmprcret = 0x14;
+					else if(rcret == getrcconfigint("rcchup", NULL)) tmprcret = 0x15;
+					else if(rcret == getrcconfigint("rcchdown", NULL)) tmprcret = 0x16;
+					else if(rcret == getrcconfigint("rchelp", NULL)) tmprcret = 0x17;
+					//else if(rcret == getrcconfigint("rcdbox", NULL)) tmprcret = 0x18;
+					else if(rcret == getrcconfigint("rctext", NULL)) tmprcret = 0x1F;
+					else if(rcret == getrcconfigint("rcexit", NULL)) tmprcret = 0x1F;
+					
+					sendtuxtxt(tmprcret);
+					
+					if(rcret == getrcconfigint("rcexit", NULL)) break;
+					if(rcret == getrcconfigint("rctext", NULL)) break;
+				}
+				
+				if(status.fdrctxt != -1)
+				{
+					close(status.fdrctxt);
+					status.fdrctxt = -1;
+				}
+#else
+				system(tmpstr);
+#endif				
+				enablemanualblit();
 				status.tuxtxt = 0;
 				free(tmpstr); tmpstr = NULL; tmpnr = NULL;
 				drawscreen(skin, 0, 0);
