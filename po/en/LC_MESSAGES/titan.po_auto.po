@@ -5482,7 +5482,15 @@ msgstr ""
 msgid "RecordPlayer"
 msgstr ""
 
-#: settings_mediabutton.h:53
+#: settings_mediabutton.h:14
+msgid "Media Plugins List"
+msgstr ""
+
+#: settings_mediabutton.h:15
+msgid "MediaPlayer"
+msgstr ""
+
+#: settings_mediabutton.h:55
 msgid ""
 "Choose your Media plugin item from the following list and show it so the "
 "plugin button"
