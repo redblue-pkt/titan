@@ -9580,10 +9580,8 @@ msgid "Samba"
 msgstr ""
 
 #: tpk_description.h:123
-msgid "Sat: Bulldog Settings 3x Sat"
+msgid "Sat: Bulldog Settings 3x Sat 28.03.2014"
 msgstr ""
-"Satellite: Settings by Bulldog for\n"
-"HOTBIRD 13°East, ASTRA 19.2°East and ASTRA 28.2°East"
 
 #: tpk_description.h:124
 msgid "Sat: matze70 Settings Astra 19.2"
@@ -10449,19 +10447,19 @@ msgid "Settings 19.2 Astra"
 msgstr ""
 
 #: tpk_showname.h:157
-msgid "Settings Astra 19.2, hotbird 13.0, Astra 28.2E"
-msgstr ""
-
-#: tpk_showname.h:158
 msgid "Settings Astra 19.2 (matze70)"
 msgstr ""
 
-#: tpk_showname.h:159
+#: tpk_showname.h:158
 msgid "Settings Astra 19.2 - NEU (matze70)"
 msgstr "Settings Astra 19.2 - NEW (matze70)"
 
-#: tpk_showname.h:160
+#: tpk_showname.h:159
 msgid "Settings Astra 19.2 (uljanow) plus transponder hotbird 13.0"
+msgstr ""
+
+#: tpk_showname.h:160
+msgid "Settings Hotbird 13.0, Astra 19.2, Astra 28.2E"
 msgstr ""
 
 #: tpk_showname.h:161
@@ -10965,3 +10963,8 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Zapback is activated. Do you want to stop it?"
+
+#~ msgid "Sat: Bulldog Settings 3x Sat"
+#~ msgstr ""
+#~ "Satellite: Settings by Bulldog for\n"
+#~ "HOTBIRD 13°East, ASTRA 19.2°East and ASTRA 28.2°East"
