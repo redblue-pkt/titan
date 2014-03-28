@@ -70,17 +70,17 @@ void screenkeyactions(int key, int flag)
 			{
 				if(child->del == PLUGINDELMARK && (status.security == 1 || (status.security == 0 && checkpluginskip(child->name) == 0)))
 				{
-					if(!ostrncmp("Media Center", child->name, 12))
+					if(ostrcmp(child->name, "Media Center") == 0)
 					{
-						addmenulist(&mlist, "MediaCenter", NULL, child->pic, 0, 0);			
+						addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);			
 					}
-					else if(!ostrncmp("TiTan Mediathek", child->name, 15))
+					else if(ostrcmp(child->name, "TiTan Mediathek") == 0)
 					{
-						addmenulist(&mlist, "MediaThek", NULL, child->pic, 0, 0);
+						addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);
 					}
-					else if(!ostrncmp("Titan Media Center", child->name, 18))
+					else if(ostrcmp(child->name, "Titan Media Center") == 0)
 					{
-						addmenulist(&mlist, "TitanMediaCenter", NULL, child->pic, 0, 0);
+						addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);
 					}
 				}
 				child = child->next;
@@ -206,72 +206,6 @@ void screenkeyactions(int key, int flag)
 	else if(ostrcmp(keyconf, "MiniPlayer") == 0)
 	{
 		screenplay(NULL, NULL, 0, 0);
-		freemenulist(mlist, 1); mlist = NULL;
-		resettvpic();
-		return;
-	}
-	else if(ostrcmp(keyconf, "MediaCenter") == 0)
-	{
-		struct skin* pluginnode = getplugin("Media Center");
-		void (*startplugin)(void);
-		status.infobaraktiv = 0;
-		subtitlepause(1);
-		status.infobar = 0;
-
-		if(pluginnode != NULL)
-		{
-			startplugin = dlsym(pluginnode->pluginhandle, "start");
-			if(startplugin != NULL)
-			startplugin();
-		}
-		status.infobaraktiv = 1;
-		drawscreen(skin, 0, 0);
-		subtitlepause(0);
-
-		freemenulist(mlist, 1); mlist = NULL;
-		resettvpic();
-		return;
-	}
-	else if(ostrcmp(keyconf, "Mediathek") == 0)
-	{
-		struct skin* pluginnode = getplugin("TiTan Mediathek");
-		void (*startplugin)(void);
-		status.infobaraktiv = 0;
-		subtitlepause(1);
-		status.infobar = 0;
-
-		if(pluginnode != NULL)
-		{
-			startplugin = dlsym(pluginnode->pluginhandle, "start");
-			if(startplugin != NULL)
-			startplugin();
-		}
-		status.infobaraktiv = 1;
-		drawscreen(skin, 0, 0);
-		subtitlepause(0);
-
-		freemenulist(mlist, 1); mlist = NULL;
-		resettvpic();
-		return;
-	}
-	else if(ostrcmp(keyconf, "TitanMediaCenter") == 0)
-	{
-		struct skin* pluginnode = getplugin("Titan Media Center");
-		void (*startplugin)(void);
-		status.infobaraktiv = 0;
-		subtitlepause(1);
-		status.infobar = 0;
-
-		if(pluginnode != NULL)
-		{
-			startplugin = dlsym(pluginnode->pluginhandle, "start");
-			if(startplugin != NULL)
-			startplugin();
-		}
-		status.infobaraktiv = 1;
-		drawscreen(skin, 0, 0);
-		subtitlepause(0);
-
 		freemenulist(mlist, 1); mlist = NULL;
 		resettvpic();
 		return;

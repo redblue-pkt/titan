@@ -25,15 +25,15 @@ void screensettings_mediabutton()
 	{
 		if(child->del == PLUGINDELMARK && (status.security == 1 || (status.security == 0 && checkpluginskip(child->name) == 0)))
 		{
-			if(!ostrncmp("Media Center", child->name, 12))
+			if(ostrcmp(child->name, "Media Center") == 0)
 			{
 				addmenulist(&mlist, "MediaCenter", NULL, child->pic, 0, 0);			
 			}
-			else if(!ostrncmp("TiTan Mediathek", child->name, 15))
+			else if(ostrcmp(child->name, "TiTan Mediathek") == 0)
 			{
 				addmenulist(&mlist, "MediaThek", NULL, child->pic, 0, 0);
 			}
-			else if(!ostrncmp("Titan Media Center", child->name, 15))
+			else if(ostrcmp(child->name, "Titan Media Center") == 0)
 			{
 				addmenulist(&mlist, "TitanMediaCenter", NULL, child->pic, 0, 0);
 			}
