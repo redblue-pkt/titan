@@ -6731,7 +6731,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:372
 msgid "Media Button"
-msgstr ""
+msgstr "Bouton Media"
 
 #: skin_default_skin.xml.h:373
 msgid "Media Center"
