@@ -5,6 +5,8 @@ void screensettings_mediabutton()
 {
 	char* skintitle = _("Media Key Action - Setup");
 	struct menulist* mlist = NULL, *mbox = NULL;
+	struct skin* plugin = getscreen("plugin");
+	struct skin* child = plugin->child;
 
 // needed for translation
 	char* tmptxt = NULL;
