@@ -1310,7 +1310,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 //					addmenulist(&mlist, "Streaming Playback Caching (2MB)", NULL, NULL, 0, 0);
 //					addmenulist(&mlist, "Streaming Playback Caching (3MB)", NULL, NULL, 0, 0);
 //					addmenulist(&mlist, "Streaming Playback Caching (4MB)", NULL, NULL, 0, 0);
-					if(checkbox("UFS910") == 1 && !file_exist("/var/swap/swapfile"))
+					if(checkbox("UFS910") == 1 && !file_exist("/var/swapdir/swapfile"))
 						addmenulist(&mlist, "Streaming Playback Caching (5MB)", NULL, NULL, 0, 0);
 					else
 					{
