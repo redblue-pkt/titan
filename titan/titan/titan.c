@@ -239,6 +239,7 @@ struct channelslot *channelslot = NULL;
 #include "settings_overclocking.h"
 #include "settings_pluginbutton.h"
 #include "bcm.h"
+#include "settings_mediabutton.h"
 
 #define TIMECODE ""
 

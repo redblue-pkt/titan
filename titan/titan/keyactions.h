@@ -4,6 +4,7 @@
 //key 0: blue
 //key 1: red
 //key 2: plugin
+//key 3: media
 //flag 0: without menulist
 //flag 1: with menulist
 void screenkeyactions(int key, int flag)
@@ -83,12 +84,14 @@ void screenkeyactions(int key, int flag)
 		if(key == 0) keyconf = getconfig("bluekey", NULL);
 		if(key == 1) keyconf = getconfig("redkey", NULL);
 		if(key == 2) keyconf = getconfig("pluginkey", NULL);
+		if(key == 3) keyconf = getconfig("mediakey", NULL);
 	}
 	
 	if(flag == 0 && keyconf == NULL)
 	{
 		if(key == 1) screenkeyactions(1, 1);
 		if(key == 2) screenkeyactions(2, 1);
+		if(key == 3) screenkeyactions(3, 1);
 		freemenulist(mlist, 1); mlist = NULL;
 		return;
 	}
@@ -166,7 +169,43 @@ void screenkeyactions(int key, int flag)
 		resettvpic();
 		return;
 	}
+	else if(ostrcmp(keyconf, "RecordPlayer") == 0)
+	{
+		screenplay(NULL, NULL, 1, 0);
+		freemenulist(mlist, 1); mlist = NULL;
+		resettvpic();
+		return;
+	}
+	else if(ostrcmp(keyconf, "MiniPlayer") == 0)
+	{
+		screenplay(NULL, NULL, 0, 0);
+		freemenulist(mlist, 1); mlist = NULL;
+		resettvpic();
+		return;
+	}
+	else if(ostrcmp(keyconf, "MediaCenter") == 0)
+	{
+		struct skin* pluginnode = getplugin("Media Center");
+		void (*startplugin)(void);
+		status.infobaraktiv = 0;
+		subtitlepause(1);
+		status.infobar = 0;
 
+		if(pluginnode != NULL)
+		{
+			startplugin = dlsym(pluginnode->pluginhandle, "start");
+			if(startplugin != NULL)
+			startplugin();
+		}
+		status.infobaraktiv = 1;
+		drawscreen(skin, 0, 0);
+		subtitlepause(0);
+
+		freemenulist(mlist, 1); mlist = NULL;
+		resettvpic();
+		return;
+	}
+		
 	pluginnode = getplugin(keyconf);
 
 	if(pluginnode != NULL)
