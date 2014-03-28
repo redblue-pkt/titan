@@ -65,13 +65,34 @@ void screenkeyactions(int key, int flag)
 	
 		if(key == 3)
 		{
-			addmenulist(&mlist, "MediaCenter", NULL, NULL, 0, 0);
+			addmenulist(&mlist, "RecordPlayer", NULL, NULL, 0, 0);
+
+			while(child != NULL)
+			{
+				if(child->del == PLUGINDELMARK && (status.security == 1 || (status.security == 0 && checkpluginskip(child->name) == 0)))
+				{
+					if(!ostrncmp("Media Center", child->name, 12))
+					{
+						addmenulist(&mlist, "MediaCenter", NULL, child->pic, 0, 0);			
+					}
+					else if(!ostrncmp("TiTan Mediathek", child->name, 15))
+					{
+						addmenulist(&mlist, "MediaThek", NULL, child->pic, 0, 0);
+					}
+					else if(!ostrncmp("Titan Media Center", child->name, 15))
+					{
+						addmenulist(&mlist, "TitanMediaCenter", NULL, child->pic, 0, 0);
+					}
+				}
+				child = child->next;
+			}
+			
+//			addmenulist(&mlist, "MediaCenter", NULL, NULL, 0, 0);
 		//	addmenulist(&mlist, "VideoPlayer", NULL, NULL, 0, 0);
 		//	addmenulist(&mlist, "AudioPlayer", NULL, NULL, 0, 0);
 		//	addmenulist(&mlist, "PicturePlayer", NULL, NULL, 0, 0);
-			addmenulist(&mlist, "MediaThek", NULL, NULL, 0, 0);
+//			addmenulist(&mlist, "MediaThek", NULL, NULL, 0, 0);
 			addmenulist(&mlist, "MiniPlayer", NULL, NULL, 0, 0);
-			addmenulist(&mlist, "RecordPlayer", NULL, NULL, 0, 0);
 		}
 		else
 		{
@@ -221,6 +242,28 @@ void screenkeyactions(int key, int flag)
 	else if(ostrcmp(keyconf, "Mediathek") == 0)
 	{
 		struct skin* pluginnode = getplugin("TiTan Mediathek");
+		void (*startplugin)(void);
+		status.infobaraktiv = 0;
+		subtitlepause(1);
+		status.infobar = 0;
+
+		if(pluginnode != NULL)
+		{
+			startplugin = dlsym(pluginnode->pluginhandle, "start");
+			if(startplugin != NULL)
+			startplugin();
+		}
+		status.infobaraktiv = 1;
+		drawscreen(skin, 0, 0);
+		subtitlepause(0);
+
+		freemenulist(mlist, 1); mlist = NULL;
+		resettvpic();
+		return;
+	}
+	else if(ostrcmp(keyconf, "TitanMediaCenter") == 0)
+	{
+		struct skin* pluginnode = getplugin("Titan Media Center");
 		void (*startplugin)(void);
 		status.infobaraktiv = 0;
 		subtitlepause(1);

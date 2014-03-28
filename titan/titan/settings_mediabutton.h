@@ -16,13 +16,29 @@ void screensettings_mediabutton()
 	tmptxt = ostrcat(tmptxt, _("MiniPlayer"), 1, 0);
 	free(tmptxt), tmptxt = NULL;
 
-	addmenulist(&mlist, "MediaCenter", NULL, NULL, 0, 0);
-//	addmenulist(&mlist, "VideoPlayer", NULL, NULL, 0, 0);
-//	addmenulist(&mlist, "AudioPlayer", NULL, NULL, 0, 0);
-//	addmenulist(&mlist, "PicturePlayer", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "MediaThek", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "MiniPlayer", NULL, NULL, 0, 0);
 	addmenulist(&mlist, "RecordPlayer", NULL, NULL, 0, 0);
+
+	while(child != NULL)
+	{
+		if(child->del == PLUGINDELMARK && (status.security == 1 || (status.security == 0 && checkpluginskip(child->name) == 0)))
+		{
+			if(!ostrncmp("Media Center", child->name, 12))
+			{
+				addmenulist(&mlist, "MediaCenter", NULL, child->pic, 0, 0);			
+			}
+			else if(!ostrncmp("TiTan Mediathek", child->name, 15))
+			{
+				addmenulist(&mlist, "MediaThek", NULL, child->pic, 0, 0);
+			}
+			else if(!ostrncmp("Titan Media Center", child->name, 15))
+			{
+				addmenulist(&mlist, "TitanMediaCenter", NULL, child->pic, 0, 0);
+			}
+		}
+		child = child->next;
+	}
+	
+	addmenulist(&mlist, "MiniPlayer", NULL, NULL, 0, 0);
 
 	char* mediakey = getconfig("mediakey", NULL);
 	debug(60, "Mediakey: %s (default)", mediakey);
