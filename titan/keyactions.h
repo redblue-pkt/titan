@@ -66,7 +66,6 @@ void screenkeyactions(int key, int flag)
 		if(key == 3)
 		{
 			addmenulist(&mlist, "RecordPlayer", NULL, NULL, 0, 0);
-
 			while(child != NULL)
 			{
 				if(child->del == PLUGINDELMARK && (status.security == 1 || (status.security == 0 && checkpluginskip(child->name) == 0)))
@@ -79,19 +78,13 @@ void screenkeyactions(int key, int flag)
 					{
 						addmenulist(&mlist, "MediaThek", NULL, child->pic, 0, 0);
 					}
-					else if(!ostrncmp("Titan Media Center", child->name, 15))
+					else if(!ostrncmp("Titan Media Center", child->name, 18))
 					{
 						addmenulist(&mlist, "TitanMediaCenter", NULL, child->pic, 0, 0);
 					}
 				}
 				child = child->next;
 			}
-			
-//			addmenulist(&mlist, "MediaCenter", NULL, NULL, 0, 0);
-		//	addmenulist(&mlist, "VideoPlayer", NULL, NULL, 0, 0);
-		//	addmenulist(&mlist, "AudioPlayer", NULL, NULL, 0, 0);
-		//	addmenulist(&mlist, "PicturePlayer", NULL, NULL, 0, 0);
-//			addmenulist(&mlist, "MediaThek", NULL, NULL, 0, 0);
 			addmenulist(&mlist, "MiniPlayer", NULL, NULL, 0, 0);
 		}
 		else
