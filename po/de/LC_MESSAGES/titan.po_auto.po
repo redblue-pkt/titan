@@ -5497,7 +5497,7 @@ msgstr ""
 
 #: settings_mediabutton.h:13
 msgid "RecordPlayer"
-msgstr ""
+msgstr "Aufnahmen Archive"
 
 #: settings_mediabutton.h:52
 msgid ""
