@@ -16,6 +16,7 @@ void screensettings_mediabutton()
 	tmptxt = ostrcat(tmptxt, _("PicturePlayer"), 1, 0);
 	tmptxt = ostrcat(tmptxt, _("MediaThek"), 1, 0);
 	tmptxt = ostrcat(tmptxt, _("MiniPlayer"), 1, 0);
+	tmptxt = ostrcat(tmptxt, _("TitanMediaCenter"), 1, 0);
 	free(tmptxt), tmptxt = NULL;
 
 	addmenulist(&mlist, "RecordPlayer", NULL, NULL, 0, 0);
