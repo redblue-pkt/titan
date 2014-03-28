@@ -82,6 +82,14 @@ void screenkeyactions(int key, int flag)
 					{
 						addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);
 					}
+					else if(ostrcmp(child->name, "GmediaRender") == 0)
+					{
+						addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);
+					}
+					else if(ostrcmp(child->name, "DVD Player") == 0)
+					{
+						addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);
+					}
 				}
 				child = child->next;
 			}
