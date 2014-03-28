@@ -5493,7 +5493,7 @@ msgstr ""
 
 #: settings_mediabutton.h:6
 msgid "Media Key Action - Setup"
-msgstr ""
+msgstr "Media Taste - Belegungsmenü"
 
 #: settings_mediabutton.h:13
 msgid "Record Player"
