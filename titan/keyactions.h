@@ -65,7 +65,7 @@ void screenkeyactions(int key, int flag)
 	
 		if(key == 3)
 		{
-			addmenulist(&mlist, "RecordPlayer", NULL, NULL, 0, 0);
+			addmenulist(&mlist, "Record Player", NULL, NULL, 0, 0);
 			while(child != NULL)
 			{
 				if(child->del == PLUGINDELMARK && (status.security == 1 || (status.security == 0 && checkpluginskip(child->name) == 0)))
@@ -93,7 +93,7 @@ void screenkeyactions(int key, int flag)
 				}
 				child = child->next;
 			}
-			addmenulist(&mlist, "MediaPlayer", NULL, NULL, 0, 0);
+			addmenulist(&mlist, "Media Player", NULL, NULL, 0, 0);
 		}
 		else
 		{
@@ -204,14 +204,14 @@ void screenkeyactions(int key, int flag)
 		resettvpic();
 		return;
 	}
-	else if(ostrcmp(keyconf, "RecordPlayer") == 0)
+	else if(ostrcmp(keyconf, "Record Player") == 0)
 	{
 		screenplay(NULL, NULL, 1, 0);
 		freemenulist(mlist, 1); mlist = NULL;
 		resettvpic();
 		return;
 	}
-	else if(ostrcmp(keyconf, "MediaPlayer") == 0)
+	else if(ostrcmp(keyconf, "Media Player") == 0)
 	{
 		screenplay(NULL, NULL, 0, 0);
 		freemenulist(mlist, 1); mlist = NULL;
