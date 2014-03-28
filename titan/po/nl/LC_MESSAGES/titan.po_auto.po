@@ -2466,6 +2466,10 @@ msgstr ""
 msgid "tiMote"
 msgstr ""
 
+#: listedit.h:83
+msgid "Bouquet Name"
+msgstr ""
+
 #: lnbconfig.h:137 skin_default_skin.xml.h:460
 msgid "Polarization"
 msgstr "Polarisatie"
@@ -8361,6 +8365,10 @@ msgid ""
 msgstr ""
 "System update kan niet gestart worden\n"
 "Fout in update bestand"
+
+#: textinput.h:15 textinputhist.h:122
+msgid "Input field"
+msgstr ""
 
 #: timeshift.h:113
 msgid "Should Timeshift File deleted ?"

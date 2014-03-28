@@ -2432,6 +2432,10 @@ msgstr ""
 msgid "tiMote"
 msgstr ""
 
+#: listedit.h:83
+msgid "Bouquet Name"
+msgstr ""
+
 #: lnbconfig.h:137 skin_default_skin.xml.h:460
 msgid "Polarization"
 msgstr "Phân cực"
@@ -8279,6 +8283,10 @@ msgid ""
 msgstr ""
 "Không thể bắt đầu cập nhật hệ thống!\n"
 " Vui lòng rút USB/ổ cứng rồi thử lại."
+
+#: textinput.h:15 textinputhist.h:122
+msgid "Input field"
+msgstr ""
 
 #: timeshift.h:113
 msgid "Should Timeshift File deleted ?"
