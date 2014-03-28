@@ -12,6 +12,9 @@
 int waitvsync();
 void blit();
 
+// settings_mediabutton.h
+void screensettings_mediabutton();
+
 // settings_pluginbutton.h
 void screensettings_pluginbutton();
 
