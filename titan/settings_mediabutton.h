@@ -16,7 +16,7 @@ void screensettings_mediabutton()
 	free(tmptxt), tmptxt = NULL;
 
 	addmenulist(&mlist, "Media Plugins List", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "RecordPlayer", NULL, NULL, 0, 0);
+	addmenulist(&mlist, "Record Player", NULL, NULL, 0, 0);
 
 	while(child != NULL)
 	{
@@ -46,7 +46,7 @@ void screensettings_mediabutton()
 		child = child->next;
 	}
 	
-	addmenulist(&mlist, "MediaPlayer", NULL, NULL, 0, 0);
+	addmenulist(&mlist, "Media Player", NULL, NULL, 0, 0);
 
 	char* mediakey = getconfig("mediakey", NULL);
 	debug(60, "Mediakey: %s (default)", mediakey);
