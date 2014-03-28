@@ -16,7 +16,7 @@ void screensettings_mediabutton()
 	tmptxt = ostrcat(tmptxt, _("MiniPlayer"), 1, 0);
 	free(tmptxt), tmptxt = NULL;
 
-	addmenulist(&mlist, "MediaCenter List", NULL, NULL, 0, 0);
+	addmenulist(&mlist, "MediaCenter", NULL, NULL, 0, 0);
 	addmenulist(&mlist, "VideoPlayer", NULL, NULL, 0, 0);
 	addmenulist(&mlist, "AudioPlayer", NULL, NULL, 0, 0);
 	addmenulist(&mlist, "PicturePlayer", NULL, NULL, 0, 0);
@@ -35,6 +35,8 @@ void screensettings_mediabutton()
 		return;
 	}
 	debug(60, "(new) Mediakey=%s", mbox->name);
+
+	addconfig("mediakey", mbox->name);
 
 	freemenulist(mlist, 1); mlist = NULL;
 	return;
