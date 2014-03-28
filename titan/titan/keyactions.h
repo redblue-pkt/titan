@@ -85,7 +85,7 @@ void screenkeyactions(int key, int flag)
 				}
 				child = child->next;
 			}
-			addmenulist(&mlist, "MiniPlayer", NULL, NULL, 0, 0);
+			addmenulist(&mlist, "MediaPlayer", NULL, NULL, 0, 0);
 		}
 		else
 		{
@@ -203,7 +203,7 @@ void screenkeyactions(int key, int flag)
 		resettvpic();
 		return;
 	}
-	else if(ostrcmp(keyconf, "MiniPlayer") == 0)
+	else if(ostrcmp(keyconf, "MediaPlayer") == 0)
 	{
 		screenplay(NULL, NULL, 0, 0);
 		freemenulist(mlist, 1); mlist = NULL;
