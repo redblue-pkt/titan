@@ -10,9 +10,9 @@ void screensettings_mediabutton()
 
 // needed for translation
 	char* tmptxt = NULL;
-	tmptxt = ostrcat(tmptxt, _("RecordPlayer"), 1, 0);
+	tmptxt = ostrcat(tmptxt, _("Record Player"), 1, 0);
 	tmptxt = ostrcat(tmptxt, _("Media Plugins List"), 1, 0);
-	tmptxt = ostrcat(tmptxt, _("MediaPlayer"), 1, 0);
+	tmptxt = ostrcat(tmptxt, _("Media Player"), 1, 0);
 	free(tmptxt), tmptxt = NULL;
 
 	addmenulist(&mlist, "Media Plugins List", NULL, NULL, 0, 0);
