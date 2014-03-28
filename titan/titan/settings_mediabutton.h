@@ -13,6 +13,7 @@ void screensettings_mediabutton()
 	tmptxt = ostrcat(tmptxt, _("RecordPlayer"), 1, 0);
 	free(tmptxt), tmptxt = NULL;
 
+	addmenulist(&mlist, "Media Plugins List", NULL, NULL, 0, 0);
 	addmenulist(&mlist, "RecordPlayer", NULL, NULL, 0, 0);
 
 	while(child != NULL)

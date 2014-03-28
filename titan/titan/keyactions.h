@@ -36,7 +36,7 @@ void screenkeyactions(int key, int flag)
 	{
 		char* skintitle = _("Key Action - Plugins");
 
-		if(status.mediadbfiles > 0)
+		if(key != 3 && status.mediadbfiles > 0)
 			addmenulist(&mlist, "MediaDB Scan Info", NULL, NULL, 0, 0);
 			
 		if(key == 1)
@@ -214,6 +214,13 @@ void screenkeyactions(int key, int flag)
 	else if(ostrcmp(keyconf, "MediaPlayer") == 0)
 	{
 		screenplay(NULL, NULL, 0, 0);
+		freemenulist(mlist, 1); mlist = NULL;
+		resettvpic();
+		return;
+	}
+	else if(ostrcmp(keyconf, "Media Plugins List") == 0)
+	{
+		screenkeyactions(3, 1);
 		freemenulist(mlist, 1); mlist = NULL;
 		resettvpic();
 		return;
