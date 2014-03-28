@@ -555,6 +555,7 @@ void screeninfobar()
 		}
 		if(rcret == getrcconfigint("rcmedia", NULL))
 		{
+/*
 			struct skin* pluginnode = getplugin("Media Center");
 			void (*startplugin)(void);
 			status.infobaraktiv = 0;
@@ -568,6 +569,15 @@ void screeninfobar()
 				startplugin();
 			}
 			status.infobaraktiv = 1;
+			drawscreen(skin, 0, 0);
+			subtitlepause(0);
+			continue;
+*/
+			subtitlepause(1);
+			status.infobar = 0;
+			clearscreen(infobar);
+			screenkeyactions(3, 0);
+			status.updatevfd = START;
 			drawscreen(skin, 0, 0);
 			subtitlepause(0);
 			continue;
