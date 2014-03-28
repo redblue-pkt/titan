@@ -32,13 +32,11 @@ void screensettings_mediabutton()
 
 	if(mbox == NULL)
 	{
-		free(tmpstr); tmpstr = NULL;
 		return;
 	}
 	debug(60, "(new) Mediakey=%s", mbox->name);
 
 	freemenulist(mlist, 1); mlist = NULL;
-	free(tmpstr); tmpstr = NULL;
 	return;
 }
 
