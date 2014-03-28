@@ -5511,6 +5511,7 @@ msgstr "MiniPlayer (Medien wiedergeben)"
 msgid ""
 "Choose your Media plugin item from the following list and show it so the "
 "plugin button"
+msgstr ""
 "Wählen Sie den gewünschten Eintrag für das Media Menü aus der folgenden "
 "Liste"
 
