@@ -60,7 +60,7 @@ msgstr ""
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
 #: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626
 #: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:432 infobar.h:554
-#: info.h:27 keyactions.h:242 lcdpearl1.c:45 lcdsamsung.c:101 log.h:46
+#: info.h:27 keyactions.h:281 lcdpearl1.c:45 lcdsamsung.c:101 log.h:46
 #: log.h:48 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
 #: mc_audioplayer.h:328 mc_audioplayer.h:599 mc_audioplayer.h:702
 #: mc_dateibrowser.h:38 mc_global.h:773 mc_global.h:1020
@@ -110,9 +110,9 @@ msgstr ""
 #: system_backup_restore.h:82 system_backup_restore.h:88
 #: system_backup_restore.h:95 system_update.h:320 system_update.h:326
 #: system_update.h:333 timeshift.h:113 timeshift.h:155 timeshift.h:162
-#: timeshiftsettings.h:45 titan.c:274 titan.c:338 titan.c:347 titan.c:957
-#: titan.c:966 titan.c:1088 titan.c:1109 titan.c:1115 titan.c:1126
-#: titan.c:1132 tithek.c:79 tithek_global.h:238 tithek.h:620 tithek.h:1116
+#: timeshiftsettings.h:45 titan.c:275 titan.c:339 titan.c:348 titan.c:958
+#: titan.c:967 titan.c:1089 titan.c:1110 titan.c:1116 titan.c:1127
+#: titan.c:1133 tithek.c:79 tithek_global.h:238 tithek.h:620 tithek.h:1116
 #: tithek.h:1159 tithek.h:1411 tithek.h:1433 tithek.h:1438 tithek.h:1452
 #: tithek.h:3103 tithek.h:3166 tithek.h:3180 tithek.h:3190 tiwakeup.h:66
 #: tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759
@@ -153,7 +153,7 @@ msgstr "Ok"
 #: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
 #: hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200
 #: imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:432
-#: infobar.h:554 info.h:27 keyactions.h:242 log.h:46 log.h:48 marker.h:215
+#: infobar.h:554 info.h:27 keyactions.h:281 log.h:46 log.h:48 marker.h:215
 #: marker.h:229 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
 #: mc_audioplayer.h:328 mc_audioplayer.h:599 mc_audioplayer.h:702
 #: mc_dateibrowser.h:38 mc_global.h:773 mc_global.h:1020
@@ -212,9 +212,9 @@ msgstr "Ok"
 #: system_backup_restore.h:82 system_backup_restore.h:88
 #: system_backup_restore.h:95 system_update.h:320 system_update.h:326
 #: system_update.h:333 timeshift.h:113 timeshift.h:155 timeshift.h:162
-#: timeshiftsettings.h:45 titan.c:274 titan.c:338 titan.c:347 titan.c:957
-#: titan.c:966 titan.c:1088 titan.c:1109 titan.c:1115 titan.c:1126
-#: titan.c:1132 tithek.c:79 tithek_global.h:238 tithek.h:620 tithek.h:1116
+#: timeshiftsettings.h:45 titan.c:275 titan.c:339 titan.c:348 titan.c:958
+#: titan.c:967 titan.c:1089 titan.c:1110 titan.c:1116 titan.c:1127
+#: titan.c:1133 tithek.c:79 tithek_global.h:238 tithek.h:620 tithek.h:1116
 #: tithek.h:1159 tithek.h:1411 tithek.h:1433 tithek.h:1438 tithek.h:1452
 #: tithek.h:3103 tithek.h:3166 tithek.h:3180 tithek.h:3190 tiwakeup.h:66
 #: tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759
@@ -559,7 +559,7 @@ msgstr "Ja / VZAP unendlich"
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
 #: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626
 #: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:432 infobar.h:554
-#: keyactions.h:242 language.h:49 lcdpearl1.c:45 lcdsamsung.c:101 log.h:46
+#: keyactions.h:281 language.h:49 lcdpearl1.c:45 lcdsamsung.c:101 log.h:46
 #: log.h:48 marker.h:215 marker.h:229 mc_audioplayer.h:328
 #: mc_audioplayer.h:599 mc_audioplayer.h:702 mc_dateibrowser.h:38
 #: mc_global.h:773 mc_global.h:1020 mc_internetbrowser.h:38
@@ -597,8 +597,8 @@ msgstr "Ja / VZAP unendlich"
 #: system_backup_restore.h:40 system_backup_restore.h:43
 #: system_backup_restore.h:80 system_backup_restore.h:82 system_update.h:320
 #: system_update.h:326 system_update.h:333 timeshift.h:113 timeshift.h:155
-#: timeshift.h:162 timeshiftsettings.h:45 titan.c:274 titan.c:338 titan.c:347
-#: titan.c:1088 titan.c:1109 titan.c:1115 titan.c:1126 titan.c:1132
+#: timeshift.h:162 timeshiftsettings.h:45 titan.c:275 titan.c:339 titan.c:348
+#: titan.c:1089 titan.c:1110 titan.c:1116 titan.c:1127 titan.c:1133
 #: tithek.c:79 tithek_global.h:238 tithek.h:620 tithek.h:1116 tithek.h:1159
 #: tithek.h:1411 tithek.h:1433 tithek.h:1438 tithek.h:3103 tithek.h:3166
 #: tithek.h:3180 tithek.h:3190 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
@@ -1251,13 +1251,13 @@ msgstr "Musik"
 msgid "Single EPG"
 msgstr "Einfach-EPG"
 
-#: epgsettings.h:140 epgsettings.h:181 keyactions.h:25
+#: epgsettings.h:140 epgsettings.h:181 keyactions.h:26
 #: settings_bluebutton.h:17 settings_pluginbutton.h:18 settings_redbutton.h:18
 #: skin_default_skin.xml.h:398
 msgid "Multi EPG"
 msgstr "Multi-EPG"
 
-#: epgsettings.h:141 keyactions.h:26 settings_bluebutton.h:18
+#: epgsettings.h:141 keyactions.h:27 settings_bluebutton.h:18
 #: settings_pluginbutton.h:19 settings_redbutton.h:19
 #: skin_default_skin.xml.h:256
 msgid "Graphic Multi EPG"
@@ -1599,7 +1599,7 @@ msgstr ""
 "Registrierung erforderlich, bitte kontaktieren Sie Atemio!\n"
 "Infos erhalten Sie im Atemio-Panel > System > Serial-Information"
 
-#: global.h:6463 keyactions.h:242
+#: global.h:6463 keyactions.h:281
 msgid "ERROR cant read res"
 msgstr "FEHLER: Auflösung nicht erkannt"
 
@@ -2365,7 +2365,7 @@ msgstr ""
 msgid "Email  \t\tinfo@atemio.de"
 msgstr ""
 
-#: info.h:27 plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9 titan.c:966
+#: info.h:27 plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9 titan.c:967
 msgid "Info"
 msgstr "Info"
 
@@ -2382,51 +2382,51 @@ msgstr ""
 msgid "ein"
 msgstr ""
 
-#: keyactions.h:21 settings_bluebutton.h:16 settings_pluginbutton.h:14
+#: keyactions.h:22 settings_bluebutton.h:16 settings_pluginbutton.h:14
 #: settings_pluginbutton.h:17 settings_pluginbutton.h:58
 #: settings_redbutton.h:14 settings_redbutton.h:17
 msgid "Extensions List"
 msgstr "Erweiterungsliste"
 
-#: keyactions.h:22 settings_pluginbutton.h:15 settings_redbutton.h:15
+#: keyactions.h:23 settings_pluginbutton.h:15 settings_redbutton.h:15
 msgid "Auto Resolution"
 msgstr "Automatische Auflösung"
 
-#: keyactions.h:23 settings_bluebutton.h:14
+#: keyactions.h:24 settings_bluebutton.h:14
 msgid "TV / Radio Switch"
 msgstr "TV/Radio umschalten"
 
-#: keyactions.h:24 settings_bluebutton.h:15 settings_pluginbutton.h:16
+#: keyactions.h:25 settings_bluebutton.h:15 settings_pluginbutton.h:16
 #: settings_redbutton.h:16 skin_default_skin.xml.h:592
 msgid "Softcam Panel"
 msgstr "Softcam"
 
-#: keyactions.h:27 settings_bluebutton.h:19 settings_pluginbutton.h:20
+#: keyactions.h:28 settings_bluebutton.h:19 settings_pluginbutton.h:20
 #: settings_redbutton.h:20
 msgid "Sleep Timer"
 msgstr "Ausschalt Timer"
 
-#: keyactions.h:28 settings_bluebutton.h:20 settings_pluginbutton.h:21
+#: keyactions.h:29 settings_bluebutton.h:20 settings_pluginbutton.h:21
 #: settings_redbutton.h:21 skin_default_skin.xml.h:135
 msgid "Child Protection"
 msgstr "Jugendschutz"
 
-#: keyactions.h:29 settings_bluebutton.h:21 settings_pluginbutton.h:22
+#: keyactions.h:30 settings_bluebutton.h:21 settings_pluginbutton.h:22
 #: settings_redbutton.h:22 videomode.h:17 videomode.h:34
 msgid "Subchannel"
 msgstr "Unterkanäle"
 
-#: keyactions.h:30 play.h:702 settings_bluebutton.h:22
+#: keyactions.h:31 play.h:702 settings_bluebutton.h:22
 #: settings_pluginbutton.h:23 settings_redbutton.h:23
 #: skin_default_skin.xml.h:193
 msgid "Downloads"
 msgstr ""
 
-#: keyactions.h:31 play.h:646
+#: keyactions.h:32 play.h:646
 msgid "MediaDB Scan Info"
 msgstr "MediaDB Scan Informationen"
 
-#: keyactions.h:36
+#: keyactions.h:37
 msgid "Key Action - Plugins"
 msgstr "Schnellstart"
 
@@ -5491,6 +5491,40 @@ msgstr ""
 "Tastenbelegung:\n"
 "Wählen Sie einen Eintrag aus der Liste für die blaue Taste"
 
+#: settings_mediabutton.h:6
+msgid "Media Key Action - Setup"
+msgstr ""
+
+#: settings_mediabutton.h:11
+msgid "MediaCenter"
+msgstr ""
+
+#: settings_mediabutton.h:12
+msgid "VideoPlayer"
+msgstr ""
+
+#: settings_mediabutton.h:13
+msgid "AudioPlayer"
+msgstr ""
+
+#: settings_mediabutton.h:14
+msgid "PicturePlayer"
+msgstr ""
+
+#: settings_mediabutton.h:15
+msgid "MediaThek"
+msgstr ""
+
+#: settings_mediabutton.h:16
+msgid "MiniPlayer"
+msgstr ""
+
+#: settings_mediabutton.h:31
+msgid ""
+"Choose your Media plugin item from the following list and show it so the "
+"plugin button"
+msgstr ""
+
 #: settings_pluginbutton.h:6
 msgid "Plugin Key Action - Setup"
 msgstr "Plugin Taste - Belegungsmenü"
@@ -8478,11 +8512,11 @@ msgstr "Timeshiftdatei immer löschen"
 msgid "never del file"
 msgstr "Timeshiftdatei nie löschen"
 
-#: titan.c:274
+#: titan.c:275
 msgid "!!! This is a DEMO Version !!!"
 msgstr "!!! Dies ist eine Demoversion !!!"
 
-#: titan.c:338
+#: titan.c:339
 msgid ""
 "Found running record\n"
 "or record is starting in next time.\n"
@@ -8492,7 +8526,7 @@ msgstr ""
 "startet gleich.\n"
 "Soll das System trotzdem neu gestartet werden?"
 
-#: titan.c:347
+#: titan.c:348
 msgid ""
 "Found running download\n"
 "Really shutdown ?"
@@ -8500,59 +8534,59 @@ msgstr ""
 "ACHTUNG: Eine Datei wird heruntergeladen.\n"
 "Das Herunterladen abbrechen und System neu starten?"
 
-#: titan.c:782
+#: titan.c:783
 msgid "Error: open rc device !!"
 msgstr "FEHLER: Fernbedienungsgerät wurde nicht gefunden!"
 
-#: titan.c:788
+#: titan.c:789
 msgid "Error: no frontend device found !!"
 msgstr "FEHLER: Frontend-Gerät wurde nicht gefunden!"
 
-#: titan.c:794
+#: titan.c:795
 msgid "Error: no demux device found !!"
 msgstr "FEHLER: Demux-Gerät wurde nicht gefunden!"
 
-#: titan.c:800
+#: titan.c:801
 msgid "Error: no video device found !!"
 msgstr "FEHLER: Video-Gerät wurde nicht gefunden!"
 
-#: titan.c:806
+#: titan.c:807
 msgid "Error: no audio device found !!"
 msgstr "FEHLER: Audio-Gerät wurde nicht gefunden!"
 
-#: titan.c:824
+#: titan.c:825
 msgid "Error: skin not found !!"
 msgstr "FEHLER: Skin wurde nicht gefunden!"
 
-#: titan.c:908
+#: titan.c:909
 msgid "RemoteControl Old Version"
 msgstr "Fernbedienung alte Version"
 
-#: titan.c:909
+#: titan.c:910
 msgid "RemoteControl Long Version"
 msgstr "Fernbedienung lange Version"
 
-#: titan.c:916
+#: titan.c:917
 msgid "Select Your Remote Control"
 msgstr "Fernbedienungsauswahl Menü"
 
-#: titan.c:916
+#: titan.c:917
 msgid "Choose your Remotecontrol Model from the following list"
 msgstr "Wählen Sie das passende FB Modell aus der folgenden Liste"
 
-#: titan.c:957
+#: titan.c:958
 msgid "First Wizzard"
 msgstr "Erstinstallationsassistent"
 
-#: titan.c:957
+#: titan.c:958
 msgid "Settings OK ?"
 msgstr "Einstellungen speichern?"
 
-#: titan.c:1088
+#: titan.c:1089
 msgid "Receiver successful unlocked"
 msgstr "Ihr Receiver wurde erfolgreich freigeschaltet."
 
-#: titan.c:1109
+#: titan.c:1110
 msgid ""
 "Free space in /var to little!\n"
 "This can make problems!"
@@ -8560,7 +8594,7 @@ msgstr ""
 "FEHLER: Der freie Speicher in /var reicht nicht aus!\n"
 "Dies kann zu Problemen führen!"
 
-#: titan.c:1115
+#: titan.c:1116
 msgid ""
 "/var not writeable!\n"
 "Repair it?"
@@ -8568,7 +8602,7 @@ msgstr ""
 "FEHLER: /var ist nicht beschreibbar!\n"
 "Soll es repariert werden?"
 
-#: titan.c:1126
+#: titan.c:1127
 msgid ""
 "Free space in /mnt to little!\n"
 "This can make problems!"
@@ -8576,7 +8610,7 @@ msgstr ""
 "FEHLER: Der Speicher in /mnt ist nicht ausreichend!\n"
 "Das kann zu Problemen führen!"
 
-#: titan.c:1132
+#: titan.c:1133
 msgid ""
 "/mnt not writeable!\n"
 "Repair it?"
@@ -8584,11 +8618,11 @@ msgstr ""
 "FEHLER: /mnt ist nicht beschreibbar!\n"
 "Soll ein Reparaturversuch gestartet werden?"
 
-#: titan.c:1181
+#: titan.c:1182
 msgid "Unknown Error."
 msgstr "unbekannter Fehler."
 
-#: titan.c:1183
+#: titan.c:1184
 msgid "Automatic stop in 10 seconds."
 msgstr "Automatisches Beenden in 10 Sekunden."
 
