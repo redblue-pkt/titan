@@ -7667,7 +7667,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:604 system_update.h:88 system_update.h:210
 msgid "stable"
-msgstr "UPDATE-Img"
+msgstr "Offizieller Feed"
 
 #: skin_default_skin.xml.h:606
 msgid "Standby Brightness"
