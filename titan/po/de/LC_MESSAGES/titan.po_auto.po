@@ -8442,7 +8442,7 @@ msgstr "USB Informationen"
 
 #: system_update.h:90 system_update.h:216
 msgid "unstable"
-msgstr "svn-Betaimage"
+msgstr "Beta Feed"
 
 #: system_update.h:123
 msgid "non-version"
