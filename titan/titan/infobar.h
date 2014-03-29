@@ -387,8 +387,8 @@ void screeninfobar()
         
 				drawscreen(skin, 0, 0);
 				status.tuxtxt = 1;
-				disablemanualblit();
 #ifdef MIPSEL
+				disablemanualblit();
 				int tmprcret = -1;
 				tmpstr = ostrcat(tmpstr, " &", 1, 0);
 				system(tmpstr);
@@ -436,10 +436,10 @@ void screeninfobar()
 					close(status.fdrctxt);
 					status.fdrctxt = -1;
 				}
+				enablemanualblit();
 #else
 				system(tmpstr);
 #endif				
-				enablemanualblit();
 				status.tuxtxt = 0;
 				free(tmpstr); tmpstr = NULL; tmpnr = NULL;
 				drawscreen(skin, 0, 0);
