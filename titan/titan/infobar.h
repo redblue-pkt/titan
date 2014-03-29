@@ -320,6 +320,7 @@ void screeninfobar()
 			rcret = getrcconfigint("rctvradio", NULL);
 		if(rcret == getrcconfigint("rcok", NULL) || rcret == getrcconfigint("rctvradio", NULL) || rcret == getrcconfigint("rcfav", NULL) || rcret == getrcconfigint("rctv", NULL) || rcret == getrcconfigint("rcradio", NULL) || (status.crosscontrol == 0 && status.play == 0 && status.pause == 0 && (rcret == getrcconfigint("rcup", NULL) || rcret == getrcconfigint("rcdown", NULL) || rcret == getrcconfigint("rcleft", NULL) || rcret == getrcconfigint("rcright", NULL))))
 		{
+		printf("status.servicetype: %d\n",status.servicetype);
 			int tmpservicetype = status.servicetype;
 			status.infobaraktiv = 0;
 			subtitlepause(1);
@@ -333,9 +334,9 @@ void screeninfobar()
 			}
 
 			if(rcret == getrcconfigint("rctv", NULL))
-				status.servicetype = 1;
-			if(rcret == getrcconfigint("rcradio", NULL))
 				status.servicetype = 0;
+			if(rcret == getrcconfigint("rcradio", NULL))
+				status.servicetype = 1;
 
 			drawscreen(skin, 0, 0);
 			if(rcret == getrcconfigint("rcfav", NULL))	
