@@ -528,15 +528,15 @@ msgstr ""
 
 #: adjust.h:212 httpdfunc.h:4306
 msgid "yes / vzap 1 sec"
-msgstr "Ja / VZAP 1 Sek"
+msgstr "Ja/VZAP 1 Sek"
 
 #: adjust.h:213 httpdfunc.h:4313
 msgid "yes / vzap 2 sec"
-msgstr "Ja / VZAP 2 Sek"
+msgstr "Ja/VZAP 2 Sek"
 
 #: adjust.h:214 httpdfunc.h:4320
 msgid "yes / vzap endless"
-msgstr "Ja / VZAP unendlich"
+msgstr "Ja/VZAP unendlich"
 
 #: ard.h:31 avsettings.h:247 betarobot.h:57 bgdownload.h:176
 #: blindscanadjust.h:25 callmon_main.h:39 channellist.h:913 channellist.h:915
