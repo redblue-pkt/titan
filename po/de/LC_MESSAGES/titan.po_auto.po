@@ -1,3 +1,17 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: TitanNit 1.50\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-07 10:44+0200\n"
+"PO-Revision-Date: 2014-03-30 11:47+0100\n"
+"Last-Translator: caliban <aaf-caliban@e.mail.de>\n"
+"Language-Team: German <_obiwan_@web.de>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+
 #: about.h:9
 msgid "Image"
 msgstr ""
@@ -770,8 +784,7 @@ msgstr ""
 
 #: browser.h:206
 msgid "Choose your Internet Favorite from the following list"
-msgstr ""
-"Wählen Sie das gewünschte Internet Lesezeichen aus der folgenden Liste"
+msgstr "Wählen Sie das gewünschte Internet Lesezeichen aus der folgenden Liste"
 
 #: callmon_main.h:39
 msgid ""
@@ -1546,8 +1559,7 @@ msgstr "Menü"
 
 #: filemanager.h:89
 msgid "Choose your Filemanager Option from the following list"
-msgstr ""
-"Wählen Sie die gewünschte Datei Manager Option aus der folgenden Liste"
+msgstr "Wählen Sie die gewünschte Datei Manager Option aus der folgenden Liste"
 
 #: filemanager.h:95
 msgid "Can't rename file !"
@@ -1559,11 +1571,11 @@ msgstr "Verzeichnis konnte nicht erstellt werden!"
 
 #: filemanager.h:180
 msgid "Really copy this file/dir?"
-msgstr "Wollen Sie diese Datei kopieren?"
+msgstr "Möchten Sie diese Datei kopieren?"
 
 #: filemanager.h:188
 msgid "Really move this file/dir?"
-msgstr "Wollen Sie diese Datei verschieben?"
+msgstr "Möchten Sie diese Datei verschieben?"
 
 #: filemanager.h:196
 msgid "From"
@@ -1583,7 +1595,7 @@ msgstr "Datei(en) kopieren"
 
 #: filemanager.h:278
 msgid "Really delete this file/dir?"
-msgstr "Wollen Sie diese Datei löschen?"
+msgstr "Möchten Sie diese Datei löschen?"
 
 #: filemanager.h:291
 msgid "Can't remove file/dir !"
@@ -1750,7 +1762,7 @@ msgstr "Datenträger nicht für Sicherung/Wiederherstellung  nutzen"
 
 #: harddisk.h:350
 msgid "Are you sure you want to delete this directory?"
-msgstr "Wollen Sie dieses Verzeichnis löschen?"
+msgstr "Möchten Sie dieses Verzeichnis löschen?"
 
 #: harddisk.h:355
 msgid ""
@@ -1831,7 +1843,7 @@ msgid ""
 "on this device and create a new Partition 1?\n"
 "Box reboots after format"
 msgstr ""
-"Wollen Sie alle Partitionen auf diesem Gerät\n"
+"Möchten Sie wirklich alle Partitionen auf diesem Gerät\n"
 "entfernen und eine neue Partition erstellen?\n"
 "Die Box wird danach neu gestartet."
 
@@ -1840,7 +1852,7 @@ msgid ""
 "Are you sure you want to format this Partition?\n"
 "Box reboots after format"
 msgstr ""
-"Wollen sie die Partition formatieren?\n"
+"Möchten Sie wirklich die Partition formatieren?\n"
 "Die Box wird danach neu gestartet."
 
 #: harddisk.h:793
@@ -1862,7 +1874,7 @@ msgid ""
 "Are you sure you want to check this Partition?\n"
 "Box reboots after check"
 msgstr ""
-"Wollen Sie die Partition prüfen?\n"
+"Möchten Sie die Partition prüfen?\n"
 "Die Box wird danach neu gestartet."
 
 #: harddisk.h:877 harddisk.h:878
@@ -2541,57 +2553,6 @@ msgstr "Ihr Marker wurde erfolgreich gesetzt"
 msgid "File not found !!"
 msgstr "Datei nicht gefunden"
 
-#: mboxinfo.c:77 mc_imdb.h:78 mc_imdb.h:79 mc_imdb.h:80 mc_imdb.h:81
-#: mc_imdb.h:82 mc_view.h:17 mc_view.h:18 mc_view.h:19 mc_view.h:20
-#: mc_view.h:21 mc_view.h:22 plugins_autotimer_skin.xml.h:13
-#: plugins_callmonitor1_skin.xml.h:19 plugins_catcatch_skin.xml.h:7
-#: plugins_dlna_skin.xml.h:15 plugins_facebook_skin.xml.h:6
-#: plugins_filemanager_skin.xml.h:6 plugins_gmediarender_skin.xml.h:1
-#: plugins_imdbapi_skin.xml.h:11 plugins_imdb_skin.xml.h:11
-#: plugins_instar_skin.xml.h:17 plugins_keylock_skin.xml.h:1
-#: plugins_lcdpearl1_skin.xml.h:14 plugins_lcdsamsung_skin.xml.h:18
-#: plugins_mboxinfo_skin.xml.h:3 plugins_mc_skin.xml.h:70
-#: plugins_networkbrowser_skin.xml.h:37 plugins_news_skin.xml.h:5
-#: plugins_optimize_skin.xml.h:4 plugins_panel_skin.xml.h:28
-#: plugins_permtime_skin.xml.h:1 plugins_readerconfig_skin.xml.h:10
-#: plugins_rgui_skin.xml.h:9 plugins_stock_skin.xml.h:6
-#: plugins_stopifnotused_skin.xml.h:8 plugins_streaminfo_skin.xml.h:6
-#: plugins_tithek_skin.xml.h:22 plugins_tiwakeup_skin.xml.h:9
-#: plugins_tmc_skin.xml.h:18 plugins_tmdb_skin.xml.h:11
-#: plugins_tsSchnitt_skin.xml.h:11 plugins_weather_skin.xml.h:4
-#: plugins_wins3_skin.xml.h:4 plugins_xupnpd_skin.xml.h:5
-#: plugins_zapback_skin.xml.h:7 skin_default_skin.xml.h:740
-#: skins_autotimer_skin.xml.h:13 skins_callmonitor1_skin.xml.h:19
-#: skins_catcatch_skin.xml.h:7 skins_dlna_skin.xml.h:15
-#: skins_facebook_skin.xml.h:6 skins_filemanager_skin.xml.h:6
-#: skins_gmediarender_skin.xml.h:1 skins_imdbapi_skin.xml.h:11
-#: skins_imdb_skin.xml.h:11 skins_instar_skin.xml.h:17
-#: skins_keylock_skin.xml.h:1 skins_lcdpearl1_skin.xml.h:14
-#: skins_lcdsamsung_skin.xml.h:18 skins_mboxinfo_skin.xml.h:3
-#: skins_mc_skin.xml.h:70 skins_networkbrowser_skin.xml.h:37
-#: skins_news_skin.xml.h:5 skins_optimize_skin.xml.h:4
-#: skins_panel_skin.xml.h:28 skins_permtime_skin.xml.h:1
-#: skins_readerconfig_skin.xml.h:10 skins_rgui_skin.xml.h:9
-#: skins_stock_skin.xml.h:6 skins_stopifnotused_skin.xml.h:8
-#: skins_streaminfo_skin.xml.h:6 skins_tithek_skin.xml.h:22
-#: skins_tiwakeup_skin.xml.h:9 skins_tmc_skin.xml.h:18
-#: skins_tmdb_skin.xml.h:11 skins_tsSchnitt_skin.xml.h:11
-#: skins_weather_skin.xml.h:4 skins_wins3_skin.xml.h:4
-#: skins_xupnpd_skin.xml.h:5 skins_zapback_skin.xml.h:7 tithek_mainmenu.h:1
-msgid ""
-msgstr ""
-"Project-Id-Version: TitanNit 1.50\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-07 10:44+0200\n"
-"PO-Revision-Date: 2014-03-29 23:28+0100\n"
-"Last-Translator: caliban <aaf-caliban@e.mail.de>\n"
-"Language-Team: German <_obiwan_@web.de>\n"
-"Language: de\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
-
 #: mc_audioplayer.h:403 mc_global.h:1079 mc_pictureplayer.h:145
 #: mc_videoplayer.h:425
 msgid "Repeat-On"
@@ -3015,7 +2976,7 @@ msgstr ""
 
 #: networkbrowser.h:1189
 msgid "Use User authentication ?"
-msgstr "Wollen Sie mit User Authentifizierung suchen?"
+msgstr "Möchten Sie mit User Authentifizierung suchen?"
 
 #: networkbrowser.h:1207
 msgid "Networkbrowser - show scanned cifs/nfs-Shares"
@@ -3025,9 +2986,8 @@ msgstr "Netzwerk Browser - gefundene cifs/nfs Freigaben"
 msgid "Choose your cifs/nfs Share from the following list"
 msgstr ""
 "Freigaben des Servers\n"
-"Zum Bearbeiten und Speichern bitte Freigabe auswählen und -OK- drücken. "
-"Für Windows Freigaben (cifs/smb) muss evtl. Authentifizierung benutzt "
-"werden."
+"Zum Bearbeiten und Speichern bitte Freigabe auswählen und -OK- drücken. Für "
+"Windows Freigaben (cifs/smb) muss evtl. Authentifizierung benutzt werden."
 
 #: networkbrowser.h:1340
 msgid "Add Cifs Network Share"
@@ -3104,7 +3064,7 @@ msgstr "Ein Eintrag mit diesem Namen existiert bereits!"
 
 #: networkbrowser.h:1755
 msgid "Are you sure you want to save this network mount?"
-msgstr "Wollen Sie diese Freigabe wirklich speichern?"
+msgstr "Möchten Sie diese Freigabe wirklich speichern?"
 
 #: networkbrowser.h:1875
 msgid "Networkbrowser - show Shares"
@@ -3114,13 +3074,13 @@ msgstr "Netzwerk Browser - Freigaben"
 msgid "Choose your Shares from the following list"
 msgstr ""
 "Liste Ihrer gespeicherten Freigaben. Zum Bearbeiten Eintrag wählen und -"
-"Grün- drücken. Um weitere Freigaben hinzuzufügen bitte -Suche- benutzen. "
-"Für den Zugriff auf passwortgeschützte Windows Freigaben bitte Menü "
-"drücken und die Benutzerdaten eingeben."
+"Grün- drücken. Um weitere Freigaben hinzuzufügen bitte -Suche- benutzen. Für "
+"den Zugriff auf passwortgeschützte Windows Freigaben bitte Menü drücken und "
+"die Benutzerdaten eingeben."
 
 #: networkbrowser.h:1907
 msgid "Are you sure you want remove this share?"
-msgstr "Wollen Sie diese Freigabe wirklich löschen?"
+msgstr "Möchten Sie diese Freigabe wirklich löschen?"
 
 #: network.h:256 network.h:257
 msgid "Wait"
@@ -3184,7 +3144,7 @@ msgstr "LAN Verbindung ausschalten?"
 
 #: network.h:774
 msgid "Start Wlan ?"
-msgstr "Wollen Sie WLAN jetzt starten?"
+msgstr "Möchten Sie WLAN jetzt starten?"
 
 #: network.h:800
 msgid ""
@@ -3660,8 +3620,7 @@ msgstr ""
 #: play.h:721
 msgid "Choose your Red-Menu entry from the following list"
 msgstr ""
-"Wählen Sie den gewünschten Eintrag für das Rot Menü aus der folgenden "
-"Liste"
+"Wählen Sie den gewünschten Eintrag für das Rot Menü aus der folgenden Liste"
 
 #: play.h:1202
 msgid "Jump To (min)"
@@ -4237,7 +4196,7 @@ msgstr "Einstellungen"
 
 #: plugins_mc_skin.xml.h:54 skins_mc_skin.xml.h:54
 msgid "Show Pictitle"
-msgstr "Zeige Bildname"
+msgstr "Zeige Bild Titel"
 
 #: plugins_mc_skin.xml.h:56 skins_mc_skin.xml.h:56
 msgid "small"
@@ -5202,17 +5161,17 @@ msgid ""
 "Do you really want to erase all data and backups from Swap?\n"
 "The Box will reboot and the erase will be started!"
 msgstr ""
-"Internen Swap Speicher löschen und Werkseinstellung durchführen?\n"
-"Receiver neu starten und Löschvorgang ausführen."
+"Möchten Sie wirklich alle Daten und Sicherungen im Konfigurationsbereich "
+"löschen?\n"
+"Der Receiver wird für diesen Vorgang neu gestartet!"
 
 #: restoredefault.h:47
 msgid ""
 "Do you really want to erase Swap (Settings are preserve)?\n"
 "The Box will reboot and the erase will be started!"
 msgstr ""
-"Wollen Sie wirklich das Swap-Dateisystem löschen\n"
-"Ihre Einstellungen bleiben erhalten. Der Receiver wird neu gestartet und das "
-"Löschen wird durchgeführt."
+"Möchten Sie wirklich den Konfigurationsbereich löschen? Ihre Einstellungen\n"
+"bleiben erhalten. Der Receiver wird für diesen Vorgang neu gestartet!"
 
 #: restoredefault.h:63 restoredefault.h:70 restoredefault.h:74
 #: skin_default_skin.xml.h:514
@@ -5516,8 +5475,7 @@ msgid ""
 "Choose your Media plugin item from the following list and show it so the "
 "plugin button"
 msgstr ""
-"Wählen Sie den gewünschten Eintrag für das Media Menü aus der folgenden "
-"Liste"
+"Wählen Sie den gewünschten Eintrag für das Media Menü aus der folgenden Liste"
 
 #: settings_pluginbutton.h:6
 msgid "Plugin Key Action - Setup"
@@ -6471,8 +6429,7 @@ msgstr "Hier können Sie Ihre Einstellungen sichern und wiederherstellen"
 
 #: skin_default_skin.xml.h:269
 msgid "Here you can check the reception of the current station."
-msgstr ""
-"Hier können Sie die Signalqualität des aktuellen Senders überprüfen"
+msgstr "Hier können Sie die Signalqualität des aktuellen Senders überprüfen"
 
 #: skin_default_skin.xml.h:270
 msgid ""
@@ -6498,8 +6455,8 @@ msgstr "Hier können Sie Ihre CI-Module konfigurieren"
 #: skin_default_skin.xml.h:273
 msgid "Here you can configure the smartcard readers."
 msgstr ""
-"Hier können Sie Ihre Smartcards zurücksetzen. Sollten keine Karten "
-"angezeigt werden, dann ist ein Softcam mit Zugriff auf die Kartenleser aktiv."
+"Hier können Sie Ihre Smartcards zurücksetzen. Sollten keine Karten angezeigt "
+"werden, dann ist ein Softcam mit Zugriff auf die Kartenleser aktiv."
 
 #: skin_default_skin.xml.h:274
 msgid "Here you can configure your web server."
@@ -6598,8 +6555,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:292
 msgid "Here you can make your PIN security for menus settings."
-msgstr ""
-"Hier können Sie Ihre PIN Sicherheitseinstellungen für Menüs vornehmen"
+msgstr "Hier können Sie Ihre PIN Sicherheitseinstellungen für Menüs vornehmen"
 
 #: skin_default_skin.xml.h:293
 msgid "Here you can make your PIN security settings."
@@ -6731,7 +6687,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:315
 msgid "Here you can view the current channel information."
-msgstr "Hier können Sie die aktuellen Senderinfos abrufen"
+msgstr "Hier können Sie technische Informationen zum aktuellen Sender abrufen"
 
 #: skin_default_skin.xml.h:316
 msgid "Hierarchy"
@@ -7415,7 +7371,7 @@ msgstr "Zurücksetzen"
 
 #: skin_default_skin.xml.h:509
 msgid "Resolution:"
-msgstr "Auflösung"
+msgstr "Auflösung:"
 
 #: skin_default_skin.xml.h:510
 msgid "Resolution (current)"
@@ -8321,7 +8277,7 @@ msgid ""
 "OK = start restore\n"
 "EXIT = abort restore"
 msgstr ""
-"Wollen Sie Ihre Einstellungen wiederherstellen?\n"
+"Möchten Sie Ihre Einstellungen wiederherstellen?\n"
 "\n"
 "OK = Wiederherstellung starten\n"
 "EXIT = Wiederherstellung abbrechen"
@@ -8758,11 +8714,11 @@ msgstr "Seite"
 
 #: tithek.h:3166
 msgid "Remove this Favorite ?"
-msgstr "Wollen Sie diesen Eintrag aus Ihren Favoriten löschen?"
+msgstr "Möchten Sie diesen Eintrag aus Ihren Favoriten löschen?"
 
 #: tithek.h:3180
 msgid "Add this link as Favorite ?"
-msgstr "Wollen Sie diesen Link zu Ihren Favoriten hinzufügen?"
+msgstr "Möchten Sie diesen Link zu Ihren Favoriten hinzufügen?"
 
 #: tithek.h:3190
 msgid "Edit this Favorite ?"
