@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: TitanNit 1.50\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-07 10:44+0200\n"
-"PO-Revision-Date: 2014-03-30 20:53+0100\n"
+"PO-Revision-Date: 2014-03-30 22:07+0100\n"
 "Last-Translator: caliban <aaf-caliban@e.mail.de>\n"
 "Language-Team: German <_obiwan_@web.de>\n"
 "Language: de\n"
@@ -5146,7 +5146,7 @@ msgstr "!!! FEHLER !!!"
 
 #: restoredefault.h:10
 msgid "Really restore default settings ?"
-msgstr "Soll auf Werkseinstellung zurücksetzt werden?"
+msgstr "Standardeinstellungen wiederherstellen?"
 
 #: restoredefault.h:19
 msgid "Receiver reboots now !!!"
@@ -5161,7 +5161,7 @@ msgid ""
 "Do you really want to erase all data and backups from Swap?\n"
 "The Box will reboot and the erase will be started!"
 msgstr ""
-"Möchten Sie wirklich alle Daten und Erweiterungen löschen? Der Receiver "
+"Möchten Sie wirklich den Auslieferzustand wiederherstellen? Der Receiver "
 "wird\n"
 "für diesen Vorgang neu gestartet!"
 
@@ -5177,7 +5177,7 @@ msgstr ""
 #: restoredefault.h:63 restoredefault.h:70 restoredefault.h:74
 #: skin_default_skin.xml.h:514
 msgid "Restore default settings"
-msgstr "Werkseinstellungen"
+msgstr "Standardeinstellungen"
 
 #: restoredefault.h:66 restoredefault.h:78
 msgid "Format MNT with Backup/Restore"
@@ -5185,7 +5185,7 @@ msgstr "Formatiere MNT mit anschließender Wiederherstellung"
 
 #: restoredefault.h:67 restoredefault.h:82
 msgid "Format MNT (all)"
-msgstr "Formatiere MNT (Auslieferzustand)"
+msgstr "Auslieferzustand"
 
 #: restoredefault.h:70
 msgid "Choose your Restore Mode from the following list."
