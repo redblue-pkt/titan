@@ -83,7 +83,7 @@ int checkrectimerconflict(struct rectimer* recnode)
 	{
 		if(dvbnode->type == FRONTENDDEV)
 		{
-			adddvbdev(ostrcat(dvbnode->dev, NULL, 0, 0), dvbnode->adapter, dvbnode->devnr, dvbnode->fd, FRONTENDDEV, dvbnode->feinfo, NULL, 1);
+			adddvbdev(ostrcat(dvbnode->dev, NULL, 0, 0), dvbnode->adapter, dvbnode->devnr, dvbnode->fd, FRONTENDDEV, dvbnode->feinfo, NULL, dvbnode->fehyprid, 1);
 		}
 		dvbnode = dvbnode->next;
 	}

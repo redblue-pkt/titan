@@ -393,7 +393,7 @@ int scgetdev()
 		{
 			scclose(NULL, fd);
 			count++;
-			adddvbdev(buf, 0, y, -1, SCDEV, NULL, NULL, 0);
+			adddvbdev(buf, 0, y, -1, SCDEV, NULL, NULL, NULL, 0);
 		}
 	}
 

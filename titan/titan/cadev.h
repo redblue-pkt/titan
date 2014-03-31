@@ -237,7 +237,7 @@ int cagetdev()
 				cainit(fd);
 				caclose(NULL, fd);
 				count++;
-				adddvbdev(buf, i, y, -1, CADEV, NULL, NULL, 0);
+				adddvbdev(buf, i, y, -1, CADEV, NULL, NULL, NULL, 0);
 			}
 		}
 	}

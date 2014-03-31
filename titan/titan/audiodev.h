@@ -340,7 +340,7 @@ int audiogetdev()
 			{
 				audioclose(NULL, fd);
 				count++;
-				adddvbdev(buf, i, y, -1, AUDIODEV, NULL, NULL, 0);
+				adddvbdev(buf, i, y, -1, AUDIODEV, NULL, NULL, NULL, 0);
 			}
 		}
 	}
