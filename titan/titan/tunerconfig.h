@@ -627,12 +627,20 @@ int screentunerreceptionhyprid(struct dvbdev* tuner)
 			if(realname != NULL && ostrcmp(realname, "DVB-T2") == 0)
 			{
 				ret = screentunerreceptiondvbt(tuner);
-				if(ret == 1) sethypridtuner(tuner->devnr, listbox->select->ret);
+				if(ret == 1)
+				{
+					sethypridtuner(tuner->devnr, listbox->select->ret);
+					textbox(_("Message"), _("They need to switch the tuner Hyprid restart the gui !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
+				}
 			}
 			else if(realname != NULL && ostrcmp(realname, "DVB-C") == 0)
 			{
 				ret = screentunerreceptiondvbc(tuner);
 				if(ret == 1) sethypridtuner(tuner->devnr, listbox->select->ret);
+				{
+					sethypridtuner(tuner->devnr, listbox->select->ret);
+					textbox(_("Message"), _("They need to switch the tuner Hyprid restart the gui !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
+				}
 			}
 			free(realname), realname = NULL;
 /*
