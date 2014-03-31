@@ -10882,7 +10882,7 @@ msgstr ""
 #: tunerconfig.h:633 tunerconfig.h:642
 msgid "They need to switch the tuner Hyprid restart the gui !"
 msgstr ""
-"Um die Einstellungen des Hyprid Tuners wirksam zumachen müssen Sie einen "
+"Um die Einstellungen des Hyprid Tuners wirksam zu machen müssen Sie einen "
 "TitanNit Neustart durchführen."
 
 #: tunerconfig.h:777
