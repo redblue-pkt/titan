@@ -606,9 +606,6 @@ int screentunerreceptionhyprid(struct dvbdev* tuner)
 		addscreenrc(tunerreceptionhyprid, tmp);
 		rcret = waitrc(tunerreceptionhyprid, 0, 0);
 		tmp = listbox->select;
-printf("xx: %s\n",listbox->select->name);
-printf("yy: %s\n",listbox->select->text);
-printf("zz: %s\n",listbox->select->ret);
 
 		drawscreen(tunerreceptionhyprid, 0, 0);
 
@@ -625,24 +622,19 @@ printf("zz: %s\n",listbox->select->ret);
 			writeallconfig(1);
 
 			clearscreen(tunerreceptionhyprid);
-printf("1listbox->select->ret: %s\n",listbox->select->ret);
 			char* realname = gethypridtunerchoicesvaluename(tuner->devnr, listbox->select->ret);
-			printf("realname: %s\n", realname);
 			
 			if(realname != NULL && ostrcmp(realname, "DVB-T2") == 0)
 			{
 				ret = screentunerreceptiondvbt(tuner);
 				if(ret == 1) sethypridtuner(tuner->devnr, listbox->select->ret);
-printf("2ret: %d\n",ret);
-				
 			}
 			else if(realname != NULL && ostrcmp(realname, "DVB-C") == 0)
 			{
 				ret = screentunerreceptiondvbc(tuner);
 				if(ret == 1) sethypridtuner(tuner->devnr, listbox->select->ret);
-printf("3ret: %d\n",ret);
-
 			}
+			free(realname), realname = NULL;
 /*
 			if(listbox->select->ret != NULL && ostrcmp(listbox->select->ret, "0") == 0)
 				ret = screentunerreceptiondvbt(tuner);
@@ -967,9 +959,6 @@ void screentunerconfig()
 				if(((struct dvbdev*)listbox->select->handle)->feinfo->type == FE_QAM)
 				{
 					clearscreen(tunerconfig);
-					printf("\nobi\n");
-					printf(((struct dvbdev*)listbox->select->handle)->fehyprid);
-					printf("\nobi\n");
 					if(((struct dvbdev*)listbox->select->handle)->fehyprid == NULL)
 						ret = screentunerreceptiondvbc((struct dvbdev*)listbox->select->handle);
 					else
@@ -983,7 +972,6 @@ void screentunerconfig()
 						ret = screentunerreceptiondvbt((struct dvbdev*)listbox->select->handle);
 					else
 						ret = screentunerreceptionhyprid((struct dvbdev*)listbox->select->handle);
-
 					drawscreen(tunerconfig, 0, 0);
 				}
 			}

@@ -6808,7 +6808,6 @@ char* gethypridtunerchoicesvalue(int dev)
 	free(tmpstr1), tmpstr1 = NULL;
 	free(hypridlist), hypridlist = NULL;
 
-	printf("gethypridtunerchoicesvalue value: %s\n",value);
 	return value;
 }
 
@@ -6848,29 +6847,6 @@ char* gethypridtunerchoicesvaluename(int dev, char* hyprid)
 	free(tmpstr2), tmpstr2 = NULL;
 	free(start), start = NULL;
 
-	printf("gethypridtunerchoicesvaluename value: %s\n",value);
-	return value;
-}
-
-char* gethypridtuner()
-{
-	char* hypridtuner = NULL, *value = NULL;
-
-	hypridtuner = getconfig("hypridtuner", NULL);
-
-	if(hypridtuner == NULL)
-	{
-		err("NULL detect");
-		return NULL;
-	}
-
-	value = readsys(hypridtuner, 1);
-	if(value == NULL)
-	{
-		err("NULL detect");
-		return NULL;
-	}
-
 	return value;
 }
 
@@ -6878,7 +6854,7 @@ int sethypridtuner(int dev, char* value)
 {
 	char* buf = NULL, *hypridtuner = NULL, *tmpstr = NULL;
 	int ret = 0;
-printf("1sethypridtuner dev %d to %s\n", dev, value);
+
 	hypridtuner = getconfig("hypridtuner", NULL);
 	
 	if(hypridtuner != NULL)
@@ -6890,20 +6866,15 @@ printf("1sethypridtuner dev %d to %s\n", dev, value);
 			return 0;
 		}
 	}
-printf("2hypridtuner %s\n",hypridtuner);
+
 	sprintf(buf, hypridtuner, dev);
-printf("3sethypridtuner buf %s\n", buf);
 	if(buf != NULL)
 	{
-		debug(100, "set %s to %s\n", buf, value);
-		printf("4set %s to %s\n", buf, value);
-//		tmpstr = oitoa(value);
-//		printf("tmpstr %s", tmpstr);
 		ret = writesys(buf, value, 0);
 		free(tmpstr); tmpstr = NULL;
 		return ret;
 	}
-printf("5sethypridtuner dev %d to %d\n", dev, value);
+
 	return 0;
 }
 
