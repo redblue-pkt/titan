@@ -6214,7 +6214,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:194
 msgid "Dualboot Menu TitanNit / E2"
-msgstr ""
+msgstr "Dualboot Menü TitanNit / E2"
 
 #: skin_default_skin.xml.h:195
 msgid "dummy"
