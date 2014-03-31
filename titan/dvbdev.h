@@ -3,7 +3,7 @@
 
 //flag 0: use dvbdev
 //flag 1: use dvbdevsim
-struct dvbdev* adddvbdev(char *dev, int adapter, int devnr, int fd, int type, struct dvb_frontend_info* feinfo, struct dvbdev* last, int flag)
+struct dvbdev* adddvbdev(char *dev, int adapter, int devnr, int fd, int type, struct dvb_frontend_info* feinfo, struct dvbdev* last, char *fehyprid, int flag)
 {
 	struct dvbdev *newnode = NULL, *node = NULL;
 	char* tmp = NULL, *tmp1 = NULL;
@@ -28,6 +28,7 @@ struct dvbdev* adddvbdev(char *dev, int adapter, int devnr, int fd, int type, st
 	newnode->feinfo = feinfo;
 	newnode->adapter = adapter;
 	newnode->devnr = devnr;
+	newnode->fehyprid = ostrcat(fehyprid, NULL, 0, 0);
 
 	if(type == CIDEV)
 	{

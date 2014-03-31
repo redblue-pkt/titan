@@ -1627,7 +1627,7 @@ struct dvb_frontend_info* fegetinfo(struct dvbdev* node, int fd)
 int fegetdev()
 {
 	int i, y, fd = -1, count = 0;
-	char *buf = NULL, *frontenddev = NULL;
+	char *buf = NULL, *buf1 = NULL, *frontenddev = NULL, *hypridtuner = NULL, *fehyprid = NULL;
 	struct dvb_frontend_info* feinfo = NULL;
 	struct dvbdev* dvbnode = NULL;
 
@@ -1644,7 +1644,19 @@ int fegetdev()
 		err("no memory");
 		return count;
 	}
-
+/*
+	hypridtuner = getconfig("hypridtuner", NULL);
+	
+	if(hypridtuner != NULL)
+	{
+		buf1 = malloc(MINMALLOC);
+		if(buf1 == NULL)
+		{
+			err("no memory");
+			return count;
+		}
+	}
+*/
 	for(i = 0; i < MAXDVBADAPTER; i++)
 	{
 		for(y = 0; y < MAXFRONTENDDEV; y++)
@@ -1653,11 +1665,15 @@ int fegetdev()
 			fd = feopen(NULL, buf);
 			if(fd >= 0)
 			{
+//				sprintf(buf1, hypridtuner, y);
+//				fehyprid = readsys(buf1, 1);
+				fehyprid = gethypridtunerchoicesvalue(y);				
 				feinfo = fegetinfo(NULL, fd);
 				if(feinfo != NULL)
 				{
+					printf("add fehyprid: %s i=%d, y=%d\n",fehyprid,i, y);
 					count++;
-					dvbnode = adddvbdev(buf, i, y, fd, FRONTENDDEV, feinfo, NULL, 0);
+					dvbnode = adddvbdev(buf, i, y, fd, FRONTENDDEV, feinfo, NULL, fehyprid, 0);
 					if(dvbnode->feinfo->type == FE_QPSK)
 						fesetvoltage(dvbnode, SEC_VOLTAGE_OFF, 15);
 				}
@@ -1665,6 +1681,7 @@ int fegetdev()
 		}
 	}
 
+//	free(buf1);
 	free(buf);
 	return count;
 }
@@ -1693,7 +1710,7 @@ int fecreatedummy()
 	if(dvbnode != NULL)
 	{
 		sprintf(buf, frontenddev, 0, dvbnode->devnr);
-		adddvbdev(buf, 0, dvbnode->devnr, -1, FRONTENDDEVDUMMY, NULL, NULL, 0);
+		adddvbdev(buf, 0, dvbnode->devnr, -1, FRONTENDDEVDUMMY, NULL, NULL, NULL, 0);
 	}
 
 	free(buf);

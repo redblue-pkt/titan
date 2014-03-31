@@ -783,7 +783,7 @@ struct regex* regexstruct(char* regex, char* str)
 		return NULL;
 	}
 
-	for(i = 1; !rm && i <= preg.re_nsub; i++)
+	for(i = 0; !rm && i <= preg.re_nsub; i++)
 	{
 		len = pmatch[i].rm_eo - pmatch[i].rm_so;
 		if(len < 1) continue;
@@ -6705,6 +6705,206 @@ char* translate_time(char* input, int flag)
 	}
 
 	return tmpstr;
+}
+
+char* gethypridtunerchoices(int dev)
+{
+	char *hypridtunerchoices = NULL;
+	char *value = NULL;
+	char *tmpstr = NULL;
+	char *tmpstr1 = NULL;
+	char *tmpstr2 = NULL;
+	char *tmpstr3 = NULL;
+	char* start = NULL;
+
+	hypridtunerchoices = getconfig("hypridtunerchoices", NULL);
+
+	if(hypridtunerchoices == NULL)
+	{
+		err("NULL detect");
+		return NULL;
+	}
+
+	tmpstr = readfiletomem(hypridtunerchoices, 1);
+	if(tmpstr == NULL)
+	{
+		err("NULL detect");
+		return NULL;
+	}
+
+	start = ostrcat("NIM Socket ", oitoa(dev), 0, 0);
+	start = ostrcat(start, ":", 1, 0);
+
+	tmpstr1 = string_resub(start, "I2C_Device", tmpstr, 0);
+	tmpstr2 = string_resub("Mode ", ":", tmpstr1, 0);
+	tmpstr3 = oregex(".*Mode ([0-9]{1}):.*", tmpstr1);
+
+	if(tmpstr2 != NULL)
+		value = ostrcat(tmpstr2, "\n", 0, 0);
+	if(tmpstr3 != NULL)
+		value = ostrcat(value, tmpstr3, 1, 0);
+
+	free(start), start = NULL;
+	free(tmpstr), tmpstr = NULL;
+	free(tmpstr1), tmpstr1 = NULL;
+	free(tmpstr2), tmpstr2 = NULL;
+	free(tmpstr3), tmpstr3 = NULL;
+
+	printf("gethypridtunerchoices value: %s\n",value);
+	return value;
+}
+
+char* gethypridtunerchoicesvalue(int dev)
+{
+	char* hypridtunerchoices = NULL, *value = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *hypridlist = NULL, *start = NULL;
+
+	hypridtunerchoices = getconfig("hypridtunerchoices", NULL);
+
+	if(hypridtunerchoices == NULL)
+	{
+		err("NULL detect");
+		return NULL;
+	}
+
+	tmpstr = readfiletomem(hypridtunerchoices, 1);
+	if(tmpstr == NULL)
+	{
+		err("NULL detect");
+		return NULL;
+	}
+
+	start = ostrcat("NIM Socket ", oitoa(dev), 0, 0);
+	start = ostrcat(start, ":", 1, 0);
+	tmpstr1 = string_resub(start, "I2C_Device", tmpstr, 0);
+	free(start), start = NULL;
+
+	hypridlist = gethypridtunerchoices(dev);
+
+	int count = 0;
+	int i = 0;
+	struct splitstr* ret1 = NULL;
+	ret1 = strsplit(hypridlist, "\n", &count);
+
+	if(ret1 != NULL)
+	{
+		int max = count;
+		for(i = 0; i < max; i++)
+		{
+			start = ostrcat("Mode ", ret1[i].part, 0, 0);
+			start = ostrcat(start, ":", 1, 0);
+			tmpstr2 = string_resub(start, "\n", tmpstr1, 0);
+		
+			if(i > 0)
+				value = ostrcat(value, "\n", 1, 0);
+		
+			if(tmpstr2 != NULL)
+				value = ostrcat(value, tmpstr2, 1, 0);
+				
+			free(tmpstr2), tmpstr2 = NULL;
+			free(start), start = NULL;
+		}
+	}
+	free(ret1), ret1 = NULL;			
+	free(tmpstr1), tmpstr1 = NULL;
+	free(hypridlist), hypridlist = NULL;
+
+	printf("gethypridtunerchoicesvalue value: %s\n",value);
+	return value;
+}
+
+char* gethypridtunerchoicesvaluename(int dev, char* hyprid)
+{
+	char* hypridtunerchoices = NULL, *value = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *hypridlist = NULL, *start = NULL;
+
+	hypridtunerchoices = getconfig("hypridtunerchoices", NULL);
+
+	if(hypridtunerchoices == NULL)
+	{
+		err("NULL detect");
+		return NULL;
+	}
+
+	tmpstr = readfiletomem(hypridtunerchoices, 1);
+	if(tmpstr == NULL)
+	{
+		err("NULL detect");
+		return NULL;
+	}
+
+	start = ostrcat("NIM Socket ", oitoa(dev), 0, 0);
+	start = ostrcat(start, ":", 1, 0);
+	tmpstr1 = string_resub(start, "I2C_Device", tmpstr, 0);
+	free(start), start = NULL;
+
+	start = ostrcat("Mode ", hyprid, 0, 0);
+	start = ostrcat(start, ":", 1, 0);
+
+	tmpstr2 = string_resub(start, "\n", tmpstr1, 0);
+	
+	if(tmpstr2 != NULL)
+		value = ostrcat(value, tmpstr2, 1, 0);
+
+	free(tmpstr1), tmpstr1 = NULL;
+	free(tmpstr2), tmpstr2 = NULL;
+	free(start), start = NULL;
+
+	printf("gethypridtunerchoicesvaluename value: %s\n",value);
+	return value;
+}
+
+char* gethypridtuner()
+{
+	char* hypridtuner = NULL, *value = NULL;
+
+	hypridtuner = getconfig("hypridtuner", NULL);
+
+	if(hypridtuner == NULL)
+	{
+		err("NULL detect");
+		return NULL;
+	}
+
+	value = readsys(hypridtuner, 1);
+	if(value == NULL)
+	{
+		err("NULL detect");
+		return NULL;
+	}
+
+	return value;
+}
+
+int sethypridtuner(int dev, char* value)
+{
+	char* buf = NULL, *hypridtuner = NULL, *tmpstr = NULL;
+	int ret = 0;
+printf("1sethypridtuner dev %d to %s\n", dev, value);
+	hypridtuner = getconfig("hypridtuner", NULL);
+	
+	if(hypridtuner != NULL)
+	{
+		buf = malloc(MINMALLOC);
+		if(buf == NULL)
+		{
+			err("no memory");
+			return 0;
+		}
+	}
+printf("2hypridtuner %s\n",hypridtuner);
+	sprintf(buf, hypridtuner, dev);
+printf("3sethypridtuner buf %s\n", buf);
+	if(buf != NULL)
+	{
+		debug(100, "set %s to %s\n", buf, value);
+		printf("4set %s to %s\n", buf, value);
+//		tmpstr = oitoa(value);
+//		printf("tmpstr %s", tmpstr);
+		ret = writesys(buf, value, 0);
+		free(tmpstr); tmpstr = NULL;
+		return ret;
+	}
+printf("5sethypridtuner dev %d to %d\n", dev, value);
+	return 0;
 }
 
 #endif

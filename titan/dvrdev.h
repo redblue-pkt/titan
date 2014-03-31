@@ -86,7 +86,7 @@ int dvrgetdev()
 			{
 				dvrclose(NULL, fd);
 				count++;
-				adddvbdev(buf, i, y, -1, DVRDEV, NULL, NULL, 0);
+				adddvbdev(buf, i, y, -1, DVRDEV, NULL, NULL, NULL, 0);
 			}
 		}
 	}

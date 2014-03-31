@@ -393,7 +393,7 @@ int videogetdev()
 			{
 				videoclose(NULL, fd);
 				count++;
-				adddvbdev(buf, i, y, -1, VIDEODEV, NULL, NULL, 0);
+				adddvbdev(buf, i, y, -1, VIDEODEV, NULL, NULL, NULL, 0);
 			}
 		}
 	}
