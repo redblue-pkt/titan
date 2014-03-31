@@ -6689,6 +6689,9 @@ msgid ""
 "Here you can set for your Hyprid tuner. Choose the Tuner mode they want to "
 "use."
 msgstr ""
+"Hier können Sie Ihren Hyprid Multi Tuner einstellen.\n"
+"\n"
+"Wählen Sie Ihre benötigte Anschlussart aus."
 
 #: skin_default_skin.xml.h:309
 msgid ""
@@ -10878,7 +10881,7 @@ msgstr ""
 
 #: tunerconfig.h:633 tunerconfig.h:642
 msgid "They need to switch the tuner Hyprid restart the gui !"
-msgstr ""
+msgstr "Um die Einstellungen des Hyprid Tuners wirksam zumachen müssen Sie einen TitanNit Neustart durchführen."
 
 #: tunerconfig.h:777
 msgid "direct connect"
