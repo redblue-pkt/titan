@@ -11062,6 +11062,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid "Sat: uljanow Settings Sat 19.2"
-#~ msgstr "Uljanows Senderliste ASTRA 19.2"
