@@ -783,7 +783,7 @@ struct regex* regexstruct(char* regex, char* str)
 		return NULL;
 	}
 
-	for(i = 0; !rm && i <= preg.re_nsub; i++)
+	for(i = 1; !rm && i <= preg.re_nsub; i++)
 	{
 		len = pmatch[i].rm_eo - pmatch[i].rm_so;
 		if(len < 1) continue;
