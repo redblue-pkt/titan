@@ -128,6 +128,7 @@ void screenkeyactions(int key, int flag)
 		if(key == 2) screenkeyactions(2, 1);
 		if(key == 3) screenkeyactions(3, 1);
 		freemenulist(mlist, 1); mlist = NULL;
+		resettvpic();
 		return;
 	}
 
@@ -206,6 +207,7 @@ void screenkeyactions(int key, int flag)
 	}
 	else if(ostrcmp(keyconf, "Record Player") == 0)
 	{
+		resettvpic();
 		screenplay(NULL, NULL, 1, 0);
 		freemenulist(mlist, 1); mlist = NULL;
 		resettvpic();
@@ -213,6 +215,7 @@ void screenkeyactions(int key, int flag)
 	}
 	else if(ostrcmp(keyconf, "Media Player") == 0)
 	{
+		resettvpic();
 		screenplay(NULL, NULL, 0, 0);
 		freemenulist(mlist, 1); mlist = NULL;
 		resettvpic();
@@ -235,6 +238,7 @@ void screenkeyactions(int key, int flag)
 		{
 			resettvpic();
 			startplugin();
+			resettvpic();
 		}
 	}
 	else if(keyconf != NULL)
