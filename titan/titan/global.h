@@ -30,11 +30,11 @@ void screenshoot(int flag)
 	}
 
 	if(flag == 0 || flag == 1)
-		cmd = ostrcat("/sbin/grab -j 100 -r 960", NULL, 0, 0);
+		cmd = ostrcat("grab -j 100 -r 960", NULL, 0, 0);
 	else if(flag == 2)
-		cmd = ostrcat("/sbin/grab -v -j 100 -r 960", NULL, 0, 0);
+		cmd = ostrcat("grab -v -j 100 -r 960", NULL, 0, 0);
 	else if(flag == 3)
-		cmd = ostrcat("/sbin/grab -o -j 100 -r 960", NULL, 0, 0);
+		cmd = ostrcat("grab -o -j 100 -r 960", NULL, 0, 0);
 
 	if(cmd != NULL)
 		system(cmd);
