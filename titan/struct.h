@@ -88,7 +88,7 @@
 #define PROGNAME "titan"
 #define COPYRIGHT "NIT"
 #define CRONTRIBUT "obi, black, dvboxer, oxygen, gost"
-#define PLUGINVERSION 0
+#define PLUGINVERSION 28122
 
 #define _(x) gettext(x)
 #define MINMALLOC 4096
@@ -996,6 +996,7 @@ struct dvbdev
 	int fedmxsource;
 	char* feaktnr;
 	char* feshortname;
+	char* fehyprid;
 	struct dvb_frontend_info* feinfo;
 	struct caslot* caslot;
 	struct dvbdev *next;
