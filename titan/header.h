@@ -261,6 +261,7 @@ int audioplay(struct dvbdev* node);
 int audioclearbuffer(struct dvbdev* node);
 int audiostop(struct dvbdev* node);
 struct dvbdev* audioopen(int adapter);
+void audioclose(struct dvbdev* node, int fd);
 
 //textinput.h
 char* textinput(char* title, char* text);
