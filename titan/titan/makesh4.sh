@@ -12,6 +12,7 @@ BUILDTYPE=${11}
 BOX=${12}
 GROUP=${13}
 DISTRO=${14}
+ARCH=${15}
 
 rm "$HOME"/flashimg/.ipk-build-error
 
