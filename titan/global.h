@@ -6813,7 +6813,7 @@ char* gethypridtunerchoicesvalue(int dev)
 
 char* gethypridtunerchoicesvaluename(int dev, char* hyprid)
 {
-	char* hypridtunerchoices = NULL, *value = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *hypridlist = NULL, *start = NULL;
+	char* hypridtunerchoices = NULL, *value = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *start = NULL;
 
 	hypridtunerchoices = getconfig("hypridtunerchoices", NULL);
 
