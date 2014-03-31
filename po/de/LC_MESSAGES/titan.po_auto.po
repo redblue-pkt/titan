@@ -9683,8 +9683,8 @@ msgid "Sat: Settings matze70 neue Design Astra 19.2"
 msgstr "Matze70 Senderliste neues Design ASTRA 19.2"
 
 #: tpk_description.h:126
-msgid "Sat: uljanow Settings Sat 19.2"
-msgstr "Uljanows Senderliste ASTRA 19.2"
+msgid "Sat: uljanow Settings Sat 19.2 und 13.0"
+msgstr ""
 
 #: tpk_description.h:127
 msgid ""
@@ -10543,7 +10543,7 @@ msgid "Settings Astra 19.2 - NEU (matze70)"
 msgstr ""
 
 #: tpk_showname.h:159
-msgid "Settings Astra 19.2 (uljanow) plus transponder hotbird 13.0"
+msgid "Settings Astra 19.2 (uljanow) plus hotbird 13.0"
 msgstr ""
 
 #: tpk_showname.h:160
@@ -11062,3 +11062,6 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
+
+#~ msgid "Sat: uljanow Settings Sat 19.2"
+#~ msgstr "Uljanows Senderliste ASTRA 19.2"

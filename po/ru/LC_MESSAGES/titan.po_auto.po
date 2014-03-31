@@ -9381,7 +9381,7 @@ msgid "Sat: Settings matze70 neue Design Astra 19.2"
 msgstr ""
 
 #: tpk_description.h:126
-msgid "Sat: uljanow Settings Sat 19.2"
+msgid "Sat: uljanow Settings Sat 19.2 und 13.0"
 msgstr ""
 
 #: tpk_description.h:127
@@ -10239,7 +10239,7 @@ msgid "Settings Astra 19.2 - NEU (matze70)"
 msgstr ""
 
 #: tpk_showname.h:159
-msgid "Settings Astra 19.2 (uljanow) plus transponder hotbird 13.0"
+msgid "Settings Astra 19.2 (uljanow) plus hotbird 13.0"
 msgstr ""
 
 #: tpk_showname.h:160
