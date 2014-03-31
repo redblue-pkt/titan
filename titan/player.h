@@ -417,12 +417,26 @@ int playerseekts(struct service* servicenode, int sekunden, int flag)
 
 void playerffts(int speed)
 {
+#ifdef MIPSEL
+	audiostop(status.aktservice->audiodev);
+	videoslowmotion(status.aktservice->videodev, 0);
 	videofastforward(status.aktservice->videodev, speed);
+	videocontinue(status.aktservice->videodev);
+#else	
+	videofastforward(status.aktservice->videodev, speed);
+#endif
 }
 
 void playerslowts(int speed)
 {
+#ifdef MIPSEL
+	audiostop(status.aktservice->audiodev);
 	videoslowmotion(status.aktservice->videodev, speed);
+	videofastforward(status.aktservice->videodev, 0);
+	videocontinue(status.aktservice->videodev);
+#else		
+	videoslowmotion(status.aktservice->videodev, speed);
+#endif
 }
 
 //flag = 0 --> recordplay
@@ -437,7 +451,14 @@ void playerfrts(int speed, int flag)
 		audioclearbuffer(status.aktservice->audiodev);
 	}
 	speed *= -1;
+#ifdef MIPSEL
+	audiostop(status.aktservice->audiodev);
+	videoslowmotion(status.aktservice->videodev, 0);
 	videofastforward(status.aktservice->videodev, speed);
+	videocontinue(status.aktservice->videodev);
+#else	
+	videofastforward(status.aktservice->videodev, speed);
+#endif
 }
 	
 
