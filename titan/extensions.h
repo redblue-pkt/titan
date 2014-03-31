@@ -118,8 +118,8 @@ char* getinstallpath(char* path, char* size)
 	
 	if(size != NULL) isize = atoi(size);
 	
-	if(checkbox("ATEMIO5000") != 1 && checkbox("ATEMIO5200") != 1)
-	{
+//	if(checkbox("ATEMIO5000") != 1 && checkbox("ATEMIO5200") != 1)
+//	{
 		if(path == NULL || path[0] == '*' || ostrstr(path, "mnt") != NULL)
 		{
 			if(tpkchecksize(NULL, "/mnt/swapextensions", isize) == 0)
@@ -131,7 +131,7 @@ char* getinstallpath(char* path, char* size)
 				count++;
 			}
 		}
-	}
+//	}
 	
 	if(path == NULL || path[0] == '*' || ostrstr(path, "var") != NULL)
 	{
