@@ -8,6 +8,10 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//tunerconfig.h
+int screentunerreceptiondvbt(struct dvbdev* tuner);
+int screentunerreceptionhyprid(struct dvbdev* tuner);
+
 // mipselport.h
 int waitvsync();
 void blit();
