@@ -1524,8 +1524,10 @@ void cacheck(struct stimerthread* self, struct dvbdev* dvbnode)
 	int ret = 0, len = MINMALLOC;
 	ca_slot_info_t info;
 	struct caslot* canode = NULL;
-	unsigned char* buf = NULL;//, *tmpbuf = NULL;
-
+	unsigned char* buf = NULL;
+#ifdef SH4
+	unsigned char* tmpbuf = NULL;
+#endif
 	if(dvbnode == NULL) return;
 	canode = dvbnode->caslot;
 
