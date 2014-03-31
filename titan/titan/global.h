@@ -6750,7 +6750,6 @@ char* gethypridtunerchoices(int dev)
 	free(tmpstr2), tmpstr2 = NULL;
 	free(tmpstr3), tmpstr3 = NULL;
 
-	printf("gethypridtunerchoices value: %s\n",value);
 	return value;
 }
 
