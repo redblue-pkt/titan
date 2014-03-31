@@ -3389,7 +3389,7 @@ printf("webadjust fmt: %d\n",fmt);
 	max = 10;
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("Volumebar Timeout"), &maxlen, &pos);
-	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"volbartimeout\" border=\"0\"> <option value=\"", &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"volbartimeout\" border=\"0\">", &maxlen, &pos);
 	for(i = 1; i <= max; i++)
 	{
 		ostrcatbig(&buf, "<option value=\"", &maxlen, &pos);
@@ -3407,7 +3407,7 @@ printf("webadjust fmt: %d\n",fmt);
 	max = 10;
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("Infobar Timeout"), &maxlen, &pos);
-	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"infobartimeout\" border=\"0\"> <option value=\"", &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"infobartimeout\" border=\"0\">", &maxlen, &pos);
 	for(i = 1; i <= max; i++)
 	{
 		ostrcatbig(&buf, "<option value=\"", &maxlen, &pos);
@@ -3425,7 +3425,7 @@ printf("webadjust fmt: %d\n",fmt);
 	max = 5;
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("Infobar Sleep"), &maxlen, &pos);
-	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"infobarsleep\" border=\"0\"> <option value=\"", &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"infobarsleep\" border=\"0\">", &maxlen, &pos);
 	for(i = 0; i <= max; i++)
 	{
 		ostrcatbig(&buf, "<option value=\"", &maxlen, &pos);
@@ -3445,7 +3445,7 @@ printf("webadjust fmt: %d\n",fmt);
 
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("Spinnerspeed"), &maxlen, &pos);
-	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"spinnerspeed\" border=\"0\"> <option value=\"", &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"spinnerspeed\" border=\"0\">", &maxlen, &pos);
 
 	count = 0;
 	struct splitstr* ret1 = NULL;
@@ -3476,7 +3476,7 @@ printf("webadjust fmt: %d\n",fmt);
 
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("Spinnertime"), &maxlen, &pos);
-	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"spinnertime\" border=\"0\"> <option value=\"", &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"spinnertime\" border=\"0\">", &maxlen, &pos);
 
 	count = 0;
 	ret1 = strsplit(tmpstr, "\n", &count);
@@ -3506,7 +3506,7 @@ printf("webadjust fmt: %d\n",fmt);
 
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("Hangtime"), &maxlen, &pos);
-	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"hangtime\" border=\"0\"> <option value=\"", &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"hangtime\" border=\"0\">", &maxlen, &pos);
 
 	count = 0;
 	ret1 = strsplit(tmpstr, "\n", &count);
@@ -3813,7 +3813,7 @@ printf("webadjust fmt: %d\n",fmt);
 
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("Record Forerun (min)"), &maxlen, &pos);
-	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"recforerun\" border=\"0\"> <option value=\"", &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"recforerun\" border=\"0\">", &maxlen, &pos);
 
 	count = 0;
 	ret1 = strsplit(tmpstr, "\n", &count);
@@ -3843,7 +3843,7 @@ printf("webadjust fmt: %d\n",fmt);
 
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("Record Overrun (min)"), &maxlen, &pos);
-	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"recoverrun\" border=\"0\"> <option value=\"", &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"recoverrun\" border=\"0\">", &maxlen, &pos);
 
 	count = 0;
 	ret1 = strsplit(tmpstr, "\n", &count);
@@ -3873,7 +3873,7 @@ printf("webadjust fmt: %d\n",fmt);
 
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("Skip 1/3"), &maxlen, &pos);
-	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"skip13\" border=\"0\"> <option value=\"", &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"skip13\" border=\"0\">", &maxlen, &pos);
 
 	count = 0;
 	ret1 = strsplit(tmpstr, "\n", &count);
@@ -3903,7 +3903,7 @@ printf("webadjust fmt: %d\n",fmt);
 
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("Skip 4/6"), &maxlen, &pos);
-	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"skip46\" border=\"0\"> <option value=\"", &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"skip46\" border=\"0\">", &maxlen, &pos);
 
 	count = 0;
 	ret1 = strsplit(tmpstr, "\n", &count);
@@ -3933,7 +3933,7 @@ printf("webadjust fmt: %d\n",fmt);
 
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("Skip 7/9"), &maxlen, &pos);
-	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"skip79\" border=\"0\"> <option value=\"", &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"skip79\" border=\"0\">", &maxlen, &pos);
 
 	count = 0;
 	ret1 = strsplit(tmpstr, "\n", &count);
@@ -4401,7 +4401,7 @@ printf("webadjust fmt: %d\n",fmt);
 	max = 10;
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("Time to wait after seek for fill buffer"), &maxlen, &pos);
-	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"playerbufferseektime\" border=\"0\"> <option value=\"", &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"playerbufferseektime\" border=\"0\">", &maxlen, &pos);
 	for(i = 1; i <= max; i++)
 	{
 		ostrcatbig(&buf, "<option value=\"", &maxlen, &pos);
