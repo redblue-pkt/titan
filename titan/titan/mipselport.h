@@ -638,6 +638,7 @@ int readjpg(const char* filename, unsigned long* width, unsigned long* height, u
 #endif
 	return -1;
 */
+return -1;
 }
 
 //flag 0: blit from accelfb to skinfb
