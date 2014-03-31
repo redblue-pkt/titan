@@ -1051,6 +1051,9 @@ firstwizzardstep1:
 
 	system(getconfig("skriptaftertv", NULL));
 
+	// work
+	resettvpic();
+	
 	char* cmd = NULL;
 #ifdef SH4
 	cmd = ostrcat("/media/hdd/movie/titankey.sh4", NULL, 0, 0);
