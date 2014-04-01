@@ -9374,15 +9374,15 @@ msgid "Sat: Bulldog Settings 3x Sat 28.03.2014"
 msgstr ""
 
 #: tpk_description.h:124
-msgid "Sat: marcel Settings Sat 19.2 und 13.0"
-msgstr ""
-
-#: tpk_description.h:125
 msgid "Sat: matze70 Settings Astra 19.2"
 msgstr ""
 
-#: tpk_description.h:126
+#: tpk_description.h:125
 msgid "Sat: Settings matze70 neue Design Astra 19.2"
+msgstr ""
+
+#: tpk_description.h:126
+msgid "Sat: skysurfer Settings Sat 19.2 und 13.0"
 msgstr ""
 
 #: tpk_description.h:127
@@ -10236,15 +10236,15 @@ msgid "Settings 19.2 Astra"
 msgstr "Réglages"
 
 #: tpk_showname.h:157
-msgid "Settings Astra 19.2 (marcel) plus hotbird 13.0"
-msgstr ""
-
-#: tpk_showname.h:158
 msgid "Settings Astra 19.2 (matze70)"
 msgstr ""
 
-#: tpk_showname.h:159
+#: tpk_showname.h:158
 msgid "Settings Astra 19.2 - NEU (matze70)"
+msgstr ""
+
+#: tpk_showname.h:159
+msgid "Settings Astra 19.2 (skysurfer) plus hotbird 13.0"
 msgstr ""
 
 #: tpk_showname.h:160
