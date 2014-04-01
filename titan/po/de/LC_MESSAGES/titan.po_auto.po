@@ -11037,7 +11037,7 @@ msgstr "Originalgröße"
 
 #: videomode.h:18
 msgid "non"
-msgstr ""
+msgstr "Originalgröße"
 
 #: videomode.h:25 videomode.h:54
 msgid "Resolution Settings"
