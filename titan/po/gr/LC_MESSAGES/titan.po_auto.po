@@ -120,7 +120,7 @@ msgstr ""
 #: tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327
 #: tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:633 tunerconfig.h:642
 #: tunerconfig.h:904 unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75
-#: videomode.h:59 videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86
+#: videomode.h:60 videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86
 #: vidstream.h:98 vidstream.h:167 xupnpd.h:60 xupnpd.h:71 xupnpd.h:73
 #: xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:198 zapback.c:79
 #: zdf.h:29
@@ -223,7 +223,7 @@ msgstr "OK"
 #: tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327
 #: tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:633 tunerconfig.h:642
 #: tunerconfig.h:904 unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75
-#: videomode.h:59 videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86
+#: videomode.h:60 videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86
 #: vidstream.h:98 vidstream.h:167 xupnpd.h:60 xupnpd.h:71 xupnpd.h:73
 #: xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:198 zapback.c:79
 #: zdf.h:29
@@ -607,7 +607,7 @@ msgstr ""
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922 TopfieldVFD.c:68
 #: TopfieldVFD.c:72 tpk.h:3185 tpk.new.h:3167 tunerconfig.h:633
 #: tunerconfig.h:642 tunerconfig.h:904 unlock.h:20 unlock.h:66 unlock.h:71
-#: unlock.h:75 videomode.h:59 videoweed.h:35 videoweed.h:80 vidstream.h:45
+#: unlock.h:75 videomode.h:60 videoweed.h:35 videoweed.h:80 vidstream.h:45
 #: vidstream.h:86 vidstream.h:98 vidstream.h:167 xupnpd.h:60 xupnpd.h:71
 #: xupnpd.h:73 xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:198
 #: zapback.c:79 zdf.h:29
@@ -722,7 +722,7 @@ msgstr ""
 msgid "on"
 msgstr ""
 
-#: avsettings.h:247 videomode.h:59
+#: avsettings.h:247 videomode.h:60
 msgid "Is this Videomode ok ?"
 msgstr ""
 
@@ -2349,7 +2349,7 @@ msgid "Child Protection"
 msgstr "Γονικός έλεγχος"
 
 #: keyactions.h:30 settings_bluebutton.h:21 settings_pluginbutton.h:22
-#: settings_redbutton.h:22 videomode.h:23
+#: settings_redbutton.h:22 videomode.h:24
 msgid "Subchannel"
 msgstr "Κανάλι"
 
@@ -5564,7 +5564,7 @@ msgstr ""
 msgid "20:15"
 msgstr ""
 
-#: skin_default_skin.xml.h:38 videomode.h:26 videomode.h:88
+#: skin_default_skin.xml.h:38 videomode.h:27 videomode.h:89
 msgid "3D Mode"
 msgstr "3D Mode"
 
@@ -10719,15 +10719,19 @@ msgstr ""
 msgid "nonlinear"
 msgstr ""
 
-#: videomode.h:24 videomode.h:53
+#: videomode.h:18
+msgid "non"
+msgstr ""
+
+#: videomode.h:25 videomode.h:54
 msgid "Resolution Settings"
 msgstr "Ρυθμίσεις Ανάλυσης Video"
 
-#: videomode.h:25 videomode.h:75
+#: videomode.h:26 videomode.h:76
 msgid "Aspect Settings"
 msgstr "Ρυθμίσεις DiSEqC"
 
-#: videomode.h:31 videomode.h:33
+#: videomode.h:32 videomode.h:34
 msgid "Videomode"
 msgstr "Video"
 
