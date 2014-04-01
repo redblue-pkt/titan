@@ -6213,8 +6213,8 @@ msgid "Download"
 msgstr ""
 
 #: skin_default_skin.xml.h:194
-msgid "Dualboot Menu TitanNit / E2"
-msgstr "Dualboot Menü TitanNit / E2"
+msgid "Dualboot Menu TitanNit / Enigma2"
+msgstr ""
 
 #: skin_default_skin.xml.h:195
 msgid "dummy"
@@ -11075,3 +11075,6 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
+
+#~ msgid "Dualboot Menu TitanNit / E2"
+#~ msgstr "Dualboot Menü TitanNit / E2"
