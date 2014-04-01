@@ -11021,19 +11021,19 @@ msgstr "Stern blinkend"
 
 #: videomode.h:14
 msgid "letterbox"
-msgstr ""
+msgstr "Letterbox"
 
 #: videomode.h:15
 msgid "panscan"
-msgstr ""
+msgstr "Zoom mit Randbeschnitt"
 
 #: videomode.h:16
 msgid "bestfit"
-msgstr ""
+msgstr "Auf Bildschirmgröße verbreitern"
 
 #: videomode.h:17
 msgid "nonlinear"
-msgstr ""
+msgstr "Originalgröße"
 
 #: videomode.h:24 videomode.h:53
 msgid "Resolution Settings"
