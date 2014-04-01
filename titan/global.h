@@ -1804,6 +1804,7 @@ void setskinnodeslocked(int flag)
 			if(checkbox("UFS910") == 1)
 			{
 				if(ostrcmp("unlock", child->name) == 0) child->locked = 1;
+				if(ostrcmp("settings_mediabutton", child->name) == 0) child->locked = 1;
 			}
 
 			// workaround, after reboot black screen
