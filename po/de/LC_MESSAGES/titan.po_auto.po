@@ -3893,7 +3893,7 @@ msgid "Start on boot"
 msgstr "automatischer Start"
 
 #: plugins_dlna_skin.xml.h:14 plugins_tsSchnitt_skin.xml.h:9
-#: plugins_xupnpd_skin.xml.h:3 skin_default_skin.xml.h:616
+#: plugins_xupnpd_skin.xml.h:3 skin_default_skin.xml.h:617
 #: skins_dlna_skin.xml.h:14 skins_tsSchnitt_skin.xml.h:9
 #: skins_xupnpd_skin.xml.h:3
 msgid "STOP"
@@ -6213,7 +6213,7 @@ msgid "Download"
 msgstr ""
 
 #: skin_default_skin.xml.h:194
-msgid "Dualboot Menu TitanNit / Enigma2"
+msgid "Dualboot Menu TitanNit / E2"
 msgstr ""
 
 #: skin_default_skin.xml.h:195
@@ -6983,12 +6983,12 @@ msgid "Menulist"
 msgstr "Menüliste"
 
 #: skin_default_skin.xml.h:382
-msgid "MENUPROTECT"
-msgstr "Menüschutz"
-
-#: skin_default_skin.xml.h:383
 msgid "Menu Protect"
 msgstr "Menü schützen"
+
+#: skin_default_skin.xml.h:383
+msgid "MENUPROTECT"
+msgstr "Menüschutz"
 
 #: skin_default_skin.xml.h:384
 msgid "MHW2 EPG"
@@ -7710,7 +7710,7 @@ msgstr "Frequenzratenschritt"
 msgid "Step signalrate"
 msgstr "Signalratenschritt"
 
-#: skin_default_skin.xml.h:617
+#: skin_default_skin.xml.h:616
 msgid "(Stop)"
 msgstr "(Stopp)"
 
@@ -11075,6 +11075,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid "Dualboot Menu TitanNit / E2"
-#~ msgstr "Dualboot Menü TitanNit / E2"
