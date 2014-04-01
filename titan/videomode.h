@@ -11,13 +11,19 @@ void screenvideomode(int flag)
 	char* tmpstr1 = NULL;
 	struct menulist* mlist = NULL, *mbox = NULL;
 
+	tmpstr = ostrcat(tmpstr, _("letterbox"), 1, 0);
+	tmpstr = ostrcat(tmpstr, _("panscan"), 1, 0);
+	tmpstr = ostrcat(tmpstr, _("bestfit"), 1, 0);
+	tmpstr = ostrcat(tmpstr, _("nonlinear"), 1, 0);
+	free(tmpstr), tmpstr = NULL;
+	
 	tmpstr = getpolicy();
 	tmpstr1 = ostrcat(tmpstr1, getpolicychoices(), 1, 1);
 
-	if(flag == 0) addmenulist(&mlist, _("Subchannel"), NULL, NULL, 0, 0);
-	if(flag == 0 || flag == 1) addmenulist(&mlist, _("Resolution Settings"), NULL, NULL, 0, 0);
-	addmenulist(&mlist, _("Aspect Settings"), NULL, NULL, 0, 0);
-	addmenulist(&mlist, _("3D Mode"), NULL, NULL, 0, 0);
+	if(flag == 0) addmenulist(&mlist, "Subchannel", _("Subchannel"), NULL, 0, 0);
+	if(flag == 0 || flag == 1) addmenulist(&mlist, "Resolution Settings", _("Resolution Settings"), NULL, 0, 0);
+	addmenulist(&mlist, "Aspect Settings", _("Aspect Settings"), NULL, 0, 0);
+	addmenulist(&mlist, "3D Mode", _("3D Mode"), NULL, 0, 0);
 	addmenulist(&mlist, NULL, NULL, NULL, 1, 0);
 	addmenulistall(&mlist, tmpstr1, NULL, 0, tmpstr);
 
@@ -31,13 +37,13 @@ void screenvideomode(int flag)
 
 	if(mbox != NULL)
 	{
-		if(ostrcmp(mbox->name, _("Subchannel")) == 0)
+		if(ostrcmp(mbox->text, _("Subchannel")) == 0)
 		{
 			freemenulist(mlist, 1); mlist = NULL;
 			screenlinkedchannel();
 			return;
 		}
-		else if(ostrcmp(mbox->name, _("Resolution Settings")) == 0)
+		else if(ostrcmp(mbox->text, _("Resolution Settings")) == 0)
 		{
 			skinname = "resolutionsettings";
 			freemenulist(mlist, 1); mlist = NULL;
@@ -59,7 +65,7 @@ void screenvideomode(int flag)
 			}
 			free(tmpstr); tmpstr = NULL;
 		}
-		else if(ostrcmp(mbox->name, _("Aspect Settings")) == 0)
+		else if(ostrcmp(mbox->text, _("Aspect Settings")) == 0)
 		{
 			skinname = "aspectsettings";
 			freemenulist(mlist, 1); mlist = NULL;
@@ -72,7 +78,7 @@ void screenvideomode(int flag)
 			if(mbox != NULL)
 				setaspect(mbox->name);
 		}
-		else if(ostrcmp(mbox->name, _("3D Mode")) == 0)
+		else if(ostrcmp(mbox->text, _("3D Mode")) == 0)
 		{
 			skinname = "3dsettings";
 			freemenulist(mlist, 1); mlist = NULL;
