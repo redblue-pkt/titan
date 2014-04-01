@@ -37,13 +37,13 @@ void screenvideomode(int flag)
 
 	if(mbox != NULL)
 	{
-		if(ostrcmp(mbox->text, _("Subchannel")) == 0)
+		if(ostrcmp(mbox->name, "Subchannel") == 0)
 		{
 			freemenulist(mlist, 1); mlist = NULL;
 			screenlinkedchannel();
 			return;
 		}
-		else if(ostrcmp(mbox->text, _("Resolution Settings")) == 0)
+		else if(ostrcmp(mbox->name, "Resolution Settings") == 0)
 		{
 			skinname = "resolutionsettings";
 			freemenulist(mlist, 1); mlist = NULL;
@@ -65,7 +65,7 @@ void screenvideomode(int flag)
 			}
 			free(tmpstr); tmpstr = NULL;
 		}
-		else if(ostrcmp(mbox->text, _("Aspect Settings")) == 0)
+		else if(ostrcmp(mbox->name, "Aspect Settings") == 0)
 		{
 			skinname = "aspectsettings";
 			freemenulist(mlist, 1); mlist = NULL;
@@ -78,7 +78,7 @@ void screenvideomode(int flag)
 			if(mbox != NULL)
 				setaspect(mbox->name);
 		}
-		else if(ostrcmp(mbox->text, _("3D Mode")) == 0)
+		else if(ostrcmp(mbox->name, "3D Mode") == 0)
 		{
 			skinname = "3dsettings";
 			freemenulist(mlist, 1); mlist = NULL;
