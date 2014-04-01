@@ -120,7 +120,7 @@ msgstr "Systeem informatie"
 #: tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327
 #: tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:633 tunerconfig.h:642
 #: tunerconfig.h:904 unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75
-#: videomode.h:53 videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86
+#: videomode.h:59 videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86
 #: vidstream.h:98 vidstream.h:167 xupnpd.h:60 xupnpd.h:71 xupnpd.h:73
 #: xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:198 zapback.c:79
 #: zdf.h:29
@@ -223,7 +223,7 @@ msgstr "Ok"
 #: tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327
 #: tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:633 tunerconfig.h:642
 #: tunerconfig.h:904 unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75
-#: videomode.h:53 videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86
+#: videomode.h:59 videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86
 #: vidstream.h:98 vidstream.h:167 xupnpd.h:60 xupnpd.h:71 xupnpd.h:73
 #: xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:198 zapback.c:79
 #: zdf.h:29
@@ -607,7 +607,7 @@ msgstr "Ja / VZAP oneindig"
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922 TopfieldVFD.c:68
 #: TopfieldVFD.c:72 tpk.h:3185 tpk.new.h:3167 tunerconfig.h:633
 #: tunerconfig.h:642 tunerconfig.h:904 unlock.h:20 unlock.h:66 unlock.h:71
-#: unlock.h:75 videomode.h:53 videoweed.h:35 videoweed.h:80 vidstream.h:45
+#: unlock.h:75 videomode.h:59 videoweed.h:35 videoweed.h:80 vidstream.h:45
 #: vidstream.h:86 vidstream.h:98 vidstream.h:167 xupnpd.h:60 xupnpd.h:71
 #: xupnpd.h:73 xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:198
 #: zapback.c:79 zdf.h:29
@@ -722,7 +722,7 @@ msgstr ""
 msgid "on"
 msgstr "Aan"
 
-#: avsettings.h:247 videomode.h:53
+#: avsettings.h:247 videomode.h:59
 msgid "Is this Videomode ok ?"
 msgstr "Is deze beeld instelling ok?"
 
@@ -2395,7 +2395,7 @@ msgid "Child Protection"
 msgstr "Kinderslot"
 
 #: keyactions.h:30 settings_bluebutton.h:21 settings_pluginbutton.h:22
-#: settings_redbutton.h:22 videomode.h:17 videomode.h:34
+#: settings_redbutton.h:22 videomode.h:23
 msgid "Subchannel"
 msgstr "Subkanaal"
 
@@ -3853,7 +3853,7 @@ msgid "Start on boot"
 msgstr "Automatische opstarten"
 
 #: plugins_dlna_skin.xml.h:14 plugins_tsSchnitt_skin.xml.h:9
-#: plugins_xupnpd_skin.xml.h:3 skin_default_skin.xml.h:617
+#: plugins_xupnpd_skin.xml.h:3 skin_default_skin.xml.h:616
 #: skins_dlna_skin.xml.h:14 skins_tsSchnitt_skin.xml.h:9
 #: skins_xupnpd_skin.xml.h:3
 msgid "STOP"
@@ -5190,20 +5190,19 @@ msgstr ""
 "Wilt u het wisselbestand echt wissen? (instellingen worden behouden)\n"
 "De ontvanger zal herstarten en wissen wordt gestart!"
 
-#: restoredefault.h:63 restoredefault.h:70 restoredefault.h:74
-#: skin_default_skin.xml.h:515
+#: restoredefault.h:65 restoredefault.h:77 skin_default_skin.xml.h:515
 msgid "Restore default settings"
 msgstr "Fabrieksinstelling terugzetten"
 
-#: restoredefault.h:66 restoredefault.h:78
+#: restoredefault.h:66
 msgid "Format MNT with Backup/Restore"
 msgstr "Formatteer MNT tijdens Backup/Restore"
 
-#: restoredefault.h:67 restoredefault.h:82
+#: restoredefault.h:67
 msgid "Format MNT (all)"
 msgstr "Formatteer MNT (alles)"
 
-#: restoredefault.h:70
+#: restoredefault.h:77
 msgid "Choose your Restore Mode from the following list."
 msgstr ""
 
@@ -5665,7 +5664,7 @@ msgstr ""
 msgid "20:15"
 msgstr ""
 
-#: skin_default_skin.xml.h:38 videomode.h:20 videomode.h:75 videomode.h:82
+#: skin_default_skin.xml.h:38 videomode.h:26 videomode.h:88
 msgid "3D Mode"
 msgstr "3D Modus"
 
@@ -6171,7 +6170,7 @@ msgid "Download"
 msgstr ""
 
 #: skin_default_skin.xml.h:194
-msgid "Dualboot Menu TitanNit / E2"
+msgid "Dualboot Menu TitanNit / Enigma2"
 msgstr ""
 
 #: skin_default_skin.xml.h:195
@@ -6893,11 +6892,11 @@ msgid "Menulist"
 msgstr "Menulijst"
 
 #: skin_default_skin.xml.h:382
-msgid "Menu Protect"
+msgid "MENUPROTECT"
 msgstr "Beveilig menu"
 
 #: skin_default_skin.xml.h:383
-msgid "MENUPROTECT"
+msgid "Menu Protect"
 msgstr "Beveilig menu"
 
 #: skin_default_skin.xml.h:384
@@ -7616,7 +7615,7 @@ msgstr "Frequentie stap"
 msgid "Step signalrate"
 msgstr "Signalrate stap"
 
-#: skin_default_skin.xml.h:616
+#: skin_default_skin.xml.h:617
 msgid "(Stop)"
 msgstr ""
 
@@ -10892,15 +10891,31 @@ msgstr "Ster"
 msgid "blink star"
 msgstr "Knipperende ster"
 
-#: videomode.h:18 videomode.h:40 videomode.h:47
+#: videomode.h:14
+msgid "letterbox"
+msgstr ""
+
+#: videomode.h:15
+msgid "panscan"
+msgstr ""
+
+#: videomode.h:16
+msgid "bestfit"
+msgstr ""
+
+#: videomode.h:17
+msgid "nonlinear"
+msgstr ""
+
+#: videomode.h:24 videomode.h:53
 msgid "Resolution Settings"
 msgstr "Resolutie instellingen"
 
-#: videomode.h:19 videomode.h:62 videomode.h:69
+#: videomode.h:25 videomode.h:75
 msgid "Aspect Settings"
 msgstr "Beeldverhouding instellen"
 
-#: videomode.h:25 videomode.h:27
+#: videomode.h:31 videomode.h:33
 msgid "Videomode"
 msgstr ""
 
