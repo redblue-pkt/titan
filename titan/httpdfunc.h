@@ -3869,7 +3869,7 @@ printf("webadjust fmt: %d\n",fmt);
 	free(tmpstr1), tmpstr1 = NULL;
 
 ///////////////////
-	tmpstr = ostrcat("0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n15\n20\n25\n30\n35\n40\n45\n50\n55\n60", NULL, 0, 0);
+	tmpstr = ostrcat("15\n20\n30\n45\n60\n90\n120\n180\n300\n600\n900\n1200", NULL, 0, 0);
 
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("Skip 1/3"), &maxlen, &pos);
@@ -3899,7 +3899,7 @@ printf("webadjust fmt: %d\n",fmt);
 	free(tmpstr1), tmpstr1 = NULL;
 
 ///////////////////
-	tmpstr = ostrcat("0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n15\n20\n25\n30\n35\n40\n45\n50\n55\n60", NULL, 0, 0);
+	tmpstr = ostrcat("15\n20\n30\n45\n60\n90\n120\n180\n300\n600\n900\n1200", NULL, 0, 0);
 
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("Skip 4/6"), &maxlen, &pos);
@@ -3929,7 +3929,7 @@ printf("webadjust fmt: %d\n",fmt);
 	free(tmpstr1), tmpstr1 = NULL;
 	
 ///////////////////
-	tmpstr = ostrcat("0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n15\n20\n25\n30\n35\n40\n45\n50\n55\n60", NULL, 0, 0);
+	tmpstr = ostrcat("15\n20\n30\n45\n60\n90\n120\n180\n300\n600\n900\n1200", NULL, 0, 0);
 
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("Skip 7/9"), &maxlen, &pos);
