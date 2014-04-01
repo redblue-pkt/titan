@@ -89,10 +89,10 @@ void screenvideomode(int flag)
 			free(tmpstr); tmpstr = NULL;
 			free(tmpstr1); tmpstr1 = NULL;
 			if(mbox != NULL)
-      {
-        blitfb(0);
+			{
+				blitfb(0);
 				setmode3d(mbox->name);
-      }
+			}
 		}
 		else
 		{
