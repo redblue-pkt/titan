@@ -71,8 +71,8 @@ msgstr ""
 #: mc_videoplayer.h:329 mc_videoplayer.h:746 mc_videoplayer.h:781
 #: mc_videoplayer.h:885 mc_videoplayer.h:901 mc_wetterinfo.h:38
 #: mc_wetterinfo.h:41 mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477
-#: mediadb.h:2454 mediadbsettings.h:95 menu.h:153 menu.h:208 menu.h:945
-#: menu.h:947 movreel.h:30 movreel.h:79 movreel.h:91 movreel.h:103
+#: mediadb.h:2454 mediadbsettings.h:95 menu.h:153 menu.h:208 menu.h:946
+#: menu.h:948 movreel.h:30 movreel.h:79 movreel.h:91 movreel.h:103
 #: movreel.h:154 movreel.h:202 movshare.h:35 movshare.h:149 myvideo.h:50
 #: networkbrowser.h:944 networkbrowser.h:1005 networkbrowser.h:1009
 #: networkbrowser.h:1011 networkbrowser.h:1021 networkbrowser.h:1025
@@ -165,8 +165,8 @@ msgstr "Ok"
 #: mc_videoplayer.h:329 mc_videoplayer.h:746 mc_videoplayer.h:781
 #: mc_videoplayer.h:885 mc_videoplayer.h:901 mc_wetterinfo.h:38
 #: mc_wetterinfo.h:41 mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477
-#: mediadb.h:2454 mediadbsettings.h:95 menu.h:153 menu.h:208 menu.h:945
-#: menu.h:947 movreel.h:30 movreel.h:79 movreel.h:91 movreel.h:103
+#: mediadb.h:2454 mediadbsettings.h:95 menu.h:153 menu.h:208 menu.h:946
+#: menu.h:948 movreel.h:30 movreel.h:79 movreel.h:91 movreel.h:103
 #: movreel.h:154 movreel.h:202 movshare.h:35 movshare.h:149 myvideo.h:50
 #: networkbrowser.h:944 networkbrowser.h:1005 networkbrowser.h:1009
 #: networkbrowser.h:1011 networkbrowser.h:1021 networkbrowser.h:1025
@@ -678,11 +678,11 @@ msgstr "Autotimer erfolgreich gestartet"
 msgid "ERROR... AutoTimer not started"
 msgstr "FEHLER: Autotimer konnte nicht gestartet werden!"
 
-#: autotimer.c:603 menu.h:945 menu.h:947 skin_default_skin.xml.h:541
+#: autotimer.c:603 menu.h:946 menu.h:948 skin_default_skin.xml.h:541
 msgid "Save Settings"
 msgstr "Einstellungen speichern"
 
-#: autotimer.c:603 menu.h:947
+#: autotimer.c:603 menu.h:948
 msgid "Settings succesfull saved"
 msgstr "Einstellungen wurden erfolgreich gespeichert"
 
@@ -2923,7 +2923,7 @@ msgstr ""
 "Kein MediaDB Verzeichnis gefunden!\n"
 "-OK- um es zu erstellen"
 
-#: menu.h:945
+#: menu.h:946
 msgid "Error in Save Settings"
 msgstr "Fehler beim Speichern der Einstellungen"
 
