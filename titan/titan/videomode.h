@@ -15,6 +15,7 @@ void screenvideomode(int flag)
 	tmpstr = ostrcat(tmpstr, _("panscan"), 1, 0);
 	tmpstr = ostrcat(tmpstr, _("bestfit"), 1, 0);
 	tmpstr = ostrcat(tmpstr, _("nonlinear"), 1, 0);
+	tmpstr = ostrcat(tmpstr, _("non"), 1, 0);
 	free(tmpstr), tmpstr = NULL;
 	
 	tmpstr = getpolicy();
