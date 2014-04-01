@@ -3795,7 +3795,7 @@ msgid "Start on boot"
 msgstr ""
 
 #: plugins_dlna_skin.xml.h:14 plugins_tsSchnitt_skin.xml.h:9
-#: plugins_xupnpd_skin.xml.h:3 skin_default_skin.xml.h:616
+#: plugins_xupnpd_skin.xml.h:3 skin_default_skin.xml.h:617
 #: skins_dlna_skin.xml.h:14 skins_tsSchnitt_skin.xml.h:9
 #: skins_xupnpd_skin.xml.h:3
 msgid "STOP"
@@ -6770,11 +6770,11 @@ msgid "Menulist"
 msgstr "Список меню"
 
 #: skin_default_skin.xml.h:382
-msgid "MENUPROTECT"
+msgid "Menu Protect"
 msgstr "Защита меню"
 
 #: skin_default_skin.xml.h:383
-msgid "Menu Protect"
+msgid "MENUPROTECT"
 msgstr "Защита меню"
 
 #: skin_default_skin.xml.h:384
@@ -7493,7 +7493,7 @@ msgstr "Тест частоты"
 msgid "Step signalrate"
 msgstr ""
 
-#: skin_default_skin.xml.h:617
+#: skin_default_skin.xml.h:616
 msgid "(Stop)"
 msgstr ""
 
