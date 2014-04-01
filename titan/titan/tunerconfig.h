@@ -649,7 +649,7 @@ int screentunerreceptionhyprid(struct dvbdev* tuner)
 			else if(listbox->select->ret != NULL && ostrcmp(listbox->select->ret, "2") == 0)
 				ret = screentunerreceptiondvbc(tuner);
 */
-			drawscreen(tunerreceptionhyprid, 0, 0);
+			//drawscreen(tunerreceptionhyprid, 0, 0);
 			
 			break;
 		}
