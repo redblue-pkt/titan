@@ -252,7 +252,11 @@ void screenskinselect(void)
 		free(list[i].name);
 	}
 	free(skinpaths);
-	if(skinchanged) oshutdown(3, 1);
+	if(skinchanged)
+	{
+		resettvpic();
+		oshutdown(3, 1);
+	}
 }
 
 #endif
