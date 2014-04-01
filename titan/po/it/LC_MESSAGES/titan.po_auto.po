@@ -50,7 +50,7 @@ msgstr ""
 #: filemanager.h:321 filemanager.h:331 filemanager.h:355 filenuke.h:37
 #: filenuke.h:84 filenuke.h:96 filenuke.h:108 filenuke.h:157 flashx.h:26
 #: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:6463 gmediarender.h:115 harddisk.h:350 harddisk.h:355
+#: global.h:6464 gmediarender.h:115 harddisk.h:350 harddisk.h:355
 #: harddisk.h:382 harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641
 #: harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733
 #: harddisk.h:793 harddisk.h:811 harddisk.h:814 harddisk.h:1046 hbbtv.h:362
@@ -144,7 +144,7 @@ msgstr "Ok"
 #: filemanager.h:321 filemanager.h:331 filemanager.h:355 filenuke.h:37
 #: filenuke.h:84 filenuke.h:96 filenuke.h:108 filenuke.h:157 flashx.h:26
 #: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:6463 gmediarender.h:115 harddisk.h:350 harddisk.h:355
+#: global.h:6464 gmediarender.h:115 harddisk.h:350 harddisk.h:355
 #: harddisk.h:382 harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641
 #: harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733
 #: harddisk.h:793 harddisk.h:811 harddisk.h:814 harddisk.h:1046 hbbtv.h:362
@@ -552,7 +552,7 @@ msgstr "yes / vzap endless"
 #: filemanager.h:208 filemanager.h:281 filemanager.h:291 filemanager.h:331
 #: filemanager.h:355 filenuke.h:37 filenuke.h:84 filenuke.h:96 filenuke.h:108
 #: filenuke.h:157 flashx.h:26 flashx.h:84 flashx.h:138 flashx.h:195
-#: flashx.h:233 flashx.h:270 global.h:6463 gmediarender.h:115 harddisk.h:633
+#: flashx.h:233 flashx.h:270 global.h:6464 gmediarender.h:115 harddisk.h:633
 #: harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731
 #: harddisk.h:733 harddisk.h:793 harddisk.h:811 harddisk.h:814 hbbtv.h:362
 #: hello.c:36 httpdfunc.h:1098 hwtest.h:88 hwtest.h:93 hwtest.h:98
@@ -1573,63 +1573,63 @@ msgstr "Can't show this file!"
 msgid "Registration needed, please contact Atemio !"
 msgstr "Registration needed, please contact Atemio !"
 
-#: global.h:6463 keyactions.h:305
+#: global.h:6464 keyactions.h:305
 msgid "ERROR cant read res"
 msgstr "ERROR cant read res"
 
-#: global.h:6688 rectimer.h:1059 skin_default_skin.xml.h:394
+#: global.h:6689 rectimer.h:1059 skin_default_skin.xml.h:394
 msgid "Monday"
 msgstr "Lunedì"
 
-#: global.h:6689 rectimer.h:1060 skin_default_skin.xml.h:678
+#: global.h:6690 rectimer.h:1060 skin_default_skin.xml.h:678
 msgid "Tuesday"
 msgstr "Martedì"
 
-#: global.h:6690 rectimer.h:1061 skin_default_skin.xml.h:731
+#: global.h:6691 rectimer.h:1061 skin_default_skin.xml.h:731
 msgid "Wednesday"
 msgstr "Mercoledì"
 
-#: global.h:6691 rectimer.h:1062 skin_default_skin.xml.h:649
+#: global.h:6692 rectimer.h:1062 skin_default_skin.xml.h:649
 msgid "Thursday"
 msgstr "Giovedì"
 
-#: global.h:6692 rectimer.h:1063 skin_default_skin.xml.h:244
+#: global.h:6693 rectimer.h:1063 skin_default_skin.xml.h:244
 msgid "Friday"
 msgstr "Venerdì"
 
-#: global.h:6693 rectimer.h:1064 skin_default_skin.xml.h:539
+#: global.h:6694 rectimer.h:1064 skin_default_skin.xml.h:539
 msgid "Saturday"
 msgstr "Sabato"
 
-#: global.h:6694 rectimer.h:1065 skin_default_skin.xml.h:625
+#: global.h:6695 rectimer.h:1065 skin_default_skin.xml.h:625
 msgid "Sunday"
 msgstr "Domenica"
 
-#: global.h:6698
+#: global.h:6699
 msgid "Mon"
 msgstr ""
 
-#: global.h:6699
+#: global.h:6700
 msgid "Tue"
 msgstr ""
 
-#: global.h:6700
+#: global.h:6701
 msgid "Wed"
 msgstr ""
 
-#: global.h:6701
+#: global.h:6702
 msgid "Thu"
 msgstr ""
 
-#: global.h:6702
+#: global.h:6703
 msgid "Fri"
 msgstr ""
 
-#: global.h:6703
+#: global.h:6704
 msgid "Sat"
 msgstr "SAT"
 
-#: global.h:6704
+#: global.h:6705
 msgid "Sun"
 msgstr ""
 
@@ -3820,7 +3820,7 @@ msgid "Start on boot"
 msgstr "Start on boot"
 
 #: plugins_dlna_skin.xml.h:14 plugins_tsSchnitt_skin.xml.h:9
-#: plugins_xupnpd_skin.xml.h:3 skin_default_skin.xml.h:617
+#: plugins_xupnpd_skin.xml.h:3 skin_default_skin.xml.h:616
 #: skins_dlna_skin.xml.h:14 skins_tsSchnitt_skin.xml.h:9
 #: skins_xupnpd_skin.xml.h:3
 msgid "STOP"
@@ -6827,12 +6827,12 @@ msgid "Menulist"
 msgstr "Lista menu"
 
 #: skin_default_skin.xml.h:382
-msgid "Menu Protect"
-msgstr "Protezione Menu"
-
-#: skin_default_skin.xml.h:383
 msgid "MENUPROTECT"
 msgstr "PROTEZIONEMENU"
+
+#: skin_default_skin.xml.h:383
+msgid "Menu Protect"
+msgstr "Protezione Menu"
 
 #: skin_default_skin.xml.h:384
 msgid "MHW2 EPG"
@@ -7550,7 +7550,7 @@ msgstr "Step frequency"
 msgid "Step signalrate"
 msgstr "Step signalrate"
 
-#: skin_default_skin.xml.h:616
+#: skin_default_skin.xml.h:617
 msgid "(Stop)"
 msgstr ""
 
