@@ -934,6 +934,7 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 				if(check == 1) return 0;
 				resettvpic();
 				startplugin();
+				resettvpic();
 			}
 		}
 	}
