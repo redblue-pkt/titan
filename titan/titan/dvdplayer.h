@@ -47,7 +47,7 @@ int dvd_calc_y_fbscreen()
 #endif
 	return y_offset;
 }
-#endif
+
 int dvd_calc_x_fbscreen()
 {
 	int x_offset = 0;
