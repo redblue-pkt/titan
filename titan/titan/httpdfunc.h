@@ -4817,7 +4817,7 @@ printf("webadjustsend fmt: %d\n",fmt);
 	playerbufferseektime = stringreplacecharonce(playerbufferseektime, '&', '\0');
 	if(playerbufferseektime != NULL) addconfigtmp("playerbufferseektime", playerbufferseektime);
   	debug(77, "playerbufferseektime: %s", playerbufferseektime);
-//	free(playerbufferseektime); //playerbufferseektime = NULL;
+//	free(playerbufferseektime); playerbufferseektime = NULL;
   	
 	buf = webadjust(NULL, fmt);
 
