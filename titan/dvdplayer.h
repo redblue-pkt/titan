@@ -16,7 +16,9 @@ int dvdmenu = 0;
 int dvd_calc_y_fbscreen()
 {
 	int y_offset = 0;
+#ifdef SH4
 	int dvd_aspect = 0;
+#endif
 
 #ifdef DVDPLAYER
 	//0=4:3 2=16:9
@@ -45,11 +47,14 @@ int dvd_calc_y_fbscreen()
 #endif
 	return y_offset;
 }
-
+#endif
 int dvd_calc_x_fbscreen()
 {
 	int x_offset = 0;
+#ifdef SH4
 	int dvd_aspect = 0;
+#endif
+
 
 #ifdef DVDPLAYER
 	//0=4:3 2=16:9

@@ -579,6 +579,7 @@ struct clist* addlist(struct clist **clist, char *key1, char *value1);
 void freelist(struct clist** clist);
 struct clist* addlisttmp(struct clist **clist, char *key1, char *value1);
 char* getlist(struct clist **clist, char *key, char *ext);
+int writelist(struct clist **clist, const char *filename);
 
 //choicebox.h
 int setchoiceboxselection(struct skin* choicebox, char* value);
