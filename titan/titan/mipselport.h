@@ -645,6 +645,7 @@ return -1;
 //flag 1: blit from skinfb to accelfb
 void blitscale(int posx, int posy, int width, int height, int scalewidth, int scaleheight, int flag)
 {
+#ifndef SIMULATE
 #ifdef BLITHELP
 	unsigned char *quelle = NULL; 
 	unsigned char *ziehl = NULL;
@@ -703,7 +704,6 @@ void blitscale(int posx, int posy, int width, int height, int scalewidth, int sc
 #endif
 
 /*
-#ifndef SIMULATE
 	STMFBIO_BLT_DATA  blt_data;
 	memset(&blt_data, 0, sizeof(STMFBIO_BLT_DATA));
 
@@ -792,13 +792,14 @@ void blitscale(int posx, int posy, int width, int height, int scalewidth, int sc
 	{
 		perr("ioctl STMFBIO_SYNC_BLITTER");
 	}
-#endif
 */
+#endif
 }
 
 void blitjpg(unsigned char* buf, int posx, int posy, int width, int height, int scalewidth, int scaleheight, int mwidth, int mheight, int halign, int valign)
 //void blitjpg(unsigned char* buf, int posx, int posy, int width, int height, int scalewidth, int scaleheight)
 {
+#ifndef SIMULATE
 #ifdef BLITHELP
 	unsigned char *helpbuf = NULL;
 	unsigned char *framebuf = NULL;
@@ -840,7 +841,6 @@ void blitjpg(unsigned char* buf, int posx, int posy, int width, int height, int 
 #endif
 		 
 /*
-#ifndef SIMULATE
 	STMFBIO_BLT_EXTERN_DATA blt_data;
 	memset(&blt_data, 0, sizeof(STMFBIO_BLT_EXTERN_DATA));
 
@@ -877,9 +877,9 @@ void blitjpg(unsigned char* buf, int posx, int posy, int width, int height, int 
 	{
 		perr("ioctl STMFBIO_SYNC_BLITTER");
 	}
-#endif
 */
 
+#endif
 }
 
 void initsignal(struct sigaction* sa)
