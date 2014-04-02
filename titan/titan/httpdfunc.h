@@ -4484,7 +4484,7 @@ printf("webadjustsend fmt: %d\n",fmt);
 	volbartimeout = stringreplacecharonce(volbartimeout, '&', '\0');
 	if(volbartimeout != NULL) addconfigtmp("volbartimeout", volbartimeout);
   	debug(77, "volbartimeout: %s", volbartimeout); 
-	free(volbartimeout); volbartimeout = NULL;
+//	free(volbartimeout); volbartimeout = NULL;
 
 	tmpstr = ostrcat(param, NULL, 0, 0);
 	if(tmpstr != NULL) infobartimeout = ostrstr(tmpstr, "infobartimeout=");
@@ -4493,7 +4493,7 @@ printf("webadjustsend fmt: %d\n",fmt);
 	infobartimeout = stringreplacecharonce(infobartimeout, '&', '\0');
 	if(infobartimeout != NULL) addconfigtmp("infobartimeout", infobartimeout);
   	debug(77, "infobartimeout: %s", infobartimeout); 
-	free(infobartimeout); infobartimeout = NULL;
+//	free(infobartimeout); infobartimeout = NULL;
 
 	tmpstr = ostrcat(param, NULL, 0, 0);
 	if(tmpstr != NULL) infobarsleep = ostrstr(tmpstr, "infobarsleep=");
@@ -4502,7 +4502,7 @@ printf("webadjustsend fmt: %d\n",fmt);
 	infobarsleep = stringreplacecharonce(infobarsleep, '&', '\0');
 	if(infobarsleep != NULL) addconfigtmp("infobarsleep", infobarsleep);
   	debug(77, "infobarsleep: %s", infobarsleep); 
-	free(infobarsleep); infobarsleep = NULL;
+//	free(infobarsleep); infobarsleep = NULL;
 	
 	tmpstr = ostrcat(param, NULL, 0, 0);
 	if(tmpstr != NULL) spinnerspeed = ostrstr(tmpstr, "spinnerspeed=");
@@ -4511,7 +4511,7 @@ printf("webadjustsend fmt: %d\n",fmt);
 	spinnerspeed = stringreplacecharonce(spinnerspeed, '&', '\0');
 	if(spinnerspeed != NULL) addconfigtmp("spinnerspeed", spinnerspeed);
   	debug(77, "spinnerspeed: %s", spinnerspeed); 
-	free(spinnerspeed); spinnerspeed = NULL;
+//	free(spinnerspeed); spinnerspeed = NULL;
 
 	tmpstr = ostrcat(param, NULL, 0, 0);
 	if(tmpstr != NULL) spinnertime = ostrstr(tmpstr, "spinnertime=");
@@ -4520,7 +4520,7 @@ printf("webadjustsend fmt: %d\n",fmt);
 	spinnertime = stringreplacecharonce(spinnertime, '&', '\0');
 	if(spinnertime != NULL) addconfigtmp("spinnertime", spinnertime);
   	debug(77, "spinnertime: %s", spinnertime); 
-	free(spinnertime); spinnertime = NULL;
+//	free(spinnertime); spinnertime = NULL;
 
 	tmpstr = ostrcat(param, NULL, 0, 0);
 	if(tmpstr != NULL) hangtime = ostrstr(tmpstr, "hangtime=");
@@ -4529,7 +4529,7 @@ printf("webadjustsend fmt: %d\n",fmt);
 	hangtime = stringreplacecharonce(hangtime, '&', '\0');
 	if(hangtime != NULL) addconfigtmp("hangtime", hangtime);
   	debug(77, "hangtime: %s", hangtime); 
-	free(hangtime); hangtime = NULL;
+//	free(hangtime); hangtime = NULL;
 
 	tmpstr = ostrcat(param, NULL, 0, 0);
 	if(tmpstr != NULL) secondinfobar = ostrstr(tmpstr, "secondinfobar=");
@@ -4538,7 +4538,7 @@ printf("webadjustsend fmt: %d\n",fmt);
 	secondinfobar = stringreplacecharonce(secondinfobar, '&', '\0');
 	if(secondinfobar != NULL) addconfigtmp("secondinfobar", secondinfobar);
   	debug(77, "secondinfobar: %s", secondinfobar); 
-	free(secondinfobar); secondinfobar = NULL;
+//	free(secondinfobar); secondinfobar = NULL;
 
 	tmpstr = ostrcat(param, NULL, 0, 0);
 	if(tmpstr != NULL) nozapclear = ostrstr(tmpstr, "nozapclear=");
@@ -4547,7 +4547,7 @@ printf("webadjustsend fmt: %d\n",fmt);
 	nozapclear = stringreplacecharonce(nozapclear, '&', '\0');
 	if(nozapclear != NULL) addconfigtmp("nozapclear", nozapclear);
   	debug(77, "nozapclear: %s", nozapclear); 
-	free(nozapclear); nozapclear = NULL;
+//	free(nozapclear); nozapclear = NULL;
 
 	tmpstr = ostrcat(param, NULL, 0, 0);
 	if(tmpstr != NULL) fastzap = ostrstr(tmpstr, "fastzap=");
@@ -4556,7 +4556,7 @@ printf("webadjustsend fmt: %d\n",fmt);
 	fastzap = stringreplacecharonce(fastzap, '&', '\0');
 	if(fastzap != NULL) addconfigtmp("fastzap", fastzap);
   	debug(77, "fastzap: %s", fastzap); 
-	free(fastzap); fastzap = NULL;
+//	free(fastzap); fastzap = NULL;
 
 	tmpstr = ostrcat(param, NULL, 0, 0);
 	if(tmpstr != NULL) faststop = ostrstr(tmpstr, "faststop=");
@@ -4565,7 +4565,7 @@ printf("webadjustsend fmt: %d\n",fmt);
 	faststop = stringreplacecharonce(faststop, '&', '\0');
 	if(faststop != NULL) addconfigtmp("faststop", faststop);
   	debug(77, "faststop: %s", faststop); 
-	free(faststop); faststop = NULL;
+//	free(faststop); faststop = NULL;
 
 	tmpstr = ostrcat(param, NULL, 0, 0);
 	if(tmpstr != NULL) dirsort = ostrstr(tmpstr, "dirsort=");
@@ -4574,7 +4574,7 @@ printf("webadjustsend fmt: %d\n",fmt);
 	dirsort = stringreplacecharonce(dirsort, '&', '\0');
 	if(dirsort != NULL) addconfigtmp("dirsort", dirsort);
   	debug(77, "dirsort: %s", dirsort); 
-	free(dirsort); dirsort = NULL;
+//	free(dirsort); dirsort = NULL;
 
 	tmpstr = ostrcat(param, NULL, 0, 0);
 	if(tmpstr != NULL) poweraktion = ostrstr(tmpstr, "poweraktion=");
@@ -4583,7 +4583,7 @@ printf("webadjustsend fmt: %d\n",fmt);
 	poweraktion = stringreplacecharonce(poweraktion, '&', '\0');
 	if(poweraktion != NULL) addconfigtmp("poweraktion", poweraktion);
   	debug(77, "poweraktion: %s", poweraktion); 
-	free(poweraktion); poweraktion = NULL;
+//	free(poweraktion); poweraktion = NULL;
 
 	tmpstr = ostrcat(param, NULL, 0, 0);
 	if(tmpstr != NULL) virtualzap = ostrstr(tmpstr, "virtualzap=");
@@ -4592,7 +4592,7 @@ printf("webadjustsend fmt: %d\n",fmt);
 	virtualzap = stringreplacecharonce(virtualzap, '&', '\0');
 	if(virtualzap != NULL) addconfigtmp("virtualzap", virtualzap);
   	debug(77, "virtualzap: %s", virtualzap); 
-	free(virtualzap); virtualzap = NULL;
+//	free(virtualzap); virtualzap = NULL;
 
 	tmpstr = ostrcat(param, NULL, 0, 0);
 	if(tmpstr != NULL) fasttextrender = ostrstr(tmpstr, "fasttextrender=");
@@ -4601,7 +4601,7 @@ printf("webadjustsend fmt: %d\n",fmt);
 	fasttextrender = stringreplacecharonce(fasttextrender, '&', '\0');
 	if(fasttextrender != NULL) addconfigtmp("fasttextrender", fasttextrender);
   	debug(77, "fasttextrender: %s", fasttextrender); 
-	free(fasttextrender); fasttextrender = NULL;
+//	free(fasttextrender); fasttextrender = NULL;
 
 	tmpstr = ostrcat(param, NULL, 0, 0);
 	if(tmpstr != NULL) recsplitsize = ostrstr(tmpstr, "recsplitsize=");
@@ -4610,7 +4610,7 @@ printf("webadjustsend fmt: %d\n",fmt);
 	recsplitsize = stringreplacecharonce(recsplitsize, '&', '\0');
 	if(recsplitsize != NULL) addconfigtmp("recsplitsize", recsplitsize);
   	debug(77, "recsplitsize: %s", recsplitsize); 
-	free(recsplitsize); recsplitsize = NULL;
+//	free(recsplitsize); recsplitsize = NULL;
 
 	tmpstr = ostrcat(param, NULL, 0, 0);
 	if(tmpstr != NULL) recforerun = ostrstr(tmpstr, "recforerun=");
@@ -4628,7 +4628,7 @@ printf("webadjustsend fmt: %d\n",fmt);
 	recoverrun = stringreplacecharonce(recoverrun, '&', '\0');
 	if(recoverrun != NULL) addconfigtmp("recoverrun", recoverrun);
   	debug(77, "recoverrun: %s", recoverrun); 
-	free(recoverrun); recoverrun = NULL;
+//	free(recoverrun); recoverrun = NULL;
 
 	tmpstr = ostrcat(param, NULL, 0, 0);
 	if(tmpstr != NULL) skip13 = ostrstr(tmpstr, "skip13=");
@@ -4637,7 +4637,7 @@ printf("webadjustsend fmt: %d\n",fmt);
 	skip13 = stringreplacecharonce(skip13, '&', '\0');
 	if(skip13 != NULL) addconfigtmp("skip13", skip13);
   	debug(77, "skip13: %s", skip13); 
-	free(skip13); skip13 = NULL;
+//	free(skip13); skip13 = NULL;
 
 	tmpstr = ostrcat(param, NULL, 0, 0);
 	if(tmpstr != NULL) skip46 = ostrstr(tmpstr, "skip46=");
@@ -4646,7 +4646,7 @@ printf("webadjustsend fmt: %d\n",fmt);
 	skip46 = stringreplacecharonce(skip46, '&', '\0');
 	if(skip46 != NULL) addconfigtmp("skip46", skip46);
   	debug(77, "skip46: %s", skip46); 
-	free(skip46); skip46 = NULL;
+//	free(skip46); skip46 = NULL;
 
 	tmpstr = ostrcat(param, NULL, 0, 0);
 	if(tmpstr != NULL) skip79 = ostrstr(tmpstr, "skip79=");
@@ -4655,7 +4655,7 @@ printf("webadjustsend fmt: %d\n",fmt);
 	skip79 = stringreplacecharonce(skip79, '&', '\0');
 	if(skip79 != NULL) addconfigtmp("skip79", skip79);
   	debug(77, "skip79: %s", skip79); 
-	free(skip79); skip79 = NULL;
+//	free(skip79); skip79 = NULL;
 
 	tmpstr = ostrcat(param, NULL, 0, 0);
 	if(tmpstr != NULL) playertype = ostrstr(tmpstr, "playertype=");
@@ -4664,7 +4664,7 @@ printf("webadjustsend fmt: %d\n",fmt);
 	playertype = stringreplacecharonce(playertype, '&', '\0');
 	if(playertype != NULL) addconfigtmp("playertype", playertype);
   	debug(77, "playertype: %s", playertype); 
-	free(playertype); playertype = NULL;
+//	free(playertype); playertype = NULL;
 
 	tmpstr = ostrcat(param, NULL, 0, 0);
 	if(tmpstr != NULL) autochangechannelname = ostrstr(tmpstr, "autochangechannelname=");
@@ -4673,7 +4673,7 @@ printf("webadjustsend fmt: %d\n",fmt);
 	autochangechannelname = stringreplacecharonce(autochangechannelname, '&', '\0');
 	if(autochangechannelname != NULL) addconfigtmp("autochangechannelname", autochangechannelname);
   	debug(77, "autochangechannelname: %s", autochangechannelname); 
-	free(autochangechannelname); autochangechannelname = NULL;
+//	free(autochangechannelname); autochangechannelname = NULL;
 
 	tmpstr = ostrcat(param, NULL, 0, 0);
 	if(tmpstr != NULL) def_rectimer_after = ostrstr(tmpstr, "def_rectimer_after=");
@@ -4682,7 +4682,7 @@ printf("webadjustsend fmt: %d\n",fmt);
 	def_rectimer_after = stringreplacecharonce(def_rectimer_after, '&', '\0');
 	if(def_rectimer_after != NULL) addconfigtmp("def_rectimer_after", def_rectimer_after);
   	debug(77, "def_rectimer_after: %s", def_rectimer_after); 
-	free(def_rectimer_after); def_rectimer_after = NULL;
+//	free(def_rectimer_after); def_rectimer_after = NULL;
 
 	tmpstr = ostrcat(param, NULL, 0, 0);
 	showchanneltimeline = ostrstr(tmpstr, "showchanneltimeline=");
@@ -4700,7 +4700,7 @@ printf("webadjustsend fmt: %d\n",fmt);
 	screenanim = stringreplacecharonce(screenanim, '&', '\0');
 	if(screenanim != NULL) addconfigtmp("screenanim", screenanim);
   	debug(77, "screenanim: %s", screenanim); 
-	free(screenanim); screenanim = NULL;
+//	free(screenanim); screenanim = NULL;
 
 	tmpstr = ostrcat(param, NULL, 0, 0);
 	if(tmpstr != NULL) screenanimspeed = ostrstr(tmpstr, "screenanimspeed=");
@@ -4709,7 +4709,7 @@ printf("webadjustsend fmt: %d\n",fmt);
 	screenanimspeed = stringreplacecharonce(screenanimspeed, '&', '\0');
 	if(screenanimspeed != NULL) addconfigtmp("screenanimspeed", screenanimspeed);
   	debug(77, "screenanimspeed: %s", screenanimspeed); 
-	free(screenanimspeed); screenanimspeed = NULL;
+//	free(screenanimspeed); screenanimspeed = NULL;
 
 	tmpstr = ostrcat(param, NULL, 0, 0);
 	channellistview = ostrstr(tmpstr, "channellistview=");
@@ -4718,7 +4718,7 @@ printf("webadjustsend fmt: %d\n",fmt);
 	channellistview = stringreplacecharonce(channellistview, '&', '\0');
 	if(channellistview != NULL) addconfigtmp("channellistview", channellistview);
   	debug(77, "channellistview: %s", channellistview); 
-	free(channellistview); channellistview = NULL;
+//	free(channellistview); channellistview = NULL;
 
 	tmpstr = ostrcat(param, NULL, 0, 0);
 	if(tmpstr != NULL) showlastpos = ostrstr(tmpstr, "showlastpos=");
@@ -4727,7 +4727,7 @@ printf("webadjustsend fmt: %d\n",fmt);
 	showlastpos = stringreplacecharonce(showlastpos, '&', '\0');
 	if(showlastpos != NULL) addconfigtmp("showlastpos", showlastpos);
   	debug(77, "showlastpos: %s", showlastpos); 
-	free(showlastpos); showlastpos = NULL;
+//	free(showlastpos); showlastpos = NULL;
 
 	tmpstr = ostrcat(param, NULL, 0, 0);
 	if(tmpstr != NULL) recsync = ostrstr(tmpstr, "recsync=");
@@ -4736,7 +4736,7 @@ printf("webadjustsend fmt: %d\n",fmt);
 	recsync = stringreplacecharonce(recsync, '&', '\0');
 	if(recsync != NULL) addconfigtmp("recsync", recsync);
   	debug(77, "recsync: %s", recsync); 
-	free(recsync); recsync = NULL;
+//	free(recsync); recsync = NULL;
 
 	tmpstr = ostrcat(param, NULL, 0, 0);
 	recordnamefmt = ostrstr(tmpstr, "recordnamefmt=");
@@ -4745,7 +4745,7 @@ printf("webadjustsend fmt: %d\n",fmt);
 	recordnamefmt = stringreplacecharonce(recordnamefmt, '&', '\0');
 	if(recordnamefmt != NULL) addconfigtmp("recordnamefmt", recordnamefmt);
   	debug(77, "recordnamefmt: %s", recordnamefmt); 
-	free(recordnamefmt); recordnamefmt = NULL;
+//	free(recordnamefmt); recordnamefmt = NULL;
 
 	tmpstr = ostrcat(param, NULL, 0, 0);
 	if(tmpstr != NULL) newsletter = ostrstr(tmpstr, "newsletter=");
@@ -4754,7 +4754,7 @@ printf("webadjustsend fmt: %d\n",fmt);
 	newsletter = stringreplacecharonce(newsletter, '&', '\0');
 	if(newsletter != NULL) addconfigtmp("newsletter", newsletter);
   	debug(77, "newsletter: %s", newsletter); 
-	free(newsletter); newsletter = NULL;
+//	free(newsletter); newsletter = NULL;
 
 	tmpstr = ostrcat(param, NULL, 0, 0);
 	if(tmpstr != NULL) showhiddenfiles = ostrstr(tmpstr, "showhiddenfiles=");
@@ -4763,7 +4763,7 @@ printf("webadjustsend fmt: %d\n",fmt);
 	showhiddenfiles = stringreplacecharonce(showhiddenfiles, '&', '\0');
 	if(showhiddenfiles != NULL) addconfigtmp("showhiddenfiles", showhiddenfiles);
   	debug(77, "showhiddenfiles: %s", showhiddenfiles); 
-	free(showhiddenfiles); showhiddenfiles = NULL;
+//	free(showhiddenfiles); showhiddenfiles = NULL;
 
 	tmpstr = ostrcat(param, NULL, 0, 0);
 	if(tmpstr != NULL) expertmodus = ostrstr(tmpstr, "expertmodus=");
@@ -4772,7 +4772,7 @@ printf("webadjustsend fmt: %d\n",fmt);
 	expertmodus = stringreplacecharonce(expertmodus, '&', '\0');
 	if(expertmodus != NULL) addconfigtmp("expertmodus", expertmodus);
   	debug(77, "expertmodus: %s", expertmodus); 
-	free(expertmodus); expertmodus = NULL;
+//	free(expertmodus); expertmodus = NULL;
 
 	tmpstr = ostrcat(param, NULL, 0, 0);
 	if(tmpstr != NULL) infobarprogram = ostrstr(tmpstr, "infobarprogram=");
@@ -4781,7 +4781,7 @@ printf("webadjustsend fmt: %d\n",fmt);
 	infobarprogram = stringreplacecharonce(infobarprogram, '&', '\0');
 	if(infobarprogram != NULL) addconfigtmp("infobarprogram", infobarprogram);
   	debug(77, "infobarprogram: %s", infobarprogram); 
-	free(infobarprogram); infobarprogram = NULL;
+//	free(infobarprogram); infobarprogram = NULL;
 
 	tmpstr = ostrcat(param, NULL, 0, 0);
 	if(tmpstr != NULL) emucontrol = ostrstr(tmpstr, "emucontrol=");
@@ -4790,7 +4790,7 @@ printf("webadjustsend fmt: %d\n",fmt);
 	emucontrol = stringreplacecharonce(emucontrol, '&', '\0');
 	if(emucontrol != NULL) addconfigtmp("emucontrol", emucontrol);
   	debug(77, "emucontrol: %s", emucontrol); 
-	free(emucontrol); emucontrol = NULL;
+//	free(emucontrol); emucontrol = NULL;
 
 	tmpstr = ostrcat(param, NULL, 0, 0);
 	if(tmpstr != NULL) choiceminitv = ostrstr(tmpstr, "choiceminitv=");
@@ -4799,7 +4799,7 @@ printf("webadjustsend fmt: %d\n",fmt);
 	choiceminitv = stringreplacecharonce(choiceminitv, '&', '\0');
 	if(choiceminitv != NULL) addconfigtmp("choiceminitv", choiceminitv);
   	debug(77, "choiceminitv: %s", choiceminitv); 
-	free(choiceminitv); choiceminitv = NULL;
+//	free(choiceminitv); choiceminitv = NULL;
 
 	tmpstr = ostrcat(param, NULL, 0, 0);
 	if(tmpstr != NULL) usecec = ostrstr(tmpstr, "usecec=");
@@ -4808,7 +4808,7 @@ printf("webadjustsend fmt: %d\n",fmt);
 	usecec = stringreplacecharonce(usecec, '&', '\0');
 	if(usecec != NULL) addconfigtmp("usecec", usecec);
   	debug(77, "usecec: %s", usecec);
-	free(usecec); usecec = NULL;
+//	free(usecec); usecec = NULL;
 
 	tmpstr = ostrcat(param, NULL, 0, 0); 
 	if(tmpstr != NULL) playerbufferseektime = ostrstr(tmpstr, "playerbufferseektime=");
@@ -4817,7 +4817,7 @@ printf("webadjustsend fmt: %d\n",fmt);
 	playerbufferseektime = stringreplacecharonce(playerbufferseektime, '&', '\0');
 	if(playerbufferseektime != NULL) addconfigtmp("playerbufferseektime", playerbufferseektime);
   	debug(77, "playerbufferseektime: %s", playerbufferseektime);
-	free(playerbufferseektime); playerbufferseektime = NULL;
+	free(playerbufferseektime); //playerbufferseektime = NULL;
   	
 	buf = webadjust(NULL, fmt);
 
