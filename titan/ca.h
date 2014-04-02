@@ -555,7 +555,7 @@ int cammiAPDU(struct dvbdev* dvbnode, int sessionnr, unsigned char *tag, void *d
 					else
 					{
 						while(textlen--)
-							*tmpdata++;
+							tmpdata++;
 					}
 
 				}
