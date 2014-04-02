@@ -569,17 +569,21 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 			newnode->height = convertxmlentry(ret, &newnode->prozheight);
 			free(ret);
 		}
-		ret = getxmlentry(line, " picwidth=");
-		if(ret != NULL)
+		// disable skinadjust is verry slow...
+		if(checkbox("ATEMIO5200") != 1)
 		{
-			newnode->picwidth = convertxmlentry(ret, &newnode->picprozwidth);
-			free(ret);
-		}
-		ret = getxmlentry(line, " picheight=");
-		if(ret != NULL)
-		{
-			newnode->picheight = convertxmlentry(ret, &newnode->picprozheight);
-			free(ret);
+			ret = getxmlentry(line, " picwidth=");
+			if(ret != NULL)
+			{
+				newnode->picwidth = convertxmlentry(ret, &newnode->picprozwidth);
+				free(ret);
+			}
+			ret = getxmlentry(line, " picheight=");
+			if(ret != NULL)
+			{
+				newnode->picheight = convertxmlentry(ret, &newnode->picprozheight);
+				free(ret);
+			}
 		}
 		ret = getxmlentry(line, " picquality=");
 		if(ret != NULL)
@@ -3102,6 +3106,7 @@ void drawnode(struct skin* node, int flag)
 		drawpic(node->selectpic, node->iposx, node->iposy, node->iwidth, node->iheight, node->iwidth, node->iheight, LEFT, TOP, node->transparent, node->picquality, node->picmem);
 	if(node->pic != NULL && !(node->type & FILELIST))
 		drawpic(node->pic, node->iposx, node->iposy, node->rpicwidth, node->rpicheight, node->iwidth, node->iheight, node->halign, node->valign, node->transparent, node->picquality, node->picmem);
+}
 	if(node->input != NULL)
 	{
 		if(node->type & CHOICEBOX)
@@ -3615,7 +3620,6 @@ int setnodeattr(struct skin* node, struct skin* parent, int screencalc)
 		node->rpicheight = (((node->iheight * 100) / 100) * node->picheight) / 100;
 	else
 		node->rpicheight = node->picheight;
-
 
 	if(node->rposx - shadowlx < parent->iposx)
 	{

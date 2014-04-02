@@ -45,7 +45,7 @@ void screenskinadjust()
 	orightoffset = getconfigint("fbrightoffset", NULL); 
 	otopoffset = getconfigint("fbtopoffset", NULL);
 	obottomoffset = getconfigint("fbbottomoffset", NULL);
-	
+
 	if(checkbox("ATEMIO5200") == 1)
 	{
 		leftoffset->hidden = YES;
@@ -71,46 +71,38 @@ void screenskinadjust()
 		addscreenrc(skinadjust, tmp);
 		rcret = waitrc(skinadjust, 0, 0);
 		tmp = listbox->select;
-printf("11111\n");
-		if(checkbox("ATEMIO5200") != 1)
-		{
-printf("22222\n");
 
-			addconfigscreencheck("fbleftoffset", leftoffset, "0");
-			if(status.leftoffset != getconfigint("fbleftoffset", NULL)) offsetchange = 1; 
-			status.leftoffset = getconfigint("fbleftoffset", NULL);
+		addconfigscreencheck("fbleftoffset", leftoffset, "0");
+		if(status.leftoffset != getconfigint("fbleftoffset", NULL)) offsetchange = 1; 
+		status.leftoffset = getconfigint("fbleftoffset", NULL);
+		
+		addconfigscreencheck("fbrightoffset", rightoffset, "0");
+		if(status.rightoffset != getconfigint("fbrightoffset", NULL)) offsetchange = 1;
+		status.rightoffset = getconfigint("fbrightoffset", NULL);
+		
+		addconfigscreencheck("fbtopoffset", topoffset, "0");
+		if(status.topoffset != getconfigint("fbtopoffset", NULL)) offsetchange = 1;
+		status.topoffset = getconfigint("fbtopoffset", NULL);
+		
+		addconfigscreencheck("fbbottomoffset", bottomoffset, "0");
+		if(status.bottomoffset != getconfigint("fbbottomoffset", NULL)) offsetchange = 1;
+		status.bottomoffset = getconfigint("fbbottomoffset", NULL);
 			
-			addconfigscreencheck("fbrightoffset", rightoffset, "0");
-			if(status.rightoffset != getconfigint("fbrightoffset", NULL)) offsetchange = 1;
-			status.rightoffset = getconfigint("fbrightoffset", NULL);
-			
-			addconfigscreencheck("fbtopoffset", topoffset, "0");
-			if(status.topoffset != getconfigint("fbtopoffset", NULL)) offsetchange = 1;
-			status.topoffset = getconfigint("fbtopoffset", NULL);
-			
-			addconfigscreencheck("fbbottomoffset", bottomoffset, "0");
-			if(status.bottomoffset != getconfigint("fbbottomoffset", NULL)) offsetchange = 1;
-			status.bottomoffset = getconfigint("fbbottomoffset", NULL);
-				
-			if(offsetchange == 1 && (ostrcmp(getconfig("av_mode3d", NULL), "sbs") == 0 || ostrcmp(getconfig("av_mode3d", NULL), "tab") == 0)) clearfball();
-	
-			drawscreen(skinadjust, 0, 0);
-		}
+		if(offsetchange == 1 && (ostrcmp(getconfig("av_mode3d", NULL), "sbs") == 0 || ostrcmp(getconfig("av_mode3d", NULL), "tab") == 0)) clearfball();
+
+		drawscreen(skinadjust, 0, 0);
 
 		if(rcret == getrcconfigint("rcexit", NULL))
 		{
-			if(checkbox("ATEMIO5200") != 1)
-			{
-				addconfigint("fbleftoffset", oleftoffset);
-				status.leftoffset = getconfigint("fbleftoffset", NULL);
-				addconfigint("fbrightoffset", orightoffset);
-				status.rightoffset = getconfigint("fbrightoffset", NULL);
-				addconfigint("fbtopoffset", otopoffset);
-				status.topoffset = getconfigint("fbtopoffset", NULL);
-				addconfigint("fbbottomoffset", obottomoffset);
-				status.bottomoffset = getconfigint("fbbottomoffset", NULL);
-				clearfball();
-			}
+			addconfigint("fbleftoffset", oleftoffset);
+			status.leftoffset = getconfigint("fbleftoffset", NULL);
+			addconfigint("fbrightoffset", orightoffset);
+			status.rightoffset = getconfigint("fbrightoffset", NULL);
+			addconfigint("fbtopoffset", otopoffset);
+			status.topoffset = getconfigint("fbtopoffset", NULL);
+			addconfigint("fbbottomoffset", obottomoffset);
+			status.bottomoffset = getconfigint("fbbottomoffset", NULL);
+			clearfball();
 			break;
 		}
 		
