@@ -4619,7 +4619,7 @@ printf("webadjustsend fmt: %d\n",fmt);
 	recforerun = stringreplacecharonce(recforerun, '&', '\0');
 	if(recforerun != NULL) addconfigtmp("recforerun", recforerun);
   	debug(77, "recforerun: %s", recforerun); 
-	free(recforerun); recforerun = NULL;
+//	free(recforerun); recforerun = NULL;
 
 	tmpstr = ostrcat(param, NULL, 0, 0);	
 	if(tmpstr != NULL) recoverrun = ostrstr(tmpstr, "recoverrun=");
@@ -4691,7 +4691,7 @@ printf("webadjustsend fmt: %d\n",fmt);
 	showchanneltimeline = stringreplacecharonce(showchanneltimeline, '&', '\0');
 	if(showchanneltimeline != NULL) addconfigtmp("showchanneltimeline", showchanneltimeline);
   	debug(77, "showchanneltimeline: %s", showchanneltimeline); 
-	free(showchanneltimeline); showchanneltimeline = NULL;
+//	free(showchanneltimeline); showchanneltimeline = NULL;
 
 	tmpstr = ostrcat(param, NULL, 0, 0);
 	if(tmpstr != NULL) screenanim = ostrstr(tmpstr, "screenanim=");
