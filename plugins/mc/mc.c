@@ -5,7 +5,6 @@
 extern struct fb* fb;
 extern struct fb* skinfb;
 
-#include "../titan/player.h"
 #include "mc_header.h"
 #include "mc_global.h"
 #include "mc_mounter.h"

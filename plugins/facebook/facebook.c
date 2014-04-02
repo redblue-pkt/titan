@@ -1,7 +1,7 @@
 #include "../titan/struct.h"
 #include "../titan/debug.h"
 #include "../titan/header.h"
-#include "../titan/jsmn.h"
+#include "jsmn.h"
 #include "facebook.h"
 
 char pluginname[] = "Facebook";
