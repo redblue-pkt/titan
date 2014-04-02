@@ -3106,7 +3106,7 @@ void drawnode(struct skin* node, int flag)
 		drawpic(node->selectpic, node->iposx, node->iposy, node->iwidth, node->iheight, node->iwidth, node->iheight, LEFT, TOP, node->transparent, node->picquality, node->picmem);
 	if(node->pic != NULL && !(node->type & FILELIST))
 		drawpic(node->pic, node->iposx, node->iposy, node->rpicwidth, node->rpicheight, node->iwidth, node->iheight, node->halign, node->valign, node->transparent, node->picquality, node->picmem);
-}
+
 	if(node->input != NULL)
 	{
 		if(node->type & CHOICEBOX)
