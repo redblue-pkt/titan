@@ -32,7 +32,6 @@ AC_SUBST(MULTICOM324)
 AC_OUTPUT([
 Makefile
 autotimer/Makefile
-callmonitor1/Makefile
 catcatch/Makefile
 dlna/Makefile
 facebook/Makefile
