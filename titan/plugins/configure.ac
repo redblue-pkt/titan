@@ -34,7 +34,6 @@ Makefile
 autotimer/Makefile
 catcatch/Makefile
 dlna/Makefile
-facebook/Makefile
 gmediarender/Makefile
 hello/Makefile
 imdb/Makefile
