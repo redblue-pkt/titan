@@ -10994,9 +10994,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Zapback is activated. Do you want to stop it?"
-
-#~ msgid "Registration needed, please contact Atemio !"
-#~ msgstr ""
-#~ "Registration needed, please contact Atemio!\n"
-#~ "For information go to:\n"
-#~ "Atemio-Panel > System > Serial-Information"

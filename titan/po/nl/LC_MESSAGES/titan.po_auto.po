@@ -10946,6 +10946,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Zapback is reeds actief... Stoppen?"
-
-#~ msgid "Registration needed, please contact Atemio !"
-#~ msgstr "Registratie is noodzakelijk, neem AUB contact op met Atemio !"
