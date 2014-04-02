@@ -1166,276 +1166,272 @@ void backgrounddl(char* link, char* filename)
 void submenu(struct skin* listbox, struct skin* load, char* title)
 {
 	int flag = 0;
-	if(status.security == 1 || checkbox("WHITEBOX") == 1)
+
+	drawscreen(load, 0, 0);	
+	char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
+	char* tmpstr1 = NULL;
+
+	if(((struct tithek*)listbox->select->handle)->flag == 2)
 	{
-		drawscreen(load, 0, 0);	
-		char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-		char* tmpstr1 = NULL;
+		if(tmpstr != NULL) tmpstr1 = ostrcat(tmpstr, NULL, 0, 0);
+	}						
+	else if(((struct tithek*)listbox->select->handle)->flag == 4)
+	{
+		if(tmpstr != NULL) tmpstr1 = youtube(tmpstr, NULL, NULL, 1);
+	}						
+	else if(((struct tithek*)listbox->select->handle)->flag == 5)
+	{
+		if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://rtl2now.rtl2.de", "rtl2now", 1);
+	}
+	else if(((struct tithek*)listbox->select->handle)->flag == 6)
+	{
+		if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://www.superrtlnow.de", "superrtlnow", 1);
+	}
+	else if(((struct tithek*)listbox->select->handle)->flag == 7)
+	{
+		if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://rtl-now.rtl.de", "rtlnow", 1);
+	}
+	else if(((struct tithek*)listbox->select->handle)->flag == 8)
+	{
+		if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://www.voxnow.de", "voxnow", 1);
+	}
+	else if(((struct tithek*)listbox->select->handle)->flag == 12)
+	{
+		if(tmpstr != NULL) tmpstr1 = myvideo(tmpstr, NULL, NULL, 1);
+	}
+	else if(((struct tithek*)listbox->select->handle)->flag == 14)
+	{
+		if(tmpstr != NULL) tmpstr1 = kinox(tmpstr);
+	}
+	else if(((struct tithek*)listbox->select->handle)->flag == 16)
+	{
+		if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://www.superrtlnow.de", "superrtlnow", 1);
+	}
+	else if(((struct tithek*)listbox->select->handle)->flag == 17)
+	{
+		if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://rtl-now.rtl.de", "rtlnow", 1);
+	}
+	else if(((struct tithek*)listbox->select->handle)->flag == 18)
+	{
+		if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://www.voxnow.de", "voxnow", 1);
+	}
+	else if(((struct tithek*)listbox->select->handle)->flag == 19)
+	{
+		if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://rtl2now.rtl2.de", "rtl2now", 1);
+	}
+	else if(((struct tithek*)listbox->select->handle)->flag == 38)
+	{
+		if(tmpstr != NULL) tmpstr1 = mlehd(tmpstr);
+	}
+	else if(((struct tithek*)listbox->select->handle)->flag == 41)
+	{
+		if(tmpstr != NULL) tmpstr1 = movie4k(tmpstr);
+	}
+	else if(((struct tithek*)listbox->select->handle)->flag == 42)
+	{
+		if(tmpstr != NULL) tmpstr1 = xvideos(tmpstr);
+	}
+	else if(((struct tithek*)listbox->select->handle)->flag == 43)
+	{
+		if(tmpstr != NULL) tmpstr1 = solarmovie(tmpstr);
+	}
+	else if(((struct tithek*)listbox->select->handle)->flag == 45)
+	{
+		if(tmpstr != NULL) tmpstr1 = ard(tmpstr);
+	}
+	else if(((struct tithek*)listbox->select->handle)->flag == 46)
+	{
+		if(tmpstr != NULL) tmpstr1 = zdf(tmpstr);
+	}
+	else if(((struct tithek*)listbox->select->handle)->flag == 50)
+	{
+		if(tmpstr != NULL) tmpstr1 = beeg(tmpstr);
+	}
+	free(tmpstr); tmpstr = NULL;
 
-		if(((struct tithek*)listbox->select->handle)->flag == 2)
-		{
-			if(tmpstr != NULL) tmpstr1 = ostrcat(tmpstr, NULL, 0, 0);
-		}						
-		else if(((struct tithek*)listbox->select->handle)->flag == 4)
-		{
-			if(tmpstr != NULL) tmpstr1 = youtube(tmpstr, NULL, NULL, 1);
-		}						
-		else if(((struct tithek*)listbox->select->handle)->flag == 5)
-		{
-			if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://rtl2now.rtl2.de", "rtl2now", 1);
-		}
-		else if(((struct tithek*)listbox->select->handle)->flag == 6)
-		{
-			if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://www.superrtlnow.de", "superrtlnow", 1);
-		}
-		else if(((struct tithek*)listbox->select->handle)->flag == 7)
-		{
-			if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://rtl-now.rtl.de", "rtlnow", 1);
-		}
-		else if(((struct tithek*)listbox->select->handle)->flag == 8)
-		{
-			if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://www.voxnow.de", "voxnow", 1);
-		}
-		else if(((struct tithek*)listbox->select->handle)->flag == 12)
-		{
-			if(tmpstr != NULL) tmpstr1 = myvideo(tmpstr, NULL, NULL, 1);
-		}
-		else if(((struct tithek*)listbox->select->handle)->flag == 14)
-		{
-			if(tmpstr != NULL) tmpstr1 = kinox(tmpstr);
-		}
-		else if(((struct tithek*)listbox->select->handle)->flag == 16)
-		{
-			if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://www.superrtlnow.de", "superrtlnow", 1);
-		}
-		else if(((struct tithek*)listbox->select->handle)->flag == 17)
-		{
-			if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://rtl-now.rtl.de", "rtlnow", 1);
-		}
-		else if(((struct tithek*)listbox->select->handle)->flag == 18)
-		{
-			if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://www.voxnow.de", "voxnow", 1);
-		}
-		else if(((struct tithek*)listbox->select->handle)->flag == 19)
-		{
-			if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://rtl2now.rtl2.de", "rtl2now", 1);
-		}
-		else if(((struct tithek*)listbox->select->handle)->flag == 38)
-		{
-			if(tmpstr != NULL) tmpstr1 = mlehd(tmpstr);
-		}
-		else if(((struct tithek*)listbox->select->handle)->flag == 41)
-		{
-			if(tmpstr != NULL) tmpstr1 = movie4k(tmpstr);
-		}
-		else if(((struct tithek*)listbox->select->handle)->flag == 42)
-		{
-			if(tmpstr != NULL) tmpstr1 = xvideos(tmpstr);
-		}
-		else if(((struct tithek*)listbox->select->handle)->flag == 43)
-		{
-			if(tmpstr != NULL) tmpstr1 = solarmovie(tmpstr);
-		}
-		else if(((struct tithek*)listbox->select->handle)->flag == 45)
-		{
-			if(tmpstr != NULL) tmpstr1 = ard(tmpstr);
-		}
-		else if(((struct tithek*)listbox->select->handle)->flag == 46)
-		{
-			if(tmpstr != NULL) tmpstr1 = zdf(tmpstr);
-		}
-		else if(((struct tithek*)listbox->select->handle)->flag == 50)
-		{
-			if(tmpstr != NULL) tmpstr1 = beeg(tmpstr);
-		}
-		free(tmpstr); tmpstr = NULL;
+	if(ostrstr(title, "Internet Radio") != NULL)
+		flag = 4;
 
-		if(ostrstr(title, "Internet Radio") != NULL)
-			flag = 4;
-
-		if(ostrstr(tmpstr1, "&") != NULL)
-		{
-			printf("change streamurl from: %s\n", tmpstr1);
-			tmpstr1 = string_replace_all("&amp;", "&", tmpstr1, 1);
-			printf("change streamurl to: %s\n", tmpstr1);
-		}
-		
-		if(tmpstr1 != NULL)
-		{
-			char* filename = ostrcat(title, "_", 0, 0);
-			filename = ostrcat(filename, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-			filename = ostrcat(filename, ".mp4", 1, 0);
-			filename = string_replace_all(" ", ".", filename, 1);
-			filename = string_replace_all("-", "_", filename, 1);
-			filename = string_replace_all("._.", "_", filename, 1);
-			debug(99, "filename: %s", filename);
-				
-			char* keyconf = NULL;
-			char* skintitle = _("Choice Playback");
-			struct menulist* mlist = NULL, *mbox = NULL;
-
-			// needed for autopo
-			char* tmptxt = NULL;
-			tmptxt = ostrcat(tmptxt, _("Streaming Playback (default)"), 1, 0);
-			tmptxt = ostrcat(tmptxt, _("Streaming Playback Caching (0.5MB)"), 1, 0);
-			tmptxt = ostrcat(tmptxt, _("Streaming Playback Caching (1MB)"), 1, 0);
-			tmptxt = ostrcat(tmptxt, _("Streaming Playback Caching (2MB)"), 1, 0);
-			tmptxt = ostrcat(tmptxt, _("Streaming Playback Caching (3MB)"), 1, 0);
-			tmptxt = ostrcat(tmptxt, _("Streaming Playback Caching (4MB)"), 1, 0);
-			tmptxt = ostrcat(tmptxt, _("Streaming Playback Caching (5MB)"), 1, 0);
-			tmptxt = ostrcat(tmptxt, _("Streaming Playback Caching (7.5MB)"), 1, 0);
-			tmptxt = ostrcat(tmptxt, _("Streaming Playback Caching (10MB)"), 1, 0);
-			tmptxt = ostrcat(tmptxt, _("File Caching Playback (10MB / 120s)"), 1, 0);
-			tmptxt = ostrcat(tmptxt, _("File Caching Playback (20MB / 240s)"), 1, 0);
-			tmptxt = ostrcat(tmptxt, _("File Caching Playback (30MB / 360s)"), 1, 0);
-			tmptxt = ostrcat(tmptxt, _("Download Full File"), 1, 0);
-			tmptxt = ostrcat(tmptxt, _("Download Full File (background)"), 1, 0);
-			free(tmptxt), tmptxt = NULL;
+	if(ostrstr(tmpstr1, "&") != NULL)
+	{
+		printf("change streamurl from: %s\n", tmpstr1);
+		tmpstr1 = string_replace_all("&amp;", "&", tmpstr1, 1);
+		printf("change streamurl to: %s\n", tmpstr1);
+	}
 	
-			addmenulist(&mlist, "Streaming Playback (default)", NULL, NULL, 0, 0);
+	if(tmpstr1 != NULL)
+	{
+		char* filename = ostrcat(title, "_", 0, 0);
+		filename = ostrcat(filename, ((struct tithek*)listbox->select->handle)->title, 1, 0);
+		filename = ostrcat(filename, ".mp4", 1, 0);
+		filename = string_replace_all(" ", ".", filename, 1);
+		filename = string_replace_all("-", "_", filename, 1);
+		filename = string_replace_all("._.", "_", filename, 1);
+		debug(99, "filename: %s", filename);
+			
+		char* keyconf = NULL;
+		char* skintitle = _("Choice Playback");
+		struct menulist* mlist = NULL, *mbox = NULL;
 
-			if(!ostrncmp("http://", tmpstr1, 7))
+		// needed for autopo
+		char* tmptxt = NULL;
+		tmptxt = ostrcat(tmptxt, _("Streaming Playback (default)"), 1, 0);
+		tmptxt = ostrcat(tmptxt, _("Streaming Playback Caching (0.5MB)"), 1, 0);
+		tmptxt = ostrcat(tmptxt, _("Streaming Playback Caching (1MB)"), 1, 0);
+		tmptxt = ostrcat(tmptxt, _("Streaming Playback Caching (2MB)"), 1, 0);
+		tmptxt = ostrcat(tmptxt, _("Streaming Playback Caching (3MB)"), 1, 0);
+		tmptxt = ostrcat(tmptxt, _("Streaming Playback Caching (4MB)"), 1, 0);
+		tmptxt = ostrcat(tmptxt, _("Streaming Playback Caching (5MB)"), 1, 0);
+		tmptxt = ostrcat(tmptxt, _("Streaming Playback Caching (7.5MB)"), 1, 0);
+		tmptxt = ostrcat(tmptxt, _("Streaming Playback Caching (10MB)"), 1, 0);
+		tmptxt = ostrcat(tmptxt, _("File Caching Playback (10MB / 120s)"), 1, 0);
+		tmptxt = ostrcat(tmptxt, _("File Caching Playback (20MB / 240s)"), 1, 0);
+		tmptxt = ostrcat(tmptxt, _("File Caching Playback (30MB / 360s)"), 1, 0);
+		tmptxt = ostrcat(tmptxt, _("Download Full File"), 1, 0);
+		tmptxt = ostrcat(tmptxt, _("Download Full File (background)"), 1, 0);
+		free(tmptxt), tmptxt = NULL;
+
+		addmenulist(&mlist, "Streaming Playback (default)", NULL, NULL, 0, 0);
+
+		if(!ostrncmp("http://", tmpstr1, 7))
+		{
+			if(flag == 4)
 			{
-				if(flag == 4)
-				{
 #ifdef EPLAYER3
-					addmenulist(&mlist, "Streaming Playback Caching (0.5MB)", NULL, NULL, 0, 0);
-					addmenulist(&mlist, "Streaming Playback Caching (1MB)", NULL, NULL, 0, 0);
+				addmenulist(&mlist, "Streaming Playback Caching (0.5MB)", NULL, NULL, 0, 0);
+				addmenulist(&mlist, "Streaming Playback Caching (1MB)", NULL, NULL, 0, 0);
 #endif
-				}	
-				else if(!ostrncmp("http://", tmpstr1, 7))
-				{
+			}	
+			else if(!ostrncmp("http://", tmpstr1, 7))
+			{
 #ifdef EPLAYER3
 //					addmenulist(&mlist, "Streaming Playback Caching (1MB)", NULL, NULL, 0, 0);
 //					addmenulist(&mlist, "Streaming Playback Caching (2MB)", NULL, NULL, 0, 0);
 //					addmenulist(&mlist, "Streaming Playback Caching (3MB)", NULL, NULL, 0, 0);
 //					addmenulist(&mlist, "Streaming Playback Caching (4MB)", NULL, NULL, 0, 0);
-					if(checkbox("UFS910") == 1 && !file_exist("/var/swapdir/swapfile"))
-						addmenulist(&mlist, "Streaming Playback Caching (5MB)", NULL, NULL, 0, 0);
-					else
-					{
+				if(checkbox("UFS910") == 1 && !file_exist("/var/swapdir/swapfile"))
+					addmenulist(&mlist, "Streaming Playback Caching (5MB)", NULL, NULL, 0, 0);
+				else
+				{
 //						addmenulist(&mlist, "Streaming Playback Caching (7.5MB)", NULL, NULL, 0, 0);
-						addmenulist(&mlist, "Streaming Playback Caching (10MB)", NULL, NULL, 0, 0);
-					}
+					addmenulist(&mlist, "Streaming Playback Caching (10MB)", NULL, NULL, 0, 0);
+				}
 #endif
-					if(file_exist(getconfig("rec_streampath", NULL)) && (status.expertmodus >= 11 || file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack")))
-					{
+				if(file_exist(getconfig("rec_streampath", NULL)) && (status.expertmodus >= 11 || file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack")))
+				{
 #ifndef EPLAYER3
-						addmenulist(&mlist, "File Caching Playback (10MB / 120s)", NULL, NULL, 0, 0);
-						addmenulist(&mlist, "File Caching Playback (20MB / 240s)", NULL, NULL, 0, 0);
-						addmenulist(&mlist, "File Caching Playback (30MB / 360s)", NULL, NULL, 0, 0);
+					addmenulist(&mlist, "File Caching Playback (10MB / 120s)", NULL, NULL, 0, 0);
+					addmenulist(&mlist, "File Caching Playback (20MB / 240s)", NULL, NULL, 0, 0);
+					addmenulist(&mlist, "File Caching Playback (30MB / 360s)", NULL, NULL, 0, 0);
 #endif
-						addmenulist(&mlist, "Download Full File", NULL, NULL, 0, 0);
-						addmenulist(&mlist, "Download Full File (background)", NULL, NULL, 0, 0);
-					}
+					addmenulist(&mlist, "Download Full File", NULL, NULL, 0, 0);
+					addmenulist(&mlist, "Download Full File (background)", NULL, NULL, 0, 0);
 				}
 			}
-			mbox = menulistbox(mlist, NULL, skintitle, _("Choose your Streaming Playback Modus from the following list"), NULL, NULL, 1, 0);
-			if(mbox != NULL) keyconf = mbox->name;
-			debug(99, "tmpstr1: %s filename: %s flag: %d", tmpstr1, filename, flag);
-			if(ostrcmp(keyconf, "Streaming Playback (default)") == 0)
-			{
-				addconfigtmp("playerbuffersize", "0");
-				screenplay(tmpstr1, filename, 2, flag);
-				delconfigtmp("playerbuffersize");
-			}
-			else if(ostrcmp(keyconf, "Streaming Playback Caching (0.5MB)") == 0)
-			{
-				addconfigtmp("playerbuffersize", "524288");
-				screenplay(tmpstr1, filename, 2, flag);
-				delconfigtmp("playerbuffersize");
-			}
-			else if(ostrcmp(keyconf, "Streaming Playback Caching (1MB)") == 0)
-			{
-				addconfigtmp("playerbuffersize", "1048576");
-				screenplay(tmpstr1, filename, 2, flag);
-				delconfigtmp("playerbuffersize");
-			}
-			else if(ostrcmp(keyconf, "Streaming Playback Caching (2MB)") == 0)
-			{
-				addconfigtmp("playerbuffersize", "2097152");
-				screenplay(tmpstr1, filename, 2, flag);
-				delconfigtmp("playerbuffersize");
-			}
-			else if(ostrcmp(keyconf, "Streaming Playback Caching (3MB)") == 0)
-			{
-				addconfigtmp("playerbuffersize", "3145728");
-				screenplay(tmpstr1, filename, 2, flag);
-				delconfigtmp("playerbuffersize");
-			}
-			else if(ostrcmp(keyconf, "Streaming Playback Caching (4MB)") == 0)
-			{
-				addconfigtmp("playerbuffersize", "4194304");
-				screenplay(tmpstr1, filename, 2, flag);
-				delconfigtmp("playerbuffersize");
-			}
-			else if(ostrcmp(keyconf, "Streaming Playback Caching (5MB)") == 0)
-			{
-				addconfigtmp("playerbuffersize", "5242880");
-				screenplay(tmpstr1, filename, 2, flag);
-				delconfigtmp("playerbuffersize");
-			}
-			else if(ostrcmp(keyconf, "Streaming Playback Caching (7.5MB)") == 0)
-			{
-				addconfigtmp("playerbuffersize", "7864320");
-				screenplay(tmpstr1, filename, 2, flag);
-				delconfigtmp("playerbuffersize");
-			}
-			else if(ostrcmp(keyconf, "Streaming Playback Caching (10MB)") == 0)
-			{
-				addconfigtmp("playerbuffersize", "10485760");
-				screenplay(tmpstr1, filename, 2, flag);
-				delconfigtmp("playerbuffersize");
-			}
-			else if(ostrcmp(keyconf, "File Caching Playback (10MB / 120s)") == 0)
-			{
-				cacheplay(tmpstr1, filename, 1);
-			}
-			else if(ostrcmp(keyconf, "File Caching Playback (20MB / 240s)") == 0)
-			{
-				cacheplay(tmpstr1, filename, 2);
-			}
-			else if(ostrcmp(keyconf, "File Caching Playback (30MB / 360s)") == 0)
-			{
-				cacheplay(tmpstr1, filename, 3);
-			}
-			else if(ostrcmp(keyconf, "Download Full File") == 0)
-			{
-				char* search = textinput(_("Filename"), filename);
-				if(search != NULL)
-				{	
-					char* tmpstr2 = tithekdownload(tmpstr1, search, NULL, 0, 1);
-//						drawscreen(grid, 0, 0);
-					free(tmpstr2); tmpstr2 = NULL;
-				
-					if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
-					{
-						tmpstr2 = ostrcat(getconfig("rec_streampath", NULL), "/", 0, 0);
-						tmpstr2 = ostrcat(tmpstr2, search, 1, 0);
-						screenplay(tmpstr2, filename, 2, flag);
-						free(tmpstr2); tmpstr2 = NULL;
-					}
-				}
-				free(search), search = NULL;
-			}
-			else if(ostrcmp(keyconf, "Download Full File (background)") == 0)
-			{
-				char* search = textinput(_("Filename"), filename);
-				if(search != NULL)
-					backgrounddl(tmpstr1, search);
-				free(search), search = NULL;
-			}
-			 
-			free(filename), filename = NULL;
-			freemenulist(mlist, 1); mlist = NULL;
 		}
-		else
-			textbox(_("Message"), _("Can't get Streamurl !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-		
-		free(tmpstr1); tmpstr1 = NULL;
+		mbox = menulistbox(mlist, NULL, skintitle, _("Choose your Streaming Playback Modus from the following list"), NULL, NULL, 1, 0);
+		if(mbox != NULL) keyconf = mbox->name;
+		debug(99, "tmpstr1: %s filename: %s flag: %d", tmpstr1, filename, flag);
+		if(ostrcmp(keyconf, "Streaming Playback (default)") == 0)
+		{
+			addconfigtmp("playerbuffersize", "0");
+			screenplay(tmpstr1, filename, 2, flag);
+			delconfigtmp("playerbuffersize");
+		}
+		else if(ostrcmp(keyconf, "Streaming Playback Caching (0.5MB)") == 0)
+		{
+			addconfigtmp("playerbuffersize", "524288");
+			screenplay(tmpstr1, filename, 2, flag);
+			delconfigtmp("playerbuffersize");
+		}
+		else if(ostrcmp(keyconf, "Streaming Playback Caching (1MB)") == 0)
+		{
+			addconfigtmp("playerbuffersize", "1048576");
+			screenplay(tmpstr1, filename, 2, flag);
+			delconfigtmp("playerbuffersize");
+		}
+		else if(ostrcmp(keyconf, "Streaming Playback Caching (2MB)") == 0)
+		{
+			addconfigtmp("playerbuffersize", "2097152");
+			screenplay(tmpstr1, filename, 2, flag);
+			delconfigtmp("playerbuffersize");
+		}
+		else if(ostrcmp(keyconf, "Streaming Playback Caching (3MB)") == 0)
+		{
+			addconfigtmp("playerbuffersize", "3145728");
+			screenplay(tmpstr1, filename, 2, flag);
+			delconfigtmp("playerbuffersize");
+		}
+		else if(ostrcmp(keyconf, "Streaming Playback Caching (4MB)") == 0)
+		{
+			addconfigtmp("playerbuffersize", "4194304");
+			screenplay(tmpstr1, filename, 2, flag);
+			delconfigtmp("playerbuffersize");
+		}
+		else if(ostrcmp(keyconf, "Streaming Playback Caching (5MB)") == 0)
+		{
+			addconfigtmp("playerbuffersize", "5242880");
+			screenplay(tmpstr1, filename, 2, flag);
+			delconfigtmp("playerbuffersize");
+		}
+		else if(ostrcmp(keyconf, "Streaming Playback Caching (7.5MB)") == 0)
+		{
+			addconfigtmp("playerbuffersize", "7864320");
+			screenplay(tmpstr1, filename, 2, flag);
+			delconfigtmp("playerbuffersize");
+		}
+		else if(ostrcmp(keyconf, "Streaming Playback Caching (10MB)") == 0)
+		{
+			addconfigtmp("playerbuffersize", "10485760");
+			screenplay(tmpstr1, filename, 2, flag);
+			delconfigtmp("playerbuffersize");
+		}
+		else if(ostrcmp(keyconf, "File Caching Playback (10MB / 120s)") == 0)
+		{
+			cacheplay(tmpstr1, filename, 1);
+		}
+		else if(ostrcmp(keyconf, "File Caching Playback (20MB / 240s)") == 0)
+		{
+			cacheplay(tmpstr1, filename, 2);
+		}
+		else if(ostrcmp(keyconf, "File Caching Playback (30MB / 360s)") == 0)
+		{
+			cacheplay(tmpstr1, filename, 3);
+		}
+		else if(ostrcmp(keyconf, "Download Full File") == 0)
+		{
+			char* search = textinput(_("Filename"), filename);
+			if(search != NULL)
+			{	
+				char* tmpstr2 = tithekdownload(tmpstr1, search, NULL, 0, 1);
+//						drawscreen(grid, 0, 0);
+				free(tmpstr2); tmpstr2 = NULL;
+			
+				if(textbox(_("Message"), _("Start playback"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+				{
+					tmpstr2 = ostrcat(getconfig("rec_streampath", NULL), "/", 0, 0);
+					tmpstr2 = ostrcat(tmpstr2, search, 1, 0);
+					screenplay(tmpstr2, filename, 2, flag);
+					free(tmpstr2); tmpstr2 = NULL;
+				}
+			}
+			free(search), search = NULL;
+		}
+		else if(ostrcmp(keyconf, "Download Full File (background)") == 0)
+		{
+			char* search = textinput(_("Filename"), filename);
+			if(search != NULL)
+				backgrounddl(tmpstr1, search);
+			free(search), search = NULL;
+		}
+		 
+		free(filename), filename = NULL;
+		freemenulist(mlist, 1); mlist = NULL;
 	}
 	else
-		textbox(_("Message"), _("Registration needed, please contact Atemio !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
+		textbox(_("Message"), _("Can't get Streamurl !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+	
+	free(tmpstr1); tmpstr1 = NULL;
 }
 
 void screentithekplay(char* titheklink, char* title, int first)

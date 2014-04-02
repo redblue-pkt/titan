@@ -3,42 +3,37 @@
 
 void screenmc_dateibrowser()
 {
-//	if(status.security == 1)
-//	{
-		int treffer = 0;
-		struct skin* pluginnode = NULL;
-		void (*startplugin)(void);
-		struct skin* plugin = getscreen("plugin");
-		struct skin* child = plugin->child;
+	int treffer = 0;
+	struct skin* pluginnode = NULL;
+	void (*startplugin)(void);
+	struct skin* plugin = getscreen("plugin");
+	struct skin* child = plugin->child;
 
-		while(child != NULL)
+	while(child != NULL)
+	{
+		if(child->del == PLUGINDELMARK)
 		{
-			if(child->del == PLUGINDELMARK)
-			{
-				if(ostrcmp(child->name, "File Manager") == 0)
-					treffer = 1;
-			}
-			child = child->next;
+			if(ostrcmp(child->name, "File Manager") == 0)
+				treffer = 1;
 		}
+		child = child->next;
+	}
 
-		if(treffer == 1)
+	if(treffer == 1)
+	{
+		pluginnode = getplugin("File Manager");
+	
+		if(pluginnode != NULL)
 		{
-			pluginnode = getplugin("File Manager");
-		
-			if(pluginnode != NULL)
+			startplugin = dlsym(pluginnode->pluginhandle, "start");
+			if(startplugin != NULL)
 			{
-				startplugin = dlsym(pluginnode->pluginhandle, "start");
-				if(startplugin != NULL)
-				{
-					startplugin();
-				}
+				startplugin();
 			}
 		}
-		else
-			textbox(_("Message"), _("Install File Manager Tpk first !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
-//	}
-//	else
-//		textbox(_("Message"), _("Registration needed, please contact Atemio !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
+	}
+	else
+		textbox(_("Message"), _("Install File Manager Tpk first !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
 }
 
 #endif

@@ -465,361 +465,359 @@ void LCD_Samsung1_thread()
 		else
 			put = 0;
 
-		if(status.security == 1)
+		if(status.standby > 0 && standby == 0)
 		{
-			if(status.standby > 0 && standby == 0)
+			if(ostrcmp(getconfig("lcd_samsung_plugin_standby", NULL), "yes") == 0)
+				standby = 2;
+			else
 			{
-				if(ostrcmp(getconfig("lcd_samsung_plugin_standby", NULL), "yes") == 0)
-					standby = 2;
-				else
+				tmpstr = createpluginpath("/lcdsamsung/standby.jpg", 0);
+				tmpstr = ostrcat("cp ", tmpstr, 0, 1);
+				tmpstr = ostrcat(tmpstr, " /tmp/titanlcd.png", 1, 0);
+				system(tmpstr);
+				free(tmpstr); tmpstr=NULL;
+				sleep(3);
+				
+				tmpstr = createpluginpath("/lcdsamsung/black.jpg", 0);
+				tmpstr = ostrcat("cp ", tmpstr, 0, 1);
+				tmpstr = ostrcat(tmpstr, " /tmp/titanlcd.png", 1, 0);
+				system(tmpstr);
+				sleep(2);
+				system("killall fbread");
+				standby = 1;
+			}
+		}
+		if(status.standby == 0 && standby > 0)
+		{
+			if(standby == 1)
+				system(startlcd);
+			standby = 0;
+			put = 1;
+		}
+	
+		if(weatherthread == NULL && weatherwrite == 0) 
+		{ 
+			if(file_exist("/tmp/lcdweather")) 
+				put = 1; 
+		}                        
+		if(ostrcmp(tmpstr, timemerk) != 0)
+		{
+			free(timemerk);timemerk=NULL;
+			timemerk = ostrcat(tmpstr, "", 0, 0);
+			put = 1;
+		} 
+
+		if(standby == 0 || standby == 2 )
+		{
+			if(type == 1 && standby == 0)
+			{
+				if(ostrcmp(tmpstr2, sendermerk) != 0)
 				{
-					tmpstr = createpluginpath("/lcdsamsung/standby.jpg", 0);
-					tmpstr = ostrcat("cp ", tmpstr, 0, 1);
-					tmpstr = ostrcat(tmpstr, " /tmp/titanlcd.png", 1, 0);
-					system(tmpstr);
-					free(tmpstr); tmpstr=NULL;
-					sleep(3);
-					
-					tmpstr = createpluginpath("/lcdsamsung/black.jpg", 0);
-					tmpstr = ostrcat("cp ", tmpstr, 0, 1);
-					tmpstr = ostrcat(tmpstr, " /tmp/titanlcd.png", 1, 0);
-					system(tmpstr);
-					sleep(2);
-					system("killall fbread");
-					standby = 1;
+					free(sendermerk);sendermerk=NULL;
+					sendermerk = ostrcat(tmpstr2, "", 0, 0);
+					put = 1;
+				} 
+				if(tmpstr3 == NULL && recmerk != NULL)
+				{
+					put = 1;
+					free(recmerk);recmerk=NULL;
+				}
+				else if(tmpstr3 != NULL && recmerk == NULL)
+				{
+					free(recmerk);recmerk=NULL;
+					recmerk = ostrcat(tmpstr3, "", 0, 0);
+					put = 1;
 				}
 			}
-			if(status.standby == 0 && standby > 0)
+			else if(type == 2)
 			{
-				if(standby == 1)
-					system(startlcd);
-				standby = 0;
-				put = 1;
-			}
-		
-			if(weatherthread == NULL && weatherwrite == 0) 
-			{ 
-				if(file_exist("/tmp/lcdweather")) 
-					put = 1; 
-			}                        
-			if(ostrcmp(tmpstr, timemerk) != 0)
-			{
-				free(timemerk);timemerk=NULL;
-				timemerk = ostrcat(tmpstr, "", 0, 0);
-				put = 1;
-			} 
-
-			if(standby == 0 || standby == 2 )
-			{
-				if(type == 1 && standby == 0)
+				if(loopcount >= 15)
 				{
-					if(ostrcmp(tmpstr2, sendermerk) != 0)
+					put = 1;
+					loopcount = 0;
+				}
+			}	
+			
+			if(put == 1)
+			{
+				if(type == 1)
+				{
+					// Wettervorhersage
+					if(ostrcmp(getconfig("lcd_samsung_plugin_wetter", NULL), "yes") == 0)
 					{
-						free(sendermerk);sendermerk=NULL;
-						sendermerk = ostrcat(tmpstr2, "", 0, 0);
-						put = 1;
+						if(weatherwrite == 0)
+						{
+							if(weatherthread == NULL)
+							{
+								if(!file_exist("/tmp/lcdweather"))
+									weatherthread = addtimer(&lcd_writeweather, START, 10000, 1, NULL, NULL, NULL);
+								else
+								{
+									fileline = malloc(256);
+									if(fileline != NULL)
+									{
+										fd = fopen("/tmp/lcdweather", "r");
+										if(fd != NULL)
+										{
+											if(ostrcmp(getconfig("lcd_samsung_plugin_standby", NULL), "yes") == 0) 
+											{
+												weather_getline(fd, fileline);weather_getline(fd, fileline);
+												changetext(day0_d, fileline);
+												changetext(sday0_d, fileline);
+												weather_getline(fd, fileline);weather_getline(fd, fileline);
+												changetext(day0_t, fileline);
+												changetext(sday0_t, fileline);
+												weather_getline(fd, fileline);
+												weather_getline(fd, fileline);
+												changepic(day0_i, fileline);
+												changepic(sday0_i, fileline);
+											
+												weather_getline(fd, fileline);
+												changetext(day1_d, fileline);
+												changetext(sday1_d, fileline);
+												weather_getline(fd, fileline);weather_getline(fd, fileline);
+												changetext(day1_t, fileline);
+												changetext(sday1_t, fileline);
+												weather_getline(fd, fileline);
+												weather_getline(fd, fileline);
+												changepic(day1_i, fileline);
+												changepic(sday1_i, fileline);
+											
+												weather_getline(fd, fileline);
+												changetext(day2_d, fileline);
+												changetext(sday2_d, fileline);
+												weather_getline(fd, fileline);weather_getline(fd, fileline);
+												changetext(day2_t, fileline);
+												changetext(sday2_t, fileline);
+												weather_getline(fd, fileline);
+												weather_getline(fd, fileline);
+												changepic(day2_i, fileline);
+												changepic(sday2_i, fileline);
+											
+												weather_getline(fd, fileline);
+												changetext(day3_d, fileline);
+												changetext(sday3_d, fileline);
+												weather_getline(fd, fileline);weather_getline(fd, fileline);
+												changetext(day3_t, fileline);
+												changetext(sday3_t, fileline);
+												weather_getline(fd, fileline);
+												weather_getline(fd, fileline);
+												changepic(day3_i, fileline);
+												changepic(sday3_i, fileline);
+											}
+											else
+											{
+												weather_getline(fd, fileline);weather_getline(fd, fileline);
+												changetext(day0_d, fileline);
+												weather_getline(fd, fileline);weather_getline(fd, fileline);
+												changetext(day0_t, fileline);
+												weather_getline(fd, fileline);
+												weather_getline(fd, fileline);
+												changepic(day0_i, fileline);
+											
+												weather_getline(fd, fileline);
+												changetext(day1_d, fileline);
+												weather_getline(fd, fileline);weather_getline(fd, fileline);
+												changetext(day1_t, fileline);
+												weather_getline(fd, fileline);
+												weather_getline(fd, fileline);
+												changepic(day1_i, fileline);
+											
+												weather_getline(fd, fileline);
+												changetext(day2_d, fileline);
+												weather_getline(fd, fileline);weather_getline(fd, fileline);
+												changetext(day2_t, fileline);
+												weather_getline(fd, fileline);
+												weather_getline(fd, fileline);
+												changepic(day2_i, fileline);
+											
+												weather_getline(fd, fileline);
+												changetext(day3_d, fileline);
+												weather_getline(fd, fileline);weather_getline(fd, fileline);
+												changetext(day3_t, fileline);
+												weather_getline(fd, fileline);
+												weather_getline(fd, fileline);
+												changepic(day3_i, fileline);
+											}
+											fclose(fd);
+										}
+										free(fileline); fileline=NULL;
+									}
+									weatherwrite = 1;
+								}								
+							}
+						}		
+					}
+					if(standby == 0)
+					{
+						if(akttime != NULL)
+							changetext(akttime, tmpstr);
+						if(n_minute != NULL && digitaluhr == 0)
+						{
+							free(tmpstr);tmpstr=NULL;
+							tmpstr = ostrcat("min_",gettime(NULL, "%M"), 0, 0);
+							free(n_minute->pic);
+							n_minute->pic = string_replace("min_mm", tmpstr, picmin, 0);
+							free(tmpstr);tmpstr=NULL;
+						}
+						if(n_stunde != NULL && digitaluhr == 0)
+						{
+							free(tmpstr);tmpstr=NULL;
+							if(hr >= 12)
+								hr = hr - 12;
+							if(hr < 10)
+								tmpstr = ostrcat("hr_0",oitoa(hr), 0, 1);
+							else
+								tmpstr = ostrcat("hr_",oitoa(hr), 0, 1);
+							if(min < 12)
+								tmpstr = ostrcat(tmpstr,"00", 0, 0);
+							else if(min < 24)
+								tmpstr = ostrcat(tmpstr,"12", 0, 0);
+							else if(min < 36)
+								tmpstr = ostrcat(tmpstr,"24", 0, 0);
+							else if(min < 48)
+							 tmpstr = ostrcat(tmpstr,"36", 0, 0);
+							else if(min < 60)
+							 tmpstr = ostrcat(tmpstr,"48", 0, 0);								
+							free(n_stunde->pic);
+							n_stunde->pic = string_replace("hr_hhmm", tmpstr, pichr, 0);
+							free(tmpstr);tmpstr=NULL;
+						}
+						if(digitaluhr == 1)
+						{
+							free(tmpstr);tmpstr=NULL;
+							tmpstr = ostrcat("wert_",oitoa(hr/10), 0, 1);
+							n_stunde->pic = string_replace("wert_w", tmpstr, pichr, 0);	
+							free(tmpstr);tmpstr=NULL;
+							tmpstr = ostrcat("wert_",oitoa(hr%10), 0, 1);
+							n_stunde2->pic = string_replace("wert_w", tmpstr, pichr2, 0);	
+							free(tmpstr);tmpstr=NULL;
+							tmpstr = ostrcat("wert_",oitoa(min/10), 0, 1);
+							n_minute->pic = string_replace("wert_w", tmpstr, picmin, 0);	
+							free(tmpstr);tmpstr=NULL;
+							tmpstr = ostrcat("wert_",oitoa(min%10), 0, 1);
+							n_minute2->pic = string_replace("wert_w", tmpstr, picmin2, 0);
+							free(tmpstr);tmpstr=NULL;
+						}	
+							
+								
+						if(drawscreen(LCD_Samsung1, 0, 0) == -2)
+							printf("nicht genug Speicher fuer drawscreen\n");
+					}
+					else if(standby == 2)
+					{
+						if(akttime_Standby != NULL)
+							changetext(akttime_Standby, tmpstr); 
+						if(n_minute_standby != NULL && digitaluhr_standby == 0)
+						{
+							free(tmpstr);tmpstr=NULL;
+							tmpstr = ostrcat("min_",gettime(NULL, "%M"), 0, 0);
+							free(n_minute_standby->pic);
+							n_minute_standby->pic = string_replace("min_mm", tmpstr, picmin_standby, 0);
+							free(tmpstr);tmpstr=NULL;
+						}
+						if(n_stunde_standby != NULL && digitaluhr_standby == 0)
+						{
+							free(tmpstr);tmpstr=NULL;
+							if(hr >= 12)
+								hr = hr - 12;
+							if(hr < 10)
+								tmpstr = ostrcat("hr_0",oitoa(hr), 0, 1);
+							else
+								tmpstr = ostrcat("hr_",oitoa(hr), 0, 1);
+							if(min < 12)
+								tmpstr = ostrcat(tmpstr,"00", 0, 0);
+							else if(min < 24)
+								tmpstr = ostrcat(tmpstr,"12", 0, 0);
+							else if(min < 36)
+								tmpstr = ostrcat(tmpstr,"24", 0, 0);
+							else if(min < 48)
+							 tmpstr = ostrcat(tmpstr,"36", 0, 0);
+							else if(min < 60)
+							 tmpstr = ostrcat(tmpstr,"48", 0, 0);								
+							free(n_stunde_standby->pic);
+							n_stunde_standby->pic = string_replace("hr_hhmm", tmpstr, pichr_standby, 0);
+							free(tmpstr);tmpstr=NULL;
+						}	
+						if(digitaluhr_standby == 1)
+						{
+							free(tmpstr);tmpstr=NULL;
+							tmpstr = ostrcat("wert_",oitoa(hr/10), 0, 1);
+							n_stunde_standby->pic = string_replace("wert_w", tmpstr, pichr_standby, 0);	
+							free(tmpstr);tmpstr=NULL;
+							tmpstr = ostrcat("wert_",oitoa(hr%10), 0, 1);
+							n_stunde2_standby->pic = string_replace("wert_w", tmpstr, pichr2_standby, 0);	
+							free(tmpstr);tmpstr=NULL;
+							tmpstr = ostrcat("wert_",oitoa(min/10), 0, 1);
+							n_minute_standby->pic = string_replace("wert_w", tmpstr, picmin_standby, 0);	
+							free(tmpstr);tmpstr=NULL;
+							tmpstr = ostrcat("wert_",oitoa(min%10), 0, 1);
+							n_minute2_standby->pic = string_replace("wert_w", tmpstr, picmin2_standby, 0);
+							free(tmpstr);tmpstr=NULL;
+						}	
+						
+						drawscreen(LCD_Standby, 0, 0); 
+						put = 0;
 					} 
-					if(tmpstr3 == NULL && recmerk != NULL)
-					{
-						put = 1;
-						free(recmerk);recmerk=NULL;
-					}
-					else if(tmpstr3 != NULL && recmerk == NULL)
-					{
-						free(recmerk);recmerk=NULL;
-						recmerk = ostrcat(tmpstr3, "", 0, 0);
-						put = 1;
-					}
 				}
 				else if(type == 2)
 				{
-					if(loopcount >= 15)
+					if(status.mcaktiv == 1)
+						playertype = 0;
+					else	
+						playertype = getconfigint("playertype", NULL);
+		
+					if(playertype == 1)
 					{
-						put = 1;
-						loopcount = 0;
+						unsigned long long int startpos = 0;
+						playergetinfots(&len, &startpos, NULL, &pos, NULL, 0);
+						len = len / 90000;
+						pos = (pos - startpos) / 90000;
 					}
-				}	
-				
-				if(put == 1)
-				{
-					if(type == 1)
+					else
 					{
-						// Wettervorhersage
-						if(ostrcmp(getconfig("lcd_samsung_plugin_wetter", NULL), "yes") == 0)
-						{
-							if(weatherwrite == 0)
-							{
-								if(weatherthread == NULL)
-								{
-									if(!file_exist("/tmp/lcdweather"))
-										weatherthread = addtimer(&lcd_writeweather, START, 10000, 1, NULL, NULL, NULL);
-									else
-									{
-										fileline = malloc(256);
-										if(fileline != NULL)
-										{
-											fd = fopen("/tmp/lcdweather", "r");
-											if(fd != NULL)
-											{
-												if(ostrcmp(getconfig("lcd_samsung_plugin_standby", NULL), "yes") == 0) 
-												{
-													weather_getline(fd, fileline);weather_getline(fd, fileline);
-													changetext(day0_d, fileline);
-													changetext(sday0_d, fileline);
-													weather_getline(fd, fileline);weather_getline(fd, fileline);
-													changetext(day0_t, fileline);
-													changetext(sday0_t, fileline);
-													weather_getline(fd, fileline);
-													weather_getline(fd, fileline);
-													changepic(day0_i, fileline);
-													changepic(sday0_i, fileline);
-												
-													weather_getline(fd, fileline);
-													changetext(day1_d, fileline);
-													changetext(sday1_d, fileline);
-													weather_getline(fd, fileline);weather_getline(fd, fileline);
-													changetext(day1_t, fileline);
-													changetext(sday1_t, fileline);
-													weather_getline(fd, fileline);
-													weather_getline(fd, fileline);
-													changepic(day1_i, fileline);
-													changepic(sday1_i, fileline);
-												
-													weather_getline(fd, fileline);
-													changetext(day2_d, fileline);
-													changetext(sday2_d, fileline);
-													weather_getline(fd, fileline);weather_getline(fd, fileline);
-													changetext(day2_t, fileline);
-													changetext(sday2_t, fileline);
-													weather_getline(fd, fileline);
-													weather_getline(fd, fileline);
-													changepic(day2_i, fileline);
-													changepic(sday2_i, fileline);
-												
-													weather_getline(fd, fileline);
-													changetext(day3_d, fileline);
-													changetext(sday3_d, fileline);
-													weather_getline(fd, fileline);weather_getline(fd, fileline);
-													changetext(day3_t, fileline);
-													changetext(sday3_t, fileline);
-													weather_getline(fd, fileline);
-													weather_getline(fd, fileline);
-													changepic(day3_i, fileline);
-													changepic(sday3_i, fileline);
-												}
-												else
-												{
-													weather_getline(fd, fileline);weather_getline(fd, fileline);
-													changetext(day0_d, fileline);
-													weather_getline(fd, fileline);weather_getline(fd, fileline);
-													changetext(day0_t, fileline);
-													weather_getline(fd, fileline);
-													weather_getline(fd, fileline);
-													changepic(day0_i, fileline);
-												
-													weather_getline(fd, fileline);
-													changetext(day1_d, fileline);
-													weather_getline(fd, fileline);weather_getline(fd, fileline);
-													changetext(day1_t, fileline);
-													weather_getline(fd, fileline);
-													weather_getline(fd, fileline);
-													changepic(day1_i, fileline);
-												
-													weather_getline(fd, fileline);
-													changetext(day2_d, fileline);
-													weather_getline(fd, fileline);weather_getline(fd, fileline);
-													changetext(day2_t, fileline);
-													weather_getline(fd, fileline);
-													weather_getline(fd, fileline);
-													changepic(day2_i, fileline);
-												
-													weather_getline(fd, fileline);
-													changetext(day3_d, fileline);
-													weather_getline(fd, fileline);weather_getline(fd, fileline);
-													changetext(day3_t, fileline);
-													weather_getline(fd, fileline);
-													weather_getline(fd, fileline);
-													changepic(day3_i, fileline);
-												}
-												fclose(fd);
-											}
-											free(fileline); fileline=NULL;
-										}
-										weatherwrite = 1;
-									}								
-								}
-							}		
-						}
-						if(standby == 0)
-						{
-							if(akttime != NULL)
-								changetext(akttime, tmpstr);
-							if(n_minute != NULL && digitaluhr == 0)
-							{
-								free(tmpstr);tmpstr=NULL;
-								tmpstr = ostrcat("min_",gettime(NULL, "%M"), 0, 0);
-								free(n_minute->pic);
-								n_minute->pic = string_replace("min_mm", tmpstr, picmin, 0);
-								free(tmpstr);tmpstr=NULL;
-							}
-							if(n_stunde != NULL && digitaluhr == 0)
-							{
-								free(tmpstr);tmpstr=NULL;
-								if(hr >= 12)
-									hr = hr - 12;
-								if(hr < 10)
-									tmpstr = ostrcat("hr_0",oitoa(hr), 0, 1);
-								else
-									tmpstr = ostrcat("hr_",oitoa(hr), 0, 1);
-								if(min < 12)
-									tmpstr = ostrcat(tmpstr,"00", 0, 0);
-								else if(min < 24)
-									tmpstr = ostrcat(tmpstr,"12", 0, 0);
-								else if(min < 36)
-									tmpstr = ostrcat(tmpstr,"24", 0, 0);
-								else if(min < 48)
-								 tmpstr = ostrcat(tmpstr,"36", 0, 0);
-								else if(min < 60)
-								 tmpstr = ostrcat(tmpstr,"48", 0, 0);								
-								free(n_stunde->pic);
-								n_stunde->pic = string_replace("hr_hhmm", tmpstr, pichr, 0);
-								free(tmpstr);tmpstr=NULL;
-							}
-							if(digitaluhr == 1)
-							{
-								free(tmpstr);tmpstr=NULL;
-								tmpstr = ostrcat("wert_",oitoa(hr/10), 0, 1);
-								n_stunde->pic = string_replace("wert_w", tmpstr, pichr, 0);	
-								free(tmpstr);tmpstr=NULL;
-								tmpstr = ostrcat("wert_",oitoa(hr%10), 0, 1);
-								n_stunde2->pic = string_replace("wert_w", tmpstr, pichr2, 0);	
-								free(tmpstr);tmpstr=NULL;
-								tmpstr = ostrcat("wert_",oitoa(min/10), 0, 1);
-								n_minute->pic = string_replace("wert_w", tmpstr, picmin, 0);	
-								free(tmpstr);tmpstr=NULL;
-								tmpstr = ostrcat("wert_",oitoa(min%10), 0, 1);
-								n_minute2->pic = string_replace("wert_w", tmpstr, picmin2, 0);
-								free(tmpstr);tmpstr=NULL;
-							}	
-								
-									
-							if(drawscreen(LCD_Samsung1, 0, 0) == -2)
-								printf("nicht genug Speicher fuer drawscreen\n");
-						}
-						else if(standby == 2)
-						{
-							if(akttime_Standby != NULL)
-								changetext(akttime_Standby, tmpstr); 
-							if(n_minute_standby != NULL && digitaluhr_standby == 0)
-							{
-								free(tmpstr);tmpstr=NULL;
-								tmpstr = ostrcat("min_",gettime(NULL, "%M"), 0, 0);
-								free(n_minute_standby->pic);
-								n_minute_standby->pic = string_replace("min_mm", tmpstr, picmin_standby, 0);
-								free(tmpstr);tmpstr=NULL;
-							}
-							if(n_stunde_standby != NULL && digitaluhr_standby == 0)
-							{
-								free(tmpstr);tmpstr=NULL;
-								if(hr >= 12)
-									hr = hr - 12;
-								if(hr < 10)
-									tmpstr = ostrcat("hr_0",oitoa(hr), 0, 1);
-								else
-									tmpstr = ostrcat("hr_",oitoa(hr), 0, 1);
-								if(min < 12)
-									tmpstr = ostrcat(tmpstr,"00", 0, 0);
-								else if(min < 24)
-									tmpstr = ostrcat(tmpstr,"12", 0, 0);
-								else if(min < 36)
-									tmpstr = ostrcat(tmpstr,"24", 0, 0);
-								else if(min < 48)
-								 tmpstr = ostrcat(tmpstr,"36", 0, 0);
-								else if(min < 60)
-								 tmpstr = ostrcat(tmpstr,"48", 0, 0);								
-								free(n_stunde_standby->pic);
-								n_stunde_standby->pic = string_replace("hr_hhmm", tmpstr, pichr_standby, 0);
-								free(tmpstr);tmpstr=NULL;
-							}	
-							if(digitaluhr_standby == 1)
-							{
-								free(tmpstr);tmpstr=NULL;
-								tmpstr = ostrcat("wert_",oitoa(hr/10), 0, 1);
-								n_stunde_standby->pic = string_replace("wert_w", tmpstr, pichr_standby, 0);	
-								free(tmpstr);tmpstr=NULL;
-								tmpstr = ostrcat("wert_",oitoa(hr%10), 0, 1);
-								n_stunde2_standby->pic = string_replace("wert_w", tmpstr, pichr2_standby, 0);	
-								free(tmpstr);tmpstr=NULL;
-								tmpstr = ostrcat("wert_",oitoa(min/10), 0, 1);
-								n_minute_standby->pic = string_replace("wert_w", tmpstr, picmin_standby, 0);	
-								free(tmpstr);tmpstr=NULL;
-								tmpstr = ostrcat("wert_",oitoa(min%10), 0, 1);
-								n_minute2_standby->pic = string_replace("wert_w", tmpstr, picmin2_standby, 0);
-								free(tmpstr);tmpstr=NULL;
-							}	
-							
-							drawscreen(LCD_Standby, 0, 0); 
-							put = 0;
-						} 
+						pos = playergetpts() / 90000;
+						len = playergetlength();
 					}
-					else if(type == 2)
-					{
-						if(status.mcaktiv == 1)
-							playertype = 0;
-						else	
-							playertype = getconfigint("playertype", NULL);
-			
-						if(playertype == 1)
-						{
-							unsigned long long int startpos = 0;
-							playergetinfots(&len, &startpos, NULL, &pos, NULL, 0);
-							len = len / 90000;
-							pos = (pos - startpos) / 90000;
-						}
-						else
-						{
-							pos = playergetpts() / 90000;
-							len = playergetlength();
-						}
-						if(pos < 0) pos = 0;
-						reverse = len - pos;
-						if(len == 0)
-							sprogress->progresssize = 0;
-						else
-							sprogress->progresssize = pos * 100 / len;
-						
-						tmpstr2 = convert_timesec(pos);
-						changetext(spos, tmpstr2);
-						free(tmpstr2); tmpstr2 = NULL;
+					if(pos < 0) pos = 0;
+					reverse = len - pos;
+					if(len == 0)
+						sprogress->progresssize = 0;
+					else
+						sprogress->progresssize = pos * 100 / len;
+					
+					tmpstr2 = convert_timesec(pos);
+					changetext(spos, tmpstr2);
+					free(tmpstr2); tmpstr2 = NULL;
 
-						tmpstr2 = convert_timesec(len);
-						changetext(slen, tmpstr2);
-						free(tmpstr2); tmpstr2 = NULL;
+					tmpstr2 = convert_timesec(len);
+					changetext(slen, tmpstr2);
+					free(tmpstr2); tmpstr2 = NULL;
 
-						tmpstr2 = convert_timesec(reverse);
-						changetext(sreverse, tmpstr2);
-						free(tmpstr2); tmpstr2 = NULL;
-						
-						changetext(akttimeplay, tmpstr);
-						changetext(stitle, basename(status.playfile));
-						if(drawscreen(LCD_Play, 0, 0) == -2)
-							printf("nicht genug Speicher fuer drawscreen\n");
-					}
+					tmpstr2 = convert_timesec(reverse);
+					changetext(sreverse, tmpstr2);
+					free(tmpstr2); tmpstr2 = NULL;
+					
+					changetext(akttimeplay, tmpstr);
+					changetext(stitle, basename(status.playfile));
+					if(drawscreen(LCD_Play, 0, 0) == -2)
+						printf("nicht genug Speicher fuer drawscreen\n");
 				}
 			}
-			else
-			{
-				if(standby == 2) 
-				{        
-					if(put == 1) 
-					{        
-						changetext(akttime_Standby, tmpstr); 
-						drawscreen(LCD_Standby, 0, 0); 
-						put = 0; 
-					} 
-				} 
-			}
 		}
+		else
+		{
+			if(standby == 2) 
+			{        
+				if(put == 1) 
+				{        
+					changetext(akttime_Standby, tmpstr); 
+					drawscreen(LCD_Standby, 0, 0); 
+					put = 0; 
+				} 
+			} 
+		}
+
 		free(tmpstr); tmpstr = NULL;
 		free(tmpstr2); tmpstr2 = NULL;
 		free(tmpstr3); tmpstr3 = NULL;

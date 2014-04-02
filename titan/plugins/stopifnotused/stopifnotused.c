@@ -1,7 +1,6 @@
 #include "../../titan/struct.h"
 #include "../../titan/debug.h"
 #include "../../titan/header.h"
-#include "../../titan/list.h"
 
 char pluginname[] = "Stop if not used";
 char plugindesc[] = "Auschalten der Box wenn in einem bestimmten Zeitraum keine Aktion erfolgte";
