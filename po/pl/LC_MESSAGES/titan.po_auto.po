@@ -6062,7 +6062,7 @@ msgid "Download"
 msgstr ""
 
 #: skin_default_skin.xml.h:194
-msgid "Dualboot Menu TitanNit / Enigma2"
+msgid "Dualboot Menu TitanNit / E2"
 msgstr ""
 
 #: skin_default_skin.xml.h:195
