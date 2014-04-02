@@ -8,7 +8,6 @@ SUBDIRS = \
 	hello \
 	imdb \
 	imdbapi \
-	instar \
 	keylock \
 	lcdpearl1 \
 	lcdsamsung \
