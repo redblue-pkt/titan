@@ -4471,235 +4471,312 @@ printf("webadjustsend fmt: %d\n",fmt);
 	char* choiceminitv = NULL;
 	char* usecec = NULL;
 	char* playerbufferseektime = NULL;
+	char* tmpstr = NULL;
 
 	anode = ostrstr(param, "node=");
 	if(anode != NULL)
 		anode = anode + 5;
 
-	volbartimeout = ostrstr(param, "volbartimeout=");
+	tmpstr = ostrcat(param, NULL, 0, 0);
+	if(tmpstr != NULL) volbartimeout = ostrstr(tmpstr, "volbartimeout=");
+	free(tmpstr); tmpstr = NULL;
 	if(volbartimeout != NULL) volbartimeout = volbartimeout + 14;
 	volbartimeout = stringreplacecharonce(volbartimeout, '&', '\0');
 	if(volbartimeout != NULL) addconfigtmp("volbartimeout", volbartimeout);
   	debug(77, "volbartimeout: %s", volbartimeout); 
 
-	infobartimeout = ostrstr(param, "infobartimeout=");
+	tmpstr = ostrcat(param, NULL, 0, 0);
+	if(tmpstr != NULL) infobartimeout = ostrstr(tmpstr, "infobartimeout=");
+	free(tmpstr); tmpstr = NULL;
 	if(infobartimeout != NULL) infobartimeout = infobartimeout + 15;
 	infobartimeout = stringreplacecharonce(infobartimeout, '&', '\0');
 	if(infobartimeout != NULL) addconfigtmp("infobartimeout", infobartimeout);
   	debug(77, "infobartimeout: %s", infobartimeout); 
 
-	infobarsleep = ostrstr(param, "infobarsleep=");
+	tmpstr = ostrcat(param, NULL, 0, 0);
+	if(tmpstr != NULL) infobarsleep = ostrstr(tmpstr, "infobarsleep=");
+	free(tmpstr); tmpstr = NULL;
 	if(infobarsleep != NULL) infobarsleep = infobarsleep + 13;
 	infobarsleep = stringreplacecharonce(infobarsleep, '&', '\0');
 	if(infobarsleep != NULL) addconfigtmp("infobarsleep", infobarsleep);
   	debug(77, "infobarsleep: %s", infobarsleep); 
 
-	spinnerspeed = ostrstr(param, "spinnerspeed=");
+	tmpstr = ostrcat(param, NULL, 0, 0);
+	if(tmpstr != NULL) spinnerspeed = ostrstr(tmpstr, "spinnerspeed=");
+	free(tmpstr); tmpstr = NULL;
 	if(spinnerspeed != NULL) spinnerspeed = spinnerspeed + 13;
 	spinnerspeed = stringreplacecharonce(spinnerspeed, '&', '\0');
 	if(spinnerspeed != NULL) addconfigtmp("spinnerspeed", spinnerspeed);
   	debug(77, "spinnerspeed: %s", spinnerspeed); 
 
-	spinnertime = ostrstr(param, "spinnertime=");
+	tmpstr = ostrcat(param, NULL, 0, 0);
+	if(tmpstr != NULL) spinnertime = ostrstr(tmpstr, "spinnertime=");
+	free(tmpstr); tmpstr = NULL;
 	if(spinnertime != NULL) spinnertime = spinnertime + 12;
 	spinnertime = stringreplacecharonce(spinnertime, '&', '\0');
 	if(spinnertime != NULL) addconfigtmp("spinnertime", spinnertime);
   	debug(77, "spinnertime: %s", spinnertime); 
 
-	hangtime = ostrstr(param, "hangtime=");
+	tmpstr = ostrcat(param, NULL, 0, 0);
+	if(tmpstr != NULL) hangtime = ostrstr(tmpstr, "hangtime=");
+	free(tmpstr); tmpstr = NULL;
 	if(hangtime != NULL) hangtime = hangtime + 9;
 	hangtime = stringreplacecharonce(hangtime, '&', '\0');
 	if(hangtime != NULL) addconfigtmp("hangtime", hangtime);
   	debug(77, "hangtime: %s", hangtime); 
 
-	secondinfobar = ostrstr(param, "secondinfobar=");
+	tmpstr = ostrcat(param, NULL, 0, 0);
+	if(tmpstr != NULL) secondinfobar = ostrstr(param, "secondinfobar=");
+	free(tmpstr); tmpstr = NULL;
 	if(secondinfobar != NULL) secondinfobar = secondinfobar + 14;
 	secondinfobar = stringreplacecharonce(secondinfobar, '&', '\0');
 	if(secondinfobar != NULL) addconfigtmp("secondinfobar", secondinfobar);
   	debug(77, "secondinfobar: %s", secondinfobar); 
 
-	nozapclear = ostrstr(param, "nozapclear=");
+	tmpstr = ostrcat(param, NULL, 0, 0);
+	if(tmpstr != NULL) nozapclear = ostrstr(tmpstr, "nozapclear=");
+	free(tmpstr); tmpstr = NULL;
 	if(nozapclear != NULL) nozapclear = nozapclear + 11;
 	nozapclear = stringreplacecharonce(nozapclear, '&', '\0');
 	if(nozapclear != NULL) addconfigtmp("nozapclear", nozapclear);
   	debug(77, "nozapclear: %s", nozapclear); 
 
-	fastzap = ostrstr(param, "fastzap=");
+	tmpstr = ostrcat(param, NULL, 0, 0);
+	if(tmpstr != NULL) fastzap = ostrstr(tmpstr, "fastzap=");
+	free(tmpstr); tmpstr = NULL;
 	if(fastzap != NULL) fastzap = fastzap + 8;
 	fastzap = stringreplacecharonce(fastzap, '&', '\0');
 	if(fastzap != NULL) addconfigtmp("fastzap", fastzap);
   	debug(77, "fastzap: %s", fastzap); 
 
-	faststop = ostrstr(param, "faststop=");
+	tmpstr = ostrcat(param, NULL, 0, 0);
+	if(tmpstr != NULL) faststop = ostrstr(tmpstr, "faststop=");
+	free(tmpstr); tmpstr = NULL;
 	if(faststop != NULL) faststop = faststop + 9;
 	faststop = stringreplacecharonce(faststop, '&', '\0');
 	if(faststop != NULL) addconfigtmp("faststop", faststop);
   	debug(77, "faststop: %s", faststop); 
 
-	dirsort = ostrstr(param, "dirsort=");
+	tmpstr = ostrcat(param, NULL, 0, 0);
+	if(tmpstr != NULL) dirsort = ostrstr(tmpstr, "dirsort=");
+	free(tmpstr); tmpstr = NULL;
 	if(dirsort != NULL) dirsort = dirsort + 8;
 	dirsort = stringreplacecharonce(dirsort, '&', '\0');
 	if(dirsort != NULL) addconfigtmp("dirsort", dirsort);
   	debug(77, "dirsort: %s", dirsort); 
 
-	poweraktion = ostrstr(param, "poweraktion=");
+	tmpstr = ostrcat(param, NULL, 0, 0);
+	if(tmpstr != NULL) poweraktion = ostrstr(tmpstr, "poweraktion=");
+	free(tmpstr); tmpstr = NULL;
 	if(poweraktion != NULL) poweraktion = poweraktion + 12;
 	poweraktion = stringreplacecharonce(poweraktion, '&', '\0');
 	if(poweraktion != NULL) addconfigtmp("poweraktion", poweraktion);
   	debug(77, "poweraktion: %s", poweraktion); 
 
-	virtualzap = ostrstr(param, "virtualzap=");
+	tmpstr = ostrcat(param, NULL, 0, 0);
+	if(tmpstr != NULL) virtualzap = ostrstr(tmpstr, "virtualzap=");
+	free(tmpstr); tmpstr = NULL;
 	if(virtualzap != NULL) virtualzap = virtualzap + 11;
 	virtualzap = stringreplacecharonce(virtualzap, '&', '\0');
 	if(virtualzap != NULL) addconfigtmp("virtualzap", virtualzap);
   	debug(77, "virtualzap: %s", virtualzap); 
 
-	fasttextrender = ostrstr(param, "fasttextrender=");
+	tmpstr = ostrcat(param, NULL, 0, 0);
+	if(tmpstr != NULL) fasttextrender = ostrstr(tmpstr, "fasttextrender=");
+	free(tmpstr); tmpstr = NULL;
 	if(fasttextrender != NULL) fasttextrender = fasttextrender + 15;
 	fasttextrender = stringreplacecharonce(fasttextrender, '&', '\0');
 	if(fasttextrender != NULL) addconfigtmp("fasttextrender", fasttextrender);
   	debug(77, "fasttextrender: %s", fasttextrender); 
 
-	recsplitsize = ostrstr(param, "recsplitsize=");
+	tmpstr = ostrcat(param, NULL, 0, 0);
+	if(tmpstr != NULL) recsplitsize = ostrstr(tmpstr, "recsplitsize=");
+	free(tmpstr); tmpstr = NULL;
 	if(recsplitsize != NULL) recsplitsize = recsplitsize + 13;
 	recsplitsize = stringreplacecharonce(recsplitsize, '&', '\0');
 	if(recsplitsize != NULL) addconfigtmp("recsplitsize", recsplitsize);
   	debug(77, "recsplitsize: %s", recsplitsize); 
 
-	recforerun = ostrstr(param, "recforerun=");
+	tmpstr = ostrcat(param, NULL, 0, 0);
+	if(tmpstr != NULL) recforerun = ostrstr(tmpstr, "recforerun=");
+	free(tmpstr); tmpstr = NULL;
 	if(recforerun != NULL) recforerun = recforerun + 11;
 	recforerun = stringreplacecharonce(recforerun, '&', '\0');
 	if(recforerun != NULL) addconfigtmp("recforerun", recforerun);
   	debug(77, "recforerun: %s", recforerun); 
-	
-	recoverrun = ostrstr(param, "recoverrun=");
+
+	tmpstr = ostrcat(param, NULL, 0, 0);	
+	if(tmpstr != NULL) recoverrun = ostrstr(tmpstr, "recoverrun=");
+	free(tmpstr); tmpstr = NULL;
 	if(recoverrun != NULL) recoverrun = recoverrun + 11;
 	recoverrun = stringreplacecharonce(recoverrun, '&', '\0');
 	if(recoverrun != NULL) addconfigtmp("recoverrun", recoverrun);
   	debug(77, "recoverrun: %s", recoverrun); 
 
-	skip13 = ostrstr(param, "skip13=");
+	tmpstr = ostrcat(param, NULL, 0, 0);
+	if(tmpstr != NULL) skip13 = ostrstr(tmpstr, "skip13=");
+	free(tmpstr); tmpstr = NULL;
 	if(skip13 != NULL) skip13 = skip13 + 7;
 	skip13 = stringreplacecharonce(skip13, '&', '\0');
 	if(skip13 != NULL) addconfigtmp("skip13", skip13);
   	debug(77, "skip13: %s", skip13); 
 
-	skip46 = ostrstr(param, "skip46=");
+	tmpstr = ostrcat(param, NULL, 0, 0);
+	if(tmpstr != NULL) skip46 = ostrstr(tmpstr, "skip46=");
+	free(tmpstr); tmpstr = NULL;
 	if(skip46 != NULL) skip46 = skip46 + 7;
 	skip46 = stringreplacecharonce(skip46, '&', '\0');
 	if(skip46 != NULL) addconfigtmp("skip46", skip46);
   	debug(77, "skip46: %s", skip46); 
 
-	skip79 = ostrstr(param, "skip79=");
+	tmpstr = ostrcat(param, NULL, 0, 0);
+	if(tmpstr != NULL) skip79 = ostrstr(tmpstr, "skip79=");
+	free(tmpstr); tmpstr = NULL;
 	if(skip79 != NULL) skip79 = skip79 + 7;
 	skip79 = stringreplacecharonce(skip79, '&', '\0');
 	if(skip79 != NULL) addconfigtmp("skip79", skip79);
   	debug(77, "skip79: %s", skip79); 
 
-	playertype = ostrstr(param, "playertype=");
+	tmpstr = ostrcat(param, NULL, 0, 0);
+	if(tmpstr != NULL) playertype = ostrstr(tmpstr, "playertype=");
+	free(tmpstr); tmpstr = NULL;
 	if(playertype != NULL) playertype = playertype + 11;
 	playertype = stringreplacecharonce(playertype, '&', '\0');
 	if(playertype != NULL) addconfigtmp("playertype", playertype);
   	debug(77, "playertype: %s", playertype); 
 
-	autochangechannelname = ostrstr(param, "autochangechannelname=");
+	tmpstr = ostrcat(param, NULL, 0, 0);
+	if(tmpstr != NULL) autochangechannelname = ostrstr(tmpstr, "autochangechannelname=");
+	free(tmpstr); tmpstr = NULL;
 	if(autochangechannelname != NULL) autochangechannelname = autochangechannelname + 22;
 	autochangechannelname = stringreplacecharonce(autochangechannelname, '&', '\0');
 	if(autochangechannelname != NULL) addconfigtmp("autochangechannelname", autochangechannelname);
   	debug(77, "autochangechannelname: %s", autochangechannelname); 
 
-	def_rectimer_after = ostrstr(param, "def_rectimer_after=");
+	tmpstr = ostrcat(param, NULL, 0, 0);
+	if(tmpstr != NULL) def_rectimer_after = ostrstr(tmpstr, "def_rectimer_after=");
+	free(tmpstr); tmpstr = NULL;
 	if(def_rectimer_after != NULL) def_rectimer_after = def_rectimer_after + 19;
 	def_rectimer_after = stringreplacecharonce(def_rectimer_after, '&', '\0');
 	if(def_rectimer_after != NULL) addconfigtmp("def_rectimer_after", def_rectimer_after);
   	debug(77, "def_rectimer_after: %s", def_rectimer_after); 
 
-	showchanneltimeline = ostrstr(param, "showchanneltimeline=");
+	tmpstr = ostrcat(param, NULL, 0, 0);
+	showchanneltimeline = ostrstr(tmpstr, "showchanneltimeline=");
+	free(tmpstr); tmpstr = NULL;
 	if(showchanneltimeline != NULL) showchanneltimeline = showchanneltimeline + 20;
 	showchanneltimeline = stringreplacecharonce(showchanneltimeline, '&', '\0');
 	if(showchanneltimeline != NULL) addconfigtmp("showchanneltimeline", showchanneltimeline);
   	debug(77, "showchanneltimeline: %s", showchanneltimeline); 
 
-	screenanim = ostrstr(param, "screenanim=");
+	tmpstr = ostrcat(param, NULL, 0, 0);
+	if(tmpstr != NULL) screenanim = ostrstr(tmpstr, "screenanim=");
+	free(tmpstr); tmpstr = NULL;
 	if(screenanim != NULL) screenanim = screenanim + 11;
 	screenanim = stringreplacecharonce(screenanim, '&', '\0');
 	if(screenanim != NULL) addconfigtmp("screenanim", screenanim);
   	debug(77, "screenanim: %s", screenanim); 
 
-	screenanimspeed = ostrstr(param, "screenanimspeed=");
+	tmpstr = ostrcat(param, NULL, 0, 0);
+	if(tmpstr != NULL) screenanimspeed = ostrstr(tmpstr, "screenanimspeed=");
+	free(tmpstr); tmpstr = NULL;
 	if(screenanimspeed != NULL) screenanimspeed = screenanimspeed + 16;
 	screenanimspeed = stringreplacecharonce(screenanimspeed, '&', '\0');
 	if(screenanimspeed != NULL) addconfigtmp("screenanimspeed", screenanimspeed);
   	debug(77, "screenanimspeed: %s", screenanimspeed); 
 
-	channellistview = ostrstr(param, "channellistview=");
+	tmpstr = ostrcat(param, NULL, 0, 0);
+	channellistview = ostrstr(tmpstr, "channellistview=");
+	free(tmpstr); tmpstr = NULL;
 	if(channellistview != NULL) channellistview = channellistview + 16;
 	channellistview = stringreplacecharonce(channellistview, '&', '\0');
 	if(channellistview != NULL) addconfigtmp("channellistview", channellistview);
   	debug(77, "channellistview: %s", channellistview); 
 
-	showlastpos = ostrstr(param, "showlastpos=");
+	tmpstr = ostrcat(param, NULL, 0, 0);
+	if(tmpstr != NULL) showlastpos = ostrstr(tmpstr, "showlastpos=");
+	free(tmpstr); tmpstr = NULL;
 	if(showlastpos != NULL) showlastpos = showlastpos + 12;
 	showlastpos = stringreplacecharonce(showlastpos, '&', '\0');
 	if(showlastpos != NULL) addconfigtmp("showlastpos", showlastpos);
   	debug(77, "showlastpos: %s", showlastpos); 
 
-	recsync = ostrstr(param, "recsync=");
+	tmpstr = ostrcat(param, NULL, 0, 0);
+	if(tmpstr != NULL) recsync = ostrstr(tmpstr, "recsync=");
+	free(tmpstr); tmpstr = NULL;
 	if(recsync != NULL) recsync = recsync + 8;
 	recsync = stringreplacecharonce(recsync, '&', '\0');
 	if(recsync != NULL) addconfigtmp("recsync", recsync);
   	debug(77, "recsync: %s", recsync); 
 
-	recordnamefmt = ostrstr(param, "recordnamefmt=");
+	tmpstr = ostrcat(param, NULL, 0, 0);
+	recordnamefmt = ostrstr(tmpstr, "recordnamefmt=");
+	free(tmpstr); tmpstr = NULL;
 	if(recordnamefmt != NULL) recordnamefmt = recordnamefmt + 14;
 	recordnamefmt = stringreplacecharonce(recordnamefmt, '&', '\0');
 	if(recordnamefmt != NULL) addconfigtmp("recordnamefmt", recordnamefmt);
   	debug(77, "recordnamefmt: %s", recordnamefmt); 
 
-	newsletter = ostrstr(param, "newsletter=");
+	tmpstr = ostrcat(param, NULL, 0, 0);
+	if(tmpstr != NULL) newsletter = ostrstr(tmpstr, "newsletter=");
+	free(tmpstr); tmpstr = NULL;
 	if(newsletter != NULL) newsletter = newsletter + 11;
 	newsletter = stringreplacecharonce(newsletter, '&', '\0');
 	if(newsletter != NULL) addconfigtmp("newsletter", newsletter);
   	debug(77, "newsletter: %s", newsletter); 
 
-	showhiddenfiles = ostrstr(param, "showhiddenfiles=");
+	tmpstr = ostrcat(param, NULL, 0, 0);
+	if(tmpstr != NULL) showhiddenfiles = ostrstr(tmpstr, "showhiddenfiles=");
+	free(tmpstr); tmpstr = NULL;
 	if(showhiddenfiles != NULL) showhiddenfiles = showhiddenfiles + 16;
 	showhiddenfiles = stringreplacecharonce(showhiddenfiles, '&', '\0');
 	if(showhiddenfiles != NULL) addconfigtmp("showhiddenfiles", showhiddenfiles);
   	debug(77, "showhiddenfiles: %s", showhiddenfiles); 
 
-	expertmodus = ostrstr(param, "expertmodus=");
+	tmpstr = ostrcat(param, NULL, 0, 0);
+	if(tmpstr != NULL) expertmodus = ostrstr(tmpstr, "expertmodus=");
+	free(tmpstr); tmpstr = NULL;
 	if(expertmodus != NULL) expertmodus = expertmodus + 12;
 	expertmodus = stringreplacecharonce(expertmodus, '&', '\0');
 	if(expertmodus != NULL) addconfigtmp("expertmodus", expertmodus);
   	debug(77, "expertmodus: %s", expertmodus); 
 
-	infobarprogram = ostrstr(param, "infobarprogram=");
+	tmpstr = ostrcat(param, NULL, 0, 0);
+	if(tmpstr != NULL) infobarprogram = ostrstr(tmpstr, "infobarprogram=");
+	free(tmpstr); tmpstr = NULL;
 	if(infobarprogram != NULL) infobarprogram = infobarprogram + 15;
 	infobarprogram = stringreplacecharonce(infobarprogram, '&', '\0');
 	if(infobarprogram != NULL) addconfigtmp("infobarprogram", infobarprogram);
   	debug(77, "infobarprogram: %s", infobarprogram); 
 
-	emucontrol = ostrstr(param, "emucontrol=");
+	tmpstr = ostrcat(param, NULL, 0, 0);
+	if(tmpstr != NULL) emucontrol = ostrstr(tmpstr, "emucontrol=");
+	free(tmpstr); tmpstr = NULL;
 	if(emucontrol != NULL) emucontrol = emucontrol + 10;
 	emucontrol = stringreplacecharonce(emucontrol, '&', '\0');
 	if(emucontrol != NULL) addconfigtmp("emucontrol", emucontrol);
   	debug(77, "emucontrol: %s", emucontrol); 
 
-	choiceminitv = ostrstr(param, "choiceminitv=");
+	tmpstr = ostrcat(param, NULL, 0, 0);
+	if(tmpstr != NULL) choiceminitv = ostrstr(tmpstr, "choiceminitv=");
+	free(tmpstr); tmpstr = NULL;
 	if(choiceminitv != NULL) choiceminitv = choiceminitv + 13;
 	choiceminitv = stringreplacecharonce(choiceminitv, '&', '\0');
 	if(choiceminitv != NULL) addconfigtmp("choiceminitv", choiceminitv);
   	debug(77, "choiceminitv: %s", choiceminitv); 
 
-	usecec = ostrstr(param, "usecec=");
+	tmpstr = ostrcat(param, NULL, 0, 0);
+	if(tmpstr != NULL) usecec = ostrstr(tmpstr, "usecec=");
+	free(tmpstr); tmpstr = NULL;
 	if(usecec != NULL) usecec = usecec + 7;
 	usecec = stringreplacecharonce(usecec, '&', '\0');
 	if(usecec != NULL) addconfigtmp("usecec", usecec);
   	debug(77, "usecec: %s", usecec);
- 
-	playerbufferseektime = ostrstr(param, "playerbufferseektime=");
+
+	tmpstr = ostrcat(param, NULL, 0, 0); 
+	if(tmpstr != NULL) playerbufferseektime = ostrstr(tmpstr, "playerbufferseektime=");
 	if(playerbufferseektime != NULL) playerbufferseektime = playerbufferseektime + 21;
+	free(tmpstr); tmpstr = NULL;
 	playerbufferseektime = stringreplacecharonce(playerbufferseektime, '&', '\0');
 	if(playerbufferseektime != NULL) addconfigtmp("playerbufferseektime", playerbufferseektime);
   	debug(77, "playerbufferseektime: %s", playerbufferseektime);
