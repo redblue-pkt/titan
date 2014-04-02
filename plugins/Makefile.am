@@ -4,7 +4,6 @@ SUBDIRS = \
 	autotimer \
 	catcatch \
 	dlna \
-	facebook \
 	gmediarender \
 	hello \
 	imdb \
