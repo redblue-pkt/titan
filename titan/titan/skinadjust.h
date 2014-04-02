@@ -9,10 +9,13 @@ void screenskinadjust()
 	struct skin* fontsizeadjust = getscreennode(skinadjust, "fontsizeadjust");
 	struct skin* listboxselecttype = getscreennode(skinadjust, "listboxselecttype");
 	struct skin* osdtransparent = getscreennode(skinadjust, "osdtransparent");
-	struct skin* leftoffset = getscreennode(skinadjust, "leftoffset");
-	struct skin* rightoffset = getscreennode(skinadjust, "rightoffset");
-	struct skin* topoffset = getscreennode(skinadjust, "topoffset");
-	struct skin* bottomoffset = getscreennode(skinadjust, "bottomoffset");
+	if(checkbox("ATEMIO5200") != 1)
+	{
+		struct skin* leftoffset = getscreennode(skinadjust, "leftoffset");
+		struct skin* rightoffset = getscreennode(skinadjust, "rightoffset");
+		struct skin* topoffset = getscreennode(skinadjust, "topoffset");
+		struct skin* bottomoffset = getscreennode(skinadjust, "bottomoffset");
+	}
 	struct skin* showrecfreesize = getscreennode(skinadjust, "showrecfreesize");
 	struct skin* listboxselect = getscreennode(skinadjust, "listboxselect");
 	struct skin* tmp = NULL;
@@ -64,37 +67,43 @@ void screenskinadjust()
 		rcret = waitrc(skinadjust, 0, 0);
 		tmp = listbox->select;
 
-		addconfigscreencheck("fbleftoffset", leftoffset, "0");
-		if(status.leftoffset != getconfigint("fbleftoffset", NULL)) offsetchange = 1; 
-		status.leftoffset = getconfigint("fbleftoffset", NULL);
+		if(checkbox("ATEMIO5200") != 1)
+		{
+			addconfigscreencheck("fbleftoffset", leftoffset, "0");
+			if(status.leftoffset != getconfigint("fbleftoffset", NULL)) offsetchange = 1; 
+			status.leftoffset = getconfigint("fbleftoffset", NULL);
+			
+			addconfigscreencheck("fbrightoffset", rightoffset, "0");
+			if(status.rightoffset != getconfigint("fbrightoffset", NULL)) offsetchange = 1;
+			status.rightoffset = getconfigint("fbrightoffset", NULL);
+			
+			addconfigscreencheck("fbtopoffset", topoffset, "0");
+			if(status.topoffset != getconfigint("fbtopoffset", NULL)) offsetchange = 1;
+			status.topoffset = getconfigint("fbtopoffset", NULL);
+			
+			addconfigscreencheck("fbbottomoffset", bottomoffset, "0");
+			if(status.bottomoffset != getconfigint("fbbottomoffset", NULL)) offsetchange = 1;
+			status.bottomoffset = getconfigint("fbbottomoffset", NULL);
+				
+			if(offsetchange == 1 && (ostrcmp(getconfig("av_mode3d", NULL), "sbs") == 0 || ostrcmp(getconfig("av_mode3d", NULL), "tab") == 0)) clearfball();
+		}
 		
-		addconfigscreencheck("fbrightoffset", rightoffset, "0");
-		if(status.rightoffset != getconfigint("fbrightoffset", NULL)) offsetchange = 1;
-		status.rightoffset = getconfigint("fbrightoffset", NULL);
-		
-		addconfigscreencheck("fbtopoffset", topoffset, "0");
-		if(status.topoffset != getconfigint("fbtopoffset", NULL)) offsetchange = 1;
-		status.topoffset = getconfigint("fbtopoffset", NULL);
-		
-		addconfigscreencheck("fbbottomoffset", bottomoffset, "0");
-		if(status.bottomoffset != getconfigint("fbbottomoffset", NULL)) offsetchange = 1;
-		status.bottomoffset = getconfigint("fbbottomoffset", NULL);
-		
-		if(offsetchange == 1 && (ostrcmp(getconfig("av_mode3d", NULL), "sbs") == 0 || ostrcmp(getconfig("av_mode3d", NULL), "tab") == 0)) clearfball();
-
 		drawscreen(skinadjust, 0, 0);
 
 		if(rcret == getrcconfigint("rcexit", NULL))
 		{
-			addconfigint("fbleftoffset", oleftoffset);
-			status.leftoffset = getconfigint("fbleftoffset", NULL);
-			addconfigint("fbrightoffset", orightoffset);
-			status.rightoffset = getconfigint("fbrightoffset", NULL);
-			addconfigint("fbtopoffset", otopoffset);
-			status.topoffset = getconfigint("fbtopoffset", NULL);
-			addconfigint("fbbottomoffset", obottomoffset);
-			status.bottomoffset = getconfigint("fbbottomoffset", NULL);
-			clearfball();
+			if(checkbox("ATEMIO5200") != 1)
+			{
+				addconfigint("fbleftoffset", oleftoffset);
+				status.leftoffset = getconfigint("fbleftoffset", NULL);
+				addconfigint("fbrightoffset", orightoffset);
+				status.rightoffset = getconfigint("fbrightoffset", NULL);
+				addconfigint("fbtopoffset", otopoffset);
+				status.topoffset = getconfigint("fbtopoffset", NULL);
+				addconfigint("fbbottomoffset", obottomoffset);
+				status.bottomoffset = getconfigint("fbbottomoffset", NULL);
+				clearfball();
+			}
 			break;
 		}
 		
