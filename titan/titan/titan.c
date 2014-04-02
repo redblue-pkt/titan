@@ -72,7 +72,6 @@ struct channelslot *channelslot = NULL;
 
 #include "oldentry.h"
 #include "tpk.h"
-#include "jsmn.h"
 #include "queue.h"
 #include "channelcache.h"
 #include "transpondercache.h"
