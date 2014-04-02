@@ -46,33 +46,32 @@ msgstr ""
 #: extensions.h:431 extensions.h:439 extensions.h:485 facebook.h:66
 #: facebook.h:157 facebook.h:167 faststream.h:30 faststream.h:79
 #: faststream.h:91 faststream.h:103 faststream.h:160 filemanager.h:95
-#: filemanager.h:100 filemanager.h:208 filemanager.h:281 filemanager.h:291
-#: filemanager.h:321 filemanager.h:331 filemanager.h:355 filenuke.h:37
-#: filenuke.h:84 filenuke.h:96 filenuke.h:108 filenuke.h:157 flashx.h:26
-#: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:6464 gmediarender.h:115 harddisk.h:350 harddisk.h:355
-#: harddisk.h:382 harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641
-#: harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733
-#: harddisk.h:793 harddisk.h:811 harddisk.h:814 harddisk.h:1046 hbbtv.h:362
-#: httpdfunc.h:1098 httpdfunc.h:3021 hwtest.h:88 hwtest.h:93 hwtest.h:98
-#: hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390
-#: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
-#: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
-#: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626
-#: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:485 infobar.h:607
-#: info.h:27 keyactions.h:305 lcdpearl1.c:45 lcdsamsung.c:101 log.h:46
-#: log.h:48 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
+#: filemanager.h:100 filemanager.h:206 filemanager.h:279 filemanager.h:289
+#: filemanager.h:319 filemanager.h:329 filenuke.h:37 filenuke.h:84
+#: filenuke.h:96 filenuke.h:108 filenuke.h:157 flashx.h:26 flashx.h:84
+#: flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270 global.h:6464
+#: gmediarender.h:115 harddisk.h:350 harddisk.h:355 harddisk.h:382
+#: harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641 harddisk.h:675
+#: harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733 harddisk.h:793
+#: harddisk.h:811 harddisk.h:814 harddisk.h:1046 hbbtv.h:362 httpdfunc.h:1098
+#: httpdfunc.h:3021 hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103
+#: hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390 hwtest.h:411
+#: hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566 hwtest.h:586
+#: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
+#: hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626 inadyn.h:188
+#: inadyn.h:190 inadyn.h:200 infobar.h:485 infobar.h:607 info.h:27
+#: keyactions.h:305 lcdpearl1.c:45 lcdsamsung.c:101 log.h:46 log.h:48
+#: mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
 #: mc_audioplayer.h:328 mc_audioplayer.h:599 mc_audioplayer.h:702
-#: mc_dateibrowser.h:38 mc_global.h:773 mc_global.h:1020
-#: mc_internetbrowser.h:38 mc_internetbrowser.h:41 mc_main.h:47 mc_main.h:52
-#: mc_main.h:57 mc_main.h:92 mc_main.h:97 mc_main.h:252 mc_main.h:261
-#: mc_mediathek.h:37 mc_pictureplayer.h:95 mc_pictureplayer.h:119
-#: mc_pictureplayer.h:237 mc_pictureplayer.h:363 mc_pictureplayer.h:456
-#: mc_videoplayer.h:329 mc_videoplayer.h:746 mc_videoplayer.h:781
-#: mc_videoplayer.h:885 mc_videoplayer.h:901 mc_wetterinfo.h:38
-#: mc_wetterinfo.h:41 mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477
-#: mediadb.h:2454 mediadbsettings.h:95 menu.h:153 menu.h:208 menu.h:946
-#: menu.h:948 movreel.h:30 movreel.h:79 movreel.h:91 movreel.h:103
+#: mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
+#: mc_internetbrowser.h:36 mc_main.h:47 mc_main.h:52 mc_main.h:57 mc_main.h:92
+#: mc_main.h:97 mc_main.h:252 mc_main.h:261 mc_mediathek.h:35
+#: mc_pictureplayer.h:95 mc_pictureplayer.h:119 mc_pictureplayer.h:237
+#: mc_pictureplayer.h:363 mc_pictureplayer.h:456 mc_videoplayer.h:329
+#: mc_videoplayer.h:746 mc_videoplayer.h:781 mc_videoplayer.h:885
+#: mc_videoplayer.h:901 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
+#: mediadb.h:1477 mediadb.h:2454 mediadbsettings.h:95 menu.h:153 menu.h:208
+#: menu.h:946 menu.h:948 movreel.h:30 movreel.h:79 movreel.h:91 movreel.h:103
 #: movreel.h:154 movreel.h:202 movshare.h:35 movshare.h:149 myvideo.h:50
 #: networkbrowser.h:944 networkbrowser.h:1005 networkbrowser.h:1009
 #: networkbrowser.h:1011 networkbrowser.h:1021 networkbrowser.h:1025
@@ -103,27 +102,26 @@ msgstr ""
 #: skins_mc_skin.xml.h:38 skins_optimize_skin.xml.h:3 skins_rgui_skin.xml.h:3
 #: skins_tiwakeup_skin.xml.h:3 skins_wins3_skin.xml.h:3 sock.h:952
 #: softcam.h:403 solarmovie.h:35 solarmovie.h:47 solarmovie.h:295 spinner.h:18
-#: stopifnotused.c:32 streamcloud.h:31 streamcloud.h:78 streamcloud.h:91
+#: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:78 streamcloud.h:91
 #: streamcloud.h:122 streamcloud.h:161 stream.h:33 system_backup_restore.h:31
 #: system_backup_restore.h:40 system_backup_restore.h:43
 #: system_backup_restore.h:51 system_backup_restore.h:80
 #: system_backup_restore.h:82 system_backup_restore.h:88
 #: system_backup_restore.h:95 system_update.h:320 system_update.h:326
 #: system_update.h:333 timeshift.h:113 timeshift.h:155 timeshift.h:162
-#: timeshiftsettings.h:45 titan.c:275 titan.c:339 titan.c:348 titan.c:958
-#: titan.c:967 titan.c:1092 titan.c:1113 titan.c:1119 titan.c:1130
-#: titan.c:1136 tithek.c:79 tithek_global.h:238 tithek.h:620 tithek.h:1116
-#: tithek.h:1159 tithek.h:1411 tithek.h:1433 tithek.h:1438 tithek.h:1452
-#: tithek.h:3103 tithek.h:3166 tithek.h:3180 tithek.h:3190 tiwakeup.h:66
-#: tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759
-#: tmdb.h:922 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3185 tpk.new.h:3167
-#: tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327
-#: tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:633 tunerconfig.h:642
-#: tunerconfig.h:904 unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75
-#: videomode.h:60 videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86
-#: vidstream.h:98 vidstream.h:167 xupnpd.h:60 xupnpd.h:71 xupnpd.h:73
-#: xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:198 zapback.c:79
-#: zdf.h:29
+#: timeshiftsettings.h:45 titan.c:274 titan.c:338 titan.c:347 titan.c:957
+#: titan.c:966 titan.c:1091 titan.c:1112 titan.c:1118 titan.c:1129
+#: titan.c:1135 tithek.c:79 tithek_global.h:238 tithek.h:620 tithek.h:1116
+#: tithek.h:1159 tithek.h:1410 tithek.h:1432 tithek.h:1448 tithek.h:3099
+#: tithek.h:3162 tithek.h:3176 tithek.h:3186 tiwakeup.h:66 tiwakeup.h:68
+#: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922
+#: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3185 tpk.new.h:3167 tsSchnitt.c:108
+#: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
+#: tsSchnitt.c:347 tunerconfig.h:633 tunerconfig.h:642 tunerconfig.h:904
+#: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:60
+#: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
+#: vidstream.h:167 xupnpd.h:60 xupnpd.h:71 xupnpd.h:73 xvidstage.h:54
+#: xvidstage.h:100 xvidstage.h:177 youtube.h:198 zapback.c:79 zdf.h:29
 msgid "OK"
 msgstr "OK"
 
@@ -140,33 +138,32 @@ msgstr "OK"
 #: extensions.h:431 extensions.h:439 extensions.h:485 facebook.h:66
 #: facebook.h:157 facebook.h:167 faststream.h:30 faststream.h:79
 #: faststream.h:91 faststream.h:103 faststream.h:160 filemanager.h:95
-#: filemanager.h:100 filemanager.h:208 filemanager.h:281 filemanager.h:291
-#: filemanager.h:321 filemanager.h:331 filemanager.h:355 filenuke.h:37
-#: filenuke.h:84 filenuke.h:96 filenuke.h:108 filenuke.h:157 flashx.h:26
-#: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:6464 gmediarender.h:115 harddisk.h:350 harddisk.h:355
-#: harddisk.h:382 harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641
-#: harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733
-#: harddisk.h:793 harddisk.h:811 harddisk.h:814 harddisk.h:1046 hbbtv.h:362
-#: hello.c:36 httpdfunc.h:1098 httpdfunc.h:3021 hwtest.h:88 hwtest.h:93
-#: hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206
-#: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
-#: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
-#: hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200
-#: imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:485
-#: infobar.h:607 info.h:27 keyactions.h:305 log.h:46 log.h:48 marker.h:215
-#: marker.h:229 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
+#: filemanager.h:100 filemanager.h:206 filemanager.h:279 filemanager.h:289
+#: filemanager.h:319 filemanager.h:329 filenuke.h:37 filenuke.h:84
+#: filenuke.h:96 filenuke.h:108 filenuke.h:157 flashx.h:26 flashx.h:84
+#: flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270 global.h:6464
+#: gmediarender.h:115 harddisk.h:350 harddisk.h:355 harddisk.h:382
+#: harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641 harddisk.h:675
+#: harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733 harddisk.h:793
+#: harddisk.h:811 harddisk.h:814 harddisk.h:1046 hbbtv.h:362 hello.c:36
+#: httpdfunc.h:1098 httpdfunc.h:3021 hwtest.h:88 hwtest.h:93 hwtest.h:98
+#: hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390
+#: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
+#: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
+#: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626
+#: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:485 infobar.h:607
+#: info.h:27 keyactions.h:305 log.h:46 log.h:48 marker.h:215 marker.h:229
+#: mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
 #: mc_audioplayer.h:328 mc_audioplayer.h:599 mc_audioplayer.h:702
-#: mc_dateibrowser.h:38 mc_global.h:773 mc_global.h:1020
-#: mc_internetbrowser.h:38 mc_internetbrowser.h:41 mc_main.h:47 mc_main.h:52
-#: mc_main.h:57 mc_main.h:92 mc_main.h:97 mc_main.h:252 mc_main.h:261
-#: mc_mediathek.h:37 mc_pictureplayer.h:95 mc_pictureplayer.h:119
-#: mc_pictureplayer.h:237 mc_pictureplayer.h:363 mc_pictureplayer.h:456
-#: mc_videoplayer.h:329 mc_videoplayer.h:746 mc_videoplayer.h:781
-#: mc_videoplayer.h:885 mc_videoplayer.h:901 mc_wetterinfo.h:38
-#: mc_wetterinfo.h:41 mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477
-#: mediadb.h:2454 mediadbsettings.h:95 menu.h:153 menu.h:208 menu.h:946
-#: menu.h:948 movreel.h:30 movreel.h:79 movreel.h:91 movreel.h:103
+#: mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
+#: mc_internetbrowser.h:36 mc_main.h:47 mc_main.h:52 mc_main.h:57 mc_main.h:92
+#: mc_main.h:97 mc_main.h:252 mc_main.h:261 mc_mediathek.h:35
+#: mc_pictureplayer.h:95 mc_pictureplayer.h:119 mc_pictureplayer.h:237
+#: mc_pictureplayer.h:363 mc_pictureplayer.h:456 mc_videoplayer.h:329
+#: mc_videoplayer.h:746 mc_videoplayer.h:781 mc_videoplayer.h:885
+#: mc_videoplayer.h:901 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
+#: mediadb.h:1477 mediadb.h:2454 mediadbsettings.h:95 menu.h:153 menu.h:208
+#: menu.h:946 menu.h:948 movreel.h:30 movreel.h:79 movreel.h:91 movreel.h:103
 #: movreel.h:154 movreel.h:202 movshare.h:35 movshare.h:149 myvideo.h:50
 #: networkbrowser.h:944 networkbrowser.h:1005 networkbrowser.h:1009
 #: networkbrowser.h:1011 networkbrowser.h:1021 networkbrowser.h:1025
@@ -205,7 +202,7 @@ msgstr "OK"
 #: skins_panel_skin.xml.h:15 skins_rgui_skin.xml.h:2
 #: skins_stopifnotused_skin.xml.h:4 skins_tiwakeup_skin.xml.h:2
 #: skins_wins3_skin.xml.h:1 sock.h:952 softcam.h:403 solarmovie.h:35
-#: solarmovie.h:47 solarmovie.h:295 spinner.h:18 stopifnotused.c:32
+#: solarmovie.h:47 solarmovie.h:295 spinner.h:18 stopifnotused.c:31
 #: streamcloud.h:31 streamcloud.h:78 streamcloud.h:91 streamcloud.h:122
 #: streamcloud.h:161 stream.h:33 system_backup_restore.h:31
 #: system_backup_restore.h:40 system_backup_restore.h:43
@@ -213,20 +210,19 @@ msgstr "OK"
 #: system_backup_restore.h:82 system_backup_restore.h:88
 #: system_backup_restore.h:95 system_update.h:320 system_update.h:326
 #: system_update.h:333 timeshift.h:113 timeshift.h:155 timeshift.h:162
-#: timeshiftsettings.h:45 titan.c:275 titan.c:339 titan.c:348 titan.c:958
-#: titan.c:967 titan.c:1092 titan.c:1113 titan.c:1119 titan.c:1130
-#: titan.c:1136 tithek.c:79 tithek_global.h:238 tithek.h:620 tithek.h:1116
-#: tithek.h:1159 tithek.h:1411 tithek.h:1433 tithek.h:1438 tithek.h:1452
-#: tithek.h:3103 tithek.h:3166 tithek.h:3180 tithek.h:3190 tiwakeup.h:66
-#: tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759
-#: tmdb.h:922 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3185 tpk.new.h:3167
-#: tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327
-#: tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:633 tunerconfig.h:642
-#: tunerconfig.h:904 unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75
-#: videomode.h:60 videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86
-#: vidstream.h:98 vidstream.h:167 xupnpd.h:60 xupnpd.h:71 xupnpd.h:73
-#: xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:198 zapback.c:79
-#: zdf.h:29
+#: timeshiftsettings.h:45 titan.c:274 titan.c:338 titan.c:347 titan.c:957
+#: titan.c:966 titan.c:1091 titan.c:1112 titan.c:1118 titan.c:1129
+#: titan.c:1135 tithek.c:79 tithek_global.h:238 tithek.h:620 tithek.h:1116
+#: tithek.h:1159 tithek.h:1410 tithek.h:1432 tithek.h:1448 tithek.h:3099
+#: tithek.h:3162 tithek.h:3176 tithek.h:3186 tiwakeup.h:66 tiwakeup.h:68
+#: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922
+#: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3185 tpk.new.h:3167 tsSchnitt.c:108
+#: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
+#: tsSchnitt.c:347 tunerconfig.h:633 tunerconfig.h:642 tunerconfig.h:904
+#: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:60
+#: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
+#: vidstream.h:167 xupnpd.h:60 xupnpd.h:71 xupnpd.h:73 xvidstage.h:54
+#: xvidstage.h:100 xvidstage.h:177 youtube.h:198 zapback.c:79 zdf.h:29
 msgid "EXIT"
 msgstr "Thoát"
 
@@ -277,7 +273,7 @@ msgstr "Thoát"
 #: settings_autostart.h:448 settings_autostart.h:502 settings_autostart.h:511
 #: settings_autostart.h:568 settings_autostart.h:577 settings_autostart.h:586
 #: settings_overclocking.h:214 settings_overclocking.h:234
-#: settings_overclocking.h:244 skinadjust.h:49 stopifnotused.c:95
+#: settings_overclocking.h:244 skinadjust.h:49 stopifnotused.c:94
 #: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:35
 #: tithek_settings.h:39 tithek_settings.h:43 tmc.h:531 tmc.h:535
 #: tunerconfig.h:184 tunerconfig.h:213 tunerconfig.h:244 tunerconfig.h:277
@@ -341,7 +337,7 @@ msgstr "EPG"
 #: settings_autostart.h:448 settings_autostart.h:502 settings_autostart.h:568
 #: settings_autostart.h:577 settings_autostart.h:586
 #: settings_overclocking.h:214 settings_overclocking.h:234
-#: settings_overclocking.h:244 stopifnotused.c:94 timeshiftsettings.h:58
+#: settings_overclocking.h:244 stopifnotused.c:93 timeshiftsettings.h:58
 #: timeshiftsettings.h:62 tithek_settings.h:36 tithek_settings.h:40
 #: tithek_settings.h:44 tmc.h:532 tmc.h:536 xupnpd.h:30
 msgid "yes"
@@ -475,12 +471,12 @@ msgid "nothing"
 msgstr "không"
 
 #: adjust.h:155 autotimer.c:481 autotimer.c:514 httpdfunc.h:4022
-#: rectimer.h:1167 stopifnotused.c:113
+#: rectimer.h:1167 stopifnotused.c:112
 msgid "standby"
 msgstr "Standby"
 
 #: adjust.h:156 autotimer.c:482 autotimer.c:515 httpdfunc.h:4029
-#: rectimer.h:1168 stopifnotused.c:112
+#: rectimer.h:1168 stopifnotused.c:111
 msgid "power off"
 msgstr "tắt nguồn"
 
@@ -549,68 +545,66 @@ msgstr ""
 #: extensions.h:403 extensions.h:439 facebook.h:66 facebook.h:157
 #: facebook.h:167 faststream.h:30 faststream.h:79 faststream.h:91
 #: faststream.h:103 faststream.h:160 filemanager.h:95 filemanager.h:100
-#: filemanager.h:208 filemanager.h:281 filemanager.h:291 filemanager.h:331
-#: filemanager.h:355 filenuke.h:37 filenuke.h:84 filenuke.h:96 filenuke.h:108
-#: filenuke.h:157 flashx.h:26 flashx.h:84 flashx.h:138 flashx.h:195
-#: flashx.h:233 flashx.h:270 global.h:6464 gmediarender.h:115 harddisk.h:633
-#: harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731
-#: harddisk.h:733 harddisk.h:793 harddisk.h:811 harddisk.h:814 hbbtv.h:362
-#: hello.c:36 httpdfunc.h:1098 hwtest.h:88 hwtest.h:93 hwtest.h:98
-#: hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390
-#: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
-#: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
-#: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626
-#: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:485 infobar.h:607
-#: keyactions.h:305 language.h:49 lcdpearl1.c:45 lcdsamsung.c:101 log.h:46
-#: log.h:48 marker.h:215 marker.h:229 mc_audioplayer.h:328
-#: mc_audioplayer.h:599 mc_audioplayer.h:702 mc_dateibrowser.h:38
-#: mc_global.h:773 mc_global.h:1020 mc_internetbrowser.h:38
-#: mc_internetbrowser.h:41 mc_main.h:47 mc_main.h:52 mc_main.h:57 mc_main.h:92
-#: mc_main.h:97 mc_main.h:252 mc_main.h:261 mc_mediathek.h:37
+#: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:329
+#: filenuke.h:37 filenuke.h:84 filenuke.h:96 filenuke.h:108 filenuke.h:157
+#: flashx.h:26 flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
+#: global.h:6464 gmediarender.h:115 harddisk.h:633 harddisk.h:641
+#: harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733
+#: harddisk.h:793 harddisk.h:811 harddisk.h:814 hbbtv.h:362 hello.c:36
+#: httpdfunc.h:1098 hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103
+#: hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390 hwtest.h:411
+#: hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566 hwtest.h:586
+#: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
+#: hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626 inadyn.h:188
+#: inadyn.h:190 inadyn.h:200 infobar.h:485 infobar.h:607 keyactions.h:305
+#: language.h:49 lcdpearl1.c:45 lcdsamsung.c:101 log.h:46 log.h:48
+#: marker.h:215 marker.h:229 mc_audioplayer.h:328 mc_audioplayer.h:599
+#: mc_audioplayer.h:702 mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
+#: mc_internetbrowser.h:36 mc_main.h:47 mc_main.h:52 mc_main.h:57 mc_main.h:92
+#: mc_main.h:97 mc_main.h:252 mc_main.h:261 mc_mediathek.h:35
 #: mc_pictureplayer.h:95 mc_pictureplayer.h:119 mc_pictureplayer.h:237
 #: mc_pictureplayer.h:363 mc_pictureplayer.h:456 mc_videoplayer.h:329
 #: mc_videoplayer.h:746 mc_videoplayer.h:781 mc_videoplayer.h:885
-#: mc_videoplayer.h:901 mc_wetterinfo.h:38 mc_wetterinfo.h:41
-#: mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477 mediadbsettings.h:95
-#: menu.h:153 menu.h:208 movreel.h:30 movreel.h:79 movreel.h:91 movreel.h:103
-#: movreel.h:154 movreel.h:202 movshare.h:35 movshare.h:149 myvideo.h:50
-#: networkbrowser.h:944 networkbrowser.h:1005 networkbrowser.h:1009
-#: networkbrowser.h:1011 networkbrowser.h:1021 networkbrowser.h:1025
-#: networkbrowser.h:1189 networkbrowser.h:1743 networkbrowser.h:1750
-#: networkbrowser.h:1755 networkbrowser.h:1907 network.h:426 network.h:558
-#: network.h:766 network.h:774 network.h:800 network.h:804 network.h:858
-#: novamov.h:35 novamov.h:80 nowvideo.h:35 nowvideo.h:87 panel_main.h:29
-#: panel_main.h:135 panel_settings_wizard.h:6 played.h:30 played.h:79
-#: played.h:91 played.h:103 played.h:160 player.h:99 play.h:593 play.h:1295
-#: play.h:1489 play.h:1649 play.h:1660 possetup.h:98 primeshare.h:29
-#: primeshare.h:73 primeshare.h:79 primeshare.h:124 putlocker.h:32
-#: putlocker.h:79 putlocker.h:85 putlocker.h:136 putlocker.h:146
-#: putlocker.h:219 readerconfig.h:343 readerconfig.h:443 readerconfig.h:444
-#: readerconfig.h:488 readerconfig.h:489 record.h:369 record.h:1001
-#: record.h:1188 record.h:1427 record.h:1452 rectimer.h:557 rectimer.h:1210
-#: rectimer.h:1356 rectimer.h:1368 restoredefault.h:10 restoredefault.h:19
-#: restoredefault.h:23 restoredefault.h:32 restoredefault.h:47 rgui.h:30
-#: rgui.h:118 rgui.h:134 rtl2now.h:28 scan.h:1598 scan.h:1600 scan.h:1628
-#: scan.h:1630 scan.h:1640 scan.h:1888 scan.h:1979 scan.h:2345 scart.h:12
-#: scart.h:25 service.h:710 service.h:951 skinadjust.h:133 skinselector.h:218
-#: sock.h:952 softcam.h:403 solarmovie.h:35 solarmovie.h:47 solarmovie.h:295
-#: spinner.h:18 stopifnotused.c:32 streamcloud.h:31 streamcloud.h:78
-#: streamcloud.h:91 streamcloud.h:122 streamcloud.h:161 stream.h:33
-#: system_backup_restore.h:40 system_backup_restore.h:43
-#: system_backup_restore.h:80 system_backup_restore.h:82 system_update.h:320
-#: system_update.h:326 system_update.h:333 timeshift.h:113 timeshift.h:155
-#: timeshift.h:162 timeshiftsettings.h:45 titan.c:275 titan.c:339 titan.c:348
-#: titan.c:1092 titan.c:1113 titan.c:1119 titan.c:1130 titan.c:1136
-#: tithek.c:79 tithek_global.h:238 tithek.h:620 tithek.h:1116 tithek.h:1159
-#: tithek.h:1411 tithek.h:1433 tithek.h:1438 tithek.h:3103 tithek.h:3166
-#: tithek.h:3180 tithek.h:3190 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
-#: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922 TopfieldVFD.c:68
-#: TopfieldVFD.c:72 tpk.h:3185 tpk.new.h:3167 tunerconfig.h:633
-#: tunerconfig.h:642 tunerconfig.h:904 unlock.h:20 unlock.h:66 unlock.h:71
-#: unlock.h:75 videomode.h:60 videoweed.h:35 videoweed.h:80 vidstream.h:45
-#: vidstream.h:86 vidstream.h:98 vidstream.h:167 xupnpd.h:60 xupnpd.h:71
-#: xupnpd.h:73 xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:198
-#: zapback.c:79 zdf.h:29
+#: mc_videoplayer.h:901 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
+#: mediadb.h:1477 mediadbsettings.h:95 menu.h:153 menu.h:208 movreel.h:30
+#: movreel.h:79 movreel.h:91 movreel.h:103 movreel.h:154 movreel.h:202
+#: movshare.h:35 movshare.h:149 myvideo.h:50 networkbrowser.h:944
+#: networkbrowser.h:1005 networkbrowser.h:1009 networkbrowser.h:1011
+#: networkbrowser.h:1021 networkbrowser.h:1025 networkbrowser.h:1189
+#: networkbrowser.h:1743 networkbrowser.h:1750 networkbrowser.h:1755
+#: networkbrowser.h:1907 network.h:426 network.h:558 network.h:766
+#: network.h:774 network.h:800 network.h:804 network.h:858 novamov.h:35
+#: novamov.h:80 nowvideo.h:35 nowvideo.h:87 panel_main.h:29 panel_main.h:135
+#: panel_settings_wizard.h:6 played.h:30 played.h:79 played.h:91 played.h:103
+#: played.h:160 player.h:99 play.h:593 play.h:1295 play.h:1489 play.h:1649
+#: play.h:1660 possetup.h:98 primeshare.h:29 primeshare.h:73 primeshare.h:79
+#: primeshare.h:124 putlocker.h:32 putlocker.h:79 putlocker.h:85
+#: putlocker.h:136 putlocker.h:146 putlocker.h:219 readerconfig.h:343
+#: readerconfig.h:443 readerconfig.h:444 readerconfig.h:488 readerconfig.h:489
+#: record.h:369 record.h:1001 record.h:1188 record.h:1427 record.h:1452
+#: rectimer.h:557 rectimer.h:1210 rectimer.h:1356 rectimer.h:1368
+#: restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
+#: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
+#: rtl2now.h:28 scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1640
+#: scan.h:1888 scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 service.h:710
+#: service.h:951 skinadjust.h:133 skinselector.h:218 sock.h:952 softcam.h:403
+#: solarmovie.h:35 solarmovie.h:47 solarmovie.h:295 spinner.h:18
+#: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:78 streamcloud.h:91
+#: streamcloud.h:122 streamcloud.h:161 stream.h:33 system_backup_restore.h:40
+#: system_backup_restore.h:43 system_backup_restore.h:80
+#: system_backup_restore.h:82 system_update.h:320 system_update.h:326
+#: system_update.h:333 timeshift.h:113 timeshift.h:155 timeshift.h:162
+#: timeshiftsettings.h:45 titan.c:274 titan.c:338 titan.c:347 titan.c:1091
+#: titan.c:1112 titan.c:1118 titan.c:1129 titan.c:1135 tithek.c:79
+#: tithek_global.h:238 tithek.h:620 tithek.h:1116 tithek.h:1159 tithek.h:1410
+#: tithek.h:1432 tithek.h:3099 tithek.h:3162 tithek.h:3176 tithek.h:3186
+#: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
+#: tmdb.h:759 tmdb.h:922 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3185
+#: tpk.new.h:3167 tunerconfig.h:633 tunerconfig.h:642 tunerconfig.h:904
+#: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:60
+#: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
+#: vidstream.h:167 xupnpd.h:60 xupnpd.h:71 xupnpd.h:73 xvidstage.h:54
+#: xvidstage.h:100 xvidstage.h:177 youtube.h:198 zapback.c:79 zdf.h:29
 msgid "Message"
 msgstr "Tin nhắn"
 
@@ -780,16 +774,16 @@ msgid ""
 msgstr ""
 
 #: callmon_main.h:76 callmon_main.h:98 callmon_main.h:116 callmon_main.h:120
-#: callmon_main.h:124 callmon_main.h:128 instar.h:192 lcdpearl1.c:504
-#: lcdpearl1.c:508 lcdpearl1.c:512 lcdsamsung.c:978 lcdsamsung.c:982
-#: lcdsamsung.c:986
+#: callmon_main.h:124 callmon_main.h:128 instar.h:192 lcdpearl1.c:502
+#: lcdpearl1.c:506 lcdpearl1.c:510 lcdsamsung.c:976 lcdsamsung.c:980
+#: lcdsamsung.c:984
 msgid "nein"
 msgstr ""
 
 #: callmon_main.h:77 callmon_main.h:97 callmon_main.h:115 callmon_main.h:119
-#: callmon_main.h:123 callmon_main.h:127 instar.h:193 lcdpearl1.c:505
-#: lcdpearl1.c:509 lcdpearl1.c:513 lcdsamsung.c:979 lcdsamsung.c:983
-#: lcdsamsung.c:987
+#: callmon_main.h:123 callmon_main.h:127 instar.h:193 lcdpearl1.c:503
+#: lcdpearl1.c:507 lcdpearl1.c:511 lcdsamsung.c:977 lcdsamsung.c:981
+#: lcdsamsung.c:985
 msgid "ja"
 msgstr ""
 
@@ -1536,45 +1530,41 @@ msgstr "Không thể mở file"
 msgid "Can't create directory !"
 msgstr "Không thể tạo hoặc xóa thư mục"
 
-#: filemanager.h:180
+#: filemanager.h:178
 msgid "Really copy this file/dir?"
 msgstr " Sẵn sàng sao chép file/thư mục này?"
 
-#: filemanager.h:188
+#: filemanager.h:186
 msgid "Really move this file/dir?"
 msgstr "Sẵn sàng di chuyển file/thư mục này?"
 
-#: filemanager.h:196
+#: filemanager.h:194
 msgid "From"
 msgstr "từ"
 
-#: filemanager.h:200
+#: filemanager.h:198
 msgid "To"
 msgstr "tới"
 
-#: filemanager.h:219 filemanager.h:226
+#: filemanager.h:217 filemanager.h:224
 msgid "Move File"
 msgstr "di chuyển"
 
-#: filemanager.h:233 filemanager.h:235
+#: filemanager.h:231 filemanager.h:233
 msgid "Copy File"
 msgstr "sao chép"
 
-#: filemanager.h:278
+#: filemanager.h:276
 msgid "Really delete this file/dir?"
 msgstr " Sẵn sàng xóa file/thư mục này?"
 
-#: filemanager.h:291
+#: filemanager.h:289
 msgid "Can't remove file/dir !"
 msgstr "Không thể mở file"
 
-#: filemanager.h:331
+#: filemanager.h:329
 msgid "Can't show this file!"
 msgstr "Không thể hiển thị file này"
-
-#: filemanager.h:355 mc_internetbrowser.h:41 mc_wetterinfo.h:41 tithek.h:1438
-msgid "Registration needed, please contact Atemio !"
-msgstr "Vui lòng liên hệ nhà cung cấp"
 
 #: global.h:6464 keyactions.h:305
 msgid "ERROR cant read res"
@@ -2314,7 +2304,7 @@ msgstr ""
 msgid "Email  \t\tinfo@atemio.de"
 msgstr ""
 
-#: info.h:27 plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9 titan.c:967
+#: info.h:27 plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9 titan.c:966
 msgid "Info"
 msgstr "Thông tin"
 
@@ -2395,43 +2385,43 @@ msgstr "Thay đổi ngôn ngữ cần khởi động lại!"
 msgid "ERROR cant start LCD driver"
 msgstr ""
 
-#: lcdsamsung.c:966
+#: lcdsamsung.c:964
 msgid "SPF-72H"
 msgstr ""
 
-#: lcdsamsung.c:967
+#: lcdsamsung.c:965
 msgid "SPF-75H"
 msgstr ""
 
-#: lcdsamsung.c:968
+#: lcdsamsung.c:966
 msgid "SPF-83H"
 msgstr ""
 
-#: lcdsamsung.c:969
+#: lcdsamsung.c:967
 msgid "SPF-85H"
 msgstr ""
 
-#: lcdsamsung.c:970
+#: lcdsamsung.c:968
 msgid "SPF-85P"
 msgstr ""
 
-#: lcdsamsung.c:971
+#: lcdsamsung.c:969
 msgid "SPF-87H"
 msgstr ""
 
-#: lcdsamsung.c:972
+#: lcdsamsung.c:970
 msgid "SPF-87H-old"
 msgstr ""
 
-#: lcdsamsung.c:973
+#: lcdsamsung.c:971
 msgid "SPF-105P"
 msgstr ""
 
-#: lcdsamsung.c:974
+#: lcdsamsung.c:972
 msgid "SPF-107H"
 msgstr ""
 
-#: lcdsamsung.c:975
+#: lcdsamsung.c:973
 msgid "tiMote"
 msgstr ""
 
@@ -2591,7 +2581,7 @@ msgstr "kích thước (mặc định)"
 msgid "datetime"
 msgstr "ngày giờ"
 
-#: mc_dateibrowser.h:38
+#: mc_dateibrowser.h:36
 msgid "Install File Manager Tpk first !"
 msgstr "cài đặt trình duyệt web"
 
@@ -2621,7 +2611,7 @@ msgstr ""
 msgid "Choose your Playlist Mode from the following list"
 msgstr ""
 
-#: mc_internetbrowser.h:38
+#: mc_internetbrowser.h:36
 msgid "Install netsurf Internetbrowser Tpk first !"
 msgstr "cài đặt trình duyệt web"
 
@@ -2633,7 +2623,7 @@ msgstr "sắp đến"
 msgid "Menu not implemented !"
 msgstr "Không thực hiện được!"
 
-#: mc_mediathek.h:37
+#: mc_mediathek.h:35
 msgid "Install Tithek Tpk first !"
 msgstr "cài đặt trình duyệt web"
 
@@ -2715,7 +2705,7 @@ msgstr "s"
 msgid "5s (default)"
 msgstr "kích thước (mặc định)"
 
-#: mc_wetterinfo.h:38
+#: mc_wetterinfo.h:36
 msgid "Install Weather Tpk first !"
 msgstr "cài đặt trình duyệt web"
 
@@ -4581,8 +4571,8 @@ msgstr "Menü …"
 msgid "TiThek Settings"
 msgstr "Thiết lập HTTP"
 
-#: plugins_tithek_skin.xml.h:3 skins_tithek_skin.xml.h:3 tithek.h:1497
-#: tithek.h:1629 tithek.h:3208
+#: plugins_tithek_skin.xml.h:3 skins_tithek_skin.xml.h:3 tithek.h:1493
+#: tithek.h:1625 tithek.h:3204
 msgid "ADD FAV"
 msgstr "Thêm ưu thích"
 
@@ -8067,34 +8057,34 @@ msgstr ""
 msgid "Trade time: "
 msgstr "ngày + giờ"
 
-#: stopifnotused.c:32
+#: stopifnotused.c:31
 msgid ""
 "You have executed a defined period of no function.\n"
 "\n"
 "Stop the box??? "
 msgstr ""
 
-#: stopifnotused.c:101
+#: stopifnotused.c:100
 msgid "30"
 msgstr ""
 
-#: stopifnotused.c:102
+#: stopifnotused.c:101
 msgid "60"
 msgstr ""
 
-#: stopifnotused.c:103
+#: stopifnotused.c:102
 msgid "90"
 msgstr ""
 
-#: stopifnotused.c:104
+#: stopifnotused.c:103
 msgid "120"
 msgstr ""
 
-#: stopifnotused.c:105
+#: stopifnotused.c:104
 msgid "180"
 msgstr ""
 
-#: stopifnotused.c:106
+#: stopifnotused.c:105
 msgid "240"
 msgstr ""
 
@@ -8334,11 +8324,11 @@ msgstr "luôn xóa file"
 msgid "never del file"
 msgstr "không xóa file"
 
-#: titan.c:275
+#: titan.c:274
 msgid "!!! This is a DEMO Version !!!"
 msgstr ""
 
-#: titan.c:339
+#: titan.c:338
 msgid ""
 "Found running record\n"
 "or record is starting in next time.\n"
@@ -8348,7 +8338,7 @@ msgstr ""
 "hoặc đang bắt đầu ghi.\n"
 "Bạn muốn tắt ?"
 
-#: titan.c:348
+#: titan.c:347
 msgid ""
 "Found running download\n"
 "Really shutdown ?"
@@ -8356,59 +8346,59 @@ msgstr ""
 "Bản ghi đang chạy.\n"
 "Bạn muốn tắt?"
 
-#: titan.c:783
+#: titan.c:782
 msgid "Error: open rc device !!"
 msgstr " Lỗi: mở thiết bị rc !"
 
-#: titan.c:789
+#: titan.c:788
 msgid "Error: no frontend device found !!"
 msgstr "Lỗi: không tìm thấy thiết bị vào!"
 
-#: titan.c:795
+#: titan.c:794
 msgid "Error: no demux device found !!"
 msgstr "Lỗi: không tìm thấy các thiết bị tách kênh!"
 
-#: titan.c:801
+#: titan.c:800
 msgid "Error: no video device found !!"
 msgstr "Lỗi: không tìm thấy thiết bị video !!"
 
-#: titan.c:807
+#: titan.c:806
 msgid "Error: no audio device found !!"
 msgstr " Lỗi: không tìm thấy thiết bị audio!!"
 
-#: titan.c:825
+#: titan.c:824
 msgid "Error: skin not found !!"
 msgstr "Lỗi: không tìm thấy nền!"
 
-#: titan.c:909
+#: titan.c:908
 msgid "RemoteControl Old Version"
 msgstr ""
 
-#: titan.c:910
+#: titan.c:909
 msgid "RemoteControl Long Version"
 msgstr ""
 
-#: titan.c:917
+#: titan.c:916
 msgid "Select Your Remote Control"
 msgstr ""
 
-#: titan.c:917
+#: titan.c:916
 msgid "Choose your Remotecontrol Model from the following list"
 msgstr ""
 
-#: titan.c:958
+#: titan.c:957
 msgid "First Wizzard"
 msgstr "Wizzard đầu tiên"
 
-#: titan.c:958
+#: titan.c:957
 msgid "Settings OK ?"
 msgstr " Thiết lập OK ?"
 
-#: titan.c:1092
+#: titan.c:1091
 msgid "Receiver successful unlocked"
 msgstr "Khóa đầu vào"
 
-#: titan.c:1113
+#: titan.c:1112
 msgid ""
 "Free space in /var to little!\n"
 "This can make problems!"
@@ -8416,13 +8406,13 @@ msgstr ""
 "Không đủ khoảng trống\n"
 " Điều này có thể dẫn đến vấn đề !"
 
-#: titan.c:1119
+#: titan.c:1118
 msgid ""
 "/var not writeable!\n"
 "Repair it?"
 msgstr ""
 
-#: titan.c:1130
+#: titan.c:1129
 msgid ""
 "Free space in /mnt to little!\n"
 "This can make problems!"
@@ -8430,17 +8420,17 @@ msgstr ""
 "Không đủ khoảng trống\n"
 " Điều này có thể dẫn đến vấn đề !"
 
-#: titan.c:1136
+#: titan.c:1135
 msgid ""
 "/mnt not writeable!\n"
 "Repair it?"
 msgstr ""
 
-#: titan.c:1185
+#: titan.c:1184
 msgid "Unknown Error."
 msgstr "Không xác định được lỗi."
 
-#: titan.c:1187
+#: titan.c:1186
 msgid "Automatic stop in 10 seconds."
 msgstr "Tự động dừng trong 5 giây !"
 
@@ -8453,7 +8443,7 @@ msgstr ""
 msgid "Tithek - Mainmenu"
 msgstr ""
 
-#: tithek_global.h:238 tithek.h:3103
+#: tithek_global.h:238 tithek.h:3099
 msgid "The hoster is not yet supported !"
 msgstr "Máy chủ chưa được hỗ trợ !"
 
@@ -8479,103 +8469,103 @@ msgid ""
 "Please try later."
 msgstr ""
 
-#: tithek.h:1274
+#: tithek.h:1273
 msgid "Choice Playback"
 msgstr "bắt đầu phát lại"
 
-#: tithek.h:1279
+#: tithek.h:1278
 msgid "Streaming Playback (default)"
 msgstr "luồng phát lại (mặc định)"
 
-#: tithek.h:1280
+#: tithek.h:1279
 msgid "Streaming Playback Caching (0.5MB)"
 msgstr "Bộ nhớ chứa luồng phát lại (0.5MB)"
 
-#: tithek.h:1281
+#: tithek.h:1280
 msgid "Streaming Playback Caching (1MB)"
 msgstr "Bộ nhớ chứa luồng phát lại (1MB)"
 
-#: tithek.h:1282
+#: tithek.h:1281
 msgid "Streaming Playback Caching (2MB)"
 msgstr "Bộ nhớ chứa luồng phát lại (2MB)"
 
-#: tithek.h:1283
+#: tithek.h:1282
 msgid "Streaming Playback Caching (3MB)"
 msgstr "Bộ nhớ chứa luồng phát lại (3MB)"
 
-#: tithek.h:1284
+#: tithek.h:1283
 msgid "Streaming Playback Caching (4MB)"
 msgstr "Bộ nhớ chứa luồng phát lại (4MB)"
 
-#: tithek.h:1285
+#: tithek.h:1284
 msgid "Streaming Playback Caching (5MB)"
 msgstr "Bộ nhớ chứa luồng phát lại (5MB)"
 
-#: tithek.h:1286
+#: tithek.h:1285
 msgid "Streaming Playback Caching (7.5MB)"
 msgstr "Bộ nhớ chứa luồng phát lại (7.5MB)"
 
-#: tithek.h:1287
+#: tithek.h:1286
 msgid "Streaming Playback Caching (10MB)"
 msgstr "Bộ nhớ chứa luồng phát lại (10MB)"
 
-#: tithek.h:1288
+#: tithek.h:1287
 msgid "File Caching Playback (10MB / 120s)"
 msgstr "Bộ nhớ đệm phát lại (10MB / 120s)"
 
-#: tithek.h:1289
+#: tithek.h:1288
 msgid "File Caching Playback (20MB / 240s)"
 msgstr " Bộ nhớ đệm phát lại (20MB / 240s)"
 
-#: tithek.h:1290
+#: tithek.h:1289
 msgid "File Caching Playback (30MB / 360s)"
 msgstr " Bộ nhớ đệm phát lại (30MB / 360s)"
 
-#: tithek.h:1291
+#: tithek.h:1290
 msgid "Download Full File"
 msgstr "Tải toàn bộ file"
 
-#: tithek.h:1292
+#: tithek.h:1291
 msgid "Download Full File (background)"
 msgstr " Tải toàn bộ file (hình nền)"
 
-#: tithek.h:1333
+#: tithek.h:1332
 msgid "Choose your Streaming Playback Modus from the following list"
 msgstr ""
 
-#: tithek.h:1404 tithek.h:1423
+#: tithek.h:1403 tithek.h:1422
 msgid "Filename"
 msgstr ""
 
-#: tithek.h:1411
+#: tithek.h:1410
 msgid "Start playback"
 msgstr "bắt đầu phát lại?"
 
-#: tithek.h:1433
+#: tithek.h:1432
 msgid "Can't get Streamurl !"
 msgstr "không có tín hiệu"
 
-#: tithek.h:1452
+#: tithek.h:1448
 msgid "TitanNit Tithek disclaimer"
 msgstr ""
 
-#: tithek.h:1492 tithek.h:1624 tithek.h:3203
+#: tithek.h:1488 tithek.h:1620 tithek.h:3199
 msgid "EDIT FAV"
 msgstr ""
 
-#: tithek.h:1529
+#: tithek.h:1525
 msgid "Page"
 msgstr "trang"
 
-#: tithek.h:3166
+#: tithek.h:3162
 msgid "Remove this Favorite ?"
 msgstr "Hủy bỏ ưu thích này ?"
 
-#: tithek.h:3180
+#: tithek.h:3176
 msgid "Add this link as Favorite ?"
 msgstr " Muốn thêm vào mục ưa thích này?"
 
-#: tithek.h:3190
+#: tithek.h:3186
 msgid "Edit this Favorite ?"
 msgstr ""
 
@@ -10855,3 +10845,6 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
+
+#~ msgid "Registration needed, please contact Atemio !"
+#~ msgstr "Vui lòng liên hệ nhà cung cấp"
