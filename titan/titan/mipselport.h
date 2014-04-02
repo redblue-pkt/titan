@@ -742,6 +742,46 @@ void blitscale(int posx, int posy, int width, int height, int scalewidth, int sc
 void blitjpg(unsigned char* buf, int posx, int posy, int width, int height, int scalewidth, int scaleheight, int mwidth, int mheight, int halign, int valign)
 //void blitjpg(unsigned char* buf, int posx, int posy, int width, int height, int scalewidth, int scaleheight)
 {
+#ifdef MIPSEL
+	unsigned char *helpbuf = NULL;
+	unsigned char *framebuf = NULL;
+
+	if(scalewidth != 0 || scaleheight != 0) {
+		helpbuf = scale(buf, width, height, 3, scalewidth, scaleheight, 1);
+		if(helpbuf == NULL)
+			return;
+	}
+	else {
+		helpbuf = buf;
+		scalewidth = width;
+		scaleheight = height;
+	}
+	size_t helpb = 0;
+	size_t helpz = 0;
+	size_t help = 0;
+	
+	framebuf = skinfb->fb;
+	framebuf = framebuf + (posy * skinfb->pitch) + (posx*4);
+	
+	while(helpz < scaleheight && helpz < (skinfb->height - posy)) {
+		help = 0;
+		while(help < (scalewidth*4) && help < (skinfb->pitch - (posx*4))) {
+			framebuf[help+0] = helpbuf[helpb+2];
+			framebuf[help+1] = helpbuf[helpb+1];
+			framebuf[help+2] = helpbuf[helpb+0];
+			framebuf[help+3] = 0xff;
+			help = help + 4;
+			helpb = helpb + 3;
+		}
+		if(help >= (skinfb->pitch - (posx*4)))
+			helpb = (helpz+1) * (scalewidth*3);
+		framebuf = framebuf + skinfb->pitch;
+		helpz = helpz + 1;
+	}
+	free(helpbuf);
+	blit();
+#endif
+		 
 /*
 #ifndef SIMULATE
 	STMFBIO_BLT_EXTERN_DATA blt_data;
@@ -782,6 +822,7 @@ void blitjpg(unsigned char* buf, int posx, int posy, int width, int height, int 
 	}
 #endif
 */
+
 }
 
 void initsignal(struct sigaction* sa)
