@@ -48,7 +48,6 @@ permtime/Makefile
 rgui/Makefile
 scriptexec/Makefile
 stock/Makefile
-stopifnotused/Makefile
 streaminfo/Makefile
 tinews/Makefile
 tmdb/Makefile
