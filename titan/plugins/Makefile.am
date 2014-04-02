@@ -2,7 +2,6 @@ AUTOMAKE_OPTIONS = gnu
 
 SUBDIRS = \
 	autotimer \
-	callmonitor1 \
 	catcatch \
 	dlna \
 	facebook \
