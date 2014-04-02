@@ -3,42 +3,37 @@
 
 void screenmc_wetterinfo()
 {
-	if(status.security == 1)
+	int treffer = 0;
+	struct skin* pluginnode = NULL;
+	void (*startplugin)(void);
+	struct skin* plugin = getscreen("plugin");
+	struct skin* child = plugin->child;
+
+	while(child != NULL)
 	{
-		int treffer = 0;
-		struct skin* pluginnode = NULL;
-		void (*startplugin)(void);
-		struct skin* plugin = getscreen("plugin");
-		struct skin* child = plugin->child;
-
-		while(child != NULL)
+		if(child->del == PLUGINDELMARK)
 		{
-			if(child->del == PLUGINDELMARK)
-			{
-				if(ostrcmp(child->name, "Weather") == 0)
-					treffer = 1;
-			}
-			child = child->next;
+			if(ostrcmp(child->name, "Weather") == 0)
+				treffer = 1;
 		}
+		child = child->next;
+	}
 
-		if(treffer == 1)
+	if(treffer == 1)
+	{
+		pluginnode = getplugin("Weather");
+	
+		if(pluginnode != NULL)
 		{
-			pluginnode = getplugin("Weather");
-		
-			if(pluginnode != NULL)
+			startplugin = dlsym(pluginnode->pluginhandle, "start");
+			if(startplugin != NULL)
 			{
-				startplugin = dlsym(pluginnode->pluginhandle, "start");
-				if(startplugin != NULL)
-				{
-					startplugin();
-				}
+				startplugin();
 			}
 		}
-		else
-			textbox(_("Message"), _("Install Weather Tpk first !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
 	}
 	else
-		textbox(_("Message"), _("Registration needed, please contact Atemio !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
+		textbox(_("Message"), _("Install Weather Tpk first !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
 }
 
 #endif

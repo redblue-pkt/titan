@@ -167,204 +167,202 @@ void LCD_Pearl1_thread()
 		else
 			put = 0;
 
-		if(status.security == 1)
+		if(status.standby > 0 && standby == 0)
 		{
-			if(status.standby > 0 && standby == 0)
+			if(ostrcmp(getconfig("lcd_pearl1_plugin_standby", NULL), "yes") == 0)
 			{
-				if(ostrcmp(getconfig("lcd_pearl1_plugin_standby", NULL), "yes") == 0)
+				standby = 2;
+				put = 1;
+			}
+			else {
+				system("killall lcd4linux");
+				standby = 1;
+			}
+		}
+		if(status.standby == 0 && standby > 0)
+		{
+			if(standby == 1)
+				system(startlcd);
+			standby = 0;
+			put = 1;
+		}
+
+		if(weatherthread == NULL && weatherwrite == 0)
+		{
+			if(file_exist("/tmp/lcdweather"))
+				put = 1;
+		}			
+		
+		if(ostrcmp(tmpstr, timemerk) != 0)
+		{
+			free(timemerk);timemerk=NULL;
+			timemerk = ostrcat(tmpstr, "", 0, 0);
+			put = 1;
+		} 		
+
+		if(standby == 0)
+		{
+			if(type == 1)
+			{
+				if(ostrcmp(tmpstr2, sendermerk) != 0)
 				{
-					standby = 2;
+					free(sendermerk);sendermerk=NULL;
+					sendermerk = ostrcat(tmpstr2, "", 0, 0);
+					put = 1;
+				} 
+				if(tmpstr3 == NULL && recmerk != NULL)
+				{
+					put = 1;
+					free(recmerk);recmerk=NULL;
+				}
+				else if(tmpstr3 != NULL && recmerk == NULL)
+				{
+					free(recmerk);recmerk=NULL;
+					recmerk = ostrcat(tmpstr3, "", 0, 0);
 					put = 1;
 				}
-				else {
-					system("killall lcd4linux");
-					standby = 1;
-				}
 			}
-			if(status.standby == 0 && standby > 0)
+			else if(type == 2)
 			{
-				if(standby == 1)
-					system(startlcd);
-				standby = 0;
-				put = 1;
-			}
-
-			if(weatherthread == NULL && weatherwrite == 0)
-			{
-				if(file_exist("/tmp/lcdweather"))
+				if(loopcount >= 15)
+				{
 					put = 1;
-			}			
+					loopcount = 0;
+				}
+			}	
 			
-			if(ostrcmp(tmpstr, timemerk) != 0)
-			{
-				free(timemerk);timemerk=NULL;
-				timemerk = ostrcat(tmpstr, "", 0, 0);
-				put = 1;
-			} 		
-
-			if(standby == 0)
+			if(put == 1)
 			{
 				if(type == 1)
 				{
-					if(ostrcmp(tmpstr2, sendermerk) != 0)
+					// Wettervorhersage
+					if(ostrcmp(getconfig("lcd_pearl1_plugin_wetter", NULL), "yes") == 0)
 					{
-						free(sendermerk);sendermerk=NULL;
-						sendermerk = ostrcat(tmpstr2, "", 0, 0);
-						put = 1;
-					} 
-					if(tmpstr3 == NULL && recmerk != NULL)
-					{
-						put = 1;
-						free(recmerk);recmerk=NULL;
+						if(weatherwrite == 0)
+						{
+							if(weatherthread == NULL)
+							{
+								if(!file_exist("/tmp/lcdweather"))
+									weatherthread = addtimer(&lcd_writeweather, START, 10000, 1, NULL, NULL, NULL);
+								else
+								{
+									fileline = malloc(256);
+									if(fileline != NULL)
+									{
+										fd = fopen("/tmp/lcdweather", "r");
+										if(fd != NULL)
+										{
+											weather_getline(fd, fileline);weather_getline(fd, fileline);weather_getline(fd, fileline);
+											weather_getline(fd, fileline);
+											changetext(day0_t, fileline);
+											weather_getline(fd, fileline);
+											weather_getline(fd, fileline);
+											changepic(day0_i, fileline);
+											
+											weather_getline(fd, fileline);weather_getline(fd, fileline);
+											weather_getline(fd, fileline);
+											changetext(day1_t, fileline);
+											weather_getline(fd, fileline);
+											weather_getline(fd, fileline);
+											changepic(day1_i, fileline);
+											
+											weather_getline(fd, fileline);weather_getline(fd, fileline);
+											weather_getline(fd, fileline);
+											changetext(day2_t, fileline);
+											weather_getline(fd, fileline);
+											weather_getline(fd, fileline);
+											changepic(day2_i, fileline);
+											
+											weather_getline(fd, fileline);weather_getline(fd, fileline);
+											weather_getline(fd, fileline);
+											changetext(day3_t, fileline);
+											weather_getline(fd, fileline);
+											weather_getline(fd, fileline);
+											changepic(day3_i, fileline);
+											fclose(fd);
+										}
+										free(fileline); fileline=NULL;
+									}
+									weatherwrite = 1;
+								}								
+							}
+						}		
 					}
-					else if(tmpstr3 != NULL && recmerk == NULL)
-					{
-						free(recmerk);recmerk=NULL;
-						recmerk = ostrcat(tmpstr3, "", 0, 0);
-						put = 1;
-					}
+					
+					changetext(akttime, tmpstr);
+					drawscreen(LCD_Pearl1, 0, 0);
+
+					//system(fbgrab);
+					//system("mv /tmp/.titanlcd1.png /tmp/titanlcd.png");
+			
+					//system("/var/bin/fbgrab -f /tmp/titanlcd.raw -w 320 -h 240 -b 32 -i /tmp/titanlcd.png > /dev/null");
+					//system("xloadimage /tmp/titanlcd.png > /dev/null &");
+					
 				}
 				else if(type == 2)
 				{
-					if(loopcount >= 15)
+					if(status.mcaktiv == 1)
+						playertype = 0;
+					else	
+						playertype = getconfigint("playertype", NULL);
+		
+					if(playertype == 1)
 					{
-						put = 1;
-						loopcount = 0;
+						unsigned long long int startpos = 0;
+						playergetinfots(&len, &startpos, NULL, &pos, NULL, 0);
+						len = len / 90000;
+						pos = (pos - startpos) / 90000;
 					}
-				}	
-				
-				if(put == 1)
-				{
-					if(type == 1)
+					else
 					{
-						// Wettervorhersage
-						if(ostrcmp(getconfig("lcd_pearl1_plugin_wetter", NULL), "yes") == 0)
-						{
-							if(weatherwrite == 0)
-							{
-								if(weatherthread == NULL)
-								{
-									if(!file_exist("/tmp/lcdweather"))
-										weatherthread = addtimer(&lcd_writeweather, START, 10000, 1, NULL, NULL, NULL);
-									else
-									{
-										fileline = malloc(256);
-										if(fileline != NULL)
-										{
-											fd = fopen("/tmp/lcdweather", "r");
-											if(fd != NULL)
-											{
-												weather_getline(fd, fileline);weather_getline(fd, fileline);weather_getline(fd, fileline);
-												weather_getline(fd, fileline);
-												changetext(day0_t, fileline);
-												weather_getline(fd, fileline);
-												weather_getline(fd, fileline);
-												changepic(day0_i, fileline);
-												
-												weather_getline(fd, fileline);weather_getline(fd, fileline);
-												weather_getline(fd, fileline);
-												changetext(day1_t, fileline);
-												weather_getline(fd, fileline);
-												weather_getline(fd, fileline);
-												changepic(day1_i, fileline);
-												
-												weather_getline(fd, fileline);weather_getline(fd, fileline);
-												weather_getline(fd, fileline);
-												changetext(day2_t, fileline);
-												weather_getline(fd, fileline);
-												weather_getline(fd, fileline);
-												changepic(day2_i, fileline);
-												
-												weather_getline(fd, fileline);weather_getline(fd, fileline);
-												weather_getline(fd, fileline);
-												changetext(day3_t, fileline);
-												weather_getline(fd, fileline);
-												weather_getline(fd, fileline);
-												changepic(day3_i, fileline);
-												fclose(fd);
-											}
-											free(fileline); fileline=NULL;
-										}
-										weatherwrite = 1;
-									}								
-								}
-							}		
-						}
-						
-						changetext(akttime, tmpstr);
-						drawscreen(LCD_Pearl1, 0, 0);
-
-						//system(fbgrab);
-						//system("mv /tmp/.titanlcd1.png /tmp/titanlcd.png");
-				
-						//system("/var/bin/fbgrab -f /tmp/titanlcd.raw -w 320 -h 240 -b 32 -i /tmp/titanlcd.png > /dev/null");
-						//system("xloadimage /tmp/titanlcd.png > /dev/null &");
-						
+						pos = playergetpts() / 90000;
+						len = playergetlength();
 					}
-					else if(type == 2)
-					{
-						if(status.mcaktiv == 1)
-							playertype = 0;
-						else	
-							playertype = getconfigint("playertype", NULL);
-			
-						if(playertype == 1)
-						{
-							unsigned long long int startpos = 0;
-							playergetinfots(&len, &startpos, NULL, &pos, NULL, 0);
-							len = len / 90000;
-							pos = (pos - startpos) / 90000;
-						}
-						else
-						{
-							pos = playergetpts() / 90000;
-							len = playergetlength();
-						}
-						if(pos < 0) pos = 0;
-						reverse = len - pos;
-						if(len == 0)
-							sprogress->progresssize = 0;
-						else
-							sprogress->progresssize = pos * 100 / len;
-						
-						tmpstr2 = convert_timesec(pos);
-						changetext(spos, tmpstr2);
-						free(tmpstr2); tmpstr2 = NULL;
+					if(pos < 0) pos = 0;
+					reverse = len - pos;
+					if(len == 0)
+						sprogress->progresssize = 0;
+					else
+						sprogress->progresssize = pos * 100 / len;
+					
+					tmpstr2 = convert_timesec(pos);
+					changetext(spos, tmpstr2);
+					free(tmpstr2); tmpstr2 = NULL;
 
-						tmpstr2 = convert_timesec(len);
-						changetext(slen, tmpstr2);
-						free(tmpstr2); tmpstr2 = NULL;
+					tmpstr2 = convert_timesec(len);
+					changetext(slen, tmpstr2);
+					free(tmpstr2); tmpstr2 = NULL;
 
-						tmpstr2 = convert_timesec(reverse);
-						changetext(sreverse, tmpstr2);
-						free(tmpstr2); tmpstr2 = NULL;
-						
-						changetext(akttimeplay, tmpstr);
-						changetext(stitle, basename(status.playfile));
-						drawscreen(LCD_Play, 0, 0);
+					tmpstr2 = convert_timesec(reverse);
+					changetext(sreverse, tmpstr2);
+					free(tmpstr2); tmpstr2 = NULL;
+					
+					changetext(akttimeplay, tmpstr);
+					changetext(stitle, basename(status.playfile));
+					drawscreen(LCD_Play, 0, 0);
 
-					//else if(type == 999 && status.mcaktiv == 1) 
-					//else if(type == 999)	
-					//{
-						//changetext(akttimemc1, tmpstr);
-						//drawscreen(LCD_MC_Menu, 0, 3);
-					//}
-					}
-				}
-			}
-			else 
-			{
-				if(standby == 2)
-				{	
-					if(put == 1)
-					{	
-						changetext(akttime_Standby, tmpstr);
-						drawscreen(LCD_Pearl1_Standby, 0, 0);
-						put = 0;
-					}
+				//else if(type == 999 && status.mcaktiv == 1) 
+				//else if(type == 999)	
+				//{
+					//changetext(akttimemc1, tmpstr);
+					//drawscreen(LCD_MC_Menu, 0, 3);
+				//}
 				}
 			}
 		}
+		else 
+		{
+			if(standby == 2)
+			{	
+				if(put == 1)
+				{	
+					changetext(akttime_Standby, tmpstr);
+					drawscreen(LCD_Pearl1_Standby, 0, 0);
+					put = 0;
+				}
+			}
+		}
+
 		free(tmpstr); tmpstr = NULL;
 		free(tmpstr2); tmpstr2 = NULL;
 		free(tmpstr3); tmpstr3 = NULL;
