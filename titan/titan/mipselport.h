@@ -645,6 +645,63 @@ return -1;
 //flag 1: blit from skinfb to accelfb
 void blitscale(int posx, int posy, int width, int height, int scalewidth, int scaleheight, int flag)
 {
+#ifdef BLITHELP
+	unsigned char *quelle = NULL; 
+	unsigned char *ziehl = NULL;
+	unsigned char *helpbuf = NULL;
+	int zpitch = 0;
+	int zheight = 0;
+
+	if(scalewidth == 0) scalewidth = width;
+	if(scaleheight == 0) scaleheight = height;
+
+	if(posx < 0) posx = 0;
+	if(posx > skinfb->width) posx = skinfb->width;
+	if(posy < 0) posy = 0;
+	if(posy > skinfb->height) posy = skinfb->height;
+	if(posx + scalewidth > skinfb->width) scalewidth = skinfb->width - posx;
+	if(posy + scaleheight > skinfb->height) scaleheight = skinfb->height - posy;
+	
+	if(width <= 0 || height <= 0 || scalewidth <= 0 || scaleheight <= 0) return;
+	
+	if(flag == 1 && (scalewidth * scaleheight * 4) > accelfb->varfbsize)
+	{
+		err("accelfb to small %d -> %lu ", scalewidth * scaleheight * 4, accelfb->varfbsize);
+		return;
+	}
+	if(flag == 0)
+	{
+		quelle = accelfb->fb;
+		ziehl = skinfb->fb + (posy * skinfb->pitch) + (posx*4);
+		zpitch = skinfb->pitch;
+		zheight = skinfb->height;
+	}
+	else
+	{
+		quelle = skinfb->fb;
+		ziehl = accelfb->fb + (posy * accelfb->pitch) + (posx*4);
+		zpitch = accelfb->pitch;
+		zheight = accelfb->height;
+	}
+	helpbuf = scale(quelle, width, height, 4, scalewidth, scaleheight, 0);
+	
+	size_t helpb = 0;
+	size_t helpz = 0;
+	size_t help = 0;
+	
+	while(helpz < scaleheight && helpz < (zheight - posy)) {
+		memcpy(ziehl[help], helpbuf[helpb], scalewidth*4);
+		help = help + zpitch;
+		helpb = helpb + scalewidth*4;
+		helpz = helpz + 1;
+	}
+		
+	free(helpbuf);
+	if(flag == 0)
+		blit();
+
+#endif
+
 /*
 #ifndef SIMULATE
 	STMFBIO_BLT_DATA  blt_data;
@@ -742,7 +799,7 @@ void blitscale(int posx, int posy, int width, int height, int scalewidth, int sc
 void blitjpg(unsigned char* buf, int posx, int posy, int width, int height, int scalewidth, int scaleheight, int mwidth, int mheight, int halign, int valign)
 //void blitjpg(unsigned char* buf, int posx, int posy, int width, int height, int scalewidth, int scaleheight)
 {
-#ifdef MIPSEL
+#ifdef BLITHELP
 	unsigned char *helpbuf = NULL;
 	unsigned char *framebuf = NULL;
 
