@@ -71,9 +71,11 @@ void screenskinadjust()
 		addscreenrc(skinadjust, tmp);
 		rcret = waitrc(skinadjust, 0, 0);
 		tmp = listbox->select;
-
+printf("11111\n");
 		if(checkbox("ATEMIO5200") != 1)
 		{
+printf("22222\n");
+
 			addconfigscreencheck("fbleftoffset", leftoffset, "0");
 			if(status.leftoffset != getconfigint("fbleftoffset", NULL)) offsetchange = 1; 
 			status.leftoffset = getconfigint("fbleftoffset", NULL);
@@ -91,9 +93,9 @@ void screenskinadjust()
 			status.bottomoffset = getconfigint("fbbottomoffset", NULL);
 				
 			if(offsetchange == 1 && (ostrcmp(getconfig("av_mode3d", NULL), "sbs") == 0 || ostrcmp(getconfig("av_mode3d", NULL), "tab") == 0)) clearfball();
+	
+			drawscreen(skinadjust, 0, 0);
 		}
-		
-		drawscreen(skinadjust, 0, 0);
 
 		if(rcret == getrcconfigint("rcexit", NULL))
 		{
