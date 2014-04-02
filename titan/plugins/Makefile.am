@@ -18,7 +18,6 @@ SUBDIRS = \
 	rgui \
 	scriptexec \
 	stock \
-	stopifnotused \
 	streaminfo \
 	tinews \
 	tsSchnitt \
