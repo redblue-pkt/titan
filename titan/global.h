@@ -1815,7 +1815,7 @@ void setskinnodeslocked(int flag)
 
 			if(checkbox("ATEMIO5200") == 1)
 			{
-				if(ostrcmp("skinadjust", child->name) == 0) child->locked = 1;
+//				if(ostrcmp("skinadjust", child->name) == 0) child->locked = 1;
 				if(ostrcmp("system_backup", child->name) == 0) child->locked = 1;
 			}
 
