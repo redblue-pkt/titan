@@ -38,7 +38,6 @@ gmediarender/Makefile
 hello/Makefile
 imdb/Makefile
 imdbapi/Makefile
-instar/Makefile
 keylock/Makefile
 lcdpearl1/Makefile
 lcdsamsung/Makefile
