@@ -9,13 +9,10 @@ void screenskinadjust()
 	struct skin* fontsizeadjust = getscreennode(skinadjust, "fontsizeadjust");
 	struct skin* listboxselecttype = getscreennode(skinadjust, "listboxselecttype");
 	struct skin* osdtransparent = getscreennode(skinadjust, "osdtransparent");
-	if(checkbox("ATEMIO5200") != 1)
-	{
-		struct skin* leftoffset = getscreennode(skinadjust, "leftoffset");
-		struct skin* rightoffset = getscreennode(skinadjust, "rightoffset");
-		struct skin* topoffset = getscreennode(skinadjust, "topoffset");
-		struct skin* bottomoffset = getscreennode(skinadjust, "bottomoffset");
-	}
+	struct skin* leftoffset = getscreennode(skinadjust, "leftoffset");
+	struct skin* rightoffset = getscreennode(skinadjust, "rightoffset");
+	struct skin* topoffset = getscreennode(skinadjust, "topoffset");
+	struct skin* bottomoffset = getscreennode(skinadjust, "bottomoffset");
 	struct skin* showrecfreesize = getscreennode(skinadjust, "showrecfreesize");
 	struct skin* listboxselect = getscreennode(skinadjust, "listboxselect");
 	struct skin* tmp = NULL;
@@ -48,6 +45,14 @@ void screenskinadjust()
 	orightoffset = getconfigint("fbrightoffset", NULL); 
 	otopoffset = getconfigint("fbtopoffset", NULL);
 	obottomoffset = getconfigint("fbbottomoffset", NULL);
+
+	if(checkbox("ATEMIO5200") = 1)
+	{
+		leftoffset->hidden = YES;
+		rightoffset->hidden = YES;
+		topoffset->hidden = YES;
+		bottomoffset->hidden = YES;
+	}
 
 	addchoicebox(showrecfreesize, "0", _("no"));
 	addchoicebox(showrecfreesize, "1", _("yes (Text in %)"));
