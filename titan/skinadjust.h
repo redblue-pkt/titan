@@ -45,8 +45,8 @@ void screenskinadjust()
 	orightoffset = getconfigint("fbrightoffset", NULL); 
 	otopoffset = getconfigint("fbtopoffset", NULL);
 	obottomoffset = getconfigint("fbbottomoffset", NULL);
-
-	if(checkbox("ATEMIO5200") = 1)
+	
+	if(checkbox("ATEMIO5200") == 1)
 	{
 		leftoffset->hidden = YES;
 		rightoffset->hidden = YES;
