@@ -4575,7 +4575,7 @@ char* webadjustsend(char* param, int fmt)
 	{
 		for(i = 0; i <= max; i++)
 		{
-			if(ostrcmp(ret2[0].part, "ret1[i].part") != 0)
+			if(ostrcmp(ret1[i].part, "node=0") != 0)
 			{
 				debug(77, "skip: %s", ret1[i].part);
 				continue;
