@@ -3356,9 +3356,10 @@ printf("webadjust fmt: %d\n",fmt);
 	ostrcatbig(&buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><link rel=\"stylesheet\" type=\"text/css\" href=\"titan.css\"></head>", &maxlen, &pos);
 	ostrcatbig(&buf, "<body class=body ><center>", &maxlen, &pos);
 	ostrcatbig(&buf, "<form name=F1 action=query method=get><br><br>", &maxlen, &pos);
-	ostrcatbig(&buf, "<input type=\"hidden\" name=\"adjustsend&node\" value=\"", &maxlen, &pos);
-	ostrcatbig(&buf, "0", &maxlen, &pos);
-	ostrcatbig(&buf, "\">", &maxlen, &pos);
+//	ostrcatbig(&buf, "<input type=\"hidden\" name=\"adjustsend&node\" value=\"", &maxlen, &pos);
+//	ostrcatbig(&buf, "0", &maxlen, &pos);
+//	ostrcatbig(&buf, "\">", &maxlen, &pos);
+	ostrcatbig(&buf, "<input type=\"hidden\" name=\"adjustsend\">", &maxlen, &pos);
 	ostrcatbig(&buf, "<table border=\"0\"><tr>", &maxlen, &pos);
 
 	ostrcatbig(&buf, "<table>", &maxlen, &pos);
