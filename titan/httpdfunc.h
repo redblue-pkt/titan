@@ -3349,31 +3349,10 @@ char* webadjust(char* param, int fmt)
 printf("webadjust param: %s\n",param);
 printf("webadjust fmt: %d\n",fmt);
 
-	char* buf = NULL, *param1 = NULL, *param2 = NULL, *tmpstr = NULL, *tmpstr1 = NULL;
+	char* buf = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *sendstr = NULL;
 	int i = 0, max = 0, count = 0, maxlen = 0, pos = 0;
 
-	struct channel* chnode = NULL;
-	struct epg* epgnode = NULL;
-
-	if(param != NULL)
-	{
-		//create param1 + 2
-		param1 = strchr(param, '&');
-		if(param1 != NULL)
-		{
-			*param1++ = '\0';
-			param2 = strchr(param1, '&');
-			if(param2 != NULL)
-				*param2++ = '\0';
-		}
-		if(param1 == NULL || param2 == NULL) return NULL;
-		chnode = getchannel(atoi(param), strtoull(param1, NULL, 10));
-		if(chnode == NULL) return NULL;
-
-		epgnode = getepg(chnode, atoi(param2), 0);
-		if(epgnode == NULL) return NULL;
-	}
-
+	
 	ostrcatbig(&buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><link rel=\"stylesheet\" type=\"text/css\" href=\"titan.css\"></head>", &maxlen, &pos);
 	ostrcatbig(&buf, "<body class=body ><center>", &maxlen, &pos);
 	ostrcatbig(&buf, "<form name=F1 action=query method=get><br><br>", &maxlen, &pos);
@@ -3401,6 +3380,8 @@ printf("webadjust fmt: %d\n",fmt);
 		ostrcatbig(&buf, oitoa(i), &maxlen, &pos);
 		ostrcatbig(&buf, "</option>", &maxlen, &pos);
 	}
+	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+	sendstr = ostrcat(sendstr, "volbartimeout.value", 1 , 0);
 
 ///////////////////
 //	ostrcatbig(&buf, "<tr><td><font class=\"label\">Infobartimeout:&nbsp;</font></td><td><select name=\"infobartimeout\" border=\"0\"><option value=\"1\" selected>1</option><option value=\"2\">2</option><option value=\"3\">3</option><option value=\"4\">4</option><option value=\"5\">5</option><option value=\"6\">6</option><option value=\"7\">7</option><option value=\"8\">8</option><option value=\"9\">9</option><option value=\"10\">10</option></select></td></tr>", &maxlen, &pos);
@@ -3419,6 +3400,8 @@ printf("webadjust fmt: %d\n",fmt);
 		ostrcatbig(&buf, oitoa(i), &maxlen, &pos);
 		ostrcatbig(&buf, "</option>", &maxlen, &pos);
 	}
+	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+	sendstr = ostrcat(sendstr, ", infobartimeout.value", 1 , 0);
 
 ///////////////////
 //	ostrcatbig(&buf, "<tr><td><font class=\"label\">Infobar Sleep:&nbsp;</font></td><td><select name=\"infobarsleep\" border=\"0\"><option value=\"0\">0</option><option value=\"1\" selected>1</option><option value=\"2\">2</option><option value=\"3\">3</option><option value=\"4\">4</option><option value=\"5\">5</option></select></td></tr>", &maxlen, &pos);
@@ -3437,6 +3420,8 @@ printf("webadjust fmt: %d\n",fmt);
 		ostrcatbig(&buf, oitoa(i), &maxlen, &pos);
 		ostrcatbig(&buf, "</option>", &maxlen, &pos);
 	}
+	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+	sendstr = ostrcat(sendstr, ", infobarsleep.value", 1 , 0);
 
 ///////////////////
 //	ostrcatbig(&buf, "<tr><td><font class=\"label\">Infobar Sleep:&nbsp;</font></td><td><select name=\"infobarsleep\" border=\"0\"><option value=\"0\">0</option><option value=\"1\" selected>1</option><option value=\"2\">2</option><option value=\"3\">3</option><option value=\"4\">4</option><option value=\"5\">5</option></select></td></tr>", &maxlen, &pos);
@@ -3467,6 +3452,8 @@ printf("webadjust fmt: %d\n",fmt);
 			ostrcatbig(&buf, "</option>", &maxlen, &pos);
 		}
 	}
+	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+	sendstr = ostrcat(sendstr, ", spinnerspeed.value", 1 , 0);
 	free(ret1), ret1 = NULL;
 	free(tmpstr), tmpstr = NULL;
 	free(tmpstr1), tmpstr1 = NULL;
@@ -3497,6 +3484,8 @@ printf("webadjust fmt: %d\n",fmt);
 			ostrcatbig(&buf, "</option>", &maxlen, &pos);
 		}
 	}
+	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+	sendstr = ostrcat(sendstr, ", spinnertime.value", 1 , 0);
 	free(ret1), ret1 = NULL;
 	free(tmpstr), tmpstr = NULL;
 	free(tmpstr1), tmpstr1 = NULL;
@@ -3527,6 +3516,8 @@ printf("webadjust fmt: %d\n",fmt);
 			ostrcatbig(&buf, "</option>", &maxlen, &pos);
 		}
 	}
+	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+	sendstr = ostrcat(sendstr, ", hangtime.value", 1 , 0);
 	free(ret1), ret1 = NULL;
 	free(tmpstr), tmpstr = NULL;
 	free(tmpstr1), tmpstr1 = NULL;
@@ -3564,25 +3555,34 @@ printf("webadjust fmt: %d\n",fmt);
 		ostrcatbig(&buf, "<option value=\"3\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("Channel EPG"), &maxlen, &pos);
 	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+	
+	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+	sendstr = ostrcat(sendstr, ", secondinfobar.value", 1 , 0);
 
 ///////////////////
-	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
-	ostrcatbig(&buf, _("Don't clear TV on zap (only with fastzap)"), &maxlen, &pos);
-	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"nozapclear\" border=\"0\">", &maxlen, &pos);
+	if(checkbox("ATEMIO7600") != 1)
+	{
+		ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+		ostrcatbig(&buf, _("Don't clear TV on zap (only with fastzap)"), &maxlen, &pos);
+		ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"nozapclear\" border=\"0\">", &maxlen, &pos);
 	
-	if(getconfigint("nozapclear", NULL) == 0)
-		ostrcatbig(&buf, "<option value=\"0\" selected>", &maxlen, &pos);		
-	else
-		ostrcatbig(&buf, "<option value=\"0\">", &maxlen, &pos);
-	ostrcatbig(&buf, _("no"), &maxlen, &pos);
-	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+		if(getconfigint("nozapclear", NULL) == 0)
+			ostrcatbig(&buf, "<option value=\"0\" selected>", &maxlen, &pos);		
+		else
+			ostrcatbig(&buf, "<option value=\"0\">", &maxlen, &pos);
+		ostrcatbig(&buf, _("no"), &maxlen, &pos);
+		ostrcatbig(&buf, "</option>", &maxlen, &pos);
 
-	if(getconfigint("nozapclear", NULL) == 1)
-		ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);		
-	else
-		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
-	ostrcatbig(&buf, _("yes"), &maxlen, &pos);
-	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+		if(getconfigint("nozapclear", NULL) == 1)
+			ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);		
+		else
+			ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
+		ostrcatbig(&buf, _("yes"), &maxlen, &pos);
+		ostrcatbig(&buf, "</option>", &maxlen, &pos);
+	
+		ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+		sendstr = ostrcat(sendstr, ", nozapclear.value", 1 , 0);
+	}
 
 ///////////////////
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
@@ -3609,6 +3609,9 @@ printf("webadjust fmt: %d\n",fmt);
 		ostrcatbig(&buf, "<option value=\"2\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("fast"), &maxlen, &pos);
 	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+	
+	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+	sendstr = ostrcat(sendstr, ", fastzap.value", 1 , 0);
 
 ///////////////////
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
@@ -3628,6 +3631,9 @@ printf("webadjust fmt: %d\n",fmt);
 		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("yes"), &maxlen, &pos);
 	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+	
+	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+	sendstr = ostrcat(sendstr, ", faststop.value", 1 , 0);
 
 ///////////////////
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
@@ -3675,6 +3681,9 @@ printf("webadjust fmt: %d\n",fmt);
 		ostrcatbig(&buf, "<option value=\"5\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("reverse date"), &maxlen, &pos);
 	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+	
+	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+	sendstr = ostrcat(sendstr, ", dirsort.value", 1 , 0);
 
 ///////////////////
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
@@ -3715,6 +3724,9 @@ printf("webadjust fmt: %d\n",fmt);
 		ostrcatbig(&buf, "<option value=\"4\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("Gui Restart"), &maxlen, &pos);
 	ostrcatbig(&buf, "</option>", &maxlen, &pos);	
+	
+	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+	sendstr = ostrcat(sendstr, ", poweraktion.value", 1 , 0);
 
 ///////////////////
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
@@ -3749,6 +3761,9 @@ printf("webadjust fmt: %d\n",fmt);
 	ostrcatbig(&buf, _("endless"), &maxlen, &pos);
 	ostrcatbig(&buf, "</option>", &maxlen, &pos);
 	
+	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+	sendstr = ostrcat(sendstr, ", virtualzap.value", 1 , 0);
+	
 ///////////////////
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("Fast Text Render"), &maxlen, &pos);
@@ -3767,6 +3782,9 @@ printf("webadjust fmt: %d\n",fmt);
 		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("yes"), &maxlen, &pos);
 	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+	
+	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+	sendstr = ostrcat(sendstr, ", fasttextrender.value", 1 , 0);
 
 ///////////////////
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
@@ -3807,6 +3825,9 @@ printf("webadjust fmt: %d\n",fmt);
 		ostrcatbig(&buf, "<option value=\"4\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("4 GB"), &maxlen, &pos);
 	ostrcatbig(&buf, "</option>", &maxlen, &pos);	
+	
+	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+	sendstr = ostrcat(sendstr, ", recsplitsize.value", 1 , 0);
 
 ///////////////////
 	tmpstr = ostrcat("0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n15\n20\n25\n30\n35\n40\n45\n50\n55\n60", NULL, 0, 0);
@@ -3834,6 +3855,8 @@ printf("webadjust fmt: %d\n",fmt);
 			ostrcatbig(&buf, "</option>", &maxlen, &pos);
 		}
 	}
+	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+	sendstr = ostrcat(sendstr, ", recforerun.value", 1 , 0);
 	free(ret1), ret1 = NULL;
 	free(tmpstr), tmpstr = NULL;
 	free(tmpstr1), tmpstr1 = NULL;
@@ -3864,6 +3887,8 @@ printf("webadjust fmt: %d\n",fmt);
 			ostrcatbig(&buf, "</option>", &maxlen, &pos);
 		}
 	}
+	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+	sendstr = ostrcat(sendstr, ", recoverrun.value", 1 , 0);
 	free(ret1), ret1 = NULL;
 	free(tmpstr), tmpstr = NULL;
 	free(tmpstr1), tmpstr1 = NULL;
@@ -3894,6 +3919,8 @@ printf("webadjust fmt: %d\n",fmt);
 			ostrcatbig(&buf, "</option>", &maxlen, &pos);
 		}
 	}
+	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+	sendstr = ostrcat(sendstr, ", skip13.value", 1 , 0);
 	free(ret1), ret1 = NULL;
 	free(tmpstr), tmpstr = NULL;
 	free(tmpstr1), tmpstr1 = NULL;
@@ -3924,6 +3951,8 @@ printf("webadjust fmt: %d\n",fmt);
 			ostrcatbig(&buf, "</option>", &maxlen, &pos);
 		}
 	}
+	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+	sendstr = ostrcat(sendstr, ", skip46.value", 1 , 0);
 	free(ret1), ret1 = NULL;
 	free(tmpstr), tmpstr = NULL;
 	free(tmpstr1), tmpstr1 = NULL;
@@ -3954,6 +3983,8 @@ printf("webadjust fmt: %d\n",fmt);
 			ostrcatbig(&buf, "</option>", &maxlen, &pos);
 		}
 	}
+	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+	sendstr = ostrcat(sendstr, ", skip79.value", 1 , 0);
 	free(ret1), ret1 = NULL;
 	free(tmpstr), tmpstr = NULL;
 	free(tmpstr1), tmpstr1 = NULL;
@@ -3976,6 +4007,9 @@ printf("webadjust fmt: %d\n",fmt);
 		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("intern"), &maxlen, &pos);
 	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+	
+	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+	sendstr = ostrcat(sendstr, ", playertype.value", 1 , 0);
 
 ///////////////////
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
@@ -3995,6 +4029,9 @@ printf("webadjust fmt: %d\n",fmt);
 		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("yes"), &maxlen, &pos);
 	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+	
+	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+	sendstr = ostrcat(sendstr, ", autochangechannelname.value", 1 , 0);
 
 ///////////////////
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
@@ -4028,6 +4065,9 @@ printf("webadjust fmt: %d\n",fmt);
 		ostrcatbig(&buf, "<option value=\"3\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("power off"), &maxlen, &pos);
 	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+	
+	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+	sendstr = ostrcat(sendstr, ", def_rectimer_after.value", 1 , 0);
 
 ///////////////////
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
@@ -4047,6 +4087,9 @@ printf("webadjust fmt: %d\n",fmt);
 		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("yes"), &maxlen, &pos);
 	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+	
+	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+	sendstr = ostrcat(sendstr, ", showchanneltimeline.value", 1 , 0);
 
 ///////////////////
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
@@ -4080,6 +4123,9 @@ printf("webadjust fmt: %d\n",fmt);
 		ostrcatbig(&buf, "<option value=\"3\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("anim. both"), &maxlen, &pos);
 	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+	
+	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+	sendstr = ostrcat(sendstr, ", screenanim.value", 1 , 0);
 
 ///////////////////
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
@@ -4120,6 +4166,9 @@ printf("webadjust fmt: %d\n",fmt);
 		ostrcatbig(&buf, "<option value=\"20\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("very slow"), &maxlen, &pos);
 	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+	
+	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+	sendstr = ostrcat(sendstr, ", screenanimspeed.value", 1 , 0);
 
 ///////////////////
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
@@ -4139,6 +4188,9 @@ printf("webadjust fmt: %d\n",fmt);
 		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("deaktiv"), &maxlen, &pos);
 	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+	
+	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+	sendstr = ostrcat(sendstr, ", channellistview.value", 1 , 0);
 
 ///////////////////
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
@@ -4158,6 +4210,9 @@ printf("webadjust fmt: %d\n",fmt);
 		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("yes"), &maxlen, &pos);
 	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+	
+	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+	sendstr = ostrcat(sendstr, ", showlastpos.value", 1 , 0);
 
 ///////////////////
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
@@ -4177,6 +4232,9 @@ printf("webadjust fmt: %d\n",fmt);
 		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("yes"), &maxlen, &pos);
 	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+	
+	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+	sendstr = ostrcat(sendstr, ", recsync.value", 1 , 0);
 
 ///////////////////
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
@@ -4196,6 +4254,9 @@ printf("webadjust fmt: %d\n",fmt);
 		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("movie-channel"), &maxlen, &pos);
 	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+	
+	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+	sendstr = ostrcat(sendstr, ", recordnamefmt.value", 1 , 0);
 
 ///////////////////
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
@@ -4215,6 +4276,9 @@ printf("webadjust fmt: %d\n",fmt);
 		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("yes"), &maxlen, &pos);
 	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+	
+	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+	sendstr = ostrcat(sendstr, ", newsletter.value", 1 , 0);
 
 ///////////////////
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
@@ -4234,6 +4298,9 @@ printf("webadjust fmt: %d\n",fmt);
 		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("yes"), &maxlen, &pos);
 	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+	
+	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+	sendstr = ostrcat(sendstr, ", showhiddenfiles.value", 1 , 0);
 
 ///////////////////
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
@@ -4260,6 +4327,9 @@ printf("webadjust fmt: %d\n",fmt);
 		ostrcatbig(&buf, "<option value=\"11\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("expert (11)"), &maxlen, &pos);
 	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+	
+	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+	sendstr = ostrcat(sendstr, ", expertmodus.value", 1 , 0);
 
 ///////////////////
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
@@ -4279,6 +4349,9 @@ printf("webadjust fmt: %d\n",fmt);
 		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("yes"), &maxlen, &pos);
 	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+	
+	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+	sendstr = ostrcat(sendstr, ", infobarprogram.value", 1 , 0);
 
 ///////////////////
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
@@ -4319,25 +4392,34 @@ printf("webadjust fmt: %d\n",fmt);
 		ostrcatbig(&buf, "<option value=\"9999\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("yes / vzap endless"), &maxlen, &pos);
 	ostrcatbig(&buf, "</option>", &maxlen, &pos);
-
-///////////////////
-	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
-	ostrcatbig(&buf, _("Deactivate Crypt Support on Media Playback"), &maxlen, &pos);
-	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"emucontrol\" border=\"0\">", &maxlen, &pos);
 	
-	if(getconfigint("emucontrol", NULL) == 0)
-		ostrcatbig(&buf, "<option value=\"0\" selected>", &maxlen, &pos);		
-	else
-		ostrcatbig(&buf, "<option value=\"0\">", &maxlen, &pos);
-	ostrcatbig(&buf, _("no"), &maxlen, &pos);
-	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+	sendstr = ostrcat(sendstr, ", crosscontrol.value", 1 , 0);
+	
+///////////////////
+	if(status.security == 1)
+	{
+		ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+		ostrcatbig(&buf, _("Deactivate Crypt Support on Media Playback"), &maxlen, &pos);
+		ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"emucontrol\" border=\"0\">", &maxlen, &pos);
+	
+		if(getconfigint("emucontrol", NULL) == 0)
+			ostrcatbig(&buf, "<option value=\"0\" selected>", &maxlen, &pos);		
+		else
+			ostrcatbig(&buf, "<option value=\"0\">", &maxlen, &pos);
+		ostrcatbig(&buf, _("no"), &maxlen, &pos);
+		ostrcatbig(&buf, "</option>", &maxlen, &pos);
 
-	if(getconfigint("emucontrol", NULL) == 1)
-		ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);		
-	else
-		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
-	ostrcatbig(&buf, _("yes"), &maxlen, &pos);
-	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+		if(getconfigint("emucontrol", NULL) == 1)
+			ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);		
+		else
+			ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
+		ostrcatbig(&buf, _("yes"), &maxlen, &pos);
+		ostrcatbig(&buf, "</option>", &maxlen, &pos);
+	
+		ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+		sendstr = ostrcat(sendstr, ", emucontrol.value", 1 , 0);
+	}
 
 ///////////////////
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
@@ -4357,44 +4439,59 @@ printf("webadjust fmt: %d\n",fmt);
 		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("yes"), &maxlen, &pos);
 	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+	
+	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+	sendstr = ostrcat(sendstr, ", choiceminitv.value", 1 , 0);
 
 ///////////////////
-	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
-	ostrcatbig(&buf, _("Activate CEC"), &maxlen, &pos);
-	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"usecec\" border=\"0\">", &maxlen, &pos);
+	if(checkbox("ATEMIO510") == 1 || checkbox("UFS912") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1)
+	{
+		ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+		ostrcatbig(&buf, _("Activate CEC"), &maxlen, &pos);
+		ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"usecec\" border=\"0\">", &maxlen, &pos);
 	
-	if(getconfigint("usecec", NULL) == 0)
-		ostrcatbig(&buf, "<option value=\"0\" selected>", &maxlen, &pos);		
-	else
-		ostrcatbig(&buf, "<option value=\"0\">", &maxlen, &pos);
-	ostrcatbig(&buf, _("no"), &maxlen, &pos);
-	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+		if(getconfigint("usecec", NULL) == 0)
+			ostrcatbig(&buf, "<option value=\"0\" selected>", &maxlen, &pos);		
+		else
+			ostrcatbig(&buf, "<option value=\"0\">", &maxlen, &pos);
+		ostrcatbig(&buf, _("no"), &maxlen, &pos);
+		ostrcatbig(&buf, "</option>", &maxlen, &pos);
 
-	if(getconfigint("usecec", NULL) == 1)
-		ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);		
-	else
-		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
-	ostrcatbig(&buf, _("yes"), &maxlen, &pos);
-	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+		if(getconfigint("usecec", NULL) == 1)
+			ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);		
+		else
+			ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
+		ostrcatbig(&buf, _("yes"), &maxlen, &pos);
+		ostrcatbig(&buf, "</option>", &maxlen, &pos);
+	
+		ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+		sendstr = ostrcat(sendstr, ", usecec.value", 1 , 0);
+	}
 
 ///////////////////
-	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
-	ostrcatbig(&buf, _("SATA Connector"), &maxlen, &pos);
-	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"sataswitch\" border=\"0\">", &maxlen, &pos);
+	if(checkbox("ATEMIO7600") == 1)
+	{
+		ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+		ostrcatbig(&buf, _("SATA Connector"), &maxlen, &pos);
+		ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"sataswitch\" border=\"0\">", &maxlen, &pos);
 	
-	if(getconfigint("sataswitch", NULL) == 0)
-		ostrcatbig(&buf, "<option value=\"0\" selected>", &maxlen, &pos);		
-	else
-		ostrcatbig(&buf, "<option value=\"0\">", &maxlen, &pos);
-	ostrcatbig(&buf, _("extern"), &maxlen, &pos);
-	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+		if(getconfigint("sataswitch", NULL) == 0)
+			ostrcatbig(&buf, "<option value=\"0\" selected>", &maxlen, &pos);		
+		else
+			ostrcatbig(&buf, "<option value=\"0\">", &maxlen, &pos);
+		ostrcatbig(&buf, _("extern"), &maxlen, &pos);
+		ostrcatbig(&buf, "</option>", &maxlen, &pos);
 
-	if(getconfigint("sataswitch", NULL) == 1)
-		ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);		
-	else
-		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
-	ostrcatbig(&buf, _("intern"), &maxlen, &pos);
-	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+		if(getconfigint("sataswitch", NULL) == 1)
+			ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);		
+		else
+			ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
+		ostrcatbig(&buf, _("intern"), &maxlen, &pos);
+		ostrcatbig(&buf, "</option>", &maxlen, &pos);
+	
+		ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+		sendstr = ostrcat(sendstr, ", sataswitch.value", 1 , 0);
+	}
 
 ///////////////////
 //	ostrcatbig(&buf, "<tr><td><font class=\"label\">Volbartimeout:&nbsp;</font></td><td><select name=\"volbartimeout\" border=\"0\"><option value=\"1\" selected>1</option><option value=\"2\">2</option><option value=\"3\">3</option><option value=\"4\">4</option><option value=\"5\">5</option><option value=\"6\">6</option><option value=\"7\">7</option><option value=\"8\">8</option><option value=\"9\">9</option><option value=\"10\">10</option></select></td></tr>", &maxlen, &pos);
@@ -4413,12 +4510,45 @@ printf("webadjust fmt: %d\n",fmt);
 		ostrcatbig(&buf, oitoa(i), &maxlen, &pos);
 		ostrcatbig(&buf, "</option>", &maxlen, &pos);
 	}	
-
-
 	ostrcatbig(&buf, "</select></td></tr>", &maxlen, &pos);
-//	ostrcatbig(&buf, "</table><br><br><input class=button type=submit name=send value=\"Send\" onClick=\"return checkdaytime(begin.value, end.value)\"></input>&nbsp;<input class=button type=reset name=reset value=\"Reset\"></input></form></center></body></html>", &maxlen, &pos);
-	ostrcatbig(&buf, "</table><br><br><input class=button type=submit name=send value=\"Send\" onClick=\"return volbartimeout.value, infobartimeout.value, infobarsleep.value, spinnerspeed.value, spinnertime.value, hangtime.value, secondinfobar.value, nozapclear.value, fastzap.value, faststop.value, dirsort.value, poweraktion.value, virtualzap.value, fasttextrender.value, recsplitsize.value, recforerun.value, recoverrun.value, skip13.value, skip46.value, skip79.value, playertype.value, autochangechannelname.value, def_rectimer_after.value, showchanneltimeline.value, screenanim.value, screenanimspeed.value, channellistview.value, showlastpos.value, recsync.value, recordnamefmt.value, newsletter.value, showhiddenfiles.value, expertmodus.value, infobarprogram.value, emucontrol.value, choiceminitv.value, usecec.value, playerbufferseektime.value\"></input>&nbsp;<input class=button type=reset name=reset value=\"Reset\"></input></form></center></body></html>", &maxlen, &pos);
+	sendstr = ostrcat(sendstr, ", playerbufferseektime.value", 1 , 0);
+	
+///////////////////	
+	if(checkbox("ATEMIO5000") == 1 || checkbox("ATEMIO5200") == 1)
+	{
+		ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+		ostrcatbig(&buf, _("Dualboot Menu TitanNit / E2"), &maxlen, &pos);
+		ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"dualboot\" border=\"0\">", &maxlen, &pos);
+	
+//		if(getconfigint("dualboot", NULL) == 0)
+		if(!file_exist("/mnt/config/dualboot"))
+			ostrcatbig(&buf, "<option value=\"0\" selected>", &maxlen, &pos);		
+		else
+			ostrcatbig(&buf, "<option value=\"0\">", &maxlen, &pos);
+		ostrcatbig(&buf, _("no"), &maxlen, &pos);
+		ostrcatbig(&buf, "</option>", &maxlen, &pos);
 
+//		if(getconfigint("dualboot", NULL) == 1)
+		if(file_exist("/mnt/config/dualboot"))
+			ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);		
+		else
+			ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
+		ostrcatbig(&buf, _("yes"), &maxlen, &pos);
+		ostrcatbig(&buf, "</option>", &maxlen, &pos);
+	
+		ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);	
+		sendstr = ostrcat(sendstr, ", dualboot.value", 1 , 0);
+	}
+	
+
+//	ostrcatbig(&buf, "</table><br><br><input class=button type=submit name=send value=\"Send\" onClick=\"return checkdaytime(begin.value, end.value)\"></input>&nbsp;<input class=button type=reset name=reset value=\"Reset\"></input></form></center></body></html>", &maxlen, &pos);
+//	ostrcatbig(&buf, "</table><br><br><input class=button type=submit name=send value=\"Send\" onClick=\"return volbartimeout.value, infobartimeout.value, infobarsleep.value, spinnerspeed.value, spinnertime.value, hangtime.value, secondinfobar.value, nozapclear.value, fastzap.value, faststop.value, dirsort.value, poweraktion.value, virtualzap.value, fasttextrender.value, recsplitsize.value, recforerun.value, recoverrun.value, skip13.value, skip46.value, skip79.value, playertype.value, autochangechannelname.value, def_rectimer_after.value, showchanneltimeline.value, screenanim.value, screenanimspeed.value, channellistview.value, showlastpos.value, recsync.value, recordnamefmt.value, newsletter.value, showhiddenfiles.value, expertmodus.value, infobarprogram.value, emucontrol.value, choiceminitv.value, usecec.value, playerbufferseektime.value, dualboot.value\"></input>&nbsp;<input class=button type=reset name=reset value=\"Reset\"></input></form></center></body></html>", &maxlen, &pos);
+// sendstr verwenden
+	ostrcatbig(&buf, "</table><br><br><input class=button type=submit name=send value=\"Send\" onClick=\"return ", &maxlen, &pos);
+	ostrcatbig(&buf, sendstr, &maxlen, &pos);
+	ostrcatbig(&buf, "\"></input>&nbsp;<input class=button type=reset name=reset value=\"Reset\"></input></form></center></body></html>", &maxlen, &pos);
+	
+	
 //writesys("/tmp/tmpstr", buf, 1);
 	//ostrcatbig(&buf, param, &maxlen, &pos);
 	return buf;
@@ -4471,17 +4601,19 @@ printf("webadjustsend fmt: %d\n",fmt);
 	char* choiceminitv = NULL;
 	char* usecec = NULL;
 	char* playerbufferseektime = NULL;
+	char* dualboot = NULL;
 	char* tmpstr = NULL;
 
 	anode = ostrstr(param, "node=");
 	if(anode != NULL)
 		anode = anode + 5;
-
-	tmpstr = ostrcat(param, NULL, 0, 0);
-	if(tmpstr != NULL) volbartimeout = ostrstr(tmpstr, "volbartimeout=");
-	free(tmpstr); tmpstr = NULL;
-	if(volbartimeout != NULL) volbartimeout = volbartimeout + 14;
-	volbartimeout = stringreplacecharonce(volbartimeout, '&', '\0');
+	
+//	tmpstr = ostrcat(param, NULL, 0, 0);
+//	if(tmpstr != NULL) volbartimeout = ostrstr(tmpstr, "volbartimeout=");
+//	free(tmpstr); tmpstr = NULL;
+//	if(volbartimeout != NULL) volbartimeout = volbartimeout + 14;
+//	volbartimeout = stringreplacecharonce(volbartimeout, '&', '\0');
+	volbartimeout = webgetparamvalue(param, "volbartimeout=");
 	if(volbartimeout != NULL) addconfigtmp("volbartimeout", volbartimeout);
   	debug(77, "volbartimeout: %s", volbartimeout); 
 //	free(volbartimeout); volbartimeout = NULL;
@@ -4819,6 +4951,24 @@ printf("webadjustsend fmt: %d\n",fmt);
   	debug(77, "playerbufferseektime: %s", playerbufferseektime);
 //	free(playerbufferseektime); playerbufferseektime = NULL;
 
+	tmpstr = ostrcat(param, NULL, 0, 0); 
+	if(tmpstr != NULL) dualboot = ostrstr(tmpstr, "dualboot=");
+	if(dualboot != NULL) dualboot = dualboot + 9;
+	free(tmpstr); tmpstr = NULL;
+	dualboot = stringreplacecharonce(dualboot, '&', '\0');
+	if(dualboot != NULL) 
+	{
+		addconfigtmp("dualboot", dualboot);
+		if(ostrcmp(dualboot, "0") == 0)
+			unlink("/mnt/config/dualboot");
+		else
+			system("touch /mnt/config/dualboot");
+	}
+  	debug(77, "dualboot: %s", dualboot);
+//	free(dualboot); dualboot = NULL;
+
+
+
 printf("before writeallconfig\n");
   	
 	buf = webadjust(NULL, fmt);
@@ -4834,5 +4984,22 @@ printf("writeallconfig\n");
 	return buf;
 	
 }
+
+char* webgetparamvalue(char* param, char* searchparam)
+{
+	char* buf = NULL;
+	char* tmpstr = NULL;
+	
+	tmpstr = ostrcat(param, NULL, 0, 0); 
+	if(tmpstr != NULL) buf = ostrstr(tmpstr, searchparam);
+	if(buf != NULL) buf = buf + strlen(searchparam); 
+	free(tmpstr); tmpstr = NULL;
+	buf = stringreplacecharonce(buf, '&', '\0');
+	debug(77, "webgetparamvalue param: %s", param);
+	debug(77, "webgetparamvalue search: %s", searchparam);
+	debug(77, "webgetparamvalue value: %s", buf);
+	return buf
+}
+
 
 #endif
