@@ -4574,12 +4574,17 @@ char* webadjustsend(char* param, int fmt)
 	if(ret1 != NULL)
 	{
 		for(i = 0; i <= max; i++)
-		{	
+		{
+			if(ostrcmp(ret2[0].part, "ret1[i].part") != 0)
+			{
+				debug(77, "skip: %s", ret1[i].part);
+				continue;
+			}
 			tmpstr1 = ostrcat(ret1[i].part, NULL, 0, 0);
 			count2 = 0;
 			struct splitstr* ret2 = NULL;
 			ret2 = strsplit(tmpstr1, "=", &count2);
-			if(ret2 != NULL && count2 > 1 && ostrcmp(ret2[0].part, "node=0") != 0)
+			if(ret2 != NULL && count2 > 1)
 			{
 				if(ret2[1].part != NULL && ostrcmp(ret2[0].part, "dualboot") == 0)
 				{
