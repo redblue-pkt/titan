@@ -4627,7 +4627,7 @@ char* webgetparamvalue(char* param, char* searchparam)
 	debug(77, "webgetparamvalue param: %s", param);
 	debug(77, "webgetparamvalue search: %s", searchparam);
 	debug(77, "webgetparamvalue value: %s", buf);
-	return buf
+	return buf;
 }
 
 
