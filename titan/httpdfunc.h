@@ -4580,7 +4580,7 @@ char* webadjustsend(char* param, int fmt)
 			ret2 = strsplit(tmpstr1, "=", &count2);
 			if(ret2 != NULL && count2 > 1)
 			{
-				if(ret2[1].part != NULL && ostrcmp((*char)ret2[0].part, "dualboot") != NULL)
+				if(ret2[1].part != NULL && ostrcmp(ret2[0].part, "dualboot") == 0)
 				{
 					debug(77, "add %s: %s", ret2[0].part, ret2[1].part);
 					if(ostrcmp(ret2[1].part, "0") == 0)
