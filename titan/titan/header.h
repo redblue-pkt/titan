@@ -41,6 +41,7 @@ int screencopy(char* title, char* from, char* to, int flag);
 
 //httpdfunc.h
 char* webrectimersend(char* param, int fmt);
+char* webgetparamvalue(char* param, char* searchparam);
 
 //hwtest.h
 void screenhwtest();

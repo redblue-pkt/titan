@@ -4985,6 +4985,66 @@ printf("writeallconfig\n");
 	
 }
 
+char* webadjustsend(char* param, int fmt)
+{
+	debug(77, "fmt: %d param: %s",fmt , param);
+
+	char* buf = NULL;
+	char* tmpstr = NULL, *tmpstr1 = NULL;
+
+	int count, count2,  max, i;
+
+	tmpstr = ostrcat(param, NULL, 0, 0);
+	
+	count = 0;
+	struct splitstr* ret1 = NULL;
+	ret1 = strsplit(tmpstr, "&", &count);
+	max = count - 1;
+	
+	if(ret1 != NULL)
+	{
+		for(i = 0; i <= max; i++)
+		{	
+			tmpstr1 = ostrcat(ret1[i].part, NULL, 0, 0);
+			count2 = 0;
+			struct splitstr* ret2 = NULL;
+			ret2 = strsplit(tmpstr1, "=", &count2);
+			if(ret2 != NULL && count2 > 1)
+			{
+				if(ret2[1].part != NULL) && ostrcmp(ret2[0].part, "dualboot") != 0)
+				{
+					debug(77, "add %s: %s", ret2[0].part, ret2[1].part);
+					if(ostrcmp(ret2[1].part, "0") == 0)
+					{
+						debug(77, "unlink /mnt/config/dualboot");
+						unlink("/mnt/config/dualboot");
+					}
+					else
+					{
+						debug(77, "touch /mnt/config/dualboot");
+						system("touch /mnt/config/dualboot");
+					}
+				}
+				else if(ret2[1].part != NULL)
+				{
+					debug(77, "add %s: %s", ret2[0].part, ret2[1].part);
+					addconfigtmp(ret2[0].part, ret2[1].part);
+				}
+
+			}
+			free(ret2), ret2 = NULL;
+			free(tmpstr1), tmpstr1 = NULL;
+		}
+	}
+	free(ret1), ret1 = NULL;
+	free(tmpstr), tmpstr = NULL;
+  	
+	buf = webadjust(NULL, fmt);
+	writeallconfig(1);
+
+	return buf;
+}
+
 char* webgetparamvalue(char* param, char* searchparam)
 {
 	char* buf = NULL;
