@@ -35,6 +35,8 @@ void screenmc_videoplayer()
 	struct skin* thumb = getscreennode(apskin, "thumb");
 	struct skin* stars = getscreennode(apskin, "stars");
 
+	apskin->bgcol = getskinconfigint("black", NULL);
+	
 	if(getconfigint("mc_vp_uselastdir", NULL) == 1)
 	{
 		currentdirectory = ostrcat(currentdirectory, getconfig("mc_vp_path", NULL), 1, 0);

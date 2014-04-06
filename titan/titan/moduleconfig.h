@@ -316,12 +316,21 @@ void screenmoduleconfig()
 	listbox->aktline = 1;
 	listbox->aktpage = -1;
 
-	b3->hidden = NO;
-	b4->hidden = NO;
-	b5->hidden = NO;
-	b6->hidden = NO;
+// start need draw before hidden=1 for save background if usehid=1
+	b3->usehid = 1;
+	b4->usehid = 1;
+	b5->usehid = 1;
+	b6->usehid = 1;
+//	drawscreen(moduleconfig, 0, 2);
+//	b3->hidden = NO;
+//	b4->hidden = NO;
+//	b5->hidden = NO;
+//	b6->hidden = NO;
+//	drawscreen(moduleconfig, 0, 0);
+// end
 
 start:
+printf("start..............\n");
 	i = 0, allready = 1;
 	dvbnode = dvbdev;
 	tmp = NULL;
@@ -399,14 +408,19 @@ start:
 	addscreenrc(moduleconfig, listbox);
 
 	tmp = listbox->select;
+	int count = 0;
 	while(1)
 	{
 		if(listbox->select != NULL && (listbox->select->type & CHOICEBOX))
 			addscreenrc(moduleconfig, tmp);
 		rcret = waitrc(moduleconfig, 2000, 0);
 		tmp = listbox->select;
+		
+		printf("listbox->select->text: %s\n",listbox->select->text);
+		printf("listbox->select->name: %s\n",listbox->select->name);
 
-		if(listbox->select != NULL && listbox->select->handle != NULL)
+		if(listbox->select != NULL && listbox->select->handle != NULL && ostrstr(listbox->select->text, "Status: empty") == NULL)
+//		if(listbox->select != NULL && listbox->select->handle != NULL)
 		{
 			b3->hidden = NO;
 			b4->hidden = NO;
@@ -420,6 +434,10 @@ start:
 			b5->hidden = YES;
 			b6->hidden = YES;
 		}
+		count++;
+		printf("count: %d\n",count);
+		printf("reset: %d\n",reset);
+
 		clearscreen(load);
 		drawscreen(moduleconfig, 0, 0);
 		if(reset > 0) drawscreen(load, 0, 0);

@@ -36,6 +36,8 @@ void screenmc_pictureplayer()
 	struct skin* b3 = getscreennode(apskin, "b3");
 	struct skin* b4 = getscreennode(apskin, "b4");
 
+	apskin->bgcol = getskinconfigint("black", NULL);
+
 	// pic screen
 	struct skin* picscreen = getscreen("picscreen");
 	struct skin* picture = getscreennode(picscreen, "picture");
@@ -70,7 +72,9 @@ void screenmc_pictureplayer()
 
 	debug(50, "start screenmc_pictureplayer view=%d", view);
 
-	singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
+	char* defaultmvi = NULL;
+	defaultmvi = createpluginpath("/mc/skin/default.mvi", 0);
+	singlepicstart(defaultmvi, 0);
 
 	if(getconfigint("screensaver", NULL) == 1)
 		initscreensaver();

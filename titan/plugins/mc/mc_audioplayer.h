@@ -30,6 +30,8 @@ void screenmc_audioplayer()
 	struct skin* b3 = getscreennode(apskin, "b3");
 	struct skin* b4 = getscreennode(apskin, "b4");
 
+	apskin->bgcol = getskinconfigint("black", NULL);
+
 	struct skin* title = getscreennode(apskin, "title");
 	struct skin* thumb = getscreennode(apskin, "thumb");
 	struct skin* actorstext = getscreennode(apskin, "actorstext");
@@ -85,7 +87,9 @@ void screenmc_audioplayer()
 
 	debug(50, "start screenmc_audioplayer view=%d", view);
 
-	singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/default.mvi", 0);
+	char* defaultmvi = NULL;
+	defaultmvi = createpluginpath("/mc/skin/default.mvi", 0);
+	singlepicstart(defaultmvi, 0);
 
 	if(getconfigint("screensaver", NULL) == 1)
 		initscreensaver();

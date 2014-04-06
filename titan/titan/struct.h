@@ -84,12 +84,11 @@
 #endif
 
 
-
-#define OVERSION "1.51"
+#define OVERSION "1.50"
 #define PROGNAME "titan"
 #define COPYRIGHT "NIT"
 #define CRONTRIBUT "obi, black, dvboxer, oxygen, gost"
-#define PLUGINVERSION 0
+#define PLUGINVERSION 28398
 
 #define _(x) gettext(x)
 #define MINMALLOC 4096
@@ -892,6 +891,8 @@ struct skin
 	struct skin *prev;
 	struct skin *next;
 	struct skin *drawnext;
+	int usehid;
+	char* backup;
 };
 
 struct style
