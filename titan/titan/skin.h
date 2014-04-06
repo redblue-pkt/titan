@@ -3391,7 +3391,7 @@ printf("drawnode: node->rposx=%d\n",node->rposx);
 printf("drawnode: node->rposy=%d\n",node->rposy);
 printf("drawnode: node->rwidth=%d\n",node->rwidth);
 printf("drawnode: node->rheight=%d\n",node->rheight);
-printf("drawnode: node->usehid=%d\n",node->usehid);
+printf("drawnode: node->usesavebg=%d\n",node->usesavebg);
 printf("drawnode: node->name=%s\n",node->name);
 printf("drawnode: node->backup=%s\n",node->backup);
 
@@ -3403,20 +3403,20 @@ printf("drawnode: node->backup=%s\n",node->backup);
 		debug(555, "node->rposy=%d", node->rposy);
 		debug(555, "node->rwidth=%d", node->rwidth);
 		debug(555, "node->rheight=%d", node->rheight);
-		debug(555, "node->usehid=%d", node->usehid);
+		debug(555, "node->usesavebg=%d", node->usesavebg);
 		debug(555, "#############################################");
 */
 	
 	if(checkbit(node->flag, 1) == 0) return;
 
-	if((node->usehid == 1 || node->usehid == 2) && node->backup != NULL)
+	if((node->usesavebg == 1 || node->usesavebg == 2) && node->backup != NULL)
 	{
 		debug(555, "--------------------------------------------");
 		debug(555, "drawnode: restore");
 
 		tmpstr = ostrcat(node->backup, NULL, 0, 0);
 		restorescreen(node->backup, node);
-		if(node->usehid == 1)
+		if(node->usesavebg == 1)
 			node->backup = ostrcat(tmpstr, NULL, 0, 0);
 		else
 			node->backup = NULL;
@@ -3431,8 +3431,8 @@ printf("drawnode: node->backup=%s\n",node->backup);
 		debug(555, "--------------------------------------------");
 	}
 
-//	if(node->usehid == 1 && node->hidden == 0 && node->backup == NULL)
-	if((node->usehid == 1 || node->usehid == 2) && node->rposx != 0 && node->rposy != 0 && node->rheight != 0 && node->rheight != 1 && node->backup == NULL)
+//	if(node->usesavebg == 1 && node->hidden == 0 && node->backup == NULL)
+	if((node->usesavebg == 1 || node->usesavebg == 2) && node->rposx != 0 && node->rposy != 0 && node->rheight != 0 && node->rheight != 1 && node->backup == NULL)
 	{
 		debug(555, "--------------------------------------------");
 		debug(555, "drawnode: backup");

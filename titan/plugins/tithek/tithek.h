@@ -1477,35 +1477,15 @@ void screentithekplay(char* titheklink, char* title, int first)
 	struct skin* listbox = getscreennode(grid, "listbox");
 	struct skin* countlabel = getscreennode(grid, "countlabel");
 	struct skin* countpage = getscreennode(grid, "countpage");
-//	struct skin* b1 = getscreennode(grid, "b1");
-//	struct skin* b2 = getscreennode(grid, "b2");
-//	struct skin* b3 = getscreennode(grid, "b3");
 	struct skin* b4 = getscreennode(grid, "b4");
 	struct skin* b5 = getscreennode(grid, "b5");
-//	struct skin* b6 = getscreennode(grid, "b6");
-//	struct skin* b7 = getscreennode(grid, "b7");
-//	struct skin* buttonbar = getscreennode(grid, "buttonbar");
 	struct skin* load = getscreen("loading");
 	struct skin* tmp = NULL;
 	char* tithekpic = NULL;
-// start need draw before hidden=1 for save background if usehid=1
 
-//	b1->usehid = 2;
-//	b2->usehid = 2;
-//	b3->usehid = 2;
-//	b4->usehid = 2;
-//	b5->usehid = 2;
-//	b6->usehid = 2;
-//	b7->usehid = 2;
-//	buttonbar->usehid = 2;
-		
-	printf("qqqqqqqqqqqqqqqqq1111\n");
-	b4->usehid = 1;
-	b5->usehid = 1;
+	b4->usesavebg = 1;
+	b5->usesavebg = 1;
 	drawscreen(grid, 2, 0);
-	printf("2222\n");
-//	drawscreen(grid, 0, 0);
-// end
 
 	if(ostrcmp(title, "TiThek - Favoriten") == 0)
 	{
