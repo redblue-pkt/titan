@@ -3393,7 +3393,7 @@ printf("drawnode: node->rwidth=%d\n",node->rwidth);
 printf("drawnode: node->rheight=%d\n",node->rheight);
 printf("drawnode: node->usesavebg=%d\n",node->usesavebg);
 printf("drawnode: node->name=%s\n",node->name);
-printf("drawnode: node->backup=%s\n",node->backup);
+printf("drawnode: node->savebg=%s\n",node->savebg);
 
 	
 		debug(555, "#############################################");
@@ -3409,17 +3409,17 @@ printf("drawnode: node->backup=%s\n",node->backup);
 	
 	if(checkbit(node->flag, 1) == 0) return;
 
-	if((node->usesavebg == 1 || node->usesavebg == 2) && node->backup != NULL)
+	if((node->usesavebg == 1 || node->usesavebg == 2) && node->savebg != NULL)
 	{
 		debug(555, "--------------------------------------------");
-		debug(555, "drawnode: restore");
+		debug(555, "drawnode: restore savebg");
 
-		tmpstr = ostrcat(node->backup, NULL, 0, 0);
-		restorescreen(node->backup, node);
+		tmpstr = ostrcat(node->savebg, NULL, 0, 0);
+		restorescreen(node->savebg, node);
 		if(node->usesavebg == 1)
-			node->backup = ostrcat(tmpstr, NULL, 0, 0);
+			node->savebg = ostrcat(tmpstr, NULL, 0, 0);
 		else
-			node->backup = NULL;
+			node->savebg = NULL;
 		free(tmpstr), tmpstr = NULL;
 		debug(555, "node->rposx=%d", node->rposx);
 		debug(555, "node->rposy=%d", node->rposy);
@@ -3431,12 +3431,12 @@ printf("drawnode: node->backup=%s\n",node->backup);
 		debug(555, "--------------------------------------------");
 	}
 
-//	if(node->usesavebg == 1 && node->hidden == 0 && node->backup == NULL)
-	if((node->usesavebg == 1 || node->usesavebg == 2) && node->rposx != 0 && node->rposy != 0 && node->rheight != 0 && node->rheight != 1 && node->backup == NULL)
+//	if(node->usesavebg == 1 && node->hidden == 0 && node->savebg == NULL)
+	if((node->usesavebg == 1 || node->usesavebg == 2) && node->rposx != 0 && node->rposy != 0 && node->rheight != 0 && node->rheight != 1 && node->savebg == NULL)
 	{
 		debug(555, "--------------------------------------------");
-		debug(555, "drawnode: backup");
-		node->backup = savescreen(node);
+		debug(555, "drawnode: backup savebg");
+		node->savebg = savescreen(node);
 		debug(555, "node->rposx=%d", node->rposx);
 		debug(555, "node->rposy=%d", node->rposy);
 		debug(555, "node->rwidth=%d", node->rwidth);
