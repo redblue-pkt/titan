@@ -891,7 +891,12 @@ struct skin
 	struct skin *prev;
 	struct skin *next;
 	struct skin *drawnext;
+	// usesavebg=0 disable 
+	// usesavebg=1 save always
+	// usesavebg=2 save one times then free
+	// usesavebg=3 dummy for filelist 
 	int usesavebg;
+	// savebg is saved date
 	char* savebg;
 };
 
