@@ -181,13 +181,13 @@ void mc_main()
 	singlepicstart(tmpstr, 0);
 	free(tmpstr); tmpstr = NULL;
 
-	mc_audioplayer->usehid = 2;
-	mc_videoplayer->usehid = 2;
-	mc_pictureplayer->usehid = 2;
-	mc_mediathek->usehid = 2;
-	mc_dateibrowser->usehid = 2;
-	mc_internetbrowser->usehid = 2;
-	mc_wetterinfo->usehid = 2;
+	mc_audioplayer->usesavebg = 2;
+	mc_videoplayer->usesavebg = 2;
+	mc_pictureplayer->usesavebg = 2;
+	mc_mediathek->usesavebg = 2;
+	mc_dateibrowser->usesavebg = 2;
+	mc_internetbrowser->usesavebg = 2;
+	mc_wetterinfo->usesavebg = 2;
 		
 	drawscreen(mc_main, 0, 0);
 	addscreenrc(mc_main, listbox);

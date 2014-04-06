@@ -217,7 +217,7 @@ void screenepgsettings()
 	setchoiceboxselection(epg_afterevent, getconfig("epg_afterevent", NULL));
 
 	b4->hidden = NO;
-	b4->usehid = 1;
+	b4->usesavebg = 1;
 
 	drawscreen(epgsettings, 0, 0);
 	addscreenrc(epgsettings, listbox);

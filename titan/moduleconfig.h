@@ -316,21 +316,12 @@ void screenmoduleconfig()
 	listbox->aktline = 1;
 	listbox->aktpage = -1;
 
-// start need draw before hidden=1 for save background if usehid=1
-	b3->usehid = 1;
-	b4->usehid = 1;
-	b5->usehid = 1;
-	b6->usehid = 1;
-//	drawscreen(moduleconfig, 0, 2);
-//	b3->hidden = NO;
-//	b4->hidden = NO;
-//	b5->hidden = NO;
-//	b6->hidden = NO;
-//	drawscreen(moduleconfig, 0, 0);
-// end
+	b3->usesavebg = 1;
+	b4->usesavebg = 1;
+	b5->usesavebg = 1;
+	b6->usesavebg = 1;
 
 start:
-printf("start..............\n");
 	i = 0, allready = 1;
 	dvbnode = dvbdev;
 	tmp = NULL;
