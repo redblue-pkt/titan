@@ -168,10 +168,26 @@ void mc_main()
 	struct skin* listbox = getscreennode(mc_main, "listbox");
 	struct skin* mc_main_selected = getscreennode(mc_main, "mc_main_selected_pic");
 
+	struct skin* mc_audioplayer = getscreennode(mc_main, "mc_audioplayer");
+	struct skin* mc_videoplayer = getscreennode(mc_main, "mc_videoplayer");
+	struct skin* mc_pictureplayer = getscreennode(mc_main, "mc_pictureplayer");
+	struct skin* mc_mediathek = getscreennode(mc_main, "mc_mediathek");
+	struct skin* mc_dateibrowser = getscreennode(mc_main, "mc_dateibrowser");
+	struct skin* mc_internetbrowser = getscreennode(mc_main, "mc_internetbrowser");
+	struct skin* mc_wetterinfo = getscreennode(mc_main, "mc_wetterinfo");
+
 //	singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgMusic.mvi", 0);
 	tmpstr = createpluginpath("/mc/skin/bgMusic.mvi", 0);
 	singlepicstart(tmpstr, 0);
 	free(tmpstr); tmpstr = NULL;
+
+	mc_audioplayer->usehid = 2;
+	mc_videoplayer->usehid = 2;
+	mc_pictureplayer->usehid = 2;
+	mc_mediathek->usehid = 2;
+	mc_dateibrowser->usehid = 2;
+	mc_internetbrowser->usehid = 2;
+	mc_wetterinfo->usehid = 2;
 		
 	drawscreen(mc_main, 0, 0);
 	addscreenrc(mc_main, listbox);

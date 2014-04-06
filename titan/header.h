@@ -687,6 +687,7 @@ struct clist* addconfiginttmp(char *key, int value);
 int writeconfigtmp();
 int readconfig(const char *filename, struct clist** tmpconfig);
 struct clist* addconfigint(char *key, int value);
+void menucheckentry(struct skin* child);
 
 //rc.h
 int waitrcext(struct skin* owner, unsigned int timeout, int screencalc, int filelistview);

@@ -1477,13 +1477,37 @@ void screentithekplay(char* titheklink, char* title, int first)
 	struct skin* listbox = getscreennode(grid, "listbox");
 	struct skin* countlabel = getscreennode(grid, "countlabel");
 	struct skin* countpage = getscreennode(grid, "countpage");
+//	struct skin* b1 = getscreennode(grid, "b1");
+//	struct skin* b2 = getscreennode(grid, "b2");
+//	struct skin* b3 = getscreennode(grid, "b3");
 	struct skin* b4 = getscreennode(grid, "b4");
 	struct skin* b5 = getscreennode(grid, "b5");
+//	struct skin* b6 = getscreennode(grid, "b6");
+//	struct skin* b7 = getscreennode(grid, "b7");
+//	struct skin* buttonbar = getscreennode(grid, "buttonbar");
 	struct skin* load = getscreen("loading");
 	struct skin* tmp = NULL;
 	char* tithekpic = NULL;
+// start need draw before hidden=1 for save background if usehid=1
 
-	if (ostrcmp(title, "TiThek - Favoriten") == 0)
+//	b1->usehid = 2;
+//	b2->usehid = 2;
+//	b3->usehid = 2;
+//	b4->usehid = 2;
+//	b5->usehid = 2;
+//	b6->usehid = 2;
+//	b7->usehid = 2;
+//	buttonbar->usehid = 2;
+		
+	printf("qqqqqqqqqqqqqqqqq1111\n");
+	b4->usehid = 1;
+	b5->usehid = 1;
+	drawscreen(grid, 2, 0);
+	printf("2222\n");
+//	drawscreen(grid, 0, 0);
+// end
+
+	if(ostrcmp(title, "TiThek - Favoriten") == 0)
 	{
 		changetext(b4, _("EDIT FAV"));
 		b5->hidden = NO;
@@ -1580,8 +1604,10 @@ void screentithekplay(char* titheklink, char* title, int first)
 		if(count > 500)
 			delallfiles(TITHEKPATH, ".jpg");
 
-		drawscreen(grid, 0, 0);
 waitrcstart:
+printf("drawscreen\n");
+		drawscreen(grid, 0, 0);
+
 		rcret = waitrc(grid, 2000, 2);
 
 		if(rcret == RCTIMEOUT)
@@ -1612,17 +1638,17 @@ waitrcstart:
 			listbox->aktline = 1;
 			listbox->gridcol = 1;
 			addscreenrc(grid, listbox);
-			drawscreen(grid, 0, 0);
+//			drawscreen(grid, 0, 0);
 		}
 
 		if (ostrcmp(title, "TiThek - Favoriten") == 0)
 		{
-			changetext(b4, _("EDIT FAV"));
+//			changetext(b4, _("EDIT FAV"));
 			b5->hidden = NO;
 		}
 		else
 		{
-			changetext(b4, _("ADD FAV"));
+//			changetext(b4, _("ADD FAV"));
 			b5->hidden = YES;
 		}
 
@@ -2264,7 +2290,7 @@ why ?
 				if((((struct tithek*)listbox->select->handle)->flag == 2) || (((struct tithek*)listbox->select->handle)->flag == 4) || (((struct tithek*)listbox->select->handle)->flag == 5) || (((struct tithek*)listbox->select->handle)->flag == 6) || (((struct tithek*)listbox->select->handle)->flag == 7) || (((struct tithek*)listbox->select->handle)->flag == 8) || (((struct tithek*)listbox->select->handle)->flag == 12) || (((struct tithek*)listbox->select->handle)->flag == 14) || (((struct tithek*)listbox->select->handle)->flag == 15) || (((struct tithek*)listbox->select->handle)->flag == 16) || (((struct tithek*)listbox->select->handle)->flag == 17) || (((struct tithek*)listbox->select->handle)->flag == 18) || (((struct tithek*)listbox->select->handle)->flag == 19) || (((struct tithek*)listbox->select->handle)->flag == 20) || (((struct tithek*)listbox->select->handle)->flag == 38) || (((struct tithek*)listbox->select->handle)->flag == 42) || (((struct tithek*)listbox->select->handle)->flag == 45) || (((struct tithek*)listbox->select->handle)->flag == 46) || (((struct tithek*)listbox->select->handle)->flag == 50) || (((struct tithek*)listbox->select->handle)->flag == 41) || (((struct tithek*)listbox->select->handle)->flag == 43))
 				{
 					submenu(listbox, load, title);
-					drawscreen(grid, 0, 0);
+//					drawscreen(grid, 0, 0);
 				}
 				else if((((struct tithek*)listbox->select->handle)->flag == 9) || (((struct tithek*)listbox->select->handle)->flag == 10) || (((struct tithek*)listbox->select->handle)->flag == 11))
 				{
@@ -3152,7 +3178,8 @@ why ?
 						addscreenrc(grid, listbox);
 					}
 				}
-				drawscreen(grid, 0, 0);
+printf("diable draw...\n");
+//				drawscreen(grid, 0, 0);
 			}			
 		}
 		else if(rcret == getrcconfigint("rcyellow", NULL) && ostrcmp(title, "TiThek - Favoriten") == 0)
@@ -3165,7 +3192,7 @@ why ?
 					pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
 					if(pagecount == 0) return;
 						
-					drawscreen(grid, 0, 0);
+//					drawscreen(grid, 0, 0);
 				}
 			}
 		}
@@ -3189,7 +3216,7 @@ why ?
 					pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
 					if(pagecount == 0) return;
 						
-					drawscreen(grid, 0, 0);
+//					drawscreen(grid, 0, 0);
 				}
 			}
 		}
@@ -3204,6 +3231,10 @@ why ?
 			changetext(b4, _("ADD FAV"));
 			b5->hidden = YES;
 		}
+		
+		printf("draw,,,,,,,,\n");
+//		drawscreen(grid, 0, 0);
+		
 	}
 
 	delmarkedscreennodes(grid, 1);

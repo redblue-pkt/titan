@@ -194,6 +194,8 @@ int ralphasort64(const struct dirent64** v1, const struct dirent64** v2)
 //view 1000: not used here see inputhelp.h
 int createfilelist(struct skin* screen, struct skin* node, int view)
 {
+	printf("filelist: node->usehid=%d\n",node->usehid);
+
 	struct dirent64 **filelist = NULL;
 
 	int count = 0, tmpcount = 0, i = 0, gridbr = 0, posx = 0, pagecount = 0, sumcount = 0;
@@ -320,6 +322,11 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 				child = addscreennode(screen, NULL, child);
 			if(child != NULL)
 			{
+				if(node->usehid == 3)
+				{
+					printf("set child->usehid=%d to %d\n", child->usehid, node->usehid - 1);
+					child->usehid = node->usehid - 1;
+				}
 				if(view == 2)
 				{
 					if(gridbr == 0) child->type = GRIDBR;
@@ -460,6 +467,11 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 				child = addscreennode(screen, NULL, child);
 				if(child != NULL)
 				{
+					if(node->usehid == 3)
+					{
+						printf("set child->usehid=%d to %d\n", child->usehid, node->usehid - 1);
+						child->usehid = node->usehid - 1;
+					}
 					debug(913, "filename: %s", filelist[i]->d_name);
 					if(view == 2)
 					{
@@ -777,7 +789,7 @@ void getfilelist(struct skin* input, struct skin* filelistpath, struct skin* fil
 
 	delmarkedscreennodes(input, FILELISTDELMARK);
 
-	if (tmpview == -1)
+	if(tmpview == -1)
 		createfilelist(input, filelist, 0);
 	else
 		createfilelist(input, filelist, tmpview);

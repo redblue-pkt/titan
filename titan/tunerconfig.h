@@ -462,10 +462,14 @@ int screentunerreceptiondvbs(struct dvbdev* tuner)
 	maxsat = getconfigint(tmpstr, NULL);
 	free(tmpstr); tmpstr = NULL;
 	if(maxsat < 1) maxsat = 1;
-
 start:
 	createsatlist(tuner, tunerreceptiondvbs, listbox, maxsat);
+
+// start need draw before hidden=1 for save background if usehid=1
+	b3->usehid = 1;
+	drawscreen(tunerreceptiondvbs, 2, 0);
 	b3->hidden = YES;
+// end
 	drawscreen(tunerreceptiondvbs, 0, 0);
 	addscreenrc(tunerreceptiondvbs, listbox);
 
