@@ -3400,8 +3400,7 @@ printf("drawnode: node->rheight=%d\n",node->rheight);
 printf("drawnode: node->usesavebg=%d\n",node->usesavebg);
 printf("drawnode: node->name=%s\n",node->name);
 printf("drawnode: node->savebg=%s\n",node->savebg);
-
-*/	
+	
 		debug(555, "#############################################");
 		debug(555, "node->text=%s", node->text);
 		debug(555, "node->name=%s", node->name);
@@ -3411,7 +3410,7 @@ printf("drawnode: node->savebg=%s\n",node->savebg);
 		debug(555, "node->rheight=%d", node->rheight);
 		debug(555, "node->usesavebg=%d", node->usesavebg);
 		debug(555, "#############################################");
-
+*/
 	
 	if(checkbit(node->flag, 1) == 0) return;
 
