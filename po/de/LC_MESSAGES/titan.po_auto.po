@@ -10,22 +10,21 @@ msgstr ""
 msgid "Copyright"
 msgstr "© Copyright"
 
-#: about.h:25 skin_default_skin.xml.h:678
+#: about.h:25
 msgid "Tuner"
 msgstr "Tuner"
 
 #: about.h:30 bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2638
-#: httpdfunc.h:2650 hwtest.h:478 moduleconfig.h:345
-#: skin_default_skin.xml.h:700 skinselector.h:138 stream.h:22
-#: transponder.h:122 transponder.h:158 transponder.h:194 transponder.h:227
-#: transponder.h:259 transponder.h:295 transponder.h:330 transponder.h:348
-#: transponder.h:364 transponder.h:418 transponder.h:451 transponder.h:480
-#: transponder.h:493 transponder.h:504 transponder.h:574 youtube.h:150
-#: zdf.h:86
+#: httpdfunc.h:2650 hwtest.h:478 moduleconfig.h:345 skinselector.h:138
+#: stream.h:22 transponder.h:122 transponder.h:158 transponder.h:194
+#: transponder.h:227 transponder.h:259 transponder.h:295 transponder.h:330
+#: transponder.h:348 transponder.h:364 transponder.h:418 transponder.h:451
+#: transponder.h:480 transponder.h:493 transponder.h:504 transponder.h:574
+#: youtube.h:150 zdf.h:86
 msgid "unknown"
 msgstr "unbekannt"
 
-#: about.h:32 skin_default_skin.xml.h:684
+#: about.h:32
 msgid "Tunertype"
 msgstr "Tuner Typ"
 
@@ -193,18 +192,17 @@ msgstr "Ok"
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:28 scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1888
 #: scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 scriptexec.h:41 service.h:710
-#: service.h:951 skin_default_skin.xml.h:219 skins_autotimer_skin.xml.h:7
-#: skins_callmonitor1_skin.xml.h:11 skins_catcatch_skin.xml.h:4
-#: skins_dlna_skin.xml.h:2 skinselector.h:218 skins_facebook_skin.xml.h:4
-#: skins_instar_skin.xml.h:6 skins_lcdpearl1_skin.xml.h:7
-#: skins_lcdsamsung_skin.xml.h:8 skins_mboxinfo_skin.xml.h:1
-#: skins_mc_skin.xml.h:22 skins_optimize_skin.xml.h:2
-#: skins_panel_skin.xml.h:15 skins_rgui_skin.xml.h:2
-#: skins_stopifnotused_skin.xml.h:4 skins_tiwakeup_skin.xml.h:2
-#: skins_wins3_skin.xml.h:1 sock.h:952 softcam.h:403 solarmovie.h:35
-#: solarmovie.h:47 solarmovie.h:295 spinner.h:18 stopifnotused.c:31
-#: streamcloud.h:31 streamcloud.h:78 streamcloud.h:91 streamcloud.h:122
-#: streamcloud.h:161 stream.h:33 system_backup_restore.h:31
+#: service.h:951 skins_autotimer_skin.xml.h:7 skins_callmonitor1_skin.xml.h:11
+#: skins_catcatch_skin.xml.h:4 skins_dlna_skin.xml.h:2 skinselector.h:218
+#: skins_facebook_skin.xml.h:4 skins_instar_skin.xml.h:6
+#: skins_lcdpearl1_skin.xml.h:7 skins_lcdsamsung_skin.xml.h:8
+#: skins_mboxinfo_skin.xml.h:1 skins_mc_skin.xml.h:22
+#: skins_optimize_skin.xml.h:2 skins_panel_skin.xml.h:15
+#: skins_rgui_skin.xml.h:2 skins_stopifnotused_skin.xml.h:4
+#: skins_tiwakeup_skin.xml.h:2 skins_wins3_skin.xml.h:1 sock.h:952
+#: softcam.h:403 solarmovie.h:35 solarmovie.h:47 solarmovie.h:295 spinner.h:18
+#: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:78 streamcloud.h:91
+#: streamcloud.h:122 streamcloud.h:161 stream.h:33 system_backup_restore.h:31
 #: system_backup_restore.h:40 system_backup_restore.h:43
 #: system_backup_restore.h:51 system_backup_restore.h:80
 #: system_backup_restore.h:82 system_backup_restore.h:88
@@ -357,38 +355,37 @@ msgstr "schnell"
 
 #: adjust.h:98 httpdfunc.h:3648 mc_audioplayer_settings.h:27
 #: mc_pictureplayer_settings.h:42 mc_videoplayer_settings.h:23
-#: plugins_mc_skin.xml.h:7 skin_default_skin.xml.h:73 skins_mc_skin.xml.h:7
+#: plugins_mc_skin.xml.h:7 skins_mc_skin.xml.h:7
 msgid "alpha"
 msgstr "Alphabetisch"
 
 #: adjust.h:99 httpdfunc.h:3655 mc_audioplayer_settings.h:28
 #: mc_pictureplayer_settings.h:43 mc_videoplayer_settings.h:24
-#: plugins_mc_skin.xml.h:49 skin_default_skin.xml.h:516 skins_mc_skin.xml.h:49
+#: plugins_mc_skin.xml.h:49 skins_mc_skin.xml.h:49
 msgid "reverse alpha"
 msgstr "Alphabetisch umgekehrt"
 
 #: adjust.h:100 httpdfunc.h:3662 mc_audioplayer_settings.h:29
 #: mc_pictureplayer_settings.h:44 mc_videoplayer_settings.h:25
-#: plugins_mc_skin.xml.h:55 skin_default_skin.xml.h:583 skins_mc_skin.xml.h:55
+#: plugins_mc_skin.xml.h:55 skins_mc_skin.xml.h:55
 msgid "size"
 msgstr "Größe"
 
 #: adjust.h:101 httpdfunc.h:3669 mc_audioplayer_settings.h:30
 #: mc_pictureplayer_settings.h:45 mc_videoplayer_settings.h:26
-#: plugins_mc_skin.xml.h:51 skin_default_skin.xml.h:518 skins_mc_skin.xml.h:51
+#: plugins_mc_skin.xml.h:51 skins_mc_skin.xml.h:51
 msgid "reverse size"
 msgstr "Größe umgekehrt"
 
 #: adjust.h:102 httpdfunc.h:3676 mc_audioplayer_settings.h:31
 #: mc_pictureplayer_settings.h:46 mc_videoplayer_settings.h:27
-#: plugins_mc_skin.xml.h:16 skin_default_skin.xml.h:162 skins_mc_skin.xml.h:16
-#: vfdisplay.h:46
+#: plugins_mc_skin.xml.h:16 skins_mc_skin.xml.h:16 vfdisplay.h:46
 msgid "date"
 msgstr "Datum"
 
 #: adjust.h:103 httpdfunc.h:3683 mc_audioplayer_settings.h:32
 #: mc_pictureplayer_settings.h:47 mc_videoplayer_settings.h:28
-#: plugins_mc_skin.xml.h:50 skin_default_skin.xml.h:517 skins_mc_skin.xml.h:50
+#: plugins_mc_skin.xml.h:50 skins_mc_skin.xml.h:50
 msgid "reverse date"
 msgstr "Datum umgekehrt"
 
@@ -396,16 +393,15 @@ msgstr "Datum umgekehrt"
 msgid "Power Menu"
 msgstr "Ausschaltmenü"
 
-#: adjust.h:107 httpdfunc.h:3705 skin_default_skin.xml.h:466
+#: adjust.h:107 httpdfunc.h:3705
 msgid "Power Off"
 msgstr "Ausschalten"
 
 #: adjust.h:108 httpdfunc.h:3712 powerofftimer.h:118
-#: skin_default_skin.xml.h:605
 msgid "Standby"
 msgstr ""
 
-#: adjust.h:109 httpdfunc.h:3719 skin_default_skin.xml.h:512 softcam.h:291
+#: adjust.h:109 httpdfunc.h:3719 softcam.h:291
 msgid "Restart"
 msgstr "Neustart"
 
@@ -624,9 +620,8 @@ msgstr "Wählen Sie das gewünschte Streaming Format aus der folgenden Liste"
 #: mlehd.h:59 mlehd.h:61 movie4k.h:78 movie4k.h:80 movie4k.h:235 movie4k.h:237
 #: myvideo.h:188 myvideo.h:190 myvideo.h:293 myvideo.h:295 netzkino.h:13
 #: netzkino.h:15 rtl2now.h:119 rtl2now.h:121 rtl2now.h:183 rtl2now.h:185
-#: rtl2now.h:247 rtl2now.h:249 rtl2now.h:311 rtl2now.h:313
-#: skin_default_skin.xml.h:555 solarmovie.h:97 solarmovie.h:99
-#: solarmovie.h:210 solarmovie.h:212 tectime.h:13 tectime.h:15
+#: rtl2now.h:247 rtl2now.h:249 rtl2now.h:311 rtl2now.h:313 solarmovie.h:97
+#: solarmovie.h:99 solarmovie.h:210 solarmovie.h:212 tectime.h:13 tectime.h:15
 #: tithek_mainmenu.h:35 tmdb.h:860 xvideos.h:56 xvideos.h:58 youtube.h:223
 #: youtube.h:225 youtube.h:315 youtube.h:317 zdf.h:147 zdf.h:149
 msgid "Search"
@@ -673,7 +668,7 @@ msgstr "Autotimer erfolgreich gestartet"
 msgid "ERROR... AutoTimer not started"
 msgstr "FEHLER: Autotimer konnte nicht gestartet werden!"
 
-#: autotimer.c:603 menu.h:946 menu.h:948 skin_default_skin.xml.h:540
+#: autotimer.c:603 menu.h:946 menu.h:948
 msgid "Save Settings"
 msgstr "Einstellungen speichern"
 
@@ -746,7 +741,7 @@ msgstr "Kabel: "
 msgid "Terrestrial: "
 msgstr "Terrestrisch: "
 
-#: blindscanadjust.h:120 skin_default_skin.xml.h:529
+#: blindscanadjust.h:120
 msgid "SAT"
 msgstr "Satelliten"
 
@@ -803,23 +798,23 @@ msgstr "Zwischenspeichern"
 msgid "verwerfen"
 msgstr ""
 
-#: callmon_main.h:135 mediadbsettings.h:58 skin_default_skin.xml.h:37
+#: callmon_main.h:135 mediadbsettings.h:58
 msgid "3"
 msgstr ""
 
-#: callmon_main.h:136 mediadbsettings.h:59 skin_default_skin.xml.h:40
+#: callmon_main.h:136 mediadbsettings.h:59
 msgid "4"
 msgstr ""
 
-#: callmon_main.h:137 mediadbsettings.h:60 skin_default_skin.xml.h:41
+#: callmon_main.h:137 mediadbsettings.h:60
 msgid "5"
 msgstr ""
 
-#: callmon_main.h:138 skin_default_skin.xml.h:44
+#: callmon_main.h:138
 msgid "6"
 msgstr ""
 
-#: callmon_main.h:139 skin_default_skin.xml.h:46
+#: callmon_main.h:139
 msgid "8"
 msgstr ""
 
@@ -851,7 +846,7 @@ msgstr "Schützen"
 msgid "Edit mode"
 msgstr "Umbenennen"
 
-#: channellist.h:689 channellist.h:1765 scan.h:530 skin_default_skin.xml.h:482
+#: channellist.h:689 channellist.h:1765 scan.h:530
 msgid "Radio"
 msgstr ""
 
@@ -863,7 +858,7 @@ msgstr ""
 msgid "Bouquets"
 msgstr "Favoriten"
 
-#: channellist.h:719 channellist.h:1581 skin_default_skin.xml.h:128
+#: channellist.h:719 channellist.h:1581
 msgid "Channel"
 msgstr "Sender"
 
@@ -1013,11 +1008,11 @@ msgstr "Toneburst A/B"
 msgid "none"
 msgstr "keines"
 
-#: diseqcconfig.h:136 skin_default_skin.xml.h:49
+#: diseqcconfig.h:136
 msgid "A"
 msgstr ""
 
-#: diseqcconfig.h:137 skin_default_skin.xml.h:100
+#: diseqcconfig.h:137
 msgid "B"
 msgstr ""
 
@@ -1172,7 +1167,7 @@ msgstr "Auswählen"
 msgid "Can't start playback !"
 msgstr "Wiedergabe kann nicht gestartet werden!"
 
-#: epg.h:183 skin_default_skin.xml.h:582
+#: epg.h:183
 msgid "Single (EPG)"
 msgstr "Einfach (EPG)"
 
@@ -1245,19 +1240,17 @@ msgstr ""
 msgid "Music"
 msgstr "Musik"
 
-#: epgsettings.h:139 epgsettings.h:180 skin_default_skin.xml.h:581
+#: epgsettings.h:139 epgsettings.h:180
 msgid "Single EPG"
 msgstr "Einfach-EPG"
 
 #: epgsettings.h:140 epgsettings.h:181 keyactions.h:26
 #: settings_bluebutton.h:17 settings_pluginbutton.h:18 settings_redbutton.h:18
-#: skin_default_skin.xml.h:399
 msgid "Multi EPG"
 msgstr "Multi-EPG"
 
 #: epgsettings.h:141 keyactions.h:27 settings_bluebutton.h:18
 #: settings_pluginbutton.h:19 settings_redbutton.h:19
-#: skin_default_skin.xml.h:256
 msgid "Graphic Multi EPG"
 msgstr "Grafisches Multi-EPG"
 
@@ -1366,7 +1359,7 @@ msgstr "Paket zu groß. Installation nicht möglich."
 msgid "Tpk Install - select section"
 msgstr "TPK installieren - Kategorie wählen"
 
-#: extensions.h:205 skin_default_skin.xml.h:667
+#: extensions.h:205
 msgid "Tpk Install - select file"
 msgstr "TPK installieren - Datei wählen"
 
@@ -1595,31 +1588,31 @@ msgstr "Diese Datei kann nicht angezeigt werden"
 msgid "ERROR cant read res"
 msgstr "FEHLER: Auflösung nicht erkannt"
 
-#: global.h:6689 rectimer.h:1059 skin_default_skin.xml.h:393
+#: global.h:6689 rectimer.h:1059
 msgid "Monday"
 msgstr "Montag"
 
-#: global.h:6690 rectimer.h:1060 skin_default_skin.xml.h:677
+#: global.h:6690 rectimer.h:1060
 msgid "Tuesday"
 msgstr "Dienstag"
 
-#: global.h:6691 rectimer.h:1061 skin_default_skin.xml.h:730
+#: global.h:6691 rectimer.h:1061
 msgid "Wednesday"
 msgstr "Mittwoch"
 
-#: global.h:6692 rectimer.h:1062 skin_default_skin.xml.h:648
+#: global.h:6692 rectimer.h:1062
 msgid "Thursday"
 msgstr "Donnerstag"
 
-#: global.h:6693 rectimer.h:1063 skin_default_skin.xml.h:244
+#: global.h:6693 rectimer.h:1063
 msgid "Friday"
 msgstr "Freitag"
 
-#: global.h:6694 rectimer.h:1064 skin_default_skin.xml.h:538
+#: global.h:6694 rectimer.h:1064
 msgid "Saturday"
 msgstr "Samstag"
 
-#: global.h:6695 rectimer.h:1065 skin_default_skin.xml.h:624
+#: global.h:6695 rectimer.h:1065
 msgid "Sunday"
 msgstr "Sonntag"
 
@@ -1760,7 +1753,7 @@ msgstr "FEHLER: Verzeichnis kann nicht erstellt/gelöscht werden!"
 msgid "succesfull create or delelete directory"
 msgstr "Das Verzeichnis wurde erfolgreich erstellt/gelöscht."
 
-#: harddisk.h:439 skin_default_skin.xml.h:264
+#: harddisk.h:439
 msgid "Harddisk"
 msgstr "Datenträger"
 
@@ -1865,7 +1858,7 @@ msgstr "HDD Standby"
 msgid "set here the default sleeptime for all your media drives"
 msgstr "Dauer, nach der die Festplatte in den Standby-Modus wechseln soll"
 
-#: harddisk.h:885 skin_default_skin.xml.h:655
+#: harddisk.h:885
 msgid "Time to sleep"
 msgstr "HDD Standby nach"
 
@@ -1915,167 +1908,167 @@ msgstr "Wählen Sie das gewünschte HBBTV Lesezeichen aus der folgenden Liste"
 msgid "Hello World !"
 msgstr ""
 
-#: httpdfunc.h:3371 skin_default_skin.xml.h:725
+#: httpdfunc.h:3371
 msgid "Volumebar Timeout"
 msgstr "Zeit bis Lautstärkeanzeige ausgeblendet wird (sek)"
 
-#: httpdfunc.h:3391 skin_default_skin.xml.h:329
+#: httpdfunc.h:3391
 msgid "Infobar Timeout"
 msgstr "Zeit bis Infobar ausblendet (sek)"
 
-#: httpdfunc.h:3411 skin_default_skin.xml.h:328
+#: httpdfunc.h:3411
 msgid "Infobar Sleep"
 msgstr "Zeit bis Infobar erscheint (sek)"
 
-#: httpdfunc.h:3433 skin_default_skin.xml.h:601
+#: httpdfunc.h:3433
 msgid "Spinnerspeed"
 msgstr "Spinnergeschwindigkeit"
 
-#: httpdfunc.h:3466 skin_default_skin.xml.h:602
+#: httpdfunc.h:3466
 msgid "Spinnertime"
 msgstr "Spinnerzeit"
 
-#: httpdfunc.h:3498 skin_default_skin.xml.h:263
+#: httpdfunc.h:3498
 msgid "Hangtime"
 msgstr "Zeit bis Warnmeldung erscheint (sek)"
 
-#: httpdfunc.h:3529 skin_default_skin.xml.h:557
+#: httpdfunc.h:3529
 msgid "Second Infobar"
 msgstr "Zweite Infoleiste"
 
-#: httpdfunc.h:3567 skin_default_skin.xml.h:191
+#: httpdfunc.h:3567
 msgid "Don't clear TV on zap (only with fastzap)"
 msgstr "TV Bild beim schnellen Umschalten nicht löschen"
 
-#: httpdfunc.h:3590 skin_default_skin.xml.h:228
+#: httpdfunc.h:3590
 msgid "Fastzap"
 msgstr "Schnelles Umschalten"
 
-#: httpdfunc.h:3619 skin_default_skin.xml.h:226
+#: httpdfunc.h:3619
 msgid "Faststop"
 msgstr "Schneller Titan Neustart"
 
-#: httpdfunc.h:3641 skin_default_skin.xml.h:181
+#: httpdfunc.h:3641
 msgid "Dirsort"
 msgstr "Ordnersortierung"
 
-#: httpdfunc.h:3691 skin_default_skin.xml.h:465
+#: httpdfunc.h:3691
 msgid "Power aktion"
 msgstr "Verhalten bei Betätigung der EIN/AUS Taste"
 
-#: httpdfunc.h:3734 skin_default_skin.xml.h:722
+#: httpdfunc.h:3734
 msgid "Virtualzap Timeout"
 msgstr "Virtuelles Umschalten"
 
-#: httpdfunc.h:3770 skin_default_skin.xml.h:227
+#: httpdfunc.h:3770
 msgid "Fast Text Render"
 msgstr "Schnelle Textausgabe"
 
-#: httpdfunc.h:3792 skin_default_skin.xml.h:494
+#: httpdfunc.h:3792
 msgid "Record Split Size"
 msgstr "Teile Aufnahmen bei (Größe in MB)"
 
-#: httpdfunc.h:3837 skin_default_skin.xml.h:487
+#: httpdfunc.h:3837
 msgid "Record Forerun (min)"
 msgstr "Vorlaufzeit (min)"
 
-#: httpdfunc.h:3869 skin_default_skin.xml.h:490
+#: httpdfunc.h:3869
 msgid "Record Overrun (min)"
 msgstr "Nachlaufzeit (min)"
 
-#: httpdfunc.h:3901 skin_default_skin.xml.h:587
+#: httpdfunc.h:3901
 msgid "Skip 1/3"
 msgstr "Sprungzeit der Tasten 1+3 (Sek)"
 
-#: httpdfunc.h:3933 skin_default_skin.xml.h:588
+#: httpdfunc.h:3933
 msgid "Skip 4/6"
 msgstr "Sprungzeit der Tasten 4+6 (Sek)"
 
-#: httpdfunc.h:3965 skin_default_skin.xml.h:589
+#: httpdfunc.h:3965
 msgid "Skip 7/9"
 msgstr "Sprungzeit der Tasten 7+9 (Sek)"
 
-#: httpdfunc.h:3995 skin_default_skin.xml.h:452
+#: httpdfunc.h:3995
 msgid "Player for .ts"
 msgstr "Wiedergabegerät für .ts Dateien"
 
-#: httpdfunc.h:4017 skin_default_skin.xml.h:126
+#: httpdfunc.h:4017
 msgid "Change Channelname auto."
 msgstr "Sendername automatisch aktualisieren"
 
-#: httpdfunc.h:4039 skin_default_skin.xml.h:566
+#: httpdfunc.h:4039
 msgid "Set action after rec"
 msgstr "Nach der Aufnahme"
 
-#: httpdfunc.h:4075 skin_default_skin.xml.h:578
+#: httpdfunc.h:4075
 msgid "Show Timeline in Channellist"
 msgstr "Zeige Fortschrittsbalken in Senderliste"
 
-#: httpdfunc.h:4097 skin_default_skin.xml.h:74
+#: httpdfunc.h:4097
 msgid "Animated Screens"
 msgstr "Animierte Menüs"
 
-#: httpdfunc.h:4133 skin_default_skin.xml.h:75
+#: httpdfunc.h:4133
 msgid "Animated Speed"
 msgstr "Animationsgeschwindigkeit"
 
-#: httpdfunc.h:4176 skin_default_skin.xml.h:132
+#: httpdfunc.h:4176
 msgid "Channellist view"
 msgstr "Nichtempfangbare Sender"
 
-#: httpdfunc.h:4198 skin_default_skin.xml.h:576
+#: httpdfunc.h:4198
 msgid "Show last pos Question"
 msgstr "Verwende 'An letzter Stelle fortsetzen'?"
 
-#: httpdfunc.h:4220 skin_default_skin.xml.h:515
+#: httpdfunc.h:4220
 msgid "Resync Recording immediately"
 msgstr "Synchronisiere Aufnahmen sofort (Schreibcache aus)"
 
-#: httpdfunc.h:4242 skin_default_skin.xml.h:488
+#: httpdfunc.h:4242
 msgid "Recording name"
 msgstr "Aufnahme Titel"
 
-#: httpdfunc.h:4264 skin_default_skin.xml.h:413
+#: httpdfunc.h:4264
 msgid "Newsletter"
 msgstr "Neuigkeiten"
 
-#: httpdfunc.h:4286 skin_default_skin.xml.h:572
+#: httpdfunc.h:4286
 msgid "Show hidden files"
 msgstr "Versteckte Dateien anzeigen"
 
-#: httpdfunc.h:4308 skin_default_skin.xml.h:220
+#: httpdfunc.h:4308
 msgid "Expert Modus"
 msgstr "Expertenmodus"
 
-#: httpdfunc.h:4337 skin_default_skin.xml.h:573
+#: httpdfunc.h:4337
 msgid "Show infobar on program change"
 msgstr "Infoleiste bei Sendungswechsel anzeigen"
 
-#: httpdfunc.h:4359 skin_default_skin.xml.h:708
+#: httpdfunc.h:4359
 msgid "Use cross control for fast zapping and vol"
 msgstr "Benutze das Steuerkreuz für schnelles Umschalten und laut/leise"
 
-#: httpdfunc.h:4404 skin_default_skin.xml.h:165
+#: httpdfunc.h:4404
 msgid "Deactivate Crypt Support on Media Playback"
 msgstr "Deaktiviere Crypt Support während der Wiedergabe von Daten/Streams"
 
-#: httpdfunc.h:4427 skin_default_skin.xml.h:166
+#: httpdfunc.h:4427
 msgid "Deactivate MiniTV"
 msgstr "Deaktiviere MiniTV Vorschau Fenster"
 
-#: httpdfunc.h:4451 skin_default_skin.xml.h:55
+#: httpdfunc.h:4451
 msgid "Activate CEC"
 msgstr "CEC einschalten"
 
-#: httpdfunc.h:4476 skin_default_skin.xml.h:530
+#: httpdfunc.h:4476
 msgid "SATA Connector"
 msgstr "SATA Anschluss"
 
-#: httpdfunc.h:4501 skin_default_skin.xml.h:657
+#: httpdfunc.h:4501
 msgid "Time to wait after seek for fill buffer"
 msgstr "Wiedergabepuffer - Zeit bis zum automatischen laden nach einem Seek"
 
-#: httpdfunc.h:4521 skin_default_skin.xml.h:194
+#: httpdfunc.h:4521
 msgid "Dualboot Menu TitanNit / E2"
 msgstr ""
 
@@ -2128,8 +2121,7 @@ msgid "Smartcard"
 msgstr ""
 
 #: hwtest.h:181 hwtest.h:396 network.h:284 network.h:299
-#: plugins_mc_skin.xml.h:37 plugins_panel_skin.xml.h:18
-#: skin_default_skin.xml.h:405 skins_mc_skin.xml.h:37
+#: plugins_mc_skin.xml.h:37 plugins_panel_skin.xml.h:18 skins_mc_skin.xml.h:37
 #: skins_panel_skin.xml.h:18 system_infos.h:91
 msgid "Network"
 msgstr "Netzwerk"
@@ -2393,7 +2385,7 @@ msgid "TV / Radio Switch"
 msgstr "TV/Radio umschalten"
 
 #: keyactions.h:25 settings_bluebutton.h:15 settings_pluginbutton.h:16
-#: settings_redbutton.h:16 skin_default_skin.xml.h:593
+#: settings_redbutton.h:16
 msgid "Softcam Panel"
 msgstr "Softcam"
 
@@ -2403,7 +2395,7 @@ msgid "Sleep Timer"
 msgstr "Ausschalt Timer"
 
 #: keyactions.h:29 settings_bluebutton.h:20 settings_pluginbutton.h:21
-#: settings_redbutton.h:21 skin_default_skin.xml.h:135
+#: settings_redbutton.h:21
 msgid "Child Protection"
 msgstr "Jugendschutz"
 
@@ -2414,7 +2406,6 @@ msgstr "Unterkanäle"
 
 #: keyactions.h:31 play.h:702 settings_bluebutton.h:22
 #: settings_pluginbutton.h:23 settings_redbutton.h:23
-#: skin_default_skin.xml.h:193
 msgid "Downloads"
 msgstr ""
 
@@ -2489,7 +2480,7 @@ msgstr ""
 msgid "Bouquet Name"
 msgstr ""
 
-#: lnbconfig.h:137 skin_default_skin.xml.h:460
+#: lnbconfig.h:137
 msgid "Polarization"
 msgstr "Polarisationsebene"
 
@@ -2556,24 +2547,24 @@ msgstr "Datei nicht gefunden"
 #: plugins_tmc_skin.xml.h:18 plugins_tmdb_skin.xml.h:11
 #: plugins_tsSchnitt_skin.xml.h:11 plugins_weather_skin.xml.h:4
 #: plugins_wins3_skin.xml.h:4 plugins_xupnpd_skin.xml.h:5
-#: plugins_zapback_skin.xml.h:7 skin_default_skin.xml.h:740
-#: skins_autotimer_skin.xml.h:13 skins_callmonitor1_skin.xml.h:19
-#: skins_catcatch_skin.xml.h:7 skins_dlna_skin.xml.h:15
-#: skins_facebook_skin.xml.h:6 skins_filemanager_skin.xml.h:6
-#: skins_gmediarender_skin.xml.h:1 skins_imdbapi_skin.xml.h:11
-#: skins_imdb_skin.xml.h:11 skins_instar_skin.xml.h:17
-#: skins_keylock_skin.xml.h:1 skins_lcdpearl1_skin.xml.h:14
-#: skins_lcdsamsung_skin.xml.h:18 skins_mboxinfo_skin.xml.h:3
-#: skins_mc_skin.xml.h:70 skins_networkbrowser_skin.xml.h:37
-#: skins_news_skin.xml.h:5 skins_optimize_skin.xml.h:4
-#: skins_panel_skin.xml.h:28 skins_permtime_skin.xml.h:1
-#: skins_readerconfig_skin.xml.h:10 skins_rgui_skin.xml.h:9
-#: skins_stock_skin.xml.h:6 skins_stopifnotused_skin.xml.h:8
-#: skins_streaminfo_skin.xml.h:6 skins_tithek_skin.xml.h:22
-#: skins_tiwakeup_skin.xml.h:9 skins_tmc_skin.xml.h:18
-#: skins_tmdb_skin.xml.h:11 skins_tsSchnitt_skin.xml.h:11
-#: skins_weather_skin.xml.h:4 skins_wins3_skin.xml.h:4
-#: skins_xupnpd_skin.xml.h:5 skins_zapback_skin.xml.h:7 tithek_mainmenu.h:1
+#: plugins_zapback_skin.xml.h:7 skins_autotimer_skin.xml.h:13
+#: skins_callmonitor1_skin.xml.h:19 skins_catcatch_skin.xml.h:7
+#: skins_dlna_skin.xml.h:15 skins_facebook_skin.xml.h:6
+#: skins_filemanager_skin.xml.h:6 skins_gmediarender_skin.xml.h:1
+#: skins_imdbapi_skin.xml.h:11 skins_imdb_skin.xml.h:11
+#: skins_instar_skin.xml.h:17 skins_keylock_skin.xml.h:1
+#: skins_lcdpearl1_skin.xml.h:14 skins_lcdsamsung_skin.xml.h:18
+#: skins_mboxinfo_skin.xml.h:3 skins_mc_skin.xml.h:70
+#: skins_networkbrowser_skin.xml.h:37 skins_news_skin.xml.h:5
+#: skins_optimize_skin.xml.h:4 skins_panel_skin.xml.h:28
+#: skins_permtime_skin.xml.h:1 skins_readerconfig_skin.xml.h:10
+#: skins_rgui_skin.xml.h:9 skins_stock_skin.xml.h:6
+#: skins_stopifnotused_skin.xml.h:8 skins_streaminfo_skin.xml.h:6
+#: skins_tithek_skin.xml.h:22 skins_tiwakeup_skin.xml.h:9
+#: skins_tmc_skin.xml.h:18 skins_tmdb_skin.xml.h:11
+#: skins_tsSchnitt_skin.xml.h:11 skins_weather_skin.xml.h:4
+#: skins_wins3_skin.xml.h:4 skins_xupnpd_skin.xml.h:5
+#: skins_zapback_skin.xml.h:7 tithek_mainmenu.h:1
 msgid ""
 msgstr ""
 "Project-Id-Version: TitanNit 1.50\n"
@@ -2702,7 +2693,6 @@ msgid "best"
 msgstr "beste"
 
 #: mc_pictureplayer_settings.h:59 mc_pictureplayer_settings.h:65
-#: skin_default_skin.xml.h:341
 msgid "Jump"
 msgstr "Springen"
 
@@ -2794,11 +2784,11 @@ msgstr "MediaDB Eintrag dieser Datei konnte nicht gefunden werden."
 msgid "MediaDB directory scan started in Background !"
 msgstr "MediaDB Verzeichnis Suche im Hintergrund gestartet!"
 
-#: mediadb.h:1080 play.h:557 skin_default_skin.xml.h:174
+#: mediadb.h:1080 play.h:557
 msgid "Delete MediaDB before scan"
 msgstr "Datenbank vor dem Scannen löschen"
 
-#: mediadb.h:1087 play.h:564 skin_default_skin.xml.h:175
+#: mediadb.h:1087 play.h:564
 msgid "Delete unused entrys before scan"
 msgstr "Datenbank vor dem Scannen überprüfen (unbenutzte Einträge löschen)"
 
@@ -2814,7 +2804,7 @@ msgstr "MediaDB Speicherort"
 msgid "MediaDB Debug"
 msgstr "MediaDB Debug Modus"
 
-#: mediadb.h:1109 play.h:586 skin_default_skin.xml.h:101
+#: mediadb.h:1109 play.h:586
 msgid "Backdrop Download Count"
 msgstr "Wie viele Hintergrundbilder sollen geladen werden"
 
@@ -2892,11 +2882,11 @@ msgid "older 50 day"
 msgstr "Älter als 50 Tage"
 
 #: mediadbsettings.h:56 plugins_catcatch_skin.xml.h:3
-#: skin_default_skin.xml.h:33 skins_catcatch_skin.xml.h:3
+#: skins_catcatch_skin.xml.h:3
 msgid "1"
 msgstr ""
 
-#: mediadbsettings.h:57 skin_default_skin.xml.h:35
+#: mediadbsettings.h:57
 msgid "2"
 msgstr ""
 
@@ -3234,7 +3224,7 @@ msgstr ""
 msgid "hold"
 msgstr "Behalten"
 
-#: optimize.h:254 skin_default_skin.xml.h:172
+#: optimize.h:254
 msgid "delete"
 msgstr "Löschen"
 
@@ -3352,7 +3342,6 @@ msgid "Fsck Record"
 msgstr "Partitionsprüfung 'record'"
 
 #: panel_settings_autostart.h:210 settings_autostart.h:315
-#: skin_default_skin.xml.h:625
 msgid "Swap"
 msgstr "Swap Datei (RAM Erweiterung)"
 
@@ -3616,7 +3605,7 @@ msgstr "Suche diesen Titel bei Internet-Tv (local)"
 msgid "Search on InternetRadio (local)"
 msgstr "Suche diesen Titel bei Internet-Radio (local)"
 
-#: play.h:641 skin_default_skin.xml.h:720
+#: play.h:641
 msgid "Video Settings"
 msgstr "Bildeinstellungen"
 
@@ -3628,7 +3617,7 @@ msgstr "A/V Einstellungen"
 msgid "iD3Tag Info"
 msgstr ""
 
-#: play.h:644 skin_default_skin.xml.h:374
+#: play.h:644
 msgid "MediaDB Edit"
 msgstr "Bearbeiten"
 
@@ -3676,13 +3665,12 @@ msgid "Really Delete ?"
 msgstr "wirklich löschen?"
 
 #: play.h:1417 plugins_networkbrowser_skin.xml.h:5 plugins_stock_skin.xml.h:4
-#: plugins_weather_skin.xml.h:2 skin_default_skin.xml.h:170
-#: skins_networkbrowser_skin.xml.h:5 skins_stock_skin.xml.h:4
-#: skins_weather_skin.xml.h:2
+#: plugins_weather_skin.xml.h:2 skins_networkbrowser_skin.xml.h:5
+#: skins_stock_skin.xml.h:4 skins_weather_skin.xml.h:2
 msgid "DEL"
 msgstr "Löschen"
 
-#: play.h:1417 skin_default_skin.xml.h:207
+#: play.h:1417
 msgid "EPG"
 msgstr ""
 
@@ -3731,13 +3719,12 @@ msgstr "Ereignis"
 #: plugins_instar_skin.xml.h:15 plugins_lcdpearl1_skin.xml.h:11
 #: plugins_lcdsamsung_skin.xml.h:14 plugins_panel_skin.xml.h:21
 #: plugins_stock_skin.xml.h:5 plugins_stopifnotused_skin.xml.h:5
-#: plugins_tmdb_skin.xml.h:7 skin_default_skin.xml.h:539
-#: skins_autotimer_skin.xml.h:8 skins_callmonitor1_skin.xml.h:18
-#: skins_imdbapi_skin.xml.h:7 skins_imdb_skin.xml.h:7
-#: skins_instar_skin.xml.h:15 skins_lcdpearl1_skin.xml.h:11
-#: skins_lcdsamsung_skin.xml.h:14 skins_panel_skin.xml.h:21
-#: skins_stock_skin.xml.h:5 skins_stopifnotused_skin.xml.h:5
-#: skins_tmdb_skin.xml.h:7
+#: plugins_tmdb_skin.xml.h:7 skins_autotimer_skin.xml.h:8
+#: skins_callmonitor1_skin.xml.h:18 skins_imdbapi_skin.xml.h:7
+#: skins_imdb_skin.xml.h:7 skins_instar_skin.xml.h:15
+#: skins_lcdpearl1_skin.xml.h:11 skins_lcdsamsung_skin.xml.h:14
+#: skins_panel_skin.xml.h:21 skins_stock_skin.xml.h:5
+#: skins_stopifnotused_skin.xml.h:5 skins_tmdb_skin.xml.h:7
 msgid "SAVE"
 msgstr "Speichern"
 
@@ -3749,11 +3736,10 @@ msgstr "Suchmuster"
 #: plugins_instar_skin.xml.h:16 plugins_lcdpearl1_skin.xml.h:12
 #: plugins_lcdsamsung_skin.xml.h:15 plugins_stopifnotused_skin.xml.h:6
 #: plugins_tsSchnitt_skin.xml.h:7 plugins_xupnpd_skin.xml.h:2
-#: skin_default_skin.xml.h:609 skins_autotimer_skin.xml.h:10
-#: skins_dlna_skin.xml.h:12 skins_instar_skin.xml.h:16
-#: skins_lcdpearl1_skin.xml.h:12 skins_lcdsamsung_skin.xml.h:15
-#: skins_stopifnotused_skin.xml.h:6 skins_tsSchnitt_skin.xml.h:7
-#: skins_xupnpd_skin.xml.h:2
+#: skins_autotimer_skin.xml.h:10 skins_dlna_skin.xml.h:12
+#: skins_instar_skin.xml.h:16 skins_lcdpearl1_skin.xml.h:12
+#: skins_lcdsamsung_skin.xml.h:15 skins_stopifnotused_skin.xml.h:6
+#: skins_tsSchnitt_skin.xml.h:7 skins_xupnpd_skin.xml.h:2
 msgid "START"
 msgstr "Starten"
 
@@ -3797,8 +3783,7 @@ msgstr ""
 msgid "bei Anruf stumm"
 msgstr ""
 
-#: plugins_callmonitor1_skin.xml.h:9 skin_default_skin.xml.h:117
-#: skins_callmonitor1_skin.xml.h:9
+#: plugins_callmonitor1_skin.xml.h:9 skins_callmonitor1_skin.xml.h:9
 msgid "broadcast"
 msgstr "Broadcast Adresse"
 
@@ -3835,8 +3820,7 @@ msgid "Cat-Catch"
 msgstr ""
 
 #: plugins_catcatch_skin.xml.h:2 plugins_zapback_skin.xml.h:2
-#: skin_default_skin.xml.h:32 skins_catcatch_skin.xml.h:2
-#: skins_zapback_skin.xml.h:2
+#: skins_catcatch_skin.xml.h:2 skins_zapback_skin.xml.h:2
 msgid "0"
 msgstr ""
 
@@ -3880,15 +3864,13 @@ msgstr ""
 msgid "Server Name"
 msgstr ""
 
-#: plugins_dlna_skin.xml.h:13 skin_default_skin.xml.h:611
-#: skins_dlna_skin.xml.h:13
+#: plugins_dlna_skin.xml.h:13 skins_dlna_skin.xml.h:13
 msgid "Start on boot"
 msgstr "automatischer Start"
 
 #: plugins_dlna_skin.xml.h:14 plugins_tsSchnitt_skin.xml.h:9
-#: plugins_xupnpd_skin.xml.h:3 skin_default_skin.xml.h:616
-#: skins_dlna_skin.xml.h:14 skins_tsSchnitt_skin.xml.h:9
-#: skins_xupnpd_skin.xml.h:3
+#: plugins_xupnpd_skin.xml.h:3 skins_dlna_skin.xml.h:14
+#: skins_tsSchnitt_skin.xml.h:9 skins_xupnpd_skin.xml.h:3
 msgid "STOP"
 msgstr "Stoppen"
 
@@ -3961,9 +3943,8 @@ msgstr "Veröffentlicht:"
 
 #: plugins_imdbapi_skin.xml.h:8 plugins_imdb_skin.xml.h:8
 #: plugins_networkbrowser_skin.xml.h:25 plugins_tmdb_skin.xml.h:8
-#: skin_default_skin.xml.h:556 skins_imdbapi_skin.xml.h:8
-#: skins_imdb_skin.xml.h:8 skins_networkbrowser_skin.xml.h:25
-#: skins_tmdb_skin.xml.h:8
+#: skins_imdbapi_skin.xml.h:8 skins_imdb_skin.xml.h:8
+#: skins_networkbrowser_skin.xml.h:25 skins_tmdb_skin.xml.h:8
 msgid "SEARCH"
 msgstr "Suchen"
 
@@ -4148,9 +4129,8 @@ msgid "details"
 msgstr "Details"
 
 #: plugins_mc_skin.xml.h:21 plugins_networkbrowser_skin.xml.h:7
-#: plugins_readerconfig_skin.xml.h:3 skin_default_skin.xml.h:200
-#: skins_mc_skin.xml.h:21 skins_networkbrowser_skin.xml.h:7
-#: skins_readerconfig_skin.xml.h:3
+#: plugins_readerconfig_skin.xml.h:3 skins_mc_skin.xml.h:21
+#: skins_networkbrowser_skin.xml.h:7 skins_readerconfig_skin.xml.h:3
 msgid "EDIT"
 msgstr "Bearbeiten"
 
@@ -4203,8 +4183,7 @@ msgid "Pic quality"
 msgstr "Darstellungsqualität von Fotos"
 
 #: plugins_mc_skin.xml.h:42 plugins_tithek_skin.xml.h:11
-#: skin_default_skin.xml.h:441 skins_mc_skin.xml.h:42
-#: skins_tithek_skin.xml.h:11
+#: skins_mc_skin.xml.h:42 skins_tithek_skin.xml.h:11
 msgid "PICTURE"
 msgstr "Fotos"
 
@@ -4226,8 +4205,8 @@ msgid "Screensaver"
 msgstr "Bildschirmschoner"
 
 #: plugins_mc_skin.xml.h:53 plugins_panel_skin.xml.h:5
-#: plugins_panel_skin.xml.h:22 skin_default_skin.xml.h:568
-#: skins_mc_skin.xml.h:53 skins_panel_skin.xml.h:5 skins_panel_skin.xml.h:22
+#: plugins_panel_skin.xml.h:22 skins_mc_skin.xml.h:53 skins_panel_skin.xml.h:5
+#: skins_panel_skin.xml.h:22
 msgid "Settings"
 msgstr "Einstellungen"
 
@@ -4243,7 +4222,7 @@ msgstr "klein"
 msgid "Sort"
 msgstr "Sortieren"
 
-#: plugins_mc_skin.xml.h:58 skin_default_skin.xml.h:595 skins_mc_skin.xml.h:58
+#: plugins_mc_skin.xml.h:58 skins_mc_skin.xml.h:58
 msgid "Sorting"
 msgstr "Sortierung"
 
@@ -4284,9 +4263,8 @@ msgid "Web Radio Player"
 msgstr "Web Radio"
 
 #: plugins_networkbrowser_skin.xml.h:1 plugins_stock_skin.xml.h:2
-#: plugins_weather_skin.xml.h:1 skin_default_skin.xml.h:58
-#: skins_networkbrowser_skin.xml.h:1 skins_stock_skin.xml.h:2
-#: skins_weather_skin.xml.h:1
+#: plugins_weather_skin.xml.h:1 skins_networkbrowser_skin.xml.h:1
+#: skins_stock_skin.xml.h:2 skins_weather_skin.xml.h:1
 msgid "ADD"
 msgstr "Hinzufügen"
 
@@ -4334,8 +4312,7 @@ msgstr ""
 "Sollten keine Windows Freigaben sichtbar sein, muss 'Kennwortgeschützte "
 "Freigaben' im 'Netzwerk- und Freigabecenter' abgeschaltet werden."
 
-#: plugins_networkbrowser_skin.xml.h:13 skin_default_skin.xml.h:336
-#: skins_networkbrowser_skin.xml.h:13
+#: plugins_networkbrowser_skin.xml.h:13 skins_networkbrowser_skin.xml.h:13
 msgid "ipaddress"
 msgstr "IP Adresse"
 
@@ -4347,8 +4324,7 @@ msgstr "Optionen"
 msgid "password"
 msgstr "Passwort"
 
-#: plugins_networkbrowser_skin.xml.h:16 skin_default_skin.xml.h:438
-#: skins_networkbrowser_skin.xml.h:16
+#: plugins_networkbrowser_skin.xml.h:16 skins_networkbrowser_skin.xml.h:16
 msgid "Password"
 msgstr "Passwort"
 
@@ -4392,8 +4368,7 @@ msgstr "Speicherort auf entferntem Rechner"
 msgid "sharename"
 msgstr "Freigabename"
 
-#: plugins_networkbrowser_skin.xml.h:29 skin_default_skin.xml.h:689
-#: skins_networkbrowser_skin.xml.h:29
+#: plugins_networkbrowser_skin.xml.h:29 skins_networkbrowser_skin.xml.h:29
 msgid "type"
 msgstr "Typ"
 
@@ -4405,8 +4380,7 @@ msgstr "Benutze DNS Adresse"
 msgid "useproxy"
 msgstr "Benutze Proxy"
 
-#: plugins_networkbrowser_skin.xml.h:32 skin_default_skin.xml.h:711
-#: skins_networkbrowser_skin.xml.h:32
+#: plugins_networkbrowser_skin.xml.h:32 skins_networkbrowser_skin.xml.h:32
 msgid "User"
 msgstr "Benutzer"
 
@@ -4452,8 +4426,7 @@ msgstr "optimieren"
 msgid "Autostart"
 msgstr "Boot Optionen"
 
-#: plugins_panel_skin.xml.h:2 skin_default_skin.xml.h:225
-#: skins_panel_skin.xml.h:2
+#: plugins_panel_skin.xml.h:2 skins_panel_skin.xml.h:2
 msgid "FanControl"
 msgstr "Lüftersteuerung"
 
@@ -4465,18 +4438,15 @@ msgstr "Übertakten"
 msgid "Panel"
 msgstr ""
 
-#: plugins_panel_skin.xml.h:6 skin_default_skin.xml.h:34
-#: skins_panel_skin.xml.h:6
+#: plugins_panel_skin.xml.h:6 skins_panel_skin.xml.h:6
 msgid "1500rpm"
 msgstr "1500 U/Min"
 
-#: plugins_panel_skin.xml.h:7 skin_default_skin.xml.h:42
-#: skins_panel_skin.xml.h:7
+#: plugins_panel_skin.xml.h:7 skins_panel_skin.xml.h:7
 msgid "500rpm"
 msgstr "500 U/Min"
 
-#: plugins_panel_skin.xml.h:8 skin_default_skin.xml.h:85
-#: skins_panel_skin.xml.h:8
+#: plugins_panel_skin.xml.h:8 skins_panel_skin.xml.h:8
 msgid "Audio / Video / Sat"
 msgstr "Audio/Video/Satellit"
 
@@ -4484,18 +4454,15 @@ msgstr "Audio/Video/Satellit"
 msgid "Automount"
 msgstr "Automatische Einbindung"
 
-#: plugins_panel_skin.xml.h:11 skin_default_skin.xml.h:122
-#: skins_panel_skin.xml.h:11
+#: plugins_panel_skin.xml.h:11 skins_panel_skin.xml.h:11
 msgid "Cam / Emu"
 msgstr "Softcam und USB Treiber"
 
-#: plugins_panel_skin.xml.h:12 skin_default_skin.xml.h:124
-#: skins_panel_skin.xml.h:12
+#: plugins_panel_skin.xml.h:12 skins_panel_skin.xml.h:12
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: plugins_panel_skin.xml.h:13 skin_default_skin.xml.h:136
-#: skins_panel_skin.xml.h:13
+#: plugins_panel_skin.xml.h:13 skins_panel_skin.xml.h:13
 msgid "Child safety"
 msgstr "Jugendschutz"
 
@@ -4507,8 +4474,7 @@ msgstr "Werkseinstellung"
 msgid "Fancontrol"
 msgstr "Lüftersteuerung"
 
-#: plugins_panel_skin.xml.h:19 skin_default_skin.xml.h:434
-#: skins_panel_skin.xml.h:19
+#: plugins_panel_skin.xml.h:19 skins_panel_skin.xml.h:19
 msgid "Overclocking"
 msgstr "Übertakten"
 
@@ -4516,18 +4482,15 @@ msgstr "Übertakten"
 msgid "Save"
 msgstr "Speichern"
 
-#: plugins_panel_skin.xml.h:23 skin_default_skin.xml.h:600
-#: skins_panel_skin.xml.h:23
+#: plugins_panel_skin.xml.h:23 skins_panel_skin.xml.h:23
 msgid "speed"
 msgstr "Geschwindigkeit"
 
-#: plugins_panel_skin.xml.h:24 skin_default_skin.xml.h:644
-#: skins_panel_skin.xml.h:24
+#: plugins_panel_skin.xml.h:24 skins_panel_skin.xml.h:24
 msgid "Test"
 msgstr "Test"
 
-#: plugins_panel_skin.xml.h:25 skin_default_skin.xml.h:705
-#: skins_panel_skin.xml.h:25
+#: plugins_panel_skin.xml.h:25 skins_panel_skin.xml.h:25
 msgid "Usb Device"
 msgstr "USB Geräte"
 
@@ -4623,8 +4586,7 @@ msgstr "Autostart"
 msgid "Time to stop "
 msgstr "Zeit bis Abschaltung (min)"
 
-#: plugins_streaminfo_skin.xml.h:1 skin_default_skin.xml.h:77
-#: skins_streaminfo_skin.xml.h:1
+#: plugins_streaminfo_skin.xml.h:1 skins_streaminfo_skin.xml.h:1
 msgid "Aspect"
 msgstr "Seitenverhältnis"
 
@@ -4685,8 +4647,7 @@ msgstr "Bilder im Originalformat darstellen"
 msgid "please wait..."
 msgstr "bitte warten"
 
-#: plugins_tithek_skin.xml.h:13 skin_default_skin.xml.h:497
-#: skins_tithek_skin.xml.h:13
+#: plugins_tithek_skin.xml.h:13 skins_tithek_skin.xml.h:13
 msgid "Red-Menu"
 msgstr "Rot-Menü"
 
@@ -4702,13 +4663,11 @@ msgstr ""
 msgid "TiThek - Favorite Edit"
 msgstr "Favoriten bearbeiten"
 
-#: plugins_tithek_skin.xml.h:18 skin_default_skin.xml.h:661
-#: skins_tithek_skin.xml.h:18
+#: plugins_tithek_skin.xml.h:18 skins_tithek_skin.xml.h:18
 msgid "Title"
 msgstr "Titel"
 
-#: plugins_tithek_skin.xml.h:19 skin_default_skin.xml.h:690
-#: skins_tithek_skin.xml.h:19
+#: plugins_tithek_skin.xml.h:19 skins_tithek_skin.xml.h:19
 msgid "Type"
 msgstr "Typ"
 
@@ -4756,8 +4715,7 @@ msgstr "Vorschau"
 msgid "Runtime:"
 msgstr "Laufzeit:"
 
-#: plugins_tmc_skin.xml.h:15 skin_default_skin.xml.h:542
-#: skins_tmc_skin.xml.h:15
+#: plugins_tmc_skin.xml.h:15 skins_tmc_skin.xml.h:15
 msgid "Scan"
 msgstr "Suchlauf"
 
@@ -5079,7 +5037,7 @@ msgstr ""
 msgid "stop"
 msgstr "Stoppen"
 
-#: record.h:1320 record.h:1394 skin_default_skin.xml.h:486
+#: record.h:1320 record.h:1394
 msgid "Record"
 msgstr "Aufnahme"
 
@@ -5213,7 +5171,7 @@ msgstr ""
 "Einstellungen\n"
 "bleiben erhalten. Der Receiver wird für diesen Vorgang neu gestartet!"
 
-#: restoredefault.h:65 restoredefault.h:77 skin_default_skin.xml.h:514
+#: restoredefault.h:65 restoredefault.h:77
 msgid "Restore default settings"
 msgstr "Standardeinstellungen"
 
@@ -5505,7 +5463,7 @@ msgstr "Archive (Aufnahmen wiedergeben)"
 msgid "Media Plugins List"
 msgstr "Media Plugins Liste"
 
-#: settings_mediabutton.h:15 skin_default_skin.xml.h:377
+#: settings_mediabutton.h:15
 msgid "Media Player"
 msgstr "MiniPlayer (Medien wiedergeben)"
 
@@ -5573,2541 +5531,6 @@ msgstr "Rote Taste drücken"
 msgid "Receiver now reboot !!!"
 msgstr "Receiver wird neu gestartet!!!"
 
-#: skin_default_skin.xml.h:1
-msgid "Help"
-msgstr "Hilfe"
-
-#: skin_default_skin.xml.h:2
-msgid "^"
-msgstr ""
-
-#: skin_default_skin.xml.h:3
-msgid "~"
-msgstr ""
-
-#: skin_default_skin.xml.h:4
-msgid "<"
-msgstr ""
-
-#: skin_default_skin.xml.h:5
-msgid "<-"
-msgstr ""
-
-#: skin_default_skin.xml.h:6
-msgid ">"
-msgstr ""
-
-#: skin_default_skin.xml.h:7
-msgid "_"
-msgstr ""
-
-#: skin_default_skin.xml.h:8
-msgid "-"
-msgstr ""
-
-#: skin_default_skin.xml.h:9
-msgid "->"
-msgstr ""
-
-#: skin_default_skin.xml.h:10
-msgid ","
-msgstr ""
-
-#: skin_default_skin.xml.h:11
-msgid ";"
-msgstr ""
-
-#: skin_default_skin.xml.h:12
-msgid ":"
-msgstr ""
-
-#: skin_default_skin.xml.h:13
-msgid "!"
-msgstr ""
-
-#: skin_default_skin.xml.h:14
-msgid "?"
-msgstr ""
-
-#: skin_default_skin.xml.h:15
-msgid "???"
-msgstr ""
-
-#: skin_default_skin.xml.h:16
-msgid "/"
-msgstr ""
-
-#: skin_default_skin.xml.h:17
-msgid "."
-msgstr ""
-
-#: skin_default_skin.xml.h:18
-msgid "'"
-msgstr ""
-
-#: skin_default_skin.xml.h:19
-msgid "("
-msgstr ""
-
-#: skin_default_skin.xml.h:20
-msgid ")"
-msgstr ""
-
-#: skin_default_skin.xml.h:21
-msgid "["
-msgstr ""
-
-#: skin_default_skin.xml.h:22
-msgid "]"
-msgstr ""
-
-#: skin_default_skin.xml.h:23
-msgid "{"
-msgstr ""
-
-#: skin_default_skin.xml.h:24
-msgid "}"
-msgstr ""
-
-#: skin_default_skin.xml.h:25
-msgid "@"
-msgstr ""
-
-#: skin_default_skin.xml.h:26
-msgid "$"
-msgstr ""
-
-#: skin_default_skin.xml.h:27
-msgid "*"
-msgstr ""
-
-#: skin_default_skin.xml.h:28
-msgid "\\"
-msgstr ""
-
-#: skin_default_skin.xml.h:29
-msgid "&"
-msgstr ""
-
-#: skin_default_skin.xml.h:30
-msgid "%"
-msgstr ""
-
-#: skin_default_skin.xml.h:31
-msgid "+"
-msgstr ""
-
-#: skin_default_skin.xml.h:36
-msgid "20:15"
-msgstr ""
-
-#: skin_default_skin.xml.h:38 videomode.h:27 videomode.h:89
-msgid "3D Mode"
-msgstr "3D Modus"
-
-#: skin_default_skin.xml.h:39
-msgid "3D-Mode Settings"
-msgstr "3D Einstellungen"
-
-#: skin_default_skin.xml.h:43
-msgid "+/- 5 Min"
-msgstr ""
-
-#: skin_default_skin.xml.h:45
-msgid "7"
-msgstr ""
-
-#: skin_default_skin.xml.h:47
-msgid "9"
-msgstr ""
-
-#: skin_default_skin.xml.h:48
-msgid "a"
-msgstr ""
-
-#: skin_default_skin.xml.h:50
-msgid "abc/ABC"
-msgstr ""
-
-#: skin_default_skin.xml.h:51
-msgid "About"
-msgstr "Über Titan"
-
-#: skin_default_skin.xml.h:52
-msgid "AC3 default"
-msgstr "Dolby Digital (AC3) standardmäßig"
-
-#: skin_default_skin.xml.h:53
-msgid "AC3 Mode"
-msgstr "Dolby Digital (AC3) Modus"
-
-#: skin_default_skin.xml.h:54
-msgid "Activate (autostart)"
-msgstr "Aktivieren (Autostart)"
-
-#: skin_default_skin.xml.h:56
-msgid "Actors"
-msgstr "Darsteller"
-
-#: skin_default_skin.xml.h:57
-msgid "Adapter Settings"
-msgstr "Netzwerkkarte"
-
-#: skin_default_skin.xml.h:59
-msgid "ADD ALL"
-msgstr "Alle Sender hinzufügen"
-
-#: skin_default_skin.xml.h:60
-msgid "ADD BOUQUET"
-msgstr "Favoriten hinzufügen"
-
-#: skin_default_skin.xml.h:61
-msgid "ADD ONE"
-msgstr "Markierte Sender speichern"
-
-#: skin_default_skin.xml.h:62
-msgid "add service"
-msgstr "Eintrag hinzufügen"
-
-#: skin_default_skin.xml.h:63
-msgid "Adjust"
-msgstr "Erweitert"
-
-#: skin_default_skin.xml.h:64
-msgid "ae"
-msgstr "ä"
-
-#: skin_default_skin.xml.h:65
-msgid "AE"
-msgstr "Ä"
-
-#: skin_default_skin.xml.h:66
-msgid "After EPG Scan"
-msgstr "Nach EPG Aktualisierung"
-
-#: skin_default_skin.xml.h:67
-msgid ""
-"After the manual search, you have to if they want to save all the sender to "
-"save the search with the green button. To add a station manually have to "
-"select the sender in the right box and then save it with the red button that "
-"station. If you do not do this and go to exit out the search not saved."
-msgstr ""
-"Nach der manuellen Suche müssen Sie mit -Grün- die gefundenen Kanäle "
-"abspeichern. Um manuell einen Kanal hinzuzufügen, muss man den Kanal im "
-"rechten Feld markieren und dann mit -Rot- abspeichern. Exit speichert das "
-"Suchergebnis nicht."
-
-#: skin_default_skin.xml.h:68
-msgid "After Timeshift"
-msgstr "Verhalten nach Timeshift"
-
-#: skin_default_skin.xml.h:69
-msgid "Age Protect"
-msgstr "Altersschutz ab"
-
-#: skin_default_skin.xml.h:70
-msgid "Aktion after"
-msgstr "Nach der Aufnahme"
-
-#: skin_default_skin.xml.h:71
-msgid "ALL"
-msgstr "Alle"
-
-#: skin_default_skin.xml.h:72
-msgid "Allowed Zapping via Streamlink"
-msgstr "Erlaube Umschalten durch Live Stream"
-
-#: skin_default_skin.xml.h:76
-msgid "Ask on channel switch"
-msgstr "Nachfragen bei Senderwechsel"
-
-#: skin_default_skin.xml.h:78
-msgid "Aspect Ratio:"
-msgstr "Seitenverhältnis:"
-
-#: skin_default_skin.xml.h:79
-msgid "Atemio (hotline)"
-msgstr "Atemio Hotline"
-
-#: skin_default_skin.xml.h:80
-msgid "Audio delay"
-msgstr "Audio Verzögerung"
-
-#: skin_default_skin.xml.h:81
-msgid "Audio PID:"
-msgstr ""
-
-#: skin_default_skin.xml.h:82
-msgid "Audio Source"
-msgstr "Audio Quelle"
-
-#: skin_default_skin.xml.h:83
-msgid "Audio/Subt."
-msgstr "Ton/Untertitel"
-
-#: skin_default_skin.xml.h:84
-msgid "Audio Tracks"
-msgstr "Tonspur wählen"
-
-#: skin_default_skin.xml.h:86
-msgid "Autocheck cam can decrypt"
-msgstr "Automatisch überprüfen, ob Ihr CI-Modul entschlüsseln kann"
-
-#: skin_default_skin.xml.h:87
-msgid "Automatic Search"
-msgstr "Automatische Sendersuche"
-
-#: skin_default_skin.xml.h:88
-msgid "Automatic start last subtitle"
-msgstr "Automatischer Untertitel Start"
-
-#: skin_default_skin.xml.h:89
-msgid "Auto resolution"
-msgstr "Automatische Auflösung"
-
-#: skin_default_skin.xml.h:90
-msgid "Autostart - Audio / Video / Sat"
-msgstr "Audio/Video/Sat"
-
-#: skin_default_skin.xml.h:91
-msgid "Autostart - Cam / Emu"
-msgstr "Softcam"
-
-#: skin_default_skin.xml.h:92
-msgid "Autostart - Child safety"
-msgstr "Jugendschutz"
-
-#: skin_default_skin.xml.h:93
-msgid "Autostart Default"
-msgstr "Allgemein"
-
-#: skin_default_skin.xml.h:94
-msgid "Autostart - Network"
-msgstr "Netzwerk"
-
-#: skin_default_skin.xml.h:95
-msgid "Autostart Settings"
-msgstr "Autostart"
-
-#: skin_default_skin.xml.h:96
-msgid "Autostart - Usb Device"
-msgstr "USB-Gerät automatisch starten"
-
-#: skin_default_skin.xml.h:97
-msgid "A/V Settings"
-msgstr "Audio/Video"
-
-#: skin_default_skin.xml.h:98 tithek_mainmenu.h:15
-msgid "A-Z"
-msgstr ""
-
-#: skin_default_skin.xml.h:99
-msgid "b"
-msgstr ""
-
-#: skin_default_skin.xml.h:102
-msgid "Backup"
-msgstr "Sichern"
-
-#: skin_default_skin.xml.h:103 system_backup_restore.h:18
-#: system_backup_restore.h:75
-msgid "Backup / Restore Settings"
-msgstr "Einstellungen sichern/wiederherstellen"
-
-#: skin_default_skin.xml.h:104
-msgid "Bandwidth"
-msgstr "Bandbreite"
-
-#: skin_default_skin.xml.h:105
-msgid "Bandwidth:"
-msgstr "Bandbreite:"
-
-#: skin_default_skin.xml.h:106
-msgid ""
-"Before you can see Signal/SNR/Ber you must zap to a channel of the satellite "
-"you are searching."
-msgstr ""
-"Zur Anzeige von Signal/SNR/BER müssen Sie auf einen Kanal des Satelliten "
-"schalten, den Sie suchen."
-
-#: skin_default_skin.xml.h:107
-msgid "Begin"
-msgstr "Anfang"
-
-#: skin_default_skin.xml.h:108
-msgid "Behavior at recording"
-msgstr "Anzeige während einer Aufnahme"
-
-#: skin_default_skin.xml.h:109
-msgid "BER:"
-msgstr "BER:"
-
-#: skin_default_skin.xml.h:110
-msgid "Blindscan"
-msgstr ""
-
-#: skin_default_skin.xml.h:111
-msgid "Blindscan Adjust"
-msgstr "Blindscan"
-
-#: skin_default_skin.xml.h:112
-msgid "Blindscan Settings"
-msgstr "Blindscan"
-
-#: skin_default_skin.xml.h:113
-msgid "Blue Button"
-msgstr "Blaue Taste"
-
-#: skin_default_skin.xml.h:114
-msgid "Bouquet List"
-msgstr "Favoriten Liste"
-
-#: skin_default_skin.xml.h:115
-msgid "Bouquet Type"
-msgstr "Favoriten Einträge"
-
-#: skin_default_skin.xml.h:116
-msgid "Brightness"
-msgstr "Helligkeit"
-
-#: skin_default_skin.xml.h:118
-msgid "c"
-msgstr ""
-
-#: skin_default_skin.xml.h:119
-msgid "C"
-msgstr ""
-
-#: skin_default_skin.xml.h:120
-msgid "CAID"
-msgstr ""
-
-#: skin_default_skin.xml.h:121
-msgid "CAID Lock"
-msgstr "CAID Sperre"
-
-#: skin_default_skin.xml.h:123
-msgid "cancel"
-msgstr "Abbrechen"
-
-#: skin_default_skin.xml.h:125
-msgid "Change Channelname"
-msgstr "Sendernamen aktualisieren"
-
-#: skin_default_skin.xml.h:127
-msgid "Change Feed"
-msgstr "Feedadresse hinzufügen"
-
-#: skin_default_skin.xml.h:129
-msgid "Channel Allocation"
-msgstr "Sender Zuordnung"
-
-#: skin_default_skin.xml.h:130
-msgid "Channel Edit"
-msgstr "Senderliste bearbeiten"
-
-#: skin_default_skin.xml.h:131
-msgid "Channel History"
-msgstr "Sender Verlauf"
-
-#: skin_default_skin.xml.h:133
-msgid "Channel Search"
-msgstr "Sendersuche"
-
-#: skin_default_skin.xml.h:134
-msgid "Channel Service"
-msgstr "Sendersuche"
-
-#: skin_default_skin.xml.h:137
-msgid "Ci-Modul internal Menu"
-msgstr "CI-Modul internes Menü"
-
-#: skin_default_skin.xml.h:138
-msgid "Clear"
-msgstr "entfernen"
-
-#: skin_default_skin.xml.h:139
-msgid "Clear before scan"
-msgstr "Vor der Suche löschen"
-
-#: skin_default_skin.xml.h:140
-msgid "CLEAR INPUT"
-msgstr "Eingabefeld löschen"
-
-#: skin_default_skin.xml.h:141
-msgid "Code1"
-msgstr "Schlüssel 1:"
-
-#: skin_default_skin.xml.h:142
-msgid "Code2"
-msgstr "Schlüssel 2: "
-
-#: skin_default_skin.xml.h:143
-msgid "Coderate HP"
-msgstr ""
-
-#: skin_default_skin.xml.h:144
-msgid "Coderate HP:"
-msgstr ""
-
-#: skin_default_skin.xml.h:145
-msgid "Coderate LP"
-msgstr ""
-
-#: skin_default_skin.xml.h:146
-msgid "Coderate LP:"
-msgstr ""
-
-#: skin_default_skin.xml.h:147
-msgid "Color Format"
-msgstr "Farbformat"
-
-#: skin_default_skin.xml.h:148
-msgid "Color Format Scart / Composite"
-msgstr "Farbformat für SCART/Komponenten"
-
-#: skin_default_skin.xml.h:149
-msgid "Committed command"
-msgstr ""
-
-#: skin_default_skin.xml.h:150
-msgid "Common Interface"
-msgstr "CI-Module"
-
-#: skin_default_skin.xml.h:151
-msgid "Configure"
-msgstr "Datenträger konfigurieren"
-
-#: skin_default_skin.xml.h:152
-msgid "Contrast"
-msgstr "Kontrast"
-
-#: skin_default_skin.xml.h:153
-msgid "Copy / Move"
-msgstr "Kopieren/Verschieben"
-
-#: skin_default_skin.xml.h:154
-msgid "copy service"
-msgstr "zu Favoriten kopieren"
-
-#: skin_default_skin.xml.h:155
-msgid "CPU"
-msgstr ""
-
-#: skin_default_skin.xml.h:156
-msgid "Create Path"
-msgstr "Verzeichnis anlegen"
-
-#: skin_default_skin.xml.h:157
-msgid "Create Record Picture"
-msgstr "Erstelle Aufnahme Vorschaubild"
-
-#: skin_default_skin.xml.h:158
-msgid "create System Backup"
-msgstr "System Sicherung erstellen"
-
-#: skin_default_skin.xml.h:159
-msgid "Create Thumb Picture"
-msgstr "Vorschau Bilder erstellen"
-
-#: skin_default_skin.xml.h:160
-msgid "d"
-msgstr ""
-
-#: skin_default_skin.xml.h:161
-msgid "D"
-msgstr ""
-
-#: skin_default_skin.xml.h:163
-msgid "Day"
-msgstr "Tag"
-
-#: skin_default_skin.xml.h:164 softcam.h:290
-msgid "Deactivate"
-msgstr "Stoppen"
-
-#: skin_default_skin.xml.h:167
-msgid "Debug Modus"
-msgstr "Fehlerbeseitigung"
-
-#: skin_default_skin.xml.h:168
-msgid "DEFAULT"
-msgstr "Voreinstellung"
-
-#: skin_default_skin.xml.h:169
-msgid "Default Autostart"
-msgstr "Allgemein"
-
-#: skin_default_skin.xml.h:171
-msgid "Del EPG before scan"
-msgstr "Lösche EPG vor der Suche"
-
-#: skin_default_skin.xml.h:173
-msgid "Delete EPG after read"
-msgstr "Lösche EPG Datei nach dem Einlesen"
-
-#: skin_default_skin.xml.h:176
-msgid "del startchannel"
-msgstr "Startsender entfernen"
-
-#: skin_default_skin.xml.h:177
-msgid "DESC"
-msgstr "Beschreibung"
-
-#: skin_default_skin.xml.h:178
-msgid "Device:"
-msgstr "Gerät:"
-
-#: skin_default_skin.xml.h:179 system_infos_sysinfo.h:56
-msgid "Devices"
-msgstr "Geräte"
-
-#: skin_default_skin.xml.h:180
-msgid "Director"
-msgstr "Regisseur"
-
-#: skin_default_skin.xml.h:182
-msgid "Diseqc Command Order"
-msgstr "DiSEqC-Befehlsreihenfolge"
-
-#: skin_default_skin.xml.h:183
-msgid "DiSEqC Mode"
-msgstr "DiSEqC Modus"
-
-#: skin_default_skin.xml.h:184
-msgid "Diseqc repeats"
-msgstr "DiSEqC Wiederholungen"
-
-#: skin_default_skin.xml.h:185
-msgid "diseqcscreen"
-msgstr "DiSEqC"
-
-#: skin_default_skin.xml.h:186
-msgid "Diseqc Settings"
-msgstr "DiSEqC"
-
-#: skin_default_skin.xml.h:187
-msgid "DNS Name"
-msgstr ""
-
-#: skin_default_skin.xml.h:188
-msgid "dnsserver 1"
-msgstr "DNS-Server 1"
-
-#: skin_default_skin.xml.h:189
-msgid "dnsserver 2"
-msgstr "DNS-Server 2"
-
-#: skin_default_skin.xml.h:190
-msgid "DNS System"
-msgstr ""
-
-#: skin_default_skin.xml.h:192
-msgid "Download"
-msgstr ""
-
-#: skin_default_skin.xml.h:195
-msgid "dummy"
-msgstr ""
-
-#: skin_default_skin.xml.h:196
-msgid "Dutch"
-msgstr "Nederlands"
-
-#: skin_default_skin.xml.h:197
-msgid "DYNDNS Settings"
-msgstr "DYNDNS"
-
-#: skin_default_skin.xml.h:198
-msgid "e"
-msgstr ""
-
-#: skin_default_skin.xml.h:199
-msgid "E"
-msgstr ""
-
-#: skin_default_skin.xml.h:201
-msgid "EDIT LNB / UNICABLE"
-msgstr "LNB/Unicable konfigurieren"
-
-#: skin_default_skin.xml.h:202
-msgid "EDIT MOTOR"
-msgstr "Motor bearbeiten"
-
-#: skin_default_skin.xml.h:203
-msgid "EDIT TUNER"
-msgstr "Tuner bearbeiten"
-
-#: skin_default_skin.xml.h:204
-msgid "End"
-msgstr "Ende"
-
-#: skin_default_skin.xml.h:205
-msgid "Engine Systems"
-msgstr "Motorisierte Anlage"
-
-#: skin_default_skin.xml.h:206
-msgid "English"
-msgstr ""
-
-#: skin_default_skin.xml.h:208
-msgid "EPG button on EPG Screen"
-msgstr "EPG Taste im EPG"
-
-#: skin_default_skin.xml.h:209
-msgid "Epgfreespace (KB)"
-msgstr "Frei zu verbleibender Speicher (KB)"
-
-#: skin_default_skin.xml.h:210
-msgid "Epg List Mode"
-msgstr "Hintergrundsuche"
-
-#: skin_default_skin.xml.h:211
-msgid "EPG Path"
-msgstr "Speicherpfad"
-
-#: skin_default_skin.xml.h:212
-msgid "Epg Refresh Time"
-msgstr "Aktualisierungszeit"
-
-#: skin_default_skin.xml.h:213
-msgid "EPG Reset"
-msgstr "EPG löschen"
-
-#: skin_default_skin.xml.h:214
-msgid "EPG Save Mode"
-msgstr "EPG Daten sichern"
-
-#: skin_default_skin.xml.h:215
-msgid "EPG Scanlist"
-msgstr "EPG Scanliste"
-
-#: skin_default_skin.xml.h:216
-msgid "EPG Search"
-msgstr "Suche"
-
-#: skin_default_skin.xml.h:217
-msgid "EPG Settings"
-msgstr "EPG"
-
-#: skin_default_skin.xml.h:218
-msgid "EPG SHORT VIEW"
-msgstr "EPG-Kurzübersicht"
-
-#: skin_default_skin.xml.h:221
-msgid "Extensions"
-msgstr "Erweiterungen"
-
-#: skin_default_skin.xml.h:222
-msgid "Ext. Modul detect (needs reboot)"
-msgstr "Erw. Modulerkennung (Neustart erforderlich)"
-
-#: skin_default_skin.xml.h:223
-msgid "f"
-msgstr ""
-
-#: skin_default_skin.xml.h:224
-msgid "F"
-msgstr ""
-
-#: skin_default_skin.xml.h:229
-msgid "Fav"
-msgstr "Favoriten"
-
-#: skin_default_skin.xml.h:230
-msgid "FEC"
-msgstr ""
-
-#: skin_default_skin.xml.h:231
-msgid "FEC:"
-msgstr ""
-
-#: skin_default_skin.xml.h:232
-msgid "Filesystem Check"
-msgstr "Dateisystem prüfen"
-
-#: skin_default_skin.xml.h:233
-msgid "Fine move"
-msgstr "Rotor langsam bewegen"
-
-#: skin_default_skin.xml.h:234
-msgid "Fix Shutdown Time"
-msgstr "Feste Abschaltzeit"
-
-#: skin_default_skin.xml.h:235
-msgid ""
-"Flash: Flash range is deleted after update, mnt: flash range to permanently "
-"update available, swap: USB medium permanently"
-msgstr ""
-"MNT Installation (flash): wird bei Update nicht gelöscht\n"
-"FLASH Installation (flash): !wird bei Update gelöscht!\n"
-"SWAP Installation (USB/HDD): wird bei Update nicht gelöscht"
-
-#: skin_default_skin.xml.h:236
-msgid "Flashupdate (online)"
-msgstr "Softwareaktualisierung (Online)"
-
-#: skin_default_skin.xml.h:237
-msgid "Flashupdate (tmp)"
-msgstr "Softwareaktualisierung (Lokal)"
-
-#: skin_default_skin.xml.h:238
-msgid "Fontsize adjust in pixel"
-msgstr "Schriftgröße verändern in Pixel"
-
-#: skin_default_skin.xml.h:239
-msgid "Format HDD"
-msgstr "Datenträger formatieren"
-
-#: skin_default_skin.xml.h:240
-msgid "free space"
-msgstr "Freier Speicherplatz"
-
-#: skin_default_skin.xml.h:241
-msgid "French"
-msgstr "Français"
-
-#: skin_default_skin.xml.h:242
-msgid "Frequency"
-msgstr "Frequenz"
-
-#: skin_default_skin.xml.h:243
-msgid "Frequency:"
-msgstr "Frequenz:"
-
-#: skin_default_skin.xml.h:245
-msgid "g"
-msgstr ""
-
-#: skin_default_skin.xml.h:246
-msgid "G"
-msgstr ""
-
-#: skin_default_skin.xml.h:247
-msgid "gateway"
-msgstr "Gateway"
-
-#: skin_default_skin.xml.h:248
-msgid "Genre"
-msgstr ""
-
-#: skin_default_skin.xml.h:249
-msgid "German"
-msgstr "Deutsch"
-
-#: skin_default_skin.xml.h:250
-msgid "Git Changelog"
-msgstr ""
-
-#: skin_default_skin.xml.h:251
-msgid "Go to startpos"
-msgstr "Gehe zu Startposition"
-
-#: skin_default_skin.xml.h:252
-msgid "Graph. EPG"
-msgstr "Grafisches-EPG"
-
-#: skin_default_skin.xml.h:253
-msgid "Graphic EPG"
-msgstr "Grafisches-EPG"
-
-#: skin_default_skin.xml.h:254
-msgid "Graphic EPG Picon"
-msgstr "Grafisches EPG Vorschaubilder"
-
-#: skin_default_skin.xml.h:255
-msgid "Graphic EPG Zoom"
-msgstr "Vergrößerungsfaktor des grafischen EPG"
-
-#: skin_default_skin.xml.h:257
-msgid "Greek"
-msgstr "Ελληνικά"
-
-#: skin_default_skin.xml.h:258
-msgid "Guardinterval"
-msgstr "Schutzintervall"
-
-#: skin_default_skin.xml.h:259
-msgid "Guardinterval:"
-msgstr "Schutzintervall:"
-
-#: skin_default_skin.xml.h:260
-msgid "GUI Restart"
-msgstr "Titan Neustart"
-
-#: skin_default_skin.xml.h:261
-msgid "h"
-msgstr ""
-
-#: skin_default_skin.xml.h:262
-msgid "H"
-msgstr ""
-
-#: skin_default_skin.xml.h:265
-msgid "Here they can do for your chosen tuner to lnb settings."
-msgstr ""
-"Hier können Sie für Ihren ausgewählten Tuner die LNB-Einstellungen\n"
-"vornehmen."
-
-#: skin_default_skin.xml.h:266
-msgid "Here to select your remote Model"
-msgstr "Hier können Sie Ihr Fernbedienungsmodell auswählen"
-
-#: skin_default_skin.xml.h:267
-msgid "Here you can assign channels for their ci modules."
-msgstr ""
-"Sender -> Modul Zuordnung\n"
-"OK zum Verlassen"
-
-#: skin_default_skin.xml.h:268
-msgid "Here you can backup and restore your settings."
-msgstr "Hier können Sie Ihre Einstellungen sichern und wiederherstellen"
-
-#: skin_default_skin.xml.h:269
-msgid "Here you can check the reception of the current station."
-msgstr ""
-"Hier können Sie die Signalqualität des aktuellen Senders überprüfen"
-
-#: skin_default_skin.xml.h:270
-msgid ""
-"Here you can choose to configure your tuner. For your channel search, you "
-"must edit their tuner and adjust depending on the connection. For engine "
-"systems require an additional engine settings making."
-msgstr ""
-"Hier können Sie Ihren Tuner für die Konfiguration auswählen.\n"
-"Für den Sendersuchlauf müssen Sie den/die Tuner konfigurieren. Für "
-"motorisierte Anlagen bitte zusätzlich die Motor Ansteuerung konfigurieren."
-
-#: skin_default_skin.xml.h:271
-msgid "Here you can configure access to your DynDNS."
-msgstr ""
-"DynDNS Dienste Konfiguration\n"
-"Folgende Dienste werden unterstützt:\n"
-"dyndns.org, freedns.afraid.org, zoneedit.com, no-ip.com"
-
-#: skin_default_skin.xml.h:272
-msgid "Here you can configure Ci-Modules."
-msgstr "Hier können Sie Ihre CI-Module konfigurieren"
-
-#: skin_default_skin.xml.h:273
-msgid "Here you can configure the smartcard readers."
-msgstr ""
-"Hier können Sie Ihre Smartcards zurücksetzen. Sollten keine Karten "
-"angezeigt werden, dann ist ein Softcam mit Zugriff auf die Kartenleser aktiv."
-
-#: skin_default_skin.xml.h:274
-msgid "Here you can configure your web server."
-msgstr "Hier können Sie das Webinterface und den RGUI Service konfigurieren"
-
-#: skin_default_skin.xml.h:275
-msgid "Here you can create a new record timer."
-msgstr "Hier können sie einen neuen Timer anlegen"
-
-#: skin_default_skin.xml.h:276
-msgid "Here you can do a blind scan, this process takes a long time."
-msgstr ""
-"Hier können Sie einen Blindscan durchführen, dieser Vorgang kann bis zu "
-"einer Stunde dauern."
-
-#: skin_default_skin.xml.h:277
-msgid "Here you can edit the following channels from the EPG."
-msgstr ""
-"Hier können Sie Sender und Favoriten festlegen, die im EPG Scan "
-"berücksichtigt werden sollen."
-
-#: skin_default_skin.xml.h:278
-msgid "Here you can install from our current online offering plug-ins."
-msgstr ""
-"Hier können Sie von unserem aktuellen Online-Angebot Erweiterungen "
-"installieren."
-
-#: skin_default_skin.xml.h:279
-msgid ""
-"Here you can in your EPG entries for specific search. Use to start a color "
-"button to search."
-msgstr ""
-"Hier können Sie den EPG nach Genres oder Schlüsselwörten\n"
-"durchsuchen."
-
-#: skin_default_skin.xml.h:280
-msgid "Here you can make for your selected network interface settings."
-msgstr ""
-"Hier können Sie für Ihre ausgewählte Netzwerkschnittstelle Einstellungen "
-"vornehmen"
-
-#: skin_default_skin.xml.h:281
-msgid ""
-"Here you can make for your wireless network settings. 1. Use Search button "
-"and select Your SSID (apoint / router) and Press ok 2. Make settings Type / "
-"Key confirm with ok and Note the following instructions 3. Disable Lan Yes, "
-"Activate Wlan Yes and use DHCP for easy setup."
-msgstr ""
-"Hier können Sie Ihre WLAN Einstellungen vornehmen.\n"
-"1. Suche starten, die eigene SSID (AP/Router) mit ok übernehmen.\n"
-"2. Schlüssel und Typ anpassen und mit ok bestätigen (speichern).\n"
-"3. Deaktiviere LAN ja, Aktiviere Wlan und DHCP für einfache Einrichtung."
-
-#: skin_default_skin.xml.h:282
-msgid "Here you can make your adjust settings."
-msgstr "Hier können Sie erweiterte System Einstellungen vornehmen"
-
-#: skin_default_skin.xml.h:283
-msgid "Here you can make your audio/video autostart settings."
-msgstr "Hier können Sie den Audio/Video Autostart konfigurieren"
-
-#: skin_default_skin.xml.h:284
-msgid "Here you can make your cam/emu autostart settings."
-msgstr "Softcam und USB Cardreader Autostart Optionen"
-
-#: skin_default_skin.xml.h:285
-msgid "Here you can make your default autostart settings."
-msgstr "Hier können Sie allgemeine Autostart Optionen konfigurieren"
-
-#: skin_default_skin.xml.h:286
-msgid "Here you can make your epg settings."
-msgstr "Hier können Sie die EPG Einstellungen konfigurieren"
-
-#: skin_default_skin.xml.h:287
-msgid "Here you can make your mediadb settings."
-msgstr "Hier können Sie die MediaDB konfigurieren"
-
-#: skin_default_skin.xml.h:288
-msgid "Here you can make your module settings."
-msgstr "Hier können Sie die Einstellungen für CI-Module anpassen"
-
-#: skin_default_skin.xml.h:289
-msgid "Here you can make your network autostart settings."
-msgstr "Hier können Sie den Netzwerk Autostart konfigurieren"
-
-#: skin_default_skin.xml.h:290
-msgid "Here you can make your Overclocking settings."
-msgstr "Hier können Sie die CPU Übertaktung konfigurieren"
-
-#: skin_default_skin.xml.h:291
-msgid "Here you can make your picture and sound settings."
-msgstr ""
-"Bild und Ton Konfiguration:\n"
-"Hinweis: Die neue Auflösung muss bestätigt werden. Bei falscher Auflösung "
-"wird nach 5 Sekunden in den ursprünglichen Modus zurückgeschaltet."
-
-#: skin_default_skin.xml.h:292
-msgid "Here you can make your PIN security for menus settings."
-msgstr ""
-"Hier können Sie Ihre PIN Sicherheitseinstellungen für Menüs vornehmen"
-
-#: skin_default_skin.xml.h:293
-msgid "Here you can make your PIN security settings."
-msgstr "Hier können Sie Ihre PIN Sicherheitseinstellungen vornehmen"
-
-#: skin_default_skin.xml.h:294
-msgid "Here you can make your recording timer configuration."
-msgstr ""
-"Timer Editor:\n"
-"Hier können Sie Timer auswählen, löschen und\n"
-"bearbeiten."
-
-#: skin_default_skin.xml.h:295
-msgid "Here you can make your recordpath settings."
-msgstr "Hier können Sie die Aufnahmepfade konfigurieren"
-
-#: skin_default_skin.xml.h:296
-msgid "Here you can make your safety child autostart settings."
-msgstr "Hier können Sie dem Jugendschutz Autostart konfigurieren"
-
-#: skin_default_skin.xml.h:297
-msgid "Here you can make your screensaver settings."
-msgstr "Hier können Sie Ihre Bildschirmschoner konfigurieren"
-
-#: skin_default_skin.xml.h:298
-msgid ""
-"Here you can make your settings for your engine systems. To enter the "
-"latitude and longitude using the number keys."
-msgstr ""
-"Hier können Sie Ihre motorisierte Sat-Anlage konfigurieren.\n"
-"Zur Eingabe der Längen und Breitengrade benutzen Sie die Zifferntasten."
-
-#: skin_default_skin.xml.h:299
-msgid "Here you can make your timeshift settings."
-msgstr "Hier können Sie die Timeshift Einstellungen anpassen"
-
-#: skin_default_skin.xml.h:300
-msgid "Here you can make your usb autostart settings."
-msgstr "USB Autostart Konfiguration"
-
-#: skin_default_skin.xml.h:301
-msgid "Here you can make your vfd settings."
-msgstr "Hier können Sie das VFDisplay konfigurieren"
-
-#: skin_default_skin.xml.h:302
-msgid "Here you can manage your Ci-Modul or Card Infos."
-msgstr ""
-"Menü Ihres CI-Moduls:\n"
-"Einzelheiten zur Konfiguration entnehmen Sie bitte der Dokumentation des "
-"Moduls."
-
-#: skin_default_skin.xml.h:303
-msgid "Here you can select from the following list."
-msgstr "Hier können Sie aus der folgenden Liste auswählen"
-
-#: skin_default_skin.xml.h:304
-msgid "Here you can select from the following list a skin."
-msgstr "Skin Auswahl:"
-
-#: skin_default_skin.xml.h:305
-msgid ""
-"Here you can select your hard disks and USB flash drives for configuration."
-msgstr ""
-"Hier können Sie Ihre Festplatten und USB-Sticks zur Konfiguration\n"
-"auswählen"
-
-#: skin_default_skin.xml.h:306
-msgid "Here you can select your Network Interface."
-msgstr "Hier können Sie Ihre Netzwerkschnittstelle auswählen"
-
-#: skin_default_skin.xml.h:307
-msgid ""
-"Here you can set for your cable tuner. Ask your cable provider and make you "
-"connect an automatic search."
-msgstr ""
-"Hier können Sie Ihren Kabel Tuner einstellen.\n"
-"\n"
-"Stellen Sie Ihren Kabel Anbieter ein und führen Sie anschließend einen "
-"automatischen Suchlauf durch."
-
-#: skin_default_skin.xml.h:308
-msgid ""
-"Here you can set for your Hyprid tuner. Choose the Tuner mode they want to "
-"use."
-msgstr ""
-"Hier können Sie Ihren Hybrid Multi Tuner einstellen.\n"
-"\n"
-"Wählen Sie Ihre benötigte Anschlussart aus."
-
-#: skin_default_skin.xml.h:309
-msgid ""
-"Here you can set for your satellite tuner. First, make your satellite "
-"selection. When using DiSEqC They also point to the port used. For advanced "
-"Lnb / Unicam navigate to the field and press the Red button."
-msgstr ""
-"Sat Tuner Konfiguration: Wählen Sie zunächst den Satelliten aus. Bei "
-"Verwendung von DiSEqC weisen Sie zusätzlich den verwendeten Port zu. Für "
-"erweiterte LNB/Unicable Konfiguration navigieren Sie zur Option LNB/Unicable "
-"und drücken Sie die rote Taste."
-
-#: skin_default_skin.xml.h:310
-msgid ""
-"Here you can set for your terrestrial tuner. Activate the terrestrial tuner "
-"and do you connect an automatic search."
-msgstr ""
-"Hier können Sie den DVB-T Tuner einstellen.\n"
-"\n"
-"Aktivieren Sie den DVB-T Tuner und führen Sie anschließend einen "
-"automatischen Suchlauf durch."
-
-#: skin_default_skin.xml.h:311
-msgid ""
-"Here you can set your Channel search options. Very important, before you "
-"start looking for a channel must be set to its tuner tuner settings."
-msgstr ""
-"Hier können Sie den automatischen Sendersuchlauf einstellen und starten.\n"
-"Sehr wichtig: Vor dem Suchlauf müssen die Tuner unter System/Sendersuche/"
-"Konfiguration (Kabel/Sat/Terrestrisch) konfiguriert werden."
-
-#: skin_default_skin.xml.h:312
-msgid "Here you can set your language."
-msgstr "Hier können Sie Ihre Sprache einstellen"
-
-#: skin_default_skin.xml.h:313
-msgid "Here you can set your timezone."
-msgstr "Hier können Sie Ihre Zeitzone einstellen"
-
-#: skin_default_skin.xml.h:314
-msgid "Here you can start and manage your additional plug-ins."
-msgstr "Hier können Sie Ihre zusätzlichen Plugins starten und verwalten"
-
-#: skin_default_skin.xml.h:315
-msgid "Here you can test your network."
-msgstr ""
-"Netzwerk Test:\n"
-"LAN Test (ping gateway) Fehler: IP Adresse oder Gateway falsch\n"
-"Internet Test (ping www.google.de) Fehler: DNS oder Gateway falsch"
-
-#: skin_default_skin.xml.h:316
-msgid "Here you can view the current channel information."
-msgstr "Hier können Sie technische Informationen zum aktuellen Sender abrufen"
-
-#: skin_default_skin.xml.h:317
-msgid "Hierarchy"
-msgstr "Hierarchie"
-
-#: skin_default_skin.xml.h:318
-msgid "Hierarchy:"
-msgstr "Hierarchie:"
-
-#: skin_default_skin.xml.h:319
-msgid "HOSTNAME"
-msgstr "Hostname"
-
-#: skin_default_skin.xml.h:320
-msgid "How many days"
-msgstr "Wie viele Tage EPG im Voraus speichern"
-
-#: skin_default_skin.xml.h:321
-msgid "HTTPD Port"
-msgstr "Webserver Port"
-
-#: skin_default_skin.xml.h:322
-msgid "HTTP Settings"
-msgstr "Webinterface/RGUI"
-
-#: skin_default_skin.xml.h:323
-msgid "i"
-msgstr ""
-
-#: skin_default_skin.xml.h:324
-msgid "I"
-msgstr ""
-
-#: skin_default_skin.xml.h:325 tpchoice.h:52
-msgid "ID"
-msgstr ""
-
-#: skin_default_skin.xml.h:326
-msgid "ID:"
-msgstr ""
-
-#: skin_default_skin.xml.h:327
-msgid "Inc. AC3 Audio in %"
-msgstr "AC3-Angleichung durch Stereotonabsenkung in %"
-
-#: skin_default_skin.xml.h:330 tsSchnitt.c:108
-msgid "Information"
-msgstr ""
-
-#: skin_default_skin.xml.h:331
-msgid "install"
-msgstr "Installieren"
-
-#: skin_default_skin.xml.h:332
-msgid "Installed:"
-msgstr "Installiert:"
-
-#: skin_default_skin.xml.h:333
-msgid "internet"
-msgstr "Internet"
-
-#: skin_default_skin.xml.h:334
-msgid "Inversion"
-msgstr "Umkehrung"
-
-#: skin_default_skin.xml.h:335
-msgid "Inversion:"
-msgstr "Umkehrung:"
-
-#: skin_default_skin.xml.h:337
-msgid "IP for Stream"
-msgstr "Stream Adresse (IP)"
-
-#: skin_default_skin.xml.h:338
-msgid "Italian"
-msgstr "Italiano"
-
-#: skin_default_skin.xml.h:339
-msgid "j"
-msgstr ""
-
-#: skin_default_skin.xml.h:340
-msgid "J"
-msgstr ""
-
-#: skin_default_skin.xml.h:342
-msgid "k"
-msgstr ""
-
-#: skin_default_skin.xml.h:343
-msgid "K"
-msgstr ""
-
-#: skin_default_skin.xml.h:344 system_infos.h:64
-msgid "Kernel"
-msgstr ""
-
-#: skin_default_skin.xml.h:345
-msgid "Key"
-msgstr "Schlüssel"
-
-#: skin_default_skin.xml.h:346
-msgid "Keyboard"
-msgstr "Tastatur"
-
-#: skin_default_skin.xml.h:347
-msgid "l"
-msgstr ""
-
-#: skin_default_skin.xml.h:348
-msgid "L"
-msgstr ""
-
-#: skin_default_skin.xml.h:349
-msgid "lan"
-msgstr "LAN"
-
-#: skin_default_skin.xml.h:350
-msgid "Language"
-msgstr "Sprache"
-
-#: skin_default_skin.xml.h:351
-msgid "Latitude"
-msgstr "Breitengrad"
-
-#: skin_default_skin.xml.h:352
-msgid "LED - brightness running"
-msgstr "LED - Helligkeit im Betrieb"
-
-#: skin_default_skin.xml.h:353
-msgid "LED - brightness standby"
-msgstr "LED - Helligkeit in Standby"
-
-#: skin_default_skin.xml.h:354
-msgid "Limit"
-msgstr "Grenzwert"
-
-#: skin_default_skin.xml.h:355
-msgid "Listbox Select"
-msgstr "Cursor Auswahl"
-
-#: skin_default_skin.xml.h:356
-msgid "Listbox Select Color"
-msgstr "Cursor Farbauswahl"
-
-#: skin_default_skin.xml.h:357
-msgid "LNB Settings"
-msgstr "LNB Einstellungen"
-
-#: skin_default_skin.xml.h:358
-msgid "LOF/H"
-msgstr ""
-
-#: skin_default_skin.xml.h:359
-msgid "LOF/L"
-msgstr ""
-
-#: skin_default_skin.xml.h:360
-msgid "LOF / UNICABLE"
-msgstr "LOF/Unicable"
-
-#: skin_default_skin.xml.h:361
-msgid "LOG"
-msgstr "Log"
-
-#: skin_default_skin.xml.h:362
-msgid "Longitude"
-msgstr "Längengrad"
-
-#: skin_default_skin.xml.h:363
-msgid "m"
-msgstr ""
-
-#: skin_default_skin.xml.h:364
-msgid "M"
-msgstr ""
-
-#: skin_default_skin.xml.h:365
-msgid "Main Menu"
-msgstr "Hauptmenü"
-
-#: skin_default_skin.xml.h:366
-msgid "Manual Search"
-msgstr "Manuelle Suche"
-
-#: skin_default_skin.xml.h:367
-msgid "Manual Search Cable"
-msgstr "Manuelle Kabelsuche"
-
-#: skin_default_skin.xml.h:368
-msgid "Manual Search Terrestrial"
-msgstr "Manuelle terrestrische Suche"
-
-#: skin_default_skin.xml.h:369
-msgid "Marker"
-msgstr ""
-
-#: skin_default_skin.xml.h:370
-msgid "Maximal frequency"
-msgstr "Maximale Frequenz"
-
-#: skin_default_skin.xml.h:371
-msgid "Maximal signalrate"
-msgstr "Maximale Signalrate"
-
-#: skin_default_skin.xml.h:372
-msgid "Media Button"
-msgstr "Media Taste"
-
-#: skin_default_skin.xml.h:373
-msgid "Media Center"
-msgstr ""
-
-#: skin_default_skin.xml.h:375
-msgid "MediaDB Path"
-msgstr "Datenbank Ordner"
-
-#: skin_default_skin.xml.h:376
-msgid "MediaDB Settings"
-msgstr "MediaDB"
-
-#: skin_default_skin.xml.h:378
-msgid "Memory"
-msgstr "Speicher"
-
-#: skin_default_skin.xml.h:379
-msgid "MENU"
-msgstr "Menü"
-
-#: skin_default_skin.xml.h:380
-msgid "Menulist"
-msgstr "Menüliste"
-
-#: skin_default_skin.xml.h:381
-msgid "Menu Protect"
-msgstr "Menü schützen"
-
-#: skin_default_skin.xml.h:382
-msgid "MENUPROTECT"
-msgstr "Menüschutz"
-
-#: skin_default_skin.xml.h:383
-msgid "MHW2 EPG"
-msgstr ""
-
-#: skin_default_skin.xml.h:384
-msgid "MHW EPG"
-msgstr ""
-
-#: skin_default_skin.xml.h:385
-msgid "Minimal frequency"
-msgstr "Minimale Frequenz"
-
-#: skin_default_skin.xml.h:386
-msgid "Minimal signalrate"
-msgstr "Minimale Signalrate"
-
-#: skin_default_skin.xml.h:387
-msgid "Minutes"
-msgstr "Minuten"
-
-#: skin_default_skin.xml.h:388
-msgid "Minutes:"
-msgstr "Minuten:"
-
-#: skin_default_skin.xml.h:389
-msgid "Modulation"
-msgstr "Modulationsverfahren"
-
-#: skin_default_skin.xml.h:390
-msgid "Modulation:"
-msgstr ""
-
-#: skin_default_skin.xml.h:391
-msgid "Module"
-msgstr "Modul"
-
-#: skin_default_skin.xml.h:392
-msgid "Module Config"
-msgstr "Module"
-
-#: skin_default_skin.xml.h:394 system_infos.h:74
-msgid "Mounts"
-msgstr "Geräteanbindungen"
-
-#: skin_default_skin.xml.h:395
-msgid "Move"
-msgstr "Bewegen"
-
-#: skin_default_skin.xml.h:396
-msgid "move service"
-msgstr "Eintrag verschieben"
-
-#: skin_default_skin.xml.h:397
-msgid "Moviepath"
-msgstr "Ordner für Filme"
-
-#: skin_default_skin.xml.h:398
-msgid "MTD"
-msgstr "Flash Aufteilung"
-
-#: skin_default_skin.xml.h:400
-msgid "n"
-msgstr ""
-
-#: skin_default_skin.xml.h:401
-msgid "N"
-msgstr ""
-
-#: skin_default_skin.xml.h:402 stock.h:270
-msgid "Name"
-msgstr ""
-
-#: skin_default_skin.xml.h:403
-msgid "Name:"
-msgstr ""
-
-#: skin_default_skin.xml.h:404
-msgid "netmask"
-msgstr "Netzmaske"
-
-#: skin_default_skin.xml.h:406
-msgid "Network Adapter Settings"
-msgstr "Netzwerk"
-
-#: skin_default_skin.xml.h:407
-msgid "Network Adapter Test"
-msgstr "Test"
-
-#: skin_default_skin.xml.h:408 tpk_showname.h:73
-msgid "Networkbrowser"
-msgstr "Netzwerk Browser"
-
-#: skin_default_skin.xml.h:409
-msgid "Network Interfacelist"
-msgstr "Adapter"
-
-#: skin_default_skin.xml.h:410
-msgid "Network Restart"
-msgstr "Neu starten"
-
-#: skin_default_skin.xml.h:411
-msgid "Network Scan"
-msgstr "Netzwerk durchsuchen"
-
-#: skin_default_skin.xml.h:412
-msgid "Network Test"
-msgstr "Verbindungstest"
-
-#: skin_default_skin.xml.h:414
-msgid "Next EPG Time"
-msgstr "Nächste EPG Zeit"
-
-#: skin_default_skin.xml.h:415
-msgid "Nfs Server Settings"
-msgstr "NFS Server Einstellungen"
-
-#: skin_default_skin.xml.h:416
-msgid "Normal/Standby"
-msgstr "Betrieb/Standby"
-
-#: skin_default_skin.xml.h:417
-msgid "o"
-msgstr ""
-
-#: skin_default_skin.xml.h:418
-msgid "O"
-msgstr ""
-
-#: skin_default_skin.xml.h:419
-msgid "oe"
-msgstr "ö"
-
-#: skin_default_skin.xml.h:420
-msgid "OE"
-msgstr "Ö"
-
-#: skin_default_skin.xml.h:421
-msgid "Ok"
-msgstr ""
-
-#: skin_default_skin.xml.h:422
-msgid "ONID:"
-msgstr ""
-
-#: skin_default_skin.xml.h:423
-msgid "Only default FEC"
-msgstr "Nur Standard FEC Wert"
-
-#: skin_default_skin.xml.h:424
-msgid "Only default signalrate"
-msgstr "Nur Standard Symbolrate"
-
-#: skin_default_skin.xml.h:425
-msgid "Only DVBS"
-msgstr "Nur DVB-S Sender"
-
-#: skin_default_skin.xml.h:426
-msgid "Only free scan"
-msgstr "Nur unverschlüsselte Sender"
-
-#: skin_default_skin.xml.h:427
-msgid "OpenTV EPG"
-msgstr ""
-
-#: skin_default_skin.xml.h:428
-msgid "Orbital Position:"
-msgstr "Orbital Position:"
-
-#: skin_default_skin.xml.h:429
-msgid "OSD Bottom Overscan"
-msgstr "OSD unten verkleinern"
-
-#: skin_default_skin.xml.h:430
-msgid "OSD Left Overscan"
-msgstr "OSD links verkleinern"
-
-#: skin_default_skin.xml.h:431
-msgid "OSD Right Overscan"
-msgstr "OSD rechts verkleinern"
-
-#: skin_default_skin.xml.h:432
-msgid "OSD Top Overscan"
-msgstr "OSD oben verkleinern"
-
-#: skin_default_skin.xml.h:433
-msgid "OSD Transparent"
-msgstr "OSD Transparenz"
-
-#: skin_default_skin.xml.h:435
-msgid "Overclocking Settings"
-msgstr "Übertakten"
-
-#: skin_default_skin.xml.h:436
-msgid "p"
-msgstr ""
-
-#: skin_default_skin.xml.h:437
-msgid "P"
-msgstr ""
-
-#: skin_default_skin.xml.h:439
-msgid "PCR PID:"
-msgstr ""
-
-#: skin_default_skin.xml.h:440 tmc.h:417
-msgid "Picture"
-msgstr "Bild"
-
-#: skin_default_skin.xml.h:442
-msgid "PIDs"
-msgstr ""
-
-#: skin_default_skin.xml.h:443
-msgid "Pilot"
-msgstr "Pilot (für HD Empfang 'ein' auswählen)"
-
-#: skin_default_skin.xml.h:444
-msgid "Pilot:"
-msgstr ""
-
-#: skin_default_skin.xml.h:445
-msgid "PIN:"
-msgstr "PIN Schutz:"
-
-#: skin_default_skin.xml.h:446
-msgid "Pin Code"
-msgstr "PIN Schutz"
-
-#: skin_default_skin.xml.h:447
-msgid "Pin Code Channel"
-msgstr "Sender mit PIN sperren"
-
-#: skin_default_skin.xml.h:448
-msgid "Pin Code menu"
-msgstr "Menü mit PIN sperren"
-
-#: skin_default_skin.xml.h:449
-msgid "PIN Settings"
-msgstr "PIN Einstellungen"
-
-#: skin_default_skin.xml.h:450
-msgid "PLAY"
-msgstr "Wiedergeben"
-
-#: skin_default_skin.xml.h:451
-msgid "Playbackbuffer Size"
-msgstr "Wiedergabepuffer - Größe (http) Streams"
-
-#: skin_default_skin.xml.h:453
-msgid "PlayList"
-msgstr "Wiedergabeliste"
-
-#: skin_default_skin.xml.h:454
-msgid "Please contact Atemio for activation."
-msgstr ""
-"Bitte wenden Sie sich an Atemio, falls Ihre Freischaltung noch nicht wirksam "
-"ist.\n"
-"\n"
-"Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
-
-#: skin_default_skin.xml.h:455
-msgid "please wait"
-msgstr "bitte warten"
-
-#: skin_default_skin.xml.h:456
-msgid "Plot"
-msgstr ""
-
-#: skin_default_skin.xml.h:457
-msgid "Plugin Button"
-msgstr "Plugin Taste"
-
-#: skin_default_skin.xml.h:458
-msgid "Plugins"
-msgstr "Zusatzprogramme"
-
-#: skin_default_skin.xml.h:459
-msgid "PMT PID:"
-msgstr ""
-
-#: skin_default_skin.xml.h:461
-msgid "Polarization:"
-msgstr "Polarisation:"
-
-#: skin_default_skin.xml.h:462
-msgid "Policy"
-msgstr "Bildeinstellungen"
-
-#: skin_default_skin.xml.h:463
-msgid "Polish"
-msgstr "Polski"
-
-#: skin_default_skin.xml.h:464
-msgid "Positioner Setup"
-msgstr "Rotor Einstellungen"
-
-#: skin_default_skin.xml.h:467
-msgid "Poweroff Timer"
-msgstr "Ausschalttimer"
-
-#: skin_default_skin.xml.h:468
-msgid "Power Off Timer"
-msgstr "Ausschalttimer"
-
-#: skin_default_skin.xml.h:469
-msgid "Program Info"
-msgstr "Programm Information"
-
-#: skin_default_skin.xml.h:470
-msgid "Protect Channel"
-msgstr "Sender mit PIN sperren"
-
-#: skin_default_skin.xml.h:471
-msgid "Protect Channel Freetime (min)"
-msgstr "Senderschutzzeit aus (min)"
-
-#: skin_default_skin.xml.h:472
-msgid "Protect Menu"
-msgstr "Menü sperren"
-
-#: skin_default_skin.xml.h:473
-msgid "protect service"
-msgstr "Sender sperren"
-
-#: skin_default_skin.xml.h:474
-msgid "Prov"
-msgstr "Anbieter"
-
-#: skin_default_skin.xml.h:475
-msgid "Provider:"
-msgstr "Provider:"
-
-#: skin_default_skin.xml.h:476
-msgid "Prozesslist"
-msgstr "Prozessliste"
-
-#: skin_default_skin.xml.h:477
-msgid "q"
-msgstr ""
-
-#: skin_default_skin.xml.h:478
-msgid "Q"
-msgstr ""
-
-#: skin_default_skin.xml.h:479
-msgid "Quick Menu"
-msgstr "Schnellmenü"
-
-#: skin_default_skin.xml.h:480
-msgid "r"
-msgstr ""
-
-#: skin_default_skin.xml.h:481
-msgid "R"
-msgstr ""
-
-#: skin_default_skin.xml.h:483 system_infos.h:103
-msgid "Ram"
-msgstr "Arbeitsspeicher"
-
-#: skin_default_skin.xml.h:484
-msgid "Rating"
-msgstr "Bewertung"
-
-#: skin_default_skin.xml.h:485
-msgid "Receiver unlock"
-msgstr "Receiver freischalten"
-
-#: skin_default_skin.xml.h:489
-msgid "Recordlist"
-msgstr "Liste der Aufnahmen"
-
-#: skin_default_skin.xml.h:491
-msgid "Record path"
-msgstr "Aufnahmepfad"
-
-#: skin_default_skin.xml.h:492
-msgid "Record Path"
-msgstr "Aufnahmepfad"
-
-#: skin_default_skin.xml.h:493
-msgid "Record Path settings"
-msgstr "Aufnahme- und Medienpfade"
-
-#: skin_default_skin.xml.h:495
-msgid "Record Timer"
-msgstr "Aufnahme Timer"
-
-#: skin_default_skin.xml.h:496
-msgid "Red Button"
-msgstr "Rote Taste"
-
-#: skin_default_skin.xml.h:498 softcam.h:292
-msgid "Refresh"
-msgstr "Aktualisieren"
-
-#: skin_default_skin.xml.h:499
-msgid "Released"
-msgstr "Veröffentlicht"
-
-#: skin_default_skin.xml.h:500
-msgid "RELOAD"
-msgstr "Neu laden"
-
-#: skin_default_skin.xml.h:501
-msgid "Remove emthy Bouquet"
-msgstr "Lösche leeres Bouquet"
-
-#: skin_default_skin.xml.h:502
-msgid "REMOVE ENTRY"
-msgstr "Eintrag löschen"
-
-#: skin_default_skin.xml.h:503
-msgid "remove service"
-msgstr "Aus Favoriten entfernen"
-
-#: skin_default_skin.xml.h:504
-msgid "Remove unused Channels in Bouquets"
-msgstr "Lösche nicht empfangbare Sender in Bouquets"
-
-#: skin_default_skin.xml.h:505
-msgid "rename service"
-msgstr "Sender umbenennen"
-
-#: skin_default_skin.xml.h:506
-msgid "Repeate"
-msgstr "Wiederholen"
-
-#: skin_default_skin.xml.h:507
-msgid "Repeate type"
-msgstr "Wiederholungsmodus"
-
-#: skin_default_skin.xml.h:508
-msgid "RESET"
-msgstr "Zurücksetzen"
-
-#: skin_default_skin.xml.h:509
-msgid "Resolution:"
-msgstr "Auflösung:"
-
-#: skin_default_skin.xml.h:510
-msgid "Resolution (current)"
-msgstr "Aktuelle Auflösung"
-
-#: skin_default_skin.xml.h:511
-msgid "Resolution (default)"
-msgstr "Standardauflösung"
-
-#: skin_default_skin.xml.h:513
-msgid "Restore"
-msgstr "Wiederherstellen"
-
-#: skin_default_skin.xml.h:519
-msgid "RGUID Port"
-msgstr ""
-
-#: skin_default_skin.xml.h:520
-msgid "Rolloff"
-msgstr "Abtastfrequenz"
-
-#: skin_default_skin.xml.h:521
-msgid "Rolloff:"
-msgstr "Abtastfrequenz:"
-
-#: skin_default_skin.xml.h:522
-msgid "Rotor Position"
-msgstr ""
-
-#: skin_default_skin.xml.h:523
-msgid "Rotor Settings"
-msgstr "Rotor"
-
-#: skin_default_skin.xml.h:524
-msgid "Runtime"
-msgstr "Laufzeit"
-
-#: skin_default_skin.xml.h:525
-msgid "Russian"
-msgstr "Русский"
-
-#: skin_default_skin.xml.h:526
-msgid "s"
-msgstr ""
-
-#: skin_default_skin.xml.h:527
-msgid "S"
-msgstr ""
-
-#: skin_default_skin.xml.h:528
-msgid "Samba Server Settings"
-msgstr "Samba Server Einstellungen"
-
-#: skin_default_skin.xml.h:531
-msgid "Sat Config"
-msgstr "Satelliten"
-
-#: skin_default_skin.xml.h:532
-msgid "SATCR Frequency"
-msgstr "SatCR Frequenz"
-
-#: skin_default_skin.xml.h:533
-msgid "SATCR Number"
-msgstr "SatCR Nummer"
-
-#: skin_default_skin.xml.h:534
-msgid "Satellite"
-msgstr "Satellit"
-
-#: skin_default_skin.xml.h:535
-msgid "Satfinder"
-msgstr "Empfangsqualität"
-
-#: skin_default_skin.xml.h:536
-msgid "Sat Finder"
-msgstr "Empfangsqualität"
-
-#: skin_default_skin.xml.h:537
-msgid "Saturation"
-msgstr "Sättigung"
-
-#: skin_default_skin.xml.h:541
-msgid "SAVETRANSPONDER"
-msgstr "Transponder speichern"
-
-#: skin_default_skin.xml.h:543
-msgid "Scan Config"
-msgstr "Suchlaufeinstellungen"
-
-#: skin_default_skin.xml.h:544
-msgid "ScanList"
-msgstr "Scanliste"
-
-#: skin_default_skin.xml.h:545
-msgid "Scan locking"
-msgstr "Suche sperren"
-
-#: skin_default_skin.xml.h:546
-msgid "SCANSTART"
-msgstr "Suchlauf beginnen"
-
-#: skin_default_skin.xml.h:547 tpk_section.h:15
-msgid "screensaver"
-msgstr "Bildschirmschoner"
-
-#: skin_default_skin.xml.h:548
-msgid "Screensaver Adjust"
-msgstr "Bildschirmschoner"
-
-#: skin_default_skin.xml.h:549
-msgid "screensaver background"
-msgstr "Hintergrund"
-
-#: skin_default_skin.xml.h:550
-msgid "screensaver delay"
-msgstr "Verzögerung"
-
-#: skin_default_skin.xml.h:551
-msgid "screensaver interval"
-msgstr "Intervall"
-
-#: skin_default_skin.xml.h:552
-msgid "screensaver pic"
-msgstr "Bild"
-
-#: skin_default_skin.xml.h:553
-msgid "screensaver type"
-msgstr "Typ"
-
-#: skin_default_skin.xml.h:554
-msgid "--- SD resolution"
-msgstr "--- SD Auflösung"
-
-#: skin_default_skin.xml.h:558
-msgid "Select backup:"
-msgstr "Sicherung auswählen:"
-
-#: skin_default_skin.xml.h:559
-msgid "Select Path"
-msgstr "Pfadauswahl"
-
-#: skin_default_skin.xml.h:560
-msgid "Select Unicable Manufacturer"
-msgstr "Unicable Hersteller auswählen"
-
-#: skin_default_skin.xml.h:561
-msgid "SEND"
-msgstr "Senden"
-
-#: skin_default_skin.xml.h:562
-msgid "Send all CAID to modules"
-msgstr "Übermittle alle CAIDs an das Modul"
-
-#: skin_default_skin.xml.h:563
-msgid "Serial Input"
-msgstr "Serieller Anschluss"
-
-#: skin_default_skin.xml.h:564
-msgid "Service"
-msgstr "Sender"
-
-#: skin_default_skin.xml.h:565
-msgid "Serviceinfo"
-msgstr "Senderinfo"
-
-#: skin_default_skin.xml.h:567
-msgid "set startchannel"
-msgstr "Startsender festlegen"
-
-#: skin_default_skin.xml.h:569
-msgid "Settings backup/restore"
-msgstr "Einstellungen sichern/wiederherstellen"
-
-#: skin_default_skin.xml.h:570
-msgid "Show EPG screen (EPG button)"
-msgstr "Zeige EPG (EPG Taste)"
-
-#: skin_default_skin.xml.h:571
-msgid "Show HDD freesize"
-msgstr "Anzeige des freien Festplattenspeichers"
-
-#: skin_default_skin.xml.h:574
-msgid "Show in Standby"
-msgstr "Im Standby anzeigen"
-
-#: skin_default_skin.xml.h:575
-msgid "Show in VFD"
-msgstr "Im Display anzeigen"
-
-#: skin_default_skin.xml.h:577
-msgid "Show Modules"
-msgstr "Zeige Modul Informationen"
-
-#: skin_default_skin.xml.h:579
-msgid "SID:"
-msgstr ""
-
-#: skin_default_skin.xml.h:580
-msgid "Signal:"
-msgstr ""
-
-#: skin_default_skin.xml.h:584
-msgid "Skin"
-msgstr "Skinauswahl"
-
-#: skin_default_skin.xml.h:585
-msgid "Skin Adjust"
-msgstr "Skin Einstellungen"
-
-#: skin_default_skin.xml.h:586
-msgid "Skin Select"
-msgstr "Skinauswahl"
-
-#: skin_default_skin.xml.h:590
-msgid "Skip privat CA descriptor"
-msgstr "Überspringe Private CA Descriptor"
-
-#: skin_default_skin.xml.h:591
-msgid "SmartCard Reader"
-msgstr "Kartenleser"
-
-#: skin_default_skin.xml.h:592
-msgid "SNR:"
-msgstr ""
-
-#: skin_default_skin.xml.h:594
-msgid "Softcam Selection"
-msgstr "Softcam Auswahl"
-
-#: skin_default_skin.xml.h:596
-msgid "sort service"
-msgstr "Favoriten sortieren"
-
-#: skin_default_skin.xml.h:597
-msgid "Sound amplifier (external Player)"
-msgstr "Sound Verstärkung (externer Player)"
-
-#: skin_default_skin.xml.h:598
-msgid "Sound amplifier (TV-Modus / internal Player)"
-msgstr "Sound Verstärkung (TV-Modus/interner Player)"
-
-#: skin_default_skin.xml.h:599
-msgid "Space"
-msgstr "Leerzeichen"
-
-#: skin_default_skin.xml.h:603
-msgid "SSID"
-msgstr ""
-
-#: skin_default_skin.xml.h:604 system_update.h:88 system_update.h:210
-msgid "stable"
-msgstr "Offizieller Feed"
-
-#: skin_default_skin.xml.h:606
-msgid "Standby Brightness"
-msgstr "Helligkeit im Standby"
-
-#: skin_default_skin.xml.h:607
-msgid "StandBy Mode"
-msgstr "Standby Modus"
-
-#: skin_default_skin.xml.h:608
-msgid "Standby / Poweroff"
-msgstr "Neustart/Ausschalten"
-
-#: skin_default_skin.xml.h:610
-msgid "Start HTTPD"
-msgstr "Autostart Webinterface"
-
-#: skin_default_skin.xml.h:612
-msgid "Start RGUID"
-msgstr "Autostart RGUID"
-
-#: skin_default_skin.xml.h:613
-msgid "Step frequency"
-msgstr "Frequenzratenschritt"
-
-#: skin_default_skin.xml.h:614
-msgid "Step signalrate"
-msgstr "Signalratenschritt"
-
-#: skin_default_skin.xml.h:615
-msgid "(Stop)"
-msgstr "(Stopp)"
-
-#: skin_default_skin.xml.h:617
-msgid "STOP/START"
-msgstr "Stopp/Start"
-
-#: skin_default_skin.xml.h:618
-msgid "Storage position"
-msgstr "gespeicherte Position"
-
-#: skin_default_skin.xml.h:619 stream.h:36
-msgid "Streaming"
-msgstr ""
-
-#: skin_default_skin.xml.h:620
-msgid "Stream Path"
-msgstr "Ordner für Stream"
-
-#: skin_default_skin.xml.h:621
-msgid "Stream Port"
-msgstr ""
-
-#: skin_default_skin.xml.h:622
-msgid "Subservices"
-msgstr "Unterkanäle"
-
-#: skin_default_skin.xml.h:623
-msgid "Subtitle"
-msgstr "Untertitel"
-
-#: skin_default_skin.xml.h:626
-msgid "Symbolrate"
-msgstr ""
-
-#: skin_default_skin.xml.h:627
-msgid "Symbol rate:"
-msgstr "Symbolrate:"
-
-#: skin_default_skin.xml.h:628
-msgid "Sysinfo"
-msgstr "Systeminformation"
-
-#: skin_default_skin.xml.h:629
-msgid "System"
-msgstr ""
-
-#: skin_default_skin.xml.h:630
-msgid "System:"
-msgstr ""
-
-#: skin_default_skin.xml.h:631
-msgid "System Backup"
-msgstr "System Sicherung"
-
-#: skin_default_skin.xml.h:632
-msgid "System - Flashupdate (online)"
-msgstr "Softwareaktualisierung (Online)"
-
-#: skin_default_skin.xml.h:633
-msgid "System - Flashupdate (tmp)"
-msgstr "Softwareaktualisierung (tmp)"
-
-#: skin_default_skin.xml.h:634
-msgid "System Info"
-msgstr "System Infos"
-
-#: skin_default_skin.xml.h:635
-msgid "System Infos"
-msgstr ""
-
-#: skin_default_skin.xml.h:636 system_infos.h:17
-msgid "System Status"
-msgstr ""
-
-#: skin_default_skin.xml.h:637
-msgid "System Update"
-msgstr "System Aktualisierung"
-
-#: skin_default_skin.xml.h:638
-msgid "System - Usbupdate (online)"
-msgstr "USB Systemaktualisierung (Online)"
-
-#: skin_default_skin.xml.h:639
-msgid "System - Usbupdate (tmp)"
-msgstr "USB Systemaktualisierung (tmp)"
-
-#: skin_default_skin.xml.h:640
-msgid "sz"
-msgstr "ß"
-
-#: skin_default_skin.xml.h:641
-msgid "SZ"
-msgstr "ß"
-
-#: skin_default_skin.xml.h:642
-msgid "t"
-msgstr ""
-
-#: skin_default_skin.xml.h:643
-msgid "T"
-msgstr ""
-
-#: skin_default_skin.xml.h:645
-msgid "TEST"
-msgstr "Test"
-
-#: skin_default_skin.xml.h:646
-msgid "thereafter on this Channel:"
-msgstr "Anschließend auf diesem Sender:"
-
-#: skin_default_skin.xml.h:647
-msgid "Threshold"
-msgstr "Grenzwert"
-
-#: skin_default_skin.xml.h:649
-msgid "Timer"
-msgstr ""
-
-#: skin_default_skin.xml.h:650
-msgid "Timer and EPG"
-msgstr "Timer und EPG"
-
-#: skin_default_skin.xml.h:651
-msgid "Timer Record Path"
-msgstr "Ordner für Timeraufnahme"
-
-#: skin_default_skin.xml.h:652
-msgid "Timeshift Path"
-msgstr "Ordner für Timeshift"
-
-#: skin_default_skin.xml.h:653
-msgid "Timeshift Settings"
-msgstr "Timeshift"
-
-#: skin_default_skin.xml.h:654
-msgid "Timeshifttype"
-msgstr "Timeshift Methode"
-
-#: skin_default_skin.xml.h:656
-msgid "--- Time to switch"
-msgstr "--- Zeit bis zum Senderwechsel"
-
-#: skin_default_skin.xml.h:658
-msgid "Timezone"
-msgstr "Zeitzone"
-
-#: skin_default_skin.xml.h:659
-msgid "Tint"
-msgstr "Temperatur"
-
-#: skin_default_skin.xml.h:660
-msgid "Titan Changelog"
-msgstr ""
-
-#: skin_default_skin.xml.h:662
-msgid "TITLE"
-msgstr "Titel"
-
-#: skin_default_skin.xml.h:663
-msgid "Tone Burst"
-msgstr ""
-
-#: skin_default_skin.xml.h:664
-msgid "Tone Mode"
-msgstr "Tone Modus"
-
-#: skin_default_skin.xml.h:665
-msgid "Top"
-msgstr "Top (Prozesse)"
-
-#: skin_default_skin.xml.h:666
-msgid "TPK install (online)"
-msgstr "Installieren (Online)"
-
-#: skin_default_skin.xml.h:668
-msgid "Tpk Install - select install medium"
-msgstr "Installieren - Installationsmedium auswählen"
-
-#: skin_default_skin.xml.h:669
-msgid "TPK media (media)"
-msgstr "Installieren (Lokal)"
-
-#: skin_default_skin.xml.h:670
-msgid "TPK remove"
-msgstr "Entfernen"
-
-#: skin_default_skin.xml.h:671
-msgid "TPK tmp (tmp)"
-msgstr "Installieren (tmp)"
-
-#: skin_default_skin.xml.h:672
-msgid "TPK upgrade (online)"
-msgstr "Aktualisieren (Online)"
-
-#: skin_default_skin.xml.h:673
-msgid "Transmission"
-msgstr "Übertragung"
-
-#: skin_default_skin.xml.h:674
-msgid "Transmission:"
-msgstr "Übertragung:"
-
-#: skin_default_skin.xml.h:675
-msgid "TRANSPONDEREDIT"
-msgstr "Transponder auswählen"
-
-#: skin_default_skin.xml.h:676
-msgid "TSID:"
-msgstr ""
-
-#: skin_default_skin.xml.h:679
-msgid "Tuner:"
-msgstr ""
-
-#: skin_default_skin.xml.h:680
-msgid "Tunerconfig"
-msgstr "Tuner"
-
-#: skin_default_skin.xml.h:681
-msgid "Tuner Configuration"
-msgstr "Tuner Konfiguration"
-
-#: skin_default_skin.xml.h:682
-msgid "Tuner List"
-msgstr "Verfügbare Tuner"
-
-#: skin_default_skin.xml.h:683
-msgid "Tuner Reception"
-msgstr "Empfang"
-
-#: skin_default_skin.xml.h:685
-msgid "TV Resolution (h):"
-msgstr "TV Auflösung (Höhe):"
-
-#: skin_default_skin.xml.h:686
-msgid "TV Resolution (w):"
-msgstr "TV Auflösung (Breite):"
-
-#: skin_default_skin.xml.h:687
-msgid "Two step mute"
-msgstr "Zwei Stufen Stummschaltung"
-
-#: skin_default_skin.xml.h:688
-msgid "TXT PID:"
-msgstr "TXT PID:"
-
-#: skin_default_skin.xml.h:691
-msgid "Type:"
-msgstr "Typ:"
-
-#: skin_default_skin.xml.h:692
-msgid "Type of Scan"
-msgstr "Art des Suchlaufs"
-
-#: skin_default_skin.xml.h:693
-msgid "u"
-msgstr ""
-
-#: skin_default_skin.xml.h:694
-msgid "U"
-msgstr ""
-
-#: skin_default_skin.xml.h:695
-msgid "ue"
-msgstr "ü"
-
-#: skin_default_skin.xml.h:696
-msgid "UE"
-msgstr "Ü"
-
-#: skin_default_skin.xml.h:697
-msgid "UNC:"
-msgstr ""
-
-#: skin_default_skin.xml.h:698
-msgid "Uncommitted Diseqc command"
-msgstr "Ungebundener DiSEqC Befehl"
-
-#: skin_default_skin.xml.h:699
-msgid "Unicable Configuration"
-msgstr "Unicable Einstellungen"
-
-#: skin_default_skin.xml.h:701
-msgid "UNLOAD"
-msgstr "Deaktivieren"
-
-#: skin_default_skin.xml.h:702
-msgid "update"
-msgstr "Aktualisieren"
-
-#: skin_default_skin.xml.h:703
-msgid "Update entrys on scan"
-msgstr "Aktualisiere vorhandene Einträge"
-
-#: skin_default_skin.xml.h:704
-msgid "USB"
-msgstr ""
-
-#: skin_default_skin.xml.h:706
-msgid "Usbupdate (online)"
-msgstr "USB-Aktualisierung (Online)"
-
-#: skin_default_skin.xml.h:707
-msgid "Usbupdate (tmp)"
-msgstr "Softwareaktualisierung (USB)"
-
-#: skin_default_skin.xml.h:709
-msgid "Use EPG Endtime"
-msgstr "Zum Sendungsende"
-
-#: skin_default_skin.xml.h:710
-msgid "Use numeric keys"
-msgstr "Nummerntasten zur Eingabe nutzen"
-
-#: skin_default_skin.xml.h:712
-msgid "v"
-msgstr ""
-
-#: skin_default_skin.xml.h:713
-msgid "V"
-msgstr ""
-
-#: skin_default_skin.xml.h:714
-msgid "VFDisplay"
-msgstr ""
-
-#: skin_default_skin.xml.h:715 tmc.h:399
-msgid "Video"
-msgstr "Bild"
-
-#: skin_default_skin.xml.h:716
-msgid "VideoMode Aspect Settings"
-msgstr "Bild Seitenverhältnis Einstellungen"
-
-#: skin_default_skin.xml.h:717
-msgid "VideoMode Resolution Settings"
-msgstr "Auflösung"
-
-#: skin_default_skin.xml.h:718
-msgid "VideoMode Settings"
-msgstr "Einstellungen"
-
-#: skin_default_skin.xml.h:719
-msgid "Video PID:"
-msgstr ""
-
-#: skin_default_skin.xml.h:721
-msgid "Vietnamese"
-msgstr "Viet"
-
-#: skin_default_skin.xml.h:723
-msgid "Vol off"
-msgstr "Lautstärke aus"
-
-#: skin_default_skin.xml.h:724
-msgid "Voltage Mode"
-msgstr "Spannungsmodus"
-
-#: skin_default_skin.xml.h:726
-msgid "Votes"
-msgstr "Punkte"
-
-#: skin_default_skin.xml.h:727
-msgid "w"
-msgstr ""
-
-#: skin_default_skin.xml.h:728
-msgid "W"
-msgstr ""
-
-#: skin_default_skin.xml.h:729
-msgid "Wait for cam ready"
-msgstr "Wartezeit für CI-Module"
-
-#: skin_default_skin.xml.h:731
-msgid "WLAN Settings"
-msgstr "WLAN"
-
-#: skin_default_skin.xml.h:732
-msgid "Writer"
-msgstr "Autor"
-
-#: skin_default_skin.xml.h:733
-msgid "x"
-msgstr ""
-
-#: skin_default_skin.xml.h:734
-msgid "X"
-msgstr ""
-
-#: skin_default_skin.xml.h:735
-msgid "y"
-msgstr ""
-
-#: skin_default_skin.xml.h:736
-msgid "Y"
-msgstr ""
-
-#: skin_default_skin.xml.h:737
-msgid "Year"
-msgstr "Jahr"
-
-#: skin_default_skin.xml.h:738
-msgid "z"
-msgstr ""
-
-#: skin_default_skin.xml.h:739
-msgid "Z"
-msgstr ""
-
 #: skinselector.h:218
 msgid ""
 "No skinconfig found in skin.\n"
@@ -8135,6 +5558,14 @@ msgstr "FEHLER: Softcam wurde nicht gefunden"
 #: softcam.h:289
 msgid "Softcam selection:"
 msgstr "Softcam auswählen:"
+
+#: softcam.h:290
+msgid "Deactivate"
+msgstr "Stoppen"
+
+#: softcam.h:292
+msgid "Refresh"
+msgstr "Aktualisieren"
 
 #: softcam.h:293
 msgid "Activate"
@@ -8228,6 +5659,10 @@ msgstr "Änderung in %: "
 msgid "Trade time: "
 msgstr "Zeit des Handelns: "
 
+#: stock.h:270
+msgid "Name"
+msgstr ""
+
 #: stopifnotused.c:31
 msgid ""
 "You have executed a defined period of no function.\n"
@@ -8271,6 +5706,10 @@ msgid "No Live Stream running"
 msgstr "Es wird kein Stream wiedergegeben"
 
 #: stream.h:36
+msgid "Streaming"
+msgstr ""
+
+#: stream.h:36
 msgid "Choose your Streaming link from the following list"
 msgstr "Liste aktuell genutzter Streams, OK zum Stoppen"
 
@@ -8308,6 +5747,10 @@ msgstr ""
 "\n"
 "-Log- (Gelb):\n"
 "Überprüfung der Sicherung mittels Logdatei"
+
+#: system_backup_restore.h:18 system_backup_restore.h:75
+msgid "Backup / Restore Settings"
+msgstr "Einstellungen sichern/wiederherstellen"
 
 #: system_backup_restore.h:31
 msgid "Restore Settings"
@@ -8403,9 +5846,25 @@ msgstr ""
 msgid "BACKUP LOG"
 msgstr "Backup Log"
 
+#: system_infos.h:17
+msgid "System Status"
+msgstr ""
+
 #: system_infos.h:49
 msgid "Free Space"
 msgstr "Freier Speicher"
+
+#: system_infos.h:64
+msgid "Kernel"
+msgstr ""
+
+#: system_infos.h:74
+msgid "Mounts"
+msgstr "Geräteanbindungen"
+
+#: system_infos.h:103
+msgid "Ram"
+msgstr "Arbeitsspeicher"
 
 #: system_infos_sysinfo.h:16
 msgid "CPU info"
@@ -8423,6 +5882,10 @@ msgstr "Flash Aufteilung Informationen"
 msgid "Module info"
 msgstr "Modul Informationen"
 
+#: system_infos_sysinfo.h:56
+msgid "Devices"
+msgstr "Geräte"
+
 #: system_infos_sysinfo.h:70
 msgid "Swap info"
 msgstr "SWAP Informationen"
@@ -8438,6 +5901,10 @@ msgstr "Prozess Informationen"
 #: system_infos_sysinfo.h:128
 msgid "USB Info"
 msgstr "USB Informationen"
+
+#: system_update.h:88 system_update.h:210
+msgid "stable"
+msgstr "Offizieller Feed"
 
 #: system_update.h:90 system_update.h:216
 msgid "unstable"
@@ -8819,6 +6286,10 @@ msgstr "Atemio Tunerkonfiguration für Satellit"
 msgid "Atemio WLAN configuration"
 msgstr "Atemio WLAN Konfiguration"
 
+#: tithek_mainmenu.h:15
+msgid "A-Z"
+msgstr ""
+
 #: tithek_mainmenu.h:16
 msgid "Category"
 msgstr "Kategorie"
@@ -9003,9 +6474,17 @@ msgstr ""
 msgid "idle"
 msgstr "wartend"
 
+#: tmc.h:399
+msgid "Video"
+msgstr "Bild"
+
 #: tmc.h:408
 msgid "Audio"
 msgstr "Musik"
+
+#: tmc.h:417
+msgid "Picture"
+msgstr "Bild"
 
 #: tmc.h:540
 msgid "video"
@@ -9128,6 +6607,10 @@ msgstr ""
 #: tpchoice.h:21
 msgid "Transponderlist"
 msgstr "Transponderliste"
+
+#: tpchoice.h:52
+msgid "ID"
+msgstr ""
 
 #: tpchoice.h:56
 msgid "FREQU"
@@ -9951,6 +7434,10 @@ msgstr "Multimedia Player"
 msgid "player "
 msgstr "Multimedia Player"
 
+#: tpk_section.h:15
+msgid "screensaver"
+msgstr "Bildschirmschoner"
+
 #: tpk_section.h:16
 msgid "settings"
 msgstr "Senderlisten"
@@ -10218,6 +7705,10 @@ msgstr ""
 #: tpk_showname.h:72
 msgid "Monoglyceride DemiBold"
 msgstr ""
+
+#: tpk_showname.h:73
+msgid "Networkbrowser"
+msgstr "Netzwerk Browser"
 
 #: tpk_showname.h:75
 msgid "Newcs"
@@ -10796,6 +8287,10 @@ msgstr "DVB-S"
 msgid "DVBS2"
 msgstr "DVB-S2"
 
+#: tsSchnitt.c:108
+msgid "Information"
+msgstr ""
+
 #: tsSchnitt.c:123
 msgid "INFO"
 msgstr ""
@@ -11026,6 +8521,10 @@ msgstr "Auflösung"
 msgid "Aspect Settings"
 msgstr "Seitenverhältnis"
 
+#: videomode.h:27 videomode.h:89
+msgid "3D Mode"
+msgstr "3D Modus"
+
 #: videomode.h:32 videomode.h:34
 msgid "Videomode"
 msgstr "Video Modus"
@@ -11073,3 +8572,1461 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
+
+#~ msgid "Help"
+#~ msgstr "Hilfe"
+
+#~ msgid "3D-Mode Settings"
+#~ msgstr "3D Einstellungen"
+
+#~ msgid "About"
+#~ msgstr "Über Titan"
+
+#~ msgid "AC3 default"
+#~ msgstr "Dolby Digital (AC3) standardmäßig"
+
+#~ msgid "AC3 Mode"
+#~ msgstr "Dolby Digital (AC3) Modus"
+
+#~ msgid "Activate (autostart)"
+#~ msgstr "Aktivieren (Autostart)"
+
+#~ msgid "Actors"
+#~ msgstr "Darsteller"
+
+#~ msgid "Adapter Settings"
+#~ msgstr "Netzwerkkarte"
+
+#~ msgid "ADD ALL"
+#~ msgstr "Alle Sender hinzufügen"
+
+#~ msgid "ADD BOUQUET"
+#~ msgstr "Favoriten hinzufügen"
+
+#~ msgid "ADD ONE"
+#~ msgstr "Markierte Sender speichern"
+
+#~ msgid "add service"
+#~ msgstr "Eintrag hinzufügen"
+
+#~ msgid "Adjust"
+#~ msgstr "Erweitert"
+
+#~ msgid "ae"
+#~ msgstr "ä"
+
+#~ msgid "AE"
+#~ msgstr "Ä"
+
+#~ msgid "After EPG Scan"
+#~ msgstr "Nach EPG Aktualisierung"
+
+#~ msgid ""
+#~ "After the manual search, you have to if they want to save all the sender "
+#~ "to save the search with the green button. To add a station manually have "
+#~ "to select the sender in the right box and then save it with the red "
+#~ "button that station. If you do not do this and go to exit out the search "
+#~ "not saved."
+#~ msgstr ""
+#~ "Nach der manuellen Suche müssen Sie mit -Grün- die gefundenen Kanäle "
+#~ "abspeichern. Um manuell einen Kanal hinzuzufügen, muss man den Kanal im "
+#~ "rechten Feld markieren und dann mit -Rot- abspeichern. Exit speichert das "
+#~ "Suchergebnis nicht."
+
+#~ msgid "After Timeshift"
+#~ msgstr "Verhalten nach Timeshift"
+
+#~ msgid "Age Protect"
+#~ msgstr "Altersschutz ab"
+
+#~ msgid "Aktion after"
+#~ msgstr "Nach der Aufnahme"
+
+#~ msgid "ALL"
+#~ msgstr "Alle"
+
+#~ msgid "Allowed Zapping via Streamlink"
+#~ msgstr "Erlaube Umschalten durch Live Stream"
+
+#~ msgid "Ask on channel switch"
+#~ msgstr "Nachfragen bei Senderwechsel"
+
+#~ msgid "Aspect Ratio:"
+#~ msgstr "Seitenverhältnis:"
+
+#~ msgid "Atemio (hotline)"
+#~ msgstr "Atemio Hotline"
+
+#~ msgid "Audio delay"
+#~ msgstr "Audio Verzögerung"
+
+#~ msgid "Audio Source"
+#~ msgstr "Audio Quelle"
+
+#~ msgid "Audio/Subt."
+#~ msgstr "Ton/Untertitel"
+
+#~ msgid "Audio Tracks"
+#~ msgstr "Tonspur wählen"
+
+#~ msgid "Autocheck cam can decrypt"
+#~ msgstr "Automatisch überprüfen, ob Ihr CI-Modul entschlüsseln kann"
+
+#~ msgid "Automatic Search"
+#~ msgstr "Automatische Sendersuche"
+
+#~ msgid "Automatic start last subtitle"
+#~ msgstr "Automatischer Untertitel Start"
+
+#~ msgid "Auto resolution"
+#~ msgstr "Automatische Auflösung"
+
+#~ msgid "Autostart - Audio / Video / Sat"
+#~ msgstr "Audio/Video/Sat"
+
+#~ msgid "Autostart - Cam / Emu"
+#~ msgstr "Softcam"
+
+#~ msgid "Autostart - Child safety"
+#~ msgstr "Jugendschutz"
+
+#~ msgid "Autostart Default"
+#~ msgstr "Allgemein"
+
+#~ msgid "Autostart - Network"
+#~ msgstr "Netzwerk"
+
+#~ msgid "Autostart Settings"
+#~ msgstr "Autostart"
+
+#~ msgid "Autostart - Usb Device"
+#~ msgstr "USB-Gerät automatisch starten"
+
+#~ msgid "A/V Settings"
+#~ msgstr "Audio/Video"
+
+#~ msgid "Backup"
+#~ msgstr "Sichern"
+
+#~ msgid "Bandwidth"
+#~ msgstr "Bandbreite"
+
+#~ msgid "Bandwidth:"
+#~ msgstr "Bandbreite:"
+
+#~ msgid ""
+#~ "Before you can see Signal/SNR/Ber you must zap to a channel of the "
+#~ "satellite you are searching."
+#~ msgstr ""
+#~ "Zur Anzeige von Signal/SNR/BER müssen Sie auf einen Kanal des Satelliten "
+#~ "schalten, den Sie suchen."
+
+#~ msgid "Begin"
+#~ msgstr "Anfang"
+
+#~ msgid "Behavior at recording"
+#~ msgstr "Anzeige während einer Aufnahme"
+
+#~ msgid "BER:"
+#~ msgstr "BER:"
+
+#~ msgid "Blindscan Adjust"
+#~ msgstr "Blindscan"
+
+#~ msgid "Blindscan Settings"
+#~ msgstr "Blindscan"
+
+#~ msgid "Blue Button"
+#~ msgstr "Blaue Taste"
+
+#~ msgid "Bouquet List"
+#~ msgstr "Favoriten Liste"
+
+#~ msgid "Bouquet Type"
+#~ msgstr "Favoriten Einträge"
+
+#~ msgid "Brightness"
+#~ msgstr "Helligkeit"
+
+#~ msgid "CAID Lock"
+#~ msgstr "CAID Sperre"
+
+#~ msgid "cancel"
+#~ msgstr "Abbrechen"
+
+#~ msgid "Change Channelname"
+#~ msgstr "Sendernamen aktualisieren"
+
+#~ msgid "Change Feed"
+#~ msgstr "Feedadresse hinzufügen"
+
+#~ msgid "Channel Allocation"
+#~ msgstr "Sender Zuordnung"
+
+#~ msgid "Channel Edit"
+#~ msgstr "Senderliste bearbeiten"
+
+#~ msgid "Channel History"
+#~ msgstr "Sender Verlauf"
+
+#~ msgid "Channel Search"
+#~ msgstr "Sendersuche"
+
+#~ msgid "Channel Service"
+#~ msgstr "Sendersuche"
+
+#~ msgid "Ci-Modul internal Menu"
+#~ msgstr "CI-Modul internes Menü"
+
+#~ msgid "Clear"
+#~ msgstr "entfernen"
+
+#~ msgid "Clear before scan"
+#~ msgstr "Vor der Suche löschen"
+
+#~ msgid "CLEAR INPUT"
+#~ msgstr "Eingabefeld löschen"
+
+#~ msgid "Code1"
+#~ msgstr "Schlüssel 1:"
+
+#~ msgid "Code2"
+#~ msgstr "Schlüssel 2: "
+
+#~ msgid "Color Format"
+#~ msgstr "Farbformat"
+
+#~ msgid "Color Format Scart / Composite"
+#~ msgstr "Farbformat für SCART/Komponenten"
+
+#~ msgid "Common Interface"
+#~ msgstr "CI-Module"
+
+#~ msgid "Configure"
+#~ msgstr "Datenträger konfigurieren"
+
+#~ msgid "Contrast"
+#~ msgstr "Kontrast"
+
+#~ msgid "Copy / Move"
+#~ msgstr "Kopieren/Verschieben"
+
+#~ msgid "copy service"
+#~ msgstr "zu Favoriten kopieren"
+
+#~ msgid "Create Path"
+#~ msgstr "Verzeichnis anlegen"
+
+#~ msgid "Create Record Picture"
+#~ msgstr "Erstelle Aufnahme Vorschaubild"
+
+#~ msgid "create System Backup"
+#~ msgstr "System Sicherung erstellen"
+
+#~ msgid "Create Thumb Picture"
+#~ msgstr "Vorschau Bilder erstellen"
+
+#~ msgid "Day"
+#~ msgstr "Tag"
+
+#~ msgid "Debug Modus"
+#~ msgstr "Fehlerbeseitigung"
+
+#~ msgid "DEFAULT"
+#~ msgstr "Voreinstellung"
+
+#~ msgid "Default Autostart"
+#~ msgstr "Allgemein"
+
+#~ msgid "Del EPG before scan"
+#~ msgstr "Lösche EPG vor der Suche"
+
+#~ msgid "Delete EPG after read"
+#~ msgstr "Lösche EPG Datei nach dem Einlesen"
+
+#~ msgid "del startchannel"
+#~ msgstr "Startsender entfernen"
+
+#~ msgid "DESC"
+#~ msgstr "Beschreibung"
+
+#~ msgid "Device:"
+#~ msgstr "Gerät:"
+
+#~ msgid "Director"
+#~ msgstr "Regisseur"
+
+#~ msgid "Diseqc Command Order"
+#~ msgstr "DiSEqC-Befehlsreihenfolge"
+
+#~ msgid "DiSEqC Mode"
+#~ msgstr "DiSEqC Modus"
+
+#~ msgid "Diseqc repeats"
+#~ msgstr "DiSEqC Wiederholungen"
+
+#~ msgid "diseqcscreen"
+#~ msgstr "DiSEqC"
+
+#~ msgid "Diseqc Settings"
+#~ msgstr "DiSEqC"
+
+#~ msgid "dnsserver 1"
+#~ msgstr "DNS-Server 1"
+
+#~ msgid "dnsserver 2"
+#~ msgstr "DNS-Server 2"
+
+#~ msgid "Dutch"
+#~ msgstr "Nederlands"
+
+#~ msgid "DYNDNS Settings"
+#~ msgstr "DYNDNS"
+
+#~ msgid "EDIT LNB / UNICABLE"
+#~ msgstr "LNB/Unicable konfigurieren"
+
+#~ msgid "EDIT MOTOR"
+#~ msgstr "Motor bearbeiten"
+
+#~ msgid "EDIT TUNER"
+#~ msgstr "Tuner bearbeiten"
+
+#~ msgid "End"
+#~ msgstr "Ende"
+
+#~ msgid "Engine Systems"
+#~ msgstr "Motorisierte Anlage"
+
+#~ msgid "EPG button on EPG Screen"
+#~ msgstr "EPG Taste im EPG"
+
+#~ msgid "Epgfreespace (KB)"
+#~ msgstr "Frei zu verbleibender Speicher (KB)"
+
+#~ msgid "Epg List Mode"
+#~ msgstr "Hintergrundsuche"
+
+#~ msgid "EPG Path"
+#~ msgstr "Speicherpfad"
+
+#~ msgid "Epg Refresh Time"
+#~ msgstr "Aktualisierungszeit"
+
+#~ msgid "EPG Reset"
+#~ msgstr "EPG löschen"
+
+#~ msgid "EPG Save Mode"
+#~ msgstr "EPG Daten sichern"
+
+#~ msgid "EPG Scanlist"
+#~ msgstr "EPG Scanliste"
+
+#~ msgid "EPG Search"
+#~ msgstr "Suche"
+
+#~ msgid "EPG Settings"
+#~ msgstr "EPG"
+
+#~ msgid "EPG SHORT VIEW"
+#~ msgstr "EPG-Kurzübersicht"
+
+#~ msgid "Extensions"
+#~ msgstr "Erweiterungen"
+
+#~ msgid "Ext. Modul detect (needs reboot)"
+#~ msgstr "Erw. Modulerkennung (Neustart erforderlich)"
+
+#~ msgid "Fav"
+#~ msgstr "Favoriten"
+
+#~ msgid "Filesystem Check"
+#~ msgstr "Dateisystem prüfen"
+
+#~ msgid "Fine move"
+#~ msgstr "Rotor langsam bewegen"
+
+#~ msgid "Fix Shutdown Time"
+#~ msgstr "Feste Abschaltzeit"
+
+#~ msgid ""
+#~ "Flash: Flash range is deleted after update, mnt: flash range to "
+#~ "permanently update available, swap: USB medium permanently"
+#~ msgstr ""
+#~ "MNT Installation (flash): wird bei Update nicht gelöscht\n"
+#~ "FLASH Installation (flash): !wird bei Update gelöscht!\n"
+#~ "SWAP Installation (USB/HDD): wird bei Update nicht gelöscht"
+
+#~ msgid "Flashupdate (online)"
+#~ msgstr "Softwareaktualisierung (Online)"
+
+#~ msgid "Flashupdate (tmp)"
+#~ msgstr "Softwareaktualisierung (Lokal)"
+
+#~ msgid "Fontsize adjust in pixel"
+#~ msgstr "Schriftgröße verändern in Pixel"
+
+#~ msgid "Format HDD"
+#~ msgstr "Datenträger formatieren"
+
+#~ msgid "free space"
+#~ msgstr "Freier Speicherplatz"
+
+#~ msgid "French"
+#~ msgstr "Français"
+
+#~ msgid "Frequency"
+#~ msgstr "Frequenz"
+
+#~ msgid "Frequency:"
+#~ msgstr "Frequenz:"
+
+#~ msgid "gateway"
+#~ msgstr "Gateway"
+
+#~ msgid "German"
+#~ msgstr "Deutsch"
+
+#~ msgid "Go to startpos"
+#~ msgstr "Gehe zu Startposition"
+
+#~ msgid "Graph. EPG"
+#~ msgstr "Grafisches-EPG"
+
+#~ msgid "Graphic EPG"
+#~ msgstr "Grafisches-EPG"
+
+#~ msgid "Graphic EPG Picon"
+#~ msgstr "Grafisches EPG Vorschaubilder"
+
+#~ msgid "Graphic EPG Zoom"
+#~ msgstr "Vergrößerungsfaktor des grafischen EPG"
+
+#~ msgid "Greek"
+#~ msgstr "Ελληνικά"
+
+#~ msgid "Guardinterval"
+#~ msgstr "Schutzintervall"
+
+#~ msgid "Guardinterval:"
+#~ msgstr "Schutzintervall:"
+
+#~ msgid "GUI Restart"
+#~ msgstr "Titan Neustart"
+
+#~ msgid "Here they can do for your chosen tuner to lnb settings."
+#~ msgstr ""
+#~ "Hier können Sie für Ihren ausgewählten Tuner die LNB-Einstellungen\n"
+#~ "vornehmen."
+
+#~ msgid "Here to select your remote Model"
+#~ msgstr "Hier können Sie Ihr Fernbedienungsmodell auswählen"
+
+#~ msgid "Here you can assign channels for their ci modules."
+#~ msgstr ""
+#~ "Sender -> Modul Zuordnung\n"
+#~ "OK zum Verlassen"
+
+#~ msgid "Here you can backup and restore your settings."
+#~ msgstr "Hier können Sie Ihre Einstellungen sichern und wiederherstellen"
+
+#~ msgid "Here you can check the reception of the current station."
+#~ msgstr ""
+#~ "Hier können Sie die Signalqualität des aktuellen Senders überprüfen"
+
+#~ msgid ""
+#~ "Here you can choose to configure your tuner. For your channel search, you "
+#~ "must edit their tuner and adjust depending on the connection. For engine "
+#~ "systems require an additional engine settings making."
+#~ msgstr ""
+#~ "Hier können Sie Ihren Tuner für die Konfiguration auswählen.\n"
+#~ "Für den Sendersuchlauf müssen Sie den/die Tuner konfigurieren. Für "
+#~ "motorisierte Anlagen bitte zusätzlich die Motor Ansteuerung "
+#~ "konfigurieren."
+
+#~ msgid "Here you can configure access to your DynDNS."
+#~ msgstr ""
+#~ "DynDNS Dienste Konfiguration\n"
+#~ "Folgende Dienste werden unterstützt:\n"
+#~ "dyndns.org, freedns.afraid.org, zoneedit.com, no-ip.com"
+
+#~ msgid "Here you can configure Ci-Modules."
+#~ msgstr "Hier können Sie Ihre CI-Module konfigurieren"
+
+#~ msgid "Here you can configure the smartcard readers."
+#~ msgstr ""
+#~ "Hier können Sie Ihre Smartcards zurücksetzen. Sollten keine Karten "
+#~ "angezeigt werden, dann ist ein Softcam mit Zugriff auf die Kartenleser "
+#~ "aktiv."
+
+#~ msgid "Here you can configure your web server."
+#~ msgstr ""
+#~ "Hier können Sie das Webinterface und den RGUI Service konfigurieren"
+
+#~ msgid "Here you can create a new record timer."
+#~ msgstr "Hier können sie einen neuen Timer anlegen"
+
+#~ msgid "Here you can do a blind scan, this process takes a long time."
+#~ msgstr ""
+#~ "Hier können Sie einen Blindscan durchführen, dieser Vorgang kann bis zu "
+#~ "einer Stunde dauern."
+
+#~ msgid "Here you can edit the following channels from the EPG."
+#~ msgstr ""
+#~ "Hier können Sie Sender und Favoriten festlegen, die im EPG Scan "
+#~ "berücksichtigt werden sollen."
+
+#~ msgid "Here you can install from our current online offering plug-ins."
+#~ msgstr ""
+#~ "Hier können Sie von unserem aktuellen Online-Angebot Erweiterungen "
+#~ "installieren."
+
+#~ msgid ""
+#~ "Here you can in your EPG entries for specific search. Use to start a "
+#~ "color button to search."
+#~ msgstr ""
+#~ "Hier können Sie den EPG nach Genres oder Schlüsselwörten\n"
+#~ "durchsuchen."
+
+#~ msgid "Here you can make for your selected network interface settings."
+#~ msgstr ""
+#~ "Hier können Sie für Ihre ausgewählte Netzwerkschnittstelle "
+#~ "Einstellungen vornehmen"
+
+#~ msgid ""
+#~ "Here you can make for your wireless network settings. 1. Use Search "
+#~ "button and select Your SSID (apoint / router) and Press ok 2. Make "
+#~ "settings Type / Key confirm with ok and Note the following instructions "
+#~ "3. Disable Lan Yes, Activate Wlan Yes and use DHCP for easy setup."
+#~ msgstr ""
+#~ "Hier können Sie Ihre WLAN Einstellungen vornehmen.\n"
+#~ "1. Suche starten, die eigene SSID (AP/Router) mit ok übernehmen.\n"
+#~ "2. Schlüssel und Typ anpassen und mit ok bestätigen (speichern).\n"
+#~ "3. Deaktiviere LAN ja, Aktiviere Wlan und DHCP für einfache Einrichtung."
+
+#~ msgid "Here you can make your adjust settings."
+#~ msgstr "Hier können Sie erweiterte System Einstellungen vornehmen"
+
+#~ msgid "Here you can make your audio/video autostart settings."
+#~ msgstr "Hier können Sie den Audio/Video Autostart konfigurieren"
+
+#~ msgid "Here you can make your cam/emu autostart settings."
+#~ msgstr "Softcam und USB Cardreader Autostart Optionen"
+
+#~ msgid "Here you can make your default autostart settings."
+#~ msgstr "Hier können Sie allgemeine Autostart Optionen konfigurieren"
+
+#~ msgid "Here you can make your epg settings."
+#~ msgstr "Hier können Sie die EPG Einstellungen konfigurieren"
+
+#~ msgid "Here you can make your mediadb settings."
+#~ msgstr "Hier können Sie die MediaDB konfigurieren"
+
+#~ msgid "Here you can make your module settings."
+#~ msgstr "Hier können Sie die Einstellungen für CI-Module anpassen"
+
+#~ msgid "Here you can make your network autostart settings."
+#~ msgstr "Hier können Sie den Netzwerk Autostart konfigurieren"
+
+#~ msgid "Here you can make your Overclocking settings."
+#~ msgstr "Hier können Sie die CPU Übertaktung konfigurieren"
+
+#~ msgid "Here you can make your picture and sound settings."
+#~ msgstr ""
+#~ "Bild und Ton Konfiguration:\n"
+#~ "Hinweis: Die neue Auflösung muss bestätigt werden. Bei falscher "
+#~ "Auflösung wird nach 5 Sekunden in den ursprünglichen Modus "
+#~ "zurückgeschaltet."
+
+#~ msgid "Here you can make your PIN security for menus settings."
+#~ msgstr ""
+#~ "Hier können Sie Ihre PIN Sicherheitseinstellungen für Menüs vornehmen"
+
+#~ msgid "Here you can make your PIN security settings."
+#~ msgstr "Hier können Sie Ihre PIN Sicherheitseinstellungen vornehmen"
+
+#~ msgid "Here you can make your recording timer configuration."
+#~ msgstr ""
+#~ "Timer Editor:\n"
+#~ "Hier können Sie Timer auswählen, löschen und\n"
+#~ "bearbeiten."
+
+#~ msgid "Here you can make your recordpath settings."
+#~ msgstr "Hier können Sie die Aufnahmepfade konfigurieren"
+
+#~ msgid "Here you can make your safety child autostart settings."
+#~ msgstr "Hier können Sie dem Jugendschutz Autostart konfigurieren"
+
+#~ msgid "Here you can make your screensaver settings."
+#~ msgstr "Hier können Sie Ihre Bildschirmschoner konfigurieren"
+
+#~ msgid ""
+#~ "Here you can make your settings for your engine systems. To enter the "
+#~ "latitude and longitude using the number keys."
+#~ msgstr ""
+#~ "Hier können Sie Ihre motorisierte Sat-Anlage konfigurieren.\n"
+#~ "Zur Eingabe der Längen und Breitengrade benutzen Sie die Zifferntasten."
+
+#~ msgid "Here you can make your timeshift settings."
+#~ msgstr "Hier können Sie die Timeshift Einstellungen anpassen"
+
+#~ msgid "Here you can make your usb autostart settings."
+#~ msgstr "USB Autostart Konfiguration"
+
+#~ msgid "Here you can make your vfd settings."
+#~ msgstr "Hier können Sie das VFDisplay konfigurieren"
+
+#~ msgid "Here you can manage your Ci-Modul or Card Infos."
+#~ msgstr ""
+#~ "Menü Ihres CI-Moduls:\n"
+#~ "Einzelheiten zur Konfiguration entnehmen Sie bitte der Dokumentation des "
+#~ "Moduls."
+
+#~ msgid "Here you can select from the following list."
+#~ msgstr "Hier können Sie aus der folgenden Liste auswählen"
+
+#~ msgid "Here you can select from the following list a skin."
+#~ msgstr "Skin Auswahl:"
+
+#~ msgid ""
+#~ "Here you can select your hard disks and USB flash drives for "
+#~ "configuration."
+#~ msgstr ""
+#~ "Hier können Sie Ihre Festplatten und USB-Sticks zur Konfiguration\n"
+#~ "auswählen"
+
+#~ msgid "Here you can select your Network Interface."
+#~ msgstr "Hier können Sie Ihre Netzwerkschnittstelle auswählen"
+
+#~ msgid ""
+#~ "Here you can set for your cable tuner. Ask your cable provider and make "
+#~ "you connect an automatic search."
+#~ msgstr ""
+#~ "Hier können Sie Ihren Kabel Tuner einstellen.\n"
+#~ "\n"
+#~ "Stellen Sie Ihren Kabel Anbieter ein und führen Sie anschließend einen "
+#~ "automatischen Suchlauf durch."
+
+#~ msgid ""
+#~ "Here you can set for your Hyprid tuner. Choose the Tuner mode they want "
+#~ "to use."
+#~ msgstr ""
+#~ "Hier können Sie Ihren Hybrid Multi Tuner einstellen.\n"
+#~ "\n"
+#~ "Wählen Sie Ihre benötigte Anschlussart aus."
+
+#~ msgid ""
+#~ "Here you can set for your satellite tuner. First, make your satellite "
+#~ "selection. When using DiSEqC They also point to the port used. For "
+#~ "advanced Lnb / Unicam navigate to the field and press the Red button."
+#~ msgstr ""
+#~ "Sat Tuner Konfiguration: Wählen Sie zunächst den Satelliten aus. Bei "
+#~ "Verwendung von DiSEqC weisen Sie zusätzlich den verwendeten Port zu. "
+#~ "Für erweiterte LNB/Unicable Konfiguration navigieren Sie zur Option LNB/"
+#~ "Unicable und drücken Sie die rote Taste."
+
+#~ msgid ""
+#~ "Here you can set for your terrestrial tuner. Activate the terrestrial "
+#~ "tuner and do you connect an automatic search."
+#~ msgstr ""
+#~ "Hier können Sie den DVB-T Tuner einstellen.\n"
+#~ "\n"
+#~ "Aktivieren Sie den DVB-T Tuner und führen Sie anschließend einen "
+#~ "automatischen Suchlauf durch."
+
+#~ msgid ""
+#~ "Here you can set your Channel search options. Very important, before you "
+#~ "start looking for a channel must be set to its tuner tuner settings."
+#~ msgstr ""
+#~ "Hier können Sie den automatischen Sendersuchlauf einstellen und "
+#~ "starten.\n"
+#~ "Sehr wichtig: Vor dem Suchlauf müssen die Tuner unter System/Sendersuche/"
+#~ "Konfiguration (Kabel/Sat/Terrestrisch) konfiguriert werden."
+
+#~ msgid "Here you can set your language."
+#~ msgstr "Hier können Sie Ihre Sprache einstellen"
+
+#~ msgid "Here you can set your timezone."
+#~ msgstr "Hier können Sie Ihre Zeitzone einstellen"
+
+#~ msgid "Here you can start and manage your additional plug-ins."
+#~ msgstr "Hier können Sie Ihre zusätzlichen Plugins starten und verwalten"
+
+#~ msgid "Here you can test your network."
+#~ msgstr ""
+#~ "Netzwerk Test:\n"
+#~ "LAN Test (ping gateway) Fehler: IP Adresse oder Gateway falsch\n"
+#~ "Internet Test (ping www.google.de) Fehler: DNS oder Gateway falsch"
+
+#~ msgid "Here you can view the current channel information."
+#~ msgstr ""
+#~ "Hier können Sie technische Informationen zum aktuellen Sender abrufen"
+
+#~ msgid "Hierarchy"
+#~ msgstr "Hierarchie"
+
+#~ msgid "Hierarchy:"
+#~ msgstr "Hierarchie:"
+
+#~ msgid "HOSTNAME"
+#~ msgstr "Hostname"
+
+#~ msgid "How many days"
+#~ msgstr "Wie viele Tage EPG im Voraus speichern"
+
+#~ msgid "HTTPD Port"
+#~ msgstr "Webserver Port"
+
+#~ msgid "HTTP Settings"
+#~ msgstr "Webinterface/RGUI"
+
+#~ msgid "Inc. AC3 Audio in %"
+#~ msgstr "AC3-Angleichung durch Stereotonabsenkung in %"
+
+#~ msgid "install"
+#~ msgstr "Installieren"
+
+#~ msgid "Installed:"
+#~ msgstr "Installiert:"
+
+#~ msgid "internet"
+#~ msgstr "Internet"
+
+#~ msgid "Inversion"
+#~ msgstr "Umkehrung"
+
+#~ msgid "Inversion:"
+#~ msgstr "Umkehrung:"
+
+#~ msgid "IP for Stream"
+#~ msgstr "Stream Adresse (IP)"
+
+#~ msgid "Italian"
+#~ msgstr "Italiano"
+
+#~ msgid "Key"
+#~ msgstr "Schlüssel"
+
+#~ msgid "Keyboard"
+#~ msgstr "Tastatur"
+
+#~ msgid "lan"
+#~ msgstr "LAN"
+
+#~ msgid "Language"
+#~ msgstr "Sprache"
+
+#~ msgid "Latitude"
+#~ msgstr "Breitengrad"
+
+#~ msgid "LED - brightness running"
+#~ msgstr "LED - Helligkeit im Betrieb"
+
+#~ msgid "LED - brightness standby"
+#~ msgstr "LED - Helligkeit in Standby"
+
+#~ msgid "Limit"
+#~ msgstr "Grenzwert"
+
+#~ msgid "Listbox Select"
+#~ msgstr "Cursor Auswahl"
+
+#~ msgid "Listbox Select Color"
+#~ msgstr "Cursor Farbauswahl"
+
+#~ msgid "LNB Settings"
+#~ msgstr "LNB Einstellungen"
+
+#~ msgid "LOF / UNICABLE"
+#~ msgstr "LOF/Unicable"
+
+#~ msgid "LOG"
+#~ msgstr "Log"
+
+#~ msgid "Longitude"
+#~ msgstr "Längengrad"
+
+#~ msgid "Main Menu"
+#~ msgstr "Hauptmenü"
+
+#~ msgid "Manual Search"
+#~ msgstr "Manuelle Suche"
+
+#~ msgid "Manual Search Cable"
+#~ msgstr "Manuelle Kabelsuche"
+
+#~ msgid "Manual Search Terrestrial"
+#~ msgstr "Manuelle terrestrische Suche"
+
+#~ msgid "Maximal frequency"
+#~ msgstr "Maximale Frequenz"
+
+#~ msgid "Maximal signalrate"
+#~ msgstr "Maximale Signalrate"
+
+#~ msgid "Media Button"
+#~ msgstr "Media Taste"
+
+#~ msgid "MediaDB Path"
+#~ msgstr "Datenbank Ordner"
+
+#~ msgid "MediaDB Settings"
+#~ msgstr "MediaDB"
+
+#~ msgid "Memory"
+#~ msgstr "Speicher"
+
+#~ msgid "MENU"
+#~ msgstr "Menü"
+
+#~ msgid "Menulist"
+#~ msgstr "Menüliste"
+
+#~ msgid "Menu Protect"
+#~ msgstr "Menü schützen"
+
+#~ msgid "MENUPROTECT"
+#~ msgstr "Menüschutz"
+
+#~ msgid "Minimal frequency"
+#~ msgstr "Minimale Frequenz"
+
+#~ msgid "Minimal signalrate"
+#~ msgstr "Minimale Signalrate"
+
+#~ msgid "Minutes"
+#~ msgstr "Minuten"
+
+#~ msgid "Minutes:"
+#~ msgstr "Minuten:"
+
+#~ msgid "Modulation"
+#~ msgstr "Modulationsverfahren"
+
+#~ msgid "Module"
+#~ msgstr "Modul"
+
+#~ msgid "Module Config"
+#~ msgstr "Module"
+
+#~ msgid "Move"
+#~ msgstr "Bewegen"
+
+#~ msgid "move service"
+#~ msgstr "Eintrag verschieben"
+
+#~ msgid "Moviepath"
+#~ msgstr "Ordner für Filme"
+
+#~ msgid "MTD"
+#~ msgstr "Flash Aufteilung"
+
+#~ msgid "netmask"
+#~ msgstr "Netzmaske"
+
+#~ msgid "Network Adapter Settings"
+#~ msgstr "Netzwerk"
+
+#~ msgid "Network Adapter Test"
+#~ msgstr "Test"
+
+#~ msgid "Network Interfacelist"
+#~ msgstr "Adapter"
+
+#~ msgid "Network Restart"
+#~ msgstr "Neu starten"
+
+#~ msgid "Network Scan"
+#~ msgstr "Netzwerk durchsuchen"
+
+#~ msgid "Network Test"
+#~ msgstr "Verbindungstest"
+
+#~ msgid "Next EPG Time"
+#~ msgstr "Nächste EPG Zeit"
+
+#~ msgid "Nfs Server Settings"
+#~ msgstr "NFS Server Einstellungen"
+
+#~ msgid "Normal/Standby"
+#~ msgstr "Betrieb/Standby"
+
+#~ msgid "oe"
+#~ msgstr "ö"
+
+#~ msgid "OE"
+#~ msgstr "Ö"
+
+#~ msgid "Only default FEC"
+#~ msgstr "Nur Standard FEC Wert"
+
+#~ msgid "Only default signalrate"
+#~ msgstr "Nur Standard Symbolrate"
+
+#~ msgid "Only DVBS"
+#~ msgstr "Nur DVB-S Sender"
+
+#~ msgid "Only free scan"
+#~ msgstr "Nur unverschlüsselte Sender"
+
+#~ msgid "Orbital Position:"
+#~ msgstr "Orbital Position:"
+
+#~ msgid "OSD Bottom Overscan"
+#~ msgstr "OSD unten verkleinern"
+
+#~ msgid "OSD Left Overscan"
+#~ msgstr "OSD links verkleinern"
+
+#~ msgid "OSD Right Overscan"
+#~ msgstr "OSD rechts verkleinern"
+
+#~ msgid "OSD Top Overscan"
+#~ msgstr "OSD oben verkleinern"
+
+#~ msgid "OSD Transparent"
+#~ msgstr "OSD Transparenz"
+
+#~ msgid "Overclocking Settings"
+#~ msgstr "Übertakten"
+
+#~ msgid "Pilot"
+#~ msgstr "Pilot (für HD Empfang 'ein' auswählen)"
+
+#~ msgid "PIN:"
+#~ msgstr "PIN Schutz:"
+
+#~ msgid "Pin Code"
+#~ msgstr "PIN Schutz"
+
+#~ msgid "Pin Code Channel"
+#~ msgstr "Sender mit PIN sperren"
+
+#~ msgid "Pin Code menu"
+#~ msgstr "Menü mit PIN sperren"
+
+#~ msgid "PIN Settings"
+#~ msgstr "PIN Einstellungen"
+
+#~ msgid "PLAY"
+#~ msgstr "Wiedergeben"
+
+#~ msgid "Playbackbuffer Size"
+#~ msgstr "Wiedergabepuffer - Größe (http) Streams"
+
+#~ msgid "PlayList"
+#~ msgstr "Wiedergabeliste"
+
+#~ msgid "Please contact Atemio for activation."
+#~ msgstr ""
+#~ "Bitte wenden Sie sich an Atemio, falls Ihre Freischaltung noch nicht "
+#~ "wirksam ist.\n"
+#~ "\n"
+#~ "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
+
+#~ msgid "please wait"
+#~ msgstr "bitte warten"
+
+#~ msgid "Plugin Button"
+#~ msgstr "Plugin Taste"
+
+#~ msgid "Plugins"
+#~ msgstr "Zusatzprogramme"
+
+#~ msgid "Polarization:"
+#~ msgstr "Polarisation:"
+
+#~ msgid "Policy"
+#~ msgstr "Bildeinstellungen"
+
+#~ msgid "Polish"
+#~ msgstr "Polski"
+
+#~ msgid "Positioner Setup"
+#~ msgstr "Rotor Einstellungen"
+
+#~ msgid "Poweroff Timer"
+#~ msgstr "Ausschalttimer"
+
+#~ msgid "Power Off Timer"
+#~ msgstr "Ausschalttimer"
+
+#~ msgid "Program Info"
+#~ msgstr "Programm Information"
+
+#~ msgid "Protect Channel"
+#~ msgstr "Sender mit PIN sperren"
+
+#~ msgid "Protect Channel Freetime (min)"
+#~ msgstr "Senderschutzzeit aus (min)"
+
+#~ msgid "Protect Menu"
+#~ msgstr "Menü sperren"
+
+#~ msgid "protect service"
+#~ msgstr "Sender sperren"
+
+#~ msgid "Prov"
+#~ msgstr "Anbieter"
+
+#~ msgid "Provider:"
+#~ msgstr "Provider:"
+
+#~ msgid "Prozesslist"
+#~ msgstr "Prozessliste"
+
+#~ msgid "Quick Menu"
+#~ msgstr "Schnellmenü"
+
+#~ msgid "Rating"
+#~ msgstr "Bewertung"
+
+#~ msgid "Receiver unlock"
+#~ msgstr "Receiver freischalten"
+
+#~ msgid "Recordlist"
+#~ msgstr "Liste der Aufnahmen"
+
+#~ msgid "Record path"
+#~ msgstr "Aufnahmepfad"
+
+#~ msgid "Record Path"
+#~ msgstr "Aufnahmepfad"
+
+#~ msgid "Record Path settings"
+#~ msgstr "Aufnahme- und Medienpfade"
+
+#~ msgid "Record Timer"
+#~ msgstr "Aufnahme Timer"
+
+#~ msgid "Red Button"
+#~ msgstr "Rote Taste"
+
+#~ msgid "Released"
+#~ msgstr "Veröffentlicht"
+
+#~ msgid "RELOAD"
+#~ msgstr "Neu laden"
+
+#~ msgid "Remove emthy Bouquet"
+#~ msgstr "Lösche leeres Bouquet"
+
+#~ msgid "REMOVE ENTRY"
+#~ msgstr "Eintrag löschen"
+
+#~ msgid "remove service"
+#~ msgstr "Aus Favoriten entfernen"
+
+#~ msgid "Remove unused Channels in Bouquets"
+#~ msgstr "Lösche nicht empfangbare Sender in Bouquets"
+
+#~ msgid "rename service"
+#~ msgstr "Sender umbenennen"
+
+#~ msgid "Repeate"
+#~ msgstr "Wiederholen"
+
+#~ msgid "Repeate type"
+#~ msgstr "Wiederholungsmodus"
+
+#~ msgid "RESET"
+#~ msgstr "Zurücksetzen"
+
+#~ msgid "Resolution:"
+#~ msgstr "Auflösung:"
+
+#~ msgid "Resolution (current)"
+#~ msgstr "Aktuelle Auflösung"
+
+#~ msgid "Resolution (default)"
+#~ msgstr "Standardauflösung"
+
+#~ msgid "Restore"
+#~ msgstr "Wiederherstellen"
+
+#~ msgid "Rolloff"
+#~ msgstr "Abtastfrequenz"
+
+#~ msgid "Rolloff:"
+#~ msgstr "Abtastfrequenz:"
+
+#~ msgid "Rotor Settings"
+#~ msgstr "Rotor"
+
+#~ msgid "Runtime"
+#~ msgstr "Laufzeit"
+
+#~ msgid "Russian"
+#~ msgstr "Русский"
+
+#~ msgid "Samba Server Settings"
+#~ msgstr "Samba Server Einstellungen"
+
+#~ msgid "Sat Config"
+#~ msgstr "Satelliten"
+
+#~ msgid "SATCR Frequency"
+#~ msgstr "SatCR Frequenz"
+
+#~ msgid "SATCR Number"
+#~ msgstr "SatCR Nummer"
+
+#~ msgid "Satellite"
+#~ msgstr "Satellit"
+
+#~ msgid "Satfinder"
+#~ msgstr "Empfangsqualität"
+
+#~ msgid "Sat Finder"
+#~ msgstr "Empfangsqualität"
+
+#~ msgid "Saturation"
+#~ msgstr "Sättigung"
+
+#~ msgid "SAVETRANSPONDER"
+#~ msgstr "Transponder speichern"
+
+#~ msgid "Scan Config"
+#~ msgstr "Suchlaufeinstellungen"
+
+#~ msgid "ScanList"
+#~ msgstr "Scanliste"
+
+#~ msgid "Scan locking"
+#~ msgstr "Suche sperren"
+
+#~ msgid "SCANSTART"
+#~ msgstr "Suchlauf beginnen"
+
+#~ msgid "Screensaver Adjust"
+#~ msgstr "Bildschirmschoner"
+
+#~ msgid "screensaver background"
+#~ msgstr "Hintergrund"
+
+#~ msgid "screensaver delay"
+#~ msgstr "Verzögerung"
+
+#~ msgid "screensaver interval"
+#~ msgstr "Intervall"
+
+#~ msgid "screensaver pic"
+#~ msgstr "Bild"
+
+#~ msgid "screensaver type"
+#~ msgstr "Typ"
+
+#~ msgid "--- SD resolution"
+#~ msgstr "--- SD Auflösung"
+
+#~ msgid "Select backup:"
+#~ msgstr "Sicherung auswählen:"
+
+#~ msgid "Select Path"
+#~ msgstr "Pfadauswahl"
+
+#~ msgid "Select Unicable Manufacturer"
+#~ msgstr "Unicable Hersteller auswählen"
+
+#~ msgid "SEND"
+#~ msgstr "Senden"
+
+#~ msgid "Send all CAID to modules"
+#~ msgstr "Übermittle alle CAIDs an das Modul"
+
+#~ msgid "Serial Input"
+#~ msgstr "Serieller Anschluss"
+
+#~ msgid "Service"
+#~ msgstr "Sender"
+
+#~ msgid "Serviceinfo"
+#~ msgstr "Senderinfo"
+
+#~ msgid "set startchannel"
+#~ msgstr "Startsender festlegen"
+
+#~ msgid "Settings backup/restore"
+#~ msgstr "Einstellungen sichern/wiederherstellen"
+
+#~ msgid "Show EPG screen (EPG button)"
+#~ msgstr "Zeige EPG (EPG Taste)"
+
+#~ msgid "Show HDD freesize"
+#~ msgstr "Anzeige des freien Festplattenspeichers"
+
+#~ msgid "Show in Standby"
+#~ msgstr "Im Standby anzeigen"
+
+#~ msgid "Show in VFD"
+#~ msgstr "Im Display anzeigen"
+
+#~ msgid "Show Modules"
+#~ msgstr "Zeige Modul Informationen"
+
+#~ msgid "Skin"
+#~ msgstr "Skinauswahl"
+
+#~ msgid "Skin Adjust"
+#~ msgstr "Skin Einstellungen"
+
+#~ msgid "Skin Select"
+#~ msgstr "Skinauswahl"
+
+#~ msgid "Skip privat CA descriptor"
+#~ msgstr "Überspringe Private CA Descriptor"
+
+#~ msgid "SmartCard Reader"
+#~ msgstr "Kartenleser"
+
+#~ msgid "Softcam Selection"
+#~ msgstr "Softcam Auswahl"
+
+#~ msgid "sort service"
+#~ msgstr "Favoriten sortieren"
+
+#~ msgid "Sound amplifier (external Player)"
+#~ msgstr "Sound Verstärkung (externer Player)"
+
+#~ msgid "Sound amplifier (TV-Modus / internal Player)"
+#~ msgstr "Sound Verstärkung (TV-Modus/interner Player)"
+
+#~ msgid "Space"
+#~ msgstr "Leerzeichen"
+
+#~ msgid "Standby Brightness"
+#~ msgstr "Helligkeit im Standby"
+
+#~ msgid "StandBy Mode"
+#~ msgstr "Standby Modus"
+
+#~ msgid "Standby / Poweroff"
+#~ msgstr "Neustart/Ausschalten"
+
+#~ msgid "Start HTTPD"
+#~ msgstr "Autostart Webinterface"
+
+#~ msgid "Start RGUID"
+#~ msgstr "Autostart RGUID"
+
+#~ msgid "Step frequency"
+#~ msgstr "Frequenzratenschritt"
+
+#~ msgid "Step signalrate"
+#~ msgstr "Signalratenschritt"
+
+#~ msgid "(Stop)"
+#~ msgstr "(Stopp)"
+
+#~ msgid "STOP/START"
+#~ msgstr "Stopp/Start"
+
+#~ msgid "Storage position"
+#~ msgstr "gespeicherte Position"
+
+#~ msgid "Stream Path"
+#~ msgstr "Ordner für Stream"
+
+#~ msgid "Subservices"
+#~ msgstr "Unterkanäle"
+
+#~ msgid "Subtitle"
+#~ msgstr "Untertitel"
+
+#~ msgid "Symbol rate:"
+#~ msgstr "Symbolrate:"
+
+#~ msgid "Sysinfo"
+#~ msgstr "Systeminformation"
+
+#~ msgid "System Backup"
+#~ msgstr "System Sicherung"
+
+#~ msgid "System - Flashupdate (online)"
+#~ msgstr "Softwareaktualisierung (Online)"
+
+#~ msgid "System - Flashupdate (tmp)"
+#~ msgstr "Softwareaktualisierung (tmp)"
+
+#~ msgid "System Info"
+#~ msgstr "System Infos"
+
+#~ msgid "System Update"
+#~ msgstr "System Aktualisierung"
+
+#~ msgid "System - Usbupdate (online)"
+#~ msgstr "USB Systemaktualisierung (Online)"
+
+#~ msgid "System - Usbupdate (tmp)"
+#~ msgstr "USB Systemaktualisierung (tmp)"
+
+#~ msgid "sz"
+#~ msgstr "ß"
+
+#~ msgid "SZ"
+#~ msgstr "ß"
+
+#~ msgid "TEST"
+#~ msgstr "Test"
+
+#~ msgid "thereafter on this Channel:"
+#~ msgstr "Anschließend auf diesem Sender:"
+
+#~ msgid "Threshold"
+#~ msgstr "Grenzwert"
+
+#~ msgid "Timer and EPG"
+#~ msgstr "Timer und EPG"
+
+#~ msgid "Timer Record Path"
+#~ msgstr "Ordner für Timeraufnahme"
+
+#~ msgid "Timeshift Path"
+#~ msgstr "Ordner für Timeshift"
+
+#~ msgid "Timeshift Settings"
+#~ msgstr "Timeshift"
+
+#~ msgid "Timeshifttype"
+#~ msgstr "Timeshift Methode"
+
+#~ msgid "--- Time to switch"
+#~ msgstr "--- Zeit bis zum Senderwechsel"
+
+#~ msgid "Timezone"
+#~ msgstr "Zeitzone"
+
+#~ msgid "Tint"
+#~ msgstr "Temperatur"
+
+#~ msgid "TITLE"
+#~ msgstr "Titel"
+
+#~ msgid "Tone Mode"
+#~ msgstr "Tone Modus"
+
+#~ msgid "Top"
+#~ msgstr "Top (Prozesse)"
+
+#~ msgid "TPK install (online)"
+#~ msgstr "Installieren (Online)"
+
+#~ msgid "Tpk Install - select install medium"
+#~ msgstr "Installieren - Installationsmedium auswählen"
+
+#~ msgid "TPK media (media)"
+#~ msgstr "Installieren (Lokal)"
+
+#~ msgid "TPK remove"
+#~ msgstr "Entfernen"
+
+#~ msgid "TPK tmp (tmp)"
+#~ msgstr "Installieren (tmp)"
+
+#~ msgid "TPK upgrade (online)"
+#~ msgstr "Aktualisieren (Online)"
+
+#~ msgid "Transmission"
+#~ msgstr "Übertragung"
+
+#~ msgid "Transmission:"
+#~ msgstr "Übertragung:"
+
+#~ msgid "TRANSPONDEREDIT"
+#~ msgstr "Transponder auswählen"
+
+#~ msgid "Tunerconfig"
+#~ msgstr "Tuner"
+
+#~ msgid "Tuner Configuration"
+#~ msgstr "Tuner Konfiguration"
+
+#~ msgid "Tuner List"
+#~ msgstr "Verfügbare Tuner"
+
+#~ msgid "Tuner Reception"
+#~ msgstr "Empfang"
+
+#~ msgid "TV Resolution (h):"
+#~ msgstr "TV Auflösung (Höhe):"
+
+#~ msgid "TV Resolution (w):"
+#~ msgstr "TV Auflösung (Breite):"
+
+#~ msgid "Two step mute"
+#~ msgstr "Zwei Stufen Stummschaltung"
+
+#~ msgid "TXT PID:"
+#~ msgstr "TXT PID:"
+
+#~ msgid "Type:"
+#~ msgstr "Typ:"
+
+#~ msgid "Type of Scan"
+#~ msgstr "Art des Suchlaufs"
+
+#~ msgid "ue"
+#~ msgstr "ü"
+
+#~ msgid "UE"
+#~ msgstr "Ü"
+
+#~ msgid "Uncommitted Diseqc command"
+#~ msgstr "Ungebundener DiSEqC Befehl"
+
+#~ msgid "Unicable Configuration"
+#~ msgstr "Unicable Einstellungen"
+
+#~ msgid "UNLOAD"
+#~ msgstr "Deaktivieren"
+
+#~ msgid "update"
+#~ msgstr "Aktualisieren"
+
+#~ msgid "Update entrys on scan"
+#~ msgstr "Aktualisiere vorhandene Einträge"
+
+#~ msgid "Usbupdate (online)"
+#~ msgstr "USB-Aktualisierung (Online)"
+
+#~ msgid "Usbupdate (tmp)"
+#~ msgstr "Softwareaktualisierung (USB)"
+
+#~ msgid "Use EPG Endtime"
+#~ msgstr "Zum Sendungsende"
+
+#~ msgid "Use numeric keys"
+#~ msgstr "Nummerntasten zur Eingabe nutzen"
+
+#~ msgid "VideoMode Aspect Settings"
+#~ msgstr "Bild Seitenverhältnis Einstellungen"
+
+#~ msgid "VideoMode Resolution Settings"
+#~ msgstr "Auflösung"
+
+#~ msgid "VideoMode Settings"
+#~ msgstr "Einstellungen"
+
+#~ msgid "Vietnamese"
+#~ msgstr "Viet"
+
+#~ msgid "Vol off"
+#~ msgstr "Lautstärke aus"
+
+#~ msgid "Voltage Mode"
+#~ msgstr "Spannungsmodus"
+
+#~ msgid "Votes"
+#~ msgstr "Punkte"
+
+#~ msgid "Wait for cam ready"
+#~ msgstr "Wartezeit für CI-Module"
+
+#~ msgid "WLAN Settings"
+#~ msgstr "WLAN"
+
+#~ msgid "Writer"
+#~ msgstr "Autor"
+
+#~ msgid "Year"
+#~ msgstr "Jahr"
