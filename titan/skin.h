@@ -648,6 +648,12 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 			newnode->hidden = convertxmlentry(ret, NULL);
 			free(ret);
 		}
+		ret = getxmlentry(line, " usesavebg=");
+		if(ret != NULL)
+		{
+			newnode->usesavebg = atoi(ret);
+			free(ret);
+		}
 		ret = getxmlentry(line, " wrap=");
 		if(ret != NULL)
 		{
@@ -3395,7 +3401,7 @@ printf("drawnode: node->usesavebg=%d\n",node->usesavebg);
 printf("drawnode: node->name=%s\n",node->name);
 printf("drawnode: node->savebg=%s\n",node->savebg);
 
-	
+*/	
 		debug(555, "#############################################");
 		debug(555, "node->text=%s", node->text);
 		debug(555, "node->name=%s", node->name);
@@ -3405,7 +3411,7 @@ printf("drawnode: node->savebg=%s\n",node->savebg);
 		debug(555, "node->rheight=%d", node->rheight);
 		debug(555, "node->usesavebg=%d", node->usesavebg);
 		debug(555, "#############################################");
-*/
+
 	
 	if(checkbit(node->flag, 1) == 0) return;
 
