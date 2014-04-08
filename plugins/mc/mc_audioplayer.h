@@ -30,7 +30,7 @@ void screenmc_audioplayer()
 	struct skin* b3 = getscreennode(apskin, "b3");
 	struct skin* b4 = getscreennode(apskin, "b4");
 
-	apskin->bgcol = getskinconfigint("black", NULL);
+//	apskin->bgcol = getskinconfigint("black", NULL);
 
 	struct skin* title = getscreennode(apskin, "title");
 	struct skin* thumb = getscreennode(apskin, "thumb");
@@ -109,6 +109,7 @@ void screenmc_audioplayer()
 	realnametext->hidden = YES;
 	genretext->hidden = YES;
 
+	clearscreen(loadmediadb);
 	getfilelist(apskin, filelistpath, filelist, currentdirectory, filemask, tmpview, selectedfile);
 	addscreenrc(apskin, filelist);
 

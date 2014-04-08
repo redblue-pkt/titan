@@ -36,7 +36,7 @@ void screenmc_pictureplayer()
 	struct skin* b3 = getscreennode(apskin, "b3");
 	struct skin* b4 = getscreennode(apskin, "b4");
 
-	apskin->bgcol = getskinconfigint("black", NULL);
+//	apskin->bgcol = getskinconfigint("black", NULL);
 
 	// pic screen
 	struct skin* picscreen = getscreen("picscreen");
@@ -81,6 +81,7 @@ void screenmc_pictureplayer()
 
 	tmpview = view;
 	mc_changeview(view, filelist, apskin, flag);
+	clearscreen(loadmediadb);
 	getfilelist(apskin, filelistpath, filelist, currentdirectory, filemask, tmpview, selectedfile);
 	addscreenrc(apskin, filelist);
 
