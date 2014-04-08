@@ -654,6 +654,12 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 			newnode->usesavebg = atoi(ret);
 			free(ret);
 		}
+		ret = getxmlentry(line, " usepicbg=");
+		if(ret != NULL)
+		{
+			newnode->usepicbg = atoi(ret);
+			free(ret);
+		}
 		ret = getxmlentry(line, " wrap=");
 		if(ret != NULL)
 		{
@@ -3411,17 +3417,22 @@ printf("drawnode: node->savebg=%s\n",node->savebg);
 		debug(555, "node->usesavebg=%d", node->usesavebg);
 		debug(555, "#############################################");
 */
-	
+
+//	printf("text=%s bgcol=%ld bgcol2=%ld\n", node->text, node->bgcol, node->bgcol2);
+//printf("drawnode: weiter check\n");
+
 	if(checkbit(node->flag, 1) == 0) return;
+//printf("drawnode: weiter ok\n");
 
 	if((node->usesavebg == 1 || node->usesavebg == 2) && node->savebg != NULL)
 	{
 		debug(555, "--------------------------------------------");
 		debug(555, "drawnode: restore savebg");
-
+		printf("drawnode: restore savebg: %d\n",node->usesavebg);
+		
 		tmpstr = ostrcat(node->savebg, NULL, 0, 0);
 		restorescreen(node->savebg, node);
-		if(node->usesavebg == 1)
+		if(node->usesavebg == 1 || node->usepicbg == 1)
 			node->savebg = ostrcat(tmpstr, NULL, 0, 0);
 		else
 			node->savebg = NULL;
@@ -3437,10 +3448,11 @@ printf("drawnode: node->savebg=%s\n",node->savebg);
 	}
 
 //	if(node->usesavebg == 1 && node->hidden == 0 && node->savebg == NULL)
-	if((node->usesavebg == 1 || node->usesavebg == 2) && node->rposx != 0 && node->rposy != 0 && node->rheight != 0 && node->rheight != 1 && node->savebg == NULL)
+	if((node->usesavebg == 1 || node->usesavebg == 2)/* && node->rposx != 0 && node->rposy != 0 && node->rheight != 0 && node->rheight != 1*/ && node->savebg == NULL)
 	{
 		debug(555, "--------------------------------------------");
 		debug(555, "drawnode: backup savebg");
+		printf("drawnode: backup savebg\n");
 		node->savebg = savescreen(node);
 		debug(555, "node->rposx=%d", node->rposx);
 		debug(555, "node->rposy=%d", node->rposy);
@@ -4419,6 +4431,8 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 		if(flag == 0 || flag == 2 || flag == 4) clearscreenalways();
 		node->flag = setbit(node->flag, 0);
 		checknodechange(parent, node);
+		
+//printf("aaaaaaaaaaaaaaaaa\n");
 		drawnode(node, 0);
 	}
 
@@ -4464,9 +4478,42 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 
 			checknodechange(parent, child);
 			struct skin* tmp = drawnodepart(NULL, node, parent, child, 0);
+/*
+printf("bbbbbbbbbbb\n");
+printf("node->bgcol=%ld\n",node->bgcol);
+printf("node->name=%s\n",node->name);
+printf("node->pic=%s\n",node->pic);
+printf("node->picmem=%d\n",node->picmem);
+printf("child->bgcol=%ld\n",child->bgcol);
+printf("child->name=%s\n",child->name);
+printf("child->pic=%s\n",child->pic);
+printf("child->picmem=%d\n",child->picmem);
+printf("child->usesavebg=%d\n",child->usesavebg);
+
+			if(node->bgcol == -1 && child->pic != NULL)
+			{
+				debug(555, "add 1 %s->%s: %s", node->name, child->name, child->text);
+				printf("add 1 %s->%s: %s\n",node->name,child->name,child->text);
+				child->usesavebg = 1;
+			}
+			else 
+*/			
+			if(node->bgcol == -1 && node->pic != NULL && node->usesavebg != 1)
+			{
+				debug(555, "add 2 %s->%s: %s", node->name, child->name, child->text);
+//				printf("add 2 %s->%s: %s\n",node->name,child->name,child->text);
+				child->usesavebg = 2;
+			}
+			else
+				printf("skip %s->%s: %s\n",node->name,child->name,child->text);
+			
+//printf("2child->usesavebg=%d\n",child->usesavebg);
+
+
 			drawnode(child, 1);
+//printf("ccccccccccc\n");
 			drawnodepart(tmp, node, parent, child, 1);
- 
+//printf("ddddddddddd\n");
 			child->flag = clearbit(child->flag, 1);
 			child = child->drawnext;
 		}
