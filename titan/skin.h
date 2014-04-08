@@ -654,12 +654,6 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 			newnode->usesavebg = atoi(ret);
 			free(ret);
 		}
-		ret = getxmlentry(line, " usepicbg=");
-		if(ret != NULL)
-		{
-			newnode->usepicbg = atoi(ret);
-			free(ret);
-		}
 		ret = getxmlentry(line, " wrap=");
 		if(ret != NULL)
 		{
@@ -3432,7 +3426,7 @@ printf("drawnode: node->savebg=%s\n",node->savebg);
 		
 		tmpstr = ostrcat(node->savebg, NULL, 0, 0);
 		restorescreen(node->savebg, node);
-		if(node->usesavebg == 1 || node->usepicbg == 1)
+		if(node->usesavebg == 1)
 			node->savebg = ostrcat(tmpstr, NULL, 0, 0);
 		else
 			node->savebg = NULL;
