@@ -49,7 +49,7 @@ msgstr "Systeem informatie"
 #: filemanager.h:100 filemanager.h:206 filemanager.h:279 filemanager.h:289
 #: filemanager.h:319 filemanager.h:329 filenuke.h:37 filenuke.h:84
 #: filenuke.h:96 filenuke.h:108 filenuke.h:157 flashx.h:26 flashx.h:84
-#: flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270 global.h:6464
+#: flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270 global.h:6469
 #: gmediarender.h:115 harddisk.h:350 harddisk.h:355 harddisk.h:382
 #: harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641 harddisk.h:675
 #: harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733 harddisk.h:793
@@ -141,7 +141,7 @@ msgstr "Ok"
 #: filemanager.h:100 filemanager.h:206 filemanager.h:279 filemanager.h:289
 #: filemanager.h:319 filemanager.h:329 filenuke.h:37 filenuke.h:84
 #: filenuke.h:96 filenuke.h:108 filenuke.h:157 flashx.h:26 flashx.h:84
-#: flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270 global.h:6464
+#: flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270 global.h:6469
 #: gmediarender.h:115 harddisk.h:350 harddisk.h:355 harddisk.h:382
 #: harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641 harddisk.h:675
 #: harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733 harddisk.h:793
@@ -549,7 +549,7 @@ msgstr "Ja / VZAP oneindig"
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:329
 #: filenuke.h:37 filenuke.h:84 filenuke.h:96 filenuke.h:108 filenuke.h:157
 #: flashx.h:26 flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:6464 gmediarender.h:115 harddisk.h:633 harddisk.h:641
+#: global.h:6469 gmediarender.h:115 harddisk.h:633 harddisk.h:641
 #: harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733
 #: harddisk.h:793 harddisk.h:811 harddisk.h:814 hbbtv.h:362 hello.c:36
 #: httpdfunc.h:1098 hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103
@@ -1584,63 +1584,63 @@ msgstr "Map/bestand kan niet verwijderd worden!"
 msgid "Can't show this file!"
 msgstr "Bestand kan niet getoond worden!"
 
-#: global.h:6464 keyactions.h:305
+#: global.h:6469 keyactions.h:305
 msgid "ERROR cant read res"
 msgstr "Fout, resolutie kan niet worden vastgesteld."
 
-#: global.h:6689 rectimer.h:1059 skin_default_skin.xml.h:393
+#: global.h:6694 rectimer.h:1059 skin_default_skin.xml.h:393
 msgid "Monday"
 msgstr "Maandag"
 
-#: global.h:6690 rectimer.h:1060 skin_default_skin.xml.h:677
+#: global.h:6695 rectimer.h:1060 skin_default_skin.xml.h:677
 msgid "Tuesday"
 msgstr "Dinsdag"
 
-#: global.h:6691 rectimer.h:1061 skin_default_skin.xml.h:730
+#: global.h:6696 rectimer.h:1061 skin_default_skin.xml.h:730
 msgid "Wednesday"
 msgstr "Woensdag"
 
-#: global.h:6692 rectimer.h:1062 skin_default_skin.xml.h:648
+#: global.h:6697 rectimer.h:1062 skin_default_skin.xml.h:648
 msgid "Thursday"
 msgstr "Donderdag"
 
-#: global.h:6693 rectimer.h:1063 skin_default_skin.xml.h:244
+#: global.h:6698 rectimer.h:1063 skin_default_skin.xml.h:244
 msgid "Friday"
 msgstr "Vrijdag"
 
-#: global.h:6694 rectimer.h:1064 skin_default_skin.xml.h:538
+#: global.h:6699 rectimer.h:1064 skin_default_skin.xml.h:538
 msgid "Saturday"
 msgstr "Zaterdag"
 
-#: global.h:6695 rectimer.h:1065 skin_default_skin.xml.h:624
+#: global.h:6700 rectimer.h:1065 skin_default_skin.xml.h:624
 msgid "Sunday"
 msgstr "Zondag"
 
-#: global.h:6699
+#: global.h:6704
 msgid "Mon"
 msgstr ""
 
-#: global.h:6700
+#: global.h:6705
 msgid "Tue"
 msgstr ""
 
-#: global.h:6701
+#: global.h:6706
 msgid "Wed"
 msgstr ""
 
-#: global.h:6702
+#: global.h:6707
 msgid "Thu"
 msgstr ""
 
-#: global.h:6703
+#: global.h:6708
 msgid "Fri"
 msgstr ""
 
-#: global.h:6704
+#: global.h:6709
 msgid "Sat"
 msgstr "Satellieten"
 
-#: global.h:6705
+#: global.h:6710
 msgid "Sun"
 msgstr ""
 
