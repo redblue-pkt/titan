@@ -3428,7 +3428,7 @@ printf("drawnode: node->savebg=%s\n",node->savebg);
 	{
 		debug(555, "--------------------------------------------");
 		debug(555, "drawnode: restore savebg");
-		printf("drawnode: restore savebg: %d\n",node->usesavebg);
+//		printf("drawnode: restore savebg: %d\n",node->usesavebg);
 		
 		tmpstr = ostrcat(node->savebg, NULL, 0, 0);
 		restorescreen(node->savebg, node);
@@ -3452,7 +3452,7 @@ printf("drawnode: node->savebg=%s\n",node->savebg);
 	{
 		debug(555, "--------------------------------------------");
 		debug(555, "drawnode: backup savebg");
-		printf("drawnode: backup savebg\n");
+//		printf("drawnode: backup savebg: %d\n",node->usesavebg);
 		node->savebg = savescreen(node);
 		debug(555, "node->rposx=%d", node->rposx);
 		debug(555, "node->rposy=%d", node->rposy);
@@ -4505,8 +4505,10 @@ printf("child->usesavebg=%d\n",child->usesavebg);
 				child->usesavebg = 2;
 			}
 			else
-				printf("skip %s->%s: %s\n",node->name,child->name,child->text);
-			
+			{
+				debug(555, "skip %s->%s: %s", node->name, child->name, child->text);
+//				printf("skip %s->%s: %s\n",node->name,child->name,child->text);
+			}			
 //printf("2child->usesavebg=%d\n",child->usesavebg);
 
 
