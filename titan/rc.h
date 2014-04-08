@@ -281,7 +281,7 @@ int waitrcext(struct skin* owner, unsigned int timeout, int screencalc, int file
 				continue;
 			}
 			
-			printf(".\n");
+//			printf(".\n");
 			
 			debug(100, "key code=%d, type=%d, value=%d", rcdata.code, rcdata.type, rcdata.value);
 			treffer = 1;
