@@ -648,6 +648,12 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 			newnode->hidden = convertxmlentry(ret, NULL);
 			free(ret);
 		}
+		ret = getxmlentry(line, " usesavebg=");
+		if(ret != NULL)
+		{
+			newnode->usesavebg = atoi(ret);
+			free(ret);
+		}
 		ret = getxmlentry(line, " wrap=");
 		if(ret != NULL)
 		{
@@ -3371,11 +3377,89 @@ void drawnode(struct skin* node, int flag)
 {
 	long color = 0, color2 = 0;
 	int len = 0;
-	char* bglt = NULL, *bglb = NULL, *bgrt = NULL, *bgrb = NULL;
+	char* bglt = NULL, *bglb = NULL, *bgrt = NULL, *bgrb = NULL, *tmpstr = NULL;
+/*
+printf("drawnode: node->flag=%d\n",node->flag);
+printf("drawnode: node->hidden=%d\n",node->hidden);
+printf("drawnode: node->locked=%d\n",node->locked);
+printf("drawnode: node->text=%s\n",node->text);
+printf("drawnode: node->bgcol=%ld\n",node->bgcol);
+printf("drawnode: node->bgcol2=%ld\n",node->bgcol2);
+printf("drawnode: node->titlebgcol=%ld\n",node->titlebgcol);
+printf("drawnode: node->titlebgcol2=%ld\n",node->titlebgcol2);
+printf("drawnode: node->progresscol=%ld\n",node->progresscol);
+printf("drawnode: node->bordercol=%ld\n",node->bordercol);
+printf("drawnode: node->shadowcol=%ld\n",node->shadowcol);
+printf("drawnode: node->deaktivcol=%ld\n",node->deaktivcol);
+printf("drawnode: node->gradient=%d\n",node->gradient);
+printf("drawnode: node->transparent=%d\n",node->transparent);
+printf("drawnode: node->rposx=%d\n",node->rposx);
+printf("drawnode: node->rposy=%d\n",node->rposy);
+printf("drawnode: node->rwidth=%d\n",node->rwidth);
+printf("drawnode: node->rheight=%d\n",node->rheight);
+printf("drawnode: node->usesavebg=%d\n",node->usesavebg);
+printf("drawnode: node->name=%s\n",node->name);
+printf("drawnode: node->savebg=%s\n",node->savebg);
 	
-	if(checkbit(node->flag, 1) == 0) return;
-	if(node->hidden == YES || node->locked == YES) return;
+		debug(555, "#############################################");
+		debug(555, "node->text=%s", node->text);
+		debug(555, "node->name=%s", node->name);
+		debug(555, "node->rposx=%d", node->rposx);
+		debug(555, "node->rposy=%d", node->rposy);
+		debug(555, "node->rwidth=%d", node->rwidth);
+		debug(555, "node->rheight=%d", node->rheight);
+		debug(555, "node->usesavebg=%d", node->usesavebg);
+		debug(555, "#############################################");
+*/
 
+//	printf("text=%s bgcol=%ld bgcol2=%ld\n", node->text, node->bgcol, node->bgcol2);
+//printf("drawnode: weiter check\n");
+
+	if(checkbit(node->flag, 1) == 0) return;
+//printf("drawnode: weiter ok\n");
+
+	if((node->usesavebg == 1 || node->usesavebg == 2) && node->savebg != NULL)
+	{
+		debug(555, "--------------------------------------------");
+		debug(555, "drawnode: restore savebg");
+//		printf("drawnode: restore savebg: %d\n",node->usesavebg);
+		
+		tmpstr = ostrcat(node->savebg, NULL, 0, 0);
+		restorescreen(node->savebg, node);
+		if(node->usesavebg == 1)
+			node->savebg = ostrcat(tmpstr, NULL, 0, 0);
+		else
+			node->savebg = NULL;
+		free(tmpstr), tmpstr = NULL;
+		debug(555, "node->rposx=%d", node->rposx);
+		debug(555, "node->rposy=%d", node->rposy);
+		debug(555, "node->rwidth=%d", node->rwidth);
+		debug(555, "node->rheight=%d", node->rheight);
+		debug(555, "node->text=%s", node->text);
+		debug(555, "node->name=%s", node->name);
+		debug(555, "node->hidden=%d", node->hidden);
+		debug(555, "--------------------------------------------");
+	}
+
+//	if(node->usesavebg == 1 && node->hidden == 0 && node->savebg == NULL)
+	if((node->usesavebg == 1 || node->usesavebg == 2)/* && node->rposx != 0 && node->rposy != 0 && node->rheight != 0 && node->rheight != 1*/ && node->savebg == NULL)
+	{
+		debug(555, "--------------------------------------------");
+		debug(555, "drawnode: backup savebg");
+//		printf("drawnode: backup savebg: %d\n",node->usesavebg);
+		node->savebg = savescreen(node);
+		debug(555, "node->rposx=%d", node->rposx);
+		debug(555, "node->rposy=%d", node->rposy);
+		debug(555, "node->rwidth=%d", node->rwidth);
+		debug(555, "node->rheight=%d", node->rheight);
+		debug(555, "node->text=%s", node->text);
+		debug(555, "node->name=%s", node->name);
+		debug(555, "node->hidden=%d", node->hidden);
+		debug(555, "--------------------------------------------");
+	}
+
+	if(node->hidden == YES || node->locked == YES) return;
+		
 	if(node->bordersize > 0)
 	{
 		if((node->child != NULL && status.borderradius > 0) || node->borderradius > 0)
@@ -3426,18 +3510,25 @@ void drawnode(struct skin* node, int flag)
 		drawpic(status.bgpic, node->iposx, node->iposy, node->iwidth, node->iheight, node->iwidth, node->iheight, node->halign, node->valign, node->transparent, node->picquality, node->picmem);
 	if(node->gradient > 0)
 		drawbggradient(node);
+	
 	if(node->titlebgcol > -1)
 		drawtitlebgcol(node);
+
 	if(node->titlegradient > 0)
 		drawtitlebggradient(node);
+
 	if(node->progresssize > 0)
 		drawprogressbar(node);
+
 	if(node->type & MULTIPROGRESSBAR)
 		drawmultiprogressbar(node);
+
 	if(node->selectpic != NULL && !(node->type & FILELIST))
 		drawpic(node->selectpic, node->iposx, node->iposy, node->iwidth, node->iheight, node->iwidth, node->iheight, LEFT, TOP, node->transparent, node->picquality, node->picmem);
+
 	if(node->pic != NULL && !(node->type & FILELIST))
 		drawpic(node->pic, node->iposx, node->iposy, node->rpicwidth, node->rpicheight, node->iwidth, node->iheight, node->halign, node->valign, node->transparent, node->picquality, node->picmem);
+
 	if(node->input != NULL)
 	{
 		if(node->type & CHOICEBOX)
@@ -3597,19 +3688,21 @@ int calclistbox(struct skin* node)
 				child = child->next;
 				continue;
 			}
-			else if(ostrcmp(child->parent, node->name) != 0 /*|| child->hidden == YES*/)
+			else if(ostrcmp(child->parent, node->name) != 0 || child->hidden == YES)
 			{
+				child->pagecount = 0;
 				child = child->next;
 				continue;
 			}
 		}
-		else if(child->parentpointer != node /*|| child->hidden == YES*/)
+		else if(child->parentpointer != node || child->hidden == YES)
 		{
+			child->pagecount = 0;
 			child = child->next;
 			continue;
 		}
 
-		if(child->locked == YES || child->hidden == YES)
+		if(child->locked == YES)
 		{
 			child->pagecount = 0;
 			child = child->next;
@@ -4332,6 +4425,8 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 		if(flag == 0 || flag == 2 || flag == 4) clearscreenalways();
 		node->flag = setbit(node->flag, 0);
 		checknodechange(parent, node);
+		
+//printf("aaaaaaaaaaaaaaaaa\n");
 		drawnode(node, 0);
 	}
 
@@ -4374,17 +4469,52 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 			}
 			else
 				parent = oldparent;
-	
+
 			checknodechange(parent, child);
 			struct skin* tmp = drawnodepart(NULL, node, parent, child, 0);
-			drawnode(child, 1);
-			drawnodepart(tmp, node, parent, child, 1);
+/*
+printf("bbbbbbbbbbb\n");
+printf("node->bgcol=%ld\n",node->bgcol);
+printf("node->name=%s\n",node->name);
+printf("node->pic=%s\n",node->pic);
+printf("node->picmem=%d\n",node->picmem);
+printf("child->bgcol=%ld\n",child->bgcol);
+printf("child->name=%s\n",child->name);
+printf("child->pic=%s\n",child->pic);
+printf("child->picmem=%d\n",child->picmem);
+printf("child->usesavebg=%d\n",child->usesavebg);
 
+			if(node->bgcol == -1 && child->pic != NULL)
+			{
+				debug(555, "add 1 %s->%s: %s", node->name, child->name, child->text);
+				printf("add 1 %s->%s: %s\n",node->name,child->name,child->text);
+				child->usesavebg = 1;
+			}
+			else 
+*/			
+			if(node->bgcol == -1 && node->pic != NULL && node->usesavebg != 1)
+			{
+				debug(555, "add 2 %s->%s: %s", node->name, child->name, child->text);
+//				printf("add 2 %s->%s: %s\n",node->name,child->name,child->text);
+				child->usesavebg = 2;
+			}
+			else
+			{
+				debug(555, "skip %s->%s: %s", node->name, child->name, child->text);
+//				printf("skip %s->%s: %s\n",node->name,child->name,child->text);
+			}			
+//printf("2child->usesavebg=%d\n",child->usesavebg);
+
+
+			drawnode(child, 1);
+//printf("ccccccccccc\n");
+			drawnodepart(tmp, node, parent, child, 1);
+//printf("ddddddddddd\n");
 			child->flag = clearbit(child->flag, 1);
 			child = child->drawnext;
 		}
 	}
-	
+
 	if(screencalc == 0 || flag == 4) node->flag = clearbit(node->flag, 1);
 
 	if(flag == 0 || flag == 2 || flag == 4)
@@ -4395,7 +4525,7 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 			drawscreenalways(node, screencalc);
 
 			if(merkskinfb != NULL) 
-			{	
+			{
 				if(node->name != NULL && ostrstr(node->name, "LCD_spf") != NULL) 
 					write_FB_to_JPEG_file(skinfb->fb, skinfb->width, skinfb->height, "/tmp/titanlcd.jpg", 75);
 				else			

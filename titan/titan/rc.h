@@ -213,6 +213,7 @@ int waitrcext(struct skin* owner, unsigned int timeout, int screencalc, int file
 	int treffer = 0, rest = 0;
 	int ret = 0, len = 0, fromthread = 0, longpress = 0, longpresscount = 0;
 	struct rc *node;
+	struct timeval aktrctime;
 
 	if(pthread_self() != status.mainthread)
 		fromthread = 1;
@@ -272,13 +273,16 @@ int waitrcext(struct skin* owner, unsigned int timeout, int screencalc, int file
 				usleep(10000);
 				continue;
 			}
-
-			if(time(NULL) - rcdata.time.tv_sec > 1)
+			
+			gettimeofday(&aktrctime, NULL);
+			if(status.rcskipms > 0 && ((aktrctime.tv_sec - rcdata.time.tv_sec) * 1000000LL + aktrctime.tv_usec - rcdata.time.tv_usec) > status.rcskipms)
 			{
 				usleep(10000);
 				continue;
 			}
-
+			
+			printf(".\n");
+			
 			debug(100, "key code=%d, type=%d, value=%d", rcdata.code, rcdata.type, rcdata.value);
 			treffer = 1;
 			rcdata.code = maprc(rcdata.code, owner);

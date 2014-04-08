@@ -1508,6 +1508,8 @@ struct status
 	//count for drawing screen
 	unsigned int drawscreencount;
 	int autoseek;
+	//skip all rc input events older than this value in millisec
+	int rcskipms;
 } status;
 
 struct fb
