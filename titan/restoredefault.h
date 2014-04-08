@@ -68,7 +68,7 @@ void screenrestoredefaultchoice()
 	free(tmpstr), tmpstr = NULL;
 
 	addmenulist(&mlist, "Restore default settings", NULL, NULL, 0, 0);
-	if(checkbox("ATEMIO5000") != 1 && checkbox("ATEMIO5200") != 1)
+	if(checkbox("ATEMIO-NEMESIS") != 1 && checkbox("ATEMIO5200") != 1)
 	{
 		addmenulist(&mlist, "Format MNT with Backup/Restore", NULL, NULL, 0, 0);
 		addmenulist(&mlist, "Format MNT (all)", NULL, NULL, 0, 0);

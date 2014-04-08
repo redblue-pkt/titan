@@ -238,7 +238,7 @@ void screenadjust()
 	}
 	setchoiceboxselection(dualboot, getconfig("dualboot", NULL));
 
-	if(checkbox("ATEMIO5000") == 1 || checkbox("ATEMIO5200") == 1)
+	if(checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO5200") == 1)
 		dualboot->hidden = NO;
 	else
 		dualboot->hidden = YES;
@@ -384,7 +384,7 @@ void screenadjust()
 					setsataswitch(sataswitch->ret);
 				}
 			}
-			if(checkbox("ATEMIO5000") == 1 || checkbox("ATEMIO5200") == 1)
+			if(checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO5200") == 1)
 			{
 				addconfigscreen("dualboot", dualboot);
 				if(dualboot->ret != NULL && ostrcmp(dualboot->ret, "0") == 0)
