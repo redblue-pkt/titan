@@ -24,36 +24,6 @@ void debugscreen(struct skin* node)
 		printf("screen = NULL\n");
 }
 
-int getrectdiff(int x, int y, int w, int h, int x1, int y1, int w1, int h1, int* x2, int* y2, int* w2, int* h2)
-{
-	int xx = x + w;
-	int xx1 = x1 + w1;
-	int yy = y + h;
-	int yy1 = y1 + h1;
-	
-	*x2 = OMAX(x, x1);
-	*w2 = OMIN(xx, xx1); (*w2) = (*w2) - (*x2);
-	*y2 = OMAX(y, y1);
-	*h2 = OMIN(yy, yy1); (*h2) = (*h2) - (*y2);
-	
-	if(*w2 <= 0 || *h2 <=0) return 1;
-	return 0;	
-}
-
-void resetchangeflag(struct skin* node)
-{
-	if(node == NULL) return;
-	struct skin* child = node->child;
-
-	node->flag = setbit(node->flag, 1);
-
-	while(child != NULL)
-	{
-		child->flag = setbit(child->flag, 1);
-		child = child->next;
-	}
-}
-
 void* convertfunc(char *value, uint8_t *rettype)
 {
 	*rettype = FUNCTEXT;
@@ -551,7 +521,6 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 	newnode->bgcol = -1;
 	newnode->titlebgcol = -1;
 	newnode->deaktivcol = -1;
-	newnode->flag = setbit(newnode->flag, 1);
 
 	if(line != NULL)
 	{
@@ -600,17 +569,21 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 			newnode->height = convertxmlentry(ret, &newnode->prozheight);
 			free(ret);
 		}
-		ret = getxmlentry(line, " picwidth=");
-		if(ret != NULL)
+		// disable skinadjust is verry slow...
+		if(checkbox("ATEMIO5200") != 1)
 		{
-			newnode->picwidth = convertxmlentry(ret, &newnode->picprozwidth);
-			free(ret);
-		}
-		ret = getxmlentry(line, " picheight=");
-		if(ret != NULL)
-		{
-			newnode->picheight = convertxmlentry(ret, &newnode->picprozheight);
-			free(ret);
+			ret = getxmlentry(line, " picwidth=");
+			if(ret != NULL)
+			{
+				newnode->picwidth = convertxmlentry(ret, &newnode->picprozwidth);
+				free(ret);
+			}
+			ret = getxmlentry(line, " picheight=");
+			if(ret != NULL)
+			{
+				newnode->picheight = convertxmlentry(ret, &newnode->picprozheight);
+				free(ret);
+			}
 		}
 		ret = getxmlentry(line, " picquality=");
 		if(ret != NULL)
@@ -646,12 +619,6 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 		if(ret != NULL)
 		{
 			newnode->hidden = convertxmlentry(ret, NULL);
-			free(ret);
-		}
-		ret = getxmlentry(line, " usesavebg=");
-		if(ret != NULL)
-		{
-			newnode->usesavebg = atoi(ret);
 			free(ret);
 		}
 		ret = getxmlentry(line, " wrap=");
@@ -2709,7 +2676,6 @@ void clearrect(int posx, int posy, int width, int height)
 void clearscreen(struct skin* node)
 {
 	m_lock(&status.drawingmutex, 0);
-	resetchangeflag(node);
 	clearrect(node->rposx, node->rposy, node->rwidth, node->rheight);
 	clearshadow(node);
 	m_unlock(&status.drawingmutex, 0);
@@ -2717,7 +2683,6 @@ void clearscreen(struct skin* node)
 
 void clearscreennolock(struct skin* node)
 {
-	resetchangeflag(node);
 	clearrect(node->rposx, node->rposy, node->rwidth, node->rheight);
 	clearshadow(node);
 }
@@ -2890,35 +2855,6 @@ void drawtitlebgcol(struct skin* node)
 		fillrect(node->rposx, node->rposy, node->rwidth, node->rheight - (node->rheight - node->titlesize), node->titlebgcol, node->transparent);
 }
 
-void drawtitlebgcolpart(struct skin* node, int posx, int posy, int width, int height)
-{
-	int iposx = 0, iposy = 0, iwidth = 0, iheight = 0;
-	int rposx = 0, rposy = 0, rwidth = 0, rheight = 0;
-
-	if(getrectdiff(posx, posy, width, height, rposx, rposy, rwidth, rheight, &iposx, &iposy, &iwidth, &iheight) == 0)
-		fillrect(iposx, iposy, iwidth, iheight, node->bgcol, node->transparent);
-	if(status.picbordersize > 0)
-	{
-		rposx = node->rposx + status.picbordersize;
-		rposy = node->rposy + status.picbordersize;
-		rwidth = node->rwidth - (status.picbordersize << 1);
-		rheight = node->rheight - (node->rheight - node->titlesize);
-
-		if(getrectdiff(posx, posy, width, height, rposx, rposy, rwidth, rheight, &iposx, &iposy, &iwidth, &iheight) == 0)
-			fillrect(iposx, iposy, iwidth, iheight, node->titlebgcol, node->transparent);
-	}
-	else
-	{
-		rposx = node->rposx;
-		rposy = node->rposy;
-		rwidth = node->rwidth;
-		rheight = node->rheight - (node->rheight - node->titlesize);
-
-		if(getrectdiff(posx, posy, width, height, rposx, rposy, rwidth, rheight, &iposx, &iposy, &iwidth, &iheight) == 0)
-			fillrect(iposx, iposy, iwidth, iheight, node->titlebgcol, node->transparent);
-	}
-}
-
 void drawbginnercol(struct skin* node)
 {
 	fillrect(node->rposx + node->bordersize, node->rposy + node->bordersize, node->rwidth - (node->bordersize << 1), node->rheight - (node->bordersize << 1), node->bgcol, node->transparent);
@@ -2927,18 +2863,6 @@ void drawbginnercol(struct skin* node)
 void drawbgcol(struct skin* node)
 {
 	fillrect(node->rposx + node->bgspace, node->rposy + node->bgspace, node->rwidth - (node->bgspace << 1), node->rheight - (node->bgspace << 1), node->bgcol, node->transparent);
-}
-
-void drawbgcolpart(struct skin* node, int posx, int posy, int width, int height)
-{
-	int iposx = 0, iposy = 0, iwidth = 0, iheight = 0;
-	int rposx = node->rposx + node->bgspace;
-	int rposy = node->rposy + node->bgspace;
-	int rwidth = node->rwidth - (node->bgspace << 1);
-	int rheight = node->rheight - (node->bgspace << 1);
-
-	if(getrectdiff(posx, posy, width, height, rposx, rposy, rwidth, rheight, &iposx, &iposy, &iwidth, &iheight) == 0)
-		fillrect(iposx, iposy, iwidth, iheight, node->bgcol, node->transparent);
 }
 
 void drawtitle(struct skin* node)
@@ -2962,21 +2886,6 @@ void drawprogressbar(struct skin* node)
 	fillrect(node->rposx + node->bordersize, node->rposy + node->bordersize, val, node->iheight, node->progresscol, node->transparent);
 }
 
-void drawprogressbarpart(struct skin* node, int posx, int posy, int width, int height)
-{
-        int iposx = 0, iposy = 0, iwidth = 0, iheight = 0;
-        int rposx = node->rposx + node->bordersize;
-        int rposy = node->rposy + node->bordersize;
-        int rwidth = 0;
-        int rheight = node->iheight;
-
-	if(node->progresssize > 100) node->progresssize = 100;
-	rwidth = (((node->iwidth * 100) / 100) * node->progresssize) / 100;
-
-        if(getrectdiff(posx, posy, width, height, rposx, rposy, rwidth, rheight, &iposx, &iposy, &iwidth, &iheight) == 0)
-                fillrect(iposx, iposy, iwidth, iheight, node->progresscol, node->transparent);
-}
-
 void drawmultiprogressbar(struct skin* node)
 {
 	struct epgrecord* epgrecord = node->epgrecord;
@@ -2992,37 +2901,6 @@ void drawmultiprogressbar(struct skin* node)
 
 		if(val2 > val1)
 			fillrect(node->rposx + node->bordersize + node->bgspace + val1, node->rposy + node->bgspace + node->bordersize, val2 - val1 + (node->bgspace << 1), node->iheight + (node->bgspace << 1), node->progresscol, node->transparent);
-		epgrecord = epgrecord->next;
-	}
-}
-
-void drawmultiprogressbarpart(struct skin* node, int posx, int posy, int width, int height)
-{
-	struct epgrecord* epgrecord = node->epgrecord;
-	int val1 = 0, val2 = 0;
-        int iposx = 0, iposy = 0, iwidth = 0, iheight = 0;
-        int rposx = 0, rposy = 0, rwidth = 0, rheight = 0;
-
-
-	while(epgrecord != NULL)
-	{
-		
-		if(epgrecord->posx > 100) epgrecord->posx = 100;
-		val1 = (((node->iwidth * 100) / 100) * epgrecord->posx) / 100;
-		if(epgrecord->size > 100) epgrecord->size = 100;
-		val2 = (((node->iwidth * 100) / 100) * epgrecord->size) / 100;
-
-		if(val2 > val1)
-		{
-			rposx = node->rposx + node->bordersize + node->bgspace + val1;
-			rposy = node->rposy + node->bgspace + node->bordersize;
-			rwidth = val2 - val1 + (node->bgspace << 1);
-			rheight = node->iheight + (node->bgspace << 1);
-
-		        if(getrectdiff(posx, posy, width, height, rposx, rposy, rwidth, rheight, &iposx, &iposy, &iwidth, &iheight) == 0)
-                		fillrect(iposx, iposy, iwidth, iheight, node->progresscol, node->transparent);
-
-		}
 		epgrecord = epgrecord->next;
 	}
 }
@@ -3101,53 +2979,6 @@ void drawborder(struct skin* node)
 	}
 }
 
-void drawborderpart(struct skin* node, int posx, int posy, int width, int height)
-{
-	int iposx = 0, iposy = 0, iwidth = 0, iheight = 0;
-	int rposx = 0, rposy = 0, rwidth = 0, rheight = 0;
-
-	if(node->bordertype == 0 || checkbit(node->bordertype, 0) == 1)
-	{
-		rposx = node->rposx;
-		rposy = node->rposy;
-		rwidth = node->rwidth;
-		rheight = node->bordersize;
-
-		if(getrectdiff(posx, posy, width, height, rposx, rposy, rwidth, rheight, &iposx, &iposy, &iwidth, &iheight) == 0)
-			fillrect(iposx, iposy, iwidth, iheight, node->bordercol, node->transparent);
-	}
-	if(node->bordertype == 0 || checkbit(node->bordertype, 1) == 1)
-	{
-		rposx = node->rposx;
-		rposy = node->rposy + node->rheight - node->bordersize;
-		rwidth = node->rwidth;
-		rheight = node->bordersize;
-
-		if(getrectdiff(posx, posy, width, height, rposx, rposy, rwidth, rheight, &iposx, &iposy, &iwidth, &iheight) == 0)
-			fillrect(iposx, iposy, iwidth, iheight, node->bordercol, node->transparent);
-	}
-	if(node->bordertype == 0 || checkbit(node->bordertype, 2) == 1)
-	{
-		rposx = node->rposx;
-		rposy = node->rposy;
-		rwidth = node->bordersize;
-		rheight = node->rheight;
-
-		if(getrectdiff(posx, posy, width, height, rposx, rposy, rwidth, rheight, &iposx, &iposy, &iwidth, &iheight) == 0)
-			fillrect(iposx, iposy, iwidth, iheight, node->bordercol, node->transparent);
-	}
-	if(node->bordertype == 0 || checkbit(node->bordertype, 3) == 1)
-	{
-		rposx = node->rposx + node->rwidth - node->bordersize;
-		rposy = node->rposy;
-		rwidth = node->bordersize;
-		rheight = node->rheight;
-
-		if(getrectdiff(posx, posy, width, height, rposx, rposy, rwidth, rheight, &iposx, &iposy, &iwidth, &iheight) == 0)
-			fillrect(iposx, iposy, iwidth, iheight, node->bordercol, node->transparent);
-	}
-}
-
 void drawscrollbar(struct skin* node)
 {
 	if(node->bordersize == 0)
@@ -3205,261 +3036,16 @@ void drawshadow(struct skin* node)
 	}
 }
 
-void drawshadowpart(struct skin* node, int posx, int posy, int width, int height)
-{
-	int iposx = 0, iposy = 0, iwidth = 0, iheight = 0;
-	int rposx = 0, rposy = 0, rwidth = 0, rheight = 0;
-
-	switch(node->shadowpos)
-	{
-		case BOTTOMLEFT:
-			rposx = node->rposx - node->shadowsize;
-			rposy = node->rposy + node->rheight;
-			rwidth = node->rwidth;
-			rheight = node->shadowsize;
-
-			if(getrectdiff(posx, posy, width, height, rposx, rposy, rwidth, rheight, &iposx, &iposy, &iwidth, &iheight) == 0)
-				fillrect(iposx, iposy, iwidth, iheight, node->shadowcol, node->transparent);
-
-			rposx = node->rposx - node->shadowsize;
-			rposy = node->rposy + node->shadowsize;
-			rwidth = node->shadowsize;
-			rheight = node->rheight;
-
-			if(getrectdiff(posx, posy, width, height, rposx, rposy, rwidth, rheight, &iposx, &iposy, &iwidth, &iheight) == 0)
-				fillrect(iposx, iposy, iwidth, iheight, node->shadowcol, node->transparent);
-
-			break;
-		case BOTTOMRIGHT:
-			rposx = node->rposx + node->shadowsize;
-			rposy = node->rposy + node->rheight;
-			rwidth = node->rwidth;
-			rheight = node->shadowsize;
-
-			if(getrectdiff(posx, posy, width, height, rposx, rposy, rwidth, rheight, &iposx, &iposy, &iwidth, &iheight) == 0)
-				fillrect(iposx, iposy, iwidth, iheight, node->shadowcol, node->transparent);
-
-			rposx = node->rposx + node->rwidth;
-			rposy = node->rposy + node->shadowsize;
-			rwidth = node->shadowsize;
-			rheight = node->rheight;
-
-			if(getrectdiff(posx, posy, width, height, rposx, rposy, rwidth, rheight, &iposx, &iposy, &iwidth, &iheight) == 0)
-				fillrect(iposx, iposy, iwidth, iheight, node->shadowcol, node->transparent);
-
-			break;
-		case TOPLEFT:
-			rposx = node->rposx - node->shadowsize;
-			rposy = node->rposy - node->shadowsize;
-			rwidth = node->rwidth;
-			rheight = node->shadowsize;
-
-			if(getrectdiff(posx, posy, width, height, rposx, rposy, rwidth, rheight, &iposx, &iposy, &iwidth, &iheight) == 0)
-				fillrect(iposx, iposy, iwidth, iheight, node->shadowcol, node->transparent);
-
-			rposx = node->rposx - node->shadowsize;
-			rposy = node->rposy - node->shadowsize;
-			rwidth = node->shadowsize;
-			rheight = node->rheight;
-
-			if(getrectdiff(posx, posy, width, height, rposx, rposy, rwidth, rheight, &iposx, &iposy, &iwidth, &iheight) == 0)
-				fillrect(iposx, iposy, iwidth, iheight, node->shadowcol, node->transparent);
-
-			break;
-		default:
-			rposx = node->rposx + node->shadowsize;
-			rposy = node->rposy - node->shadowsize;
-			rwidth = node->rwidth;
-			rheight = node->shadowsize;
-
-			if(getrectdiff(posx, posy, width, height, rposx, rposy, rwidth, rheight, &iposx, &iposy, &iwidth, &iheight) == 0)
-				fillrect(iposx, iposy, iwidth, iheight, node->shadowcol, node->transparent);
-
-			rposx = node->rposx + node->rwidth;
-			rposy = node->rposy - node->shadowsize;
-			rwidth = node->shadowsize;
-			rheight = node->rheight;
-
-			if(getrectdiff(posx, posy, width, height, rposx, rposy, rwidth, rheight, &iposx, &iposy, &iwidth, &iheight) == 0)
-				fillrect(iposx, iposy, iwidth, iheight, node->shadowcol, node->transparent);
-
-			break;
-	}
-}
-
-//flag 0: draw all parts before node
-//flag 1: draw all parts after node
-struct skin* drawnodepart(struct skin* tmp, struct skin* screen, struct skin* parent, struct skin* node, int flag)
-{
-	int posx = 0, posy = 0, width = 0, height = 0;
-	struct skin* child = NULL;
-	
-	if(screen == NULL || node == NULL || screen == node) return NULL;
-	if(checkbit(node->flag, 1) == 0 || checkbit(screen->flag, 1) == 1) return NULL;
-
-//printf("drawnodepart %s %d\n", node->name, flag);	
-	if(flag == 0) 
-		child = screen;
-	else
-		child = tmp;
-
-	while(child != NULL)
-	{
-		if(flag == 0 && child == node) return child->drawnext;
-		if(child->hidden == YES || child->locked == YES || checkbit(child->flag, 0) == 0 || checkbit(child->flag, 1) == 1 || child == node)
-		{
-			if(child == screen)
-				child = screen->drawnext;
-			else
-				child = child->drawnext;
-			continue;
-		}
-		
-		if(getrectdiff(node->rposx, node->rposy, node->rwidth, node->rheight, child->rposx, child->rposy, child->rwidth, child->rheight, &posx, &posy, &width, &height) == 1)
-		{
-			if(child == screen)
-				child = screen->drawnext;
-			else
-				child = child->drawnext;
-			continue;
-		}
-		
-		if(child->shadowsize > 0)
-			drawshadowpart(child, node->rposx, node->rposy, node->rwidth, node->rheight);
-		if(child->bgcol > -1)
-		{
-			//if(node->child != NULL && status.picbordersize > 0)
-			//	drawbginnercol(node);
-			//else
-//printf("drawbgcolpart %s %s x=%d y=%d w=%d h=%d\n", node->name, child->name, node->rposx, node->rposy, node->rwidth, node->rheight);
-				drawbgcolpart(child, node->rposx, node->rposy, node->rwidth, node->rheight);
-		}
-		/*
-		if(node->child != NULL && status.bgpic != NULL)
-			drawpic(status.bgpic, node->iposx, node->iposy, node->iwidth, node->iheight, node->iwidth, node->iheight, node->halign, node->valign, node->transparent, node->picquality, node->picmem);
-		if(child->gradient > 0)
-			drawbggradient(child);
-		*/
-		if(child->titlebgcol > -1)
-			drawtitlebgcolpart(child, node->rposx, node->rposy, node->rwidth, node->rheight);
-		//if(child->titlegradient > 0)
-		//	drawtitlebggradient(child);
-		if(child->progresssize > 0)
-{
-//printf("1) %s %d\n", child->name, child->progresssize);
-			drawprogressbarpart(child, node->rposx, node->rposy, node->rwidth, node->rheight);
-}
-		if(child->type & MULTIPROGRESSBAR)
-			drawmultiprogressbarpart(child, node->rposx, node->rposy, node->rwidth, node->rheight);
-		if(child->bordersize > 0)
-		{
-			//if(node->child != NULL && status.picbordersize > 0)
-				//drawpicborder(node);
-			//else
-				drawborderpart(child, node->rposx, node->rposy, node->rwidth, node->rheight);
-			//if((node->child != NULL && status.borderradius > 0) || node->borderradius > 0)
-				//drawroundborder(node, bglt, bglb, bgrt, bgrb);
-		}
-
-		
-		if(child == screen)
-			child = screen->drawnext;
-		else
-			child = child->drawnext;
-	}
-	
-	return NULL;
-}
-
 //flag 0: del background
 //flag 1: don't del background
 void drawnode(struct skin* node, int flag)
 {
 	long color = 0, color2 = 0;
 	int len = 0;
-	char* bglt = NULL, *bglb = NULL, *bgrt = NULL, *bgrb = NULL, *tmpstr = NULL;
-/*
-printf("drawnode: node->flag=%d\n",node->flag);
-printf("drawnode: node->hidden=%d\n",node->hidden);
-printf("drawnode: node->locked=%d\n",node->locked);
-printf("drawnode: node->text=%s\n",node->text);
-printf("drawnode: node->bgcol=%ld\n",node->bgcol);
-printf("drawnode: node->bgcol2=%ld\n",node->bgcol2);
-printf("drawnode: node->titlebgcol=%ld\n",node->titlebgcol);
-printf("drawnode: node->titlebgcol2=%ld\n",node->titlebgcol2);
-printf("drawnode: node->progresscol=%ld\n",node->progresscol);
-printf("drawnode: node->bordercol=%ld\n",node->bordercol);
-printf("drawnode: node->shadowcol=%ld\n",node->shadowcol);
-printf("drawnode: node->deaktivcol=%ld\n",node->deaktivcol);
-printf("drawnode: node->gradient=%d\n",node->gradient);
-printf("drawnode: node->transparent=%d\n",node->transparent);
-printf("drawnode: node->rposx=%d\n",node->rposx);
-printf("drawnode: node->rposy=%d\n",node->rposy);
-printf("drawnode: node->rwidth=%d\n",node->rwidth);
-printf("drawnode: node->rheight=%d\n",node->rheight);
-printf("drawnode: node->usesavebg=%d\n",node->usesavebg);
-printf("drawnode: node->name=%s\n",node->name);
-printf("drawnode: node->savebg=%s\n",node->savebg);
+	char* bglt = NULL, *bglb = NULL, *bgrt = NULL, *bgrb = NULL;
 	
-		debug(555, "#############################################");
-		debug(555, "node->text=%s", node->text);
-		debug(555, "node->name=%s", node->name);
-		debug(555, "node->rposx=%d", node->rposx);
-		debug(555, "node->rposy=%d", node->rposy);
-		debug(555, "node->rwidth=%d", node->rwidth);
-		debug(555, "node->rheight=%d", node->rheight);
-		debug(555, "node->usesavebg=%d", node->usesavebg);
-		debug(555, "#############################################");
-*/
+	node->flag = setbit(node->flag, 0);
 
-//	printf("text=%s bgcol=%ld bgcol2=%ld\n", node->text, node->bgcol, node->bgcol2);
-//printf("drawnode: weiter check\n");
-
-	if(checkbit(node->flag, 1) == 0) return;
-//printf("drawnode: weiter ok\n");
-
-	if((node->usesavebg == 1 || node->usesavebg == 2) && node->savebg != NULL)
-	{
-		debug(555, "--------------------------------------------");
-		debug(555, "drawnode: restore savebg");
-//		printf("drawnode: restore savebg: %d\n",node->usesavebg);
-		
-		tmpstr = ostrcat(node->savebg, NULL, 0, 0);
-		restorescreen(node->savebg, node);
-		if(node->usesavebg == 1)
-			node->savebg = ostrcat(tmpstr, NULL, 0, 0);
-		else
-			node->savebg = NULL;
-		free(tmpstr), tmpstr = NULL;
-		debug(555, "node->rposx=%d", node->rposx);
-		debug(555, "node->rposy=%d", node->rposy);
-		debug(555, "node->rwidth=%d", node->rwidth);
-		debug(555, "node->rheight=%d", node->rheight);
-		debug(555, "node->text=%s", node->text);
-		debug(555, "node->name=%s", node->name);
-		debug(555, "node->hidden=%d", node->hidden);
-		debug(555, "--------------------------------------------");
-	}
-
-//	if(node->usesavebg == 1 && node->hidden == 0 && node->savebg == NULL)
-	if((node->usesavebg == 1 || node->usesavebg == 2)/* && node->rposx != 0 && node->rposy != 0 && node->rheight != 0 && node->rheight != 1*/ && node->savebg == NULL)
-	{
-		debug(555, "--------------------------------------------");
-		debug(555, "drawnode: backup savebg");
-//		printf("drawnode: backup savebg: %d\n",node->usesavebg);
-		node->savebg = savescreen(node);
-		debug(555, "node->rposx=%d", node->rposx);
-		debug(555, "node->rposy=%d", node->rposy);
-		debug(555, "node->rwidth=%d", node->rwidth);
-		debug(555, "node->rheight=%d", node->rheight);
-		debug(555, "node->text=%s", node->text);
-		debug(555, "node->name=%s", node->name);
-		debug(555, "node->hidden=%d", node->hidden);
-		debug(555, "--------------------------------------------");
-	}
-
-	if(node->hidden == YES || node->locked == YES) return;
-		
 	if(node->bordersize > 0)
 	{
 		if((node->child != NULL && status.borderradius > 0) || node->borderradius > 0)
@@ -3476,15 +3062,13 @@ printf("drawnode: node->savebg=%s\n",node->savebg);
 		}
 	}
 
-/*
 	if(flag == 0 && node->bgcol == -1)
 	{
 		if(node->child != NULL && status.picbordersize > 0)
 			clearrect(node->rposx + node->bordersize, node->rposy + node->bordersize, node->rwidth - (node->bordersize << 1), node->rheight - (node->bordersize << 1));
 		else
-			clearrect(node->rposx, node->rposy, node->rwidth, node->rheight);
+			clearscreennolock(node);
 	}
-*/
 
 	if(node->deaktivcol > -1)
 	{
@@ -3510,22 +3094,16 @@ printf("drawnode: node->savebg=%s\n",node->savebg);
 		drawpic(status.bgpic, node->iposx, node->iposy, node->iwidth, node->iheight, node->iwidth, node->iheight, node->halign, node->valign, node->transparent, node->picquality, node->picmem);
 	if(node->gradient > 0)
 		drawbggradient(node);
-	
 	if(node->titlebgcol > -1)
 		drawtitlebgcol(node);
-
 	if(node->titlegradient > 0)
 		drawtitlebggradient(node);
-
 	if(node->progresssize > 0)
 		drawprogressbar(node);
-
 	if(node->type & MULTIPROGRESSBAR)
 		drawmultiprogressbar(node);
-
 	if(node->selectpic != NULL && !(node->type & FILELIST))
 		drawpic(node->selectpic, node->iposx, node->iposy, node->iwidth, node->iheight, node->iwidth, node->iheight, LEFT, TOP, node->transparent, node->picquality, node->picmem);
-
 	if(node->pic != NULL && !(node->type & FILELIST))
 		drawpic(node->pic, node->iposx, node->iposy, node->rpicwidth, node->rpicheight, node->iwidth, node->iheight, node->halign, node->valign, node->transparent, node->picquality, node->picmem);
 
@@ -3666,7 +3244,7 @@ void calclistboxchild(struct skin* node, struct skin* parent)
 int calclistbox(struct skin* node)
 {
 	struct skin* child = NULL, *last = NULL, *found = NULL;
-	int selcol = 0, change = 1;
+	int selcol = 0;
 
 	if(node->type == FILELIST)
 		selcol = status.filelistselectcol;
@@ -3690,21 +3268,18 @@ int calclistbox(struct skin* node)
 			}
 			else if(ostrcmp(child->parent, node->name) != 0 || child->hidden == YES)
 			{
-				child->pagecount = 0;
 				child = child->next;
 				continue;
 			}
 		}
 		else if(child->parentpointer != node || child->hidden == YES)
 		{
-			child->pagecount = 0;
 			child = child->next;
 			continue;
 		}
 
 		if(child->locked == YES)
 		{
-			child->pagecount = 0;
 			child = child->next;
 			continue;
 		}		
@@ -3717,16 +3292,6 @@ int calclistbox(struct skin* node)
 		if(node->poscount > node->iheight)
 		{
 			node->pagecount++;
-/*
-			if(node->aktpage == -1)
-			{
-				if(found == NULL) change = node->pagecount;
-			}
-			else
-			{
-				if(node->pagecount == node->aktpage) change = node->pagecount;
-			}
-*/
 			node->poscount = child->rheight;
 		}
 
@@ -3740,17 +3305,6 @@ int calclistbox(struct skin* node)
 
 		node->linecount++;
 		last = child;
-
-/*
-		if(node->aktpage == -1)
-		{
-			if(change == node->pagecount && checkbit(child->flag, 1) == 0) change = 0;
-		}
-		else
-		{
-			if(change == node->aktpage && checkbit(child->flag, 1) == 0) change = 0;
-		}
-*/
 
 		if(node->aktline == -1 && child->pagecount == node->aktpage)
 		{
@@ -3774,8 +3328,6 @@ int calclistbox(struct skin* node)
 
 		child = child->next;
 	}
-
-	//if(change > 0) node->flag = setbit(node->flag, 1);
 
 	if(found == NULL)
 	{
@@ -3988,54 +3540,11 @@ int calcrposy(struct skin* node, struct skin* parent)
 	return 0;
 }
 
-int checknodechange(struct skin* parent, struct skin* node)
-{
-	int ret = 0, hash = 0;
-
-	if(parent == NULL || node == NULL) return ret;
-
-	hash = ((hash << 5) + hash) ^ node->hidden;
-	hash = ((hash << 5) + hash) ^ node->locked;
-	hash = ((hash << 5) + hash) ^ node->iposx;
-	hash = ((hash << 5) + hash) ^ node->iposy;
-	hash = ((hash << 5) + hash) ^ node->iwidth;
-	hash = ((hash << 5) + hash) ^ node->iheight;
-	hash = ((hash << 5) + hash) ^ node->rposx;
-	hash = ((hash << 5) + hash) ^ node->rposy;
-	hash = ((hash << 5) + hash) ^ node->rwidth;
-	hash = ((hash << 5) + hash) ^ node->rheight;
-	hash = ((hash << 5) + hash) ^ node->bordersize;
-	hash = ((hash << 5) + hash) ^ node->progresssize;
-	hash = ((hash << 5) + hash) ^ node->bgcol;
-	hash = ((hash << 5) + hash) ^ node->aktpage;
-	if(! (node->type & LISTBOX) || (node->type & FILELIST) || (node->type & GRID))
-	{
-		hash = ((hash << 5) + hash) ^ node->linecount;
-		hash = ((hash << 5) + hash) ^ node->pagecount;
-		hash = ((hash << 5) + hash) ^ node->poscount;
-	}
-
-	if(hash != node->hash)
-	{
-		node->hash = hash;
-		node->flag = setbit(node->flag, 1);
-		ret = 1;
-	}
-
-	return ret;
-}
-
 int setnodeattr(struct skin* node, struct skin* parent, int screencalc)
 {
 	if(node != skin) node->flag = clearbit(node->flag, 0);
 	if((parent->type & LISTBOX) || (parent->type & FILELIST) || (parent->type & GRID))
-	{
-		if(node->pagecount != parent->aktpage)
-		{
-			node->flag = setbit(node->flag, 1);
-			return 1;
-		}
-	}
+		if(node->pagecount != parent->aktpage) return 1;
 
 	int shadowlx = 0, shadowrx = 0, shadowoy = 0, shadowuy = 0;
 	unsigned int linecount = 0, pagecount = 0, poscount = 0;
@@ -4072,10 +3581,8 @@ int setnodeattr(struct skin* node, struct skin* parent, int screencalc)
 
 	if(screencalc != 2)
 	{
-		if(checkbit(parent->flag, 0) == 0)
-			return 1;
-		if(node->hidden == YES || parent->hidden == YES || node->locked == YES || parent->locked == YES)
-			return 0;
+		if(node->hidden == YES || parent->hidden == YES || node->locked == YES || parent->locked == YES) return 1;
+		if(checkbit(parent->flag, 0) == 0) return 1;
 	}
 
 	calcrwidth(node, parent);
@@ -4113,7 +3620,6 @@ int setnodeattr(struct skin* node, struct skin* parent, int screencalc)
 		node->rpicheight = (((node->iheight * 100) / 100) * node->picheight) / 100;
 	else
 		node->rpicheight = node->picheight;
-
 
 	if(node->rposx - shadowlx < parent->iposx)
 	{
@@ -4192,7 +3698,6 @@ int setnodeattr(struct skin* node, struct skin* parent, int screencalc)
 	if((node->type & CHOICEBOX) && node->input != NULL)
 	{
 		char* pos = NULL;
-
 		calctext(node->input, NULL, &node->linecount, &node->pagecount, &node->poscount, 1, node->aktpage);
 
 		free(node->ret);
@@ -4304,7 +3809,7 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 {
 	struct fb* merkskinfb = NULL;
 	int ret;
-	struct skin *child = NULL, *parent = NULL, *oldparent = NULL, *oldchild = NULL;
+	struct skin *child = NULL, *parent = NULL, *oldparent = NULL;
 
 	if(node == NULL)
 	{
@@ -4415,22 +3920,15 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 		skinfb = lcdskinfb;
 	}
 
-	parent = node;
-	oldparent = node;
-	oldchild = node;
-	child = node->child;
-	node->drawnext = NULL;
 	if(screencalc == 0 || flag == 4)
 	{
 		if(flag == 0 || flag == 2 || flag == 4) clearscreenalways();
-		node->flag = setbit(node->flag, 0);
-		checknodechange(parent, node);
-		
-//printf("aaaaaaaaaaaaaaaaa\n");
 		drawnode(node, 0);
 	}
+	parent = node;
+	oldparent = node;
+	child = node->child;
 
-	//calc
 	while(child != NULL)
 	{
 		if(child->parentpointer != NULL)
@@ -4443,79 +3941,10 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 		else
 			parent = oldparent;
 
-		child->drawnext = NULL;
-		if(setnodeattr(child, parent, screencalc) == 0)
-		{
-			child->flag = setbit(child->flag, 0);
-			oldchild->drawnext = child;
-			oldchild = child;
-		}
-		
+		if(setnodeattr(child, parent, screencalc) == 0 && screencalc == 0)
+			drawnode(child, 1);
 		child = child->next;
 	}
-	
-	//draw
-	if(screencalc == 0)
-	{
-		child = node->drawnext;
-		while(child != NULL)
-		{
-			if(child->parentpointer != NULL)
-				parent = child->parentpointer;
-			else if(child->parent != NULL)
-			{
-				parent = getscreennode(node, child->parent);
-				if(parent == status.skinerr) parent = oldparent;
-			}
-			else
-				parent = oldparent;
-
-			checknodechange(parent, child);
-			struct skin* tmp = drawnodepart(NULL, node, parent, child, 0);
-/*
-printf("bbbbbbbbbbb\n");
-printf("node->bgcol=%ld\n",node->bgcol);
-printf("node->name=%s\n",node->name);
-printf("node->pic=%s\n",node->pic);
-printf("node->picmem=%d\n",node->picmem);
-printf("child->bgcol=%ld\n",child->bgcol);
-printf("child->name=%s\n",child->name);
-printf("child->pic=%s\n",child->pic);
-printf("child->picmem=%d\n",child->picmem);
-printf("child->usesavebg=%d\n",child->usesavebg);
-
-			if(node->bgcol == -1 && child->pic != NULL)
-			{
-				debug(555, "add 1 %s->%s: %s", node->name, child->name, child->text);
-				printf("add 1 %s->%s: %s\n",node->name,child->name,child->text);
-				child->usesavebg = 1;
-			}
-			else 
-*/			
-			if(node->bgcol == -1 && node->pic != NULL && node->usesavebg != 1)
-			{
-				debug(555, "add 2 %s->%s: %s", node->name, child->name, child->text);
-//				printf("add 2 %s->%s: %s\n",node->name,child->name,child->text);
-				child->usesavebg = 2;
-			}
-			else
-			{
-				debug(555, "skip %s->%s: %s", node->name, child->name, child->text);
-//				printf("skip %s->%s: %s\n",node->name,child->name,child->text);
-			}			
-//printf("2child->usesavebg=%d\n",child->usesavebg);
-
-
-			drawnode(child, 1);
-//printf("ccccccccccc\n");
-			drawnodepart(tmp, node, parent, child, 1);
-//printf("ddddddddddd\n");
-			child->flag = clearbit(child->flag, 1);
-			child = child->drawnext;
-		}
-	}
-
-	if(screencalc == 0 || flag == 4) node->flag = clearbit(node->flag, 1);
 
 	if(flag == 0 || flag == 2 || flag == 4)
 	{
@@ -4525,7 +3954,7 @@ printf("child->usesavebg=%d\n",child->usesavebg);
 			drawscreenalways(node, screencalc);
 
 			if(merkskinfb != NULL) 
-			{
+			{	
 				if(node->name != NULL && ostrstr(node->name, "LCD_spf") != NULL) 
 					write_FB_to_JPEG_file(skinfb->fb, skinfb->width, skinfb->height, "/tmp/titanlcd.jpg", 75);
 				else			
@@ -4582,35 +4011,20 @@ int changeinput(struct skin* node, char* text)
 
 	if(node != NULL)
 	{
+		free(node->input);
 		if(text != NULL)
 		{
 			if((node->type & INPUTBOXNUM) && node->mask != NULL && strlen(text) == 0)
-			{
-				if(ostrcmp(node->input, node->mask) != 0) node->flag = setbit(node->flag, 1);
-				free(node->input);
 				node->input = strdup(node->mask);
-			}
 			else
-			{
-				if(ostrcmp(node->input, text) != 0) node->flag = setbit(node->flag, 1);
-				free(node->input);
 				node->input = strdup(text);
-			}
 		}
 		else
 		{
 			if((node->type & INPUTBOXNUM) && node->mask != NULL)
-			{
-				if(ostrcmp(node->input, node->mask) != 0) node->flag = setbit(node->flag, 1);
-				free(node->input);
 				node->input = strdup(node->mask);
-			}
 			else
-			{
-				if(ostrcmp(node->input, text) != 0) node->flag = setbit(node->flag, 1);
-				free(node->input);
 				node->input = text;
-			}
 		}
 		ret = 0;
 	}
@@ -4624,18 +4038,11 @@ int changetext(struct skin* node, char* text)
 
 	if(node != NULL)
 	{
+		free(node->text);
 		if(text != NULL)
-		{
-			if(ostrcmp(node->text, text) != 0) node->flag = setbit(node->flag, 1);
-			free(node->text);
 			node->text = strdup(text);
-		}
 		else
-		{
-			if(node->text != NULL) node->flag = setbit(node->flag, 1);
-			free(node->text);
 			node->text = text;
-		}
 		ret = 0;
 	}
 
@@ -4648,18 +4055,11 @@ int changetext2(struct skin* node, char* text)
 
 	if(node != NULL)
 	{
+		free(node->text2);
 		if(text != NULL)
-		{
-			if(ostrcmp(node->text2, text) != 0) node->flag = setbit(node->flag, 1);
-			free(node->text2);
 			node->text2 = strdup(text);
-		}
 		else
-		{
-			if(node->text2 != NULL) node->flag = setbit(node->flag, 1);
-			free(node->text2);
 			node->text2 = text;
-		}
 		ret = 0;
 	}
 
@@ -4692,13 +4092,11 @@ int changepicmem(struct skin* node, char* text, int timeout, int del)
 
 	if(node != NULL)
 	{
+		free(node->pic);
 		if(text != NULL)
 		{
-			char* tmpstr = changepicpath(text);
-			if(ostrcmp(node->pic, tmpstr) != 0) node->flag = setbit(node->flag, 1);
-			free(node->pic);
 			node->picmem = 1;
-			node->pic = tmpstr;
+			node->pic = changepicpath(text);
 
 			if(getpic(node->pic) == NULL)
 			{
@@ -4713,11 +4111,7 @@ int changepicmem(struct skin* node, char* text, int timeout, int del)
 			}
 		}
 		else
-		{
-			if(node->pic != NULL) node->flag = setbit(node->flag, 1);
-			free(node->pic);
 			node->pic = text;
-		}
 		ret = 0;
 	}
 
@@ -4731,19 +4125,11 @@ int changepic(struct skin* node, char* text)
 	if(node != NULL)
 	{
 		node->picmem = 0;
+		free(node->pic);
 		if(text != NULL)
-		{
-			char* tmpstr = changepicpath(text);
-			if(ostrcmp(node->pic, tmpstr) != 0) node->flag = setbit(node->flag, 1);
-			free(node->pic);
-			node->pic = tmpstr;
-		}
+			node->pic = changepicpath(text);
 		else
-		{
-			if(node->pic != NULL) node->flag = setbit(node->flag, 1);
-			free(node->pic);
 			node->pic = text;
-		}
 		ret = 0;
 	}
 
@@ -4756,19 +4142,11 @@ int changeselectpic(struct skin* node, char* text)
 
 	if(node != NULL)
 	{
+		free(node->selectpic);
 		if(text != NULL)
-		{
-			char* tmpstr = changepicpath(text);
-			if(ostrcmp(node->selectpic, tmpstr) != 0) node->flag = setbit(node->flag, 1);
-			free(node->selectpic);
-			node->selectpic = tmpstr;
-		}
+			node->selectpic = changepicpath(text);
 		else
-		{
-			if(node->selectpic != NULL) node->flag = setbit(node->flag, 1);
-			free(node->selectpic);
 			node->selectpic = text;
-		}
 		ret = 0;
 	}
 
@@ -4781,17 +4159,14 @@ int changetitle(struct skin* node, char* text)
 
 	if(node != NULL)
 	{
+		free(node->title);
 		if(text != NULL)
 		{
-			if(ostrcmp(node->title, text) != 0) node->flag = setbit(node->flag, 1);
-			free(node->title);
 			node->title = strdup(text);
 			node->titlesize = node->fontsize + 6;
 		}
 		else
 		{
-			if(node->title != NULL) node->flag = setbit(node->flag, 1);
-			free(node->title);
 			node->title = text;
 			node->titlesize = 0;
 		}
@@ -4850,18 +4225,11 @@ int changeparent(struct skin* node, char* text)
 
 	if(node != NULL)
 	{
+		free(node->parent);
 		if(text != NULL)
-		{
-			if(ostrcmp(node->parent, text) != 0) node->flag = setbit(node->flag, 1);
-			free(node->parent);
 			node->parent = strdup(text);
-		}
 		else
-		{
-			if(node->parent != NULL) node->flag = setbit(node->flag, 1);
-			free(node->parent);
 			node->parent = text;
-		}
 		ret = 0;
 	}
 
@@ -4874,18 +4242,11 @@ int changefont(struct skin* node, char* text)
 
 	if(node != NULL)
 	{
+		free(node->font);
 		if(text != NULL)
-		{
-			if(ostrcmp(node->font, text) != 0) node->flag = setbit(node->flag, 1);
-			free(node->font);
 			node->font = strdup(text);
-		}
 		else
-		{
-			if(node->font != NULL) node->flag = setbit(node->flag, 1);
-			free(node->font);
 			node->font = text;
-		}
 		ret = 0;
 	}
 
@@ -4932,18 +4293,11 @@ int changechoiceboxvalue(struct skin* node, char* text)
 
 	if(node != NULL)
 	{
+		free(node->choiceboxvalue);
 		if(text != NULL)
-		{
-			if(ostrcmp(node->choiceboxvalue, text) != 0) node->flag = setbit(node->flag, 1);
-			free(node->choiceboxvalue);
 			node->choiceboxvalue = strdup(text);
-		}
 		else
-		{
-			if(node->choiceboxvalue != NULL) node->flag = setbit(node->flag, 1);
-			free(node->choiceboxvalue);
 			node->choiceboxvalue = text;
-		}
 		ret = 0;
 	}
 
