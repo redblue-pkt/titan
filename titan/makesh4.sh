@@ -17,10 +17,10 @@ ARCH=${15}
 rm "$HOME"/flashimg/.ipk-build-error
 
 # work
-#mv -f "$HOME"/flashimg/source.titan/titan/skin.mipsel.h "$HOME"/flashimg/source.titan/titan/skin.h
+#mv -f "$HOME"/flashimg/source.titan/titan/struct.mipsel.h "$HOME"/flashimg/source.titan/titan/struct.h
 
 if [ "$GROUP" = "dev" ];then
-	mv -f "$HOME"/flashimg/source.titan/titan/struct.mipsel.h "$HOME"/flashimg/source.titan/titan/struct.h
+	mv -f "$HOME"/flashimg/source.titan/titan/skin.mipsel.h "$HOME"/flashimg/source.titan/titan/skin.h
 fi
 
 if [ -z "$TYPE" ]; then
