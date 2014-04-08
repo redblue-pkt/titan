@@ -504,7 +504,7 @@ int checkhighflash()
 	cmd = ostrcat(cmd, " ", 1, 0); 
 	cmd = ostrcat(cmd, "grep", 1, 0); 
 	cmd = ostrcat(cmd, " ", 1, 0);
-	if(checkbox("ATEMIO5000") == 1 || checkbox("ATEMIO5200") == 1)
+	if(checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO5200") == 1)
 	{
 		cmd = ostrcat(cmd, "mtd0", 1, 0); 
 		size = ostrcat("1f900000", NULL, 0, 0); 
@@ -927,7 +927,7 @@ void ckeckkillnetthread()
 
 int checkreseller()
 {
-	if(checkbox("UFS910") == 1 || checkbox("UFS922") == 1 || checkbox("ATEMIO5000") == 1 || checkbox("ATEMIO5200") == 1)
+	if(checkbox("UFS910") == 1 || checkbox("UFS922") == 1 || checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO5200") == 1)
 	{
 		debug(10, "ResellerId: skipped");
 		debug(10, "boxtype: %s", getboxtype());
@@ -1108,7 +1108,7 @@ int checkflash()
 		dev = ostrcat(dev, "4", 1, 0);
 		dir = ostrcat(dir, "var", 1, 0);
 	}
-	else if(checkbox("ATEMIO5000") == 1 || checkbox("ATEMIO5200") == 1)
+	else if(checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO5200") == 1)
 	{
 		dev = ostrcat(dev, "rootfs", 1, 0);
 		dir = ostrcat(dir, "/", 1, 0);
@@ -1119,7 +1119,7 @@ int checkflash()
 		dir = ostrcat(dir, "var", 1, 0);
 	}
 	
-	if(checkbox("ATEMIO5000") == 1 || checkbox("ATEMIO5200") == 1)
+	if(checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO5200") == 1)
 	{
 		cmd = ostrcat(cmd, "mount", 1, 0);
 		cmd = ostrcat(cmd, " | ", 1, 0);
@@ -1156,7 +1156,7 @@ int checkflash()
 		return 1;
 	}
 
-	if(checkbox("ATEMIO5000") != 1 && checkbox("ATEMIO5200") != 1)
+	if(checkbox("ATEMIO-NEMESIS") != 1 && checkbox("ATEMIO5200") != 1)
 		dir = ostrcat("/", dir, 0, 1);
 
 	if(ostrcmp(tmpstr, dir) == 0)
@@ -1530,7 +1530,7 @@ void killnet()
 
 unsigned long getsysinfo()
 {
-	if(checkbox("ATEMIO5000") == 1 || checkbox("ATEMIO5200") == 1)
+	if(checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO5200") == 1)
 	{
 		debug(10, "syscode: skipped");
 		debug(10, "boxtype: %s", getboxtype());
@@ -1784,7 +1784,7 @@ void setskinnodeslocked(int flag)
 			if(ostrcmp("Reader Config", child->name) == 0) child->locked = 1;
 
 			// hide this menu on all boxes without ATEMIO530
-			if(checkbox("ATEMIO520") != 1 && checkbox("ATEMIO530") != 1 && checkbox("ATEMIO5200") != 1 && checkbox("ATEMIO5000") != 1)
+			if(checkbox("ATEMIO520") != 1 && checkbox("ATEMIO530") != 1 && checkbox("ATEMIO5200") != 1 && checkbox("ATEMIO-NEMESIS") != 1)
 			{
 				if(ostrcmp("settings_pluginbutton", child->name) == 0) child->locked = 1;
 			}
@@ -1819,7 +1819,7 @@ void setskinnodeslocked(int flag)
 				if(ostrcmp("system_backup", child->name) == 0) child->locked = 1;
 			}
 
-			if(checkbox("ATEMIO5000") == 1)
+			if(checkbox("ATEMIO-NEMESIS") == 1)
 			{
 				if(ostrcmp("system_backup", child->name) == 0) child->locked = 1;
 			}
