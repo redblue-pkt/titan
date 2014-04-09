@@ -363,7 +363,7 @@ msgstr "Alfabetisch"
 
 #: adjust.h:99 httpdfunc.h:3655 mc_audioplayer_settings.h:28
 #: mc_pictureplayer_settings.h:43 mc_videoplayer_settings.h:24
-#: plugins_mc_skin.xml.h:49 skin_default_skin.xml.h:516 skins_mc_skin.xml.h:49
+#: plugins_mc_skin.xml.h:49 skin_default_skin.xml.h:517 skins_mc_skin.xml.h:49
 msgid "reverse alpha"
 msgstr "Alphabetisch omgekeerd"
 
@@ -375,7 +375,7 @@ msgstr "Grootte"
 
 #: adjust.h:101 httpdfunc.h:3669 mc_audioplayer_settings.h:30
 #: mc_pictureplayer_settings.h:45 mc_videoplayer_settings.h:26
-#: plugins_mc_skin.xml.h:51 skin_default_skin.xml.h:518 skins_mc_skin.xml.h:51
+#: plugins_mc_skin.xml.h:51 skin_default_skin.xml.h:519 skins_mc_skin.xml.h:51
 msgid "reverse size"
 msgstr "Grootte omgkeerd"
 
@@ -388,7 +388,7 @@ msgstr "Datum"
 
 #: adjust.h:103 httpdfunc.h:3683 mc_audioplayer_settings.h:32
 #: mc_pictureplayer_settings.h:47 mc_videoplayer_settings.h:28
-#: plugins_mc_skin.xml.h:50 skin_default_skin.xml.h:517 skins_mc_skin.xml.h:50
+#: plugins_mc_skin.xml.h:50 skin_default_skin.xml.h:518 skins_mc_skin.xml.h:50
 msgid "reverse date"
 msgstr "Datum omgekeerd"
 
@@ -405,7 +405,7 @@ msgstr "Uitschakelen"
 msgid "Standby"
 msgstr "Standby"
 
-#: adjust.h:109 httpdfunc.h:3719 skin_default_skin.xml.h:512 softcam.h:291
+#: adjust.h:109 httpdfunc.h:3719 skin_default_skin.xml.h:513 softcam.h:291
 msgid "Restart"
 msgstr "Herstart"
 
@@ -625,7 +625,7 @@ msgstr ""
 #: myvideo.h:188 myvideo.h:190 myvideo.h:293 myvideo.h:295 netzkino.h:13
 #: netzkino.h:15 rtl2now.h:119 rtl2now.h:121 rtl2now.h:183 rtl2now.h:185
 #: rtl2now.h:247 rtl2now.h:249 rtl2now.h:311 rtl2now.h:313
-#: skin_default_skin.xml.h:555 solarmovie.h:97 solarmovie.h:99
+#: skin_default_skin.xml.h:556 solarmovie.h:97 solarmovie.h:99
 #: solarmovie.h:210 solarmovie.h:212 tectime.h:13 tectime.h:15
 #: tithek_mainmenu.h:35 tmdb.h:860 xvideos.h:56 xvideos.h:58 youtube.h:223
 #: youtube.h:225 youtube.h:315 youtube.h:317 zdf.h:147 zdf.h:149
@@ -673,7 +673,7 @@ msgstr "AutoTimer succesvol gestart"
 msgid "ERROR... AutoTimer not started"
 msgstr "ERROR... AutoTimer niet gestart"
 
-#: autotimer.c:603 menu.h:946 menu.h:948 skin_default_skin.xml.h:540
+#: autotimer.c:603 menu.h:946 menu.h:948 skin_default_skin.xml.h:541
 msgid "Save Settings"
 msgstr "Instellingen opslaan"
 
@@ -745,7 +745,7 @@ msgstr "Kabel: "
 msgid "Terrestrial: "
 msgstr "Ether (digitenne): "
 
-#: blindscanadjust.h:120 skin_default_skin.xml.h:529
+#: blindscanadjust.h:120 skin_default_skin.xml.h:530
 msgid "SAT"
 msgstr "Satellieten"
 
@@ -1608,7 +1608,7 @@ msgstr "Donderdag"
 msgid "Friday"
 msgstr "Vrijdag"
 
-#: global.h:6699 rectimer.h:1064 skin_default_skin.xml.h:538
+#: global.h:6699 rectimer.h:1064 skin_default_skin.xml.h:539
 msgid "Saturday"
 msgstr "Zaterdag"
 
@@ -1922,7 +1922,7 @@ msgstr "Spinner-tijd"
 msgid "Hangtime"
 msgstr "Tijd totdat ERROR bericht verschijnt"
 
-#: httpdfunc.h:3529 skin_default_skin.xml.h:557
+#: httpdfunc.h:3529 skin_default_skin.xml.h:558
 msgid "Second Infobar"
 msgstr "Tweede informatiebalk"
 
@@ -1986,7 +1986,7 @@ msgstr "Speler voor .ts"
 msgid "Change Channelname auto."
 msgstr "Zendernaam automatisch aanpassen"
 
-#: httpdfunc.h:4039 skin_default_skin.xml.h:566
+#: httpdfunc.h:4039 skin_default_skin.xml.h:567
 msgid "Set action after rec"
 msgstr "Acties na opnamen"
 
@@ -2006,11 +2006,11 @@ msgstr "Animatie snelheid"
 msgid "Channellist view"
 msgstr "Zenderlijst beeld"
 
-#: httpdfunc.h:4198 skin_default_skin.xml.h:576
+#: httpdfunc.h:4198
 msgid "Show last pos Question"
 msgstr "Gebruik laatste positie vraag"
 
-#: httpdfunc.h:4220 skin_default_skin.xml.h:515
+#: httpdfunc.h:4220 skin_default_skin.xml.h:516
 msgid "Resync Recording immediately"
 msgstr "Resync opname direct (geen schrijf buffer)"
 
@@ -2022,7 +2022,7 @@ msgstr "Opname naam"
 msgid "Newsletter"
 msgstr "Nieuwsbrief"
 
-#: httpdfunc.h:4286 skin_default_skin.xml.h:572
+#: httpdfunc.h:4286 skin_default_skin.xml.h:573
 msgid "Show hidden files"
 msgstr "Verborgen bestanden zien"
 
@@ -2030,7 +2030,7 @@ msgstr "Verborgen bestanden zien"
 msgid "Expert Modus"
 msgstr "Expert Modus"
 
-#: httpdfunc.h:4337 skin_default_skin.xml.h:573
+#: httpdfunc.h:4337 skin_default_skin.xml.h:574
 msgid "Show infobar on program change"
 msgstr "Toon infobalk bij zappen"
 
@@ -2050,7 +2050,7 @@ msgstr "Deactiveer MiniTV"
 msgid "Activate CEC"
 msgstr "CEC inschakelen"
 
-#: httpdfunc.h:4476 skin_default_skin.xml.h:530
+#: httpdfunc.h:4476 skin_default_skin.xml.h:531
 msgid "SATA Connector"
 msgstr ""
 
@@ -3693,7 +3693,7 @@ msgstr "Gebeurtenis"
 #: plugins_instar_skin.xml.h:15 plugins_lcdpearl1_skin.xml.h:11
 #: plugins_lcdsamsung_skin.xml.h:14 plugins_panel_skin.xml.h:21
 #: plugins_stock_skin.xml.h:5 plugins_stopifnotused_skin.xml.h:5
-#: plugins_tmdb_skin.xml.h:7 skin_default_skin.xml.h:539
+#: plugins_tmdb_skin.xml.h:7 skin_default_skin.xml.h:540
 #: skins_autotimer_skin.xml.h:8 skins_callmonitor1_skin.xml.h:18
 #: skins_imdbapi_skin.xml.h:7 skins_imdb_skin.xml.h:7
 #: skins_instar_skin.xml.h:15 skins_lcdpearl1_skin.xml.h:11
@@ -3923,7 +3923,7 @@ msgstr "Uitgave:"
 
 #: plugins_imdbapi_skin.xml.h:8 plugins_imdb_skin.xml.h:8
 #: plugins_networkbrowser_skin.xml.h:25 plugins_tmdb_skin.xml.h:8
-#: skin_default_skin.xml.h:556 skins_imdbapi_skin.xml.h:8
+#: skin_default_skin.xml.h:557 skins_imdbapi_skin.xml.h:8
 #: skins_imdb_skin.xml.h:8 skins_networkbrowser_skin.xml.h:25
 #: skins_tmdb_skin.xml.h:8
 msgid "SEARCH"
@@ -4188,7 +4188,7 @@ msgid "Screensaver"
 msgstr "Screensaver"
 
 #: plugins_mc_skin.xml.h:53 plugins_panel_skin.xml.h:5
-#: plugins_panel_skin.xml.h:22 skin_default_skin.xml.h:568
+#: plugins_panel_skin.xml.h:22 skin_default_skin.xml.h:569
 #: skins_mc_skin.xml.h:53 skins_panel_skin.xml.h:5 skins_panel_skin.xml.h:22
 msgid "Settings"
 msgstr "Instellingen"
@@ -4734,7 +4734,7 @@ msgstr "Voorvertoning"
 msgid "Runtime:"
 msgstr "Tijdsduur:"
 
-#: plugins_tmc_skin.xml.h:15 skin_default_skin.xml.h:542
+#: plugins_tmc_skin.xml.h:15 skin_default_skin.xml.h:543
 #: skins_tmc_skin.xml.h:15
 msgid "Scan"
 msgstr "Scannen"
@@ -5185,7 +5185,7 @@ msgstr ""
 "Wilt u het wisselbestand echt wissen? (instellingen worden behouden)\n"
 "De ontvanger zal herstarten en wissen wordt gestart!"
 
-#: restoredefault.h:65 restoredefault.h:77 skin_default_skin.xml.h:514
+#: restoredefault.h:65 restoredefault.h:77 skin_default_skin.xml.h:515
 msgid "Restore default settings"
 msgstr "Fabrieksinstelling terugzetten"
 
@@ -7287,226 +7287,230 @@ msgid "RELOAD"
 msgstr "Herladen"
 
 #: skin_default_skin.xml.h:501
+msgid "Remember film position"
+msgstr ""
+
+#: skin_default_skin.xml.h:502
 msgid "Remove emthy Bouquet"
 msgstr "Verwijder lege favorieten lijst"
 
-#: skin_default_skin.xml.h:502
+#: skin_default_skin.xml.h:503
 msgid "REMOVE ENTRY"
 msgstr "Ingang verwijderen"
 
-#: skin_default_skin.xml.h:503
+#: skin_default_skin.xml.h:504
 msgid "remove service"
 msgstr "Service verwijderen"
 
-#: skin_default_skin.xml.h:504
+#: skin_default_skin.xml.h:505
 msgid "Remove unused Channels in Bouquets"
 msgstr "Verwijder ongebruikte zenders in favorieten lijst"
 
-#: skin_default_skin.xml.h:505
+#: skin_default_skin.xml.h:506
 msgid "rename service"
 msgstr "Service hernoemen"
 
-#: skin_default_skin.xml.h:506
+#: skin_default_skin.xml.h:507
 msgid "Repeate"
 msgstr "Herhalen"
 
-#: skin_default_skin.xml.h:507
+#: skin_default_skin.xml.h:508
 msgid "Repeate type"
 msgstr "Herhalingstype"
 
-#: skin_default_skin.xml.h:508
+#: skin_default_skin.xml.h:509
 msgid "RESET"
 msgstr "Reset"
 
-#: skin_default_skin.xml.h:509
+#: skin_default_skin.xml.h:510
 msgid "Resolution:"
 msgstr "Resolutie:"
 
-#: skin_default_skin.xml.h:510
+#: skin_default_skin.xml.h:511
 msgid "Resolution (current)"
 msgstr "Aktuele resolutie"
 
-#: skin_default_skin.xml.h:511
+#: skin_default_skin.xml.h:512
 msgid "Resolution (default)"
 msgstr "Standaard resolutie"
 
-#: skin_default_skin.xml.h:513
+#: skin_default_skin.xml.h:514
 msgid "Restore"
 msgstr "Herstel"
 
-#: skin_default_skin.xml.h:519
+#: skin_default_skin.xml.h:520
 msgid "RGUID Port"
 msgstr "RGUID poort"
 
-#: skin_default_skin.xml.h:520
+#: skin_default_skin.xml.h:521
 msgid "Rolloff"
 msgstr "Uitrollen"
 
-#: skin_default_skin.xml.h:521
+#: skin_default_skin.xml.h:522
 msgid "Rolloff:"
 msgstr "Uitrollen:"
 
-#: skin_default_skin.xml.h:522
+#: skin_default_skin.xml.h:523
 msgid "Rotor Position"
 msgstr "Rotor Positie"
 
-#: skin_default_skin.xml.h:523
+#: skin_default_skin.xml.h:524
 msgid "Rotor Settings"
 msgstr "Rotor instellingen"
 
-#: skin_default_skin.xml.h:524
+#: skin_default_skin.xml.h:525
 msgid "Runtime"
 msgstr "Tijd"
 
-#: skin_default_skin.xml.h:525
+#: skin_default_skin.xml.h:526
 msgid "Russian"
 msgstr "Русский"
 
-#: skin_default_skin.xml.h:526
+#: skin_default_skin.xml.h:527
 msgid "s"
 msgstr ""
 
-#: skin_default_skin.xml.h:527
+#: skin_default_skin.xml.h:528
 msgid "S"
 msgstr ""
 
-#: skin_default_skin.xml.h:528
+#: skin_default_skin.xml.h:529
 msgid "Samba Server Settings"
 msgstr "Samba Server instellingen"
 
-#: skin_default_skin.xml.h:531
+#: skin_default_skin.xml.h:532
 msgid "Sat Config"
 msgstr "Satellieten instellingen"
 
-#: skin_default_skin.xml.h:532
+#: skin_default_skin.xml.h:533
 msgid "SATCR Frequency"
 msgstr "Frequentie"
 
-#: skin_default_skin.xml.h:533
+#: skin_default_skin.xml.h:534
 msgid "SATCR Number"
 msgstr "SATCR nummer"
 
-#: skin_default_skin.xml.h:534
+#: skin_default_skin.xml.h:535
 msgid "Satellite"
 msgstr "Satelliet"
 
-#: skin_default_skin.xml.h:535
+#: skin_default_skin.xml.h:536
 msgid "Satfinder"
 msgstr "Sat zoeker"
 
-#: skin_default_skin.xml.h:536
+#: skin_default_skin.xml.h:537
 msgid "Sat Finder"
 msgstr "Sat zoeker"
 
-#: skin_default_skin.xml.h:537
+#: skin_default_skin.xml.h:538
 msgid "Saturation"
 msgstr "Saturatie"
 
-#: skin_default_skin.xml.h:541
+#: skin_default_skin.xml.h:542
 msgid "SAVETRANSPONDER"
 msgstr "Transponder opslaan"
 
-#: skin_default_skin.xml.h:543
+#: skin_default_skin.xml.h:544
 msgid "Scan Config"
 msgstr "Zenderzoek instellingen"
 
-#: skin_default_skin.xml.h:544
+#: skin_default_skin.xml.h:545
 msgid "ScanList"
 msgstr "Scan lijst"
 
-#: skin_default_skin.xml.h:545
+#: skin_default_skin.xml.h:546
 msgid "Scan locking"
 msgstr "Scan blokkering"
 
-#: skin_default_skin.xml.h:546
+#: skin_default_skin.xml.h:547
 msgid "SCANSTART"
 msgstr "Scan start"
 
-#: skin_default_skin.xml.h:547 tpk_section.h:15
+#: skin_default_skin.xml.h:548 tpk_section.h:15
 msgid "screensaver"
 msgstr "Screensaver"
 
-#: skin_default_skin.xml.h:548
+#: skin_default_skin.xml.h:549
 msgid "Screensaver Adjust"
 msgstr "Screensaver aanpassen"
 
-#: skin_default_skin.xml.h:549
+#: skin_default_skin.xml.h:550
 msgid "screensaver background"
 msgstr "Screensaver achtergrond"
 
-#: skin_default_skin.xml.h:550
+#: skin_default_skin.xml.h:551
 msgid "screensaver delay"
 msgstr "Screensaver vertraging"
 
-#: skin_default_skin.xml.h:551
+#: skin_default_skin.xml.h:552
 msgid "screensaver interval"
 msgstr "Screensaver interval"
 
-#: skin_default_skin.xml.h:552
+#: skin_default_skin.xml.h:553
 msgid "screensaver pic"
 msgstr "Screensaver afbeelding"
 
-#: skin_default_skin.xml.h:553
+#: skin_default_skin.xml.h:554
 msgid "screensaver type"
 msgstr "Screensaver type"
 
-#: skin_default_skin.xml.h:554
+#: skin_default_skin.xml.h:555
 msgid "--- SD resolution"
 msgstr "--- SD resolutie"
 
-#: skin_default_skin.xml.h:558
+#: skin_default_skin.xml.h:559
 msgid "Select backup:"
 msgstr "Selecteer backup:"
 
-#: skin_default_skin.xml.h:559
+#: skin_default_skin.xml.h:560
 msgid "Select Path"
 msgstr "Selecteer pad"
 
-#: skin_default_skin.xml.h:560
+#: skin_default_skin.xml.h:561
 msgid "Select Unicable Manufacturer"
 msgstr "Selecteer Unicable fabrikant"
 
-#: skin_default_skin.xml.h:561
+#: skin_default_skin.xml.h:562
 msgid "SEND"
 msgstr "Zend"
 
-#: skin_default_skin.xml.h:562
+#: skin_default_skin.xml.h:563
 msgid "Send all CAID to modules"
 msgstr "Alle CAID's naar CI module sturen"
 
-#: skin_default_skin.xml.h:563
+#: skin_default_skin.xml.h:564
 msgid "Serial Input"
 msgstr "Serial Input"
 
-#: skin_default_skin.xml.h:564
+#: skin_default_skin.xml.h:565
 msgid "Service"
 msgstr "Zender"
 
-#: skin_default_skin.xml.h:565
+#: skin_default_skin.xml.h:566
 msgid "Serviceinfo"
 msgstr "Zenderinfo"
 
-#: skin_default_skin.xml.h:567
+#: skin_default_skin.xml.h:568
 msgid "set startchannel"
 msgstr "Startkanaal kiezen"
 
-#: skin_default_skin.xml.h:569
+#: skin_default_skin.xml.h:570
 msgid "Settings backup/restore"
 msgstr "Instellingen backuppen/terugzetten"
 
-#: skin_default_skin.xml.h:570
+#: skin_default_skin.xml.h:571
 msgid "Show EPG screen (EPG button)"
 msgstr "Toon EPG (EPG knop)"
 
-#: skin_default_skin.xml.h:571
+#: skin_default_skin.xml.h:572
 msgid "Show HDD freesize"
 msgstr "Laat vrije ruimte hardeschijf zien"
 
-#: skin_default_skin.xml.h:574
+#: skin_default_skin.xml.h:575
 msgid "Show in Standby"
 msgstr "In Standby tonen"
 
-#: skin_default_skin.xml.h:575
+#: skin_default_skin.xml.h:576
 msgid "Show in VFD"
 msgstr "In Display tonen"
 

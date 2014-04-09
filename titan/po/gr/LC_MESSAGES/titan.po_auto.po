@@ -363,7 +363,7 @@ msgstr "alpha"
 
 #: adjust.h:99 httpdfunc.h:3655 mc_audioplayer_settings.h:28
 #: mc_pictureplayer_settings.h:43 mc_videoplayer_settings.h:24
-#: plugins_mc_skin.xml.h:49 skin_default_skin.xml.h:516 skins_mc_skin.xml.h:49
+#: plugins_mc_skin.xml.h:49 skin_default_skin.xml.h:517 skins_mc_skin.xml.h:49
 msgid "reverse alpha"
 msgstr "Αναστροφή alpha"
 
@@ -375,7 +375,7 @@ msgstr "Μέγεθος"
 
 #: adjust.h:101 httpdfunc.h:3669 mc_audioplayer_settings.h:30
 #: mc_pictureplayer_settings.h:45 mc_videoplayer_settings.h:26
-#: plugins_mc_skin.xml.h:51 skin_default_skin.xml.h:518 skins_mc_skin.xml.h:51
+#: plugins_mc_skin.xml.h:51 skin_default_skin.xml.h:519 skins_mc_skin.xml.h:51
 msgid "reverse size"
 msgstr "Επαναφορά μεγέθους"
 
@@ -388,7 +388,7 @@ msgstr "Ημερομηνία"
 
 #: adjust.h:103 httpdfunc.h:3683 mc_audioplayer_settings.h:32
 #: mc_pictureplayer_settings.h:47 mc_videoplayer_settings.h:28
-#: plugins_mc_skin.xml.h:50 skin_default_skin.xml.h:517 skins_mc_skin.xml.h:50
+#: plugins_mc_skin.xml.h:50 skin_default_skin.xml.h:518 skins_mc_skin.xml.h:50
 msgid "reverse date"
 msgstr "Επαναφορά ημερ/νιας"
 
@@ -405,7 +405,7 @@ msgstr "Σβήσιμο"
 msgid "Standby"
 msgstr "Standby"
 
-#: adjust.h:109 httpdfunc.h:3719 skin_default_skin.xml.h:512 softcam.h:291
+#: adjust.h:109 httpdfunc.h:3719 skin_default_skin.xml.h:513 softcam.h:291
 msgid "Restart"
 msgstr "Επανεκκίνηση"
 
@@ -625,7 +625,7 @@ msgstr ""
 #: myvideo.h:188 myvideo.h:190 myvideo.h:293 myvideo.h:295 netzkino.h:13
 #: netzkino.h:15 rtl2now.h:119 rtl2now.h:121 rtl2now.h:183 rtl2now.h:185
 #: rtl2now.h:247 rtl2now.h:249 rtl2now.h:311 rtl2now.h:313
-#: skin_default_skin.xml.h:555 solarmovie.h:97 solarmovie.h:99
+#: skin_default_skin.xml.h:556 solarmovie.h:97 solarmovie.h:99
 #: solarmovie.h:210 solarmovie.h:212 tectime.h:13 tectime.h:15
 #: tithek_mainmenu.h:35 tmdb.h:860 xvideos.h:56 xvideos.h:58 youtube.h:223
 #: youtube.h:225 youtube.h:315 youtube.h:317 zdf.h:147 zdf.h:149
@@ -673,7 +673,7 @@ msgstr ""
 msgid "ERROR... AutoTimer not started"
 msgstr ""
 
-#: autotimer.c:603 menu.h:946 menu.h:948 skin_default_skin.xml.h:540
+#: autotimer.c:603 menu.h:946 menu.h:948 skin_default_skin.xml.h:541
 msgid "Save Settings"
 msgstr "Αποθήκευση Ρυθμίσεων"
 
@@ -743,7 +743,7 @@ msgstr ""
 msgid "Terrestrial: "
 msgstr ""
 
-#: blindscanadjust.h:120 skin_default_skin.xml.h:529
+#: blindscanadjust.h:120 skin_default_skin.xml.h:530
 msgid "SAT"
 msgstr "SAT"
 
@@ -1586,7 +1586,7 @@ msgstr "Πέμπτη"
 msgid "Friday"
 msgstr "Παρασκευή"
 
-#: global.h:6699 rectimer.h:1064 skin_default_skin.xml.h:538
+#: global.h:6699 rectimer.h:1064 skin_default_skin.xml.h:539
 msgid "Saturday"
 msgstr "Σάββατο"
 
@@ -1883,7 +1883,7 @@ msgstr "Χρόνος Spinner"
 msgid "Hangtime"
 msgstr "Hangtime"
 
-#: httpdfunc.h:3529 skin_default_skin.xml.h:557
+#: httpdfunc.h:3529 skin_default_skin.xml.h:558
 msgid "Second Infobar"
 msgstr "Δεύτερο Infobar"
 
@@ -1949,7 +1949,7 @@ msgstr ""
 msgid "Change Channelname auto."
 msgstr ""
 
-#: httpdfunc.h:4039 skin_default_skin.xml.h:566
+#: httpdfunc.h:4039 skin_default_skin.xml.h:567
 msgid "Set action after rec"
 msgstr "Ενέργεια μετά"
 
@@ -1969,11 +1969,11 @@ msgstr ""
 msgid "Channellist view"
 msgstr "Ρύθμιση - Αναζήτηση Καναλιών"
 
-#: httpdfunc.h:4198 skin_default_skin.xml.h:576
+#: httpdfunc.h:4198
 msgid "Show last pos Question"
 msgstr ""
 
-#: httpdfunc.h:4220 skin_default_skin.xml.h:515
+#: httpdfunc.h:4220 skin_default_skin.xml.h:516
 msgid "Resync Recording immediately"
 msgstr ""
 
@@ -1985,7 +1985,7 @@ msgstr "Timer εγγραφής"
 msgid "Newsletter"
 msgstr ""
 
-#: httpdfunc.h:4286 skin_default_skin.xml.h:572
+#: httpdfunc.h:4286 skin_default_skin.xml.h:573
 msgid "Show hidden files"
 msgstr ""
 
@@ -1993,7 +1993,7 @@ msgstr ""
 msgid "Expert Modus"
 msgstr ""
 
-#: httpdfunc.h:4337 skin_default_skin.xml.h:573
+#: httpdfunc.h:4337 skin_default_skin.xml.h:574
 msgid "Show infobar on program change"
 msgstr ""
 
@@ -2013,7 +2013,7 @@ msgstr "Απενεργοποίηση"
 msgid "Activate CEC"
 msgstr "Ενεργοποίηση"
 
-#: httpdfunc.h:4476 skin_default_skin.xml.h:530
+#: httpdfunc.h:4476 skin_default_skin.xml.h:531
 msgid "SATA Connector"
 msgstr ""
 
@@ -3635,7 +3635,7 @@ msgstr ""
 #: plugins_instar_skin.xml.h:15 plugins_lcdpearl1_skin.xml.h:11
 #: plugins_lcdsamsung_skin.xml.h:14 plugins_panel_skin.xml.h:21
 #: plugins_stock_skin.xml.h:5 plugins_stopifnotused_skin.xml.h:5
-#: plugins_tmdb_skin.xml.h:7 skin_default_skin.xml.h:539
+#: plugins_tmdb_skin.xml.h:7 skin_default_skin.xml.h:540
 #: skins_autotimer_skin.xml.h:8 skins_callmonitor1_skin.xml.h:18
 #: skins_imdbapi_skin.xml.h:7 skins_imdb_skin.xml.h:7
 #: skins_instar_skin.xml.h:15 skins_lcdpearl1_skin.xml.h:11
@@ -3863,7 +3863,7 @@ msgstr ""
 
 #: plugins_imdbapi_skin.xml.h:8 plugins_imdb_skin.xml.h:8
 #: plugins_networkbrowser_skin.xml.h:25 plugins_tmdb_skin.xml.h:8
-#: skin_default_skin.xml.h:556 skins_imdbapi_skin.xml.h:8
+#: skin_default_skin.xml.h:557 skins_imdbapi_skin.xml.h:8
 #: skins_imdb_skin.xml.h:8 skins_networkbrowser_skin.xml.h:25
 #: skins_tmdb_skin.xml.h:8
 msgid "SEARCH"
@@ -4128,7 +4128,7 @@ msgid "Screensaver"
 msgstr "Προστασία οθόνης"
 
 #: plugins_mc_skin.xml.h:53 plugins_panel_skin.xml.h:5
-#: plugins_panel_skin.xml.h:22 skin_default_skin.xml.h:568
+#: plugins_panel_skin.xml.h:22 skin_default_skin.xml.h:569
 #: skins_mc_skin.xml.h:53 skins_panel_skin.xml.h:5 skins_panel_skin.xml.h:22
 msgid "Settings"
 msgstr "Ρυθμίσεις"
@@ -4656,7 +4656,7 @@ msgstr "Πίσω"
 msgid "Runtime:"
 msgstr "Hangtime"
 
-#: plugins_tmc_skin.xml.h:15 skin_default_skin.xml.h:542
+#: plugins_tmc_skin.xml.h:15 skin_default_skin.xml.h:543
 #: skins_tmc_skin.xml.h:15
 msgid "Scan"
 msgstr "Σάρωση"
@@ -5095,7 +5095,7 @@ msgid ""
 "The Box will reboot and the erase will be started!"
 msgstr ""
 
-#: restoredefault.h:65 restoredefault.h:77 skin_default_skin.xml.h:514
+#: restoredefault.h:65 restoredefault.h:77 skin_default_skin.xml.h:515
 msgid "Restore default settings"
 msgstr "Ρυθμίσεις προσαρμογέα Δικτύου"
 
@@ -7164,226 +7164,230 @@ msgid "RELOAD"
 msgstr "Επαναφόρτιση"
 
 #: skin_default_skin.xml.h:501
-msgid "Remove emthy Bouquet"
+msgid "Remember film position"
 msgstr ""
 
 #: skin_default_skin.xml.h:502
-msgid "REMOVE ENTRY"
+msgid "Remove emthy Bouquet"
 msgstr ""
 
 #: skin_default_skin.xml.h:503
+msgid "REMOVE ENTRY"
+msgstr ""
+
+#: skin_default_skin.xml.h:504
 msgid "remove service"
 msgstr "Διαγραφή σταθμού"
 
-#: skin_default_skin.xml.h:504
+#: skin_default_skin.xml.h:505
 msgid "Remove unused Channels in Bouquets"
 msgstr ""
 
-#: skin_default_skin.xml.h:505
+#: skin_default_skin.xml.h:506
 msgid "rename service"
 msgstr "Διαγραφή σταθμού"
 
-#: skin_default_skin.xml.h:506
+#: skin_default_skin.xml.h:507
 msgid "Repeate"
 msgstr "Επανέλαβε"
 
-#: skin_default_skin.xml.h:507
+#: skin_default_skin.xml.h:508
 msgid "Repeate type"
 msgstr "Είδος επανάληψης"
 
-#: skin_default_skin.xml.h:508
+#: skin_default_skin.xml.h:509
 msgid "RESET"
 msgstr ""
 
-#: skin_default_skin.xml.h:509
+#: skin_default_skin.xml.h:510
 msgid "Resolution:"
 msgstr "Ανάλυση"
 
-#: skin_default_skin.xml.h:510
+#: skin_default_skin.xml.h:511
 msgid "Resolution (current)"
 msgstr "Ανάλυση (προεπιλεγμένη)"
 
-#: skin_default_skin.xml.h:511
+#: skin_default_skin.xml.h:512
 msgid "Resolution (default)"
 msgstr "Ανάλυση (προεπιλεγμένη)"
 
-#: skin_default_skin.xml.h:513
+#: skin_default_skin.xml.h:514
 msgid "Restore"
 msgstr "Επαναφορά"
 
-#: skin_default_skin.xml.h:519
+#: skin_default_skin.xml.h:520
 msgid "RGUID Port"
 msgstr ""
 
-#: skin_default_skin.xml.h:520
+#: skin_default_skin.xml.h:521
 msgid "Rolloff"
 msgstr "Rolloff"
 
-#: skin_default_skin.xml.h:521
+#: skin_default_skin.xml.h:522
 msgid "Rolloff:"
 msgstr "Rolloff:"
 
-#: skin_default_skin.xml.h:522
+#: skin_default_skin.xml.h:523
 msgid "Rotor Position"
 msgstr "Θέση μοτέρ"
 
-#: skin_default_skin.xml.h:523
+#: skin_default_skin.xml.h:524
 msgid "Rotor Settings"
 msgstr "Ρυθμίσεις μοτέρ"
 
-#: skin_default_skin.xml.h:524
+#: skin_default_skin.xml.h:525
 msgid "Runtime"
 msgstr "Hangtime"
 
-#: skin_default_skin.xml.h:525
+#: skin_default_skin.xml.h:526
 msgid "Russian"
 msgstr ""
 
-#: skin_default_skin.xml.h:526
+#: skin_default_skin.xml.h:527
 msgid "s"
 msgstr "s"
 
-#: skin_default_skin.xml.h:527
+#: skin_default_skin.xml.h:528
 msgid "S"
 msgstr "S"
 
-#: skin_default_skin.xml.h:528
+#: skin_default_skin.xml.h:529
 msgid "Samba Server Settings"
 msgstr "Ρυθμίσεις Samba Server"
 
-#: skin_default_skin.xml.h:531
+#: skin_default_skin.xml.h:532
 msgid "Sat Config"
 msgstr "Ρύθμιση Δορυφόρων"
 
-#: skin_default_skin.xml.h:532
+#: skin_default_skin.xml.h:533
 msgid "SATCR Frequency"
 msgstr "Συχνότητα"
 
-#: skin_default_skin.xml.h:533
+#: skin_default_skin.xml.h:534
 msgid "SATCR Number"
 msgstr ""
 
-#: skin_default_skin.xml.h:534
+#: skin_default_skin.xml.h:535
 msgid "Satellite"
 msgstr "Δορυφόρος"
 
-#: skin_default_skin.xml.h:535
+#: skin_default_skin.xml.h:536
 msgid "Satfinder"
 msgstr "Sat finder"
 
-#: skin_default_skin.xml.h:536
+#: skin_default_skin.xml.h:537
 msgid "Sat Finder"
 msgstr "Sat finder"
 
-#: skin_default_skin.xml.h:537
+#: skin_default_skin.xml.h:538
 msgid "Saturation"
 msgstr "Κορεσμός"
 
-#: skin_default_skin.xml.h:541
+#: skin_default_skin.xml.h:542
 msgid "SAVETRANSPONDER"
 msgstr ""
 
-#: skin_default_skin.xml.h:543
+#: skin_default_skin.xml.h:544
 msgid "Scan Config"
 msgstr "Ρύθμιση Δορυφόρων"
 
-#: skin_default_skin.xml.h:544
+#: skin_default_skin.xml.h:545
 msgid "ScanList"
 msgstr "Σάρωση"
 
-#: skin_default_skin.xml.h:545
+#: skin_default_skin.xml.h:546
 msgid "Scan locking"
 msgstr "Overclocking"
 
-#: skin_default_skin.xml.h:546
+#: skin_default_skin.xml.h:547
 msgid "SCANSTART"
 msgstr "STOP/START"
 
-#: skin_default_skin.xml.h:547 tpk_section.h:15
+#: skin_default_skin.xml.h:548 tpk_section.h:15
 msgid "screensaver"
 msgstr "Προστασία οθόνης"
 
-#: skin_default_skin.xml.h:548
+#: skin_default_skin.xml.h:549
 msgid "Screensaver Adjust"
 msgstr "Ρυθμίσεις προστασίας οθόνης"
 
-#: skin_default_skin.xml.h:549
+#: skin_default_skin.xml.h:550
 msgid "screensaver background"
 msgstr "Φόντο προστ. οθόνης"
 
-#: skin_default_skin.xml.h:550
+#: skin_default_skin.xml.h:551
 msgid "screensaver delay"
 msgstr "Καθυστέρηση για προστ. οθόνης"
 
-#: skin_default_skin.xml.h:551
+#: skin_default_skin.xml.h:552
 msgid "screensaver interval"
 msgstr "Διάστημα μεταξύ εικόνων"
 
-#: skin_default_skin.xml.h:552
+#: skin_default_skin.xml.h:553
 msgid "screensaver pic"
 msgstr "Έικόνα προστ. οθόνης"
 
-#: skin_default_skin.xml.h:553
+#: skin_default_skin.xml.h:554
 msgid "screensaver type"
 msgstr "Είδος προστ. οθόνης"
 
-#: skin_default_skin.xml.h:554
+#: skin_default_skin.xml.h:555
 msgid "--- SD resolution"
 msgstr "--- Ανάλυση SD"
 
-#: skin_default_skin.xml.h:558
+#: skin_default_skin.xml.h:559
 msgid "Select backup:"
 msgstr "Επιλογή backup:"
 
-#: skin_default_skin.xml.h:559
+#: skin_default_skin.xml.h:560
 msgid "Select Path"
 msgstr "Επιλογή διαδρομής"
 
-#: skin_default_skin.xml.h:560
+#: skin_default_skin.xml.h:561
 msgid "Select Unicable Manufacturer"
 msgstr ""
 
-#: skin_default_skin.xml.h:561
+#: skin_default_skin.xml.h:562
 msgid "SEND"
 msgstr ""
 
-#: skin_default_skin.xml.h:562
+#: skin_default_skin.xml.h:563
 msgid "Send all CAID to modules"
 msgstr ""
 
-#: skin_default_skin.xml.h:563
+#: skin_default_skin.xml.h:564
 msgid "Serial Input"
 msgstr ""
 
-#: skin_default_skin.xml.h:564
+#: skin_default_skin.xml.h:565
 msgid "Service"
 msgstr "Κανάλι"
 
-#: skin_default_skin.xml.h:565
+#: skin_default_skin.xml.h:566
 msgid "Serviceinfo"
 msgstr "Πληροφορίες καναλιού"
 
-#: skin_default_skin.xml.h:567
+#: skin_default_skin.xml.h:568
 msgid "set startchannel"
 msgstr "Επιλογή καναλιού εκκίνησης"
 
-#: skin_default_skin.xml.h:569
+#: skin_default_skin.xml.h:570
 msgid "Settings backup/restore"
 msgstr "Ρυθμίσεις backup/επαναφοράς"
 
-#: skin_default_skin.xml.h:570
+#: skin_default_skin.xml.h:571
 msgid "Show EPG screen (EPG button)"
 msgstr "Ένδειξη οθόνης EPG (κουμπί EPG)"
 
-#: skin_default_skin.xml.h:571
+#: skin_default_skin.xml.h:572
 msgid "Show HDD freesize"
 msgstr ""
 
-#: skin_default_skin.xml.h:574
+#: skin_default_skin.xml.h:575
 msgid "Show in Standby"
 msgstr "Ένδειξη σε Standby"
 
-#: skin_default_skin.xml.h:575
+#: skin_default_skin.xml.h:576
 msgid "Show in VFD"
 msgstr "Ένδειξη στο VFD"
 
