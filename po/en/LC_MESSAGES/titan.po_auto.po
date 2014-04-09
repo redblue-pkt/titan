@@ -49,7 +49,7 @@ msgstr ""
 #: filemanager.h:100 filemanager.h:206 filemanager.h:279 filemanager.h:289
 #: filemanager.h:319 filemanager.h:329 filenuke.h:37 filenuke.h:84
 #: filenuke.h:96 filenuke.h:108 filenuke.h:157 flashx.h:26 flashx.h:84
-#: flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270 global.h:6464
+#: flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270 global.h:6469
 #: gmediarender.h:115 harddisk.h:350 harddisk.h:355 harddisk.h:382
 #: harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641 harddisk.h:675
 #: harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733 harddisk.h:793
@@ -62,14 +62,14 @@ msgstr ""
 #: inadyn.h:190 inadyn.h:200 infobar.h:485 infobar.h:607 info.h:27
 #: keyactions.h:305 lcdpearl1.c:45 lcdsamsung.c:101 log.h:46 log.h:48
 #: mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
-#: mc_audioplayer.h:332 mc_audioplayer.h:603 mc_audioplayer.h:706
+#: mc_audioplayer.h:333 mc_audioplayer.h:604 mc_audioplayer.h:707
 #: mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
 #: mc_internetbrowser.h:36 mc_main.h:47 mc_main.h:52 mc_main.h:57 mc_main.h:92
 #: mc_main.h:97 mc_main.h:268 mc_main.h:277 mc_mediathek.h:35
-#: mc_pictureplayer.h:99 mc_pictureplayer.h:123 mc_pictureplayer.h:241
-#: mc_pictureplayer.h:367 mc_pictureplayer.h:460 mc_videoplayer.h:331
-#: mc_videoplayer.h:748 mc_videoplayer.h:783 mc_videoplayer.h:887
-#: mc_videoplayer.h:903 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
+#: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
+#: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:332
+#: mc_videoplayer.h:749 mc_videoplayer.h:784 mc_videoplayer.h:888
+#: mc_videoplayer.h:904 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
 #: mediadb.h:1477 mediadb.h:2454 mediadbsettings.h:95 menu.h:153 menu.h:208
 #: menu.h:946 menu.h:948 movreel.h:30 movreel.h:79 movreel.h:91 movreel.h:103
 #: movreel.h:154 movreel.h:202 movshare.h:35 movshare.h:149 myvideo.h:50
@@ -141,7 +141,7 @@ msgstr ""
 #: filemanager.h:100 filemanager.h:206 filemanager.h:279 filemanager.h:289
 #: filemanager.h:319 filemanager.h:329 filenuke.h:37 filenuke.h:84
 #: filenuke.h:96 filenuke.h:108 filenuke.h:157 flashx.h:26 flashx.h:84
-#: flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270 global.h:6464
+#: flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270 global.h:6469
 #: gmediarender.h:115 harddisk.h:350 harddisk.h:355 harddisk.h:382
 #: harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641 harddisk.h:675
 #: harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733 harddisk.h:793
@@ -154,14 +154,14 @@ msgstr ""
 #: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:485 infobar.h:607
 #: info.h:27 keyactions.h:305 log.h:46 log.h:48 marker.h:215 marker.h:229
 #: mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
-#: mc_audioplayer.h:332 mc_audioplayer.h:603 mc_audioplayer.h:706
+#: mc_audioplayer.h:333 mc_audioplayer.h:604 mc_audioplayer.h:707
 #: mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
 #: mc_internetbrowser.h:36 mc_main.h:47 mc_main.h:52 mc_main.h:57 mc_main.h:92
 #: mc_main.h:97 mc_main.h:268 mc_main.h:277 mc_mediathek.h:35
-#: mc_pictureplayer.h:99 mc_pictureplayer.h:123 mc_pictureplayer.h:241
-#: mc_pictureplayer.h:367 mc_pictureplayer.h:460 mc_videoplayer.h:331
-#: mc_videoplayer.h:748 mc_videoplayer.h:783 mc_videoplayer.h:887
-#: mc_videoplayer.h:903 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
+#: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
+#: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:332
+#: mc_videoplayer.h:749 mc_videoplayer.h:784 mc_videoplayer.h:888
+#: mc_videoplayer.h:904 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
 #: mediadb.h:1477 mediadb.h:2454 mediadbsettings.h:95 menu.h:153 menu.h:208
 #: menu.h:946 menu.h:948 movreel.h:30 movreel.h:79 movreel.h:91 movreel.h:103
 #: movreel.h:154 movreel.h:202 movshare.h:35 movshare.h:149 myvideo.h:50
@@ -549,7 +549,7 @@ msgstr ""
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:329
 #: filenuke.h:37 filenuke.h:84 filenuke.h:96 filenuke.h:108 filenuke.h:157
 #: flashx.h:26 flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:6464 gmediarender.h:115 harddisk.h:633 harddisk.h:641
+#: global.h:6469 gmediarender.h:115 harddisk.h:633 harddisk.h:641
 #: harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733
 #: harddisk.h:793 harddisk.h:811 harddisk.h:814 hbbtv.h:362 hello.c:36
 #: httpdfunc.h:1098 hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103
@@ -559,14 +559,14 @@ msgstr ""
 #: hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626 inadyn.h:188
 #: inadyn.h:190 inadyn.h:200 infobar.h:485 infobar.h:607 keyactions.h:305
 #: language.h:49 lcdpearl1.c:45 lcdsamsung.c:101 log.h:46 log.h:48
-#: marker.h:215 marker.h:229 mc_audioplayer.h:332 mc_audioplayer.h:603
-#: mc_audioplayer.h:706 mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
+#: marker.h:215 marker.h:229 mc_audioplayer.h:333 mc_audioplayer.h:604
+#: mc_audioplayer.h:707 mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
 #: mc_internetbrowser.h:36 mc_main.h:47 mc_main.h:52 mc_main.h:57 mc_main.h:92
 #: mc_main.h:97 mc_main.h:268 mc_main.h:277 mc_mediathek.h:35
-#: mc_pictureplayer.h:99 mc_pictureplayer.h:123 mc_pictureplayer.h:241
-#: mc_pictureplayer.h:367 mc_pictureplayer.h:460 mc_videoplayer.h:331
-#: mc_videoplayer.h:748 mc_videoplayer.h:783 mc_videoplayer.h:887
-#: mc_videoplayer.h:903 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
+#: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
+#: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:332
+#: mc_videoplayer.h:749 mc_videoplayer.h:784 mc_videoplayer.h:888
+#: mc_videoplayer.h:904 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
 #: mediadb.h:1477 mediadbsettings.h:95 menu.h:153 menu.h:208 movreel.h:30
 #: movreel.h:79 movreel.h:91 movreel.h:103 movreel.h:154 movreel.h:202
 #: movshare.h:35 movshare.h:149 myvideo.h:50 networkbrowser.h:944
@@ -1161,10 +1161,10 @@ msgstr "Eject"
 msgid "SELECT"
 msgstr "Select"
 
-#: dvdplay.h:62 mc_audioplayer.h:603 mc_audioplayer.h:706 mc_global.h:773
-#: mc_global.h:1020 mc_pictureplayer.h:99 mc_pictureplayer.h:241
-#: mc_pictureplayer.h:367 mc_pictureplayer.h:460 mc_videoplayer.h:748
-#: mc_videoplayer.h:887 play.h:1489
+#: dvdplay.h:62 mc_audioplayer.h:604 mc_audioplayer.h:707 mc_global.h:773
+#: mc_global.h:1020 mc_pictureplayer.h:100 mc_pictureplayer.h:242
+#: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:749
+#: mc_videoplayer.h:888 play.h:1489
 msgid "Can't start playback !"
 msgstr ""
 
@@ -1594,63 +1594,63 @@ msgstr "Can't remove file/dir!"
 msgid "Can't show this file!"
 msgstr ""
 
-#: global.h:6464 keyactions.h:305
+#: global.h:6469 keyactions.h:305
 msgid "ERROR cant read res"
 msgstr "ERROR: can't read resolution"
 
-#: global.h:6689 rectimer.h:1059 skin_default_skin.xml.h:393
+#: global.h:6694 rectimer.h:1059 skin_default_skin.xml.h:393
 msgid "Monday"
 msgstr ""
 
-#: global.h:6690 rectimer.h:1060 skin_default_skin.xml.h:677
+#: global.h:6695 rectimer.h:1060 skin_default_skin.xml.h:677
 msgid "Tuesday"
 msgstr ""
 
-#: global.h:6691 rectimer.h:1061 skin_default_skin.xml.h:730
+#: global.h:6696 rectimer.h:1061 skin_default_skin.xml.h:730
 msgid "Wednesday"
 msgstr ""
 
-#: global.h:6692 rectimer.h:1062 skin_default_skin.xml.h:648
+#: global.h:6697 rectimer.h:1062 skin_default_skin.xml.h:648
 msgid "Thursday"
 msgstr ""
 
-#: global.h:6693 rectimer.h:1063 skin_default_skin.xml.h:244
+#: global.h:6698 rectimer.h:1063 skin_default_skin.xml.h:244
 msgid "Friday"
 msgstr ""
 
-#: global.h:6694 rectimer.h:1064 skin_default_skin.xml.h:538
+#: global.h:6699 rectimer.h:1064 skin_default_skin.xml.h:538
 msgid "Saturday"
 msgstr ""
 
-#: global.h:6695 rectimer.h:1065 skin_default_skin.xml.h:624
+#: global.h:6700 rectimer.h:1065 skin_default_skin.xml.h:624
 msgid "Sunday"
 msgstr ""
 
-#: global.h:6699
+#: global.h:6704
 msgid "Mon"
 msgstr ""
 
-#: global.h:6700
+#: global.h:6705
 msgid "Tue"
 msgstr ""
 
-#: global.h:6701
+#: global.h:6706
 msgid "Wed"
 msgstr ""
 
-#: global.h:6702
+#: global.h:6707
 msgid "Thu"
 msgstr ""
 
-#: global.h:6703
+#: global.h:6708
 msgid "Fri"
 msgstr ""
 
-#: global.h:6704
+#: global.h:6709
 msgid "Sat"
 msgstr ""
 
-#: global.h:6705
+#: global.h:6710
 msgid "Sun"
 msgstr ""
 
@@ -2323,8 +2323,8 @@ msgstr ""
 msgid "DYNDNS now stopped"
 msgstr ""
 
-#: infobar.h:485 mc_audioplayer.h:332 mc_main.h:268 mc_pictureplayer.h:123
-#: mc_videoplayer.h:331 menu.h:208
+#: infobar.h:485 mc_audioplayer.h:333 mc_main.h:268 mc_pictureplayer.h:124
+#: mc_videoplayer.h:332 menu.h:208
 msgid ""
 "Shooting Background done !\n"
 "Save Screenshoot Path: /tmp/screenshot.jpg"
@@ -2579,31 +2579,31 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: mc_audioplayer.h:407 mc_global.h:1079 mc_pictureplayer.h:149
-#: mc_videoplayer.h:427
+#: mc_audioplayer.h:408 mc_global.h:1079 mc_pictureplayer.h:150
+#: mc_videoplayer.h:428
 msgid "Repeat-On"
 msgstr "Repeat modus On"
 
-#: mc_audioplayer.h:414 mc_audioplayer.h:564 mc_global.h:1081
-#: mc_pictureplayer.h:156 mc_pictureplayer.h:321 mc_videoplayer.h:434
-#: mc_videoplayer.h:668 plugins_mc_skin.xml.h:48 skins_mc_skin.xml.h:48
+#: mc_audioplayer.h:415 mc_audioplayer.h:565 mc_global.h:1081
+#: mc_pictureplayer.h:157 mc_pictureplayer.h:322 mc_videoplayer.h:435
+#: mc_videoplayer.h:669 plugins_mc_skin.xml.h:48 skins_mc_skin.xml.h:48
 msgid "Repeat"
 msgstr ""
 
-#: mc_audioplayer.h:519 mc_audioplayer.h:562 mc_audioplayer.h:682
-#: mc_pictureplayer.h:274 mc_pictureplayer.h:319 mc_pictureplayer.h:429
-#: mc_videoplayer.h:593 mc_videoplayer.h:666 mc_videoplayer.h:853
+#: mc_audioplayer.h:520 mc_audioplayer.h:563 mc_audioplayer.h:683
+#: mc_pictureplayer.h:275 mc_pictureplayer.h:320 mc_pictureplayer.h:430
+#: mc_videoplayer.h:594 mc_videoplayer.h:667 mc_videoplayer.h:854
 #: plugins_mc_skin.xml.h:27 skins_mc_skin.xml.h:27
 msgid "Filelist-Mode"
 msgstr ""
 
-#: mc_audioplayer.h:563 mc_global.h:558 mc_global.h:586 mc_global.h:1076
-#: mc_pictureplayer.h:320 mc_videoplayer.h:667 plugins_mc_skin.xml.h:47
+#: mc_audioplayer.h:564 mc_global.h:558 mc_global.h:586 mc_global.h:1076
+#: mc_pictureplayer.h:321 mc_videoplayer.h:668 plugins_mc_skin.xml.h:47
 #: skins_mc_skin.xml.h:47
 msgid "Random"
 msgstr ""
 
-#: mc_audioplayer.h:584 mc_pictureplayer.h:340 mc_videoplayer.h:708
+#: mc_audioplayer.h:585 mc_pictureplayer.h:341 mc_videoplayer.h:709
 msgid "Playlist-Mode"
 msgstr ""
 
@@ -2729,13 +2729,13 @@ msgstr ""
 msgid "skin (picmem jpg)"
 msgstr ""
 
-#: mc_videoplayer.h:783
+#: mc_videoplayer.h:784
 msgid "Found VIDEO_TS Folder, start with DVD-Player ?"
 msgstr ""
 "A VIDEO_TS path was found.\n"
 "Start playback with the DVD player?"
 
-#: mc_videoplayer.h:903 player.h:99
+#: mc_videoplayer.h:904 player.h:99
 msgid "Start at last position ?"
 msgstr "Resume at last position?"
 
