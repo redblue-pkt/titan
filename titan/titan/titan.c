@@ -640,38 +640,38 @@ int main(int argc, char *argv[])
 		if(checkreseller() != 0)
 		{
 			printf("error: 3\n");		
-			destroy();
-			exit(100);
+//			destroy();
+//			exit(100);
 		}
 		if(getsysinfo() != SYSCODE)
 		{
 			printf("error: 4\n");		
-			destroy();
-			exit(100);
+//			destroy();
+//			exit(100);
 		}
 		if(file_exist("/mnt/swapextensions/etc/.vnumber") == 1)
 		{
 			printf("error: 5\n");		
-			destroy();
-			exit(100);
+//			destroy();
+//			exit(100);
 		}
 		if(checkflash() != 0)
 		{
 			printf("error: 6\n");		
-			destroy();
-			exit(100);
+//			destroy();
+//			exit(100);
 		}
 		if((checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO5200") == 1) && checkhighflash() != 0)
 		{
 			printf("error: 7\n");		
-			destroy();
-			exit(100);
+//			destroy();
+//			exit(100);
 		}
 		if(checkbox("UFS910") == 1 && checklowflash() != 0)
 		{
 			printf("error: 8\n");		
-			destroy();
-			exit(100);
+//			destroy();
+//			exit(100);
 		}
 	
 		char* cpuid = getcpuid();
