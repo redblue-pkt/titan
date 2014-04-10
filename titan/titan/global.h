@@ -5773,6 +5773,7 @@ char* command(char* input)
 
 char* string_tolower(char *str)
 {
+/*
 	char *p1 = str;
 
 	if(str == NULL) return NULL;
@@ -5781,10 +5782,21 @@ char* string_tolower(char *str)
 		*p1++ = tolower(*p1);
 	
 	return str;
+*/
+	if(str == NULL) return NULL;
+
+	int i=0;
+	while (str[i])
+	{
+		str[i] = tolower(str[i]);
+		i++;
+	}
+	return str;
 }
 
 char* string_toupper(char *str)
 {
+/*
 	char *p1 = str;
 
 	if(str == NULL) return NULL;
@@ -5792,7 +5804,16 @@ char* string_toupper(char *str)
 	while(*p1 != '\0')
 		*p1++ = toupper(*p1);
 	
-	return str;		
+*/
+	if(str == NULL) return NULL;
+
+	int i=0;
+	while (str[i])
+	{
+		str[i] = toupper(str[i]);
+		i++;
+	}
+	return str;
 }
 
 char* stringreplacecharonce(char *str, char c1, char c2)
