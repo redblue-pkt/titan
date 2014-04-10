@@ -621,17 +621,6 @@ int main(int argc, char *argv[])
 	ret = setvfdbrightness(getconfigint("vfdbrightness", NULL));
 	ret = setaudiodelaybitstream(getconfig("audiodelaybitstream", NULL));
 	ret = addinetworkall(NULL);
-
-
-int i=0;
-  char str[]="Test String.\n";
-  char c;
-  while (str[i])
-  {
-    c=str[i];
-    putchar (toupper(c));
-    i++;
-  }
   
 #ifndef SIMULATE
 	if(getconfigint("sos", NULL) == 0)
