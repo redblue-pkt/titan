@@ -464,7 +464,7 @@ else
 	eplayerlib=gstreamer-0.10
 fi
 
-if [ "$GROUP" = "dev" ]; then
+if [ "$GROUP" = "dev" ] && [ "$TYPE" != "ufs910" ] && [ "$TYPE" != "ufs922" ]; then
 	devflag="-finstrument-functions -rdynamic -DBETA"
 else
 	devflag=""
