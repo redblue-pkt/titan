@@ -2409,7 +2409,7 @@ int setwakeuptimer(time_t waketime)
 
 	if(buf != NULL)
 	{
-		debug(100, "set wake up timer (%s)", buf);
+		debug(10, "set wake up timer (%s)", buf);
 		ret = system(buf);
 	}
 
