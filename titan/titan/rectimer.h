@@ -157,7 +157,7 @@ int checkrectimeradd(struct rectimer* recnode, char** ret)
 
 	if(checkrectimerconflict(recnode) != 0)
 	{
-		*ret = "Timer conflicts with other timer\nWould you add the timer?";
+		*ret = _("Timer conflicts with other timer\nWould you add the timer?");
 		return 2;
 	}
 
