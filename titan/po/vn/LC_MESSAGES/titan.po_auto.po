@@ -5051,6 +5051,12 @@ msgstr ""
 msgid "Timer transponder ID not ok"
 msgstr ""
 
+#: rectimer.h:160
+msgid ""
+"Timer conflicts with other timer\n"
+"Would you add the timer?"
+msgstr ""
+
 #: rectimer.h:546
 msgid "not started akttime higher than timer endtime"
 msgstr " không bắt đầu khi kết thúc thời gian hẹn giờ"
