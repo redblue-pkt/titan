@@ -5105,6 +5105,12 @@ msgstr "Timer zender bestaat niet"
 msgid "Timer transponder ID not ok"
 msgstr "Timer transponder ID bestaat niet"
 
+#: rectimer.h:160
+msgid ""
+"Timer conflicts with other timer\n"
+"Would you add the timer?"
+msgstr ""
+
 #: rectimer.h:546
 msgid "not started akttime higher than timer endtime"
 msgstr "Niet gestart, eindtijd is reeds geweest"

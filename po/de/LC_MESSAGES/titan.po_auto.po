@@ -5131,6 +5131,12 @@ msgstr "FEHLER: Sender ID stimmt nicht!"
 msgid "Timer transponder ID not ok"
 msgstr "FEHLER: Transponder ID stimmt nicht!"
 
+#: rectimer.h:160
+msgid ""
+"Timer conflicts with other timer\n"
+"Would you add the timer?"
+msgstr ""
+
 #: rectimer.h:546
 msgid "not started akttime higher than timer endtime"
 msgstr "FEHLER: Timer nicht gestartet, Endzeit bereits vergangen"
