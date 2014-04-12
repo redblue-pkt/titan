@@ -19,9 +19,9 @@ rm "$HOME"/flashimg/.ipk-build-error
 # work
 #mv -f "$HOME"/flashimg/source.titan/titan/struct.mipsel.h "$HOME"/flashimg/source.titan/titan/struct.h
 
-if [ "$GROUP" = "dev" ];then
-	mv -f "$HOME"/flashimg/source.titan/titan/skin.mipsel.h "$HOME"/flashimg/source.titan/titan/skin.h
-fi
+#if [ "$GROUP" = "dev" ];then
+#	mv -f "$HOME"/flashimg/source.titan/titan/skin.mipsel.h "$HOME"/flashimg/source.titan/titan/skin.h
+#fi
 
 if [ -z "$TYPE" ]; then
 	echo "error: use ./makesh4.sh <BOXTYPE> <stm22|stm23|stm24> <1|2> <svnuser> <svnpass> <svnurl> <kerneldir> <rootdir> <ipkdir> <version> <buildtype>"
