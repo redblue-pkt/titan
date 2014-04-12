@@ -92,8 +92,8 @@ msgstr ""
 #: putlocker.h:32 putlocker.h:79 putlocker.h:85 putlocker.h:136
 #: putlocker.h:146 putlocker.h:219 readerconfig.h:343 readerconfig.h:443
 #: readerconfig.h:444 readerconfig.h:488 readerconfig.h:489 record.h:369
-#: record.h:1001 record.h:1452 rectimer.h:557 rectimer.h:1210 rectimer.h:1356
-#: rectimer.h:1368 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
+#: record.h:1001 record.h:1452 rectimer.h:575 rectimer.h:1229 rectimer.h:1375
+#: rectimer.h:1387 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:28 scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1888
 #: scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 scriptexec.h:41 service.h:710
@@ -188,8 +188,8 @@ msgstr "ОК"
 #: putlocker.h:85 putlocker.h:136 putlocker.h:146 putlocker.h:219
 #: readerconfig.h:343 readerconfig.h:443 readerconfig.h:444 readerconfig.h:488
 #: readerconfig.h:489 record.h:90 record.h:369 record.h:1001 record.h:1188
-#: record.h:1427 record.h:1452 rectimer.h:557 rectimer.h:1210 rectimer.h:1356
-#: rectimer.h:1368 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
+#: record.h:1427 record.h:1452 rectimer.h:575 rectimer.h:1229 rectimer.h:1375
+#: rectimer.h:1387 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:28 scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1888
 #: scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 scriptexec.h:41 service.h:710
@@ -262,9 +262,9 @@ msgstr "Выход"
 #: panel_settings_autostart.h:351 panel_settings_autostart.h:360
 #: panel_settings_overclocking.h:214 panel_settings_overclocking.h:234
 #: panel_settings_overclocking.h:244 pin.h:104 pin.h:176 pin.h:180 pin.h:194
-#: play.h:562 play.h:569 play.h:584 readerconfig.h:254 rectimer.h:1069
-#: rectimer.h:1074 rectimer.h:1079 rectimer.h:1084 rectimer.h:1089
-#: rectimer.h:1094 rectimer.h:1099 scan.h:1768 scan.h:2241 scan.h:2245
+#: play.h:562 play.h:569 play.h:584 readerconfig.h:254 rectimer.h:1088
+#: rectimer.h:1093 rectimer.h:1098 rectimer.h:1103 rectimer.h:1108
+#: rectimer.h:1113 rectimer.h:1118 scan.h:1768 scan.h:2241 scan.h:2245
 #: scan.h:2249 scan.h:2253 scan.h:2257 scan.h:2266 scan.h:2270
 #: screensaveradjust.h:19 settings_autostart.h:26 settings_autostart.h:132
 #: settings_autostart.h:141 settings_autostart.h:162 settings_autostart.h:198
@@ -327,9 +327,9 @@ msgstr ""
 #: panel_settings_autostart.h:337 panel_settings_autostart.h:351
 #: panel_settings_overclocking.h:214 panel_settings_overclocking.h:234
 #: panel_settings_overclocking.h:244 pin.h:105 pin.h:177 pin.h:195 play.h:560
-#: play.h:567 play.h:582 readerconfig.h:255 rectimer.h:1070 rectimer.h:1075
-#: rectimer.h:1080 rectimer.h:1085 rectimer.h:1090 rectimer.h:1095
-#: rectimer.h:1100 scan.h:1769 scan.h:2242 scan.h:2246 scan.h:2250 scan.h:2254
+#: play.h:567 play.h:582 readerconfig.h:255 rectimer.h:1089 rectimer.h:1094
+#: rectimer.h:1099 rectimer.h:1104 rectimer.h:1109 rectimer.h:1114
+#: rectimer.h:1119 scan.h:1769 scan.h:2242 scan.h:2246 scan.h:2250 scan.h:2254
 #: scan.h:2258 scan.h:2267 scan.h:2271 screensaveradjust.h:20
 #: settings_autostart.h:26 settings_autostart.h:132 settings_autostart.h:141
 #: settings_autostart.h:162 settings_autostart.h:198 settings_autostart.h:207
@@ -457,7 +457,7 @@ msgid "intern"
 msgstr ""
 
 #: adjust.h:153 autotimer.c:479 autotimer.c:512 avsettings.h:68
-#: httpdfunc.h:4046 rectimer.h:1165 transponder.h:121 transponder.h:133
+#: httpdfunc.h:4046 rectimer.h:1184 transponder.h:121 transponder.h:133
 #: transponder.h:157 transponder.h:167 transponder.h:193 transponder.h:200
 #: transponder.h:226 transponder.h:234 transponder.h:258 transponder.h:268
 #: transponder.h:294 transponder.h:301 transponder.h:319 transponder.h:337
@@ -467,17 +467,17 @@ msgid "auto"
 msgstr ""
 
 #: adjust.h:154 autotimer.c:480 autotimer.c:513 epgsettings.h:215
-#: httpdfunc.h:4053 rectimer.h:1166
+#: httpdfunc.h:4053 rectimer.h:1185
 msgid "nothing"
 msgstr ""
 
 #: adjust.h:155 autotimer.c:481 autotimer.c:514 httpdfunc.h:4060
-#: rectimer.h:1167 stopifnotused.c:112
+#: rectimer.h:1186 stopifnotused.c:112
 msgid "standby"
 msgstr "Standby"
 
 #: adjust.h:156 autotimer.c:482 autotimer.c:515 httpdfunc.h:4067
-#: rectimer.h:1168 stopifnotused.c:111
+#: rectimer.h:1187 stopifnotused.c:111
 msgid "power off"
 msgstr "Выключение"
 
@@ -583,7 +583,7 @@ msgstr ""
 #: putlocker.h:136 putlocker.h:146 putlocker.h:219 readerconfig.h:343
 #: readerconfig.h:443 readerconfig.h:444 readerconfig.h:488 readerconfig.h:489
 #: record.h:369 record.h:1001 record.h:1188 record.h:1427 record.h:1452
-#: rectimer.h:557 rectimer.h:1210 rectimer.h:1356 rectimer.h:1368
+#: rectimer.h:575 rectimer.h:1229 rectimer.h:1375 rectimer.h:1387
 #: restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:28 scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1640
@@ -632,7 +632,7 @@ msgstr ""
 msgid "Search"
 msgstr "Поиск каналов"
 
-#: audiotrack.h:48 play.h:271 rectimer.h:1485 subtitle.h:1624
+#: audiotrack.h:48 play.h:271 rectimer.h:1504 subtitle.h:1624
 msgid "running"
 msgstr ""
 
@@ -641,11 +641,11 @@ msgstr ""
 msgid "undefined"
 msgstr ""
 
-#: autotimer.c:475 autotimer.c:508 harddisk.h:540 rectimer.h:1028
+#: autotimer.c:475 autotimer.c:508 harddisk.h:540 rectimer.h:1047
 msgid "record"
 msgstr "Проверка файловой системы записи"
 
-#: autotimer.c:476 autotimer.c:509 rectimer.h:1029
+#: autotimer.c:476 autotimer.c:509 rectimer.h:1048
 msgid "switch channel"
 msgstr "Стартовый канал"
 
@@ -1566,31 +1566,31 @@ msgstr ""
 msgid "ERROR cant read res"
 msgstr ""
 
-#: global.h:6715 rectimer.h:1059 skin_default_skin.xml.h:393
+#: global.h:6715 rectimer.h:1078 skin_default_skin.xml.h:393
 msgid "Monday"
 msgstr "Понедельник"
 
-#: global.h:6716 rectimer.h:1060 skin_default_skin.xml.h:677
+#: global.h:6716 rectimer.h:1079 skin_default_skin.xml.h:677
 msgid "Tuesday"
 msgstr "Вторник"
 
-#: global.h:6717 rectimer.h:1061 skin_default_skin.xml.h:730
+#: global.h:6717 rectimer.h:1080 skin_default_skin.xml.h:730
 msgid "Wednesday"
 msgstr "Среда"
 
-#: global.h:6718 rectimer.h:1062 skin_default_skin.xml.h:648
+#: global.h:6718 rectimer.h:1081 skin_default_skin.xml.h:648
 msgid "Thursday"
 msgstr "Четверг"
 
-#: global.h:6719 rectimer.h:1063 skin_default_skin.xml.h:244
+#: global.h:6719 rectimer.h:1082 skin_default_skin.xml.h:244
 msgid "Friday"
 msgstr "Пятница"
 
-#: global.h:6720 rectimer.h:1064 skin_default_skin.xml.h:539
+#: global.h:6720 rectimer.h:1083 skin_default_skin.xml.h:539
 msgid "Saturday"
 msgstr "Суббота"
 
-#: global.h:6721 rectimer.h:1065 skin_default_skin.xml.h:624
+#: global.h:6721 rectimer.h:1084 skin_default_skin.xml.h:624
 msgid "Sunday"
 msgstr "Воскресенье"
 
@@ -2446,7 +2446,7 @@ msgstr ""
 msgid "C-Band"
 msgstr ""
 
-#: lnbconfig.h:149 rectimer.h:1055
+#: lnbconfig.h:149 rectimer.h:1074
 msgid "user defined"
 msgstr "Имя пользователя"
 
@@ -4995,85 +4995,85 @@ msgstr ""
 msgid "Record started"
 msgstr "Место хранения записи"
 
-#: rectimer.h:129
+#: rectimer.h:147
 msgid "undefined error"
 msgstr ""
 
-#: rectimer.h:134
+#: rectimer.h:152
 msgid "Timer starttime or endtime not ok"
 msgstr ""
 
-#: rectimer.h:139
+#: rectimer.h:157
 msgid "Timer endtime shorter than aktual time"
 msgstr ""
 
-#: rectimer.h:144
+#: rectimer.h:162
 msgid "Timer endtime shorter than start time"
 msgstr ""
 
-#: rectimer.h:149
+#: rectimer.h:167
 msgid "Timer service ID not ok"
 msgstr ""
 
-#: rectimer.h:154
+#: rectimer.h:172
 msgid "Timer transponder ID not ok"
 msgstr ""
 
-#: rectimer.h:160
+#: rectimer.h:178
 msgid ""
 "Timer conflicts with other timer\n"
 "Would you add the timer?"
 msgstr ""
 
-#: rectimer.h:546
+#: rectimer.h:564
 msgid "not started akttime higher than timer endtime"
 msgstr ""
 
-#: rectimer.h:557
+#: rectimer.h:575
 msgid "EPG Scan activate standby?"
 msgstr ""
 
-#: rectimer.h:664
+#: rectimer.h:682
 msgid "stopped from user"
 msgstr ""
 
-#: rectimer.h:1039 rectimer.h:1448 rectimer.h:1459
+#: rectimer.h:1058 rectimer.h:1467 rectimer.h:1478
 msgid "once"
 msgstr ""
 
-#: rectimer.h:1040 rectimer.h:1450 rectimer.h:1461
+#: rectimer.h:1059 rectimer.h:1469 rectimer.h:1480
 msgid "repeate"
 msgstr "Повторы"
 
-#: rectimer.h:1052
+#: rectimer.h:1071
 msgid "daily"
 msgstr ""
 
-#: rectimer.h:1053
+#: rectimer.h:1072
 msgid "weekly"
 msgstr ""
 
-#: rectimer.h:1054
+#: rectimer.h:1073
 msgid "workdays"
 msgstr ""
 
-#: rectimer.h:1445
+#: rectimer.h:1464
 msgid "rec"
 msgstr ""
 
-#: rectimer.h:1456
+#: rectimer.h:1475
 msgid "switch"
 msgstr "Переключатель"
 
-#: rectimer.h:1483
+#: rectimer.h:1502
 msgid "waiting"
 msgstr ""
 
-#: rectimer.h:1487
+#: rectimer.h:1506
 msgid "success"
 msgstr ""
 
-#: rectimer.h:1489
+#: rectimer.h:1508
 msgid "error"
 msgstr "Ошибка загрузки"
 
