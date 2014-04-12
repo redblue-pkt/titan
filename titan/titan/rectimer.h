@@ -15,7 +15,7 @@ void debugrectimer()
 	printf("currently time rtc: ");
 	system("cat /proc/stb/fp/rtc");
 	printf("\n");
-	printf("--------------------------------\n")	
+	printf("--------------------------------\n");	
 
 	while(node != NULL)
 	{
