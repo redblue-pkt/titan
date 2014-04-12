@@ -1,3 +1,17 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: TitanNit 1.52\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-07 10:44+0200\n"
+"PO-Revision-Date: 2014-04-12 22:29+0100\n"
+"Last-Translator: caliban <aaf-caliban@e.mail.de>\n"
+"Language-Team: German <_obiwan_@web.de>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+
 #: about.h:9
 msgid "Image"
 msgstr ""
@@ -768,8 +782,7 @@ msgstr ""
 
 #: browser.h:206
 msgid "Choose your Internet Favorite from the following list"
-msgstr ""
-"Wählen Sie das gewünschte Internet Lesezeichen aus der folgenden Liste"
+msgstr "Wählen Sie das gewünschte Internet Lesezeichen aus der folgenden Liste"
 
 #: callmon_main.h:39
 msgid ""
@@ -1544,8 +1557,7 @@ msgstr "Menü"
 
 #: filemanager.h:89
 msgid "Choose your Filemanager Option from the following list"
-msgstr ""
-"Wählen Sie die gewünschte Datei Manager Option aus der folgenden Liste"
+msgstr "Wählen Sie die gewünschte Datei Manager Option aus der folgenden Liste"
 
 #: filemanager.h:95
 msgid "Can't rename file !"
@@ -2537,57 +2549,6 @@ msgstr "Ihr Marker wurde erfolgreich gesetzt"
 msgid "File not found !!"
 msgstr "Datei nicht gefunden"
 
-#: mboxinfo.c:77 mc_imdb.h:78 mc_imdb.h:79 mc_imdb.h:80 mc_imdb.h:81
-#: mc_imdb.h:82 mc_view.h:17 mc_view.h:18 mc_view.h:19 mc_view.h:20
-#: mc_view.h:21 mc_view.h:22 plugins_autotimer_skin.xml.h:13
-#: plugins_callmonitor1_skin.xml.h:19 plugins_catcatch_skin.xml.h:7
-#: plugins_dlna_skin.xml.h:15 plugins_facebook_skin.xml.h:6
-#: plugins_filemanager_skin.xml.h:6 plugins_gmediarender_skin.xml.h:1
-#: plugins_imdbapi_skin.xml.h:11 plugins_imdb_skin.xml.h:11
-#: plugins_instar_skin.xml.h:17 plugins_keylock_skin.xml.h:1
-#: plugins_lcdpearl1_skin.xml.h:14 plugins_lcdsamsung_skin.xml.h:18
-#: plugins_mboxinfo_skin.xml.h:3 plugins_mc_skin.xml.h:70
-#: plugins_networkbrowser_skin.xml.h:37 plugins_news_skin.xml.h:5
-#: plugins_optimize_skin.xml.h:4 plugins_panel_skin.xml.h:28
-#: plugins_permtime_skin.xml.h:1 plugins_readerconfig_skin.xml.h:10
-#: plugins_rgui_skin.xml.h:9 plugins_stock_skin.xml.h:6
-#: plugins_stopifnotused_skin.xml.h:8 plugins_streaminfo_skin.xml.h:6
-#: plugins_tithek_skin.xml.h:22 plugins_tiwakeup_skin.xml.h:9
-#: plugins_tmc_skin.xml.h:18 plugins_tmdb_skin.xml.h:11
-#: plugins_tsSchnitt_skin.xml.h:11 plugins_weather_skin.xml.h:4
-#: plugins_wins3_skin.xml.h:4 plugins_xupnpd_skin.xml.h:5
-#: plugins_zapback_skin.xml.h:7 skin_default_skin.xml.h:740
-#: skins_autotimer_skin.xml.h:13 skins_callmonitor1_skin.xml.h:19
-#: skins_catcatch_skin.xml.h:7 skins_dlna_skin.xml.h:15
-#: skins_facebook_skin.xml.h:6 skins_filemanager_skin.xml.h:6
-#: skins_gmediarender_skin.xml.h:1 skins_imdbapi_skin.xml.h:11
-#: skins_imdb_skin.xml.h:11 skins_instar_skin.xml.h:17
-#: skins_keylock_skin.xml.h:1 skins_lcdpearl1_skin.xml.h:14
-#: skins_lcdsamsung_skin.xml.h:18 skins_mboxinfo_skin.xml.h:3
-#: skins_mc_skin.xml.h:70 skins_networkbrowser_skin.xml.h:37
-#: skins_news_skin.xml.h:5 skins_optimize_skin.xml.h:4
-#: skins_panel_skin.xml.h:28 skins_permtime_skin.xml.h:1
-#: skins_readerconfig_skin.xml.h:10 skins_rgui_skin.xml.h:9
-#: skins_stock_skin.xml.h:6 skins_stopifnotused_skin.xml.h:8
-#: skins_streaminfo_skin.xml.h:6 skins_tithek_skin.xml.h:22
-#: skins_tiwakeup_skin.xml.h:9 skins_tmc_skin.xml.h:18
-#: skins_tmdb_skin.xml.h:11 skins_tsSchnitt_skin.xml.h:11
-#: skins_weather_skin.xml.h:4 skins_wins3_skin.xml.h:4
-#: skins_xupnpd_skin.xml.h:5 skins_zapback_skin.xml.h:7 tithek_mainmenu.h:1
-msgid ""
-msgstr ""
-"Project-Id-Version: TitanNit 1.52\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-07 10:44+0200\n"
-"PO-Revision-Date: 2014-04-12 20:53+0100\n"
-"Last-Translator: caliban <aaf-caliban@e.mail.de>\n"
-"Language-Team: German <_obiwan_@web.de>\n"
-"Language: de\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
-
 #: mc_audioplayer.h:408 mc_global.h:1079 mc_pictureplayer.h:150
 #: mc_videoplayer.h:428
 msgid "Repeat-On"
@@ -3021,9 +2982,8 @@ msgstr "Netzwerk Browser - gefundene cifs/nfs Freigaben"
 msgid "Choose your cifs/nfs Share from the following list"
 msgstr ""
 "Freigaben des Servers\n"
-"Zum Bearbeiten und Speichern bitte Freigabe auswählen und -OK- drücken. "
-"Für Windows Freigaben (cifs/smb) muss evtl. Authentifizierung benutzt "
-"werden."
+"Zum Bearbeiten und Speichern bitte Freigabe auswählen und -OK- drücken. Für "
+"Windows Freigaben (cifs/smb) muss evtl. Authentifizierung benutzt werden."
 
 #: networkbrowser.h:1340
 msgid "Add Cifs Network Share"
@@ -3110,9 +3070,9 @@ msgstr "Netzwerk Browser - Freigaben"
 msgid "Choose your Shares from the following list"
 msgstr ""
 "Liste Ihrer gespeicherten Freigaben. Zum Bearbeiten Eintrag wählen und -"
-"Grün- drücken. Um weitere Freigaben hinzuzufügen bitte -Suche- benutzen. "
-"Für den Zugriff auf passwortgeschützte Windows Freigaben bitte Menü "
-"drücken und die Benutzerdaten eingeben."
+"Grün- drücken. Um weitere Freigaben hinzuzufügen bitte -Suche- benutzen. Für "
+"den Zugriff auf passwortgeschützte Windows Freigaben bitte Menü drücken und "
+"die Benutzerdaten eingeben."
 
 #: networkbrowser.h:1907
 msgid "Are you sure you want remove this share?"
@@ -3656,8 +3616,7 @@ msgstr ""
 #: play.h:721
 msgid "Choose your Red-Menu entry from the following list"
 msgstr ""
-"Wählen Sie den gewünschten Eintrag für das Rot Menü aus der folgenden "
-"Liste"
+"Wählen Sie den gewünschten Eintrag für das Rot Menü aus der folgenden Liste"
 
 #: play.h:1202
 msgid "Jump To (min)"
@@ -5524,8 +5483,7 @@ msgid ""
 "Choose your Media plugin item from the following list and show it so the "
 "plugin button"
 msgstr ""
-"Wählen Sie den gewünschten Eintrag für das Media Menü aus der folgenden "
-"Liste"
+"Wählen Sie den gewünschten Eintrag für das Media Menü aus der folgenden Liste"
 
 #: settings_pluginbutton.h:6
 msgid "Plugin Key Action - Setup"
@@ -6475,8 +6433,7 @@ msgstr "Hier können Sie Ihre Einstellungen sichern und wiederherstellen"
 
 #: skin_default_skin.xml.h:269
 msgid "Here you can check the reception of the current station."
-msgstr ""
-"Hier können Sie die Signalqualität des aktuellen Senders überprüfen"
+msgstr "Hier können Sie die Signalqualität des aktuellen Senders überprüfen"
 
 #: skin_default_skin.xml.h:270
 msgid ""
@@ -6502,8 +6459,8 @@ msgstr "Hier können Sie Ihre CI-Module konfigurieren"
 #: skin_default_skin.xml.h:273
 msgid "Here you can configure the smartcard readers."
 msgstr ""
-"Hier können Sie Ihre Smartcards zurücksetzen. Sollten keine Karten "
-"angezeigt werden, dann ist ein Softcam mit Zugriff auf die Kartenleser aktiv."
+"Hier können Sie Ihre Smartcards zurücksetzen. Sollten keine Karten angezeigt "
+"werden, dann ist ein Softcam mit Zugriff auf die Kartenleser aktiv."
 
 #: skin_default_skin.xml.h:274
 msgid "Here you can configure your web server."
@@ -6602,8 +6559,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:292
 msgid "Here you can make your PIN security for menus settings."
-msgstr ""
-"Hier können Sie Ihre PIN Sicherheitseinstellungen für Menüs vornehmen"
+msgstr "Hier können Sie Ihre PIN Sicherheitseinstellungen für Menüs vornehmen"
 
 #: skin_default_skin.xml.h:293
 msgid "Here you can make your PIN security settings."
@@ -8144,7 +8100,7 @@ msgstr "Autostart aktiviert"
 
 #: softcam.h:119
 msgid "Emu not found"
-msgstr "FEHLER: Softcam wurde nicht gefunden"
+msgstr "Softcam wurde nicht gefunden"
 
 #: softcam.h:289
 msgid "Softcam selection:"
@@ -9351,31 +9307,31 @@ msgstr "Cool Skin"
 
 #: tpk_description.h:45
 msgid "cut record files"
-msgstr "Aufnahmen schneiden (Anfang/Ende)"
+msgstr "Aufnahmen am Anfang und am Ende schneiden"
 
 #: tpk_description.h:46
 msgid "Default Font "
-msgstr ""
+msgstr "Standard Schriftart"
 
 #: tpk_description.h:47
 msgid "default Settings 19.2 Astra"
-msgstr ""
+msgstr "Standard Senderliste 19.2 Astra"
 
 #: tpk_description.h:48
 msgid "Default Skin"
-msgstr ""
+msgstr "Standard Skin"
 
 #: tpk_description.h:49
 msgid "Default skin without MiniTV"
-msgstr ""
+msgstr "Standard Skin ohne MiniTV"
 
 #: tpk_description.h:50
 msgid "Digital Uhr blau - for tiTan - Samsung LCD Skin Channel."
-msgstr ""
+msgstr "Digital Uhr blau - Samsung LCD Skin von channel"
 
 #: tpk_description.h:51
 msgid "dlna Medien Server (upnp)"
-msgstr ""
+msgstr "dlna (UPnP) Server"
 
 #: tpk_description.h:52
 msgid "DTS-Downmix firmware "
@@ -9383,7 +9339,7 @@ msgstr ""
 
 #: tpk_description.h:53
 msgid "dvdplayer plugin."
-msgstr ""
+msgstr "DVD Player"
 
 #: tpk_description.h:54
 msgid ""
@@ -9393,145 +9349,151 @@ msgstr ""
 
 #: tpk_description.h:55
 msgid "Emu Camd3 v3.902 for your box"
-msgstr ""
+msgstr "Emu Camd3 v3.902"
 
 #: tpk_description.h:56
 msgid "Emu MBox v0.6 build 0010 for your box"
-msgstr ""
+msgstr "Emu MBox v0.6 build 0010"
 
 #: tpk_description.h:57
 msgid "Emu MGCamd v1.35 for your box"
-msgstr ""
+msgstr "Emu MGCamd v1.35"
 
 #: tpk_description.h:58
 msgid "Emu MGCamd v1.38a and all Configs"
-msgstr ""
+msgstr "Emu MGCamd v1.38a + configs"
 
 #: tpk_description.h:59
 msgid "Emu scam 3.53 for your box"
-msgstr ""
+msgstr "Emu scam 3.53"
 
 #: tpk_description.h:60
 msgid "Emu scam 3.59 for your box"
-msgstr ""
+msgstr "Emu scam 3.59"
 
 #: tpk_description.h:61
 msgid "Emu scam 3.60 for your box"
-msgstr ""
+msgstr "Emu scam 3.60"
 
 #: tpk_description.h:62
 msgid "Emu vizcam 1.04 for your box"
-msgstr ""
+msgstr "Emu vizcam 1.04"
 
 #: tpk_description.h:63
 msgid "extended config Panel"
-msgstr ""
+msgstr "Erweitertes Einstellungsmenü"
 
 #: tpk_description.h:64
 msgid "filemanager"
-msgstr ""
+msgstr "Dateimanager"
 
 #: tpk_description.h:65
 msgid "first titan game"
-msgstr ""
+msgstr "Das erste Titan Spiel"
 
 #: tpk_description.h:66
 msgid "Font 'Action Man Italic' "
-msgstr ""
+msgstr "Schriftart 'Action Man Italic'"
 
 #: tpk_description.h:67
 msgid "Font 'Alpha Romanie G98'"
-msgstr ""
+msgstr "Schriftart 'Alpha Romanie G98'"
 
 #: tpk_description.h:68
 msgid "Font 'Croissant' "
-msgstr ""
+msgstr "Schriftart 'Croissant'"
 
 #: tpk_description.h:69
 msgid "Font 'Digiface Regular' "
-msgstr ""
+msgstr "Schriftart 'Digiface Regular'"
 
 #: tpk_description.h:70
 msgid "Font 'Goodtime'"
-msgstr ""
+msgstr "Schriftart 'Goodtime'"
 
 #: tpk_description.h:71
 msgid "Font 'I Hate Comic Sans'"
-msgstr ""
+msgstr "Schriftart 'I Hate Comic Sans'"
 
 #: tpk_description.h:72
 msgid "Font 'Lydian Bolt Italic BT' "
-msgstr ""
+msgstr "Schriftart 'Lydian Bolt Italic BT' "
 
 #: tpk_description.h:73
 msgid "Font 'Mighty Zeo Caps'"
-msgstr ""
+msgstr "Schriftart 'Mighty Zeo Caps'"
 
 #: tpk_description.h:74
 msgid "Font 'Monoglyceride DemiBold'"
-msgstr ""
+msgstr "Schriftart 'Monoglyceride DemiBold'"
 
 #: tpk_description.h:75
 msgid "Font 'New Gothic BT'"
-msgstr ""
+msgstr "Schriftart 'New Gothic BT'"
 
 #: tpk_description.h:76
 msgid "Font 'Paddington Bold'"
-msgstr ""
+msgstr "Schriftart 'Paddington Bold'"
 
 #: tpk_description.h:77
 msgid "Font 'Plover Bold'"
-msgstr ""
+msgstr "Schriftart 'Plover Bold'"
 
 #: tpk_description.h:78
 msgid ""
 "gbox 800 with autoident for card hd+ and skyde including all necessary "
 "config files."
 msgstr ""
+"Gbox 800 Autoidentifizierung für HD+ und SkyDe SmartCard inklusive aller "
+"notwendigen Einstellungen."
 
 #: tpk_description.h:79
 msgid ""
 "gbox 804 with autoident for card hd+ and skyde including all necessary "
 "config files."
 msgstr ""
+"Gbox 804 Autoidentifizierung für HD+ und SkyDe SmartCard inklusive aller "
+"notwendigen Einstellungen."
 
 #: tpk_description.h:80
 msgid ""
 "gbox 806 with autoident for card hd+ and skyde including all necessary "
 "config files."
 msgstr ""
+"Gbox 806 Autoidentifizierung für HD+ und SkyDe SmartCard inklusive aller "
+"notwendigen Einstellungen."
 
 #: tpk_description.h:81
 msgid "Gold Picons for tiTan."
-msgstr ""
+msgstr "Gold Picons"
 
 #: tpk_description.h:82
 msgid "Gold Picons for tiTan - Astra 23.5E."
-msgstr ""
+msgstr "Gold Picons - Astra 23.5E"
 
 #: tpk_description.h:83
 msgid "Gold Picons for tiTan - Astra 28.2E."
-msgstr ""
+msgstr "Gold Picons - Astra 28.2E"
 
 #: tpk_description.h:84
 msgid "Gold Picons for tiTan - Hotbird 13.0E."
-msgstr ""
+msgstr "Gold Picons - Hotbird 13.0E"
 
 #: tpk_description.h:85
 msgid "Holzuhr - Standby for tiTan - Samsung LCD Skin Channel."
-msgstr ""
+msgstr "Holzuhr - Standby - Samsung LCD Skin Channel."
 
 #: tpk_description.h:86
 msgid "ImdBapi Info Plugin"
-msgstr ""
+msgstr "IMDbapi Info"
 
 #: tpk_description.h:87
 msgid "ImdB Info Plugin"
-msgstr ""
+msgstr "IMDb Info"
 
 #: tpk_description.h:88
 msgid "IncubusCamd_1.22 including all necessary config files."
-msgstr ""
+msgstr "IncubusCamd_1.22 + configs"
 
 #: tpk_description.h:89
 msgid "IP-Kamera zB. Firma INSTAR"
@@ -9539,19 +9501,19 @@ msgstr ""
 
 #: tpk_description.h:90
 msgid "Kabel BW transparent Picons for tiTan."
-msgstr ""
+msgstr "Kabel BW transparente Picons"
 
 #: tpk_description.h:91
 msgid "Kabel Deutschland Picons black3d for tiTan."
-msgstr ""
+msgstr "Kabel Deutschland Picons black3d"
 
 #: tpk_description.h:92
 msgid "Kabel Deutschland transparent Picons for tiTan."
-msgstr ""
+msgstr "Kabel Deutschland transparente Picons"
 
 #: tpk_description.h:93
 msgid "Lib extension for network (upnpfs/smbfs/ftpfs/rarfs)"
-msgstr ""
+msgstr "Erweiterung Netzwerkprotokolle (upnpfs/smbfs/ftpfs/rarfs)"
 
 #: tpk_description.h:94
 msgid "MegaStyle blue Mini TV Skin"
@@ -9913,11 +9875,11 @@ msgstr ""
 
 #: tpk_section.h:3
 msgid "emus"
-msgstr ""
+msgstr "Softcams"
 
 #: tpk_section.h:4
 msgid "fonts"
-msgstr ""
+msgstr "Schriftarten"
 
 #: tpk_section.h:5
 msgid "games"
@@ -9925,11 +9887,11 @@ msgstr ""
 
 #: tpk_section.h:6
 msgid "infos"
-msgstr ""
+msgstr "Infos"
 
 #: tpk_section.h:7
 msgid "infos "
-msgstr ""
+msgstr "Infos"
 
 #: tpk_section.h:8
 msgid "keymaps"
@@ -10029,7 +9991,7 @@ msgstr ""
 
 #: tpk_showname.h:20
 msgid "Default Font"
-msgstr ""
+msgstr "Standard Schriftart"
 
 #: tpk_showname.h:21
 msgid "Digiface Regular"
@@ -10065,7 +10027,7 @@ msgstr ""
 
 #: tpk_showname.h:30
 msgid "File Manager"
-msgstr ""
+msgstr "Dateimanager"
 
 #: tpk_showname.h:31
 msgid "Firelady"
@@ -10850,7 +10812,7 @@ msgstr ""
 
 #: tunerconfig.h:114
 msgid "DiSEqC A/B/C/D/E/F/G/H"
-msgstr "AAF Mediacenter"
+msgstr ""
 
 #: tunerconfig.h:116
 msgid "Expert"
