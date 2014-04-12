@@ -2883,7 +2883,7 @@ int setwakeuptimerdev(time_t value)
 
 	if(wakeuptimerdev != NULL && value >= time(NULL))
 	{
-		debug(100, "set %s to %ld", wakeuptimerdev, value);
+		debug(10, "set %s to %ld", wakeuptimerdev, value);
 		tmpstr = olutoa(value);
 		ret = writesys(wakeuptimerdev, tmpstr, 0);
 		free(tmpstr); tmpstr = NULL;

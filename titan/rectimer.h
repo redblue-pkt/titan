@@ -5,9 +5,27 @@ void debugrectimer()
 {
 	struct rectimer* node = rectimer;
 
+	printf("--------------------------------\n")
+	printf("currently time real: ")
+	system("date");
+	printf("\n")
+	printf("currently time nano: ")
+	system("date +%s");
+	printf("\n")
+	printf("currently time rtc: ")
+	system("cat /proc/stb/fp/rtc");
+	printf("\n")
+	printf("--------------------------------\n")	
+
 	while(node != NULL)
 	{
+		printf("--------------------------------\n")
 		printf("start: %lu end: %lu\n", node->begin, node->end);
+		printf("name: %d\n", node->name);
+		printf("channellist: %s\n", node->channellist);
+		printf("serviceid: %d\n", node->serviceid);
+		printf("transponderid: %d\n", node->transponderid);
+		printf("--------------------------------\n")
 		node = node->next;
 	}
 }
@@ -814,6 +832,7 @@ int writerectimer(const char *filename, int flag)
 	fclose(fd);
 	//write wakeup time to proc
 	setwakeuptimerdev(rectime);
+	debugrectimer();
 
 	if(flag == 0) m_unlock(&status.rectimermutex, 1);
 
