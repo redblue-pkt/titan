@@ -2843,6 +2843,34 @@ int getwaswakuptimer()
 	return ret;
 }
 
+int getrtctime()
+{
+	int ret = 0;
+	char *rtctimedev = NULL;
+	char *value = NULL;
+
+	rtctimedev = getconfig("rtctimedev", NULL);
+
+	if(rtctimedev == NULL)
+	{
+		err("NULL detect");
+		return 0;
+	}
+
+	value = readsys(rtctimedev, 1);
+	if(value == NULL)
+	{
+		err("NULL detect");
+		return 0;
+	}
+
+	// start from timer
+	if(atoi(value) == 1) ret = 1;
+
+	free(value);
+	return ret;
+}
+
 void checkboxstart()
 {
 	struct rectimer* node = rectimer;
@@ -2878,6 +2906,10 @@ int setwakeuptimerdev(time_t value)
 
 	if(value != 0x7FFFFFFF && value - diff > time(NULL))
 		value -= diff;
+
+#ifdef MIPSEL	
+	value += 7200;
+#endif
 	
 	wakeuptimerdev = getconfig("wakeuptimerdev", NULL);
 
@@ -2886,6 +2918,27 @@ int setwakeuptimerdev(time_t value)
 		debug(10, "set %s to %ld", wakeuptimerdev, value);
 		tmpstr = olutoa(value);
 		ret = writesys(wakeuptimerdev, tmpstr, 0);
+		free(tmpstr); tmpstr = NULL;
+		return ret;
+	}
+
+	return 0;
+}
+
+int setrtctime(int value)
+{
+	char *rtctimedev = NULL, *tmpstr = NULL;
+	int ret = 0;
+
+	value += 7200; 
+
+	rtctimedev = getconfig("rtctimedev", NULL);
+
+	if(rtctimedev != NULL)
+	{
+		debug(10, "set %s to %d", rtctimedev, value);
+		tmpstr = oitoa(value);
+		ret = writesys(rtctimedev, tmpstr, 0);
 		free(tmpstr); tmpstr = NULL;
 		return ret;
 	}

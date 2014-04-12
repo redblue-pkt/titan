@@ -865,6 +865,8 @@ int dvbgetdate(time_t* time, int timeout)
 		return 1;
 	}
 
+	setrtctime(*time);
+
 	dmxclose(dmxnode, -1);
 	free(buf);
 	return 0;

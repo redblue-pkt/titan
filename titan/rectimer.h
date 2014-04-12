@@ -5,26 +5,14 @@ void debugrectimer()
 {
 	struct rectimer* node = rectimer;
 
-	printf("--------------------------------\n");
-	printf("currently time real: ");
-	system("date");
-	printf("\n");
-	printf("currently time nano: ");
-	system("date +%s");
-	printf("\n");
-	printf("currently time rtc: ");
-	system("cat /proc/stb/fp/rtc");
-	printf("\n");
-	printf("--------------------------------\n");	
-
 	while(node != NULL)
 	{
 		printf("--------------------------------\n");
-		printf("start: %lu end: %lu\n", node->begin, node->end);
 		printf("name: %s\n", node->name);
+		printf("start: %lu end: %lu\n", node->begin, node->end);
+		printf("currently time: %ld\n", time(NULL));
 		printf("channellist: %s\n", node->channellist);
-		printf("serviceid: %d\n", node->serviceid);
-		printf("transponderid: %llu\n", node->transponderid);
+		printf("serviceid: %d transponderid: %llu\n", node->serviceid, node->transponderid);
 		printf("--------------------------------\n");
 		node = node->next;
 	}
