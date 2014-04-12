@@ -49,7 +49,7 @@ msgstr ""
 #: filemanager.h:100 filemanager.h:206 filemanager.h:279 filemanager.h:289
 #: filemanager.h:319 filemanager.h:329 filenuke.h:37 filenuke.h:84
 #: filenuke.h:96 filenuke.h:108 filenuke.h:157 flashx.h:26 flashx.h:84
-#: flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270 global.h:6490
+#: flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270 global.h:6543
 #: gmediarender.h:115 harddisk.h:350 harddisk.h:355 harddisk.h:382
 #: harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641 harddisk.h:675
 #: harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733 harddisk.h:793
@@ -92,8 +92,8 @@ msgstr ""
 #: putlocker.h:32 putlocker.h:79 putlocker.h:85 putlocker.h:136
 #: putlocker.h:146 putlocker.h:219 readerconfig.h:343 readerconfig.h:443
 #: readerconfig.h:444 readerconfig.h:488 readerconfig.h:489 record.h:369
-#: record.h:1001 record.h:1452 rectimer.h:575 rectimer.h:1229 rectimer.h:1375
-#: rectimer.h:1387 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
+#: record.h:1001 record.h:1452 rectimer.h:563 rectimer.h:1217 rectimer.h:1363
+#: rectimer.h:1375 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:28 scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1888
 #: scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 scriptexec.h:41 service.h:710
@@ -141,7 +141,7 @@ msgstr "Ok"
 #: filemanager.h:100 filemanager.h:206 filemanager.h:279 filemanager.h:289
 #: filemanager.h:319 filemanager.h:329 filenuke.h:37 filenuke.h:84
 #: filenuke.h:96 filenuke.h:108 filenuke.h:157 flashx.h:26 flashx.h:84
-#: flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270 global.h:6490
+#: flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270 global.h:6543
 #: gmediarender.h:115 harddisk.h:350 harddisk.h:355 harddisk.h:382
 #: harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641 harddisk.h:675
 #: harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733 harddisk.h:793
@@ -188,8 +188,8 @@ msgstr "Ok"
 #: putlocker.h:85 putlocker.h:136 putlocker.h:146 putlocker.h:219
 #: readerconfig.h:343 readerconfig.h:443 readerconfig.h:444 readerconfig.h:488
 #: readerconfig.h:489 record.h:90 record.h:369 record.h:1001 record.h:1188
-#: record.h:1427 record.h:1452 rectimer.h:575 rectimer.h:1229 rectimer.h:1375
-#: rectimer.h:1387 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
+#: record.h:1427 record.h:1452 rectimer.h:563 rectimer.h:1217 rectimer.h:1363
+#: rectimer.h:1375 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:28 scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1888
 #: scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 scriptexec.h:41 service.h:710
@@ -262,9 +262,9 @@ msgstr "Exit"
 #: panel_settings_autostart.h:351 panel_settings_autostart.h:360
 #: panel_settings_overclocking.h:214 panel_settings_overclocking.h:234
 #: panel_settings_overclocking.h:244 pin.h:104 pin.h:176 pin.h:180 pin.h:194
-#: play.h:562 play.h:569 play.h:584 readerconfig.h:254 rectimer.h:1088
-#: rectimer.h:1093 rectimer.h:1098 rectimer.h:1103 rectimer.h:1108
-#: rectimer.h:1113 rectimer.h:1118 scan.h:1768 scan.h:2241 scan.h:2245
+#: play.h:562 play.h:569 play.h:584 readerconfig.h:254 rectimer.h:1076
+#: rectimer.h:1081 rectimer.h:1086 rectimer.h:1091 rectimer.h:1096
+#: rectimer.h:1101 rectimer.h:1106 scan.h:1768 scan.h:2241 scan.h:2245
 #: scan.h:2249 scan.h:2253 scan.h:2257 scan.h:2266 scan.h:2270
 #: screensaveradjust.h:19 settings_autostart.h:26 settings_autostart.h:132
 #: settings_autostart.h:141 settings_autostart.h:162 settings_autostart.h:198
@@ -272,7 +272,7 @@ msgstr "Exit"
 #: settings_autostart.h:285 settings_autostart.h:305 settings_autostart.h:316
 #: settings_autostart.h:430 settings_autostart.h:439 settings_autostart.h:448
 #: settings_autostart.h:502 settings_autostart.h:511 settings_autostart.h:568
-#: settings_autostart.h:577 settings_autostart.h:586
+#: settings_autostart.h:577 settings_autostart.h:586 settings_autostart.h:595
 #: settings_overclocking.h:214 settings_overclocking.h:234
 #: settings_overclocking.h:244 skinadjust.h:62 stopifnotused.c:94
 #: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:35
@@ -327,16 +327,16 @@ msgstr "Sender EPG"
 #: panel_settings_autostart.h:337 panel_settings_autostart.h:351
 #: panel_settings_overclocking.h:214 panel_settings_overclocking.h:234
 #: panel_settings_overclocking.h:244 pin.h:105 pin.h:177 pin.h:195 play.h:560
-#: play.h:567 play.h:582 readerconfig.h:255 rectimer.h:1089 rectimer.h:1094
-#: rectimer.h:1099 rectimer.h:1104 rectimer.h:1109 rectimer.h:1114
-#: rectimer.h:1119 scan.h:1769 scan.h:2242 scan.h:2246 scan.h:2250 scan.h:2254
+#: play.h:567 play.h:582 readerconfig.h:255 rectimer.h:1077 rectimer.h:1082
+#: rectimer.h:1087 rectimer.h:1092 rectimer.h:1097 rectimer.h:1102
+#: rectimer.h:1107 scan.h:1769 scan.h:2242 scan.h:2246 scan.h:2250 scan.h:2254
 #: scan.h:2258 scan.h:2267 scan.h:2271 screensaveradjust.h:20
 #: settings_autostart.h:26 settings_autostart.h:132 settings_autostart.h:141
 #: settings_autostart.h:162 settings_autostart.h:198 settings_autostart.h:207
 #: settings_autostart.h:216 settings_autostart.h:227 settings_autostart.h:285
 #: settings_autostart.h:316 settings_autostart.h:430 settings_autostart.h:439
 #: settings_autostart.h:448 settings_autostart.h:502 settings_autostart.h:568
-#: settings_autostart.h:577 settings_autostart.h:586
+#: settings_autostart.h:577 settings_autostart.h:586 settings_autostart.h:595
 #: settings_overclocking.h:214 settings_overclocking.h:234
 #: settings_overclocking.h:244 stopifnotused.c:93 timeshiftsettings.h:58
 #: timeshiftsettings.h:62 tithek_settings.h:36 tithek_settings.h:40
@@ -457,7 +457,7 @@ msgid "intern"
 msgstr ""
 
 #: adjust.h:153 autotimer.c:479 autotimer.c:512 avsettings.h:68
-#: httpdfunc.h:4046 rectimer.h:1184 transponder.h:121 transponder.h:133
+#: httpdfunc.h:4046 rectimer.h:1172 transponder.h:121 transponder.h:133
 #: transponder.h:157 transponder.h:167 transponder.h:193 transponder.h:200
 #: transponder.h:226 transponder.h:234 transponder.h:258 transponder.h:268
 #: transponder.h:294 transponder.h:301 transponder.h:319 transponder.h:337
@@ -467,17 +467,17 @@ msgid "auto"
 msgstr "automatisch"
 
 #: adjust.h:154 autotimer.c:480 autotimer.c:513 epgsettings.h:215
-#: httpdfunc.h:4053 rectimer.h:1185
+#: httpdfunc.h:4053 rectimer.h:1173
 msgid "nothing"
 msgstr "nichts tun"
 
 #: adjust.h:155 autotimer.c:481 autotimer.c:514 httpdfunc.h:4060
-#: rectimer.h:1186 stopifnotused.c:112
+#: rectimer.h:1174 stopifnotused.c:112
 msgid "standby"
 msgstr "Standby"
 
 #: adjust.h:156 autotimer.c:482 autotimer.c:515 httpdfunc.h:4067
-#: rectimer.h:1187 stopifnotused.c:111
+#: rectimer.h:1175 stopifnotused.c:111
 msgid "power off"
 msgstr "Ausschalten"
 
@@ -549,7 +549,7 @@ msgstr "Ja/VZAP unendlich"
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:329
 #: filenuke.h:37 filenuke.h:84 filenuke.h:96 filenuke.h:108 filenuke.h:157
 #: flashx.h:26 flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:6490 gmediarender.h:115 harddisk.h:633 harddisk.h:641
+#: global.h:6543 gmediarender.h:115 harddisk.h:633 harddisk.h:641
 #: harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733
 #: harddisk.h:793 harddisk.h:811 harddisk.h:814 hbbtv.h:362 hello.c:36
 #: httpdfunc.h:1098 hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103
@@ -583,7 +583,7 @@ msgstr "Ja/VZAP unendlich"
 #: putlocker.h:136 putlocker.h:146 putlocker.h:219 readerconfig.h:343
 #: readerconfig.h:443 readerconfig.h:444 readerconfig.h:488 readerconfig.h:489
 #: record.h:369 record.h:1001 record.h:1188 record.h:1427 record.h:1452
-#: rectimer.h:575 rectimer.h:1229 rectimer.h:1375 rectimer.h:1387
+#: rectimer.h:563 rectimer.h:1217 rectimer.h:1363 rectimer.h:1375
 #: restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:28 scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1640
@@ -632,7 +632,7 @@ msgstr "Wählen Sie das gewünschte Streaming Format aus der folgenden Liste"
 msgid "Search"
 msgstr "Suchen"
 
-#: audiotrack.h:48 play.h:271 rectimer.h:1504 subtitle.h:1624
+#: audiotrack.h:48 play.h:271 rectimer.h:1492 subtitle.h:1624
 msgid "running"
 msgstr "aktiv"
 
@@ -641,11 +641,11 @@ msgstr "aktiv"
 msgid "undefined"
 msgstr "nicht definiert"
 
-#: autotimer.c:475 autotimer.c:508 harddisk.h:540 rectimer.h:1047
+#: autotimer.c:475 autotimer.c:508 harddisk.h:540 rectimer.h:1035
 msgid "record"
 msgstr "Aufnahme"
 
-#: autotimer.c:476 autotimer.c:509 rectimer.h:1048
+#: autotimer.c:476 autotimer.c:509 rectimer.h:1036
 msgid "switch channel"
 msgstr "Sender umschalten"
 
@@ -1591,63 +1591,63 @@ msgstr "Datei/Verzeichnis konnte nicht gelöscht werden!"
 msgid "Can't show this file!"
 msgstr "Diese Datei kann nicht angezeigt werden"
 
-#: global.h:6490 keyactions.h:305
+#: global.h:6543 keyactions.h:305
 msgid "ERROR cant read res"
 msgstr "FEHLER: Auflösung nicht erkannt"
 
-#: global.h:6715 rectimer.h:1078 skin_default_skin.xml.h:393
+#: global.h:6768 rectimer.h:1066 skin_default_skin.xml.h:393
 msgid "Monday"
 msgstr "Montag"
 
-#: global.h:6716 rectimer.h:1079 skin_default_skin.xml.h:677
+#: global.h:6769 rectimer.h:1067 skin_default_skin.xml.h:677
 msgid "Tuesday"
 msgstr "Dienstag"
 
-#: global.h:6717 rectimer.h:1080 skin_default_skin.xml.h:730
+#: global.h:6770 rectimer.h:1068 skin_default_skin.xml.h:730
 msgid "Wednesday"
 msgstr "Mittwoch"
 
-#: global.h:6718 rectimer.h:1081 skin_default_skin.xml.h:648
+#: global.h:6771 rectimer.h:1069 skin_default_skin.xml.h:648
 msgid "Thursday"
 msgstr "Donnerstag"
 
-#: global.h:6719 rectimer.h:1082 skin_default_skin.xml.h:244
+#: global.h:6772 rectimer.h:1070 skin_default_skin.xml.h:244
 msgid "Friday"
 msgstr "Freitag"
 
-#: global.h:6720 rectimer.h:1083 skin_default_skin.xml.h:539
+#: global.h:6773 rectimer.h:1071 skin_default_skin.xml.h:539
 msgid "Saturday"
 msgstr "Samstag"
 
-#: global.h:6721 rectimer.h:1084 skin_default_skin.xml.h:624
+#: global.h:6774 rectimer.h:1072 skin_default_skin.xml.h:624
 msgid "Sunday"
 msgstr "Sonntag"
 
-#: global.h:6725
+#: global.h:6778
 msgid "Mon"
 msgstr ""
 
-#: global.h:6726
+#: global.h:6779
 msgid "Tue"
 msgstr "Die"
 
-#: global.h:6727
+#: global.h:6780
 msgid "Wed"
 msgstr "Mit"
 
-#: global.h:6728
+#: global.h:6781
 msgid "Thu"
 msgstr "Don"
 
-#: global.h:6729
+#: global.h:6782
 msgid "Fri"
 msgstr "Fre"
 
-#: global.h:6730
+#: global.h:6783
 msgid "Sat"
 msgstr "Sam"
 
-#: global.h:6731
+#: global.h:6784
 msgid "Sun"
 msgstr "Son"
 
@@ -2513,7 +2513,7 @@ msgstr ""
 msgid "C-Band"
 msgstr ""
 
-#: lnbconfig.h:149 rectimer.h:1074
+#: lnbconfig.h:149 rectimer.h:1062
 msgid "user defined"
 msgstr "Benutzerdefiniert"
 
@@ -5107,85 +5107,85 @@ msgstr "EPG Zeit kann nicht gefunden werden oder ist nicht korrekt!"
 msgid "Record started"
 msgstr "Aufnahme gestartet"
 
-#: rectimer.h:147
+#: rectimer.h:135
 msgid "undefined error"
 msgstr "!!! Unbekannter Fehler !!!"
 
-#: rectimer.h:152
+#: rectimer.h:140
 msgid "Timer starttime or endtime not ok"
 msgstr "FEHLER: Start- oder Endzeit ist fehlerhaft!"
 
-#: rectimer.h:157
+#: rectimer.h:145
 msgid "Timer endtime shorter than aktual time"
 msgstr "FEHLER: Endzeit liegt in der Vergangenheit!"
 
-#: rectimer.h:162
+#: rectimer.h:150
 msgid "Timer endtime shorter than start time"
 msgstr "FEHLER: Endzeit liegt vor Startzeit!"
 
-#: rectimer.h:167
+#: rectimer.h:155
 msgid "Timer service ID not ok"
 msgstr "FEHLER: Sender ID stimmt nicht!"
 
-#: rectimer.h:172
+#: rectimer.h:160
 msgid "Timer transponder ID not ok"
 msgstr "FEHLER: Transponder ID stimmt nicht!"
 
-#: rectimer.h:178
+#: rectimer.h:166
 msgid ""
 "Timer conflicts with other timer\n"
 "Would you add the timer?"
 msgstr "Timer Konflikt! Timer trotzdem erstellen?"
 
-#: rectimer.h:564
+#: rectimer.h:552
 msgid "not started akttime higher than timer endtime"
 msgstr "FEHLER: Timer nicht gestartet, Endzeit bereits vergangen"
 
-#: rectimer.h:575
+#: rectimer.h:563
 msgid "EPG Scan activate standby?"
 msgstr "EPG Scan startet bald. Standby aktivieren?"
 
-#: rectimer.h:682
+#: rectimer.h:670
 msgid "stopped from user"
 msgstr "Abbruch durch Benutzer"
 
-#: rectimer.h:1058 rectimer.h:1467 rectimer.h:1478
+#: rectimer.h:1046 rectimer.h:1455 rectimer.h:1466
 msgid "once"
 msgstr "Einmalig"
 
-#: rectimer.h:1059 rectimer.h:1469 rectimer.h:1480
+#: rectimer.h:1047 rectimer.h:1457 rectimer.h:1468
 msgid "repeate"
 msgstr "Wiederholen"
 
-#: rectimer.h:1071
+#: rectimer.h:1059
 msgid "daily"
 msgstr "Täglich"
 
-#: rectimer.h:1072
+#: rectimer.h:1060
 msgid "weekly"
 msgstr "Wöchentlich"
 
-#: rectimer.h:1073
+#: rectimer.h:1061
 msgid "workdays"
 msgstr "Werktags"
 
-#: rectimer.h:1464
+#: rectimer.h:1452
 msgid "rec"
 msgstr "Aufnahme"
 
-#: rectimer.h:1475
+#: rectimer.h:1463
 msgid "switch"
 msgstr "umschalten"
 
-#: rectimer.h:1502
+#: rectimer.h:1490
 msgid "waiting"
 msgstr "warte"
 
-#: rectimer.h:1506
+#: rectimer.h:1494
 msgid "success"
 msgstr "Erfolgreich"
 
-#: rectimer.h:1508
+#: rectimer.h:1496
 msgid "error"
 msgstr "!!! FEHLER !!!"
 
@@ -5486,6 +5486,10 @@ msgstr "Lade stmdvb.ko mit der swts Option"
 #: settings_autostart.h:215
 msgid "Cam Routing"
 msgstr "Lade stmdvb.ko mit der camRouting Option"
+
+#: settings_autostart.h:594
+msgid "ntpdate"
+msgstr ""
 
 #: settings_bluebutton.h:6
 msgid "Blue Key Action - Setup"
