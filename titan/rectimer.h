@@ -19,13 +19,13 @@ void debugrectimer()
 
 	while(node != NULL)
 	{
-		printf("--------------------------------\n")
+		printf("--------------------------------\n");
 		printf("start: %lu end: %lu\n", node->begin, node->end);
 		printf("name: %s\n", node->name);
 		printf("channellist: %s\n", node->channellist);
 		printf("serviceid: %d\n", node->serviceid);
 		printf("transponderid: %llu\n", node->transponderid);
-		printf("--------------------------------\n")
+		printf("--------------------------------\n");
 		node = node->next;
 	}
 }
