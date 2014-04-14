@@ -3,8 +3,8 @@
 
 void mlehd_userauth()
 {
-	int count = 0, ret = 0;
-	char* tmpstr = NULL, *pass = NULL, *user = NULL, *url = NULL;
+	int ret = 0;
+	char* pass = NULL, *user = NULL, *url = NULL;
 
 	user = getconfig("mlehd_user", NULL);
 	pass = getconfig("mlehd_pass", NULL);
