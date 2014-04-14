@@ -7,6 +7,11 @@
 #define SYSCODE 0UL
 #define HTTPAUTH "aXBrLUdaRmg6RkhaVkJHaG56ZnZFaEZERlRHenVpZjU2NzZ6aGpHVFVHQk5Iam0="
 
+//fuer Funktion memcpy_word
+volatile char *memcpy_word_src;
+volatile char *memcpy_word_dest;
+volatile long  memcpy_word_anzw = 0;
+
 struct clist *config[LISTHASHSIZE] = {NULL};
 struct clist *ownconfig[LISTHASHSIZE] = {NULL};
 struct clist *rcconfig[LISTHASHSIZE] = {NULL};
