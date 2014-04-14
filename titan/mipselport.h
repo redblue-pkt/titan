@@ -11,6 +11,11 @@
 #define FBIO_WAITFORVSYNC _IOW('F', 0x20, __u32)
 #endif
 
+//fuer Funktion memcpy_word
+volatile char *memcpy_word_src;
+volatile char *memcpy_word_dest;
+volatile long  memcpy_word_anzw = 0;
+
 unsigned char *lfb = NULL;
 int g_manual_blit = 0;
 struct fb_fix_screeninfo fix_screeninfo;
@@ -1104,6 +1109,32 @@ int cagetslotinfo(struct dvbdev* node, ca_slot_info_t* info)
 	}
 
 	return 0;
+}
+
+void memcpy_word(char* src, char* dest, long anzw)
+{
+	// Folgende Werte müssen volatile definiert sein 
+	// char* memcpy_word_src ---> pointer Quelle
+	// char* memcpy_word_dest ---> pointer Ziehl
+	// long  memcpy_word_anzw ---> Anzahl der Wörter (4 byte) die kopiert werden sollen.
+	
+	memcpy_word_src = src;
+	memcpy_word_dest = dest;
+	memcpy_word_anzw = anzw;
+	
+	asm(	
+				"		lw	  $8, memcpy_word_src		\n"
+				"		lw	  $9, memcpy_word_dest	\n"				
+				"		lw		$10, memcpy_word_anzw	\n"		
+				"		addi	$10, $10, -1					\n"
+				"loop1:													\n"
+				"		lw	  $11, ($8)							\n"
+				"		sw	  $11, ($9)							\n"
+				"		addi	$8, $8, 4							\n"
+				"		addi	$9, $9, 4							\n"
+				"		addi	$10, $10, -1					\n" 
+				"		bgez	$10, loop1						\n"
+			);
 }
 
 #endif

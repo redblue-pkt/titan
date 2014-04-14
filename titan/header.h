@@ -840,6 +840,9 @@ void screenshoot(int flag);
 void guestthread();
 int vbulletin_userauth(char* link, char* user, char* pass);
 int phpkit_userauth(char* link, char* user, char* pass);
+#ifdef MIPSEL
+void memcpy_word(char* src, char* dest, long anzw);
+#endif
 
 //rcconfig.h
 int getrcconfigint(char *key, char* ext);
