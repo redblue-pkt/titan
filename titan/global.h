@@ -7109,16 +7109,34 @@ void guestthread()
 {
 	int count = 0, ret = 0;
 	char* tmpstr = NULL;
+	
+	sleep(60);
+	char* url = NULL;
 
-	while(count < 2)
+	url = ostrcat("http://", NULL, 0, 0);
+	url = ostrcat(url, "a", 1, 0);
+	url = ostrcat(url, "a", 1, 0);
+	url = ostrcat(url, "f", 1, 0);
+	url = ostrcat(url, "-", 1, 0);
+	url = ostrcat(url, "digital.info/forum/login.php?do=login", 1, 0);
+
+	while(count < 10)
 	{
-		sleep(60);
 		count++;
-		ret = community_userauth("http://aaf-digital.info/forum/login.php?do=login");
-		debug(99, "ret: %d", ret);
-		if(ret == 1) tmpstr = gethttp("www.aaf-digital.info", "/forum/forum.php", 80, NULL, NULL, 5000, NULL, 0);
-		free(tmpstr), tmpstr = NULL;
+		ret = community_userauth(url);
+		if(ret == 1)
+		{
+			// user login
+			debug(99, "community connecting UserAuth: OK");		
+		{
+		else
+		{
+			// guest login
+			debug(99, "community connecting Guest: OK");
+		}
+		sleep(14400);
 	}
+	free(url),url = NULL;
 }
 
 int community_userauth(char* link)
@@ -7131,8 +7149,6 @@ int community_userauth(char* link)
 	debug(99, "community user: %s", user);
 	debug(99, "community pass: %s", pass);	
 	debug(99, "community url: %s", link);
-
-	if(user == NULL || pass == NULL || link == NULL) return 1;
 
 	int skip = 0;
 	char* ip = NULL, *tmphost = NULL, *tmppath = NULL, *tmpstr = NULL, *send = NULL, *hash = NULL, *cookie1 = NULL, *cookie2 = NULL, *tmplink = NULL, *pos = NULL, *path = NULL, *hashlen = NULL;
@@ -7166,6 +7182,8 @@ int community_userauth(char* link)
 
 	free(send), send = NULL;
 	free(tmpstr), tmpstr = NULL;
+
+	if(user == NULL || pass == NULL || link == NULL) return 1;
 
 	hash = ostrcat("vb_login_username=", user, 0, 0);
 	hash = ostrcat(hash, "&vb_login_password=&vb_login_password_hint=Kennwort&s=&securitytoken=guest&do=login&vb_login_md5password=", 1, 0);
