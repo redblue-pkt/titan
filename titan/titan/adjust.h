@@ -241,10 +241,10 @@ void screenadjust()
 	setchoiceboxselection(dualboot, getconfig("dualboot", NULL));
 
 	changemask(community_user, "abcdefghijklmnopqrstuvwxyz");
-	changeinput(community_user, community_user);
+	changeinput(community_user, getconfig("community_user", NULL));
 
 	changemask(community_pass, "abcdefghijklmnopqrstuvwxyz");
-	changeinput(community_pass, community_pass);
+	changeinput(community_pass, getconfig("community_pass", NULL));
 
 	if(checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO5200") == 1)
 		dualboot->hidden = NO;
