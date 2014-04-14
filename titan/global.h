@@ -7108,7 +7108,7 @@ int convertsettings(int flag)
 void guestthread()
 {
 	int count = 0, ret = 0;
-	char* tmpstr = NULL, *pass = NULL, *user = NULL, *url = NULL;
+	char* pass = NULL, *user = NULL, *url = NULL;
 
 	user = getconfig("community_user", NULL);
 	pass = getconfig("community_pass", NULL);
