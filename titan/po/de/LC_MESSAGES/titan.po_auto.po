@@ -621,7 +621,7 @@ msgstr "Wählen Sie das gewünschte Streaming Format aus der folgenden Liste"
 #: epgsearch.h:207 giga.h:13 giga.h:15 imdbapi.h:287 imdb.h:712
 #: internetradio.h:13 internetradio.h:15 internettv.h:13 internettv.h:15
 #: kinox.h:33 kinox.h:35 kinox.h:179 kinox.h:181 kinox.h:796 kinox.h:798
-#: mlehd.h:59 mlehd.h:61 movie4k.h:78 movie4k.h:80 movie4k.h:235 movie4k.h:237
+#: mlehd.h:90 mlehd.h:92 movie4k.h:78 movie4k.h:80 movie4k.h:235 movie4k.h:237
 #: myvideo.h:188 myvideo.h:190 myvideo.h:293 myvideo.h:295 netzkino.h:13
 #: netzkino.h:15 rtl2now.h:119 rtl2now.h:121 rtl2now.h:183 rtl2now.h:185
 #: rtl2now.h:247 rtl2now.h:249 rtl2now.h:311 rtl2now.h:313
