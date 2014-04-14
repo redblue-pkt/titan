@@ -1,20 +1,6 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
-void guestthread()
-{
-	int count = 0;
-	char* tmpstr = NULL;
-	
-	while(count < 2)
-	{
-		sleep(60);
-		count++;
-		tmpstr = gethttp("www.aaf-digital.info", "/forum/forum.php", 80, NULL, NULL, 5000, NULL, 0);
-		free(tmpstr), tmpstr = NULL;
-	}
-}
-
 //flag 0: video+gui+freez 
 //flag 1: video+gui
 //flag 2: video
@@ -6954,6 +6940,271 @@ int sethypridtuner(int dev, char* value)
 		return ret;
 	}
 
+	return 0;
+}
+
+// flag 0 = sat
+// flag 1 = cable
+// flag 2 = ter
+
+int convertsettings(int flag)
+{
+	char* buf = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *line = NULL, *name = NULL, *orbitalpos = NULL, *fetype = NULL, *flags = NULL, *outfile = NULL, *start = NULL, *end = NULL, *filename = NULL, *transponderfile = NULL, *satfile = NULL;
+	int incount = 0;
+	
+	system("rm -rf /convert*");
+
+	if(flag == 0)
+	{
+		system("rm -rf /transponder.sat");
+		system("rm -rf /satellites.sat");
+		start = ostrcat("<sat ", NULL, 0, 0);
+		end = ostrcat("</sat>", NULL, 0, 0);
+		filename = ostrcat("/var/etc/tuxbox/satellites.xml", NULL, 0, 0);
+		transponderfile = ostrcat("/transponder.sat", NULL, 0, 0);
+		satfile = ostrcat("/satellites.sat", NULL, 0, 0);
+		fetype = ostrcat("0", NULL, 0, 0);
+	}
+	else if(flag == 1)
+	{
+		system("rm -rf /transponder.cable");
+		system("rm -rf /satellites.cable");
+		start = ostrcat("<cable ", NULL, 0, 0);
+		end = ostrcat("</cable>", NULL, 0, 0);
+		filename = ostrcat("/var/etc/tuxbox/cables.xml", NULL, 0, 0);
+		transponderfile = ostrcat("/transponder.cable", NULL, 0, 0);
+		satfile = ostrcat("/satellites.cable", NULL, 0, 0);
+		fetype = ostrcat("1", NULL, 0, 0);
+		incount = 5000;
+	}
+	else if(flag == 2)
+	{
+		system("rm -rf /transponder.ter");
+		system("rm -rf /satellites.ter");
+		start = ostrcat("<terrestrial ", NULL, 0, 0);
+		end = ostrcat("</terrestrial>", NULL, 0, 0);
+		filename = ostrcat("/var/etc/tuxbox/terrestrial.xml", NULL, 0, 0);
+		transponderfile = ostrcat("/transponder.ter", NULL, 0, 0);
+		satfile = ostrcat("/satellites.ter", NULL, 0, 0);
+		fetype = ostrcat("2", NULL, 0, 0);
+		incount = 10000;
+	}
+
+	buf = readfiletomem(filename, 1);
+
+	writesys("/convert.log", buf, 1);
+	
+	while(ostrstr(buf, start) != NULL)
+	{
+		incount++;
+		tmpstr = string_resub(start, end, buf, 0);
+		tmpstr1 = ostrcat(tmpstr, NULL, 0, 0);
+		
+		//printf("name: %s\n", getxmlentry(ret1[i].part, "name="));
+		//printf("position: %s\n", getxmlentry(ret1[i].part, "position="));
+		
+		name = getxmlentry(tmpstr, "name=");
+		if(flag == 0)
+			orbitalpos = getxmlentry(tmpstr, "position=");
+		else
+			orbitalpos = ostrcat(oitoa(incount), NULL, 1, 0);
+			
+		flags = getxmlentry(tmpstr, "flags=");
+		//string_decode(name, 0);
+		name = string_replace("&amp;", "und", name, 1);
+	
+		line = ostrcat(line, name, 1, 0); // name
+		line = ostrcat(line, "#", 1, 0);
+		line = ostrcat(line, flags, 1, 0); // flag
+		line = ostrcat(line, "#", 1, 0);
+		line = ostrcat(line, orbitalpos, 1, 0); // orbitalpos
+		line = ostrcat(line, "#", 1, 0);
+		line = ostrcat(line, fetype, 1, 0); // fetype
+		printf("%s: %s\n", satfile, line);
+		writesys(satfile, line, 3);
+		free(line), line = NULL;
+				
+		int count = 0;
+	
+		int i = 0;
+		struct splitstr* ret1 = NULL;
+		ret1 = strsplit(tmpstr1, "\n", &count);
+		if(ret1 != NULL)
+		{
+			int max = count;
+			for(i = 0; i < max; i++)
+			{
+				if(i == 0) continue;
+				line = ostrcat(line, "0", 1, 0); // id
+				line = ostrcat(line, "#", 1, 0);
+				line = ostrcat(line, fetype, 1, 0); // fetype
+				line = ostrcat(line, "#", 1, 0);
+				line = ostrcat(line, getxmlentry(ret1[i].part, "frequency="), 1, 0); // frequency
+				line = ostrcat(line, "#", 1, 0);
+				if(flag == 0)
+					line = ostrcat(line, getxmlentry(ret1[i].part, "polarization="), 1, 0); // polarization
+				else
+					line = ostrcat(line, "2", 1, 0); // polarization
+				line = ostrcat(line, "#", 1, 0);
+				line = ostrcat(line, orbitalpos, 1, 0); // orbitalpos
+				line = ostrcat(line, "#", 1, 0);
+				line = ostrcat(line, getxmlentry(ret1[i].part, "symbol_rate="), 1, 0); // symbolrate
+				line = ostrcat(line, "#", 1, 0);
+				line = ostrcat(line, getxmlentry(ret1[i].part, "modulation="), 1, 0); // modulation
+				line = ostrcat(line, "#", 1, 0);
+				line = ostrcat(line, getxmlentry(ret1[i].part, "fec_inner="), 1, 0); // fec
+				line = ostrcat(line, "#", 1, 0);
+				if(flag == 0)
+					line = ostrcat(line, "2", 1, 0); // pilot
+				else
+					line = ostrcat(line, "0", 1, 0); // pilot				
+
+
+				line = ostrcat(line, "#", 1, 0);
+				line = ostrcat(line, "0", 1, 0); // rolloff
+				line = ostrcat(line, "#", 1, 0);
+				if(flag == 0)
+					line = ostrcat(line, "2", 1, 0); // inversion
+				else
+					line = ostrcat(line, "0", 1, 0); // inversion				
+				line = ostrcat(line, "#", 1, 0);
+				if(flag == 0)
+					line = ostrcat(line, getxmlentry(ret1[i].part, "system="), 1, 0); // system
+				else
+					line = ostrcat(line, "0", 1, 0); // system
+				line = ostrcat(line, "\n", 1, 0);
+			}
+		}
+	
+		tmpstr2 = ostrcat(start, tmpstr, 0, 0);
+	
+		buf = string_replace(tmpstr2, NULL, buf, 1);
+	
+		outfile = ostrcat("/convert.", oitoa(incount), 0, 1);
+		outfile = ostrcat(outfile, ".log", 1, 0);	
+	//	writesys(outfile, buf, 2);
+		writesys("/convert.log", buf, 3);
+	
+		writesys(transponderfile, line, 2);
+		free(line), line = NULL;
+	
+		free(tmpstr), tmpstr = NULL;	
+		free(tmpstr1), tmpstr1 = NULL;
+		free(tmpstr2), tmpstr2 = NULL;
+		free(ret1), ret1 = NULL;
+		free(name), name = NULL;
+		free(orbitalpos), orbitalpos = NULL;
+		free(flags), flags = NULL;
+		free(outfile), outfile = NULL;	
+	}
+	free(buf), buf = NULL;
+	free(start), start = NULL;
+	free(end), end = NULL;
+	free(fetype), fetype = NULL;
+			
+	return 1;
+}
+
+void guestthread()
+{
+	int count = 0, ret = 0;
+	char* tmpstr = NULL;
+
+	while(count < 2)
+	{
+		sleep(60);
+		count++;
+		ret = community_userauth("http://aaf-digital.info/forum/login.php?do=login");
+		debug(99, "ret: %d", ret);
+		if(ret == 1) tmpstr = gethttp("www.aaf-digital.info", "/forum/forum.php", 80, NULL, NULL, 5000, NULL, 0);
+		free(tmpstr), tmpstr = NULL;
+	}
+}
+
+int community_userauth(char* link)
+{
+	debug(99, "link: %s", link);
+	char *pass = NULL, *user = NULL;
+
+	user = getconfig("community_user", NULL);
+	pass = getconfig("community_pass", NULL);
+	debug(99, "community user: %s", user);
+	debug(99, "community pass: %s", pass);	
+	debug(99, "community url: %s", link);
+
+	if(user == NULL || pass == NULL || link == NULL) return 1;
+
+	int skip = 0;
+	char* ip = NULL, *tmphost = NULL, *tmppath = NULL, *tmpstr = NULL, *send = NULL, *hash = NULL, *cookie1 = NULL, *cookie2 = NULL, *tmplink = NULL, *pos = NULL, *path = NULL, *hashlen = NULL;
+
+	tmplink = ostrcat(link, NULL, 0, 0);
+
+	tmphost = string_replace("http://", "", tmplink, 0);
+	free(tmplink) , tmplink = NULL;
+
+	if(tmphost != NULL)
+		pos = strchr(tmphost, '/');
+	if(pos != NULL)
+	{
+		pos[0] = '\0';
+		path = pos + 1;
+	}
+
+	tmppath = ostrcat("/", path, 0, 0);
+
+	send = ostrcat(send, "GET ", 1, 0);
+	send = ostrcat(send, tmppath, 1, 0);
+	send = ostrcat(send, " HTTP/1.1\r\nHost: ", 1, 0);	
+	send = ostrcat(send, tmphost, 1, 0);
+	send = ostrcat(send, "\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nConnection: close\r\nAccept-Encoding: gzip\r\n\r\n", 1, 0);	
+	debug(99, "#############################################################################################################");
+	debug(99, "send1: %s", send);
+	debug(99, "#############################################################################################################");
+
+	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
+	debug(99, "tmpstr: %s", tmpstr);
+
+	free(send), send = NULL;
+	free(tmpstr), tmpstr = NULL;
+
+	hash = ostrcat("vb_login_username=", user, 0, 0);
+	hash = ostrcat(hash, "&vb_login_password=&vb_login_password_hint=Kennwort&s=&securitytoken=guest&do=login&vb_login_md5password=", 1, 0);
+	hash = ostrcat(hash, MDString(pass), 1, 1);
+	hash = ostrcat(hash, "&vb_login_md5password_utf=", 1, 0);
+	hash = ostrcat(hash, MDString(pass), 1, 1);
+
+	hashlen = oitoa(strlen(hash));
+	
+	send = ostrcat(send, "POST ", 1, 0);
+	send = ostrcat(send, tmppath, 1, 0);
+	send = ostrcat(send, " HTTP/1.1\r\nContent-Length: ", 1, 0);
+	send = ostrcat(send, hashlen, 1, 0);
+	send = ostrcat(send, "\r\nAccept-Encoding: gzip\r\nConnection: close\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nHost: ", 1, 0);
+	send = ostrcat(send, tmphost, 1, 0);
+	send = ostrcat(send, "\r\nCookie: pageredir=", 1, 0);
+	send = ostrcat(send, cookie1, 1, 0);
+	send = ostrcat(send, "; PHPSESSID=", 1, 0);	
+	send = ostrcat(send, cookie2, 1, 0);
+	send = ostrcat(send, "\r\nContent-Type: application/x-www-form-urlencoded\r\n\r\n", 1, 0);	
+	send = ostrcat(send, hash, 1, 0);
+	free(hash); hash = NULL;
+	free(hashlen); hashlen = NULL;
+
+	debug(99, "#############################################################################################################");
+	debug(99, "send1: %s", send);
+	debug(99, "#############################################################################################################");
+
+	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
+	debug(99, "tmpstr: %s", tmpstr);
+
+	free(cookie1); cookie1 = NULL;
+	free(cookie2); cookie2 = NULL;
+	free(tmphost); tmphost = NULL;
+	free(send); send = NULL;
+	free(ip); ip = NULL;
+	if(tmpstr == NULL) skip = 1;
+	free(tmpstr); tmpstr = NULL;
+	if(skip == 1) return 1;
 	return 0;
 }
 
