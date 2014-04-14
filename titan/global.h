@@ -7108,10 +7108,12 @@ int convertsettings(int flag)
 void guestthread()
 {
 	int count = 0, ret = 0;
-	char* tmpstr = NULL;
-	
+	char* tmpstr = NULL, *pass = NULL, *user = NULL, *url = NULL;
+
+	user = getconfig("community_user", NULL);
+	pass = getconfig("community_pass", NULL);
+
 	sleep(60);
-	char* url = NULL;
 
 	url = ostrcat("http://", NULL, 0, 0);
 	url = ostrcat(url, "a", 1, 0);
@@ -7123,32 +7125,27 @@ void guestthread()
 	while(count < 10)
 	{
 		count++;
-		ret = community_userauth(url);
+		ret = vbulletin_userauth(url, user, pass);
 		if(ret == 1)
 		{
 			// user login
-			debug(99, "community connecting UserAuth: OK");		
+			debug(99, "Community connecting UserAuth: OK");		
 		}
 		else
 		{
 			// guest login
-			debug(99, "community connecting Guest: OK");
+			debug(99, "Community connecting Guest: OK");
 		}
 		sleep(14400);
 	}
 	free(url),url = NULL;
 }
 
-int community_userauth(char* link)
+int vbulletin_userauth(char* link, char* user, char* pass)
 {
-	debug(99, "link: %s", link);
-	char *pass = NULL, *user = NULL;
-
-	user = getconfig("community_user", NULL);
-	pass = getconfig("community_pass", NULL);
-	debug(99, "community user: %s", user);
-	debug(99, "community pass: %s", pass);	
-	debug(99, "community url: %s", link);
+	debug(99, "vbulletin user: %s", user);
+	debug(99, "vbulletin pass: %s", pass);	
+	debug(99, "vbulletin url: %s", link);
 
 	int skip = 0;
 	char* ip = NULL, *tmphost = NULL, *tmppath = NULL, *tmpstr = NULL, *send = NULL, *hash = NULL, *cookie1 = NULL, *cookie2 = NULL, *tmplink = NULL, *pos = NULL, *path = NULL, *hashlen = NULL;
@@ -7226,30 +7223,83 @@ int community_userauth(char* link)
 	return 0;
 }
 
-void memcpy_word(char* src, char* dest, long anzw)
+int phpkit_userauth(char* link, char* user, char* pass)
 {
-	// Folgende Werte müssen volatile definiert sein (titan.c)
-	// char* memcpy_word_src ---> pointer Quelle
-	// char* memcpy_word_dest ---> pointer Ziehl
-	// long  memcpy_word_anzw ---> Anzahl der Wörter (4 byte) die kopiert werden sollen.
+	debug(99, "phpkit user: %s", user);
+	debug(99, "phpkit pass: %s", pass);	
+	debug(99, "phpkit url: %s", link);
+
+	int skip = 0;
+	char* ip = NULL, *tmphost = NULL, *tmppath = NULL, *tmpstr = NULL, *send = NULL, *hash = NULL, *cookie1 = NULL, *cookie2 = NULL, *tmplink = NULL, *pos = NULL, *path = NULL, *hashlen = NULL;
+
+	tmplink = ostrcat(link, NULL, 0, 0);
+
+	tmphost = string_replace("http://", "", tmplink, 0);
+	free(tmplink) , tmplink = NULL;
+
+	if(tmphost != NULL)
+		pos = strchr(tmphost, '/');
+	if(pos != NULL)
+	{
+		pos[0] = '\0';
+		path = pos + 1;
+	}
+
+	tmppath = ostrcat("/", path, 0, 0);
+
+	send = ostrcat(send, "GET ", 1, 0);
+	send = ostrcat(send, tmppath, 1, 0);
+	send = ostrcat(send, " HTTP/1.1\r\nHost: ", 1, 0);	
+	send = ostrcat(send, tmphost, 1, 0);
+	send = ostrcat(send, "\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nConnection: close\r\nAccept-Encoding: gzip\r\n\r\n", 1, 0);	
+	debug(99, "#############################################################################################################");
+	debug(99, "send1: %s", send);
+	debug(99, "#############################################################################################################");
+
+	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
+	debug(99, "tmpstr: %s", tmpstr);
+
+	free(send), send = NULL;
+	free(tmpstr), tmpstr = NULL;
+
+	if(user == NULL || pass == NULL || link == NULL) return 1;
+
+	hash = ostrcat("login=1&user=", user, 0, 0);
+	hash = ostrcat(hash, "&userpw=", 1, 0);
+	hash = ostrcat(hash, pass, 1, 1);
+	hashlen = oitoa(strlen(hash));
 	
-	memcpy_word_src = src;
-	memcpy_word_dest = dest;
-	memcpy_word_anzw = anzw;
-	
-	asm(	
-				"		lw	  $8, memcpy_word_src		\n"
-				"		lw	  $9, memcpy_word_dest	\n"				
-				"		lw		$10, memcpy_word_anzw	\n"		
-				"		addi	$10, $10, -1					\n"
-				"loop1:													\n"
-				"		lw	  $11, ($8)							\n"
-				"		sw	  $11, ($9)							\n"
-				"		addi	$8, $8, 4							\n"
-				"		addi	$9, $9, 4							\n"
-				"		addi	$10, $10, -1					\n" 
-				"		bgez	$10, loop1						\n"
-			);
+	send = ostrcat(send, "POST ", 1, 0);
+	send = ostrcat(send, tmppath, 1, 0);
+	send = ostrcat(send, " HTTP/1.1\r\nContent-Length: ", 1, 0);
+	send = ostrcat(send, hashlen, 1, 0);
+	send = ostrcat(send, "\r\nAccept-Encoding: gzip\r\nConnection: close\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nHost: ", 1, 0);
+	send = ostrcat(send, tmphost, 1, 0);
+	send = ostrcat(send, "\r\nCookie: pageredir=", 1, 0);
+	send = ostrcat(send, cookie1, 1, 0);
+	send = ostrcat(send, "; PHPSESSID=", 1, 0);	
+	send = ostrcat(send, cookie2, 1, 0);
+	send = ostrcat(send, "\r\nContent-Type: application/x-www-form-urlencoded\r\n\r\n", 1, 0);	
+	send = ostrcat(send, hash, 1, 0);
+	free(hash); hash = NULL;
+	free(hashlen); hashlen = NULL;
+
+	debug(99, "#############################################################################################################");
+	debug(99, "send1: %s", send);
+	debug(99, "#############################################################################################################");
+
+	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
+	debug(99, "tmpstr: %s", tmpstr);
+
+	free(cookie1); cookie1 = NULL;
+	free(cookie2); cookie2 = NULL;
+	free(tmphost); tmphost = NULL;
+	free(send); send = NULL;
+	free(ip); ip = NULL;
+	if(tmpstr == NULL) skip = 1;
+	free(tmpstr); tmpstr = NULL;
+	if(skip == 1) return 1;
+	return 0;
 }
 
 #endif
