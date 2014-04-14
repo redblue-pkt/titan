@@ -7128,7 +7128,7 @@ void guestthread()
 		{
 			// user login
 			debug(99, "community connecting UserAuth: OK");		
-		{
+		}
 		else
 		{
 			// guest login
