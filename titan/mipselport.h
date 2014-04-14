@@ -1137,4 +1137,30 @@ void memcpy_word(char* dest, char* src, long anzw)
 			);
 }
 
+void memcpy_byte(char* dest, char* src, long anzb)
+{
+	// Folgende Werte müssen volatile definiert sein 
+	// char* memcpy_byte_src ---> pointer Quelle
+	// char* memcpy_byte_dest ---> pointer Ziehl
+	// long  memcpy_byte_anzb ---> Anzahl bytes die kopiert werden sollen.
+	
+	memcpy_byte_src = src;
+	memcpy_byte_dest = dest;
+	memcpy_byte_anzw = anzb;
+	
+	asm(	
+				"		lw	  $8, memcpy_byte_src		\n"
+				"		lw	  $9, memcpy_byte_dest	\n"				
+				"		lw		$10, memcpy_byte_anzb	\n"		
+				"		addi	$10, $10, -1					\n"
+				"loop1:													\n"
+				"		lb	  $11, ($8)							\n"
+				"		sb	  $11, ($9)							\n"
+				"		addi	$8, $8, 1							\n"
+				"		addi	$9, $9, 1							\n"
+				"		addi	$10, $10, -1					\n" 
+				"		bgez	$10, loop1						\n"
+			);
+}
+
 #endif

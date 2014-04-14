@@ -15,6 +15,10 @@ int screentunerreceptionhyprid(struct dvbdev* tuner);
 // mipselport.h
 int waitvsync();
 void blit();
+#ifdef MIPSEL
+void memcpy_word(char* dest, char* src, long anzw);
+void memcpy_byte(char* dest, char* src, long anzb);
+#endif
 
 // settings_mediabutton.h
 void screensettings_mediabutton();
@@ -840,9 +844,6 @@ void screenshoot(int flag);
 void guestthread();
 int vbulletin_userauth(char* link, char* user, char* pass);
 int phpkit_userauth(char* link, char* user, char* pass);
-#ifdef MIPSEL
-void memcpy_word(char* dest, char* src, long anzw);
-#endif
 
 //rcconfig.h
 int getrcconfigint(char *key, char* ext);
