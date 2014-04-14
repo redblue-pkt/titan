@@ -838,7 +838,8 @@ char* getcolorformat(int line);
 void set_player_sound(int flag);
 void screenshoot(int flag);
 void guestthread();
-int community_userauth(char* link);
+int vbulletin_userauth(char* link, char* user, char* pass);
+int phpkit_userauth(char* link, char* user, char* pass);
 
 //rcconfig.h
 int getrcconfigint(char *key, char* ext);

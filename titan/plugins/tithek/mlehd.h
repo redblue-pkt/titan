@@ -1,9 +1,40 @@
 #ifndef MLEHD_H
 #define MLEHD_H
 
+void mlehd_userauth()
+{
+	int count = 0, ret = 0;
+	char* tmpstr = NULL, *pass = NULL, *user = NULL, *url = NULL;
+
+	user = getconfig("mlehd_user", NULL);
+	pass = getconfig("mlehd_pass", NULL);
+
+	url = ostrcat("http://", NULL, 0, 0);
+	url = ostrcat(url, "mle", 1, 0);
+	url = ostrcat(url, "-hd.se", 1, 0);
+	url = ostrcat(url, "/forum/include.php?path=login/login.php", 1, 0);
+
+	ret = phpkit_userauth(url, user, pass);
+	if(ret == 1)
+	{
+		// user login
+		debug(99, "Mlehd connecting UserAuth: OK");		
+	}
+	else
+	{
+		// guest login
+		debug(99, "Mlehd connecting Guest: OK");
+	}
+
+	free(url),url = NULL;
+}
+
 char* mlehd(char* link)
 {
 	debug(99, "link %s", link);
+
+	mlehd_userauth();
+
 	int debuglevel = getconfigint("debuglevel", NULL);
 	char* ip = NULL, *pos = NULL, *path = NULL, *streamurl = NULL, *tmpstr = NULL, *tmppath = NULL;
 	
