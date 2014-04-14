@@ -1585,7 +1585,6 @@ void screentithekplay(char* titheklink, char* title, int first)
 			delallfiles(TITHEKPATH, ".jpg");
 
 waitrcstart:
-printf("drawscreen\n");
 		drawscreen(grid, 0, 0);
 
 		rcret = waitrc(grid, 2000, 2);
@@ -3158,8 +3157,8 @@ why ?
 						addscreenrc(grid, listbox);
 					}
 				}
-printf("diable draw...\n");
-//				drawscreen(grid, 0, 0);
+// new osd musst disable this
+				drawscreen(grid, 0, 0);
 			}			
 		}
 		else if(rcret == getrcconfigint("rcyellow", NULL) && ostrcmp(title, "TiThek - Favoriten") == 0)
@@ -3212,8 +3211,8 @@ printf("diable draw...\n");
 			b5->hidden = YES;
 		}
 		
-		printf("draw,,,,,,,,\n");
-//		drawscreen(grid, 0, 0);
+// new osd musst disable this
+		drawscreen(grid, 0, 0);
 		
 	}
 
