@@ -50,6 +50,8 @@ void screenadjust()
 	struct skin* playerbufferseektime = getscreennode(adjust, "playerbufferseektime");
 	struct skin* sataswitch = getscreennode(adjust, "sataswitch");
 	struct skin* dualboot = getscreennode(adjust, "dualboot");
+	struct skin* community_user = getscreennode(adjust, "community_user");
+	struct skin* community_pass = getscreennode(adjust, "community_pass");
 
 	struct skin* tmp = NULL;
 
@@ -238,6 +240,12 @@ void screenadjust()
 	}
 	setchoiceboxselection(dualboot, getconfig("dualboot", NULL));
 
+	changemask(community_user, "abcdefghijklmnopqrstuvwxyz");
+	changeinput(community_user, community_user);
+
+	changemask(community_pass, "abcdefghijklmnopqrstuvwxyz");
+	changeinput(community_pass, community_pass);
+
 	if(checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO5200") == 1)
 		dualboot->hidden = NO;
 	else
@@ -394,7 +402,10 @@ void screenadjust()
 			}
 			addconfigscreen("playerbuffersize", playerbuffersize);
 			addconfigscreen("playerbufferseektime", playerbufferseektime);
-			
+
+			addconfigscreen("community_user", community_user);
+			addconfigscreen("community_pass", community_pass);
+				
 			writeallconfig(1);
 			break;
 		}
