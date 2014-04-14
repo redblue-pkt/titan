@@ -841,7 +841,7 @@ void guestthread();
 int vbulletin_userauth(char* link, char* user, char* pass);
 int phpkit_userauth(char* link, char* user, char* pass);
 #ifdef MIPSEL
-void memcpy_word(char* src, char* dest, long anzw);
+void memcpy_word(char* dest, char* src, long anzw);
 #endif
 
 //rcconfig.h

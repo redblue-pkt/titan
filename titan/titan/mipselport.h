@@ -1111,7 +1111,7 @@ int cagetslotinfo(struct dvbdev* node, ca_slot_info_t* info)
 	return 0;
 }
 
-void memcpy_word(char* src, char* dest, long anzw)
+void memcpy_word(char* dest, char* src, long anzw)
 {
 	// Folgende Werte müssen volatile definiert sein 
 	// char* memcpy_word_src ---> pointer Quelle
