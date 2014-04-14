@@ -16,6 +16,11 @@ volatile char *memcpy_word_src;
 volatile char *memcpy_word_dest;
 volatile long  memcpy_word_anzw = 0;
 
+//fuer Funktion memcpy_byte
+volatile char *memcpy_byte_src;
+volatile char *memcpy_byte_dest;
+volatile long  memcpy_byte_anzb = 0;
+
 unsigned char *lfb = NULL;
 int g_manual_blit = 0;
 struct fb_fix_screeninfo fix_screeninfo;
