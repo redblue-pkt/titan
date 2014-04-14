@@ -275,8 +275,8 @@ msgstr "Выход"
 #: settings_autostart.h:577 settings_autostart.h:586 settings_autostart.h:595
 #: settings_overclocking.h:214 settings_overclocking.h:234
 #: settings_overclocking.h:244 skinadjust.h:62 stopifnotused.c:94
-#: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:35
-#: tithek_settings.h:39 tithek_settings.h:43 tmc.h:531 tmc.h:535
+#: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:37
+#: tithek_settings.h:41 tithek_settings.h:45 tmc.h:531 tmc.h:535
 #: tunerconfig.h:184 tunerconfig.h:213 tunerconfig.h:244 tunerconfig.h:277
 #: xupnpd.h:30
 msgid "no"
@@ -339,8 +339,8 @@ msgstr ""
 #: settings_autostart.h:577 settings_autostart.h:586 settings_autostart.h:595
 #: settings_overclocking.h:214 settings_overclocking.h:234
 #: settings_overclocking.h:244 stopifnotused.c:93 timeshiftsettings.h:58
-#: timeshiftsettings.h:62 tithek_settings.h:36 tithek_settings.h:40
-#: tithek_settings.h:44 tmc.h:532 tmc.h:536 xupnpd.h:30
+#: timeshiftsettings.h:62 tithek_settings.h:38 tithek_settings.h:42
+#: tithek_settings.h:46 tmc.h:532 tmc.h:536 xupnpd.h:30
 msgid "yes"
 msgstr ""
 
@@ -2485,7 +2485,7 @@ msgstr ""
 #: plugins_permtime_skin.xml.h:1 plugins_readerconfig_skin.xml.h:10
 #: plugins_rgui_skin.xml.h:9 plugins_stock_skin.xml.h:6
 #: plugins_stopifnotused_skin.xml.h:8 plugins_streaminfo_skin.xml.h:6
-#: plugins_tithek_skin.xml.h:22 plugins_tiwakeup_skin.xml.h:9
+#: plugins_tithek_skin.xml.h:24 plugins_tiwakeup_skin.xml.h:9
 #: plugins_tmc_skin.xml.h:18 plugins_tmdb_skin.xml.h:11
 #: plugins_tsSchnitt_skin.xml.h:11 plugins_weather_skin.xml.h:4
 #: plugins_wins3_skin.xml.h:4 plugins_xupnpd_skin.xml.h:5
@@ -2502,7 +2502,7 @@ msgstr ""
 #: skins_panel_skin.xml.h:28 skins_permtime_skin.xml.h:1
 #: skins_readerconfig_skin.xml.h:10 skins_rgui_skin.xml.h:9
 #: skins_stock_skin.xml.h:6 skins_stopifnotused_skin.xml.h:8
-#: skins_streaminfo_skin.xml.h:6 skins_tithek_skin.xml.h:22
+#: skins_streaminfo_skin.xml.h:6 skins_tithek_skin.xml.h:24
 #: skins_tiwakeup_skin.xml.h:9 skins_tmc_skin.xml.h:18
 #: skins_tmdb_skin.xml.h:11 skins_tsSchnitt_skin.xml.h:11
 #: skins_weather_skin.xml.h:4 skins_wins3_skin.xml.h:4
@@ -4104,9 +4104,9 @@ msgstr ""
 msgid "Pic quality"
 msgstr ""
 
-#: plugins_mc_skin.xml.h:42 plugins_tithek_skin.xml.h:11
+#: plugins_mc_skin.xml.h:42 plugins_tithek_skin.xml.h:13
 #: skin_default_skin.xml.h:443 skins_mc_skin.xml.h:42
-#: skins_tithek_skin.xml.h:11
+#: skins_tithek_skin.xml.h:13
 msgid "PICTURE"
 msgstr "Изображение"
 
@@ -4122,8 +4122,8 @@ msgstr "Настройки изображения"
 msgid "Radio Player"
 msgstr "Радио Player"
 
-#: plugins_mc_skin.xml.h:52 plugins_tithek_skin.xml.h:14
-#: skins_mc_skin.xml.h:52 skins_tithek_skin.xml.h:14
+#: plugins_mc_skin.xml.h:52 plugins_tithek_skin.xml.h:16
+#: skins_mc_skin.xml.h:52 skins_tithek_skin.xml.h:16
 msgid "Screensaver"
 msgstr "Заставка"
 
@@ -4574,49 +4574,57 @@ msgid "Menu Title"
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:9 skins_tithek_skin.xml.h:9
-msgid "Pic Link"
+msgid "Mle-HD Pass"
 msgstr ""
 
 #: plugins_tithek_skin.xml.h:10 skins_tithek_skin.xml.h:10
+msgid "Mle-HD User"
+msgstr ""
+
+#: plugins_tithek_skin.xml.h:11 skins_tithek_skin.xml.h:11
+msgid "Pic Link"
+msgstr ""
+
+#: plugins_tithek_skin.xml.h:12 skins_tithek_skin.xml.h:12
 msgid "Pic Ratio"
 msgstr "Соотношение сторон:"
 
-#: plugins_tithek_skin.xml.h:12 skins_tithek_skin.xml.h:12 tithek.h:1099
+#: plugins_tithek_skin.xml.h:14 skins_tithek_skin.xml.h:14 tithek.h:1099
 msgid "please wait..."
 msgstr ""
 
-#: plugins_tithek_skin.xml.h:13 skin_default_skin.xml.h:499
-#: skins_tithek_skin.xml.h:13
+#: plugins_tithek_skin.xml.h:15 skin_default_skin.xml.h:499
+#: skins_tithek_skin.xml.h:15
 msgid "Red-Menu"
 msgstr ""
 
-#: plugins_tithek_skin.xml.h:15 skins_tithek_skin.xml.h:15
+#: plugins_tithek_skin.xml.h:17 skins_tithek_skin.xml.h:17
 msgid "Show Pay Streams"
 msgstr ""
 
-#: plugins_tithek_skin.xml.h:16 skins_tithek_skin.xml.h:16
+#: plugins_tithek_skin.xml.h:18 skins_tithek_skin.xml.h:18
 msgid "Stream Link"
 msgstr ""
 
-#: plugins_tithek_skin.xml.h:17 skins_tithek_skin.xml.h:17
+#: plugins_tithek_skin.xml.h:19 skins_tithek_skin.xml.h:19
 msgid "TiThek - Favorite Edit"
 msgstr ""
 
-#: plugins_tithek_skin.xml.h:18 skin_default_skin.xml.h:663
-#: skins_tithek_skin.xml.h:18
+#: plugins_tithek_skin.xml.h:20 skin_default_skin.xml.h:663
+#: skins_tithek_skin.xml.h:20
 msgid "Title"
 msgstr "Субтитры"
 
-#: plugins_tithek_skin.xml.h:19 skin_default_skin.xml.h:692
-#: skins_tithek_skin.xml.h:19
+#: plugins_tithek_skin.xml.h:21 skin_default_skin.xml.h:692
+#: skins_tithek_skin.xml.h:21
 msgid "Type"
 msgstr "Тип"
 
-#: plugins_tithek_skin.xml.h:20 skins_tithek_skin.xml.h:20
+#: plugins_tithek_skin.xml.h:22 skins_tithek_skin.xml.h:22
 msgid "View Cover"
 msgstr ""
 
-#: plugins_tithek_skin.xml.h:21 skins_tithek_skin.xml.h:21
+#: plugins_tithek_skin.xml.h:23 skins_tithek_skin.xml.h:23
 msgid "View Sections"
 msgstr ""
 
@@ -8907,31 +8915,31 @@ msgstr ""
 msgid "ZDF"
 msgstr ""
 
-#: tithek_settings.h:17 tithek_settings.h:26
+#: tithek_settings.h:19 tithek_settings.h:28
 msgid "show auto entrys"
 msgstr ""
 
-#: tithek_settings.h:18 tithek_settings.h:27
+#: tithek_settings.h:20 tithek_settings.h:29
 msgid "show 2 entrys"
 msgstr ""
 
-#: tithek_settings.h:19 tithek_settings.h:28
+#: tithek_settings.h:21 tithek_settings.h:30
 msgid "show 6 entrys"
 msgstr ""
 
-#: tithek_settings.h:20 tithek_settings.h:29
+#: tithek_settings.h:22 tithek_settings.h:31
 msgid "show 12 entrys"
 msgstr ""
 
-#: tithek_settings.h:21 tithek_settings.h:30
+#: tithek_settings.h:23 tithek_settings.h:32
 msgid "show 20 entrys"
 msgstr ""
 
-#: tithek_settings.h:22 tithek_settings.h:31
+#: tithek_settings.h:24 tithek_settings.h:33
 msgid "show 30 entrys"
 msgstr ""
 
-#: tithek_settings.h:23 tithek_settings.h:32
+#: tithek_settings.h:25 tithek_settings.h:34
 msgid "show in list"
 msgstr ""
 
