@@ -1151,7 +1151,7 @@ void memcpy_byte(char* dest, char* src, long anzb)
 	
 	memcpy_byte_src = src;
 	memcpy_byte_dest = dest;
-	memcpy_byte_anzw = anzb;
+	memcpy_byte_anzb = anzb;
 	
 	asm(	
 				"		lw	  $8, memcpy_byte_src		\n"
