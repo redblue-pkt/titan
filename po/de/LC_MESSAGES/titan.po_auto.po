@@ -3596,7 +3596,7 @@ msgstr "Suche diesen Titel bei MyVideo"
 
 #: play.h:651
 msgid "Search on MyVideo (local)"
-msgstr ""
+msgstr "Suche diesen Titel bei MyVideo (local)"
 
 #: play.h:652
 msgid "Search on ARD (local)"
