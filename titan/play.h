@@ -638,6 +638,7 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 	tmpstr = ostrcat(tmpstr, _("Search on VOX-Now (local)"), 1, 0);
 	tmpstr = ostrcat(tmpstr, _("Search on InternetTv (local)"), 1, 0);
 	tmpstr = ostrcat(tmpstr, _("Search on InternetRadio (local)"), 1, 0);
+	tmpstr = ostrcat(tmpstr, _("Search on FilmOn (local)"), 1, 0);
 	tmpstr = ostrcat(tmpstr, _("Video Settings"), 1, 0);
 	tmpstr = ostrcat(tmpstr, _("AV Settings"), 1, 0);
 	tmpstr = ostrcat(tmpstr, _("iD3Tag Info"), 1, 0);
@@ -681,6 +682,7 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 			addmenulist(&mlist, "Search on Mle-HD (local)", NULL, NULL, 0, 0);
 			addmenulist(&mlist, "Search on Beeg (local)", NULL, NULL, 0, 0);
 			addmenulist(&mlist, "Search on Xvideos (local)", NULL, NULL, 0, 0);
+			addmenulist(&mlist, "Search on FilmOn (local)", NULL, NULL, 0, 0);
 		}
 		addmenulist(&mlist, "Search on Netzkino (local)", NULL, NULL, 0, 0);
 		addmenulist(&mlist, "Search on Youtube", NULL, NULL, 0, 0);
@@ -794,6 +796,8 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 			ret = 25;
 		else if(ostrcmp(mbox->name, "Search on Netzkino (local)") == 0)
 			ret = 26;
+		else if(ostrcmp(mbox->name, "Search on FilmOn (local)") == 0)
+			ret = 27;
 		else if(ostrcmp(mbox->name, "Downloads") == 0)
 		{
 			if(status.play == 1)

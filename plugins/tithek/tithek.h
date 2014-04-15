@@ -80,6 +80,35 @@ int tithekmlehd = 0;
 //flag 1000 - menu pincode
 //flag 9999 - menu hidden codecpack
 
+// redmenu
+//check 1	- screenbgdownload(1)
+//check 2  	- Search on KinoX
+//check 8  	- Search on KinoX (local)
+//check 3  	- Search on Solarmovies (movie)
+//check 4  	- Search on Solarmovies (serie)
+//check 9  	- Search on Solarmovies (local)") == 0)
+//check 5  	- Search on Youtube
+//check 10  - Search on Youtube (local)
+//check 6  	- Search on MyVideo
+//check 11  - Search on MyVideo (local)
+//check 7  	- Search on Movie4k
+//check 12  - Search on Movie4k (local)
+//check 13  - Search on InternetRadio (local)
+//check 14  - Search on InternetTv (local)
+//check 15 	- Search on ARD (local)
+//check 16 	- Search on ZDF (local)"
+//check 17 	- Search on TecTime (local)
+//check 18 	- Search on Giga (local)
+//check 19 	- Search on Beeg (local)
+//check 20 	- Search on Rtl2-Now (local)
+//check 21 	- Search on Rtl-Now (local)
+//check 22 	- Search on SuperRTL-Now (local)
+//check 23 	- Search on VOX-Now (local)
+//check 24 	- Search on Xvideos (local)
+//check 25 	- Search on Mle-HD (local)
+//check 26 	- Search on Netzkino (local)
+//check 27 	- Search on FilmOn (local)
+
 struct tithek
 {
 	char* title;
@@ -2218,6 +2247,29 @@ waitrcstart:
 						ogridcol = listbox->gridcol;
 						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
 						char* tmpstr1 = ostrcat("Netzkino - Search (local)", " - ", 0, 0);
+						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
+						screentithekplay(tmpstr, tmpstr2, 0);
+						free(tmpstr); tmpstr = NULL;
+						free(tmpstr2); tmpstr2 = NULL;
+			
+						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
+						if(pagecount == 0 || tithekexit == 1) break;
+
+						listbox->aktpage = oaktpage;
+						listbox->aktline = oaktline;
+						listbox->gridcol = ogridcol;
+						addscreenrc(grid, listbox);
+					}
+				}
+				else if(check == 27)
+				{
+					if(filmon_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "FilmOn - Search (local)", tmpstr, 0) == 0)
+					{
+						oaktpage = listbox->aktpage;
+						oaktline = listbox->aktline;
+						ogridcol = listbox->gridcol;
+						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
+						char* tmpstr1 = ostrcat("FilmOn - Search (local)", " - ", 0, 0);
 						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
 						screentithekplay(tmpstr, tmpstr2, 0);
 						free(tmpstr); tmpstr = NULL;
