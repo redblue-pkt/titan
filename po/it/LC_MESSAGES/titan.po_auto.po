@@ -10878,18 +10878,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid "Search on MyVideo (local)"
-#~ msgstr "Search on MyVideo"
-
-#~ msgid "Streaming Playback Caching (2MB)"
-#~ msgstr "Streaming Playback Caching (2MB)"
-
-#~ msgid "Streaming Playback Caching (3MB)"
-#~ msgstr "Streaming Playback Caching (3MB)"
-
-#~ msgid "Streaming Playback Caching (4MB)"
-#~ msgstr "Streaming Playback Caching (4MB)"
-
-#~ msgid "Streaming Playback Caching (7.5MB)"
-#~ msgstr "Streaming Playback Caching (7.5MB)"

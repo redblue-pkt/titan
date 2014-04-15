@@ -11094,18 +11094,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid "Search on MyVideo (local)"
-#~ msgstr "Suche diesen Titel bei MyVideo (local)"
-
-#~ msgid "Streaming Playback Caching (2MB)"
-#~ msgstr "Direktes Streamen mit Puffer (2MB)"
-
-#~ msgid "Streaming Playback Caching (3MB)"
-#~ msgstr "Direktes Streamen mit Puffer (3MB)"
-
-#~ msgid "Streaming Playback Caching (4MB)"
-#~ msgstr "Direktes Streamen mit Puffer (4MB)"
-
-#~ msgid "Streaming Playback Caching (7.5MB)"
-#~ msgstr "Direktes Streamen mit Puffer (7.5MB)"
