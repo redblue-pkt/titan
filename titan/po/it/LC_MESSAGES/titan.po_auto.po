@@ -10874,6 +10874,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid "Streaming Playback Caching (0.5MB)"
-#~ msgstr "Streaming Playback Caching (0.5MB)"
