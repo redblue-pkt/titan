@@ -86,7 +86,7 @@ int tithekmlehd = 0;
 //check 8  	- Search on KinoX (local)
 //check 3  	- Search on Solarmovies (movie)
 //check 4  	- Search on Solarmovies (serie)
-//check 9  	- Search on Solarmovies (local)") == 0)
+//check 9  	- Search on Solarmovies (local)
 //check 5  	- Search on Youtube
 //check 10  - Search on Youtube (local)
 //check 6  	- Search on MyVideo
@@ -1310,22 +1310,16 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 			if(flag == 4)
 			{
 #ifdef EPLAYER3
-				addmenulist(&mlist, "Streaming Playback Caching (0.5MB)", _("Streaming Playback Caching (0.5MB)"), NULL, 0, 0);
 				addmenulist(&mlist, "Streaming Playback Caching (1MB)", _("Streaming Playback Caching (1MB)"), NULL, 0, 0);
 #endif
 			}	
 			else if(!ostrncmp("http://", tmpstr1, 7))
 			{
 #ifdef EPLAYER3
-//					addmenulist(&mlist, "Streaming Playback Caching (1MB)", _("Streaming Playback Caching (1MB)"), NULL, 0, 0);
-//					addmenulist(&mlist, "Streaming Playback Caching (2MB)", _("Streaming Playback Caching (2MB)"), NULL, 0, 0);
-//					addmenulist(&mlist, "Streaming Playback Caching (3MB)", _("Streaming Playback Caching (3MB)"), NULL, 0, 0);
-//					addmenulist(&mlist, "Streaming Playback Caching (4MB)", _("Streaming Playback Caching (4MB)"), NULL, 0, 0);
 				if(checkbox("UFS910") == 1 && !file_exist("/var/swapdir/swapfile"))
 					addmenulist(&mlist, "Streaming Playback Caching (5MB)", _("Streaming Playback Caching (5MB)"), NULL, 0, 0);
 				else
 				{
-//						addmenulist(&mlist, "Streaming Playback Caching (7.5MB)", _("Streaming Playback Caching (7.5MB)"), NULL, 0, 0);
 					addmenulist(&mlist, "Streaming Playback Caching (10MB)", _("Streaming Playback Caching (10MB)"), NULL, 0, 0);
 				}
 #endif
