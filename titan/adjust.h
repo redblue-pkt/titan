@@ -251,10 +251,10 @@ void screenadjust()
 	else
 		dualboot->hidden = YES;
 
-	if(status.security == 1)
-		emucontrol->hidden = NO;
-	else
+	if(status.security == 0 || checkemu() == 0)
 		emucontrol->hidden = YES;
+	else
+		emucontrol->hidden = NO;
 
 	if(checkbox("ATEMIO510") == 1 || checkbox("UFS912") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1)
 		usecec->hidden = NO;
