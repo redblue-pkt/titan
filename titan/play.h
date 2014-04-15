@@ -648,7 +648,7 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 		addmenulist(&mlist, "Search on Youtube", _("Search on Youtube"), NULL, 0, 0);
 		addmenulist(&mlist, "Search on Youtube (local)", _("Search on Youtube (local)"), NULL, 0, 0);
 		addmenulist(&mlist, "Search on MyVideo", _("Search on MyVideo"), NULL, 0, 0);
-		addmenulist(&mlist, "Search on Myvideo (local)", _("Search on Myvideo (local)"), NULL, 0, 0);
+		addmenulist(&mlist, "Search on MyVideo (local)", _("Search on MyVideo (local)"), NULL, 0, 0);
 		addmenulist(&mlist, "Search on ARD (local)", _("Search on ARD (local)"), NULL, 0, 0);
 		addmenulist(&mlist, "Search on ZDF (local)", _("Search on ZDF (local)"), NULL, 0, 0);
 		addmenulist(&mlist, "Search on TecTime (local)", _("Search on TecTime (local)"), NULL, 0, 0);
