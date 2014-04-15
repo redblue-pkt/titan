@@ -39,6 +39,7 @@
 #include "giga.h"
 #include "tectime.h"
 #include "netzkino.h"
+#include "filmon.h"
 
 char pluginname[] = "TiTan Mediathek";
 char plugindesc[] = "TiTan Mediathek";
