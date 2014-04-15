@@ -60,7 +60,7 @@ msgstr "Systeem informatie"
 #: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
 #: hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626 inadyn.h:188
 #: inadyn.h:190 inadyn.h:200 infobar.h:485 infobar.h:607 info.h:27
-#: keyactions.h:305 lcdpearl1.c:45 lcdsamsung.c:101 log.h:46 log.h:48
+#: keyactions.h:290 lcdpearl1.c:45 lcdsamsung.c:101 log.h:46 log.h:48
 #: mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
 #: mc_audioplayer.h:333 mc_audioplayer.h:604 mc_audioplayer.h:707
 #: mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
@@ -82,8 +82,8 @@ msgstr "Systeem informatie"
 #: network.h:865 network.h:887 newsletter.h:252 newsletter.h:292 novamov.h:35
 #: novamov.h:80 nowvideo.h:35 nowvideo.h:87 panel_main.h:29 panel_main.h:135
 #: panel_settings_wizard.h:6 played.h:30 played.h:79 played.h:91 played.h:103
-#: played.h:160 player.h:99 play.h:476 play.h:593 play.h:1284 play.h:1290
-#: play.h:1299 play.h:1300 play.h:1493 play.h:1653 play.h:1664
+#: played.h:160 player.h:99 play.h:476 play.h:593 play.h:1244 play.h:1250
+#: play.h:1259 play.h:1260 play.h:1453 play.h:1613 play.h:1624
 #: plugins_dlna_skin.xml.h:8 plugins_facebook_skin.xml.h:5
 #: plugins_mboxinfo_skin.xml.h:2 plugins_mc_skin.xml.h:38
 #: plugins_optimize_skin.xml.h:3 plugins_rgui_skin.xml.h:3
@@ -112,8 +112,8 @@ msgstr "Systeem informatie"
 #: timeshiftsettings.h:45 titan.c:274 titan.c:338 titan.c:347 titan.c:957
 #: titan.c:966 titan.c:1091 titan.c:1112 titan.c:1118 titan.c:1129
 #: titan.c:1135 tithek.c:80 tithek_global.h:238 tithek.h:650 tithek.h:1146
-#: tithek.h:1189 tithek.h:1440 tithek.h:1462 tithek.h:1478 tithek.h:3180
-#: tithek.h:3244 tithek.h:3258 tithek.h:3268 tiwakeup.h:66 tiwakeup.h:68
+#: tithek.h:1189 tithek.h:1422 tithek.h:1444 tithek.h:1460 tithek.h:3162
+#: tithek.h:3226 tithek.h:3240 tithek.h:3250 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922
 #: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3185 tpk.new.h:3167 tsSchnitt.c:108
 #: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
@@ -152,7 +152,7 @@ msgstr "Ok"
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
 #: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626
 #: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:485 infobar.h:607
-#: info.h:27 keyactions.h:305 log.h:46 log.h:48 marker.h:215 marker.h:229
+#: info.h:27 keyactions.h:290 log.h:46 log.h:48 marker.h:215 marker.h:229
 #: mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
 #: mc_audioplayer.h:333 mc_audioplayer.h:604 mc_audioplayer.h:707
 #: mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
@@ -174,8 +174,8 @@ msgstr "Ok"
 #: newsletter.h:252 newsletter.h:292 novamov.h:35 novamov.h:80 nowvideo.h:35
 #: nowvideo.h:87 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:79 played.h:91 played.h:103 played.h:160 player.h:99
-#: play.h:476 play.h:593 play.h:1284 play.h:1290 play.h:1299 play.h:1300
-#: play.h:1493 play.h:1653 play.h:1664 plugins_autotimer_skin.xml.h:7
+#: play.h:476 play.h:593 play.h:1244 play.h:1250 play.h:1259 play.h:1260
+#: play.h:1453 play.h:1613 play.h:1624 plugins_autotimer_skin.xml.h:7
 #: plugins_callmonitor1_skin.xml.h:11 plugins_catcatch_skin.xml.h:4
 #: plugins_dlna_skin.xml.h:2 plugins_facebook_skin.xml.h:4
 #: plugins_instar_skin.xml.h:6 plugins_lcdpearl1_skin.xml.h:7
@@ -213,8 +213,8 @@ msgstr "Ok"
 #: timeshiftsettings.h:45 titan.c:274 titan.c:338 titan.c:347 titan.c:957
 #: titan.c:966 titan.c:1091 titan.c:1112 titan.c:1118 titan.c:1129
 #: titan.c:1135 tithek.c:80 tithek_global.h:238 tithek.h:650 tithek.h:1146
-#: tithek.h:1189 tithek.h:1440 tithek.h:1462 tithek.h:1478 tithek.h:3180
-#: tithek.h:3244 tithek.h:3258 tithek.h:3268 tiwakeup.h:66 tiwakeup.h:68
+#: tithek.h:1189 tithek.h:1422 tithek.h:1444 tithek.h:1460 tithek.h:3162
+#: tithek.h:3226 tithek.h:3240 tithek.h:3250 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922
 #: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3185 tpk.new.h:3167 tsSchnitt.c:108
 #: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
@@ -557,7 +557,7 @@ msgstr "Ja / VZAP oneindig"
 #: hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566 hwtest.h:586
 #: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
 #: hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626 inadyn.h:188
-#: inadyn.h:190 inadyn.h:200 infobar.h:485 infobar.h:607 keyactions.h:305
+#: inadyn.h:190 inadyn.h:200 infobar.h:485 infobar.h:607 keyactions.h:290
 #: language.h:49 lcdpearl1.c:45 lcdsamsung.c:101 log.h:46 log.h:48
 #: marker.h:215 marker.h:229 mc_audioplayer.h:333 mc_audioplayer.h:604
 #: mc_audioplayer.h:707 mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
@@ -577,8 +577,8 @@ msgstr "Ja / VZAP oneindig"
 #: network.h:774 network.h:800 network.h:804 network.h:858 novamov.h:35
 #: novamov.h:80 nowvideo.h:35 nowvideo.h:87 panel_main.h:29 panel_main.h:135
 #: panel_settings_wizard.h:6 played.h:30 played.h:79 played.h:91 played.h:103
-#: played.h:160 player.h:99 play.h:593 play.h:1299 play.h:1493 play.h:1653
-#: play.h:1664 possetup.h:98 primeshare.h:29 primeshare.h:73 primeshare.h:79
+#: played.h:160 player.h:99 play.h:593 play.h:1259 play.h:1453 play.h:1613
+#: play.h:1624 possetup.h:98 primeshare.h:29 primeshare.h:73 primeshare.h:79
 #: primeshare.h:124 putlocker.h:32 putlocker.h:79 putlocker.h:85
 #: putlocker.h:136 putlocker.h:146 putlocker.h:219 readerconfig.h:343
 #: readerconfig.h:443 readerconfig.h:444 readerconfig.h:488 readerconfig.h:489
@@ -597,8 +597,8 @@ msgstr "Ja / VZAP oneindig"
 #: system_update.h:333 timeshift.h:113 timeshift.h:155 timeshift.h:162
 #: timeshiftsettings.h:45 titan.c:274 titan.c:338 titan.c:347 titan.c:1091
 #: titan.c:1112 titan.c:1118 titan.c:1129 titan.c:1135 tithek.c:80
-#: tithek_global.h:238 tithek.h:650 tithek.h:1146 tithek.h:1189 tithek.h:1440
-#: tithek.h:1462 tithek.h:3180 tithek.h:3244 tithek.h:3258 tithek.h:3268
+#: tithek_global.h:238 tithek.h:650 tithek.h:1146 tithek.h:1189 tithek.h:1422
+#: tithek.h:1444 tithek.h:3162 tithek.h:3226 tithek.h:3240 tithek.h:3250
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
 #: tmdb.h:759 tmdb.h:922 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3185
 #: tpk.new.h:3167 tunerconfig.h:636 tunerconfig.h:645 tunerconfig.h:907
@@ -1156,7 +1156,7 @@ msgstr "Wachten, de download wordt gestopt"
 msgid "EJECT"
 msgstr "Uitwerpen"
 
-#: dvdplay.h:29 play.h:1421 plugins_dlna_skin.xml.h:10
+#: dvdplay.h:29 play.h:1381 plugins_dlna_skin.xml.h:10
 #: skins_dlna_skin.xml.h:10
 msgid "SELECT"
 msgstr "Selecteer"
@@ -1164,7 +1164,7 @@ msgstr "Selecteer"
 #: dvdplay.h:62 mc_audioplayer.h:604 mc_audioplayer.h:707 mc_global.h:773
 #: mc_global.h:1020 mc_pictureplayer.h:100 mc_pictureplayer.h:242
 #: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:749
-#: mc_videoplayer.h:888 play.h:1493
+#: mc_videoplayer.h:888 play.h:1453
 msgid "Can't start playback !"
 msgstr "Weergave kan niet gestart worden!"
 
@@ -1245,14 +1245,14 @@ msgstr "Muziek"
 msgid "Single EPG"
 msgstr "Simpele EPG"
 
-#: epgsettings.h:140 epgsettings.h:181 keyactions.h:26
-#: settings_bluebutton.h:17 settings_pluginbutton.h:18 settings_redbutton.h:18
+#: epgsettings.h:140 epgsettings.h:181 keyactions.h:90
+#: settings_bluebutton.h:16 settings_pluginbutton.h:17 settings_redbutton.h:17
 #: skin_default_skin.xml.h:401
 msgid "Multi EPG"
 msgstr ""
 
-#: epgsettings.h:141 keyactions.h:27 settings_bluebutton.h:18
-#: settings_pluginbutton.h:19 settings_redbutton.h:19
+#: epgsettings.h:141 keyactions.h:91 settings_bluebutton.h:17
+#: settings_pluginbutton.h:18 settings_redbutton.h:18
 #: skin_default_skin.xml.h:258
 msgid "Graphic Multi EPG"
 msgstr "Grafische Multi EPG"
@@ -1584,7 +1584,7 @@ msgstr "Map/bestand kan niet verwijderd worden!"
 msgid "Can't show this file!"
 msgstr "Bestand kan niet getoond worden!"
 
-#: global.h:6529 keyactions.h:305
+#: global.h:6529 keyactions.h:290
 msgid "ERROR cant read res"
 msgstr "Fout, resolutie kan niet worden vastgesteld."
 
@@ -2360,53 +2360,51 @@ msgstr "Uit"
 msgid "ein"
 msgstr "Aan"
 
-#: keyactions.h:22 settings_bluebutton.h:16 settings_pluginbutton.h:14
-#: settings_pluginbutton.h:17 settings_pluginbutton.h:58
-#: settings_redbutton.h:14 settings_redbutton.h:17
-msgid "Extensions List"
-msgstr "Plugin overzichtslijst"
+#: keyactions.h:22
+msgid "Key Action - Plugins"
+msgstr "Toets acties - Plugins"
 
-#: keyactions.h:23 settings_pluginbutton.h:15 settings_redbutton.h:15
-msgid "Auto Resolution"
-msgstr "Automatische resolutie"
-
-#: keyactions.h:24 settings_bluebutton.h:14
-msgid "TV / Radio Switch"
-msgstr "TV/Radio omschakelen"
-
-#: keyactions.h:25 settings_bluebutton.h:15 settings_pluginbutton.h:16
-#: settings_redbutton.h:16 skin_default_skin.xml.h:595
-msgid "Softcam Panel"
-msgstr "Softcam instellingen"
-
-#: keyactions.h:28 settings_bluebutton.h:19 settings_pluginbutton.h:20
-#: settings_redbutton.h:20
-msgid "Sleep Timer"
-msgstr "Slaaptimer"
-
-#: keyactions.h:29 settings_bluebutton.h:20 settings_pluginbutton.h:21
-#: settings_redbutton.h:21 skin_default_skin.xml.h:135
-msgid "Child Protection"
-msgstr "Kinderslot"
-
-#: keyactions.h:30 settings_bluebutton.h:21 settings_pluginbutton.h:22
-#: settings_redbutton.h:22 videomode.h:24
-msgid "Subchannel"
-msgstr "Subkanaal"
-
-#: keyactions.h:31 play.h:704 settings_bluebutton.h:22
-#: settings_pluginbutton.h:23 settings_redbutton.h:23
-#: skin_default_skin.xml.h:195
-msgid "Downloads"
-msgstr ""
-
-#: keyactions.h:32 play.h:647
+#: keyactions.h:25 play.h:629
 msgid "MediaDB Scan Info"
 msgstr "MediaDB Scan informatie"
 
-#: keyactions.h:37
-msgid "Key Action - Plugins"
-msgstr "Toets acties - Plugins"
+#: keyactions.h:53 settings_mediabutton.h:12
+msgid "Record Player"
+msgstr ""
+
+#: keyactions.h:81 settings_mediabutton.h:42 skin_default_skin.xml.h:379
+msgid "Media Player"
+msgstr "Media speler"
+
+#: keyactions.h:86 settings_pluginbutton.h:13 settings_redbutton.h:13
+msgid "Auto Resolution"
+msgstr "Automatische resolutie"
+
+#: keyactions.h:88 settings_bluebutton.h:14 settings_pluginbutton.h:15
+#: settings_redbutton.h:15 skin_default_skin.xml.h:595
+msgid "Softcam Panel"
+msgstr "Softcam instellingen"
+
+#: keyactions.h:92 settings_bluebutton.h:18 settings_pluginbutton.h:19
+#: settings_redbutton.h:19
+msgid "Sleep Timer"
+msgstr "Slaaptimer"
+
+#: keyactions.h:93 settings_bluebutton.h:19 settings_pluginbutton.h:20
+#: settings_redbutton.h:20 skin_default_skin.xml.h:135
+msgid "Child Protection"
+msgstr "Kinderslot"
+
+#: keyactions.h:94 settings_bluebutton.h:20 settings_pluginbutton.h:21
+#: settings_redbutton.h:21 videomode.h:24
+msgid "Subchannel"
+msgstr "Subkanaal"
+
+#: keyactions.h:95 play.h:664 settings_bluebutton.h:21
+#: settings_pluginbutton.h:22 settings_redbutton.h:22
+#: skin_default_skin.xml.h:195
+msgid "Downloads"
+msgstr ""
 
 #: kinox.h:296 movie4k.h:724 movie4k.h:856 movie4k.h:972 solarmovie.h:443
 msgid "Season"
@@ -3484,187 +3482,170 @@ msgstr ""
 msgid "iD3Tag"
 msgstr ""
 
-#: play.h:616
-msgid "Search on KinoX"
-msgstr "Zoek op KinoX"
-
-#: play.h:617
-msgid "Search on KinoX (local)"
-msgstr "Zoek op KinoX (lokaal)"
-
-#: play.h:618
-msgid "Search on Movie4k"
-msgstr "Zoek op Movie4k"
-
-#: play.h:619
-msgid "Search on Movie4k (local)"
-msgstr "Zoek op Movie4k (lokaal)"
-
-#: play.h:620
-msgid "Search on Solarmovies (movie)"
-msgstr "Zoek op Solarmovies (film)"
-
-#: play.h:621
-msgid "Search on Solarmovies (serie)"
-msgstr "Zoek op Solarmovies (serie)"
-
-#: play.h:622
-msgid "Search on Solarmovies (local)"
-msgstr "Zoek op Solarmovies (lokaal)"
-
-#: play.h:623
-msgid "Search on Mle-HD (local)"
-msgstr "Zoek op Mle-HD (lokaal)"
-
-#: play.h:624
-msgid "Search on Beeg (local)"
-msgstr "Zoek op Beeg (lokaal)"
-
-#: play.h:625
-msgid "Search on Xvideos (local)"
-msgstr "Zoek op Xvideos (lokaal)"
-
-#: play.h:626
-msgid "Search on Netzkino (local)"
-msgstr "Zoek op Netzkino (lokaal)"
-
-#: play.h:627
-msgid "Search on Youtube"
-msgstr "Zoek op Youtube"
-
-#: play.h:628
-msgid "Search on Youtube (local)"
-msgstr "Zoek op Youtube (lokaal)"
-
-#: play.h:629
-msgid "Search on MyVideo"
-msgstr "Zoek op MyVideo"
-
-#: play.h:630
-msgid "Search on MyVideo (local)"
-msgstr "Zoek op Myvideo (lokaal)"
-
-#: play.h:631
-msgid "Search on ARD (local)"
-msgstr "Zoek op ARD (lokaal)"
-
-#: play.h:632
-msgid "Search on ZDF (local)"
-msgstr "Zoek op ZDF (lokaal)"
-
-#: play.h:633
-msgid "Search on TecTime (local)"
-msgstr "Zoek op TecTime (lokaal)"
-
-#: play.h:634
-msgid "Search on Giga (local)"
-msgstr "Zoek op Giga (lokaal)"
-
-#: play.h:635
-msgid "Search on Rtl-Now (local)"
-msgstr "Zoek op Rtl-Now (lokaal)"
-
-#: play.h:636
-msgid "Search on Rtl2-Now (local)"
-msgstr "Zoek op Rtl2-Now (lokaal)"
-
-#: play.h:637
-msgid "Search on SuperRTL-Now (local)"
-msgstr "Zoek op SuperRTL-Now (lokaal)"
-
-#: play.h:638
-msgid "Search on VOX-Now (local)"
-msgstr "Zoek op VOX-Now (lokaal)"
-
-#: play.h:639
-msgid "Search on InternetTv (local)"
-msgstr "Zoek op InternetTv (lokaal)"
-
-#: play.h:640
-msgid "Search on InternetRadio (local)"
-msgstr "Zoek op InternetRadio (lokaal)"
-
-#: play.h:641
-msgid "Search on FilmOn (local)"
-msgstr ""
-
-#: play.h:642 skin_default_skin.xml.h:722
+#: play.h:618 skin_default_skin.xml.h:722
 msgid "Video Settings"
 msgstr "Beeldscherm instellingen"
 
-#: play.h:643
+#: play.h:619
 msgid "AV Settings"
 msgstr "Audio/Video instellingen"
 
-#: play.h:644
+#: play.h:620
 msgid "iD3Tag Info"
 msgstr ""
 
-#: play.h:645 skin_default_skin.xml.h:376
+#: play.h:623 skin_default_skin.xml.h:376
 msgid "MediaDB Edit"
 msgstr "MediaDB bewerken"
 
-#: play.h:646
+#: play.h:626
 msgid "Delete File"
 msgstr "Bestand wissen"
 
-#: play.h:648 plugins_streaminfo_skin.xml.h:3 skins_streaminfo_skin.xml.h:3
-#: tpk_showname.h:186
-msgid "Streaminfo"
+#: play.h:635
+msgid "Search on KinoX"
+msgstr "Zoek op KinoX"
+
+#: play.h:636
+msgid "Search on KinoX (local)"
+msgstr "Zoek op KinoX (lokaal)"
+
+#: play.h:637
+msgid "Search on Movie4k"
+msgstr "Zoek op Movie4k"
+
+#: play.h:638
+msgid "Search on Movie4k (local)"
+msgstr "Zoek op Movie4k (lokaal)"
+
+#: play.h:639
+msgid "Search on Solarmovies (movie)"
+msgstr "Zoek op Solarmovies (film)"
+
+#: play.h:640
+msgid "Search on Solarmovies (serie)"
+msgstr "Zoek op Solarmovies (serie)"
+
+#: play.h:641
+msgid "Search on Solarmovies (local)"
+msgstr "Zoek op Solarmovies (lokaal)"
+
+#: play.h:642
+msgid "Search on Mle-HD (local)"
+msgstr "Zoek op Mle-HD (lokaal)"
+
+#: play.h:643
+msgid "Search on Beeg (local)"
+msgstr "Zoek op Beeg (lokaal)"
+
+#: play.h:644
+msgid "Search on Xvideos (local)"
+msgstr "Zoek op Xvideos (lokaal)"
+
+#: play.h:645
+msgid "Search on FilmOn (local)"
 msgstr ""
 
-#: play.h:649 tpk_showname.h:44
-msgid "IMDb"
+#: play.h:647
+msgid "Search on Netzkino (local)"
+msgstr "Zoek op Netzkino (lokaal)"
+
+#: play.h:648
+msgid "Search on Youtube"
+msgstr "Zoek op Youtube"
+
+#: play.h:649
+msgid "Search on Youtube (local)"
+msgstr "Zoek op Youtube (lokaal)"
+
+#: play.h:650
+msgid "Search on MyVideo"
+msgstr "Zoek op MyVideo"
+
+#: play.h:651
+msgid "Search on Myvideo (local)"
 msgstr ""
 
-#: play.h:650 tpk_showname.h:45
-msgid "IMDb-API"
-msgstr ""
+#: play.h:652
+msgid "Search on ARD (local)"
+msgstr "Zoek op ARD (lokaal)"
 
-#: play.h:651 tpk_showname.h:194
-msgid "TMDb"
-msgstr ""
+#: play.h:653
+msgid "Search on ZDF (local)"
+msgstr "Zoek op ZDF (lokaal)"
 
-#: play.h:723
+#: play.h:654
+msgid "Search on TecTime (local)"
+msgstr "Zoek op TecTime (lokaal)"
+
+#: play.h:655
+msgid "Search on Giga (local)"
+msgstr "Zoek op Giga (lokaal)"
+
+#: play.h:656
+msgid "Search on Rtl-Now (local)"
+msgstr "Zoek op Rtl-Now (lokaal)"
+
+#: play.h:657
+msgid "Search on Rtl2-Now (local)"
+msgstr "Zoek op Rtl2-Now (lokaal)"
+
+#: play.h:658
+msgid "Search on SuperRTL-Now (local)"
+msgstr "Zoek op SuperRTL-Now (lokaal)"
+
+#: play.h:659
+msgid "Search on VOX-Now (local)"
+msgstr "Zoek op VOX-Now (lokaal)"
+
+#: play.h:660
+msgid "Search on InternetTv (local)"
+msgstr "Zoek op InternetTv (lokaal)"
+
+#: play.h:661
+msgid "Search on InternetRadio (local)"
+msgstr "Zoek op InternetRadio (lokaal)"
+
+#: play.h:683
 msgid "Choose your Red-Menu entry from the following list"
 msgstr ""
 
-#: play.h:1206
+#: play.h:1166
 msgid "Jump To (min)"
 msgstr "Spring naar (min)"
 
-#: play.h:1284 play.h:1290 plugins_tmc_skin.xml.h:1 skins_tmc_skin.xml.h:1
+#: play.h:1244 play.h:1250 plugins_tmc_skin.xml.h:1 skins_tmc_skin.xml.h:1
 msgid "EPG Info"
 msgstr "EPG informatie"
 
-#: play.h:1299
+#: play.h:1259
 msgid "Record in progress"
 msgstr "Opname bezig"
 
-#: play.h:1300
+#: play.h:1260
 msgid "Really Delete ?"
 msgstr "Echt verwijderen?"
 
-#: play.h:1421 plugins_networkbrowser_skin.xml.h:5 plugins_stock_skin.xml.h:4
+#: play.h:1381 plugins_networkbrowser_skin.xml.h:5 plugins_stock_skin.xml.h:4
 #: plugins_weather_skin.xml.h:2 skin_default_skin.xml.h:172
 #: skins_networkbrowser_skin.xml.h:5 skins_stock_skin.xml.h:4
 #: skins_weather_skin.xml.h:2
 msgid "DEL"
 msgstr "Vewijderen"
 
-#: play.h:1421 skin_default_skin.xml.h:209
+#: play.h:1381 skin_default_skin.xml.h:209
 msgid "EPG"
 msgstr "EPG"
 
-#: play.h:1421
+#: play.h:1381
 msgid "SORT"
 msgstr "Sorteren"
 
-#: play.h:1653
+#: play.h:1613
 msgid "Marker autoseek is started"
 msgstr "Markering automatisch zoeken is gestart"
 
-#: play.h:1664
+#: play.h:1624
 msgid "Marker autoseek is stopped"
 msgstr "Markering automatisch zoeken is gestopt"
 
@@ -4614,6 +4595,11 @@ msgstr "Beeldverhouding"
 msgid "Framerate"
 msgstr ""
 
+#: plugins_streaminfo_skin.xml.h:3 skins_streaminfo_skin.xml.h:3
+#: tpk_showname.h:186
+msgid "Streaminfo"
+msgstr ""
+
 #: plugins_streaminfo_skin.xml.h:4 skins_streaminfo_skin.xml.h:4
 msgid "X-Resolution"
 msgstr "X-Resolutie"
@@ -4630,8 +4616,8 @@ msgstr ""
 msgid "TiThek Settings"
 msgstr "TiThek Instellingen"
 
-#: plugins_tithek_skin.xml.h:3 skins_tithek_skin.xml.h:3 tithek.h:1527
-#: tithek.h:3286
+#: plugins_tithek_skin.xml.h:3 skins_tithek_skin.xml.h:3 tithek.h:1509
+#: tithek.h:3268
 msgid "ADD FAV"
 msgstr "Favorieten toevoegen"
 
@@ -5203,7 +5189,7 @@ msgstr ""
 "Wilt u het wisselbestand echt wissen? (instellingen worden behouden)\n"
 "De ontvanger zal herstarten en wissen wordt gestart!"
 
-#: restoredefault.h:65 restoredefault.h:77 skin_default_skin.xml.h:517
+#: restoredefault.h:63 restoredefault.h:70 skin_default_skin.xml.h:517
 msgid "Restore default settings"
 msgstr "Fabrieksinstelling terugzetten"
 
@@ -5215,7 +5201,7 @@ msgstr "Formatteer MNT tijdens Backup/Restore"
 msgid "Format MNT (all)"
 msgstr "Formatteer MNT (alles)"
 
-#: restoredefault.h:77
+#: restoredefault.h:70
 msgid "Choose your Restore Mode from the following list."
 msgstr ""
 
@@ -5473,7 +5459,16 @@ msgstr ""
 msgid "Blue Key Action - Setup"
 msgstr "Blauwe knop - Instellen"
 
-#: settings_bluebutton.h:47
+#: settings_bluebutton.h:12 settings_pluginbutton.h:16 settings_redbutton.h:16
+msgid "TV / Radio Switch"
+msgstr "TV/Radio omschakelen"
+
+#: settings_bluebutton.h:15 settings_pluginbutton.h:12
+#: settings_pluginbutton.h:44 settings_redbutton.h:12
+msgid "Extensions List"
+msgstr "Plugin overzichtslijst"
+
+#: settings_bluebutton.h:34
 msgid ""
 "Choose your plugin / menu item from the following list and show it so the "
 "blue button"
@@ -5483,19 +5478,11 @@ msgstr ""
 msgid "Media Key Action - Setup"
 msgstr ""
 
-#: settings_mediabutton.h:13
-msgid "Record Player"
-msgstr ""
-
-#: settings_mediabutton.h:14
+#: settings_mediabutton.h:11
 msgid "Media Plugins List"
 msgstr ""
 
-#: settings_mediabutton.h:15 skin_default_skin.xml.h:379
-msgid "Media Player"
-msgstr "Media speler"
-
-#: settings_mediabutton.h:55
+#: settings_mediabutton.h:48
 msgid ""
 "Choose your Media plugin item from the following list and show it so the "
 "plugin button"
@@ -5505,7 +5492,7 @@ msgstr ""
 msgid "Plugin Key Action - Setup"
 msgstr "Plugin toets actie - Instellen"
 
-#: settings_pluginbutton.h:49
+#: settings_pluginbutton.h:35
 msgid ""
 "Choose your plugin / menu item from the following list and show it so the "
 "plugin button"
@@ -5515,7 +5502,7 @@ msgstr ""
 msgid "Red Key Action - Setup"
 msgstr "Rode knop - Instellen"
 
-#: settings_redbutton.h:49
+#: settings_redbutton.h:35
 msgid ""
 "Choose your plugin / menu item from the following list and show it so the "
 "red button"
@@ -8561,7 +8548,7 @@ msgstr "De hoster wordt momenteel nog niet ondersteund!"
 msgid "Tithek - Mainmenu"
 msgstr "Tithek - Hoofdmenu"
 
-#: tithek_global.h:238 tithek.h:3180
+#: tithek_global.h:238 tithek.h:3162
 msgid "The hoster is not yet supported !"
 msgstr "De hoster wordt momenteel nog niet ondersteund"
 
@@ -8593,99 +8580,83 @@ msgstr ""
 msgid "Choice Playback"
 msgstr "Kies afspelen"
 
-#: tithek.h:1308
+#: tithek.h:1306
 msgid "Streaming Playback (default)"
 msgstr "Streaming afspelen (standaard)"
 
-#: tithek.h:1309
+#: tithek.h:1313
 msgid "Streaming Playback Caching (0.5MB)"
 msgstr "Streaming afspeel buffer (0.5MB)"
 
-#: tithek.h:1310
+#: tithek.h:1314
 msgid "Streaming Playback Caching (1MB)"
 msgstr "Streaming afspeel buffer (1MB)"
 
-#: tithek.h:1311
-msgid "Streaming Playback Caching (2MB)"
-msgstr "Streaming afspeel buffer (2MB)"
-
-#: tithek.h:1312
-msgid "Streaming Playback Caching (3MB)"
-msgstr "Streaming afspeel buffer (3MB)"
-
-#: tithek.h:1313
-msgid "Streaming Playback Caching (4MB)"
-msgstr "Streaming afspeel buffer (4MB)"
-
-#: tithek.h:1314
+#: tithek.h:1325
 msgid "Streaming Playback Caching (5MB)"
 msgstr "Streaming afspeel buffer (5MB)"
 
-#: tithek.h:1315
-msgid "Streaming Playback Caching (7.5MB)"
-msgstr "Streaming afspeel buffer (7.5MB)"
-
-#: tithek.h:1316
+#: tithek.h:1329
 msgid "Streaming Playback Caching (10MB)"
 msgstr "Streaming afspeel buffer (10MB)"
 
-#: tithek.h:1317
+#: tithek.h:1335
 msgid "File Caching Playback (10MB / 120s)"
 msgstr "Bestand afspeel buffer (10Mb/120s)"
 
-#: tithek.h:1318
+#: tithek.h:1336
 msgid "File Caching Playback (20MB / 240s)"
 msgstr "Bestand afspeel buffer (20Mb/240s)"
 
-#: tithek.h:1319
+#: tithek.h:1337
 msgid "File Caching Playback (30MB / 360s)"
 msgstr "Bestand afspeel buffer (30Mb/360s)"
 
-#: tithek.h:1320
+#: tithek.h:1339
 msgid "Download Full File"
 msgstr "Volledig bestand downloaden"
 
-#: tithek.h:1321
+#: tithek.h:1340
 msgid "Download Full File (background)"
 msgstr "Volledig bestand downloaden (achtergrond)"
 
-#: tithek.h:1362
+#: tithek.h:1344
 msgid "Choose your Streaming Playback Modus from the following list"
 msgstr ""
 
-#: tithek.h:1433 tithek.h:1452
+#: tithek.h:1415 tithek.h:1434
 msgid "Filename"
 msgstr "Bestandsnaam"
 
-#: tithek.h:1440
+#: tithek.h:1422
 msgid "Start playback"
 msgstr "Weergave starten"
 
-#: tithek.h:1462
+#: tithek.h:1444
 msgid "Can't get Streamurl !"
 msgstr "Streamurl kan niet geopend worden !"
 
-#: tithek.h:1478
+#: tithek.h:1460
 msgid "TitanNit Tithek disclaimer"
 msgstr ""
 
-#: tithek.h:1522 tithek.h:3281
+#: tithek.h:1504 tithek.h:3263
 msgid "EDIT FAV"
 msgstr "Favorieten bewerken"
 
-#: tithek.h:1559
+#: tithek.h:1541
 msgid "Page"
 msgstr "Pagina"
 
-#: tithek.h:3244
+#: tithek.h:3226
 msgid "Remove this Favorite ?"
 msgstr "Wilt u deze favoriet wissen ?"
 
-#: tithek.h:3258
+#: tithek.h:3240
 msgid "Add this link as Favorite ?"
 msgstr "Wilt u deze favoriet toevoegen?"
 
-#: tithek.h:3268
+#: tithek.h:3250
 msgid "Edit this Favorite ?"
 msgstr "Wilt u deze favoriet bewerken?"
 
@@ -10028,6 +9999,14 @@ msgstr ""
 msgid "I Hate Comic Sans"
 msgstr ""
 
+#: tpk_showname.h:44
+msgid "IMDb"
+msgstr ""
+
+#: tpk_showname.h:45
+msgid "IMDb-API"
+msgstr ""
+
 #: tpk_showname.h:46
 msgid "Incubus 1.22"
 msgstr ""
@@ -10580,6 +10559,10 @@ msgstr ""
 msgid "TitanNit on fire"
 msgstr ""
 
+#: tpk_showname.h:194
+msgid "TMDb"
+msgstr ""
+
 #: tpk_showname.h:195
 msgid "USB-RESET"
 msgstr ""
@@ -10981,3 +10964,18 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Zapback is reeds actief... Stoppen?"
+
+#~ msgid "Search on MyVideo (local)"
+#~ msgstr "Zoek op Myvideo (lokaal)"
+
+#~ msgid "Streaming Playback Caching (2MB)"
+#~ msgstr "Streaming afspeel buffer (2MB)"
+
+#~ msgid "Streaming Playback Caching (3MB)"
+#~ msgstr "Streaming afspeel buffer (3MB)"
+
+#~ msgid "Streaming Playback Caching (4MB)"
+#~ msgstr "Streaming afspeel buffer (4MB)"
+
+#~ msgid "Streaming Playback Caching (7.5MB)"
+#~ msgstr "Streaming afspeel buffer (7.5MB)"

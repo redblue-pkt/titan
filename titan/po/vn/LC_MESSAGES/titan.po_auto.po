@@ -60,7 +60,7 @@ msgstr ""
 #: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
 #: hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626 inadyn.h:188
 #: inadyn.h:190 inadyn.h:200 infobar.h:485 infobar.h:607 info.h:27
-#: keyactions.h:305 lcdpearl1.c:45 lcdsamsung.c:101 log.h:46 log.h:48
+#: keyactions.h:290 lcdpearl1.c:45 lcdsamsung.c:101 log.h:46 log.h:48
 #: mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
 #: mc_audioplayer.h:333 mc_audioplayer.h:604 mc_audioplayer.h:707
 #: mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
@@ -82,8 +82,8 @@ msgstr ""
 #: network.h:865 network.h:887 newsletter.h:252 newsletter.h:292 novamov.h:35
 #: novamov.h:80 nowvideo.h:35 nowvideo.h:87 panel_main.h:29 panel_main.h:135
 #: panel_settings_wizard.h:6 played.h:30 played.h:79 played.h:91 played.h:103
-#: played.h:160 player.h:99 play.h:476 play.h:593 play.h:1284 play.h:1290
-#: play.h:1299 play.h:1300 play.h:1493 play.h:1653 play.h:1664
+#: played.h:160 player.h:99 play.h:476 play.h:593 play.h:1244 play.h:1250
+#: play.h:1259 play.h:1260 play.h:1453 play.h:1613 play.h:1624
 #: plugins_dlna_skin.xml.h:8 plugins_facebook_skin.xml.h:5
 #: plugins_mboxinfo_skin.xml.h:2 plugins_mc_skin.xml.h:38
 #: plugins_optimize_skin.xml.h:3 plugins_rgui_skin.xml.h:3
@@ -112,8 +112,8 @@ msgstr ""
 #: timeshiftsettings.h:45 titan.c:274 titan.c:338 titan.c:347 titan.c:957
 #: titan.c:966 titan.c:1091 titan.c:1112 titan.c:1118 titan.c:1129
 #: titan.c:1135 tithek.c:80 tithek_global.h:238 tithek.h:650 tithek.h:1146
-#: tithek.h:1189 tithek.h:1440 tithek.h:1462 tithek.h:1478 tithek.h:3180
-#: tithek.h:3244 tithek.h:3258 tithek.h:3268 tiwakeup.h:66 tiwakeup.h:68
+#: tithek.h:1189 tithek.h:1422 tithek.h:1444 tithek.h:1460 tithek.h:3162
+#: tithek.h:3226 tithek.h:3240 tithek.h:3250 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922
 #: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3185 tpk.new.h:3167 tsSchnitt.c:108
 #: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
@@ -152,7 +152,7 @@ msgstr "OK"
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
 #: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626
 #: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:485 infobar.h:607
-#: info.h:27 keyactions.h:305 log.h:46 log.h:48 marker.h:215 marker.h:229
+#: info.h:27 keyactions.h:290 log.h:46 log.h:48 marker.h:215 marker.h:229
 #: mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
 #: mc_audioplayer.h:333 mc_audioplayer.h:604 mc_audioplayer.h:707
 #: mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
@@ -174,8 +174,8 @@ msgstr "OK"
 #: newsletter.h:252 newsletter.h:292 novamov.h:35 novamov.h:80 nowvideo.h:35
 #: nowvideo.h:87 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:79 played.h:91 played.h:103 played.h:160 player.h:99
-#: play.h:476 play.h:593 play.h:1284 play.h:1290 play.h:1299 play.h:1300
-#: play.h:1493 play.h:1653 play.h:1664 plugins_autotimer_skin.xml.h:7
+#: play.h:476 play.h:593 play.h:1244 play.h:1250 play.h:1259 play.h:1260
+#: play.h:1453 play.h:1613 play.h:1624 plugins_autotimer_skin.xml.h:7
 #: plugins_callmonitor1_skin.xml.h:11 plugins_catcatch_skin.xml.h:4
 #: plugins_dlna_skin.xml.h:2 plugins_facebook_skin.xml.h:4
 #: plugins_instar_skin.xml.h:6 plugins_lcdpearl1_skin.xml.h:7
@@ -213,8 +213,8 @@ msgstr "OK"
 #: timeshiftsettings.h:45 titan.c:274 titan.c:338 titan.c:347 titan.c:957
 #: titan.c:966 titan.c:1091 titan.c:1112 titan.c:1118 titan.c:1129
 #: titan.c:1135 tithek.c:80 tithek_global.h:238 tithek.h:650 tithek.h:1146
-#: tithek.h:1189 tithek.h:1440 tithek.h:1462 tithek.h:1478 tithek.h:3180
-#: tithek.h:3244 tithek.h:3258 tithek.h:3268 tiwakeup.h:66 tiwakeup.h:68
+#: tithek.h:1189 tithek.h:1422 tithek.h:1444 tithek.h:1460 tithek.h:3162
+#: tithek.h:3226 tithek.h:3240 tithek.h:3250 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922
 #: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3185 tpk.new.h:3167 tsSchnitt.c:108
 #: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
@@ -557,7 +557,7 @@ msgstr ""
 #: hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566 hwtest.h:586
 #: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
 #: hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626 inadyn.h:188
-#: inadyn.h:190 inadyn.h:200 infobar.h:485 infobar.h:607 keyactions.h:305
+#: inadyn.h:190 inadyn.h:200 infobar.h:485 infobar.h:607 keyactions.h:290
 #: language.h:49 lcdpearl1.c:45 lcdsamsung.c:101 log.h:46 log.h:48
 #: marker.h:215 marker.h:229 mc_audioplayer.h:333 mc_audioplayer.h:604
 #: mc_audioplayer.h:707 mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
@@ -577,8 +577,8 @@ msgstr ""
 #: network.h:774 network.h:800 network.h:804 network.h:858 novamov.h:35
 #: novamov.h:80 nowvideo.h:35 nowvideo.h:87 panel_main.h:29 panel_main.h:135
 #: panel_settings_wizard.h:6 played.h:30 played.h:79 played.h:91 played.h:103
-#: played.h:160 player.h:99 play.h:593 play.h:1299 play.h:1493 play.h:1653
-#: play.h:1664 possetup.h:98 primeshare.h:29 primeshare.h:73 primeshare.h:79
+#: played.h:160 player.h:99 play.h:593 play.h:1259 play.h:1453 play.h:1613
+#: play.h:1624 possetup.h:98 primeshare.h:29 primeshare.h:73 primeshare.h:79
 #: primeshare.h:124 putlocker.h:32 putlocker.h:79 putlocker.h:85
 #: putlocker.h:136 putlocker.h:146 putlocker.h:219 readerconfig.h:343
 #: readerconfig.h:443 readerconfig.h:444 readerconfig.h:488 readerconfig.h:489
@@ -597,8 +597,8 @@ msgstr ""
 #: system_update.h:333 timeshift.h:113 timeshift.h:155 timeshift.h:162
 #: timeshiftsettings.h:45 titan.c:274 titan.c:338 titan.c:347 titan.c:1091
 #: titan.c:1112 titan.c:1118 titan.c:1129 titan.c:1135 tithek.c:80
-#: tithek_global.h:238 tithek.h:650 tithek.h:1146 tithek.h:1189 tithek.h:1440
-#: tithek.h:1462 tithek.h:3180 tithek.h:3244 tithek.h:3258 tithek.h:3268
+#: tithek_global.h:238 tithek.h:650 tithek.h:1146 tithek.h:1189 tithek.h:1422
+#: tithek.h:1444 tithek.h:3162 tithek.h:3226 tithek.h:3240 tithek.h:3250
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
 #: tmdb.h:759 tmdb.h:922 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3185
 #: tpk.new.h:3167 tunerconfig.h:636 tunerconfig.h:645 tunerconfig.h:907
@@ -1149,7 +1149,7 @@ msgstr "vui long đợi để dừng download."
 msgid "EJECT"
 msgstr ""
 
-#: dvdplay.h:29 play.h:1421 plugins_dlna_skin.xml.h:10
+#: dvdplay.h:29 play.h:1381 plugins_dlna_skin.xml.h:10
 #: skins_dlna_skin.xml.h:10
 msgid "SELECT"
 msgstr "LỰA CHỌN"
@@ -1157,7 +1157,7 @@ msgstr "LỰA CHỌN"
 #: dvdplay.h:62 mc_audioplayer.h:604 mc_audioplayer.h:707 mc_global.h:773
 #: mc_global.h:1020 mc_pictureplayer.h:100 mc_pictureplayer.h:242
 #: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:749
-#: mc_videoplayer.h:888 play.h:1493
+#: mc_videoplayer.h:888 play.h:1453
 msgid "Can't start playback !"
 msgstr "Không thể phát lại!"
 
@@ -1238,14 +1238,14 @@ msgstr ""
 msgid "Single EPG"
 msgstr "EPG"
 
-#: epgsettings.h:140 epgsettings.h:181 keyactions.h:26
-#: settings_bluebutton.h:17 settings_pluginbutton.h:18 settings_redbutton.h:18
+#: epgsettings.h:140 epgsettings.h:181 keyactions.h:90
+#: settings_bluebutton.h:16 settings_pluginbutton.h:17 settings_redbutton.h:17
 #: skin_default_skin.xml.h:401
 msgid "Multi EPG"
 msgstr "EPG"
 
-#: epgsettings.h:141 keyactions.h:27 settings_bluebutton.h:18
-#: settings_pluginbutton.h:19 settings_redbutton.h:19
+#: epgsettings.h:141 keyactions.h:91 settings_bluebutton.h:17
+#: settings_pluginbutton.h:18 settings_redbutton.h:18
 #: skin_default_skin.xml.h:258
 msgid "Graphic Multi EPG"
 msgstr "Lịch chương trình"
@@ -1567,7 +1567,7 @@ msgstr "Không thể mở file"
 msgid "Can't show this file!"
 msgstr "Không thể hiển thị file này"
 
-#: global.h:6529 keyactions.h:305
+#: global.h:6529 keyactions.h:290
 msgid "ERROR cant read res"
 msgstr "Lỗi không thể đọc"
 
@@ -2326,53 +2326,51 @@ msgstr "hỏi"
 msgid "ein"
 msgstr "Mật khẩu"
 
-#: keyactions.h:22 settings_bluebutton.h:16 settings_pluginbutton.h:14
-#: settings_pluginbutton.h:17 settings_pluginbutton.h:58
-#: settings_redbutton.h:14 settings_redbutton.h:17
-msgid "Extensions List"
-msgstr "Danh sách mở rộng"
+#: keyactions.h:22
+msgid "Key Action - Plugins"
+msgstr "Nút màu đỏ - Plugins "
 
-#: keyactions.h:23 settings_pluginbutton.h:15 settings_redbutton.h:15
-msgid "Auto Resolution"
-msgstr "Độ phân giải tự động"
-
-#: keyactions.h:24 settings_bluebutton.h:14
-msgid "TV / Radio Switch"
-msgstr ""
-
-#: keyactions.h:25 settings_bluebutton.h:15 settings_pluginbutton.h:16
-#: settings_redbutton.h:16 skin_default_skin.xml.h:595
-msgid "Softcam Panel"
-msgstr ""
-
-#: keyactions.h:28 settings_bluebutton.h:19 settings_pluginbutton.h:20
-#: settings_redbutton.h:20
-msgid "Sleep Timer"
-msgstr "Tắt bộ định thời"
-
-#: keyactions.h:29 settings_bluebutton.h:20 settings_pluginbutton.h:21
-#: settings_redbutton.h:21 skin_default_skin.xml.h:135
-msgid "Child Protection"
-msgstr "Khóa trẻ em"
-
-#: keyactions.h:30 settings_bluebutton.h:21 settings_pluginbutton.h:22
-#: settings_redbutton.h:22 videomode.h:24
-msgid "Subchannel"
-msgstr "Các chương trình phụ"
-
-#: keyactions.h:31 play.h:704 settings_bluebutton.h:22
-#: settings_pluginbutton.h:23 settings_redbutton.h:23
-#: skin_default_skin.xml.h:195
-msgid "Downloads"
-msgstr "Tải về lỗi"
-
-#: keyactions.h:32 play.h:647
+#: keyactions.h:25 play.h:629
 msgid "MediaDB Scan Info"
 msgstr "Thông tin quét MediaDB"
 
-#: keyactions.h:37
-msgid "Key Action - Plugins"
-msgstr "Nút màu đỏ - Plugins "
+#: keyactions.h:53 settings_mediabutton.h:12
+msgid "Record Player"
+msgstr ""
+
+#: keyactions.h:81 settings_mediabutton.h:42 skin_default_skin.xml.h:379
+msgid "Media Player"
+msgstr "Media Player"
+
+#: keyactions.h:86 settings_pluginbutton.h:13 settings_redbutton.h:13
+msgid "Auto Resolution"
+msgstr "Độ phân giải tự động"
+
+#: keyactions.h:88 settings_bluebutton.h:14 settings_pluginbutton.h:15
+#: settings_redbutton.h:15 skin_default_skin.xml.h:595
+msgid "Softcam Panel"
+msgstr ""
+
+#: keyactions.h:92 settings_bluebutton.h:18 settings_pluginbutton.h:19
+#: settings_redbutton.h:19
+msgid "Sleep Timer"
+msgstr "Tắt bộ định thời"
+
+#: keyactions.h:93 settings_bluebutton.h:19 settings_pluginbutton.h:20
+#: settings_redbutton.h:20 skin_default_skin.xml.h:135
+msgid "Child Protection"
+msgstr "Khóa trẻ em"
+
+#: keyactions.h:94 settings_bluebutton.h:20 settings_pluginbutton.h:21
+#: settings_redbutton.h:21 videomode.h:24
+msgid "Subchannel"
+msgstr "Các chương trình phụ"
+
+#: keyactions.h:95 play.h:664 settings_bluebutton.h:21
+#: settings_pluginbutton.h:22 settings_redbutton.h:22
+#: skin_default_skin.xml.h:195
+msgid "Downloads"
+msgstr "Tải về lỗi"
 
 #: kinox.h:296 movie4k.h:724 movie4k.h:856 movie4k.h:972 solarmovie.h:443
 msgid "Season"
@@ -3446,187 +3444,170 @@ msgstr ""
 msgid "iD3Tag"
 msgstr ""
 
-#: play.h:616
-msgid "Search on KinoX"
-msgstr ""
-
-#: play.h:617
-msgid "Search on KinoX (local)"
-msgstr ""
-
-#: play.h:618
-msgid "Search on Movie4k"
-msgstr ""
-
-#: play.h:619
-msgid "Search on Movie4k (local)"
-msgstr ""
-
-#: play.h:620
-msgid "Search on Solarmovies (movie)"
-msgstr ""
-
-#: play.h:621
-msgid "Search on Solarmovies (serie)"
-msgstr ""
-
-#: play.h:622
-msgid "Search on Solarmovies (local)"
-msgstr ""
-
-#: play.h:623
-msgid "Search on Mle-HD (local)"
-msgstr ""
-
-#: play.h:624
-msgid "Search on Beeg (local)"
-msgstr ""
-
-#: play.h:625
-msgid "Search on Xvideos (local)"
-msgstr ""
-
-#: play.h:626
-msgid "Search on Netzkino (local)"
-msgstr ""
-
-#: play.h:627
-msgid "Search on Youtube"
-msgstr "Bắt đầu khởi động"
-
-#: play.h:628
-msgid "Search on Youtube (local)"
-msgstr ""
-
-#: play.h:629
-msgid "Search on MyVideo"
-msgstr ""
-
-#: play.h:630
-msgid "Search on MyVideo (local)"
-msgstr ""
-
-#: play.h:631
-msgid "Search on ARD (local)"
-msgstr ""
-
-#: play.h:632
-msgid "Search on ZDF (local)"
-msgstr ""
-
-#: play.h:633
-msgid "Search on TecTime (local)"
-msgstr ""
-
-#: play.h:634
-msgid "Search on Giga (local)"
-msgstr ""
-
-#: play.h:635
-msgid "Search on Rtl-Now (local)"
-msgstr ""
-
-#: play.h:636
-msgid "Search on Rtl2-Now (local)"
-msgstr ""
-
-#: play.h:637
-msgid "Search on SuperRTL-Now (local)"
-msgstr ""
-
-#: play.h:638
-msgid "Search on VOX-Now (local)"
-msgstr ""
-
-#: play.h:639
-msgid "Search on InternetTv (local)"
-msgstr ""
-
-#: play.h:640
-msgid "Search on InternetRadio (local)"
-msgstr ""
-
-#: play.h:641
-msgid "Search on FilmOn (local)"
-msgstr ""
-
-#: play.h:642 skin_default_skin.xml.h:722
+#: play.h:618 skin_default_skin.xml.h:722
 msgid "Video Settings"
 msgstr "Thiết lập hiển thị"
 
-#: play.h:643
+#: play.h:619
 msgid "AV Settings"
 msgstr "Thiết lập AV"
 
-#: play.h:644
+#: play.h:620
 msgid "iD3Tag Info"
 msgstr "TV (Thông tin)"
 
-#: play.h:645 skin_default_skin.xml.h:376
+#: play.h:623 skin_default_skin.xml.h:376
 msgid "MediaDB Edit"
 msgstr "Chỉnh sửa MediaDB"
 
-#: play.h:646
+#: play.h:626
 msgid "Delete File"
 msgstr "Xóa file"
 
-#: play.h:648 plugins_streaminfo_skin.xml.h:3 skins_streaminfo_skin.xml.h:3
-#: tpk_showname.h:186
-msgid "Streaminfo"
-msgstr "Streaming"
-
-#: play.h:649 tpk_showname.h:44
-msgid "IMDb"
+#: play.h:635
+msgid "Search on KinoX"
 msgstr ""
 
-#: play.h:650 tpk_showname.h:45
-msgid "IMDb-API"
+#: play.h:636
+msgid "Search on KinoX (local)"
 msgstr ""
 
-#: play.h:651 tpk_showname.h:194
-msgid "TMDb"
+#: play.h:637
+msgid "Search on Movie4k"
 msgstr ""
 
-#: play.h:723
+#: play.h:638
+msgid "Search on Movie4k (local)"
+msgstr ""
+
+#: play.h:639
+msgid "Search on Solarmovies (movie)"
+msgstr ""
+
+#: play.h:640
+msgid "Search on Solarmovies (serie)"
+msgstr ""
+
+#: play.h:641
+msgid "Search on Solarmovies (local)"
+msgstr ""
+
+#: play.h:642
+msgid "Search on Mle-HD (local)"
+msgstr ""
+
+#: play.h:643
+msgid "Search on Beeg (local)"
+msgstr ""
+
+#: play.h:644
+msgid "Search on Xvideos (local)"
+msgstr ""
+
+#: play.h:645
+msgid "Search on FilmOn (local)"
+msgstr ""
+
+#: play.h:647
+msgid "Search on Netzkino (local)"
+msgstr ""
+
+#: play.h:648
+msgid "Search on Youtube"
+msgstr "Bắt đầu khởi động"
+
+#: play.h:649
+msgid "Search on Youtube (local)"
+msgstr ""
+
+#: play.h:650
+msgid "Search on MyVideo"
+msgstr ""
+
+#: play.h:651
+msgid "Search on Myvideo (local)"
+msgstr ""
+
+#: play.h:652
+msgid "Search on ARD (local)"
+msgstr ""
+
+#: play.h:653
+msgid "Search on ZDF (local)"
+msgstr ""
+
+#: play.h:654
+msgid "Search on TecTime (local)"
+msgstr ""
+
+#: play.h:655
+msgid "Search on Giga (local)"
+msgstr ""
+
+#: play.h:656
+msgid "Search on Rtl-Now (local)"
+msgstr ""
+
+#: play.h:657
+msgid "Search on Rtl2-Now (local)"
+msgstr ""
+
+#: play.h:658
+msgid "Search on SuperRTL-Now (local)"
+msgstr ""
+
+#: play.h:659
+msgid "Search on VOX-Now (local)"
+msgstr ""
+
+#: play.h:660
+msgid "Search on InternetTv (local)"
+msgstr ""
+
+#: play.h:661
+msgid "Search on InternetRadio (local)"
+msgstr ""
+
+#: play.h:683
 msgid "Choose your Red-Menu entry from the following list"
 msgstr ""
 
-#: play.h:1206
+#: play.h:1166
 msgid "Jump To (min)"
 msgstr ""
 
-#: play.h:1284 play.h:1290 plugins_tmc_skin.xml.h:1 skins_tmc_skin.xml.h:1
+#: play.h:1244 play.h:1250 plugins_tmc_skin.xml.h:1 skins_tmc_skin.xml.h:1
 msgid "EPG Info"
 msgstr "Thông tin EPG"
 
-#: play.h:1299
+#: play.h:1259
 msgid "Record in progress"
 msgstr "Đang ghi tên"
 
-#: play.h:1300
+#: play.h:1260
 msgid "Really Delete ?"
 msgstr "Bạn muốn xóa?"
 
-#: play.h:1421 plugins_networkbrowser_skin.xml.h:5 plugins_stock_skin.xml.h:4
+#: play.h:1381 plugins_networkbrowser_skin.xml.h:5 plugins_stock_skin.xml.h:4
 #: plugins_weather_skin.xml.h:2 skin_default_skin.xml.h:172
 #: skins_networkbrowser_skin.xml.h:5 skins_stock_skin.xml.h:4
 #: skins_weather_skin.xml.h:2
 msgid "DEL"
 msgstr "Xóa"
 
-#: play.h:1421 skin_default_skin.xml.h:209
+#: play.h:1381 skin_default_skin.xml.h:209
 msgid "EPG"
 msgstr ""
 
-#: play.h:1421
+#: play.h:1381
 msgid "SORT"
 msgstr ""
 
-#: play.h:1653
+#: play.h:1613
 msgid "Marker autoseek is started"
 msgstr "Đã thiết lập nhà sản xuất"
 
-#: play.h:1664
+#: play.h:1624
 msgid "Marker autoseek is stopped"
 msgstr "Đã thiết lập nhà sản xuất"
 
@@ -4564,6 +4545,11 @@ msgstr "Khuôn hình"
 msgid "Framerate"
 msgstr "Tỷ lệ lớn nhất"
 
+#: plugins_streaminfo_skin.xml.h:3 skins_streaminfo_skin.xml.h:3
+#: tpk_showname.h:186
+msgid "Streaminfo"
+msgstr "Streaming"
+
 #: plugins_streaminfo_skin.xml.h:4 skins_streaminfo_skin.xml.h:4
 msgid "X-Resolution"
 msgstr "Độ phân giải"
@@ -4580,8 +4566,8 @@ msgstr "Menü …"
 msgid "TiThek Settings"
 msgstr "Thiết lập HTTP"
 
-#: plugins_tithek_skin.xml.h:3 skins_tithek_skin.xml.h:3 tithek.h:1527
-#: tithek.h:3286
+#: plugins_tithek_skin.xml.h:3 skins_tithek_skin.xml.h:3 tithek.h:1509
+#: tithek.h:3268
 msgid "ADD FAV"
 msgstr "Thêm ưu thích"
 
@@ -5149,7 +5135,7 @@ msgstr ""
 "Swap Daten und Backup löschen?\n"
 "Đầu thu sẽ khởi động lại và bắt đầu xóa"
 
-#: restoredefault.h:65 restoredefault.h:77 skin_default_skin.xml.h:517
+#: restoredefault.h:63 restoredefault.h:70 skin_default_skin.xml.h:517
 msgid "Restore default settings"
 msgstr "Thiết lập mặc định"
 
@@ -5161,7 +5147,7 @@ msgstr ""
 msgid "Format MNT (all)"
 msgstr ""
 
-#: restoredefault.h:77
+#: restoredefault.h:70
 msgid "Choose your Restore Mode from the following list."
 msgstr ""
 
@@ -5413,7 +5399,16 @@ msgstr ""
 msgid "Blue Key Action - Setup"
 msgstr "Nút màu xanh da trời – Cài đặt"
 
-#: settings_bluebutton.h:47
+#: settings_bluebutton.h:12 settings_pluginbutton.h:16 settings_redbutton.h:16
+msgid "TV / Radio Switch"
+msgstr ""
+
+#: settings_bluebutton.h:15 settings_pluginbutton.h:12
+#: settings_pluginbutton.h:44 settings_redbutton.h:12
+msgid "Extensions List"
+msgstr "Danh sách mở rộng"
+
+#: settings_bluebutton.h:34
 msgid ""
 "Choose your plugin / menu item from the following list and show it so the "
 "blue button"
@@ -5423,19 +5418,11 @@ msgstr ""
 msgid "Media Key Action - Setup"
 msgstr ""
 
-#: settings_mediabutton.h:13
-msgid "Record Player"
-msgstr ""
-
-#: settings_mediabutton.h:14
+#: settings_mediabutton.h:11
 msgid "Media Plugins List"
 msgstr ""
 
-#: settings_mediabutton.h:15 skin_default_skin.xml.h:379
-msgid "Media Player"
-msgstr "Media Player"
-
-#: settings_mediabutton.h:55
+#: settings_mediabutton.h:48
 msgid ""
 "Choose your Media plugin item from the following list and show it so the "
 "plugin button"
@@ -5445,7 +5432,7 @@ msgstr ""
 msgid "Plugin Key Action - Setup"
 msgstr "Nút màu xanh da trời – Cài đặt"
 
-#: settings_pluginbutton.h:49
+#: settings_pluginbutton.h:35
 msgid ""
 "Choose your plugin / menu item from the following list and show it so the "
 "plugin button"
@@ -5455,7 +5442,7 @@ msgstr ""
 msgid "Red Key Action - Setup"
 msgstr "Rote-Taste Belegungsmenü "
 
-#: settings_redbutton.h:49
+#: settings_redbutton.h:35
 msgid ""
 "Choose your plugin / menu item from the following list and show it so the "
 "red button"
@@ -8474,7 +8461,7 @@ msgstr ""
 msgid "Tithek - Mainmenu"
 msgstr ""
 
-#: tithek_global.h:238 tithek.h:3180
+#: tithek_global.h:238 tithek.h:3162
 msgid "The hoster is not yet supported !"
 msgstr "Máy chủ chưa được hỗ trợ !"
 
@@ -8504,99 +8491,83 @@ msgstr ""
 msgid "Choice Playback"
 msgstr "bắt đầu phát lại"
 
-#: tithek.h:1308
+#: tithek.h:1306
 msgid "Streaming Playback (default)"
 msgstr "luồng phát lại (mặc định)"
 
-#: tithek.h:1309
+#: tithek.h:1313
 msgid "Streaming Playback Caching (0.5MB)"
 msgstr "Bộ nhớ chứa luồng phát lại (0.5MB)"
 
-#: tithek.h:1310
+#: tithek.h:1314
 msgid "Streaming Playback Caching (1MB)"
 msgstr "Bộ nhớ chứa luồng phát lại (1MB)"
 
-#: tithek.h:1311
-msgid "Streaming Playback Caching (2MB)"
-msgstr "Bộ nhớ chứa luồng phát lại (2MB)"
-
-#: tithek.h:1312
-msgid "Streaming Playback Caching (3MB)"
-msgstr "Bộ nhớ chứa luồng phát lại (3MB)"
-
-#: tithek.h:1313
-msgid "Streaming Playback Caching (4MB)"
-msgstr "Bộ nhớ chứa luồng phát lại (4MB)"
-
-#: tithek.h:1314
+#: tithek.h:1325
 msgid "Streaming Playback Caching (5MB)"
 msgstr "Bộ nhớ chứa luồng phát lại (5MB)"
 
-#: tithek.h:1315
-msgid "Streaming Playback Caching (7.5MB)"
-msgstr "Bộ nhớ chứa luồng phát lại (7.5MB)"
-
-#: tithek.h:1316
+#: tithek.h:1329
 msgid "Streaming Playback Caching (10MB)"
 msgstr "Bộ nhớ chứa luồng phát lại (10MB)"
 
-#: tithek.h:1317
+#: tithek.h:1335
 msgid "File Caching Playback (10MB / 120s)"
 msgstr "Bộ nhớ đệm phát lại (10MB / 120s)"
 
-#: tithek.h:1318
+#: tithek.h:1336
 msgid "File Caching Playback (20MB / 240s)"
 msgstr " Bộ nhớ đệm phát lại (20MB / 240s)"
 
-#: tithek.h:1319
+#: tithek.h:1337
 msgid "File Caching Playback (30MB / 360s)"
 msgstr " Bộ nhớ đệm phát lại (30MB / 360s)"
 
-#: tithek.h:1320
+#: tithek.h:1339
 msgid "Download Full File"
 msgstr "Tải toàn bộ file"
 
-#: tithek.h:1321
+#: tithek.h:1340
 msgid "Download Full File (background)"
 msgstr " Tải toàn bộ file (hình nền)"
 
-#: tithek.h:1362
+#: tithek.h:1344
 msgid "Choose your Streaming Playback Modus from the following list"
 msgstr ""
 
-#: tithek.h:1433 tithek.h:1452
+#: tithek.h:1415 tithek.h:1434
 msgid "Filename"
 msgstr ""
 
-#: tithek.h:1440
+#: tithek.h:1422
 msgid "Start playback"
 msgstr "bắt đầu phát lại?"
 
-#: tithek.h:1462
+#: tithek.h:1444
 msgid "Can't get Streamurl !"
 msgstr "không có tín hiệu"
 
-#: tithek.h:1478
+#: tithek.h:1460
 msgid "TitanNit Tithek disclaimer"
 msgstr ""
 
-#: tithek.h:1522 tithek.h:3281
+#: tithek.h:1504 tithek.h:3263
 msgid "EDIT FAV"
 msgstr ""
 
-#: tithek.h:1559
+#: tithek.h:1541
 msgid "Page"
 msgstr "trang"
 
-#: tithek.h:3244
+#: tithek.h:3226
 msgid "Remove this Favorite ?"
 msgstr "Hủy bỏ ưu thích này ?"
 
-#: tithek.h:3258
+#: tithek.h:3240
 msgid "Add this link as Favorite ?"
 msgstr " Muốn thêm vào mục ưa thích này?"
 
-#: tithek.h:3268
+#: tithek.h:3250
 msgid "Edit this Favorite ?"
 msgstr ""
 
@@ -9929,6 +9900,14 @@ msgstr ""
 msgid "I Hate Comic Sans"
 msgstr ""
 
+#: tpk_showname.h:44
+msgid "IMDb"
+msgstr ""
+
+#: tpk_showname.h:45
+msgid "IMDb-API"
+msgstr ""
+
 #: tpk_showname.h:46
 msgid "Incubus 1.22"
 msgstr ""
@@ -10481,6 +10460,10 @@ msgstr ""
 msgid "TitanNit on fire"
 msgstr ""
 
+#: tpk_showname.h:194
+msgid "TMDb"
+msgstr ""
+
 #: tpk_showname.h:195
 msgid "USB-RESET"
 msgstr ""
@@ -10880,3 +10863,15 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
+
+#~ msgid "Streaming Playback Caching (2MB)"
+#~ msgstr "Bộ nhớ chứa luồng phát lại (2MB)"
+
+#~ msgid "Streaming Playback Caching (3MB)"
+#~ msgstr "Bộ nhớ chứa luồng phát lại (3MB)"
+
+#~ msgid "Streaming Playback Caching (4MB)"
+#~ msgstr "Bộ nhớ chứa luồng phát lại (4MB)"
+
+#~ msgid "Streaming Playback Caching (7.5MB)"
+#~ msgstr "Bộ nhớ chứa luồng phát lại (7.5MB)"
