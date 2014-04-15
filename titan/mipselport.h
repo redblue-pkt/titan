@@ -1154,17 +1154,28 @@ void memcpy_byte(char* dest, char* src, long anzb)
 	memcpy_byte_anzb = anzb;
 	
 	asm(	
+				"		li    $12, 4								\n"
 				"		lw	  $8, memcpy_byte_src		\n"
 				"		lw	  $9, memcpy_byte_dest	\n"				
 				"		lw		$10, memcpy_byte_anzb	\n"		
-				"		addi	$10, $10, -1					\n"
-				"loop1:													\n"
+				"word:													\n"
+				"		bltu	$10, $12, byte				\n"
+				"		lw	  $11, ($8)							\n"
+				"		sw	  $11, ($9)							\n"
+				"		addi	$8, $8, 4							\n"
+				"		addi	$9, $9, 4							\n"
+				"		addi	$10, $10, -4					\n"
+				"		b			word									\n"
+				"byte:													\n"
+				"		beqz	$10, end 							\n"
 				"		lb	  $11, ($8)							\n"
 				"		sb	  $11, ($9)							\n"
 				"		addi	$8, $8, 1							\n"
 				"		addi	$9, $9, 1							\n"
-				"		addi	$10, $10, -1					\n" 
-				"		bgez	$10, loop1						\n"
+				"		addi	$10, $10, -1					\n"		
+				"		b     byte									\n"
+				"end:														\n"
+				"		nop													\n"	  
 			);
 }
 
