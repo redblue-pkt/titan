@@ -9,36 +9,22 @@ void screensettings_pluginbutton()
 	char* tmpstr = NULL;
 	struct menulist* mlist = NULL, *mbox = NULL;
 
-// needed for translation
-	char* tmptxt = NULL;
-	tmptxt = ostrcat(tmptxt, _("Extensions List"), 1, 0);
-	tmptxt = ostrcat(tmptxt, _("Auto Resolution"), 1, 0);
-	tmptxt = ostrcat(tmptxt, _("Softcam Panel"), 1, 0);
-	tmptxt = ostrcat(tmptxt, _("Extensions List"), 1, 0);
-	tmptxt = ostrcat(tmptxt, _("Multi EPG"), 1, 0);
-	tmptxt = ostrcat(tmptxt, _("Graphic Multi EPG"), 1, 0);
-	tmptxt = ostrcat(tmptxt, _("Sleep Timer"), 1, 0);
-	tmptxt = ostrcat(tmptxt, _("Child Protection"), 1, 0);
-	tmptxt = ostrcat(tmptxt, _("Subchannel"), 1, 0);
-	tmptxt = ostrcat(tmptxt, _("Downloads"), 1, 0);
-	free(tmptxt), tmptxt = NULL;
-
-	addmenulist(&mlist, "Extensions List", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "Auto Resolution", NULL, NULL, 0, 0);
+	addmenulist(&mlist, "Extensions List", _("Extensions List"), NULL, 0, 0);
+	addmenulist(&mlist, "Auto Resolution", _("Auto Resolution"), NULL, 0, 0);
 	if(checkemu() == 1)
-		addmenulist(&mlist, "Softcam Panel", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "TV / Radio Switch", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "Multi EPG", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "Graphic Multi EPG", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "Sleep Timer", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "Child Protection", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "Subchannel", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "Downloads", NULL, NULL, 0, 0);
+		addmenulist(&mlist, "Softcam Panel", _("Softcam Panel"), NULL, 0, 0);
+	addmenulist(&mlist, "TV / Radio Switch", _("TV / Radio Switch"), NULL, 0, 0);
+	addmenulist(&mlist, "Multi EPG", _("Multi EPG"), NULL, 0, 0);
+	addmenulist(&mlist, "Graphic Multi EPG", _("Graphic Multi EPG"), NULL, 0, 0);
+	addmenulist(&mlist, "Sleep Timer", _("Sleep Timer"), NULL, 0, 0);
+	addmenulist(&mlist, "Child Protection", _("Child Protection"), NULL, 0, 0);
+	addmenulist(&mlist, "Subchannel", _("Subchannel"), NULL, 0, 0);
+	addmenulist(&mlist, "Downloads", _("Downloads"), NULL, 0, 0);
 
 	while(child != NULL)
 	{
 	if(child->del == PLUGINDELMARK && (status.security == 1 || (status.security == 0 && checkpluginskip(child->name) == 0)))
-			addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);
+			addmenulist(&mlist, child->name, _(child->name), child->pic, 0, 0);
 		child = child->next;
 	}
 

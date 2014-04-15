@@ -8,15 +8,8 @@ void screensettings_mediabutton()
 	struct skin* plugin = getscreen("plugin");
 	struct skin* child = plugin->child;
 
-// needed for translation
-	char* tmptxt = NULL;
-	tmptxt = ostrcat(tmptxt, _("Record Player"), 1, 0);
-	tmptxt = ostrcat(tmptxt, _("Media Plugins List"), 1, 0);
-	tmptxt = ostrcat(tmptxt, _("Media Player"), 1, 0);
-	free(tmptxt), tmptxt = NULL;
-
-	addmenulist(&mlist, "Media Plugins List", NULL, NULL, 0, 0);
-	addmenulist(&mlist, "Record Player", NULL, NULL, 0, 0);
+	addmenulist(&mlist, "Media Plugins List", _("Media Plugins List"), NULL, 0, 0);
+	addmenulist(&mlist, "Record Player", _("Record Player"), NULL, 0, 0);
 
 	while(child != NULL)
 	{
@@ -24,29 +17,29 @@ void screensettings_mediabutton()
 		{
 			if(ostrcmp(child->name, "Media Center") == 0)
 			{
-				addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);			
+				addmenulist(&mlist, child->name, _(child->name), child->pic, 0, 0);			
 			}
 			else if(ostrcmp(child->name, "TiTan Mediathek") == 0)
 			{
-				addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);
+				addmenulist(&mlist, child->name, _(child->name), child->pic, 0, 0);
 			}
 			else if(ostrcmp(child->name, "Titan Media Center") == 0)
 			{
-				addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);
+				addmenulist(&mlist, child->name, _(child->name), child->pic, 0, 0);
 			}
 			else if(ostrcmp(child->name, "GmediaRender") == 0)
 			{
-				addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);
+				addmenulist(&mlist, child->name, _(child->name), child->pic, 0, 0);
 			}
 			else if(ostrcmp(child->name, "DVD Player") == 0)
 			{
-				addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);
+				addmenulist(&mlist, child->name, _(child->name), child->pic, 0, 0);
 			}
 		}
 		child = child->next;
 	}
 	
-	addmenulist(&mlist, "Media Player", NULL, NULL, 0, 0);
+	addmenulist(&mlist, "Media Player", _("Media Player"), NULL, 0, 0);
 
 	char* mediakey = getconfig("mediakey", NULL);
 	debug(60, "Mediakey: %s (default)", mediakey);
