@@ -10863,15 +10863,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid "Streaming Playback Caching (2MB)"
-#~ msgstr "Bộ nhớ chứa luồng phát lại (2MB)"
-
-#~ msgid "Streaming Playback Caching (3MB)"
-#~ msgstr "Bộ nhớ chứa luồng phát lại (3MB)"
-
-#~ msgid "Streaming Playback Caching (4MB)"
-#~ msgstr "Bộ nhớ chứa luồng phát lại (4MB)"
-
-#~ msgid "Streaming Playback Caching (7.5MB)"
-#~ msgstr "Bộ nhớ chứa luồng phát lại (7.5MB)"
