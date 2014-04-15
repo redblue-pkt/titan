@@ -17,27 +17,12 @@ void screenkeyactions(int key, int flag)
 	struct skin* child = plugin->child;
 	struct menulist* mlist = NULL, *mbox = NULL;
 
-// needed for translation
-	char* tmptxt = NULL;
-	tmptxt = ostrcat(tmptxt, _("Extensions List"), 1, 0);
-	tmptxt = ostrcat(tmptxt, _("Auto Resolution"), 1, 0);
-	tmptxt = ostrcat(tmptxt, _("TV / Radio Switch"), 1, 0);
-	tmptxt = ostrcat(tmptxt, _("Softcam Panel"), 1, 0);
-	tmptxt = ostrcat(tmptxt, _("Multi EPG"), 1, 0);
-	tmptxt = ostrcat(tmptxt, _("Graphic Multi EPG"), 1, 0);
-	tmptxt = ostrcat(tmptxt, _("Sleep Timer"), 1, 0);
-	tmptxt = ostrcat(tmptxt, _("Child Protection"), 1, 0);
-	tmptxt = ostrcat(tmptxt, _("Subchannel"), 1, 0);
-	tmptxt = ostrcat(tmptxt, _("Downloads"), 1, 0);
-	tmptxt = ostrcat(tmptxt, _("MediaDB Scan Info"), 1, 0);
-	free(tmptxt), tmptxt = NULL;
-		
 	if(flag == 1)
 	{
 		char* skintitle = _("Key Action - Plugins");
 
 		if(key != 3 && status.mediadbfiles > 0)
-			addmenulist(&mlist, "MediaDB Scan Info", NULL, NULL, 0, 0);
+			addmenulist(&mlist, "MediaDB Scan Info", _("MediaDB Scan Info"), NULL, 0, 0);
 			
 		if(key == 1)
 		{
@@ -55,7 +40,7 @@ void screenkeyactions(int key, int flag)
 					}
 					else
 					{
-						addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);
+						addmenulist(&mlist, child->name, _(child->name), child->pic, 0, 0);
 						debug(60, "key: %s", child->name);
 					}
 				}
@@ -65,49 +50,49 @@ void screenkeyactions(int key, int flag)
 	
 		if(key == 3)
 		{
-			addmenulist(&mlist, "Record Player", NULL, NULL, 0, 0);
+			addmenulist(&mlist, "Record Player", _("Record Player"), NULL, 0, 0);
 			while(child != NULL)
 			{
 				if(child->del == PLUGINDELMARK && (status.security == 1 || (status.security == 0 && checkpluginskip(child->name) == 0)))
 				{
 					if(ostrcmp(child->name, "Media Center") == 0)
 					{
-						addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);			
+						addmenulist(&mlist, child->name, _(child->name), child->pic, 0, 0);			
 					}
 					else if(ostrcmp(child->name, "TiTan Mediathek") == 0)
 					{
-						addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);
+						addmenulist(&mlist, child->name, _(child->name), child->pic, 0, 0);
 					}
 					else if(ostrcmp(child->name, "Titan Media Center") == 0)
 					{
-						addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);
+						addmenulist(&mlist, child->name, _(child->name), child->pic, 0, 0);
 					}
 					else if(ostrcmp(child->name, "GmediaRender") == 0)
 					{
-						addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);
+						addmenulist(&mlist, child->name, _(child->name), child->pic, 0, 0);
 					}
 					else if(ostrcmp(child->name, "DVD Player") == 0)
 					{
-						addmenulist(&mlist, child->name, NULL, child->pic, 0, 0);
+						addmenulist(&mlist, child->name, _(child->name), child->pic, 0, 0);
 					}
 				}
 				child = child->next;
 			}
-			addmenulist(&mlist, "Media Player", NULL, NULL, 0, 0);
+			addmenulist(&mlist, "Media Player", _("Media Player"), NULL, 0, 0);
 		}
 		else
 		{
-			//addmenulist(&mlist, "Extensions List", NULL, NULL, 0, 0);
-			addmenulist(&mlist, "Auto Resolution", NULL, "resolution.png", 0, 0);
+			//addmenulist(&mlist, "Extensions List", _("Extensions List"), NULL, 0, 0);
+			addmenulist(&mlist, "Auto Resolution", _("Auto Resolution"), "resolution.png", 0, 0);
 			if(checkemu() == 1)
-				addmenulist(&mlist, "Softcam Panel", NULL, NULL, 0, 0);
-			//addmenulist(&mlist, "TV / Radio Switch", NULL, NULL, 0, 0);
-			addmenulist(&mlist, "Multi EPG", NULL, NULL, 0, 0);
-			addmenulist(&mlist, "Graphic Multi EPG", NULL, NULL, 0, 0);
-			addmenulist(&mlist, "Sleep Timer", NULL, NULL, 0, 0);
-			addmenulist(&mlist, "Child Protection", NULL, NULL, 0, 0);
-			addmenulist(&mlist, "Subchannel", NULL, NULL, 0, 0);
-			addmenulist(&mlist, "Downloads", NULL, NULL, 0, 0);
+				addmenulist(&mlist, "Softcam Panel", _("Softcam Panel"), NULL, 0, 0);
+			//addmenulist(&mlist, "TV / Radio Switch", _("TV / Radio Switch"), NULL, 0, 0);
+			addmenulist(&mlist, "Multi EPG", _("Multi EPG"), NULL, 0, 0);
+			addmenulist(&mlist, "Graphic Multi EPG", _("Graphic Multi EPG"), NULL, 0, 0);
+			addmenulist(&mlist, "Sleep Timer", _("Sleep Timer"), NULL, 0, 0);
+			addmenulist(&mlist, "Child Protection", _("Child Protection"), NULL, 0, 0);
+			addmenulist(&mlist, "Subchannel", _("Subchannel"), NULL, 0, 0);
+			addmenulist(&mlist, "Downloads", _("Downloads"), NULL, 0, 0);
 		}
 	
 		mbox = menulistbox(mlist, NULL, skintitle, NULL, NULL, NULL, 1, 0);
