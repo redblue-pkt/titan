@@ -642,7 +642,7 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 			addmenulist(&mlist, "Search on Mle-HD (local)", _("Search on Mle-HD (local)"), NULL, 0, 0);
 			addmenulist(&mlist, "Search on Beeg (local)", _("Search on Beeg (local)"), NULL, 0, 0);
 			addmenulist(&mlist, "Search on Xvideos (local)", _("Search on Xvideos (local)"), NULL, 0, 0);
-			addmenulist(&mlist, "Search on FilmOn (local)", _("Search on FilmOn (local)")ULL, NULL, 0, 0);
+			addmenulist(&mlist, "Search on FilmOn (local)", _("Search on FilmOn (local)"), NULL, 0, 0);
 		}
 		addmenulist(&mlist, "Search on Netzkino (local)", _("Search on Netzkino (local)"), NULL, 0, 0);
 		addmenulist(&mlist, "Search on Youtube", _("Search on Youtube"), NULL, 0, 0);
