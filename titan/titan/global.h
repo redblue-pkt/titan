@@ -7196,11 +7196,11 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 	debug(99, "tmpstr: %s", tmpstr);
 
-	cookie1 = getxmlentry(tmpstr, "bb_sessionhash=");
+	cookie1 = string_resub("bb_sessionhash=", ",", tmpstr, 0);
 	debug(99, "cookie1: %s", cookie1);
-	cookie2 = getxmlentry(tmpstr, "bb_lastvisit=");
+	cookie2 = string_resub("bb_lastvisit=", ",", tmpstr, 0);
 	debug(99, "cookie2: %s", cookie2);
-	cookie3 = getxmlentry(tmpstr, "bb_lastactivity=");
+	cookie3 = string_resub("bb_lastactivity=", ",", tmpstr, 0);
 	debug(99, "cookie3: %s", cookie3);
 
 	free(send), send = NULL;
