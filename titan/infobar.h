@@ -390,13 +390,15 @@ void screeninfobar()
 #ifdef MIPSEL
 				disablemanualblit();
 				int tmprcret = -1;
+				delrc(getrcconfigint("rcvolup", NULL), NULL, NULL);
+				delrc(getrcconfigint("rcvoldown", NULL), NULL, NULL);
+
 				tmpstr = ostrcat(tmpstr, " &", 1, 0);
 				system(tmpstr);
 
 				while(1)
 				{
 					rcret = waitrc(infobar, 0, 0);
-					
 					if(rcret == getrcconfigint("rc0", NULL)) tmprcret = 0x00;
 					else if(rcret == getrcconfigint("rc1", NULL)) tmprcret = 0x01;
 					else if(rcret == getrcconfigint("rc2", NULL)) tmprcret = 0x02;
@@ -431,6 +433,9 @@ void screeninfobar()
 					if(rcret == getrcconfigint("rctext", NULL)) break;
 				}
 				
+				addrc(getrcconfigint("rcvolup", NULL), screenvolumeup, NULL, NULL);
+				addrc(getrcconfigint("rcvoldown", NULL), screenvolumedown, NULL, NULL);
+
 				if(status.fdrctxt != -1)
 				{
 					close(status.fdrctxt);
