@@ -7209,8 +7209,8 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 	if(user == NULL || pass == NULL || link == NULL)
 	{
 		free(cookie1), cookie1 = NULL;
-		free(cookie2, cookie2= NULL;
-		free(cookie3, cookie3= NULL;
+		free(cookie2), cookie2 = NULL;
+		free(cookie3), cookie3 = NULL;
 		return 1;
 	}
 
