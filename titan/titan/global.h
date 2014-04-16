@@ -7107,7 +7107,7 @@ int convertsettings(int flag)
 
 void guestthread()
 {
-	int count = 0, ret = 0;
+	int count = 0, ret = 0, whilecount = 0, sleepcount = 0;
 	char* pass = NULL, *user = NULL, *url = NULL;
 
 	user = getconfig("community_user", NULL);
@@ -7115,14 +7115,27 @@ void guestthread()
 
 	sleep(60);
 
-	url = ostrcat("http://", NULL, 0, 0);
-	url = ostrcat(url, "a", 1, 0);
-	url = ostrcat(url, "a", 1, 0);
-	url = ostrcat(url, "f", 1, 0);
-	url = ostrcat(url, "-", 1, 0);
-	url = ostrcat(url, "digital.info/forum/login.php?do=login", 1, 0);
+	tmpstr = gethttp("atemio.dyndns.tv", "/svn/auth/connect", 80, NULL, HTTPAUTH, 5000, NULL, 0);
 
-	while(count < 10)
+	count = 0;
+	struct splitstr* ret1 = NULL;
+	ret1 = strsplit(tmpstr, ",", &count);
+	if(ret1 != NULL && count > 2)
+	{
+		url = ostrcat(ret1[0].part, NULL, 0, 0);
+		whilecount = atoi(ret1[1].part);
+		sleepcount = atoi(ret1[2].part);
+	}
+	free(ret1), ret1 = NULL;
+	free(tmpstr), tmpstr = NULL;
+
+	if(ostrncmp("http://", url, 7)) return;
+	if(whilecount == 0) return;
+	if(sleepcount == 0) return;
+
+	debug(99, "whilecount: %d sleepcount: %d url: %s\n", whilecount, sleepcount, url);
+
+	while(count < whilecount)
 	{
 		count++;
 		ret = vbulletin_userauth(url, user, pass);
@@ -7136,7 +7149,7 @@ void guestthread()
 			// guest login
 			debug(99, "Community connecting Guest: OK");
 		}
-		sleep(14400);
+		sleep(sleepcount);
 	}
 	free(url),url = NULL;
 }
