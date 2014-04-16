@@ -7167,7 +7167,7 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 	debug(99, "vbulletin url: %s", link);
 
 	int skip = 0;
-	char* ip = NULL, *tmphost = NULL, *tmppath = NULL, *tmpstr = NULL, *send = NULL, *hash = NULL, *cookie1 = NULL, *cookie2 = NULL, *tmplink = NULL, *pos = NULL, *path = NULL, *hashlen = NULL;
+	char* ip = NULL, *tmphost = NULL, *tmppath = NULL, *tmpstr = NULL, *send = NULL, *hash = NULL, *cookie1 = NULL, *cookie2 = NULL, *cookie3 = NULL, *tmplink = NULL, *pos = NULL, *path = NULL, *hashlen = NULL;
 
 	tmplink = ostrcat(link, NULL, 0, 0);
 
@@ -7208,17 +7208,26 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 	hash = ostrcat(hash, MDString(pass), 1, 1);
 
 	hashlen = oitoa(strlen(hash));
-	
+
+	cookie1 = getxmlentry(tmpstr, "bb_sessionhash=");
+	debug(99, "cookie1: %s", cookie1);
+	cookie2 = getxmlentry(tmpstr, "bb_lastvisit=");
+	debug(99, "cookie2: %s", cookie2);
+	cookie3 = getxmlentry(tmpstr, "bb_lastactivity=");
+	debug(99, "cookie3: %s", cookie3);
+
 	send = ostrcat(send, "POST ", 1, 0);
 	send = ostrcat(send, tmppath, 1, 0);
 	send = ostrcat(send, " HTTP/1.1\r\nContent-Length: ", 1, 0);
 	send = ostrcat(send, hashlen, 1, 0);
 	send = ostrcat(send, "\r\nAccept-Encoding: gzip\r\nConnection: close\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nHost: ", 1, 0);
 	send = ostrcat(send, tmphost, 1, 0);
-	send = ostrcat(send, "\r\nCookie: pageredir=", 1, 0);
+	send = ostrcat(send, "\r\nCookie: bb_sessionhash=", 1, 0);
 	send = ostrcat(send, cookie1, 1, 0);
-	send = ostrcat(send, "; PHPSESSID=", 1, 0);	
+	send = ostrcat(send, "; bb_lastvisit=", 1, 0);	
 	send = ostrcat(send, cookie2, 1, 0);
+	send = ostrcat(send, "; bb_lastactivity=", 1, 0);	
+	send = ostrcat(send, cookie3, 1, 0);
 	send = ostrcat(send, "\r\nContent-Type: application/x-www-form-urlencoded\r\n\r\n", 1, 0);	
 	send = ostrcat(send, hash, 1, 0);
 	free(hash); hash = NULL;
@@ -7233,6 +7242,7 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 
 	free(cookie1); cookie1 = NULL;
 	free(cookie2); cookie2 = NULL;
+	free(cookie3); cookie3 = NULL;
 	free(tmphost); tmphost = NULL;
 	free(send); send = NULL;
 	free(ip); ip = NULL;
