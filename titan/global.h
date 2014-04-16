@@ -7234,7 +7234,7 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 	free(hashlen); hashlen = NULL;
 
 	debug(99, "#############################################################################################################");
-	debug(99, "send1: %s", send);
+	debug(99, "send2: %s", send);
 	debug(99, "#############################################################################################################");
 
 	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
