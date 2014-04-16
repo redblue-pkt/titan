@@ -7196,10 +7196,23 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 	debug(99, "tmpstr: %s", tmpstr);
 
+	cookie1 = getxmlentry(tmpstr, "bb_sessionhash=");
+	debug(99, "cookie1: %s", cookie1);
+	cookie2 = getxmlentry(tmpstr, "bb_lastvisit=");
+	debug(99, "cookie2: %s", cookie2);
+	cookie3 = getxmlentry(tmpstr, "bb_lastactivity=");
+	debug(99, "cookie3: %s", cookie3);
+
 	free(send), send = NULL;
 	free(tmpstr), tmpstr = NULL;
-
-	if(user == NULL || pass == NULL || link == NULL) return 1;
+	
+	if(user == NULL || pass == NULL || link == NULL)
+	{
+		free(cookie1), cookie1 = NULL;
+		free(cookie2, cookie2= NULL;
+		free(cookie3, cookie3= NULL;
+		return 1;
+	}
 
 	hash = ostrcat("vb_login_username=", user, 0, 0);
 	hash = ostrcat(hash, "&vb_login_password=&vb_login_password_hint=Kennwort&s=&securitytoken=guest&do=login&vb_login_md5password=", 1, 0);
@@ -7208,13 +7221,6 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 	hash = ostrcat(hash, MDString(pass), 1, 1);
 
 	hashlen = oitoa(strlen(hash));
-
-	cookie1 = getxmlentry(tmpstr, "bb_sessionhash=");
-	debug(99, "cookie1: %s", cookie1);
-	cookie2 = getxmlentry(tmpstr, "bb_lastvisit=");
-	debug(99, "cookie2: %s", cookie2);
-	cookie3 = getxmlentry(tmpstr, "bb_lastactivity=");
-	debug(99, "cookie3: %s", cookie3);
 
 	send = ostrcat(send, "POST ", 1, 0);
 	send = ostrcat(send, tmppath, 1, 0);
