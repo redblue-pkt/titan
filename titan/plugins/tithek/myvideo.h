@@ -125,12 +125,15 @@ char* myvideo(char* input, char* url, char* name, int flag)
 				source = string_resub("source='", ".flv'", tmpstr_uni, 0);
 
 				newurl = string_resub("connectionurl='", "'", tmpstr_uni, 0);
-	
+
+/*
 				if(ostrstr(newurl, "myvideo2flash"))
 				{
 					printf("change to rtmpt:// stream\n");
 					newurl = string_replace("rtmpe://", "rtmpt://", newurl, 1);
 				}
+*/
+				newurl = string_replace("rtmpe://", "rtmp://", newurl, 1);
 	
 				streamurl = ostrcat(newurl, NULL, 0, 0);
 				streamurl = ostrcat(streamurl, " ", 1, 0);
