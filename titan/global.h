@@ -7108,10 +7108,7 @@ int convertsettings(int flag)
 void guestthread()
 {
 	int count = 0, ret = 0, whilecount = 0, sleepcount = 0;
-	char* pass = NULL, *user = NULL, *url = NULL;
-
-	user = getconfig("community_user", NULL);
-	pass = getconfig("community_pass", NULL);
+	char* pass = NULL, *user = NULL, *url = NULL, *tmpstr = NULL;
 
 	sleep(60);
 
@@ -7129,11 +7126,20 @@ void guestthread()
 	free(ret1), ret1 = NULL;
 	free(tmpstr), tmpstr = NULL;
 
-	if(ostrncmp("http://", url, 7)) return;
+	debug(99, "1whilecount: %d sleepcount: %d url: %s user: %s pass: %s\n", whilecount, sleepcount, url, user, pass);
+
+	if(ostrncmp("http://", url, 7))
+	{
+		free(url), url = NULL;
+		return;
+	}
 	if(whilecount == 0) return;
 	if(sleepcount == 0) return;
 
-	debug(99, "whilecount: %d sleepcount: %d url: %s\n", whilecount, sleepcount, url);
+	user = getconfig("community_user", NULL);
+	pass = getconfig("community_pass", NULL);
+
+	debug(99, "whilecount: %d sleepcount: %d url: %s user: %s pass: %s\n", whilecount, sleepcount, url, user, pass);
 
 	while(count < whilecount)
 	{
