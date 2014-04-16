@@ -7147,13 +7147,13 @@ void guestthread()
 		ret = vbulletin_userauth(url, user, pass);
 		if(ret == 1)
 		{
-			// user login
-			debug(99, "Community connecting UserAuth: OK");		
+			// guest login
+			debug(99, "Community connecting Guest: OK");
 		}
 		else
 		{
-			// guest login
-			debug(99, "Community connecting Guest: OK");
+			// user login
+			debug(99, "Community connecting UserAuth: OK");		
 		}
 		sleep(sleepcount);
 	}
