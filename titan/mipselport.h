@@ -26,15 +26,6 @@ int g_manual_blit = 0;
 struct fb_fix_screeninfo fix_screeninfo;
 struct fb_var_screeninfo var_screeninfo;
 
-
-volatile long	area_pxAbs = 0;
-volatile long	area_widthAbs = 0;
-volatile long	area_FBwidthAbs = 0;
-volatile long	area_hight = 0;
-volatile char *area_ziehlADDR;
-volatile char *area_startADDR;
-
-
 void memcpy_area(char* ziehlADDR, char* startADDR, long pxAbs, long hight, long widthAbs, long FBwidthAbs);
 
 int setmixer(struct dvbdev* node, int left, int right)
@@ -1199,21 +1190,14 @@ void memcpy_byte(char* dest, char* src, long anzb)
 void memcpy_area(char* ziehlADDR, char* startADDR, long pxAbs, long hight, long widthAbs, long FBwidthAbs)
 {
 
-	area_pxAbs = pxAbs;
-	area_widthAbs = widthAbs;
-	area_FBwidthAbs = FBwidthAbs;
-	area_hight = hight;
-	area_ziehlADDR = ziehlADDR;
-	area_startADDR = startADDR;
-	
 	asm(	
 
-				"		lw    $t3, area_ziehlADDR													\n"
-				"		lw    $t4, area_startADDR													\n"
-				"		lw		$t5, area_pxAbs															\n"
-				"		lw    $t6, area_widthAbs													\n"
-				"		lw    $t7, area_FBwidthAbs												\n"
-				"		lw    $t8, area_hight															\n"
+				"		lw    $t3, %[ziehlADDR]													\n"
+				"		lw    $t4, %[startADDR]													\n"
+				"		lw		$t5, %[pxAbs]															\n"
+				"		lw    $t6, %[widthAbs]													\n"
+				"		lw    $t7, %[FBwidthAbs]												\n"
+				"		lw    $t8, %[hight]															\n"
 
 				"		move  $t0, $t4      # Temp-startADDR							\n"  
 				"		move  $t1, $t6      # Temp-widthAbs								\n"
@@ -1242,7 +1226,9 @@ void memcpy_area(char* ziehlADDR, char* startADDR, long pxAbs, long hight, long 
 
 				"p3End:																								\n"
 				"		nop																								\n"	
+				::[ziehlADDR] "m" (ziehlADDR), [startADDR] "m" (startADDR), [pxAbs] "m" (pxAbs), [widthAbs] "m" (widthAbs), [FBwidthAbs] "m" (FBwidthAbs), [hight] "m" (hight)
 				);
+				
 	return;
 }
 
