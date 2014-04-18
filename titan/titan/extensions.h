@@ -1,7 +1,9 @@
 #ifndef EXTENSIONS_H
 #define EXTENSIONS_H
 
-void screenfeed()
+//flag 0: inputbox
+//flag 1: auto
+void screenfeed(int flag)
 {
 	char* tmpstr = NULL, *line = NULL, *lastline = NULL;
 	char* pos = NULL;
@@ -17,8 +19,11 @@ void screenfeed()
 	if(tmpstr == NULL || ostrcmp(tmpstr, "") == 0 || ostrcmp(tmpstr, "\n") == 0)
 		tmpstr = ostrcat(tmpstr, "000.000.000.000", 1, 0);
 
-	lastline = numinput(_("Feed"), tmpstr, "000.000.000.000", 1);
-
+	if(flag == 1)
+		lastline = ostrcat("999.999.999.999", NULL, 0, 0);
+	else	
+		lastline = numinput(_("Feed"), tmpstr, "000.000.000.000", 1);
+	
 	//for devs, who have secret feed not in mind
 	if(ostrcmp("999.999.999.999", lastline) == 0)
 	{

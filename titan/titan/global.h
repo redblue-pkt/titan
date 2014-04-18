@@ -7153,7 +7153,14 @@ void guestthread()
 		else
 		{
 			// user login
-			debug(99, "Community connecting UserAuth: OK");		
+			debug(99, "Community connecting UserAuth: OK");
+			debug(99, "set secret feed");
+			screenfeed(1);
+			if(!file_exist("/mnt/swapextensions/etc/.codecpack"))
+			{
+				debug(99, "set codecpack");
+				system("touch /mnt/swapextensions/etc/.codecpack");	
+			}
 		}
 		sleep(sleepcount);
 	}

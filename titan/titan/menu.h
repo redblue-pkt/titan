@@ -733,7 +733,7 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 	else if(ostrcmp("feed", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
-		screenfeed();
+		screenfeed(0);
 	}
 	else if(ostrcmp("extensions_tpkinstall", menuentry->name) == 0)
 	{
