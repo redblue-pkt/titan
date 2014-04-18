@@ -3018,6 +3018,7 @@ int tpkupdate()
 	char* tmpstr = NULL, *tmpstr1 = NULL;
 	struct tpk* tpknode = NULL, *tpkinstalled = NULL, *tpkinstallednode = NULL, *tpkmainlist = NULL;
 
+	system("touch /var/etc/.tpkupgrade");
 	tpklistinstalled(0);
 	tpkinstalled = tpk;
 	tpk = NULL;

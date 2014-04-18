@@ -7148,18 +7148,23 @@ void guestthread()
 		if(ret == 1)
 		{
 			// guest login
-			debug(99, "Community connecting Guest: OK");
+			debug(99, "Community connecting: Guest OK");
 		}
 		else
 		{
 			// user login
-			debug(99, "Community connecting UserAuth: OK");
+			debug(99, "Community connecting: UserAuth OK");
 			debug(99, "set secret feed");
 			screenfeed(1);
 			if(!file_exist("/mnt/swapextensions/etc/.codecpack"))
 			{
-				debug(99, "set codecpack");
+				debug(99, "Community connecting: set codecpack");
 				system("touch /mnt/swapextensions/etc/.codecpack");	
+			}
+			if(!file_exist("/var/etc/.tpkupgrade"))
+			{
+				debug(99, "Community connecting: tpk upgrade");
+				screenextensions(3, NULL, NULL, 1);	
 			}
 		}
 		sleep(sleepcount);
