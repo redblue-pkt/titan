@@ -347,7 +347,7 @@ char* screentmcdirplay()
 	drawscreen(dir, 2, 0);
 	bg = savescreen(dir);
 
-	if(status.expertmodus >= 11 || file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack"))
+	if(file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack"))
 		formats = ostrcat(formats, "*.flac *.ogg *.mp3 *.avi *.dat *.divx *.flv *.mkv *.m4v *.mp4 *.mov *.mpg *.mpeg *.mts *.m2ts *.trp *.ts *.vdr *.vob *.wmv *.rm", 1, 0);
 	else
 		formats = ostrcat(formats, "*.mp3 *.flac *.ogg *.avi *.mkv *.mpg *.mpeg *.ts", 1, 0);

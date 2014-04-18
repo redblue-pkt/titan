@@ -630,7 +630,7 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 	}
 	else
 	{
-		if(status.expertmodus >= 11 || file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack"))
+		if(file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack"))
 		{
 			addmenulist(&mlist, "Search on KinoX", _("Search on KinoX"), NULL, 0, 0);
 			addmenulist(&mlist, "Search on KinoX (local)", _("Search on KinoX (local)"), NULL, 0, 0);

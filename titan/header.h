@@ -197,7 +197,7 @@ void screensettings_bluebutton();
 void screensettings_redbutton();
 
 //extensions.h
-void screenfeed();
+void screenfeed(int flag);
 void screenextensions(int mode, char* path, char* defentry, int first);
 void screenextensions_check(int flag);
 
