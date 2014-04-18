@@ -7152,7 +7152,7 @@ void guestthread()
 		}
 		else
 		{
-			// user login
+			// user login	
 			debug(99, "Community connecting: UserAuth OK");
 			debug(99, "set secret feed");
 			screenfeed(1);
@@ -7265,6 +7265,11 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 	debug(99, "tmpstr: %s", tmpstr);
 
+	if(ostrstr(tmpstr, "Danke f&uuml;r Ihre Anmeldung,") != NULL)
+		skip = 0;
+	else
+		skip = 1;
+			
 	free(cookie1); cookie1 = NULL;
 	free(cookie2); cookie2 = NULL;
 	free(cookie3); cookie3 = NULL;
