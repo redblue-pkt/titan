@@ -7185,7 +7185,7 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 	debug(99, "vbulletin pass: %s", pass);	
 	debug(99, "vbulletin url: %s", link);
 
-	int skip = 0;
+	int error = 0;
 	char* ip = NULL, *tmphost = NULL, *tmppath = NULL, *tmpstr = NULL, *send = NULL, *hash = NULL, *cookie1 = NULL, *cookie2 = NULL, *cookie3 = NULL, *tmplink = NULL, *pos = NULL, *path = NULL, *hashlen = NULL;
 
 	tmplink = ostrcat(link, NULL, 0, 0);
@@ -7265,20 +7265,18 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 	debug(99, "tmpstr: %s", tmpstr);
 
-	if(ostrstr(tmpstr, "Danke f&uuml;r Ihre Anmeldung,") != NULL)
-		skip = 0;
-	else
-		skip = 1;
-			
+	if(ostrstr(tmpstr, "<input type=\"hidden\" name=\"securitytoken\" value=\"guest\" />") != NULL)
+		error = 1;
+
 	free(cookie1); cookie1 = NULL;
 	free(cookie2); cookie2 = NULL;
 	free(cookie3); cookie3 = NULL;
 	free(tmphost); tmphost = NULL;
 	free(send); send = NULL;
 	free(ip); ip = NULL;
-	if(tmpstr == NULL) skip = 1;
+	if(tmpstr == NULL) error = 1;
 	free(tmpstr); tmpstr = NULL;
-	if(skip == 1) return 1;
+	if(error == 1) return 1;
 	return 0;
 }
 
