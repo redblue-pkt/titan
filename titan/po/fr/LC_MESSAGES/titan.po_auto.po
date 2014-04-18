@@ -115,7 +115,7 @@ msgstr ""
 #: tithek.h:1189 tithek.h:1416 tithek.h:1438 tithek.h:1454 tithek.h:3156
 #: tithek.h:3220 tithek.h:3234 tithek.h:3244 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922
-#: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3185 tpk.new.h:3167 tsSchnitt.c:108
+#: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3186 tpk.new.h:3167 tsSchnitt.c:108
 #: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
 #: tsSchnitt.c:347 tunerconfig.h:636 tunerconfig.h:645 tunerconfig.h:907
 #: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:60
@@ -216,7 +216,7 @@ msgstr "OK"
 #: tithek.h:1189 tithek.h:1416 tithek.h:1438 tithek.h:1454 tithek.h:3156
 #: tithek.h:3220 tithek.h:3234 tithek.h:3244 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922
-#: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3185 tpk.new.h:3167 tsSchnitt.c:108
+#: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3186 tpk.new.h:3167 tsSchnitt.c:108
 #: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
 #: tsSchnitt.c:347 tunerconfig.h:636 tunerconfig.h:645 tunerconfig.h:907
 #: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:60
@@ -600,7 +600,7 @@ msgstr "oui / vzap sans fin"
 #: tithek_global.h:238 tithek.h:650 tithek.h:1146 tithek.h:1189 tithek.h:1416
 #: tithek.h:1438 tithek.h:3156 tithek.h:3220 tithek.h:3234 tithek.h:3244
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
-#: tmdb.h:759 tmdb.h:922 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3185
+#: tmdb.h:759 tmdb.h:922 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3186
 #: tpk.new.h:3167 tunerconfig.h:636 tunerconfig.h:645 tunerconfig.h:907
 #: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:60
 #: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
@@ -9582,19 +9582,19 @@ msgstr ""
 msgid "xupnpd Medien Server (upnp)"
 msgstr ""
 
-#: tpk.h:3185 tpk.new.h:3167
+#: tpk.h:3186 tpk.new.h:3167
 msgid "check your Secret Feed !"
 msgstr ""
 
-#: tpk.h:3428
+#: tpk.h:3429
 msgid "Section: "
 msgstr ""
 
-#: tpk.h:3431
+#: tpk.h:3432
 msgid "Description:"
 msgstr ""
 
-#: tpk.h:3436 tpk.new.h:3411
+#: tpk.h:3437 tpk.new.h:3411
 msgid "no description found"
 msgstr ""
 
