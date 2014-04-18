@@ -497,8 +497,8 @@ int checkhighflash()
 	}
 	else if(checkbox("ATEMIO-NEMESIS") == 1)
 	{
-		cmd = ostrcat(cmd, "mtd0", 1, 0); 
-		size = ostrcat("7f900000", NULL, 0, 0); 
+		cmd = ostrcat(cmd, "mtd1", 1, 0); 
+		size = ostrcat("6f900000", NULL, 0, 0); 
 	}
 	else
 	{
