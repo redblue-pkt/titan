@@ -7163,7 +7163,7 @@ void guestthread()
 			}
 
 			debug(99, "Community connecting: set nopluginversion");
-			addconfigtmp(nopluginversion, "1");
+			addconfigtmp("nopluginversion", "1");
 			writeallconfig(1);
 			loadplugin();
 /*
