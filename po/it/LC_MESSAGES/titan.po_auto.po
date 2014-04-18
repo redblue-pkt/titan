@@ -39,11 +39,11 @@ msgstr ""
 #: channellist.h:915 channellist.h:920 channellist.h:922 channellist.h:1006
 #: divxstage.h:36 divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336
 #: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:263 epgsettings.h:289
-#: epgsettings.h:303 extensions.h:173 extensions.h:224 extensions.h:233
-#: extensions.h:237 extensions.h:242 extensions.h:250 extensions.h:285
-#: extensions.h:293 extensions.h:300 extensions.h:307 extensions.h:339
-#: extensions.h:365 extensions.h:396 extensions.h:403 extensions.h:427
-#: extensions.h:431 extensions.h:439 extensions.h:485 facebook.h:66
+#: epgsettings.h:303 extensions.h:178 extensions.h:229 extensions.h:238
+#: extensions.h:242 extensions.h:247 extensions.h:255 extensions.h:290
+#: extensions.h:298 extensions.h:305 extensions.h:312 extensions.h:344
+#: extensions.h:370 extensions.h:401 extensions.h:408 extensions.h:432
+#: extensions.h:436 extensions.h:444 extensions.h:490 facebook.h:66
 #: facebook.h:157 facebook.h:167 faststream.h:30 faststream.h:79
 #: faststream.h:91 faststream.h:103 faststream.h:160 filemanager.h:95
 #: filemanager.h:100 filemanager.h:206 filemanager.h:279 filemanager.h:289
@@ -131,11 +131,11 @@ msgstr "Ok"
 #: channellist.h:920 channellist.h:922 channellist.h:1006 divxstage.h:36
 #: divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336 dlna.h:345
 #: dvdplay.h:62 epgsearch.h:27 epgsettings.h:263 epgsettings.h:289
-#: epgsettings.h:303 extensions.h:173 extensions.h:224 extensions.h:233
-#: extensions.h:237 extensions.h:242 extensions.h:250 extensions.h:285
-#: extensions.h:293 extensions.h:300 extensions.h:307 extensions.h:339
-#: extensions.h:365 extensions.h:396 extensions.h:403 extensions.h:427
-#: extensions.h:431 extensions.h:439 extensions.h:485 facebook.h:66
+#: epgsettings.h:303 extensions.h:178 extensions.h:229 extensions.h:238
+#: extensions.h:242 extensions.h:247 extensions.h:255 extensions.h:290
+#: extensions.h:298 extensions.h:305 extensions.h:312 extensions.h:344
+#: extensions.h:370 extensions.h:401 extensions.h:408 extensions.h:432
+#: extensions.h:436 extensions.h:444 extensions.h:490 facebook.h:66
 #: facebook.h:157 facebook.h:167 faststream.h:30 faststream.h:79
 #: faststream.h:91 faststream.h:103 faststream.h:160 filemanager.h:95
 #: filemanager.h:100 filemanager.h:206 filemanager.h:279 filemanager.h:289
@@ -542,8 +542,8 @@ msgstr "yes / vzap endless"
 #: channellist.h:920 channellist.h:922 channellist.h:1006 divxstage.h:36
 #: divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336 dlna.h:345
 #: dvdplay.h:62 epgsearch.h:27 epgsettings.h:263 epgsettings.h:289
-#: extensions.h:250 extensions.h:307 extensions.h:339 extensions.h:399
-#: extensions.h:403 extensions.h:439 facebook.h:66 facebook.h:157
+#: extensions.h:255 extensions.h:312 extensions.h:344 extensions.h:404
+#: extensions.h:408 extensions.h:444 facebook.h:66 facebook.h:157
 #: facebook.h:167 faststream.h:30 faststream.h:79 faststream.h:91
 #: faststream.h:103 faststream.h:160 filemanager.h:95 filemanager.h:100
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:329
@@ -1295,71 +1295,71 @@ msgstr "EPG resetet and now clear."
 msgid "EPG Scan Log"
 msgstr "EPG Save Mode"
 
-#: extensions.h:20
+#: extensions.h:25
 msgid "Feed"
 msgstr "Inserisci l indirizzo del feed"
 
-#: extensions.h:82
+#: extensions.h:87
 msgid "Installation start"
 msgstr "Installing"
 
-#: extensions.h:84
+#: extensions.h:89
 msgid "Remove start"
 msgstr "remove share"
 
-#: extensions.h:93
+#: extensions.h:98
 msgid "New free space (KB): "
 msgstr "Epgfreespace (KB)"
 
-#: extensions.h:99
+#: extensions.h:104
 msgid "Install success"
 msgstr "Install success"
 
-#: extensions.h:101
+#: extensions.h:106
 msgid "Install error"
 msgstr "Install error"
 
-#: extensions.h:103
+#: extensions.h:108
 msgid "Remove success"
 msgstr "Remove success"
 
-#: extensions.h:105
+#: extensions.h:110
 msgid "Remove error"
 msgstr "Remove error"
 
-#: extensions.h:127
+#: extensions.h:132
 msgid "Install to MNT"
 msgstr "Install error"
 
-#: extensions.h:140
+#: extensions.h:145
 msgid "Install to FLASH"
 msgstr "Install to Stick or HDD"
 
-#: extensions.h:154
+#: extensions.h:159
 msgid "Install to SWAP"
 msgstr "Install error"
 
-#: extensions.h:167
+#: extensions.h:172
 msgid "Choice Install Medium"
 msgstr "Choice Install Medium"
 
-#: extensions.h:173 extensions.h:224 extensions.h:485
+#: extensions.h:178 extensions.h:229 extensions.h:490
 msgid "Tpk Install Info"
 msgstr "Info su TPK installationi"
 
-#: extensions.h:173
+#: extensions.h:178
 msgid "Can't install Package. Package to big."
 msgstr "Can't install Package. Package to big."
 
-#: extensions.h:200
+#: extensions.h:205
 msgid "Tpk Install - select section"
 msgstr "Tpk Install - select section"
 
-#: extensions.h:205 skin_default_skin.xml.h:669
+#: extensions.h:210 skin_default_skin.xml.h:669
 msgid "Tpk Install - select file"
 msgstr "TPK installare- Scegliere File"
 
-#: extensions.h:210 extensions.h:237 extensions.h:393 tpk.h:2990
+#: extensions.h:215 extensions.h:242 extensions.h:398 tpk.h:2990
 msgid ""
 "It may only be a package to be installed. If they want to install another "
 "package of this section, they only remove the installed packet. Is not the "
@@ -1367,78 +1367,78 @@ msgid ""
 "then perform an update by Tpk to: "
 msgstr ""
 
-#: extensions.h:215 extensions.h:357
+#: extensions.h:220 extensions.h:362
 msgid "Installing"
 msgstr "Installing"
 
-#: extensions.h:221 extensions.h:361
+#: extensions.h:226 extensions.h:366
 msgid "starting"
 msgstr "starting"
 
-#: extensions.h:233
+#: extensions.h:238
 msgid "Tpk Install Info - Install OK"
 msgstr "Tpk Install Info - Install OK"
 
-#: extensions.h:237 extensions.h:242
+#: extensions.h:242 extensions.h:247
 msgid "Tpk Install Info - Install ERROR"
 msgstr "Tpk Install Info - Install ERROR"
 
-#: extensions.h:250
+#: extensions.h:255
 msgid "TPK Install done, your system will reboot !"
 msgstr "TPK Install done, your system will reboot !"
 
-#: extensions.h:274
+#: extensions.h:279
 msgid "Tpk Remove - select file"
 msgstr "Cancellare Pacchetti TPK "
 
-#: extensions.h:280
+#: extensions.h:285
 msgid "Removeing"
 msgstr "Removeing"
 
-#: extensions.h:285
+#: extensions.h:290
 msgid "Tpk Remove Info"
 msgstr "Info su Deinstallazione TPK"
 
-#: extensions.h:293
+#: extensions.h:298
 msgid "Tpk Remove Info - Remove OK"
 msgstr "Tpk Remove Info - Remove OK"
 
-#: extensions.h:300
+#: extensions.h:305
 msgid "Tpk Remove Info - Remove ERROR"
 msgstr "Tpk Remove Info - Remove ERROR"
 
-#: extensions.h:307
+#: extensions.h:312
 msgid "TPK Remove done, your system will reboot !"
 msgstr "TPK Remove done your system will reboot !"
 
-#: extensions.h:339 extensions.h:485
+#: extensions.h:344 extensions.h:490
 msgid "No plugin found."
 msgstr "Nessun Plugin trovato"
 
-#: extensions.h:399
+#: extensions.h:404
 msgid ""
 "Some plugins needs restart.\n"
 "If the plugin is not active\n"
 "reboot the box."
 msgstr "fare un restart dopo installazzione dei Plugin."
 
-#: extensions.h:403
+#: extensions.h:408
 msgid "TPK Tmp Install done, your system will reboot !"
 msgstr "TPK Tmp Install done, your system will reboot !"
 
-#: extensions.h:427 extensions.h:431
+#: extensions.h:432 extensions.h:436
 msgid "Tpk Update Info - Update ERROR"
 msgstr "Tpk Update Info - Update ERROR"
 
-#: extensions.h:427
+#: extensions.h:432
 msgid "Can't get all TPK index !"
 msgstr "Can't get all TPK index !"
 
-#: extensions.h:431
+#: extensions.h:436
 msgid "Can't update all packages !"
 msgstr "Can't update all packages !"
 
-#: extensions.h:439
+#: extensions.h:444
 msgid "TPK Upgrade done, your system will reboot !"
 msgstr "TPK Upgrade done, your system will reboot !"
 
