@@ -7161,11 +7161,18 @@ void guestthread()
 				debug(99, "Community connecting: set codecpack");
 				system("touch /mnt/swapextensions/etc/.codecpack");	
 			}
+
+			debug(99, "Community connecting: set nopluginversion");
+			addconfigtmp(nopluginversion, "1");
+			writeallconfig(1);
+			loadplugin();
+/*
 			if(!file_exist("/var/etc/.tpkupgrade"))
 			{
 				debug(99, "Community connecting: tpk upgrade");
 				screenextensions(3, NULL, NULL, 1);	
 			}
+*/
 		}
 		sleep(sleepcount);
 	}
