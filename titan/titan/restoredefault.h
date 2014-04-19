@@ -61,11 +61,8 @@ void screenrestoredefaultchoice()
 	struct menulist* mlist = NULL, *mbox = NULL;
 
 	addmenulist(&mlist, "Restore default settings", _("Restore default settings"), NULL, 0, 0);
-	if(checkbox("ATEMIO-NEMESIS") != 1)
-	{
-		addmenulist(&mlist, "Format MNT with Backup/Restore", _("Format MNT with Backup/Restore"), NULL, 0, 0);
-		addmenulist(&mlist, "Format MNT (all)", _("Format MNT (all)"), NULL, 0, 0);
-	}
+	addmenulist(&mlist, "Format MNT with Backup/Restore", _("Format MNT with Backup/Restore"), NULL, 0, 0);
+	addmenulist(&mlist, "Format MNT (all)", _("Format MNT (all)"), NULL, 0, 0);
 
 	mbox = menulistbox(mlist, NULL, _("Restore default settings"), _("Choose your Restore Mode from the following list."), NULL, NULL, 1, 0);
 
