@@ -117,7 +117,7 @@ msgstr ""
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922
 #: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3186 tpk.new.h:3167 tsSchnitt.c:108
 #: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
-#: tsSchnitt.c:347 tunerconfig.h:636 tunerconfig.h:645 tunerconfig.h:907
+#: tsSchnitt.c:347 tunerconfig.h:640 tunerconfig.h:653 tunerconfig.h:915
 #: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:60
 #: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
 #: vidstream.h:167 xupnpd.h:60 xupnpd.h:71 xupnpd.h:73 xvidstage.h:54
@@ -218,7 +218,7 @@ msgstr "Ok"
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922
 #: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3186 tpk.new.h:3167 tsSchnitt.c:108
 #: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
-#: tsSchnitt.c:347 tunerconfig.h:636 tunerconfig.h:645 tunerconfig.h:907
+#: tsSchnitt.c:347 tunerconfig.h:640 tunerconfig.h:653 tunerconfig.h:915
 #: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:60
 #: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
 #: vidstream.h:167 xupnpd.h:60 xupnpd.h:71 xupnpd.h:73 xvidstage.h:54
@@ -601,7 +601,7 @@ msgstr "Ja/VZAP unendlich"
 #: tithek.h:1438 tithek.h:3156 tithek.h:3220 tithek.h:3234 tithek.h:3244
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
 #: tmdb.h:759 tmdb.h:922 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3186
-#: tpk.new.h:3167 tunerconfig.h:636 tunerconfig.h:645 tunerconfig.h:907
+#: tpk.new.h:3167 tunerconfig.h:640 tunerconfig.h:653 tunerconfig.h:915
 #: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:60
 #: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
 #: vidstream.h:167 xupnpd.h:60 xupnpd.h:71 xupnpd.h:73 xvidstage.h:54
@@ -687,7 +687,7 @@ msgstr "Einstellungen wurden erfolgreich gespeichert"
 #: panel_settings_autostart.h:61 panel_settings_overclocking.h:276
 #: readerconfig.h:413 settings_autostart.h:53 settings_overclocking.h:276
 #: transponder.h:256 transponder.h:264 transponder.h:415 transponder.h:423
-#: tunerconfig.h:806 vfdisplay.h:42 vfdisplay.h:50
+#: tunerconfig.h:814 vfdisplay.h:42 vfdisplay.h:50
 msgid "off"
 msgstr "aus"
 
@@ -1650,6 +1650,14 @@ msgstr "Sam"
 #: global.h:6770
 msgid "Sun"
 msgstr "Son"
+
+#: global.h:7367
+msgid "Tuner "
+msgstr ""
+
+#: global.h:7376
+msgid "Multituner adjustable"
+msgstr ""
 
 #: gmediarender.h:109
 msgid "Servername"
@@ -10890,31 +10898,27 @@ msgstr ""
 msgid "Terrestrisch"
 msgstr ""
 
-#: tunerconfig.h:636 tunerconfig.h:645
+#: tunerconfig.h:640 tunerconfig.h:653
 msgid "They need to switch the tuner Hyprid restart the gui !"
 msgstr ""
 "Um die Einstellungen des Hybrid Tuners wirksam zu machen müssen Sie einen "
 "TitanNit Neustart durchführen."
 
-#: tunerconfig.h:780
+#: tunerconfig.h:788
 msgid "direct connect"
 msgstr "Direkte Verbindung"
 
-#: tunerconfig.h:791
+#: tunerconfig.h:799
 msgid "loop to Tuner"
 msgstr "Verbunden mit Tuner"
 
-#: tunerconfig.h:907
+#: tunerconfig.h:915
 msgid ""
 "Tunerconfig is not allowed if record\n"
 "or stream is running !"
 msgstr ""
 "Tunerkonfiguration ist während einer aktiven Aufnahme\n"
 "oder einer Streamwiedergabe nicht zugelassen."
-
-#: tunerconfig.h:921
-msgid "Tuner "
-msgstr ""
 
 #: unicable.h:197
 msgid "Unicable manufacturer"
