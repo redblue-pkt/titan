@@ -83,7 +83,7 @@ msgstr ""
 #: novamov.h:80 nowvideo.h:35 nowvideo.h:87 panel_main.h:29 panel_main.h:135
 #: panel_settings_wizard.h:6 played.h:30 played.h:79 played.h:91 played.h:103
 #: played.h:160 player.h:99 play.h:476 play.h:593 play.h:1244 play.h:1250
-#: play.h:1259 play.h:1260 play.h:1453 play.h:1613 play.h:1624
+#: play.h:1259 play.h:1260 play.h:1456 play.h:1616 play.h:1627
 #: plugins_dlna_skin.xml.h:8 plugins_facebook_skin.xml.h:5
 #: plugins_mboxinfo_skin.xml.h:2 plugins_mc_skin.xml.h:38
 #: plugins_optimize_skin.xml.h:3 plugins_rgui_skin.xml.h:3
@@ -175,7 +175,7 @@ msgstr "Ok"
 #: nowvideo.h:87 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:79 played.h:91 played.h:103 played.h:160 player.h:99
 #: play.h:476 play.h:593 play.h:1244 play.h:1250 play.h:1259 play.h:1260
-#: play.h:1453 play.h:1613 play.h:1624 plugins_autotimer_skin.xml.h:7
+#: play.h:1456 play.h:1616 play.h:1627 plugins_autotimer_skin.xml.h:7
 #: plugins_callmonitor1_skin.xml.h:11 plugins_catcatch_skin.xml.h:4
 #: plugins_dlna_skin.xml.h:2 plugins_facebook_skin.xml.h:4
 #: plugins_instar_skin.xml.h:6 plugins_lcdpearl1_skin.xml.h:7
@@ -577,8 +577,8 @@ msgstr "Ja/VZAP unendlich"
 #: network.h:774 network.h:800 network.h:804 network.h:858 novamov.h:35
 #: novamov.h:80 nowvideo.h:35 nowvideo.h:87 panel_main.h:29 panel_main.h:135
 #: panel_settings_wizard.h:6 played.h:30 played.h:79 played.h:91 played.h:103
-#: played.h:160 player.h:99 play.h:593 play.h:1259 play.h:1453 play.h:1613
-#: play.h:1624 possetup.h:98 primeshare.h:29 primeshare.h:73 primeshare.h:79
+#: played.h:160 player.h:99 play.h:593 play.h:1259 play.h:1456 play.h:1616
+#: play.h:1627 possetup.h:98 primeshare.h:29 primeshare.h:73 primeshare.h:79
 #: primeshare.h:124 putlocker.h:32 putlocker.h:79 putlocker.h:85
 #: putlocker.h:136 putlocker.h:146 putlocker.h:219 readerconfig.h:343
 #: readerconfig.h:443 readerconfig.h:444 readerconfig.h:488 readerconfig.h:489
@@ -1160,7 +1160,7 @@ msgstr "Warten, Download wird beendet."
 msgid "EJECT"
 msgstr "Auswerfen"
 
-#: dvdplay.h:29 play.h:1381 plugins_dlna_skin.xml.h:10
+#: dvdplay.h:29 play.h:1384 plugins_dlna_skin.xml.h:10
 #: skins_dlna_skin.xml.h:10
 msgid "SELECT"
 msgstr "Auswählen"
@@ -1168,7 +1168,7 @@ msgstr "Auswählen"
 #: dvdplay.h:62 mc_audioplayer.h:604 mc_audioplayer.h:707 mc_global.h:773
 #: mc_global.h:1020 mc_pictureplayer.h:100 mc_pictureplayer.h:242
 #: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:749
-#: mc_videoplayer.h:888 play.h:1453
+#: mc_videoplayer.h:888 play.h:1456
 msgid "Can't start playback !"
 msgstr "Wiedergabe kann nicht gestartet werden!"
 
@@ -3668,28 +3668,28 @@ msgstr "Aufnahme läuft"
 msgid "Really Delete ?"
 msgstr "wirklich löschen?"
 
-#: play.h:1381 plugins_networkbrowser_skin.xml.h:5 plugins_stock_skin.xml.h:4
+#: play.h:1384 plugins_networkbrowser_skin.xml.h:5 plugins_stock_skin.xml.h:4
 #: plugins_weather_skin.xml.h:2 skin_default_skin.xml.h:172
 #: skins_networkbrowser_skin.xml.h:5 skins_stock_skin.xml.h:4
 #: skins_weather_skin.xml.h:2
 msgid "DEL"
 msgstr "Löschen"
 
-#: play.h:1381 skin_default_skin.xml.h:209
+#: play.h:1384 skin_default_skin.xml.h:209
 msgid "EPG"
 msgstr ""
 
-#: play.h:1381
+#: play.h:1384
 msgid "SORT"
 msgstr "Sortierung"
 
-#: play.h:1613
+#: play.h:1616
 msgid "Marker autoseek is started"
 msgstr ""
 "Automatische Suche nach Markierungen\n"
 "gestartet"
 
-#: play.h:1624
+#: play.h:1627
 msgid "Marker autoseek is stopped"
 msgstr ""
 "Automatische Suche nach Markierungen\n"
