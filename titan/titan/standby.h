@@ -55,7 +55,7 @@ void screenstandby()
 		system(tmpstr);
 		free(tmpstr); tmpstr=NULL;
 	}
-	if(checkbox("UFS922") == 1)
+	if(checkbox("UFS922") == 1 || checkbox("ATEMIO-NEMESIS") == 1)
 		setfanspeed(-2, 0);
 
 	status.protecttime = 0;
