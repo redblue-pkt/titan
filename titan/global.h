@@ -6935,6 +6935,7 @@ int sethypridtuner(int dev, char* value)
 	sprintf(buf, hypridtuner, dev);
 	if(buf != NULL)
 	{
+		printf("set %s to %s\n", buf, value);
 		ret = writesys(buf, value, 0);
 		free(tmpstr); tmpstr = NULL;
 		return ret;
@@ -7357,6 +7358,62 @@ int phpkit_userauth(char* link, char* user, char* pass)
 	free(tmpstr); tmpstr = NULL;
 	if(skip == 1) return 1;
 	return 0;
+}
+
+void changetunername(struct skin* tunernode, int adapter, int devnr, char* name, char* fehyprid)
+{
+	char* tmpnr = NULL, *tmpstr = NULL;
+	tmpnr = oitoa(adapter);
+	tmpstr = ostrcat(_("Tuner "), tmpnr, 0, 1);
+	tmpstr = ostrcat(tmpstr, "/", 1, 0);
+	tmpnr = oitoa(devnr);
+	tmpstr = ostrcat(tmpstr, tmpnr, 1, 1);
+	tmpstr = ostrcat(tmpstr, ": ", 1, 0);
+	tmpstr = ostrcat(tmpstr, name, 1, 0);
+	if(fehyprid != NULL)
+	{
+		tmpstr = ostrcat(tmpstr, " (", 1, 0);
+		tmpstr = ostrcat(tmpstr, _("Multituner adjustable"), 1, 0);
+		tmpstr = ostrcat(tmpstr, ")", 1, 0);
+	}
+	changetext(tunernode, tmpstr);
+	free(tmpstr); tmpstr = NULL;
+}
+
+char* gethypridtunername(int dev, char* hyprid)
+{
+	char* hypridtunerchoices = NULL, *value = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *start = NULL;
+
+	hypridtunerchoices = getconfig("hypridtunerchoices", NULL);
+
+	if(hypridtunerchoices == NULL)
+	{
+		err("NULL detect");
+		return NULL;
+	}
+
+	tmpstr = readfiletomem(hypridtunerchoices, 1);
+	if(tmpstr == NULL)
+	{
+		err("NULL detect");
+		return NULL;
+	}
+
+	start = ostrcat("NIM Socket ", oitoa(dev), 0, 0);
+	start = ostrcat(start, ":", 1, 0);
+	tmpstr1 = string_resub(start, "I2C_Device", tmpstr, 0);
+	free(start), start = NULL;
+
+	tmpstr2 = string_resub("Name: ", "\n", tmpstr1, 0);
+	
+	if(tmpstr2 != NULL)
+		value = ostrcat(value, tmpstr2, 1, 0);
+
+	free(tmpstr1), tmpstr1 = NULL;
+	free(tmpstr2), tmpstr2 = NULL;
+	free(start), start = NULL;
+
+	return value;
 }
 
 #endif

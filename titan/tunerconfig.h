@@ -627,21 +627,29 @@ int screentunerreceptionhyprid(struct dvbdev* tuner)
 			clearscreen(tunerreceptionhyprid);
 			char* realname = gethypridtunerchoicesvaluename(tuner->devnr, listbox->select->ret);
 			
-			if(realname != NULL && ostrcmp(realname, "DVB-T2") == 0)
+//			if(realname != NULL && ostrcmp(realname, "DVB-T2") == 0)
+			if(realname != NULL && ostrstr(realname, "DVB-T") != NULL)
 			{
 				ret = screentunerreceptiondvbt(tuner);
 				if(ret == 1)
 				{
 					sethypridtuner(tuner->devnr, listbox->select->ret);
+					free(realname) , realname = NULL;
+					realname = gethypridtunername(tuner->devnr, listbox->select->ret);
+					strcpy(tuner->feinfo->name, realname);
 					textbox(_("Message"), _("They need to switch the tuner Hyprid restart the gui !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
 				}
 			}
-			else if(realname != NULL && ostrcmp(realname, "DVB-C") == 0)
+//			else if(realname != NULL && ostrcmp(realname, "DVB-C") == 0)
+			else if(realname != NULL && ostrstr(realname, "DVB-C") != NULL)
 			{
 				ret = screentunerreceptiondvbc(tuner);
 				if(ret == 1) sethypridtuner(tuner->devnr, listbox->select->ret);
 				{
 					sethypridtuner(tuner->devnr, listbox->select->ret);
+					free(realname) , realname = NULL;
+					realname = gethypridtunername(tuner->devnr, listbox->select->ret);
+					strcpy(tuner->feinfo->name, realname);
 					textbox(_("Message"), _("They need to switch the tuner Hyprid restart the gui !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
 				}
 			}
@@ -896,7 +904,7 @@ void screentunerconfig()
 	struct skin* listbox = getscreennode(tunerconfig, "listbox");
 	struct dvbdev* dvbnode = dvbdev;
 	struct skin* tunernode = NULL;
-	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpnr = NULL;
+	char* tmpstr = NULL, *tmpstr1 = NULL;
 	struct skin* tmp = NULL;
 
 	listbox->aktline = 1;
@@ -907,7 +915,7 @@ void screentunerconfig()
 		textbox(_("Message"), _("Tunerconfig is not allowed if record\nor stream is running !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 		return;
 	}
-	
+
 	while(dvbnode != NULL)
 	{
 		if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo != NULL)
@@ -915,18 +923,8 @@ void screentunerconfig()
 			tunernode = addlistbox(tunerconfig, listbox, tunernode, 1);
 			if(tunernode != NULL)
 			{
-				tunernode->handle = (char*)dvbnode;
-
-				tmpnr = oitoa(dvbnode->adapter);
-				tmpstr = ostrcat(_("Tuner "), tmpnr, 0, 1);
-				tmpstr = ostrcat(tmpstr, "/", 1, 0);
-				tmpnr = oitoa(dvbnode->devnr);
-				tmpstr = ostrcat(tmpstr, tmpnr, 1, 1);
-				tmpstr = ostrcat(tmpstr, ": ", 1, 0);
-				tmpstr = ostrcat(tmpstr, dvbnode->feinfo->name, 1, 0);
-				changetext(tunernode, tmpstr);
-				free(tmpstr); tmpstr = NULL;
-
+				tunernode->handle = (char*)dvbnode;	
+				changetunername(tunernode, dvbnode->adapter, dvbnode->devnr, dvbnode->feinfo->name, dvbnode->fehyprid);
 				tunernode->height = listbox->fontsize * 2;
 				tunernode->valign = MIDDLE;
 				tunernode->type = CHOICEBOX;
@@ -974,6 +972,8 @@ void screentunerconfig()
 						ret = screentunerreceptiondvbc((struct dvbdev*)listbox->select->handle);
 					else
 						ret = screentunerreceptionhyprid((struct dvbdev*)listbox->select->handle);
+
+					changetunername(tunernode, ((struct dvbdev*)listbox->select->handle)->adapter, ((struct dvbdev*)listbox->select->handle)->devnr, ((struct dvbdev*)listbox->select->handle)->feinfo->name, ((struct dvbdev*)listbox->select->handle)->fehyprid);
 					drawscreen(tunerconfig, 0, 0);
 				}
 				if(((struct dvbdev*)listbox->select->handle)->feinfo->type == FE_OFDM)
@@ -983,6 +983,8 @@ void screentunerconfig()
 						ret = screentunerreceptiondvbt((struct dvbdev*)listbox->select->handle);
 					else
 						ret = screentunerreceptionhyprid((struct dvbdev*)listbox->select->handle);
+	
+					changetunername(tunernode, ((struct dvbdev*)listbox->select->handle)->adapter, ((struct dvbdev*)listbox->select->handle)->devnr, ((struct dvbdev*)listbox->select->handle)->feinfo->name, ((struct dvbdev*)listbox->select->handle)->fehyprid);
 					drawscreen(tunerconfig, 0, 0);
 				}
 			}
