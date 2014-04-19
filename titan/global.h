@@ -4788,7 +4788,7 @@ int setaac(char* value)
 	char* aacdev = NULL;
 	int ret = 0;
 
-	ac3dev = getconfig("aacdev", NULL);
+	aacdev = getconfig("aacdev", NULL);
 
 	if(aacdev != NULL && value != NULL)
 	{
