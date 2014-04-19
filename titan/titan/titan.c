@@ -617,6 +617,9 @@ int main(int argc, char *argv[])
 	ret = setcolorformat(getconfig("av_colorformatscart", NULL), 1);
 	ret = setaudiosource(getconfig("av_audiosource", NULL));
 	ret = setac3(getconfig("av_ac3mode", NULL));
+#ifdef MIPSEL
+	ret = setaac(getconfig("av_aacmode", NULL));
+#endif
 	ret = setmode3d(getconfig("av_mode3d", NULL));
 	ret = setvfdbrightness(getconfigint("vfdbrightness", NULL));
 	ret = setaudiodelaybitstream(getconfig("audiodelaybitstream", NULL));

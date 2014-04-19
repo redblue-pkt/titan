@@ -4617,6 +4617,31 @@ char* getac3choices()
 	return value;
 }
 
+char* getaacchoices()
+{
+	char *aacchoicesdev = NULL;
+	char *value = NULL;
+
+	ac3choicesdev = getconfig("aacchoicesdev", NULL);
+
+	if(aacchoicesdev == NULL)
+	{
+		err("NULL detect");
+		return NULL;
+	}
+
+	value = readsys(aacchoicesdev, 1);
+	if(value == NULL)
+	{
+		err("NULL detect");
+		return NULL;
+	}
+
+	value = convertspacetolf(value);
+
+	return value;
+}
+
 int setciclock(int slotnr, char* value)
 {
 	char* ciclockdev = NULL, *tmpstr = NULL;
@@ -4758,6 +4783,24 @@ int setac3(char* value)
 	return 0;
 }
 
+int setaac(char* value)
+{
+	char* ac3dev = NULL;
+	int ret = 0;
+
+	ac3dev = getconfig("aacdev", NULL);
+
+	if(ac3dev != NULL && value != NULL)
+	{
+		debug(100, "set %s to %s", aacdev, value);
+		ret = writesys(aacdev, value, 0);
+		if(ret == 0) addconfig("av_aacmode", value);
+		return ret;
+	}
+
+	return 0;
+}
+
 char* getac3()
 {
 	char *ac3dev = NULL;
@@ -4772,6 +4815,29 @@ char* getac3()
 	}
 
 	value = readsys(ac3dev, 1);
+	if(value == NULL)
+	{
+		err("NULL detect");
+		return NULL;
+	}
+
+	return value;
+}
+
+char* getaac()
+{
+	char *aacdev = NULL;
+	char *value = NULL;
+
+	ac3dev = getconfig("aacdev", NULL);
+
+	if(aacdev == NULL)
+	{
+		err("NULL detect");
+		return NULL;
+	}
+
+	value = readsys(aacdev, 1);
 	if(value == NULL)
 	{
 		err("NULL detect");

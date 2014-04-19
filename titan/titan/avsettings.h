@@ -22,6 +22,7 @@ void screenavsettings(int flag)
 	struct skin* audiosource = getscreennode(avsettings, "audiosource");
 	struct skin* ac3default = getscreennode(avsettings, "ac3default");
 	struct skin* ac3mode = getscreennode(avsettings, "ac3mode");
+	struct skin* aacmode = getscreennode(avsettings, "aacmode");
 	struct skin* volautochangevalue = getscreennode(avsettings, "volautochangevalue");
 	struct skin* mode3d = getscreennode(avsettings, "mode3d");
 	struct skin* autosubtitle = getscreennode(avsettings, "autosubtitle");
@@ -144,6 +145,9 @@ void screenavsettings(int flag)
 	setchoiceboxselection(audiosource, ret);
 	free(ret); ret = NULL;
 
+	if(checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO5200") == 1)
+		audiosource->hidden = YES;
+
 	addchoicebox(ac3default, "0", _("no"));
 	addchoicebox(ac3default, "1", _("yes"));
 	setchoiceboxselection(ac3default, getconfig("av_ac3default", NULL));
@@ -154,6 +158,16 @@ void screenavsettings(int flag)
 	ret = getac3();
 	setchoiceboxselection(ac3mode, ret);
 	free(ret); ret = NULL;
+
+	ret = getaacchoices();
+	changeinput(aacmode, ret);
+	free(ret); ret = NULL;
+	ret = getaac();
+	setchoiceboxselection(aacmode, ret);
+	free(ret); ret = NULL;
+
+	if(checkbox("ATEMIO-NEMESIS") != 1 && checkbox("ATEMIO5200") != 1)
+		aacmode->hidden = YES;
 	
 	changeinput(volautochangevalue, "0\n5\n10\n15\n20\n25\n30\n35\n40\n45\n50\n55\n60\n65\n70\n75");
 	setchoiceboxselection(volautochangevalue, getconfig("volautochangevalue", NULL));
@@ -322,6 +336,13 @@ void screenavsettings(int flag)
 				ret = getac3();
 				if(ostrcmp(ret, ac3mode->ret) != 0)
 					setac3(ac3mode->ret); 
+				free(ret); ret = NULL;
+			}
+			if(aacmode->ret != NULL)
+			{
+				ret = getaac();
+				if(ostrcmp(ret, aacmode->ret) != 0)
+					setaac(aacmode->ret); 
 				free(ret); ret = NULL;
 			}
 			if(mode3d->ret != NULL)
