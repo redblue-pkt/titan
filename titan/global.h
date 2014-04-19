@@ -4622,7 +4622,7 @@ char* getaacchoices()
 	char *aacchoicesdev = NULL;
 	char *value = NULL;
 
-	ac3choicesdev = getconfig("aacchoicesdev", NULL);
+	aacchoicesdev = getconfig("aacchoicesdev", NULL);
 
 	if(aacchoicesdev == NULL)
 	{
