@@ -1627,7 +1627,7 @@ struct dvb_frontend_info* fegetinfo(struct dvbdev* node, int fd)
 int fegetdev()
 {
 	int i, y, fd = -1, count = 0;
-	char *buf = NULL, *frontenddev = NULL, *fehyprid = NULL;
+	char *buf = NULL, *frontenddev = NULL, *fehyprid = NULL, *tmpstr = NULL;
 	struct dvb_frontend_info* feinfo = NULL;
 	struct dvbdev* dvbnode = NULL;
 
@@ -1653,7 +1653,21 @@ int fegetdev()
 			fd = feopen(NULL, buf);
 			if(fd >= 0)
 			{
-				fehyprid = gethypridtunerchoicesvalue(y);				
+				fehyprid = gethypridtunerchoicesvalue(y);
+				if(fehyprid != NULL)
+				{
+					if(y <= 10)
+						tmpstr = ostrcat(tmpstr, "fe_0", 1, 0);
+					else
+						tmpstr = ostrcat(tmpstr, "fe_1", 1, 0);
+
+					tmpstr = ostrcat(tmpstr, oitoa(y), 1, 1);
+					tmpstr = ostrcat(tmpstr, "_hyprid", 1, 0);
+					if(getconfig(tmpstr, NULL) != NULL)
+						sethypridtuner(y, getconfig(tmpstr, NULL));
+					free(tmpstr), tmpstr = NULL;
+				}
+				
 				feinfo = fegetinfo(NULL, fd);
 				if(feinfo != NULL)
 				{
