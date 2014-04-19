@@ -605,7 +605,7 @@ int main(int argc, char *argv[])
 	m_lock(&status.waitrcmutex, 24);
 	initvfd();
 
-	if(checkbox("UFS922") == 1)
+	if(checkbox("UFS922") == 1 || checkbox("ATEMIO-NEMESIS") == 1)
 		setfanspeed(-1, 0);
 
 	system(getconfig("skriptbeforetv", NULL));
