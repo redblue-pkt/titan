@@ -1656,7 +1656,7 @@ int fegetdev()
 				fehyprid = gethypridtunerchoicesvalue(y);
 				if(fehyprid != NULL)
 				{
-					if(y <= 10)
+					if(y < 10)
 						tmpstr = ostrcat(tmpstr, "fe_0", 1, 0);
 					else
 						tmpstr = ostrcat(tmpstr, "fe_1", 1, 0);
