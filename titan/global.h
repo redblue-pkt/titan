@@ -4785,12 +4785,12 @@ int setac3(char* value)
 
 int setaac(char* value)
 {
-	char* ac3dev = NULL;
+	char* aacdev = NULL;
 	int ret = 0;
 
 	ac3dev = getconfig("aacdev", NULL);
 
-	if(ac3dev != NULL && value != NULL)
+	if(aacdev != NULL && value != NULL)
 	{
 		debug(100, "set %s to %s", aacdev, value);
 		ret = writesys(aacdev, value, 0);
