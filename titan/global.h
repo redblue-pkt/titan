@@ -4829,7 +4829,7 @@ char* getaac()
 	char *aacdev = NULL;
 	char *value = NULL;
 
-	ac3dev = getconfig("aacdev", NULL);
+	aacdev = getconfig("aacdev", NULL);
 
 	if(aacdev == NULL)
 	{
