@@ -5197,19 +5197,19 @@ msgstr ""
 "Wilt u het wisselbestand echt wissen? (instellingen worden behouden)\n"
 "De ontvanger zal herstarten en wissen wordt gestart!"
 
-#: restoredefault.h:63 restoredefault.h:70 skin_default_skin.xml.h:518
+#: restoredefault.h:63 restoredefault.h:67 skin_default_skin.xml.h:518
 msgid "Restore default settings"
 msgstr "Fabrieksinstelling terugzetten"
 
-#: restoredefault.h:66
+#: restoredefault.h:64
 msgid "Format MNT with Backup/Restore"
 msgstr "Formatteer MNT tijdens Backup/Restore"
 
-#: restoredefault.h:67
+#: restoredefault.h:65
 msgid "Format MNT (all)"
 msgstr "Formatteer MNT (alles)"
 
-#: restoredefault.h:70
+#: restoredefault.h:67
 msgid "Choose your Restore Mode from the following list."
 msgstr ""
 

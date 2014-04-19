@@ -5105,19 +5105,19 @@ msgid ""
 "The Box will reboot and the erase will be started!"
 msgstr ""
 
-#: restoredefault.h:63 restoredefault.h:70 skin_default_skin.xml.h:518
+#: restoredefault.h:63 restoredefault.h:67 skin_default_skin.xml.h:518
 msgid "Restore default settings"
 msgstr "Ustawienia sieci"
 
-#: restoredefault.h:66
+#: restoredefault.h:64
 msgid "Format MNT with Backup/Restore"
 msgstr ""
 
-#: restoredefault.h:67
+#: restoredefault.h:65
 msgid "Format MNT (all)"
 msgstr ""
 
-#: restoredefault.h:70
+#: restoredefault.h:67
 msgid "Choose your Restore Mode from the following list."
 msgstr ""
 

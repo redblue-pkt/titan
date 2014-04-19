@@ -5225,19 +5225,19 @@ msgstr ""
 "Einstellungen\n"
 "bleiben erhalten. Der Receiver wird für diesen Vorgang neu gestartet!"
 
-#: restoredefault.h:63 restoredefault.h:70 skin_default_skin.xml.h:518
+#: restoredefault.h:63 restoredefault.h:67 skin_default_skin.xml.h:518
 msgid "Restore default settings"
 msgstr "Werkseinstellungen"
 
-#: restoredefault.h:66
+#: restoredefault.h:64
 msgid "Format MNT with Backup/Restore"
 msgstr "Formatiere MNT mit anschließender Wiederherstellung"
 
-#: restoredefault.h:67
+#: restoredefault.h:65
 msgid "Format MNT (all)"
 msgstr "Auslieferzustand"
 
-#: restoredefault.h:70
+#: restoredefault.h:67
 msgid "Choose your Restore Mode from the following list."
 msgstr ""
 "Wählen Sie den gewünschten Wiederherstellungsmodus aus der folgenden Liste"
