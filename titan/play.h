@@ -1346,7 +1346,7 @@ int screenplay(char* startfile, char* showname, int startfolder, int flag)
 	}
 
 	// allowed from atemio avi mkv mpg4 xvid mpg1 mpg2 jpeg png
-	if(status.expertmodus > 0 && status.security == 1)
+	if(startfolder == 1 && status.security == 1)
 		formats = ostrcat(formats, ".flac .ogg .mp3 .avi .dat .divx .flv .mkv .m4v .mp4 .mov .mpg .mpeg .mts .m2ts .trp .ts .vdr .vob .wmv .rm", 1, 0);
 	else
 		formats = ostrcat(formats, ".ts", 1, 0);
