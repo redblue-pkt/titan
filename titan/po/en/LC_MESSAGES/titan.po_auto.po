@@ -1720,7 +1720,7 @@ msgstr "Remove as Recordings-device"
 
 #: harddisk.h:240 harddisk.h:729
 msgid "use medium for extension"
-msgstr "Use as plugins-device"
+msgstr "Use as extensions-device"
 
 #: harddisk.h:245
 msgid "del medium for extension"
@@ -1776,7 +1776,7 @@ msgstr "Format Device"
 
 #: harddisk.h:449
 msgid "select the media drive from Device List for formating"
-msgstr ""
+msgstr "Select the drive from the list you wish to format"
 
 #: harddisk.h:453 harddisk.h:454
 msgid "Harddisk Fsck"
@@ -1784,11 +1784,11 @@ msgstr "File System Check"
 
 #: harddisk.h:455
 msgid "select the media drive from Device List for fsck"
-msgstr ""
+msgstr "Select the drive from the list you wish to check"
 
 #: harddisk.h:461
 msgid "select the media drive from Device List for configuration"
-msgstr ""
+msgstr "Select the drive from the list you wish to configure"
 
 #: harddisk.h:479
 msgid "HDD "
@@ -1816,7 +1816,7 @@ msgid ""
 "You must first install plugin parted, then you can use this panel."
 msgstr ""
 "Harddisks with a capacity larger than 2 TB are not supported.\n"
-"You must install plugin 'parted' then you can use the Harddisk."
+"You must install the plugin 'parted' in order to use the Harddisk."
 
 #: harddisk.h:641
 msgid ""
@@ -1849,8 +1849,8 @@ msgid ""
 "Information: This hard drive size can take a file\n"
 "system check between 30 minutes and 1.5 hours."
 msgstr ""
-"Information: With the attached device size a file\n"
-"system check can take between 30 Minutes and 1.5 Hours."
+"Information: A File System Check on the device with such a size\n"
+"can take between 30 Minutes and 1.5 Hours."
 
 #: harddisk.h:814
 msgid ""
@@ -1866,7 +1866,7 @@ msgstr "Harddisk Powersave (Sleep)"
 
 #: harddisk.h:879
 msgid "set here the default sleeptime for all your media drives"
-msgstr ""
+msgstr "Set the time for drive sleep"
 
 #: harddisk.h:885 skin_default_skin.xml.h:658
 msgid "Time to sleep"
@@ -1906,11 +1906,11 @@ msgstr ""
 
 #: hbbtv.h:758
 msgid "HBBTV Favoriten"
-msgstr ""
+msgstr "HBBTV Favourites"
 
 #: hbbtv.h:758
 msgid "Choose your HBBTV Favorite from the following list"
-msgstr ""
+msgstr "Choose your HBBTV Favourite from the following list"
 
 #: hello.c:36
 msgid "Hello World !"
@@ -2169,7 +2169,7 @@ msgstr ""
 
 #: hwtest.h:267
 msgid "Color Bar"
-msgstr ""
+msgstr "Colour Bar"
 
 #: hwtest.h:279 tmc.h:702
 msgid "RED"
@@ -2485,7 +2485,7 @@ msgstr ""
 
 #: listedit.h:83
 msgid "Bouquet Name"
-msgstr ""
+msgstr "Favourites Name"
 
 #: lnbconfig.h:137 skin_default_skin.xml.h:463
 msgid "Polarization"
@@ -2577,7 +2577,7 @@ msgstr ""
 "Project-Id-Version: TitanNit 1.50\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-07 10:44+0200\n"
-"PO-Revision-Date: 2014-03-19 17:47+0200\n"
+"PO-Revision-Date: 2014-04-19 17:47+0200\n"
 "Last-Translator: Bulldog <_Bulldog@aaf.info>\n"
 "Language-Team: German <_obiwan_@web.de>\n"
 "Language: en\n"
@@ -2588,7 +2588,7 @@ msgstr ""
 #: mc_audioplayer.h:408 mc_global.h:1079 mc_pictureplayer.h:150
 #: mc_videoplayer.h:428
 msgid "Repeat-On"
-msgstr "Repeat modus On"
+msgstr "Repeat mode On"
 
 #: mc_audioplayer.h:415 mc_audioplayer.h:565 mc_global.h:1081
 #: mc_pictureplayer.h:157 mc_pictureplayer.h:322 mc_videoplayer.h:435
@@ -2743,7 +2743,7 @@ msgstr ""
 
 #: mc_videoplayer.h:904 player.h:99
 msgid "Start at last position ?"
-msgstr "Resume at last position?"
+msgstr "Resume from last position?"
 
 #: mc_videoplayer_settings.h:54
 msgid "1s"
@@ -2984,7 +2984,7 @@ msgid ""
 "For Better Win7 Support install please Tpk Install > Network > Smbclient"
 msgstr ""
 "ATTENTION: For better compatibility with Windows 7\n"
-"please install the Plugin 'SMB-Client'!"
+"please install the Extension 'SMB-Client'!"
 
 #: networkbrowser.h:1005 networkbrowser.h:1011 networkbrowser.h:1021
 msgid "Anonymous login Access Denied !"
@@ -3016,7 +3016,7 @@ msgstr "Show scanned CIFS/NFS-Shares"
 
 #: networkbrowser.h:1207
 msgid "Choose your cifs/nfs Share from the following list"
-msgstr ""
+msgstr "Choose your CIFS/NFS Share from the following list"
 
 #: networkbrowser.h:1340
 msgid "Add Cifs Network Share"
@@ -4039,7 +4039,7 @@ msgstr "--- Postal code"
 #: plugins_lcdpearl1_skin.xml.h:13 plugins_lcdsamsung_skin.xml.h:17
 #: skins_lcdpearl1_skin.xml.h:13 skins_lcdsamsung_skin.xml.h:17
 msgid "Wettervorhersage"
-msgstr "weatherforecast"
+msgstr "weather forecast"
 
 #: plugins_lcdsamsung_skin.xml.h:1 skins_lcdsamsung_skin.xml.h:1
 msgid "Samsung SPF.. Settings"
