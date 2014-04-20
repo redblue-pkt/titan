@@ -499,10 +499,6 @@ int fewait(struct dvbdev* node)
 		//if(ev.status & FE_HAS_LOCK)
 		//	return 0;
         	ioctl(node->fd, FE_READ_STATUS, &status);
-        	printf("status: %d\n", status);
-        	printf("FE_HAS_LOCK: %d\n", FE_HAS_LOCK);
-        	printf("FE_HAS_SYNC: %d\n", FE_HAS_SYNC);
-
 //		if(status & FE_HAS_LOCK)
 		if(FE_HAS_SYNC | FE_HAS_LOCK)
 			return 0;
