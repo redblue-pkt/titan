@@ -63,7 +63,7 @@ struct channelslot* addchannelslot(char *line, int count, struct channelslot* la
 struct channelslot* getchannelslot(int serviceid, uint64_t transponderid);
 
 //fancontrol.h
-void screenpanel_settings_fancontrol();
+void screensettings_fancontrol();
 
 //pip.h
 int pipstop(struct service *node, int flag);

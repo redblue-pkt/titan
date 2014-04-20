@@ -598,7 +598,7 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 	else if(ostrcmp("fancontrol", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
-		screenpanel_settings_fancontrol();
+		screensettings_fancontrol();
 	}
 	else if(ostrcmp("serviceinfo", menuentry->name) == 0)
 	{
