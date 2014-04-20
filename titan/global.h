@@ -6478,6 +6478,13 @@ void setfanspeed(int speed, int aktion)
 {
 	char* speedWert = NULL;
 	char* speedSet = NULL;
+	int base = 0;
+
+	if(checkbox("UFS922") == 1)
+		base = 100;
+	else
+		base = -15;
+		
 
 	if(speed < 0)
 	{
@@ -6486,25 +6493,28 @@ void setfanspeed(int speed, int aktion)
 		else
 			speedWert = getconfig("fanspeedstandby", NULL);
 		if(speedWert == NULL)
-			speedSet = ostrcat(speedSet, "170", 1, 0);
+			speedSet = ostrcat(speedSet, oitoa(base + 70), 1, 1);
 		else
 			speedSet = ostrcat(speedSet, speedWert, 1, 0);
 	}
 	else
 	{
 		if(speed == 0)
-			speedSet = ostrcat(speedSet, "115", 1, 0);
+			speedSet = ostrcat(speedSet, oitoa(base + 15), 1, 1);
 		else if(speed == 25)
-			speedSet = ostrcat(speedSet, "130", 1, 0);
+			speedSet = ostrcat(speedSet, oitoa(base + 30), 1, 1);
 		else if(speed == 50)
-			speedSet = ostrcat(speedSet, "145", 1, 0);
+			speedSet = ostrcat(speedSet, oitoa(base + 45), 1, 1);
 		else if(speed == 75)
-			speedSet = ostrcat(speedSet, "155", 1, 0);
+			speedSet = ostrcat(speedSet, oitoa(base + 55), 1, 1);
 		else
-			speedSet = ostrcat(speedSet, "170", 1, 0);
+			speedSet = ostrcat(speedSet, oitoa(base + 70), 1, 1);
 	}
 
-	writesys("/proc/stb/fan/fan_ctrl", speedSet, 1);
+	if(checkbox("UFS922") == 1)
+		writesys("/proc/stb/fan/fan_ctrl", speedSet, 1);
+	else
+		writesys("/proc/stb/fp/fan_pwm", speedSet, 1);
 
 	if(aktion == 1)
 		addconfig("fanspeed", speedSet);
