@@ -49,7 +49,7 @@ msgstr ""
 #: filemanager.h:100 filemanager.h:206 filemanager.h:279 filemanager.h:289
 #: filemanager.h:319 filemanager.h:329 filenuke.h:37 filenuke.h:84
 #: filenuke.h:96 filenuke.h:108 filenuke.h:157 flashx.h:26 flashx.h:84
-#: flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270 global.h:6595
+#: flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270 global.h:6605
 #: gmediarender.h:115 harddisk.h:350 harddisk.h:355 harddisk.h:382
 #: harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641 harddisk.h:675
 #: harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733 harddisk.h:793
@@ -141,7 +141,7 @@ msgstr "Ok"
 #: filemanager.h:100 filemanager.h:206 filemanager.h:279 filemanager.h:289
 #: filemanager.h:319 filemanager.h:329 filenuke.h:37 filenuke.h:84
 #: filenuke.h:96 filenuke.h:108 filenuke.h:157 flashx.h:26 flashx.h:84
-#: flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270 global.h:6595
+#: flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270 global.h:6605
 #: gmediarender.h:115 harddisk.h:350 harddisk.h:355 harddisk.h:382
 #: harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641 harddisk.h:675
 #: harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733 harddisk.h:793
@@ -549,7 +549,7 @@ msgstr "yes / vzap endless"
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:329
 #: filenuke.h:37 filenuke.h:84 filenuke.h:96 filenuke.h:108 filenuke.h:157
 #: flashx.h:26 flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:6595 gmediarender.h:115 harddisk.h:633 harddisk.h:641
+#: global.h:6605 gmediarender.h:115 harddisk.h:633 harddisk.h:641
 #: harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733
 #: harddisk.h:793 harddisk.h:811 harddisk.h:814 hbbtv.h:362 hello.c:36
 #: httpdfunc.h:1098 hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103
@@ -1564,71 +1564,71 @@ msgstr "Non si puo rimuover/dir !"
 msgid "Can't show this file!"
 msgstr "Can't show this file!"
 
-#: global.h:6595 keyactions.h:290
+#: global.h:6605 keyactions.h:290
 msgid "ERROR cant read res"
 msgstr "ERROR cant read res"
 
-#: global.h:6820 rectimer.h:1066 skin_default_skin.xml.h:396
+#: global.h:6830 rectimer.h:1066 skin_default_skin.xml.h:396
 msgid "Monday"
 msgstr "Lunedì"
 
-#: global.h:6821 rectimer.h:1067 skin_default_skin.xml.h:680
+#: global.h:6831 rectimer.h:1067 skin_default_skin.xml.h:680
 msgid "Tuesday"
 msgstr "Martedì"
 
-#: global.h:6822 rectimer.h:1068 skin_default_skin.xml.h:733
+#: global.h:6832 rectimer.h:1068 skin_default_skin.xml.h:733
 msgid "Wednesday"
 msgstr "Mercoledì"
 
-#: global.h:6823 rectimer.h:1069 skin_default_skin.xml.h:651
+#: global.h:6833 rectimer.h:1069 skin_default_skin.xml.h:651
 msgid "Thursday"
 msgstr "Giovedì"
 
-#: global.h:6824 rectimer.h:1070 skin_default_skin.xml.h:247
+#: global.h:6834 rectimer.h:1070 skin_default_skin.xml.h:247
 msgid "Friday"
 msgstr "Venerdì"
 
-#: global.h:6825 rectimer.h:1071 skin_default_skin.xml.h:542
+#: global.h:6835 rectimer.h:1071 skin_default_skin.xml.h:542
 msgid "Saturday"
 msgstr "Sabato"
 
-#: global.h:6826 rectimer.h:1072 skin_default_skin.xml.h:627
+#: global.h:6836 rectimer.h:1072 skin_default_skin.xml.h:627
 msgid "Sunday"
 msgstr "Domenica"
 
-#: global.h:6830
+#: global.h:6840
 msgid "Mon"
 msgstr ""
 
-#: global.h:6831
+#: global.h:6841
 msgid "Tue"
 msgstr ""
 
-#: global.h:6832
+#: global.h:6842
 msgid "Wed"
 msgstr ""
 
-#: global.h:6833
+#: global.h:6843
 msgid "Thu"
 msgstr ""
 
-#: global.h:6834
+#: global.h:6844
 msgid "Fri"
 msgstr ""
 
-#: global.h:6835
+#: global.h:6845
 msgid "Sat"
 msgstr "SAT"
 
-#: global.h:6836
+#: global.h:6846
 msgid "Sun"
 msgstr ""
 
-#: global.h:7433
+#: global.h:7443
 msgid "Tuner "
 msgstr "Tuner"
 
-#: global.h:7442
+#: global.h:7452
 msgid "Multituner adjustable"
 msgstr ""
 
