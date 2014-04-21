@@ -11108,8 +11108,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid "They need to switch the tuner Hyprid restart the gui !"
-#~ msgstr ""
-#~ "Um die Einstellungen des Hybrid Tuners wirksam zu machen müssen Sie "
-#~ "einen TitanNit Neustart durchführen."
