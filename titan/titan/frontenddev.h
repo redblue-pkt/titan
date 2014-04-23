@@ -492,23 +492,32 @@ int fewait(struct dvbdev* node)
 
 	//wait for tuner ready
 	debug(200, "wait for tuner");
-	while(count <= 200)
+	while(count <= 2000)
 	{
 		count++;
 		//ioctl(node->fd, FE_GET_EVENT, &ev);
 		//if(ev.status & FE_HAS_LOCK)
 		//	return 0;
-        	ioctl(node->fd, FE_READ_STATUS, &status);
-//		if(status & FE_HAS_LOCK)
-		if(FE_HAS_SYNC | FE_HAS_LOCK)
+		ioctl(node->fd, FE_READ_STATUS, &status);
+		if(status != 0)
+			debug(200, "status=%d, fe_lock=%d", status, FE_HAS_LOCK);
+
+		if(errno == ERANGE)
+		{
+			usleep(1000);
+			continue;
+		}
+
+		if(status & FE_HAS_LOCK)
+//		if(FE_HAS_SYNC | FE_HAS_LOCK)
 			return 0;
 		usleep(1000);
 	}
 
 	//if(ev.status & FE_HAS_LOCK)
 	//	return 0;
-//	if(status & FE_HAS_LOCK)
-	if(FE_HAS_SYNC | FE_HAS_LOCK)
+	if(status & FE_HAS_LOCK)
+//	if(FE_HAS_SYNC | FE_HAS_LOCK)
 		return 0;
 	else
 		return 1;
