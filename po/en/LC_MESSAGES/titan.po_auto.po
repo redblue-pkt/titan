@@ -5134,7 +5134,8 @@ msgstr "ERROR: Transponder ID faulty"
 msgid ""
 "Timer conflicts with other timer\n"
 "Would you add the timer?"
-msgstr "Timer collides with a set timer.\n"
+msgstr ""
+"Timer collides with a set timer.\n"
 "Do you still want to set the timer?"
 
 #: rectimer.h:552
@@ -5504,7 +5505,8 @@ msgstr ""
 msgid ""
 "Choose your plugin / menu item from the following list and show it so the "
 "blue button"
-msgstr "Set Blue Button Function:\n"
+msgstr ""
+"Set Blue Button Function:\n"
 "Choose a Function from the following list"
 
 #: settings_mediabutton.h:6
@@ -5539,7 +5541,8 @@ msgstr "Red Key - Setup"
 msgid ""
 "Choose your plugin / menu item from the following list and show it so the "
 "red button"
-msgstr "Set Red Button Function:\n"
+msgstr ""
+"Set Red Button Function:\n"
 "Choose a Function from the following list"
 
 #: skinadjust.h:26
