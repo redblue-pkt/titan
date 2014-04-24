@@ -8154,7 +8154,7 @@ msgid ""
 "No skinconfig found in skin.\n"
 "Can't change to selected skin."
 msgstr ""
-"FEHLER: Datei skinconfig.xml fehlt!\n"
+"FEHLER: Die Datei 'skinconfig' fehlt!\n"
 "Ausgewählter Skin kann nicht geladen werden."
 
 #: sock.h:950
