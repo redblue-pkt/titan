@@ -4314,7 +4314,7 @@ msgid ""
 "If you don't find Windows shares you need to disable 'Password protected "
 "sharing' in the 'Network and Sharing Center'."
 msgstr ""
-"If you don't find Windows shares, you need to disable 'Password protected "
+"If Windows shares are not found, you need to disable 'Password protected "
 "sharing' in the 'Network and Sharing Center'."
 
 #: plugins_networkbrowser_skin.xml.h:13 skin_default_skin.xml.h:339
@@ -4724,7 +4724,7 @@ msgstr ""
 
 #: plugins_tiwakeup_skin.xml.h:1 skins_tiwakeup_skin.xml.h:1
 msgid "tiWakeup"
-msgstr ""
+msgstr "Wake Up"
 
 #: plugins_tmc_skin.xml.h:2 skins_tmc_skin.xml.h:2
 msgid "Back Pic"
@@ -4732,7 +4732,7 @@ msgstr "Background"
 
 #: plugins_tmc_skin.xml.h:5 skins_tmc_skin.xml.h:5
 msgid "Edit"
-msgstr "Edit"
+msgstr ""
 
 #: plugins_tmc_skin.xml.h:6 skins_tmc_skin.xml.h:6
 msgid "Full Pic"
@@ -4815,7 +4815,7 @@ msgstr ""
 "Start the movie in the internal Player. Set a marker with the -0- Key during "
 "the playback.\n"
 "For an overview of all markers press -5- on you Remote.\n"
-"Press -Play- on your Remote Control to start the resulting cut."
+"Press -Play- on your Remote Control to perform the selected cut."
 
 #: plugins_tsSchnitt_skin.xml.h:10 skins_tsSchnitt_skin.xml.h:10
 msgid "ts - cut"
@@ -4832,7 +4832,7 @@ msgstr "New"
 
 #: plugins_xupnpd_skin.xml.h:1 skins_xupnpd_skin.xml.h:1
 msgid "Here you can make your xupnpd autostart settings."
-msgstr ""
+msgstr "Here you can setup the xupnpd autostart settings."
 
 #: plugins_xupnpd_skin.xml.h:4 skins_xupnpd_skin.xml.h:4
 msgid "Xupnpd Server"
@@ -4930,7 +4930,7 @@ msgstr ""
 
 #: readerconfig.h:258
 msgid "first slot"
-msgstr " First slot"
+msgstr "First slot"
 
 #: readerconfig.h:259
 msgid "second slot"
@@ -5134,7 +5134,8 @@ msgstr "ERROR: Transponder ID faulty"
 msgid ""
 "Timer conflicts with other timer\n"
 "Would you add the timer?"
-msgstr ""
+msgstr "Timer collides with a set timer.\n"
+"Do you still want to set the timer?"
 
 #: rectimer.h:552
 msgid "not started akttime higher than timer endtime"
@@ -5206,7 +5207,7 @@ msgid ""
 "The Box will reboot and the erase will be started!"
 msgstr ""
 "Do you really want to erase all data and backups from Swap?\n"
-"The Receiver will reboot and the deletion will be performed!"
+"The Receiver will reboot and deletion will be performed!"
 
 #: restoredefault.h:47
 msgid ""
@@ -5214,7 +5215,7 @@ msgid ""
 "The Box will reboot and the erase will be started!"
 msgstr ""
 "Do you really want to erase the Swap-Filesystem?\n"
-"Your Settings are retained. Your Receiver will Reboot and perform the erase."
+"Your Settings are retained. Your Receiver will Reboot and erase."
 
 #: restoredefault.h:63 restoredefault.h:67 skin_default_skin.xml.h:518
 msgid "Restore default settings"
@@ -5288,7 +5289,7 @@ msgstr ""
 msgid "Channel scan ended."
 msgstr ""
 "Channel Scan completed.\n"
-"Save Channels using the coloured Keys on your Remote."
+"Save Channels using shown coloured Keys on your Remote."
 
 #: scan.h:1630
 msgid "All new channels added!"
@@ -5352,11 +5353,11 @@ msgstr "Videomode must be set to 576i for SCART output"
 
 #: scconfig.h:42
 msgid "card present"
-msgstr "Card present"
+msgstr "Smartcard found"
 
 #: scconfig.h:44
 msgid "card not present"
-msgstr "Card not present"
+msgstr "Smartcard not found"
 
 #: screensaveradjust.h:29
 msgid "black"
@@ -5416,7 +5417,7 @@ msgstr ""
 
 #: screensaveradjust.h:47
 msgid "Song TitleText"
-msgstr "Song Title Text"
+msgstr "Show Song Title"
 
 #: screensaveradjust.h:48
 msgid "Logo 1"
@@ -5466,7 +5467,7 @@ msgstr "ERROR: Channel not available"
 msgid "Can't open frontend dev or Frontend Type unknown!"
 msgstr ""
 "ERROR: Can't open Frontend Device or\n"
-"Frontend Type is unknown ."
+"Frontend Type is unknown."
 
 #: service.h:945
 msgid "Channellist empty or corrupt (channel not found)!"
@@ -5476,11 +5477,11 @@ msgstr ""
 
 #: settings_autostart.h:206
 msgid "swts"
-msgstr ""
+msgstr "Load stmdvb.ko with swts Option"
 
 #: settings_autostart.h:215
 msgid "Cam Routing"
-msgstr ""
+msgstr "Load stmdvb.ko with CamRouting Otion"
 
 #: settings_autostart.h:594
 msgid "ntpdate"
@@ -5488,7 +5489,7 @@ msgstr ""
 
 #: settings_bluebutton.h:6
 msgid "Blue Key Action - Setup"
-msgstr "Blue Key - Setup"
+msgstr "Blue Key - Function Setup"
 
 #: settings_bluebutton.h:12 settings_pluginbutton.h:16 settings_redbutton.h:16
 msgid "TV / Radio Switch"
@@ -5503,7 +5504,8 @@ msgstr ""
 msgid ""
 "Choose your plugin / menu item from the following list and show it so the "
 "blue button"
-msgstr ""
+msgstr "Set Blue Button Function:\n"
+"Choose a Function from the following list"
 
 #: settings_mediabutton.h:6
 msgid "Media Key Action - Setup"
@@ -5517,7 +5519,7 @@ msgstr ""
 msgid ""
 "Choose your Media plugin item from the following list and show it so the "
 "plugin button"
-msgstr ""
+msgstr "Choose a Function from the following list for the Media Button"
 
 #: settings_pluginbutton.h:6
 msgid "Plugin Key Action - Setup"
@@ -5527,7 +5529,7 @@ msgstr "Plugin Key - Setup"
 msgid ""
 "Choose your plugin / menu item from the following list and show it so the "
 "plugin button"
-msgstr ""
+msgstr "Choose a Function from the following list for the Plugin Button"
 
 #: settings_redbutton.h:6
 msgid "Red Key Action - Setup"
@@ -5537,7 +5539,8 @@ msgstr "Red Key - Setup"
 msgid ""
 "Choose your plugin / menu item from the following list and show it so the "
 "red button"
-msgstr ""
+msgstr "Set Red Button Function:\n"
+"Choose a Function from the following list"
 
 #: skinadjust.h:26
 msgid "border"
@@ -5737,7 +5740,7 @@ msgstr "About titan"
 
 #: skin_default_skin.xml.h:53
 msgid "AC3 default"
-msgstr "Dolby Digital (AC3) per default"
+msgstr "Dolby Digital (AC3) as default"
 
 #: skin_default_skin.xml.h:54
 msgid "AC3 Mode"
@@ -5796,7 +5799,7 @@ msgid ""
 msgstr ""
 "After preforming a manual search, press the -Green button- to save all found "
 "channels. To add a channel manually, select the channel on the right and "
-"press -Red button- to save in individually.\n"
+"press -Red button- to save it individually.\n"
 "Exit does not save anything!"
 
 #: skin_default_skin.xml.h:69
