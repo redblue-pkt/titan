@@ -12,7 +12,7 @@ msgstr "© Copyright"
 
 #: about.h:25 skin_default_skin.xml.h:680
 msgid "Tuner"
-msgstr "Tuner"
+msgstr ""
 
 #: about.h:30 bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2638
 #: httpdfunc.h:2650 hwtest.h:478 moduleconfig.h:345
@@ -612,7 +612,7 @@ msgstr "Mitteilung"
 
 #: ard.h:102 youtube.h:174 zdf.h:112
 msgid "Stream Menu"
-msgstr ""
+msgstr "Stream Menü"
 
 #: ard.h:102 youtube.h:174 zdf.h:112
 msgid "Choose your Streaming Format from the following list"
@@ -8154,8 +8154,8 @@ msgid ""
 "No skinconfig found in skin.\n"
 "Can't change to selected skin."
 msgstr ""
-"FEHLER: Die Datei skinconfig.xml fehlt im ausgewählten Skin!\n"
-"Der ausgewählte Skin kann nicht geladen werden."
+"FEHLER: Datei skinconfig.xml fehlt!\n"
+"Ausgewählter Skin kann nicht geladen werden."
 
 #: sock.h:950
 msgid "Download finished!"
