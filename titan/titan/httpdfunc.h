@@ -3100,6 +3100,18 @@ char* webgetvol(int fmt)
 	return buf;
 }
 
+char* webgetrecsteampath(int fmt)
+{
+	char* buf = NULL;
+	
+	if(getconfig("rec_streampath", NULL) == NULL)
+		buf = ostrcat(buf, "/var/media/hdd/movie", 1, 0);
+	else
+		buf = ostrcat(buf, getconfig("rec_streampath", NULL), 1, 0);
+
+	return buf;
+}
+
 char* webgetmute(int fmt)
 {
 	char* buf = NULL;
