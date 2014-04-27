@@ -16,6 +16,7 @@ void screeninfobar()
 	void (*startplugin)(void);
 	time_t lasttime = 0;
 	int mark = 0;
+	int playstop = 1;
 
 	status.mute = 0;
 	status.infobar = 2;
@@ -28,6 +29,11 @@ void screeninfobar()
 	status.mcaktiv = 0;
 	
 	int playinfobarcount = 0, playinfobarstatus = 0;
+	
+	if((checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1 || checkbox("ATEMIO-NEMESIS") == 1) && ostrcmp(getconfig("remotecontrol", NULL), "1") != 1)
+		playstop = 0;
+	else
+		playstop = 1;
 	
 	while(1)
 	{
@@ -191,7 +197,7 @@ void screeninfobar()
 					clearscreen(playinfobarpic);
 					playpic = 0;
 				}		
-				if(((checkbox("ATEMIO520") != 1 && checkbox("ATEMIO530") != 1 && checkbox("ATEMIO-NEMESIS") != 1) || ostrcmp(getconfig("remotecontrol", NULL), "1") == 1)  && status.timeshifttype == 1)
+				if(playstop == 1 && status.timeshifttype == 1)
 				{
 					if(status.playing == 0 || (status.playspeed == 0 && status.slowspeed == 0 && status.pause == 0))
 					{
