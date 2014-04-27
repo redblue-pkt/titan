@@ -173,6 +173,8 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 		buf = webgetrccodes(fmt);
 	else if(ostrcmp(query, "getmute") == 0)
 		buf = webgetmute(fmt);
+	else if(ostrcmp(query, "getrecsteampath") == 0)
+		buf = webgetrecsteampath(fmt);
 	else if(ostrcmp(query, "getvol") == 0)
 		buf = webgetvol(fmt);
 	else if(ostrcmp(query, "sendrc") == 0)
