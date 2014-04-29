@@ -689,8 +689,12 @@ int main(int argc, char *argv[])
 	}
 #endif
 
-	if(file_exist("/mnt/config/dualboot.enigma2")) return 0;
-	
+	if(file_exist("/mnt/config/dualboot.enigma2"))
+	{
+		printf("error: found /mnt/config/dualboot.enigma2\n");
+		return 0;
+	}
+
 	ret = initfont();
 	if(ret != 0)
 		return 100;
