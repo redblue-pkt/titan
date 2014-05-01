@@ -14,6 +14,7 @@ touch cache.filmon.titanlist
 BEGINTIME=`date +%s`
 DATENAME=`date +"%Y.%m.%d_%H.%M.%S"`
 echo "[filmon.sh] START (buildtype: $buildtype): $DATENAME" > _full/filmon/build.log
+old=0
 
 if [ $old = 1 ];then
 	rm -rf _full/filmontmp
