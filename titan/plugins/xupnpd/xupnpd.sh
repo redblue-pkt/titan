@@ -8,7 +8,6 @@
 ### END INIT INFO
 
 export PATH=$PATH:/var/swap/bin:/mnt/swapextensions/bin:/var/bin
-export XUPNPDROOTDIR=$2
 
 model=`cat /etc/model`
 NAME=xupnpd
@@ -20,11 +19,10 @@ IP=`ifconfig | grep inet | grep Bcast | awk '{print $2}' | cut -d":" -f2`
  
 case $1 in
   start)
-	bouquet2m3u http://$IP:22222/ $2/playlists
+	bouquet2m3u http://$IP:22222/ /mnt/swapextensions/etc/xupnpd/playlists
     start-stop-daemon --verbose --start --exec xupnpd
   ;;
   stop)
-  	killall -9 bouquet2m3u
     start-stop-daemon --verbose --stop --exec xupnpd
   ;;
   restart)
