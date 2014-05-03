@@ -52,6 +52,7 @@ if [ $old = 1 ];then
 	rm -rf _full/filmontmp
 else
 	/opt/gs/filmon/create.sh _full/filmon
+	cp -a _full/filmon/* /var/www/atemio/web/mediathek/filmon
 	DONETIME=`date +%s`
 	TIME=`expr $DONETIME - $BEGINTIME`
 	echo "[filmon.sh] build time: ($TIME s) done" >> _full/filmon/build.log	
