@@ -65,7 +65,7 @@ if [ "$buildtype" = "full" ];then
 			piccount=`expr $piccount + 1`
 			URL="http://atemio.dyndns.tv/mediathek/tvtoast/streams/tvtoast."$filename1".list"
 			PIC="http://atemio.dyndns.tv/mediathek/menu/"$filename1".jpg"
-			LINE="$tagname#$URL#$PIC#tvtast_$piccount.jpg#TvToast#2"
+			LINE="$tagname#$URL#$PIC#tvtast_$piccount.jpg#TvToast#0"
 			echo $LINE >> cache.tvtoast.category.titanlist
 			cat cache.tvtoast."$filename1".titanlist >> _full/tvtoast/streams/tvtoast."$filename1".list
 		fi
