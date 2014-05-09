@@ -81,7 +81,7 @@ void screenmc_pictureplayer()
 
 	tmpview = view;
 	mc_changeview(view, filelist, apskin, flag);
-	clearscreen(loadmediadb);
+//	clearscreen(loadmediadb);
 	getfilelist(apskin, filelistpath, filelist, currentdirectory, filemask, tmpview, selectedfile);
 	addscreenrc(apskin, filelist);
 

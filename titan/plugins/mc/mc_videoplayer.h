@@ -90,7 +90,7 @@ void screenmc_videoplayer()
 	title->hidden = YES;
 	stars->hidden = YES;
 
-	clearscreen(loadmediadb);	
+//	clearscreen(loadmediadb);	
 	getfilelist(apskin, filelistpath, filelist, currentdirectory, filemask, tmpview, selectedfile);
 	addscreenrc(apskin, filelist);
 
