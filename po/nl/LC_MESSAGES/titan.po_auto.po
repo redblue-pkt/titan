@@ -11,7 +11,7 @@ msgid "Copyright"
 msgstr "© Copyright"
 
 #: about.h:25 skin_default_skin.xml.h:680
-msgid "Tuner"
+msgid ""
 msgstr ""
 
 #: about.h:30 bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2638
@@ -2574,7 +2574,7 @@ msgstr ""
 "Project-Id-Version: TitanNit 1.50\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-07 10:44+0200\n"
-"PO-Revision-Date: 2014-02-07 17:47+0200\n"
+"PO-Revision-Date: 2014-05-09 07:47+0200\n"
 "Last-Translator: Jaap Struyk <japie@deserver.nl>\n"
 "Language-Team: German <_obiwan_@web.de>\n"
 "Language: nl\n"
@@ -3582,7 +3582,7 @@ msgstr "Zoek op MyVideo"
 
 #: play.h:651
 msgid "Search on MyVideo (local)"
-msgstr ""
+msgstr "Zoek op Myvideo (lokaal)"
 
 #: play.h:652
 msgid "Search on ARD (local)"
@@ -7182,7 +7182,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:458
 msgid "please wait"
-msgstr "Een ogenblik geduld"
+msgstr "Een ogenblik gedult"
 
 #: skin_default_skin.xml.h:459
 msgid "Plot"
@@ -8236,9 +8236,8 @@ msgstr "Maak back-up"
 
 #: system_backup_restore.h:15
 msgid ""
-"Press -restore- and your saved settings will be restored from your "
-"swapstick / recording hdd! The Box will restart automatically for "
-"restoring!\n"
+"Press -restore- and your saved settings will be restored from your swapstick "
+"/ recording hdd! The Box will restart automatically for restoring!\n"
 "\n"
 "Press -backup- to save your actual settings to swapstick / recording hdd.\n"
 "WARNING: The old backup will be deleted!"
@@ -9101,7 +9100,7 @@ msgstr ""
 
 #: tpk_description.h:7
 msgid "Automatisch Timer setzen"
-msgstr ""
+msgstr "Automatisch Timer plaatsen"
 
 #: tpk_description.h:8
 msgid "Black 3D Picons for tiTan."
@@ -9261,11 +9260,11 @@ msgstr ""
 
 #: tpk_description.h:47
 msgid "cut record files"
-msgstr ""
+msgstr "Geknipte opnames"
 
 #: tpk_description.h:48
 msgid "Default Font "
-msgstr ""
+msgstr "Standaard lettertype"
 
 #: tpk_description.h:49
 msgid "default Settings 19.2 Astra"
@@ -9335,11 +9334,11 @@ msgstr ""
 
 #: tpk_description.h:65
 msgid "extended config Panel"
-msgstr ""
+msgstr "Uitgebreid configuratie paneel"
 
 #: tpk_description.h:66
 msgid "filemanager"
-msgstr ""
+msgstr "Bestandsbeheerder"
 
 #: tpk_description.h:67
 msgid "first titan game"
@@ -9485,11 +9484,11 @@ msgstr ""
 
 #: tpk_description.h:101
 msgid "Network browser extension for better Win7 compatibility"
-msgstr ""
+msgstr "Netwerk browser extensie voor betere Win7 ondersteuning"
 
 #: tpk_description.h:102
 msgid "Networkbrowser scanning an manage cifs/nfs/ftp shares."
-msgstr ""
+msgstr "Netwerk browser - gevonden cifs/nfs koppelingen"
 
 #: tpk_description.h:103
 msgid "Networkfile libsmbclient 3.0.28b"
@@ -9509,7 +9508,7 @@ msgstr ""
 
 #: tpk_description.h:107
 msgid "news Plugin"
-msgstr ""
+msgstr "Nieuws plugin"
 
 #: tpk_description.h:108
 msgid "Nightly Version of oscam 2xSlot intern + 1xUSB"
@@ -9545,7 +9544,7 @@ msgstr ""
 
 #: tpk_description.h:116
 msgid "optimize Plugin"
-msgstr ""
+msgstr "Optimalisatie plugin"
 
 #: tpk_description.h:117 tpk_showname.h:86
 msgid "oscam_Nightly"
@@ -9607,7 +9606,7 @@ msgstr ""
 
 #: tpk_description.h:131
 msgid "scriptexec Plugin"
-msgstr ""
+msgstr "Script plugin"
 
 #: tpk_description.h:132
 msgid "Settings 19.2e Astra 13.0e Hotbird 0.8w Thor 23.5w Astra KabelD"
@@ -9647,11 +9646,11 @@ msgstr ""
 
 #: tpk_description.h:141
 msgid "stock Plugin"
-msgstr ""
+msgstr "Beurs plugin"
 
 #: tpk_description.h:142
 msgid "streaminfo Plugin"
-msgstr ""
+msgstr "Streaminfo plugin"
 
 #: tpk_description.h:143
 msgid "Tastensperre Plugin - entsperren mit rot/rot/gruen"
@@ -9731,7 +9730,7 @@ msgstr ""
 
 #: tpk_description.h:162
 msgid "weather Plugin"
-msgstr ""
+msgstr "Weerinformatie plugin"
 
 #: tpk_description.h:163
 msgid "Webbrowser Plugin"
@@ -9815,79 +9814,79 @@ msgstr "Geen beschrijving gevonden"
 
 #: tpk_section.h:1
 msgid "bootlogos"
-msgstr ""
+msgstr "Bootlogos"
 
 #: tpk_section.h:2
 msgid "browser"
-msgstr ""
+msgstr "Internetbrowser"
 
 #: tpk_section.h:3
 msgid "emus"
-msgstr ""
+msgstr "Softcams"
 
 #: tpk_section.h:4
 msgid "fonts"
-msgstr ""
+msgstr "Lettertype"
 
 #: tpk_section.h:5
 msgid "games"
-msgstr ""
+msgstr "Spelletjes"
 
 #: tpk_section.h:6
 msgid "infos"
-msgstr ""
+msgstr "Infos"
 
 #: tpk_section.h:7
 msgid "infos "
-msgstr ""
+msgstr "Infos"
 
 #: tpk_section.h:8
 msgid "keymaps"
-msgstr ""
+msgstr "Afstandsbedieningsinstelling"
 
 #: tpk_section.h:9
 msgid "lcdpearlskins"
-msgstr ""
+msgstr "Pearl-LCD-Skins"
 
 #: tpk_section.h:10
 msgid "lcdsamsungskins"
-msgstr ""
+msgstr "Samsung-LCD-Skins"
 
 #: tpk_section.h:11
 msgid "network"
-msgstr ""
+msgstr "Netwerk"
 
 #: tpk_section.h:12
 msgid "picons"
-msgstr ""
+msgstr "Zenderlogo's"
 
 #: tpk_section.h:13
 msgid "player"
-msgstr ""
+msgstr "Multimedia speler"
 
 #: tpk_section.h:14
 msgid "player "
-msgstr ""
+msgstr "Multimedia speler"
 
 #: tpk_section.h:16
 msgid "settings"
-msgstr ""
+msgstr "Instellingen"
 
 #: tpk_section.h:17
 msgid "skins"
-msgstr ""
+msgstr "Skins"
 
 #: tpk_section.h:18
 msgid "tools"
-msgstr ""
+msgstr "Tools"
 
 #: tpk_section.h:19
 msgid "tools "
-msgstr ""
+msgstr "Tools"
 
 #: tpk_section.h:20
 msgid "wireless"
-msgstr ""
+msgstr "WLAN"
 
 #: tpk_showname.h:1
 msgid "3 Wins"
@@ -9943,7 +9942,7 @@ msgstr ""
 
 #: tpk_showname.h:21
 msgid "Default Font"
-msgstr ""
+msgstr "Standaard lettertype"
 
 #: tpk_showname.h:22
 msgid "Digiface Regular"
@@ -9955,7 +9954,7 @@ msgstr ""
 
 #: tpk_showname.h:24
 msgid "DTS Downmix"
-msgstr ""
+msgstr "Dolby Digital (AC3) downmix"
 
 #: tpk_showname.h:25
 msgid "DVD Player"
@@ -9979,7 +9978,7 @@ msgstr ""
 
 #: tpk_showname.h:31
 msgid "File Manager"
-msgstr ""
+msgstr "Bestandsbeheerder"
 
 #: tpk_showname.h:32
 msgid "Firelady"
@@ -10051,7 +10050,7 @@ msgstr ""
 
 #: tpk_showname.h:49
 msgid "KeyLock"
-msgstr ""
+msgstr "Toetsenblokkering"
 
 #: tpk_showname.h:50
 msgid "LCD Pearl"
@@ -10123,11 +10122,11 @@ msgstr ""
 
 #: tpk_showname.h:67
 msgid "Mediacenter FolderIcons"
-msgstr ""
+msgstr "Media Center iconen"
 
 #: tpk_showname.h:68
 msgid "Mediacenter"
-msgstr ""
+msgstr "Media Center"
 
 #: tpk_showname.h:69
 msgid "Mgcamd v1.35"
@@ -10191,7 +10190,7 @@ msgstr ""
 
 #: tpk_showname.h:91
 msgid "Permanent Time"
-msgstr ""
+msgstr "Permanente tijd"
 
 #: tpk_showname.h:92
 msgid "Picons Black3D (ASTRA 19.2)"
@@ -10990,3 +10989,4 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Zapback is reeds actief... Stoppen?"
+
