@@ -2654,7 +2654,7 @@ void drawrect(int posx, int posy, int width, int height, long color, int transpa
 
 void fillrect(int posx, int posy, int width, int height, long color, int transparent)
 {
-	if(skinfb != lcdskinfb)
+	if(skinfb != lcdskinfb && skinfb != oledskinfb)
 		blitrect(posx, posy, width, height, color, transparent, 0);
 	else
 		lcd_fillrect(posx, posy, width, height, color, transparent);
@@ -2662,7 +2662,7 @@ void fillrect(int posx, int posy, int width, int height, long color, int transpa
 
 void drawrect(int posx, int posy, int width, int height, long color, int transparent)
 {
-	if(skinfb != lcdskinfb)
+	if(skinfb != lcdskinfb && skinfb != oledskinfb)
 		blitrect(posx, posy, width, height, color, transparent, 1);
 	else
 		lcd_drawrect(posx, posy, width, height, color, transparent);
@@ -3919,6 +3919,23 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 		//memset(lcdskinfb->fb, 0, lcdskinfb->varfbsize);
 		skinfb = lcdskinfb;
 	}
+	if(node->name != NULL && ostrstr(node->name, "OLED_") != NULL)
+	{
+		if(oledskinfb == NULL) {
+			if(node->name != NULL && ostrstr(node->name, "OLED_nemesis") != NULL) {
+				unsigned char *newskinfb = calloc(1, 4 * 256 * 64);
+				if(newskinfb == NULL)
+				{
+					if(flag == 0 || flag == 4)
+						m_lock(&status.drawingmutex, 0);
+					return -2;
+				}
+				oledskinfb = addfb("oledskinfb", 998, 256, 64, 4, -1, newskinfb, 4 * 256 * 64);
+			}
+		}
+		merkskinfb = skinfb;
+		skinfb = oledskinfb;
+	}
 
 	if(screencalc == 0 || flag == 4)
 	{
@@ -3957,6 +3974,8 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 			{	
 				if(node->name != NULL && ostrstr(node->name, "LCD_spf") != NULL) 
 					write_FB_to_JPEG_file(skinfb->fb, skinfb->width, skinfb->height, "/tmp/titanlcd.jpg", 75);
+				else if(node->name != NULL && ostrstr(node->name, "OLED_") != NULL)
+					write2oled(skinfb->fb, skinfb->width, skinfb->height);
 				else			
 					pngforlcd(skinfb->fb, skinfb->width, skinfb->height);
 			}
@@ -3978,6 +3997,8 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 		merkskinfb = NULL;
 		delfb("lcdskinfb");
 		lcdskinfb = NULL;
+		delfb("oledskinfb");
+		oledskinfb = NULL;
 	}
 	//else
 	//{
