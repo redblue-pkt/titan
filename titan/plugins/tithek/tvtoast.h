@@ -123,8 +123,8 @@ printf("tmppath: %s\n",tmppath);
 						free(send), send = NULL;
 						
 //				tmpstr = gethttp(tmphost, tmppath, 80, NULL, NULL, 10000, NULL, 0);
-
-//				referer = ostrcat(tmpurl, NULL, 0, 0);
+				// fix espn
+				referer = ostrcat(tmpurl, NULL, 0, 0);
 
 				logfile = ostrcat(logfile, "/var/usr/local/share/titan/plugins/tithek/tvtoast_tmpstr3b_", 1, 0);
 				logfile = ostrcat(logfile, oitoa(incount), 1, 1);
