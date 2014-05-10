@@ -109,9 +109,9 @@ msgstr ""
 #: system_backup_restore.h:82 system_backup_restore.h:88
 #: system_backup_restore.h:95 system_update.h:320 system_update.h:326
 #: system_update.h:333 timeshift.h:113 timeshift.h:155 timeshift.h:162
-#: timeshiftsettings.h:45 titan.c:275 titan.c:339 titan.c:348 titan.c:967
-#: titan.c:976 titan.c:1101 titan.c:1122 titan.c:1128 titan.c:1139
-#: titan.c:1145 tithek.c:81 tithek_global.h:238 tithek.h:652 tithek.h:1148
+#: timeshiftsettings.h:45 titan.c:276 titan.c:340 titan.c:349 titan.c:968
+#: titan.c:977 titan.c:1102 titan.c:1123 titan.c:1129 titan.c:1140
+#: titan.c:1146 tithek.c:81 tithek_global.h:238 tithek.h:652 tithek.h:1148
 #: tithek.h:1191 tithek.h:1422 tithek.h:1444 tithek.h:1460 tithek.h:3185
 #: tithek.h:3249 tithek.h:3263 tithek.h:3273 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922
@@ -210,9 +210,9 @@ msgstr "OK"
 #: system_backup_restore.h:82 system_backup_restore.h:88
 #: system_backup_restore.h:95 system_update.h:320 system_update.h:326
 #: system_update.h:333 timeshift.h:113 timeshift.h:155 timeshift.h:162
-#: timeshiftsettings.h:45 titan.c:275 titan.c:339 titan.c:348 titan.c:967
-#: titan.c:976 titan.c:1101 titan.c:1122 titan.c:1128 titan.c:1139
-#: titan.c:1145 tithek.c:81 tithek_global.h:238 tithek.h:652 tithek.h:1148
+#: timeshiftsettings.h:45 titan.c:276 titan.c:340 titan.c:349 titan.c:968
+#: titan.c:977 titan.c:1102 titan.c:1123 titan.c:1129 titan.c:1140
+#: titan.c:1146 tithek.c:81 tithek_global.h:238 tithek.h:652 tithek.h:1148
 #: tithek.h:1191 tithek.h:1422 tithek.h:1444 tithek.h:1460 tithek.h:3185
 #: tithek.h:3249 tithek.h:3263 tithek.h:3273 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922
@@ -596,8 +596,8 @@ msgstr ""
 #: system_backup_restore.h:43 system_backup_restore.h:80
 #: system_backup_restore.h:82 system_update.h:320 system_update.h:326
 #: system_update.h:333 timeshift.h:113 timeshift.h:155 timeshift.h:162
-#: timeshiftsettings.h:45 titan.c:275 titan.c:339 titan.c:348 titan.c:1101
-#: titan.c:1122 titan.c:1128 titan.c:1139 titan.c:1145 tithek.c:81
+#: timeshiftsettings.h:45 titan.c:276 titan.c:340 titan.c:349 titan.c:1102
+#: titan.c:1123 titan.c:1129 titan.c:1140 titan.c:1146 tithek.c:81
 #: tithek_global.h:238 tithek.h:652 tithek.h:1148 tithek.h:1191 tithek.h:1422
 #: tithek.h:1444 tithek.h:3185 tithek.h:3249 tithek.h:3263 tithek.h:3273
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
@@ -2327,7 +2327,7 @@ msgstr ""
 msgid "Email  \t\tinfo@atemio.de"
 msgstr ""
 
-#: info.h:27 plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9 titan.c:976
+#: info.h:27 plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9 titan.c:977
 msgid "Info"
 msgstr "Thông tin"
 
@@ -8363,11 +8363,11 @@ msgstr "luôn xóa file"
 msgid "never del file"
 msgstr "không xóa file"
 
-#: titan.c:275
+#: titan.c:276
 msgid "!!! This is a DEMO Version !!!"
 msgstr ""
 
-#: titan.c:339
+#: titan.c:340
 msgid ""
 "Found running record\n"
 "or record is starting in next time.\n"
@@ -8377,7 +8377,7 @@ msgstr ""
 "hoặc đang bắt đầu ghi.\n"
 "Bạn muốn tắt ?"
 
-#: titan.c:348
+#: titan.c:349
 msgid ""
 "Found running download\n"
 "Really shutdown ?"
@@ -8385,59 +8385,59 @@ msgstr ""
 "Bản ghi đang chạy.\n"
 "Bạn muốn tắt?"
 
-#: titan.c:792
+#: titan.c:793
 msgid "Error: open rc device !!"
 msgstr " Lỗi: mở thiết bị rc !"
 
-#: titan.c:798
+#: titan.c:799
 msgid "Error: no frontend device found !!"
 msgstr "Lỗi: không tìm thấy thiết bị vào!"
 
-#: titan.c:804
+#: titan.c:805
 msgid "Error: no demux device found !!"
 msgstr "Lỗi: không tìm thấy các thiết bị tách kênh!"
 
-#: titan.c:810
+#: titan.c:811
 msgid "Error: no video device found !!"
 msgstr "Lỗi: không tìm thấy thiết bị video !!"
 
-#: titan.c:816
+#: titan.c:817
 msgid "Error: no audio device found !!"
 msgstr " Lỗi: không tìm thấy thiết bị audio!!"
 
-#: titan.c:834
+#: titan.c:835
 msgid "Error: skin not found !!"
 msgstr "Lỗi: không tìm thấy nền!"
 
-#: titan.c:918
+#: titan.c:919
 msgid "RemoteControl Old Version"
 msgstr ""
 
-#: titan.c:919
+#: titan.c:920
 msgid "RemoteControl Long Version"
 msgstr ""
 
-#: titan.c:926
+#: titan.c:927
 msgid "Select Your Remote Control"
 msgstr ""
 
-#: titan.c:926
+#: titan.c:927
 msgid "Choose your Remotecontrol Model from the following list"
 msgstr ""
 
-#: titan.c:967
+#: titan.c:968
 msgid "First Wizzard"
 msgstr "Wizzard đầu tiên"
 
-#: titan.c:967
+#: titan.c:968
 msgid "Settings OK ?"
 msgstr " Thiết lập OK ?"
 
-#: titan.c:1101
+#: titan.c:1102
 msgid "Receiver successful unlocked"
 msgstr "Khóa đầu vào"
 
-#: titan.c:1122
+#: titan.c:1123
 msgid ""
 "Free space in /var to little!\n"
 "This can make problems!"
@@ -8445,13 +8445,13 @@ msgstr ""
 "Không đủ khoảng trống\n"
 " Điều này có thể dẫn đến vấn đề !"
 
-#: titan.c:1128
+#: titan.c:1129
 msgid ""
 "/var not writeable!\n"
 "Repair it?"
 msgstr ""
 
-#: titan.c:1139
+#: titan.c:1140
 msgid ""
 "Free space in /mnt to little!\n"
 "This can make problems!"
@@ -8459,17 +8459,17 @@ msgstr ""
 "Không đủ khoảng trống\n"
 " Điều này có thể dẫn đến vấn đề !"
 
-#: titan.c:1145
+#: titan.c:1146
 msgid ""
 "/mnt not writeable!\n"
 "Repair it?"
 msgstr ""
 
-#: titan.c:1194
+#: titan.c:1195
 msgid "Unknown Error."
 msgstr "Không xác định được lỗi."
 
-#: titan.c:1196
+#: titan.c:1197
 msgid "Automatic stop in 10 seconds."
 msgstr "Tự động dừng trong 5 giây !"
 
