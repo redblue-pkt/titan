@@ -964,4 +964,7 @@ void screenmarker(char* file, char* showname, int* playinfobarstatus, int* playi
 off64_t getcurrentpos(struct service* snode);
 void markerautoseek_thread();
 
+//oled.h
+void write2oled(unsigned char* buf, int xres, int yres);
+
 #endif
