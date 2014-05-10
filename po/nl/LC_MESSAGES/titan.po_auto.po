@@ -10,6 +10,10 @@ msgstr "Versie"
 msgid "Copyright"
 msgstr "© Copyright"
 
+#: about.h:25 skin_default_skin.xml.h:680
+msgid "Tuner"
+msgstr ""
+
 #: about.h:30 bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2638
 #: httpdfunc.h:2650 hwtest.h:478 moduleconfig.h:345
 #: skin_default_skin.xml.h:702 skinselector.h:138 stream.h:22
@@ -8232,8 +8236,9 @@ msgstr "Maak back-up"
 
 #: system_backup_restore.h:15
 msgid ""
-"Press -restore- and your saved settings will be restored from your swapstick "
-"/ recording hdd! The Box will restart automatically for restoring!\n"
+"Press -restore- and your saved settings will be restored from your "
+"swapstick / recording hdd! The Box will restart automatically for "
+"restoring!\n"
 "\n"
 "Press -backup- to save your actual settings to swapstick / recording hdd.\n"
 "WARNING: The old backup will be deleted!"
@@ -10985,4 +10990,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Zapback is reeds actief... Stoppen?"
-
