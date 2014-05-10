@@ -1,7 +1,7 @@
 #ifndef OLED_H_
 #define OLED_H_
 
-void write2oled(unsigned char* buf, int xres, int yres)
+void write2oled(unsigned char *buf, int xres, int yres)
 {
 	unsigned char* lfb = NULL;
 	int i = 0;

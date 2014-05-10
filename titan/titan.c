@@ -17,6 +17,7 @@ struct fb* skinfb = NULL;
 struct fb* accelfb = NULL;
 struct fb* fb1 = NULL;
 struct fb* lcdskinfb = NULL;
+struct fb* oledskinfb = NULL;
 struct font *font = NULL;
 struct rc *rc = NULL;
 struct dvbdev *dvbdev = NULL;
