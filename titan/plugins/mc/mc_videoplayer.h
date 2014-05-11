@@ -858,8 +858,8 @@ void screenmc_videoplayer()
 
 				setfbtransparent(0);
 
-				debug(50, "playerstop");
-				playrcstop(playertype, flag);
+//				debug(50, "playerstop");
+//				playrcstop(playertype, flag);
 
 				delownerrc(apskin);
 
