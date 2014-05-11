@@ -114,21 +114,21 @@ char* rtl2now(char* link, char* url, char* name, int flag)
 				printf("random.randint1: %d\n",r);
 				if(r == 0)
 				{
-					sleep 1;
+					sleep(1);
 					srand(time(NULL));
 					r = rand() % 34;
 					printf("random.randint2: %d\n",r);
 				}
 				if(r == 0)
 				{
-					sleep 1;
+					sleep(1);
 					srand(time(NULL));
 					r = rand() % 34;
 					printf("random.randint3: %d\n",r);
 				}
 				if(r == 0)
 				{
-					sleep 1;
+					sleep(1);
 					srand(time(NULL));
 					r = rand() % 34;
 					printf("random.randint4: %d\n",r);
