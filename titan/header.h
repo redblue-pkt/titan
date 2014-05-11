@@ -11,6 +11,7 @@
 //tunerconfig.h
 int screentunerreceptiondvbt(struct dvbdev* tuner);
 int screentunerreceptionhyprid(struct dvbdev* tuner);
+int screentunerreceptiondvbc(struct dvbdev* tuner);
 
 // mipselport.h
 int waitvsync();
