@@ -657,6 +657,8 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 		addmenulist(&mlist, "Search on Rtl2-Now (local)", _("Search on Rtl2-Now (local)"), NULL, 0, 0);
 		addmenulist(&mlist, "Search on SuperRTL-Now (local)", _("Search on SuperRTL-Now (local)"), NULL, 0, 0);
 		addmenulist(&mlist, "Search on VOX-Now (local)", _("Search on VOX-Now (local)"), NULL, 0, 0);
+		addmenulist(&mlist, "Search on RtlNitro-Now (local)", _("Search on RtlNitro-Now (local)"), NULL, 0, 0);
+		addmenulist(&mlist, "Search on NTV-Now (local)", _("Search on NTV-Now (local)"), NULL, 0, 0);
 		addmenulist(&mlist, "Search on InternetTv (local)", _("Search on InternetTv (local)"), NULL, 0, 0);
 		addmenulist(&mlist, "Search on InternetRadio (local)", _("Search on InternetRadio (local)"), NULL, 0, 0);
 	}
@@ -758,6 +760,10 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 			ret = 26;
 		else if(ostrcmp(mbox->name, "Search on FilmOn (local)") == 0)
 			ret = 27;
+		else if(ostrcmp(mbox->name, "Search on RtlNitro-Now (local)") == 0)
+			ret = 28;
+		else if(ostrcmp(mbox->name, "Search on NTV-Now (local)") == 0)
+			ret = 29;
 		else if(ostrcmp(mbox->name, "Downloads") == 0)
 		{
 			if(status.play == 1)

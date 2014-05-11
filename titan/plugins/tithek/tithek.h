@@ -77,8 +77,14 @@ int tithekmlehd = 0;
 //flag 63   - filmon local serach
 //flag 64   - tvtoast
 //flag 65   - tvtoast local serach
-
 //flag 66   - coming soon dummy
+//flag 67   - rtlnitronow
+//flag 68   - rtlnitronow pay
+//flag 69   - rtlnitronow local search
+//flag 70   - ntvnow
+//flag 71   - ntvnow pay
+//flag 72   - ntvnow local search
+
 //flag 1000 - menu pincode
 //flag 9999 - menu hidden codecpack
 
@@ -110,6 +116,8 @@ int tithekmlehd = 0;
 //check 25 	- Search on Mle-HD (local)
 //check 26 	- Search on Netzkino (local)
 //check 27 	- Search on FilmOn (local)
+//check 28 	- Search on RtlNitro-Now (local)
+//check 29 	- Search on NTV-Now (local)
 
 struct tithek
 {
@@ -1283,6 +1291,22 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 	{
 		if(tmpstr != NULL) tmpstr1 = tvtoast(tmpstr);
 	}
+	else if(((struct tithek*)listbox->select->handle)->flag == 67)
+	{
+		if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://www.rtlnitronow.de", "rtlnitronow", 1);
+	}
+	else if(((struct tithek*)listbox->select->handle)->flag == 68)
+	{
+		if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://www.rtlnitronow.de", "rtlnitronow", 1);
+	}
+	else if(((struct tithek*)listbox->select->handle)->flag == 70)
+	{
+		if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://www.n-tvnow.de", "ntvnow", 1);
+	}
+	else if(((struct tithek*)listbox->select->handle)->flag == 71)
+	{
+		if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://www.n-tvnow.de", "ntvnow", 1);
+	}
 	free(tmpstr); tmpstr = NULL;
 
 	if(ostrstr(title, "Internet Radio") != NULL)
@@ -2266,6 +2290,52 @@ waitrcstart:
 						addscreenrc(grid, listbox);
 					}
 				}
+				else if(check == 28)
+				{
+					if(rtlnitronow_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "RtlNitroNow - Search (local)", tmpstr, 0) == 0)
+					{
+						oaktpage = listbox->aktpage;
+						oaktline = listbox->aktline;
+						ogridcol = listbox->gridcol;
+						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
+						char* tmpstr1 = ostrcat("RtlNitroNow - Search (local)", " - ", 0, 0);
+						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
+						screentithekplay(tmpstr, tmpstr2, 0);
+						free(tmpstr); tmpstr = NULL;
+						free(tmpstr2); tmpstr2 = NULL;
+			
+						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
+						if(pagecount == 0 || tithekexit == 1) break;
+
+						listbox->aktpage = oaktpage;
+						listbox->aktline = oaktline;
+						listbox->gridcol = ogridcol;
+						addscreenrc(grid, listbox);
+					}
+				}
+				else if(check == 29)
+				{
+					if(ntvnow_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "NtvNow - Search (local)", tmpstr, 0) == 0)
+					{
+						oaktpage = listbox->aktpage;
+						oaktline = listbox->aktline;
+						ogridcol = listbox->gridcol;
+						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
+						char* tmpstr1 = ostrcat("NtvNow - Search (local)", " - ", 0, 0);
+						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
+						screentithekplay(tmpstr, tmpstr2, 0);
+						free(tmpstr); tmpstr = NULL;
+						free(tmpstr2); tmpstr2 = NULL;
+			
+						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
+						if(pagecount == 0 || tithekexit == 1) break;
+
+						listbox->aktpage = oaktpage;
+						listbox->aktline = oaktline;
+						listbox->gridcol = ogridcol;
+						addscreenrc(grid, listbox);
+					}
+				}
 /*
 why ?
 				else if((((struct tithek*)listbox->select->handle)->flag == 13))
@@ -2301,7 +2371,7 @@ why ?
 			{
 				clearscreen(grid);
 
-				if((((struct tithek*)listbox->select->handle)->flag == 2) || (((struct tithek*)listbox->select->handle)->flag == 4) || (((struct tithek*)listbox->select->handle)->flag == 5) || (((struct tithek*)listbox->select->handle)->flag == 6) || (((struct tithek*)listbox->select->handle)->flag == 7) || (((struct tithek*)listbox->select->handle)->flag == 8) || (((struct tithek*)listbox->select->handle)->flag == 12) || (((struct tithek*)listbox->select->handle)->flag == 14) || (((struct tithek*)listbox->select->handle)->flag == 15) || (((struct tithek*)listbox->select->handle)->flag == 16) || (((struct tithek*)listbox->select->handle)->flag == 17) || (((struct tithek*)listbox->select->handle)->flag == 18) || (((struct tithek*)listbox->select->handle)->flag == 19) || (((struct tithek*)listbox->select->handle)->flag == 20) || (((struct tithek*)listbox->select->handle)->flag == 38) || (((struct tithek*)listbox->select->handle)->flag == 42) || (((struct tithek*)listbox->select->handle)->flag == 45) || (((struct tithek*)listbox->select->handle)->flag == 46) || (((struct tithek*)listbox->select->handle)->flag == 64) || (((struct tithek*)listbox->select->handle)->flag == 50) || (((struct tithek*)listbox->select->handle)->flag == 41) || (((struct tithek*)listbox->select->handle)->flag == 43))
+				if((((struct tithek*)listbox->select->handle)->flag == 2) || (((struct tithek*)listbox->select->handle)->flag == 4) || (((struct tithek*)listbox->select->handle)->flag == 5) || (((struct tithek*)listbox->select->handle)->flag == 6) || (((struct tithek*)listbox->select->handle)->flag == 7) || (((struct tithek*)listbox->select->handle)->flag == 8) || (((struct tithek*)listbox->select->handle)->flag == 12) || (((struct tithek*)listbox->select->handle)->flag == 14) || (((struct tithek*)listbox->select->handle)->flag == 15) || (((struct tithek*)listbox->select->handle)->flag == 16) || (((struct tithek*)listbox->select->handle)->flag == 17) || (((struct tithek*)listbox->select->handle)->flag == 18) || (((struct tithek*)listbox->select->handle)->flag == 19) || (((struct tithek*)listbox->select->handle)->flag == 20) || (((struct tithek*)listbox->select->handle)->flag == 38) || (((struct tithek*)listbox->select->handle)->flag == 42) || (((struct tithek*)listbox->select->handle)->flag == 45) || (((struct tithek*)listbox->select->handle)->flag == 46) || (((struct tithek*)listbox->select->handle)->flag == 64) || (((struct tithek*)listbox->select->handle)->flag == 50) || (((struct tithek*)listbox->select->handle)->flag == 41) || (((struct tithek*)listbox->select->handle)->flag == 43) || (((struct tithek*)listbox->select->handle)->flag == 67) || (((struct tithek*)listbox->select->handle)->flag == 68) || (((struct tithek*)listbox->select->handle)->flag == 70) || (((struct tithek*)listbox->select->handle)->flag == 71))
 				{
 					submenu(listbox, load, title);
 //					drawscreen(grid, 0, 0);
@@ -2815,6 +2885,29 @@ why ?
 				else if(((struct tithek*)listbox->select->handle)->flag == 65)
 				{
 					if(tvtoast_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
+					{
+						oaktpage = listbox->aktpage;
+						oaktline = listbox->aktline;
+						ogridcol = listbox->gridcol;
+						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
+						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);
+						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
+						screentithekplay(tmpstr, tmpstr2, 0);
+						free(tmpstr); tmpstr = NULL;
+						free(tmpstr2); tmpstr2 = NULL;
+			
+						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
+						if(pagecount == 0 || tithekexit == 1) break;
+
+						listbox->aktpage = oaktpage;
+						listbox->aktline = oaktline;
+						listbox->gridcol = ogridcol;
+						addscreenrc(grid, listbox);
+					}
+				}
+				else if(((struct tithek*)listbox->select->handle)->flag == 69)
+				{
+					if(rtlnitronow_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
 					{
 						oaktpage = listbox->aktpage;
 						oaktline = listbox->aktline;

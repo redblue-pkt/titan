@@ -62,6 +62,8 @@ mv -f "$HOME"/parser/*.sh "$HOME"/parser/BUILD
 #rm "$HOME"/parser/BUILD/internettv.sh
 #rm "$HOME"/parser/BUILD/filmon.sh
 #rm "$HOME"/parser/BUILD/tvtoast.sh
+#rm "$HOME"/parser/BUILD/rtlnitronow.sh
+#rm "$HOME"/parser/BUILD/n-tvnow.sh
 
 lasttimestamp=`cat /var/www/atemio/web/mediathek/lasttimestamp`
 lasttimestamp=`expr $lasttimestamp + 84500`
