@@ -38,63 +38,103 @@ char* rtl2now(char* link, char* url, char* name, int flag)
 	}
 	else if(flag == 2)
 	{
-		tmpstr = string_resub("rtmpe://", ".f4v", tmpstr, 0);
-		char* tmpstr9 = NULL;
-		tmpstr9 = ostrcat(tmpstr9, tmpstr, 1, 0);
-		free(tmpstr), tmpstr = NULL;
-		tmpstr = ostrcat("rtmpe://", tmpstr9, 0, 0);
-		tmpstr = ostrcat(tmpstr, ".f4v", 1, 0);		
-		free(tmpstr9), tmpstr9 = NULL;
-
-		debug(99, "tmpstr: %s", tmpstr);
-
-		int count = 0;
-		int i = 0;
-		struct splitstr* ret1 = NULL;
-		ret1 = strsplit(tmpstr, "/", &count);
-		if(ret1 != NULL)
+		if(ostrstr(tmpstr, "rtmpe://") != NULL)
 		{
-			int max = count;
-			for(i = 0; i < max; i++)
-			{
-				if(i < 3)
-				{
-					if(count > i)
-						newlink = ostrcat(newlink, (&ret1[i])->part, 1, 0);
+			tmpstr = string_resub("rtmpe://", ".f4v", tmpstr, 0);
 
-					if(i == 0)
-						newlink = ostrcat(newlink, "//", 1, 0);
-					else
-						newlink = ostrcat(newlink, "/", 1, 0);
-				}
-				else
-				{
-					if(count > i)
-						newpath = ostrcat(newpath, (&ret1[i])->part, 1, 0);
-					if(i != max - 1)
-						newpath = ostrcat(newpath, "/", 1, 0);
-				}
-			}
-			free(ret1), ret1 = NULL;
-
-			debug(99, "newlink: %s", newlink);
-			debug(99, "newpath: %s", newpath);
+			char* tmpstr9 = NULL;
+			tmpstr9 = ostrcat(tmpstr9, tmpstr, 1, 0);
+			free(tmpstr), tmpstr = NULL;
+			tmpstr = ostrcat("rtmpe://", tmpstr9, 0, 0);
+			tmpstr = ostrcat(tmpstr, ".f4v", 1, 0);		
+			free(tmpstr9), tmpstr9 = NULL;
 	
-			streamurl = ostrcat(newlink, " swfVfy=1 playpath=mp4:", 0, 0);
-			streamurl = ostrcat(streamurl, newpath, 1, 0);
-			streamurl = ostrcat(streamurl, " app=", 1, 0);
-			streamurl = ostrcat(streamurl, name, 1, 0);
-			streamurl = ostrcat(streamurl, "/_definst_ pageUrl=", 1, 0);
-			streamurl = ostrcat(streamurl, url, 1, 0);
-			streamurl = ostrcat(streamurl, "/p/ tcUrl=", 1, 0);
-			streamurl = ostrcat(streamurl, newlink, 1, 0);
-			streamurl = ostrcat(streamurl, " swfUrl=", 1, 0);
-			streamurl = ostrcat(streamurl, url, 1, 0);
-			streamurl = ostrcat(streamurl, "/includes/vodplayer.swf", 1, 0);
+			debug(99, "tmpstr: %s", tmpstr);
+	
+			int count = 0;
+			int i = 0;
+			struct splitstr* ret1 = NULL;
+			ret1 = strsplit(tmpstr, "/", &count);
+			if(ret1 != NULL)
+			{
+				int max = count;
+				for(i = 0; i < max; i++)
+				{
+					if(i < 3)
+					{
+						if(count > i)
+							newlink = ostrcat(newlink, (&ret1[i])->part, 1, 0);
+	
+						if(i == 0)
+							newlink = ostrcat(newlink, "//", 1, 0);
+						else
+							newlink = ostrcat(newlink, "/", 1, 0);
+					}
+					else
+					{
+						if(count > i)
+							newpath = ostrcat(newpath, (&ret1[i])->part, 1, 0);
+						if(i != max - 1)
+							newpath = ostrcat(newpath, "/", 1, 0);
+					}
+				}
+				free(ret1), ret1 = NULL;
+	
+				debug(99, "newlink: %s", newlink);
+				debug(99, "newpath: %s", newpath);
+		
+				streamurl = ostrcat(newlink, " swfVfy=1 playpath=mp4:", 0, 0);
+				streamurl = ostrcat(streamurl, newpath, 1, 0);
+				streamurl = ostrcat(streamurl, " app=", 1, 0);
+				streamurl = ostrcat(streamurl, name, 1, 0);
+				streamurl = ostrcat(streamurl, "/_definst_ pageUrl=", 1, 0);
+				streamurl = ostrcat(streamurl, url, 1, 0);
+				streamurl = ostrcat(streamurl, "/p/ tcUrl=", 1, 0);
+				streamurl = ostrcat(streamurl, newlink, 1, 0);
+				streamurl = ostrcat(streamurl, " swfUrl=", 1, 0);
+				streamurl = ostrcat(streamurl, url, 1, 0);
+				streamurl = ostrcat(streamurl, "/includes/vodplayer.swf", 1, 0);
+			}
+			free(tmpstr); tmpstr = NULL;
+			debug(99, "streamurl: %s", streamurl);
 		}
-		free(tmpstr); tmpstr = NULL;
-		debug(99, "streamurl: %s", streamurl);
+		else
+		{	
+			tmpstr = string_resub("<filename", "</filename>", tmpstr, 1);
+			tmpstr = string_resub("<![CDATA[", "]]", tmpstr, 1);
+
+			int count2 = 0;	
+			struct splitstr* ret2 = NULL;
+			ret2 = strsplit(tmpstr, "/", &count2);
+			if(count2 > 6)
+			{
+				ret2[6].part = string_replace_remove_last_chars(".f4m?ts=", "", ret2[6].part, 0);
+				srand(time(NULL));
+				int r = rand() % 34;
+				printf("random.randint: %d\n",r);
+				streamurl = ostrcat("rtmpe://fms-fra", oitoa(r), 0, 0);
+//				streamurl = ostrcat("rtmpe://fms-fra26.rtl.de/", ret2[3].part, 0, 0);
+				streamurl = ostrcat(streamurl, ".rtl.de/", 1, 0);
+				streamurl = ostrcat(streamurl, ret2[3].part, 1, 0);
+				streamurl = ostrcat(streamurl, "/", 1, 0);
+				streamurl = ostrcat(streamurl, " playpath=mp4:", 1, 0);
+				streamurl = ostrcat(streamurl, ret2[5].part, 1, 0);
+				streamurl = ostrcat(streamurl, "/", 1, 0);
+				streamurl = ostrcat(streamurl, ret2[6].part, 1, 0);
+				streamurl = ostrcat(streamurl, " swfVfy=1", 1, 0);
+				streamurl = ostrcat(streamurl, " swfUrl=http://", 1, 0);
+				streamurl = ostrcat(streamurl, ip, 1, 0);
+				streamurl = ostrcat(streamurl, "/includes/vodplayer.swf", 1, 0);
+				streamurl = ostrcat(streamurl, " app=", 1, 0);
+				streamurl = ostrcat(streamurl, ret2[3].part, 1, 0);
+				streamurl = ostrcat(streamurl, "/_definst_", 1, 0);
+				streamurl = ostrcat(streamurl, " pageUrl=", 1, 0);			
+				streamurl = ostrcat(streamurl, link, 1, 0);
+			}
+			free(ret2), ret2 = NULL;
+		}
 	}
+
 
 	free(ip), ip = NULL;
 	free(newlink), newlink = NULL;
