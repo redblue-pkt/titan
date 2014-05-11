@@ -19,7 +19,7 @@ mkdir -p _full/$SUBDOMAIN/streams
 
 BEGINTIME=`date +%s`
 DATENAME=`date +"%Y.%m.%d_%H.%M.%S"`
-echo "[n-tvnow.sh] START (buildtype: $buildtype): $DATENAME" > _full/superrtlnow/build.log
+echo "[n-tvnow.sh] START (buildtype: $buildtype): $DATENAME" > _full/n-tvnow/build.log
 
 piccount=0
 
