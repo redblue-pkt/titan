@@ -111,7 +111,29 @@ char* rtl2now(char* link, char* url, char* name, int flag)
 				ret2[6].part = string_replace_remove_last_chars(".f4m?ts=", "", ret2[6].part, 0);
 				srand(time(NULL));
 				int r = rand() % 34;
-				printf("random.randint: %d\n",r);
+				printf("random.randint1: %d\n",r);
+				if(r == 0)
+				{
+					sleep 1;
+					srand(time(NULL));
+					r = rand() % 34;
+					printf("random.randint2: %d\n",r);
+				}
+				if(r == 0)
+				{
+					sleep 1;
+					srand(time(NULL));
+					r = rand() % 34;
+					printf("random.randint3: %d\n",r);
+				}
+				if(r == 0)
+				{
+					sleep 1;
+					srand(time(NULL));
+					r = rand() % 34;
+					printf("random.randint4: %d\n",r);
+				}
+
 				streamurl = ostrcat("rtmpe://fms-fra", oitoa(r), 0, 0);
 //				streamurl = ostrcat("rtmpe://fms-fra26.rtl.de/", ret2[3].part, 0, 0);
 				streamurl = ostrcat(streamurl, ".rtl.de/", 1, 0);
