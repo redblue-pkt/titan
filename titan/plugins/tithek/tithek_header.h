@@ -25,7 +25,7 @@ void titheklog(int debuglevel, char* name1, char* name2, char* name3, char* name
 		name4 = stringreplacecharonce(name4, '?', '\0');
 		name4 = stringreplacecharonce(name4, '"', '\0');
 		name4 = stringreplacecharonce(name4, '+', '\0');
-		name4 = stringreplacecharonce(name4, "'", '\0');
+		name4 = stringreplacecharonce(name4, '\'', '\0');
 		tmpstr = ostrcat(tmpstr, name4, 1, 0);
 	}
 	
