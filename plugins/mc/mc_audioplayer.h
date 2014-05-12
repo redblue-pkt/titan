@@ -595,6 +595,9 @@ void screenmc_audioplayer()
 				debug(50, "playerstart: %s", filename);
 				eof = 0;
 
+				// playback workaround
+				servicestop(status.aktservice, 1, 1);
+
 				playerret = playerstart(filename);
 				playwritevfd(filename, NULL);
 
@@ -695,6 +698,10 @@ void screenmc_audioplayer()
 				drawscreen(infobar, 0, 0);
 				debug(50, "playerstart: %s", filename);
 				eof = 0;
+				
+				// playback workaround
+				servicestop(status.aktservice, 1, 1);
+				
 				playerret = playerstart(filename);
 				playwritevfd(filename, NULL);
 
