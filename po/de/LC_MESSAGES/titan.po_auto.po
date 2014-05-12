@@ -610,11 +610,11 @@ msgstr "Ja/VZAP unendlich"
 msgid "Message"
 msgstr "Mitteilung"
 
-#: ard.h:102 tvtoast.h:847 youtube.h:174 zdf.h:112
+#: ard.h:102 tvtoast.h:808 youtube.h:174 zdf.h:112
 msgid "Stream Menu"
 msgstr "Stream Menü"
 
-#: ard.h:102 tvtoast.h:847 youtube.h:174 zdf.h:112
+#: ard.h:102 tvtoast.h:808 youtube.h:174 zdf.h:112
 msgid "Choose your Streaming Format from the following list"
 msgstr "Wählen Sie das gewünschte Streaming Format aus der folgenden Liste"
 
@@ -629,7 +629,7 @@ msgstr "Wählen Sie das gewünschte Streaming Format aus der folgenden Liste"
 #: rtl2now.h:437 rtl2now.h:439 rtl2now.h:501 rtl2now.h:503
 #: skin_default_skin.xml.h:558 solarmovie.h:97 solarmovie.h:99
 #: solarmovie.h:210 solarmovie.h:212 tectime.h:13 tectime.h:15
-#: tithek_mainmenu.h:38 tmdb.h:860 tvtoast.h:876 tvtoast.h:878 xvideos.h:56
+#: tithek_mainmenu.h:38 tmdb.h:860 tvtoast.h:837 tvtoast.h:839 xvideos.h:56
 #: xvideos.h:58 youtube.h:223 youtube.h:225 youtube.h:315 youtube.h:317
 #: zdf.h:147 zdf.h:149
 msgid "Search"
