@@ -91,7 +91,7 @@ char* xvidstage(char* link)
 
 	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 	debug(99, "tmpstr: %s", tmpstr);
-	titheklog(debuglevel, "/tmp/xvidstage1_get", NULL, tmpstr);
+	titheklog(debuglevel, "/tmp/xvidstage1_get", NULL, NULL, NULL, tmpstr);
 
 	free(send); send = NULL;
 
@@ -169,7 +169,7 @@ char* xvidstage(char* link)
 	//send and receive answer
 	post = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 	debug(99, "post: %s", post);
-	titheklog(debuglevel, "/tmp/xvidstage2_post", NULL, post);
+	titheklog(debuglevel, "/tmp/xvidstage2_post", NULL, NULL, NULL, post);
 
 // hier wird nun ein captcha bild auth verlangt geht also erstmal nicht mehr
 	if(tmpstr == NULL)
@@ -179,21 +179,21 @@ char* xvidstage(char* link)
 	}
 	
 	tmpstr = string_resub(";return p}('", ");'", post, 0);
-	titheklog(debuglevel, "/tmp/xvidstage3_tmpstr", NULL, tmpstr);
+	titheklog(debuglevel, "/tmp/xvidstage3_tmpstr", NULL, NULL, NULL, tmpstr);
 	
 	post = string_replace_all(tmpstr, "", post, 1);
 	post = string_replace_all(";return p}(');'", "", post, 1);
-	titheklog(debuglevel, "/tmp/xvidstage4_tmpstr", NULL, post);
+	titheklog(debuglevel, "/tmp/xvidstage4_tmpstr", NULL, NULL, NULL, post);
 
 	free(tmpstr),tmpstr = NULL;
 	free(b36code),b36code = NULL;
 	tmpstr = string_resub(";return p}('", ");'", post, 0);
-	titheklog(debuglevel, "/tmp/xvidstage5_tmpstr", NULL, tmpstr);
+	titheklog(debuglevel, "/tmp/xvidstage5_tmpstr", NULL, NULL, NULL, tmpstr);
 
 	b36code = oregex(".*;',[0-9]{2,2},[0-9]{2,2},'(.*)'.split.*", post);
 	
 	b36code = string_replace_all("||", "| |", b36code, 1);
-	titheklog(debuglevel, "/tmp/xvidstage6_tmpstr", NULL, b36code);
+	titheklog(debuglevel, "/tmp/xvidstage6_tmpstr", NULL, NULL, NULL, b36code);
 	
 	struct splitstr* ret1 = NULL;
 	int count = 0;
@@ -272,7 +272,7 @@ char* xvidstage(char* link)
 	free(post), post = NULL;
 	free(charlist), charlist = NULL;
 
-	titheklog(debuglevel, "/tmp/xvidstage7_tmpstr_last", NULL, tmpstr);
+	titheklog(debuglevel, "/tmp/xvidstage7_tmpstr_last", NULL, NULL, NULL, tmpstr);
 
 	streamlink = oregex(".*file.*(http:.*video.flv).*image.*", tmpstr);
 	if(streamlink == NULL)
@@ -302,7 +302,7 @@ char* xvidstage(char* link)
 	if(streamlink == NULL)
 		streamlink = oregex(".*value=.*(http:.*video.avi).*\".*", tmpstr);			
 
-	titheklog(debuglevel, "/tmp/xvidstage8_streamlink", NULL, streamlink);
+	titheklog(debuglevel, "/tmp/xvidstage8_streamlink", NULL, NULL, NULL, streamlink);
 
 	free(tmpstr); tmpstr = NULL;
 

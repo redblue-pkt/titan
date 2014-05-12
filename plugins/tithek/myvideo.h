@@ -43,7 +43,7 @@ char* myvideo(char* input, char* url, char* name, int flag)
 	unlink("/tmp/myvideo_tmpstr_uni");
 	unlink("/tmp/myvideo_tmpstr_error");
 
-	titheklog(debuglevel, "/tmp/myvideo_tmpstr_error", NULL, tmpstr);
+	titheklog(debuglevel, "/tmp/myvideo_tmpstr_error", NULL, NULL, NULL, tmpstr);
 				
 	if(ostrstr(error, "<div class='error sBold' id='error_screen_body'>") == NULL)
 	{
@@ -61,7 +61,7 @@ char* myvideo(char* input, char* url, char* name, int flag)
 
 	debug(99, "link: http://%s/%s", ip, path);
 
-	titheklog(debuglevel, "/tmp/myvideo_tmpstr", NULL, tmpstr);
+	titheklog(debuglevel, "/tmp/myvideo_tmpstr", NULL, NULL, NULL, tmpstr);
 
 /*
 // work start
@@ -117,7 +117,7 @@ char* myvideo(char* input, char* url, char* name, int flag)
 
 			htmldecode(tmpstr_uni, tmpstr_uni);
 
-			titheklog(debuglevel, "/tmp/myvideo_tmpstr_uni", NULL, tmpstr_uni);
+			titheklog(debuglevel, "/tmp/myvideo_tmpstr_uni", NULL, NULL, NULL, tmpstr_uni);
 
 			if(ostrstr(tmpstr_uni, "connectionurl='rtmp"))
 			{

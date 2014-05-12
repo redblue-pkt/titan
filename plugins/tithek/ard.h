@@ -19,7 +19,7 @@ char* ard(char* link)
 	}
 
 	tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
-	titheklog(debuglevel, "/tmp/tithek/ard1_tmpstr", NULL, tmpstr);
+	titheklog(debuglevel, "/tmp/tithek/ard1_tmpstr", NULL, NULL, NULL,tmpstr);
 //	writesys("/var/usr/local/share/titan/plugins/tithek/ard1_tmpstr", tmpstr, 0);
 
 	if(tmpstr != NULL)
@@ -33,7 +33,7 @@ char* ard(char* link)
 		}
 
 		tmpstr2 = string_resub("mediaCollection.setPreviewImage", "playerConfiguration = new PlayerConfiguration();", tmpstr, 0);
-		titheklog(debuglevel, "/tmp/tithek/ard2_tmpstr2", NULL, tmpstr2);
+		titheklog(debuglevel, "/tmp/tithek/ard2_tmpstr2", NULL, NULL, NULL, tmpstr2);
 
 //		writesys("/var/usr/local/share/titan/plugins/tithek/ard1_tmpstr2", tmpstr2, 0);
 
@@ -115,7 +115,7 @@ char* ard(char* link)
 	free(tmpstr); tmpstr = NULL;
 	free(ip), ip = NULL;
 
-	titheklog(debuglevel, "/tmp/tithek/ard3_streamurl", NULL, streamurl);
+	titheklog(debuglevel, "/tmp/tithek/ard3_streamurl", NULL, NULL, NULL, streamurl);
 
 	debug(99, "streamurl: %s", streamurl);	
 	return streamurl;

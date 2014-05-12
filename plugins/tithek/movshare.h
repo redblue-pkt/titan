@@ -72,7 +72,7 @@ char* movshare(char* link)
 
 	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 	debug(99, "tmpstr: %s", tmpstr);
-	titheklog(debuglevel, "/tmp/movshare1_get", NULL, tmpstr);
+	titheklog(debuglevel, "/tmp/movshare1_get", NULL, NULL, NULL, tmpstr);
 	
 	file = string_replace("/embed.php?v=", "", tmppath, 0);
 	if(file == NULL)
@@ -142,7 +142,7 @@ char* movshare(char* link)
 	free(tmpstr), tmpstr = NULL;
 	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 	debug(99, "tmpstr: %s", tmpstr);
-	titheklog(debuglevel, "/tmp/movshare2_get", NULL, tmpstr);
+	titheklog(debuglevel, "/tmp/movshare2_get", NULL, NULL, NULL, tmpstr);
 
 	if(tmpstr == NULL)
 	{

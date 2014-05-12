@@ -68,7 +68,7 @@ char* mlehd(char* link)
 	free(ip), ip = NULL;
 	free(tmppath), tmppath = NULL;
 
-  titheklog(debuglevel, "/tmp/mlehd2_streamurl", NULL, streamurl);
+  titheklog(debuglevel, "/tmp/mlehd2_streamurl", NULL, NULL, NULL, streamurl);
 
 // segfault munmap_chunk(): invalid pointer
 //	free(pos), pos = NULL;

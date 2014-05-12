@@ -1,13 +1,34 @@
 #ifndef TITHEK_HEADER_H
 #define TITHEK_HEADER_H
 
-void titheklog(int debuglevel, char* name1, char* name2, char* content)
+void titheklog(int debuglevel, char* name1, char* name2, char* name3, char* name4, char* content)
 {
 	char* tmpstr = NULL;
 	
 	if(debuglevel != 99) return;
 
-	tmpstr = ostrcat(name1, name2, 0, 0);
+	tmpstr = ostrcat(tmpstr, name1, 1, 0);
+	if(name2 != NULL)
+	{
+		tmpstr = ostrcat(tmpstr, "_", 1, 0);
+		tmpstr = ostrcat(tmpstr, name2, 1, 0);
+	}
+	if(name3 != NULL)
+	{
+		tmpstr = ostrcat(tmpstr, "_", 1, 0);
+		tmpstr = ostrcat(tmpstr, name3, 1, 0);
+	}
+	if(name4 != NULL)
+	{
+		tmpstr = ostrcat(tmpstr, "_", 1, 0);
+		name4 = string_replace_all("/", ".", name4, 0);
+		name4 = stringreplacecharonce(name4, '?', '\0');
+		name4 = stringreplacecharonce(name4, '"', '\0');
+		name4 = stringreplacecharonce(name4, '+', '\0');
+		name4 = stringreplacecharonce(name4, "'", '\0');
+		tmpstr = ostrcat(tmpstr, name4, 1, 0);
+	}
+	
 	writesys(tmpstr, content, 0);
 	free(tmpstr);
 }
