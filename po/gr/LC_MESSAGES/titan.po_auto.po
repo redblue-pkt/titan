@@ -64,8 +64,8 @@ msgstr ""
 #: mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
 #: mc_audioplayer.h:333 mc_audioplayer.h:607 mc_audioplayer.h:714
 #: mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
-#: mc_internetbrowser.h:36 mc_main.h:47 mc_main.h:52 mc_main.h:57 mc_main.h:92
-#: mc_main.h:97 mc_main.h:268 mc_main.h:277 mc_mediathek.h:35
+#: mc_internetbrowser.h:36 mc_main.h:42 mc_main.h:47 mc_main.h:52 mc_main.h:83
+#: mc_main.h:88 mc_main.h:255 mc_main.h:264 mc_mediathek.h:35
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
 #: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:332
 #: mc_videoplayer.h:749 mc_videoplayer.h:784 mc_videoplayer.h:888
@@ -96,8 +96,8 @@ msgstr ""
 #: rectimer.h:1375 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:28 scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1888
-#: scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 scriptexec.h:41 service.h:710
-#: service.h:951 skinadjust.h:146 skins_dlna_skin.xml.h:8 skinselector.h:218
+#: scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 scriptexec.h:41 service.h:712
+#: service.h:957 skinadjust.h:146 skins_dlna_skin.xml.h:8 skinselector.h:218
 #: skins_facebook_skin.xml.h:5 skins_mboxinfo_skin.xml.h:2
 #: skins_mc_skin.xml.h:38 skins_optimize_skin.xml.h:3 skins_rgui_skin.xml.h:3
 #: skins_tiwakeup_skin.xml.h:3 skins_wins3_skin.xml.h:3 sock.h:952
@@ -156,8 +156,8 @@ msgstr "OK"
 #: mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
 #: mc_audioplayer.h:333 mc_audioplayer.h:607 mc_audioplayer.h:714
 #: mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
-#: mc_internetbrowser.h:36 mc_main.h:47 mc_main.h:52 mc_main.h:57 mc_main.h:92
-#: mc_main.h:97 mc_main.h:268 mc_main.h:277 mc_mediathek.h:35
+#: mc_internetbrowser.h:36 mc_main.h:42 mc_main.h:47 mc_main.h:52 mc_main.h:83
+#: mc_main.h:88 mc_main.h:255 mc_main.h:264 mc_mediathek.h:35
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
 #: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:332
 #: mc_videoplayer.h:749 mc_videoplayer.h:784 mc_videoplayer.h:888
@@ -192,8 +192,8 @@ msgstr "OK"
 #: rectimer.h:1375 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:28 scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1888
-#: scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 scriptexec.h:41 service.h:710
-#: service.h:951 skin_default_skin.xml.h:222 skins_autotimer_skin.xml.h:7
+#: scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 scriptexec.h:41 service.h:712
+#: service.h:957 skin_default_skin.xml.h:222 skins_autotimer_skin.xml.h:7
 #: skins_callmonitor1_skin.xml.h:11 skins_catcatch_skin.xml.h:4
 #: skins_dlna_skin.xml.h:2 skinselector.h:218 skins_facebook_skin.xml.h:4
 #: skins_instar_skin.xml.h:6 skins_lcdpearl1_skin.xml.h:7
@@ -562,8 +562,8 @@ msgstr ""
 #: language.h:49 lcdpearl1.c:45 lcdsamsung.c:101 log.h:46 log.h:48
 #: marker.h:215 marker.h:229 mc_audioplayer.h:333 mc_audioplayer.h:607
 #: mc_audioplayer.h:714 mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
-#: mc_internetbrowser.h:36 mc_main.h:47 mc_main.h:52 mc_main.h:57 mc_main.h:92
-#: mc_main.h:97 mc_main.h:268 mc_main.h:277 mc_mediathek.h:35
+#: mc_internetbrowser.h:36 mc_main.h:42 mc_main.h:47 mc_main.h:52 mc_main.h:83
+#: mc_main.h:88 mc_main.h:255 mc_main.h:264 mc_mediathek.h:35
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
 #: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:332
 #: mc_videoplayer.h:749 mc_videoplayer.h:784 mc_videoplayer.h:888
@@ -588,8 +588,8 @@ msgstr ""
 #: restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:28 scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1640
-#: scan.h:1888 scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 service.h:710
-#: service.h:951 skinadjust.h:146 skinselector.h:218 sock.h:952 softcam.h:403
+#: scan.h:1888 scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 service.h:712
+#: service.h:957 skinadjust.h:146 skinselector.h:218 sock.h:952 softcam.h:403
 #: solarmovie.h:35 solarmovie.h:47 solarmovie.h:295 spinner.h:18
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:78 streamcloud.h:91
 #: streamcloud.h:122 streamcloud.h:161 stream.h:33 system_backup_restore.h:40
@@ -2293,7 +2293,7 @@ msgstr ""
 msgid "DYNDNS now stopped"
 msgstr ""
 
-#: infobar.h:496 mc_audioplayer.h:333 mc_main.h:268 mc_pictureplayer.h:124
+#: infobar.h:496 mc_audioplayer.h:333 mc_main.h:255 mc_pictureplayer.h:124
 #: mc_videoplayer.h:332 menu.h:208
 msgid ""
 "Shooting Background done !\n"
@@ -2625,11 +2625,11 @@ msgstr ""
 msgid "Install netsurf Internetbrowser Tpk first !"
 msgstr ""
 
-#: mc_main.h:47 mc_main.h:52 mc_main.h:57 mc_main.h:92 mc_main.h:97
+#: mc_main.h:42 mc_main.h:47 mc_main.h:52 mc_main.h:83 mc_main.h:88
 msgid "comming soon"
 msgstr ""
 
-#: mc_main.h:277 menu.h:153 panel_main.h:29 panel_main.h:135
+#: mc_main.h:264 menu.h:153 panel_main.h:29 panel_main.h:135
 msgid "Menu not implemented !"
 msgstr ""
 
@@ -5345,27 +5345,27 @@ msgstr ""
 msgid "Script execute"
 msgstr ""
 
-#: service.h:710
+#: service.h:712
 msgid ""
 "Timeshift is running !!!\n"
 "Stop it and switch ?"
 msgstr ""
 
-#: service.h:934
+#: service.h:940
 msgid ""
 "Can't find a Tuner.\n"
 "All Tuners in use or no Tuner defined."
 msgstr ""
 
-#: service.h:937
+#: service.h:943
 msgid "Tuning to Channel failed!"
 msgstr ""
 
-#: service.h:940
+#: service.h:946
 msgid "Can't open frontend dev or Frontend Type unknown!"
 msgstr ""
 
-#: service.h:945
+#: service.h:951
 msgid "Channellist empty or corrupt (channel not found)!"
 msgstr ""
 
