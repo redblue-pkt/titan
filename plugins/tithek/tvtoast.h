@@ -157,10 +157,22 @@ char* getrtmp(char* input, char* tmphost, char* tmppath, char **typemsg, char* f
 		}
 	}
 
+	if(streamer == NULL)
+		streamer = string_resub("file: \"", "\"", tmpstr, 0);
+
+	if(streamer == NULL)
+		streamer = string_resub("'file': '", "'", tmpstr, 0);
+
 	cmd = ostrcat("rtmpdump -r ", NULL, 0, 0);
 	cmd = ostrcat(cmd, streamer, 1, 0);
-	cmd = ostrcat(cmd, " -y ", 1, 0);
-	cmd = ostrcat(cmd, fid, 1, 0);
+	if(fid != NULL)
+	{
+		cmd = ostrcat(cmd, "/", 1, 0);
+		cmd = ostrcat(cmd, fid, 1, 0);
+	}
+	else
+		fid = basename(streamer);
+
 	cmd = ostrcat(cmd, " --debug > /tmp/tithek/rtmp.log 2>&1", 1, 0);												
 	system("rm -rf /tmp/tithek/rtmp.log");
 
@@ -188,13 +200,16 @@ char* getrtmp(char* input, char* tmphost, char* tmppath, char **typemsg, char* f
 	streamurl = ostrcat(streamip, NULL, 0, 0);
 	streamurl = ostrcat(streamurl, " playpath=", 1, 0);
 	streamurl = ostrcat(streamurl, fid, 1, 0);
-	streamurl = ostrcat(streamurl, " swfUrl=", 1, 0);
-	streamurl = ostrcat(streamurl, swfUrl, 1, 0);
+	if(swfUrl != NULL)
+	{
+		streamurl = ostrcat(streamurl, " swfUrl=", 1, 0);
+		streamurl = ostrcat(streamurl, swfUrl, 1, 0);
+	}
 	streamurl = ostrcat(streamurl, " pageUrl=http://", 1, 0);
 	streamurl = ostrcat(streamurl, tmphost, 1, 0);
 	streamurl = ostrcat(streamurl, "/ live=true", 1, 0);
 	streamurl = ostrcat(streamurl, " swfVfy=true", 1, 0);
-	streamurl = ostrcat(streamurl, " timeout=15", 1, 0);
+	streamurl = ostrcat(streamurl, " timeout=60", 1, 0);
 
 	printf("streamurl: %s\n",streamurl);
 	return streamurl;
@@ -209,7 +224,6 @@ char* tvtoast(char* link)
 	char* streamer = NULL;
 	char* playpath = NULL;
 	char* swfUrl = NULL;
-	//char* pageUrl = NULL;
 	char* app = NULL;
 	char* url = NULL;
 	char* Cookie1 = NULL;
@@ -220,12 +234,11 @@ char* tvtoast(char* link)
 	char* referer = NULL;
 	char* send = NULL;
 	char* tmpstr3 = NULL;
-char* pageurlid = NULL;
-char* pageurl = NULL;
-char* cmd = NULL;
-char* urlid = NULL;
-char* tokenid = NULL;
-char* check = NULL;
+	char* pageurlid = NULL;
+	char* pageurl = NULL;
+	char* cmd = NULL;
+	char* urlid = NULL;
+	char* tokenid = NULL;
 			
 	ip = string_replace("http://", "", (char*)link, 0);
 
@@ -286,10 +299,6 @@ char* check = NULL;
 				tmppath = string_replace_all(tmphost, "", tmpurl, 0);
 				tmppath = string_replace_all("http://", "", tmppath, 1);
 
-
-
-
-
 				send = ostrcat(NULL, "GET ", 0, 0);
 				send = ostrcat(send, tmppath, 1, 0);
 				send = ostrcat(send, " HTTP/1.1\r\nAccept-Encoding: gzip\r\nHost: ", 1, 0);	
@@ -316,64 +325,11 @@ char* check = NULL;
 //				free(tmphost), tmphost = NULL;
 				free(tmpurl), tmpurl = NULL;
 
-				check = string_resub("file: \"", "\"", tmpstr, 0);
-				if(ostrstr(check, "rtmpe://5.135.128.157:1935") != NULL)
+				if(ostrstr(tmpstr, "rtmp://") != NULL || ostrstr(tmpstr, "rtmpe://") != NULL)
 				{
-printf("fid22222222222: %s\n",fid);
-					printf("####################################################\n");
-					printf("streamid: %s\n",streamid);
-					printf("check: %s\n",check);
-					printf("fid: %s\n",fid);
-					printf("####################################################\n");
-
-//rtmpdump -r rtmpe://strm.ukcast.tv/redirect -y bhousaa0 --debug
-//rtmpdump -r rtmpe://5.135.128.157:1935/ula/abc8815 --debug
-					cmd = ostrcat("rtmpdump -r ", NULL, 0, 0);
-					cmd = ostrcat(cmd, check, 1, 0);
-					cmd = ostrcat(cmd, " --debug > /tmp/tithek/rtmp.log 2>&1", 1, 0);												
-					system("rm -rf /tmp/tithek/rtmp.log");
-
-						free(tmpstr), tmpstr = NULL;
-						printf("cmd: %s\n",cmd);
-						system(cmd);
-						free(cmd),cmd = NULL;
-
-						tmpstr = command("cat /tmp/tithek/rtmp.log");
-
-						streamip = string_resub("redirect, STRING:", ">", tmpstr, 0);
-						strstrip(streamip);
-
-						free(tmpstr), tmpstr = NULL;
-	
-
-//rtmpe://5.135.128.157:1935/ula/abc8815
-
-fid = basename(check);
-						streamurl = ostrcat(streamip, NULL, 0, 0);
-						streamurl = ostrcat(streamurl, " playpath=", 1, 0);
-						streamurl = ostrcat(streamurl, fid, 1, 0);
-						streamurl = ostrcat(streamurl, " swfUrl=http://www.zingo.tv/jwplayer/player.swf", 1, 0);
-						streamurl = ostrcat(streamurl, " pageUrl=http://zingo.tv/", 1, 0);
-						streamurl = ostrcat(streamurl, " live=true", 1, 0);
-						streamurl = ostrcat(streamurl, " swfVfy=true", 1, 0);
-						streamurl = ostrcat(streamurl, " timeout=15", 1, 0);
-						
-						free(urlid), urlid = NULL;
-						free(tokenid), tokenid = NULL;
-						free(pageurlid), pageurlid = NULL;
-						free(url), url = NULL;
-						free(token), token = NULL;
-						free(pageurl), pageurl = NULL;
-
-				}
-				else if(ostrstr(check, "rtmp://") != NULL)
-				{
-printf("fid333333333333333: %s\n",fid);
-					streamurl = ostrcat(check, NULL, 0, 0);
+					streamurl = getrtmp(tmpstr, tmphost, tmppath, &typemsg, fid, incount);
 				}
 
-				free(check), check = NULL;
-				
 				if(www == 1)
 				{
 printf("fid44444444444444: %s\n",fid);
@@ -424,8 +380,12 @@ printf("fid6666666666666: %s\n",fid);
 						{
 							printf("streamer and fid null\n");
 							tmpurl = string_resub("src='", "'", tmpstr, 0);
-							if(tmpurl == NULL)
+							if(tmpurl == NULL || ostrncmp("http://", tmpurl, 7))
 								tmpurl = string_resub("src=\"", "\"", tmpstr, 0);
+							if(tmpurl == NULL || ostrncmp("http://", tmpurl, 7))
+								tmpurl = string_resub("var url = '", "'", tmpstr, 0);
+
+							printf("tmpurl: %s\n", tmpurl);
 
 							free(tmpstr), tmpstr = NULL;						
 							tmphost = string_resub("http://", "/", tmpurl, 0);		
@@ -451,6 +411,7 @@ printf("fid6666666666666: %s\n",fid);
 							free(tmpurl), tmpurl = NULL;
 
 /////////////////////////
+
 							swfUrl = string_resub("<script type=\"text/javascript\" src=\"", "\"", tmpstr, 0);
 							fid = string_resub("'file':               '", "',", tmpstr, 0);
 
