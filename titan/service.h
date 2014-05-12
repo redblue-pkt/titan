@@ -697,6 +697,7 @@ struct service* getservice(int type, int flag)
 //flag 1: always normal stop
 //flag 2: from timeshift/player
 //flag 3: same as 0 but no akttolast
+//flag 4: showiframe
 int servicestop(struct service *node, int clear, int flag)
 {
 	int rcret = 0;
@@ -704,6 +705,7 @@ int servicestop(struct service *node, int clear, int flag)
 	if(node != NULL)
 	{
 		status.tvpic = 0;
+
 		if(status.timeshift == 1 && flag != 2)
 		{
 			if(status.timeshifttype == 0 && status.asktimeshift == 0)
@@ -714,6 +716,7 @@ int servicestop(struct service *node, int clear, int flag)
 		}
 		if(flag != 2 && node->type != NOTHING && node->type != STILLPIC) caservicedel(node, NULL);
 
+
 		truncate("/tmp/ecm.info", 0);
 		unlink("/tmp/pid.info");
 		unlink("/tmp/caids.info");
@@ -723,16 +726,19 @@ int servicestop(struct service *node, int clear, int flag)
 		if(status.epgthread != NULL) status.epgthread->aktion = PAUSE;
 		subtitlestop(0);
 
-		if(node->type == CHANNEL && flag < 2) akttolast();
-		if(flag != 2) node->type = NOTHING;
 
+		if(node->type == CHANNEL && flag < 2) akttolast();
+
+		if(flag != 2) node->type = NOTHING;
+		if(flag == 4) node->type = STILLPIC;
+		
 		audiostop(node->audiodev);
 		videostop(node->videodev, clear);
 		
 		int fastzap = getconfigint("fastzap", NULL);
 
 		if(flag == 3) flag = 0;
-		if(flag == 1 || (flag == 0 && (fastzap == 0 || fastzap == 2)))
+		if(flag == 4 || flag == 1 || (flag == 0 && (fastzap == 0 || fastzap == 2)))
 		{
 			audioclose(node->audiodev, -1);
 			node->audiodev = NULL;
@@ -741,7 +747,7 @@ int servicestop(struct service *node, int clear, int flag)
 			node->dmxaudiodev = NULL;
 		}
 		
-		if(flag == 1 || (flag == 0 && fastzap == 0))
+		if(flag == 4 || flag == 1 || (flag == 0 && fastzap == 0))
 		{
 			videoclose(node->videodev, -1);
 			node->videodev = NULL;
