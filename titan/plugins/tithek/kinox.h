@@ -66,7 +66,7 @@ int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabe
 		tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
 		tmpstr = string_resub("<div id=\"beep\" class=\"beep\"></div>", "</table>", tmpstr, 0);
 
-		titheklog(debuglevel, "/tmp/kinox1_tmpstr", NULL, tmpstr);
+		titheklog(debuglevel, "/tmp/kinox1_tmpstr", NULL, NULL, NULL, tmpstr);
 		
 		int count = 0;
 		int incount = 0;
@@ -255,7 +255,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 	}
 
 	tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
-	titheklog(debuglevel, "/tmp/kinox2_tmpstr", NULL, tmpstr);
+	titheklog(debuglevel, "/tmp/kinox2_tmpstr", NULL, NULL, NULL, tmpstr);
 	
 	if(tmpstr != NULL)
 	{
@@ -330,7 +330,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 		else
 		{
 			tmpstr = string_resub("<ul id=\"HosterList\" class=\"Sortable\">", "</ul>", tmpstr, 0);
-			titheklog(debuglevel, "/tmp/kinox3_tmpstr", NULL, tmpstr);
+			titheklog(debuglevel, "/tmp/kinox3_tmpstr", NULL, NULL, NULL, tmpstr);
 	
 			int type = 14;
 			int count = 0;
@@ -362,12 +362,12 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 
 					extra = string_resub("<b>Vom</b>: ", "</div>", ret1[i].part, 0);
 
-					titheklog(debuglevel, "/tmp/kinox4_pathnew1", hname, pathnew);
+					titheklog(debuglevel, "/tmp/kinox4_pathnew1", hname, NULL, NULL, pathnew);
 					
 					tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
 					free(pathnew), pathnew = NULL;
 
-					titheklog(debuglevel, "/tmp/kinox5_tmpstr1", hname, tmpstr1);
+					titheklog(debuglevel, "/tmp/kinox5_tmpstr1", hname, NULL, NULL, tmpstr1);
 
 					tmpstr1 = string_replace_all("\\", "", tmpstr1, 1);
 					tmpstr1 = string_resub("<a href=\"", "\"", tmpstr1, 0);
@@ -378,12 +378,12 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 					pathnew = ostrcat("/aGET/Mirror/", hlink, 0, 0);
 					pathnew = ostrcat(pathnew, "&Part=2", 1, 0);
 
-					titheklog(debuglevel, "/tmp/kinox6_pathnew2", hname, pathnew);
+					titheklog(debuglevel, "/tmp/kinox6_pathnew2", hname, NULL, NULL, pathnew);
 					
 					tmpstr3 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
 					free(pathnew), pathnew = NULL;
 
-					titheklog(debuglevel, "/tmp/kinox7_tmpstr3", hname, tmpstr3);
+					titheklog(debuglevel, "/tmp/kinox7_tmpstr3", hname, NULL, NULL, tmpstr3);
 
 					tmpstr3 = string_replace_all("\\", "", tmpstr3, 1);
 					tmpstr3 = string_resub("<a href=\"", "\"", tmpstr3, 0);
@@ -394,12 +394,12 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 					pathnew = ostrcat("/aGET/Mirror/", hlink, 0, 0);
 					pathnew = ostrcat(pathnew, "&Part=3", 1, 0);
 
-					titheklog(debuglevel, "/tmp/kinox6_pathnew3", hname, pathnew);
+					titheklog(debuglevel, "/tmp/kinox6_pathnew3", hname, NULL, NULL, pathnew);
 					
 					tmpstr4 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
 					free(pathnew), pathnew = NULL;
 
-					titheklog(debuglevel, "/tmp/kinox7_tmpstr4", hname, tmpstr4);
+					titheklog(debuglevel, "/tmp/kinox7_tmpstr4", hname, NULL, NULL, tmpstr4);
 
 					tmpstr4 = string_replace_all("\\", "", tmpstr4, 1);
 					tmpstr4 = string_resub("<a href=\"", "\"", tmpstr4, 0);
@@ -410,12 +410,12 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 					pathnew = ostrcat("/aGET/Mirror/", hlink, 0, 0);
 					pathnew = ostrcat(pathnew, "&Part=4", 1, 0);
 
-					titheklog(debuglevel, "/tmp/kinox6_pathnew4", hname, pathnew);
+					titheklog(debuglevel, "/tmp/kinox6_pathnew4", hname, NULL, NULL, pathnew);
 					
 					tmpstr5 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
 					free(pathnew), pathnew = NULL;
 
-					titheklog(debuglevel, "/tmp/kinox7_tmpstr5", hname, tmpstr5);
+					titheklog(debuglevel, "/tmp/kinox7_tmpstr5", hname, NULL, NULL, tmpstr5);
 
 					tmpstr5 = string_replace_all("\\", "", tmpstr5, 1);
 					tmpstr5 = string_resub("<a href=\"", "\"", tmpstr5, 0);
@@ -607,7 +607,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 		}
 		writesys(tmpstr, line, 0);
 
-		titheklog(debuglevel, "/tmp/kinox8_line", NULL, line);
+		titheklog(debuglevel, "/tmp/kinox8_line", NULL, NULL, NULL, line);
 					
 		struct tithek* tnode = (struct tithek*)listbox->select->handle;
 		createtithek(tnode, tnode->title,  tmpstr, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);
@@ -774,7 +774,7 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 			
 		writesys(tmpstr, line, 0);
 
-		titheklog(debuglevel, "/tmp/kinox9_line", NULL, line);
+		titheklog(debuglevel, "/tmp/kinox9_line", NULL, NULL, NULL, line);
 
 		struct tithek* tnode = (struct tithek*)listbox->select->handle;
 		createtithek(tnode, tnode->title,  tmpstr, tnode->pic, tnode->localname, tnode->menutitle, tnode->flag);
@@ -786,6 +786,7 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 
 int kinox_search_cast(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr)
 {
+	int debuglevel = getconfigint("debuglevel", NULL);
 	int ret = 1;
 
 	if(listbox == NULL || listbox->select == NULL || listbox->select->handle == NULL)
@@ -817,13 +818,13 @@ int kinox_search_cast(struct skin* grid, struct skin* listbox, struct skin* coun
 		path = ostrcat(path, "&s=nm", 1, 0);
 
 		tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
-		writesys("/var/usr/local/share/titan/plugins/tithek/kinox_cast_tmpstr", tmpstr, 0);
+		titheklog(debuglevel, "/tmp/kinox10_cast_tmpstr1", NULL, NULL, NULL, tmpstr);
 		tmpstr = string_replace_all("<td class=\"primary_photo\"> <a href=\"/name/", "\nfound=\"", tmpstr, 1);
-		writesys("/var/usr/local/share/titan/plugins/tithek/kinox_cast_tmpstr2", tmpstr, 0);
+		titheklog(debuglevel, "/tmp/kinox10_cast_tmpstr2", NULL, NULL, NULL, tmpstr);
 
 		tmpstr1 = string_resub("<table class=\"findList\">", "</div>", tmpstr, 0);
-		writesys("/var/usr/local/share/titan/plugins/tithek/kinox_cast_tmpstr3", tmpstr1, 0);
-				free(tmpstr), tmpstr = NULL;
+		titheklog(debuglevel, "/tmp/kinox10_cast_tmpstr3", NULL, NULL, NULL, tmpstr1);
+		free(tmpstr), tmpstr = NULL;
 
 		int count = 0;
 		int incount = 0;

@@ -72,7 +72,7 @@ char* faststream(char* link)
 	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 	free(send), send = NULL;
 	debug(99, "tmpstr: %s", tmpstr);
-	titheklog(debuglevel, "/tmp/faststream1_get", NULL, tmpstr);
+	titheklog(debuglevel, "/tmp/faststream1_get", NULL, NULL, NULL, tmpstr);
 
 	if(tmpstr == NULL)
 	{
@@ -153,7 +153,7 @@ char* faststream(char* link)
 	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 0);
 	free(send), send = NULL;
 	debug(99, "tmpstr: %s", tmpstr);
-	titheklog(debuglevel, "/tmp/faststream2_post", NULL, tmpstr);
+	titheklog(debuglevel, "/tmp/faststream2_post", NULL, NULL, NULL, tmpstr);
 
 	if(tmpstr == NULL)
 	{
@@ -164,7 +164,7 @@ char* faststream(char* link)
 
 	streamlink = string_resub("file: \"", "\"", tmpstr, 0);		
 
-	titheklog(debuglevel, "/tmp/faststream4_streamlink", NULL, streamlink);
+	titheklog(debuglevel, "/tmp/faststream4_streamlink", NULL, NULL, NULL, streamlink);
 
 	free(tmpstr); tmpstr = NULL;
 

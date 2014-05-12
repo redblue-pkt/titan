@@ -72,7 +72,7 @@ char* flashx(char* link)
 
 	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 	debug(99, "tmpstr: %s", tmpstr);
-	titheklog(debuglevel, "/tmp/flashx_tmpstr_get1", NULL, tmpstr);
+	titheklog(debuglevel, "/tmp/flashx_tmpstr_get1", NULL, NULL, NULL, tmpstr);
  
 	if(tmpstr == NULL || ostrstr(tmpstr, "<center>Video not found, deleted or abused, sorry!<br") != NULL)
 	{
@@ -125,7 +125,7 @@ char* flashx(char* link)
 	debug(99, "#############################################################################################################");
 
 	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
-	titheklog(debuglevel, "/tmp/flashx_tmpstr_get2", NULL, tmpstr);
+	titheklog(debuglevel, "/tmp/flashx_tmpstr_get2", NULL, NULL, NULL, tmpstr);
 	debug(99, "tmpstr: %s", tmpstr);
 
 	if(tmpstr == NULL || ostrstr(tmpstr, "<center>Video not found, deleted or abused, sorry!<br") != NULL)
@@ -183,7 +183,7 @@ char* flashx(char* link)
 
 	tmpstr = gethttpreal(tmphost, "/player/show.php", 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 	debug(99, "tmpstr: %s", tmpstr);
-	titheklog(debuglevel, "/tmp/flashx_tmpstr_get3", NULL, tmpstr);
+	titheklog(debuglevel, "/tmp/flashx_tmpstr_get3", NULL, NULL, NULL, tmpstr);
 
 	if(tmpstr == NULL || ostrstr(tmpstr, "<center>Video not found, deleted or abused, sorry!<br") != NULL)
 	{
@@ -221,7 +221,7 @@ char* flashx(char* link)
 
 	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 	debug(99, "tmpstr: %s", tmpstr);
-	titheklog(debuglevel, "/tmp/flashx_tmpstr_get4", NULL, tmpstr);
+	titheklog(debuglevel, "/tmp/flashx_tmpstr_get4", NULL, NULL, NULL, tmpstr);
 
 	if(tmpstr == NULL || ostrstr(tmpstr, "<center>Video not found, deleted or abused, sorry!<br") != NULL)
 	{
@@ -258,7 +258,7 @@ char* flashx(char* link)
 
 	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 	debug(99, "tmpstr: %s", tmpstr);
-	titheklog(debuglevel, "/tmp/flashx_tmpstr_get5", NULL, tmpstr);
+	titheklog(debuglevel, "/tmp/flashx_tmpstr_get5", NULL, NULL, NULL, tmpstr);
 
 	if(tmpstr == NULL || ostrstr(tmpstr, "<center>Video not found, deleted or abused, sorry!<br") != NULL)
 	{
@@ -272,7 +272,7 @@ char* flashx(char* link)
 	}
 
 	streamlink = string_resub("<file>", "</file>", tmpstr, 0);
-	titheklog(debuglevel, "flashx_streamlink", NULL, tmpstr);
+	titheklog(debuglevel, "flashx_streamlink", NULL, NULL, NULL, tmpstr);
 
 end:
 	free(error); error = NULL;

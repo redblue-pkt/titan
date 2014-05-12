@@ -80,7 +80,7 @@ char* nowvideo(char* link)
 
 	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 	debug(99, "tmpstr: %s", tmpstr);
-	titheklog(debuglevel, "/tmp/nowvideo1_get", NULL, tmpstr);
+	titheklog(debuglevel, "/tmp/nowvideo1_get", NULL, NULL, NULL, tmpstr);
 
 	if(ostrstr(tmpstr, "The file is being transfered to our other servers. This may take few minutes.") != NULL)
 	{
@@ -150,7 +150,7 @@ char* nowvideo(char* link)
 	free(tmpstr), tmpstr = NULL;
 	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 	debug(99, "tmpstr: %s", tmpstr);
-	titheklog(debuglevel, "/tmp/nowvideo2_get", NULL, tmpstr);
+	titheklog(debuglevel, "/tmp/nowvideo2_get", NULL, NULL, NULL, tmpstr);
 
 	streamlink = string_resub("url=", "&", tmpstr, 0);
 end:

@@ -72,7 +72,7 @@ char* putlocker(char* link)
 	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 	free(send); send = NULL;
 	debug(99, "tmpstr: %s", tmpstr);
-	titheklog(debuglevel, "/tmp/putlocker1_tmpstr_get", NULL, tmpstr);
+	titheklog(debuglevel, "/tmp/putlocker1_tmpstr_get", NULL, NULL, NULL, tmpstr);
 	
 	if(tmpstr == NULL)
 	{
@@ -129,7 +129,7 @@ char* putlocker(char* link)
 	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 	free(send); send = NULL;
 	debug(99, "tmpstr: %s", tmpstr);
-	titheklog(debuglevel, "/tmp/putlocker2_tmpstr_post", NULL, tmpstr);
+	titheklog(debuglevel, "/tmp/putlocker2_tmpstr_post", NULL, NULL, NULL, tmpstr);
 
 	if(tmpstr == NULL)
 	{
@@ -212,7 +212,7 @@ char* putlocker(char* link)
 */
 	free(send); send = NULL;
 	debug(99, "tmpstr: %s", tmpstr);
-	titheklog(debuglevel, "/tmp/putlocker3_tmpstr_get", NULL, tmpstr);
+	titheklog(debuglevel, "/tmp/putlocker3_tmpstr_get", NULL, NULL, NULL, tmpstr);
 
 	if(tmpstr == NULL)
 	{
@@ -222,7 +222,7 @@ char* putlocker(char* link)
 
 	//get streamlink1
 	streamlink1 = getxmlentry(tmpstr, "url=");
-	titheklog(debuglevel, "/tmp/putlocker4_streamlink", NULL, streamlink1);
+	titheklog(debuglevel, "/tmp/putlocker4_streamlink", NULL, NULL, NULL, streamlink1);
 
 	free(tmpstr); tmpstr = NULL;
 

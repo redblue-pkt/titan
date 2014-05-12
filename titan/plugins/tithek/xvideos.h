@@ -24,7 +24,7 @@ char* xvideos(char* link)
 	htmldecode(tmpstr, tmpstr);
 	writesys("/var/usr/local/share/titan/plugins/tithek/xvideos2_tmpstr", tmpstr, 0);
 
-	titheklog(debuglevel, "/tmp/xvideos1_tmpstr", NULL, tmpstr);
+	titheklog(debuglevel, "/tmp/xvideos1_tmpstr", NULL, NULL, NULL, tmpstr);
 
 	if(tmpstr != NULL)
 	{
@@ -34,7 +34,7 @@ char* xvideos(char* link)
 	free(tmpstr); tmpstr = NULL;
 	free(ip), ip = NULL;
 
-	titheklog(debuglevel, "/tmp/xvideos2_streamurl", NULL, streamurl);
+	titheklog(debuglevel, "/tmp/xvideos2_streamurl", NULL, NULL, NULL, streamurl);
 
 // segfault munmap_chunk(): invalid pointer
 //	free(pos), pos = NULL;

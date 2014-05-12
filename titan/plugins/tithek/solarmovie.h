@@ -123,7 +123,7 @@ int solarmovie_search(struct skin* grid, struct skin* listbox, struct skin* coun
 			path = ostrcat("tv/search/", search, 0, 0);
 
 		tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
-		titheklog(debuglevel, "/tmp/solarmovie_tmpstr", NULL, tmpstr);
+		titheklog(debuglevel, "/tmp/solarmovie_tmpstr", NULL, NULL, NULL, tmpstr);
 
 		while(ostrstr(tmpstr, "<div class=\"typicalGrey coverGroup\">") != NULL)
 		{
@@ -317,7 +317,7 @@ writesys("/tmp/tithek/get_zcat", tmpstr, 0);
 
 
 
-	titheklog(debuglevel, "/tmp/solarmovie2_tmpstr_zcat", NULL, tmpstr);
+	titheklog(debuglevel, "/tmp/solarmovie2_tmpstr_zcat", NULL, NULL, NULL, tmpstr);
 
 	if(ostrstr(link, "/tv/") != NULL && ostrstr(link, "/season-") == NULL && ostrstr(link, "/episode-") == NULL)	
 		series = 1;
@@ -492,7 +492,7 @@ printf("22222222222222222222222222222222\n");
 			tmpstr = ostrcat("/tmp/tithek/solarmovie.hoster.ser.list", NULL, 0, 0);
 		writesys(tmpstr, line, 0);
 
-		titheklog(debuglevel, "/tmp/solarmovie8_line", NULL, line);
+		titheklog(debuglevel, "/tmp/solarmovie8_line", NULL, NULL, NULL, line);
 		free(line); line = NULL;
 					
 		struct tithek* tnode = (struct tithek*)listbox->select->handle;

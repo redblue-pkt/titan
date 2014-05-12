@@ -77,7 +77,7 @@ char* filenuke(char* link)
 	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 	free(send), send = NULL;
 	debug(99, "tmpstr: %s", tmpstr);
-	titheklog(debuglevel, "/tmp/filenuke1_get", NULL, tmpstr);
+	titheklog(debuglevel, "/tmp/filenuke1_get", NULL, NULL, NULL, tmpstr);
 
 	if(tmpstr == NULL)
 	{
@@ -150,7 +150,7 @@ char* filenuke(char* link)
 	post = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 0);
 	free(send), send = NULL;
 	debug(99, "post: %s", post);
-	titheklog(debuglevel, "/tmp/filenuke2_post", NULL, tmpstr);
+	titheklog(debuglevel, "/tmp/filenuke2_post", NULL, NULL, NULL, tmpstr);
 
 	if(post == NULL)
 	{
@@ -161,24 +161,24 @@ char* filenuke(char* link)
 	free(tmpstr),tmpstr = NULL;
 	tmpstr = string_resub(";return p}('", ");'", post, 0);
 	debug(99, "tmpstr: %s", tmpstr);
-	titheklog(debuglevel, "/tmp/filenuke3_tmpstr1", NULL, tmpstr);
+	titheklog(debuglevel, "/tmp/filenuke3_tmpstr1", NULL, NULL, NULL, tmpstr);
 	
 	post = string_replace_all(tmpstr, "", post, 1);
 	post = string_replace_all(";return p}(');'", "", post, 1);
 	debug(99, "post: %s", post);
-	titheklog(debuglevel, "/tmp/filenuke4_post2", NULL, post);
+	titheklog(debuglevel, "/tmp/filenuke4_post2", NULL, NULL, NULL, post);
 
 	free(tmpstr),tmpstr = NULL;
 	free(b36code),b36code = NULL;
 	tmpstr = string_resub(";return p}('", ");'", post, 0);
 	debug(99, "tmpstr: %s", tmpstr);
-	titheklog(debuglevel, "/tmp/filenuke5_tmpstr2", NULL, tmpstr);
+	titheklog(debuglevel, "/tmp/filenuke5_tmpstr2", NULL, NULL, NULL, tmpstr);
 
 	b36code = oregex(".*;',[0-9]{2,2},[0-9]{2,2},'(.*)'.split.*", post);
 	
 	b36code = string_replace_all("||", "| |", b36code, 1);
 	debug(99, "b36code: %s", b36code);
-	titheklog(debuglevel, "/tmp/filenuke6_b36code2", NULL, b36code);
+	titheklog(debuglevel, "/tmp/filenuke6_b36code2", NULL, NULL, NULL, b36code);
 	
 	struct splitstr* ret1 = NULL;
 	int count = 0;
@@ -257,7 +257,7 @@ char* filenuke(char* link)
 	free(post), post = NULL;
 	free(charlist), charlist = NULL;
 
-	titheklog(debuglevel, "/tmp/filenuke7_tmpstr_last", NULL, tmpstr);
+	titheklog(debuglevel, "/tmp/filenuke7_tmpstr_last", NULL, NULL, NULL, tmpstr);
 
 	streamlink = oregex(".*file.*(http:.*video.flv).*image.*", tmpstr);
 	if(streamlink == NULL)
@@ -287,7 +287,7 @@ char* filenuke(char* link)
 	if(streamlink == NULL)
 		streamlink = oregex(".*value=.*(http:.*video.avi).*\".*", tmpstr);			
 
-	titheklog(debuglevel, "/tmp/filenuke8_streamlink", NULL, streamlink);
+	titheklog(debuglevel, "/tmp/filenuke8_streamlink", NULL, NULL, NULL, streamlink);
 
 	free(tmpstr); tmpstr = NULL;
 

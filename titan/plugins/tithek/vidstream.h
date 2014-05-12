@@ -79,7 +79,7 @@ char* vidstream(char* link)
 	debug(99, "send: %s", send);
 	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 	debug(99, "tmpstr: %s", tmpstr);
-	titheklog(debuglevel, "/tmp/vidstream1_get", NULL, tmpstr);
+	titheklog(debuglevel, "/tmp/vidstream1_get", NULL, NULL, NULL, tmpstr);
 
 	if(tmpstr == NULL)
 	{
@@ -160,7 +160,7 @@ char* vidstream(char* link)
 
 	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 	debug(99, "tmpstr: %s", tmpstr);	
-	titheklog(debuglevel, "/tmp/vidstream2_post", NULL, tmpstr);
+	titheklog(debuglevel, "/tmp/vidstream2_post", NULL, NULL, NULL, tmpstr);
 
 	if(tmpstr == NULL)
 	{
@@ -170,7 +170,7 @@ char* vidstream(char* link)
 
 	streamlink = string_resub("file: \"", "\",", tmpstr, 0);
 
-	titheklog(debuglevel, "/tmp/vidstream3_streamlink", NULL, streamlink);
+	titheklog(debuglevel, "/tmp/vidstream3_streamlink", NULL, NULL, NULL, streamlink);
 
 end:
 
