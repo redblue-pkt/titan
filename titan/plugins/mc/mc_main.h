@@ -126,7 +126,7 @@ void mc_main()
 	debug(50, "setfbtransparent 255");
 	setfbtransparent(255);
 	debug(50, "servicestop: lastservice");
-	ret = servicestop(status.aktservice, 0, 4);
+	ret = servicestop(status.aktservice, 1, 1);
 	if(ret == 1) return;
 	ret = 0;
 
