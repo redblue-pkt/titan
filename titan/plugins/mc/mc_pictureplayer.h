@@ -440,7 +440,7 @@ void screenmc_pictureplayer()
 
 				playinfobarcount = 0, playinfobarstatus = 1;
 				picplayer(picscreen, picture, picname, filename, 1);
-				servicestop(status.aktservice, 0, 4);
+				servicestop(status.aktservice, 1, 1);
 
 				status.play = 1;
 			}

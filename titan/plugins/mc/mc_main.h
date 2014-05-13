@@ -17,6 +17,7 @@ int mc_menucall(struct skin* menuentry)
 		drawscreen(skin, 0, 0);
 		screenmc_videoplayer(NULL);
 		drawscreen(skin, 0, 0);
+//		singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgVideo.mvi", 0);
 		tmpstr = createpluginpath("/mc/skin/bgVideo.mvi", 0);
 		singlepicstart(tmpstr, 0);
 		free(tmpstr); tmpstr = NULL;
@@ -24,7 +25,13 @@ int mc_menucall(struct skin* menuentry)
 	else if(ostrcmp("mc_audioplayer", menuentry->name) == 0)
 	{
 		drawscreen(skin, 0, 0);
+#ifdef MIPSEL
+		servicestop(status.aktservice, 0, 4);	
+#else
+		servicestop(status.aktservice, 1, 1);	
+#endif
 		screenmc_audioplayer(NULL);
+//		singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgMusic.mvi", 0);
 		tmpstr = createpluginpath("/mc/skin/bgMusic.mvi", 0);
 		singlepicstart(tmpstr, 0);
 		free(tmpstr); tmpstr = NULL;
@@ -32,7 +39,13 @@ int mc_menucall(struct skin* menuentry)
 	else if(ostrcmp("mc_pictureplayer", menuentry->name) == 0)
 	{
 		drawscreen(skin, 0, 0);
+#ifdef MIPSEL
+		servicestop(status.aktservice, 0, 4);	
+#else
+		servicestop(status.aktservice, 1, 1);	
+#endif
 		screenmc_pictureplayer(NULL);
+//		singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgPicture.mvi", 0);
 		tmpstr = createpluginpath("/mc/skin/bgPicture.mvi", 0);
 		singlepicstart(tmpstr, 0);
 		free(tmpstr); tmpstr = NULL;
@@ -55,7 +68,9 @@ int mc_menucall(struct skin* menuentry)
 	else if(ostrcmp("mc_dateibrowser", menuentry->name) == 0)
 	{
 		drawscreen(skin, 0, 0);
+		servicestop(status.aktservice, 1, 1);	
 		screenmc_dateibrowser(NULL);
+//		singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgSettings.mvi", 0);
 		tmpstr = createpluginpath("/mc/skin/bgSettings.mvi", 0);
 		singlepicstart(tmpstr, 0);
 		free(tmpstr); tmpstr = NULL;
@@ -63,8 +78,9 @@ int mc_menucall(struct skin* menuentry)
 	else if(ostrcmp("mc_internetbrowser", menuentry->name) == 0)
 	{
 		drawscreen(skin, 0, 0);
-		servicestop(status.aktservice, 0, 4);	
+		servicestop(status.aktservice, 1, 1);	
 		screenmc_internetbrowser(NULL);
+//		singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgBrowser.mvi", 0);
 		tmpstr = createpluginpath("/mc/skin/bgBrowser.mvi", 0);
 		singlepicstart(tmpstr, 0);
 		free(tmpstr); tmpstr = NULL;
@@ -72,8 +88,9 @@ int mc_menucall(struct skin* menuentry)
 	else if(ostrcmp("mc_mediathek", menuentry->name) == 0)
 	{
 		drawscreen(skin, 0, 0);
-		servicestop1(status.aktservice, 0, 4);
+		servicestop(status.aktservice, 1, 1);	
 		screenmc_mediathek(NULL);
+//		singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgVideo.mvi", 0);
 		tmpstr = createpluginpath("/mc/skin/bgVideo.mvi", 0);
 		singlepicstart(tmpstr, 0);
 		free(tmpstr); tmpstr = NULL;
@@ -91,7 +108,9 @@ int mc_menucall(struct skin* menuentry)
 	else if(ostrcmp("mc_wetterinfo", menuentry->name) == 0)
 	{
 		drawscreen(skin, 0, 0);
+		servicestop(status.aktservice, 1, 1);	
 		screenmc_wetterinfo(NULL);
+//		singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgBrowser.mvi", 0);
 		tmpstr = createpluginpath("/mc/skin/bgBrowser.mvi", 0);
 		singlepicstart(tmpstr, 0);
 		free(tmpstr); tmpstr = NULL;
@@ -99,7 +118,9 @@ int mc_menucall(struct skin* menuentry)
 	else if(ostrcmp("mc_settings", menuentry->name) == 0)
 	{
 		drawscreen(skin, 0, 0);
+		servicestop(status.aktservice, 1, 1);	
 		screenmc_settings(NULL);
+//		singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgMusic.mvi", 0);
 		tmpstr = createpluginpath("/mc/skin/bgMusic.mvi", 0);
 		singlepicstart(tmpstr, 0);
 		free(tmpstr); tmpstr = NULL;

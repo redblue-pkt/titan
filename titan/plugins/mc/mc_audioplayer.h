@@ -552,7 +552,7 @@ void screenmc_audioplayer()
 
 			}
 
-			servicestop(status.aktservice, 0, 4);
+			servicestop(status.aktservice, 1, 1);
 			playerstop();
 			drawscreen(blackscreen, 0, 0);
 			drawscreen(loadmediadb, 0, 0);
@@ -594,9 +594,6 @@ void screenmc_audioplayer()
 				drawscreen(infobar, 0, 0);
 				debug(50, "playerstart: %s", filename);
 				eof = 0;
-
-				// playback workaround
-				servicestop(status.aktservice, 0, 4);
 
 				playerret = playerstart(filename);
 				playwritevfd(filename, NULL);
@@ -698,10 +695,6 @@ void screenmc_audioplayer()
 				drawscreen(infobar, 0, 0);
 				debug(50, "playerstart: %s", filename);
 				eof = 0;
-				
-				// playback workaround
-				servicestop(status.aktservice, 0, 4);
-				
 				playerret = playerstart(filename);
 				playwritevfd(filename, NULL);
 
