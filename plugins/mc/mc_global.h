@@ -710,7 +710,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 
 						if(flag == 1  && status.play == 1)
 						{
-							servicestop(status.aktservice, 0, 4);
+							servicestop(status.aktservice, 1, 1);
 							drawscreen(skin, 0, 0);
 							setfbtransparent(255);
 							debug(50, "check");
@@ -737,7 +737,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 											
 							if(flag == 1)
 							{
-								servicestop(status.aktservice, 0, 4);
+								servicestop(status.aktservice, 1, 1);
 								drawscreen(skin, 0, 0);
 								setfbtransparent(255);
 								debug(50, "check");
@@ -955,7 +955,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 
 			if(flag == 1  && status.play == 1)
 			{
-				servicestop(status.aktservice, 0, 4);
+				servicestop(status.aktservice, 1, 1);
 				drawscreen(skin, 0, 0);
 				setfbtransparent(255);
 				debug(50, "check");
@@ -984,7 +984,7 @@ void showplaylist(struct skin* apskin, struct skin* filelistpath, struct skin* f
 
 				if(flag == 1)
 				{
-					servicestop(status.aktservice, 0, 4);
+					servicestop(status.aktservice, 1, 1);
 					drawscreen(skin, 0, 0);
 					setfbtransparent(255);
 					debug(50, "check");
