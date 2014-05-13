@@ -25,11 +25,6 @@ int mc_menucall(struct skin* menuentry)
 	else if(ostrcmp("mc_audioplayer", menuentry->name) == 0)
 	{
 		drawscreen(skin, 0, 0);
-#ifdef MIPSEL
-		servicestop(status.aktservice, 0, 4);	
-#else
-		servicestop(status.aktservice, 1, 1);	
-#endif
 		screenmc_audioplayer(NULL);
 //		singlepicstart("/var/usr/local/share/titan/plugins/mc/skin/bgMusic.mvi", 0);
 		tmpstr = createpluginpath("/mc/skin/bgMusic.mvi", 0);
