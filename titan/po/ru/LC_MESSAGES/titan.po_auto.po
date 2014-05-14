@@ -50,7 +50,7 @@ msgstr ""
 #: filemanager.h:319 filemanager.h:329 filenuke.h:37 filenuke.h:84
 #: filenuke.h:96 filenuke.h:108 filenuke.h:157 flashx.h:26 flashx.h:84
 #: flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270 global.h:6605
-#: global.h:7530 gmediarender.h:115 harddisk.h:350 harddisk.h:355
+#: global.h:7533 gmediarender.h:115 harddisk.h:350 harddisk.h:355
 #: harddisk.h:382 harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641
 #: harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733
 #: harddisk.h:793 harddisk.h:811 harddisk.h:814 harddisk.h:1046 hbbtv.h:362
@@ -142,7 +142,7 @@ msgstr "ОК"
 #: filemanager.h:319 filemanager.h:329 filenuke.h:37 filenuke.h:84
 #: filenuke.h:96 filenuke.h:108 filenuke.h:157 flashx.h:26 flashx.h:84
 #: flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270 global.h:6605
-#: global.h:7530 gmediarender.h:115 harddisk.h:350 harddisk.h:355
+#: global.h:7533 gmediarender.h:115 harddisk.h:350 harddisk.h:355
 #: harddisk.h:382 harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641
 #: harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733
 #: harddisk.h:793 harddisk.h:811 harddisk.h:814 harddisk.h:1046 hbbtv.h:362
@@ -550,7 +550,7 @@ msgstr ""
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:329
 #: filenuke.h:37 filenuke.h:84 filenuke.h:96 filenuke.h:108 filenuke.h:157
 #: flashx.h:26 flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:6605 global.h:7530 gmediarender.h:115 harddisk.h:633
+#: global.h:6605 global.h:7533 gmediarender.h:115 harddisk.h:633
 #: harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731
 #: harddisk.h:733 harddisk.h:793 harddisk.h:811 harddisk.h:814 hbbtv.h:362
 #: hello.c:36 httpdfunc.h:1098 hwtest.h:88 hwtest.h:93 hwtest.h:98
@@ -1642,8 +1642,8 @@ msgstr "Тюнер"
 msgid "Multituner adjustable"
 msgstr ""
 
-#: global.h:7530
-msgid "Transponder/Satelttes Convert done, your system will reboot !"
+#: global.h:7533
+msgid "Transponder/Satellite Convert done, your system will reboot !"
 msgstr ""
 
 #: gmediarender.h:109
@@ -5999,35 +5999,35 @@ msgid "CPU"
 msgstr "CPU"
 
 #: skin_default_skin.xml.h:159
-msgid "Create new Transponder / Satellite List (Cable)"
-msgstr ""
-
-#: skin_default_skin.xml.h:160
-msgid "Create new Transponder / Satellite List (Sat)"
-msgstr ""
-
-#: skin_default_skin.xml.h:161
-msgid "Create new Transponder / Satellite List (Terrestrial)"
-msgstr ""
-
-#: skin_default_skin.xml.h:162
-msgid "Create new Transponder / Sattelite List (Sat/Cable/Terrestrial)"
-msgstr ""
-
-#: skin_default_skin.xml.h:163
 msgid "Create Path"
 msgstr "Путь стриминга"
 
-#: skin_default_skin.xml.h:164
+#: skin_default_skin.xml.h:160
 msgid "Create Record Picture"
 msgstr ""
 
-#: skin_default_skin.xml.h:165
+#: skin_default_skin.xml.h:161
 msgid "create System Backup"
 msgstr ""
 
-#: skin_default_skin.xml.h:166
+#: skin_default_skin.xml.h:162
 msgid "Create Thumb Picture"
+msgstr ""
+
+#: skin_default_skin.xml.h:163
+msgid "Create Transponder (All)"
+msgstr ""
+
+#: skin_default_skin.xml.h:164
+msgid "Create Transponder (Cable)"
+msgstr ""
+
+#: skin_default_skin.xml.h:165
+msgid "Create Transponder (Sat)"
+msgstr ""
+
+#: skin_default_skin.xml.h:166
+msgid "Create Transponder (Terrestrial)"
 msgstr ""
 
 #: skin_default_skin.xml.h:167
