@@ -660,24 +660,10 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		if(check == 1) return 0;
 		screenscanconfig(3);
 	}
-	else if(ostrcmp("createsettings_dvbs", menuentry->name) == 0)
+	else if(ostrcmp("createsettings", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
-		convertsettings(0);
-	}
-	else if(ostrcmp("createsettings_dvbc", menuentry->name) == 0)
-	{
-		if(check == 1) return 0;
-		convertsettings(1);
-	}
-	else if(ostrcmp("createsettings_dvbt", menuentry->name) == 0)
-	{
-		if(check == 1) return 0;
-		convertsettings(2);
-	}
-	else if(ostrcmp("createsettings_all", menuentry->name) == 0)
-	{
-		if(check == 1) return 0;
+		convertsettings();
 	}
 	else if(ostrcmp("autosearch", menuentry->name) == 0)
 	{
