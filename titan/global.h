@@ -7066,7 +7066,7 @@ int converte2settings(int flag)
 
 	buf = readfiletomem(filename, 1);
 
-	writesys("/mnt/logs/convert.log", buf, 1);
+	writesys("/tmp/convert.log", buf, 1);
 	
 	while(ostrstr(buf, start) != NULL)
 	{
@@ -7157,7 +7157,7 @@ int converte2settings(int flag)
 		outfile = ostrcat("/tmp/convert.", oitoa(incount), 0, 1);
 		outfile = ostrcat(outfile, ".log", 1, 0);	
 	//	writesys(outfile, buf, 2);
-		writesys("/mnt/logs/convert.log", buf, 3);
+		writesys("/tmp/convert.log", buf, 3);
 	
 		writesys(transponderfile, line, 2);
 		free(line), line = NULL;
@@ -7534,8 +7534,8 @@ void convertsettings(int flag)
 	//write only config file
 	system("sync");
 	writeallconfig(3);
-	oshutdown(2,2);
-	system("init 6");
+//	oshutdown(2,2);
+//	system("init 6");
 }
 
 #endif
