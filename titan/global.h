@@ -7492,7 +7492,7 @@ char* gethypridtunername(int dev, char* hyprid)
 // flag 0 = sat
 // flag 1 = cable
 // flag 2 = ter
-int convertsettings(int flag)
+void convertsettings(int flag)
 {
 	if(flag == 0)
 	{
@@ -7533,7 +7533,6 @@ int convertsettings(int flag)
 	writeallconfig(3);
 	oshutdown(2,2);
 	system("init 6");
-	return;
 }
 
 #endif
