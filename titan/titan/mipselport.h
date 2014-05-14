@@ -1232,4 +1232,84 @@ void memcpy_area(char* ziehlADDR, char* startADDR, long pxAbs, long hight, long 
 	return;
 }
 
+int setfbosddev(char* dev, int value)
+{
+	char* tmpstr = NULL;
+	int ret = 0;
+
+	tmpstr = malloc(10);
+	if(tmpstr == NULL)
+	{
+		err("no mem");
+		return 1;
+	}
+	
+	sprintf(tmpstr, "%x", value);
+	debug(101, "set %s to %s", dev, tmpstr);
+
+	if(dev != NULL)
+	{
+		ret = writesys(dev, tmpstr, 1);
+		return ret;
+	}
+
+	return 0;
+}
+
+char* getfbosddev(char* dev)
+{
+	char *value = NULL;
+
+	if(dev == NULL)
+	{
+		err("NULL detect");
+		return NULL;
+	}
+
+	value = readsys(dev, 1);
+	if(value == NULL)
+	{
+		err("NULL detect");
+		return NULL;
+	}
+
+	debug(101, "get %s to %s", dev, value);
+		
+	return value;
+}
+
+
+void setfbosd()
+{
+	debug(101, "################## set osd offset ####################");
+	debug(101, "status.leftoffset: %d", status.leftoffset);
+	debug(101, "status.rightoffset: %d", status.rightoffset);
+	debug(101, "status.topoffset: %d", status.topoffset);
+	debug(101, "status.bottomoffset: %d", status.bottomoffset);
+	
+	char* fbleftdev = "/proc/stb/fb/dst_left";
+	char* fbwidthdev = "/proc/stb/fb/dst_width";
+	char* fbtopdev = "/proc/stb/fb/dst_top";
+	char* fbheightdev = "/proc/stb/fb/dst_height";
+	
+	int fbleft = strtol(getfbosddev(fbleftdev) , NULL, 16);
+	int fbwidth = strtol(getfbosddev(fbwidthdev) , NULL, 16);
+	int fbtop = strtol(getfbosddev(fbtopdev) , NULL, 16);
+	int fbheight = strtol(getfbosddev(fbheightdev) , NULL, 16);
+	debug(101, "Setting OSD position: %d %d %d %d", fbleft ,fbwidth ,fbtop ,fbheight);
+	
+	fbleft = status.leftoffset;
+	fbwidth = 720 - status.leftoffset - status.rightoffset;
+	fbtop = status.topoffset;
+	fbheight = 576 - status.topoffset - status.bottomoffset;
+	debug(101, "Setting OSD position changed: %d %d %d %d", fbleft ,fbwidth ,fbtop ,fbheight);
+	debug(10, "Setting OSD position changed: %d %d %d %d", fbleft ,fbwidth ,fbtop ,fbheight);
+	
+	setfbosddev(fbleftdev, fbleft);
+	setfbosddev(fbwidthdev, fbwidth);
+	setfbosddev(fbtopdev, fbtop);
+	setfbosddev(fbheightdev, fbheight);
+	debug(101, "######################################################");
+}
+
 #endif

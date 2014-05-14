@@ -32,6 +32,19 @@ void screenskinadjust()
 	changeinput(osdtransparent, "0\n5\n10\n15\n20\n25\n30\n35\n40\n45\n50\n55\n60\n65\n70");
 	setchoiceboxselection(osdtransparent, getskinconfig("osdtransparent", NULL));
 
+#ifdef MIPSEL
+	changeinput(leftoffset, "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20");
+	setchoiceboxselection(leftoffset, getconfig("fbleftoffset", NULL));
+
+	changeinput(rightoffset, "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20");
+	setchoiceboxselection(rightoffset, getconfig("fbrightoffset", NULL));
+
+	changeinput(topoffset, "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20");
+	setchoiceboxselection(topoffset, getconfig("fbtopoffset", NULL));
+
+	changeinput(bottomoffset, "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20");
+	setchoiceboxselection(bottomoffset, getconfig("fbbottomoffset", NULL));
+#else
 	changeinput(leftoffset, "0\n10\n20\n30\n40\n50\n60\n70\n80\n90\n100");
 	setchoiceboxselection(leftoffset, getconfig("fbleftoffset", NULL));
 
@@ -43,13 +56,13 @@ void screenskinadjust()
 
 	changeinput(bottomoffset, "0\n10\n20\n30\n40\n50\n60\n70\n80\n90\n100");
 	setchoiceboxselection(bottomoffset, getconfig("fbbottomoffset", NULL));
-
+#endif
 	oleftoffset = getconfigint("fbleftoffset", NULL);
 	orightoffset = getconfigint("fbrightoffset", NULL); 
 	otopoffset = getconfigint("fbtopoffset", NULL);
 	obottomoffset = getconfigint("fbbottomoffset", NULL);
 
-	if(checkbox("ATEMIO5200") == 1)
+	if(checkbox("ATEMIO5200") == 3)
 	{
 		leftoffset->hidden = YES;
 		rightoffset->hidden = YES;
@@ -97,6 +110,9 @@ void screenskinadjust()
 
 		drawscreen(skinadjust, 0, 0);
 
+#ifdef MIPSEL
+		setfbosd();
+#endif
 		if(rcret == getrcconfigint("rcexit", NULL))
 		{
 			addconfigint("fbleftoffset", oleftoffset);
