@@ -7533,6 +7533,7 @@ int convertsettings(int flag)
 	writeallconfig(3);
 	oshutdown(2,2);
 	system("init 6");
+	return;
 }
 
 #endif
