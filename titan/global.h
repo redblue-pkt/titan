@@ -1815,12 +1815,6 @@ void setskinnodeslocked(int flag)
 				if(ostrcmp("system_backup", child->name) == 0) child->locked = 1;
 			}
 
-#ifdef SH4
-			if(ostrcmp("createsettings_dvbs", child->name) == 0) child->locked = 1;
-			if(ostrcmp("createsettings_dvbc", child->name) == 0) child->locked = 1;
-			if(ostrcmp("createsettings_dvbt", child->name) == 0) child->locked = 1;
-			if(ostrcmp("createsettings_all", child->name) == 0) child->locked = 1;
-#endif
 			if(ostrcmp("savesettings", child->name) == 0) child->locked = tmpflag;
 			else if(ostrcmp("scartrecorder", child->name) == 0) child->locked = tmpflag;
 			else if(ostrcmp("system_update_usb_online", child->name) == 0) child->locked = tmpflag;
@@ -7029,14 +7023,11 @@ int sethypridtuner(int dev, char* value)
 // flag 0 = sat
 // flag 1 = cable
 // flag 2 = ter
-
-int convertsettings(int flag)
+int converte2settings(int flag)
 {
 	char* buf = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *line = NULL, *name = NULL, *orbitalpos = NULL, *fetype = NULL, *flags = NULL, *outfile = NULL, *start = NULL, *end = NULL, *filename = NULL, *transponderfile = NULL, *satfile = NULL;
 	int incount = 0;
 	
-	system("rm -rf /tmp/convert*");
-
 	if(flag == 0)
 	{
 		system("rm -rf /tmp/transponder.sat");
@@ -7496,6 +7487,56 @@ char* gethypridtunername(int dev, char* hyprid)
 	free(start), start = NULL;
 
 	return value;
+}
+
+// flag 0 = sat
+// flag 1 = cable
+// flag 2 = ter
+int convertsettings(int flag)
+{
+	else if(flag == 0)
+	{
+		if(check == 1) return 0;
+		converte2settings(0);
+		system("cp -a /tmp/satellites.sat /mnt/settings/satellites");
+		system("cp -a /tmp/transponder.sat /mnt/settings/transponder");
+	}
+	else if(flag == 1)
+	{
+		if(check == 1) return 0;
+		converte2settings(1);
+		system("cp -a /tmp/satellites.cable /mnt/settings/satellites");
+		system("cp -a /tmp/transponder.cable /mnt/settings/transponder");
+	}
+	else if(ostrcmp(flag == 2)
+	{
+		if(check == 1) return 0;
+		converte2settings(2);
+		system("cp -a /tmp/satellites.ter /mnt/settings/satellites");
+		system("cp -a /tmp/transponder.ter /mnt/settings/transponder");
+	}
+	else if(flag == 3)
+	{
+		if(check == 1) return 0;
+		converte2settings(0);
+		converte2settings(1);
+		converte2settings(2);
+		system("cp -a /tmp/satellites.sat /mnt/settings/satellites");
+		system("cp -a /tmp/transponder.sat /mnt/settings/transponder");
+
+		system("cat /tmp/satellites.cable >> /mnt/settings/satellites");
+		system("cat /tmp/transponder.cable >> /mnt/settings/transponder");
+
+		system("cat /tmp/satellites.ter >> /mnt/settings/satellites");
+		system("cat /tmp/transponder.ter >> /mnt/settings/transponder");
+	}
+
+	textbox(_("Message"), _("Transponder/Satelttes Convert done, your system will reboot !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+	//write only config file
+	system("sync");
+	writeallconfig(3);
+	oshutdown(2,2);
+	system("init 6");
 }
 
 #endif
