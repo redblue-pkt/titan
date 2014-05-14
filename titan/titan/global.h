@@ -7506,7 +7506,7 @@ int convertsettings(int flag)
 		system("cp -a /tmp/satellites.cable /mnt/settings/satellites");
 		system("cp -a /tmp/transponder.cable /mnt/settings/transponder");
 	}
-	else if(ostrcmp(flag == 2)
+	else if(flag == 2)
 	{
 		converte2settings(2);
 		system("cp -a /tmp/satellites.ter /mnt/settings/satellites");
