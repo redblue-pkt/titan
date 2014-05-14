@@ -1815,6 +1815,12 @@ void setskinnodeslocked(int flag)
 				if(ostrcmp("system_backup", child->name) == 0) child->locked = 1;
 			}
 
+#ifdef SH4
+			if(ostrcmp("createsettings_dvbs", child->name) == 0) child->locked = 1;
+			if(ostrcmp("createsettings_dvbc", child->name) == 0) child->locked = 1;
+			if(ostrcmp("createsettings_dvbt", child->name) == 0) child->locked = 1;
+			if(ostrcmp("createsettings_all", child->name) == 0) child->locked = 1;
+#endif
 			if(ostrcmp("savesettings", child->name) == 0) child->locked = tmpflag;
 			else if(ostrcmp("scartrecorder", child->name) == 0) child->locked = tmpflag;
 			else if(ostrcmp("system_update_usb_online", child->name) == 0) child->locked = tmpflag;
@@ -7029,47 +7035,47 @@ int convertsettings(int flag)
 	char* buf = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *line = NULL, *name = NULL, *orbitalpos = NULL, *fetype = NULL, *flags = NULL, *outfile = NULL, *start = NULL, *end = NULL, *filename = NULL, *transponderfile = NULL, *satfile = NULL;
 	int incount = 0;
 	
-	system("rm -rf /convert*");
+	system("rm -rf /tmp/convert*");
 
 	if(flag == 0)
 	{
-		system("rm -rf /transponder.sat");
-		system("rm -rf /satellites.sat");
+		system("rm -rf /tmp/transponder.sat");
+		system("rm -rf /tmp/satellites.sat");
 		start = ostrcat("<sat ", NULL, 0, 0);
 		end = ostrcat("</sat>", NULL, 0, 0);
 		filename = ostrcat("/var/etc/tuxbox/satellites.xml", NULL, 0, 0);
-		transponderfile = ostrcat("/transponder.sat", NULL, 0, 0);
-		satfile = ostrcat("/satellites.sat", NULL, 0, 0);
+		transponderfile = ostrcat("/tmp/transponder.sat", NULL, 0, 0);
+		satfile = ostrcat("/tmp/satellites.sat", NULL, 0, 0);
 		fetype = ostrcat("0", NULL, 0, 0);
 	}
 	else if(flag == 1)
 	{
-		system("rm -rf /transponder.cable");
-		system("rm -rf /satellites.cable");
+		system("rm -rf /tmp/transponder.cable");
+		system("rm -rf /tmp/satellites.cable");
 		start = ostrcat("<cable ", NULL, 0, 0);
 		end = ostrcat("</cable>", NULL, 0, 0);
 		filename = ostrcat("/var/etc/tuxbox/cables.xml", NULL, 0, 0);
-		transponderfile = ostrcat("/transponder.cable", NULL, 0, 0);
-		satfile = ostrcat("/satellites.cable", NULL, 0, 0);
+		transponderfile = ostrcat("/tmp/transponder.cable", NULL, 0, 0);
+		satfile = ostrcat("/tmp/satellites.cable", NULL, 0, 0);
 		fetype = ostrcat("1", NULL, 0, 0);
 		incount = 5000;
 	}
 	else if(flag == 2)
 	{
-		system("rm -rf /transponder.ter");
-		system("rm -rf /satellites.ter");
+		system("rm -rf /tmp/transponder.ter");
+		system("rm -rf /tmp/satellites.ter");
 		start = ostrcat("<terrestrial ", NULL, 0, 0);
 		end = ostrcat("</terrestrial>", NULL, 0, 0);
 		filename = ostrcat("/var/etc/tuxbox/terrestrial.xml", NULL, 0, 0);
-		transponderfile = ostrcat("/transponder.ter", NULL, 0, 0);
-		satfile = ostrcat("/satellites.ter", NULL, 0, 0);
+		transponderfile = ostrcat("/tmp/transponder.ter", NULL, 0, 0);
+		satfile = ostrcat("/tmp/satellites.ter", NULL, 0, 0);
 		fetype = ostrcat("2", NULL, 0, 0);
 		incount = 10000;
 	}
 
 	buf = readfiletomem(filename, 1);
 
-	writesys("/convert.log", buf, 1);
+	writesys("/mnt/logs/convert.log", buf, 1);
 	
 	while(ostrstr(buf, start) != NULL)
 	{
@@ -7157,10 +7163,10 @@ int convertsettings(int flag)
 	
 		buf = string_replace(tmpstr2, NULL, buf, 1);
 	
-		outfile = ostrcat("/convert.", oitoa(incount), 0, 1);
+		outfile = ostrcat("/tmp/convert.", oitoa(incount), 0, 1);
 		outfile = ostrcat(outfile, ".log", 1, 0);	
 	//	writesys(outfile, buf, 2);
-		writesys("/convert.log", buf, 3);
+		writesys("/mnt/logs/convert.log", buf, 3);
 	
 		writesys(transponderfile, line, 2);
 		free(line), line = NULL;
