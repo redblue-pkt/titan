@@ -664,27 +664,27 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 	{
 		if(check == 1) return 0;
 		convertsettings(0);
-		system("cp -a /tmp/satellites.sat /mnt/settings/satellites
-		system("cp -a /tmp/transponder.sat /mnt/settings/transponder
-		system("sync"
+		system("cp -a /tmp/satellites.sat /mnt/settings/satellites");
+		system("cp -a /tmp/transponder.sat /mnt/settings/transponder");
+		system("sync");
 		system("init 6");
 	}
 	else if(ostrcmp("createsettings_dvbc", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
 		convertsettings(1);
-		system("cp -a /tmp/satellites.cable /mnt/settings/satellites
-		system("cp -a /tmp/transponder.cable /mnt/settings/transponder
-		system("sync"
+		system("cp -a /tmp/satellites.cable /mnt/settings/satellites");
+		system("cp -a /tmp/transponder.cable /mnt/settings/transponder");
+		system("sync");
 		system("init 6");
 	}
 	else if(ostrcmp("createsettings_dvbt", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
 		convertsettings(2);
-		system("cp -a /tmp/satellites.ter /mnt/settings/satellites
-		system("cp -a /tmp/transponder.ter /mnt/settings/transponder
-		system("sync"
+		system("cp -a /tmp/satellites.ter /mnt/settings/satellites");
+		system("cp -a /tmp/transponder.ter /mnt/settings/transponder");
+		system("sync");
 		system("init 6");
 	}
 	else if(ostrcmp("createsettings_all", menuentry->name) == 0)
@@ -693,16 +693,16 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		convertsettings(0);
 		convertsettings(1);
 		convertsettings(2);
-		system("cp -a /tmp/satellites.sat /mnt/settings/satellites
-		system("cp -a /tmp/transponder.sat /mnt/settings/transponder
+		system("cp -a /tmp/satellites.sat /mnt/settings/satellites");
+		system("cp -a /tmp/transponder.sat /mnt/settings/transponder");
 
-		system("cat /tmp/satellites.cable >> /mnt/settings/satellites
-		system("cat /tmp/transponder.cable >> /mnt/settings/transponder
+		system("cat /tmp/satellites.cable >> /mnt/settings/satellites");
+		system("cat /tmp/transponder.cable >> /mnt/settings/transponder");
 
-		system("cat /tmp/satellites.ter >> /mnt/settings/satellites
-		system("cat /tmp/transponder.ter >> /mnt/settings/transponder
+		system("cat /tmp/satellites.ter >> /mnt/settings/satellites");
+		system("cat /tmp/transponder.ter >> /mnt/settings/transponder");
 
-		system("sync"
+		system("sync");
 		system("init 6");
 	}
 	else if(ostrcmp("autosearch", menuentry->name) == 0)
