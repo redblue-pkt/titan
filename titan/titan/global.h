@@ -7496,28 +7496,24 @@ int convertsettings(int flag)
 {
 	if(flag == 0)
 	{
-		if(check == 1) return 0;
 		converte2settings(0);
 		system("cp -a /tmp/satellites.sat /mnt/settings/satellites");
 		system("cp -a /tmp/transponder.sat /mnt/settings/transponder");
 	}
 	else if(flag == 1)
 	{
-		if(check == 1) return 0;
 		converte2settings(1);
 		system("cp -a /tmp/satellites.cable /mnt/settings/satellites");
 		system("cp -a /tmp/transponder.cable /mnt/settings/transponder");
 	}
 	else if(ostrcmp(flag == 2)
 	{
-		if(check == 1) return 0;
 		converte2settings(2);
 		system("cp -a /tmp/satellites.ter /mnt/settings/satellites");
 		system("cp -a /tmp/transponder.ter /mnt/settings/transponder");
 	}
 	else if(flag == 3)
 	{
-		if(check == 1) return 0;
 		converte2settings(0);
 		converte2settings(1);
 		converte2settings(2);
