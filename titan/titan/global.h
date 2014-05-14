@@ -7494,6 +7494,9 @@ char* gethypridtunername(int dev, char* hyprid)
 // flag 2 = ter
 void convertsettings(int flag)
 {
+	struct skin* load = getscreen("loading");
+	drawscreen(load, 0, 0);
+
 	if(flag == 0)
 	{
 		converte2settings(0);
@@ -7527,7 +7530,7 @@ void convertsettings(int flag)
 		system("cat /tmp/transponder.ter >> /mnt/settings/transponder");
 	}
 
-	textbox(_("Message"), _("Transponder/Satelttes Convert done, your system will reboot !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+	textbox(_("Message"), _("Transponder/Satellite Convert done, your system will reboot !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 	//write only config file
 	system("sync");
 	writeallconfig(3);
