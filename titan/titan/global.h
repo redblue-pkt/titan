@@ -7494,7 +7494,7 @@ char* gethypridtunername(int dev, char* hyprid)
 // flag 2 = ter
 int convertsettings(int flag)
 {
-	else if(flag == 0)
+	if(flag == 0)
 	{
 		if(check == 1) return 0;
 		converte2settings(0);
