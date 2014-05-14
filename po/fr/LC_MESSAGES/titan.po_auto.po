@@ -97,7 +97,7 @@ msgstr ""
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:28 scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1888
 #: scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 scriptexec.h:41 service.h:712
-#: service.h:957 skinadjust.h:146 skins_dlna_skin.xml.h:8 skinselector.h:218
+#: service.h:957 skinadjust.h:162 skins_dlna_skin.xml.h:8 skinselector.h:218
 #: skins_facebook_skin.xml.h:5 skins_mboxinfo_skin.xml.h:2
 #: skins_mc_skin.xml.h:38 skins_optimize_skin.xml.h:3 skins_rgui_skin.xml.h:3
 #: skins_tiwakeup_skin.xml.h:3 skins_wins3_skin.xml.h:3 sock.h:952
@@ -109,9 +109,9 @@ msgstr ""
 #: system_backup_restore.h:82 system_backup_restore.h:88
 #: system_backup_restore.h:95 system_update.h:320 system_update.h:326
 #: system_update.h:333 timeshift.h:113 timeshift.h:155 timeshift.h:162
-#: timeshiftsettings.h:45 titan.c:276 titan.c:340 titan.c:349 titan.c:968
-#: titan.c:977 titan.c:1102 titan.c:1123 titan.c:1129 titan.c:1140
-#: titan.c:1146 tithek.c:81 tithek_global.h:238 tithek.h:664 tithek.h:1160
+#: timeshiftsettings.h:45 titan.c:276 titan.c:340 titan.c:349 titan.c:969
+#: titan.c:978 titan.c:1103 titan.c:1124 titan.c:1130 titan.c:1141
+#: titan.c:1147 tithek.c:81 tithek_global.h:238 tithek.h:664 tithek.h:1160
 #: tithek.h:1203 tithek.h:1450 tithek.h:1472 tithek.h:1488 tithek.h:3282
 #: tithek.h:3346 tithek.h:3360 tithek.h:3370 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922
@@ -210,9 +210,9 @@ msgstr "OK"
 #: system_backup_restore.h:82 system_backup_restore.h:88
 #: system_backup_restore.h:95 system_update.h:320 system_update.h:326
 #: system_update.h:333 timeshift.h:113 timeshift.h:155 timeshift.h:162
-#: timeshiftsettings.h:45 titan.c:276 titan.c:340 titan.c:349 titan.c:968
-#: titan.c:977 titan.c:1102 titan.c:1123 titan.c:1129 titan.c:1140
-#: titan.c:1146 tithek.c:81 tithek_global.h:238 tithek.h:664 tithek.h:1160
+#: timeshiftsettings.h:45 titan.c:276 titan.c:340 titan.c:349 titan.c:969
+#: titan.c:978 titan.c:1103 titan.c:1124 titan.c:1130 titan.c:1141
+#: titan.c:1147 tithek.c:81 tithek_global.h:238 tithek.h:664 tithek.h:1160
 #: tithek.h:1203 tithek.h:1450 tithek.h:1472 tithek.h:1488 tithek.h:3282
 #: tithek.h:3346 tithek.h:3360 tithek.h:3370 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922
@@ -274,7 +274,7 @@ msgstr "SORTIE"
 #: settings_autostart.h:502 settings_autostart.h:511 settings_autostart.h:568
 #: settings_autostart.h:577 settings_autostart.h:586 settings_autostart.h:595
 #: settings_overclocking.h:214 settings_overclocking.h:234
-#: settings_overclocking.h:244 skinadjust.h:62 stopifnotused.c:94
+#: settings_overclocking.h:244 skinadjust.h:75 stopifnotused.c:94
 #: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:37
 #: tithek_settings.h:41 tithek_settings.h:45 tmc.h:531 tmc.h:535
 #: tunerconfig.h:184 tunerconfig.h:213 tunerconfig.h:244 tunerconfig.h:277
@@ -589,15 +589,15 @@ msgstr "oui / vzap sans fin"
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:28 scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1640
 #: scan.h:1888 scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 service.h:712
-#: service.h:957 skinadjust.h:146 skinselector.h:218 sock.h:952 softcam.h:403
+#: service.h:957 skinadjust.h:162 skinselector.h:218 sock.h:952 softcam.h:403
 #: solarmovie.h:35 solarmovie.h:47 solarmovie.h:295 spinner.h:18
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:78 streamcloud.h:91
 #: streamcloud.h:122 streamcloud.h:161 stream.h:33 system_backup_restore.h:40
 #: system_backup_restore.h:43 system_backup_restore.h:80
 #: system_backup_restore.h:82 system_update.h:320 system_update.h:326
 #: system_update.h:333 timeshift.h:113 timeshift.h:155 timeshift.h:162
-#: timeshiftsettings.h:45 titan.c:276 titan.c:340 titan.c:349 titan.c:1102
-#: titan.c:1123 titan.c:1129 titan.c:1140 titan.c:1146 tithek.c:81
+#: timeshiftsettings.h:45 titan.c:276 titan.c:340 titan.c:349 titan.c:1103
+#: titan.c:1124 titan.c:1130 titan.c:1141 titan.c:1147 tithek.c:81
 #: tithek_global.h:238 tithek.h:664 tithek.h:1160 tithek.h:1203 tithek.h:1450
 #: tithek.h:1472 tithek.h:3282 tithek.h:3346 tithek.h:3360 tithek.h:3370
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
@@ -2317,7 +2317,7 @@ msgstr ""
 msgid "Email  \t\tinfo@atemio.de"
 msgstr ""
 
-#: info.h:27 plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9 titan.c:977
+#: info.h:27 plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9 titan.c:978
 msgid "Info"
 msgstr "Info"
 
@@ -5451,19 +5451,19 @@ msgstr ""
 msgid "picture"
 msgstr "Photo"
 
-#: skinadjust.h:63
+#: skinadjust.h:76
 msgid "yes (Text in %)"
 msgstr ""
 
-#: skinadjust.h:64
+#: skinadjust.h:77
 msgid "yes (Text in MB)"
 msgstr ""
 
-#: skinadjust.h:67 tunerconfig.h:302 tunerconfig.h:303
+#: skinadjust.h:80 tunerconfig.h:302 tunerconfig.h:303
 msgid "press red"
 msgstr ""
 
-#: skinadjust.h:146
+#: skinadjust.h:162
 msgid "Receiver now reboot !!!"
 msgstr ""
 
@@ -8314,87 +8314,87 @@ msgid ""
 "Really shutdown ?"
 msgstr ""
 
-#: titan.c:793
+#: titan.c:794
 msgid "Error: open rc device !!"
 msgstr ""
 
-#: titan.c:799
+#: titan.c:800
 msgid "Error: no frontend device found !!"
 msgstr ""
 
-#: titan.c:805
+#: titan.c:806
 msgid "Error: no demux device found !!"
 msgstr ""
 
-#: titan.c:811
+#: titan.c:812
 msgid "Error: no video device found !!"
 msgstr ""
 
-#: titan.c:817
+#: titan.c:818
 msgid "Error: no audio device found !!"
 msgstr ""
 
-#: titan.c:835
+#: titan.c:836
 msgid "Error: skin not found !!"
 msgstr ""
 
-#: titan.c:919
+#: titan.c:920
 msgid "RemoteControl Old Version"
 msgstr ""
 
-#: titan.c:920
+#: titan.c:921
 msgid "RemoteControl Long Version"
 msgstr ""
 
-#: titan.c:927
+#: titan.c:928
 msgid "Select Your Remote Control"
 msgstr ""
 
-#: titan.c:927
+#: titan.c:928
 msgid "Choose your Remotecontrol Model from the following list"
 msgstr ""
 
-#: titan.c:968
+#: titan.c:969
 msgid "First Wizzard"
 msgstr "Réglages assisté"
 
-#: titan.c:968
+#: titan.c:969
 msgid "Settings OK ?"
 msgstr "Réglages"
 
-#: titan.c:1102
+#: titan.c:1103
 msgid "Receiver successful unlocked"
 msgstr ""
 
-#: titan.c:1123
+#: titan.c:1124
 msgid ""
 "Free space in /var to little!\n"
 "This can make problems!"
 msgstr ""
 
-#: titan.c:1129
+#: titan.c:1130
 msgid ""
 "/var not writeable!\n"
 "Repair it?"
 msgstr ""
 
-#: titan.c:1140
+#: titan.c:1141
 msgid ""
 "Free space in /mnt to little!\n"
 "This can make problems!"
 msgstr ""
 
-#: titan.c:1146
+#: titan.c:1147
 msgid ""
 "/mnt not writeable!\n"
 "Repair it?"
 msgstr ""
 
-#: titan.c:1195
+#: titan.c:1196
 msgid "Unknown Error."
 msgstr ""
 
-#: titan.c:1197
+#: titan.c:1198
 msgid "Automatic stop in 10 seconds."
 msgstr ""
 
