@@ -744,6 +744,7 @@ int main(int argc, char *argv[])
 // disable... with this jpg not working
 //	status.usedirectfb = 1;
 	waitvsync();
+	setfbosd();
 #endif
 // disable... with this jpg not working	
 //#else
