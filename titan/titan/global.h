@@ -7452,7 +7452,7 @@ int converte2settings(int flag)
 	buf = readfiletomem(filename, 1);
 
 	writesys("/tmp/convert.log", buf, 1);
-	tmpstr3 = ostrcat("0", NULL, 0, 0);
+	tmpstr3 = ostrcat("-1", NULL, 0, 0);
 
 	while(ostrstr(buf, start) != NULL)
 	{
@@ -7496,12 +7496,8 @@ int converte2settings(int flag)
 			int max = count;
 			for(i = 0; i < max; i++)
 			{
-				printf("ret1.part: %s\n",(ret1[i]).part);
-				printf("flag: %d\n",flag);
-				printf("fetype: %s\n",fetype);
-				printf("orbitalpos: %s\n",orbitalpos);
 				if(i == 0) continue;
-				line = ostrcat(line, tmpstr3, 1, 0); // id
+				line = ostrcat(line, 0, 1, 0); // id
 				line = ostrcat(line, "#", 1, 0);
 
 				line = ostrcat(line, fetype, 1, 0); // fetype
