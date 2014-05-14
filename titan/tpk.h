@@ -3032,7 +3032,8 @@ int tpkupdate()
 		tpknode = tpkmainlist;
 		while(tpknode != NULL)
 		{
-			if(ostrcmp(tpkinstallednode->name, tpknode->name) == 0 && tpknode->version > tpkinstallednode->version)
+			// disable settings upgrade group 100
+			if(ostrcmp(tpkinstallednode->name, tpknode->name) == 0 && tpknode->version > tpkinstallednode->version && tpkinstallednode->group != 100)
 			{
 				//TODO: remove file that never exist in new pakages
 				tmpstr = ostrcat(tmpstr, EXTRACTDIR, 1, 0);
