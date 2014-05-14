@@ -7020,165 +7020,6 @@ int sethypridtuner(int dev, char* value)
 	return 0;
 }
 
-// flag 0 = sat
-// flag 1 = cable
-// flag 2 = ter
-int converte2settings(int flag)
-{
-	char* buf = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *line = NULL, *name = NULL, *orbitalpos = NULL, *fetype = NULL, *flags = NULL, *outfile = NULL, *start = NULL, *end = NULL, *filename = NULL, *transponderfile = NULL, *satfile = NULL;
-	int incount = 0;
-	
-	if(flag == 0)
-	{
-		system("rm -rf /tmp/transponder.sat");
-		system("rm -rf /tmp/satellites.sat");
-		start = ostrcat("<sat ", NULL, 0, 0);
-		end = ostrcat("</sat>", NULL, 0, 0);
-		filename = ostrcat("/var/etc/tuxbox/satellites.xml", NULL, 0, 0);
-		transponderfile = ostrcat("/tmp/transponder.sat", NULL, 0, 0);
-		satfile = ostrcat("/tmp/satellites.sat", NULL, 0, 0);
-		fetype = ostrcat("0", NULL, 0, 0);
-	}
-	else if(flag == 1)
-	{
-		system("rm -rf /tmp/transponder.cable");
-		system("rm -rf /tmp/satellites.cable");
-		start = ostrcat("<cable ", NULL, 0, 0);
-		end = ostrcat("</cable>", NULL, 0, 0);
-		filename = ostrcat("/var/etc/tuxbox/cables.xml", NULL, 0, 0);
-		transponderfile = ostrcat("/tmp/transponder.cable", NULL, 0, 0);
-		satfile = ostrcat("/tmp/satellites.cable", NULL, 0, 0);
-		fetype = ostrcat("1", NULL, 0, 0);
-		incount = 5000;
-	}
-	else if(flag == 2)
-	{
-		system("rm -rf /tmp/transponder.ter");
-		system("rm -rf /tmp/satellites.ter");
-		start = ostrcat("<terrestrial ", NULL, 0, 0);
-		end = ostrcat("</terrestrial>", NULL, 0, 0);
-		filename = ostrcat("/var/etc/tuxbox/terrestrial.xml", NULL, 0, 0);
-		transponderfile = ostrcat("/tmp/transponder.ter", NULL, 0, 0);
-		satfile = ostrcat("/tmp/satellites.ter", NULL, 0, 0);
-		fetype = ostrcat("2", NULL, 0, 0);
-		incount = 10000;
-	}
-
-	buf = readfiletomem(filename, 1);
-
-	writesys("/tmp/convert.log", buf, 1);
-	
-	while(ostrstr(buf, start) != NULL)
-	{
-		incount++;
-		tmpstr = string_resub(start, end, buf, 0);
-		tmpstr1 = ostrcat(tmpstr, NULL, 0, 0);
-		
-		//printf("name: %s\n", getxmlentry(ret1[i].part, "name="));
-		//printf("position: %s\n", getxmlentry(ret1[i].part, "position="));
-		
-		name = getxmlentry(tmpstr, "name=");
-		if(flag == 0)
-			orbitalpos = getxmlentry(tmpstr, "position=");
-		else
-			orbitalpos = ostrcat(oitoa(incount), NULL, 1, 0);
-			
-		flags = getxmlentry(tmpstr, "flags=");
-		//string_decode(name, 0);
-		name = string_replace("&amp;", "und", name, 1);
-	
-		line = ostrcat(line, name, 1, 0); // name
-		line = ostrcat(line, "#", 1, 0);
-		line = ostrcat(line, flags, 1, 0); // flag
-		line = ostrcat(line, "#", 1, 0);
-		line = ostrcat(line, orbitalpos, 1, 0); // orbitalpos
-		line = ostrcat(line, "#", 1, 0);
-		line = ostrcat(line, fetype, 1, 0); // fetype
-		printf("%s: %s\n", satfile, line);
-		writesys(satfile, line, 3);
-		free(line), line = NULL;
-				
-		int count = 0;
-	
-		int i = 0;
-		struct splitstr* ret1 = NULL;
-		ret1 = strsplit(tmpstr1, "\n", &count);
-		if(ret1 != NULL)
-		{
-			int max = count;
-			for(i = 0; i < max; i++)
-			{
-				if(i == 0) continue;
-				line = ostrcat(line, "0", 1, 0); // id
-				line = ostrcat(line, "#", 1, 0);
-				line = ostrcat(line, fetype, 1, 0); // fetype
-				line = ostrcat(line, "#", 1, 0);
-				line = ostrcat(line, getxmlentry(ret1[i].part, "frequency="), 1, 0); // frequency
-				line = ostrcat(line, "#", 1, 0);
-				if(flag == 0)
-					line = ostrcat(line, getxmlentry(ret1[i].part, "polarization="), 1, 0); // polarization
-				else
-					line = ostrcat(line, "2", 1, 0); // polarization
-				line = ostrcat(line, "#", 1, 0);
-				line = ostrcat(line, orbitalpos, 1, 0); // orbitalpos
-				line = ostrcat(line, "#", 1, 0);
-				line = ostrcat(line, getxmlentry(ret1[i].part, "symbol_rate="), 1, 0); // symbolrate
-				line = ostrcat(line, "#", 1, 0);
-				line = ostrcat(line, getxmlentry(ret1[i].part, "modulation="), 1, 0); // modulation
-				line = ostrcat(line, "#", 1, 0);
-				line = ostrcat(line, getxmlentry(ret1[i].part, "fec_inner="), 1, 0); // fec
-				line = ostrcat(line, "#", 1, 0);
-				if(flag == 0)
-					line = ostrcat(line, "2", 1, 0); // pilot
-				else
-					line = ostrcat(line, "0", 1, 0); // pilot				
-
-
-				line = ostrcat(line, "#", 1, 0);
-				line = ostrcat(line, "0", 1, 0); // rolloff
-				line = ostrcat(line, "#", 1, 0);
-				if(flag == 0)
-					line = ostrcat(line, "2", 1, 0); // inversion
-				else
-					line = ostrcat(line, "0", 1, 0); // inversion				
-				line = ostrcat(line, "#", 1, 0);
-				if(flag == 0)
-					line = ostrcat(line, getxmlentry(ret1[i].part, "system="), 1, 0); // system
-				else
-					line = ostrcat(line, "0", 1, 0); // system
-				line = ostrcat(line, "\n", 1, 0);
-			}
-		}
-	
-		tmpstr2 = ostrcat(start, tmpstr, 0, 0);
-	
-		buf = string_replace(tmpstr2, NULL, buf, 1);
-	
-		outfile = ostrcat("/tmp/convert.", oitoa(incount), 0, 1);
-		outfile = ostrcat(outfile, ".log", 1, 0);	
-	//	writesys(outfile, buf, 2);
-		writesys("/tmp/convert.log", buf, 3);
-	
-		writesys(transponderfile, line, 2);
-		free(line), line = NULL;
-	
-		free(tmpstr), tmpstr = NULL;	
-		free(tmpstr1), tmpstr1 = NULL;
-		free(tmpstr2), tmpstr2 = NULL;
-		free(ret1), ret1 = NULL;
-		free(name), name = NULL;
-		free(orbitalpos), orbitalpos = NULL;
-		free(flags), flags = NULL;
-		free(outfile), outfile = NULL;	
-	}
-	free(buf), buf = NULL;
-	free(start), start = NULL;
-	free(end), end = NULL;
-	free(fetype), fetype = NULL;
-			
-	return 1;
-}
-
 void guestthread()
 {
 	int count = 0, ret = 0, whilecount = 0, sleepcount = 0;
@@ -7489,12 +7330,37 @@ char* gethypridtunername(int dev, char* hyprid)
 	return value;
 }
 
-// flag 0 = sat
-// flag 1 = cable
-// flag 2 = ter
-void convertsettings(int flag)
+void convertsettings()
 {
+	struct menulist* mlist = NULL, *mbox = NULL;
 	struct skin* load = getscreen("loading");
+	int flag = 0;
+	char* tmpstr = NULL;
+
+	addmenulist(&mlist, "Create Transponder (Sat)", _("Create Transponder (Sat)"), NULL, 0, 0);
+	addmenulist(&mlist, "Create Transponder (Cable)", _("Create Transponder (Cable)"), NULL, 0, 0);
+	addmenulist(&mlist, "Create Transponder (Terrestrial)", _("Create Transponder (Terrestrial)"), NULL, 0, 0);
+	addmenulist(&mlist, "Create Transponder (All)", _("Create Transponder (All)"), NULL, 0, 0);
+
+	mbox = menulistbox(mlist, NULL, _("Select Your Serach Modus"), NULL, NULL, NULL, 1, 0);
+	if(mbox != NULL) tmpstr = mbox->name;
+
+	if(ostrcmp(tmpstr, "Create Transponder (Sat)") == 0)
+		flag = 0;
+	else if(ostrcmp(tmpstr, "Create Transponder (Cable)") == 0)
+		flag = 1;
+	else if(ostrcmp(tmpstr, "Create Transponder (Terrestrial)") == 0)
+		flag = 2;
+	else if(ostrcmp(tmpstr, "Create Transponder (All)") == 0)
+		flag = 3;
+	else
+	{
+		freemenulist(mlist, 1); mlist = NULL;
+		return;
+	}
+
+	freemenulist(mlist, 1); mlist = NULL;
+
 	drawscreen(load, 0, 0);
 
 	if(flag == 0)
@@ -7530,12 +7396,199 @@ void convertsettings(int flag)
 		system("cat /tmp/transponder.ter >> /mnt/settings/transponder");
 	}
 
-	textbox(_("Message"), _("Transponder/Satellite Convert done, your system will reboot !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+//	free(tmpstr), tmpstr = NULL;
+	textbox(_("Message"), _("Transponder/Satellite Convert done, please use channel search on next Boot.\nYour System will reboot !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
 	//write only config file
 	system("sync");
 	writeallconfig(3);
-//	oshutdown(2,2);
-//	system("init 6");
+	oshutdown(2,2);
+	system("init 6");
+}
+
+// flag 0 = sat
+// flag 1 = cable
+// flag 2 = ter
+int converte2settings(int flag)
+{
+	char* tmpstr3 = NULL, *buf = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *line = NULL, *name = NULL, *orbitalpos = NULL, *fetype = NULL, *flags = NULL, *outfile = NULL, *start = NULL, *end = NULL, *filename = NULL, *transponderfile = NULL, *satfile = NULL;
+	int incount = 0;
+	
+	if(flag == 0)
+	{
+		system("rm -rf /tmp/transponder.sat");
+		system("rm -rf /tmp/satellites.sat");
+		start = ostrcat("<sat ", NULL, 0, 0);
+		end = ostrcat("</sat>", NULL, 0, 0);
+		filename = ostrcat("/var/etc/tuxbox/satellites.xml", NULL, 0, 0);
+		transponderfile = ostrcat("/tmp/transponder.sat", NULL, 0, 0);
+		satfile = ostrcat("/tmp/satellites.sat", NULL, 0, 0);
+		fetype = ostrcat("0", NULL, 0, 0);
+	}
+	else if(flag == 1)
+	{
+		system("rm -rf /tmp/transponder.cable");
+		system("rm -rf /tmp/satellites.cable");
+		start = ostrcat("<cable ", NULL, 0, 0);
+		end = ostrcat("</cable>", NULL, 0, 0);
+		filename = ostrcat("/var/etc/tuxbox/cables.xml", NULL, 0, 0);
+		transponderfile = ostrcat("/tmp/transponder.cable", NULL, 0, 0);
+		satfile = ostrcat("/tmp/satellites.cable", NULL, 0, 0);
+		fetype = ostrcat("1", NULL, 0, 0);
+		incount = 4999;
+	}
+	else if(flag == 2)
+	{
+		system("rm -rf /tmp/transponder.ter");
+		system("rm -rf /tmp/satellites.ter");
+		start = ostrcat("<terrestrial ", NULL, 0, 0);
+		end = ostrcat("</terrestrial>", NULL, 0, 0);
+		filename = ostrcat("/var/etc/tuxbox/terrestrial.xml", NULL, 0, 0);
+		transponderfile = ostrcat("/tmp/transponder.ter", NULL, 0, 0);
+		satfile = ostrcat("/tmp/satellites.ter", NULL, 0, 0);
+		fetype = ostrcat("2", NULL, 0, 0);
+		incount = 9999;
+	}
+
+	buf = readfiletomem(filename, 1);
+
+	writesys("/tmp/convert.log", buf, 1);
+	tmpstr3 = ostrcat("0", NULL, 0, 0);
+
+	while(ostrstr(buf, start) != NULL)
+	{
+		incount++;
+		tmpstr = string_resub(start, end, buf, 0);
+		tmpstr1 = ostrcat(tmpstr, NULL, 0, 0);
+		
+		//printf("name: %s\n", getxmlentry(ret1[i].part, "name="));
+		//printf("position: %s\n", getxmlentry(ret1[i].part, "position="));
+		
+		name = getxmlentry(tmpstr, "name=");
+		if(flag == 0)
+			orbitalpos = getxmlentry(tmpstr, "position=");
+		else
+			orbitalpos = ostrcat(oitoa(incount), NULL, 1, 0);
+			
+		flags = getxmlentry(tmpstr, "flags=");
+		//string_decode(name, 0);
+		name = string_replace_all("&amp;", "und", name, 1);
+	
+		line = ostrcat(line, name, 1, 0); // name
+		line = ostrcat(line, "#", 1, 0);
+//		line = ostrcat(line, flags, 1, 0); // flag
+// 0 for all sat/ter/cab ???
+		line = ostrcat(line, "0", 1, 0);
+		line = ostrcat(line, "#", 1, 0);
+		line = ostrcat(line, orbitalpos, 1, 0); // orbitalpos
+		line = ostrcat(line, "#", 1, 0);
+		line = ostrcat(line, fetype, 1, 0); // fetype
+		printf("%s: %s\n", satfile, line);
+		writesys(satfile, line, 3);
+		free(line), line = NULL;
+				
+		int count = 0;
+
+		int i = 0;
+		struct splitstr* ret1 = NULL;
+		ret1 = strsplit(tmpstr1, "\n", &count);
+		if(ret1 != NULL)
+		{
+			int max = count;
+			for(i = 0; i < max; i++)
+			{
+				printf("ret1.part: %s\n",(ret1[i]).part);
+				printf("flag: %d\n",flag);
+				printf("fetype: %s\n",fetype);
+				printf("orbitalpos: %s\n",orbitalpos);
+				if(i == 0) continue;
+				line = ostrcat(line, tmpstr3, 1, 0); // id
+				line = ostrcat(line, "#", 1, 0);
+
+				line = ostrcat(line, fetype, 1, 0); // fetype
+				line = ostrcat(line, "#", 1, 0);
+
+				if(ostrstr((ret1[i]).part, "frequency=") != NULL)
+					line = ostrcat(line, getxmlentry(ret1[i].part, "frequency="), 1, 0); // symbolrate
+				else
+					line = ostrcat(line, tmpstr3, 1, 0);
+				line = ostrcat(line, "#", 1, 0);
+
+				if(ostrstr((ret1[i]).part, "polarization=") != NULL)
+					line = ostrcat(line, getxmlentry(ret1[i].part, "polarization="), 1, 0); // polarization
+				else
+					line = ostrcat(line, tmpstr3, 1, 0); // polarization
+
+				line = ostrcat(line, "#", 1, 0);
+				if(orbitalpos != NULL)
+					line = ostrcat(line, orbitalpos, 1, 0); // orbitalpos
+				else
+					line = ostrcat(line, tmpstr3, 1, 0); // orbitalpos
+				line = ostrcat(line, "#", 1, 0);
+
+				if(ostrstr((ret1[i]).part, "symbol_rate=") != NULL)
+					line = ostrcat(line, getxmlentry(ret1[i].part, "symbol_rate="), 1, 0); // symbolrate
+				else
+					line = ostrcat(line, tmpstr3, 1, 0);
+				line = ostrcat(line, "#", 1, 0);
+
+				if(ostrstr((ret1[i]).part, "modulation=") != NULL)
+					line = ostrcat(line, getxmlentry(ret1[i].part, "modulation="), 1, 0); // modulation
+				else
+					line = ostrcat(line, tmpstr3, 1, 0);
+				line = ostrcat(line, "#", 1, 0);
+
+				if(ostrstr((ret1[i]).part, "fec_inner=") != NULL)
+					line = ostrcat(line, getxmlentry(ret1[i].part, "fec_inner="), 1, 0); // fec
+				else
+					line = ostrcat(line, tmpstr3, 1, 0);
+				line = ostrcat(line, "#", 1, 0);
+
+				line = ostrcat(line, tmpstr3, 1, 0); // pilot				
+				line = ostrcat(line, "#", 1, 0);
+
+				line = ostrcat(line, tmpstr3, 1, 0); // rolloff
+				line = ostrcat(line, "#", 1, 0);
+
+				line = ostrcat(line, tmpstr3, 1, 0); // inversion				
+				line = ostrcat(line, "#", 1, 0);
+
+				if(ostrstr((ret1[i]).part, "system=") != NULL)
+					line = ostrcat(line, getxmlentry(ret1[i].part, "system="), 1, 0); // system
+				else
+					line = ostrcat(line, tmpstr3, 1, 0); // system
+				line = ostrcat(line, "\n", 1, 0);
+			}
+		}
+	
+		tmpstr2 = ostrcat(start, tmpstr, 0, 0);
+	
+		buf = string_replace(tmpstr2, NULL, buf, 1);
+	
+	//	outfile = ostrcat("/tmp/convert.", oitoa(incount), 0, 1);
+	//	outfile = ostrcat(outfile, ".log", 1, 0);	
+	//	writesys(outfile, buf, 2);
+	//	writesys("/tmp/convert.log", buf, 3);
+	
+		writesys(transponderfile, line, 2);
+		free(line), line = NULL;
+	
+		free(tmpstr), tmpstr = NULL;	
+		free(tmpstr1), tmpstr1 = NULL;
+		free(tmpstr2), tmpstr2 = NULL;
+		free(ret1), ret1 = NULL;
+		free(name), name = NULL;
+		free(orbitalpos), orbitalpos = NULL;
+		free(flags), flags = NULL;
+		free(outfile), outfile = NULL;	
+	}
+
+	free(tmpstr3), tmpstr3 = NULL;
+	free(buf), buf = NULL;
+	free(start), start = NULL;
+	free(end), end = NULL;
+	free(fetype), fetype = NULL;
+			
+	return 1;
 }
 
 #endif
