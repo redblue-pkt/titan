@@ -134,6 +134,8 @@ void mc_main()
 	int rcret = 0, ret = 0;
 	char* videomode = NULL, *currvideomode = NULL;
 
+	set_player_sound(0);
+
 	writevfdmenu("Mediacenter");
 	resettvpic();
 	videomode = getvideomode();
@@ -389,6 +391,8 @@ void mc_main()
 		else
 			unlink("/var/etc/.scart");
 	}
+
+	set_player_sound(1);
 
 	free(videomode),videomode = NULL;
 	free(currvideomode),currvideomode = NULL;
