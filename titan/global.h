@@ -7334,7 +7334,7 @@ void convertsettings()
 {
 	struct menulist* mlist = NULL, *mbox = NULL;
 	struct skin* load = getscreen("loading");
-	int flag = 0;
+	int flag = 0, ret = 0;
 	char* tmpstr = NULL;
 
 	addmenulist(&mlist, "Create Transponder (Sat)", _("Create Transponder (Sat)"), NULL, 0, 0);
@@ -7342,7 +7342,7 @@ void convertsettings()
 	addmenulist(&mlist, "Create Transponder (Terrestrial)", _("Create Transponder (Terrestrial)"), NULL, 0, 0);
 	addmenulist(&mlist, "Create Transponder (All)", _("Create Transponder (All)"), NULL, 0, 0);
 
-	mbox = menulistbox(mlist, NULL, _("Select Your Serach Modus"), NULL, NULL, NULL, 1, 0);
+	mbox = menulistbox(mlist, "createsettings", _("Select Your Serach Modus"), NULL, NULL, NULL, 1, 0);
 	if(mbox != NULL) tmpstr = mbox->name;
 
 	if(ostrcmp(tmpstr, "Create Transponder (Sat)") == 0)
@@ -7365,13 +7365,15 @@ void convertsettings()
 
 	if(flag == 0)
 	{
-		converte2settings(0);
+		ret = converte2settings(0);
+		if(ret == 0) return;
 		system("cp -a /tmp/satellites.sat /mnt/settings/satellites");
 		system("cp -a /tmp/transponder.sat /mnt/settings/transponder");
 	}
 	else if(flag == 1)
 	{
-		converte2settings(1);
+		ret = converte2settings(1);
+		if(ret == 0) return;
 		system("cp -a /tmp/satellites.cable /mnt/settings/satellites");
 		system("cp -a /tmp/transponder.cable /mnt/settings/transponder");
 	}
@@ -7383,9 +7385,12 @@ void convertsettings()
 	}
 	else if(flag == 3)
 	{
-		converte2settings(0);
-		converte2settings(1);
-		converte2settings(2);
+		ret = converte2settings(0);
+		if(ret == 0) return;
+		ret = converte2settings(1);
+		if(ret == 0) return;
+		ret = converte2settings(2);
+		if(ret == 0) return;
 		system("cp -a /tmp/satellites.sat /mnt/settings/satellites");
 		system("cp -a /tmp/transponder.sat /mnt/settings/transponder");
 
@@ -7448,6 +7453,18 @@ int converte2settings(int flag)
 		fetype = ostrcat("2", NULL, 0, 0);
 		incount = 9999;
 	}
+	
+	char* tmptext = NULL;
+	tmptext = ostrcat(_("Error: Transponder Source file not found"), "\nfilename: ", 0, 0);
+	tmptext = ostrcat(tmptext, transponderfile, 1, 0);
+
+	if(!file_exist(filename))
+	{
+		textbox(_("Message"), tmptext, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
+		free(tmptext), tmptext = NULL;
+		return 0;
+	}
+	free(tmptext), tmptext = NULL;
 
 	buf = readfiletomem(filename, 1);
 

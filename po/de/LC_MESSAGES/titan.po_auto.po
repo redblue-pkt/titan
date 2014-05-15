@@ -6189,7 +6189,7 @@ msgstr "Vorschau Bilder erstellen"
 
 #: skin_default_skin.xml.h:163
 msgid "Create Transponder List"
-msgstr ""
+msgstr "Transponder Liste neuerstellen"
 
 #: skin_default_skin.xml.h:164
 msgid "d"
