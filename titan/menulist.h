@@ -253,7 +253,7 @@ struct menulist* menulistboxext(struct menulist* mlist, char* paramskinname, cha
 				if(mlist->pic == NULL)
 				{
 					if(defaultpic == NULL)
-						tmppic = ostrcat(getconfig("skinpath", NULL), "/skin/default.png", 0, 0);
+						tmppic = ostrcat(getconfig("skinpath", NULL), "/skin/background.png", 0, 0);
 					else
 						tmppic = ostrcat(getconfig("skinpath", NULL), defaultpic, 0, 0);
 				}
