@@ -6256,7 +6256,7 @@ int converte2settings(int flag)
 			for(i = 0; i < max; i++)
 			{
 				if(i == 0) continue;
-				line = ostrcat(line, 0, 1, 0); // id
+				line = ostrcat(line, "0", 1, 0); // id
 				line = ostrcat(line, "#", 1, 0);
 
 				line = ostrcat(line, fetype, 1, 0); // fetype
