@@ -7422,9 +7422,10 @@ int converte2settings(int flag)
 	{
 		system("rm -rf /tmp/transponder.sat");
 		system("rm -rf /tmp/satellites.sat");
+		system("cp -a /var/etc/tuxbox/satellites.xml /tmp/satellites.xml");
 		start = ostrcat("<sat ", NULL, 0, 0);
 		end = ostrcat("</sat>", NULL, 0, 0);
-		filename = ostrcat("/var/etc/tuxbox/satellites.xml", NULL, 0, 0);
+		filename = ostrcat("/tmp/satellites.xml", NULL, 0, 0);
 		transponderfile = ostrcat("/tmp/transponder.sat", NULL, 0, 0);
 		satfile = ostrcat("/tmp/satellites.sat", NULL, 0, 0);
 		fetype = ostrcat("0", NULL, 0, 0);
@@ -7433,9 +7434,10 @@ int converte2settings(int flag)
 	{
 		system("rm -rf /tmp/transponder.cable");
 		system("rm -rf /tmp/satellites.cable");
+		system("cp -a /var/etc/tuxbox/cables.xml /tmp/cables.xml");
 		start = ostrcat("<cable ", NULL, 0, 0);
 		end = ostrcat("</cable>", NULL, 0, 0);
-		filename = ostrcat("/var/etc/tuxbox/cables.xml", NULL, 0, 0);
+		filename = ostrcat("/tmp/cables.xml", NULL, 0, 0);
 		transponderfile = ostrcat("/tmp/transponder.cable", NULL, 0, 0);
 		satfile = ostrcat("/tmp/satellites.cable", NULL, 0, 0);
 		fetype = ostrcat("1", NULL, 0, 0);
@@ -7445,9 +7447,10 @@ int converte2settings(int flag)
 	{
 		system("rm -rf /tmp/transponder.ter");
 		system("rm -rf /tmp/satellites.ter");
+		system("cp -a /var/etc/tuxbox/terrestrial.xml /tmp/terrestrial.xml");
 		start = ostrcat("<terrestrial ", NULL, 0, 0);
 		end = ostrcat("</terrestrial>", NULL, 0, 0);
-		filename = ostrcat("/var/etc/tuxbox/terrestrial.xml", NULL, 0, 0);
+		filename = ostrcat("/tmp/terrestrial.xml", NULL, 0, 0);
 		transponderfile = ostrcat("/tmp/transponder.ter", NULL, 0, 0);
 		satfile = ostrcat("/tmp/satellites.ter", NULL, 0, 0);
 		fetype = ostrcat("2", NULL, 0, 0);
