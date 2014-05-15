@@ -6311,15 +6311,13 @@ int converte2settings(int flag)
 					line = ostrcat(line, tmpstr3, 1, 0);
 				line = ostrcat(line, "#", 1, 0);
 
-//				line = ostrcat(line, tmpstr3, 1, 0); // pilot			
-				line = ostrcat(line, "1", 1, 0); // pilot
+				line = ostrcat(line, tmpstr3, 1, 0); // pilot			
 				line = ostrcat(line, "#", 1, 0);
 
 				line = ostrcat(line, tmpstr3, 1, 0); // rolloff
 				line = ostrcat(line, "#", 1, 0);
 
-//				line = ostrcat(line, tmpstr3, 1, 0); // inversion				
-				line = ostrcat(line, "2", 1, 0); // inversion				
+				line = ostrcat(line, tmpstr3, 1, 0); // inversion				
 				line = ostrcat(line, "#", 1, 0);
 
 				if(ostrstr((ret1[i]).part, "system=") != NULL)
