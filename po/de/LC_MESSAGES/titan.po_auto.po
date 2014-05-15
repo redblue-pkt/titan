@@ -1696,8 +1696,9 @@ msgid ""
 "Transponder/Satellite Convert done, please use channel search on next Boot.\n"
 "Your System will reboot !"
 msgstr ""
-"Transponder / Sat Konvertierung abgeschlossen. Bitte führen Sie einen "
-"Sendersuchlauf nach dem Reboot durch./n Das Sytem wird neu booten!"
+"Transponder / Sat Konvertierung abgeschlossen.\n"
+"Bitte führen Sie einen Sendersuchlauf nach dem Reboot durch.\n"
+"Ihre Box wird nun neu gestartet!\n"
 
 #: gmediarender.h:109
 msgid "Servername"
