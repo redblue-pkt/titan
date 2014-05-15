@@ -772,8 +772,7 @@ msgstr ""
 
 #: browser.h:206
 msgid "Choose your Internet Favorite from the following list"
-msgstr ""
-"Wählen Sie das gewünschte Internet Lesezeichen aus der folgenden Liste"
+msgstr "Wählen Sie das gewünschte Internet Lesezeichen aus der folgenden Liste"
 
 #: callmon_main.h:39
 msgid ""
@@ -1182,7 +1181,7 @@ msgstr "Einfach (EPG)"
 
 #: epg.h:185
 msgid "Multi (EPG)"
-msgstr "Multi (EPG)"
+msgstr ""
 
 #: epgsearch.h:27
 msgid "Search only aktual epg ?"
@@ -1381,10 +1380,10 @@ msgid ""
 "plugin after reinstalling the software TitanNit in TitanNit Menu Visible "
 "then perform an update by Tpk to: "
 msgstr ""
-"Wenn Sie ein anderes Paket aus dieser Sektion installieren wollen, entfernen "
-"Sie zuerst das installierte Paket. Ist das gewünschte Plugin nach einer "
-"Neuinstallation der TitanNit Software im TitanNit Menü nicht sichtbar, dann "
-"führen Sie bitte eine TPK Aktualisierung durch. "
+"Wenn Sie ein anderes Paket aus dieser Sektion installieren wollen, "
+"entfernen Sie zuerst das installierte Paket. Ist das gewünschte Plugin "
+"nach einer Neuinstallation der TitanNit Software im TitanNit Menü nicht "
+"sichtbar, dann führen Sie bitte eine TPK Aktualisierung durch. "
 
 #: extensions.h:220 extensions.h:362
 msgid "Installing"
@@ -1479,8 +1478,7 @@ msgstr "Keine Verbindung zu Facebook"
 msgid ""
 "Facebook allready registered,\n"
 "Make new registration ?"
-msgstr ""
-"Sind Sie bereits bei Facebook angemeldet? Möchten Sie sich registrieren?"
+msgstr "Sind Sie bereits bei Facebook angemeldet? Möchten Sie sich registrieren?"
 
 #: facebook.h:471
 msgid "Group created"
@@ -1556,8 +1554,7 @@ msgstr "Menü"
 
 #: filemanager.h:89
 msgid "Choose your Filemanager Option from the following list"
-msgstr ""
-"Wählen Sie die gewünschte Datei Manager Option aus der folgenden Liste"
+msgstr "Wählen Sie die gewünschte Datei Manager Option aus der folgenden Liste"
 
 #: filemanager.h:95
 msgid "Can't rename file !"
@@ -2416,12 +2413,12 @@ msgstr ""
 
 #: info.h:27 plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9 titan.c:978
 msgid "Info"
-msgstr "Info"
+msgstr ""
 
 #: info.h:48 info.h:64 info.h:91 plugins_panel_skin.xml.h:17
 #: skins_panel_skin.xml.h:17
 msgid "Infos"
-msgstr "Infos"
+msgstr ""
 
 #: instar.h:196 instar.h:208
 msgid "aus"
@@ -3160,10 +3157,10 @@ msgstr "Netzwerk Browser - Freigaben"
 #: networkbrowser.h:1875
 msgid "Choose your Shares from the following list"
 msgstr ""
-"Liste Ihrer gespeicherten Freigaben. Zum Bearbeiten Eintrag wählen und -"
-"Grün- drücken. Um weitere Freigaben hinzuzufügen bitte -Suche- benutzen. "
-"Für den Zugriff auf passwortgeschützte Windows Freigaben bitte Menü "
-"drücken und die Benutzerdaten eingeben."
+"Liste Ihrer gespeicherten Freigaben. Zum Bearbeiten Eintrag wählen "
+"und -Grün- drücken. Um weitere Freigaben hinzuzufügen bitte -Suche- "
+"benutzen. Für den Zugriff auf passwortgeschützte Windows Freigaben bitte "
+"Menü drücken und die Benutzerdaten eingeben."
 
 #: networkbrowser.h:1907
 msgid "Are you sure you want remove this share?"
@@ -3493,7 +3490,7 @@ msgstr "CPU Frequenz"
 
 #: panel_settings_overclocking.h:233 settings_overclocking.h:233
 msgid "FDMA bypass"
-msgstr "FDMA bypass"
+msgstr ""
 
 #: panel_settings_overclocking.h:243 settings_overclocking.h:243
 msgid "Reduce Standby frequency"
@@ -3581,7 +3578,7 @@ msgstr ""
 
 #: play.h:623 skin_default_skin.xml.h:380
 msgid "MediaDB Edit"
-msgstr "MediaDB Edit"
+msgstr ""
 
 #: play.h:626
 msgid "Delete File"
@@ -3711,7 +3708,7 @@ msgstr "Springe von akt. Position vor (min)"
 
 #: play.h:1250 play.h:1256 plugins_tmc_skin.xml.h:1 skins_tmc_skin.xml.h:1
 msgid "EPG Info"
-msgstr "EPG Info"
+msgstr ""
 
 #: play.h:1265
 msgid "Record in progress"
@@ -4569,7 +4566,7 @@ msgstr "Geschwindigkeit"
 #: plugins_panel_skin.xml.h:24 skin_default_skin.xml.h:649
 #: skins_panel_skin.xml.h:24
 msgid "Test"
-msgstr "Test"
+msgstr ""
 
 #: plugins_panel_skin.xml.h:25 skin_default_skin.xml.h:710
 #: skins_panel_skin.xml.h:25
@@ -6013,7 +6010,7 @@ msgstr "Anzeige während einer Aufnahme"
 
 #: skin_default_skin.xml.h:110
 msgid "BER:"
-msgstr "BER:"
+msgstr ""
 
 #: skin_default_skin.xml.h:111
 msgid "Blindscan"
@@ -6554,8 +6551,7 @@ msgstr "Hier können Sie Ihre Einstellungen sichern und wiederherstellen"
 
 #: skin_default_skin.xml.h:274
 msgid "Here you can check the reception of the current station."
-msgstr ""
-"Hier können Sie die Signalqualität des aktuellen Senders überprüfen"
+msgstr "Hier können Sie die Signalqualität des aktuellen Senders überprüfen"
 
 #: skin_default_skin.xml.h:275
 msgid ""
@@ -6676,13 +6672,13 @@ msgstr "Hier können Sie die CPU Übertaktung konfigurieren"
 msgid "Here you can make your picture and sound settings."
 msgstr ""
 "Bild und Ton Konfiguration:\n"
-"Hinweis: Die neue Auflösung muss bestätigt werden. Bei falscher Auflösung "
-"wird nach 5 Sekunden in den ursprünglichen Modus zurückgeschaltet."
+"Hinweis: Die neue Auflösung muss bestätigt werden. Bei falscher "
+"Auflösung wird nach 5 Sekunden in den ursprünglichen Modus "
+"zurückgeschaltet."
 
 #: skin_default_skin.xml.h:297
 msgid "Here you can make your PIN security for menus settings."
-msgstr ""
-"Hier können Sie Ihre PIN Sicherheitseinstellungen für Menüs vornehmen"
+msgstr "Hier können Sie Ihre PIN Sicherheitseinstellungen für Menüs vornehmen"
 
 #: skin_default_skin.xml.h:298
 msgid "Here you can make your PIN security settings."
@@ -6746,8 +6742,9 @@ msgstr "Skin Auswahl:"
 msgid ""
 "Here you can select the Transponder Mode. Please use a channel search after "
 "the Restart"
-msgstr "Hier können Sie Ihre Transponder Auswahl vornehmen\n"
-msgstr "Führen Sie nach dem Neustart einen Kanalsuchlauf durch."
+msgstr ""
+"Hier können Sie Ihre Transponder Auswahl vornehmen\n"
+"Führen Sie nach dem Neustart einen Kanalsuchlauf durch."
 
 #: skin_default_skin.xml.h:311
 msgid ""
@@ -6787,8 +6784,8 @@ msgid ""
 msgstr ""
 "Sat Tuner Konfiguration: Wählen Sie zunächst den Satelliten aus. Bei "
 "Verwendung von DiSEqC weisen Sie zusätzlich den verwendeten Port zu. Für "
-"erweiterte LNB/Unicable Konfiguration navigieren Sie zur Option LNB/Unicable "
-"und drücken Sie die rote Taste."
+"erweiterte LNB/Unicable Konfiguration navigieren Sie zur Option LNB/"
+"Unicable und drücken Sie die rote Taste."
 
 #: skin_default_skin.xml.h:316
 msgid ""
@@ -7238,7 +7235,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:434
 msgid "Orbital Position:"
-msgstr "Orbital Position:"
+msgstr ""
 
 #: skin_default_skin.xml.h:435
 msgid "OSD Bottom Overscan"
@@ -7402,7 +7399,7 @@ msgstr "Anbieter"
 
 #: skin_default_skin.xml.h:481
 msgid "Provider:"
-msgstr "Provider:"
+msgstr ""
 
 #: skin_default_skin.xml.h:482
 msgid "Prozesslist"
@@ -8042,7 +8039,7 @@ msgstr "Zwei Stufen Stummschaltung"
 
 #: skin_default_skin.xml.h:693
 msgid "TXT PID:"
-msgstr "TXT PID:"
+msgstr ""
 
 #: skin_default_skin.xml.h:696
 msgid "Type:"
@@ -8391,9 +8388,8 @@ msgstr "Image sichern"
 
 #: system_backup_restore.h:15
 msgid ""
-"Press -restore- and your saved settings will be restored from your "
-"swapstick / recording hdd! The Box will restart automatically for "
-"restoring!\n"
+"Press -restore- and your saved settings will be restored from your swapstick "
+"/ recording hdd! The Box will restart automatically for restoring!\n"
 "\n"
 "Press -backup- to save your actual settings to swapstick / recording hdd.\n"
 "WARNING: The old backup will be deleted!"
@@ -8808,8 +8804,7 @@ msgstr "Datei in Streampfad herunterladen (im Hintergrund)"
 
 #: tithek.h:1372
 msgid "Choose your Streaming Playback Modus from the following list"
-msgstr ""
-"Wählen Sie den gewünschten Stream Playback Modus aus der folgenden Liste"
+msgstr "Wählen Sie den gewünschten Stream Playback Modus aus der folgenden Liste"
 
 #: tithek.h:1443 tithek.h:1462
 msgid "Filename"
@@ -9277,8 +9272,7 @@ msgstr ""
 #: tpk_description.h:6
 msgid ""
 "Alternativer Skin fuer Samsung LCD - ohne Picons (extra zu installieren)"
-msgstr ""
-"Alternativer Skin für Samsung LCD - ohne Picons (extra zu installieren)"
+msgstr "Alternativer Skin für Samsung LCD - ohne Picons (extra zu installieren)"
 
 #: tpk_description.h:7
 msgid "Automatisch Timer setzen"
@@ -11020,7 +11014,7 @@ msgstr "Wählen Sie hier Ihr Unicable (SCR) Produkt aus"
 
 #: unicable.h:277
 msgid "Unicable SCR"
-msgstr "Unicable SCR"
+msgstr ""
 
 #: unicable.h:277
 msgid "Choose your Unicable SCR from the following list"
