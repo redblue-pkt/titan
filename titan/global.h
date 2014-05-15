@@ -6154,7 +6154,7 @@ void convertsettings()
 // flag 2 = ter
 int converte2settings(int flag)
 {
-	char* tmpstr3 = NULL, *buf = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *line = NULL, *name = NULL, *orbitalpos = NULL, *fetype = NULL, *flags = NULL, *outfile = NULL, *start = NULL, *end = NULL, *filename = NULL, *transponderfile = NULL, *satfile = NULL;
+	char* path = NULL, *tmpstr3 = NULL, *buf = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *line = NULL, *name = NULL, *orbitalpos = NULL, *fetype = NULL, *flags = NULL, *outfile = NULL, *start = NULL, *end = NULL, *filename = NULL, *transponderfile = NULL, *satfile = NULL;
 	int incount = 0;
 	
 	if(flag == 0)
@@ -6165,6 +6165,7 @@ int converte2settings(int flag)
 		start = ostrcat("<sat ", NULL, 0, 0);
 		end = ostrcat("</sat>", NULL, 0, 0);
 		filename = ostrcat("/tmp/satellites.xml", NULL, 0, 0);
+		path = ostrcat("/transponder/satellites.xml", NULL, 0, 0);
 		transponderfile = ostrcat("/tmp/transponder.sat", NULL, 0, 0);
 		satfile = ostrcat("/tmp/satellites.sat", NULL, 0, 0);
 		fetype = ostrcat("0", NULL, 0, 0);
@@ -6177,6 +6178,7 @@ int converte2settings(int flag)
 		start = ostrcat("<cable ", NULL, 0, 0);
 		end = ostrcat("</cable>", NULL, 0, 0);
 		filename = ostrcat("/tmp/cables.xml", NULL, 0, 0);
+		path = ostrcat("/transponder/cables.xml", NULL, 0, 0);
 		transponderfile = ostrcat("/tmp/transponder.cable", NULL, 0, 0);
 		satfile = ostrcat("/tmp/satellites.cable", NULL, 0, 0);
 		fetype = ostrcat("1", NULL, 0, 0);
@@ -6190,12 +6192,16 @@ int converte2settings(int flag)
 		start = ostrcat("<terrestrial ", NULL, 0, 0);
 		end = ostrcat("</terrestrial>", NULL, 0, 0);
 		filename = ostrcat("/tmp/terrestrial.xml", NULL, 0, 0);
+		path = ostrcat("/transponder/terrestrial.xml", NULL, 0, 0);
 		transponderfile = ostrcat("/tmp/transponder.ter", NULL, 0, 0);
 		satfile = ostrcat("/tmp/satellites.ter", NULL, 0, 0);
 		fetype = ostrcat("2", NULL, 0, 0);
 		incount = 9999;
 	}
-	
+
+	if(!file_exist(filename))
+		gethttp("atemio.dyndns.tv", path, 80, filename, HTTPAUTH, 5000, NULL, 0);
+
 	char* tmptext = NULL;
 	tmptext = ostrcat(_("Error: Transponder Source file not found"), "\nfilename: ", 0, 0);
 	tmptext = ostrcat(tmptext, transponderfile, 1, 0);
@@ -6204,6 +6210,13 @@ int converte2settings(int flag)
 	{
 		textbox(_("Message"), tmptext, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
 		free(tmptext), tmptext = NULL;
+		free(path), path = NULL;
+		free(filename), filename = NULL;
+		free(satfile), satfile = NULL;
+		free(fetype), fetype = NULL;
+		free(start), start = NULL;
+		free(end), end = NULL;
+		free(transponderfile), transponderfile = NULL;
 		return 0;
 	}
 	free(tmptext), tmptext = NULL;
@@ -6337,6 +6350,11 @@ int converte2settings(int flag)
 		free(outfile), outfile = NULL;	
 	}
 
+	free(path), path = NULL;
+	free(filename), filename = NULL;
+	free(satfile), satfile = NULL;
+	free(transponderfile), transponderfile = NULL;
+		
 	free(tmpstr3), tmpstr3 = NULL;
 	free(buf), buf = NULL;
 	free(start), start = NULL;
