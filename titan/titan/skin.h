@@ -832,8 +832,12 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 			newnode->pic = changepicpath(ret);
 			free(ret);
 
+			// set default menu entry
+			if(!file_exist(newnode->pic))
+				newnode->pic = changepicpath("skin/background.png");
+
 			if(getpic(newnode->pic) == NULL && newnode->pic != NULL)
-			{
+			{				
 				length = strlen(newnode->pic);
 				if(newnode->pic[length - 1] == 'g' && newnode->pic[length - 2] == 'n' && newnode->pic[length - 3] == 'p')
 					buf = readpng(newnode->pic, &width, &height, &rowbytes, &channels, 0, 0, 0, 0, 0, 0);
@@ -850,6 +854,9 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 			free(newnode->pic); newnode->pic = NULL;
 			newnode->pic = changepicpath(ret);
 			free(ret);
+			// set default menu entry
+			if(!file_exist(newnode->pic))
+				newnode->pic = changepicpath("skin/background.png");
 		}
 		ret = getxmlentry(line, " func=");
 		if(ret != NULL)
