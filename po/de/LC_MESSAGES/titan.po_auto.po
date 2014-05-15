@@ -1709,6 +1709,8 @@ msgid ""
 "Standard favorites have been successfully applied.\n"
 "Your System will reboot !"
 msgstr ""
+"Standard Favoriten erfolgreich importiert.\n"
+"Ihre Box wird nun neu gestartet!"
 
 #: gmediarender.h:109
 msgid "Servername"
@@ -6183,7 +6185,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:159
 msgid "Create Default Favorites"
-msgstr ""
+msgstr "Standart Favoriten erstellen"
 
 #: skin_default_skin.xml.h:160
 msgid "Create Path"
@@ -6207,7 +6209,7 @@ msgstr "Vorschau Bilder erstellen"
 
 #: skin_default_skin.xml.h:165
 msgid "Create Transponder List"
-msgstr "Transponder Liste neuerstellen"
+msgstr "Transponder Liste importieren"
 
 #: skin_default_skin.xml.h:166
 msgid "d"
