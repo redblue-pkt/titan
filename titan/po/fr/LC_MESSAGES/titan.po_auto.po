@@ -49,8 +49,8 @@ msgstr ""
 #: filemanager.h:100 filemanager.h:206 filemanager.h:279 filemanager.h:289
 #: filemanager.h:319 filemanager.h:329 filenuke.h:37 filenuke.h:84
 #: filenuke.h:96 filenuke.h:108 filenuke.h:157 flashx.h:26 flashx.h:84
-#: flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270 global.h:6605
-#: global.h:7405 global.h:7463 gmediarender.h:115 harddisk.h:350
+#: flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270 global.h:5519
+#: global.h:6144 global.h:6205 gmediarender.h:115 harddisk.h:350
 #: harddisk.h:355 harddisk.h:382 harddisk.h:386 harddisk.h:439 harddisk.h:633
 #: harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731
 #: harddisk.h:733 harddisk.h:793 harddisk.h:811 harddisk.h:814 harddisk.h:1046
@@ -109,9 +109,9 @@ msgstr ""
 #: system_backup_restore.h:82 system_backup_restore.h:88
 #: system_backup_restore.h:95 system_update.h:320 system_update.h:326
 #: system_update.h:333 timeshift.h:113 timeshift.h:155 timeshift.h:162
-#: timeshiftsettings.h:45 titan.c:276 titan.c:340 titan.c:349 titan.c:969
-#: titan.c:978 titan.c:1103 titan.c:1124 titan.c:1130 titan.c:1141
-#: titan.c:1147 tithek.c:81 tithek_global.h:238 tithek.h:664 tithek.h:1160
+#: timeshiftsettings.h:45 titan.c:277 titan.c:341 titan.c:350 titan.c:970
+#: titan.c:979 titan.c:1104 titan.c:1125 titan.c:1131 titan.c:1142
+#: titan.c:1148 tithek.c:81 tithek_global.h:238 tithek.h:664 tithek.h:1160
 #: tithek.h:1203 tithek.h:1450 tithek.h:1472 tithek.h:1488 tithek.h:3282
 #: tithek.h:3346 tithek.h:3360 tithek.h:3370 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922
@@ -141,8 +141,8 @@ msgstr "OK"
 #: filemanager.h:100 filemanager.h:206 filemanager.h:279 filemanager.h:289
 #: filemanager.h:319 filemanager.h:329 filenuke.h:37 filenuke.h:84
 #: filenuke.h:96 filenuke.h:108 filenuke.h:157 flashx.h:26 flashx.h:84
-#: flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270 global.h:6605
-#: global.h:7405 global.h:7463 gmediarender.h:115 harddisk.h:350
+#: flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270 global.h:5519
+#: global.h:6144 global.h:6205 gmediarender.h:115 harddisk.h:350
 #: harddisk.h:355 harddisk.h:382 harddisk.h:386 harddisk.h:439 harddisk.h:633
 #: harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731
 #: harddisk.h:733 harddisk.h:793 harddisk.h:811 harddisk.h:814 harddisk.h:1046
@@ -210,9 +210,9 @@ msgstr "OK"
 #: system_backup_restore.h:82 system_backup_restore.h:88
 #: system_backup_restore.h:95 system_update.h:320 system_update.h:326
 #: system_update.h:333 timeshift.h:113 timeshift.h:155 timeshift.h:162
-#: timeshiftsettings.h:45 titan.c:276 titan.c:340 titan.c:349 titan.c:969
-#: titan.c:978 titan.c:1103 titan.c:1124 titan.c:1130 titan.c:1141
-#: titan.c:1147 tithek.c:81 tithek_global.h:238 tithek.h:664 tithek.h:1160
+#: timeshiftsettings.h:45 titan.c:277 titan.c:341 titan.c:350 titan.c:970
+#: titan.c:979 titan.c:1104 titan.c:1125 titan.c:1131 titan.c:1142
+#: titan.c:1148 tithek.c:81 tithek_global.h:238 tithek.h:664 tithek.h:1160
 #: tithek.h:1203 tithek.h:1450 tithek.h:1472 tithek.h:1488 tithek.h:3282
 #: tithek.h:3346 tithek.h:3360 tithek.h:3370 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922
@@ -550,7 +550,7 @@ msgstr "oui / vzap sans fin"
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:329
 #: filenuke.h:37 filenuke.h:84 filenuke.h:96 filenuke.h:108 filenuke.h:157
 #: flashx.h:26 flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:6605 global.h:7405 global.h:7463 gmediarender.h:115 harddisk.h:633
+#: global.h:5519 global.h:6144 global.h:6205 gmediarender.h:115 harddisk.h:633
 #: harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731
 #: harddisk.h:733 harddisk.h:793 harddisk.h:811 harddisk.h:814 hbbtv.h:362
 #: hello.c:36 httpdfunc.h:1098 hwtest.h:88 hwtest.h:93 hwtest.h:98
@@ -597,8 +597,8 @@ msgstr "oui / vzap sans fin"
 #: system_backup_restore.h:43 system_backup_restore.h:80
 #: system_backup_restore.h:82 system_update.h:320 system_update.h:326
 #: system_update.h:333 timeshift.h:113 timeshift.h:155 timeshift.h:162
-#: timeshiftsettings.h:45 titan.c:276 titan.c:340 titan.c:349 titan.c:1103
-#: titan.c:1124 titan.c:1130 titan.c:1141 titan.c:1147 tithek.c:81
+#: timeshiftsettings.h:45 titan.c:277 titan.c:341 titan.c:350 titan.c:1104
+#: titan.c:1125 titan.c:1131 titan.c:1142 titan.c:1148 tithek.c:81
 #: tithek_global.h:238 tithek.h:664 tithek.h:1160 tithek.h:1203 tithek.h:1450
 #: tithek.h:1472 tithek.h:3282 tithek.h:3346 tithek.h:3360 tithek.h:3370
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
@@ -1577,101 +1577,101 @@ msgstr ""
 msgid "Can't show this file!"
 msgstr ""
 
-#: global.h:6605 keyactions.h:290
+#: global.h:5519 keyactions.h:290
 msgid "ERROR cant read res"
 msgstr ""
 
-#: global.h:6830 rectimer.h:1066 skin_default_skin.xml.h:399
+#: global.h:5744 rectimer.h:1066 skin_default_skin.xml.h:399
 msgid "Monday"
 msgstr "Lundi"
 
-#: global.h:6831 rectimer.h:1067 skin_default_skin.xml.h:682
+#: global.h:5745 rectimer.h:1067 skin_default_skin.xml.h:682
 msgid "Tuesday"
 msgstr "Mardi"
 
-#: global.h:6832 rectimer.h:1068 skin_default_skin.xml.h:735
+#: global.h:5746 rectimer.h:1068 skin_default_skin.xml.h:735
 msgid "Wednesday"
 msgstr "Mercredi"
 
-#: global.h:6833 rectimer.h:1069 skin_default_skin.xml.h:653
+#: global.h:5747 rectimer.h:1069 skin_default_skin.xml.h:653
 msgid "Thursday"
 msgstr "Jeudi"
 
-#: global.h:6834 rectimer.h:1070 skin_default_skin.xml.h:249
+#: global.h:5748 rectimer.h:1070 skin_default_skin.xml.h:249
 msgid "Friday"
 msgstr "Vendredi"
 
-#: global.h:6835 rectimer.h:1071 skin_default_skin.xml.h:545
+#: global.h:5749 rectimer.h:1071 skin_default_skin.xml.h:545
 msgid "Saturday"
 msgstr "Samedi"
 
-#: global.h:6836 rectimer.h:1072 skin_default_skin.xml.h:629
+#: global.h:5750 rectimer.h:1072 skin_default_skin.xml.h:629
 msgid "Sunday"
 msgstr "Dimanche"
 
-#: global.h:6840
+#: global.h:5754
 msgid "Mon"
 msgstr ""
 
-#: global.h:6841
+#: global.h:5755
 msgid "Tue"
 msgstr ""
 
-#: global.h:6842
+#: global.h:5756
 msgid "Wed"
 msgstr ""
 
-#: global.h:6843
+#: global.h:5757
 msgid "Thu"
 msgstr ""
 
-#: global.h:6844
+#: global.h:5758
 msgid "Fri"
 msgstr ""
 
-#: global.h:6845
+#: global.h:5759
 msgid "Sat"
 msgstr ""
 
-#: global.h:6846
+#: global.h:5760
 msgid "Sun"
 msgstr ""
 
-#: global.h:7281
+#: global.h:6020
 msgid "Tuner "
 msgstr ""
 
-#: global.h:7290
+#: global.h:6029
 msgid "Multituner adjustable"
 msgstr ""
 
-#: global.h:7340
+#: global.h:6079
 msgid "Create Transponder (Sat)"
 msgstr ""
 
-#: global.h:7341
+#: global.h:6080
 msgid "Create Transponder (Cable)"
 msgstr ""
 
-#: global.h:7342
+#: global.h:6081
 msgid "Create Transponder (Terrestrial)"
 msgstr ""
 
-#: global.h:7343
+#: global.h:6082
 msgid "Create Transponder (All)"
 msgstr ""
 
-#: global.h:7345
+#: global.h:6084
 msgid "Select Your Serach Modus"
 msgstr ""
 
-#: global.h:7405
+#: global.h:6144
 msgid ""
 "Transponder/Satellite Convert done, please use channel search on next Boot.\n"
 "Your System will reboot !"
 msgstr ""
 
-#: global.h:7458
+#: global.h:6200
 msgid "Error: Transponder Source file not found"
 msgstr ""
 
@@ -2348,7 +2348,7 @@ msgstr ""
 msgid "Email  \t\tinfo@atemio.de"
 msgstr ""
 
-#: info.h:27 plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9 titan.c:978
+#: info.h:27 plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9 titan.c:979
 msgid "Info"
 msgstr "Info"
 
@@ -8342,104 +8342,104 @@ msgstr ""
 msgid "never del file"
 msgstr "Taille Inversé"
 
-#: titan.c:276
+#: titan.c:277
 msgid "!!! This is a DEMO Version !!!"
 msgstr ""
 
-#: titan.c:340
+#: titan.c:341
 msgid ""
 "Found running record\n"
 "or record is starting in next time.\n"
 "Really shutdown ?"
 msgstr ""
 
-#: titan.c:349
+#: titan.c:350
 msgid ""
 "Found running download\n"
 "Really shutdown ?"
 msgstr ""
 
-#: titan.c:794
+#: titan.c:795
 msgid "Error: open rc device !!"
 msgstr ""
 
-#: titan.c:800
+#: titan.c:801
 msgid "Error: no frontend device found !!"
 msgstr ""
 
-#: titan.c:806
+#: titan.c:807
 msgid "Error: no demux device found !!"
 msgstr ""
 
-#: titan.c:812
+#: titan.c:813
 msgid "Error: no video device found !!"
 msgstr ""
 
-#: titan.c:818
+#: titan.c:819
 msgid "Error: no audio device found !!"
 msgstr ""
 
-#: titan.c:836
+#: titan.c:837
 msgid "Error: skin not found !!"
 msgstr ""
 
-#: titan.c:920
+#: titan.c:921
 msgid "RemoteControl Old Version"
 msgstr ""
 
-#: titan.c:921
+#: titan.c:922
 msgid "RemoteControl Long Version"
 msgstr ""
 
-#: titan.c:928
+#: titan.c:929
 msgid "Select Your Remote Control"
 msgstr ""
 
-#: titan.c:928
+#: titan.c:929
 msgid "Choose your Remotecontrol Model from the following list"
 msgstr ""
 
-#: titan.c:969
+#: titan.c:970
 msgid "First Wizzard"
 msgstr "Réglages assisté"
 
-#: titan.c:969
+#: titan.c:970
 msgid "Settings OK ?"
 msgstr "Réglages"
 
-#: titan.c:1103
+#: titan.c:1104
 msgid "Receiver successful unlocked"
 msgstr ""
 
-#: titan.c:1124
+#: titan.c:1125
 msgid ""
 "Free space in /var to little!\n"
 "This can make problems!"
 msgstr ""
 
-#: titan.c:1130
+#: titan.c:1131
 msgid ""
 "/var not writeable!\n"
 "Repair it?"
 msgstr ""
 
-#: titan.c:1141
+#: titan.c:1142
 msgid ""
 "Free space in /mnt to little!\n"
 "This can make problems!"
 msgstr ""
 
-#: titan.c:1147
+#: titan.c:1148
 msgid ""
 "/mnt not writeable!\n"
 "Repair it?"
 msgstr ""
 
-#: titan.c:1196
+#: titan.c:1197
 msgid "Unknown Error."
 msgstr ""
 
-#: titan.c:1198
+#: titan.c:1199
 msgid "Automatic stop in 10 seconds."
 msgstr ""
 
