@@ -490,9 +490,15 @@ int fewait(struct dvbdev* node)
 	return 0;
 #endif
 
+	int timer = 500;
+
+#ifdef MIPSEL
+	timer = 2000;
+#endif
+
 	//wait for tuner ready
 	debug(200, "wait for tuner");
-	while(count <= 2000)
+	while(count <= timer)
 	{
 		count++;
 		//ioctl(node->fd, FE_GET_EVENT, &ev);

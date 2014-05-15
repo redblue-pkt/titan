@@ -6141,12 +6141,14 @@ void convertsettings()
 	}
 
 //	free(tmpstr), tmpstr = NULL;
-	textbox(_("Message"), _("Transponder/Satellite Convert done, please use channel search on next Boot.\nYour System will reboot !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
-	//write only config file
-	system("sync");
-	writeallconfig(3);
-	oshutdown(2,2);
-	system("init 6");
+	if(textbox(_("Message"), _("Transponder/Satellite Convert done, please use channel search on next Boot.\nYour System will reboot !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0) == 1)
+	{	
+		//write only config file
+		system("sync");
+		writeallconfig(3);
+		oshutdown(2,2);
+		system("init 6");
+	}
 }
 
 // flag 0 = sat
@@ -6387,12 +6389,14 @@ void createfav()
 	system("rm -rf /mnt/settings/bouquets*");
 	system("cp -a /etc/titan.restore/mnt/settings/bouquets* /mnt/settings");
 
-	textbox(_("Message"), _("Standard favorites have been successfully applied.\nYour System will reboot !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
-	//write only config file
-	system("sync");
-	writeallconfig(3);
-	oshutdown(2,2);
-	system("init 6");
+	if(textbox(_("Message"), _("Standard favorites have been successfully applied.\nYour System will reboot !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0) == 1)
+	{
+		//write only config file
+		system("sync");
+		writeallconfig(3);
+		oshutdown(2,2);
+		system("init 6");
+	}
 }
 
 #endif
