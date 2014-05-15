@@ -1698,7 +1698,7 @@ msgid ""
 msgstr ""
 "Transponder / Sat Konvertierung abgeschlossen.\n"
 "Bitte führen Sie einen Sendersuchlauf nach dem Reboot durch.\n"
-"Ihre Box wird nun neu gestartet!\n"
+"Ihre Box wird nun neu gestartet!"
 
 #: gmediarender.h:109
 msgid "Servername"
