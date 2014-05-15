@@ -40,8 +40,8 @@ xgettext: found 1 fatal error
 [createpo.sh] ############################################
 [createpo.sh] ###### error should be in the middle #######
 [createpo.sh] ############################################
-  4678	msgstr "Hier kÃ¶nnen Sie Ihre Transponder Auswahl vornehmen\n"
-  4679	msgstr "FÃ¼hren Sie nach dem Neustart einen Kanalsuchlauf durch."
+  4678	msgstr "Hier k??nnen Sie Ihre Transponder Auswahl vornehmen\n"
+  4679	msgstr "F??hren Sie nach dem Neustart einen Kanalsuchlauf durch."
   4680	
 [createpo.sh] ############################################
 [createpo.sh] ################## coding #################
