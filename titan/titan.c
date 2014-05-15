@@ -88,6 +88,7 @@ struct channelslot *channelslot = NULL;
 #include "skinconfig.h"
 #include "thumb.h"
 #include "global.h"
+#include "security.h"
 #include "stream.h"
 #include "dvbdev.h"
 #include "rotorcalc.h"
