@@ -834,7 +834,11 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 
 			// set default menu entry
 			if(!file_exist(newnode->pic))
+			{
+				printf("pic not found: %s\n",newnode->pic);
 				newnode->pic = changepicpath("skin/background.png");
+				printf("use default pic: %s\n",newnode->pic);
+			}
 
 			if(getpic(newnode->pic) == NULL && newnode->pic != NULL)
 			{				
@@ -856,7 +860,11 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 			free(ret);
 			// set default menu entry
 			if(!file_exist(newnode->pic))
+			{
+				printf("pic not found: %s\n",newnode->pic);
 				newnode->pic = changepicpath("skin/background.png");
+				printf("use default pic: %s\n",newnode->pic);
+			}
 		}
 		ret = getxmlentry(line, " func=");
 		if(ret != NULL)
