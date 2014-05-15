@@ -6185,7 +6185,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:159
 msgid "Create Default Favorites"
-msgstr "Standart Favoriten laden"
+msgstr "Standard Favoriten laden"
 
 #: skin_default_skin.xml.h:160
 msgid "Create Path"
