@@ -6222,8 +6222,24 @@ int converte2settings(int flag)
 	free(tmptext), tmptext = NULL;
 
 	buf = readfiletomem(filename, 1);
-
-	writesys("/tmp/convert.log", buf, 1);
+	if(buf == NULL)
+	{
+		printf("buf: %s\n", buf);	
+		tmptext = ostrcat(_("Error: Transponder Source file no data"), "\nfilename: ", 0, 0);
+		tmptext = ostrcat(tmptext, transponderfile, 1, 0);
+		textbox(_("Message"), tmptext, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
+		free(tmptext), tmptext = NULL;
+		free(path), path = NULL;
+		free(filename), filename = NULL;
+		free(satfile), satfile = NULL;
+		free(fetype), fetype = NULL;
+		free(start), start = NULL;
+		free(end), end = NULL;
+		free(transponderfile), transponderfile = NULL;
+		return 0;
+	}
+	
+//	writesys("/tmp/convert.log", buf, 1);
 	tmpstr3 = ostrcat("0", NULL, 0, 0);
 
 	while(ostrstr(buf, start) != NULL)
