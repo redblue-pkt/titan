@@ -6746,8 +6746,8 @@ msgstr "Skin Auswahl:"
 msgid ""
 "Here you can select the Transponder Mode. Please use a channel search after "
 "the Restart"
-msgstr "Hier k??nnen Sie Ihre Transponder Auswahl vornehmen\n"
-msgstr "F??hren Sie nach dem Neustart einen Kanalsuchlauf durch."
+msgstr "Hier können Sie Ihre Transponder Auswahl vornehmen\n"
+msgstr "Führen Sie nach dem Neustart einen Kanalsuchlauf durch."
 
 #: skin_default_skin.xml.h:311
 msgid ""
