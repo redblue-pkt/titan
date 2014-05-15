@@ -50,7 +50,7 @@ msgstr ""
 #: filemanager.h:319 filemanager.h:329 filenuke.h:37 filenuke.h:84
 #: filenuke.h:96 filenuke.h:108 filenuke.h:157 flashx.h:26 flashx.h:84
 #: flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270 global.h:5519
-#: global.h:6144 global.h:6205 gmediarender.h:115 harddisk.h:350
+#: global.h:6144 global.h:6205 global.h:6356 gmediarender.h:115 harddisk.h:350
 #: harddisk.h:355 harddisk.h:382 harddisk.h:386 harddisk.h:439 harddisk.h:633
 #: harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731
 #: harddisk.h:733 harddisk.h:793 harddisk.h:811 harddisk.h:814 harddisk.h:1046
@@ -71,7 +71,7 @@ msgstr ""
 #: mc_videoplayer.h:749 mc_videoplayer.h:784 mc_videoplayer.h:888
 #: mc_videoplayer.h:904 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
 #: mediadb.h:1477 mediadb.h:2454 mediadbsettings.h:95 menu.h:153 menu.h:208
-#: menu.h:951 menu.h:953 movreel.h:30 movreel.h:79 movreel.h:91 movreel.h:103
+#: menu.h:956 menu.h:958 movreel.h:30 movreel.h:79 movreel.h:91 movreel.h:103
 #: movreel.h:154 movreel.h:202 movshare.h:35 movshare.h:149 myvideo.h:50
 #: networkbrowser.h:944 networkbrowser.h:1005 networkbrowser.h:1009
 #: networkbrowser.h:1011 networkbrowser.h:1021 networkbrowser.h:1025
@@ -142,7 +142,7 @@ msgstr "OK"
 #: filemanager.h:319 filemanager.h:329 filenuke.h:37 filenuke.h:84
 #: filenuke.h:96 filenuke.h:108 filenuke.h:157 flashx.h:26 flashx.h:84
 #: flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270 global.h:5519
-#: global.h:6144 global.h:6205 gmediarender.h:115 harddisk.h:350
+#: global.h:6144 global.h:6205 global.h:6356 gmediarender.h:115 harddisk.h:350
 #: harddisk.h:355 harddisk.h:382 harddisk.h:386 harddisk.h:439 harddisk.h:633
 #: harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731
 #: harddisk.h:733 harddisk.h:793 harddisk.h:811 harddisk.h:814 harddisk.h:1046
@@ -163,7 +163,7 @@ msgstr "OK"
 #: mc_videoplayer.h:749 mc_videoplayer.h:784 mc_videoplayer.h:888
 #: mc_videoplayer.h:904 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
 #: mediadb.h:1477 mediadb.h:2454 mediadbsettings.h:95 menu.h:153 menu.h:208
-#: menu.h:951 menu.h:953 movreel.h:30 movreel.h:79 movreel.h:91 movreel.h:103
+#: menu.h:956 menu.h:958 movreel.h:30 movreel.h:79 movreel.h:91 movreel.h:103
 #: movreel.h:154 movreel.h:202 movshare.h:35 movshare.h:149 myvideo.h:50
 #: networkbrowser.h:944 networkbrowser.h:1005 networkbrowser.h:1009
 #: networkbrowser.h:1011 networkbrowser.h:1021 networkbrowser.h:1025
@@ -550,10 +550,10 @@ msgstr ""
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:329
 #: filenuke.h:37 filenuke.h:84 filenuke.h:96 filenuke.h:108 filenuke.h:157
 #: flashx.h:26 flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:5519 global.h:6144 global.h:6205 gmediarender.h:115 harddisk.h:633
-#: harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731
-#: harddisk.h:733 harddisk.h:793 harddisk.h:811 harddisk.h:814 hbbtv.h:362
-#: hello.c:36 httpdfunc.h:1098 hwtest.h:88 hwtest.h:93 hwtest.h:98
+#: global.h:5519 global.h:6144 global.h:6205 global.h:6356 gmediarender.h:115
+#: harddisk.h:633 harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729
+#: harddisk.h:731 harddisk.h:733 harddisk.h:793 harddisk.h:811 harddisk.h:814
+#: hbbtv.h:362 hello.c:36 httpdfunc.h:1098 hwtest.h:88 hwtest.h:93 hwtest.h:98
 #: hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390
 #: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
@@ -677,11 +677,11 @@ msgstr ""
 msgid "ERROR... AutoTimer not started"
 msgstr ""
 
-#: autotimer.c:603 menu.h:951 menu.h:953 skin_default_skin.xml.h:547
+#: autotimer.c:603 menu.h:956 menu.h:958 skin_default_skin.xml.h:547
 msgid "Save Settings"
 msgstr "Αποθήκευση Ρυθμίσεων"
 
-#: autotimer.c:603 menu.h:953
+#: autotimer.c:603 menu.h:958
 msgid "Settings succesfull saved"
 msgstr ""
 
@@ -1670,6 +1670,12 @@ msgstr ""
 
 #: global.h:6200
 msgid "Error: Transponder Source file not found"
+msgstr ""
+
+#: global.h:6356
+msgid ""
+"Standard favorites have been successfully applied.\n"
+"Your System will reboot !"
 msgstr ""
 
 #: gmediarender.h:109
@@ -2894,7 +2900,7 @@ msgid ""
 "Press OK to create it"
 msgstr ""
 
-#: menu.h:951
+#: menu.h:956
 msgid "Error in Save Settings"
 msgstr "Αποθήκευση Ρυθμίσεων"
 
