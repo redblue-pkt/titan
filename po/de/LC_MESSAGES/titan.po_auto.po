@@ -1702,7 +1702,7 @@ msgstr ""
 
 #: global.h:7458
 msgid "Error: Transponder Source file not found"
-msgstr ""
+msgstr "Fehler: Transponder Quell Datei nicht gefunden"
 
 #: gmediarender.h:109
 msgid "Servername"
@@ -6185,7 +6185,7 @@ msgstr "Erstelle Aufnahme Vorschaubild"
 
 #: skin_default_skin.xml.h:161
 msgid "Create Settings Menu"
-msgstr ""
+msgstr "Transponder Erstellungsmenü"
 
 #: skin_default_skin.xml.h:162
 msgid "create System Backup"
@@ -6746,7 +6746,8 @@ msgstr "Skin Auswahl:"
 msgid ""
 "Here you can select the Transponder Mode. Please use a channel search after "
 "the Restart"
-msgstr ""
+msgstr "Hier können Sie Ihre Transponder Auswahl vornehmen\n"
+msgstr "Führen Sie nach dem Neustart einen Kanalsuchlauf durch."
 
 #: skin_default_skin.xml.h:311
 msgid ""
