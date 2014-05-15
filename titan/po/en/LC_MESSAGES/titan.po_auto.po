@@ -1692,7 +1692,7 @@ msgstr ""
 
 #: global.h:7345
 msgid "Select Your Serach Modus"
-msgstr ""
+msgstr "Select your search mode"
 
 #: global.h:7400
 msgid ""

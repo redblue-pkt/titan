@@ -1669,34 +1669,34 @@ msgstr ""
 
 #: global.h:7290
 msgid "Multituner adjustable"
-msgstr ""
+msgstr "Multituner einstellbar"
 
 #: global.h:7340
 msgid "Create Transponder (Sat)"
-msgstr ""
+msgstr "Erstelle Transponder (Sat)"
 
 #: global.h:7341
 msgid "Create Transponder (Cable)"
-msgstr ""
+msgstr "Erstelle Transponder (Kabel)"
 
 #: global.h:7342
 msgid "Create Transponder (Terrestrial)"
-msgstr ""
+msgstr "Erstelle Transponder (Terrestrisch)"
 
 #: global.h:7343
 msgid "Create Transponder (All)"
-msgstr ""
+msgstr "Erstelle Transponder (Alle)"
 
 #: global.h:7345
 msgid "Select Your Serach Modus"
-msgstr ""
+msgstr "Wählen Sie den Such Modus"
 
 #: global.h:7400
 msgid ""
 "Transponder/Satellite Convert done, please use channel search on next Boot.\n"
 "Your System will reboot !"
-msgstr ""
-
+msgstr "Transponder / Sat Konvertierung abgeschlossen. Bitte führen Sie einen Sendersuchlauf nach dem Reboot durch./n"
+" Das Sytem wird neu booten!"
 #: gmediarender.h:109
 msgid "Servername"
 msgstr ""
