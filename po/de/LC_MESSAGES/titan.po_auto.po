@@ -1702,7 +1702,7 @@ msgstr ""
 
 #: global.h:7458
 msgid "Error: Transponder Source file not found"
-msgstr "Fehler: Transponder Quell Datei nicht gefunden"
+msgstr "Fehler: Transponder ?????uell Datei nicht gefunden"
 
 #: gmediarender.h:109
 msgid "Servername"
