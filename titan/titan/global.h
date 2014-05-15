@@ -6224,7 +6224,7 @@ int converte2settings(int flag)
 	buf = readfiletomem(filename, 1);
 
 	writesys("/tmp/convert.log", buf, 1);
-	tmpstr3 = ostrcat("-1", NULL, 0, 0);
+	tmpstr3 = ostrcat("0", NULL, 0, 0);
 
 	while(ostrstr(buf, start) != NULL)
 	{
@@ -6315,8 +6315,7 @@ int converte2settings(int flag)
 				line = ostrcat(line, "1", 1, 0); // pilot
 				line = ostrcat(line, "#", 1, 0);
 
-//				line = ostrcat(line, tmpstr3, 1, 0); // rolloff
-				line = ostrcat(line, "0", 1, 0); // rolloff
+				line = ostrcat(line, tmpstr3, 1, 0); // rolloff
 				line = ostrcat(line, "#", 1, 0);
 
 //				line = ostrcat(line, tmpstr3, 1, 0); // inversion				
