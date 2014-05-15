@@ -65,7 +65,7 @@ msgstr ""
 #: mc_audioplayer.h:333 mc_audioplayer.h:605 mc_audioplayer.h:716
 #: mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
 #: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
-#: mc_main.h:100 mc_main.h:271 mc_main.h:280 mc_mediathek.h:35
+#: mc_main.h:100 mc_main.h:273 mc_main.h:282 mc_mediathek.h:35
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
 #: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:332
 #: mc_videoplayer.h:749 mc_videoplayer.h:784 mc_videoplayer.h:888
@@ -157,7 +157,7 @@ msgstr "Ok"
 #: mc_audioplayer.h:333 mc_audioplayer.h:605 mc_audioplayer.h:716
 #: mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
 #: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
-#: mc_main.h:100 mc_main.h:271 mc_main.h:280 mc_mediathek.h:35
+#: mc_main.h:100 mc_main.h:273 mc_main.h:282 mc_mediathek.h:35
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
 #: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:332
 #: mc_videoplayer.h:749 mc_videoplayer.h:784 mc_videoplayer.h:888
@@ -563,8 +563,8 @@ msgstr "Ja/VZAP unendlich"
 #: log.h:48 marker.h:215 marker.h:229 mc_audioplayer.h:333
 #: mc_audioplayer.h:605 mc_audioplayer.h:716 mc_dateibrowser.h:36
 #: mc_global.h:773 mc_global.h:1020 mc_internetbrowser.h:36 mc_main.h:50
-#: mc_main.h:55 mc_main.h:60 mc_main.h:95 mc_main.h:100 mc_main.h:271
-#: mc_main.h:280 mc_mediathek.h:35 mc_pictureplayer.h:100
+#: mc_main.h:55 mc_main.h:60 mc_main.h:95 mc_main.h:100 mc_main.h:273
+#: mc_main.h:282 mc_mediathek.h:35 mc_pictureplayer.h:100
 #: mc_pictureplayer.h:124 mc_pictureplayer.h:242 mc_pictureplayer.h:368
 #: mc_pictureplayer.h:461 mc_videoplayer.h:332 mc_videoplayer.h:749
 #: mc_videoplayer.h:784 mc_videoplayer.h:888 mc_videoplayer.h:904
@@ -2391,7 +2391,7 @@ msgstr ""
 msgid "DYNDNS now stopped"
 msgstr "DYNDNS gestoppt"
 
-#: infobar.h:496 mc_audioplayer.h:333 mc_main.h:271 mc_pictureplayer.h:124
+#: infobar.h:496 mc_audioplayer.h:333 mc_main.h:273 mc_pictureplayer.h:124
 #: mc_videoplayer.h:332 menu.h:208
 msgid ""
 "Shooting Background done !\n"
@@ -2739,7 +2739,7 @@ msgstr "Internetbrowser Netsurf ist nicht installiert"
 msgid "comming soon"
 msgstr "folgt demnächst, das Team arbeitet dran"
 
-#: mc_main.h:280 menu.h:153 panel_main.h:29 panel_main.h:135
+#: mc_main.h:282 menu.h:153 panel_main.h:29 panel_main.h:135
 msgid "Menu not implemented !"
 msgstr "Menü noch nicht verfügbar!"
 
