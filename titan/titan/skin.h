@@ -3938,14 +3938,13 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 	{
 		if(oledskinfb == NULL) {
 			if(node->name != NULL && ostrstr(node->name, "OLED_nemesis") != NULL) {
-				unsigned char *newskinfb = calloc(1, 4 * 256 * 64);
-				if(newskinfb == NULL)
+				oledskinfb = oledaddfb(1);
+				if(oledskinfb == NULL)
 				{
 					if(flag == 0 || flag == 4)
 						m_lock(&status.drawingmutex, 0);
 					return -2;
 				}
-				oledskinfb = addfb("oledskinfb", 998, 256, 64, 4, -1, newskinfb, 4 * 256 * 64);
 			}
 		}
 		merkskinfb = skinfb;
@@ -4007,13 +4006,19 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 	if(merkskinfb != NULL)
 	{
 		/*delete temporary FB*/
-		free(skinfb->fb); skinfb->fb = NULL;  
-		skinfb = merkskinfb;
-		merkskinfb = NULL;
-		delfb("lcdskinfb");
-		lcdskinfb = NULL;
-		delfb("oledskinfb");
-		oledskinfb = NULL;
+		if(skinfb == oledskinfb)
+		{
+			skinfb = merkskinfb;
+			merkskinfb = NULL;
+		}
+		else
+		{
+			free(skinfb->fb); skinfb->fb = NULL;  
+			skinfb = merkskinfb;
+			merkskinfb = NULL;
+			delfb("lcdskinfb");
+			lcdskinfb = NULL;
+		}
 	}
 	//else
 	//{
