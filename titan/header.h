@@ -967,5 +967,7 @@ void markerautoseek_thread();
 
 //oled.h
 void write2oled(unsigned char *buf, int xres, int yres);
+struct fb* oledaddfb(int flag);
+int oledtext(char *value);
 
 #endif
