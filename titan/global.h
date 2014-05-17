@@ -6242,7 +6242,7 @@ int converte2settings(int flag)
 	}
 	
 //	writesys("/tmp/convert.log", buf, 1);
-	tmpstr3 = ostrcat("0", NULL, 0, 0);
+	tmpstr3 = ostrcat("-1", NULL, 0, 0);
 
 	while(ostrstr(buf, start) != NULL)
 	{
