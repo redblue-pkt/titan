@@ -7,8 +7,6 @@ void write2oled(unsigned char *buf, int xres, int yres)
 	int i = 0;
 	int bi = 0;
 	
-	printf("write2oled\n");
-	
 	lfb1 = malloc(xres * yres);
 	if(lfb1 == NULL)
 		return;
@@ -25,7 +23,6 @@ void write2oled(unsigned char *buf, int xres, int yres)
 	close(lcdfd1);
 	
 	free(lfb1);
-	printf("write2oled... ende\n");
 	return;
 }
 
