@@ -7391,7 +7391,7 @@ msgstr "Ausschalttimer"
 
 #: skin_default_skin.xml.h:475
 msgid "prime time"
-msgstr ""
+msgstr "Primetime"
 
 #: skin_default_skin.xml.h:476
 msgid "Program Info"
