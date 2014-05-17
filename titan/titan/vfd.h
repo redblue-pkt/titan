@@ -218,6 +218,9 @@ int writevfd(char *value)
 	
 	if(checkbox("TF7700"))
 		return writevfdioctl(value);
+		
+	if(checkbox("ATEMIO-NEMESIS"))
+		return oledtext(value);
 
 	vfddev = getconfig("vfddev", NULL);
 

@@ -34,10 +34,7 @@ int oledtext(char *value)
 	struct skin* OLED_nemesis = getscreen("OLED_nemesis");
 	struct skin* textbox = getscreennode(OLED_nemesis, "textbox");
 	
-	printf("vor changetex\n");
-	
 	changetext(textbox, value);
-	printf("vor draw\n");
 	drawscreen(OLED_nemesis, 0, 0);
 	
 	return 0;
