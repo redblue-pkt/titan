@@ -33,6 +33,8 @@ int oledtext(char *value)
 	
 	if(status.updatevfd == PAUSE)
 		OLED_nemesis = getscreen("OLED_nemesis_menu");
+	else if(status.standby == 1)
+		OLED_nemesis = getscreen("OLED_nemesis_standby");
 	else
 		OLED_nemesis = getscreen("OLED_nemesis");
 	
