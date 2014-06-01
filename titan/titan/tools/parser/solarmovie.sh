@@ -222,7 +222,7 @@ for ROUND0 in $watchlist; do
 	count=`expr $count + 1`
 
 	filename0=`echo $ROUND0 | tr '/' '-'`
-	$wgetbin "http://www.solarmovie.so/$ROUND0" -O cache."$count"."$filename0"
+	$wgetbin "http://www.solarmovie.tl/$ROUND0" -O cache."$count"."$filename0"
 	if [ `cat cache."$count"."$filename0" | grep "<h4>Nothing was found</h4>" | wc -l` -eq 0 ];then
 		if [ `cat cache."$count"."$filename0" | grep "DOCTYPE html PUBLIC" | wc -l` -eq 0 ]; then
 			pages=`cat cache."$count"."$filename0" | zcat | grep ".html?page=" | grep "</a></li>" | grep -v 'class="next">' | sed 's!page=!\npage="!' | grep ^"page=" | cut -d'"' -f2`
@@ -252,23 +252,26 @@ for ROUND0 in $watchlist; do
 			do
 				echo "pcount $pcount"
 				pcount=`expr $pcount + 1`
-		#		$wgetbin "http://www.solarmovie.so/$ROUND0.html?page=$pcount" -O cache."$count".page"$pcount"."$filename0"
-				$wgetbin "http://www.solarmovie.so/$ROUND0?page=$pcount" -O cache."$count".page"$pcount"."$filename0"
+		#		$wgetbin "http://www.solarmovie.tl/$ROUND0.html?page=$pcount" -O cache."$count".page"$pcount"."$filename0"
+				$wgetbin "http://www.solarmovie.tl/$ROUND0?page=$pcount" -O cache."$count".page"$pcount"."$filename0"
 
 				if [ `cat cache."$count".page"$pcount"."$filename0" | grep "<h4>Nothing was found</h4>" | wc -l` -eq 0 ];then
 					if [ `cat cache."$count".page"$pcount"."$filename0" | grep "DOCTYPE html PUBLIC" | wc -l` -eq 0 ]; then
 						input=`cat cache."$count".page"$pcount"."$filename0" | zcat | tr '\n' ' '| sed 's/<div class="typicalGrey coverGroup">\+/\n/g'| sed 's!</a>\+!\n!g'| sed 's/ \+/ /g'| grep ^' <a class="coverImage"' | sed 's! <a class="coverImage" !!' | tr ' ' '~'`
 					else
-						input=`cat cache."$count".page"$pcount"."$filename0"  | tr '\n' ' '| sed 's/<div class="typicalGrey coverGroup">\+/\n/g'| sed 's!</a>\+!\n!g'| sed 's/ \+/ /g'| grep ^' <a class="coverImage"' | sed 's! <a class="coverImage" !!' | tr ' ' '~'`
+#						input=`cat cache."$count".page"$pcount"."$filename0"  | tr '\n' ' '| sed 's/<span class=\"wrapper\">\+/\n/g'| sed 's!</a>\+!\n!g'| sed 's/ \+/ /g'| grep ^' <a class="coverImage"' | sed 's! <a class="coverImage" !!' | tr ' ' '~'`
+						input=`cat cache."$count".page"$pcount"."$filename0"  | tr '\n' ' '| sed 's/<span class=\"wrapper\">\+/\n/g'| sed 's!</a>\+!\n!g'| sed 's/ \+/ /g'| grep ^' <a class="coverImage"' | sed 's! <a class="coverImage" !!' | tr ' ' '~'`
+
 					fi
-			
+
 					if [ ! -z "$input" ]; then
 						for ROUND1 in $input; do
 							piccount=`expr $piccount + 1`
 							TITLE=`echo $ROUND1 | cut -d '"' -f2 | tr '~' ' ' | sed 's/#/%/'`
 							TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' # ' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/Ãx/g' -e 's/&ndash;/-/g' -e 's/&Auml;/Ã/g' -e 's/&Uuml;/ÃS/g' -e 's/&Ouml;/Ã/g' -e 's/&auml;/Ã¤/g' -e 's/&uuml;/Ã¼/g' -e 's/&ouml;/Ã¶/g' -e 's/&eacute;/Ã©/g' -e 's/&egrave;/Ã¨/g' -e 's/%F6/Ã¶/g' -e 's/%FC/Ã¼/g' -e 's/%E4/Ã¤/g' -e 's/%26/&/g' -e 's/%C4/Ã/g' -e 's/%D6/Ã/g' -e 's/%DC/ÃS/g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
-							URL=http://www.solarmovie.so`echo $ROUND1 | sed s'!href=!\nhref=!' | grep ^"href=" | cut -d '"' -f2 | tr '~' ' '`
-							PIC=`echo $ROUND1 | sed s'!<img~src=!\n<img~src=!' | grep ^"<img~src=" | cut -d '"' -f2 | tr '~' ' '`
+							URL=http://www.solarmovie.tl`echo $ROUND1 | sed s'!href=!\nhref=!' | grep ^"href=" | cut -d '"' -f2 | tr '~' ' '`
+#							PIC=`echo $ROUND1 | sed s'!<img~src=!\n<img~src=!' | grep ^"<img~src=" | cut -d '"' -f2 | tr '~' ' '`
+							PIC=`echo $ROUND1 | sed s'!~data-original=!\n~data-original=!' | grep ^"~data-original=" | cut -d '"' -f2 | tr '~' ' '`
 							LINE="$TITLE#$URL#$PIC#solarmovie_$piccount.jpg#Solarmovie#28"
 			
 			#				if [ ! -z "$TITLE" ] && [ `cat cache.solarmovie."$filename0".titanlist | grep ^"$TITLE#" | wc -l` -gt 0 ];then
@@ -286,7 +289,7 @@ for ROUND0 in $watchlist; do
 			
 			if [ `cat cache.solarmovie.$filename0.titanlist | wc -l` -gt 0 ];then
 				cat cache.solarmovie.$filename0.titanlist | sort -u > _full/solarmovie/streams/solarmovie.$filename0.list
-			fi	
+			fi
 		fi
 	fi
 done
