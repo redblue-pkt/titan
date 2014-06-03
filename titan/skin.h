@@ -1696,7 +1696,7 @@ int drawjpgsw(struct jpeg_decompress_struct* cinfo, unsigned char* buf, int posx
 		{
 			py = (posy + aktline) * skinfb->width;
 			aktline1 = aktline * scalewidth * colbytes;
-			for(x = 0; x < width; x++)
+			for(x = 0; x < scalewidth; x++)
 			{
 				px = colbytes * x;
 				red = scalebuf[px + aktline1];
