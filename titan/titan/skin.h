@@ -1544,6 +1544,8 @@ int drawjpgsw(struct jpeg_decompress_struct* cinfo, unsigned char* buf, int posx
 	unsigned char red, green, blue;
 	unsigned long color = 0;
 	JSAMPARRAY buffer = NULL;
+	unsigned char *tmpbuf = NULL;
+	unsigned char *scalebuf = NULL;
 
 	if(cinfo == NULL && buf == NULL) return 1;
 
@@ -1665,6 +1667,55 @@ int drawjpgsw(struct jpeg_decompress_struct* cinfo, unsigned char* buf, int posx
 		}
 		m_unlock(&status.accelfbmutex, 16);
 	}
+	else if((scalewidth != 0 || scaleheight != 0) && (scalewidth != width || scaleheight != height) && cinfo != NULL)
+	{
+		if(halign == CENTER)
+			posx += (mwidth >> 1) - (scalewidth >> 1);
+		else if(halign == RIGHT)
+			posx += mwidth - scalewidth;
+		if(valign == MIDDLE)
+			posy += (mheight >> 1) - (scaleheight >> 1);
+		else if(valign == BOTTOM)
+			posy += mheight - scaleheight;
+		
+		int i = 0;
+		int location = 0;
+		tmpbuf = (unsigned char*)malloc(width*height*3);	
+		aktline = cinfo->output_scanline;
+		while(aktline < height)
+		{
+			jpeg_read_scanlines(cinfo, buffer, 1);
+			aktline = cinfo->output_scanline;
+			for(i=0; i<width*3; i++) 
+ 				tmpbuf[location++] = buffer[0][i];
+ 		}
+		scalebuf = resize(tmpbuf, width, height, scalewidth, scaleheight, 1, NULL, 1);
+		
+		aktline = 0;
+		while(aktline < scaleheight)
+		{
+			py = (posy + aktline) * skinfb->width;
+			aktline1 = aktline * scalewidth * colbytes;
+			for(x = 0; x < width; x++)
+			{
+				px = colbytes * x;
+				red = scalebuf[px + aktline1];
+
+				if(colbytes > 2)
+				{
+					green = scalebuf[aktline1 + (px + 1)];
+					blue = scalebuf[aktline1 + (px + 2)];
+					color = (255 << 24) | (red << 16) | (green << 8) | blue;
+				}
+				else
+					color = (255 << 24) | (red << 16) | (red << 8) | red;
+			
+				drawpixelfast(posx + x, py, color);
+			}
+			aktline++;
+		}
+		free(scalebuf);
+	}	
 	else
 	{
 		if(width > mwidth) width = mwidth;
