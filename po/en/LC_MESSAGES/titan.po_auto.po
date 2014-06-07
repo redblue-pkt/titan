@@ -683,7 +683,7 @@ msgstr ""
 
 #: autotimer.c:603 menu.h:958
 msgid "Settings succesfull saved"
-msgstr "Settings saved succesfully"
+msgstr "Settings saved successfully"
 
 #: avsettings.h:68 avsettings.h:84 harddisk.h:886 lnbconfig.h:144
 #: mc_pictureplayer_settings.h:34 mc_pictureplayer_settings.h:38
@@ -1698,21 +1698,24 @@ msgstr "Select your search mode"
 msgid ""
 "Transponder/Satellite Convert done, please use channel search on next Boot.\n"
 "Your System will reboot !"
-msgstr ""
+msgstr "Convertion of Transponder / Satellite done./n"
+"Please perform a new channel scan after System reboot.n"
+"Your Receiver will now reboot!"
 
 #: global.h:6208
 msgid "Error: Transponder Source file not found"
-msgstr ""
+msgstr "ERROR: No transponder source File fond!"
 
 #: global.h:6230
 msgid "Error: Transponder Source file no data"
-msgstr ""
+msgstr "ERROR: The transponder file is empty!"
 
 #: global.h:6401
 msgid ""
 "Standard favorites have been successfully applied.\n"
 "Your System will reboot !"
-msgstr ""
+msgstr "Standard favourites have been imported./n"
+"The Receiver will reboot now."
 
 #: gmediarender.h:109
 msgid "Servername"
@@ -1974,7 +1977,7 @@ msgstr "Time to Volumebar Fadeout (sec)"
 
 #: httpdfunc.h:3403 skin_default_skin.xml.h:335
 msgid "Infobar Timeout"
-msgstr "Infobar fade after (sec)"
+msgstr "Infobar fadeout after (sec)"
 
 #: httpdfunc.h:3423 skin_default_skin.xml.h:334
 msgid "Infobar Sleep"
@@ -2440,7 +2443,7 @@ msgstr "MediaDB Scan Information"
 
 #: keyactions.h:53 settings_mediabutton.h:12
 msgid "Record Player"
-msgstr ""
+msgstr "Recordings Player (.ts)"
 
 #: keyactions.h:81 settings_mediabutton.h:42 skin_default_skin.xml.h:383
 msgid "Media Player"
@@ -2629,7 +2632,7 @@ msgstr ""
 "Project-Id-Version: TitanNit 1.50\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-07 10:44+0200\n"
-"PO-Revision-Date: 2014-04-19 17:47+0200\n"
+"PO-Revision-Date: 2014-06-07 17:47+0200\n"
 "Last-Translator: Bulldog <_Bulldog@aaf.info>\n"
 "Language-Team: German <_obiwan_@web.de>\n"
 "Language: en\n"
@@ -2693,7 +2696,7 @@ msgstr "Date Time"
 
 #: mc_dateibrowser.h:36
 msgid "Install File Manager Tpk first !"
-msgstr "Install File Manager Extension first !"
+msgstr "Install 'File Manager' Extension first !"
 
 #: mc_global.h:270 mc_global.h:338 mc_global.h:413 mc_global.h:700
 #: mc_global.h:934 mc_global.h:949 plugins_mc_skin.xml.h:45
@@ -3157,7 +3160,7 @@ msgstr ""
 
 #: networkbrowser.h:1907
 msgid "Are you sure you want remove this share?"
-msgstr ""
+msgstr "Are you sure you want to remove this share?"
 
 #: network.h:256 network.h:257
 msgid "Wait"
@@ -3229,7 +3232,7 @@ msgid ""
 " You can now configure the new interface."
 msgstr ""
 "WLAN started.\n"
-"You can now configure the new interface."
+"You may now configure the new interface."
 
 #: network.h:804
 msgid ""
@@ -4348,17 +4351,17 @@ msgid ""
 "Here you can configure your Auth Data. Use to navigate the control cross and "
 "the extra buttons displayed with your remote control to select."
 msgstr ""
-"Here you can configure your authentication.\n"
-"Navigate using your Remote Control and the keys as displayed below"
+"Here you may set your authentication information.\n"
+"Navigate using your Remote Control and the keys displayed below"
 
 #: plugins_networkbrowser_skin.xml.h:11 skins_networkbrowser_skin.xml.h:11
 msgid ""
 "Here you can configure your network shares. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
 msgstr ""
-"Here you can configure your Network shares.\n"
+"Here you may configure your Network shares.\n"
 "\n"
-"Navigate using your Remote Control and the keys as displayed below"
+"Navigate using your Remote Control and the keys displayed below"
 
 #: plugins_networkbrowser_skin.xml.h:12 skins_networkbrowser_skin.xml.h:12
 msgid ""
@@ -4392,7 +4395,7 @@ msgstr "Protocol"
 
 #: plugins_networkbrowser_skin.xml.h:18 skins_networkbrowser_skin.xml.h:18
 msgid "proxy"
-msgstr "Proxyserver IP"
+msgstr "Proxyserver"
 
 #: plugins_networkbrowser_skin.xml.h:19 skins_networkbrowser_skin.xml.h:19
 msgid "proxyauth"
@@ -4467,7 +4470,7 @@ msgstr ""
 #: plugins_news_skin.xml.h:2 plugins_stock_skin.xml.h:3
 #: skins_news_skin.xml.h:2 skins_stock_skin.xml.h:3
 msgid "BROWSER"
-msgstr "Internetbrowser"
+msgstr "Internet browser"
 
 #: plugins_news_skin.xml.h:3 skins_news_skin.xml.h:3
 msgid "NEXT"
@@ -4590,9 +4593,9 @@ msgid ""
 "Here you can aktivate/deaktivate you readers. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
 msgstr ""
-"Here you can activate / deactivate your reader(s).\n"
+"Here you may activate / deactivate your reader(s).\n"
 "\n"
-"Navigate using your Remote Control and the keys as displayed below"
+"Navigate using your Remote Control and the keys displayed below"
 
 #: plugins_readerconfig_skin.xml.h:6 skins_readerconfig_skin.xml.h:6
 msgid ""
@@ -4601,7 +4604,7 @@ msgid ""
 msgstr ""
 "Here you can configure your reader(s).\n"
 "\n"
-"Navigate using your Remote Control and the keys as displayed below"
+"Navigate using your Remote Control and the keys displayed below"
 
 #: plugins_readerconfig_skin.xml.h:7 skins_readerconfig_skin.xml.h:7
 msgid "Reader Config"
@@ -4863,7 +4866,7 @@ msgid ""
 "Start movie in the internal player, set with 0 key marker during a movie. 5 "
 "key is for the marker overview. Then here select movie and start."
 msgstr ""
-"Start the movie in the internal Player. Set a marker with the -0- Key during "
+"Start the movie with the internal Player. Set a marker with the -0- Key during "
 "the playback.\n"
 "For an overview of all markers press -5- on you Remote.\n"
 "Press -Play- on your Remote Control to perform the selected cut."
@@ -4883,7 +4886,7 @@ msgstr "New"
 
 #: plugins_xupnpd_skin.xml.h:1 skins_xupnpd_skin.xml.h:1
 msgid "Here you can make your xupnpd autostart settings."
-msgstr "Here you can setup the xupnpd autostart settings."
+msgstr "Here you may setup the xupnpd autostart settings."
 
 #: plugins_xupnpd_skin.xml.h:4 skins_xupnpd_skin.xml.h:4
 msgid "Xupnpd Server"
@@ -5040,9 +5043,9 @@ msgid ""
 "HDD not configured\n"
 "can't find record path"
 msgstr ""
-"Harddisk not configured\n"
-"can't find record path\n"
-"Please configure Harddisk"
+"Harddisk not configured!\n"
+"Can't find record path!\n"
+"Please configure Harddisk!"
 
 #: record.h:40
 msgid "Not enought space"
@@ -5191,7 +5194,7 @@ msgstr ""
 
 #: rectimer.h:552
 msgid "not started akttime higher than timer endtime"
-msgstr "ERROR: Event not started. Entime already past"
+msgstr "ERROR: Event not started. Endtime already past"
 
 #: rectimer.h:563
 msgid "EPG Scan activate standby?"
@@ -5243,7 +5246,7 @@ msgstr "!!! ERROR !!!"
 
 #: restoredefault.h:10
 msgid "Really restore default settings ?"
-msgstr "Do you really want to restore Factory-settings?"
+msgstr "Are you sure to restore Factory-settings?"
 
 #: restoredefault.h:19
 msgid "Receiver reboots now !!!"
@@ -5259,7 +5262,7 @@ msgid ""
 "The Box will reboot and the erase will be started!"
 msgstr ""
 "Do you really want to erase all data and backups from Swap?\n"
-"The Receiver will reboot and deletion will be performed!"
+"The Receiver will reboot and deletion will be executed!"
 
 #: restoredefault.h:47
 msgid ""
@@ -6071,7 +6074,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:134
 msgid "Channel Service"
-msgstr "Channel Search"
+msgstr ""
 
 #: skin_default_skin.xml.h:137
 msgid "Ci-Modul internal Menu"
@@ -6091,7 +6094,7 @@ msgstr "Clear Input"
 
 #: skin_default_skin.xml.h:141
 msgid "Code1"
-msgstr "Code 1:"
+msgstr "Code 1: "
 
 #: skin_default_skin.xml.h:142
 msgid "Code2"
@@ -6139,7 +6142,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:153
 msgid "Configure"
-msgstr "Configure Device"
+msgstr ""
 
 #: skin_default_skin.xml.h:154
 msgid "Contrast"
@@ -6159,7 +6162,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:158
 msgid "Create Default Favorites"
-msgstr ""
+msgstr "Create Default Favourites"
 
 #: skin_default_skin.xml.h:159
 msgid "Create Path"
@@ -6315,7 +6318,7 @@ msgstr "Configure Tuner"
 
 #: skin_default_skin.xml.h:209
 msgid "End"
-msgstr "End"
+msgstr ""
 
 #: skin_default_skin.xml.h:210
 msgid "Engine Systems"
@@ -6339,7 +6342,7 @@ msgstr "Background Scan"
 
 #: skin_default_skin.xml.h:216
 msgid "EPG Path"
-msgstr "storage Path"
+msgstr "Storage Path"
 
 #: skin_default_skin.xml.h:217
 msgid "Epg Refresh Time"
@@ -6351,7 +6354,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:219
 msgid "EPG Save Mode"
-msgstr "Storage of EPG file"
+msgstr "Store EPG file"
 
 #: skin_default_skin.xml.h:220
 msgid "EPG Scanlist"
@@ -6436,7 +6439,7 @@ msgstr "Format Device"
 
 #: skin_default_skin.xml.h:245
 msgid "free space"
-msgstr "Avaiable free space"
+msgstr "Available free space"
 
 #: skin_default_skin.xml.h:246
 msgid "French"
@@ -6500,7 +6503,7 @@ msgstr "Ελληνικά"
 
 #: skin_default_skin.xml.h:263
 msgid "Guardinterval"
-msgstr "Interval"
+msgstr ""
 
 #: skin_default_skin.xml.h:264
 msgid "Guardinterval:"
@@ -6520,7 +6523,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:270
 msgid "Here they can do for your chosen tuner to lnb settings."
-msgstr ""
+msgstr "Here you may setup your LNB(s) for the selected tuner"
 
 #: skin_default_skin.xml.h:271
 msgid "Here to select your remote Model"
@@ -6529,7 +6532,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:272
 msgid "Here you can assign channels for their ci modules."
-msgstr ""
+msgstr "Here you may setup channels for attached CI module(s)."
 
 #: skin_default_skin.xml.h:273
 msgid "Here you can backup and restore your settings."
@@ -6537,7 +6540,7 @@ msgstr "Here you may backup and restore your settings."
 
 #: skin_default_skin.xml.h:274
 msgid "Here you can check the reception of the current station."
-msgstr ""
+msgstr "Here you may view the reception values of the channel your tuned to"
 
 #: skin_default_skin.xml.h:275
 msgid ""
@@ -6551,45 +6554,46 @@ msgstr ""
 
 #: skin_default_skin.xml.h:276
 msgid "Here you can configure access to your DynDNS."
-msgstr ""
+msgstr "Here you may setup your DNS Service."
 
 #: skin_default_skin.xml.h:277
 msgid "Here you can configure Ci-Modules."
-msgstr ""
+msgstr "Here you may configure your CI module(s)."
 
 #: skin_default_skin.xml.h:278
 msgid "Here you can configure the smartcard readers."
-msgstr ""
+msgstr "Here you may configure your smartcard reader(s)."
 
 #: skin_default_skin.xml.h:279
 msgid "Here you can configure your web server."
-msgstr ""
+msgstr "Here you may configure your web server."
 
 #: skin_default_skin.xml.h:280
 msgid "Here you can create a new record timer."
-msgstr ""
+msgstr "Here you may set a new timer for a recording event."
 
 #: skin_default_skin.xml.h:281
 msgid "Here you can do a blind scan, this process takes a long time."
-msgstr ""
+msgstr "Here you may perform a blind scan. The blind scan requires a long time!"
 
 #: skin_default_skin.xml.h:282
 msgid "Here you can edit the following channels from the EPG."
-msgstr ""
+msgstr "Here you may edit the channels for EPG"
 
 #: skin_default_skin.xml.h:283
 msgid "Here you can install from our current online offering plug-ins."
-msgstr ""
+msgstr "Here you may install Plugins/Extebsions from our Online offer."
 
 #: skin_default_skin.xml.h:284
 msgid ""
 "Here you can in your EPG entries for specific search. Use to start a color "
 "button to search."
-msgstr ""
+msgstr "Here you may search for specific entries with the EPG./n"
+"Use a coulored button to start the search."
 
 #: skin_default_skin.xml.h:285
 msgid "Here you can make for your selected network interface settings."
-msgstr ""
+msgstr "Here you may configure your Network Interface."
 
 #: skin_default_skin.xml.h:286
 msgid ""
@@ -6601,123 +6605,123 @@ msgstr ""
 "Here you may configure the Wireless Network (WLAN).\n"
 "1. Start search, select SSID and press -OK-\n"
 "2. Choose encryption type, enter passphrase, confirm with -OK-\n"
-"3. Disable Lan. Activate WLAN. Use DHCP for easy setup or Static for manual "
-"Setup."
+"3. Disable Lan. Activate WLAN. Use DHCP for easy or static for manual Setup."
 
 #: skin_default_skin.xml.h:287
 msgid "Here you can make your adjust settings."
-msgstr ""
+msgstr "Here you may personalise the adjustment settings."
 
 #: skin_default_skin.xml.h:288
 msgid "Here you can make your audio/video autostart settings."
-msgstr ""
+msgstr "Here you may personalise your audio/video autostart."
 
 #: skin_default_skin.xml.h:289
 msgid "Here you can make your cam/emu autostart settings."
-msgstr ""
+msgstr "Here you may personalise your Softcam autostart."
 
 #: skin_default_skin.xml.h:290
 msgid "Here you can make your default autostart settings."
-msgstr ""
+msgstr "Here you may personalise your default autostart."
 
 #: skin_default_skin.xml.h:291
 msgid "Here you can make your epg settings."
-msgstr ""
+msgstr "Here you may personalise your EPG configuration."
 
 #: skin_default_skin.xml.h:292
 msgid "Here you can make your mediadb settings."
-msgstr ""
+msgstr "Here you may personalise your mediadb setup."
 
 #: skin_default_skin.xml.h:293
 msgid "Here you can make your module settings."
-msgstr ""
+msgstr "Here you may personalise your CI module(s) setup."
 
 #: skin_default_skin.xml.h:294
 msgid "Here you can make your network autostart settings."
-msgstr ""
+msgstr "Here you may personalise your network autostart setup."
 
 #: skin_default_skin.xml.h:295
 msgid "Here you can make your Overclocking settings."
-msgstr ""
+msgstr "Here you may personalise your Overclocking setup."
 
 #: skin_default_skin.xml.h:296
 msgid "Here you can make your picture and sound settings."
-msgstr ""
+msgstr "Here you may personalise your Picture and Sound setup."
 
 #: skin_default_skin.xml.h:297
 msgid "Here you can make your PIN security for menus settings."
-msgstr ""
+msgstr "Here you may personalise your Menu PIN protection setup."
 
 #: skin_default_skin.xml.h:298
 msgid "Here you can make your PIN security settings."
-msgstr ""
+msgstr "Here you may personalise your PIN protection setup."
 
 #: skin_default_skin.xml.h:299
 msgid "Here you can make your recording timer configuration."
-msgstr ""
+msgstr "Here you may personalise your recording timer setup."
 
 #: skin_default_skin.xml.h:300
 msgid "Here you can make your recordpath settings."
-msgstr ""
+msgstr "Here you may personalise a path for timer recordings."
 
 #: skin_default_skin.xml.h:301
 msgid "Here you can make your safety child autostart settings."
-msgstr ""
+msgstr "Here you may personalise your child safety setup."
 
 #: skin_default_skin.xml.h:302
 msgid "Here you can make your screensaver settings."
-msgstr ""
+msgstr "Here you may personalise your screensaver setup."
 
 #: skin_default_skin.xml.h:303
 msgid ""
 "Here you can make your settings for your engine systems. To enter the "
 "latitude and longitude using the number keys."
 msgstr ""
-"Here you may set your motorized system settings.\n"
+"Here you may set your motorised system settings.\n"
 "\n"
-"Navigate using your Remote Control and the keys as displayed below"
+"Navigate using your Remote Control and the keys displayed below"
 
 #: skin_default_skin.xml.h:304
 msgid "Here you can make your timeshift settings."
-msgstr ""
+msgstr "Here you may personalise your timeshift setup."
 
 #: skin_default_skin.xml.h:305
 msgid "Here you can make your usb autostart settings."
-msgstr ""
+msgstr "Here you may personalise your USB autostart setup."
 
 #: skin_default_skin.xml.h:306
 msgid "Here you can make your vfd settings."
-msgstr ""
+msgstr "Here you may personalise your VFD setup."
 
 #: skin_default_skin.xml.h:307
 msgid "Here you can manage your Ci-Modul or Card Infos."
 msgstr ""
-"Here you may configure your Module.\n"
+"Here you may configure your Module(s).\n"
 "\n"
 "For details please refere to your Module Documentation."
 
 #: skin_default_skin.xml.h:308
 msgid "Here you can select from the following list."
-msgstr ""
+msgstr "Please select from the following list:"
 
 #: skin_default_skin.xml.h:309
 msgid "Here you can select from the following list a skin."
-msgstr ""
+msgstr "Please select a skin from the following list:"
 
 #: skin_default_skin.xml.h:310
 msgid ""
 "Here you can select the Transponder Mode. Please use a channel search after "
 "the Restart"
-msgstr ""
+msgstr "Here you may personalise your transponder setup.\n"
+"You'll need to perform a scan after the reboot."
 
 #: skin_default_skin.xml.h:311
 msgid ""
 "Here you can select your hard disks and USB flash drives for configuration."
-msgstr ""
+msgstr "Here you may choose your harddisk and USB devices for setup."
 
 #: skin_default_skin.xml.h:312
 msgid "Here you can select your Network Interface."
-msgstr ""
+msgstr "Here you may personalise your network setup."
 
 #: skin_default_skin.xml.h:313
 msgid ""
@@ -6729,7 +6733,7 @@ msgstr "Here you may set up your cable tuner and perform a channel scan."
 msgid ""
 "Here you can set for your Hyprid tuner. Choose the Tuner mode they want to "
 "use."
-msgstr ""
+msgstr "Here you may personalise your Hybrid tuner setup."
 
 #: skin_default_skin.xml.h:315
 msgid ""
@@ -6747,34 +6751,35 @@ msgid ""
 "Here you can set for your terrestrial tuner. Activate the terrestrial tuner "
 "and do you connect an automatic search."
 msgstr ""
-"Here you can activate and set up your terrestrial tuner. After that you can "
+"Here you can activate and setup your terrestrial tuner. After that you can "
 "perform an automatic channel scan."
 
 #: skin_default_skin.xml.h:317
 msgid ""
 "Here you can set your Channel search options. Very important, before you "
 "start looking for a channel must be set to its tuner tuner settings."
-msgstr ""
+msgstr "Here you may personalise your channel search setup.\n"
+"To perform a channel scan make sure you have set your tuner settings correctly."
 
 #: skin_default_skin.xml.h:318
 msgid "Here you can set your language."
-msgstr ""
+msgstr "Here you may set the language."
 
 #: skin_default_skin.xml.h:319
 msgid "Here you can set your timezone."
-msgstr ""
+msgstr "Here you may set your timezone."
 
 #: skin_default_skin.xml.h:320
 msgid "Here you can start and manage your additional plug-ins."
-msgstr ""
+msgstr "Here you may start and manage your installed extensions."
 
 #: skin_default_skin.xml.h:321
 msgid "Here you can test your network."
-msgstr ""
+msgstr "Here you may test your network setup."
 
 #: skin_default_skin.xml.h:322
 msgid "Here you can view the current channel information."
-msgstr ""
+msgstr "Here you may view the tuned channel information."
 
 #: skin_default_skin.xml.h:323
 msgid "Hierarchy"
@@ -6918,7 +6923,7 @@ msgstr "Set Cursor type"
 
 #: skin_default_skin.xml.h:362
 msgid "Listbox Select Color"
-msgstr "Set Cursor Color"
+msgstr "Set Listbox Color"
 
 #: skin_default_skin.xml.h:363
 msgid "LNB Settings"
@@ -7262,7 +7267,7 @@ msgstr "Play"
 
 #: skin_default_skin.xml.h:457
 msgid "Playbackbuffer Size"
-msgstr "Playbackbuffer Size (http) Streams"
+msgstr "Playback buffer Size (http) Streams"
 
 #: skin_default_skin.xml.h:459
 msgid "PlayList"
@@ -7390,7 +7395,7 @@ msgstr "List of Recordings"
 
 #: skin_default_skin.xml.h:498
 msgid "Record path"
-msgstr "Record Path"
+msgstr "Recording Path"
 
 #: skin_default_skin.xml.h:499
 msgid "Record Path"
@@ -7398,7 +7403,7 @@ msgstr "Path For Recodings"
 
 #: skin_default_skin.xml.h:500
 msgid "Record Path settings"
-msgstr "Record Path Settings"
+msgstr "Recording Path Settings"
 
 #: skin_default_skin.xml.h:502
 msgid "Record Timer"
@@ -7638,7 +7643,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:578
 msgid "Show HDD freesize"
-msgstr "Show Darddisk Freespace?"
+msgstr "Show Harddisk Freespace?"
 
 #: skin_default_skin.xml.h:581
 msgid "Show in Standby"
@@ -7710,7 +7715,7 @@ msgstr "SSID: "
 
 #: skin_default_skin.xml.h:610 system_update.h:88 system_update.h:210
 msgid "stable"
-msgstr "Update-Img"
+msgstr "Nightly-Img"
 
 #: skin_default_skin.xml.h:612
 msgid "Standby Brightness"
@@ -7766,7 +7771,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:628
 msgid "Subservices"
-msgstr ""
+msgstr "Sub channels"
 
 #: skin_default_skin.xml.h:629
 msgid "Subtitle"
@@ -7966,7 +7971,7 @@ msgstr "Configuration"
 
 #: skin_default_skin.xml.h:688
 msgid "Tuner List"
-msgstr ""
+msgstr "List"
 
 #: skin_default_skin.xml.h:689
 msgid "Tuner Reception"
@@ -8158,7 +8163,7 @@ msgid ""
 "Can't change to selected skin."
 msgstr ""
 "No skinconfig found in selected skin.\n"
-"Cannot change to selected skin."
+"cannot change to selected skin."
 
 #: sock.h:950
 msgid "Download finished!"
@@ -8343,14 +8348,14 @@ msgid ""
 msgstr ""
 "-Restore- (Red):\n"
 " Your previous saved settings will be restored from your stick / Harddisk! "
-"The Box will restart automatically for restoring!\n"
+"The Receiver will restart automatically for restoring!\n"
 "\n"
 "-Backup- (Green):\n"
 "Your settings will be saved to your stick / Harddisk.\n"
 "WARNING: Old backups will be overwritten!\n"
 "\n"
 "-Log- (Yellow):\n"
-"Check restoring result, see log file."
+"Check restoring result, view log file."
 
 #: system_backup_restore.h:31
 msgid "Restore Settings"
@@ -8471,7 +8476,7 @@ msgstr "Top Information"
 
 #: system_infos_sysinfo.h:118
 msgid "Prozess Info"
-msgstr "Program Information"
+msgstr "Process Information"
 
 #: system_infos_sysinfo.h:128
 msgid "USB Info"
@@ -8606,7 +8611,7 @@ msgstr "Remote Control Selection"
 
 #: titan.c:929
 msgid "Choose your Remotecontrol Model from the following list"
-msgstr ""
+msgstr "Choose your Remote control Model from the following list"
 
 #: titan.c:970
 msgid "First Wizzard"
@@ -8803,7 +8808,7 @@ msgstr "Atemio Channel search 4 Satellites"
 
 #: tithek_mainmenu.h:7
 msgid "Atemio Harddisc formating"
-msgstr ""
+msgstr "Atemio Harddisk formating"
 
 #: tithek_mainmenu.h:8
 msgid "Atemio Network configuration stable IP"
@@ -8851,19 +8856,19 @@ msgstr ""
 
 #: tithek_mainmenu.h:20
 msgid "HowTo Feedadresse Eingeben"
-msgstr "Howto add a Feed address"
+msgstr "How to add a Feed address"
 
 #: tithek_mainmenu.h:21
 msgid "HowTo Picons Einrichten"
-msgstr "Howto install and use Picons"
+msgstr "How to install and use Picons"
 
 #: tithek_mainmenu.h:22
 msgid "HowTo Secret"
-msgstr "Howto ad Secret Feed address"
+msgstr "How to ad Secret Feed address"
 
 #: tithek_mainmenu.h:23
 msgid "HowTo Sky V13 Einrichten"
-msgstr "Howto setup a Sky V13 Smartcard"
+msgstr "How to setup a Sky V13 Smartcard"
 
 #: tithek_mainmenu.h:24
 msgid "Internet Radio"
@@ -8875,23 +8880,23 @@ msgstr ""
 
 #: tithek_mainmenu.h:26
 msgid "Mediacenter AudioPlayer Playlisten Preview"
-msgstr ""
+msgstr "Audioplayer Playlist Preview"
 
 #: tithek_mainmenu.h:27
 msgid "Mediacenter AudioPlayer Screensaver Preview"
-msgstr ""
+msgstr "Audioplayer Screensaver  preview"
 
 #: tithek_mainmenu.h:28
 msgid "Mediacenter Mediathek Kinox Preview"
-msgstr ""
+msgstr "Wmediathek kinOx previe"
 
 #: tithek_mainmenu.h:29
 msgid "Mediacenter Mediathek Myvideo/Rtl2/InternetTv/Radio Preview"
-msgstr ""
+msgstr "Mediathek Myvideo/Rtl2/InternetTv/Radio Preview"
 
 #: tithek_mainmenu.h:30
 msgid "Mediacenter VideoPlayer Preview"
-msgstr ""
+msgstr "Video Player Preview"
 
 #: tithek_mainmenu.h:31
 msgid "Movie4k"
@@ -9023,7 +9028,7 @@ msgstr "Show 30 entrys"
 
 #: tithek_settings.h:25 tithek_settings.h:34
 msgid "show in list"
-msgstr ""
+msgstr "Show in List"
 
 #: tmc.h:387
 msgid "Status"
@@ -9191,25 +9196,25 @@ msgstr ""
 
 #: tpk_description.h:3
 msgid "Alternativer Skin fuer Pearl LCD"
-msgstr ""
+msgstr "Alternative skin for Pearl LCD"
 
 #: tpk_description.h:4
 msgid "Alternativer Skin fuer Pearl LCD "
-msgstr ""
+msgstr "Alternative skin for Pearl LCD"
 
 #: tpk_description.h:5
 msgid ""
 "Alternativer Skin fuer Pearl LCD - X-Light Picons zusaetzlich installieren"
-msgstr ""
+msgstr "Alternative skin for Pearl LCD - X-Light Picons must be installed seperately"
 
 #: tpk_description.h:6
 msgid ""
 "Alternativer Skin fuer Samsung LCD - ohne Picons (extra zu installieren)"
-msgstr ""
+msgstr "Alternative skin for Samsung LCD - without Picons."
 
 #: tpk_description.h:7
 msgid "Automatisch Timer setzen"
-msgstr ""
+msgstr "Automatically set timer"
 
 #: tpk_description.h:8
 msgid "Black 3D Picons for tiTan."
@@ -9357,7 +9362,7 @@ msgstr ""
 
 #: tpk_description.h:44
 msgid "codecpack for MediaCenter Dateiendungs-Update "
-msgstr ""
+msgstr "Codecpack for MediaCenter"
 
 #: tpk_description.h:45
 msgid "coolMiniTV Skin. "
@@ -9369,7 +9374,7 @@ msgstr ""
 
 #: tpk_description.h:47
 msgid "cut record files"
-msgstr ""
+msgstr "ts cutter - cut recordings locally"
 
 #: tpk_description.h:48
 msgid "Default Font "
@@ -9377,7 +9382,7 @@ msgstr ""
 
 #: tpk_description.h:49
 msgid "default Settings 19.2 Astra"
-msgstr ""
+msgstr "Default settings for ASTRA 19.2 East"
 
 #: tpk_description.h:50
 msgid "Default Skin"
@@ -9389,11 +9394,11 @@ msgstr ""
 
 #: tpk_description.h:52
 msgid "Digital Uhr blau - for tiTan - Samsung LCD Skin Channel."
-msgstr ""
+msgstr "Digital clock in blue for titan and Samsung LCD skin"
 
 #: tpk_description.h:53
 msgid "dlna Medien Server (upnp)"
-msgstr ""
+msgstr "DLNA Media Server UPNP)"
 
 #: tpk_description.h:54
 msgid "DTS-Downmix firmware "
@@ -9401,45 +9406,46 @@ msgstr ""
 
 #: tpk_description.h:55
 msgid "dvdplayer plugin."
-msgstr ""
+msgstr "DVD Player Extension"
 
 #: tpk_description.h:56
 msgid ""
 "E2 WebIf API erlaubt den Zugriff auf TitanNit mittels eines E2-Clients (z.B. "
 "dreaMote-App auf iPhone oder iPad bzw. XBMC mit VU+)"
-msgstr ""
+msgstr "E2 WebIF which allows you to remotely access your titanNit receiver"
+"from an E2 Client like DreaMote-App on Iphone/Ipad or XBMC from a VU+"
 
 #: tpk_description.h:57
 msgid "Emu Camd3 v3.902 for your box"
-msgstr ""
+msgstr "Softcam camd3.902"
 
 #: tpk_description.h:58
 msgid "Emu MBox v0.6 build 0010 for your box"
-msgstr ""
+msgstr "Softcam MBox V0.6 build 0010"
 
 #: tpk_description.h:59
 msgid "Emu MGCamd v1.35 for your box"
-msgstr ""
+msgstr "Softcam MGCamd V1.35"
 
 #: tpk_description.h:60
 msgid "Emu MGCamd v1.38a and all Configs"
-msgstr ""
+msgstr "Softcam MGCamd V1.38"
 
 #: tpk_description.h:61
 msgid "Emu scam 3.53 for your box"
-msgstr ""
+msgstr "Softcam SCam V3.53"
 
 #: tpk_description.h:62
 msgid "Emu scam 3.59 for your box"
-msgstr ""
+msgstr "Softcam SCam V3.59"
 
 #: tpk_description.h:63
 msgid "Emu scam 3.60 for your box"
-msgstr ""
+msgstr "Softcam SCam V3.60"
 
 #: tpk_description.h:64
 msgid "Emu vizcam 1.04 for your box"
-msgstr ""
+msgstr "Softcam vizcam V1.04"
 
 #: tpk_description.h:65
 msgid "extended config Panel"
@@ -9447,7 +9453,7 @@ msgstr ""
 
 #: tpk_description.h:66
 msgid "filemanager"
-msgstr ""
+msgstr "File Manager"
 
 #: tpk_description.h:67
 msgid "first titan game"
@@ -9553,7 +9559,7 @@ msgstr ""
 
 #: tpk_description.h:91
 msgid "IP-Kamera zB. Firma INSTAR"
-msgstr ""
+msgstr "IP Camera  eg. INSTAR"
 
 #: tpk_description.h:92
 msgid "Kabel BW transparent Picons for tiTan."
@@ -9669,11 +9675,11 @@ msgstr ""
 
 #: tpk_description.h:120
 msgid "Permanente Uhrzeit am Bildschirm"
-msgstr ""
+msgstr "Permanent time showing on your screen"
 
 #: tpk_description.h:121
 msgid "Power off if box not used"
-msgstr ""
+msgstr "Shutdown the receiver if it is not used."
 
 #: tpk_description.h:122
 msgid "remote Desktop Plugin"
@@ -9685,19 +9691,19 @@ msgstr ""
 
 #: tpk_description.h:124
 msgid "Sat: Bulldog Settings 3x Sat 28.03.2014"
-msgstr ""
+msgstr "Sattelite settings by Bulldog for HOTBIRD 13, ASTRA 19.2 and ASTRA 28.2"
 
 #: tpk_description.h:125
 msgid "Sat: matze70 Settings Astra 19.2"
-msgstr ""
+msgstr "Sattelite settings by matz370 for ASTRA 19.2"
 
 #: tpk_description.h:126
 msgid "Sat: Settings matze70 neue Design Astra 19.2"
-msgstr ""
+msgstr "Sattelite settings by matze70 for ASTRA 19.2 - new design"
 
 #: tpk_description.h:127
 msgid "Sat: uljanow Settings Sat 19.2 und 13.0"
-msgstr ""
+msgstr "Sattelite settings by Uljanow for ASTRA 19.2 and HOTBIRD 13"
 
 #: tpk_description.h:128
 msgid ""
@@ -9751,7 +9757,7 @@ msgstr ""
 
 #: tpk_description.h:140
 msgid "Stable Version of OSCam V13unten"
-msgstr ""
+msgstr "Stable version of OScam using a Sky V13 in internal lower slot"
 
 #: tpk_description.h:141
 msgid "stock Plugin"
@@ -9763,7 +9769,7 @@ msgstr ""
 
 #: tpk_description.h:143
 msgid "Tastensperre Plugin - entsperren mit rot/rot/gruen"
-msgstr ""
+msgstr "Keylock extension - unlock using red/red/green"
 
 #: tpk_description.h:144
 msgid "Titan Mediacenter"
@@ -9823,11 +9829,11 @@ msgstr ""
 
 #: tpk_description.h:158
 msgid "Treiber fuer Pearl LCD V4.0"
-msgstr ""
+msgstr "Driver for pearl LCD V4.0"
 
 #: tpk_description.h:159
 msgid "Treiber fuer Samsung LCD"
-msgstr ""
+msgstr "Driver for Samsung LCD"
 
 #: tpk_description.h:160
 msgid "UPNP Media Render"
@@ -9835,11 +9841,11 @@ msgstr ""
 
 #: tpk_description.h:161
 msgid "usbreset Plugin"
-msgstr ""
+msgstr "USB reset extension"
 
 #: tpk_description.h:162
 msgid "weather Plugin"
-msgstr ""
+msgstr "Weather extension"
 
 #: tpk_description.h:163
 msgid "Webbrowser Plugin"
@@ -9847,7 +9853,7 @@ msgstr ""
 
 #: tpk_description.h:164
 msgid "Werbezapper"
-msgstr ""
+msgstr "Advert zapper"
 
 #: tpk_description.h:165
 msgid "White 3D Picons for tiTan."
@@ -9931,7 +9937,7 @@ msgstr ""
 
 #: tpk_section.h:3
 msgid "emus"
-msgstr ""
+msgstr "Softcams"
 
 #: tpk_section.h:4
 msgid "fonts"
@@ -10171,11 +10177,11 @@ msgstr ""
 
 #: tpk_showname.h:52
 msgid "LCD Pearl Skin Blau"
-msgstr ""
+msgstr "LCD Pearl skin blue"
 
 #: tpk_showname.h:53
 msgid "LCD Pearl Skin Gross/Schwarz"
-msgstr ""
+msgstr "LCD Pearl skin big/black"
 
 #: tpk_showname.h:54
 msgid "LCD Pearl Skin MRP"
@@ -10187,27 +10193,27 @@ msgstr ""
 
 #: tpk_showname.h:56
 msgid "LCD Pearl Skin Schwarz"
-msgstr ""
+msgstr "LCD Pearl skin black"
 
 #: tpk_showname.h:57
 msgid "LCD Samsung Skin Analog Uhr"
-msgstr ""
+msgstr "LCD Samsung skin analogue clock"
 
 #: tpk_showname.h:58
 msgid "LCD Samsung Skin DigitalUhr (blau) - operating Mode"
-msgstr ""
+msgstr "LCD Samsung skin Digital clock"
 
 #: tpk_showname.h:59
 msgid "LCD Samsung Skin Digital Uhr gelb"
-msgstr ""
+msgstr "LCD Samsung skin yellow Digital clock"
 
 #: tpk_showname.h:60
 msgid "LCD Samsung Skin Digital Uhr Trikots"
-msgstr ""
+msgstr "LCD Samsung skin shirt Digital clock"
 
 #: tpk_showname.h:61
 msgid "LCD Samsung Skin Holzuhr"
-msgstr ""
+msgstr "LCD Samsung skin wooden clock"
 
 #: tpk_showname.h:62
 msgid "LCD Samsung SPF.."
@@ -10836,7 +10842,7 @@ msgstr "DVB-S"
 
 #: transponder.h:573 transponder.h:581
 msgid "DVBS2"
-msgstr ""
+msgstr "DVB-S2"
 
 #: tsSchnitt.c:123
 msgid "INFO"
