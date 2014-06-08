@@ -1698,7 +1698,8 @@ msgstr "Select your search mode"
 msgid ""
 "Transponder/Satellite Convert done, please use channel search on next Boot.\n"
 "Your System will reboot !"
-msgstr "Convertion of Transponder / Satellite done.\n"
+msgstr ""
+"Convertion of Transponder / Satellite done.\n"
 "Please perform a new channel scan after System reboot.\n"
 "Your Receiver will now reboot!"
 
@@ -1714,7 +1715,8 @@ msgstr "ERROR: The transponder file is empty!"
 msgid ""
 "Standard favorites have been successfully applied.\n"
 "Your System will reboot !"
-msgstr "Standard favourites have been imported.\n"
+msgstr ""
+"Standard favourites have been imported.\n"
 "The Receiver will reboot now."
 
 #: gmediarender.h:109
@@ -4866,8 +4868,8 @@ msgid ""
 "Start movie in the internal player, set with 0 key marker during a movie. 5 "
 "key is for the marker overview. Then here select movie and start."
 msgstr ""
-"Start the movie with the internal Player. Set a marker with the -0- Key during "
-"the playback.\n"
+"Start the movie with the internal Player. Set a marker with the -0- Key "
+"during the playback.\n"
 "For an overview of all markers press -5- on you Remote.\n"
 "Press -Play- on your Remote Control to perform the selected cut."
 
@@ -6574,7 +6576,8 @@ msgstr "Here you may set a new timer for a recording event."
 
 #: skin_default_skin.xml.h:281
 msgid "Here you can do a blind scan, this process takes a long time."
-msgstr "Here you may perform a blind scan. The blind scan requires a long time!"
+msgstr ""
+"Here you may perform a blind scan. The blind scan requires a long time!"
 
 #: skin_default_skin.xml.h:282
 msgid "Here you can edit the following channels from the EPG."
@@ -6588,7 +6591,8 @@ msgstr "Here you may install Plugins/Extebsions from our Online offer."
 msgid ""
 "Here you can in your EPG entries for specific search. Use to start a color "
 "button to search."
-msgstr "Here you may search for specific entries with the EPG.\n"
+msgstr ""
+"Here you may search for specific entries with the EPG.\n"
 "Use a coulored button to start the search."
 
 #: skin_default_skin.xml.h:285
@@ -6711,7 +6715,8 @@ msgstr "Please select a skin from the following list:"
 msgid ""
 "Here you can select the Transponder Mode. Please use a channel search after "
 "the Restart"
-msgstr "Here you may personalise your transponder setup.\n"
+msgstr ""
+"Here you may personalise your transponder setup.\n"
 "You'll need to perform a scan after the reboot."
 
 #: skin_default_skin.xml.h:311
@@ -6758,8 +6763,10 @@ msgstr ""
 msgid ""
 "Here you can set your Channel search options. Very important, before you "
 "start looking for a channel must be set to its tuner tuner settings."
-msgstr "Here you may personalise your channel search setup.\n"
-"To perform a channel scan make sure you have set your tuner settings correctly."
+msgstr ""
+"Here you may personalise your channel search setup.\n"
+"To perform a channel scan make sure you have set your tuner settings "
+"correctly."
 
 #: skin_default_skin.xml.h:318
 msgid "Here you can set your language."
@@ -9205,7 +9212,8 @@ msgstr "Alternative skin for Pearl LCD"
 #: tpk_description.h:5
 msgid ""
 "Alternativer Skin fuer Pearl LCD - X-Light Picons zusaetzlich installieren"
-msgstr "Alternative skin for Pearl LCD - X-Light Picons must be installed seperately"
+msgstr ""
+"Alternative skin for Pearl LCD - X-Light Picons must be installed seperately"
 
 #: tpk_description.h:6
 msgid ""
@@ -9412,8 +9420,9 @@ msgstr "DVD Player Extension"
 msgid ""
 "E2 WebIf API erlaubt den Zugriff auf TitanNit mittels eines E2-Clients (z.B. "
 "dreaMote-App auf iPhone oder iPad bzw. XBMC mit VU+)"
-msgstr "E2 WebIF which allows you to remotely access your titanNit receiver"
-"from an E2 Client like DreaMote-App on Iphone/Ipad or XBMC from a VU+"
+msgstr ""
+"E2 WebIF which allows you to remotely access your titanNit receiverfrom an "
+"E2 Client like DreaMote-App on Iphone/Ipad or XBMC from a VU+"
 
 #: tpk_description.h:57
 msgid "Emu Camd3 v3.902 for your box"
@@ -9691,7 +9700,8 @@ msgstr ""
 
 #: tpk_description.h:124
 msgid "Sat: Bulldog Settings 3x Sat 28.03.2014"
-msgstr "Sattelite settings by Bulldog for HOTBIRD 13, ASTRA 19.2 and ASTRA 28.2"
+msgstr ""
+"Sattelite settings by Bulldog for HOTBIRD 13, ASTRA 19.2 and ASTRA 28.2"
 
 #: tpk_description.h:125
 msgid "Sat: matze70 Settings Astra 19.2"
