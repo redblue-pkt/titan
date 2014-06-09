@@ -6394,6 +6394,7 @@ int converte2settings(int flag)
 void createfav()
 {
 	struct skin* load = getscreen("loading");
+	drawscreen(load, 0, 0);
 
 	system("rm -rf /mnt/settings/bouquets*");
 	system("cp -a /etc/titan.restore/mnt/settings/bouquets* /mnt/settings");
