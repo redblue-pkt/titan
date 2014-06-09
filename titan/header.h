@@ -846,6 +846,7 @@ void screenshoot(int flag);
 void guestthread();
 int vbulletin_userauth(char* link, char* user, char* pass);
 int phpkit_userauth(char* link, char* user, char* pass);
+int converte2settings(int flag);
 
 //rcconfig.h
 int getrcconfigint(char *key, char* ext);
