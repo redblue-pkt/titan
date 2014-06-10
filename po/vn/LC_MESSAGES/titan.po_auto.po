@@ -50,7 +50,7 @@ msgstr ""
 #: filemanager.h:319 filemanager.h:329 filenuke.h:37 filenuke.h:84
 #: filenuke.h:96 filenuke.h:108 filenuke.h:157 flashx.h:26 flashx.h:84
 #: flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270 global.h:5519
-#: global.h:6144 global.h:6213 global.h:6232 global.h:6401 gmediarender.h:115
+#: global.h:6144 global.h:6213 global.h:6232 global.h:6402 gmediarender.h:115
 #: harddisk.h:350 harddisk.h:355 harddisk.h:382 harddisk.h:386 harddisk.h:439
 #: harddisk.h:633 harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729
 #: harddisk.h:731 harddisk.h:733 harddisk.h:793 harddisk.h:811 harddisk.h:814
@@ -142,7 +142,7 @@ msgstr "OK"
 #: filemanager.h:319 filemanager.h:329 filenuke.h:37 filenuke.h:84
 #: filenuke.h:96 filenuke.h:108 filenuke.h:157 flashx.h:26 flashx.h:84
 #: flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270 global.h:5519
-#: global.h:6144 global.h:6213 global.h:6232 global.h:6401 gmediarender.h:115
+#: global.h:6144 global.h:6213 global.h:6232 global.h:6402 gmediarender.h:115
 #: harddisk.h:350 harddisk.h:355 harddisk.h:382 harddisk.h:386 harddisk.h:439
 #: harddisk.h:633 harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729
 #: harddisk.h:731 harddisk.h:733 harddisk.h:793 harddisk.h:811 harddisk.h:814
@@ -550,7 +550,7 @@ msgstr ""
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:329
 #: filenuke.h:37 filenuke.h:84 filenuke.h:96 filenuke.h:108 filenuke.h:157
 #: flashx.h:26 flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:5519 global.h:6144 global.h:6213 global.h:6232 global.h:6401
+#: global.h:5519 global.h:6144 global.h:6213 global.h:6232 global.h:6402
 #: gmediarender.h:115 harddisk.h:633 harddisk.h:641 harddisk.h:675
 #: harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733 harddisk.h:793
 #: harddisk.h:811 harddisk.h:814 hbbtv.h:362 hello.c:36 httpdfunc.h:1098
@@ -1681,7 +1681,7 @@ msgstr ""
 msgid "Error: Transponder Source file no data"
 msgstr ""
 
-#: global.h:6401
+#: global.h:6402
 msgid ""
 "Standard favorites have been successfully applied.\n"
 "Your System will reboot !"
