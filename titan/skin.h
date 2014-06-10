@@ -1689,7 +1689,10 @@ int drawjpgsw(struct jpeg_decompress_struct* cinfo, unsigned char* buf, int posx
 			for(i=0; i<width*3; i++) 
  				tmpbuf[location++] = buffer[0][i];
  		}
-		scalebuf = resize(tmpbuf, width, height, scalewidth, scaleheight, 1, NULL, 1);
+		if(getconfigint("extended_scale", NULL) == 1)
+			scalebuf = resize(tmpbuf, width, height, scalewidth, scaleheight, 2, NULL, 1);
+		else	
+			scalebuf = resize(tmpbuf, width, height, scalewidth, scaleheight, 1, NULL, 1);
 		
 		aktline = 0;
 		while(aktline < scaleheight)
