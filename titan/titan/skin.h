@@ -3903,6 +3903,7 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 	if(node->name != NULL && ostrstr(node->name, "LCD_") != NULL)
 	{
 		if(lcdskinfb == NULL) {
+#ifndef MIPSEL			
 			if(node->name != NULL && ostrstr(node->name, "LCD_spf87") != NULL) {
 				unsigned char *newskinfb = calloc(1, 4 * 800 * 480);
 				if(newskinfb == NULL)
@@ -3982,7 +3983,31 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 					return -2;
 				}
 				lcdskinfb = addfb("lcdskinfb", 999, 320, 240, 4, -1, newskinfb, 4 * 320 * 240);
-			}	
+			}
+#else	
+			if(node->name != NULL && ostrstr(node->name, "LCD_spf87") != NULL) 
+				lcdskinfb = oledaddfb(800, 480);
+			else if(node->name != NULL && ostrstr(node->name, "LCD_spf72") != NULL) 
+				lcdskinfb = oledaddfb(800, 480);
+			else if(node->name != NULL && ostrstr(node->name, "LCD_spf83") != NULL) 
+				lcdskinfb = oledaddfb(800, 600);
+			else if(node->name != NULL && ostrstr(node->name, "LCD_spf85") != NULL) 
+				lcdskinfb = oledaddfb(800, 600);
+			else if(node->name != NULL && ostrstr(node->name, "LCD_spf75") != NULL) 
+				lcdskinfb = oledaddfb(800, 480);
+			else if(node->name != NULL && ostrstr(node->name, "LCD_spf107") != NULL) 
+				lcdskinfb = oledaddfb(1024, 600);
+			else if(node->name != NULL && ostrstr(node->name, "LCD_spf105") != NULL) 
+				lcdskinfb = oledaddfb(1024, 600);
+			else
+				lcdskinfb = oledaddfb(320, 240);
+			if(lcdskinfb == NULL)
+			{
+				if(flag == 0 || flag == 4)
+					m_lock(&status.drawingmutex, 0);
+				return -2;
+			}
+#endif
 		}
 		merkskinfb = skinfb;
 		//memset(lcdskinfb->fb, 0, lcdskinfb->varfbsize);
@@ -3992,7 +4017,7 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 	{
 		if(oledskinfb == NULL) {
 			if(node->name != NULL && ostrstr(node->name, "OLED_nemesis") != NULL) {
-				oledskinfb = oledaddfb(1);
+				oledskinfb = oledaddfb(256, 64);
 				if(oledskinfb == NULL)
 				{
 					if(flag == 0 || flag == 4)
@@ -4060,7 +4085,11 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 	if(merkskinfb != NULL)
 	{
 		/*delete temporary FB*/
+#ifndef MIPSEL
 		if(skinfb == oledskinfb)
+#else
+		if(skinfb == oledskinfb || skinfb == lcdskinfb)
+#endif
 		{
 			skinfb = merkskinfb;
 			merkskinfb = NULL;
