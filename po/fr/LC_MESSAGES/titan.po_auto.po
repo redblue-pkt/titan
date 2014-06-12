@@ -9609,82 +9609,86 @@ msgid "Treiber fuer Pearl LCD V4.0"
 msgstr ""
 
 #: tpk_description.h:159
-msgid "Treiber fuer Samsung LCD"
+msgid "Treiber fuer Pearl LCD V5.0"
 msgstr ""
 
 #: tpk_description.h:160
-msgid "UPNP Media Render"
+msgid "Treiber fuer Samsung LCD"
 msgstr ""
 
 #: tpk_description.h:161
-msgid "usbreset Plugin"
+msgid "UPNP Media Render"
 msgstr ""
 
 #: tpk_description.h:162
-msgid "weather Plugin"
+msgid "usbreset Plugin"
 msgstr ""
 
 #: tpk_description.h:163
-msgid "Webbrowser Plugin"
+msgid "weather Plugin"
 msgstr ""
 
 #: tpk_description.h:164
-msgid "Werbezapper"
+msgid "Webbrowser Plugin"
 msgstr ""
 
 #: tpk_description.h:165
-msgid "White 3D Picons for tiTan."
+msgid "Werbezapper"
 msgstr ""
 
 #: tpk_description.h:166
-msgid "White 3D Picons for tiTan - Astra 23.5E."
+msgid "White 3D Picons for tiTan."
 msgstr ""
 
 #: tpk_description.h:167
-msgid "White 3D Picons for tiTan - Astra 28.2E."
+msgid "White 3D Picons for tiTan - Astra 23.5E."
 msgstr ""
 
 #: tpk_description.h:168
-msgid "White 3D Picons for tiTan - Hotbird 13.0E."
+msgid "White 3D Picons for tiTan - Astra 28.2E."
 msgstr ""
 
 #: tpk_description.h:169
-msgid "White70 Picons for tiTan."
+msgid "White 3D Picons for tiTan - Hotbird 13.0E."
 msgstr ""
 
 #: tpk_description.h:170
-msgid "White70 Picons for tiTan - Astra 23.5E."
+msgid "White70 Picons for tiTan."
 msgstr ""
 
 #: tpk_description.h:171
-msgid "White70 Picons for tiTan - Astra 28.2E"
+msgid "White70 Picons for tiTan - Astra 23.5E."
 msgstr ""
 
 #: tpk_description.h:172
-msgid "White70 Picons for tiTan - Hotbird 13.0E."
+msgid "White70 Picons for tiTan - Astra 28.2E"
 msgstr ""
 
 #: tpk_description.h:173
-msgid "wireless 8192cu.ko model"
+msgid "White70 Picons for tiTan - Hotbird 13.0E."
 msgstr ""
 
 #: tpk_description.h:174
-msgid "wireless modul 8712u.ko"
+msgid "wireless 8192cu.ko model"
 msgstr ""
 
 #: tpk_description.h:175
-msgid "wireless modul rt2870sta.ko"
+msgid "wireless modul 8712u.ko"
 msgstr ""
 
 #: tpk_description.h:176
-msgid "wireless modul rt3070sta.ko"
+msgid "wireless modul rt2870sta.ko"
 msgstr ""
 
 #: tpk_description.h:177
-msgid "wireless modul rt5370sta.ko"
+msgid "wireless modul rt3070sta.ko"
 msgstr ""
 
 #: tpk_description.h:178
+msgid "wireless modul rt5370sta.ko"
+msgstr ""
+
+#: tpk_description.h:179
 msgid "xupnpd Medien Server (upnp)"
 msgstr ""
 
