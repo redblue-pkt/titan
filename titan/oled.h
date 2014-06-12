@@ -46,23 +46,15 @@ int oledtext(char *value)
 	return 0;
 }
 
-struct fb* oledaddfb(int flag) 
+struct fb* oledaddfb(int width, int height) 
 {
-	int width = 0;
-	int height = 0;
 	struct fb *newnode = NULL;
 	char *name = ostrcat("oledskinfb", NULL, 0, 0);
 	newnode = (struct fb*)malloc(sizeof(struct fb));
-	
-	if(flag == 1) {
-		width = 256;
-		height = 64;
-	}	
-	else
-		return NULL;
-	
+		
 	unsigned char *newskinfb = calloc(1, 4 * width * height);
-
+	if(newskinfb == NULL)
+		return NULL; 
 	memset(newnode, 0, sizeof(struct fb));
 	newnode->name = name;
 	newnode->dev = 999;
