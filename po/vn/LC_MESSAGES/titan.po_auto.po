@@ -60,7 +60,7 @@ msgstr ""
 #: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
 #: hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200
 #: imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:496
-#: infobar.h:618 info.h:27 keyactions.h:290 lcdpearl1.c:45 lcdsamsung.c:101
+#: infobar.h:618 info.h:27 keyactions.h:290 lcdpearl1.c:49 lcdsamsung.c:101
 #: log.h:46 log.h:48 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
 #: mc_audioplayer.h:333 mc_audioplayer.h:605 mc_audioplayer.h:716
 #: mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
@@ -559,7 +559,7 @@ msgstr ""
 #: hwtest.h:564 hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617
 #: hwtest.h:632 hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685
 #: imdbapi.h:200 imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200
-#: infobar.h:496 infobar.h:618 keyactions.h:290 language.h:49 lcdpearl1.c:45
+#: infobar.h:496 infobar.h:618 keyactions.h:290 language.h:49 lcdpearl1.c:49
 #: lcdsamsung.c:101 log.h:46 log.h:48 marker.h:215 marker.h:229
 #: mc_audioplayer.h:333 mc_audioplayer.h:605 mc_audioplayer.h:716
 #: mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
@@ -779,15 +779,15 @@ msgid ""
 msgstr ""
 
 #: callmon_main.h:76 callmon_main.h:98 callmon_main.h:116 callmon_main.h:120
-#: callmon_main.h:124 callmon_main.h:128 instar.h:192 lcdpearl1.c:502
-#: lcdpearl1.c:506 lcdpearl1.c:510 lcdsamsung.c:976 lcdsamsung.c:980
+#: callmon_main.h:124 callmon_main.h:128 instar.h:192 lcdpearl1.c:506
+#: lcdpearl1.c:510 lcdpearl1.c:514 lcdsamsung.c:976 lcdsamsung.c:980
 #: lcdsamsung.c:984
 msgid "nein"
 msgstr ""
 
 #: callmon_main.h:77 callmon_main.h:97 callmon_main.h:115 callmon_main.h:119
-#: callmon_main.h:123 callmon_main.h:127 instar.h:193 lcdpearl1.c:503
-#: lcdpearl1.c:507 lcdpearl1.c:511 lcdsamsung.c:977 lcdsamsung.c:981
+#: callmon_main.h:123 callmon_main.h:127 instar.h:193 lcdpearl1.c:507
+#: lcdpearl1.c:511 lcdpearl1.c:515 lcdsamsung.c:977 lcdsamsung.c:981
 #: lcdsamsung.c:985
 msgid "ja"
 msgstr ""
@@ -2444,7 +2444,7 @@ msgstr ""
 msgid "Change language needs reboot"
 msgstr "Thay đổi ngôn ngữ cần khởi động lại!"
 
-#: lcdpearl1.c:45 lcdsamsung.c:101
+#: lcdpearl1.c:49 lcdsamsung.c:101
 msgid "ERROR cant start LCD driver"
 msgstr ""
 
