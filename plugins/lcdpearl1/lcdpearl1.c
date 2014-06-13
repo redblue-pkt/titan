@@ -35,7 +35,11 @@ void LCD_start_lcd4linux()
 
 	if(LCD_Pearl1thread == NULL)
 		return;
+#ifndef MIPSEL
 	while (LCD_Pearl1thread->aktion != STOP && system("ps | grep -v grep | grep lcd4linux ") != 0) {
+#else
+	while (LCD_Pearl1thread->aktion != STOP && system("ps -A | grep -v grep | grep lcd4linux ") != 0) {
+#endif
 		system(startlcd);
 		sleep(6);
 		count ++;
