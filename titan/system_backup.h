@@ -45,7 +45,7 @@ void screensystem_backup()
 				tmpstr = ostrcat(tmpstr, "backup.sh ", 1, 0);
 				tmpstr = ostrcat(tmpstr, listbox->select->ret, 1, 0);
 
-				if(checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1 || checkbox("UFS912") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("ATEMIO5200") == 1 || checkbox("ATEMIO-NEMESIS") == 1)
+				if(checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1 || checkbox("UFS912") == 1 || checkbox("UFS913") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("ATEMIO5200") == 1 || checkbox("ATEMIO-NEMESIS") == 1)
 				{
 					if(!file_exist("/mnt/logs"))
 						 mkdir("/mnt/logs", 777);
