@@ -68,7 +68,7 @@ int checkhighflash()
 	else if(checkbox("UFS913") == 1)
 	{
 		cmd = ostrcat(cmd, "mtd10", 1, 0); 
-		size = ostrcat("6600000", NULL, 0, 0); 
+		size = ostrcat("06600000", NULL, 0, 0); 
 	}
 	else
 	{
