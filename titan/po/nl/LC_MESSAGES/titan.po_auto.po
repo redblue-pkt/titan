@@ -2592,7 +2592,8 @@ msgstr "Bestand niet gevonden!"
 #: plugins_tithek_skin.xml.h:24 plugins_tiwakeup_skin.xml.h:9
 #: plugins_tmc_skin.xml.h:18 plugins_tmdb_skin.xml.h:11
 #: plugins_tsSchnitt_skin.xml.h:11 plugins_weather_skin.xml.h:4
-#: plugins_wins3_skin.xml.h:4 plugins_xupnpd_skin.xml.h:5
+#: plugins_wins3_skin.xml.h:4 plugins_wm2014_skin.xml.h:1
+#: plugins_wm2014_skin.xml.h:21 plugins_xupnpd_skin.xml.h:5
 #: plugins_zapback_skin.xml.h:7 skin_default_skin.xml.h:746
 #: skins_autotimer_skin.xml.h:13 skins_callmonitor1_skin.xml.h:19
 #: skins_catcatch_skin.xml.h:7 skins_dlna_skin.xml.h:15
@@ -2610,6 +2611,7 @@ msgstr "Bestand niet gevonden!"
 #: skins_tiwakeup_skin.xml.h:9 skins_tmc_skin.xml.h:18
 #: skins_tmdb_skin.xml.h:11 skins_tsSchnitt_skin.xml.h:11
 #: skins_weather_skin.xml.h:4 skins_wins3_skin.xml.h:4
+#: skins_wm2014_skin.xml.h:1 skins_wm2014_skin.xml.h:21
 #: skins_xupnpd_skin.xml.h:5 skins_zapback_skin.xml.h:7 tithek_mainmenu.h:1
 msgid ""
 msgstr ""
@@ -4868,6 +4870,83 @@ msgstr "Weer"
 #: plugins_wins3_skin.xml.h:2 skins_wins3_skin.xml.h:2
 msgid "NEW"
 msgstr "Nieuw"
+
+#: plugins_wm2014_skin.xml.h:2 skins_wm2014_skin.xml.h:2
+msgid "[0] => Finals"
+msgstr ""
+
+#: plugins_wm2014_skin.xml.h:3 skins_wm2014_skin.xml.h:3
+msgid "[9] => Last 16"
+msgstr ""
+
+#: plugins_wm2014_skin.xml.h:4 skins_wm2014_skin.xml.h:4
+msgid "Button 1..8 => Group A..H"
+msgstr ""
+
+#: plugins_wm2014_skin.xml.h:5 skins_wm2014_skin.xml.h:5
+msgid "Date"
+msgstr ""
+
+#: plugins_wm2014_skin.xml.h:6 skins_wm2014_skin.xml.h:6
+msgid "Day "
+msgstr ""
+
+#: plugins_wm2014_skin.xml.h:7 skins_wm2014_skin.xml.h:7
+msgid "Diff"
+msgstr ""
+
+#: plugins_wm2014_skin.xml.h:8 skins_wm2014_skin.xml.h:8
+msgid "Draw"
+msgstr ""
+
+#: plugins_wm2014_skin.xml.h:9 skins_wm2014_skin.xml.h:9
+msgid "Goals"
+msgstr ""
+
+#: plugins_wm2014_skin.xml.h:10 skins_wm2014_skin.xml.h:10
+msgid "Lost"
+msgstr ""
+
+#: plugins_wm2014_skin.xml.h:11 skins_wm2014_skin.xml.h:11
+msgid "Played"
+msgstr ""
+
+#: plugins_wm2014_skin.xml.h:12 skins_wm2014_skin.xml.h:12
+msgid "Points"
+msgstr ""
+
+#: plugins_wm2014_skin.xml.h:13 skin_default_skin.xml.h:505
+#: skins_wm2014_skin.xml.h:13 softcam.h:292
+msgid "Refresh"
+msgstr "Verversen"
+
+#: plugins_wm2014_skin.xml.h:14 skins_wm2014_skin.xml.h:14
+msgid "Team"
+msgstr ""
+
+#: plugins_wm2014_skin.xml.h:15 skins_wm2014_skin.xml.h:15
+msgid "Team 1"
+msgstr ""
+
+#: plugins_wm2014_skin.xml.h:16 skins_wm2014_skin.xml.h:16
+msgid "Team 2"
+msgstr ""
+
+#: plugins_wm2014_skin.xml.h:17 skins_wm2014_skin.xml.h:17
+msgid "Time"
+msgstr ""
+
+#: plugins_wm2014_skin.xml.h:18 skins_wm2014_skin.xml.h:18
+msgid "vs"
+msgstr ""
+
+#: plugins_wm2014_skin.xml.h:19 skins_wm2014_skin.xml.h:19
+msgid "will be set by plugin"
+msgstr ""
+
+#: plugins_wm2014_skin.xml.h:20 skins_wm2014_skin.xml.h:20
+msgid "Won"
+msgstr ""
 
 #: plugins_xupnpd_skin.xml.h:1 skins_xupnpd_skin.xml.h:1
 msgid "Here you can make your xupnpd autostart settings."
@@ -7379,10 +7458,6 @@ msgstr "Opname Timer"
 #: skin_default_skin.xml.h:503
 msgid "Red Button"
 msgstr "Rode knop"
-
-#: skin_default_skin.xml.h:505 softcam.h:292
-msgid "Refresh"
-msgstr "Verversen"
 
 #: skin_default_skin.xml.h:506
 msgid "Released"
