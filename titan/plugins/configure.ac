@@ -69,5 +69,6 @@ tsSchnitt/Makefile
 usbreset/Makefile
 weather/Makefile
 wins3/Makefile
+wm2014/Makefile
 zapback/Makefile
 ])
