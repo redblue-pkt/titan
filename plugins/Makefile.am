@@ -39,4 +39,5 @@ SUBDIRS = \
 	usbreset \
 	weather \
 	wins3 \
+	wm2014 \
 	zapback
