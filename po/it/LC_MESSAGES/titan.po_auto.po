@@ -9860,6 +9860,10 @@ msgid "wireless modul rt5370sta.ko"
 msgstr ""
 
 #: tpk_description.h:179
+msgid "WM2014 Plugin"
+msgstr ""
+
+#: tpk_description.h:180
 msgid "xupnpd Medien Server (upnp)"
 msgstr ""
 
@@ -10696,34 +10700,38 @@ msgid "Wlan rt5370sta"
 msgstr ""
 
 #: tpk_showname.h:205
-msgid "XPicons LightTransparent (Astra 19.2E)"
+msgid "WM2014"
 msgstr ""
 
 #: tpk_showname.h:206
-msgid "XPicons LightTransparent (Astra 23.5E)"
+msgid "XPicons LightTransparent (Astra 19.2E)"
 msgstr ""
 
 #: tpk_showname.h:207
-msgid "XPicons LightTransparent (Astra 28.2E)"
+msgid "XPicons LightTransparent (Astra 23.5E)"
 msgstr ""
 
 #: tpk_showname.h:208
-msgid "XPicons LightTransparent (Hotbird 13.0E)"
+msgid "XPicons LightTransparent (Astra 28.2E)"
 msgstr ""
 
 #: tpk_showname.h:209
-msgid "XPicons LightTransparent (small - Astra 19.2E)"
+msgid "XPicons LightTransparent (Hotbird 13.0E)"
 msgstr ""
 
 #: tpk_showname.h:210
-msgid "xupnpd"
+msgid "XPicons LightTransparent (small - Astra 19.2E)"
 msgstr ""
 
 #: tpk_showname.h:211
-msgid "zapback (Werbezapper)"
+msgid "xupnpd"
 msgstr ""
 
 #: tpk_showname.h:212
+msgid "zapback (Werbezapper)"
+msgstr ""
+
+#: tpk_showname.h:213
 msgid "Zombie"
 msgstr ""
 
