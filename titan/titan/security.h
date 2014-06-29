@@ -70,6 +70,11 @@ int checkhighflash()
 		cmd = ostrcat(cmd, "mtd10", 1, 0); 
 		size = ostrcat("06600000", NULL, 0, 0); 
 	}
+	else if(checkbox("IPBOX900") == 1)
+	{
+		cmd = ostrcat(cmd, "mtd5", 1, 0); 
+		size = ostrcat("00c40000", NULL, 0, 0); 
+	}
 	else
 	{
 		cmd = ostrcat(cmd, "mtd5", 1, 0); 
@@ -168,7 +173,7 @@ void ckeckkillnetthread()
 
 int checkreseller()
 {
-	if(checkbox("UFS910") == 1 || checkbox("UFS922") == 1 || checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO5200") == 1 || checkbox("UFS913") == 1)
+	if(checkbox("UFS910") == 1 || checkbox("UFS922") == 1 || checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO5200") == 1 || checkbox("UFS913") == 1 || checkbox("IPBOX900") == 1)
 	{
 		debug(10, "ResellerId: skipped");
 		debug(10, "boxtype: %s", getboxtype());
