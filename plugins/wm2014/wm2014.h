@@ -674,11 +674,10 @@ void screenwm2014() {
 
 // ################################################################
 
-	int rcret = 0, wmGroupID = 6;
+	int rcret = 0, wmGroupID = 0;
 	char* tmpstr = NULL;
 	char* tmpstr2 = NULL;
-	int i = 0, j = 0;
-	char tmpstr3[2];
+	int i = 0;
 
 	tmpstr = malloc(MINMALLOC);
 	tmpstr2 = malloc(MINMALLOC);
@@ -689,9 +688,20 @@ void screenwm2014() {
 		//GetWmGroupData(i);
 	}
 
+	if ( getconfigint("wm2014_groupid", NULL) > 0 && getconfigint("wm2014_groupid", NULL) < 10 ) {
+		wmGroupID = getconfigint("wm2014_groupid", NULL);
+		debug(10, "main getconfig: wmGroupID = %d\n", wmGroupID);
+	} else {
+		wmGroupID = 8;
+		debug(10, "main default: wmGroupID = %d\n", wmGroupID);
+	}
+
 /*
+	int j = 0;
+	char tmpstr3[2];
 	for (j = 0; j < 6; j++) {
-		sprintf(tmpstr3, "%d", j);
+		//sprintf(tmpstr3, "%d", j);
+		tmpstr3 = oitoa(j);
 		tmpstr2 = ostrcat("day_", tmpstr3, 0, 0);
 		debug(10, "TEST: (%s)\n", tmpstr2);
 	}
@@ -1350,6 +1360,9 @@ start:
 			goto start;
 		}
 	}
+
+	debug(10, "main addconfigint: wmGroupID = %d\n", wmGroupID);
+	addconfigint("wm2014_groupid", wmGroupID);
 
 	delownerrc(wm2014);
 	delownerrc(wm2014_last16);
