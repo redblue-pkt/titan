@@ -1005,8 +1005,8 @@ void setskinnodeslocked(int flag)
 				if(ostrcmp("settings_pluginbutton", child->name) == 0) child->locked = 1;
 			}
 
-			// hide this menu on all boxes without ufs912
-			if(checkbox("UFS912") != 1)
+			// hide this menu on all boxes without ufs912/ufs913
+			if(checkbox("UFS912") != 1 && checkbox("UFS913") != 1)
 			{
 				if(ostrcmp("overclocking", child->name) == 0) child->locked = 1;
 			}
