@@ -523,12 +523,16 @@ void screeninfobar()
 		}
 		if(rcret == getrcconfigint("rcgreen", NULL))
 		{
+status.standby = 1;
+status.epgscanlistthread = addtimer(&epgscanlistthread, START, 1000, 1, NULL, NULL, NULL);
+/*
 			subtitlepause(1);
 			status.infobar = 0;
 			clearscreen(infobar);
 			screenvideomode(0);
 			drawscreen(skin, 0, 0);
 			subtitlepause(0);
+*/
 			continue;
 		}
 		if(rcret == getrcconfigint("rcsubchannel", NULL))
