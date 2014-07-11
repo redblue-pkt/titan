@@ -9791,8 +9791,9 @@ msgid "news Plugin"
 msgstr "Nachrichten"
 
 #: tpk_description.h:108
-msgid "Nightly Version of oscam 2xSlot intern + 1xUSB"
-msgstr "Test (Nightly) Version der OScam 2xSlot intern + 1xUSB"
+msgid ""
+"Nightly Version 9783 of oscam 2xSlot intern + 1xUSB (blocked EMM for V14)"
+msgstr ""
 
 #: tpk_description.h:109
 msgid "Nightly Version of OSCam 8755"
@@ -10161,14 +10162,18 @@ msgid "skins"
 msgstr "Skins"
 
 #: tpk_section.h:18
+msgid "Softcams"
+msgstr ""
+
+#: tpk_section.h:19
 msgid "tools"
 msgstr "Tools"
 
-#: tpk_section.h:19
+#: tpk_section.h:20
 msgid "tools "
 msgstr "Tools"
 
-#: tpk_section.h:20
+#: tpk_section.h:21
 msgid "wireless"
 msgstr "WLAN"
 
@@ -11284,3 +11289,6 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
+
+#~ msgid "Nightly Version of oscam 2xSlot intern + 1xUSB"
+#~ msgstr "Test (Nightly) Version der OScam 2xSlot intern + 1xUSB"
