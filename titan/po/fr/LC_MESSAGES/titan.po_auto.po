@@ -9478,7 +9478,8 @@ msgid "news Plugin"
 msgstr ""
 
 #: tpk_description.h:108
-msgid "Nightly Version of oscam 2xSlot intern + 1xUSB"
+msgid ""
+"Nightly Version 9783 of oscam 2xSlot intern + 1xUSB (blocked EMM for V14)"
 msgstr ""
 
 #: tpk_description.h:109
@@ -9848,14 +9849,18 @@ msgid "skins"
 msgstr ""
 
 #: tpk_section.h:18
-msgid "tools"
+msgid "Softcams"
 msgstr ""
 
 #: tpk_section.h:19
-msgid "tools "
+msgid "tools"
 msgstr ""
 
 #: tpk_section.h:20
+msgid "tools "
+msgstr ""
+
+#: tpk_section.h:21
 msgid "wireless"
 msgstr ""
 
