@@ -9432,7 +9432,7 @@ msgid "Default Font "
 msgstr "Standaard lettertype"
 
 #: tpk_description.h:49
-msgid "default Settings 19.2 Astra"
+msgid "default Settings 19.2 Astra 13.0 Hotbird KabelD"
 msgstr ""
 
 #: tpk_description.h:50
@@ -10623,7 +10623,7 @@ msgid "Screensaver Travel World"
 msgstr ""
 
 #: tpk_showname.h:155
-msgid "Settings 19.2 Astra"
+msgid "Settings 19.2 Astra 13.0 Hotbird KabelD"
 msgstr ""
 
 #: tpk_showname.h:156

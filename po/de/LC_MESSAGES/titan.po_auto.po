@@ -9554,8 +9554,8 @@ msgid "Default Font "
 msgstr "Standard Schriftart"
 
 #: tpk_description.h:49
-msgid "default Settings 19.2 Astra"
-msgstr "Standard Senderliste 19.2 Astra"
+msgid "default Settings 19.2 Astra 13.0 Hotbird KabelD"
+msgstr ""
 
 #: tpk_description.h:50
 msgid "Default Skin"
@@ -10751,8 +10751,8 @@ msgid "Screensaver Travel World"
 msgstr ""
 
 #: tpk_showname.h:155
-msgid "Settings 19.2 Astra"
-msgstr "Senderliste Astra 19,2"
+msgid "Settings 19.2 Astra 13.0 Hotbird KabelD"
+msgstr ""
 
 #: tpk_showname.h:156
 msgid "Settings Astra 19.2 (matze70)"
@@ -11306,3 +11306,9 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
+
+#~ msgid "default Settings 19.2 Astra"
+#~ msgstr "Standard Senderliste 19.2 Astra"
+
+#~ msgid "Settings 19.2 Astra"
+#~ msgstr "Senderliste Astra 19,2"
