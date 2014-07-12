@@ -11223,6 +11223,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Zapback is activated. Do you want to stop it?"
-
-#~ msgid "default Settings 19.2 Astra"
-#~ msgstr "Default settings for ASTRA 19.2 East"
