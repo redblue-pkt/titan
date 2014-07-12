@@ -66,6 +66,7 @@ tmc/Makefile
 tmdb/Makefile
 TopfieldVFD/Makefile
 tsSchnitt/Makefile
+sudoku/Makefile
 usbreset/Makefile
 weather/Makefile
 wins3/Makefile

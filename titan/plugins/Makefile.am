@@ -30,6 +30,7 @@ SUBDIRS = \
 	stock \
 	stopifnotused \
 	streaminfo \
+	sudoku \
 	tinews \
 	tithek \
 	tsSchnitt \
