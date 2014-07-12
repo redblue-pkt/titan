@@ -1,0 +1,127 @@
+<style name="dbg" bordersize="1" bordercol="#ffffff">
+#style="dbg" 
+
+
+<screen name="wait" text="please wait..." fontsize="40" fontcol="fontcol" posx="30" posy="600" halign="center" width="562" height="40" bgcol="-2">
+</screen>
+
+
+<screen name="sudoku" bgcol="#267FB2" posx="0" posy="0" width="622" height="100%" hspace="30" vspace="30" transparent="0">
+
+##	<node style="dbg" name="box1" posx="0" posy="0"   width="100%" height="185" bgcol="#267FB2" bgcol2="#78C5E6" gradient="topmiddle">
+##	<node style="dbg" name="box2" posx="0" posy="185" width="100%" height="190" bgcol="#267FB2" bgcol2="#78C5E6" gradient="topmiddle">
+##	<node style="dbg" name="box3" posx="0" posy="375" width="100%" height="190" bgcol="#267FB2" bgcol2="#78C5E6" gradient="topmiddle">
+
+	<node name="box11" posx="5"   posy="5"   width="170" height="170" bgcol="#267FB2" bgcol2="#78C5E6" gradient="topmiddle">
+	<node name="box12" posx="195" posy="5"   width="170" height="170" bgcol="#267FB2" bgcol2="#78C5E6" gradient="leftmiddle">
+	<node name="box13" posx="385" posy="5"   width="170" height="170" bgcol="#267FB2" bgcol2="#78C5E6" gradient="topmiddle">
+
+	<node name="box21" posx="5"   posy="195" width="170" height="170" bgcol="#267FB2" bgcol2="#78C5E6" gradient="topmiddle">
+	<node name="box22" posx="195" posy="195" width="170" height="170" bgcol="#267FB2" bgcol2="#78C5E6" gradient="leftmiddle">
+	<node name="box23" posx="385" posy="195" width="170" height="170" bgcol="#267FB2" bgcol2="#78C5E6" gradient="topmiddle">
+
+	<node name="box31" posx="5"   posy="385" width="170" height="170" bgcol="#267FB2" bgcol2="#78C5E6" gradient="topmiddle">
+	<node name="box32" posx="195" posy="385" width="170" height="170" bgcol="#267FB2" bgcol2="#78C5E6" gradient="leftmiddle">
+	<node name="box33" posx="385" posy="385" width="170" height="170" bgcol="#267FB2" bgcol2="#78C5E6" gradient="topmiddle">
+
+
+
+	<node type="grid" name="grid" fontcol="white" fontsize="40" posx="0" posy="0" width="562" height="632" scrollbar="no">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="0"   posy="0"  width="60" height="60" halign="center" valign="middle" type="gridbr">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="60"  posy="0"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="120" posy="0"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="190" posy="0"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="250" posy="0"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="310" posy="0"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="380" posy="0"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="440" posy="0"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="500" posy="0"  width="60" height="60" halign="center" valign="middle">
+
+		<node parent="grid" bgspace="5" bgcol="grey" posx="0"   posy="0"  width="60" height="60" halign="center" valign="middle" type="gridbr">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="60"  posy="0"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="120" posy="0"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="190" posy="0"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="250" posy="0"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="310" posy="0"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="380" posy="0"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="440" posy="0"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="500" posy="0"  width="60" height="60" halign="center" valign="middle">
+
+		<node parent="grid" bgspace="5" bgcol="grey" posx="0"   posy="0"  width="60" height="60" halign="center" valign="middle" type="gridbr">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="60"  posy="0"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="120" posy="0"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="190" posy="0"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="250" posy="0"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="310" posy="0"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="380" posy="0"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="440" posy="0"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="500" posy="0"  width="60" height="60" halign="center" valign="middle">
+####
+		<node parent="grid" bgspace="5" bgcol="grey" posx="0"   posy="10"  width="60" height="60" halign="center" valign="middle" type="gridbr">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="60"  posy="10"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="120" posy="10"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="190" posy="10"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="250" posy="10"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="310" posy="10"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="380" posy="10"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="440" posy="10"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="500" posy="10"  width="60" height="60" halign="center" valign="middle">
+
+		<node parent="grid" bgspace="5" bgcol="grey" posx="0"   posy="10"  width="60" height="60" halign="center" valign="middle" type="gridbr">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="60"  posy="10"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="120" posy="10"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="190" posy="10"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="250" posy="10"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="310" posy="10"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="380" posy="10"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="440" posy="10"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="500" posy="10"  width="60" height="60" halign="center" valign="middle">
+
+		<node parent="grid" bgspace="5" bgcol="grey" posx="0"   posy="10"  width="60" height="60" halign="center" valign="middle" type="gridbr">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="60"  posy="10"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="120" posy="10"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="190" posy="10"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="250" posy="10"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="310" posy="10"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="380" posy="10"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="440" posy="10"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="500" posy="10"  width="60" height="60" halign="center" valign="middle">
+####
+		<node parent="grid" bgspace="5" bgcol="grey" posx="0"   posy="20"  width="60" height="60" halign="center" valign="middle" type="gridbr">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="60"  posy="20"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="120" posy="20"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="190" posy="20"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="250" posy="20"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="310" posy="20"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="380" posy="20"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="440" posy="20"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="500" posy="20"  width="60" height="60" halign="center" valign="middle">
+
+		<node parent="grid" bgspace="5" bgcol="grey" posx="0"   posy="20"  width="60" height="60" halign="center" valign="middle" type="gridbr">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="60"  posy="20"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="120" posy="20"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="190" posy="20"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="250" posy="20"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="310" posy="20"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="380" posy="20"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="440" posy="20"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="500" posy="20"  width="60" height="60" halign="center" valign="middle">
+
+		<node parent="grid" bgspace="5" bgcol="grey" posx="0"   posy="20"  width="60" height="60" halign="center" valign="middle" type="gridbr">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="60"  posy="20"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="120" posy="20"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="190" posy="20"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="250" posy="20"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="310" posy="20"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="380" posy="20"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="440" posy="20"  width="60" height="60" halign="center" valign="middle">
+		<node parent="grid" bgspace="5" bgcol="grey" posx="500" posy="20"  width="60" height="60" halign="center" valign="middle">
+
+	<node name="level" fontsize="30" fontcol="fontcol" posx="left" posy="580" width="250" height="30" halign="left" valign="middle">
+	<node name="checks" fontsize="30" fontcol="fontcol" posx="right" posy="580" width="250" height="30" halign="right" valign="middle">
+
+<node name="b1" text="OK"   fontsize="28" fontcol="white" posx="left"  posy="bottom" width="100" height="40" halign="center" valign="middle" bgcol="#BBBBBB">
+<node name="b2" text="EXIT" fontsize="28" fontcol="white" posx="right" posy="bottom" width="100" height="40" halign="center" valign="middle" bgcol="#BBBBBB">
+<node name="b3" text="Hard" fontsize="28" fontcol="white" posx="175"   posy="bottom" width="100" height="40" halign="center" valign="middle" bgcol="#B82120">
+<node name="b4" text="Easy" fontsize="28" fontcol="white" posx="285"   posy="bottom" width="100" height="40" halign="center" valign="middle" bgcol="#30BA30">
+</screen>
