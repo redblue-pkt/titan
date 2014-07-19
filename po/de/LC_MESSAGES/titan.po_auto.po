@@ -4721,35 +4721,35 @@ msgstr ""
 
 #: plugins_sudoku_skin.xml.h:4 skins_sudoku_skin.xml.h:4
 msgid "Check inputs"
-msgstr ""
+msgstr "Eingaben überprüfen"
 
 #: plugins_sudoku_skin.xml.h:5 skins_sudoku_skin.xml.h:5
 msgid "Delete wrong inputs"
-msgstr ""
+msgstr "Falsche Eingaben löschen"
 
 #: plugins_sudoku_skin.xml.h:6 skins_sudoku_skin.xml.h:6
 msgid "Easy"
-msgstr ""
+msgstr "Easy"
 
 #: plugins_sudoku_skin.xml.h:8 skins_sudoku_skin.xml.h:8
 msgid "Hard"
-msgstr ""
+msgstr "Hard"
 
 #: plugins_sudoku_skin.xml.h:9 skins_sudoku_skin.xml.h:9
 msgid "Input the numbers 1 to 9"
-msgstr ""
+msgstr "Eingabe der Zahlen 1 bis 9"
 
 #: plugins_sudoku_skin.xml.h:11 skins_sudoku_skin.xml.h:11
 msgid "New game (easy)"
-msgstr ""
+msgstr "Neues Spiel (leicht)"
 
 #: plugins_sudoku_skin.xml.h:12 skins_sudoku_skin.xml.h:12
 msgid "New game (hard)"
-msgstr ""
+msgstr "Neues Spiel (schwierig)"
 
 #: plugins_sudoku_skin.xml.h:14 skins_sudoku_skin.xml.h:14
 msgid "Open settings menu"
-msgstr ""
+msgstr "Einstellungsmenü öffnen"
 
 #: plugins_sudoku_skin.xml.h:15 plugins_tithek_skin.xml.h:14
 #: skins_sudoku_skin.xml.h:15 skins_tithek_skin.xml.h:14 tithek.h:1143
@@ -4758,7 +4758,7 @@ msgstr "bitte warten"
 
 #: plugins_sudoku_skin.xml.h:16 skins_sudoku_skin.xml.h:16
 msgid "Sudoku Help"
-msgstr ""
+msgstr "Sudoku Hilfe"
 
 #: plugins_sudoku_skin.xml.h:17 skins_sudoku_skin.xml.h:17
 msgid "X-Position"
@@ -8520,15 +8520,15 @@ msgstr "Liste aktuell genutzter Streams, OK zum Stoppen"
 
 #: sudoku.c:167
 msgid "left"
-msgstr ""
+msgstr "left"
 
 #: sudoku.c:168
 msgid "center"
-msgstr ""
+msgstr "center"
 
 #: sudoku.c:169
 msgid "right"
-msgstr ""
+msgstr "right"
 
 #: system_backup.h:15
 msgid ""
