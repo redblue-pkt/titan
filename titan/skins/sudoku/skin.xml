@@ -145,13 +145,13 @@
 	<node name="text11" text="Eingabe der Zahlen 1 bis 9" fontsize="28" fontcol="fontcol" posx="120" posy="105" width="442" height="30" halign="left" valign="middle">
 
 	<node name="text02" text="0" fontsize="28" fontcol="white" posx="0" posy="150" width="100" height="40" halign="center" valign="middle" bgcol="#BBBBBB">
-	<node name="text12" text="Falsche Eingaben lÃ¶schen" fontsize="28" fontcol="fontcol" posx="120" posy="155" width="442" height="30" halign="left" valign="middle">
+	<node name="text12" text="Falsche Eingaben löschen" fontsize="28" fontcol="fontcol" posx="120" posy="155" width="442" height="30" halign="left" valign="middle">
 
 	<node name="text03" text="OK" fontsize="28" fontcol="white" posx="0" posy="200" width="100" height="40" halign="center" valign="middle" bgcol="#BBBBBB">
-	<node name="text13" text="Eingaben Ã¼berprÃ¼fen" fontsize="28" fontcol="fontcol" posx="120" posy="205" width="442" height="30" halign="left" valign="middle">
+	<node name="text13" text="Eingaben überprüfen" fontsize="28" fontcol="fontcol" posx="120" posy="205" width="442" height="30" halign="left" valign="middle">
 
 	<node name="text04" text="Menu" fontsize="28" fontcol="white" posx="0" posy="250" width="100" height="40" halign="center" valign="middle" bgcol="#BBBBBB">
-	<node name="text14" text="EinstellungsmenÃ¼ Ã¶ffnen" fontsize="28" fontcol="fontcol" posx="120" posy="255" width="442" height="30" halign="left" valign="middle">
+	<node name="text14" text="Einstellungsmenü öffnen" fontsize="28" fontcol="fontcol" posx="120" posy="255" width="442" height="30" halign="left" valign="middle">
 
 	<node name="text05" text="Hard" fontsize="28" fontcol="white" posx="0" posy="300" width="100" height="40" halign="center" valign="middle" bgcol="#B82120">
 	<node name="text15" text="Neues Spiel (schwierig)" fontsize="28" fontcol="fontcol" posx="120" posy="305" width="442" height="30" halign="left" valign="middle">
