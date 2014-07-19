@@ -52,12 +52,12 @@ void sudokunew(struct skin* sudoku_grid, struct skin* sudoku_checks, struct skin
 	} else {
 		tmpstr = ostrcat(g_SudokuCorePath, " --create-easy >/tmp/.sudoku_puzzle", 0, 0);
 	}
-	debug(10, "(%s)",tmpstr);
+	//debug(10, "(%s)",tmpstr);
 	system(tmpstr);
 	free(tmpstr); tmpstr = NULL;
 
 	tmpstr = ostrcat(g_SudokuCorePath, " </tmp/.sudoku_puzzle >/tmp/.sudoku_solved", 0, 0);
-	debug(10, "%s",tmpstr);
+	//debug(10, "%s",tmpstr);
 	system(tmpstr);
 	free(tmpstr); tmpstr = NULL;
 
@@ -149,6 +149,92 @@ void sudokucheck(struct skin* sudoku_grid, struct skin* sudoku_checks) {
 	free(tmpstr1); tmpstr1 = NULL;
 }
 
+void screensudoku_settings() {
+	int rcret = 0;
+	struct skin* sudoku_settings = getscreen("sudoku_settings");
+	struct skin* set_listbox = getscreennode(sudoku_settings, "listbox");
+	struct skin* set_posx = getscreennode(sudoku_settings, "posx");
+	struct skin* tmp = NULL;
+
+	struct clist *myconfig[LISTHASHSIZE] = {NULL};
+	char* sudokucfg = NULL;
+
+	sudokucfg = createpluginpath("/sudoku/sudoku.cfg", 0);
+	readconfig(sudokucfg, myconfig);
+	//debug(10, "config: (%s)", sudokucfg);
+	//debug(10, "config: (%s)", getlist(myconfig, "xpos", NULL));
+
+	addchoicebox(set_posx, "left", _("left"));
+	addchoicebox(set_posx, "center", _("center"));
+	addchoicebox(set_posx, "right", _("right"));
+	setchoiceboxselection(set_posx, getlist(myconfig, "xpos", NULL));
+
+	if ( ostrcmp(getlist(myconfig, "xpos", NULL), "right")  == 0 ) {
+		sudoku_settings->posx = RIGHT;
+	} else if ( ostrcmp(getlist(myconfig, "xpos", NULL), "center")  == 0 ) {
+		sudoku_settings->posx = CENTER;
+	} else {
+		sudoku_settings->posx = LEFT;
+	}
+
+	drawscreen(sudoku_settings, 0, 0);
+	addscreenrc(sudoku_settings, set_listbox);
+
+	tmp = set_listbox->select;
+	while(1) {
+		addscreenrc(sudoku_settings, tmp);
+		rcret = waitrc(sudoku_settings, 0, 0);
+		tmp = set_listbox->select;
+
+		if ( rcret == getrcconfigint("rcexit", NULL) || rcret == getrcconfigint("rcmenu", NULL) ) break;
+
+		if (rcret == getrcconfigint("rcok", NULL) ) {
+			//debug(10, "posx new: (%s)", set_posx->ret);
+			addlist(myconfig, "xpos", set_posx->ret);
+			writelist(myconfig, sudokucfg);
+			break;
+		}
+	}
+
+	freelist(myconfig);
+	free(sudokucfg); sudokucfg = NULL;
+
+	delownerrc(sudoku_settings);
+	clearscreen(sudoku_settings);
+}
+
+void screensudoku_help() {
+	int rcret = 0;
+	struct skin* sudoku_help = getscreen("sudoku_help");
+
+	struct clist *myconfig[LISTHASHSIZE] = {NULL};
+	char* sudokucfg = NULL;
+
+	sudokucfg = createpluginpath("/sudoku/sudoku.cfg", 0);
+	readconfig(sudokucfg, myconfig);
+
+	if ( ostrcmp(getlist(myconfig, "xpos", NULL), "right")  == 0 ) {
+		sudoku_help->posx = RIGHT;
+	} else if ( ostrcmp(getlist(myconfig, "xpos", NULL), "center")  == 0 ) {
+		sudoku_help->posx = CENTER;
+	} else {
+		sudoku_help->posx = LEFT;
+	}
+
+	freelist(myconfig);
+	free(sudokucfg); sudokucfg = NULL;
+
+	drawscreen(sudoku_help, 0, 0);
+
+	while(1) {
+		rcret = waitrc(sudoku_help, 0, 0);
+		if ( rcret == getrcconfigint("rcexit", NULL) || rcret == getrcconfigint("rchelp", NULL) ) break;
+	}
+
+	delownerrc(sudoku_help);
+	clearscreen(sudoku_help);
+}
+
 void screensudoku() {
 	int rcret = 0, iLevel = 0;
 	struct skin* sudoku = getscreen("sudoku");
@@ -157,6 +243,28 @@ void screensudoku() {
 	struct skin* checks = getscreennode(sudoku, "checks");
 	struct skin* wait = getscreen("wait");
 
+
+	struct clist *myconfig[LISTHASHSIZE] = {NULL};
+	char* sudokucfg = NULL;
+
+	sudokucfg = createpluginpath("/sudoku/sudoku.cfg", 0);
+	readconfig(sudokucfg, myconfig);
+	//debug(10, "config: (%s)", sudokucfg);
+	//debug(10, "config: (%s)", getlist(myconfig, "xpos", NULL));
+
+	if ( ostrcmp(getlist(myconfig, "xpos", NULL), "right")  == 0 ) {
+		sudoku->posx = RIGHT;
+		wait->posx = RIGHT;
+	} else if ( ostrcmp(getlist(myconfig, "xpos", NULL), "center")  == 0 ) {
+		sudoku->posx = CENTER;
+		wait->posx = CENTER;
+	} else {
+		sudoku->posx = LEFT;
+		wait->posx = LEFT;
+	}
+
+	freelist(myconfig);
+	free(sudokucfg); sudokucfg = NULL;
 
 	drawscreen(sudoku, 0, 0);
 	if ( g_initialized == 0 ) {
@@ -169,9 +277,40 @@ void screensudoku() {
 	}
 	addscreenrc(sudoku, grid);
 
-	while(1)
-	{
+	while(1) {
 		rcret = waitrc(sudoku, 0, 0);
+
+		if(rcret == getrcconfigint("rchelp", NULL)) {
+			screensudoku_help();
+			drawscreen(sudoku, 0, 0);
+			continue;
+		}
+
+		if(rcret == getrcconfigint("rcmenu", NULL)) {
+			screensudoku_settings();
+
+			sudokucfg = createpluginpath("/sudoku/sudoku.cfg", 0);
+			readconfig(sudokucfg, myconfig);
+			//debug(10, "config: (%s)", sudokucfg);
+			//debug(10, "config: (%s)", getlist(myconfig, "xpos", NULL));
+
+			if ( ostrcmp(getlist(myconfig, "xpos", NULL), "right")  == 0 ) {
+				sudoku->posx = RIGHT;
+				wait->posx = RIGHT;
+			} else if ( ostrcmp(getlist(myconfig, "xpos", NULL), "center")  == 0 ) {
+				sudoku->posx = CENTER;
+				wait->posx = CENTER;
+			} else {
+				sudoku->posx = LEFT;
+				wait->posx = LEFT;
+			}
+
+			freelist(myconfig);
+			free(sudokucfg); sudokucfg = NULL;
+
+			drawscreen(sudoku, 0, 0);
+			continue;
+		}
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 
@@ -239,14 +378,14 @@ void init(void) {
 	free(tmpstr); tmpstr = NULL;
 
 	pluginaktiv = 1;
-	debug(10, "Sudoku Plugin loaded!");
+	debug(10, "sudoku plugin loaded!");
 }
 
 //wird beim Entladen ausgefuehrt
 void deinit(void) {
 	delmarkedscreen(208);
 	pluginaktiv = 0;
-	debug(10, "Sudoku Plugin removed!");
+	debug(10, "sudoku plugin removed!");
 }
 
 //wird in der Pluginverwaltung bzw Menue ausgefuehrt
@@ -256,6 +395,6 @@ void start(void) {
 
 	screensudoku();
 
-	//reset markcolor  
+	//reset
 	status.listboxselectcol = tmplistboxselectcol;
 }
