@@ -139,25 +139,25 @@
 
 <screen name="sudoku_help" bgcol="#267FB2" posx="0" posy="0" width="622" height="100%" hspace="30" vspace="30" transparent="0">
 #	<node style="dbg" name="border" posx="0" posy="0" width="562" height="610">
-	<node name="title" text="Sudoku Hilfe" fontsize="40" fontcol="fontcol" posx="0" posy="0" width="100%" height="40" halign="center" valign="middle">
+	<node name="title" text="Sudoku Help" fontsize="40" fontcol="fontcol" posx="0" posy="0" width="100%" height="40" halign="center" valign="middle">
 
 	<node name="text01" text="1..9" fontsize="28" fontcol="white" posx="0" posy="100" width="100" height="40" halign="center" valign="middle" bgcol="#BBBBBB">
-	<node name="text11" text="Eingabe der Zahlen 1 bis 9" fontsize="28" fontcol="fontcol" posx="120" posy="105" width="442" height="30" halign="left" valign="middle">
+	<node name="text11" text="Input the numbers 1 to 9" fontsize="28" fontcol="fontcol" posx="120" posy="105" width="442" height="30" halign="left" valign="middle">
 
 	<node name="text02" text="0" fontsize="28" fontcol="white" posx="0" posy="150" width="100" height="40" halign="center" valign="middle" bgcol="#BBBBBB">
-	<node name="text12" text="Falsche Eingaben löschen" fontsize="28" fontcol="fontcol" posx="120" posy="155" width="442" height="30" halign="left" valign="middle">
+	<node name="text12" text="Delete wrong inputs" fontsize="28" fontcol="fontcol" posx="120" posy="155" width="442" height="30" halign="left" valign="middle">
 
 	<node name="text03" text="OK" fontsize="28" fontcol="white" posx="0" posy="200" width="100" height="40" halign="center" valign="middle" bgcol="#BBBBBB">
-	<node name="text13" text="Eingaben überprüfen" fontsize="28" fontcol="fontcol" posx="120" posy="205" width="442" height="30" halign="left" valign="middle">
+	<node name="text13" text="Check inputs" fontsize="28" fontcol="fontcol" posx="120" posy="205" width="442" height="30" halign="left" valign="middle">
 
 	<node name="text04" text="Menu" fontsize="28" fontcol="white" posx="0" posy="250" width="100" height="40" halign="center" valign="middle" bgcol="#BBBBBB">
-	<node name="text14" text="Einstellungsmenü öffnen" fontsize="28" fontcol="fontcol" posx="120" posy="255" width="442" height="30" halign="left" valign="middle">
+	<node name="text14" text="Open settings menu" fontsize="28" fontcol="fontcol" posx="120" posy="255" width="442" height="30" halign="left" valign="middle">
 
 	<node name="text05" text="Hard" fontsize="28" fontcol="white" posx="0" posy="300" width="100" height="40" halign="center" valign="middle" bgcol="#B82120">
-	<node name="text15" text="Neues Spiel (schwierig)" fontsize="28" fontcol="fontcol" posx="120" posy="305" width="442" height="30" halign="left" valign="middle">
+	<node name="text15" text="New game (hard)" fontsize="28" fontcol="fontcol" posx="120" posy="305" width="442" height="30" halign="left" valign="middle">
 
 	<node name="text06" text="Easy" fontsize="28" fontcol="white" posx="0" posy="350" width="100" height="40" halign="center" valign="middle" bgcol="#30BA30">
-	<node name="text16" text="Neues Spiel (leicht)" fontsize="28" fontcol="fontcol" posx="120" posy="355" width="442" height="30" halign="left" valign="middle">
+	<node name="text16" text="New game (easy)" fontsize="28" fontcol="fontcol" posx="120" posy="355" width="442" height="30" halign="left" valign="middle">
 
 <node name="b1" text="EXIT" fontsize="28" fontcol="white" posx="right" posy="bottom" width="80" height="40" halign="center" valign="middle" bgcol="#BBBBBB">
 </screen>
