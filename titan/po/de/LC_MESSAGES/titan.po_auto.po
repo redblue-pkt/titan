@@ -10834,8 +10834,8 @@ msgid "Settings Kabel Primacom"
 msgstr "Senderliste Primacom"
 
 #: tpk_showname.h:163
-msgid "Settings Kabel Unitymedia"
-msgstr "Senderliste Unitymedia/KabelBW"
+msgid "Settings Kabel Unitymedia 21.7.2014"
+msgstr ""
 
 #: tpk_showname.h:164
 msgid "Settings Kabel Unitymedia langerhans"
@@ -11357,3 +11357,6 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
+
+#~ msgid "Settings Kabel Unitymedia"
+#~ msgstr "Senderliste Unitymedia/KabelBW"

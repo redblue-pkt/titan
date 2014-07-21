@@ -10607,7 +10607,7 @@ msgid "Settings Kabel Primacom"
 msgstr ""
 
 #: tpk_showname.h:163
-msgid "Settings Kabel Unitymedia"
+msgid "Settings Kabel Unitymedia 21.7.2014"
 msgstr ""
 
 #: tpk_showname.h:164
