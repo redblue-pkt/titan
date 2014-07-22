@@ -8508,7 +8508,7 @@ msgstr ""
 
 #: streamcloud.h:74
 msgid "The page not found, file removed"
-msgstr ""
+msgstr "Die gewünschte Seite wurde nicht gefunden, Datei vom Hoster entfernt"
 
 #: streamcloud.h:78
 msgid "Connect with Hoster wait 16 seconds"
