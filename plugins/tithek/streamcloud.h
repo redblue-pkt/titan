@@ -69,6 +69,12 @@ char* streamcloud(char* link)
 	free(send), send = NULL;
 	debug(99, "tmpstr: %s", tmpstr);
 
+	if(tmpstr == NULL || ostrstr(tmpstr, "<head><title>404 Not Found</title></head>") != NULL)
+	{
+		textbox(_("Message"), _("The page is temporarily unavailable") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
+		goto end;
+	}
+
 	waitmsgbar(16, 0, _("Connect with Hoster wait 16 seconds"), 1);
 	
 	titheklog(debuglevel, "/tmp/streamcould1_get", NULL, NULL, NULL, tmpstr);
