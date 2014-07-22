@@ -132,6 +132,9 @@ char* movshare(char* link)
 	free(tmphost), tmphost = NULL;
 	tmphost = ostrcat(host, NULL, 0, 0);
 
+	if(ostrstr(link, "http://embed.") != NULL)
+		tmphost = string_replace("embed.", "www.", tmphost, 1);
+
 	free(send), send = NULL;
 	send = ostrcat(send, "GET ", 1, 0);
 	send = ostrcat(send, tmppath, 1, 0);

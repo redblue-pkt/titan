@@ -80,6 +80,18 @@ char* movreel(char* link)
 		goto end;
 	}
 
+	if(tmpstr == NULL || ostrstr(tmpstr, "Die von Ihnen angeforderte Datei konnte nicht gefunden werden") != NULL)
+	{
+		textbox(_("Message"), _("The file that you requested could not be found"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 400, 0, 0);
+		goto end;
+	}
+
+	if(tmpstr == NULL || ostrstr(tmpstr, "No such file No such user exist File not found") != NULL)
+	{
+		textbox(_("Message"), _("No such file No such user exist File not found"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 400, 0, 0);
+		goto end;
+	}
+
 	if(tmpstr == NULL || ostrstr(tmpstr, "<title>The page is temporarily unavailable</title>") != NULL)
 	{
 		error = string_resub("<td align=\"center\" valign=\"middle\">", "</td>", tmpstr, 0);
