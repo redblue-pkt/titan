@@ -10120,18 +10120,14 @@ msgid "skins"
 msgstr "Skins"
 
 #: tpk_section.h:18
-msgid "Softcams"
-msgstr ""
-
-#: tpk_section.h:19
 msgid "tools"
 msgstr "Tools"
 
-#: tpk_section.h:20
+#: tpk_section.h:19
 msgid "tools "
 msgstr "Tools"
 
-#: tpk_section.h:21
+#: tpk_section.h:20
 msgid "wireless"
 msgstr "WLAN"
 
