@@ -499,12 +499,14 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 						incount += 1;
 						ostrcatbig(&line, tmphname, &maxlen, &bigpos);
 						ostrcatbig(&line, " (Part2)", &maxlen, &bigpos);
+/*
 						if(extra != NULL)
 						{
 							ostrcatbig(&line, " (", &maxlen, &bigpos);
 							ostrcatbig(&line, extra, &maxlen, &bigpos);
 							ostrcatbig(&line, ")", &maxlen, &bigpos);					
 						}
+*/
 						ostrcatbig(&line, "#http://www.movie4k.to/", &maxlen, &bigpos);
 						ostrcatbig(&line, url2, &maxlen, &bigpos);
 						ostrcatbig(&line, "#http://atemio.dyndns.tv/mediathek/menu/", &maxlen, &bigpos);
@@ -529,12 +531,14 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 						incount += 1;
 						ostrcatbig(&line, tmphname, &maxlen, &bigpos);
 						ostrcatbig(&line, " (Part3)", &maxlen, &bigpos);
+/*
 						if(extra != NULL)
 						{
 							ostrcatbig(&line, " (", &maxlen, &bigpos);
 							ostrcatbig(&line, extra, &maxlen, &bigpos);
 							ostrcatbig(&line, ")", &maxlen, &bigpos);					
 						}
+*/
 						ostrcatbig(&line, "#http://www.movie4k.to/", &maxlen, &bigpos);
 						ostrcatbig(&line, url3, &maxlen, &bigpos);
 						ostrcatbig(&line, "#http://atemio.dyndns.tv/mediathek/menu/", &maxlen, &bigpos);
@@ -559,12 +563,14 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 						incount += 1;
 						ostrcatbig(&line, tmphname, &maxlen, &bigpos);
 						ostrcatbig(&line, " (Part4)", &maxlen, &bigpos);
+/*
 						if(extra != NULL)
 						{
 							ostrcatbig(&line, " (", &maxlen, &bigpos);
 							ostrcatbig(&line, extra, &maxlen, &bigpos);
 							ostrcatbig(&line, ")", &maxlen, &bigpos);					
 						}
+*/
 						ostrcatbig(&line, "#http://www.movie4k.to/", &maxlen, &bigpos);
 						ostrcatbig(&line, url4, &maxlen, &bigpos);
 						ostrcatbig(&line, "#http://atemio.dyndns.tv/mediathek/menu/", &maxlen, &bigpos);
