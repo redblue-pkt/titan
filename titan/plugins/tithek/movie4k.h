@@ -7,7 +7,9 @@
 char* movie4k(char* link)
 {
 	debug(99, "link: %s", link);
-	char* tmpstr = NULL, *url = NULL, *streamurl = NULL, *tmppath = NULL, *tmphost = NULL, *pos = NULL;
+	int debuglevel = getconfigint("debuglevel", NULL);
+	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *url = NULL, *streamurl = NULL, *tmppath = NULL, *tmphost = NULL, *pos = NULL;
+	titheklog(debuglevel, "/tmp/movie4k_streamurl_url0", NULL, NULL, NULL, link);
 
 	if(link == NULL || ostrncmp("http://", link, 7)) return NULL;
 
@@ -21,28 +23,60 @@ char* movie4k(char* link)
 		tmppath = pos + 1;
 	}
 
-	tmpstr = gethttp(tmphost, tmppath, 80, NULL, NULL, 5000, NULL, 0);
+	tmpstr1 = gethttp(tmphost, tmppath, 80, NULL, NULL, 5000, NULL, 0);
+	titheklog(debuglevel, "/tmp/movie4k_streamurl_tmpstr1_a", NULL, NULL, NULL, tmpstr1);
 
+	tmpstr = string_resub("question.png", "underplayer", tmpstr1, 0);
+	titheklog(debuglevel, "/tmp/movie4k_streamurl_tmpstr1_b", NULL, NULL, NULL, tmpstr);
+	free(tmpstr1), tmpstr1 = NULL;
+	
 	url = string_resub("<a target=\"_blank\" href=\"", "\"><", tmpstr, 0);
+	titheklog(debuglevel, "/tmp/movie4k_streamurl_url1", NULL, NULL, NULL, url);
 
 	if(ostrstr(url, "http://") == NULL)
 	{
 		free(url), url = NULL;
 		url = string_resub("<iframe src=", "\" width", tmpstr, 0);
+
+		tmpstr2 = ostrcat("<iframe src=", url, 0, 0);
+		tmpstr2 = ostrcat(tmpstr2, "\" width", 1, 0);
+		tmpstr = string_replace_all(tmpstr2, "", tmpstr, 1);
+
+		titheklog(debuglevel, "/tmp/movie4k_streamurl_tmpstr2", NULL, NULL, NULL, tmpstr);
+		titheklog(debuglevel, "/tmp/movie4k_streamurl_url2", NULL, NULL, NULL, url);
 	}
 	
 	if(ostrstr(url, "http://www.facebook.com") != NULL)
 	{
 		free(url), url = NULL;
 		url = oregex(".*<iframe width=.*(http://.*)&width.*", tmpstr);
+		titheklog(debuglevel, "/tmp/movie4k_streamurl_url3", NULL, NULL, NULL, url);
+	}	
+
+	if(ostrstr(url, "http://clkrev.com") != NULL)
+	{
+		free(url), url = NULL;
+		url = string_resub("<iframe src=\"", "\" width", tmpstr, 0);
+		titheklog(debuglevel, "/tmp/movie4k_streamurl_url4", NULL, NULL, NULL, url);
 	}
 	
 	url = string_replace_all("/embed/", "/file/", url, 1);
 	url = string_replace_all("\"", "", url, 1);
 
+	if(url == NULL)
+	{
+		free(url), url = NULL;
+		url = oregex(".*<iframe width=\".*(http://.*)&width=600&height=480\".*", tmpstr);
+		titheklog(debuglevel, "/tmp/movie4k_streamurl_url5", NULL, NULL, NULL, url);
+	}
+	titheklog(debuglevel, "/tmp/movie4k_streamurl_url6", NULL, NULL, NULL, url);
+
 	streamurl = hoster(url);
+	titheklog(debuglevel, "/tmp/movie4k_streamurl_url7", NULL, NULL, NULL, url);
+
 	free(url), url = NULL;
 	free(tmpstr), tmpstr = NULL;
+	free(tmpstr2), tmpstr2 = NULL;
 	free(tmphost), tmphost = NULL;
 
 	return streamurl;
@@ -148,7 +182,7 @@ int movie4k_search(struct skin* grid, struct skin* listbox, struct skin* countla
 					if(id == NULL)
 						id = string_resub("watch-movie-", ".html", link, 0);
 					if(id == NULL)
-						id = oregex(".*tvshows-(.*[0-9]{1,10})-.*", link);
+						id = oregex(".*tvshows-(.*[0-9]{4,10})-.*", link);
 
 
 					from = ostrcat("#coverPreview", id, 0, 0);
@@ -371,11 +405,11 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 						pos3 = ostrstr(ret1[i].part, "Movie quality");
 						extra = getxmlentry(pos3, "quality ");
 
-						id = oregex(".*-online-film-(.*[0-9]{1,10}).html.*", pathnew);							
+						id = oregex(".*-online-film-(.*[0-9]{4,10}).html.*", pathnew);							
 						if(id == NULL)
 							id = string_resub("watch-movie-", ".html", pathnew, 0);
 						if(id == NULL)
-							id = oregex(".*tvshows-(.*[0-9]{1,10})-.*", pathnew);
+							id = oregex(".*tvshows-(.*[0-9]{4,10})-.*", pathnew);
 						if(id == NULL)
 							id = ostrcat(tmpid, NULL, 0, 0);
 
@@ -403,11 +437,11 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 					}
 					else
 					{
-						id = oregex(".*-online-film-(.*[0-9]{1,10}).html.*", path);							
+						id = oregex(".*-online-film-(.*[0-9]{4,10}).html.*", path);							
 						if(id == NULL)
 							id = string_resub("watch-movie-", ".html", path, 0);
 						if(id == NULL)
-							id = oregex(".*tvshows-(.*[0-9]{1,10})-.*", path);
+							id = oregex(".*tvshows-(.*[0-9]{4,10})-.*", path);
 						if(id == NULL)
 							id = ostrcat(tmpid, NULL, 0, 0);
 
@@ -469,12 +503,14 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 					ostrcatbig(&line, tmphname, &maxlen, &bigpos);
 					if(url2 != NULL && ostrcmp(url, url2) != 0)
 						ostrcatbig(&line, " (Part1)", &maxlen, &bigpos);
+/*
 					if(extra != NULL)
 					{
 						ostrcatbig(&line, " (", &maxlen, &bigpos);
 						ostrcatbig(&line, extra, &maxlen, &bigpos);
 						ostrcatbig(&line, ")", &maxlen, &bigpos);					
 					}
+*/
 					ostrcatbig(&line, "#http://www.movie4k.to/", &maxlen, &bigpos);
 					ostrcatbig(&line, url, &maxlen, &bigpos);
 					ostrcatbig(&line, "#http://atemio.dyndns.tv/mediathek/menu/", &maxlen, &bigpos);
@@ -660,12 +696,12 @@ int movie4k_hoster_series(struct skin* grid, struct skin* listbox, struct skin* 
 		pos[0] = '\0';
 		path = pos + 1;
 	}
-/*
+
 	if(!ostrncmp("tvshows-", path, 8))
 	{
 		debug(99, "path: %s",path);
 		tpath = ostrcat(path, NULL, 0, 0);
-		id = oregex(".*tvshows-(.*[0-9]{1,10})-.*", path);
+		id = oregex(".*tvshows-(.*[0-9]{4,10})-.*", path);
 		tpath = string_replace("tvshows-season-", "", tpath, 1);
 		tpath = string_replace(".html", "", tpath, 1);
 		tpath = ostrcat(tpath, "-online-serie-", 1, 0);
@@ -674,7 +710,6 @@ int movie4k_hoster_series(struct skin* grid, struct skin* listbox, struct skin* 
 		debug(99, "convertpath: %s",tpath);
 	}
 	else
-*/
 		tpath = ostrcat(path, NULL, 0, 0);
 
 	tmpstr = gethttp(ip, tpath, 80, NULL, NULL, 10000, NULL, 0);
@@ -710,7 +745,7 @@ int movie4k_hoster_series(struct skin* grid, struct skin* listbox, struct skin* 
 						for(j = 1; j < max; j++)
 						{
 							link = string_resub("<OPTION value=\"", "\"", ret1[j-1].part, 0);
-							id = oregex(".*tvshows-(.*[0-9]{1,10})-.*", link);
+							id = oregex(".*tvshows-(.*[0-9]{4,10})-.*", link);
 							episode = oregex(".*>Episode (.*[0-9]{1,10})</OPTION>.*", ret1[j-1].part);
 
  							debug(99, "(S%d/E%s)(%d) link: %s id: %s", i, episode, j, link, id);
