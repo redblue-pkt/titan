@@ -6332,7 +6332,7 @@ int converte2settings(int flag)
 				if(checkbox("UFS910") == 1)
 					line = ostrcat(line, "1", 1, 0); // pilot
 				else
-					line = ostrcat(line, tmpstr3, 1, 0); // pilot
+					line = ostrcat(line, "2", 1, 0); // pilot
 				line = ostrcat(line, "#", 1, 0);
 
 				if(checkbox("UFS910") == 1)
