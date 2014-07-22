@@ -104,8 +104,8 @@ msgstr ""
 #: skins_sudoku_skin.xml.h:13 skins_tiwakeup_skin.xml.h:3
 #: skins_wins3_skin.xml.h:3 sock.h:952 softcam.h:403 solarmovie.h:35
 #: solarmovie.h:47 solarmovie.h:295 spinner.h:18 stopifnotused.c:31
-#: streamcloud.h:31 streamcloud.h:78 streamcloud.h:91 streamcloud.h:122
-#: streamcloud.h:161 stream.h:33 system_backup_restore.h:31
+#: streamcloud.h:31 streamcloud.h:74 streamcloud.h:84 streamcloud.h:97
+#: streamcloud.h:128 streamcloud.h:167 stream.h:33 system_backup_restore.h:31
 #: system_backup_restore.h:40 system_backup_restore.h:43
 #: system_backup_restore.h:51 system_backup_restore.h:80
 #: system_backup_restore.h:82 system_backup_restore.h:88
@@ -206,15 +206,15 @@ msgstr "OK"
 #: skins_stopifnotused_skin.xml.h:4 skins_sudoku_skin.xml.h:7
 #: skins_tiwakeup_skin.xml.h:2 skins_wins3_skin.xml.h:1 sock.h:952
 #: softcam.h:403 solarmovie.h:35 solarmovie.h:47 solarmovie.h:295 spinner.h:18
-#: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:78 streamcloud.h:91
-#: streamcloud.h:122 streamcloud.h:161 stream.h:33 system_backup_restore.h:31
-#: system_backup_restore.h:40 system_backup_restore.h:43
-#: system_backup_restore.h:51 system_backup_restore.h:80
-#: system_backup_restore.h:82 system_backup_restore.h:88
-#: system_backup_restore.h:95 system_update.h:320 system_update.h:326
-#: system_update.h:333 timeshift.h:113 timeshift.h:155 timeshift.h:162
-#: timeshiftsettings.h:45 titan.c:277 titan.c:341 titan.c:350 titan.c:970
-#: titan.c:979 titan.c:1104 titan.c:1125 titan.c:1131 titan.c:1142
+#: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:84
+#: streamcloud.h:97 streamcloud.h:128 streamcloud.h:167 stream.h:33
+#: system_backup_restore.h:31 system_backup_restore.h:40
+#: system_backup_restore.h:43 system_backup_restore.h:51
+#: system_backup_restore.h:80 system_backup_restore.h:82
+#: system_backup_restore.h:88 system_backup_restore.h:95 system_update.h:320
+#: system_update.h:326 system_update.h:333 timeshift.h:113 timeshift.h:155
+#: timeshift.h:162 timeshiftsettings.h:45 titan.c:277 titan.c:341 titan.c:350
+#: titan.c:970 titan.c:979 titan.c:1104 titan.c:1125 titan.c:1131 titan.c:1142
 #: titan.c:1148 tithek.c:81 tithek_global.h:238 tithek.h:664 tithek.h:1160
 #: tithek.h:1203 tithek.h:1450 tithek.h:1472 tithek.h:1488 tithek.h:3282
 #: tithek.h:3346 tithek.h:3360 tithek.h:3370 tiwakeup.h:66 tiwakeup.h:68
@@ -595,22 +595,22 @@ msgstr ""
 #: scan.h:1888 scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 service.h:712
 #: service.h:957 skinadjust.h:162 skinselector.h:218 sock.h:952 softcam.h:403
 #: solarmovie.h:35 solarmovie.h:47 solarmovie.h:295 spinner.h:18
-#: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:78 streamcloud.h:91
-#: streamcloud.h:122 streamcloud.h:161 stream.h:33 system_backup_restore.h:40
-#: system_backup_restore.h:43 system_backup_restore.h:80
-#: system_backup_restore.h:82 system_update.h:320 system_update.h:326
-#: system_update.h:333 timeshift.h:113 timeshift.h:155 timeshift.h:162
-#: timeshiftsettings.h:45 titan.c:277 titan.c:341 titan.c:350 titan.c:1104
-#: titan.c:1125 titan.c:1131 titan.c:1142 titan.c:1148 tithek.c:81
-#: tithek_global.h:238 tithek.h:664 tithek.h:1160 tithek.h:1203 tithek.h:1450
-#: tithek.h:1472 tithek.h:3282 tithek.h:3346 tithek.h:3360 tithek.h:3370
-#: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
-#: tmdb.h:759 tmdb.h:922 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3187
-#: tpk.new.h:3167 tunerconfig.h:915 unlock.h:20 unlock.h:66 unlock.h:71
-#: unlock.h:75 videomode.h:60 videoweed.h:35 videoweed.h:80 vidstream.h:45
-#: vidstream.h:86 vidstream.h:98 vidstream.h:167 xupnpd.h:60 xupnpd.h:71
-#: xupnpd.h:73 xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:198
-#: zapback.c:79 zdf.h:29
+#: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:84
+#: streamcloud.h:97 streamcloud.h:128 streamcloud.h:167 stream.h:33
+#: system_backup_restore.h:40 system_backup_restore.h:43
+#: system_backup_restore.h:80 system_backup_restore.h:82 system_update.h:320
+#: system_update.h:326 system_update.h:333 timeshift.h:113 timeshift.h:155
+#: timeshift.h:162 timeshiftsettings.h:45 titan.c:277 titan.c:341 titan.c:350
+#: titan.c:1104 titan.c:1125 titan.c:1131 titan.c:1142 titan.c:1148
+#: tithek.c:81 tithek_global.h:238 tithek.h:664 tithek.h:1160 tithek.h:1203
+#: tithek.h:1450 tithek.h:1472 tithek.h:3282 tithek.h:3346 tithek.h:3360
+#: tithek.h:3370 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012
+#: tmc.h:1017 tmdb.h:759 tmdb.h:922 TopfieldVFD.c:68 TopfieldVFD.c:72
+#: tpk.h:3187 tpk.new.h:3167 tunerconfig.h:915 unlock.h:20 unlock.h:66
+#: unlock.h:71 unlock.h:75 videomode.h:60 videoweed.h:35 videoweed.h:80
+#: vidstream.h:45 vidstream.h:86 vidstream.h:98 vidstream.h:167 xupnpd.h:60
+#: xupnpd.h:71 xupnpd.h:73 xvidstage.h:54 xvidstage.h:100 xvidstage.h:177
+#: youtube.h:198 zapback.c:79 zdf.h:29
 msgid "Message"
 msgstr ""
 
@@ -626,8 +626,8 @@ msgstr ""
 #: epgsearch.h:207 filmon.h:13 filmon.h:15 giga.h:13 giga.h:15 imdbapi.h:287
 #: imdb.h:712 internetradio.h:13 internetradio.h:15 internettv.h:13
 #: internettv.h:15 kinox.h:33 kinox.h:35 kinox.h:179 kinox.h:181 kinox.h:797
-#: kinox.h:799 mlehd.h:90 mlehd.h:92 movie4k.h:78 movie4k.h:80 movie4k.h:235
-#: movie4k.h:237 myvideo.h:191 myvideo.h:193 myvideo.h:296 myvideo.h:298
+#: kinox.h:799 mlehd.h:90 mlehd.h:92 movie4k.h:112 movie4k.h:114 movie4k.h:269
+#: movie4k.h:271 myvideo.h:191 myvideo.h:193 myvideo.h:296 myvideo.h:298
 #: netzkino.h:13 netzkino.h:15 rtl2now.h:181 rtl2now.h:183 rtl2now.h:245
 #: rtl2now.h:247 rtl2now.h:309 rtl2now.h:311 rtl2now.h:373 rtl2now.h:375
 #: rtl2now.h:437 rtl2now.h:439 rtl2now.h:501 rtl2now.h:503
@@ -1118,9 +1118,9 @@ msgstr ""
 #: movshare.h:149 played.h:79 played.h:90 played.h:102 played.h:160
 #: primeshare.h:73 primeshare.h:124 putlocker.h:79 putlocker.h:136
 #: putlocker.h:145 putlocker.h:219 solarmovie.h:35 solarmovie.h:46
-#: streamcloud.h:78 streamcloud.h:91 streamcloud.h:122 streamcloud.h:161
-#: vidstream.h:86 vidstream.h:97 vidstream.h:167 xvidstage.h:100
-#: xvidstage.h:177
+#: streamcloud.h:74 streamcloud.h:84 streamcloud.h:97 streamcloud.h:128
+#: streamcloud.h:167 vidstream.h:86 vidstream.h:97 vidstream.h:167
+#: xvidstage.h:100 xvidstage.h:177
 msgid "The page is temporarily unavailable"
 msgstr ""
 
@@ -2424,11 +2424,11 @@ msgstr "Κανάλι"
 msgid "Downloads"
 msgstr ""
 
-#: kinox.h:296 movie4k.h:724 movie4k.h:856 movie4k.h:972 solarmovie.h:443
+#: kinox.h:296 movie4k.h:765 movie4k.h:897 movie4k.h:1013 solarmovie.h:443
 msgid "Season"
 msgstr ""
 
-#: kinox.h:300 movie4k.h:728 movie4k.h:976 solarmovie.h:447
+#: kinox.h:300 movie4k.h:769 movie4k.h:1017 solarmovie.h:447
 msgid "Episode"
 msgstr ""
 
@@ -8273,7 +8273,7 @@ msgstr ""
 msgid "240"
 msgstr ""
 
-#: streamcloud.h:72
+#: streamcloud.h:78
 msgid "Connect with Hoster wait 16 seconds"
 msgstr ""
 
