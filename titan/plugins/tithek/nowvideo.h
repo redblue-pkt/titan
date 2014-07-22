@@ -29,6 +29,15 @@ char* nowvideo(char* link)
 		tmplink = string_replace("/Out/?s=", "", tmplink, 1);
 		debug(99, "remove out string: %s", tmplink);
 	}
+//[titan] link: http://embed.nowvideo.sx/embed.php?v=9fcbc6b4118cd, file=nowvideo.h, func=nowvideo, line=6
+//[titan] send: GET /embed.php?v=9fcbc6b4118cd HTTP/1.1
+
+//[titan] link: http://www.nowvideo.sx/video/17ba02abf1b74, file=nowvideo.h, func=nowvideo, line=6
+//[titan] send: GET /video/17ba02abf1b74 HTTP/1.1
+
+	if(ostrstr(link, "/embed.php?v=") != NULL)
+		tmplink = string_replace("/embed.php?v=", "/video/", tmplink, 1);
+
 
 	if(tmplink == NULL || ostrncmp("http://", tmplink, 7))
 	{
@@ -56,6 +65,9 @@ char* nowvideo(char* link)
 	if(ostrstr(link, "http://file.") != NULL)
 		tmphost = string_replace("file.", "www.", tmphost, 1);
 
+	if(ostrstr(link, "http://embed.") != NULL)
+		tmphost = string_replace("embed.", "www.", tmphost, 1);
+
 	if(ostrstr(link, "file.php?v=") != NULL)
 	{
 		tmppath = string_replace("file.php?v=", "video/", tmppath, 1);
@@ -81,6 +93,12 @@ char* nowvideo(char* link)
 	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 	debug(99, "tmpstr: %s", tmpstr);
 	titheklog(debuglevel, "/tmp/nowvideo1_get", NULL, NULL, NULL, tmpstr);
+
+	if(ostrstr(tmpstr, "This file no longer exists on our servers.") != NULL)
+	{
+		textbox(_("Message"), _("This file no longer exists on our servers.") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
+		goto end;
+	}
 
 	if(ostrstr(tmpstr, "The file is being transfered to our other servers. This may take few minutes.") != NULL)
 	{
