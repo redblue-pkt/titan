@@ -1118,9 +1118,9 @@ msgstr ""
 #: movshare.h:149 played.h:79 played.h:90 played.h:102 played.h:160
 #: primeshare.h:73 primeshare.h:124 putlocker.h:79 putlocker.h:136
 #: putlocker.h:145 putlocker.h:219 solarmovie.h:35 solarmovie.h:46
-#: streamcloud.h:74 streamcloud.h:84 streamcloud.h:97 streamcloud.h:128
-#: streamcloud.h:167 vidstream.h:86 vidstream.h:97 vidstream.h:167
-#: xvidstage.h:100 xvidstage.h:177
+#: streamcloud.h:84 streamcloud.h:97 streamcloud.h:128 streamcloud.h:167
+#: vidstream.h:86 vidstream.h:97 vidstream.h:167 xvidstage.h:100
+#: xvidstage.h:177
 msgid "The page is temporarily unavailable"
 msgstr ""
 
@@ -8320,6 +8320,10 @@ msgstr ""
 
 #: stopifnotused.c:105
 msgid "240"
+msgstr ""
+
+#: streamcloud.h:74
+msgid "The page not found, file removed"
 msgstr ""
 
 #: streamcloud.h:78
