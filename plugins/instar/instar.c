@@ -5,8 +5,8 @@
 #include "instar.h"
 
 
-char pluginname[] = "IP-Kammera";
-char plugindesc[] = "IP-Kammera zB. Firma INSTAR";
+char pluginname[] = "IP-Kamera";
+char plugindesc[] = "IP-Kamera zB. Firma INSTAR";
 char pluginpic[] = "%pluginpath%/instar/instar.png";
 //char pluginscript[] = "%pluginpath%/callmonitor1/fritzbox_msg_new.sh";
 
