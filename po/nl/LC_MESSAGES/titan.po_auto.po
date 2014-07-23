@@ -48,20 +48,22 @@ msgstr "Systeem informatie"
 #: faststream.h:91 faststream.h:103 faststream.h:160 filemanager.h:95
 #: filemanager.h:100 filemanager.h:206 filemanager.h:279 filemanager.h:289
 #: filemanager.h:319 filemanager.h:329 filenuke.h:37 filenuke.h:84
-#: filenuke.h:96 filenuke.h:108 filenuke.h:157 flashx.h:26 flashx.h:84
-#: flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270 global.h:5519
-#: global.h:6144 global.h:6213 global.h:6232 global.h:6402 gmediarender.h:115
-#: harddisk.h:350 harddisk.h:355 harddisk.h:382 harddisk.h:386 harddisk.h:439
-#: harddisk.h:633 harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729
-#: harddisk.h:731 harddisk.h:733 harddisk.h:793 harddisk.h:811 harddisk.h:814
-#: harddisk.h:1046 hbbtv.h:362 httpdfunc.h:1098 httpdfunc.h:3021 hwtest.h:88
-#: hwtest.h:93 hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206
-#: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
-#: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
-#: hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200
-#: imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:496
-#: infobar.h:618 info.h:27 keyactions.h:290 lcdpearl1.c:49 lcdsamsung.c:101
-#: log.h:46 log.h:48 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
+#: filenuke.h:96 filenuke.h:108 filenuke.h:157 firedrive.h:32 firedrive.h:65
+#: firedrive.h:71 firedrive.h:117 firedrive.h:123 firedrive.h:133 flashx.h:26
+#: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
+#: global.h:5519 global.h:6144 global.h:6213 global.h:6232 global.h:6402
+#: gmediarender.h:115 harddisk.h:350 harddisk.h:355 harddisk.h:382
+#: harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641 harddisk.h:675
+#: harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733 harddisk.h:793
+#: harddisk.h:811 harddisk.h:814 harddisk.h:1046 hbbtv.h:362 httpdfunc.h:1098
+#: httpdfunc.h:3021 hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103
+#: hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390 hwtest.h:411
+#: hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566 hwtest.h:586
+#: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
+#: hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626 inadyn.h:188
+#: inadyn.h:190 inadyn.h:200 infobar.h:496 infobar.h:618 info.h:27
+#: keyactions.h:290 lcdpearl1.c:49 lcdsamsung.c:101 log.h:46 log.h:48
+#: mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
 #: mc_audioplayer.h:333 mc_audioplayer.h:605 mc_audioplayer.h:716
 #: mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
 #: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
@@ -114,7 +116,7 @@ msgstr "Systeem informatie"
 #: system_update.h:333 timeshift.h:113 timeshift.h:155 timeshift.h:162
 #: timeshiftsettings.h:45 titan.c:277 titan.c:341 titan.c:350 titan.c:970
 #: titan.c:979 titan.c:1104 titan.c:1125 titan.c:1131 titan.c:1142
-#: titan.c:1148 tithek.c:81 tithek_global.h:238 tithek.h:664 tithek.h:1160
+#: titan.c:1148 tithek.c:82 tithek_global.h:240 tithek.h:664 tithek.h:1160
 #: tithek.h:1203 tithek.h:1450 tithek.h:1472 tithek.h:1488 tithek.h:3282
 #: tithek.h:3346 tithek.h:3360 tithek.h:3370 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922
@@ -143,22 +145,24 @@ msgstr "Ok"
 #: faststream.h:91 faststream.h:103 faststream.h:160 filemanager.h:95
 #: filemanager.h:100 filemanager.h:206 filemanager.h:279 filemanager.h:289
 #: filemanager.h:319 filemanager.h:329 filenuke.h:37 filenuke.h:84
-#: filenuke.h:96 filenuke.h:108 filenuke.h:157 flashx.h:26 flashx.h:84
-#: flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270 global.h:5519
-#: global.h:6144 global.h:6213 global.h:6232 global.h:6402 gmediarender.h:115
-#: harddisk.h:350 harddisk.h:355 harddisk.h:382 harddisk.h:386 harddisk.h:439
-#: harddisk.h:633 harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729
-#: harddisk.h:731 harddisk.h:733 harddisk.h:793 harddisk.h:811 harddisk.h:814
-#: harddisk.h:1046 hbbtv.h:362 hello.c:36 httpdfunc.h:1098 httpdfunc.h:3021
-#: hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113
-#: hwtest.h:206 hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492
-#: hwtest.h:564 hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617
-#: hwtest.h:632 hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685
-#: imdbapi.h:200 imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200
-#: infobar.h:496 infobar.h:618 info.h:27 keyactions.h:290 log.h:46 log.h:48
-#: marker.h:215 marker.h:229 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77
-#: mboxinfo.c:163 mc_audioplayer.h:333 mc_audioplayer.h:605
-#: mc_audioplayer.h:716 mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
+#: filenuke.h:96 filenuke.h:108 filenuke.h:157 firedrive.h:32 firedrive.h:65
+#: firedrive.h:71 firedrive.h:117 firedrive.h:123 firedrive.h:133 flashx.h:26
+#: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
+#: global.h:5519 global.h:6144 global.h:6213 global.h:6232 global.h:6402
+#: gmediarender.h:115 harddisk.h:350 harddisk.h:355 harddisk.h:382
+#: harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641 harddisk.h:675
+#: harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733 harddisk.h:793
+#: harddisk.h:811 harddisk.h:814 harddisk.h:1046 hbbtv.h:362 hello.c:36
+#: httpdfunc.h:1098 httpdfunc.h:3021 hwtest.h:88 hwtest.h:93 hwtest.h:98
+#: hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390
+#: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
+#: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
+#: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626
+#: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:496 infobar.h:618
+#: info.h:27 keyactions.h:290 log.h:46 log.h:48 marker.h:215 marker.h:229
+#: mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
+#: mc_audioplayer.h:333 mc_audioplayer.h:605 mc_audioplayer.h:716
+#: mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
 #: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
 #: mc_main.h:100 mc_main.h:273 mc_main.h:282 mc_mediathek.h:35
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
@@ -218,7 +222,7 @@ msgstr "Ok"
 #: system_update.h:326 system_update.h:333 timeshift.h:113 timeshift.h:155
 #: timeshift.h:162 timeshiftsettings.h:45 titan.c:277 titan.c:341 titan.c:350
 #: titan.c:970 titan.c:979 titan.c:1104 titan.c:1125 titan.c:1131 titan.c:1142
-#: titan.c:1148 tithek.c:81 tithek_global.h:238 tithek.h:664 tithek.h:1160
+#: titan.c:1148 tithek.c:82 tithek_global.h:240 tithek.h:664 tithek.h:1160
 #: tithek.h:1203 tithek.h:1450 tithek.h:1472 tithek.h:1488 tithek.h:3282
 #: tithek.h:3346 tithek.h:3360 tithek.h:3370 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922
@@ -555,50 +559,51 @@ msgstr "Ja / VZAP oneindig"
 #: faststream.h:103 faststream.h:160 filemanager.h:95 filemanager.h:100
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:329
 #: filenuke.h:37 filenuke.h:84 filenuke.h:96 filenuke.h:108 filenuke.h:157
-#: flashx.h:26 flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:5519 global.h:6144 global.h:6213 global.h:6232 global.h:6402
-#: gmediarender.h:115 harddisk.h:633 harddisk.h:641 harddisk.h:675
-#: harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733 harddisk.h:793
-#: harddisk.h:811 harddisk.h:814 hbbtv.h:362 hello.c:36 httpdfunc.h:1098
-#: hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113
-#: hwtest.h:206 hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492
-#: hwtest.h:564 hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617
-#: hwtest.h:632 hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685
-#: imdbapi.h:200 imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200
-#: infobar.h:496 infobar.h:618 keyactions.h:290 language.h:49 lcdpearl1.c:49
-#: lcdsamsung.c:101 log.h:46 log.h:48 marker.h:215 marker.h:229
-#: mc_audioplayer.h:333 mc_audioplayer.h:605 mc_audioplayer.h:716
-#: mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
-#: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
-#: mc_main.h:100 mc_main.h:273 mc_main.h:282 mc_mediathek.h:35
-#: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
-#: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:332
-#: mc_videoplayer.h:749 mc_videoplayer.h:784 mc_videoplayer.h:888
-#: mc_videoplayer.h:904 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
-#: mediadb.h:1477 mediadbsettings.h:95 menu.h:153 menu.h:208 movie4k.h:36
-#: movie4k.h:48 movie4k.h:92 movreel.h:30 movreel.h:79 movreel.h:85
-#: movreel.h:91 movreel.h:103 movreel.h:115 movreel.h:166 movreel.h:214
-#: movshare.h:35 movshare.h:152 myvideo.h:50 networkbrowser.h:944
-#: networkbrowser.h:1005 networkbrowser.h:1009 networkbrowser.h:1011
-#: networkbrowser.h:1021 networkbrowser.h:1025 networkbrowser.h:1189
-#: networkbrowser.h:1743 networkbrowser.h:1750 networkbrowser.h:1755
-#: networkbrowser.h:1907 network.h:426 network.h:558 network.h:766
-#: network.h:774 network.h:800 network.h:804 network.h:858 novamov.h:35
-#: novamov.h:80 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105 panel_main.h:29
-#: panel_main.h:135 panel_settings_wizard.h:6 played.h:30 played.h:79
-#: played.h:91 played.h:103 played.h:160 player.h:99 play.h:593 play.h:1265
-#: play.h:1462 play.h:1622 play.h:1633 possetup.h:98 primeshare.h:29
-#: primeshare.h:73 primeshare.h:79 primeshare.h:124 putlocker.h:32
-#: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
-#: putlocker.h:152 putlocker.h:225 readerconfig.h:343 readerconfig.h:443
-#: readerconfig.h:444 readerconfig.h:488 readerconfig.h:489 record.h:369
-#: record.h:1001 record.h:1188 record.h:1427 record.h:1452 rectimer.h:563
-#: rectimer.h:1217 rectimer.h:1363 rectimer.h:1375 restoredefault.h:10
-#: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
-#: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:28
-#: scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1640 scan.h:1888
-#: scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 service.h:712 service.h:957
-#: skinadjust.h:162 skinselector.h:218 sock.h:952 softcam.h:403
+#: firedrive.h:32 firedrive.h:65 firedrive.h:71 firedrive.h:117
+#: firedrive.h:123 firedrive.h:133 flashx.h:26 flashx.h:84 flashx.h:138
+#: flashx.h:195 flashx.h:233 flashx.h:270 global.h:5519 global.h:6144
+#: global.h:6213 global.h:6232 global.h:6402 gmediarender.h:115 harddisk.h:633
+#: harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731
+#: harddisk.h:733 harddisk.h:793 harddisk.h:811 harddisk.h:814 hbbtv.h:362
+#: hello.c:36 httpdfunc.h:1098 hwtest.h:88 hwtest.h:93 hwtest.h:98
+#: hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390
+#: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
+#: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
+#: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626
+#: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:496 infobar.h:618
+#: keyactions.h:290 language.h:49 lcdpearl1.c:49 lcdsamsung.c:101 log.h:46
+#: log.h:48 marker.h:215 marker.h:229 mc_audioplayer.h:333
+#: mc_audioplayer.h:605 mc_audioplayer.h:716 mc_dateibrowser.h:36
+#: mc_global.h:773 mc_global.h:1020 mc_internetbrowser.h:36 mc_main.h:50
+#: mc_main.h:55 mc_main.h:60 mc_main.h:95 mc_main.h:100 mc_main.h:273
+#: mc_main.h:282 mc_mediathek.h:35 mc_pictureplayer.h:100
+#: mc_pictureplayer.h:124 mc_pictureplayer.h:242 mc_pictureplayer.h:368
+#: mc_pictureplayer.h:461 mc_videoplayer.h:332 mc_videoplayer.h:749
+#: mc_videoplayer.h:784 mc_videoplayer.h:888 mc_videoplayer.h:904
+#: mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477
+#: mediadbsettings.h:95 menu.h:153 menu.h:208 movie4k.h:36 movie4k.h:48
+#: movie4k.h:92 movreel.h:30 movreel.h:79 movreel.h:85 movreel.h:91
+#: movreel.h:103 movreel.h:115 movreel.h:166 movreel.h:214 movshare.h:35
+#: movshare.h:152 myvideo.h:50 networkbrowser.h:944 networkbrowser.h:1005
+#: networkbrowser.h:1009 networkbrowser.h:1011 networkbrowser.h:1021
+#: networkbrowser.h:1025 networkbrowser.h:1189 networkbrowser.h:1743
+#: networkbrowser.h:1750 networkbrowser.h:1755 networkbrowser.h:1907
+#: network.h:426 network.h:558 network.h:766 network.h:774 network.h:800
+#: network.h:804 network.h:858 novamov.h:35 novamov.h:80 nowvideo.h:44
+#: nowvideo.h:99 nowvideo.h:105 panel_main.h:29 panel_main.h:135
+#: panel_settings_wizard.h:6 played.h:30 played.h:79 played.h:91 played.h:103
+#: played.h:160 player.h:99 play.h:593 play.h:1265 play.h:1462 play.h:1622
+#: play.h:1633 possetup.h:98 primeshare.h:29 primeshare.h:73 primeshare.h:79
+#: primeshare.h:124 putlocker.h:32 putlocker.h:79 putlocker.h:85
+#: putlocker.h:91 putlocker.h:142 putlocker.h:152 putlocker.h:225
+#: readerconfig.h:343 readerconfig.h:443 readerconfig.h:444 readerconfig.h:488
+#: readerconfig.h:489 record.h:369 record.h:1001 record.h:1188 record.h:1427
+#: record.h:1452 rectimer.h:563 rectimer.h:1217 rectimer.h:1363
+#: rectimer.h:1375 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
+#: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
+#: rtl2now.h:28 scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1640
+#: scan.h:1888 scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 service.h:712
+#: service.h:957 skinadjust.h:162 skinselector.h:218 sock.h:952 softcam.h:403
 #: solarmovie.h:35 solarmovie.h:47 solarmovie.h:295 spinner.h:18
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:84
 #: streamcloud.h:97 streamcloud.h:128 streamcloud.h:167 stream.h:33
@@ -607,7 +612,7 @@ msgstr "Ja / VZAP oneindig"
 #: system_update.h:326 system_update.h:333 timeshift.h:113 timeshift.h:155
 #: timeshift.h:162 timeshiftsettings.h:45 titan.c:277 titan.c:341 titan.c:350
 #: titan.c:1104 titan.c:1125 titan.c:1131 titan.c:1142 titan.c:1148
-#: tithek.c:81 tithek_global.h:238 tithek.h:664 tithek.h:1160 tithek.h:1203
+#: tithek.c:82 tithek_global.h:240 tithek.h:664 tithek.h:1160 tithek.h:1203
 #: tithek.h:1450 tithek.h:1472 tithek.h:3282 tithek.h:3346 tithek.h:3360
 #: tithek.h:3370 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012
 #: tmc.h:1017 tmdb.h:759 tmdb.h:922 TopfieldVFD.c:68 TopfieldVFD.c:72
@@ -1109,10 +1114,10 @@ msgstr "Oost"
 msgid "west"
 msgstr "West"
 
-#: divxstage.h:36 faststream.h:30 filenuke.h:37 flashx.h:26 movreel.h:30
-#: movshare.h:35 novamov.h:35 nowvideo.h:44 played.h:30 primeshare.h:29
-#: putlocker.h:32 streamcloud.h:31 videoweed.h:35 vidstream.h:45
-#: xvidstage.h:54
+#: divxstage.h:36 faststream.h:30 filenuke.h:37 firedrive.h:32 flashx.h:26
+#: movreel.h:30 movshare.h:35 novamov.h:35 nowvideo.h:44 played.h:30
+#: primeshare.h:29 putlocker.h:32 streamcloud.h:31 videoweed.h:35
+#: vidstream.h:45 xvidstage.h:54
 msgid "Hoster Url not http://"
 msgstr "Host Url, geen http://"
 
@@ -1125,14 +1130,14 @@ msgstr ""
 
 #: divxstage.h:150 faststream.h:79 faststream.h:90 faststream.h:102
 #: faststream.h:160 filenuke.h:84 filenuke.h:95 filenuke.h:107 filenuke.h:157
-#: flashx.h:83 flashx.h:137 flashx.h:194 flashx.h:232 flashx.h:269
-#: movreel.h:79 movreel.h:102 movreel.h:114 movreel.h:166 movreel.h:214
-#: movshare.h:152 played.h:79 played.h:90 played.h:102 played.h:160
-#: primeshare.h:73 primeshare.h:124 putlocker.h:79 putlocker.h:142
-#: putlocker.h:151 putlocker.h:225 solarmovie.h:35 solarmovie.h:46
-#: streamcloud.h:84 streamcloud.h:97 streamcloud.h:128 streamcloud.h:167
-#: vidstream.h:86 vidstream.h:97 vidstream.h:167 xvidstage.h:100
-#: xvidstage.h:177
+#: firedrive.h:65 firedrive.h:117 firedrive.h:132 flashx.h:83 flashx.h:137
+#: flashx.h:194 flashx.h:232 flashx.h:269 movreel.h:79 movreel.h:102
+#: movreel.h:114 movreel.h:166 movreel.h:214 movshare.h:152 played.h:79
+#: played.h:90 played.h:102 played.h:160 primeshare.h:73 primeshare.h:124
+#: putlocker.h:79 putlocker.h:142 putlocker.h:151 putlocker.h:225
+#: solarmovie.h:35 solarmovie.h:46 streamcloud.h:84 streamcloud.h:97
+#: streamcloud.h:128 streamcloud.h:167 vidstream.h:86 vidstream.h:97
+#: vidstream.h:167 xvidstage.h:100 xvidstage.h:177
 msgid "The page is temporarily unavailable"
 msgstr "Pagina tijdelijk niet beschikbaar"
 
@@ -1604,6 +1609,18 @@ msgstr "Map/bestand kan niet verwijderd worden!"
 #: filemanager.h:329
 msgid "Can't show this file!"
 msgstr "Bestand kan niet getoond worden!"
+
+#: firedrive.h:71 putlocker.h:85
+msgid "This file doesn't exist, or has been removed."
+msgstr "Dit bestand bestaat niet of is verplaatst."
+
+#: firedrive.h:108
+msgid "Connect with Hoster wait 12 seconds"
+msgstr ""
+
+#: firedrive.h:123
+msgid "This file is private and only viewable by the owner."
+msgstr ""
 
 #: global.h:5519 keyactions.h:290
 msgid "ERROR cant read res"
@@ -5128,10 +5145,6 @@ msgstr "Diepe slaapstand"
 #: primeshare.h:82
 msgid "Connect with Hoster wait 20 seconds"
 msgstr "Verbinden met host, wacht 20 seconden"
-
-#: putlocker.h:85
-msgid "This file doesn't exist, or has been removed."
-msgstr "Dit bestand bestaat niet of is verplaatst."
 
 #: putlocker.h:91
 msgid "Found Firedrive.com Link, supporting comming soon..."
@@ -8804,16 +8817,16 @@ msgstr "Onbekende fout"
 msgid "Automatic stop in 10 seconds."
 msgstr "Automatische stop in 10 seconden."
 
-#: tithek.c:81
+#: tithek.c:82
 msgid ""
 "Alternativ Audio Firmware not working korrekt with all videos (DTSDOWNMIX)!"
 msgstr "De hoster wordt momenteel nog niet ondersteund!"
 
-#: tithek.c:102
+#: tithek.c:103
 msgid "Tithek - Mainmenu"
 msgstr "Tithek - Hoofdmenu"
 
-#: tithek_global.h:238 tithek.h:3282
+#: tithek_global.h:240 tithek.h:3282
 msgid "The hoster is not yet supported !"
 msgstr "De hoster wordt momenteel nog niet ondersteund"
 
