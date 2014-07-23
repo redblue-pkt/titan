@@ -117,6 +117,12 @@ char* firedrive(char* link)
 		textbox(_("Message"), _("The page is temporarily unavailable") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
 		goto end;
 	}
+
+	if(ostrstr(tmpstr, "This file is private and only viewable by the owner.") != NULL)
+	{
+		textbox(_("Message"), _("This file is private and only viewable by the owner.") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
+		goto end;
+	}
 	
 	if(ostrstr(tmpstr, "warning_message") != NULL)
 	{
