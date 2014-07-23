@@ -85,6 +85,12 @@ char* putlocker(char* link)
 		textbox(_("Message"), _("This file doesn't exist, or has been removed."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 400, 0, 0);
 		goto end;
 	}
+
+	if(ostrstr(tmpstr, "domain=.firedrive.com") != NULL)
+	{
+		textbox(_("Message"), _("Found Firedrive.com Link, supporting comming soon..."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 400, 0, 0);
+		goto end;
+	}
 	
 	phpsessid = getxmlentry(tmpstr, "PHPSESSID=");
 	debug(99, "phpsessid: %s", phpsessid);
