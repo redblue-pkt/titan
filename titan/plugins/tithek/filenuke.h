@@ -109,8 +109,6 @@ char* filenuke(char* link)
 		goto end;
 	}
 
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/filenuke_tmpstr", NULL, NULL, NULL, tmpstr);
-
 	//get hash from tmpstr
 	char* pos1 = ostrstr(tmpstr, "<input type=\"hidden\" name=\"fname\" value=");
 	fname = getxmlentry(pos1, "value=");
