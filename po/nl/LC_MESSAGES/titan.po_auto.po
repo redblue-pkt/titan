@@ -11255,36 +11255,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Zapback is reeds actief... Stoppen?"
-
-#~ msgid "IP-Kammera Einstellungen"
-#~ msgstr "IP-camera instellingen"
-
-#~ msgid "Benutzer-Kammera 1"
-#~ msgstr "Gebruiker camera 1"
-
-#~ msgid "Benutzer-Kammera 2"
-#~ msgstr "Gebruiker camera 2"
-
-#~ msgid "IP-Kammera 1"
-#~ msgstr "IP-camera 1"
-
-#~ msgid "IP-Kammera 2"
-#~ msgstr "IP-camera 2"
-
-#~ msgid "Kammera 1"
-#~ msgstr "Camera 1"
-
-#~ msgid "Kammera 2 (Umschalten mit Rot)"
-#~ msgstr "Camera 2 (omschakelen met ROOD)"
-
-#~ msgid "Passwort-Kammera 1"
-#~ msgstr "Wachtwoord camera 1"
-
-#~ msgid "Passwort-Kammera 2"
-#~ msgstr "Wachtwoord camera 2"
-
-#~ msgid "Port-Kammera 1"
-#~ msgstr "Poort camera 1"
-
-#~ msgid "Port-Kammera 2"
-#~ msgstr "Poort camera 2"
