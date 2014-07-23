@@ -205,7 +205,7 @@ char* hoster(char* url)
 	if(ostrstr(tmplink, "sockshare") != NULL)
 		streamurl = putlocker(url);
 	else if(ostrstr(tmplink, "putlocker") != NULL)
-		streamurl = putlocker(url);
+		streamurl = firedrive(url);
 	else if(ostrstr(tmplink, "filenuke") != NULL)
 		streamurl = filenuke(url);
 	else if(ostrstr(tmplink, "streamcloud") != NULL)
@@ -234,6 +234,8 @@ char* hoster(char* url)
 		streamurl = played(url);
 	else if(ostrstr(tmplink, "videoweed") != NULL)
 		streamurl = videoweed(url);
+	else if(ostrstr(tmplink, "firedrive") != NULL)
+		streamurl = firedrive(url);
 	else
 		textbox(_("Message"), _("The hoster is not yet supported !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 
