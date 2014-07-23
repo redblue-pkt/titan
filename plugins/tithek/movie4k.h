@@ -23,16 +23,33 @@ char* movie4k(char* link)
 		tmppath = pos + 1;
 	}
 
-	tmpstr1 = gethttp(tmphost, tmppath, 80, NULL, NULL, 5000, NULL, 0);
+	tmpstr1 = gethttp(tmphost, tmppath, 80, NULL, NULL, 10000, NULL, 0);
 	titheklog(debuglevel, "/tmp/movie4k_streamurl_tmpstr1_a", NULL, NULL, NULL, tmpstr1);
 
 	tmpstr = string_resub("question.png", "underplayer", tmpstr1, 0);
 	titheklog(debuglevel, "/tmp/movie4k_streamurl_tmpstr1_b", NULL, NULL, NULL, tmpstr);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/movie4k_streamurl_tmpstr1_b", NULL, NULL, NULL, tmpstr);
+
 	free(tmpstr1), tmpstr1 = NULL;
-	
+
+	if(tmpstr == NULL)
+	{
+		textbox(_("Message"), _("Connection Error, try again later.") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
+		goto end;
+	}
+		
 	url = string_resub("<a target=\"_blank\" href=\"", "\"><", tmpstr, 0);
 	titheklog(debuglevel, "/tmp/movie4k_streamurl_url1", NULL, NULL, NULL, url);
 
+	if(url == NULL)
+		url = string_resub("<iframe src=\"", "\"", tmpstr, 0);
+
+	if(url == NULL)
+	{
+		textbox(_("Message"), _("Can not parse Main Stream URL, try again later.") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
+		goto end;
+	}
+	
 	if(ostrstr(url, "http://") == NULL)
 	{
 		free(url), url = NULL;
@@ -71,9 +88,15 @@ char* movie4k(char* link)
 	}
 	titheklog(debuglevel, "/tmp/movie4k_streamurl_url6", NULL, NULL, NULL, url);
 
+	if(url == NULL)
+	{
+		textbox(_("Message"), _("Can not parse Stream URL, try again later.") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
+		goto end;
+	}
+
 	streamurl = hoster(url);
 	titheklog(debuglevel, "/tmp/movie4k_streamurl_url7", NULL, NULL, NULL, url);
-
+end:
 	free(url), url = NULL;
 	free(tmpstr), tmpstr = NULL;
 	free(tmpstr2), tmpstr2 = NULL;
@@ -348,7 +371,7 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 	tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
 	titheklog(debuglevel, "/tmp/movie4k2_tmpstr", NULL, NULL, NULL, tmpstr);
 	int a = 0;
-
+printf("000000000000000000000\n");
 	if(tmpstr != NULL)
 	{	
 		int countj = 0;
@@ -369,14 +392,25 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 			
 		if(ostrstr(tmpstr, "links\[") == NULL)
 		{
-			hnamein = string_resub("width=\"16\"> &nbsp;", "</a></td><td align=", tmpstr, 0);
+printf("aaaaa\n");
+			writesys("/var/usr/local/share/titan/plugins/tithek/movie4k.list", tmpstr, 1);
+
+//			hnamein = string_resub("width=\"16\"> &nbsp;", "</a></td><td align=", tmpstr, 0);
+			hnamein = string_resub("width=\"16\"> &nbsp;", "</a></td>", tmpstr, 0);
 			nolinks = ostrcat(tmpstr, NULL, 0, 0);
+printf("aaaaa hnamein=%s\n", hnamein);
+
+//[titan] (1/0/15) pathnew: Baywatch-Die-Rettungsschwimmer-von-Malibu-online-serie-3008933.html hname: Putlocker id: 3008933, file=movie4k.h, func=
+
 		}
 		else
 		{
+printf("bbbbb\n");
+
 			unlink("/tmp/movie4k.list");
 			writesys("/tmp/movie4k.list", tmpstr, 1);
 			tmpstr = command("cat /tmp/movie4k.list | grep ^links");
+
 		}
 		
 		int count = 0;
@@ -390,10 +424,15 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 			int max = count;
 			for(i = 0; i < max; i++)
 			{
+printf("1111111\n");
 				if((!ostrncmp("links", ret1[i].part, 5) && nolinks == NULL) || nolinks != NULL)
 				{
+printf("2222222\n");
+
 					if(nolinks == NULL)
 					{
+printf("3333333\n");
+
 						a++;
 //						ret1[i].part = string_replace_all("</a>&nbsp;</td>", "</a></td>", ret1[i].part, 1);
 
@@ -427,6 +466,17 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 							debug(99, "(%d/%d/%d) pathnew: %s hname: %s id: %s",a ,i ,max ,pathnew, tmphname, id);
 						}	
 
+						if(ostrstr(pathnew, "tvshow-") != NULL)
+						{
+							pathnew = string_replace("tvshow-", "", pathnew, 1);
+							pathnew = string_replace(id, "", pathnew, 1);
+							pathnew = string_replace("-", "", pathnew, 1);
+							pathnew = string_replace(".html", "", pathnew, 1);
+							pathnew = ostrcat(pathnew, "-online-serie-", 1, 0);
+							pathnew = ostrcat(pathnew, id, 1, 0);
+							pathnew = ostrcat(pathnew, ".html", 1, 0);
+							debug(99, "(%d/%d/%d) pathnew: %s hname: %s id: %s",a ,i ,max ,pathnew, tmphname, id);
+						}
 
 //						logfile = ostrcat("/tmp/movie4k4_pathnew1", id, 0, 0);
 //						logfile = ostrcat(logfile, "_", 1, 0);
@@ -437,26 +487,77 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 					}
 					else
 					{
+printf("444444\n");
 						id = oregex(".*-online-film-(.*[0-9]{4,10}).html.*", path);							
+printf("444444 id1=%s\n", id);
 						if(id == NULL)
 							id = string_resub("watch-movie-", ".html", path, 0);
+printf("444444 id2=%s\n", id);
 						if(id == NULL)
 							id = oregex(".*tvshows-(.*[0-9]{4,10})-.*", path);
+printf("444444 id3=%s\n", id);
+						if(id == NULL)
+							id = oregex(".*tvshow-(.*[0-9]{4,10})-.*", path);
+printf("444444 id4=%s\n", id);							
+						if(id == NULL)
+							id = oregex(".*tvshows-(.*[0-9]{4,10})..*", path);
+printf("444444 id5=%s\n", id);
+						if(id == NULL)
+							id = oregex(".*tvshow-(.*[0-9]{4,10})..*", path);
+printf("444444 id6=%s\n", id);
 						if(id == NULL)
 							id = ostrcat(tmpid, NULL, 0, 0);
-
+printf("444444 id7=%s\n", id);
 						tmphname = ostrcat(hnamein, NULL, 0, 0);
 
 						pos3 = ostrstr(ret1[i].part, "Movie quality");
 						extra = getxmlentry(pos3, "quality ");
+printf("444444 path=%s\n", path);
+printf("444444 hnamein=%s\n", hnamein);
+printf("444444 tmphname=%s\n", tmphname);
+
+						pathnew = ostrcat(path, NULL, 0, 0);
+						if(ostrstr(pathnew, "tvshows-") != NULL)
+						{
+							pathnew = string_replace("tvshows-", "", pathnew, 1);
+							pathnew = string_replace(id, "", pathnew, 1);
+							pathnew = string_replace("-", "", pathnew, 1);
+							pathnew = string_replace(".html", "", pathnew, 1);
+							pathnew = ostrcat(pathnew, "-online-serie-", 1, 0);
+							pathnew = ostrcat(pathnew, id, 1, 0);
+							pathnew = ostrcat(pathnew, ".html", 1, 0);
+							debug(99, "(%d/%d/%d) pathnew: %s hname: %s id: %s",a ,i ,max ,pathnew, tmphname, id);
+						}	
+
+						if(ostrstr(pathnew, "tvshow-") != NULL)
+						{
+							pathnew = string_replace("tvshow-", "", pathnew, 1);
+							pathnew = string_replace(id, "", pathnew, 1);
+							pathnew = string_replace("-", "", pathnew, 1);
+							pathnew = string_replace(".html", "", pathnew, 1);
+							pathnew = ostrcat(pathnew, "-online-serie-", 1, 0);
+							pathnew = ostrcat(pathnew, id, 1, 0);
+							pathnew = ostrcat(pathnew, ".html", 1, 0);
+							debug(99, "(%d/%d/%d) pathnew: %s hname: %s id: %s",a ,i ,max ,pathnew, tmphname, id);
+						}
+
+						url = ostrcat(pathnew, NULL, 0, 0);
+
+printf("444444 path=%s\n", path);
+printf("444444 pathnew=%s\n", pathnew);
+printf("444444 url=%s\n", url);
+
 					}	
 
 					pichname = ostrcat(tmphname, NULL, 0, 0);
 					string_tolower(pichname);
 					pichname = stringreplacecharonce(pichname, '.', '\0');
+printf("5555555\n");
 
 					if(id != NULL)
 					{
+printf("66666666\n");
+
 						if(countj >= 1)
 						{	
 							free(url), url = NULL;
@@ -639,6 +740,7 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 						break;
 					}
 				}
+printf("77777777\n");
 
 				free(url); url = NULL;
 				free(url2); url2 = NULL;
@@ -651,6 +753,7 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 		}
 		free(ret1); ret1 = NULL;
 	}
+printf("88888888\n");
 
 	free(tmpid); tmpid = NULL;
 	free(tmpstr); tmpstr = NULL;	
