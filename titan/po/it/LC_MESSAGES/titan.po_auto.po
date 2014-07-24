@@ -48,8 +48,8 @@ msgstr ""
 #: faststream.h:91 faststream.h:103 faststream.h:160 filemanager.h:95
 #: filemanager.h:100 filemanager.h:206 filemanager.h:279 filemanager.h:289
 #: filemanager.h:319 filemanager.h:329 filenuke.h:37 filenuke.h:84
-#: filenuke.h:96 filenuke.h:108 filenuke.h:157 firedrive.h:32 firedrive.h:65
-#: firedrive.h:71 firedrive.h:117 firedrive.h:123 firedrive.h:133 flashx.h:26
+#: filenuke.h:96 filenuke.h:108 filenuke.h:157 firedrive.h:33 firedrive.h:66
+#: firedrive.h:72 firedrive.h:118 firedrive.h:124 firedrive.h:134 flashx.h:26
 #: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
 #: global.h:5519 global.h:6144 global.h:6213 global.h:6232 global.h:6402
 #: gmediarender.h:115 harddisk.h:350 harddisk.h:355 harddisk.h:382
@@ -145,8 +145,8 @@ msgstr "Ok"
 #: faststream.h:91 faststream.h:103 faststream.h:160 filemanager.h:95
 #: filemanager.h:100 filemanager.h:206 filemanager.h:279 filemanager.h:289
 #: filemanager.h:319 filemanager.h:329 filenuke.h:37 filenuke.h:84
-#: filenuke.h:96 filenuke.h:108 filenuke.h:157 firedrive.h:32 firedrive.h:65
-#: firedrive.h:71 firedrive.h:117 firedrive.h:123 firedrive.h:133 flashx.h:26
+#: filenuke.h:96 filenuke.h:108 filenuke.h:157 firedrive.h:33 firedrive.h:66
+#: firedrive.h:72 firedrive.h:118 firedrive.h:124 firedrive.h:134 flashx.h:26
 #: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
 #: global.h:5519 global.h:6144 global.h:6213 global.h:6232 global.h:6402
 #: gmediarender.h:115 harddisk.h:350 harddisk.h:355 harddisk.h:382
@@ -559,8 +559,8 @@ msgstr "yes / vzap endless"
 #: faststream.h:103 faststream.h:160 filemanager.h:95 filemanager.h:100
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:329
 #: filenuke.h:37 filenuke.h:84 filenuke.h:96 filenuke.h:108 filenuke.h:157
-#: firedrive.h:32 firedrive.h:65 firedrive.h:71 firedrive.h:117
-#: firedrive.h:123 firedrive.h:133 flashx.h:26 flashx.h:84 flashx.h:138
+#: firedrive.h:33 firedrive.h:66 firedrive.h:72 firedrive.h:118
+#: firedrive.h:124 firedrive.h:134 flashx.h:26 flashx.h:84 flashx.h:138
 #: flashx.h:195 flashx.h:233 flashx.h:270 global.h:5519 global.h:6144
 #: global.h:6213 global.h:6232 global.h:6402 gmediarender.h:115 harddisk.h:633
 #: harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731
@@ -1109,7 +1109,7 @@ msgstr "Ost"
 msgid "west"
 msgstr "West"
 
-#: divxstage.h:36 faststream.h:30 filenuke.h:37 firedrive.h:32 flashx.h:26
+#: divxstage.h:36 faststream.h:30 filenuke.h:37 firedrive.h:33 flashx.h:26
 #: movreel.h:30 movshare.h:35 novamov.h:35 nowvideo.h:44 played.h:30
 #: primeshare.h:29 putlocker.h:32 streamcloud.h:31 videoweed.h:35
 #: vidstream.h:45 xvidstage.h:54
@@ -1123,7 +1123,7 @@ msgstr ""
 
 #: divxstage.h:150 faststream.h:79 faststream.h:90 faststream.h:102
 #: faststream.h:160 filenuke.h:84 filenuke.h:95 filenuke.h:107 filenuke.h:157
-#: firedrive.h:65 firedrive.h:117 firedrive.h:132 flashx.h:83 flashx.h:137
+#: firedrive.h:66 firedrive.h:118 firedrive.h:133 flashx.h:83 flashx.h:137
 #: flashx.h:194 flashx.h:232 flashx.h:269 movreel.h:79 movreel.h:102
 #: movreel.h:114 movreel.h:166 movreel.h:214 movshare.h:152 played.h:79
 #: played.h:90 played.h:102 played.h:160 primeshare.h:73 primeshare.h:124
@@ -1590,15 +1590,15 @@ msgstr "Non si puo rimuover/dir !"
 msgid "Can't show this file!"
 msgstr "Can't show this file!"
 
-#: firedrive.h:71 putlocker.h:85
+#: firedrive.h:72 putlocker.h:85
 msgid "This file doesn't exist, or has been removed."
 msgstr "This file doesn't exist, or has been removed"
 
-#: firedrive.h:108
+#: firedrive.h:109
 msgid "Connect with Hoster wait 12 seconds"
 msgstr ""
 
-#: firedrive.h:123
+#: firedrive.h:124
 msgid "This file is private and only viewable by the owner."
 msgstr ""
 
