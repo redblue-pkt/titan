@@ -49,7 +49,7 @@ msgstr ""
 #: filemanager.h:100 filemanager.h:206 filemanager.h:279 filemanager.h:289
 #: filemanager.h:319 filemanager.h:329 filenuke.h:37 filenuke.h:84
 #: filenuke.h:96 filenuke.h:108 filenuke.h:157 firedrive.h:33 firedrive.h:66
-#: firedrive.h:72 firedrive.h:118 firedrive.h:124 firedrive.h:134 flashx.h:26
+#: firedrive.h:72 firedrive.h:129 firedrive.h:135 firedrive.h:146 flashx.h:26
 #: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
 #: global.h:5519 global.h:6144 global.h:6213 global.h:6232 global.h:6402
 #: gmediarender.h:115 harddisk.h:350 harddisk.h:355 harddisk.h:382
@@ -146,7 +146,7 @@ msgstr "Ok"
 #: filemanager.h:100 filemanager.h:206 filemanager.h:279 filemanager.h:289
 #: filemanager.h:319 filemanager.h:329 filenuke.h:37 filenuke.h:84
 #: filenuke.h:96 filenuke.h:108 filenuke.h:157 firedrive.h:33 firedrive.h:66
-#: firedrive.h:72 firedrive.h:118 firedrive.h:124 firedrive.h:134 flashx.h:26
+#: firedrive.h:72 firedrive.h:129 firedrive.h:135 firedrive.h:146 flashx.h:26
 #: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
 #: global.h:5519 global.h:6144 global.h:6213 global.h:6232 global.h:6402
 #: gmediarender.h:115 harddisk.h:350 harddisk.h:355 harddisk.h:382
@@ -559,8 +559,8 @@ msgstr "yes / vzap endless"
 #: faststream.h:103 faststream.h:160 filemanager.h:95 filemanager.h:100
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:329
 #: filenuke.h:37 filenuke.h:84 filenuke.h:96 filenuke.h:108 filenuke.h:157
-#: firedrive.h:33 firedrive.h:66 firedrive.h:72 firedrive.h:118
-#: firedrive.h:124 firedrive.h:134 flashx.h:26 flashx.h:84 flashx.h:138
+#: firedrive.h:33 firedrive.h:66 firedrive.h:72 firedrive.h:129
+#: firedrive.h:135 firedrive.h:146 flashx.h:26 flashx.h:84 flashx.h:138
 #: flashx.h:195 flashx.h:233 flashx.h:270 global.h:5519 global.h:6144
 #: global.h:6213 global.h:6232 global.h:6402 gmediarender.h:115 harddisk.h:633
 #: harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731
@@ -1123,7 +1123,7 @@ msgstr ""
 
 #: divxstage.h:150 faststream.h:79 faststream.h:90 faststream.h:102
 #: faststream.h:160 filenuke.h:84 filenuke.h:95 filenuke.h:107 filenuke.h:157
-#: firedrive.h:66 firedrive.h:118 firedrive.h:133 flashx.h:83 flashx.h:137
+#: firedrive.h:66 firedrive.h:129 firedrive.h:145 flashx.h:83 flashx.h:137
 #: flashx.h:194 flashx.h:232 flashx.h:269 movreel.h:79 movreel.h:102
 #: movreel.h:114 movreel.h:166 movreel.h:214 movshare.h:152 played.h:79
 #: played.h:90 played.h:102 played.h:160 primeshare.h:73 primeshare.h:124
@@ -1594,11 +1594,11 @@ msgstr "Can't show this file!"
 msgid "This file doesn't exist, or has been removed."
 msgstr "This file doesn't exist, or has been removed"
 
-#: firedrive.h:109
-msgid "Connect with Hoster wait 12 seconds"
+#: firedrive.h:118 streamcloud.h:78
+msgid "Connect with Hoster wait 16 seconds"
 msgstr ""
 
-#: firedrive.h:124
+#: firedrive.h:135
 msgid "This file is private and only viewable by the owner."
 msgstr ""
 
@@ -8384,10 +8384,6 @@ msgstr ""
 
 #: streamcloud.h:74
 msgid "The page not found, file removed"
-msgstr ""
-
-#: streamcloud.h:78
-msgid "Connect with Hoster wait 16 seconds"
 msgstr ""
 
 #: stream.h:33
