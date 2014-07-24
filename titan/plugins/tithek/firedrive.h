@@ -115,7 +115,7 @@ printf("555\n");
 	debug(99, "send: %s", send);
 printf("666\n");
 
-	waitmsgbar(16, 0, _("Connect with Hoster wait 12 seconds"), 1);
+	waitmsgbar(16, 0, _("Connect with Hoster wait 16 seconds"), 1);
 printf("777\n");
 
 	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
