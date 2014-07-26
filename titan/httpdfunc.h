@@ -976,9 +976,9 @@ char* webvideo(char* param, int fmt)
 		{
 			if(ostrstr(param1, "url=") == param1)
 				status.webplayfile = ostrcat(param1 + 4, NULL, 0, 0);
-			else if(ostrstr(param1, "tithek=") == param1)
+			else if(ostrstr(param1, "hosterurl=") == param1)
 			{
-				status.webplayfile = ostrcat(param1 + 7, NULL, 0, 0);
+				status.webplayfile = ostrcat(param1 + 10, NULL, 0, 0);
 
 				// stream over tithek enable start
 				printf("status.webplayfile: %s\n",status.webplayfile);
