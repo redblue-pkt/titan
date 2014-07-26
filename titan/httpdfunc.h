@@ -976,6 +976,26 @@ char* webvideo(char* param, int fmt)
 		{
 			if(ostrstr(param1, "url=") == param1)
 				status.webplayfile = ostrcat(param1 + 4, NULL, 0, 0);
+			else if(ostrstr(param1, "tithek=") == param1)
+			{
+				status.webplayfile = ostrcat(param1 + 7, NULL, 0, 0);
+
+				// stream over tithek enable start
+				printf("status.webplayfile: %s\n",status.webplayfile);
+				struct skin* tithekplugin = getplugin("TiTan Mediathek");
+				if(tithekplugin != NULL)
+				{
+					struct tithek* (*startplugin)(char*);
+		
+					startplugin = dlsym(tithekplugin->pluginhandle, "hoster");
+					if(startplugin != NULL)
+					{
+						status.webplayfile = startplugin(status.webplayfile);
+						printf("status.webplayfile changed: %s\n",status.webplayfile);
+					}
+				}
+				// stream over tithek enable end
+			}
 			else
 				status.webplayfile = ostrcat(param1, NULL, 0, 0);
 		}
