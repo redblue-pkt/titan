@@ -2,12 +2,27 @@
 #define YOUTUBE_H
 
 // flag 1 = getstreamurl
-
-char* youtube(char* link, char* url, char* name, int flag)
+//http://www.youtube.com/watch?v=LAr6oAKieHk
+//http://www.youtube.com/get_video_info?&video_id=m-2jBo9pVf4
+char* youtube_hoster(char* link)
 {
-	debug(99, "link(%d): %s", flag, link);
-	char* ip = NULL, *pos = NULL, *path = NULL, *streamurl = NULL, *title = NULL, *tmpstr = NULL, *murl = NULL, *sig = NULL, *pic = NULL;
-		
+	debug(99, "link: %s", link);
+	char* streamurl = NULL;
+
+	streamurl = hoster(link);
+	debug(99, "streamurl1: %s", streamurl);
+
+	streamurl = string_replace_all("amp;", "", streamurl, 1);
+	debug(99, "streamurl2: %s", streamurl);
+
+	return streamurl;
+}
+
+char* youtube(char* link)
+{
+	debug(99, "link: %s", link);
+	char* ip = NULL, *pos = NULL, *path = NULL, *tmppath = NULL, *streamurl = NULL, *title = NULL, *tmpstr = NULL, *murl = NULL, *sig = NULL, *pic = NULL;
+
 	ip = string_replace("http://", "", (char*)link, 0);
 
 	if(ip != NULL)
@@ -17,6 +32,8 @@ char* youtube(char* link, char* url, char* name, int flag)
 		pos[0] = '\0';
 		path = pos + 1;
 	}
+	tmppath = ostrcat(path, NULL, 0, 0);
+	tmppath = string_replace_all("watch?v=", "get_video_info?&video_id=", tmppath, 1);
 
 /* spox.com
 
@@ -27,11 +44,11 @@ grep code:
 and get to youtube
 */
 
-	tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
+	tmpstr = gethttp(ip, tmppath, 80, NULL, NULL, 10000, NULL, 0);
 //	writesys("/var/usr/local/share/titan/plugins/tithek/youtube_tmpstr", tmpstr, 0);
 
-	if(flag == 1)
-	{
+//	if(flag == 1)
+//	{
 		if(ostrstr(tmpstr, "&hlsvp=") != NULL)
 		{
 			printf("found NBA1\n");
@@ -197,7 +214,7 @@ and get to youtube
 			if(tmpstr != NULL && strlen(tmpstr) > 0)
 				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 400, 0, 0);
 		}
-	}
+//	}
 
 	free(tmpstr); tmpstr = NULL;
 	free(title); title = NULL;
@@ -205,7 +222,7 @@ and get to youtube
 
 // segfault munmap_chunk(): invalid pointer
 //	free(pos), pos = NULL;
-//	free(path), path = NULL;
+	free(tmppath), tmppath = NULL;
 
 	debug(99, "streamurl2: %s", streamurl);	
 	return streamurl;

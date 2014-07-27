@@ -2,13 +2,32 @@
 #define MYVIDEO_H
 
 // flag 1 = getstreamurl
+//http://www.myvideo.de/dynamic/get_player_video_xml.php?domain=www.myvideo.de&flash_playertype=D&ds=1&autorun=yes&ID=1770991
 
-char* myvideo(char* input, char* url, char* name, int flag)
+//http://www.myvideo.de/dynamic/get_player_video_xml.php?domain=www.myvideo.de&flash_playertype=D&ds=1&autorun=yes&ID=9693945
+
+char* myvideo_hoster(char* link)
 {
-	debug(99, "link(%d): %s", flag, input);
-	int debuglevel = getconfigint("debuglevel", NULL);
-	char* ip = NULL, *pos = NULL, *path = NULL, *pageUrl = NULL, *playpath = NULL, *video_id = NULL, *source = NULL, *streamurl = NULL, *tmpstr_uni = NULL, *b64 = NULL, *key = NULL, *newurl = NULL, *link = NULL, *tmpstr = NULL, *tmppath = NULL, *error = NULL;
+	debug(99, "link: %s", link);
+	char* streamurl = NULL;
 
+	streamurl = hoster(link);
+	debug(99, "streamurl1: %s", streamurl);
+
+	streamurl = string_replace_all("amp;", "", streamurl, 1);
+	debug(99, "streamurl2: %s", streamurl);
+
+	return streamurl;
+}
+
+char* myvideo(char* link)
+{
+	debug(99, "link: %s", link);
+	int debuglevel = getconfigint("debuglevel", NULL);
+	char* ip = NULL, *pos = NULL, *path = NULL, *tmplink = NULL, *pageUrl = NULL, *playpath = NULL, *video_id = NULL, *source = NULL, *streamurl = NULL, *tmpstr_uni = NULL, *b64 = NULL, *key = NULL, *newurl = NULL, *tmpstr = NULL, *tmppath = NULL, *error = NULL;
+	int flag = 1;
+
+/*
 	if(flag == 1)
 	{
 		int count = 0;
@@ -23,8 +42,21 @@ char* myvideo(char* input, char* url, char* name, int flag)
 		}
 		free(ret1), ret1 = NULL;
 	}	
+*/
+	stringreplacechar(link, ';', '\0');
 
-	ip = string_replace("http://", "", (char*)link, 0);
+	if(ostrstr(link, "/watch/") != NULL)
+	{
+//		video_id = oregex(".*/watch/.*(.*)/.*", link);
+		video_id = string_resub("/watch/", "/", link, 0);
+		tmplink = ostrcat("http://www.myvideo.de/dynamic/get_player_video_xml.php?domain=www.myvideo.de&flash_playertype=D&ds=1&autorun=yes&ID=", video_id, 0, 0);
+		tmplink = ostrcat(tmplink, "&_countlimit=4;", 1, 0);
+		free(video_id), video_id = NULL;
+	}
+	else
+		tmplink = ostrcat(link, NULL, 0, 0);
+
+	ip = string_replace("http://", "", tmplink, 0);
 
 	if(ip != NULL)
 		pos = strchr(ip, '/');
@@ -34,6 +66,8 @@ char* myvideo(char* input, char* url, char* name, int flag)
 		path = pos + 1;
 	}
 
+	video_id = string_resub("&ID=", "&", tmplink, 0);
+
 	tmppath = ostrcat("watch/", video_id , 0, 0);
 	tmppath = ostrcat(tmppath, "/" , 1, 0);
 	tmpstr = gethttp(ip, tmppath, 80, NULL, NULL, 10000, NULL, 0);
@@ -42,6 +76,8 @@ char* myvideo(char* input, char* url, char* name, int flag)
 	unlink("/tmp/myvideo_tmpstr");
 	unlink("/tmp/myvideo_tmpstr_uni");
 	unlink("/tmp/myvideo_tmpstr_error");
+
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/myvideo_tmpstr", NULL, NULL, NULL, tmpstr);
 
 	titheklog(debuglevel, "/tmp/myvideo_tmpstr_error", NULL, NULL, NULL, tmpstr);
 				
@@ -60,6 +96,7 @@ char* myvideo(char* input, char* url, char* name, int flag)
 	tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
 
 	debug(99, "link: http://%s/%s", ip, path);
+	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/myvideo_tmpstr2", NULL, NULL, NULL, tmpstr);
 
 	titheklog(debuglevel, "/tmp/myvideo_tmpstr", NULL, NULL, NULL, tmpstr);
 
@@ -160,7 +197,7 @@ char* myvideo(char* input, char* url, char* name, int flag)
 	free(key), key = NULL;		
 	free(b64), b64 = NULL;
 	free(tmpstr_uni), tmpstr_uni = NULL;		
-	free(url), url = NULL;
+	free(tmplink), tmplink = NULL;
 	free(source), source = NULL;
 	free(tmpstr), tmpstr = NULL;
 	free(pageUrl), pageUrl = NULL;		
