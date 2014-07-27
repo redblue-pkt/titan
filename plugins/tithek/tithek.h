@@ -1221,7 +1221,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 	}						
 	else if(((struct tithek*)listbox->select->handle)->flag == 4)
 	{
-		if(tmpstr != NULL) tmpstr1 = youtube(tmpstr, NULL, NULL, 1);
+		if(tmpstr != NULL) tmpstr1 = youtube_hoster(tmpstr);
 	}						
 	else if(((struct tithek*)listbox->select->handle)->flag == 5)
 	{
@@ -1241,7 +1241,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 	}
 	else if(((struct tithek*)listbox->select->handle)->flag == 12)
 	{
-		if(tmpstr != NULL) tmpstr1 = myvideo(tmpstr, NULL, NULL, 1);
+		if(tmpstr != NULL) tmpstr1 = myvideo_hoster(tmpstr);
 	}
 	else if(((struct tithek*)listbox->select->handle)->flag == 14)
 	{
