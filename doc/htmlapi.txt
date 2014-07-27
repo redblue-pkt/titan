@@ -345,7 +345,7 @@ raw				getpos: pos in sek (on error "not in play mode")
 raw				getisplaying: 0/1 (on error "not in play mode")
 raw				getplayercan: playercan bits (on error "not in play mode")
 descr:		play a stream on TV
-param:		play url/local file(full path)
+param:		play url/local/hoster file(full path)
 param:		stop url/local file(full path)
 param:		pause url/local file(full path)
 param:		ff url/local file(full path)
@@ -355,6 +355,10 @@ param:		getpos url/local file(full path)
 param:		getisplaying url/local file(full path)
 param:		getplayercan url/local file(full path)
 example:	queryraw?videoplay&play&/media/hdd/movie/movie.ts
+example:	queryraw?videoplay&play&url=http://film.de/file.avi
+example:	queryraw?videoplay&play&hoster=http://www.youtube.com/watch?v=zrHiUAKMcaw
+example:	queryraw?videoplay&play&hoster=http://www.myvideo.de/watch/9727247/Staffel_9_Folge_17_Geschichten_vom_Loslassen_How_I_Met_Your_Mother
+example:	queryraw?videoplay&play&hoster=http://streamcloud.eu/20ge1pw013j6/Rambo.I.1982.REMASTERED.German.AC3.HDRip.x264-FuN.mp4.html
 
 ***************************************
 
