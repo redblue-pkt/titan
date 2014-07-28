@@ -153,6 +153,7 @@ int islongkey(int keycode)
 
 int writerc(int keycode)
 {
+	int ret = 0;
 	struct input_event rcdata;
 	struct timeval akttime;
 
@@ -163,14 +164,31 @@ int writerc(int keycode)
 	rcdata.type = EV_KEY;
 	rcdata.code = keycode;
 	rcdata.value = 1;
-	write(status.fdrc, &rcdata, sizeof(rcdata));
+	ret = write(status.fdrc, &rcdata, sizeof(rcdata));
+
+#ifdef MIPSEL	
+	rcdata.time = akttime;
+	rcdata.type = 0;
+	rcdata.code = 0;
+	rcdata.value = 0;
+	ret = write(status.fdrc, &rcdata, sizeof(rcdata));
+#endif
 
 	rcdata.time = akttime;
 	rcdata.type = EV_KEY;
 	rcdata.code = keycode;
 	rcdata.value = 0;
+	ret = write(status.fdrc, &rcdata, sizeof(rcdata));
+
+#ifdef MIPSEL	
+	rcdata.time = akttime;
+	rcdata.type = 0;
+	rcdata.code = 0;
+	rcdata.value = 0;
+	ret = write(status.fdrc, &rcdata, sizeof(rcdata));
+#endif
 	
-	return  write(status.fdrc, &rcdata, sizeof(rcdata));
+	return ret;
 }
 
 int flushrc(unsigned int timeout)
