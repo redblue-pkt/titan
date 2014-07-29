@@ -499,7 +499,7 @@ void GeneratePuzzle(BOOL fHard, POSITION *pos) {
 
 		if (!fHard) {
 			// Place a number, try to solve it, repeat...
-			while(pos->uEmpty > 45) {
+			while(pos->uEmpty > 25) {
 				c = RANDOM_COOR;
 				if (IS_EMPTY(pos->rgSquare[c].uValue)) {
 					v = LegalValue(pos, c);
