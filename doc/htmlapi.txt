@@ -356,9 +356,9 @@ param:		getisplaying url/local file(full path)
 param:		getplayercan url/local file(full path)
 example:	queryraw?videoplay&play&/media/hdd/movie/movie.ts
 example:	queryraw?videoplay&play&url=http://film.de/file.avi
-example:	queryraw?videoplay&play&hoster=http://www.youtube.com/watch?v=zrHiUAKMcaw
-example:	queryraw?videoplay&play&hoster=http://www.myvideo.de/watch/9727247/Staffel_9_Folge_17_Geschichten_vom_Loslassen_How_I_Met_Your_Mother
-example:	queryraw?videoplay&play&hoster=http://streamcloud.eu/20ge1pw013j6/Rambo.I.1982.REMASTERED.German.AC3.HDRip.x264-FuN.mp4.html
+example:	queryraw?videoplay&play&hosterurl=http://www.youtube.com/watch?v=zrHiUAKMcaw
+example:	queryraw?videoplay&play&hosterurl=http://www.myvideo.de/watch/9727247/Staffel_9_Folge_17_Geschichten_vom_Loslassen_How_I_Met_Your_Mother
+example:	queryraw?videoplay&play&hosterurl=http://streamcloud.eu/20ge1pw013j6/Rambo.I.1982.REMASTERED.German.AC3.HDRip.x264-FuN.mp4.html
 
 ***************************************
 
