@@ -1228,6 +1228,115 @@ char** playergettracklist(int type)
 		}
 	}
 #endif
+
+//////////////////////////////NEUER CODE //////////////////////////////
+#ifdef EPLAYER4
+	char ** tmpTrackList[2][100];
+	TrackList = tmpTrackList;
+	
+	if(m_gst_playbin != NULL) {
+		gint i, n_video = 0, n_audio = 0, n_text = 0;
+		
+		g_object_get(m_gst_playbin, "n-video", &n_video, NULL);
+		g_object_get(m_gst_playbin, "n-audio", &n_audio, NULL);
+		g_object_get(m_gst_playbin, "n-text", &n_text, NULL);
+		
+		switch(type)
+		{
+			case 1:
+				for(i = 0; i < n_audio; i++)
+				{
+					GstTagList *tags = NULL;
+					gchar *g_codec = NULL, *g_lang = NULL;
+					
+					g_signal_emit_by_name(m_gst_playbin, "get-audio-tags", i, &tags);
+					
+#if GST_VERSION_MAJOR < 1
+					if(tags && gst_is_tag_list(tags))
+#else
+					if(tags && GST_IS_TAG_LIST(tags))
+#endif
+					{
+						if(gst_tag_list_get_string(tags, GST_TAG_AUDIO_CODEC, &g_codec))
+						{
+							printf("Audio Codec: %s", g_codec);
+							TrackList[i * 2] = ostrcat(g_codec, NULL, 0, 0);
+							g_free(g_codec);
+						}
+						if(gst_tag_list_get_string(tags, GST_TAG_LANGUAGE_CODE, &g_lang))
+						{
+							printf("Audio Lang: %s", g_lang);
+							TrackList[(i * 2) + 1] = ostrcat(g_lang, NULL, 0, 0);
+							g_free(g_lang);
+						}
+						gst_tag_list_free(tags);
+					}
+				}
+				break;
+			case 2:
+				for(i = 0; i < n_text; i++)
+				{
+					GstTagList *tags = NULL;
+					gchar *g_codec = NULL, *g_lang = NULL;
+					
+					g_signal_emit_by_name(m_gst_playbin, "get-text-tags", i, &tags);
+					
+#if GST_VERSION_MAJOR < 1
+					if (tags && gst_is_tag_list(tags))
+#else
+					if (tags && GST_IS_TAG_LIST(tags))
+#endif
+					{
+						if(gst_tag_list_get_string(tags, GST_TAG_SUBTITLE_CODEC, &g_codec));
+						{
+							printf("SubTitle Codec: %s", g_codec);
+							TrackList[i * 2] = ostrcat(g_codec, NULL, 0, 0);
+							g_free(g_codec);
+						}
+						if(gst_tag_list_get_string(tags, GST_TAG_LANGUAGE_CODE, &g_lang))
+						{
+							printf("SubTitle Lang: %s", g_lang);
+							TrackList[(i * 2) + 1] = ostrcat(g_lang, NULL, 0, 0);
+							g_free(g_lang);
+						}
+						gst_tag_list_free(tags);
+					}
+				}
+				break;
+			default:
+				for(i = 0; i < n_video; i++)
+				{
+					GstTagList *tags = NULL;
+					gchar *g_codec = NULL, *g_lang = NULL;
+					
+					g_signal_emit_by_name(m_gst_playbin, "get-video-tags", i, &tags);
+					
+#if GST_VERSION_MAJOR < 1
+					if (tags && gst_is_tag_list(tags))
+#else
+					if (tags && GST_IS_TAG_LIST(tags))
+#endif
+					{
+						if(gst_tag_list_get_string(tags, GST_TAG_VIDEO_CODEC, &g_codec));
+						{
+							printf("Video Codec: %s", g_codec);
+							TrackList[i * 2] = ostrcat(g_codec, NULL, 0, 0);
+							g_free(g_codec);
+						}
+						if(gst_tag_list_get_string(tags, GST_TAG_LANGUAGE_CODE, &g_lang))
+						{
+							printf("Video Lang: %s", g_lang);
+							TrackList[(i * 2) + 1] = ostrcat(g_lang, NULL, 0, 0);
+							g_free(g_lang);
+						}
+						gst_tag_list_free(tags);
+					}
+				}
+		}
+	}
+#endif
+//////////////////////////////NEUER CODE //////////////////////////////
+
 	return TrackList;
 }
 
