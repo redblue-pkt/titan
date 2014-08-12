@@ -92,7 +92,7 @@ void screenstandby()
 			i++; if(i > 50) break;
 		}
 	}
-	if(checkbox("UFS922") == 1)
+	if(checkbox("UFS922") == 1 || checkbox("ATEMIO-NEMESIS") == 1)
 		setfanspeed(-1, 0);
 	
 	setcecstandby(0);
