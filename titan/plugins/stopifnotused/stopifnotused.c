@@ -26,7 +26,7 @@ void StopIfNotUsed_thread()
 			else
 				tostop = atoi(getconfig("stopifnotused_timetostop", NULL)) * 60;
 		
-			if((time(NULL) - status.lastrcaction) >= tostop && status.recording <= 0)
+			if((time(NULL) - status.lastrcaction) >= tostop && status.recording <= 0 && status.streaming <= 0 )
 			{
 				if (textbox(_("Message"), _("You have executed a defined period of no function.\n\nStop the box??? "), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 650, 200,15, 0) != 2)
 				{
