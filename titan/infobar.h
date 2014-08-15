@@ -5,6 +5,7 @@ void screeninfobar()
 {
 	int rcret = 0, ret = 0, infobartimeout = 0, rcwait = 1000, count = 0, first = 1;
 	int playpic = 0;
+	struct channel* pipchannel = NULL; 
 	struct skin* playinfobarpic = getscreen("playinfobarpic");
 	struct skin* infobar1 = getscreen("infobar");
 	struct skin* infobar2 = getscreen("infobar2");
@@ -869,13 +870,20 @@ void screeninfobar()
 				}
 			}
 		}
-    /*
-		if(rcret == getrcconfigint("rcpip", NULL))
+		if(rcret == getrcconfigint("rcpip", NULL) && checkbox("ATEMIO-NEMESIS") == 1)
 		{
-			struct channel* tmp = getchannel(12003, 66625); //for test RTL Television
-			pipstart(tmp, NULL, 0);
+			if(status.pipservice->videodev == NULL)
+			{
+				pipchannel = status.aktservice->channel;
+				pipstart(pipchannel, NULL, 0);
+			}
+			else
+			{
+				pipstop(status.pipservice, 0);
+				pipchannel = NULL;
+			}
 		}
-    */
+	
 		if(rcret == RCTIMEOUT && mark == 0)
 		{
 			if(getconfigint("infobartimeout", NULL) > infobartimeout)
