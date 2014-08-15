@@ -82,7 +82,7 @@ int pipstartreal(struct channel* chnode, char* pin, int flag)
 		}
 
 		status.pipservice->fedev = fenode;
-
+		
 		//frontend tune
 		if(fenode->felasttransponder != tpnode || tune == 1)
 		{
@@ -249,7 +249,6 @@ int pipstartreal(struct channel* chnode, char* pin, int flag)
 				return 2;
 			}
 		}
-
 		checkpmt = 1;
 		patbuf = dvbgetpat(fenode, -1);
 		if(patbuf == NULL) status.secondzap = 3;
@@ -273,7 +272,6 @@ int pipstartreal(struct channel* chnode, char* pin, int flag)
 		if(flag == 0) sendcapmt(status.pipservice, 0, 0);
 		free(patbuf);
 	}
-
 	if(flag == 0)
 	{
 		festatus = fewait(fenode);
@@ -283,9 +281,7 @@ int pipstartreal(struct channel* chnode, char* pin, int flag)
 			return 2;
 		}
 	}
-
 	m_unlock(&status.servicemutex, 2);
-	
 	return 0;
 }
 
@@ -294,13 +290,38 @@ int pipstartreal(struct channel* chnode, char* pin, int flag)
 int pipstart(struct channel* chnode, char* pin, int flag)
 {
 	int ret = 0;
-
+	int xres = 720;
+ 	int yres = 576;
+	int dst_width = 180;
+	int dst_height = 144;
+	int dst_left = 505;
+	int dst_top = 36;
+	FILE* datei;
+	
 	ret = pipstartreal(chnode, pin, flag);
-
+	
 	if(status.secondzap != 0 && ret == 0 && (flag == 0 || flag > 2))
 	{
 		debug(200, "first zap not ok, make second zap (%d)", status.secondzap);
 		ret = pipstartreal(chnode, pin, 5);
+	}
+
+	if(ret == 0)
+	{
+		status.pipservice->fedev->felock++;
+		
+		datei = fopen("/proc/stb/vmpeg/1/dst_top", "w");
+		fprintf(datei, "%x\n", dst_top);
+		fclose(datei);
+		datei = fopen("/proc/stb/vmpeg/1/dst_left", "w");
+		fprintf(datei, "%x\n", dst_left);
+		fclose(datei);
+		datei = fopen("/proc/stb/vmpeg/1/dst_height", "w");
+		fprintf(datei, "%x\n", dst_height);
+		fclose(datei);
+		datei = fopen("/proc/stb/vmpeg/1/dst_width", "w");
+		fprintf(datei, "%x\n", dst_width);
+		fclose(datei);
 	}
 
 	return ret;
@@ -308,11 +329,14 @@ int pipstart(struct channel* chnode, char* pin, int flag)
 
 int pipstop(struct service *node, int flag)
 {
+	FILE* datei;
+
 	if(node != NULL)
 	{
+		status.pipservice->fedev->felock--;
 		if(node->type != NOTHING && node->type != STILLPIC) caservicedel(node, NULL);
 
-		node->type = NOTHING;
+		//node->type = NOTHING;
 
 		videostop(node->videodev, 1);
 		videoclose(node->videodev, -1);
@@ -320,6 +344,20 @@ int pipstop(struct service *node, int flag)
 		dmxstop(node->dmxvideodev);
 		dmxclose(node->dmxvideodev, -1);
 		node->dmxvideodev = NULL;
+		
+		datei = fopen("/proc/stb/vmpeg/1/dst_top", "w");
+		fprintf(datei, "%x\n", 0);
+		fclose(datei);
+		datei = fopen("/proc/stb/vmpeg/1/dst_left", "w");
+		fprintf(datei, "%x\n", 0);
+		fclose(datei);
+		datei = fopen("/proc/stb/vmpeg/1/dst_height", "w");
+		fprintf(datei, "%x\n", 0);
+		fclose(datei);
+		datei = fopen("/proc/stb/vmpeg/1/dst_width", "w");
+		fprintf(datei, "%x\n", 0);
+		fclose(datei);
+		
 		return 0;
 	}
 	return 1;
