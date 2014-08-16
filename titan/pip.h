@@ -309,6 +309,7 @@ int pipstart(struct channel* chnode, char* pin, int flag)
 	if(ret == 0)
 	{
 		status.pipservice->fedev->felock++;
+		deltranspondertunablestatus();
 		
 		datei = fopen("/proc/stb/vmpeg/1/dst_top", "w");
 		fprintf(datei, "%x\n", dst_top);
@@ -336,6 +337,7 @@ int pipstop(struct service *node, int flag)
 		if(status.pipservice->videodev != NULL)
 		{
 			status.pipservice->fedev->felock--;
+			deltranspondertunablestatus();
 		}
 		if(node->type != NOTHING && node->type != STILLPIC) caservicedel(node, NULL);
 
