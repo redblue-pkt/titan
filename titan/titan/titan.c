@@ -873,7 +873,7 @@ int main(int argc, char *argv[])
 		}
 		addconfigint("servicetype", startservicetype);
 	}
-
+	setvol(getconfigint("vol", NULL));
 	//tune to channel
 	if(status.servicetype == 0)
 		serviceret = servicestart(getchannel(getconfigint("serviceid", NULL), getconfigllu("transponderid", NULL)), getconfig("channellist", NULL), NULL, 0);
