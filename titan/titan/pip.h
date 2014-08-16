@@ -333,10 +333,13 @@ int pipstop(struct service *node, int flag)
 
 	if(node != NULL)
 	{
-		status.pipservice->fedev->felock--;
+		if(status.pipservice->videodev != NULL)
+		{
+			status.pipservice->fedev->felock--;
+		}
 		if(node->type != NOTHING && node->type != STILLPIC) caservicedel(node, NULL);
 
-		//node->type = NOTHING;
+		node->type = NOTHING;
 
 		videostop(node->videodev, 1);
 		videoclose(node->videodev, -1);

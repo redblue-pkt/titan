@@ -875,7 +875,7 @@ void screeninfobar()
 			if(status.pipservice->videodev == NULL)
 			{
 				pipchannel = status.aktservice->channel;
-				pipstart(pipchannel, NULL, 0);
+				printf("++++ RC: %i\n",pipstart(pipchannel, NULL, 0));
 			}
 			else
 			{
