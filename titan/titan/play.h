@@ -1329,6 +1329,7 @@ int screenplay(char* startfile, char* showname, int startfolder, int flag)
 	char* file = NULL, *tmpstr = NULL, *tmpstr1 = NULL;
 	char* tmppolicy = NULL, *startdir = NULL;
 	char* formats = NULL;
+	struct channel* pipchannel = NULL; 
 	struct skin* playinfobar = getscreen("playinfobar");
 	struct skin* sprogress = getscreennode(playinfobar, "progress");
 	struct skin* load = getscreen("loading");
@@ -1519,6 +1520,20 @@ playerstart:
 					}
 				}
 		
+				if(rcret == getrcconfigint("rcpip", NULL))
+				{
+					if(status.pipservice->videodev == NULL)
+					{
+						pipchannel = status.lastservice->channel;
+						printf("++++ RC: %i\n",pipstart(pipchannel, NULL, 0));
+					}
+					else
+					{
+						pipstop(status.pipservice, 0);
+						pipchannel = NULL;
+					}
+				}				
+				
 				if(rcret == getrcconfigint("rcyellow", NULL))
 					playrcyellow(file, showname, playinfobarstatus, playertype, flag);
 				
