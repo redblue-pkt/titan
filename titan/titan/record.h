@@ -645,8 +645,8 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 				}
 				else
 				{
-					if(buf[0] != 0x47)
-					{
+				/*if(buf[0] != 0x47)
+				{
 						debug(200, "resync");
 						i = 1;
 						while(i < 188)
@@ -659,7 +659,7 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 							memcpy(buf, buf + i, recbsize - i);
 							dvbreadfd(servicenode->recsrcfd, buf, recbsize - i, i, readtimeout, 0);
 						}
-					}
+					}*/
 					writeret = dvbwrite(servicenode->recdstfd, buf, readret, writetimeout);
 				}
 
