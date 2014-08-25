@@ -30,7 +30,7 @@ void screensystem_update(int mode)
 		cmd = ostrcat(cmd, "/sbin/update.sh getfilelist", 1, 0);
 		cmd = ostrcat(cmd, auth, 1, 0);
 		if(imgtype == 1)
-			cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
+			cmd = ostrcat(cmd, " dev beta.dyndns.tv", 1, 0);
 		else
 			cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);		
 		system(cmd);
@@ -57,7 +57,7 @@ void screensystem_update(int mode)
 		cmd = ostrcat(cmd, "/sbin/update.sh getfilelist", 1, 0);
 		cmd = ostrcat(cmd, auth, 1, 0);
 		if(imgtype == 1)
-			cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
+			cmd = ostrcat(cmd, " dev beta.dyndns.tv", 1, 0);
 		else
 			cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);	
 		system(cmd);
@@ -180,7 +180,7 @@ void screensystem_update(int mode)
 				cmd = ostrcat(cmd, "/sbin/update.sh getfilelist", 1, 0);
 				cmd = ostrcat(cmd, auth, 1, 0);
 				if(imgtype == 1)
-					cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
+					cmd = ostrcat(cmd, " dev beta.dyndns.tv", 1, 0);
 				else
 					cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);	
 				system(cmd);
@@ -222,7 +222,7 @@ void screensystem_update(int mode)
 				cmd = ostrcat(cmd, "/sbin/update.sh getfilelist", 1, 0);
 				cmd = ostrcat(cmd, auth, 1, 0);
 				if(imgtype == 1)
-					cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
+					cmd = ostrcat(cmd, " dev beta.dyndns.tv", 1, 0);
 				else
 					cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);	
 				system(cmd);
@@ -259,7 +259,7 @@ void screensystem_update(int mode)
 					cmd = ostrcat(cmd, tmpstr, 1, 0);
 					cmd = ostrcat(cmd, auth, 1, 0);
 					if(imgtype == 1)
-						cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
+						cmd = ostrcat(cmd, " dev beta.dyndns.tv", 1, 0);
 					else
 						cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
 
@@ -289,7 +289,7 @@ void screensystem_update(int mode)
 					cmd = ostrcat(cmd, tmpstr, 1, 0);
 					cmd = ostrcat(cmd, auth, 1, 0);
 					if(imgtype == 1)
-						cmd = ostrcat(cmd, " dev titannit.dyndns.tv", 1, 0);
+						cmd = ostrcat(cmd, " dev beta.dyndns.tv", 1, 0);
 					else
 						cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
 

@@ -77,7 +77,7 @@ void screensystem_info(int mode)
 		path = ostrcat(path, ".titan", 1, 0);
 
 //		if(file_exist("/etc/.beta"))
-			tmpstr = gethttp("titannit.dyndns.tv", path, 80, NULL, HTTPAUTH, 5000, NULL, 0);
+			tmpstr = gethttp("beta.dyndns.tv", path, 80, NULL, HTTPAUTH, 5000, NULL, 0);
 //		else
 //			tmpstr = gethttp("atemio.dyndns.tv", path, 80, NULL, HTTPAUTH, 5000, NULL, 0);
 
@@ -99,7 +99,7 @@ void screensystem_info(int mode)
 //			path = ostrcat(path, "/svn/image/changelog.git", 1, 0);
 
 //		if(file_exist("/etc/.beta"))
-			tmpstr = gethttp("titannit.dyndns.tv", path, 80, NULL, HTTPAUTH, 5000, NULL, 0);
+			tmpstr = gethttp("beta.dyndns.tv", path, 80, NULL, HTTPAUTH, 5000, NULL, 0);
 //		else
 //			tmpstr = gethttp("atemio.dyndns.tv", path, 80, NULL, HTTPAUTH, 5000, NULL, 0);
 
