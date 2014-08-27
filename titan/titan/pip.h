@@ -323,6 +323,9 @@ int pipstart(struct channel* chnode, char* pin, int flag)
 		datei = fopen("/proc/stb/vmpeg/1/dst_width", "w");
 		fprintf(datei, "%x\n", dst_width);
 		fclose(datei);
+		datei = fopen("/proc/stb/vmpeg/1/dst_apply", "w");
+		fprintf(datei, "%x\n", 1);
+		fclose(datei);
 	}
 
 	return ret;
@@ -360,6 +363,9 @@ int pipstop(struct service *node, int flag)
 		fprintf(datei, "%x\n", 0);
 		fclose(datei);
 		datei = fopen("/proc/stb/vmpeg/1/dst_width", "w");
+		fprintf(datei, "%x\n", 0);
+		fclose(datei);
+		datei = fopen("/proc/stb/vmpeg/1/dst_apply", "w");
 		fprintf(datei, "%x\n", 0);
 		fclose(datei);
 		
