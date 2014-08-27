@@ -1049,6 +1049,10 @@ int setvmpegrect(struct dvbdev* node, int left, int top, int wh, int flag)
 	ret = setvmpeg(node, left, 0);
 	ret = setvmpeg(node, top, 1);
 	
+	FILE* datei = fopen("/proc/stb/vmpeg/0/dst_apply", "w");
+	fprintf(datei, "%x\n", 0);
+	fclose(datei);
+	
 	return ret;
 }
 
