@@ -285,19 +285,41 @@ int pipstartreal(struct channel* chnode, char* pin, int flag)
 	return 0;
 }
 
+// flag = 0 --> nicht aktivieren
+// flag = 1 --> aktiviere Einstellungen
+int pippos(struct dvbdev* node, int dst_width, int dst_height, int dst_left, int dst_top, int flag)
+{
+	int ret = 0;
+	
+	if(node == NULL) return 1;
+	
+	ret = setvmpeg(node, dst_left, 0);
+	ret = setvmpeg(node, dst_top, 1);
+	ret = setvmpeg(node, dst_width, 2);
+	ret = setvmpeg(node, dst_height, 3);
+	
+	if(flag == 1) ret = setvmpeg(node, 0, 99);
+	
+	return ret;
+}
+
+
 //second zap on failure
 //TODO: use flag 6 (same as 5 but no pin question on second tune)
 int pipstart(struct channel* chnode, char* pin, int flag)
 {
 	int ret = 0;
-	int xres = 720;
- 	int yres = 576;
-	int dst_width = 180;
-	int dst_height = 144;
-	int dst_left = 505;
-	int dst_top = 36;
-	FILE* datei;
-	
+
+	int dst_width = getconfigint("pip_dst_width", NULL);
+	int dst_height = getconfigint("pip_dst_height", NULL);
+	int dst_left = getconfigint("pip_dst_left", NULL);
+	int dst_top = getconfigint("pip_dst_top", NULL);
+
+	if(dst_width == 0) dst_width = 180;
+	if(dst_height == 0) dst_height = 144;
+	if(dst_left == 0) dst_left = 505;
+	if(dst_top == 0) dst_top = 36;
+
 	ret = pipstartreal(chnode, pin, flag);
 	
 	if(status.secondzap != 0 && ret == 0 && (flag == 0 || flag > 2))
@@ -310,22 +332,7 @@ int pipstart(struct channel* chnode, char* pin, int flag)
 	{
 		status.pipservice->fedev->felock++;
 		deltranspondertunablestatus();
-		
-		datei = fopen("/proc/stb/vmpeg/1/dst_top", "w");
-		fprintf(datei, "%x\n", dst_top);
-		fclose(datei);
-		datei = fopen("/proc/stb/vmpeg/1/dst_left", "w");
-		fprintf(datei, "%x\n", dst_left);
-		fclose(datei);
-		datei = fopen("/proc/stb/vmpeg/1/dst_height", "w");
-		fprintf(datei, "%x\n", dst_height);
-		fclose(datei);
-		datei = fopen("/proc/stb/vmpeg/1/dst_width", "w");
-		fprintf(datei, "%x\n", dst_width);
-		fclose(datei);
-		datei = fopen("/proc/stb/vmpeg/1/dst_apply", "w");
-		fprintf(datei, "%x\n", 1);
-		fclose(datei);
+		ret = pippos(status.pipservice->videodev, dst_width, dst_height, dst_left, dst_top, 1);
 	}
 
 	return ret;
@@ -333,13 +340,12 @@ int pipstart(struct channel* chnode, char* pin, int flag)
 
 int pipstop(struct service *node, int flag)
 {
-	FILE* datei;
 
 	if(node != NULL)
 	{
-		if(status.pipservice->videodev != NULL)
+		if(node->videodev != NULL)
 		{
-			status.pipservice->fedev->felock--;
+			node->fedev->felock--;
 			deltranspondertunablestatus();
 		}
 		if(node->type != NOTHING && node->type != STILLPIC) caservicedel(node, NULL);
@@ -348,27 +354,14 @@ int pipstop(struct service *node, int flag)
 
 		videostop(node->videodev, 1);
 		videoclose(node->videodev, -1);
+		
+		pippos(node->videodev, 0, 0, 0, 0, 1);
+		
 		node->videodev = NULL;
 		dmxstop(node->dmxvideodev);
 		dmxclose(node->dmxvideodev, -1);
 		node->dmxvideodev = NULL;
-		
-		datei = fopen("/proc/stb/vmpeg/1/dst_top", "w");
-		fprintf(datei, "%x\n", 0);
-		fclose(datei);
-		datei = fopen("/proc/stb/vmpeg/1/dst_left", "w");
-		fprintf(datei, "%x\n", 0);
-		fclose(datei);
-		datei = fopen("/proc/stb/vmpeg/1/dst_height", "w");
-		fprintf(datei, "%x\n", 0);
-		fclose(datei);
-		datei = fopen("/proc/stb/vmpeg/1/dst_width", "w");
-		fprintf(datei, "%x\n", 0);
-		fclose(datei);
-		datei = fopen("/proc/stb/vmpeg/1/dst_apply", "w");
-		fprintf(datei, "%x\n", 0);
-		fclose(datei);
-		
+				
 		return 0;
 	}
 	return 1;

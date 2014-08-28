@@ -992,10 +992,11 @@ int setvmpeg(struct dvbdev* node, int value, int flag)
 	int ret = 0;
 
 	if(node == NULL) return 1;
-	if(flag == 0) vmpegdev = getconfig("vmpegleftdev", NULL);
-	if(flag == 1) vmpegdev = getconfig("vmpegtopdev", NULL);
-	if(flag == 2) vmpegdev = getconfig("vmpegwidthdev", NULL);
-	if(flag == 3) vmpegdev = getconfig("vmpegheightdev", NULL);
+	if(flag == 0)  vmpegdev = getconfig("vmpegleftdev", NULL);
+	if(flag == 1)  vmpegdev = getconfig("vmpegtopdev", NULL);
+	if(flag == 2)  vmpegdev = getconfig("vmpegwidthdev", NULL);
+	if(flag == 3)  vmpegdev = getconfig("vmpegheightdev", NULL);
+	if(flag == 99) vmpegdev = getconfig("vmpegapplydev", NULL);
 
 	if(vmpegdev != NULL)
 	{
@@ -1049,10 +1050,8 @@ int setvmpegrect(struct dvbdev* node, int left, int top, int wh, int flag)
 	ret = setvmpeg(node, left, 0);
 	ret = setvmpeg(node, top, 1);
 	
-	FILE* datei = fopen("/proc/stb/vmpeg/0/dst_apply", "w");
-	fprintf(datei, "%x\n", 0);
-	fclose(datei);
-	
+	setvmpeg(node, 0, 99);
+
 	return ret;
 }
 
@@ -1064,6 +1063,8 @@ int resetvmpeg(struct dvbdev* node)
 	ret = setvmpeg(node, 0, 1);
 	ret = setvmpeg(node, 0, 2);
 	ret = setvmpeg(node, 0, 3);
+	
+	ret = setvmpeg(node, 0, 99);
 	
 	return ret;
 }
