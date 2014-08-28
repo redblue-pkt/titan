@@ -80,6 +80,7 @@ void setdefaults()
 	addconfigdef("playerbufferseektime", "3");
 	addconfigdef("playerstart", "60");
 	addconfigdef("playerstop", "70");
+	addconfigdef("vmpegapplydev", "/proc/stb/vmpeg/%d/dst_apply");
 	
 	status.expertmodus = getconfigint("expertmodus", NULL);
 	status.pmtmode = getconfigint("pmtmode", NULL);
