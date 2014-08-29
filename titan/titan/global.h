@@ -5290,8 +5290,11 @@ char* get_uuid(char* device)
 	char* cmd = NULL, *tmpstr = NULL;
 	
 	if(device == NULL) return NULL;
-	
+#ifdef MIPSEL		
+	cmd = ostrcat(cmd, "blkid -w /dev/null -c /dev/null -s UUID /dev/", 1, 0);
+#else
 	cmd = ostrcat(cmd, "/bin/blkid -w /dev/null -c /dev/null -s UUID /dev/", 1, 0);
+#endif
 	cmd = ostrcat(cmd, device, 1, 0);
 	cmd = ostrcat(cmd, " | cut -d'\"' -f2", 1, 0);
 
@@ -5313,8 +5316,11 @@ char* get_label(char* device)
 	char* cmd = NULL, *tmpstr = NULL;
 
 	if(device == NULL) return NULL;
-
+#ifdef MIPSEL
+	cmd = ostrcat(cmd, "blkid -w /dev/null -c /dev/null -s LABEL /dev/", 1, 0);
+#else
 	cmd = ostrcat(cmd, "/bin/blkid -w /dev/null -c /dev/null -s LABEL /dev/", 1, 0);
+#endif	
 	cmd = ostrcat(cmd, device, 1, 0);
 	cmd = ostrcat(cmd, " | cut -d'\"' -f2", 1, 0);
 
@@ -5337,8 +5343,11 @@ char* get_filesystem(char* device)
 	char* cmd = NULL, *tmpstr = NULL;
 
 	if(device == NULL) return NULL;
-
+#ifdef MIPSEL
+	cmd = ostrcat(cmd, "blkid -w /dev/null -c /dev/null -s TYPE /dev/", 1, 0);
+#else
 	cmd = ostrcat(cmd, "/bin/blkid -w /dev/null -c /dev/null -s TYPE /dev/", 1, 0);
+#endif
 	cmd = ostrcat(cmd, device, 1, 0);
 	cmd = ostrcat(cmd, " | cut -d'\"' -f2", 1, 0);
 
