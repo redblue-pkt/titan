@@ -1,0 +1,4031 @@
+msgid "unknown"
+msgstr "Desconocido"
+
+msgid "EXIT"
+msgstr "Salir"
+
+msgid "no"
+msgstr "No"
+
+msgid "infobar"
+msgstr "Infobar"
+
+msgid "alpha"
+msgstr "alfabetico"
+
+msgid "reverse alpha"
+msgstr "descender alfabeticamente"
+
+msgid "reverse size"
+msgstr "Tamaño descendente"
+
+msgid "reverse date"
+msgstr "por fecha descendente"
+
+msgid "Standby"
+msgstr "Reposo"
+
+msgid "Gui Restart"
+msgstr "Reiniciar Titan"
+
+msgid "deaktiv"
+msgstr "desactivar"
+
+msgid "extern"
+msgstr "externa"
+
+msgid "intern"
+msgstr "interna"
+
+msgid "auto"
+msgstr "automatico"
+
+msgid "standby"
+msgstr "Reposo"
+
+msgid "power off"
+msgstr "Power Off"
+
+msgid "anim. width"
+msgstr "Anchura de Animacion"
+
+msgid "anim. height"
+msgstr "Altura de Animacion"
+
+msgid "anim. both"
+msgstr "zoom"
+
+msgid "channel-movie"
+msgstr "Titulo Canal"
+
+msgid "movie-channel"
+msgstr "Titulo Canal"
+
+msgid "expert (11)"
+msgstr "Modo Experto (11)"
+
+msgid "Search"
+msgstr "Buscar"
+
+msgid "record"
+msgstr "Grabar"
+
+msgid "switch channel"
+msgstr "Interruptor Canal"
+
+msgid "Stop AutoTimer"
+msgstr "Stop autotimer"
+
+msgid "AutoTimer succesfull stopped"
+msgstr "Autotimer Detenido Correctamente"
+
+msgid "ERROR... AutoTimer not stopped"
+msgstr "ERROR: Autotimer no se detuvo"
+
+msgid "Start AutoTimer"
+msgstr "Iniciar autotimer"
+
+msgid "AutoTimer succesfull started"
+msgstr "Autotimer Iniciado Correctamente"
+
+msgid "ERROR... AutoTimer not started"
+msgstr "ERROR: Autotimer no se pudo iniciar"
+
+msgid "Settings succesfull saved"
+msgstr "Configuracion guardada con Exito"
+
+msgid "off"
+msgstr "Off"
+
+msgid "redKey"
+msgstr "Boton Rojo"
+
+msgid "4 sec"
+msgstr "4 Segundos"
+
+msgid "6 sec"
+msgstr "6 Segundos"
+
+msgid "8 sec"
+msgstr "8 Segundos"
+
+msgid "10 sec"
+msgstr "10 Segundos"
+
+msgid "This Plugin is only for Betatester and can change your Settings!\n"
+"Realy run it?"
+msgstr "Este Plugin es solo para Betatesters y podria cambiar\n"
+"su configuracion. ¿quieres ejecutar la aplicacion?"
+
+msgid "Really stop download ?"
+msgstr "ATENCIÓN: ¿Quieres abortar la descarga?"
+
+msgid "Sat: "
+msgstr "Satelite: "
+
+msgid "SAT"
+msgstr "Satelite"
+
+msgid "Browser Favoriten"
+msgstr "Favoritos"
+
+msgid "Callmon Timeout !!!\n"
+"\n"
+"check your parameter "
+msgstr "Callmonitor Timeout !!!\n"
+"\n"
+" Compruebe su configuracion"
+
+msgid "nein"
+msgstr "No"
+
+msgid "ja"
+msgstr "Si"
+
+msgid "puffern"
+msgstr "buffering"
+
+msgid "verwerfen"
+msgstr "rechazar"
+
+msgid "Move mode"
+msgstr "Mover"
+
+msgid "Remove mode"
+msgstr "Eliminar"
+
+msgid "Copy mode"
+msgstr "Copiar"
+
+msgid "Protect mode"
+msgstr "Proteger"
+
+msgid "Edit mode"
+msgstr "Editar"
+
+msgid "Bouquets"
+msgstr "Favoritos"
+
+msgid "Channel"
+msgstr "Canal"
+
+msgid "Copy providerlist successfull"
+msgstr "Providers copiados con exito"
+
+msgid "Copy providerlist not ok"
+msgstr "ATENCION: Providers no copiados"
+
+msgid "Copy satlist successfull"
+msgstr "Canales copiados con exito"
+
+msgid "Copy satlist not ok"
+msgstr "ATENCION: Canales no copiados"
+
+msgid "Can't remove akive Service"
+msgstr "No se puede quitar el servicio activo"
+
+msgid "Amount of files: "
+msgstr "Total de Archivos: "
+
+msgid "file move error"
+msgstr "ATENCION: Mover archivos fallido"
+
+msgid "file copy error"
+msgstr "ATENCION: Copiar archivos fallido"
+
+msgid "wait for stopping"
+msgstr "Por Favor Espere la operacion para detener"
+
+msgid "none"
+msgstr "Ninguno"
+
+msgid "north"
+msgstr "Norte"
+
+msgid "south"
+msgstr "Sur"
+
+msgid "east"
+msgstr "Este"
+
+msgid "west"
+msgstr "Oeste"
+
+msgid "Hoster Url not http://"
+msgstr "Los hosters URL no es http://"
+
+msgid "The file is being transfered to our other servers. This may take few minutes."
+msgstr "El archivo designado está siendo transferido a nuestra otros servidores. \ nEsto puede tardar algunos minutos. Por favor, inténtelo de nuevo más tarde."
+
+msgid "The page is temporarily unavailable"
+msgstr "La página designada no está disponible temporalmente."
+
+msgid "DLNA not started,\n"
+"Please check your config."
+msgstr "DLNA no se ha iniciado.\n"
+"Por favor, revise su configuración."
+
+msgid "DLNA now stopped"
+msgstr "DLNA detuvo"
+
+msgid "download error"
+msgstr "ERROR: Descarga Fallida!"
+
+msgid "wait for stopping download"
+msgstr "ATENCIÓN: Espere Descargar para detener."
+
+msgid "EJECT"
+msgstr "Expulsar"
+
+msgid "SELECT"
+msgstr "Seleccionar"
+
+msgid "Search only aktual epg ?"
+msgstr "Buscar dentro de la actual EPG"
+
+msgid "Doku"
+msgstr "Documentacion"
+
+msgid "Child"
+msgstr "Niños"
+
+msgid "Scifi"
+msgstr "Ciencia Ficcion"
+
+msgid "Graphic Multi EPG"
+msgstr "Graphical Multi EPG"
+
+msgid "scan"
+msgstr "Exploracion"
+
+msgid "whitelist"
+msgstr "Lista Blanca"
+
+msgid "scan and whitelist"
+msgstr "Exploracion en la Lista Blanca"
+
+msgid "always"
+msgstr "Siempre"
+
+msgid "only on power off / restart"
+msgstr "solo apagado/reiniciar"
+
+msgid "never"
+msgstr "Nunca"
+
+msgid "only for scan"
+msgstr "Solo para exploracion"
+
+msgid "poweroff"
+msgstr "Apagado"
+
+msgid "Deavtivate Refresh Time and After EPG in scan-mode"
+msgstr "Exploración de fondo activada.\n"
+"Exploración Timer y 'acción después de exploración' se desactiva."
+
+msgid "EPG resetet and now clear."
+msgstr "EPG despejado"
+
+msgid "Feed"
+msgstr "Por Favor intruducir direccion de fuente"
+
+msgid "Installation start"
+msgstr "La instalacion comenzo"
+
+msgid "Remove start"
+msgstr "Extraccion comenzo"
+
+msgid "Install success"
+msgstr "Instalacion realizada con exito"
+
+msgid "Install error"
+msgstr "ERROR: Instalacion fallida!"
+
+msgid "Remove success"
+msgstr "Eliminado con exito"
+
+msgid "Remove error"
+msgstr "ERROR: Eliminacion Fallida!"
+
+msgid "Install to MNT"
+msgstr "Instalar para MNT (Flash)"
+
+msgid "Install to FLASH"
+msgstr "Instalar para FLASH"
+
+msgid "Install to SWAP"
+msgstr "Instalar para SWAP (USB o HDD)"
+
+msgid "Choice Install Medium"
+msgstr "Elegir el medio de instalacion"
+
+msgid "Tpk Install Info"
+msgstr "Informacion de instalacion"
+
+msgid "Can't install Package. Package to big."
+msgstr "ERROR: El paquete designado es demasiado grande\n"
+"y no se puede instalar."
+
+msgid "Tpk Install - select section"
+msgstr "Instalacion - Elegir Categoria"
+
+msgid "Tpk Install - select file"
+msgstr "Instalacion - Seleccionar"
+
+msgid "It may only be a package to be installed. If they want to install another package of this section, they only remove the installed packet. Is not the plugin after reinstalling the software TitanNit in TitanNit Menu Visible then perform an update by Tpk to: "
+msgstr "Sólo se puede instalar una Plugin de esta sección.\n"
+"Si desea instalar un plugin que no sea el instalado\n"
+"usted tendrá que quitar el instalado primero. En caso de que la instalación\n"
+"plugin no sea visible después de actualizar a una nueva versión de TitanNit usted\n"
+"tener que realizar una actualización en línea del plugin."
+
+msgid "starting"
+msgstr "Comenzando"
+
+msgid "Tpk Install Info - Install OK"
+msgstr "Instalado con Exito"
+
+msgid "Tpk Install Info - Install ERROR"
+msgstr "ERROR: Instalacion fallida!"
+
+msgid "TPK Install done, your system will reboot !"
+msgstr "Instalado con éxito.\n"
+"Su receptor se reiniciará ahora"
+
+msgid "Tpk Remove - select file"
+msgstr "Elimina - Seleccion"
+
+msgid "Tpk Remove Info"
+msgstr "Eliminar Informacion"
+
+msgid "Tpk Remove Info - Remove OK"
+msgstr "Eliminado con Exito"
+
+msgid "Tpk Remove Info - Remove ERROR"
+msgstr "ERROR: Eliminacion Fallida!"
+
+msgid "TPK Remove done, your system will reboot !"
+msgstr "Eliminado con éxito.\n"
+"Su receptor se reiniciará ahora"
+
+msgid "Some plugins needs restart.\n"
+"If the plugin is not active\n"
+"reboot the box."
+msgstr "Algunos plugins necesitan un reinicio.\n"
+" Su receptor se reiniciará ahora"
+
+msgid "TPK Tmp Install done, your system will reboot !"
+msgstr "Instalado con éxito de tmp.\n"
+"Su receptor se reiniciará ahora"
+
+msgid "Tpk Update Info - Update ERROR"
+msgstr "ERROR: Actualizacion Fallida!"
+
+msgid "Can't get all TPK index !"
+msgstr "ATENCIÓN: No se puede recuperar el índice complemento completo!"
+
+msgid "Can't update all packages !"
+msgstr "ERROR: No se han actualizado todos los plugins!"
+
+msgid "TPK Upgrade done, your system will reboot !"
+msgstr "Actualizado con éxito.\n"
+"Su receptor se reiniciará ahora"
+
+msgid "Facebook allready registered,\n"
+"Make new registration ?"
+msgstr "¿Ya se ha registrado en Facebook?\n"
+"¿Quiere registrarse en Facebook?"
+
+msgid "Post on wall from another user"
+msgstr "Publicar en el muro de otro usuario (s)"
+
+msgid "Link postet"
+msgstr "Enlace publicado"
+
+msgid "Video postet"
+msgstr "vídeo publicado"
+
+msgid "Photos postet"
+msgstr "fotos publicadas"
+
+msgid "Coment created"
+msgstr "Comentario creado"
+
+msgid "Connect with Hoster wait 10 seconds"
+msgstr "Conectando al servidor\n"
+"Por favor, espere 10 segundos."
+
+msgid "Can't rename file !"
+msgstr "No se puede cambiar el nombre de archivo!"
+
+msgid "Can't create directory !"
+msgstr "No se puede crear el directorio!"
+
+msgid "Move File"
+msgstr "Mover archivo (s)"
+
+msgid "Copy File"
+msgstr "Copiar archivo (s)"
+
+msgid "Can't remove file/dir !"
+msgstr "No se puede eliminar el archivo/dir!"
+
+msgid "Connect with Hoster wait 16 seconds"
+msgstr "Connexion a Hoster - Por favor, espere 16 segundos"
+
+msgid "ERROR cant read res"
+msgstr "ERROR: No se puede leer la resolución"
+
+msgid "Sat"
+msgstr "Satelite"
+
+msgid "Tuner "
+msgstr "Tuner"
+
+msgid "Select Your Serach Modus"
+msgstr "Seleccione el modo de búsqueda"
+
+msgid "Transponder/Satellite Convert done, please use channel search on next Boot.\n"
+"Your System will reboot !"
+msgstr "Conversión de Transpondedor / satélite hecho.\n"
+"Por favor, realice una nueva búsqueda de canales después del reinicio del sistema.\n"
+"Su receptor se reiniciará!"
+
+msgid "Error: Transponder Source file not found"
+msgstr "ERROR: Ninguna fuente transpondedor archivo encontrado!"
+
+msgid "Error: Transponder Source file no data"
+msgstr "ERROR: El archivo transpondedor está vacía!"
+
+msgid "Standard favorites have been successfully applied.\n"
+"Your System will reboot !"
+msgstr "Favoritos estándar se han importado.\n"
+" El receptor se reiniciará ahora."
+
+msgid "Servername"
+msgstr "Nombre Servidor"
+
+msgid "GRAPHIC MULTI EPG - Bouquets"
+msgstr "Graphic Multi EPG - Favoritos"
+
+msgid "GRAPHIC MULTI EPG - Channel"
+msgstr "Graphic Multi EPG - Canales"
+
+msgid "GRAPHIC MULTI EPG - Satellites"
+msgstr "Graphic Multi EPG - Satelites"
+
+msgid "GRAPHIC MULTI EPG - Provider"
+msgstr "Graphic Multi EPG - Providers"
+
+msgid "GRAPHIC MULTI EPG - All Channels"
+msgstr "Graphic Multi EPG - Todos los Canales"
+
+msgid "Harddisk Format - Filesystem"
+msgstr "Formato Drive - Sistema de Archivos"
+
+msgid "default"
+msgstr "Defecto"
+
+msgid "Harddisk Configure"
+msgstr "Configurar Drive"
+
+msgid "use medium for record"
+msgstr "Utilice como Grabaciones dispositivo"
+
+msgid "del medium for record"
+msgstr "Quite la mayor Grabaciones dispositivo"
+
+msgid "use medium for extension"
+msgstr "Utilice como extensiones del dispositivo"
+
+msgid "del medium for extension"
+msgstr "Retire como extensiones del dispositivo"
+
+msgid "use medium for swap"
+msgstr "Utilice como swap-dispositivo"
+
+msgid "del medium for swap"
+msgstr "Elimine como swap-dispositivo"
+
+msgid "use medium for backup"
+msgstr "Utilizar como copia de seguridad del dispositivo"
+
+msgid "del medium for backup"
+msgstr "Elimine como copia de seguridad del dispositivo"
+
+msgid "Directory has content\n"
+"Really delete directory and content?"
+msgstr "Directorio tiene contenido\n"
+"¿Desea borrar el directorio y el contenido?"
+
+msgid "can't create or delete directory"
+msgstr "ERROR: No se puede crear o suprimir directorio"
+
+msgid "succesfull create or delelete directory"
+msgstr "Directorio creado o borrado con exito"
+
+msgid "Harddisk"
+msgstr "dispositivo de almacenamiento"
+
+msgid "sorry found no harddisk"
+msgstr "Lo sentimos, no hay ningún dispositivo conectado encontrado!"
+
+msgid "Harddisk Format"
+msgstr "Formato de dispositivo"
+
+msgid "select the media drive from Device List for formating"
+msgstr "Seleccione la unidad en la lista que desea formatear"
+
+msgid "Harddisk Fsck"
+msgstr "Archivo Sistema comprobar"
+
+msgid "select the media drive from Device List for fsck"
+msgstr "Seleccione la unidad en la lista que desea comprobar"
+
+msgid "select the media drive from Device List for configuration"
+msgstr "Seleccione la unidad en la lista que desea configurar"
+
+msgid "HDD "
+msgstr "Disco Duro"
+
+msgid "STICK "
+msgstr "USB"
+
+msgid "HDD > 2TB unsupported.\n"
+"You must first install plugin parted, then you can use this panel."
+msgstr "Los discos duros con una capacidad de más de 2 TB no son compatibles.\n"
+"Es necesario instalar el plugin 'raya' con el fin de utilizar el disco duro."
+
+msgid "Are you sure you want to remove all Partitions\n"
+"on this device and create a new Partition 1?\n"
+"Box reboots after format"
+msgstr "¿Seguro que desea eliminar todas las particiones\n"
+"en este dispositivo y crear una nueva partición?\n"
+"Su receptor se reiniciará después de formatear el dispositivo"
+
+msgid "Are you sure you want to format this Partition?\n"
+"Box reboots after format"
+msgstr "¿Seguro que desea formatear esta partición?\n"
+"Su receptor se reiniciará después de formatear el dispositivo"
+
+msgid "ERROR\n"
+"partition could not be created"
+msgstr "ERROR:\n"
+"Partición no se pudo crear!"
+
+msgid "Information: This hard drive size can take a file\n"
+"system check between 30 minutes and 1.5 hours."
+msgstr "Información: una comprobación del sistema de archivos en el dispositivo con un tamaño tal \n"
+"puede tardar entre 30 minutos y 1,5 horas."
+
+msgid "Are you sure you want to check this Partition?\n"
+"Box reboots after check"
+msgstr "¿Seguro que desea comprobar esta partición?\n"
+"Su receptor se reiniciará después de comprobar el dispositivo."
+
+msgid "Harddisk Sleep"
+msgstr "Disco duro ahorro de energía (Sleep)"
+
+msgid "set here the default sleeptime for all your media drives"
+msgstr "Fije la hora de la unidad sueño"
+
+msgid "Time to sleep"
+msgstr "Ahorro de energia (sueño)"
+
+msgid "5 min"
+msgstr "5 Minutos"
+
+msgid "10 min"
+msgstr "10 Minutos"
+
+msgid "15 min"
+msgstr "15 Minutos"
+
+msgid "60 min"
+msgstr "60 Minutos"
+
+msgid "Found new Stick/HDD.\n"
+"You can configure it in Harddisk Menu."
+msgstr "Un nuevo Stick/Disco duro se encontrado.\n"
+"Usted puede configurarlo en el menú. del dispositivo."
+
+msgid "You can leave HBBTV with Record Key."
+msgstr "Puede salir HBBTV con el botón de grabación."
+
+msgid "HBBTV Favoriten"
+msgstr "HBBTV Favoritos"
+
+msgid "Choose your HBBTV Favorite from the following list"
+msgstr "Elige su HBBTV Favorito de la lista siguiente"
+
+msgid "Volumebar Timeout"
+msgstr "Tiempo para volumeBar Fadeout (seg)"
+
+msgid "Infobar Timeout"
+msgstr "Fadeout barra de información después de (segundos)"
+
+msgid "Infobar Sleep"
+msgstr "Infobar display retraso (seg)"
+
+msgid "Spinnerspeed"
+msgstr "Velocidad Spinner"
+
+msgid "Spinnertime"
+msgstr "Tiempo Spinner"
+
+msgid "Hangtime"
+msgstr "Tiempo de espera antes de que aparezca un error-Mensaje"
+
+msgid "Faststop"
+msgstr "Titan reinicio rápido"
+
+msgid "Dirsort"
+msgstr "Directorio ordenar por"
+
+msgid "Power aktion"
+msgstr "Reacción al uso del botón de encendido"
+
+msgid "Record Split Size"
+msgstr "Grabar Dividido Tamaño"
+
+msgid "Record Forerun (min)"
+msgstr "Precursar Para grabaciones con temporizador (Min)"
+
+msgid "Record Overrun (min)"
+msgstr "Cubrir Para grabaciones con temporizador (Min)"
+
+msgid "Skip 1/3"
+msgstr "Indicacion para botones 1/3 (seg)"
+
+msgid "Skip 4/6"
+msgstr "Inidicacion para botones 4/6 (seg)"
+
+msgid "Skip 7/9"
+msgstr "Inidicacion para botones 7/9 (seg)"
+
+msgid "Player for .ts"
+msgstr "Player para archivos .ts"
+
+msgid "Change Channelname auto."
+msgstr "Auto Actualizar Nombre de Canal"
+
+msgid "Set action after rec"
+msgstr "Accion despues de la grabacion"
+
+msgid "Show Timeline in Channellist"
+msgstr "Mostrar barra de progreso en lista de canales?"
+
+msgid "Animated Screens"
+msgstr "Animacion Menus"
+
+msgid "Animated Speed"
+msgstr "Animacion Velocidad"
+
+msgid "Show last pos Question"
+msgstr "Utilice 'Reanudar desde la última posición'?"
+
+msgid "Resync Recording immediately"
+msgstr "Resync grabación inmediatamente (No caché de escritura)"
+
+msgid "Recording name"
+msgstr "Titulo de grabación"
+
+msgid "Show hidden files"
+msgstr "Mostrar archivos ocultos?"
+
+msgid "Expert Modus"
+msgstr "Modo Experto"
+
+msgid "Show infobar on program change"
+msgstr "Mostrar barra de información en zap?"
+
+msgid "Use cross control for fast zapping and vol"
+msgstr "Utilice cruz de control para zapping rápido y control de volumen"
+
+msgid "Deactivate Crypt Support on Media Playback"
+msgstr "Desactivar Apoyo Cripto durante Soporte para reproducción"
+
+msgid "Time to wait after seek for fill buffer"
+msgstr "Tiempo de espera después de tratar de llenar búfer"
+
+msgid "Front Display"
+msgstr "VFDisplay"
+
+msgid "CAM"
+msgstr "Modulo"
+
+msgid "RED"
+msgstr "Rojo"
+
+msgid "GREEN"
+msgstr "Verde"
+
+msgid "BLUE"
+msgstr "Azul"
+
+msgid "CAM Ports found: "
+msgstr "CI-Modulo encontrado: "
+
+msgid "SUCESS Serial Port"
+msgstr "Puerto Serial es OK"
+
+msgid "FAIL Serial Port"
+msgstr "Puerto Serial Fallido"
+
+msgid "SUCESS Flash/Nand"
+msgstr "Flash/Nand OK"
+
+msgid "FAIL Flash/Nand (/var and /mnt)"
+msgstr "Flash/Nand (/var y /mnt) Fallido"
+
+msgid "FAIL Flash/Nand (/var)"
+msgstr "Flash/Nand (/var) Fallido"
+
+msgid "FAIL Flash/Nand (/mnt)"
+msgstr "Flash/Nand (/mnt) Fallido"
+
+msgid "Error, Internet Connection not found"
+msgstr "ERROR: Conexion Internet no encontrado"
+
+msgid "--plot--"
+msgstr "--Parcela--"
+
+msgid "--title--"
+msgstr "--Titulo--"
+
+msgid "--director--"
+msgstr "--Director--"
+
+msgid "--writers--"
+msgstr "--Autor--"
+
+msgid "--genre--"
+msgstr "--Genero--"
+
+msgid "--releasetime--"
+msgstr "--Fecha de lanzamiento--"
+
+msgid "--actors--"
+msgstr "--Actores--"
+
+msgid "DYNDNS not started,\n"
+"Please check your config."
+msgstr "DYNDNS no se ha iniciado,\n"
+"Por favor, revise su configuración."
+
+msgid "Shooting Background done !\n"
+"Save Screenshoot Path: /tmp/screenshot.jpg"
+msgstr "Exitosa captura de pantalla.\n"
+"Captura de pantalla guarda en: /tmp/screenshot.jpg"
+
+msgid "For next OnlineUpdate please contact Atemio and send this Serial Number\n"
+"and your Atemio Serial Number !!\n"
+"\n"
+"Board-ID SerialNr:"
+msgstr "Si las funciones no estén disponibles en línea por favor enviar el \n"
+"Baord-ID Numero de serie (AA ...) y el número de serie del receptor de \n"
+"debajo de su receptor (AM ...) a la muestra E-mail Dirección.\n"
+"\ nJunta-ID Numero de serie:"
+
+msgid "Info"
+msgstr "Informacion"
+
+msgid "Infos"
+msgstr "Detalles"
+
+msgid "aus"
+msgstr "Off"
+
+msgid "ein"
+msgstr "On"
+
+msgid "Key Action - Plugins"
+msgstr "Acción clave Rojo - Plugins"
+
+msgid "MediaDB Scan Info"
+msgstr "MediaDB informacion exploracion"
+
+msgid "Record Player"
+msgstr "Grabaciones Player (.ts)"
+
+msgid "Softcam Panel"
+msgstr "Softcam"
+
+msgid "Child Protection"
+msgstr "Parental control"
+
+msgid "Subchannel"
+msgstr "Subservicios"
+
+msgid "Change language needs reboot"
+msgstr "Cambio del idioma requiere un reinicio del sistema\n"
+"Su receptor se reiniciará automáticamente en unos pocos segundos.\n"
+"Por favor espera."
+
+msgid "ERROR cant start LCD driver"
+msgstr "ERROR: No se puede iniciar controlador LCD"
+
+msgid "Bouquet Name"
+msgstr "Nombre Favoritos"
+
+msgid "Polarization"
+msgstr "Polarizacion"
+
+msgid "user defined"
+msgstr "Definido por usuario"
+
+msgid "user unicable"
+msgstr "Usuario unicable"
+
+msgid "ERROR... can't set marker in this file"
+msgstr "ERROR: No se puede establecer marcadores en este archivo"
+
+msgid "Repeat-On"
+msgstr "Modo repeticion On"
+
+msgid "fullcover"
+msgstr "Fondo completo cubierto"
+
+msgid "size (default)"
+msgstr "Tamaño (defecto)"
+
+msgid "datetime"
+msgstr "Fecha y Hora"
+
+msgid "Install File Manager Tpk first !"
+msgstr "Instalar extensión 'File Manager' primero!"
+
+msgid "Install netsurf Internetbrowser Tpk first !"
+msgstr "Instale netsurf navegador de internet Extensión primero!"
+
+msgid "comming soon"
+msgstr "próximamente ..."
+
+msgid "Menu not implemented !"
+msgstr "Menu no disponible!"
+
+msgid "Install Tithek Tpk first !"
+msgstr "Instale Titan Mediateca (tiThek) Extension primero!"
+
+msgid "Found VIDEO_TS Folder, start with DVD-Player ?"
+msgstr "Se encontró una ruta VIDEO_TS.\n"
+"Inicie la reproducción con el reproductor de DVD?"
+
+msgid "Start at last position ?"
+msgstr "Volver a empezar desde la última posición?"
+
+msgid "1s"
+msgstr "1 Segundo"
+
+msgid "2s"
+msgstr "2 Segundos"
+
+msgid "3s"
+msgstr "3 Segundos"
+
+msgid "4s"
+msgstr "4 Segundos"
+
+msgid "5s (default)"
+msgstr "5 Segundos (defecto)"
+
+msgid "Install Weather Tpk first !"
+msgstr "ATENCIÓN: Es necesario instalar el 'tiempo' Extensión primero!"
+
+msgid "unlock -> lock it"
+msgstr "Desbloqueado -> Bloqueo "
+
+msgid "unlock -> leaf unlock"
+msgstr "Desbloqueado -> Deja desbloqueado"
+
+msgid "locked -> unlock it"
+msgstr "Bloqueado -> Desbloquéelo"
+
+msgid "locked -> leaf locked"
+msgstr "Bloqueado -> Deje bloqueado"
+
+msgid "MediaDB entry for this file not found."
+msgstr "TENCIÓN: MediaDB no se encontró la entrada para este archivo!"
+
+msgid "MediaDB directory scan started in Background !"
+msgstr "Directorio MediaDB exploracion comenzó en el fondo!"
+
+msgid "MediaDB place"
+msgstr "MediaDB Guarda Ruta"
+
+msgid "Backdrop Download Count"
+msgstr "¿Cuántas Fotos Fondo debe ser cargado?"
+
+msgid "all"
+msgstr "Todo"
+
+msgid "file"
+msgstr "Archivo"
+
+msgid "path"
+msgstr "Pelicula ruta"
+
+msgid "title"
+msgstr "Titulo"
+
+msgid "imdbid"
+msgstr "IMDB-ID"
+
+msgid "Add iMDB manuel"
+msgstr "Añadir Manual IMDB"
+
+msgid "older 1 day"
+msgstr "Más de 1 día"
+
+msgid "older 2 day"
+msgstr "Más de 2 dias"
+
+msgid "older 3 day"
+msgstr "Más de 3 dias"
+
+msgid "older 4 day"
+msgstr "Más de 4 dias"
+
+msgid "older 5 day"
+msgstr "Más de 5 dias"
+
+msgid "older 10 day"
+msgstr "Más de 10 dias"
+
+msgid "older 15 day"
+msgstr "Más de 15 dias"
+
+msgid "older 20 day"
+msgstr "Más de 20 dias"
+
+msgid "older 30 day"
+msgstr "Más de 30 dias"
+
+msgid "older 40 day"
+msgstr "Más de 40 dias"
+
+msgid "older 50 day"
+msgstr "Más de 50 dias"
+
+msgid "No MediaDB Directory found\n"
+"Press OK to create it"
+msgstr "No Directorio MediaDB encontró\n"
+"Pulse Aceptar para crearla"
+
+msgid "Error in Save Settings"
+msgstr "ERROR: Los ajustes no podrían guardarse!"
+
+msgid "deaktivate"
+msgstr "desactivar"
+
+msgid "empty"
+msgstr "No Modulo"
+
+msgid "initializing"
+msgstr "inicializar"
+
+msgid "ready"
+msgstr "leido"
+
+msgid "MULTI EPG - Bouquets"
+msgstr "Multi EPG - Favoritos"
+
+msgid "MULTI EPG - Channel"
+msgstr "Multi EPG - Canales"
+
+msgid "MULTI EPG - Satellites"
+msgstr "Multi EPG - Satelites"
+
+msgid "MULTI EPG - Provider"
+msgstr "Multi EG - Providers"
+
+msgid "MULTI EPG - All Channels"
+msgstr "Multi EPG - Todos los Canales"
+
+msgid "For Better Win7 Support install please Tpk Install > Network > Smbclient"
+msgstr "ATENCIÓN: Para una mejor compatibilidad con Windows 7 \n"
+" por favor, instale la extensión 'SMB-cliente'!"
+
+msgid "Anonymous login Access Denied !"
+msgstr "Entrar Anónimo - Acceso denegado!"
+
+msgid "Anonymous login successful"
+msgstr "Entrar Anónimo - exitoso"
+
+msgid "Scanning Network Shares, please wait !!"
+msgstr "Acciones de escaneado en red, por favor espere!"
+
+msgid "Use User authentication ?"
+msgstr "¿Utilizar la autenticación de usuario?"
+
+msgid "Networkbrowser - show scanned cifs/nfs-Shares"
+msgstr "Mostrar escaneado CIFS/NFS-Compartidos"
+
+msgid "Choose your cifs/nfs Share from the following list"
+msgstr "Elija su CIFS/NFS Compartir de la siguiente lista"
+
+msgid "Add Cifs Network Share"
+msgstr "Añadir CIFS Compartido"
+
+msgid "Add Nfs Network Share"
+msgstr "Añadir NFS Compartido"
+
+msgid "Add Ftpfs Network Share"
+msgstr "Añadir FTPFS Compartido"
+
+msgid "cifs"
+msgstr "CIFS"
+
+msgid "nfs"
+msgstr "NFS"
+
+msgid "ftpfs"
+msgstr "FTPFS"
+
+msgid "ssl_try"
+msgstr "Try SSL"
+
+msgid "ssl_control"
+msgstr "SSL control"
+
+msgid "ssl"
+msgstr "SSL"
+
+msgid "socks5"
+msgstr "Socks5"
+
+msgid "socks4"
+msgstr "Socks4"
+
+msgid "html"
+msgstr "HTML"
+
+msgid "udp"
+msgstr "UDP"
+
+msgid "tcp"
+msgstr "TCP"
+
+msgid "rw"
+msgstr "lectura/ecritura"
+
+msgid "ro"
+msgstr "solo léctura"
+
+msgid "Sharename can't be empty!"
+msgstr "ERROR: nombre de recurso compartido debe ingresar!"
+
+msgid "A mount entry with this name already exists!"
+msgstr "ERROR: Un montaje ya existe con este nombre compartido!"
+
+msgid "Networkbrowser - show Shares"
+msgstr "Mostrar compartidos"
+
+msgid "Are you sure you want remove this share?"
+msgstr "¿Seguro que quieres eliminar esta parte?"
+
+msgid "ERROR"
+msgstr "!!! ERROR !!!"
+
+msgid "comming soon..."
+msgstr "Próximamente ..."
+
+msgid "Restart Network ?"
+msgstr "¿Reiniciar la Red?"
+
+msgid "Aktivate new network config ?"
+msgstr "¿Activar nueva configuración de red?"
+
+msgid "dhcp"
+msgstr "Automatico (DHCP)"
+
+msgid "static"
+msgstr "Estatico"
+
+msgid "save network settings ?"
+msgstr "¿Guardar configuracion de red?"
+
+msgid "Can't change hostname !"
+msgstr "No se puede cambiar el nombre de hostname!"
+
+msgid "NONE"
+msgstr "Ninguno"
+
+msgid "deaktivate ethernet interface ?"
+msgstr "Desactivar Ethernet?"
+
+msgid "Start Wlan ?"
+msgstr "Iniciar WLAN?"
+
+msgid "WLAN started.\n"
+" You can now configure the new interface."
+msgstr "WLAN comenzó.\n"
+"Ahora puede configurar la nueva interfaz."
+
+msgid "WLAN not started,\n"
+"Please check your config."
+msgstr "No WLAN comenzado,\n"
+"Por favor, revise su configuración!"
+
+msgid "searching..."
+msgstr "Buscando..."
+
+msgid "WLAN now stopped"
+msgstr "WLAN detuvo"
+
+msgid "WLAN LOG"
+msgstr "WLAN log"
+
+msgid "Found Wlan Stick and driver for: "
+msgstr "Encontrado stick WLAN y un conductor para:"
+
+msgid "Found Wlan Stick but no driver\n"
+"Please install driver: "
+msgstr "Encontrado WLAN palo pero no hay ningún controlador\n"
+"Por favor, instale el controlador:"
+
+msgid "Wlan Stick not found"
+msgstr "WLAN ningun stick encontrado"
+
+msgid "WLAN Info"
+msgstr "Informacion"
+
+msgid "SatCount: "
+msgstr "Número de satélites:"
+
+msgid "Transponder: "
+msgstr "Transpondedor: "
+
+msgid "ChannelCount: "
+msgstr "Número de Canales: "
+
+msgid "BouquetCount: "
+msgstr "Numero de Bouquets: "
+
+msgid "BouquetEntrys: "
+msgstr "Bouquet Entradas: "
+
+msgid "EpgChannels: "
+msgstr "EPG Canales: "
+
+msgid "ProviderCount: "
+msgstr "Numero de Providers: "
+
+msgid "fsckroot"
+msgstr "Archivosistemacheck Root particiones de"
+
+msgid "bootstop"
+msgstr "parada de arranque"
+
+msgid "debug"
+msgstr "Debug"
+
+msgid "showip"
+msgstr "Mostrar IP Address"
+
+msgid "ip"
+msgstr "IP"
+
+msgid "updatelist"
+msgstr "Lista actualizada"
+
+msgid "Old Audiofw"
+msgstr "Antiguo Audio Firmware"
+
+msgid "No Audiosync"
+msgstr "Audio no sincronizado"
+
+msgid "Poweroff"
+msgstr "Apagado"
+
+msgid "Scart On Standby"
+msgstr "Salida Scart durante Apagado"
+
+msgid "Autostart USB"
+msgstr "USB"
+
+msgid "Fsck Record"
+msgstr "Archivosistemacheck grabación particiones "
+
+msgid "Fsck Swap"
+msgstr "Archivossistemacheck Swap Particion"
+
+msgid "Record Max Sectors"
+msgstr "Sectores de maximo tamaño de 'grabar'"
+
+msgid "Swap Max Sectors"
+msgstr "Sectores de tamaño máximo para 'swap'"
+
+msgid "Autostart EMU"
+msgstr "Softcam"
+
+msgid "Emu Control"
+msgstr "Softcam control"
+
+msgid "ftdi"
+msgstr "Permitir FTDI modulo"
+
+msgid "pl2303"
+msgstr "PL2303 Modulo"
+
+msgid "nfs server"
+msgstr "NFS Servidor"
+
+msgid "samba server"
+msgstr "Samba Servidor"
+
+msgid "scan wlan"
+msgstr "Exploracion WLAN"
+
+msgid "Pin"
+msgstr "PIN"
+
+msgid "Automount Config"
+msgstr "Configuracion"
+
+msgid "Ntfs Write"
+msgstr "NTFS escribir"
+
+msgid "disable"
+msgstr "discapacitado"
+
+msgid "ntfs-3g"
+msgstr "NTFS-3g"
+
+msgid "ntfsmount"
+msgstr "NTFS-montaje"
+
+msgid "Only Boot Overclock"
+msgstr "Overclocking sólo en el arranque del sistema"
+
+msgid "CPU frequency"
+msgstr "CPU Frecuencia"
+
+msgid "FDMA bypass"
+msgstr "FDMA derivacion"
+
+msgid "Standby frequency"
+msgstr "Frecuencia Reposo CPU"
+
+msgid "Use Teletxt Workaround"
+msgstr "Utilice Teletexto solución"
+
+msgid "frequency"
+msgstr "Frecuencia"
+
+msgid "videmode"
+msgstr "Videomodo"
+
+msgid "Do you really want to start the Wizard?\n"
+"The Box will reboot and the Wizard will be started!"
+msgstr "¿Realmente desea iniciar el Asistente? \n"
+"El receptor se reiniciará y el Asistente será realizado!"
+
+msgid "Video Settings"
+msgstr "Ajustes"
+
+msgid "AV Settings"
+msgstr "Audio/Video Ajustes"
+
+msgid "Search on Solarmovies (movie)"
+msgstr "Buscar en Solopeliculas (películas)"
+
+msgid "Search on Solarmovies (serie)"
+msgstr "Buscar en Solopeliculas (series)"
+
+msgid "Jump To (min)"
+msgstr "Saltar a (min)"
+
+msgid "Record in progress"
+msgstr "grabación activa"
+
+msgid "Really Delete ?"
+msgstr "Realmente ¿Eliminar?"
+
+msgid "DEL"
+msgstr "Eliminar"
+
+msgid "Marker autoseek is started"
+msgstr "Autoseek Marker comenzó"
+
+msgid "Marker autoseek is stopped"
+msgstr "Autoseek Marker detuvo"
+
+msgid "AutoTimer Settings"
+msgstr "Ajustes"
+
+msgid "afterevent"
+msgstr "después de la grabación"
+
+msgid "SAVE"
+msgstr "Guardar"
+
+msgid "START"
+msgstr "Inicio"
+
+msgid "Timer1 activ"
+msgstr "Temporizador 1 activo"
+
+msgid "Timer2 activ"
+msgstr "Temporizador 2 activo"
+
+msgid "CallMonitor Settings"
+msgstr "Ajustes"
+
+msgid "1.Rufnummer"
+msgstr "1er Numero"
+
+msgid "2.Rufnummer"
+msgstr "2º Numero"
+
+msgid "Aktion wenn standby"
+msgstr "Comportamiento durante la espera"
+
+msgid "alle Nummern"
+msgstr "Todos los números"
+
+msgid "Anzeige in Sekunden"
+msgstr "Pantalla de segundos"
+
+msgid "ausgehende Anrufe"
+msgstr "llamadas salientes"
+
+msgid "bei Anruf stumm"
+msgstr "Silenciar una llamada entrante"
+
+msgid "broadcast"
+msgstr "dirección de difusión"
+
+msgid "eingehende Anrufe"
+msgstr "llamada entrante"
+
+msgid "LOAD-FritzBook"
+msgstr "Cargue Fritzbook"
+
+msgid "Nutzername-Fritzbox (optional)"
+msgstr "Fritzbox nombre de usuario (opcional)"
+
+msgid "Passwort-FritzBox"
+msgstr "Fritzbox Contraseña"
+
+msgid "Media Dir 1"
+msgstr "Media ruta1"
+
+msgid "Media Dir 2"
+msgstr "Media ruta 2"
+
+msgid "Media Dir 3"
+msgstr "Media ruta 3"
+
+msgid "Media Dir 4"
+msgstr "Media ruta 4"
+
+msgid "Port"
+msgstr "Puerto"
+
+msgid "STOP"
+msgstr "Stop"
+
+msgid "Facebook Register"
+msgstr "Registrar en Facebook"
+
+msgid "Enter the shown url in your browser and enter the Code to register the receiver to facebook"
+msgstr "Introduzca la url se muestra en el navegador y enviar el código para registrar el receptor a través de Facebook"
+
+msgid "Copy"
+msgstr "Copiar"
+
+msgid "FILELIST MANAGER"
+msgstr "Listaarchivos Manager"
+
+msgid "Moven"
+msgstr "Movimiento"
+
+msgid "SEARCH"
+msgstr "Buscar"
+
+msgid "IMDb - Plugin"
+msgstr "Plugins"
+
+msgid "direkter Start"
+msgstr "inicio directo"
+
+msgid "Pearl LCD Settings"
+msgstr "Pearl LCD Ajustes"
+
+msgid "aktiv im Standby"
+msgstr "Mostrar en Reposo"
+
+msgid "alle Menus anzeigen"
+msgstr "mostrar todos los menús"
+
+msgid "Auswahl"
+msgstr "seleccion"
+
+msgid "--- Land"
+msgstr "--- Pais"
+
+msgid "--- Ort"
+msgstr "--- Ubicación"
+
+msgid "--- PLZ"
+msgstr "--- Codigo Postal"
+
+msgid "Wettervorhersage"
+msgstr "weather forecast"
+
+msgid "Samsung SPF.. Settings"
+msgstr "Samba Servidor Ajustes"
+
+msgid "DI"
+msgstr "MAR"
+
+msgid "DO"
+msgstr "JUEV"
+
+msgid "MI"
+msgstr "MIERC"
+
+msgid "MO"
+msgstr "LUNES"
+
+msgid "Typenbezeichnung"
+msgstr "LCD Tipo"
+
+msgid "MC VideoPlayer Imdb Settings"
+msgstr "MC VideoPlayer IMDB Ajustes"
+
+msgid "Apple Trailer"
+msgstr "Apple Trailer peliculas"
+
+msgid "AUDIO"
+msgstr "Musica"
+
+msgid "AUDIO SETTINGS"
+msgstr "Audio Ajustes"
+
+msgid "Autostart Playlist"
+msgstr "Lista de reproducción automática"
+
+msgid "Backdrop Interval"
+msgstr "Intervalo para el cambio de fondo"
+
+msgid "Choice Menu"
+msgstr "Seleccion Menu"
+
+msgid "Datei Browser"
+msgstr "Archivo Carpeta"
+
+msgid "details"
+msgstr "Detalles"
+
+msgid "EDIT"
+msgstr "Editar"
+
+msgid "filealt"
+msgstr "Alternativa archivo"
+
+msgid "filealtresult"
+msgstr "Alternativa archivo resultado"
+
+msgid "Mediathek"
+msgstr "En linea Mediathek"
+
+msgid "Picdenom Mode"
+msgstr "Foto Software-decodificacion"
+
+msgid "Pic HW-decode"
+msgstr "Foto Hardware-decodificacion"
+
+msgid "Pic quality"
+msgstr "Calidad de imagen"
+
+msgid "PICTURE"
+msgstr "Foto"
+
+msgid "PICTURE SETTINGS"
+msgstr "Ajustes"
+
+msgid "Screensaver"
+msgstr "Protector de Pantalla"
+
+msgid "Show Pictitle"
+msgstr "Mostrar titulo foto"
+
+msgid "VIDEO"
+msgstr "Peliculas"
+
+msgid "Video Player"
+msgstr "Peliculas Player"
+
+msgid "VIDEO SETTINGS"
+msgstr "Ajustes"
+
+msgid "Weather Infos"
+msgstr "Mostrar Weather detalles"
+
+msgid "ADD"
+msgstr "Añadir"
+
+msgid "Auth Settings"
+msgstr "Ajustes"
+
+msgid "AUTH SETTINGS"
+msgstr "Ajustes"
+
+msgid "COPY"
+msgstr "Copiar"
+
+msgid "dnsaddresse"
+msgstr "DNS Direccion"
+
+msgid "ftpport"
+msgstr "Ftp Puerto"
+
+msgid "hddreplacement"
+msgstr "Utilice recurso compartido de red para las grabaciones"
+
+msgid "Here you can configure your Auth Data. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Aquí usted puede configurar su información de autenticación.\n"
+"Navegar con la unidad de control remoto y las teclas se muestran a continuación"
+
+msgid "Here you can configure your network shares. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Aquí usted puede configurar los recursos compartidos de red.\n"
+"\n"
+"Navegar con la unidad de control remoto y las teclas se muestran a continuación"
+
+msgid "If you don't find Windows shares you need to disable 'Password protected sharing' in the 'Network and Sharing Center'."
+msgstr "Si no se encuentran recursos compartidos de Windows, es necesario desactivar compartir Contraseña protegida en el Centro de redes y recursos compartidos."
+
+msgid "ipaddress"
+msgstr "IP Direccion"
+
+msgid "options"
+msgstr "Opciones"
+
+msgid "password"
+msgstr "Contraseña"
+
+msgid "Password"
+msgstr "Contraseña"
+
+msgid "protocol"
+msgstr "Protocolo"
+
+msgid "proxy"
+msgstr "ServidorProxy"
+
+msgid "proxyauth"
+msgstr "AutenticacionServidor Proxy"
+
+msgid "proxyip"
+msgstr "Servidor Proxy IP"
+
+msgid "proxypass"
+msgstr "Servidor Proxy Contraseña"
+
+msgid "proxyport"
+msgstr "Servidor Proxy Puerto"
+
+msgid "proxyuser"
+msgstr "Servidor Proxy nombre de usuario"
+
+msgid "rsize"
+msgstr "Leer tamaño buffer"
+
+msgid "sharedir"
+msgstr "Directorio Compartido"
+
+msgid "sharename"
+msgstr "Nombre Compartido"
+
+msgid "type"
+msgstr "Tipo"
+
+msgid "usedns"
+msgstr "Use DNS Direccion"
+
+msgid "useproxy"
+msgstr "Use Proxy"
+
+msgid "User"
+msgstr "Usuario"
+
+msgid "userauth"
+msgstr "Usuario Autenticacion"
+
+msgid "username"
+msgstr "Nombre de usuario"
+
+msgid "usessl"
+msgstr "use SSL"
+
+msgid "wsize"
+msgstr "Escribir tamaño buffer"
+
+msgid "BROWSER"
+msgstr "Navegador de Red"
+
+msgid "NEXT"
+msgstr "siguiente"
+
+msgid "PREV"
+msgstr "Previo"
+
+msgid "FanControl"
+msgstr "Fan control"
+
+msgid "OverClock Settings"
+msgstr "Overclocking"
+
+msgid "Panel"
+msgstr "Atemio Panel"
+
+msgid "1500rpm"
+msgstr "1500 rpm"
+
+msgid "500rpm"
+msgstr "500 rpm"
+
+msgid "Audio / Video / Sat"
+msgstr "Audio/Video/Sat"
+
+msgid "Cam / Emu"
+msgstr "Cam / Softcam"
+
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgid "Child safety"
+msgstr "Parental control"
+
+msgid "Default"
+msgstr "Defecto"
+
+msgid "Fancontrol"
+msgstr "Fan control"
+
+msgid "Save"
+msgstr "Guardar"
+
+msgid "speed"
+msgstr "Velocidad"
+
+msgid "Test"
+msgstr "Prueba"
+
+msgid "Usb Device"
+msgstr "USB Device(s)"
+
+msgid "Videotune"
+msgstr "Relacion de Aspecto"
+
+msgid "Wizard"
+msgstr "asistente para la instalación"
+
+msgid "Here you can aktivate/deaktivate you readers. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Aquí usted puede activar / desactivar su lector (s).\n"
+"\n"
+"Navegar con la unidad de control remoto y las teclas se muestran a continuación"
+
+msgid "Here you can configure your reader. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Aquí puede configurar su lector (s).\n"
+"\n"
+"Navegar con la unidad de control remoto y las teclas se muestran a continuación"
+
+msgid "Reader Config"
+msgstr "Lector"
+
+msgid "Reader Configuration"
+msgstr "Configuracion"
+
+msgid "Reader Selection"
+msgstr "Seleccion"
+
+msgid "NotUsed Settings"
+msgstr "Pare si no se utiliza Configuración"
+
+msgid "Auto start"
+msgstr "Autoinicio"
+
+msgid "Time to stop "
+msgstr "Es hora de dejar (min)"
+
+msgid "Aspect"
+msgstr "Relacion de aspecto"
+
+msgid "Framerate"
+msgstr "Tasa Máxima"
+
+msgid "Streaminfo"
+msgstr "Stream Informacion"
+
+msgid "X-Resolution"
+msgstr "X-Resolucion: "
+
+msgid "Y-Resolution"
+msgstr "Y-Resolucion: "
+
+msgid "please wait..."
+msgstr "Espere por favor ..."
+
+msgid "TiThek Menu"
+msgstr "tiThek Menu"
+
+msgid "TiThek Settings"
+msgstr "tiThek"
+
+msgid "ADD FAV"
+msgstr "Añadir"
+
+msgid "DEL FAV"
+msgstr "Eliminar"
+
+msgid "Exit Tithek"
+msgstr "Salir"
+
+msgid "Hid XXX Streams"
+msgstr "Ocultar XXX Streams"
+
+msgid "localname"
+msgstr "nombre local"
+
+msgid "Pic Link"
+msgstr "Link"
+
+msgid "Pic Ratio"
+msgstr "Ratio"
+
+msgid "TiThek - Favorite Edit"
+msgstr "Editar Favorito"
+
+msgid "Title"
+msgstr "Titulo"
+
+msgid "Type"
+msgstr "Tipo"
+
+msgid "tiWakeup"
+msgstr "Despertarse"
+
+msgid "Back Pic"
+msgstr "Segundo Plano"
+
+msgid "Edit"
+msgstr "Editar"
+
+msgid "Full Pic"
+msgstr "modo de pantalla completo"
+
+msgid "IMDB Search"
+msgstr "IMDb Buscar"
+
+msgid "Pic Name"
+msgstr "Nombre"
+
+msgid "Pic Timeout"
+msgstr "Fadeout despues"
+
+msgid "Scan"
+msgstr "Exploracion"
+
+msgid "Orgname:"
+msgstr "Organizacion nombre:"
+
+msgid "OTHER"
+msgstr "Otros"
+
+msgid "Start movie in the internal player, set with 0 key marker during a movie. 5 key is for the marker overview. Then here select movie and start."
+msgstr "Comienza la película con el reproductor interno. Establecer un marcador con el -0- clave durante la reproducción.\n"
+"Para una visión general de todos los marcadores pulse -5- en usted remoto. \n"
+"Presione -Play- en su control remoto para realizar el corte seleccionado."
+
+msgid "NEW"
+msgstr "Nuevo"
+
+msgid "Time"
+msgstr "Hora"
+
+msgid "Here you can make your xupnpd autostart settings."
+msgstr "Aquí puede configurar los ajustes de inicio automático xupnpd."
+
+msgid "ZapBack"
+msgstr "Cambie atras"
+
+msgid "Minuten"
+msgstr "Minutos"
+
+msgid "schaltet zurueck auf Sender"
+msgstr "vuelve al canal anterior"
+
+msgid "move west"
+msgstr "Mover Oeste"
+
+msgid "search west"
+msgstr "Buscar Oeste"
+
+msgid "search east"
+msgstr "Buscar Este"
+
+msgid "move east"
+msgstr "Mover Este"
+
+msgid "step west"
+msgstr "Paso Oeste"
+
+msgid "step east"
+msgstr "Paso Este"
+
+msgid "limits off"
+msgstr "Limites off"
+
+msgid "limit west"
+msgstr "Limites Oeste"
+
+msgid "limit east"
+msgstr "Limitest Este"
+
+msgid "limits on"
+msgstr "Limites On"
+
+msgid "store position"
+msgstr "Guardar Posicion"
+
+msgid "goto position"
+msgstr "Ir a la Posicion"
+
+msgid "startposition"
+msgstr "Iniciar Posicion"
+
+msgid "Position Setup is not allowed if record\n"
+"or stream is running !"
+msgstr "ERROR: No se puede cambiar la posición durante una grabación o corriente!"
+
+msgid "DeepStandby"
+msgstr "Apagado"
+
+msgid "Connect with Hoster wait 20 seconds"
+msgstr "Conexión al Host, por favor espere 20 segundos"
+
+msgid "first slot"
+msgstr "Primera ranura"
+
+msgid "second slot"
+msgstr "Segunda ranura"
+
+msgid "Use config from Flash (permanent)"
+msgstr "Use configuracion desde /mnt (permanent)"
+
+msgid "Use config from Flash (temporary)"
+msgstr "Use configuracion desde Flash (temporal)"
+
+msgid "Use config from Stick or HDD"
+msgstr "Use configuracion desde Swap (permanente)"
+
+msgid "Dvbapi (enabled)"
+msgstr "DVBapi (habilitado)"
+
+msgid "Dvbapi (disabled)"
+msgstr "DVBapi (discapacitado)"
+
+msgid "Reader active"
+msgstr "activatedo"
+
+msgid "Oscam config written to medium !"
+msgstr "OScam config guardada!"
+
+msgid "Restart Oscam ?"
+msgstr "Reiniciar OScam?"
+
+msgid "Oscam dvbapi config disabled !"
+msgstr "OScam DVBapi config discapacitado!"
+
+msgid "Oscam dvbapi config enabled !"
+msgstr "OScam DVBapi config habilitada!"
+
+msgid "HDD not configured\n"
+"can't find record path"
+msgstr "Disco duro no configurado! \ NNo se puede encontrar ruta de grabación!\n"
+"Por favor, configure disco duro!"
+
+msgid "Not enought space"
+msgstr "ERROR: Insuficiente espacio libre"
+
+msgid "Error create filename"
+msgstr "ERROR: No se puede crear fichero"
+
+msgid "Can't open file"
+msgstr "ERROR: No se puede abrir archivo"
+
+msgid "Can't open FRONTEND device"
+msgstr "ERROR: No se puede abrir Frontend Device"
+
+msgid "Can't open DMX device"
+msgstr "ERROR: No se puede abrir el dispositivo DMX"
+
+msgid "Pid's not ok"
+msgstr "ERROR: Los PID no están bien"
+
+msgid "Channel or Transponder is empty"
+msgstr "ERROR: El canal o transpondedor está vacía"
+
+msgid "Write error"
+msgstr "!!! ERROR DE ESCRITURA !!!"
+
+msgid "No memory"
+msgstr "ERROR: No Memoria"
+
+msgid "Failed open split file"
+msgstr "ERROR: No se puede abrir archivo dividido"
+
+msgid "Frontend type unknown"
+msgstr "ERROR: tipo desconocido Frontend"
+
+msgid "Tune to channel failed"
+msgstr "ERROR: Para sintonizar Canal fracasó"
+
+msgid "To many read error or end of file"
+msgstr "ERROR: Demasiados errores-leidos o final alcanzado de archivo"
+
+msgid "Can't create service"
+msgstr "ERROR: No se puede crear de servicio"
+
+msgid "No space left on device"
+msgstr "ERROR: No hay espacio libre en el dispositivo"
+
+msgid "Box recording finished poweroff in 30sec !"
+msgstr "Grabación terminó. Receptor de apagado en 30 segundos"
+
+msgid "Can't find free Tuner for Record.\n"
+"Switch to Recording/Timeshift Channel ?"
+msgstr "ERROR: No se puede encontrar un sintonizador libre para la grabación. \n"
+"Cambie a Grabación/Timeshift Canal?"
+
+msgid "Timer Record start !"
+msgstr "Temporizador de grabación comenzó!"
+
+msgid "stop"
+msgstr "Stop"
+
+msgid "Record"
+msgstr "Grabar"
+
+msgid "change"
+msgstr "Cambiar"
+
+msgid "add recording (stop after current event)"
+msgstr "Añadir grabación (parada después del evento actual)"
+
+msgid "add recording (indefinitely)"
+msgstr "Añadir grabación (Ilimitado)"
+
+msgid "add recording (enter duration)"
+msgstr "Añadir grabación (Introduzca duración)"
+
+msgid "Can't get EPG time or EPG endtime not ok"
+msgstr "No se puede obtener el tiempo EPG o la EPG Endtime es defectuoso."
+
+msgid "Record started"
+msgstr "Grabacion comenzada"
+
+msgid "undefined error"
+msgstr "!!! ERROR NO DEFINIDO !!!"
+
+msgid "Timer starttime or endtime not ok"
+msgstr "ERROR: Temporizador Inicio tiempo/Fin tiempo defectuosa"
+
+msgid "Timer endtime shorter than aktual time"
+msgstr "ERROR: Temporizador fin de tiempo en el pasado"
+
+msgid "Timer endtime shorter than start time"
+msgstr "ERROR: Establecer final antes de ajustar la hora de inicio"
+
+msgid "Timer service ID not ok"
+msgstr "ERROR: Servicio ID defectuosa"
+
+msgid "Timer transponder ID not ok"
+msgstr "ERROR: Transpondedor ID defectuoso"
+
+msgid "Timer conflicts with other timer\n"
+"Would you add the timer?"
+msgstr "Temporizador choca con un temporizador ajustado.\n"
+"¿Aún desea configurar el temporizador?"
+
+msgid "not started akttime higher than timer endtime"
+msgstr "ERROR: Evento no iniciado.Tiempo final ya pasado"
+
+msgid "EPG Scan activate standby?"
+msgstr "Exploración EPG está previsto que comience. Activar Reposo?"
+
+msgid "stopped from user"
+msgstr "Detenido Manualmente"
+
+msgid "once"
+msgstr "Una vez"
+
+msgid "repeate"
+msgstr "Repita"
+
+msgid "daily"
+msgstr "Diaria"
+
+msgid "weekly"
+msgstr "Semanal"
+
+msgid "workdays"
+msgstr "Los días de trabajo"
+
+msgid "rec"
+msgstr "Grabar"
+
+msgid "switch"
+msgstr "Zap a Canal"
+
+msgid "error"
+msgstr "!!! ERROR !!!"
+
+msgid "Really restore default settings ?"
+msgstr "¿Seguro de restaurar los ajustes de fabrica?"
+
+msgid "Receiver reboots now !!!"
+msgstr "Receptor se reiniciará ahora !!!"
+
+msgid "Can't restore settings"
+msgstr "ERROR: No se puede restaurar la configuración"
+
+msgid "Do you really want to erase all data and backups from Swap?\n"
+"The Box will reboot and the erase will be started!"
+msgstr "¿Realmente desea borrar todos los datos y copias de seguridad de Swap?\n"
+"El receptor se reiniciará y se ejecutará la eliminación!"
+
+msgid "Do you really want to erase Swap (Settings are preserve)?\n"
+"The Box will reboot and the erase will be started!"
+msgstr "¿Realmente desea borrar el Swap-sistema de archivos?\n"
+"Sus ajustes se conservan. Su receptor se reiniciará y borrar!"
+
+msgid "Restore default settings"
+msgstr "Restaurar la configuración de fábrica"
+
+msgid "Format MNT with Backup/Restore"
+msgstr "Sistema de archivos de formato MNT con un respaldo de los ajustes/restauración"
+
+msgid "Format MNT (all)"
+msgstr "Formato completo MNT Archivo sistema"
+
+msgid "Can't connect to server !"
+msgstr "ERROR: No se puede conectar con el servidor!"
+
+msgid "Send remote box into standby ?"
+msgstr "Establecer receptor remoto al modo de espera?"
+
+msgid "Connection to server lost !"
+msgstr "La conexión al servidor se ha perdido!"
+
+msgid "Found Pay Stream visit the official Website and Order this Stream and try this again !"
+msgstr "Encontrado corriente de pago, por favor visite el sitio web oficial, pedir este Stream y vuelve a intentarlo!"
+
+msgid "Sat/Provider: "
+msgstr "Satelite/Provider"
+
+msgid "Channel scan ended.\n"
+"Nothing found."
+msgstr "Exploración de canales completada. \ NNo se encontraron servicios."
+
+msgid "Channel scan ended."
+msgstr "Búsqueda de canales completada. \ NAhorra Canales utilizando teclas de colores que se muestran en su control remoto."
+
+msgid "All new channels added!"
+msgstr "Todos los nuevos canales añadidos!"
+
+msgid "Wait for channel scan end"
+msgstr "Por favor espere a que la exploración del canal para finalizar"
+
+msgid "Scan is not allowed if record or stream is running !"
+msgstr "ERROR: Exploracion no está permitido durante una grabación / corriente activa!"
+
+msgid "No Tuner configured"
+msgstr "ERROR: Tuner no Configurado!"
+
+msgid "Single Sat"
+msgstr "Unico Satelite"
+
+msgid "Multi Sat"
+msgstr "Multi Satelite"
+
+msgid "Auto Scan"
+msgstr "Exploracion automatica"
+
+msgid "Unchanged"
+msgstr "No cambie"
+
+msgid "Change to scart"
+msgstr "Cambiar a la salida SCART"
+
+msgid "Videomode must be 576i for Scart"
+msgstr "Videomodo debe ajustarse a 576i para la salida SCART"
+
+msgid "card present"
+msgstr "Smartcard encontrado"
+
+msgid "card not present"
+msgstr "Smartcard no econtrado"
+
+msgid "blue"
+msgstr "Azul"
+
+msgid "green"
+msgstr "Verde"
+
+msgid "red"
+msgstr "Rojo"
+
+msgid "lila"
+msgstr "purpura"
+
+msgid "Song TitleText"
+msgstr "Mostrar Título de la canción"
+
+msgid "imdb mvis (network/hdd)"
+msgstr "Fotos segundo plano IMDB (Red/disco duro)"
+
+msgid "BG-RUN"
+msgstr "Ejecutar en segundo plano"
+
+msgid "Script execute"
+msgstr "Ejecutar script"
+
+msgid "Timeshift is running !!!\n"
+"Stop it and switch ?"
+msgstr "Timeshift está ejecutando !!!\n"
+"Deje de Timeshift y cambiar de canal?"
+
+msgid "Can't find a Tuner.\n"
+"All Tuners in use or no Tuner defined."
+msgstr "No Sintonizador libre disponible.\n"
+"Todos los sintonizadores son en uso o sin sintonizador definido."
+
+msgid "Tuning to Channel failed!"
+msgstr "ERROR: Canal no disponible"
+
+msgid "Can't open frontend dev or Frontend Type unknown!"
+msgstr "ERROR: No se puede abrir DispositivoFrontend o\n"
+"Tipo Frontend es desconocido."
+
+msgid "Channellist empty or corrupt (channel not found)!"
+msgstr "ERROR: Lista de Canalest vacío o corrupto\n"
+"Canal no encontrado!"
+
+msgid "swts"
+msgstr "Stmdvb.ko carga con SWTS Opción"
+
+msgid "Cam Routing"
+msgstr "Stmdvb.ko carga con CamRouting Otion"
+
+msgid "Blue Key Action - Setup"
+msgstr "Azul Key - Configuración de Funciones"
+
+msgid "Choose your plugin / menu item from the following list and show it so the blue button"
+msgstr "Ajuste Función Botón Azul:\n"
+"Elija una función de la siguiente lista"
+
+msgid "Choose your Media plugin item from the following list and show it so the plugin button"
+msgstr "Elija una función de la lista siguiente para el botón de los medios de comunicación"
+
+msgid "Plugin Key Action - Setup"
+msgstr "Plugin key - Configuración"
+
+msgid "Choose your plugin / menu item from the following list and show it so the plugin button"
+msgstr "Elija una función de la lista siguiente para el botón Plugin"
+
+msgid "Red Key Action - Setup"
+msgstr "Rojo Key - Configuración"
+
+msgid "Choose your plugin / menu item from the following list and show it so the red button"
+msgstr "Ajuste Función Botón Rojo:\n"
+"Elija una función de la siguiente lista"
+
+msgid "border"
+msgstr "Borde"
+
+msgid "bar"
+msgstr "Barra"
+
+msgid "text"
+msgstr "Texto"
+
+msgid "picture"
+msgstr "Foto"
+
+msgid "yes (Text in %)"
+msgstr "Si (Texto en %)"
+
+msgid "yes (Text in MB)"
+msgstr "Si (Texto en MB)"
+
+msgid "press red"
+msgstr "Presione Boton Rojo"
+
+msgid "Receiver now reboot !!!"
+msgstr "Receptor se reiniciará ahora !!!"
+
+msgid "3D-Mode Settings"
+msgstr "3D Configuracion"
+
+msgid "About"
+msgstr "Acerca de titan"
+
+msgid "AC3 default"
+msgstr "Dolby Digital (AC3) como por defecto"
+
+msgid "AC3 Mode"
+msgstr "Dolby Digital (AC3) modo"
+
+msgid "Actors"
+msgstr "Actores:"
+
+msgid "Adapter Settings"
+msgstr "LAN Interface configuracion"
+
+msgid "ADD ALL"
+msgstr "Añadir todos los canales"
+
+msgid "ADD BOUQUET"
+msgstr "Añadir Favoritos"
+
+msgid "ADD ONE"
+msgstr "Añadir individual"
+
+msgid "add service"
+msgstr "Añadir servicio"
+
+msgid "Adjust"
+msgstr "Sistema ajustes"
+
+msgid "After the manual search, you have to if they want to save all the sender to save the search with the green button. To add a station manually have to select the sender in the right box and then save it with the red button that station. If you do not do this and go to exit out the search not saved."
+msgstr "Después de preformación una búsqueda manual, pulse el Botón verde para guardar todos los canales encontrados. Para agregar un canal manualmente, seleccione el canal de la derecha y pulse button- -Rojo para guardarlo de forma individual.\n"
+"Salir no guarda nada!"
+
+msgid "After Timeshift"
+msgstr "Acción después de Timeshift"
+
+msgid "Age Protect"
+msgstr "Protección de Edad"
+
+msgid "Aktion after"
+msgstr "Acción después de la grabación"
+
+msgid "ALL"
+msgstr "Todo"
+
+msgid "Atemio (hotline)"
+msgstr "Atemio (Hotline)"
+
+msgid "Audio/Subt."
+msgstr "Audio/Subtitulos"
+
+msgid "Audio Tracks"
+msgstr "Elegir Audio Canal"
+
+msgid "Autocheck cam can decrypt"
+msgstr "Compruebe automáticamente si su módulo CI puede descifrar"
+
+msgid "Automatic start last subtitle"
+msgstr "Auto iniciar ultimo Subtítulo"
+
+msgid "Autostart - Audio / Video / Sat"
+msgstr "Audio/Video/Satelite"
+
+msgid "Autostart - Cam / Emu"
+msgstr "Softcam"
+
+msgid "Autostart - Child safety"
+msgstr "Protección Edad"
+
+msgid "Autostart Default"
+msgstr "Configuracion de Fabrica"
+
+msgid "Autostart - Network"
+msgstr "Red"
+
+msgid "Autostart Settings"
+msgstr "Autoiniciar"
+
+msgid "Autostart - Usb Device"
+msgstr "USB Dispositivo"
+
+msgid "A/V Settings"
+msgstr "Audio/Video Ajustes"
+
+msgid "Before you can see Signal/SNR/Ber you must zap to a channel of the satellite you are searching."
+msgstr "Antes de que pueda ver los valores de señal/SNR/BER debe cambiar a un canal del satélite que está buscando."
+
+msgid "Behavior at recording"
+msgstr "Lo que hay que mostrar durante Grabaciones"
+
+msgid "Blindscan Adjust"
+msgstr "Ajuste"
+
+msgid "Blindscan Settings"
+msgstr "Exploracion Ciega"
+
+msgid "Bouquet List"
+msgstr "Favoritos"
+
+msgid "Bouquet Type"
+msgstr "Tipo"
+
+msgid "cancel"
+msgstr "Cancelar"
+
+msgid "Change Channelname"
+msgstr "Actualizacion nombre de canal"
+
+msgid "Change Feed"
+msgstr "Añadir/Cambiar fuente Direccion"
+
+msgid "Clear before scan"
+msgstr "Limpiar antes de buscar?"
+
+msgid "CLEAR INPUT"
+msgstr "Borrar entrada"
+
+msgid "Code1"
+msgstr "Codigo 1: "
+
+msgid "Code2"
+msgstr "Codigo 2: "
+
+msgid "Color Format Scart / Composite"
+msgstr "Color Formato SCART / Compuesto"
+
+msgid "Common Interface"
+msgstr "CI-Modulo"
+
+msgid "copy service"
+msgstr "Copiar servicios a Favoritos"
+
+msgid "Create Default Favorites"
+msgstr "Crear favoritos predeterminados"
+
+msgid "Create Record Picture"
+msgstr "Crear Grabar Previo"
+
+msgid "Create Thumb Picture"
+msgstr "Crear miniaturas"
+
+msgid "Debug Modus"
+msgstr "Debug Modo"
+
+msgid "DEFAULT"
+msgstr "Defecto"
+
+msgid "Del EPG before scan"
+msgstr "Eliminar EPG antes del escaneo"
+
+msgid "Delete EPG after read"
+msgstr "Eliminar archivo EPG después de la carga"
+
+msgid "del startchannel"
+msgstr "Eliminar inicio de canal"
+
+msgid "DESC"
+msgstr "Descripcion"
+
+msgid "Diseqc Command Order"
+msgstr "Para comandos de DiSEqC"
+
+msgid "Diseqc repeats"
+msgstr "DiSEqC Repeticiones"
+
+msgid "diseqcscreen"
+msgstr "DiSEqC"
+
+msgid "Diseqc Settings"
+msgstr "DiSEqC"
+
+msgid "dnsserver 1"
+msgstr "DNS-Servidor 1"
+
+msgid "dnsserver 2"
+msgstr "DNS-Servidor 2"
+
+msgid "Dutch"
+msgstr "Holandes"
+
+msgid "DYNDNS Settings"
+msgstr "DYNDNS"
+
+msgid "EDIT LNB / UNICABLE"
+msgstr "Configurar LNB/Unicable"
+
+msgid "EDIT MOTOR"
+msgstr "Configurar Motor Sistema"
+
+msgid "EDIT TUNER"
+msgstr "Configurar Tuner"
+
+msgid "Epgfreespace (KB)"
+msgstr "Memoria disponible libre (KB)"
+
+msgid "Epg List Mode"
+msgstr "Exploracion en segundo plano"
+
+msgid "EPG Path"
+msgstr "Ruta de almacenamiento"
+
+msgid "Epg Refresh Time"
+msgstr "Tiempo de Recarga"
+
+msgid "EPG Save Mode"
+msgstr "Archivar archivo EPG"
+
+msgid "EPG Search"
+msgstr "Buscar"
+
+msgid "EPG Settings"
+msgstr "EPG"
+
+msgid "EPG SHORT VIEW"
+msgstr "EPG vista Corto"
+
+msgid "Ext. Modul detect (needs reboot)"
+msgstr "Ext. Detección Modulo (necesario reiniciar)"
+
+msgid "Fav"
+msgstr "Favoritos"
+
+msgid "FEC"
+msgstr "Adelante Error Correccion (FEC)"
+
+msgid "FEC:"
+msgstr "FEC: "
+
+msgid "Fix Shutdown Time"
+msgstr "Fijo tiempo de apagado"
+
+msgid "Flash: Flash range is deleted after update, mnt: flash range to permanently update available, swap: USB medium permanently"
+msgstr "MNT: Instalación de memoria interna:. Suprimido por Flash USB.\n"
+"FLASH: Instalación de memoria interna:. Eliminados en la próxima Actualizacion en linea. \n"
+"SWAP: Instalación de USB Stick/Disco duro: No eliminacion en Actualización de software."
+
+msgid "Flashupdate (online)"
+msgstr "Actualización de software (en línea)"
+
+msgid "Flashupdate (tmp)"
+msgstr "Actualizacion de software (Local)"
+
+msgid "Format HDD"
+msgstr "Formato Dispositivo"
+
+msgid "free space"
+msgstr "Espacion Libre disponible"
+
+msgid "French"
+msgstr "Frances"
+
+msgid "Frequency"
+msgstr "Frecuencia"
+
+msgid "Frequency:"
+msgstr "Frecuencia: "
+
+msgid "gateway"
+msgstr "Puerta de Enlace"
+
+msgid "German"
+msgstr "Alemán"
+
+msgid "Go to startpos"
+msgstr "Ir a Posicion de inicio"
+
+msgid "Graph. EPG"
+msgstr "Graphical EPG"
+
+msgid "Graphic EPG"
+msgstr "Graphical EPG"
+
+msgid "Graphic EPG Picon"
+msgstr "Graphical EPG Picon"
+
+msgid "Graphic EPG Zoom"
+msgstr "Factor de zoom para Graphical EPG"
+
+msgid "Greek"
+msgstr "Griego"
+
+msgid "GUI Restart"
+msgstr "Reiniciar Titan"
+
+msgid "Here they can do for your chosen tuner to lnb settings."
+msgstr "Aquí usted puede configurar su LNB (s) para el sintonizador seleccionado"
+
+msgid "Here to select your remote Model"
+msgstr "Aquí usted puede seleccionar el modelo de su mando a distancia y confirme pulsando -OK-"
+
+msgid "Here you can assign channels for their ci modules."
+msgstr "Aquí podrá poner canales de configuración para el módulo CI adjunto (s)."
+
+msgid "Here you can backup and restore your settings."
+msgstr "Aquí usted puede copias de seguridad y restaurar la configuración."
+
+msgid "Here you can check the reception of the current station."
+msgstr "Aquí usted puede ver los valores de recepción del canal sintonizado en su tuner"
+
+msgid "Here you can choose to configure your tuner. For your channel search, you must edit their tuner and adjust depending on the connection. For engine systems require an additional engine settings making."
+msgstr "Aquí usted puede configurar el sintonizador. Editar las configuraciones satisfaciendo su sintonizador y de tipo de conexión. Para los sistemas motorizados configuran a la habitación su Entorno 'Sistemas motorizados."
+
+msgid "Here you can configure access to your DynDNS."
+msgstr "Aquí usted puede configurar su servicio DNS."
+
+msgid "Here you can configure Ci-Modules."
+msgstr "Aquí usted puede configurar el módulo (s) CI."
+
+msgid "Here you can configure the smartcard readers."
+msgstr "Aquí usted puede configurar su lector de tarjetas inteligentes (s)."
+
+msgid "Here you can configure your web server."
+msgstr "Aquí usted puede configurar su servidor web."
+
+msgid "Here you can create a new record timer."
+msgstr "Aquí usted puede configurar un nuevo temporizador para un evento de grabación."
+
+msgid "Here you can do a blind scan, this process takes a long time."
+msgstr "Aquí puede realizar una búsqueda ciega. La búsqueda ciega requiere mucho tiempo!"
+
+msgid "Here you can edit the following channels from the EPG."
+msgstr "Aquí usted puede editar los canales de EPG"
+
+msgid "Here you can install from our current online offering plug-ins."
+msgstr "Aquí usted puede instalar plugins / Extebsions de nuestra oferta en línea."
+
+msgid "Here you can in your EPG entries for specific search. Use to start a color button to search."
+msgstr "Aquí usted puede buscar entradas específicas con la EPG. \ NUtilice un botón de color para iniciar la búsqueda."
+
+msgid "Here you can make for your selected network interface settings."
+msgstr "Aquí usted puede configurar su interfaz de red."
+
+msgid "Here you can make for your wireless network settings. 1. Use Search button and select Your SSID (apoint / router) and Press ok 2. Make settings Type / Key confirm with ok and Note the following instructions 3. Disable Lan Yes, Activate Wlan Yes and use DHCP for easy setup."
+msgstr "Aquí usted puede configurar la red inalámbrica (WLAN).\n"
+"1. Iniciar búsqueda, seleccione SSID y pulse -OK-\n"
+"2. Elija el tipo de cifrado, escriba la frase de contraseña, confirme con -OK-\n"
+"3. Discapacitado Lan. Activar WLAN. Usar DHCP para facilitar o estática para la configuración manual."
+
+msgid "Here you can make your adjust settings."
+msgstr "Aquí usted puede personalizar ajustando los ajustes .."
+
+msgid "Here you can make your audio/video autostart settings."
+msgstr "Aquí usted puede personalizar su inicio automático de audio/video."
+
+msgid "Here you can make your cam/emu autostart settings."
+msgstr "Aquí usted puede personalizar su auto-inicio Softcam."
+
+msgid "Here you can make your default autostart settings."
+msgstr "Aquí usted puede personalizar su arranque automático por defecto."
+
+msgid "Here you can make your epg settings."
+msgstr "Aquí usted puede personalizar su configuración EPG."
+
+msgid "Here you can make your mediadb settings."
+msgstr "Aquí usted puede personalizar su configuración MediaDB."
+
+msgid "Here you can make your module settings."
+msgstr "Aquí usted puede personalizar su módulo CI (s) de configuración."
+
+msgid "Here you can make your network autostart settings."
+msgstr "Aquí usted puede personalizar su configuración de inicio automático de red."
+
+msgid "Here you can make your Overclocking settings."
+msgstr "Aquí usted puede personalizar su configuración de overclocking."
+
+msgid "Here you can make your picture and sound settings."
+msgstr "Aquí usted puede personalizar su imagen y la configuración de sonido."
+
+msgid "Here you can make your PIN security for menus settings."
+msgstr "Aquí usted puede personalizar su configuración de protección PIN Menú."
+
+msgid "Here you can make your PIN security settings."
+msgstr "Aquí usted puede personalizar su configuración de protección PIN."
+
+msgid "Here you can make your recording timer configuration."
+msgstr "Aquí usted puede personalizar su configuración del temporizador de grabación."
+
+msgid "Here you can make your recordpath settings."
+msgstr "Aquí usted puede personalizar un camino para las grabaciones con temporizador."
+
+msgid "Here you can make your safety child autostart settings."
+msgstr "Aquí usted puede personalizar su configuración de seguridad para niños."
+
+msgid "Here you can make your screensaver settings."
+msgstr "Aquí usted puede personalizar su configuración de pantalla."
+
+msgid "Here you can make your settings for your engine systems. To enter the latitude and longitude using the number keys."
+msgstr "Aquí puede configurar los ajustes del sistema motorizados.\n"
+"\n"
+"Navegar con la unidad de control remoto y las teclas se muestran a continuación"
+
+msgid "Here you can make your timeshift settings."
+msgstr "Aquí usted puede personalizar su configuración timeshift."
+
+msgid "Here you can make your usb autostart settings."
+msgstr "Aquí usted puede personalizar su configuración de inicio automático USB."
+
+msgid "Here you can make your vfd settings."
+msgstr "Aquí usted puede personalizar su configuración VFD."
+
+msgid "Here you can manage your Ci-Modul or Card Infos."
+msgstr "Aquí usted puede configurar el módulo (s).\n"
+"\n"
+"Para más detalles por favor refere a su documentación del módulo."
+
+msgid "Here you can select from the following list."
+msgstr "Por favor, seleccione de la siguiente lista:"
+
+msgid "Here you can select from the following list a skin."
+msgstr "Por favor, seleccione una piel de la siguiente lista:"
+
+msgid "Here you can select the Transponder Mode. Please use a channel search after the Restart"
+msgstr "Aquí usted puede personalizar su configuración de transpondedor.\n"
+"Tendrá que realizar una exploración después del reinicio."
+
+msgid "Here you can select your hard disks and USB flash drives for configuration."
+msgstr "Aquí usted puede elegir los dispositivos de disco duro y USB para configuración."
+
+msgid "Here you can select your Network Interface."
+msgstr "Aquí usted puede personalizar su configuración de red."
+
+msgid "Here you can set for your cable tuner. Ask your cable provider and make you connect an automatic search."
+msgstr "Aquí usted puede configurar el sintonizador de cable y realice una búsqueda de canales."
+
+msgid "Here you can set for your Hyprid tuner. Choose the Tuner mode they want to use."
+msgstr "Aquí usted puede personalizar su configuración de sintonizador híbrido."
+
+msgid "Here you can set for your satellite tuner. First, make your satellite selection. When using DiSEqC They also point to the port used. For advanced Lnb / Unicam navigate to the field and press the Red button."
+msgstr "Aquí usted puede configurar el sintonizador de satélite.\n"
+"Seleccione el satélite (s) en primer lugar. Para Satélites multilínea con conmutadores DiSEqC configurar el puerto correcto. Ir a la LNB avanzada/ajustes Unicable pulse el \n"
+"-Boton Rojo- si quieres configurarlo."
+
+msgid "Here you can set for your terrestrial tuner. Activate the terrestrial tuner and do you connect an automatic search."
+msgstr "Aquí puede activar y configurar el sintonizador terrestre. Después de que se puede realizar una búsqueda de canales automática."
+
+msgid "Here you can set your Channel search options. Very important, before you start looking for a channel must be set to its tuner tuner settings."
+msgstr "Aquí usted puede personalizar su configuración de búsqueda de canales. \n"
+"Para realizar una búsqueda de canales asegúrese de haber configurado correctamente los ajustes del sintonizador."
+
+msgid "Here you can set your language."
+msgstr "Aquí usted puede configurar el idioma."
+
+msgid "Here you can set your timezone."
+msgstr "Aquí usted puede configurar su zona horaria."
+
+msgid "Here you can start and manage your additional plug-ins."
+msgstr "Aquí usted puede iniciar y administrar las extensiones instaladas."
+
+msgid "Here you can test your network."
+msgstr "Aquí usted puede probar la configuración de red."
+
+msgid "Here you can view the current channel information."
+msgstr "Aquí usted puede ver la información del canal sintonizador."
+
+msgid "HOSTNAME"
+msgstr "Hostname"
+
+msgid "How many days"
+msgstr "Días de almacenamiento EPG por adelantado"
+
+msgid "HTTPD Port"
+msgstr "Webservidor Puerto"
+
+msgid "HTTP Settings"
+msgstr "Webinterface y Reinicio GUI"
+
+msgid "Inc. AC3 Audio in %"
+msgstr "Conoce AC3 Audio Volumen reduciendo Stereo-audio en%"
+
+msgid "internet"
+msgstr "Internet"
+
+msgid "Inversion:"
+msgstr "Inversión: "
+
+msgid "Italian"
+msgstr "Italiano"
+
+msgid "lan"
+msgstr "LAN"
+
+msgid "LED - brightness running"
+msgstr "LED - Brillo mientras se ejecuta"
+
+msgid "LED - brightness standby"
+msgstr "LED - Brillo en modo de espera"
+
+msgid "Listbox Select"
+msgstr "Establecer tipo de Cursor"
+
+msgid "Listbox Select Color"
+msgstr "Establecer Listbox color"
+
+msgid "LOG"
+msgstr "Log"
+
+msgid "Manual Search Cable"
+msgstr "Búsqueda cable Manual"
+
+msgid "Manual Search Terrestrial"
+msgstr "Búsqueda Manual terrestre"
+
+msgid "Maximal frequency"
+msgstr "Maxima Frecuencia"
+
+msgid "Maximal signalrate"
+msgstr "Velocidad máxima de la señal"
+
+msgid "MENU"
+msgstr "Menu"
+
+msgid "Menu Protect"
+msgstr "Proteja Menú"
+
+msgid "MENUPROTECT"
+msgstr "Protección Menú"
+
+msgid "Minimal frequency"
+msgstr "Minima Frecuencia"
+
+msgid "Minimal signalrate"
+msgstr "Tasa mínima de señal"
+
+msgid "Minutes:"
+msgstr "Minutos: "
+
+msgid "Modulation:"
+msgstr "Modulacion: "
+
+msgid "Module Config"
+msgstr "Modulo(s)"
+
+msgid "Mounts"
+msgstr "Dispositivos Montados"
+
+msgid "move service"
+msgstr "Mover servicios"
+
+msgid "Moviepath"
+msgstr "Ruta a Peliculas"
+
+msgid "MTD"
+msgstr "Dispositivo Tecnología de memoria (MTD)"
+
+msgid "Name:"
+msgstr "Nombre: "
+
+msgid "netmask"
+msgstr "Máscara de Red"
+
+msgid "Network Adapter Settings"
+msgstr "Red"
+
+msgid "Network Adapter Test"
+msgstr "Prueba"
+
+msgid "Networkbrowser"
+msgstr "Navegador de red"
+
+msgid "Network Interfacelist"
+msgstr "Interface(s)"
+
+msgid "Network Restart"
+msgstr "Reiniciar"
+
+msgid "Network Scan"
+msgstr "Buscar Red"
+
+msgid "Network Test"
+msgstr "Prueba de Conexion"
+
+msgid "Nfs Server Settings"
+msgstr "NFS Servidor Ajustes"
+
+msgid "Normal/Standby"
+msgstr "En operacion/Reposo"
+
+msgid "ONID:"
+msgstr "ONID: "
+
+msgid "Only default FEC"
+msgstr "Sólo uso predeterminado FEC"
+
+msgid "Only default signalrate"
+msgstr "Sólo uso la tasa de señal por defecto"
+
+msgid "Only DVBS"
+msgstr "Sólo DVB-S Servicios"
+
+msgid "Only free scan"
+msgstr "Solo Servicios FTA"
+
+msgid "Orbital Position:"
+msgstr "Posicion Orbital: "
+
+msgid "OSD Bottom Overscan"
+msgstr "Reducir el tamaño del OSD inferior"
+
+msgid "OSD Left Overscan"
+msgstr "Reducir el tamaño del OSD a la izquierda"
+
+msgid "OSD Right Overscan"
+msgstr "Reducir el tamaño del OSD derecho"
+
+msgid "OSD Top Overscan"
+msgstr "Reducir el tamaño de la parte superior OSD"
+
+msgid "OSD Transparent"
+msgstr "máxima transparencia OSD"
+
+msgid "Overclocking Settings"
+msgstr "Overclocking"
+
+msgid "PCR PID:"
+msgstr "PCR PID: "
+
+msgid "Picture"
+msgstr "Foto"
+
+msgid "Pilot"
+msgstr "Piloto (ajustado a On para HD)"
+
+msgid "Pilot:"
+msgstr "Piloto: "
+
+msgid "PIN:"
+msgstr "PIN: "
+
+msgid "Pin Code"
+msgstr "PIN Codigo"
+
+msgid "Pin Code Channel"
+msgstr "Canal de bloqueo con PIN"
+
+msgid "Pin Code menu"
+msgstr "Bloqueo de menú con PIN"
+
+msgid "PIN Settings"
+msgstr "PIN Ajustes"
+
+msgid "PLAY"
+msgstr "Play"
+
+msgid "Playbackbuffer Size"
+msgstr "Buffer de playback Tamaño (http) Streams"
+
+msgid "PlayList"
+msgstr "Playlist"
+
+msgid "Plugin Button"
+msgstr "Extensiones Botones"
+
+msgid "Plugins"
+msgstr "Extensiones"
+
+msgid "PMT PID:"
+msgstr "PMT PID: "
+
+msgid "Polarization:"
+msgstr "Polarizacion: "
+
+msgid "Polish"
+msgstr "Polonia"
+
+msgid "Poweroff Timer"
+msgstr "Apagado temporizado"
+
+msgid "Program Info"
+msgstr "Informacion de programa"
+
+msgid "Protect Channel"
+msgstr "Bloqueo de canal con PIN"
+
+msgid "Protect Channel Freetime (min)"
+msgstr "Tiempo para la protección del Canal para desactivar (Min)"
+
+msgid "Protect Menu"
+msgstr "Bloqueo de menú con PIN"
+
+msgid "protect service"
+msgstr "Bloqueo de servicio con PIN"
+
+msgid "Prov"
+msgstr "Provider"
+
+msgid "Provider:"
+msgstr "Provider: "
+
+msgid "Prozesslist"
+msgstr "Lista de Procesos"
+
+msgid "Ram"
+msgstr "RAM"
+
+msgid "Receiver unlock"
+msgstr "desbloquear receptor"
+
+msgid "Recordlist"
+msgstr "Lista de grabaciones"
+
+msgid "Record path"
+msgstr "Ruta Para Grabaciones"
+
+msgid "Record Path"
+msgstr "Ruta Para Grabaciones"
+
+msgid "Record Path settings"
+msgstr "Ruta Para Grabaciones"
+
+msgid "RELOAD"
+msgstr "Recargar"
+
+msgid "Remove emthy Bouquet"
+msgstr "Retire favoritos vacíos"
+
+msgid "REMOVE ENTRY"
+msgstr "Eliminar entrada"
+
+msgid "remove service"
+msgstr "Eliminar de los favoritos"
+
+msgid "Remove unused Channels in Bouquets"
+msgstr "Retire Canales no utilizados de favoritos"
+
+msgid "rename service"
+msgstr "Cambiar el nombre del canal"
+
+msgid "Repeate"
+msgstr "Repita"
+
+msgid "Repeate type"
+msgstr "modo de repetición"
+
+msgid "RESET"
+msgstr "Restablecer"
+
+msgid "Resolution:"
+msgstr "Resolucion: "
+
+msgid "Rolloff:"
+msgstr "Rolloff: "
+
+msgid "Rotor Settings"
+msgstr "Motor"
+
+msgid "Russian"
+msgstr "Rusia"
+
+msgid "Sat Config"
+msgstr "Satelite(s)"
+
+msgid "SATCR Frequency"
+msgstr "SatCR Frecuencia"
+
+msgid "SATCR Number"
+msgstr "SatCR Numero"
+
+msgid "Satfinder"
+msgstr "Meter"
+
+msgid "Sat Finder"
+msgstr "Meter"
+
+msgid "SAVETRANSPONDER"
+msgstr "Guarda Transpondedor"
+
+msgid "Scan Config"
+msgstr "Configuracion para exploracion"
+
+msgid "ScanList"
+msgstr "Lista de Exploracion"
+
+msgid "Scan locking"
+msgstr "Lock Scan"
+
+msgid "SCANSTART"
+msgstr "Inicio de exploracion"
+
+msgid "screensaver"
+msgstr "Protector de Pantalla"
+
+msgid "Screensaver Adjust"
+msgstr "Protector de Pantalla"
+
+msgid "screensaver background"
+msgstr "Segundo Plano"
+
+msgid "screensaver delay"
+msgstr "Retraso"
+
+msgid "screensaver interval"
+msgstr "Intervalo"
+
+msgid "screensaver pic"
+msgstr "Foto"
+
+msgid "screensaver type"
+msgstr "Tipo"
+
+msgid "Select backup:"
+msgstr "Seleccionar backup: "
+
+msgid "SEND"
+msgstr "Enviar"
+
+msgid "Send all CAID to modules"
+msgstr "Enviar todos caids a módulos"
+
+msgid "Service"
+msgstr "Canal"
+
+msgid "Serviceinfo"
+msgstr "Informacion Canal"
+
+msgid "set startchannel"
+msgstr "Establecer como inicio canal"
+
+msgid "Show HDD freesize"
+msgstr "Mostrar el espacio libre de disco duro?"
+
+msgid "Show in Standby"
+msgstr "Mostrar en modo de espera?"
+
+msgid "Show in VFD"
+msgstr "Mostrar en VF-Display"
+
+msgid "Show Modules"
+msgstr "Mostrar CI Detalles Módulo?"
+
+msgid "SID:"
+msgstr "SID: "
+
+msgid "Signal:"
+msgstr "Señal: "
+
+msgid "Skin"
+msgstr "Seleccionar Skin"
+
+msgid "Skin Adjust"
+msgstr "Ajustes de Skin"
+
+msgid "Skin Select"
+msgstr "Seleccion de Skin"
+
+msgid "Skip privat CA descriptor"
+msgstr "Saltar considerado CA descriptor"
+
+msgid "SNR:"
+msgstr "SNR: "
+
+msgid "Softcam Selection"
+msgstr "Softcam seleccion: "
+
+msgid "sort service"
+msgstr "Ordenar Favoritos"
+
+msgid "SSID"
+msgstr "SSID: "
+
+msgid "stable"
+msgstr "Nocturno-Img"
+
+msgid "Standby Brightness"
+msgstr "Brillo en modo de espera"
+
+msgid "StandBy Mode"
+msgstr "Modo de espera"
+
+msgid "Standby / Poweroff"
+msgstr "Reinicio/Apagado"
+
+msgid "Start HTTPD"
+msgstr "Inicio Webserver"
+
+msgid "Step frequency"
+msgstr "paso de frecuencia"
+
+msgid "Step signalrate"
+msgstr "Paso de tasa de señal"
+
+msgid "STOP/START"
+msgstr "Stop/Start"
+
+msgid "Storage position"
+msgstr "guardado Posición"
+
+msgid "Stream Path"
+msgstr "Ruta para Stream"
+
+msgid "Subservices"
+msgstr "Subcanales"
+
+msgid "Symbol rate:"
+msgstr "Symbolrate: "
+
+msgid "Sysinfo"
+msgstr "Informacion Sistema"
+
+msgid "System:"
+msgstr "Sistema: "
+
+msgid "System - Flashupdate (online)"
+msgstr "Firmwareactualizar (Online)"
+
+msgid "System - Flashupdate (tmp)"
+msgstr "Firmwareactualizar (tmp)"
+
+msgid "System Info"
+msgstr "Informacion Sistema"
+
+msgid "System - Usbupdate (online)"
+msgstr "USB Actualizar (online)"
+
+msgid "System - Usbupdate (tmp)"
+msgstr "USB Actualizar (tmp)"
+
+msgid "TEST"
+msgstr "Prueba"
+
+msgid "thereafter on this Channel:"
+msgstr "Lo siguiente en este canal:"
+
+msgid "Timeshift Settings"
+msgstr "Timeshift"
+
+msgid "Timeshifttype"
+msgstr "Timeshift Metodo"
+
+msgid "--- Time to switch"
+msgstr "--- Tiempo de cambio de canal"
+
+msgid "TITLE"
+msgstr "Titulo"
+
+msgid "Top"
+msgstr "Top (Procesos)"
+
+msgid "TPK install (online)"
+msgstr "Instalar (Online)"
+
+msgid "Tpk Install - select install medium"
+msgstr "Instalar - Seleccionar Medio"
+
+msgid "TPK media (media)"
+msgstr "Instalar (Local)"
+
+msgid "TPK remove"
+msgstr "Eliminar"
+
+msgid "TPK tmp (tmp)"
+msgstr "Instalar (tmp)"
+
+msgid "TPK upgrade (online)"
+msgstr "Actualizar (Online)"
+
+msgid "Transmission:"
+msgstr "Transmision: "
+
+msgid "TRANSPONDEREDIT"
+msgstr "Transpondedor Editar"
+
+msgid "TSID:"
+msgstr "TSID: "
+
+msgid "Tuner:"
+msgstr "Tuner: "
+
+msgid "Tunerconfig"
+msgstr "Tuner"
+
+msgid "Tuner Configuration"
+msgstr "Configuracion"
+
+msgid "Tuner List"
+msgstr "Lista"
+
+msgid "Tuner Reception"
+msgstr "Recepcion"
+
+msgid "TV Resolution (h):"
+msgstr "TV Resolucion (h): "
+
+msgid "TV Resolution (w):"
+msgstr "TV Resolucion (w): "
+
+msgid "TXT PID:"
+msgstr "TXT PID: "
+
+msgid "Type:"
+msgstr "Tipo: "
+
+msgid "UNC:"
+msgstr "UNC: "
+
+msgid "Uncommitted Diseqc command"
+msgstr "Comando DiSEqC no confirmado"
+
+msgid "UNLOAD"
+msgstr "Descargue"
+
+msgid "Usbupdate (online)"
+msgstr "USB Actualizar (online)"
+
+msgid "Usbupdate (tmp)"
+msgstr "USB Actualizar (tmp)"
+
+msgid "VFDisplay"
+msgstr "VF-Display"
+
+msgid "Video"
+msgstr "Peliculas"
+
+msgid "VideoMode Aspect Settings"
+msgstr "Video Modo Aspecto Ajustes"
+
+msgid "VideoMode Resolution Settings"
+msgstr "Resolucion"
+
+msgid "VideoMode Settings"
+msgstr "Ajustes"
+
+msgid "Video PID:"
+msgstr "Video PID: "
+
+msgid "Vietnamese"
+msgstr "Vietnan"
+
+msgid "Vol off"
+msgstr "Volumen off"
+
+msgid "Wait for cam ready"
+msgstr "Espere a que la CAM esté listo"
+
+msgid "WLAN Settings"
+msgstr "WLAN"
+
+msgid "Writer"
+msgstr "Autor"
+
+msgid "No skinconfig found in skin.\n"
+"Can't change to selected skin."
+msgstr "No se encuentra en la piel seleccionada skinconfig.\n"
+"no se puede cambiar a la piel seleccionada."
+
+msgid "Download finished!"
+msgstr "Descargar terminado!"
+
+msgid "started"
+msgstr "Comanzando"
+
+msgid "active"
+msgstr "activo"
+
+msgid "Emu not found"
+msgstr "Softcam no encontrado"
+
+msgid "Softcam selection:"
+msgstr "Softcam seleccion: "
+
+msgid "Reader Config Plugin not installed !"
+msgstr "Lector Config Plugin no instalado!"
+
+msgid "This file doesn't exist, or has been removed"
+msgstr "El archivo designado no existe, o se ha eliminado"
+
+msgid "Detect hanging System !!!\n"
+"\n"
+"KILL = Red\n"
+"BOOT = Green"
+msgstr "Detectar colgando Sistema !!!\n"
+"\ nRojo = kill del Proceso\n"
+"Verde = Reiniciar Sistema"
+
+msgid "KILL"
+msgstr "Rojo"
+
+msgid "BOOT"
+msgstr "Verde"
+
+msgid "You have executed a defined period of no function.\n"
+"\n"
+"Stop the box??? "
+msgstr "Ha establecido un período de inactividad y apagado.\n"
+"\n"
+"¿Quieres que el receptor se apague?"
+
+msgid "Backup to /tmp or /var/backup. If the free memory too small can a usb device will never use.\n"
+"There must be a folder backup."
+msgstr "Copia de seguridad en /tmp o /var/ backup. Si no hay espacio suficiente, se puede utilizar una tarjeta de disco duro/USB stick.\n"
+"Una carpeta llamada copia de seguridad debe existir."
+
+msgid "Press -restore- and your saved settings will be restored from your swapstick / recording hdd! The Box will restart automatically for restoring!\n"
+"\n"
+"Press -backup- to save your actual settings to swapstick / recording hdd.\n"
+"WARNING: The old backup will be deleted!"
+msgstr "-Restaurar- (Rojo):\n"
+" Sus configuración previamente guardada se restaurarán desde su USB stick/disco duro! El receptor se reiniciará automáticamente para restaurar! \n"
+"\ n-Backup- (Verde):\n"
+"Sus ajustes se guardan en su USB-stick/disco duro.\n"
+"ADVERTENCIA: las copias de seguridad antiguas se sobrescribirán \n"
+"\n"
+"-Log- (Amarillo):\n"
+"Compruebe resultado la restauración, archivo de registro de vista."
+
+msgid "Are you sure you want to restore settings?\n"
+"\n"
+"OK = start restore\n"
+"EXIT = abort restore"
+msgstr "¿Seguro que desea restaurar la configuración?\n"
+"\n"
+"= OK comienzan restauracion\n"
+"=SALIR abortan restaurar"
+
+msgid "Please wait ...\n"
+"\n"
+"All Settings are restored.\n"
+"\n"
+"Box will start in few seconds."
+msgstr "Por favor, espere ...\n"
+"\n"
+"Todos los ajustes se restaurarán.\n"
+"\n"
+"Receptor se reiniciará en unos segundos."
+
+msgid "Update Plugins to new Version?"
+msgstr "Actualización de las extensiones a la nueva versión?"
+
+msgid "RESTORE ERROR"
+msgstr "!!! RESTAURAR ERROR !!!"
+
+msgid "No backup folders found!!!\n"
+"\n"
+"Aborting restoring..."
+msgstr "No carpeta 'backup' encontrado!\n"
+"\n"
+"Abortar restaurar ..."
+
+msgid "BACKUP ERROR"
+msgstr "!!! BACKUP ERROR !!!"
+
+msgid "A record hdd or a swapstick must be mounted!\n"
+"\n"
+"Aborting backup..."
+msgstr "! Se debe montar un disco duro o PenDrive\n"
+" \n"
+"Interrumpir copia de seguridad"
+
+msgid "BACKUP LOG"
+msgstr "Backup Log"
+
+msgid "Free Space"
+msgstr "Espacion Libre disponible"
+
+msgid "CPU info"
+msgstr "CPU Informacion"
+
+msgid "Memory info"
+msgstr "Memoria Informacion"
+
+msgid "MTD info"
+msgstr "MTD Informacion"
+
+msgid "Module info"
+msgstr "Modulo Informacion"
+
+msgid "Swap info"
+msgstr "Sistema Informacion"
+
+msgid "Top Info"
+msgstr "Top Informacion"
+
+msgid "Prozess Info"
+msgstr "Process Information"
+
+msgid "USB Info"
+msgstr "USB Informacion"
+
+msgid "unstable"
+msgstr "svn-beta"
+
+msgid "starting Full Update ?"
+msgstr "Iniciar actualización completa?"
+
+msgid "starting Full Update (from backup) ?"
+msgstr "Iniciar actualización completa de una copia de seguridad?"
+
+msgid "Error file not supported"
+msgstr "ERROR: Tipo de archivo no soportado"
+
+msgid "Can't start system update\n"
+"Syntax Error on updatefile"
+msgstr "ERROR: No se puede iniciar Sistema Actualizacion! Archivo Corrupto!"
+
+msgid "Should Timeshift File deleted ?"
+msgstr "Eliminar archivo Timeshift?"
+
+msgid "Timeshift file to short\n"
+"please wait a little and try again"
+msgstr "Archivo Timeshift a corto \ nPor favor, espere un poco y vuelva a intentarlo"
+
+msgid "Can't start timeshift play !"
+msgstr "No se puede iniciar la reproducción diferida!"
+
+msgid "Timeshiftsettings not allowed\n"
+"if timeshift is running !"
+msgstr "ERROR: No se puede cambiar la configuración de Timeshift durante un evento en diferido activo!"
+
+msgid "ask"
+msgstr "Ask"
+
+msgid "allways del file"
+msgstr "Siempre eliminar el archivo Timeshift"
+
+msgid "never del file"
+msgstr "Nunca elimine archivo Timeshift"
+
+msgid "Found running record\n"
+"or record is starting in next time.\n"
+"Really shutdown ?"
+msgstr "Encontrado una grabación activa.\n"
+"o la grabación empieza pronto.\n"
+"Realmente apagado?"
+
+msgid "Found running download\n"
+"Really shutdown ?"
+msgstr "Encontrado un activo en descarga\n"
+"Realmente apagarlo?"
+
+msgid "Error: open rc device !!"
+msgstr "ERROR: No Control remoto Encontrado!"
+
+msgid "Error: no frontend device found !!"
+msgstr "ERROR: No Frontend Dispositivo Encontrado!"
+
+msgid "Error: no demux device found !!"
+msgstr "RROR: No demultiplexores Dispositivo Encontrado!"
+
+msgid "Error: no video device found !!"
+msgstr "ERROR: No hay Dispositivo de Video Encontrado!"
+
+msgid "Error: no audio device found !!"
+msgstr "ERROR: No hay dispositivo de audio Encontrado!"
+
+msgid "Error: skin not found !!"
+msgstr "ERROR: No Skin Encontrado!"
+
+msgid "RemoteControl Old Version"
+msgstr "Control remoto de edad Version"
+
+msgid "RemoteControl Long Version"
+msgstr "Remote Control Versión larga"
+
+msgid "Select Your Remote Control"
+msgstr "Selección de control remoto"
+
+msgid "Choose your Remotecontrol Model from the following list"
+msgstr "Elija su modelo de control remoto de la siguiente lista"
+
+msgid "First Wizzard"
+msgstr "Wizzard Primera Instalación"
+
+msgid "Settings OK ?"
+msgstr "Guardar la configuración?"
+
+msgid "Receiver successful unlocked"
+msgstr "Su receptor se abrió con éxito."
+
+msgid "Free space in /var to little!\n"
+"This can make problems!"
+msgstr "No hay suficiente espacio en /var!\n"
+"Esto causará problemas graves!"
+
+msgid "/var not writeable!\n"
+"Repair it?"
+msgstr "/var no permite la escritura!\n"
+"¿Quieres tratar de repararlo?"
+
+msgid "Free space in /mnt to little!\n"
+"This can make problems!"
+msgstr "Espacio insuficiente en /mnt!\n"
+"Esto causará problemas graves!"
+
+msgid "/mnt not writeable!\n"
+"Repair it?"
+msgstr "/mnt No se puede escribir!\n"
+"¿Quieres tratar de repararlo?"
+
+msgid "Automatic stop in 10 seconds."
+msgstr "Parada automática en 10 segundos."
+
+msgid "Alternativ Audio Firmware not working korrekt with all videos (DTSDOWNMIX)!"
+msgstr "Alternativa Firmware audio no funcionará correctamente con todos los videos\n"
+"(DTSDOWNMIX)!"
+
+msgid "Tithek - Mainmenu"
+msgstr "TiThek - Menú Principal"
+
+msgid "The hoster is not yet supported !"
+msgstr "El proveedor de alojamiento no se admite en la actualidad!"
+
+msgid "File exist, overwrite?"
+msgstr "Archivo leido existe. \n"
+"¿Desea sobrescribir el existente?"
+
+msgid "Remove Cachefile ?"
+msgstr "Borrar caché?"
+
+msgid "Can't start download.\n"
+"Please try later."
+msgstr "No se puede iniciar la descarga. \ NPor favor, inténtelo de nuevo más tarde."
+
+msgid "Choice Playback"
+msgstr "Elija Playback"
+
+msgid "Streaming Playback (default)"
+msgstr "Transmisión directa (por defecto)"
+
+msgid "Streaming Playback Caching (1MB)"
+msgstr "Secuencia con Caché (1 MB)"
+
+msgid "Streaming Playback Caching (5MB)"
+msgstr "Secuencia con Caché (5 MB)"
+
+msgid "Streaming Playback Caching (10MB)"
+msgstr "Secuencia con caché (10 MB)"
+
+msgid "File Caching Playback (10MB / 120s)"
+msgstr "Buffer de reproducción (10 MB / 120 seg)"
+
+msgid "File Caching Playback (20MB / 240s)"
+msgstr "Buffer Playback (20MB / 240 Seg)"
+
+msgid "File Caching Playback (30MB / 360s)"
+msgstr "Buffer Playback (30MB / 360 Seg)"
+
+msgid "Download Full File"
+msgstr "Descargar archivo completo a Ruta Stream"
+
+msgid "Download Full File (background)"
+msgstr "Descargar archivo completo a Stream camino en fondo"
+
+msgid "Start playback"
+msgstr "Inicio playback"
+
+msgid "Can't get Streamurl !"
+msgstr "STREAMURL no es accesible!"
+
+msgid "TitanNit Tithek disclaimer"
+msgstr "TiThek disclaimer"
+
+msgid "EDIT FAV"
+msgstr "Editar Favoritos"
+
+msgid "Remove this Favorite ?"
+msgstr "¿Desea eliminar la entrada seleccionada de sus favoritos?"
+
+msgid "Add this link as Favorite ?"
+msgstr "¿Quieres añadir el enlace a tus favoritos?"
+
+msgid "Edit this Favorite ?"
+msgstr "Editar este favorito?"
+
+msgid "All New first"
+msgstr "Todas las novedades Entradas primero"
+
+msgid "All Sorted"
+msgstr "Todas las entradas ordenadas"
+
+msgid "Atemio Channelsearch 4xSat"
+msgstr "Búsqueda Atemio Canal 4 satélites"
+
+msgid "Atemio Harddisc formating"
+msgstr "Atemio Disco duro formateando"
+
+msgid "Atemio Network configuration stable IP"
+msgstr "Configuración Atemio Red IP estática"
+
+msgid "Atemio Series Recoding"
+msgstr "Atemio grabación de serie"
+
+msgid "Atemio Tuner configuration Sat"
+msgstr "Configuración del sintonizador de satélite"
+
+msgid "Favoriten"
+msgstr "Favoritos"
+
+msgid "HowTo Feedadresse Eingeben"
+msgstr "Cómo agregar a fuente la direccion"
+
+msgid "HowTo Picons Einrichten"
+msgstr "Cómo instalar y utilizar Picons"
+
+msgid "HowTo Secret"
+msgstr "How to ad Secret Feed address"
+
+msgid "HowTo Sky V13 Einrichten"
+msgstr "How to setup a Sky V13 Smartcard"
+
+msgid "Mediacenter AudioPlayer Playlisten Preview"
+msgstr "Audioplayer Playlist Preview"
+
+msgid "Mediacenter AudioPlayer Screensaver Preview"
+msgstr "Audioplayer Screensaver preview"
+
+msgid "Mediacenter Mediathek Kinox Preview"
+msgstr "Wmediathek kinOx previe"
+
+msgid "Mediacenter Mediathek Myvideo/Rtl2/InternetTv/Radio Preview"
+msgstr "Mediathek Myvideo/Rtl2/InternetTv/Radio Preview"
+
+msgid "Mediacenter VideoPlayer Preview"
+msgstr "Video Player Preview"
+
+msgid "Search (10)"
+msgstr "Buscar 10 Resultados"
+
+msgid "Search (20)"
+msgstr "Buscar 20 Resultados"
+
+msgid "Search (25)"
+msgstr "Buscar 25 Resultados"
+
+msgid "Search (50)"
+msgstr "Buscar 50 Resultados"
+
+msgid "Search Cast"
+msgstr "Buscar por Cast"
+
+msgid "Search (local)"
+msgstr "Buscar (local)"
+
+msgid "Search Movie"
+msgstr "Buscar pelicula"
+
+msgid "Search Serie"
+msgstr "Buscar Series"
+
+msgid "Tips und Tricks"
+msgstr "Consejos yTrucos"
+
+msgid "show auto entrys"
+msgstr "Mostrar entradas (Auto amount)"
+
+msgid "show 2 entrys"
+msgstr "Mostrar 2 entradas"
+
+msgid "show 6 entrys"
+msgstr "Mostrar 6 entradas"
+
+msgid "show 12 entrys"
+msgstr "Mostrar 12 entradas"
+
+msgid "show 20 entrys"
+msgstr "Mostrar 20 entradas"
+
+msgid "show 30 entrys"
+msgstr "Mostrar 30 entradas"
+
+msgid "show in list"
+msgstr "Mostrar en lista"
+
+msgid "Audio"
+msgstr "Musica"
+
+msgid "video"
+msgstr "Peliculas"
+
+msgid "audio"
+msgstr "Musica"
+
+msgid "video / audio"
+msgstr "Video/Audio"
+
+msgid "video / picture"
+msgstr "Video/Picture"
+
+msgid "audio / picture"
+msgstr "Audio/Picture"
+
+msgid "pic1"
+msgstr "Picture 1"
+
+msgid "pic2"
+msgstr "Picture 2"
+
+msgid "pic3"
+msgstr "Picture 3"
+
+msgid "pic4"
+msgstr "Picture 4"
+
+msgid "pic5"
+msgstr "Picture 5"
+
+msgid "no pic"
+msgstr "No Picture"
+
+msgid "Delete selected entry ?"
+msgstr "Eliminar entrada seleccionada?"
+
+msgid "Path: "
+msgstr "Ruta"
+
+msgid "MediaDB not found!\n"
+"Scan your HDD in TMC Settings"
+msgstr "MediaDB no encontrado! \n"
+" escanearla unidad en los reglajes del TMC"
+
+msgid "IMDB Plugin not found!\n"
+"Can't get detail media infos\n"
+"Please install it"
+msgstr "IMDB no encontrado! \n"
+" No puedeobtener la información detallada del archivo designado.\n"
+"instalar la extensión."
+
+msgid "Error, found result without imdbid we can't this save in MediaDB"
+msgstr "ERROR: Debido a un falso IMDBID el valor no se puede almacenar en mediadb"
+
+msgid "TopfieldVFD settings dialog not implemented yet!\n"
+"\n"
+"Coming soon ..."
+msgstr "Topfield VFD diálogo de configuración no se ha implementado aún! \n"
+" \n"
+"muy pronto..."
+
+msgid "TopfieldVFD plugin not available, wrong box!"
+msgstr "VFD Topfield extensión no está disponible, receptor erroneo."
+
+msgid "FREQU"
+msgstr "Frequencia"
+
+msgid "CABLE"
+msgstr "Cable"
+
+msgid "TERR"
+msgstr "Terrestrial"
+
+msgid "UNKNOWN"
+msgstr "Desconocido"
+
+msgid "POS"
+msgstr "Posición"
+
+msgid "Alternativer Skin fuer Pearl LCD"
+msgstr "Alternative skin for Pearl LCD"
+
+msgid "Alternativer Skin fuer Pearl LCD "
+msgstr "Alternative skin for Pearl LCD"
+
+msgid "Alternativer Skin fuer Pearl LCD - X-Light Picons zusaetzlich installieren"
+msgstr "Alternative skin for Pearl LCD - X-Light Picons deben ser instaladas por separado"
+
+msgid "Alternativer Skin fuer Samsung LCD - ohne Picons (extra zu installieren)"
+msgstr "Alternative skin for Samsung LCD - sin Picons."
+
+msgid "Automatisch Timer setzen"
+msgstr "Automáticamente ajustar el temporizador"
+
+msgid "codecpack for MediaCenter Dateiendungs-Update "
+msgstr "Codecpack para MediaCenter"
+
+msgid "cut record files"
+msgstr "ts cutter - cortar grabaciones locales"
+
+msgid "Digital Uhr blau - for tiTan - Samsung LCD Skin Channel."
+msgstr "Reloj digital en color azul para titan y LCD Samsung skin"
+
+msgid "dlna Medien Server (upnp)"
+msgstr "DLNA Media Server UPNP)"
+
+msgid "dvdplayer plugin."
+msgstr "DVD Player Extension"
+
+msgid "E2 WebIf API erlaubt den Zugriff auf TitanNit mittels eines E2-Clients (z.B. dreaMote-App auf iPhone oder iPad bzw. XBMC mit VU+)"
+msgstr "E2 WebIF E2 inalámbrico) que le permite acceder de forma remota a su titanNit receiver de un E2 Cliente como Drea Mote-App en el Iphone/Ipad o XBMC de VUwhich allows you to remotely access your titanNit receiverfrom an E2 Client like DreaMote-App on Iphone/Ipad or XBMC from a VU+"
+
+msgid "Emu Camd3 v3.902 for your box"
+msgstr "Softcam camd3.902"
+
+msgid "Emu MBox v0.6 build 0010 for your box"
+msgstr "Softcam MBox V0.6 build 0010"
+
+msgid "Emu MGCamd v1.35 for your box"
+msgstr "Softcam MGCamd V1.35"
+
+msgid "Emu MGCamd v1.38a and all Configs"
+msgstr "Softcam MGCamd V1.38"
+
+msgid "Emu scam 3.53 for your box"
+msgstr "Softcam SCam V3.53"
+
+msgid "Emu scam 3.59 for your box"
+msgstr "Softcam SCam V3.59"
+
+msgid "Emu scam 3.60 for your box"
+msgstr "Softcam SCam V3.60"
+
+msgid "Emu vizcam 1.04 for your box"
+msgstr "Softcam vizcam V1.04"
+
+msgid "filemanager"
+msgstr "File Manager"
+
+msgid "IP-Kamera zB. Firma INSTAR"
+msgstr "IP Camera eg. INSTAR"
+
+msgid "Permanente Uhrzeit am Bildschirm"
+msgstr "Muestra permanente la hora en la pantalla"
+
+msgid "Power off if box not used"
+msgstr "Apagar el receptor si no se utiliza."
+
+msgid "Sat: Bulldog Settings 3x Sat 28.03.2014"
+msgstr "Sattelite settings by Bulldog for HOTBIRD 13, ASTRA 19.2 and ASTRA 28.2"
+
+msgid "Sat: matze70 Settings Astra 19.2"
+msgstr "Sattelite settings by matz370 for ASTRA 19.2"
+
+msgid "Sat: Settings matze70 neue Design Astra 19.2"
+msgstr "Sattelite settings by matze70 for ASTRA 19.2 - new design"
+
+msgid "Sat: uljanow Settings Sat 19.2 und 13.0"
+msgstr "Sattelite settings by Uljanow for ASTRA 19.2 and HOTBIRD 13"
+
+msgid "Stable Version of OSCam V13unten"
+msgstr "Stable version of OScam using a Sky V13 in internal lower slot"
+
+msgid "Tastensperre Plugin - entsperren mit rot/rot/gruen"
+msgstr "Keylock extension - unlock using rojo/rojo/verde"
+
+msgid "Treiber fuer Pearl LCD V4.0"
+msgstr "Driver for pearl LCD V4.0"
+
+msgid "Treiber fuer Samsung LCD"
+msgstr "Driver for Samsung LCD"
+
+msgid "usbreset Plugin"
+msgstr "USB reset extension"
+
+msgid "weather Plugin"
+msgstr "Weather extension"
+
+msgid "Werbezapper"
+msgstr "Advert zapper"
+
+msgid "check your Secret Feed !"
+msgstr "Revisa el feed IP secreto!"
+
+msgid "no description found"
+msgstr "Descripción no encontrado"
+
+msgid "browser"
+msgstr "Navegador de Red"
+
+msgid "emus"
+msgstr "Softcams"
+
+msgid "infos"
+msgstr "Detalles"
+
+msgid "infos "
+msgstr "Detalles"
+
+msgid "LCD Pearl Skin Blau"
+msgstr "LCD Pearl skin blue"
+
+msgid "LCD Pearl Skin Gross/Schwarz"
+msgstr "LCD Pearl skin big/black"
+
+msgid "LCD Pearl Skin Schwarz"
+msgstr "LCD Pearl skin black"
+
+msgid "LCD Samsung Skin Analog Uhr"
+msgstr "LCD Samsung skin analogue clock"
+
+msgid "LCD Samsung Skin DigitalUhr (blau) - operating Mode"
+msgstr "LCD Samsung skin Digital clock"
+
+msgid "LCD Samsung Skin Digital Uhr gelb"
+msgstr "LCD Samsung skin yellow Digital clock"
+
+msgid "LCD Samsung Skin Digital Uhr Trikots"
+msgstr "LCD Samsung skin shirt Digital clock"
+
+msgid "LCD Samsung Skin Holzuhr"
+msgstr "LCD Samsung skin wooden clock"
+
+msgid "QAM auto"
+msgstr "QAM automatic"
+
+msgid "DVBS"
+msgstr "DVB-S"
+
+msgid "DVBS2"
+msgstr "DVB-S2"
+
+msgid "INFO"
+msgstr "Informacion"
+
+msgid "Schnitt erfolgreich beendet"
+msgstr "Corte ha completado con éxito"
+
+msgid "Schnitt endet mit Fehler !!!!!"
+msgstr "Corte responde ERROR !!!"
+
+msgid "Schnitt ist in Arbeit"
+msgstr "Corte en progreso"
+
+msgid "Frage"
+msgstr "Pregunta"
+
+msgid "Soll der Schnitt wirklich abgebrochen werden?"
+msgstr "¿Está seguro de que desea cancelar corte?"
+
+msgid "Satelite Type"
+msgstr "Satelite Tipo"
+
+msgid "Single LNB"
+msgstr "Unico LNB"
+
+msgid "Expert"
+msgstr "Experto Modo"
+
+msgid "Terrestrisch"
+msgstr "Terrestrial"
+
+msgid "direct connect"
+msgstr "Conexion Directa"
+
+msgid "loop to Tuner"
+msgstr "Tuner looped"
+
+msgid "Tunerconfig is not allowed if record\n"
+"or stream is running !"
+msgstr "ERROR: sintonizador no se permite el acceso a la configuración durante una grabación\n"
+"o corriente durante la reproducción"
+
+msgid "Spezialfunctions unlocked, no input required"
+msgstr "Funciones especiales desbloqueados, no se requieren datos de entrada"
+
+msgid "RECEIVER ID: "
+msgstr "Receptor ID: "
+
+msgid "Can't save Code.\n"
+"Delete Plugins to free space"
+msgstr "ERROR: No hay suficiente espacio libre: no se pueden guardar Código! \n"
+"eliminar extensiones de espacio libre"
+
+msgid "Code not ok, please try again !"
+msgstr "ERROR: El código no es correcto.\n"
+" Inténtelo de nuevo"
+
+msgid "channel"
+msgstr "Canal"
+
+msgid "channel + time"
+msgstr "Canal y Hora"
+
+msgid "time + channel"
+msgstr "Hora y Canal"
+
+msgid "time"
+msgstr "Hora"
+
+msgid "time small"
+msgstr "Hora pequeña"
+
+msgid "channel number"
+msgstr "Numero de Canal"
+
+msgid "date + time"
+msgstr "Fecha y Hora"
+
+msgid "blink"
+msgstr "Parpadeará"
+
+msgid "fade out/in"
+msgstr "Fade in/out"
+
+msgid "show record"
+msgstr "Mostrar Grabar"
+
+msgid "star"
+msgstr "Iniciar"
+
+msgid "blink star"
+msgstr "Iniciar Parpadeo"
+
+msgid "Lowest temp: "
+msgstr "Menor Temp: "
+
+msgid "Highest temp: "
+msgstr "Mayor Temp: "
+
+msgid "Zapback bereits aktiv ... Stoppen?"
+msgstr "Zap atras está activado. ¿Desea detener?"
+
