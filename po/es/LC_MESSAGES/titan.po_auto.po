@@ -8,7 +8,7 @@ msgstr ""
 
 #: about.h:16
 msgid "Copyright"
-msgstr ""
+msgstr "© Copyright"
 
 #: about.h:25 skin_default_skin.xml.h:684
 msgid "Tuner"
@@ -8927,8 +8927,8 @@ msgid ""
 "Can't start download.\n"
 "Please try later."
 msgstr ""
-"No se puede iniciar la descarga. \ NPor favor, inténtelo de nuevo más "
-"tarde."
+"No se puede iniciar la descarga.\n"
+"Por favor, inténtelo de nuevo más tarde."
 
 #: tithek.h:1337
 msgid "Choice Playback"
