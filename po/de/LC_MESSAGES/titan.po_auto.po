@@ -112,8 +112,8 @@ msgstr ""
 #: system_backup_restore.h:40 system_backup_restore.h:43
 #: system_backup_restore.h:51 system_backup_restore.h:80
 #: system_backup_restore.h:82 system_backup_restore.h:88
-#: system_backup_restore.h:95 system_update.h:322 system_update.h:328
-#: system_update.h:335 timeshift.h:113 timeshift.h:155 timeshift.h:162
+#: system_backup_restore.h:95 system_update.h:320 system_update.h:326
+#: system_update.h:333 timeshift.h:113 timeshift.h:155 timeshift.h:162
 #: timeshiftsettings.h:45 titan.c:277 titan.c:341 titan.c:350 titan.c:970
 #: titan.c:979 titan.c:1104 titan.c:1125 titan.c:1131 titan.c:1142
 #: titan.c:1148 tithek.c:82 tithek_global.h:244 tithek.h:664 tithek.h:1160
@@ -218,8 +218,8 @@ msgstr "Ok"
 #: system_backup_restore.h:31 system_backup_restore.h:40
 #: system_backup_restore.h:43 system_backup_restore.h:51
 #: system_backup_restore.h:80 system_backup_restore.h:82
-#: system_backup_restore.h:88 system_backup_restore.h:95 system_update.h:322
-#: system_update.h:328 system_update.h:335 timeshift.h:113 timeshift.h:155
+#: system_backup_restore.h:88 system_backup_restore.h:95 system_update.h:320
+#: system_update.h:326 system_update.h:333 timeshift.h:113 timeshift.h:155
 #: timeshift.h:162 timeshiftsettings.h:45 titan.c:277 titan.c:341 titan.c:350
 #: titan.c:970 titan.c:979 titan.c:1104 titan.c:1125 titan.c:1131 titan.c:1142
 #: titan.c:1148 tithek.c:82 tithek_global.h:244 tithek.h:664 tithek.h:1160
@@ -608,8 +608,8 @@ msgstr "Ja/VZAP unendlich"
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:84
 #: streamcloud.h:97 streamcloud.h:128 streamcloud.h:167 stream.h:33
 #: system_backup_restore.h:40 system_backup_restore.h:43
-#: system_backup_restore.h:80 system_backup_restore.h:82 system_update.h:322
-#: system_update.h:328 system_update.h:335 timeshift.h:113 timeshift.h:155
+#: system_backup_restore.h:80 system_backup_restore.h:82 system_update.h:320
+#: system_update.h:326 system_update.h:333 timeshift.h:113 timeshift.h:155
 #: timeshift.h:162 timeshiftsettings.h:45 titan.c:277 titan.c:341 titan.c:350
 #: titan.c:1104 titan.c:1125 titan.c:1131 titan.c:1142 titan.c:1148
 #: tithek.c:82 tithek_global.h:244 tithek.h:664 tithek.h:1160 tithek.h:1203
@@ -8753,19 +8753,19 @@ msgstr "Beta Feed"
 msgid "non-version"
 msgstr ""
 
-#: system_update.h:284
+#: system_update.h:283
 msgid "starting Full Update ?"
 msgstr "Flashvorgang starten?"
 
-#: system_update.h:315
+#: system_update.h:313
 msgid "starting Full Update (from backup) ?"
 msgstr "Beginne Flashvorgang eines gesicherten Systemabbilds"
 
-#: system_update.h:322
+#: system_update.h:320
 msgid "Error file not supported"
 msgstr "FEHLER: Dateiformat wird nicht unterstützt!"
 
-#: system_update.h:335
+#: system_update.h:333
 msgid ""
 "Can't start system update\n"
 "Syntax Error on updatefile"
