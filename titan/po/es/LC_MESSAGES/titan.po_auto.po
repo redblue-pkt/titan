@@ -4982,8 +4982,8 @@ msgid ""
 msgstr ""
 "Comienza la película con el reproductor interno. Establecer un marcador con "
 "el -0- clave durante la reproducción.\n"
-"Para una visión general de todos los marcadores pulse -5- en usted remoto. "
-"\n"
+"Para una visión general de todos los marcadores pulse -5- en usted "
+"remoto. \n"
 "Presione -Play- en su control remoto para realizar el corte seleccionado."
 
 #: plugins_tsSchnitt_skin.xml.h:10 skins_tsSchnitt_skin.xml.h:10
@@ -6850,8 +6850,7 @@ msgstr "Aquí usted puede personalizar su módulo CI (s) de configuración."
 #: skin_default_skin.xml.h:294
 msgid "Here you can make your network autostart settings."
 msgstr ""
-"Aquí usted puede personalizar su configuración de inicio automático de "
-"red."
+"Aquí usted puede personalizar su configuración de inicio automático de red."
 
 #: skin_default_skin.xml.h:295
 msgid "Here you can make your Overclocking settings."
@@ -6859,8 +6858,7 @@ msgstr "Aquí usted puede personalizar su configuración de overclocking."
 
 #: skin_default_skin.xml.h:296
 msgid "Here you can make your picture and sound settings."
-msgstr ""
-"Aquí usted puede personalizar su imagen y la configuración de sonido."
+msgstr "Aquí usted puede personalizar su imagen y la configuración de sonido."
 
 #: skin_default_skin.xml.h:297
 msgid "Here you can make your PIN security for menus settings."
@@ -6954,8 +6952,8 @@ msgid ""
 "Here you can set for your cable tuner. Ask your cable provider and make you "
 "connect an automatic search."
 msgstr ""
-"Aquí usted puede configurar el sintonizador de cable y realice una "
-"búsqueda de canales."
+"Aquí usted puede configurar el sintonizador de cable y realice una búsqueda "
+"de canales."
 
 #: skin_default_skin.xml.h:314
 msgid ""
@@ -8583,8 +8581,9 @@ msgstr ""
 
 #: system_backup_restore.h:15
 msgid ""
-"Press -restore- and your saved settings will be restored from your swapstick "
-"/ recording hdd! The Box will restart automatically for restoring!\n"
+"Press -restore- and your saved settings will be restored from your "
+"swapstick / recording hdd! The Box will restart automatically for "
+"restoring!\n"
 "\n"
 "Press -backup- to save your actual settings to swapstick / recording hdd.\n"
 "WARNING: The old backup will be deleted!"
