@@ -128,7 +128,7 @@ msgstr ""
 #: xupnpd.h:73 xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:215
 #: zapback.c:79 zdf.h:29
 msgid "OK"
-msgstr ""
+msgstr "Ok"
 
 #: about.h:45 ard.h:31 autotimer.c:537 autotimer.c:543 autotimer.c:568
 #: autotimer.c:575 autotimer.c:603 avsettings.h:261 betarobot.h:57
@@ -438,7 +438,7 @@ msgstr "2 Seg"
 
 #: adjust.h:118 httpdfunc.h:3794 pin.h:188
 msgid "endless"
-msgstr "sin final"
+msgstr "infinito"
 
 #: adjust.h:126 httpdfunc.h:3838
 msgid "1 GB"
@@ -514,11 +514,11 @@ msgstr ""
 
 #: adjust.h:174 httpdfunc.h:4193 moduleconfig.h:246 tmc.h:556
 msgid "slow"
-msgstr "lentamente"
+msgstr "Lentamente"
 
 #: adjust.h:175 httpdfunc.h:4200
 msgid "very slow"
-msgstr "muy lentamente"
+msgstr "Muy lentamente"
 
 #: adjust.h:178 httpdfunc.h:4215 pin.h:106
 msgid "hidden"
@@ -538,15 +538,15 @@ msgstr "Modo Experto (11)"
 
 #: adjust.h:214 httpdfunc.h:4412
 msgid "yes / vzap 1 sec"
-msgstr "Si /VZAP 1 Sek"
+msgstr "Si /VZAP 1 Seg"
 
 #: adjust.h:215 httpdfunc.h:4419
 msgid "yes / vzap 2 sec"
-msgstr "Si/VZAP 2 Sek"
+msgstr "Si/VZAP 2 Seg"
 
 #: adjust.h:216 httpdfunc.h:4426
 msgid "yes / vzap endless"
-msgstr "Si/VZAP sin final"
+msgstr "Si/VZAP infinito"
 
 #: ard.h:31 avsettings.h:261 betarobot.h:57 bgdownload.h:176
 #: blindscanadjust.h:25 callmon_main.h:39 channellist.h:913 channellist.h:915
@@ -764,7 +764,7 @@ msgstr "Terrestre"
 
 #: blindscanadjust.h:120 skin_default_skin.xml.h:537
 msgid "SAT"
-msgstr "Sab"
+msgstr "Satelite"
 
 #: blindscanadjust.h:121 tunerconfig.h:339
 msgid "Cable"
@@ -1687,7 +1687,7 @@ msgstr "Vier"
 
 #: global.h:5768
 msgid "Sat"
-msgstr "Sab"
+msgstr "Satelite"
 
 #: global.h:5769
 msgid "Sun"
@@ -1957,11 +1957,11 @@ msgstr ""
 
 #: harddisk.h:877 harddisk.h:878
 msgid "Harddisk Sleep"
-msgstr "Disco duro ahorro de energa (Sleep)"
+msgstr "HDD Reposo"
 
 #: harddisk.h:879
 msgid "set here the default sleeptime for all your media drives"
-msgstr "Fije la hora de la unidad sueo"
+msgstr "Fije la hora de la unidad sueño"
 
 #: harddisk.h:885 skin_default_skin.xml.h:662
 msgid "Time to sleep"
@@ -3021,7 +3021,7 @@ msgstr "ERROR: Los ajustes no podran guardarse!"
 
 #: moduleconfig.h:159
 msgid "double"
-msgstr "doppel"
+msgstr "doble"
 
 #: moduleconfig.h:168
 msgid "activate"
@@ -3224,8 +3224,8 @@ msgstr "Mostrar compartidos"
 #: networkbrowser.h:1875
 msgid "Choose your Shares from the following list"
 msgstr ""
-"lista de sus acciones. elige Editar entrada y pulse -VERDE-. Para agregar m�"
-"�s acciones por favor utiliza -Buscar-. Para acceder a los recursos "
+"lista de sus acciones. elige Editar entrada y pulse -VERDE-. Para agregar "
+"más acciones por favor utiliza -Buscar-. Para acceder a los recursos "
 "compartidos de Windows protegidos con contraseña por favor presione menú y "
 "entrar los datos del usuario."
 
@@ -4155,7 +4155,7 @@ msgstr "Mostrar en Reposo"
 #: plugins_lcdpearl1_skin.xml.h:5 plugins_lcdsamsung_skin.xml.h:5
 #: skins_lcdpearl1_skin.xml.h:5 skins_lcdsamsung_skin.xml.h:5
 msgid "alle Menus anzeigen"
-msgstr "mostrar todos los menUs"
+msgstr "mostrar todos los menus"
 
 #: plugins_lcdpearl1_skin.xml.h:6 skins_lcdpearl1_skin.xml.h:6
 msgid "Auswahl"
@@ -4867,7 +4867,7 @@ msgstr "Link"
 
 #: plugins_tithek_skin.xml.h:12 skins_tithek_skin.xml.h:12
 msgid "Pic Ratio"
-msgstr "Ratio"
+msgstr "Mostrar las imágenes en su formato original"
 
 #: plugins_tithek_skin.xml.h:15 skin_default_skin.xml.h:504
 #: skins_tithek_skin.xml.h:15
@@ -5127,11 +5127,11 @@ msgstr "Buscar Oeste"
 
 #: possetup.h:37
 msgid "search east"
-msgstr "Buscar este"
+msgstr "Buscar Este"
 
 #: possetup.h:38
 msgid "move east"
-msgstr "Mover este"
+msgstr "Mover Este"
 
 #: possetup.h:43
 msgid "step west"
@@ -5139,7 +5139,7 @@ msgstr "Paso Oeste"
 
 #: possetup.h:44
 msgid "step east"
-msgstr "Paso este"
+msgstr "Paso Este"
 
 #: possetup.h:49
 msgid "limits off"
@@ -5151,7 +5151,7 @@ msgstr "Limites Oeste"
 
 #: possetup.h:51
 msgid "limit east"
-msgstr "Limitesta estae"
+msgstr "Limites Este"
 
 #: possetup.h:52
 msgid "limits on"
@@ -5441,7 +5441,7 @@ msgstr "Zap a Canal"
 
 #: rectimer.h:1490
 msgid "waiting"
-msgstr "warte"
+msgstr "esperando"
 
 #: rectimer.h:1494
 msgid "success"
@@ -6082,7 +6082,7 @@ msgstr "Todo"
 
 #: skin_default_skin.xml.h:72
 msgid "Allowed Zapping via Streamlink"
-msgstr "Erlaube Umschalten durch Live Stream"
+msgstr "Permitir el cambio por Livestream"
 
 #: skin_default_skin.xml.h:76
 msgid "Ask on channel switch"
@@ -7275,7 +7275,7 @@ msgstr "Minima Frecuencia"
 
 #: skin_default_skin.xml.h:392
 msgid "Minimal signalrate"
-msgstr "Tasa mnima de señal"
+msgstr "Tasa minima de señal"
 
 #: skin_default_skin.xml.h:393
 msgid "Minutes"
@@ -7952,7 +7952,7 @@ msgstr "Espacio"
 
 #: skin_default_skin.xml.h:606
 msgid "Spanish"
-msgstr "Espa�ol"
+msgstr "Español"
 
 #: skin_default_skin.xml.h:610
 msgid "SSID"
@@ -8596,9 +8596,8 @@ msgstr "Guardar Imagen"
 
 #: system_backup_restore.h:15
 msgid ""
-"Press -restore- and your saved settings will be restored from your "
-"swapstick / recording hdd! The Box will restart automatically for "
-"restoring!\n"
+"Press -restore- and your saved settings will be restored from your swapstick "
+"/ recording hdd! The Box will restart automatically for restoring!\n"
 "\n"
 "Press -backup- to save your actual settings to swapstick / recording hdd.\n"
 "WARNING: The old backup will be deleted!"
@@ -9459,8 +9458,8 @@ msgid ""
 "A collection of really nice folder icons for MediaCenter Videoplayer "
 "Coverview!"
 msgstr ""
-"Una bonita selección de imágenes para el Media Center reproductor de vídeo "
-"y de la cubierta preliminar!"
+"Una bonita selección de imágenes para el Media Center reproductor de "
+"vídeo y de la cubierta preliminar!"
 
 #: tpk_description.h:3
 msgid "Alternativer Skin fuer Pearl LCD"
@@ -11321,7 +11320,7 @@ msgstr "Parpadear"
 
 #: vfdisplay.h:52
 msgid "fade out/in"
-msgstr "Fade in/out"
+msgstr "Mostrar/ocultar"
 
 #: vfdisplay.h:53
 msgid "show record"
