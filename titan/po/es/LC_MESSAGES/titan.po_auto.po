@@ -3224,8 +3224,8 @@ msgstr "Mostrar compartidos"
 #: networkbrowser.h:1875
 msgid "Choose your Shares from the following list"
 msgstr ""
-"lista de sus acciones. elige Editar entrada y pulse -VERDE-. Para agregar "
-"más acciones por favor utiliza -Buscar-. Para acceder a los recursos "
+"lista de sus acciones. elige Editar entrada y pulse -VERDE-. Para agregar m�"
+"�s acciones por favor utiliza -Buscar-. Para acceder a los recursos "
 "compartidos de Windows protegidos con contraseña por favor presione menú y "
 "entrar los datos del usuario."
 
@@ -8596,8 +8596,9 @@ msgstr "Guardar Imagen"
 
 #: system_backup_restore.h:15
 msgid ""
-"Press -restore- and your saved settings will be restored from your swapstick "
-"/ recording hdd! The Box will restart automatically for restoring!\n"
+"Press -restore- and your saved settings will be restored from your "
+"swapstick / recording hdd! The Box will restart automatically for "
+"restoring!\n"
 "\n"
 "Press -backup- to save your actual settings to swapstick / recording hdd.\n"
 "WARNING: The old backup will be deleted!"
@@ -9458,8 +9459,8 @@ msgid ""
 "A collection of really nice folder icons for MediaCenter Videoplayer "
 "Coverview!"
 msgstr ""
-"Una bonita selección de imágenes para el Media Center reproductor de "
-"vídeo y de la cubierta preliminar!"
+"Una bonita selección de imágenes para el Media Center reproductor de vídeo "
+"y de la cubierta preliminar!"
 
 #: tpk_description.h:3
 msgid "Alternativer Skin fuer Pearl LCD"
