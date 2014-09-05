@@ -8,7 +8,7 @@ msgstr ""
 
 #: about.h:16
 msgid "Copyright"
-msgstr ""
+msgstr "© Copyright"
 
 #: about.h:25 skin_default_skin.xml.h:685
 msgid "Tuner"
@@ -7785,7 +7785,7 @@ msgstr "Spazio"
 
 #: skin_default_skin.xml.h:606
 msgid "Spanish"
-msgstr ""
+msgstr "Español"
 
 #: skin_default_skin.xml.h:610
 msgid "SSID"
