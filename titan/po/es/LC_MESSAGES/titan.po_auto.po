@@ -7952,7 +7952,7 @@ msgstr "Espacio"
 
 #: skin_default_skin.xml.h:606
 msgid "Spanish"
-msgstr ""
+msgstr "Español"
 
 #: skin_default_skin.xml.h:610
 msgid "SSID"
