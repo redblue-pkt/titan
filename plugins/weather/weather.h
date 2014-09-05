@@ -133,6 +133,10 @@ struct weather* getweather(char* location)
 
 	if(location == NULL) return NULL;
 
+	char* lang = NULL;
+	lang = ostrcat(_("en-GB"), NULL, 0, 0);
+	free(lang), lang = NULL;
+
 	tmpsearch = ostrcat("data.aspx?weadegreetype=C&culture=de-DE&weasearchstr=", location, 0, 0);
 	//tmpsearch = ostrcat("ig/api?weather=", location, 0, 0);
 	//TODO: implement auto language (from titan.cfg)
@@ -175,7 +179,7 @@ struct weather* getweather(char* location)
 			weather->day0_humidity = getxmlentry(tmpstr2, "humidity=");
 			weather->day0_wind = getxmlentry(tmpstr2, "windspeed=");
 		}
-		
+
 		tmpstr2 = ostrstr(tmpstr1, "<forecast ");
 		if(tmpstr2 != NULL)
 		{
@@ -230,7 +234,7 @@ void changeweatherpic(struct skin* node, char* icon)
 {
 
 		/*
-		0 => 'thunderstorm', 
+		0 => 'thunderstorm',
 		1 => 'thunderstorm',
 		2 => 'thunderstorm',
 		3 => 'thunderstorm',
@@ -239,14 +243,14 @@ void changeweatherpic(struct skin* node, char* icon)
 		6 => 'sleet',
 		7 => 'rain_snow',
 		8 => 'icy',
-		9 => 'icy',  
-		10 => 'rain_snow', 
+		9 => 'icy',
+		10 => 'rain_snow',
 		11 => 'showers',
 		12 => 'rain',
 		13 => 'flurries',
-		14 => 'snow', 
-		15 => 'snow', 
-		16 => 'snow', 
+		14 => 'snow',
+		15 => 'snow',
+		16 => 'snow',
 		17 => 'thunderstorm',
 		18 => 'showers',
 		19 => 'dust',
@@ -259,7 +263,7 @@ void changeweatherpic(struct skin* node, char* icon)
 		26 => 'cloudy',
 		27 => 'mostly_cloudy',
 		28 => 'mostly_cloudy',
-		29 => 'partly_cloudy', 
+		29 => 'partly_cloudy',
 		30 => 'partly_cloudy',
 		31 => 'sunny',
 		32 => 'sunny',
@@ -268,10 +272,10 @@ void changeweatherpic(struct skin* node, char* icon)
 		35 => 'thunderstorm',
 		36 => 'hot',
 		37 => 'chance_of_tstorm',
-		38 => 'chance_of_tstorm', 
+		38 => 'chance_of_tstorm',
 		39 => 'chance_of_rain',
 		40 => 'showers',
-		41 - 'chance_of_snow',  
+		41 - 'chance_of_snow',
 		42 => 'snow',
 		43 => 'snow',
 		44 => 'na',
@@ -279,7 +283,7 @@ void changeweatherpic(struct skin* node, char* icon)
 		46 => 'chance_of_snow',
 		47 => 'chance_of_tstorm');
 		*/
-	
+
 	if(icon == NULL)
 		return;
 
@@ -288,97 +292,97 @@ void changeweatherpic(struct skin* node, char* icon)
 	else if(ostrstr(icon, "11") != NULL)
 		changepic(node, "%pluginpath%/weather/skin/showers.png");
 	else if(ostrstr(icon, "12") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/rain.png");		
+		changepic(node, "%pluginpath%/weather/skin/rain.png");
 	else if(ostrstr(icon, "13") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/flurries.png");	
+		changepic(node, "%pluginpath%/weather/skin/flurries.png");
 	else if(ostrstr(icon, "14") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/snow.png");			
+		changepic(node, "%pluginpath%/weather/skin/snow.png");
 	else if(ostrstr(icon, "15") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/snow.png");	
+		changepic(node, "%pluginpath%/weather/skin/snow.png");
 	else if(ostrstr(icon, "16") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/snow.png");	
+		changepic(node, "%pluginpath%/weather/skin/snow.png");
 	else if(ostrstr(icon, "17") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/rain.png");	
+		changepic(node, "%pluginpath%/weather/skin/rain.png");
 	else if(ostrstr(icon, "18") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/showers.png");	
+		changepic(node, "%pluginpath%/weather/skin/showers.png");
 	else if(ostrstr(icon, "19") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/fog.png");	
+		changepic(node, "%pluginpath%/weather/skin/fog.png");
 	else if(ostrstr(icon, "20") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/fog.png");	
+		changepic(node, "%pluginpath%/weather/skin/fog.png");
 	else if(ostrstr(icon, "21") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/fog.png");	
+		changepic(node, "%pluginpath%/weather/skin/fog.png");
 	else if(ostrstr(icon, "22") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/fog.png");	
+		changepic(node, "%pluginpath%/weather/skin/fog.png");
 	else if(ostrstr(icon, "23") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/chance_of_storm.png");	
+		changepic(node, "%pluginpath%/weather/skin/chance_of_storm.png");
 	else if(ostrstr(icon, "24") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/chance_of_storm.png");	
+		changepic(node, "%pluginpath%/weather/skin/chance_of_storm.png");
 	else if(ostrstr(icon, "25") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/icy.png");	
+		changepic(node, "%pluginpath%/weather/skin/icy.png");
 	else if(ostrstr(icon, "26") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/cloudy.png");	
+		changepic(node, "%pluginpath%/weather/skin/cloudy.png");
 	else if(ostrstr(icon, "27") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/partly_cloudy.png");	
+		changepic(node, "%pluginpath%/weather/skin/partly_cloudy.png");
 	else if(ostrstr(icon, "28") != NULL)
 		changepic(node, "%pluginpath%/weather/skin/partly_cloudy.png");
 	else if(ostrstr(icon, "29") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/partly_cloudy.png");	
+		changepic(node, "%pluginpath%/weather/skin/partly_cloudy.png");
 	else if(ostrstr(icon, "30") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/partly_cloudy.png");	
+		changepic(node, "%pluginpath%/weather/skin/partly_cloudy.png");
 	else if(ostrstr(icon, "31") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/sunny.png");	
+		changepic(node, "%pluginpath%/weather/skin/sunny.png");
 	else if(ostrstr(icon, "32") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/sunny.png");	
+		changepic(node, "%pluginpath%/weather/skin/sunny.png");
 	else if(ostrstr(icon, "33") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/mostly_sunny.png");	
+		changepic(node, "%pluginpath%/weather/skin/mostly_sunny.png");
 	else if(ostrstr(icon, "34") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/mostly_sunny.png");			
+		changepic(node, "%pluginpath%/weather/skin/mostly_sunny.png");
 	else if(ostrstr(icon, "35") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/rain.png");	
+		changepic(node, "%pluginpath%/weather/skin/rain.png");
 	else if(ostrstr(icon, "36") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/sunny.png");	
+		changepic(node, "%pluginpath%/weather/skin/sunny.png");
 	else if(ostrstr(icon, "37") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/chance_of_storm.png");	
+		changepic(node, "%pluginpath%/weather/skin/chance_of_storm.png");
 	else if(ostrstr(icon, "38") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/chance_of_storm.png");	
+		changepic(node, "%pluginpath%/weather/skin/chance_of_storm.png");
 	else if(ostrstr(icon, "39") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/chance_of_rain.png");			
+		changepic(node, "%pluginpath%/weather/skin/chance_of_rain.png");
 	else if(ostrstr(icon, "40") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/showers.png");	
+		changepic(node, "%pluginpath%/weather/skin/showers.png");
 	else if(ostrstr(icon, "41") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/chance_of_snow.png");	
+		changepic(node, "%pluginpath%/weather/skin/chance_of_snow.png");
 	else if(ostrstr(icon, "42") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/snow.png");			
+		changepic(node, "%pluginpath%/weather/skin/snow.png");
 	else if(ostrstr(icon, "43") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/snow.png");	
+		changepic(node, "%pluginpath%/weather/skin/snow.png");
 	else if(ostrstr(icon, "44") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/xxxx.png");	
+		changepic(node, "%pluginpath%/weather/skin/xxxx.png");
 	else if(ostrstr(icon, "45") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/chance_of_rain.png");	
+		changepic(node, "%pluginpath%/weather/skin/chance_of_rain.png");
 	else if(ostrstr(icon, "46") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/chance_of_snow.png");	
+		changepic(node, "%pluginpath%/weather/skin/chance_of_snow.png");
 	else if(ostrstr(icon, "47") != NULL)
 		changepic(node, "%pluginpath%/weather/skin/chance_of_rain.png");
 	else if(ostrstr(icon, "0") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/rain.png");	
+		changepic(node, "%pluginpath%/weather/skin/rain.png");
 	else if(ostrstr(icon, "1") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/rain.png");	
+		changepic(node, "%pluginpath%/weather/skin/rain.png");
 	else if(ostrstr(icon, "2") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/rain.png");	
+		changepic(node, "%pluginpath%/weather/skin/rain.png");
 	else if(ostrstr(icon, "3") != NULL)
 		changepic(node, "%pluginpath%/weather/skin/rain.png");
 	else if(ostrstr(icon, "4") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/rain.png");	
+		changepic(node, "%pluginpath%/weather/skin/rain.png");
 	else if(ostrstr(icon, "5") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/chance_of_snow.png");	
+		changepic(node, "%pluginpath%/weather/skin/chance_of_snow.png");
 	else if(ostrstr(icon, "6") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/rain.png");	
+		changepic(node, "%pluginpath%/weather/skin/rain.png");
 	else if(ostrstr(icon, "7") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/chance_of_snow.png");	
+		changepic(node, "%pluginpath%/weather/skin/chance_of_snow.png");
 	else if(ostrstr(icon, "8") != NULL)
 		changepic(node, "%pluginpath%/weather/skin/icy.png");
 	else if(ostrstr(icon, "9") != NULL)
-		changepic(node, "%pluginpath%/weather/skin/icy.png");				
+		changepic(node, "%pluginpath%/weather/skin/icy.png");
 }
 
 void screenweather()
@@ -505,7 +509,7 @@ start:
 	while(1)
 	{
 		rcret = waitrc(weather, 0, 0);
-	
+
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 
 		if(rcret == getrcconfigint("rcred", NULL))
