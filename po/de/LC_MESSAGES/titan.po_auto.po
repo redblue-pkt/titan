@@ -23,7 +23,7 @@ msgstr ""
 #: transponder.h:493 transponder.h:504 transponder.h:574 youtube.h:167
 #: zdf.h:86
 msgid "unknown"
-msgstr "unbekannt"
+msgstr "Unbekannt!"
 
 #: about.h:32 skin_default_skin.xml.h:691
 msgid "Tunertype"
@@ -128,7 +128,7 @@ msgstr ""
 #: xupnpd.h:73 xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:215
 #: zapback.c:79 zdf.h:29
 msgid "OK"
-msgstr "Ok"
+msgstr ""
 
 #: about.h:45 ard.h:31 autotimer.c:537 autotimer.c:543 autotimer.c:568
 #: autotimer.c:575 autotimer.c:603 avsettings.h:261 betarobot.h:57
@@ -298,7 +298,7 @@ msgstr "Informationsleiste"
 
 #: adjust.h:69 httpdfunc.h:3582
 msgid "epg"
-msgstr "EPG"
+msgstr ""
 
 #: adjust.h:70 epgsettings.h:138 httpdfunc.h:3589
 msgid "Channel EPG"
@@ -1280,7 +1280,7 @@ msgstr "Grafisches Multi-EPG"
 
 #: epgsettings.h:148 tmc.h:389
 msgid "scan"
-msgstr "starten"
+msgstr "Suchlauf"
 
 #: epgsettings.h:149
 msgid "whitelist"
@@ -1785,7 +1785,7 @@ msgstr ""
 
 #: harddisk.h:167 plugins_mc_skin.xml.h:18 skins_mc_skin.xml.h:18
 msgid "default"
-msgstr "Standard"
+msgstr "Voreinstellung"
 
 #: harddisk.h:217 harddisk.h:218 harddisk.h:459 harddisk.h:460
 msgid "Harddisk Configure"
@@ -1829,7 +1829,7 @@ msgstr "Datenträger für Sicherung/Wiederherstellung nutzen"
 
 #: harddisk.h:265
 msgid "del medium for backup"
-msgstr "Datenträger nicht für Sicherung/Wiederherstellung  nutzen"
+msgstr "Datenträger nicht für Sicherung/Wiederherstellung nutzen"
 
 #: harddisk.h:350
 msgid "Are you sure you want to delete this directory?"
@@ -1893,11 +1893,11 @@ msgstr ""
 
 #: harddisk.h:516
 msgid "swap"
-msgstr "Swap"
+msgstr "Swap Datei (RAM Erweiterung)"
 
 #: harddisk.h:528
 msgid "backup"
-msgstr "Sicherung"
+msgstr "Sichern"
 
 #: harddisk.h:633
 msgid ""
@@ -2668,11 +2668,11 @@ msgstr "Datei nicht gefunden"
 #: skins_xupnpd_skin.xml.h:5 skins_zapback_skin.xml.h:7 tithek_mainmenu.h:1
 msgid ""
 msgstr ""
-"Project-Id-Version: TitanNit 1.55\n"
+"Project-Id-Version: TitanNit 1.52\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-07 10:44+0200\n"
-"PO-Revision-Date: 2014-06-29 17:22+0100\n"
-"Last-Translator: Caliban <aaf-caliban@e.mail.de>\n"
+"PO-Revision-Date: 2014-04-17 16:41+0100\n"
+"Last-Translator: caliban <aaf-caliban@e.mail.de>\n"
 "Language-Team: German <_obiwan_@web.de>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -3236,7 +3236,7 @@ msgstr "Warten"
 
 #: network.h:265 network.h:273 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
 msgid "ERROR"
-msgstr "FEHLER"
+msgstr "!!! FEHLER !!!"
 
 #: network.h:284
 msgid "comming soon..."
@@ -3409,7 +3409,7 @@ msgstr "Zeige IP Adresse im Display beim Start"
 
 #: panel_settings_autostart.h:70 settings_autostart.h:62
 msgid "status"
-msgstr "Status"
+msgstr ""
 
 #: panel_settings_autostart.h:70 settings_autostart.h:62
 msgid "ip"
@@ -3634,7 +3634,7 @@ msgstr ""
 
 #: play.h:618 skin_default_skin.xml.h:727
 msgid "Video Settings"
-msgstr "Bildeinstellungen"
+msgstr "Einstellungen"
 
 #: play.h:619
 msgid "AV Settings"
@@ -3799,7 +3799,7 @@ msgstr ""
 
 #: play.h:1391
 msgid "SORT"
-msgstr "Sortierung"
+msgstr "Sortieren"
 
 #: play.h:1637
 msgid "Marker autoseek is started"
@@ -4224,7 +4224,7 @@ msgstr "Apple Movie Trailer"
 
 #: plugins_mc_skin.xml.h:9 skins_mc_skin.xml.h:9
 msgid "AUDIO"
-msgstr "Audio"
+msgstr "Musik"
 
 #: plugins_mc_skin.xml.h:10 skins_mc_skin.xml.h:10
 msgid "Audio Player"
@@ -4317,7 +4317,7 @@ msgstr "Darstellungsqualität von Fotos"
 #: skin_default_skin.xml.h:447 skins_mc_skin.xml.h:42
 #: skins_tithek_skin.xml.h:13
 msgid "PICTURE"
-msgstr "Fotos"
+msgstr "Bild"
 
 #: plugins_mc_skin.xml.h:43 skins_mc_skin.xml.h:43
 msgid "Picture Player"
@@ -4340,7 +4340,7 @@ msgstr "Bildschirmschoner"
 #: plugins_panel_skin.xml.h:22 skin_default_skin.xml.h:575
 #: skins_mc_skin.xml.h:53 skins_panel_skin.xml.h:5 skins_panel_skin.xml.h:22
 msgid "Settings"
-msgstr "Einstellungen"
+msgstr "Senderlisten"
 
 #: plugins_mc_skin.xml.h:54 skins_mc_skin.xml.h:54
 msgid "Show Pictitle"
@@ -4544,7 +4544,7 @@ msgstr "Aktuelle Meldungen"
 #: plugins_news_skin.xml.h:2 plugins_stock_skin.xml.h:3
 #: skins_news_skin.xml.h:2 skins_stock_skin.xml.h:3
 msgid "BROWSER"
-msgstr "Internetbrowser"
+msgstr "Internet Browser"
 
 #: plugins_news_skin.xml.h:3 skins_news_skin.xml.h:3
 msgid "NEXT"
@@ -4561,7 +4561,7 @@ msgstr "optimieren"
 #: plugins_panel_skin.xml.h:1 plugins_panel_skin.xml.h:10
 #: skins_panel_skin.xml.h:1 skins_panel_skin.xml.h:10
 msgid "Autostart"
-msgstr "Boot Optionen"
+msgstr ""
 
 #: plugins_panel_skin.xml.h:2 skin_default_skin.xml.h:230
 #: skins_panel_skin.xml.h:2
@@ -4612,7 +4612,7 @@ msgstr "Jugendschutz"
 
 #: plugins_panel_skin.xml.h:14 skins_panel_skin.xml.h:14
 msgid "Default"
-msgstr "Werkseinstellung"
+msgstr "Voreinstellung"
 
 #: plugins_panel_skin.xml.h:16 skins_panel_skin.xml.h:16
 msgid "Fancontrol"
@@ -4775,11 +4775,11 @@ msgstr "Falsche Eingaben löschen"
 
 #: plugins_sudoku_skin.xml.h:6 skins_sudoku_skin.xml.h:6
 msgid "Easy"
-msgstr "Easy"
+msgstr ""
 
 #: plugins_sudoku_skin.xml.h:8 skins_sudoku_skin.xml.h:8
 msgid "Hard"
-msgstr "Hard"
+msgstr ""
 
 #: plugins_sudoku_skin.xml.h:9 skins_sudoku_skin.xml.h:9
 msgid "Input the numbers 1 to 9"
@@ -5016,11 +5016,11 @@ msgstr ""
 
 #: plugins_wm2014_skin.xml.h:5 skins_wm2014_skin.xml.h:5
 msgid "Date"
-msgstr ""
+msgstr "Datum"
 
 #: plugins_wm2014_skin.xml.h:6 skins_wm2014_skin.xml.h:6
 msgid "Day "
-msgstr ""
+msgstr "Tag"
 
 #: plugins_wm2014_skin.xml.h:7 skins_wm2014_skin.xml.h:7
 msgid "Diff"
@@ -5065,7 +5065,7 @@ msgstr ""
 
 #: plugins_wm2014_skin.xml.h:17 skins_wm2014_skin.xml.h:17
 msgid "Time"
-msgstr ""
+msgstr "Uhrzeit"
 
 #: plugins_wm2014_skin.xml.h:18 skins_wm2014_skin.xml.h:18
 msgid "vs"
@@ -6639,7 +6639,7 @@ msgstr "Datenträger formatieren"
 
 #: skin_default_skin.xml.h:245
 msgid "free space"
-msgstr "Freier Speicherplatz"
+msgstr "Freier Speicher"
 
 #: skin_default_skin.xml.h:246
 msgid "French"
@@ -8320,7 +8320,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:722 tmc.h:399
 msgid "Video"
-msgstr "Bild"
+msgstr "Filme"
 
 #: skin_default_skin.xml.h:723
 msgid "VideoMode Aspect Settings"
@@ -8570,15 +8570,15 @@ msgstr "Liste aktuell genutzter Streams, OK zum Stoppen"
 
 #: sudoku.c:167
 msgid "left"
-msgstr "left"
+msgstr ""
 
 #: sudoku.c:168
 msgid "center"
-msgstr "center"
+msgstr ""
 
 #: sudoku.c:169
 msgid "right"
-msgstr "right"
+msgstr ""
 
 #: system_backup.h:15
 msgid ""
@@ -8597,9 +8597,8 @@ msgstr "Image sichern"
 
 #: system_backup_restore.h:15
 msgid ""
-"Press -restore- and your saved settings will be restored from your "
-"swapstick / recording hdd! The Box will restart automatically for "
-"restoring!\n"
+"Press -restore- and your saved settings will be restored from your swapstick "
+"/ recording hdd! The Box will restart automatically for restoring!\n"
 "\n"
 "Press -backup- to save your actual settings to swapstick / recording hdd.\n"
 "WARNING: The old backup will be deleted!"
@@ -8935,7 +8934,7 @@ msgstr "Automatisches Beenden in 10 Sekunden."
 msgid ""
 "Alternativ Audio Firmware not working korrekt with all videos (DTSDOWNMIX)!"
 msgstr ""
-"Die alternative Audio Firmware funktioniert nicht mit allen Videos "
+"Die Alternativ Audio Firmware funktioniert nicht mit allen Videos "
 "(DTSDOWNMIX) "
 
 #: tithek.c:103
@@ -9886,11 +9885,11 @@ msgstr "Browser zum Suchen und Verwalten von CIFS/NFS/FTP Freigaben"
 
 #: tpk_description.h:103
 msgid "Networkfile libsmbclient 3.0.28b"
-msgstr "SMB (Windows) libsmbclient 3.0.28b"
+msgstr "Neue Downloadadresse für Ihren AAF-Receiver"
 
 #: tpk_description.h:104 tpk_showname.h:74
 msgid "Neutrino Keymap"
-msgstr "Neutrino Tastenbelegung"
+msgstr "Neutrino Fernbedienungsbelegung"
 
 #: tpk_description.h:105
 msgid "newcs including all necessary config files."
@@ -11362,7 +11361,7 @@ msgstr "Video Modus"
 
 #: weather.h:137
 msgid "en-GB"
-msgstr ""
+msgstr "de-DE"
 
 #: weather.h:434 weather.h:452 weather.h:470 weather.h:488
 msgid "Day: "
