@@ -4994,7 +4994,7 @@ msgid "ts - cut"
 msgstr "ts - Schnitt"
 
 #: plugins_weather_skin.xml.h:3 skins_weather_skin.xml.h:3 tpk_showname.h:198
-#: weather.h:422
+#: weather.h:426
 msgid "Weather"
 msgstr "Wetter"
 
@@ -8597,8 +8597,9 @@ msgstr "Image sichern"
 
 #: system_backup_restore.h:15
 msgid ""
-"Press -restore- and your saved settings will be restored from your swapstick "
-"/ recording hdd! The Box will restart automatically for restoring!\n"
+"Press -restore- and your saved settings will be restored from your "
+"swapstick / recording hdd! The Box will restart automatically for "
+"restoring!\n"
 "\n"
 "Press -backup- to save your actual settings to swapstick / recording hdd.\n"
 "WARNING: The old backup will be deleted!"
@@ -11363,23 +11364,23 @@ msgstr "Video Modus"
 msgid "en-GB"
 msgstr "de-DE"
 
-#: weather.h:434 weather.h:452 weather.h:470 weather.h:488
+#: weather.h:438 weather.h:456 weather.h:474 weather.h:492
 msgid "Day: "
 msgstr "Tag: "
 
-#: weather.h:438 weather.h:456 weather.h:474 weather.h:492
+#: weather.h:442 weather.h:460 weather.h:478 weather.h:496
 msgid "Lowest temp: "
 msgstr "Tiefsttemperatur: "
 
-#: weather.h:442 weather.h:460 weather.h:478 weather.h:496
+#: weather.h:446 weather.h:464 weather.h:482 weather.h:500
 msgid "Highest temp: "
 msgstr "Höchsttemperatur: "
 
-#: weather.h:446 weather.h:464 weather.h:482 weather.h:500
+#: weather.h:450 weather.h:468 weather.h:486 weather.h:504
 msgid "Condition: "
 msgstr "Wetter: "
 
-#: weather.h:518
+#: weather.h:522
 msgid "Location"
 msgstr "Ort"
 
