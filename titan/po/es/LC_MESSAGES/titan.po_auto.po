@@ -3224,8 +3224,8 @@ msgstr "Mostrar compartidos"
 #: networkbrowser.h:1875
 msgid "Choose your Shares from the following list"
 msgstr ""
-"lista de sus acciones. elige Editar entrada y pulse -VERDE-. Para agregar "
-"más acciones por favor utiliza -Buscar-. Para acceder a los recursos "
+"lista de sus acciones. elige Editar entrada y pulse -VERDE-. Para agregar m�"
+"�s acciones por favor utiliza -Buscar-. Para acceder a los recursos "
 "compartidos de Windows protegidos con contraseña por favor presione menú y "
 "entrar los datos del usuario."
 
@@ -5004,7 +5004,7 @@ msgid "ts - cut"
 msgstr "ts - corte"
 
 #: plugins_weather_skin.xml.h:3 skins_weather_skin.xml.h:3 tpk_showname.h:198
-#: weather.h:418
+#: weather.h:422
 msgid "Weather"
 msgstr "Tiempo"
 
@@ -8596,8 +8596,9 @@ msgstr "Guardar Imagen"
 
 #: system_backup_restore.h:15
 msgid ""
-"Press -restore- and your saved settings will be restored from your swapstick "
-"/ recording hdd! The Box will restart automatically for restoring!\n"
+"Press -restore- and your saved settings will be restored from your "
+"swapstick / recording hdd! The Box will restart automatically for "
+"restoring!\n"
 "\n"
 "Press -backup- to save your actual settings to swapstick / recording hdd.\n"
 "WARNING: The old backup will be deleted!"
@@ -9458,8 +9459,8 @@ msgid ""
 "A collection of really nice folder icons for MediaCenter Videoplayer "
 "Coverview!"
 msgstr ""
-"Una bonita selección de imágenes para el Media Center reproductor de "
-"vídeo y de la cubierta preliminar!"
+"Una bonita selección de imágenes para el Media Center reproductor de vídeo "
+"y de la cubierta preliminar!"
 
 #: tpk_description.h:3
 msgid "Alternativer Skin fuer Pearl LCD"
@@ -11366,23 +11367,27 @@ msgstr "Aspecto Ajustes"
 msgid "Videomode"
 msgstr "Video Modo"
 
-#: weather.h:430 weather.h:448 weather.h:466 weather.h:484
+#: weather.h:137
+msgid "en-GB"
+msgstr ""
+
+#: weather.h:434 weather.h:452 weather.h:470 weather.h:488
 msgid "Day: "
 msgstr "Dia: "
 
-#: weather.h:434 weather.h:452 weather.h:470 weather.h:488
+#: weather.h:438 weather.h:456 weather.h:474 weather.h:492
 msgid "Lowest temp: "
 msgstr "Menor Temperatura:"
 
-#: weather.h:438 weather.h:456 weather.h:474 weather.h:492
+#: weather.h:442 weather.h:460 weather.h:478 weather.h:496
 msgid "Highest temp: "
 msgstr "Mayor Temperatura: "
 
-#: weather.h:442 weather.h:460 weather.h:478 weather.h:496
+#: weather.h:446 weather.h:464 weather.h:482 weather.h:500
 msgid "Condition: "
 msgstr "Tiempo: "
 
-#: weather.h:514
+#: weather.h:518
 msgid "Location"
 msgstr "Lugar"
 

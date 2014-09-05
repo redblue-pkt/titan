@@ -4347,16 +4347,16 @@ msgid ""
 "Here you can configure your Auth Data. Use to navigate the control cross and "
 "the extra buttons displayed with your remote control to select."
 msgstr ""
-"Bạn có thể cấu hình thiết bị đọc ở đây. nsử dụng các phím di chuyển "
-"và các nút mở rộng trên điều khiển để chọn."
+"Bạn có thể cấu hình thiết bị đọc ở đây. nsử dụng các phím "
+"di chuyển và các nút mở rộng trên điều khiển để chọn."
 
 #: plugins_networkbrowser_skin.xml.h:11 skins_networkbrowser_skin.xml.h:11
 msgid ""
 "Here you can configure your network shares. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
 msgstr ""
-" Bạn có thể cấu hình mạng chia sẻ ở đây. sử dụng các phím di chuyển "
-"và các nút mở rộng trên điều khiển để chọn."
+" Bạn có thể cấu hình mạng chia sẻ ở đây. sử dụng các phím "
+"di chuyển và các nút mở rộng trên điều khiển để chọn."
 
 #: plugins_networkbrowser_skin.xml.h:12 skins_networkbrowser_skin.xml.h:12
 msgid ""
@@ -4586,16 +4586,16 @@ msgid ""
 "Here you can aktivate/deaktivate you readers. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
 msgstr ""
-"bạn có thể chọn thiết bị đọc ở đây. nsử dụng các phím di chuyển và "
-"các nút mở rộng trên điều khiển để chọn."
+"bạn có thể chọn thiết bị đọc ở đây. nsử dụng các phím di "
+"chuyển và các nút mở rộng trên điều khiển để chọn."
 
 #: plugins_readerconfig_skin.xml.h:6 skins_readerconfig_skin.xml.h:6
 msgid ""
 "Here you can configure your reader. Use to navigate the control cross and "
 "the extra buttons displayed with your remote control to select."
 msgstr ""
-"Bạn có thể cấu hình thiết bị đọc ở đây. nsử dụng các phím di chuyển "
-"và các nút mở rộng trên điều khiển để chọn."
+"Bạn có thể cấu hình thiết bị đọc ở đây. nsử dụng các phím "
+"di chuyển và các nút mở rộng trên điều khiển để chọn."
 
 #: plugins_readerconfig_skin.xml.h:7 skins_readerconfig_skin.xml.h:7
 msgid "Reader Config"
@@ -4913,7 +4913,7 @@ msgid "ts - cut"
 msgstr ""
 
 #: plugins_weather_skin.xml.h:3 skins_weather_skin.xml.h:3 tpk_showname.h:198
-#: weather.h:418
+#: weather.h:422
 msgid "Weather"
 msgstr "thời tiết"
 
@@ -6074,8 +6074,8 @@ msgid ""
 "Before you can see Signal/SNR/Ber you must zap to a channel of the satellite "
 "you are searching."
 msgstr ""
-"trước khi bạn có thể xem mức tín hiệu/SNR/bạn phải dò lại ch��ơng "
-"trìnhĐang dò chương trình."
+"trước khi bạn có thể xem mức tín hiệu/SNR/bạn phải dò lại ch�"
+"���ơng trìnhĐang dò chương trình."
 
 #: skin_default_skin.xml.h:107
 msgid "Begin"
@@ -6621,7 +6621,8 @@ msgstr ""
 
 #: skin_default_skin.xml.h:273
 msgid "Here you can backup and restore your settings."
-msgstr "Bạn có thể sao chép và khôi phục lại các thiết lập ở đây."
+msgstr ""
+"Bạn có thể sao chép và khôi phục lại các thiết lập ở đây."
 
 #: skin_default_skin.xml.h:274
 msgid "Here you can check the reception of the current station."
@@ -8408,20 +8409,23 @@ msgstr "Sao lưu dữ liệu"
 
 #: system_backup_restore.h:15
 msgid ""
-"Press -restore- and your saved settings will be restored from your swapstick "
-"/ recording hdd! The Box will restart automatically for restoring!\n"
+"Press -restore- and your saved settings will be restored from your "
+"swapstick / recording hdd! The Box will restart automatically for "
+"restoring!\n"
 "\n"
 "Press -backup- to save your actual settings to swapstick / recording hdd.\n"
 "WARNING: The old backup will be deleted!"
 msgstr ""
-"Ấn –khôi phục- và dữ liệu của bạn sẽ được khôi phục từ một bản sao lưu "
-"trước đó! Đầu thu sẽ tự động khởi động lại!\n"
+"Ấn –khôi phục- và dữ liệu của bạn sẽ được khôi phục "
+"từ một bản sao lưu trước đó! Đầu thu sẽ tự động khởi động "
+"lại!\n"
 "\n"
-" Ấn –sao lưu- để ghi các thiết lập hiện tại vào USB hoặc ổ cứng.\n"
+" Ấn –sao lưu- để ghi các thiết lập hiện tại vào USB hoặc ổ "
+"cứng.\n"
 "Cảnh báo: Bản sao cũ sẽ được xóa!\n"
 "\n"
-"Trong khi đang sử dụng chức năng cập nhật, các thiết lập của b��n sẽ được "
-"lưu và khôi phục tự động, nếu có thể!"
+"Trong khi đang sử dụng chức năng cập nhật, các thiết lập của b�"
+"���n sẽ được lưu và khôi phục tự động, nếu có thể!"
 
 #: system_backup_restore.h:31
 msgid "Restore Settings"
@@ -9191,8 +9195,8 @@ msgstr ""
 #: tmdb.h:922
 msgid "Error, found result without imdbid we can't this save in MediaDB"
 msgstr ""
-"lỗi, kết quả tìm kiếm có một imdbid không hợp lệ và do đó kh��ng thể "
-"được lưu trữ trong các MediaDB "
+"lỗi, kết quả tìm kiếm có một imdbid không hợp lệ và do đó kh�"
+"���ng thể được lưu trữ trong các MediaDB "
 
 #: TopfieldVFD.c:68
 msgid ""
@@ -11122,23 +11126,27 @@ msgstr "Cài đặt khuôn hình"
 msgid "Videomode"
 msgstr "Video"
 
-#: weather.h:430 weather.h:448 weather.h:466 weather.h:484
+#: weather.h:137
+msgid "en-GB"
+msgstr ""
+
+#: weather.h:434 weather.h:452 weather.h:470 weather.h:488
 msgid "Day: "
 msgstr "Ngày: "
 
-#: weather.h:434 weather.h:452 weather.h:470 weather.h:488
+#: weather.h:438 weather.h:456 weather.h:474 weather.h:492
 msgid "Lowest temp: "
 msgstr "Nhiệt độ thấp nhất: "
 
-#: weather.h:438 weather.h:456 weather.h:474 weather.h:492
+#: weather.h:442 weather.h:460 weather.h:478 weather.h:496
 msgid "Highest temp: "
 msgstr "Nhiệt độ cao nhất: "
 
-#: weather.h:442 weather.h:460 weather.h:478 weather.h:496
+#: weather.h:446 weather.h:464 weather.h:482 weather.h:500
 msgid "Condition: "
 msgstr "trạng thái: "
 
-#: weather.h:514
+#: weather.h:518
 msgid "Location"
 msgstr ""
 
