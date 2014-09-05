@@ -4920,7 +4920,7 @@ msgid "ts - cut"
 msgstr ""
 
 #: plugins_weather_skin.xml.h:3 skins_weather_skin.xml.h:3 tpk_showname.h:198
-#: weather.h:422
+#: weather.h:426
 msgid "Weather"
 msgstr "Meteo"
 
@@ -11145,23 +11145,23 @@ msgstr "Video"
 msgid "en-GB"
 msgstr ""
 
-#: weather.h:434 weather.h:452 weather.h:470 weather.h:488
+#: weather.h:438 weather.h:456 weather.h:474 weather.h:492
 msgid "Day: "
 msgstr "Giorno: "
 
-#: weather.h:438 weather.h:456 weather.h:474 weather.h:492
+#: weather.h:442 weather.h:460 weather.h:478 weather.h:496
 msgid "Lowest temp: "
 msgstr "Lowest temp: "
 
-#: weather.h:442 weather.h:460 weather.h:478 weather.h:496
+#: weather.h:446 weather.h:464 weather.h:482 weather.h:500
 msgid "Highest temp: "
 msgstr "Highest temp: "
 
-#: weather.h:446 weather.h:464 weather.h:482 weather.h:500
+#: weather.h:450 weather.h:468 weather.h:486 weather.h:504
 msgid "Condition: "
 msgstr "Meteo: "
 
-#: weather.h:518
+#: weather.h:522
 msgid "Location"
 msgstr ""
 
