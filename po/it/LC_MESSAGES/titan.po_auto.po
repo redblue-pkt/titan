@@ -5219,7 +5219,7 @@ msgstr ""
 
 #: record.h:369
 msgid "Box recording finished poweroff in 30sec !"
-msgstr "Registrazione Finita. Box sara spento in 30 secondi !\ "
+msgstr "Registrazione Finita. Box sara spento in 30 secondi !"
 
 #: record.h:1001
 msgid ""
