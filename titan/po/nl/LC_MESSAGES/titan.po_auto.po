@@ -413,7 +413,7 @@ msgstr "Uitschakelen"
 #: adjust.h:110 httpdfunc.h:3744 powerofftimer.h:118
 #: skin_default_skin.xml.h:612
 msgid "Standby"
-msgstr "Standby"
+msgstr ""
 
 #: adjust.h:111 httpdfunc.h:3751 skin_default_skin.xml.h:520 softcam.h:291
 msgid "Restart"
@@ -1560,7 +1560,7 @@ msgstr "Map maken"
 #: filemanager.h:84 play.h:612 plugins_sudoku_skin.xml.h:10
 #: skins_sudoku_skin.xml.h:10
 msgid "Menu"
-msgstr "Menu"
+msgstr ""
 
 #: filemanager.h:89
 msgid "Choose your Filemanager Option from the following list"
@@ -2034,7 +2034,7 @@ msgstr "Aktie bij het indrukken van de aan/uit knop"
 
 #: httpdfunc.h:3766 skin_default_skin.xml.h:729
 msgid "Virtualzap Timeout"
-msgstr "Virtualzap Timeout"
+msgstr ""
 
 #: httpdfunc.h:3802 skin_default_skin.xml.h:232
 msgid "Fast Text Render"
@@ -2114,7 +2114,7 @@ msgstr "Verborgen bestanden zien"
 
 #: httpdfunc.h:4340 skin_default_skin.xml.h:225
 msgid "Expert Modus"
-msgstr "Expert Modus"
+msgstr ""
 
 #: httpdfunc.h:4369 skin_default_skin.xml.h:580
 msgid "Show infobar on program change"
@@ -2436,7 +2436,7 @@ msgstr ""
 #: info.h:48 info.h:64 info.h:91 plugins_panel_skin.xml.h:17
 #: skins_panel_skin.xml.h:17
 msgid "Infos"
-msgstr "Infos"
+msgstr ""
 
 #: instar.h:196 instar.h:208
 msgid "aus"
@@ -2877,7 +2877,7 @@ msgstr "MediaDB opslaglocatie"
 
 #: mediadb.h:1102 play.h:579
 msgid "MediaDB Debug"
-msgstr "MediaDB Debug"
+msgstr ""
 
 #: mediadb.h:1109 play.h:586 skin_default_skin.xml.h:101
 msgid "Backdrop Download Count"
@@ -3756,7 +3756,7 @@ msgstr "Vewijderen"
 
 #: play.h:1391 skin_default_skin.xml.h:212
 msgid "EPG"
-msgstr "EPG"
+msgstr ""
 
 #: play.h:1391
 msgid "SORT"
@@ -4291,7 +4291,7 @@ msgstr "Radio speler"
 #: plugins_mc_skin.xml.h:52 plugins_tithek_skin.xml.h:16
 #: skins_mc_skin.xml.h:52 skins_tithek_skin.xml.h:16
 msgid "Screensaver"
-msgstr "Screensaver"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:53 plugins_panel_skin.xml.h:5
 #: plugins_panel_skin.xml.h:22 skin_default_skin.xml.h:575
@@ -4600,7 +4600,7 @@ msgstr "Snelheid"
 #: plugins_panel_skin.xml.h:24 skin_default_skin.xml.h:651
 #: skins_panel_skin.xml.h:24
 msgid "Test"
-msgstr "Test"
+msgstr ""
 
 #: plugins_panel_skin.xml.h:25 skin_default_skin.xml.h:712
 #: skins_panel_skin.xml.h:25
@@ -4857,7 +4857,7 @@ msgstr "Titel"
 #: plugins_tithek_skin.xml.h:21 skin_default_skin.xml.h:697
 #: skins_tithek_skin.xml.h:21
 msgid "Type"
-msgstr "Type"
+msgstr ""
 
 #: plugins_tithek_skin.xml.h:22 skins_tithek_skin.xml.h:22
 msgid "View Cover"
@@ -4987,11 +4987,11 @@ msgstr ""
 
 #: plugins_wm2014_skin.xml.h:5 skins_wm2014_skin.xml.h:5
 msgid "Date"
-msgstr ""
+msgstr "Datum"
 
 #: plugins_wm2014_skin.xml.h:6 skins_wm2014_skin.xml.h:6
 msgid "Day "
-msgstr ""
+msgstr "Dag"
 
 #: plugins_wm2014_skin.xml.h:7 skins_wm2014_skin.xml.h:7
 msgid "Diff"
@@ -5036,7 +5036,7 @@ msgstr ""
 
 #: plugins_wm2014_skin.xml.h:17 skins_wm2014_skin.xml.h:17
 msgid "Time"
-msgstr ""
+msgstr "Tijd"
 
 #: plugins_wm2014_skin.xml.h:18 skins_wm2014_skin.xml.h:18
 msgid "vs"
@@ -7199,7 +7199,7 @@ msgstr "Modulatie:"
 
 #: skin_default_skin.xml.h:397
 msgid "Module"
-msgstr "Module"
+msgstr ""
 
 #: skin_default_skin.xml.h:398
 msgid "Module Config"
@@ -7303,7 +7303,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:427
 msgid "Ok"
-msgstr "Ok"
+msgstr ""
 
 #: skin_default_skin.xml.h:428
 msgid "ONID:"
@@ -7331,7 +7331,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:434
 msgid "Orbital Position:"
-msgstr "Orbital Position:"
+msgstr ""
 
 #: skin_default_skin.xml.h:435
 msgid "OSD Bottom Overscan"
@@ -7423,7 +7423,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:461
 msgid "please wait"
-msgstr "Een ogenblik geduld"
+msgstr "Een ogenblik gedult"
 
 #: skin_default_skin.xml.h:462
 msgid "Plot"
@@ -7463,7 +7463,7 @@ msgstr "Power Off Timer"
 
 #: skin_default_skin.xml.h:474
 msgid "Power Off Timer"
-msgstr "Power Off Timer"
+msgstr ""
 
 #: skin_default_skin.xml.h:475
 msgid "prime time"
@@ -7759,7 +7759,7 @@ msgstr "Alle CAID's naar CI module sturen"
 
 #: skin_default_skin.xml.h:570
 msgid "Serial Input"
-msgstr "Serial Input"
+msgstr ""
 
 #: skin_default_skin.xml.h:571
 msgid "Service"
@@ -8071,7 +8071,7 @@ msgstr "TPK installatie - selecteer installatie medium"
 
 #: skin_default_skin.xml.h:676
 msgid "TPK media (media)"
-msgstr "TPK media (media)"
+msgstr ""
 
 #: skin_default_skin.xml.h:677
 msgid "TPK remove"
@@ -8083,7 +8083,7 @@ msgstr "TPK installatie (tmp)"
 
 #: skin_default_skin.xml.h:679
 msgid "TPK upgrade (online)"
-msgstr "TPK upgrade (online)"
+msgstr ""
 
 #: skin_default_skin.xml.h:680
 msgid "Transmission"
@@ -8493,9 +8493,8 @@ msgstr "Maak back-up"
 
 #: system_backup_restore.h:15
 msgid ""
-"Press -restore- and your saved settings will be restored from your "
-"swapstick / recording hdd! The Box will restart automatically for "
-"restoring!\n"
+"Press -restore- and your saved settings will be restored from your swapstick "
+"/ recording hdd! The Box will restart automatically for restoring!\n"
 "\n"
 "Press -backup- to save your actual settings to swapstick / recording hdd.\n"
 "WARNING: The old backup will be deleted!"
@@ -11229,7 +11228,7 @@ msgstr ""
 
 #: weather.h:137
 msgid "en-GB"
-msgstr ""
+msgstr "nl-NL"
 
 #: weather.h:438 weather.h:456 weather.h:474 weather.h:492
 msgid "Day: "

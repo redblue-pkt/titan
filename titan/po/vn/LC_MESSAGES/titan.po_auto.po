@@ -1023,11 +1023,11 @@ msgstr "không"
 
 #: diseqcconfig.h:136 skin_default_skin.xml.h:48
 msgid "A"
-msgstr "a"
+msgstr ""
 
 #: diseqcconfig.h:137 skin_default_skin.xml.h:100
 msgid "B"
-msgstr "b"
+msgstr ""
 
 #: diseqcconfig.h:141 diseqcconfig.h:160
 msgid "Input 1"
@@ -1543,7 +1543,7 @@ msgstr "Tạo thư mục"
 #: filemanager.h:84 play.h:612 plugins_sudoku_skin.xml.h:10
 #: skins_sudoku_skin.xml.h:10
 msgid "Menu"
-msgstr "MENU"
+msgstr ""
 
 #: filemanager.h:89
 msgid "Choose your Filemanager Option from the following list"
@@ -4347,16 +4347,16 @@ msgid ""
 "Here you can configure your Auth Data. Use to navigate the control cross and "
 "the extra buttons displayed with your remote control to select."
 msgstr ""
-"Bạn có thể cấu hình thiết bị đọc ở đây. nsử dụng các phím "
-"di chuyển và các nút mở rộng trên điều khiển để chọn."
+"Bạn có thể cấu hình thiết bị đọc ở đây. nsử dụng các phím di chuyển "
+"và các nút mở rộng trên điều khiển để chọn."
 
 #: plugins_networkbrowser_skin.xml.h:11 skins_networkbrowser_skin.xml.h:11
 msgid ""
 "Here you can configure your network shares. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
 msgstr ""
-" Bạn có thể cấu hình mạng chia sẻ ở đây. sử dụng các phím "
-"di chuyển và các nút mở rộng trên điều khiển để chọn."
+" Bạn có thể cấu hình mạng chia sẻ ở đây. sử dụng các phím di chuyển "
+"và các nút mở rộng trên điều khiển để chọn."
 
 #: plugins_networkbrowser_skin.xml.h:12 skins_networkbrowser_skin.xml.h:12
 msgid ""
@@ -4586,16 +4586,16 @@ msgid ""
 "Here you can aktivate/deaktivate you readers. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
 msgstr ""
-"bạn có thể chọn thiết bị đọc ở đây. nsử dụng các phím di "
-"chuyển và các nút mở rộng trên điều khiển để chọn."
+"bạn có thể chọn thiết bị đọc ở đây. nsử dụng các phím di chuyển và "
+"các nút mở rộng trên điều khiển để chọn."
 
 #: plugins_readerconfig_skin.xml.h:6 skins_readerconfig_skin.xml.h:6
 msgid ""
 "Here you can configure your reader. Use to navigate the control cross and "
 "the extra buttons displayed with your remote control to select."
 msgstr ""
-"Bạn có thể cấu hình thiết bị đọc ở đây. nsử dụng các phím "
-"di chuyển và các nút mở rộng trên điều khiển để chọn."
+"Bạn có thể cấu hình thiết bị đọc ở đây. nsử dụng các phím di chuyển "
+"và các nút mở rộng trên điều khiển để chọn."
 
 #: plugins_readerconfig_skin.xml.h:7 skins_readerconfig_skin.xml.h:7
 msgid "Reader Config"
@@ -6074,8 +6074,8 @@ msgid ""
 "Before you can see Signal/SNR/Ber you must zap to a channel of the satellite "
 "you are searching."
 msgstr ""
-"trước khi bạn có thể xem mức tín hiệu/SNR/bạn phải dò lại ch�"
-"���ơng trìnhĐang dò chương trình."
+"trước khi bạn có thể xem mức tín hiệu/SNR/bạn phải dò lại ch��ơng "
+"trìnhĐang dò chương trình."
 
 #: skin_default_skin.xml.h:107
 msgid "Begin"
@@ -6119,7 +6119,7 @@ msgstr "Độ sáng"
 
 #: skin_default_skin.xml.h:118
 msgid "c"
-msgstr "C"
+msgstr ""
 
 #: skin_default_skin.xml.h:119
 msgid "C"
@@ -6279,7 +6279,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:165
 msgid "d"
-msgstr "D"
+msgstr ""
 
 #: skin_default_skin.xml.h:166
 msgid "D"
@@ -6387,7 +6387,7 @@ msgstr "Thiết lập DYNDNS"
 
 #: skin_default_skin.xml.h:203
 msgid "e"
-msgstr "E"
+msgstr ""
 
 #: skin_default_skin.xml.h:204
 msgid "E"
@@ -6471,7 +6471,7 @@ msgstr "Tìm modul mở rộng (cần khởi động lại)"
 
 #: skin_default_skin.xml.h:228
 msgid "f"
-msgstr "F"
+msgstr ""
 
 #: skin_default_skin.xml.h:229
 msgid "F"
@@ -6541,7 +6541,7 @@ msgstr "Tần số:"
 
 #: skin_default_skin.xml.h:250
 msgid "g"
-msgstr "G"
+msgstr ""
 
 #: skin_default_skin.xml.h:251
 msgid "G"
@@ -6601,7 +6601,7 @@ msgstr "Khởi động lại GUI"
 
 #: skin_default_skin.xml.h:266
 msgid "h"
-msgstr "H"
+msgstr ""
 
 #: skin_default_skin.xml.h:267
 msgid "H"
@@ -6621,8 +6621,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:273
 msgid "Here you can backup and restore your settings."
-msgstr ""
-"Bạn có thể sao chép và khôi phục lại các thiết lập ở đây."
+msgstr "Bạn có thể sao chép và khôi phục lại các thiết lập ở đây."
 
 #: skin_default_skin.xml.h:274
 msgid "Here you can check the reception of the current station."
@@ -6871,7 +6870,7 @@ msgstr "Thiết lập HTTP"
 
 #: skin_default_skin.xml.h:329
 msgid "i"
-msgstr "I"
+msgstr ""
 
 #: skin_default_skin.xml.h:330
 msgid "I"
@@ -6923,7 +6922,7 @@ msgstr "Tiếng Ý"
 
 #: skin_default_skin.xml.h:345
 msgid "j"
-msgstr "J"
+msgstr ""
 
 #: skin_default_skin.xml.h:346
 msgid "J"
@@ -6931,7 +6930,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:348
 msgid "k"
-msgstr "K"
+msgstr ""
 
 #: skin_default_skin.xml.h:349
 msgid "K"
@@ -6951,7 +6950,7 @@ msgstr "Bàn phím"
 
 #: skin_default_skin.xml.h:353
 msgid "l"
-msgstr "L"
+msgstr ""
 
 #: skin_default_skin.xml.h:354
 msgid "L"
@@ -7015,7 +7014,7 @@ msgstr "Vĩ độ"
 
 #: skin_default_skin.xml.h:369
 msgid "m"
-msgstr "M"
+msgstr ""
 
 #: skin_default_skin.xml.h:370
 msgid "M"
@@ -7147,7 +7146,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:406
 msgid "n"
-msgstr "N"
+msgstr ""
 
 #: skin_default_skin.xml.h:407
 msgid "N"
@@ -7207,7 +7206,7 @@ msgstr "Standby"
 
 #: skin_default_skin.xml.h:423
 msgid "o"
-msgstr "O"
+msgstr ""
 
 #: skin_default_skin.xml.h:424
 msgid "O"
@@ -7279,7 +7278,7 @@ msgstr "Thiết lập ép xung"
 
 #: skin_default_skin.xml.h:442
 msgid "p"
-msgstr "P"
+msgstr ""
 
 #: skin_default_skin.xml.h:443
 msgid "P"
@@ -7423,7 +7422,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:484
 msgid "q"
-msgstr "Q"
+msgstr ""
 
 #: skin_default_skin.xml.h:485
 msgid "Q"
@@ -7435,7 +7434,7 @@ msgstr "Menü …"
 
 #: skin_default_skin.xml.h:487
 msgid "r"
-msgstr "R"
+msgstr ""
 
 #: skin_default_skin.xml.h:488
 msgid "R"
@@ -7567,7 +7566,7 @@ msgstr "Tiếng Nga"
 
 #: skin_default_skin.xml.h:534
 msgid "s"
-msgstr "S"
+msgstr ""
 
 #: skin_default_skin.xml.h:535
 msgid "S"
@@ -7907,7 +7906,7 @@ msgstr "S"
 
 #: skin_default_skin.xml.h:649
 msgid "t"
-msgstr "T"
+msgstr ""
 
 #: skin_default_skin.xml.h:650
 msgid "T"
@@ -8067,7 +8066,7 @@ msgstr "Kiểu dò"
 
 #: skin_default_skin.xml.h:700
 msgid "u"
-msgstr "U"
+msgstr ""
 
 #: skin_default_skin.xml.h:701
 msgid "U"
@@ -8127,7 +8126,7 @@ msgstr "Sử dụng các phím số"
 
 #: skin_default_skin.xml.h:719
 msgid "v"
-msgstr "V"
+msgstr ""
 
 #: skin_default_skin.xml.h:720
 msgid "V"
@@ -8175,7 +8174,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:734
 msgid "w"
-msgstr "W"
+msgstr ""
 
 #: skin_default_skin.xml.h:735
 msgid "W"
@@ -8195,7 +8194,7 @@ msgstr "ghi lỗi"
 
 #: skin_default_skin.xml.h:740
 msgid "x"
-msgstr "X"
+msgstr ""
 
 #: skin_default_skin.xml.h:741
 msgid "X"
@@ -8203,7 +8202,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:742
 msgid "y"
-msgstr "Y"
+msgstr ""
 
 #: skin_default_skin.xml.h:743
 msgid "Y"
@@ -8215,7 +8214,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:745
 msgid "z"
-msgstr "Z"
+msgstr ""
 
 #: skin_default_skin.xml.h:746
 msgid "Z"
@@ -8409,23 +8408,20 @@ msgstr "Sao lưu dữ liệu"
 
 #: system_backup_restore.h:15
 msgid ""
-"Press -restore- and your saved settings will be restored from your "
-"swapstick / recording hdd! The Box will restart automatically for "
-"restoring!\n"
+"Press -restore- and your saved settings will be restored from your swapstick "
+"/ recording hdd! The Box will restart automatically for restoring!\n"
 "\n"
 "Press -backup- to save your actual settings to swapstick / recording hdd.\n"
 "WARNING: The old backup will be deleted!"
 msgstr ""
-"Ấn –khôi phục- và dữ liệu của bạn sẽ được khôi phục "
-"từ một bản sao lưu trước đó! Đầu thu sẽ tự động khởi động "
-"lại!\n"
+"Ấn –khôi phục- và dữ liệu của bạn sẽ được khôi phục từ một bản sao lưu "
+"trước đó! Đầu thu sẽ tự động khởi động lại!\n"
 "\n"
-" Ấn –sao lưu- để ghi các thiết lập hiện tại vào USB hoặc ổ "
-"cứng.\n"
+" Ấn –sao lưu- để ghi các thiết lập hiện tại vào USB hoặc ổ cứng.\n"
 "Cảnh báo: Bản sao cũ sẽ được xóa!\n"
 "\n"
-"Trong khi đang sử dụng chức năng cập nhật, các thiết lập của b�"
-"���n sẽ được lưu và khôi phục tự động, nếu có thể!"
+"Trong khi đang sử dụng chức năng cập nhật, các thiết lập của b��n sẽ được "
+"lưu và khôi phục tự động, nếu có thể!"
 
 #: system_backup_restore.h:31
 msgid "Restore Settings"
@@ -9195,8 +9191,8 @@ msgstr ""
 #: tmdb.h:922
 msgid "Error, found result without imdbid we can't this save in MediaDB"
 msgstr ""
-"lỗi, kết quả tìm kiếm có một imdbid không hợp lệ và do đó kh�"
-"���ng thể được lưu trữ trong các MediaDB "
+"lỗi, kết quả tìm kiếm có một imdbid không hợp lệ và do đó kh��ng thể "
+"được lưu trữ trong các MediaDB "
 
 #: TopfieldVFD.c:68
 msgid ""
@@ -11128,7 +11124,7 @@ msgstr "Video"
 
 #: weather.h:137
 msgid "en-GB"
-msgstr ""
+msgstr "vi-VN"
 
 #: weather.h:438 weather.h:456 weather.h:474 weather.h:492
 msgid "Day: "

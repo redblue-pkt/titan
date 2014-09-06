@@ -128,7 +128,7 @@ msgstr ""
 #: xupnpd.h:73 xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:215
 #: zapback.c:79 zdf.h:29
 msgid "OK"
-msgstr "OK"
+msgstr ""
 
 #: about.h:45 ard.h:31 autotimer.c:537 autotimer.c:543 autotimer.c:568
 #: autotimer.c:575 autotimer.c:603 avsettings.h:261 betarobot.h:57
@@ -1260,13 +1260,13 @@ msgstr "EPG unique"
 #: settings_bluebutton.h:16 settings_pluginbutton.h:17 settings_redbutton.h:17
 #: skin_default_skin.xml.h:405
 msgid "Multi EPG"
-msgstr "Multi EPG"
+msgstr ""
 
 #: epgsettings.h:141 keyactions.h:91 settings_bluebutton.h:17
 #: settings_pluginbutton.h:18 settings_redbutton.h:18
 #: skin_default_skin.xml.h:261
 msgid "Graphic Multi EPG"
-msgstr "Graphic Multi EPG"
+msgstr ""
 
 #: epgsettings.h:148 tmc.h:389
 msgid "scan"
@@ -2181,7 +2181,7 @@ msgstr ""
 
 #: hwtest.h:185 hwtest.h:569
 msgid "LNB"
-msgstr "LNB"
+msgstr ""
 
 #: hwtest.h:186 hwtest.h:639
 msgid "Flash/Nand Check"
@@ -2386,12 +2386,12 @@ msgstr ""
 
 #: info.h:27 plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9 titan.c:979
 msgid "Info"
-msgstr "Info"
+msgstr ""
 
 #: info.h:48 info.h:64 info.h:91 plugins_panel_skin.xml.h:17
 #: skins_panel_skin.xml.h:17
 msgid "Infos"
-msgstr "Infos"
+msgstr ""
 
 #: instar.h:196 instar.h:208
 msgid "aus"
@@ -2424,7 +2424,7 @@ msgstr "Résolution Automatique"
 #: keyactions.h:88 settings_bluebutton.h:14 settings_pluginbutton.h:15
 #: settings_redbutton.h:15 skin_default_skin.xml.h:599
 msgid "Softcam Panel"
-msgstr "Softcam Panel"
+msgstr ""
 
 #: keyactions.h:92 settings_bluebutton.h:18 settings_pluginbutton.h:19
 #: settings_redbutton.h:19
@@ -3090,7 +3090,7 @@ msgstr "Controle Emu"
 #: networkbrowser.h:1598 plugins_networkbrowser_skin.xml.h:28
 #: skins_networkbrowser_skin.xml.h:28
 msgid "ssl"
-msgstr "ssl"
+msgstr ""
 
 #: networkbrowser.h:1601
 msgid "socks5"
@@ -3357,7 +3357,7 @@ msgstr "SCART en Veille"
 
 #: panel_settings_autostart.h:167 settings_autostart.h:197
 msgid "HighSR"
-msgstr "HighSR"
+msgstr ""
 
 #: panel_settings_autostart.h:176 settings_autostart.h:140
 msgid "Boot RGB Fix"
@@ -4193,7 +4193,7 @@ msgstr "TiThek"
 
 #: plugins_mc_skin.xml.h:35 skins_mc_skin.xml.h:35
 msgid "mvid"
-msgstr "mvid"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:36 skins_mc_skin.xml.h:36
 msgid "My Video"
@@ -4262,7 +4262,7 @@ msgstr "Son"
 
 #: plugins_mc_skin.xml.h:60 skins_mc_skin.xml.h:60
 msgid "Style"
-msgstr "Style"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:61 skins_mc_skin.xml.h:61
 msgid "use last Directory"
@@ -4274,7 +4274,7 @@ msgstr "Vidéo"
 
 #: plugins_mc_skin.xml.h:63 skins_mc_skin.xml.h:63
 msgid "Video Player"
-msgstr "Video Player"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:64 skins_mc_skin.xml.h:64
 msgid "VIDEO SETTINGS"
@@ -4282,7 +4282,7 @@ msgstr "Réglages Vidéo"
 
 #: plugins_mc_skin.xml.h:66 skins_mc_skin.xml.h:66
 msgid "VLC Player"
-msgstr "VLC Player"
+msgstr ""
 
 #: plugins_mc_skin.xml.h:67 skins_mc_skin.xml.h:67
 msgid "Weather Infos"
@@ -4290,7 +4290,7 @@ msgstr "Infos de Météo"
 
 #: plugins_mc_skin.xml.h:68 skins_mc_skin.xml.h:68
 msgid "Web Radio Player"
-msgstr "Web Radio Player"
+msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:1 plugins_stock_skin.xml.h:2
 #: plugins_weather_skin.xml.h:1 skin_default_skin.xml.h:58
@@ -4402,7 +4402,7 @@ msgstr "Nom de Paprtage"
 #: plugins_networkbrowser_skin.xml.h:29 skin_default_skin.xml.h:696
 #: skins_networkbrowser_skin.xml.h:29
 msgid "type"
-msgstr "type"
+msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:30 skins_networkbrowser_skin.xml.h:30
 msgid "usedns"
@@ -5831,7 +5831,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:47
 msgid "a"
-msgstr "a"
+msgstr ""
 
 #: skin_default_skin.xml.h:49
 msgid "AAC Mode"
@@ -6374,7 +6374,7 @@ msgstr "Système"
 
 #: skin_default_skin.xml.h:211
 msgid "English"
-msgstr "English"
+msgstr ""
 
 #: skin_default_skin.xml.h:213
 msgid "EPG button on EPG Screen"
@@ -6422,7 +6422,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:226
 msgid "Extensions"
-msgstr "Extensions"
+msgstr ""
 
 #: skin_default_skin.xml.h:227
 msgid "Ext. Modul detect (needs reboot)"
@@ -7229,7 +7229,7 @@ msgstr "balayage Haut OSD"
 
 #: skin_default_skin.xml.h:439
 msgid "OSD Transparent"
-msgstr "OSD Transparent"
+msgstr ""
 
 #: skin_default_skin.xml.h:441
 msgid "Overclocking Settings"
@@ -7317,7 +7317,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:465
 msgid "PMT PID:"
-msgstr "PMT PID:"
+msgstr ""
 
 #: skin_default_skin.xml.h:467
 msgid "Polarization:"
@@ -7501,11 +7501,11 @@ msgstr ""
 
 #: skin_default_skin.xml.h:528
 msgid "Rolloff"
-msgstr "Rolloff"
+msgstr ""
 
 #: skin_default_skin.xml.h:529
 msgid "Rolloff:"
-msgstr "Rolloff:"
+msgstr ""
 
 #: skin_default_skin.xml.h:530
 msgid "Rotor Position"
@@ -7557,7 +7557,7 @@ msgstr "Sat Finder"
 
 #: skin_default_skin.xml.h:544
 msgid "Sat Finder"
-msgstr "Sat Finder"
+msgstr ""
 
 #: skin_default_skin.xml.h:545
 msgid "Saturation"
@@ -7825,11 +7825,11 @@ msgstr ""
 
 #: skin_default_skin.xml.h:639
 msgid "System - Flashupdate (online)"
-msgstr "System - Flashupdate (online)"
+msgstr ""
 
 #: skin_default_skin.xml.h:640
 msgid "System - Flashupdate (tmp)"
-msgstr "System - Flashupdate (tmp)"
+msgstr ""
 
 #: skin_default_skin.xml.h:641
 msgid "System Info"
@@ -8361,9 +8361,8 @@ msgstr "Créer Backup"
 
 #: system_backup_restore.h:15
 msgid ""
-"Press -restore- and your saved settings will be restored from your "
-"swapstick / recording hdd! The Box will restart automatically for "
-"restoring!\n"
+"Press -restore- and your saved settings will be restored from your swapstick "
+"/ recording hdd! The Box will restart automatically for restoring!\n"
 "\n"
 "Press -backup- to save your actual settings to swapstick / recording hdd.\n"
 "WARNING: The old backup will be deleted!"
@@ -11042,7 +11041,7 @@ msgstr "Vidéo"
 
 #: weather.h:137
 msgid "en-GB"
-msgstr ""
+msgstr "fr-FR"
 
 #: weather.h:438 weather.h:456 weather.h:474 weather.h:492
 msgid "Day: "

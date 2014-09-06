@@ -128,7 +128,7 @@ msgstr ""
 #: xupnpd.h:73 xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:215
 #: zapback.c:79 zdf.h:29
 msgid "OK"
-msgstr ""
+msgstr "Ok"
 
 #: about.h:45 ard.h:31 autotimer.c:537 autotimer.c:543 autotimer.c:568
 #: autotimer.c:575 autotimer.c:603 avsettings.h:261 betarobot.h:57
@@ -298,7 +298,7 @@ msgstr "Infobar"
 
 #: adjust.h:69 httpdfunc.h:3582
 msgid "epg"
-msgstr ""
+msgstr "EPG"
 
 #: adjust.h:70 epgsettings.h:138 httpdfunc.h:3589
 msgid "Channel EPG"
@@ -896,7 +896,7 @@ msgstr "Todos los Canales"
 
 #: channellist.h:913
 msgid "Copy providerlist successfull"
-msgstr "Providers copiados con Exito"
+msgstr "Proveedores copiados con Exito"
 
 #: channellist.h:915
 msgid "Copy providerlist not ok"
@@ -1965,7 +1965,7 @@ msgstr "Fije la hora de la unidad sueño"
 
 #: harddisk.h:885 skin_default_skin.xml.h:662
 msgid "Time to sleep"
-msgstr "HDD Reposo (despues)"
+msgstr "HDD Reposo (despues de)"
 
 #: harddisk.h:887
 msgid "5 min"
@@ -2213,7 +2213,7 @@ msgstr ""
 
 #: hwtest.h:176 hwtest.h:220
 msgid "Front Display"
-msgstr "VFDisplay"
+msgstr "VFD Display"
 
 #: hwtest.h:177 hwtest.h:239
 msgid "Front Key"
@@ -2675,7 +2675,7 @@ msgstr ""
 "Project-Id-Version: TitanNit 1.55\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-07 10:44+0200\n"
-"PO-Revision-Date: 2014-06-29 17:22+0100\n"
+"PO-Revision-Date: 2014-08-06 17:22+0100\n"
 "Last-Translator: fedo < >\n"
 "Language-Team: German <_obiwan_@web.de>\n"
 "Language: se\n"
@@ -2801,7 +2801,7 @@ msgstr "mejor"
 #: mc_pictureplayer_settings.h:59 mc_pictureplayer_settings.h:65
 #: skin_default_skin.xml.h:347
 msgid "Jump"
-msgstr ""
+msgstr "Saltar"
 
 #: mc_pictureplayer_settings.h:60
 msgid "MTH House"
@@ -3093,7 +3093,7 @@ msgstr "Multi EPG - Satelites"
 
 #: multiepg.h:484
 msgid "MULTI EPG - Provider"
-msgstr "Multi EG - Providers"
+msgstr "Multi EPG - Proveedores"
 
 #: multiepg.h:497
 msgid "MULTI EPG - All Channels"
@@ -3224,8 +3224,8 @@ msgstr "Mostrar compartidos"
 #: networkbrowser.h:1875
 msgid "Choose your Shares from the following list"
 msgstr ""
-"lista de sus acciones. elige Editar entrada y pulse -VERDE-. Para agregar m�"
-"�s acciones por favor utiliza -Buscar-. Para acceder a los recursos "
+"lista de sus acciones. elige Editar entrada y pulse -VERDE-. Para agregar "
+"más acciones por favor utiliza -Buscar-. Para acceder a los recursos "
 "compartidos de Windows protegidos con contraseña por favor presione menú y "
 "entrar los datos del usuario."
 
@@ -3408,7 +3408,7 @@ msgstr "alta"
 
 #: panel_settings_autostart.h:69 settings_autostart.h:61
 msgid "showip"
-msgstr "Mostrar IP Address"
+msgstr "Mostrar Direccion IP"
 
 #: panel_settings_autostart.h:70 settings_autostart.h:62
 msgid "status"
@@ -3452,7 +3452,7 @@ msgstr "Salida Scart durante Apagado"
 
 #: panel_settings_autostart.h:167 settings_autostart.h:197
 msgid "HighSR"
-msgstr "dejar stmdvb.ko con la opcion HighSR Option"
+msgstr "dejar stmdvb.ko con la opcion HighSR "
 
 #: panel_settings_autostart.h:176 settings_autostart.h:140
 msgid "Boot RGB Fix"
@@ -3489,7 +3489,7 @@ msgstr "Sectores de maximo tamaño de 'grabar'"
 
 #: panel_settings_autostart.h:262
 msgid "Swap Max Sectors"
-msgstr "Sectores de tamaño mximo para 'swap'"
+msgstr "Sectores de tamaño maximo para 'swap'"
 
 #: panel_settings_autostart.h:279
 msgid "Autostart EMU"
@@ -3773,7 +3773,7 @@ msgstr "Seleccione la entrada deseada para el menú rojo de la lista de abajo"
 
 #: play.h:1172
 msgid "Jump To (min)"
-msgstr "Saltar a (min)"
+msgstr "Saltar a Posicion (min)"
 
 #: play.h:1250 play.h:1256 plugins_tmc_skin.xml.h:1 skins_tmc_skin.xml.h:1
 msgid "EPG Info"
@@ -4751,7 +4751,7 @@ msgstr "Relacion de aspecto"
 
 #: plugins_streaminfo_skin.xml.h:2 skins_streaminfo_skin.xml.h:2
 msgid "Framerate"
-msgstr "Tasa Mxima"
+msgstr "Tasa Maxima"
 
 #: plugins_streaminfo_skin.xml.h:3 skins_streaminfo_skin.xml.h:3
 #: tpk_showname.h:186
@@ -4996,7 +4996,7 @@ msgid ""
 msgstr ""
 "Comienza la pelicula con el reproductor interno. estaablecer un marcador con "
 "el -0- clave durante la reproduccion.\n"
-"Para una visin general de todos los marcadores pulse -5- en usted remoto. \n"
+"Para una vision general de todos los marcadores pulse -5- en usted remoto. \n"
 "Presione -Play- en su control remoto para realizar el corte seleccionado."
 
 #: plugins_tsSchnitt_skin.xml.h:10 skins_tsSchnitt_skin.xml.h:10
@@ -5381,7 +5381,7 @@ msgstr "ERROR: Temporizador fin de tiempo en el pasado"
 
 #: rectimer.h:150
 msgid "Timer endtime shorter than start time"
-msgstr "ERROR: estaablecer final antes de ajustar la hora de inicio"
+msgstr "ERROR: establecer final antes de ajustar la hora de inicio"
 
 #: rectimer.h:155
 msgid "Timer service ID not ok"
@@ -5481,7 +5481,7 @@ msgstr ""
 
 #: restoredefault.h:63 restoredefault.h:67 skin_default_skin.xml.h:522
 msgid "Restore default settings"
-msgstr "Restaurar la configuracin de fabrica"
+msgstr "Restaurar la configuracion de fabrica"
 
 #: restoredefault.h:64
 msgid "Format MNT with Backup/Restore"
@@ -5684,7 +5684,7 @@ msgstr ""
 
 #: screensaveradjust.h:47
 msgid "Song TitleText"
-msgstr "Mostrar Ttulo de la cancion"
+msgstr "Mostrar Titulo de la cancion"
 
 #: screensaveradjust.h:48
 msgid "Logo 1"
@@ -5742,11 +5742,11 @@ msgstr "Lista de canales vacíos o corruptos (canal no encontrado)!"
 
 #: settings_autostart.h:206
 msgid "swts"
-msgstr "Dejar stmdvb.ko carga con swts Opcion"
+msgstr "Dejar carga stmdvb.ko con la opcion wts "
 
 #: settings_autostart.h:215
 msgid "Cam Routing"
-msgstr "Dejar Stmdvb.ko carga con CamRouting Otion"
+msgstr "Dejar carga Stmdvb.ko con opcion CamRouting "
 
 #: settings_autostart.h:594
 msgid "ntpdate"
@@ -6755,7 +6755,7 @@ msgstr "Aqui usted puede copias de seguridad y restaurar la configuracion."
 #: skin_default_skin.xml.h:274
 msgid "Here you can check the reception of the current station."
 msgstr ""
-"Aqui usted puede ver los valores de recepcin del canal sintonizador en su "
+"Aqui usted puede ver los valores de recepcion del canal sintonizador en su "
 "tuner"
 
 #: skin_default_skin.xml.h:275
@@ -6766,7 +6766,7 @@ msgid ""
 msgstr ""
 "Aqui usted puede configurar el sintonizador. Editar las configuraciones "
 "satisfaciendo su sintonizador y de tipo de conexion. Para los sistemas "
-"motorizados configuran a la habitacin su Entorno 'Sistemas motorizados."
+"motorizados configuran a la habitacion su Entorno 'Sistemas motorizados."
 
 #: skin_default_skin.xml.h:276
 msgid "Here you can configure access to your DynDNS."
@@ -6943,7 +6943,7 @@ msgid ""
 "Here you can select the Transponder Mode. Please use a channel search after "
 "the Restart"
 msgstr ""
-"Aqui usted puede personalizar su configuracin de transpondedor.\n"
+"Aqui usted puede personalizar su configuracion de transpondedor.\n"
 "Tendra que realizar una exploracion despues del reinicio."
 
 #: skin_default_skin.xml.h:311
@@ -7223,7 +7223,7 @@ msgstr "Maxima Frecuencia"
 
 #: skin_default_skin.xml.h:377
 msgid "Maximal signalrate"
-msgstr "Velocidad mxima de la señal"
+msgstr "Velocidad maxima de la señal"
 
 #: skin_default_skin.xml.h:378
 msgid "Media Button"
@@ -7407,11 +7407,11 @@ msgstr "ONID: "
 
 #: skin_default_skin.xml.h:429
 msgid "Only default FEC"
-msgstr "Slo uso predeterminado FEC"
+msgstr "Solo uso predeterminado FEC"
 
 #: skin_default_skin.xml.h:430
 msgid "Only default signalrate"
-msgstr "Slo uso la tasa de seÑal por defecto"
+msgstr "Solo uso la tasa de señal por defecto"
 
 #: skin_default_skin.xml.h:431
 msgid "Only DVBS"
@@ -7447,7 +7447,7 @@ msgstr "Reducir el tamaño de la parte superior OSD"
 
 #: skin_default_skin.xml.h:439
 msgid "OSD Transparent"
-msgstr "mxima transparencia OSD"
+msgstr "maxima transparencia OSD"
 
 #: skin_default_skin.xml.h:441
 msgid "Overclocking Settings"
@@ -7532,7 +7532,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:463
 msgid "Plugin Button"
-msgstr "Plugin Boton"
+msgstr "Boton Plugin"
 
 #: skin_default_skin.xml.h:464
 msgid "Plugins"
@@ -7568,7 +7568,7 @@ msgstr "Apagado Temporizado"
 
 #: skin_default_skin.xml.h:475
 msgid "prime time"
-msgstr "Primetime"
+msgstr "Primer tiempo igual"
 
 #: skin_default_skin.xml.h:476
 msgid "Program Info"
@@ -7592,11 +7592,11 @@ msgstr "Bloqueo de servicio con PIN"
 
 #: skin_default_skin.xml.h:481
 msgid "Prov"
-msgstr "Provider"
+msgstr "Proveedor"
 
 #: skin_default_skin.xml.h:482
 msgid "Provider:"
-msgstr "Provider: "
+msgstr "Proveedor: "
 
 #: skin_default_skin.xml.h:483
 msgid "Prozesslist"
@@ -7872,7 +7872,7 @@ msgstr "Informacion Canal"
 
 #: skin_default_skin.xml.h:574
 msgid "set startchannel"
-msgstr "estaablecer como inicio canal"
+msgstr "establecer como inicio canal"
 
 #: skin_default_skin.xml.h:576
 msgid "Settings backup/restore"
@@ -7988,7 +7988,7 @@ msgstr "paso de frecuencia"
 
 #: skin_default_skin.xml.h:621
 msgid "Step signalrate"
-msgstr "Paso de tasa de seal"
+msgstr "Paso de tasa de señal"
 
 #: skin_default_skin.xml.h:622
 msgid "(Stop)"
@@ -8048,7 +8048,7 @@ msgstr "System backup"
 
 #: skin_default_skin.xml.h:639
 msgid "System - Flashupdate (online)"
-msgstr "Actualizar Software (Online)"
+msgstr "Actualizar Software (En Linea)"
 
 #: skin_default_skin.xml.h:640
 msgid "System - Flashupdate (tmp)"
@@ -8072,7 +8072,7 @@ msgstr "Sistema de Actualizacion"
 
 #: skin_default_skin.xml.h:645
 msgid "System - Usbupdate (online)"
-msgstr "USB Actualizar (online)"
+msgstr "USB Actualizar (En Linea)"
 
 #: skin_default_skin.xml.h:646
 msgid "System - Usbupdate (tmp)"
@@ -8100,7 +8100,7 @@ msgstr "Prueba"
 
 #: skin_default_skin.xml.h:653
 msgid "thereafter on this Channel:"
-msgstr "Lo siguiente en estae canal:"
+msgstr "Lo siguiente en este canal:"
 
 #: skin_default_skin.xml.h:654
 msgid "Threshold"
@@ -8140,7 +8140,7 @@ msgstr "Tiempo Zona"
 
 #: skin_default_skin.xml.h:666
 msgid "Tint"
-msgstr "Temperatura"
+msgstr "Matiz"
 
 #: skin_default_skin.xml.h:667
 msgid "Titan Changelog"
@@ -8164,7 +8164,7 @@ msgstr "Top (Procesos)"
 
 #: skin_default_skin.xml.h:673
 msgid "TPK install (online)"
-msgstr "Instalar (Online)"
+msgstr "Instalar (En Linea)"
 
 #: skin_default_skin.xml.h:675
 msgid "Tpk Install - select install medium"
@@ -8184,7 +8184,7 @@ msgstr "Instalar (tmp)"
 
 #: skin_default_skin.xml.h:679
 msgid "TPK upgrade (online)"
-msgstr "Actualizar (Online)"
+msgstr "Actualizar (En Linea)"
 
 #: skin_default_skin.xml.h:680
 msgid "Transmission"
@@ -8196,7 +8196,7 @@ msgstr "Transmision: "
 
 #: skin_default_skin.xml.h:682
 msgid "TRANSPONDEREDIT"
-msgstr "Transpondedor Editar"
+msgstr "Editar Transpondedor "
 
 #: skin_default_skin.xml.h:683
 msgid "TSID:"
@@ -8276,7 +8276,7 @@ msgstr "Unicable Configuracion"
 
 #: skin_default_skin.xml.h:708
 msgid "UNLOAD"
-msgstr "Descargue"
+msgstr "Desactivar"
 
 #: skin_default_skin.xml.h:709
 msgid "update"
@@ -8292,7 +8292,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:713
 msgid "Usbupdate (online)"
-msgstr "USB Actualizar (online)"
+msgstr "USB Actualizar (En Linea)"
 
 #: skin_default_skin.xml.h:714
 msgid "Usbupdate (tmp)"
@@ -8596,9 +8596,8 @@ msgstr "Guardar Imagen"
 
 #: system_backup_restore.h:15
 msgid ""
-"Press -restore- and your saved settings will be restored from your "
-"swapstick / recording hdd! The Box will restart automatically for "
-"restoring!\n"
+"Press -restore- and your saved settings will be restored from your swapstick "
+"/ recording hdd! The Box will restart automatically for restoring!\n"
 "\n"
 "Press -backup- to save your actual settings to swapstick / recording hdd.\n"
 "WARNING: The old backup will be deleted!"
@@ -8787,7 +8786,7 @@ msgstr ""
 
 #: timeshift.h:162
 msgid "Can't start timeshift play !"
-msgstr "No se puede iniciar la reproduccin diferida!"
+msgstr "No se puede iniciar la reproduccion diferida!"
 
 #: timeshiftsettings.h:45
 msgid ""
@@ -9047,7 +9046,7 @@ msgstr "Quieres añadir el enlace a tus favoritos?"
 
 #: tithek.h:3370
 msgid "Edit this Favorite ?"
-msgstr "Editar estae favorito?"
+msgstr "Editar este favorito?"
 
 #: tithek_mainmenu.h:2
 msgid "All New first"
@@ -9459,8 +9458,8 @@ msgid ""
 "A collection of really nice folder icons for MediaCenter Videoplayer "
 "Coverview!"
 msgstr ""
-"Una bonita selección de imágenes para el Media Center reproductor de vídeo "
-"y de la cubierta preliminar!"
+"Una bonita selección de imágenes para el Media Center reproductor de "
+"vídeo y de la cubierta preliminar!"
 
 #: tpk_description.h:3
 msgid "Alternativer Skin fuer Pearl LCD"
@@ -9736,7 +9735,7 @@ msgstr "El primer juego Titan"
 
 #: tpk_description.h:68
 msgid "Font 'Action Man Italic' "
-msgstr "Fuente 'Action Man Italic"
+msgstr "Fuente 'Accion Man Italic'"
 
 #: tpk_description.h:69
 msgid "Font 'Alpha Romanie G98'"
@@ -11210,7 +11209,7 @@ msgstr ""
 
 #: tunerconfig.h:417
 msgid "Terrestrisch"
-msgstr "Terrestrial"
+msgstr "Terrestre"
 
 #: tunerconfig.h:788
 msgid "direct connect"
