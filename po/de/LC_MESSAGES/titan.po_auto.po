@@ -4340,7 +4340,7 @@ msgstr "Bildschirmschoner"
 #: plugins_panel_skin.xml.h:22 skin_default_skin.xml.h:575
 #: skins_mc_skin.xml.h:53 skins_panel_skin.xml.h:5 skins_panel_skin.xml.h:22
 msgid "Settings"
-msgstr "Senderlisten"
+msgstr "Einstellungen"
 
 #: plugins_mc_skin.xml.h:54 skins_mc_skin.xml.h:54
 msgid "Show Pictitle"
