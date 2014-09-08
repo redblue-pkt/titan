@@ -285,6 +285,51 @@ int pipstartreal(struct channel* chnode, char* pin, int flag)
 	return 0;
 }
 
+int setvmpeg2(struct dvbdev* node, int value, int flag)
+{
+	debug(4440, "in");
+	char* vmpegdev = NULL, *tmpstr = NULL, *buf = NULL;
+	int ret = 0;
+
+	if(node == NULL) return 1;
+	if(flag == 0)  vmpegdev = getconfig("vmpegleftdev", NULL);
+	if(flag == 1)  vmpegdev = getconfig("vmpegtopdev", NULL);
+	if(flag == 2)  vmpegdev = getconfig("vmpegwidthdev", NULL);
+	if(flag == 3)  vmpegdev = getconfig("vmpegheightdev", NULL);
+	if(flag == 99) vmpegdev = getconfig("vmpegapplydev", NULL);
+
+	if(vmpegdev != NULL)
+	{
+		buf = malloc(MINMALLOC);
+		if(buf == NULL)
+		{
+			err("no mem");
+			return 1;
+		}
+		
+		tmpstr = malloc(10);
+		if(tmpstr == NULL)
+		{
+			err("no mem");
+			free(buf);
+			return 1;
+		}
+		
+		snprintf(buf, MINMALLOC, vmpegdev, node->devnr);
+		snprintf(tmpstr, 10, "%x", value);
+		debug(444, "set %s to %s", buf, tmpstr);
+		status.tvpic = 1;
+		ret = writesys(buf, tmpstr, 1);
+		
+		free(tmpstr);
+		free(buf);
+		return ret;
+	}
+
+	debug(4440, "out");
+	return 0;
+}
+
 // flag = 0 --> nicht aktivieren
 // flag = 1 --> aktiviere Einstellungen
 int pippos(struct dvbdev* node, int dst_width, int dst_height, int dst_left, int dst_top, int flag)
@@ -293,12 +338,12 @@ int pippos(struct dvbdev* node, int dst_width, int dst_height, int dst_left, int
 	
 	if(node == NULL) return 1;
 	
-	ret = setvmpeg(node, dst_left, 0);
-	ret = setvmpeg(node, dst_top, 1);
-	ret = setvmpeg(node, dst_width, 2);
-	ret = setvmpeg(node, dst_height, 3);
+	ret = setvmpeg2(node, dst_left, 0);
+	ret = setvmpeg2(node, dst_top, 1);
+	ret = setvmpeg2(node, dst_width, 2);
+	ret = setvmpeg2(node, dst_height, 3);
 	
-	if(flag == 1) ret = setvmpeg(node, 0, 99);
+	if(flag == 1) ret = setvmpeg2(node, 0, 99);
 	
 	return ret;
 }
