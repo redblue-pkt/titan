@@ -36,7 +36,12 @@ int oledtext(char *value)
 	else if(status.standby == 1)
 		OLED_nemesis = getscreen("OLED_nemesis_standby");
 	else
-		OLED_nemesis = getscreen("OLED_nemesis");
+	{
+		
+		OLED_nemesis = getscreen(getskinconfig("OLED_nemesis", NULL));
+		if(OLED_nemesis == NULL)
+			OLED_nemesis = getscreen("OLED_nemesis");
+	}
 	
 	struct skin* textbox = getscreennode(OLED_nemesis, "textbox");
 	
