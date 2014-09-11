@@ -15,6 +15,7 @@ void screenskinadjust()
 	struct skin* bottomoffset = getscreennode(skinadjust, "bottomoffset");
 	struct skin* showrecfreesize = getscreennode(skinadjust, "showrecfreesize");
 	struct skin* listboxselect = getscreennode(skinadjust, "listboxselect");
+	struct skin* oled_sel = getscreennode(skinadjust, "oled_sel");
 	struct skin* pic1 = getscreennode(skinadjust, "pic1");
 	struct skin* pic2 = getscreennode(skinadjust, "pic2");
 	
@@ -71,6 +72,16 @@ void screenskinadjust()
 		pic1->hidden = YES;
 		pic2->hidden = YES;
 	}
+	if(checkbox("ATEMIO-NEMESIS"))
+	{
+		addchoicebox(oled_sel, "OLED_nemesis", "v1");
+		addchoicebox(oled_sel, "OLED_nemesis_v2","v2");
+		addchoicebox(oled_sel, "OLED_nemesis_v3","v3");
+		addchoicebox(oled_sel, "OLED_nemesis_v4","v4");
+		setchoiceboxselection(listboxselecttype, getskinconfig("OLED_nemesis", NULL));
+	}
+	else
+		oled_sel->hidden = YES;
 
 	addchoicebox(showrecfreesize, "0", _("no"));
 	addchoicebox(showrecfreesize, "1", _("yes (Text in %)"));
@@ -156,6 +167,9 @@ void screenskinadjust()
 			addconfigscreencheck("showrecfreesize", showrecfreesize, "0");
 			status.showrecfreesize = getconfigint("showrecfreesize", NULL);
 
+			if(checkbox("ATEMIO-NEMESIS"))
+				addskinconfigscreencheck("OLED_nemesis", oled_sel, "0");
+			
 			writeskinconfigtmp();
 			if(reboot == 1)
 			{
