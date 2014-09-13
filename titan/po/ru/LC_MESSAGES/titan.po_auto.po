@@ -101,7 +101,7 @@ msgstr ""
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:28 scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1888
 #: scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 scriptexec.h:41 service.h:712
-#: service.h:957 skinadjust.h:176 skins_dlna_skin.xml.h:8 skinselector.h:218
+#: service.h:957 skinadjust.h:194 skins_dlna_skin.xml.h:8 skinselector.h:218
 #: skins_facebook_skin.xml.h:5 skins_mboxinfo_skin.xml.h:2
 #: skins_mc_skin.xml.h:38 skins_optimize_skin.xml.h:3 skins_rgui_skin.xml.h:3
 #: skins_sudoku_skin.xml.h:13 skins_tiwakeup_skin.xml.h:3
@@ -284,7 +284,7 @@ msgstr "Выход"
 #: settings_autostart.h:502 settings_autostart.h:511 settings_autostart.h:568
 #: settings_autostart.h:577 settings_autostart.h:586 settings_autostart.h:595
 #: settings_overclocking.h:214 settings_overclocking.h:234
-#: settings_overclocking.h:244 skinadjust.h:86 stopifnotused.c:94
+#: settings_overclocking.h:244 skinadjust.h:91 stopifnotused.c:94
 #: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:37
 #: tithek_settings.h:41 tithek_settings.h:45 tmc.h:531 tmc.h:535
 #: tunerconfig.h:184 tunerconfig.h:213 tunerconfig.h:244 tunerconfig.h:277
@@ -603,7 +603,7 @@ msgstr ""
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:28 scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1640
 #: scan.h:1888 scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 service.h:712
-#: service.h:957 skinadjust.h:176 skinselector.h:218 sock.h:952 softcam.h:403
+#: service.h:957 skinadjust.h:194 skinselector.h:218 sock.h:952 softcam.h:403
 #: solarmovie.h:35 solarmovie.h:47 solarmovie.h:295 spinner.h:18
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:84
 #: streamcloud.h:97 streamcloud.h:128 streamcloud.h:167 stream.h:33
@@ -5672,19 +5672,19 @@ msgstr ""
 msgid "picture"
 msgstr "Изображение"
 
-#: skinadjust.h:87
+#: skinadjust.h:92
 msgid "yes (Text in %)"
 msgstr ""
 
-#: skinadjust.h:88
+#: skinadjust.h:93
 msgid "yes (Text in MB)"
 msgstr ""
 
-#: skinadjust.h:91 tunerconfig.h:302 tunerconfig.h:303
+#: skinadjust.h:96 tunerconfig.h:302 tunerconfig.h:303
 msgid "press red"
 msgstr "Прогресс бар"
 
-#: skinadjust.h:176
+#: skinadjust.h:194
 msgid "Receiver now reboot !!!"
 msgstr ""
 
