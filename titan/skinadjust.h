@@ -74,10 +74,15 @@ void screenskinadjust()
 	}
 	if(checkbox("ATEMIO-NEMESIS"))
 	{
-		addchoicebox(oled_sel, "OLED_nemesis", "v1");
-		addchoicebox(oled_sel, "OLED_nemesis_v2","v2");
-		addchoicebox(oled_sel, "OLED_nemesis_v3","v3");
-		addchoicebox(oled_sel, "OLED_nemesis_v4","v4");
+		if(checkscreen("OLED_nemesis") != status.skinerr)
+			addchoicebox(oled_sel, "OLED_nemesis", "v1");
+		if(checkscreen("OLED_nemesis_v2") != status.skinerr)
+			addchoicebox(oled_sel, "OLED_nemesis_v2","v2");
+		if(checkscreen("OLED_nemesis_v3") != status.skinerr)
+			addchoicebox(oled_sel, "OLED_nemesis_v3","v3");
+		if(checkscreen("OLED_nemesis_v4") != status.skinerr)
+			addchoicebox(oled_sel, "OLED_nemesis_v4","v4");
+		
 		setchoiceboxselection(listboxselecttype, getskinconfig("OLED_nemesis", NULL));
 	}
 	else
@@ -124,6 +129,19 @@ void screenskinadjust()
 #ifdef MIPSEL
 		setfbosd();
 #endif
+		
+		if((rcret == getrcconfigint("rcleft", NULL) || rcret == getrcconfigint("rcright", NULL)) && checkbox("ATEMIO-NEMESIS") == 1 && listbox->select != NULL && ostrcmp(listbox->select->name, "oled_sel") == 0)
+		{
+			char* tmpstr = NULL;
+			tmpstr = ostrcat(tmpstr, oled_sel->ret, 0, 0);
+			struct skin* OLED_nemesis = getscreen(tmpstr);
+			if(status.skinerr == OLED_nemesis)
+				OLED_nemesis = getscreen("OLED_nemesis");
+			struct skin* textbox = getscreennode(OLED_nemesis, "textbox");
+			changetext(textbox, tmpstr);
+			drawscreen(OLED_nemesis, 0, 0);
+		}
+		
 		if(rcret == getrcconfigint("rcexit", NULL))
 		{
 			addconfigint("fbleftoffset", oleftoffset);

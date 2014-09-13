@@ -39,7 +39,7 @@ int oledtext(char *value)
 	{
 		
 		OLED_nemesis = getscreen(getskinconfig("OLED_nemesis", NULL));
-		if(OLED_nemesis == NULL)
+		if(status.skinerr == OLED_nemesis)
 			OLED_nemesis = getscreen("OLED_nemesis");
 	}
 	
