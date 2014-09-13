@@ -82,6 +82,10 @@ void screenskinadjust()
 			addchoicebox(oled_sel, "OLED_nemesis_v3","v3");
 		if(checkscreen("OLED_nemesis_v4") != status.skinerr)
 			addchoicebox(oled_sel, "OLED_nemesis_v4","v4");
+		if(checkscreen("OLED_nemesis_v5") != status.skinerr)
+			addchoicebox(oled_sel, "OLED_nemesis_v5","v5");
+		if(checkscreen("OLED_nemesis_v6") != status.skinerr)
+			addchoicebox(oled_sel, "OLED_nemesis_v6","v6");
 		
 		setchoiceboxselection(listboxselecttype, getskinconfig("OLED_nemesis", NULL));
 	}
@@ -140,6 +144,7 @@ void screenskinadjust()
 			struct skin* textbox = getscreennode(OLED_nemesis, "textbox");
 			changetext(textbox, tmpstr);
 			drawscreen(OLED_nemesis, 0, 0);
+			free(tmpstr);tmpstr=NULL;
 		}
 		
 		if(rcret == getrcconfigint("rcexit", NULL))
