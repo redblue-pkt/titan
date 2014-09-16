@@ -54,11 +54,13 @@ for SEARCH in $SEARCHLIST; do
 		
 	LINE="$TITLE""#""$URL""#""$PIC""#""$SUBDOMAIN""_""$piccount"".""jpg""#""$SHOWNAME""#""$PTYPE"
 	echo line: $LINE
-	echo "$LINE" >> cache."$SUBDOMAIN".category.titanlist
+#	echo "$LINE" >> cache."$SUBDOMAIN".category.titanlist
 
 	LINKLIST=`cat cache.$SEARCH.list | tr '><' '\n' | grep "^a href=\"/$SEARCH/" | cut -d'"' -f2 | grep film_id=`
 
 	count=0
+	
+	TMPTYPE=""
 	for ROUND in $LINKLIST; do
 		echo ROUND=$ROUND
 		piccount=`expr $piccount + 1`
@@ -81,20 +83,31 @@ for SEARCH in $SEARCHLIST; do
 
 #		DURL=$SITEURL/$ROUND
 
-		if [ `cat cache.$SEARCH.$count.list | grep "<\!\-\- 2-->" | wc -l` -eq 1 ];then
+		if [ `cat cache.$SEARCH.$count.list | grep "<\!\-\- 0-->" | wc -l` -eq 1 ];then
 			STREAMTYPE=5
+			TMPTYPE="$TMPTYPE 5"
+		elif [ `cat cache.$SEARCH.$count.list | grep "<\!\-\- 1-->" | wc -l` -eq 1 ];then
+			STREAMTYPE=5
+			TMPTYPE="$TMPTYPE 5"
+		elif [ `cat cache.$SEARCH.$count.list | grep "<\!\-\- 2-->" | wc -l` -eq 1 ];then
+			STREAMTYPE=5
+			TMPTYPE="$TMPTYPE 5"
 		elif [ `cat cache.$SEARCH.$count.list | grep "<\!\-\- 3-->" | wc -l` -eq 1 ];then
 			STREAMTYPE=5
+			TMPTYPE="$TMPTYPE 5"
 		elif [ `cat cache.$SEARCH.$count.list | grep 'class=\"m03date\">FREE' | wc -l` -eq 1 ];then
 			STREAMTYPE=5
+			TMPTYPE="$TMPTYPE 5"
 		elif [ `cat cache.$SEARCH.$count.list | grep 'class=\"m03date\">NEW' | wc -l` -eq 1 ];then
 			STREAMTYPE=5
+			TMPTYPE="$TMPTYPE 5"
 #		elif [ `cat cache.$SEARCH.$count.list | grep ">FREE'" | wc -l` -eq 1 ];then
 #			STREAMTYPE=5
 #		elif [ `cat cache.$SEARCH.$count.list | grep ">NEW'" | wc -l` -eq 1 ];then
 #			STREAMTYPE=5
 		else
 			STREAMTYPE=19
+			TMPTYPE="$TMPTYPE 19"
 		fi
 
 		LINE="$DTITLE""#""$DURL""#""$DPIC""#""$SUBDOMAIN""_""$piccount"".""jpg""#""$SHOWNAME""#""$STREAMTYPE"
@@ -104,8 +117,9 @@ for SEARCH in $SEARCHLIST; do
 		TMPFILE=cache.$SUBDOMAIN.`echo "$SEARCH" | tr 'A-Z' 'a-z'`.titanlist
 	done
 
-	if [ `cat $TMPFILE | grep -v "#19" | grep "#5" | wc -l` -gt 0 ];then
-		MENU=3
+#	if [ `cat $TMPFILE | grep -v "#19" | grep "#5" | wc -l` -gt 0 ];then
+	if [ `echo $TMPTYPE | tr ' ' '\n' | grep -v "19" | grep "5" | wc -l` -gt 0 ];then
+		MENU=0
 	else
 		MENU=1
 	fi
