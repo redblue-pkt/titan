@@ -11257,10 +11257,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Zapback is reeds actief... Stoppen?"
-
-#~ msgid ""
-#~ "Found Pay Stream visit the official Website and Order this Stream and try "
-#~ "this again !"
-#~ msgstr ""
-#~ "Betaal kanaal gevonden bezoek de officiële Website, bestel dit kanaal en "
-#~ "probeer nogmaals!"
