@@ -11,8 +11,6 @@ MEDIAURL=atemio.dyndns.tv
 MEDIAPATH=mediathek
 STREAMTYPE=6
 
-wgetbin="wget -T2 -t2 --waitretry=2"
-
 rm cache.*
 rm -rf _full/$SUBDOMAIN
 mkdir -p _full/$SUBDOMAIN/streams
@@ -46,9 +44,12 @@ for SEARCH in $SEARCHLIST; do
 
 	URL="http://$MEDIAURL/$MEDIAPATH/$SUBDOMAIN/streams/$SUBDOMAIN."`echo "$SEARCH" | tr 'A-Z' 'a-z'`.list
 
-	LINKLIST=`cat cache.$SEARCH.list | tr '><' '\n' | grep "^a href=\"/$SEARCH/" | cut -d'"' -f2 | grep film_id=`
+#	LINKLIST=`cat cache.$SEARCH.list | tr '><' '\n' | grep "^a href=\"/$SEARCH/" | cut -d'"' -f2 | grep film_id=`
+	LINKLIST=`cat cache.$SEARCH.list | sed 's/></\n/g' | grep "^a href=\"/$SEARCH/" | cut -d'"' -f2 | grep film_id=`
+	LINKTEXT=`cat cache.$SEARCH.list | sed 's/></\n/g' | grep "^a href=\"/$SEARCH/" | sed 's/class="minibutton">/\nclass="minibutton"></g' |grep ^'class="minibutton"><' | cut -d"<" -f2 | sed 's/&euro; /Euro/g' | tr ' ' '~' | sed 's/^/(/g' | sed 's/.$/&)/'`
 
 	count=0
+	TMPTYPE=""
 	for ROUND in $LINKLIST; do
 		echo ROUND=$ROUND
 		piccount=`expr $piccount + 1`
@@ -71,11 +72,26 @@ for SEARCH in $SEARCHLIST; do
 
 #		DURL=$SITEURL/$ROUND
 
-		if [ `cat cache.$SEARCH.$count.list | grep "<\!\-\- 3-->" | wc -l` -eq 1 ];then
-			STREAMTYPE=6
-		else
-			STREAMTYPE=16
-		fi
+		tcount=0
+		for ROUNDT in $LINKTEXT; do
+			echo ROUNDT $ROUNDT
+		
+			tcount=`expr $tcount + 1`
+			if [ "$tcount" = "$count" ];then
+				DTITLE="$DTITLE `echo $ROUNDT | tr '~' ' '`"
+				if [ `echo "$ROUNDT" | grep "(kostenlos)" | wc -l` -eq 1 ];then
+					STREAMTYPE=6
+					TMPTYPE="$TMPTYPE 6"
+				elif [ `echo "$ROUNDT" | grep "Euro)" | wc -l` -eq 1 ];then
+					STREAMTYPE=16
+					TMPTYPE="$TMPTYPE 16"
+				else
+					STREAMTYPE=6
+					TMPTYPE="$TMPTYPE 6"
+					DTITLE="$DTITLE (???)"
+				fi
+			fi
+		done
 
 		LINE="$DTITLE""#""$DURL""#""$DPIC""#""$SUBDOMAIN""_""$piccount"".""jpg""#""$SHOWNAME""#""$STREAMTYPE"
 		echo line: $LINE
@@ -84,8 +100,8 @@ for SEARCH in $SEARCHLIST; do
 		TMPFILE=cache.$SUBDOMAIN.`echo "$SEARCH" | tr 'A-Z' 'a-z'`.titanlist
 	done
 
-	if [ `cat $TMPFILE | grep -v "#16" | grep "#6" | wc -l` -gt 0 ];then
-		MENU=3
+	if [ `echo $TMPTYPE | tr ' ' '\n' | grep -v "16" | grep "6" | wc -l` -gt 0 ];then
+		MENU=0
 	else
 		MENU=1
 	fi
