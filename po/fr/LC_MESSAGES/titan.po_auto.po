@@ -99,8 +99,8 @@ msgstr ""
 #: record.h:1452 rectimer.h:563 rectimer.h:1217 rectimer.h:1363
 #: rectimer.h:1375 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
-#: rtl2now.h:28 scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1888
-#: scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 scriptexec.h:41 service.h:712
+#: scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1888 scan.h:1979
+#: scan.h:2345 scart.h:12 scart.h:25 scriptexec.h:41 service.h:712
 #: service.h:957 skinadjust.h:199 skins_dlna_skin.xml.h:8 skinselector.h:218
 #: skins_facebook_skin.xml.h:5 skins_mboxinfo_skin.xml.h:2
 #: skins_mc_skin.xml.h:38 skins_optimize_skin.xml.h:3 skins_rgui_skin.xml.h:3
@@ -200,10 +200,10 @@ msgstr ""
 #: record.h:1001 record.h:1188 record.h:1427 record.h:1452 rectimer.h:563
 #: rectimer.h:1217 rectimer.h:1363 rectimer.h:1375 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
-#: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:28
-#: scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1888 scan.h:1979
-#: scan.h:2345 scart.h:12 scart.h:25 scriptexec.h:41 service.h:712
-#: service.h:957 skin_default_skin.xml.h:224 skins_autotimer_skin.xml.h:7
+#: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 scan.h:1598 scan.h:1600
+#: scan.h:1628 scan.h:1630 scan.h:1888 scan.h:1979 scan.h:2345 scart.h:12
+#: scart.h:25 scriptexec.h:41 service.h:712 service.h:957
+#: skin_default_skin.xml.h:224 skins_autotimer_skin.xml.h:7
 #: skins_callmonitor1_skin.xml.h:11 skins_catcatch_skin.xml.h:4
 #: skins_dlna_skin.xml.h:2 skinselector.h:218 skins_facebook_skin.xml.h:4
 #: skins_instar_skin.xml.h:6 skins_lcdpearl1_skin.xml.h:7
@@ -601,9 +601,9 @@ msgstr "oui / vzap sans fin"
 #: record.h:1452 rectimer.h:563 rectimer.h:1217 rectimer.h:1363
 #: rectimer.h:1375 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
-#: rtl2now.h:28 scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1640
-#: scan.h:1888 scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 service.h:712
-#: service.h:957 skinadjust.h:199 skinselector.h:218 sock.h:952 softcam.h:403
+#: scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1640 scan.h:1888
+#: scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 service.h:712 service.h:957
+#: skinadjust.h:199 skinselector.h:218 sock.h:952 softcam.h:403
 #: solarmovie.h:35 solarmovie.h:47 solarmovie.h:295 spinner.h:18
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:84
 #: streamcloud.h:97 streamcloud.h:128 streamcloud.h:167 stream.h:33
@@ -5374,12 +5374,6 @@ msgstr ""
 
 #: rgui.h:134
 msgid "Connection to server lost !"
-msgstr ""
-
-#: rtl2now.h:28
-msgid ""
-"Found Pay Stream visit the official Website and Order this Stream and try "
-"this again !"
 msgstr ""
 
 #: scan.h:532
