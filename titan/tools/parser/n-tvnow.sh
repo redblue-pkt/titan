@@ -99,7 +99,7 @@ for SEARCH in $SEARCHLIST; do
 		TMPFILE=cache.$SUBDOMAIN.`echo "$SEARCH" | tr 'A-Z' 'a-z'`.titanlist
 	done
 
-	if [ `echo $TMPTYPE | tr ' ' '\n' | grep -v "19" | grep "5" | wc -l` -gt 0 ];then
+	if [ `echo $TMPTYPE | tr ' ' '\n' | grep -v "71" | grep "70" | wc -l` -gt 0 ];then
 		MENU=0
 	else
 		MENU=1
