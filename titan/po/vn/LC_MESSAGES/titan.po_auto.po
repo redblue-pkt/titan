@@ -643,7 +643,7 @@ msgstr ""
 #: rtl2now.h:437 rtl2now.h:439 rtl2now.h:501 rtl2now.h:503
 #: skin_default_skin.xml.h:563 solarmovie.h:97 solarmovie.h:99
 #: solarmovie.h:210 solarmovie.h:212 tectime.h:13 tectime.h:15
-#: tithek_mainmenu.h:35 tmdb.h:860 tvtoast.h:837 tvtoast.h:839 xvideos.h:56
+#: tithek_mainmenu.h:36 tmdb.h:860 tvtoast.h:837 tvtoast.h:839 xvideos.h:56
 #: xvideos.h:58 youtube.h:240 youtube.h:242 youtube.h:332 youtube.h:334
 #: zdf.h:147 zdf.h:149
 msgid "Search"
@@ -8966,86 +8966,90 @@ msgid "Netzkino"
 msgstr ""
 
 #: tithek_mainmenu.h:32
-msgid "RTL2-Now"
+msgid "NTV-Now"
 msgstr ""
 
 #: tithek_mainmenu.h:33
-msgid "RtlNitro-Now"
+msgid "RTL2-Now"
 msgstr ""
 
 #: tithek_mainmenu.h:34
+msgid "RtlNitro-Now"
+msgstr ""
+
+#: tithek_mainmenu.h:35
 msgid "RTL-Now"
 msgstr ""
 
-#: tithek_mainmenu.h:36
+#: tithek_mainmenu.h:37
 msgid "Search (10)"
 msgstr "Dò"
 
-#: tithek_mainmenu.h:37
+#: tithek_mainmenu.h:38
 msgid "Search (20)"
 msgstr "Dò"
 
-#: tithek_mainmenu.h:38
+#: tithek_mainmenu.h:39
 msgid "Search (25)"
 msgstr "Dò"
 
-#: tithek_mainmenu.h:39
+#: tithek_mainmenu.h:40
 msgid "Search (50)"
 msgstr "Dò"
 
-#: tithek_mainmenu.h:40
+#: tithek_mainmenu.h:41
 msgid "Search Cast"
 msgstr "tìm kiếm bên trái"
 
-#: tithek_mainmenu.h:41
+#: tithek_mainmenu.h:42
 msgid "Search (local)"
 msgstr "Dò"
 
-#: tithek_mainmenu.h:42
+#: tithek_mainmenu.h:43
 msgid "Search Movie"
 msgstr "Dò"
 
-#: tithek_mainmenu.h:43
+#: tithek_mainmenu.h:44
 msgid "Search Serie"
 msgstr "Dò"
 
-#: tithek_mainmenu.h:44
+#: tithek_mainmenu.h:45
 msgid "SuperRTL-Now"
 msgstr ""
 
-#: tithek_mainmenu.h:45
+#: tithek_mainmenu.h:46
 msgid "TecTime"
 msgstr "Bộ định thời"
 
-#: tithek_mainmenu.h:46
+#: tithek_mainmenu.h:47
 msgid "TimeTv"
 msgstr "Bộ định thời"
 
-#: tithek_mainmenu.h:47
+#: tithek_mainmenu.h:48
 msgid "Tips und Tricks"
 msgstr ""
 
-#: tithek_mainmenu.h:48
+#: tithek_mainmenu.h:49
 msgid "TvToast"
 msgstr ""
 
-#: tithek_mainmenu.h:49
+#: tithek_mainmenu.h:50
 msgid "VOX-Now"
 msgstr ""
 
-#: tithek_mainmenu.h:50
+#: tithek_mainmenu.h:51
 msgid "XXX-Beeg"
 msgstr ""
 
-#: tithek_mainmenu.h:51
+#: tithek_mainmenu.h:52
 msgid "XXX-XVIDEOS"
 msgstr "VIDEO"
 
-#: tithek_mainmenu.h:52
+#: tithek_mainmenu.h:53
 msgid "Youtube"
 msgstr ""
 
-#: tithek_mainmenu.h:53
+#: tithek_mainmenu.h:54
 msgid "ZDF"
 msgstr ""
 
