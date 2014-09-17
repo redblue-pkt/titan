@@ -44,9 +44,12 @@ for SEARCH in $SEARCHLIST; do
 
 	URL="http://$MEDIAURL/$MEDIAPATH/$SUBDOMAIN/streams/$SUBDOMAIN."`echo "$SEARCH" | tr 'A-Z' 'a-z'`.list
 
-	LINKLIST=`cat cache.$SEARCH.list | tr '><' '\n' | grep "^a href=\"/$SEARCH/" | cut -d'"' -f2 | grep film_id=`
+#	LINKLIST=`cat cache.$SEARCH.list | tr '><' '\n' | grep "^a href=\"/$SEARCH/" | cut -d'"' -f2 | grep film_id=`
+	LINKLIST=`cat cache.$SEARCH.list | sed 's/></\n/g' | grep "^a href=\"/$SEARCH/" | cut -d'"' -f2 | grep film_id=`
+	LINKTEXT=`cat cache.$SEARCH.list | sed 's/></\n/g' | grep "^a href=\"/$SEARCH/" | sed 's/class="minibutton">/\nclass="minibutton"></g' |grep ^'class="minibutton"><' | cut -d"<" -f2 | sed 's/&euro; /Euro/g' | tr ' ' '~' | sed 's/^/(/g' | sed 's/.$/&)/'`
 
 	count=0
+	TMPTYPE=""
 	for ROUND in $LINKLIST; do
 		echo ROUND=$ROUND
 		piccount=`expr $piccount + 1`
@@ -69,12 +72,27 @@ for SEARCH in $SEARCHLIST; do
 
 #		DURL=$SITEURL/$ROUND
 
-		if [ `cat cache.$SEARCH.$count.list | grep "<\!\-\- 3-->" | wc -l` -eq 1 ];then
-			STREAMTYPE=7
-		else
-			STREAMTYPE=17
-		fi
+		tcount=0
+		for ROUNDT in $LINKTEXT; do
+			echo ROUNDT $ROUNDT
 		
+			tcount=`expr $tcount + 1`
+			if [ "$tcount" = "$count" ];then
+				DTITLE="$DTITLE `echo $ROUNDT | tr '~' ' '`"
+				if [ `echo "$ROUNDT" | grep "(kostenlos)" | wc -l` -eq 1 ];then
+					STREAMTYPE=7
+					TMPTYPE="$TMPTYPE 7"
+				elif [ `echo "$ROUNDT" | grep "Euro)" | wc -l` -eq 1 ];then
+					STREAMTYPE=17
+					TMPTYPE="$TMPTYPE 17"
+				else
+					STREAMTYPE=7
+					TMPTYPE="$TMPTYPE 7"
+					DTITLE="$DTITLE (???)"
+				fi
+			fi
+		done
+
 		LINE="$DTITLE""#""$DURL""#""$DPIC""#""$SUBDOMAIN""_""$piccount"".""jpg""#""$SHOWNAME""#""$STREAMTYPE"
 		echo line: $LINE
 		echo "$LINE" >> cache.$SUBDOMAIN.`echo "$SEARCH" | tr 'A-Z' 'a-z'`.titanlist
@@ -82,8 +100,8 @@ for SEARCH in $SEARCHLIST; do
 		TMPFILE=cache.$SUBDOMAIN.`echo "$SEARCH" | tr 'A-Z' 'a-z'`.titanlist
 	done
 
-	if [ `cat $TMPFILE | grep -v "#17" | grep "#7" | wc -l` -gt 0 ];then
-		MENU=3
+	if [ `echo $TMPTYPE | tr ' ' '\n' | grep -v "17" | grep "7" | wc -l` -gt 0 ];then
+		MENU=0
 	else
 		MENU=1
 	fi
