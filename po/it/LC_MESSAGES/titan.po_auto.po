@@ -99,8 +99,8 @@ msgstr ""
 #: record.h:1452 rectimer.h:563 rectimer.h:1217 rectimer.h:1363
 #: rectimer.h:1375 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
-#: scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1888 scan.h:1979
-#: scan.h:2345 scart.h:12 scart.h:25 scriptexec.h:41 service.h:712
+#: rtl2now.h:31 scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1888
+#: scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 scriptexec.h:41 service.h:712
 #: service.h:957 skinadjust.h:199 skins_dlna_skin.xml.h:8 skinselector.h:218
 #: skins_facebook_skin.xml.h:5 skins_mboxinfo_skin.xml.h:2
 #: skins_mc_skin.xml.h:38 skins_optimize_skin.xml.h:3 skins_rgui_skin.xml.h:3
@@ -117,8 +117,8 @@ msgstr ""
 #: timeshiftsettings.h:45 titan.c:277 titan.c:341 titan.c:350 titan.c:970
 #: titan.c:979 titan.c:1104 titan.c:1125 titan.c:1131 titan.c:1142
 #: titan.c:1148 tithek.c:82 tithek_global.h:244 tithek.h:664 tithek.h:1160
-#: tithek.h:1203 tithek.h:1450 tithek.h:1472 tithek.h:1488 tithek.h:3282
-#: tithek.h:3346 tithek.h:3360 tithek.h:3370 tiwakeup.h:66 tiwakeup.h:68
+#: tithek.h:1203 tithek.h:1451 tithek.h:1473 tithek.h:1489 tithek.h:3283
+#: tithek.h:3347 tithek.h:3361 tithek.h:3371 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922
 #: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3187 tpk.new.h:3167 tsSchnitt.c:108
 #: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
@@ -200,10 +200,10 @@ msgstr "Ok"
 #: record.h:1001 record.h:1188 record.h:1427 record.h:1452 rectimer.h:563
 #: rectimer.h:1217 rectimer.h:1363 rectimer.h:1375 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
-#: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 scan.h:1598 scan.h:1600
-#: scan.h:1628 scan.h:1630 scan.h:1888 scan.h:1979 scan.h:2345 scart.h:12
-#: scart.h:25 scriptexec.h:41 service.h:712 service.h:957
-#: skin_default_skin.xml.h:224 skins_autotimer_skin.xml.h:7
+#: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:31
+#: scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1888 scan.h:1979
+#: scan.h:2345 scart.h:12 scart.h:25 scriptexec.h:41 service.h:712
+#: service.h:957 skin_default_skin.xml.h:224 skins_autotimer_skin.xml.h:7
 #: skins_callmonitor1_skin.xml.h:11 skins_catcatch_skin.xml.h:4
 #: skins_dlna_skin.xml.h:2 skinselector.h:218 skins_facebook_skin.xml.h:4
 #: skins_instar_skin.xml.h:6 skins_lcdpearl1_skin.xml.h:7
@@ -223,8 +223,8 @@ msgstr "Ok"
 #: timeshift.h:162 timeshiftsettings.h:45 titan.c:277 titan.c:341 titan.c:350
 #: titan.c:970 titan.c:979 titan.c:1104 titan.c:1125 titan.c:1131 titan.c:1142
 #: titan.c:1148 tithek.c:82 tithek_global.h:244 tithek.h:664 tithek.h:1160
-#: tithek.h:1203 tithek.h:1450 tithek.h:1472 tithek.h:1488 tithek.h:3282
-#: tithek.h:3346 tithek.h:3360 tithek.h:3370 tiwakeup.h:66 tiwakeup.h:68
+#: tithek.h:1203 tithek.h:1451 tithek.h:1473 tithek.h:1489 tithek.h:3283
+#: tithek.h:3347 tithek.h:3361 tithek.h:3371 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922
 #: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3187 tpk.new.h:3167 tsSchnitt.c:108
 #: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
@@ -601,9 +601,9 @@ msgstr ""
 #: record.h:1452 rectimer.h:563 rectimer.h:1217 rectimer.h:1363
 #: rectimer.h:1375 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
-#: scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1640 scan.h:1888
-#: scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 service.h:712 service.h:957
-#: skinadjust.h:199 skinselector.h:218 sock.h:952 softcam.h:403
+#: rtl2now.h:31 scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1640
+#: scan.h:1888 scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 service.h:712
+#: service.h:957 skinadjust.h:199 skinselector.h:218 sock.h:952 softcam.h:403
 #: solarmovie.h:35 solarmovie.h:47 solarmovie.h:295 spinner.h:18
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:84
 #: streamcloud.h:97 streamcloud.h:128 streamcloud.h:167 stream.h:33
@@ -613,8 +613,8 @@ msgstr ""
 #: timeshift.h:162 timeshiftsettings.h:45 titan.c:277 titan.c:341 titan.c:350
 #: titan.c:1104 titan.c:1125 titan.c:1131 titan.c:1142 titan.c:1148
 #: tithek.c:82 tithek_global.h:244 tithek.h:664 tithek.h:1160 tithek.h:1203
-#: tithek.h:1450 tithek.h:1472 tithek.h:3282 tithek.h:3346 tithek.h:3360
-#: tithek.h:3370 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012
+#: tithek.h:1451 tithek.h:1473 tithek.h:3283 tithek.h:3347 tithek.h:3361
+#: tithek.h:3371 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012
 #: tmc.h:1017 tmdb.h:759 tmdb.h:922 TopfieldVFD.c:68 TopfieldVFD.c:72
 #: tpk.h:3187 tpk.new.h:3167 tunerconfig.h:915 unlock.h:20 unlock.h:66
 #: unlock.h:71 unlock.h:75 videomode.h:60 videoweed.h:35 videoweed.h:80
@@ -638,9 +638,9 @@ msgstr ""
 #: internettv.h:15 kinox.h:33 kinox.h:35 kinox.h:179 kinox.h:181 kinox.h:797
 #: kinox.h:799 mlehd.h:90 mlehd.h:92 movie4k.h:134 movie4k.h:136 movie4k.h:291
 #: movie4k.h:293 myvideo.h:228 myvideo.h:230 myvideo.h:333 myvideo.h:335
-#: netzkino.h:13 netzkino.h:15 rtl2now.h:181 rtl2now.h:183 rtl2now.h:245
-#: rtl2now.h:247 rtl2now.h:309 rtl2now.h:311 rtl2now.h:373 rtl2now.h:375
-#: rtl2now.h:437 rtl2now.h:439 rtl2now.h:501 rtl2now.h:503
+#: netzkino.h:13 netzkino.h:15 rtl2now.h:184 rtl2now.h:186 rtl2now.h:248
+#: rtl2now.h:250 rtl2now.h:312 rtl2now.h:314 rtl2now.h:376 rtl2now.h:378
+#: rtl2now.h:440 rtl2now.h:442 rtl2now.h:504 rtl2now.h:506
 #: skin_default_skin.xml.h:563 solarmovie.h:97 solarmovie.h:99
 #: solarmovie.h:210 solarmovie.h:212 tectime.h:13 tectime.h:15
 #: tithek_mainmenu.h:36 tmdb.h:860 tvtoast.h:837 tvtoast.h:839 xvideos.h:56
@@ -4732,8 +4732,8 @@ msgstr ""
 msgid "TiThek Settings"
 msgstr "Webserver Impostazioni"
 
-#: plugins_tithek_skin.xml.h:3 skins_tithek_skin.xml.h:3 tithek.h:1537
-#: tithek.h:3388
+#: plugins_tithek_skin.xml.h:3 skins_tithek_skin.xml.h:3 tithek.h:1538
+#: tithek.h:3389
 msgid "ADD FAV"
 msgstr "AggiungereFav"
 
@@ -5401,6 +5401,12 @@ msgstr "Send remote box into standby?"
 #: rgui.h:134
 msgid "Connection to server lost !"
 msgstr "Connessione al server persa!"
+
+#: rtl2now.h:31
+msgid ""
+"Found Pay Stream visit the official Website and Order this Stream and try "
+"this again !"
+msgstr ""
 
 #: scan.h:532
 msgid "Data"
@@ -8702,7 +8708,7 @@ msgstr ""
 msgid "Tithek - Mainmenu"
 msgstr ""
 
-#: tithek_global.h:244 tithek.h:3282
+#: tithek_global.h:244 tithek.h:3283
 msgid "The hoster is not yet supported !"
 msgstr ""
 
@@ -8728,83 +8734,83 @@ msgid ""
 "Please try later."
 msgstr ""
 
-#: tithek.h:1337
+#: tithek.h:1338
 msgid "Choice Playback"
 msgstr "Start Playback"
 
-#: tithek.h:1340
+#: tithek.h:1341
 msgid "Streaming Playback (default)"
 msgstr ""
 
-#: tithek.h:1347
+#: tithek.h:1348
 msgid "Streaming Playback Caching (1MB)"
 msgstr ""
 
-#: tithek.h:1354
+#: tithek.h:1355
 msgid "Streaming Playback Caching (5MB)"
 msgstr ""
 
-#: tithek.h:1357
+#: tithek.h:1358
 msgid "Streaming Playback Caching (10MB)"
 msgstr ""
 
-#: tithek.h:1363
+#: tithek.h:1364
 msgid "File Caching Playback (10MB / 120s)"
 msgstr "Caching Playback (10MB / 120s)"
 
-#: tithek.h:1364
+#: tithek.h:1365
 msgid "File Caching Playback (20MB / 240s)"
 msgstr "Caching Playback (20MB / 240s)"
 
-#: tithek.h:1365
+#: tithek.h:1366
 msgid "File Caching Playback (30MB / 360s)"
 msgstr "Caching Playback (30MB / 360s)"
 
-#: tithek.h:1367
+#: tithek.h:1368
 msgid "Download Full File"
 msgstr ""
 
-#: tithek.h:1368
+#: tithek.h:1369
 msgid "Download Full File (background)"
 msgstr ""
 
-#: tithek.h:1372
+#: tithek.h:1373
 msgid "Choose your Streaming Playback Modus from the following list"
 msgstr ""
 
-#: tithek.h:1443 tithek.h:1462
+#: tithek.h:1444 tithek.h:1463
 msgid "Filename"
 msgstr ""
 
-#: tithek.h:1450
+#: tithek.h:1451
 msgid "Start playback"
 msgstr "Avviare la riproduzione?"
 
-#: tithek.h:1472
+#: tithek.h:1473
 msgid "Can't get Streamurl !"
 msgstr "Can't get Streamurl"
 
-#: tithek.h:1488
+#: tithek.h:1489
 msgid "TitanNit Tithek disclaimer"
 msgstr ""
 
-#: tithek.h:1532 tithek.h:3383
+#: tithek.h:1533 tithek.h:3384
 msgid "EDIT FAV"
 msgstr ""
 
-#: tithek.h:1569
+#: tithek.h:1570
 msgid "Page"
 msgstr "Pagina"
 
-#: tithek.h:3346
+#: tithek.h:3347
 msgid "Remove this Favorite ?"
 msgstr "cancellare questo favorito ?"
 
-#: tithek.h:3360
+#: tithek.h:3361
 msgid "Add this link as Favorite ?"
 msgstr "importare questo Favorito ?"
 
-#: tithek.h:3370
+#: tithek.h:3371
 msgid "Edit this Favorite ?"
 msgstr ""
 
