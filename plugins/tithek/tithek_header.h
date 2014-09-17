@@ -49,6 +49,7 @@ int movie4k_search(struct skin* grid, struct skin* listbox, struct skin* countla
 int movie4k_hoster_series(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title);
 int movie4k_series(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title);
 int movie4k_series_listed(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title);
+char* now(char* link, char* url, char* name, char* title, int flag)
 char* beeg(char* link);
 char* mlehd(char* link);
 char* kinox(char* link);
@@ -57,11 +58,8 @@ char* xvideos(char* link);
 char* solarmovie(char* link);
 char* ard(char* link);
 char* zdf(char* link);
-//char* myvideo(char* link, char* url, char* name, int flag);
 char* myvideo_hoster(char* link);
 char* myvideo(char* link);
-char* rtl2now(char* link, char* url, char* name, int flag);
-//char* youtube(char* link, char* url, char* name, int flag);
 char* youtube_hoster(char* link);
 char* youtube(char* link);
 char* putlocker(char* link);
