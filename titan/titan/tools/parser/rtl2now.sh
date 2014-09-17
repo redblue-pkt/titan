@@ -44,19 +44,21 @@ for SEARCH in $SEARCHLIST; do
 
 	URL="http://$MEDIAURL/$MEDIAPATH/$SUBDOMAIN/streams/$SUBDOMAIN."`echo "$SEARCH" | tr 'A-Z' 'a-z'`.list
 
-	if [ `cat cache.$SEARCH.list | grep 'class=\"m03date\">FREE' | wc -l` -eq 1 ];then
-		PTYPE=0
-	elif [ `cat cache.$SEARCH.list | grep 'class=\"m03date\">NEW' | wc -l` -eq 1 ];then
-		PTYPE=0
-	else
-		PTYPE=1
-	fi
-		
-	LINE="$TITLE""#""$URL""#""$PIC""#""$SUBDOMAIN""_""$piccount"".""jpg""#""$SHOWNAME""#""$PTYPE"
-	echo line: $LINE
+#	if [ `cat cache.$SEARCH.list | grep 'class=\"m03date\">FREE' | wc -l` -eq 1 ];then
+#		PTYPE=0
+#	elif [ `cat cache.$SEARCH.list | grep 'class=\"m03date\">NEW' | wc -l` -eq 1 ];then
+#		PTYPE=0
+#	else
+#		PTYPE=1
+#	fi
+#	
+#	LINE="$TITLE""#""$URL""#""$PIC""#""$SUBDOMAIN""_""$piccount"".""jpg""#""$SHOWNAME""#""$PTYPE"
+#	echo line: $LINE
 #	echo "$LINE" >> cache."$SUBDOMAIN".category.titanlist
 
-	LINKLIST=`cat cache.$SEARCH.list | tr '><' '\n' | grep "^a href=\"/$SEARCH/" | cut -d'"' -f2 | grep film_id=`
+#	LINKLIST=`cat cache.$SEARCH.list | tr '><' '\n' | grep "^a href=\"/$SEARCH/" | cut -d'"' -f2 | grep film_id=`
+	LINKLIST=`cat cache.$SEARCH.list | sed 's/></\n/g' | grep "^a href=\"/$SEARCH/" | cut -d'"' -f2 | grep film_id=`
+	LINKTEXT=`cat cache.$SEARCH.list | sed 's/></\n/g' | grep "^a href=\"/$SEARCH/" | sed 's/class="minibutton">/\nclass="minibutton"></g' |grep ^'class="minibutton"><' | cut -d"<" -f2 | sed 's/&euro; /Euro/g' | tr ' ' '~' | sed 's/^/(/g' | sed 's/.$/&)/'`
 
 	count=0
 	
@@ -81,34 +83,26 @@ for SEARCH in $SEARCHLIST; do
 		DTITLE=`cat cache.$SEARCH.$count.list | grep og:title  | cut -d'"' -f4 | sed 's/ - /#/' | cut -d"#" -f2 | sed 's/ - /#/' | cut -d"#" -f2 | tail -n1`
 		DTITLE=`echo $DTITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' # ' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/Ãx/g' -e 's/&ndash;/-/g' -e 's/&Auml;/Ã/g' -e 's/&Uuml;/ÃS/g' -e 's/&Ouml;/Ã/g' -e 's/&auml;/Ã¤/g' -e 's/&uuml;/Ã¼/g' -e 's/&ouml;/Ã¶/g' -e 's/&eacute;/Ã©/g' -e 's/&egrave;/Ã¨/g' -e 's/%F6/Ã¶/g' -e 's/%FC/Ã¼/g' -e 's/%E4/Ã¤/g' -e 's/%26/&/g' -e 's/%C4/Ã/g' -e 's/%D6/Ã/g' -e 's/%DC/ÃS/g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
 
-#		DURL=$SITEURL/$ROUND
-
-		if [ `cat cache.$SEARCH.$count.list | grep "<\!\-\- 0-->" | wc -l` -eq 1 ];then
-			STREAMTYPE=5
-			TMPTYPE="$TMPTYPE 5"
-		elif [ `cat cache.$SEARCH.$count.list | grep "<\!\-\- 1-->" | wc -l` -eq 1 ];then
-			STREAMTYPE=5
-			TMPTYPE="$TMPTYPE 5"
-		elif [ `cat cache.$SEARCH.$count.list | grep "<\!\-\- 2-->" | wc -l` -eq 1 ];then
-			STREAMTYPE=5
-			TMPTYPE="$TMPTYPE 5"
-		elif [ `cat cache.$SEARCH.$count.list | grep "<\!\-\- 3-->" | wc -l` -eq 1 ];then
-			STREAMTYPE=5
-			TMPTYPE="$TMPTYPE 5"
-		elif [ `cat cache.$SEARCH.$count.list | grep 'class=\"m03date\">FREE' | wc -l` -eq 1 ];then
-			STREAMTYPE=5
-			TMPTYPE="$TMPTYPE 5"
-		elif [ `cat cache.$SEARCH.$count.list | grep 'class=\"m03date\">NEW' | wc -l` -eq 1 ];then
-			STREAMTYPE=5
-			TMPTYPE="$TMPTYPE 5"
-#		elif [ `cat cache.$SEARCH.$count.list | grep ">FREE'" | wc -l` -eq 1 ];then
-#			STREAMTYPE=5
-#		elif [ `cat cache.$SEARCH.$count.list | grep ">NEW'" | wc -l` -eq 1 ];then
-#			STREAMTYPE=5
-		else
-			STREAMTYPE=19
-			TMPTYPE="$TMPTYPE 19"
-		fi
+		tcount=0
+		for ROUNDT in $LINKTEXT; do
+			echo ROUNDT $ROUNDT
+		
+			tcount=`expr $tcount + 1`
+			if [ "$tcount" = "$count" ];then
+				DTITLE="$DTITLE `echo $ROUNDT | tr '~' ' '`"
+				if [ `echo "$ROUNDT" | grep "(kostenlos)" | wc -l` -eq 1 ];then
+					STREAMTYPE=5
+					TMPTYPE="$TMPTYPE 5"
+				elif [ `echo "$ROUNDT" | grep "Euro)" | wc -l` -eq 1 ];then
+					STREAMTYPE=19
+					TMPTYPE="$TMPTYPE 19"
+				else
+					STREAMTYPE=5
+					TMPTYPE="$TMPTYPE 5"
+					DTITLE="$DTITLE (???)"
+				fi
+			fi
+		done
 
 		LINE="$DTITLE""#""$DURL""#""$DPIC""#""$SUBDOMAIN""_""$piccount"".""jpg""#""$SHOWNAME""#""$STREAMTYPE"
 		echo line: $LINE
@@ -117,7 +111,6 @@ for SEARCH in $SEARCHLIST; do
 		TMPFILE=cache.$SUBDOMAIN.`echo "$SEARCH" | tr 'A-Z' 'a-z'`.titanlist
 	done
 
-#	if [ `cat $TMPFILE | grep -v "#19" | grep "#5" | wc -l` -gt 0 ];then
 	if [ `echo $TMPTYPE | tr ' ' '\n' | grep -v "19" | grep "5" | wc -l` -gt 0 ];then
 		MENU=0
 	else
