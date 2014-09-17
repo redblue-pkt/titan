@@ -24,8 +24,8 @@ char* rtl2now(char* link, char* url, char* name, int flag)
 		
 	if(flag == 1)
 	{
-		if(ostrstr(tmpstr, "<!-- 3-->") == NULL)
-			textbox(_("Message"), _("Found Pay Stream visit the official Website and Order this Stream and try this again !") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 400, 0, 0);
+//		if(ostrstr(tmpstr, "<!-- 3-->") == NULL)
+//			textbox(_("Message"), _("Found Pay Stream visit the official Website and Order this Stream and try this again !") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 400, 0, 0);
 
 		tmpstr = string_resub("data:'", "',", tmpstr, 0);
 		debug(99, "tmpstr: %s", tmpstr);
