@@ -1210,11 +1210,11 @@ void backgrounddl(char* link, char* filename)
 void submenu(struct skin* listbox, struct skin* load, char* title)
 {
 	int flag = 0;
-
-	drawscreen(load, 0, 0);	
-	char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-	char* tmpstr1 = NULL;
-
+	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL; 
+	drawscreen(load, 0, 0);
+	tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
+	tmpstr2 = ostrcat(((struct tithek*)listbox->select->handle)->title, NULL, 0, 0);
+		
 	if(((struct tithek*)listbox->select->handle)->flag == 2)
 	{
 		if(tmpstr != NULL) tmpstr1 = ostrcat(tmpstr, NULL, 0, 0);
@@ -1225,19 +1225,19 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 	}						
 	else if(((struct tithek*)listbox->select->handle)->flag == 5)
 	{
-		if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://rtl2now.rtl2.de", "rtl2now", 1);
+		if(tmpstr != NULL) tmpstr1 = now(tmpstr, "http://rtl2now.rtl2.de", "rtl2now", tmpstr2, 1);
 	}
 	else if(((struct tithek*)listbox->select->handle)->flag == 6)
 	{
-		if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://www.superrtlnow.de", "superrtlnow", 1);
+		if(tmpstr != NULL) tmpstr1 = now(tmpstr, "http://www.superrtlnow.de", "superrtlnow", tmpstr2, 1);
 	}
 	else if(((struct tithek*)listbox->select->handle)->flag == 7)
 	{
-		if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://rtl-now.rtl.de", "rtlnow", 1);
+		if(tmpstr != NULL) tmpstr1 = now(tmpstr, "http://rtl-now.rtl.de", "rtlnow", tmpstr2, 1);
 	}
 	else if(((struct tithek*)listbox->select->handle)->flag == 8)
 	{
-		if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://www.voxnow.de", "voxnow", 1);
+		if(tmpstr != NULL) tmpstr1 = now(tmpstr, "http://www.voxnow.de", "voxnow", tmpstr2, 1);
 	}
 	else if(((struct tithek*)listbox->select->handle)->flag == 12)
 	{
@@ -1249,19 +1249,19 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 	}
 	else if(((struct tithek*)listbox->select->handle)->flag == 16)
 	{
-		if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://www.superrtlnow.de", "superrtlnow", 1);
+		if(tmpstr != NULL) tmpstr1 = now(tmpstr, "http://www.superrtlnow.de", "superrtlnow", tmpstr2, 1);
 	}
 	else if(((struct tithek*)listbox->select->handle)->flag == 17)
 	{
-		if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://rtl-now.rtl.de", "rtlnow", 1);
+		if(tmpstr != NULL) tmpstr1 = now(tmpstr, "http://rtl-now.rtl.de", "rtlnow", tmpstr2, 1);
 	}
 	else if(((struct tithek*)listbox->select->handle)->flag == 18)
 	{
-		if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://www.voxnow.de", "voxnow", 1);
+		if(tmpstr != NULL) tmpstr1 = now(tmpstr, "http://www.voxnow.de", "voxnow", tmpstr2, 1);
 	}
 	else if(((struct tithek*)listbox->select->handle)->flag == 19)
 	{
-		if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://rtl2now.rtl2.de", "rtl2now", 1);
+		if(tmpstr != NULL) tmpstr1 = now(tmpstr, "http://rtl2now.rtl2.de", "rtl2now", tmpstr2, 1);
 	}
 	else if(((struct tithek*)listbox->select->handle)->flag == 38)
 	{
@@ -1297,21 +1297,22 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 	}
 	else if(((struct tithek*)listbox->select->handle)->flag == 67)
 	{
-		if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://www.rtlnitronow.de", "rtlnitronow", 1);
+		if(tmpstr != NULL) tmpstr1 = now(tmpstr, "http://www.rtlnitronow.de", "rtlnitronow", tmpstr2, 1);
 	}
 	else if(((struct tithek*)listbox->select->handle)->flag == 68)
 	{
-		if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://www.rtlnitronow.de", "rtlnitronow", 1);
+		if(tmpstr != NULL) tmpstr1 = now(tmpstr, "http://www.rtlnitronow.de", "rtlnitronow", tmpstr2, 1);
 	}
 	else if(((struct tithek*)listbox->select->handle)->flag == 70)
 	{
-		if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://www.n-tvnow.de", "ntvnow", 1);
+		if(tmpstr != NULL) tmpstr1 = now(tmpstr, "http://www.n-tvnow.de", "ntvnow", tmpstr2, 1);
 	}
 	else if(((struct tithek*)listbox->select->handle)->flag == 71)
 	{
-		if(tmpstr != NULL) tmpstr1 = rtl2now(tmpstr, "http://www.n-tvnow.de", "ntvnow", 1);
+		if(tmpstr != NULL) tmpstr1 = now(tmpstr, "http://www.n-tvnow.de", "ntvnow", tmpstr2, 1);
 	}
 	free(tmpstr); tmpstr = NULL;
+	free(tmpstr2); tmpstr2 = NULL;
 
 	if(ostrstr(title, "Internet Radio") != NULL)
 		flag = 4;

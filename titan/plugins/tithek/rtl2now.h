@@ -4,7 +4,7 @@
 // flag 1 = get getstreamurl http
 // flag 2 = getstreamurl
 
-char* rtl2now(char* link, char* url, char* name, int flag)
+char* now(char* link, char* url, char* name, char* title, int flag)
 {
 	debug(99, "link(%d): %s", flag, link);
 	char* ip = NULL, *pos = NULL, *path = NULL, *streamurl = NULL, *newlink = NULL, *newpath = NULL;
@@ -27,13 +27,16 @@ char* rtl2now(char* link, char* url, char* name, int flag)
 //		if(ostrstr(tmpstr, "<!-- 3-->") == NULL)
 //			textbox(_("Message"), _("Found Pay Stream visit the official Website and Order this Stream and try this again !") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 400, 0, 0);
 
+		if(ostrstr(title, "Euro)") == NULL)
+			textbox(_("Message"), _("Found Pay Stream visit the official Website and Order this Stream and try this again !") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 400, 0, 0);
+
 		tmpstr = string_resub("data:'", "',", tmpstr, 0);
 		debug(99, "tmpstr: %s", tmpstr);
 
 		htmldecode(tmpstr, tmpstr);
 		tmpstr = ostrcat(url, tmpstr, 0, 1);
 		debug(99, "streamurl: %s", tmpstr);
-		streamurl = rtl2now(tmpstr, url, name, 2);
+		streamurl = now(tmpstr, url, name, title, 2);
 		free(tmpstr); tmpstr = NULL;
 	}
 	else if(flag == 2)
