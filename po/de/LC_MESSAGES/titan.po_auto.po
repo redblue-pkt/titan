@@ -11391,11 +11391,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid ""
-#~ "Found Pay Stream visit the official Website and Order this Stream and try "
-#~ "this again !"
-#~ msgstr ""
-#~ "Kostenpflichtigen Stream gefunden.\n"
-#~ "Besuchen Sie die Anbieter Website, um diesen Stream zu bestellen\n"
-#~ "und versuchen Sie es erneut!"

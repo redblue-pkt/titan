@@ -11309,10 +11309,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Zapback is activated. Do you want to stop it?"
-
-#~ msgid ""
-#~ "Found Pay Stream visit the official Website and Order this Stream and try "
-#~ "this again !"
-#~ msgstr ""
-#~ "Found Pay Stream, please visit the official Website, order this Stream "
-#~ "and try again!"
