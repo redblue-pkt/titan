@@ -72,29 +72,25 @@ char* firedrive(char* link)
 		textbox(_("Message"), _("This file doesn't exist, or has been removed."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 400, 0, 0);
 		goto end;
 	}
-printf("111\n");
+
 	srvid = string_resub("SRVID=", ";", tmpstr, 0);
 	cauth = string_resub("cauth=", ";", tmpstr, 0);
 	cfduid = string_resub("__cfduid=", ";", tmpstr, 0);
 	confirm = string_resub("name=\"confirm\" value=\"", "\"", tmpstr, 0);
-printf("222\n");
 
 	if(confirm == NULL) goto end;
-printf("333\n");
 
 	hashstr = htmlencode(confirm);
-	hashstr = string_replace_all("/", "%5C", hashstr, 1);
+	hashstr = string_replace_all("/", "%2F", hashstr, 1);
 
 	hash = ostrcat(hash, "confirm=", 1, 0);	
 	hash = ostrcat(hash, hashstr, 1, 0);
 	debug(99, "hash: %s", hash);
 
-printf("444\n");
 	if(hash == NULL) goto end;
 
 	hashlen = oitoa(strlen(hash));
 	debug(99, "hashlen: %s", hashlen);
-printf("555\n");
 
 	//create send string
 	send = ostrcat(send, "POST ", 1, 0);
@@ -113,16 +109,13 @@ printf("555\n");
 	send = ostrcat(send, "\r\nContent-Type: application/x-www-form-urlencoded\r\n\r\n", 1, 0);
 	send = ostrcat(send, hash, 1, 0);
 	debug(99, "send: %s", send);
-printf("666\n");
 
-	waitmsgbar(16, 0, _("Connect with Hoster wait 16 seconds"), 1);
-printf("777\n");
+//	waitmsgbar(16, 0, _("Connect with Hoster wait 16 seconds"), 1);
 
 	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 	free(send); send = NULL;
 	debug(99, "tmpstr: %s", tmpstr);
 	titheklog(debuglevel, "/tmp/firedrive2_tmpstr_post", NULL, NULL, NULL, tmpstr);
-printf("888\n");
 
 	if(tmpstr == NULL)
 	{
@@ -135,7 +128,6 @@ printf("888\n");
 		textbox(_("Message"), _("This file is private and only viewable by the owner.") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
 		goto end;
 	}
-printf("999\n");
 	
 	if(ostrstr(tmpstr, "warning_message") != NULL)
 	{
@@ -146,14 +138,23 @@ printf("999\n");
 		textbox(_("Message"), _(tmpstr2) , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
 		goto end;
 	}
-printf("aaa\n");
 
 	streamlink = string_resub("file: '", "'", tmpstr, 0);
 	titheklog(debuglevel, "/tmp/firedrive4_streamlink", NULL, NULL, NULL, streamlink1);
-printf("bbb\n");
+
+	if(streamlink == NULL)
+	{
+		streamlink = string_resub("file: loadURL('", "'", tmpstr, 0);
+		titheklog(debuglevel, "/tmp/firedrive4_streamlink", NULL, NULL, NULL, streamlink1);
+	}
+
+	if(streamlink == NULL)
+	{
+		streamlink = string_resub("create_PRO_Modal('", "'", tmpstr, 0);
+		titheklog(debuglevel, "/tmp/firedrive4_streamlink", NULL, NULL, NULL, streamlink1);
+	}
 
 	free(tmpstr); tmpstr = NULL;
-printf("ccc\n");
 
 end:
 	free(tmphost); tmphost = NULL;
