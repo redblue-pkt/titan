@@ -145,13 +145,13 @@ char* firedrive(char* link)
 	if(streamlink == NULL)
 	{
 		streamlink = string_resub("file: loadURL('", "'", tmpstr, 0);
-		titheklog(debuglevel, "/tmp/firedrive4_streamlink", NULL, NULL, NULL, streamlink1);
+		titheklog(debuglevel, "/tmp/firedrive5_streamlink", NULL, NULL, NULL, streamlink1);
 	}
 
 	if(streamlink == NULL)
 	{
 		streamlink = string_resub("create_PRO_Modal('", "'", tmpstr, 0);
-		titheklog(debuglevel, "/tmp/firedrive4_streamlink", NULL, NULL, NULL, streamlink1);
+		titheklog(debuglevel, "/tmp/firedrive6_streamlink", NULL, NULL, NULL, streamlink1);
 	}
 
 	free(tmpstr); tmpstr = NULL;
