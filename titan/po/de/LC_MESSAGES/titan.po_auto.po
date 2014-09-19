@@ -4662,7 +4662,10 @@ msgstr "aktiviert"
 msgid ""
 "Here you can aktivate/deaktivate you readers. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie ihren Kartenleser aktivieren bzw. deaktivieren."
+msgstr 
+"Hier können Sie ihren Kartenleser aktivieren bzw. deaktivieren.\n"
+"Bei allen Boxen ist der 1.Kartenleser unten außer bei der Nemesis Box.\n"
+"Bei Boxen mit nur einem Kartenleser, wird Kartenleser unten angegeben."
 
 #: plugins_readerconfig_skin.xml.h:6 skins_readerconfig_skin.xml.h:6
 msgid ""
