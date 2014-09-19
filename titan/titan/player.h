@@ -1228,7 +1228,7 @@ char** playergettracklist(int type)
 		}
 	}
 #endif
-
+/*
 //////////////////////////////NEUER CODE //////////////////////////////
 #ifdef EPLAYER4
 	char ** tmpTrackList[2][100];
@@ -1336,7 +1336,7 @@ char** playergettracklist(int type)
 	}
 #endif
 //////////////////////////////NEUER CODE //////////////////////////////
-
+*/
 	return TrackList;
 }
 
