@@ -5502,6 +5502,7 @@ msgstr "Verbindung zum Server verloren!"
 msgid ""
 "Found Pay Stream visit the official Website and Order this Stream and try "
 "this again !"
+msgstr ""
 msgstr "Kostenpflichtiger Stream gefunden.\n"
 msgstr "Bitte auf der offiziellen Website bestellen und erneut versuchen."
 
