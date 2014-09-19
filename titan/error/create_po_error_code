@@ -40,9 +40,9 @@ xgettext: found 1 fatal error
 [createpo.sh] ############################################
 [createpo.sh] ###### error should be in the middle #######
 [createpo.sh] ############################################
-  3706	msgstr "Kostenpflichtiger Stream gefunden.\n"
-  3707	msgstr "Bitte auf der offiziellen Website bestellen und erneut versuchen."
-  3708	
+  3706	msgstr ""
+  3707	msgstr "Kostenpflichtiger Stream gefunden.\n"
+  3708	msgstr "Bitte auf der offiziellen Website bestellen und erneut versuchen."
 [createpo.sh] ############################################
 [createpo.sh] ################## coding #################
 /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.po:         utf-8
