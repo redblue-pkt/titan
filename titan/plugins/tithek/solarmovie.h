@@ -53,7 +53,12 @@ char* solarmovie(char* link)
 	{
 		tmpstr1 = string_resub("<div class=\"thirdPartyEmbContainer\">", "</div>", tmpstr, 0);
 		stringreplacechar(tmpstr1, '\n', ' ');
-		url = string_resub("<center><iframe src=\"", "\"", tmpstr1, 0);
+
+		url = oregex(".*(http://.*).*\"", tmpstr1);
+		stringreplacechar(url, '"', '\0');
+
+		if(url == NULL)
+			url = string_resub("<center><iframe src=\"", "\"", tmpstr1, 0);
 		if(url == NULL)
 			url = string_resub("<center><IFRAME SRC=\"", "\"", tmpstr1, 0);
 
