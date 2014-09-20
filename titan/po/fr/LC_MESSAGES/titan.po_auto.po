@@ -75,28 +75,28 @@ msgstr ""
 #: mediadb.h:1477 mediadb.h:2454 mediadbsettings.h:95 menu.h:153 menu.h:208
 #: menu.h:956 menu.h:958 movie4k.h:36 movie4k.h:48 movie4k.h:92 movreel.h:30
 #: movreel.h:79 movreel.h:85 movreel.h:91 movreel.h:103 movreel.h:115
-#: movreel.h:166 movreel.h:214 movshare.h:35 movshare.h:152 myvideo.h:86
-#: networkbrowser.h:944 networkbrowser.h:1005 networkbrowser.h:1009
-#: networkbrowser.h:1011 networkbrowser.h:1021 networkbrowser.h:1025
-#: networkbrowser.h:1189 networkbrowser.h:1743 networkbrowser.h:1750
-#: networkbrowser.h:1755 networkbrowser.h:1907 network.h:263 network.h:271
-#: network.h:284 network.h:299 network.h:335 network.h:426 network.h:558
-#: network.h:766 network.h:774 network.h:800 network.h:804 network.h:858
-#: network.h:865 network.h:887 newsletter.h:252 newsletter.h:292 novamov.h:35
-#: novamov.h:80 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105 panel_main.h:29
-#: panel_main.h:135 panel_settings_wizard.h:6 played.h:30 played.h:79
-#: played.h:91 played.h:103 played.h:160 player.h:99 play.h:476 play.h:593
-#: play.h:1250 play.h:1256 play.h:1265 play.h:1266 play.h:1463 play.h:1637
-#: play.h:1648 plugins_dlna_skin.xml.h:8 plugins_facebook_skin.xml.h:5
-#: plugins_mboxinfo_skin.xml.h:2 plugins_mc_skin.xml.h:38
-#: plugins_optimize_skin.xml.h:3 plugins_rgui_skin.xml.h:3
-#: plugins_sudoku_skin.xml.h:13 plugins_tiwakeup_skin.xml.h:3
-#: plugins_wins3_skin.xml.h:3 possetup.h:98 primeshare.h:29 primeshare.h:73
-#: primeshare.h:79 primeshare.h:124 putlocker.h:32 putlocker.h:79
-#: putlocker.h:85 putlocker.h:91 putlocker.h:142 putlocker.h:152
-#: putlocker.h:225 readerconfig.h:343 readerconfig.h:443 readerconfig.h:444
-#: readerconfig.h:488 readerconfig.h:489 record.h:369 record.h:1001
-#: record.h:1452 rectimer.h:563 rectimer.h:1217 rectimer.h:1363
+#: movreel.h:166 movreel.h:214 movshare.h:34 movshare.h:78 movshare.h:157
+#: movshare.h:163 myvideo.h:86 networkbrowser.h:944 networkbrowser.h:1005
+#: networkbrowser.h:1009 networkbrowser.h:1011 networkbrowser.h:1021
+#: networkbrowser.h:1025 networkbrowser.h:1189 networkbrowser.h:1743
+#: networkbrowser.h:1750 networkbrowser.h:1755 networkbrowser.h:1907
+#: network.h:263 network.h:271 network.h:284 network.h:299 network.h:335
+#: network.h:426 network.h:558 network.h:766 network.h:774 network.h:800
+#: network.h:804 network.h:858 network.h:865 network.h:887 newsletter.h:252
+#: newsletter.h:292 novamov.h:35 novamov.h:80 nowvideo.h:44 nowvideo.h:99
+#: nowvideo.h:105 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
+#: played.h:30 played.h:84 played.h:90 played.h:102 played.h:114 played.h:171
+#: player.h:99 play.h:476 play.h:593 play.h:1250 play.h:1256 play.h:1265
+#: play.h:1266 play.h:1463 play.h:1637 play.h:1648 plugins_dlna_skin.xml.h:8
+#: plugins_facebook_skin.xml.h:5 plugins_mboxinfo_skin.xml.h:2
+#: plugins_mc_skin.xml.h:38 plugins_optimize_skin.xml.h:3
+#: plugins_rgui_skin.xml.h:3 plugins_sudoku_skin.xml.h:13
+#: plugins_tiwakeup_skin.xml.h:3 plugins_wins3_skin.xml.h:3 possetup.h:98
+#: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
+#: putlocker.h:32 putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
+#: putlocker.h:152 putlocker.h:225 readerconfig.h:343 readerconfig.h:443
+#: readerconfig.h:444 readerconfig.h:488 readerconfig.h:489 record.h:369
+#: record.h:1001 record.h:1452 rectimer.h:563 rectimer.h:1217 rectimer.h:1363
 #: rectimer.h:1375 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:31 scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1888
@@ -106,7 +106,7 @@ msgstr ""
 #: skins_mc_skin.xml.h:38 skins_optimize_skin.xml.h:3 skins_rgui_skin.xml.h:3
 #: skins_sudoku_skin.xml.h:13 skins_tiwakeup_skin.xml.h:3
 #: skins_wins3_skin.xml.h:3 sock.h:952 softcam.h:403 solarmovie.h:35
-#: solarmovie.h:47 solarmovie.h:299 spinner.h:18 stopifnotused.c:31
+#: solarmovie.h:47 solarmovie.h:304 spinner.h:18 stopifnotused.c:31
 #: streamcloud.h:31 streamcloud.h:74 streamcloud.h:84 streamcloud.h:97
 #: streamcloud.h:128 streamcloud.h:167 stream.h:33 system_backup_restore.h:31
 #: system_backup_restore.h:40 system_backup_restore.h:43
@@ -172,37 +172,37 @@ msgstr ""
 #: mediadb.h:1477 mediadb.h:2454 mediadbsettings.h:95 menu.h:153 menu.h:208
 #: menu.h:956 menu.h:958 movie4k.h:36 movie4k.h:48 movie4k.h:92 movreel.h:30
 #: movreel.h:79 movreel.h:85 movreel.h:91 movreel.h:103 movreel.h:115
-#: movreel.h:166 movreel.h:214 movshare.h:35 movshare.h:152 myvideo.h:86
-#: networkbrowser.h:944 networkbrowser.h:1005 networkbrowser.h:1009
-#: networkbrowser.h:1011 networkbrowser.h:1021 networkbrowser.h:1025
-#: networkbrowser.h:1189 networkbrowser.h:1743 networkbrowser.h:1750
-#: networkbrowser.h:1755 networkbrowser.h:1907 network.h:284 network.h:299
-#: network.h:335 network.h:426 network.h:558 network.h:766 network.h:774
-#: network.h:800 network.h:804 network.h:858 network.h:865 network.h:887
-#: newsletter.h:252 newsletter.h:292 novamov.h:35 novamov.h:80 nowvideo.h:44
-#: nowvideo.h:99 nowvideo.h:105 panel_main.h:29 panel_main.h:135
-#: panel_settings_wizard.h:6 played.h:30 played.h:79 played.h:91 played.h:103
-#: played.h:160 player.h:99 play.h:476 play.h:593 play.h:1250 play.h:1256
-#: play.h:1265 play.h:1266 play.h:1463 play.h:1637 play.h:1648
-#: plugins_autotimer_skin.xml.h:7 plugins_callmonitor1_skin.xml.h:11
-#: plugins_catcatch_skin.xml.h:4 plugins_dlna_skin.xml.h:2
-#: plugins_facebook_skin.xml.h:4 plugins_instar_skin.xml.h:6
-#: plugins_lcdpearl1_skin.xml.h:7 plugins_lcdsamsung_skin.xml.h:8
-#: plugins_mboxinfo_skin.xml.h:1 plugins_mc_skin.xml.h:22
-#: plugins_optimize_skin.xml.h:2 plugins_panel_skin.xml.h:15
-#: plugins_rgui_skin.xml.h:2 plugins_stopifnotused_skin.xml.h:4
-#: plugins_sudoku_skin.xml.h:7 plugins_tiwakeup_skin.xml.h:2
-#: plugins_wins3_skin.xml.h:1 possetup.h:98 primeshare.h:29 primeshare.h:73
-#: primeshare.h:79 primeshare.h:124 putlocker.h:32 putlocker.h:79
-#: putlocker.h:85 putlocker.h:91 putlocker.h:142 putlocker.h:152
-#: putlocker.h:225 readerconfig.h:343 readerconfig.h:443 readerconfig.h:444
-#: readerconfig.h:488 readerconfig.h:489 record.h:90 record.h:369
-#: record.h:1001 record.h:1188 record.h:1427 record.h:1452 rectimer.h:563
-#: rectimer.h:1217 rectimer.h:1363 rectimer.h:1375 restoredefault.h:10
-#: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
-#: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:31
-#: scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1888 scan.h:1979
-#: scan.h:2345 scart.h:12 scart.h:25 scriptexec.h:41 service.h:712
+#: movreel.h:166 movreel.h:214 movshare.h:34 movshare.h:78 movshare.h:157
+#: movshare.h:163 myvideo.h:86 networkbrowser.h:944 networkbrowser.h:1005
+#: networkbrowser.h:1009 networkbrowser.h:1011 networkbrowser.h:1021
+#: networkbrowser.h:1025 networkbrowser.h:1189 networkbrowser.h:1743
+#: networkbrowser.h:1750 networkbrowser.h:1755 networkbrowser.h:1907
+#: network.h:284 network.h:299 network.h:335 network.h:426 network.h:558
+#: network.h:766 network.h:774 network.h:800 network.h:804 network.h:858
+#: network.h:865 network.h:887 newsletter.h:252 newsletter.h:292 novamov.h:35
+#: novamov.h:80 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105 panel_main.h:29
+#: panel_main.h:135 panel_settings_wizard.h:6 played.h:30 played.h:84
+#: played.h:90 played.h:102 played.h:114 played.h:171 player.h:99 play.h:476
+#: play.h:593 play.h:1250 play.h:1256 play.h:1265 play.h:1266 play.h:1463
+#: play.h:1637 play.h:1648 plugins_autotimer_skin.xml.h:7
+#: plugins_callmonitor1_skin.xml.h:11 plugins_catcatch_skin.xml.h:4
+#: plugins_dlna_skin.xml.h:2 plugins_facebook_skin.xml.h:4
+#: plugins_instar_skin.xml.h:6 plugins_lcdpearl1_skin.xml.h:7
+#: plugins_lcdsamsung_skin.xml.h:8 plugins_mboxinfo_skin.xml.h:1
+#: plugins_mc_skin.xml.h:22 plugins_optimize_skin.xml.h:2
+#: plugins_panel_skin.xml.h:15 plugins_rgui_skin.xml.h:2
+#: plugins_stopifnotused_skin.xml.h:4 plugins_sudoku_skin.xml.h:7
+#: plugins_tiwakeup_skin.xml.h:2 plugins_wins3_skin.xml.h:1 possetup.h:98
+#: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
+#: putlocker.h:32 putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
+#: putlocker.h:152 putlocker.h:225 readerconfig.h:343 readerconfig.h:443
+#: readerconfig.h:444 readerconfig.h:488 readerconfig.h:489 record.h:90
+#: record.h:369 record.h:1001 record.h:1188 record.h:1427 record.h:1452
+#: rectimer.h:563 rectimer.h:1217 rectimer.h:1363 rectimer.h:1375
+#: restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
+#: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
+#: rtl2now.h:31 scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1888
+#: scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 scriptexec.h:41 service.h:712
 #: service.h:957 skin_default_skin.xml.h:224 skins_autotimer_skin.xml.h:7
 #: skins_callmonitor1_skin.xml.h:11 skins_catcatch_skin.xml.h:4
 #: skins_dlna_skin.xml.h:2 skinselector.h:218 skins_facebook_skin.xml.h:4
@@ -212,7 +212,7 @@ msgstr ""
 #: skins_panel_skin.xml.h:15 skins_rgui_skin.xml.h:2
 #: skins_stopifnotused_skin.xml.h:4 skins_sudoku_skin.xml.h:7
 #: skins_tiwakeup_skin.xml.h:2 skins_wins3_skin.xml.h:1 sock.h:952
-#: softcam.h:403 solarmovie.h:35 solarmovie.h:47 solarmovie.h:299 spinner.h:18
+#: softcam.h:403 solarmovie.h:35 solarmovie.h:47 solarmovie.h:304 spinner.h:18
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:84
 #: streamcloud.h:97 streamcloud.h:128 streamcloud.h:167 stream.h:33
 #: system_backup_restore.h:31 system_backup_restore.h:40
@@ -583,28 +583,29 @@ msgstr "oui / vzap sans fin"
 #: mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477
 #: mediadbsettings.h:95 menu.h:153 menu.h:208 movie4k.h:36 movie4k.h:48
 #: movie4k.h:92 movreel.h:30 movreel.h:79 movreel.h:85 movreel.h:91
-#: movreel.h:103 movreel.h:115 movreel.h:166 movreel.h:214 movshare.h:35
-#: movshare.h:152 myvideo.h:86 networkbrowser.h:944 networkbrowser.h:1005
-#: networkbrowser.h:1009 networkbrowser.h:1011 networkbrowser.h:1021
-#: networkbrowser.h:1025 networkbrowser.h:1189 networkbrowser.h:1743
-#: networkbrowser.h:1750 networkbrowser.h:1755 networkbrowser.h:1907
-#: network.h:426 network.h:558 network.h:766 network.h:774 network.h:800
-#: network.h:804 network.h:858 novamov.h:35 novamov.h:80 nowvideo.h:44
-#: nowvideo.h:99 nowvideo.h:105 panel_main.h:29 panel_main.h:135
-#: panel_settings_wizard.h:6 played.h:30 played.h:79 played.h:91 played.h:103
-#: played.h:160 player.h:99 play.h:593 play.h:1265 play.h:1463 play.h:1637
-#: play.h:1648 possetup.h:98 primeshare.h:29 primeshare.h:73 primeshare.h:79
-#: primeshare.h:124 putlocker.h:32 putlocker.h:79 putlocker.h:85
-#: putlocker.h:91 putlocker.h:142 putlocker.h:152 putlocker.h:225
-#: readerconfig.h:343 readerconfig.h:443 readerconfig.h:444 readerconfig.h:488
-#: readerconfig.h:489 record.h:369 record.h:1001 record.h:1188 record.h:1427
-#: record.h:1452 rectimer.h:563 rectimer.h:1217 rectimer.h:1363
-#: rectimer.h:1375 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
-#: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
-#: rtl2now.h:31 scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1640
-#: scan.h:1888 scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 service.h:712
-#: service.h:957 skinadjust.h:199 skinselector.h:218 sock.h:952 softcam.h:403
-#: solarmovie.h:35 solarmovie.h:47 solarmovie.h:299 spinner.h:18
+#: movreel.h:103 movreel.h:115 movreel.h:166 movreel.h:214 movshare.h:34
+#: movshare.h:78 movshare.h:157 movshare.h:163 myvideo.h:86
+#: networkbrowser.h:944 networkbrowser.h:1005 networkbrowser.h:1009
+#: networkbrowser.h:1011 networkbrowser.h:1021 networkbrowser.h:1025
+#: networkbrowser.h:1189 networkbrowser.h:1743 networkbrowser.h:1750
+#: networkbrowser.h:1755 networkbrowser.h:1907 network.h:426 network.h:558
+#: network.h:766 network.h:774 network.h:800 network.h:804 network.h:858
+#: novamov.h:35 novamov.h:80 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105
+#: panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6 played.h:30
+#: played.h:84 played.h:90 played.h:102 played.h:114 played.h:171 player.h:99
+#: play.h:593 play.h:1265 play.h:1463 play.h:1637 play.h:1648 possetup.h:98
+#: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
+#: putlocker.h:32 putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
+#: putlocker.h:152 putlocker.h:225 readerconfig.h:343 readerconfig.h:443
+#: readerconfig.h:444 readerconfig.h:488 readerconfig.h:489 record.h:369
+#: record.h:1001 record.h:1188 record.h:1427 record.h:1452 rectimer.h:563
+#: rectimer.h:1217 rectimer.h:1363 rectimer.h:1375 restoredefault.h:10
+#: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
+#: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:31
+#: scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1640 scan.h:1888
+#: scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 service.h:712 service.h:957
+#: skinadjust.h:199 skinselector.h:218 sock.h:952 softcam.h:403
+#: solarmovie.h:35 solarmovie.h:47 solarmovie.h:304 spinner.h:18
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:84
 #: streamcloud.h:97 streamcloud.h:128 streamcloud.h:167 stream.h:33
 #: system_backup_restore.h:40 system_backup_restore.h:43
@@ -641,8 +642,8 @@ msgstr ""
 #: netzkino.h:13 netzkino.h:15 rtl2now.h:184 rtl2now.h:186 rtl2now.h:248
 #: rtl2now.h:250 rtl2now.h:312 rtl2now.h:314 rtl2now.h:376 rtl2now.h:378
 #: rtl2now.h:440 rtl2now.h:442 rtl2now.h:504 rtl2now.h:506
-#: skin_default_skin.xml.h:563 solarmovie.h:101 solarmovie.h:103
-#: solarmovie.h:214 solarmovie.h:216 tectime.h:13 tectime.h:15
+#: skin_default_skin.xml.h:563 solarmovie.h:106 solarmovie.h:108
+#: solarmovie.h:219 solarmovie.h:221 tectime.h:13 tectime.h:15
 #: tithek_mainmenu.h:36 tmdb.h:860 tvtoast.h:837 tvtoast.h:839 xvideos.h:56
 #: xvideos.h:58 youtube.h:240 youtube.h:242 youtube.h:332 youtube.h:334
 #: zdf.h:147 zdf.h:149
@@ -1113,7 +1114,7 @@ msgid "west"
 msgstr "Ouest"
 
 #: divxstage.h:36 faststream.h:30 filenuke.h:37 firedrive.h:33 flashx.h:26
-#: movreel.h:30 movshare.h:35 novamov.h:35 nowvideo.h:44 played.h:30
+#: movreel.h:30 movshare.h:34 novamov.h:35 nowvideo.h:44 played.h:30
 #: primeshare.h:29 putlocker.h:32 streamcloud.h:31 videoweed.h:35
 #: vidstream.h:45 xvidstage.h:54
 msgid "Hoster Url not http://"
@@ -1128,8 +1129,8 @@ msgstr ""
 #: faststream.h:160 filenuke.h:84 filenuke.h:95 filenuke.h:107 filenuke.h:157
 #: firedrive.h:66 firedrive.h:122 firedrive.h:137 flashx.h:83 flashx.h:137
 #: flashx.h:194 flashx.h:232 flashx.h:269 movreel.h:79 movreel.h:102
-#: movreel.h:114 movreel.h:166 movreel.h:214 movshare.h:152 played.h:79
-#: played.h:90 played.h:102 played.h:160 primeshare.h:73 primeshare.h:124
+#: movreel.h:114 movreel.h:166 movreel.h:214 movshare.h:157 played.h:84
+#: played.h:101 played.h:113 played.h:171 primeshare.h:73 primeshare.h:124
 #: putlocker.h:79 putlocker.h:142 putlocker.h:151 putlocker.h:225
 #: solarmovie.h:35 solarmovie.h:46 streamcloud.h:84 streamcloud.h:97
 #: streamcloud.h:128 streamcloud.h:167 vidstream.h:86 vidstream.h:97
@@ -1526,7 +1527,7 @@ msgstr ""
 msgid "FanControl-normal"
 msgstr ""
 
-#: faststream.h:107 played.h:107
+#: faststream.h:107 played.h:118
 msgid "Connect with Hoster wait 10 seconds"
 msgstr ""
 
@@ -2443,11 +2444,11 @@ msgstr ""
 msgid "Downloads"
 msgstr ""
 
-#: kinox.h:296 movie4k.h:832 movie4k.h:964 movie4k.h:1080 solarmovie.h:447
+#: kinox.h:296 movie4k.h:832 movie4k.h:964 movie4k.h:1080 solarmovie.h:452
 msgid "Season"
 msgstr ""
 
-#: kinox.h:300 movie4k.h:836 movie4k.h:1084 solarmovie.h:451
+#: kinox.h:300 movie4k.h:836 movie4k.h:1084 solarmovie.h:456
 msgid "Episode"
 msgstr ""
 
@@ -2994,6 +2995,10 @@ msgstr ""
 msgid "No such file No such user exist File not found"
 msgstr ""
 
+#: movshare.h:78 movshare.h:163
+msgid "The video no longer exists"
+msgstr ""
+
 #: multiepg.h:445 multiepg.h:635
 msgid "MULTI EPG - Bouquets"
 msgstr ""
@@ -3489,6 +3494,10 @@ msgstr ""
 msgid ""
 "Do you really want to start the Wizard?\n"
 "The Box will reboot and the Wizard will be started!"
+msgstr ""
+
+#: played.h:90
+msgid "This video has been deleted. We apologize for the inconvenience."
 msgstr ""
 
 #: play.h:396 play.h:430 plugins_imdbapi_skin.xml.h:9
@@ -8213,7 +8222,7 @@ msgstr "Activer"
 msgid "Reader Config Plugin not installed !"
 msgstr ""
 
-#: solarmovie.h:299
+#: solarmovie.h:304
 msgid "This file doesn't exist, or has been removed"
 msgstr ""
 
