@@ -29,7 +29,6 @@ char* movshare(char* link)
 		debug(99, "remove out string: %s", tmplink);
 	}
 	
-
 	if(tmplink == NULL || ostrncmp("http://", tmplink, 7))
 	{
 		textbox(_("Message"), _("Hoster Url not http://") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
@@ -73,7 +72,13 @@ char* movshare(char* link)
 	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 	debug(99, "tmpstr: %s", tmpstr);
 	titheklog(debuglevel, "/tmp/movshare1_get", NULL, NULL, NULL, tmpstr);
-	
+
+	if(tmpstr == NULL || ostrstr(tmpstr, "error=1&error_msg=The video no longer exists") != NULL)
+	{
+		textbox(_("Message"), _("The video no longer exists") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
+		goto end;
+	}
+
 	file = string_replace("/embed.php?v=", "", tmppath, 0);
 	if(file == NULL)
 		file = string_resub("flashvars.file=\"", "\";", tmpstr, 0);
@@ -150,6 +155,12 @@ char* movshare(char* link)
 	if(tmpstr == NULL)
 	{
 		textbox(_("Message"), _("The page is temporarily unavailable") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
+		goto end;
+	}
+
+	if(tmpstr == NULL || ostrstr(tmpstr, "error=1&error_msg=The video no longer exists") != NULL)
+	{
+		textbox(_("Message"), _("The video no longer exists") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
 		goto end;
 	}
 
