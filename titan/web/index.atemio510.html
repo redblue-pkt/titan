@@ -53,7 +53,8 @@
                 <a class=linelink target=leftpanel href=boxcontrol.html>Boxcontrol</a>	
                 <a class=linelink target=main href=query?getmoviefilelist>Movies</a>	
                 <a class=linelink target=leftpanel href=timer.html>Timer</a>
-                <a class=linelink target=leftpanel href=settings.html>Settings</a>	</td>   
+                <a class=linelink target=leftpanel href=settings.html>Settings</a>
+		<a class=linelink target=leftpanel href=info.html>Info</a></td>   
               <td align=right>
                 <form target=main action=query method=get>
                   <input class=inputbox type=text name=getepgsearch value="EPG Search" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;">
@@ -71,7 +72,7 @@
       </tr>   
       <tr> 
         <!-- AKT SERVICE -->  
-        <td colspan=4 style="border-radius: 5px 5px 5px 5px">   
+        <td colspan=4>   
           <iframe id=aktserviceframe name=aktservice scrolling=no marginheight=0 marginwidth=0 border=0 frameborder=0 width=100% height=35 src=query?getaktservice onload="setTimeout(function(){aktservice.document.location.href='query?getaktservice';}, 15000);">
           </iframe>  </td> 
         <!-- AKT SERVICE END --> 
