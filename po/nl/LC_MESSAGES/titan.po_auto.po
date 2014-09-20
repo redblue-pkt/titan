@@ -9101,42 +9101,50 @@ msgid "Search Serie"
 msgstr "Zoek serie"
 
 #: tithek_mainmenu.h:45
-msgid "SuperRTL-Now"
+msgid "Solarmovie"
 msgstr ""
 
 #: tithek_mainmenu.h:46
-msgid "TecTime"
+msgid "SuperRTL-Now"
 msgstr ""
 
 #: tithek_mainmenu.h:47
-msgid "TimeTv"
+msgid "TecTime"
 msgstr ""
 
 #: tithek_mainmenu.h:48
-msgid "Tips und Tricks"
+msgid "TimeTv"
 msgstr ""
 
 #: tithek_mainmenu.h:49
-msgid "TvToast"
+msgid "Tips und Tricks"
 msgstr ""
 
 #: tithek_mainmenu.h:50
-msgid "VOX-Now"
+msgid "TvToast"
 msgstr ""
 
 #: tithek_mainmenu.h:51
-msgid "XXX-Beeg"
+msgid "VOX-Now"
 msgstr ""
 
 #: tithek_mainmenu.h:52
-msgid "XXX-XVIDEOS"
+msgid "Watchmovies"
 msgstr ""
 
 #: tithek_mainmenu.h:53
-msgid "Youtube"
+msgid "XXX-Beeg"
 msgstr ""
 
 #: tithek_mainmenu.h:54
+msgid "XXX-XVIDEOS"
+msgstr ""
+
+#: tithek_mainmenu.h:55
+msgid "Youtube"
+msgstr ""
+
+#: tithek_mainmenu.h:56
 msgid "ZDF"
 msgstr ""
 
