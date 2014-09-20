@@ -4,7 +4,7 @@
 .label {font-family:verdana; font-size: 11pt; color: #ffffff; text-decoration: none}
 .label1 {font-family:verdana; font-size: 12pt; color: #ffffff; text-decoration: none}
 .smalllabel1 {font-family:verdana; font-size: 10pt; color: #ffffff; text-decoration: none}
-.link {white-space: normal; vertical-align: middle; font-family:verdana; font-size: 12pt; color: #ffffff; text-decoration: none}
+.link {white-space: normal; vertical-align: middle; border-radius: 5px 0px 0px 5px; font-family:verdana; font-size: 12pt; color: #ffffff; text-decoration: none}
 .link:hover {background-color: #00a4c8}
 .smalllink {vertical-align: middle; font-family:verdana; font-size: 8pt; color: #ffffff; text-decoration: none}
 .smalllink:hover {background-color: #00a4c8}
@@ -48,3 +48,12 @@
 .systeminfo {width: 99%; height: auto; border: 1px; border-style: solid; border-color: #eeeeee; border-radius: 5px; color: #ffffff;}
 #p_configinfo{color: #ffffff}
 #p_systeminfo{color: #ffffff}
+
+.line1 td:last-child{border-radius: 0px 5px 5px 0px;}
+.line2 td:last-child{border-radius: 0px 5px 5px 0px;}
+
+.line1 td:first-child{ border-radius: 5px 0px 0px 5px; }
+.line2 td:first-child{ border-radius: 5px 0px 0px 5px; }
+
+.line1 td:only-child{ border-radius: 5px 5px 5px 5px; }
+.line2 td:only-child{ border-radius: 5px 5px 5px 5px; }
