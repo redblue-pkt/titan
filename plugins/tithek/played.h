@@ -74,9 +74,21 @@ char* played(char* link)
 	debug(99, "tmpstr: %s", tmpstr);
 	titheklog(debuglevel, "/tmp/played1_get", NULL, NULL, NULL, tmpstr);
 
+	streamlink = string_resub("file: \"", "\"", tmpstr, 0);		
+	if(streamlink != NULL)
+	{
+		goto end;
+	}
+
 	if(tmpstr == NULL)
 	{
 		textbox(_("Message"), _("The page is temporarily unavailable") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
+		goto end;
+	}
+
+	if(tmpstr == NULL || ostrstr(tmpstr, "<center>This video has been deleted. We apologize for the inconvenience.</center>") != NULL)
+	{
+		textbox(_("Message"), _("This video has been deleted. We apologize for the inconvenience.") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
 		goto end;
 	}
 
