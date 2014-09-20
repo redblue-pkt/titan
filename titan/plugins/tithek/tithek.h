@@ -1703,671 +1703,149 @@ waitrcstart:
 				if(check == 2)
 				{
 					if(kinox_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "KinoX - Search", tmpstr, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat("KinoX - Search", " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, "KinoX - Search", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(check == 3)
 				{
 					if(solarmovie_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "SolarMovies - Movie - Search", tmpstr, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat("SolarMovies - Movie - Search", " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, "SolarMovies - Movie - Search", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(check == 4)
 				{
 					if(solarmovie_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "SolarMovies - Tv - Search", tmpstr, 1) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat("SolarMovies - Tv - Search", " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, "SolarMovies - Tv - Search", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(check == 5)
 				{
 					if(youtube_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "Youtube - Search", tmpstr) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat("Youtube - Search", " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, "Youtube - Search", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(check == 6)
 				{
 					if(myvideo_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "MyVideo - Search", tmpstr, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat("MyVideo - Search", " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, "MyVideo - Search", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(check == 7)
 				{
 					if(movie4k_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "KinoX - Search", tmpstr, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat("Movie4k - Search", " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, "Movie4k - Search", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(check == 8)
 				{
 					if(kinox_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "KinoX - Search (local)", tmpstr, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat("KinoX - Search (local)", " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, "KinoX - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(check == 9)
 				{
 					if(solarmovie_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "Solarmovies - Search (local)", tmpstr, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat("Solarmovies - Search (local)", " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, "Solarmovies - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(check == 10)
 				{
 					if(youtube_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "Youtube - Search (local)", tmpstr, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat("Youtube - Search (local)", " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, "Youtube - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(check == 11)
 				{
 					if(myvideo_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "MyVideo - Search (local)", tmpstr, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat("MyVideo - Search (local)", " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, "MyVideo - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(check == 12)
 				{
 					if(movie4k_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "Movie4k - Search (local)", tmpstr, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat("Movie4k - Search (local)", " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, "Movie4k - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(check == 13)
 				{
 					if(internetradio_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "Internetradio - Search (local)", tmpstr, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat("Internetradio - Search (local)", " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, "Internetradio - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(check == 14)
 				{
 					if(internettv_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "Internettv - Search (local)", tmpstr, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat("Internettv - Search (local)", " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, "Internettv - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(check == 15)
 				{
 					if(ard_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "ARD - Search (local)", tmpstr, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat("ARD - Search (local)", " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, "ARD - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(check == 16)
 				{
 					if(zdf_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "ZDF - Search (local)", tmpstr, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat("ZDF - Search (local)", " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, "ZDF - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(check == 17)
 				{
 					if(tectime_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "TecTime - Search (local)", tmpstr, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat("TecTime - Search (local)", " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, "TecTime - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(check == 18)
 				{
 					if(giga_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "Giga - Search (local)", tmpstr, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat("Giga - Search (local)", " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, "Giga - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(check == 19)
 				{
 					if(beeg_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "Beeg - Search (local)", tmpstr, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat("Beeg - Search (local)", " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, "Beeg - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(check == 20)
 				{
 					if(rtl2now_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "Rtl2Now - Search (local)", tmpstr, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat("Rtl2Now - Search (local)", " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, "Rtl2Now - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(check == 21)
 				{
 					if(rtlnow_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "Rtl-Now - Search (local)", tmpstr, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat("Rtl-Now - Search (local)", " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, "Rtl-Now - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(check == 22)
 				{
 					if(superrtlnow_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "SuperRtlNow - Search (local)", tmpstr, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat("SuperRtlNow - Search (local)", " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, "SuperRtlNow - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(check == 23)
 				{
 					if(voxnow_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "VoxNow - Search (local)", tmpstr, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat("VoxNow - Search (local)", " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, "VoxNow - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(check == 24)
 				{
 					if(xvideos_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "Xvideos - Search (local)", tmpstr, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat("Xvideos - Search (local)", " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, "Xvideos - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(check == 25)
 				{
 					if(mlehd_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "Mle-HD - Search (local)", tmpstr, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat("Mle-HD - Search (local)", " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, "Mle-HD - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(check == 26)
 				{
 					if(netzkino_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "Netzkino - Search (local)", tmpstr, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat("Netzkino - Search (local)", " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, "Netzkino - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(check == 27)
 				{
 					if(filmon_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "FilmOn - Search (local)", tmpstr, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat("FilmOn - Search (local)", " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, "FilmOn - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(check == 28)
 				{
 					if(rtlnitronow_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "RtlNitroNow - Search (local)", tmpstr, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat("RtlNitroNow - Search (local)", " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, "RtlNitroNow - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(check == 29)
 				{
 					if(ntvnow_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "NtvNow - Search (local)", tmpstr, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat("NtvNow - Search (local)", " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, "NtvNow - Search (local)", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 /*
 why ?
 				else if((((struct tithek*)listbox->select->handle)->flag == 13))
 				{
 					if(myvideo_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "MyVideo - Search", tmpstr, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat("MyVideo - Search", " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 */
 				free(tmpstr), tmpstr = NULL;
@@ -2387,899 +1865,197 @@ why ?
 				else if((((struct tithek*)listbox->select->handle)->flag == 9) || (((struct tithek*)listbox->select->handle)->flag == 10) || (((struct tithek*)listbox->select->handle)->flag == 11))
 				{
 					if(youtube_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(((struct tithek*)listbox->select->handle)->flag == 13)
 				{
 					if(myvideo_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(((struct tithek*)listbox->select->handle)->flag == 24)
 				{
 					if(internetradio_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(((struct tithek*)listbox->select->handle)->flag == 25)
 				{
 					if(kinox_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(((struct tithek*)listbox->select->handle)->flag == 26)
 				{
 					if(movie4k_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(((struct tithek*)listbox->select->handle)->flag == 27)
 				{
 					if(solarmovie_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(((struct tithek*)listbox->select->handle)->flag == 47)
 				{
 					if(internettv_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(((struct tithek*)listbox->select->handle)->flag == 48)
 				{
 					if(youtube_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(((struct tithek*)listbox->select->handle)->flag == 49)
 				{
 					if(myvideo_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(((struct tithek*)listbox->select->handle)->flag == 51)
 				{
 					if(ard_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(((struct tithek*)listbox->select->handle)->flag == 52)
 				{
 					if(zdf_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(((struct tithek*)listbox->select->handle)->flag == 53)
 				{
 					if(tectime_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(((struct tithek*)listbox->select->handle)->flag == 54)
 				{
 					if(giga_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(((struct tithek*)listbox->select->handle)->flag == 55)
 				{
 					if(beeg_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(((struct tithek*)listbox->select->handle)->flag == 56)
 				{
 					if(rtl2now_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(((struct tithek*)listbox->select->handle)->flag == 57)
 				{
 					if(rtlnow_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(((struct tithek*)listbox->select->handle)->flag == 58)
 				{
 					if(superrtlnow_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(((struct tithek*)listbox->select->handle)->flag == 59)
 				{
 					if(voxnow_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(((struct tithek*)listbox->select->handle)->flag == 60)
 				{
 					if(xvideos_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(((struct tithek*)listbox->select->handle)->flag == 61)
 				{
 					if(mlehd_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(((struct tithek*)listbox->select->handle)->flag == 62)
 				{
 					if(netzkino_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(((struct tithek*)listbox->select->handle)->flag == 63)
 				{
 					if(filmon_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(((struct tithek*)listbox->select->handle)->flag == 65)
 				{
 					if(tvtoast_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(((struct tithek*)listbox->select->handle)->flag == 69)
 				{
 					if(rtlnitronow_search_local(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(((struct tithek*)listbox->select->handle)->flag == 44)
 				{
 					if(myvideo_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 1) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if((((struct tithek*)listbox->select->handle)->flag == 21))
 				{
 					if(kinox_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if((((struct tithek*)listbox->select->handle)->flag == 33))
 				{
 					if(movie4k_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
-				}				
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
+				}
 				else if(((struct tithek*)listbox->select->handle)->flag == 29)
 				{
 					if(solarmovie_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 0) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if(((struct tithek*)listbox->select->handle)->flag == 30)
 				{
 					if(solarmovie_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 1) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if((((struct tithek*)listbox->select->handle)->flag == 31))
 				{
 					if(kinox_search_cast(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if((((struct tithek*)listbox->select->handle)->flag == 32))
 				{
 					if(kinox_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 1) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if((((struct tithek*)listbox->select->handle)->flag == 33))
 				{
 					if(movie4k_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title, NULL, 1) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 3);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 3) == 0) break;
 				}
 				else if((((struct tithek*)listbox->select->handle)->flag == 34) || (((struct tithek*)listbox->select->handle)->flag == 35))
 				{
 					if(movie4k_hoster(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if((((struct tithek*)listbox->select->handle)->flag == 22))
 				{
 					if(kinox_hoster(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 3);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 3) == 0) break;
 				}
 				else if((((struct tithek*)listbox->select->handle)->flag == 28))
 				{
 					if(solarmovie_hoster(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 3);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 3) == 0) break;
 				}
 				else if((((struct tithek*)listbox->select->handle)->flag == 23))
 				{
 					if(kinox_hoster_series(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if((((struct tithek*)listbox->select->handle)->flag == 36) || (((struct tithek*)listbox->select->handle)->flag == 37))
 				{
 					if(movie4k_series(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if((((struct tithek*)listbox->select->handle)->flag == 39))
 				{
 					if(movie4k_series_listed(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if((((struct tithek*)listbox->select->handle)->flag == 40))
 				{
 					if(movie4k_hoster_series(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->title) == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;
-			
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
 				}
 				else if((((struct tithek*)listbox->select->handle)->flag == 66))
 				{
@@ -3292,25 +2068,7 @@ why ?
 					if(((struct tithek*)listbox->select->handle)->flag == 1000)
 						pincheck = screenpincheck(0, NULL);
 					if(pincheck == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);					
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 3);
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;	
-
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 3, 0) == 0) break;
 				}
 				else
 				{
@@ -3318,26 +2076,7 @@ why ?
 					if(((struct tithek*)listbox->select->handle)->flag == 1000)
 						pincheck = screenpincheck(0, NULL);
 					if(pincheck == 0)
-					{
-						oaktpage = listbox->aktpage;
-						oaktline = listbox->aktline;
-						ogridcol = listbox->gridcol;
-						char* tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
-						char* tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);					
-						char* tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
-						screentithekplay(tmpstr, tmpstr2, 0);
-						
-						free(tmpstr); tmpstr = NULL;
-						free(tmpstr2); tmpstr2 = NULL;	
-
-						pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
-						if(pagecount == 0 || tithekexit == 1) break;
-
-						listbox->aktpage = oaktpage;
-						listbox->aktline = oaktline;
-						listbox->gridcol = ogridcol;
-						addscreenrc(grid, listbox);
-					}
+						if(screenlistbox(grid, listbox, countlabel, title, titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 3) == 0) break;
 				}
 // new osd musst disable this
 				drawscreen(grid, 0, 0);
