@@ -84,6 +84,9 @@ int tithekmlehd = 0;
 //flag 70   - ntvnow
 //flag 71   - ntvnow pay
 //flag 72   - ntvnow local search
+//flag 73   - watchmovies movie
+//flag 74   - watchmovies series
+//flag 75   - watchmovies local search
 
 //flag 1000 - menu pincode
 //flag 9999 - menu hidden codecpack

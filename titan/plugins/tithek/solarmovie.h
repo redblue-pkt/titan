@@ -54,6 +54,9 @@ char* solarmovie(char* link)
 		tmpstr1 = string_resub("<div class=\"thirdPartyEmbContainer\">", "</div>", tmpstr, 0);
 		stringreplacechar(tmpstr1, '\n', ' ');
 		url = string_resub("<center><iframe src=\"", "\"", tmpstr1, 0);
+		if(url == NULL)
+			url = string_resub("<center><IFRAME SRC=\"", "\"", tmpstr1, 0);
+
 		if(url == NULL || ostrncmp("http://", url, 7) == 1)
 		{
 			free(url); url = NULL;
@@ -69,6 +72,7 @@ char* solarmovie(char* link)
 		url = string_replace_all("embed", "file", url, 1);
 	}
 
+	debug(99, "url: %s", url);
 	streamurl = hoster(url);
 
 end:
