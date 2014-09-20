@@ -47,7 +47,6 @@ char* played(char* link)
 
 /////////////
 
-
 /*
 	tmphost = ostrcat("www.", host, 0, 0);
 	tmppath = ostrcat("/", file, 0, 0);
@@ -173,8 +172,7 @@ char* played(char* link)
 		goto end;
 	}
 
-
-	streamlink = string_resub("file: \"", "\"", tmpstr, 0);		
+	streamlink = string_resub("file: \"", "\"", tmpstr, 0);
 
 	titheklog(debuglevel, "/tmp/played4_streamlink", NULL, NULL, NULL, streamlink);
 
