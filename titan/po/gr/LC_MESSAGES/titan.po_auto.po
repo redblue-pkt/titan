@@ -117,8 +117,8 @@ msgstr ""
 #: timeshiftsettings.h:45 titan.c:277 titan.c:341 titan.c:350 titan.c:970
 #: titan.c:979 titan.c:1104 titan.c:1125 titan.c:1131 titan.c:1142
 #: titan.c:1148 tithek.c:82 tithek_global.h:244 tithek.h:667 tithek.h:1163
-#: tithek.h:1206 tithek.h:1454 tithek.h:1476 tithek.h:1492 tithek.h:3286
-#: tithek.h:3350 tithek.h:3364 tithek.h:3374 tiwakeup.h:66 tiwakeup.h:68
+#: tithek.h:1206 tithek.h:1454 tithek.h:1476 tithek.h:1492 tithek.h:2062
+#: tithek.h:2089 tithek.h:2103 tithek.h:2113 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922
 #: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3187 tpk.new.h:3167 tsSchnitt.c:108
 #: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
@@ -223,8 +223,8 @@ msgstr ""
 #: timeshift.h:162 timeshiftsettings.h:45 titan.c:277 titan.c:341 titan.c:350
 #: titan.c:970 titan.c:979 titan.c:1104 titan.c:1125 titan.c:1131 titan.c:1142
 #: titan.c:1148 tithek.c:82 tithek_global.h:244 tithek.h:667 tithek.h:1163
-#: tithek.h:1206 tithek.h:1454 tithek.h:1476 tithek.h:1492 tithek.h:3286
-#: tithek.h:3350 tithek.h:3364 tithek.h:3374 tiwakeup.h:66 tiwakeup.h:68
+#: tithek.h:1206 tithek.h:1454 tithek.h:1476 tithek.h:1492 tithek.h:2062
+#: tithek.h:2089 tithek.h:2103 tithek.h:2113 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922
 #: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3187 tpk.new.h:3167 tsSchnitt.c:108
 #: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
@@ -614,8 +614,8 @@ msgstr ""
 #: timeshift.h:162 timeshiftsettings.h:45 titan.c:277 titan.c:341 titan.c:350
 #: titan.c:1104 titan.c:1125 titan.c:1131 titan.c:1142 titan.c:1148
 #: tithek.c:82 tithek_global.h:244 tithek.h:667 tithek.h:1163 tithek.h:1206
-#: tithek.h:1454 tithek.h:1476 tithek.h:3286 tithek.h:3350 tithek.h:3364
-#: tithek.h:3374 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012
+#: tithek.h:1454 tithek.h:1476 tithek.h:2062 tithek.h:2089 tithek.h:2103
+#: tithek.h:2113 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012
 #: tmc.h:1017 tmdb.h:759 tmdb.h:922 TopfieldVFD.c:68 TopfieldVFD.c:72
 #: tpk.h:3187 tpk.new.h:3167 tunerconfig.h:915 unlock.h:20 unlock.h:66
 #: unlock.h:71 unlock.h:75 videomode.h:60 videoweed.h:35 videoweed.h:80
@@ -4719,7 +4719,7 @@ msgid "TiThek Settings"
 msgstr "Ρυθμίσεις share"
 
 #: plugins_tithek_skin.xml.h:3 skins_tithek_skin.xml.h:3 tithek.h:1541
-#: tithek.h:3392
+#: tithek.h:2131
 msgid "ADD FAV"
 msgstr ""
 
@@ -8667,7 +8667,7 @@ msgstr ""
 msgid "Tithek - Mainmenu"
 msgstr ""
 
-#: tithek_global.h:244 tithek.h:3286
+#: tithek_global.h:244 tithek.h:2062
 msgid "The hoster is not yet supported !"
 msgstr ""
 
@@ -8753,7 +8753,7 @@ msgstr ""
 msgid "TitanNit Tithek disclaimer"
 msgstr ""
 
-#: tithek.h:1536 tithek.h:3387
+#: tithek.h:1536 tithek.h:2126
 msgid "EDIT FAV"
 msgstr ""
 
@@ -8761,15 +8761,15 @@ msgstr ""
 msgid "Page"
 msgstr ""
 
-#: tithek.h:3350
+#: tithek.h:2089
 msgid "Remove this Favorite ?"
 msgstr ""
 
-#: tithek.h:3364
+#: tithek.h:2103
 msgid "Add this link as Favorite ?"
 msgstr ""
 
-#: tithek.h:3374
+#: tithek.h:2113
 msgid "Edit this Favorite ?"
 msgstr ""
 
