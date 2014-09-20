@@ -1,4 +1,4 @@
-.body {background-color: #323232; font-family: verdana}
+.body {background-color: #323232; font-family: verdana; }
 .error {font-family:verdana; font-size: 12pt; color: #ffffff; text-decoration: none}
 .biglabel {font-family:verdana; font-size: 13pt; color: #ffffff; text-decoration: none}
 .label {font-family:verdana; font-size: 11pt; color: #ffffff; text-decoration: none}
@@ -41,3 +41,8 @@
 .tableBoxOuter {width: 100%; height: 100%}
 .openrctext {font-family:verdana; font-size: 8pt; color: #505050; text-decoration: none}
 .openrctext:hover {color: #00a4c8; text-decoration: none}
+
+#configinfo {width: 99%; white-space: pre-wrap; color: #ffffff}
+.configinfo {width: 99%; height: 93%; border: 1px; border-style: solid; border-color: #eeeeee; border-radius: 5px; color: #ffffff;}
+#systeminfo {width: auto; height: auto; color: #ffffff; text-align: center}
+.systeminfo {width: 99%; height: auto; border: 1px; border-style: solid; border-color: #eeeeee; border-radius: 5px; color: #ffffff;}
