@@ -3174,6 +3174,13 @@ char* webgetconfig(int fmt)
 	int i = 0;
 
 	m_lock(&status.clistmutex, 12);
+	if(fmt == 0)
+	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"configinfo\">", 1, 0);
+	}
+							
 	struct clist **clist = config;
 
 	for(i = 0; i < LISTHASHSIZE; i++)
@@ -3207,6 +3214,8 @@ char* webgetconfig(int fmt)
 			node = node->next;
 		}
 	}
+	
+	buf = ostrcat(buf, "</body></html>", 1, 0);
 
 	m_unlock(&status.clistmutex, 12);
 	return buf;
@@ -3216,6 +3225,13 @@ char* webgetsysteminfo(int fmt)
 {
 	char* buf = NULL;
 	char* imgversion = NULL;
+
+	if(fmt == 0) 
+	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"systeminfo\">", 1, 0);
+	}
 
 	buf = ostrcat(buf, PROGNAME, 1, 0);
 	buf = ostrcat(buf, "#", 1, 0);
@@ -3241,6 +3257,8 @@ char* webgetsysteminfo(int fmt)
 	else
 		buf = ostrcat(buf, "1", 1, 0);
 	
+	buf = ostrcat(buf, "</body></html>", 1, 0);
+
 	return buf;
 }
 
