@@ -253,4 +253,35 @@ char* hoster(char* url)
 	return streamurl;
 }
 
+int screenlistbox(struct skin* grid, struct skin* listbox,struct skin* countlabel, char* title, char* titheklink, int* pagecount, int* tithekexit, int* oaktpage, int* oaktline, int* ogridcol, int flag, int cflag)
+{
+	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL;
+
+	*oaktpage = listbox->aktpage;
+	*oaktline = listbox->aktline;
+	*ogridcol = listbox->gridcol;
+	tmpstr = ostrcat(((struct tithek*)listbox->select->handle)->link, NULL, 0, 0);
+
+	if(title != NULL)
+		tmpstr1 = ostrcat(title, " - ", 0, 0);
+	else
+		tmpstr1 = ostrcat(((struct tithek*)listbox->select->handle)->menutitle, " - ", 0, 0);	
+	
+	tmpstr2 = ostrcat(tmpstr1, ((struct tithek*)listbox->select->handle)->title, 1, 0);
+	screentithekplay(tmpstr, tmpstr2, flag);
+	free(tmpstr); tmpstr = NULL;
+	free(tmpstr2); tmpstr2 = NULL;
+
+	*pagecount = createtithekplay(titheklink, grid, listbox, countlabel, cflag);
+//	if(pagecount == 0 || tithekexit == 1) break;
+	if(*pagecount == 0 || *tithekexit == 1) return 0;
+	
+	listbox->aktpage = *oaktpage;
+	listbox->aktline = *oaktline;
+	listbox->gridcol = *ogridcol;
+	addscreenrc(grid, listbox);
+
+	return 1;
+}
+
 #endif

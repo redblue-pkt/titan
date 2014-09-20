@@ -103,5 +103,6 @@ int tvtoast_search_local(struct skin* grid, struct skin* listbox, struct skin* c
 int rtlnitronow_search_local(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr, int flag);
 int ntvnow_search_local(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr, int flag);
 void mlehd_userauth();
+int screenlistbox(struct skin* grid, struct skin* listbox,struct skin* countlabel, char* title, char* titheklink, int* pagecount, int* tithekexit, int* oaktpage, int* oaktline, int* ogridcol, int flag, int cflag);
 
 #endif
