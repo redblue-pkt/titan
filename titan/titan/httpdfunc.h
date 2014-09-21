@@ -4735,7 +4735,7 @@ char* webgethelp(char* param, int fmt)
 	tmpstr = ostrcat(tmpstr, ".txt", 1, 0);	
 	
 	debug(10, "file: %s", tmpstr);
-	tmpstr1 = readsys(tmpstr, 1);
+	tmpstr = readfiletomem(tmpstr, 1);
 
 	buf = ostrcat(buf, tmpstr1, 1, 0);
 	free(tmpstr), tmpstr = NULL;	
@@ -4804,7 +4804,7 @@ char* webgethelpchoices(int fmt)
 
 char* webgettestpage(char* param, int fmt)
 {
-	char* buf = NULL, *tmpstr = NULL, *tmpstr1 = NULL;
+	char* buf = NULL, *tmpstr = NULL;
 	if(param == NULL) return NULL;
 
 	if(fmt == 0) 
@@ -4813,18 +4813,17 @@ char* webgettestpage(char* param, int fmt)
 		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
 		buf = ostrcat(buf, "</head><body class=body id=\"help\">", 1, 0);
 	}
-
-	tmpstr = ostrcat(tmpstr, param, 1, 0);
 	
-	debug(10, "file: %s", tmpstr);
-	tmpstr1 = readsys(tmpstr, 1);
+	debug(10, "file: %s", param);
+	tmpstr = readfiletomem(param, 1);
 
-	buf = ostrcat(buf, tmpstr1, 1, 0);
+	buf = ostrcat(buf, tmpstr, 1, 0);
 	free(tmpstr), tmpstr = NULL;	
-	free(tmpstr1), tmpstr1 = NULL;	
 
 	if(fmt == 0)
 		buf = ostrcat(buf, "</body></html>", 1, 0);
+
+	debug(10, "buf: %s", buf);
 
 	return buf;
 }
