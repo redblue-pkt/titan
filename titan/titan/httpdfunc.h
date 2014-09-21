@@ -4735,7 +4735,7 @@ char* webgethelp(char* param, int fmt)
 	tmpstr = ostrcat(tmpstr, ".txt", 1, 0);	
 	
 	debug(10, "file: %s", tmpstr);
-	tmpstr = readfiletomem(tmpstr, 1);
+	tmpstr1 = readfiletomem(tmpstr, 1);
 
 	buf = ostrcat(buf, tmpstr1, 1, 0);
 	free(tmpstr), tmpstr = NULL;	
