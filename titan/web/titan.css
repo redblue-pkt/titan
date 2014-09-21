@@ -42,9 +42,9 @@
 .openrctext {font-family:verdana; font-size: 8pt; color: #505050; text-decoration: none}
 .openrctext:hover {color: #00a4c8; text-decoration: none}
 
-#configinfo {width: 99%; white-space: pre-wrap; color: #ffffff}
+#configinfo {width: 99%; white-space: pre-wrap; font-size: small; color: #ffffff}
 .configinfo {width: 99%; height: 93%; border: 1px; border-style: solid; border-color: #eeeeee; border-radius: 5px; color: #ffffff;}
-#systeminfo {width: auto; height: auto; color: #ffffff; text-align: center}
+#systeminfo {width: auto; height: auto; font-size: small; color: #ffffff; text-align: center}
 .systeminfo {width: 99%; height: auto; border: 1px; border-style: solid; border-color: #eeeeee; border-radius: 5px; color: #ffffff;}
 #p_configinfo{color: #ffffff}
 #p_systeminfo{color: #ffffff}
