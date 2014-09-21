@@ -4803,7 +4803,7 @@ char* webgethelpchoices(int fmt)
 
 char* webgettestpage(char* param, int fmt)
 {
-	char* buf = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *helppath = NULL, *lang = NULL;
+	char* buf = NULL, *tmpstr = NULL, *tmpstr1 = NULL;
 	if(param == NULL) return NULL;
 
 	if(fmt == 0) 
