@@ -4718,6 +4718,11 @@ char* webgethelp(char* param, int fmt)
 		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
 		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
 		buf = ostrcat(buf, "</head><body class=body id=\"help\">", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+		buf = ostrcat(buf, _(param), 1, 0);
+		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
 //	}
 
 	helppath = getconfig("helppath", NULL);
@@ -4806,6 +4811,7 @@ char* webgettestpage(char* param, int fmt)
 {
 	char* buf = NULL, *tmpstr = NULL;
 	if(param == NULL) return NULL;
+	if(status.security == 0) return NULL;
 
 	if(fmt == 0) 
 	{
