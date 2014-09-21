@@ -4792,6 +4792,7 @@ char* webgethelpchoices(int fmt)
 			buf = ostrcat(buf, _(stringreplacecharonce(ret1[i].part, '.', '\0')), 1, 0);
 			buf = ostrcat(buf, "</a>", 1, 0);
 			buf = ostrcat(buf, "</br></br>", 1, 0);
+		}
 	}		
 
 	free(tmpstr), tmpstr = NULL;
