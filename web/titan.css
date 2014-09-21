@@ -1,4 +1,4 @@
-.body {background-color: #323232; font-family: verdana; }
+.body {background-color: #323232; font-family: verdana; color: #ffffff;}
 .error {font-family:verdana; font-size: 12pt; color: #ffffff; text-decoration: none}
 .biglabel {font-family:verdana; font-size: 13pt; color: #ffffff; text-decoration: none}
 .label {font-family:verdana; font-size: 11pt; color: #ffffff; text-decoration: none}
@@ -48,6 +48,8 @@
 .systeminfo {width: 99%; height: auto; border: 1px; border-style: solid; border-color: #eeeeee; border-radius: 5px; color: #ffffff;}
 #p_configinfo{color: #ffffff}
 #p_systeminfo{color: #ffffff}
+
+.help {width: 99%; height: auto; border: 1px; border-style: solid; border-color: #eeeeee; border-radius: 5px; color: #ffffff;}
 
 .line1 td:last-child{border-radius: 0px 5px 5px 0px;}
 .line2 td:last-child{border-radius: 0px 5px 5px 0px;}
