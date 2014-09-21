@@ -1,1 +1,1 @@
-Hilfe Text für timezone
+Here you can set your timezone.

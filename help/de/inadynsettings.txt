@@ -1,1 +1,1 @@
-Hilfe Text für inadynsettings
+Here you can configure access to your DynDNS.

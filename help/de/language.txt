@@ -1,1 +1,1 @@
-Hilfe Text für language
+Here you can set your language.

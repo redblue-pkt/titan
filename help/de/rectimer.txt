@@ -1,1 +1,1 @@
-Hilfe Text für rectimer
+Here you can make your recording timer configuration.

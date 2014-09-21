@@ -1,1 +1,1 @@
-Hilfe Text für harddisk_main
+Here you can select your hard disks and USB flash drives for configuration.
