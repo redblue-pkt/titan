@@ -273,6 +273,24 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 		buf = webgetbouquetchannel(param, fmt);
 		m_unlock(&status.waitrcmutex, 24);
 	}
+	else if(ostrcmp(query, "getcommand") == 0 && param != NULL)
+	{
+		m_lock(&status.waitrcmutex, 24);
+		buf = webgetcommand(param, fmt);
+		m_unlock(&status.waitrcmutex, 24);
+	}
+	else if(ostrcmp(query, "gethelpchoices") == 0)
+	{
+		m_lock(&status.waitrcmutex, 24);
+		buf = webgethelpchoices(fmt);
+		m_unlock(&status.waitrcmutex, 24);
+	}
+	else if(ostrcmp(query, "gethelp") == 0 && param != NULL)
+	{
+		m_lock(&status.waitrcmutex, 24);
+		buf = webgethelp(param, fmt);
+		m_unlock(&status.waitrcmutex, 24);
+	}
 	else if(ostrcmp(query, "getsatchannel") == 0 && param != NULL)
 	{
 		m_lock(&status.waitrcmutex, 24);

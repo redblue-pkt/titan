@@ -4686,5 +4686,144 @@ char* webgetparamvalue(char* param, char* searchparam)
 	return buf;
 }
 
+char* webgetcommand(char* param, int fmt)
+{
+	char* buf = NULL, *tmpstr = NULL;
+	if(param == NULL) return NULL;
+	if(status.security == 0) return NULL;
+
+	if(fmt == 0) 
+	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"command\">", 1, 0);
+	}
+
+	debug(10, "cmd: %s", param);
+	tmpstr = command(param);
+	buf = ostrcat(buf, tmpstr, 1, 0);
+	free(tmpstr), tmpstr = NULL;	
+	buf = ostrcat(buf, "</body></html>", 1, 0);
+
+	return buf;
+}
+
+char* webgethelp(char* param, int fmt)
+{
+	char* buf = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *helppath = NULL, *lang = NULL;
+	if(param == NULL) return NULL;
+
+	if(fmt == 0) 
+	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"help\">", 1, 0);
+	}
+
+	helppath = getconfig("helppath", NULL);
+	if(helppath == NULL) return NULL;
+
+	//get language
+	lang = ostrcat(getconfig("lang", NULL), NULL, 0, 0);
+	lang = string_replace("po/", "", lang, 1);
+
+	//create full filename
+	tmpstr = ostrcat(helppath, "/", 0, 0);
+	tmpstr = ostrcat(tmpstr, lang, 1, 1);
+	tmpstr = ostrcat(tmpstr, "/", 1, 0);
+	tmpstr = ostrcat(tmpstr, param, 1, 0);
+	tmpstr = ostrcat(tmpstr, ".txt", 1, 0);	
+	
+	debug(10, "file: %s", tmpstr);
+	tmpstr1 = readsys(tmpstr, 1);
+
+	buf = ostrcat(buf, tmpstr1, 1, 0);
+	free(tmpstr), tmpstr = NULL;	
+	free(tmpstr1), tmpstr1 = NULL;	
+
+	buf = ostrcat(buf, "</body></html>", 1, 0);
+
+	return buf;
+}
+
+char* webgethelpchoices(int fmt)
+{
+	char* buf = NULL, *tmpstr = NULL, *helppath = NULL, *lang = NULL, *cmd = NULL;
+	
+//	if(fmt == 0) 
+//	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"helpchoices\">", 1, 0);
+//		buf = ostrcat(buf, "<center><form action=query method=get target=nothing><br><br>", 1, 0);
+
+//	}
+
+	helppath = getconfig("helppath", NULL);
+	if(helppath == NULL) return NULL;
+
+	//get language
+	lang = ostrcat(getconfig("lang", NULL), NULL, 0, 0);
+	lang = string_replace("po/", "", lang, 1);
+
+	//create full filename
+	cmd = ostrcat("ls -1 ", helppath, 0, 0);
+	cmd = ostrcat(cmd, "/", 1, 0);
+	cmd = ostrcat(cmd, lang, 1, 1);
+	cmd = ostrcat(cmd, "/", 1, 0);
+	
+	debug(10, "cmd: %s", cmd);
+	tmpstr = command(cmd);
+	
+	int count, i, max;
+	count = 0;
+	struct splitstr* ret1 = NULL;
+	ret1 = strsplit(tmpstr, "\n", &count);
+	max = count - 1;
+	
+
+ 	
+//	buf = ostrcat(buf, "<a class=linelink2 href=query?getprovider target=main>Provider</a>", 1, 0);
+//	buf = ostrcat(buf, "<a class=linelink2 href=queryraw?gethelp&adjust target=main>Adjust</a>", 1, 0);
+//	buf = ostrcat(buf, "<a class=linelink2 href=query?getprovider target=main>Provider</a>", 1, 0);
+
+	buf = ostrcat(buf, "<center><table cellpadding=5 cellspacing=5><tr><td nowrap>", 1, 0);
+ 
+ 	int icount = 0;
+ 
+	if(ret1 != NULL)
+	{
+		for(i = 0; i <= max; i++)
+		{
+			icount++;
+/*
+			buf = ostrcat(buf, "<input class=bigbutton type=submit name=gethelp", 1, 0);
+//			buf = ostrcat(buf, _(ret1[i].part), 1, 0);
+			buf = ostrcat(buf, " value=\"", 1, 0);
+			buf = ostrcat(buf, _(stringreplacecharonce(ret1[i].part, '.', '\0')), 1, 0);
+			buf = ostrcat(buf, "\"></input><br>", 1, 0);
+*/
+			buf = ostrcat(buf, "<a class=linelink2 href=queryraw?gethelp&", 1, 0);
+			buf = ostrcat(buf, stringreplacecharonce(ret1[i].part, '.', '\0'), 1, 0);
+			buf = ostrcat(buf, " target=main>", 1, 0);
+			buf = ostrcat(buf, _(stringreplacecharonce(ret1[i].part, '.', '\0')), 1, 0);
+			buf = ostrcat(buf, "</a>", 1, 0);
+			buf = ostrcat(buf, "</br></br>", 1, 0);
+
+			if(icount == 4)
+			{
+//				buf = ostrcat(buf, "</br>", 1, 0);
+				icount = 0;
+			}
+//<a class=linelink2 href=query?getallchannel target=main>All</a>
+		}
+	}		
+
+	free(tmpstr), tmpstr = NULL;	
+//	buf = ostrcat(buf, "</form></center></body></html>", 1, 0);
+	buf = ostrcat(buf, "</td></tr></table></center></body></html>", 1, 0);
+
+	return buf;
+}
 
 #endif
