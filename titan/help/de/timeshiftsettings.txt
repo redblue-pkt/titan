@@ -1,1 +1,1 @@
-Hilfe Text für timeshiftsettings
+Here you can make your timeshift settings.

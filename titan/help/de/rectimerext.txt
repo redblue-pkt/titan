@@ -1,1 +1,1 @@
-Hilfe Text für rectimerext
+Here you can create a new record timer.

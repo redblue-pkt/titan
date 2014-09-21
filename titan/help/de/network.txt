@@ -1,1 +1,1 @@
-Hilfe Text für network
+Here you can make for your selected network interface settings.

@@ -1,1 +1,1 @@
-Hilfe Text für tunerreceptiondvbt
+Here you can set for your terrestrial tuner. Activate the terrestrial tuner and do you connect an automatic search.

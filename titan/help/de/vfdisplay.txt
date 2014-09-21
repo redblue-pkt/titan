@@ -1,1 +1,1 @@
-Hilfe Text für vfdisplay
+Here you can make your vfd settings.

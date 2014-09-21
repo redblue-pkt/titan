@@ -1,1 +1,1 @@
-Hilfe Text für interfacelist
+Here you can select your Network Interface.

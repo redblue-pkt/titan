@@ -1,1 +1,1 @@
-Hilfe Text für moduleconfig
+Here you can configure Ci-Modules.

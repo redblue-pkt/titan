@@ -1,1 +1,1 @@
-Hilfe Text für httpdsettings
+Here you can configure your web server.

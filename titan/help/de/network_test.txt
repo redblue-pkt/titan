@@ -1,1 +1,1 @@
-Hilfe Text für network_test
+Here you can test your network.

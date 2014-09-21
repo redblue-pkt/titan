@@ -1,1 +1,1 @@
-Hilfe Text für skinselect
+Here you can select from the following list a skin.

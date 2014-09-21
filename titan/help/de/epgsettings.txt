@@ -1,1 +1,1 @@
-Hilfe Text für epgsettings
+Here you can make your epg settings.

@@ -1,1 +1,1 @@
-Hilfe Text für mediadbsettings
+Here you can make your mediadb settings.
