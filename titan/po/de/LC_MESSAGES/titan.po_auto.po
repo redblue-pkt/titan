@@ -565,7 +565,7 @@ msgstr "Ja/VZAP unendlich"
 #: global.h:6222 global.h:6241 global.h:6411 gmediarender.h:115 harddisk.h:633
 #: harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731
 #: harddisk.h:733 harddisk.h:793 harddisk.h:811 harddisk.h:814 hbbtv.h:362
-#: hello.c:36 httpdfunc.h:1118 httpdfunc.h:4922 hwtest.h:88 hwtest.h:93
+#: hello.c:36 httpdfunc.h:1118 httpdfunc.h:5008 hwtest.h:88 hwtest.h:93
 #: hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206
 #: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
 #: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
@@ -2185,9 +2185,9 @@ msgstr ""
 msgid "Boxcontrol"
 msgstr ""
 
-#: httpdfunc.h:4890
-msgid "Movies"
-msgstr ""
+#: httpdfunc.h:4890 record.h:1320 record.h:1394 skin_default_skin.xml.h:494
+msgid "Record"
+msgstr "Aufnahme"
 
 #: httpdfunc.h:4893 skin_default_skin.xml.h:657
 msgid "Timer"
@@ -2209,30 +2209,66 @@ msgid "Help"
 msgstr "Hilfe"
 
 #: httpdfunc.h:4919
-msgid "PowerControl"
+msgid "Timer List"
+msgstr ""
+
+#: httpdfunc.h:4922
+msgid "Timer Archiv"
 msgstr ""
 
 #: httpdfunc.h:4925
+msgid "Add Timer"
+msgstr ""
+
+#: httpdfunc.h:4943
+msgid "Offline Help"
+msgstr ""
+
+#: httpdfunc.h:4946
+msgid "Online Help"
+msgstr ""
+
+#: httpdfunc.h:4964 skin_default_skin.xml.h:642
+msgid "System Info"
+msgstr "System Infos"
+
+#: httpdfunc.h:4967
+msgid "Config Info"
+msgstr ""
+
+#: httpdfunc.h:4985 skin_default_skin.xml.h:63
+msgid "Adjust"
+msgstr "Erweitert"
+
+#: httpdfunc.h:4988 skin_default_skin.xml.h:592
+msgid "Skin Adjust"
+msgstr "Skin Einstellungen"
+
+#: httpdfunc.h:5005
+msgid "PowerControl"
+msgstr ""
+
+#: httpdfunc.h:5011
 msgid "Remote"
 msgstr ""
 
-#: httpdfunc.h:4928
+#: httpdfunc.h:5014
 msgid "Screenshot All"
 msgstr ""
 
-#: httpdfunc.h:4931
+#: httpdfunc.h:5017
 msgid "Screenshot Video"
 msgstr ""
 
-#: httpdfunc.h:4934
+#: httpdfunc.h:5020
 msgid "Screenshot OSD"
 msgstr ""
 
-#: httpdfunc.h:4937
+#: httpdfunc.h:5023
 msgid "Play Movie (URL)"
 msgstr ""
 
-#: httpdfunc.h:4940
+#: httpdfunc.h:5026
 msgid "Stream Config (iOS)"
 msgstr ""
 
@@ -5398,10 +5434,6 @@ msgstr ""
 msgid "stop"
 msgstr "Stoppen"
 
-#: record.h:1320 record.h:1394 skin_default_skin.xml.h:494
-msgid "Record"
-msgstr "Aufnahme"
-
 #: record.h:1372 record.h:1381 record.h:1404
 msgid "change"
 msgstr "ändern"
@@ -6089,10 +6121,6 @@ msgstr "Markierte Sender speichern"
 #: skin_default_skin.xml.h:62
 msgid "add service"
 msgstr "Eintrag hinzufügen"
-
-#: skin_default_skin.xml.h:63
-msgid "Adjust"
-msgstr "Erweitert"
 
 #: skin_default_skin.xml.h:64
 msgid "ae"
@@ -7969,10 +7997,6 @@ msgstr ""
 msgid "Skin"
 msgstr "Skinauswahl"
 
-#: skin_default_skin.xml.h:592
-msgid "Skin Adjust"
-msgstr "Skin Einstellungen"
-
 #: skin_default_skin.xml.h:593
 msgid "Skin Select"
 msgstr "Skinauswahl"
@@ -8112,10 +8136,6 @@ msgstr "Softwareaktualisierung (Online)"
 #: skin_default_skin.xml.h:641
 msgid "System - Flashupdate (tmp)"
 msgstr "Softwareaktualisierung (tmp)"
-
-#: skin_default_skin.xml.h:642
-msgid "System Info"
-msgstr "System Infos"
 
 #: skin_default_skin.xml.h:643
 msgid "System Infos"
