@@ -871,7 +871,7 @@ msgid "TV"
 msgstr ""
 
 #: channellist.h:702 channellist.h:1228 channellist.h:1229 channellist.h:1441
-#: httpdfunc.h:4867
+#: httpdfunc.h:4781 httpdfunc.h:4839
 msgid "Bouquets"
 msgstr ""
 
@@ -884,7 +884,7 @@ msgid "Satellites"
 msgstr ""
 
 #: channellist.h:752 channellist.h:1330 channellist.h:1331 channellist.h:1655
-#: httpdfunc.h:4861
+#: httpdfunc.h:4775 httpdfunc.h:4833
 msgid "Provider"
 msgstr ""
 
@@ -1651,7 +1651,7 @@ msgstr ""
 msgid "Fri"
 msgstr ""
 
-#: global.h:5768 httpdfunc.h:4858
+#: global.h:5768 httpdfunc.h:4772 httpdfunc.h:4830
 msgid "Sat"
 msgstr "SAT"
 
@@ -2110,11 +2110,12 @@ msgstr ""
 msgid "Dualboot Menu TitanNit / E2"
 msgstr ""
 
-#: httpdfunc.h:4855
+#: httpdfunc.h:4769 httpdfunc.h:4827
 msgid "All"
 msgstr ""
 
-#: httpdfunc.h:4864 skin_default_skin.xml.h:98 tithek_mainmenu.h:14
+#: httpdfunc.h:4778 httpdfunc.h:4836 skin_default_skin.xml.h:98
+#: tithek_mainmenu.h:14
 msgid "A-Z"
 msgstr ""
 
