@@ -4851,7 +4851,7 @@ char* webgetchannellist(int fmt)
 
 	buf = ostrcat(buf, "<table cellpadding=3 cellspacing=0><tr><td nowrap>", 1, 0);
 	buf = ostrcat(buf, "<a class=linelink2 href=query?getallchannel target=main>", 1, 0);
-	buf = ostrcat(buf, _("All"), 1, 0);
+	buf = ostrcat(buf, _("ALL"), 1, 0);
 	buf = ostrcat(buf, "</a> ", 1, 0);
 	buf = ostrcat(buf, "<a class=linelink2 href=query?getsat target=main>", 1, 0);
 	buf = ostrcat(buf, _("SAT"), 1, 0);
