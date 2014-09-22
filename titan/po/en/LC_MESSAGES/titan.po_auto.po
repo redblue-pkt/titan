@@ -406,16 +406,17 @@ msgstr "descending date"
 msgid "Power Menu"
 msgstr ""
 
-#: adjust.h:109 httpdfunc.h:3755 skin_default_skin.xml.h:473
+#: adjust.h:109 httpdfunc.h:3755 httpdfunc.h:5068 skin_default_skin.xml.h:473
 msgid "Power Off"
 msgstr ""
 
-#: adjust.h:110 httpdfunc.h:3762 powerofftimer.h:118
+#: adjust.h:110 httpdfunc.h:3762 httpdfunc.h:5080 powerofftimer.h:118
 #: skin_default_skin.xml.h:613
 msgid "Standby"
 msgstr ""
 
-#: adjust.h:111 httpdfunc.h:3769 skin_default_skin.xml.h:521 softcam.h:291
+#: adjust.h:111 httpdfunc.h:3769 httpdfunc.h:5072 skin_default_skin.xml.h:521
+#: softcam.h:291
 msgid "Restart"
 msgstr ""
 
@@ -2256,6 +2257,10 @@ msgstr ""
 #: httpdfunc.h:5047
 msgid "Stream Config (iOS)"
 msgstr ""
+
+#: httpdfunc.h:5076 skin_default_skin.xml.h:265
+msgid "GUI Restart"
+msgstr "Titan Restart"
 
 #: hwtest.h:88
 msgid "testtransponder not found"
@@ -6757,10 +6762,6 @@ msgstr ""
 #: skin_default_skin.xml.h:264
 msgid "Guardinterval:"
 msgstr ""
-
-#: skin_default_skin.xml.h:265
-msgid "GUI Restart"
-msgstr "Titan Restart"
 
 #: skin_default_skin.xml.h:266
 msgid "h"
