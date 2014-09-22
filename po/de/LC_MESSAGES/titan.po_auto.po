@@ -2177,6 +2177,37 @@ msgstr "Alle"
 msgid "A-Z"
 msgstr ""
 
+#: httpdfunc.h:4884
+msgid "Channel List"
+msgstr ""
+
+#: httpdfunc.h:4887
+msgid "Boxcontrol"
+msgstr ""
+
+#: httpdfunc.h:4890
+msgid "Movies"
+msgstr ""
+
+#: httpdfunc.h:4893 skin_default_skin.xml.h:657
+msgid "Timer"
+msgstr ""
+
+#: httpdfunc.h:4896 plugins_mc_skin.xml.h:53 plugins_panel_skin.xml.h:5
+#: plugins_panel_skin.xml.h:22 skin_default_skin.xml.h:576
+#: skins_mc_skin.xml.h:53 skins_panel_skin.xml.h:5 skins_panel_skin.xml.h:22
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: httpdfunc.h:4899 info.h:27 plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9
+#: titan.c:979
+msgid "Info"
+msgstr ""
+
+#: httpdfunc.h:4902 skin_default_skin.xml.h:1
+msgid "Help"
+msgstr "Hilfe"
+
 #: hwtest.h:88
 msgid "testtransponder not found"
 msgstr "Test-Transponder nicht gefunden"
@@ -2457,10 +2488,6 @@ msgstr ""
 
 #: info.h:26
 msgid "Email  \t\tinfo@atemio.de"
-msgstr ""
-
-#: info.h:27 plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9 titan.c:979
-msgid "Info"
 msgstr ""
 
 #: info.h:48 info.h:64 info.h:91 plugins_panel_skin.xml.h:17
@@ -4351,12 +4378,6 @@ msgstr "Radio"
 msgid "Screensaver"
 msgstr "Bildschirmschoner"
 
-#: plugins_mc_skin.xml.h:53 plugins_panel_skin.xml.h:5
-#: plugins_panel_skin.xml.h:22 skin_default_skin.xml.h:576
-#: skins_mc_skin.xml.h:53 skins_panel_skin.xml.h:5 skins_panel_skin.xml.h:22
-msgid "Settings"
-msgstr "Einstellungen"
-
 #: plugins_mc_skin.xml.h:54 skins_mc_skin.xml.h:54
 msgid "Show Pictitle"
 msgstr "Zeige Bild Titel"
@@ -5852,10 +5873,6 @@ msgstr "Rote Taste drücken"
 #: skinadjust.h:199
 msgid "Receiver now reboot !!!"
 msgstr "Receiver wird neu gestartet!!!"
-
-#: skin_default_skin.xml.h:1
-msgid "Help"
-msgstr "Hilfe"
 
 #: skin_default_skin.xml.h:2
 msgid "^"
@@ -8119,10 +8136,6 @@ msgstr "Anschließend auf diesem Sender:"
 #: skin_default_skin.xml.h:655
 msgid "Threshold"
 msgstr "Grenzwert"
-
-#: skin_default_skin.xml.h:657
-msgid "Timer"
-msgstr ""
 
 #: skin_default_skin.xml.h:658
 msgid "Timer and EPG"
