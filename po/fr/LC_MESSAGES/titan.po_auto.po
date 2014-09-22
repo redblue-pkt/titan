@@ -2111,9 +2111,9 @@ msgstr ""
 msgid "Dualboot Menu TitanNit / E2"
 msgstr ""
 
-#: httpdfunc.h:4854
-msgid "All"
-msgstr ""
+#: httpdfunc.h:4854 skin_default_skin.xml.h:71
+msgid "ALL"
+msgstr "Toutes"
 
 #: httpdfunc.h:4863 skin_default_skin.xml.h:98 tithek_mainmenu.h:14
 msgid "A-Z"
@@ -5931,10 +5931,6 @@ msgstr "Protéger Menu"
 #: skin_default_skin.xml.h:70
 msgid "Aktion after"
 msgstr "Action suivante"
-
-#: skin_default_skin.xml.h:71
-msgid "ALL"
-msgstr "Toutes"
 
 #: skin_default_skin.xml.h:72
 msgid "Allowed Zapping via Streamlink"
