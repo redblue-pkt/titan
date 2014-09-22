@@ -2120,9 +2120,9 @@ msgstr "Thời gian đợi sau khi tìm kiếm bộ đệm khác"
 msgid "Dualboot Menu TitanNit / E2"
 msgstr ""
 
-#: httpdfunc.h:4854
-msgid "All"
-msgstr ""
+#: httpdfunc.h:4854 skin_default_skin.xml.h:71
+msgid "ALL"
+msgstr "TẤT CẢ"
 
 #: httpdfunc.h:4863 skin_default_skin.xml.h:98 tithek_mainmenu.h:14
 msgid "A-Z"
@@ -5970,10 +5970,6 @@ msgstr "Khóa trẻ em"
 #: skin_default_skin.xml.h:70
 msgid "Aktion after"
 msgstr "Hành động sau đó"
-
-#: skin_default_skin.xml.h:71
-msgid "ALL"
-msgstr "TẤT CẢ"
 
 #: skin_default_skin.xml.h:72
 msgid "Allowed Zapping via Streamlink"
