@@ -763,7 +763,7 @@ msgstr "Cable:"
 msgid "Terrestrial: "
 msgstr "Terrestre"
 
-#: blindscanadjust.h:120 skin_default_skin.xml.h:538
+#: blindscanadjust.h:120 httpdfunc.h:4857 skin_default_skin.xml.h:538
 msgid "SAT"
 msgstr "Satelite"
 
@@ -876,6 +876,7 @@ msgid "TV"
 msgstr ""
 
 #: channellist.h:702 channellist.h:1228 channellist.h:1229 channellist.h:1441
+#: httpdfunc.h:4866
 msgid "Bouquets"
 msgstr "Favoritos"
 
@@ -888,6 +889,7 @@ msgid "Satellites"
 msgstr "Satelite"
 
 #: channellist.h:752 channellist.h:1330 channellist.h:1331 channellist.h:1655
+#: httpdfunc.h:4860
 msgid "Provider"
 msgstr "Proveedor"
 
@@ -2170,6 +2172,14 @@ msgstr "Tiempo de espera despues de tratar de llenar bufer"
 
 #: httpdfunc.h:4571 skin_default_skin.xml.h:199
 msgid "Dualboot Menu TitanNit / E2"
+msgstr ""
+
+#: httpdfunc.h:4854
+msgid "All"
+msgstr ""
+
+#: httpdfunc.h:4863 skin_default_skin.xml.h:98 tithek_mainmenu.h:14
+msgid "A-Z"
 msgstr ""
 
 #: hwtest.h:88
@@ -6166,10 +6176,6 @@ msgstr "USB Dispositivo"
 #: skin_default_skin.xml.h:97
 msgid "A/V Settings"
 msgstr "Audio/Video Ajustes"
-
-#: skin_default_skin.xml.h:98 tithek_mainmenu.h:14
-msgid "A-Z"
-msgstr ""
 
 #: skin_default_skin.xml.h:99
 msgid "b"
