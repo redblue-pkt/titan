@@ -565,7 +565,7 @@ msgstr ""
 #: global.h:6222 global.h:6241 global.h:6411 gmediarender.h:115 harddisk.h:633
 #: harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731
 #: harddisk.h:733 harddisk.h:793 harddisk.h:811 harddisk.h:814 hbbtv.h:362
-#: hello.c:36 httpdfunc.h:1118 httpdfunc.h:5008 hwtest.h:88 hwtest.h:93
+#: hello.c:36 httpdfunc.h:1118 httpdfunc.h:5035 hwtest.h:88 hwtest.h:93
 #: hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206
 #: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
 #: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
@@ -761,7 +761,7 @@ msgstr ""
 msgid "Terrestrial: "
 msgstr ""
 
-#: blindscanadjust.h:120 httpdfunc.h:4857 skin_default_skin.xml.h:538
+#: blindscanadjust.h:120 httpdfunc.h:4860 skin_default_skin.xml.h:538
 msgid "SAT"
 msgstr "Vệ tinh"
 
@@ -871,7 +871,7 @@ msgid "TV"
 msgstr ""
 
 #: channellist.h:702 channellist.h:1228 channellist.h:1229 channellist.h:1441
-#: httpdfunc.h:4866
+#: httpdfunc.h:4869
 msgid "Bouquets"
 msgstr "Nhóm"
 
@@ -884,7 +884,7 @@ msgid "Satellites"
 msgstr "Vệ tinh"
 
 #: channellist.h:752 channellist.h:1330 channellist.h:1331 channellist.h:1655
-#: httpdfunc.h:4860
+#: httpdfunc.h:4863
 msgid "Provider"
 msgstr ""
 
@@ -2120,106 +2120,106 @@ msgstr "Thời gian đợi sau khi tìm kiếm bộ đệm khác"
 msgid "Dualboot Menu TitanNit / E2"
 msgstr ""
 
-#: httpdfunc.h:4854 skin_default_skin.xml.h:71
+#: httpdfunc.h:4857 skin_default_skin.xml.h:71
 msgid "ALL"
 msgstr "TẤT CẢ"
 
-#: httpdfunc.h:4863 skin_default_skin.xml.h:98 tithek_mainmenu.h:14
+#: httpdfunc.h:4866 skin_default_skin.xml.h:98 tithek_mainmenu.h:14
 msgid "A-Z"
 msgstr ""
 
-#: httpdfunc.h:4884
+#: httpdfunc.h:4891
 msgid "Channel List"
 msgstr ""
 
-#: httpdfunc.h:4887
+#: httpdfunc.h:4894
 msgid "Boxcontrol"
 msgstr ""
 
-#: httpdfunc.h:4890 record.h:1320 record.h:1394 skin_default_skin.xml.h:494
+#: httpdfunc.h:4897 record.h:1320 record.h:1394 skin_default_skin.xml.h:494
 msgid "Record"
 msgstr "Ghi"
 
-#: httpdfunc.h:4893 skin_default_skin.xml.h:657
+#: httpdfunc.h:4900 skin_default_skin.xml.h:657
 msgid "Timer"
 msgstr "Bộ định thời"
 
-#: httpdfunc.h:4896 plugins_mc_skin.xml.h:53 plugins_panel_skin.xml.h:5
+#: httpdfunc.h:4903 plugins_mc_skin.xml.h:53 plugins_panel_skin.xml.h:5
 #: plugins_panel_skin.xml.h:22 skin_default_skin.xml.h:576
 #: skins_mc_skin.xml.h:53 skins_panel_skin.xml.h:5 skins_panel_skin.xml.h:22
 msgid "Settings"
 msgstr "thiết lập"
 
-#: httpdfunc.h:4899 info.h:27 plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9
+#: httpdfunc.h:4906 info.h:27 plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9
 #: titan.c:979
 msgid "Info"
 msgstr ""
 
-#: httpdfunc.h:4902 skin_default_skin.xml.h:1
+#: httpdfunc.h:4909 skin_default_skin.xml.h:1
 msgid "Help"
 msgstr ""
 
-#: httpdfunc.h:4919
+#: httpdfunc.h:4931
 msgid "Timer List"
 msgstr ""
 
-#: httpdfunc.h:4922
+#: httpdfunc.h:4934
 msgid "Timer Archiv"
 msgstr ""
 
-#: httpdfunc.h:4925
+#: httpdfunc.h:4937
 msgid "Add Timer"
 msgstr ""
 
-#: httpdfunc.h:4943
+#: httpdfunc.h:4958
 msgid "Offline Help"
 msgstr ""
 
-#: httpdfunc.h:4946
+#: httpdfunc.h:4961
 msgid "Online Help"
 msgstr ""
 
-#: httpdfunc.h:4964 skin_default_skin.xml.h:642
+#: httpdfunc.h:4983 skin_default_skin.xml.h:642
 msgid "System Info"
 msgstr "Thông tin hệ thống"
 
-#: httpdfunc.h:4967
+#: httpdfunc.h:4986
 msgid "Config Info"
 msgstr ""
 
-#: httpdfunc.h:4985 skin_default_skin.xml.h:63
+#: httpdfunc.h:5008 skin_default_skin.xml.h:63
 msgid "Adjust"
 msgstr "Điều chỉnh"
 
-#: httpdfunc.h:4988 skin_default_skin.xml.h:592
+#: httpdfunc.h:5011 skin_default_skin.xml.h:592
 msgid "Skin Adjust"
 msgstr "Điều chỉnh nền"
 
-#: httpdfunc.h:5005
+#: httpdfunc.h:5032
 msgid "PowerControl"
 msgstr ""
 
-#: httpdfunc.h:5011
+#: httpdfunc.h:5038
 msgid "Remote"
 msgstr ""
 
-#: httpdfunc.h:5014
+#: httpdfunc.h:5041
 msgid "Screenshot All"
 msgstr ""
 
-#: httpdfunc.h:5017
+#: httpdfunc.h:5044
 msgid "Screenshot Video"
 msgstr ""
 
-#: httpdfunc.h:5020
+#: httpdfunc.h:5047
 msgid "Screenshot OSD"
 msgstr ""
 
-#: httpdfunc.h:5023
+#: httpdfunc.h:5050
 msgid "Play Movie (URL)"
 msgstr ""
 
-#: httpdfunc.h:5026
+#: httpdfunc.h:5053
 msgid "Stream Config (iOS)"
 msgstr ""
 
