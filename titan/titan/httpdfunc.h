@@ -4842,4 +4842,34 @@ char* webgettestpage(char* param, int fmt)
 	return buf;
 }
 
+char* webgetchannellist(int fmt)
+{
+	char* buf = NULL;
+	buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+	buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+	buf = ostrcat(buf, "</head><body class=body id=\"channellist\">", 1, 0);
+
+	buf = ostrcat(buf, "<table cellpadding=3 cellspacing=0><tr><td nowrap>", 1, 0);
+	buf = ostrcat(buf, "<a class=linelink2 href=query?getallchannel target=main>", 1, 0);
+	buf = ostrcat(buf, _("All"), 1, 0);
+	buf = ostrcat(buf, "</a> ", 1, 0);
+	buf = ostrcat(buf, "<a class=linelink2 href=query?getsat target=main>", 1, 0);
+	buf = ostrcat(buf, _("SAT"), 1, 0);
+	buf = ostrcat(buf, "</a> ", 1, 0);
+	buf = ostrcat(buf, "<a class=linelink2 href=query?getprovider target=main>", 1, 0);
+	buf = ostrcat(buf, _("Provider"), 1, 0);
+	buf = ostrcat(buf, "</a> ", 1, 0);
+	buf = ostrcat(buf, "<a class=linelink2 href=query?getaz target=main>", 1, 0);
+	buf = ostrcat(buf, _("A-Z"), 1, 0);
+	buf = ostrcat(buf, "</a> ", 1, 0);
+	buf = ostrcat(buf, "<a class=linelink2 href=query?getbouquet target=main>", 1, 0);
+	buf = ostrcat(buf, _("Bouquets"), 1, 0);
+	buf = ostrcat(buf, "</a> ", 1, 0);
+	buf = ostrcat(buf, "</td></tr></table></body></html>", 1, 0);
+
+	debug(10, "buf: %s", buf);
+	printf("buf: %s\n", buf);
+	return buf;
+}
+
 #endif

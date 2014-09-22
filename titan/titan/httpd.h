@@ -297,6 +297,12 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 		buf = webgethelp(param, fmt);
 		m_unlock(&status.waitrcmutex, 24);
 	}
+	else if(ostrcmp(query, "getchannellist") == 0)
+	{
+		m_lock(&status.waitrcmutex, 24);
+		buf = webgetchannellist(fmt);
+		m_unlock(&status.waitrcmutex, 24);
+	}
 	else if(ostrcmp(query, "getsatchannel") == 0 && param != NULL)
 	{
 		m_lock(&status.waitrcmutex, 24);
