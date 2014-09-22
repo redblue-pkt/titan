@@ -1366,7 +1366,7 @@ char* webgetsingleepg(char* param, int fmt)
 
 			loctime = olocaltime(&epgnode->starttime);
 			if(loctime != NULL)
-				strftime(buf1, MINMALLOC, "%d.%m _ %H:%M __ ", loctime);
+				strftime(buf1, MINMALLOC, "%d.%m - %H:%M : ", loctime);
 			//strftime(buf1, MINMALLOC, "%H:%M -", loctime);
 			free(loctime); loctime = NULL;
 			//loctime = olocaltime(&epgnode->endtime);
