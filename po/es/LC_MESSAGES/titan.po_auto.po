@@ -2258,22 +2258,14 @@ msgid "Remote"
 msgstr ""
 
 #: httpdfunc.h:5041
-msgid "Screenshot All"
+msgid "Screenshot"
 msgstr ""
 
 #: httpdfunc.h:5044
-msgid "Screenshot Video"
-msgstr ""
-
-#: httpdfunc.h:5047
-msgid "Screenshot OSD"
-msgstr ""
-
-#: httpdfunc.h:5050
 msgid "Play Movie (URL)"
 msgstr ""
 
-#: httpdfunc.h:5053
+#: httpdfunc.h:5047
 msgid "Stream Config (iOS)"
 msgstr ""
 
