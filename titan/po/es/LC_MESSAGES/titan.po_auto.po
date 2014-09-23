@@ -2283,7 +2283,7 @@ msgstr ""
 msgid "Show Signal Infos"
 msgstr ""
 
-#: httpdfunc.h:5212 skin_default_skin.xml.h:221
+#: httpdfunc.h:5214 skin_default_skin.xml.h:221
 msgid "EPG Search"
 msgstr "Busqueda"
 
