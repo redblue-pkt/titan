@@ -406,17 +406,17 @@ msgstr "Datum omgekeerd"
 msgid "Power Menu"
 msgstr "Uitschakel Menu"
 
-#: adjust.h:109 httpdfunc.h:3755 httpdfunc.h:5068 httpdfunc.h:5132
+#: adjust.h:109 httpdfunc.h:3755 httpdfunc.h:5068 httpdfunc.h:5134
 #: skin_default_skin.xml.h:473
 msgid "Power Off"
 msgstr "Uitschakelen"
 
-#: adjust.h:110 httpdfunc.h:3762 httpdfunc.h:5080 httpdfunc.h:5144
+#: adjust.h:110 httpdfunc.h:3762 httpdfunc.h:5080 httpdfunc.h:5146
 #: powerofftimer.h:118 skin_default_skin.xml.h:613
 msgid "Standby"
 msgstr ""
 
-#: adjust.h:111 httpdfunc.h:3769 httpdfunc.h:5072 httpdfunc.h:5136
+#: adjust.h:111 httpdfunc.h:3769 httpdfunc.h:5072 httpdfunc.h:5138
 #: skin_default_skin.xml.h:521 softcam.h:291
 msgid "Restart"
 msgstr "Herstart"
@@ -2157,36 +2157,36 @@ msgstr "Alle"
 msgid "A-Z"
 msgstr ""
 
-#: httpdfunc.h:4891 httpdfunc.h:5190
+#: httpdfunc.h:4891 httpdfunc.h:5192
 msgid "Channel List"
 msgstr ""
 
-#: httpdfunc.h:4894 httpdfunc.h:5193
+#: httpdfunc.h:4894 httpdfunc.h:5195
 msgid "Boxcontrol"
 msgstr ""
 
-#: httpdfunc.h:4897 httpdfunc.h:5196 record.h:1320 record.h:1394
+#: httpdfunc.h:4897 httpdfunc.h:5198 record.h:1320 record.h:1394
 #: skin_default_skin.xml.h:494
 msgid "Record"
 msgstr "Opname"
 
-#: httpdfunc.h:4900 httpdfunc.h:5199 skin_default_skin.xml.h:657
+#: httpdfunc.h:4900 httpdfunc.h:5201 skin_default_skin.xml.h:657
 msgid "Timer"
 msgstr ""
 
-#: httpdfunc.h:4903 httpdfunc.h:5202 plugins_mc_skin.xml.h:53
+#: httpdfunc.h:4903 httpdfunc.h:5204 plugins_mc_skin.xml.h:53
 #: plugins_panel_skin.xml.h:5 plugins_panel_skin.xml.h:22
 #: skin_default_skin.xml.h:576 skins_mc_skin.xml.h:53 skins_panel_skin.xml.h:5
 #: skins_panel_skin.xml.h:22
 msgid "Settings"
 msgstr "Instellingen"
 
-#: httpdfunc.h:4906 httpdfunc.h:5205 info.h:27 plugins_tmc_skin.xml.h:9
+#: httpdfunc.h:4906 httpdfunc.h:5207 info.h:27 plugins_tmc_skin.xml.h:9
 #: skins_tmc_skin.xml.h:9 titan.c:979
 msgid "Info"
 msgstr ""
 
-#: httpdfunc.h:4909 httpdfunc.h:5208 skin_default_skin.xml.h:1
+#: httpdfunc.h:4909 httpdfunc.h:5210 skin_default_skin.xml.h:1
 msgid "Help"
 msgstr ""
 
@@ -2246,27 +2246,31 @@ msgstr ""
 msgid "Stream Config (iOS)"
 msgstr ""
 
-#: httpdfunc.h:5076 httpdfunc.h:5140 skin_default_skin.xml.h:265
+#: httpdfunc.h:5076 httpdfunc.h:5142 skin_default_skin.xml.h:265
 msgid "GUI Restart"
 msgstr "Titan herstart"
 
-#: httpdfunc.h:5157
+#: httpdfunc.h:5128
+msgid "Show/Hide Remote Control"
+msgstr ""
+
+#: httpdfunc.h:5159
 msgid "Start Record"
 msgstr ""
 
-#: httpdfunc.h:5162
+#: httpdfunc.h:5164
 msgid "Show Signal Infos"
 msgstr ""
 
-#: httpdfunc.h:5216 skin_default_skin.xml.h:221
+#: httpdfunc.h:5218 skin_default_skin.xml.h:221
 msgid "EPG Search"
 msgstr "EPG zoeken"
 
-#: httpdfunc.h:5272
+#: httpdfunc.h:5259 httpdfunc.h:5278
 msgid "Details on/off"
 msgstr ""
 
-#: httpdfunc.h:5278
+#: httpdfunc.h:5263 httpdfunc.h:5284
 msgid "open in new window"
 msgstr ""
 
