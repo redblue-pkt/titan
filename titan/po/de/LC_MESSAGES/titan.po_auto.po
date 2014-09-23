@@ -8411,7 +8411,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:723 tmc.h:399
 msgid "Video"
-msgstr "Filme"
+msgstr "Bild"
 
 #: skin_default_skin.xml.h:724
 msgid "VideoMode Aspect Settings"
