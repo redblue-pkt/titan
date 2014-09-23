@@ -2277,6 +2277,14 @@ msgstr ""
 msgid "EPG Search"
 msgstr "Search"
 
+#: httpdfunc.h:5274
+msgid "Details on/off"
+msgstr ""
+
+#: httpdfunc.h:5280
+msgid "open in new window"
+msgstr ""
+
 #: hwtest.h:88
 msgid "testtransponder not found"
 msgstr ""
