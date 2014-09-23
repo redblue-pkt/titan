@@ -406,17 +406,17 @@ msgstr "descending date"
 msgid "Power Menu"
 msgstr ""
 
-#: adjust.h:109 httpdfunc.h:3755 httpdfunc.h:5068 httpdfunc.h:5130
+#: adjust.h:109 httpdfunc.h:3755 httpdfunc.h:5068 httpdfunc.h:5131
 #: skin_default_skin.xml.h:473
 msgid "Power Off"
 msgstr ""
 
-#: adjust.h:110 httpdfunc.h:3762 httpdfunc.h:5080 httpdfunc.h:5142
+#: adjust.h:110 httpdfunc.h:3762 httpdfunc.h:5080 httpdfunc.h:5143
 #: powerofftimer.h:118 skin_default_skin.xml.h:613
 msgid "Standby"
 msgstr ""
 
-#: adjust.h:111 httpdfunc.h:3769 httpdfunc.h:5072 httpdfunc.h:5134
+#: adjust.h:111 httpdfunc.h:3769 httpdfunc.h:5072 httpdfunc.h:5135
 #: skin_default_skin.xml.h:521 softcam.h:291
 msgid "Restart"
 msgstr ""
@@ -2259,19 +2259,23 @@ msgstr ""
 msgid "Stream Config (iOS)"
 msgstr ""
 
-#: httpdfunc.h:5076 httpdfunc.h:5138 skin_default_skin.xml.h:265
+#: httpdfunc.h:5076 httpdfunc.h:5139 skin_default_skin.xml.h:265
 msgid "GUI Restart"
 msgstr "Titan Restart"
 
-#: httpdfunc.h:5155
+#: httpdfunc.h:5103
+msgid "TitanNit Web Control"
+msgstr ""
+
+#: httpdfunc.h:5156
 msgid "Start Record"
 msgstr ""
 
-#: httpdfunc.h:5160
+#: httpdfunc.h:5161
 msgid "Show Signal Infos"
 msgstr ""
 
-#: httpdfunc.h:5209 skin_default_skin.xml.h:221
+#: httpdfunc.h:5210 skin_default_skin.xml.h:221
 msgid "EPG Search"
 msgstr "Search"
 
