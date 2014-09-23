@@ -2130,34 +2130,36 @@ msgstr "TẤT CẢ"
 msgid "A-Z"
 msgstr ""
 
-#: httpdfunc.h:4891
+#: httpdfunc.h:4891 httpdfunc.h:5188
 msgid "Channel List"
 msgstr ""
 
-#: httpdfunc.h:4894
+#: httpdfunc.h:4894 httpdfunc.h:5191
 msgid "Boxcontrol"
 msgstr ""
 
-#: httpdfunc.h:4897 record.h:1320 record.h:1394 skin_default_skin.xml.h:494
+#: httpdfunc.h:4897 httpdfunc.h:5194 record.h:1320 record.h:1394
+#: skin_default_skin.xml.h:494
 msgid "Record"
 msgstr "Ghi"
 
-#: httpdfunc.h:4900 skin_default_skin.xml.h:657
+#: httpdfunc.h:4900 httpdfunc.h:5197 skin_default_skin.xml.h:657
 msgid "Timer"
 msgstr "Bộ định thời"
 
-#: httpdfunc.h:4903 plugins_mc_skin.xml.h:53 plugins_panel_skin.xml.h:5
-#: plugins_panel_skin.xml.h:22 skin_default_skin.xml.h:576
-#: skins_mc_skin.xml.h:53 skins_panel_skin.xml.h:5 skins_panel_skin.xml.h:22
+#: httpdfunc.h:4903 httpdfunc.h:5200 plugins_mc_skin.xml.h:53
+#: plugins_panel_skin.xml.h:5 plugins_panel_skin.xml.h:22
+#: skin_default_skin.xml.h:576 skins_mc_skin.xml.h:53 skins_panel_skin.xml.h:5
+#: skins_panel_skin.xml.h:22
 msgid "Settings"
 msgstr "thiết lập"
 
-#: httpdfunc.h:4906 info.h:27 plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9
-#: titan.c:979
+#: httpdfunc.h:4906 httpdfunc.h:5203 info.h:27 plugins_tmc_skin.xml.h:9
+#: skins_tmc_skin.xml.h:9 titan.c:979
 msgid "Info"
 msgstr ""
 
-#: httpdfunc.h:4909 skin_default_skin.xml.h:1
+#: httpdfunc.h:4909 httpdfunc.h:5206 skin_default_skin.xml.h:1
 msgid "Help"
 msgstr ""
 
