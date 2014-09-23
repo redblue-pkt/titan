@@ -3215,8 +3215,11 @@ char* webgetconfig(int fmt)
 		}
 	}
 	
-	buf = ostrcat(buf, "</body></html>", 1, 0);
-
+	if(fmt == 0)
+	{
+		buf = ostrcat(buf, "</body></html>", 1, 0);
+	}
+	
 	m_unlock(&status.clistmutex, 12);
 	return buf;
 }
@@ -3256,9 +3259,12 @@ char* webgetsysteminfo(int fmt)
 		buf = ostrcat(buf, "0", 1, 0);
 	else
 		buf = ostrcat(buf, "1", 1, 0);
-	
-	buf = ostrcat(buf, "</body></html>", 1, 0);
 
+	if(fmt == 0)
+	{
+		buf = ostrcat(buf, "</body></html>", 1, 0);
+	}	
+	
 	return buf;
 }
 
