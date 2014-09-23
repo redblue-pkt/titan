@@ -406,17 +406,17 @@ msgstr "Сброс даты"
 msgid "Power Menu"
 msgstr ""
 
-#: adjust.h:109 httpdfunc.h:3755 httpdfunc.h:5068 httpdfunc.h:5120
+#: adjust.h:109 httpdfunc.h:3755 httpdfunc.h:5068 httpdfunc.h:5130
 #: skin_default_skin.xml.h:473
 msgid "Power Off"
 msgstr "Выключение"
 
-#: adjust.h:110 httpdfunc.h:3762 httpdfunc.h:5080 httpdfunc.h:5132
+#: adjust.h:110 httpdfunc.h:3762 httpdfunc.h:5080 httpdfunc.h:5142
 #: powerofftimer.h:118 skin_default_skin.xml.h:613
 msgid "Standby"
 msgstr ""
 
-#: adjust.h:111 httpdfunc.h:3769 httpdfunc.h:5072 httpdfunc.h:5124
+#: adjust.h:111 httpdfunc.h:3769 httpdfunc.h:5072 httpdfunc.h:5134
 #: skin_default_skin.xml.h:521 softcam.h:291
 msgid "Restart"
 msgstr "Перезапуск"
@@ -2120,36 +2120,36 @@ msgstr "Все"
 msgid "A-Z"
 msgstr ""
 
-#: httpdfunc.h:4891 httpdfunc.h:5167
+#: httpdfunc.h:4891 httpdfunc.h:5183
 msgid "Channel List"
 msgstr ""
 
-#: httpdfunc.h:4894 httpdfunc.h:5170
+#: httpdfunc.h:4894 httpdfunc.h:5186
 msgid "Boxcontrol"
 msgstr ""
 
-#: httpdfunc.h:4897 httpdfunc.h:5173 record.h:1320 record.h:1394
+#: httpdfunc.h:4897 httpdfunc.h:5189 record.h:1320 record.h:1394
 #: skin_default_skin.xml.h:494
 msgid "Record"
 msgstr "Место хранения записи"
 
-#: httpdfunc.h:4900 httpdfunc.h:5176 skin_default_skin.xml.h:657
+#: httpdfunc.h:4900 httpdfunc.h:5192 skin_default_skin.xml.h:657
 msgid "Timer"
 msgstr "Таймер"
 
-#: httpdfunc.h:4903 httpdfunc.h:5179 plugins_mc_skin.xml.h:53
+#: httpdfunc.h:4903 httpdfunc.h:5195 plugins_mc_skin.xml.h:53
 #: plugins_panel_skin.xml.h:5 plugins_panel_skin.xml.h:22
 #: skin_default_skin.xml.h:576 skins_mc_skin.xml.h:53 skins_panel_skin.xml.h:5
 #: skins_panel_skin.xml.h:22
 msgid "Settings"
 msgstr "Настройки"
 
-#: httpdfunc.h:4906 httpdfunc.h:5182 info.h:27 plugins_tmc_skin.xml.h:9
+#: httpdfunc.h:4906 httpdfunc.h:5198 info.h:27 plugins_tmc_skin.xml.h:9
 #: skins_tmc_skin.xml.h:9 titan.c:979
 msgid "Info"
 msgstr "Инфо"
 
-#: httpdfunc.h:4909 httpdfunc.h:5185 skin_default_skin.xml.h:1
+#: httpdfunc.h:4909 httpdfunc.h:5201 skin_default_skin.xml.h:1
 msgid "Help"
 msgstr ""
 
@@ -2209,9 +2209,25 @@ msgstr ""
 msgid "Stream Config (iOS)"
 msgstr ""
 
-#: httpdfunc.h:5076 httpdfunc.h:5128 skin_default_skin.xml.h:265
+#: httpdfunc.h:5076 httpdfunc.h:5138 skin_default_skin.xml.h:265
 msgid "GUI Restart"
 msgstr "GUI перезапуск"
+
+#: httpdfunc.h:5102
+msgid "TitanNit Web Control"
+msgstr ""
+
+#: httpdfunc.h:5155
+msgid "Start Record"
+msgstr ""
+
+#: httpdfunc.h:5160
+msgid "Show Signal Infos"
+msgstr ""
+
+#: httpdfunc.h:5209 skin_default_skin.xml.h:221
+msgid "EPG Search"
+msgstr "Место хранения EPG"
 
 #: hwtest.h:88
 msgid "testtransponder not found"
@@ -6485,10 +6501,6 @@ msgstr ""
 
 #: skin_default_skin.xml.h:220
 msgid "EPG Scanlist"
-msgstr "Место хранения EPG"
-
-#: skin_default_skin.xml.h:221
-msgid "EPG Search"
 msgstr "Место хранения EPG"
 
 #: skin_default_skin.xml.h:222
