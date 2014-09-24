@@ -410,7 +410,7 @@ msgstr "Uitschakel Menu"
 msgid "Power Off"
 msgstr "Uitschakelen"
 
-#: adjust.h:110 httpdfunc.h:3768 powerofftimer.h:118
+#: adjust.h:110 httpdfunc.h:3768 powercontrol.html:19 powerofftimer.h:118
 #: skin_default_skin.xml.h:613
 msgid "Standby"
 msgstr ""
@@ -549,10 +549,10 @@ msgid "yes / vzap endless"
 msgstr "Ja / VZAP oneindig"
 
 #: ard.h:31 avsettings.h:261 betarobot.h:57 bgdownload.h:176
-#: blindscanadjust.h:25 callmon_main.h:39 channellist.h:913 channellist.h:915
-#: channellist.h:920 channellist.h:922 channellist.h:1006 divxstage.h:36
-#: divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336 dlna.h:345
-#: dvdplay.h:62 epgsearch.h:27 epgsettings.h:263 epgsettings.h:289
+#: blindscanadjust.h:25 boxcontrol.html:10 callmon_main.h:39 channellist.h:913
+#: channellist.h:915 channellist.h:920 channellist.h:922 channellist.h:1006
+#: divxstage.h:36 divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336
+#: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:263 epgsettings.h:289
 #: extensions.h:255 extensions.h:312 extensions.h:344 extensions.h:404
 #: extensions.h:408 extensions.h:444 facebook.h:66 facebook.h:157
 #: facebook.h:167 faststream.h:30 faststream.h:79 faststream.h:91
@@ -763,7 +763,8 @@ msgstr "Kabel: "
 msgid "Terrestrial: "
 msgstr "Ether (digitenne): "
 
-#: blindscanadjust.h:120 httpdfunc.h:4863 skin_default_skin.xml.h:538
+#: blindscanadjust.h:120 channellist.html:11 httpdfunc.h:4863
+#: skin_default_skin.xml.h:538
 msgid "SAT"
 msgstr "Satellieten"
 
@@ -774,6 +775,34 @@ msgstr "Kabel"
 #: blindscanadjust.h:122
 msgid "Terrestrial"
 msgstr "Ether (digitenne)"
+
+#: boxcontrol.html:9
+msgid "PowerControl"
+msgstr ""
+
+#: boxcontrol.html:11
+msgid "Remote"
+msgstr ""
+
+#: boxcontrol.html:12
+msgid "Screenshot All"
+msgstr ""
+
+#: boxcontrol.html:13
+msgid "Screenshot Video"
+msgstr ""
+
+#: boxcontrol.html:14
+msgid "Screenshot OSD"
+msgstr ""
+
+#: boxcontrol.html:15
+msgid "Play Movie (URL)"
+msgstr ""
+
+#: boxcontrol.html:16
+msgid "Stream Config (iOS)"
+msgstr ""
 
 #: browser.h:191
 msgid "Home"
@@ -876,7 +905,7 @@ msgid "TV"
 msgstr ""
 
 #: channellist.h:702 channellist.h:1228 channellist.h:1229 channellist.h:1441
-#: httpdfunc.h:4872
+#: channellist.html:14 httpdfunc.h:4872
 msgid "Bouquets"
 msgstr "Favorieten"
 
@@ -889,7 +918,7 @@ msgid "Satellites"
 msgstr "Satellieten"
 
 #: channellist.h:752 channellist.h:1330 channellist.h:1331 channellist.h:1655
-#: httpdfunc.h:4866
+#: channellist.html:12 httpdfunc.h:4866
 msgid "Provider"
 msgstr ""
 
@@ -920,6 +949,15 @@ msgstr "Actuele zender kan niet gewist worden"
 #: channellist.h:1296 channellist.h:1297
 msgid "Channels A-Z"
 msgstr "Zenders A-Z"
+
+#: channellist.html:10
+msgid "All"
+msgstr ""
+
+#: channellist.html:13 httpdfunc.h:4869 skin_default_skin.xml.h:98
+#: tithek_mainmenu.h:14
+msgid "A-Z"
+msgstr ""
 
 #: copyfile.h:810
 msgid "Filesize (B): "
@@ -1983,6 +2021,10 @@ msgstr ""
 msgid "Hello World !"
 msgstr ""
 
+#: help.html:9
+msgid "Offline Help"
+msgstr ""
+
 #: httpdfunc.h:3427 skin_default_skin.xml.h:733
 msgid "Volumebar Timeout"
 msgstr "Tijd totdat volume indicator dimt"
@@ -2150,10 +2192,6 @@ msgstr ""
 #: httpdfunc.h:4860 skin_default_skin.xml.h:71
 msgid "ALL"
 msgstr "Alle"
-
-#: httpdfunc.h:4869 skin_default_skin.xml.h:98 tithek_mainmenu.h:14
-msgid "A-Z"
-msgstr ""
 
 #: hwtest.h:88
 msgid "testtransponder not found"
@@ -2406,6 +2444,49 @@ msgstr ""
 msgid "DYNDNS now stopped"
 msgstr "DYNDNS gestopt"
 
+#: index.atemio510.html:3
+msgid "TitanNit Web Control"
+msgstr ""
+
+#: index.atemio510.html:52
+msgid "Channel List"
+msgstr ""
+
+#: index.atemio510.html:53
+msgid "Boxcontrol"
+msgstr ""
+
+#: index.atemio510.html:54
+msgid "Movies"
+msgstr ""
+
+#: index.atemio510.html:55 skin_default_skin.xml.h:657
+msgid "Timer"
+msgstr ""
+
+#: index.atemio510.html:56 plugins_mc_skin.xml.h:53 plugins_panel_skin.xml.h:5
+#: plugins_panel_skin.xml.h:22 skin_default_skin.xml.h:576
+#: skins_mc_skin.xml.h:53 skins_panel_skin.xml.h:5 skins_panel_skin.xml.h:22
+msgid "Settings"
+msgstr "Instellingen"
+
+#: index.atemio510.html:57 info.h:27 plugins_tmc_skin.xml.h:9
+#: skins_tmc_skin.xml.h:9 titan.c:979
+msgid "Info"
+msgstr ""
+
+#: index.atemio510.html:58 skin_default_skin.xml.h:1
+msgid "Help"
+msgstr ""
+
+#: index.atemio510.html:143
+msgid "switch to original remote"
+msgstr ""
+
+#: index.atemio510.html:145
+msgid "open in new window"
+msgstr ""
+
 #: infobar.h:497 mc_audioplayer.h:333 mc_main.h:273 mc_pictureplayer.h:124
 #: mc_videoplayer.h:332 menu.h:208
 msgid ""
@@ -2436,13 +2517,17 @@ msgstr ""
 msgid "Email  \t\tinfo@atemio.de"
 msgstr ""
 
-#: info.h:27 plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9 titan.c:979
-msgid "Info"
-msgstr ""
-
 #: info.h:48 info.h:64 info.h:91 plugins_panel_skin.xml.h:17
 #: skins_panel_skin.xml.h:17
 msgid "Infos"
+msgstr ""
+
+#: info.html:9 skin_default_skin.xml.h:642 systeminfo.html:9
+msgid "System Info"
+msgstr "Systeem informatie"
+
+#: info.html:10
+msgid "Config Info"
 msgstr ""
 
 #: instar.h:196 instar.h:208
@@ -3785,6 +3870,14 @@ msgstr "Markering automatisch zoeken is gestart"
 msgid "Marker autoseek is stopped"
 msgstr "Markering automatisch zoeken is gestopt"
 
+#: playurl.html:13
+msgid "Real URL with http://</div"
+msgstr ""
+
+#: playurl.html:33
+msgid "Tithek Hoster URL with http://</div"
+msgstr ""
+
 #: plugins_autotimer_skin.xml.h:1 skins_autotimer_skin.xml.h:1
 msgid "AutoTimer Settings"
 msgstr "Auto timer instellingen"
@@ -4307,12 +4400,6 @@ msgstr "Radio speler"
 #: skins_mc_skin.xml.h:52 skins_tithek_skin.xml.h:16
 msgid "Screensaver"
 msgstr ""
-
-#: plugins_mc_skin.xml.h:53 plugins_panel_skin.xml.h:5
-#: plugins_panel_skin.xml.h:22 skin_default_skin.xml.h:576
-#: skins_mc_skin.xml.h:53 skins_panel_skin.xml.h:5 skins_panel_skin.xml.h:22
-msgid "Settings"
-msgstr "Instellingen"
 
 #: plugins_mc_skin.xml.h:54 skins_mc_skin.xml.h:54
 msgid "Show Pictitle"
@@ -5735,6 +5822,14 @@ msgid ""
 "blue button"
 msgstr ""
 
+#: settings.html:9 skin_default_skin.xml.h:63
+msgid "Adjust"
+msgstr "Titan instellingen"
+
+#: settings.html:10 skin_default_skin.xml.h:592
+msgid "Skin Adjust"
+msgstr "Skin instellingen"
+
 #: settings_mediabutton.h:6
 msgid "Media Key Action - Setup"
 msgstr ""
@@ -5769,6 +5864,26 @@ msgid ""
 "red button"
 msgstr ""
 
+#: shootmain.html:91
+msgid "only OSD"
+msgstr ""
+
+#: shootmain.html:92
+msgid "only TV"
+msgstr ""
+
+#: shootmain.html:93
+msgid "OSD+TV"
+msgstr ""
+
+#: shootmain.html:97
+msgid "OSD Screenshot"
+msgstr ""
+
+#: shootmain.html:102
+msgid "Automatic update"
+msgstr ""
+
 #: skinadjust.h:27
 msgid "border"
 msgstr "Rand kleur"
@@ -5800,10 +5915,6 @@ msgstr "Druk op rode toets"
 #: skinadjust.h:199
 msgid "Receiver now reboot !!!"
 msgstr "Ontvanger herstart nu!!"
-
-#: skin_default_skin.xml.h:1
-msgid "Help"
-msgstr ""
 
 #: skin_default_skin.xml.h:2
 msgid "^"
@@ -5992,10 +6103,6 @@ msgstr "Één Toevoegen"
 #: skin_default_skin.xml.h:62
 msgid "add service"
 msgstr "Service toevoegen"
-
-#: skin_default_skin.xml.h:63
-msgid "Adjust"
-msgstr "Titan instellingen"
 
 #: skin_default_skin.xml.h:64
 msgid "ae"
@@ -7818,10 +7925,6 @@ msgstr "Signaal:"
 msgid "Skin"
 msgstr ""
 
-#: skin_default_skin.xml.h:592
-msgid "Skin Adjust"
-msgstr "Skin instellingen"
-
 #: skin_default_skin.xml.h:593
 msgid "Skin Select"
 msgstr "Skin keuze"
@@ -7962,10 +8065,6 @@ msgstr "Systeem - Flash update (Internet)"
 msgid "System - Flashupdate (tmp)"
 msgstr "Systeem - Flash update (Lokaal)"
 
-#: skin_default_skin.xml.h:642
-msgid "System Info"
-msgstr "Systeem informatie"
-
 #: skin_default_skin.xml.h:643
 msgid "System Infos"
 msgstr "Systeem informatie"
@@ -8013,10 +8112,6 @@ msgstr "Straks op deze zender:"
 #: skin_default_skin.xml.h:655
 msgid "Threshold"
 msgstr "Drempelwaarde"
-
-#: skin_default_skin.xml.h:657
-msgid "Timer"
-msgstr ""
 
 #: skin_default_skin.xml.h:658
 msgid "Timer and EPG"
@@ -8471,6 +8566,30 @@ msgstr ""
 msgid "Connect with Hoster wait 16 seconds"
 msgstr "Verbinden met host, wacht 16 seconden"
 
+#: streamconfig.html:15
+msgid "Player"
+msgstr ""
+
+#: streamconfig.html:20
+msgid "GoodPlayer"
+msgstr ""
+
+#: streamconfig.html:23
+msgid "BuzzPlayer"
+msgstr ""
+
+#: streamconfig.html:26
+msgid "Oplayer HD"
+msgstr ""
+
+#: streamconfig.html:29
+msgid "Oplayer HD lite"
+msgstr ""
+
+#: streamconfig.html:36
+msgid "Streamport"
+msgstr ""
+
 #: stream.h:33
 msgid "No Live Stream running"
 msgstr "geen Live Stream actief"
@@ -8675,6 +8794,18 @@ msgstr ""
 
 #: textinput.h:15 textinputhist.h:122
 msgid "Input field"
+msgstr ""
+
+#: timer.html:9
+msgid "Timer List"
+msgstr ""
+
+#: timer.html:10
+msgid "Timer Archiv"
+msgstr ""
+
+#: timer.html:11
+msgid "Add Timer"
 msgstr ""
 
 #: timeshift.h:113
