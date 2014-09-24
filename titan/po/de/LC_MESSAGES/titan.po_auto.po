@@ -3150,11 +3150,14 @@ msgstr "Verbindungs Fehler, versuchen Sie es später nocheinmal"
 
 #: movie4k.h:48
 msgid "Can not parse Main Stream URL, try again later."
-msgstr "Kann die Haupt Stream Url nicht durchsuchen, versuchen Sie es später nocheinmal"
+msgstr ""
+"Kann die Haupt Stream Url nicht durchsuchen, versuchen Sie es später "
+"nocheinmal"
 
 #: movie4k.h:92
 msgid "Can not parse Stream URL, try again later."
-msgstr "Kann die Stream Url nicht durchsuchen, versuchen Sie es später nocheinmal"
+msgstr ""
+"Kann die Stream Url nicht durchsuchen, versuchen Sie es später nocheinmal"
 
 #: movreel.h:85
 msgid "The file that you requested could not be found"
@@ -3687,7 +3690,9 @@ msgstr ""
 
 #: played.h:90
 msgid "This video has been deleted. We apologize for the inconvenience."
-msgstr "Dieses Video wurde gelöscht. Wir entschuldigen uns für die Unannehmlichkeiten."
+msgstr ""
+"Dieses Video wurde gelöscht. Wir entschuldigen uns für die "
+"Unannehmlichkeiten."
 
 #: play.h:396 play.h:430 plugins_imdbapi_skin.xml.h:9
 #: plugins_imdb_skin.xml.h:9 plugins_tmc_skin.xml.h:16
@@ -9537,7 +9542,7 @@ msgid "--orgname--"
 msgstr ""
 
 #: tmdb.h:842
-msgid "--Bewertung--"
+msgid "--rating--"
 msgstr ""
 
 #: tmdb.h:845
@@ -10134,12 +10139,14 @@ msgstr "Sat: uljanow Senderliste Sat 19.2 und 13.0"
 #: tpk_description.h:128
 msgid ""
 "Screensaver FC Bayern pictures for MediaCenter Audioplayer and Radioplayer."
-msgstr "Bildschirmschoner FC-Bayern f�r den Mediacenter (Audioplayer und Radioplayer)"
+msgstr ""
+"Bildschirmschoner FC-Bayern f�r den Mediacenter (Audioplayer und Radioplayer)"
 
 #: tpk_description.h:129
 msgid ""
 "Screensaver Hot Girls pictures for MediaCenter Audioplayer and Radioplayer."
-msgstr "Bildschirmschoner Hot-Girls f�r den Mediacenter (Audioplayer und Radioplayer)"
+msgstr ""
+"Bildschirmschoner Hot-Girls f�r den Mediacenter (Audioplayer und Radioplayer)"
 
 #: tpk_description.h:130
 msgid "Screensaver pictures for MediaCenter Audioplayer and Radioplayer."
