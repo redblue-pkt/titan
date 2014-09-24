@@ -31,7 +31,7 @@ msgstr "Tuner Typ"
 
 #: about.h:45
 msgid "System-Info"
-msgstr ""
+msgstr "System Information"
 
 #: about.h:45 ard.h:31 autotimer.c:537 autotimer.c:543 autotimer.c:568
 #: autotimer.c:575 autotimer.c:603 avsettings.h:261 betarobot.h:57
@@ -128,7 +128,7 @@ msgstr ""
 #: xupnpd.h:73 xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:215
 #: zapback.c:79 zdf.h:29
 msgid "OK"
-msgstr ""
+msgstr "Ok"
 
 #: about.h:45 ard.h:31 autotimer.c:537 autotimer.c:543 autotimer.c:568
 #: autotimer.c:575 autotimer.c:603 avsettings.h:261 betarobot.h:57
@@ -779,31 +779,31 @@ msgstr "Terrestrisch"
 
 #: boxcontrol.html:9
 msgid "PowerControl"
-msgstr ""
+msgstr "Neustart/Ausschalten"
 
 #: boxcontrol.html:11
 msgid "Remote"
-msgstr ""
+msgstr "Fernbedienung"
 
 #: boxcontrol.html:12
 msgid "Screenshot All"
-msgstr ""
+msgstr "Bildschirmfoto (Alle)"
 
 #: boxcontrol.html:13
 msgid "Screenshot Video"
-msgstr ""
+msgstr "Bildschirmfoto (Video)"
 
 #: boxcontrol.html:14
 msgid "Screenshot OSD"
-msgstr ""
+msgstr "Bildschirmfoto (Osd)"
 
 #: boxcontrol.html:15
 msgid "Play Movie (URL)"
-msgstr ""
+msgstr "Internet Stream Player (Url)"
 
 #: boxcontrol.html:16
 msgid "Stream Config (iOS)"
-msgstr ""
+msgstr "Stream EInstellungen (iOS)"
 
 #: browser.h:191
 msgid "Home"
@@ -1664,7 +1664,7 @@ msgstr "Die ausgewählte Datei existiert nicht oder wurde entfernt."
 
 #: firedrive.h:128
 msgid "This file is private and only viewable by the owner."
-msgstr ""
+msgstr "Diese Datei ist privat und nur für den Eigentümer sichtbar."
 
 #: global.h:5528 keyactions.h:290
 msgid "ERROR cant read res"
@@ -2045,7 +2045,7 @@ msgstr ""
 
 #: help.html:9
 msgid "Offline Help"
-msgstr ""
+msgstr "Offline Hilfe"
 
 #: httpdfunc.h:3427 skin_default_skin.xml.h:733
 msgid "Volumebar Timeout"
@@ -2209,7 +2209,7 @@ msgstr "Wiedergabepuffer - Zeit bis zum automatischen laden nach einem Seek"
 
 #: httpdfunc.h:4577 skin_default_skin.xml.h:199
 msgid "Dualboot Menu TitanNit / E2"
-msgstr ""
+msgstr "Dualboot Menü TitanNit / E2"
 
 #: httpdfunc.h:4860 skin_default_skin.xml.h:71
 msgid "ALL"
@@ -2468,19 +2468,19 @@ msgstr "DYNDNS gestoppt"
 
 #: index.atemio510.html:3
 msgid "TitanNit Web Control"
-msgstr ""
+msgstr "TitanNit Web Kontrollpanel"
 
 #: index.atemio510.html:52
 msgid "Channel List"
-msgstr ""
+msgstr "Senderliste"
 
 #: index.atemio510.html:53
 msgid "Boxcontrol"
-msgstr ""
+msgstr "Box Steuern"
 
 #: index.atemio510.html:54
 msgid "Movies"
-msgstr ""
+msgstr "Aufnahmen"
 
 #: index.atemio510.html:55 skin_default_skin.xml.h:657
 msgid "Timer"
@@ -2503,11 +2503,11 @@ msgstr "Hilfe"
 
 #: index.atemio510.html:143
 msgid "switch to original remote"
-msgstr ""
+msgstr "Zur Orginalen Fernbediehung wechseln"
 
 #: index.atemio510.html:145
 msgid "open in new window"
-msgstr ""
+msgstr "In seperaten Fenster öffnen"
 
 #: infobar.h:497 mc_audioplayer.h:333 mc_main.h:273 mc_pictureplayer.h:124
 #: mc_videoplayer.h:332 menu.h:208
@@ -2551,7 +2551,7 @@ msgstr "System Infos"
 
 #: info.html:10
 msgid "Config Info"
-msgstr ""
+msgstr "Information"
 
 #: instar.h:196 instar.h:208
 msgid "aus"
@@ -2668,7 +2668,7 @@ msgstr ""
 
 #: listedit.h:83
 msgid "Bouquet Name"
-msgstr ""
+msgstr "Favoriten Name"
 
 #: lnbconfig.h:137 skin_default_skin.xml.h:467
 msgid "Polarization"
@@ -3146,27 +3146,27 @@ msgstr "mehrere Sender gleichzeitig"
 
 #: movie4k.h:36
 msgid "Connection Error, try again later."
-msgstr ""
+msgstr "Verbindungs Fehler, versuchen Sie es später nocheinmal"
 
 #: movie4k.h:48
 msgid "Can not parse Main Stream URL, try again later."
-msgstr ""
+msgstr "Kann die Haupt Stream Url nicht durchsuchen, versuchen Sie es später nocheinmal"
 
 #: movie4k.h:92
 msgid "Can not parse Stream URL, try again later."
-msgstr ""
+msgstr "Kann die Stream Url nicht durchsuchen, versuchen Sie es später nocheinmal"
 
 #: movreel.h:85
 msgid "The file that you requested could not be found"
-msgstr ""
+msgstr "Die Datei die Sie angefordert haben konnte nicht gefunden werden."
 
 #: movreel.h:91
 msgid "No such file No such user exist File not found"
-msgstr ""
+msgstr "Die Datei oder der Benutzer existiert nicht mehr."
 
 #: movshare.h:78 movshare.h:163
 msgid "The video no longer exists"
-msgstr ""
+msgstr "Dieses Video existiert nicht mehr."
 
 #: multiepg.h:445 multiepg.h:635
 msgid "MULTI EPG - Bouquets"
@@ -3687,7 +3687,7 @@ msgstr ""
 
 #: played.h:90
 msgid "This video has been deleted. We apologize for the inconvenience."
-msgstr ""
+msgstr "Dieses Video wurde gelöscht. Wir entschuldigen uns für die Unannehmlichkeiten."
 
 #: play.h:396 play.h:430 plugins_imdbapi_skin.xml.h:9
 #: plugins_imdb_skin.xml.h:9 plugins_tmc_skin.xml.h:16
@@ -3794,7 +3794,7 @@ msgstr "Suche diesen Titel bei Xvideos (local)"
 
 #: play.h:645
 msgid "Search on FilmOn (local)"
-msgstr ""
+msgstr "Suche diesen Titel bei FilmOn (local)"
 
 #: play.h:647
 msgid "Search on Netzkino (local)"
@@ -3850,11 +3850,11 @@ msgstr "Suche diesen Titel bei VOX-Now (local)"
 
 #: play.h:660
 msgid "Search on RtlNitro-Now (local)"
-msgstr ""
+msgstr "Suche diesen Titel bei RtlNitro-Now (local)"
 
 #: play.h:661
 msgid "Search on NTV-Now (local)"
-msgstr ""
+msgstr "Suche diesen Titel bei NTV-Now (local)"
 
 #: play.h:662
 msgid "Search on InternetTv (local)"
@@ -3895,7 +3895,7 @@ msgstr "Löschen"
 
 #: play.h:1391 skin_default_skin.xml.h:212
 msgid "EPG"
-msgstr ""
+msgstr "Epg"
 
 #: play.h:1391
 msgid "SORT"
@@ -4922,7 +4922,7 @@ msgstr "TiThek Menü"
 
 #: plugins_tithek_skin.xml.h:2 skins_tithek_skin.xml.h:2
 msgid "TiThek Settings"
-msgstr "TiThek"
+msgstr "TiThek Einstellungen"
 
 #: plugins_tithek_skin.xml.h:3 skins_tithek_skin.xml.h:3 tithek.h:1541
 #: tithek.h:2131
@@ -4951,15 +4951,15 @@ msgstr "Menü Titel"
 
 #: plugins_tithek_skin.xml.h:9 skins_tithek_skin.xml.h:9
 msgid "Mle-HD Pass"
-msgstr ""
+msgstr "Mle-HD Passwort"
 
 #: plugins_tithek_skin.xml.h:10 skins_tithek_skin.xml.h:10
 msgid "Mle-HD User"
-msgstr ""
+msgstr "Mle-HD Benutzername"
 
 #: plugins_tithek_skin.xml.h:11 skins_tithek_skin.xml.h:11
 msgid "Pic Link"
-msgstr ""
+msgstr "Bild Link"
 
 #: plugins_tithek_skin.xml.h:12 skins_tithek_skin.xml.h:12
 msgid "Pic Ratio"
@@ -5134,23 +5134,23 @@ msgstr ""
 
 #: plugins_wm2014_skin.xml.h:8 skins_wm2014_skin.xml.h:8
 msgid "Draw"
-msgstr ""
+msgstr "Unentschieden"
 
 #: plugins_wm2014_skin.xml.h:9 skins_wm2014_skin.xml.h:9
 msgid "Goals"
-msgstr ""
+msgstr "Tore"
 
 #: plugins_wm2014_skin.xml.h:10 skins_wm2014_skin.xml.h:10
 msgid "Lost"
-msgstr ""
+msgstr "Verloren"
 
 #: plugins_wm2014_skin.xml.h:11 skins_wm2014_skin.xml.h:11
 msgid "Played"
-msgstr ""
+msgstr "Gespielt"
 
 #: plugins_wm2014_skin.xml.h:12 skins_wm2014_skin.xml.h:12
 msgid "Points"
-msgstr ""
+msgstr "Punkte"
 
 #: plugins_wm2014_skin.xml.h:13 skin_default_skin.xml.h:506
 #: skins_wm2014_skin.xml.h:13 softcam.h:292
@@ -5159,15 +5159,15 @@ msgstr "Aktualisieren"
 
 #: plugins_wm2014_skin.xml.h:14 skins_wm2014_skin.xml.h:14
 msgid "Team"
-msgstr ""
+msgstr "Gruppe"
 
 #: plugins_wm2014_skin.xml.h:15 skins_wm2014_skin.xml.h:15
 msgid "Team 1"
-msgstr ""
+msgstr "Gruppe 1"
 
 #: plugins_wm2014_skin.xml.h:16 skins_wm2014_skin.xml.h:16
 msgid "Team 2"
-msgstr ""
+msgstr "Gruppe 2"
 
 #: plugins_wm2014_skin.xml.h:17 skins_wm2014_skin.xml.h:17
 msgid "Time"
@@ -5175,15 +5175,15 @@ msgstr "Uhrzeit"
 
 #: plugins_wm2014_skin.xml.h:18 skins_wm2014_skin.xml.h:18
 msgid "vs"
-msgstr ""
+msgstr "gegen"
 
 #: plugins_wm2014_skin.xml.h:19 skins_wm2014_skin.xml.h:19
 msgid "will be set by plugin"
-msgstr ""
+msgstr "wird vom Plugin eingestellt"
 
 #: plugins_wm2014_skin.xml.h:20 skins_wm2014_skin.xml.h:20
 msgid "Won"
-msgstr ""
+msgstr "Gewonnen"
 
 #: plugins_xupnpd_skin.xml.h:1 skins_xupnpd_skin.xml.h:1
 msgid "Here you can make your xupnpd autostart settings."
@@ -5845,7 +5845,7 @@ msgstr "Lade stmdvb.ko mit der camRouting Option"
 
 #: settings_autostart.h:594
 msgid "ntpdate"
-msgstr ""
+msgstr "Automatisch die Uhrzeit aus dem Internet laden"
 
 #: settings_bluebutton.h:6
 msgid "Blue Key Action - Setup"
@@ -5918,11 +5918,11 @@ msgstr ""
 
 #: shootmain.html:91
 msgid "only OSD"
-msgstr ""
+msgstr "nur Osd Bild"
 
 #: shootmain.html:92
 msgid "only TV"
-msgstr ""
+msgstr "nur Tv Bild"
 
 #: shootmain.html:93
 msgid "OSD+TV"
@@ -5930,11 +5930,11 @@ msgstr ""
 
 #: shootmain.html:97
 msgid "OSD Screenshot"
-msgstr ""
+msgstr "Osd Bildschirmfoto"
 
 #: shootmain.html:102
 msgid "Automatic update"
-msgstr ""
+msgstr "Automatisch Updaten"
 
 #: skinadjust.h:27
 msgid "border"
@@ -6451,11 +6451,11 @@ msgstr "CI-Module"
 
 #: skin_default_skin.xml.h:151
 msgid "Community Pass"
-msgstr ""
+msgstr "Community Passwort"
 
 #: skin_default_skin.xml.h:152
 msgid "Community User"
-msgstr ""
+msgstr "Community Benutzername"
 
 #: skin_default_skin.xml.h:153
 msgid "Configure"
@@ -6475,7 +6475,7 @@ msgstr "zu Favoriten kopieren"
 
 #: skin_default_skin.xml.h:157
 msgid "CPU"
-msgstr ""
+msgstr "Cpu"
 
 #: skin_default_skin.xml.h:158
 msgid "Create Default Favorites"
@@ -6583,7 +6583,7 @@ msgstr "DiSEqC"
 
 #: skin_default_skin.xml.h:192
 msgid "DNS Name"
-msgstr ""
+msgstr "Dns Name"
 
 #: skin_default_skin.xml.h:193
 msgid "dnsserver 1"
@@ -6595,7 +6595,7 @@ msgstr "DNS-Server 2"
 
 #: skin_default_skin.xml.h:195
 msgid "DNS System"
-msgstr ""
+msgstr "Dns System"
 
 #: skin_default_skin.xml.h:197
 msgid "Download"
@@ -6611,7 +6611,7 @@ msgstr "Nederlands"
 
 #: skin_default_skin.xml.h:202
 msgid "DYNDNS Settings"
-msgstr "DYNDNS"
+msgstr "Dyndns"
 
 #: skin_default_skin.xml.h:203
 msgid "e"
@@ -6647,7 +6647,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:213
 msgid "EPG button on EPG Screen"
-msgstr "EPG Taste im EPG"
+msgstr "Epg Taste im Epg"
 
 #: skin_default_skin.xml.h:214
 msgid "Epgfreespace (KB)"
@@ -6667,15 +6667,15 @@ msgstr "Aktualisierungszeit"
 
 #: skin_default_skin.xml.h:218
 msgid "EPG Reset"
-msgstr "EPG löschen"
+msgstr "Epg löschen"
 
 #: skin_default_skin.xml.h:219
 msgid "EPG Save Mode"
-msgstr "EPG Daten sichern"
+msgstr "Epg Daten sichern"
 
 #: skin_default_skin.xml.h:220
 msgid "EPG Scanlist"
-msgstr "EPG Scanliste"
+msgstr "Epg Scanliste"
 
 #: skin_default_skin.xml.h:221
 msgid "EPG Search"
@@ -6683,11 +6683,11 @@ msgstr "Suche"
 
 #: skin_default_skin.xml.h:222
 msgid "EPG Settings"
-msgstr "EPG"
+msgstr "Epg Einstellungen"
 
 #: skin_default_skin.xml.h:223
 msgid "EPG SHORT VIEW"
-msgstr "EPG-Kurzübersicht"
+msgstr "Epg-Kurzübersicht"
 
 #: skin_default_skin.xml.h:226
 msgid "Extensions"
@@ -7649,7 +7649,7 @@ msgstr "bitte warten"
 
 #: skin_default_skin.xml.h:463
 msgid "Plot"
-msgstr ""
+msgstr "Handlung"
 
 #: skin_default_skin.xml.h:464
 msgid "Plugin Button"
@@ -7841,7 +7841,7 @@ msgstr "Wiederherstellen"
 
 #: skin_default_skin.xml.h:528
 msgid "RGUID Port"
-msgstr ""
+msgstr "Rguid Port"
 
 #: skin_default_skin.xml.h:529
 msgid "Rolloff"
@@ -8073,7 +8073,7 @@ msgstr "Español"
 
 #: skin_default_skin.xml.h:611
 msgid "SSID"
-msgstr ""
+msgstr "Ssid"
 
 #: skin_default_skin.xml.h:612 system_update.h:88 system_update.h:210
 msgid "stable"
@@ -8253,7 +8253,7 @@ msgstr "Temperatur"
 
 #: skin_default_skin.xml.h:668
 msgid "Titan Changelog"
-msgstr ""
+msgstr "Titan Änderungs History (Changelog)"
 
 #: skin_default_skin.xml.h:670
 msgid "TITLE"
@@ -8309,7 +8309,7 @@ msgstr "Transponder auswählen"
 
 #: skin_default_skin.xml.h:684
 msgid "TSID:"
-msgstr ""
+msgstr "Tsid:"
 
 #: skin_default_skin.xml.h:687
 msgid "Tuner:"
@@ -8345,7 +8345,7 @@ msgstr "Zwei Stufen Stummschaltung"
 
 #: skin_default_skin.xml.h:696
 msgid "TXT PID:"
-msgstr ""
+msgstr "Txt Pid:"
 
 #: skin_default_skin.xml.h:699
 msgid "Type:"
@@ -8477,7 +8477,7 @@ msgstr "Wartezeit für CI-Module"
 
 #: skin_default_skin.xml.h:739
 msgid "WLAN Settings"
-msgstr "WLAN"
+msgstr "Wlan"
 
 #: skin_default_skin.xml.h:740
 msgid "Writer"
@@ -8707,15 +8707,15 @@ msgstr "Liste aktuell genutzter Streams, OK zum Stoppen"
 
 #: sudoku.c:167
 msgid "left"
-msgstr ""
+msgstr "links"
 
 #: sudoku.c:168
 msgid "center"
-msgstr ""
+msgstr "mittig"
 
 #: sudoku.c:169
 msgid "right"
-msgstr ""
+msgstr "rechts"
 
 #: system_backup.h:15
 msgid ""
@@ -8888,7 +8888,7 @@ msgstr "Beta Feed"
 
 #: system_update.h:123
 msgid "non-version"
-msgstr ""
+msgstr "keine Version"
 
 #: system_update.h:283
 msgid "starting Full Update ?"
@@ -8916,7 +8916,7 @@ msgstr "Eingabe Feld"
 
 #: timer.html:9
 msgid "Timer List"
-msgstr ""
+msgstr "Timer Liste"
 
 #: timer.html:10
 msgid "Timer Archiv"
@@ -8924,7 +8924,7 @@ msgstr ""
 
 #: timer.html:11
 msgid "Add Timer"
-msgstr ""
+msgstr "Neuen Timer hinzufügen"
 
 #: timeshift.h:113
 msgid "Should Timeshift File deleted ?"
@@ -8952,7 +8952,7 @@ msgstr ""
 
 #: timeshiftsettings.h:50
 msgid "permanent"
-msgstr ""
+msgstr "dauerhaft"
 
 #: timeshiftsettings.h:53
 msgid "ask"
@@ -9537,7 +9537,7 @@ msgid "--orgname--"
 msgstr ""
 
 #: tmdb.h:842
-msgid "--rating--"
+msgid "--Bewertung--"
 msgstr ""
 
 #: tmdb.h:845
@@ -9546,7 +9546,7 @@ msgstr "( --Stimmen-- )"
 
 #: tmdb.h:886
 msgid "Result List"
-msgstr ""
+msgstr "Gefundene Liste"
 
 #: tmdb.h:886
 msgid "Choose your Title from the following list"
@@ -9594,7 +9594,7 @@ msgstr "Unbekannt!"
 
 #: tpchoice.h:81
 msgid "SR"
-msgstr ""
+msgstr "Sr"
 
 #: tpchoice.h:87
 msgid "POS"
@@ -9602,7 +9602,7 @@ msgstr "Position"
 
 #: tpk_description.h:1
 msgid "AAF MediaCenter the best multimedia Player on sh4."
-msgstr "Der beste Mediaplayer für die sh4 Plattform"
+msgstr "Der beste Mediaplayer für die sh4/mipsel Plattform"
 
 #: tpk_description.h:2
 msgid ""
@@ -10085,7 +10085,7 @@ msgstr "Test (Nightly) Version 7209"
 
 #: tpk_description.h:116
 msgid "Openvpn Server Tool for external Network access"
-msgstr ""
+msgstr "Openvpn Server Tool für externen Netzwerkzugriff"
 
 #: tpk_description.h:117
 msgid "optimize Plugin"
@@ -10134,16 +10134,16 @@ msgstr "Sat: uljanow Senderliste Sat 19.2 und 13.0"
 #: tpk_description.h:128
 msgid ""
 "Screensaver FC Bayern pictures for MediaCenter Audioplayer and Radioplayer."
-msgstr ""
+msgstr "Bildschirmschoner FC-Bayern f�r den Mediacenter (Audioplayer und Radioplayer)"
 
 #: tpk_description.h:129
 msgid ""
 "Screensaver Hot Girls pictures for MediaCenter Audioplayer and Radioplayer."
-msgstr ""
+msgstr "Bildschirmschoner Hot-Girls f�r den Mediacenter (Audioplayer und Radioplayer)"
 
 #: tpk_description.h:130
 msgid "Screensaver pictures for MediaCenter Audioplayer and Radioplayer."
-msgstr ""
+msgstr "Bildschirmschoner f�r den Mediacenter (Audioplayer und Radioplayer)"
 
 #: tpk_description.h:131
 msgid "scriptexec Plugin"
@@ -10151,7 +10151,7 @@ msgstr "Eigene Skripte (/mnt/scripts) ausführen"
 
 #: tpk_description.h:132
 msgid "Settings 19.2e Astra 13.0e Hotbird 0.8w Thor 23.5w Astra KabelD"
-msgstr ""
+msgstr "Senderlisten 19.2e Astra 13.0e Hotbird 0.8w Thor 23.5w Astra KabelD"
 
 #: tpk_description.h:133
 msgid "Skin 0Acht5Zehn in black for tiTan. Please use black Picons."
@@ -10167,23 +10167,23 @@ msgstr "Skin 0Acht5Zehn weiß für weisse Picons"
 
 #: tpk_description.h:136
 msgid "Skin tobayer01 for tiTan. Please use grey Picons."
-msgstr ""
+msgstr "Skin tobayer01 für Titan"
 
 #: tpk_description.h:137
 msgid "Skin ufs912 for tiTan. Use white Picons."
-msgstr ""
+msgstr "Skin ufs912 für die weissen Picons"
 
 #: tpk_description.h:138
 msgid "smartTV Skin. Please use alternate Picons."
-msgstr ""
+msgstr "Skin 0Acht5Zehn für die alternativen Picons"
 
 #: tpk_description.h:139
 msgid "Social Network Client for Facebook."
-msgstr ""
+msgstr "Sozial Netzwerk Klient für Facebook"
 
 #: tpk_description.h:140
 msgid "Stable Version of OSCam V13unten"
-msgstr ""
+msgstr "Stabile Version der Oscam V13 unten."
 
 #: tpk_description.h:141
 msgid "stock Plugin"
