@@ -644,6 +644,7 @@ void gotdata(int* connfd)
 			if(ostrstr(filename, ".html") != NULL)
 			{
 				translate = 1;
+				debug(250, "#### buf1 ##################################");
 				debug(250, "filename: %s", filename);
 				debug(250, "fullfilename: %s/%s", getconfig("httpdpath", NULL), filename);				
 				debug(250, "buf1: %s", buf);
@@ -655,8 +656,10 @@ void gotdata(int* connfd)
 			{
 				readret = dvbreadfd(filefd, buf, 0, MINMALLOC, 1000, 0);
 				if(translate == 1)
+				{
+					debug(250, "#### buf2 ##################################");
 					debug(250, "buf2: %s", buf);
-
+				}	
 				if(translate == 1)
 				{
 					while(ostrstr(buf, "_\(\"") != NULL)
@@ -665,18 +668,18 @@ void gotdata(int* connfd)
 						char* tmpstr2 = ostrcat("_(\"", tmpstr1, 0, 0);
 						tmpstr2 = ostrcat(tmpstr2, "\")", 1, 0);
 
-						debug(250, "######################################");
+						debug(250, "--------------------------------------");
 						debug(250, "Search  string: %s", tmpstr2);
 						debug(250, "Replace string: %s", tmpstr1);
 						debug(250, "Replace %s -> %s", tmpstr2, tmpstr1);
-						debug(250, "######################################");
+						debug(250, "--------------------------------------");
 	
 						buf = string_replace_all(tmpstr2, _(tmpstr1), buf, 1);
 						free(tmpstr1), tmpstr1 = NULL;
 						free(tmpstr2), tmpstr2 = NULL;
 					}
-
-					debug(250, "buf3....................: %s", buf);		
+					debug(250, "#### buf3 ##################################");
+					debug(250, "buf3: %s", buf);		
 				}
 				if(readret > 0)
 					socksend(connfd, buf, readret, 5000 * 1000);
