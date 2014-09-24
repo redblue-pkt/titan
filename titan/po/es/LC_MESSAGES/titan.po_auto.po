@@ -950,9 +950,9 @@ msgstr "No se puede quitar el servicio activo"
 msgid "Channels A-Z"
 msgstr "Canales A-Z"
 
-#: channellist.html:10
-msgid "All"
-msgstr ""
+#: channellist.html:10 httpdfunc.h:4860 skin_default_skin.xml.h:71
+msgid "ALL"
+msgstr "Todo"
 
 #: channellist.html:13 httpdfunc.h:4869 skin_default_skin.xml.h:98
 #: tithek_mainmenu.h:14
@@ -2215,10 +2215,6 @@ msgstr "Tiempo de espera despues de tratar de llenar bufer"
 #: httpdfunc.h:4577 skin_default_skin.xml.h:199
 msgid "Dualboot Menu TitanNit / E2"
 msgstr ""
-
-#: httpdfunc.h:4860 skin_default_skin.xml.h:71
-msgid "ALL"
-msgstr "Todo"
 
 #: hwtest.h:88
 msgid "testtransponder not found"

@@ -945,9 +945,9 @@ msgstr ""
 msgid "Channels A-Z"
 msgstr ""
 
-#: channellist.html:10
-msgid "All"
-msgstr ""
+#: channellist.html:10 httpdfunc.h:4860 skin_default_skin.xml.h:71
+msgid "ALL"
+msgstr "Все"
 
 #: channellist.html:13 httpdfunc.h:4869 skin_default_skin.xml.h:98
 #: tithek_mainmenu.h:14
@@ -2151,10 +2151,6 @@ msgstr ""
 #: httpdfunc.h:4577 skin_default_skin.xml.h:199
 msgid "Dualboot Menu TitanNit / E2"
 msgstr ""
-
-#: httpdfunc.h:4860 skin_default_skin.xml.h:71
-msgid "ALL"
-msgstr "Все"
 
 #: hwtest.h:88
 msgid "testtransponder not found"
