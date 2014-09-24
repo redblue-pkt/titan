@@ -2401,47 +2401,54 @@ msgstr ""
 msgid "DYNDNS now stopped"
 msgstr ""
 
-#: index.atemio510.html:3
+#: index.atemio510.html:3 index.atemio7600.html:3
 msgid "TitanNit Web Control"
 msgstr ""
 
-#: index.atemio510.html:52
+#: index.atemio510.html:52 index.atemio7600.html:52
 msgid "Channel List"
 msgstr ""
 
-#: index.atemio510.html:53
+#: index.atemio510.html:53 index.atemio7600.html:53
 msgid "Boxcontrol"
 msgstr ""
 
-#: index.atemio510.html:54
+#: index.atemio510.html:54 index.atemio7600.html:54
 msgid "Movies"
 msgstr ""
 
-#: index.atemio510.html:55 skin_default_skin.xml.h:657
+#: index.atemio510.html:55 index.atemio7600.html:55
+#: skin_default_skin.xml.h:657
 msgid "Timer"
 msgstr "Таймер"
 
-#: index.atemio510.html:56 plugins_mc_skin.xml.h:53 plugins_panel_skin.xml.h:5
-#: plugins_panel_skin.xml.h:22 skin_default_skin.xml.h:576
-#: skins_mc_skin.xml.h:53 skins_panel_skin.xml.h:5 skins_panel_skin.xml.h:22
+#: index.atemio510.html:56 index.atemio7600.html:56 plugins_mc_skin.xml.h:53
+#: plugins_panel_skin.xml.h:5 plugins_panel_skin.xml.h:22
+#: skin_default_skin.xml.h:576 skins_mc_skin.xml.h:53 skins_panel_skin.xml.h:5
+#: skins_panel_skin.xml.h:22
 msgid "Settings"
 msgstr "Настройки"
 
-#: index.atemio510.html:57 info.h:27 plugins_tmc_skin.xml.h:9
-#: skins_tmc_skin.xml.h:9 titan.c:979
+#: index.atemio510.html:57 index.atemio7600.html:57 info.h:27
+#: plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9 titan.c:979
 msgid "Info"
 msgstr "Инфо"
 
-#: index.atemio510.html:58 skin_default_skin.xml.h:1
+#: index.atemio510.html:58 index.atemio7600.html:58 skin_default_skin.xml.h:1
 msgid "Help"
 msgstr ""
 
-#: index.atemio510.html:143
+#: index.atemio510.html:143 index.atemio7600.html:144
 msgid "switch to original remote"
 msgstr ""
 
-#: index.atemio510.html:145
+#: index.atemio510.html:145 index.atemio7600.html:146
+#: index.atemio7600.html:205
 msgid "open in new window"
+msgstr ""
+
+#: index.atemio7600.html:203
+msgid "switch to virtual remote"
 msgstr ""
 
 #: infobar.h:497 mc_audioplayer.h:333 mc_main.h:273 mc_pictureplayer.h:124
