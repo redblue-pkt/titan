@@ -952,9 +952,9 @@ msgstr "Aktiver Sender kann nicht gelöscht werden!"
 msgid "Channels A-Z"
 msgstr "Sender A-Z"
 
-#: channellist.html:10
-msgid "All"
-msgstr ""
+#: channellist.html:10 httpdfunc.h:4860 skin_default_skin.xml.h:71
+msgid "ALL"
+msgstr "Alle"
 
 #: channellist.html:13 httpdfunc.h:4869 skin_default_skin.xml.h:98
 #: tithek_mainmenu.h:14
@@ -2210,10 +2210,6 @@ msgstr "Wiedergabepuffer - Zeit bis zum automatischen laden nach einem Seek"
 #: httpdfunc.h:4577 skin_default_skin.xml.h:199
 msgid "Dualboot Menu TitanNit / E2"
 msgstr "Dualboot Menü TitanNit / E2"
-
-#: httpdfunc.h:4860 skin_default_skin.xml.h:71
-msgid "ALL"
-msgstr "Alle"
 
 #: hwtest.h:88
 msgid "testtransponder not found"
