@@ -105,7 +105,7 @@ msgstr ""
 #: skins_facebook_skin.xml.h:5 skins_mboxinfo_skin.xml.h:2
 #: skins_mc_skin.xml.h:38 skins_optimize_skin.xml.h:3 skins_rgui_skin.xml.h:3
 #: skins_sudoku_skin.xml.h:13 skins_tiwakeup_skin.xml.h:3
-#: skins_wins3_skin.xml.h:3 sock.h:954 softcam.h:403 solarmovie.h:35
+#: skins_wins3_skin.xml.h:3 sock.h:952 softcam.h:403 solarmovie.h:35
 #: solarmovie.h:47 solarmovie.h:304 spinner.h:18 stopifnotused.c:31
 #: streamcloud.h:31 streamcloud.h:74 streamcloud.h:84 streamcloud.h:97
 #: streamcloud.h:128 streamcloud.h:167 stream.h:33 system_backup_restore.h:31
@@ -211,7 +211,7 @@ msgstr ""
 #: skins_mc_skin.xml.h:22 skins_optimize_skin.xml.h:2
 #: skins_panel_skin.xml.h:15 skins_rgui_skin.xml.h:2
 #: skins_stopifnotused_skin.xml.h:4 skins_sudoku_skin.xml.h:7
-#: skins_tiwakeup_skin.xml.h:2 skins_wins3_skin.xml.h:1 sock.h:954
+#: skins_tiwakeup_skin.xml.h:2 skins_wins3_skin.xml.h:1 sock.h:952
 #: softcam.h:403 solarmovie.h:35 solarmovie.h:47 solarmovie.h:304 spinner.h:18
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:84
 #: streamcloud.h:97 streamcloud.h:128 streamcloud.h:167 stream.h:33
@@ -604,7 +604,7 @@ msgstr ""
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:31
 #: scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1640 scan.h:1888
 #: scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 service.h:712 service.h:957
-#: skinadjust.h:199 skinselector.h:218 sock.h:954 softcam.h:403
+#: skinadjust.h:199 skinselector.h:218 sock.h:952 softcam.h:403
 #: solarmovie.h:35 solarmovie.h:47 solarmovie.h:304 spinner.h:18
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:84
 #: streamcloud.h:97 streamcloud.h:128 streamcloud.h:167 stream.h:33
@@ -8290,7 +8290,7 @@ msgid ""
 "Can't change to selected skin."
 msgstr ""
 
-#: sock.h:952
+#: sock.h:950
 msgid "Download finished!"
 msgstr ""
 
