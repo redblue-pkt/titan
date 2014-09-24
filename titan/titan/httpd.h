@@ -644,7 +644,8 @@ void gotdata(int* connfd)
 					
 					free(fullfilename), fullfilename = NULL;
 					fullfilename = ostrcat("/tmp/.", filename, 0, 0);
-					writesys(fullfilename, tmphtml, 0);	
+					writesys(fullfilename, tmphtml, 0);
+					free(tmphtml), tmphtml = NULL;
 				}
 			}
 
