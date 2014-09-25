@@ -569,7 +569,7 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 			newnode->height = convertxmlentry(ret, &newnode->prozheight);
 			free(ret);
 		}
-		// disable skinadjust is verry slow...
+		// disable skinadjust is verry slow... atemio6200 ??
 		if(checkbox("ATEMIO5200") != 1)
 		{
 			ret = getxmlentry(line, " picwidth=");

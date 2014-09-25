@@ -145,7 +145,7 @@ void screenavsettings(int flag)
 	setchoiceboxselection(audiosource, ret);
 	free(ret); ret = NULL;
 
-	if(checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO5200") == 1)
+	if(checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO5200") == 1 || checkbox("ATEMIO6200") == 1)
 		audiosource->hidden = YES;
 
 	addchoicebox(ac3default, "0", _("no"));
@@ -166,7 +166,7 @@ void screenavsettings(int flag)
 	setchoiceboxselection(aacmode, ret);
 	free(ret); ret = NULL;
 
-	if(checkbox("ATEMIO-NEMESIS") != 1 && checkbox("ATEMIO5200") != 1)
+	if(checkbox("ATEMIO-NEMESIS") != 1 && checkbox("ATEMIO5200") != 1 && checkbox("ATEMIO6200") != 1)
 		aacmode->hidden = YES;
 	
 	changeinput(volautochangevalue, "0\n5\n10\n15\n20\n25\n30\n35\n40\n45\n50\n55\n60\n65\n70\n75");

@@ -271,7 +271,7 @@ void screensystem_update(int mode)
 						if(file_exist("/etc/.beta") && file_exist("/var/swap/logs"))
 							cmd = ostrcat(cmd, " > /var/swap/logs/update_debug.log 2>&1", 1, 0);		
 					}
-					else if(checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1 || checkbox("UFS912") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("ATEMIO5200") == 1 || checkbox("ATEMIO-NEMESIS") == 1)
+					else if(checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1 || checkbox("UFS912") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("ATEMIO5200") == 1 || checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO6200") == 1 || checkbox("ATEMIO6200") == 1)
 					{
 						if(!file_exist("/mnt/logs"))
 							 mkdir("/mnt/logs", 777);
@@ -301,7 +301,7 @@ void screensystem_update(int mode)
 						if(file_exist("/etc/.beta") && file_exist("/var/swap/logs"))
 							cmd = ostrcat(cmd, " > /var/swap/logs/update_debug.log 2>&1", 1, 0);		
 					}
-					else if(checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1 || checkbox("UFS912") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("ATEMIO5200") == 1 || checkbox("ATEMIO-NEMESIS") == 1)
+					else if(checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1 || checkbox("UFS912") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("ATEMIO5200") == 1 || checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO6200") == 1)
 					{
 						if(!file_exist("/mnt/logs"))
 							 mkdir("/mnt/logs", 777);
