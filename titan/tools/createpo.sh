@@ -91,9 +91,17 @@ for ROUND in $POLIST; do
 
 		echo "[createpo.sh] msgmerge $ROUND_UTF $ROUND_NEW > $ROUND_NEW_MERGE"
 		msgmerge $ROUND_UTF $ROUND_NEW > $ROUND_NEW_MERGE
+##################################
+		ROUND_NEW_MERGE_FIRST=`echo $ROUND | sed 's!titan.po_auto.po!titan.new.merge.first.po!'`
+		ROUND_NEW_MERGE_SECOND=`echo $ROUND | sed 's!titan.po_auto.po!titan.new.merge.second.po!'`
+
+		echo "[createpo.sh] msgmerge $ROUND_NEW $ROUND_UTF > $ROUND_NEW_MERGE_FIRST"
+		msgmerge $ROUND_NEW $ROUND_UTF > $ROUND_NEW_MERGE_FIRST
+		echo "[createpo.sh] msgmerge $ROUND_NEW_MERGE_FIRST $ROUND_NEW > $ROUND_NEW_MERGE_SECOND"
+		msgmerge $ROUND_NEW_MERGE_FIRST $ROUND_NEW > $ROUND_NEW_MERGE_SECOND
+##################################		
 		if [ ! -e "$ROUND_NEW_MERGE" ] || [ `cat "$ROUND_NEW_MERGE" | wc -l` -eq 0 ]; then error="7"; break;fi
 ###
-
 
 use_edit_po=0
 if [ "$use_edit_po" = "1" ];then
