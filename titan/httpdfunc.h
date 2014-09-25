@@ -4571,7 +4571,7 @@ printf("webadjust fmt: %d\n",fmt);
 	sendstr = ostrcat(sendstr, ", playerbufferseektime.value", 1 , 0);
 	
 ///////////////////	
-	if(checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO5200") == 1)
+	if(checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO5200") == 1 || checkbox("ATEMIO6200") == 1)
 	{
 		ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
 		ostrcatbig(&buf, _("Dualboot Menu TitanNit / E2"), &maxlen, &pos);

@@ -667,7 +667,7 @@ int main(int argc, char *argv[])
 			destroy();
 			exit(100);
 		}
-		if((checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO5200") == 1 || checkbox("UFS913") == 1) && checkhighflash() != 0)
+		if((checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO5200") == 1 || checkbox("UFS913") == 1 || checkbox("ATEMIO6200") == 1) && checkhighflash() != 0)
 		{
 			printf("error: 7\n");		
 			destroy();

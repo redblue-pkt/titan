@@ -246,7 +246,7 @@ void screenadjust()
 	changemask(community_pass, "abcdefghijklmnopqrstuvwxyz");
 	changeinput(community_pass, getconfig("community_pass", NULL));
 
-	if(checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO5200") == 1)
+	if(checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO5200") == 1 || checkbox("ATEMIO6200") == 1)
 		dualboot->hidden = NO;
 	else
 		dualboot->hidden = YES;
@@ -392,7 +392,7 @@ void screenadjust()
 					setsataswitch(sataswitch->ret);
 				}
 			}
-			if(checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO5200") == 1)
+			if(checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO5200") == 1 || checkbox("ATEMIO6200") == 1)
 			{
 				addconfigscreen("dualboot", dualboot);
 				if(dualboot->ret != NULL && ostrcmp(dualboot->ret, "0") == 0)

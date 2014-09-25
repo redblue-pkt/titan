@@ -123,7 +123,7 @@ char* getinstallpath(char* path, char* size)
 	
 	if(size != NULL) isize = atoi(size);
 	
-//	if(checkbox("ATEMIO-NEMESIS") != 1 && checkbox("ATEMIO5200") != 1)
+//	if(checkbox("ATEMIO-NEMESIS") != 1 && checkbox("ATEMIO5200") != 1 && checkbox("ATEMIO6200") != 1)
 //	{
 		if(path == NULL || path[0] == '*' || ostrstr(path, "mnt") != NULL)
 		{
