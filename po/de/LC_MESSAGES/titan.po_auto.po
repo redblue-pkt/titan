@@ -3923,11 +3923,11 @@ msgstr ""
 
 #: playurl.html:13
 msgid "Real URL with http://"
-msgstr ""
+msgstr "Direkte Stream Url mit http://"
 
 #: playurl.html:33
 msgid "Tithek Hoster URL with http://"
-msgstr ""
+msgstr "Tithek Hoster Url mit http://"
 
 #: plugins_autotimer_skin.xml.h:1 skins_autotimer_skin.xml.h:1
 msgid "AutoTimer Settings"
