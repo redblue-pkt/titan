@@ -938,8 +938,8 @@ msgid "Copy satlist not ok"
 msgstr ""
 
 #: channellist.h:1006
-msgid "Can't remove active Service"
-msgstr ""
+msgid "Can't remove akive Service"
+msgstr "il canale corrente non puo essere cancellato"
 
 #: channellist.h:1296 channellist.h:1297
 msgid "Channels A-Z"
@@ -1053,8 +1053,8 @@ msgid "DiSEqC 1.3 (USALS)"
 msgstr ""
 
 #: diseqcconfig.h:132
-msgid "Toneburst A/B"
-msgstr ""
+msgid "Tonburst A/B"
+msgstr "Tone Burst"
 
 #: diseqcconfig.h:135 diseqcconfig.h:140 diseqcconfig.h:159 transponder.h:222
 #: transponder.h:232 transponder.h:329 transponder.h:347 transponder.h:374
