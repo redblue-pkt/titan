@@ -11773,6 +11773,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid "Can't remove akive Service"
-#~ msgstr "Không thể xóa dịch vụ hiện tại"
