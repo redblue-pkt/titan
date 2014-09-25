@@ -129,7 +129,7 @@ void screendiseqc(char* feshortname, char* diseqcnr)
 	addchoicebox(diseqcmode, "1", _("DiSEqC 1.1"));
 	addchoicebox(diseqcmode, "2", _("DiSEqC 1.2"));
 	addchoicebox(diseqcmode, "3", _("DiSEqC 1.3 (USALS)"));
-	addchoicebox(diseqcmode, "100", _("Tonburst A/B"));
+	addchoicebox(diseqcmode, "100", _("Toneburst A/B"));
 
 	changeinput(toneburst, NULL);
 	addchoicebox(toneburst, "0", _("none"));
