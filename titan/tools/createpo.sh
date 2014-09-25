@@ -28,7 +28,8 @@ for ROUND in $LIST; do
 done
 
 for ROUND in $HLIST; do
-	cat $ROUND | sed 's/_(/\ntmpstr = _(/g' | grep ^"tmpstr = _(" | sed 's/").*/");/g' >> "$HOME"/flashimg/source.titan/titan/tools/tmp/webif_`echo $ROUND | sed 's/.html//g'`.h
+	FILENAME=`echo $ROUND | sed 's/.html//g' | tr '/' '\n' | tail -n1`
+	cat $ROUND | sed 's/_(/\ntmpstr = _(/g' | grep ^"tmpstr = _(" | sed 's/").*/");/g' >> "$HOME"/flashimg/source.titan/titan/tools/tmp/webif_$FILENAME.h
 done
 
 cd "$HOME"/flashimg/source.titan/titan/tools/tmp
