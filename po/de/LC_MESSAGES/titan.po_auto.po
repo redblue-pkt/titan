@@ -10051,17 +10051,17 @@ msgstr "Sat: uljanow Senderliste Sat 19.2 und 13.0"
 msgid ""
 "Screensaver FC Bayern pictures for MediaCenter Audioplayer and Radioplayer."
 msgstr ""
-"Bildschirmschoner FC-Bayern für den Mediacenter (Audioplayer und Radioplayer)"
+"Bildschirmschoner FC-Bayern fÃ¼r den Mediacenter (Audioplayer und Radioplayer)"
 
 #: tpk_description.h:129
 msgid ""
 "Screensaver Hot Girls pictures for MediaCenter Audioplayer and Radioplayer."
 msgstr ""
-"Bildschirmschoner Hot-Girls für den Mediacenter (Audioplayer und Radioplayer)"
+"Bildschirmschoner Hot-Girls fÃ¼r den Mediacenter (Audioplayer und Radioplayer)"
 
 #: tpk_description.h:130
 msgid "Screensaver pictures for MediaCenter Audioplayer and Radioplayer."
-msgstr "Bildschirmschoner für den Mediacenter (Audioplayer und Radioplayer)"
+msgstr "Bildschirmschoner fÃ¼r den Mediacenter (Audioplayer und Radioplayer)"
 
 #: tpk_description.h:131
 msgid "scriptexec Plugin"
