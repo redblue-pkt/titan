@@ -626,6 +626,11 @@ void gotdata(int* connfd)
 					while(ostrstr(tmphtml, "_\(\"") != NULL)
 					{
 						char* tmpstr1 = string_resub("_(\"", "\")", tmphtml, 0);
+						if(tmpstr1 == NULL)
+						{
+							debug(250, "Skip  string: %s", tmpstr1);
+							break;
+						}
 						char* tmpstr2 = ostrcat("_(\"", tmpstr1, 0, 0);
 						tmpstr2 = ostrcat(tmpstr2, "\")", 1, 0);
 	
