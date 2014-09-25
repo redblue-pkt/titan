@@ -12205,8 +12205,8 @@ msgid "Real URL with http://"
 msgstr "Direkte Stream Url mit http://"
 
 #: webif_playurl.h:4
-msgid "Tithek Hoster URL with http:// "
-msgstr "Tithek Hoster Url mit http:// (youtube/myvideo/streamcould/usw...)"
+msgid "Tithek Hoster URL with http://"
+msgstr ""
 
 #: webif_shootmain.h:1
 msgid "Screenshot create"
@@ -12291,3 +12291,6 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
+
+#~ msgid "Tithek Hoster URL with http:// "
+#~ msgstr "Tithek Hoster Url mit http:// (youtube/myvideo/streamcould/usw...)"
