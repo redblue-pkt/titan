@@ -29,18 +29,21 @@ done
 
 for ROUND in $HLIST; do
 	FILENAME=`echo $ROUND | sed 's/.html//g' | tr '/' '\n' | tail -n1`
+	echo "[createpo] webif update $ROUND"
+	echo "[createpo] webif update $FILENAME"
+
 	cat $ROUND | sed 's/_(/\ntmpstr = _(/g' | grep ^"tmpstr = _(" | sed 's/").*/");/g' >> "$HOME"/flashimg/source.titan/titan/tools/tmp/webif_$FILENAME.h
 done
 
 cd "$HOME"/flashimg/source.titan/titan/tools/tmp
 
 for ROUND in $SKINLIST; do
-	echo "[create.skin] update $ROUND"
+	echo "[createpo] skin update $ROUND"
 	NAME=`echo $ROUND | tr "/" "\n" | tail -n1`
 	SECTION1=`echo $ROUND | tr "/" "\n" | tail -n3 | head -n1`
 	SECTION2=`echo $ROUND | tr "/" "\n" | tail -n2 | head -n1`
 
-	echo "[create.skin] $SECTION1_$SECTION2_$NAME.h"
+	echo "[createpo] skin " "$SECTION1"_"$SECTION2"_"$NAME".h
 	cp "$HOME"/flashimg/source.titan/titan/tools/dummy "$HOME"/flashimg/source.titan/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME".h
 
 	cat $ROUND | grep title= | sed 's/title=/\ntitle=/' | grep ^title= | cut -d '"' -f2 | sort -u | sed '/^ *$/d' | tr '\n' '#' | sed 's/#\+/\");\ntmpstr = _(\"\ /g'| sed 's/" /"/' >>"$HOME"/flashimg/source.titan/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME".h
