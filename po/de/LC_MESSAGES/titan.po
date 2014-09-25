@@ -57,7 +57,7 @@ msgstr "Wollen Sie die Partition prüfen?\n"
 "Die Box wird danach neu gestartet."
 
 msgid "A record hdd or a swapstick must be mounted!"
-msgstr "Es muss eine Festplatte oder ein USB-Stick eingebunden sein"
+msgstr "Es muss eine Festplatte oder ein USB-Stick eingebunden sein."
 
 msgid "A/V Settings"
 msgstr "Bild/Ton Einstellungen"
