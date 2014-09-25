@@ -299,7 +299,7 @@ msgstr "Informationsleiste"
 
 #: adjust.h:69 httpdfunc.h:3606 webif_help.h:26
 msgid "epg"
-msgstr "Epg"
+msgstr "EPG"
 
 #: adjust.h:70 epgsettings.h:138 httpdfunc.h:3613
 msgid "Channel EPG"
@@ -3842,7 +3842,7 @@ msgstr "Löschen"
 #: webif_index.atemio510.h:65 webif_index.atemio510.h:116
 #: webif_index.atemio7600.h:65 webif_index.atemio7600.h:82
 msgid "EPG"
-msgstr "Epg"
+msgstr "EPG"
 
 #: play.h:1391
 msgid "SORT"
@@ -6582,7 +6582,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:213
 msgid "EPG button on EPG Screen"
-msgstr "Epg Taste im Epg"
+msgstr "EPG Taste im EPG"
 
 #: skin_default_skin.xml.h:214
 msgid "Epgfreespace (KB)"
@@ -6602,15 +6602,15 @@ msgstr "Aktualisierungszeit"
 
 #: skin_default_skin.xml.h:218
 msgid "EPG Reset"
-msgstr "Epg löschen"
+msgstr "EPG löschen"
 
 #: skin_default_skin.xml.h:219
 msgid "EPG Save Mode"
-msgstr "Epg Daten sichern"
+msgstr "EPG Daten sichern"
 
 #: skin_default_skin.xml.h:220
 msgid "EPG Scanlist"
-msgstr "Epg Scanliste"
+msgstr "EPG Scanliste"
 
 #: skin_default_skin.xml.h:221 webif_index.atemio510.h:17
 #: webif_index.atemio7600.h:15
@@ -6619,11 +6619,11 @@ msgstr "Suche"
 
 #: skin_default_skin.xml.h:222
 msgid "EPG Settings"
-msgstr "Epg Einstellungen"
+msgstr "EPG Einstellungen"
 
 #: skin_default_skin.xml.h:223
 msgid "EPG SHORT VIEW"
-msgstr "Epg-Kurzübersicht"
+msgstr "EPG-Kurzübersicht"
 
 #: skin_default_skin.xml.h:226
 msgid "Extensions"
@@ -11464,7 +11464,7 @@ msgstr ""
 
 #: webif_boxcontrol.h:3
 msgid "Remote"
-msgstr ""
+msgstr "Fernbedienung"
 
 #: webif_boxcontrol.h:4
 msgid "Screenshot All"
@@ -11480,19 +11480,19 @@ msgstr ""
 
 #: webif_boxcontrol.h:7
 msgid "Play Movie (URL)"
-msgstr ""
+msgstr "Film absoielen (URL)"
 
 #: webif_boxcontrol.h:8
 msgid "Stream Config (iOS)"
-msgstr ""
+msgstr "Stream Konfiguration (iOS)"
 
 #: webif_help.h:1
 msgid "Offline Help"
-msgstr ""
+msgstr "Offline Hilfe"
 
 #: webif_help.h:2
 msgid "Online Help"
-msgstr ""
+msgstr "Online Hilfe (Wiki)"
 
 #: webif_help.h:3
 msgid "3dsettings"
@@ -11536,7 +11536,7 @@ msgstr "Caidlock"
 
 #: webif_help.h:13
 msgid "channelbynr"
-msgstr "Channelbynr"
+msgstr "Senderliste (nummeriert)"
 
 #: webif_help.h:14
 msgid "channelhistory"
@@ -11544,7 +11544,7 @@ msgstr "Sender Verlauf"
 
 #: webif_help.h:15
 msgid "channellist"
-msgstr "Kanalliste"
+msgstr "Senderliste"
 
 #: webif_help.h:16
 msgid "channelmenu"
@@ -11572,15 +11572,15 @@ msgstr "Download"
 
 #: webif_help.h:23
 msgid "epgscanlist"
-msgstr "Epg Suchliste"
+msgstr "EPG Suchliste"
 
 #: webif_help.h:24
 msgid "epgsearch"
-msgstr "Epg Suche"
+msgstr "EPG Suche"
 
 #: webif_help.h:25
 msgid "epgsettings"
-msgstr "Epg Einstellungen"
+msgstr "EPG Einstellungen"
 
 #: webif_help.h:27
 msgid "extensionsmenu"
@@ -11588,7 +11588,7 @@ msgstr "Erweiterungsmenü"
 
 #: webif_help.h:28
 msgid "gmultiepg"
-msgstr "Grafisches-Epg"
+msgstr "Grafisches-EPG"
 
 #: webif_help.h:29
 msgid "harddisk_main"
@@ -11692,7 +11692,7 @@ msgstr "Multi-EPG"
 
 #: webif_help.h:55
 msgid "mute"
-msgstr "Lautlos"
+msgstr "Stumm"
 
 #: webif_help.h:56
 msgid "networkmenu"
@@ -11712,7 +11712,7 @@ msgstr "Nummerisches Eingabefeld"
 
 #: webif_help.h:61
 msgid "ownpos"
-msgstr "Tuner Ownpos"
+msgstr "Eigene Position"
 
 #: webif_help.h:62
 msgid "panel_settings_fancontrol"
@@ -11800,7 +11800,7 @@ msgstr "EPG-Kurzübersicht"
 
 #: webif_help.h:85
 msgid "singleepg"
-msgstr "Einfach (EPG)"
+msgstr "Einfach EPG"
 
 #: webif_help.h:86
 msgid "skinadjust"
@@ -11820,7 +11820,7 @@ msgstr "Spinner"
 
 #: webif_help.h:90
 msgid "standbymenu"
-msgstr "Standby Menu"
+msgstr "Standby Menü"
 
 #: webif_help.h:92
 msgid "subtitle"
@@ -11920,7 +11920,7 @@ msgstr "Receiver freischalten"
 
 #: webif_help.h:116
 msgid "vfdisplay"
-msgstr "Vfdisplay"
+msgstr "VF-Display"
 
 #: webif_help.h:117
 msgid "videomode"
@@ -11952,45 +11952,45 @@ msgstr ""
 
 #: webif_index.atemio510.h:3
 msgid "Show/Hide Remote Control"
-msgstr ""
+msgstr "Zeige/Verstecke Fernbedienung"
 
 #: webif_index.atemio510.h:8 webif_index.atemio7600.h:6
 msgid "Start Record"
-msgstr ""
+msgstr "Aufnahme starten"
 
 #: webif_index.atemio510.h:9 webif_index.atemio7600.h:7
 msgid "Show Signal Infos"
-msgstr ""
+msgstr "Zeige Signalqualität"
 
 #: webif_index.atemio510.h:10 webif_index.atemio7600.h:8
 msgid "Channel List"
-msgstr ""
+msgstr "Senderliste"
 
 #: webif_index.atemio510.h:11 webif_index.atemio7600.h:9
 msgid "Boxcontrol"
-msgstr ""
+msgstr "Steuerung"
 
 #: webif_index.atemio510.h:12 webif_index.atemio7600.h:10
 msgid "Movies"
-msgstr ""
+msgstr "Filme"
 
 #: webif_index.atemio510.h:19 webif_index.atemio510.h:70
 #: webif_index.atemio7600.h:17 webif_index.atemio7600.h:99
 msgid "Page Up"
-msgstr ""
+msgstr "Seite rauf"
 
 #: webif_index.atemio510.h:20 webif_index.atemio510.h:71
 #: webif_index.atemio7600.h:100
 msgid "Page Down"
-msgstr ""
+msgstr "Seite runter"
 
 #: webif_index.atemio510.h:22 webif_index.atemio510.h:73
 msgid "PiP List"
-msgstr ""
+msgstr "PiP Liste"
 
 #: webif_index.atemio510.h:23 webif_index.atemio510.h:74
 msgid "PiP Swap"
-msgstr ""
+msgstr "Pip tauschen"
 
 #: webif_index.atemio510.h:24 webif_index.atemio510.h:75
 #: webif_index.atemio7600.h:23
@@ -12000,12 +12000,12 @@ msgstr ""
 #: webif_index.atemio510.h:25 webif_index.atemio510.h:76
 #: webif_index.atemio7600.h:19 webif_index.atemio7600.h:117
 msgid "TV / Radio"
-msgstr ""
+msgstr "TV/Radio"
 
 #: webif_index.atemio510.h:26 webif_index.atemio510.h:77
 #: webif_index.atemio7600.h:25 webif_index.atemio7600.h:110
 msgid "Next"
-msgstr ""
+msgstr "Nächste"
 
 #: webif_index.atemio510.h:27
 msgid "Las"
@@ -12193,7 +12193,7 @@ msgstr ""
 
 #: webif_message.h:1 webif_playurl.h:2 webif_playurl.h:5
 msgid "Send"
-msgstr ""
+msgstr "Senden"
 
 #: webif_message.h:2 webif_playurl.h:3 webif_playurl.h:6
 #: webif_streamconfig.h:7
@@ -12202,23 +12202,23 @@ msgstr ""
 
 #: webif_playurl.h:1
 msgid "Real URL with http://"
-msgstr ""
+msgstr "Tatsächliche URL (http://...)"
 
 #: webif_playurl.h:4
 msgid "Tithek Hoster URL with http://"
-msgstr ""
+msgstr "Tithek Hoster URL (http://...)"
 
 #: webif_shootmain.h:1
 msgid "Screenshot create"
-msgstr ""
+msgstr "erstelle Screenshot"
 
 #: webif_shootmain.h:2
 msgid "only OSD"
-msgstr ""
+msgstr "nur OSD"
 
 #: webif_shootmain.h:3
 msgid "only TV"
-msgstr ""
+msgstr "nur TV"
 
 #: webif_shootmain.h:4
 msgid "OSD+TV"
@@ -12230,7 +12230,7 @@ msgstr ""
 
 #: webif_shootmain.h:6
 msgid "Automatic update"
-msgstr ""
+msgstr "Automatisches Update"
 
 #: webif_streamconfig.h:1
 msgid "Player"
@@ -12258,7 +12258,7 @@ msgstr ""
 
 #: webif_timer.h:1
 msgid "Timer List"
-msgstr ""
+msgstr "Timer Liste"
 
 #: webif_timer.h:2
 msgid "Timer Archiv"
@@ -12266,7 +12266,7 @@ msgstr ""
 
 #: webif_timer.h:3
 msgid "Add Timer"
-msgstr ""
+msgstr "Timer hinzufügen"
 
 #: xupnpd.h:29
 msgid "autostart"
