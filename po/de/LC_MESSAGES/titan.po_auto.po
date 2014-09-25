@@ -11414,453 +11414,453 @@ msgstr "Wetter: "
 msgid "Location"
 msgstr "Ort"
 
-#: webif_help.h:119
-msgid "wlansettings"
-msgstr "WLAN"
-
-#: webif_help.h:118
-msgid "webdir"
-msgstr "Webdir"
-
-#: webif_help.h:117
-msgid "volume"
-msgstr "Lautstärke"
-
-#: webif_help.h:116
-msgid "videosettings"
-msgstr "Bild Einstellungen"
-
-#: webif_help.h:115
-msgid "videomode"
-msgstr "Audio/Video"
-
-#: webif_help.h:114
-msgid "vfdisplay"
-msgstr "Vfdisplay"
-
-#: webif_help.h:113
-msgid "unlock"
-msgstr "Receiver freischalten"
-
-#: webif_help.h:112
-msgid "tunerreceptiondvbt"
-msgstr "DVB-T Tuner einstellen"
-
-#: webif_help.h:111
-msgid "tunerreceptiondvbs"
-msgstr "DVB-S Tuner einstellen"
-
-#: webif_help.h:110
-msgid "tunerreceptiondvbc"
-msgstr "DVB-C Tuner einstellen"
-
-#: webif_help.h:109
-msgid "tunerconfig"
-msgstr "Tunerauswahl"
-
-#: webif_help.h:108
-msgid "tpkinstall"
-msgstr "Tpk Installation"
-
-#: webif_help.h:107
-msgid "timezone"
-msgstr "Zeitzone"
-
-#: webif_help.h:106
-msgid "timeshift"
-msgstr "Timeshift"
-
-#: webif_help.h:105
-msgid "timeshiftsettings"
-msgstr "Timeshift"
-
-#: webif_help.h:104
-msgid "timermenu"
-msgstr "Timer"
-
-#: webif_help.h:103
-msgid "textinput"
-msgstr "Virtuelle Tastatur"
-
-#: webif_help.h:102
-msgid "textinputhist"
-msgstr "Virtuelle Tastatur mit History"
-
-#: webif_help.h:101
-msgid "systemupdate_usb_tmp_menu"
-msgstr "USB Systemaktualisierung (Lokal)"
-
-#: webif_help.h:100
-msgid "systemupdate_usb_online_menu"
-msgstr "USB Systemaktualisierung (Online)"
-
-#: webif_help.h:99
-msgid "systemupdatemenu"
-msgstr "Systemaktualisierung Menü"
-
-#: webif_help.h:98
-msgid "systemupdate_flash_tmp_menu"
-msgstr "Softwareaktualisierung (Lokal)"
-
-#: webif_help.h:97
-msgid "systemupdate_flash_online_menu"
-msgstr "Softwareaktualisierung (Online)"
-
-#: webif_help.h:96
-msgid "system_sysinfos_main"
-msgstr "System Sysinfos Hauptmenü"
-
-#: webif_help.h:95
-msgid "systemmenu"
-msgstr "System Menü"
-
-#: webif_help.h:94
-msgid "systeminfo"
-msgstr "System Information"
-
-#: webif_help.h:93
-msgid "system_infos_main"
-msgstr "System Information Hauptmenü"
-
-#: webif_help.h:92
-msgid "system_backup"
-msgstr "Sichern"
-
-#: webif_help.h:91
-msgid "system_backup_restore"
-msgstr "Einstellungen sichern/wiederherstellen"
-
-#: webif_help.h:90
-msgid "subtitle"
-msgstr "Untertitel"
-
-#: webif_help.h:88
-msgid "standbymenu"
-msgstr "Standby Menu"
-
-#: webif_help.h:87
-msgid "spinner"
-msgstr "Spinner"
-
-#: webif_help.h:86
-msgid "softcam"
-msgstr "Softcam"
-
-#: webif_help.h:85
-msgid "skinselect"
-msgstr "Skinauswahl"
-
-#: webif_help.h:84
-msgid "skinadjust"
-msgstr "Skin Einstellungen"
-
-#: webif_help.h:83
-msgid "singleepg"
-msgstr "Einfach (EPG)"
-
-#: webif_help.h:82
-msgid "shortepg"
-msgstr "EPG-Kurzübersicht"
-
-#: webif_help.h:81
-msgid "settingsmenu"
-msgstr "Einstellungsmenü"
-
-#: webif_help.h:80
-msgid "serviceinfo"
-msgstr "Sender Info"
-
-#: webif_help.h:78
-msgid "screensaveradjust"
-msgstr "Bildschirmschoner"
-
-#: webif_help.h:76
-msgid "satfinder"
-msgstr "Empfangsqualität"
-
-#: webif_help.h:75
-msgid "resolutionsettings"
-msgstr "Auflösung Einstellungen"
-
-#: webif_help.h:74
-msgid "rectimer"
-msgstr "Timer"
-
-#: webif_help.h:73
-msgid "rectimerext"
-msgstr "Timer Ext"
-
-#: webif_help.h:72
-msgid "recordpath"
-msgstr "Aufnahmepfad"
-
-#: webif_help.h:71
-msgid "recordlist"
-msgstr "Timer Liste"
-
-#: webif_help.h:70
-msgid "recordduration"
-msgstr "Aufnahme (Länge)"
-
-#: webif_help.h:69
-msgid "quickmenu"
-msgstr "Schnellstart"
-
-#: webif_help.h:68
-msgid "powerofftimerscreen"
-msgstr "Ausschalttimer"
-
-#: webif_help.h:67
-msgid "possetup"
-msgstr "Tuner Positions Einstellungen"
-
-#: webif_help.h:66
-msgid "plugin"
-msgstr "Erweiterung"
-
-#: webif_help.h:65
-msgid "playlist"
-msgstr "Wiedergabeliste"
-
-#: webif_help.h:64
-msgid "playlist_main"
-msgstr "Wiedergabeliste Menü"
-
-#: webif_help.h:63
-msgid "playinfobar"
-msgstr "Wiedergabe Informationsleiste"
-
-#: webif_help.h:62
-msgid "pin"
-msgstr "Pin"
-
-#: webif_help.h:61
-msgid "pincheck"
-msgstr "Pin Check"
-
-#: webif_help.h:60
-msgid "panel_settings_fancontrol"
-msgstr "Lüftersteuerung"
-
-#: webif_help.h:59
-msgid "ownpos"
-msgstr "Tuner Ownpos"
-
-#: webif_help.h:58
-msgid "numinput"
-msgstr "Nummerisches Eingabefeld"
-
-#: webif_help.h:57
-msgid "newsletter"
-msgstr "Aktuelle Meldungen"
-
-#: webif_help.h:55
-msgid "network_test"
-msgstr "Netzwerk Test"
-
-#: webif_help.h:54
-msgid "networkmenu"
-msgstr "Netzwerk Menü"
-
-#: webif_help.h:53
-msgid "mute"
-msgstr "Lautlos"
-
-#: webif_help.h:52
-msgid "multiepg"
-msgstr "Multi-EPG"
-
-#: webif_help.h:51
-msgid "moduleconfig"
-msgstr "CI-Module (Menü)"
-
-#: webif_help.h:50
-msgid "moduleadjust"
-msgstr "CI-Module"
-
-#: webif_help.h:49
-msgid "messagebox"
-msgstr "Mitteilungen"
-
-#: webif_help.h:48
-msgid "menuprotect"
-msgstr "Menü Schützen"
-
-#: webif_help.h:47
-msgid "menulist"
-msgstr "Menüliste"
-
-#: webif_help.h:46
-msgid "mediadbsettings"
-msgstr "MediaDB Einstellungen"
-
-#: webif_help.h:45
-msgid "mediadbedit"
-msgstr "MediaDB bearbeiten"
-
-#: webif_help.h:44
-msgid "marker"
-msgstr "Marker"
-
-#: webif_help.h:43
-msgid "manualscan"
-msgstr "Manuelle Suche"
-
-#: webif_help.h:42
-msgid "mainmenu"
-msgstr "Hauptmenü"
-
-#: webif_help.h:41
-msgid "log"
-msgstr "Log"
-
-#: webif_help.h:40
-msgid "logo"
-msgstr "Logo"
-
-#: webif_help.h:39
-msgid "lnbscreen"
-msgstr "Lnb EInstellungen"
-
-#: webif_help.h:38
-msgid "listedit"
-msgstr "Senderliste Editor"
-
-#: webif_help.h:37
-msgid "linkedchannel"
-msgstr "Linkedchannel"
-
-#: webif_help.h:36
-msgid "language"
-msgstr "Sprache"
-
-#: webif_help.h:35
-msgid "interfacelist"
-msgstr "Netzwerkliste"
-
-#: webif_help.h:34
-msgid "infomenu"
-msgstr "Infomenü"
-
-#: webif_help.h:32
-msgid "infobar2"
-msgstr "Informationsleiste 2"
-
-#: webif_help.h:31
-msgid "inadynsettings"
-msgstr "Indyn Einstellungen"
-
-#: webif_help.h:30
-msgid "httpdsettings"
-msgstr "HTTP Einstellungen"
-
-#: webif_help.h:29
-msgid "helpbox"
-msgstr "Hilfebox"
-
-#: webif_help.h:28
-msgid "harddiskmenu"
-msgstr "Festplatten Menü"
-
-#: webif_help.h:27
-msgid "harddisk_main"
-msgstr "Festplatten Hauptmenü"
-
-#: webif_help.h:26
-msgid "gmultiepg"
-msgstr "Grafisches-Epg"
-
-#: webif_help.h:25
-msgid "extensionsmenu"
-msgstr "Erweiterungsmenü"
-
-#: webif_help.h:23
-msgid "epgsettings"
-msgstr "Epg Einstellungen"
-
-#: webif_help.h:22
-msgid "epgsearch"
-msgstr "Epg Suche"
-
-#: webif_help.h:21
-msgid "epgscanlist"
-msgstr "Epg Suchliste"
-
-#: webif_help.h:20
-msgid "download"
-msgstr "Download"
-
-#: webif_help.h:18
-msgid "dir"
-msgstr "Dateiliste"
-
-#: webif_help.h:17
-msgid "dirsort"
-msgstr "Sortierung"
-
-#: webif_help.h:16
-msgid "dirlabel"
-msgstr "Verzeichnisname"
-
-#: webif_help.h:15
-msgid "channelslotlist"
-msgstr "CI Schacht Senderzuordnung"
-
-#: webif_help.h:14
-msgid "channelmenu"
-msgstr "Senderliste Menü"
-
-#: webif_help.h:13
-msgid "channellist"
-msgstr "Kanalliste"
-
-#: webif_help.h:12
-msgid "channelhistory"
-msgstr "Sender Verlauf"
-
-#: webif_help.h:11
-msgid "channelbynr"
-msgstr "Channelbynr"
-
-#: webif_help.h:10
-msgid "caidlock"
-msgstr "Caidlock"
-
-#: webif_help.h:9
-msgid "bouquetlist"
-msgstr "Favoriten Liste"
-
-#: webif_help.h:8
-msgid "blindscanadjust"
-msgstr "Blindscan"
-
-#: webif_help.h:7
-msgid "bgdownload"
-msgstr "Hintergrund Download"
-
-#: webif_help.h:6
-msgid "avsettings"
-msgstr "AV-Einstellungen"
-
-#: webif_help.h:5
-msgid "autores"
-msgstr "Autoresolution"
-
-#: webif_help.h:4
-msgid "audiotrack"
-msgstr "Tonspur"
-
-#: webif_help.h:3
-msgid "aspectsettings"
-msgstr "Seitenverhältnis"
+#: webif_help.h:1
+msgid "3dsettings"
+msgstr "3D Einstellungen"
 
 #: webif_help.h:2
 msgid "adjust"
 msgstr "Erweiterte Einstellungen"
 
-#: webif_help.h:1
-msgid "3dsettings"
-msgstr "3D Einstellungen"
+#: webif_help.h:3
+msgid "aspectsettings"
+msgstr "Seitenverhältnis"
+
+#: webif_help.h:4
+msgid "audiotrack"
+msgstr "Tonspur"
+
+#: webif_help.h:5
+msgid "autores"
+msgstr "Autoresolution"
+
+#: webif_help.h:6
+msgid "avsettings"
+msgstr "AV-Einstellungen"
+
+#: webif_help.h:7
+msgid "bgdownload"
+msgstr "Hintergrund Download"
+
+#: webif_help.h:8
+msgid "blindscanadjust"
+msgstr "Blindscan"
+
+#: webif_help.h:9
+msgid "bouquetlist"
+msgstr "Favoriten Liste"
+
+#: webif_help.h:10
+msgid "caidlock"
+msgstr "Caidlock"
+
+#: webif_help.h:11
+msgid "channelbynr"
+msgstr "Channelbynr"
+
+#: webif_help.h:12
+msgid "channelhistory"
+msgstr "Sender Verlauf"
+
+#: webif_help.h:13
+msgid "channellist"
+msgstr "Kanalliste"
+
+#: webif_help.h:14
+msgid "channelmenu"
+msgstr "Senderliste Menü"
+
+#: webif_help.h:15
+msgid "channelslotlist"
+msgstr "CI Schacht Senderzuordnung"
+
+#: webif_help.h:16
+msgid "dirlabel"
+msgstr "Verzeichnisname"
+
+#: webif_help.h:17
+msgid "dirsort"
+msgstr "Sortierung"
+
+#: webif_help.h:18
+msgid "dir"
+msgstr "Dateiliste"
+
+#: webif_help.h:20
+msgid "download"
+msgstr "Download"
+
+#: webif_help.h:21
+msgid "epgscanlist"
+msgstr "Epg Suchliste"
+
+#: webif_help.h:22
+msgid "epgsearch"
+msgstr "Epg Suche"
+
+#: webif_help.h:23
+msgid "epgsettings"
+msgstr "Epg Einstellungen"
+
+#: webif_help.h:25
+msgid "extensionsmenu"
+msgstr "Erweiterungsmenü"
+
+#: webif_help.h:26
+msgid "gmultiepg"
+msgstr "Grafisches-Epg"
+
+#: webif_help.h:27
+msgid "harddisk_main"
+msgstr "Festplatten Hauptmenü"
+
+#: webif_help.h:28
+msgid "harddiskmenu"
+msgstr "Festplatten Menü"
+
+#: webif_help.h:29
+msgid "helpbox"
+msgstr "Hilfebox"
+
+#: webif_help.h:30
+msgid "httpdsettings"
+msgstr "HTTP Einstellungen"
+
+#: webif_help.h:31
+msgid "inadynsettings"
+msgstr "Indyn Einstellungen"
+
+#: webif_help.h:32
+msgid "infobar2"
+msgstr "Informationsleiste 2"
+
+#: webif_help.h:34
+msgid "infomenu"
+msgstr "Infomenü"
+
+#: webif_help.h:35
+msgid "interfacelist"
+msgstr "Netzwerkliste"
+
+#: webif_help.h:36
+msgid "language"
+msgstr "Sprache"
+
+#: webif_help.h:37
+msgid "linkedchannel"
+msgstr "Linkedchannel"
+
+#: webif_help.h:38
+msgid "listedit"
+msgstr "Senderliste Editor"
+
+#: webif_help.h:39
+msgid "lnbscreen"
+msgstr "Lnb EInstellungen"
+
+#: webif_help.h:40
+msgid "logo"
+msgstr "Logo"
+
+#: webif_help.h:41
+msgid "log"
+msgstr "Log"
+
+#: webif_help.h:42
+msgid "mainmenu"
+msgstr "Hauptmenü"
+
+#: webif_help.h:43
+msgid "manualscan"
+msgstr "Manuelle Suche"
+
+#: webif_help.h:44
+msgid "marker"
+msgstr "Marker"
+
+#: webif_help.h:45
+msgid "mediadbedit"
+msgstr "MediaDB bearbeiten"
+
+#: webif_help.h:46
+msgid "mediadbsettings"
+msgstr "MediaDB Einstellungen"
+
+#: webif_help.h:47
+msgid "menulist"
+msgstr "Menüliste"
+
+#: webif_help.h:48
+msgid "menuprotect"
+msgstr "Menü Schützen"
+
+#: webif_help.h:49
+msgid "messagebox"
+msgstr "Mitteilungen"
+
+#: webif_help.h:50
+msgid "moduleadjust"
+msgstr "CI-Module"
+
+#: webif_help.h:51
+msgid "moduleconfig"
+msgstr "CI-Module (Menü)"
+
+#: webif_help.h:52
+msgid "multiepg"
+msgstr "Multi-EPG"
+
+#: webif_help.h:53
+msgid "mute"
+msgstr "Lautlos"
+
+#: webif_help.h:54
+msgid "networkmenu"
+msgstr "Netzwerk Menü"
+
+#: webif_help.h:55
+msgid "network_test"
+msgstr "Netzwerk Test"
+
+#: webif_help.h:57
+msgid "newsletter"
+msgstr "Aktuelle Meldungen"
+
+#: webif_help.h:58
+msgid "numinput"
+msgstr "Nummerisches Eingabefeld"
+
+#: webif_help.h:59
+msgid "ownpos"
+msgstr "Tuner Ownpos"
+
+#: webif_help.h:60
+msgid "panel_settings_fancontrol"
+msgstr "Lüftersteuerung"
+
+#: webif_help.h:61
+msgid "pincheck"
+msgstr "Pin Check"
+
+#: webif_help.h:62
+msgid "pin"
+msgstr "Pin"
+
+#: webif_help.h:63
+msgid "playinfobar"
+msgstr "Wiedergabe Informationsleiste"
+
+#: webif_help.h:64
+msgid "playlist_main"
+msgstr "Wiedergabeliste Menü"
+
+#: webif_help.h:65
+msgid "playlist"
+msgstr "Wiedergabeliste"
+
+#: webif_help.h:66
+msgid "plugin"
+msgstr "Erweiterung"
+
+#: webif_help.h:67
+msgid "possetup"
+msgstr "Tuner Positions Einstellungen"
+
+#: webif_help.h:68
+msgid "powerofftimerscreen"
+msgstr "Ausschalttimer"
+
+#: webif_help.h:69
+msgid "quickmenu"
+msgstr "Schnellstart"
+
+#: webif_help.h:70
+msgid "recordduration"
+msgstr "Aufnahme (Länge)"
+
+#: webif_help.h:71
+msgid "recordlist"
+msgstr "Timer Liste"
+
+#: webif_help.h:72
+msgid "recordpath"
+msgstr "Aufnahmepfad"
+
+#: webif_help.h:73
+msgid "rectimerext"
+msgstr "Timer Ext"
+
+#: webif_help.h:74
+msgid "rectimer"
+msgstr "Timer"
+
+#: webif_help.h:75
+msgid "resolutionsettings"
+msgstr "Auflösung Einstellungen"
+
+#: webif_help.h:76
+msgid "satfinder"
+msgstr "Empfangsqualität"
+
+#: webif_help.h:78
+msgid "screensaveradjust"
+msgstr "Bildschirmschoner"
+
+#: webif_help.h:80
+msgid "serviceinfo"
+msgstr "Sender Info"
+
+#: webif_help.h:81
+msgid "settingsmenu"
+msgstr "Einstellungsmenü"
+
+#: webif_help.h:82
+msgid "shortepg"
+msgstr "EPG-Kurzübersicht"
+
+#: webif_help.h:83
+msgid "singleepg"
+msgstr "Einfach (EPG)"
+
+#: webif_help.h:84
+msgid "skinadjust"
+msgstr "Skin Einstellungen"
+
+#: webif_help.h:85
+msgid "skinselect"
+msgstr "Skinauswahl"
+
+#: webif_help.h:86
+msgid "softcam"
+msgstr "Softcam"
+
+#: webif_help.h:87
+msgid "spinner"
+msgstr "Spinner"
+
+#: webif_help.h:88
+msgid "standbymenu"
+msgstr "Standby Menu"
+
+#: webif_help.h:90
+msgid "subtitle"
+msgstr "Untertitel"
+
+#: webif_help.h:91
+msgid "system_backup_restore"
+msgstr "Einstellungen sichern/wiederherstellen"
+
+#: webif_help.h:92
+msgid "system_backup"
+msgstr "Sichern"
+
+#: webif_help.h:93
+msgid "system_infos_main"
+msgstr "System Information Hauptmenü"
+
+#: webif_help.h:94
+msgid "systeminfo"
+msgstr "System Information"
+
+#: webif_help.h:95
+msgid "systemmenu"
+msgstr "System Menü"
+
+#: webif_help.h:96
+msgid "system_sysinfos_main"
+msgstr "System Sysinfos Hauptmenü"
+
+#: webif_help.h:97
+msgid "systemupdate_flash_online_menu"
+msgstr "Softwareaktualisierung (Online)"
+
+#: webif_help.h:98
+msgid "systemupdate_flash_tmp_menu"
+msgstr "Softwareaktualisierung (Lokal)"
+
+#: webif_help.h:99
+msgid "systemupdatemenu"
+msgstr "Systemaktualisierung Menü"
+
+#: webif_help.h:100
+msgid "systemupdate_usb_online_menu"
+msgstr "USB Systemaktualisierung (Online)"
+
+#: webif_help.h:101
+msgid "systemupdate_usb_tmp_menu"
+msgstr "USB Systemaktualisierung (Lokal)"
+
+#: webif_help.h:102
+msgid "textinputhist"
+msgstr "Virtuelle Tastatur mit History"
+
+#: webif_help.h:103
+msgid "textinput"
+msgstr "Virtuelle Tastatur"
+
+#: webif_help.h:104
+msgid "timermenu"
+msgstr "Timer"
+
+#: webif_help.h:105
+msgid "timeshiftsettings"
+msgstr "Timeshift"
+
+#: webif_help.h:106
+msgid "timeshift"
+msgstr "Timeshift"
+
+#: webif_help.h:107
+msgid "timezone"
+msgstr "Zeitzone"
+
+#: webif_help.h:108
+msgid "tpkinstall"
+msgstr "Tpk Installation"
+
+#: webif_help.h:109
+msgid "tunerconfig"
+msgstr "Tunerauswahl"
+
+#: webif_help.h:110
+msgid "tunerreceptiondvbc"
+msgstr "DVB-C Tuner einstellen"
+
+#: webif_help.h:111
+msgid "tunerreceptiondvbs"
+msgstr "DVB-S Tuner einstellen"
+
+#: webif_help.h:112
+msgid "tunerreceptiondvbt"
+msgstr "DVB-T Tuner einstellen"
+
+#: webif_help.h:113
+msgid "unlock"
+msgstr "Receiver freischalten"
+
+#: webif_help.h:114
+msgid "vfdisplay"
+msgstr "Vfdisplay"
+
+#: webif_help.h:115
+msgid "videomode"
+msgstr "Audio/Video"
+
+#: webif_help.h:116
+msgid "videosettings"
+msgstr "Bild Einstellungen"
+
+#: webif_help.h:117
+msgid "volume"
+msgstr "Lautstärke"
+
+#: webif_help.h:118
+msgid "webdir"
+msgstr "Webdir"
+
+#: webif_help.h:119
+msgid "wlansettings"
+msgstr "WLAN"
 
 #: xupnpd.h:29
 msgid "autostart"
@@ -11885,72 +11885,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid "PowerControl"
-#~ msgstr "Neustart/Ausschalten"
-
-#~ msgid "Remote"
-#~ msgstr "Fernbedienung"
-
-#~ msgid "Screenshot All"
-#~ msgstr "Bildschirmfoto (Alle)"
-
-#~ msgid "Screenshot Video"
-#~ msgstr "Bildschirmfoto (Video)"
-
-#~ msgid "Screenshot OSD"
-#~ msgstr "Bildschirmfoto (Osd)"
-
-#~ msgid "Play Movie (URL)"
-#~ msgstr "Internet Stream Player (Url)"
-
-#~ msgid "Stream Config (iOS)"
-#~ msgstr "Stream EInstellungen (iOS)"
-
-#~ msgid "Offline Help"
-#~ msgstr "Offline Hilfe"
-
-#~ msgid "TitanNit Web Control"
-#~ msgstr "TitanNit Web Kontrollpanel"
-
-#~ msgid "Channel List"
-#~ msgstr "Senderliste"
-
-#~ msgid "Boxcontrol"
-#~ msgstr "Box Steuern"
-
-#~ msgid "Movies"
-#~ msgstr "Aufnahmen"
-
-#~ msgid "switch to original remote"
-#~ msgstr "Zur Orginalen Fernbediehung wechseln"
-
-#~ msgid "open in new window"
-#~ msgstr "In seperaten Fenster öffnen"
-
-#~ msgid "Config Info"
-#~ msgstr "Information"
-
-#~ msgid "Real URL with http://"
-#~ msgstr "Direkte Stream Url mit http://"
-
-#~ msgid "Tithek Hoster URL with http://"
-#~ msgstr "Tithek Hoster Url mit http://"
-
-#~ msgid "only OSD"
-#~ msgstr "nur Osd Bild"
-
-#~ msgid "only TV"
-#~ msgstr "nur Tv Bild"
-
-#~ msgid "OSD Screenshot"
-#~ msgstr "Osd Bildschirmfoto"
-
-#~ msgid "Automatic update"
-#~ msgstr "Automatisch Updaten"
-
-#~ msgid "Timer List"
-#~ msgstr "Timer Liste"
-
-#~ msgid "Add Timer"
-#~ msgstr "Neuen Timer hinzufügen"
