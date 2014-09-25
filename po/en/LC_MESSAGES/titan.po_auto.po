@@ -943,8 +943,8 @@ msgid "Copy satlist not ok"
 msgstr "ATTENTION: Channels not copied"
 
 #: channellist.h:1006
-msgid "Can't remove akive Service"
-msgstr "Can't remove active Service"
+msgid "Can't remove active Service"
+msgstr ""
 
 #: channellist.h:1296 channellist.h:1297
 msgid "Channels A-Z"
@@ -11924,3 +11924,6 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Zapback is activated. Do you want to stop it?"
+
+#~ msgid "Can't remove akive Service"
+#~ msgstr "Can't remove active Service"
