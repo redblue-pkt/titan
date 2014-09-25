@@ -18,15 +18,19 @@ rm -rf "$HOME"/flashimg/source.titan/titan/tools/tmp
 mkdir -p "$HOME"/flashimg/source.titan/titan/tools/tmp
 
 LIST=`find "$HOME"/flashimg/source.titan/titan "$HOME"/flashimg/source.titan/plugins -type f -name "*.h"`
-#LIST="$LIST $HOME/flashimg/source.titan/titan/titan.c"
 LIST="$LIST "`find "$HOME"/flashimg/source.titan/titan "$HOME"/flashimg/source.titan/plugins -type f -name "*.c"`
-LIST="$LIST "`find "$HOME"/flashimg/source.titan/titan "$HOME"/flashimg/source.titan/web -type f -name "*.html"`
 POLIST=`find "$HOME"/flashimg/source.titan/po -type f -name "*_auto.po"`
 SKINLIST=`find "$HOME"/flashimg/source.titan -type f -name "*kin.xml"`
+HLIST=`find "$HOME"/flashimg/source.titan/web -type f -name "*.html"`
 
 for ROUND in $LIST; do
 	cp -a $ROUND "$HOME"/flashimg/source.titan/titan/tools/tmp
 done
+
+for ROUND in $HLIST; do
+	cat "$HOME"/flashimg/source.titan/web/"$ROUND" | sed 's/_(/\ntmpstr = _(/g' | grep ^"tmpstr = _(" | sed 's/").*/");/g' >> "$HOME"/flashimg/source.titan/titan/tools/tmp/webif_`echo $ROUND | sed 's/.html//g'`.h
+done
+
 cd "$HOME"/flashimg/source.titan/titan/tools/tmp
 
 for ROUND in $SKINLIST; do
