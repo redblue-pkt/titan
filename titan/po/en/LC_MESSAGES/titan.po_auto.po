@@ -1058,7 +1058,7 @@ msgid "DiSEqC 1.3 (USALS)"
 msgstr ""
 
 #: diseqcconfig.h:132
-msgid "Tonburst A/B"
+msgid "Toneburst A/B"
 msgstr ""
 
 #: diseqcconfig.h:135 diseqcconfig.h:140 diseqcconfig.h:159 transponder.h:222
