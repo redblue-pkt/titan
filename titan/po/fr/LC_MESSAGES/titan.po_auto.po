@@ -941,7 +941,7 @@ msgid "Copy satlist not ok"
 msgstr "copier la liste de satellite sans succès"
 
 #: channellist.h:1006
-msgid "Can't remove akive Service"
+msgid "Can't remove active Service"
 msgstr ""
 
 #: channellist.h:1296 channellist.h:1297

@@ -943,8 +943,8 @@ msgid "Copy satlist not ok"
 msgstr "Satelietlijst kopiëren niet gelukt"
 
 #: channellist.h:1006
-msgid "Can't remove akive Service"
-msgstr "Actuele zender kan niet gewist worden"
+msgid "Can't remove active Service"
+msgstr ""
 
 #: channellist.h:1296 channellist.h:1297
 msgid "Channels A-Z"
@@ -11872,3 +11872,6 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Zapback is reeds actief... Stoppen?"
+
+#~ msgid "Can't remove akive Service"
+#~ msgstr "Actuele zender kan niet gewist worden"
