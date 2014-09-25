@@ -3874,11 +3874,11 @@ msgid "Marker autoseek is stopped"
 msgstr "Markering automatisch zoeken is gestopt"
 
 #: playurl.html:13
-msgid "Real URL with http://</div"
+msgid "Real URL with http://"
 msgstr ""
 
 #: playurl.html:33
-msgid "Tithek Hoster URL with http://</div"
+msgid "Tithek Hoster URL with http://"
 msgstr ""
 
 #: plugins_autotimer_skin.xml.h:1 skins_autotimer_skin.xml.h:1
