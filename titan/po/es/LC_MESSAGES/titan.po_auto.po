@@ -12163,7 +12163,7 @@ msgstr ""
 #: webif_index.atemio5200.h:129 webif_index.atemio6200.h:73
 #: webif_index.atemio6200.h:129 webif_index.atemio7600.h:68
 #: webif_index.atemio7600.h:121 webif_index.atemio-nemesis.h:73
-#: webif_index.atemio-nemesis.h:129 webif_index.h:20
+#: webif_index.atemio-nemesis.h:129 webif_index.h:20 webif_index.h:23
 msgid "open in new window"
 msgstr ""
 
@@ -12544,6 +12544,7 @@ msgstr ""
 
 #: webif_index.atemio5200.h:128 webif_index.atemio6200.h:128
 #: webif_index.atemio7600.h:120 webif_index.atemio-nemesis.h:128
+#: webif_index.h:22
 msgid "switch to virtual remote"
 msgstr ""
 
