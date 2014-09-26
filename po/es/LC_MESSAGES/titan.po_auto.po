@@ -12167,8 +12167,14 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: webif_index.atemio510.h:27
-msgid "Las"
+#: webif_index.atemio510.h:27 webif_index.atemio510.h:78
+#: webif_index.atemio5200.h:30 webif_index.atemio5200.h:86
+#: webif_index.atemio6200.h:30 webif_index.atemio6200.h:86
+#: webif_index.atemio7600.h:26 webif_index.atemio7600.h:107
+#: webif_index.atemio-nemesis.h:30 webif_index.atemio-nemesis.h:86
+#: webif_rc.atemio510.h:11 webif_rc.atemio5200.h:13 webif_rc.atemio6200.h:13
+#: webif_rc.atemio7600.h:40 webif_rc.atemio-nemesis.h:13
+msgid "Last"
 msgstr ""
 
 #: webif_index.atemio510.h:29 webif_index.atemio510.h:80
@@ -12319,10 +12325,10 @@ msgid "Green"
 msgstr ""
 
 #: webif_index.atemio510.h:56 webif_index.atemio510.h:107
-#: webif_index.atemio5200.h:109 webif_index.atemio5200.h:53
+#: webif_index.atemio5200.h:53 webif_index.atemio5200.h:109
 #: webif_index.atemio6200.h:109 webif_index.atemio6200.h:53
 #: webif_index.atemio7600.h:55 webif_index.atemio7600.h:95
-#: webif_index.atemio-nemesis.h:109 webif_index.atemio-nemesis.h:53
+#: webif_index.atemio-nemesis.h:53 webif_index.atemio-nemesis.h:109
 #: webif_rc.atemio510.h:40 webif_rc.atemio5200.h:36 webif_rc.atemio6200.h:36
 #: webif_rc.atemio7600.h:28 webif_rc.atemio-nemesis.h:36
 #: webif_rc_virtual.atemio5200.h:27 webif_rc_virtual.atemio6200.h:27
@@ -12343,13 +12349,13 @@ msgid "Blue"
 msgstr ""
 
 #: webif_index.atemio510.h:58 webif_index.atemio510.h:109
-#: webif_index.atemio5200.h:33 webif_index.atemio5200.h:89
-#: webif_index.atemio5200.h:106 webif_index.atemio5200.h:50
+#: webif_index.atemio5200.h:33 webif_index.atemio5200.h:50
+#: webif_index.atemio5200.h:89 webif_index.atemio5200.h:106
 #: webif_index.atemio6200.h:33 webif_index.atemio6200.h:89
 #: webif_index.atemio6200.h:106 webif_index.atemio6200.h:50
 #: webif_index.atemio7600.h:57 webif_index.atemio7600.h:115
-#: webif_index.atemio-nemesis.h:33 webif_index.atemio-nemesis.h:89
-#: webif_index.atemio-nemesis.h:106 webif_index.atemio-nemesis.h:50
+#: webif_index.atemio-nemesis.h:33 webif_index.atemio-nemesis.h:50
+#: webif_index.atemio-nemesis.h:89 webif_index.atemio-nemesis.h:106
 #: webif_rc.atemio510.h:42 webif_rc.atemio5200.h:16 webif_rc.atemio5200.h:33
 #: webif_rc.atemio6200.h:16 webif_rc.atemio6200.h:33 webif_rc.atemio7600.h:48
 #: webif_rc.atemio-nemesis.h:16 webif_rc.atemio-nemesis.h:33
@@ -12372,10 +12378,10 @@ msgid "Power"
 msgstr ""
 
 #: webif_index.atemio510.h:60 webif_index.atemio510.h:111
-#: webif_index.atemio5200.h:102 webif_index.atemio5200.h:46
+#: webif_index.atemio5200.h:46 webif_index.atemio5200.h:102
 #: webif_index.atemio6200.h:102 webif_index.atemio6200.h:46
 #: webif_index.atemio7600.h:59 webif_index.atemio7600.h:97
-#: webif_index.atemio-nemesis.h:102 webif_index.atemio-nemesis.h:46
+#: webif_index.atemio-nemesis.h:46 webif_index.atemio-nemesis.h:102
 #: webif_rc.atemio510.h:44 webif_rc.atemio5200.h:29 webif_rc.atemio6200.h:29
 #: webif_rc.atemio7600.h:30 webif_rc.atemio-nemesis.h:29
 #: webif_rc_virtual.atemio5200.h:31 webif_rc_virtual.atemio6200.h:31
@@ -12384,10 +12390,10 @@ msgid "Volume Up"
 msgstr ""
 
 #: webif_index.atemio510.h:61 webif_index.atemio510.h:112
-#: webif_index.atemio5200.h:103 webif_index.atemio5200.h:47
+#: webif_index.atemio5200.h:47 webif_index.atemio5200.h:103
 #: webif_index.atemio6200.h:103 webif_index.atemio6200.h:47
 #: webif_index.atemio7600.h:60 webif_index.atemio7600.h:98
-#: webif_index.atemio-nemesis.h:103 webif_index.atemio-nemesis.h:47
+#: webif_index.atemio-nemesis.h:47 webif_index.atemio-nemesis.h:103
 #: webif_rc.atemio510.h:45 webif_rc.atemio5200.h:30 webif_rc.atemio6200.h:30
 #: webif_rc.atemio7600.h:31 webif_rc.atemio-nemesis.h:30
 #: webif_rc_virtual.atemio5200.h:32 webif_rc_virtual.atemio6200.h:32
@@ -12396,10 +12402,10 @@ msgid "Volume Down"
 msgstr ""
 
 #: webif_index.atemio510.h:62 webif_index.atemio510.h:113
-#: webif_index.atemio5200.h:104 webif_index.atemio5200.h:48
+#: webif_index.atemio5200.h:48 webif_index.atemio5200.h:104
 #: webif_index.atemio6200.h:104 webif_index.atemio6200.h:48
 #: webif_index.atemio7600.h:61 webif_index.atemio7600.h:101
-#: webif_index.atemio-nemesis.h:104 webif_index.atemio-nemesis.h:48
+#: webif_index.atemio-nemesis.h:48 webif_index.atemio-nemesis.h:104
 #: webif_rc.atemio510.h:46 webif_rc.atemio5200.h:31 webif_rc.atemio6200.h:31
 #: webif_rc.atemio7600.h:34 webif_rc.atemio-nemesis.h:31
 #: webif_rc_virtual.atemio5200.h:33 webif_rc_virtual.atemio6200.h:33
@@ -12408,10 +12414,10 @@ msgid "Channel Up"
 msgstr ""
 
 #: webif_index.atemio510.h:63 webif_index.atemio510.h:114
-#: webif_index.atemio5200.h:105 webif_index.atemio5200.h:49
+#: webif_index.atemio5200.h:49 webif_index.atemio5200.h:105
 #: webif_index.atemio6200.h:105 webif_index.atemio6200.h:49
 #: webif_index.atemio7600.h:62 webif_index.atemio7600.h:102
-#: webif_index.atemio-nemesis.h:105 webif_index.atemio-nemesis.h:49
+#: webif_index.atemio-nemesis.h:49 webif_index.atemio-nemesis.h:105
 #: webif_rc.atemio510.h:47 webif_rc.atemio5200.h:32 webif_rc.atemio6200.h:32
 #: webif_rc.atemio7600.h:35 webif_rc.atemio-nemesis.h:32
 #: webif_rc_virtual.atemio5200.h:34 webif_rc_virtual.atemio6200.h:34
@@ -12445,11 +12451,11 @@ msgstr ""
 msgid "switch to original remote"
 msgstr ""
 
-#: webif_index.atemio510.h:68 webif_index.atemio5200.h:73
-#: webif_index.atemio5200.h:129 webif_index.atemio6200.h:73
-#: webif_index.atemio6200.h:129 webif_index.atemio7600.h:68
-#: webif_index.atemio7600.h:121 webif_index.atemio-nemesis.h:73
-#: webif_index.atemio-nemesis.h:129
+#: webif_index.atemio510.h:68 webif_index.atemio510.h:119
+#: webif_index.atemio5200.h:73 webif_index.atemio5200.h:129
+#: webif_index.atemio6200.h:73 webif_index.atemio6200.h:129
+#: webif_index.atemio7600.h:68 webif_index.atemio7600.h:121
+#: webif_index.atemio-nemesis.h:73 webif_index.atemio-nemesis.h:129
 msgid "open in new window"
 msgstr ""
 
@@ -12463,14 +12469,10 @@ msgstr ""
 msgid "Media"
 msgstr ""
 
-#: webif_index.atemio510.h:78 webif_index.atemio5200.h:30
-#: webif_index.atemio5200.h:86 webif_index.atemio6200.h:30
-#: webif_index.atemio6200.h:86 webif_index.atemio7600.h:26
-#: webif_index.atemio7600.h:107 webif_index.atemio-nemesis.h:30
-#: webif_index.atemio-nemesis.h:86 webif_rc.atemio510.h:11
-#: webif_rc.atemio5200.h:13 webif_rc.atemio6200.h:13 webif_rc.atemio7600.h:40
-#: webif_rc.atemio-nemesis.h:13
-msgid "Last"
+#: webif_index.atemio510.h:118 webif_index.atemio5200.h:128
+#: webif_index.atemio6200.h:128 webif_index.atemio7600.h:120
+#: webif_index.atemio-nemesis.h:128
+msgid "switch to virtual remote"
 msgstr ""
 
 #: webif_index.atemio5200.h:45 webif_index.atemio6200.h:45
@@ -12542,11 +12544,6 @@ msgstr ""
 #: webif_index.atemio-nemesis.h:114 webif_rc.atemio5200.h:41
 #: webif_rc.atemio6200.h:41 webif_rc.atemio-nemesis.h:41
 msgid "Fast Rewird"
-msgstr ""
-
-#: webif_index.atemio5200.h:128 webif_index.atemio6200.h:128
-#: webif_index.atemio7600.h:120 webif_index.atemio-nemesis.h:128
-msgid "switch to virtual remote"
 msgstr ""
 
 #: webif_index.atemio7600.h:18 webif_index.atemio7600.h:118
