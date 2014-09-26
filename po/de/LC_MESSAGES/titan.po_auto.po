@@ -12148,7 +12148,7 @@ msgstr "PiP Liste"
 #: webif_index.atemio510.h:23 webif_index.atemio510.h:74
 #: webif_rc.atemio510.h:7
 msgid "PiP Swap"
-msgstr "Pip tauschen"
+msgstr "PiP tauschen"
 
 #: webif_index.atemio510.h:24 webif_index.atemio510.h:75
 #: webif_index.atemio5200.h:120 webif_index.atemio6200.h:120
@@ -12172,7 +12172,7 @@ msgstr "TV/Radio"
 #: webif_rc.atemio510.h:10 webif_rc.atemio5200.h:15 webif_rc.atemio6200.h:15
 #: webif_rc.atemio7600.h:43 webif_rc.atemio-nemesis.h:15
 msgid "Next"
-msgstr "Nächste"
+msgstr ""
 
 #: webif_index.atemio510.h:27
 msgid "Las"
@@ -12512,7 +12512,7 @@ msgstr ""
 #: webif_index.atemio7600.h:112 webif_index.atemio-nemesis.h:64
 #: webif_rc.atemio7600.h:45
 msgid "Pip"
-msgstr ""
+msgstr "PiP"
 
 #: webif_index.atemio5200.h:66 webif_index.atemio5200.h:122
 #: webif_index.atemio6200.h:66 webif_index.atemio6200.h:122
@@ -12531,25 +12531,25 @@ msgstr ""
 #: webif_rc.atemio5200.h:51 webif_rc.atemio6200.h:1 webif_rc.atemio6200.h:51
 #: webif_rc.atemio-nemesis.h:1 webif_rc.atemio-nemesis.h:51
 msgid "Tv"
-msgstr ""
+msgstr "TV"
 
 #: webif_index.atemio5200.h:76 webif_index.atemio6200.h:76
 #: webif_index.atemio-nemesis.h:76 webif_rc.atemio5200.h:3
 #: webif_rc.atemio6200.h:3 webif_rc.atemio-nemesis.h:3
 msgid "Stb"
-msgstr ""
+msgstr "STB"
 
 #: webif_index.atemio5200.h:90 webif_index.atemio6200.h:90
 #: webif_index.atemio-nemesis.h:90 webif_rc.atemio5200.h:17
 #: webif_rc.atemio6200.h:17 webif_rc.atemio-nemesis.h:17
 msgid "Epg"
-msgstr ""
+msgstr "EPG"
 
 #: webif_index.atemio5200.h:114 webif_index.atemio6200.h:114
 #: webif_index.atemio-nemesis.h:114 webif_rc.atemio5200.h:41
 #: webif_rc.atemio6200.h:41 webif_rc.atemio-nemesis.h:41
 msgid "Fast Rewird"
-msgstr ""
+msgstr "Fast Rewind"
 
 #: webif_index.atemio5200.h:128 webif_index.atemio6200.h:128
 #: webif_index.atemio7600.h:120 webif_index.atemio-nemesis.h:128
