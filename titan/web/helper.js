@@ -9,7 +9,7 @@ function show(das) {
 }
 function vertAl(){
 	var ipadstream = document.getElementById('ipadstream');
-	if(!(navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/iPad/i))) { 
+	if(!(navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/iPad/i))) {
 		ipadstream.style.display = 'none';
 	}
   breite = window.innerWidth;
@@ -56,10 +56,10 @@ function saveLastIframe(actQuery){
 		setCookie('tiTan2',lastQuery[3]);
       }
     }catch(err){
-          
+
     }
-  } 
-}      
+  }
+}
 
 function showLastIframe(){
   var temp;
@@ -75,12 +75,12 @@ function rcopen_org() {
 function rcswitch() {
 cookiewert = GetCookie('tiTan');
 if(cookiewert == 'VirtualRemote')
-	{ 
-	saveCookie('tiTan','OriginalRemote');
+	{
+	setCookie('tiTan','OriginalRemote');
 	javascript:show('eins');
 	javascript:show('zwei');
     } else {
-		saveCookie('tiTan','VirtualRemote');
+		setCookie('tiTan','VirtualRemote');
 	javascript:show('zwei');
 	javascript:show('eins');
  }
@@ -88,9 +88,9 @@ if(cookiewert == 'VirtualRemote')
 function rcshow() {
 cookiewert = getCookie('tiTan');
 if(cookiewert == 'VirtualRemote')
-	{ 
+	{
 	javascript:show('eins');
-    } else 	{ 	
+    } else 	{
 	javascript:show('zwei');
     }
 }
@@ -102,7 +102,7 @@ function getCookie(sName)
   {
     // a name/value pair (a crumb) is separated by an equal sign
     var aCrumb = aCookie[i].split("=");
-    if (sName == aCrumb[0]) 
+    if (sName == aCrumb[0])
       return unescape(aCrumb[1]);
   }
   return null;
@@ -111,7 +111,7 @@ function getCookie(sName)
 function setCookie(Name,Value){
 	var a = new Date();
 	a = new Date(a.getTime() +1000*60*60*24*365);
-	document.cookie = Name+'='+Value+'; expires='+a.toGMTString()+';'; 
+	document.cookie = Name+'='+Value+'; expires='+a.toGMTString()+';';
 }
 
 function streamConfigSubmit(){
@@ -149,7 +149,7 @@ function initializeForm(player,streamport) {
 }
 
 function hideStreamingConfig(iosstreamconfig){
-	if(!(navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/iPad/i))) { 
+	if(!(navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/iPad/i))) {
 	iosstreamconfig.style.display = 'none';
 	}
 }
