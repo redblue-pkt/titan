@@ -6418,4 +6418,240 @@ void createfav()
 	}
 }
 
+char* system_infos(int mode)
+{
+	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL;
+
+	if(mode == 0)
+	{
+		tmpstr1 = ostrcat("Date = ", "", 0, 0);
+		tmpstr1 = ostrcat(tmpstr1, gettime(NULL, "%d %B %Y"), 1, 1);
+		tmpstr = ostrcat(tmpstr, tmpstr1, 1, 1);
+
+		tmpstr1 = ostrcat("\nTime = ", "", 0, 0);
+		tmpstr1 = ostrcat(tmpstr1, gettime(NULL, "%H:%M:%S"), 1, 1);
+		tmpstr = ostrcat(tmpstr, tmpstr1, 1, 1);
+		
+		tmpstr1 = ostrcat("\nUptime = ", "", 0, 0);
+		tmpstr2 = command("uptime");
+		if(tmpstr2 != NULL) tmpstr2 = strtok(tmpstr2, ",");
+		tmpstr1 = ostrcat(tmpstr1, tmpstr2, 1, 1);
+		tmpstr = ostrcat(tmpstr, tmpstr1, 1, 1);
+
+		tmpstr1 = ostrcat("\nBoxtype = ", "", 0, 0);
+		tmpstr2 = string_toupper(command("cat /etc/model"));
+		tmpstr1 = ostrcat(tmpstr1, tmpstr2, 1, 1);
+		tmpstr = ostrcat(tmpstr, tmpstr1, 1, 1);
+
+		tmpstr1 = ostrcat("\nLoad = ", "", 0, 0);
+		tmpstr2 = command("cat /proc/loadavg");
+		tmpstr1 = ostrcat(tmpstr1, tmpstr2, 1, 1);
+		tmpstr = ostrcat(tmpstr, tmpstr1, 1, 1);
+	}
+
+	if(mode == 1)
+	{
+		system("ls /media/usb/* >/dev/null");
+		system("ls /media/net/* >/dev/null");
+		system("ls /var/swap/* >/dev/null");
+		system("ls /mnt/swapextension/* >/dev/null");
+		system("ls /var/backup/* >/dev/null");
+		system("ls /media/hdd/* >/dev/null");
+		tmpstr = command("df -h");
+	}
+
+	if(mode == 2)
+		tmpstr = command("cat /proc/version");
+
+	if(mode == 3)
+	{
+		system("ls /media/usb/* >/dev/null");
+		system("ls /media/net/* >/dev/null");
+		system("ls /var/swap/* >/dev/null");
+		system("ls /mnt/swapextension/* >/dev/null");
+		system("ls /var/backup/* >/dev/null");
+		system("ls /media/hdd/* >/dev/null");
+		tmpstr = command("mount");
+	}
+
+	if(mode == 4)
+	{
+		tmpstr1 = command("ifconfig");
+		tmpstr2 = command("route -n");
+		tmpstr = ostrcat(tmpstr1, tmpstr2, 1, 1);
+	}
+
+	if(mode == 5)
+		tmpstr = command("free");
+
+	return tmpstr;
+}
+
+char* system_infos_sysinfo(int mode)
+{
+	char* tmpstr = NULL;
+
+	if(mode == 0)
+		tmpstr = command("cat /proc/cpuinfo | sed 's/\t\t/\t/'");
+	else if(mode == 1)
+		tmpstr = command("cat /proc/meminfo");
+	else if(mode == 2)
+		tmpstr = command("cat /proc/mtd");
+	else if(mode == 3)
+		tmpstr = command("cat /proc/modules");
+	else if(mode == 4)
+		tmpstr = command("cat /proc/devices");
+	else if(mode == 5)
+	{
+		char* tmpstr1 = NULL, **tmpstr2 = NULL, **tmpstr3 = NULL;
+		int i = 0, ii = 0;
+		char* swap[] = {"Name: ", "Type: ", "Size: ", "Used: ", "Prio: "};
+
+		tmpstr1 = command("cat /proc/swaps | sed 's/\t/ /g; s/[ ]* / /g'");
+		tmpstr2 = str_split(tmpstr1, "\n");
+		if(tmpstr2 != NULL)
+		{
+			free(tmpstr2[0]); tmpstr2[0] = NULL;
+
+			for(i = 1; tmpstr2[i] != NULL; i++)
+			{
+				tmpstr3 = str_split(tmpstr2[i], " ");
+				if(tmpstr3 != NULL)
+				{
+
+					for(ii = 0; tmpstr3[ii] != NULL; ii++)
+					{
+						tmpstr = ostrcat(tmpstr, swap[ii], 1, 0);
+						tmpstr = ostrcat(tmpstr, tmpstr3[ii], 1, 1);
+						tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+					}
+				}
+
+				tmpstr = ostrcat(tmpstr, "\n", 1, 0);
+				free(tmpstr2[i]); tmpstr2[i] = NULL;
+				free(tmpstr3); tmpstr3 = NULL;
+			}
+		}
+
+		free(tmpstr3); tmpstr3 = NULL;
+		free(tmpstr2); tmpstr2 = NULL;
+		free(tmpstr1); tmpstr1 = NULL;
+	}
+	else if(mode == 6)
+		tmpstr = command("top -b -n1");
+	else if(mode == 7)
+		tmpstr = command("ps");
+	else if(mode == 8)
+		tmpstr = command("cat /proc/bus/usb/devices");
+
+	return tmpstr;
+}
+
+char* system_logs(int mode)
+{
+	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *path = NULL, *boxversion = NULL;
+
+	if(mode == 0)
+	{
+		tmpstr1 = readfiletomem("/etc/motd", 0);
+		if(tmpstr1 != NULL) tmpstr2 = strstr(tmpstr1, "wElc0me");
+		tmpstr3 = readfiletomem("/etc/imageinfo", 0);
+		if(tmpstr2 == NULL)
+			tmpstr = ostrcat(tmpstr3, NULL, 1, 0);
+		else
+			tmpstr = ostrcat(tmpstr2, tmpstr3, 1, 1);
+	}
+	else if(mode == 1)
+	{
+		if(isfile("/etc/model")	== 0) return NULL;
+		boxversion = string_tolower(readsys("/etc/model", 1));
+
+//		if(file_exist("/etc/.beta"))
+			path = ostrcat(path, "/svn/image-beta/changelog.", 1, 0);
+//		else
+//			path = ostrcat(path, "/svn/image/changelog.", 1, 0);
+
+		path = ostrcat(path, boxversion, 1, 0);
+		path = ostrcat(path, ".titan", 1, 0);
+
+//		if(file_exist("/etc/.beta"))
+			tmpstr1 = gethttp("beta.dyndns.tv", path, 80, NULL, HTTPAUTH, 5000, NULL, 0);
+//		else
+//			tmpstr1 = gethttp("atemio.dyndns.tv", path, 80, NULL, HTTPAUTH, 5000, NULL, 0);
+
+		tmpstr = readfromlinetoline(tmpstr1, 37, 537, 1);
+	}
+	else if(mode == 2)
+	{
+//		if(file_exist("/etc/.beta"))
+			path = ostrcat(path, "/svn/image-beta/changelog.git", 1, 0);
+//		else
+//			path = ostrcat(path, "/svn/image/changelog.git", 1, 0);
+
+//		if(file_exist("/etc/.beta"))
+			tmpstr1 = gethttp("beta.dyndns.tv", path, 80, NULL, HTTPAUTH, 5000, NULL, 0);
+//		else
+//			tmpstr1 = gethttp("atemio.dyndns.tv", path, 80, NULL, HTTPAUTH, 5000, NULL, 0);
+
+		tmpstr = readfromlinetoline(tmpstr1, 0, 500, 1);
+	}
+	else if(mode == 3)
+	{
+		tmpstr = readfiletomem(getconfig("tracelog", NULL), 0);
+	}
+
+	free(path), path = NULL;
+	free(boxversion), boxversion = NULL;
+//	free(tmpstr1), tmpstr1 = NULL;
+//	free(tmpstr2), tmpstr2 = NULL;
+//	free(tmpstr3), tmpstr3 = NULL;
+
+	return tmpstr;
+}
+
+char* getabout()
+{
+	char* text = NULL, *tmpstr = NULL;
+	struct dvbdev* dvbnode = dvbdev;
+
+	text = ostrcat(_("Image"), ": ", 0, 0);
+	text = ostrcat(text, PROGNAME, 1, 0);
+	text = ostrcat(text, "\n", 1, 0);
+	text = ostrcat(text, _("Version"), 1, 0);
+	text = ostrcat(text, ": ", 1, 0);
+	text = ostrcat(text, OVERSION, 1, 0);
+	text = ostrcat(text, "\n", 1, 0);
+	text = ostrcat(text, _("Copyright"), 1, 0);
+	text = ostrcat(text, ": ", 1, 0);
+	text = ostrcat(text, COPYRIGHT, 1, 0);
+	text = ostrcat(text, "\n\n", 1, 0);
+		
+	while(dvbnode != NULL)
+	{
+		if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo != NULL)
+		{
+			text = ostrcat(text, _("Tuner"), 1, 0);
+			text = ostrcat(text, ": ", 1, 0);
+			if(dvbnode->feinfo->name != NULL)
+				text = ostrcat(text, dvbnode->feinfo->name, 1, 0);
+			else
+				text = ostrcat(text, _("unknown"), 1, 0);
+			text = ostrcat(text, "\n", 1, 0);
+			text = ostrcat(text, _("Tunertype"), 1, 0);
+			text = ostrcat(text, ": ", 1, 0);
+
+			tmpstr = fegettypestr(dvbnode);	
+			text = ostrcat(text, tmpstr, 1, 1);
+			text = ostrcat(text, "\n\n", 1, 0);
+		}
+		dvbnode = dvbnode->next;
+	}
+	
+	char* flog = readfiletomem("/tmp/.firmware.log", 0);
+	text = ostrcat(text, flog, 1, 1);
+
+	return text;
+}
+
+
 #endif

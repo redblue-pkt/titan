@@ -291,16 +291,24 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 		buf = webgettestpage(param, fmt);
 		m_unlock(&status.waitrcmutex, 24);
 	}
+	else if(ostrcmp(query, "getsysteminfos") == 0 && param != NULL)
+		buf = webgetsysteminfos(param, fmt);
+	else if(ostrcmp(query, "getsysinfos") == 0 && param != NULL)
+		buf = webgetsysinfos(param, fmt);
+	else if(ostrcmp(query, "getlogs") == 0 && param != NULL)
+		buf = webgetlogs(param, fmt);
+	else if(ostrcmp(query, "getabout") == 0)
+		buf = webgetabout(fmt);
+	else if(ostrcmp(query, "getserviceinfo") == 0)
+		buf = webgetserviceinfo(fmt);
+	else if(ostrcmp(query, "getstreaming") == 0)
+		buf = webgetstreaming(fmt);
+	else if(ostrcmp(query, "getnewsletter") == 0)
+		buf = webgetnewsletter(fmt);
 	else if(ostrcmp(query, "gethelp") == 0 && param != NULL)
 	{
 		m_lock(&status.waitrcmutex, 24);
 		buf = webgethelp(param, fmt);
-		m_unlock(&status.waitrcmutex, 24);
-	}
-	else if(ostrcmp(query, "getchannellist") == 0)
-	{
-		m_lock(&status.waitrcmutex, 24);
-		buf = webgetchannellist(fmt);
 		m_unlock(&status.waitrcmutex, 24);
 	}
 	else if(ostrcmp(query, "getsatchannel") == 0 && param != NULL)

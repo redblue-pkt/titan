@@ -8,6 +8,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//serviceinfo.h
+char* fegettypestr(struct dvbdev* dvbnode);
+
 //tunerconfig.h
 int screentunerreceptiondvbt(struct dvbdev* tuner);
 int screentunerreceptionhyprid(struct dvbdev* tuner);
@@ -180,7 +183,7 @@ void screensystem_wizard();
 
 // info.h
 void screengetserial();
-void screensystem_info(int mode);
+void screensystem_logs(int mode);
 
 //system_update.h
 void screensystem_update(int mode);
