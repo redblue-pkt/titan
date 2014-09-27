@@ -12,128 +12,29 @@ void screensystem_infos_sysinfo(int mode)
 	addscreenrc(system_info, info);
 
 	if(mode == 0)
-	{
 		changetitle(system_info, _("CPU info"));
-
-		tmpstr = command("cat /proc/cpuinfo | sed 's/\t\t/\t/'");
-		changetext(info, _(tmpstr));
-
-		free(tmpstr); tmpstr = NULL;
-	}
-
-	if(mode == 1)
-	{
+	else if(mode == 1)
 		changetitle(system_info, _("Memory info"));
-
-		tmpstr = command("cat /proc/meminfo");
-		changetext(info, _(tmpstr));
-
-		free(tmpstr); tmpstr = NULL;
-	}
-
-	if(mode == 2)
-	{
+	else if(mode == 2)
 		changetitle(system_info, _("MTD info"));
-
-		tmpstr = command("cat /proc/mtd");
-		changetext(info, _(tmpstr));
-
-		free(tmpstr); tmpstr = NULL;
-	}
-
-	if(mode == 3)
-	{
+	else if(mode == 3)
 		changetitle(system_info, _("Module info"));
-
-		tmpstr = command("cat /proc/modules");
-		changetext(info, _(tmpstr));
-
-		free(tmpstr); tmpstr = NULL;
-	}
-
-	if(mode == 4)
-	{
+	else if(mode == 4)
 		changetitle(system_info, _("Devices"));
-
-		tmpstr = command("cat /proc/devices");
-		changetext(info, _(tmpstr));
-
-		free(tmpstr); tmpstr = NULL;
-	}
-
-	if(mode == 5)
-	{
-		char* tmpstr1 = NULL, **tmpstr2 = NULL, **tmpstr3 = NULL;
-		int i = 0, ii = 0;
-		char* swap[] = {"Name: ", "Type: ", "Size: ", "Used: ", "Prio: "};
-
+	else if(mode == 5)
 		changetitle(system_info, _("Swap info"));
-
-		tmpstr1 = command("cat /proc/swaps | sed 's/\t/ /g; s/[ ]* / /g'");
-		tmpstr2 = str_split(tmpstr1, "\n");
-		if(tmpstr2 != NULL)
-		{
-			free(tmpstr2[0]); tmpstr2[0] = NULL;
-
-			for(i = 1; tmpstr2[i] != NULL; i++)
-			{
-				tmpstr3 = str_split(tmpstr2[i], " ");
-				if(tmpstr3 != NULL)
-				{
-
-					for(ii = 0; tmpstr3[ii] != NULL; ii++)
-					{
-						tmpstr = ostrcat(tmpstr, swap[ii], 1, 0);
-						tmpstr = ostrcat(tmpstr, tmpstr3[ii], 1, 1);
-						tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-					}
-				}
-
-				tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-				free(tmpstr2[i]); tmpstr2[i] = NULL;
-				free(tmpstr3); tmpstr3 = NULL;
-			}
-		}
-
-		changetext(info, _(tmpstr));
-
-		free(tmpstr3); tmpstr3 = NULL;
-		free(tmpstr2); tmpstr2 = NULL;
-		free(tmpstr1); tmpstr1 = NULL;
-		free(tmpstr); tmpstr = NULL;
-	}
-
-	if(mode == 6)
-	{
+	else if(mode == 6)
 		changetitle(system_info, _("Top Info"));
-
-		tmpstr = command("top -b -n1");
-		changetext(info, tmpstr);
-
-		free(tmpstr); tmpstr = NULL;
-	}
-
-	if(mode == 7)
-	{
+	else if(mode == 7)
 		changetitle(system_info, _("Prozess Info"));
-
-		tmpstr = command("ps");
-		changetext(info, tmpstr);
-
-		free(tmpstr); tmpstr = NULL;
-	}
-
-	if(mode == 8)
-	{
+	else if(mode == 8)
 		changetitle(system_info, _("USB Info"));
 
-		tmpstr = command("cat /proc/bus/usb/devices");
-		changetext(info, tmpstr);
-
-		free(tmpstr); tmpstr = NULL;
-	}
+	tmpstr = system_infos_sysinfo(mode);
 
 	drawscreen(system_info, 0, 0);
+	changetext(info, tmpstr);
+	free(tmpstr); tmpstr = NULL;
 
 	while(1)
 	{

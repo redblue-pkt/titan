@@ -887,17 +887,17 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 	else if(ostrcmp("infos_imageinfo", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
-		screensystem_info(0);
+		screensystem_logs(0);
 	}
 	else if(ostrcmp("infos_titaninfo", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
-		screensystem_info(1);
+		screensystem_logs(1);
 	}
 	else if(ostrcmp("infos_gitinfo", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
-		screensystem_info(2);
+		screensystem_logs(2);
 	}
 	else if(ostrcmp("system_backup", menuentry->name) == 0)
 	{

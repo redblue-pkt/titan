@@ -3214,7 +3214,9 @@ char* webgetconfig(int fmt)
 			node = node->next;
 		}
 	}
-	
+
+	buf = string_replace_all("\n", "<br>\n", buf, 1);
+
 	if(fmt == 0)
 	{
 		buf = ostrcat(buf, "</body></html>", 1, 0);
@@ -4848,33 +4850,265 @@ char* webgettestpage(char* param, int fmt)
 	return buf;
 }
 
-char* webgetchannellist(int fmt)
+char* webgetsysteminfos(char* param, int fmt)
 {
-	char* buf = NULL;
-	buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
-	buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
-	buf = ostrcat(buf, "</head><body class=body id=\"channellist\">", 1, 0);
+	char* buf = NULL, *tmpstr = NULL;
+	int mode;
 
-	buf = ostrcat(buf, "<table cellpadding=3 cellspacing=0><tr><td nowrap>", 1, 0);
-	buf = ostrcat(buf, "<a class=linelink2 href=query?getallchannel target=main>", 1, 0);
-	buf = ostrcat(buf, _("ALL"), 1, 0);
-	buf = ostrcat(buf, "</a> ", 1, 0);
-	buf = ostrcat(buf, "<a class=linelink2 href=query?getsat target=main>", 1, 0);
-	buf = ostrcat(buf, _("SAT"), 1, 0);
-	buf = ostrcat(buf, "</a> ", 1, 0);
-	buf = ostrcat(buf, "<a class=linelink2 href=query?getprovider target=main>", 1, 0);
-	buf = ostrcat(buf, _("Provider"), 1, 0);
-	buf = ostrcat(buf, "</a> ", 1, 0);
-	buf = ostrcat(buf, "<a class=linelink2 href=query?getaz target=main>", 1, 0);
-	buf = ostrcat(buf, _("A-Z"), 1, 0);
-	buf = ostrcat(buf, "</a> ", 1, 0);
-	buf = ostrcat(buf, "<a class=linelink2 href=query?getbouquet target=main>", 1, 0);
-	buf = ostrcat(buf, _("Bouquets"), 1, 0);
-	buf = ostrcat(buf, "</a> ", 1, 0);
-	buf = ostrcat(buf, "</td></tr></table></body></html>", 1, 0);
+	mode = atoi(param);
+	if(fmt == 0) 
+	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"systeminfos\">", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+		if(mode == 0)
+			buf = ostrcat(buf, _("System Status"), 1, 0);
+		else if(mode == 1)
+			buf = ostrcat(buf, _("Free Space"), 1, 0);
+		else if(mode == 2)
+			buf = ostrcat(buf, _("Kernel"), 1, 0);
+		else if(mode == 3)
+			buf = ostrcat(buf, _("Mounts"), 1, 0);
+		else if(mode == 4)
+			buf = ostrcat(buf, _("Network"), 1, 0);
+		else if(mode == 5)
+			buf = ostrcat(buf, _("Ram"), 1, 0);
 
-	debug(10, "buf: %s", buf);
-	printf("buf: %s\n", buf);
+		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+	}
+
+	tmpstr = system_infos(mode);
+	tmpstr = string_replace_all("\n", "<br>\n", tmpstr, 1);
+
+	buf = ostrcat(buf, tmpstr, 1, 0);
+
+	if(fmt == 0)
+	{
+		buf = ostrcat(buf, "</body></html>", 1, 0);
+	}	
+	
+	return buf;
+}	
+
+char* webgetsysinfos(char* param, int fmt)
+{
+	char* buf = NULL, *tmpstr = NULL;
+	int mode;
+
+	mode = atoi(param);
+	if(fmt == 0) 
+	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"sysinfos\">", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+		if(mode == 0)
+			buf = ostrcat(buf, _("CPU"), 1, 0);
+		else if(mode == 1)
+			buf = ostrcat(buf, _("Memory"), 1, 0);
+		else if(mode == 2)
+			buf = ostrcat(buf, _("MTD"), 1, 0);
+		else if(mode == 3)
+			buf = ostrcat(buf, _("Module"), 1, 0);
+		else if(mode == 4)
+			buf = ostrcat(buf, _("Devices"), 1, 0);
+		else if(mode == 5)
+			buf = ostrcat(buf, _("Swap"), 1, 0);
+		else if(mode == 6)
+			buf = ostrcat(buf, _("Top"), 1, 0);
+		else if(mode == 7)
+			buf = ostrcat(buf, _("Prozesslist"), 1, 0);
+		else if(mode == 8)
+			buf = ostrcat(buf, _("USB"), 1, 0);
+
+		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+	}
+
+	tmpstr = system_infos_sysinfo(mode);
+	tmpstr = string_replace_all("\n", "<br>\n", tmpstr, 1);
+
+	buf = ostrcat(buf, tmpstr, 1, 0);
+
+	if(fmt == 0)
+	{
+		buf = ostrcat(buf, "</body></html>", 1, 0);
+	}	
+	
+	return buf;
+}	
+
+char* webgetlogs(char* param, int fmt)
+{
+	char* buf = NULL, *tmpstr = NULL;
+	int mode;
+
+	mode = atoi(param);
+	if(fmt == 0) 
+	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"logs\">", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+		if(mode == 0)
+			buf = ostrcat(buf, _("Hotline"), 1, 0);
+		else if(mode == 1)
+			buf = ostrcat(buf, _("Svn Changelog"), 1, 0);
+		else if(mode == 2)
+			buf = ostrcat(buf, _("Git Changelog"), 1, 0);
+		else if(mode == 3)
+			buf = ostrcat(buf, _("titan Log"), 1, 0);
+		else if(mode == 4)
+			buf = ostrcat(buf, _("Svn Changelog Full"), 1, 0);
+		else if(mode == 5)
+			buf = ostrcat(buf, _("Git Changelog Full"), 1, 0);
+
+		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+	}
+
+	tmpstr = system_logs(mode);
+	tmpstr = string_replace_all("\n", "<br>\n", tmpstr, 1);
+
+	buf = ostrcat(buf, tmpstr, 1, 0);
+
+	if(fmt == 0)
+	{
+		buf = ostrcat(buf, "</body></html>", 1, 0);
+	}	
+	
+	return buf;
+}	
+
+char* webgetabout(int fmt)
+{
+	char* buf = NULL, *tmpstr = NULL;
+
+	if(fmt == 0) 
+	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"about\">", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+		buf = ostrcat(buf, _("About"), 1, 0);
+		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+	}
+
+	tmpstr = getabout();
+	tmpstr = string_replace_all("\n", "<br>\n", tmpstr, 1);
+
+	buf = ostrcat(buf, tmpstr, 1, 1);
+
+	if(fmt == 0)
+	{
+		buf = ostrcat(buf, "</body></html>", 1, 0);
+	}	
+	
+	return buf;
+}
+
+char* webgetserviceinfo(int fmt)
+{
+	char* buf = NULL, *tmpstr = NULL;
+
+	if(fmt == 0) 
+	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"serviceinfo\">", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+		buf = ostrcat(buf, _("Service"), 1, 0);
+		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+	}
+
+//	tmpstr = getabout();
+//	readnewsletter();
+	tmpstr = readfiletomem("/tmp/Service.txt", 0);
+	tmpstr = ostrcat(tmpstr, "\ncomming soon...\n", 1, 0);
+	
+	tmpstr = string_replace_all("\n", "<br>\n", tmpstr, 1);
+
+	buf = ostrcat(buf, tmpstr, 1, 1);
+
+	if(fmt == 0)
+	{
+		buf = ostrcat(buf, "</body></html>", 1, 0);
+	}	
+	
+	return buf;
+}
+
+char* webgetnewsletter(int fmt)
+{
+	char* buf = NULL, *tmpstr = NULL;
+
+	if(fmt == 0) 
+	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"newsletter\">", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+		buf = ostrcat(buf, _("Newsletter"), 1, 0);
+		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+	}
+
+//	tmpstr = getabout();
+//	readnewsletter();
+	tmpstr = readfiletomem("/tmp/newsletter.txt", 0);
+	tmpstr = ostrcat(tmpstr, "\ncomming soon...\n", 1, 0);
+	tmpstr = string_replace_all("\n", "<br>\n", tmpstr, 1);
+
+	buf = ostrcat(buf, tmpstr, 1, 1);
+
+	if(fmt == 0)
+	{
+		buf = ostrcat(buf, "</body></html>", 1, 0);
+	}	
+	
+	return buf;
+}
+
+char* webgetstreaming(int fmt)
+{
+	char* buf = NULL, *tmpstr = NULL;
+
+	if(fmt == 0) 
+	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"streaming\">", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+		buf = ostrcat(buf, _("Streaming"), 1, 0);
+		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+	}
+
+//	tmpstr = getabout();
+//	readnewsletter();
+	tmpstr = readfiletomem("/tmp/streaming.txt", 0);
+	tmpstr = ostrcat(tmpstr, "\ncomming soon...\n", 1, 0);
+	
+	tmpstr = string_replace_all("\n", "<br>\n", tmpstr, 1);
+
+	buf = ostrcat(buf, tmpstr, 1, 1);
+
+	if(fmt == 0)
+	{
+		buf = ostrcat(buf, "</body></html>", 1, 0);
+	}	
+	
 	return buf;
 }
 
