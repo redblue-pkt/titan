@@ -1,1 +1,1 @@
-Here you can make your settings for your engine systems. To enter the latitude and longitude using the number keys.
+Die eigene geographische Position in Längen- und Breitengrad.

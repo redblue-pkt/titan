@@ -1,1 +1,1 @@
-Here you can do a blind scan, this process takes a long time.
+Einstellungen für den "blindscan"
