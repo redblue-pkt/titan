@@ -1,1 +1,3 @@
-Hilfe Text für 3dsettings
+Einstellungen für die 3D Ausgabe
+sbs (side by side): Allgemein üblicher Standard für TV Ausstrahlungen
+tab (top and bottom): Wird bei Blu-Ray Betrieb verwendet
