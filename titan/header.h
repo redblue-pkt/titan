@@ -103,6 +103,8 @@ int screendirsort();
 // newsletter.h
 void screennewsletter();
 void newsletterthreadfunc(struct stimerthread* self);
+int readnewsletter();
+void freenewsletter();
 
 //oldentry.h
 struct oldentry* addoldentry(void* entry, int type, time_t del, struct oldentry* last);
