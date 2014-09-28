@@ -6627,7 +6627,7 @@ char* getabout()
 	text = ostrcat(text, OVERSION, 1, 0);
 	text = ostrcat(text, "\n", 1, 0);
 	text = ostrcat(text, _("Installed:"), 1, 0);
-	text = ostrcat(text, ": ", 1, 0);
+	text = ostrcat(text, " ", 1, 0);
 	text = ostrcat(text, imgversion, 1, 1);
 	text = ostrcat(text, "\n", 1, 0);
 	text = ostrcat(text, _("Copyright"), 1, 0);
