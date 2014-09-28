@@ -1,1 +1,2 @@
-Einstellungen für die 3D Ausgabe\nsbs (side by side): Allgemein üblicher Standard für TV Ausstrahlungen\ntab (top and bottom): Wird bei Blu-Ray Betrieb verwendet
+sbs (side by side): Allgemein üblicher Standard für TV Ausstrahlungen
+tab (top and bottom): Wird bei Blu-Ray Betrieb verwendet

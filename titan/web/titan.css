@@ -49,7 +49,7 @@
 #p_configinfo{color: #ffffff}
 #p_systeminfo{color: #ffffff}
 
-.help {width: 99%; height: auto; border: 1px; border-style: solid; border-color: #eeeeee; border-radius: 5px; color: #ffffff;}
+#help {white-space: pre-wrap}
 
 .line1 td:last-child{border-radius: 0px 5px 5px 0px;}
 .line2 td:last-child{border-radius: 0px 5px 5px 0px;}
