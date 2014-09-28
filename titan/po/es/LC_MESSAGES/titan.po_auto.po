@@ -2362,10 +2362,6 @@ msgstr "Canal"
 msgid "Streaming"
 msgstr ""
 
-#: httpdfunc.h:5146
-msgid "param"
-msgstr ""
-
 #: hwtest.h:88
 msgid "testtransponder not found"
 msgstr "Test-Transpondedor no encontrado"
