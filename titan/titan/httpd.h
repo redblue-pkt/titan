@@ -303,10 +303,10 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 		buf = webgetserviceinfo(fmt);
 	else if(ostrcmp(query, "getstreaming") == 0)
 		buf = webgetstreaming(fmt);
-	else if(ostrcmp(query, "getnewsletter") == 0)
-		buf = webgetnewsletter(fmt);
-	else if(ostrcmp(query, "getnewsletterchoices") == 0 && param != NULL)
-		buf = webgetnewsletterchoices(param, fmt);
+	else if(ostrcmp(query, "getnewsletter") == 0 && param != NULL)
+		buf = webgetnewsletter(param, fmt);
+	else if(ostrcmp(query, "getnewsletterchoices") == 0)
+		buf = webgetnewsletterchoices(fmt);
 	else if(ostrcmp(query, "gethelp") == 0 && param != NULL)
 	{
 		m_lock(&status.waitrcmutex, 24);

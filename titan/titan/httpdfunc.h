@@ -990,7 +990,7 @@ char* webvideo(char* param, int fmt)
 					startplugin = dlsym(tithekplugin->pluginhandle, "hoster");
 					if(startplugin != NULL)
 					{
-						status.webplayfile = startplugin(status.webplayfile);
+						status.webplayfile = (char*)startplugin(status.webplayfile);
 						printf("status.webplayfile changed: %s\n",status.webplayfile);
 					}
 				}
@@ -5082,7 +5082,7 @@ char* webgetstreaming(int fmt)
 
 char* webgetnewsletterchoices(int fmt)
 {
-	char* buf = NULL, *tmpstr = NULL;
+	char* buf = NULL;
 
 	if(fmt == 0) 
 	{
@@ -5098,9 +5098,7 @@ char* webgetnewsletterchoices(int fmt)
 
 	buf = ostrcat(buf, "<center><table cellpadding=5 cellspacing=5><tr><td nowrap>", 1, 0);
 
-	struct skin* tmp = NULL;
 	struct newsletter* node = NULL;
-	char* tmpstr = NULL;
 
 	m_lock(&status.newslettermutex, 19);
 	long unsigned lastnewsletter = getconfiglu("lastnewsletter", NULL);
@@ -5110,20 +5108,14 @@ char* webgetnewsletterchoices(int fmt)
 
 	while(node != NULL)
 	{
-		tmp = addlistbox(skinnewsletter, listbox, tmp, 1);
-		if(tmp != NULL)
-		{
-			buf = ostrcat(buf, "<a class=linelink2 href=queryraw?getnewsletter&", 1, 0);
-			buf = ostrcat(buf, node->nr, 1, 0);
-			buf = ostrcat(buf, " target=main>", 1, 0);
-			buf = ostrcat(buf, node->title, 1, 0);
-			buf = ostrcat(buf, " - ", 1, 0);
-			buf = ostrcat(buf, node->date, 1, 0);	
-			buf = ostrcat(buf, "</a>", 1, 0);
-			buf = ostrcat(buf, "</br></br>", 1, 0);
-			tmp->del = 1;
-			tmp->handle = (char*)node;
-		}
+		buf = ostrcat(buf, "<a class=linelink2 href=queryraw?getnewsletter&", 1, 0);
+		buf = ostrcat(buf, oitoa(node->nr), 1, 0);
+		buf = ostrcat(buf, " target=main>", 1, 0);
+		buf = ostrcat(buf, node->title, 1, 0);
+		buf = ostrcat(buf, " - ", 1, 0);
+		buf = ostrcat(buf, node->date, 1, 0);	
+		buf = ostrcat(buf, "</a>", 1, 0);
+		buf = ostrcat(buf, "</br></br>", 1, 0);
 
 		if(node->nr > lastnewsletter)
 			addconfiglu("lastnewsletter", node->nr);
@@ -5131,6 +5123,9 @@ char* webgetnewsletterchoices(int fmt)
 		node = node->next;
 	}
 
+	freenewsletter();
+	m_unlock(&status.newslettermutex, 19);
+	
 	if(fmt == 0)
 		buf = ostrcat(buf, "</td></tr></table></center></body></html>", 1, 0);
 	
@@ -5141,8 +5136,8 @@ char* webgetnewsletter(char* param, int fmt)
 {
 	char* buf = NULL, *tmpstr = NULL;
 
-	if(fmt == 0) 
-	{
+//	if(fmt == 0) 
+//	{
 		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
 		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
 		buf = ostrcat(buf, "</head><body class=body id=\"newsletter\">", 1, 0);
@@ -5151,24 +5146,36 @@ char* webgetnewsletter(char* param, int fmt)
 		buf = ostrcat(buf, _("param"), 1, 0);
 		buf = ostrcat(buf, "</h1>", 1, 0);
 		buf = ostrcat(buf, "<br>", 1, 0);
+//	}
+
+	struct newsletter* node = NULL;
+
+	m_lock(&status.newslettermutex, 19);
+
+	readnewsletter();
+	node = newsletter;
+
+	while(node != NULL)
+	{
+		if(ostrcmp(oitoa(node->nr), param) == 0)	
+		{
+			tmpstr = ostrcat(node->text, "\n", 0, 0);
+			break;
+		}
+		node = node->next;
 	}
 
-//	tmpstr = getabout();
-//	readnewsletter();
-	tmpstr = readfiletomem("/tmp/streaming.txt", 0);
-	tmpstr = ostrcat(tmpstr, "\ncomming soon...\n", 1, 0);
-	
+	freenewsletter();
+	m_unlock(&status.newslettermutex, 19);
+
 	tmpstr = string_replace_all("\n", "<br>\n", tmpstr, 1);
 
 	buf = ostrcat(buf, tmpstr, 1, 1);
 
-	if(fmt == 0)
-	{
+//	if(fmt == 0)
 		buf = ostrcat(buf, "</body></html>", 1, 0);
-	}	
 	
 	return buf;
-
 }
 
 #endif
