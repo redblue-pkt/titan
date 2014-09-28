@@ -1,1 +1,3 @@
-Seitenverhältnis\n16:9: Für alle aktuellen Breitbildfernseher\n4:3: Für ältere Röhrenfernseher\nany: 
+16:9: Für alle aktuellen Breitbildfernseher
+4:3: Für ältere Röhrenfernseher
+any: 
