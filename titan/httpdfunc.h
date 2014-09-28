@@ -5134,18 +5134,13 @@ char* webgetnewsletterchoices(int fmt)
 
 char* webgetnewsletter(char* param, int fmt)
 {
-	char* buf = NULL, *tmpstr = NULL;
+	char* buf = NULL, *tmpstr = NULL, *tmpstr1 = NULL;
 
 //	if(fmt == 0) 
 //	{
 		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
 		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
 		buf = ostrcat(buf, "</head><body class=body id=\"newsletter\">", 1, 0);
-		buf = ostrcat(buf, "<br>", 1, 0);
-		buf = ostrcat(buf, "<h1>", 1, 0);
-		buf = ostrcat(buf, _("param"), 1, 0);
-		buf = ostrcat(buf, "</h1>", 1, 0);
-		buf = ostrcat(buf, "<br>", 1, 0);
 //	}
 
 	struct newsletter* node = NULL;
@@ -5159,11 +5154,23 @@ char* webgetnewsletter(char* param, int fmt)
 	{
 		if(ostrcmp(oitoa(node->nr), param) == 0)	
 		{
+			tmpstr1 = ostrcat(node->title, " - ", 0, 0);
+			tmpstr1 = ostrcat(tmpstr1, node->date, 1, 0);
 			tmpstr = ostrcat(node->text, "\n", 0, 0);
 			break;
 		}
 		node = node->next;
 	}
+
+//	if(fmt == 0) 
+//	{
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+		buf = ostrcat(buf, tmpstr1, 1, 1);
+		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+//	}
+
 
 	freenewsletter();
 	m_unlock(&status.newslettermutex, 19);
