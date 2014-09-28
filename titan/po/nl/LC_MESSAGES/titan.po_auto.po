@@ -2185,7 +2185,7 @@ msgstr "Resync opname direct (geen schrijf buffer)"
 msgid "Recording name"
 msgstr "Opname naam"
 
-#: httpdfunc.h:4322 httpdfunc.h:5061 skin_default_skin.xml.h:419
+#: httpdfunc.h:4322 httpdfunc.h:5094 skin_default_skin.xml.h:419
 #: webif_info.h:2
 msgid "Newsletter"
 msgstr "Nieuwsbrief"
@@ -2331,8 +2331,12 @@ msgstr "Over"
 msgid "Service"
 msgstr "Zender"
 
-#: httpdfunc.h:5093 skin_default_skin.xml.h:627 stream.h:36 webif_info.h:4
+#: httpdfunc.h:5061 skin_default_skin.xml.h:627 stream.h:36 webif_info.h:4
 msgid "Streaming"
+msgstr ""
+
+#: httpdfunc.h:5146
+msgid "param"
 msgstr ""
 
 #: hwtest.h:88
