@@ -1,1 +1,1 @@
-Here you can select your Network Interface.
+Auswahl der Netzwerkkarte

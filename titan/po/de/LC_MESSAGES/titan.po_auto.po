@@ -3492,7 +3492,7 @@ msgstr "FEHLER: Hostname kann nicht geändert werden!"
 
 #: network.h:679
 msgid "NONE"
-msgstr "keines"
+msgstr "unverschlüsselt"
 
 #: network.h:680
 msgid "WEP"
@@ -7101,7 +7101,7 @@ msgstr ""
 "Hier können Sie Ihre WLAN Einstellungen vornehmen.\n"
 "1. Suche starten, die eigene SSID (AP/Router) mit ok übernehmen.\n"
 "2. Schlüssel und Typ anpassen und mit ok bestätigen (speichern).\n"
-"3. Deaktiviere LAN ja, Aktiviere Wlan und DHCP für einfache Einrichtung."
+"3. Automatischer Start falls erwünscht"
 
 #: skin_default_skin.xml.h:287
 msgid "Here you can make your adjust settings."
@@ -8206,7 +8206,7 @@ msgstr "Español"
 
 #: skin_default_skin.xml.h:611
 msgid "SSID"
-msgstr "Ssid"
+msgstr "SSID"
 
 #: skin_default_skin.xml.h:612 system_update.h:88 system_update.h:210
 msgid "stable"
@@ -8616,7 +8616,7 @@ msgstr "Wartezeit für CI-Module"
 
 #: skin_default_skin.xml.h:739
 msgid "WLAN Settings"
-msgstr "Wlan"
+msgstr "WLAN"
 
 #: skin_default_skin.xml.h:740
 msgid "Writer"
