@@ -6611,8 +6611,13 @@ char* system_logs(int mode)
 
 char* getabout()
 {
-	char* text = NULL, *tmpstr = NULL;
+	char* text = NULL, *tmpstr = NULL, *imgversion = NULL;
 	struct dvbdev* dvbnode = dvbdev;
+
+	if(isfile(getconfig("imagenamefile", NULL))	!= 0)
+		imgversion = readsys(getconfig("imagenamefile", NULL), 1);
+	else
+		imgversion = ostrcat("unknown", NULL, 0, 0);
 
 	text = ostrcat(_("Image"), ": ", 0, 0);
 	text = ostrcat(text, PROGNAME, 1, 0);
@@ -6620,6 +6625,10 @@ char* getabout()
 	text = ostrcat(text, _("Version"), 1, 0);
 	text = ostrcat(text, ": ", 1, 0);
 	text = ostrcat(text, OVERSION, 1, 0);
+	text = ostrcat(text, "\n", 1, 0);
+	text = ostrcat(text, _("Installed:"), 1, 0);
+	text = ostrcat(text, ": ", 1, 0);
+	text = ostrcat(text, imgversion, 1, 1);
 	text = ostrcat(text, "\n", 1, 0);
 	text = ostrcat(text, _("Copyright"), 1, 0);
 	text = ostrcat(text, ": ", 1, 0);
