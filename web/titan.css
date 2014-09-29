@@ -51,11 +51,16 @@
 
 #help {white-space: pre-wrap}
 
-.line1 td:last-child{border-radius: 0px 5px 5px 0px;}
-.line2 td:last-child{border-radius: 0px 5px 5px 0px;}
+.line1 td:last-child{border-radius: 0px 5px 5px 0px; text-align: center}
+.line2 td:last-child{border-radius: 0px 5px 5px 0px; text-align: center}
 
 .line1 td:first-child{ border-radius: 5px 0px 0px 5px; }
 .line2 td:first-child{ border-radius: 5px 0px 0px 5px; }
 
 .line1 td:only-child{ border-radius: 5px 5px 5px 5px; }
 .line2 td:only-child{ border-radius: 5px 5px 5px 5px; }
+
+#newsletterchoices h1 {text-align: center}
+#serviceinfo h1 {text-align: center}
+
+td select {width: 170px}
