@@ -5047,39 +5047,6 @@ char* webgetserviceinfo(int fmt)
 	return buf;
 }
 
-char* webgetstreaming(int fmt)
-{
-	char* buf = NULL, *tmpstr = NULL;
-
-	if(fmt == 0) 
-	{
-		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
-		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
-		buf = ostrcat(buf, "</head><body class=body id=\"streaming\">", 1, 0);
-		buf = ostrcat(buf, "<br>", 1, 0);
-		buf = ostrcat(buf, "<h1>", 1, 0);
-		buf = ostrcat(buf, _("Streaming"), 1, 0);
-		buf = ostrcat(buf, "</h1>", 1, 0);
-		buf = ostrcat(buf, "<br>", 1, 0);
-	}
-
-//	tmpstr = getabout();
-//	readnewsletter();
-	tmpstr = readfiletomem("/tmp/streaming.txt", 0);
-	tmpstr = ostrcat(tmpstr, "\ncomming soon...\n", 1, 0);
-	
-	tmpstr = string_replace_all("\n", "<br>\n", tmpstr, 1);
-
-	buf = ostrcat(buf, tmpstr, 1, 1);
-
-	if(fmt == 0)
-	{
-		buf = ostrcat(buf, "</body></html>", 1, 0);
-	}	
-	
-	return buf;
-}
-
 char* webgetnewsletterchoices(int fmt)
 {
 	char* buf = NULL;
@@ -5178,6 +5145,117 @@ char* webgetnewsletter(char* param, int fmt)
 	tmpstr = string_replace_all("\n", "<br>\n", tmpstr, 1);
 
 	buf = ostrcat(buf, tmpstr, 1, 1);
+
+//	if(fmt == 0)
+		buf = ostrcat(buf, "</body></html>", 1, 0);
+	
+	return buf;
+}
+
+char* webgetstreamingchoices(int fmt)
+{
+	char* buf = NULL, *tmpstr = NULL;
+
+	if(fmt == 0) 
+	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"streamingchoices\">", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+		buf = ostrcat(buf, _("Streaming"), 1, 0);
+		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>\n", 1, 0);
+	}
+
+
+	int count = 0;
+	struct service* servicenode = service;
+
+	while(servicenode != NULL)
+	{
+		if(servicenode->type == RECORDSTREAM && servicenode->recname != NULL)
+		{
+			buf = ostrcat(buf, "<a class=linelink2 href=queryraw?getstreaming&", 1, 0);
+			tmpstr = htmlencode(servicenode->recname);
+			buf = ostrcat(buf, tmpstr, 1, 1);
+			buf = ostrcat(buf, " target=main>", 1, 0);
+			buf = ostrcat(buf, _("stop"), 1, 0);
+			buf = ostrcat(buf, " - ", 1, 0);
+			buf = ostrcat(buf, servicenode->recname, 1, 0);
+			buf = ostrcat(buf, " (", 1, 0);
+			if(servicenode->channel != NULL && servicenode->channel->name != NULL)
+				buf = ostrcat(buf, servicenode->channel->name, 1, 0);
+			else
+				buf = ostrcat(buf, _("unknown"), 1, 0);
+			buf = ostrcat(buf, ")", 1, 0);
+			buf = ostrcat(buf, "</a>\n", 1, 0);
+			buf = ostrcat(buf, "</br></br>\n", 1, 0);
+			count++;
+		}
+		servicenode = servicenode->next;
+	}
+
+	if(count == 0)
+		buf = ostrcat(buf, _("No Live Stream running"), 1, 0);
+
+	if(fmt == 0)
+	{
+		buf = ostrcat(buf, "</body></html>", 1, 0);
+	}	
+	
+	return buf;
+}
+
+char* webgetstreaming(char* param, int fmt)
+{
+	char* buf = NULL, *tmpstr = NULL;
+
+//	if(fmt == 0) 
+//	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"streaming\">", 1, 0);
+//	}
+
+	htmldecode(param, param);
+
+	struct service* servicenode = service;
+	while(servicenode != NULL)
+	{
+		if(servicenode->recname != NULL && ostrcmp(servicenode->recname, param) == 0)
+		{
+			tmpstr = ostrcat(tmpstr, _("stop"), 1, 0);
+			tmpstr = ostrcat(tmpstr, " ", 1, 0);
+			tmpstr = ostrcat(tmpstr, servicenode->recname, 1, 0);
+			tmpstr = ostrcat(tmpstr, " (", 1, 0);
+			if(servicenode->channel != NULL && servicenode->channel->name != NULL)
+				tmpstr = ostrcat(tmpstr, servicenode->channel->name, 1, 0);
+			else
+				tmpstr = ostrcat(tmpstr, _("unknown"), 1, 0);
+			tmpstr = ostrcat(tmpstr, ")", 1, 0);
+			break;
+		}
+		servicenode = servicenode->next;
+	}
+
+//	if(fmt == 0) 
+//	{
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+		buf = ostrcat(buf, tmpstr, 1, 1);
+		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+//	}
+
+	servicenode = getrecordbyname(param, RECORDSTREAM);
+	if(servicenode != NULL)
+	{
+		servicenode->recendtime = 1;
+		buf = ostrcat(buf, _("Streaming succesfull stopped."), 1, 0);
+	}
+	else
+		buf = ostrcat(buf, _("ERROR, Streaming can not be stopped."), 1, 0);
 
 //	if(fmt == 0)
 		buf = ostrcat(buf, "</body></html>", 1, 0);

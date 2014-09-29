@@ -301,8 +301,10 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 		buf = webgetabout(fmt);
 	else if(ostrcmp(query, "getserviceinfo") == 0)
 		buf = webgetserviceinfo(fmt);
-	else if(ostrcmp(query, "getstreaming") == 0)
-		buf = webgetstreaming(fmt);
+	else if(ostrcmp(query, "getstreaming") == 0 && param != NULL)
+		buf = webgetstreaming(param, fmt);
+	else if(ostrcmp(query, "getstreamingchoices") == 0)
+		buf = webgetstreamingchoices(fmt);		
 	else if(ostrcmp(query, "getnewsletter") == 0 && param != NULL)
 		buf = webgetnewsletter(param, fmt);
 	else if(ostrcmp(query, "getnewsletterchoices") == 0)
