@@ -646,21 +646,21 @@ void hddformat(char* dev, char* filesystem)
 			if(large == 1)
 				cmd = ostrcat(cmd , " large", 1, 0);
 
-			if(checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1 || checkbox("UFS912") == 1 || checkbox("UFS913") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO5200") == 1 || checkbox("ATEMIO6200") == 1)
-			{
-				if(!file_exist("/mnt/logs"))
-					 mkdir("/mnt/logs", 777);
-			
-				if(file_exist("/etc/.beta") && file_exist("/mnt/logs"))
-					cmd = ostrcat(cmd, " > /mnt/logs/format_debug.log 2>&1", 1, 0);
-			}
-			else if(file_exist("/var/swap"))
+			if(file_exist("/var/swap"))
 			{
 				if(!file_exist("/var/swap/logs"))
 					 mkdir("/var/swap/logs", 777);
 			
 				if(file_exist("/etc/.beta") && file_exist("/var/swap/logs"))
 					cmd = ostrcat(cmd, " > /var/swap/logs/format_debug.log 2>&1", 1, 0);		
+			}
+			else if(checkbox("ATEMIO510") != 1 && checkbox("UFS910") != 1 && checkbox("UFS922") != 1 && checkbox("ATEVIO700") != 1 && checkbox("ATEVIO7000") != 1 && checkbox("IPBOX91") != 1 && checkbox("IPBOX900") != 1 && checkbox("IPBOX910") != 1 && checkbox("IPBOX9000") != 1)
+			{
+				if(!file_exist("/mnt/logs"))
+					 mkdir("/mnt/logs", 777);
+			
+				if(file_exist("/etc/.beta") && file_exist("/mnt/logs"))
+					cmd = ostrcat(cmd, " > /mnt/logs/format_debug.log 2>&1", 1, 0);
 			}
 
 			debug(80, "fdisk create cmd: %s", cmd);
@@ -693,21 +693,21 @@ void hddformat(char* dev, char* filesystem)
 			if(large == 1)
 				cmd = ostrcat(cmd , " large", 1, 0);
 
-			if(checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1 || checkbox("UFS912") == 1 || checkbox("UFS913") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO5200") == 1 || checkbox("ATEMIO6200") == 1)
-			{
-				if(!file_exist("/mnt/logs"))
-					 mkdir("/mnt/logs", 777);
-			
-				if(file_exist("/etc/.beta") && file_exist("/mnt/logs"))
-					cmd = ostrcat(cmd, " > /mnt/logs/format_debug.log 2>&1", 1, 0);
-			}
-			else if(file_exist("/var/swap"))
+			if(file_exist("/var/swap"))
 			{
 				if(!file_exist("/var/swap/logs"))
 					 mkdir("/var/swap/logs", 777);
 			
 				if(file_exist("/etc/.beta") && file_exist("/var/swap/logs"))
 					cmd = ostrcat(cmd, " > /var/swap/logs/format_debug.log 2>&1", 1, 0);		
+			}
+			else if(checkbox("ATEMIO510") != 1 && checkbox("UFS910") != 1 && checkbox("UFS922") != 1 && checkbox("ATEVIO700") != 1 && checkbox("ATEVIO7000") != 1 && checkbox("IPBOX91") != 1 && checkbox("IPBOX900") != 1 && checkbox("IPBOX910") != 1 && checkbox("IPBOX9000") != 1)
+			{
+				if(!file_exist("/mnt/logs"))
+					 mkdir("/mnt/logs", 777);
+			
+				if(file_exist("/etc/.beta") && file_exist("/mnt/logs"))
+					cmd = ostrcat(cmd, " > /mnt/logs/format_debug.log 2>&1", 1, 0);
 			}
 
 			debug(80, "fdisk update cmd: %s", cmd);
@@ -768,21 +768,21 @@ void hddformat(char* dev, char* filesystem)
 		else
 			cmd = ostrcat(cmd , " 0", 1, 0);
 
-		if(checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1 || checkbox("UFS912") == 1 || checkbox("UFS913") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO5200") == 1 || checkbox("ATEMIO6200") == 1)
-		{
-			if(!file_exist("/mnt/logs"))
-				 mkdir("/mnt/logs", 777);
-		
-			if(file_exist("/etc/.beta") && file_exist("/mnt/logs"))
-				cmd = ostrcat(cmd, " >> /mnt/logs/format_debug.log 2>&1", 1, 0);
-		}
-		else if(file_exist("/var/swap"))
+		if(file_exist("/var/swap"))
 		{
 			if(!file_exist("/var/swap/logs"))
 				 mkdir("/var/swap/logs", 777);
 		
 			if(file_exist("/etc/.beta") && file_exist("/var/swap/logs"))
 				cmd = ostrcat(cmd, " >> /var/swap/logs/format_debug.log 2>&1", 1, 0);		
+		}
+		else if(checkbox("ATEMIO510") != 1 && checkbox("UFS910") != 1 && checkbox("UFS922") != 1 && checkbox("ATEVIO700") != 1 && checkbox("ATEVIO7000") != 1 && checkbox("IPBOX91") != 1 && checkbox("IPBOX900") != 1 && checkbox("IPBOX910") != 1 && checkbox("IPBOX9000") != 1)
+		{
+			if(!file_exist("/mnt/logs"))
+				 mkdir("/mnt/logs", 777);
+		
+			if(file_exist("/etc/.beta") && file_exist("/mnt/logs"))
+				cmd = ostrcat(cmd, " >> /mnt/logs/format_debug.log 2>&1", 1, 0);
 		}
 
 		debug(80, "format cmd: %s", cmd);

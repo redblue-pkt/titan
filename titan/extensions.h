@@ -123,20 +123,17 @@ char* getinstallpath(char* path, char* size)
 	
 	if(size != NULL) isize = atoi(size);
 	
-//	if(checkbox("ATEMIO-NEMESIS") != 1 && checkbox("ATEMIO5200") != 1 && checkbox("ATEMIO6200") != 1)
-//	{
-		if(path == NULL || path[0] == '*' || ostrstr(path, "mnt") != NULL)
+	if(path == NULL || path[0] == '*' || ostrstr(path, "mnt") != NULL)
+	{
+		if(tpkchecksize(NULL, "/mnt/swapextensions", isize) == 0)
 		{
-			if(tpkchecksize(NULL, "/mnt/swapextensions", isize) == 0)
-			{
-				tmpmlist = addmenulist(&mlist, _("Install to MNT"), NULL, NULL, 0, 0);
-				changemenulistparam(tmpmlist, "/mnt/swapextensions", NULL, NULL, NULL);
-				free(tmpstr); tmpstr = NULL;
-				tmpstr = ostrcat("/mnt/swapextensions", NULL, 0, 0);
-				count++;
-			}
+			tmpmlist = addmenulist(&mlist, _("Install to MNT"), NULL, NULL, 0, 0);
+			changemenulistparam(tmpmlist, "/mnt/swapextensions", NULL, NULL, NULL);
+			free(tmpstr); tmpstr = NULL;
+			tmpstr = ostrcat("/mnt/swapextensions", NULL, 0, 0);
+			count++;
 		}
-//	}
+	}
 	
 	if(path == NULL || path[0] == '*' || ostrstr(path, "var") != NULL)
 	{
