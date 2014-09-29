@@ -9145,7 +9145,7 @@ msgstr ""
 "Alternative Audio Firmware will not work correctly with all videos\n"
 "(DTSDOWNMIX)!"
 
-#: tithek.c:103
+#: tithek.c:104
 msgid "Tithek - Mainmenu"
 msgstr "TiThek - Mainmenu"
 
