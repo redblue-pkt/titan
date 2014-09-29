@@ -51,8 +51,8 @@
 
 #help {white-space: pre-wrap}
 
-.line1 td:last-child{border-radius: 0px 5px 5px 0px; text-align: center}
-.line2 td:last-child{border-radius: 0px 5px 5px 0px; text-align: center}
+.line1 td:nth-child(2){border-radius: 0px 5px 5px 0px; text-align: center}
+.line2 td:nth-child(2){border-radius: 0px 5px 5px 0px; text-align: center}
 
 .line1 td:first-child{ border-radius: 5px 0px 0px 5px; }
 .line2 td:first-child{ border-radius: 5px 0px 0px 5px; }
