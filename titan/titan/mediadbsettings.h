@@ -17,7 +17,7 @@ void screenmediadbsettings()
 	struct skin* tmp = NULL;
 	char* tmpstr = NULL;
 
-	if(checkbox("UFS912") == 1 || checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1 || checkbox("ATEMIO5200") == 1 || checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO6200") == 1)
+	if(checkbox("ATEMIO510") != 1 && checkbox("UFS910") != 1 && checkbox("UFS922") != 1 && checkbox("ATEVIO700") != 1 && checkbox("ATEVIO7000") != 1 && checkbox("IPBOX91") != 1 && checkbox("IPBOX900") != 1 && checkbox("IPBOX910") != 1 && checkbox("IPBOX9000") != 1)
 		addchoicebox(mediadbpath, "/mnt/swapextensions/.mediadb", "/mnt/swapextensions/.mediadb");
 	addchoicebox(mediadbpath, "/media/hdd/.mediadb", "/media/hdd/.mediadb");
 	if(file_exist("/tmp/.swapextensionsdev") == 1)

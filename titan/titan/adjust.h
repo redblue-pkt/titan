@@ -246,10 +246,12 @@ void screenadjust()
 	changemask(community_pass, "abcdefghijklmnopqrstuvwxyz");
 	changeinput(community_pass, getconfig("community_pass", NULL));
 
-	if(checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO5200") == 1 || checkbox("ATEMIO6200") == 1)
-		dualboot->hidden = NO;
-	else
-		dualboot->hidden = YES;
+#ifdef MIPSEL
+	dualboot->hidden = NO;
+#endif
+#ifdef SH4
+	dualboot->hidden = YES;
+#endif
 
 	if(status.security == 0 || checkemu() == 0)
 		emucontrol->hidden = YES;
@@ -392,14 +394,14 @@ void screenadjust()
 					setsataswitch(sataswitch->ret);
 				}
 			}
-			if(checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO5200") == 1 || checkbox("ATEMIO6200") == 1)
-			{
-				addconfigscreen("dualboot", dualboot);
-				if(dualboot->ret != NULL && ostrcmp(dualboot->ret, "0") == 0)
-					unlink("/mnt/config/dualboot");
-				else
-					system("touch /mnt/config/dualboot");
-			}
+
+#ifdef MIPSEL
+			addconfigscreen("dualboot", dualboot);
+			if(dualboot->ret != NULL && ostrcmp(dualboot->ret, "0") == 0)
+				unlink("/mnt/config/dualboot");
+			else
+				system("touch /mnt/config/dualboot");
+#endif
 			addconfigscreen("playerbuffersize", playerbuffersize);
 			addconfigscreen("playerbufferseektime", playerbufferseektime);
 
