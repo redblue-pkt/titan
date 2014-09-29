@@ -8929,7 +8929,7 @@ msgid ""
 "Alternativ Audio Firmware not working korrekt with all videos (DTSDOWNMIX)!"
 msgstr ""
 
-#: tithek.c:103
+#: tithek.c:104
 msgid "Tithek - Mainmenu"
 msgstr ""
 

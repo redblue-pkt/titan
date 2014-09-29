@@ -9099,7 +9099,7 @@ msgid ""
 "Alternativ Audio Firmware not working korrekt with all videos (DTSDOWNMIX)!"
 msgstr "De hoster wordt momenteel nog niet ondersteund!"
 
-#: tithek.c:103
+#: tithek.c:104
 msgid "Tithek - Mainmenu"
 msgstr "Tithek - Hoofdmenu"
 
