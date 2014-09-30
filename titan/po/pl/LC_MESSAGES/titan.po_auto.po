@@ -4985,7 +4985,7 @@ msgid "TiThek Settings"
 msgstr "ustawienia udostępniania"
 
 #: plugins_tithek_skin.xml.h:3 skins_tithek_skin.xml.h:3 tithek.h:1541
-#: tithek.h:2131
+#: tithek.h:2134
 msgid "ADD FAV"
 msgstr ""
 
@@ -9018,12 +9018,16 @@ msgstr ""
 msgid "TitanNit Tithek disclaimer"
 msgstr ""
 
-#: tithek.h:1536 tithek.h:2126
+#: tithek.h:1536 tithek.h:2129
 msgid "EDIT FAV"
 msgstr ""
 
 #: tithek.h:1573
 msgid "Page"
+msgstr ""
+
+#: tithek.h:1667 tithek.h:2085 tithek.h:2099 tithek.h:2109 tithek.h:2127
+msgid "Tithek - Mainmenu - Favoriten"
 msgstr ""
 
 #: tithek.h:2089
