@@ -63,7 +63,7 @@ int checkhighflash()
 	else if(checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1 || checkbox("ATEMIO6200") == 1)
 	{
 		cmd = ostrcat(cmd, "mtd1", 1, 0); 
-		size = ostrcat("f800000", NULL, 0, 0);
+		size = ostrcat("13800000", NULL, 0, 0);
 	}
 	else if(checkbox("ATEMIO-NEMESIS") == 1)
 	{
