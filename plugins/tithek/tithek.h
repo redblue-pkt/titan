@@ -1664,7 +1664,7 @@ waitrcstart:
 //			drawscreen(grid, 0, 0);
 		}
 
-		if (ostrcmp(title, "TiThek - Favoriten") == 0)
+		if (ostrcmp(title, _("Tithek - Mainmenu - Favoriten")) == 0)
 		{
 //			changetext(b4, _("EDIT FAV"));
 			b5->hidden = NO;
@@ -2082,7 +2082,7 @@ why ?
 				drawscreen(grid, 0, 0);
 			}			
 		}
-		else if(rcret == getrcconfigint("rcyellow", NULL) && ostrcmp(title, "TiThek - Favoriten") == 0)
+		else if(rcret == getrcconfigint("rcyellow", NULL) && ostrcmp(title, _("Tithek - Mainmenu - Favoriten")) == 0)
 		{
 			if(listbox->select != NULL && listbox->select->handle != NULL)
 			{
@@ -2096,7 +2096,7 @@ why ?
 				}
 			}
 		}
-		else if(rcret == getrcconfigint("rcgreen", NULL) && ostrcmp(title, "TiThek - Favoriten") != 0)
+		else if(rcret == getrcconfigint("rcgreen", NULL) && ostrcmp(title, _("Tithek - Mainmenu - Favoriten")) != 0)
 		{
 			if(listbox->select != NULL && listbox->select->handle != NULL)
 			{
@@ -2106,7 +2106,7 @@ why ?
 				}
 			}
 		}
-		else if(rcret == getrcconfigint("rcgreen", NULL) && ostrcmp(title, "TiThek - Favoriten") == 0)
+		else if(rcret == getrcconfigint("rcgreen", NULL) && ostrcmp(title, _("Tithek - Mainmenu - Favoriten")) == 0)
 		{
 			if(listbox->select != NULL && listbox->select->handle != NULL)
 			{
@@ -2121,7 +2121,10 @@ why ?
 			}
 		}
 
-		if (ostrcmp(title, "TiThek - Favoriten") == 0)
+printf("title1: %s\n",title);
+printf("title2: %s\n",_(title));
+
+		if(ostrcmp(title, _("Tithek - Mainmenu - Favoriten")) == 0)
 		{
 			changetext(b4, _("EDIT FAV"));
 			b5->hidden = NO;
