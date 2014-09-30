@@ -2264,7 +2264,7 @@ msgid "Dualboot Menu TitanNit / E2"
 msgstr "Dualboot Menü TitanNit / E2"
 
 #: httpdfunc.h:4866 skin_default_skin.xml.h:644 system_infos.h:14
-#: webif_info_systeminfos.h:1
+#: webif_info_systeminfos.h:2
 msgid "System Status"
 msgstr ""
 
@@ -2273,62 +2273,62 @@ msgid "Free Space"
 msgstr "Freier Speicher"
 
 #: httpdfunc.h:4870 skin_default_skin.xml.h:350 system_infos.h:18
-#: webif_info_systeminfos.h:3
+#: webif_info_systeminfos.h:4
 msgid "Kernel"
 msgstr ""
 
 #: httpdfunc.h:4872 skin_default_skin.xml.h:400 system_infos.h:20
-#: webif_info_systeminfos.h:4
+#: webif_info_systeminfos.h:5
 msgid "Mounts"
 msgstr "Geräteanbindungen"
 
 #: httpdfunc.h:4874 hwtest.h:181 hwtest.h:396 network.h:284 network.h:299
 #: plugins_mc_skin.xml.h:37 plugins_panel_skin.xml.h:18
 #: skin_default_skin.xml.h:411 skins_mc_skin.xml.h:37
-#: skins_panel_skin.xml.h:18 system_infos.h:22 webif_info_systeminfos.h:5
+#: skins_panel_skin.xml.h:18 system_infos.h:22 webif_info_systeminfos.h:6
 msgid "Network"
 msgstr "Netzwerk"
 
 #: httpdfunc.h:4876 skin_default_skin.xml.h:491 system_infos.h:24
-#: webif_info_systeminfos.h:6
+#: webif_info_systeminfos.h:7
 msgid "Ram"
 msgstr "Arbeitsspeicher"
 
-#: httpdfunc.h:4909 skin_default_skin.xml.h:157 webif_info_sysinfos.h:1
+#: httpdfunc.h:4909 skin_default_skin.xml.h:157 webif_info_sysinfos.h:2
 msgid "CPU"
 msgstr "Cpu"
 
-#: httpdfunc.h:4911 skin_default_skin.xml.h:384 webif_info_sysinfos.h:2
+#: httpdfunc.h:4911 skin_default_skin.xml.h:384 webif_info_sysinfos.h:3
 msgid "Memory"
 msgstr "Speicher"
 
-#: httpdfunc.h:4913 skin_default_skin.xml.h:404 webif_info_sysinfos.h:3
+#: httpdfunc.h:4913 skin_default_skin.xml.h:404 webif_info_sysinfos.h:4
 msgid "MTD"
 msgstr "Flash Aufteilung"
 
-#: httpdfunc.h:4915 skin_default_skin.xml.h:397 webif_info_sysinfos.h:4
+#: httpdfunc.h:4915 skin_default_skin.xml.h:397 webif_info_sysinfos.h:5
 msgid "Module"
 msgstr "Modul"
 
 #: httpdfunc.h:4917 skin_default_skin.xml.h:184 system_infos_sysinfo.h:23
-#: webif_info_sysinfos.h:5
+#: webif_info_sysinfos.h:6
 msgid "Devices"
 msgstr "Geräte"
 
 #: httpdfunc.h:4919 panel_settings_autostart.h:210 settings_autostart.h:315
-#: skin_default_skin.xml.h:633 webif_info_sysinfos.h:6
+#: skin_default_skin.xml.h:633 webif_info_sysinfos.h:7
 msgid "Swap"
 msgstr "Swap Datei (RAM Erweiterung)"
 
-#: httpdfunc.h:4921 skin_default_skin.xml.h:673 webif_info_sysinfos.h:7
+#: httpdfunc.h:4921 skin_default_skin.xml.h:673 webif_info_sysinfos.h:8
 msgid "Top"
 msgstr "Top (Prozesse)"
 
-#: httpdfunc.h:4923 skin_default_skin.xml.h:484 webif_info_sysinfos.h:8
+#: httpdfunc.h:4923 skin_default_skin.xml.h:484 webif_info_sysinfos.h:9
 msgid "Prozesslist"
 msgstr "Prozessliste"
 
-#: httpdfunc.h:4925 skin_default_skin.xml.h:712 webif_info_sysinfos.h:9
+#: httpdfunc.h:4925 skin_default_skin.xml.h:712 webif_info_sysinfos.h:10
 msgid "USB"
 msgstr ""
 
@@ -2340,7 +2340,7 @@ msgstr ""
 msgid "Svn Changelog"
 msgstr ""
 
-#: httpdfunc.h:4962 skin_default_skin.xml.h:255 webif_info_logs.h:2
+#: httpdfunc.h:4962 skin_default_skin.xml.h:255 webif_info_logs.h:3
 msgid "Git Changelog"
 msgstr "GIT Änderungsprotokoll"
 
@@ -6954,7 +6954,7 @@ msgstr "Schriftgröße verändern in Pixel"
 msgid "Format HDD"
 msgstr "Datenträger formatieren"
 
-#: skin_default_skin.xml.h:245 webif_info_systeminfos.h:2
+#: skin_default_skin.xml.h:245 webif_info_systeminfos.h:3
 msgid "free space"
 msgstr "Freier Speicher"
 
@@ -8352,7 +8352,8 @@ msgstr "Softwareaktualisierung (tmp)"
 msgid "System Info"
 msgstr "System Infos"
 
-#: skin_default_skin.xml.h:643 webif_info_systeminfos.h:7
+#: skin_default_skin.xml.h:643 webif_info_systeminfos.h:1
+#: webif_info_systeminfos.h:8
 msgid "System Infos"
 msgstr ""
 
@@ -8441,7 +8442,7 @@ msgstr "Zeitzone"
 msgid "Tint"
 msgstr "Temperatur"
 
-#: skin_default_skin.xml.h:668 webif_info_logs.h:1
+#: skin_default_skin.xml.h:668 webif_info_logs.h:2
 msgid "Titan Changelog"
 msgstr "Titan Änderungsprotokoll"
 
@@ -12735,20 +12736,24 @@ msgstr ""
 msgid "Archive"
 msgstr ""
 
-#: webif_info.h:7
+#: webif_info.h:7 webif_info_logs.h:1
 msgid "Logs"
 msgstr ""
 
-#: webif_info_logs.h:3
+#: webif_info_logs.h:4
 msgid "Titan Log"
 msgstr ""
 
-#: webif_info_logs.h:4
+#: webif_info_logs.h:5
 msgid "Titan Changelog (Extern)"
 msgstr ""
 
-#: webif_info_logs.h:5
+#: webif_info_logs.h:6
 msgid "Git Changelog (Extern)"
+msgstr ""
+
+#: webif_info_sysinfos.h:1
+msgid "Extended System Infos"
 msgstr ""
 
 #: webif_message.h:1 webif_playurl.h:2 webif_playurl.h:5
