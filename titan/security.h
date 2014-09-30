@@ -55,10 +55,15 @@ int checkhighflash()
 	cmd = ostrcat(cmd, " ", 1, 0); 
 	cmd = ostrcat(cmd, "grep", 1, 0); 
 	cmd = ostrcat(cmd, " ", 1, 0);
-	if(checkbox("ATEMIO5200") == 1 || checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1 || checkbox("ATEMIO6200") == 1)
+	if(checkbox("ATEMIO5200") == 1)
 	{
 		cmd = ostrcat(cmd, "mtd1", 1, 0); 
-		size = ostrcat("13900000", NULL, 0, 0); 
+		size = ostrcat("13900000", NULL, 0, 0);
+	}
+	else if(checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1 || checkbox("ATEMIO6200") == 1)
+	{
+		cmd = ostrcat(cmd, "mtd1", 1, 0); 
+		size = ostrcat("f800000", NULL, 0, 0);
 	}
 	else if(checkbox("ATEMIO-NEMESIS") == 1)
 	{
