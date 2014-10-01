@@ -12810,10 +12810,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Zapback is activated. Do you want to stop it?"
-
-#~ msgid ""
-#~ "E2 WebIf API erlaubt den Zugriff auf TitanNit mittels eines E2-Clients (z."
-#~ "B. dreaMote-App auf iPhone oder iPad bzw. XBMC mit VU+)"
-#~ msgstr ""
-#~ "E2 WebIF which allows you to remotely access your titanNit receiverfrom "
-#~ "an E2 Client like DreaMote-App on Iphone/Ipad or XBMC from a VU+"
