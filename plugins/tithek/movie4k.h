@@ -394,14 +394,29 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 //			hnamein = string_resub("width=\"16\"> &nbsp;", "</a></td><td align=", tmpstr, 0);
 			hnamein = string_resub("width=\"16\"> &nbsp;", "</a></td>", tmpstr, 0);
 			nolinks = ostrcat(tmpstr, NULL, 0, 0);
+			if(ostrstr(tmpstr, "set a cookie which will expire in 3 days and be accessible site wide") != NULL)
+			{
+				textbox(_("Message"), _("set a cookie which will expire in 3 days and be accessible site wide") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
+				writesys("/tmp/movie4k.error.cookie.list", tmpstr, 1);
+				return ret;
+			}
 		}
 		else
 		{
 			unlink("/tmp/movie4k.list");
 			writesys("/tmp/movie4k.list", tmpstr, 1);
-			tmpstr = command("cat /tmp/movie4k.list | grep ^links");
+			char* tmpstr1 = command("cat /tmp/movie4k.list | grep ^links");
+			tmpstr = ostrcat(tmpstr1, NULL, 1, 0);
+			char* cmd = ostrcat("cat /tmp/movie4k.list | grep ^'</SCRIPT>' | sed 's!</SCRIPT>!\\nlinks[!g' | sed 's!</td></tr>!\\nlinks[!g' | grep ^'links\\[<' | grep -v ^'links\\[<SCRIPT'", NULL, 0, 0);
+			printf("cmd: %s\n",cmd);
+			tmpstr1 = command(cmd);
+			free(cmd), cmd = NULL;
+			tmpstr = ostrcat(tmpstr, tmpstr1, 1, 0);
 		}
-		
+
+		titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/thefile1_tmp", NULL, NULL, NULL, tmpstr);
+
+
 		int count = 0;
 		int incount = 0;
 		int i;
@@ -413,6 +428,8 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 			int max = count;
 			for(i = 0; i < max; i++)
 			{
+printf("ret1[i].part: %s\n",ret1[i].part);
+
 				if((!ostrncmp("links", ret1[i].part, 5) && nolinks == NULL) || nolinks != NULL)
 				{
 					if(nolinks == NULL)
@@ -421,7 +438,13 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 //						ret1[i].part = string_replace_all("</a>&nbsp;</td>", "</a></td>", ret1[i].part, 1);
 
 						pathnew = string_resub("<a href=\\\"", "\\", ret1[i].part, 0);
+						if(pathnew == NULL)
+							pathnew = string_resub("<a href=\"", "\"", ret1[i].part, 0);
+
 						tmphname = string_resub("title=\\\"", " ", ret1[i].part, 0);
+						if(tmphname == NULL)
+							tmphname = string_resub("title=\"", " ", ret1[i].part, 0);
+						
 						if(tmphname == NULL)
 							tmphname = string_resub("&nbsp;", "</a", ret1[i].part, 0);
 
@@ -436,7 +459,7 @@ int movie4k_hoster(struct skin* grid, struct skin* listbox, struct skin* countla
 						if(id == NULL)
 							id = ostrcat(tmpid, NULL, 0, 0);
 
-//						debug(99, "(%d/%d/%d) pathnew: %s hname: %s id: %s",a ,i ,max ,pathnew , tmphname, id);
+						debug(99, "(%d/%d/%d) pathnew: %s hname: %s id: %s",a ,i ,max ,pathnew , tmphname, id);
 
 						if(ostrstr(pathnew, "tvshows-") != NULL)
 						{
