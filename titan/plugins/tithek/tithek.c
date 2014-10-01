@@ -43,6 +43,7 @@
 #include "tvtoast.h"
 #include "firedrive.h"
 #include "shared.h"
+#include "thefile.h"
 
 char pluginname[] = "TiTan Mediathek";
 char plugindesc[] = "TiTan Mediathek";

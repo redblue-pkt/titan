@@ -238,6 +238,8 @@ char* hoster(char* url)
 		streamurl = firedrive(url);
 	else if(ostrstr(tmplink, "shared") != NULL)
 		streamurl = shared(url);
+	else if(ostrstr(tmplink, "thefile") != NULL)
+		streamurl = thefile(url);
 	else if(ostrstr(tmplink, "youtube") != NULL)
 		streamurl = youtube(url);
 	else if(ostrstr(tmplink, "myvideo") != NULL)
