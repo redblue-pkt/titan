@@ -9990,12 +9990,8 @@ msgstr "DVD Player Extension"
 #: tpk_description.h:57
 msgid ""
 "E2 WebIf API erlaubt den Zugriff auf TitanNit mittels eines E2-Clients (z.B. "
-"dreaMote-App auf iPhone oder iPad bzw. XBMC mit VU+)"
+"dreaMote-App auf iPhone oder iPad, XBMC mit VU+, TVBrowser, FHEM, ...)"
 msgstr ""
-"E2 WebIF E2 inalmbrico) que le permite acceder de forma remota a su titanNit "
-"receiver de un E2 Cliente como Drea Mote-App en el Iphone/Ipad o XBMC de "
-"VUwhich allows you to remotely access your titanNit receiverfrom an E2 "
-"Client like DreaMote-App on Iphone/Ipad or XBMC from a VU+"
 
 #: tpk_description.h:58
 msgid "Emu Camd3 v3.902 for your box"
@@ -12902,3 +12898,12 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Zap atras esta activado. Desea detener?"
+
+#~ msgid ""
+#~ "E2 WebIf API erlaubt den Zugriff auf TitanNit mittels eines E2-Clients (z."
+#~ "B. dreaMote-App auf iPhone oder iPad bzw. XBMC mit VU+)"
+#~ msgstr ""
+#~ "E2 WebIF E2 inalmbrico) que le permite acceder de forma remota a su "
+#~ "titanNit receiver de un E2 Cliente como Drea Mote-App en el Iphone/Ipad o "
+#~ "XBMC de VUwhich allows you to remotely access your titanNit receiverfrom "
+#~ "an E2 Client like DreaMote-App on Iphone/Ipad or XBMC from a VU+"

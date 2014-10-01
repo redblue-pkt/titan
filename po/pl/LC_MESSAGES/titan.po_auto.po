@@ -9684,7 +9684,7 @@ msgstr ""
 #: tpk_description.h:57
 msgid ""
 "E2 WebIf API erlaubt den Zugriff auf TitanNit mittels eines E2-Clients (z.B. "
-"dreaMote-App auf iPhone oder iPad bzw. XBMC mit VU+)"
+"dreaMote-App auf iPhone oder iPad, XBMC mit VU+, TVBrowser, FHEM, ...)"
 msgstr ""
 
 #: tpk_description.h:58
