@@ -42,6 +42,7 @@
 #include "filmon.h"
 #include "tvtoast.h"
 #include "firedrive.h"
+#include "shared.h"
 
 char pluginname[] = "TiTan Mediathek";
 char plugindesc[] = "TiTan Mediathek";

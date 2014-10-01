@@ -185,7 +185,8 @@ end:
 	free(fname), fname = NULL;
 	free(ip); ip = NULL;
 	free(cookie); cookie = NULL;
-	free(cmd); cmd = NULL;	
+	free(cmd); cmd = NULL;
+	free(hashline), hashline = NULL;
 	return streamlink;
 }
 
