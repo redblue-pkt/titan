@@ -130,6 +130,8 @@ char* videoweed(char* link)
 	debug(99, "filekey: %s", filekey);
 
 	file = string_replace("/embed.php?v=", "", file, 1);
+	file = string_replace("/file/", "", file, 1);
+	file = string_replace("/video/", "", file, 1);
 	tmphost = string_replace("embed.", "", tmphost, 1);
 
 	free(tmppath), tmppath = NULL;
