@@ -236,6 +236,8 @@ char* hoster(char* url)
 		streamurl = videoweed(url);
 	else if(ostrstr(tmplink, "firedrive") != NULL)
 		streamurl = firedrive(url);
+	else if(ostrstr(tmplink, "shared") != NULL)
+		streamurl = shared(url);
 	else if(ostrstr(tmplink, "youtube") != NULL)
 		streamurl = youtube(url);
 	else if(ostrstr(tmplink, "myvideo") != NULL)

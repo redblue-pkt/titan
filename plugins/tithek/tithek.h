@@ -2121,9 +2121,6 @@ why ?
 			}
 		}
 
-printf("title1: %s\n",title);
-printf("title2: %s\n",_(title));
-
 		if(ostrstr(title, _("Favoriten")) != NULL)
 		{
 			changetext(b4, _("EDIT FAV"));
