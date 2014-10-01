@@ -9321,6 +9321,11 @@ msgstr "Streamadresse ist nicht erreichbar!"
 msgid "TitanNit Tithek disclaimer"
 msgstr "TiThek Haftungsausschluss:"
 
+#: tithek.h:1534 tithek.h:1667 tithek.h:2085 tithek.h:2099 tithek.h:2109
+#: tithek.h:2127 tithek_mainmenu.h:16
+msgid "Favoriten"
+msgstr ""
+
 #: tithek.h:1536 tithek.h:2129
 msgid "EDIT FAV"
 msgstr "Fav Bearbeiten"
@@ -9328,10 +9333,6 @@ msgstr "Fav Bearbeiten"
 #: tithek.h:1573
 msgid "Page"
 msgstr "Seite"
-
-#: tithek.h:1667 tithek.h:2085 tithek.h:2099 tithek.h:2109 tithek.h:2127
-msgid "Tithek - Mainmenu - Favoriten"
-msgstr ""
 
 #: tithek.h:2089
 msgid "Remove this Favorite ?"
@@ -9396,10 +9397,6 @@ msgstr "Atemio WLAN Konfiguration"
 #: tithek_mainmenu.h:15
 msgid "Category"
 msgstr "Kategorie"
-
-#: tithek_mainmenu.h:16
-msgid "Favoriten"
-msgstr ""
 
 #: tithek_mainmenu.h:17
 msgid "FilmOn"
