@@ -2096,7 +2096,7 @@ why ?
 				}
 			}
 		}
-		else if(rcret == getrcconfigint("rcgreen", NULL) && ostrcmp(title, _("Tithek - Mainmenu - Favoriten")) == 0)
+		else if(rcret == getrcconfigint("rcgreen", NULL) && ostrcmp(title, _("Tithek - Mainmenu - Favoriten")) != 0)
 		{
 			if(listbox->select != NULL && listbox->select->handle != NULL)
 			{
