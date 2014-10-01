@@ -5,7 +5,7 @@
 .label1 {font-family:verdana; font-size: 12pt; color: #ffffff; text-decoration: none}
 .smalllabel1 {font-family:verdana; font-size: 10pt; color: #ffffff; text-decoration: none}
 
-.link {white-space: normal; vertical-align: middle; border-radius: 5px 0px 0px 5px; font-family:verdana; font-size: 12pt; color: #ffffff; text-decoration: none}
+.link {white-space: normal; vertical-align: middle; /*border-radius: 5px 0px 0px 5px;*/ font-family:verdana; font-size: 12pt; color: #ffffff; text-decoration: none}
 .link:hover {background-color: #00a4c8}
 
 .smalllink {vertical-align: middle; font-family:verdana; font-size: 8pt; color: #ffffff; text-decoration: none}
@@ -13,16 +13,16 @@
 
 .line1 {background-color: #454545;}
 .line2 {background-color: #505050;}
-.line1 td:last-child:not([class="gepgcell"]){border-radius: 0px 5px 5px 0px;}
-.line2 td:last-child:not([class="gepgcell"]){border-radius: 0px 5px 5px 0px;}
 .line1 td:nth-child(2){text-align: center}
 .line2 td:nth-child(2){text-align: center}
-.line1 td:first-child:not([class="gepgcell"]){ border-radius: 5px 0px 0px 5px; }
-.line2 td:first-child:not([class="gepgcell"]){ border-radius: 5px 0px 0px 5px; }
-.line1 td div{ border-radius: 0px 0px 0px 0px; }
-.line2 td div{ border-radius: 0px 0px 0px 0px; }
+/*.line1 td:last-child:not([class="gepgcell"]){border-radius: 0px 5px 5px 0px;}
+.line2 td:last-child:not([class="gepgcell"]){border-radius: 0px 5px 5px 0px;}
+.line1 td:first-child:not([class="gepgcell"]){ border-radius: 5px 0px 0px 5px;}
+.line2 td:first-child:not([class="gepgcell"]){ border-radius: 5px 0px 0px 5px;}
+.line1 td div{ border-radius: 0px 0px 0px 0px;}
+.line2 td div{ border-radius: 0px 0px 0px 0px;}
 .line1 td:only-child { border-radius: 5px 5px 5px 5px !important; }
-.line2 td:only-child { border-radius: 5px 5px 5px 5px !important; }
+.line2 td:only-child { border-radius: 5px 5px 5px 5px !important; }*/
 
 .hreflink {font-family: verdana; font-size: 12pt; color: #ffffff; text-decoration: none}
 .hreflink:hover {background-color: #00a4c8}
