@@ -60,7 +60,7 @@ char* thefile(char* link)
 
 	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 	debug(99, "tmpstr: %s", tmpstr);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/thefile1_get", NULL, NULL, NULL, tmpstr);
+	titheklog(debuglevel, "/tmp/thefile1_get", NULL, NULL, NULL, tmpstr);
 	free(send), send = NULL;
 
 	if(ostrstr(tmpstr, "The file is being transfered to our other servers. This may take few minutes.") != NULL)
@@ -128,7 +128,7 @@ char* thefile(char* link)
 	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 	free(send), send = NULL;
 	debug(99, "tmpstr: %s", tmpstr);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/thefile2_post", NULL, NULL, NULL, tmpstr);
+	titheklog(debuglevel, "/tmp/thefile2_post", NULL, NULL, NULL, tmpstr);
 
 	pos7 = ostrstr(tmpstr, "<input type=\"hidden\" name=\"redirect\" value=");
 	redirect = getxmlentry(pos7, "value=");
@@ -198,7 +198,7 @@ char* thefile(char* link)
 	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 	free(send), send = NULL;
 	debug(99, "tmpstr: %s", tmpstr);
-	titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/thefile3_post", NULL, NULL, NULL, tmpstr);
+	titheklog(debuglevel, "/tmp/thefile3_post", NULL, NULL, NULL, tmpstr);
 ///////
 
 	if(ostrstr(tmpstr, "This direct link will be available for your IP next 8 hours") != NULL)
