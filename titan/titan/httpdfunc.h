@@ -1234,6 +1234,10 @@ char* webgetepg(char* param, int fmt)
 		return buf;
 	}
 
+	buf = ostrcat(buf, "<tr class=channelname><td><h4 style=\"margin:2px 0px\">", 1, 0);
+	buf = ostrcat(buf, chnode->name, 1, 0);
+	buf = ostrcat(buf, "</h4></td></tr>", 1, 0);
+
 	if(fmt == 0) buf = ostrcat(buf, "<tr><td><font class=biglabel>", 1, 0);
 	if(epgnode->title != NULL)
 	{
@@ -1329,7 +1333,7 @@ char* webgetsingleepg(char* param, int fmt)
 		return buf;
 	}
 
-	ostrcatbig(&buf, "<tr class=channelname><td colspan=4 align=center><h4 style=\"margin:2px 0px\">", &maxlen, &pos);
+	ostrcatbig(&buf, "<tr class=channelname><td colspan=4><h4 style=\"margin:2px 0px\">", &maxlen, &pos);
 	ostrcatbig(&buf, chnode->name, &maxlen, &pos);
 	ostrcatbig(&buf, "</h4></td></tr>", &maxlen, &pos);
 	ostrcatbig(&buf, "<tr class=tabledesc><td width=70px align=center>Datum</td><td width=70px align=center>Uhrzeit</td><td align=left>Beschreibung</td><td width=50px align=center>Timer</td></tr>", &maxlen, &pos);
