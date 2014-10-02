@@ -9256,22 +9256,18 @@ msgid "VOX-Now"
 msgstr ""
 
 #: tithek_mainmenu.h:52
-msgid "Watchmovies"
-msgstr ""
-
-#: tithek_mainmenu.h:53
 msgid "XXX-Beeg"
 msgstr ""
 
-#: tithek_mainmenu.h:54
+#: tithek_mainmenu.h:53
 msgid "XXX-XVIDEOS"
 msgstr "OBRAZ"
 
-#: tithek_mainmenu.h:55
+#: tithek_mainmenu.h:54
 msgid "Youtube"
 msgstr ""
 
-#: tithek_mainmenu.h:56
+#: tithek_mainmenu.h:55
 msgid "ZDF"
 msgstr ""
 
