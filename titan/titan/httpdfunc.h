@@ -1329,6 +1329,11 @@ char* webgetsingleepg(char* param, int fmt)
 		return buf;
 	}
 
+	ostrcatbig(&buf, "<tr class=channelname><td colspan=4 align=center><h4 style=\"margin:2px 0px\">", &maxlen, &pos);
+	ostrcatbig(&buf, chnode->name, &maxlen, &pos);
+	ostrcatbig(&buf, "</h4></td></tr>", &maxlen, &pos);
+	ostrcatbig(&buf, "<tr class=tabledesc><td width=70px align=center>Datum</td><td width=70px align=center>Uhrzeit</td><td align=left>Beschreibung</td><td width=50px align=center>Timer</td></tr>", &maxlen, &pos);
+	
 	while(epgnode != NULL)
 	{
 		if(fmt == 0)
@@ -1344,10 +1349,25 @@ char* webgetsingleepg(char* param, int fmt)
 				line = 0;
 			}
 
-			ostrcatbig(&buf, "<td nowrap><a target=main class=link href=query?getepg&", &maxlen, &pos);
+			loctime = olocaltime(&epgnode->starttime);
+			if(loctime != NULL)
+			{
+				strftime(buf1, MINMALLOC, "%d.%m", loctime);
+				strftime(buf2, MINMALLOC, "%H.%H", loctime);
+			}
+			free(loctime); loctime = NULL;
+			
+			ostrcatbig(&buf, "<td nowrap class=coldate>", &maxlen, &pos);
+			ostrcatbig(&buf, buf1, &maxlen, &pos);
+			ostrcatbig(&buf, "</td><td nowrap class=coltime>", &maxlen, &pos);
+			ostrcatbig(&buf, buf2, &maxlen, &pos);
+			free(buf1); buf1 = NULL;
+			free(buf2); buf2 = NULL;
+			
+			ostrcatbig(&buf, "</td><td nowrap><a target=main class=link href=query?getepg&", &maxlen, &pos);
 			tmpstr = oitoa(chnode->serviceid);
 			ostrcatbig(&buf, tmpstr, &maxlen, &pos);
-			buf2 = ostrcat("<td nowrap><a target=main class=link href=query?addrectimer&", tmpstr, 0, 0);
+			buf2 = ostrcat("<td nowrap class=linkimage><a target=main class=link href=query?addrectimer&", tmpstr, 0, 0);
 			buf2 = ostrcat(buf2, "&", 0, 0);
 			free(tmpstr); tmpstr = NULL;
 			ostrcatbig(&buf, "&", &maxlen, &pos);
@@ -1364,17 +1384,6 @@ char* webgetsingleepg(char* param, int fmt)
 			free(tmpstr); tmpstr = NULL;
 			ostrcatbig(&buf, ">", &maxlen, &pos);
 
-			loctime = olocaltime(&epgnode->starttime);
-			if(loctime != NULL)
-				strftime(buf1, MINMALLOC, "%d.%m - %H:%M : ", loctime);
-			//strftime(buf1, MINMALLOC, "%H:%M -", loctime);
-			free(loctime); loctime = NULL;
-			//loctime = olocaltime(&epgnode->endtime);
-			//if(loctime != NULL)
-			//	strftime(&buf1[7], MINMALLOC - 8, " %H:%M ", loctime);
-			//free(loctime); loctime = NULL;
-			ostrcatbig(&buf, buf1, &maxlen, &pos);
-			ostrcatbig(&buf, " ", &maxlen, &pos);
 			ostrcatbig(&buf, epgnode->title, &maxlen, &pos);
 			if(epgnode->subtitle != NULL)
 			{
@@ -1385,8 +1394,10 @@ char* webgetsingleepg(char* param, int fmt)
 
 			ostrcatbig(&buf, "</a></td>", &maxlen, &pos);
 			ostrcatbig(&buf, buf2, &maxlen, &pos);
+			
 			ostrcatbig(&buf, "<img border=0 width=16 height=16 src=img/timer.png alt=\"set timer\"/>", &maxlen, &pos);
 			ostrcatbig(&buf, "</a></td></tr>", &maxlen, &pos);
+			free(buf2); buf2 = NULL;
 		}
 		else
 		{
@@ -1405,13 +1416,12 @@ char* webgetsingleepg(char* param, int fmt)
 					buf = ostrcat(buf, tmpstr, 1, 0);
 				free(tmpstr); tmpstr = NULL;
 			}
-      buf = ostrcat(buf, "#", 1, 0);
+			buf = ostrcat(buf, "#", 1, 0);
 			buf = ostrcat(buf, oitoa(epgnode->eventid), 1, 1);
 			buf = ostrcat(buf, "\n", 1, 0);
 		}
 	
 		epgnode = epgnode->next;
-		free(buf2); buf2 = NULL;
 	}
 
 	if(fmt == 0)
@@ -1419,7 +1429,6 @@ char* webgetsingleepg(char* param, int fmt)
 	else if(buf == NULL)
 		buf = ostrcat("no data", NULL, 0, 0);
 
-	free(buf1);
 	return buf;
 }
 
