@@ -1355,7 +1355,7 @@ char* webgetsingleepg(char* param, int fmt)
 			ostrcatbig(&buf, "<td nowrap class=coldate>", &maxlen, &pos);
 			ostrcatbig(&buf, buf1, &maxlen, &pos);
 			if(loctime != NULL)
-				strftime(buf1, MINMALLOC, "%H.%H", loctime);
+				strftime(buf1, MINMALLOC, "%H.%M", loctime);
 			ostrcatbig(&buf, "</td><td nowrap class=coltime>", &maxlen, &pos);
 			ostrcatbig(&buf, buf1, &maxlen, &pos);
 			free(loctime); loctime = NULL;	
