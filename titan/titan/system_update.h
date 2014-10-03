@@ -21,7 +21,7 @@ void screensystem_update(int mode)
 	struct skin* device = getscreennode(systemupdate, "device");
 	struct skin* b6 = getscreennode(systemupdate, "b6");
 	
-	if(imgtype == 1)
+	if(node->imgtype == 1)
 		changetext(b6, _("stable"));
 	else
 		changetext(b6, _("unstable"));
@@ -109,14 +109,14 @@ void screensystem_update(int mode)
 			break;
 		else if(rcret == getrcconfigint("rcyellow", NULL))
 		{
-			if (mode == 0 || mode == 2)
+			if(mode == 0 || mode == 2)
 			{
 				char* cmd = NULL;
 
 				drawscreen(load, 0, 0);
 				cmd = ostrcat(cmd, "/sbin/update.sh getfilelist", 1, 0);
 				cmd = ostrcat(cmd, node->auth, 1, 0);
-				if(imgtype == 1)
+				if(node->imgtype == 1)
 					cmd = ostrcat(cmd, " dev beta.dyndns.tv", 1, 0);
 				else
 					cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);	
@@ -132,9 +132,9 @@ void screensystem_update(int mode)
 		}
 		else if(rcret == getrcconfigint("rcblue", NULL))
 		{
-			if (mode == 0 || mode == 2)
+			if(mode == 0 || mode == 2)
 			{
-				if(imgtype == 0)
+				if(node->imgtype == 0)
 				{
 					int pinret = 0;
 					
@@ -158,7 +158,7 @@ void screensystem_update(int mode)
 				drawscreen(load, 0, 0);
 				cmd = ostrcat(cmd, "/sbin/update.sh getfilelist", 1, 0);
 				cmd = ostrcat(cmd, node->auth, 1, 0);
-				if(imgtype == 1)
+				if(node->imgtype == 1)
 					cmd = ostrcat(cmd, " dev beta.dyndns.tv", 1, 0);
 				else
 					cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);	
@@ -195,7 +195,7 @@ void screensystem_update(int mode)
 					cmd = ostrcat(cmd, "full ", 1, 0);
 					cmd = ostrcat(cmd, tmpstr, 1, 0);
 					cmd = ostrcat(cmd, node->auth, 1, 0);
-					if(imgtype == 1)
+					if(node->imgtype == 1)
 						cmd = ostrcat(cmd, " dev beta.dyndns.tv", 1, 0);
 					else
 						cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
@@ -225,7 +225,7 @@ void screensystem_update(int mode)
 					cmd = ostrcat(cmd, "fullbackup ", 1, 0);
 					cmd = ostrcat(cmd, tmpstr, 1, 0);
 					cmd = ostrcat(cmd, node->auth, 1, 0);
-					if(imgtype == 1)
+					if(node->imgtype == 1)
 						cmd = ostrcat(cmd, " dev beta.dyndns.tv", 1, 0);
 					else
 						cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);
