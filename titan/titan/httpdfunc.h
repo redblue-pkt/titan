@@ -5246,6 +5246,8 @@ char* webgetstreaming(char* param, int fmt)
 
 char* webgetupdatelist(char* param, int fmt)
 {
+	if(status.security == 0) return NULL;
+
 	char* buf = NULL, *tmpstr = NULL;
 	int mode;
 
@@ -5354,6 +5356,8 @@ char* webgetupdatelist(char* param, int fmt)
 
 char* webgetupdate(char* param, int fmt)
 {
+	if(status.security == 0) return NULL;
+
 	char* buf = NULL;
 	printf("param: %s\n",param);
 
@@ -5435,6 +5439,8 @@ char* webgetserviceinfo(int fmt)
 
 char* webgetbackup(int fmt)
 {
+	if(status.security == 0) return NULL;
+
 	char* buf = NULL, *tmpstr = NULL;
 
 	if(fmt == 0) 
@@ -5468,6 +5474,8 @@ char* webgetbackup(int fmt)
 
 char* webgetrestore(int fmt)
 {
+	if(status.security == 0) return NULL;
+
 	char* buf = NULL, *tmpstr = NULL;
 
 	if(fmt == 0) 
@@ -5501,6 +5509,8 @@ char* webgetrestore(int fmt)
 
 char* webgettpkupgrade(int fmt)
 {
+	if(status.security == 0) return NULL;
+
 	char* buf = NULL, *tmpstr = NULL;
 
 	if(fmt == 0) 
@@ -5534,6 +5544,8 @@ char* webgettpkupgrade(int fmt)
 
 char* webgettpkinstall(int fmt)
 {
+	if(status.security == 0) return NULL;
+
 	char* buf = NULL, *tmpstr = NULL;
 
 	if(fmt == 0) 
@@ -5567,6 +5579,8 @@ char* webgettpkinstall(int fmt)
 
 char* webgettpktmpinstall(int fmt)
 {
+	if(status.security == 0) return NULL;
+
 	char* buf = NULL, *tmpstr = NULL;
 
 	if(fmt == 0) 
@@ -5600,6 +5614,8 @@ char* webgettpktmpinstall(int fmt)
 
 char* webgettpkmediainstall(int fmt)
 {
+	if(status.security == 0) return NULL;
+
 	char* buf = NULL, *tmpstr = NULL;
 
 	if(fmt == 0) 
@@ -5633,6 +5649,8 @@ char* webgettpkmediainstall(int fmt)
 
 char* webgettpkremove(int fmt)
 {
+	if(status.security == 0) return NULL;
+
 	char* buf = NULL, *tmpstr = NULL;
 
 	if(fmt == 0) 
