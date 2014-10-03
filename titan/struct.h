@@ -1882,4 +1882,14 @@ typedef struct sci_parameters
 	u_char U;
 } sciparameters;
 
+struct update
+{
+	char* auth;
+	char* type;
+	char* skinname;
+	char* filemask;
+	char* filepath;
+	int imgtype;
+};
+
 #endif

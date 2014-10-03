@@ -8,6 +8,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+// httpfunc.h
+char* webgetupdate(char* param, int fmt);
+
 //serviceinfo.h
 char* fegettypestr(struct dvbdev* dvbnode);
 

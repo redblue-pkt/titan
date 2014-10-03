@@ -1284,4 +1284,93 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 	return 0;
 }
 
+struct update* createupdatelist(int mode)
+{
+	debug(10, "mode: %d",mode);
+	struct update* newnode = NULL;
+
+	newnode = (struct update*)calloc(1, sizeof(struct update));
+	if(newnode == NULL)
+	{
+		err("no mem");
+		return NULL;
+	}
+
+	newnode->auth = ostrcat(newnode->auth, " aUtzhFRTzuDFa", 1, 0);
+	newnode->auth = ostrcat(newnode->auth, " JNHZbghnjuz", 1, 0);
+
+	if(file_exist("/etc/.beta")) newnode->imgtype = 1;	
+
+	if(mode == 0)
+	{	
+		char* cmd = NULL;
+		cmd = ostrcat(cmd, "/sbin/update.sh getfilelist", 1, 0);
+		cmd = ostrcat(cmd, newnode->auth, 1, 0);
+		if(newnode->imgtype == 1)
+			cmd = ostrcat(cmd, " dev beta.dyndns.tv", 1, 0);
+		else
+			cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);		
+		system(cmd);
+		free(cmd),cmd = NULL;
+
+		newnode->skinname = "systemupdate_flash_online_menu";
+		newnode->filemask = ostrcat(newnode->filemask, "*.img", 1, 0);
+		newnode->filepath = ostrcat(newnode->filepath, "/tmp/online", 1, 0);
+		newnode->type = ostrcat(newnode->type, "online", 1, 0);
+	}
+	else if (mode == 1)
+	{
+		newnode->skinname = "systemupdate_flash_tmp_menu";
+		newnode->filemask = ostrcat(newnode->filemask, "*.img", 1, 0);
+		if(file_exist("/var/backup"))
+			newnode->filepath = ostrcat(newnode->filepath, "/var/backup", 1, 0);
+		else
+			newnode->filepath = ostrcat(newnode->filepath, "/tmp", 1, 0);		
+		newnode->type = ostrcat(newnode->type, "tmp", 1, 0);
+	}
+	else if (mode == 2)
+	{
+		char* cmd = NULL;
+		cmd = ostrcat(cmd, "/sbin/update.sh getfilelist", 1, 0);
+		cmd = ostrcat(cmd, newnode->auth, 1, 0);
+		if(newnode->imgtype == 1)
+			cmd = ostrcat(cmd, " dev beta.dyndns.tv", 1, 0);
+		else
+			cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);	
+		system(cmd);
+		free(cmd),cmd = NULL;
+		newnode->skinname = "systemupdate_usb_online_menu";
+		newnode->filemask = ostrcat(newnode->filemask, "*.tar.gz", 1, 0);
+		newnode->filepath = ostrcat(newnode->filepath, "/tmp/online", 1, 0);
+		newnode->type = ostrcat(newnode->type, "online", 1, 0);
+	}
+	else if (mode == 3)
+	{
+		newnode->skinname = "systemupdate_usb_tmp_menu";
+		newnode->filemask = ostrcat(newnode->filemask, "*.tar.gz", 1, 0);
+		if(file_exist("/var/backup"))
+			newnode->filepath = ostrcat(newnode->filepath, "/var/backup", 1, 0);
+		else
+			newnode->filepath = ostrcat(newnode->filepath, "/tmp", 1, 0);	
+		newnode->type = ostrcat(newnode->type, "tmp", 1, 0);
+	}
+
+	return newnode;
+}
+
+void freeupdatelist(struct update* node)
+{
+	if(node != NULL)
+	{
+		free(node->auth); node->auth = NULL;
+		free(node->type); node->type = NULL;
+// segfault ??
+//		free(node->skinname); node->skinname = NULL;
+		free(node->filemask); node->filemask = NULL;
+		free(node->filepath); node->filepath = NULL;
+		node->imgtype = 0;
+		free(node); node = NULL;
+	}
+}
+
 #endif
