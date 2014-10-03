@@ -6662,5 +6662,13 @@ char* getabout()
 	return text;
 }
 
+char* getimgnamereal()
+{
+	char* tmpstr = NULL;
+
+	tmpstr = readfiletomem(getconfig("imagenamefile", NULL), 1);
+
+	return tmpstr;
+}
 
 #endif

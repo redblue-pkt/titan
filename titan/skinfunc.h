@@ -921,11 +921,7 @@ char* gethbbtv(struct skin* node, char* path)
 
 char* getimgname(struct skin* node)
 {
-	char* tmpstr = NULL;
-
-	tmpstr = readfiletomem(getconfig("imagenamefile", NULL), 1);
-
-	return tmpstr;
+	return getimgnamereal();
 }
 
 char* getoscamcaid(struct skin* node)

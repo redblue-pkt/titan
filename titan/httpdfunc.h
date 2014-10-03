@@ -4713,7 +4713,7 @@ char* webgetcommand(char* param, int fmt)
 //	{
 		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
 		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
-		buf = ostrcat(buf, "</head><body class=body id=\"command\">", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"command\"><center>", 1, 0);
 //	}
 
 	debug(10, "cmd: %s", param);
@@ -4722,7 +4722,7 @@ char* webgetcommand(char* param, int fmt)
 	free(tmpstr), tmpstr = NULL;	
 
 //	if(fmt == 0)
-		buf = ostrcat(buf, "</body></html>", 1, 0);
+		buf = ostrcat(buf, "</center></body></html>", 1, 0);
 
 	return buf;
 }
@@ -4736,7 +4736,7 @@ char* webgethelp(char* param, int fmt)
 //	{
 		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
 		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
-		buf = ostrcat(buf, "</head><body class=body id=\"help\">", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"help\"><center>", 1, 0);
 		buf = ostrcat(buf, "<br>", 1, 0);
 		buf = ostrcat(buf, "<h1>", 1, 0);
 		buf = ostrcat(buf, _(param), 1, 0);
@@ -4769,7 +4769,7 @@ char* webgethelp(char* param, int fmt)
 	free(tmpstr1), tmpstr1 = NULL;	
 
 //	if(fmt == 0)
-		buf = ostrcat(buf, "</body></html>", 1, 0);
+		buf = ostrcat(buf, "</center></body></html>", 1, 0);
 
 	return buf;
 }
@@ -4782,7 +4782,12 @@ char* webgethelpchoices(int fmt)
 //	{
 		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
 		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
-		buf = ostrcat(buf, "</head><body class=body id=\"helpchoices\">", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"helpchoices\"><center>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+		buf = ostrcat(buf, _("Help"), 1, 0);
+		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
 //	}
 
 	helppath = getconfig("helppath", NULL);
@@ -4807,7 +4812,7 @@ char* webgethelpchoices(int fmt)
 	ret1 = strsplit(tmpstr, "\n", &count);
 	max = count - 1;
 	
-	buf = ostrcat(buf, "<center><table cellpadding=5 cellspacing=5><tr><td nowrap>", 1, 0);
+	buf = ostrcat(buf, "<table cellpadding=5 cellspacing=5><tr><td nowrap>", 1, 0);
  
 	if(ret1 != NULL)
 	{
@@ -4842,7 +4847,7 @@ char* webgettestpage(char* param, int fmt)
 //	{
 		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
 		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
-		buf = ostrcat(buf, "</head><body class=body id=\"help\">", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"help\"><center>", 1, 0);
 //	}
 	
 	debug(10, "file: %s", param);
@@ -4852,7 +4857,7 @@ char* webgettestpage(char* param, int fmt)
 	free(tmpstr), tmpstr = NULL;	
 
 //	if(fmt == 0)
-		buf = ostrcat(buf, "</body></html>", 1, 0);
+		buf = ostrcat(buf, "</center></body></html>", 1, 0);
 
 	debug(10, "buf: %s", buf);
 
@@ -4869,7 +4874,7 @@ char* webgetsysteminfos(char* param, int fmt)
 	{
 		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
 		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
-		buf = ostrcat(buf, "</head><body class=body id=\"systeminfos\">", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"systeminfos\"><center>", 1, 0);
 		buf = ostrcat(buf, "<br>", 1, 0);
 		buf = ostrcat(buf, "<h1>", 1, 0);
 		if(mode == 0)
@@ -4896,7 +4901,7 @@ char* webgetsysteminfos(char* param, int fmt)
 
 	if(fmt == 0)
 	{
-		buf = ostrcat(buf, "</body></html>", 1, 0);
+		buf = ostrcat(buf, "</center></body></html>", 1, 0);
 	}	
 	
 	return buf;
@@ -4912,7 +4917,7 @@ char* webgetsysinfos(char* param, int fmt)
 	{
 		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
 		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
-		buf = ostrcat(buf, "</head><body class=body id=\"sysinfos\">", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"sysinfos\"><center>", 1, 0);
 		buf = ostrcat(buf, "<br>", 1, 0);
 		buf = ostrcat(buf, "<h1>", 1, 0);
 		if(mode == 0)
@@ -4945,7 +4950,7 @@ char* webgetsysinfos(char* param, int fmt)
 
 	if(fmt == 0)
 	{
-		buf = ostrcat(buf, "</body></html>", 1, 0);
+		buf = ostrcat(buf, "</center></body></html>", 1, 0);
 	}	
 	
 	return buf;
@@ -4961,7 +4966,7 @@ char* webgetlogs(char* param, int fmt)
 	{
 		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
 		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
-		buf = ostrcat(buf, "</head><body class=body id=\"logs\">", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"logs\"><center>", 1, 0);
 		buf = ostrcat(buf, "<br>", 1, 0);
 		buf = ostrcat(buf, "<h1>", 1, 0);
 		if(mode == 0)
@@ -4988,7 +4993,7 @@ char* webgetlogs(char* param, int fmt)
 
 	if(fmt == 0)
 	{
-		buf = ostrcat(buf, "</body></html>", 1, 0);
+		buf = ostrcat(buf, "</center></body></html>", 1, 0);
 	}	
 	
 	return buf;
@@ -5002,7 +5007,7 @@ char* webgetabout(int fmt)
 	{
 		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
 		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
-		buf = ostrcat(buf, "</head><body class=body id=\"about\">", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"about\"><center>", 1, 0);
 		buf = ostrcat(buf, "<br>", 1, 0);
 		buf = ostrcat(buf, "<h1>", 1, 0);
 		buf = ostrcat(buf, _("About"), 1, 0);
@@ -5017,7 +5022,7 @@ char* webgetabout(int fmt)
 
 	if(fmt == 0)
 	{
-		buf = ostrcat(buf, "</body></html>", 1, 0);
+		buf = ostrcat(buf, "</center></body></html>", 1, 0);
 	}	
 	
 	return buf;
@@ -5031,7 +5036,7 @@ char* webgetnewsletterchoices(int fmt)
 	{
 		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
 		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
-		buf = ostrcat(buf, "</head><body class=body id=\"newsletterchoices\">", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"newsletterchoices\"><center>", 1, 0);
 		buf = ostrcat(buf, "<br>", 1, 0);
 		buf = ostrcat(buf, "<h1>", 1, 0);
 		buf = ostrcat(buf, _("Newsletter"), 1, 0);
@@ -5039,7 +5044,7 @@ char* webgetnewsletterchoices(int fmt)
 		buf = ostrcat(buf, "<br>", 1, 0);
 	}
 
-	buf = ostrcat(buf, "<center><table cellpadding=5 cellspacing=5><tr><td nowrap>", 1, 0);
+	buf = ostrcat(buf, "<table cellpadding=5 cellspacing=5><tr><td nowrap>", 1, 0);
 
 	struct newsletter* node = NULL;
 
@@ -5083,7 +5088,7 @@ char* webgetnewsletter(char* param, int fmt)
 //	{
 		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
 		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
-		buf = ostrcat(buf, "</head><body class=body id=\"newsletter\">", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"newsletter\"><center>", 1, 0);
 //	}
 
 	struct newsletter* node = NULL;
@@ -5123,7 +5128,7 @@ char* webgetnewsletter(char* param, int fmt)
 	buf = ostrcat(buf, tmpstr, 1, 1);
 
 //	if(fmt == 0)
-		buf = ostrcat(buf, "</body></html>", 1, 0);
+		buf = ostrcat(buf, "</center></body></html>", 1, 0);
 	
 	return buf;
 }
@@ -5136,7 +5141,7 @@ char* webgetstreamingchoices(int fmt)
 	{
 		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
 		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
-		buf = ostrcat(buf, "</head><body class=body id=\"streamingchoices\">", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"streamingchoices\"><center>", 1, 0);
 		buf = ostrcat(buf, "<br>", 1, 0);
 		buf = ostrcat(buf, "<h1>", 1, 0);
 		buf = ostrcat(buf, _("Streaming"), 1, 0);
@@ -5177,7 +5182,7 @@ char* webgetstreamingchoices(int fmt)
 
 	if(fmt == 0)
 	{
-		buf = ostrcat(buf, "</body></html>", 1, 0);
+		buf = ostrcat(buf, "</center></body></html>", 1, 0);
 	}	
 	
 	return buf;
@@ -5191,7 +5196,7 @@ char* webgetstreaming(char* param, int fmt)
 //	{
 		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
 		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
-		buf = ostrcat(buf, "</head><body class=body id=\"streaming\">", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"streaming\"><center>", 1, 0);
 //	}
 
 	htmldecode(param, param);
@@ -5234,7 +5239,7 @@ char* webgetstreaming(char* param, int fmt)
 		buf = ostrcat(buf, _("ERROR, Streaming can not be stopped."), 1, 0);
 
 //	if(fmt == 0)
-		buf = ostrcat(buf, "</body></html>", 1, 0);
+		buf = ostrcat(buf, "</center></body></html>", 1, 0);
 	
 	return buf;
 }
@@ -5253,10 +5258,19 @@ char* webgetupdatelist(char* param, int fmt)
 		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
 		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
 		buf = ostrcat(buf, "</head><body class=body id=\"updatelist\">", 1, 0);
-		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<br><center>", 1, 0);
 		buf = ostrcat(buf, "<h1>", 1, 0);
 		buf = ostrcat(buf, _("System Update"), 1, 0);
 		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>\n", 1, 0);
+	}
+
+	tmpstr = getimgnamereal;
+	if(tmpstr != NULL)
+	{
+		buf = ostrcat(buf, _("Installed:"), 1, 0);
+		buf = ostrcat(buf, " ", 1, 0);
+		buf = ostrcat(buf, tmpstr, 1, 1);
 		buf = ostrcat(buf, "<br>\n", 1, 0);
 	}
 
@@ -5271,7 +5285,7 @@ char* webgetupdatelist(char* param, int fmt)
 	ret1 = strsplit(tmpstr, "\n", &count);
 	max = count - 1;
 
-	buf = ostrcat(buf, "<center><table cellpadding=5 cellspacing=5><tr><td nowrap>", 1, 0);
+	buf = ostrcat(buf, "<table cellpadding=5 cellspacing=5><tr><td nowrap>", 1, 0);
  
 	if(ret1 != NULL)
 	{
@@ -5322,7 +5336,7 @@ char* webgetupdate(char* param, int fmt)
 	buf = ostrcat(buf, " ", 1, 0);
 	buf = ostrcat(buf, _("started"), 1, 0);
 	buf = ostrcat(buf, " Now.", 1, 0);
-
+		
 	if(fmt == 0)
 		buf = ostrcat(buf, "</body></html>", 1, 0);
 
