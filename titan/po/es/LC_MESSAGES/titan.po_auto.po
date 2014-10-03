@@ -2407,52 +2407,48 @@ msgstr ""
 msgid "ERROR, Streaming can not be stopped."
 msgstr ""
 
-#: httpdfunc.h:5263 httpdfunc.h:5330 skin_default_skin.xml.h:645
+#: httpdfunc.h:5263 httpdfunc.h:5367 skin_default_skin.xml.h:645
 #: webif_system.h:2 webif_system_update.h:1
 msgid "System Update"
 msgstr "Sistema de Actualizacion"
 
-#: httpdfunc.h:5378 system_update.h:220
+#: httpdfunc.h:5375 system_update.h:220
 msgid "starting Full Update ?"
 msgstr "Iniciar actualizacin completa?"
 
-#: httpdfunc.h:5408 system_update.h:250
-msgid "starting Full Update (from backup) ?"
-msgstr "Iniciar actualizacin completa de una copia de seguridad?"
-
-#: httpdfunc.h:5415 softcam.h:91 softcam.h:99
+#: httpdfunc.h:5380 softcam.h:91 softcam.h:99
 msgid "started"
 msgstr "Iniciando"
 
-#: httpdfunc.h:5436 skin_default_skin.xml.h:572 webif_info.h:1
+#: httpdfunc.h:5401 skin_default_skin.xml.h:572 webif_info.h:1
 msgid "Service"
 msgstr "Canal"
 
-#: httpdfunc.h:5469 skin_default_skin.xml.h:639 webif_system.h:3
+#: httpdfunc.h:5434 skin_default_skin.xml.h:639 webif_system.h:3
 msgid "System Backup"
 msgstr "System backup"
 
-#: httpdfunc.h:5502 skin_default_skin.xml.h:577 webif_system.h:4
+#: httpdfunc.h:5467 skin_default_skin.xml.h:577 webif_system.h:4
 msgid "Settings backup/restore"
 msgstr "Configuracion backup/restaurar"
 
-#: httpdfunc.h:5535 skin_default_skin.xml.h:680 webif_system_extensions.h:2
+#: httpdfunc.h:5500 skin_default_skin.xml.h:680 webif_system_extensions.h:2
 msgid "TPK upgrade (online)"
 msgstr "Actualizar (En Linea)"
 
-#: httpdfunc.h:5568 skin_default_skin.xml.h:674 webif_system_extensions.h:3
+#: httpdfunc.h:5533 skin_default_skin.xml.h:674 webif_system_extensions.h:3
 msgid "TPK install (online)"
 msgstr "Instalar (En Linea)"
 
-#: httpdfunc.h:5601 skin_default_skin.xml.h:679 webif_system_extensions.h:4
+#: httpdfunc.h:5566 skin_default_skin.xml.h:679 webif_system_extensions.h:4
 msgid "TPK tmp (tmp)"
 msgstr "Instalar (tmp)"
 
-#: httpdfunc.h:5634 skin_default_skin.xml.h:677 webif_system_extensions.h:5
+#: httpdfunc.h:5599 skin_default_skin.xml.h:677 webif_system_extensions.h:5
 msgid "TPK media (media)"
 msgstr "Instalar (Local)"
 
-#: httpdfunc.h:5667 skin_default_skin.xml.h:678 webif_system_extensions.h:6
+#: httpdfunc.h:5632 skin_default_skin.xml.h:678 webif_system_extensions.h:6
 msgid "TPK remove"
 msgstr "Eliminar"
 
@@ -9053,6 +9049,10 @@ msgstr "svn-beta"
 #: system_update.h:60
 msgid "non-version"
 msgstr ""
+
+#: system_update.h:250
+msgid "starting Full Update (from backup) ?"
+msgstr "Iniciar actualizacin completa de una copia de seguridad?"
 
 #: system_update.h:257
 msgid "Error file not supported"
