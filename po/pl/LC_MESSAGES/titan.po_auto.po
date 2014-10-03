@@ -740,7 +740,7 @@ msgid ""
 msgstr ""
 
 #: bgdownload.h:93 bgdownload.h:154 global.h:6647 httpdfunc.h:2668
-#: httpdfunc.h:2680 httpdfunc.h:5199 httpdfunc.h:5244 hwtest.h:478
+#: httpdfunc.h:2680 httpdfunc.h:5166 httpdfunc.h:5211 hwtest.h:478
 #: moduleconfig.h:345 skin_default_skin.xml.h:708 skinselector.h:138
 #: stream.h:22 transponder.h:122 transponder.h:158 transponder.h:194
 #: transponder.h:227 transponder.h:259 transponder.h:295 transponder.h:330
@@ -2165,7 +2165,7 @@ msgstr ""
 msgid "Recording name"
 msgstr "Timer nagrywania"
 
-#: httpdfunc.h:4332 httpdfunc.h:5070 skin_default_skin.xml.h:419
+#: httpdfunc.h:4332 httpdfunc.h:5037 skin_default_skin.xml.h:419
 #: webif_info.h:2
 msgid "Newsletter"
 msgstr ""
@@ -2307,38 +2307,67 @@ msgstr ""
 msgid "About"
 msgstr "O.."
 
-#: httpdfunc.h:5037 skin_default_skin.xml.h:572 webif_info.h:1
-msgid "Service"
-msgstr "Serwis"
-
-#: httpdfunc.h:5175 skin_default_skin.xml.h:627 stream.h:36 webif_info.h:4
+#: httpdfunc.h:5142 skin_default_skin.xml.h:627 stream.h:36 webif_info.h:4
 msgid "Streaming"
 msgstr ""
 
-#: httpdfunc.h:5192 httpdfunc.h:5237 record.h:1302 record.h:1311 record.h:1322
+#: httpdfunc.h:5159 httpdfunc.h:5204 record.h:1302 record.h:1311 record.h:1322
 #: record.h:1357 record.h:1366 record.h:1398 stream.h:15 stream.h:37
 msgid "stop"
 msgstr "Faststop"
 
-#: httpdfunc.h:5209 stream.h:33
+#: httpdfunc.h:5176 stream.h:33
 msgid "No Live Stream running"
 msgstr ""
 
-#: httpdfunc.h:5264
+#: httpdfunc.h:5231
 msgid "Streaming succesfull stopped."
 msgstr ""
 
-#: httpdfunc.h:5267
+#: httpdfunc.h:5234
 msgid "ERROR, Streaming can not be stopped."
 msgstr ""
 
-#: httpdfunc.h:5291 httpdfunc.h:5349 skin_default_skin.xml.h:645
+#: httpdfunc.h:5258 httpdfunc.h:5316 skin_default_skin.xml.h:645
+#: webif_system.h:2 webif_system_update.h:1
 msgid "System Update"
 msgstr "System - Usbupdate (tmp)"
 
-#: httpdfunc.h:5356 softcam.h:91 softcam.h:99
+#: httpdfunc.h:5323 softcam.h:91 softcam.h:99
 msgid "started"
 msgstr "Restart"
+
+#: httpdfunc.h:5344 skin_default_skin.xml.h:572 webif_info.h:1
+msgid "Service"
+msgstr "Serwis"
+
+#: httpdfunc.h:5377 skin_default_skin.xml.h:639 webif_system.h:3
+msgid "System Backup"
+msgstr ""
+
+#: httpdfunc.h:5410 skin_default_skin.xml.h:577 webif_system.h:4
+msgid "Settings backup/restore"
+msgstr "ustawienia kopii/odzyskiwania"
+
+#: httpdfunc.h:5443 skin_default_skin.xml.h:680 webif_system_extensions.h:2
+msgid "TPK upgrade (online)"
+msgstr "Update USB (poprzez web)"
+
+#: httpdfunc.h:5476 skin_default_skin.xml.h:674 webif_system_extensions.h:3
+msgid "TPK install (online)"
+msgstr "Instaluj IPK (poprzez web)"
+
+#: httpdfunc.h:5509 skin_default_skin.xml.h:679 webif_system_extensions.h:4
+msgid "TPK tmp (tmp)"
+msgstr "Instaluj IPK (tmp)"
+
+#: httpdfunc.h:5542 skin_default_skin.xml.h:677 webif_system_extensions.h:5
+msgid "TPK media (media)"
+msgstr ""
+
+#: httpdfunc.h:5575 skin_default_skin.xml.h:678 webif_system_extensions.h:6
+msgid "TPK remove"
+msgstr "usuń IPK"
 
 #: hwtest.h:88
 msgid "testtransponder not found"
@@ -2613,7 +2642,7 @@ msgstr ""
 #: webif_index.atemio6200.h:99 webif_index.atemio7600.h:13
 #: webif_index.atemio7600.h:63 webif_index.atemio7600.h:83
 #: webif_index.atemio-nemesis.h:15 webif_index.atemio-nemesis.h:43
-#: webif_index.atemio-nemesis.h:99 webif_index.h:15 webif_rc.atemio510.h:5
+#: webif_index.atemio-nemesis.h:99 webif_index.h:16 webif_rc.atemio510.h:5
 #: webif_rc.atemio5200.h:26 webif_rc.atemio520.h:23 webif_rc.atemio530.h:23
 #: webif_rc.atemio6000.h:26 webif_rc.atemio6100.h:26 webif_rc.atemio6200.h:26
 #: webif_rc.atemio7600.h:16 webif_rc.atemio-nemesis.h:26
@@ -4526,7 +4555,7 @@ msgstr "screensaver"
 #: webif_index.atemio510.h:14 webif_index.atemio5200.h:14
 #: webif_index.atemio6000.h:14 webif_index.atemio6100.h:14
 #: webif_index.atemio6200.h:14 webif_index.atemio7600.h:12
-#: webif_index.atemio-nemesis.h:14 webif_index.h:14
+#: webif_index.atemio-nemesis.h:14 webif_index.h:15
 msgid "Settings"
 msgstr "Ustawienia"
 
@@ -5997,7 +6026,7 @@ msgstr ""
 #: webif_index.atemio6200.h:70 webif_index.atemio6200.h:126
 #: webif_index.atemio7600.h:14 webif_index.atemio-nemesis.h:16
 #: webif_index.atemio-nemesis.h:70 webif_index.atemio-nemesis.h:126
-#: webif_index.h:16 webif_rc.atemio5200.h:53 webif_rc.atemio520.h:45
+#: webif_index.h:17 webif_rc.atemio5200.h:53 webif_rc.atemio520.h:45
 #: webif_rc.atemio530.h:45 webif_rc.atemio6000.h:53 webif_rc.atemio6100.h:53
 #: webif_rc.atemio6200.h:53 webif_rc.atemio-nemesis.h:53
 msgid "Help"
@@ -6732,7 +6761,7 @@ msgstr "Ścieżka EPG"
 #: webif_index.atemio5200.h:17 webif_index.atemio6000.h:17
 #: webif_index.atemio6100.h:17 webif_index.atemio6200.h:17
 #: webif_index.atemio7600.h:15 webif_index.atemio-nemesis.h:17
-#: webif_index.h:17
+#: webif_index.h:18
 msgid "EPG Search"
 msgstr "Ścieżka EPG"
 
@@ -6744,7 +6773,7 @@ msgstr "Ustawienia EPG"
 msgid "EPG SHORT VIEW"
 msgstr ""
 
-#: skin_default_skin.xml.h:226
+#: skin_default_skin.xml.h:226 webif_system_extensions.h:1 webif_system.h:1
 msgid "Extensions"
 msgstr "Dodatki"
 
@@ -6796,11 +6825,11 @@ msgid ""
 "update available, swap: USB medium permanently"
 msgstr ""
 
-#: skin_default_skin.xml.h:241
+#: skin_default_skin.xml.h:241 webif_system_update.h:2
 msgid "Flashupdate (online)"
 msgstr "Flashupdate (poprzez web)"
 
-#: skin_default_skin.xml.h:242
+#: skin_default_skin.xml.h:242 webif_system_update.h:3
 msgid "Flashupdate (tmp)"
 msgstr ""
 
@@ -7954,10 +7983,6 @@ msgstr "Informacja o serwisie"
 msgid "set startchannel"
 msgstr "ustaw kanał startowy"
 
-#: skin_default_skin.xml.h:577
-msgid "Settings backup/restore"
-msgstr "ustawienia kopii/odzyskiwania"
-
 #: skin_default_skin.xml.h:578
 msgid "Show EPG screen (EPG button)"
 msgstr "Pokaż EPG"
@@ -8118,16 +8143,12 @@ msgstr ""
 msgid "Sysinfo"
 msgstr "Informacje o systemie"
 
-#: skin_default_skin.xml.h:637
+#: skin_default_skin.xml.h:637 webif_index.h:14
 msgid "System"
 msgstr ""
 
 #: skin_default_skin.xml.h:638
 msgid "System:"
-msgstr ""
-
-#: skin_default_skin.xml.h:639
-msgid "System Backup"
 msgstr ""
 
 #: skin_default_skin.xml.h:640
@@ -8244,29 +8265,9 @@ msgstr ""
 msgid "Tone Mode"
 msgstr "Tryb tonowy"
 
-#: skin_default_skin.xml.h:674
-msgid "TPK install (online)"
-msgstr "Instaluj IPK (poprzez web)"
-
 #: skin_default_skin.xml.h:676
 msgid "Tpk Install - select install medium"
 msgstr "Instalacja IPK - wybierz plik"
-
-#: skin_default_skin.xml.h:677
-msgid "TPK media (media)"
-msgstr ""
-
-#: skin_default_skin.xml.h:678
-msgid "TPK remove"
-msgstr "usuń IPK"
-
-#: skin_default_skin.xml.h:679
-msgid "TPK tmp (tmp)"
-msgstr "Instaluj IPK (tmp)"
-
-#: skin_default_skin.xml.h:680
-msgid "TPK upgrade (online)"
-msgstr "Update USB (poprzez web)"
 
 #: skin_default_skin.xml.h:681
 msgid "Transmission"
@@ -11916,14 +11917,14 @@ msgstr ""
 #: webif_index.atemio6200.h:71 webif_index.atemio6200.h:127
 #: webif_index.atemio7600.h:66 webif_index.atemio7600.h:119
 #: webif_index.atemio-nemesis.h:71 webif_index.atemio-nemesis.h:127
-#: webif_index.h:18 webif_index.h:21
+#: webif_index.h:19 webif_index.h:22
 msgid "Details on/off"
 msgstr ""
 
 #: webif_index.atemio510.h:19 webif_index.atemio5200.h:72
 #: webif_index.atemio6000.h:19 webif_index.atemio6100.h:19
 #: webif_index.atemio6200.h:72 webif_index.atemio7600.h:67
-#: webif_index.atemio-nemesis.h:72 webif_index.h:19
+#: webif_index.atemio-nemesis.h:72 webif_index.h:20
 msgid "switch to original remote"
 msgstr ""
 
@@ -11932,7 +11933,7 @@ msgstr ""
 #: webif_index.atemio6100.h:20 webif_index.atemio6200.h:73
 #: webif_index.atemio6200.h:129 webif_index.atemio7600.h:68
 #: webif_index.atemio7600.h:121 webif_index.atemio-nemesis.h:73
-#: webif_index.atemio-nemesis.h:129 webif_index.h:20
+#: webif_index.atemio-nemesis.h:129 webif_index.h:21
 msgid "open in new window"
 msgstr ""
 
