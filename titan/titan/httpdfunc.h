@@ -5023,39 +5023,6 @@ char* webgetabout(int fmt)
 	return buf;
 }
 
-char* webgetserviceinfo(int fmt)
-{
-	char* buf = NULL, *tmpstr = NULL;
-
-	if(fmt == 0) 
-	{
-		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
-		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
-		buf = ostrcat(buf, "</head><body class=body id=\"serviceinfo\">", 1, 0);
-		buf = ostrcat(buf, "<br>", 1, 0);
-		buf = ostrcat(buf, "<h1>", 1, 0);
-		buf = ostrcat(buf, _("Service"), 1, 0);
-		buf = ostrcat(buf, "</h1>", 1, 0);
-		buf = ostrcat(buf, "<br>", 1, 0);
-	}
-
-//	tmpstr = getabout();
-//	readnewsletter();
-	tmpstr = readfiletomem("/tmp/Service.txt", 0);
-	tmpstr = ostrcat(tmpstr, "\ncomming soon...\n", 1, 0);
-	
-	tmpstr = string_replace_all("\n", "<br>\n", tmpstr, 1);
-
-	buf = ostrcat(buf, tmpstr, 1, 1);
-
-	if(fmt == 0)
-	{
-		buf = ostrcat(buf, "</body></html>", 1, 0);
-	}	
-	
-	return buf;
-}
-
 char* webgetnewsletterchoices(int fmt)
 {
 	char* buf = NULL;
@@ -5268,6 +5235,361 @@ char* webgetstreaming(char* param, int fmt)
 
 //	if(fmt == 0)
 		buf = ostrcat(buf, "</body></html>", 1, 0);
+	
+	return buf;
+}
+
+char* webgetupdatelist(char* param, int fmt)
+{
+	char* buf = NULL, *tmpstr = NULL;
+	int mode;
+
+	mode = atoi(param);
+
+	struct update* node = createupdatelist(mode);
+
+	if(fmt == 0)
+	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"updatelist\">", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+		buf = ostrcat(buf, _("System Update"), 1, 0);
+		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>\n", 1, 0);
+	}
+
+	if(mode == 0)
+		tmpstr = command("ls -1 /tmp/online | grep .img");
+	else
+		tmpstr = command("ls -1 /tmp | grep .img");
+	
+	int count, i, max;
+	count = 0;
+	struct splitstr* ret1 = NULL;
+	ret1 = strsplit(tmpstr, "\n", &count);
+	max = count - 1;
+
+	buf = ostrcat(buf, "<center><table cellpadding=5 cellspacing=5><tr><td nowrap>", 1, 0);
+ 
+	if(ret1 != NULL)
+	{
+		for(i = 0; i <= max; i++)
+		{
+			buf = ostrcat(buf, "<a class=linelink2 href=queryraw?getupdate&", 1, 0);
+			if(mode == 0)
+				buf = ostrcat(buf, "/tmp/online/", 1, 0);
+			else
+				buf = ostrcat(buf, "/tmp/", 1, 0);
+			buf = ostrcat(buf, ret1[i].part, 1, 0);
+			buf = ostrcat(buf, " target=main>", 1, 0);
+			buf = ostrcat(buf, _(stringreplacecharonce(ret1[i].part, '.', '\0')), 1, 0);
+			buf = ostrcat(buf, "</a>", 1, 0);
+			buf = ostrcat(buf, "</br></br>", 1, 0);
+		}
+	}
+
+// segfault ??
+//	free(helppath), helppath = NULL;
+	free(tmpstr), tmpstr = NULL;
+	free(ret1), ret1 = NULL;
+	if(fmt == 0)
+		buf = ostrcat(buf, "</td></tr></table></center></body></html>", 1, 0);
+
+	freeupdatelist(node);
+
+	return buf;
+}
+
+char* webgetupdate(char* param, int fmt)
+{
+	char* buf = NULL;
+	printf("update %s\n",param);
+	if(fmt == 0)
+	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"updatelist\">", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+		buf = ostrcat(buf, _("System Update"), 1, 0);
+		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>\n", 1, 0);
+	}
+
+	buf = ostrcat(buf, param, 1, 0);
+	buf = ostrcat(buf, " ", 1, 0);
+	buf = ostrcat(buf, _("started"), 1, 0);
+	buf = ostrcat(buf, " Now.", 1, 0);
+
+	if(fmt == 0)
+		buf = ostrcat(buf, "</body></html>", 1, 0);
+
+	return buf;
+
+}
+
+char* webgetserviceinfo(int fmt)
+{
+	char* buf = NULL, *tmpstr = NULL;
+
+	if(fmt == 0) 
+	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"serviceinfo\">", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+		buf = ostrcat(buf, _("Service"), 1, 0);
+		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+	}
+
+//	tmpstr = getabout();
+//	readnewsletter();
+	tmpstr = readfiletomem("/tmp/Service.txt", 0);
+	tmpstr = ostrcat(tmpstr, "\ncomming soon...\n", 1, 0);
+	
+	tmpstr = string_replace_all("\n", "<br>\n", tmpstr, 1);
+
+	buf = ostrcat(buf, tmpstr, 1, 1);
+
+	if(fmt == 0)
+	{
+		buf = ostrcat(buf, "</body></html>", 1, 0);
+	}	
+	
+	return buf;
+}
+
+char* webgetbackup(int fmt)
+{
+	char* buf = NULL, *tmpstr = NULL;
+
+	if(fmt == 0) 
+	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"backup\">", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+		buf = ostrcat(buf, _("System Backup"), 1, 0);
+		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+	}
+
+//	tmpstr = getabout();
+//	readnewsletter();
+	tmpstr = readfiletomem("/tmp/Service.txt", 0);
+	tmpstr = ostrcat(tmpstr, "\ncomming soon...\n", 1, 0);
+	
+	tmpstr = string_replace_all("\n", "<br>\n", tmpstr, 1);
+
+	buf = ostrcat(buf, tmpstr, 1, 1);
+
+	if(fmt == 0)
+	{
+		buf = ostrcat(buf, "</body></html>", 1, 0);
+	}	
+	
+	return buf;
+}
+
+char* webgetrestore(int fmt)
+{
+	char* buf = NULL, *tmpstr = NULL;
+
+	if(fmt == 0) 
+	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"restore\">", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+		buf = ostrcat(buf, _("Settings backup/restore"), 1, 0);
+		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+	}
+
+//	tmpstr = getabout();
+//	readnewsletter();
+	tmpstr = readfiletomem("/tmp/Service.txt", 0);
+	tmpstr = ostrcat(tmpstr, "\ncomming soon...\n", 1, 0);
+	
+	tmpstr = string_replace_all("\n", "<br>\n", tmpstr, 1);
+
+	buf = ostrcat(buf, tmpstr, 1, 1);
+
+	if(fmt == 0)
+	{
+		buf = ostrcat(buf, "</body></html>", 1, 0);
+	}	
+	
+	return buf;
+}
+
+char* webgettpkupgrade(int fmt)
+{
+	char* buf = NULL, *tmpstr = NULL;
+
+	if(fmt == 0) 
+	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"tpkupgrade\">", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+		buf = ostrcat(buf, _("TPK upgrade (online)"), 1, 0);
+		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+	}
+
+//	tmpstr = getabout();
+//	readnewsletter();
+	tmpstr = readfiletomem("/tmp/Service.txt", 0);
+	tmpstr = ostrcat(tmpstr, "\ncomming soon...\n", 1, 0);
+	
+	tmpstr = string_replace_all("\n", "<br>\n", tmpstr, 1);
+
+	buf = ostrcat(buf, tmpstr, 1, 1);
+
+	if(fmt == 0)
+	{
+		buf = ostrcat(buf, "</body></html>", 1, 0);
+	}	
+	
+	return buf;
+}
+
+char* webgettpkinstall(int fmt)
+{
+	char* buf = NULL, *tmpstr = NULL;
+
+	if(fmt == 0) 
+	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"tpkinstall\">", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+		buf = ostrcat(buf, _("TPK install (online)"), 1, 0);
+		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+	}
+
+//	tmpstr = getabout();
+//	readnewsletter();
+	tmpstr = readfiletomem("/tmp/Service.txt", 0);
+	tmpstr = ostrcat(tmpstr, "\ncomming soon...\n", 1, 0);
+	
+	tmpstr = string_replace_all("\n", "<br>\n", tmpstr, 1);
+
+	buf = ostrcat(buf, tmpstr, 1, 1);
+
+	if(fmt == 0)
+	{
+		buf = ostrcat(buf, "</body></html>", 1, 0);
+	}	
+	
+	return buf;
+}
+
+char* webgettpktmpinstall(int fmt)
+{
+	char* buf = NULL, *tmpstr = NULL;
+
+	if(fmt == 0) 
+	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"tpktmpinstall\">", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+		buf = ostrcat(buf, _("TPK tmp (tmp)"), 1, 0);
+		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+	}
+
+//	tmpstr = getabout();
+//	readnewsletter();
+	tmpstr = readfiletomem("/tmp/Service.txt", 0);
+	tmpstr = ostrcat(tmpstr, "\ncomming soon...\n", 1, 0);
+	
+	tmpstr = string_replace_all("\n", "<br>\n", tmpstr, 1);
+
+	buf = ostrcat(buf, tmpstr, 1, 1);
+
+	if(fmt == 0)
+	{
+		buf = ostrcat(buf, "</body></html>", 1, 0);
+	}	
+	
+	return buf;
+}
+
+char* webgettpkmediainstall(int fmt)
+{
+	char* buf = NULL, *tmpstr = NULL;
+
+	if(fmt == 0) 
+	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"tpkmediainstall\">", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+		buf = ostrcat(buf, _("TPK media (media)"), 1, 0);
+		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+	}
+
+//	tmpstr = getabout();
+//	readnewsletter();
+	tmpstr = readfiletomem("/tmp/Service.txt", 0);
+	tmpstr = ostrcat(tmpstr, "\ncomming soon...\n", 1, 0);
+	
+	tmpstr = string_replace_all("\n", "<br>\n", tmpstr, 1);
+
+	buf = ostrcat(buf, tmpstr, 1, 1);
+
+	if(fmt == 0)
+	{
+		buf = ostrcat(buf, "</body></html>", 1, 0);
+	}	
+	
+	return buf;
+}
+
+char* webgettpkremove(int fmt)
+{
+	char* buf = NULL, *tmpstr = NULL;
+
+	if(fmt == 0) 
+	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"tpkremove\">", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+		buf = ostrcat(buf, _("TPK remove"), 1, 0);
+		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+	}
+
+//	tmpstr = getabout();
+//	readnewsletter();
+	tmpstr = readfiletomem("/tmp/Service.txt", 0);
+	tmpstr = ostrcat(tmpstr, "\ncomming soon...\n", 1, 0);
+	
+	tmpstr = string_replace_all("\n", "<br>\n", tmpstr, 1);
+
+	buf = ostrcat(buf, tmpstr, 1, 1);
+
+	if(fmt == 0)
+	{
+		buf = ostrcat(buf, "</body></html>", 1, 0);
+	}	
 	
 	return buf;
 }

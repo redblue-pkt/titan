@@ -299,6 +299,20 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 		buf = webgetlogs(param, fmt);
 	else if(ostrcmp(query, "getabout") == 0)
 		buf = webgetabout(fmt);
+	else if(ostrcmp(query, "gettpkinstall") == 0)
+		buf = webgettpkinstall(fmt);
+	else if(ostrcmp(query, "gettpktmpinstall") == 0)
+		buf = webgettpktmpinstall(fmt);
+	else if(ostrcmp(query, "gettpkmediainstall") == 0)
+		buf = webgettpkmediainstall(fmt);
+	else if(ostrcmp(query, "gettpkupgrade") == 0)
+		buf = webgettpkupgrade(fmt);
+	else if(ostrcmp(query, "gettpkremove") == 0)
+		buf = webgettpkremove(fmt);
+	else if(ostrcmp(query, "getbackup") == 0)
+		buf = webgetbackup(fmt);
+	else if(ostrcmp(query, "getrestore") == 0)
+		buf = webgetrestore(fmt);
 	else if(ostrcmp(query, "getserviceinfo") == 0)
 		buf = webgetserviceinfo(fmt);
 	else if(ostrcmp(query, "getstreaming") == 0 && param != NULL)
@@ -310,11 +324,11 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 	else if(ostrcmp(query, "getnewsletterchoices") == 0)
 		buf = webgetnewsletterchoices(fmt);
 	else if(ostrcmp(query, "gethelp") == 0 && param != NULL)
-	{
-		m_lock(&status.waitrcmutex, 24);
 		buf = webgethelp(param, fmt);
-		m_unlock(&status.waitrcmutex, 24);
-	}
+	else if(ostrcmp(query, "getupdatelist") == 0 && param != NULL)
+		buf = webgetupdatelist(param, fmt);
+	else if(ostrcmp(query, "getupdate") == 0 && param != NULL)
+		buf = webgetupdate(param, fmt);
 	else if(ostrcmp(query, "getsatchannel") == 0 && param != NULL)
 	{
 		m_lock(&status.waitrcmutex, 24);

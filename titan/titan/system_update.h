@@ -9,76 +9,13 @@ void screensystem_update(int mode)
 	status.hangtime = 99999;
 	struct skin* load = getscreen("loading");
 	drawscreen(load, 0, 0);
-
+	
 	char* tmpstr = NULL;
-
-	char* skinname = NULL;
-	char* filemask = NULL;
-	char* filepath = NULL;
-	char* type = NULL;
 	char* cmd = NULL;
+
+	struct update* node = createupdatelist(mode);
 		
-	char* auth = NULL;
-	auth = ostrcat(auth, " aUtzhFRTzuDFa", 1, 0);
-	auth = ostrcat(auth, " JNHZbghnjuz", 1, 0);
-			
-	if(file_exist("/etc/.beta")) imgtype = 1;	
-
-	if (mode == 0)
-	{	
-		char* cmd = NULL;
-		cmd = ostrcat(cmd, "/sbin/update.sh getfilelist", 1, 0);
-		cmd = ostrcat(cmd, auth, 1, 0);
-		if(imgtype == 1)
-			cmd = ostrcat(cmd, " dev beta.dyndns.tv", 1, 0);
-		else
-			cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);		
-		system(cmd);
-		free(cmd),cmd = NULL;
-
-		skinname = "systemupdate_flash_online_menu";
-		filemask = ostrcat(filemask, "*.img", 1, 0);
-		filepath = ostrcat(filepath, "/tmp/online", 1, 0);
-		type = ostrcat(type, "online", 1, 0);
-	}
-	else if (mode == 1)
-	{
-		skinname = "systemupdate_flash_tmp_menu";
-		filemask = ostrcat(filemask, "*.img", 1, 0);
-		if(file_exist("/var/backup"))
-			filepath = ostrcat(filepath, "/var/backup", 1, 0);
-		else
-			filepath = ostrcat(filepath, "/tmp", 1, 0);		
-		type = ostrcat(type, "tmp", 1, 0);
-	}
-	else if (mode == 2)
-	{
-		char* cmd = NULL;
-		cmd = ostrcat(cmd, "/sbin/update.sh getfilelist", 1, 0);
-		cmd = ostrcat(cmd, auth, 1, 0);
-		if(imgtype == 1)
-			cmd = ostrcat(cmd, " dev beta.dyndns.tv", 1, 0);
-		else
-			cmd = ostrcat(cmd, " release atemio.dyndns.tv", 1, 0);	
-		system(cmd);
-		free(cmd),cmd = NULL;
-		skinname = "systemupdate_usb_online_menu";
-		filemask = ostrcat(filemask, "*.tar.gz", 1, 0);
-		filepath = ostrcat(filepath, "/tmp/online", 1, 0);
-		type = ostrcat(type, "online", 1, 0);
-	}
-	else if (mode == 3)
-	{
-		skinname = "systemupdate_usb_tmp_menu";
-		filemask = ostrcat(filemask, "*.tar.gz", 1, 0);
-		if(file_exist("/var/backup"))
-			filepath = ostrcat(filepath, "/var/backup", 1, 0);
-		else
-			filepath = ostrcat(filepath, "/tmp", 1, 0);	
-		type = ostrcat(type, "tmp", 1, 0);
-	}
-
-	struct skin* systemupdate = getscreen(skinname);
+	struct skin* systemupdate = getscreen(node->skinname);
 	struct skin* filelistpath = getscreennode(systemupdate, "filelistpath");
 	struct skin* filelist = getscreennode(systemupdate, "filelist");
 	struct skin* device = getscreennode(systemupdate, "device");
@@ -151,7 +88,7 @@ void screensystem_update(int mode)
 	setchoiceboxselection(device, getconfig("device", NULL));
 
 	clearscreen(load);
-	getfilelist(systemupdate, filelistpath, filelist, filepath, filemask, 0, NULL);
+	getfilelist(systemupdate, filelistpath, filelist, node->filepath, node->filemask, 0, NULL);
 	addscreenrc(systemupdate, filelist);
 
 
@@ -178,7 +115,7 @@ void screensystem_update(int mode)
 
 				drawscreen(load, 0, 0);
 				cmd = ostrcat(cmd, "/sbin/update.sh getfilelist", 1, 0);
-				cmd = ostrcat(cmd, auth, 1, 0);
+				cmd = ostrcat(cmd, node->auth, 1, 0);
 				if(imgtype == 1)
 					cmd = ostrcat(cmd, " dev beta.dyndns.tv", 1, 0);
 				else
@@ -189,7 +126,7 @@ void screensystem_update(int mode)
 			}
 
 			drawscreen(systemupdate, 0, 0);
-			getfilelist(systemupdate, filelistpath, filelist, filepath, filemask, 0, NULL);
+			getfilelist(systemupdate, filelistpath, filelist, node->filepath, node->filemask, 0, NULL);
 			addscreenrc(systemupdate, filelist);
 			continue;
 		}
@@ -206,13 +143,13 @@ void screensystem_update(int mode)
 					
 					if(pinret == 0)
 					{
-						imgtype = 1;
+						node->imgtype = 1;
 						changetext(b6, _("stable"));
 					}
 				}
 				else
 				{
-					imgtype = 0;
+					node->imgtype = 0;
 					changetext(b6, _("unstable"));
 				}
 			
@@ -220,7 +157,7 @@ void screensystem_update(int mode)
 
 				drawscreen(load, 0, 0);
 				cmd = ostrcat(cmd, "/sbin/update.sh getfilelist", 1, 0);
-				cmd = ostrcat(cmd, auth, 1, 0);
+				cmd = ostrcat(cmd, node->auth, 1, 0);
 				if(imgtype == 1)
 					cmd = ostrcat(cmd, " dev beta.dyndns.tv", 1, 0);
 				else
@@ -231,7 +168,7 @@ void screensystem_update(int mode)
 			}
 
 			drawscreen(systemupdate, 0, 0);
-			getfilelist(systemupdate, filelistpath, filelist, filepath, filemask, 0, NULL);
+			getfilelist(systemupdate, filelistpath, filelist, node->filepath, node->filemask, 0, NULL);
 			addscreenrc(systemupdate, filelist);
 			continue;
 		}
@@ -246,7 +183,7 @@ void screensystem_update(int mode)
 
 				char* cmd = NULL;
 				cmd = ostrcat(cmd, "/sbin/update.sh ", 1, 0);
-				cmd = ostrcat(cmd, type, 1, 0);
+				cmd = ostrcat(cmd, node->type, 1, 0);
 				cmd = ostrcat(cmd, " ", 1, 0);
 			
 				char* msgtxt = NULL;
@@ -257,7 +194,7 @@ void screensystem_update(int mode)
 				{
 					cmd = ostrcat(cmd, "full ", 1, 0);
 					cmd = ostrcat(cmd, tmpstr, 1, 0);
-					cmd = ostrcat(cmd, auth, 1, 0);
+					cmd = ostrcat(cmd, node->auth, 1, 0);
 					if(imgtype == 1)
 						cmd = ostrcat(cmd, " dev beta.dyndns.tv", 1, 0);
 					else
@@ -287,7 +224,7 @@ void screensystem_update(int mode)
 				{
 					cmd = ostrcat(cmd, "fullbackup ", 1, 0);
 					cmd = ostrcat(cmd, tmpstr, 1, 0);
-					cmd = ostrcat(cmd, auth, 1, 0);
+					cmd = ostrcat(cmd, node->auth, 1, 0);
 					if(imgtype == 1)
 						cmd = ostrcat(cmd, " dev beta.dyndns.tv", 1, 0);
 					else
@@ -319,7 +256,7 @@ void screensystem_update(int mode)
 				{
 					textbox(_("Message"), _("Error file not supported"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 					drawscreen(systemupdate, 0, 0);
-					getfilelist(systemupdate, filelistpath, filelist, filepath, filemask, 0, NULL);
+					getfilelist(systemupdate, filelistpath, filelist, node->filepath, node->filemask, 0, NULL);
 					addscreenrc(systemupdate, filelist);
 				}
 
@@ -333,14 +270,14 @@ void screensystem_update(int mode)
 					textbox(_("Message"), _("Can't start system update\nSyntax Error on updatefile"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
 					debug(40, "update error cmd: %s", cmd);
 					drawscreen(systemupdate, 0, 0);
-					getfilelist(systemupdate, filelistpath, filelist, filepath, filemask, 0, NULL);
+					getfilelist(systemupdate, filelistpath, filelist, node->filepath, node->filemask, 0, NULL);
 					addscreenrc(systemupdate, filelist);
 				}
 				else
 				{
 					debug(40, "update canceled cmd: %s", cmd);
 					drawscreen(systemupdate, 0, 0);
-					getfilelist(systemupdate, filelistpath, filelist, filepath, filemask, 0, NULL);
+					getfilelist(systemupdate, filelistpath, filelist, node->filepath, node->filemask, 0, NULL);
 					addscreenrc(systemupdate, filelist);
 				}
 
@@ -351,7 +288,9 @@ void screensystem_update(int mode)
 			}
 		}
 	}
-	free(auth); auth = NULL;
+	
+	freeupdatelist(node);
+//	free(auth); auth = NULL;
 	delownerrc(systemupdate);
 	clearscreen(systemupdate);
 
@@ -361,5 +300,6 @@ void screensystem_update(int mode)
 	status.hangtime = getconfigint("hangtime", NULL);
 	debug(40, "end");
 }
+
 
 #endif
