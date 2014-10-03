@@ -558,50 +558,51 @@ msgstr "Ja / VZAP oneindig"
 #: global.h:6222 global.h:6241 global.h:6411 gmediarender.h:115 harddisk.h:633
 #: harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731
 #: harddisk.h:733 harddisk.h:793 harddisk.h:811 harddisk.h:814 hbbtv.h:362
-#: hello.c:36 httpdfunc.h:1118 hwtest.h:88 hwtest.h:93 hwtest.h:98
-#: hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390
-#: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
-#: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
-#: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626
-#: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:497 infobar.h:619
-#: keyactions.h:290 language.h:49 lcdpearl1.c:49 lcdsamsung.c:101 log.h:46
-#: log.h:48 marker.h:215 marker.h:229 mc_audioplayer.h:333
-#: mc_audioplayer.h:605 mc_audioplayer.h:716 mc_dateibrowser.h:36
-#: mc_global.h:773 mc_global.h:1020 mc_internetbrowser.h:36 mc_main.h:50
-#: mc_main.h:55 mc_main.h:60 mc_main.h:95 mc_main.h:100 mc_main.h:273
-#: mc_main.h:282 mc_mediathek.h:35 mc_pictureplayer.h:100
-#: mc_pictureplayer.h:124 mc_pictureplayer.h:242 mc_pictureplayer.h:368
-#: mc_pictureplayer.h:461 mc_videoplayer.h:332 mc_videoplayer.h:749
-#: mc_videoplayer.h:784 mc_videoplayer.h:888 mc_videoplayer.h:904
-#: mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477
-#: mediadbsettings.h:95 menu.h:153 menu.h:208 movie4k.h:36 movie4k.h:48
-#: movie4k.h:92 movie4k.h:399 movreel.h:30 movreel.h:79 movreel.h:85
-#: movreel.h:91 movreel.h:103 movreel.h:115 movreel.h:166 movreel.h:214
-#: movshare.h:34 movshare.h:78 movshare.h:157 movshare.h:163 myvideo.h:86
-#: networkbrowser.h:944 networkbrowser.h:1005 networkbrowser.h:1009
-#: networkbrowser.h:1011 networkbrowser.h:1021 networkbrowser.h:1025
-#: networkbrowser.h:1189 networkbrowser.h:1743 networkbrowser.h:1750
-#: networkbrowser.h:1755 networkbrowser.h:1907 network.h:426 network.h:558
-#: network.h:766 network.h:774 network.h:800 network.h:804 network.h:858
-#: novamov.h:35 novamov.h:80 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105
-#: panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6 played.h:30
-#: played.h:84 played.h:90 played.h:102 played.h:114 played.h:171 player.h:99
-#: play.h:593 play.h:1265 play.h:1463 play.h:1637 play.h:1648 possetup.h:98
-#: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
-#: putlocker.h:32 putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
-#: putlocker.h:152 putlocker.h:225 readerconfig.h:343 readerconfig.h:443
-#: readerconfig.h:444 readerconfig.h:488 readerconfig.h:489 record.h:369
-#: record.h:1001 record.h:1188 record.h:1427 record.h:1452 rectimer.h:563
-#: rectimer.h:1217 rectimer.h:1363 rectimer.h:1375 restoredefault.h:10
-#: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
-#: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:31
-#: scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1640 scan.h:1888
-#: scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 service.h:712 service.h:957
-#: shared.h:29 shared.h:65 shared.h:82 skinadjust.h:200 skinselector.h:218
-#: sock.h:952 softcam.h:403 solarmovie.h:35 solarmovie.h:47 solarmovie.h:304
-#: spinner.h:18 stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74
-#: streamcloud.h:84 streamcloud.h:97 streamcloud.h:128 streamcloud.h:167
-#: stream.h:33 system_backup_restore.h:40 system_backup_restore.h:43
+#: hello.c:36 httpdfunc.h:1118 httpdfunc.h:5384 hwtest.h:88 hwtest.h:93
+#: hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206
+#: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
+#: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
+#: hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200
+#: imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:497
+#: infobar.h:619 keyactions.h:290 language.h:49 lcdpearl1.c:49
+#: lcdsamsung.c:101 log.h:46 log.h:48 marker.h:215 marker.h:229
+#: mc_audioplayer.h:333 mc_audioplayer.h:605 mc_audioplayer.h:716
+#: mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
+#: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
+#: mc_main.h:100 mc_main.h:273 mc_main.h:282 mc_mediathek.h:35
+#: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
+#: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:332
+#: mc_videoplayer.h:749 mc_videoplayer.h:784 mc_videoplayer.h:888
+#: mc_videoplayer.h:904 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
+#: mediadb.h:1477 mediadbsettings.h:95 menu.h:153 menu.h:208 movie4k.h:36
+#: movie4k.h:48 movie4k.h:92 movie4k.h:399 movreel.h:30 movreel.h:79
+#: movreel.h:85 movreel.h:91 movreel.h:103 movreel.h:115 movreel.h:166
+#: movreel.h:214 movshare.h:34 movshare.h:78 movshare.h:157 movshare.h:163
+#: myvideo.h:86 networkbrowser.h:944 networkbrowser.h:1005
+#: networkbrowser.h:1009 networkbrowser.h:1011 networkbrowser.h:1021
+#: networkbrowser.h:1025 networkbrowser.h:1189 networkbrowser.h:1743
+#: networkbrowser.h:1750 networkbrowser.h:1755 networkbrowser.h:1907
+#: network.h:426 network.h:558 network.h:766 network.h:774 network.h:800
+#: network.h:804 network.h:858 novamov.h:35 novamov.h:80 nowvideo.h:44
+#: nowvideo.h:99 nowvideo.h:105 panel_main.h:29 panel_main.h:135
+#: panel_settings_wizard.h:6 played.h:30 played.h:84 played.h:90 played.h:102
+#: played.h:114 played.h:171 player.h:99 play.h:593 play.h:1265 play.h:1463
+#: play.h:1637 play.h:1648 possetup.h:98 primeshare.h:29 primeshare.h:73
+#: primeshare.h:79 primeshare.h:124 putlocker.h:32 putlocker.h:79
+#: putlocker.h:85 putlocker.h:91 putlocker.h:142 putlocker.h:152
+#: putlocker.h:225 readerconfig.h:343 readerconfig.h:443 readerconfig.h:444
+#: readerconfig.h:488 readerconfig.h:489 record.h:369 record.h:1001
+#: record.h:1188 record.h:1427 record.h:1452 rectimer.h:563 rectimer.h:1217
+#: rectimer.h:1363 rectimer.h:1375 restoredefault.h:10 restoredefault.h:19
+#: restoredefault.h:23 restoredefault.h:32 restoredefault.h:47 rgui.h:30
+#: rgui.h:118 rgui.h:134 rtl2now.h:31 scan.h:1598 scan.h:1600 scan.h:1628
+#: scan.h:1630 scan.h:1640 scan.h:1888 scan.h:1979 scan.h:2345 scart.h:12
+#: scart.h:25 service.h:712 service.h:957 shared.h:29 shared.h:65 shared.h:82
+#: skinadjust.h:200 skinselector.h:218 sock.h:952 softcam.h:403
+#: solarmovie.h:35 solarmovie.h:47 solarmovie.h:304 spinner.h:18
+#: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:84
+#: streamcloud.h:97 streamcloud.h:128 streamcloud.h:167 stream.h:33
+#: system_backup_restore.h:40 system_backup_restore.h:43
 #: system_backup_restore.h:80 system_backup_restore.h:82 system_update.h:257
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 timeshift.h:113 timeshift.h:155 timeshift.h:162
@@ -2385,43 +2386,39 @@ msgstr ""
 msgid "System Update"
 msgstr "Systeem update"
 
-#: httpdfunc.h:5375 system_update.h:220
+#: httpdfunc.h:5388 system_update.h:220
 msgid "starting Full Update ?"
 msgstr "Volledige update starten?"
 
-#: httpdfunc.h:5380 softcam.h:91 softcam.h:99
-msgid "started"
-msgstr "Gestart"
-
-#: httpdfunc.h:5401 skin_default_skin.xml.h:572 webif_info.h:1
+#: httpdfunc.h:5414 skin_default_skin.xml.h:572 webif_info.h:1
 msgid "Service"
 msgstr "Zender"
 
-#: httpdfunc.h:5434 skin_default_skin.xml.h:639 webif_system.h:3
+#: httpdfunc.h:5447 skin_default_skin.xml.h:639 webif_system.h:3
 msgid "System Backup"
 msgstr ""
 
-#: httpdfunc.h:5467 skin_default_skin.xml.h:577 webif_system.h:4
+#: httpdfunc.h:5480 skin_default_skin.xml.h:577 webif_system.h:4
 msgid "Settings backup/restore"
 msgstr "Instellingen backuppen/terugzetten"
 
-#: httpdfunc.h:5500 skin_default_skin.xml.h:680 webif_system_extensions.h:2
+#: httpdfunc.h:5513 skin_default_skin.xml.h:680 webif_system_extensions.h:2
 msgid "TPK upgrade (online)"
 msgstr ""
 
-#: httpdfunc.h:5533 skin_default_skin.xml.h:674 webif_system_extensions.h:3
+#: httpdfunc.h:5546 skin_default_skin.xml.h:674 webif_system_extensions.h:3
 msgid "TPK install (online)"
 msgstr "TPK installatie (online)"
 
-#: httpdfunc.h:5566 skin_default_skin.xml.h:679 webif_system_extensions.h:4
+#: httpdfunc.h:5579 skin_default_skin.xml.h:679 webif_system_extensions.h:4
 msgid "TPK tmp (tmp)"
 msgstr "TPK installatie (tmp)"
 
-#: httpdfunc.h:5599 skin_default_skin.xml.h:677 webif_system_extensions.h:5
+#: httpdfunc.h:5612 skin_default_skin.xml.h:677 webif_system_extensions.h:5
 msgid "TPK media (media)"
 msgstr ""
 
-#: httpdfunc.h:5632 skin_default_skin.xml.h:678 webif_system_extensions.h:6
+#: httpdfunc.h:5645 skin_default_skin.xml.h:678 webif_system_extensions.h:6
 msgid "TPK remove"
 msgstr "TPK verwijderen"
 
@@ -8619,6 +8616,10 @@ msgstr ""
 #: sock.h:950
 msgid "Download finished!"
 msgstr "Download geslaagd!"
+
+#: softcam.h:91 softcam.h:99
+msgid "started"
+msgstr "Gestart"
 
 #: softcam.h:93 softcam.h:105
 msgid "active"
