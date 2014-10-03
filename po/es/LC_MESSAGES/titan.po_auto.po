@@ -83,8 +83,8 @@ msgstr ""
 #: system_backup_restore.h:40 system_backup_restore.h:43
 #: system_backup_restore.h:51 system_backup_restore.h:80
 #: system_backup_restore.h:82 system_backup_restore.h:88
-#: system_backup_restore.h:95 system_update.h:320 system_update.h:326
-#: system_update.h:333 thefile.h:34 thefile.h:68 thefile.h:205 timeshift.h:113
+#: system_backup_restore.h:95 system_update.h:257 system_update.h:263
+#: system_update.h:270 thefile.h:34 thefile.h:68 thefile.h:205 timeshift.h:113
 #: timeshift.h:155 timeshift.h:162 timeshiftsettings.h:45 titan.c:277
 #: titan.c:341 titan.c:350 titan.c:970 titan.c:979 titan.c:1104 titan.c:1125
 #: titan.c:1131 titan.c:1142 titan.c:1148 tithek.c:84 tithek_global.h:248
@@ -198,8 +198,8 @@ msgstr "Ok"
 #: system_backup_restore.h:31 system_backup_restore.h:40
 #: system_backup_restore.h:43 system_backup_restore.h:51
 #: system_backup_restore.h:80 system_backup_restore.h:82
-#: system_backup_restore.h:88 system_backup_restore.h:95 system_update.h:320
-#: system_update.h:326 system_update.h:333 thefile.h:34 thefile.h:68
+#: system_backup_restore.h:88 system_backup_restore.h:95 system_update.h:257
+#: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 timeshift.h:113 timeshift.h:155 timeshift.h:162
 #: timeshiftsettings.h:45 titan.c:277 titan.c:341 titan.c:350 titan.c:970
 #: titan.c:979 titan.c:1104 titan.c:1125 titan.c:1131 titan.c:1142
@@ -602,8 +602,8 @@ msgstr "Si/VZAP infinito"
 #: spinner.h:18 stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74
 #: streamcloud.h:84 streamcloud.h:97 streamcloud.h:128 streamcloud.h:167
 #: stream.h:33 system_backup_restore.h:40 system_backup_restore.h:43
-#: system_backup_restore.h:80 system_backup_restore.h:82 system_update.h:320
-#: system_update.h:326 system_update.h:333 thefile.h:34 thefile.h:68
+#: system_backup_restore.h:80 system_backup_restore.h:82 system_update.h:257
+#: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 timeshift.h:113 timeshift.h:155 timeshift.h:162
 #: timeshiftsettings.h:45 titan.c:277 titan.c:341 titan.c:350 titan.c:1104
 #: titan.c:1125 titan.c:1131 titan.c:1142 titan.c:1148 tithek.c:84
@@ -2397,6 +2397,14 @@ msgstr ""
 #: httpdfunc.h:5267
 msgid "ERROR, Streaming can not be stopped."
 msgstr ""
+
+#: httpdfunc.h:5291 httpdfunc.h:5349 skin_default_skin.xml.h:645
+msgid "System Update"
+msgstr "Sistema de Actualizacion"
+
+#: httpdfunc.h:5356 softcam.h:91 softcam.h:99
+msgid "started"
+msgstr "Iniciando"
 
 #: hwtest.h:88
 msgid "testtransponder not found"
@@ -8254,7 +8262,7 @@ msgstr "Español"
 msgid "SSID"
 msgstr "SSID: "
 
-#: skin_default_skin.xml.h:612 system_update.h:88 system_update.h:210
+#: skin_default_skin.xml.h:612 system_update.h:25 system_update.h:147
 msgid "stable"
 msgstr "Nocturno-Img"
 
@@ -8362,10 +8370,6 @@ msgstr "Informacion Sistema"
 #: webif_info_systeminfos.h:8
 msgid "System Infos"
 msgstr "Sistema informacion"
-
-#: skin_default_skin.xml.h:645
-msgid "System Update"
-msgstr "Sistema de Actualizacion"
 
 #: skin_default_skin.xml.h:646
 msgid "System - Usbupdate (online)"
@@ -8712,10 +8716,6 @@ msgstr ""
 msgid "Download finished!"
 msgstr "Descargar terminado!"
 
-#: softcam.h:91 softcam.h:99
-msgid "started"
-msgstr "Iniciando"
-
 #: softcam.h:93 softcam.h:105
 msgid "active"
 msgstr "activo"
@@ -9037,27 +9037,27 @@ msgstr "Process Information"
 msgid "USB Info"
 msgstr "USB Informacion"
 
-#: system_update.h:90 system_update.h:216
+#: system_update.h:27 system_update.h:153
 msgid "unstable"
 msgstr "svn-beta"
 
-#: system_update.h:123
+#: system_update.h:60
 msgid "non-version"
 msgstr ""
 
-#: system_update.h:283
+#: system_update.h:220
 msgid "starting Full Update ?"
 msgstr "Iniciar actualizacin completa?"
 
-#: system_update.h:313
+#: system_update.h:250
 msgid "starting Full Update (from backup) ?"
 msgstr "Iniciar actualizacin completa de una copia de seguridad?"
 
-#: system_update.h:320
+#: system_update.h:257
 msgid "Error file not supported"
 msgstr "ERROR: Tipo de archivo no soportado"
 
-#: system_update.h:333
+#: system_update.h:270
 msgid ""
 "Can't start system update\n"
 "Syntax Error on updatefile"
