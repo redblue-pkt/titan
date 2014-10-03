@@ -558,7 +558,7 @@ msgstr ""
 #: global.h:6222 global.h:6241 global.h:6411 gmediarender.h:115 harddisk.h:633
 #: harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731
 #: harddisk.h:733 harddisk.h:793 harddisk.h:811 harddisk.h:814 hbbtv.h:362
-#: hello.c:36 httpdfunc.h:1118 httpdfunc.h:5384 hwtest.h:88 hwtest.h:93
+#: hello.c:36 httpdfunc.h:1118 httpdfunc.h:5388 hwtest.h:88 hwtest.h:93
 #: hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206
 #: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
 #: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
@@ -1793,7 +1793,7 @@ msgstr ""
 msgid "Version"
 msgstr ""
 
-#: global.h:6629 httpdfunc.h:5271 skin_default_skin.xml.h:338
+#: global.h:6629 httpdfunc.h:5273 skin_default_skin.xml.h:338
 msgid "Installed:"
 msgstr "instalacja"
 
@@ -2342,44 +2342,44 @@ msgstr ""
 msgid "ERROR, Streaming can not be stopped."
 msgstr ""
 
-#: httpdfunc.h:5263 httpdfunc.h:5367 skin_default_skin.xml.h:645
+#: httpdfunc.h:5265 httpdfunc.h:5371 skin_default_skin.xml.h:645
 #: webif_system.h:2 webif_system_update.h:1
 msgid "System Update"
 msgstr "System - Usbupdate (tmp)"
 
-#: httpdfunc.h:5388 system_update.h:220
+#: httpdfunc.h:5392 system_update.h:220
 msgid "starting Full Update ?"
 msgstr ""
 
-#: httpdfunc.h:5414 skin_default_skin.xml.h:572 webif_info.h:1
+#: httpdfunc.h:5418 skin_default_skin.xml.h:572 webif_info.h:1
 msgid "Service"
 msgstr "Serwis"
 
-#: httpdfunc.h:5447 skin_default_skin.xml.h:639 webif_system.h:3
+#: httpdfunc.h:5453 skin_default_skin.xml.h:639 webif_system.h:3
 msgid "System Backup"
 msgstr ""
 
-#: httpdfunc.h:5480 skin_default_skin.xml.h:577 webif_system.h:4
+#: httpdfunc.h:5488 skin_default_skin.xml.h:577 webif_system.h:4
 msgid "Settings backup/restore"
 msgstr "ustawienia kopii/odzyskiwania"
 
-#: httpdfunc.h:5513 skin_default_skin.xml.h:680 webif_system_extensions.h:2
+#: httpdfunc.h:5523 skin_default_skin.xml.h:680 webif_system_extensions.h:2
 msgid "TPK upgrade (online)"
 msgstr "Update USB (poprzez web)"
 
-#: httpdfunc.h:5546 skin_default_skin.xml.h:674 webif_system_extensions.h:3
+#: httpdfunc.h:5558 skin_default_skin.xml.h:674 webif_system_extensions.h:3
 msgid "TPK install (online)"
 msgstr "Instaluj IPK (poprzez web)"
 
-#: httpdfunc.h:5579 skin_default_skin.xml.h:679 webif_system_extensions.h:4
+#: httpdfunc.h:5593 skin_default_skin.xml.h:679 webif_system_extensions.h:4
 msgid "TPK tmp (tmp)"
 msgstr "Instaluj IPK (tmp)"
 
-#: httpdfunc.h:5612 skin_default_skin.xml.h:677 webif_system_extensions.h:5
+#: httpdfunc.h:5628 skin_default_skin.xml.h:677 webif_system_extensions.h:5
 msgid "TPK media (media)"
 msgstr ""
 
-#: httpdfunc.h:5645 skin_default_skin.xml.h:678 webif_system_extensions.h:6
+#: httpdfunc.h:5663 skin_default_skin.xml.h:678 webif_system_extensions.h:6
 msgid "TPK remove"
 msgstr "usuń IPK"
 
