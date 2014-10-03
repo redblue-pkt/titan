@@ -2385,39 +2385,47 @@ msgstr ""
 msgid "System Update"
 msgstr "Systeem update"
 
-#: httpdfunc.h:5337 softcam.h:91 softcam.h:99
+#: httpdfunc.h:5378 system_update.h:220
+msgid "starting Full Update ?"
+msgstr "Volledige update starten?"
+
+#: httpdfunc.h:5408 system_update.h:250
+msgid "starting Full Update (from backup) ?"
+msgstr "Volledige update starten? (vanuit back-up)"
+
+#: httpdfunc.h:5415 softcam.h:91 softcam.h:99
 msgid "started"
 msgstr "Gestart"
 
-#: httpdfunc.h:5358 skin_default_skin.xml.h:572 webif_info.h:1
+#: httpdfunc.h:5436 skin_default_skin.xml.h:572 webif_info.h:1
 msgid "Service"
 msgstr "Zender"
 
-#: httpdfunc.h:5391 skin_default_skin.xml.h:639 webif_system.h:3
+#: httpdfunc.h:5469 skin_default_skin.xml.h:639 webif_system.h:3
 msgid "System Backup"
 msgstr ""
 
-#: httpdfunc.h:5424 skin_default_skin.xml.h:577 webif_system.h:4
+#: httpdfunc.h:5502 skin_default_skin.xml.h:577 webif_system.h:4
 msgid "Settings backup/restore"
 msgstr "Instellingen backuppen/terugzetten"
 
-#: httpdfunc.h:5457 skin_default_skin.xml.h:680 webif_system_extensions.h:2
+#: httpdfunc.h:5535 skin_default_skin.xml.h:680 webif_system_extensions.h:2
 msgid "TPK upgrade (online)"
 msgstr ""
 
-#: httpdfunc.h:5490 skin_default_skin.xml.h:674 webif_system_extensions.h:3
+#: httpdfunc.h:5568 skin_default_skin.xml.h:674 webif_system_extensions.h:3
 msgid "TPK install (online)"
 msgstr "TPK installatie (online)"
 
-#: httpdfunc.h:5523 skin_default_skin.xml.h:679 webif_system_extensions.h:4
+#: httpdfunc.h:5601 skin_default_skin.xml.h:679 webif_system_extensions.h:4
 msgid "TPK tmp (tmp)"
 msgstr "TPK installatie (tmp)"
 
-#: httpdfunc.h:5556 skin_default_skin.xml.h:677 webif_system_extensions.h:5
+#: httpdfunc.h:5634 skin_default_skin.xml.h:677 webif_system_extensions.h:5
 msgid "TPK media (media)"
 msgstr ""
 
-#: httpdfunc.h:5589 skin_default_skin.xml.h:678 webif_system_extensions.h:6
+#: httpdfunc.h:5667 skin_default_skin.xml.h:678 webif_system_extensions.h:6
 msgid "TPK remove"
 msgstr "TPK verwijderen"
 
@@ -8934,14 +8942,6 @@ msgstr "Onstabiel"
 #: system_update.h:60
 msgid "non-version"
 msgstr ""
-
-#: system_update.h:220
-msgid "starting Full Update ?"
-msgstr "Volledige update starten?"
-
-#: system_update.h:250
-msgid "starting Full Update (from backup) ?"
-msgstr "Volledige update starten? (vanuit back-up)"
 
 #: system_update.h:257
 msgid "Error file not supported"
