@@ -2400,7 +2400,8 @@ msgstr "Volledige update starten?"
 
 #: httpdfunc.h:5429
 msgid ""
-"System Update started please wait 5 minutes, more info they see on your TV."
+"System Update started Please wait 5 Minutes and Refresh this Page, more "
+"infos they see on your TV."
 msgstr ""
 
 #: httpdfunc.h:5456 skin_default_skin.xml.h:572 webif_info.h:1
