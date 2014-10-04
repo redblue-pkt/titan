@@ -5358,7 +5358,7 @@ char* webgetupdate(char* param, int fmt)
 {
 	if(status.security == 0) return NULL;
 
-	char* buf = NULL;
+	char* buf = NULL, *cmd = NULL;
 	printf("param: %s\n",param);
 
 //	if(fmt == 0)
@@ -5382,6 +5382,7 @@ char* webgetupdate(char* param, int fmt)
 	buf = ostrcat(buf, "<br>", 1, 0);
 	buf = ostrcat(buf, "<br>", 1, 0);
 */
+	cmd = htmlencode(param);
 
 	buf = ostrcat(buf, "<title>", 1, 0);
 	buf = ostrcat(buf, _("Message"), 1, 0);
@@ -5391,8 +5392,9 @@ char* webgetupdate(char* param, int fmt)
 	buf = ostrcat(buf, _("starting Full Update ?"), 1, 0);
 	buf = ostrcat(buf, "\");\n", 1, 0);
 	buf = ostrcat(buf, "if(bRepeat==true)\n", 1, 0);
-	buf = ostrcat(buf, "window.location = \"../queryraw?getcommand&df\";\n", 1, 0);
-
+	buf = ostrcat(buf, "window.location = \"../queryraw?getcommand&", 1, 0);
+	buf = ostrcat(buf, cmd, 1, 1);
+	buf = ostrcat(buf, "\";\n", 1, 0);
 	buf = ostrcat(buf, "else\n", 1, 0);
 	buf = ostrcat(buf, "alert(\"exit\");\n", 1, 0);
 	buf = ostrcat(buf, "</script>\n", 1, 0);
@@ -5401,7 +5403,6 @@ char* webgetupdate(char* param, int fmt)
 		buf = ostrcat(buf, "</center></body></html>", 1, 0);
 
 	return buf;
-
 }
 
 char* webgetserviceinfo(int fmt)
