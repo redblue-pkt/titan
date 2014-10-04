@@ -305,8 +305,12 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 		buf = webgetlogs(param, fmt);
 	else if(ostrcmp(query, "getabout") == 0)
 		buf = webgetabout(fmt);
-	else if(ostrcmp(query, "gettpkinstall") == 0)
-		buf = webgettpkinstall(fmt);
+	else if(ostrcmp(query, "gettpksection") == 0)
+		buf = webgettpksection(fmt);
+	else if(ostrcmp(query, "gettpklist") == 0 && param != NULL)
+		buf = webgettpklist(param, fmt);
+	else if(ostrcmp(query, "gettpkinstall") == 0 && param != NULL)
+		buf = webgettpkinstall(param, fmt);
 	else if(ostrcmp(query, "gettpktmpinstall") == 0)
 		buf = webgettpktmpinstall(fmt);
 	else if(ostrcmp(query, "gettpkmediainstall") == 0)
