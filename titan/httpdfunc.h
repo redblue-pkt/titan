@@ -5580,7 +5580,136 @@ char* webgettpkupgrade(int fmt)
 	return buf;
 }
 
-char* webgettpkinstall(int fmt)
+char* webgettpksection(int fmt)
+{
+	if(status.security == 0) return NULL;
+
+	char* buf = NULL;
+
+	if(fmt == 0) 
+	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"tpksection\"><center>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+		buf = ostrcat(buf, _("TPK install (online)"), 1, 0);
+		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+	}
+
+	tpkgetindex(0);
+	tpklist();
+
+	struct tpk* node = tpk;
+
+	if(node == NULL) buf = ostrcat(buf, _("No Tpk Sections Found."), 1, 0);
+	
+	while(node != NULL)
+	{
+		if(findsectiondone(node->section) == 1)
+		{
+			node = node->next;
+			continue;
+		}
+
+		node->done = 1;
+
+		buf = ostrcat(buf, "<a class=linelink2 href=queryraw?gettpklist&", 1, 0);
+		buf = ostrcat(buf, node->section, 1, 0);
+		buf = ostrcat(buf, " target=main>", 1, 0);
+		buf = ostrcat(buf, _(node->section), 1, 0);
+		buf = ostrcat(buf, "</a>\n", 1, 0);
+		buf = ostrcat(buf, "</br></br>\n", 1, 0);
+
+		node = node->next;
+	}
+
+	if(fmt == 0)
+	{
+		buf = ostrcat(buf, "</center></body></html>", 1, 0);
+	}	
+	
+	return buf;
+}
+
+char* webgettpklist(char* param, int fmt)
+{
+	if(status.security == 0) return NULL;
+	int skip = 0;
+
+	char* buf = NULL;
+
+//	if(fmt == 0) 
+//	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"tpklist\"><center>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+		buf = ostrcat(buf, _("TPK install (online)"), 1, 0);
+		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+//	}
+
+	tpkgetindex(0);
+	tpklist();
+
+	struct tpk* node = tpk, *tpk_installed = NULL, *node_installed = NULL;
+
+	if(node == NULL) buf = ostrcat(buf, _("No Tpk Files Found."), 1, 0);
+
+//	drawscreen(load, 0, 0);
+	tpk = NULL;
+	tpklistinstalled(0);
+	tpk_installed = tpk;
+	tpk = node;
+		
+	while(node != NULL)
+	{
+		node_installed = tpk_installed;
+		skip = 0;
+		while(node_installed != NULL)
+		{
+			if(ostrcmp(node->section, node_installed->section) == 0 && ostrcmp(node->showname, node_installed->showname) == 0)
+			{
+				skip = 1;
+				break;
+			}
+			node_installed = node_installed->next;
+		}
+		
+		//check if tpk is in section
+		if(param != NULL && ostrcmp(node->section, param) != 0)
+			skip = 1;
+
+		if(skip == 1)
+		{
+			node = node->next;
+			continue;
+		}
+
+		buf = ostrcat(buf, "<a class=linelink2 href=queryraw?gettpkinstall&", 1, 0);
+		buf = ostrcat(buf, node->filename, 1, 0);
+		buf = ostrcat(buf, " target=main>", 1, 0);
+		buf = ostrcat(buf, _(node->showname), 1, 0);
+		buf = ostrcat(buf, " v.", 1, 0);
+		buf = ostrcat(buf, oitoa(node->version), 1, 1);
+		buf = ostrcat(buf, "</a>\n", 1, 0);
+		buf = ostrcat(buf, "</br></br>\n", 1, 0);
+
+		node = node->next;
+	}
+
+//	if(fmt == 0)
+//	{
+		buf = ostrcat(buf, "</center></body></html>", 1, 0);
+//	}	
+	
+	return buf;
+}
+
+char* webgettpkinstall(char* param,int fmt)
 {
 	if(status.security == 0) return NULL;
 

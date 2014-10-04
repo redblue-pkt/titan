@@ -4,7 +4,7 @@
 void screensystem_update(int mode)
 {
 	debug(50, "(start) mode=%d", mode);
-	int rcret = 0, imgtype = 0;
+	int rcret = 0;
 
 	status.hangtime = 99999;
 	struct skin* load = getscreen("loading");
