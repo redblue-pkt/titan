@@ -2354,35 +2354,40 @@ msgstr "System - USB-Update (tmp)"
 msgid "starting Full Update ?"
 msgstr ""
 
-#: httpdfunc.h:5421 skin_default_skin.xml.h:572 webif_info.h:1
+#: httpdfunc.h:5399
+msgid ""
+"System Update started please wait 5 minutes, more info they see on your TV."
+msgstr ""
+
+#: httpdfunc.h:5426 skin_default_skin.xml.h:572 webif_info.h:1
 msgid "Service"
 msgstr ""
 
-#: httpdfunc.h:5456 skin_default_skin.xml.h:639 webif_system.h:3
+#: httpdfunc.h:5461 skin_default_skin.xml.h:639 webif_system.h:3
 msgid "System Backup"
 msgstr ""
 
-#: httpdfunc.h:5491 skin_default_skin.xml.h:577 webif_system.h:4
+#: httpdfunc.h:5496 skin_default_skin.xml.h:577 webif_system.h:4
 msgid "Settings backup/restore"
 msgstr "Réglages sauvegarde/restauration"
 
-#: httpdfunc.h:5526 skin_default_skin.xml.h:680 webif_system_extensions.h:2
+#: httpdfunc.h:5531 skin_default_skin.xml.h:680 webif_system_extensions.h:2
 msgid "TPK upgrade (online)"
 msgstr "Mise a jour USB(online)"
 
-#: httpdfunc.h:5561 skin_default_skin.xml.h:674 webif_system_extensions.h:3
+#: httpdfunc.h:5566 skin_default_skin.xml.h:674 webif_system_extensions.h:3
 msgid "TPK install (online)"
 msgstr "Installion TPK online "
 
-#: httpdfunc.h:5596 skin_default_skin.xml.h:679 webif_system_extensions.h:4
+#: httpdfunc.h:5601 skin_default_skin.xml.h:679 webif_system_extensions.h:4
 msgid "TPK tmp (tmp)"
 msgstr "TPK tmp"
 
-#: httpdfunc.h:5631 skin_default_skin.xml.h:677 webif_system_extensions.h:5
+#: httpdfunc.h:5636 skin_default_skin.xml.h:677 webif_system_extensions.h:5
 msgid "TPK media (media)"
 msgstr ""
 
-#: httpdfunc.h:5666 skin_default_skin.xml.h:678 webif_system_extensions.h:6
+#: httpdfunc.h:5671 skin_default_skin.xml.h:678 webif_system_extensions.h:6
 msgid "TPK remove"
 msgstr "Supprimer TPK "
 
