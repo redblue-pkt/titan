@@ -558,7 +558,7 @@ msgstr ""
 #: global.h:6222 global.h:6241 global.h:6411 gmediarender.h:115 harddisk.h:633
 #: harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731
 #: harddisk.h:733 harddisk.h:793 harddisk.h:811 harddisk.h:814 hbbtv.h:362
-#: hello.c:36 httpdfunc.h:1118 httpdfunc.h:5388 hwtest.h:88 hwtest.h:93
+#: hello.c:36 httpdfunc.h:1118 httpdfunc.h:5387 hwtest.h:88 hwtest.h:93
 #: hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206
 #: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
 #: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
@@ -2347,7 +2347,7 @@ msgstr ""
 msgid "System Update"
 msgstr "System - Usbupdate (tmp)"
 
-#: httpdfunc.h:5392 system_update.h:220
+#: httpdfunc.h:5391 system_update.h:220
 msgid "starting Full Update ?"
 msgstr ""
 
