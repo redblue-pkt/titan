@@ -25,14 +25,14 @@ msgstr ""
 #: harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641 harddisk.h:675
 #: harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733 harddisk.h:793
 #: harddisk.h:811 harddisk.h:814 harddisk.h:1046 hbbtv.h:362 httpdfunc.h:1118
-#: httpdfunc.h:3051 hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103
-#: hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390 hwtest.h:411
-#: hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566 hwtest.h:586
-#: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
-#: hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626 inadyn.h:188
-#: inadyn.h:190 inadyn.h:200 infobar.h:497 infobar.h:619 info.h:27
-#: keyactions.h:290 lcdpearl1.c:49 lcdsamsung.c:101 log.h:46 log.h:48
-#: mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
+#: httpdfunc.h:3051 httpdfunc.h:5920 hwtest.h:88 hwtest.h:93 hwtest.h:98
+#: hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390
+#: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
+#: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
+#: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626
+#: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:497 infobar.h:619
+#: info.h:27 keyactions.h:290 lcdpearl1.c:49 lcdsamsung.c:101 log.h:46
+#: log.h:48 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
 #: mc_audioplayer.h:333 mc_audioplayer.h:605 mc_audioplayer.h:716
 #: mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
 #: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
@@ -91,7 +91,7 @@ msgstr ""
 #: tithek.h:667 tithek.h:1163 tithek.h:1206 tithek.h:1454 tithek.h:1476
 #: tithek.h:1492 tithek.h:2062 tithek.h:2089 tithek.h:2103 tithek.h:2113
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
-#: tmdb.h:759 tmdb.h:922 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3187
+#: tmdb.h:759 tmdb.h:922 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3189
 #: tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
 #: tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:915
 #: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:60
@@ -131,14 +131,14 @@ msgstr "Ok"
 #: harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641 harddisk.h:675
 #: harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733 harddisk.h:793
 #: harddisk.h:811 harddisk.h:814 harddisk.h:1046 hbbtv.h:362 hello.c:36
-#: httpdfunc.h:1118 httpdfunc.h:3051 hwtest.h:88 hwtest.h:93 hwtest.h:98
-#: hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390
-#: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
-#: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
-#: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626
-#: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:497 infobar.h:619
-#: info.h:27 keyactions.h:290 log.h:46 log.h:48 marker.h:215 marker.h:229
-#: mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
+#: httpdfunc.h:1118 httpdfunc.h:3051 httpdfunc.h:5920 hwtest.h:88 hwtest.h:93
+#: hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206
+#: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
+#: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
+#: hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200
+#: imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:497
+#: infobar.h:619 info.h:27 keyactions.h:290 log.h:46 log.h:48 marker.h:215
+#: marker.h:229 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
 #: mc_audioplayer.h:333 mc_audioplayer.h:605 mc_audioplayer.h:716
 #: mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
 #: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
@@ -207,7 +207,7 @@ msgstr "Ok"
 #: tithek.h:1206 tithek.h:1454 tithek.h:1476 tithek.h:1492 tithek.h:2062
 #: tithek.h:2089 tithek.h:2103 tithek.h:2113 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922
-#: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3187 tpk.new.h:3167 tsSchnitt.c:108
+#: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3189 tpk.new.h:3167 tsSchnitt.c:108
 #: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
 #: tsSchnitt.c:347 tunerconfig.h:915 unlock.h:20 unlock.h:66 unlock.h:71
 #: unlock.h:75 videomode.h:60 videoweed.h:35 videoweed.h:80 vidstream.h:45
@@ -558,8 +558,8 @@ msgstr ""
 #: global.h:6222 global.h:6241 global.h:6411 gmediarender.h:115 harddisk.h:633
 #: harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731
 #: harddisk.h:733 harddisk.h:793 harddisk.h:811 harddisk.h:814 hbbtv.h:362
-#: hello.c:36 httpdfunc.h:1118 httpdfunc.h:5420 hwtest.h:88 hwtest.h:93
-#: hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206
+#: hello.c:36 httpdfunc.h:1118 httpdfunc.h:5420 httpdfunc.h:5920 hwtest.h:88
+#: hwtest.h:93 hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206
 #: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
 #: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
 #: hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200
@@ -611,7 +611,7 @@ msgstr ""
 #: tithek_global.h:248 tithek.h:667 tithek.h:1163 tithek.h:1206 tithek.h:1454
 #: tithek.h:1476 tithek.h:2062 tithek.h:2089 tithek.h:2103 tithek.h:2113
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
-#: tmdb.h:759 tmdb.h:922 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3187
+#: tmdb.h:759 tmdb.h:922 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3189
 #: tpk.new.h:3167 tunerconfig.h:915 unlock.h:20 unlock.h:66 unlock.h:71
 #: unlock.h:75 videomode.h:60 videoweed.h:35 videoweed.h:80 vidstream.h:45
 #: vidstream.h:86 vidstream.h:98 vidstream.h:167 webif_boxcontrol.h:2
@@ -1414,40 +1414,41 @@ msgstr ""
 msgid "Remove error"
 msgstr ""
 
-#: extensions.h:130 httpdfunc.h:5768
+#: extensions.h:130 httpdfunc.h:5769
 msgid "Install to MNT"
 msgstr "Install error"
 
-#: extensions.h:142 httpdfunc.h:5784
+#: extensions.h:142 httpdfunc.h:5787
 msgid "Install to FLASH"
 msgstr "Install to Stick or HDD"
 
-#: extensions.h:156 httpdfunc.h:5802
+#: extensions.h:156 httpdfunc.h:5807
 msgid "Install to SWAP"
 msgstr "Install error"
 
-#: extensions.h:169 httpdfunc.h:5819
+#: extensions.h:169 httpdfunc.h:5751 httpdfunc.h:5825
 msgid "Choice Install Medium"
 msgstr ""
 
-#: extensions.h:175 extensions.h:231 extensions.h:492 httpdfunc.h:5817
-#: httpdfunc.h:5829
+#: extensions.h:175 extensions.h:231 extensions.h:492 httpdfunc.h:5822
+#: httpdfunc.h:5834 httpdfunc.h:5877
 msgid "Tpk Install Info"
 msgstr "Info su TPK installationi"
 
-#: extensions.h:175 httpdfunc.h:5831
+#: extensions.h:175 httpdfunc.h:5837
 msgid "Can't install Package. Package to big."
 msgstr ""
 
-#: extensions.h:202
+#: extensions.h:202 httpdfunc.h:5596
 msgid "Tpk Install - select section"
 msgstr ""
 
-#: extensions.h:207 skin_default_skin.xml.h:675
+#: extensions.h:207 httpdfunc.h:5652 skin_default_skin.xml.h:675
 msgid "Tpk Install - select file"
 msgstr "TPK installare- Scegliere File"
 
-#: extensions.h:212 extensions.h:244 extensions.h:400 tpk.h:2990
+#: extensions.h:212 extensions.h:244 extensions.h:400 httpdfunc.h:5903
+#: tpk.h:2990
 msgid ""
 "It may only be a package to be installed. If they want to install another "
 "package of this section, they only remove the installed packet. Is not the "
@@ -1463,15 +1464,15 @@ msgstr ""
 msgid "starting"
 msgstr ""
 
-#: extensions.h:240
+#: extensions.h:240 httpdfunc.h:5892
 msgid "Tpk Install Info - Install OK"
 msgstr ""
 
-#: extensions.h:244 extensions.h:249
+#: extensions.h:244 extensions.h:249 httpdfunc.h:5900 httpdfunc.h:5909
 msgid "Tpk Install Info - Install ERROR"
 msgstr ""
 
-#: extensions.h:257
+#: extensions.h:257 httpdfunc.h:5920 httpdfunc.h:5922
 msgid "TPK Install done, your system will reboot !"
 msgstr ""
 
@@ -2391,28 +2392,23 @@ msgstr "Salvare Impostazioni/Ripristinare"
 msgid "TPK upgrade (online)"
 msgstr ""
 
-#: httpdfunc.h:5596 httpdfunc.h:5652 httpdfunc.h:5738 httpdfunc.h:5869
-#: skin_default_skin.xml.h:674 webif_system_extensions.h:3
-msgid "TPK install (online)"
-msgstr "TPK Pacchetti installare (Internet)"
-
 #: httpdfunc.h:5606
 msgid "No Tpk Sections Found."
 msgstr ""
 
-#: httpdfunc.h:5662 httpdfunc.h:5744
+#: httpdfunc.h:5662 httpdfunc.h:5728
 msgid "No Tpk Files Found."
 msgstr ""
 
-#: httpdfunc.h:5907 skin_default_skin.xml.h:679 webif_system_extensions.h:4
+#: httpdfunc.h:5954 skin_default_skin.xml.h:679 webif_system_extensions.h:4
 msgid "TPK tmp (tmp)"
 msgstr "Installare TPK da /tmp"
 
-#: httpdfunc.h:5942 skin_default_skin.xml.h:677 webif_system_extensions.h:5
+#: httpdfunc.h:5989 skin_default_skin.xml.h:677 webif_system_extensions.h:5
 msgid "TPK media (media)"
 msgstr ""
 
-#: httpdfunc.h:5977 skin_default_skin.xml.h:678 webif_system_extensions.h:6
+#: httpdfunc.h:6024 skin_default_skin.xml.h:678 webif_system_extensions.h:6
 msgid "TPK remove"
 msgstr "Cancellare Pacchetti TPK "
 
@@ -8323,6 +8319,10 @@ msgstr ""
 msgid "Tone Mode"
 msgstr ""
 
+#: skin_default_skin.xml.h:674 webif_system_extensions.h:3
+msgid "TPK install (online)"
+msgstr "TPK Pacchetti installare (Internet)"
+
 #: skin_default_skin.xml.h:676
 msgid "Tpk Install - select install medium"
 msgstr "TPK installare- Scegliere File"
@@ -10267,19 +10267,19 @@ msgstr ""
 msgid "xupnpd Medien Server (upnp)"
 msgstr ""
 
-#: tpk.h:3187 tpk.new.h:3167
+#: tpk.h:3189 tpk.new.h:3167
 msgid "check your Secret Feed !"
 msgstr "Controlla il feed segreto!"
 
-#: tpk.h:3430
+#: tpk.h:3441
 msgid "Section: "
 msgstr "Azione"
 
-#: tpk.h:3433
+#: tpk.h:3444
 msgid "Description:"
 msgstr "nessuna desrizione trovata"
 
-#: tpk.h:3438 tpk.new.h:3411
+#: tpk.h:3449 tpk.new.h:3411
 msgid "no description found"
 msgstr "nessuna desrizione trovata"
 
