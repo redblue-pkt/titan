@@ -25,7 +25,7 @@ msgstr "System Information"
 #: harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641 harddisk.h:675
 #: harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733 harddisk.h:793
 #: harddisk.h:811 harddisk.h:814 harddisk.h:1046 hbbtv.h:362 httpdfunc.h:1118
-#: httpdfunc.h:3051 httpdfunc.h:5920 hwtest.h:88 hwtest.h:93 hwtest.h:98
+#: httpdfunc.h:3051 httpdfunc.h:5946 hwtest.h:88 hwtest.h:93 hwtest.h:98
 #: hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390
 #: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
@@ -131,7 +131,7 @@ msgstr "Ok"
 #: harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641 harddisk.h:675
 #: harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733 harddisk.h:793
 #: harddisk.h:811 harddisk.h:814 harddisk.h:1046 hbbtv.h:362 hello.c:36
-#: httpdfunc.h:1118 httpdfunc.h:3051 httpdfunc.h:5920 hwtest.h:88 hwtest.h:93
+#: httpdfunc.h:1118 httpdfunc.h:3051 httpdfunc.h:5946 hwtest.h:88 hwtest.h:93
 #: hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206
 #: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
 #: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
@@ -558,7 +558,7 @@ msgstr "Ja/VZAP unendlich"
 #: global.h:6222 global.h:6241 global.h:6411 gmediarender.h:115 harddisk.h:633
 #: harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731
 #: harddisk.h:733 harddisk.h:793 harddisk.h:811 harddisk.h:814 hbbtv.h:362
-#: hello.c:36 httpdfunc.h:1118 httpdfunc.h:5420 httpdfunc.h:5920 hwtest.h:88
+#: hello.c:36 httpdfunc.h:1118 httpdfunc.h:5420 httpdfunc.h:5946 hwtest.h:88
 #: hwtest.h:93 hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206
 #: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
 #: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
@@ -1425,28 +1425,28 @@ msgstr "Löschen erfolgreich"
 msgid "Remove error"
 msgstr "Löschen fehlgeschlagen"
 
-#: extensions.h:130 httpdfunc.h:5769
+#: extensions.h:130 httpdfunc.h:5785
 msgid "Install to MNT"
 msgstr "MNT Installation (FLASH)"
 
-#: extensions.h:142 httpdfunc.h:5787
+#: extensions.h:142 httpdfunc.h:5807
 msgid "Install to FLASH"
 msgstr "FLASH Installation (FLASH)"
 
-#: extensions.h:156 httpdfunc.h:5807
+#: extensions.h:156 httpdfunc.h:5833
 msgid "Install to SWAP"
 msgstr "SWAP Installation (USB oder HDD)"
 
-#: extensions.h:169 httpdfunc.h:5751 httpdfunc.h:5825
+#: extensions.h:169 httpdfunc.h:5757 httpdfunc.h:5851
 msgid "Choice Install Medium"
 msgstr "Installation Auswahl"
 
-#: extensions.h:175 extensions.h:231 extensions.h:492 httpdfunc.h:5822
-#: httpdfunc.h:5834 httpdfunc.h:5877
+#: extensions.h:175 extensions.h:231 extensions.h:492 httpdfunc.h:5848
+#: httpdfunc.h:5860 httpdfunc.h:5903
 msgid "Tpk Install Info"
 msgstr "Info zur TPK Installation"
 
-#: extensions.h:175 httpdfunc.h:5837
+#: extensions.h:175 httpdfunc.h:5863
 msgid "Can't install Package. Package to big."
 msgstr "Paket zu groß. Installation nicht möglich."
 
@@ -1458,7 +1458,7 @@ msgstr "TPK installieren - Kategorie wählen"
 msgid "Tpk Install - select file"
 msgstr "TPK installieren - Datei wählen"
 
-#: extensions.h:212 extensions.h:244 extensions.h:400 httpdfunc.h:5903
+#: extensions.h:212 extensions.h:244 extensions.h:400 httpdfunc.h:5929
 #: tpk.h:2990
 msgid ""
 "It may only be a package to be installed. If they want to install another "
@@ -1479,15 +1479,15 @@ msgstr "Installation von"
 msgid "starting"
 msgstr "durchführen"
 
-#: extensions.h:240 httpdfunc.h:5892
+#: extensions.h:240 httpdfunc.h:5918
 msgid "Tpk Install Info - Install OK"
 msgstr "Paket erfolgreich installiert"
 
-#: extensions.h:244 extensions.h:249 httpdfunc.h:5900 httpdfunc.h:5909
+#: extensions.h:244 extensions.h:249 httpdfunc.h:5926 httpdfunc.h:5935
 msgid "Tpk Install Info - Install ERROR"
 msgstr "Paket konnte nicht installiert werden"
 
-#: extensions.h:257 httpdfunc.h:5920 httpdfunc.h:5922
+#: extensions.h:257 httpdfunc.h:5946 httpdfunc.h:5948
 msgid "TPK Install done, your system will reboot !"
 msgstr ""
 "TPK Installation abgeschlossen\n"
@@ -2448,19 +2448,19 @@ msgstr "Aktualisieren (Online)"
 msgid "No Tpk Sections Found."
 msgstr ""
 
-#: httpdfunc.h:5662 httpdfunc.h:5728
+#: httpdfunc.h:5662 httpdfunc.h:5762
 msgid "No Tpk Files Found."
 msgstr ""
 
-#: httpdfunc.h:5954 skin_default_skin.xml.h:679 webif_system_extensions.h:4
+#: httpdfunc.h:5980 skin_default_skin.xml.h:679 webif_system_extensions.h:4
 msgid "TPK tmp (tmp)"
 msgstr "Installieren (tmp)"
 
-#: httpdfunc.h:5989 skin_default_skin.xml.h:677 webif_system_extensions.h:5
+#: httpdfunc.h:6015 skin_default_skin.xml.h:677 webif_system_extensions.h:5
 msgid "TPK media (media)"
 msgstr "Installieren (Lokal)"
 
-#: httpdfunc.h:6024 skin_default_skin.xml.h:678 webif_system_extensions.h:6
+#: httpdfunc.h:6050 skin_default_skin.xml.h:678 webif_system_extensions.h:6
 msgid "TPK remove"
 msgstr "Entfernen"
 
