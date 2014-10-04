@@ -2435,7 +2435,7 @@ msgstr ""
 msgid "TPK upgrade (online)"
 msgstr "Update (Online)"
 
-#: httpdfunc.h:5596 httpdfunc.h:5650 httpdfunc.h:5725
+#: httpdfunc.h:5596 httpdfunc.h:5652 httpdfunc.h:5727
 #: skin_default_skin.xml.h:674 webif_system_extensions.h:3
 msgid "TPK install (online)"
 msgstr "Install (Online)"
@@ -2444,19 +2444,19 @@ msgstr "Install (Online)"
 msgid "No Tpk Sections Found."
 msgstr ""
 
-#: httpdfunc.h:5660
+#: httpdfunc.h:5662
 msgid "No Tpk Files Found."
 msgstr ""
 
-#: httpdfunc.h:5760 skin_default_skin.xml.h:679 webif_system_extensions.h:4
+#: httpdfunc.h:5762 skin_default_skin.xml.h:679 webif_system_extensions.h:4
 msgid "TPK tmp (tmp)"
 msgstr "Install (tmp)"
 
-#: httpdfunc.h:5795 skin_default_skin.xml.h:677 webif_system_extensions.h:5
+#: httpdfunc.h:5797 skin_default_skin.xml.h:677 webif_system_extensions.h:5
 msgid "TPK media (media)"
 msgstr "Install (Lokal)"
 
-#: httpdfunc.h:5830 skin_default_skin.xml.h:678 webif_system_extensions.h:6
+#: httpdfunc.h:5832 skin_default_skin.xml.h:678 webif_system_extensions.h:6
 msgid "TPK remove"
 msgstr "Remove"
 
