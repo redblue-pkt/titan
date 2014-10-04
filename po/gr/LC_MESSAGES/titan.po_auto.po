@@ -25,7 +25,7 @@ msgstr ""
 #: harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641 harddisk.h:675
 #: harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733 harddisk.h:793
 #: harddisk.h:811 harddisk.h:814 harddisk.h:1046 hbbtv.h:362 httpdfunc.h:1140
-#: httpdfunc.h:3073 httpdfunc.h:5938 hwtest.h:88 hwtest.h:93 hwtest.h:98
+#: httpdfunc.h:3073 httpdfunc.h:5944 hwtest.h:88 hwtest.h:93 hwtest.h:98
 #: hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390
 #: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
@@ -131,7 +131,7 @@ msgstr ""
 #: harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641 harddisk.h:675
 #: harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733 harddisk.h:793
 #: harddisk.h:811 harddisk.h:814 harddisk.h:1046 hbbtv.h:362 hello.c:36
-#: httpdfunc.h:1140 httpdfunc.h:3073 httpdfunc.h:5938 hwtest.h:88 hwtest.h:93
+#: httpdfunc.h:1140 httpdfunc.h:3073 httpdfunc.h:5944 hwtest.h:88 hwtest.h:93
 #: hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206
 #: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
 #: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
@@ -558,7 +558,7 @@ msgstr ""
 #: global.h:6222 global.h:6241 global.h:6411 gmediarender.h:115 harddisk.h:633
 #: harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731
 #: harddisk.h:733 harddisk.h:793 harddisk.h:811 harddisk.h:814 hbbtv.h:362
-#: hello.c:36 httpdfunc.h:1140 httpdfunc.h:5442 httpdfunc.h:5938 hwtest.h:88
+#: hello.c:36 httpdfunc.h:1140 httpdfunc.h:5442 httpdfunc.h:5944 hwtest.h:88
 #: hwtest.h:93 hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206
 #: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
 #: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
@@ -1412,19 +1412,19 @@ msgstr "Διαγραφή σταθμού"
 msgid "Remove error"
 msgstr "Διαγραφή σταθμού"
 
-#: extensions.h:130 httpdfunc.h:5800
+#: extensions.h:130 httpdfunc.h:5806
 msgid "Install to MNT"
 msgstr ""
 
-#: extensions.h:142 httpdfunc.h:5818
+#: extensions.h:142 httpdfunc.h:5824
 msgid "Install to FLASH"
 msgstr ""
 
-#: extensions.h:156 httpdfunc.h:5838
+#: extensions.h:156 httpdfunc.h:5844
 msgid "Install to SWAP"
 msgstr ""
 
-#: extensions.h:169 httpdfunc.h:5779
+#: extensions.h:169 httpdfunc.h:5785
 msgid "Choice Install Medium"
 msgstr ""
 
@@ -1432,7 +1432,7 @@ msgstr ""
 msgid "Tpk Install Info"
 msgstr ""
 
-#: extensions.h:175 httpdfunc.h:5849
+#: extensions.h:175 httpdfunc.h:5855
 msgid "Can't install Package. Package to big."
 msgstr ""
 
@@ -1440,11 +1440,11 @@ msgstr ""
 msgid "Tpk Install - select section"
 msgstr "Εγκατάσταση IPK - επιλογή φακέλλου"
 
-#: extensions.h:207 httpdfunc.h:5674 skin_default_skin.xml.h:675
+#: extensions.h:207 httpdfunc.h:5680 skin_default_skin.xml.h:675
 msgid "Tpk Install - select file"
 msgstr "Εγκατάσταση IPK - επιλογή φακέλλου"
 
-#: extensions.h:212 extensions.h:244 extensions.h:400 httpdfunc.h:5920
+#: extensions.h:212 extensions.h:244 extensions.h:400 httpdfunc.h:5926
 #: tpk.h:2990
 msgid ""
 "It may only be a package to be installed. If they want to install another "
@@ -1461,15 +1461,15 @@ msgstr "Εγκατάσταση"
 msgid "starting"
 msgstr "Επανεκκίνηση Titan"
 
-#: extensions.h:240 httpdfunc.h:5885
+#: extensions.h:240 httpdfunc.h:5891
 msgid "Tpk Install Info - Install OK"
 msgstr ""
 
-#: extensions.h:244 extensions.h:249 httpdfunc.h:5887 httpdfunc.h:5889
+#: extensions.h:244 extensions.h:249 httpdfunc.h:5893 httpdfunc.h:5895
 msgid "Tpk Install Info - Install ERROR"
 msgstr ""
 
-#: extensions.h:257 httpdfunc.h:5938 httpdfunc.h:5940
+#: extensions.h:257 httpdfunc.h:5944 httpdfunc.h:5946
 msgid "TPK Install done, your system will reboot !"
 msgstr ""
 
@@ -2384,27 +2384,27 @@ msgstr "Ρυθμίσεις backup/επαναφοράς"
 msgid "TPK upgrade (online)"
 msgstr "Ενημέρωση USB (online)"
 
-#: httpdfunc.h:5628
+#: httpdfunc.h:5631
 msgid "No Tpk Sections Found."
 msgstr ""
 
-#: httpdfunc.h:5684 httpdfunc.h:5784
+#: httpdfunc.h:5690 httpdfunc.h:5790
 msgid "No Tpk Files Found."
 msgstr ""
 
-#: httpdfunc.h:5909 httpdfunc.h:5917 httpdfunc.h:5927
+#: httpdfunc.h:5915 httpdfunc.h:5923 httpdfunc.h:5933
 msgid "Install Log:"
 msgstr ""
 
-#: httpdfunc.h:5971 skin_default_skin.xml.h:679 webif_system_extensions.h:4
+#: httpdfunc.h:5977 skin_default_skin.xml.h:679 webif_system_extensions.h:4
 msgid "TPK tmp (tmp)"
 msgstr "Εγκατάσταση IPK από /tmp"
 
-#: httpdfunc.h:6006 skin_default_skin.xml.h:677 webif_system_extensions.h:5
+#: httpdfunc.h:6012 skin_default_skin.xml.h:677 webif_system_extensions.h:5
 msgid "TPK media (media)"
 msgstr ""
 
-#: httpdfunc.h:6041 skin_default_skin.xml.h:678 webif_system_extensions.h:6
+#: httpdfunc.h:6047 skin_default_skin.xml.h:678 webif_system_extensions.h:6
 msgid "TPK remove"
 msgstr "Σβήσιμο IPK"
 
