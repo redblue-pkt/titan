@@ -558,7 +558,7 @@ msgstr "oui / vzap sans fin"
 #: global.h:6222 global.h:6241 global.h:6411 gmediarender.h:115 harddisk.h:633
 #: harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731
 #: harddisk.h:733 harddisk.h:793 harddisk.h:811 harddisk.h:814 hbbtv.h:362
-#: hello.c:36 httpdfunc.h:1118 httpdfunc.h:5387 hwtest.h:88 hwtest.h:93
+#: hello.c:36 httpdfunc.h:1118 httpdfunc.h:5388 hwtest.h:88 hwtest.h:93
 #: hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206
 #: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
 #: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
@@ -2350,39 +2350,39 @@ msgstr ""
 msgid "System Update"
 msgstr "System - USB-Update (tmp)"
 
-#: httpdfunc.h:5391 system_update.h:220
+#: httpdfunc.h:5392 system_update.h:220
 msgid "starting Full Update ?"
 msgstr ""
 
-#: httpdfunc.h:5418 skin_default_skin.xml.h:572 webif_info.h:1
+#: httpdfunc.h:5419 skin_default_skin.xml.h:572 webif_info.h:1
 msgid "Service"
 msgstr ""
 
-#: httpdfunc.h:5453 skin_default_skin.xml.h:639 webif_system.h:3
+#: httpdfunc.h:5454 skin_default_skin.xml.h:639 webif_system.h:3
 msgid "System Backup"
 msgstr ""
 
-#: httpdfunc.h:5488 skin_default_skin.xml.h:577 webif_system.h:4
+#: httpdfunc.h:5489 skin_default_skin.xml.h:577 webif_system.h:4
 msgid "Settings backup/restore"
 msgstr "Réglages sauvegarde/restauration"
 
-#: httpdfunc.h:5523 skin_default_skin.xml.h:680 webif_system_extensions.h:2
+#: httpdfunc.h:5524 skin_default_skin.xml.h:680 webif_system_extensions.h:2
 msgid "TPK upgrade (online)"
 msgstr "Mise a jour USB(online)"
 
-#: httpdfunc.h:5558 skin_default_skin.xml.h:674 webif_system_extensions.h:3
+#: httpdfunc.h:5559 skin_default_skin.xml.h:674 webif_system_extensions.h:3
 msgid "TPK install (online)"
 msgstr "Installion TPK online "
 
-#: httpdfunc.h:5593 skin_default_skin.xml.h:679 webif_system_extensions.h:4
+#: httpdfunc.h:5594 skin_default_skin.xml.h:679 webif_system_extensions.h:4
 msgid "TPK tmp (tmp)"
 msgstr "TPK tmp"
 
-#: httpdfunc.h:5628 skin_default_skin.xml.h:677 webif_system_extensions.h:5
+#: httpdfunc.h:5629 skin_default_skin.xml.h:677 webif_system_extensions.h:5
 msgid "TPK media (media)"
 msgstr ""
 
-#: httpdfunc.h:5663 skin_default_skin.xml.h:678 webif_system_extensions.h:6
+#: httpdfunc.h:5664 skin_default_skin.xml.h:678 webif_system_extensions.h:6
 msgid "TPK remove"
 msgstr "Supprimer TPK "
 
