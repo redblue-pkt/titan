@@ -4721,6 +4721,8 @@ char* webgetcommand(char* param, int fmt)
 	buf = ostrcat(buf, tmpstr, 1, 0);
 	free(tmpstr), tmpstr = NULL;	
 
+	buf = string_replace_all("\n", "<br>\n", buf, 1);
+
 //	if(fmt == 0)
 		buf = ostrcat(buf, "</center></body></html>", 1, 0);
 
