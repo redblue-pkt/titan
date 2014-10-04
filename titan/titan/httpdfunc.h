@@ -5426,7 +5426,7 @@ char* webgetupdate(char* param, int fmt)
 	buf = ostrcat(buf, "if(bRepeat==true)\n", 1, 0);
 	buf = ostrcat(buf, "{\n", 1, 0);
 	buf = ostrcat(buf, "document.getElementById(\"updatetitle\").innerHTML = \"", 1, 0);
-	buf = ostrcat(buf, _("System Update started please wait 5 minutes, more info they see on your TV."), 1, 0);
+	buf = ostrcat(buf, _("System Update started Please wait 5 Minutes and Refresh this Page, more infos they see on your TV."), 1, 0);
 	buf = ostrcat(buf, "\";\n", 1, 0);
 	buf = ostrcat(buf, "window.location = \"../queryraw?getsystem&", 1, 0);
 	buf = ostrcat(buf, cmd, 1, 1);
