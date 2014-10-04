@@ -5620,6 +5620,9 @@ char* webgettpksection(int fmt)
 		buf = ostrcat(buf, "<br>", 1, 0);
 	}
 
+	status.hangtime = 99999;
+
+	unlink(TPKLOG);
 	tpkgetindex(0);
 	tpklist();
 
@@ -5653,7 +5656,10 @@ char* webgettpksection(int fmt)
 	{
 		buf = ostrcat(buf, "</center></body></html>", 1, 0);
 	}	
-			
+
+	tpkcleantmp(0);
+	status.hangtime = getconfigint("hangtime", NULL);
+	
 	return buf;
 }
 
