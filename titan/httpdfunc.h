@@ -961,7 +961,29 @@ char* webvideo(char* param, int fmt)
 	char* buf = NULL, *param1 = NULL, *tmpbuf = NULL;
 
 	if(param == NULL) return NULL;
-  
+
+	if(ostrcmp("status", param) == 0) // status is only available for queryraw
+	{
+		char buf[30];
+		int active = (status.webplayfile != NULL ? 1 : 0);
+		int st = 0; // status, 0: paused, 1: playing
+		unsigned long pos = 0; // current position
+		unsigned long len = 0; // stream length
+		
+		if(status.play == 1)
+			st = 1;
+		
+		if(active == 1)
+		{
+			pos = playergetpts() / 90000;
+			len = playergetlength();
+		}
+		
+		snprintf(buf, 30, "%d#%d#%lu#%lu", active, st, pos, len);
+		
+		return ostrcat(buf, NULL, 0, 0);
+	}
+
 	//create param1
 	param1 = strchr(param, '&');
 	if(param1 != NULL)
