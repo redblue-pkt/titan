@@ -209,6 +209,7 @@ void screensettings_redbutton();
 void screenfeed(int flag);
 void screenextensions(int mode, char* path, char* defentry, int first);
 void screenextensions_check(int flag);
+char* gettpklog(char* installpath, int flag);
 
 //...port.h
 void fbsave();

@@ -26,7 +26,7 @@
 #define HTTPPREVIEW "Packages.preview.gz"
 
 int tpkremove(char* file, int restore, int flag);
-int tpkgetpackage(char* package, char* url, char* installpath, int flag);
+int tpkgetpackage(char* package, char* url, char* installpath, int flag, int flag1);
 int tpklistinstalled(int flag);
 int tpkcreatefilereal(char* mainpath, char* from, char* to, off64_t start, off64_t len, char* name, int flag);
 
@@ -3012,7 +3012,9 @@ end:
 	return ret;
 }
 
-int tpkupdate()
+// flag = 0 gui
+// flag = 1 web
+int tpkupdate(int flag)
 {
 	int ret = 0, err = 0;
 	char* tmpstr = NULL, *tmpstr1 = NULL;
@@ -3055,7 +3057,7 @@ int tpkupdate()
 					continue;
 				}
 
-				ret = tpkgetpackage(tpknode->filename, tpknode->url, tpkinstallednode->installpath, 1);
+				ret = tpkgetpackage(tpknode->filename, tpknode->url, tpkinstallednode->installpath, 1, flag);
 				if(ret == 0) //install ok
 				{
 					tpkcleanworkdir(tmpstr1);
@@ -3226,7 +3228,7 @@ int tpkgetindex(int flag)
 					tmpstr2 = ostrcat(tmpstr2, "/", 1, 0);
 					tmpstr2 = ostrcat(tmpstr2, HTTPPREVIEW, 1, 0);
 
-          debug(130, "get http://%s/%s -> %s", ip, tmpstr1, tmpstr2);
+          			debug(130, "get http://%s/%s -> %s", ip, tmpstr1, tmpstr2);
 					gethttp(ip, tmpstr1, port, tmpstr2, HTTPAUTH, 5000, NULL, 0);
 					free(tmpstr1); tmpstr1 = NULL;
 					free(tmpstr2); tmpstr2 = NULL;
@@ -3253,12 +3255,15 @@ end:
 
 //flag 0: check group
 //flag 1: don't check group
-int tpkgetpackage(char* package, char* url, char* installpath, int flag)
+//flag1 0: gui
+//flag1 1: webif
+int tpkgetpackage(char* package, char* url, char* installpath, int flag, int flag1)
 {
 	int ret = 0, port = 80;
 	char* ip = NULL, *path = NULL;
 	char* tmpstr1 = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL;
 	char* tmpurl = NULL;
+
 	struct skin* load = getscreen("loading");
 
 	if(package == NULL || url == NULL)
@@ -3305,11 +3310,17 @@ int tpkgetpackage(char* package, char* url, char* installpath, int flag)
 		else if(ostrcmp("97.74.32.10", ip) == 0)
 			ip = "beta.dyndns.tv";
 
-    debug(130, "get http://%s/%s -> %s", ip, tmpstr1, tmpstr2);
-		screendownload("Download", ip, tmpstr1, port, tmpstr2, HTTPAUTH, 5000, 0);
-		drawscreen(load, 0, 0);
+    	debug(130, "get http://%s/%s -> %s", ip, tmpstr1, tmpstr2);
+		if(flag1 == 0)
+			screendownload("Download", ip, tmpstr1, port, tmpstr2, HTTPAUTH, 5000, 0);
+		else
+			gethttp(ip, tmpstr1, port, tmpstr2, HTTPAUTH, 5000, NULL, 0);
+
+		if(flag1 == 0)
+			drawscreen(load, 0, 0);
 		ret = tpkinstall(tmpstr3, installpath, flag);
-		clearscreen(load);
+		if(flag1 == 0)
+			clearscreen(load);
 		unlink(tmpstr2);
 		unlink(tmpstr3);
 

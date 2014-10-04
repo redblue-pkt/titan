@@ -5615,7 +5615,7 @@ char* webgettpksection(int fmt)
 		buf = ostrcat(buf, "</head><body class=body id=\"tpksection\"><center>", 1, 0);
 		buf = ostrcat(buf, "<br>", 1, 0);
 		buf = ostrcat(buf, "<h1>", 1, 0);
-		buf = ostrcat(buf, _("TPK install (online)"), 1, 0);
+		buf = ostrcat(buf, _("Tpk Install - select section"), 1, 0);
 		buf = ostrcat(buf, "</h1>", 1, 0);
 		buf = ostrcat(buf, "<br>", 1, 0);
 	}
@@ -5647,11 +5647,13 @@ char* webgettpksection(int fmt)
 		node = node->next;
 	}
 
+	freetpk();
+
 	if(fmt == 0)
 	{
 		buf = ostrcat(buf, "</center></body></html>", 1, 0);
 	}	
-	
+			
 	return buf;
 }
 
@@ -5669,11 +5671,9 @@ char* webgettpklist(char* param, int fmt)
 		buf = ostrcat(buf, "</head><body class=body id=\"tpklist\"><center>", 1, 0);
 		buf = ostrcat(buf, "<br>", 1, 0);
 		buf = ostrcat(buf, "<h1>", 1, 0);
-		buf = ostrcat(buf, _(param), 1, 0);
-		buf = ostrcat(buf, " - ", 1, 0);
-		buf = ostrcat(buf, _("TPK install (online)"), 1, 0);
+		buf = ostrcat(buf, _("Tpk Install - select file"), 1, 0);
 		buf = ostrcat(buf, "</h1>", 1, 0);
-		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<br>\n", 1, 0);
 //	}
 
 	tpkgetindex(0);
@@ -5713,7 +5713,7 @@ char* webgettpklist(char* param, int fmt)
 			continue;
 		}
 
-		buf = ostrcat(buf, "<a class=linelink2 href=queryraw?gettpkinstall&", 1, 0);
+		buf = ostrcat(buf, "<a class=linelink2 href=queryraw?gettpkinstallpath&", 1, 0);
 		buf = ostrcat(buf, node->filename, 1, 0);
 		buf = ostrcat(buf, " target=main>", 1, 0);
 		buf = ostrcat(buf, _(node->showname), 1, 0);
@@ -5721,9 +5721,11 @@ char* webgettpklist(char* param, int fmt)
 		buf = ostrcat(buf, oitoa(node->version), 1, 1);
 		buf = ostrcat(buf, "</a>\n", 1, 0);
 		buf = ostrcat(buf, "</br></br>\n", 1, 0);
-
+			
 		node = node->next;
 	}
+
+	freetpk();
 
 //	if(fmt == 0)
 //	{
@@ -5733,37 +5735,222 @@ char* webgettpklist(char* param, int fmt)
 	return buf;
 }
 
-char* webgettpkinstall(char* param,int fmt)
+char* webgettpkinstallpath(char* param, int fmt)
 {
 	if(status.security == 0) return NULL;
 
 	char* buf = NULL, *tmpstr = NULL;
+	int count = 0, isize = 0;
+	char* size = NULL;
+	char* path = NULL;
+	char* url = NULL;
+	char* showname = NULL;
 
-	if(fmt == 0) 
+	tpkgetindex(0);
+	tpklist();
+
+	struct tpk* node = tpk;
+
+	while(node != NULL)
 	{
+		if(ostrcmp(node->filename, param) == 0)	
+		{
+			size = ostrcat(oitoa(node->size), NULL, 1, 0);
+			showname = ostrcat(node->showname, NULL, 0, 0);
+			url = htmlencode(node->url);
+			path = ostrcat(node->usepath, NULL, 0, 0);
+			break;
+		}
+		node = node->next;
+	}
+
+printf("size: %s\n", size);
+printf("showname: %s\n", showname);
+printf("url: %s\n", url);
+printf("path: %s\n", path);
+
+//	if(fmt == 0) 
+//	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"tpkinstallpath\"><center>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+		buf = ostrcat(buf, _("Choice Install Medium"), 1, 0);
+		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>\n", 1, 0);
+//	}
+
+	if(node == NULL) buf = ostrcat(buf, _("No Tpk Files Found."), 1, 0);
+	freetpk();
+
+	if(size != NULL) isize = atoi(size);
+
+	if(path == NULL || path[0] == '*' || ostrstr(path, "mnt") != NULL)
+	{
+		if(tpkchecksize(NULL, "/mnt/swapextensions", isize) == 0)
+		{
+			tmpstr = ostrcat(tmpstr, "<a class=linelink2 href=queryraw?gettpkinstall&", 1, 0);
+			tmpstr = ostrcat(tmpstr, param, 1, 0);
+			tmpstr = ostrcat(tmpstr, "&", 1, 0);
+			tmpstr = ostrcat(tmpstr, url, 1, 0);
+			tmpstr = ostrcat(tmpstr, "&", 1, 0);
+			tmpstr = ostrcat(tmpstr, "/mnt/swapextensions", 1, 0);
+			tmpstr = ostrcat(tmpstr, " target=main>", 1, 0);
+			tmpstr = ostrcat(tmpstr, _("Install to MNT"), 1, 0);
+			tmpstr = ostrcat(tmpstr, "</a>\n", 1, 0);
+			tmpstr = ostrcat(tmpstr, "</br></br>\n", 1, 0);
+			count++;
+		}
+	}
+	
+	if(path == NULL || path[0] == '*' || ostrstr(path, "var") != NULL)
+	{
+		if(tpkchecksize(NULL, "/var", isize) == 0)
+		{
+			tmpstr = ostrcat(tmpstr, "<a class=linelink2 href=queryraw?gettpkinstall&", 1, 0);
+			tmpstr = ostrcat(tmpstr, param, 1, 0);
+			tmpstr = ostrcat(tmpstr, "&", 1, 0);
+			tmpstr = ostrcat(tmpstr, url, 1, 0);
+			tmpstr = ostrcat(tmpstr, "&", 1, 0);
+			tmpstr = ostrcat(tmpstr, "/var", 1, 0);
+			tmpstr = ostrcat(tmpstr, " target=main>", 1, 0);
+			tmpstr = ostrcat(tmpstr, _("Install to FLASH"), 1, 0);
+			tmpstr = ostrcat(tmpstr, "</a>\n", 1, 0);
+			tmpstr = ostrcat(tmpstr, "</br></br>\n", 1, 0);
+			count++;
+		}
+	}
+	
+	if(path == NULL || path[0] == '*' || ostrstr(path, "swap") != NULL)
+	{
+		if(file_exist("/tmp/.swapextensionsdev") == 1 || file_exist("/var/swap"))
+		{
+			if(tpkchecksize(NULL, "/var/swap", isize) == 0)
+			{
+				tmpstr = ostrcat(tmpstr, "<a class=linelink2 href=queryraw?gettpkinstall&", 1, 0);
+				tmpstr = ostrcat(tmpstr, param, 1, 0);
+				tmpstr = ostrcat(tmpstr, "&", 1, 0);
+				tmpstr = ostrcat(tmpstr, url, 1, 0);
+				tmpstr = ostrcat(tmpstr, "&", 1, 0);
+				tmpstr = ostrcat(tmpstr, "/var/swap", 1, 0);
+				tmpstr = ostrcat(tmpstr, " target=main>", 1, 0);
+				tmpstr = ostrcat(tmpstr, _("Install to SWAP"), 1, 0);
+				tmpstr = ostrcat(tmpstr, "</a>\n", 1, 0);
+				tmpstr = ostrcat(tmpstr, "</br></br>\n", 1, 0);
+				count++;
+			}
+		}
+	}
+	
+	if(count == 0)
+	{
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, _("Can't install Package. Package to big."), 1, 0);
+	}
+
+	if(tmpstr != NULL)
+		buf = ostrcat(buf, tmpstr, 1, 1);
+
+//	if(fmt == 0)
+//	{
+		buf = ostrcat(buf, "</center></body></html>", 1, 0);
+//	}	
+	
+	return buf;
+}
+
+char* webgettpkinstall(char* param, int fmt)
+{
+	if(status.security == 0) return NULL;
+
+	char* buf = NULL, *tmpstr = NULL, *param1 = NULL, *param2 = NULL;
+
+	//create param1
+	param1 = strchr(param, '&');
+	if(param1 != NULL)
+		*param1++ = '\0';
+
+	//create param2
+	param2 = strchr(param1, '&');
+	if(param2 != NULL)
+		*param2++ = '\0';
+
+	if(param2 == NULL) return NULL;
+
+	char* log = NULL;
+	int tpkret = tpkgetpackage(param, param1, param2, 0, 1);
+
+	if(tpkret == 0)
+		tmpstr = ostrcat(tmpstr, _("Tpk Install Info - Install OK"), 1, 0);
+	else if(tpkret == 2)
+		tmpstr = ostrcat(tmpstr, _("Tpk Install Info - Install ERROR"), 1, 0);
+	else
+		tmpstr = ostrcat(tmpstr, _("Tpk Install Info - Install ERROR"), 1, 0);
+	
+//	if(fmt == 0) 
+//	{
 		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
 		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
 		buf = ostrcat(buf, "</head><body class=body id=\"tpkinstall\"><center>", 1, 0);
 		buf = ostrcat(buf, "<br>", 1, 0);
 		buf = ostrcat(buf, "<h1>", 1, 0);
-		buf = ostrcat(buf, _("TPK install (online)"), 1, 0);
+		buf = ostrcat(buf, _(tmpstr), 1, 1);
 		buf = ostrcat(buf, "</h1>", 1, 0);
 		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+//	}
+
+	if(tpkret == 0)
+	{
+		log = gettpklog(param2, 0);
+		log = string_replace_all("\n", "<br>\n", log, 1);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, _("Install Log:"), 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, log, 1, 0);
+	}
+	else if(tpkret == 2)
+	{
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, _("Install Log:"), 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, _("It may only be a package to be installed. If they want to install another package of this section, they only remove the installed packet. Is not the plugin after reinstalling the software TitanNit in TitanNit Menu Visible then perform an update by Tpk to: "), 1, 0);
+	}
+	else
+	{
+		log = gettpklog(param2, 1);
+		log = string_replace_all("\n", "<br>\n", log, 1);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, _("Install Log:"), 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, log, 1, 0);
 	}
 
-//	tmpstr = getabout();
-//	readnewsletter();
-	tmpstr = readfiletomem("/tmp/Service.txt", 0);
-	tmpstr = ostrcat(tmpstr, "\ncomming soon...\n", 1, 0);
+	loadplugin();
+	free(log), log = NULL;
+	unlink(TPKLOG);
+	if(file_exist("/tmp/.tpk_needs_reboot"))
+	{
+		textbox(_("Message"), _("TPK Install done, your system will reboot !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, _("TPK Install done, your system will reboot !"), 1, 0);
+		//write only config file
+		writeallconfig(3);
+		oshutdown(2,2);
+		system("init 6");
+	}
 	
-	tmpstr = string_replace_all("\n", "<br>\n", tmpstr, 1);
 
 	buf = ostrcat(buf, tmpstr, 1, 1);
 
-	if(fmt == 0)
-	{
+//	if(fmt == 0)
+//	{
 		buf = ostrcat(buf, "</center></body></html>", 1, 0);
-	}	
+//	}	
 	
 	return buf;
 }
