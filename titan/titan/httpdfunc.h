@@ -5369,7 +5369,7 @@ char* webgetupdate(char* param, int fmt)
 		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
 		buf = ostrcat(buf, "</head><body class=body id=\"updatelist\"><center>", 1, 0);
 		buf = ostrcat(buf, "<br>", 1, 0);
-		buf = ostrcat(buf, "<h1>", 1, 0);
+		buf = ostrcat(buf, "<h1 id=\"updatetitle\">", 1, 0);
 		buf = ostrcat(buf, _("System Update"), 1, 0);
 		buf = ostrcat(buf, "</h1>", 1, 0);
 		buf = ostrcat(buf, "<br>\n", 1, 0);
@@ -5394,9 +5394,14 @@ char* webgetupdate(char* param, int fmt)
 	buf = ostrcat(buf, _("starting Full Update ?"), 1, 0);
 	buf = ostrcat(buf, "\");\n", 1, 0);
 	buf = ostrcat(buf, "if(bRepeat==true)\n", 1, 0);
+	buf = ostrcat(buf, "{\n", 1, 0);
+	buf = ostrcat(buf, "document.getElementById(\"updatetitle\").innerHTML = \"", 1, 0);
+	buf = ostrcat(buf, _("System Update started please wait 5 minutes, more info they see on your TV."), 1, 0);
+	buf = ostrcat(buf, "\"", 1, 0);
 	buf = ostrcat(buf, "window.location = \"../queryraw?getcommand&", 1, 0);
 	buf = ostrcat(buf, cmd, 1, 1);
 	buf = ostrcat(buf, "\";\n", 1, 0);
+	buf = ostrcat(buf, "}\n", 1, 0);
 	buf = ostrcat(buf, "else\n", 1, 0);
 	buf = ostrcat(buf, "alert(\"exit\");\n", 1, 0);
 	buf = ostrcat(buf, "</script>\n", 1, 0);
