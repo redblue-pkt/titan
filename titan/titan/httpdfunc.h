@@ -5647,6 +5647,8 @@ char* webgettpklist(char* param, int fmt)
 		buf = ostrcat(buf, "</head><body class=body id=\"tpklist\"><center>", 1, 0);
 		buf = ostrcat(buf, "<br>", 1, 0);
 		buf = ostrcat(buf, "<h1>", 1, 0);
+		buf = ostrcat(buf, _(param), 1, 0);
+		buf = ostrcat(buf, " - ", 1, 0);
 		buf = ostrcat(buf, _("TPK install (online)"), 1, 0);
 		buf = ostrcat(buf, "</h1>", 1, 0);
 		buf = ostrcat(buf, "<br>", 1, 0);
