@@ -5383,7 +5383,6 @@ char* webgetupdate(char* param, int fmt)
 	buf = ostrcat(buf, "<br>", 1, 0);
 */
 
-
 	buf = ostrcat(buf, "<title>", 1, 0);
 	buf = ostrcat(buf, _("Message"), 1, 0);
 	buf = ostrcat(buf, "</title>\n", 1, 0);
@@ -5392,7 +5391,8 @@ char* webgetupdate(char* param, int fmt)
 	buf = ostrcat(buf, _("starting Full Update ?"), 1, 0);
 	buf = ostrcat(buf, "\");\n", 1, 0);
 	buf = ostrcat(buf, "if(bRepeat==true)\n", 1, 0);
-	buf = ostrcat(buf, "alert(\"ok\");\n", 1, 0);
+	buf = ostrcat(buf, "window.location = \"../queryraw?getcommand&df\";\n", 1, 0);
+
 	buf = ostrcat(buf, "else\n", 1, 0);
 	buf = ostrcat(buf, "alert(\"exit\");\n", 1, 0);
 	buf = ostrcat(buf, "</script>\n", 1, 0);
