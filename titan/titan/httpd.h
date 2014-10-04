@@ -279,6 +279,12 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 		buf = webgetcommand(param, fmt);
 		m_unlock(&status.waitrcmutex, 24);
 	}
+	else if(ostrcmp(query, "getsystem") == 0 && param != NULL)
+	{
+		m_lock(&status.waitrcmutex, 24);
+		buf = webgetsystem(param, fmt);
+		m_unlock(&status.waitrcmutex, 24);
+	}
 	else if(ostrcmp(query, "gethelpchoices") == 0)
 	{
 		m_lock(&status.waitrcmutex, 24);

@@ -4729,6 +4729,36 @@ char* webgetcommand(char* param, int fmt)
 	return buf;
 }
 
+char* webgetsystem(char* param, int fmt)
+{
+	char* buf = NULL;
+	int ret = 0;
+	if(param == NULL) return NULL;
+	if(status.security == 0) return NULL;
+
+//	if(fmt == 0) 
+//	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"system\"><center>", 1, 0);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+//	}
+
+	debug(10, "cmd: %s", param);
+	ret = system(param);
+
+	if(ret != 0)
+		buf = ostrcat(buf, _("Error, Program not started."), 1, 0);
+	else
+		buf = ostrcat(buf, _("Program started successfully"), 1, 0);
+	buf = ostrcat(buf, "<br>\n", 1, 0);
+	
+//	if(fmt == 0)
+		buf = ostrcat(buf, "</h1></center></body></html>", 1, 0);
+
+	return buf;
+}
+
 char* webgethelp(char* param, int fmt)
 {
 	char* buf = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *helppath = NULL, *lang = NULL;
@@ -5398,7 +5428,7 @@ char* webgetupdate(char* param, int fmt)
 	buf = ostrcat(buf, "document.getElementById(\"updatetitle\").innerHTML = \"", 1, 0);
 	buf = ostrcat(buf, _("System Update started please wait 5 minutes, more info they see on your TV."), 1, 0);
 	buf = ostrcat(buf, "\";\n", 1, 0);
-	buf = ostrcat(buf, "window.location = \"../queryraw?getcommand&", 1, 0);
+	buf = ostrcat(buf, "window.location = \"../queryraw?getsystem&", 1, 0);
 	buf = ostrcat(buf, cmd, 1, 1);
 	buf = ostrcat(buf, "\";\n", 1, 0);
 	buf = ostrcat(buf, "}\n", 1, 0);
