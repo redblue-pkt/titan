@@ -25,7 +25,7 @@ msgstr ""
 #: harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641 harddisk.h:675
 #: harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733 harddisk.h:793
 #: harddisk.h:811 harddisk.h:814 harddisk.h:1046 hbbtv.h:362 httpdfunc.h:1140
-#: httpdfunc.h:3073 httpdfunc.h:5944 hwtest.h:88 hwtest.h:93 hwtest.h:98
+#: httpdfunc.h:3073 httpdfunc.h:5856 hwtest.h:88 hwtest.h:93 hwtest.h:98
 #: hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390
 #: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
@@ -50,9 +50,9 @@ msgstr ""
 #: networkbrowser.h:1021 networkbrowser.h:1025 networkbrowser.h:1189
 #: networkbrowser.h:1743 networkbrowser.h:1750 networkbrowser.h:1755
 #: networkbrowser.h:1907 network.h:263 network.h:271 network.h:284
-#: network.h:299 network.h:335 network.h:426 network.h:558 network.h:766
-#: network.h:774 network.h:800 network.h:804 network.h:858 network.h:865
-#: network.h:887 newsletter.h:252 newsletter.h:292 novamov.h:35 novamov.h:80
+#: network.h:299 network.h:335 network.h:436 network.h:577 network.h:785
+#: network.h:793 network.h:819 network.h:823 network.h:877 network.h:884
+#: network.h:906 newsletter.h:252 newsletter.h:292 novamov.h:35 novamov.h:80
 #: nowvideo.h:44 nowvideo.h:99 nowvideo.h:105 panel_main.h:29 panel_main.h:135
 #: panel_settings_wizard.h:6 played.h:30 played.h:84 played.h:90 played.h:102
 #: played.h:114 played.h:171 player.h:99 play.h:476 play.h:593 play.h:1250
@@ -86,8 +86,8 @@ msgstr ""
 #: system_backup_restore.h:95 system_update.h:257 system_update.h:263
 #: system_update.h:270 thefile.h:34 thefile.h:68 thefile.h:205 timeshift.h:113
 #: timeshift.h:155 timeshift.h:162 timeshiftsettings.h:45 titan.c:277
-#: titan.c:341 titan.c:350 titan.c:970 titan.c:979 titan.c:1104 titan.c:1125
-#: titan.c:1131 titan.c:1142 titan.c:1148 tithek.c:84 tithek_global.h:248
+#: titan.c:341 titan.c:350 titan.c:975 titan.c:984 titan.c:1109 titan.c:1130
+#: titan.c:1136 titan.c:1147 titan.c:1153 tithek.c:84 tithek_global.h:248
 #: tithek.h:667 tithek.h:1163 tithek.h:1206 tithek.h:1454 tithek.h:1476
 #: tithek.h:1492 tithek.h:2062 tithek.h:2089 tithek.h:2103 tithek.h:2113
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
@@ -131,7 +131,7 @@ msgstr "Ok"
 #: harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641 harddisk.h:675
 #: harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733 harddisk.h:793
 #: harddisk.h:811 harddisk.h:814 harddisk.h:1046 hbbtv.h:362 hello.c:36
-#: httpdfunc.h:1140 httpdfunc.h:3073 httpdfunc.h:5944 hwtest.h:88 hwtest.h:93
+#: httpdfunc.h:1140 httpdfunc.h:3073 httpdfunc.h:5856 hwtest.h:88 hwtest.h:93
 #: hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206
 #: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
 #: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
@@ -156,8 +156,8 @@ msgstr "Ok"
 #: networkbrowser.h:1021 networkbrowser.h:1025 networkbrowser.h:1189
 #: networkbrowser.h:1743 networkbrowser.h:1750 networkbrowser.h:1755
 #: networkbrowser.h:1907 network.h:284 network.h:299 network.h:335
-#: network.h:426 network.h:558 network.h:766 network.h:774 network.h:800
-#: network.h:804 network.h:858 network.h:865 network.h:887 newsletter.h:252
+#: network.h:436 network.h:577 network.h:785 network.h:793 network.h:819
+#: network.h:823 network.h:877 network.h:884 network.h:906 newsletter.h:252
 #: newsletter.h:292 novamov.h:35 novamov.h:80 nowvideo.h:44 nowvideo.h:99
 #: nowvideo.h:105 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:84 played.h:90 played.h:102 played.h:114 played.h:171
@@ -201,9 +201,9 @@ msgstr "Ok"
 #: system_backup_restore.h:88 system_backup_restore.h:95 system_update.h:257
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 timeshift.h:113 timeshift.h:155 timeshift.h:162
-#: timeshiftsettings.h:45 titan.c:277 titan.c:341 titan.c:350 titan.c:970
-#: titan.c:979 titan.c:1104 titan.c:1125 titan.c:1131 titan.c:1142
-#: titan.c:1148 tithek.c:84 tithek_global.h:248 tithek.h:667 tithek.h:1163
+#: timeshiftsettings.h:45 titan.c:277 titan.c:341 titan.c:350 titan.c:975
+#: titan.c:984 titan.c:1109 titan.c:1130 titan.c:1136 titan.c:1147
+#: titan.c:1153 tithek.c:84 tithek_global.h:248 tithek.h:667 tithek.h:1163
 #: tithek.h:1206 tithek.h:1454 tithek.h:1476 tithek.h:1492 tithek.h:2062
 #: tithek.h:2089 tithek.h:2103 tithek.h:2113 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922
@@ -240,7 +240,7 @@ msgstr "Salir"
 #: moduleconfig.h:243 moduleconfig.h:251 moduleconfig.h:255 moduleconfig.h:259
 #: moduleconfig.h:263 networkbrowser.h:1606 networkbrowser.h:1610
 #: networkbrowser.h:1619 networkbrowser.h:1624 networkbrowser.h:1628
-#: networkbrowser.h:1654 network.h:672 panel_settings_autostart.h:35
+#: networkbrowser.h:1654 network.h:691 panel_settings_autostart.h:35
 #: panel_settings_autostart.h:96 panel_settings_autostart.h:113
 #: panel_settings_autostart.h:123 panel_settings_autostart.h:141
 #: panel_settings_autostart.h:150 panel_settings_autostart.h:159
@@ -306,7 +306,7 @@ msgstr "Canal EPG"
 #: moduleconfig.h:252 moduleconfig.h:256 moduleconfig.h:260 moduleconfig.h:264
 #: networkbrowser.h:1607 networkbrowser.h:1611 networkbrowser.h:1620
 #: networkbrowser.h:1625 networkbrowser.h:1629 networkbrowser.h:1655
-#: network.h:673 panel_settings_autostart.h:35 panel_settings_autostart.h:96
+#: network.h:692 panel_settings_autostart.h:35 panel_settings_autostart.h:96
 #: panel_settings_autostart.h:113 panel_settings_autostart.h:123
 #: panel_settings_autostart.h:141 panel_settings_autostart.h:150
 #: panel_settings_autostart.h:159 panel_settings_autostart.h:168
@@ -417,7 +417,7 @@ msgid "Gui Restart"
 msgstr "Reiniciar Titan"
 
 #: adjust.h:115 adjust.h:125 adjust.h:179 epgsettings.h:147 epgsettings.h:153
-#: httpdfunc.h:3831 httpdfunc.h:3889 httpdfunc.h:4280 network.h:593
+#: httpdfunc.h:3831 httpdfunc.h:3889 httpdfunc.h:4280 network.h:612
 msgid "deaktiv"
 msgstr "desactivar"
 
@@ -558,7 +558,7 @@ msgstr "Si/VZAP infinito"
 #: global.h:6222 global.h:6241 global.h:6411 gmediarender.h:115 harddisk.h:633
 #: harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731
 #: harddisk.h:733 harddisk.h:793 harddisk.h:811 harddisk.h:814 hbbtv.h:362
-#: hello.c:36 httpdfunc.h:1140 httpdfunc.h:5442 httpdfunc.h:5944 hwtest.h:88
+#: hello.c:36 httpdfunc.h:1140 httpdfunc.h:5470 httpdfunc.h:5856 hwtest.h:88
 #: hwtest.h:93 hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206
 #: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
 #: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
@@ -582,8 +582,8 @@ msgstr "Si/VZAP infinito"
 #: networkbrowser.h:1009 networkbrowser.h:1011 networkbrowser.h:1021
 #: networkbrowser.h:1025 networkbrowser.h:1189 networkbrowser.h:1743
 #: networkbrowser.h:1750 networkbrowser.h:1755 networkbrowser.h:1907
-#: network.h:426 network.h:558 network.h:766 network.h:774 network.h:800
-#: network.h:804 network.h:858 novamov.h:35 novamov.h:80 nowvideo.h:44
+#: network.h:436 network.h:577 network.h:785 network.h:793 network.h:819
+#: network.h:823 network.h:877 novamov.h:35 novamov.h:80 nowvideo.h:44
 #: nowvideo.h:99 nowvideo.h:105 panel_main.h:29 panel_main.h:135
 #: panel_settings_wizard.h:6 played.h:30 played.h:84 played.h:90 played.h:102
 #: played.h:114 played.h:171 player.h:99 play.h:593 play.h:1265 play.h:1463
@@ -606,8 +606,8 @@ msgstr "Si/VZAP infinito"
 #: system_backup_restore.h:80 system_backup_restore.h:82 system_update.h:257
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 timeshift.h:113 timeshift.h:155 timeshift.h:162
-#: timeshiftsettings.h:45 titan.c:277 titan.c:341 titan.c:350 titan.c:1104
-#: titan.c:1125 titan.c:1131 titan.c:1142 titan.c:1148 tithek.c:84
+#: timeshiftsettings.h:45 titan.c:277 titan.c:341 titan.c:350 titan.c:1109
+#: titan.c:1130 titan.c:1136 titan.c:1147 titan.c:1153 tithek.c:84
 #: tithek_global.h:248 tithek.h:667 tithek.h:1163 tithek.h:1206 tithek.h:1454
 #: tithek.h:1476 tithek.h:2062 tithek.h:2089 tithek.h:2103 tithek.h:2113
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
@@ -696,7 +696,7 @@ msgstr "Configuracion guardada con EExito"
 
 #: avsettings.h:68 avsettings.h:84 harddisk.h:886 lnbconfig.h:144
 #: mc_pictureplayer_settings.h:34 mc_pictureplayer_settings.h:38
-#: mc_pictureplayer_settings.h:67 mc_videoplayer_settings.h:53 network.h:391
+#: mc_pictureplayer_settings.h:67 mc_videoplayer_settings.h:53 network.h:392
 #: panel_settings_autostart.h:61 panel_settings_overclocking.h:276
 #: readerconfig.h:413 settings_autostart.h:53 settings_overclocking.h:276
 #: transponder.h:256 transponder.h:264 transponder.h:415 transponder.h:423
@@ -743,7 +743,7 @@ msgstr ""
 "su configuracion. quieres ejecutar la aplicacion?"
 
 #: bgdownload.h:93 bgdownload.h:154 global.h:6647 httpdfunc.h:2690
-#: httpdfunc.h:2702 httpdfunc.h:5225 httpdfunc.h:5270 hwtest.h:478
+#: httpdfunc.h:2702 httpdfunc.h:5253 httpdfunc.h:5299 hwtest.h:478
 #: moduleconfig.h:345 skin_default_skin.xml.h:708 skinselector.h:138
 #: stream.h:22 transponder.h:122 transponder.h:158 transponder.h:194
 #: transponder.h:227 transponder.h:259 transponder.h:295 transponder.h:330
@@ -1423,19 +1423,19 @@ msgstr "Eliminado con eExito"
 msgid "Remove error"
 msgstr "ERROR: Eliminacion Fallida!"
 
-#: extensions.h:130 httpdfunc.h:5806
+#: extensions.h:130 httpdfunc.h:5700
 msgid "Install to MNT"
 msgstr "Instalar para MNT (Flash)"
 
-#: extensions.h:142 httpdfunc.h:5824
+#: extensions.h:142 httpdfunc.h:5718
 msgid "Install to FLASH"
 msgstr "Instalar para FLASH"
 
-#: extensions.h:156 httpdfunc.h:5844
+#: extensions.h:156 httpdfunc.h:5738
 msgid "Install to SWAP"
 msgstr "Instalar para SWAP (USB o HDD)"
 
-#: extensions.h:169 httpdfunc.h:5785
+#: extensions.h:169 httpdfunc.h:5681
 msgid "Choice Install Medium"
 msgstr "Elegir el medio de instalacion"
 
@@ -1443,21 +1443,21 @@ msgstr "Elegir el medio de instalacion"
 msgid "Tpk Install Info"
 msgstr "Informacion de instalacion"
 
-#: extensions.h:175 httpdfunc.h:5855
+#: extensions.h:175 httpdfunc.h:5749
 msgid "Can't install Package. Package to big."
 msgstr ""
 "ERROR: El paquete designado es demasiado grande\n"
 "y no se puede instalar."
 
-#: extensions.h:202 httpdfunc.h:5618
+#: extensions.h:202 httpdfunc.h:5512
 msgid "Tpk Install - select section"
 msgstr "Instalacion - Elegir Categoria"
 
-#: extensions.h:207 httpdfunc.h:5680 skin_default_skin.xml.h:675
+#: extensions.h:207 httpdfunc.h:5576 skin_default_skin.xml.h:675
 msgid "Tpk Install - select file"
 msgstr "Instalacion - Seleccionar"
 
-#: extensions.h:212 extensions.h:244 extensions.h:400 httpdfunc.h:5926
+#: extensions.h:212 extensions.h:244 extensions.h:400 httpdfunc.h:5835
 #: tpk.h:2990
 msgid ""
 "It may only be a package to be installed. If they want to install another "
@@ -1480,15 +1480,15 @@ msgstr "Instalacion"
 msgid "starting"
 msgstr "Comenzando"
 
-#: extensions.h:240 httpdfunc.h:5891
+#: extensions.h:240 httpdfunc.h:5798
 msgid "Tpk Install Info - Install OK"
 msgstr "Paquete instalado correctamente"
 
-#: extensions.h:244 extensions.h:249 httpdfunc.h:5893 httpdfunc.h:5895
+#: extensions.h:244 extensions.h:249 httpdfunc.h:5800 httpdfunc.h:5802
 msgid "Tpk Install Info - Install ERROR"
 msgstr "ERROR: Instalacion fallida!"
 
-#: extensions.h:257 httpdfunc.h:5944 httpdfunc.h:5946
+#: extensions.h:257 httpdfunc.h:5856 httpdfunc.h:5858
 msgid "TPK Install done, your system will reboot !"
 msgstr ""
 "Instalado con Exito.\n"
@@ -1833,7 +1833,7 @@ msgstr ""
 msgid "Version"
 msgstr ""
 
-#: global.h:6629 httpdfunc.h:5327 skin_default_skin.xml.h:338
+#: global.h:6629 httpdfunc.h:5359 skin_default_skin.xml.h:338
 msgid "Installed:"
 msgstr "Instalado:"
 
@@ -2233,7 +2233,7 @@ msgstr "Resync grabacion inmediatamente (No cache de escritura)"
 msgid "Recording name"
 msgstr "Titulo de grabacion"
 
-#: httpdfunc.h:4354 httpdfunc.h:5096 skin_default_skin.xml.h:419
+#: httpdfunc.h:4354 httpdfunc.h:5119 skin_default_skin.xml.h:419
 #: webif_info.h:2
 msgid "Newsletter"
 msgstr "Noticias"
@@ -2278,15 +2278,15 @@ msgstr "Tiempo de espera despues de tratar de llenar bufer"
 msgid "Dualboot Menu TitanNit / E2"
 msgstr ""
 
-#: httpdfunc.h:4773
+#: httpdfunc.h:4774
 msgid "Error, Program not started."
 msgstr ""
 
-#: httpdfunc.h:4775
+#: httpdfunc.h:4776
 msgid "Program started successfully"
 msgstr ""
 
-#: httpdfunc.h:4842 skin_default_skin.xml.h:1 webif_index.atemio510.h:16
+#: httpdfunc.h:4848 skin_default_skin.xml.h:1 webif_index.atemio510.h:16
 #: webif_index.atemio5200.h:16 webif_index.atemio5200.h:70
 #: webif_index.atemio5200.h:126 webif_index.atemio6000.h:16
 #: webif_index.atemio6100.h:16 webif_index.atemio6200.h:16
@@ -2299,178 +2299,178 @@ msgstr ""
 msgid "Help"
 msgstr "Ayuda"
 
-#: httpdfunc.h:4935 skin_default_skin.xml.h:644 system_infos.h:14
+#: httpdfunc.h:4946 skin_default_skin.xml.h:644 system_infos.h:14
 #: webif_info_systeminfos.h:2
 msgid "System Status"
 msgstr "Sistema Estado"
 
-#: httpdfunc.h:4937 system_infos.h:16
+#: httpdfunc.h:4948 system_infos.h:16
 msgid "Free Space"
 msgstr "Espacion Libre disponible"
 
-#: httpdfunc.h:4939 skin_default_skin.xml.h:350 system_infos.h:18
+#: httpdfunc.h:4950 skin_default_skin.xml.h:350 system_infos.h:18
 #: webif_info_systeminfos.h:4
 msgid "Kernel"
 msgstr ""
 
-#: httpdfunc.h:4941 skin_default_skin.xml.h:400 system_infos.h:20
+#: httpdfunc.h:4952 skin_default_skin.xml.h:400 system_infos.h:20
 #: webif_info_systeminfos.h:5
 msgid "Mounts"
 msgstr "Dispositivos Montados"
 
-#: httpdfunc.h:4943 hwtest.h:181 hwtest.h:396 network.h:284 network.h:299
+#: httpdfunc.h:4954 hwtest.h:181 hwtest.h:396 network.h:284 network.h:299
 #: plugins_mc_skin.xml.h:37 plugins_panel_skin.xml.h:18
 #: skin_default_skin.xml.h:411 skins_mc_skin.xml.h:37
 #: skins_panel_skin.xml.h:18 system_infos.h:22 webif_info_systeminfos.h:6
 msgid "Network"
 msgstr "Red"
 
-#: httpdfunc.h:4945 skin_default_skin.xml.h:491 system_infos.h:24
+#: httpdfunc.h:4956 skin_default_skin.xml.h:491 system_infos.h:24
 #: webif_info_systeminfos.h:7
 msgid "Ram"
 msgstr "RAM"
 
-#: httpdfunc.h:4978 skin_default_skin.xml.h:157 webif_info_sysinfos.h:2
+#: httpdfunc.h:4992 skin_default_skin.xml.h:157 webif_info_sysinfos.h:2
 msgid "CPU"
 msgstr ""
 
-#: httpdfunc.h:4980 skin_default_skin.xml.h:384 webif_info_sysinfos.h:3
+#: httpdfunc.h:4994 skin_default_skin.xml.h:384 webif_info_sysinfos.h:3
 msgid "Memory"
 msgstr "Memoria"
 
-#: httpdfunc.h:4982 skin_default_skin.xml.h:404 webif_info_sysinfos.h:4
+#: httpdfunc.h:4996 skin_default_skin.xml.h:404 webif_info_sysinfos.h:4
 msgid "MTD"
 msgstr "Dispositivo Tecnologa de memoria (MTD)"
 
-#: httpdfunc.h:4984 skin_default_skin.xml.h:397 webif_info_sysinfos.h:5
+#: httpdfunc.h:4998 skin_default_skin.xml.h:397 webif_info_sysinfos.h:5
 msgid "Module"
 msgstr "Modulo"
 
-#: httpdfunc.h:4986 skin_default_skin.xml.h:184 system_infos_sysinfo.h:23
+#: httpdfunc.h:5000 skin_default_skin.xml.h:184 system_infos_sysinfo.h:23
 #: webif_info_sysinfos.h:6
 msgid "Devices"
 msgstr "Dispositivos"
 
-#: httpdfunc.h:4988 panel_settings_autostart.h:210 settings_autostart.h:315
+#: httpdfunc.h:5002 panel_settings_autostart.h:210 settings_autostart.h:315
 #: skin_default_skin.xml.h:633 webif_info_sysinfos.h:7
 msgid "Swap"
 msgstr "Swap (RAM extensión)"
 
-#: httpdfunc.h:4990 skin_default_skin.xml.h:673 webif_info_sysinfos.h:8
+#: httpdfunc.h:5004 skin_default_skin.xml.h:673 webif_info_sysinfos.h:8
 msgid "Top"
 msgstr "Top (Procesos)"
 
-#: httpdfunc.h:4992 skin_default_skin.xml.h:484 webif_info_sysinfos.h:9
+#: httpdfunc.h:5006 skin_default_skin.xml.h:484 webif_info_sysinfos.h:9
 msgid "Prozesslist"
 msgstr "Lista de Procesos"
 
-#: httpdfunc.h:4994 skin_default_skin.xml.h:712 webif_info_sysinfos.h:10
+#: httpdfunc.h:5008 skin_default_skin.xml.h:712 webif_info_sysinfos.h:10
 msgid "USB"
 msgstr ""
 
-#: httpdfunc.h:5027
+#: httpdfunc.h:5044
 msgid "Hotline"
 msgstr ""
 
-#: httpdfunc.h:5029
+#: httpdfunc.h:5046
 msgid "Svn Changelog"
 msgstr ""
 
-#: httpdfunc.h:5031 skin_default_skin.xml.h:255 webif_info_logs.h:3
+#: httpdfunc.h:5048 skin_default_skin.xml.h:255 webif_info_logs.h:3
 msgid "Git Changelog"
 msgstr ""
 
-#: httpdfunc.h:5033
+#: httpdfunc.h:5050
 msgid "titan Log"
 msgstr ""
 
-#: httpdfunc.h:5035
+#: httpdfunc.h:5052
 msgid "Svn Changelog Full"
 msgstr ""
 
-#: httpdfunc.h:5037
+#: httpdfunc.h:5054
 msgid "Git Changelog Full"
 msgstr ""
 
-#: httpdfunc.h:5067 skin_default_skin.xml.h:51 webif_info.h:3
+#: httpdfunc.h:5087 skin_default_skin.xml.h:51 webif_info.h:3
 msgid "About"
 msgstr "Acerca de titan"
 
-#: httpdfunc.h:5201 skin_default_skin.xml.h:627 stream.h:36 webif_info.h:4
+#: httpdfunc.h:5230 skin_default_skin.xml.h:627 stream.h:36 webif_info.h:4
 msgid "Streaming"
 msgstr ""
 
-#: httpdfunc.h:5218 httpdfunc.h:5263 record.h:1302 record.h:1311 record.h:1322
+#: httpdfunc.h:5246 httpdfunc.h:5292 record.h:1302 record.h:1311 record.h:1322
 #: record.h:1357 record.h:1366 record.h:1398 stream.h:15 stream.h:37
 msgid "stop"
 msgstr "Stop"
 
-#: httpdfunc.h:5235 stream.h:33
+#: httpdfunc.h:5264 stream.h:33
 msgid "No Live Stream running"
 msgstr "No funcionamiento de stream"
 
-#: httpdfunc.h:5290
+#: httpdfunc.h:5319
 msgid "Streaming succesfull stopped."
 msgstr ""
 
-#: httpdfunc.h:5293
+#: httpdfunc.h:5322
 msgid "ERROR, Streaming can not be stopped."
 msgstr ""
 
-#: httpdfunc.h:5319 httpdfunc.h:5425 skin_default_skin.xml.h:645
+#: httpdfunc.h:5351 httpdfunc.h:5460 skin_default_skin.xml.h:645
 #: webif_system.h:2 webif_system_update.h:1
 msgid "System Update"
 msgstr "Sistema de Actualizacion"
 
-#: httpdfunc.h:5446 system_update.h:220
+#: httpdfunc.h:5474 system_update.h:220
 msgid "starting Full Update ?"
 msgstr "Iniciar actualizacin completa?"
 
-#: httpdfunc.h:5451
+#: httpdfunc.h:5479
 msgid ""
 "System Update started Please wait 5 Minutes and Refresh this Page, more "
 "infos they see on your TV."
 msgstr ""
 
-#: httpdfunc.h:5478 skin_default_skin.xml.h:572 webif_info.h:1
-msgid "Service"
-msgstr "Canal"
-
-#: httpdfunc.h:5513 skin_default_skin.xml.h:639 webif_system.h:3
-msgid "System Backup"
-msgstr "System backup"
-
-#: httpdfunc.h:5548 skin_default_skin.xml.h:577 webif_system.h:4
-msgid "Settings backup/restore"
-msgstr "Configuracion backup/restaurar"
-
-#: httpdfunc.h:5583 skin_default_skin.xml.h:680 webif_system_extensions.h:2
-msgid "TPK upgrade (online)"
-msgstr "Actualizar (En Linea)"
-
-#: httpdfunc.h:5631
+#: httpdfunc.h:5525
 msgid "No Tpk Sections Found."
 msgstr ""
 
-#: httpdfunc.h:5690 httpdfunc.h:5790
+#: httpdfunc.h:5589 httpdfunc.h:5686
 msgid "No Tpk Files Found."
 msgstr ""
 
-#: httpdfunc.h:5915 httpdfunc.h:5923 httpdfunc.h:5933
+#: httpdfunc.h:5824 httpdfunc.h:5832 httpdfunc.h:5842
 msgid "Install Log:"
 msgstr ""
 
-#: httpdfunc.h:5977 skin_default_skin.xml.h:679 webif_system_extensions.h:4
+#: httpdfunc.h:5889 skin_default_skin.xml.h:679 webif_system_extensions.h:4
 msgid "TPK tmp (tmp)"
 msgstr "Instalar (tmp)"
 
-#: httpdfunc.h:6012 skin_default_skin.xml.h:677 webif_system_extensions.h:5
+#: httpdfunc.h:5924 skin_default_skin.xml.h:677 webif_system_extensions.h:5
 msgid "TPK media (media)"
 msgstr "Instalar (Local)"
 
-#: httpdfunc.h:6047 skin_default_skin.xml.h:678 webif_system_extensions.h:6
+#: httpdfunc.h:5959 skin_default_skin.xml.h:678 webif_system_extensions.h:6
 msgid "TPK remove"
 msgstr "Eliminar"
+
+#: httpdfunc.h:5994 skin_default_skin.xml.h:680 webif_system_extensions.h:2
+msgid "TPK upgrade (online)"
+msgstr "Actualizar (En Linea)"
+
+#: httpdfunc.h:6027 skin_default_skin.xml.h:572 webif_info.h:1
+msgid "Service"
+msgstr "Canal"
+
+#: httpdfunc.h:6062 skin_default_skin.xml.h:639 webif_system.h:3
+msgid "System Backup"
+msgstr "System backup"
+
+#: httpdfunc.h:6097 skin_default_skin.xml.h:577 webif_system.h:4
+msgid "Settings backup/restore"
+msgstr "Configuracion backup/restaurar"
 
 #: hwtest.h:88
 msgid "testtransponder not found"
@@ -2746,7 +2746,7 @@ msgstr ""
 msgid "Email  \t\tinfo@atemio.de"
 msgstr ""
 
-#: info.h:27 plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9 titan.c:979
+#: info.h:27 plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9 titan.c:984
 #: webif_index.atemio510.h:15 webif_index.atemio5200.h:15
 #: webif_index.atemio5200.h:43 webif_index.atemio5200.h:99
 #: webif_index.atemio6000.h:15 webif_index.atemio6100.h:15
@@ -3594,47 +3594,55 @@ msgstr "Activar nueva configuracion de red?"
 msgid "Restart Network"
 msgstr "Reiniciar Red"
 
-#: network.h:389
+#: network.h:390
 msgid "dhcp"
 msgstr "Automatico (DHCP)"
 
-#: network.h:390
+#: network.h:391
 msgid "static"
 msgstr "estatico"
 
-#: network.h:426
+#: network.h:394 panel_settings.h:29
+msgid "disable"
+msgstr "discapacitado"
+
+#: network.h:395
+msgid "enable"
+msgstr ""
+
+#: network.h:436
 msgid "save network settings ?"
 msgstr "Guardar configuracion de red?"
 
-#: network.h:558
+#: network.h:577
 msgid "Can't change hostname !"
 msgstr "No se puede cambiar el nombre de hostname!"
 
-#: network.h:679
+#: network.h:698
 msgid "NONE"
 msgstr "Ninguno"
 
-#: network.h:680
+#: network.h:699
 msgid "WEP"
 msgstr ""
 
-#: network.h:681
+#: network.h:700
 msgid "WPA"
 msgstr ""
 
-#: network.h:682
+#: network.h:701
 msgid "WPA2"
 msgstr ""
 
-#: network.h:766
+#: network.h:785
 msgid "deaktivate ethernet interface ?"
 msgstr "Desactivar Ethernet?"
 
-#: network.h:774
+#: network.h:793
 msgid "Start Wlan ?"
 msgstr "Iniciar WLAN?"
 
-#: network.h:800
+#: network.h:819
 msgid ""
 "WLAN started.\n"
 " You can now configure the new interface."
@@ -3642,7 +3650,7 @@ msgstr ""
 "WLAN comenzo.\n"
 "Ahora puede configurar la nueva interfaz."
 
-#: network.h:804
+#: network.h:823
 msgid ""
 "WLAN not started,\n"
 "Please check your config."
@@ -3650,23 +3658,23 @@ msgstr ""
 "No WLAN comenzado,\n"
 "Por favor, revise su configuracion!"
 
-#: network.h:827
+#: network.h:846
 msgid "searching..."
 msgstr "Buscando..."
 
-#: network.h:858
+#: network.h:877
 msgid "WLAN now stopped"
 msgstr "WLAN detuvo"
 
-#: network.h:865
+#: network.h:884
 msgid "WLAN LOG"
 msgstr "WLAN log"
 
-#: network.h:876
+#: network.h:895
 msgid "Found Wlan Stick and driver for: "
 msgstr "Encontrado stick WLAN y un conductor para:"
 
-#: network.h:881
+#: network.h:900
 msgid ""
 "Found Wlan Stick but no driver\n"
 "Please install driver: "
@@ -3674,11 +3682,11 @@ msgstr ""
 "Encontrado WLAN Stick pero no hay ningun controlador\n"
 "Por favor, instale el controlador:"
 
-#: network.h:884
+#: network.h:903
 msgid "Wlan Stick not found"
 msgstr "WLAN ningun stick encontrado"
 
-#: network.h:887
+#: network.h:906
 msgid "WLAN Info"
 msgstr "Informacion"
 
@@ -3870,10 +3878,6 @@ msgstr "Configuracion"
 #: panel_settings.h:27 settings_autostart.h:303
 msgid "Ntfs Write"
 msgstr "NTFS escribir"
-
-#: panel_settings.h:29
-msgid "disable"
-msgstr "discapacitado"
 
 #: panel_settings.h:30 settings_autostart.h:306
 msgid "ntfs-3g"
@@ -9166,59 +9170,59 @@ msgstr ""
 "Encontrado un activo en descarga\n"
 "Realmente apagarlo?"
 
-#: titan.c:795
+#: titan.c:800
 msgid "Error: open rc device !!"
 msgstr "ERROR: No Control remoto Encontrado!"
 
-#: titan.c:801
+#: titan.c:806
 msgid "Error: no frontend device found !!"
 msgstr "ERROR: No Frontend Dispositivo Encontrado!"
 
-#: titan.c:807
+#: titan.c:812
 msgid "Error: no demux device found !!"
 msgstr "RROR: No demux Dispositivo Encontrado!"
 
-#: titan.c:813
+#: titan.c:818
 msgid "Error: no video device found !!"
 msgstr "ERROR: No hay Dispositivo de Video Encontrado!"
 
-#: titan.c:819
+#: titan.c:824
 msgid "Error: no audio device found !!"
 msgstr "ERROR: No hay dispositivo de audio Encontrado!"
 
-#: titan.c:837
+#: titan.c:842
 msgid "Error: skin not found !!"
 msgstr "ERROR: No Skin Encontrado!"
 
-#: titan.c:921
+#: titan.c:926
 msgid "RemoteControl Old Version"
 msgstr "Control remoto de edad Version"
 
-#: titan.c:922
+#: titan.c:927
 msgid "RemoteControl Long Version"
 msgstr "Remote Control Version larga"
 
-#: titan.c:929
+#: titan.c:934
 msgid "Select Your Remote Control"
 msgstr "Seleccin de control remoto"
 
-#: titan.c:929
+#: titan.c:934
 msgid "Choose your Remotecontrol Model from the following list"
 msgstr "Elija su modelo de control remoto de la siguiente lista"
 
-#: titan.c:970
+#: titan.c:975
 msgid "First Wizzard"
 msgstr "Wizzard Primera Instalacion"
 
-#: titan.c:970
+#: titan.c:975
 msgid "Settings OK ?"
 msgstr "Guardar la configuracion?"
 
-#: titan.c:1104
+#: titan.c:1109
 msgid "Receiver successful unlocked"
 msgstr "Su receptor se abrio con Exito."
 
-#: titan.c:1125
+#: titan.c:1130
 msgid ""
 "Free space in /var to little!\n"
 "This can make problems!"
@@ -9226,7 +9230,7 @@ msgstr ""
 "No hay suficiente espacio en /var!\n"
 "estao causar problemas graves!"
 
-#: titan.c:1131
+#: titan.c:1136
 msgid ""
 "/var not writeable!\n"
 "Repair it?"
@@ -9234,7 +9238,7 @@ msgstr ""
 "/var no permite la escritura!\n"
 "Quieres tratar de repararlo?"
 
-#: titan.c:1142
+#: titan.c:1147
 msgid ""
 "Free space in /mnt to little!\n"
 "This can make problems!"
@@ -9242,7 +9246,7 @@ msgstr ""
 "Espacio insuficiente en /mnt!\n"
 "estao causar problemas graves!"
 
-#: titan.c:1148
+#: titan.c:1153
 msgid ""
 "/mnt not writeable!\n"
 "Repair it?"
@@ -9250,11 +9254,11 @@ msgstr ""
 "/mnt No se puede escribir!\n"
 "Quieres tratar de repararlo?"
 
-#: titan.c:1197
+#: titan.c:1202
 msgid "Unknown Error."
 msgstr "Error desconocido"
 
-#: titan.c:1199
+#: titan.c:1204
 msgid "Automatic stop in 10 seconds."
 msgstr "Parada automatica en 10 segundos"
 
