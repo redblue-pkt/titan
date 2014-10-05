@@ -8,11 +8,11 @@ msgstr ""
 #: channellist.h:915 channellist.h:920 channellist.h:922 channellist.h:1006
 #: divxstage.h:36 divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336
 #: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:263 epgsettings.h:289
-#: epgsettings.h:303 extensions.h:175 extensions.h:231 extensions.h:240
-#: extensions.h:244 extensions.h:249 extensions.h:257 extensions.h:292
-#: extensions.h:300 extensions.h:307 extensions.h:314 extensions.h:346
-#: extensions.h:372 extensions.h:403 extensions.h:410 extensions.h:434
-#: extensions.h:438 extensions.h:446 extensions.h:492 facebook.h:66
+#: epgsettings.h:303 extensions.h:175 extensions.h:226 extensions.h:235
+#: extensions.h:239 extensions.h:244 extensions.h:252 extensions.h:287
+#: extensions.h:295 extensions.h:302 extensions.h:309 extensions.h:341
+#: extensions.h:367 extensions.h:398 extensions.h:405 extensions.h:429
+#: extensions.h:433 extensions.h:441 extensions.h:487 facebook.h:66
 #: facebook.h:157 facebook.h:167 faststream.h:30 faststream.h:79
 #: faststream.h:91 faststream.h:103 faststream.h:160 filemanager.h:95
 #: filemanager.h:100 filemanager.h:206 filemanager.h:279 filemanager.h:289
@@ -114,11 +114,11 @@ msgstr ""
 #: channellist.h:920 channellist.h:922 channellist.h:1006 divxstage.h:36
 #: divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336 dlna.h:345
 #: dvdplay.h:62 epgsearch.h:27 epgsettings.h:263 epgsettings.h:289
-#: epgsettings.h:303 extensions.h:175 extensions.h:231 extensions.h:240
-#: extensions.h:244 extensions.h:249 extensions.h:257 extensions.h:292
-#: extensions.h:300 extensions.h:307 extensions.h:314 extensions.h:346
-#: extensions.h:372 extensions.h:403 extensions.h:410 extensions.h:434
-#: extensions.h:438 extensions.h:446 extensions.h:492 facebook.h:66
+#: epgsettings.h:303 extensions.h:175 extensions.h:226 extensions.h:235
+#: extensions.h:239 extensions.h:244 extensions.h:252 extensions.h:287
+#: extensions.h:295 extensions.h:302 extensions.h:309 extensions.h:341
+#: extensions.h:367 extensions.h:398 extensions.h:405 extensions.h:429
+#: extensions.h:433 extensions.h:441 extensions.h:487 facebook.h:66
 #: facebook.h:157 facebook.h:167 faststream.h:30 faststream.h:79
 #: faststream.h:91 faststream.h:103 faststream.h:160 filemanager.h:95
 #: filemanager.h:100 filemanager.h:206 filemanager.h:279 filemanager.h:289
@@ -547,8 +547,8 @@ msgstr "oui / vzap sans fin"
 #: channellist.h:920 channellist.h:922 channellist.h:1006 divxstage.h:36
 #: divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336 dlna.h:345
 #: dvdplay.h:62 epgsearch.h:27 epgsettings.h:263 epgsettings.h:289
-#: extensions.h:257 extensions.h:314 extensions.h:346 extensions.h:406
-#: extensions.h:410 extensions.h:446 facebook.h:66 facebook.h:157
+#: extensions.h:252 extensions.h:309 extensions.h:341 extensions.h:401
+#: extensions.h:405 extensions.h:441 facebook.h:66 facebook.h:157
 #: facebook.h:167 faststream.h:30 faststream.h:79 faststream.h:91
 #: faststream.h:103 faststream.h:160 filemanager.h:95 filemanager.h:100
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:329
@@ -1432,7 +1432,7 @@ msgstr "Installer"
 msgid "Choice Install Medium"
 msgstr ""
 
-#: extensions.h:175 extensions.h:231 extensions.h:492
+#: extensions.h:175 extensions.h:226 extensions.h:487
 msgid "Tpk Install Info"
 msgstr "Installer"
 
@@ -1448,7 +1448,7 @@ msgstr "Ipk installation - Sélectionne un fichier"
 msgid "Tpk Install - select file"
 msgstr "Ipk installation - Sélectionne un fichier"
 
-#: extensions.h:212 extensions.h:244 extensions.h:400 httpdfunc.h:5835
+#: extensions.h:212 extensions.h:239 extensions.h:395 httpdfunc.h:5835
 #: tpk.h:2990
 msgid ""
 "It may only be a package to be installed. If they want to install another "
@@ -1457,78 +1457,78 @@ msgid ""
 "then perform an update by Tpk to: "
 msgstr ""
 
-#: extensions.h:222 extensions.h:364
+#: extensions.h:217 extensions.h:359
 msgid "Installing"
 msgstr "Installer"
 
-#: extensions.h:228 extensions.h:368
+#: extensions.h:223 extensions.h:363
 msgid "starting"
 msgstr "Redémarrer Titan"
 
-#: extensions.h:240 httpdfunc.h:5798
+#: extensions.h:235 httpdfunc.h:5798
 msgid "Tpk Install Info - Install OK"
 msgstr ""
 
-#: extensions.h:244 extensions.h:249 httpdfunc.h:5800 httpdfunc.h:5802
+#: extensions.h:239 extensions.h:244 httpdfunc.h:5800 httpdfunc.h:5802
 msgid "Tpk Install Info - Install ERROR"
 msgstr ""
 
-#: extensions.h:257 httpdfunc.h:5856 httpdfunc.h:5858 httpdfunc.h:6123
+#: extensions.h:252 httpdfunc.h:5856 httpdfunc.h:5858 httpdfunc.h:6123
 msgid "TPK Install done, your system will reboot !"
 msgstr ""
 
-#: extensions.h:281 httpdfunc.h:5991
+#: extensions.h:276 httpdfunc.h:5991
 msgid "Tpk Remove - select file"
 msgstr "Ipk installation - Sélectionne un fichier"
 
-#: extensions.h:287
+#: extensions.h:282
 msgid "Removeing"
 msgstr ""
 
-#: extensions.h:292
+#: extensions.h:287
 msgid "Tpk Remove Info"
 msgstr ""
 
-#: extensions.h:300 httpdfunc.h:6071
+#: extensions.h:295 httpdfunc.h:6071
 msgid "Tpk Remove Info - Remove OK"
 msgstr ""
 
-#: extensions.h:307 httpdfunc.h:6075
+#: extensions.h:302 httpdfunc.h:6075
 msgid "Tpk Remove Info - Remove ERROR"
 msgstr ""
 
-#: extensions.h:314 httpdfunc.h:6121
+#: extensions.h:309 httpdfunc.h:6121
 msgid "TPK Remove done, your system will reboot !"
 msgstr ""
 
-#: extensions.h:346 extensions.h:492
+#: extensions.h:341 extensions.h:487
 msgid "No plugin found."
 msgstr ""
 
-#: extensions.h:406
+#: extensions.h:401
 msgid ""
 "Some plugins needs restart.\n"
 "If the plugin is not active\n"
 "reboot the box."
 msgstr ""
 
-#: extensions.h:410
+#: extensions.h:405
 msgid "TPK Tmp Install done, your system will reboot !"
 msgstr ""
 
-#: extensions.h:434 extensions.h:438 httpdfunc.h:6160 httpdfunc.h:6172
+#: extensions.h:429 extensions.h:433 httpdfunc.h:6160 httpdfunc.h:6172
 msgid "Tpk Update Info - Update ERROR"
 msgstr ""
 
-#: extensions.h:434 httpdfunc.h:6163
+#: extensions.h:429 httpdfunc.h:6163
 msgid "Can't get all TPK index !"
 msgstr ""
 
-#: extensions.h:438 httpdfunc.h:6175
+#: extensions.h:433 httpdfunc.h:6175
 msgid "Can't update all packages !"
 msgstr ""
 
-#: extensions.h:446 httpdfunc.h:6192
+#: extensions.h:441 httpdfunc.h:6192
 msgid "TPK Upgrade done, your system will reboot !"
 msgstr ""
 
