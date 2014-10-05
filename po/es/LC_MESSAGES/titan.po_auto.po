@@ -2956,7 +2956,7 @@ msgstr "Archivo no encontrado"
 #: plugins_weather_skin.xml.h:4 plugins_wins3_skin.xml.h:4
 #: plugins_wm2014_skin.xml.h:1 plugins_wm2014_skin.xml.h:21
 #: plugins_xupnpd_skin.xml.h:5 plugins_zapback_skin.xml.h:7
-#: skin_default_skin.xml.h:748 skins_autotimer_skin.xml.h:13
+#: skin_default_skin.xml.h:749 skins_autotimer_skin.xml.h:13
 #: skins_callmonitor1_skin.xml.h:19 skins_catcatch_skin.xml.h:7
 #: skins_dlna_skin.xml.h:15 skins_facebook_skin.xml.h:6
 #: skins_filemanager_skin.xml.h:6 skins_gmediarender_skin.xml.h:1
@@ -8702,34 +8702,38 @@ msgid "WLAN Settings"
 msgstr "WLAN"
 
 #: skin_default_skin.xml.h:740
+msgid "WOL"
+msgstr ""
+
+#: skin_default_skin.xml.h:741
 msgid "Writer"
 msgstr "Autor"
 
-#: skin_default_skin.xml.h:741
+#: skin_default_skin.xml.h:742
 msgid "x"
 msgstr ""
 
-#: skin_default_skin.xml.h:742
+#: skin_default_skin.xml.h:743
 msgid "X"
 msgstr ""
 
-#: skin_default_skin.xml.h:743
+#: skin_default_skin.xml.h:744
 msgid "y"
 msgstr ""
 
-#: skin_default_skin.xml.h:744
+#: skin_default_skin.xml.h:745
 msgid "Y"
 msgstr ""
 
-#: skin_default_skin.xml.h:745
+#: skin_default_skin.xml.h:746
 msgid "Year"
 msgstr "Años"
 
-#: skin_default_skin.xml.h:746
+#: skin_default_skin.xml.h:747
 msgid "z"
 msgstr ""
 
-#: skin_default_skin.xml.h:747
+#: skin_default_skin.xml.h:748
 msgid "Z"
 msgstr ""
 
