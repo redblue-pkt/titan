@@ -6014,14 +6014,8 @@ char* webgettpkremovelist(int fmt)
 		skip = 1;
 		while(node_installed != NULL)
 		{
-			printf("11111111111\n");
-			printf("node->showname: %s\n", node->showname);
-			printf("node_installed->showname: %s\n", node_installed->showname);
-
 			if(ostrcmp(node->showname, node_installed->showname) == 0)
 			{
-				printf("22222222222\n");
-
 				skip = 0;
 				break;
 			}
@@ -6030,12 +6024,9 @@ char* webgettpkremovelist(int fmt)
 
 		if(skip == 1)
 		{
-		printf("333333333333\n");
-		
 			node = node->next;
 			continue;
 		}
-		printf("444444444444\n");
 
 		buf = ostrcat(buf, "<a class=linelink2 href=queryraw?gettpkremove&", 1, 0);
 		buf = ostrcat(buf, node->name, 1, 0);
@@ -6151,28 +6142,62 @@ char* webgettpkupgrade(int fmt)
 {
 	if(status.security == 0) return NULL;
 
-	char* buf = NULL, *tmpstr = NULL;
+	char* buf = NULL;
+
+	status.hangtime = 99999;
 
 	if(fmt == 0) 
 	{
 		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
 		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
 		buf = ostrcat(buf, "</head><body class=body id=\"tpkupgrade\"><center>", 1, 0);
+	}
+
+	if(tpkgetindex(0) != 0)
+	{
 		buf = ostrcat(buf, "<br>", 1, 0);
 		buf = ostrcat(buf, "<h1>", 1, 0);
-		buf = ostrcat(buf, _("TPK upgrade (online)"), 1, 0);
+		buf = ostrcat(buf, _("Tpk Update Info - Update ERROR"), 1, 0);
+		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, _("Can't get all TPK index !"), 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+	}
+		
+	writesys("/tmp/.tpk_upgrade_start", "0", 0);
+	if(tpkupdate(0) != 0)
+	{
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+		buf = ostrcat(buf, _("Tpk Update Info - Update ERROR"), 1, 0);
+		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, _("Can't update all packages !"), 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+	}
+	else
+	{
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+		buf = ostrcat(buf, _("Tpk Update Info - Update OK"), 1, 0);
 		buf = ostrcat(buf, "</h1>", 1, 0);
 		buf = ostrcat(buf, "<br>", 1, 0);
 	}
 
-//	tmpstr = getabout();
-//	readnewsletter();
-	tmpstr = readfiletomem("/tmp/Service.txt", 0);
-	tmpstr = ostrcat(tmpstr, "\ncomming soon...\n", 1, 0);
-	
-	tmpstr = string_replace_all("\n", "<br>\n", tmpstr, 1);
+	loadplugin();
+	unlink(TPKLOG);
 
-	buf = ostrcat(buf, tmpstr, 1, 1);
+	if(file_exist("/tmp/.tpk_needs_reboot"))
+	{
+		textbox(_("Message"), _("TPK Upgrade done, your system will reboot !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+		//write only config file
+		writeallconfig(3);
+		oshutdown(2,2);
+		system("init 6");
+	}
+	unlink("/tmp/.tpk_upgrade_start");
+
+	status.hangtime = getconfigint("hangtime", NULL);
 
 	if(fmt == 0)
 	{
