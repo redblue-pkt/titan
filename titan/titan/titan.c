@@ -610,6 +610,11 @@ int main(int argc, char *argv[])
 
 	if(checkbox("UFS922") == 1 || checkbox("ATEMIO-NEMESIS") == 1)
 		setfanspeed(-1, 0);
+	
+	if(getconfigint("wol", NULL) == 1)
+		system("echo enable > /proc/stb/fp/wol");
+	else
+		system("echo disable > /proc/stb/fp/wol");
 
 	system(getconfig("skriptbeforetv", NULL));
 	ret = setcecstandby(0);
