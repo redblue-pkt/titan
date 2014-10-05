@@ -5974,37 +5974,175 @@ char* webgettpktmplist(char* param, int fmt)
 	return buf;
 }
 
-char* webgettpkremove(int fmt)
+char* webgettpkremovelist(int fmt)
+{
+	if(status.security == 0) return NULL;
+
+	char* buf = NULL;
+	int skip;
+
+//	if(fmt == 0) 
+//	{
+		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
+		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"tpkremovelist\"><center>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<h1>", 1, 0);
+		buf = ostrcat(buf, _("Tpk Remove - select file"), 1, 0);
+		buf = ostrcat(buf, "</h1>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+//	}
+
+	status.hangtime = 99999;
+
+	unlink(TPKLOG);
+	tpkgetindex(0);
+	tpklist();
+
+	struct tpk* node = tpk, *tpk_installed = NULL, *node_installed = NULL;
+
+	if(node == NULL) buf = ostrcat(buf, _("No Tpk Files Found."), 1, 0);
+
+	tpk = NULL;
+	tpklistinstalled(0);
+	tpk_installed = tpk;
+	tpk = node;
+	
+	while(node != NULL)
+	{
+		node_installed = tpk_installed;
+		skip = 1;
+		while(node_installed != NULL)
+		{
+			printf("11111111111\n");
+			printf("node->showname: %s\n", node->showname);
+			printf("node_installed->showname: %s\n", node_installed->showname);
+
+			if(ostrcmp(node->showname, node_installed->showname) == 0)
+			{
+				printf("22222222222\n");
+
+				skip = 0;
+				break;
+			}
+			node_installed = node_installed->next;
+		}
+
+		if(skip == 1)
+		{
+		printf("333333333333\n");
+		
+			node = node->next;
+			continue;
+		}
+		printf("444444444444\n");
+
+		buf = ostrcat(buf, "<a class=linelink2 href=queryraw?gettpkremove&", 1, 0);
+		buf = ostrcat(buf, node->name, 1, 0);
+		buf = ostrcat(buf, " target=main>", 1, 0);
+		buf = ostrcat(buf, _(node->showname), 1, 0);
+		buf = ostrcat(buf, " (", 1, 0);
+		buf = ostrcat(buf, _(node->section), 1, 0);
+		buf = ostrcat(buf, ")</a>", 1, 0);
+		buf = ostrcat(buf, "</br></br>", 1, 0);
+
+		node = node->next;
+	}
+
+	freetpk();
+	tpkcleantmp(0);
+	status.hangtime = getconfigint("hangtime", NULL);
+
+	buf = string_replace_all("<br>", "<br>\n", buf, 1);
+
+//	if(fmt == 0)
+//	{
+		buf = ostrcat(buf, "</center></body></html>", 1, 0);
+//	}	
+	
+	return buf;
+}
+
+char* webgettpkremove(char* param, int fmt)
 {
 	if(status.security == 0) return NULL;
 
 	char* buf = NULL, *tmpstr = NULL;
 
-	if(fmt == 0) 
+	status.hangtime = 99999;
+
+	char* log = NULL;
+
+	int tpkret = tpkremove(param, 0, 0);
+
+	if(tpkret == 0)
 	{
+		tmpstr = ostrcat(_("Tpk Remove Info - Remove OK"), NULL, 0, 0);
+		if(param != NULL && param[0] != '*') delplugin(param);
+	}
+	else
+		tmpstr = ostrcat(_("Tpk Remove Info - Remove ERROR"), NULL, 0, 0);
+
+//	if(fmt == 0)
+//	{
 		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
 		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
 		buf = ostrcat(buf, "</head><body class=body id=\"tpkremove\"><center>", 1, 0);
 		buf = ostrcat(buf, "<br>", 1, 0);
 		buf = ostrcat(buf, "<h1>", 1, 0);
-		buf = ostrcat(buf, _("TPK remove"), 1, 0);
+		buf = ostrcat(buf, _(tmpstr), 1, 0);
 		buf = ostrcat(buf, "</h1>", 1, 0);
 		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+//	}
+
+	free(tmpstr), tmpstr = NULL;
+
+	if(tpkret == 0)
+	{
+		log = gettpklog(NULL, 2);
+		log = string_replace_all("\n", "<br>\n", log, 1);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, _("Remove Log:"), 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, log, 1, 0);
+	}
+	else
+	{
+		log = gettpklog(NULL, 3);
+		log = string_replace_all("\n", "<br>\n", log, 1);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, _("Remove Log:"), 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, log, 1, 0);
 	}
 
-//	tmpstr = getabout();
-//	readnewsletter();
-	tmpstr = readfiletomem("/tmp/Service.txt", 0);
-	tmpstr = ostrcat(tmpstr, "\ncomming soon...\n", 1, 0);
-	
-	tmpstr = string_replace_all("\n", "<br>\n", tmpstr, 1);
+	buf = string_replace_all("<br>", "<br>\n", buf, 1);
 
-	buf = ostrcat(buf, tmpstr, 1, 1);
-
-	if(fmt == 0)
+	loadplugin();
+	free(log), log = NULL;
+	unlink(TPKLOG);
+	if(file_exist("/tmp/.tpk_needs_reboot"))
 	{
+// need other..
+		textbox(_("Message"), _("TPK Remove done, your system will reboot !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
+		buf = ostrcat(buf, "<br>", 1, 0);
+		buf = ostrcat(buf, _("TPK Install done, your system will reboot !"), 1, 0);
+		buf = string_replace_all("<br>", "<br>\n", buf, 1);
+		//write only config file
+		writeallconfig(3);
+		oshutdown(2,2);
+		system("init 6");
+	}
+
+	status.hangtime = getconfigint("hangtime", NULL);
+
+//	if(fmt == 0)
+//	{
 		buf = ostrcat(buf, "</center></body></html>", 1, 0);
-	}	
+//	}	
 	
 	return buf;
 }
