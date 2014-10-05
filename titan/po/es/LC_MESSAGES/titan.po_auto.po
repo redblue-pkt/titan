@@ -25,7 +25,7 @@ msgstr ""
 #: harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641 harddisk.h:675
 #: harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733 harddisk.h:793
 #: harddisk.h:811 harddisk.h:814 harddisk.h:1046 hbbtv.h:362 httpdfunc.h:1140
-#: httpdfunc.h:3073 httpdfunc.h:5856 hwtest.h:88 hwtest.h:93 hwtest.h:98
+#: httpdfunc.h:3073 httpdfunc.h:5858 hwtest.h:88 hwtest.h:93 hwtest.h:98
 #: hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390
 #: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
@@ -131,7 +131,7 @@ msgstr "Ok"
 #: harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641 harddisk.h:675
 #: harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733 harddisk.h:793
 #: harddisk.h:811 harddisk.h:814 harddisk.h:1046 hbbtv.h:362 hello.c:36
-#: httpdfunc.h:1140 httpdfunc.h:3073 httpdfunc.h:5856 hwtest.h:88 hwtest.h:93
+#: httpdfunc.h:1140 httpdfunc.h:3073 httpdfunc.h:5858 hwtest.h:88 hwtest.h:93
 #: hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206
 #: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
 #: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
@@ -558,7 +558,7 @@ msgstr "Si/VZAP infinito"
 #: global.h:6222 global.h:6241 global.h:6411 gmediarender.h:115 harddisk.h:633
 #: harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731
 #: harddisk.h:733 harddisk.h:793 harddisk.h:811 harddisk.h:814 hbbtv.h:362
-#: hello.c:36 httpdfunc.h:1140 httpdfunc.h:5470 httpdfunc.h:5856 hwtest.h:88
+#: hello.c:36 httpdfunc.h:1140 httpdfunc.h:5470 httpdfunc.h:5858 hwtest.h:88
 #: hwtest.h:93 hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206
 #: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
 #: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
@@ -1443,7 +1443,7 @@ msgstr "Elegir el medio de instalacion"
 msgid "Tpk Install Info"
 msgstr "Informacion de instalacion"
 
-#: extensions.h:175 httpdfunc.h:5749
+#: extensions.h:175 httpdfunc.h:5751
 msgid "Can't install Package. Package to big."
 msgstr ""
 "ERROR: El paquete designado es demasiado grande\n"
@@ -1457,7 +1457,7 @@ msgstr "Instalacion - Elegir Categoria"
 msgid "Tpk Install - select file"
 msgstr "Instalacion - Seleccionar"
 
-#: extensions.h:212 extensions.h:244 extensions.h:400 httpdfunc.h:5835
+#: extensions.h:212 extensions.h:244 extensions.h:400 httpdfunc.h:5837
 #: tpk.h:2990
 msgid ""
 "It may only be a package to be installed. If they want to install another "
@@ -1480,15 +1480,15 @@ msgstr "Instalacion"
 msgid "starting"
 msgstr "Comenzando"
 
-#: extensions.h:240 httpdfunc.h:5798
+#: extensions.h:240 httpdfunc.h:5800
 msgid "Tpk Install Info - Install OK"
 msgstr "Paquete instalado correctamente"
 
-#: extensions.h:244 extensions.h:249 httpdfunc.h:5800 httpdfunc.h:5802
+#: extensions.h:244 extensions.h:249 httpdfunc.h:5802 httpdfunc.h:5804
 msgid "Tpk Install Info - Install ERROR"
 msgstr "ERROR: Instalacion fallida!"
 
-#: extensions.h:257 httpdfunc.h:5856 httpdfunc.h:5858
+#: extensions.h:257 httpdfunc.h:5858 httpdfunc.h:5860
 msgid "TPK Install done, your system will reboot !"
 msgstr ""
 "Instalado con Exito.\n"
@@ -2436,39 +2436,39 @@ msgstr ""
 msgid "No Tpk Sections Found."
 msgstr ""
 
-#: httpdfunc.h:5589 httpdfunc.h:5686
+#: httpdfunc.h:5589 httpdfunc.h:5746
 msgid "No Tpk Files Found."
 msgstr ""
 
-#: httpdfunc.h:5824 httpdfunc.h:5832 httpdfunc.h:5842
+#: httpdfunc.h:5826 httpdfunc.h:5834 httpdfunc.h:5844
 msgid "Install Log:"
 msgstr ""
 
-#: httpdfunc.h:5889 skin_default_skin.xml.h:679 webif_system_extensions.h:4
+#: httpdfunc.h:5891 skin_default_skin.xml.h:679 webif_system_extensions.h:4
 msgid "TPK tmp (tmp)"
 msgstr "Instalar (tmp)"
 
-#: httpdfunc.h:5924 skin_default_skin.xml.h:677 webif_system_extensions.h:5
+#: httpdfunc.h:5948 skin_default_skin.xml.h:677 webif_system_extensions.h:5
 msgid "TPK media (media)"
 msgstr "Instalar (Local)"
 
-#: httpdfunc.h:5959 skin_default_skin.xml.h:678 webif_system_extensions.h:6
+#: httpdfunc.h:5983 skin_default_skin.xml.h:678 webif_system_extensions.h:6
 msgid "TPK remove"
 msgstr "Eliminar"
 
-#: httpdfunc.h:5994 skin_default_skin.xml.h:680 webif_system_extensions.h:2
+#: httpdfunc.h:6018 skin_default_skin.xml.h:680 webif_system_extensions.h:2
 msgid "TPK upgrade (online)"
 msgstr "Actualizar (En Linea)"
 
-#: httpdfunc.h:6027 skin_default_skin.xml.h:572 webif_info.h:1
+#: httpdfunc.h:6051 skin_default_skin.xml.h:572 webif_info.h:1
 msgid "Service"
 msgstr "Canal"
 
-#: httpdfunc.h:6062 skin_default_skin.xml.h:639 webif_system.h:3
+#: httpdfunc.h:6086 skin_default_skin.xml.h:639 webif_system.h:3
 msgid "System Backup"
 msgstr "System backup"
 
-#: httpdfunc.h:6097 skin_default_skin.xml.h:577 webif_system.h:4
+#: httpdfunc.h:6121 skin_default_skin.xml.h:577 webif_system.h:4
 msgid "Settings backup/restore"
 msgstr "Configuracion backup/restaurar"
 
