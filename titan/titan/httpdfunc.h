@@ -6153,7 +6153,7 @@ char* webgettpkupgrade(int fmt)
 		buf = ostrcat(buf, "</head><body class=body id=\"tpkupgrade\"><center>", 1, 0);
 	}
 
-	if(tpkgetindex(0) != 0)
+	if(tpkgetindex(1) != 0)
 	{
 		buf = ostrcat(buf, "<br>", 1, 0);
 		buf = ostrcat(buf, "<h1>", 1, 0);

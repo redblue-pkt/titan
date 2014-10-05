@@ -66,7 +66,7 @@ void screenfeed(int flag)
 		}
 
 		tmpstr = ostrcat(tmpstr, lastline, 1, 0);
-		tmpstr = ostrcat(tmpstr, "/svn/tpk/rev29185-all-secret/sh4", 1, 0);
+		tmpstr = ostrcat(tmpstr, "/svn/tpk/sh4", 1, 0);
 		writesys(getconfig("feed", NULL), tmpstr, 0);
 	}
 
@@ -211,11 +211,6 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 				debug(130, "file: %s", mbox1->name);
 				if(ostrstr(mbox1->name, _("It may only be a package to be installed. If they want to install another package of this section, they only remove the installed packet. Is not the plugin after reinstalling the software TitanNit in TitanNit Menu Visible then perform an update by Tpk to: ")) == NULL)
 				{
-				printf("###############################\n");
-				printf("mbox1->name: %s\n",mbox1->name);				
-				printf("mbox1->param2: %s\n",mbox1->param2);
-				printf("mbox1->param3: %s\n",mbox1->param3);
-
 					installpath = getinstallpath(mbox1->param2, mbox1->param3);
 					if(installpath != NULL)
 					{
