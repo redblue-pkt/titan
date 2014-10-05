@@ -313,8 +313,8 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 		buf = webgettpkinstall(param, fmt);
 	else if(ostrcmp(query, "gettpkinstallpath") == 0 && param != NULL)
 		buf = webgettpkinstallpath(param, fmt);
-	else if(ostrcmp(query, "gettpktmpinstall") == 0)
-		buf = webgettpktmpinstall(fmt);
+	else if(ostrcmp(query, "gettpktmplist") == 0 && param != NULL)
+		buf = webgettpktmplist(param, fmt);
 	else if(ostrcmp(query, "gettpkmediainstall") == 0)
 		buf = webgettpkmediainstall(fmt);
 	else if(ostrcmp(query, "gettpkupgrade") == 0)

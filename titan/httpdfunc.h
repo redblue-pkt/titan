@@ -5683,9 +5683,6 @@ char* webgettpkinstallpath(char* param, int fmt)
 		buf = ostrcat(buf, "<br>", 1, 0);
 //	}
 
-	if(node == NULL) buf = ostrcat(buf, _("No Tpk Files Found."), 1, 0);
-	freetpk();
-
 	if(path == NULL || path[0] == '*' || ostrstr(path, "mnt") != NULL)
 	{
 		if(tpkchecksize(NULL, "/mnt/swapextensions", size) == 0)
@@ -5742,7 +5739,10 @@ char* webgettpkinstallpath(char* param, int fmt)
 			}
 		}
 	}
-	
+
+	if(node == NULL && tmpstr == NULL) buf = ostrcat(buf, _("No Tpk Files Found."), 1, 0);
+	freetpk();
+
 	if(count == 0)
 	{
 		buf = ostrcat(buf, "<br>", 1, 0);
@@ -5873,67 +5873,98 @@ char* webgettpkinstall(char* param, int fmt)
 	return buf;
 }
 
-char* webgettpktmpinstall(int fmt)
+char* webgettpktmplist(char* param, int fmt)
 {
 	if(status.security == 0) return NULL;
+	int mode = atoi(param);
 
-	char* buf = NULL, *tmpstr = NULL;
+	char* buf = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL;
 
 	if(fmt == 0) 
 	{
 		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
 		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
-		buf = ostrcat(buf, "</head><body class=body id=\"tpktmpinstall\"><center>", 1, 0);
+		buf = ostrcat(buf, "</head><body class=body id=\"tpktmplist\"><center>", 1, 0);
 		buf = ostrcat(buf, "<br>", 1, 0);
 		buf = ostrcat(buf, "<h1>", 1, 0);
-		buf = ostrcat(buf, _("TPK tmp (tmp)"), 1, 0);
+		if(mode == 0)
+			buf = ostrcat(buf, _("TPK tmp (tmp)"), 1, 0);
+		else
+			buf = ostrcat(buf, _("TPK media (media)"), 1, 0);
+		
 		buf = ostrcat(buf, "</h1>", 1, 0);
 		buf = ostrcat(buf, "<br>", 1, 0);
 	}
 
-//	tmpstr = getabout();
-//	readnewsletter();
-	tmpstr = readfiletomem("/tmp/Service.txt", 0);
-	tmpstr = ostrcat(tmpstr, "\ncomming soon...\n", 1, 0);
-	
-	tmpstr = string_replace_all("\n", "<br>\n", tmpstr, 1);
-
-	buf = ostrcat(buf, tmpstr, 1, 1);
-
-	if(fmt == 0)
+	if(mode == 0)
+		tmpstr = gettpktmplist("/tmp");
+	else
 	{
-		buf = ostrcat(buf, "</center></body></html>", 1, 0);
-	}	
+		int treffer = 0;
+		struct hdd *node = NULL;
+
+		addhddall();
+		node = hdd;
 	
-	return buf;
-}
-
-char* webgettpkmediainstall(int fmt)
-{
-	if(status.security == 0) return NULL;
-
-	char* buf = NULL, *tmpstr = NULL;
-
-	if(fmt == 0) 
+		while(node != NULL)
+		{
+			if(node->partition != 0)
+			{
+				tmpstr1 = ostrcat("/autofs/", node->device, 0, 0);
+				tmpstr2 = gettpktmplist(tmpstr1);
+	
+				if(tmpstr2 != NULL)
+				{
+					treffer = 1;
+//					screenextensions(2, tmpstr1, NULL, 1);
+					tmpstr3 = ostrcat(tmpstr3, tmpstr1, 1, 0);					
+					tmpstr3 = ostrcat(tmpstr3, "\n", 1, 0);
+				}
+	
+				free(tmpstr1); tmpstr1 = NULL;
+				free(tmpstr2); tmpstr2 = NULL;
+			}
+			node = node->next;
+		}
+	
+		tmpstr = gettpktmplist(tmpstr3);	
+		free(tmpstr3), tmpstr = NULL;
+	}
+	
+	if(mode == 0)
 	{
-		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">", 1, 0);
-		buf = ostrcat(buf, "<link rel=stylesheet type=text/css href=titan.css><script type=text/javascript src=titan.js></script>", 1, 0);
-		buf = ostrcat(buf, "</head><body class=body id=\"tpkmediainstall\"><center>", 1, 0);
-		buf = ostrcat(buf, "<br>", 1, 0);
-		buf = ostrcat(buf, "<h1>", 1, 0);
-		buf = ostrcat(buf, _("TPK media (media)"), 1, 0);
-		buf = ostrcat(buf, "</h1>", 1, 0);
-		buf = ostrcat(buf, "<br>", 1, 0);
+		if(tmpstr == NULL) buf = ostrcat(buf, _("No Tpk Files Found on /tmp Directory."), 1, 0);
+	}
+	else
+	{
+		if(tmpstr == NULL) buf = ostrcat(buf, _("No Tpk Files Found on Media Devices."), 1, 0);
 	}
 
-//	tmpstr = getabout();
-//	readnewsletter();
-	tmpstr = readfiletomem("/tmp/Service.txt", 0);
-	tmpstr = ostrcat(tmpstr, "\ncomming soon...\n", 1, 0);
-	
-	tmpstr = string_replace_all("\n", "<br>\n", tmpstr, 1);
+	int count, i, max;
+	count = 0;
+	struct splitstr* ret1 = NULL;
+	ret1 = strsplit(tmpstr, "\n", &count);
+	max = count - 1;
 
-	buf = ostrcat(buf, tmpstr, 1, 1);
+	buf = ostrcat(buf, "<table cellpadding=5 cellspacing=5><tr><td nowrap>", 1, 0);
+ 
+	if(ret1 != NULL)
+	{
+		for(i = 0; i <= max; i++)
+		{
+			buf = ostrcat(buf, "<a class=linelink2 href=queryraw?gettpkinstallpath&", 1, 0);
+			buf = ostrcat(buf, ret1[i].part, 1, 0);
+			buf = ostrcat(buf, " target=main>", 1, 0);
+			buf = ostrcat(buf, _(stringreplacecharonce(ret1[i].part, '.', '\0')), 1, 0);
+			buf = ostrcat(buf, "</a>", 1, 0);
+			buf = ostrcat(buf, "</br></br>", 1, 0);
+		}
+	}
+
+	free(tmpstr), tmpstr = NULL;
+	free(ret1), ret1 = NULL;
+
+	buf = string_replace_all("<br>", "<br>\n", buf, 1);
 
 	if(fmt == 0)
 	{
