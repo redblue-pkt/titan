@@ -358,6 +358,7 @@ void screennetwork_adapterext(int mode, char* interface)
 	struct skin* dnsserver1 = getscreennode(network, "dnsserver1");
 	struct skin* dnsserver2 = getscreennode(network, "dnsserver2");
 	struct inetwork* net = getinetworkbydevice(interface);
+	struct skin* wol = getscreennode(network, "wol");
 
 	struct skin* tmp = NULL;
 
@@ -389,6 +390,15 @@ void screennetwork_adapterext(int mode, char* interface)
 	addchoicebox(type, "1", _("dhcp"));
 	addchoicebox(type, "0", _("static"));
 	addchoicebox(type, "2", _("off"));
+	
+	addchoicebox(wol, "0", _("disable"));
+	addchoicebox(wol, "1", _("enable"));
+	setchoiceboxselection(wol, getconfig("wol", NULL));
+		
+	if(ostrcmp(interface, "eth0") != 0 || file_exist("/proc/stb/fp/wol") == 0)
+		wol->hidden = YES;
+	else
+		wol->hidden = NO;
 
 	if(net->type == 1)
 	{
@@ -474,6 +484,15 @@ void screennetwork_adapterext(int mode, char* interface)
 
 	if(save == 1)
 	{
+		if(ostrcmp(interface, "eth0") == 0 && file_exist("/proc/stb/fp/wol") != 0)
+		{
+			addconfig("wol",wol->ret);
+			if(getconfigint("wol", NULL) == 1)
+				system("echo enable > /proc/stb/fp/wol");
+			else
+				system("echo disable > /proc/stb/fp/wol");
+		}
+		
 		debug(50, "save settings");
 		debug(50, "type: %i", tmp_type);
 		debug(50, "ipaddress: %s", tmp_ipaddress);
