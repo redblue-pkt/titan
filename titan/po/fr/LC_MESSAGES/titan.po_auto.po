@@ -25,16 +25,16 @@ msgstr ""
 #: harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641 harddisk.h:675
 #: harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733 harddisk.h:793
 #: harddisk.h:811 harddisk.h:814 harddisk.h:1046 hbbtv.h:362 httpdfunc.h:1140
-#: httpdfunc.h:3073 httpdfunc.h:5856 hwtest.h:88 hwtest.h:93 hwtest.h:98
-#: hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390
-#: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
-#: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
-#: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626
-#: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:497 infobar.h:619
-#: info.h:27 keyactions.h:290 lcdpearl1.c:49 lcdsamsung.c:101 log.h:46
-#: log.h:48 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
-#: mc_audioplayer.h:333 mc_audioplayer.h:605 mc_audioplayer.h:716
-#: mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
+#: httpdfunc.h:3073 httpdfunc.h:5856 httpdfunc.h:6121 httpdfunc.h:6192
+#: hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113
+#: hwtest.h:206 hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492
+#: hwtest.h:564 hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617
+#: hwtest.h:632 hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685
+#: imdbapi.h:200 imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200
+#: infobar.h:497 infobar.h:619 info.h:27 keyactions.h:290 lcdpearl1.c:49
+#: lcdsamsung.c:101 log.h:46 log.h:48 mboxinfo.c:49 mboxinfo.c:73
+#: mboxinfo.c:77 mboxinfo.c:163 mc_audioplayer.h:333 mc_audioplayer.h:605
+#: mc_audioplayer.h:716 mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
 #: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
 #: mc_main.h:100 mc_main.h:273 mc_main.h:282 mc_mediathek.h:35
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
@@ -131,24 +131,25 @@ msgstr ""
 #: harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641 harddisk.h:675
 #: harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733 harddisk.h:793
 #: harddisk.h:811 harddisk.h:814 harddisk.h:1046 hbbtv.h:362 hello.c:36
-#: httpdfunc.h:1140 httpdfunc.h:3073 httpdfunc.h:5856 hwtest.h:88 hwtest.h:93
-#: hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206
-#: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
-#: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
-#: hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200
-#: imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:497
-#: infobar.h:619 info.h:27 keyactions.h:290 log.h:46 log.h:48 marker.h:215
-#: marker.h:229 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
-#: mc_audioplayer.h:333 mc_audioplayer.h:605 mc_audioplayer.h:716
-#: mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
-#: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
-#: mc_main.h:100 mc_main.h:273 mc_main.h:282 mc_mediathek.h:35
-#: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
-#: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:332
-#: mc_videoplayer.h:749 mc_videoplayer.h:784 mc_videoplayer.h:888
-#: mc_videoplayer.h:904 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
-#: mediadb.h:1477 mediadb.h:2454 mediadbsettings.h:95 menu.h:153 menu.h:208
-#: menu.h:956 menu.h:958 movie4k.h:36 movie4k.h:48 movie4k.h:92 movie4k.h:399
+#: httpdfunc.h:1140 httpdfunc.h:3073 httpdfunc.h:5856 httpdfunc.h:6121
+#: httpdfunc.h:6192 hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103
+#: hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390 hwtest.h:411
+#: hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566 hwtest.h:586
+#: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
+#: hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626 inadyn.h:188
+#: inadyn.h:190 inadyn.h:200 infobar.h:497 infobar.h:619 info.h:27
+#: keyactions.h:290 log.h:46 log.h:48 marker.h:215 marker.h:229 mboxinfo.c:49
+#: mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163 mc_audioplayer.h:333
+#: mc_audioplayer.h:605 mc_audioplayer.h:716 mc_dateibrowser.h:36
+#: mc_global.h:773 mc_global.h:1020 mc_internetbrowser.h:36 mc_main.h:50
+#: mc_main.h:55 mc_main.h:60 mc_main.h:95 mc_main.h:100 mc_main.h:273
+#: mc_main.h:282 mc_mediathek.h:35 mc_pictureplayer.h:100
+#: mc_pictureplayer.h:124 mc_pictureplayer.h:242 mc_pictureplayer.h:368
+#: mc_pictureplayer.h:461 mc_videoplayer.h:332 mc_videoplayer.h:749
+#: mc_videoplayer.h:784 mc_videoplayer.h:888 mc_videoplayer.h:904
+#: mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477
+#: mediadb.h:2454 mediadbsettings.h:95 menu.h:153 menu.h:208 menu.h:956
+#: menu.h:958 movie4k.h:36 movie4k.h:48 movie4k.h:92 movie4k.h:399
 #: movreel.h:30 movreel.h:79 movreel.h:85 movreel.h:91 movreel.h:103
 #: movreel.h:115 movreel.h:166 movreel.h:214 movshare.h:34 movshare.h:78
 #: movshare.h:157 movshare.h:163 myvideo.h:86 networkbrowser.h:944
@@ -558,51 +559,51 @@ msgstr "oui / vzap sans fin"
 #: global.h:6222 global.h:6241 global.h:6411 gmediarender.h:115 harddisk.h:633
 #: harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731
 #: harddisk.h:733 harddisk.h:793 harddisk.h:811 harddisk.h:814 hbbtv.h:362
-#: hello.c:36 httpdfunc.h:1140 httpdfunc.h:5470 httpdfunc.h:5856 hwtest.h:88
-#: hwtest.h:93 hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206
-#: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
-#: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
-#: hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200
-#: imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:497
-#: infobar.h:619 keyactions.h:290 language.h:49 lcdpearl1.c:49
-#: lcdsamsung.c:101 log.h:46 log.h:48 marker.h:215 marker.h:229
-#: mc_audioplayer.h:333 mc_audioplayer.h:605 mc_audioplayer.h:716
-#: mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
-#: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
-#: mc_main.h:100 mc_main.h:273 mc_main.h:282 mc_mediathek.h:35
-#: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
-#: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:332
-#: mc_videoplayer.h:749 mc_videoplayer.h:784 mc_videoplayer.h:888
-#: mc_videoplayer.h:904 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
-#: mediadb.h:1477 mediadbsettings.h:95 menu.h:153 menu.h:208 movie4k.h:36
-#: movie4k.h:48 movie4k.h:92 movie4k.h:399 movreel.h:30 movreel.h:79
-#: movreel.h:85 movreel.h:91 movreel.h:103 movreel.h:115 movreel.h:166
-#: movreel.h:214 movshare.h:34 movshare.h:78 movshare.h:157 movshare.h:163
-#: myvideo.h:86 networkbrowser.h:944 networkbrowser.h:1005
-#: networkbrowser.h:1009 networkbrowser.h:1011 networkbrowser.h:1021
-#: networkbrowser.h:1025 networkbrowser.h:1189 networkbrowser.h:1743
-#: networkbrowser.h:1750 networkbrowser.h:1755 networkbrowser.h:1907
-#: network.h:436 network.h:577 network.h:785 network.h:793 network.h:819
-#: network.h:823 network.h:877 novamov.h:35 novamov.h:80 nowvideo.h:44
-#: nowvideo.h:99 nowvideo.h:105 panel_main.h:29 panel_main.h:135
-#: panel_settings_wizard.h:6 played.h:30 played.h:84 played.h:90 played.h:102
-#: played.h:114 played.h:171 player.h:99 play.h:593 play.h:1265 play.h:1463
-#: play.h:1637 play.h:1648 possetup.h:98 primeshare.h:29 primeshare.h:73
-#: primeshare.h:79 primeshare.h:124 putlocker.h:32 putlocker.h:79
-#: putlocker.h:85 putlocker.h:91 putlocker.h:142 putlocker.h:152
-#: putlocker.h:225 readerconfig.h:343 readerconfig.h:443 readerconfig.h:444
-#: readerconfig.h:488 readerconfig.h:489 record.h:369 record.h:1001
-#: record.h:1188 record.h:1427 record.h:1452 rectimer.h:563 rectimer.h:1217
-#: rectimer.h:1363 rectimer.h:1375 restoredefault.h:10 restoredefault.h:19
-#: restoredefault.h:23 restoredefault.h:32 restoredefault.h:47 rgui.h:30
-#: rgui.h:118 rgui.h:134 rtl2now.h:31 scan.h:1598 scan.h:1600 scan.h:1628
-#: scan.h:1630 scan.h:1640 scan.h:1888 scan.h:1979 scan.h:2345 scart.h:12
-#: scart.h:25 service.h:712 service.h:957 shared.h:29 shared.h:65 shared.h:82
-#: skinadjust.h:200 skinselector.h:218 sock.h:952 softcam.h:403
-#: solarmovie.h:35 solarmovie.h:47 solarmovie.h:304 spinner.h:18
-#: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:84
-#: streamcloud.h:97 streamcloud.h:128 streamcloud.h:167 stream.h:33
-#: system_backup_restore.h:40 system_backup_restore.h:43
+#: hello.c:36 httpdfunc.h:1140 httpdfunc.h:5470 httpdfunc.h:5856
+#: httpdfunc.h:6121 httpdfunc.h:6192 hwtest.h:88 hwtest.h:93 hwtest.h:98
+#: hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390
+#: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
+#: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
+#: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626
+#: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:497 infobar.h:619
+#: keyactions.h:290 language.h:49 lcdpearl1.c:49 lcdsamsung.c:101 log.h:46
+#: log.h:48 marker.h:215 marker.h:229 mc_audioplayer.h:333
+#: mc_audioplayer.h:605 mc_audioplayer.h:716 mc_dateibrowser.h:36
+#: mc_global.h:773 mc_global.h:1020 mc_internetbrowser.h:36 mc_main.h:50
+#: mc_main.h:55 mc_main.h:60 mc_main.h:95 mc_main.h:100 mc_main.h:273
+#: mc_main.h:282 mc_mediathek.h:35 mc_pictureplayer.h:100
+#: mc_pictureplayer.h:124 mc_pictureplayer.h:242 mc_pictureplayer.h:368
+#: mc_pictureplayer.h:461 mc_videoplayer.h:332 mc_videoplayer.h:749
+#: mc_videoplayer.h:784 mc_videoplayer.h:888 mc_videoplayer.h:904
+#: mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477
+#: mediadbsettings.h:95 menu.h:153 menu.h:208 movie4k.h:36 movie4k.h:48
+#: movie4k.h:92 movie4k.h:399 movreel.h:30 movreel.h:79 movreel.h:85
+#: movreel.h:91 movreel.h:103 movreel.h:115 movreel.h:166 movreel.h:214
+#: movshare.h:34 movshare.h:78 movshare.h:157 movshare.h:163 myvideo.h:86
+#: networkbrowser.h:944 networkbrowser.h:1005 networkbrowser.h:1009
+#: networkbrowser.h:1011 networkbrowser.h:1021 networkbrowser.h:1025
+#: networkbrowser.h:1189 networkbrowser.h:1743 networkbrowser.h:1750
+#: networkbrowser.h:1755 networkbrowser.h:1907 network.h:436 network.h:577
+#: network.h:785 network.h:793 network.h:819 network.h:823 network.h:877
+#: novamov.h:35 novamov.h:80 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105
+#: panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6 played.h:30
+#: played.h:84 played.h:90 played.h:102 played.h:114 played.h:171 player.h:99
+#: play.h:593 play.h:1265 play.h:1463 play.h:1637 play.h:1648 possetup.h:98
+#: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
+#: putlocker.h:32 putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
+#: putlocker.h:152 putlocker.h:225 readerconfig.h:343 readerconfig.h:443
+#: readerconfig.h:444 readerconfig.h:488 readerconfig.h:489 record.h:369
+#: record.h:1001 record.h:1188 record.h:1427 record.h:1452 rectimer.h:563
+#: rectimer.h:1217 rectimer.h:1363 rectimer.h:1375 restoredefault.h:10
+#: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
+#: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:31
+#: scan.h:1598 scan.h:1600 scan.h:1628 scan.h:1630 scan.h:1640 scan.h:1888
+#: scan.h:1979 scan.h:2345 scart.h:12 scart.h:25 service.h:712 service.h:957
+#: shared.h:29 shared.h:65 shared.h:82 skinadjust.h:200 skinselector.h:218
+#: sock.h:952 softcam.h:403 solarmovie.h:35 solarmovie.h:47 solarmovie.h:304
+#: spinner.h:18 stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74
+#: streamcloud.h:84 streamcloud.h:97 streamcloud.h:128 streamcloud.h:167
+#: stream.h:33 system_backup_restore.h:40 system_backup_restore.h:43
 #: system_backup_restore.h:80 system_backup_restore.h:82 system_update.h:257
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 timeshift.h:113 timeshift.h:155 timeshift.h:162
@@ -1472,11 +1473,11 @@ msgstr ""
 msgid "Tpk Install Info - Install ERROR"
 msgstr ""
 
-#: extensions.h:257 httpdfunc.h:5856 httpdfunc.h:5858
+#: extensions.h:257 httpdfunc.h:5856 httpdfunc.h:5858 httpdfunc.h:6123
 msgid "TPK Install done, your system will reboot !"
 msgstr ""
 
-#: extensions.h:281
+#: extensions.h:281 httpdfunc.h:5991
 msgid "Tpk Remove - select file"
 msgstr "Ipk installation - Sélectionne un fichier"
 
@@ -1488,15 +1489,15 @@ msgstr ""
 msgid "Tpk Remove Info"
 msgstr ""
 
-#: extensions.h:300
+#: extensions.h:300 httpdfunc.h:6071
 msgid "Tpk Remove Info - Remove OK"
 msgstr ""
 
-#: extensions.h:307
+#: extensions.h:307 httpdfunc.h:6075
 msgid "Tpk Remove Info - Remove ERROR"
 msgstr ""
 
-#: extensions.h:314
+#: extensions.h:314 httpdfunc.h:6121
 msgid "TPK Remove done, your system will reboot !"
 msgstr ""
 
@@ -1515,19 +1516,19 @@ msgstr ""
 msgid "TPK Tmp Install done, your system will reboot !"
 msgstr ""
 
-#: extensions.h:434 extensions.h:438
+#: extensions.h:434 extensions.h:438 httpdfunc.h:6160 httpdfunc.h:6172
 msgid "Tpk Update Info - Update ERROR"
 msgstr ""
 
-#: extensions.h:434
+#: extensions.h:434 httpdfunc.h:6163
 msgid "Can't get all TPK index !"
 msgstr ""
 
-#: extensions.h:438
+#: extensions.h:438 httpdfunc.h:6175
 msgid "Can't update all packages !"
 msgstr ""
 
-#: extensions.h:446
+#: extensions.h:446 httpdfunc.h:6192
 msgid "TPK Upgrade done, your system will reboot !"
 msgstr ""
 
@@ -2373,7 +2374,7 @@ msgstr ""
 msgid "No Tpk Sections Found."
 msgstr ""
 
-#: httpdfunc.h:5589 httpdfunc.h:5743
+#: httpdfunc.h:5589 httpdfunc.h:5743 httpdfunc.h:6004
 msgid "No Tpk Files Found."
 msgstr ""
 
@@ -2385,36 +2386,35 @@ msgstr ""
 msgid "TPK tmp (tmp)"
 msgstr "TPK tmp"
 
-#: httpdfunc.h:5893 httpdfunc.h:5994 skin_default_skin.xml.h:677
-#: webif_system_extensions.h:5
+#: httpdfunc.h:5893 skin_default_skin.xml.h:677 webif_system_extensions.h:5
 msgid "TPK media (media)"
 msgstr ""
 
-#: httpdfunc.h:5940
+#: httpdfunc.h:5936
 msgid "No Tpk Files Found on /tmp Directory."
 msgstr ""
 
-#: httpdfunc.h:5944
+#: httpdfunc.h:5940
 msgid "No Tpk Files Found on Media Devices."
 msgstr ""
 
-#: httpdfunc.h:6029 skin_default_skin.xml.h:678 webif_system_extensions.h:6
-msgid "TPK remove"
-msgstr "Supprimer TPK "
+#: httpdfunc.h:6097 httpdfunc.h:6107
+msgid "Remove Log:"
+msgstr ""
 
-#: httpdfunc.h:6064 skin_default_skin.xml.h:680 webif_system_extensions.h:2
-msgid "TPK upgrade (online)"
-msgstr "Mise a jour USB(online)"
+#: httpdfunc.h:6182
+msgid "Tpk Update Info - Update OK"
+msgstr ""
 
-#: httpdfunc.h:6097 skin_default_skin.xml.h:572 webif_info.h:1
+#: httpdfunc.h:6221 skin_default_skin.xml.h:572 webif_info.h:1
 msgid "Service"
 msgstr ""
 
-#: httpdfunc.h:6132 skin_default_skin.xml.h:639 webif_system.h:3
+#: httpdfunc.h:6256 skin_default_skin.xml.h:639 webif_system.h:3
 msgid "System Backup"
 msgstr ""
 
-#: httpdfunc.h:6167 skin_default_skin.xml.h:577 webif_system.h:4
+#: httpdfunc.h:6291 skin_default_skin.xml.h:577 webif_system.h:4
 msgid "Settings backup/restore"
 msgstr "Réglages sauvegarde/restauration"
 
@@ -8312,6 +8312,14 @@ msgstr "Installion TPK online "
 #: skin_default_skin.xml.h:676
 msgid "Tpk Install - select install medium"
 msgstr "TPK installation - Sélectionne un fichier"
+
+#: skin_default_skin.xml.h:678 webif_system_extensions.h:6
+msgid "TPK remove"
+msgstr "Supprimer TPK "
+
+#: skin_default_skin.xml.h:680 webif_system_extensions.h:2
+msgid "TPK upgrade (online)"
+msgstr "Mise a jour USB(online)"
 
 #: skin_default_skin.xml.h:681
 msgid "Transmission"
