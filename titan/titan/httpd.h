@@ -315,12 +315,12 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 		buf = webgettpkinstallpath(param, fmt);
 	else if(ostrcmp(query, "gettpktmplist") == 0 && param != NULL)
 		buf = webgettpktmplist(param, fmt);
-	else if(ostrcmp(query, "gettpkmediainstall") == 0)
-		buf = webgettpkmediainstall(fmt);
+	else if(ostrcmp(query, "gettpkremove") == 0 && param != NULL)
+		buf = webgettpkremove(param, fmt);
+	else if(ostrcmp(query, "gettpkremovelist") == 0)
+		buf = webgettpkremovelist(fmt);
 	else if(ostrcmp(query, "gettpkupgrade") == 0)
 		buf = webgettpkupgrade(fmt);
-	else if(ostrcmp(query, "gettpkremove") == 0)
-		buf = webgettpkremove(fmt);
 	else if(ostrcmp(query, "getbackup") == 0)
 		buf = webgetbackup(fmt);
 	else if(ostrcmp(query, "getrestore") == 0)
