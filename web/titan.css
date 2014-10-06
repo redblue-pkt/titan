@@ -72,3 +72,5 @@ td.coldate  {text-align: center;}
 td.coltime  {text-align: center;}
 td.linkimage  {text-align: center;}
 tr.channelname {text-align: center;}
+.channelname {font-size: 25px}
+.tabledesc {font-weight: bold}
