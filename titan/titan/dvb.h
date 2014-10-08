@@ -426,6 +426,11 @@ unsigned char* dvbgetpmt(struct dvbdev* fenode, unsigned char* patbuf, int servi
 		return NULL;
 	}
 	
+	if(fenode->fedmxsource > DMX_SOURCE_DVR0)
+	{ 
+		dmxsetsource(dmxnode, DMX_SOURCE_DVR0);
+	}
+	
 	dmxsetsource(dmxnode, fenode->fedmxsource);
 	dmxsetfilter(dmxnode, *pmtpid, 0, 2);
 
