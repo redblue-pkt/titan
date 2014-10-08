@@ -592,7 +592,6 @@ struct bouquet* sortbouquet(struct bouquet **nodeaddr)
 	}
 
 	status.writebouquet = 1;
-	debug(1000, "out");
 	return *nodeaddr;
 }
 
@@ -703,7 +702,6 @@ int writebouquet(const char *filename, struct bouquet *node)
 	}
 
 	fclose(fd);
-	debug(1000, "out");
 	return 0;
 }
 
