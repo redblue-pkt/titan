@@ -10062,236 +10062,240 @@ msgid "Samba"
 msgstr ""
 
 #: tpk_description.h:124
-msgid "Sat: Bulldog Settings 3x Sat 28.03.2014"
+msgid "Samba Server"
 msgstr ""
 
 #: tpk_description.h:125
-msgid "Sat: matze70 Settings Astra 19.2"
+msgid "Sat: Bulldog Settings 3x Sat 28.03.2014"
 msgstr ""
 
 #: tpk_description.h:126
-msgid "Sat: Settings matze70 neue Design Astra 19.2"
+msgid "Sat: matze70 Settings Astra 19.2"
 msgstr ""
 
 #: tpk_description.h:127
-msgid "Sat: uljanow Settings Sat 19.2 und 13.0"
+msgid "Sat: Settings matze70 neue Design Astra 19.2"
 msgstr ""
 
 #: tpk_description.h:128
-msgid ""
-"Screensaver FC Bayern pictures for MediaCenter Audioplayer and Radioplayer."
+msgid "Sat: uljanow Settings Sat 19.2 und 13.0"
 msgstr ""
 
 #: tpk_description.h:129
 msgid ""
-"Screensaver Hot Girls pictures for MediaCenter Audioplayer and Radioplayer."
+"Screensaver FC Bayern pictures for MediaCenter Audioplayer and Radioplayer."
 msgstr ""
 
 #: tpk_description.h:130
-msgid "Screensaver pictures for MediaCenter Audioplayer and Radioplayer."
+msgid ""
+"Screensaver Hot Girls pictures for MediaCenter Audioplayer and Radioplayer."
 msgstr ""
 
 #: tpk_description.h:131
-msgid "scriptexec Plugin"
+msgid "Screensaver pictures for MediaCenter Audioplayer and Radioplayer."
 msgstr ""
 
 #: tpk_description.h:132
-msgid "Settings 19.2e Astra 13.0e Hotbird 0.8w Thor 23.5w Astra KabelD"
+msgid "scriptexec Plugin"
 msgstr ""
 
 #: tpk_description.h:133
-msgid "Skin 0Acht5Zehn in black for tiTan. Please use black Picons."
+msgid "Settings 19.2e Astra 13.0e Hotbird 0.8w Thor 23.5w Astra KabelD"
 msgstr ""
 
 #: tpk_description.h:134
-msgid "Skin 0Acht5Zehn in grey for tiTan. Please use grey Picons."
+msgid "Skin 0Acht5Zehn in black for tiTan. Please use black Picons."
 msgstr ""
 
 #: tpk_description.h:135
-msgid "Skin 0Acht5Zehn in white for tiTan. Please use white Picons."
+msgid "Skin 0Acht5Zehn in grey for tiTan. Please use grey Picons."
 msgstr ""
 
 #: tpk_description.h:136
-msgid "Skin tobayer01 for tiTan. Please use grey Picons."
+msgid "Skin 0Acht5Zehn in white for tiTan. Please use white Picons."
 msgstr ""
 
 #: tpk_description.h:137
-msgid "Skin ufs912 for tiTan. Use white Picons."
+msgid "Skin tobayer01 for tiTan. Please use grey Picons."
 msgstr ""
 
 #: tpk_description.h:138
-msgid "smartTV Skin. Please use alternate Picons."
+msgid "Skin ufs912 for tiTan. Use white Picons."
 msgstr ""
 
 #: tpk_description.h:139
-msgid "Social Network Client for Facebook."
+msgid "smartTV Skin. Please use alternate Picons."
 msgstr ""
 
 #: tpk_description.h:140
-msgid "Stable Version of OSCam V13unten"
+msgid "Social Network Client for Facebook."
 msgstr ""
 
 #: tpk_description.h:141
-msgid "stock Plugin"
+msgid "Stable Version of OSCam V13unten"
 msgstr ""
 
 #: tpk_description.h:142
+msgid "stock Plugin"
+msgstr ""
+
+#: tpk_description.h:143
 msgid "streaminfo Plugin"
 msgstr ""
 
-#: tpk_description.h:143 tpk_showname.h:188
+#: tpk_description.h:144 tpk_showname.h:188
 msgid "Sudoku"
 msgstr ""
 
-#: tpk_description.h:144
+#: tpk_description.h:145
 msgid "Tastensperre Plugin - entsperren mit rot/rot/gruen"
 msgstr ""
 
-#: tpk_description.h:145
+#: tpk_description.h:146
 msgid "Titan Mediacenter"
 msgstr ""
 
-#: tpk_description.h:146
+#: tpk_description.h:147
 msgid "TiThek the Multimedia-thek."
 msgstr ""
 
-#: tpk_description.h:147
+#: tpk_description.h:148
 msgid "TMDb Movie Database Plugin"
 msgstr ""
 
-#: tpk_description.h:148
+#: tpk_description.h:149
 msgid "Transparent Picons for tiTan 19_2 (dark skins)."
 msgstr ""
 
-#: tpk_description.h:149
+#: tpk_description.h:150
 msgid "Transparent Picons for tiTan. (dark Skins)"
 msgstr ""
 
-#: tpk_description.h:150
+#: tpk_description.h:151
 msgid "Transparent Picons for tiTan (dark skins) - Astra 23.5E."
 msgstr ""
 
-#: tpk_description.h:151
+#: tpk_description.h:152
 msgid "Transparent Picons for tiTan (dark skins) - Astra 28.2E."
 msgstr ""
 
-#: tpk_description.h:152
+#: tpk_description.h:153
 msgid "Transparent Picons for tiTan (dark skins) - Hotbird 13.0E."
 msgstr ""
 
-#: tpk_description.h:153
+#: tpk_description.h:154
 msgid "Transparent small black-Skins 19,2 swap Picons for tiTan."
 msgstr ""
 
-#: tpk_description.h:154
+#: tpk_description.h:155
 msgid "Transparent XPicons - Astra 19.2E"
 msgstr ""
 
-#: tpk_description.h:155
+#: tpk_description.h:156
 msgid "Transparent XPicons - Astra 23.5E"
 msgstr ""
 
-#: tpk_description.h:156
+#: tpk_description.h:157
 msgid "Transparent XPicons - Astra 28.2E"
 msgstr ""
 
-#: tpk_description.h:157
+#: tpk_description.h:158
 msgid "Transparent XPicons - Hotbird 13.0E"
 msgstr ""
 
-#: tpk_description.h:158
+#: tpk_description.h:159
 msgid "Transparent XPicons - small - Astra 19.2E"
 msgstr ""
 
-#: tpk_description.h:159
+#: tpk_description.h:160
 msgid "Treiber fuer Pearl LCD V4.0"
 msgstr ""
 
-#: tpk_description.h:160
+#: tpk_description.h:161
 msgid "Treiber fuer Pearl LCD V5.0"
 msgstr ""
 
-#: tpk_description.h:161
+#: tpk_description.h:162
 msgid "Treiber fuer Samsung LCD"
 msgstr ""
 
-#: tpk_description.h:162
+#: tpk_description.h:163
 msgid "UPNP Media Render"
 msgstr ""
 
-#: tpk_description.h:163
+#: tpk_description.h:164
 msgid "usbreset Plugin"
 msgstr ""
 
-#: tpk_description.h:164
+#: tpk_description.h:165
 msgid "weather Plugin"
 msgstr ""
 
-#: tpk_description.h:165
+#: tpk_description.h:166
 msgid "Webbrowser Plugin"
 msgstr ""
 
-#: tpk_description.h:166
+#: tpk_description.h:167
 msgid "Werbezapper"
 msgstr ""
 
-#: tpk_description.h:167
+#: tpk_description.h:168
 msgid "White 3D Picons for tiTan."
 msgstr ""
 
-#: tpk_description.h:168
+#: tpk_description.h:169
 msgid "White 3D Picons for tiTan - Astra 23.5E."
 msgstr ""
 
-#: tpk_description.h:169
+#: tpk_description.h:170
 msgid "White 3D Picons for tiTan - Astra 28.2E."
 msgstr ""
 
-#: tpk_description.h:170
+#: tpk_description.h:171
 msgid "White 3D Picons for tiTan - Hotbird 13.0E."
 msgstr ""
 
-#: tpk_description.h:171
+#: tpk_description.h:172
 msgid "White70 Picons for tiTan."
 msgstr ""
 
-#: tpk_description.h:172
+#: tpk_description.h:173
 msgid "White70 Picons for tiTan - Astra 23.5E."
 msgstr ""
 
-#: tpk_description.h:173
+#: tpk_description.h:174
 msgid "White70 Picons for tiTan - Astra 28.2E"
 msgstr ""
 
-#: tpk_description.h:174
+#: tpk_description.h:175
 msgid "White70 Picons for tiTan - Hotbird 13.0E."
 msgstr ""
 
-#: tpk_description.h:175
+#: tpk_description.h:176
 msgid "wireless 8192cu.ko model"
 msgstr ""
 
-#: tpk_description.h:176
+#: tpk_description.h:177
 msgid "wireless modul 8712u.ko"
 msgstr ""
 
-#: tpk_description.h:177
+#: tpk_description.h:178
 msgid "wireless modul rt2870sta.ko"
 msgstr ""
 
-#: tpk_description.h:178
+#: tpk_description.h:179
 msgid "wireless modul rt3070sta.ko"
 msgstr ""
 
-#: tpk_description.h:179
+#: tpk_description.h:180
 msgid "wireless modul rt5370sta.ko"
 msgstr ""
 
-#: tpk_description.h:180
+#: tpk_description.h:181
 msgid "WM2014 Plugin"
 msgstr ""
 
-#: tpk_description.h:181
+#: tpk_description.h:182
 msgid "xupnpd Medien Server (upnp)"
 msgstr ""
 
