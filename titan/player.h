@@ -1228,7 +1228,7 @@ char** playergettracklist(int type)
 		}
 	}
 #endif
-/*
+
 //////////////////////////////NEUER CODE //////////////////////////////
 #ifdef EPLAYER4
 	char ** tmpTrackList[2][100];
@@ -1244,7 +1244,7 @@ char** playergettracklist(int type)
 		switch(type)
 		{
 			case 1:
-				for(i = 0; i < n_audio; i++)
+				for(i = 0; i < n_audio - 1; i++)
 				{
 					GstTagList *tags = NULL;
 					gchar *g_codec = NULL, *g_lang = NULL;
@@ -1259,15 +1259,15 @@ char** playergettracklist(int type)
 					{
 						if(gst_tag_list_get_string(tags, GST_TAG_AUDIO_CODEC, &g_codec))
 						{
-							printf("Audio Codec: %s", g_codec);
+							printf("Audio Codec: %s\n", g_codec);
 							TrackList[i * 2] = ostrcat(g_codec, NULL, 0, 0);
-							g_free(g_codec);
+							g_free(g_codec); g_codec = NULL;
 						}
 						if(gst_tag_list_get_string(tags, GST_TAG_LANGUAGE_CODE, &g_lang))
 						{
-							printf("Audio Lang: %s", g_lang);
+							printf("Audio Lang: %s\n", g_lang);
 							TrackList[(i * 2) + 1] = ostrcat(g_lang, NULL, 0, 0);
-							g_free(g_lang);
+							g_free(g_lang); g_lang = NULL;
 						}
 						gst_tag_list_free(tags);
 					}
@@ -1289,15 +1289,15 @@ char** playergettracklist(int type)
 					{
 						if(gst_tag_list_get_string(tags, GST_TAG_SUBTITLE_CODEC, &g_codec));
 						{
-							printf("SubTitle Codec: %s", g_codec);
+							printf("SubTitle Codec: %s\n", g_codec);
 							TrackList[i * 2] = ostrcat(g_codec, NULL, 0, 0);
-							g_free(g_codec);
+							g_free(g_codec); g_codec = NULL;
 						}
 						if(gst_tag_list_get_string(tags, GST_TAG_LANGUAGE_CODE, &g_lang))
 						{
-							printf("SubTitle Lang: %s", g_lang);
+							printf("SubTitle Lang: %s\n", g_lang);
 							TrackList[(i * 2) + 1] = ostrcat(g_lang, NULL, 0, 0);
-							g_free(g_lang);
+							g_free(g_lang); g_lang = NULL;
 						}
 						gst_tag_list_free(tags);
 					}
@@ -1319,15 +1319,15 @@ char** playergettracklist(int type)
 					{
 						if(gst_tag_list_get_string(tags, GST_TAG_VIDEO_CODEC, &g_codec));
 						{
-							printf("Video Codec: %s", g_codec);
+							printf("Video Codec: %s\n", g_codec);
 							TrackList[i * 2] = ostrcat(g_codec, NULL, 0, 0);
-							g_free(g_codec);
+							g_free(g_codec); g_codec = NULL;
 						}
 						if(gst_tag_list_get_string(tags, GST_TAG_LANGUAGE_CODE, &g_lang))
 						{
-							printf("Video Lang: %s", g_lang);
+							printf("Video Lang: %s\n", g_lang);
 							TrackList[(i * 2) + 1] = ostrcat(g_lang, NULL, 0, 0);
-							g_free(g_lang);
+							g_free(g_lang); g_lang = NULL;
 						}
 						gst_tag_list_free(tags);
 					}
@@ -1336,7 +1336,7 @@ char** playergettracklist(int type)
 	}
 #endif
 //////////////////////////////NEUER CODE //////////////////////////////
-*/
+
 	return TrackList;
 }
 
