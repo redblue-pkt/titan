@@ -1244,8 +1244,10 @@ char** playergettracklist(int type)
 		switch(type)
 		{
 			case 1:
+printf("1: n_audio=%d\n", n_audio);
 				for(i = 0; i < n_audio - 1; i++)
 				{
+printf("2: i=%d\n", i);
 					GstTagList *tags = NULL;
 					gchar *g_codec = NULL, *g_lang = NULL;
 					
@@ -1259,17 +1261,27 @@ char** playergettracklist(int type)
 					{
 						if(gst_tag_list_get_string(tags, GST_TAG_AUDIO_CODEC, &g_codec))
 						{
+printf("3:\n");
 							printf("Audio Codec: %s\n", g_codec);
+printf("4:\n");
 							TrackList[i * 2] = ostrcat(g_codec, NULL, 0, 0);
+printf("5:\n");
 							g_free(g_codec); g_codec = NULL;
+printf("6:\n");
 						}
 						if(gst_tag_list_get_string(tags, GST_TAG_LANGUAGE_CODE, &g_lang))
 						{
+printf("7:\n");
 							printf("Audio Lang: %s\n", g_lang);
+printf("8:\n");
 							TrackList[(i * 2) + 1] = ostrcat(g_lang, NULL, 0, 0);
+printf("9:\n");
 							g_free(g_lang); g_lang = NULL;
+printf("10:\n");
 						}
+printf("11:\n");
 						gst_tag_list_free(tags);
+printf("12:\n");
 					}
 				}
 				break;
