@@ -3,7 +3,7 @@ msgid "System-Info"
 msgstr ""
 
 #: about.h:9 ard.h:31 autotimer.c:537 autotimer.c:543 autotimer.c:568
-#: autotimer.c:575 autotimer.c:603 avsettings.h:263 betarobot.h:57
+#: autotimer.c:575 autotimer.c:603 avsettings.h:271 betarobot.h:57
 #: bgdownload.h:176 blindscanadjust.h:25 callmon_main.h:39 channellist.h:913
 #: channellist.h:915 channellist.h:920 channellist.h:922 channellist.h:1006
 #: divxstage.h:36 divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336
@@ -109,7 +109,7 @@ msgid "OK"
 msgstr "Ok"
 
 #: about.h:9 ard.h:31 autotimer.c:537 autotimer.c:543 autotimer.c:568
-#: autotimer.c:575 autotimer.c:603 avsettings.h:263 betarobot.h:57
+#: autotimer.c:575 autotimer.c:603 avsettings.h:271 betarobot.h:57
 #: bgdownload.h:176 blindscanadjust.h:25 channellist.h:913 channellist.h:915
 #: channellist.h:920 channellist.h:922 channellist.h:1006 divxstage.h:36
 #: divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336 dlna.h:345
@@ -222,8 +222,8 @@ msgstr "Exit"
 #: adjust.h:161 adjust.h:165 adjust.h:182 adjust.h:186 adjust.h:194
 #: adjust.h:198 adjust.h:202 adjust.h:208 adjust.h:212 adjust.h:219
 #: adjust.h:223 adjust.h:227 adjust.h:233 adjust.h:239 adjust.h:278
-#: autotimer.c:453 autotimer.c:486 avsettings.h:152 avsettings.h:184
-#: avsettings.h:188 blindscanadjust.h:150 blindscanadjust.h:154
+#: autotimer.c:453 autotimer.c:486 avsettings.h:156 avsettings.h:192
+#: avsettings.h:196 blindscanadjust.h:150 blindscanadjust.h:154
 #: blindscanadjust.h:158 blindscanadjust.h:187 blindscanadjust.h:191
 #: dlna.h:276 epgsettings.h:134 epgsettings.h:187 epgsettings.h:196
 #: epgsettings.h:200 epgsettings.h:205 epgsettings.h:210 httpdfunc.h:3626
@@ -289,8 +289,8 @@ msgstr "EPG Canale"
 #: adjust.h:83 adjust.h:97 adjust.h:122 adjust.h:152 adjust.h:162 adjust.h:183
 #: adjust.h:187 adjust.h:195 adjust.h:199 adjust.h:203 adjust.h:209
 #: adjust.h:213 adjust.h:220 adjust.h:224 adjust.h:228 adjust.h:234
-#: adjust.h:238 autotimer.c:454 autotimer.c:487 avsettings.h:153
-#: avsettings.h:185 blindscanadjust.h:151 blindscanadjust.h:155
+#: adjust.h:238 autotimer.c:454 autotimer.c:487 avsettings.h:157
+#: avsettings.h:193 blindscanadjust.h:151 blindscanadjust.h:155
 #: blindscanadjust.h:159 blindscanadjust.h:188 blindscanadjust.h:192
 #: dlna.h:277 epgsettings.h:135 epgsettings.h:188 epgsettings.h:197
 #: httpdfunc.h:3671 httpdfunc.h:3723 httpdfunc.h:3874 httpdfunc.h:4121
@@ -542,7 +542,7 @@ msgstr ""
 msgid "yes / vzap endless"
 msgstr ""
 
-#: ard.h:31 avsettings.h:263 betarobot.h:57 bgdownload.h:176
+#: ard.h:31 avsettings.h:271 betarobot.h:57 bgdownload.h:176
 #: blindscanadjust.h:25 callmon_main.h:39 channellist.h:913 channellist.h:915
 #: channellist.h:920 channellist.h:922 channellist.h:1006 divxstage.h:36
 #: divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336 dlna.h:345
@@ -731,7 +731,7 @@ msgstr ""
 msgid "on"
 msgstr "ON"
 
-#: avsettings.h:263 videomode.h:60
+#: avsettings.h:271 videomode.h:60
 msgid "Is this Videomode ok ?"
 msgstr "E Questo Videomode ok?"
 
