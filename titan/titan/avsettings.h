@@ -87,10 +87,14 @@ void screenavsettings(int flag)
 
 	changeinput(playerstart, "30\n40\n50\n60\n70\n80\n90\n100\n10\n20");
 	setchoiceboxselection(playerstart, getconfig("vol_playerstart", NULL));
-
+#ifdef MIPSEL
+		playerstart->hidden = YES;
+#endif
 	changeinput(playerstop, "70\n80\n90\n100\n10\n20\n30\n40\n50\n60");
 	setchoiceboxselection(playerstop, getconfig("vol_playerstop", NULL));
-
+#ifdef MIPSEL
+		playerstop->hidden = YES;
+#endif
 	ret = getpolicychoices();
 	changeinput(policy, ret);
 	free(ret); ret = NULL;
@@ -173,6 +177,10 @@ void screenavsettings(int flag)
 	
 	changeinput(volautochangevalue, "0\n5\n10\n15\n20\n25\n30\n35\n40\n45\n50\n55\n60\n65\n70\n75");
 	setchoiceboxselection(volautochangevalue, getconfig("volautochangevalue", NULL));
+
+#ifdef MIPSEL
+		volautochangevalue->hidden = YES;
+#endif
 
 	ret = getmode3dchoices();
 	changeinput(mode3d, ret);
