@@ -12648,6 +12648,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid "Scan Config"
-#~ msgstr "Config Sat"
