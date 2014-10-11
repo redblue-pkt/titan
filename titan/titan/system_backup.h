@@ -15,7 +15,7 @@ void screensystem_backup()
 	infotext = _("Backup to /tmp or /var/backup. If the free memory too small can a usb device will never use.\nThere must be a folder backup.");
 
 	changetext(info, infotext);
-	changetitle(backup, _("Create Backup"));
+//	changetitle(backup, _("Create Backup"));
 
 	addscreenrc(backup, listbox);
 
