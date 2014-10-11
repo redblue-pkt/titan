@@ -7419,7 +7419,7 @@ msgstr "Hier können Sie Ihre Sprache einstellen"
 
 #: skin_default_skin.xml.h:320
 msgid ""
-"Here you can set your Manual Channel search options. Very important, before "
+"Here you can set your manuel Channel search options. Very important, before "
 "you start looking for a channel must be set to its tuner tuner settings."
 msgstr ""
 
