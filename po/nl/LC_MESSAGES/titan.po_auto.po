@@ -8843,10 +8843,6 @@ msgstr ""
 "Backup wordt opgeslagen in /tmp\n"
 "Vanaf daar veilig stellen naar uw PC m.b.v. van FTP"
 
-#: system_backup.h:18
-msgid "Create Backup"
-msgstr "Maak back-up"
-
 #: system_backup_restore.h:15
 msgid ""
 "Press -restore- and your saved settings will be restored from your "
@@ -12814,3 +12810,6 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Zapback is reeds actief... Stoppen?"
+
+#~ msgid "Create Backup"
+#~ msgstr "Maak back-up"
