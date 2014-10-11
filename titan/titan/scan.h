@@ -1843,7 +1843,13 @@ void screenscanconfig(int flag)
 	int inetworkscan = -1, ionlyfree = -1, iclear = -1, iblindscan = -1, ichangename = -1;
 	int ifavtype = -1, iemptybouquet = -1, iunusedbouquetchannels = -1;
 	int i = 0, treffer = 0, tunercount = 0;
-	struct skin* scan = getscreen("manualscan");
+	
+	struct skin* scan = NULL;
+	if(flag == 1)
+		struct skin* scan = getscreen("autoscan");
+	else
+		struct skin* scan = getscreen("manualscan");
+
 	struct skin* listbox = getscreennode(scan, "listbox");
 	struct skin* tuner = getscreennode(scan, "tuner");
 	struct skin* scantype = getscreennode(scan, "scantype");
