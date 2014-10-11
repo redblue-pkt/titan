@@ -8888,10 +8888,6 @@ msgstr ""
 "harddisk/USB stick.\n"
 "A folder named 'backup' must exist."
 
-#: system_backup.h:18
-msgid "Create Backup"
-msgstr ""
-
 #: system_backup_restore.h:15
 msgid ""
 "Press -restore- and your saved settings will be restored from your "

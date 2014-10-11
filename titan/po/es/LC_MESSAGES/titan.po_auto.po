@@ -8946,10 +8946,6 @@ msgstr ""
 "puede utilizar una tarjeta de disco duro/USB stick.\n"
 "Una carpeta llamada copia de seguridad debe existir."
 
-#: system_backup.h:18
-msgid "Create Backup"
-msgstr "Guardar Imagen"
-
 #: system_backup_restore.h:15
 msgid ""
 "Press -restore- and your saved settings will be restored from your "
@@ -12952,3 +12948,6 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Zap atras esta activado. Desea detener?"
+
+#~ msgid "Create Backup"
+#~ msgstr "Guardar Imagen"
