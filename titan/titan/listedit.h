@@ -46,6 +46,11 @@ int screenlistedit(int list, struct channel* chnode, void* aktlist)
 		editmode->hidden = NO;
 	}
 
+	if(list == PROVIDERLIST)
+	{
+		sortmode->hidden = NO;
+	}
+
 	if(list == ALLCHANNEL || list == SATCHANNEL || list == PROVIDERCHANNEL || list == AZCHANNEL || list == BOUQUETCHANNEL)
 	{
 		if(chnode != NULL)
@@ -130,6 +135,8 @@ int screenlistedit(int list, struct channel* chnode, void* aktlist)
 						recalcbouquetnr();
 					}
 				}
+				else if(list == PROVIDERLIST)
+					sortprovider();
 				else
 					sortchannel();
 				clearscreen(load);
