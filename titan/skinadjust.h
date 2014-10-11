@@ -88,7 +88,7 @@ void screenskinadjust()
 		if(checkscreen("OLED_nemesis_v6") != status.skinerr)
 			addchoicebox(oled_sel, "OLED_nemesis_v6","v6");
 		
-		setchoiceboxselection(listboxselecttype, getskinconfig("OLED_nemesis", NULL));
+		setchoiceboxselection(oled_sel, getskinconfig("OLED_nemesis", NULL));
 	}
 	else
 		oled_sel->hidden = YES;
