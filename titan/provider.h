@@ -470,6 +470,84 @@ void freeprovider()
 	}
 }
 
+struct provider* sortprovider()
+{
+	struct provider* tmpnode[10] = {0};
+	struct provider* node = provider, *tnode = NULL;
+	struct provider *next = NULL, *prev = NULL;
+	struct provider **tnodeaddr = NULL;
+	
+	if(node == NULL) return NULL;
+
+	while(node != NULL)
+	{
+		next = node->next;
+		prev = NULL;
+
+		if(strcasecmp("c", node->name) > 0) {tnode = tmpnode[0]; tnodeaddr = &tmpnode[0];}
+		else if(strcasecmp("f", node->name) > 0) {tnode = tmpnode[1]; tnodeaddr = &tmpnode[1];}
+		else if(strcasecmp("i", node->name) > 0) {tnode = tmpnode[2]; tnodeaddr = &tmpnode[2];}
+		else if(strcasecmp("l", node->name) > 0) {tnode = tmpnode[3]; tnodeaddr = &tmpnode[3];}
+		else if(strcasecmp("o", node->name) > 0) {tnode = tmpnode[4]; tnodeaddr = &tmpnode[4];}
+		else if(strcasecmp("r", node->name) > 0) {tnode = tmpnode[5]; tnodeaddr = &tmpnode[5];}
+		else if(strcasecmp("u", node->name) > 0) {tnode = tmpnode[6]; tnodeaddr = &tmpnode[6];}
+		else if(strcasecmp("x", node->name) > 0) {tnode = tmpnode[7]; tnodeaddr = &tmpnode[7];}
+		else if(strcasecmp("z", node->name) > 0) {tnode = tmpnode[8]; tnodeaddr = &tmpnode[8];}
+		else {tnode = tmpnode[9]; tnodeaddr = &tmpnode[9];}
+
+		while(tnode != NULL && strcasecmp(node->name, tnode->name) > 0)
+		{
+			prev = tnode;
+			tnode = tnode->next;
+		}
+
+		if(prev == NULL)
+		{
+			*tnodeaddr = node;
+			node->prev = NULL;
+		}
+		else
+		{
+			prev->next = node;
+			node->prev = prev;
+		}
+		node->next = tnode;
+		if(tnode != NULL) tnode->prev = node;
+
+		node = next;
+	}
+
+	int i = 0, first = 0;
+	prev = NULL; node = NULL;
+	for(i = 0; i < 10; i++)
+	{
+		if(tmpnode[i] != NULL)
+		{
+			if(prev != NULL)
+			{
+				prev->next = tmpnode[i];
+				tmpnode[i]->prev = prev;
+			}
+
+			if(first == 0)
+			{
+				provider = tmpnode[i];
+				first = 1;
+			}
+
+			node = tmpnode[i];
+			while(node != NULL)
+			{
+				prev = node;
+				node = node->next;
+			}
+		}
+	}
+
+	status.writeprovider = 1;
+	return provider;
+}
+
 int writeprovider(const char *filename)
 {
 	FILE *fd = NULL;

@@ -1846,9 +1846,9 @@ void screenscanconfig(int flag)
 	
 	struct skin* scan = NULL;
 	if(flag == 1)
-		struct skin* scan = getscreen("autoscan");
+		scan = getscreen("autoscan");
 	else
-		struct skin* scan = getscreen("manualscan");
+		scan = getscreen("manualscan");
 
 	struct skin* listbox = getscreennode(scan, "listbox");
 	struct skin* tuner = getscreennode(scan, "tuner");
