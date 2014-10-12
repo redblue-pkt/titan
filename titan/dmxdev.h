@@ -464,6 +464,16 @@ int dmxsetsource(struct dvbdev* node, int source)
 		return 1;
 	}
 
+#ifdef MIPSEL	
+	//Workaround da ansonsten DVR4 nicht funktioniert (Treiberproblem)
+	
+	if(source > DMX_SOURCE_DVR0)
+	{ 
+		int sourcehelp = DMX_SOURCE_DVR0;
+		ioctl(node->fd, DMX_SET_SOURCE, &sourcehelp);
+	}
+#endif	
+	
 	debug(200, "DMX_SET_SOURCE=%d", source);
 	if(ioctl(node->fd, DMX_SET_SOURCE, &source) < 0)
 	{
