@@ -1231,10 +1231,12 @@ char** playergettracklist(int type)
 
 //////////////////////////////NEUER CODE //////////////////////////////
 #ifdef EPLAYER4
-	char ** tmpTrackList[2][100];
-	TrackList = tmpTrackList;
+	//char ** tmpTrackList[2][100];
+	TrackList = malloc(sizeof(char *) * ((100 * 2) + 1));
+	//TrackList = tmpTrackList;
 	
-	if(m_gst_playbin != NULL) {
+	if(m_gst_playbin != NULL)
+	{
 		gint i, n_video = 0, n_audio = 0, n_text = 0;
 		
 		g_object_get(m_gst_playbin, "n-video", &n_video, NULL);
@@ -1245,7 +1247,7 @@ char** playergettracklist(int type)
 		{
 			case 1:
 printf("1: n_audio=%d\n", n_audio);
-				for(i = 0; i < n_audio - 1; i++)
+				for(i = 0; i < n_audio; i++)
 				{
 printf("2: i=%d\n", i);
 					GstTagList *tags = NULL;
