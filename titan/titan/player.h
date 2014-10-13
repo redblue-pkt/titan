@@ -1255,6 +1255,7 @@ printf("2: i=%d\n", i);
 					
 					g_signal_emit_by_name(m_gst_playbin, "get-audio-tags", i, &tags);
 					
+printf("3: tags=%p\n", tags);
 #if GST_VERSION_MAJOR < 1
 					if(tags && gst_is_tag_list(tags))
 #else
