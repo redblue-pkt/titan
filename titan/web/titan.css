@@ -50,7 +50,7 @@
 .gepgchannelcell {border: 1px solid #303030; height: 27px; width: 100px; max-height: 27px; max-width: 100px; min-width: 100px; overflow: hidden}
 .gepgcell {white-space: nowrap; font-size: 12px; color: #ffffff; height: 27px; max-height: 27px; overflow: hidden}
 .gepgcell:hover {overflow: visible; background-color: #EB6F11; width: auto !important; max-width: initial !important}
-.gepgcellborder {border-left: 2px solid #303030; height: 27px; max-height: 27px; color: #ffffff; text-align: center}
+.gepgcellborder {border-left: 2px solid #303030; height: 27px; max-height: 27px; color: #ffffff;/*text-align: center*/}
 .gepgcellblank {height: 27px; width: 100px; max-height: 27px; max-width: 100px; overflow: hidden; background-color: #303030}
 .tableBoxOuter {width: 100%; height: 100%}
 .openrctext {font-family:verdana; font-size: 8pt; color: #505050; text-decoration: none}
