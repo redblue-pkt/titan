@@ -1164,6 +1164,52 @@ void playerseek(float sec)
 #endif
 }
 
+typedef enum { atUnknown, atMPEG, atMP3, atAC3, atDTS, atAAC, atPCM, atOGG, atFLAC, atWMA } audiotype_t;
+
+audiotype_t gstCheckAudioPad(GstStructure* structure)
+{
+	if (!structure)
+		return atUnknown;
+
+	if ( gst_structure_has_name (structure, "audio/mpeg"))
+	{
+		gint mpegversion, layer = -1;
+		if (!gst_structure_get_int (structure, "mpegversion", &mpegversion))
+			return atUnknown;
+
+		switch (mpegversion) {
+			case 1:
+				{
+					gst_structure_get_int (structure, "layer", &layer);
+					if ( layer == 3 )
+						return atMP3;
+					else
+						return atMPEG;
+					break;
+				}
+			case 2:
+				return atAAC;
+			case 4:
+				return atAAC;
+			default:
+				return atUnknown;
+		}
+	}
+
+	else if ( gst_structure_has_name (structure, "audio/x-ac3") || gst_structure_has_name (structure, "audio/ac3") )
+		return atAC3;
+	else if ( gst_structure_has_name (structure, "audio/x-dts") || gst_structure_has_name (structure, "audio/dts") )
+		return atDTS;
+#if GST_VERSION_MAJOR < 1
+	else if ( gst_structure_has_name (structure, "audio/x-raw-int") )
+#else
+	else if ( gst_structure_has_name (structure, "audio/x-raw") )
+#endif
+		return atPCM;
+
+	return atUnknown;
+}
+
 void playerfreetracklist(char** TrackList)
 {
 	int i = 0;
@@ -1252,9 +1298,27 @@ printf("1: n_audio=%d\n", n_audio);
 printf("2: i=%d\n", i);
 					GstTagList *tags = NULL;
 					gchar *g_codec = NULL, *g_lang = NULL;
-					
+					char* tmpstr = NULL;
+////////
+					GstPad* pad = 0;
+					g_signal_emit_by_name (m_gst_playbin, "get-audio-pad", i, &pad);
+#if GST_VERSION_MAJOR < 1
+					GstCaps* caps = gst_pad_get_negotiated_caps(pad);
+#else
+					GstCaps* caps = gst_pad_get_current_caps(pad);
+#endif
+					if (!caps)
+						continue;
+					GstStructure* str = gst_caps_get_structure(caps, 0);
+					const gchar *g_type = gst_structure_get_name(str);
+
+printf("AUDIO STRUCT=%s\n", g_type);
+printf("AUDIO gstCheckAudioPad=%d\n", gstCheckAudioPad(str));
+
+////////
+
 					g_signal_emit_by_name(m_gst_playbin, "get-audio-tags", i, &tags);
-					
+
 printf("3: tags=%p\n", tags);
 #if GST_VERSION_MAJOR < 1
 					if(tags && gst_is_tag_list(tags))
@@ -1262,29 +1326,62 @@ printf("3: tags=%p\n", tags);
 					if(tags && GST_IS_TAG_LIST(tags))
 #endif
 					{
+printf("4:\n");
 						if(gst_tag_list_get_string(tags, GST_TAG_AUDIO_CODEC, &g_codec))
 						{
-printf("3:\n");
-							printf("Audio Codec: %s\n", g_codec);
-printf("4:\n");
-							TrackList[i * 2] = ostrcat(g_codec, NULL, 0, 0);
 printf("5:\n");
-							g_free(g_codec); g_codec = NULL;
+							printf("Audio Codec: %s\n", g_codec);
 printf("6:\n");
+//							TrackList[i * 2] = ostrcat(g_codec, NULL, 0, 0);
+							tmpstr = ostrcat(g_codec, NULL, 0, 0);
+							if(tmpstr != NULL)
+								tmpstr = ostrcat(tmpstr, " (", 1, 0);
+							tmpstr = ostrcat(tmpstr, (gchar*)g_type, 1, 0);
+							if(g_codec != NULL)
+								tmpstr = ostrcat(tmpstr, ")", 1, 0);
+
+							TrackList[i * 2] = ostrcat(tmpstr, NULL, 0, 0);
+							g_free(tmpstr); tmpstr = NULL;
+
+//							TrackList[i * 2] = ostrcat((gchar*)g_type, NULL, 0, 0);
+printf("7:\n");
+							g_free(g_codec); g_codec = NULL;
+printf("8:\n");
 						}
 						if(gst_tag_list_get_string(tags, GST_TAG_LANGUAGE_CODE, &g_lang))
 						{
-printf("7:\n");
-							printf("Audio Lang: %s\n", g_lang);
-printf("8:\n");
-							TrackList[(i * 2) + 1] = ostrcat(g_lang, NULL, 0, 0);
 printf("9:\n");
-							g_free(g_lang); g_lang = NULL;
+							printf("Audio Lang: %s\n", g_lang);
 printf("10:\n");
-						}
+							TrackList[(i * 2) + 1] = ostrcat(g_lang, NULL, 0, 0);
 printf("11:\n");
-						gst_tag_list_free(tags);
+							g_free(g_lang); g_lang = NULL;
 printf("12:\n");
+						}
+printf("13:\n");
+						gst_tag_list_free(tags);
+printf("14:\n");
+					}
+					else
+					{
+printf("15:\n");
+						printf("Audio Codec: %s\n", g_codec);
+printf("16:\n");
+//						TrackList[i * 2] = ostrcat(g_codec, NULL, 0, 0);
+//						TrackList[i * 2] = ostrcat((gchar*)g_type, NULL, 0, 0);
+							tmpstr = ostrcat(g_codec, NULL, 0, 0);
+							if(tmpstr != NULL)
+								tmpstr = ostrcat(tmpstr, " (", 1, 0);
+							tmpstr = ostrcat(tmpstr, (gchar*)g_type, 1, 0);
+							if(g_codec != NULL)
+								tmpstr = ostrcat(tmpstr, ")", 1, 0);
+								
+							TrackList[i * 2] = ostrcat(tmpstr, NULL, 0, 0);
+
+						g_free(tmpstr); tmpstr = NULL;
+printf("17:\n");
+						g_free(g_codec); g_codec = NULL;
+printf("18:\n");
 					}
 				}
 				break;
