@@ -1686,6 +1686,7 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 	resetsatscan();
 	drawscreen(load, 0, 0);
   sortchannel();
+  sortprovider();
   clearscreen(load);
 }
 

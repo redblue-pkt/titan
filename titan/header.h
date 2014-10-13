@@ -440,6 +440,7 @@ int writeprovider(const char *filename);
 void delprovidernotused(struct provider* node);
 int moveproviderdown(struct provider* node);
 int moveproviderup(struct provider* node);
+struct provider* sortprovider();
 
 //httpd.h
 void httpdthreadfunc(struct stimerthread* timernode);
