@@ -1510,6 +1510,8 @@ struct status
 	int autoseek;
 	//skip all rc input events older than this value in millisec
 	int rcskipms;
+	//Workaround da ansonsten DVR4 nicht funktioniert (Treiberproblem)
+	int setdvr0;
 } status;
 
 struct fb
