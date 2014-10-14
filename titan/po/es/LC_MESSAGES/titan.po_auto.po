@@ -12979,6 +12979,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Zap atras esta activado. Desea detener?"
-
-#~ msgid "codecpack for MediaCenter Dateiendungs-Update "
-#~ msgstr "Codecpack para MediaCenter"
