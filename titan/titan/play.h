@@ -254,7 +254,7 @@ void screenplaytracklist(int mode, int playertype, int flag)
 				else
 					tmpstr = ostrcat(tmpstr, _(tracklist[i]), 1, 0);
 					
-				if(tracklist[i + 1] != null && strlen(tracklist[i + 1]) > 0)
+				if(tracklist[i + 1] != NULL && strlen(tracklist[i + 1]) > 0)
 				{	
 					tmpstr = ostrcat(tmpstr, " (", 1, 0);
 					tmpstr = ostrcat(tmpstr, tracklist[i + 1], 1, 0);
