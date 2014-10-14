@@ -7816,7 +7816,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:464
 msgid "please wait"
-msgstr "Een ogenblik gedult"
+msgstr "Een ogenblik geduld"
 
 #: skin_default_skin.xml.h:465
 msgid "Plot"
