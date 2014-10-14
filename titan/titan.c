@@ -575,7 +575,10 @@ int main(int argc, char *argv[])
 	ret = readconfig(status.configfile, config);
 	if(ret != 0)
 		return 100;
-
+	
+	//Workaround da ansonsten DVR4 nicht funktioniert (Treiberproblem)
+	status.setdvr0 = 0;
+	
 	//start timer thread
 	status.timerthreadaktion = START;
 	pthread_attr_init(&status.timerthreadattr);
