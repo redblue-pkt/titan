@@ -181,6 +181,12 @@ void epgscanlistthread(struct stimerthread* self)
 
 	while(node != NULL && self->aktion != STOP)
 	{
+		
+		//wait for end recording
+		while(self->aktion != STOP && (status.recording > 0 || status.timeshift > 0)
+			usleep(1 * 1000000);
+		if(self->aktion == STOP) break;  
+		
 		chnode = getchannel(node->serviceid, node->transponderid);
 		if(chnode == NULL)
 		{
