@@ -183,7 +183,7 @@ void epgscanlistthread(struct stimerthread* self)
 	{
 		
 		//wait for end recording
-		while(self->aktion != STOP && (status.recording > 0 || status.timeshift > 0)
+		while(self->aktion != STOP && (status.recording > 0 || status.timeshift > 0))
 			usleep(1 * 1000000);
 		if(self->aktion == STOP) break;  
 		
