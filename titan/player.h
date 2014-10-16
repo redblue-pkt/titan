@@ -294,6 +294,10 @@ void playerresetts()
 {
 	audiostop(status.aktservice->audiodev);
 	videostop(status.aktservice->videodev, 0);
+#ifdef MIPSEL
+	videoclearbuffer(status.aktservice->videodev);
+	audioclearbuffer(status.aktservice->audiodev);
+#endif
 	videoplay(status.aktservice->videodev);
 	audioplay(status.aktservice->audiodev);
 }
