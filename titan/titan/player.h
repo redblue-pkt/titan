@@ -792,12 +792,14 @@ int playerstart(char* file)
 	return 1;
 }
 
+#ifdef EPLAYER4
 int setBufferSize(int size)
 {
 	int m_buffer_size = size;
 	g_object_set (G_OBJECT (m_gst_playbin), "buffer-size", m_buffer_size, NULL);
 	return 0;
 }
+#endif
 
 void playerinit(int argc, char* argv[])
 {
