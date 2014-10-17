@@ -694,6 +694,8 @@ int playerstart(char* file)
 #endif
 
 #ifdef EPLAYER4
+		status.prefillbuffer = 1;
+
 		int flags = 0x47; //(GST_PLAY_FLAG_VIDEO | GST_PLAY_FLAG_AUDIO | GST_PLAY_FLAG_NATIVE_VIDEO | GST_PLAY_FLAG_TEXT);
 		
 		if(m_gst_playbin != NULL)
@@ -720,13 +722,61 @@ int playerstart(char* file)
 			status.playercan = 0x7E7F;
 		
 		m_gst_playbin = gst_element_factory_make("playbin2", "playbin");
+
+// enable buffersize start
+		g_object_set(G_OBJECT(m_gst_playbin), "buffer-duration", 5LL * GST_SECOND, NULL);
+		g_object_set(G_OBJECT(m_gst_playbin), "buffer-size", 5*1024*1024, NULL);
+// enable buffersizeend
+
 		g_object_set(G_OBJECT (m_gst_playbin), "uri", tmpfile, NULL);
 		g_object_set(G_OBJECT (m_gst_playbin), "flags", flags, NULL);
 		free(tmpfile); tmpfile = NULL;
-		
+
+// srt subs start
+		const char *filename = file;
+		const char *ext = strrchr(filename, '.');
+		if (!ext)
+			ext = filename + strlen(filename);
+
+		GstElement *subsink = gst_element_factory_make("subsink", "subtitle_sink");
+		if (!subsink)
+			printf("sorry, can't play: missing gst-plugin-subsink\n");
+		else
+		{
+//			m_subs_to_pull_handler_id = g_signal_connect (subsink, "new-buffer", G_CALLBACK (gstCBsubtitleAvail), this);
+			g_object_set (G_OBJECT (subsink), "caps", gst_caps_from_string("text/plain; text/x-plain; text/x-raw; text/x-pango-markup; video/x-dvd-subpicture; subpicture/x-pgs"), NULL);
+			g_object_set (G_OBJECT (m_gst_playbin), "text-sink", subsink, NULL);
+			g_object_set (G_OBJECT (m_gst_playbin), "current-text", -1, NULL);
+		}
+
+		GstBus *bus = gst_pipeline_get_bus(GST_PIPELINE (m_gst_playbin));
+#if GST_VERSION_MAJOR < 1
+//		gst_bus_set_sync_handler(bus, gstBusSyncHandler, this);
+		gst_bus_set_sync_handler(bus, NULL, NULL);
+#else
+//		gst_bus_set_sync_handler(bus, gstBusSyncHandler, this, NULL);
+		gst_bus_set_sync_handler(bus, NULL, NULL, NULL);
+#endif
+
+		gst_object_unref(bus);
+		char srt_filename[ext - filename + 5];
+		strncpy(srt_filename,filename, ext - filename);
+		srt_filename[ext - filename] = '\0';
+		strcat(srt_filename, ".srt");
+
+		if(access(srt_filename, R_OK) >= 0)
+		{
+			printf("found srt1: %s\n",srt_filename);
+			printf("found srt2: %s\n",g_filename_to_uri(srt_filename, NULL, NULL));
+			g_object_set(G_OBJECT (m_gst_playbin), "suburi", g_filename_to_uri(srt_filename, NULL, NULL), NULL);		
+		}
+// srt end		
+
 		if(m_gst_playbin)
+		{
 			gst_element_set_state(m_gst_playbin, GST_STATE_PLAYING);
-		
+		}
+
 		int count = 0;
 		m_gst_startpts = 0;
 		while(m_gst_startpts == 0 && count < 5)
@@ -742,6 +792,13 @@ int playerstart(char* file)
 	return 1;
 }
 
+int setBufferSize(int size)
+{
+	int m_buffer_size = size;
+	g_object_set (G_OBJECT (m_gst_playbin), "buffer-size", m_buffer_size, NULL);
+	return 0;
+}
+
 void playerinit(int argc, char* argv[])
 {
 #ifdef EPLAYER4
@@ -752,6 +809,7 @@ void playerinit(int argc, char* argv[])
 #ifdef EPLAYER4
 int gstbuscall(GstBus *bus, GstMessage *msg)
 {
+
 	int ret = 1;
 	if(!m_gst_playbin) return 0;
 	if(!msg) return ret;
@@ -866,6 +924,76 @@ int gstbuscall(GstBus *bus, GstMessage *msg)
 			gst_message_parse_buffering(msg, &(m_bufferInfo.bufferPercent));
 			gst_message_parse_buffering_stats(msg, &mode, &(m_bufferInfo.avgInRate), &(m_bufferInfo.avgOutRate), &(m_bufferInfo.bufferingLeft));
 			//m_event((iPlayableService*)this, evBuffering);
+*/
+			GstBufferingMode mode;
+			gst_message_parse_buffering(msg, &(status.bufferpercent));
+			gst_message_parse_buffering_stats(msg, &mode, &(status.avgInRate), &(status.avgOutRate), &(status.bufferingLeft));
+
+			printf("#########################################################\n");
+			printf("Buffering %u percent done\n", status.bufferpercent);
+			printf("avgInRate %d\n", status.avgInRate);
+			printf("avgOutRate %d\n", status.avgOutRate);
+			printf("bufferingLeft %lld\n", status.bufferingLeft);
+					
+			if(status.prefillbuffer == 1)
+			{
+				printf("status.prefillbuffer Buffering %u percent done\n", status.bufferpercent);
+
+				if (status.bufferpercent == 100)
+				{
+					GstState state;
+					gst_element_get_state(m_gst_playbin, &state, NULL, 0LL);
+					if (state != GST_STATE_PLAYING)
+					{
+						// eDebug("start playing");
+						gst_element_set_state (m_gst_playbin, GST_STATE_PLAYING);
+					}
+//					m_ignore_buffering_messages = 5;
+					status.prefillbuffer = 0;
+				}
+				else if (status.bufferpercent == 0)
+				{
+					// eDebug("start pause");
+					gst_element_set_state (m_gst_playbin, GST_STATE_PAUSED);
+//					m_ignore_buffering_messages = 0;
+				}
+			}
+
+/*
+				GstBufferingMode mode;
+				printf("GST_STATE_PAUSED\n");
+				gst_element_set_state (m_gst_playbin, GST_STATE_PAUSED);
+
+
+				gst_message_parse_buffering(msg, &(m_bufferInfo.bufferPercent));
+				// eDebug("Buffering %u percent done", m_bufferInfo.bufferPercent);
+				gst_message_parse_buffering_stats(msg, &mode, &(m_bufferInfo.avgInRate), &(m_bufferInfo.avgOutRate), &(m_bufferInfo.bufferingLeft));
+				m_event((iPlayableService*)this, evBuffering);
+				if (m_use_prefillbuffer && !m_is_live && --m_ignore_buffering_messages <= 0)
+				{
+					if (m_bufferInfo.bufferPercent == 100)
+					{
+						GstState state;
+						gst_element_get_state(m_gst_playbin, &state, NULL, 0LL);
+						if (state != GST_STATE_PLAYING)
+						{
+							// eDebug("start playing");
+							gst_element_set_state (m_gst_playbin, GST_STATE_PLAYING);
+						}
+						m_ignore_buffering_messages = 5;
+					}
+					else if (m_bufferInfo.bufferPercent == 0)
+					{
+						// eDebug("start pause");
+						gst_element_set_state (m_gst_playbin, GST_STATE_PAUSED);
+						m_ignore_buffering_messages = 0;
+					}
+					else
+					{
+						m_ignore_buffering_messages = 0;
+					}
+				}
+
 */
 			break;
 		case GST_MESSAGE_STREAM_STATUS:
@@ -1369,7 +1497,8 @@ char** playergettracklist(int type)
 				{
 					GstTagList *tags = NULL;
 					gchar *g_codec = NULL, *g_lang = NULL;
-					
+//					GstPad* pad = 0;
+				
 					g_signal_emit_by_name(m_gst_playbin, "get-text-tags", i, &tags);
 					
 #if GST_VERSION_MAJOR < 1
@@ -1392,6 +1521,13 @@ char** playergettracklist(int type)
 						}
 						gst_tag_list_free(tags);
 					}
+/*
+					g_signal_emit_by_name(m_gst_playbin, "get-text-pad", i, &pad);
+					if(pad)
+						g_signal_connect(G_OBJECT(pad), "notify::caps", G_CALLBACK (gstTextpadHasCAPS), this);
+
+					printf("getSubtitleType: %d\n", getSubtitleType(pad, g_codec));
+*/
 				}
 				break;
 			default:
