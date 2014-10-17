@@ -1301,6 +1301,11 @@ struct status
 	int pause;
 	int playspeed;
 	int slowspeed;
+	int bufferpercent;
+	int prefillbuffer;
+	gint avgInRate;
+	gint avgOutRate;
+	gint64 bufferingLeft;
 	int random;
 	int repeat;
 	int epgdays;

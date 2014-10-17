@@ -26,7 +26,7 @@ int g_manual_blit = 0;
 struct fb_fix_screeninfo fix_screeninfo;
 struct fb_var_screeninfo var_screeninfo;
 
-void memcpy_area(char* ziehlADDR, char* startADDR, long pxAbs, long hight, long widthAbs, long FBwidthAbs);
+void memcpy_area(unsigned char* ziehlADDR, unsigned char* startADDR, long pxAbs, long hight, long widthAbs, long FBwidthAbs);
 
 int setmixer(struct dvbdev* node, int left, int right)
 {
@@ -511,7 +511,7 @@ void blitrect(int posx, int posy, int width, int height, long color, int transpa
 		int yend = (posy + height) * tmpfb->width;
 		posy *= tmpfb->width;
 		int xend = posx + width;
-		int xlen = (xend - posx) * tmpfb->colbytes;
+//		int xlen = (xend - posx) * tmpfb->colbytes;
 		int r = 0;
 		unsigned char* from = tmpfb->fb + (posy + posx) * tmpfb->colbytes;
 
@@ -1192,7 +1192,7 @@ void memcpy_byte(char* dest, char* src, long anzb)
 }
 
 
-void memcpy_area(char* ziehlADDR, char* startADDR, long pxAbs, long hight, long widthAbs, long FBwidthAbs)
+void memcpy_area(unsigned char* ziehlADDR, unsigned char* startADDR, long pxAbs, long hight, long widthAbs, long FBwidthAbs)
 {
 
 	asm(	
