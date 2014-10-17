@@ -6310,4 +6310,31 @@ char* webgetrestore(int fmt)
 	return buf;
 }
 
+char* webstartplugin(char* param, int fmt)
+{
+	void (*startplugin)(void);
+	char* buf = NULL;
+	
+	struct skin* pluginnode = getplugin(param);
+	
+	if(pluginnode != NULL)
+	{
+		startplugin = dlsym(pluginnode->pluginhandle, "start");
+		if(startplugin != NULL)
+		{
+			resettvpic();
+			startplugin();
+			resettvpic();
+			buf = ostrcat(buf, "ok", 1, 0);
+		}
+		else
+			buf = ostrcat(buf, "internal error", 1, 0);
+	}
+	else
+		buf = ostrcat(buf, "wrong plugin name", 1, 0);
+		
+	return buf;
+}
+	
+	
 #endif
