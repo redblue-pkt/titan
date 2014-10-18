@@ -28,7 +28,7 @@ extern ManagerHandler_t ManagerHandler;
 #endif
 
 #ifdef EPLAYER4
-GstElement *m_gst_playbin = NULL;
+GstElement *pipeline = NULL;
 unsigned long long m_gst_startpts = 0;
 #endif
 
@@ -589,8 +589,15 @@ void playerafterendts()
 	playerstopts(2, 0);
 }
 
-//extern player
+typedef struct _CustomData {
+  gboolean is_live;
+  GstElement *pipeline;
+  GMainLoop *loop;
+} CustomData;
 
+CustomData data;
+
+//extern player
 int playerstart(char* file)
 {
 	char * tmpfile = NULL;
@@ -694,11 +701,9 @@ int playerstart(char* file)
 #endif
 
 #ifdef EPLAYER4
-		status.prefillbuffer = 1;
-
 		int flags = 0x47; //(GST_PLAY_FLAG_VIDEO | GST_PLAY_FLAG_AUDIO | GST_PLAY_FLAG_NATIVE_VIDEO | GST_PLAY_FLAG_TEXT);
 		
-		if(m_gst_playbin != NULL)
+		if(pipeline != NULL)
 		{
 			debug(150, "eplayer allready running");
 			playerstop();
@@ -712,7 +717,7 @@ int playerstart(char* file)
 		if(tmpfile == NULL)
 		{
 			err("no mem");
-			free(m_gst_playbin); m_gst_playbin = NULL;
+			free(pipeline); pipeline = NULL;
 			return 1;
 		}
 
@@ -720,18 +725,25 @@ int playerstart(char* file)
 			status.playercan = 0x7E7F;
 		else
 			status.playercan = 0x7E7F;
-		
-		m_gst_playbin = gst_element_factory_make("playbin2", "playbin");
+	
+		pipeline = gst_element_factory_make("playbin2", "playbin");
 
 // enable buffersize start
-		g_object_set(G_OBJECT(m_gst_playbin), "buffer-duration", 5LL * GST_SECOND, NULL);
-		g_object_set(G_OBJECT(m_gst_playbin), "buffer-size", 5*1024*1024, NULL);
+		int size = getconfigint("playerbuffersize", NULL);
+		printf("size: %d\n",size);
+		
+		if(size > 0)
+			status.prefillbuffer = 1;
+
+		g_object_set(G_OBJECT(pipeline), "buffer-duration", size * GST_SECOND, NULL);
+		g_object_set(G_OBJECT(pipeline), "buffer-size", size, NULL);
 // enable buffersizeend
 
-		g_object_set(G_OBJECT (m_gst_playbin), "uri", tmpfile, NULL);
-		g_object_set(G_OBJECT (m_gst_playbin), "flags", flags, NULL);
+		g_object_set(G_OBJECT(pipeline), "uri", tmpfile, NULL);
+		g_object_set(G_OBJECT(pipeline), "flags", flags, NULL);
 		free(tmpfile); tmpfile = NULL;
 
+///////////////////
 // srt subs start
 		const char *filename = file;
 		const char *ext = strrchr(filename, '.');
@@ -745,11 +757,11 @@ int playerstart(char* file)
 		{
 //			m_subs_to_pull_handler_id = g_signal_connect (subsink, "new-buffer", G_CALLBACK (gstCBsubtitleAvail), this);
 			g_object_set (G_OBJECT (subsink), "caps", gst_caps_from_string("text/plain; text/x-plain; text/x-raw; text/x-pango-markup; video/x-dvd-subpicture; subpicture/x-pgs"), NULL);
-			g_object_set (G_OBJECT (m_gst_playbin), "text-sink", subsink, NULL);
-			g_object_set (G_OBJECT (m_gst_playbin), "current-text", -1, NULL);
+			g_object_set (G_OBJECT (pipeline), "text-sink", subsink, NULL);
+			g_object_set (G_OBJECT (pipeline), "current-text", -1, NULL);
 		}
 
-		GstBus *bus = gst_pipeline_get_bus(GST_PIPELINE (m_gst_playbin));
+		GstBus *bus = gst_pipeline_get_bus(GST_PIPELINE(pipeline));
 #if GST_VERSION_MAJOR < 1
 //		gst_bus_set_sync_handler(bus, gstBusSyncHandler, this);
 		gst_bus_set_sync_handler(bus, NULL, NULL);
@@ -768,14 +780,36 @@ int playerstart(char* file)
 		{
 			printf("found srt1: %s\n",srt_filename);
 			printf("found srt2: %s\n",g_filename_to_uri(srt_filename, NULL, NULL));
-			g_object_set(G_OBJECT (m_gst_playbin), "suburi", g_filename_to_uri(srt_filename, NULL, NULL), NULL);		
+			g_object_set(G_OBJECT (pipeline), "suburi", g_filename_to_uri(srt_filename, NULL, NULL), NULL);		
 		}
-// srt end		
+// srt end	
 
-		if(m_gst_playbin)
+///////////////////
+//		CustomData data;
+		memset (&data, 0, sizeof (data));
+		data.pipeline = pipeline;
+//		GstBus *bus;
+//		bus = gst_element_get_bus (pipeline);
+		
+		// Start playing //
+		GstStateChangeReturn ret;
+		ret = gst_element_set_state (pipeline, GST_STATE_PLAYING);
+		if(ret == GST_STATE_CHANGE_FAILURE)
 		{
-			gst_element_set_state(m_gst_playbin, GST_STATE_PLAYING);
+			g_printerr ("Unable to set the pipeline to the playing state.\n");
+			gst_object_unref (pipeline);
+			return -1;
 		}
+		else if(ret == GST_STATE_CHANGE_NO_PREROLL)
+		{
+			data.is_live = TRUE;
+		}
+
+		data.loop = g_main_loop_new (NULL, FALSE);
+		data.pipeline = pipeline;
+		gst_bus_add_signal_watch (bus);
+//		g_signal_connect (bus, "message", G_CALLBACK (cb_message), &data);
+//		status.prefillbuffer = 1;
 
 		int count = 0;
 		m_gst_startpts = 0;
@@ -785,6 +819,7 @@ int playerstart(char* file)
 			sleep(1);
 			m_gst_startpts = playergetpts();
 		}
+
 		return 0;
 #endif
 	}
@@ -792,11 +827,12 @@ int playerstart(char* file)
 	return 1;
 }
 
+
 #ifdef EPLAYER4
 int setBufferSize(int size)
 {
 	int m_buffer_size = size;
-	g_object_set (G_OBJECT (m_gst_playbin), "buffer-size", m_buffer_size, NULL);
+	g_object_set (G_OBJECT (pipeline), "buffer-size", m_buffer_size, NULL);
 	return 0;
 }
 #endif
@@ -809,11 +845,11 @@ void playerinit(int argc, char* argv[])
 }
 
 #ifdef EPLAYER4
-int gstbuscall(GstBus *bus, GstMessage *msg)
+int gstbuscall(GstBus *bus, GstMessage *msg, CustomData *data)
 {
 
 	int ret = 1;
-	if(!m_gst_playbin) return 0;
+	if(!pipeline) return 0;
 	if(!msg) return ret;
 
 	gchar *sourceName = NULL;
@@ -829,7 +865,7 @@ int gstbuscall(GstBus *bus, GstMessage *msg)
 			ret = 0;
 			break;
 		case GST_MESSAGE_STATE_CHANGED:
-			if(GST_MESSAGE_SRC(msg) != GST_OBJECT(m_gst_playbin))
+			if(GST_MESSAGE_SRC(msg) != GST_OBJECT(pipeline))
 				break;
 
 			GstState old_state, new_state;
@@ -847,7 +883,7 @@ int gstbuscall(GstBus *bus, GstMessage *msg)
 					break;
 				case GST_STATE_CHANGE_READY_TO_PAUSED:
 /*
-					GstElement *appsink = gst_bin_get_by_name(GST_BIN(m_gst_playbin), "subtitle_sink");
+					GstElement *appsink = gst_bin_get_by_name(GST_BIN(pipeline), "subtitle_sink");
  					if(appsink)
  					{
  						g_object_set(G_OBJECT(appsink), "max-buffers", 2, NULL);
@@ -927,15 +963,37 @@ int gstbuscall(GstBus *bus, GstMessage *msg)
 			gst_message_parse_buffering_stats(msg, &mode, &(m_bufferInfo.avgInRate), &(m_bufferInfo.avgOutRate), &(m_bufferInfo.bufferingLeft));
 			//m_event((iPlayableService*)this, evBuffering);
 */
+
+//debug(10, "gst player buffering");
+			if(status.prefillbuffer == 1)
+			{
+
+				gint percent = 0;
+				if (data->is_live) break;
+				gst_message_parse_buffering (msg, &percent);
+				g_print ("Buffering (%3d%%)\r", percent);
+				if (percent < 100)
+				{
+					gst_element_set_state (data->pipeline, GST_STATE_PAUSED);
+				}
+				else
+				{
+					gst_element_set_state (data->pipeline, GST_STATE_PLAYING);
+					status.prefillbuffer = 0;
+				}
+			}
+			break;
+
+/*
 			GstBufferingMode mode;
 			gst_message_parse_buffering(msg, &(status.bufferpercent));
 			gst_message_parse_buffering_stats(msg, &mode, &(status.avgInRate), &(status.avgOutRate), &(status.bufferingLeft));
 
-			printf("#########################################################\n");
-			printf("Buffering %u percent done\n", status.bufferpercent);
-			printf("avgInRate %d\n", status.avgInRate);
-			printf("avgOutRate %d\n", status.avgOutRate);
-			printf("bufferingLeft %lld\n", status.bufferingLeft);
+//			printf("#########################################################\n");
+//			printf("Buffering %u percent done\n", status.bufferpercent);
+//			printf("avgInRate %d\n", status.avgInRate);
+//			printf("avgOutRate %d\n", status.avgOutRate);
+//			printf("bufferingLeft %lld\n", status.bufferingLeft);
 					
 			if(status.prefillbuffer == 1)
 			{
@@ -944,11 +1002,11 @@ int gstbuscall(GstBus *bus, GstMessage *msg)
 				if (status.bufferpercent == 100)
 				{
 					GstState state;
-					gst_element_get_state(m_gst_playbin, &state, NULL, 0LL);
+					gst_element_get_state(pipeline, &state, NULL, 0LL);
 					if (state != GST_STATE_PLAYING)
 					{
 						// eDebug("start playing");
-						gst_element_set_state (m_gst_playbin, GST_STATE_PLAYING);
+						gst_element_set_state (pipeline, GST_STATE_PLAYING);
 					}
 //					m_ignore_buffering_messages = 5;
 					status.prefillbuffer = 0;
@@ -956,15 +1014,15 @@ int gstbuscall(GstBus *bus, GstMessage *msg)
 				else if (status.bufferpercent == 0)
 				{
 					// eDebug("start pause");
-					gst_element_set_state (m_gst_playbin, GST_STATE_PAUSED);
+					gst_element_set_state (pipeline, GST_STATE_PAUSED);
 //					m_ignore_buffering_messages = 0;
 				}
 			}
-
+*/
 /*
 				GstBufferingMode mode;
 				printf("GST_STATE_PAUSED\n");
-				gst_element_set_state (m_gst_playbin, GST_STATE_PAUSED);
+				gst_element_set_state (pipeline, GST_STATE_PAUSED);
 
 
 				gst_message_parse_buffering(msg, &(m_bufferInfo.bufferPercent));
@@ -976,18 +1034,18 @@ int gstbuscall(GstBus *bus, GstMessage *msg)
 					if (m_bufferInfo.bufferPercent == 100)
 					{
 						GstState state;
-						gst_element_get_state(m_gst_playbin, &state, NULL, 0LL);
+						gst_element_get_state(pipeline, &state, NULL, 0LL);
 						if (state != GST_STATE_PLAYING)
 						{
 							// eDebug("start playing");
-							gst_element_set_state (m_gst_playbin, GST_STATE_PLAYING);
+							gst_element_set_state (pipeline, GST_STATE_PLAYING);
 						}
 						m_ignore_buffering_messages = 5;
 					}
 					else if (m_bufferInfo.bufferPercent == 0)
 					{
 						// eDebug("start pause");
-						gst_element_set_state (m_gst_playbin, GST_STATE_PAUSED);
+						gst_element_set_state (pipeline, GST_STATE_PAUSED);
 						m_ignore_buffering_messages = 0;
 					}
 					else
@@ -1089,13 +1147,15 @@ int playerisplaying()
 #ifdef EPLAYER4
 	int ret = 1;
 
-	if(m_gst_playbin)
+	if(pipeline)
 	{
-		GstBus *bus = gst_pipeline_get_bus(GST_PIPELINE(m_gst_playbin));
+		GstBus *bus = gst_pipeline_get_bus(GST_PIPELINE(pipeline));
 		GstMessage *message = NULL;
+//use global variale, with static var crash
+//		CustomData *data = NULL;
 		while((message = gst_bus_pop(bus)))
 		{
-			ret = gstbuscall(bus, message);
+			ret = gstbuscall(bus, message, &data);
 			gst_message_unref(message);
 		}
 	}
@@ -1115,8 +1175,8 @@ void playerplay()
 #endif
 
 #ifdef EPLAYER4
-	if(m_gst_playbin)
-		gst_element_set_state(m_gst_playbin, GST_STATE_PLAYING);
+	if(pipeline)
+		gst_element_set_state(pipeline, GST_STATE_PLAYING);
 #endif
 }
 
@@ -1144,11 +1204,11 @@ int playerstop()
 #endif
 
 #ifdef EPLAYER4
-	if(m_gst_playbin)
+	if(pipeline)
 	{
-		gst_element_set_state(m_gst_playbin, GST_STATE_NULL);
-		gst_object_unref(GST_OBJECT(m_gst_playbin));
-		m_gst_playbin = NULL;
+		gst_element_set_state(pipeline, GST_STATE_NULL);
+		gst_object_unref(GST_OBJECT(pipeline));
+		pipeline = NULL;
 	}
 #endif
 
@@ -1164,7 +1224,7 @@ void playerafterend()
 #endif
 
 #ifdef EPLAYER4
-	if(m_gst_playbin)
+	if(pipeline)
 		playerstop();
 #endif
 }
@@ -1177,8 +1237,8 @@ void playerpause()
 #endif
 
 #ifdef EPLAYER4
-	if(m_gst_playbin)
-		gst_element_set_state(m_gst_playbin, GST_STATE_PAUSED);
+	if(pipeline)
+		gst_element_set_state(pipeline, GST_STATE_PAUSED);
 #endif
 }
 
@@ -1190,8 +1250,8 @@ void playercontinue()
 #endif
 
 #ifdef EPLAYER4
-	if(m_gst_playbin)
-		gst_element_set_state(m_gst_playbin, GST_STATE_PLAYING);
+	if(pipeline)
+		gst_element_set_state(pipeline, GST_STATE_PLAYING);
 #endif
 }
 
@@ -1279,7 +1339,7 @@ void playerseek(float sec)
 	gint64 pts = 0, len = 0;
 	//GstFormat fmt = GST_FORMAT_TIME;
 		
-	if(m_gst_playbin)
+	if(pipeline)
 	{
 		len = playergetlength();
 		nanos_len = len * 1000000000;
@@ -1293,7 +1353,7 @@ void playerseek(float sec)
 		if(nanos_pts >= nanos_len)
 			playerstop();
 		else
-			gst_element_seek(m_gst_playbin, 1.0, GST_FORMAT_TIME, GST_SEEK_FLAG_FLUSH, GST_SEEK_TYPE_SET, nanos_pts, GST_SEEK_TYPE_NONE, GST_CLOCK_TIME_NONE);
+			gst_element_seek(pipeline, 1.0, GST_FORMAT_TIME, GST_SEEK_FLAG_FLUSH, GST_SEEK_TYPE_SET, nanos_pts, GST_SEEK_TYPE_NONE, GST_CLOCK_TIME_NONE);
 	}
 #endif
 }
@@ -1415,13 +1475,13 @@ char** playergettracklist(int type)
 	TrackList = calloc(1, sizeof(char *) * ((100 * 2) + 1));
 	//TrackList = tmpTrackList;
 	
-	if(m_gst_playbin != NULL)
+	if(pipeline != NULL)
 	{
 		gint i, n_video = 0, n_audio = 0, n_text = 0;
 		
-		g_object_get(m_gst_playbin, "n-video", &n_video, NULL);
-		g_object_get(m_gst_playbin, "n-audio", &n_audio, NULL);
-		g_object_get(m_gst_playbin, "n-text", &n_text, NULL);
+		g_object_get(pipeline, "n-video", &n_video, NULL);
+		g_object_get(pipeline, "n-audio", &n_audio, NULL);
+		g_object_get(pipeline, "n-text", &n_text, NULL);
 		
 		switch(type)
 		{
@@ -1433,7 +1493,7 @@ char** playergettracklist(int type)
 					char* tmpstr = NULL;
 					GstPad* pad = 0;
 					
-					g_signal_emit_by_name (m_gst_playbin, "get-audio-pad", i, &pad);
+					g_signal_emit_by_name (pipeline, "get-audio-pad", i, &pad);
 #if GST_VERSION_MAJOR < 1
 					GstCaps* caps = gst_pad_get_negotiated_caps(pad);
 #else
@@ -1445,7 +1505,7 @@ char** playergettracklist(int type)
 					GstStructure* str = gst_caps_get_structure(caps, 0);
 					const gchar *g_type = gst_structure_get_name(str);
 
-					g_signal_emit_by_name(m_gst_playbin, "get-audio-tags", i, &tags);
+					g_signal_emit_by_name(pipeline, "get-audio-tags", i, &tags);
 
 #if GST_VERSION_MAJOR < 1
 					if(tags && gst_is_tag_list(tags))
@@ -1501,7 +1561,7 @@ char** playergettracklist(int type)
 					gchar *g_codec = NULL, *g_lang = NULL;
 //					GstPad* pad = 0;
 				
-					g_signal_emit_by_name(m_gst_playbin, "get-text-tags", i, &tags);
+					g_signal_emit_by_name(pipeline, "get-text-tags", i, &tags);
 					
 #if GST_VERSION_MAJOR < 1
 					if (tags && gst_is_tag_list(tags))
@@ -1524,7 +1584,7 @@ char** playergettracklist(int type)
 						gst_tag_list_free(tags);
 					}
 /*
-					g_signal_emit_by_name(m_gst_playbin, "get-text-pad", i, &pad);
+					g_signal_emit_by_name(pipeline, "get-text-pad", i, &pad);
 					if(pad)
 						g_signal_connect(G_OBJECT(pad), "notify::caps", G_CALLBACK (gstTextpadHasCAPS), this);
 
@@ -1538,7 +1598,7 @@ char** playergettracklist(int type)
 					GstTagList *tags = NULL;
 					gchar *g_codec = NULL, *g_lang = NULL;
 					
-					g_signal_emit_by_name(m_gst_playbin, "get-video-tags", i, &tags);
+					g_signal_emit_by_name(pipeline, "get-video-tags", i, &tags);
 					
 #if GST_VERSION_MAJOR < 1
 					if (tags && gst_is_tag_list(tags))
@@ -1612,12 +1672,12 @@ void playergetcurtrac(int type, int *CurTrackId, char** CurTrackEncoding, char**
 #endif
 
 #ifdef EPLAYER4
-	if(m_gst_playbin != NULL)
+	if(pipeline != NULL)
 	{
 		switch(type)
 		{
 			case 1:
-				g_object_get(G_OBJECT(m_gst_playbin), "current-audio", CurTrackId, NULL);
+				g_object_get(G_OBJECT(pipeline), "current-audio", CurTrackId, NULL);
 				break;
 		}
 		
@@ -1645,24 +1705,24 @@ unsigned long long playergetpts()
 	GstFormat fmt = GST_FORMAT_TIME; //Returns time in nanosecs
 	
 /*
-	if(m_gst_playbin)
+	if(pipeline)
 	{
-		gst_element_query_position(m_gst_playbin, &fmt, (gint64*)&pts);
+		gst_element_query_position(pipeline, &fmt, (gint64*)&pts);
 		sec = pts / 1000000000;
 		pts = sec * 90000;
 		debug(150, "Pts = %02d:%02d:%02d (%llu.0000 sec)", (int)((sec / 60) / 60) % 60, (int)(sec / 60) % 60, (int)sec % 60, sec);
 	}
 */
 
-	if(m_gst_playbin)
+	if(pipeline)
 	{
 		gint64 pos;
 		GstElement *sink;
 		pts = 0;
 
-		g_object_get(G_OBJECT (m_gst_playbin), "audio-sink", &sink, NULL);
+		g_object_get(G_OBJECT (pipeline), "audio-sink", &sink, NULL);
 
-		if(!sink) g_object_get (G_OBJECT (m_gst_playbin), "video-sink", &sink, NULL);
+		if(!sink) g_object_get (G_OBJECT (pipeline), "video-sink", &sink, NULL);
 		if(!sink) return 0;
 
 		gchar *name = gst_element_get_name(sink);
@@ -1673,7 +1733,7 @@ unsigned long long playergetpts()
 
 		gst_object_unref(sink);
 
-		if(!use_get_decoder_time && !gst_element_query_position(m_gst_playbin, &fmt, &pos))
+		if(!use_get_decoder_time && !gst_element_query_position(pipeline, &fmt, &pos))
 			return 0;
 
 		/* pos is in nanoseconds. we have 90 000 pts per second. */
@@ -1705,9 +1765,9 @@ double playergetlength()
 	GstFormat fmt = GST_FORMAT_TIME; //Returns time in nanosecs
 	gint64 len;
 
-	if(m_gst_playbin)
+	if(pipeline)
 	{
-		gst_element_query_duration(m_gst_playbin, &fmt, &len);
+		gst_element_query_duration(pipeline, &fmt, &len);
 		length = len / 1000000000;
 		if(length < 0) length = 0;
 		debug(150, "Length = %02d:%02d:%02d (%.4f sec)", (int)((length / 60) / 60) % 60, (int)(length / 60) % 60, (int)length % 60, length);
@@ -1751,8 +1811,8 @@ void playerchangeaudiotrack(int num)
 #endif
 
 #ifdef EPLAYER4
-	if(m_gst_playbin != NULL)
-		g_object_set(G_OBJECT(m_gst_playbin), "current-audio", num, NULL);	
+	if(pipeline != NULL)
+		g_object_set(G_OBJECT(pipeline), "current-audio", num, NULL);	
 #endif
 }
 
