@@ -1353,14 +1353,14 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 			}	
 			else if(!ostrncmp("http://", tmpstr1, 7))
 			{
-#ifdef EPLAYER3
+//#ifdef EPLAYER3
 				if(checkbox("UFS910") == 1 && !file_exist("/var/swapdir/swapfile"))
 					addmenulist(&mlist, "Streaming Playback Caching (5MB)", _("Streaming Playback Caching (5MB)"), NULL, 0, 0);
 				else
 				{
 					addmenulist(&mlist, "Streaming Playback Caching (10MB)", _("Streaming Playback Caching (10MB)"), NULL, 0, 0);
 				}
-#endif
+//#endif
 				if(file_exist(getconfig("rec_streampath", NULL)) && (file_exist("/mnt/swapextensions/etc/.codecpack") || file_exist("/var/swap/etc/.codecpack") || file_exist("/var/etc/.codecpack")))
 				{
 #ifndef EPLAYER3
