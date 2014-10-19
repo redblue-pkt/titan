@@ -1139,14 +1139,26 @@ char* getemu(struct skin* node)
 
 char* getbufferstatus(struct skin* node)
 {
-	int ret = 0, size = 0, status = 0;
-	
+	int ret = 0;
+
+#ifdef EPLAYER4
+/*
+	GstMessage *msg = NULL;
+	gint percent = 0;
+	gst_message_parse_buffering (msg, &percent);
+	g_print ("Buffering (%3d%%)\r", percent);
+	ret = (int)percent;
+/*
+	ret = status.bufferpercent;
+#else
+	int size = 0, status = 0;
 	size = playergetbuffersize();
 	if(size > 0)
-			status = playergetbufferstatus();
+		status = playergetbufferstatus();
 
 	if(size > 0 && size >= status) ret = 100 - (((size - status) * 100) / size);
-
+#endif		
+		
 	if(ret < 0) ret = 0;
 	if(ret > 100) ret = 100;
 
