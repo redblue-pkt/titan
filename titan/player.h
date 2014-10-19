@@ -1360,6 +1360,7 @@ void playerseek(float sec)
 #endif
 }
 
+#ifdef EPLAYER4
 typedef enum { atUnknown, atMPEG, atMP3, atAC3, atDTS, atAAC, atPCM, atOGG, atFLAC, atWMA } audiotype_t;
 
 audiotype_t gstCheckAudioPad(GstStructure* structure)
@@ -1405,6 +1406,7 @@ audiotype_t gstCheckAudioPad(GstStructure* structure)
 
 	return atUnknown;
 }
+#endif
 
 void playerfreetracklist(char** TrackList)
 {
