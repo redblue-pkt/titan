@@ -966,25 +966,35 @@ int gstbuscall(GstBus *bus, GstMessage *msg, CustomData *data)
 			//m_event((iPlayableService*)this, evBuffering);
 */
 
-//debug(10, "gst player buffering");
-			if(status.prefillbuffer == 1)
+//			gint percent = 0;
+			if (data->is_live) break;
+			gst_message_parse_buffering (msg, &status.bufferpercent);
+			g_print ("Buffering (%3d%%)\r", status.bufferpercent);
+			if (status.bufferpercent < 100)
 			{
+				gst_element_set_state (data->pipeline, GST_STATE_PAUSED);
+				struct skin* waitmsgbar = getscreen("waitmsgbar");
+				struct skin* load = getscreen("loading");
 
-				gint percent = 0;
-				if (data->is_live) break;
-				gst_message_parse_buffering (msg, &percent);
-				g_print ("Buffering (%3d%%)\r", percent);
-				if (percent < 100)
-				{
-					gst_element_set_state (data->pipeline, GST_STATE_PAUSED);
-				}
-				else
-				{
-					gst_element_set_state (data->pipeline, GST_STATE_PLAYING);
-					status.prefillbuffer = 0;
-				}
+				waitmsgbar->progresssize = status.bufferpercent;
+				char* tmpstr = NULL;
+				tmpstr = ostrcat(_("Buffering Stream - Cancel with Exit"), " (", 0, 0);
+				tmpstr = ostrcat(tmpstr, oitoa(waitmsgbar->progresssize), 1, 0);
+				tmpstr = ostrcat(tmpstr, "%)", 1, 0);
+
+				tmpstr = ostrcat(tmpstr, "%", 1, 0);
+				changetext(waitmsgbar, tmpstr);
+				free(tmpstr); tmpstr = NULL;
+
+				drawscreen(load, 0, 0);
+				drawscreen(waitmsgbar, 0, 0);
 			}
-			break;
+			else
+			{
+				drawscreen(skin, 0, 0);
+				gst_element_set_state (data->pipeline, GST_STATE_PLAYING);
+				status.prefillbuffer = 0;
+			}
 
 /*
 			GstBufferingMode mode;
