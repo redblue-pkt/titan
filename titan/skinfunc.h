@@ -1148,7 +1148,7 @@ char* getbufferstatus(struct skin* node)
 	gst_message_parse_buffering (msg, &percent);
 	g_print ("Buffering (%3d%%)\r", percent);
 	ret = (int)percent;
-/*
+*/
 	ret = status.bufferpercent;
 #else
 	int size = 0, status = 0;
