@@ -981,8 +981,6 @@ int gstbuscall(GstBus *bus, GstMessage *msg, CustomData *data)
 				tmpstr = ostrcat(_("Buffering Stream - Cancel with Exit"), " (", 0, 0);
 				tmpstr = ostrcat(tmpstr, oitoa(waitmsgbar->progresssize), 1, 0);
 				tmpstr = ostrcat(tmpstr, "%)", 1, 0);
-
-				tmpstr = ostrcat(tmpstr, "%", 1, 0);
 				changetext(waitmsgbar, tmpstr);
 				free(tmpstr); tmpstr = NULL;
 
