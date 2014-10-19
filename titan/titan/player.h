@@ -589,6 +589,7 @@ void playerafterendts()
 	playerstopts(2, 0);
 }
 
+#ifdef EPLAYER4
 typedef struct _CustomData {
   gboolean is_live;
   GstElement *pipeline;
@@ -596,6 +597,7 @@ typedef struct _CustomData {
 } CustomData;
 
 CustomData data;
+#endif
 
 //extern player
 int playerstart(char* file)
