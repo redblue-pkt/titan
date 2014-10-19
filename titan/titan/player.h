@@ -997,6 +997,13 @@ int gstbuscall(GstBus *bus, GstMessage *msg, CustomData *data)
 				}
 	
 			} 
+			else if(status.prefillbuffer == 2) 
+			{
+				drawscreen(skin, 0, 0);
+				gst_element_set_state (data->pipeline, GST_STATE_PLAYING);
+				status.prefillbuffer = 0;
+			}
+
 			break;
  
 /*
