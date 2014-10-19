@@ -3946,6 +3946,10 @@ msgstr ""
 "Dieses Video wurde gelöscht. Wir entschuldigen uns für die "
 "Unannehmlichkeiten."
 
+#: player.h:981
+msgid "Buffering Stream - Cancel with Exit"
+msgstr ""
+
 #: play.h:402 play.h:436 plugins_imdbapi_skin.xml.h:9
 #: plugins_imdb_skin.xml.h:9 plugins_tmc_skin.xml.h:16
 #: plugins_tmdb_skin.xml.h:9 skins_imdbapi_skin.xml.h:9
