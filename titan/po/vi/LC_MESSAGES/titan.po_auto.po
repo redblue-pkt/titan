@@ -3864,7 +3864,7 @@ msgstr ""
 msgid "This video has been deleted. We apologize for the inconvenience."
 msgstr ""
 
-#: player.h:981
+#: player.h:983
 msgid "Buffering Stream - Cancel with Exit"
 msgstr ""
 
@@ -10035,7 +10035,7 @@ msgid "MetrixHD skin for TitanNit. Use transparent XPicons."
 msgstr ""
 
 #: tpk_description.h:102
-msgid "Midnigght Commander, a file manager for the command line"
+msgid "Midnight Commander, a file manager for the command line"
 msgstr ""
 
 #: tpk_description.h:103
