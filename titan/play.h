@@ -1563,6 +1563,11 @@ playerstart:
 				
 				if(rcret == getrcconfigint("rcstop", NULL) || rcret == getrcconfigint("rcexit", NULL))
 				{
+					if(status.prefillbuffer == 1)
+					{
+						status.prefillbuffer = 2;
+						continue;
+					}
 					playrcstop(playertype, flag);
 					if(startfile == NULL)
 					{						
