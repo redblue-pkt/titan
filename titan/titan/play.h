@@ -1331,7 +1331,7 @@ void playstartservice()
 // startfolder 2 = do nothing with playstop/playstart
 int screenplay(char* startfile, char* showname, int startfolder, int flag)
 {
-	int rcret = 0, playertype = 0, ret = 0, rcwait = 1000, screensaver_delay = 0, holdselection = 0;
+	int rcret = 0, playertype = 0, ret = 0, rcwait = 1000, screensaver_delay = 0, holdselection = 0, waitofbuffer = 0;
 	char* file = NULL, *tmpstr = NULL, *tmpstr1 = NULL;
 	char* tmppolicy = NULL, *startdir = NULL;
 	char* formats = NULL;
@@ -1450,6 +1450,7 @@ playerstart:
 			rcret = playerstart(file);
 		else
 		{
+#ifdef EPLAYER3
 			if(ostrstr(file, "http://") == file)
 			{
 				struct stimerthread* bufferstatus = addtimer(&screenplaybufferstatus, START, 1000, 1, NULL, NULL, NULL);
@@ -1462,6 +1463,9 @@ playerstart:
 			}
 			else
 				rcret = playerstart(file);
+#else
+			rcret = playerstart(file);
+#endif
 		}
 #ifndef SIMULATE
 		if(rcret != 0)
@@ -1482,8 +1486,11 @@ playerstart:
 		}
 #endif
 		clearscreen(load);
-		screenplayinfobar(file, showname, 0, playertype, flag);
-
+		if(status.prefillbuffer == 0)
+			screenplayinfobar(file, showname, 0, playertype, flag);
+		else
+			waitofbuffer = 1;
+		
 		if(flag == 4 && getconfigint("screensaver", NULL) == 1)
 		{
 			screensaver_delay = getconfigint("screensaver_delay", NULL);
@@ -1514,6 +1521,12 @@ playerstart:
 					screenplayinfobar(NULL, NULL, 1, playertype, flag);
 				}
 				
+				if(waitofbuffer == 1 &&	status.prefillbuffer == 0)
+				{
+					screenplayinfobar(file, showname, 0, playertype, flag);
+					waitofbuffer = 0;
+				}
+
 				if(flag == 4)
 				{
 					if(status.play == 1 && screensaver != NULL)

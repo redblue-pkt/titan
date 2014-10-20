@@ -48,6 +48,7 @@ int playerstartts(char* file, int flag)
 	struct service* snode = NULL;
 	struct dvbdev* fenode = NULL;
 	struct dvbdev* dvrnode = NULL;
+	status.prefillbuffer = 0;
 
 	//supermagic = getsupermagic(file);
 
@@ -603,6 +604,7 @@ CustomData data;
 int playerstart(char* file)
 {
 	char * tmpfile = NULL;
+	status.prefillbuffer = 0;
 	
 	if(file != NULL)
 	{
