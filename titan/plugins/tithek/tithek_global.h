@@ -248,12 +248,18 @@ char* hoster(char* url)
 		textbox(_("Message"), _("The hoster is not yet supported !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 
 
-	debug(99, "streamurl1: %s", streamurl);
+	debug(99, "Streamurl1: %s", streamurl);
 
 	streamurl = string_replace_all("amp;", "", streamurl, 1);
-	debug(99, "streamurl2: %s", streamurl);
+	debug(99, "Streamurl2: %s", streamurl);
 
 	free(tmplink), tmplink = NULL;
+	if(ostrncmp("http://", streamurl, 7))
+	{
+		printf("Streamurl3: not http://\n"); 
+		free(streamurl),streamurl = NULL;
+	}
+
 	return streamurl;
 }
 
