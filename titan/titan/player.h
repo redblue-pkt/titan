@@ -1497,9 +1497,7 @@ char** playergettracklist(int type)
 
 //////////////////////////////NEUER CODE //////////////////////////////
 #ifdef EPLAYER4
-	//char ** tmpTrackList[2][100];
 	TrackList = calloc(1, sizeof(char *) * ((100 * 2) + 1));
-	//TrackList = tmpTrackList;
 	
 	if(pipeline != NULL)
 	{
