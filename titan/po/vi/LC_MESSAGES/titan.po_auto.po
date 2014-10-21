@@ -10143,7 +10143,7 @@ msgid "Sat: Settings matze70 neue Design Astra 19.2"
 msgstr ""
 
 #: tpk_description.h:129
-msgid "Sat: uljanow Settings Sat 19.2 und 13.0"
+msgid "Sat: uljanow Settings Sat 19.2 und 13.0 vom 21.10.2014"
 msgstr ""
 
 #: tpk_description.h:130
@@ -10249,7 +10249,7 @@ msgid "Transparent Picons for tiTan (dark skins) - Hotbird 13.0E."
 msgstr ""
 
 #: tpk_description.h:155
-msgid "Transparent small black-Skins 19,2 swap Picons for tiTan."
+msgid "Transparent small black-Skins 19,2 swap Picons vom 21.10.2014"
 msgstr ""
 
 #: tpk_description.h:156
