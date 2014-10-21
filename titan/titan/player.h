@@ -1383,24 +1383,25 @@ void playerseek(float sec)
 }
 
 #ifdef EPLAYER4
-typedef enum { atUnknown, atMPEG, atMP3, atAC3, atDTS, atAAC, atPCM, atOGG, atFLAC, atWMA } audiotype_t;
+typedef enum {atUnknown, atMPEG, atMP3, atAC3, atDTS, atAAC, atPCM, atOGG, atFLAC, atWMA} audiotype_t;
 
 audiotype_t gstCheckAudioPad(GstStructure* structure)
 {
-	if (!structure)
+	if(!structure)
 		return atUnknown;
 
-	if ( gst_structure_has_name (structure, "audio/mpeg"))
+	if(gst_structure_has_name(structure, "audio/mpeg"))
 	{
 		gint mpegversion, layer = -1;
-		if (!gst_structure_get_int (structure, "mpegversion", &mpegversion))
+		if(!gst_structure_get_int (structure, "mpegversion", &mpegversion))
 			return atUnknown;
 
-		switch (mpegversion) {
+		switch(mpegversion)
+		{
 			case 1:
 				{
-					gst_structure_get_int (structure, "layer", &layer);
-					if ( layer == 3 )
+					gst_structure_get_int(structure, "layer", &layer);
+					if(layer == 3)
 						return atMP3;
 					else
 						return atMPEG;
@@ -1415,14 +1416,14 @@ audiotype_t gstCheckAudioPad(GstStructure* structure)
 		}
 	}
 
-	else if ( gst_structure_has_name (structure, "audio/x-ac3") || gst_structure_has_name (structure, "audio/ac3") )
+	else if(gst_structure_has_name(structure, "audio/x-ac3") || gst_structure_has_name(structure, "audio/ac3"))
 		return atAC3;
-	else if ( gst_structure_has_name (structure, "audio/x-dts") || gst_structure_has_name (structure, "audio/dts") )
+	else if(gst_structure_has_name(structure, "audio/x-dts") || gst_structure_has_name(structure, "audio/dts"))
 		return atDTS;
 #if GST_VERSION_MAJOR < 1
-	else if ( gst_structure_has_name (structure, "audio/x-raw-int") )
+	else if(gst_structure_has_name(structure, "audio/x-raw-int"))
 #else
-	else if ( gst_structure_has_name (structure, "audio/x-raw") )
+	else if(gst_structure_has_name(structure, "audio/x-raw"))
 #endif
 		return atPCM;
 
