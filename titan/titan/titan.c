@@ -620,7 +620,8 @@ int main(int argc, char *argv[])
 		system("echo disable > /proc/stb/fp/wol");
 
 	system(getconfig("skriptbeforetv", NULL));
-	ret = setcecstandby(0);
+	if(getwaswakuptimer() != 1)
+		ret = setcecstandby(0);
 	ret = setvideomode(getconfig("av_videomode", NULL), 0);
 	ret = setpolicy(getconfig("av_policy", NULL));
 	ret = setaspect(getconfig("av_aspect", NULL));
