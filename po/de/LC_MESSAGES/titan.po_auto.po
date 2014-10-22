@@ -6198,7 +6198,8 @@ msgstr ""
 
 #: shared.h:61
 msgid "Connect with Hoster wait 7 seconds"
-msgstr "Verbindung zum Hoster wird hergestellt.\n"
+msgstr ""
+"Verbindung zum Hoster wird hergestellt.\n"
 "Bitte warten Sie 7 Sekunden."
 
 #: skinadjust.h:27
@@ -9870,12 +9871,14 @@ msgstr "Alternativer Skin für Pearl LCD"
 #: tpk_description.h:5
 msgid ""
 "Alternativer Skin fuer Pearl LCD - X-Light Picons zusaetzlich installieren"
-msgstr "Alternativer Skin für Pearl LCD - X-Light Picons zusätzlich installieren"
+msgstr ""
+"Alternativer Skin für Pearl LCD - X-Light Picons zusätzlich installieren"
 
 #: tpk_description.h:6
 msgid ""
 "Alternativer Skin fuer Samsung LCD - ohne Picons (extra zu installieren)"
-msgstr "Alternativer Skin für Samsung LCD - ohne Picons (extra zu installieren)"
+msgstr ""
+"Alternativer Skin für Samsung LCD - ohne Picons (extra zu installieren)"
 
 #: tpk_description.h:7
 msgid "Automatisch Timer setzen"
@@ -10115,7 +10118,8 @@ msgstr "vizcam 1.04"
 msgid ""
 "Expert Version 9848 of OScam 2xSlot intern + 1xUSB (blocked EMM for V13 and "
 "V14) including 0x07 patch"
-msgstr "oscam Version 9848 für bis zu zwei interne Kartenschächte und 1 USB\n"
+msgstr ""
+"oscam Version 9848 für bis zu zwei interne Kartenschächte und 1 USB\n"
 "mit EMM blocking für Sky V13 und V14 Karten) und dem fix07 patch"
 
 #: tpk_description.h:66
@@ -10182,21 +10186,24 @@ msgstr ""
 msgid ""
 "gbox 800 with autoident for card hd+ and skyde including all necessary "
 "config files."
-msgstr "gbox 800 inklusive automatischer Erkennung einer HDplus und Sky DE Karte\n"
+msgstr ""
+"gbox 800 inklusive automatischer Erkennung einer HDplus und Sky DE Karte\n"
 "inklusive der benötigten Konfigurationen."
 
 #: tpk_description.h:82
 msgid ""
 "gbox 804 with autoident for card hd+ and skyde including all necessary "
 "config files."
-msgstr "gbox 804 inklusive automatischer Erkennung einer HDplus und Sky DE Karte\n"
+msgstr ""
+"gbox 804 inklusive automatischer Erkennung einer HDplus und Sky DE Karte\n"
 "inklusive der benötigten Konfigurationen."
 
 #: tpk_description.h:83
 msgid ""
 "gbox 806 with autoident for card hd+ and skyde including all necessary "
 "config files."
-msgstr "gbox 806 inklusive automatischer Erkennung einer HDplus und Sky DE Karte\n"
+msgstr ""
+"gbox 806 inklusive automatischer Erkennung einer HDplus und Sky DE Karte\n"
 "inklusive der benötigten Konfigurationen."
 
 #: tpk_description.h:84
