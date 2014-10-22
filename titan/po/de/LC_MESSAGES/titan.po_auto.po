@@ -10690,7 +10690,7 @@ msgstr "Skins"
 
 #: tpk_section.h:18
 msgid "tools"
-msgstr "Rools"
+msgstr "Tools"
 
 #: tpk_section.h:19
 msgid "tools "
@@ -10746,7 +10746,7 @@ msgstr ""
 
 #: tpk_showname.h:19
 msgid "Codepack"
-msgstr "Codecpacl"
+msgstr "Codecpack"
 
 #: tpk_showname.h:20
 msgid "Croissant"
