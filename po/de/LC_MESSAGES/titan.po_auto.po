@@ -1618,11 +1618,11 @@ msgstr "In der Gruppe schreiben"
 
 #: fancontrol.h:64
 msgid "FanControl-standby"
-msgstr ""
+msgstr "Lüfter Standby"
 
 #: fancontrol.h:71
 msgid "FanControl-normal"
-msgstr ""
+msgstr "Lüfter Normalbetrieb"
 
 #: faststream.h:107 played.h:118
 msgid "Connect with Hoster wait 10 seconds"
@@ -1812,7 +1812,7 @@ msgstr "Fehler: Transponder Quell Datei nicht gefunden"
 
 #: global.h:6239
 msgid "Error: Transponder Source file no data"
-msgstr ""
+msgstr "Fehler: Transponder ist leer"
 
 #: global.h:6411
 msgid ""
@@ -2281,7 +2281,7 @@ msgstr "Fehler, Programm nicht gestartet"
 
 #: httpdfunc.h:4776
 msgid "Program started successfully"
-msgstr ""
+msgstr "Programm erfolgreich gestartet"
 
 #: httpdfunc.h:4848 skin_default_skin.xml.h:1 webif_index.atemio510.h:16
 #: webif_index.atemio5200.h:16 webif_index.atemio5200.h:70
@@ -2408,7 +2408,7 @@ msgstr "Es wird kein Stream wiedergegeben"
 
 #: httpdfunc.h:5319
 msgid "Streaming succesfull stopped."
-msgstr ""
+msgstr "Streaming erfolgreich beendet"
 
 #: httpdfunc.h:5322
 msgid "ERROR, Streaming can not be stopped."
@@ -2433,15 +2433,15 @@ msgstr ""
 
 #: httpdfunc.h:5525
 msgid "No Tpk Sections Found."
-msgstr ""
+msgstr "TPK Auswahl nicht vorhanden"
 
 #: httpdfunc.h:5589 httpdfunc.h:5743 httpdfunc.h:6004
 msgid "No Tpk Files Found."
-msgstr ""
+msgstr "TPK Pakete nicht vorhanden"
 
 #: httpdfunc.h:5824 httpdfunc.h:5832 httpdfunc.h:5842
 msgid "Install Log:"
-msgstr ""
+msgstr "Installations Log:"
 
 #: httpdfunc.h:5891 skin_default_skin.xml.h:683 webif_system_extensions.h:4
 msgid "TPK tmp (tmp)"
@@ -2453,15 +2453,15 @@ msgstr "Installieren (Media)"
 
 #: httpdfunc.h:5936
 msgid "No Tpk Files Found on /tmp Directory."
-msgstr ""
+msgstr "TPK Datei in /tmp nicht gefunden"
 
 #: httpdfunc.h:5940
 msgid "No Tpk Files Found on Media Devices."
-msgstr ""
+msgstr "TPK wurde auf dem Medium nicht gefunden"
 
 #: httpdfunc.h:6097 httpdfunc.h:6107
 msgid "Remove Log:"
-msgstr ""
+msgstr "Entfernen Log:"
 
 #: httpdfunc.h:6182
 msgid "Tpk Update Info - Update OK"
@@ -2988,8 +2988,8 @@ msgstr ""
 "Project-Id-Version: TitanNit 1.56\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-07 10:44+0200\n"
-"PO-Revision-Date: 2014-10-20 17:13+0100\n"
-"Last-Translator: Caliban <aaf-caliban@e.mail.de>\n"
+"PO-Revision-Date: 2014-10-22 19:45+0100\n"
+"Last-Translator: Bulldog <Bulldog@e.mail.de>\n"
 "Language-Team: German <_obiwan_@web.de>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -3410,7 +3410,7 @@ msgstr ""
 
 #: movie4k.h:399
 msgid "set a cookie which will expire in 3 days and be accessible site wide"
-msgstr ""
+msgstr "Ein Cookie, das in drei Tagen abläuft, wird erstellt."
 
 #: movreel.h:85
 msgid "The file that you requested could not be found"
@@ -3620,7 +3620,7 @@ msgstr "aus"
 
 #: network.h:395
 msgid "enable"
-msgstr ""
+msgstr "aktivieren"
 
 #: network.h:436
 msgid "save network settings ?"
@@ -3704,7 +3704,7 @@ msgstr ""
 
 #: nowvideo.h:99
 msgid "This file no longer exists on our servers."
-msgstr ""
+msgstr "Die angeforderte Datei ist existiert nicht mehr."
 
 #: optimize.h:253
 msgid "hold"
@@ -5163,11 +5163,11 @@ msgstr "Falsche Eingaben löschen"
 
 #: plugins_sudoku_skin.xml.h:6 skins_sudoku_skin.xml.h:6
 msgid "Easy"
-msgstr ""
+msgstr "einfach"
 
 #: plugins_sudoku_skin.xml.h:8 skins_sudoku_skin.xml.h:8
 msgid "Hard"
-msgstr ""
+msgstr "schwer"
 
 #: plugins_sudoku_skin.xml.h:9 skins_sudoku_skin.xml.h:9
 msgid "Input the numbers 1 to 9"
@@ -5564,7 +5564,7 @@ msgstr "Verbinde mit dem Hoster, warten Sie 20 Sekunden"
 
 #: putlocker.h:91
 msgid "Found Firedrive.com Link, supporting comming soon..."
-msgstr ""
+msgstr "FIredrive.com Link gefunden. Dieser wird zur Zeit nicht unterstützt."
 
 #: readerconfig.h:258
 msgid "first slot"
@@ -6198,7 +6198,8 @@ msgstr ""
 
 #: shared.h:61
 msgid "Connect with Hoster wait 7 seconds"
-msgstr ""
+msgstr "Verbindung zum Hoster wird hergestellt.\n"
+"Bitte warten Sie 7 Sekunden."
 
 #: skinadjust.h:27
 msgid "border"
@@ -7842,7 +7843,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:437
 msgid "Orbital Position:"
-msgstr ""
+msgstr "Orbitale Position:"
 
 #: skin_default_skin.xml.h:438
 msgid "OSD Bottom Overscan"
@@ -8010,7 +8011,7 @@ msgstr "Anbieter"
 
 #: skin_default_skin.xml.h:485
 msgid "Provider:"
-msgstr ""
+msgstr "Anbieter:"
 
 #: skin_default_skin.xml.h:487
 msgid "q"
@@ -8471,7 +8472,7 @@ msgstr "System Infos"
 #: skin_default_skin.xml.h:647 webif_info_systeminfos.h:1
 #: webif_info_systeminfos.h:8
 msgid "System Infos"
-msgstr ""
+msgstr "System Informationen"
 
 #: skin_default_skin.xml.h:650
 msgid "System - Usbupdate (online)"
@@ -9167,7 +9168,7 @@ msgstr "Eingabe Feld"
 
 #: thefile.h:205
 msgid "This direct link will be available for your IP next 8 hours"
-msgstr ""
+msgstr "Der Link ist von Ihrer IP die nächsten 8 Stunden erreichbar."
 
 #: timeshift.h:113
 msgid "Should Timeshift File deleted ?"
@@ -9428,7 +9429,7 @@ msgstr "TiThek Haftungsausschluss:"
 #: tithek.h:1534 tithek.h:1667 tithek.h:2085 tithek.h:2099 tithek.h:2109
 #: tithek.h:2124
 msgid "Tithek - Mainmenu - Favoriten"
-msgstr ""
+msgstr "Tithek - Hauptmenu - Favoriten"
 
 #: tithek.h:1536 tithek.h:2126
 msgid "EDIT FAV"
@@ -9850,31 +9851,31 @@ msgstr "Position"
 
 #: tpk_description.h:1
 msgid "AAF MediaCenter the best multimedia Player on sh4."
-msgstr ""
+msgstr "AAF MediaCenter - der beste Media Player für sh4"
 
 #: tpk_description.h:2
 msgid ""
 "A collection of really nice folder icons for MediaCenter Videoplayer "
 "Coverview!"
-msgstr ""
+msgstr "Eine nette Kollektion Ordner Picons für den Mediaplayer"
 
 #: tpk_description.h:3
 msgid "Alternativer Skin fuer Pearl LCD"
-msgstr ""
+msgstr "Alternativer Skin für Pearl LCD"
 
 #: tpk_description.h:4
 msgid "Alternativer Skin fuer Pearl LCD "
-msgstr ""
+msgstr "Alternativer Skin für Pearl LCD"
 
 #: tpk_description.h:5
 msgid ""
 "Alternativer Skin fuer Pearl LCD - X-Light Picons zusaetzlich installieren"
-msgstr ""
+msgstr "Alternativer Skin für Pearl LCD - X-Light Picons zusätzlich installieren"
 
 #: tpk_description.h:6
 msgid ""
 "Alternativer Skin fuer Samsung LCD - ohne Picons (extra zu installieren)"
-msgstr ""
+msgstr "Alternativer Skin für Samsung LCD - ohne Picons (extra zu installieren)"
 
 #: tpk_description.h:7
 msgid "Automatisch Timer setzen"
@@ -9882,75 +9883,75 @@ msgstr ""
 
 #: tpk_description.h:8
 msgid "Black 3D Picons for tiTan."
-msgstr ""
+msgstr "Schwarze 3D Picons"
 
 #: tpk_description.h:9
 msgid "Black 3D Picons for tiTan - Astra 23.5E."
-msgstr ""
+msgstr "Schwarze 3D Picons - Astra 23.5"
 
 #: tpk_description.h:10
 msgid "Black 3D Picons for tiTan - Hotbird 13.0E."
-msgstr ""
+msgstr "Schwarze 3D Picons - Hotbird 13 Ost"
 
 #: tpk_description.h:11
 msgid "Bootlogo 'Bikergirl' for your AAF- Duckbox"
-msgstr ""
+msgstr "Bootlogo 'Bikergirl'"
 
 #: tpk_description.h:12
 msgid "Bootlogo 'Blueskull' for your AAF- Duckbox"
-msgstr ""
+msgstr "Bootlogo 'Blueskull'"
 
 #: tpk_description.h:13
 msgid "Bootlogo 'Cityflash' for your AAF- Duckbox"
-msgstr ""
+msgstr "Bootlogo 'Cityflash'"
 
 #: tpk_description.h:14
 msgid "Bootlogo 'Enigma Linux' for your AAF- Duckbox"
-msgstr ""
+msgstr "Bootlogo 'Enigma Linux'"
 
 #: tpk_description.h:15
 msgid "Bootlogo 'Fantasygirl 2' for your AAF- Duckbox"
-msgstr ""
+msgstr "Bootlogo 'Fantasygirl 2'"
 
 #: tpk_description.h:16
 msgid "Bootlogo 'Fantasygirl' for your AAF- Duckbox"
-msgstr ""
+msgstr "Bootlogo 'Fantasygirl'"
 
 #: tpk_description.h:17
 msgid "Bootlogo 'Firelady' for your AAF- Duckbox"
-msgstr ""
+msgstr "Bootlogo 'Firelady'"
 
 #: tpk_description.h:18
 msgid "Bootlogo 'Fireskull' for your AAF- Duckbox"
-msgstr ""
+msgstr "Bootlogo 'Fireskull'"
 
 #: tpk_description.h:19
 msgid "Bootlogo 'Footballgirls' for your AAF- Duckbox"
-msgstr ""
+msgstr "Bootlogo 'Footballgirls'"
 
 #: tpk_description.h:20
 msgid "Bootlogo 'Ghostrider' for your AAF- Duckbox"
-msgstr ""
+msgstr "Bootlogo 'Ghostrider'"
 
 #: tpk_description.h:21
 msgid "Bootlogo 'Giantgirl' for your AAF- Duckbox"
-msgstr ""
+msgstr "Bootlogo 'Giantgirl'"
 
 #: tpk_description.h:22
 msgid "Bootlogo 'Ice Age Scrap likes UFS910' for your AAF- Duckbox"
-msgstr ""
+msgstr "Bootlogo 'Ice Age Scrap likes UFS910'"
 
 #: tpk_description.h:23
 msgid "Bootlogo 'Linuxgirl' for your AAF- Duckbox"
-msgstr ""
+msgstr "Bootlogo 'Linuxgirl'"
 
 #: tpk_description.h:24
 msgid "Bootlogo 'Planets' for your AAF- Duckbox"
-msgstr ""
+msgstr "Bootlogo 'Planets'"
 
 #: tpk_description.h:25
 msgid "Bootlogo 'The Grim Reaper' for your AAF- Duckbox"
-msgstr ""
+msgstr "Bootlogo 'The Grim Reaper'"
 
 #: tpk_description.h:26
 msgid "Bootlogo 'TitanNit Blood'"
@@ -9970,31 +9971,31 @@ msgstr ""
 
 #: tpk_description.h:30
 msgid "Bootlogo 'Zombie' for your AAF- Duckbox"
-msgstr ""
+msgstr "Bootlogo 'Zombie'"
 
 #: tpk_description.h:31
 msgid "Cable: default Settings Kabel Deutschland"
-msgstr ""
+msgstr "Kabel: Kabel Deutschland Senderlisten"
 
 #: tpk_description.h:32
 msgid "Cable: Settings Kabel Deutschland UH-Kreis"
-msgstr ""
+msgstr "Kabel: Kabel Deutschland UH-Kreis Senderlisten"
 
 #: tpk_description.h:33
 msgid "Cable: Settings Kabel Primacom"
-msgstr ""
+msgstr "Kabel: Kabel Primacom Senderlisten"
 
 #: tpk_description.h:34
 msgid "Cable: Settings Kabel Unitymedia2"
-msgstr ""
+msgstr "Kabel: Unitymedia 2 Senderlisten"
 
 #: tpk_description.h:35
 msgid "Cable: Settings Unitymedia"
-msgstr ""
+msgstr "Kabel: Unitymedia Senderlisten"
 
 #: tpk_description.h:36
 msgid "Cable: sofatester Settings Kabel BW"
-msgstr ""
+msgstr "Kabel: Kabel BW Senderlisten bei Sofatester"
 
 #: tpk_description.h:37
 msgid "Callmonitor Plugin"
@@ -10038,7 +10039,7 @@ msgstr ""
 
 #: tpk_description.h:47
 msgid "cut record files"
-msgstr ""
+msgstr "Kleiner .ts Editor zum schneiden"
 
 #: tpk_description.h:48
 msgid "Default Font "
@@ -10070,7 +10071,7 @@ msgstr ""
 
 #: tpk_description.h:55
 msgid "dvdplayer plugin."
-msgstr ""
+msgstr "DVD Player"
 
 #: tpk_description.h:56
 msgid ""
@@ -10080,41 +10081,42 @@ msgstr ""
 
 #: tpk_description.h:57
 msgid "Emu Camd3 v3.902 for your box"
-msgstr ""
+msgstr "camd3 V3.902"
 
 #: tpk_description.h:58
 msgid "Emu MBox v0.6 build 0010 for your box"
-msgstr ""
+msgstr "MBox V0.6 Build 0010"
 
 #: tpk_description.h:59
 msgid "Emu MGCamd v1.35 for your box"
-msgstr ""
+msgstr "MGCamd V1.35"
 
 #: tpk_description.h:60
 msgid "Emu MGCamd v1.38a and all Configs"
-msgstr ""
+msgstr "MGCamd V1.38a inklusive Konfigurationsdateien"
 
 #: tpk_description.h:61
 msgid "Emu scam 3.53 for your box"
-msgstr ""
+msgstr "scam V3.53"
 
 #: tpk_description.h:62
 msgid "Emu scam 3.59 for your box"
-msgstr ""
+msgstr "scam V3.59"
 
 #: tpk_description.h:63
 msgid "Emu scam 3.60 for your box"
-msgstr ""
+msgstr "scam 3.60"
 
 #: tpk_description.h:64
 msgid "Emu vizcam 1.04 for your box"
-msgstr ""
+msgstr "vizcam 1.04"
 
 #: tpk_description.h:65
 msgid ""
 "Expert Version 9848 of OScam 2xSlot intern + 1xUSB (blocked EMM for V13 and "
 "V14) including 0x07 patch"
-msgstr ""
+msgstr "oscam Version 9848 für bis zu zwei interne Kartenschächte und 1 USB\n"
+"mit EMM blocking für Sky V13 und V14 Karten) und dem fix07 patch"
 
 #: tpk_description.h:66
 msgid "extended config Panel"
@@ -10122,11 +10124,11 @@ msgstr ""
 
 #: tpk_description.h:67
 msgid "filemanager"
-msgstr ""
+msgstr "Datei Manager"
 
 #: tpk_description.h:68
 msgid "first titan game"
-msgstr ""
+msgstr "Ein Spiel für titan"
 
 #: tpk_description.h:69
 msgid "Font 'Action Man Italic' "
@@ -10180,35 +10182,38 @@ msgstr ""
 msgid ""
 "gbox 800 with autoident for card hd+ and skyde including all necessary "
 "config files."
-msgstr ""
+msgstr "gbox 800 inklusive automatischer Erkennung einer HDplus und Sky DE Karte\n"
+"inklusive der benötigten Konfigurationen."
 
 #: tpk_description.h:82
 msgid ""
 "gbox 804 with autoident for card hd+ and skyde including all necessary "
 "config files."
-msgstr ""
+msgstr "gbox 804 inklusive automatischer Erkennung einer HDplus und Sky DE Karte\n"
+"inklusive der benötigten Konfigurationen."
 
 #: tpk_description.h:83
 msgid ""
 "gbox 806 with autoident for card hd+ and skyde including all necessary "
 "config files."
-msgstr ""
+msgstr "gbox 806 inklusive automatischer Erkennung einer HDplus und Sky DE Karte\n"
+"inklusive der benötigten Konfigurationen."
 
 #: tpk_description.h:84
 msgid "Gold Picons for tiTan."
-msgstr ""
+msgstr "Gold Picons"
 
 #: tpk_description.h:85
 msgid "Gold Picons for tiTan - Astra 23.5E."
-msgstr ""
+msgstr "Gold Picons - Astra 23.5"
 
 #: tpk_description.h:86
 msgid "Gold Picons for tiTan - Astra 28.2E."
-msgstr ""
+msgstr "Gold Picons - Astra 28.2"
 
 #: tpk_description.h:87
 msgid "Gold Picons for tiTan - Hotbird 13.0E."
-msgstr ""
+msgstr "Gold Picons - Hotbird 13"
 
 #: tpk_description.h:88
 msgid "Holzuhr - Standby for tiTan - Samsung LCD Skin Channel."
@@ -10224,7 +10229,7 @@ msgstr ""
 
 #: tpk_description.h:91
 msgid "IncubusCamd_1.22 including all necessary config files."
-msgstr ""
+msgstr "Incubuscamd V1.22 inklusive Konfigurationsdateien"
 
 #: tpk_description.h:92
 msgid "IP-Kamera zB. Firma INSTAR"
@@ -10232,19 +10237,19 @@ msgstr ""
 
 #: tpk_description.h:93
 msgid "Kabel BW transparent Picons for tiTan."
-msgstr ""
+msgstr "Kabel BW transparent Picons"
 
 #: tpk_description.h:94
 msgid "Kabel Deutschland Picons black3d for tiTan."
-msgstr ""
+msgstr "Kabel Deutschland Picons black3d"
 
 #: tpk_description.h:95
 msgid "Kabel Deutschland transparent Picons for tiTan."
-msgstr ""
+msgstr "Kabel Deutschland transparent Picons"
 
 #: tpk_description.h:96
 msgid "Lib extension for network (upnpfs/smbfs/ftpfs/rarfs)"
-msgstr ""
+msgstr "Netzwerktreiberpaket (upnpfs/smbfs/ftpfs/rarfs)"
 
 #: tpk_description.h:97
 msgid "MegaStyle blue Mini TV Skin"
@@ -10264,11 +10269,11 @@ msgstr ""
 
 #: tpk_description.h:101
 msgid "MetrixHD skin for TitanNit. Use transparent XPicons."
-msgstr ""
+msgstr "MetrixHD skin - Bitte die transparenten Picons nutzen"
 
 #: tpk_description.h:102
 msgid "Midnight Commander, a file manager for the command line"
-msgstr ""
+msgstr "Midnight Commander - ein Datei Manager"
 
 #: tpk_description.h:103
 msgid "More audio/video formats playable"
@@ -10364,19 +10369,19 @@ msgstr ""
 
 #: tpk_description.h:126
 msgid "Sat: Bulldog Settings 3x Sat 28.03.2014"
-msgstr ""
+msgstr "Satellit: Senderlisten bei Bulldog für 13.0, 19.2 und 28.2"
 
 #: tpk_description.h:127
 msgid "Sat: matze70 Settings Astra 19.2"
-msgstr ""
+msgstr "Satellit: Senderlisten bei matze70 für 19.2 "
 
 #: tpk_description.h:128
 msgid "Sat: Settings matze70 neue Design Astra 19.2"
-msgstr ""
+msgstr "Satellit: Senderlisten bei matze70 für 19.2 Neu"
 
 #: tpk_description.h:129
 msgid "Sat: uljanow Settings Sat 19.2 und 13.0 vom 21.10.2014"
-msgstr ""
+msgstr "Satellit: Senderlisten bei Uljanow für 13.0, 19.2"
 
 #: tpk_description.h:130
 msgid ""
@@ -10614,43 +10619,43 @@ msgstr "keine Beschreibung gefunden"
 
 #: tpk_section.h:1
 msgid "bootlogos"
-msgstr ""
+msgstr "Bootlogos"
 
 #: tpk_section.h:2
 msgid "browser"
-msgstr ""
+msgstr "Internet Browser"
 
 #: tpk_section.h:3
 msgid "emus"
-msgstr ""
+msgstr "Softcams"
 
 #: tpk_section.h:4
 msgid "fonts"
-msgstr ""
+msgstr "Schriftarten"
 
 #: tpk_section.h:5
 msgid "games"
-msgstr ""
+msgstr "Spiele"
 
 #: tpk_section.h:6
 msgid "infos"
-msgstr ""
+msgstr "Informationen"
 
 #: tpk_section.h:7
 msgid "infos "
-msgstr ""
+msgstr "Infos "
 
 #: tpk_section.h:8
 msgid "keymaps"
-msgstr ""
+msgstr "Tastenbelegungen"
 
 #: tpk_section.h:9
 msgid "lcdpearlskins"
-msgstr ""
+msgstr "Pearl LCD Skins"
 
 #: tpk_section.h:10
 msgid "lcdsamsungskins"
-msgstr ""
+msgstr "Samsung LCD Skins"
 
 #: tpk_section.h:11 webif_help.h:58
 msgid "network"
@@ -10658,39 +10663,39 @@ msgstr "Netzwerk"
 
 #: tpk_section.h:12
 msgid "picons"
-msgstr ""
+msgstr "Senderlogos"
 
 #: tpk_section.h:13
 msgid "player"
-msgstr ""
+msgstr "Multimedia Player"
 
 #: tpk_section.h:14
 msgid "player "
-msgstr ""
+msgstr "Multimedia Player"
 
 #: tpk_section.h:16
 msgid "settings"
-msgstr ""
+msgstr "Senderlisten"
 
 #: tpk_section.h:17
 msgid "skins"
-msgstr ""
+msgstr "Skins"
 
 #: tpk_section.h:18
 msgid "tools"
-msgstr ""
+msgstr "Rools"
 
 #: tpk_section.h:19
 msgid "tools "
-msgstr ""
+msgstr "Tools "
 
 #: tpk_section.h:20
 msgid "wireless"
-msgstr ""
+msgstr "WLAN"
 
 #: tpk_showname.h:1
 msgid "3 Wins"
-msgstr ""
+msgstr "Drei gewinnt"
 
 #: tpk_showname.h:2
 msgid "Action Man Italic"
@@ -10702,7 +10707,7 @@ msgstr ""
 
 #: tpk_showname.h:4
 msgid "andys Settings 19.2 13.0 0.8 23.5 Kabel Deutschland"
-msgstr ""
+msgstr "Senderlisten bei andy für 19.2 13.0 0.8 23.5 und Kabel Deutschland"
 
 #: tpk_showname.h:5
 msgid "Auto Timer"
@@ -10734,7 +10739,7 @@ msgstr ""
 
 #: tpk_showname.h:19
 msgid "Codepack"
-msgstr ""
+msgstr "Codecpacl"
 
 #: tpk_showname.h:20
 msgid "Croissant"
@@ -10778,7 +10783,7 @@ msgstr ""
 
 #: tpk_showname.h:31
 msgid "File Manager"
-msgstr ""
+msgstr "Dateimanager"
 
 #: tpk_showname.h:32
 msgid "Firelady"
@@ -10850,7 +10855,7 @@ msgstr ""
 
 #: tpk_showname.h:49
 msgid "KeyLock"
-msgstr ""
+msgstr "Tastensperre"
 
 #: tpk_showname.h:50
 msgid "LCD Pearl"
@@ -11254,27 +11259,27 @@ msgstr ""
 
 #: tpk_showname.h:157
 msgid "Settings Astra 19.2 (matze70)"
-msgstr ""
+msgstr "Senderliste Astra 19.2 (matze70)"
 
 #: tpk_showname.h:158
 msgid "Settings Astra 19.2 - NEU (matze70)"
-msgstr ""
+msgstr "Senderliste Astra 19.2 - NEU (matze70)"
 
 #: tpk_showname.h:159
 msgid "Settings Astra 19.2 (uljanow) plus hotbird 13.0"
-msgstr ""
+msgstr "Senderliste Astra 19.2/Hotbird 13.0 (uljanow)"
 
 #: tpk_showname.h:160
 msgid "Settings Hotbird 13.0, Astra 19.2, Astra 28.2E"
-msgstr ""
+msgstr "Senderliste Hotbird 13.0/Astra 19.2/Astra 28.2E (Bulldog)"
 
 #: tpk_showname.h:161
 msgid "Settings Kabel BW (sofatester)"
-msgstr ""
+msgstr "Senderliste Kabel BW (sofatester)"
 
 #: tpk_showname.h:162
 msgid "Settings Kabel Deutschland"
-msgstr ""
+msgstr "Senderliste Kabel Deutschland"
 
 #: tpk_showname.h:163
 msgid "Settings Kabel Deutschland UH-Kreis"
@@ -11282,15 +11287,15 @@ msgstr ""
 
 #: tpk_showname.h:164
 msgid "Settings Kabel Primacom"
-msgstr ""
+msgstr "Senderliste Primacom"
 
 #: tpk_showname.h:165
 msgid "Settings Kabel Unitymedia langerhans"
-msgstr ""
+msgstr "Senderliste Unitymedia Langerhans"
 
 #: tpk_showname.h:166
 msgid "Settings Unitymedia by caliban 21.7.2014"
-msgstr ""
+msgstr "Senderliste Uniymedia bei Caliban"
 
 #: tpk_showname.h:167
 msgid "Skin 0Acht5Zehn (grau)"
