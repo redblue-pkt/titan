@@ -1838,7 +1838,7 @@ void checkboxstart()
 				setcecstandby(1);
 			}
 			else 
-				setcecstandby(0)
+				setcecstandby(0);
 		}
 		node = node->next;
 	}
