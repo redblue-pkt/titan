@@ -9430,7 +9430,7 @@ msgstr "TiThek Haftungsausschluss:"
 #: tithek.h:1534 tithek.h:1667 tithek.h:2085 tithek.h:2099 tithek.h:2109
 #: tithek.h:2124
 msgid "Tithek - Mainmenu - Favoriten"
-msgstr ""
+msgstr "TiThek - Hauptmenü - Favoriten"
 
 #: tithek.h:1536 tithek.h:2126
 msgid "EDIT FAV"
