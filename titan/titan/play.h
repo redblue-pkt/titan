@@ -270,7 +270,16 @@ void screenplaytracklist(int mode, int playertype, int flag)
 					tmp->handle = (char*)atoi(tracklist[i]);
 				else
 					tmp->handle = (char*)(i / 2);
-
+				
+#ifdef MIPSEL	
+				if(curtrackid == (i / 2))
+				{
+					tmp->handle1 = "running";
+					changeinput(tmp, _("running"));
+				}
+				else
+					changeinput(tmp, "");
+#else
 				if((ostrcmp(curtrackname, tracklist[i]) == 0 && ostrcmp(curtrackencoding, tracklist[i + 1]) == 0) || (tracklist[i] != NULL && curtrackid == atoi(tracklist[i])))
 				{
 					tmp->handle1 = "running";
@@ -278,6 +287,7 @@ void screenplaytracklist(int mode, int playertype, int flag)
 				}
 				else
 					changeinput(tmp, "");
+#endif
 			}
 			i += 2;
 		}
