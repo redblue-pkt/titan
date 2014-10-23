@@ -62,7 +62,8 @@ void screenstandby()
 	status.rcstandby = standbyscreen;
 	
 	setcecstandby(1);
-	system("vdstandby -a");
+	if(file_exist("/bin/vdstandby") == 1)
+		system("vdstandby -a");
 	while(1)
 	{
 		rcret = waitrc(standbyscreen, 10000, 0);
@@ -96,7 +97,8 @@ void screenstandby()
 		setfanspeed(-1, 0);
 	
 	setcecstandby(0);
-	system("vdstandby -d");
+	if(file_exist("/bin/vdstandby") == 1)
+		system("vdstandby -d");
 
 	setoverclockfreq(1);
 	setosdtransparent(getskinconfigint("osdtransparent", NULL));
