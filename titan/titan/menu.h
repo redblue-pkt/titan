@@ -69,7 +69,8 @@ void menucheckentry(struct skin* child)
 	// Hide FanControl when no ufs922
 	if(ostrcmp(child->name, "fancontrol") == 0)
 	{
-		if(checkbox("UFS922") == 1 || checkbox("ATEMIO-NEMESIS") == 1)
+		//if(checkbox("UFS922") == 1 || checkbox("ATEMIO-NEMESIS") == 1)
+		if(checkbox("UFS922") == 1)
 			child->hidden = NO;
 		else
 			child->hidden = YES;
