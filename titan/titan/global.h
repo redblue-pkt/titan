@@ -1837,6 +1837,8 @@ void checkboxstart()
 				setwaswakuptimer(1);
 				setcecstandby(1);
 			}
+			else 
+				setcecstandby(0)
 		}
 		node = node->next;
 	}
