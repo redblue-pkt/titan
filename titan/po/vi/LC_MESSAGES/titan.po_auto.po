@@ -55,8 +55,8 @@ msgstr ""
 #: network.h:906 newsletter.h:252 newsletter.h:292 novamov.h:35 novamov.h:80
 #: nowvideo.h:44 nowvideo.h:99 nowvideo.h:105 panel_main.h:29 panel_main.h:135
 #: panel_settings_wizard.h:6 played.h:30 played.h:84 played.h:90 played.h:102
-#: played.h:114 played.h:171 player.h:100 play.h:482 play.h:599 play.h:1256
-#: play.h:1262 play.h:1271 play.h:1272 play.h:1473 play.h:1661 play.h:1672
+#: played.h:114 played.h:171 player.h:100 play.h:492 play.h:609 play.h:1266
+#: play.h:1272 play.h:1281 play.h:1282 play.h:1483 play.h:1671 play.h:1682
 #: plugins_dlna_skin.xml.h:8 plugins_facebook_skin.xml.h:5
 #: plugins_mboxinfo_skin.xml.h:2 plugins_mc_skin.xml.h:38
 #: plugins_optimize_skin.xml.h:3 plugins_rgui_skin.xml.h:3
@@ -162,8 +162,8 @@ msgstr "Ok"
 #: newsletter.h:292 novamov.h:35 novamov.h:80 nowvideo.h:44 nowvideo.h:99
 #: nowvideo.h:105 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:84 played.h:90 played.h:102 played.h:114 played.h:171
-#: player.h:100 play.h:482 play.h:599 play.h:1256 play.h:1262 play.h:1271
-#: play.h:1272 play.h:1473 play.h:1661 play.h:1672
+#: player.h:100 play.h:492 play.h:609 play.h:1266 play.h:1272 play.h:1281
+#: play.h:1282 play.h:1483 play.h:1671 play.h:1682
 #: plugins_autotimer_skin.xml.h:7 plugins_callmonitor1_skin.xml.h:11
 #: plugins_catcatch_skin.xml.h:4 plugins_dlna_skin.xml.h:2
 #: plugins_facebook_skin.xml.h:4 plugins_instar_skin.xml.h:6
@@ -254,7 +254,7 @@ msgstr "Thoát"
 #: panel_settings_autostart.h:351 panel_settings_autostart.h:360
 #: panel_settings_overclocking.h:214 panel_settings_overclocking.h:234
 #: panel_settings_overclocking.h:244 pin.h:104 pin.h:176 pin.h:180 pin.h:194
-#: play.h:568 play.h:575 play.h:590 readerconfig.h:254 rectimer.h:1076
+#: play.h:578 play.h:585 play.h:600 readerconfig.h:254 rectimer.h:1076
 #: rectimer.h:1081 rectimer.h:1086 rectimer.h:1091 rectimer.h:1096
 #: rectimer.h:1101 rectimer.h:1106 scan.h:1775 scan.h:2254 scan.h:2258
 #: scan.h:2262 scan.h:2266 scan.h:2270 scan.h:2279 scan.h:2283
@@ -318,8 +318,8 @@ msgstr "EPG"
 #: panel_settings_autostart.h:319 panel_settings_autostart.h:328
 #: panel_settings_autostart.h:337 panel_settings_autostart.h:351
 #: panel_settings_overclocking.h:214 panel_settings_overclocking.h:234
-#: panel_settings_overclocking.h:244 pin.h:105 pin.h:177 pin.h:195 play.h:566
-#: play.h:573 play.h:588 readerconfig.h:255 rectimer.h:1077 rectimer.h:1082
+#: panel_settings_overclocking.h:244 pin.h:105 pin.h:177 pin.h:195 play.h:576
+#: play.h:583 play.h:598 readerconfig.h:255 rectimer.h:1077 rectimer.h:1082
 #: rectimer.h:1087 rectimer.h:1092 rectimer.h:1097 rectimer.h:1102
 #: rectimer.h:1107 scan.h:1776 scan.h:2255 scan.h:2259 scan.h:2263 scan.h:2267
 #: scan.h:2271 scan.h:2280 scan.h:2284 screensaveradjust.h:20
@@ -588,7 +588,7 @@ msgstr ""
 #: novamov.h:35 novamov.h:80 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105
 #: panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6 played.h:30
 #: played.h:84 played.h:90 played.h:102 played.h:114 played.h:171 player.h:100
-#: play.h:599 play.h:1271 play.h:1473 play.h:1661 play.h:1672 possetup.h:98
+#: play.h:609 play.h:1281 play.h:1483 play.h:1671 play.h:1682 possetup.h:98
 #: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
 #: putlocker.h:32 putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:343 readerconfig.h:443
@@ -647,7 +647,7 @@ msgstr ""
 msgid "Search"
 msgstr "dò"
 
-#: audiotrack.h:48 play.h:277 rectimer.h:1492 subtitle.h:1624
+#: audiotrack.h:48 play.h:278 play.h:286 rectimer.h:1492 subtitle.h:1624
 msgid "running"
 msgstr "Đang chạy"
 
@@ -1238,7 +1238,7 @@ msgstr "vui long đợi để dừng download."
 msgid "EJECT"
 msgstr ""
 
-#: dvdplay.h:29 play.h:1397 plugins_dlna_skin.xml.h:10
+#: dvdplay.h:29 play.h:1407 plugins_dlna_skin.xml.h:10
 #: skins_dlna_skin.xml.h:10
 msgid "SELECT"
 msgstr "LỰA CHỌN"
@@ -1246,7 +1246,7 @@ msgstr "LỰA CHỌN"
 #: dvdplay.h:62 mc_audioplayer.h:605 mc_audioplayer.h:716 mc_global.h:773
 #: mc_global.h:1020 mc_pictureplayer.h:100 mc_pictureplayer.h:242
 #: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:749
-#: mc_videoplayer.h:888 play.h:1473
+#: mc_videoplayer.h:888 play.h:1483
 msgid "Can't start playback !"
 msgstr "Không thể phát lại!"
 
@@ -1613,7 +1613,7 @@ msgstr "Đổi tên"
 msgid "Create Folder"
 msgstr "Tạo thư mục"
 
-#: filemanager.h:84 play.h:618 plugins_sudoku_skin.xml.h:10
+#: filemanager.h:84 play.h:628 plugins_sudoku_skin.xml.h:10
 #: skins_sudoku_skin.xml.h:10 webif_index.atemio5200.h:36
 #: webif_index.atemio5200.h:92 webif_index.atemio6200.h:36
 #: webif_index.atemio6200.h:92 webif_index.atemio7600.h:40
@@ -2731,7 +2731,7 @@ msgstr "Mật khẩu"
 msgid "Key Action - Plugins"
 msgstr "Nút màu đỏ - Plugins "
 
-#: keyactions.h:25 play.h:635
+#: keyactions.h:25 play.h:645
 msgid "MediaDB Scan Info"
 msgstr "Thông tin quét MediaDB"
 
@@ -2767,7 +2767,7 @@ msgstr "Khóa trẻ em"
 msgid "Subchannel"
 msgstr "Các chương trình phụ"
 
-#: keyactions.h:95 play.h:672 settings_bluebutton.h:21
+#: keyactions.h:95 play.h:682 settings_bluebutton.h:21
 #: settings_pluginbutton.h:22 settings_redbutton.h:22
 #: skin_default_skin.xml.h:199
 msgid "Downloads"
@@ -3136,35 +3136,35 @@ msgstr ""
 msgid "MediaDB entry for this file not found."
 msgstr ""
 
-#: mediadb.h:1078 play.h:561
+#: mediadb.h:1078 play.h:571
 msgid "MediaDB directory scan started in Background !"
 msgstr ""
 
-#: mediadb.h:1080 play.h:563 skin_default_skin.xml.h:180
+#: mediadb.h:1080 play.h:573 skin_default_skin.xml.h:180
 msgid "Delete MediaDB before scan"
 msgstr "Xóa MediaDB trước khi dò"
 
-#: mediadb.h:1087 play.h:570 skin_default_skin.xml.h:181
+#: mediadb.h:1087 play.h:580 skin_default_skin.xml.h:181
 msgid "Delete unused entrys before scan"
 msgstr "Xóa dữ liệu không sử dụng trước khi dò"
 
-#: mediadb.h:1094 play.h:577
+#: mediadb.h:1094 play.h:587
 msgid "scan Directory"
 msgstr "Quét thư mục"
 
-#: mediadb.h:1098 play.h:581
+#: mediadb.h:1098 play.h:591
 msgid "MediaDB place"
 msgstr "Vị trí MediaDB"
 
-#: mediadb.h:1102 play.h:585
+#: mediadb.h:1102 play.h:595
 msgid "MediaDB Debug"
 msgstr "Chế độ gỡ lỗi MediaDB"
 
-#: mediadb.h:1109 play.h:592 skin_default_skin.xml.h:102
+#: mediadb.h:1109 play.h:602 skin_default_skin.xml.h:102
 msgid "Backdrop Download Count"
 msgstr "Số lượt tải hình nền"
 
-#: mediadb.h:1112 mediadbsettings.h:55 play.h:595 plugins_mc_skin.xml.h:6
+#: mediadb.h:1112 mediadbsettings.h:55 play.h:605 plugins_mc_skin.xml.h:6
 #: skins_mc_skin.xml.h:6 tmc.h:539
 msgid "all"
 msgstr "TẤT CẢ"
@@ -3868,26 +3868,26 @@ msgstr ""
 msgid "Buffering Stream - Cancel with Exit"
 msgstr ""
 
-#: play.h:402 play.h:436 plugins_imdbapi_skin.xml.h:9
+#: play.h:412 play.h:446 plugins_imdbapi_skin.xml.h:9
 #: plugins_imdb_skin.xml.h:9 plugins_tmc_skin.xml.h:16
 #: plugins_tmdb_skin.xml.h:9 skins_imdbapi_skin.xml.h:9
 #: skins_imdb_skin.xml.h:9 skins_tmc_skin.xml.h:16 skins_tmdb_skin.xml.h:9
 msgid "Title:"
 msgstr ""
 
-#: play.h:407 play.h:441
+#: play.h:417 play.h:451
 msgid "Artist:"
 msgstr ""
 
-#: play.h:412 play.h:446 plugins_mc_skin.xml.h:5 skins_mc_skin.xml.h:5
+#: play.h:422 play.h:456 plugins_mc_skin.xml.h:5 skins_mc_skin.xml.h:5
 msgid "Album:"
 msgstr ""
 
-#: play.h:417 play.h:451 plugins_mc_skin.xml.h:69 skins_mc_skin.xml.h:69
+#: play.h:427 play.h:461 plugins_mc_skin.xml.h:69 skins_mc_skin.xml.h:69
 msgid "Year:"
 msgstr ""
 
-#: play.h:422 play.h:456 plugins_imdbapi_skin.xml.h:3
+#: play.h:432 play.h:466 plugins_imdbapi_skin.xml.h:3
 #: plugins_imdb_skin.xml.h:3 plugins_mc_skin.xml.h:30 plugins_tmc_skin.xml.h:7
 #: plugins_tmdb_skin.xml.h:1 skins_imdbapi_skin.xml.h:3
 #: skins_imdb_skin.xml.h:3 skins_mc_skin.xml.h:30 skins_tmc_skin.xml.h:7
@@ -3895,182 +3895,182 @@ msgstr ""
 msgid "Genre:"
 msgstr ""
 
-#: play.h:427 play.h:461
+#: play.h:437 play.h:471
 msgid "Comment:"
 msgstr ""
 
-#: play.h:466
+#: play.h:476
 msgid "Track:"
 msgstr ""
 
-#: play.h:471
+#: play.h:481
 msgid "Copyright:"
 msgstr ""
 
-#: play.h:482
+#: play.h:492
 msgid "iD3Tag"
 msgstr ""
 
-#: play.h:624 skin_default_skin.xml.h:732
+#: play.h:634 skin_default_skin.xml.h:732
 msgid "Video Settings"
 msgstr "THIẾT LẬP HIỂN THỊ"
 
-#: play.h:625
+#: play.h:635
 msgid "AV Settings"
 msgstr "Thiết lập AV"
 
-#: play.h:626
+#: play.h:636
 msgid "iD3Tag Info"
 msgstr "TV (Thông tin)"
 
-#: play.h:629 skin_default_skin.xml.h:382
+#: play.h:639 skin_default_skin.xml.h:382
 msgid "MediaDB Edit"
 msgstr "Chỉnh sửa MediaDB"
 
-#: play.h:632
+#: play.h:642
 msgid "Delete File"
 msgstr "Xóa file"
 
-#: play.h:641
+#: play.h:651
 msgid "Search on KinoX"
 msgstr ""
 
-#: play.h:642
+#: play.h:652
 msgid "Search on KinoX (local)"
 msgstr ""
 
-#: play.h:643
+#: play.h:653
 msgid "Search on Movie4k"
 msgstr ""
 
-#: play.h:644
+#: play.h:654
 msgid "Search on Movie4k (local)"
 msgstr ""
 
-#: play.h:645
+#: play.h:655
 msgid "Search on Solarmovies (movie)"
 msgstr ""
 
-#: play.h:646
+#: play.h:656
 msgid "Search on Solarmovies (serie)"
 msgstr ""
 
-#: play.h:647
+#: play.h:657
 msgid "Search on Solarmovies (local)"
 msgstr ""
 
-#: play.h:648
+#: play.h:658
 msgid "Search on Mle-HD (local)"
 msgstr ""
 
-#: play.h:649
+#: play.h:659
 msgid "Search on Beeg (local)"
 msgstr ""
 
-#: play.h:650
+#: play.h:660
 msgid "Search on Xvideos (local)"
 msgstr ""
 
-#: play.h:651
+#: play.h:661
 msgid "Search on FilmOn (local)"
 msgstr ""
 
-#: play.h:653
+#: play.h:663
 msgid "Search on Netzkino (local)"
 msgstr ""
 
-#: play.h:654
+#: play.h:664
 msgid "Search on Youtube"
 msgstr "Bắt đầu khởi động"
 
-#: play.h:655
+#: play.h:665
 msgid "Search on Youtube (local)"
 msgstr ""
 
-#: play.h:656
+#: play.h:666
 msgid "Search on MyVideo"
 msgstr ""
 
-#: play.h:657
+#: play.h:667
 msgid "Search on MyVideo (local)"
 msgstr ""
 
-#: play.h:658
+#: play.h:668
 msgid "Search on ARD (local)"
 msgstr ""
 
-#: play.h:659
+#: play.h:669
 msgid "Search on ZDF (local)"
 msgstr ""
 
-#: play.h:660
+#: play.h:670
 msgid "Search on TecTime (local)"
 msgstr ""
 
-#: play.h:661
+#: play.h:671
 msgid "Search on Giga (local)"
 msgstr ""
 
-#: play.h:662
+#: play.h:672
 msgid "Search on Rtl-Now (local)"
 msgstr ""
 
-#: play.h:663
+#: play.h:673
 msgid "Search on Rtl2-Now (local)"
 msgstr ""
 
-#: play.h:664
+#: play.h:674
 msgid "Search on SuperRTL-Now (local)"
 msgstr ""
 
-#: play.h:665
+#: play.h:675
 msgid "Search on VOX-Now (local)"
 msgstr ""
 
-#: play.h:666
+#: play.h:676
 msgid "Search on RtlNitro-Now (local)"
 msgstr ""
 
-#: play.h:667
+#: play.h:677
 msgid "Search on NTV-Now (local)"
 msgstr ""
 
-#: play.h:668
+#: play.h:678
 msgid "Search on InternetTv (local)"
 msgstr ""
 
-#: play.h:669
+#: play.h:679
 msgid "Search on InternetRadio (local)"
 msgstr ""
 
-#: play.h:691
+#: play.h:701
 msgid "Choose your Red-Menu entry from the following list"
 msgstr ""
 
-#: play.h:1178
+#: play.h:1188
 msgid "Jump To (min)"
 msgstr ""
 
-#: play.h:1256 play.h:1262 plugins_tmc_skin.xml.h:1 skins_tmc_skin.xml.h:1
+#: play.h:1266 play.h:1272 plugins_tmc_skin.xml.h:1 skins_tmc_skin.xml.h:1
 msgid "EPG Info"
 msgstr "Thông tin EPG"
 
-#: play.h:1271
+#: play.h:1281
 msgid "Record in progress"
 msgstr "Đang ghi tên"
 
-#: play.h:1272
+#: play.h:1282
 msgid "Really Delete ?"
 msgstr "Bạn muốn xóa?"
 
-#: play.h:1397 plugins_networkbrowser_skin.xml.h:5 plugins_stock_skin.xml.h:4
+#: play.h:1407 plugins_networkbrowser_skin.xml.h:5 plugins_stock_skin.xml.h:4
 #: plugins_weather_skin.xml.h:2 skin_default_skin.xml.h:176
 #: skins_networkbrowser_skin.xml.h:5 skins_stock_skin.xml.h:4
 #: skins_weather_skin.xml.h:2
 msgid "DEL"
 msgstr "Xóa"
 
-#: play.h:1397 skin_default_skin.xml.h:213 webif_index.atemio5200.h:34
+#: play.h:1407 skin_default_skin.xml.h:213 webif_index.atemio5200.h:34
 #: webif_index.atemio6200.h:34 webif_index.atemio7600.h:65
 #: webif_index.atemio7600.h:82 webif_index.atemio-nemesis.h:34
 #: webif_rc.atemio510.h:49 webif_rc.atemio7600.h:15
@@ -4082,15 +4082,15 @@ msgstr "Xóa"
 msgid "EPG"
 msgstr ""
 
-#: play.h:1397
+#: play.h:1407
 msgid "SORT"
 msgstr "Sắp xếp"
 
-#: play.h:1661
+#: play.h:1671
 msgid "Marker autoseek is started"
 msgstr "Đã thiết lập nhà sản xuất"
 
-#: play.h:1672
+#: play.h:1682
 msgid "Marker autoseek is stopped"
 msgstr "Đã thiết lập nhà sản xuất"
 
