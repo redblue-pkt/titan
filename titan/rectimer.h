@@ -479,9 +479,9 @@ void checkrectimer(struct stimerthread* self)
 	if(self->delay == 1000)
 	{
 		self->delay = 10000;
-#		readrectimer(getconfig("rectimerfile", NULL));
+		//readrectimer(getconfig("rectimerfile", NULL));
 		epgscancreatetimer();
-#		checkboxstart();
+		//checkboxstart();
 	}
 
 	m_lock(&status.rectimermutex, 1);
