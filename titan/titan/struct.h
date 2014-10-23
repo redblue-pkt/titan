@@ -1302,7 +1302,7 @@ struct status
 	int playspeed;
 	int slowspeed;
 	int prefillbuffer;
-#ifdef EPLAYER4
+#ifdef MIPSEL
 	int bufferpercent;
 	gint avgInRate;
 	gint avgOutRate;
