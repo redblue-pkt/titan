@@ -458,6 +458,13 @@ void checkrectimer(struct stimerthread* self)
 	//wait for right time
 	while(self->aktion != STOP && time(NULL) < 1072224000) // 01.01.2004
 		usleep(1 * 1000000);
+	
+	//on first start read rectimer
+	if(self->delay == 1000)
+	{
+		readrectimer(getconfig("rectimerfile", NULL));
+		checkboxstart();
+	}
 		
 	//wait for start all programs
 	ret = 30;
@@ -472,9 +479,9 @@ void checkrectimer(struct stimerthread* self)
 	if(self->delay == 1000)
 	{
 		self->delay = 10000;
-		readrectimer(getconfig("rectimerfile", NULL));
+#		readrectimer(getconfig("rectimerfile", NULL));
 		epgscancreatetimer();
-		checkboxstart();
+#		checkboxstart();
 	}
 
 	m_lock(&status.rectimermutex, 1);

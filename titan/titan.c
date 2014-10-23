@@ -620,8 +620,7 @@ int main(int argc, char *argv[])
 		system("echo disable > /proc/stb/fp/wol");
 
 	system(getconfig("skriptbeforetv", NULL));
-	if(getwaswakuptimer() != 1)
-		ret = setcecstandby(0);
+	//ret = setcecstandby(0); --- > jetzt in checkboxstart
 	ret = setvideomode(getconfig("av_videomode", NULL), 0);
 	ret = setpolicy(getconfig("av_policy", NULL));
 	ret = setaspect(getconfig("av_aspect", NULL));
