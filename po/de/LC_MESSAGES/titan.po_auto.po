@@ -9429,8 +9429,8 @@ msgstr "TiThek Haftungsausschluss:"
 
 #: tithek.h:1534 tithek.h:1667 tithek.h:2085 tithek.h:2099 tithek.h:2109
 #: tithek.h:2124
-msgid "Tithek - Mainmenü - Favoriten"
-msgstr "Tithek - Hauptmenu - Favoriten"
+msgid "Tithek - Mainmenu - Favoriten"
+msgstr ""
 
 #: tithek.h:1536 tithek.h:2126
 msgid "EDIT FAV"
@@ -13006,3 +13006,6 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
+
+#~ msgid "Tithek - Mainmenü - Favoriten"
+#~ msgstr "Tithek - Hauptmenu - Favoriten"
