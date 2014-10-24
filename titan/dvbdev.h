@@ -95,6 +95,53 @@ struct dvbdev* adddvbdev(char *dev, int adapter, int devnr, int fd, int type, st
 	return newnode;
 }
 
+struct dvbdev* changedvbdev(struct dvbdev *node)
+{
+	if(node == NULL) return null;
+
+	char *fehyprid = NULL, *tmpstr = NULL;
+	struct dvb_frontend_info* feinfo = NULL;
+	
+	close(node->fd);
+	node->fd = -1;
+	
+	int fd = feopen(NULL, dev);
+	if(fd >= 0)
+	{
+		fehyprid = gethypridtunerchoicesvalue(node->devnr);
+		if(fehyprid != NULL)
+		{
+			if(y < 10)
+				tmpstr = ostrcat(tmpstr, "fe_0", 1, 0);
+			else
+				tmpstr = ostrcat(tmpstr, "fe_1", 1, 0);
+
+			tmpstr = ostrcat(tmpstr, oitoa(node->devnr), 1, 1);
+			tmpstr = ostrcat(tmpstr, "_hyprid", 1, 0);
+			if(getconfig(tmpstr, NULL) != NULL)
+				sethypridtuner(node->devnr, getconfig(tmpstr, NULL));
+			free(tmpstr), tmpstr = NULL;
+		}
+				
+		feinfo = fegetinfo(NULL, fd);
+		
+		free(node->feinfo);
+		node->feinfo = NULL;
+
+		free(node->feaktnr);
+		node->feaktnr = NULL;
+	
+		free(node->fehyprid):
+		node->fehyprid = NULL;
+		
+		node->fd = fd;
+		node->feinfo = feinfo;
+		node->fehyprid = ostrcat(fehyprid, NULL, 0, 0);
+	}
+
+	return node;
+}
+
 //flag 0: use dvbdev
 //flag 1: use dvbdevsim
 void deldvbdev(char *dev, int flag)
@@ -142,6 +189,9 @@ void deldvbdev(char *dev, int flag)
 			
 			free(node->caslot);
 			node->caslot = NULL;
+			
+			free(node->fehyprid):
+			node->fehyprid = NULL;
 
 			free(node);
 			node = NULL;
