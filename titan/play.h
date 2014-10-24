@@ -315,8 +315,13 @@ void screenplaytracklist(int mode, int playertype, int flag)
 		{
 			if(listbox->select != NULL)
 			{
-				if(mode == 1)
+				if(mode == 1) {
 					playerchangeaudiotrack((int)listbox->select->handle);
+#ifdef MIPSEL
+					if(playertype == 0)
+						playerseek(-1);
+#endif
+				}
 				else if(mode == 2)
 				{
 					if(listbox->select->handle1 != NULL)
