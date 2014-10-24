@@ -191,7 +191,7 @@ void deldvbdev(char *dev, int flag)
 			free(node->caslot);
 			node->caslot = NULL;
 			
-			free(node->fehyprid):
+			free(node->fehyprid);
 			node->fehyprid = NULL;
 
 			free(node);
