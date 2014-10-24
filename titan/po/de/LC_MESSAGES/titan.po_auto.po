@@ -13006,9 +13006,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid "Sat: matze70 Settings Astra 19.2"
-#~ msgstr "Satellit: Senderlisten bei matze70 für 19.2 "
-
-#~ msgid "Sat: Settings matze70 neue Design Astra 19.2"
-#~ msgstr "Satellit: Senderlisten bei matze70 für 19.2 Neu"
