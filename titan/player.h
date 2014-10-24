@@ -1697,8 +1697,6 @@ void playergetcurtrac(int type, int *CurTrackId, char** CurTrackEncoding, char**
 #endif
 
 #ifdef EPLAYER4
-printf("pipeline: %p\n", pipeline);
-printf("type: %d\n", type);
 	if(pipeline != NULL)
 	{
 		switch(type)
@@ -1707,9 +1705,7 @@ printf("type: %d\n", type);
 				g_object_get(G_OBJECT(pipeline), "current-audio", CurTrackId, NULL);
 				break;
 		}
-printf("CurTrackId: %p\n", CurTrackId);		
 		if(CurTrackId != NULL) {
-printf("CurTrackId: %d\n", *CurTrackId);	
 			debug(150, "Current Track ID: %d", *CurTrackId);
 		}
 	}
