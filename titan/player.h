@@ -30,6 +30,7 @@ extern ManagerHandler_t ManagerHandler;
 #ifdef EPLAYER4
 GstElement *pipeline = NULL;
 unsigned long long m_gst_startpts = 0;
+CustomData data;
 #endif
 
 //titan player
@@ -590,16 +591,6 @@ void playerafterendts()
 	playerstopts(2, 0);
 }
 
-#ifdef EPLAYER4
-typedef struct _CustomData {
-  gboolean is_live;
-  GstElement *pipeline;
-  GMainLoop *loop;
-} CustomData;
-
-CustomData data;
-#endif
-
 //extern player
 int playerstart(char* file)
 {
@@ -765,13 +756,16 @@ int playerstart(char* file)
 			g_object_set (G_OBJECT (pipeline), "current-text", -1, NULL);
 		}
 
+//gpointer this;
+//memset (&this, 0, sizeof (this));
+
 		GstBus *bus = gst_pipeline_get_bus(GST_PIPELINE(pipeline));
 #if GST_VERSION_MAJOR < 1
 //		gst_bus_set_sync_handler(bus, gstBusSyncHandler, this);
-		gst_bus_set_sync_handler(bus, NULL, NULL);
+		gst_bus_set_sync_handler(bus, GST_BUS_DROP, NULL);
 #else
 //		gst_bus_set_sync_handler(bus, gstBusSyncHandler, this, NULL);
-		gst_bus_set_sync_handler(bus, NULL, NULL, NULL);
+		gst_bus_set_sync_handler(bus, GST_BUS_DROP, NULL, NULL);
 #endif
 
 		gst_object_unref(bus);
@@ -830,7 +824,6 @@ int playerstart(char* file)
 	
 	return 1;
 }
-
 
 #ifdef EPLAYER4
 int setBufferSize(int size)
@@ -1383,8 +1376,6 @@ void playerseek(float sec)
 }
 
 #ifdef EPLAYER4
-typedef enum {atUnknown, atMPEG, atMP3, atAC3, atDTS, atAAC, atPCM, atOGG, atFLAC, atWMA} audiotype_t;
-
 audiotype_t gstCheckAudioPad(GstStructure* structure)
 {
 	if(!structure)
@@ -1429,6 +1420,67 @@ audiotype_t gstCheckAudioPad(GstStructure* structure)
 
 	return atUnknown;
 }
+
+
+subtype_t getSubtitleType(GstPad* pad, gchar *g_codec)
+{
+g_codec = NULL;
+	subtype_t type = stUnknown;
+#if GST_VERSION_MAJOR < 1
+	GstCaps* caps = gst_pad_get_negotiated_caps(pad);
+#else
+	GstCaps* caps = gst_pad_get_current_caps(pad);
+#endif
+	if (!caps && !g_codec)
+	{
+		caps = gst_pad_get_allowed_caps(pad);
+	}
+
+	if (caps && !gst_caps_is_empty(caps))
+	{
+		GstStructure* str = gst_caps_get_structure(caps, 0);
+		if (str)
+		{
+			const gchar *g_type = gst_structure_get_name(str);
+			// eDebug("getSubtitleType::subtitle probe caps type=%s", g_type ? g_type : "(null)");
+			if (g_type)
+			{
+				if ( !strcmp(g_type, "video/x-dvd-subpicture") )
+					type = stVOB;
+				else if ( !strcmp(g_type, "text/x-pango-markup") )
+					type = stSRT;
+				else if ( !strcmp(g_type, "text/plain") || !strcmp(g_type, "text/x-plain") || !strcmp(g_type, "text/x-raw") )
+					type = stPlainText;
+				else if ( !strcmp(g_type, "subpicture/x-pgs") )
+					type = stPGS;
+				else
+					printf("getSubtitleType::unsupported subtitle caps %s (%s)\n", g_type, g_codec ? g_codec : "(null)");
+//					eDebug("getSubtitleType::unsupported subtitle caps %s (%s)", g_type, g_codec ? g_codec : "(null)");
+			}
+		}
+	}
+	else if ( g_codec )
+	{
+		// eDebug("getSubtitleType::subtitle probe codec tag=%s", g_codec);
+		if ( !strcmp(g_codec, "VOB") )
+			type = stVOB;
+		else if ( !strcmp(g_codec, "SubStation Alpha") || !strcmp(g_codec, "SSA") )
+			type = stSSA;
+		else if ( !strcmp(g_codec, "ASS") )
+			type = stASS;
+		else if ( !strcmp(g_codec, "SRT") )
+			type = stSRT;
+		else if ( !strcmp(g_codec, "UTF-8 plain text") )
+			type = stPlainText;
+		else
+			printf("getSubtitleType::unsupported subtitle codec %s\n", g_codec);
+	}
+	else
+		printf("getSubtitleType::unidentifiable subtitle stream!\n");
+
+	return type;
+}
+
 #endif
 
 void playerfreetracklist(char** TrackList)
@@ -1507,7 +1559,7 @@ char** playergettracklist(int type)
 		g_object_get(pipeline, "n-video", &n_video, NULL);
 		g_object_get(pipeline, "n-audio", &n_audio, NULL);
 		g_object_get(pipeline, "n-text", &n_text, NULL);
-		
+
 		switch(type)
 		{
 			case 1:
@@ -1541,13 +1593,16 @@ char** playergettracklist(int type)
 						if(gst_tag_list_get_string(tags, GST_TAG_AUDIO_CODEC, &g_codec))
 						{
 							printf("Audio Codec: %s\n", g_codec);
-
-							tmpstr = ostrcat(g_codec, NULL, 0, 0);
-							if(tmpstr != NULL)
+	
+							tmpstr = ostrcat(oitoa(i), ": ", 1, 0);
+							tmpstr = ostrcat(tmpstr, g_codec, 1, 0);
+							if(g_codec != NULL && g_type != NULL)
 								tmpstr = ostrcat(tmpstr, " (", 1, 0);
 							tmpstr = ostrcat(tmpstr, (gchar*)g_type, 1, 0);
-							if(g_codec != NULL)
+							if(g_codec != NULL && g_type != NULL)
 								tmpstr = ostrcat(tmpstr, ")", 1, 0);
+
+							printf("Tracklist tmpstr: %s\n", tmpstr);
 
 							TrackList[i * 2] = ostrcat(tmpstr, NULL, 0, 0);
 							g_free(tmpstr); tmpstr = NULL;
@@ -1565,13 +1620,15 @@ char** playergettracklist(int type)
 					{
 						printf("Audio Codec: %s\n", g_codec);
 						
-						tmpstr = ostrcat(g_codec, NULL, 0, 0);
-						if(tmpstr != NULL)
+						tmpstr = ostrcat(oitoa(i), ": ", 1, 0);
+						tmpstr = ostrcat(tmpstr, g_codec, 1, 0);
+						if(g_codec != NULL && g_type != NULL)
 							tmpstr = ostrcat(tmpstr, " (", 1, 0);
 						tmpstr = ostrcat(tmpstr, (gchar*)g_type, 1, 0);
-						if(g_codec != NULL)
+						if(g_codec != NULL && g_type != NULL)
 							tmpstr = ostrcat(tmpstr, ")", 1, 0);
-								
+
+						printf("Tracklist tmpstr: %s\n", tmpstr);				
 						TrackList[i * 2] = ostrcat(tmpstr, NULL, 0, 0);
 
 						g_free(tmpstr); tmpstr = NULL;
@@ -1584,8 +1641,25 @@ char** playergettracklist(int type)
 				{
 					GstTagList *tags = NULL;
 					gchar *g_codec = NULL, *g_lang = NULL;
-//					GstPad* pad = 0;
-				
+					GstPad* pad = 0;
+					char* tmpstr = NULL;
+
+					g_signal_emit_by_name (pipeline, "get-text-pad", i, &pad);
+					printf("SubTitle Type: %d\n", getSubtitleType(pad, g_codec));
+
+#if GST_VERSION_MAJOR < 1
+					GstCaps* caps = gst_pad_get_negotiated_caps(pad);
+#else
+					GstCaps* caps = gst_pad_get_current_caps(pad);
+#endif
+					if (!caps && !g_codec)
+					{
+						caps = gst_pad_get_allowed_caps(pad);
+					}
+						
+					GstStructure* str = gst_caps_get_structure(caps, 0);
+					const gchar *g_type = gst_structure_get_name(str);
+
 					g_signal_emit_by_name(pipeline, "get-text-tags", i, &tags);
 					
 #if GST_VERSION_MAJOR < 1
@@ -1597,7 +1671,16 @@ char** playergettracklist(int type)
 						if(gst_tag_list_get_string(tags, GST_TAG_SUBTITLE_CODEC, &g_codec));
 						{
 							printf("SubTitle Codec: %s\n", g_codec);
-							TrackList[i * 2] = ostrcat(g_codec, NULL, 0, 0);
+							tmpstr = ostrcat(oitoa(i), ": ", 1, 0);
+							tmpstr = ostrcat(tmpstr, g_codec, 1, 0);
+							if(g_codec != NULL && g_type != NULL)
+								tmpstr = ostrcat(tmpstr, " (", 1, 0);
+							tmpstr = ostrcat(tmpstr, (gchar*)g_type, 1, 0);
+							if(g_codec != NULL && g_type != NULL)
+								tmpstr = ostrcat(tmpstr, ")", 1, 0);
+
+							printf("Tracklist tmpstr: %s\n", tmpstr);
+							TrackList[i * 2] = ostrcat(tmpstr, NULL, 0, 0);
 							g_free(g_codec); g_codec = NULL;
 						}
 						if(gst_tag_list_get_string(tags, GST_TAG_LANGUAGE_CODE, &g_lang))
@@ -1608,13 +1691,24 @@ char** playergettracklist(int type)
 						}
 						gst_tag_list_free(tags);
 					}
-/*
-					g_signal_emit_by_name(pipeline, "get-text-pad", i, &pad);
-					if(pad)
-						g_signal_connect(G_OBJECT(pad), "notify::caps", G_CALLBACK (gstTextpadHasCAPS), this);
+					else
+					{
+						printf("SubTitle Codec: %s\n", g_codec);
+						
+						tmpstr = ostrcat(oitoa(i), ": ", 1, 0);
+						tmpstr = ostrcat(tmpstr, g_codec, 1, 0);
+						if(g_codec != NULL && g_type != NULL)
+							tmpstr = ostrcat(tmpstr, " (", 1, 0);
+						tmpstr = ostrcat(tmpstr, (gchar*)g_type, 1, 0);
+						if(g_codec != NULL && g_type != NULL)
+							tmpstr = ostrcat(tmpstr, ")", 1, 0);
 
-					printf("getSubtitleType: %d\n", getSubtitleType(pad, g_codec));
-*/
+						printf("Tracklist tmpstr: %s\n", tmpstr);		
+						TrackList[i * 2] = ostrcat(tmpstr, NULL, 0, 0);
+
+						g_free(tmpstr); tmpstr = NULL;
+						g_free(g_codec); g_codec = NULL;				
+					}
 				}
 				break;
 			default:
