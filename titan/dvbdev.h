@@ -111,9 +111,9 @@ struct dvbdev* changedvbdev(struct dvbdev *node)
 		fehyprid = gethypridtunerchoicesvalue(node->devnr);
 		if(fehyprid != NULL)
 		{
-			if(y < 10)
-					tmpstr = ostrcat(tmpstr, "fe_0", 1, 0);
-			else
+//			if(y < 10)
+//				tmpstr = ostrcat(tmpstr, "fe_0", 1, 0);
+//			else
 				tmpstr = ostrcat(tmpstr, "fe_1", 1, 0);
 
 			tmpstr = ostrcat(tmpstr, oitoa(node->devnr), 1, 1);
