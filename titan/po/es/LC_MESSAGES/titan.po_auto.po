@@ -55,8 +55,8 @@ msgstr ""
 #: network.h:906 newsletter.h:252 newsletter.h:292 novamov.h:35 novamov.h:80
 #: nowvideo.h:44 nowvideo.h:99 nowvideo.h:105 panel_main.h:29 panel_main.h:135
 #: panel_settings_wizard.h:6 played.h:30 played.h:84 played.h:90 played.h:102
-#: played.h:114 played.h:171 player.h:100 play.h:492 play.h:609 play.h:1266
-#: play.h:1272 play.h:1281 play.h:1282 play.h:1483 play.h:1671 play.h:1682
+#: played.h:114 played.h:171 player.h:100 play.h:497 play.h:614 play.h:1271
+#: play.h:1277 play.h:1286 play.h:1287 play.h:1488 play.h:1676 play.h:1687
 #: plugins_dlna_skin.xml.h:8 plugins_facebook_skin.xml.h:5
 #: plugins_mboxinfo_skin.xml.h:2 plugins_mc_skin.xml.h:38
 #: plugins_optimize_skin.xml.h:3 plugins_rgui_skin.xml.h:3
@@ -162,8 +162,8 @@ msgstr "Ok"
 #: newsletter.h:292 novamov.h:35 novamov.h:80 nowvideo.h:44 nowvideo.h:99
 #: nowvideo.h:105 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:84 played.h:90 played.h:102 played.h:114 played.h:171
-#: player.h:100 play.h:492 play.h:609 play.h:1266 play.h:1272 play.h:1281
-#: play.h:1282 play.h:1483 play.h:1671 play.h:1682
+#: player.h:100 play.h:497 play.h:614 play.h:1271 play.h:1277 play.h:1286
+#: play.h:1287 play.h:1488 play.h:1676 play.h:1687
 #: plugins_autotimer_skin.xml.h:7 plugins_callmonitor1_skin.xml.h:11
 #: plugins_catcatch_skin.xml.h:4 plugins_dlna_skin.xml.h:2
 #: plugins_facebook_skin.xml.h:4 plugins_instar_skin.xml.h:6
@@ -254,7 +254,7 @@ msgstr "Salir"
 #: panel_settings_autostart.h:351 panel_settings_autostart.h:360
 #: panel_settings_overclocking.h:214 panel_settings_overclocking.h:234
 #: panel_settings_overclocking.h:244 pin.h:104 pin.h:176 pin.h:180 pin.h:194
-#: play.h:578 play.h:585 play.h:600 readerconfig.h:254 rectimer.h:1083
+#: play.h:583 play.h:590 play.h:605 readerconfig.h:254 rectimer.h:1083
 #: rectimer.h:1088 rectimer.h:1093 rectimer.h:1098 rectimer.h:1103
 #: rectimer.h:1108 rectimer.h:1113 scan.h:1775 scan.h:2254 scan.h:2258
 #: scan.h:2262 scan.h:2266 scan.h:2270 scan.h:2279 scan.h:2283
@@ -318,8 +318,8 @@ msgstr "Canal EPG"
 #: panel_settings_autostart.h:319 panel_settings_autostart.h:328
 #: panel_settings_autostart.h:337 panel_settings_autostart.h:351
 #: panel_settings_overclocking.h:214 panel_settings_overclocking.h:234
-#: panel_settings_overclocking.h:244 pin.h:105 pin.h:177 pin.h:195 play.h:576
-#: play.h:583 play.h:598 readerconfig.h:255 rectimer.h:1084 rectimer.h:1089
+#: panel_settings_overclocking.h:244 pin.h:105 pin.h:177 pin.h:195 play.h:581
+#: play.h:588 play.h:603 readerconfig.h:255 rectimer.h:1084 rectimer.h:1089
 #: rectimer.h:1094 rectimer.h:1099 rectimer.h:1104 rectimer.h:1109
 #: rectimer.h:1114 scan.h:1776 scan.h:2255 scan.h:2259 scan.h:2263 scan.h:2267
 #: scan.h:2271 scan.h:2280 scan.h:2284 screensaveradjust.h:20
@@ -588,7 +588,7 @@ msgstr "Si/VZAP infinito"
 #: novamov.h:35 novamov.h:80 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105
 #: panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6 played.h:30
 #: played.h:84 played.h:90 played.h:102 played.h:114 played.h:171 player.h:100
-#: play.h:609 play.h:1281 play.h:1483 play.h:1671 play.h:1682 possetup.h:98
+#: play.h:614 play.h:1286 play.h:1488 play.h:1676 play.h:1687 possetup.h:98
 #: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
 #: putlocker.h:32 putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:343 readerconfig.h:443
@@ -1245,7 +1245,7 @@ msgstr "ATENCION: Espere Descargar para detener."
 msgid "EJECT"
 msgstr "Expulsar"
 
-#: dvdplay.h:29 play.h:1407 plugins_dlna_skin.xml.h:10
+#: dvdplay.h:29 play.h:1412 plugins_dlna_skin.xml.h:10
 #: skins_dlna_skin.xml.h:10
 msgid "SELECT"
 msgstr "Seleccionar"
@@ -1253,7 +1253,7 @@ msgstr "Seleccionar"
 #: dvdplay.h:62 mc_audioplayer.h:605 mc_audioplayer.h:716 mc_global.h:773
 #: mc_global.h:1020 mc_pictureplayer.h:100 mc_pictureplayer.h:242
 #: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:749
-#: mc_videoplayer.h:888 play.h:1483
+#: mc_videoplayer.h:888 play.h:1488
 msgid "Can't start playback !"
 msgstr "La Reproduccion no se pudo iniciar"
 
@@ -1641,7 +1641,7 @@ msgstr "Renombrar"
 msgid "Create Folder"
 msgstr "Crear Carpeta"
 
-#: filemanager.h:84 play.h:628 plugins_sudoku_skin.xml.h:10
+#: filemanager.h:84 play.h:633 plugins_sudoku_skin.xml.h:10
 #: skins_sudoku_skin.xml.h:10 webif_index.atemio5200.h:36
 #: webif_index.atemio5200.h:92 webif_index.atemio6200.h:36
 #: webif_index.atemio6200.h:92 webif_index.atemio7600.h:40
@@ -2792,7 +2792,7 @@ msgstr "On"
 msgid "Key Action - Plugins"
 msgstr "Inicio rapido"
 
-#: keyactions.h:25 play.h:645
+#: keyactions.h:25 play.h:650
 msgid "MediaDB Scan Info"
 msgstr "MediaDB informacion exploracion"
 
@@ -2828,7 +2828,7 @@ msgstr "Parental control"
 msgid "Subchannel"
 msgstr "Subservicios"
 
-#: keyactions.h:95 play.h:682 settings_bluebutton.h:21
+#: keyactions.h:95 play.h:687 settings_bluebutton.h:21
 #: settings_pluginbutton.h:22 settings_redbutton.h:22
 #: skin_default_skin.xml.h:199
 msgid "Downloads"
@@ -3204,35 +3204,35 @@ msgstr "Bloqueado -> Deje bloqueado"
 msgid "MediaDB entry for this file not found."
 msgstr "ATENCION: MediaDB no se encontra la entrada para este archivo!"
 
-#: mediadb.h:1078 play.h:571
+#: mediadb.h:1078 play.h:576
 msgid "MediaDB directory scan started in Background !"
 msgstr "Directorio MediaDB exploracion comenzo en el fondo!"
 
-#: mediadb.h:1080 play.h:573 skin_default_skin.xml.h:180
+#: mediadb.h:1080 play.h:578 skin_default_skin.xml.h:180
 msgid "Delete MediaDB before scan"
 msgstr "Elimine MediaDB despues del escaneo"
 
-#: mediadb.h:1087 play.h:580 skin_default_skin.xml.h:181
+#: mediadb.h:1087 play.h:585 skin_default_skin.xml.h:181
 msgid "Delete unused entrys before scan"
 msgstr "chequee la base de datos antes de escanear"
 
-#: mediadb.h:1094 play.h:587
+#: mediadb.h:1094 play.h:592
 msgid "scan Directory"
 msgstr "Escaneo Directorio"
 
-#: mediadb.h:1098 play.h:591
+#: mediadb.h:1098 play.h:596
 msgid "MediaDB place"
 msgstr "MediaDB Guarda Ruta"
 
-#: mediadb.h:1102 play.h:595
+#: mediadb.h:1102 play.h:600
 msgid "MediaDB Debug"
 msgstr "MediaDB Debug "
 
-#: mediadb.h:1109 play.h:602 skin_default_skin.xml.h:102
+#: mediadb.h:1109 play.h:607 skin_default_skin.xml.h:102
 msgid "Backdrop Download Count"
 msgstr "Cuantas imagenes de fondo deben cargar"
 
-#: mediadb.h:1112 mediadbsettings.h:55 play.h:605 plugins_mc_skin.xml.h:6
+#: mediadb.h:1112 mediadbsettings.h:55 play.h:610 plugins_mc_skin.xml.h:6
 #: skins_mc_skin.xml.h:6 tmc.h:539
 msgid "all"
 msgstr "Todo"
@@ -3946,26 +3946,26 @@ msgstr ""
 msgid "Buffering Stream - Cancel with Exit"
 msgstr ""
 
-#: play.h:412 play.h:446 plugins_imdbapi_skin.xml.h:9
+#: play.h:417 play.h:451 plugins_imdbapi_skin.xml.h:9
 #: plugins_imdb_skin.xml.h:9 plugins_tmc_skin.xml.h:16
 #: plugins_tmdb_skin.xml.h:9 skins_imdbapi_skin.xml.h:9
 #: skins_imdb_skin.xml.h:9 skins_tmc_skin.xml.h:16 skins_tmdb_skin.xml.h:9
 msgid "Title:"
 msgstr "Titulo: "
 
-#: play.h:417 play.h:451
+#: play.h:422 play.h:456
 msgid "Artist:"
 msgstr "Interprete:"
 
-#: play.h:422 play.h:456 plugins_mc_skin.xml.h:5 skins_mc_skin.xml.h:5
+#: play.h:427 play.h:461 plugins_mc_skin.xml.h:5 skins_mc_skin.xml.h:5
 msgid "Album:"
 msgstr ""
 
-#: play.h:427 play.h:461 plugins_mc_skin.xml.h:69 skins_mc_skin.xml.h:69
+#: play.h:432 play.h:466 plugins_mc_skin.xml.h:69 skins_mc_skin.xml.h:69
 msgid "Year:"
 msgstr "Año:"
 
-#: play.h:432 play.h:466 plugins_imdbapi_skin.xml.h:3
+#: play.h:437 play.h:471 plugins_imdbapi_skin.xml.h:3
 #: plugins_imdb_skin.xml.h:3 plugins_mc_skin.xml.h:30 plugins_tmc_skin.xml.h:7
 #: plugins_tmdb_skin.xml.h:1 skins_imdbapi_skin.xml.h:3
 #: skins_imdb_skin.xml.h:3 skins_mc_skin.xml.h:30 skins_tmc_skin.xml.h:7
@@ -3973,182 +3973,182 @@ msgstr "Año:"
 msgid "Genre:"
 msgstr ""
 
-#: play.h:437 play.h:471
+#: play.h:442 play.h:476
 msgid "Comment:"
 msgstr "Comentario:"
 
-#: play.h:476
+#: play.h:481
 msgid "Track:"
 msgstr ""
 
-#: play.h:481
+#: play.h:486
 msgid "Copyright:"
 msgstr ""
 
-#: play.h:492
+#: play.h:497
 msgid "iD3Tag"
 msgstr ""
 
-#: play.h:634 skin_default_skin.xml.h:732
+#: play.h:639 skin_default_skin.xml.h:732
 msgid "Video Settings"
 msgstr "Video Ajustes"
 
-#: play.h:635
+#: play.h:640
 msgid "AV Settings"
 msgstr "Audio/Video Ajustes"
 
-#: play.h:636
+#: play.h:641
 msgid "iD3Tag Info"
 msgstr ""
 
-#: play.h:639 skin_default_skin.xml.h:382
+#: play.h:644 skin_default_skin.xml.h:382
 msgid "MediaDB Edit"
 msgstr ""
 
-#: play.h:642
+#: play.h:647
 msgid "Delete File"
 msgstr "Eliminar Archivo"
 
-#: play.h:651
+#: play.h:656
 msgid "Search on KinoX"
 msgstr "Buscar este título en KinoX"
 
-#: play.h:652
+#: play.h:657
 msgid "Search on KinoX (local)"
 msgstr "Buscar este título en KINOX (local)"
 
-#: play.h:653
+#: play.h:658
 msgid "Search on Movie4k"
 msgstr "Buscar este título en Movie4k"
 
-#: play.h:654
+#: play.h:659
 msgid "Search on Movie4k (local)"
 msgstr "Buscar este título en Movie4k (local)"
 
-#: play.h:655
+#: play.h:660
 msgid "Search on Solarmovies (movie)"
 msgstr "Buscar en Solo peliculas (peliculas)"
 
-#: play.h:656
+#: play.h:661
 msgid "Search on Solarmovies (serie)"
 msgstr "Buscar en Solo peliculas (series)"
 
-#: play.h:657
+#: play.h:662
 msgid "Search on Solarmovies (local)"
 msgstr "Buscar este título en solo peliculas(local)"
 
-#: play.h:658
+#: play.h:663
 msgid "Search on Mle-HD (local)"
 msgstr "Buscar este título en Mle-HD (local)"
 
-#: play.h:659
+#: play.h:664
 msgid "Search on Beeg (local)"
 msgstr "Buscar este objeto en Beeg (local)"
 
-#: play.h:660
+#: play.h:665
 msgid "Search on Xvideos (local)"
 msgstr "Buscar este objeto en Xvideos (local)"
 
-#: play.h:661
+#: play.h:666
 msgid "Search on FilmOn (local)"
 msgstr ""
 
-#: play.h:663
+#: play.h:668
 msgid "Search on Netzkino (local)"
 msgstr "Buscar este objeto en Netzkino (local)"
 
-#: play.h:664
+#: play.h:669
 msgid "Search on Youtube"
 msgstr "Buscar este objeto en Youtube"
 
-#: play.h:665
+#: play.h:670
 msgid "Search on Youtube (local)"
 msgstr "Buscar este objeto en Youtube (local)"
 
-#: play.h:666
+#: play.h:671
 msgid "Search on MyVideo"
 msgstr "Buscar este objeto en Mis Videos"
 
-#: play.h:667
+#: play.h:672
 msgid "Search on MyVideo (local)"
 msgstr "Buscar este objeto en Mis Videos (local)"
 
-#: play.h:668
+#: play.h:673
 msgid "Search on ARD (local)"
 msgstr "Buscar este objeto en ARD (local)"
 
-#: play.h:669
+#: play.h:674
 msgid "Search on ZDF (local)"
 msgstr "Buscar este objeto eni ZDF (local)"
 
-#: play.h:670
+#: play.h:675
 msgid "Search on TecTime (local)"
 msgstr "Buscar este objeto en TecTime (local)"
 
-#: play.h:671
+#: play.h:676
 msgid "Search on Giga (local)"
 msgstr "Buscar este objeto en Giga (local)"
 
-#: play.h:672
+#: play.h:677
 msgid "Search on Rtl-Now (local)"
 msgstr "Buscar este objeto eni Rtl-Now (local)"
 
-#: play.h:673
+#: play.h:678
 msgid "Search on Rtl2-Now (local)"
 msgstr "Buscar este objeto en Rtl2-Now (local)"
 
-#: play.h:674
+#: play.h:679
 msgid "Search on SuperRTL-Now (local)"
 msgstr "Buscar este objeto en SuperRTL-Now (local)"
 
-#: play.h:675
+#: play.h:680
 msgid "Search on VOX-Now (local)"
 msgstr "Buscar este objeto en VOX-Now (local)"
 
-#: play.h:676
+#: play.h:681
 msgid "Search on RtlNitro-Now (local)"
 msgstr ""
 
-#: play.h:677
+#: play.h:682
 msgid "Search on NTV-Now (local)"
 msgstr ""
 
-#: play.h:678
+#: play.h:683
 msgid "Search on InternetTv (local)"
 msgstr "Buscar este objeto en Internet-Tv (local)"
 
-#: play.h:679
+#: play.h:684
 msgid "Search on InternetRadio (local)"
 msgstr "Buscar este objeto en Internet-Radio (local)"
 
-#: play.h:701
+#: play.h:706
 msgid "Choose your Red-Menu entry from the following list"
 msgstr "Seleccione la entrada deseada para el menú rojo de la lista de abajo"
 
-#: play.h:1188
+#: play.h:1193
 msgid "Jump To (min)"
 msgstr "Saltar a Posicion (min)"
 
-#: play.h:1266 play.h:1272 plugins_tmc_skin.xml.h:1 skins_tmc_skin.xml.h:1
+#: play.h:1271 play.h:1277 plugins_tmc_skin.xml.h:1 skins_tmc_skin.xml.h:1
 msgid "EPG Info"
 msgstr ""
 
-#: play.h:1281
+#: play.h:1286
 msgid "Record in progress"
 msgstr "grabacion activa"
 
-#: play.h:1282
+#: play.h:1287
 msgid "Really Delete ?"
 msgstr "Realmente Eliminar?"
 
-#: play.h:1407 plugins_networkbrowser_skin.xml.h:5 plugins_stock_skin.xml.h:4
+#: play.h:1412 plugins_networkbrowser_skin.xml.h:5 plugins_stock_skin.xml.h:4
 #: plugins_weather_skin.xml.h:2 skin_default_skin.xml.h:176
 #: skins_networkbrowser_skin.xml.h:5 skins_stock_skin.xml.h:4
 #: skins_weather_skin.xml.h:2
 msgid "DEL"
 msgstr "Eliminar"
 
-#: play.h:1407 skin_default_skin.xml.h:213 webif_index.atemio5200.h:34
+#: play.h:1412 skin_default_skin.xml.h:213 webif_index.atemio5200.h:34
 #: webif_index.atemio6200.h:34 webif_index.atemio7600.h:65
 #: webif_index.atemio7600.h:82 webif_index.atemio-nemesis.h:34
 #: webif_rc.atemio510.h:49 webif_rc.atemio7600.h:15
@@ -4160,17 +4160,17 @@ msgstr "Eliminar"
 msgid "EPG"
 msgstr ""
 
-#: play.h:1407
+#: play.h:1412
 msgid "SORT"
 msgstr "especie"
 
-#: play.h:1671
+#: play.h:1676
 msgid "Marker autoseek is started"
 msgstr ""
 "autoseek marcador se pone en marchaBúsqueda automática de marcadores\n"
 "comenzado comenzo marcador Autoseek"
 
-#: play.h:1682
+#: play.h:1687
 msgid "Marker autoseek is stopped"
 msgstr "Autoseek Marcador detuvo"
 
