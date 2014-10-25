@@ -94,7 +94,7 @@ msgstr ""
 #: tmdb.h:759 tmdb.h:922 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3189
 #: tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
 #: tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:640
-#: tunerconfig.h:653 tunerconfig.h:915 unlock.h:20 unlock.h:66 unlock.h:71
+#: tunerconfig.h:654 tunerconfig.h:917 unlock.h:20 unlock.h:66 unlock.h:71
 #: unlock.h:75 videomode.h:60 videoweed.h:35 videoweed.h:80 vidstream.h:45
 #: vidstream.h:86 vidstream.h:98 vidstream.h:167 webif_index.atemio5200.h:38
 #: webif_index.atemio6200.h:38 webif_index.atemio7600.h:48
@@ -210,7 +210,7 @@ msgstr "Ok"
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922
 #: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3189 tpk.new.h:3167 tsSchnitt.c:108
 #: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
-#: tsSchnitt.c:347 tunerconfig.h:640 tunerconfig.h:653 tunerconfig.h:915
+#: tsSchnitt.c:347 tunerconfig.h:640 tunerconfig.h:654 tunerconfig.h:917
 #: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:60
 #: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
 #: vidstream.h:167 xupnpd.h:60 xupnpd.h:71 xupnpd.h:73 xvidstage.h:54
@@ -613,7 +613,7 @@ msgstr ""
 #: tithek.h:1476 tithek.h:2062 tithek.h:2089 tithek.h:2103 tithek.h:2113
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
 #: tmdb.h:759 tmdb.h:922 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3189
-#: tpk.new.h:3167 tunerconfig.h:640 tunerconfig.h:653 tunerconfig.h:915
+#: tpk.new.h:3167 tunerconfig.h:640 tunerconfig.h:654 tunerconfig.h:917
 #: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:60
 #: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
 #: vidstream.h:167 webif_boxcontrol.h:2 xupnpd.h:60 xupnpd.h:71 xupnpd.h:73
@@ -702,7 +702,7 @@ msgstr "Impostazioni salvate con successo"
 #: panel_settings_autostart.h:61 panel_settings_overclocking.h:276
 #: readerconfig.h:413 settings_autostart.h:53 settings_overclocking.h:276
 #: transponder.h:256 transponder.h:264 transponder.h:415 transponder.h:423
-#: tunerconfig.h:814 vfdisplay.h:42 vfdisplay.h:50
+#: tunerconfig.h:816 vfdisplay.h:42 vfdisplay.h:50
 msgid "off"
 msgstr ""
 
@@ -3859,7 +3859,7 @@ msgstr ""
 msgid "This video has been deleted. We apologize for the inconvenience."
 msgstr ""
 
-#: player.h:978
+#: player.h:991
 msgid "Buffering Stream - Cancel with Exit"
 msgstr ""
 
@@ -11345,19 +11345,19 @@ msgstr ""
 msgid "Terrestrisch"
 msgstr ""
 
-#: tunerconfig.h:640 tunerconfig.h:653
+#: tunerconfig.h:640 tunerconfig.h:654
 msgid "They need to switch the tuner Hyprid restart the gui !"
 msgstr ""
 
-#: tunerconfig.h:788
+#: tunerconfig.h:790
 msgid "direct connect"
 msgstr "Connessione Diretta"
 
-#: tunerconfig.h:799
+#: tunerconfig.h:801
 msgid "loop to Tuner"
 msgstr ""
 
-#: tunerconfig.h:915
+#: tunerconfig.h:917
 msgid ""
 "Tunerconfig is not allowed if record\n"
 "or stream is running !"
