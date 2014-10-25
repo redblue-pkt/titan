@@ -2973,6 +2973,17 @@ msgstr ""
 #: skins_xupnpd_skin.xml.h:5 skins_zapback_skin.xml.h:7 tithek_mainmenu.h:1
 msgid ""
 msgstr ""
+"Project-Id-Version: TitanNit 1.56\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-10-24 16:24+0200\n"
+"PO-Revision-Date: 2014-10-25 12:45+0100\n"
+"Last-Translator: Arturas11<>\n"
+"Language-Team: German <_obiwan_@web.de>\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: TNLE 0.9.12\n"
 
 #: mc_audioplayer.h:408 mc_global.h:1079 mc_pictureplayer.h:150
 #: mc_videoplayer.h:428
@@ -11670,7 +11681,7 @@ msgstr ""
 
 #: weather.h:137
 msgid "en-GB"
-msgstr ""
+msgstr "lt-LT"
 
 #: weather.h:438 weather.h:456 weather.h:474 weather.h:492
 msgid "Day: "
