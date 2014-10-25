@@ -9997,7 +9997,7 @@ msgstr "Kabel: Unitymedia 2 Senderlisten"
 
 #: tpk_description.h:35
 msgid "Cable: Settings Unitymedia"
-msgstr "Kabel: Unitymedia Senderlisten"
+msgstr "Kabel: Settings Unitymedia vom 21.7.2014"
 
 #: tpk_description.h:36
 msgid "Cable: sofatester Settings Kabel BW"
