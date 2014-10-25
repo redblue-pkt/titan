@@ -10372,11 +10372,11 @@ msgstr ""
 
 #: tpk_description.h:125
 msgid "Sat: Bulldog Settings 3x Sat 28.03.2014"
-msgstr "Sat: Bulldog Settings für 13.0, 19.2 und 28.2"
+msgstr "Sat: Bulldog Senderliste für 13.0, 19.2 und 28.2"
 
 #: tpk_description.h:126
 msgid "Sat: default Settings 19.2 Astra"
-msgstr ""
+msgstr "Sat: Standard Senderliste 19.2 Astra"
 
 #: tpk_description.h:127
 msgid "Sat: matze70 Settings Astra 19.2 vom 24.10.2014"
