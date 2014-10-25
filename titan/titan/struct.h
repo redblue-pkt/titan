@@ -1905,10 +1905,27 @@ struct update
 typedef enum { stUnknown, stPlainText, stSSA, stASS, stSRT, stVOB, stPGS } subtype_t;
 typedef enum {atUnknown, atMPEG, atMP3, atAC3, atDTS, atAAC, atPCM, atOGG, atFLAC, atWMA} audiotype_t;
 typedef struct _CustomData {
+  GstElement *playbin2;  /* Our one and only element */
+   
+  gint n_video;          /* Number of embedded video streams */
+  gint n_audio;          /* Number of embedded audio streams */
+  gint n_text;           /* Number of embedded subtitle streams */
+   
+  gint current_video;    /* Currently playing video stream */
+  gint current_audio;    /* Currently playing audio stream */
+  gint current_text;     /* Currently playing subtitle stream */
+
   gboolean is_live;
   GstElement *pipeline;
   GMainLoop *loop;
 } CustomData;
+
+typedef enum {
+	GST_PLAY_FLAG_VIDEO = (1 << 0),
+	GST_PLAY_FLAG_AUDIO = (1 << 1),
+	GST_PLAY_FLAG_TEXT = (1 << 2),
+	GST_PLAY_FLAG_NATIVE_VIDEO = (1 << 3)
+} GstPlayFlags;
 #endif
 
 #endif

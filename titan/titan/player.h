@@ -809,6 +809,8 @@ int playerstart(char* file)
 //		g_signal_connect (bus, "message", G_CALLBACK (cb_message), &data);
 //		status.prefillbuffer = 1;
 
+//analyze_streams(data);
+
 		int count = 0;
 		m_gst_startpts = 0;
 		while(m_gst_startpts == 0 && count < 5)
@@ -837,6 +839,9 @@ int setBufferSize(int size)
 void playerinit(int argc, char* argv[])
 {
 #ifdef EPLAYER4
+//	GstBus *bus;
+//	GstStateChangeReturn ret;
+//	gint flags;
 	gst_init(&argc, &argv);
 #endif
 }
@@ -844,7 +849,6 @@ void playerinit(int argc, char* argv[])
 #ifdef EPLAYER4
 int gstbuscall(GstBus *bus, GstMessage *msg, CustomData *data)
 {
-
 	int ret = 1;
 	if(!pipeline) return 0;
 	if(!msg) return ret;
@@ -862,12 +866,21 @@ int gstbuscall(GstBus *bus, GstMessage *msg, CustomData *data)
 			ret = 0;
 			break;
 		case GST_MESSAGE_STATE_CHANGED:
+			debug(150, "gst message state changed");
 			if(GST_MESSAGE_SRC(msg) != GST_OBJECT(pipeline))
-				break;
+				break; 
 
-			GstState old_state, new_state;
-			gst_message_parse_state_changed(msg, &old_state, &new_state, NULL);
-		
+			GstState old_state, new_state, pending_state;
+			gst_message_parse_state_changed(msg, &old_state, &new_state, &pending_state);
+			if(GST_MESSAGE_SRC(msg) == GST_OBJECT(pipeline))
+			{
+				if(new_state == GST_STATE_PLAYING)
+				{
+					/* Once we are in the playing state, analyze the streams */
+					analyze_streams(data);
+				}
+			}
+
 			if(old_state == new_state) break;
 	
 			debug(150, "gst state change %s -> %s", gst_element_state_get_name(old_state), gst_element_state_get_name(new_state));
@@ -2400,5 +2413,96 @@ off64_t playergetptspos(unsigned long long fpts, off64_t pos, int dir, int praez
 	free(buf);
 	return recbsize * -1;
 }
+
+#ifdef EPLAYER4
+/* Extract some metadata from the streams and print it on the screen */
+static void analyze_streams(CustomData *data)
+{
+	gint i;
+	GstTagList *tags;
+	gchar *str;
+	guint rate;
+
+	/* Read some properties */
+	g_object_get(pipeline, "n-video", &data->n_video, NULL);
+	g_object_get(pipeline, "n-audio", &data->n_audio, NULL);
+	g_object_get(pipeline, "n-text", &data->n_text, NULL);
+
+	g_print("%d video stream(s), %d audio stream(s), %d text stream(s)\n", data->n_video, data->n_audio, data->n_text);
+
+	g_print ("\n");
+	for(i = 0; i < data->n_video; i++)
+	{
+		tags = NULL;
+		/* Retrieve the stream's video tags */
+		g_signal_emit_by_name(pipeline, "get-video-tags", i, &tags);
+		if(tags)
+		{
+			g_print("video stream %d:\n", i);
+			gst_tag_list_get_string(tags, GST_TAG_VIDEO_CODEC, &str);
+			g_print("  codec: %s\n", str ? str : "unknown");
+			g_free(str);
+			gst_tag_list_free(tags);
+		}
+	}
+
+	g_print("\n");
+	for(i = 0; i < data->n_audio; i++)
+	{
+		tags = NULL;
+		g_signal_emit_by_name(pipeline, "get-audio-tags", i, &tags);
+		if(tags)
+		{
+			/* Retrieve the stream's audio tags */
+			g_print("audio stream %d:\n", i);
+			if(gst_tag_list_get_string (tags, GST_TAG_AUDIO_CODEC, &str))
+			{
+				g_print("  codec: %s\n", str);
+				g_free(str);
+			}
+			if(gst_tag_list_get_string (tags, GST_TAG_LANGUAGE_CODE, &str))
+			{
+				g_print("  language: %s\n", str);
+				g_free(str);
+			}
+			if(gst_tag_list_get_uint (tags, GST_TAG_BITRATE, &rate))
+			{
+				g_print("  bitrate: %d\n", rate);
+			}
+			gst_tag_list_free(tags);
+		}
+	}
+
+	g_print("\n");
+	for(i = 0; i < data->n_text; i++)
+	{
+		tags = NULL;
+		/* Retrieve the stream's subtitle tags */
+		g_print("subtitle stream %d:\n", i);
+		g_signal_emit_by_name(pipeline, "get-text-tags", i, &tags);
+		if(tags)
+		{
+			if(gst_tag_list_get_string (tags, GST_TAG_LANGUAGE_CODE, &str))
+			{
+				g_print("  language: %s\n", str);
+				g_free(str);
+			}
+			gst_tag_list_free(tags);
+		}
+		else
+		{
+			g_print("  no tags found\n");
+		}
+	}
+
+	g_object_get(pipeline, "current-video", &data->current_video, NULL);
+	g_object_get(pipeline, "current-audio", &data->current_audio, NULL);
+	g_object_get(pipeline, "current-text", &data->current_text, NULL);
+
+	g_print("\n");
+	g_print("Currently playing video stream %d, audio stream %d and subtitle stream %d\n", data->current_video, data->current_audio, data->current_text);
+	g_print("Type any number and hit ENTER to select a different subtitle stream\n");
+}
+#endif
 
 #endif
