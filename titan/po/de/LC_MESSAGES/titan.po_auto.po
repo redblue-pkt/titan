@@ -10372,7 +10372,7 @@ msgstr ""
 
 #: tpk_description.h:125
 msgid "Sat: Bulldog Settings 3x Sat 28.03.2014"
-msgstr "Satellit: Senderlisten bei Bulldog für 13.0, 19.2 und 28.2"
+msgstr "Sat: Bulldog Settings für 13.0, 19.2 und 28.2"
 
 #: tpk_description.h:126
 msgid "Sat: default Settings 19.2 Astra"
@@ -10380,15 +10380,15 @@ msgstr ""
 
 #: tpk_description.h:127
 msgid "Sat: matze70 Settings Astra 19.2 vom 24.10.2014"
-msgstr ""
+msgstr "Sat: matze70 Senderliste Astra 19.2 vom 24.10.2014"
 
 #: tpk_description.h:128
 msgid "Sat: Settings matze70 neue Design Astra 19.2 vom 24.10.2014"
-msgstr ""
+msgstr "Senderliste matze70 neue Design Astra 19.2 vom 24.10.2014"
 
 #: tpk_description.h:129
 msgid "Sat: uljanow Settings Sat 19.2 und 13.0 vom 21.10.2014"
-msgstr "Satellit: Senderlisten bei Uljanow für 13.0, 19.2"
+msgstr "Sat: uljanow Senderliste Sat 19.2 und 13.0 vom 21.10.2014"
 
 #: tpk_description.h:130
 msgid ""
@@ -10410,7 +10410,7 @@ msgstr ""
 
 #: tpk_description.h:134
 msgid "Settings 19.2e Astra 13.0e Hotbird 0.8w Thor 23.5w Astra KabelD"
-msgstr ""
+msgstr "Senderliste 19.2e Astra 13.0e Hotbird 0.8w Thor 23.5w Astra und KabelD"
 
 #: tpk_description.h:135
 msgid "Skin 0Acht5Zehn in black for tiTan. Please use black Picons."
@@ -11262,7 +11262,7 @@ msgstr ""
 
 #: tpk_showname.h:156
 msgid "Settings 19.2 Astra"
-msgstr ""
+msgstr "Senderliste 19.2 Astra"
 
 #: tpk_showname.h:157
 msgid "Settings Astra 19.2 (matze70)"
