@@ -93,18 +93,18 @@ msgstr ""
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
 #: tmdb.h:759 tmdb.h:922 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3189
 #: tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
-#: tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:640
-#: tunerconfig.h:654 tunerconfig.h:917 unlock.h:20 unlock.h:66 unlock.h:71
-#: unlock.h:75 videomode.h:60 videoweed.h:35 videoweed.h:80 vidstream.h:45
-#: vidstream.h:86 vidstream.h:98 vidstream.h:167 webif_index.atemio5200.h:38
-#: webif_index.atemio6200.h:38 webif_index.atemio7600.h:48
-#: webif_index.atemio-nemesis.h:38 webif_rc.atemio510.h:33
-#: webif_rc_virtual.atemio510.h:33 webif_rc_virtual.atemio5200.h:20
-#: webif_rc_virtual.atemio520.h:20 webif_rc_virtual.atemio530.h:20
-#: webif_rc_virtual.atemio6000.h:20 webif_rc_virtual.atemio6100.h:20
-#: webif_rc_virtual.atemio6200.h:20 webif_rc_virtual.atemio-nemesis.h:20
-#: xupnpd.h:60 xupnpd.h:71 xupnpd.h:73 xvidstage.h:54 xvidstage.h:100
-#: xvidstage.h:177 youtube.h:215 zapback.c:79 zdf.h:29
+#: tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:917
+#: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:60
+#: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
+#: vidstream.h:167 webif_index.atemio5200.h:38 webif_index.atemio6200.h:38
+#: webif_index.atemio7600.h:48 webif_index.atemio-nemesis.h:38
+#: webif_rc.atemio510.h:33 webif_rc_virtual.atemio510.h:33
+#: webif_rc_virtual.atemio5200.h:20 webif_rc_virtual.atemio520.h:20
+#: webif_rc_virtual.atemio530.h:20 webif_rc_virtual.atemio6000.h:20
+#: webif_rc_virtual.atemio6100.h:20 webif_rc_virtual.atemio6200.h:20
+#: webif_rc_virtual.atemio-nemesis.h:20 xupnpd.h:60 xupnpd.h:71 xupnpd.h:73
+#: xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:215 zapback.c:79
+#: zdf.h:29
 msgid "OK"
 msgstr "Ok"
 
@@ -210,11 +210,11 @@ msgstr "Ok"
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922
 #: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3189 tpk.new.h:3167 tsSchnitt.c:108
 #: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
-#: tsSchnitt.c:347 tunerconfig.h:640 tunerconfig.h:654 tunerconfig.h:917
-#: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:60
-#: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
-#: vidstream.h:167 xupnpd.h:60 xupnpd.h:71 xupnpd.h:73 xvidstage.h:54
-#: xvidstage.h:100 xvidstage.h:177 youtube.h:215 zapback.c:79 zdf.h:29
+#: tsSchnitt.c:347 tunerconfig.h:917 unlock.h:20 unlock.h:66 unlock.h:71
+#: unlock.h:75 videomode.h:60 videoweed.h:35 videoweed.h:80 vidstream.h:45
+#: vidstream.h:86 vidstream.h:98 vidstream.h:167 xupnpd.h:60 xupnpd.h:71
+#: xupnpd.h:73 xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:215
+#: zapback.c:79 zdf.h:29
 msgid "EXIT"
 msgstr "Salir"
 
@@ -613,12 +613,11 @@ msgstr "Si/VZAP infinito"
 #: tithek.h:1476 tithek.h:2062 tithek.h:2089 tithek.h:2103 tithek.h:2113
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
 #: tmdb.h:759 tmdb.h:922 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3189
-#: tpk.new.h:3167 tunerconfig.h:640 tunerconfig.h:654 tunerconfig.h:917
-#: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:60
-#: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
-#: vidstream.h:167 webif_boxcontrol.h:2 xupnpd.h:60 xupnpd.h:71 xupnpd.h:73
-#: xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:215 zapback.c:79
-#: zdf.h:29
+#: tpk.new.h:3167 tunerconfig.h:917 unlock.h:20 unlock.h:66 unlock.h:71
+#: unlock.h:75 videomode.h:60 videoweed.h:35 videoweed.h:80 vidstream.h:45
+#: vidstream.h:86 vidstream.h:98 vidstream.h:167 webif_boxcontrol.h:2
+#: xupnpd.h:60 xupnpd.h:71 xupnpd.h:73 xvidstage.h:54 xvidstage.h:100
+#: xvidstage.h:177 youtube.h:215 zapback.c:79 zdf.h:29
 msgid "Message"
 msgstr "Mensaje"
 
@@ -11592,10 +11591,6 @@ msgstr ""
 #: tunerconfig.h:417
 msgid "Terrestrisch"
 msgstr "Terrestre"
-
-#: tunerconfig.h:640 tunerconfig.h:654
-msgid "They need to switch the tuner Hyprid restart the gui !"
-msgstr ""
 
 #: tunerconfig.h:790
 msgid "direct connect"
