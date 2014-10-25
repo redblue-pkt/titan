@@ -1904,7 +1904,8 @@ struct update
 #ifdef EPLAYER4
 typedef enum { stUnknown, stPlainText, stSSA, stASS, stSRT, stVOB, stPGS } subtype_t;
 typedef enum {atUnknown, atMPEG, atMP3, atAC3, atDTS, atAAC, atPCM, atOGG, atFLAC, atWMA} audiotype_t;
-typedef struct _CustomData {
+//typedef struct _CustomData {
+typedef struct CustomData {
   GstElement *playbin2;  /* Our one and only element */
    
   gint n_video;          /* Number of embedded video streams */
