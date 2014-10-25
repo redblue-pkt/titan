@@ -12901,8 +12901,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Zapback is activated. Do you want to stop it?"
-
-#~ msgid "They need to switch the tuner Hyprid restart the gui !"
-#~ msgstr ""
-#~ "Switching the hybrid tuner mode needs a GUI restart. Please restart GUI "
-#~ "(Titan)!"
