@@ -13006,6 +13006,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid "default Settings 19.2 Astra"
-#~ msgstr "Standard Senderliste Astra 19,2°"
