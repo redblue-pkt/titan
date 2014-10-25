@@ -12894,7 +12894,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Zapback is activated. Do you want to stop it?"
-
-#~ msgid "Sat: Bulldog Settings 3x Sat 28.03.2014"
-#~ msgstr ""
-#~ "Sattelite settings by Bulldog for HOTBIRD 13, ASTRA 19.2 and ASTRA 28.2"
