@@ -10049,72 +10049,68 @@ msgid "Default Font "
 msgstr "Standard Schriftart"
 
 #: tpk_description.h:49
-msgid "default Settings 19.2 Astra"
-msgstr "Standard Senderliste Astra 19,2°"
-
-#: tpk_description.h:50
 msgid "Default Skin"
 msgstr "Standard Skin"
 
-#: tpk_description.h:51
+#: tpk_description.h:50
 msgid "Default skin without MiniTV"
 msgstr "Standard Skin ohne MiniTV"
 
-#: tpk_description.h:52
+#: tpk_description.h:51
 msgid "Digital Uhr blau - for tiTan - Samsung LCD Skin Channel."
 msgstr ""
 
-#: tpk_description.h:53
+#: tpk_description.h:52
 msgid "dlna Medien Server (upnp)"
 msgstr ""
 
-#: tpk_description.h:54
+#: tpk_description.h:53
 msgid "DTS-Downmix firmware "
 msgstr ""
 
-#: tpk_description.h:55
+#: tpk_description.h:54
 msgid "dvdplayer plugin."
 msgstr "DVD Player"
 
-#: tpk_description.h:56
+#: tpk_description.h:55
 msgid ""
 "E2 WebIf API erlaubt den Zugriff auf TitanNit mittels eines E2-Clients (z.B. "
 "dreaMote-App auf iPhone oder iPad, XBMC mit VU+, TVBrowser, FHEM, ...)"
 msgstr ""
 
-#: tpk_description.h:57
+#: tpk_description.h:56
 msgid "Emu Camd3 v3.902 for your box"
 msgstr "camd3 V3.902"
 
-#: tpk_description.h:58
+#: tpk_description.h:57
 msgid "Emu MBox v0.6 build 0010 for your box"
 msgstr "MBox V0.6 Build 0010"
 
-#: tpk_description.h:59
+#: tpk_description.h:58
 msgid "Emu MGCamd v1.35 for your box"
 msgstr "MGCamd V1.35"
 
-#: tpk_description.h:60
+#: tpk_description.h:59
 msgid "Emu MGCamd v1.38a and all Configs"
 msgstr "MGCamd V1.38a inklusive Konfigurationsdateien"
 
-#: tpk_description.h:61
+#: tpk_description.h:60
 msgid "Emu scam 3.53 for your box"
 msgstr "scam V3.53"
 
-#: tpk_description.h:62
+#: tpk_description.h:61
 msgid "Emu scam 3.59 for your box"
 msgstr "scam V3.59"
 
-#: tpk_description.h:63
+#: tpk_description.h:62
 msgid "Emu scam 3.60 for your box"
 msgstr "scam 3.60"
 
-#: tpk_description.h:64
+#: tpk_description.h:63
 msgid "Emu vizcam 1.04 for your box"
 msgstr "vizcam 1.04"
 
-#: tpk_description.h:65
+#: tpk_description.h:64
 msgid ""
 "Expert Version 9848 of OScam 2xSlot intern + 1xUSB (blocked EMM for V13 and "
 "V14) including 0x07 patch"
@@ -10122,67 +10118,67 @@ msgstr ""
 "oscam Version 9848 für bis zu zwei interne Kartenschächte und 1 USB\n"
 "mit EMM blocking für Sky V13 und V14 Karten) und dem fix07 patch"
 
-#: tpk_description.h:66
+#: tpk_description.h:65
 msgid "extended config Panel"
 msgstr ""
 
-#: tpk_description.h:67
+#: tpk_description.h:66
 msgid "filemanager"
 msgstr "Datei Manager"
 
-#: tpk_description.h:68
+#: tpk_description.h:67
 msgid "first titan game"
 msgstr "Ein Spiel für titan"
 
-#: tpk_description.h:69
+#: tpk_description.h:68
 msgid "Font 'Action Man Italic' "
 msgstr ""
 
-#: tpk_description.h:70
+#: tpk_description.h:69
 msgid "Font 'Alpha Romanie G98'"
 msgstr ""
 
-#: tpk_description.h:71
+#: tpk_description.h:70
 msgid "Font 'Croissant' "
 msgstr ""
 
-#: tpk_description.h:72
+#: tpk_description.h:71
 msgid "Font 'Digiface Regular' "
 msgstr ""
 
-#: tpk_description.h:73
+#: tpk_description.h:72
 msgid "Font 'Goodtime'"
 msgstr ""
 
-#: tpk_description.h:74
+#: tpk_description.h:73
 msgid "Font 'I Hate Comic Sans'"
 msgstr ""
 
-#: tpk_description.h:75
+#: tpk_description.h:74
 msgid "Font 'Lydian Bolt Italic BT' "
 msgstr ""
 
-#: tpk_description.h:76
+#: tpk_description.h:75
 msgid "Font 'Mighty Zeo Caps'"
 msgstr ""
 
-#: tpk_description.h:77
+#: tpk_description.h:76
 msgid "Font 'Monoglyceride DemiBold'"
 msgstr ""
 
-#: tpk_description.h:78
+#: tpk_description.h:77
 msgid "Font 'New Gothic BT'"
 msgstr ""
 
-#: tpk_description.h:79
+#: tpk_description.h:78
 msgid "Font 'Paddington Bold'"
 msgstr ""
 
-#: tpk_description.h:80
+#: tpk_description.h:79
 msgid "Font 'Plover Bold'"
 msgstr ""
 
-#: tpk_description.h:81
+#: tpk_description.h:80
 msgid ""
 "gbox 800 with autoident for card hd+ and skyde including all necessary "
 "config files."
@@ -10190,7 +10186,7 @@ msgstr ""
 "gbox 800 inklusive automatischer Erkennung einer HDplus und Sky DE Karte\n"
 "inklusive der benötigten Konfigurationen."
 
-#: tpk_description.h:82
+#: tpk_description.h:81
 msgid ""
 "gbox 804 with autoident for card hd+ and skyde including all necessary "
 "config files."
@@ -10198,7 +10194,7 @@ msgstr ""
 "gbox 804 inklusive automatischer Erkennung einer HDplus und Sky DE Karte\n"
 "inklusive der benötigten Konfigurationen."
 
-#: tpk_description.h:83
+#: tpk_description.h:82
 msgid ""
 "gbox 806 with autoident for card hd+ and skyde including all necessary "
 "config files."
@@ -10206,177 +10202,181 @@ msgstr ""
 "gbox 806 inklusive automatischer Erkennung einer HDplus und Sky DE Karte\n"
 "inklusive der benötigten Konfigurationen."
 
-#: tpk_description.h:84
+#: tpk_description.h:83
 msgid "Gold Picons for tiTan."
 msgstr "Gold Picons"
 
-#: tpk_description.h:85
+#: tpk_description.h:84
 msgid "Gold Picons for tiTan - Astra 23.5E."
 msgstr "Gold Picons - Astra 23.5"
 
-#: tpk_description.h:86
+#: tpk_description.h:85
 msgid "Gold Picons for tiTan - Astra 28.2E."
 msgstr "Gold Picons - Astra 28.2"
 
-#: tpk_description.h:87
+#: tpk_description.h:86
 msgid "Gold Picons for tiTan - Hotbird 13.0E."
 msgstr "Gold Picons - Hotbird 13"
 
-#: tpk_description.h:88
+#: tpk_description.h:87
 msgid "Holzuhr - Standby for tiTan - Samsung LCD Skin Channel."
 msgstr ""
 
-#: tpk_description.h:89
+#: tpk_description.h:88
 msgid "ImdBapi Info Plugin"
 msgstr ""
 
-#: tpk_description.h:90
+#: tpk_description.h:89
 msgid "ImdB Info Plugin"
 msgstr ""
 
-#: tpk_description.h:91
+#: tpk_description.h:90
 msgid "IncubusCamd_1.22 including all necessary config files."
 msgstr "Incubuscamd V1.22 inklusive Konfigurationsdateien"
 
-#: tpk_description.h:92
+#: tpk_description.h:91
 msgid "IP-Kamera zB. Firma INSTAR"
 msgstr ""
 
-#: tpk_description.h:93
+#: tpk_description.h:92
 msgid "Kabel BW transparent Picons for tiTan."
 msgstr "Kabel BW transparent Picons"
 
-#: tpk_description.h:94
+#: tpk_description.h:93
 msgid "Kabel Deutschland Picons black3d for tiTan."
 msgstr "Kabel Deutschland Picons black3d"
 
-#: tpk_description.h:95
+#: tpk_description.h:94
 msgid "Kabel Deutschland transparent Picons for tiTan."
 msgstr "Kabel Deutschland transparent Picons"
 
-#: tpk_description.h:96
+#: tpk_description.h:95
 msgid "Lib extension for network (upnpfs/smbfs/ftpfs/rarfs)"
 msgstr "Netzwerktreiberpaket (upnpfs/smbfs/ftpfs/rarfs)"
 
-#: tpk_description.h:97
+#: tpk_description.h:96
 msgid "MegaStyle blue Mini TV Skin"
 msgstr ""
 
-#: tpk_description.h:98
+#: tpk_description.h:97
 msgid "MegaStyle blue Skin"
 msgstr ""
 
-#: tpk_description.h:99
+#: tpk_description.h:98
 msgid "MegaStyle grey MiniTV Skin"
 msgstr ""
 
-#: tpk_description.h:100
+#: tpk_description.h:99
 msgid "MegaStyle grey Skin"
 msgstr ""
 
-#: tpk_description.h:101
+#: tpk_description.h:100
 msgid "MetrixHD skin for TitanNit. Use transparent XPicons."
 msgstr "MetrixHD skin - Bitte die transparenten Picons nutzen"
 
-#: tpk_description.h:102
+#: tpk_description.h:101
 msgid "Midnight Commander, a file manager for the command line"
 msgstr "Midnight Commander - ein Datei Manager"
 
-#: tpk_description.h:103
+#: tpk_description.h:102
 msgid "More audio/video formats playable"
 msgstr ""
 
-#: tpk_description.h:104
+#: tpk_description.h:103
 msgid "Network browser extension for better Win7 compatibility"
 msgstr ""
 
-#: tpk_description.h:105
+#: tpk_description.h:104
 msgid "Networkbrowser scanning an manage cifs/nfs/ftp shares."
 msgstr ""
 
-#: tpk_description.h:106
+#: tpk_description.h:105
 msgid "Networkfile libsmbclient 3.0.28b"
 msgstr ""
 
-#: tpk_description.h:107 tpk_showname.h:75
+#: tpk_description.h:106 tpk_showname.h:75
 msgid "Neutrino Keymap"
 msgstr ""
 
-#: tpk_description.h:108
+#: tpk_description.h:107
 msgid "newcs including all necessary config files."
 msgstr ""
 
-#: tpk_description.h:109
+#: tpk_description.h:108
 msgid "New Downloadfeed for your AAF - Duckbox"
 msgstr ""
 
-#: tpk_description.h:110
+#: tpk_description.h:109
 msgid "news Plugin"
 msgstr ""
 
-#: tpk_description.h:111
+#: tpk_description.h:110
 msgid "Nightly Version of OSCam 8755"
 msgstr ""
 
-#: tpk_description.h:112
+#: tpk_description.h:111
 msgid "Nightly Version of OSCam 8755 small Version"
 msgstr ""
 
-#: tpk_description.h:113
+#: tpk_description.h:112
 msgid "Nightly Version of OSCam 8933 2xSlot intern"
 msgstr ""
 
-#: tpk_description.h:114
+#: tpk_description.h:113
 msgid "Nogfx grey Skin for your box."
 msgstr ""
 
-#: tpk_description.h:115
+#: tpk_description.h:114
 msgid "Nogfx Skin in black for tiTan. Please use black Picons."
 msgstr ""
 
-#: tpk_description.h:116
+#: tpk_description.h:115
 msgid "Older Version of OSCam"
 msgstr ""
 
-#: tpk_description.h:117
+#: tpk_description.h:116
 msgid "Openvpn Server Tool for external Network access"
 msgstr ""
 
-#: tpk_description.h:118
+#: tpk_description.h:117
 msgid "optimize Plugin"
 msgstr ""
 
-#: tpk_description.h:119 tpk_showname.h:87
+#: tpk_description.h:118 tpk_showname.h:87
 msgid "oscam spezial"
 msgstr ""
 
-#: tpk_description.h:120
+#: tpk_description.h:119
 msgid "Partitions Tool fuer HDD > 2TB"
 msgstr ""
 
-#: tpk_description.h:121
+#: tpk_description.h:120
 msgid "Permanente Uhrzeit am Bildschirm"
 msgstr ""
 
-#: tpk_description.h:122
+#: tpk_description.h:121
 msgid "Power off if box not used"
 msgstr ""
 
-#: tpk_description.h:123
+#: tpk_description.h:122
 msgid "remote Desktop Plugin"
 msgstr ""
 
-#: tpk_description.h:124
+#: tpk_description.h:123
 msgid "Samba"
 msgstr ""
 
-#: tpk_description.h:125
+#: tpk_description.h:124
 msgid "Samba Server"
 msgstr ""
 
-#: tpk_description.h:126
+#: tpk_description.h:125
 msgid "Sat: Bulldog Settings 3x Sat 28.03.2014"
 msgstr "Satellit: Senderlisten bei Bulldog für 13.0, 19.2 und 28.2"
+
+#: tpk_description.h:126
+msgid "Sat: default Settings 19.2 Astra"
+msgstr ""
 
 #: tpk_description.h:127
 msgid "Sat: matze70 Settings Astra 19.2 vom 24.10.2014"
@@ -13006,3 +13006,6 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
+
+#~ msgid "default Settings 19.2 Astra"
+#~ msgstr "Standard Senderliste Astra 19,2°"
