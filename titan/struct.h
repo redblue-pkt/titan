@@ -1906,7 +1906,7 @@ typedef enum { stUnknown, stPlainText, stSSA, stASS, stSRT, stVOB, stPGS } subty
 typedef enum {atUnknown, atMPEG, atMP3, atAC3, atDTS, atAAC, atPCM, atOGG, atFLAC, atWMA} audiotype_t;
 typedef struct _CustomData {
 //typedef struct CustomData {
-  GstElement *playbin2;  /* Our one and only element */
+  GstElement *playbin2;   /* Our one and only element */
    
   gint n_video;          /* Number of embedded video streams */
   gint n_audio;          /* Number of embedded audio streams */
