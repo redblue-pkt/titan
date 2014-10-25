@@ -1,0 +1,5276 @@
+msgid "System-Info"
+msgstr "Sistemos informacija"
+
+msgid "OK"
+msgstr "Gerai"
+
+msgid "EXIT"
+msgstr "Ieiti"
+
+msgid "no"
+msgstr "Ne"
+
+msgid "infobar"
+msgstr "Infojuosta"
+
+msgid "epg"
+msgstr "EPG"
+
+msgid "Channel EPG"
+msgstr "Kanal EPG"
+
+msgid "yes"
+msgstr "taip"
+
+msgid "medium"
+msgstr "vidutinis"
+
+msgid "fast"
+msgstr "Greitas"
+
+msgid "alpha"
+msgstr "Abclinis"
+
+msgid "reverse alpha"
+msgstr "majania tvarka abclinis"
+
+msgid "size"
+msgstr "dydis"
+
+msgid "reverse size"
+msgstr "dydis majania tvarka"
+
+msgid "date"
+msgstr "Data"
+
+msgid "reverse date"
+msgstr "dat majania tvarka"
+
+msgid "Power Menu"
+msgstr "Maitinimo Meniu"
+
+msgid "Power Off"
+msgstr "Ijungti"
+
+msgid "Standby"
+msgstr "Budti"
+
+msgid "Restart"
+msgstr "Paleisti i naujo"
+
+msgid "Gui Restart"
+msgstr "Titan Perkrauti"
+
+msgid "deaktiv"
+msgstr "atjungti"
+
+msgid "1 sec"
+msgstr "1 sekund"
+
+msgid "2 sec"
+msgstr "2 sekunds"
+
+msgid "endless"
+msgstr "begalinis"
+
+msgid "extern"
+msgstr "iorinis"
+
+msgid "intern"
+msgstr "vidinis"
+
+msgid "auto"
+msgstr "automatinis"
+
+msgid "nothing"
+msgstr "nieko"
+
+msgid "standby"
+msgstr "Budti"
+
+msgid "power off"
+msgstr "Ijungti"
+
+msgid "anim. width"
+msgstr "plotis animacija"
+
+msgid "anim. height"
+msgstr "auktis animacija"
+
+msgid "anim. both"
+msgstr "priartinti"
+
+msgid "very fast"
+msgstr "labai greitas"
+
+msgid "normal"
+msgstr "normalus"
+
+msgid "slow"
+msgstr "ltas"
+
+msgid "very slow"
+msgstr "labai ltas"
+
+msgid "hidden"
+msgstr "paslptas"
+
+msgid "channel-movie"
+msgstr "Kanalas - Pavadinimas"
+
+msgid "movie-channel"
+msgstr "Pavadinimas - Kanalas"
+
+msgid "expert (11)"
+msgstr "Expert mode (11)"
+
+msgid "yes / vzap 1 sec"
+msgstr "taip / vzap 1 sekund"
+
+msgid "yes / vzap 2 sec"
+msgstr "taip / vzap 2 sekunds"
+
+msgid "yes / vzap endless"
+msgstr "taip / vzap begalinis"
+
+msgid "Message"
+msgstr "Praneimas"
+
+msgid "Stream Menu"
+msgstr "Srauto Meniu"
+
+msgid "Choose your Streaming Format from the following list"
+msgstr "Pasirinkite savo Srauto Format i emiau pateikto srao"
+
+msgid "Search"
+msgstr "Paieka"
+
+msgid "running"
+msgstr "veikia"
+
+msgid "undefined"
+msgstr "neapibrtas"
+
+msgid "record"
+msgstr "raas"
+
+msgid "switch channel"
+msgstr "Perjungti kanal"
+
+msgid "Stop AutoTimer"
+msgstr "Stabdyti automatin laikmat"
+
+msgid "AutoTimer succesfull stopped"
+msgstr "Automatinis Laikmatis skmingai sustabdytas"
+
+msgid "ERROR... AutoTimer not stopped"
+msgstr "KLAIDA: Automatinis Laikmatis nebuvo sustabdytas"
+
+msgid "Start AutoTimer"
+msgstr "Paleisti automatin laikmat"
+
+msgid "AutoTimer succesfull started"
+msgstr "Automatinis Laikmatis skmingai paleistas"
+
+msgid "ERROR... AutoTimer not started"
+msgstr "KLAIDA: Automatinis laikmatis nepasileido"
+
+msgid "Save Settings"
+msgstr "Isaugoti nustatymus"
+
+msgid "Settings succesfull saved"
+msgstr "Nustatymai skmingai isaugoti"
+
+msgid "off"
+msgstr "Ijungti"
+
+msgid "redKey"
+msgstr "Raudonas mygtukas"
+
+msgid "4 sec"
+msgstr "4 Sekunds"
+
+msgid "6 sec"
+msgstr "6 Sekunds"
+
+msgid "8 sec"
+msgstr "8 Sekunds"
+
+msgid "10 sec"
+msgstr "10 Sekundi"
+
+msgid "on"
+msgstr "jungta"
+
+msgid "Is this Videomode ok ?"
+msgstr "Ar is vaizdo reimas tinka?"
+
+msgid "This Plugin is only for Betatester and can change your Settings!\n"
+"Realy run it?"
+msgstr "This Plugin is only for Betatesters and could change\n"
+"your settings. Do you want to run the application?"
+
+msgid "unknown"
+msgstr "Neinomas"
+
+msgid "Really stop download ?"
+msgstr "DMESIO: Ar norite nutraukti siuntim ?"
+
+msgid "Sat: "
+msgstr "Palydovas:"
+
+msgid "Cable: "
+msgstr "Kabelin :"
+
+msgid "Terrestrial: "
+msgstr "Antemin :"
+
+msgid "SAT"
+msgstr "Palydovas"
+
+msgid "Cable"
+msgstr "Kabelin"
+
+msgid "Terrestrial"
+msgstr "Antemin"
+
+msgid "Home"
+msgstr "Namai"
+
+msgid "Browser Favoriten"
+msgstr "Mgstami"
+
+msgid "Choose your Internet Favorite from the following list"
+msgstr "Pasirinkite savo interneto mgstamus i io srao"
+
+msgid "Callmon Timeout !!!\n"
+"\n"
+"check your parameter "
+msgstr "Callmonitor Timeout !!!\n"
+"\n"
+"Check your settings "
+
+msgid "nein"
+msgstr "Ne"
+
+msgid "ja"
+msgstr "Taip"
+
+msgid "puffern"
+msgstr "buferiuoja"
+
+msgid "verwerfen"
+msgstr "atmesti"
+
+msgid "Move mode"
+msgstr "Perkelti"
+
+msgid "Remove mode"
+msgstr "Paalinti"
+
+msgid "Copy mode"
+msgstr "Kopijuoti"
+
+msgid "Protect mode"
+msgstr "Apsaugokite"
+
+msgid "Edit mode"
+msgstr "Redaguoti"
+
+msgid "Radio"
+msgstr "Radijas"
+
+msgid "TV"
+msgstr "Televizija"
+
+msgid "Bouquets"
+msgstr "Mgstami"
+
+msgid "Channel"
+msgstr "Kanalas"
+
+msgid "Satellites"
+msgstr "Palydovai"
+
+msgid "Provider"
+msgstr "Tiekjas"
+
+msgid "All Channels"
+msgstr "Visi kanalai"
+
+msgid "Copy providerlist successfull"
+msgstr "Tiekjai skmingai nukopijuoti"
+
+msgid "Copy providerlist not ok"
+msgstr "DMESIO : Tiekjai nebus kopijuojami"
+
+msgid "Copy satlist successfull"
+msgstr "Kanalai skmingai nukopijuoti"
+
+msgid "Copy satlist not ok"
+msgstr "DMESIO : kanalai nebus kopijuojami"
+
+msgid "Can't remove akive Service"
+msgstr "Negalima paalinti aktyvios tarnybos"
+
+msgid "Channels A-Z"
+msgstr "Kanalai A-Z"
+
+msgid "Amount of files: "
+msgstr "Total of Fail: "
+
+msgid "file move error"
+msgstr "DMESIO : Fail perklimas nepavyko!"
+
+msgid "file copy error"
+msgstr "DMESIO : Fail kopija nepavyko!"
+
+msgid "wait for stopping"
+msgstr "Praome palaukti, kol operacija baigsis"
+
+msgid "none"
+msgstr "Nieko"
+
+msgid "north"
+msgstr "iaur"
+
+msgid "south"
+msgstr "Piets"
+
+msgid "east"
+msgstr "Rytai"
+
+msgid "west"
+msgstr "Vakarai"
+
+msgid "Hoster Url not http://"
+msgstr "The hosters URL is not http://"
+
+msgid "The file is being transfered to our other servers. This may take few minutes."
+msgstr "Failas yra perkeliama kit ms servers. Tai gali utrukti kelet minutes."
+
+msgid "The page is temporarily unavailable"
+msgstr "is puslapis yra laikinai nepasiekiamas"
+
+msgid "DLNA started."
+msgstr "DLNA staravo."
+
+msgid "DLNA not started,\n"
+"Please check your config."
+msgstr "DLNA nepasileido , \n"
+" Praom patikrinti savo config."
+
+msgid "DLNA now stopped"
+msgstr "DLNA sustojo"
+
+msgid "Download (KB): "
+msgstr "Parsisisti ( KB) :"
+
+msgid "download error"
+msgstr "KLAIDA: Nepavyko atsisisti !"
+
+msgid "wait for stopping download"
+msgstr "DMESIO: Palaukite , kol atsisiuntimas baigsis."
+
+msgid "EJECT"
+msgstr "Istumti"
+
+msgid "SELECT"
+msgstr "Pasirinkti"
+
+msgid "Can't start playback !"
+msgstr "Nepavyko paleisti atkrim !"
+
+msgid "Single (EPG)"
+msgstr "Vienas ( EPG)"
+
+msgid "Multi (EPG)"
+msgstr "Keletas (EPG)"
+
+msgid "Search only aktual epg ?"
+msgstr "Paieka iame EPG"
+
+msgid "Action"
+msgstr "Veiksmo"
+
+msgid "Animation"
+msgstr "Animacija"
+
+msgid "History"
+msgstr "Istorinis"
+
+msgid "Doku"
+msgstr "Dokumentika"
+
+msgid "Thriller"
+msgstr "Trileris"
+
+msgid "Child"
+msgstr "Vaik"
+
+msgid "Fantasy"
+msgstr "Fantastika"
+
+msgid "Horror"
+msgstr "Siaubo"
+
+msgid "Comedy"
+msgstr "Komedija"
+
+msgid "War"
+msgstr "Karinis"
+
+msgid "Scifi"
+msgstr "MokslinFantastika"
+
+msgid "Sport"
+msgstr "Sportas"
+
+msgid "Western"
+msgstr "Vesternas"
+
+msgid "Eastern"
+msgstr "Easternas"
+
+msgid "Music"
+msgstr "Muzika"
+
+msgid "Single EPG"
+msgstr "Kanalo EPG"
+
+msgid "Multi EPG"
+msgstr "Kanal EPG"
+
+msgid "Graphic Multi EPG"
+msgstr "Grafinis kanal EPG"
+
+msgid "scan"
+msgstr "Skanuoti"
+
+msgid "whitelist"
+msgstr "Pageidautinas sraas"
+
+msgid "scan and whitelist"
+msgstr "Scan and White list"
+
+msgid "always"
+msgstr "Visada"
+
+msgid "only on power off / restart"
+msgstr "Tik Ijungiant / Perkraunant"
+
+msgid "never"
+msgstr "Niekada"
+
+msgid "only for scan"
+msgstr "Tik nuskaityti"
+
+msgid "poweroff"
+msgstr "Ijungimas"
+
+msgid "Deavtivate Refresh Time and After EPG in scan-mode"
+msgstr "Deavtivate Atnaujinti Laikas ir Po EPG skenavimo reimu"
+
+msgid "EPG resetet and now clear."
+msgstr "EPG ivalytas"
+
+msgid "EPG Scan Log"
+msgstr "EPG Scan urnalas"
+
+msgid "Feed"
+msgstr "Praome vesti adres"
+
+msgid "Installation start"
+msgstr "Diegimas pradtas"
+
+msgid "Remove start"
+msgstr "alinimas pradtas"
+
+msgid "New free space (KB): "
+msgstr "Nauja laisva erdv ( KB) :"
+
+msgid "Install success"
+msgstr "Diegimas skmingai baigsi"
+
+msgid "Install error"
+msgstr "KLAIDA: Nepavyko diegti !"
+
+msgid "Remove success"
+msgstr "skmingai paalintas"
+
+msgid "Remove error"
+msgstr "KLAIDA : alinimas nepavyko!"
+
+msgid "Install to MNT"
+msgstr "Diegti MNT ( Flash )"
+
+msgid "Install to FLASH"
+msgstr "Diegti FLASH"
+
+msgid "Install to SWAP"
+msgstr "Diegti SWAP (USB ar HDD)"
+
+msgid "Choice Install Medium"
+msgstr "Pasirinkite diegimo laikmen"
+
+msgid "Tpk Install Info"
+msgstr "TPK Diegimo Informacija"
+
+msgid "Can't install Package. Package to big."
+msgstr "KLAIDA:paskirta paketas yra pernelyg didelis\n"
+" ir negali bti diegtas."
+
+msgid "Tpk Install - select section"
+msgstr "Diegimas - Pasirinkite kategorij"
+
+msgid "Tpk Install - select file"
+msgstr "TPK diegimas - pasirinkite fail"
+
+msgid "It may only be a package to be installed. If they want to install another package of this section, they only remove the installed packet. Is not the plugin after reinstalling the software TitanNit in TitanNit Menu Visible then perform an update by Tpk to: "
+msgstr "You may only install one Plugin from this section.\n"
+"If you want to install a plugin other than the one installed\n"
+"you will have to remove the installed one first. Should the installed\n"
+"plugin not be visible after updating to a new version of TitanNit you will\n"
+"have to perform an online plugin update."
+
+msgid "Installing"
+msgstr "Diegiama"
+
+msgid "starting"
+msgstr "Startuoja"
+
+msgid "Tpk Install Info - Install OK"
+msgstr "Skmingai diegta"
+
+msgid "Tpk Install Info - Install ERROR"
+msgstr "KLAIDA: Nepavyko diegti !"
+
+msgid "TPK Install done, your system will reboot !"
+msgstr "diegta \n"
+" imtuvas persikraus dabar"
+
+msgid "Tpk Remove - select file"
+msgstr "Paalinti - Pasirinkt"
+
+msgid "Tpk Remove Info"
+msgstr "TPK Paalinti"
+
+msgid "Tpk Remove Info - Remove OK"
+msgstr "skmingai paalintas"
+
+msgid "Tpk Remove Info - Remove ERROR"
+msgstr "KLAIDA : alinimas nepavyko"
+
+msgid "TPK Remove done, your system will reboot !"
+msgstr "Paalino \n"
+" imtuvas persikraus dabar"
+
+msgid "Some plugins needs restart.\n"
+"If the plugin is not active\n"
+"reboot the box."
+msgstr "Some plugins need a restart.\n"
+"Your Receiver will restart now"
+
+msgid "TPK Tmp Install done, your system will reboot !"
+msgstr "Skmingai diegta i tmp.\n"
+" imtuvas persikraus dabar"
+
+msgid "Tpk Update Info - Update ERROR"
+msgstr "KLAIDA: Nepavyko atnaujinti !"
+
+msgid "Can't get all TPK index !"
+msgstr "DMESIO : Nepavyko gauti vis skiepi indeks !"
+
+msgid "Can't update all packages !"
+msgstr "KLAIDA: Ne visi papildiniai buvo atnaujinti !"
+
+msgid "TPK Upgrade done, your system will reboot !"
+msgstr "Atnaujinta.\n"
+" imtuvas persikraus dabar"
+
+msgid "Facebook allready registered,\n"
+"Make new registration ?"
+msgstr "Are you already registered in Facebook?\n"
+"Do you want to register with Facebook?"
+
+msgid "Post on wall from another user"
+msgstr "Post on the wall of other User(s)"
+
+msgid "Link postet"
+msgstr "Link posted"
+
+msgid "Video postet"
+msgstr "Video posted"
+
+msgid "Photos postet"
+msgstr "Photos posted"
+
+msgid "Coment created"
+msgstr "Comment created"
+
+msgid "FanControl-standby"
+msgstr "FanControl - laukimo"
+
+msgid "FanControl-normal"
+msgstr "FanControl normalus"
+
+msgid "Connect with Hoster wait 10 seconds"
+msgstr "Prijungimas prie Host\n"
+"Please laukti 10 Seconds."
+
+msgid "Rename"
+msgstr "Pervardinti"
+
+msgid "Create Folder"
+msgstr "Sukurti aplank"
+
+msgid "Menu"
+msgstr "Meniu"
+
+msgid "Choose your Filemanager Option from the following list"
+msgstr "Pasirinkite savo Filemanager variantas i emiau pateikto srao"
+
+msgid "Can't rename file !"
+msgstr "Negalima pervadinti failo !"
+
+msgid "Can't create directory !"
+msgstr "Negalima sukurti aplanko !"
+
+msgid "Really copy this file/dir?"
+msgstr "Tikrai nukopijuoti fail / direktorij ?"
+
+msgid "Really move this file/dir?"
+msgstr "Tikrai perkelti fail / direktorij ?"
+
+msgid "From"
+msgstr "I"
+
+msgid "Move File"
+msgstr "Perkelti Fail ( us)"
+
+msgid "Copy File"
+msgstr "Kopijuoti Fail ( us)"
+
+msgid "Really delete this file/dir?"
+msgstr "Tikrai itrinti fail / direktorij ?"
+
+msgid "Can't remove file/dir !"
+msgstr "Negalima paalinti failo / direktorijos !"
+
+msgid "Can't show this file!"
+msgstr "Negaliu parodyti ios bylos !"
+
+msgid "This file doesn't exist, or has been removed."
+msgstr "is failas neegzistuoja arba buvo itrintas."
+
+msgid "This file is private and only viewable by the owner."
+msgstr "is failas yra privatus ir matomas tik savininkui."
+
+msgid "ERROR cant read res"
+msgstr "KLAIDA: negaliu skaityti rezoliucijos"
+
+msgid "Monday"
+msgstr "Pirmadienis"
+
+msgid "Tuesday"
+msgstr "Antradienis"
+
+msgid "Wednesday"
+msgstr "Treiadienis"
+
+msgid "Thursday"
+msgstr "Ketvirtadienis"
+
+msgid "Friday"
+msgstr "Penktadienis"
+
+msgid "Saturday"
+msgstr "etadienis"
+
+msgid "Sunday"
+msgstr "Sekmadienis"
+
+msgid "Mon"
+msgstr "Pir"
+
+msgid "Tue"
+msgstr "Ant"
+
+msgid "Wed"
+msgstr "Tre"
+
+msgid "Thu"
+msgstr "Ket"
+
+msgid "Fri"
+msgstr "Pen"
+
+msgid "Sat"
+msgstr "Palydovas"
+
+msgid "Sun"
+msgstr "Sek"
+
+msgid "Tuner "
+msgstr "Imtuvas"
+
+msgid "Multituner adjustable"
+msgstr "Multituner reguliuojamas"
+
+msgid "Select Your Serach Modus"
+msgstr "Pasirinkite paiekos reimas"
+
+msgid "Transponder/Satellite Convert done, please use channel search on next Boot.\n"
+"Your System will reboot !"
+msgstr "Konversija atsakiklio / palydovo baigta.\n"
+"Praom atlikti nauj kanal skenavim po sistemos persikrovimo.\n"
+" imtuvas perkraunamas !"
+
+msgid "Error: Transponder Source file not found"
+msgstr "Klaida: Sistuvo altinis failas nerastas"
+
+msgid "Error: Transponder Source file no data"
+msgstr "Klaida: Sistuvo altinio failas nra duomen"
+
+msgid "Standard favorites have been successfully applied.\n"
+"Your System will reboot !"
+msgstr "Standartiniai draugai buvo imported.\n"
+"The imtuvas persikraus now."
+
+msgid "Image"
+msgstr "Atvaizdas"
+
+msgid "Version"
+msgstr "Versija"
+
+msgid "Installed:"
+msgstr "Instaliuota:"
+
+msgid "Copyright"
+msgstr " Autorins teiss"
+
+msgid "Tuner"
+msgstr "Imtuvas"
+
+msgid "Tunertype"
+msgstr "Imtuvo Tipas"
+
+msgid "Servername"
+msgstr "Serverio pavadinimas"
+
+msgid "Wait for connect or press EXIT"
+msgstr "Palaukite prijungimo ar paspauskite mygtuk EXIT"
+
+msgid "GRAPHIC MULTI EPG - Bouquets"
+msgstr "Grafinis Multi EPG - Mgstamiausi"
+
+msgid "GRAPHIC MULTI EPG - Channel"
+msgstr "Grafinis Multi EPG - Kanalai"
+
+msgid "GRAPHIC MULTI EPG - Satellites"
+msgstr "Grafinis Multi EPG - Palydovai"
+
+msgid "GRAPHIC MULTI EPG - Provider"
+msgstr "Grafinis Multi EPG - Tiekjai"
+
+msgid "GRAPHIC MULTI EPG - All Channels"
+msgstr "Grafinis Multi EPG - Visi kanalai"
+
+msgid "Harddisk Format - Filesystem"
+msgstr "Kietojo disko formatavimas - Fail sistema"
+
+msgid "select the format filesystem type for your media drive"
+msgstr "Pasirinkite savo kaupiklio format, fail sistemos tip "
+
+msgid "default"
+msgstr "Numatyta"
+
+msgid "Harddisk Configure"
+msgstr "Kietojo disko konfigravimas"
+
+msgid "select the function for the specified device"
+msgstr "pasirinkite nurodyto prietaiso funkcij"
+
+msgid "use medium for record"
+msgstr "Naudoti kaip Recordings - prietais"
+
+msgid "del medium for record"
+msgstr "alinti kaip Recordings - prietais"
+
+msgid "use medium for extension"
+msgstr "Naudokite kaip pltini - prietais"
+
+msgid "del medium for extension"
+msgstr "alinti kaip pltini - prietais"
+
+msgid "use medium for swap"
+msgstr "Naudoti kaip apsikeitimo (SWAP) prietais"
+
+msgid "del medium for swap"
+msgstr "alinti kaip apsikeitimo (SWAP) prietais"
+
+msgid "use medium for backup"
+msgstr "Naudokite kaip Backup - prietais"
+
+msgid "del medium for backup"
+msgstr "alinti kaip Backup - prietais"
+
+msgid "Are you sure you want to delete this directory?"
+msgstr "Ar tikrai norite itrinti aplank?"
+
+msgid "Directory has content\n"
+"Really delete directory and content?"
+msgstr "Kataloge yra fail\n"
+"Tikrai itrinti katalog ir turin ?"
+
+msgid "can't create or delete directory"
+msgstr "KLAIDA : Nepavyko sukurti ar itrinti katalog"
+
+msgid "succesfull create or delelete directory"
+msgstr "Skmingai sukurtas ar itrintas katalogas"
+
+msgid "Harddisk"
+msgstr "Kietas diskas"
+
+msgid "sorry found no harddisk"
+msgstr "Atsipraome nerado Kieto disko"
+
+msgid "Harddisk Format"
+msgstr "Kietojo disko formatavimas"
+
+msgid "select the media drive from Device List for formating"
+msgstr "Pasirinkite i srao disk kur norite formatuoti"
+
+msgid "Harddisk Fsck"
+msgstr "Fail sistemos tikrinimas"
+
+msgid "select the media drive from Device List for fsck"
+msgstr "Pasirinkite i srao , kur norite patikrinti disk"
+
+msgid "select the media drive from Device List for configuration"
+msgstr "Pasirinkite i srao , kur norite konfigruoti disk"
+
+msgid "HDD "
+msgstr "HDD"
+
+msgid "STICK "
+msgstr "USB"
+
+msgid "HDD > 2TB unsupported.\n"
+"You must first install plugin parted, then you can use this panel."
+msgstr "Harddisks with a capacity larger than 2 TB are not supported.\n"
+"You must install the plugin 'parted' in order to use the Harddisk."
+
+msgid "Are you sure you want to remove all Partitions\n"
+"on this device and create a new Partition 1?\n"
+"Box reboots after format"
+msgstr "Are you sure you want to remove all partitions\n"
+"on this device and create a new partition?\n"
+"Your Receiver will reboot after formatting the device"
+
+msgid "Are you sure you want to format this Partition?\n"
+"Box reboots after format"
+msgstr "Ar tikrai norite formatuoti skirsn ? \n"
+" imtuvas persikraus po prietaiso formatavimo "
+
+msgid "ERROR\n"
+"partition could not be created"
+msgstr "KLAIDA: \n"
+" Skirsnis negali bti sukurtas !"
+
+msgid "Information: This hard drive size can take a file\n"
+"system check between 30 minutes and 1.5 hours."
+msgstr "Information: A File System Check on the device with such a size\n"
+"can take between 30 Minutes and 1.5 Hours."
+
+msgid "Are you sure you want to check this Partition?\n"
+"Box reboots after check"
+msgstr "Ar js tikrai norite patikrinti skirsn ? \n"
+" imtuvas persikraus patikrinus rengin."
+
+msgid "Harddisk Sleep"
+msgstr "Harddisk Powersave (Sleep)"
+
+msgid "set here the default sleeptime for all your media drives"
+msgstr "Set the time for drive sleep"
+
+msgid "Time to sleep"
+msgstr "Powersave (Sleep) in"
+
+msgid "5 min"
+msgstr "5 Minutes"
+
+msgid "10 min"
+msgstr "10 Minutes"
+
+msgid "15 min"
+msgstr "15 Minutes"
+
+msgid "60 min"
+msgstr "60 Minutes"
+
+msgid "Found new Stick/HDD.\n"
+"You can configure it in Harddisk Menu."
+msgstr "A new Stick/Harddisk was found.\n"
+"You can configure it in the Device Menu."
+
+msgid "You can leave HBBTV with Record Key."
+msgstr "You can exit HBBTV with the Record button."
+
+msgid "HBBTV Favoriten"
+msgstr "HBBTV Favourites"
+
+msgid "Choose your HBBTV Favorite from the following list"
+msgstr "Choose your HBBTV Favourite from the following list"
+
+msgid "Volumebar Timeout"
+msgstr "Time to Volumebar Fadeout (sec)"
+
+msgid "Infobar Timeout"
+msgstr "Infobar fadeout after (sec)"
+
+msgid "Infobar Sleep"
+msgstr "Infobar display delay (sec)"
+
+msgid "Spinnerspeed"
+msgstr "Spinner speed"
+
+msgid "Spinnertime"
+msgstr "Spinner time"
+
+msgid "Hangtime"
+msgstr "Laikas, kol pasirodys Klaid praneimas"
+
+msgid "Second Infobar"
+msgstr "Antra Infojuosta"
+
+msgid "Faststop"
+msgstr "GreitasTtitan perkrovimas"
+
+msgid "Dirsort"
+msgstr "Riuoti pagal"
+
+msgid "Power aktion"
+msgstr "Reakcija Power Mygtuko paspaudim"
+
+msgid "Record Overrun (min)"
+msgstr "Riedjimas laikmaiu Recordings (min)"
+
+msgid "Skip 1/3"
+msgstr "Cue for Buttons 1/3 (sec)"
+
+msgid "Skip 4/6"
+msgstr "Cue for Buttons 4/6 (sec)"
+
+msgid "Skip 7/9"
+msgstr "Cue for Buttons 7/9 (sec)"
+
+msgid "Player for .ts"
+msgstr "Grotuvas .ts failam"
+
+msgid "Change Channelname auto."
+msgstr "Auto Kanalo pavadinimo keitimas"
+
+msgid "Set action after rec"
+msgstr "Veiksmas po raymo"
+
+msgid "Show Timeline in Channellist"
+msgstr "Rodyti progreso juost channellist ?"
+
+msgid "Animated Screens"
+msgstr "Animuoti meniu"
+
+msgid "Animated Speed"
+msgstr "Animacijos greitis"
+
+msgid "Channellist view"
+msgstr "Kanal sarao vaizdas"
+
+msgid "Show last pos Question"
+msgstr "Rodyti paskutines poz Klausim"
+
+msgid "Resync Recording immediately"
+msgstr "Resync raymas i karto"
+
+msgid "Recording name"
+msgstr "rao pavadinimas"
+
+msgid "Newsletter"
+msgstr "Naujienlaikis"
+
+msgid "Show hidden files"
+msgstr "Rodyti paslptus failus ?"
+
+msgid "Expert Modus"
+msgstr "Expert Mode"
+
+msgid "Show infobar on program change"
+msgstr "Rodyti Informacins juostos ant zap ?"
+
+msgid "Use cross control for fast zapping and vol"
+msgstr "Naudokite kryminio kontrol greitai perirai ir garsui"
+
+msgid "Deactivate Crypt Support on Media Playback"
+msgstr "Ijungti Crypt param per Media atkrimas"
+
+msgid "Deactivate MiniTV"
+msgstr "Ijungti MiniTV"
+
+msgid "Activate CEC"
+msgstr "Aktyvuok CEC"
+
+msgid "SATA Connector"
+msgstr "SATA jungtis"
+
+msgid "Time to wait after seek for fill buffer"
+msgstr "Time to wait after seek to fill buffer"
+
+msgid "Dualboot Menu TitanNit / E2"
+msgstr "Naudojantiems Meniu TitanNit / E2"
+
+msgid "Help"
+msgstr "Pagalba"
+
+msgid "System Status"
+msgstr "sistemos bsena"
+
+msgid "Free Space"
+msgstr "Laisvos vietos"
+
+msgid "Kernel"
+msgstr "branduolio"
+
+msgid "Mounts"
+msgstr "Montuots"
+
+msgid "Network"
+msgstr "Tinklas"
+
+msgid "Ram"
+msgstr "RAM"
+
+msgid "CPU"
+msgstr "Procesorius"
+
+msgid "Memory"
+msgstr "Atmintis"
+
+msgid "MTD"
+msgstr "Memory Technology Device (MTD)"
+
+msgid "Module"
+msgstr "modulis"
+
+msgid "Devices"
+msgstr "renginiai"
+
+msgid "Top"
+msgstr "Pagrindiniai ( procesai )"
+
+msgid "Prozesslist"
+msgstr "Proces sraas"
+
+msgid "Hotline"
+msgstr "Kartoji linija"
+
+msgid "Svn Changelog"
+msgstr "Svn Pasikeitimai"
+
+msgid "Git Changelog"
+msgstr "Git Pasikeitimai"
+
+msgid "titan Log"
+msgstr "Titan urnalas"
+
+msgid "Svn Changelog Full"
+msgstr "Svn Pasikeitimai Pilnas"
+
+msgid "Git Changelog Full"
+msgstr "Git Pasikeitimai Pilnas"
+
+msgid "About"
+msgstr "Apie Titan"
+
+msgid "Streaming"
+msgstr "Srautinimas"
+
+msgid "stop"
+msgstr "Stabdyti"
+
+msgid "System Update"
+msgstr "Sistemos Atnaujinimas"
+
+msgid "starting Full Update ?"
+msgstr "Pradti Full Update ?"
+
+msgid "System Update started Please wait 5 Minutes and Refresh this Page, more infos they see on your TV."
+msgstr "Sistemos atnaujinimas pradjo Praome palaukti 5 minutes ir perkraukite puslap , daugiau infos jie mato savo TV."
+
+msgid "TPK tmp (tmp)"
+msgstr "TPK tmp ( tmp )"
+
+msgid "TPK media (media)"
+msgstr "TPK Diegimas ( Lokal )"
+
+msgid "Service"
+msgstr "Apie kanal"
+
+msgid "System Backup"
+msgstr "Sistemos atsargin kopija"
+
+msgid "Settings backup/restore"
+msgstr "Nustatymai atsargin kopija / atkurti"
+
+msgid "can't create new transponer"
+msgstr "negali sukurti nauj transponder"
+
+msgid "Front Display"
+msgstr "LCD Ekranas"
+
+msgid "Front Key"
+msgstr "Priekinis Mygtukas"
+
+msgid "Smartcard"
+msgstr "Lustin kortel"
+
+msgid "USB Port"
+msgstr "USB jungtis"
+
+msgid "CAM"
+msgstr "CAM modulis"
+
+msgid "LNB"
+msgstr "LNB konverteris"
+
+msgid "Flash/Nand Check"
+msgstr "FLASH/ NAND patikrinimas"
+
+msgid "Hardware Test"
+msgstr "rangos testas"
+
+msgid "Press OK or EXIT"
+msgstr "Paspauskite OK arba EXIT"
+
+msgid "Press Front Key"
+msgstr "Paspauskite Priekinis Mygtuk"
+
+msgid "Color Bar"
+msgstr "Spalv juosta"
+
+msgid "RED"
+msgstr "Raudona"
+
+msgid "GREEN"
+msgstr "alia"
+
+msgid "BLUE"
+msgstr "Mlyna"
+
+msgid "SCART 4:3 / 16:9"
+msgstr "SCART 4: 3 /16: 9"
+
+msgid "Smartcard "
+msgstr "Lustin kortel"
+
+msgid "Present"
+msgstr "Yra"
+
+msgid "Not Present"
+msgstr "Nra"
+
+msgid "Smartcard Ports found: "
+msgstr "Lustins kortels prievadas rastas :"
+
+msgid "USB Ports found: "
+msgstr "Rasti USB :"
+
+msgid "USB "
+msgstr "USB"
+
+msgid " - OKAY!"
+msgstr ": Gerai !"
+
+msgid " : NOT OKAY!"
+msgstr ": Negerai !"
+
+msgid "Slot "
+msgstr "lizdas"
+
+msgid "CAM Ports found: "
+msgstr "CI- Modulis rasta:"
+
+msgid "SUCESS Serial Port"
+msgstr "Serijinis prievadas Ok"
+
+msgid "FAIL Serial Port"
+msgstr "Serijinis prievadas Nepavyko"
+
+msgid "SUCESS Flash/Nand"
+msgstr "Flash/Nand OK"
+
+msgid "FAIL Flash/Nand (/var and /mnt)"
+msgstr "Flash/Nand (/var and /mnt) Failed"
+
+msgid "FAIL Flash/Nand (/var)"
+msgstr "Flash/Nand (/var) Failed"
+
+msgid "FAIL Flash/Nand (/mnt)"
+msgstr "Flash/Nand (/mnt) Failed"
+
+msgid "Error, Internet Connection not found"
+msgstr "KLAIDA: interneto ryys nerastas"
+
+msgid "--plot--"
+msgstr "--Plot--"
+
+msgid "--title--"
+msgstr "--Title--"
+
+msgid "--director--"
+msgstr "--Director--"
+
+msgid "--writers--"
+msgstr "--Author--"
+
+msgid "--genre--"
+msgstr "--Genre--"
+
+msgid "--releasetime--"
+msgstr "--Released--"
+
+msgid "--actors--"
+msgstr "--Actors--"
+
+msgid "DYNDNS not started,\n"
+"Please check your config."
+msgstr "DYNDNS not started,\n"
+"Please check your configuration."
+
+msgid "Shooting Background done !\n"
+"Save Screenshoot Path: /tmp/screenshot.jpg"
+msgstr "Screenshot successfull.\n"
+"Screenshot saved in: /tmp/screenshot.jpg"
+
+msgid "For next OnlineUpdate please contact Atemio and send this Serial Number\n"
+"and your Atemio Serial Number !!\n"
+"\n"
+"Board-ID SerialNr:"
+msgstr "Jeigu Dabar funkcijos nebus prieinamos praome sisti \n"
+"Baord - ID Serialnumber ( AA... ) ir imtuvo Serialnumber \n"
+" imtuv ( AM... ) parodyt pato Adress.\n"
+"\n"
+"Board ID Serialnumber :"
+
+msgid "Info"
+msgstr "Informacija"
+
+msgid "aus"
+msgstr "Ijungti"
+
+msgid "ein"
+msgstr "jungti"
+
+msgid "Key Action - Plugins"
+msgstr "Raudonas mygtukas veiksmas - skiepiai"
+
+msgid "MediaDB Scan Info"
+msgstr "MediaDB Scan Informacija"
+
+msgid "Record Player"
+msgstr "ra grotuvas ( .ts )"
+
+msgid "Media Player"
+msgstr "Media grotuvas"
+
+msgid "Softcam Panel"
+msgstr "Softcam"
+
+msgid "Sleep Timer"
+msgstr "Isijungimo laikmatis"
+
+msgid "Child Protection"
+msgstr "Tv kontrol"
+
+msgid "Subchannel"
+msgstr "Subservices"
+
+msgid "Downloads"
+msgstr "Siuntiniai"
+
+msgid "Season"
+msgstr "Sezonas"
+
+msgid "Episode"
+msgstr "Epizodas"
+
+msgid "Change language needs reboot"
+msgstr "Pakeitus kalb, reikia sistema perkrauti\n"
+" imtuvas automatikai persikraus po keli sekundi.\n"
+"Praome palaukti."
+
+msgid "ERROR cant start LCD driver"
+msgstr "KLAIDA: Nepavyko paleisti LCD valdiklio"
+
+msgid "Bouquet Name"
+msgstr "Mgstami Vardas"
+
+msgid "Polarization"
+msgstr "Poliarizacija"
+
+msgid "Band"
+msgstr "Juosta"
+
+msgid "C-Band"
+msgstr "C-juosta"
+
+msgid "user defined"
+msgstr "vartotojo nustatytas"
+
+msgid "unicable"
+msgstr "Unicable"
+
+msgid "user unicable"
+msgstr "User unicable"
+
+msgid "ERROR... can't set marker in this file"
+msgstr "KLAIDA : nepavyko nustatyti ymekl fail"
+
+msgid "Marker has been set."
+msgstr "Markeris buvo nustatytas."
+
+msgid "Repeat-On"
+msgstr "Kartojimo reimas Ijungtas"
+
+msgid "Repeat"
+msgstr "Kartojimas"
+
+msgid "Filelist-Mode"
+msgstr "Fail srao reimas"
+
+msgid "Random"
+msgstr "Atsitiktinis"
+
+msgid "Playlist-Mode"
+msgstr "Grojaraio reimas"
+
+msgid "big"
+msgstr "didelis"
+
+msgid "cover"
+msgstr "virelis"
+
+msgid "fullcover"
+msgstr "Pilnas fonas su vireliu"
+
+msgid "size (default)"
+msgstr "Dydis (pagal nutyljim)"
+
+msgid "datetime"
+msgstr "data Laikas"
+
+msgid "Install File Manager Tpk first !"
+msgstr " Pirma diekite File Manager TPK!"
+
+msgid "Random-On"
+msgstr "Atsitiktinis -On"
+
+msgid "Load Playlist"
+msgstr "Atveri Grojarat"
+
+msgid "Edit Playlist"
+msgstr "Redaguoti Grojarat"
+
+msgid "Playlist Menu"
+msgstr "Grojaraio Meniu"
+
+msgid "Choose your Playlist Mode from the following list"
+msgstr "Pasirinkite grojaraio reim i srao"
+
+msgid "Install netsurf Internetbrowser Tpk first !"
+msgstr "Pirma diekite netsurf Internetbrowser TPK !"
+
+msgid "comming soon"
+msgstr "netrukus ..."
+
+msgid "Menu not implemented !"
+msgstr "Meniu nra !"
+
+msgid "Install Tithek Tpk first !"
+msgstr "Pirma diekite Tithek TPK!"
+
+msgid "low"
+msgstr "maas"
+
+msgid "middle"
+msgstr "vidurin"
+
+msgid "best"
+msgstr "geriausias"
+
+msgid "Jump"
+msgstr "Pereiti"
+
+msgid "Found VIDEO_TS Folder, start with DVD-Player ?"
+msgstr "Surasta VIDEO_TS aplank , pradti su DVD grotuvu ?"
+
+msgid "Start at last position ?"
+msgstr "Tsti i paskutins pozicijos ?"
+
+msgid "1s"
+msgstr "1 Second"
+
+msgid "2s"
+msgstr "2 Seconds"
+
+msgid "3s"
+msgstr "3 Seconds"
+
+msgid "4s"
+msgstr "4 Seconds"
+
+msgid "5s (default)"
+msgstr "5 Sekunds (pagal nutyljim)"
+
+msgid "Install Weather Tpk first !"
+msgstr "DMESIO: Js pirmiausia turite diegti Weather pltin!"
+
+msgid "unlock -> lock it"
+msgstr "Atrakinta -> Urakink j"
+
+msgid "unlock -> leaf unlock"
+msgstr "Atrakinta -> Palikite atrakinta"
+
+msgid "locked -> unlock it"
+msgstr "Urakintas - > Atrakinti j"
+
+msgid "locked -> leaf locked"
+msgstr "Urakintas - > Palikti urakinta"
+
+msgid "MediaDB entry for this file not found."
+msgstr "DMESIO: MediaDB raas iam failui nerastas !"
+
+msgid "MediaDB directory scan started in Background !"
+msgstr "MediaDB katalogo nuskaitymas prasidjo fone !"
+
+msgid "Delete MediaDB before scan"
+msgstr "Itrinti MediaDB prie nuskaitym"
+
+msgid "Delete unused entrys before scan"
+msgstr "Itrinti nenaudotjamus raus prie nuskaitym"
+
+msgid "scan Directory"
+msgstr "nuskaityti Katalog"
+
+msgid "MediaDB place"
+msgstr "MediaDB Isaugojimo Kelias"
+
+msgid "Backdrop Download Count"
+msgstr "Kiek fono Paveikslli turi bti pakrauta ?"
+
+msgid "all"
+msgstr "Visi"
+
+msgid "MediaDB scan finished"
+msgstr "MediaDB nuskaitymas baigtas"
+
+msgid "file"
+msgstr "Failas"
+
+msgid "path"
+msgstr "kelias"
+
+msgid "title"
+msgstr "Pavadinimas"
+
+msgid "imdbid"
+msgstr "IMDB-ID"
+
+msgid "Add iMDB manuel"
+msgstr "Rankiniu bdu pridti IMDB"
+
+msgid "older 1 day"
+msgstr "Senesni kaip 1 diena"
+
+msgid "older 2 day"
+msgstr "Senesni kaip 2 dienos"
+
+msgid "older 3 day"
+msgstr "Senesni kaip 3 dienos"
+
+msgid "older 4 day"
+msgstr "Senesni kaip 4 dienos"
+
+msgid "older 5 day"
+msgstr "Senesni nei 5 dienos"
+
+msgid "older 10 day"
+msgstr "Senesni kaip 10 dien"
+
+msgid "older 15 day"
+msgstr "Senesni kaip 15 dien"
+
+msgid "older 20 day"
+msgstr "Senesni kaip 20 dien"
+
+msgid "older 30 day"
+msgstr "Senesni kaip 30 dien"
+
+msgid "older 40 day"
+msgstr "Senesni kaip 40 dien"
+
+msgid "older 50 day"
+msgstr "Senesni kaip 50 dien"
+
+msgid "No MediaDB Directory found\n"
+"Press OK to create it"
+msgstr "Nerasta MediaDB katalogo\n"
+"Spauskite Gerai j sukurti"
+
+msgid "Error in Save Settings"
+msgstr "KLAIDA: Nustatymai negali bti isaugoti!"
+
+msgid "double"
+msgstr "dvigubinti"
+
+msgid "activate"
+msgstr "Aktyvuok"
+
+msgid "deaktivate"
+msgstr "ijungti"
+
+msgid "Status: "
+msgstr "Bsena:"
+
+msgid "empty"
+msgstr "Nra modulio"
+
+msgid "initializing"
+msgstr "Inicijuojama"
+
+msgid "ready"
+msgstr "Pasiruo"
+
+msgid "Module Type"
+msgstr "Modulio tipas"
+
+msgid "Single Service"
+msgstr "Viena Paslauga"
+
+msgid "Multiple Service"
+msgstr "Kelios Paslaugos"
+
+msgid "Connection Error, try again later."
+msgstr "Prisijungimo klaida , bandykite dar kart later."
+
+msgid "Can not parse Main Stream URL, try again later."
+msgstr "Negalima atverti URL , pabandykite vliau."
+
+msgid "Can not parse Stream URL, try again later."
+msgstr "Negalima atverti Stream URL , pabandykite vliau."
+
+msgid "set a cookie which will expire in 3 days and be accessible site wide"
+msgstr "nustatyti slapuk , kuris nustos galioti per 3 dienas ir prieinama svetain plaiai"
+
+msgid "The file that you requested could not be found"
+msgstr "Failas, kur praoma negaljo rasti"
+
+msgid "No such file No such user exist File not found"
+msgstr "Nra tokio failo Tokio vartotojo neegzistuoja Failas nerastas"
+
+msgid "The video no longer exists"
+msgstr "Vaizdo nebeegzistuoja"
+
+msgid "MULTI EPG - Bouquets"
+msgstr "Multi EPG - Mgstamiausi"
+
+msgid "MULTI EPG - Channel"
+msgstr "Multi EPG - Kanalai"
+
+msgid "MULTI EPG - Satellites"
+msgstr "Multi EPG - Palydovai"
+
+msgid "MULTI EPG - Provider"
+msgstr "Keli EPG - Tiekjai"
+
+msgid "MULTI EPG - All Channels"
+msgstr "Multi EPG - Visi kanalai"
+
+msgid "For Better Win7 Support install please Tpk Install > Network > Smbclient"
+msgstr "Win7 palaikymui praome diegti TPK > Tinklas> smbclient"
+
+msgid "Anonymous login Access Denied !"
+msgstr "Anoniminis prisijungimas - Prieiga udrausta !"
+
+msgid "Anonymous login successful"
+msgstr "Anoniminis prisijungimas - Skmingas"
+
+msgid "Scanning Network Shares, please wait !!"
+msgstr "Skenuojamas tinklas , praome palaukti !"
+
+msgid "Networkbrowser - show scanned DNS-Shares"
+msgstr "Networkbrowser - rodyti DNS - Failus"
+
+msgid "Choose your DNS-Share from the following list"
+msgstr "Pasirinkite savo DNS - Share i io srao"
+
+msgid "Use User authentication ?"
+msgstr "Naudoti Vartotojo autentifikavim ?"
+
+msgid "Networkbrowser - show scanned cifs/nfs-Shares"
+msgstr "Rodyti nuskaitytas CIFS / NFS Dalinimosi katalogus"
+
+msgid "Choose your cifs/nfs Share from the following list"
+msgstr "Pasirinkite CIFS / NFS i io srao"
+
+msgid "Add Cifs Network Share"
+msgstr "Pridti CIFS Dalinim"
+
+msgid "Add Nfs Network Share"
+msgstr "Pridti NFS Dalinim"
+
+msgid "Add Ftpfs Network Share"
+msgstr "Pridti FTPFS Dalinim"
+
+msgid "cifs"
+msgstr "CIFS"
+
+msgid "nfs"
+msgstr "NFS"
+
+msgid "ftpfs"
+msgstr "FTPFS"
+
+msgid "ssl_try"
+msgstr "Pabandykite SSL"
+
+msgid "ssl_control"
+msgstr "SSL kontrol"
+
+msgid "ssl"
+msgstr "SSL"
+
+msgid "socks5"
+msgstr "Socks5"
+
+msgid "socks4"
+msgstr "Socks4"
+
+msgid "html"
+msgstr "HTML"
+
+msgid "udp"
+msgstr "UDP"
+
+msgid "tcp"
+msgstr "TCP"
+
+msgid "rw"
+msgstr "read / write"
+
+msgid "ro"
+msgstr "tik skaityti"
+
+msgid "Sharename can't be empty!"
+msgstr "KLAIDA: BendroNaudojimoPavadinimas turi bti raytas !"
+
+msgid "A mount entry with this name already exists!"
+msgstr "KLAIDA: BendroNaudojimoPavadinimas jau egzistuoja !"
+
+msgid "Are you sure you want to save this network mount?"
+msgstr "Ar tikrai norite isaugoti tinklo prijungim ?"
+
+msgid "Networkbrowser - show Shares"
+msgstr "Rodyti Bendrinamus"
+
+msgid "Choose your Shares from the following list"
+msgstr "Pasirinkite Bendrinamus i srao"
+
+msgid "Are you sure you want remove this share?"
+msgstr "Are you sure you want to remove this share?"
+
+msgid "ERROR"
+msgstr "KLAIDA"
+
+msgid "comming soon..."
+msgstr "Netrukus ..."
+
+msgid "Restart Network ?"
+msgstr "I naujo paleisti tinkl?"
+
+msgid "Aktivate new network config ?"
+msgstr "Aktyvuoti nauj tinklo konfigracij ?"
+
+msgid "Restart Network"
+msgstr "Paleisti i naujo tinkl"
+
+msgid "dhcp"
+msgstr "DHCP"
+
+msgid "static"
+msgstr "Statinis"
+
+msgid "disable"
+msgstr "ijungti"
+
+msgid "enable"
+msgstr "traukti"
+
+msgid "save network settings ?"
+msgstr "Isaugoti tinklo nustatymus ?"
+
+msgid "Can't change hostname !"
+msgstr "Negalima pakeisti kompiuterio vardo !"
+
+msgid "NONE"
+msgstr "Nieko"
+
+msgid "deaktivate ethernet interface ?"
+msgstr "Ijungti Ethernet ?"
+
+msgid "Start Wlan ?"
+msgstr "Pradti WLAN ?"
+
+msgid "WLAN started.\n"
+" You can now configure the new interface."
+msgstr "WLAN started.\n"
+"You may now configure the new interface."
+
+msgid "WLAN not started,\n"
+"Please check your config."
+msgstr "WLAN not started,\n"
+"Please check your configuration!"
+
+msgid "searching..."
+msgstr "Iekoma ..."
+
+msgid "WLAN now stopped"
+msgstr "WLAN sustojo"
+
+msgid "WLAN LOG"
+msgstr "WLAN urnalas"
+
+msgid "Found Wlan Stick and driver for: "
+msgstr "Found WLAN stick and driver for: "
+
+msgid "Found Wlan Stick but no driver\n"
+"Please install driver: "
+msgstr "Found WLAN Stick but no driver\n"
+"Please install driver: "
+
+msgid "Wlan Stick not found"
+msgstr "WLAN renginys nerastas"
+
+msgid "WLAN Info"
+msgstr "WLAN Informacija"
+
+msgid "This file no longer exists on our servers."
+msgstr "is failas nebeegzistuoja ms serveriuose."
+
+msgid "hold"
+msgstr "palaikykite"
+
+msgid "delete"
+msgstr "Trinti"
+
+msgid "SatCount: "
+msgstr "No. i palydov :"
+
+msgid "Transponder: "
+msgstr "Sistuvo :"
+
+msgid "ChannelCount: "
+msgstr "No. Kanal :"
+
+msgid "BouquetCount: "
+msgstr "No. Puokts :"
+
+msgid "BouquetEntrys: "
+msgstr "Puokt raai:"
+
+msgid "EpgChannels: "
+msgstr "EPG kanalai:"
+
+msgid "ProviderCount: "
+msgstr "No. Teikj :"
+
+msgid "fsckroot"
+msgstr "Filesystemcheck Root Partiton"
+
+msgid "bootstop"
+msgstr "Boot stop"
+
+msgid "debug"
+msgstr "Debug"
+
+msgid "showip"
+msgstr "Rodyti IP Adresas"
+
+msgid "ip"
+msgstr "IP"
+
+msgid "updatelist"
+msgstr "Updatelist"
+
+msgid "Old Audiofw"
+msgstr "Sena Garso Firmware"
+
+msgid "No Audiosync"
+msgstr "Nra garso sinchronizavimo"
+
+msgid "Poweroff"
+msgstr "Ijungimas"
+
+msgid "Scart On Standby"
+msgstr "Scart output during Standby"
+
+msgid "Autostart USB"
+msgstr "Paleistis USB"
+
+msgid "Fsck Record"
+msgstr "Filesystemcheck Recording Partiton"
+
+msgid "Fsck Swap"
+msgstr "Filesystemcheck Swap Partiton"
+
+msgid "Record Max Sectors"
+msgstr "Maximum Sectors size for 'record'"
+
+msgid "Swap Max Sectors"
+msgstr "Maximum Sectors size for 'swap'"
+
+msgid "Autostart EMU"
+msgstr "Softcam"
+
+msgid "Emu Control"
+msgstr "Softcam kontrol"
+
+msgid "ftdi"
+msgstr "Enable FTDI module"
+
+msgid "pl2303"
+msgstr "PL2303 Module"
+
+msgid "nfs server"
+msgstr "NFS serveris"
+
+msgid "samba server"
+msgstr "Samba serveris"
+
+msgid "scan wlan"
+msgstr "Nuskaityti WLAN"
+
+msgid "Automount Config"
+msgstr "Configuration"
+
+msgid "Ntfs Write"
+msgstr "NTFS write"
+
+msgid "ntfs-3g"
+msgstr "NTFS-3g"
+
+msgid "ntfsmount"
+msgstr "NTFS-mount"
+
+msgid "Only Boot Overclock"
+msgstr "Overclocking only on System boot"
+
+msgid "CPU frequency"
+msgstr "CPU danis"
+
+msgid "Standby frequency"
+msgstr "Budjimo CPU danis"
+
+msgid "Use Teletxt Workaround"
+msgstr "Naudokite Teleteksto apeiti"
+
+msgid "frequency"
+msgstr "Danis"
+
+msgid "videmode"
+msgstr "videomode"
+
+msgid "Do you really want to start the Wizard?\n"
+"The Box will reboot and the Wizard will be started!"
+msgstr "Do you really want to start the Wizard?\n"
+"The Receiver will reboot and the Wizard will be performed!"
+
+msgid "This video has been deleted. We apologize for the inconvenience."
+msgstr "is vaizdo raas buvo itrintas. Atsipraome u nepatogumus."
+
+msgid "Title:"
+msgstr "Pavadinimas :"
+
+msgid "Artist:"
+msgstr "Atlikjas:"
+
+msgid "Album:"
+msgstr "Albumas:"
+
+msgid "Year:"
+msgstr "Metai:"
+
+msgid "Genre:"
+msgstr "anras:"
+
+msgid "Comment:"
+msgstr "Komentaras:"
+
+msgid "Track:"
+msgstr "Takelis:"
+
+msgid "Copyright:"
+msgstr "Autorins teiss:"
+
+msgid "Video Settings"
+msgstr "Nustatymai"
+
+msgid "AV Settings"
+msgstr "Garso / Vaizdo nustatymai"
+
+msgid "MediaDB Edit"
+msgstr "MediaDB Redaguoti"
+
+msgid "Delete File"
+msgstr "Itrinti fail"
+
+msgid "Search on KinoX"
+msgstr "Paieka KinoX"
+
+msgid "Search on KinoX (local)"
+msgstr "Paieka KinoX (vietinis )"
+
+msgid "Search on Movie4k"
+msgstr "Paieka Movie4k"
+
+msgid "Search on Solarmovies (movie)"
+msgstr "Paieka Solarmovies ( filmas )"
+
+msgid "Search on Solarmovies (serie)"
+msgstr "Paieka Solarmovies ( serija )"
+
+msgid "Search on Solarmovies (local)"
+msgstr "Paieka Solarmovies (vietinis )"
+
+msgid "Search on Mle-HD (local)"
+msgstr "Paieka MLE -HD (vietinis )"
+
+msgid "Search on Beeg (local)"
+msgstr "Paieka Beeg (vietinis )"
+
+msgid "Search on Xvideos (local)"
+msgstr "Paieka xvideos (vietinis )"
+
+msgid "Search on FilmOn (local)"
+msgstr "Paieka FilmOn (vietinis )"
+
+msgid "Search on Netzkino (local)"
+msgstr "Paieka Netzkino (vietinis )"
+
+msgid "Search on Youtube"
+msgstr "Iekoti Youtube"
+
+msgid "Search on Youtube (local)"
+msgstr "Iekoti Youtube (vietinis )"
+
+msgid "Search on MyVideo"
+msgstr "Paieka MyVideo"
+
+msgid "Search on MyVideo (local)"
+msgstr "Paieka MyVideo (vietinis )"
+
+msgid "Search on ARD (local)"
+msgstr "Paieka ARD (vietinis )"
+
+msgid "Search on ZDF (local)"
+msgstr "Paieka ZDF (vietinis )"
+
+msgid "Search on TecTime (local)"
+msgstr "Paieka TecTime (vietinis )"
+
+msgid "Search on Giga (local)"
+msgstr "Paieka Giga (vietinis )"
+
+msgid "Search on Rtl-Now (local)"
+msgstr "Paieka RTL -dabar (vietinis )"
+
+msgid "Search on Rtl2-Now (local)"
+msgstr "Paieka RTL2 -dabar (vietinis )"
+
+msgid "Search on SuperRTL-Now (local)"
+msgstr "Paieka SuperRTL -dabar (vietinis )"
+
+msgid "Search on VOX-Now (local)"
+msgstr "Paieka VOX -dabar (vietinis )"
+
+msgid "Search on RtlNitro-Now (local)"
+msgstr "Paieka RtlNitro -dabar (vietinis )"
+
+msgid "Search on NTV-Now (local)"
+msgstr "Paieka NTV -dabar (vietinis )"
+
+msgid "Search on InternetTv (local)"
+msgstr "Paieka InternetTv (vietinis )"
+
+msgid "Search on InternetRadio (local)"
+msgstr "Paieka InternetRadio (vietinis )"
+
+msgid "Choose your Red-Menu entry from the following list"
+msgstr "Pasirinkite Raudon Meniu i srao"
+
+msgid "Jump To (min)"
+msgstr "Pereiti (min)"
+
+msgid "EPG Info"
+msgstr "EPG informacija"
+
+msgid "Record in progress"
+msgstr "raymas aktyvus"
+
+msgid "Really Delete ?"
+msgstr "Tikrai Trinti?"
+
+msgid "DEL"
+msgstr "Trinti"
+
+msgid "SORT"
+msgstr "Riuoti"
+
+msgid "Marker autoseek is started"
+msgstr "Marker autoseek started"
+
+msgid "Marker autoseek is stopped"
+msgstr "Marker autoseek stopped"
+
+msgid "AutoTimer Settings"
+msgstr "AutoTimer Nustatymai"
+
+msgid "afterevent"
+msgstr "Po raymo"
+
+msgid "begin search"
+msgstr "pradti paiek"
+
+msgid "end search"
+msgstr "baigti paiek"
+
+msgid "event"
+msgstr "vykis"
+
+msgid "SAVE"
+msgstr "Saugoti"
+
+msgid "START"
+msgstr "Pradti"
+
+msgid "Timer1 activ"
+msgstr "Laikmatis 1 aktyvus"
+
+msgid "Timer2 activ"
+msgstr "Laikmatis 2 aktyvus"
+
+msgid "CallMonitor Settings"
+msgstr "Nustatymai"
+
+msgid "1.Rufnummer"
+msgstr "1 numeris"
+
+msgid "2.Rufnummer"
+msgstr "2 numeris"
+
+msgid "Aktion wenn standby"
+msgstr "Elgsena budjimo reime"
+
+msgid "alle Nummern"
+msgstr "Visi Numeriai"
+
+msgid "Anzeige in Sekunden"
+msgstr "Display for seconds"
+
+msgid "ausgehende Anrufe"
+msgstr "Outgoing calls"
+
+msgid "bei Anruf stumm"
+msgstr "Mute on incoming call"
+
+msgid "broadcast"
+msgstr "Broadcast address"
+
+msgid "eingehende Anrufe"
+msgstr "Priimamas skambutis"
+
+msgid "LOAD-FritzBook"
+msgstr "Load Fritzbook"
+
+msgid "Nutzername-Fritzbox (optional)"
+msgstr "Fritzbox Username (optional)"
+
+msgid "Passwort-FritzBox"
+msgstr "Fritzbox Password"
+
+msgid "DLNA Settings"
+msgstr "DLNA Nustatymai"
+
+msgid "Media Dir 1"
+msgstr "Media kelias 1"
+
+msgid "Media Dir 2"
+msgstr "Media kelias 2"
+
+msgid "Media Dir 3"
+msgstr "Media kelias 3"
+
+msgid "Media Dir 4"
+msgstr "Media kelias 4"
+
+msgid "Server Name"
+msgstr "Serverio pavadinimas"
+
+msgid "STOP"
+msgstr "Stabdyti"
+
+msgid "Facebook Register"
+msgstr "Register on Facebook"
+
+msgid "Enter the shown url in your browser and enter the Code to register the receiver to facebook"
+msgstr "Enter the shown url in your browser and submit the Code to register the Receiver via Facebook"
+
+msgid "Delete"
+msgstr "Trinti"
+
+msgid "FILELIST MANAGER"
+msgstr "Fail srao valdiklis"
+
+msgid "Moven"
+msgstr "Filmas"
+
+msgid "View"
+msgstr "Perirti"
+
+msgid "Actors:"
+msgstr "Aktoriai:"
+
+msgid "Director:"
+msgstr "Reisierius:"
+
+msgid "IMDb-API - Plugin"
+msgstr "IMDb -API - skiepis"
+
+msgid "SEARCH"
+msgstr "Paieka"
+
+msgid "IMDb - Plugin"
+msgstr "skiepiai"
+
+msgid "direkter Start"
+msgstr "direct start"
+
+msgid "aktiv im Standby"
+msgstr "Rodyti Budjime"
+
+msgid "alle Menus anzeigen"
+msgstr "show all menues"
+
+msgid "Auswahl"
+msgstr "selection"
+
+msgid "--- Land"
+msgstr "--- alis"
+
+msgid "--- Ort"
+msgstr "--- Vietov"
+
+msgid "--- PLZ"
+msgstr "--- Pato kodas"
+
+msgid "Wettervorhersage"
+msgstr "Or prognoz"
+
+msgid "Samsung SPF.. Settings"
+msgstr "Samba Server Settings"
+
+msgid "DI"
+msgstr "TUE"
+
+msgid "DO"
+msgstr "THU"
+
+msgid "MI"
+msgstr "WED"
+
+msgid "MO"
+msgstr "MON"
+
+msgid "Typenbezeichnung"
+msgstr "LCD Type"
+
+msgid "MC VideoPlayer Imdb Settings"
+msgstr "MC VideoPlayer IMDB Settings"
+
+msgid "Apple Trailer"
+msgstr "Apple Movie Trailer"
+
+msgid "AUDIO"
+msgstr "muzika"
+
+msgid "Audio Player"
+msgstr "Muzikos grotuvas"
+
+msgid "AUDIO SETTINGS"
+msgstr "Garso nustatymai"
+
+msgid "Autostart Playlist"
+msgstr "Automatikas grojaratis"
+
+msgid "Backdrop Interval"
+msgstr "Interval for Background change"
+
+msgid "Choice Menu"
+msgstr "Pasirinkimo meniu"
+
+msgid "Datei Browser"
+msgstr "Fail narykl"
+
+msgid "default Directory"
+msgstr "numatytasis katalogas"
+
+msgid "details"
+msgstr "Informacija"
+
+msgid "EDIT"
+msgstr "Redaguoti"
+
+msgid "filealt"
+msgstr "Alternatyvus fail"
+
+msgid "filealtresult"
+msgstr "Alternatyvus fail rezultatas"
+
+msgid "Filename:"
+msgstr "Failo pavadinimas :"
+
+msgid "Internet Browser"
+msgstr "Interneto narykl"
+
+msgid "Mediathek"
+msgstr "Online Mediathek"
+
+msgid "Picdenom Mode"
+msgstr "Picture Software-decode"
+
+msgid "Pic HW-decode"
+msgstr "Picture Hardware-decoder"
+
+msgid "Pic quality"
+msgstr "Vaizdo kokyb"
+
+msgid "PICTURE"
+msgstr "Nuotraukos"
+
+msgid "Picture Player"
+msgstr "Paveikslli Grotuvas"
+
+msgid "PICTURE SETTINGS"
+msgstr "Nustatymai"
+
+msgid "Radio Player"
+msgstr "Radijo grotuvas"
+
+msgid "Screensaver"
+msgstr "ekrano usklanda"
+
+msgid "Settings"
+msgstr "Nustatymai"
+
+msgid "Show Pictitle"
+msgstr "Rodyti Paveiksllio pavadinimas"
+
+msgid "Sort"
+msgstr "Riuoti"
+
+msgid "Sound"
+msgstr "Garsas"
+
+msgid "VIDEO"
+msgstr "Filmai"
+
+msgid "Video Player"
+msgstr "Film grotuvas"
+
+msgid "VIDEO SETTINGS"
+msgstr "Nustatymai"
+
+msgid "VLC Player"
+msgstr "VLC Grotuvas"
+
+msgid "Weather Infos"
+msgstr "Rodyti Or informacija"
+
+msgid "Web Radio Player"
+msgstr "Internetin Radija"
+
+msgid "ADD"
+msgstr "Pridti"
+
+msgid "Auth Settings"
+msgstr "Settings"
+
+msgid "AUTH SETTINGS"
+msgstr "Settings"
+
+msgid "COPY"
+msgstr "Copy"
+
+msgid "dnsaddresse"
+msgstr "DNS Address"
+
+msgid "ftpport"
+msgstr "Ftp Port"
+
+msgid "hddreplacement"
+msgstr "Use network share for recordings"
+
+msgid "Here you can configure your Auth Data. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "ia galite nustatyti savo autentifikavimo informacij.\n"
+"Navigate naudojant nuotolinio valdymo pult ir rodomais emiau klaviais"
+
+msgid "Here you can configure your network shares. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Here you may configure your Network shares.\n"
+"\n"
+"Navigate using your Remote Control and the keys displayed below"
+
+msgid "If you don't find Windows shares you need to disable 'Password protected sharing' in the 'Network and Sharing Center'."
+msgstr "If Windows shares are not found, you need to disable 'Password protected sharing' in the 'Network and Sharing Center'."
+
+msgid "ipaddress"
+msgstr "IP Address"
+
+msgid "options"
+msgstr "Options"
+
+msgid "password"
+msgstr "Slaptaodis"
+
+msgid "Password"
+msgstr "Slaptaodis"
+
+msgid "protocol"
+msgstr "Protocol"
+
+msgid "proxy"
+msgstr "Proxyserver"
+
+msgid "proxyauth"
+msgstr "Proxyserver authentication"
+
+msgid "proxyip"
+msgstr "Proxyserver IP"
+
+msgid "proxypass"
+msgstr "Proxyserver Password"
+
+msgid "proxyport"
+msgstr "Proxyserver Port"
+
+msgid "proxyuser"
+msgstr "Proxyserver Username"
+
+msgid "rsize"
+msgstr "read buffersize"
+
+msgid "sharedir"
+msgstr "Share Directory"
+
+msgid "sharename"
+msgstr "Share Name"
+
+msgid "type"
+msgstr "Tipas"
+
+msgid "usedns"
+msgstr "Use DNS Address"
+
+msgid "useproxy"
+msgstr "Use Proxy"
+
+msgid "userauth"
+msgstr "User Authentication"
+
+msgid "username"
+msgstr "Vartotojas"
+
+msgid "usessl"
+msgstr "use SSL"
+
+msgid "wsize"
+msgstr "Write buffersize"
+
+msgid "News"
+msgstr "Naujienos"
+
+msgid "BROWSER"
+msgstr "Narykl"
+
+msgid "NEXT"
+msgstr "Sekanti"
+
+msgid "PREV"
+msgstr "Ankstesnis"
+
+msgid "FanControl"
+msgstr "Ventiliatoriaus valdymas"
+
+msgid "OverClock Settings"
+msgstr "tuning Nustatymai"
+
+msgid "Panel"
+msgstr "Atemio skydas"
+
+msgid "1500rpm"
+msgstr "1500 rpm"
+
+msgid "500rpm"
+msgstr "500 rpm"
+
+msgid "Audio / Video / Sat"
+msgstr "Garsas / Vaizdas / Sat"
+
+msgid "Cam / Emu"
+msgstr "CAM / Softcam"
+
+msgid "Cancel"
+msgstr "Ataukti"
+
+msgid "Child safety"
+msgstr "Tv kontrol"
+
+msgid "Default"
+msgstr "Numatyta"
+
+msgid "Fancontrol"
+msgstr "Ventiliatoriaus valdymas"
+
+msgid "Overclocking"
+msgstr "Turbinimas"
+
+msgid "Save"
+msgstr "Saugoti"
+
+msgid "speed"
+msgstr "greitis"
+
+msgid "Test"
+msgstr "testas"
+
+msgid "Usb Device"
+msgstr "USB renginys (s)"
+
+msgid "Videotune"
+msgstr "Vaizdo santykis"
+
+msgid "Wizard"
+msgstr "Nustatymo vedlys"
+
+msgid "Enable"
+msgstr "traukti"
+
+msgid "Here you can aktivate/deaktivate you readers. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "ia galite jungti / ijungti savo skaitytojui ( ai) .\n"
+"\n"
+"Navigate naudojantis nuotolinio valdymo pultu ir rodomais emiau klaviais"
+
+msgid "Here you can configure your reader. Use to navigate the control cross and the extra buttons displayed with your remote control to select."
+msgstr "Here you can configure your reader(s).\n"
+"\n"
+"Navigate using your Remote Control and the keys displayed below"
+
+msgid "Reader Config"
+msgstr "Reader"
+
+msgid "Reader Configuration"
+msgstr "Konfigracija"
+
+msgid "Reader Selection"
+msgstr "pasirinkimas"
+
+msgid "NotUsed Settings"
+msgstr "StopIfNotUsed Settings"
+
+msgid "Auto start"
+msgstr "Paleistis"
+
+msgid "Time to stop "
+msgstr "Laikas sustabdyti (min)"
+
+msgid "Aspect"
+msgstr "Vaizdo santykis"
+
+msgid "Framerate"
+msgstr "Maksimalus greitis"
+
+msgid "Streaminfo"
+msgstr "Stream Informacija"
+
+msgid "X-Resolution"
+msgstr "X- Rezoliucija:"
+
+msgid "Y-Resolution"
+msgstr "Y- Rezoliucija:"
+
+msgid "please wait..."
+msgstr "Praome laukti..."
+
+msgid "TiThek Menu"
+msgstr "tiThek Menu"
+
+msgid "TiThek Settings"
+msgstr "tiThek"
+
+msgid "ADD FAV"
+msgstr "Pridti"
+
+msgid "DEL FAV"
+msgstr "Itrinti"
+
+msgid "Exit Tithek"
+msgstr "Udaryti"
+
+msgid "Hid XXX Streams"
+msgstr "Hide XXX Streams"
+
+msgid "localname"
+msgstr "vietinis pavadinimas"
+
+msgid "Pic Link"
+msgstr "Nuoroda"
+
+msgid "Pic Ratio"
+msgstr "Santykis"
+
+msgid "TiThek - Favorite Edit"
+msgstr "Redaguoti adresyn"
+
+msgid "Title"
+msgstr "Pavadinimas"
+
+msgid "Type"
+msgstr "Tipas"
+
+msgid "View Cover"
+msgstr "Perirti virelis"
+
+msgid "View Sections"
+msgstr "Perirti Profiliai"
+
+msgid "tiWakeup"
+msgstr "Wake Up"
+
+msgid "Back Pic"
+msgstr "Pagrindas"
+
+msgid "Edit"
+msgstr "Redaguoti"
+
+msgid "Full Pic"
+msgstr "per vis ekran reimas"
+
+msgid "IMDB Search"
+msgstr "IMDb Search"
+
+msgid "Pic Name"
+msgstr "Vardas"
+
+msgid "Pic Timeout"
+msgstr "Pritildyti po"
+
+msgid "Preview"
+msgstr "Perira"
+
+msgid "Scan"
+msgstr "Skanuoti"
+
+msgid "Orgname:"
+msgstr "Organizacijos pavadinimas :"
+
+msgid "OTHER"
+msgstr "Kiti"
+
+msgid "select movie"
+msgstr "pasirinkite film"
+
+msgid "Start movie in the internal player, set with 0 key marker during a movie. 5 key is for the marker overview. Then here select movie and start."
+msgstr "Start the movie with the internal Player. Set a marker with the -0- Key during the playback.\n"
+"For an overview of all markers press -5- on you Remote.\n"
+"Press -Play- on your Remote Control to perform the selected cut."
+
+msgid "NEW"
+msgstr "Naujas"
+
+msgid "Date"
+msgstr "Data"
+
+msgid "Day "
+msgstr "diena"
+
+msgid "Refresh"
+msgstr "Atnaujinti"
+
+msgid "Time"
+msgstr "Laikas"
+
+msgid "Here you can make your xupnpd autostart settings."
+msgstr "Here you may setup the xupnpd autostart settings."
+
+msgid "ZapBack"
+msgstr "Switch back"
+
+msgid "Minuten"
+msgstr "Minutes"
+
+msgid "schaltet zurueck auf Sender"
+msgstr "returns to the previous Channel"
+
+msgid "move west"
+msgstr "Sukti vakarus"
+
+msgid "search west"
+msgstr "Iekokite vakar"
+
+msgid "search east"
+msgstr "Iekokite ryt"
+
+msgid "move east"
+msgstr "Sukti rytus"
+
+msgid "step west"
+msgstr "ingsnis vakarus"
+
+msgid "step east"
+msgstr "ingsnis rytus"
+
+msgid "limits off"
+msgstr "Ribos ijungtos"
+
+msgid "limit west"
+msgstr "Vakar riba"
+
+msgid "limit east"
+msgstr "Ryt riba"
+
+msgid "limits on"
+msgstr "Ribos jungtos"
+
+msgid "store position"
+msgstr "Isaugoti padt"
+
+msgid "goto position"
+msgstr "Eiti pozicij"
+
+msgid "startposition"
+msgstr "Pradios pozicija"
+
+msgid "Position Setup is not allowed if record\n"
+"or stream is running !"
+msgstr "ERROR: You cannot change the Position during a Recording or Stream!"
+
+msgid "DeepStandby"
+msgstr "Power off"
+
+msgid "Connect with Hoster wait 20 seconds"
+msgstr "Connecting to Host, please wait 20 seconds"
+
+msgid "first slot"
+msgstr "First slot"
+
+msgid "second slot"
+msgstr "Second slot"
+
+msgid "Use config from Flash (permanent)"
+msgstr "Use configuration from /mnt (permanent)"
+
+msgid "Use config from Flash (temporary)"
+msgstr "Use configuration from Flash (temporary)"
+
+msgid "Use config from Stick or HDD"
+msgstr "Use configuration from Swap (permanent)"
+
+msgid "Dvbapi (enabled)"
+msgstr "DVBapi (enabled)"
+
+msgid "Dvbapi (disabled)"
+msgstr "DVBapi (disabled)"
+
+msgid "Reader active"
+msgstr "activated"
+
+msgid "Oscam config written to medium !"
+msgstr "OScam config saved!"
+
+msgid "Restart Oscam ?"
+msgstr "Restart OScam?"
+
+msgid "Oscam dvbapi config disabled !"
+msgstr "OScam DVBapi config disabled!"
+
+msgid "Oscam dvbapi config enabled !"
+msgstr "OScam DVBapi config enabled!"
+
+msgid "HDD not configured\n"
+"can't find record path"
+msgstr "Harddisk not configured!\n"
+"Can't find record path!\n"
+"Please configure Harddisk!"
+
+msgid "Not enought space"
+msgstr "ERROR: Insufficient Free Space"
+
+msgid "Error create filename"
+msgstr "ERROR: Can't create Filename"
+
+msgid "Can't open file"
+msgstr "ERROR: Can't open File"
+
+msgid "Can't open FRONTEND device"
+msgstr "ERROR: Can't open Frontend Device"
+
+msgid "Can't open DMX device"
+msgstr "ERROR: Can't open DMX device"
+
+msgid "Pid's not ok"
+msgstr "ERROR: PIDs are not OK"
+
+msgid "Channel or Transponder is empty"
+msgstr "ERROR: Channel or Transponder is empty"
+
+msgid "Write error"
+msgstr "!!! WRITE ERROR !!!"
+
+msgid "No memory"
+msgstr "ERROR: No Memory"
+
+msgid "Failed open split file"
+msgstr "ERROR: Can't open split file"
+
+msgid "Frontend type unknown"
+msgstr "ERROR: Frontend type unknown"
+
+msgid "Tune to channel failed"
+msgstr "ERROR: Tuning to Channel failed"
+
+msgid "To many read error or end of file"
+msgstr "ERROR: Too many read-erros or reached end of file"
+
+msgid "Can't create service"
+msgstr "ERROR: Can't create Service"
+
+msgid "No space left on device"
+msgstr "ERROR: No free space on device"
+
+msgid "Box recording finished poweroff in 30sec !"
+msgstr "Recording finished. Receiver will Power-Off in 30 Seconds"
+
+msgid "Can't find free Tuner for Record.\n"
+"Switch to Recording/Timeshift Channel ?"
+msgstr "ERROR: Can't find a free Tuner for the recording.\n"
+"Switch to Recording/Timeshift Channel?"
+
+msgid "Timer Record start !"
+msgstr "Laikmatis raymas prasidjo !"
+
+msgid "Record"
+msgstr "raas"
+
+msgid "change"
+msgstr "Pakeisti"
+
+msgid "add recording (stop after current event)"
+msgstr "Add recording (stop after current event)"
+
+msgid "add recording (indefinitely)"
+msgstr "Add recording (Unlimited)"
+
+msgid "add recording (enter duration)"
+msgstr "Add recording (Enter duration)"
+
+msgid "Can't get EPG time or EPG endtime not ok"
+msgstr "Can't get EPG time or the EPG Endtime is faulty."
+
+msgid "Record started"
+msgstr "Recording started"
+
+msgid "undefined error"
+msgstr "!!! UNDEFINED ERROR !!!"
+
+msgid "Timer starttime or endtime not ok"
+msgstr "KLAIDA: Laikmatis startTime / Endtime klaidingas"
+
+msgid "Timer endtime shorter than aktual time"
+msgstr "KLAIDA: Laikmatis Endtime prityje"
+
+msgid "Timer endtime shorter than start time"
+msgstr "KLAIDA: Nustatyti pabaiga yra prie nustatyt Pradios laikas"
+
+msgid "Timer service ID not ok"
+msgstr "KLAIDA: Paslaugos ID klaidingas"
+
+msgid "Timer transponder ID not ok"
+msgstr "KLAIDA: Sistuvo ID klaidingas"
+
+msgid "Timer conflicts with other timer\n"
+"Would you add the timer?"
+msgstr "Laikmatis susiduria su rinkiniu timer.\n"
+"Do js vis dar norite nustatyti laikmat ?"
+
+msgid "not started akttime higher than timer endtime"
+msgstr "KLAIDA : vykio ne started. Endtime jau prityje"
+
+msgid "EPG Scan activate standby?"
+msgstr "EPG scan is due to start. Activate Standby?"
+
+msgid "stopped from user"
+msgstr "Manually stopped"
+
+msgid "once"
+msgstr "vien kart"
+
+msgid "repeate"
+msgstr "Pakartoti"
+
+msgid "daily"
+msgstr "kasdien"
+
+msgid "weekly"
+msgstr "Savaits"
+
+msgid "workdays"
+msgstr "iokiadieniai"
+
+msgid "rec"
+msgstr "ra"
+
+msgid "switch"
+msgstr "Zap norim kanal"
+
+msgid "waiting"
+msgstr "laukimas"
+
+msgid "success"
+msgstr "skm"
+
+msgid "error"
+msgstr "KLAIDA"
+
+msgid "Really restore default settings ?"
+msgstr "Ar tikrai norite atstatyti gamykloje nustatymus?"
+
+msgid "Receiver reboots now !!!"
+msgstr "Imtuv perkrauti dabar !!!"
+
+msgid "Can't restore settings"
+msgstr "KLAIDA: Nemanoma atkurti nustatymus"
+
+msgid "Do you really want to erase all data and backups from Swap?\n"
+"The Box will reboot and the erase will be started!"
+msgstr "Do you really want to erase all data and backups from Swap?\n"
+"The Receiver will reboot and deletion will be executed!"
+
+msgid "Do you really want to erase Swap (Settings are preserve)?\n"
+"The Box will reboot and the erase will be started!"
+msgstr "Do you really want to erase the Swap-Filesystem?\n"
+"Your Settings are retained. Your Receiver will Reboot and erase."
+
+msgid "Restore default settings"
+msgstr "Atstatyti gamyklinius nustatymus"
+
+msgid "Format MNT with Backup/Restore"
+msgstr "Format MNT Filesystem with a settings backup/restore"
+
+msgid "Format MNT (all)"
+msgstr "Format complete MNT Filesystem"
+
+msgid "Can't connect to server !"
+msgstr "KLAIDA: Nepavyko prisijungti prie serverio !"
+
+msgid "Send remote box into standby ?"
+msgstr "Nustatyti nuotolinio imtuv budjimo reim ?"
+
+msgid "Connection to server lost !"
+msgstr "Jungtis server prarasta!"
+
+msgid "Sat/Provider: "
+msgstr "Sat / teikjas :"
+
+msgid "TV: "
+msgstr "TV:"
+
+msgid "Radio: "
+msgstr "Radijas :"
+
+msgid "Data: "
+msgstr "Duomenys:"
+
+msgid "Blindscan: "
+msgstr "Blindscan :"
+
+msgid "Channel scan ended.\n"
+"Nothing found."
+msgstr "Kanal skenavimo baigtas.\n"
+" Paslaug nerasta."
+
+msgid "Channel scan ended."
+msgstr "Kanal skenavimas baigtas.\n"
+" Isaugoti Kanalus naudojant spalvotus klavius Pultelyje."
+
+msgid "All new channels added!"
+msgstr "Pridti Visi nauji kanalai !"
+
+msgid "Wait for channel scan end"
+msgstr "Praome palaukti, kol baigsis skenavimas"
+
+msgid "Scan is not allowed if record or stream is running !"
+msgstr "ERROR: Scan is not allowed during an active recording / stream!"
+
+msgid "No Tuner configured"
+msgstr "ERROR: No tuner configured!"
+
+msgid "Single Transponder"
+msgstr "Vienintelis transponderis"
+
+msgid "Single Sat"
+msgstr "Vienas Palydovas"
+
+msgid "Multi Sat"
+msgstr "Keli Palydovai"
+
+msgid "Single Provider"
+msgstr "Vienas teikjas"
+
+msgid "Auto Scan"
+msgstr "Automatinis nuskaitymas"
+
+msgid "Unchanged"
+msgstr "Nekeiskite"
+
+msgid "Create new"
+msgstr "Sukurti nauj"
+
+msgid "Delete All"
+msgstr "Itrinti visus"
+
+msgid "Transponder changed"
+msgstr "Sistuvas pakeistas"
+
+msgid "Change to scart"
+msgstr "Pakeisti SCART ivest"
+
+msgid "Videomode must be 576i for Scart"
+msgstr "Videomode must be set to 576i for SCART output"
+
+msgid "card present"
+msgstr "Smartcard found"
+
+msgid "card not present"
+msgstr "Smartcard not found"
+
+msgid "black"
+msgstr "juodas"
+
+msgid "blue"
+msgstr "Mlyna"
+
+msgid "green"
+msgstr "alia"
+
+msgid "red"
+msgstr "Raudona"
+
+msgid "yellow"
+msgstr "Geltona"
+
+msgid "white"
+msgstr "baltas"
+
+msgid "grey"
+msgstr "pilkas"
+
+msgid "lila"
+msgstr "violetinis"
+
+msgid "mixed mode"
+msgstr "mirus reimas"
+
+msgid "Song TitleText"
+msgstr "Rodyti Dainos Pavadinim"
+
+msgid "imdb mvis (network/hdd)"
+msgstr "IMDB Background Pictures (Network/Harddisk)"
+
+msgid "BG-RUN"
+msgstr "Vykdyti fone"
+
+msgid "Script execute"
+msgstr "Vykdyti scenarij"
+
+msgid "Timeshift is running !!!\n"
+"Stop it and switch ?"
+msgstr "Timeshift veikia !!! \n"
+"Stop Timeshift ir pakeisti kanal ?"
+
+msgid "Can't find a Tuner.\n"
+"All Tuners in use or no Tuner defined."
+msgstr "Nerandate Tuner.\n"
+"All Tuner naudoti ar ne Tuner defined."
+
+msgid "Tuning to Channel failed!"
+msgstr "KLAIDA: Kanalo nra"
+
+msgid "Can't open frontend dev or Frontend Type unknown!"
+msgstr "KLAIDA: Nepavyko atidaryti rengini ssajaName or\n"
+"Frontend Tipas unknown."
+
+msgid "Channellist empty or corrupt (channel not found)!"
+msgstr "KLAIDA: Channellist tuias arba corrupt\n"
+"Channel nerasta!"
+
+msgid "swts"
+msgstr "Load stmdvb.ko with swts Option"
+
+msgid "Cam Routing"
+msgstr "Load stmdvb.ko with CamRouting Otion"
+
+msgid "Blue Key Action - Setup"
+msgstr "Mlyno mygtuko veiksm - sranka"
+
+msgid "TV / Radio Switch"
+msgstr "TV / Radija jungiklis"
+
+msgid "Choose your plugin / menu item from the following list and show it so the blue button"
+msgstr "Nustatyti Mlyno Mygtuko Funkcijas : \n"
+" pasirinkti i srao"
+
+msgid "Choose your Media plugin item from the following list and show it so the plugin button"
+msgstr "Pasirinkite funkcij i toliau ivardytj srae Media mygtukas"
+
+msgid "Plugin Key Action - Setup"
+msgstr "skiepis pagrindin priemon - sranka"
+
+msgid "Choose your plugin / menu item from the following list and show it so the plugin button"
+msgstr "Pasirinkite funkcij i io srao u Plugin mygtukas"
+
+msgid "Red Key Action - Setup"
+msgstr "Raudonas mygtukas veiksmas - sranka"
+
+msgid "Choose your plugin / menu item from the following list and show it so the red button"
+msgstr "Set Red Button Function:\n"
+"Choose a Function from the following list"
+
+msgid "border"
+msgstr "Border"
+
+msgid "bar"
+msgstr "Bar"
+
+msgid "picture"
+msgstr "Nuotraukos"
+
+msgid "yes (Text in %)"
+msgstr "Yes (Text in %)"
+
+msgid "yes (Text in MB)"
+msgstr "Yes (Text in MB)"
+
+msgid "press red"
+msgstr "Press Red Button"
+
+msgid "Receiver now reboot !!!"
+msgstr "Receiver will reboot now!!!"
+
+msgid "3D-Mode Settings"
+msgstr "3D Setup"
+
+msgid "a"
+msgstr "A"
+
+msgid "AC3 default"
+msgstr "Dolby Digital (AC3) as default"
+
+msgid "AC3 Mode"
+msgstr "Dolby Digital (AC3) mode"
+
+msgid "Actors"
+msgstr "Aktoriai:"
+
+msgid "Adapter Settings"
+msgstr "Tinklo nustatymai"
+
+msgid "ADD ALL"
+msgstr "Add All Channels"
+
+msgid "ADD BOUQUET"
+msgstr "pridti paket"
+
+msgid "ADD ONE"
+msgstr "Add Individually"
+
+msgid "add service"
+msgstr "Pridti paslaug"
+
+msgid "After the manual search, you have to if they want to save all the sender to save the search with the green button. To add a station manually have to select the sender in the right box and then save it with the red button that station. If you do not do this and go to exit out the search not saved."
+msgstr "After preforming a manual search, press the -Green button- to save all found channels. To add a channel manually, select the channel on the right and press -Red button- to save it individually.\n"
+"Exit does not save anything!"
+
+msgid "After Timeshift"
+msgstr "Veiksmas po Timeshift"
+
+msgid "Age Protect"
+msgstr "Amius Apsauga nuo"
+
+msgid "Aktion after"
+msgstr "Veiksmas po raymas"
+
+msgid "ALL"
+msgstr "Visi"
+
+msgid "Ask on channel switch"
+msgstr "Paklausti perjungiant kanal"
+
+msgid "Atemio (hotline)"
+msgstr "Atemio (Hotline)"
+
+msgid "Audio/Subt."
+msgstr "Garsas / Subtitrai"
+
+msgid "Audio Tracks"
+msgstr "Garso Takeliai"
+
+msgid "Autocheck cam can decrypt"
+msgstr "Check automatically if your CI Module can decrypt"
+
+msgid "Automatic start last subtitle"
+msgstr "Automatikai paleisti paskutinius subtitrus"
+
+msgid "Autostart - Audio / Video / Sat"
+msgstr "Audio / Video / Palydovin"
+
+msgid "Autostart - Cam / Emu"
+msgstr "Softcam"
+
+msgid "Autostart - Child safety"
+msgstr "Age Protection"
+
+msgid "Autostart Default"
+msgstr "Gamykliniai nustatymai"
+
+msgid "Autostart - Network"
+msgstr "tinklas"
+
+msgid "Autostart Settings"
+msgstr "Paleistis"
+
+msgid "Autostart - Usb Device"
+msgstr "USB renginys"
+
+msgid "A/V Settings"
+msgstr "Garso / Vaizdo nustatymai"
+
+msgid "b"
+msgstr "B"
+
+msgid "Backup / Restore Settings"
+msgstr "Backup / Restore Nustatymus"
+
+msgid "Bandwidth"
+msgstr "Juostos plotis"
+
+msgid "Before you can see Signal/SNR/Ber you must zap to a channel of the satellite you are searching."
+msgstr "Before you can see the values for Signal/SNR/BER you must switch to a channel of the Satellite you are searching."
+
+msgid "Behavior at recording"
+msgstr "K pamatyti per Recordings"
+
+msgid "Blindscan Adjust"
+msgstr "Adjust"
+
+msgid "Blindscan Settings"
+msgstr "Blindscan"
+
+msgid "Bouquet List"
+msgstr "Mgstami"
+
+msgid "Bouquet Type"
+msgstr "Type"
+
+msgid "Brightness"
+msgstr "viesumas"
+
+msgid "cancel"
+msgstr "Ataukti"
+
+msgid "Change Channelname"
+msgstr "Atnaujinti Channelname"
+
+msgid "Change Feed"
+msgstr "Pridti / Keisti Feed Adresas"
+
+msgid "Channel Search"
+msgstr "Kanal paieka"
+
+msgid "Channel Service"
+msgstr "Kanal Paslaugos"
+
+msgid "Clear before scan"
+msgstr "Ivalyti prie skanavim"
+
+msgid "CLEAR INPUT"
+msgstr "Clear Input"
+
+msgid "Code1"
+msgstr "Code 1: "
+
+msgid "Code2"
+msgstr "Code 2: "
+
+msgid "Coderate HP"
+msgstr "Kodavimo greitis HP"
+
+msgid "Coderate LP"
+msgstr "Kodavimo greitis LP"
+
+msgid "Color Format Scart / Composite"
+msgstr "Color Format SCART / Composite"
+
+msgid "Common Interface"
+msgstr "statomi moduliai"
+
+msgid "Contrast"
+msgstr "Kontrastas"
+
+msgid "copy service"
+msgstr "Kopijuoti paslaug i Mgstamus"
+
+msgid "Create Default Favorites"
+msgstr "Create Default Favourites"
+
+msgid "Create Record Picture"
+msgstr "Create Record Preview"
+
+msgid "Create Thumb Picture"
+msgstr "Create thumbnail"
+
+msgid "Day"
+msgstr "diena"
+
+msgid "Deactivate"
+msgstr "Ijungti"
+
+msgid "Debug Modus"
+msgstr "Debug Mode"
+
+msgid "DEFAULT"
+msgstr "Numatyta"
+
+msgid "Del EPG before scan"
+msgstr "Trinti EPG prie nuskaitym"
+
+msgid "Delete EPG after read"
+msgstr "Itrinti EPG po perskaitymo"
+
+msgid "del startchannel"
+msgstr "Paalinti startin kanal"
+
+msgid "DESC"
+msgstr "Apraymas"
+
+msgid "Device:"
+msgstr "prietaisas :"
+
+msgid "Director"
+msgstr "direktorius"
+
+msgid "Diseqc Command Order"
+msgstr "DiSEqC Command order"
+
+msgid "DiSEqC Mode"
+msgstr "DiSEqC bdas"
+
+msgid "Diseqc repeats"
+msgstr "DiSEqC Repeats"
+
+msgid "diseqcscreen"
+msgstr "DiSEqC"
+
+msgid "Diseqc Settings"
+msgstr "DiSEqC"
+
+msgid "dnsserver 1"
+msgstr "DNS-Server 1"
+
+msgid "dnsserver 2"
+msgstr "DNS-Server 2"
+
+msgid "Download"
+msgstr "Parsisiuntimas"
+
+msgid "Dutch"
+msgstr "Oland"
+
+msgid "DYNDNS Settings"
+msgstr "DYNDNS"
+
+msgid "EDIT LNB / UNICABLE"
+msgstr "Configure LNB/Unicable"
+
+msgid "EDIT MOTOR"
+msgstr "Configure Motor System"
+
+msgid "EDIT TUNER"
+msgstr "Configure Tuner"
+
+msgid "English"
+msgstr "Angl"
+
+msgid "Epgfreespace (KB)"
+msgstr "Laisvos atminties ( KB)"
+
+msgid "Epg List Mode"
+msgstr "Fono Scan"
+
+msgid "EPG Path"
+msgstr "EPG Kelias"
+
+msgid "Epg Refresh Time"
+msgstr "EPG Atnaujinimo Laikas"
+
+msgid "EPG Reset"
+msgstr "EPG Atstatyti"
+
+msgid "EPG Save Mode"
+msgstr "Saugoti EPG fail"
+
+msgid "EPG Search"
+msgstr "EPG Paieka"
+
+msgid "EPG Settings"
+msgstr "EPG Nustatymai"
+
+msgid "EPG SHORT VIEW"
+msgstr "EPG Trumpas"
+
+msgid "Extensions"
+msgstr "Ipltimai"
+
+msgid "Ext. Modul detect (needs reboot)"
+msgstr "Ext. Modul aptikimas ( poreikiai perkrauti )"
+
+msgid "Fav"
+msgstr "Mgstami"
+
+msgid "FEC"
+msgstr "Forward Error Correction (FEC)"
+
+msgid "FEC:"
+msgstr "FEC: "
+
+msgid "Fix Shutdown Time"
+msgstr "Fiksuoto ijungimo laikas"
+
+msgid "Flash: Flash range is deleted after update, mnt: flash range to permanently update available, swap: USB medium permanently"
+msgstr "MNT: Installation to internal Memory: Deleted by USB Flash.\n"
+"FLASH: Installation to internal Memory: Deleted in next Online Update.\n"
+"SWAP: Installation to USB Stick/Harddisk: No deletion during Software Update."
+
+msgid "Flashupdate (online)"
+msgstr "Programins rangos naujinimas (Online )"
+
+msgid "Flashupdate (tmp)"
+msgstr "Programins rangos naujinimas (vietinis )"
+
+msgid "Format HDD"
+msgstr "Formatuoti rengin"
+
+msgid "free space"
+msgstr "Laisvos vietos"
+
+msgid "French"
+msgstr "Prancz"
+
+msgid "Frequency"
+msgstr "Danis"
+
+msgid "Frequency:"
+msgstr "danis:"
+
+msgid "gateway"
+msgstr "liuzas"
+
+msgid "Genre"
+msgstr "anras"
+
+msgid "German"
+msgstr "Vokiei"
+
+msgid "Go to startpos"
+msgstr "Eiti Startposition"
+
+msgid "Graph. EPG"
+msgstr "Grafinis EPG"
+
+msgid "Graphic EPG"
+msgstr "Grafinis EPG"
+
+msgid "Graphic EPG Picon"
+msgstr "Grafinis EPG Picon"
+
+msgid "Graphic EPG Zoom"
+msgstr "Grafinis EPG Padidinti"
+
+msgid "Greek"
+msgstr "Graik"
+
+msgid "GUI Restart"
+msgstr "Titan Perkrauti"
+
+msgid "Here they can do for your chosen tuner to lnb settings."
+msgstr "Here you may setup your LNB(s) for the selected tuner"
+
+msgid "Here to select your remote Model"
+msgstr "Here you may select your Remote Control Model and confirm by pressing -OK-"
+
+msgid "Here you can assign channels for their ci modules."
+msgstr "Here you may setup channels for attached CI module(s)."
+
+msgid "Here you can backup and restore your settings."
+msgstr "Here you may backup and restore your settings."
+
+msgid "Here you can check the reception of the current station."
+msgstr "Here you may view the reception values of the channel your tuned to"
+
+msgid "Here you can choose to configure your tuner. For your channel search, you must edit their tuner and adjust depending on the connection. For engine systems require an additional engine settings making."
+msgstr "Here you may configure your tuner. Edit the settings suiting your tuner and Connection-type. For motorized systems configure 'motorized Systems' to suite your Environment."
+
+msgid "Here you can configure access to your DynDNS."
+msgstr "Here you may setup your DNS Service."
+
+msgid "Here you can configure Ci-Modules."
+msgstr "Here you may configure your CI module(s)."
+
+msgid "Here you can configure the smartcard readers."
+msgstr "ia galite konfigruoti dekodavimo skaitytojai (ai ) ."
+
+msgid "Here you can configure your web server."
+msgstr "Here you may configure your web server."
+
+msgid "Here you can create a new record timer."
+msgstr "ia galite nustatyti nauj laikmat raymo event."
+
+msgid "Here you can do a blind scan, this process takes a long time."
+msgstr "Here you may perform a blind scan. The blind scan requires a long time!"
+
+msgid "Here you can edit the following channels from the EPG."
+msgstr "ia galite redaguoti iuos kanalus i EPG."
+
+msgid "Here you can install from our current online offering plug-ins."
+msgstr "Here you may install Plugins/Extebsions from our Online offer."
+
+msgid "Here you can in your EPG entries for specific search. Use to start a color button to search."
+msgstr "ia galite iekoti konkrei ra su EPG.\n"
+"Use yra coulored mygtuk, nordami pradti search."
+
+msgid "Here you can make for your selected network interface settings."
+msgstr "Here you may configure your Network Interface."
+
+msgid "Here you can make for your wireless network settings. 1. Use Search button and select Your SSID (apoint / router) and Press ok 2. Make settings Type / Key confirm with ok and Note the following instructions 3. Disable Lan Yes, Activate Wlan Yes and use DHCP for easy setup."
+msgstr "Here you may configure the Wireless Network (WLAN).\n"
+"1. Start search, select SSID and press -OK-\n"
+"2. Choose encryption type, enter passphrase, confirm with -OK-\n"
+"3. Disable Lan. Activate WLAN. Use DHCP for easy or static for manual Setup."
+
+msgid "Here you can make your adjust settings."
+msgstr "Here you may personalise the adjustment settings."
+
+msgid "Here you can make your audio/video autostart settings."
+msgstr "Here you may personalise your audio/video autostart."
+
+msgid "Here you can make your cam/emu autostart settings."
+msgstr "Here you may personalise your Softcam autostart."
+
+msgid "Here you can make your default autostart settings."
+msgstr "Here you may personalise your default autostart."
+
+msgid "Here you can make your epg settings."
+msgstr "ia galite individualizuoti savo EPG configuration."
+
+msgid "Here you can make your mediadb settings."
+msgstr "Here you may personalise your mediadb setup."
+
+msgid "Here you can make your module settings."
+msgstr "Here you may personalise your CI module(s) setup."
+
+msgid "Here you can make your network autostart settings."
+msgstr "Here you may personalise your network autostart setup."
+
+msgid "Here you can make your Overclocking settings."
+msgstr "Here you may personalise your Overclocking setup."
+
+msgid "Here you can make your picture and sound settings."
+msgstr "Here you may personalise your Picture and Sound setup."
+
+msgid "Here you can make your PIN security for menus settings."
+msgstr "Here you may personalise your Menu PIN protection setup."
+
+msgid "Here you can make your PIN security settings."
+msgstr "Here you may personalise your PIN protection setup."
+
+msgid "Here you can make your recording timer configuration."
+msgstr "ia js galite padaryti savo raymo laikmaio configuration."
+
+msgid "Here you can make your recordpath settings."
+msgstr "Here you may personalise a path for timer recordings."
+
+msgid "Here you can make your safety child autostart settings."
+msgstr "Here you may personalise your child safety setup."
+
+msgid "Here you can make your screensaver settings."
+msgstr "Here you may personalise your screensaver setup."
+
+msgid "Here you can make your settings for your engine systems. To enter the latitude and longitude using the number keys."
+msgstr "Here you may set your motorised system settings.\n"
+"\n"
+"Navigate using your Remote Control and the keys displayed below"
+
+msgid "Here you can make your timeshift settings."
+msgstr "Here you may personalise your timeshift setup."
+
+msgid "Here you can make your usb autostart settings."
+msgstr "Here you may personalise your USB autostart setup."
+
+msgid "Here you can make your vfd settings."
+msgstr "ia galite individualizuoti savo VFD setup."
+
+msgid "Here you can manage your Ci-Modul or Card Infos."
+msgstr "Here you may configure your Module(s).\n"
+"\n"
+"For details please refere to your Module Documentation."
+
+msgid "Here you can select from the following list."
+msgstr "Please select from the following list:"
+
+msgid "Here you can select from the following list a skin."
+msgstr "Please select a skin from the following list:"
+
+msgid "Here you can select the Transponder Mode. Please use a channel search after the Restart"
+msgstr "Here you may personalise your transponder setup.\n"
+"You'll need to perform a scan after the reboot."
+
+msgid "Here you can select your hard disks and USB flash drives for configuration."
+msgstr "Here you may choose your harddisk and USB devices for setup."
+
+msgid "Here you can select your Network Interface."
+msgstr "Here you may personalise your network setup."
+
+msgid "Here you can set for your cable tuner. Ask your cable provider and make you connect an automatic search."
+msgstr "Here you may set up your cable tuner and perform a channel scan."
+
+msgid "Here you can set for your Hyprid tuner. Choose the Tuner mode they want to use."
+msgstr "Here you may personalise your Hybrid tuner setup."
+
+msgid "Here you can set for your satellite tuner. First, make your satellite selection. When using DiSEqC They also point to the port used. For advanced Lnb / Unicam navigate to the field and press the Red button."
+msgstr "Here you can setup your Satellite tuner.\n"
+"Select the Satellite(s) first. For multi Satellites with DiSEqC switches set up the correct port. Go to advanced LNB/Unicable settings press the \n"
+"-Red Button- if you want to configure it."
+
+msgid "Here you can set for your terrestrial tuner. Activate the terrestrial tuner and do you connect an automatic search."
+msgstr "Here you can activate and setup your terrestrial tuner. After that you can perform an automatic channel scan."
+
+msgid "Here you can set your Channel search options. Very important, before you start looking for a channel must be set to its tuner tuner settings."
+msgstr "Here you may personalise your channel search setup.\n"
+"To perform a channel scan make sure you have set your tuner settings correctly."
+
+msgid "Here you can set your language."
+msgstr "Here you may set the language."
+
+msgid "Here you can set your timezone."
+msgstr "Here you may set your timezone."
+
+msgid "Here you can start and manage your additional plug-ins."
+msgstr "Here you may start and manage your installed extensions."
+
+msgid "Here you can test your network."
+msgstr "Here you may test your network setup."
+
+msgid "Here you can view the current channel information."
+msgstr "Here you may view the tuned channel information."
+
+msgid "HOSTNAME"
+msgstr "Serverio vardas"
+
+msgid "How many days"
+msgstr "Kiek dien saugoti EPG"
+
+msgid "HTTPD Port"
+msgstr "Webserver Port"
+
+msgid "HTTP Settings"
+msgstr "HTTP nustatymai"
+
+msgid "Inc. AC3 Audio in %"
+msgstr "Meet AC3 Audio Volume by reducing Stereo-audio in %"
+
+msgid "Information"
+msgstr "Informacija"
+
+msgid "install"
+msgstr "diegti"
+
+msgid "internet"
+msgstr "Internetas"
+
+msgid "Inversion"
+msgstr "Pervertimas"
+
+msgid "Inversion:"
+msgstr "Inversija :"
+
+msgid "IP for Stream"
+msgstr "IP Stream"
+
+msgid "Italian"
+msgstr "Ital"
+
+msgid "Keyboard"
+msgstr "Klaviatra"
+
+msgid "lan"
+msgstr "LAN"
+
+msgid "Language"
+msgstr "Kalba"
+
+msgid "Latitude"
+msgstr "Platuma"
+
+msgid "LED - brightness running"
+msgstr "LED - Rykumas"
+
+msgid "LED - brightness standby"
+msgstr "LED - Rykumas budjimo reimui"
+
+msgid "Listbox Select"
+msgstr "Set Cursor type"
+
+msgid "Listbox Select Color"
+msgstr "Set Listbox Color"
+
+msgid "Longitude"
+msgstr "Ilguma"
+
+msgid "Main Menu"
+msgstr "Pagrindinis meniu"
+
+msgid "Manual Search"
+msgstr "Rankin Paieka"
+
+msgid "Manual Search Cable"
+msgstr "Rankin Paieka Kabelin"
+
+msgid "Manual Search Terrestrial"
+msgstr "Rankin Paieka Antemin"
+
+msgid "Maximal frequency"
+msgstr "Maksimalus danis"
+
+msgid "Maximal signalrate"
+msgstr "Maksimalus signalas"
+
+msgid "Media Button"
+msgstr "Media mygtukas"
+
+msgid "Media Center"
+msgstr "Media Centras"
+
+msgid "MediaDB Path"
+msgstr "MediaDB Kelias"
+
+msgid "MediaDB Settings"
+msgstr "MediaDB Nustatymai"
+
+msgid "MENU"
+msgstr "Meniu"
+
+msgid "Menu Protect"
+msgstr "Apsaugokite Meniu"
+
+msgid "Minimal frequency"
+msgstr "Minimalus Danis"
+
+msgid "Minimal signalrate"
+msgstr "Minimalus Signalas"
+
+msgid "Minutes"
+msgstr "minui"
+
+msgid "Minutes:"
+msgstr "Minuts :"
+
+msgid "Modulation"
+msgstr "Paauktjimas"
+
+msgid "Modulation:"
+msgstr "Moduliacija:"
+
+msgid "Module Config"
+msgstr "Modulis ( s)"
+
+msgid "move service"
+msgstr "Perkelti paslaug"
+
+msgid "Moviepath"
+msgstr "Kelias Filmai"
+
+msgid "Name"
+msgstr "Pavadinimas"
+
+msgid "Name:"
+msgstr "Vardas:"
+
+msgid "netmask"
+msgstr "Potinklio kauk"
+
+msgid "Network Adapter Settings"
+msgstr "Tinklo adapteris Nustatymai"
+
+msgid "Network Adapter Test"
+msgstr "Tinklo adapteris testas"
+
+msgid "Networkbrowser"
+msgstr "Tinklo narykl"
+
+msgid "Network Interfacelist"
+msgstr "Ssaja (s)"
+
+msgid "Network Restart"
+msgstr "Tinklo Perkrovimas"
+
+msgid "Network Scan"
+msgstr "Tinklo skanavimas"
+
+msgid "Network Test"
+msgstr "Tinklo testavimas"
+
+msgid "Next EPG Time"
+msgstr "Sekantiss EPG laikas"
+
+msgid "Nfs Server Settings"
+msgstr "NFS Server Settings"
+
+msgid "Normal/Standby"
+msgstr "Normalus / Budjimo"
+
+msgid "Ok"
+msgstr "Gerai"
+
+msgid "OLED selection"
+msgstr "OLED pasirinkimas"
+
+msgid "ONID:"
+msgstr "ONID: "
+
+msgid "Only default FEC"
+msgstr "Only use default FEC"
+
+msgid "Only default signalrate"
+msgstr "Only use default Signalrate"
+
+msgid "Only DVBS"
+msgstr "Only DVB-S Services"
+
+msgid "Only free scan"
+msgstr "Only FTA Services"
+
+msgid "Orbital Position:"
+msgstr "Orbital Position: "
+
+msgid "OSD Bottom Overscan"
+msgstr "Reduce bottom OSD size"
+
+msgid "OSD Left Overscan"
+msgstr "Reduce left OSD size"
+
+msgid "OSD Right Overscan"
+msgstr "Reduce right OSD size"
+
+msgid "OSD Top Overscan"
+msgstr "Reduce top OSD size"
+
+msgid "OSD Transparent"
+msgstr "OSD Transparancy"
+
+msgid "Overclocking Settings"
+msgstr "Overclocking"
+
+msgid "PCR PID:"
+msgstr "PCR PID: "
+
+msgid "Picture"
+msgstr "Nuotraukos"
+
+msgid "Pilot"
+msgstr "Pilot (set to 'On' for HD)"
+
+msgid "Pilot:"
+msgstr "Pilot: "
+
+msgid "PIN:"
+msgstr "PIN: "
+
+msgid "Pin Code"
+msgstr "PIN Code"
+
+msgid "Pin Code Channel"
+msgstr "Urakinti kanal su PIN"
+
+msgid "Pin Code menu"
+msgstr "Lock Menu with PIN"
+
+msgid "PLAY"
+msgstr "Leisti"
+
+msgid "Playbackbuffer Size"
+msgstr "Playback buffer Size (http) Streams"
+
+msgid "Plugin Button"
+msgstr "pltini mygtukas"
+
+msgid "Plugins"
+msgstr "Papildomos programos"
+
+msgid "PMT PID:"
+msgstr "PMT PID: "
+
+msgid "Polarization:"
+msgstr "Polarisation: "
+
+msgid "Polish"
+msgstr "Lenk"
+
+msgid "Positioner Setup"
+msgstr "Pozicionieriaus nustatymas"
+
+msgid "Poweroff Timer"
+msgstr "Isijungimo Laikmatis"
+
+msgid "Power Off Timer"
+msgstr "Isijungimo Laikmatis"
+
+msgid "Program Info"
+msgstr "Informacija apie program"
+
+msgid "Protect Channel"
+msgstr "Urakinti kanal su PIN"
+
+msgid "Protect Channel Freetime (min)"
+msgstr "Time for Channel protection to deactivate (Min)"
+
+msgid "Protect Menu"
+msgstr "Urakinti Meniu su PIN"
+
+msgid "protect service"
+msgstr "Urakinti paslaug su PIN"
+
+msgid "Prov"
+msgstr "teikjas"
+
+msgid "Provider:"
+msgstr "teikjas:"
+
+msgid "Receiver unlock"
+msgstr "Atrakinti imtuv"
+
+msgid "Record path"
+msgstr "ra kelias"
+
+msgid "Record Path"
+msgstr "ra kelias"
+
+msgid "Record Path settings"
+msgstr "ra Kelias nustatymai"
+
+msgid "Record Timer"
+msgstr "ra Laikmatis"
+
+msgid "Red Button"
+msgstr "Raudonas mygtukas"
+
+msgid "Released"
+msgstr "Ileistas"
+
+msgid "RELOAD"
+msgstr "Perkrauti"
+
+msgid "Remember film position"
+msgstr "Prisiminti kino pozicij"
+
+msgid "Remove emthy Bouquet"
+msgstr "Paalinti tuias Mgstami"
+
+msgid "REMOVE ENTRY"
+msgstr "Paalinti ra"
+
+msgid "remove service"
+msgstr "Paalinti i mgstamiausi"
+
+msgid "Remove unused Channels in Bouquets"
+msgstr "Paaliname nenaudojamus kanalus i mgstamiausi"
+
+msgid "rename service"
+msgstr "Pervadinti kanal"
+
+msgid "Repeate"
+msgstr "Pakartoti"
+
+msgid "Repeate type"
+msgstr "Kartojimo reimas"
+
+msgid "RESET"
+msgstr "Perjungti"
+
+msgid "Resolution:"
+msgstr "Rezoliucija:"
+
+msgid "Resolution (current)"
+msgstr "Skiriamoji geba (dabartinis )"
+
+msgid "Resolution (default)"
+msgstr "Skiriamoji geba (pagal nutyljim)"
+
+msgid "Restore"
+msgstr "Atkurti"
+
+msgid "Rolloff:"
+msgstr "Rolloff :"
+
+msgid "Rotor Settings"
+msgstr "Rotor"
+
+msgid "Russian"
+msgstr "Rus"
+
+msgid "Samba Server Settings"
+msgstr "Samba serverio nustatymai"
+
+msgid "Sat Config"
+msgstr "Palydovin (s)"
+
+msgid "SATCR Frequency"
+msgstr "SatCR Frequency"
+
+msgid "SATCR Number"
+msgstr "SatCR Number"
+
+msgid "Satellite"
+msgstr "Palydovas"
+
+msgid "Satfinder"
+msgstr "Palydov paieka"
+
+msgid "Sat Finder"
+msgstr "Meter"
+
+msgid "Saturation"
+msgstr "Prisotinimas"
+
+msgid "SAVETRANSPONDER"
+msgstr "Isaugoti Transponder"
+
+msgid "ScanList"
+msgstr "Nuskaitymo sraas"
+
+msgid "Scan locking"
+msgstr "Nuskaitymo urakinimas"
+
+msgid "SCANSTART"
+msgstr "Pradti nuskaityti"
+
+msgid "screensaver"
+msgstr "ekrano usklanda"
+
+msgid "Screensaver Adjust"
+msgstr "ekrano usklandos nustatymai"
+
+msgid "screensaver background"
+msgstr "ekrano fonas"
+
+msgid "screensaver delay"
+msgstr "ekrano vlavimo"
+
+msgid "screensaver interval"
+msgstr "ekrano intervalas"
+
+msgid "screensaver pic"
+msgstr "Paveiksllis"
+
+msgid "screensaver type"
+msgstr "tipas"
+
+msgid "--- SD resolution"
+msgstr "--- SD raika"
+
+msgid "Select backup:"
+msgstr "Pasirinkite atsargins kopijos :"
+
+msgid "Select Path"
+msgstr "Pasirinkite Kelias"
+
+msgid "Send all CAID to modules"
+msgstr "Send all CAIDs to modules"
+
+msgid "Serviceinfo"
+msgstr "Kanalo informacija"
+
+msgid "set startchannel"
+msgstr "nustatyti Startiniu kanalu"
+
+msgid "Show EPG screen (EPG button)"
+msgstr "Rodyti EPG ekran (EPG mygtuk )"
+
+msgid "Show HDD freesize"
+msgstr "Rodyti Laisva vieta standiajame diske ?"
+
+msgid "Show in Standby"
+msgstr "Rodyti budjimo reime ?"
+
+msgid "Show in VFD"
+msgstr "Rodyti VF- Ekrane"
+
+msgid "Show Modules"
+msgstr "Rodyti CI modulio detales ?"
+
+msgid "SID:"
+msgstr "SID: "
+
+msgid "Signal:"
+msgstr "Signalas:"
+
+msgid "Skin"
+msgstr "Tema"
+
+msgid "Skin Adjust"
+msgstr "Temos Nustatymai"
+
+msgid "Skin Select"
+msgstr "Pasirinkite Tem"
+
+msgid "Skip privat CA descriptor"
+msgstr "Skip private CA descriptor"
+
+msgid "SmartCard Reader"
+msgstr "Lustini korteli skaitytuvas"
+
+msgid "SNR:"
+msgstr "SNR :"
+
+msgid "Softcam Selection"
+msgstr "Softcam pasirinkimas:"
+
+msgid "sort service"
+msgstr "Riuoti Mgstamiausius"
+
+msgid "Sound amplifier (external Player)"
+msgstr "Garso stiprintuvas (iors Player)"
+
+msgid "Sound amplifier (TV-Modus / internal Player)"
+msgstr "Garso stiprintuvas ( TV Modus / vidinis grotuvas )"
+
+msgid "Space"
+msgstr "erdv"
+
+msgid "Spanish"
+msgstr "Ispan"
+
+msgid "SSID"
+msgstr "SSID :"
+
+msgid "stable"
+msgstr "stabili"
+
+msgid "Standby Brightness"
+msgstr "Rykumas budjimo reimu"
+
+msgid "StandBy Mode"
+msgstr "Budjimo reimas"
+
+msgid "Standby / Poweroff"
+msgstr "Budjimas /Ijungimas"
+
+msgid "Start HTTPD"
+msgstr "Pradti Webserver"
+
+msgid "Step frequency"
+msgstr "Frequency step"
+
+msgid "Step signalrate"
+msgstr "Signalrate step"
+
+msgid "STOP/START"
+msgstr "STOP / START"
+
+msgid "Storage position"
+msgstr "Saved Position"
+
+msgid "Stream Path"
+msgstr "Path for Stream"
+
+msgid "Subservices"
+msgstr "Subkanalai"
+
+msgid "Subtitle"
+msgstr "subtitr"
+
+msgid "Symbol rate:"
+msgstr "Simboli sparta :"
+
+msgid "Sysinfo"
+msgstr "sistemos informacija"
+
+msgid "System"
+msgstr "Sistema"
+
+msgid "System:"
+msgstr "sistema:"
+
+msgid "System - Flashupdate (online)"
+msgstr "Firmwareupdate (Online )"
+
+msgid "System - Flashupdate (tmp)"
+msgstr "Firmwareupdate ( tmp )"
+
+msgid "System Info"
+msgstr "sistemos informacija"
+
+msgid "System Infos"
+msgstr "Sistemos Info"
+
+msgid "System - Usbupdate (online)"
+msgstr "Sistema - Usbupdate (online)"
+
+msgid "System - Usbupdate (tmp)"
+msgstr "Sistema - Usbupdate ( tmp )"
+
+msgid "TEST"
+msgstr "testas"
+
+msgid "thereafter on this Channel:"
+msgstr "Sekantis Kanale:"
+
+msgid "Threshold"
+msgstr "Heterodinas"
+
+msgid "Timer"
+msgstr "Laikmatis"
+
+msgid "Timer and EPG"
+msgstr "Laikmatis ir EPG"
+
+msgid "Timer Record Path"
+msgstr "Laikmatis ra Kelias"
+
+msgid "Timeshift Settings"
+msgstr "Timeshift"
+
+msgid "Timeshifttype"
+msgstr "Timeshift metodas"
+
+msgid "--- Time to switch"
+msgstr "--- Laikas pereiti"
+
+msgid "Timezone"
+msgstr "Laiko juosta"
+
+msgid "TITLE"
+msgstr "Pavadinimas"
+
+msgid "Tone Mode"
+msgstr "Tonas"
+
+msgid "TPK install (online)"
+msgstr "TPK diegti (online)"
+
+msgid "Tpk Install - select install medium"
+msgstr "TPK diegimas - pasirinkite diegimo laikmen"
+
+msgid "TPK remove"
+msgstr "TPK paalinti"
+
+msgid "TPK upgrade (online)"
+msgstr "TPK atnaujinti (online)"
+
+msgid "Transmission:"
+msgstr "Transmission: "
+
+msgid "TRANSPONDEREDIT"
+msgstr "Sistuvo Redaguoti"
+
+msgid "TSID:"
+msgstr "TSID: "
+
+msgid "Tuner:"
+msgstr "Tuner: "
+
+msgid "Tuner Configuration"
+msgstr "Imtuvo konfigravimas"
+
+msgid "Tuner List"
+msgstr "sraas"
+
+msgid "Tuner Reception"
+msgstr "Reception"
+
+msgid "TV Resolution (h):"
+msgstr "TV Resolution (h): "
+
+msgid "TV Resolution (w):"
+msgstr "TV Resolution (w): "
+
+msgid "TXT PID:"
+msgstr "TXT PID: "
+
+msgid "Type:"
+msgstr "Type: "
+
+msgid "Type of Scan"
+msgstr "Skanavimo bdas"
+
+msgid "UNC:"
+msgstr "UNC: "
+
+msgid "Uncommitted Diseqc command"
+msgstr "Uncommitted DiSEqC command"
+
+msgid "UNLOAD"
+msgstr "Unload"
+
+msgid "update"
+msgstr "Atnaujinimas"
+
+msgid "Usbupdate (online)"
+msgstr "USB Update (online)"
+
+msgid "Usbupdate (tmp)"
+msgstr "USB Update (tmp)"
+
+msgid "VFDisplay"
+msgstr "vfd ekranas"
+
+msgid "Video"
+msgstr "Filmai"
+
+msgid "VideoMode Aspect Settings"
+msgstr "Video Mode Aspect Settings"
+
+msgid "VideoMode Resolution Settings"
+msgstr "Resolution"
+
+msgid "VideoMode Settings"
+msgstr "Settings"
+
+msgid "Video PID:"
+msgstr "Video PID: "
+
+msgid "Vietnamese"
+msgstr "Vietnamiei"
+
+msgid "Vol off"
+msgstr "Volume off"
+
+msgid "Voltage Mode"
+msgstr "tampos reimas"
+
+msgid "Wait for cam ready"
+msgstr "Wait for the CAM to be ready"
+
+msgid "WLAN Settings"
+msgstr "WLAN"
+
+msgid "Writer"
+msgstr "Autorius"
+
+msgid "Year"
+msgstr "Metai"
+
+msgid "No skinconfig found in skin.\n"
+"Can't change to selected skin."
+msgstr "No skinconfig found in selected skin.\n"
+"cannot change to selected skin."
+
+msgid "Download finished!"
+msgstr "Parsisiuntimas baigtas!"
+
+msgid "started"
+msgstr "pradta"
+
+msgid "active"
+msgstr "aktyvus"
+
+msgid "Emu not found"
+msgstr "Softcam nerastas"
+
+msgid "Softcam selection:"
+msgstr "Softcam pasirinkimas:"
+
+msgid "Activate"
+msgstr "Aktyvuok"
+
+msgid "Reader Config Plugin not installed !"
+msgstr "skiepis nediegtas !"
+
+msgid "This file doesn't exist, or has been removed"
+msgstr "is failas neegzistuoja arba buvo itrintas"
+
+msgid "Detect hanging System !!!\n"
+"\n"
+"KILL = Red\n"
+"BOOT = Green"
+msgstr "Pakabino sistema !!! \n"
+"\n"
+"KILL = Raudona\n"
+"BOOT = alia"
+
+msgid "KILL"
+msgstr "Raudona"
+
+msgid "BOOT"
+msgstr "alia"
+
+msgid "Company: "
+msgstr "mons pavadinimas:"
+
+msgid "Exchange: "
+msgstr "bira:"
+
+msgid "Exchange closing: "
+msgstr "Valiut udarymo :"
+
+msgid "Currency: "
+msgstr "Valiuta:"
+
+msgid "Last: "
+msgstr "Paskutinis :"
+
+msgid "High: "
+msgstr "Didiausia:"
+
+msgid "Low: "
+msgstr "Maiausia:"
+
+msgid "Volume: "
+msgstr "Kiekis :"
+
+msgid "Avg volume: "
+msgstr "Vid kiekis:"
+
+msgid "Market cap: "
+msgstr "Rinkos kapitalizacija :"
+
+msgid "Open: "
+msgstr "Atidarymas:"
+
+msgid "Close: "
+msgstr "Udarymas:"
+
+msgid "Change: "
+msgstr "Pokytis:"
+
+msgid "Change in %: "
+msgstr "Pokytis, % :"
+
+msgid "Trade time: "
+msgstr "Prekybos laikas:"
+
+msgid "You have executed a defined period of no function.\n"
+"\n"
+"Stop the box??? "
+msgstr "You have set an inactivity period and Shutdown.\n"
+"\n"
+"Do you want the Receiver to shutdown?"
+
+msgid "Connect with Hoster wait 16 seconds"
+msgstr "Connectiong to Hoster - Please wait 16 Seconds"
+
+msgid "Choose your Streaming link from the following list"
+msgstr "Pasirinkite savo Streaming nuorod i io srao"
+
+msgid "left"
+msgstr "kairys"
+
+msgid "center"
+msgstr "centras"
+
+msgid "right"
+msgstr "deinys"
+
+msgid "Backup to /tmp or /var/backup. If the free memory too small can a usb device will never use.\n"
+"There must be a folder backup."
+msgstr "Backup to /tmp or /var/backup. If there is insufficient space, you can use a harddisk/USB stick.\n"
+"A folder named 'backup' must exist."
+
+msgid "Press -restore- and your saved settings will be restored from your swapstick / recording hdd! The Box will restart automatically for restoring!\n"
+"\n"
+"Press -backup- to save your actual settings to swapstick / recording hdd.\n"
+"WARNING: The old backup will be deleted!"
+msgstr "-Restore- (Red):\n"
+" Your previous saved settings will be restored from your stick / Harddisk! The Receiver will restart automatically for restoring!\n"
+"\n"
+"-Backup- (Green):\n"
+"Your settings will be saved to your stick / Harddisk.\n"
+"WARNING: Old backups will be overwritten!\n"
+"\n"
+"-Log- (Yellow):\n"
+"Check restoring result, view log file."
+
+msgid "Restore Settings"
+msgstr "Atkurti nustatymus"
+
+msgid "Are you sure you want to restore settings?\n"
+"\n"
+"OK = start restore\n"
+"EXIT = abort restore"
+msgstr "Ar tikrai norite atstatyti nustatymus? \n"
+"\n"
+"OK = pradti atkrim\n"
+"EXIT = nutraukti atkrtm"
+
+msgid "Please wait ...\n"
+"\n"
+"All Settings are restored.\n"
+"\n"
+"Box will start in few seconds."
+msgstr "Praome palaukti ...\n"
+"\n"
+"Visi nustatymai atkurti.\n"
+"\n"
+"Imtuvas persikraus pokeli sekundi."
+
+msgid "Update Plugins to new Version?"
+msgstr "Atnaujinti pltinius nauja versija ?"
+
+msgid "RESTORE ERROR"
+msgstr "ATKRIMO KLAIDA"
+
+msgid "No backup folders found!!!\n"
+"\n"
+"Aborting restoring..."
+msgstr "No folder 'backup' found!\n"
+"\n"
+"Aborting restore ..."
+
+msgid "Backup created successfully"
+msgstr "Atsargin skmingai sukurtas"
+
+msgid "BACKUP ERROR"
+msgstr "!!! BACKUP ERROR !!!"
+
+msgid "A record hdd or a swapstick must be mounted!\n"
+"\n"
+"Aborting backup..."
+msgstr "A Harddisk or Stick must be mounted!\n"
+"\n"
+"Aborting Backup"
+
+msgid "BACKUP LOG"
+msgstr "Backup Log"
+
+msgid "CPU info"
+msgstr "CPU Information"
+
+msgid "Memory info"
+msgstr "Memory Information"
+
+msgid "MTD info"
+msgstr "MTD Information"
+
+msgid "Module info"
+msgstr "Modul Information"
+
+msgid "Swap info"
+msgstr "System Information"
+
+msgid "Top Info"
+msgstr "Top Information"
+
+msgid "Prozess Info"
+msgstr "Process Information"
+
+msgid "USB Info"
+msgstr "USB Information"
+
+msgid "unstable"
+msgstr "svn-beta"
+
+msgid "starting Full Update (from backup) ?"
+msgstr "Pradti Full Update i atsargins kopijos ?"
+
+msgid "Error file not supported"
+msgstr "KLAIDA: Failo tipas nepalaikomas"
+
+msgid "Can't start system update\n"
+"Syntax Error on updatefile"
+msgstr "KLAIDA: Nepavyko paleisti Systemupdate ! "
+
+msgid "Should Timeshift File deleted ?"
+msgstr "Itrinti Timeshift fail ?"
+
+msgid "Timeshift file to short\n"
+"please wait a little and try again"
+msgstr "Timeshift fail short\n"
+"Please palaukti iek tiek ir bandykite dar kart"
+
+msgid "Can't start timeshift play !"
+msgstr "Nepavyko paleisti Timeshift atkrim !"
+
+msgid "Timeshiftsettings not allowed\n"
+"if timeshift is running !"
+msgstr "KLAIDA: Js negalite keisti Timeshift nustatym Timeshift veikimo metu!"
+
+msgid "ask"
+msgstr "Ask"
+
+msgid "allways del file"
+msgstr "Visada itrinti Timeshift fail"
+
+msgid "never del file"
+msgstr "Niekada netrinti Timeshift fail"
+
+msgid "Found running record\n"
+"or record is starting in next time.\n"
+"Really shutdown ?"
+msgstr "Surasta aktyvus raas.\n"
+" arba raymas prasideda.\n"
+"Tikrai ijungti ?"
+
+msgid "Found running download\n"
+"Really shutdown ?"
+msgstr "Surasta aktyviai Siuntimas\n"
+"Tikrai ijungti ?"
+
+msgid "Error: open rc device !!"
+msgstr "ERROR: No Remote Control Found!"
+
+msgid "Error: no frontend device found !!"
+msgstr "ERROR: No Frontend Device Found!"
+
+msgid "Error: no demux device found !!"
+msgstr "ERROR: No Demux Device Found!"
+
+msgid "Error: no video device found !!"
+msgstr "ERROR: No Video Device Found!"
+
+msgid "Error: no audio device found !!"
+msgstr "ERROR: No Audio Device Found!"
+
+msgid "Error: skin not found !!"
+msgstr "ERROR: No Skin Found!"
+
+msgid "RemoteControl Old Version"
+msgstr "Remote Control old Version"
+
+msgid "RemoteControl Long Version"
+msgstr "Remote Control Long Version"
+
+msgid "Select Your Remote Control"
+msgstr "Remote Control Selection"
+
+msgid "Choose your Remotecontrol Model from the following list"
+msgstr "Choose your Remote control Model from the following list"
+
+msgid "First Wizzard"
+msgstr "First Installation Wizzard"
+
+msgid "Settings OK ?"
+msgstr "Save Settings?"
+
+msgid "Receiver successful unlocked"
+msgstr "Js imtuvas buvo pilnai atrakintas."
+
+msgid "Free space in /var to little!\n"
+"This can make problems!"
+msgstr "Nepakankama erdv / var ! \n"
+"Tai sukels rimt problem !"
+
+msgid "/var not writeable!\n"
+"Repair it?"
+msgstr "/ var nra raomus ! \n"
+"Do norite pabandyti ir j itaisyti ?"
+
+msgid "Free space in /mnt to little!\n"
+"This can make problems!"
+msgstr "Nepakankama erdv / mnt ! \n"
+"Tai sukels rimt problem !"
+
+msgid "/mnt not writeable!\n"
+"Repair it?"
+msgstr "/ mnt nra raomus ! \n"
+"Do norite pabandyti ir j itaisyti ?"
+
+msgid "Automatic stop in 10 seconds."
+msgstr "Automatinis Stop 10 Seconds."
+
+msgid "Alternativ Audio Firmware not working korrekt with all videos (DTSDOWNMIX)!"
+msgstr "Alternative Audio Firmware will not work correctly with all videos\n"
+"(DTSDOWNMIX)!"
+
+msgid "Tithek - Mainmenu"
+msgstr "TiThek - Mainmenu"
+
+msgid "The hoster is not yet supported !"
+msgstr "The hoster is not supported at present!"
+
+msgid "File exist, overwrite?"
+msgstr "File allready exists.\n"
+"Do you want to overwrite the existing one?"
+
+msgid "found"
+msgstr "rasta"
+
+msgid "Results"
+msgstr "rezultatai"
+
+msgid "Remove Cachefile ?"
+msgstr "Ivalyti talpykl ?"
+
+msgid "Can't start download.\n"
+"Please try later."
+msgstr "Nepavyksta paleisti download.\n"
+" Bandykite dar kart vliau."
+
+msgid "Choice Playback"
+msgstr "Pasirinkite Playback"
+
+msgid "Streaming Playback (default)"
+msgstr "Tiesiogin transliacija ( pagal nutyljim)"
+
+msgid "Streaming Playback Caching (1MB)"
+msgstr "Srautinio atkrimas djimas ( 1MB )"
+
+msgid "Streaming Playback Caching (5MB)"
+msgstr "Srautinio atkrimas djimas ( 5MB )"
+
+msgid "Streaming Playback Caching (10MB)"
+msgstr "Srautinio atkrimas djimas ( 10MB )"
+
+msgid "File Caching Playback (10MB / 120s)"
+msgstr "Failo padjimas podl atkrimas ( 10MB / 120s )"
+
+msgid "File Caching Playback (20MB / 240s)"
+msgstr "Failo padjimas podl atkrimas ( 20MB / 240s )"
+
+msgid "File Caching Playback (30MB / 360s)"
+msgstr "Failo padjimas podl atkrimas ( 30MB / 360s )"
+
+msgid "Download Full File"
+msgstr "Parsisisti piln fail"
+
+msgid "Download Full File (background)"
+msgstr "Parsisisti piln fail ( fono )"
+
+msgid "Choose your Streaming Playback Modus from the following list"
+msgstr "Pasirinkite savo Streaming atkrimo Modus i io srao"
+
+msgid "Filename"
+msgstr "Failo pavadinimas"
+
+msgid "Start playback"
+msgstr "Pradti atkrim"
+
+msgid "Can't get Streamurl !"
+msgstr "Streamurl nra pasiekiami !"
+
+msgid "TitanNit Tithek disclaimer"
+msgstr "TiThek disclaimer"
+
+msgid "EDIT FAV"
+msgstr "Redaguoti mgstamiausi"
+
+msgid "Remove this Favorite ?"
+msgstr "Norite paalinti pasirinkt ra i savo mgstamiausi ?"
+
+msgid "Add this link as Favorite ?"
+msgstr "Ar norite pridti i nuorod savo mgstamiausi ?"
+
+msgid "Edit this Favorite ?"
+msgstr "Redaguoti Pamgt viet?"
+
+msgid "All New first"
+msgstr "Visi Naujas pirmas"
+
+msgid "All Sorted"
+msgstr "Visi Riuota"
+
+msgid "Atemio Channelsearch 4xSat"
+msgstr "Atemio Channel search 4 Satellites"
+
+msgid "Atemio Harddisc formating"
+msgstr "Atemio Harddisk formating"
+
+msgid "Atemio Network configuration stable IP"
+msgstr "Atemio Network configuration static IP"
+
+msgid "Atemio Series Recoding"
+msgstr "Atemio Serial Recording"
+
+msgid "Atemio Tuner configuration Sat"
+msgstr "Tuner Configuration for Satellite"
+
+msgid "Favoriten"
+msgstr "Mgstami"
+
+msgid "HowTo Feedadresse Eingeben"
+msgstr "How to add a Feed address"
+
+msgid "HowTo Picons Einrichten"
+msgstr "How to install and use Picons"
+
+msgid "HowTo Secret"
+msgstr "How to ad Secret Feed address"
+
+msgid "HowTo Sky V13 Einrichten"
+msgstr "How to setup a Sky V13 Smartcard"
+
+msgid "Mediacenter AudioPlayer Playlisten Preview"
+msgstr "Audioplayer Playlist Preview"
+
+msgid "Mediacenter AudioPlayer Screensaver Preview"
+msgstr "Audioplayer Screensaver preview"
+
+msgid "Mediacenter Mediathek Kinox Preview"
+msgstr "Wmediathek kinOx previe"
+
+msgid "Mediacenter Mediathek Myvideo/Rtl2/InternetTv/Radio Preview"
+msgstr "Mediathek Myvideo/Rtl2/InternetTv/Radio Preview"
+
+msgid "Mediacenter VideoPlayer Preview"
+msgstr "Video Player Preview"
+
+msgid "Search (10)"
+msgstr "Search viewing 10 Results"
+
+msgid "Search (20)"
+msgstr "Search viewing 20 Results"
+
+msgid "Search (25)"
+msgstr "Search viewing 25 Results"
+
+msgid "Search (50)"
+msgstr "Search viewing 50 Results"
+
+msgid "Search Cast"
+msgstr "Search by Cast"
+
+msgid "Search Movie"
+msgstr "Search for a Movie"
+
+msgid "Search Serie"
+msgstr "Search for a Series"
+
+msgid "Tips und Tricks"
+msgstr "Tips and Tricks"
+
+msgid "show auto entrys"
+msgstr "Show entrys (Auto amount)"
+
+msgid "show 2 entrys"
+msgstr "Show 2 entrys"
+
+msgid "show 6 entrys"
+msgstr "Show 6 entrys"
+
+msgid "show 12 entrys"
+msgstr "Show 12 entrys"
+
+msgid "show 20 entrys"
+msgstr "Show 20 entrys"
+
+msgid "show 30 entrys"
+msgstr "Show 30 entrys"
+
+msgid "show in list"
+msgstr "Show in List"
+
+msgid "Audio"
+msgstr "muzika"
+
+msgid "video"
+msgstr "Filmai"
+
+msgid "audio"
+msgstr "muzika"
+
+msgid "video / audio"
+msgstr "Video / Audio"
+
+msgid "video / picture"
+msgstr "Vaizdo / Paveiksllis"
+
+msgid "audio / picture"
+msgstr "Garso / Paveiksllis"
+
+msgid "pic1"
+msgstr "Nuotrauka 1"
+
+msgid "pic2"
+msgstr "Nuotrauka 2"
+
+msgid "pic3"
+msgstr "Paveiksllis 3"
+
+msgid "pic4"
+msgstr "Paveiksllis 4"
+
+msgid "pic5"
+msgstr "Paveiksllis 5"
+
+msgid "no pic"
+msgstr "Paveiksllio nra"
+
+msgid "Delete selected entry ?"
+msgstr "Itrinti pasirinkt ra ?"
+
+msgid "MediaDB not found!\n"
+"Scan your HDD in TMC Settings"
+msgstr "MediaDB not found!\n"
+"Scan your Drive in TMC Settings"
+
+msgid "IMDB Plugin not found!\n"
+"Can't get detail media infos\n"
+"Please install it"
+msgstr "IMDB was not found!\n"
+"Cannot get the detailed information for the designated file.\n"
+"Please install the Extension."
+
+msgid "Error, found result without imdbid we can't this save in MediaDB"
+msgstr "ERROR: Due to a false IMDBID the value cannot be stored in MediaDB"
+
+msgid "TopfieldVFD settings dialog not implemented yet!\n"
+"\n"
+"Coming soon ..."
+msgstr "Topfield VFD nuostat dialogo dar nediegta ! \n"
+"\n"
+"Coming greiiau ....."
+
+msgid "TopfieldVFD plugin not available, wrong box!"
+msgstr "Topfield VFD pratsimas nra, negerai imtuvas !"
+
+msgid "FREQU"
+msgstr "Frequency"
+
+msgid "CABLE"
+msgstr "Kabelin"
+
+msgid "TERR"
+msgstr "Antemin"
+
+msgid "UNKNOWN"
+msgstr "Neinomas"
+
+msgid "POS"
+msgstr "Position"
+
+msgid "Alternativer Skin fuer Pearl LCD"
+msgstr "Alternative skin for Pearl LCD"
+
+msgid "Alternativer Skin fuer Pearl LCD "
+msgstr "Alternative skin for Pearl LCD"
+
+msgid "Alternativer Skin fuer Pearl LCD - X-Light Picons zusaetzlich installieren"
+msgstr "Alternative skin for Pearl LCD - X-Light Picons must be installed seperately"
+
+msgid "Alternativer Skin fuer Samsung LCD - ohne Picons (extra zu installieren)"
+msgstr "Alternative skin for Samsung LCD - without Picons."
+
+msgid "Automatisch Timer setzen"
+msgstr "Automatikai nustatomas laikmatis"
+
+msgid "cut record files"
+msgstr "ts cutter - cut recordings locally"
+
+msgid "Digital Uhr blau - for tiTan - Samsung LCD Skin Channel."
+msgstr "Digital clock in blue for titan and Samsung LCD skin"
+
+msgid "dlna Medien Server (upnp)"
+msgstr "DLNA Media Server UPNP)"
+
+msgid "dvdplayer plugin."
+msgstr "DVD Player Extension"
+
+msgid "Emu Camd3 v3.902 for your box"
+msgstr "Softcam camd3.902"
+
+msgid "Emu MBox v0.6 build 0010 for your box"
+msgstr "Softcam MBox V0.6 build 0010"
+
+msgid "Emu MGCamd v1.35 for your box"
+msgstr "Softcam MGCamd V1.35"
+
+msgid "Emu MGCamd v1.38a and all Configs"
+msgstr "Softcam MGCamd V1.38"
+
+msgid "Emu scam 3.53 for your box"
+msgstr "Softcam SCam V3.53"
+
+msgid "Emu scam 3.59 for your box"
+msgstr "Softcam SCam V3.59"
+
+msgid "Emu scam 3.60 for your box"
+msgstr "Softcam SCam V3.60"
+
+msgid "Emu vizcam 1.04 for your box"
+msgstr "Softcam vizcam V1.04"
+
+msgid "filemanager"
+msgstr "Fail tvarkykl"
+
+msgid "IP-Kamera zB. Firma INSTAR"
+msgstr "IP Camera eg. INSTAR"
+
+msgid "Permanente Uhrzeit am Bildschirm"
+msgstr "Permanent time showing on your screen"
+
+msgid "Power off if box not used"
+msgstr "Shutdown the receiver if it is not used."
+
+msgid "Samba Server"
+msgstr "Samba serveris"
+
+msgid "Sat: Bulldog Settings 3x Sat 28.03.2014"
+msgstr "Sattelite settings by Bulldog for HOTBIRD 13, ASTRA 19.2 and ASTRA 28.2"
+
+msgid "smartTV Skin. Please use alternate Picons."
+msgstr "smartTV Tema. Praome naudoti alternatyv Picons."
+
+msgid "Stable Version of OSCam V13unten"
+msgstr "Stable version of OScam using a Sky V13 in internal lower slot"
+
+msgid "Tastensperre Plugin - entsperren mit rot/rot/gruen"
+msgstr "Keylock extension - unlock using red/red/green"
+
+msgid "Treiber fuer Pearl LCD V4.0"
+msgstr "Driver for pearl LCD V4.0"
+
+msgid "Treiber fuer Samsung LCD"
+msgstr "Driver for Samsung LCD"
+
+msgid "usbreset Plugin"
+msgstr "USB reset extension"
+
+msgid "weather Plugin"
+msgstr "Weather extension"
+
+msgid "Werbezapper"
+msgstr "Advert zapper"
+
+msgid "check your Secret Feed !"
+msgstr "Check the secret feed address!"
+
+msgid "no description found"
+msgstr "No description found"
+
+msgid "browser"
+msgstr "Narykl"
+
+msgid "emus"
+msgstr "Softcams"
+
+msgid "network"
+msgstr "Tinklas"
+
+msgid "settings"
+msgstr "Nustatymai"
+
+msgid "skins"
+msgstr "Temos"
+
+msgid "Auto Timer"
+msgstr "Auto Laikmatis"
+
+msgid "LCD Pearl Skin Blau"
+msgstr "LCD Pearl skin blue"
+
+msgid "LCD Pearl Skin Gross/Schwarz"
+msgstr "LCD Pearl skin big/black"
+
+msgid "LCD Pearl Skin Schwarz"
+msgstr "LCD Pearl skin black"
+
+msgid "LCD Samsung Skin Analog Uhr"
+msgstr "LCD Samsung skin analogue clock"
+
+msgid "LCD Samsung Skin DigitalUhr (blau) - operating Mode"
+msgstr "LCD Samsung skin Digital clock"
+
+msgid "LCD Samsung Skin Digital Uhr gelb"
+msgstr "LCD Samsung skin yellow Digital clock"
+
+msgid "LCD Samsung Skin Digital Uhr Trikots"
+msgstr "LCD Samsung skin shirt Digital clock"
+
+msgid "LCD Samsung Skin Holzuhr"
+msgstr "LCD Samsung skin wooden clock"
+
+msgid "Skin SmartTV"
+msgstr "Tema SmartTV"
+
+msgid "Horizontal"
+msgstr "horizontali"
+
+msgid "QAM auto"
+msgstr "QAM automatic"
+
+msgid "DVBS"
+msgstr "DVB-S"
+
+msgid "DVBS2"
+msgstr "DVB-S2"
+
+msgid "INFO"
+msgstr "Informacija"
+
+msgid "Schnitt erfolgreich beendet"
+msgstr "Cutting completed successfully"
+
+msgid "Schnitt endet mit Fehler !!!!!"
+msgstr "Cutting returned ERROR !!!"
+
+msgid "Schnitt ist in Arbeit"
+msgstr "Cutting in progress"
+
+msgid "Frage"
+msgstr "Question"
+
+msgid "Soll der Schnitt wirklich abgebrochen werden?"
+msgstr "Do you really want to abort cutting?"
+
+msgid "Satelite Type"
+msgstr "Satellite Type"
+
+msgid "Expert"
+msgstr "Iplstinis"
+
+msgid "Tuner Type"
+msgstr "Imtuvo tipas"
+
+msgid "Terrestrisch"
+msgstr "Antemin"
+
+msgid "direct connect"
+msgstr "Direct connection"
+
+msgid "loop to Tuner"
+msgstr "Tuner looped"
+
+msgid "Tunerconfig is not allowed if record\n"
+"or stream is running !"
+msgstr "ERROR: Tuner configuration is not allowed during a recording\n"
+"or during Stream Playback"
+
+msgid "Spezialfunctions unlocked, no input required"
+msgstr "Special functions unlocked, no input required"
+
+msgid "RECEIVER ID: "
+msgstr "Receiver ID: "
+
+msgid "Can't save Code.\n"
+"Delete Plugins to free space"
+msgstr "ERROR: Insufficient free Space - Cannot save Code!\n"
+"Delete Extensions to free space"
+
+msgid "Code not ok, please try again !"
+msgstr "ERROR: Code is not OK !\n"
+"Please try again."
+
+msgid "Choose your Devices from the following list"
+msgstr "Pasirinkite prietaisus i srao"
+
+msgid "channel"
+msgstr "Kanalas"
+
+msgid "channel + time"
+msgstr "Kanalo pavadinimas + Laikas"
+
+msgid "time + channel"
+msgstr "Laikas + Kanalo pavadinimas"
+
+msgid "time"
+msgstr "Laikas"
+
+msgid "time small"
+msgstr "Time small"
+
+msgid "channel number"
+msgstr "Kanalo numeris"
+
+msgid "date + time"
+msgstr "Date + Time"
+
+msgid "blink"
+msgstr "Blink"
+
+msgid "fade out/in"
+msgstr "Fade in/out"
+
+msgid "show record"
+msgstr "Show 'Record'"
+
+msgid "star"
+msgstr "Star"
+
+msgid "blink star"
+msgstr "Blinking star"
+
+msgid "letterbox"
+msgstr "Letterbox"
+
+msgid "nonlinear"
+msgstr "Nelinijinis"
+
+msgid "Lowest temp: "
+msgstr "Lowest Temp: "
+
+msgid "Highest temp: "
+msgstr "Highest Temp: "
+
+msgid "Condition: "
+msgstr "Bkl:"
+
+msgid "Location"
+msgstr "Vieta"
+
+msgid "Remote"
+msgstr "Nuotolinis"
+
+msgid "dirsort"
+msgstr "Riuoti pagal"
+
+msgid "download"
+msgstr "Parsisiuntimas"
+
+msgid "language"
+msgstr "Kalba"
+
+msgid "mute"
+msgstr "Be garso"
+
+msgid "newsletter"
+msgstr "Naujienlaikis"
+
+msgid "satfinder"
+msgstr "Palydov paieka"
+
+msgid "serviceinfo"
+msgstr "Kanalo informacija"
+
+msgid "subtitle"
+msgstr "subtitr"
+
+msgid "timeshift"
+msgstr "Laiko poslinkis"
+
+msgid "timezone"
+msgstr "Laiko juosta"
+
+msgid "vfdisplay"
+msgstr "vfd ekranas"
+
+msgid "volume"
+msgstr "Garsumas"
+
+msgid "Power"
+msgstr "Galia"
+
+msgid "Last"
+msgstr "Paskutinis"
+
+msgid "Next"
+msgstr "Sekanti"
+
+msgid "Mute"
+msgstr "Be garso"
+
+msgid "Exit"
+msgstr "Ieiti"
+
+msgid "Left"
+msgstr "kairys"
+
+msgid "Right"
+msgstr "deinys"
+
+msgid "Up"
+msgstr "Auktyn"
+
+msgid "Down"
+msgstr "emyn"
+
+msgid "Back"
+msgstr "atgal"
+
+msgid "Volume Up"
+msgstr "Garsiau"
+
+msgid "Volume Down"
+msgstr "Tyliau"
+
+msgid "Channel Up"
+msgstr "kanalas auktyn"
+
+msgid "Channel Down"
+msgstr "kanalas emyn"
+
+msgid "Red"
+msgstr "Raudona"
+
+msgid "Green"
+msgstr "alia"
+
+msgid "Yellow"
+msgstr "Geltona"
+
+msgid "Blue"
+msgstr "Mlyna"
+
+msgid "Fast Rewind"
+msgstr "Greitas Atsukti"
+
+msgid "Pause"
+msgstr "Pauz"
+
+msgid "Stop"
+msgstr "Stabdyti"
+
+msgid "Fast Forward"
+msgstr "Greitas Pirmyn"
+
+msgid "Tv"
+msgstr "Televizija"
+
+msgid "Epg"
+msgstr "EPG"
+
+msgid "Resolution"
+msgstr "Rezoliucija"
+
+msgid "FAV"
+msgstr "Mgstami"
+
+msgid "Play"
+msgstr "Leisti"
+
+msgid "Titan Log"
+msgstr "Titan urnalas"
+
+msgid "Reset"
+msgstr "Perjungti"
+
+msgid "Add Timer"
+msgstr "Pridti Laikmatis"
+
+msgid "Zapback bereits aktiv ... Stoppen?"
+msgstr "Zapback is activated. Do you want to stop it?"
+
