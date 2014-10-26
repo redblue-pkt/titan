@@ -1954,6 +1954,11 @@ void playerchangesubtitletrack(int num)
 	if(player && player->playback)
 		player->playback->Command(player, PLAYBACK_SWITCH_SUBTITLE, (void*)&num);
 #endif
+
+#ifdef EPLAYER4
+	if(pipeline != NULL)
+		g_object_set(G_OBJECT(pipeline), "current-text", num, NULL);	
+#endif
 }
 
 void playerstopsubtitletrack()
@@ -1972,6 +1977,12 @@ void playerstopsubtitletrack()
 		player->manager->subtitle->Command(player, MANAGER_DEL, (void*)&onlycurrent);
 	}
 #endif
+
+#ifdef EPLAYER4
+	if(pipeline != NULL)
+		g_object_set(G_OBJECT(pipeline), "current-text", -1, NULL);
+#endif
+
 }
 
 int playerjumpts(struct service* servicenode, int sekunden, int *startpts, off64_t *poslastpts, off64_t *bitrate, int vpid, int tssize)
