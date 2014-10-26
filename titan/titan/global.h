@@ -1835,7 +1835,7 @@ void checkboxstart()
 			{
 				debug(400, "found rectimer who has start the box");
 				setwaswakuptimer(1);
-				setcecstandby(1);
+				//setcecstandby(1);
 			}
 			else 
 				setcecstandby(0);
