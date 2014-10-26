@@ -459,7 +459,7 @@ void checkrectimer(struct stimerthread* self)
 	while(self->aktion != STOP && time(NULL) < 1072224000) // 01.01.2004
 		usleep(1 * 1000000);
 	
-	//on first start read rectimer
+	//on first start read rectimer and set cec
 	if(self->delay == 1000)
 	{
 		ret = 5;
