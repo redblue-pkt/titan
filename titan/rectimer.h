@@ -462,6 +462,13 @@ void checkrectimer(struct stimerthread* self)
 	//on first start read rectimer
 	if(self->delay == 1000)
 	{
+		ret = 5;
+		while(self->aktion != STOP && ret != 0)
+		{
+			usleep(1 * 1000000);
+			ret = ret - 1;
+		}
+		ret = 0;
 		readrectimer(getconfig("rectimerfile", NULL));
 		checkboxstart();
 	}
