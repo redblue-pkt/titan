@@ -1819,6 +1819,7 @@ void checkboxstart()
 {
 	struct rectimer* node = rectimer;
 	int timediff = getconfigint("rectimer_timediff", NULL);
+	int test = 0;
 	
 	if(node == NULL) return; //no record
 
@@ -1835,13 +1836,14 @@ void checkboxstart()
 			{
 				debug(400, "found rectimer who has start the box");
 				setwaswakuptimer(1);
-				//setcecstandby(1);
+				setcecstandby(1);
+				test = 1;
 			}
-			else 
-				setcecstandby(0);
 		}
 		node = node->next;
 	}
+	if(test == 0)
+		setcecstandby(0);
 }
 
 int setwakeuptimerdev(time_t value)
