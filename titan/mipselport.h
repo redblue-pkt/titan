@@ -454,6 +454,15 @@ void blitfb2(struct fb* fbnode, int flag)
 
 void setfbtransparent(int value)
 {
+	char* transparentdev;
+
+	transparentdev = getconfig("transparentdev", NULL);
+
+	if(transparentdev != NULL /*&& checkdev(transparentdev)*/)
+	{
+		debug(100, "set %s to %d", transparentdev, value);
+		return writesysint(transparentdev, value, 1);
+	}
 /*
 #ifndef SIMULATE
 	struct stmfbio_var_screeninfo_ex varEx = {0};
