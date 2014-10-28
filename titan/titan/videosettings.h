@@ -13,6 +13,7 @@ void screenvideosettings()
 	struct skin* saturation = getscreennode(videosettings, "saturation");
 	struct skin* tmp = NULL;
 
+#ifdef SH4
 	if(brightness != NULL)
 	{
 		ibrightness = getconfigint("vs_brightness", NULL);
@@ -34,7 +35,29 @@ void screenvideosettings()
 		isaturation = getconfigint("vs_saturation", NULL);
 		saturation->progresssize = (int)ceil(((float)isaturation / 2.56));
 	}
+#else
+	if(brightness != NULL)
+	{
+		ibrightness = getconfigint("vs_brightness", NULL);
+		brightness->progresssize = (int)ceil(((float)ibrightness / 160.00));
+	}
+	if(contrast != NULL)
+	{
+		icontrast = getconfigint("vs_contrast", NULL);
+		contrast->progresssize = (int)ceil(((float)icontrast / 160.00));
+	}
+	if(tint != NULL)
+	{
+		itint = getconfigint("vs_tint", NULL);
+		tint->progresssize = (int)ceil(((float)itint / 160.00));
+	}
 
+	if(saturation != NULL)
+	{
+		isaturation = getconfigint("vs_saturation", NULL);
+		saturation->progresssize = (int)ceil(((float)isaturation / 160.00));
+	}
+#endif
 
 	drawscreen(videosettings, 0, 0);
 	addscreenrc(videosettings, listbox);
@@ -46,11 +69,17 @@ void screenvideosettings()
 		rcret = waitrc(videosettings, 0, 0);
 		tmp = listbox->select;
 
+#ifdef SH4
 		ibrightness = (int)ceil(((float)brightness->progresssize * 2.56));
 		icontrast = (int)ceil(((float)contrast->progresssize * 2.56));
 		itint = (int)ceil(((float)tint->progresssize * 2.56));
 		isaturation = (int)ceil(((float)saturation->progresssize * 2.56));
-
+#else
+		ibrightness = (int)ceil(((float)brightness->progresssize * 160.00));
+		icontrast = (int)ceil(((float)contrast->progresssize * 160.00));
+		itint = (int)ceil(((float)tint->progresssize * 160.00));
+		isaturation = (int)ceil(((float)saturation->progresssize * 160.00));
+#endif
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
@@ -62,6 +91,7 @@ void screenvideosettings()
 		}
 		if(rcret == getrcconfigint("rcred", NULL))
 		{
+#ifdef SH4
 			ibrightness = 128;
 			icontrast = 128;
 			itint = 128;
@@ -71,6 +101,17 @@ void screenvideosettings()
 			contrast->progresssize = (int)ceil(((float)icontrast / 2.56));
 			tint->progresssize = (int)ceil(((float)itint / 2.56));
 			saturation->progresssize = (int)ceil(((float)isaturation / 2.56));
+#else
+			ibrightness = 8000;
+			icontrast = 8000;
+			itint = 8000;
+			isaturation = 8000;
+
+			brightness->progresssize = (int)ceil(((float)ibrightness / 160.00));
+			contrast->progresssize = (int)ceil(((float)icontrast / 160.00));
+			tint->progresssize = (int)ceil(((float)itint / 160.00));
+			saturation->progresssize = (int)ceil(((float)isaturation / 160.00));
+#endif
 
 			drawscreen(videosettings, 0, 0);
 		}
