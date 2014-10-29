@@ -6307,7 +6307,7 @@ int converte2settings(int flag)
 				line = ostrcat(line, "#", 1, 0);
 
 				if(ostrstr((ret1[i]).part, "frequency=") != NULL)
-					line = ostrcat(line, getxmlentry(ret1[i].part, "frequency="), 1, 0); // symbolrate
+					line = ostrcat(line, getxmlentry(ret1[i].part, "frequency="), 1, 0); // frequency
 				else
 					line = ostrcat(line, tmpstr3, 1, 0);
 				line = ostrcat(line, "#", 1, 0);
