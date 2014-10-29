@@ -216,7 +216,7 @@ msgstr "Gerai"
 #: xupnpd.h:73 xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:215
 #: zapback.c:79 zdf.h:29
 msgid "EXIT"
-msgstr "Ieiti"
+msgstr "Išeiti"
 
 #: adjust.h:67 adjust.h:82 adjust.h:91 adjust.h:96 adjust.h:121 adjust.h:151
 #: adjust.h:161 adjust.h:165 adjust.h:182 adjust.h:186 adjust.h:194
@@ -284,7 +284,7 @@ msgstr "EPG"
 
 #: adjust.h:70 epgsettings.h:138 httpdfunc.h:3653
 msgid "Channel EPG"
-msgstr "Kanal EPG"
+msgstr "Kanalo EPG"
 
 #: adjust.h:83 adjust.h:97 adjust.h:122 adjust.h:152 adjust.h:162 adjust.h:183
 #: adjust.h:187 adjust.h:195 adjust.h:199 adjust.h:203 adjust.h:209
@@ -345,19 +345,19 @@ msgstr "vidutinis"
 #: mc_videoplayer_settings.h:31 moduleconfig.h:248 plugins_mc_skin.xml.h:23
 #: skins_mc_skin.xml.h:23
 msgid "fast"
-msgstr "Greitas"
+msgstr "greitai"
 
 #: adjust.h:100 httpdfunc.h:3744 mc_audioplayer_settings.h:27
 #: mc_pictureplayer_settings.h:42 mc_videoplayer_settings.h:23
 #: plugins_mc_skin.xml.h:7 skin_default_skin.xml.h:74 skins_mc_skin.xml.h:7
 msgid "alpha"
-msgstr "Abclinis"
+msgstr "Abėcėlinis"
 
 #: adjust.h:101 httpdfunc.h:3751 mc_audioplayer_settings.h:28
 #: mc_pictureplayer_settings.h:43 mc_videoplayer_settings.h:24
 #: plugins_mc_skin.xml.h:49 skin_default_skin.xml.h:528 skins_mc_skin.xml.h:49
 msgid "reverse alpha"
-msgstr "majania tvarka abclinis"
+msgstr "atvirkščias Abėcėlinis"
 
 #: adjust.h:102 httpdfunc.h:3758 mc_audioplayer_settings.h:29
 #: mc_pictureplayer_settings.h:44 mc_videoplayer_settings.h:25
@@ -369,7 +369,7 @@ msgstr "dydis"
 #: mc_pictureplayer_settings.h:45 mc_videoplayer_settings.h:26
 #: plugins_mc_skin.xml.h:51 skin_default_skin.xml.h:530 skins_mc_skin.xml.h:51
 msgid "reverse size"
-msgstr "dydis majania tvarka"
+msgstr "dydis mažėjančia tvarka"
 
 #: adjust.h:104 httpdfunc.h:3772 mc_audioplayer_settings.h:31
 #: mc_pictureplayer_settings.h:46 mc_videoplayer_settings.h:27
@@ -382,7 +382,7 @@ msgstr "Data"
 #: mc_pictureplayer_settings.h:47 mc_videoplayer_settings.h:28
 #: plugins_mc_skin.xml.h:50 skin_default_skin.xml.h:529 skins_mc_skin.xml.h:50
 msgid "reverse date"
-msgstr "dat majania tvarka"
+msgstr "datą mažėjančia tvarka"
 
 #: adjust.h:108 httpdfunc.h:3794
 msgid "Power Menu"
@@ -394,7 +394,7 @@ msgstr "Maitinimo Meniu"
 #: webif_index.atemio6200.h:4 webif_index.atemio7600.h:2
 #: webif_index.atemio-nemesis.h:4 webif_index.h:4 webif_powercontrol.h:1
 msgid "Power Off"
-msgstr "Ijungti"
+msgstr "Išjungti"
 
 #: adjust.h:110 httpdfunc.h:3808 powerofftimer.h:118
 #: skin_default_skin.xml.h:618 webif_index.atemio510.h:7
@@ -403,7 +403,7 @@ msgstr "Ijungti"
 #: webif_index.atemio7600.h:5 webif_index.atemio-nemesis.h:7 webif_index.h:7
 #: webif_powercontrol.h:4
 msgid "Standby"
-msgstr "Budti"
+msgstr "Budėti"
 
 #: adjust.h:111 httpdfunc.h:3815 skin_default_skin.xml.h:524 softcam.h:291
 #: webif_index.atemio510.h:5 webif_index.atemio5200.h:5
@@ -411,7 +411,7 @@ msgstr "Budti"
 #: webif_index.atemio6200.h:5 webif_index.atemio7600.h:3
 #: webif_index.atemio-nemesis.h:5 webif_index.h:5 webif_powercontrol.h:2
 msgid "Restart"
-msgstr "Paleisti i naujo"
+msgstr "Paleisti iš naujo"
 
 #: adjust.h:112 httpdfunc.h:3822
 msgid "Gui Restart"
@@ -424,11 +424,11 @@ msgstr "atjungti"
 
 #: adjust.h:116 httpdfunc.h:3844
 msgid "1 sec"
-msgstr "1 sekund"
+msgstr "1 sekundė"
 
 #: adjust.h:117 avsettings.h:78 httpdfunc.h:3851
 msgid "2 sec"
-msgstr "2 sekunds"
+msgstr "2 sekundės"
 
 #: adjust.h:118 httpdfunc.h:3858 pin.h:188
 msgid "endless"
@@ -453,7 +453,7 @@ msgstr ""
 #: adjust.h:147 adjust.h:269 httpdfunc.h:4098 httpdfunc.h:4579
 #: httpdsettings.h:45
 msgid "extern"
-msgstr "iorinis"
+msgstr "išorinis"
 
 #: adjust.h:148 adjust.h:270 httpdfunc.h:4105 httpdfunc.h:4586
 #: httpdsettings.h:44
@@ -478,20 +478,20 @@ msgstr "nieko"
 #: adjust.h:157 autotimer.c:481 autotimer.c:514 fancontrol.h:72
 #: httpdfunc.h:4156 rectimer.h:1188 stopifnotused.c:112 webif_help.h:91
 msgid "standby"
-msgstr "Budti"
+msgstr "Budėti"
 
 #: adjust.h:158 autotimer.c:482 autotimer.c:515 httpdfunc.h:4163
 #: rectimer.h:1189 stopifnotused.c:111
 msgid "power off"
-msgstr "Ijungti"
+msgstr "Išjungti"
 
 #: adjust.h:166 httpdfunc.h:4207
 msgid "anim. width"
-msgstr "plotis animacija"
+msgstr "animacijos plotis"
 
 #: adjust.h:167 httpdfunc.h:4214
 msgid "anim. height"
-msgstr "auktis animacija"
+msgstr "animacijos aukštis"
 
 #: adjust.h:168 httpdfunc.h:4221
 msgid "anim. both"
@@ -508,15 +508,15 @@ msgstr "normalus"
 
 #: adjust.h:174 httpdfunc.h:4257 moduleconfig.h:246 tmc.h:556
 msgid "slow"
-msgstr "ltas"
+msgstr "lėtas"
 
 #: adjust.h:175 httpdfunc.h:4264
 msgid "very slow"
-msgstr "labai ltas"
+msgstr "labai lėtas"
 
 #: adjust.h:178 httpdfunc.h:4279 pin.h:106
 msgid "hidden"
-msgstr "paslptas"
+msgstr "paslėptas"
 
 #: adjust.h:190 httpdfunc.h:4345
 msgid "channel-movie"
@@ -532,11 +532,11 @@ msgstr "Expert mode (11)"
 
 #: adjust.h:214 httpdfunc.h:4476
 msgid "yes / vzap 1 sec"
-msgstr "taip / vzap 1 sekund"
+msgstr "taip / vzap 1 sekundė"
 
 #: adjust.h:215 httpdfunc.h:4483
 msgid "yes / vzap 2 sec"
-msgstr "taip / vzap 2 sekunds"
+msgstr "taip / vzap 2 sekundės"
 
 #: adjust.h:216 httpdfunc.h:4490
 msgid "yes / vzap endless"
@@ -619,7 +619,7 @@ msgstr "taip / vzap begalinis"
 #: xupnpd.h:60 xupnpd.h:71 xupnpd.h:73 xvidstage.h:54 xvidstage.h:100
 #: xvidstage.h:177 youtube.h:215 zapback.c:79 zdf.h:29
 msgid "Message"
-msgstr "Praneimas"
+msgstr "Pranešimas"
 
 #: ard.h:102 tvtoast.h:808 youtube.h:191 zdf.h:112
 msgid "Stream Menu"
@@ -627,7 +627,7 @@ msgstr "Srauto Meniu"
 
 #: ard.h:102 tvtoast.h:808 youtube.h:191 zdf.h:112
 msgid "Choose your Streaming Format from the following list"
-msgstr "Pasirinkite savo Srauto Format i emiau pateikto srao"
+msgstr "Pasirinkite savo Srauto Formatą iš žemiau pateikto sąrašo"
 
 #: ard.h:133 ard.h:135 beeg.h:50 beeg.h:52 epgsearch.h:179 epgsearch.h:193
 #: epgsearch.h:207 filmon.h:13 filmon.h:15 giga.h:13 giga.h:15 imdbapi.h:287
@@ -644,7 +644,7 @@ msgstr "Pasirinkite savo Srauto Format i emiau pateikto srao"
 #: xvideos.h:58 youtube.h:240 youtube.h:242 youtube.h:332 youtube.h:334
 #: zdf.h:147 zdf.h:149
 msgid "Search"
-msgstr "Paieka"
+msgstr "Paieška"
 
 #: audiotrack.h:48 play.h:278 play.h:286 rectimer.h:1506 subtitle.h:1624
 msgid "running"
@@ -653,23 +653,23 @@ msgstr "veikia"
 #: audiotrack.h:116 play.h:253 subtitle.h:1745 tunerconfig.h:157
 #: tunerconfig.h:341 tunerconfig.h:419
 msgid "undefined"
-msgstr "neapibrtas"
+msgstr "neapibrėžtas"
 
 #: autotimer.c:475 autotimer.c:508 harddisk.h:540 rectimer.h:1049
 msgid "record"
-msgstr "raas"
+msgstr "įrašas"
 
 #: autotimer.c:476 autotimer.c:509 rectimer.h:1050
 msgid "switch channel"
-msgstr "Perjungti kanal"
+msgstr "Perjungti kanalą"
 
 #: autotimer.c:537 autotimer.c:543
 msgid "Stop AutoTimer"
-msgstr "Stabdyti automatin laikmat"
+msgstr "Stabdyti automatinį laikmatį"
 
 #: autotimer.c:537
 msgid "AutoTimer succesfull stopped"
-msgstr "Automatinis Laikmatis skmingai sustabdytas"
+msgstr "Automatinis Laikmatis sėkmingai sustabdytas"
 
 #: autotimer.c:543
 msgid "ERROR... AutoTimer not stopped"
@@ -677,11 +677,11 @@ msgstr "KLAIDA: Automatinis Laikmatis nebuvo sustabdytas"
 
 #: autotimer.c:568 autotimer.c:575
 msgid "Start AutoTimer"
-msgstr "Paleisti automatin laikmat"
+msgstr "Paleisti automatinį laikmatį"
 
 #: autotimer.c:568
 msgid "AutoTimer succesfull started"
-msgstr "Automatinis Laikmatis skmingai paleistas"
+msgstr "Automatinis Laikmatis sėkmingai paleistas"
 
 #: autotimer.c:575
 msgid "ERROR... AutoTimer not started"
@@ -689,11 +689,11 @@ msgstr "KLAIDA: Automatinis laikmatis nepasileido"
 
 #: autotimer.c:603 menu.h:957 menu.h:959 skin_default_skin.xml.h:551
 msgid "Save Settings"
-msgstr "Isaugoti nustatymus"
+msgstr "Išsaugoti nustatymus"
 
 #: autotimer.c:603 menu.h:959
 msgid "Settings succesfull saved"
-msgstr "Nustatymai skmingai isaugoti"
+msgstr "Nustatymai sėkmingai išsaugoti"
 
 #: avsettings.h:68 avsettings.h:84 harddisk.h:886 lnbconfig.h:144
 #: mc_pictureplayer_settings.h:34 mc_pictureplayer_settings.h:38
@@ -703,7 +703,7 @@ msgstr "Nustatymai skmingai isaugoti"
 #: transponder.h:256 transponder.h:264 transponder.h:415 transponder.h:423
 #: tunerconfig.h:816 vfdisplay.h:42 vfdisplay.h:50
 msgid "off"
-msgstr "Ijungti"
+msgstr "Išjungti"
 
 #: avsettings.h:70
 msgid "redKey"
@@ -711,29 +711,29 @@ msgstr "Raudonas mygtukas"
 
 #: avsettings.h:79
 msgid "4 sec"
-msgstr "4 Sekunds"
+msgstr "4 Sekundės"
 
 #: avsettings.h:80
 msgid "6 sec"
-msgstr "6 Sekunds"
+msgstr "6 Sekundės"
 
 #: avsettings.h:81
 msgid "8 sec"
-msgstr "8 Sekunds"
+msgstr "8 Sekundės"
 
 #: avsettings.h:82
 msgid "10 sec"
-msgstr "10 Sekundi"
+msgstr "10 Sekundžių"
 
 #: avsettings.h:85 lnbconfig.h:143 mc_pictureplayer_settings.h:35
 #: mc_pictureplayer_settings.h:39 readerconfig.h:416 transponder.h:257
 #: transponder.h:266 transponder.h:416 transponder.h:425
 msgid "on"
-msgstr "jungta"
+msgstr "įjungta"
 
 #: avsettings.h:271 videomode.h:60
 msgid "Is this Videomode ok ?"
-msgstr "Ar is vaizdo reimas tinka?"
+msgstr "Ar šis vaizdo režimas tinka?"
 
 #: betarobot.h:57
 msgid ""
@@ -752,11 +752,11 @@ msgstr ""
 #: transponder.h:480 transponder.h:493 transponder.h:504 transponder.h:574
 #: youtube.h:167 zdf.h:86
 msgid "unknown"
-msgstr "Neinomas"
+msgstr "Nežinomas"
 
 #: bgdownload.h:176
 msgid "Really stop download ?"
-msgstr "DMESIO: Ar norite nutraukti siuntim ?"
+msgstr "DĖMESIO: Ar norite nutraukti siuntimą ?"
 
 #: blindscanadjust.h:13
 msgid "Sat: "
@@ -764,23 +764,23 @@ msgstr "Palydovas:"
 
 #: blindscanadjust.h:17
 msgid "Cable: "
-msgstr "Kabelin :"
+msgstr "Kabelinė :"
 
 #: blindscanadjust.h:21
 msgid "Terrestrial: "
-msgstr "Antemin :"
+msgstr "Antžeminė :"
 
 #: blindscanadjust.h:120 skin_default_skin.xml.h:541 webif_channellist.h:2
 msgid "SAT"
-msgstr "Palydovas"
+msgstr "Šeš"
 
 #: blindscanadjust.h:121 tunerconfig.h:339
 msgid "Cable"
-msgstr "Kabelin"
+msgstr "Kabelinė"
 
 #: blindscanadjust.h:122
 msgid "Terrestrial"
-msgstr "Antemin"
+msgstr "Antžeminė"
 
 #: browser.h:191
 msgid "Home"
@@ -788,11 +788,11 @@ msgstr "Namai"
 
 #: browser.h:206
 msgid "Browser Favoriten"
-msgstr "Mgstami"
+msgstr "Mėgstami"
 
 #: browser.h:206
 msgid "Choose your Internet Favorite from the following list"
-msgstr "Pasirinkite savo interneto mgstamus i io srao"
+msgstr "Pasirinkite savo interneto mėgstamus iš šio sąrašo"
 
 #: callmon_main.h:39
 msgid ""
@@ -800,9 +800,6 @@ msgid ""
 "\n"
 "check your parameter "
 msgstr ""
-"Callmonitor Timeout !!!\n"
-"\n"
-"Check your settings "
 
 #: callmon_main.h:76 callmon_main.h:98 callmon_main.h:116 callmon_main.h:120
 #: callmon_main.h:124 callmon_main.h:128 instar.h:192 lcdpearl1.c:506
@@ -915,7 +912,7 @@ msgstr "Perkelti"
 
 #: channellist.h:587
 msgid "Remove mode"
-msgstr "Paalinti"
+msgstr "Pašalinti"
 
 #: channellist.h:596
 msgid "Copy mode"
@@ -923,7 +920,7 @@ msgstr "Kopijuoti"
 
 #: channellist.h:605
 msgid "Protect mode"
-msgstr "Apsaugokite"
+msgstr "Apsaugoti"
 
 #: channellist.h:614
 msgid "Edit mode"
@@ -945,7 +942,7 @@ msgstr "Televizija"
 #: channellist.h:702 channellist.h:1228 channellist.h:1229 channellist.h:1441
 #: webif_channellist.h:5
 msgid "Bouquets"
-msgstr "Mgstami"
+msgstr "Mėgstami"
 
 #: channellist.h:719 channellist.h:1581 skin_default_skin.xml.h:129
 msgid "Channel"
@@ -953,12 +950,12 @@ msgstr "Kanalas"
 
 #: channellist.h:735 channellist.h:1262 channellist.h:1263 channellist.h:1515
 msgid "Satellites"
-msgstr "Palydovai"
+msgstr "Palydovas"
 
 #: channellist.h:752 channellist.h:1330 channellist.h:1331 channellist.h:1655
 #: webif_channellist.h:3
 msgid "Provider"
-msgstr "Tiekjas"
+msgstr "Transliuotojas"
 
 #: channellist.h:771 channellist.h:772 channellist.h:1212 channellist.h:1213
 msgid "All Channels"
@@ -966,23 +963,23 @@ msgstr "Visi kanalai"
 
 #: channellist.h:913
 msgid "Copy providerlist successfull"
-msgstr "Tiekjai skmingai nukopijuoti"
+msgstr "Transliuotojai sėkmingai nukopijuoti"
 
 #: channellist.h:915
 msgid "Copy providerlist not ok"
-msgstr "DMESIO : Tiekjai nebus kopijuojami"
+msgstr "DĖMESIO : Transliuotojai nenukopijuoti"
 
 #: channellist.h:920
 msgid "Copy satlist successfull"
-msgstr "Kanalai skmingai nukopijuoti"
+msgstr "Kanalai sėkmingai nukopijuoti"
 
 #: channellist.h:922
 msgid "Copy satlist not ok"
-msgstr "DMESIO : kanalai nebus kopijuojami"
+msgstr "DĖMESIO : kanalai nenukopijuoti"
 
 #: channellist.h:1006
 msgid "Can't remove akive Service"
-msgstr "Negalima paalinti aktyvios tarnybos"
+msgstr "Negalima pašalinti aktyvaus Serviso"
 
 #: channellist.h:1296 channellist.h:1297
 msgid "Channels A-Z"
@@ -1026,19 +1023,19 @@ msgstr ""
 
 #: copyfile.h:839
 msgid "Amount of files: "
-msgstr "Total of Fail: "
+msgstr "Viso Failų: "
 
 #: copyfile.h:881 copyfile.h:882
 msgid "file move error"
-msgstr "DMESIO : Fail perklimas nepavyko!"
+msgstr "DĖMESIO : Failų perkėlimas nepavyko!"
 
 #: copyfile.h:886 copyfile.h:887
 msgid "file copy error"
-msgstr "DMESIO : Fail kopija nepavyko!"
+msgstr "DĖMESIO : Failų kopija nepavyko!"
 
 #: copyfile.h:893 copyfile.h:894
 msgid "wait for stopping"
-msgstr "Praome palaukti, kol operacija baigsis"
+msgstr "Prašome palaukti, kol operacija baigsis"
 
 #: dir.h:83 dir.h:92 dir.h:101 dir.h:110 plugins_lcdpearl1_skin.xml.h:2
 #: plugins_lcdsamsung_skin.xml.h:2 skins_lcdpearl1_skin.xml.h:2
@@ -1170,11 +1167,11 @@ msgstr ""
 
 #: diseqcconfig.h:254
 msgid "north"
-msgstr "iaur"
+msgstr "Šiaurė"
 
 #: diseqcconfig.h:255
 msgid "south"
-msgstr "Piets"
+msgstr "Pietūs"
 
 #: diseqcconfig.h:259
 msgid "east"
@@ -1195,7 +1192,8 @@ msgstr "The hosters URL is not http://"
 #: thefile.h:68 videoweed.h:80
 msgid ""
 "The file is being transfered to our other servers. This may take few minutes."
-msgstr "Failas yra perkeliama kit ms servers. Tai gali utrukti kelet minutes."
+msgstr ""
+"Failas yra perkeliama į kitą mūsų serverį. Tai gali užtrukti keletą minučių."
 
 #: divxstage.h:150 faststream.h:79 faststream.h:90 faststream.h:102
 #: faststream.h:160 filenuke.h:84 filenuke.h:95 filenuke.h:107 filenuke.h:157
@@ -1208,7 +1206,7 @@ msgstr "Failas yra perkeliama kit ms servers. Tai gali utrukti kelet minutes."
 #: streamcloud.h:128 streamcloud.h:167 vidstream.h:86 vidstream.h:97
 #: vidstream.h:167 xvidstage.h:100 xvidstage.h:177
 msgid "The page is temporarily unavailable"
-msgstr "is puslapis yra laikinai nepasiekiamas"
+msgstr "Šis puslapis yra laikinai nepasiekiamas"
 
 #: dlna.h:334
 msgid "DLNA started."
@@ -1220,7 +1218,7 @@ msgid ""
 "Please check your config."
 msgstr ""
 "DLNA nepasileido , \n"
-" Praom patikrinti savo config."
+" Prašom patikrinti savo konfig."
 
 #: dlna.h:345
 msgid "DLNA now stopped"
@@ -1228,19 +1226,19 @@ msgstr "DLNA sustojo"
 
 #: download.h:77 download.h:87
 msgid "Download (KB): "
-msgstr "Parsisisti ( KB) :"
+msgstr "Parsisiųsti ( KB) :"
 
 #: download.h:97
 msgid "download error"
-msgstr "KLAIDA: Nepavyko atsisisti !"
+msgstr "KLAIDA: Nepavyko atsisiųsti !"
 
 #: download.h:101
 msgid "wait for stopping download"
-msgstr "DMESIO: Palaukite , kol atsisiuntimas baigsis."
+msgstr "DĖMESIO: Palaukite , kol siuntimas baigsis."
 
 #: dvdplay.h:29
 msgid "EJECT"
-msgstr "Istumti"
+msgstr "Išstumti"
 
 #: dvdplay.h:29 play.h:1412 plugins_dlna_skin.xml.h:10
 #: skins_dlna_skin.xml.h:10
@@ -1252,19 +1250,19 @@ msgstr "Pasirinkti"
 #: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:749
 #: mc_videoplayer.h:888 play.h:1488
 msgid "Can't start playback !"
-msgstr "Nepavyko paleisti atkrim !"
+msgstr "Nepavyko paleisti atkūrimą !"
 
 #: epg.h:183 skin_default_skin.xml.h:594
 msgid "Single (EPG)"
-msgstr "Vienas ( EPG)"
+msgstr "Kanalo ( EPG)"
 
 #: epg.h:185
 msgid "Multi (EPG)"
-msgstr "Keletas (EPG)"
+msgstr "Kanalų (EPG)"
 
 #: epgsearch.h:27
 msgid "Search only aktual epg ?"
-msgstr "Paieka iame EPG"
+msgstr "Paieška pagal faktinį EPG"
 
 #: epgsearch.h:228 plugins_stopifnotused_skin.xml.h:2
 #: skins_stopifnotused_skin.xml.h:2
@@ -1289,7 +1287,7 @@ msgstr "Trileris"
 
 #: epgsearch.h:268
 msgid "Child"
-msgstr "Vaik"
+msgstr "Vaikų"
 
 #: epgsearch.h:276
 msgid "Fantasy"
@@ -1309,7 +1307,7 @@ msgstr "Karinis"
 
 #: epgsearch.h:308
 msgid "Scifi"
-msgstr "MokslinFantastika"
+msgstr "MokslinėFantastika"
 
 #: epgsearch.h:316
 msgid "Sport"
@@ -1335,13 +1333,13 @@ msgstr "Kanalo EPG"
 #: settings_bluebutton.h:16 settings_pluginbutton.h:17 settings_redbutton.h:17
 #: skin_default_skin.xml.h:408
 msgid "Multi EPG"
-msgstr "Kanal EPG"
+msgstr "Kanalų EPG"
 
 #: epgsettings.h:141 keyactions.h:91 settings_bluebutton.h:17
 #: settings_pluginbutton.h:18 settings_redbutton.h:18
 #: skin_default_skin.xml.h:262
 msgid "Graphic Multi EPG"
-msgstr "Grafinis kanal EPG"
+msgstr "Grafinis kanalų EPG"
 
 #: epgsettings.h:148 tmc.h:389 webif_help.h:79
 msgid "scan"
@@ -1349,11 +1347,11 @@ msgstr "Skanuoti"
 
 #: epgsettings.h:149
 msgid "whitelist"
-msgstr "Pageidautinas sraas"
+msgstr "Pageidautinas sąrašas"
 
 #: epgsettings.h:150
 msgid "scan and whitelist"
-msgstr "Scan and White list"
+msgstr ""
 
 #: epgsettings.h:191 epgsettings.h:202 epgsettings.h:207 epgsettings.h:212
 #: mediadbsettings.h:36
@@ -1362,7 +1360,7 @@ msgstr "Visada"
 
 #: epgsettings.h:192
 msgid "only on power off / restart"
-msgstr "Tik Ijungiant / Perkraunant"
+msgstr "Tik Išjungiant / Perkraunant"
 
 #: epgsettings.h:193 mediadbsettings.h:48
 msgid "never"
@@ -1370,55 +1368,55 @@ msgstr "Niekada"
 
 #: epgsettings.h:201 epgsettings.h:206 epgsettings.h:211
 msgid "only for scan"
-msgstr "Tik nuskaityti"
+msgstr "Tik nuskaitymui"
 
 #: epgsettings.h:216
 msgid "poweroff"
-msgstr "Ijungimas"
+msgstr "Išjungimas"
 
 #: epgsettings.h:263
 msgid "Deavtivate Refresh Time and After EPG in scan-mode"
-msgstr "Deavtivate Atnaujinti Laikas ir Po EPG skenavimo reimu"
+msgstr "Deavtivate Atnaujinti Laikas ir Po EPG skenavimo režimu"
 
 #: epgsettings.h:289
 msgid "EPG resetet and now clear."
-msgstr "EPG ivalytas"
+msgstr "EPG išvalytas"
 
 #: epgsettings.h:303
 msgid "EPG Scan Log"
-msgstr "EPG Scan urnalas"
+msgstr "EPG Scan žurnalas"
 
 #: extensions.h:25
 msgid "Feed"
-msgstr "Praome vesti adres"
+msgstr "Prašome įvesti adresą"
 
 #: extensions.h:87
 msgid "Installation start"
-msgstr "Diegimas pradtas"
+msgstr "Diegimas pradėtas"
 
 #: extensions.h:89
 msgid "Remove start"
-msgstr "alinimas pradtas"
+msgstr "Šalinimas pradėtas"
 
 #: extensions.h:98
 msgid "New free space (KB): "
-msgstr "Nauja laisva erdv ( KB) :"
+msgstr "Nauja laisva erdvė ( KB) :"
 
 #: extensions.h:104
 msgid "Install success"
-msgstr "Diegimas skmingai baigsi"
+msgstr "Diegimas sėkmingai baigėsi"
 
 #: extensions.h:106
 msgid "Install error"
-msgstr "KLAIDA: Nepavyko diegti !"
+msgstr "KLAIDA: Nepavyko įdiegti !"
 
 #: extensions.h:108
 msgid "Remove success"
-msgstr "skmingai paalintas"
+msgstr "sėkmingai pašalintas"
 
 #: extensions.h:110
 msgid "Remove error"
-msgstr "KLAIDA : alinimas nepavyko!"
+msgstr "KLAIDA : Šalinimas nepavyko!"
 
 #: extensions.h:130 httpdfunc.h:5703
 msgid "Install to MNT"
@@ -1434,7 +1432,7 @@ msgstr "Diegti SWAP (USB ar HDD)"
 
 #: extensions.h:169 httpdfunc.h:5687
 msgid "Choice Install Medium"
-msgstr "Pasirinkite diegimo laikmen"
+msgstr "Pasirinkite diegimo laikmeną"
 
 #: extensions.h:175 extensions.h:226 extensions.h:487
 msgid "Tpk Install Info"
@@ -1444,15 +1442,15 @@ msgstr "TPK Diegimo Informacija"
 msgid "Can't install Package. Package to big."
 msgstr ""
 "KLAIDA:paskirta paketas yra pernelyg didelis\n"
-" ir negali bti diegtas."
+" ir negali būti įdiegtas."
 
 #: extensions.h:202 httpdfunc.h:5518
 msgid "Tpk Install - select section"
-msgstr "Diegimas - Pasirinkite kategorij"
+msgstr "Diegimas - Pasirinkite kategoriją"
 
 #: extensions.h:207 httpdfunc.h:5582 skin_default_skin.xml.h:680
 msgid "Tpk Install - select file"
-msgstr "TPK diegimas - pasirinkite fail"
+msgstr "TPK diegimas - pasirinkite failą"
 
 #: extensions.h:212 extensions.h:239 extensions.h:395 httpdfunc.h:5841
 #: tpk.h:2990
@@ -1478,21 +1476,21 @@ msgstr "Startuoja"
 
 #: extensions.h:235 httpdfunc.h:5804
 msgid "Tpk Install Info - Install OK"
-msgstr "Skmingai diegta"
+msgstr "Sėkmingai įdiegta"
 
 #: extensions.h:239 extensions.h:244 httpdfunc.h:5806 httpdfunc.h:5808
 msgid "Tpk Install Info - Install ERROR"
-msgstr "KLAIDA: Nepavyko diegti !"
+msgstr "KLAIDA: Nepavyko įdiegti !"
 
 #: extensions.h:252 httpdfunc.h:5862 httpdfunc.h:5864 httpdfunc.h:6129
 msgid "TPK Install done, your system will reboot !"
 msgstr ""
-"diegta \n"
+"Įdiegta \n"
 " imtuvas persikraus dabar"
 
 #: extensions.h:276 httpdfunc.h:5997
 msgid "Tpk Remove - select file"
-msgstr "Paalinti - Pasirinkt"
+msgstr "Pašalinti - Pasirinktą"
 
 #: extensions.h:282
 msgid "Removeing"
@@ -1500,20 +1498,20 @@ msgstr ""
 
 #: extensions.h:287
 msgid "Tpk Remove Info"
-msgstr "TPK Paalinti"
+msgstr "TPK Pašalinti"
 
 #: extensions.h:295 httpdfunc.h:6077
 msgid "Tpk Remove Info - Remove OK"
-msgstr "skmingai paalintas"
+msgstr "sėkmingai pašalintas"
 
 #: extensions.h:302 httpdfunc.h:6081
 msgid "Tpk Remove Info - Remove ERROR"
-msgstr "KLAIDA : alinimas nepavyko"
+msgstr "KLAIDA : Šalinimas nepavyko"
 
 #: extensions.h:309 httpdfunc.h:6127
 msgid "TPK Remove done, your system will reboot !"
 msgstr ""
-"Paalino \n"
+"Pašalino \n"
 " imtuvas persikraus dabar"
 
 #: extensions.h:341 extensions.h:487
@@ -1532,7 +1530,7 @@ msgstr ""
 #: extensions.h:405
 msgid "TPK Tmp Install done, your system will reboot !"
 msgstr ""
-"Skmingai diegta i tmp.\n"
+"Sėkmingai įdiegta iš tmp.\n"
 " imtuvas persikraus dabar"
 
 #: extensions.h:429 extensions.h:433 httpdfunc.h:6166 httpdfunc.h:6178
@@ -1541,7 +1539,7 @@ msgstr "KLAIDA: Nepavyko atnaujinti !"
 
 #: extensions.h:429 httpdfunc.h:6169
 msgid "Can't get all TPK index !"
-msgstr "DMESIO : Nepavyko gauti vis skiepi indeks !"
+msgstr "DĖMESIO : Nepavyko gauti visą įskiepių indeksą !"
 
 #: extensions.h:433 httpdfunc.h:6181
 msgid "Can't update all packages !"
@@ -1633,7 +1631,7 @@ msgstr "Pervardinti"
 
 #: filemanager.h:62 filemanager.h:87 filemanager.h:97
 msgid "Create Folder"
-msgstr "Sukurti aplank"
+msgstr "Sukurti aplanką"
 
 #: filemanager.h:84 play.h:633 plugins_sudoku_skin.xml.h:10
 #: skins_sudoku_skin.xml.h:10 webif_index.atemio5200.h:36
@@ -1653,7 +1651,7 @@ msgstr "Meniu"
 
 #: filemanager.h:89
 msgid "Choose your Filemanager Option from the following list"
-msgstr "Pasirinkite savo Filemanager variantas i emiau pateikto srao"
+msgstr "Pasirinkite savo Filemanager variantas iš žemiau pateikto sąrašo"
 
 #: filemanager.h:95
 msgid "Can't rename file !"
@@ -1665,47 +1663,47 @@ msgstr "Negalima sukurti aplanko !"
 
 #: filemanager.h:178
 msgid "Really copy this file/dir?"
-msgstr "Tikrai nukopijuoti fail / direktorij ?"
+msgstr "Tikrai nukopijuoti šį failą / direktoriją ?"
 
 #: filemanager.h:186
 msgid "Really move this file/dir?"
-msgstr "Tikrai perkelti fail / direktorij ?"
+msgstr "Tikrai perkelti šį failą / direktoriją ?"
 
 #: filemanager.h:194
 msgid "From"
-msgstr "I"
+msgstr "Iš"
 
 #: filemanager.h:198
 msgid "To"
-msgstr ""
+msgstr "Į"
 
 #: filemanager.h:217 filemanager.h:224
 msgid "Move File"
-msgstr "Perkelti Fail ( us)"
+msgstr "Perkelti File ( s)"
 
 #: filemanager.h:231 filemanager.h:233
 msgid "Copy File"
-msgstr "Kopijuoti Fail ( us)"
+msgstr "Kopijuoti failas ( ai)"
 
 #: filemanager.h:276
 msgid "Really delete this file/dir?"
-msgstr "Tikrai itrinti fail / direktorij ?"
+msgstr "Tikrai ištrinti šį failą / direktoriją ?"
 
 #: filemanager.h:289
 msgid "Can't remove file/dir !"
-msgstr "Negalima paalinti failo / direktorijos !"
+msgstr "Negalima pašalinti failo / direktorijos !"
 
 #: filemanager.h:329
 msgid "Can't show this file!"
-msgstr "Negaliu parodyti ios bylos !"
+msgstr "Negaliu parodyti šios bylos !"
 
 #: firedrive.h:72 putlocker.h:85
 msgid "This file doesn't exist, or has been removed."
-msgstr "is failas neegzistuoja arba buvo itrintas."
+msgstr "Šis failas neegzistuoja arba buvo ištrintas."
 
 #: firedrive.h:128
 msgid "This file is private and only viewable by the owner."
-msgstr "is failas yra privatus ir matomas tik savininkui."
+msgstr "Šis failas yra privatus ir matomas tik savininkui."
 
 #: global.h:5532 keyactions.h:290
 msgid "ERROR cant read res"
@@ -1721,7 +1719,7 @@ msgstr "Antradienis"
 
 #: global.h:5759 rectimer.h:1082 skin_default_skin.xml.h:743
 msgid "Wednesday"
-msgstr "Treiadienis"
+msgstr "Trečiadienis"
 
 #: global.h:5760 rectimer.h:1083 skin_default_skin.xml.h:661
 msgid "Thursday"
@@ -1733,7 +1731,7 @@ msgstr "Penktadienis"
 
 #: global.h:5762 rectimer.h:1085 skin_default_skin.xml.h:550
 msgid "Saturday"
-msgstr "etadienis"
+msgstr "Šeštadienis"
 
 #: global.h:5763 rectimer.h:1086 skin_default_skin.xml.h:637
 msgid "Sunday"
@@ -1761,7 +1759,7 @@ msgstr "Pen"
 
 #: global.h:5772
 msgid "Sat"
-msgstr "Palydovas"
+msgstr "Šeš"
 
 #: global.h:5773
 msgid "Sun"
@@ -1793,7 +1791,7 @@ msgstr ""
 
 #: global.h:6097
 msgid "Select Your Serach Modus"
-msgstr "Pasirinkite paiekos reimas"
+msgstr "Pasirinkite paieškos režimas"
 
 #: global.h:6157
 msgid ""
@@ -1801,16 +1799,16 @@ msgid ""
 "Your System will reboot !"
 msgstr ""
 "Konversija atsakiklio / palydovo baigta.\n"
-"Praom atlikti nauj kanal skenavim po sistemos persikrovimo.\n"
+"Prašom atlikti naują kanalų skenavimą po sistemos persikrovimo.\n"
 " imtuvas perkraunamas !"
 
 #: global.h:6221
 msgid "Error: Transponder Source file not found"
-msgstr "Klaida: Sistuvo altinis failas nerastas"
+msgstr "Klaida: Siųstuvo Šaltinis failas nerastas"
 
 #: global.h:6243
 msgid "Error: Transponder Source file no data"
-msgstr "Klaida: Sistuvo altinio failas nra duomen"
+msgstr "Klaida: Siųstuvo šaltinio failas nėra duomenų"
 
 #: global.h:6415
 msgid ""
@@ -1822,7 +1820,7 @@ msgstr ""
 
 #: global.h:6626
 msgid "Image"
-msgstr "Atvaizdas"
+msgstr ""
 
 #: global.h:6629
 msgid "Version"
@@ -1834,7 +1832,7 @@ msgstr "Instaliuota:"
 
 #: global.h:6637
 msgid "Copyright"
-msgstr " Autorins teiss"
+msgstr "© Autorinės teisės"
 
 #: global.h:6646 skin_default_skin.xml.h:691
 msgid "Tuner"
@@ -1850,11 +1848,11 @@ msgstr "Serverio pavadinimas"
 
 #: gmediarender.h:113
 msgid "Wait for connect or press EXIT"
-msgstr "Palaukite prijungimo ar paspauskite mygtuk EXIT"
+msgstr "Palaukite prijungimo ar paspauskite mygtuką EXIT"
 
 #: gmultiepg.h:546 gmultiepg.h:746
 msgid "GRAPHIC MULTI EPG - Bouquets"
-msgstr "Grafinis Multi EPG - Mgstamiausi"
+msgstr "Grafinis Multi EPG - Mėgstamiausi"
 
 #: gmultiepg.h:559
 msgid "GRAPHIC MULTI EPG - Channel"
@@ -1866,7 +1864,7 @@ msgstr "Grafinis Multi EPG - Palydovai"
 
 #: gmultiepg.h:585
 msgid "GRAPHIC MULTI EPG - Provider"
-msgstr "Grafinis Multi EPG - Tiekjai"
+msgstr "Grafinis Multi EPG - Tiekėjai"
 
 #: gmultiepg.h:598
 msgid "GRAPHIC MULTI EPG - All Channels"
@@ -1874,11 +1872,11 @@ msgstr "Grafinis Multi EPG - Visi kanalai"
 
 #: harddisk.h:127 harddisk.h:128
 msgid "Harddisk Format - Filesystem"
-msgstr "Kietojo disko formatavimas - Fail sistema"
+msgstr "Kietojo disko formatavimas - Failų sistema"
 
 #: harddisk.h:129
 msgid "select the format filesystem type for your media drive"
-msgstr "Pasirinkite savo kaupiklio format, fail sistemos tip "
+msgstr "Pasirinkite savo kaupiklio formatą, failų sistemos tipą "
 
 #: harddisk.h:167 plugins_mc_skin.xml.h:18 skins_mc_skin.xml.h:18
 msgid "default"
@@ -1886,63 +1884,63 @@ msgstr "Numatyta"
 
 #: harddisk.h:217 harddisk.h:218 harddisk.h:459 harddisk.h:460
 msgid "Harddisk Configure"
-msgstr "Kietojo disko konfigravimas"
+msgstr "Kietojo disko konfigūravimas"
 
 #: harddisk.h:219
 msgid "select the function for the specified device"
-msgstr "pasirinkite nurodyto prietaiso funkcij"
+msgstr "pasirinkite nurodyto prietaiso funkciją"
 
 #: harddisk.h:230 harddisk.h:724
 msgid "use medium for record"
-msgstr "Naudoti kaip Recordings - prietais"
+msgstr "Naudoti kaip Recordings - prietaisą"
 
 #: harddisk.h:235
 msgid "del medium for record"
-msgstr "alinti kaip Recordings - prietais"
+msgstr "Šalinti kaip Recordings - prietaisą"
 
 #: harddisk.h:240 harddisk.h:729
 msgid "use medium for extension"
-msgstr "Naudokite kaip pltini - prietais"
+msgstr "Naudokite kaip plėtinių - prietaisą"
 
 #: harddisk.h:245
 msgid "del medium for extension"
-msgstr "alinti kaip pltini - prietais"
+msgstr "Šalinti kaip plėtinių - prietaisą"
 
 #: harddisk.h:250 harddisk.h:731
 msgid "use medium for swap"
-msgstr "Naudoti kaip apsikeitimo (SWAP) prietais"
+msgstr "Naudoti kaip apsikeitimo (SWAP) prietaisą"
 
 #: harddisk.h:255
 msgid "del medium for swap"
-msgstr "alinti kaip apsikeitimo (SWAP) prietais"
+msgstr "Šalinti kaip apsikeitimo (SWAP) prietaisą"
 
 #: harddisk.h:260 harddisk.h:733
 msgid "use medium for backup"
-msgstr "Naudokite kaip Backup - prietais"
+msgstr "Naudokite kaip Backup - prietaisą"
 
 #: harddisk.h:265
 msgid "del medium for backup"
-msgstr "alinti kaip Backup - prietais"
+msgstr "Šalinti kaip Backup - prietaisą"
 
 #: harddisk.h:350
 msgid "Are you sure you want to delete this directory?"
-msgstr "Ar tikrai norite itrinti aplank?"
+msgstr "Ar tikrai norite ištrinti šį aplanką?"
 
 #: harddisk.h:355
 msgid ""
 "Directory has content\n"
 "Really delete directory and content?"
 msgstr ""
-"Kataloge yra fail\n"
-"Tikrai itrinti katalog ir turin ?"
+"Kataloge yra failų\n"
+"Tikrai ištrinti katalogą ir turinį ?"
 
 #: harddisk.h:382
 msgid "can't create or delete directory"
-msgstr "KLAIDA : Nepavyko sukurti ar itrinti katalog"
+msgstr "KLAIDA : Nepavyko sukurti ar ištrinti katalogą"
 
 #: harddisk.h:386
 msgid "succesfull create or delelete directory"
-msgstr "Skmingai sukurtas ar itrintas katalogas"
+msgstr "Sėkmingai sukurtas ar ištrintas katalogas"
 
 #: harddisk.h:439 skin_default_skin.xml.h:270
 msgid "Harddisk"
@@ -1950,7 +1948,7 @@ msgstr "Kietas diskas"
 
 #: harddisk.h:439
 msgid "sorry found no harddisk"
-msgstr "Atsipraome nerado Kieto disko"
+msgstr "Atsiprašome nerado Kieto disko"
 
 #: harddisk.h:447 harddisk.h:448
 msgid "Harddisk Format"
@@ -1958,19 +1956,19 @@ msgstr "Kietojo disko formatavimas"
 
 #: harddisk.h:449
 msgid "select the media drive from Device List for formating"
-msgstr "Pasirinkite i srao disk kur norite formatuoti"
+msgstr "Pasirinkite iš sąrašo diską kurį norite formatuoti"
 
 #: harddisk.h:453 harddisk.h:454
 msgid "Harddisk Fsck"
-msgstr "Fail sistemos tikrinimas"
+msgstr "Failų sistemos tikrinimas"
 
 #: harddisk.h:455
 msgid "select the media drive from Device List for fsck"
-msgstr "Pasirinkite i srao , kur norite patikrinti disk"
+msgstr "Pasirinkite iš sąrašo , kurį norite patikrinti diską"
 
 #: harddisk.h:461
 msgid "select the media drive from Device List for configuration"
-msgstr "Pasirinkite i srao , kur norite konfigruoti disk"
+msgstr "Pasirinkite iš sąrašo , kurį norite konfigūruoti diską"
 
 #: harddisk.h:479
 msgid "HDD "
@@ -1978,7 +1976,7 @@ msgstr "HDD"
 
 #: harddisk.h:485
 msgid "STICK "
-msgstr "USB"
+msgstr "STICK"
 
 #: harddisk.h:504
 msgid "ext"
@@ -2015,7 +2013,7 @@ msgid ""
 "Are you sure you want to format this Partition?\n"
 "Box reboots after format"
 msgstr ""
-"Ar tikrai norite formatuoti skirsn ? \n"
+"Ar tikrai norite formatuoti šį skirsnį ? \n"
 " imtuvas persikraus po prietaiso formatavimo "
 
 #: harddisk.h:793
@@ -2024,7 +2022,7 @@ msgid ""
 "partition could not be created"
 msgstr ""
 "KLAIDA: \n"
-" Skirsnis negali bti sukurtas !"
+" Skirsnis negali būti sukurtas !"
 
 #: harddisk.h:811
 msgid ""
@@ -2039,8 +2037,8 @@ msgid ""
 "Are you sure you want to check this Partition?\n"
 "Box reboots after check"
 msgstr ""
-"Ar js tikrai norite patikrinti skirsn ? \n"
-" imtuvas persikraus patikrinus rengin."
+"Ar jūs tikrai norite patikrinti šį skirsnį ? \n"
+" imtuvas persikraus patikrinus įrenginį."
 
 #: harddisk.h:877 harddisk.h:878
 msgid "Harddisk Sleep"
@@ -2120,7 +2118,7 @@ msgstr "Spinner time"
 
 #: httpdfunc.h:3594 skin_default_skin.xml.h:269
 msgid "Hangtime"
-msgstr "Laikas, kol pasirodys Klaid praneimas"
+msgstr "Laikas, kol pasirodys Klaidų pranešimas"
 
 #: httpdfunc.h:3625 skin_default_skin.xml.h:570
 msgid "Second Infobar"
@@ -2140,11 +2138,11 @@ msgstr "GreitasTtitan perkrovimas"
 
 #: httpdfunc.h:3737 skin_default_skin.xml.h:187
 msgid "Dirsort"
-msgstr "Riuoti pagal"
+msgstr "Rūšiuoti pagal"
 
 #: httpdfunc.h:3787 skin_default_skin.xml.h:475
 msgid "Power aktion"
-msgstr "Reakcija Power Mygtuko paspaudim"
+msgstr "Reakcija į Power Mygtuko paspaudimą"
 
 #: httpdfunc.h:3830 skin_default_skin.xml.h:735
 msgid "Virtualzap Timeout"
@@ -2164,7 +2162,7 @@ msgstr ""
 
 #: httpdfunc.h:3965 skin_default_skin.xml.h:501
 msgid "Record Overrun (min)"
-msgstr "Riedjimas laikmaiu Recordings (min)"
+msgstr "Riedėjimas laikmačiu Recordings (min)"
 
 #: httpdfunc.h:3997 skin_default_skin.xml.h:599
 msgid "Skip 1/3"
@@ -2188,11 +2186,11 @@ msgstr "Auto Kanalo pavadinimo keitimas"
 
 #: httpdfunc.h:4135 skin_default_skin.xml.h:579
 msgid "Set action after rec"
-msgstr "Veiksmas po raymo"
+msgstr "Veiksmas po įrašymo"
 
 #: httpdfunc.h:4171 skin_default_skin.xml.h:590
 msgid "Show Timeline in Channellist"
-msgstr "Rodyti progreso juost channellist ?"
+msgstr "Rodyti progreso juostą channellist ?"
 
 #: httpdfunc.h:4193 skin_default_skin.xml.h:75
 msgid "Animated Screens"
@@ -2204,28 +2202,28 @@ msgstr "Animacijos greitis"
 
 #: httpdfunc.h:4272 skin_default_skin.xml.h:133
 msgid "Channellist view"
-msgstr "Kanal sarao vaizdas"
+msgstr "Kanalų sarašo vaizdas"
 
 #: httpdfunc.h:4294
 msgid "Show last pos Question"
-msgstr "Rodyti paskutines poz Klausim"
+msgstr "Rodyti paskutines poz Klausimą"
 
 #: httpdfunc.h:4316 skin_default_skin.xml.h:527
 msgid "Resync Recording immediately"
-msgstr "Resync raymas i karto"
+msgstr "Resync įrašymas iš karto"
 
 #: httpdfunc.h:4338 skin_default_skin.xml.h:499
 msgid "Recording name"
-msgstr "rao pavadinimas"
+msgstr "įrašo pavadinimas"
 
 #: httpdfunc.h:4360 httpdfunc.h:5125 skin_default_skin.xml.h:422
 #: webif_info.h:2
 msgid "Newsletter"
-msgstr "Naujienlaikis"
+msgstr "Naujienlaiškis"
 
 #: httpdfunc.h:4382 skin_default_skin.xml.h:585
 msgid "Show hidden files"
-msgstr "Rodyti paslptus failus ?"
+msgstr "Rodyti paslėptus failus ?"
 
 #: httpdfunc.h:4404 skin_default_skin.xml.h:226
 msgid "Expert Modus"
@@ -2233,19 +2231,19 @@ msgstr "Expert Mode"
 
 #: httpdfunc.h:4433 skin_default_skin.xml.h:586
 msgid "Show infobar on program change"
-msgstr "Rodyti Informacins juostos ant zap ?"
+msgstr "Rodyti Informacinės juostos ant zap ?"
 
 #: httpdfunc.h:4455 skin_default_skin.xml.h:721
 msgid "Use cross control for fast zapping and vol"
-msgstr "Naudokite kryminio kontrol greitai perirai ir garsui"
+msgstr "Naudokite kryžminio kontrolę greitai peržiūrai ir garsui"
 
 #: httpdfunc.h:4500 skin_default_skin.xml.h:171
 msgid "Deactivate Crypt Support on Media Playback"
-msgstr "Ijungti Crypt param per Media atkrimas"
+msgstr "Išjungti Crypt paramą per Media atkūrimas"
 
 #: httpdfunc.h:4523 skin_default_skin.xml.h:172
 msgid "Deactivate MiniTV"
-msgstr "Ijungti MiniTV"
+msgstr "Išjungti MiniTV"
 
 #: httpdfunc.h:4547 skin_default_skin.xml.h:55
 msgid "Activate CEC"
@@ -2287,7 +2285,7 @@ msgstr "Pagalba"
 #: httpdfunc.h:4952 skin_default_skin.xml.h:649 system_infos.h:14
 #: webif_info_systeminfos.h:2
 msgid "System Status"
-msgstr "sistemos bsena"
+msgstr "sistemos būsena"
 
 #: httpdfunc.h:4954 system_infos.h:16
 msgid "Free Space"
@@ -2301,7 +2299,7 @@ msgstr "branduolio"
 #: httpdfunc.h:4958 skin_default_skin.xml.h:403 system_infos.h:20
 #: webif_info_systeminfos.h:5
 msgid "Mounts"
-msgstr "Montuots"
+msgstr "Montuotės"
 
 #: httpdfunc.h:4960 hwtest.h:181 hwtest.h:396 network.h:284 network.h:299
 #: plugins_mc_skin.xml.h:37 plugins_panel_skin.xml.h:18
@@ -2334,7 +2332,7 @@ msgstr "modulis"
 #: httpdfunc.h:5006 skin_default_skin.xml.h:185 system_infos_sysinfo.h:23
 #: webif_info_sysinfos.h:6
 msgid "Devices"
-msgstr "renginiai"
+msgstr "įrenginiai"
 
 #: httpdfunc.h:5008 panel_settings_autostart.h:210 settings_autostart.h:315
 #: skin_default_skin.xml.h:638 webif_info_sysinfos.h:7
@@ -2347,7 +2345,7 @@ msgstr "Pagrindiniai ( procesai )"
 
 #: httpdfunc.h:5012 skin_default_skin.xml.h:487 webif_info_sysinfos.h:9
 msgid "Prozesslist"
-msgstr "Proces sraas"
+msgstr "Procesų sąrašas"
 
 #: httpdfunc.h:5014 skin_default_skin.xml.h:717 webif_info_sysinfos.h:10
 msgid "USB"
@@ -2355,7 +2353,7 @@ msgstr ""
 
 #: httpdfunc.h:5050
 msgid "Hotline"
-msgstr "Kartoji linija"
+msgstr "Karštoji linija"
 
 #: httpdfunc.h:5052
 msgid "Svn Changelog"
@@ -2367,7 +2365,7 @@ msgstr "Git Pasikeitimai"
 
 #: httpdfunc.h:5056
 msgid "titan Log"
-msgstr "Titan urnalas"
+msgstr "Titan Žurnalas"
 
 #: httpdfunc.h:5058
 msgid "Svn Changelog Full"
@@ -2409,15 +2407,15 @@ msgstr "Sistemos Atnaujinimas"
 
 #: httpdfunc.h:5480 system_update.h:220
 msgid "starting Full Update ?"
-msgstr "Pradti Full Update ?"
+msgstr "Pradėti Full Update ?"
 
 #: httpdfunc.h:5485
 msgid ""
 "System Update started Please wait 5 Minutes and Refresh this Page, more "
 "infos they see on your TV."
 msgstr ""
-"Sistemos atnaujinimas pradjo Praome palaukti 5 minutes ir perkraukite "
-"puslap , daugiau infos jie mato savo TV."
+"Sistemos atnaujinimas pradėjo Prašome palaukti 5 minutes ir perkraukite šį "
+"puslapį , daugiau infos jie mato savo TV."
 
 #: httpdfunc.h:5531
 msgid "No Tpk Sections Found."
@@ -2457,15 +2455,15 @@ msgstr ""
 
 #: httpdfunc.h:6227 skin_default_skin.xml.h:577 webif_info.h:1
 msgid "Service"
-msgstr "Apie kanal"
+msgstr "Apie kanalą"
 
 #: httpdfunc.h:6262 skin_default_skin.xml.h:644 webif_system.h:3
 msgid "System Backup"
-msgstr "Sistemos atsargin kopija"
+msgstr "Sistemos atsarginė kopija"
 
 #: httpdfunc.h:6297 skin_default_skin.xml.h:582 webif_system.h:4
 msgid "Settings backup/restore"
-msgstr "Nustatymai atsargin kopija / atkurti"
+msgstr "Nustatymai atsarginė kopija / atkurti"
 
 #: hwtest.h:88
 msgid "testtransponder not found"
@@ -2477,7 +2475,7 @@ msgstr ""
 
 #: hwtest.h:98
 msgid "can't create new transponer"
-msgstr "negali sukurti nauj transponder"
+msgstr "negali sukurti naują transponderį"
 
 #: hwtest.h:103
 msgid "testchannel not found"
@@ -2513,7 +2511,7 @@ msgstr "Priekinis Mygtukas"
 
 #: hwtest.h:180 hwtest.h:329
 msgid "Smartcard"
-msgstr "Lustin kortel"
+msgstr "Lustinė kortelė"
 
 #: hwtest.h:182 hwtest.h:416
 msgid "USB Port"
@@ -2537,7 +2535,7 @@ msgstr "FLASH/ NAND patikrinimas"
 
 #: hwtest.h:190
 msgid "Hardware Test"
-msgstr "rangos testas"
+msgstr "Įrangos testas"
 
 #: hwtest.h:206
 msgid "Press OK or EXIT"
@@ -2545,11 +2543,11 @@ msgstr "Paspauskite OK arba EXIT"
 
 #: hwtest.h:245
 msgid "Press Front Key"
-msgstr "Paspauskite Priekinis Mygtuk"
+msgstr "Paspauskite Priekinis Mygtuką"
 
 #: hwtest.h:267
 msgid "Color Bar"
-msgstr "Spalv juosta"
+msgstr "Spalvų juosta"
 
 #: hwtest.h:279 tmc.h:702
 msgid "RED"
@@ -2557,11 +2555,11 @@ msgstr "Raudona"
 
 #: hwtest.h:284
 msgid "GREEN"
-msgstr "alia"
+msgstr "Žalia"
 
 #: hwtest.h:289
 msgid "BLUE"
-msgstr "Mlyna"
+msgstr "Mėlyna"
 
 #: hwtest.h:305
 msgid "SCART 4:3 / 16:9"
@@ -2569,7 +2567,7 @@ msgstr "SCART 4: 3 /16: 9"
 
 #: hwtest.h:368
 msgid "Smartcard "
-msgstr "Lustin kortel"
+msgstr "Lustinė kortelė"
 
 #: hwtest.h:371
 msgid "Present"
@@ -2577,11 +2575,11 @@ msgstr "Yra"
 
 #: hwtest.h:377
 msgid "Not Present"
-msgstr "Nra"
+msgstr "Nėra"
 
 #: hwtest.h:386
 msgid "Smartcard Ports found: "
-msgstr "Lustins kortels prievadas rastas :"
+msgstr "Lustinės kortelės prievadas rastas :"
 
 #: hwtest.h:427
 msgid "USB Ports found: "
@@ -2593,7 +2591,7 @@ msgstr "USB"
 
 #: hwtest.h:442
 msgid " - OKAY!"
-msgstr ": Gerai !"
+msgstr " Gerai !"
 
 #: hwtest.h:453
 msgid " : NOT OKAY!"
@@ -2665,7 +2663,7 @@ msgstr "Flash/Nand (/mnt) Failed"
 
 #: imdbapi.h:200 imdb.h:626 tmdb.h:759
 msgid "Error, Internet Connection not found"
-msgstr "KLAIDA: interneto ryys nerastas"
+msgstr "KLAIDA: interneto ryšys nerastas"
 
 #: imdbapi.h:265 imdb.h:691 tmdb.h:839
 msgid "--plot--"
@@ -2731,9 +2729,9 @@ msgid ""
 "\n"
 "Board-ID SerialNr:"
 msgstr ""
-"Jeigu Dabar funkcijos nebus prieinamos praome sisti \n"
+"Jeigu Dabar funkcijos nebus prieinamos prašome siųsti \n"
 "Baord - ID Serialnumber ( AA... ) ir imtuvo Serialnumber \n"
-" imtuv ( AM... ) parodyt pato Adress.\n"
+" imtuvą ( AM... ) į parodytą pašto Adress.\n"
 "\n"
 "Board ID Serialnumber :"
 
@@ -2767,15 +2765,15 @@ msgstr ""
 
 #: instar.h:196 instar.h:208
 msgid "aus"
-msgstr "Ijungti"
+msgstr "Išjungti"
 
 #: instar.h:197 instar.h:209
 msgid "ein"
-msgstr "jungti"
+msgstr "Įjungti"
 
 #: keyactions.h:22
 msgid "Key Action - Plugins"
-msgstr "Raudonas mygtukas veiksmas - skiepiai"
+msgstr "Raudonas mygtukas veiksmas - Įskiepiai"
 
 #: keyactions.h:25 play.h:650
 msgid "MediaDB Scan Info"
@@ -2783,7 +2781,7 @@ msgstr "MediaDB Scan Informacija"
 
 #: keyactions.h:53 settings_mediabutton.h:12
 msgid "Record Player"
-msgstr "ra grotuvas ( .ts )"
+msgstr "Įrašų grotuvas ( .ts )"
 
 #: keyactions.h:81 settings_mediabutton.h:42 skin_default_skin.xml.h:386
 msgid "Media Player"
@@ -2801,12 +2799,12 @@ msgstr "Softcam"
 #: keyactions.h:92 settings_bluebutton.h:18 settings_pluginbutton.h:19
 #: settings_redbutton.h:19
 msgid "Sleep Timer"
-msgstr "Isijungimo laikmatis"
+msgstr "Išsijungimo laikmatis"
 
 #: keyactions.h:93 settings_bluebutton.h:19 settings_pluginbutton.h:20
 #: settings_redbutton.h:20 skin_default_skin.xml.h:136
 msgid "Child Protection"
-msgstr "Tv kontrol"
+msgstr "Tėvų kontrolė"
 
 #: keyactions.h:94 settings_bluebutton.h:20 settings_pluginbutton.h:21
 #: settings_redbutton.h:21 videomode.h:24
@@ -2830,9 +2828,9 @@ msgstr "Epizodas"
 #: language.h:49
 msgid "Change language needs reboot"
 msgstr ""
-"Pakeitus kalb, reikia sistema perkrauti\n"
-" imtuvas automatikai persikraus po keli sekundi.\n"
-"Praome palaukti."
+"Pakeitus kalbą, reikia sistema perkrauti\n"
+" imtuvas automatiškai persikraus po kelių sekundžių.\n"
+"Prašome palaukti."
 
 #: lcdpearl1.c:49 lcdsamsung.c:101
 msgid "ERROR cant start LCD driver"
@@ -2880,7 +2878,7 @@ msgstr ""
 
 #: listedit.h:88
 msgid "Bouquet Name"
-msgstr "Mgstami Vardas"
+msgstr "Mėgstami Vardas"
 
 #: lnbconfig.h:137 skin_default_skin.xml.h:470
 msgid "Polarization"
@@ -2920,7 +2918,7 @@ msgstr "User unicable"
 
 #: marker.h:215
 msgid "ERROR... can't set marker in this file"
-msgstr "KLAIDA : nepavyko nustatyti ymekl fail"
+msgstr "KLAIDA : nepavyko nustatyti žymeklį šį failą"
 
 #: marker.h:229
 msgid "Marker has been set."
@@ -2972,22 +2970,11 @@ msgstr ""
 #: skins_xupnpd_skin.xml.h:5 skins_zapback_skin.xml.h:7 tithek_mainmenu.h:1
 msgid ""
 msgstr ""
-"Project-Id-Version: TitanNit 1.56\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-24 16:24+0200\n"
-"PO-Revision-Date: 2014-10-25 12:45+0100\n"
-"Last-Translator: Arturas11<>\n"
-"Language-Team: German <_obiwan_@web.de>\n"
-"Language: lt\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: TNLE 0.9.12\n"
 
 #: mc_audioplayer.h:408 mc_global.h:1079 mc_pictureplayer.h:150
 #: mc_videoplayer.h:428
 msgid "Repeat-On"
-msgstr "Kartojimo reimas Ijungtas"
+msgstr "Kartojimo režimas Ijungtas"
 
 #: mc_audioplayer.h:415 mc_audioplayer.h:566 mc_global.h:1081
 #: mc_pictureplayer.h:157 mc_pictureplayer.h:322 mc_videoplayer.h:435
@@ -3000,7 +2987,7 @@ msgstr "Kartojimas"
 #: mc_videoplayer.h:594 mc_videoplayer.h:667 mc_videoplayer.h:854
 #: plugins_mc_skin.xml.h:27 skins_mc_skin.xml.h:27
 msgid "Filelist-Mode"
-msgstr "Fail srao reimas"
+msgstr "Failų sąrašo režimas"
 
 #: mc_audioplayer.h:565 mc_global.h:558 mc_global.h:586 mc_global.h:1076
 #: mc_pictureplayer.h:321 mc_videoplayer.h:668 plugins_mc_skin.xml.h:47
@@ -3010,7 +2997,7 @@ msgstr "Atsitiktinis"
 
 #: mc_audioplayer.h:586 mc_pictureplayer.h:341 mc_videoplayer.h:709
 msgid "Playlist-Mode"
-msgstr "Grojaraio reimas"
+msgstr "Grojaraščio režimas"
 
 #: mc_audioplayer_settings.h:36 mc_pictureplayer_settings.h:51
 #: mc_videoplayer_settings.h:32 plugins_mc_skin.xml.h:14
@@ -3021,17 +3008,17 @@ msgstr "didelis"
 #: mc_audioplayer_settings.h:37 mc_pictureplayer_settings.h:52
 #: mc_videoplayer_settings.h:33
 msgid "cover"
-msgstr "virelis"
+msgstr "viršelis"
 
 #: mc_audioplayer_settings.h:38 mc_videoplayer_settings.h:34
 #: plugins_mc_skin.xml.h:29 skins_mc_skin.xml.h:29
 msgid "fullcover"
-msgstr "Pilnas fonas su vireliu"
+msgstr "Pilnas fonas su viršeliu"
 
 #: mc_audioplayer_settings.h:39 mc_pictureplayer_settings.h:54
 #: mc_videoplayer_settings.h:35
 msgid "size (default)"
-msgstr "Dydis (pagal nutyljim)"
+msgstr "Dydis (pagal nutylėjimą)"
 
 #: mc_audioplayer_settings.h:40 mc_pictureplayer_settings.h:55
 #: mc_videoplayer_settings.h:36
@@ -3040,7 +3027,7 @@ msgstr "data Laikas"
 
 #: mc_dateibrowser.h:36
 msgid "Install File Manager Tpk first !"
-msgstr " Pirma diekite File Manager TPK!"
+msgstr " Pirma įdiekite File Manager TPK!"
 
 #: mc_global.h:270 mc_global.h:338 mc_global.h:413 mc_global.h:700
 #: mc_global.h:934 mc_global.h:949 plugins_mc_skin.xml.h:45
@@ -3054,23 +3041,23 @@ msgstr "Atsitiktinis -On"
 
 #: mc_global.h:606 mc_global.h:615
 msgid "Load Playlist"
-msgstr "Atveri Grojarat"
+msgstr "Atveri Grojaraštį"
 
 #: mc_global.h:607
 msgid "Edit Playlist"
-msgstr "Redaguoti Grojarat"
+msgstr "Redaguoti Grojaraštį"
 
 #: mc_global.h:609
 msgid "Playlist Menu"
-msgstr "Grojaraio Meniu"
+msgstr "Grojaraščio Meniu"
 
 #: mc_global.h:609
 msgid "Choose your Playlist Mode from the following list"
-msgstr "Pasirinkite grojaraio reim i srao"
+msgstr "Pasirinkite grojaraščio režimą iš sąrašo"
 
 #: mc_internetbrowser.h:36
 msgid "Install netsurf Internetbrowser Tpk first !"
-msgstr "Pirma diekite netsurf Internetbrowser TPK !"
+msgstr "Pirma įdiekite netsurf Internetbrowser TPK !"
 
 #: mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95 mc_main.h:100
 msgid "comming soon"
@@ -3078,20 +3065,20 @@ msgstr "netrukus ..."
 
 #: mc_main.h:282 menu.h:154 panel_main.h:29 panel_main.h:135
 msgid "Menu not implemented !"
-msgstr "Meniu nra !"
+msgstr "Meniu nėra !"
 
 #: mc_mediathek.h:35
 msgid "Install Tithek Tpk first !"
-msgstr "Pirma diekite Tithek TPK!"
+msgstr " Pirma įdiekite Tithek TPK!"
 
 #: mc_pictureplayer_settings.h:29 panel_settings_autostart.h:60
 #: panel_settings_autostart.h:132 settings_autostart.h:52
 msgid "low"
-msgstr "maas"
+msgstr "mažas"
 
 #: mc_pictureplayer_settings.h:30 moduleconfig.h:247
 msgid "middle"
-msgstr "vidurin"
+msgstr "vidurinė"
 
 #: mc_pictureplayer_settings.h:31
 msgid "best"
@@ -3136,11 +3123,11 @@ msgstr ""
 
 #: mc_videoplayer.h:784
 msgid "Found VIDEO_TS Folder, start with DVD-Player ?"
-msgstr "Surasta VIDEO_TS aplank , pradti su DVD grotuvu ?"
+msgstr "Surasta VIDEO_TS aplanką , pradėti su DVD grotuvu ?"
 
 #: mc_videoplayer.h:904 player.h:101
 msgid "Start at last position ?"
-msgstr "Tsti i paskutins pozicijos ?"
+msgstr "Tęsti iš paskutinės pozicijos ?"
 
 #: mc_videoplayer_settings.h:54
 msgid "1s"
@@ -3160,15 +3147,15 @@ msgstr "4 Seconds"
 
 #: mc_videoplayer_settings.h:58
 msgid "5s (default)"
-msgstr "5 Sekunds (pagal nutyljim)"
+msgstr "5 Sekundės (pagal nutylėjimą)"
 
 #: mc_wetterinfo.h:36
 msgid "Install Weather Tpk first !"
-msgstr "DMESIO: Js pirmiausia turite diegti Weather pltin!"
+msgstr "DĖMESIO: Jūs pirmiausia turite įdiegti Weather plėtinį!"
 
 #: mediadbedit.h:75
 msgid "unlock -> lock it"
-msgstr "Atrakinta -> Urakink j"
+msgstr "Atrakinta -> Užrakink jį"
 
 #: mediadbedit.h:76
 msgid "unlock -> leaf unlock"
@@ -3176,35 +3163,35 @@ msgstr "Atrakinta -> Palikite atrakinta"
 
 #: mediadbedit.h:77
 msgid "locked -> unlock it"
-msgstr "Urakintas - > Atrakinti j"
+msgstr "Užrakintas - > Atrakinti jį"
 
 #: mediadbedit.h:78
 msgid "locked -> leaf locked"
-msgstr "Urakintas - > Palikti urakinta"
+msgstr "Užrakintas - > Palikti užrakinta"
 
 #: mediadbedit.h:333
 msgid "MediaDB entry for this file not found."
-msgstr "DMESIO: MediaDB raas iam failui nerastas !"
+msgstr "DĖMESIO: MediaDB įrašas šiam failui nerastas !"
 
 #: mediadb.h:1078 play.h:576
 msgid "MediaDB directory scan started in Background !"
-msgstr "MediaDB katalogo nuskaitymas prasidjo fone !"
+msgstr "MediaDB katalogo nuskaitymas prasidėjo fone !"
 
 #: mediadb.h:1080 play.h:578 skin_default_skin.xml.h:180
 msgid "Delete MediaDB before scan"
-msgstr "Itrinti MediaDB prie nuskaitym"
+msgstr "Ištrinti MediaDB prieš nuskaitymą"
 
 #: mediadb.h:1087 play.h:585 skin_default_skin.xml.h:181
 msgid "Delete unused entrys before scan"
-msgstr "Itrinti nenaudotjamus raus prie nuskaitym"
+msgstr "Ištrinti nenaudotjamus įrašus prieš nuskaitymą"
 
 #: mediadb.h:1094 play.h:592
 msgid "scan Directory"
-msgstr "nuskaityti Katalog"
+msgstr "nuskaityti Katalogą"
 
 #: mediadb.h:1098 play.h:596
 msgid "MediaDB place"
-msgstr "MediaDB Isaugojimo Kelias"
+msgstr "MediaDB Išsaugojimo Kelias"
 
 #: mediadb.h:1102 play.h:600
 msgid "MediaDB Debug"
@@ -3212,7 +3199,7 @@ msgstr ""
 
 #: mediadb.h:1109 play.h:607 skin_default_skin.xml.h:102
 msgid "Backdrop Download Count"
-msgstr "Kiek fono Paveikslli turi bti pakrauta ?"
+msgstr "Kiek fono Paveikslėlių turi būti pakrauta ?"
 
 #: mediadb.h:1112 mediadbsettings.h:55 play.h:610 plugins_mc_skin.xml.h:6
 #: skins_mc_skin.xml.h:6 tmc.h:539
@@ -3241,7 +3228,7 @@ msgstr "IMDB-ID"
 
 #: mediadb.h:2454
 msgid "Add iMDB manuel"
-msgstr "Rankiniu bdu pridti IMDB"
+msgstr "Rankiniu būdu pridėti IMDB"
 
 #: mediadbsettings.h:37
 msgid "older 1 day"
@@ -3265,27 +3252,27 @@ msgstr "Senesni nei 5 dienos"
 
 #: mediadbsettings.h:42
 msgid "older 10 day"
-msgstr "Senesni kaip 10 dien"
+msgstr "Senesni kaip 10 dienų"
 
 #: mediadbsettings.h:43
 msgid "older 15 day"
-msgstr "Senesni kaip 15 dien"
+msgstr "Senesni kaip 15 dienų"
 
 #: mediadbsettings.h:44
 msgid "older 20 day"
-msgstr "Senesni kaip 20 dien"
+msgstr "Senesni kaip 20 dienų"
 
 #: mediadbsettings.h:45
 msgid "older 30 day"
-msgstr "Senesni kaip 30 dien"
+msgstr "Senesni kaip 30 dienų"
 
 #: mediadbsettings.h:46
 msgid "older 40 day"
-msgstr "Senesni kaip 40 dien"
+msgstr "Senesni kaip 40 dienų"
 
 #: mediadbsettings.h:47
 msgid "older 50 day"
-msgstr "Senesni kaip 50 dien"
+msgstr "Senesni kaip 50 dienų"
 
 #: mediadbsettings.h:56 plugins_catcatch_skin.xml.h:3
 #: skin_default_skin.xml.h:33 skins_catcatch_skin.xml.h:3
@@ -3334,11 +3321,11 @@ msgid ""
 "Press OK to create it"
 msgstr ""
 "Nerasta MediaDB katalogo\n"
-"Spauskite Gerai j sukurti"
+"Spauskite Gerai ją sukurti"
 
 #: menu.h:957
 msgid "Error in Save Settings"
-msgstr "KLAIDA: Nustatymai negali bti isaugoti!"
+msgstr "KLAIDA: Nustatymai negali būti išsaugoti!"
 
 #: moduleconfig.h:159
 msgid "double"
@@ -3350,15 +3337,15 @@ msgstr "Aktyvuok"
 
 #: moduleconfig.h:169
 msgid "deaktivate"
-msgstr "ijungti"
+msgstr "išjungti"
 
 #: moduleconfig.h:350
 msgid "Status: "
-msgstr "Bsena:"
+msgstr "Būsena:"
 
 #: moduleconfig.h:354
 msgid "empty"
-msgstr "Nra modulio"
+msgstr "Nėra modulio"
 
 #: moduleconfig.h:356
 msgid "initializing"
@@ -3366,7 +3353,7 @@ msgstr "Inicijuojama"
 
 #: moduleconfig.h:358
 msgid "ready"
-msgstr "Pasiruo"
+msgstr "Pasiruošę"
 
 #: moduleconfig.h:373
 msgid "Module Type"
@@ -3382,29 +3369,29 @@ msgstr "Kelios Paslaugos"
 
 #: movie4k.h:36
 msgid "Connection Error, try again later."
-msgstr "Prisijungimo klaida , bandykite dar kart later."
+msgstr "Prisijungimo klaida , bandykite dar kartą later."
 
 #: movie4k.h:48
 msgid "Can not parse Main Stream URL, try again later."
-msgstr "Negalima atverti URL , pabandykite vliau."
+msgstr "Negalima atverti URL , pabandykite vėliau."
 
 #: movie4k.h:92
 msgid "Can not parse Stream URL, try again later."
-msgstr "Negalima atverti Stream URL , pabandykite vliau."
+msgstr "Negalima atverti Stream URL , pabandykite vėliau."
 
 #: movie4k.h:399
 msgid "set a cookie which will expire in 3 days and be accessible site wide"
 msgstr ""
-"nustatyti slapuk , kuris nustos galioti per 3 dienas ir prieinama svetain "
-"plaiai"
+"nustatyti slapuką , kuris nustos galioti per 3 dienas ir prieinama svetainė "
+"plačiai"
 
 #: movreel.h:85
 msgid "The file that you requested could not be found"
-msgstr "Failas, kur praoma negaljo rasti"
+msgstr "Failas, kurį prašoma negalėjo rasti"
 
 #: movreel.h:91
 msgid "No such file No such user exist File not found"
-msgstr "Nra tokio failo Tokio vartotojo neegzistuoja Failas nerastas"
+msgstr "Nėra tokio failo Tokio vartotojo neegzistuoja Failas nerastas"
 
 #: movshare.h:78 movshare.h:163
 msgid "The video no longer exists"
@@ -3412,7 +3399,7 @@ msgstr "Vaizdo nebeegzistuoja"
 
 #: multiepg.h:445 multiepg.h:635
 msgid "MULTI EPG - Bouquets"
-msgstr "Multi EPG - Mgstamiausi"
+msgstr "Multi EPG - Mėgstamiausi"
 
 #: multiepg.h:458
 msgid "MULTI EPG - Channel"
@@ -3424,7 +3411,7 @@ msgstr "Multi EPG - Palydovai"
 
 #: multiepg.h:484
 msgid "MULTI EPG - Provider"
-msgstr "Keli EPG - Tiekjai"
+msgstr "Kelių EPG - Tiekėjai"
 
 #: multiepg.h:497
 msgid "MULTI EPG - All Channels"
@@ -3433,19 +3420,19 @@ msgstr "Multi EPG - Visi kanalai"
 #: networkbrowser.h:944
 msgid ""
 "For Better Win7 Support install please Tpk Install > Network > Smbclient"
-msgstr "Win7 palaikymui praome diegti TPK > Tinklas> smbclient"
+msgstr "Win7 palaikymui prašome įdiegti TPK > Tinklas> smbclient"
 
 #: networkbrowser.h:1005 networkbrowser.h:1011 networkbrowser.h:1021
 msgid "Anonymous login Access Denied !"
-msgstr "Anoniminis prisijungimas - Prieiga udrausta !"
+msgstr "Anoniminis prisijungimas - Prieiga uždrausta !"
 
 #: networkbrowser.h:1009 networkbrowser.h:1025
 msgid "Anonymous login successful"
-msgstr "Anoniminis prisijungimas - Skmingas"
+msgstr "Anoniminis prisijungimas - Sėkmingas"
 
 #: networkbrowser.h:1160 networkbrowser.h:1161
 msgid "Scanning Network Shares, please wait !!"
-msgstr "Skenuojamas tinklas , praome palaukti !"
+msgstr "Skenuojamas tinklas , prašome palaukti !"
 
 #: networkbrowser.h:1181
 msgid "Networkbrowser - show scanned DNS-Shares"
@@ -3453,11 +3440,11 @@ msgstr "Networkbrowser - rodyti DNS - Failus"
 
 #: networkbrowser.h:1181
 msgid "Choose your DNS-Share from the following list"
-msgstr "Pasirinkite savo DNS - Share i io srao"
+msgstr "Pasirinkite savo DNS - Share iš šio sąrašo"
 
 #: networkbrowser.h:1189
 msgid "Use User authentication ?"
-msgstr "Naudoti Vartotojo autentifikavim ?"
+msgstr "Naudoti Vartotojo autentifikavimą ?"
 
 #: networkbrowser.h:1207
 msgid "Networkbrowser - show scanned cifs/nfs-Shares"
@@ -3465,19 +3452,19 @@ msgstr "Rodyti nuskaitytas CIFS / NFS Dalinimosi katalogus"
 
 #: networkbrowser.h:1207
 msgid "Choose your cifs/nfs Share from the following list"
-msgstr "Pasirinkite CIFS / NFS i io srao"
+msgstr "Pasirinkite CIFS / NFS iš šio sąrašo"
 
 #: networkbrowser.h:1340
 msgid "Add Cifs Network Share"
-msgstr "Pridti CIFS Dalinim"
+msgstr "Pridėti CIFS Dalinimą"
 
 #: networkbrowser.h:1390
 msgid "Add Nfs Network Share"
-msgstr "Pridti NFS Dalinim"
+msgstr "Pridėti NFS Dalinimą"
 
 #: networkbrowser.h:1430
 msgid "Add Ftpfs Network Share"
-msgstr "Pridti FTPFS Dalinim"
+msgstr "Pridėti FTPFS Dalinimą"
 
 #: networkbrowser.h:1559
 msgid "cifs"
@@ -3497,7 +3484,7 @@ msgstr "Pabandykite SSL"
 
 #: networkbrowser.h:1597
 msgid "ssl_control"
-msgstr "SSL kontrol"
+msgstr "SSL kontrolė"
 
 #: networkbrowser.h:1598 plugins_networkbrowser_skin.xml.h:28
 #: skins_networkbrowser_skin.xml.h:28
@@ -3534,7 +3521,7 @@ msgstr "tik skaityti"
 
 #: networkbrowser.h:1743
 msgid "Sharename can't be empty!"
-msgstr "KLAIDA: BendroNaudojimoPavadinimas turi bti raytas !"
+msgstr "KLAIDA: BendroNaudojimoPavadinimas turi būti įrašytas !"
 
 #: networkbrowser.h:1750
 msgid "A mount entry with this name already exists!"
@@ -3542,7 +3529,7 @@ msgstr "KLAIDA: BendroNaudojimoPavadinimas jau egzistuoja !"
 
 #: networkbrowser.h:1755
 msgid "Are you sure you want to save this network mount?"
-msgstr "Ar tikrai norite isaugoti tinklo prijungim ?"
+msgstr "Ar tikrai norite išsaugoti šį tinklo prijungimą ?"
 
 #: networkbrowser.h:1875
 msgid "Networkbrowser - show Shares"
@@ -3550,7 +3537,7 @@ msgstr "Rodyti Bendrinamus"
 
 #: networkbrowser.h:1875
 msgid "Choose your Shares from the following list"
-msgstr "Pasirinkite Bendrinamus i srao"
+msgstr "Pasirinkite Bendrinamus iš sąrašo"
 
 #: networkbrowser.h:1907
 msgid "Are you sure you want remove this share?"
@@ -3570,15 +3557,15 @@ msgstr "Netrukus ..."
 
 #: network.h:295
 msgid "Restart Network ?"
-msgstr "I naujo paleisti tinkl?"
+msgstr "Iš naujo paleisti tinklą?"
 
 #: network.h:297
 msgid "Aktivate new network config ?"
-msgstr "Aktyvuoti nauj tinklo konfigracij ?"
+msgstr "Aktyvuoti naują tinklo konfigūraciją ?"
 
 #: network.h:335
 msgid "Restart Network"
-msgstr "Paleisti i naujo tinkl"
+msgstr "Paleisti iš naujo tinklą"
 
 #: network.h:390
 msgid "dhcp"
@@ -3590,15 +3577,15 @@ msgstr "Statinis"
 
 #: network.h:394 panel_settings.h:29
 msgid "disable"
-msgstr "ijungti"
+msgstr "išjungti"
 
 #: network.h:395
 msgid "enable"
-msgstr "traukti"
+msgstr "Įtraukti"
 
 #: network.h:436
 msgid "save network settings ?"
-msgstr "Isaugoti tinklo nustatymus ?"
+msgstr "Išsaugoti tinklo nustatymus ?"
 
 #: network.h:577
 msgid "Can't change hostname !"
@@ -3622,11 +3609,11 @@ msgstr ""
 
 #: network.h:785
 msgid "deaktivate ethernet interface ?"
-msgstr "Ijungti Ethernet ?"
+msgstr "Išjungti Ethernet ?"
 
 #: network.h:793
 msgid "Start Wlan ?"
-msgstr "Pradti WLAN ?"
+msgstr "Pradėti WLAN ?"
 
 #: network.h:819
 msgid ""
@@ -3646,7 +3633,7 @@ msgstr ""
 
 #: network.h:846
 msgid "searching..."
-msgstr "Iekoma ..."
+msgstr "Ieškoma ..."
 
 #: network.h:877
 msgid "WLAN now stopped"
@@ -3654,7 +3641,7 @@ msgstr "WLAN sustojo"
 
 #: network.h:884
 msgid "WLAN LOG"
-msgstr "WLAN urnalas"
+msgstr "WLAN žurnalas"
 
 #: network.h:895
 msgid "Found Wlan Stick and driver for: "
@@ -3670,7 +3657,7 @@ msgstr ""
 
 #: network.h:903
 msgid "Wlan Stick not found"
-msgstr "WLAN renginys nerastas"
+msgstr "WLAN įrenginys nerastas"
 
 #: network.h:906
 msgid "WLAN Info"
@@ -3678,7 +3665,7 @@ msgstr "WLAN Informacija"
 
 #: nowvideo.h:99
 msgid "This file no longer exists on our servers."
-msgstr "is failas nebeegzistuoja ms serveriuose."
+msgstr "Šis failas nebeegzistuoja mūsų serveriuose."
 
 #: optimize.h:253
 msgid "hold"
@@ -3690,23 +3677,23 @@ msgstr "Trinti"
 
 #: optimize.h:264
 msgid "SatCount: "
-msgstr "No. i palydov :"
+msgstr "No. iš palydovų :"
 
 #: optimize.h:272 scan.h:1550
 msgid "Transponder: "
-msgstr "Sistuvo :"
+msgstr "Siųstuvo :"
 
 #: optimize.h:280
 msgid "ChannelCount: "
-msgstr "No. Kanal :"
+msgstr "No. Kanalų :"
 
 #: optimize.h:288
 msgid "BouquetCount: "
-msgstr "No. Puokts :"
+msgstr "No. Puokštės :"
 
 #: optimize.h:296
 msgid "BouquetEntrys: "
-msgstr "Puokt raai:"
+msgstr "Puokštė įrašai:"
 
 #: optimize.h:304
 msgid "EpgChannels: "
@@ -3714,7 +3701,7 @@ msgstr "EPG kanalai:"
 
 #: optimize.h:312
 msgid "ProviderCount: "
-msgstr "No. Teikj :"
+msgstr "No. Teikėjų :"
 
 #: panel_settings_autostart.h:26 panel_settings_autostart.h:104
 msgid "Autostart Defaults"
@@ -3763,7 +3750,7 @@ msgstr "Sena Garso Firmware"
 
 #: panel_settings_autostart.h:122 settings_autostart.h:161
 msgid "No Audiosync"
-msgstr "Nra garso sinchronizavimo"
+msgstr "Nėra garso sinchronizavimo"
 
 #: panel_settings_autostart.h:131
 msgid "Boot Resolution"
@@ -3775,7 +3762,7 @@ msgstr ""
 
 #: panel_settings_autostart.h:149
 msgid "Poweroff"
-msgstr "Ijungimas"
+msgstr "Išjungimas"
 
 #: panel_settings_autostart.h:158
 msgid "Scart On Standby"
@@ -3823,7 +3810,7 @@ msgstr "Softcam"
 
 #: panel_settings_autostart.h:285 settings_autostart.h:429
 msgid "Emu Control"
-msgstr "Softcam kontrol"
+msgstr "Softcam kontrolė"
 
 #: panel_settings_autostart.h:294 settings_autostart.h:438
 msgid "ftdi"
@@ -3879,7 +3866,7 @@ msgstr "Overclocking only on System boot"
 
 #: panel_settings_overclocking.h:222 settings_overclocking.h:222
 msgid "CPU frequency"
-msgstr "CPU danis"
+msgstr "CPU dažnis"
 
 #: panel_settings_overclocking.h:233 settings_overclocking.h:233
 msgid "FDMA bypass"
@@ -3892,7 +3879,7 @@ msgstr ""
 #: panel_settings_overclocking.h:253 panel_settings_overclocking.h:319
 #: settings_overclocking.h:253 settings_overclocking.h:321
 msgid "Standby frequency"
-msgstr "Budjimo CPU danis"
+msgstr "Budėjimo CPU dažnis"
 
 #: panel_settings_overclocking.h:275 settings_overclocking.h:275
 msgid "Use Teletxt Workaround"
@@ -3900,7 +3887,7 @@ msgstr "Naudokite Teleteksto apeiti"
 
 #: panel_settings_overclocking.h:276 settings_overclocking.h:276
 msgid "frequency"
-msgstr "Danis"
+msgstr "Dažnis"
 
 #: panel_settings_overclocking.h:276 settings_overclocking.h:276
 msgid "videmode"
@@ -3916,7 +3903,7 @@ msgstr ""
 
 #: played.h:90
 msgid "This video has been deleted. We apologize for the inconvenience."
-msgstr "is vaizdo raas buvo itrintas. Atsipraome u nepatogumus."
+msgstr "Šis vaizdo įrašas buvo ištrintas. Atsiprašome už nepatogumus."
 
 #: player.h:991
 msgid "Buffering Stream - Cancel with Exit"
@@ -3931,7 +3918,7 @@ msgstr "Pavadinimas :"
 
 #: play.h:422 play.h:456
 msgid "Artist:"
-msgstr "Atlikjas:"
+msgstr "Atlikėjas:"
 
 #: play.h:427 play.h:461 plugins_mc_skin.xml.h:5 skins_mc_skin.xml.h:5
 msgid "Album:"
@@ -3947,7 +3934,7 @@ msgstr "Metai:"
 #: skins_imdb_skin.xml.h:3 skins_mc_skin.xml.h:30 skins_tmc_skin.xml.h:7
 #: skins_tmdb_skin.xml.h:1
 msgid "Genre:"
-msgstr "anras:"
+msgstr "Žanras:"
 
 #: play.h:442 play.h:476
 msgid "Comment:"
@@ -3959,7 +3946,7 @@ msgstr "Takelis:"
 
 #: play.h:486
 msgid "Copyright:"
-msgstr "Autorins teiss:"
+msgstr "Autorinės teisės:"
 
 #: play.h:497
 msgid "iD3Tag"
@@ -3983,19 +3970,19 @@ msgstr "MediaDB Redaguoti"
 
 #: play.h:647
 msgid "Delete File"
-msgstr "Itrinti fail"
+msgstr "Ištrinti failą"
 
 #: play.h:656
 msgid "Search on KinoX"
-msgstr "Paieka KinoX"
+msgstr "Paieška KinoX"
 
 #: play.h:657
 msgid "Search on KinoX (local)"
-msgstr "Paieka KinoX (vietinis )"
+msgstr "Paieška KinoX (vietinis )"
 
 #: play.h:658
 msgid "Search on Movie4k"
-msgstr "Paieka Movie4k"
+msgstr "Paieška Movie4k"
 
 #: play.h:659
 msgid "Search on Movie4k (local)"
@@ -4003,107 +3990,107 @@ msgstr ""
 
 #: play.h:660
 msgid "Search on Solarmovies (movie)"
-msgstr "Paieka Solarmovies ( filmas )"
+msgstr "Paieška Solarmovies ( filmas )"
 
 #: play.h:661
 msgid "Search on Solarmovies (serie)"
-msgstr "Paieka Solarmovies ( serija )"
+msgstr "Paieška Solarmovies ( serija )"
 
 #: play.h:662
 msgid "Search on Solarmovies (local)"
-msgstr "Paieka Solarmovies (vietinis )"
+msgstr "Paieška Solarmovies (vietinis )"
 
 #: play.h:663
 msgid "Search on Mle-HD (local)"
-msgstr "Paieka MLE -HD (vietinis )"
+msgstr "Paieška MLE -HD (vietinis )"
 
 #: play.h:664
 msgid "Search on Beeg (local)"
-msgstr "Paieka Beeg (vietinis )"
+msgstr "Paieška Beeg (vietinis )"
 
 #: play.h:665
 msgid "Search on Xvideos (local)"
-msgstr "Paieka xvideos (vietinis )"
+msgstr "Paieška xvideos (vietinis )"
 
 #: play.h:666
 msgid "Search on FilmOn (local)"
-msgstr "Paieka FilmOn (vietinis )"
+msgstr "Paieška FilmOn (vietinis )"
 
 #: play.h:668
 msgid "Search on Netzkino (local)"
-msgstr "Paieka Netzkino (vietinis )"
+msgstr "Paieška Netzkino (vietinis )"
 
 #: play.h:669
 msgid "Search on Youtube"
-msgstr "Iekoti Youtube"
+msgstr "Ieškoti Youtube"
 
 #: play.h:670
 msgid "Search on Youtube (local)"
-msgstr "Iekoti Youtube (vietinis )"
+msgstr "Ieškoti Youtube (vietinis )"
 
 #: play.h:671
 msgid "Search on MyVideo"
-msgstr "Paieka MyVideo"
+msgstr "Paieška MyVideo"
 
 #: play.h:672
 msgid "Search on MyVideo (local)"
-msgstr "Paieka MyVideo (vietinis )"
+msgstr "Paieška MyVideo (vietinis )"
 
 #: play.h:673
 msgid "Search on ARD (local)"
-msgstr "Paieka ARD (vietinis )"
+msgstr "Paieška ARD (vietinis )"
 
 #: play.h:674
 msgid "Search on ZDF (local)"
-msgstr "Paieka ZDF (vietinis )"
+msgstr "Paieška ZDF (vietinis )"
 
 #: play.h:675
 msgid "Search on TecTime (local)"
-msgstr "Paieka TecTime (vietinis )"
+msgstr "Paieška TecTime (vietinis )"
 
 #: play.h:676
 msgid "Search on Giga (local)"
-msgstr "Paieka Giga (vietinis )"
+msgstr "Paieška Giga (vietinis )"
 
 #: play.h:677
 msgid "Search on Rtl-Now (local)"
-msgstr "Paieka RTL -dabar (vietinis )"
+msgstr "Paieška RTL -dabar (vietinis )"
 
 #: play.h:678
 msgid "Search on Rtl2-Now (local)"
-msgstr "Paieka RTL2 -dabar (vietinis )"
+msgstr "Paieška RTL2 -dabar (vietinis )"
 
 #: play.h:679
 msgid "Search on SuperRTL-Now (local)"
-msgstr "Paieka SuperRTL -dabar (vietinis )"
+msgstr "Paieška SuperRTL -dabar (vietinis )"
 
 #: play.h:680
 msgid "Search on VOX-Now (local)"
-msgstr "Paieka VOX -dabar (vietinis )"
+msgstr "Paieška VOX -dabar (vietinis )"
 
 #: play.h:681
 msgid "Search on RtlNitro-Now (local)"
-msgstr "Paieka RtlNitro -dabar (vietinis )"
+msgstr "Paieška RtlNitro -dabar (vietinis )"
 
 #: play.h:682
 msgid "Search on NTV-Now (local)"
-msgstr "Paieka NTV -dabar (vietinis )"
+msgstr "Paieška NTV -dabar (vietinis )"
 
 #: play.h:683
 msgid "Search on InternetTv (local)"
-msgstr "Paieka InternetTv (vietinis )"
+msgstr "Paieška InternetTv (vietinis )"
 
 #: play.h:684
 msgid "Search on InternetRadio (local)"
-msgstr "Paieka InternetRadio (vietinis )"
+msgstr "Paieška InternetRadio (vietinis )"
 
 #: play.h:706
 msgid "Choose your Red-Menu entry from the following list"
-msgstr "Pasirinkite Raudon Meniu i srao"
+msgstr "Pasirinkite Raudoną Meniu iš sąrašo"
 
 #: play.h:1193
 msgid "Jump To (min)"
-msgstr "Pereiti (min)"
+msgstr "Pereiti į (min)"
 
 #: play.h:1271 play.h:1277 plugins_tmc_skin.xml.h:1 skins_tmc_skin.xml.h:1
 msgid "EPG Info"
@@ -4111,7 +4098,7 @@ msgstr "EPG informacija"
 
 #: play.h:1286
 msgid "Record in progress"
-msgstr "raymas aktyvus"
+msgstr "Įrašymas aktyvus"
 
 #: play.h:1287
 msgid "Really Delete ?"
@@ -4138,7 +4125,7 @@ msgstr ""
 
 #: play.h:1412
 msgid "SORT"
-msgstr "Riuoti"
+msgstr "Rūšiuoti"
 
 #: play.h:1676
 msgid "Marker autoseek is started"
@@ -4154,11 +4141,11 @@ msgstr "AutoTimer Nustatymai"
 
 #: plugins_autotimer_skin.xml.h:2 skins_autotimer_skin.xml.h:2
 msgid "afterevent"
-msgstr "Po raymo"
+msgstr "Po įrašymo"
 
 #: plugins_autotimer_skin.xml.h:3 skins_autotimer_skin.xml.h:3
 msgid "begin search"
-msgstr "pradti paiek"
+msgstr "pradėti paiešką"
 
 #: plugins_autotimer_skin.xml.h:4 skins_autotimer_skin.xml.h:4
 msgid "channel (EPG=Current channel)"
@@ -4166,11 +4153,11 @@ msgstr ""
 
 #: plugins_autotimer_skin.xml.h:5 skins_autotimer_skin.xml.h:5
 msgid "end search"
-msgstr "baigti paiek"
+msgstr "baigti paiešką"
 
 #: plugins_autotimer_skin.xml.h:6 skins_autotimer_skin.xml.h:6
 msgid "event"
-msgstr "vykis"
+msgstr "Įvykis"
 
 #: plugins_autotimer_skin.xml.h:8 plugins_callmonitor1_skin.xml.h:18
 #: plugins_imdbapi_skin.xml.h:7 plugins_imdb_skin.xml.h:7
@@ -4200,7 +4187,7 @@ msgstr ""
 #: skins_stopifnotused_skin.xml.h:6 skins_tsSchnitt_skin.xml.h:7
 #: skins_xupnpd_skin.xml.h:2
 msgid "START"
-msgstr "Pradti"
+msgstr "Pradėti"
 
 #: plugins_autotimer_skin.xml.h:11 skins_autotimer_skin.xml.h:11
 msgid "Timer1 activ"
@@ -4224,7 +4211,7 @@ msgstr "2 numeris"
 
 #: plugins_callmonitor1_skin.xml.h:4 skins_callmonitor1_skin.xml.h:4
 msgid "Aktion wenn standby"
-msgstr "Elgsena budjimo reime"
+msgstr "Elgsena budėjimo režime"
 
 #: plugins_callmonitor1_skin.xml.h:5 skins_callmonitor1_skin.xml.h:5
 msgid "alle Nummern"
@@ -4376,7 +4363,7 @@ msgstr "Trinti"
 
 #: plugins_filemanager_skin.xml.h:3 skins_filemanager_skin.xml.h:3
 msgid "FILELIST MANAGER"
-msgstr "Fail srao valdiklis"
+msgstr "Failų sąrašo valdiklis"
 
 #: plugins_filemanager_skin.xml.h:4 skins_filemanager_skin.xml.h:4
 msgid "Moven"
@@ -4385,7 +4372,7 @@ msgstr "Filmas"
 #: plugins_filemanager_skin.xml.h:5 plugins_mc_skin.xml.h:65
 #: skins_filemanager_skin.xml.h:5 skins_mc_skin.xml.h:65
 msgid "View"
-msgstr "Perirti"
+msgstr "Peržiūrėti"
 
 #: plugins_imdbapi_skin.xml.h:1 plugins_imdb_skin.xml.h:1
 #: plugins_mc_skin.xml.h:4 skins_imdbapi_skin.xml.h:1 skins_imdb_skin.xml.h:1
@@ -4397,11 +4384,11 @@ msgstr "Aktoriai:"
 #: plugins_tmc_skin.xml.h:4 skins_imdbapi_skin.xml.h:2 skins_imdb_skin.xml.h:2
 #: skins_tmc_skin.xml.h:4
 msgid "Director:"
-msgstr "Reisierius:"
+msgstr "Režisierius:"
 
 #: plugins_imdbapi_skin.xml.h:4 skins_imdbapi_skin.xml.h:4
 msgid "IMDb-API - Plugin"
-msgstr "IMDb -API - skiepis"
+msgstr "IMDb -API - Įskiepis"
 
 #: plugins_imdbapi_skin.xml.h:5 plugins_imdb_skin.xml.h:5
 #: plugins_tmdb_skin.xml.h:4 skins_imdbapi_skin.xml.h:5
@@ -4422,7 +4409,7 @@ msgstr ""
 #: skins_imdb_skin.xml.h:8 skins_networkbrowser_skin.xml.h:25
 #: skins_tmdb_skin.xml.h:8
 msgid "SEARCH"
-msgstr "Paieka"
+msgstr "Paieška"
 
 #: plugins_imdbapi_skin.xml.h:10 plugins_imdb_skin.xml.h:10
 #: skins_imdbapi_skin.xml.h:10 skins_imdb_skin.xml.h:10
@@ -4431,7 +4418,7 @@ msgstr ""
 
 #: plugins_imdb_skin.xml.h:4 skins_imdb_skin.xml.h:4
 msgid "IMDb - Plugin"
-msgstr "skiepiai"
+msgstr "Įskiepiai"
 
 #: plugins_instar_skin.xml.h:1 skins_instar_skin.xml.h:1
 msgid "IP-Kamera Einstellungen"
@@ -4497,7 +4484,7 @@ msgstr ""
 #: plugins_lcdpearl1_skin.xml.h:4 plugins_lcdsamsung_skin.xml.h:4
 #: skins_lcdpearl1_skin.xml.h:4 skins_lcdsamsung_skin.xml.h:4
 msgid "aktiv im Standby"
-msgstr "Rodyti Budjime"
+msgstr "Rodyti Budėjime"
 
 #: plugins_lcdpearl1_skin.xml.h:5 plugins_lcdsamsung_skin.xml.h:5
 #: skins_lcdpearl1_skin.xml.h:5 skins_lcdsamsung_skin.xml.h:5
@@ -4511,22 +4498,22 @@ msgstr "selection"
 #: plugins_lcdpearl1_skin.xml.h:8 plugins_lcdsamsung_skin.xml.h:9
 #: skins_lcdpearl1_skin.xml.h:8 skins_lcdsamsung_skin.xml.h:9
 msgid "--- Land"
-msgstr "--- alis"
+msgstr "--- Šalis"
 
 #: plugins_lcdpearl1_skin.xml.h:9 plugins_lcdsamsung_skin.xml.h:12
 #: skins_lcdpearl1_skin.xml.h:9 skins_lcdsamsung_skin.xml.h:12
 msgid "--- Ort"
-msgstr "--- Vietov"
+msgstr "--- Vietovė"
 
 #: plugins_lcdpearl1_skin.xml.h:10 plugins_lcdsamsung_skin.xml.h:13
 #: skins_lcdpearl1_skin.xml.h:10 skins_lcdsamsung_skin.xml.h:13
 msgid "--- PLZ"
-msgstr "--- Pato kodas"
+msgstr "--- Pašto kodas"
 
 #: plugins_lcdpearl1_skin.xml.h:13 plugins_lcdsamsung_skin.xml.h:17
 #: skins_lcdpearl1_skin.xml.h:13 skins_lcdsamsung_skin.xml.h:17
 msgid "Wettervorhersage"
-msgstr "Or prognoz"
+msgstr "Orų prognozė"
 
 #: plugins_lcdsamsung_skin.xml.h:1 skins_lcdsamsung_skin.xml.h:1
 msgid "Samsung SPF.. Settings"
@@ -4582,7 +4569,7 @@ msgstr "Garso nustatymai"
 
 #: plugins_mc_skin.xml.h:12 skins_mc_skin.xml.h:12
 msgid "Autostart Playlist"
-msgstr "Automatikas grojaratis"
+msgstr "Automatiškas grojaraštis"
 
 #: plugins_mc_skin.xml.h:13 skins_mc_skin.xml.h:13
 msgid "Backdrop Interval"
@@ -4594,7 +4581,7 @@ msgstr "Pasirinkimo meniu"
 
 #: plugins_mc_skin.xml.h:17 skins_mc_skin.xml.h:17
 msgid "Datei Browser"
-msgstr "Fail narykl"
+msgstr "Failų naršyklė"
 
 #: plugins_mc_skin.xml.h:19 skins_mc_skin.xml.h:19
 msgid "default Directory"
@@ -4613,11 +4600,11 @@ msgstr "Redaguoti"
 
 #: plugins_mc_skin.xml.h:25 skins_mc_skin.xml.h:25
 msgid "filealt"
-msgstr "Alternatyvus fail"
+msgstr "Alternatyvus failą"
 
 #: plugins_mc_skin.xml.h:26 skins_mc_skin.xml.h:26
 msgid "filealtresult"
-msgstr "Alternatyvus fail rezultatas"
+msgstr "Alternatyvus failą rezultatas"
 
 #: plugins_mc_skin.xml.h:28 skins_mc_skin.xml.h:28
 msgid "Filename:"
@@ -4625,7 +4612,7 @@ msgstr "Failo pavadinimas :"
 
 #: plugins_mc_skin.xml.h:31 skins_mc_skin.xml.h:31
 msgid "Internet Browser"
-msgstr "Interneto narykl"
+msgstr "Interneto naršyklė"
 
 #: plugins_mc_skin.xml.h:32 skins_mc_skin.xml.h:32
 msgid "Interval"
@@ -4657,7 +4644,7 @@ msgstr "Picture Hardware-decoder"
 
 #: plugins_mc_skin.xml.h:41 skins_mc_skin.xml.h:41
 msgid "Pic quality"
-msgstr "Vaizdo kokyb"
+msgstr "Vaizdo kokybė"
 
 #: plugins_mc_skin.xml.h:42 plugins_tithek_skin.xml.h:13
 #: skin_default_skin.xml.h:451 skins_mc_skin.xml.h:42
@@ -4667,7 +4654,7 @@ msgstr "Nuotraukos"
 
 #: plugins_mc_skin.xml.h:43 skins_mc_skin.xml.h:43
 msgid "Picture Player"
-msgstr "Paveikslli Grotuvas"
+msgstr "Paveikslėlių Grotuvas"
 
 #: plugins_mc_skin.xml.h:44 skins_mc_skin.xml.h:44
 msgid "PICTURE SETTINGS"
@@ -4680,7 +4667,7 @@ msgstr "Radijo grotuvas"
 #: plugins_mc_skin.xml.h:52 plugins_tithek_skin.xml.h:16
 #: skins_mc_skin.xml.h:52 skins_tithek_skin.xml.h:16
 msgid "Screensaver"
-msgstr "ekrano usklanda"
+msgstr "ekrano užsklanda"
 
 #: plugins_mc_skin.xml.h:53 plugins_panel_skin.xml.h:5
 #: plugins_panel_skin.xml.h:22 skin_default_skin.xml.h:581
@@ -4694,7 +4681,7 @@ msgstr "Nustatymai"
 
 #: plugins_mc_skin.xml.h:54 skins_mc_skin.xml.h:54
 msgid "Show Pictitle"
-msgstr "Rodyti Paveiksllio pavadinimas"
+msgstr "Rodyti Paveikslėlio pavadinimas"
 
 #: plugins_mc_skin.xml.h:56 skins_mc_skin.xml.h:56
 msgid "small"
@@ -4702,7 +4689,7 @@ msgstr ""
 
 #: plugins_mc_skin.xml.h:57 skins_mc_skin.xml.h:57
 msgid "Sort"
-msgstr "Riuoti"
+msgstr "Rūšiuoti"
 
 #: plugins_mc_skin.xml.h:58 skin_default_skin.xml.h:607 skins_mc_skin.xml.h:58
 msgid "Sorting"
@@ -4726,7 +4713,7 @@ msgstr "Filmai"
 
 #: plugins_mc_skin.xml.h:63 skins_mc_skin.xml.h:63
 msgid "Video Player"
-msgstr "Film grotuvas"
+msgstr "Filmų grotuvas"
 
 #: plugins_mc_skin.xml.h:64 skins_mc_skin.xml.h:64
 msgid "VIDEO SETTINGS"
@@ -4738,18 +4725,18 @@ msgstr "VLC Grotuvas"
 
 #: plugins_mc_skin.xml.h:67 skins_mc_skin.xml.h:67
 msgid "Weather Infos"
-msgstr "Rodyti Or informacija"
+msgstr "Rodyti Orų informacija"
 
 #: plugins_mc_skin.xml.h:68 skins_mc_skin.xml.h:68
 msgid "Web Radio Player"
-msgstr "Internetin Radija"
+msgstr "Internetinė Radija"
 
 #: plugins_networkbrowser_skin.xml.h:1 plugins_stock_skin.xml.h:2
 #: plugins_weather_skin.xml.h:1 skin_default_skin.xml.h:58
 #: skins_networkbrowser_skin.xml.h:1 skins_stock_skin.xml.h:2
 #: skins_weather_skin.xml.h:1
 msgid "ADD"
-msgstr "Pridti"
+msgstr "Pridėti"
 
 #: plugins_networkbrowser_skin.xml.h:2 skins_networkbrowser_skin.xml.h:2
 msgid "Auth Settings"
@@ -4780,8 +4767,8 @@ msgid ""
 "Here you can configure your Auth Data. Use to navigate the control cross and "
 "the extra buttons displayed with your remote control to select."
 msgstr ""
-"ia galite nustatyti savo autentifikavimo informacij.\n"
-"Navigate naudojant nuotolinio valdymo pult ir rodomais emiau klaviais"
+"Čia galite nustatyti savo autentifikavimo informaciją.\n"
+"Navigate naudojant nuotolinio valdymo pultą ir rodomais žemiau klavišais"
 
 #: plugins_networkbrowser_skin.xml.h:11 skins_networkbrowser_skin.xml.h:11
 msgid ""
@@ -4811,12 +4798,12 @@ msgstr "Options"
 
 #: plugins_networkbrowser_skin.xml.h:15 skins_networkbrowser_skin.xml.h:15
 msgid "password"
-msgstr "Slaptaodis"
+msgstr "Slaptažodis"
 
 #: plugins_networkbrowser_skin.xml.h:16 skin_default_skin.xml.h:448
 #: skins_networkbrowser_skin.xml.h:16
 msgid "Password"
-msgstr "Slaptaodis"
+msgstr "Slaptažodis"
 
 #: plugins_networkbrowser_skin.xml.h:17 skins_networkbrowser_skin.xml.h:17
 msgid "protocol"
@@ -4899,11 +4886,11 @@ msgstr "Naujienos"
 #: plugins_news_skin.xml.h:2 plugins_stock_skin.xml.h:3
 #: skins_news_skin.xml.h:2 skins_stock_skin.xml.h:3
 msgid "BROWSER"
-msgstr "Narykl"
+msgstr "Naršyklė"
 
 #: plugins_news_skin.xml.h:3 skins_news_skin.xml.h:3
 msgid "NEXT"
-msgstr "Sekanti"
+msgstr "Kitas"
 
 #: plugins_news_skin.xml.h:4 skins_news_skin.xml.h:4
 msgid "PREV"
@@ -4958,12 +4945,12 @@ msgstr "CAM / Softcam"
 #: plugins_panel_skin.xml.h:12 skin_default_skin.xml.h:125
 #: skins_panel_skin.xml.h:12
 msgid "Cancel"
-msgstr "Ataukti"
+msgstr "Atšaukti"
 
 #: plugins_panel_skin.xml.h:13 skin_default_skin.xml.h:137
 #: skins_panel_skin.xml.h:13
 msgid "Child safety"
-msgstr "Tv kontrol"
+msgstr "Tėvų kontrolė"
 
 #: plugins_panel_skin.xml.h:14 skins_panel_skin.xml.h:14
 msgid "Default"
@@ -4995,7 +4982,7 @@ msgstr "testas"
 #: plugins_panel_skin.xml.h:25 skin_default_skin.xml.h:718
 #: skins_panel_skin.xml.h:25
 msgid "Usb Device"
-msgstr "USB renginys (s)"
+msgstr "USB įrenginys (s)"
 
 #: plugins_panel_skin.xml.h:26 skins_panel_skin.xml.h:26
 msgid "Videotune"
@@ -5015,16 +5002,16 @@ msgstr ""
 
 #: plugins_readerconfig_skin.xml.h:4 skins_readerconfig_skin.xml.h:4
 msgid "Enable"
-msgstr "traukti"
+msgstr "Įtraukti"
 
 #: plugins_readerconfig_skin.xml.h:5 skins_readerconfig_skin.xml.h:5
 msgid ""
 "Here you can aktivate/deaktivate you readers. Use to navigate the control "
 "cross and the extra buttons displayed with your remote control to select."
 msgstr ""
-"ia galite jungti / ijungti savo skaitytojui ( ai) .\n"
+"Čia galite įjungti / išjungti savo skaitytojui ( ai) .\n"
 "\n"
-"Navigate naudojantis nuotolinio valdymo pultu ir rodomais emiau klaviais"
+"Navigate naudojantis nuotolinio valdymo pultu ir rodomais žemiau klavišais"
 
 #: plugins_readerconfig_skin.xml.h:6 skins_readerconfig_skin.xml.h:6
 msgid ""
@@ -5042,7 +5029,7 @@ msgstr "Reader"
 #: plugins_readerconfig_skin.xml.h:8 readerconfig.h:268 readerconfig.h:338
 #: skins_readerconfig_skin.xml.h:8
 msgid "Reader Configuration"
-msgstr "Konfigracija"
+msgstr "Konfigūracija"
 
 #: plugins_readerconfig_skin.xml.h:9 readerconfig.h:383
 #: skins_readerconfig_skin.xml.h:9
@@ -5161,7 +5148,7 @@ msgstr ""
 #: plugins_sudoku_skin.xml.h:15 plugins_tithek_skin.xml.h:14
 #: skins_sudoku_skin.xml.h:15 skins_tithek_skin.xml.h:14 tithek.h:1146
 msgid "please wait..."
-msgstr "Praome laukti..."
+msgstr "Prašome laukti..."
 
 #: plugins_sudoku_skin.xml.h:16 skins_sudoku_skin.xml.h:16
 msgid "Sudoku Help"
@@ -5182,15 +5169,15 @@ msgstr "tiThek"
 #: plugins_tithek_skin.xml.h:3 skins_tithek_skin.xml.h:3 tithek.h:1541
 #: tithek.h:2131
 msgid "ADD FAV"
-msgstr "Pridti"
+msgstr "Pridėti"
 
 #: plugins_tithek_skin.xml.h:4 skins_tithek_skin.xml.h:4
 msgid "DEL FAV"
-msgstr "Itrinti"
+msgstr "Ištrinti"
 
 #: plugins_tithek_skin.xml.h:5 skins_tithek_skin.xml.h:5
 msgid "Exit Tithek"
-msgstr "Udaryti"
+msgstr "Uždaryti"
 
 #: plugins_tithek_skin.xml.h:6 skins_tithek_skin.xml.h:6
 msgid "Hid XXX Streams"
@@ -5235,7 +5222,7 @@ msgstr ""
 
 #: plugins_tithek_skin.xml.h:19 skins_tithek_skin.xml.h:19
 msgid "TiThek - Favorite Edit"
-msgstr "Redaguoti adresyn"
+msgstr "Redaguoti adresyną"
 
 #: plugins_tithek_skin.xml.h:20 skin_default_skin.xml.h:674
 #: skins_tithek_skin.xml.h:20
@@ -5249,11 +5236,11 @@ msgstr "Tipas"
 
 #: plugins_tithek_skin.xml.h:22 skins_tithek_skin.xml.h:22
 msgid "View Cover"
-msgstr "Perirti virelis"
+msgstr "Peržiūrėti viršelis"
 
 #: plugins_tithek_skin.xml.h:23 skins_tithek_skin.xml.h:23
 msgid "View Sections"
-msgstr "Perirti Profiliai"
+msgstr "Peržiūrėti Profiliai"
 
 #: plugins_tiwakeup_skin.xml.h:1 skins_tiwakeup_skin.xml.h:1
 msgid "tiWakeup"
@@ -5269,7 +5256,7 @@ msgstr "Redaguoti"
 
 #: plugins_tmc_skin.xml.h:6 skins_tmc_skin.xml.h:6
 msgid "Full Pic"
-msgstr "per vis ekran reimas"
+msgstr "per visą ekraną režimas"
 
 #: plugins_tmc_skin.xml.h:8 skins_tmc_skin.xml.h:8
 msgid "IMDB Search"
@@ -5285,7 +5272,7 @@ msgstr "Pritildyti po"
 
 #: plugins_tmc_skin.xml.h:12 skins_tmc_skin.xml.h:12
 msgid "Preview"
-msgstr "Perira"
+msgstr "Peržiūra"
 
 #: plugins_tmc_skin.xml.h:14 skins_tmc_skin.xml.h:14
 msgid "Runtime:"
@@ -5337,7 +5324,7 @@ msgstr ""
 
 #: plugins_tsSchnitt_skin.xml.h:6 skins_tsSchnitt_skin.xml.h:6
 msgid "select movie"
-msgstr "pasirinkite film"
+msgstr "pasirinkite filmą"
 
 #: plugins_tsSchnitt_skin.xml.h:8 skins_tsSchnitt_skin.xml.h:8
 msgid ""
@@ -5469,55 +5456,55 @@ msgstr ""
 
 #: possetup.h:35
 msgid "move west"
-msgstr "Sukti vakarus"
+msgstr "Sukti į vakarus"
 
 #: possetup.h:36
 msgid "search west"
-msgstr "Iekokite vakar"
+msgstr "Ieškokite vakarų"
 
 #: possetup.h:37
 msgid "search east"
-msgstr "Iekokite ryt"
+msgstr "Ieškokite rytų"
 
 #: possetup.h:38
 msgid "move east"
-msgstr "Sukti rytus"
+msgstr "Sukti į rytus"
 
 #: possetup.h:43
 msgid "step west"
-msgstr "ingsnis vakarus"
+msgstr "Žingsnis į vakarus"
 
 #: possetup.h:44
 msgid "step east"
-msgstr "ingsnis rytus"
+msgstr "Žingsnis į rytus"
 
 #: possetup.h:49
 msgid "limits off"
-msgstr "Ribos ijungtos"
+msgstr "Ribos išjungtos"
 
 #: possetup.h:50
 msgid "limit west"
-msgstr "Vakar riba"
+msgstr "Vakarų riba"
 
 #: possetup.h:51
 msgid "limit east"
-msgstr "Ryt riba"
+msgstr "Rytų riba"
 
 #: possetup.h:52
 msgid "limits on"
-msgstr "Ribos jungtos"
+msgstr "Ribos įjungtos"
 
 #: possetup.h:57
 msgid "store position"
-msgstr "Isaugoti padt"
+msgstr "Išsaugoti padėtį"
 
 #: possetup.h:58
 msgid "goto position"
-msgstr "Eiti pozicij"
+msgstr "Eiti į poziciją"
 
 #: possetup.h:63
 msgid "startposition"
-msgstr "Pradios pozicija"
+msgstr "Pradžios pozicija"
 
 #: possetup.h:98
 msgid ""
@@ -5680,7 +5667,7 @@ msgstr ""
 
 #: record.h:1187
 msgid "Timer Record start !"
-msgstr "Laikmatis raymas prasidjo !"
+msgstr "Laikmatis įrašymas prasidėjo !"
 
 #: record.h:1320 record.h:1394 skin_default_skin.xml.h:497
 #: webif_index.atemio5200.h:59 webif_index.atemio5200.h:115
@@ -5696,7 +5683,7 @@ msgstr "Laikmatis raymas prasidjo !"
 #: webif_rc_virtual.atemio6100.h:19 webif_rc_virtual.atemio6200.h:19
 #: webif_rc_virtual.atemio-nemesis.h:19
 msgid "Record"
-msgstr "raas"
+msgstr "įrašas"
 
 #: record.h:1372 record.h:1381 record.h:1404
 msgid "change"
@@ -5732,11 +5719,11 @@ msgstr "KLAIDA: Laikmatis startTime / Endtime klaidingas"
 
 #: rectimer.h:145
 msgid "Timer endtime shorter than aktual time"
-msgstr "KLAIDA: Laikmatis Endtime prityje"
+msgstr "KLAIDA: Laikmatis Endtime präityje"
 
 #: rectimer.h:150
 msgid "Timer endtime shorter than start time"
-msgstr "KLAIDA: Nustatyti pabaiga yra prie nustatyt Pradios laikas"
+msgstr "KLAIDA: Nustatyti pabaiga yra prieš nustatytą Pradžios laikas"
 
 #: rectimer.h:155
 msgid "Timer service ID not ok"
@@ -5744,7 +5731,7 @@ msgstr "KLAIDA: Paslaugos ID klaidingas"
 
 #: rectimer.h:160
 msgid "Timer transponder ID not ok"
-msgstr "KLAIDA: Sistuvo ID klaidingas"
+msgstr "KLAIDA: Siųstuvo ID klaidingas"
 
 #: rectimer.h:166
 msgid ""
@@ -5752,11 +5739,11 @@ msgid ""
 "Would you add the timer?"
 msgstr ""
 "Laikmatis susiduria su rinkiniu timer.\n"
-"Do js vis dar norite nustatyti laikmat ?"
+"Do jūs vis dar norite nustatyti laikmatį ?"
 
 #: rectimer.h:566
 msgid "not started akttime higher than timer endtime"
-msgstr "KLAIDA : vykio ne started. Endtime jau prityje"
+msgstr "KLAIDA : Įvykio ne started. Endtime jau präityje"
 
 #: rectimer.h:577
 msgid "EPG Scan activate standby?"
@@ -5768,7 +5755,7 @@ msgstr "Manually stopped"
 
 #: rectimer.h:1060 rectimer.h:1469 rectimer.h:1480
 msgid "once"
-msgstr "vien kart"
+msgstr "vieną kartą"
 
 #: rectimer.h:1061 rectimer.h:1471 rectimer.h:1482
 msgid "repeate"
@@ -5780,19 +5767,19 @@ msgstr "kasdien"
 
 #: rectimer.h:1074
 msgid "weekly"
-msgstr "Savaits"
+msgstr "Savaitės"
 
 #: rectimer.h:1075
 msgid "workdays"
-msgstr "iokiadieniai"
+msgstr "Šiokiadieniai"
 
 #: rectimer.h:1466
 msgid "rec"
-msgstr "ra"
+msgstr "įrašų"
 
 #: rectimer.h:1477
 msgid "switch"
-msgstr "Zap norim kanal"
+msgstr "Zap norimą kanalą"
 
 #: rectimer.h:1504
 msgid "waiting"
@@ -5800,7 +5787,7 @@ msgstr "laukimas"
 
 #: rectimer.h:1508
 msgid "success"
-msgstr "skm"
+msgstr "sėkmė"
 
 #: rectimer.h:1510
 msgid "error"
@@ -5812,11 +5799,11 @@ msgstr "Ar tikrai norite atstatyti gamykloje nustatymus?"
 
 #: restoredefault.h:19
 msgid "Receiver reboots now !!!"
-msgstr "Imtuv perkrauti dabar !!!"
+msgstr "Imtuvą perkrauti dabar !!!"
 
 #: restoredefault.h:23
 msgid "Can't restore settings"
-msgstr "KLAIDA: Nemanoma atkurti nustatymus"
+msgstr "KLAIDA: Neįmanoma atkurti nustatymus"
 
 #: restoredefault.h:32
 msgid ""
@@ -5856,11 +5843,11 @@ msgstr "KLAIDA: Nepavyko prisijungti prie serverio !"
 
 #: rgui.h:118
 msgid "Send remote box into standby ?"
-msgstr "Nustatyti nuotolinio imtuv budjimo reim ?"
+msgstr "Nustatyti nuotolinio imtuvą į budėjimo režimą ?"
 
 #: rgui.h:134
 msgid "Connection to server lost !"
-msgstr "Jungtis server prarasta!"
+msgstr "Jungtis į serverį prarasta!"
 
 #: rtl2now.h:31
 msgid ""
@@ -5874,7 +5861,7 @@ msgstr ""
 
 #: scan.h:1544
 msgid "Sat/Provider: "
-msgstr "Sat / teikjas :"
+msgstr "Sat / teikėjas :"
 
 #: scan.h:1560
 msgid "TV: "
@@ -5897,22 +5884,22 @@ msgid ""
 "Channel scan ended.\n"
 "Nothing found."
 msgstr ""
-"Kanal skenavimo baigtas.\n"
-" Paslaug nerasta."
+"Kanalų skenavimo baigtas.\n"
+" Paslaugų nerasta."
 
 #: scan.h:1606
 msgid "Channel scan ended."
 msgstr ""
-"Kanal skenavimas baigtas.\n"
-" Isaugoti Kanalus naudojant spalvotus klavius Pultelyje."
+"Kanalų skenavimas baigtas.\n"
+" Išsaugoti Kanalus naudojant spalvotus klavišus Pultelyje."
 
 #: scan.h:1636
 msgid "All new channels added!"
-msgstr "Pridti Visi nauji kanalai !"
+msgstr "Pridėti Visi nauji kanalai !"
 
 #: scan.h:1646
 msgid "Wait for channel scan end"
-msgstr "Praome palaukti, kol baigsis skenavimas"
+msgstr "Prašome palaukti, kol baigsis skenavimas"
 
 #: scan.h:1901
 msgid "Scan is not allowed if record or stream is running !"
@@ -5936,7 +5923,7 @@ msgstr "Keli Palydovai"
 
 #: scan.h:2019
 msgid "Single Provider"
-msgstr "Vienas teikjas"
+msgstr "Vienas teikėjas"
 
 #: scan.h:2024
 msgid "Auto Scan"
@@ -5948,19 +5935,19 @@ msgstr "Nekeiskite"
 
 #: scan.h:2275
 msgid "Create new"
-msgstr "Sukurti nauj"
+msgstr "Sukurti naują"
 
 #: scan.h:2276
 msgid "Delete All"
-msgstr "Itrinti visus"
+msgstr "Ištrinti visus"
 
 #: scan.h:2358
 msgid "Transponder changed"
-msgstr "Sistuvas pakeistas"
+msgstr "Siųstuvas pakeistas"
 
 #: scart.h:12
 msgid "Change to scart"
-msgstr "Pakeisti SCART ivest"
+msgstr "Pakeisti į SCART išvestį"
 
 #: scart.h:25
 msgid "Videomode must be 576i for Scart"
@@ -5980,11 +5967,11 @@ msgstr "juodas"
 
 #: screensaveradjust.h:30
 msgid "blue"
-msgstr "Mlyna"
+msgstr "Mėlyna"
 
 #: screensaveradjust.h:31
 msgid "green"
-msgstr "alia"
+msgstr "Žalia"
 
 #: screensaveradjust.h:32
 msgid "red"
@@ -6012,7 +5999,7 @@ msgstr "violetinis"
 
 #: screensaveradjust.h:38
 msgid "mixed mode"
-msgstr "mirus reimas"
+msgstr "mišrus režimas"
 
 #: screensaveradjust.h:41
 msgid "Icon 1"
@@ -6032,7 +6019,7 @@ msgstr ""
 
 #: screensaveradjust.h:47
 msgid "Song TitleText"
-msgstr "Rodyti Dainos Pavadinim"
+msgstr "Rodyti Dainos Pavadinimą"
 
 #: screensaveradjust.h:48
 msgid "Logo 1"
@@ -6056,7 +6043,7 @@ msgstr ""
 
 #: scriptexec.h:41 tpk_showname.h:163
 msgid "Script execute"
-msgstr "Vykdyti scenarij"
+msgstr "Vykdyti scenarijų"
 
 #: service.h:712
 msgid ""
@@ -6064,7 +6051,7 @@ msgid ""
 "Stop it and switch ?"
 msgstr ""
 "Timeshift veikia !!! \n"
-"Stop Timeshift ir pakeisti kanal ?"
+"Stop Timeshift ir pakeisti kanalą ?"
 
 #: service.h:940
 msgid ""
@@ -6076,18 +6063,18 @@ msgstr ""
 
 #: service.h:943
 msgid "Tuning to Channel failed!"
-msgstr "KLAIDA: Kanalo nra"
+msgstr "KLAIDA: Kanalo nėra"
 
 #: service.h:946
 msgid "Can't open frontend dev or Frontend Type unknown!"
 msgstr ""
-"KLAIDA: Nepavyko atidaryti rengini ssajaName or\n"
+"KLAIDA: Nepavyko atidaryti Įrenginių sąsajaName or\n"
 "Frontend Tipas unknown."
 
 #: service.h:951
 msgid "Channellist empty or corrupt (channel not found)!"
 msgstr ""
-"KLAIDA: Channellist tuias arba corrupt\n"
+"KLAIDA: Channellist tuščias arba corrupt\n"
 "Channel nerasta!"
 
 #: settings_autostart.h:206
@@ -6104,7 +6091,7 @@ msgstr ""
 
 #: settings_bluebutton.h:6
 msgid "Blue Key Action - Setup"
-msgstr "Mlyno mygtuko veiksm - sranka"
+msgstr "Mėlyno mygtuko veiksmų - sąranka"
 
 #: settings_bluebutton.h:12 settings_pluginbutton.h:16 settings_redbutton.h:16
 msgid "TV / Radio Switch"
@@ -6120,8 +6107,8 @@ msgid ""
 "Choose your plugin / menu item from the following list and show it so the "
 "blue button"
 msgstr ""
-"Nustatyti Mlyno Mygtuko Funkcijas : \n"
-" pasirinkti i srao"
+"Nustatyti Mėlyno Mygtuko Funkcijas : \n"
+" pasirinkti iš sąrašo"
 
 #: settings_mediabutton.h:6
 msgid "Media Key Action - Setup"
@@ -6135,21 +6122,21 @@ msgstr ""
 msgid ""
 "Choose your Media plugin item from the following list and show it so the "
 "plugin button"
-msgstr "Pasirinkite funkcij i toliau ivardytj srae Media mygtukas"
+msgstr "Pasirinkite funkciją iš toliau išvardytųjų sąraše Media mygtukas"
 
 #: settings_pluginbutton.h:6
 msgid "Plugin Key Action - Setup"
-msgstr "skiepis pagrindin priemon - sranka"
+msgstr "Įskiepis pagrindinė priemonė - sąranka"
 
 #: settings_pluginbutton.h:35
 msgid ""
 "Choose your plugin / menu item from the following list and show it so the "
 "plugin button"
-msgstr "Pasirinkite funkcij i io srao u Plugin mygtukas"
+msgstr "Pasirinkite funkciją iš šio sąrašo už Plugin mygtukas"
 
 #: settings_redbutton.h:6
 msgid "Red Key Action - Setup"
-msgstr "Raudonas mygtukas veiksmas - sranka"
+msgstr "Raudonas mygtukas veiksmas - sąranka"
 
 #: settings_redbutton.h:35
 msgid ""
@@ -6391,7 +6378,7 @@ msgstr "Add All Channels"
 
 #: skin_default_skin.xml.h:60
 msgid "ADD BOUQUET"
-msgstr "pridti paket"
+msgstr "pridėti paketą"
 
 #: skin_default_skin.xml.h:61
 msgid "ADD ONE"
@@ -6399,7 +6386,7 @@ msgstr "Add Individually"
 
 #: skin_default_skin.xml.h:62
 msgid "add service"
-msgstr "Pridti paslaug"
+msgstr "Pridėti paslaugą"
 
 #: skin_default_skin.xml.h:63 webif_settings.h:1
 msgid "Adjust"
@@ -6441,11 +6428,11 @@ msgstr "Veiksmas po Timeshift"
 
 #: skin_default_skin.xml.h:70
 msgid "Age Protect"
-msgstr "Amius Apsauga nuo"
+msgstr "Amžius Apsauga nuo"
 
 #: skin_default_skin.xml.h:71
 msgid "Aktion after"
-msgstr "Veiksmas po raymas"
+msgstr "Veiksmas po įrašymas"
 
 #: skin_default_skin.xml.h:72 webif_channellist.h:1
 msgid "ALL"
@@ -6457,7 +6444,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:77
 msgid "Ask on channel switch"
-msgstr "Paklausti perjungiant kanal"
+msgstr "Paklausti perjungiant kanalą"
 
 #: skin_default_skin.xml.h:79
 msgid "Aspect Ratio:"
@@ -6497,7 +6484,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:89
 msgid "Automatic start last subtitle"
-msgstr "Automatikai paleisti paskutinius subtitrus"
+msgstr "Automatiškai paleisti paskutinius subtitrus"
 
 #: skin_default_skin.xml.h:90
 msgid "Auto resolution"
@@ -6505,7 +6492,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:91
 msgid "Autostart - Audio / Video / Sat"
-msgstr "Audio / Video / Palydovin"
+msgstr "Audio / Video / Palydovinė"
 
 #: skin_default_skin.xml.h:92
 msgid "Autostart - Cam / Emu"
@@ -6529,7 +6516,7 @@ msgstr "Paleistis"
 
 #: skin_default_skin.xml.h:97
 msgid "Autostart - Usb Device"
-msgstr "USB renginys"
+msgstr "USB įrenginys"
 
 #: skin_default_skin.xml.h:98
 msgid "A/V Settings"
@@ -6574,7 +6561,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:109
 msgid "Behavior at recording"
-msgstr "K pamatyti per Recordings"
+msgstr "What to display during Recordings"
 
 #: skin_default_skin.xml.h:110
 msgid "BER:"
@@ -6598,7 +6585,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:115
 msgid "Bouquet List"
-msgstr "Mgstami"
+msgstr "Favourites"
 
 #: skin_default_skin.xml.h:116
 msgid "Bouquet Type"
@@ -6606,7 +6593,7 @@ msgstr "Type"
 
 #: skin_default_skin.xml.h:117
 msgid "Brightness"
-msgstr "viesumas"
+msgstr "Šviesumas"
 
 #: skin_default_skin.xml.h:119
 msgid "c"
@@ -6626,15 +6613,15 @@ msgstr ""
 
 #: skin_default_skin.xml.h:124
 msgid "cancel"
-msgstr "Ataukti"
+msgstr "Atšaukti"
 
 #: skin_default_skin.xml.h:126
 msgid "Change Channelname"
-msgstr "Atnaujinti Channelname"
+msgstr "Update Channelname"
 
 #: skin_default_skin.xml.h:128
 msgid "Change Feed"
-msgstr "Pridti / Keisti Feed Adresas"
+msgstr "Add/Change Feed Address"
 
 #: skin_default_skin.xml.h:130
 msgid "Channel Allocation"
@@ -6650,11 +6637,11 @@ msgstr ""
 
 #: skin_default_skin.xml.h:134
 msgid "Channel Search"
-msgstr "Kanal paieka"
+msgstr "Kanalų paieška"
 
 #: skin_default_skin.xml.h:135
 msgid "Channel Service"
-msgstr "Kanal Paslaugos"
+msgstr "Kanalų Paslaugos"
 
 #: skin_default_skin.xml.h:138
 msgid "Ci-Modul internal Menu"
@@ -6666,7 +6653,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:140
 msgid "Clear before scan"
-msgstr "Ivalyti prie skanavim"
+msgstr "Išvalyti prieš skanavimą"
 
 #: skin_default_skin.xml.h:141
 msgid "CLEAR INPUT"
@@ -6710,7 +6697,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:151
 msgid "Common Interface"
-msgstr "statomi moduliai"
+msgstr "Įstatomi moduliai"
 
 #: skin_default_skin.xml.h:152
 msgid "Community Pass"
@@ -6734,7 +6721,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:157
 msgid "copy service"
-msgstr "Kopijuoti paslaug i Mgstamus"
+msgstr "Kopijuoti paslaugą i Mėgstamus"
 
 #: skin_default_skin.xml.h:159
 msgid "Create Default Favorites"
@@ -6778,7 +6765,7 @@ msgstr "diena"
 
 #: skin_default_skin.xml.h:170 softcam.h:290
 msgid "Deactivate"
-msgstr "Ijungti"
+msgstr "Išjungti"
 
 #: skin_default_skin.xml.h:173
 msgid "Debug Modus"
@@ -6794,19 +6781,19 @@ msgstr ""
 
 #: skin_default_skin.xml.h:177
 msgid "Del EPG before scan"
-msgstr "Trinti EPG prie nuskaitym"
+msgstr "Trinti EPG prieš nuskaitymą"
 
 #: skin_default_skin.xml.h:179
 msgid "Delete EPG after read"
-msgstr "Itrinti EPG po perskaitymo"
+msgstr "Ištrinti EPG po perskaitymo"
 
 #: skin_default_skin.xml.h:182
 msgid "del startchannel"
-msgstr "Paalinti startin kanal"
+msgstr "Pašalinti startinį kanalą"
 
 #: skin_default_skin.xml.h:183
 msgid "DESC"
-msgstr "Apraymas"
+msgstr "Aprašymas"
 
 #: skin_default_skin.xml.h:184
 msgid "Device:"
@@ -6822,7 +6809,7 @@ msgstr "DiSEqC Command order"
 
 #: skin_default_skin.xml.h:189
 msgid "DiSEqC Mode"
-msgstr "DiSEqC bdas"
+msgstr "DiSEqC būdas"
 
 #: skin_default_skin.xml.h:190
 msgid "Diseqc repeats"
@@ -6862,7 +6849,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:202
 msgid "Dutch"
-msgstr "Oland"
+msgstr "Olandų"
 
 #: skin_default_skin.xml.h:203
 msgid "DYNDNS Settings"
@@ -6898,7 +6885,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:212
 msgid "English"
-msgstr "Angl"
+msgstr "Anglų"
 
 #: skin_default_skin.xml.h:214
 msgid "EPG button on EPG Screen"
@@ -6926,7 +6913,7 @@ msgstr "EPG Atstatyti"
 
 #: skin_default_skin.xml.h:220
 msgid "EPG Save Mode"
-msgstr "Saugoti EPG fail"
+msgstr "Saugoti EPG failą"
 
 #: skin_default_skin.xml.h:221
 msgid "EPG Scanlist"
@@ -6938,7 +6925,7 @@ msgstr ""
 #: webif_index.atemio7600.h:15 webif_index.atemio-nemesis.h:17
 #: webif_index.h:18
 msgid "EPG Search"
-msgstr "EPG Paieka"
+msgstr "EPG Paieška"
 
 #: skin_default_skin.xml.h:223
 msgid "EPG Settings"
@@ -6946,11 +6933,11 @@ msgstr "EPG Nustatymai"
 
 #: skin_default_skin.xml.h:224
 msgid "EPG SHORT VIEW"
-msgstr "EPG Trumpas"
+msgstr "EPG Shortview"
 
 #: skin_default_skin.xml.h:227 webif_system_extensions.h:1 webif_system.h:1
 msgid "Extensions"
-msgstr "Ipltimai"
+msgstr "Išplėtimai"
 
 #: skin_default_skin.xml.h:228
 msgid "Ext. Modul detect (needs reboot)"
@@ -6972,7 +6959,7 @@ msgstr ""
 #: webif_rc.atemio6000.h:18 webif_rc.atemio6100.h:18 webif_rc.atemio6200.h:18
 #: webif_rc.atemio7600.h:17 webif_rc.atemio-nemesis.h:18
 msgid "Fav"
-msgstr "Mgstami"
+msgstr ""
 
 #: skin_default_skin.xml.h:236
 msgid "FEC"
@@ -6992,7 +6979,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:240
 msgid "Fix Shutdown Time"
-msgstr "Fiksuoto ijungimo laikas"
+msgstr "Fiksuoto išjungimo laikas"
 
 #: skin_default_skin.xml.h:241
 msgid ""
@@ -7005,11 +6992,11 @@ msgstr ""
 
 #: skin_default_skin.xml.h:242 webif_system_update.h:2
 msgid "Flashupdate (online)"
-msgstr "Programins rangos naujinimas (Online )"
+msgstr "Programinės įrangos naujinimas (Online )"
 
 #: skin_default_skin.xml.h:243 webif_system_update.h:3
 msgid "Flashupdate (tmp)"
-msgstr "Programins rangos naujinimas (vietinis )"
+msgstr "Programinės įrangos naujinimas (vietinis )"
 
 #: skin_default_skin.xml.h:244
 msgid "Fontsize adjust in pixel"
@@ -7017,7 +7004,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:245
 msgid "Format HDD"
-msgstr "Formatuoti rengin"
+msgstr "Formatuoti įrenginį"
 
 #: skin_default_skin.xml.h:246 webif_info_systeminfos.h:3
 msgid "free space"
@@ -7025,15 +7012,15 @@ msgstr "Laisvos vietos"
 
 #: skin_default_skin.xml.h:247
 msgid "French"
-msgstr "Prancz"
+msgstr "Prancūzų"
 
 #: skin_default_skin.xml.h:248
 msgid "Frequency"
-msgstr "Danis"
+msgstr "Dažnis"
 
 #: skin_default_skin.xml.h:249
 msgid "Frequency:"
-msgstr "danis:"
+msgstr "dažnis:"
 
 #: skin_default_skin.xml.h:251
 msgid "g"
@@ -7045,19 +7032,19 @@ msgstr ""
 
 #: skin_default_skin.xml.h:253
 msgid "gateway"
-msgstr "liuzas"
+msgstr "Šliuzas"
 
 #: skin_default_skin.xml.h:254
 msgid "Genre"
-msgstr "anras"
+msgstr "Žanras"
 
 #: skin_default_skin.xml.h:255
 msgid "German"
-msgstr "Vokiei"
+msgstr "Vokiečių"
 
 #: skin_default_skin.xml.h:257
 msgid "Go to startpos"
-msgstr "Eiti Startposition"
+msgstr "Eiti į Startposition"
 
 #: skin_default_skin.xml.h:258
 msgid "Graph. EPG"
@@ -7077,7 +7064,7 @@ msgstr "Grafinis EPG Padidinti"
 
 #: skin_default_skin.xml.h:263
 msgid "Greek"
-msgstr "Graik"
+msgstr "Graikų"
 
 #: skin_default_skin.xml.h:264
 msgid "Guardinterval"
@@ -7144,7 +7131,7 @@ msgstr "Here you may configure your CI module(s)."
 
 #: skin_default_skin.xml.h:279
 msgid "Here you can configure the smartcard readers."
-msgstr "ia galite konfigruoti dekodavimo skaitytojai (ai ) ."
+msgstr "Čia galite konfigūruoti dekodavimo skaitytojai (ai ) ."
 
 #: skin_default_skin.xml.h:280
 msgid "Here you can configure your web server."
@@ -7152,7 +7139,7 @@ msgstr "Here you may configure your web server."
 
 #: skin_default_skin.xml.h:281
 msgid "Here you can create a new record timer."
-msgstr "ia galite nustatyti nauj laikmat raymo event."
+msgstr "Čia galite nustatyti naują laikmatį įrašymo event."
 
 #: skin_default_skin.xml.h:282
 msgid "Here you can do a blind scan, this process takes a long time."
@@ -7161,7 +7148,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:283
 msgid "Here you can edit the following channels from the EPG."
-msgstr "ia galite redaguoti iuos kanalus i EPG."
+msgstr "Here you may edit the channels for EPG"
 
 #: skin_default_skin.xml.h:284
 msgid "Here you can install from our current online offering plug-ins."
@@ -7172,8 +7159,8 @@ msgid ""
 "Here you can in your EPG entries for specific search. Use to start a color "
 "button to search."
 msgstr ""
-"ia galite iekoti konkrei ra su EPG.\n"
-"Use yra coulored mygtuk, nordami pradti search."
+"Here you may search for specific entries with the EPG.\n"
+"Use a coulored button to start the search."
 
 #: skin_default_skin.xml.h:286
 msgid "Here you can make for your selected network interface settings."
@@ -7209,7 +7196,7 @@ msgstr "Here you may personalise your default autostart."
 
 #: skin_default_skin.xml.h:292
 msgid "Here you can make your epg settings."
-msgstr "ia galite individualizuoti savo EPG configuration."
+msgstr "Here you may personalise your EPG configuration."
 
 #: skin_default_skin.xml.h:293
 msgid "Here you can make your mediadb settings."
@@ -7241,7 +7228,7 @@ msgstr "Here you may personalise your PIN protection setup."
 
 #: skin_default_skin.xml.h:300
 msgid "Here you can make your recording timer configuration."
-msgstr "ia js galite padaryti savo raymo laikmaio configuration."
+msgstr "Čia jūs galite padaryti savo įrašymo laikmačio configuration."
 
 #: skin_default_skin.xml.h:301
 msgid "Here you can make your recordpath settings."
@@ -7274,7 +7261,7 @@ msgstr "Here you may personalise your USB autostart setup."
 
 #: skin_default_skin.xml.h:307
 msgid "Here you can make your vfd settings."
-msgstr "ia galite individualizuoti savo VFD setup."
+msgstr "Čia galite individualizuoti savo VFD setup."
 
 #: skin_default_skin.xml.h:308
 msgid "Here you can manage your Ci-Modul or Card Infos."
@@ -7388,7 +7375,7 @@ msgstr "Serverio vardas"
 
 #: skin_default_skin.xml.h:328
 msgid "How many days"
-msgstr "Kiek dien saugoti EPG"
+msgstr "Kiek dienų saugoti EPG"
 
 #: skin_default_skin.xml.h:329
 msgid "HTTPD Port"
@@ -7424,7 +7411,7 @@ msgstr "Informacija"
 
 #: skin_default_skin.xml.h:339
 msgid "install"
-msgstr "diegti"
+msgstr "Įdiegti"
 
 #: skin_default_skin.xml.h:341
 msgid "internet"
@@ -7444,7 +7431,7 @@ msgstr "IP Stream"
 
 #: skin_default_skin.xml.h:346
 msgid "Italian"
-msgstr "Ital"
+msgstr "Italų"
 
 #: skin_default_skin.xml.h:347
 msgid "j"
@@ -7468,7 +7455,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:354
 msgid "Keyboard"
-msgstr "Klaviatra"
+msgstr "Klaviatūra"
 
 #: skin_default_skin.xml.h:355
 msgid "l"
@@ -7492,11 +7479,11 @@ msgstr "Platuma"
 
 #: skin_default_skin.xml.h:360
 msgid "LED - brightness running"
-msgstr "LED - Rykumas"
+msgstr "LED - Ryškumas"
 
 #: skin_default_skin.xml.h:361
 msgid "LED - brightness standby"
-msgstr "LED - Rykumas budjimo reimui"
+msgstr "LED - Ryškumas budėjimo režimui"
 
 #: skin_default_skin.xml.h:362
 msgid "Limit"
@@ -7552,15 +7539,15 @@ msgstr "Pagrindinis meniu"
 
 #: skin_default_skin.xml.h:375
 msgid "Manual Search"
-msgstr "Rankin Paieka"
+msgstr "Rankinė Paieška"
 
 #: skin_default_skin.xml.h:376
 msgid "Manual Search Cable"
-msgstr "Rankin Paieka Kabelin"
+msgstr "Rankinė Paieška Kabelinė"
 
 #: skin_default_skin.xml.h:377
 msgid "Manual Search Terrestrial"
-msgstr "Rankin Paieka Antemin"
+msgstr "Rankinė Paieška Antžeminė"
 
 #: skin_default_skin.xml.h:378
 msgid "Marker"
@@ -7568,7 +7555,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:379
 msgid "Maximal frequency"
-msgstr "Maksimalus danis"
+msgstr "Maksimalus dažnis"
 
 #: skin_default_skin.xml.h:380
 msgid "Maximal signalrate"
@@ -7616,7 +7603,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:394
 msgid "Minimal frequency"
-msgstr "Minimalus Danis"
+msgstr "Minimalus Dažnis"
 
 #: skin_default_skin.xml.h:395
 msgid "Minimal signalrate"
@@ -7624,15 +7611,15 @@ msgstr "Minimalus Signalas"
 
 #: skin_default_skin.xml.h:396
 msgid "Minutes"
-msgstr "minui"
+msgstr "minučių"
 
 #: skin_default_skin.xml.h:397
 msgid "Minutes:"
-msgstr "Minuts :"
+msgstr "Minutės :"
 
 #: skin_default_skin.xml.h:398
 msgid "Modulation"
-msgstr "Paauktjimas"
+msgstr "Paaukštėjimas"
 
 #: skin_default_skin.xml.h:399
 msgid "Modulation:"
@@ -7648,7 +7635,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:405
 msgid "move service"
-msgstr "Perkelti paslaug"
+msgstr "Perkelti paslaugą"
 
 #: skin_default_skin.xml.h:406
 msgid "Moviepath"
@@ -7672,7 +7659,7 @@ msgstr "Vardas:"
 
 #: skin_default_skin.xml.h:413
 msgid "netmask"
-msgstr "Potinklio kauk"
+msgstr "Potinklio kaukė"
 
 #: skin_default_skin.xml.h:415
 msgid "Network Adapter Settings"
@@ -7684,11 +7671,11 @@ msgstr "Tinklo adapteris testas"
 
 #: skin_default_skin.xml.h:417 tpk_showname.h:81
 msgid "Networkbrowser"
-msgstr "Tinklo narykl"
+msgstr "Tinklo naršyklė"
 
 #: skin_default_skin.xml.h:418
 msgid "Network Interfacelist"
-msgstr "Ssaja (s)"
+msgstr "Sąsaja (s)"
 
 #: skin_default_skin.xml.h:419
 msgid "Network Restart"
@@ -7704,7 +7691,7 @@ msgstr "Tinklo testavimas"
 
 #: skin_default_skin.xml.h:423
 msgid "Next EPG Time"
-msgstr "Sekantiss EPG laikas"
+msgstr "Sekantis EPG laikas"
 
 #: skin_default_skin.xml.h:424
 msgid "Nfs Server Settings"
@@ -7712,7 +7699,7 @@ msgstr "NFS Server Settings"
 
 #: skin_default_skin.xml.h:425
 msgid "Normal/Standby"
-msgstr "Normalus / Budjimo"
+msgstr "Normalus / Budėjimo"
 
 #: skin_default_skin.xml.h:426
 msgid "o"
@@ -7833,7 +7820,7 @@ msgstr "PIN Code"
 
 #: skin_default_skin.xml.h:457
 msgid "Pin Code Channel"
-msgstr "Urakinti kanal su PIN"
+msgstr "Užrakinti kanalą su PIN"
 
 #: skin_default_skin.xml.h:458
 msgid "Pin Code menu"
@@ -7869,7 +7856,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:467
 msgid "Plugin Button"
-msgstr "pltini mygtukas"
+msgstr "plėtinių mygtukas"
 
 #: skin_default_skin.xml.h:468
 msgid "Plugins"
@@ -7889,7 +7876,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:473
 msgid "Polish"
-msgstr "Lenk"
+msgstr "Lenkų"
 
 #: skin_default_skin.xml.h:474
 msgid "Positioner Setup"
@@ -7897,11 +7884,11 @@ msgstr "Pozicionieriaus nustatymas"
 
 #: skin_default_skin.xml.h:477
 msgid "Poweroff Timer"
-msgstr "Isijungimo Laikmatis"
+msgstr "Išsijungimo Laikmatis"
 
 #: skin_default_skin.xml.h:478
 msgid "Power Off Timer"
-msgstr "Isijungimo Laikmatis"
+msgstr "Išsijungimo Laikmatis"
 
 #: skin_default_skin.xml.h:479
 msgid "prime time"
@@ -7909,11 +7896,11 @@ msgstr ""
 
 #: skin_default_skin.xml.h:480
 msgid "Program Info"
-msgstr "Informacija apie program"
+msgstr "Informacija apie programą"
 
 #: skin_default_skin.xml.h:481
 msgid "Protect Channel"
-msgstr "Urakinti kanal su PIN"
+msgstr "Užrakinti kanalą su PIN"
 
 #: skin_default_skin.xml.h:482
 msgid "Protect Channel Freetime (min)"
@@ -7921,19 +7908,19 @@ msgstr "Time for Channel protection to deactivate (Min)"
 
 #: skin_default_skin.xml.h:483
 msgid "Protect Menu"
-msgstr "Urakinti Meniu su PIN"
+msgstr "Užrakinti Meniu su PIN"
 
 #: skin_default_skin.xml.h:484
 msgid "protect service"
-msgstr "Urakinti paslaug su PIN"
+msgstr "Užrakinti paslaugą su PIN"
 
 #: skin_default_skin.xml.h:485
 msgid "Prov"
-msgstr "teikjas"
+msgstr "teikėjas"
 
 #: skin_default_skin.xml.h:486
 msgid "Provider:"
-msgstr "teikjas:"
+msgstr "teikėjas:"
 
 #: skin_default_skin.xml.h:488
 msgid "q"
@@ -7961,7 +7948,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:496
 msgid "Receiver unlock"
-msgstr "Atrakinti imtuv"
+msgstr "Atrakinti imtuvą"
 
 #: skin_default_skin.xml.h:500
 msgid "Recordlist"
@@ -7969,19 +7956,19 @@ msgstr ""
 
 #: skin_default_skin.xml.h:502
 msgid "Record path"
-msgstr "ra kelias"
+msgstr "įrašų kelias"
 
 #: skin_default_skin.xml.h:503
 msgid "Record Path"
-msgstr "ra kelias"
+msgstr "įrašų kelias"
 
 #: skin_default_skin.xml.h:504
 msgid "Record Path settings"
-msgstr "ra Kelias nustatymai"
+msgstr "Įrašų Kelias nustatymai"
 
 #: skin_default_skin.xml.h:506
 msgid "Record Timer"
-msgstr "ra Laikmatis"
+msgstr "įrašų Laikmatis"
 
 #: skin_default_skin.xml.h:507
 msgid "Red Button"
@@ -7989,7 +7976,7 @@ msgstr "Raudonas mygtukas"
 
 #: skin_default_skin.xml.h:510
 msgid "Released"
-msgstr "Ileistas"
+msgstr "Išleistas"
 
 #: skin_default_skin.xml.h:511
 msgid "RELOAD"
@@ -7997,27 +7984,27 @@ msgstr "Perkrauti"
 
 #: skin_default_skin.xml.h:512
 msgid "Remember film position"
-msgstr "Prisiminti kino pozicij"
+msgstr "Prisiminti kino poziciją"
 
 #: skin_default_skin.xml.h:513
 msgid "Remove emthy Bouquet"
-msgstr "Paalinti tuias Mgstami"
+msgstr "Pašalinti tuščias Mėgstami"
 
 #: skin_default_skin.xml.h:514
 msgid "REMOVE ENTRY"
-msgstr "Paalinti ra"
+msgstr "Pašalinti įrašą"
 
 #: skin_default_skin.xml.h:515
 msgid "remove service"
-msgstr "Paalinti i mgstamiausi"
+msgstr "Pašalinti iš mėgstamiausių"
 
 #: skin_default_skin.xml.h:516
 msgid "Remove unused Channels in Bouquets"
-msgstr "Paaliname nenaudojamus kanalus i mgstamiausi"
+msgstr "Pašaliname nenaudojamus kanalus iš mėgstamiausių"
 
 #: skin_default_skin.xml.h:517
 msgid "rename service"
-msgstr "Pervadinti kanal"
+msgstr "Pervadinti kanalą"
 
 #: skin_default_skin.xml.h:518
 msgid "Repeate"
@@ -8025,7 +8012,7 @@ msgstr "Pakartoti"
 
 #: skin_default_skin.xml.h:519
 msgid "Repeate type"
-msgstr "Kartojimo reimas"
+msgstr "Kartojimo režimas"
 
 #: skin_default_skin.xml.h:520
 msgid "RESET"
@@ -8041,7 +8028,7 @@ msgstr "Skiriamoji geba (dabartinis )"
 
 #: skin_default_skin.xml.h:523
 msgid "Resolution (default)"
-msgstr "Skiriamoji geba (pagal nutyljim)"
+msgstr "Skiriamoji geba (pagal nutylėjimą)"
 
 #: skin_default_skin.xml.h:525
 msgid "Restore"
@@ -8073,7 +8060,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:537
 msgid "Russian"
-msgstr "Rus"
+msgstr "Rusų"
 
 #: skin_default_skin.xml.h:538
 msgid "s"
@@ -8089,7 +8076,7 @@ msgstr "Samba serverio nustatymai"
 
 #: skin_default_skin.xml.h:543
 msgid "Sat Config"
-msgstr "Palydovin (s)"
+msgstr "Palydovinė (s)"
 
 #: skin_default_skin.xml.h:544
 msgid "SATCR Frequency"
@@ -8105,7 +8092,7 @@ msgstr "Palydovas"
 
 #: skin_default_skin.xml.h:547
 msgid "Satfinder"
-msgstr "Palydov paieka"
+msgstr "Palydovų paieška"
 
 #: skin_default_skin.xml.h:548
 msgid "Sat Finder"
@@ -8117,7 +8104,7 @@ msgstr "Prisotinimas"
 
 #: skin_default_skin.xml.h:552
 msgid "SAVETRANSPONDER"
-msgstr "Isaugoti Transponder"
+msgstr "Išsaugoti Transponderį"
 
 #: skin_default_skin.xml.h:553
 msgid "Scan Auto"
@@ -8129,11 +8116,11 @@ msgstr ""
 
 #: skin_default_skin.xml.h:555
 msgid "ScanList"
-msgstr "Nuskaitymo sraas"
+msgstr "Nuskaitymo sąrašas"
 
 #: skin_default_skin.xml.h:556
 msgid "Scan locking"
-msgstr "Nuskaitymo urakinimas"
+msgstr "Nuskaitymo užrakinimas"
 
 #: skin_default_skin.xml.h:557
 msgid "Scan Manual"
@@ -8145,15 +8132,15 @@ msgstr ""
 
 #: skin_default_skin.xml.h:559
 msgid "SCANSTART"
-msgstr "Pradti nuskaityti"
+msgstr "Pradėti nuskaityti"
 
 #: skin_default_skin.xml.h:560 tpk_section.h:15 webif_help.h:81
 msgid "screensaver"
-msgstr "ekrano usklanda"
+msgstr "ekrano užsklanda"
 
 #: skin_default_skin.xml.h:561
 msgid "Screensaver Adjust"
-msgstr "ekrano usklandos nustatymai"
+msgstr "ekrano užsklandos nustatymai"
 
 #: skin_default_skin.xml.h:562
 msgid "screensaver background"
@@ -8161,7 +8148,7 @@ msgstr "ekrano fonas"
 
 #: skin_default_skin.xml.h:563
 msgid "screensaver delay"
-msgstr "ekrano vlavimo"
+msgstr "ekrano vėlavimo"
 
 #: skin_default_skin.xml.h:564
 msgid "screensaver interval"
@@ -8169,7 +8156,7 @@ msgstr "ekrano intervalas"
 
 #: skin_default_skin.xml.h:565
 msgid "screensaver pic"
-msgstr "Paveiksllis"
+msgstr "Paveikslėlis"
 
 #: skin_default_skin.xml.h:566
 msgid "screensaver type"
@@ -8177,11 +8164,11 @@ msgstr "tipas"
 
 #: skin_default_skin.xml.h:567
 msgid "--- SD resolution"
-msgstr "--- SD raika"
+msgstr "--- SD raiška"
 
 #: skin_default_skin.xml.h:571
 msgid "Select backup:"
-msgstr "Pasirinkite atsargins kopijos :"
+msgstr "Pasirinkite atsarginės kopijos :"
 
 #: skin_default_skin.xml.h:572
 msgid "Select Path"
@@ -8213,15 +8200,15 @@ msgstr "nustatyti Startiniu kanalu"
 
 #: skin_default_skin.xml.h:583
 msgid "Show EPG screen (EPG button)"
-msgstr "Rodyti EPG ekran (EPG mygtuk )"
+msgstr "Rodyti EPG ekraną (EPG mygtuką )"
 
 #: skin_default_skin.xml.h:584
 msgid "Show HDD freesize"
-msgstr "Rodyti Laisva vieta standiajame diske ?"
+msgstr "Rodyti Laisva vieta standžiajame diske ?"
 
 #: skin_default_skin.xml.h:587
 msgid "Show in Standby"
-msgstr "Rodyti budjimo reime ?"
+msgstr "Rodyti budėjimo režime ?"
 
 #: skin_default_skin.xml.h:588
 msgid "Show in VFD"
@@ -8249,7 +8236,7 @@ msgstr "Temos Nustatymai"
 
 #: skin_default_skin.xml.h:598
 msgid "Skin Select"
-msgstr "Pasirinkite Tem"
+msgstr "Pasirinkite Temą"
 
 #: skin_default_skin.xml.h:602
 msgid "Skip privat CA descriptor"
@@ -8257,7 +8244,7 @@ msgstr "Skip private CA descriptor"
 
 #: skin_default_skin.xml.h:603
 msgid "SmartCard Reader"
-msgstr "Lustini korteli skaitytuvas"
+msgstr "Lustinių kortelių skaitytuvas"
 
 #: skin_default_skin.xml.h:604
 msgid "SNR:"
@@ -8269,11 +8256,11 @@ msgstr "Softcam pasirinkimas:"
 
 #: skin_default_skin.xml.h:608
 msgid "sort service"
-msgstr "Riuoti Mgstamiausius"
+msgstr "Rūšiuoti Mėgstamiausius"
 
 #: skin_default_skin.xml.h:609
 msgid "Sound amplifier (external Player)"
-msgstr "Garso stiprintuvas (iors Player)"
+msgstr "Garso stiprintuvas (išorės Player)"
 
 #: skin_default_skin.xml.h:610
 msgid "Sound amplifier (TV-Modus / internal Player)"
@@ -8281,11 +8268,11 @@ msgstr "Garso stiprintuvas ( TV Modus / vidinis grotuvas )"
 
 #: skin_default_skin.xml.h:611
 msgid "Space"
-msgstr "erdv"
+msgstr "erdvė"
 
 #: skin_default_skin.xml.h:612
 msgid "Spanish"
-msgstr "Ispan"
+msgstr "Ispanų"
 
 #: skin_default_skin.xml.h:616
 msgid "SSID"
@@ -8297,19 +8284,19 @@ msgstr "stabili"
 
 #: skin_default_skin.xml.h:619
 msgid "Standby Brightness"
-msgstr "Rykumas budjimo reimu"
+msgstr "Ryškumas budėjimo režimu"
 
 #: skin_default_skin.xml.h:620
 msgid "StandBy Mode"
-msgstr "Budjimo reimas"
+msgstr "Budėjimo režimas"
 
 #: skin_default_skin.xml.h:621
 msgid "Standby / Poweroff"
-msgstr "Budjimas /Ijungimas"
+msgstr "Budėjimas /Išjungimas"
 
 #: skin_default_skin.xml.h:623
 msgid "Start HTTPD"
-msgstr "Pradti Webserver"
+msgstr "Pradėti Webserver"
 
 #: skin_default_skin.xml.h:625
 msgid "Start RGUID"
@@ -8357,7 +8344,7 @@ msgstr "Subkanalai"
 #: webif_rc.atemio7600.h:12 webif_rc.atemio-nemesis.h:48
 #: webif_rc_virtual.atemio510.h:12
 msgid "Subtitle"
-msgstr "subtitr"
+msgstr "subtitrų"
 
 #: skin_default_skin.xml.h:639
 msgid "Symbolrate"
@@ -8365,7 +8352,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:640
 msgid "Symbol rate:"
-msgstr "Simboli sparta :"
+msgstr "Simbolių sparta :"
 
 #: skin_default_skin.xml.h:641
 msgid "Sysinfo"
@@ -8426,7 +8413,7 @@ msgstr "testas"
 
 #: skin_default_skin.xml.h:659
 msgid "thereafter on this Channel:"
-msgstr "Sekantis Kanale:"
+msgstr "Kitas šiame Kanale:"
 
 #: skin_default_skin.xml.h:660
 msgid "Threshold"
@@ -8451,7 +8438,7 @@ msgstr "Laikmatis ir EPG"
 
 #: skin_default_skin.xml.h:664
 msgid "Timer Record Path"
-msgstr "Laikmatis ra Kelias"
+msgstr "Laikmatis Įrašų Kelias"
 
 #: skin_default_skin.xml.h:665
 msgid "Timeshift Path"
@@ -8495,15 +8482,15 @@ msgstr "Tonas"
 
 #: skin_default_skin.xml.h:679 webif_system_extensions.h:3
 msgid "TPK install (online)"
-msgstr "TPK diegti (online)"
+msgstr "TPK įdiegti (online)"
 
 #: skin_default_skin.xml.h:681
 msgid "Tpk Install - select install medium"
-msgstr "TPK diegimas - pasirinkite diegimo laikmen"
+msgstr "TPK diegimas - pasirinkite diegimo laikmeną"
 
 #: skin_default_skin.xml.h:683 webif_system_extensions.h:6
 msgid "TPK remove"
-msgstr "TPK paalinti"
+msgstr "TPK pašalinti"
 
 #: skin_default_skin.xml.h:685 webif_system_extensions.h:2
 msgid "TPK upgrade (online)"
@@ -8519,7 +8506,7 @@ msgstr "Transmission: "
 
 #: skin_default_skin.xml.h:688
 msgid "TRANSPONDEREDIT"
-msgstr "Sistuvo Redaguoti"
+msgstr "Siųstuvo Redaguoti"
 
 #: skin_default_skin.xml.h:689
 msgid "TSID:"
@@ -8535,11 +8522,11 @@ msgstr ""
 
 #: skin_default_skin.xml.h:694
 msgid "Tuner Configuration"
-msgstr "Imtuvo konfigravimas"
+msgstr "Imtuvo konfigūravimas"
 
 #: skin_default_skin.xml.h:695
 msgid "Tuner List"
-msgstr "sraas"
+msgstr "List"
 
 #: skin_default_skin.xml.h:696
 msgid "Tuner Reception"
@@ -8567,7 +8554,7 @@ msgstr "Type: "
 
 #: skin_default_skin.xml.h:705
 msgid "Type of Scan"
-msgstr "Skanavimo bdas"
+msgstr "Skanavimo būdas"
 
 #: skin_default_skin.xml.h:706
 msgid "u"
@@ -8659,7 +8646,7 @@ msgstr "Video PID: "
 
 #: skin_default_skin.xml.h:734
 msgid "Vietnamese"
-msgstr "Vietnamiei"
+msgstr "Vietnamiečių"
 
 #: skin_default_skin.xml.h:736
 msgid "Vol off"
@@ -8667,7 +8654,7 @@ msgstr "Volume off"
 
 #: skin_default_skin.xml.h:737
 msgid "Voltage Mode"
-msgstr "tampos reimas"
+msgstr "Įtampos režimas"
 
 #: skin_default_skin.xml.h:739
 msgid "Votes"
@@ -8735,11 +8722,11 @@ msgstr ""
 
 #: sock.h:950
 msgid "Download finished!"
-msgstr "Parsisiuntimas baigtas!"
+msgstr "Siuntimas baigtas!"
 
 #: softcam.h:91 softcam.h:99
 msgid "started"
-msgstr "pradta"
+msgstr "pradėta"
 
 #: softcam.h:93 softcam.h:105
 msgid "active"
@@ -8759,11 +8746,11 @@ msgstr "Aktyvuok"
 
 #: softcam.h:403
 msgid "Reader Config Plugin not installed !"
-msgstr "skiepis nediegtas !"
+msgstr "Įskiepis neįdiegtas !"
 
 #: solarmovie.h:304
 msgid "This file doesn't exist, or has been removed"
-msgstr "is failas neegzistuoja arba buvo itrintas"
+msgstr "Šis failas neegzistuoja arba buvo ištrintas"
 
 #: spinner.h:18
 msgid ""
@@ -8775,7 +8762,7 @@ msgstr ""
 "Pakabino sistema !!! \n"
 "\n"
 "KILL = Raudona\n"
-"BOOT = alia"
+"BOOT = Žalia"
 
 #: spinner.h:18
 msgid "KILL"
@@ -8783,19 +8770,19 @@ msgstr "Raudona"
 
 #: spinner.h:18
 msgid "BOOT"
-msgstr "alia"
+msgstr "Žalia"
 
 #: stock.h:197
 msgid "Company: "
-msgstr "mons pavadinimas:"
+msgstr "Įmonė:"
 
 #: stock.h:201
 msgid "Exchange: "
-msgstr "bira:"
+msgstr "birža:"
 
 #: stock.h:205
 msgid "Exchange closing: "
-msgstr "Valiut udarymo :"
+msgstr "Valiutų uždarymo :"
 
 #: stock.h:209
 msgid "Currency: "
@@ -8807,11 +8794,11 @@ msgstr "Paskutinis :"
 
 #: stock.h:217
 msgid "High: "
-msgstr "Didiausia:"
+msgstr "Didžiausia:"
 
 #: stock.h:221
 msgid "Low: "
-msgstr "Maiausia:"
+msgstr "Mažiausia:"
 
 #: stock.h:225
 msgid "Volume: "
@@ -8831,7 +8818,7 @@ msgstr "Atidarymas:"
 
 #: stock.h:241
 msgid "Close: "
-msgstr "Udarymas:"
+msgstr "Uždarymas:"
 
 #: stock.h:245
 msgid "Change: "
@@ -8889,7 +8876,7 @@ msgstr "Connectiong to Hoster - Please wait 16 Seconds"
 
 #: stream.h:36
 msgid "Choose your Streaming link from the following list"
-msgstr "Pasirinkite savo Streaming nuorod i io srao"
+msgstr "Pasirinkite savo Streaming nuorodą iš šio sąrašo"
 
 #: sudoku.c:167
 msgid "left"
@@ -8901,7 +8888,7 @@ msgstr "centras"
 
 #: sudoku.c:169
 msgid "right"
-msgstr "deinys"
+msgstr "dešinys"
 
 #: system_backup.h:15
 msgid ""
@@ -8915,9 +8902,8 @@ msgstr ""
 
 #: system_backup_restore.h:15
 msgid ""
-"Press -restore- and your saved settings will be restored from your "
-"swapstick / recording hdd! The Box will restart automatically for "
-"restoring!\n"
+"Press -restore- and your saved settings will be restored from your swapstick "
+"/ recording hdd! The Box will restart automatically for restoring!\n"
 "\n"
 "Press -backup- to save your actual settings to swapstick / recording hdd.\n"
 "WARNING: The old backup will be deleted!"
@@ -8946,8 +8932,8 @@ msgid ""
 msgstr ""
 "Ar tikrai norite atstatyti nustatymus? \n"
 "\n"
-"OK = pradti atkrim\n"
-"EXIT = nutraukti atkrtm"
+"OK = pradėti atkūrimą\n"
+"EXIT = nutraukti atkūrtmą"
 
 #: system_backup_restore.h:33
 msgid ""
@@ -8957,11 +8943,11 @@ msgid ""
 "\n"
 "Box will start in few seconds."
 msgstr ""
-"Praome palaukti ...\n"
+"Prašome palaukti ...\n"
 "\n"
 "Visi nustatymai atkurti.\n"
 "\n"
-"Imtuvas persikraus pokeli sekundi."
+"Imtuvas persikraus pokelių sekundžių."
 
 #: system_backup_restore.h:40
 msgid "Restore failed, see log"
@@ -8969,11 +8955,11 @@ msgstr ""
 
 #: system_backup_restore.h:43
 msgid "Update Plugins to new Version?"
-msgstr "Atnaujinti pltinius nauja versija ?"
+msgstr "Atnaujinti plėtinius nauja versija ?"
 
 #: system_backup_restore.h:51
 msgid "RESTORE ERROR"
-msgstr "ATKRIMO KLAIDA"
+msgstr "ATKŪRIMO KLAIDA"
 
 #: system_backup_restore.h:51
 msgid ""
@@ -9002,7 +8988,7 @@ msgstr ""
 
 #: system_backup_restore.h:82
 msgid "Backup created successfully"
-msgstr "Atsargin skmingai sukurtas"
+msgstr "Atsarginė sėkmingai sukurtas"
 
 #: system_backup_restore.h:88
 msgid "BACKUP ERROR"
@@ -9064,7 +9050,7 @@ msgstr ""
 
 #: system_update.h:250
 msgid "starting Full Update (from backup) ?"
-msgstr "Pradti Full Update i atsargins kopijos ?"
+msgstr "Pradėti Full Update iš atsarginės kopijos ?"
 
 #: system_update.h:257
 msgid "Error file not supported"
@@ -9086,25 +9072,26 @@ msgstr ""
 
 #: timeshift.h:113
 msgid "Should Timeshift File deleted ?"
-msgstr "Itrinti Timeshift fail ?"
+msgstr "Ištrinti Timeshift failą ?"
 
 #: timeshift.h:155
 msgid ""
 "Timeshift file to short\n"
 "please wait a little and try again"
 msgstr ""
-"Timeshift fail short\n"
-"Please palaukti iek tiek ir bandykite dar kart"
+"Timeshift failą short\n"
+"Please palaukti šiek tiek ir bandykite dar kartą"
 
 #: timeshift.h:162
 msgid "Can't start timeshift play !"
-msgstr "Nepavyko paleisti Timeshift atkrim !"
+msgstr "Nepavyko paleisti Timeshift atkūrimą !"
 
 #: timeshiftsettings.h:45
 msgid ""
 "Timeshiftsettings not allowed\n"
 "if timeshift is running !"
-msgstr "KLAIDA: Js negalite keisti Timeshift nustatym Timeshift veikimo metu!"
+msgstr ""
+"KLAIDA: Jūs negalite keisti Timeshift nustatymų Timeshift veikimo metuį!"
 
 #: timeshiftsettings.h:50
 msgid "permanent"
@@ -9112,15 +9099,15 @@ msgstr ""
 
 #: timeshiftsettings.h:53
 msgid "ask"
-msgstr "Ask"
+msgstr ""
 
 #: timeshiftsettings.h:54
 msgid "allways del file"
-msgstr "Visada itrinti Timeshift fail"
+msgstr "Visada ištrinti Timeshift failą"
 
 #: timeshiftsettings.h:55
 msgid "never del file"
-msgstr "Niekada netrinti Timeshift fail"
+msgstr "Niekada netrinti Timeshift failą"
 
 #: titan.c:277
 msgid "!!! This is a DEMO Version !!!"
@@ -9132,9 +9119,9 @@ msgid ""
 "or record is starting in next time.\n"
 "Really shutdown ?"
 msgstr ""
-"Surasta aktyvus raas.\n"
-" arba raymas prasideda.\n"
-"Tikrai ijungti ?"
+"Surasta aktyvus įrašas.\n"
+" arba įrašymas prasideda.\n"
+"Tikrai išjungti ?"
 
 #: titan.c:350
 msgid ""
@@ -9142,7 +9129,7 @@ msgid ""
 "Really shutdown ?"
 msgstr ""
 "Surasta aktyviai Siuntimas\n"
-"Tikrai ijungti ?"
+"Tikrai išjungti ?"
 
 #: titan.c:803
 msgid "Error: open rc device !!"
@@ -9194,39 +9181,39 @@ msgstr "Save Settings?"
 
 #: titan.c:1112
 msgid "Receiver successful unlocked"
-msgstr "Js imtuvas buvo pilnai atrakintas."
+msgstr "Jūsų imtuvas buvo pilnai atrakintas."
 
 #: titan.c:1133
 msgid ""
 "Free space in /var to little!\n"
 "This can make problems!"
 msgstr ""
-"Nepakankama erdv / var ! \n"
-"Tai sukels rimt problem !"
+"Nepakankama erdvė / var ! \n"
+"Tai sukels rimtų problemų !"
 
 #: titan.c:1139
 msgid ""
 "/var not writeable!\n"
 "Repair it?"
 msgstr ""
-"/ var nra raomus ! \n"
-"Do norite pabandyti ir j itaisyti ?"
+"/ var nėra rašomus ! \n"
+"Do norite pabandyti ir ją ištaisyti ?"
 
 #: titan.c:1150
 msgid ""
 "Free space in /mnt to little!\n"
 "This can make problems!"
 msgstr ""
-"Nepakankama erdv / mnt ! \n"
-"Tai sukels rimt problem !"
+"Nepakankama erdvė / mnt ! \n"
+"Tai sukels rimtų problemų !"
 
 #: titan.c:1156
 msgid ""
 "/mnt not writeable!\n"
 "Repair it?"
 msgstr ""
-"/ mnt nra raomus ! \n"
-"Do norite pabandyti ir j itaisyti ?"
+"/ mnt nėra rašomus ! \n"
+"Do norite pabandyti ir ją ištaisyti ?"
 
 #: titan.c:1205
 msgid "Unknown Error."
@@ -9267,7 +9254,7 @@ msgstr "rezultatai"
 
 #: tithek.h:1159
 msgid "Remove Cachefile ?"
-msgstr "Ivalyti talpykl ?"
+msgstr "Išvalyti talpyklą ?"
 
 #: tithek.h:1206
 msgid ""
@@ -9275,7 +9262,7 @@ msgid ""
 "Please try later."
 msgstr ""
 "Nepavyksta paleisti download.\n"
-" Bandykite dar kart vliau."
+" Bandykite dar kartą vėliau."
 
 #: tithek.h:1341
 msgid "Choice Playback"
@@ -9283,43 +9270,43 @@ msgstr "Pasirinkite Playback"
 
 #: tithek.h:1344
 msgid "Streaming Playback (default)"
-msgstr "Tiesiogin transliacija ( pagal nutyljim)"
+msgstr "Tiesioginė transliacija ( pagal nutylėjimą)"
 
 #: tithek.h:1351
 msgid "Streaming Playback Caching (1MB)"
-msgstr "Srautinio atkrimas djimas ( 1MB )"
+msgstr "Srautinio atkūrimas Įdėjimas ( 1MB )"
 
 #: tithek.h:1358
 msgid "Streaming Playback Caching (5MB)"
-msgstr "Srautinio atkrimas djimas ( 5MB )"
+msgstr "Srautinio atkūrimas Įdėjimas ( 5MB )"
 
 #: tithek.h:1361
 msgid "Streaming Playback Caching (10MB)"
-msgstr "Srautinio atkrimas djimas ( 10MB )"
+msgstr "Srautinio atkūrimas Įdėjimas ( 10MB )"
 
 #: tithek.h:1367
 msgid "File Caching Playback (10MB / 120s)"
-msgstr "Failo padjimas podl atkrimas ( 10MB / 120s )"
+msgstr "Failo padėjimas į podėlį atkūrimas ( 10MB / 120s )"
 
 #: tithek.h:1368
 msgid "File Caching Playback (20MB / 240s)"
-msgstr "Failo padjimas podl atkrimas ( 20MB / 240s )"
+msgstr "Failo padėjimas į podėlį atkūrimas ( 20MB / 240s )"
 
 #: tithek.h:1369
 msgid "File Caching Playback (30MB / 360s)"
-msgstr "Failo padjimas podl atkrimas ( 30MB / 360s )"
+msgstr "Failo padėjimas į podėlį atkūrimas ( 30MB / 360s )"
 
 #: tithek.h:1371
 msgid "Download Full File"
-msgstr "Parsisisti piln fail"
+msgstr "Parsisiųsti pilną failą"
 
 #: tithek.h:1372
 msgid "Download Full File (background)"
-msgstr "Parsisisti piln fail ( fono )"
+msgstr "Parsisiųsti pilną failą ( fono )"
 
 #: tithek.h:1376
 msgid "Choose your Streaming Playback Modus from the following list"
-msgstr "Pasirinkite savo Streaming atkrimo Modus i io srao"
+msgstr "Pasirinkite savo Streaming atkūrimo Modus iš šio sąrašo"
 
 #: tithek.h:1447 tithek.h:1466
 msgid "Filename"
@@ -9327,11 +9314,11 @@ msgstr "Failo pavadinimas"
 
 #: tithek.h:1454
 msgid "Start playback"
-msgstr "Pradti atkrim"
+msgstr "Pradėti atkūrimą"
 
 #: tithek.h:1476
 msgid "Can't get Streamurl !"
-msgstr "Streamurl nra pasiekiami !"
+msgstr "Streamurl nėra pasiekiami !"
 
 #: tithek.h:1492
 msgid "TitanNit Tithek disclaimer"
@@ -9344,7 +9331,7 @@ msgstr ""
 
 #: tithek.h:1536 tithek.h:2126
 msgid "EDIT FAV"
-msgstr "Redaguoti mgstamiausi"
+msgstr "Redaguoti mėgstamiausių"
 
 #: tithek.h:1573
 msgid "Page"
@@ -9352,15 +9339,15 @@ msgstr ""
 
 #: tithek.h:2089
 msgid "Remove this Favorite ?"
-msgstr "Norite paalinti pasirinkt ra i savo mgstamiausi ?"
+msgstr "Norite pašalinti pasirinktą įrašą iš savo mėgstamiausių ?"
 
 #: tithek.h:2103
 msgid "Add this link as Favorite ?"
-msgstr "Ar norite pridti i nuorod savo mgstamiausi ?"
+msgstr "Ar norite pridėti šią nuorodą į savo mėgstamiausių ?"
 
 #: tithek.h:2113
 msgid "Edit this Favorite ?"
-msgstr "Redaguoti Pamgt viet?"
+msgstr "Redaguoti šį Pamėgtą vietą?"
 
 #: tithek_mainmenu.h:2
 msgid "All New first"
@@ -9368,7 +9355,7 @@ msgstr "Visi Naujas pirmas"
 
 #: tithek_mainmenu.h:3
 msgid "All Sorted"
-msgstr "Visi Riuota"
+msgstr "Visi Rūšiuota"
 
 #: tithek_mainmenu.h:4
 msgid "Atemio Cable Tuner scan"
@@ -9416,7 +9403,7 @@ msgstr ""
 
 #: tithek_mainmenu.h:16
 msgid "Favoriten"
-msgstr "Mgstami"
+msgstr "Mėgstami"
 
 #: tithek_mainmenu.h:17
 msgid "FilmOn"
@@ -9628,11 +9615,11 @@ msgstr "Video / Audio"
 
 #: tmc.h:544
 msgid "video / picture"
-msgstr "Vaizdo / Paveiksllis"
+msgstr "Vaizdo / Paveikslėlis"
 
 #: tmc.h:545
 msgid "audio / picture"
-msgstr "Garso / Paveiksllis"
+msgstr "Garso / Paveikslėlis"
 
 #: tmc.h:548
 msgid "pic1"
@@ -9644,23 +9631,23 @@ msgstr "Nuotrauka 2"
 
 #: tmc.h:550
 msgid "pic3"
-msgstr "Paveiksllis 3"
+msgstr "Paveikslėlis 3"
 
 #: tmc.h:551
 msgid "pic4"
-msgstr "Paveiksllis 4"
+msgstr "Paveikslėlis 4"
 
 #: tmc.h:552
 msgid "pic5"
-msgstr "Paveiksllis 5"
+msgstr "Paveikslėlis 5"
 
 #: tmc.h:553
 msgid "no pic"
-msgstr "Paveiksllio nra"
+msgstr "Paveikslėlio nėra"
 
 #: tmc.h:699
 msgid "Delete selected entry ?"
-msgstr "Itrinti pasirinkt ra ?"
+msgstr "Ištrinti pasirinktą įrašą ?"
 
 #: tmc.h:1004
 msgid ""
@@ -9720,13 +9707,13 @@ msgid ""
 "\n"
 "Coming soon ..."
 msgstr ""
-"Topfield VFD nuostat dialogo dar nediegta ! \n"
+"Topfield VFD nuostatų dialogo dar neįdiegta ! \n"
 "\n"
-"Coming greiiau ....."
+"Coming greičiau ....."
 
 #: TopfieldVFD.c:72
 msgid "TopfieldVFD plugin not available, wrong box!"
-msgstr "Topfield VFD pratsimas nra, negerai imtuvas !"
+msgstr "Topfield VFD pratęsimas nėra, negerai imtuvas !"
 
 #: tpchoice.h:21
 msgid "Transponderlist"
@@ -9734,19 +9721,19 @@ msgstr ""
 
 #: tpchoice.h:56
 msgid "FREQU"
-msgstr "Frequency"
+msgstr "Dažnis"
 
 #: tpchoice.h:70
 msgid "CABLE"
-msgstr "Kabelin"
+msgstr "Kabelinė"
 
 #: tpchoice.h:72
 msgid "TERR"
-msgstr "Antemin"
+msgstr "Antžeminė"
 
 #: tpchoice.h:74
 msgid "UNKNOWN"
-msgstr "Neinomas"
+msgstr "Nežinomas"
 
 #: tpchoice.h:81
 msgid "SR"
@@ -9754,7 +9741,7 @@ msgstr ""
 
 #: tpchoice.h:87
 msgid "POS"
-msgstr "Position"
+msgstr "Pozicija"
 
 #: tpk_description.h:1
 msgid "AAF MediaCenter the best multimedia Player on sh4."
@@ -9807,7 +9794,7 @@ msgstr ""
 
 #: tpk_description.h:12
 msgid "Automatisch Timer setzen"
-msgstr "Automatikai nustatomas laikmatis"
+msgstr "Automatiškai nustatomas laikmatis"
 
 #: tpk_description.h:13
 msgid "Black 3D Picons Astra 19.2"
@@ -10043,7 +10030,7 @@ msgstr ""
 
 #: tpk_description.h:70
 msgid "filemanager"
-msgstr "Fail tvarkykl"
+msgstr "Failų tvarkyklė"
 
 #: tpk_description.h:71
 msgid "first titan game"
@@ -10347,7 +10334,7 @@ msgstr ""
 
 #: tpk_description.h:144
 msgid "smartTV Skin. Please use alternate Picons."
-msgstr "smartTV Tema. Praome naudoti alternatyv Picons."
+msgstr "smartTV Tema. Prašome naudoti alternatyvų Picons."
 
 #: tpk_description.h:145
 msgid "Social Network Client for Facebook."
@@ -10551,7 +10538,7 @@ msgstr ""
 
 #: tpk_section.h:2
 msgid "browser"
-msgstr "Narykl"
+msgstr "Naršyklė"
 
 #: tpk_section.h:3
 msgid "emus"
@@ -11532,7 +11519,7 @@ msgstr ""
 
 #: tunerconfig.h:116
 msgid "Expert"
-msgstr "Iplstinis"
+msgstr "Išplėstinis"
 
 #: tunerconfig.h:183 tunerconfig.h:212 tunerconfig.h:243 tunerconfig.h:276
 #: tunerconfig.h:556
@@ -11549,7 +11536,7 @@ msgstr "Imtuvo tipas"
 
 #: tunerconfig.h:417
 msgid "Terrestrisch"
-msgstr "Antemin"
+msgstr "Antžeminė"
 
 #: tunerconfig.h:790
 msgid "direct connect"
@@ -11623,7 +11610,7 @@ msgstr ""
 
 #: usbreset.h:83
 msgid "Choose your Devices from the following list"
-msgstr "Pasirinkite prietaisus i srao"
+msgstr "Pasirinkite prietaisus iš sąrašo"
 
 #: vfdisplay.h:32
 msgid "channel"
@@ -11707,7 +11694,7 @@ msgstr ""
 
 #: weather.h:137
 msgid "en-GB"
-msgstr "lt-LT"
+msgstr ""
 
 #: weather.h:438 weather.h:456 weather.h:474 weather.h:492
 msgid "Day: "
@@ -11723,7 +11710,7 @@ msgstr "Highest Temp: "
 
 #: weather.h:450 weather.h:468 weather.h:486 weather.h:504
 msgid "Condition: "
-msgstr "Bkl:"
+msgstr "Būklė:"
 
 #: weather.h:522
 msgid "Location"
@@ -11831,7 +11818,7 @@ msgstr ""
 
 #: webif_help.h:19
 msgid "dirsort"
-msgstr "Riuoti pagal"
+msgstr "Rūšiuoti pagal"
 
 #: webif_help.h:20
 msgid "dir"
@@ -11975,7 +11962,7 @@ msgstr ""
 
 #: webif_help.h:59
 msgid "newsletter"
-msgstr "Naujienlaikis"
+msgstr "Naujienlaiškis"
 
 #: webif_help.h:60
 msgid "numinput"
@@ -12051,7 +12038,7 @@ msgstr ""
 
 #: webif_help.h:78
 msgid "satfinder"
-msgstr "Palydov paieka"
+msgstr "Palydovų paieška"
 
 #: webif_help.h:80
 msgid "screensaveradjust"
@@ -12095,7 +12082,7 @@ msgstr ""
 
 #: webif_help.h:92
 msgid "subtitle"
-msgstr "subtitr"
+msgstr "subtitrų"
 
 #: webif_help.h:93
 msgid "system_backup_restore"
@@ -12330,7 +12317,7 @@ msgstr "Paskutinis"
 #: webif_rc.atemio6200.h:15 webif_rc.atemio7600.h:43
 #: webif_rc.atemio-nemesis.h:15 webif_rc_virtual.atemio510.h:10
 msgid "Next"
-msgstr "Sekanti"
+msgstr "Kitas"
 
 #: webif_index.atemio5200.h:33 webif_index.atemio5200.h:50
 #: webif_index.atemio5200.h:89 webif_index.atemio5200.h:106
@@ -12364,7 +12351,7 @@ msgstr "Be garso"
 #: webif_rc_virtual.atemio6100.h:36 webif_rc_virtual.atemio6200.h:36
 #: webif_rc_virtual.atemio-nemesis.h:36
 msgid "Exit"
-msgstr "Ieiti"
+msgstr "Išeiti"
 
 #: webif_index.atemio5200.h:39 webif_index.atemio5200.h:95
 #: webif_index.atemio6200.h:39 webif_index.atemio6200.h:95
@@ -12394,7 +12381,7 @@ msgstr "kairys"
 #: webif_rc_virtual.atemio6100.h:22 webif_rc_virtual.atemio6200.h:22
 #: webif_rc_virtual.atemio-nemesis.h:22
 msgid "Right"
-msgstr "deinys"
+msgstr "dešinys"
 
 #: webif_index.atemio5200.h:41 webif_index.atemio5200.h:97
 #: webif_index.atemio6200.h:41 webif_index.atemio6200.h:97
@@ -12409,7 +12396,7 @@ msgstr "deinys"
 #: webif_rc_virtual.atemio6100.h:23 webif_rc_virtual.atemio6200.h:23
 #: webif_rc_virtual.atemio-nemesis.h:23
 msgid "Up"
-msgstr "Auktyn"
+msgstr "Aukštyn"
 
 #: webif_index.atemio5200.h:42 webif_index.atemio5200.h:98
 #: webif_index.atemio6200.h:42 webif_index.atemio6200.h:98
@@ -12424,7 +12411,7 @@ msgstr "Auktyn"
 #: webif_rc_virtual.atemio6000.h:24 webif_rc_virtual.atemio6100.h:24
 #: webif_rc_virtual.atemio6200.h:24 webif_rc_virtual.atemio-nemesis.h:24
 msgid "Down"
-msgstr "emyn"
+msgstr "žemyn"
 
 #: webif_index.atemio5200.h:44 webif_index.atemio5200.h:100
 #: webif_index.atemio6200.h:44 webif_index.atemio6200.h:100
@@ -12485,7 +12472,7 @@ msgstr "Tyliau"
 #: webif_rc_virtual.atemio6100.h:33 webif_rc_virtual.atemio6200.h:33
 #: webif_rc_virtual.atemio-nemesis.h:33
 msgid "Channel Up"
-msgstr "kanalas auktyn"
+msgstr "kanalas aukštyn"
 
 #: webif_index.atemio5200.h:49 webif_index.atemio5200.h:105
 #: webif_index.atemio6200.h:105 webif_index.atemio6200.h:49
@@ -12500,7 +12487,7 @@ msgstr "kanalas auktyn"
 #: webif_rc_virtual.atemio6100.h:34 webif_rc_virtual.atemio6200.h:34
 #: webif_rc_virtual.atemio-nemesis.h:34
 msgid "Channel Down"
-msgstr "kanalas emyn"
+msgstr "kanalas žemyn"
 
 #: webif_index.atemio5200.h:51 webif_index.atemio5200.h:107
 #: webif_index.atemio6200.h:51 webif_index.atemio6200.h:107
@@ -12530,7 +12517,7 @@ msgstr "Raudona"
 #: webif_rc_virtual.atemio6100.h:26 webif_rc_virtual.atemio6200.h:26
 #: webif_rc_virtual.atemio-nemesis.h:26
 msgid "Green"
-msgstr "alia"
+msgstr "Žalia"
 
 #: webif_index.atemio5200.h:53 webif_index.atemio5200.h:109
 #: webif_index.atemio6200.h:109 webif_index.atemio6200.h:53
@@ -12560,7 +12547,7 @@ msgstr "Geltona"
 #: webif_rc_virtual.atemio6100.h:28 webif_rc_virtual.atemio6200.h:28
 #: webif_rc_virtual.atemio-nemesis.h:28
 msgid "Blue"
-msgstr "Mlyna"
+msgstr "Mėlyna"
 
 #: webif_index.atemio5200.h:55 webif_index.atemio6200.h:55
 #: webif_index.atemio7600.h:103 webif_index.atemio-nemesis.h:55
@@ -12585,7 +12572,7 @@ msgstr "Greitas Atsukti"
 #: webif_rc_virtual.atemio6100.h:17 webif_rc_virtual.atemio6200.h:17
 #: webif_rc_virtual.atemio-nemesis.h:17
 msgid "Pause"
-msgstr "Pauz"
+msgstr "Pauzė"
 
 #: webif_index.atemio5200.h:57 webif_index.atemio5200.h:113
 #: webif_index.atemio6200.h:57 webif_index.atemio6200.h:113
@@ -12750,7 +12737,7 @@ msgstr ""
 #: webif_index.atemio7600.h:29 webif_rc.atemio510.h:14
 #: webif_rc_virtual.atemio510.h:14
 msgid "FAV"
-msgstr "Mgstami"
+msgstr ""
 
 #: webif_index.atemio7600.h:42 webif_rc.atemio510.h:27
 #: webif_rc_virtual.atemio510.h:27
@@ -12786,7 +12773,7 @@ msgstr ""
 
 #: webif_info_logs.h:4
 msgid "Titan Log"
-msgstr "Titan urnalas"
+msgstr "Titan Žurnalas"
 
 #: webif_info_logs.h:5
 msgid "Titan Changelog (Extern)"
@@ -12903,7 +12890,7 @@ msgstr ""
 
 #: webif_timer.h:3
 msgid "Add Timer"
-msgstr "Pridti Laikmatis"
+msgstr "Pridėti Laikmatis"
 
 #: xupnpd.h:29
 msgid "autostart"
@@ -12925,4 +12912,4 @@ msgstr ""
 
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
-msgstr "Zapback is activated. Do you want to stop it?"
+msgstr "Zapback aktivuoas. Ar norite jį sustabdyti ?"
