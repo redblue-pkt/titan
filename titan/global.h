@@ -260,7 +260,7 @@ int setcecstandby(int flag)
 		else
 			cmd = ostrcat(cmd, "\\x36\" > /dev/hdmi_cec", 0, 0);
 		}
-		system(cms);
+		system(cmd);
 		free cmd;
 #endif
 	}
