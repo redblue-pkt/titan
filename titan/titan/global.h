@@ -237,6 +237,7 @@ int setcecstandby(int flag)
 {
 	if(getconfigint("usecec", NULL) == 1)
 	{
+#ifndef MIPSEL		
 		if(flag == 0)
 			writesys("/proc/stb/cec/onetouchplay", "0", 1);
 		else
@@ -250,7 +251,17 @@ int setcecstandby(int flag)
 			free(tmpstr); tmpstr = NULL;
 			free(tmpstr1); tmpstr1 = NULL;
 		}
+#else
+		if(flag == 0)
+			system("echo -e -n \"\\x0f\\x01\\x04\" > /dev/hdmi_cec");
+		else
+			system("echo -e -n \"\\x0f\\x01\\x36\" > /dev/hdmi_cec");
+#endif
 	}
+	
+	
+	
+	echo -e -n "\x0f\x01\x04" > /dev/hdmi_cec
 
 	return 0;
 }
