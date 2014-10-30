@@ -1982,7 +1982,6 @@ void playerstopsubtitletrack()
 	if(pipeline != NULL)
 		g_object_set(G_OBJECT(pipeline), "current-text", -1, NULL);
 #endif
-
 }
 
 int playerjumpts(struct service* servicenode, int sekunden, int *startpts, off64_t *poslastpts, off64_t *bitrate, int vpid, int tssize)
