@@ -252,23 +252,23 @@ int setcecstandby(int flag)
 			free(tmpstr1); tmpstr1 = NULL;
 		}
 #else
-		char* cmd = NULL;
-		cmd = ostrcat(cmd, "echo -e -n ", 1, 0);	
-		cmd = ostrcat(cmd, "\"\\x0f\\x01", 0, 0);
+		unsigned char data[3];
+		int hdmiFd = open("/dev/hdmi_cec", O_RDWR | O_NONBLOCK);
+		
+		data[0] = 0x0f;
+		data[1] = 0x01;
+
 		if(flag == 0)
-			cmd = ostrcat(cmd, "\\x04\" > /dev/hdmi_cec", 0, 0);
+			data[2] = 0x04;
 		else
-			cmd = ostrcat(cmd, "\\x36\" > /dev/hdmi_cec", 0, 0);
+			data[2] = 0x36;
+		if(hdmiFd > 0)
+		{
+			write(hdmiFd, &data, 3);
+			close(hdmiFd)
 		}
-		system(cmd);
-		free cmd;
 #endif
 	}
-	
-	
-	
-	echo -e -n "\x0f\x01\x04" > /dev/hdmi_cec
-
 	return 0;
 }
 
