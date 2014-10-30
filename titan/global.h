@@ -255,7 +255,7 @@ int setcecstandby(int flag)
 		unsigned char data[3];
 		int hdmiFd = open("/dev/hdmi_cec", O_RDWR | O_NONBLOCK);
 		
-		data[0] = 0x0f;
+		data[0] = 0x0f; 
 		data[1] = 0x01;
 
 		if(flag == 0)
@@ -265,7 +265,7 @@ int setcecstandby(int flag)
 		if(hdmiFd > 0)
 		{
 			write(hdmiFd, &data, 3);
-			close(hdmiFd)
+			close(hdmiFd);
 		}
 #endif
 	}
