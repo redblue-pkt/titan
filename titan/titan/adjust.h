@@ -263,7 +263,7 @@ void screenadjust()
 	else
 		usecec->hidden = YES;
 #else
-	usecec->hidden = NO;
+	usecec->hidden = NO; 
 #endif
 
 	if(checkbox("ATEMIO7600") == 1)
