@@ -6169,7 +6169,7 @@ void convertsettings()
 // flag 2 = ter
 int converte2settings(int flag)
 {
-	char* path = NULL, *tmpstr3 = NULL, *buf = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *line = NULL, *name = NULL, *orbitalpos = NULL, *fetype = NULL, *flags = NULL, *outfile = NULL, *start = NULL, *end = NULL, *filename = NULL, *transponderfile = NULL, *satfile = NULL;
+	char* path = NULL, *buf = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *line = NULL, *name = NULL, *orbitalpos = NULL, *fetype = NULL, *flags = NULL, *outfile = NULL, *start = NULL, *end = NULL, *filename = NULL, *transponderfile = NULL, *satfile = NULL;
 	int incount = 0;
 	
 	if(flag == 0)
@@ -6255,7 +6255,6 @@ int converte2settings(int flag)
 	}
 	
 //	writesys("/tmp/convert.log", buf, 1);
-	tmpstr3 = ostrcat("-1", NULL, 0, 0);
 
 	while(ostrstr(buf, start) != NULL)
 	{
@@ -6309,37 +6308,47 @@ int converte2settings(int flag)
 				if(ostrstr((ret1[i]).part, "frequency=") != NULL)
 					line = ostrcat(line, getxmlentry(ret1[i].part, "frequency="), 1, 0); // frequency
 				else
-					line = ostrcat(line, tmpstr3, 1, 0);
+					line = ostrcat(line, "-1", 1, 0);
 				line = ostrcat(line, "#", 1, 0);
 
 				if(ostrstr((ret1[i]).part, "polarization=") != NULL)
 					line = ostrcat(line, getxmlentry(ret1[i].part, "polarization="), 1, 0); // polarization
 				else
-					line = ostrcat(line, tmpstr3, 1, 0); // polarization
+					line = ostrcat(line, "-1", 1, 0); // polarization
 
 				line = ostrcat(line, "#", 1, 0);
 				if(orbitalpos != NULL)
 					line = ostrcat(line, orbitalpos, 1, 0); // orbitalpos
 				else
-					line = ostrcat(line, tmpstr3, 1, 0); // orbitalpos
+					line = ostrcat(line, "-1", 1, 0); // orbitalpos
 				line = ostrcat(line, "#", 1, 0);
 
 				if(ostrstr((ret1[i]).part, "symbol_rate=") != NULL)
 					line = ostrcat(line, getxmlentry(ret1[i].part, "symbol_rate="), 1, 0); // symbolrate
 				else
-					line = ostrcat(line, tmpstr3, 1, 0);
+					line = ostrcat(line, "-1", 1, 0);
 				line = ostrcat(line, "#", 1, 0);
 
 				if(ostrstr((ret1[i]).part, "modulation=") != NULL)
 					line = ostrcat(line, getxmlentry(ret1[i].part, "modulation="), 1, 0); // modulation
 				else
-					line = ostrcat(line, tmpstr3, 1, 0);
+				{
+					if(flag == 2)
+						line = ostrcat(line, "3", 1, 0);
+					else
+						line = ostrcat(line, "0", 1, 0);
+				}
 				line = ostrcat(line, "#", 1, 0);
 
 				if(ostrstr((ret1[i]).part, "fec_inner=") != NULL)
 					line = ostrcat(line, getxmlentry(ret1[i].part, "fec_inner="), 1, 0); // fec
 				else
-					line = ostrcat(line, tmpstr3, 1, 0);
+				{
+					if(flag == 2)
+						line = ostrcat(line, "5", 1, 0);
+					else
+						line = ostrcat(line, "0", 1, 0);
+				}
 				line = ostrcat(line, "#", 1, 0);
 
 				if(checkbox("UFS910") == 1)
@@ -6351,19 +6360,16 @@ int converte2settings(int flag)
 				if(checkbox("UFS910") == 1)
 					line = ostrcat(line, "0", 1, 0); // rolloff
 				else
-					line = ostrcat(line, tmpstr3, 1, 0); // rolloff
+					line = ostrcat(line, "3", 1, 0); // rolloff
 				line = ostrcat(line, "#", 1, 0);
 
-				if(checkbox("UFS910") == 1)
-					line = ostrcat(line, "2", 1, 0); // inversion
-				else
-					line = ostrcat(line, tmpstr3, 1, 0); // inversion
+				line = ostrcat(line, "2", 1, 0); // inversion
 				line = ostrcat(line, "#", 1, 0);
 
 				if(ostrstr((ret1[i]).part, "system=") != NULL)
 					line = ostrcat(line, getxmlentry(ret1[i].part, "system="), 1, 0); // system
 				else
-					line = ostrcat(line, tmpstr3, 1, 0); // system
+					line = ostrcat(line, "0", 1, 0); // system
 				line = ostrcat(line, "\n", 1, 0);
 			}
 		}
@@ -6395,7 +6401,6 @@ int converte2settings(int flag)
 	free(satfile), satfile = NULL;
 	free(transponderfile), transponderfile = NULL;
 		
-	free(tmpstr3), tmpstr3 = NULL;
 	free(buf), buf = NULL;
 	free(start), start = NULL;
 	free(end), end = NULL;
