@@ -88,7 +88,7 @@
 #define PROGNAME "titan"
 #define COPYRIGHT "NIT"
 #define CRONTRIBUT "obi, black, dvboxer, oxygen, gost"
-#define PLUGINVERSION 0
+#define PLUGINVERSION 30767
 
 #define _(x) gettext(x)
 #define MINMALLOC 4096
@@ -1519,6 +1519,11 @@ struct status
 	int rcskipms;
 	//Workaround da ansonsten DVR4 nicht funktioniert (Treiberproblem)
 	int setdvr0;
+#ifdef MIPSEL
+	//cec mipsel
+	int cec_fixedAddress;
+	int hdmiFd;
+#endif
 } status;
 
 struct fb
@@ -1927,6 +1932,20 @@ typedef enum {
 	GST_PLAY_FLAG_TEXT = (1 << 2),
 	GST_PLAY_FLAG_NATIVE_VIDEO = (1 << 3)
 } GstPlayFlags;
+#endif
+
+#ifdef MIPSEL
+//fuer cec Mipsel
+struct cec_message
+{
+unsigned char address;
+unsigned char length;
+unsigned char data[256];
+}__attribute__((packed));
+
+unsigned char cec_physicalAddress[2];
+unsigned char cec_logicalAddress;
+unsigned char cec_deviceType;
 #endif
 
 #endif
