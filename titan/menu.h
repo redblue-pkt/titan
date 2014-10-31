@@ -608,11 +608,13 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		if(check == 1) return 0;
 		screensettings_fancontrol();
 	}
+#ifdef MIPSEL
 	else if(ostrcmp("ceccontrol", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
 		screencec();
 	}
+#endif
 	else if(ostrcmp("serviceinfo", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
