@@ -5,7 +5,6 @@
 //flag 1: video+gui
 //flag 2: video
 //flag 3: gui
-
 void screenshoot(int flag)
 {
 	char* cmd = NULL;
@@ -33,7 +32,6 @@ void screenshoot(int flag)
 
 //flag 0: playerstart
 //flag 1: playerstop
-
 void set_player_sound(int flag)
 {
 	char* vol = NULL, *cmd = NULL;
