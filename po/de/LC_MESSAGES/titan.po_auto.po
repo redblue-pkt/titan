@@ -1,3 +1,17 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: TitanNit 1.56\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-07 10:44+0200\n"
+"PO-Revision-Date: 2014-10-31 21:17+0100\n"
+"Last-Translator:  <aaf-caliban@e.mail.de>\n"
+"Language-Team: German <_obiwan_@web.de>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+
 #: about.h:9
 msgid "System-Info"
 msgstr "System Information"
@@ -795,8 +809,7 @@ msgstr ""
 
 #: browser.h:206
 msgid "Choose your Internet Favorite from the following list"
-msgstr ""
-"Wählen Sie das gewünschte Internet Lesezeichen aus der folgenden Liste"
+msgstr "Wählen Sie das gewünschte Internet Lesezeichen aus der folgenden Liste"
 
 #: callmon_main.h:39
 msgid ""
@@ -1655,8 +1668,7 @@ msgstr "Menü"
 
 #: filemanager.h:89
 msgid "Choose your Filemanager Option from the following list"
-msgstr ""
-"Wählen Sie die gewünschte Datei Manager Option aus der folgenden Liste"
+msgstr "Wählen Sie die gewünschte Datei Manager Option aus der folgenden Liste"
 
 #: filemanager.h:95
 msgid "Can't rename file !"
@@ -2372,7 +2384,7 @@ msgstr ""
 
 #: httpdfunc.h:5052
 msgid "Svn Changelog"
-msgstr ""
+msgstr "SVN Änderungsprotokoll"
 
 #: httpdfunc.h:5054 skin_default_skin.xml.h:256 webif_info_logs.h:3
 msgid "Git Changelog"
@@ -2384,11 +2396,11 @@ msgstr ""
 
 #: httpdfunc.h:5058
 msgid "Svn Changelog Full"
-msgstr ""
+msgstr "SVN Änderungsprotokoll (komplett)"
 
 #: httpdfunc.h:5060
 msgid "Git Changelog Full"
-msgstr ""
+msgstr "GIT Änderungsprotokoll (komplett)"
 
 #: httpdfunc.h:5093 skin_default_skin.xml.h:51 webif_info.h:3
 msgid "About"
@@ -2944,60 +2956,6 @@ msgstr "Ihr Marker wurde erfolgreich gesetzt"
 msgid "File not found !!"
 msgstr "Datei nicht gefunden"
 
-#: mboxinfo.c:77 mc_imdb.h:78 mc_imdb.h:79 mc_imdb.h:80 mc_imdb.h:81
-#: mc_imdb.h:82 mc_view.h:17 mc_view.h:18 mc_view.h:19 mc_view.h:20
-#: mc_view.h:21 mc_view.h:22 plugins_autotimer_skin.xml.h:13
-#: plugins_callmonitor1_skin.xml.h:19 plugins_catcatch_skin.xml.h:7
-#: plugins_dlna_skin.xml.h:15 plugins_facebook_skin.xml.h:6
-#: plugins_filemanager_skin.xml.h:6 plugins_gmediarender_skin.xml.h:1
-#: plugins_imdbapi_skin.xml.h:11 plugins_imdb_skin.xml.h:11
-#: plugins_instar_skin.xml.h:17 plugins_keylock_skin.xml.h:1
-#: plugins_lcdpearl1_skin.xml.h:14 plugins_lcdsamsung_skin.xml.h:18
-#: plugins_mboxinfo_skin.xml.h:3 plugins_mc_skin.xml.h:70
-#: plugins_networkbrowser_skin.xml.h:37 plugins_news_skin.xml.h:5
-#: plugins_optimize_skin.xml.h:4 plugins_panel_skin.xml.h:28
-#: plugins_permtime_skin.xml.h:1 plugins_readerconfig_skin.xml.h:10
-#: plugins_rgui_skin.xml.h:9 plugins_stock_skin.xml.h:6
-#: plugins_stopifnotused_skin.xml.h:8 plugins_streaminfo_skin.xml.h:6
-#: plugins_sudoku_skin.xml.h:18 plugins_tithek_skin.xml.h:24
-#: plugins_tiwakeup_skin.xml.h:9 plugins_tmc_skin.xml.h:18
-#: plugins_tmdb_skin.xml.h:11 plugins_tsSchnitt_skin.xml.h:11
-#: plugins_weather_skin.xml.h:4 plugins_wins3_skin.xml.h:4
-#: plugins_wm2014_skin.xml.h:1 plugins_wm2014_skin.xml.h:21
-#: plugins_xupnpd_skin.xml.h:5 plugins_zapback_skin.xml.h:7
-#: skin_default_skin.xml.h:754 skins_autotimer_skin.xml.h:13
-#: skins_callmonitor1_skin.xml.h:19 skins_catcatch_skin.xml.h:7
-#: skins_dlna_skin.xml.h:15 skins_facebook_skin.xml.h:6
-#: skins_filemanager_skin.xml.h:6 skins_gmediarender_skin.xml.h:1
-#: skins_imdbapi_skin.xml.h:11 skins_imdb_skin.xml.h:11
-#: skins_instar_skin.xml.h:17 skins_keylock_skin.xml.h:1
-#: skins_lcdpearl1_skin.xml.h:14 skins_lcdsamsung_skin.xml.h:18
-#: skins_mboxinfo_skin.xml.h:3 skins_mc_skin.xml.h:70
-#: skins_networkbrowser_skin.xml.h:37 skins_news_skin.xml.h:5
-#: skins_optimize_skin.xml.h:4 skins_panel_skin.xml.h:28
-#: skins_permtime_skin.xml.h:1 skins_readerconfig_skin.xml.h:10
-#: skins_rgui_skin.xml.h:9 skins_stock_skin.xml.h:6
-#: skins_stopifnotused_skin.xml.h:8 skins_streaminfo_skin.xml.h:6
-#: skins_sudoku_skin.xml.h:18 skins_tithek_skin.xml.h:24
-#: skins_tiwakeup_skin.xml.h:9 skins_tmc_skin.xml.h:18
-#: skins_tmdb_skin.xml.h:11 skins_tsSchnitt_skin.xml.h:11
-#: skins_weather_skin.xml.h:4 skins_wins3_skin.xml.h:4
-#: skins_wm2014_skin.xml.h:1 skins_wm2014_skin.xml.h:21
-#: skins_xupnpd_skin.xml.h:5 skins_zapback_skin.xml.h:7 tithek_mainmenu.h:1
-msgid ""
-msgstr ""
-"Project-Id-Version: TitanNit 1.56\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-07 10:44+0200\n"
-"PO-Revision-Date: 2014-10-22 19:45+0100\n"
-"Last-Translator: Bulldog <Bulldog@e.mail.de>\n"
-"Language-Team: German <_obiwan_@web.de>\n"
-"Language: de\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
-
 #: mc_audioplayer.h:408 mc_global.h:1079 mc_pictureplayer.h:150
 #: mc_videoplayer.h:428
 msgid "Repeat-On"
@@ -3486,9 +3444,8 @@ msgstr "Netzwerk Browser - gefundene cifs/nfs Freigaben"
 msgid "Choose your cifs/nfs Share from the following list"
 msgstr ""
 "Freigaben des Servers\n"
-"Zum Bearbeiten und Speichern bitte Freigabe auswählen und -OK- drücken. "
-"Für Windows Freigaben (cifs/smb) muss evtl. Authentifizierung benutzt "
-"werden."
+"Zum Bearbeiten und Speichern bitte Freigabe auswählen und -OK- drücken. Für "
+"Windows Freigaben (cifs/smb) muss evtl. Authentifizierung benutzt werden."
 
 #: networkbrowser.h:1340
 msgid "Add Cifs Network Share"
@@ -3575,9 +3532,9 @@ msgstr "Netzwerk Browser - Freigaben"
 msgid "Choose your Shares from the following list"
 msgstr ""
 "Liste Ihrer gespeicherten Freigaben. Zum Bearbeiten Eintrag wählen und -"
-"Grün- drücken. Um weitere Freigaben hinzuzufügen bitte -Suche- benutzen. "
-"Für den Zugriff auf passwortgeschützte Windows Freigaben bitte Menü "
-"drücken und die Benutzerdaten eingeben."
+"Grün- drücken. Um weitere Freigaben hinzuzufügen bitte -Suche- benutzen. Für "
+"den Zugriff auf passwortgeschützte Windows Freigaben bitte Menü drücken und "
+"die Benutzerdaten eingeben."
 
 #: networkbrowser.h:1907
 msgid "Are you sure you want remove this share?"
@@ -4129,8 +4086,7 @@ msgstr "Suche diesen Titel bei Internet-Radio (local)"
 #: play.h:706
 msgid "Choose your Red-Menu entry from the following list"
 msgstr ""
-"Wählen Sie den gewünschten Eintrag für das Rot Menü aus der folgenden "
-"Liste"
+"Wählen Sie den gewünschten Eintrag für das Rot Menü aus der folgenden Liste"
 
 #: play.h:1193
 msgid "Jump To (min)"
@@ -6170,8 +6126,7 @@ msgid ""
 "Choose your Media plugin item from the following list and show it so the "
 "plugin button"
 msgstr ""
-"Wählen Sie den gewünschten Eintrag für das Media Menü aus der folgenden "
-"Liste"
+"Wählen Sie den gewünschten Eintrag für das Media Menü aus der folgenden Liste"
 
 #: settings_pluginbutton.h:6
 msgid "Plugin Key Action - Setup"
@@ -7167,8 +7122,7 @@ msgstr "Hier können Sie Ihre Einstellungen sichern und wiederherstellen"
 
 #: skin_default_skin.xml.h:275
 msgid "Here you can check the reception of the current station."
-msgstr ""
-"Hier können Sie die Signalqualität des aktuellen Senders überprüfen"
+msgstr "Hier können Sie die Signalqualität des aktuellen Senders überprüfen"
 
 #: skin_default_skin.xml.h:276
 msgid ""
@@ -7194,8 +7148,8 @@ msgstr "Hier können Sie Ihre CI-Module konfigurieren"
 #: skin_default_skin.xml.h:279
 msgid "Here you can configure the smartcard readers."
 msgstr ""
-"Hier können Sie Ihre Smartcards zurücksetzen. Sollten keine Karten "
-"angezeigt werden, dann ist ein Softcam mit Zugriff auf die Kartenleser aktiv."
+"Hier können Sie Ihre Smartcards zurücksetzen. Sollten keine Karten angezeigt "
+"werden, dann ist ein Softcam mit Zugriff auf die Kartenleser aktiv."
 
 #: skin_default_skin.xml.h:280
 msgid "Here you can configure your web server."
@@ -7294,8 +7248,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:298
 msgid "Here you can make your PIN security for menus settings."
-msgstr ""
-"Hier können Sie Ihre PIN Sicherheitseinstellungen für Menüs vornehmen"
+msgstr "Hier können Sie Ihre PIN Sicherheitseinstellungen für Menüs vornehmen"
 
 #: skin_default_skin.xml.h:299
 msgid "Here you can make your PIN security settings."
@@ -9009,7 +8962,7 @@ msgid ""
 msgstr ""
 "-wiederherstellen- (Rot):\n"
 "Ihre Einstellungen werden aus einer zuvor erstellten Sicherung "
-"wiederhergestellt! Der Receiver wird dafür automatisch neu gestartet! \n"
+"wiederhergestellt! Der Receiver wird automatisch neu gestartet!\n"
 "\n"
 "-sichern- (Grün):\n"
 "Ihre Einstellungen werden gesichert.\n"
@@ -9050,7 +9003,9 @@ msgstr ""
 
 #: system_backup_restore.h:40
 msgid "Restore failed, see log"
-msgstr "FEHLER: Wiederherstellung fehlgeschlagen - siehe Logdatei"
+msgstr ""
+"Wiederherstellung fehlgeschlagen\n"
+"Einzelheiten siehe Logdatei"
 
 #: system_backup_restore.h:43
 msgid "Update Plugins to new Version?"
@@ -9058,7 +9013,7 @@ msgstr "Installierte Plugins aktualisieren?"
 
 #: system_backup_restore.h:51
 msgid "RESTORE ERROR"
-msgstr "WIEDERHERSTELLUNGSFEHLER!!!"
+msgstr "WIEDERHERSTELLUNGSFEHLER!"
 
 #: system_backup_restore.h:51
 msgid ""
@@ -9066,9 +9021,9 @@ msgid ""
 "\n"
 "Aborting restoring..."
 msgstr ""
-"FEHLER: Der Ordner 'backup' wurde nicht gefunden!\n"
+"Der Ordner 'backup' wurde nicht gefunden!\n"
 "\n"
-"Wiederherstellung wurde abgebrochen."
+"Wiederherstellung wird abgebrochen ..."
 
 #: system_backup_restore.h:65
 msgid "Backup - Settings"
@@ -9087,8 +9042,8 @@ msgstr ""
 #: system_backup_restore.h:80
 msgid "Backup failed, see log"
 msgstr ""
-"FEHLER: Die Sicherung ist fehlgeschlagen.\n"
-"Eine Logdatei wurde angelegt."
+"Sicherung fehlgeschlagen\n"
+"Einzelheiten siehe Logdatei"
 
 #: system_backup_restore.h:82
 msgid "Backup created successfully"
@@ -9104,9 +9059,9 @@ msgid ""
 "\n"
 "Aborting backup..."
 msgstr ""
-"ACHTUNG: Eine Festplatte oder ein USB Gerät muss für Aufnahmen\n"
-"angeschlossen sein!\n"
-"Sicherung wird abgebrochen."
+"Kein Datenträger gefunden!\n"
+"\n"
+"Sicherung wird abgebrochen ..."
 
 #: system_backup_restore.h:95
 msgid "BACKUP LOG"
@@ -9288,7 +9243,7 @@ msgstr "Einstellungen speichern?"
 
 #: titan.c:1116
 msgid "Receiver successful unlocked"
-msgstr "Ihr Receiver wurde erfolgreich freigeschaltet."
+msgstr "Ihr Receiver wurde erfolgreich freigeschaltet"
 
 #: titan.c:1137
 msgid ""
@@ -9324,7 +9279,7 @@ msgstr ""
 
 #: titan.c:1209
 msgid "Unknown Error."
-msgstr "unbekannter Fehler."
+msgstr "unbekannter Fehler"
 
 #: titan.c:1211
 msgid "Automatic stop in 10 seconds."
@@ -9671,11 +9626,11 @@ msgstr "automatisch anpassen"
 
 #: tithek_settings.h:20 tithek_settings.h:29
 msgid "show 2 entrys"
-msgstr "sehr gross (2 Bilder)"
+msgstr "sehr groß (2 Bilder)"
 
 #: tithek_settings.h:21 tithek_settings.h:30
 msgid "show 6 entrys"
-msgstr "gross (6 Bilder)"
+msgstr "groß (6 Bilder)"
 
 #: tithek_settings.h:22 tithek_settings.h:31
 msgid "show 12 entrys"
@@ -10292,7 +10247,7 @@ msgstr ""
 
 #: tpk_description.h:104
 msgid "Midnight Commander, a file manager for the command line"
-msgstr "Midnight Commander - ein Datei Manager"
+msgstr "Midnight Commander - ein Datei Manager für die telnet Konsole"
 
 #: tpk_description.h:105
 msgid "More audio/video formats playable"
@@ -12391,7 +12346,7 @@ msgstr ""
 #: webif_index.atemio6200.h:72 webif_index.atemio7600.h:67
 #: webif_index.atemio-nemesis.h:72 webif_index.h:20
 msgid "switch to original remote"
-msgstr ""
+msgstr "original Fernbedienung anzeigen"
 
 #: webif_index.atemio510.h:20 webif_index.atemio5200.h:73
 #: webif_index.atemio5200.h:129 webif_index.atemio6000.h:20
@@ -12400,7 +12355,7 @@ msgstr ""
 #: webif_index.atemio7600.h:121 webif_index.atemio-nemesis.h:73
 #: webif_index.atemio-nemesis.h:129 webif_index.h:21
 msgid "open in new window"
-msgstr ""
+msgstr "in neuem Fenster öffnen"
 
 #: webif_index.atemio5200.h:19 webif_index.atemio5200.h:20
 #: webif_index.atemio5200.h:75 webif_index.atemio6200.h:19
@@ -12427,7 +12382,7 @@ msgstr ""
 #: webif_rc.atemio6200.h:13 webif_rc.atemio7600.h:40
 #: webif_rc.atemio-nemesis.h:13 webif_rc_virtual.atemio510.h:11
 msgid "Last"
-msgstr ""
+msgstr "Letzter"
 
 #: webif_index.atemio5200.h:32 webif_index.atemio5200.h:88
 #: webif_index.atemio6200.h:32 webif_index.atemio6200.h:88
@@ -12438,7 +12393,7 @@ msgstr ""
 #: webif_rc.atemio6200.h:15 webif_rc.atemio7600.h:43
 #: webif_rc.atemio-nemesis.h:15 webif_rc_virtual.atemio510.h:10
 msgid "Next"
-msgstr ""
+msgstr "Nächster"
 
 #: webif_index.atemio5200.h:33 webif_index.atemio5200.h:50
 #: webif_index.atemio5200.h:89 webif_index.atemio5200.h:106
@@ -12457,7 +12412,7 @@ msgstr ""
 #: webif_rc_virtual.atemio6000.h:29 webif_rc_virtual.atemio6100.h:29
 #: webif_rc_virtual.atemio6200.h:29 webif_rc_virtual.atemio-nemesis.h:29
 msgid "Mute"
-msgstr ""
+msgstr "Stumm"
 
 #: webif_index.atemio5200.h:37 webif_index.atemio5200.h:93
 #: webif_index.atemio6200.h:37 webif_index.atemio6200.h:93
@@ -12472,7 +12427,7 @@ msgstr ""
 #: webif_rc_virtual.atemio6100.h:36 webif_rc_virtual.atemio6200.h:36
 #: webif_rc_virtual.atemio-nemesis.h:36
 msgid "Exit"
-msgstr ""
+msgstr "Verlassen"
 
 #: webif_index.atemio5200.h:39 webif_index.atemio5200.h:95
 #: webif_index.atemio6200.h:39 webif_index.atemio6200.h:95
@@ -12487,7 +12442,7 @@ msgstr ""
 #: webif_rc_virtual.atemio6100.h:21 webif_rc_virtual.atemio6200.h:21
 #: webif_rc_virtual.atemio-nemesis.h:21
 msgid "Left"
-msgstr ""
+msgstr "Links"
 
 #: webif_index.atemio5200.h:40 webif_index.atemio5200.h:96
 #: webif_index.atemio6200.h:40 webif_index.atemio6200.h:96
@@ -12502,7 +12457,7 @@ msgstr ""
 #: webif_rc_virtual.atemio6100.h:22 webif_rc_virtual.atemio6200.h:22
 #: webif_rc_virtual.atemio-nemesis.h:22
 msgid "Right"
-msgstr ""
+msgstr "Rechts"
 
 #: webif_index.atemio5200.h:41 webif_index.atemio5200.h:97
 #: webif_index.atemio6200.h:41 webif_index.atemio6200.h:97
@@ -12517,7 +12472,7 @@ msgstr ""
 #: webif_rc_virtual.atemio6100.h:23 webif_rc_virtual.atemio6200.h:23
 #: webif_rc_virtual.atemio-nemesis.h:23
 msgid "Up"
-msgstr ""
+msgstr "Hoch"
 
 #: webif_index.atemio5200.h:42 webif_index.atemio5200.h:98
 #: webif_index.atemio6200.h:42 webif_index.atemio6200.h:98
@@ -12532,7 +12487,7 @@ msgstr ""
 #: webif_rc_virtual.atemio6000.h:24 webif_rc_virtual.atemio6100.h:24
 #: webif_rc_virtual.atemio6200.h:24 webif_rc_virtual.atemio-nemesis.h:24
 msgid "Down"
-msgstr ""
+msgstr "Runter"
 
 #: webif_index.atemio5200.h:44 webif_index.atemio5200.h:100
 #: webif_index.atemio6200.h:44 webif_index.atemio6200.h:100
@@ -12548,7 +12503,7 @@ msgstr ""
 #: webif_index.atemio5200.h:45 webif_index.atemio6200.h:45
 #: webif_index.atemio-nemesis.h:45
 msgid "Back"
-msgstr ""
+msgstr "Zurück"
 
 #: webif_index.atemio5200.h:46 webif_index.atemio5200.h:102
 #: webif_index.atemio6200.h:102 webif_index.atemio6200.h:46
@@ -12563,7 +12518,7 @@ msgstr ""
 #: webif_rc_virtual.atemio6100.h:31 webif_rc_virtual.atemio6200.h:31
 #: webif_rc_virtual.atemio-nemesis.h:31
 msgid "Volume Up"
-msgstr ""
+msgstr "Lautstärke erhöhen"
 
 #: webif_index.atemio5200.h:47 webif_index.atemio5200.h:103
 #: webif_index.atemio6200.h:103 webif_index.atemio6200.h:47
@@ -12578,7 +12533,7 @@ msgstr ""
 #: webif_rc_virtual.atemio6100.h:32 webif_rc_virtual.atemio6200.h:32
 #: webif_rc_virtual.atemio-nemesis.h:32
 msgid "Volume Down"
-msgstr ""
+msgstr "Lautstärke veringern"
 
 #: webif_index.atemio5200.h:48 webif_index.atemio5200.h:104
 #: webif_index.atemio6200.h:104 webif_index.atemio6200.h:48
@@ -12593,7 +12548,7 @@ msgstr ""
 #: webif_rc_virtual.atemio6100.h:33 webif_rc_virtual.atemio6200.h:33
 #: webif_rc_virtual.atemio-nemesis.h:33
 msgid "Channel Up"
-msgstr ""
+msgstr "Sender auf"
 
 #: webif_index.atemio5200.h:49 webif_index.atemio5200.h:105
 #: webif_index.atemio6200.h:105 webif_index.atemio6200.h:49
@@ -12608,7 +12563,7 @@ msgstr ""
 #: webif_rc_virtual.atemio6100.h:34 webif_rc_virtual.atemio6200.h:34
 #: webif_rc_virtual.atemio-nemesis.h:34
 msgid "Channel Down"
-msgstr ""
+msgstr "Sender ab"
 
 #: webif_index.atemio5200.h:51 webif_index.atemio5200.h:107
 #: webif_index.atemio6200.h:51 webif_index.atemio6200.h:107
@@ -12623,7 +12578,7 @@ msgstr ""
 #: webif_rc_virtual.atemio6100.h:25 webif_rc_virtual.atemio6200.h:25
 #: webif_rc_virtual.atemio-nemesis.h:25
 msgid "Red"
-msgstr ""
+msgstr "Rot"
 
 #: webif_index.atemio5200.h:52 webif_index.atemio5200.h:108
 #: webif_index.atemio6200.h:52 webif_index.atemio6200.h:108
@@ -12638,7 +12593,7 @@ msgstr ""
 #: webif_rc_virtual.atemio6100.h:26 webif_rc_virtual.atemio6200.h:26
 #: webif_rc_virtual.atemio-nemesis.h:26
 msgid "Green"
-msgstr ""
+msgstr "Grün"
 
 #: webif_index.atemio5200.h:53 webif_index.atemio5200.h:109
 #: webif_index.atemio6200.h:109 webif_index.atemio6200.h:53
@@ -12653,7 +12608,7 @@ msgstr ""
 #: webif_rc_virtual.atemio6100.h:27 webif_rc_virtual.atemio6200.h:27
 #: webif_rc_virtual.atemio-nemesis.h:27
 msgid "Yellow"
-msgstr ""
+msgstr "Gelb"
 
 #: webif_index.atemio5200.h:54 webif_index.atemio5200.h:110
 #: webif_index.atemio6200.h:54 webif_index.atemio6200.h:110
@@ -12668,7 +12623,7 @@ msgstr ""
 #: webif_rc_virtual.atemio6100.h:28 webif_rc_virtual.atemio6200.h:28
 #: webif_rc_virtual.atemio-nemesis.h:28
 msgid "Blue"
-msgstr ""
+msgstr "Blau"
 
 #: webif_index.atemio5200.h:55 webif_index.atemio6200.h:55
 #: webif_index.atemio7600.h:103 webif_index.atemio-nemesis.h:55
@@ -12678,7 +12633,7 @@ msgstr ""
 #: webif_rc_virtual.atemio6100.h:14 webif_rc_virtual.atemio6200.h:14
 #: webif_rc_virtual.atemio-nemesis.h:14
 msgid "Fast Rewind"
-msgstr ""
+msgstr "Schneller Rücklauf"
 
 #: webif_index.atemio5200.h:56 webif_index.atemio5200.h:112
 #: webif_index.atemio6200.h:56 webif_index.atemio6200.h:112
@@ -12723,7 +12678,7 @@ msgstr ""
 #: webif_rc_virtual.atemio6100.h:15 webif_rc_virtual.atemio6200.h:15
 #: webif_rc_virtual.atemio-nemesis.h:15
 msgid "Fast Forward"
-msgstr ""
+msgstr "Schneller Vorlauf"
 
 #: webif_index.atemio5200.h:61 webif_index.atemio5200.h:117
 #: webif_index.atemio6200.h:61 webif_index.atemio6200.h:117
@@ -12828,7 +12783,7 @@ msgstr ""
 #: webif_index.atemio5200.h:128 webif_index.atemio6200.h:128
 #: webif_index.atemio7600.h:120 webif_index.atemio-nemesis.h:128
 msgid "switch to virtual remote"
-msgstr ""
+msgstr "virtuelle Fernbedienung anzeigen"
 
 #: webif_index.atemio7600.h:17 webif_index.atemio7600.h:99
 #: webif_rc.atemio510.h:3 webif_rc.atemio7600.h:32
@@ -12839,7 +12794,7 @@ msgstr "Seite rauf"
 #: webif_index.atemio7600.h:18 webif_index.atemio7600.h:118
 #: webif_rc.atemio520.h:4 webif_rc.atemio530.h:4 webif_rc.atemio7600.h:51
 msgid "Resolution"
-msgstr ""
+msgstr "Auflösung"
 
 #: webif_index.atemio7600.h:19 webif_index.atemio7600.h:117
 #: webif_rc.atemio510.h:9 webif_rc.atemio7600.h:50
@@ -12863,7 +12818,7 @@ msgstr ""
 #: webif_index.atemio7600.h:42 webif_rc.atemio510.h:27
 #: webif_rc_virtual.atemio510.h:27
 msgid "Rewind"
-msgstr ""
+msgstr "zurückspulen"
 
 #: webif_index.atemio7600.h:46 webif_index.atemio7600.h:104
 #: webif_rc.atemio510.h:31 webif_rc.atemio7600.h:37
@@ -12898,15 +12853,15 @@ msgstr ""
 
 #: webif_info_logs.h:5
 msgid "Titan Changelog (Extern)"
-msgstr ""
+msgstr "Titan Änderungsprotokoll (extern)"
 
 #: webif_info_logs.h:6
 msgid "Git Changelog (Extern)"
-msgstr ""
+msgstr "GIT Änderungsprotokoll (extern)"
 
 #: webif_info_sysinfos.h:1
 msgid "Extended System Infos"
-msgstr ""
+msgstr "Erweiterte System Informationen"
 
 #: webif_message.h:1 webif_playurl.h:2 webif_playurl.h:5
 msgid "Send"
@@ -12947,7 +12902,7 @@ msgstr "PiP tauschen"
 #: webif_rc_virtual.atemio6000.h:38 webif_rc_virtual.atemio6100.h:38
 #: webif_rc_virtual.atemio6200.h:38 webif_rc_virtual.atemio-nemesis.h:38
 msgid "close window"
-msgstr ""
+msgstr "Fenster schließen"
 
 #: webif_rc.atemio520.h:5 webif_rc.atemio530.h:5
 msgid "Tv/Radio"
