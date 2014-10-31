@@ -41,8 +41,8 @@ msgstr "System Information"
 #: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:332
 #: mc_videoplayer.h:749 mc_videoplayer.h:784 mc_videoplayer.h:888
 #: mc_videoplayer.h:904 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
-#: mediadb.h:1477 mediadb.h:2454 mediadbsettings.h:95 menu.h:154 menu.h:209
-#: menu.h:957 menu.h:959 movie4k.h:36 movie4k.h:48 movie4k.h:92 movie4k.h:399
+#: mediadb.h:1477 mediadb.h:2454 mediadbsettings.h:95 menu.h:161 menu.h:216
+#: menu.h:969 menu.h:971 movie4k.h:36 movie4k.h:48 movie4k.h:92 movie4k.h:399
 #: movreel.h:30 movreel.h:79 movreel.h:85 movreel.h:91 movreel.h:103
 #: movreel.h:115 movreel.h:166 movreel.h:214 movshare.h:34 movshare.h:78
 #: movshare.h:157 movshare.h:163 myvideo.h:86 networkbrowser.h:944
@@ -148,8 +148,8 @@ msgstr "Ok"
 #: mc_pictureplayer.h:461 mc_videoplayer.h:332 mc_videoplayer.h:749
 #: mc_videoplayer.h:784 mc_videoplayer.h:888 mc_videoplayer.h:904
 #: mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477
-#: mediadb.h:2454 mediadbsettings.h:95 menu.h:154 menu.h:209 menu.h:957
-#: menu.h:959 movie4k.h:36 movie4k.h:48 movie4k.h:92 movie4k.h:399
+#: mediadb.h:2454 mediadbsettings.h:95 menu.h:161 menu.h:216 menu.h:969
+#: menu.h:971 movie4k.h:36 movie4k.h:48 movie4k.h:92 movie4k.h:399
 #: movreel.h:30 movreel.h:79 movreel.h:85 movreel.h:91 movreel.h:103
 #: movreel.h:115 movreel.h:166 movreel.h:214 movshare.h:34 movshare.h:78
 #: movshare.h:157 movshare.h:163 myvideo.h:86 networkbrowser.h:944
@@ -578,7 +578,7 @@ msgstr "Ja/VZAP unendlich"
 #: mc_pictureplayer.h:461 mc_videoplayer.h:332 mc_videoplayer.h:749
 #: mc_videoplayer.h:784 mc_videoplayer.h:888 mc_videoplayer.h:904
 #: mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477
-#: mediadbsettings.h:95 menu.h:154 menu.h:209 movie4k.h:36 movie4k.h:48
+#: mediadbsettings.h:95 menu.h:161 menu.h:216 movie4k.h:36 movie4k.h:48
 #: movie4k.h:92 movie4k.h:399 movreel.h:30 movreel.h:79 movreel.h:85
 #: movreel.h:91 movreel.h:103 movreel.h:115 movreel.h:166 movreel.h:214
 #: movshare.h:34 movshare.h:78 movshare.h:157 movshare.h:163 myvideo.h:86
@@ -689,11 +689,11 @@ msgstr "Autotimer erfolgreich gestartet"
 msgid "ERROR... AutoTimer not started"
 msgstr "FEHLER: Autotimer konnte nicht gestartet werden!"
 
-#: autotimer.c:603 menu.h:957 menu.h:959 skin_default_skin.xml.h:554
+#: autotimer.c:603 menu.h:969 menu.h:971 skin_default_skin.xml.h:554
 msgid "Save Settings"
 msgstr "Einstellungen speichern"
 
-#: autotimer.c:603 menu.h:959
+#: autotimer.c:603 menu.h:971
 msgid "Settings succesfull saved"
 msgstr "Einstellungen wurden erfolgreich gespeichert"
 
@@ -2725,7 +2725,7 @@ msgid "DYNDNS now stopped"
 msgstr "DYNDNS gestoppt"
 
 #: infobar.h:497 mc_audioplayer.h:333 mc_main.h:273 mc_pictureplayer.h:124
-#: mc_videoplayer.h:332 menu.h:209
+#: mc_videoplayer.h:332 menu.h:216
 msgid ""
 "Shooting Background done !\n"
 "Save Screenshoot Path: /tmp/screenshot.jpg"
@@ -3090,7 +3090,7 @@ msgstr "Internetbrowser Netsurf ist nicht installiert"
 msgid "comming soon"
 msgstr "folgt demnächst, das Team arbeitet dran"
 
-#: mc_main.h:282 menu.h:154 panel_main.h:29 panel_main.h:135
+#: mc_main.h:282 menu.h:161 panel_main.h:29 panel_main.h:135
 msgid "Menu not implemented !"
 msgstr "Menü noch nicht verfügbar!"
 
@@ -3350,7 +3350,7 @@ msgstr ""
 "Kein MediaDB Verzeichnis gefunden!\n"
 "-OK- um es zu erstellen"
 
-#: menu.h:957
+#: menu.h:969
 msgid "Error in Save Settings"
 msgstr "Fehler beim Speichern der Einstellungen"
 
