@@ -222,6 +222,7 @@ void screencec()
 				recoff->hidden = YES;	
 				recon->hidden = YES;	
 				tvswitch->hidden = YES;
+				cecfix->hidden = YES;	
 			}
 			else
 			{
@@ -232,6 +233,7 @@ void screencec()
 				recoff->hidden = NO;	
 				recon->hidden = NO;	
 				tvswitch->hidden = NO;	
+				cecfix->hidden = NO;	
 			}
 		}
 		if(rcret == getrcconfigint("rcexit", NULL))
