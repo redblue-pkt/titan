@@ -8071,7 +8071,7 @@ msgid "Set standby all connected devices"
 msgstr ""
 
 #: skin_default_skin.xml.h:584
-msgid "Set standby A/V Receivert"
+msgid "Set standby A/V Receiver"
 msgstr ""
 
 #: skin_default_skin.xml.h:585
