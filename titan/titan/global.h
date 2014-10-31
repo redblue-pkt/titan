@@ -1836,7 +1836,11 @@ void checkboxstart()
 	int timediff = getconfigint("rectimer_timediff", NULL);
 	int test = 0;
 	
-	if(node == NULL) return; //no record
+	if(node == NULL)
+	{
+		setcecstandby(0);
+		return; 						//no record
+	}
 
 	while(node != NULL)
 	{
