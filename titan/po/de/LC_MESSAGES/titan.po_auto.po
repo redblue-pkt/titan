@@ -85,9 +85,9 @@ msgstr "System Information"
 #: system_backup_restore.h:82 system_backup_restore.h:88
 #: system_backup_restore.h:95 system_update.h:257 system_update.h:263
 #: system_update.h:270 thefile.h:34 thefile.h:68 thefile.h:205 timeshift.h:113
-#: timeshift.h:155 timeshift.h:162 timeshiftsettings.h:45 titan.c:277
-#: titan.c:341 titan.c:350 titan.c:978 titan.c:987 titan.c:1112 titan.c:1133
-#: titan.c:1139 titan.c:1150 titan.c:1156 tithek.c:84 tithek_global.h:248
+#: timeshift.h:155 timeshift.h:162 timeshiftsettings.h:45 titan.c:281
+#: titan.c:345 titan.c:354 titan.c:982 titan.c:991 titan.c:1116 titan.c:1137
+#: titan.c:1143 titan.c:1154 titan.c:1160 tithek.c:84 tithek_global.h:248
 #: tithek.h:667 tithek.h:1163 tithek.h:1206 tithek.h:1454 tithek.h:1476
 #: tithek.h:1492 tithek.h:2062 tithek.h:2089 tithek.h:2103 tithek.h:2113
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
@@ -202,9 +202,9 @@ msgstr "Ok"
 #: system_backup_restore.h:88 system_backup_restore.h:95 system_update.h:257
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 timeshift.h:113 timeshift.h:155 timeshift.h:162
-#: timeshiftsettings.h:45 titan.c:277 titan.c:341 titan.c:350 titan.c:978
-#: titan.c:987 titan.c:1112 titan.c:1133 titan.c:1139 titan.c:1150
-#: titan.c:1156 tithek.c:84 tithek_global.h:248 tithek.h:667 tithek.h:1163
+#: timeshiftsettings.h:45 titan.c:281 titan.c:345 titan.c:354 titan.c:982
+#: titan.c:991 titan.c:1116 titan.c:1137 titan.c:1143 titan.c:1154
+#: titan.c:1160 tithek.c:84 tithek_global.h:248 tithek.h:667 tithek.h:1163
 #: tithek.h:1206 tithek.h:1454 tithek.h:1476 tithek.h:1492 tithek.h:2062
 #: tithek.h:2089 tithek.h:2103 tithek.h:2113 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922
@@ -224,8 +224,9 @@ msgstr "Exit"
 #: adjust.h:223 adjust.h:227 adjust.h:233 adjust.h:239 adjust.h:281
 #: autotimer.c:453 autotimer.c:486 avsettings.h:156 avsettings.h:192
 #: avsettings.h:196 blindscanadjust.h:150 blindscanadjust.h:154
-#: blindscanadjust.h:158 blindscanadjust.h:187 blindscanadjust.h:191
-#: dlna.h:276 epgsettings.h:134 epgsettings.h:187 epgsettings.h:196
+#: blindscanadjust.h:158 blindscanadjust.h:187 blindscanadjust.h:191 cec.h:142
+#: cec.h:146 cec.h:150 cec.h:154 cec.h:158 cec.h:162 cec.h:166 cec.h:170
+#: cec.h:174 dlna.h:276 epgsettings.h:134 epgsettings.h:187 epgsettings.h:196
 #: epgsettings.h:200 epgsettings.h:205 epgsettings.h:210 httpdfunc.h:3632
 #: httpdfunc.h:3670 httpdfunc.h:3693 httpdfunc.h:3722 httpdfunc.h:3873
 #: httpdfunc.h:4120 httpdfunc.h:4178 httpdfunc.h:4200 httpdfunc.h:4301
@@ -291,8 +292,9 @@ msgstr "Sender EPG"
 #: adjust.h:213 adjust.h:220 adjust.h:224 adjust.h:228 adjust.h:234
 #: adjust.h:238 autotimer.c:454 autotimer.c:487 avsettings.h:157
 #: avsettings.h:193 blindscanadjust.h:151 blindscanadjust.h:155
-#: blindscanadjust.h:159 blindscanadjust.h:188 blindscanadjust.h:192
-#: dlna.h:277 epgsettings.h:135 epgsettings.h:188 epgsettings.h:197
+#: blindscanadjust.h:159 blindscanadjust.h:188 blindscanadjust.h:192 cec.h:143
+#: cec.h:147 cec.h:151 cec.h:155 cec.h:159 cec.h:163 cec.h:167 cec.h:171
+#: cec.h:175 dlna.h:277 epgsettings.h:135 epgsettings.h:188 epgsettings.h:197
 #: httpdfunc.h:3677 httpdfunc.h:3729 httpdfunc.h:3880 httpdfunc.h:4127
 #: httpdfunc.h:4185 httpdfunc.h:4308 httpdfunc.h:4330 httpdfunc.h:4374
 #: httpdfunc.h:4396 httpdfunc.h:4418 httpdfunc.h:4447 httpdfunc.h:4469
@@ -607,8 +609,8 @@ msgstr "Ja/VZAP unendlich"
 #: system_backup_restore.h:80 system_backup_restore.h:82 system_update.h:257
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 timeshift.h:113 timeshift.h:155 timeshift.h:162
-#: timeshiftsettings.h:45 titan.c:277 titan.c:341 titan.c:350 titan.c:1112
-#: titan.c:1133 titan.c:1139 titan.c:1150 titan.c:1156 tithek.c:84
+#: timeshiftsettings.h:45 titan.c:281 titan.c:345 titan.c:354 titan.c:1116
+#: titan.c:1137 titan.c:1143 titan.c:1154 titan.c:1160 tithek.c:84
 #: tithek_global.h:248 tithek.h:667 tithek.h:1163 tithek.h:1206 tithek.h:1454
 #: tithek.h:1476 tithek.h:2062 tithek.h:2089 tithek.h:2103 tithek.h:2113
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
@@ -2753,7 +2755,7 @@ msgstr ""
 msgid "Email  \t\tinfo@atemio.de"
 msgstr ""
 
-#: info.h:27 plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9 titan.c:987
+#: info.h:27 plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9 titan.c:991
 #: webif_index.atemio510.h:15 webif_index.atemio5200.h:15
 #: webif_index.atemio5200.h:43 webif_index.atemio5200.h:99
 #: webif_index.atemio6000.h:15 webif_index.atemio6100.h:15
@@ -9214,11 +9216,11 @@ msgstr "Timeshiftdatei immer löschen"
 msgid "never del file"
 msgstr "Timeshiftdatei nie löschen"
 
-#: titan.c:277
+#: titan.c:281
 msgid "!!! This is a DEMO Version !!!"
 msgstr "!!! Dies ist eine Demoversion !!!"
 
-#: titan.c:341
+#: titan.c:345
 msgid ""
 "Found running record\n"
 "or record is starting in next time.\n"
@@ -9228,7 +9230,7 @@ msgstr ""
 "startet gleich.\n"
 "Soll das System trotzdem neu gestartet werden?"
 
-#: titan.c:350
+#: titan.c:354
 msgid ""
 "Found running download\n"
 "Really shutdown ?"
@@ -9236,59 +9238,59 @@ msgstr ""
 "ACHTUNG: Eine Datei wird heruntergeladen.\n"
 "Das Herunterladen abbrechen und System neu starten?"
 
-#: titan.c:803
+#: titan.c:807
 msgid "Error: open rc device !!"
 msgstr "FEHLER: Fernbedienungsgerät wurde nicht gefunden!"
 
-#: titan.c:809
+#: titan.c:813
 msgid "Error: no frontend device found !!"
 msgstr "FEHLER: Frontend-Gerät wurde nicht gefunden!"
 
-#: titan.c:815
+#: titan.c:819
 msgid "Error: no demux device found !!"
 msgstr "FEHLER: Demux-Gerät wurde nicht gefunden!"
 
-#: titan.c:821
+#: titan.c:825
 msgid "Error: no video device found !!"
 msgstr "FEHLER: Video-Gerät wurde nicht gefunden!"
 
-#: titan.c:827
+#: titan.c:831
 msgid "Error: no audio device found !!"
 msgstr "FEHLER: Audio-Gerät wurde nicht gefunden!"
 
-#: titan.c:845
+#: titan.c:849
 msgid "Error: skin not found !!"
 msgstr "FEHLER: Skin wurde nicht gefunden!"
 
-#: titan.c:929
+#: titan.c:933
 msgid "RemoteControl Old Version"
 msgstr "Fernbedienung alte Version"
 
-#: titan.c:930
+#: titan.c:934
 msgid "RemoteControl Long Version"
 msgstr "Fernbedienung lange Version"
 
-#: titan.c:937
+#: titan.c:941
 msgid "Select Your Remote Control"
 msgstr "Fernbedienungsauswahl Menü"
 
-#: titan.c:937
+#: titan.c:941
 msgid "Choose your Remotecontrol Model from the following list"
 msgstr "Wählen Sie das passende FB Modell aus der folgenden Liste"
 
-#: titan.c:978
+#: titan.c:982
 msgid "First Wizzard"
 msgstr "Erstinstallationsassistent"
 
-#: titan.c:978
+#: titan.c:982
 msgid "Settings OK ?"
 msgstr "Einstellungen speichern?"
 
-#: titan.c:1112
+#: titan.c:1116
 msgid "Receiver successful unlocked"
 msgstr "Ihr Receiver wurde erfolgreich freigeschaltet."
 
-#: titan.c:1133
+#: titan.c:1137
 msgid ""
 "Free space in /var to little!\n"
 "This can make problems!"
@@ -9296,7 +9298,7 @@ msgstr ""
 "FEHLER: Der freie Speicher in /var reicht nicht aus!\n"
 "Dies kann zu Problemen führen!"
 
-#: titan.c:1139
+#: titan.c:1143
 msgid ""
 "/var not writeable!\n"
 "Repair it?"
@@ -9304,7 +9306,7 @@ msgstr ""
 "FEHLER: /var ist nicht beschreibbar!\n"
 "Soll es repariert werden?"
 
-#: titan.c:1150
+#: titan.c:1154
 msgid ""
 "Free space in /mnt to little!\n"
 "This can make problems!"
@@ -9312,7 +9314,7 @@ msgstr ""
 "FEHLER: Der Speicher in /mnt ist nicht ausreichend!\n"
 "Das kann zu Problemen führen!"
 
-#: titan.c:1156
+#: titan.c:1160
 msgid ""
 "/mnt not writeable!\n"
 "Repair it?"
@@ -9320,11 +9322,11 @@ msgstr ""
 "FEHLER: /mnt ist nicht beschreibbar!\n"
 "Soll ein Reparaturversuch gestartet werden?"
 
-#: titan.c:1205
+#: titan.c:1209
 msgid "Unknown Error."
 msgstr "unbekannter Fehler."
 
-#: titan.c:1207
+#: titan.c:1211
 msgid "Automatic stop in 10 seconds."
 msgstr "Automatisches Beenden in 10 Sekunden."
 
