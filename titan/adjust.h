@@ -257,7 +257,7 @@ void screenadjust()
 		emucontrol->hidden = YES;
 	else
 		emucontrol->hidden = NO;
-#ifdef MIPSEL
+#ifndef MIPSEL
 	if(checkbox("ATEMIO510") == 1 || checkbox("UFS912") == 1 || checkbox("UFS913") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1)
 		usecec->hidden = NO;
 	else
