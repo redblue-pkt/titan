@@ -242,6 +242,10 @@ struct channelslot *channelslot = NULL;
 #include "bcm.h"
 #include "settings_mediabutton.h"
 #include "oled.h"
+#ifdef MIPSEL
+#include "cec.h"
+#endif
+
 
 #define TIMECODE ""
 

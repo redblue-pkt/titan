@@ -986,4 +986,19 @@ void write2oled(unsigned char *buf, int xres, int yres);
 struct fb* oledaddfb(int width, int height);
 int oledtext(char *value);
 
+#ifdef MIPSEL
+//cec.h
+void cecinit();
+void cecstandby();
+void cecwakeup();
+void screencec();
+void getAddressInfo();
+int getPhysicalAddress();
+void hdmiEvent();
+void reportPhysicalAddress();
+void sendMessage(unsigned char address, unsigned char cmd, char *data, int length);
+void sendMessageReal(struct cec_message message);
+void setFixedPhysicalAddress(int address);
+#endif
+
 #endif
