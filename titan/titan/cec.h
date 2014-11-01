@@ -213,7 +213,7 @@ void screencec()
 		
 		if((rcret == getrcconfigint("rcleft", NULL) || rcret == getrcconfigint("rcright", NULL)) && listbox->select != NULL && ostrcmp(listbox->select->name, "cecon") == 0)
 		{
-			if(ostrcmp(cecon->ret, "1") == 0)
+			if(ostrcmp(cecon->ret, "0") == 0)
 			{
 				alloff->hidden = YES;	
 				allon->hidden = YES;		
