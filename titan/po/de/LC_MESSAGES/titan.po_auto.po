@@ -1,3 +1,20 @@
+<<<<<<< .mine
+msgid ""
+msgstr ""
+"Project-Id-Version: TitanNit 1.56\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-07 10:44+0200\n"
+"PO-Revision-Date: 2014-11-01 18:07+0100\n"
+"Last-Translator:  <aaf-caliban@e.mail.de>\n"
+"Language-Team: German <_obiwan_@web.de>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+
+=======
+>>>>>>> .r30797
 #: about.h:9
 msgid "System-Info"
 msgstr "System Information"
@@ -2934,7 +2951,7 @@ msgstr ""
 
 #: marker.h:215
 msgid "ERROR... can't set marker in this file"
-msgstr "FEHLER: Für diese Datei kann kein Marker gesetzt werden"
+msgstr "FEHLER: In dieser Datei kann kein Marker gesetzt werden"
 
 #: marker.h:229
 msgid "Marker has been set."
@@ -5565,7 +5582,7 @@ msgstr "Verbinde mit dem Hoster, warten Sie 20 Sekunden"
 
 #: putlocker.h:91
 msgid "Found Firedrive.com Link, supporting comming soon..."
-msgstr "FIredrive.com Link gefunden. Dieser wird zur Zeit nicht unterstützt."
+msgstr "Firedrive.com Link gefunden. Dieser wird zur Zeit nicht unterstützt."
 
 #: readerconfig.h:258
 msgid "first slot"
@@ -5789,7 +5806,7 @@ msgstr "FEHLER: Timer nicht gestartet, Endzeit bereits vergangen"
 
 #: rectimer.h:577
 msgid "EPG Scan activate standby?"
-msgstr "EPG Scan startet bald. Standby aktivieren?"
+msgstr "EPG Scan startet bald, Standby aktivieren?"
 
 #: rectimer.h:684
 msgid "stopped from user"
@@ -7161,7 +7178,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:274
 msgid "Here to select your remote Model"
-msgstr "Hier können Sie Ihr Fernbedienungsmodell auswählen"
+msgstr "Hier können Sie die passende Fernbedienung auswählen"
 
 #: skin_default_skin.xml.h:275
 msgid "Here you can assign channels for their ci modules."
@@ -7236,7 +7253,7 @@ msgid ""
 "Here you can in your EPG entries for specific search. Use to start a color "
 "button to search."
 msgstr ""
-"Hier können Sie den EPG nach Genres oder Schlüsselwörten\n"
+"Hier können Sie den EPG nach Genres oder Schlüsselwörtern\n"
 "durchsuchen."
 
 #: skin_default_skin.xml.h:288
@@ -7322,7 +7339,7 @@ msgstr "Hier können Sie die Aufnahmepfade konfigurieren"
 
 #: skin_default_skin.xml.h:304
 msgid "Here you can make your safety child autostart settings."
-msgstr "Hier können Sie dem Jugendschutz Autostart konfigurieren"
+msgstr "Hier können Sie den Jugendschutz Autostart konfigurieren"
 
 #: skin_default_skin.xml.h:305
 msgid "Here you can make your screensaver settings."
@@ -7340,7 +7357,9 @@ msgstr ""
 msgid ""
 "Here you can make your system settings. Use to navigate the control cross "
 "and the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie die HDMI-CEC Einstellungen anpassen"
+msgstr ""
+"Hier können Sie festlegen, wie angeschlossene Geräte auf Standby oder "
+"aufwachen dieses Receivers reagieren sollen."
 
 #: skin_default_skin.xml.h:308
 msgid "Here you can make your timeshift settings."
@@ -9284,7 +9303,7 @@ msgstr ""
 
 #: titan.c:810
 msgid "Error: open rc device !!"
-msgstr "FEHLER: Fernbedienungsgerät wurde nicht gefunden!"
+msgstr "FEHLER: RC-Gerät wurde nicht gefunden!"
 
 #: titan.c:816
 msgid "Error: no frontend device found !!"
