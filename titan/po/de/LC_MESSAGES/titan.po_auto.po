@@ -1,4 +1,4 @@
-<<<<<<< .mine
+
 msgid ""
 msgstr ""
 "Project-Id-Version: TitanNit 1.56\n"
@@ -13,8 +13,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
 
-=======
->>>>>>> .r30797
 #: about.h:9
 msgid "System-Info"
 msgstr "System Information"
