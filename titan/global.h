@@ -249,6 +249,7 @@ int setcecstandby(int flag)
 			free(tmpstr); tmpstr = NULL;
 			free(tmpstr1); tmpstr1 = NULL;
 		}
+	}
 #else
 		unsigned char data[3];
 		int hdmiFd = open("/dev/hdmi_cec", O_RDWR | O_NONBLOCK);
@@ -265,8 +266,19 @@ int setcecstandby(int flag)
 			write(hdmiFd, &data, 3);
 			close(hdmiFd);
 		}
-#endif
 	}
+	else
+	{
+		if(getconfigint("cec_on", NULL) == 1)
+		{
+			if(flag == 0)
+				cecwakeup();
+			else
+				cecstandby();
+		}
+	}
+#endif
+
 	return 0;
 }
 

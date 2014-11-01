@@ -623,6 +623,9 @@ int main(int argc, char *argv[])
 	else
 		system("echo disable > /proc/stb/fp/wol");
 
+#ifdef MIPSEL
+	cecinit()
+#endif	
 	system(getconfig("skriptbeforetv", NULL));
 	//ret = setcecstandby(0); --- > jetzt in checkboxstart
 	ret = setvideomode(getconfig("av_videomode", NULL), 0);
