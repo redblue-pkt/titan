@@ -233,7 +233,7 @@ char* getispip()
 //flag 1: set standby
 int setcecstandby(int flag)
 {
-	if(getconfigint("usecec", NULL) == 1)
+	if(getconfigint("usecec", NULL) == 1 || getconfigint("cec_on", NULL) == 1)
 	{
 #ifndef MIPSEL		
 		if(flag == 0)
@@ -249,33 +249,11 @@ int setcecstandby(int flag)
 			free(tmpstr); tmpstr = NULL;
 			free(tmpstr1); tmpstr1 = NULL;
 		}
-	}
 #else
-		unsigned char data[3];
-		int hdmiFd = open("/dev/hdmi_cec", O_RDWR | O_NONBLOCK);
-		
-		data[0] = 0x0f; 
-		data[1] = 0x01;
-
 		if(flag == 0)
-			data[2] = 0x04;
+			cecwakeup();
 		else
-			data[2] = 0x36;
-		if(hdmiFd > 0)
-		{
-			write(hdmiFd, &data, 3);
-			close(hdmiFd);
-		}
-	}
-	else
-	{
-		if(getconfigint("cec_on", NULL) == 1)
-		{
-			if(flag == 0)
-				cecwakeup();
-			else
-				cecstandby();
-		}
+			cecstandby();
 	}
 #endif
 
