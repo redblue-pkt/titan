@@ -35,15 +35,15 @@
                                                                                 Message conversion to user's charset will not work.
 710 translated messages, 2104 untranslated messages.
 [createpo.sh] xgettext --omit-header -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.po_auto.utf.po
-/home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.po_auto.utf.po:1802: duplicate message definition...
-/home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.po_auto.utf.po:3: ...this is the location of the first definition
+/home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.po_auto.utf.po:1801: duplicate message definition...
+/home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.po_auto.utf.po:2: ...this is the location of the first definition
 xgettext: found 1 fatal error
 [createpo.sh] ############################################
 [createpo.sh] ###### error should be in the middle #######
 [createpo.sh] ############################################
-     2	msgid ""
-     3	msgstr ""
-     4	"Project-Id-Version: TitanNit 1.56\n"
+     1	msgid ""
+     2	msgstr ""
+     3	"Project-Id-Version: TitanNit 1.56\n"
 [createpo.sh] ############################################
 [createpo.sh] ################## coding #################
 /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.po:         utf-8
