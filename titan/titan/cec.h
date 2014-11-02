@@ -247,7 +247,7 @@ void screencec()
 			addconfig("cec_tv_on", tvon->ret);
 			addconfig("cec_rec_off", recoff->ret);	
 			addconfig("cec_rec_on", recon->ret);
-			addconfig("cec_switch_on", tvswitch->ret);
+			addconfig("cec_tv_switch", tvswitch->ret);
 			if(ostrcmp(cecfix->ret, "0") == 0)
 			{
 				addconfig("cec_fixedAddress", "0");
@@ -363,7 +363,7 @@ void cecwakeup()
 			sendMessage(address, cmd, data, 0);
 			sleep(1);
 		}
-		if(getconfigint("cec_switch_on", NULL) == 1)
+		if(getconfigint("cec_tv_switch", NULL) == 1)
 		{			
 			address = 0x0f;
 			cmd     = 0x82;
