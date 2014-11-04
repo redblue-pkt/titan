@@ -13,7 +13,7 @@ void screensettings_bluebutton()
 	if(checkemu() == 1)
 		addmenulist(&mlist, "Softcam Panel", _("Softcam Panel"), NULL, 0, 0);
 	addmenulist(&mlist, "Extensions List", _("Extensions List"), NULL, 0, 0);
-	addmenulist(&mlist, "Multi EPG", NULL, _("Multi EPG"), 0, 0);
+	addmenulist(&mlist, "Multi EPG", _("Multi EPG"), NULL, 0, 0);
 	addmenulist(&mlist, "Graphic Multi EPG", _("Graphic Multi EPG"), NULL, 0, 0);
 	addmenulist(&mlist, "Sleep Timer", _("Sleep Timer"), NULL, 0, 0);
 	addmenulist(&mlist, "Child Protection", _("Child Protection"), NULL, 0, 0);
