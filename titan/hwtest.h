@@ -462,7 +462,7 @@ void screenhwtest()
 				int cicount = 0;
 				char* tmpstr = NULL, *tmpstr1 = NULL;
 				dvbnode = dvbdev;
-	
+
 				while(dvbnode != NULL)
 				{
 					if(dvbnode->type == CIDEV)
@@ -482,10 +482,10 @@ void screenhwtest()
 							tmpstr = ostrcat(tmpstr, "\n", 1, 0);
 						}
 					}
-						
+
 					dvbnode = dvbnode->next;
 				}
-				
+
 				tmpstr1 = ostrcat(_("CAM Ports found: "), oitoa(cicount), 0, 1);
 				tmpstr1 = ostrcat(tmpstr1, "\n\n", 1, 0);
 				tmpstr = ostrcat(tmpstr1, tmpstr, 0, 1);
@@ -493,37 +493,37 @@ void screenhwtest()
 				free(tmpstr); tmpstr = NULL;
 				free(tmpstr1); tmpstr1 = NULL;			
 			}
-			
+
 			if(ostrcmp(mbox->name, _("RS232")) == 0)
 			{
 				int exist = 1, count = 0, okA = 0, okB = 0, okC = 0, okD = 0;
 				unsigned char tmpwr[4] = {0};
 				unsigned char tmprd[1] = {0};
-				
+
 				drawscreen(load, 0, 0);
-				
+
 				tmpwr[0] = 'A'; //65
 				tmpwr[1] = 'B'; //66
 				tmpwr[2] = 'C'; //67
 				tmpwr[3] = 'D'; //68
-				
+
 				if(!file_exist(SERIALDEV) == 1)
 				{
 					mknod(SERIALDEV, S_IFCHR | 0666, makedev(204, 40));
 					exist = 0;
 				}
-				
+
 				int fd = open(SERIALDEV, O_RDWR | O_NOCTTY | O_NDELAY | O_NONBLOCK);
 				if(fd >= 0)
 				{
 					//struct termios port_settings;      // structure to store the port settings in
 					int ret = 0;
-					
+
 					//tcgetattr(fd, &port_settings);
 
 					//cfsetispeed(&port_settings, B9600);    // set baud rates
 					//cfsetospeed(&port_settings, B9600);
-			
+
 					//port_settings.c_cflag |= (CLOCAL | CREAD);
 					//port_settings.c_cflag &= ~PARENB;    // set no parity, stop bits, data bits
 					//port_settings.c_cflag &= ~CSTOPB;
@@ -545,10 +545,10 @@ void screenhwtest()
 						if(tmprd[0] == 'B') okB = 1;
 						if(tmprd[0] == 'C') okC = 1;
 						if(tmprd[0] == 'D') okD = 1;
-						
+
 						count++;	
 					}
-					
+
 					close(fd);
 				}
 				else
@@ -570,7 +570,7 @@ void screenhwtest()
 			{
 				char* tmpstr = NULL;
 				int ret1 = 0, ret2 = 0;
-			
+
 				ret1 = fesetvoltage(status.aktservice->fedev, SEC_VOLTAGE_OFF, 15);
 				ret2 = fesettone(status.aktservice->fedev, SEC_TONE_OFF, 15);
 				if(ret1 == 0 && ret2 == 0)
@@ -586,7 +586,7 @@ void screenhwtest()
 				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 
 				free(tmpstr); tmpstr = NULL;
-				
+
 				ret1 = fesetvoltage(status.aktservice->fedev, SEC_VOLTAGE_18, 15);
 				ret2 = fesettone(status.aktservice->fedev, SEC_TONE_OFF, 15);
 				if(ret1 == 0 && ret2 == 0)
@@ -601,7 +601,7 @@ void screenhwtest()
 				}
 				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 				free(tmpstr); tmpstr = NULL;
-				
+
 				ret1 = fesetvoltage(status.aktservice->fedev, SEC_VOLTAGE_13, 15);
 				ret2 = fesettone(status.aktservice->fedev, SEC_TONE_OFF, 15);
 				if(ret1 == 0 && ret2 == 0)
@@ -643,7 +643,7 @@ void screenhwtest()
 				
 				for(i = 0; i < 20; i++)
 					tmpstr = ostrcat(tmpstr, "0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789", 1, 0);
-				
+
 				//check /var
 				ret1 = writesys("/var/hwtest.txt", tmpstr, 0);
 				if(ret1 == 0)
@@ -651,14 +651,14 @@ void screenhwtest()
 					tmpstr1 = readsys("/var/hwtest.txt", 1);
 					if(ostrcmp(tmpstr, tmpstr1) != 0) ret1 = 1;
 				}
-				
+
 				if(ret1 == 0)
 					ret1 = unlink("/var/hwtest.txt");
 				else
 					unlink("/var/hwtest.txt");
-				
+
 				free(tmpstr1); tmpstr1 = NULL;
-				
+
 				//check /mnt
 				ret2 = writesys("/mnt/hwtest.txt", tmpstr, 0);
 				if(ret2 == 0)
@@ -666,12 +666,12 @@ void screenhwtest()
 					tmpstr1 = readsys("/mnt/hwtest.txt", 1);
 					if(ostrcmp(tmpstr, tmpstr1) != 0) ret2 = 1;
 				}
-				
+
 				if(ret2 == 0)
 					ret2 = unlink("/mnt/hwtest.txt");
 				else
 					unlink("/mnt/hwtest.txt");
-				
+
 				free(tmpstr); tmpstr = NULL;
 				free(tmpstr1); tmpstr1 = NULL;
 
