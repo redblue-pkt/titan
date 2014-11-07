@@ -95,4 +95,46 @@ void screensettings_fancontrol()
 	clearscreen(fancontrol);
 }
 
+#ifdef MIPSEL
+void screensettings_fancontrol2()
+{
+	int rcret = 0;
+	
+	struct skin* tmp = NULL;
+	struct skin* fancontrol = getscreen("settings_fancontrol2");
+	struct skin* fanon = getscreennode(fancontrol, "fanon");
+	struct skin* listbox = getscreennode(fancontrol, "listbox");
+
+	addchoicebox(fanon, "3", _("auto"));
+	addchoicebox(fanon, "2", _("on"));
+	addchoicebox(fanon, "1", _("off"));
+	setchoiceboxselection(fanon, getconfigint("fanmode", NULL));
+
+	addscreenrc(fancontrol, listbox);
+	tmp = listbox->select;
+	drawscreen(fancontrol, 0, 0);
+
+	while(1)
+	{
+		addscreenrc(fancontrol, tmp);
+		rcret = waitrc(fancontrol, 0, 0);
+		tmp = listbox->select;
+
+		if(rcret == getrcconfigint("rcexit", NULL))
+		{
+			break;
+		}
+		if(rcret == getrcconfigint("rcok", NULL))
+		{
+			addconfig("fanmode", fanon->ret);
+			break;
+		}
+		if((rcret == getrcconfigint("rcleft", NULL) || rcret == getrcconfigint("rcright", NULL)) && listbox->select != NULL && ostrcmp(listbox->select->name, "fanon") == 0)
+			writesys("/proc/stb/fp/fan", fancon->ret, 1);
+	}
+	writesys("/proc/stb/fp/fan", getconfig("fanmode", NULL), 1);
+	clearscreen(fancontrol);
+}
+#endif
+
 #endif
