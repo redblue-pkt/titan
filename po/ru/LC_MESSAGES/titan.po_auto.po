@@ -41,8 +41,8 @@ msgstr ""
 #: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:332
 #: mc_videoplayer.h:749 mc_videoplayer.h:784 mc_videoplayer.h:888
 #: mc_videoplayer.h:904 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
-#: mediadb.h:1477 mediadb.h:2454 mediadbsettings.h:95 menu.h:161 menu.h:216
-#: menu.h:971 menu.h:973 movie4k.h:36 movie4k.h:48 movie4k.h:92 movie4k.h:399
+#: mediadb.h:1477 mediadb.h:2454 mediadbsettings.h:95 menu.h:154 menu.h:209
+#: menu.h:961 menu.h:963 movie4k.h:36 movie4k.h:48 movie4k.h:92 movie4k.h:399
 #: movreel.h:30 movreel.h:79 movreel.h:85 movreel.h:91 movreel.h:103
 #: movreel.h:115 movreel.h:166 movreel.h:214 movshare.h:34 movshare.h:78
 #: movshare.h:157 movshare.h:163 myvideo.h:86 networkbrowser.h:944
@@ -86,8 +86,8 @@ msgstr ""
 #: system_backup_restore.h:95 system_update.h:257 system_update.h:263
 #: system_update.h:270 thefile.h:34 thefile.h:68 thefile.h:205 timeshift.h:113
 #: timeshift.h:155 timeshift.h:162 timeshiftsettings.h:45 titan.c:281
-#: titan.c:345 titan.c:354 titan.c:985 titan.c:994 titan.c:1119 titan.c:1140
-#: titan.c:1146 titan.c:1157 titan.c:1163 tithek.c:84 tithek_global.h:248
+#: titan.c:345 titan.c:354 titan.c:990 titan.c:999 titan.c:1124 titan.c:1145
+#: titan.c:1151 titan.c:1162 titan.c:1168 tithek.c:84 tithek_global.h:248
 #: tithek.h:667 tithek.h:1163 tithek.h:1206 tithek.h:1454 tithek.h:1476
 #: tithek.h:1492 tithek.h:2062 tithek.h:2089 tithek.h:2103 tithek.h:2113
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
@@ -148,8 +148,8 @@ msgstr "k"
 #: mc_pictureplayer.h:461 mc_videoplayer.h:332 mc_videoplayer.h:749
 #: mc_videoplayer.h:784 mc_videoplayer.h:888 mc_videoplayer.h:904
 #: mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477
-#: mediadb.h:2454 mediadbsettings.h:95 menu.h:161 menu.h:216 menu.h:971
-#: menu.h:973 movie4k.h:36 movie4k.h:48 movie4k.h:92 movie4k.h:399
+#: mediadb.h:2454 mediadbsettings.h:95 menu.h:154 menu.h:209 menu.h:961
+#: menu.h:963 movie4k.h:36 movie4k.h:48 movie4k.h:92 movie4k.h:399
 #: movreel.h:30 movreel.h:79 movreel.h:85 movreel.h:91 movreel.h:103
 #: movreel.h:115 movreel.h:166 movreel.h:214 movshare.h:34 movshare.h:78
 #: movshare.h:157 movshare.h:163 myvideo.h:86 networkbrowser.h:944
@@ -202,9 +202,9 @@ msgstr "k"
 #: system_backup_restore.h:88 system_backup_restore.h:95 system_update.h:257
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 timeshift.h:113 timeshift.h:155 timeshift.h:162
-#: timeshiftsettings.h:45 titan.c:281 titan.c:345 titan.c:354 titan.c:985
-#: titan.c:994 titan.c:1119 titan.c:1140 titan.c:1146 titan.c:1157
-#: titan.c:1163 tithek.c:84 tithek_global.h:248 tithek.h:667 tithek.h:1163
+#: timeshiftsettings.h:45 titan.c:281 titan.c:345 titan.c:354 titan.c:990
+#: titan.c:999 titan.c:1124 titan.c:1145 titan.c:1151 titan.c:1162
+#: titan.c:1168 tithek.c:84 tithek_global.h:248 tithek.h:667 tithek.h:1163
 #: tithek.h:1206 tithek.h:1454 tithek.h:1476 tithek.h:1492 tithek.h:2062
 #: tithek.h:2089 tithek.h:2103 tithek.h:2113 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922
@@ -463,12 +463,13 @@ msgid "intern"
 msgstr ""
 
 #: adjust.h:155 autotimer.c:479 autotimer.c:512 avsettings.h:69
-#: httpdfunc.h:4142 rectimer.h:1186 transponder.h:121 transponder.h:133
-#: transponder.h:157 transponder.h:167 transponder.h:193 transponder.h:200
-#: transponder.h:226 transponder.h:234 transponder.h:258 transponder.h:268
-#: transponder.h:294 transponder.h:301 transponder.h:319 transponder.h:337
-#: transponder.h:363 transponder.h:372 transponder.h:378 transponder.h:385
-#: transponder.h:417 transponder.h:427 transponder.h:476 transponder.h:512
+#: fancontrol.h:108 httpdfunc.h:4142 rectimer.h:1186 transponder.h:121
+#: transponder.h:133 transponder.h:157 transponder.h:167 transponder.h:193
+#: transponder.h:200 transponder.h:226 transponder.h:234 transponder.h:258
+#: transponder.h:268 transponder.h:294 transponder.h:301 transponder.h:319
+#: transponder.h:337 transponder.h:363 transponder.h:372 transponder.h:378
+#: transponder.h:385 transponder.h:417 transponder.h:427 transponder.h:476
+#: transponder.h:512
 msgid "auto"
 msgstr ""
 
@@ -578,7 +579,7 @@ msgstr ""
 #: mc_pictureplayer.h:461 mc_videoplayer.h:332 mc_videoplayer.h:749
 #: mc_videoplayer.h:784 mc_videoplayer.h:888 mc_videoplayer.h:904
 #: mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477
-#: mediadbsettings.h:95 menu.h:161 menu.h:216 movie4k.h:36 movie4k.h:48
+#: mediadbsettings.h:95 menu.h:154 menu.h:209 movie4k.h:36 movie4k.h:48
 #: movie4k.h:92 movie4k.h:399 movreel.h:30 movreel.h:79 movreel.h:85
 #: movreel.h:91 movreel.h:103 movreel.h:115 movreel.h:166 movreel.h:214
 #: movshare.h:34 movshare.h:78 movshare.h:157 movshare.h:163 myvideo.h:86
@@ -609,8 +610,8 @@ msgstr ""
 #: system_backup_restore.h:80 system_backup_restore.h:82 system_update.h:257
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 timeshift.h:113 timeshift.h:155 timeshift.h:162
-#: timeshiftsettings.h:45 titan.c:281 titan.c:345 titan.c:354 titan.c:1119
-#: titan.c:1140 titan.c:1146 titan.c:1157 titan.c:1163 tithek.c:84
+#: timeshiftsettings.h:45 titan.c:281 titan.c:345 titan.c:354 titan.c:1124
+#: titan.c:1145 titan.c:1151 titan.c:1162 titan.c:1168 tithek.c:84
 #: tithek_global.h:248 tithek.h:667 tithek.h:1163 tithek.h:1206 tithek.h:1454
 #: tithek.h:1476 tithek.h:2062 tithek.h:2089 tithek.h:2103 tithek.h:2113
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
@@ -689,21 +690,22 @@ msgstr ""
 msgid "ERROR... AutoTimer not started"
 msgstr ""
 
-#: autotimer.c:603 menu.h:971 menu.h:973 skin_default_skin.xml.h:555
+#: autotimer.c:603 menu.h:961 menu.h:963 skin_default_skin.xml.h:555
 msgid "Save Settings"
 msgstr "Сохранить Settings"
 
-#: autotimer.c:603 menu.h:973
+#: autotimer.c:603 menu.h:963
 msgid "Settings succesfull saved"
 msgstr ""
 
-#: avsettings.h:68 avsettings.h:84 harddisk.h:886 lnbconfig.h:144
-#: mc_pictureplayer_settings.h:34 mc_pictureplayer_settings.h:38
-#: mc_pictureplayer_settings.h:67 mc_videoplayer_settings.h:53 network.h:392
-#: panel_settings_autostart.h:61 panel_settings_overclocking.h:276
-#: readerconfig.h:413 settings_autostart.h:53 settings_overclocking.h:276
-#: transponder.h:256 transponder.h:264 transponder.h:415 transponder.h:423
-#: tunerconfig.h:816 vfdisplay.h:42 vfdisplay.h:50
+#: avsettings.h:68 avsettings.h:84 fancontrol.h:110 harddisk.h:886
+#: lnbconfig.h:144 mc_pictureplayer_settings.h:34
+#: mc_pictureplayer_settings.h:38 mc_pictureplayer_settings.h:67
+#: mc_videoplayer_settings.h:53 network.h:392 panel_settings_autostart.h:61
+#: panel_settings_overclocking.h:276 readerconfig.h:413
+#: settings_autostart.h:53 settings_overclocking.h:276 transponder.h:256
+#: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:816
+#: vfdisplay.h:42 vfdisplay.h:50
 msgid "off"
 msgstr ""
 
@@ -727,9 +729,10 @@ msgstr ""
 msgid "10 sec"
 msgstr ""
 
-#: avsettings.h:85 lnbconfig.h:143 mc_pictureplayer_settings.h:35
-#: mc_pictureplayer_settings.h:39 readerconfig.h:416 transponder.h:257
-#: transponder.h:266 transponder.h:416 transponder.h:425
+#: avsettings.h:85 fancontrol.h:109 lnbconfig.h:143
+#: mc_pictureplayer_settings.h:35 mc_pictureplayer_settings.h:39
+#: readerconfig.h:416 transponder.h:257 transponder.h:266 transponder.h:416
+#: transponder.h:425
 msgid "on"
 msgstr ""
 
@@ -2662,7 +2665,7 @@ msgid "DYNDNS now stopped"
 msgstr ""
 
 #: infobar.h:497 mc_audioplayer.h:333 mc_main.h:273 mc_pictureplayer.h:124
-#: mc_videoplayer.h:332 menu.h:216
+#: mc_videoplayer.h:332 menu.h:209
 msgid ""
 "Shooting Background done !\n"
 "Save Screenshoot Path: /tmp/screenshot.jpg"
@@ -2684,7 +2687,7 @@ msgstr ""
 msgid "Email  \t\tinfo@atemio.de"
 msgstr ""
 
-#: info.h:27 plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9 titan.c:994
+#: info.h:27 plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9 titan.c:999
 #: webif_index.atemio510.h:15 webif_index.atemio5200.h:15
 #: webif_index.atemio5200.h:43 webif_index.atemio5200.h:99
 #: webif_index.atemio6000.h:15 webif_index.atemio6100.h:15
@@ -3015,7 +3018,7 @@ msgstr ""
 msgid "comming soon"
 msgstr ""
 
-#: mc_main.h:282 menu.h:161 panel_main.h:29 panel_main.h:135
+#: mc_main.h:282 menu.h:154 panel_main.h:29 panel_main.h:135
 msgid "Menu not implemented !"
 msgstr ""
 
@@ -3273,7 +3276,7 @@ msgid ""
 "Press OK to create it"
 msgstr ""
 
-#: menu.h:971
+#: menu.h:961
 msgid "Error in Save Settings"
 msgstr "Сохранить Settings"
 
@@ -8994,87 +8997,87 @@ msgid ""
 "Really shutdown ?"
 msgstr ""
 
-#: titan.c:810
+#: titan.c:815
 msgid "Error: open rc device !!"
 msgstr ""
 
-#: titan.c:816
+#: titan.c:821
 msgid "Error: no frontend device found !!"
 msgstr ""
 
-#: titan.c:822
+#: titan.c:827
 msgid "Error: no demux device found !!"
 msgstr ""
 
-#: titan.c:828
+#: titan.c:833
 msgid "Error: no video device found !!"
 msgstr ""
 
-#: titan.c:834
+#: titan.c:839
 msgid "Error: no audio device found !!"
 msgstr ""
 
-#: titan.c:852
+#: titan.c:857
 msgid "Error: skin not found !!"
 msgstr ""
 
-#: titan.c:936
+#: titan.c:941
 msgid "RemoteControl Old Version"
 msgstr ""
 
-#: titan.c:937
+#: titan.c:942
 msgid "RemoteControl Long Version"
 msgstr ""
 
-#: titan.c:944
+#: titan.c:949
 msgid "Select Your Remote Control"
 msgstr ""
 
-#: titan.c:944
+#: titan.c:949
 msgid "Choose your Remotecontrol Model from the following list"
 msgstr ""
 
-#: titan.c:985
+#: titan.c:990
 msgid "First Wizzard"
 msgstr "ассистент настройки"
 
-#: titan.c:985
+#: titan.c:990
 msgid "Settings OK ?"
 msgstr "Настройки"
 
-#: titan.c:1119
+#: titan.c:1124
 msgid "Receiver successful unlocked"
 msgstr ""
 
-#: titan.c:1140
+#: titan.c:1145
 msgid ""
 "Free space in /var to little!\n"
 "This can make problems!"
 msgstr ""
 
-#: titan.c:1146
+#: titan.c:1151
 msgid ""
 "/var not writeable!\n"
 "Repair it?"
 msgstr ""
 
-#: titan.c:1157
+#: titan.c:1162
 msgid ""
 "Free space in /mnt to little!\n"
 "This can make problems!"
 msgstr ""
 
-#: titan.c:1163
+#: titan.c:1168
 msgid ""
 "/mnt not writeable!\n"
 "Repair it?"
 msgstr ""
 
-#: titan.c:1212
+#: titan.c:1217
 msgid "Unknown Error."
 msgstr ""
 
-#: titan.c:1214
+#: titan.c:1219
 msgid "Automatic stop in 10 seconds."
 msgstr ""
 
