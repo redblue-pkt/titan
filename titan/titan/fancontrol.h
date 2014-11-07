@@ -130,7 +130,7 @@ void screensettings_fancontrol2()
 			break;
 		}
 		if((rcret == getrcconfigint("rcleft", NULL) || rcret == getrcconfigint("rcright", NULL)) && listbox->select != NULL && ostrcmp(listbox->select->name, "fanon") == 0)
-			writesys("/proc/stb/fp/fan", fancon->ret, 1);
+			writesys("/proc/stb/fp/fan", fanon->ret, 1);
 	}
 	writesys("/proc/stb/fp/fan", getconfig("fanmode", NULL), 1);
 	clearscreen(fancontrol);
