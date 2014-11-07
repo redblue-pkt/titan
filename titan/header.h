@@ -71,6 +71,9 @@ struct channelslot* getchannelslot(int serviceid, uint64_t transponderid);
 
 //fancontrol.h
 void screensettings_fancontrol();
+#ifdef MIPSEL
+void screensettings_fancontrol2();
+#endif
 
 //pip.h
 int pipstop(struct service *node, int flag);

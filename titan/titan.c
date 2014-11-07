@@ -615,9 +615,14 @@ int main(int argc, char *argv[])
 	m_lock(&status.waitrcmutex, 24);
 	initvfd();
 
-	if(checkbox("UFS922") == 1 || checkbox("ATEMIO-NEMESIS") == 1)
+	if(checkbox("UFS922") == 1)
 		setfanspeed(-1, 0);
-	
+  if(checkbox("ATEMIO-NEMESIS") == 1)
+  {
+  	if(getconfigint("fanmode", NULL) == 0)
+			addconfig("fanmode", "3");
+		writesys("/proc/stb/fp/fan", getconfig("fanmode", NULL), 1);
+	}
 	if(getconfigint("wol", NULL) == 1)
 		system("echo enable > /proc/stb/fp/wol");
 	else

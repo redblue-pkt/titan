@@ -69,19 +69,12 @@ void menucheckentry(struct skin* child)
 	// Hide FanControl when no ufs922
 	if(ostrcmp(child->name, "fancontrol") == 0)
 	{
-		//if(checkbox("UFS922") == 1 || checkbox("ATEMIO-NEMESIS") == 1)
-		if(checkbox("UFS922") == 1)
+		if(checkbox("UFS922") == 1 || checkbox("ATEMIO-NEMESIS") == 1)
+		//if(checkbox("UFS922") == 1)
 			child->hidden = NO;
 		else
 			child->hidden = YES;
 	}
-	// Hide cec when sh4
-	if(ostrcmp(child->name, "ceccontrol") == 0)
-#ifdef MIPSEL
-		child->hidden = NO;
-#else
-		child->hidden = YES;
-#endif
 }
 
 //flag 1: fist call
@@ -606,15 +599,12 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 	else if(ostrcmp("fancontrol", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
+#ifndef MIPSEL
 		screensettings_fancontrol();
-	}
-#ifdef MIPSEL
-	else if(ostrcmp("ceccontrol", menuentry->name) == 0)
-	{
-		if(check == 1) return 0;
-		screencec();
-	}
+#else
+		screensettings_fancontrol2();
 #endif
+	}
 	else if(ostrcmp("serviceinfo", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
