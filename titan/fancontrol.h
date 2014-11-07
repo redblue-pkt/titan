@@ -108,7 +108,7 @@ void screensettings_fancontrol2()
 	addchoicebox(fanon, "3", _("auto"));
 	addchoicebox(fanon, "2", _("on"));
 	addchoicebox(fanon, "1", _("off"));
-	setchoiceboxselection(fanon, getconfigint("fanmode", NULL));
+	setchoiceboxselection(fanon, getconfig("fanmode", NULL));
 
 	addscreenrc(fancontrol, listbox);
 	tmp = listbox->select;
