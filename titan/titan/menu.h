@@ -75,6 +75,13 @@ void menucheckentry(struct skin* child)
 		else
 			child->hidden = YES;
 	}
+	// Hide cec when sh4 
+	if(ostrcmp(child->name, "ceccontrol") == 0) 
+#ifdef MIPSEL 
+		child->hidden = NO; 
+#else 
+		child->hidden = YES; 
+#endif 
 }
 
 //flag 1: fist call
@@ -603,6 +610,13 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		screensettings_fancontrol();
 #else
 		screensettings_fancontrol2();
+#endif
+#ifdef MIPSEL 
+	else if(ostrcmp("ceccontrol", menuentry->name) == 0) 
+	{ 
+		if(check == 1) return 0; 
+			screencec(); 
+	} 
 #endif
 	}
 	else if(ostrcmp("serviceinfo", menuentry->name) == 0)
