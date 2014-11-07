@@ -611,6 +611,7 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 #else
 		screensettings_fancontrol2();
 #endif
+	}
 #ifdef MIPSEL 
 	else if(ostrcmp("ceccontrol", menuentry->name) == 0) 
 	{ 
@@ -618,7 +619,6 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 			screencec(); 
 	} 
 #endif
-	}
 	else if(ostrcmp("serviceinfo", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
