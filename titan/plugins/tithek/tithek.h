@@ -585,6 +585,9 @@ char* tithekdownload(char* link, char* localname, char* pw, int pic, int flag)
 	// tithek security
 	ip = string_replace_all("imageshack.us/md/up/grd/", "atemio.dyndns.tv/", ip, 1);
 
+	ip = string_replace_all("kinox.to", "kinox.me", ip, 1);
+	ip = string_replace_all("movie4k.to", "movie4k.me", ip, 1);
+
 	if(ip != NULL)
 		pos = strchr(ip, '/');
 	if(pos != NULL)
