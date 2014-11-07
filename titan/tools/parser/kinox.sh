@@ -21,7 +21,7 @@ if [ "$buildtype" = "full" ];then
 	LIST="/Stream/"
 	
 	for CASE in A B C D E F G H I J K L M N O P Q R S T U V W X Y Z; do
-		$wgetbin "http://kinox.to/aGET/List/?sEcho=1&iColumns=10&sColumns=&iDisplayStart=1&iDisplayLength=50&iSortingCols=1&iSortCol_0=5&sSortDir_0=asc&bSortable_0=true&bSortable_1=true&bSortable_2=true&bSortable_3=false&bSortable_4=false&bSortable_5=false&bSortable_6=true&additional=%7B%22fType%22%3A%22movie%22%2C%22fLetter%22%3A%22$CASE%22%7D" -O file.test.$CASE
+		$wgetbin "http://kinox.me/aGET/List/?sEcho=1&iColumns=10&sColumns=&iDisplayStart=1&iDisplayLength=50&iSortingCols=1&iSortCol_0=5&sSortDir_0=asc&bSortable_0=true&bSortable_1=true&bSortable_2=true&bSortable_3=false&bSortable_4=false&bSortable_5=false&bSortable_6=true&additional=%7B%22fType%22%3A%22movie%22%2C%22fLetter%22%3A%22$CASE%22%7D" -O file.test.$CASE
 		LINES=`cat file.test.$CASE | tr ',' '\n' | grep iTotalDisplayRecords | cut -d '"' -f4`
 		echo LINES $LINES
 	
@@ -49,7 +49,7 @@ if [ "$buildtype" = "full" ];then
 		while [ $count -lt $max ]
 		do
 			count=`expr $count + 1`
-			$wgetbin "http://kinox.to/aGET/List/?sEcho=1&iColumns=10&sColumns=&iDisplayStart=$count&iDisplayLength=50&iSortingCols=1&iSortCol_0=5&sSortDir_0=asc&bSortable_0=true&bSortable_1=true&bSortable_2=true&bSortable_3=false&bSortable_4=false&bSortable_5=false&bSortable_6=true&additional=%7B%22fType%22%3A%22movie%22%2C%22fLetter%22%3A%22$CASE%22%7D" -O file.test.$CASE.$count
+			$wgetbin "http://kinox.me/aGET/List/?sEcho=1&iColumns=10&sColumns=&iDisplayStart=$count&iDisplayLength=50&iSortingCols=1&iSortCol_0=5&sSortDir_0=asc&bSortable_0=true&bSortable_1=true&bSortable_2=true&bSortable_3=false&bSortable_4=false&bSortable_5=false&bSortable_6=true&additional=%7B%22fType%22%3A%22movie%22%2C%22fLetter%22%3A%22$CASE%22%7D" -O file.test.$CASE.$count
 			TMPLIST=`cat file.test.$CASE.$count | tr '],[' '\n' | grep 'Stream' | cut -d '"' -f3 | tr '\\' ' ' | sed 's/ \+//g'`
 			echo $TMPLIST | tr ' ' '\n' >> file.test.tmpliste
 		done
@@ -79,7 +79,7 @@ echo main_list $main_list
 piccount=0
 counttt=0
 for ROUND0 in $main_list; do
-	$wgetbin --no-check-certificate "http://kinox.to/$ROUND0.html" -O cache.main.next.list
+	$wgetbin --no-check-certificate "http://kinox.me/$ROUND0.html" -O cache.main.next.list
 	main_next_list=`cat cache.main.next.list | grep /Stream/ | sed 's!/Stream/!\n/Stream/!' | grep ^/Stream/ | cut -d '"' -f1  | cut -d "'" -f1 | sort -um`
 	
 	if [ $ROUND0 == "Popular-Series" ]; then
@@ -116,7 +116,7 @@ for ROUND0 in $main_list; do
 		
 		TITLE=`echo $picname | sed 's!.jpg!!' | tr "_" " "`
 	
-		$wgetbin --no-check-certificate "http://kinox.to/$ROUND1" -O cache."$filename".list
+		$wgetbin --no-check-certificate "http://kinox.me/$ROUND1" -O cache."$filename".list
 		PIC=`cat cache."$filename".list | tr '><' '>\n<' | grep $picname | cut -d '"' -f2 | sort -um`
 		LANG=`cat cache."$filename".list | grep 'alt="language" src="/gr/sys/lng' | sed 's!alt="language" src="/gr/sys/lng/!\n!' | tail -n1 |cut -d"." -f1`
 	 	LANGTXT=" (??)"
@@ -131,7 +131,7 @@ for ROUND0 in $main_list; do
 			fi
 		fi
 
-		URL="http://kinox.to/$ROUND1"
+		URL="http://kinox.me/$ROUND1"
 	
 		LINE="$TITLE$LANGTXT#$URL#$PIC#kinox_$piccount.jpg#KinoX#22"
 		if [ ! -z "$TITLE" ]; then
@@ -145,7 +145,7 @@ for ROUND0 in $main_list; do
 	done
 done
 	
-$wgetbin http://kinox.to -O cache.main.update.list
+$wgetbin http://kinox.me -O cache.main.update.list
 
 LIST=`cat cache.main.update.list | grep "Odd parentalguidiance" | grep -v ".html,s" | cut -d'"' -f4`
 
@@ -155,7 +155,7 @@ for ROUND3 in $LIST; do
 		count=`expr $count + 1`
 		piccount=`expr $piccount + 1`
 		filename3=`echo $ROUND3 | sed 's!/Stream/!!'`
-		$wgetbin "http://kinox.to/$ROUND3" -O cache."$count"."$filename3"
+		$wgetbin "http://kinox.me/$ROUND3" -O cache."$count"."$filename3"
 		ls cache."$count"."$filename3"
 		picname=`echo $filename3 | sed 's!.html!.jpg!'`
 
@@ -184,7 +184,7 @@ for ROUND3 in $LIST; do
 		echo TITLE=$TITLE
 		echo LANGTXT=$LANGTXT
 
-		URL="http://kinox.to/$ROUND3"
+		URL="http://kinox.me/$ROUND3"
 
 		LINE="$TITLE$LANGTXT#$URL#$PIC#kinox_$piccount.jpg#KinoX#22"
 		if [ ! -z "$TITLE" ]; then
