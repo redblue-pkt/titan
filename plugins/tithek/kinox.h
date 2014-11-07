@@ -57,11 +57,11 @@ int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabe
 		search = stringreplacechar(search, ' ', '+');
 		debug(99, "search: %s", search);
 
-		ip = ostrcat("kinox.to", NULL, 0, 0);
+		ip = ostrcat("kinox.me", NULL, 0, 0);
 		if(flag == 0)
 			path = ostrcat("Search.html?q=", search, 0, 0);
 		else
-			path = string_replace_all("http://kinox.to/", "", search, 0);
+			path = string_replace_all("http://kinox.me/", "", search, 0);
 		
 		tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
 		tmpstr = string_resub("<div id=\"beep\" class=\"beep\"></div>", "</table>", tmpstr, 0);
@@ -99,7 +99,7 @@ int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabe
 					else
 						lang = ostrcat(lang, " (\?\?)", 1, 0);
 																	
-					tmpstr1 = gethttp("kinox.to", path, 80, NULL, NULL, 10000, NULL, 0);
+					tmpstr1 = gethttp("kinox.me", path, 80, NULL, NULL, 10000, NULL, 0);
 
 					from = ostrcat("<div class=\"Grahpics\"><a href=\"", path, 0, 0);
 					from = ostrcat(from, "\"><img src=\"", 1, 0);
@@ -115,7 +115,7 @@ int kinox_search(struct skin* grid, struct skin* listbox, struct skin* countlabe
 				 	title = stringreplacechar(title, '_', ' ');
 					title = ostrcat(title , lang, 1, 0);
 
-					url = ostrcat("http://kinox.to", path, 0, 0);
+					url = ostrcat("http://kinox.me", path, 0, 0);
 
 					debug(99, "---------------------------");
 					debug(99, "langck: %s", langck);
@@ -364,7 +364,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 
 					titheklog(debuglevel, "/tmp/kinox4_pathnew1", hname, NULL, NULL, pathnew);
 					
-					tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+					tmpstr1 = gethttp("kinox.me", pathnew, 80, NULL, NULL, 10000, NULL, 0);
 					free(pathnew), pathnew = NULL;
 
 					titheklog(debuglevel, "/tmp/kinox5_tmpstr1", hname, NULL, NULL, tmpstr1);
@@ -380,7 +380,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 
 					titheklog(debuglevel, "/tmp/kinox6_pathnew2", hname, NULL, NULL, pathnew);
 					
-					tmpstr3 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+					tmpstr3 = gethttp("kinox.me", pathnew, 80, NULL, NULL, 10000, NULL, 0);
 					free(pathnew), pathnew = NULL;
 
 					titheklog(debuglevel, "/tmp/kinox7_tmpstr3", hname, NULL, NULL, tmpstr3);
@@ -396,7 +396,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 
 					titheklog(debuglevel, "/tmp/kinox6_pathnew3", hname, NULL, NULL, pathnew);
 					
-					tmpstr4 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+					tmpstr4 = gethttp("kinox.me", pathnew, 80, NULL, NULL, 10000, NULL, 0);
 					free(pathnew), pathnew = NULL;
 
 					titheklog(debuglevel, "/tmp/kinox7_tmpstr4", hname, NULL, NULL, tmpstr4);
@@ -412,7 +412,7 @@ int kinox_hoster(struct skin* grid, struct skin* listbox, struct skin* countlabe
 
 					titheklog(debuglevel, "/tmp/kinox6_pathnew4", hname, NULL, NULL, pathnew);
 					
-					tmpstr5 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+					tmpstr5 = gethttp("kinox.me", pathnew, 80, NULL, NULL, 10000, NULL, 0);
 					free(pathnew), pathnew = NULL;
 
 					titheklog(debuglevel, "/tmp/kinox7_tmpstr5", hname, NULL, NULL, tmpstr5);
@@ -642,8 +642,8 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 		debug(99, "episode: %s", episode);
 
 		searchname = ostrcat(searchname, ret0[0].part, 1, 0);
-		searchname = string_replace("http://kinox.to//Stream/", "", searchname, 0);
-		searchname = string_replace("http://kinox.to/Stream/", "", searchname, 0);
+		searchname = string_replace("http://kinox.me//Stream/", "", searchname, 0);
+		searchname = string_replace("http://kinox.me/Stream/", "", searchname, 0);
 		searchname = string_replace(".html", "", searchname, 0);
 		debug(99, "searchname: %s", searchname);
 	}
@@ -678,7 +678,7 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 		debug(99, "pathnew: %s", pathnew);
 	
 		free(tmpstr), tmpstr = NULL;
-		tmpstr = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+		tmpstr = gethttp("kinox.me", pathnew, 80, NULL, NULL, 10000, NULL, 0);
 		free(pathnew), pathnew = NULL;
 	
 		if(tmpstr != NULL)
@@ -712,13 +712,13 @@ int kinox_hoster_series(struct skin* grid, struct skin* listbox, struct skin* co
 
 					extra = string_resub("<b>Vom</b>: ", "</div>", ret1[i].part, 0);
 			
-					hlink = string_replace("http://kinox.to//Stream/", "", hlink, 1);					
-					hlink = string_replace("http://kinox.to/Stream/", "", hlink, 1);
+					hlink = string_replace("http://kinox.me//Stream/", "", hlink, 1);					
+					hlink = string_replace("http://kinox.me/Stream/", "", hlink, 1);
 										
 					pathnew = ostrcat("/aGET/Mirror/", hlink, 0, 0);
 					debug(99, "pathnew: %s", pathnew);
 	
-					tmpstr1 = gethttp("kinox.to", pathnew, 80, NULL, NULL, 10000, NULL, 0);
+					tmpstr1 = gethttp("kinox.me", pathnew, 80, NULL, NULL, 10000, NULL, 0);
 					tmpstr1 = string_replace_all("\\", "", tmpstr1, 1);
 					tmpstr1 = string_resub("<a href=\"", "\"", tmpstr1, 0);
 	
@@ -857,7 +857,7 @@ int kinox_search_cast(struct skin* grid, struct skin* listbox, struct skin* coun
 				{
 					incount++;
 					line = ostrcat(line, name, 1, 0);
-					line = ostrcat(line, "#http://kinox.to/People/", 1, 0);
+					line = ostrcat(line, "#http://kinox.me/People/", 1, 0);
 					line = ostrcat(line, url, 1, 0);
 					line = ostrcat(line, "#", 1, 0);
 					line = ostrcat(line, pic, 1, 0);
