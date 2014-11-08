@@ -351,7 +351,7 @@ struct skin* checkscreen(char* screenname)
 
 struct skin* getscreen(char* screenname)
 {
-printf("a1: screenname: %s\n", screenname);
+	debug(100, "screenname=%s", screenname);
 	struct skin* node = skin;
 
 	while(node != NULL)
@@ -362,7 +362,6 @@ printf("a1: screenname: %s\n", screenname);
 		node = node->next;
 	}
 	err("screen not found %s", screenname);
-printf("a2: screenname not found: %s\n", screenname);
 	return status.skinerr;
 }
 
