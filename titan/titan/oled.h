@@ -28,7 +28,8 @@ void write2oled(unsigned char *buf, int xres, int yres)
 
 int oledtext(char *value)
 {
-	
+printf("b1: value: %s\n", value);
+
 	struct skin* OLED_nemesis = NULL;
 	
 	if(status.updatevfd == PAUSE)
@@ -37,10 +38,13 @@ int oledtext(char *value)
 		OLED_nemesis = getscreen("OLED_nemesis_standby");
 	else
 	{
-		
+printf("b2: value: %s\n", value);
 		OLED_nemesis = getscreen(getskinconfig("OLED_nemesis", NULL));
 		if(status.skinerr == OLED_nemesis)
+		{
 			OLED_nemesis = getscreen("OLED_nemesis");
+printf("b3: value: %s\n", value);
+		}
 	}
 	
 	struct skin* textbox = getscreennode(OLED_nemesis, "textbox");
