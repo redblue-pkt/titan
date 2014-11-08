@@ -354,7 +354,10 @@ void screeninfobar()
 					screenmarker(status.playfile, NULL, &playinfobarstatus, &playinfobarcount, 1, 4);
 					continue;
 				}	
-
+				if(rcret == getrcconfigint("rc8", NULL))
+				{
+					continue;
+				}
 				if(status.timeshifttype == 0 && rcret == getrcconfigint("rcinfo", NULL))
 				{
 					playrcinfo(status.playfile, NULL, &playinfobarstatus, &playinfobarcount, 1, 4);
