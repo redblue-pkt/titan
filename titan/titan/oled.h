@@ -39,11 +39,14 @@ printf("b1: value: %s\n", value);
 	else
 	{
 printf("b2: value: %s\n", value);
+printf("b3: getskinconfig: %s\n", getskinconfig("OLED_nemesis", NULL));
+printf("b4: getscreen: %d\n", getscreen(getskinconfig("OLED_nemesis", NULL)));
+
 		OLED_nemesis = getscreen(getskinconfig("OLED_nemesis", NULL));
 		if(status.skinerr == OLED_nemesis)
 		{
 			OLED_nemesis = getscreen("OLED_nemesis");
-printf("b3: value: %s\n", value);
+printf("b5: value: %s\n", value);
 		}
 	}
 	
