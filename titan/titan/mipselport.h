@@ -452,7 +452,7 @@ void blitfb2(struct fb* fbnode, int flag)
 */
 }
 
-int setfbtransparent(int value)
+void setfbtransparent(int value)
 {
 	char* transparentdev;
 
@@ -461,7 +461,8 @@ int setfbtransparent(int value)
 	if(transparentdev != NULL /*&& checkdev(transparentdev)*/)
 	{
 		debug(100, "set %s to %d", transparentdev, value);
-		return writesysint(transparentdev, value, 1);
+		writesysint(transparentdev, value, 1);
+		return;
 	}
 /*
 #ifndef SIMULATE
