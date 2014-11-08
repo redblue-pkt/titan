@@ -55,8 +55,14 @@ void screenstandby()
 		system(tmpstr);
 		free(tmpstr); tmpstr=NULL;
 	}
-	if(checkbox("UFS922") == 1 || checkbox("ATEMIO-NEMESIS") == 1)
+	if(checkbox("UFS922") == 1)
 		setfanspeed(-2, 0);
+	else if(checkbox("ATEMIO-NEMESIS") == 1)
+	{	
+		if(getconfigint("fanmode", NULL) == 3)
+			writesys("/proc/stb/fp/fan", "1", 1);
+	}
+			
 
 	status.protecttime = 0;
 	status.rcstandby = standbyscreen;
@@ -93,8 +99,10 @@ void screenstandby()
 			i++; if(i > 50) break;
 		}
 	}
-	if(checkbox("UFS922") == 1 || checkbox("ATEMIO-NEMESIS") == 1)
+	if(checkbox("UFS922") == 1)
 		setfanspeed(-1, 0);
+	else if(checkbox("ATEMIO-NEMESIS") == 1)	
+		writesys("/proc/stb/fp/fan", getconfig("fanmode", NULL), 1);
 	
 	setcecstandby(0);
 	if(file_exist("/bin/vdstandby") == 1)
