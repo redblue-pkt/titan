@@ -351,6 +351,7 @@ struct skin* checkscreen(char* screenname)
 
 struct skin* getscreen(char* screenname)
 {
+printf("a1: screenname: %s\n", screenname);
 	struct skin* node = skin;
 
 	while(node != NULL)
@@ -361,6 +362,7 @@ struct skin* getscreen(char* screenname)
 		node = node->next;
 	}
 	err("screen not found %s", screenname);
+printf("a2: screenname not found: %s\n", screenname);
 	return status.skinerr;
 }
 
@@ -442,13 +444,14 @@ struct skin* sortscreen(struct skin* node)
 
 struct skin* sortscreenbyname(char *screenname)
 {
+printf("b1\n");
 	struct skin* node = NULL;
 
 	if(strlen(screenname) == 0)
 		node = skin;
 	else
 		node = getscreen(screenname);
-
+printf("b2\n");
 	return sortscreen(node);
 }
 
@@ -944,12 +947,12 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 struct skin* addscreennodebyname(char* screenname, char* line)
 {
 	struct skin *node = NULL;
-
+printf("c1\n");
 	if(strlen(screenname) == 0)
 		node = skin;
 	else
 		node = getscreen(screenname);
-
+printf("c2\n");
 	return addscreennode(node, line, NULL);
 }
 
@@ -1061,8 +1064,9 @@ struct skin* getscreennode(struct skin *node, char* nodename)
 struct skin* getscreennodebyname(char* screenname, char* nodename)
 {
 	struct skin *node = NULL;
-
+printf("d1\n");
 	node = getscreen(screenname);
+printf("d2\n");
 	return getscreennode(node, nodename);
 }
 
@@ -1241,12 +1245,12 @@ void delscreennode(struct skin *node, char* nodename)
 void delscreennodebyname(char *screenname, char* nodename)
 {
 	struct skin *node = NULL;
-
+printf("e1\n");
 	if(strlen(screenname) == 0)
 		node = skin;
 	else
 		node = getscreen(screenname);
-
+printf("e2\n");
 	delscreennode(node, nodename);
 }
 
@@ -1272,7 +1276,9 @@ void delscreen(struct skin *node)
 void delscreenbyname(char *screenname)
 {
 	struct skin *node = NULL;
+printf("f1\n");
 	node = getscreen(screenname);
+printf("f2\n");
 	delscreen(node);
 }
 
@@ -4117,8 +4123,9 @@ int drawscreenbyname(char* screenname, int screencalc, int flag)
 {
 	int ret;
 	struct skin* node = NULL;
-
+printf("g1\n");
 	node = getscreen(screenname);
+printf("g2\n");
 	if(node == status.skinerr)
 	{
 		err("screen not found (%s)", screenname);
