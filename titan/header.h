@@ -273,6 +273,7 @@ char* numinput(char* title, char* num, char* mask, int isip);
 struct dvbdev* fegetdummy();
 void settunerstatus();
 struct dvb_frontend_info* fegetinfo(struct dvbdev* node, int fd);
+int feopen(struct dvbdev* node, char *fedev);
 
 //dvrdev.h
 void dvrclose(struct dvbdev* node, int fd);
