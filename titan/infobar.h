@@ -219,7 +219,7 @@ void screeninfobar()
 			}
 			if(status.timeshifttype == 1 && status.playing == 0)
 			{
-				if(rcret == getrcconfigint("rcff", NULL) || (getconfig("timeshiftnumkeys", NULL) == 0 && (rcret == getrcconfigint("rc3", NULL) || rcret == getrcconfigint("rc6", NULL) || rcret == getrcconfigint("rc9", NULL))))
+				if(rcret == getrcconfigint("rcff", NULL) || (getconfig("timeshiftnumkeys", NULL) == 0 && (rcret == getrcconfigint("rc3", NULL) || rcret == getrcconfigint("rc6", NULL) || rcret == getrcconfigint("rc9", NULL) || rcret == getrcconfigint("rcright", NULL) || rcret == getrcconfigint("rcup", NULL) || rcret == getrcconfigint("rc2", NULL))))
 				{
 					struct service* snode = getservice(RECORDTIMESHIFT, 0);
 					if(snode != NULL)
@@ -240,6 +240,20 @@ void screeninfobar()
 				}
 				if(getconfig("timeshiftnumkeys", NULL) == 0)
 				{
+					if(rcret == getrcconfigint("rcleft", NULL))
+					{
+						timeshiftposplay(&playinfobarstatus, &playinfobarcount);
+						if(status.playing == 1)
+							playrcjumpr(status.playfile, NULL, 60, &playinfobarstatus, &playinfobarcount, 1, 4);
+						continue;
+					}
+					if(rcret == getrcconfigint("rcdown", NULL))
+					{
+						timeshiftposplay(&playinfobarstatus, &playinfobarcount);
+						if(status.playing == 1)
+							playrcjumpr(status.playfile, NULL, 300, &playinfobarstatus, &playinfobarcount, 1, 4);
+						continue;
+					}
 					if(rcret == getrcconfigint("rc1", NULL))
 					{
 						timeshiftposplay(&playinfobarstatus, &playinfobarcount);
@@ -275,6 +289,11 @@ void screeninfobar()
 					playrcfr(status.playfile, NULL, &playinfobarstatus, &playinfobarcount, 1, 4);
 					continue;
 				}
+				if(rcret == getrcconfigint("rcleft", NULL))
+				{
+					playrcjumpf(status.playfile, NULL, 60, &playinfobarstatus, &playinfobarcount, 1, 4);
+					continue;
+				}
 				if(rcret == getrcconfigint("rc3", NULL))
 				{
 					playrcjumpf(status.playfile, NULL, getconfigint("skip13", NULL), &playinfobarstatus, &playinfobarcount, 1, 4);
@@ -289,7 +308,22 @@ void screeninfobar()
 				{				
 					playrcjumpf(status.playfile, NULL, getconfigint("skip79", NULL), &playinfobarstatus, &playinfobarcount, 1, 4);
 					continue;
-				}	
+				}
+				if(rcret == getrcconfigint("rcdown", NULL))
+				{
+					playrcjumpr(status.playfile, NULL, 300, &playinfobarstatus, &playinfobarcount, 1, 4);
+					continue;
+				}
+				if(rcret == getrcconfigint("rcup", NULL))
+				{
+					playrcjumpf(status.playfile, NULL, 60, &playinfobarstatus, &playinfobarcount, 1, 4);
+					continue;
+				}
+				if(rcret == getrcconfigint("rcleft", NULL))
+				{
+					playrcjumpr(status.playfile, NULL, 60, &playinfobarstatus, &playinfobarcount, 1, 4);
+					continue;
+				}
 				if(rcret == getrcconfigint("rc1", NULL))
 				{
 					playrcjumpr(status.playfile, NULL, getconfigint("skip13", NULL), &playinfobarstatus, &playinfobarcount, 1, 4);
@@ -305,6 +339,22 @@ void screeninfobar()
 					playrcjumpr(status.playfile, NULL, getconfigint("skip79", NULL), &playinfobarstatus, &playinfobarcount, 1, 4);
 					continue;
 				}
+				if(rcret == getrcconfigint("rc2", NULL))
+				{
+					playrcjumpto(status.playfile, NULL, &playinfobarstatus, &playinfobarcount, 1, 4);
+					continue;
+				}
+				if(rcret == getrcconfigint("rc0", NULL))
+				{
+					setmarker();
+					continue;
+				}
+				if(rcret == getrcconfigint("rc5", NULL))
+				{
+					screenmarker(status.playfile, NULL, &playinfobarstatus, &playinfobarcount, 1, 4);
+					continue;
+				}	
+
 				if(status.timeshifttype == 0 && rcret == getrcconfigint("rcinfo", NULL))
 				{
 					playrcinfo(status.playfile, NULL, &playinfobarstatus, &playinfobarcount, 1, 4);
