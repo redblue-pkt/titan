@@ -451,6 +451,7 @@ int screentunerreceptiondvbs(struct dvbdev* tuner)
 	
 	listbox->aktline = 1;
 	listbox->aktpage = -1;
+	b3->hidden = YES;
 
 	if(tuner == NULL || tuner->feshortname == NULL)
 	{
@@ -485,7 +486,7 @@ start:
 			break;
 		}
 
-		if(ostrcmp(listbox->select->text, _("Lnb / Unicable")) == 0)
+		if(ostrcmp(listbox->select->text, _("Lnb / Unicable")) == 0 || ostrcmp(listbox->select->text, _("DiSEqC")) == 0)
 			b3->hidden = NO;
 		else
 			b3->hidden = YES;	
