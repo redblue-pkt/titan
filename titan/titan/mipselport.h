@@ -452,7 +452,7 @@ void blitfb2(struct fb* fbnode, int flag)
 */
 }
 
-void setfbtransparent(int value)
+int setfbtransparent(int value)
 {
 	char* transparentdev;
 
