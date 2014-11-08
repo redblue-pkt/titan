@@ -174,9 +174,9 @@ void screencec()
 	addchoicebox(cecfix, "0", _("no"));
 	addchoicebox(cecfix, "1", _("yes"));
 	if(getconfigint("cec_fixedAddress", NULL) == 0)
-		setchoiceboxselection(cecfix, 0);
+		setchoiceboxselection(cecfix, "0");
 	else
-		setchoiceboxselection(cecfix, 1);
+		setchoiceboxselection(cecfix, "1");
 	
 	
 	if(getconfigint("cec_on", NULL) == 0)
@@ -301,7 +301,7 @@ void cecinit()
 
 	setFixedPhysicalAddress(getconfigint("cec_fixedAddress", NULL));
 	
-	return 0;
+	return;
 }
 		
 void cecstandby()
