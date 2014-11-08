@@ -40,16 +40,26 @@ printf("b1: value: %s\n", value);
 	{
 printf("b2: value: %s\n", value);
 printf("b3: getskinconfig: %s\n", getskinconfig("OLED_nemesis", NULL));
-if(getscreen(getskinconfig("OLED_nemesis", NULL)) == NULL)
-	printf("b4: getscreen: NULL\n");
 
+		if(getskinconfig("OLED_nemesis", NULL) == NULL)
+{
+printf("b4: getskinconfig: NULL\n");
+			OLED_nemesis = getscreen("OLED_nemesis");
+}
+		else
+{
+printf("b4: getskinconfig: != NULL\n");
 
+			OLED_nemesis = getscreen(getskinconfig("OLED_nemesis", NULL));
+}
+printf("b5: value: %s\n", value);
+/*
 		OLED_nemesis = getscreen(getskinconfig("OLED_nemesis", NULL));
 		if(status.skinerr == OLED_nemesis)
 		{
 			OLED_nemesis = getscreen("OLED_nemesis");
-printf("b5: value: %s\n", value);
 		}
+*/
 	}
 	
 	struct skin* textbox = getscreennode(OLED_nemesis, "textbox");
