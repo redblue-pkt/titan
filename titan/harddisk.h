@@ -621,7 +621,7 @@ void hddformat(char* dev, char* filesystem)
 	int rc = 0;
 	char* cmd = NULL;
 	struct hdd* node = NULL;
-	
+	resettvpic();
 
 	node = gethdd(dev);
 	if(node == NULL) return;
@@ -805,6 +805,7 @@ int hddfsck(char* dev)
 	if(node == NULL) return 1;
 	if(node->filesystem == NULL) return 1;
 	debug(80, "device=%s filesystem=%s", dev, node->filesystem);
+	resettvpic();
 
 	if(node->size > 524288000UL)
 	{	
@@ -851,7 +852,6 @@ int hddfsck(char* dev)
 
 void screenharddisksleep()
 {
-	
 	char* sleepWert = NULL;
 	int rcret = 0;
 	struct skin* sleep_config = getscreen("harddisk_main");
