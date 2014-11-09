@@ -289,11 +289,6 @@ void screeninfobar()
 					playrcfr(status.playfile, NULL, &playinfobarstatus, &playinfobarcount, 1, 4);
 					continue;
 				}
-				if(rcret == getrcconfigint("rcleft", NULL))
-				{
-					playrcjumpf(status.playfile, NULL, 60, &playinfobarstatus, &playinfobarcount, 1, 4);
-					continue;
-				}
 				if(rcret == getrcconfigint("rc3", NULL))
 				{
 					playrcjumpf(status.playfile, NULL, getconfigint("skip13", NULL), &playinfobarstatus, &playinfobarcount, 1, 4);
@@ -316,12 +311,17 @@ void screeninfobar()
 				}
 				if(rcret == getrcconfigint("rcup", NULL))
 				{
-					playrcjumpf(status.playfile, NULL, 60, &playinfobarstatus, &playinfobarcount, 1, 4);
+					playrcjumpf(status.playfile, NULL, 300, &playinfobarstatus, &playinfobarcount, 1, 4);
 					continue;
 				}
 				if(rcret == getrcconfigint("rcleft", NULL))
 				{
 					playrcjumpr(status.playfile, NULL, 60, &playinfobarstatus, &playinfobarcount, 1, 4);
+					continue;
+				}
+				if(rcret == getrcconfigint("rcright", NULL))
+				{
+					playrcjumpf(status.playfile, NULL, 60, &playinfobarstatus, &playinfobarcount, 1, 4);
 					continue;
 				}
 				if(rcret == getrcconfigint("rc1", NULL))
