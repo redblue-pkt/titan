@@ -24,7 +24,7 @@ msgstr ""
 #: gmediarender.h:115 harddisk.h:350 harddisk.h:355 harddisk.h:382
 #: harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641 harddisk.h:675
 #: harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733 harddisk.h:793
-#: harddisk.h:811 harddisk.h:814 harddisk.h:1046 hbbtv.h:362 httpdfunc.h:1140
+#: harddisk.h:812 harddisk.h:815 harddisk.h:1046 hbbtv.h:362 httpdfunc.h:1140
 #: httpdfunc.h:3079 httpdfunc.h:5862 httpdfunc.h:6127 httpdfunc.h:6198
 #: hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113
 #: hwtest.h:206 hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492
@@ -130,7 +130,7 @@ msgstr "k"
 #: gmediarender.h:115 harddisk.h:350 harddisk.h:355 harddisk.h:382
 #: harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641 harddisk.h:675
 #: harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733 harddisk.h:793
-#: harddisk.h:811 harddisk.h:814 harddisk.h:1046 hbbtv.h:362 hello.c:36
+#: harddisk.h:812 harddisk.h:815 harddisk.h:1046 hbbtv.h:362 hello.c:36
 #: httpdfunc.h:1140 httpdfunc.h:3079 httpdfunc.h:5862 httpdfunc.h:6127
 #: httpdfunc.h:6198 hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103
 #: hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390 hwtest.h:411
@@ -561,7 +561,7 @@ msgstr ""
 #: flashx.h:195 flashx.h:233 flashx.h:270 global.h:5541 global.h:6166
 #: global.h:6235 global.h:6254 global.h:6429 gmediarender.h:115 harddisk.h:633
 #: harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731
-#: harddisk.h:733 harddisk.h:793 harddisk.h:811 harddisk.h:814 hbbtv.h:362
+#: harddisk.h:733 harddisk.h:793 harddisk.h:812 harddisk.h:815 hbbtv.h:362
 #: hello.c:36 httpdfunc.h:1140 httpdfunc.h:5476 httpdfunc.h:5862
 #: httpdfunc.h:6127 httpdfunc.h:6198 hwtest.h:88 hwtest.h:93 hwtest.h:98
 #: hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390
@@ -1987,13 +1987,13 @@ msgid ""
 "partition could not be created"
 msgstr ""
 
-#: harddisk.h:811
+#: harddisk.h:812
 msgid ""
 "Information: This hard drive size can take a file\n"
 "system check between 30 minutes and 1.5 hours."
 msgstr ""
 
-#: harddisk.h:814
+#: harddisk.h:815
 msgid ""
 "Are you sure you want to check this Partition?\n"
 "Box reboots after check"
