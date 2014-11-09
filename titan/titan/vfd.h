@@ -38,8 +38,8 @@ int setvfdbrightness(int value)
 {
 
 #ifdef MIPSEL
-	if(checkbox("ATEMIO-NEMESIS") == 1)
-	{
+	//if(checkbox("ATEMIO-NEMESIS") == 1)
+	//{
 		FILE *f=fopen("/proc/stb/lcd/oled_brightness", "w");
 		if (!f)
 			return 1;
@@ -47,7 +47,7 @@ int setvfdbrightness(int value)
 		fprintf(f, "%d", brightness);
 		fclose(f);
 		return 0;
-	}
+	//}
 #endif
 
 	char *vfddev;
