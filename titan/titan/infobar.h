@@ -4,7 +4,6 @@
 void screeninfobar()
 {
 	int rcret = 0, ret = 0, infobartimeout = 0, rcwait = 1000, count = 0, first = 1;
-	int playpic = 0;
 	struct channel* pipchannel = NULL; 
 	struct skin* playinfobarpic = getscreen("playinfobarpic");
 	struct skin* infobar1 = getscreen("infobar");
@@ -31,7 +30,7 @@ void screeninfobar()
 	
 	int playinfobarcount = 0, playinfobarstatus = 0;
 	
-	if(checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO5200") == 1 || checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1 || checkbox("ATEMIO6200") == 1 || (checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1) && ostrcmp(getconfig("remotecontrol", NULL), "1") != 1)
+	if(checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO5200") == 1 || checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1 || checkbox("ATEMIO6200") == 1 || ((checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1) && ostrcmp(getconfig("remotecontrol", NULL), "1") != 1))
 		playstop = 0;
 	else
 		playstop = 1;
@@ -71,7 +70,7 @@ void screeninfobar()
 			rcret = waitrc(infobar, 1000, 0);
 			if(rcret == RCTIMEOUT)
 			{
-				if(playpic == 1) {
+				if(status.playpic == 1) {
 //it anymore needed
 //					if (checkbox("ATEMIO-NEMESIS") != 1)
 						clearscreen(playinfobarpic);
@@ -151,9 +150,10 @@ void screeninfobar()
 		if(rcret == getrcconfigint("rcpause", NULL) || /*checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO5200") == 1 || checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1 || checkbox("ATEMIO6200") == 1 || */((checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1) && rcret == getrcconfigint("rcplay", NULL) && status.pause == 0 && status.slowspeed == 0 && status.playspeed == 0 && ostrcmp(getconfig("remotecontrol", NULL), "0") == 0))
 		{
 			//timeshift
-			if(playpic == 1) {
+			if(status.playpic == 1)
+			{
 				clearscreen(playinfobarpic);
-				playpic = 0;
+				status.playpic = 0;
 			}
 			if(status.timeshift == 1 && (status.playing == 0 || status.slowspeed != 0 || status.playspeed != 0 || status.pause != 0))
 			{
@@ -161,6 +161,11 @@ void screeninfobar()
 				{
 					timeshiftpause(0);
 					timeshiftinfobar(&playinfobarstatus, &playinfobarcount);
+					if(status.playpic == 0)
+					{
+						drawscreen(playinfobarpic, 0, 0);
+						status.playpic = 1;
+					}
 				}
 				else
 					timeshiftplay(&playinfobarstatus, &playinfobarcount);
@@ -168,35 +173,39 @@ void screeninfobar()
 			else
 			{
 				if(status.timeshift == 1)
-					playpic = 2;
+					status.playpic = 2;
 				else
-					playpic = 0;
+					status.playpic = 0;
+
 				timeshiftpause(0);
 				timeshiftinfobar(&playinfobarstatus, &playinfobarcount);
-				if(playpic == 0) {
+				if(status.playpic == 0)
+				{
 					drawscreen(playinfobarpic, 0, 0);
-					playpic = 1;
+					status.playpic = 1;
 				}
 			}
-			
+
 			continue;
 		}
 		if(status.timeshift == 1)
 		{
 			if(rcret == getrcconfigint("rcstop", NULL))
 			{
-				if(playpic == 1) {
+				if(status.playpic == 1)
+				{
 					clearscreen(playinfobarpic);
-					playpic = 0;
+					status.playpic = 0;
 				}		
 				timeshiftstop(0);
 				continue;
 			}
 			if(rcret == getrcconfigint("rcplay", NULL))
 			{
-				if(playpic == 1) {
+				if(status.playpic == 1)
+				{
 					clearscreen(playinfobarpic);
-					playpic = 0;
+					status.playpic = 0;
 				}		
 				if(playstop == 1 && status.timeshifttype == 1)
 				{
@@ -312,6 +321,10 @@ void screeninfobar()
 				if(rcret == getrcconfigint("rcup", NULL))
 				{
 					playrcjumpf(status.playfile, NULL, 300, &playinfobarstatus, &playinfobarcount, 1, 4);
+#ifdef MIPSEL
+// workaround fixes image flicker when jumping over the border also
+					playrcjumpr(status.playfile, NULL, 10, &playinfobarstatus, &playinfobarcount, 1, 4);
+#endif
 					continue;
 				}
 				if(rcret == getrcconfigint("rcleft", NULL))
@@ -322,6 +335,10 @@ void screeninfobar()
 				if(rcret == getrcconfigint("rcright", NULL))
 				{
 					playrcjumpf(status.playfile, NULL, 60, &playinfobarstatus, &playinfobarcount, 1, 4);
+#ifdef MIPSEL
+// workaround fixes image flicker when jumping over the border also
+					playrcjumpr(status.playfile, NULL, 10, &playinfobarstatus, &playinfobarcount, 1, 4);
+#endif
 					continue;
 				}
 				if(rcret == getrcconfigint("rc1", NULL))
@@ -698,6 +715,7 @@ void screeninfobar()
 			status.updatevfd = START;
 			drawscreen(skin, 0, 0);
 			subtitlepause(0);
+			resettvpic();
 			continue;
 		}
 		if(rcret == getrcconfigint("rcmenu", NULL))
@@ -724,6 +742,7 @@ void screeninfobar()
 			drawscreen(skin, 0, 0);
 			status.infobaraktiv = 1;
 			subtitlepause(0);
+			resettvpic();
 			continue;
 		}
 		if(rcret == getrcconfigint("rcepg", NULL))

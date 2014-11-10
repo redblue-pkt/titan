@@ -147,12 +147,18 @@ void timeshiftplay(int* playinfobarstatus, int* playinfobarcount)
 	int ret = 1;
 
 	struct service* snode = getservice(RECORDTIMESHIFT, 0);
-	
+	struct skin* playinfobarpic = getscreen("playinfobarpic");
+
 	if((status.timeshifttype == 0 && status.playing == 0) || (status.timeshifttype == 1 && status.playing == 0 && status.timeshiftpos > 0))
 	{
 		if(status.timeshiftstart + 15 > time(NULL))
 		{
 			textbox(_("Message"), _("Timeshift file to short\nplease wait a little and try again"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
+			if(status.playpic == 0)
+			{	
+				drawscreen(playinfobarpic, 0, 0);
+				status.playpic = 1;
+			}
 			return;
 		}
 	
@@ -160,6 +166,11 @@ void timeshiftplay(int* playinfobarstatus, int* playinfobarcount)
 		if(ret != 0)
 		{
 			textbox(_("Message"), _("Can't start timeshift play !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+			if(status.playpic == 0)
+			{	
+				drawscreen(playinfobarpic, 0, 0);
+				status.playpic = 1;
+			}
 			return;
 		}
 	}
