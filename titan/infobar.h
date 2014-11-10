@@ -70,10 +70,9 @@ void screeninfobar()
 			rcret = waitrc(infobar, 1000, 0);
 			if(rcret == RCTIMEOUT)
 			{
-				if(status.playpic == 1) {
-//it anymore needed
-//					if (checkbox("ATEMIO-NEMESIS") != 1)
-						clearscreen(playinfobarpic);
+				if(status.playpic == 1)
+				{
+					clearscreen(playinfobarpic);
 					drawscreen(playinfobarpic, 0, 0);
 				}
 				else
