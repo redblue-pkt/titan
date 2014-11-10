@@ -464,6 +464,10 @@ void oshutdown(int exitcode, int flag)
 			pthread_join(status.timerthread, &threadstatus);
 		pthread_attr_destroy(&status.timerthreadattr);
 
+		//stop fan 
+		if(checkbox("ATEMIO-NEMESIS") == 1)
+ 			writesys("/proc/stb/fp/fan", "1", 1);
+		
 		// free timerthread struct and stop all timer sub threads
 		freetimer(0);
 
