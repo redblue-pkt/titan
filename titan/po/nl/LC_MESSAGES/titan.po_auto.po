@@ -86,8 +86,8 @@ msgstr "Systeem informatie"
 #: system_backup_restore.h:95 system_update.h:257 system_update.h:263
 #: system_update.h:270 thefile.h:34 thefile.h:68 thefile.h:205 timeshift.h:113
 #: timeshift.h:156 timeshift.h:168 timeshiftsettings.h:45 titan.c:281
-#: titan.c:345 titan.c:354 titan.c:990 titan.c:999 titan.c:1124 titan.c:1145
-#: titan.c:1151 titan.c:1162 titan.c:1168 tithek.c:84 tithek_global.h:248
+#: titan.c:345 titan.c:354 titan.c:994 titan.c:1003 titan.c:1128 titan.c:1149
+#: titan.c:1155 titan.c:1166 titan.c:1172 tithek.c:84 tithek_global.h:248
 #: tithek.h:670 tithek.h:1166 tithek.h:1209 tithek.h:1457 tithek.h:1479
 #: tithek.h:1495 tithek.h:2065 tithek.h:2092 tithek.h:2106 tithek.h:2116
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
@@ -202,9 +202,9 @@ msgstr "Ok"
 #: system_backup_restore.h:88 system_backup_restore.h:95 system_update.h:257
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 timeshift.h:113 timeshift.h:156 timeshift.h:168
-#: timeshiftsettings.h:45 titan.c:281 titan.c:345 titan.c:354 titan.c:990
-#: titan.c:999 titan.c:1124 titan.c:1145 titan.c:1151 titan.c:1162
-#: titan.c:1168 tithek.c:84 tithek_global.h:248 tithek.h:670 tithek.h:1166
+#: timeshiftsettings.h:45 titan.c:281 titan.c:345 titan.c:354 titan.c:994
+#: titan.c:1003 titan.c:1128 titan.c:1149 titan.c:1155 titan.c:1166
+#: titan.c:1172 tithek.c:84 tithek_global.h:248 tithek.h:670 tithek.h:1166
 #: tithek.h:1209 tithek.h:1457 tithek.h:1479 tithek.h:1495 tithek.h:2065
 #: tithek.h:2092 tithek.h:2106 tithek.h:2116 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922
@@ -610,8 +610,8 @@ msgstr "Ja / VZAP oneindig"
 #: system_backup_restore.h:80 system_backup_restore.h:82 system_update.h:257
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 timeshift.h:113 timeshift.h:156 timeshift.h:168
-#: timeshiftsettings.h:45 titan.c:281 titan.c:345 titan.c:354 titan.c:1124
-#: titan.c:1145 titan.c:1151 titan.c:1162 titan.c:1168 tithek.c:84
+#: timeshiftsettings.h:45 titan.c:281 titan.c:345 titan.c:354 titan.c:1128
+#: titan.c:1149 titan.c:1155 titan.c:1166 titan.c:1172 tithek.c:84
 #: tithek_global.h:248 tithek.h:670 tithek.h:1166 tithek.h:1209 tithek.h:1457
 #: tithek.h:1479 tithek.h:2065 tithek.h:2092 tithek.h:2106 tithek.h:2116
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
@@ -2733,7 +2733,7 @@ msgstr ""
 msgid "Email  \t\tinfo@atemio.de"
 msgstr ""
 
-#: info.h:27 plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9 titan.c:999
+#: info.h:27 plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9 titan.c:1003
 #: webif_index.atemio510.h:15 webif_index.atemio5200.h:15
 #: webif_index.atemio5200.h:43 webif_index.atemio5200.h:99
 #: webif_index.atemio6000.h:15 webif_index.atemio6100.h:15
@@ -9159,59 +9159,59 @@ msgstr ""
 "Download bezig\n"
 "Echt afsluiten?"
 
-#: titan.c:815
+#: titan.c:819
 msgid "Error: open rc device !!"
 msgstr "Fout, afstandbediening kan niet geopend worden!"
 
-#: titan.c:821
+#: titan.c:825
 msgid "Error: no frontend device found !!"
 msgstr "Fout, frontend device kan niet geopend worden!"
 
-#: titan.c:827
+#: titan.c:831
 msgid "Error: no demux device found !!"
 msgstr "Fout, demux device kan niet geopend worden!"
 
-#: titan.c:833
+#: titan.c:837
 msgid "Error: no video device found !!"
 msgstr "Fout, video apparaat kan niet geopend worden!!"
 
-#: titan.c:839
+#: titan.c:843
 msgid "Error: no audio device found !!"
 msgstr "Fout, audio apparaat kan niet geopend worden!!"
 
-#: titan.c:857
+#: titan.c:861
 msgid "Error: skin not found !!"
 msgstr "Fout, skin kan niet geopend worden!"
 
-#: titan.c:941
+#: titan.c:945
 msgid "RemoteControl Old Version"
 msgstr "Oude versie afstandsbediening"
 
-#: titan.c:942
+#: titan.c:946
 msgid "RemoteControl Long Version"
 msgstr "Lange versie afstandsbediening"
 
-#: titan.c:949
+#: titan.c:953
 msgid "Select Your Remote Control"
 msgstr "Selecteer uw afstandsbediening"
 
-#: titan.c:949
+#: titan.c:953
 msgid "Choose your Remotecontrol Model from the following list"
 msgstr ""
 
-#: titan.c:990
+#: titan.c:994
 msgid "First Wizzard"
 msgstr "Start assistent"
 
-#: titan.c:990
+#: titan.c:994
 msgid "Settings OK ?"
 msgstr "Instellingen Ok?"
 
-#: titan.c:1124
+#: titan.c:1128
 msgid "Receiver successful unlocked"
 msgstr "Ontvanger succesvol vrijgegeven"
 
-#: titan.c:1145
+#: titan.c:1149
 msgid ""
 "Free space in /var to little!\n"
 "This can make problems!"
@@ -9219,7 +9219,7 @@ msgstr ""
 "Geen geheugen ruimte meer in /var\n"
 "Dit kan tot problemen leiden!"
 
-#: titan.c:1151
+#: titan.c:1155
 msgid ""
 "/var not writeable!\n"
 "Repair it?"
@@ -9227,7 +9227,7 @@ msgstr ""
 "/var niet beschrijfbaar!\n"
 "Repareren?"
 
-#: titan.c:1162
+#: titan.c:1166
 msgid ""
 "Free space in /mnt to little!\n"
 "This can make problems!"
@@ -9235,7 +9235,7 @@ msgstr ""
 "Vrije ruimte op /mnt beperkt!\n"
 "Dit kan tot problemen leidden!"
 
-#: titan.c:1168
+#: titan.c:1172
 msgid ""
 "/mnt not writeable!\n"
 "Repair it?"
@@ -9243,11 +9243,11 @@ msgstr ""
 "/mnt niet beschrijfbaar!\n"
 "Repareren?"
 
-#: titan.c:1217
+#: titan.c:1221
 msgid "Unknown Error."
 msgstr "Onbekende fout"
 
-#: titan.c:1219
+#: titan.c:1223
 msgid "Automatic stop in 10 seconds."
 msgstr "Automatische stop in 10 seconden."
 
