@@ -602,7 +602,10 @@ void vfdrecordthread()
 		while(VFD_Recordthread->aktion != STOP && getconfigint("vfdisplayrecord", NULL) == 3 && status.recording > 0)
 		{
 			action = 2;
-			writecentervfd("RECORD");
+			if(checkbox("ATEMIO5200") == 1)
+				writevfd("RECORD");
+			else
+				writecentervfd("RECORD");
 			sleep(1);
 		}
 		
