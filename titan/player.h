@@ -1206,7 +1206,7 @@ int playerisplaying()
 //		printf("rest: %lld\n", nanos_len - nanos_pts);
 
 		debug(150, "status.pause=%d status.playspeed=%d status.slowspeed=%d status.prefillbuffer=%d rest=%lld", status.pause, status.playspeed, status.slowspeed, status.prefillbuffer, rest);
-		if(rest > 2000000000 || status.pts != pts || pts == 0 || status.pause == 1 || status.playspeed != 0 || status.slowspeed != 0 /*|| status.prefillbuffer == 1*/)
+		if(rest > 4000000000 || status.pts != pts || pts == 0 || status.pause == 1 || status.playspeed != 0 || status.slowspeed != 0 /*|| status.prefillbuffer == 1*/)
 		{
 //			debug(150, "status.pts=%llu / pts=%llu\n", status.pts, pts);
 			status.pts = pts;
