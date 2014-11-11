@@ -427,7 +427,11 @@ void oshutdown(int exitcode, int flag)
 			err("create write thread");
 		}
 	}
-
+	
+	//stop fan 
+	if(checkbox("ATEMIO-NEMESIS") == 1)
+ 		writesys("/proc/stb/fp/fan", "1", 1);
+ 		
 	//reset ci devices
 	while(dvbnode != NULL)
 	{
@@ -463,10 +467,6 @@ void oshutdown(int exitcode, int flag)
 		else if(status.timerthread != '\0')
 			pthread_join(status.timerthread, &threadstatus);
 		pthread_attr_destroy(&status.timerthreadattr);
-
-		//stop fan 
-		if(checkbox("ATEMIO-NEMESIS") == 1)
- 			writesys("/proc/stb/fp/fan", "1", 1);
 		
 		// free timerthread struct and stop all timer sub threads
 		freetimer(0);
