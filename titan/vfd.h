@@ -602,8 +602,10 @@ void vfdrecordthread()
 		while(VFD_Recordthread->aktion != STOP && getconfigint("vfdisplayrecord", NULL) == 3 && status.recording > 0)
 		{
 			action = 2;
-			if(checkbox("ATEMIO5200") == 1)
+			if(checkbox("ATEMIO5200") == 1 || checkbox("ATEMIO6200") == 1)
 				writevfd("RECORD");
+			else if(checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1)
+				writevfd("REC");
 			else
 				writecentervfd("RECORD");
 			sleep(1);
