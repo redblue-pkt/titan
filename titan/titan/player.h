@@ -859,6 +859,8 @@ int gstbuscall(GstBus *bus, GstMessage *msg, CustomData *data)
 	if(!GST_IS_OBJECT(source)) return ret;
 	sourceName = gst_object_get_name(source);
 
+	debug(150, "gst type: %s", GST_MESSAGE_TYPE_NAME(msg));
+
 	switch(GST_MESSAGE_TYPE(msg))
 	{
 		case GST_MESSAGE_EOS:
@@ -1187,7 +1189,23 @@ int playerisplaying()
 		{
 			ret = gstbuscall(bus, message, &data);
 			gst_message_unref(message);
+		}		
+
+// eof workaround for some mp4 files.
+		gint64 pts = 0;
+		pts = playergetpts();
+
+		if(status.pts != pts || pts == 0 || status.pause == 1 /*|| status.prefillbuffer == 1*/)
+		{
+			//debug(150, "status.pts=%llu / pts=%llu\n", status.pts, pts);
+			status.pts = pts;
 		}
+		else
+		{
+			debug(150, "gst player eof - workaround");
+			ret = 0;
+		}
+// eof workaround done
 	}
 	else
 		ret = 0;

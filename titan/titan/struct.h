@@ -1305,9 +1305,10 @@ struct status
 	int playpic;
 #ifdef EPLAYER4
 	int bufferpercent;
-	gint avgInRate;
-	gint avgOutRate;
-	gint64 bufferingLeft;
+//	gint avgInRate;
+//	gint avgOutRate;
+//	gint64 bufferingLeft;
+	gint64 pts;
 #endif
 	int random;
 	int repeat;
