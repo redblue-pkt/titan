@@ -1192,17 +1192,28 @@ int playerisplaying()
 		}		
 
 // eof workaround for some mp4 files.
-		gint64 pts = 0;
-		pts = playergetpts();
+		gint64 pts = 0, len = 0, rest = 0;
+		gint64 nanos_pts = 0, nanos_len = 0;
 
-		if(status.pts != pts || pts == 0 || status.pause == 1 /*|| status.prefillbuffer == 1*/)
+		len = playergetlength();
+		nanos_len = len * 1000000000;
+		if(nanos_len < 0) nanos_len = 0;
+
+		pts = playergetpts();
+		nanos_pts = pts * 11111;
+
+		rest = nanos_len - nanos_pts;
+//		printf("rest: %lld\n", nanos_len - nanos_pts);
+
+		debug(150, "status.pause=%d status.playspeed=%d status.slowspeed=%d status.prefillbuffer=%d rest=%lld", status.pause, status.playspeed, status.slowspeed, status.prefillbuffer, rest);
+		if(rest > 2000000000 || status.pts != pts || pts == 0 || status.pause == 1 || status.playspeed != 0 || status.slowspeed != 0 /*|| status.prefillbuffer == 1*/)
 		{
-			//debug(150, "status.pts=%llu / pts=%llu\n", status.pts, pts);
+//			debug(150, "status.pts=%llu / pts=%llu\n", status.pts, pts);
 			status.pts = pts;
 		}
 		else
 		{
-			debug(150, "gst player eof - workaround");
+			debug(150, "gst player eof - workaround (rest=%lld)", rest);
 			ret = 0;
 		}
 // eof workaround done
@@ -1399,7 +1410,10 @@ void playerseek(float sec)
 		if(nanos_pts < 0) nanos_pts = 0;
 
 		if(nanos_pts >= nanos_len)
-			playerstop();
+		{
+			debug(150, "gst skip seeking");
+//			playerstop();
+		}
 		else
 			gst_element_seek(pipeline, 1.0, GST_FORMAT_TIME, GST_SEEK_FLAG_FLUSH, GST_SEEK_TYPE_SET, nanos_pts, GST_SEEK_TYPE_NONE, GST_CLOCK_TIME_NONE);
 	}
