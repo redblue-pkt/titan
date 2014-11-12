@@ -59,7 +59,7 @@ void screentimeshiftsettings()
 	addchoicebox(asktimeshift, "1", _("no"));
 	setchoiceboxselection(asktimeshift, getconfig("asktimeshift", NULL));
   
-  addchoicebox(timeshiftnumkeys, "0", _("yes"));
+	addchoicebox(timeshiftnumkeys, "0", _("yes"));
 	addchoicebox(timeshiftnumkeys, "1", _("no"));
 	setchoiceboxselection(timeshiftnumkeys, getconfig("timeshiftnumkeys", NULL));
 	
@@ -88,7 +88,7 @@ void screentimeshiftsettings()
 			status.timeshifttype = getconfigint("timeshifttype", NULL);
 			addconfigscreencheck("asktimeshift", asktimeshift, "0");
 			status.asktimeshift = getconfigint("asktimeshift", NULL);
-      addconfigscreencheck("timeshiftnumkeys", timeshiftnumkeys, "0");
+			addconfigscreencheck("timeshiftnumkeys", timeshiftnumkeys, "0");
 			break;
 		}
 	}
@@ -101,12 +101,15 @@ void screentimeshiftsettings()
 	//zap on change so timeshift is ended or started
 	if(change == 1)
 	{
+		resettvpic();
+
 		ret = servicestop(status.aktservice, 1, 1);
 		if(ret == 0)
 		{
 			status.aktservice->transponder = NULL;
 			servicecheckret(servicestart(status.aktservice->channel, NULL, NULL, 5), 0);
 		}
+		sleep(1);
 	}
 }
 
