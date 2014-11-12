@@ -6174,8 +6174,8 @@ msgid "press red"
 msgstr "Druk op rode toets"
 
 #: skinadjust.h:200
-msgid "Receiver now reboot !!!"
-msgstr "Ontvanger herstart nu!!"
+msgid "Titan will be restartet !"
+msgstr ""
 
 #: skin_default_skin.xml.h:2
 msgid "^"
@@ -12945,3 +12945,6 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Zapback is reeds actief... Stoppen?"
+
+#~ msgid "Receiver now reboot !!!"
+#~ msgstr "Ontvanger herstart nu!!"

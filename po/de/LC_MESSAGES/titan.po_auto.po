@@ -6235,8 +6235,8 @@ msgid "press red"
 msgstr "Rote Taste drücken"
 
 #: skinadjust.h:200
-msgid "Receiver now reboot !!!"
-msgstr "Receiver wird neu gestartet!!!"
+msgid "Titan will be restartet !"
+msgstr ""
 
 #: skin_default_skin.xml.h:2
 msgid "^"
@@ -13101,3 +13101,6 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
+
+#~ msgid "Receiver now reboot !!!"
+#~ msgstr "Receiver wird neu gestartet!!!"
