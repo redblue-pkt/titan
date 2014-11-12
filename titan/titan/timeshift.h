@@ -144,14 +144,19 @@ startservice:
 
 void timeshiftplay(int* playinfobarstatus, int* playinfobarcount)
 {
-	int ret = 1;
+	int ret = 1, waiting = 15;
+
+#ifdef MIPSEL
+	waiting = 30;
+#endif
 
 	struct service* snode = getservice(RECORDTIMESHIFT, 0);
 	struct skin* playinfobarpic = getscreen("playinfobarpic");
 
 	if((status.timeshifttype == 0 && status.playing == 0) || (status.timeshifttype == 1 && status.playing == 0 && status.timeshiftpos > 0))
 	{
-		if(status.timeshiftstart + 15 > time(NULL))
+
+		if(status.timeshiftstart + waiting > time(NULL))
 		{
 			textbox(_("Message"), _("Timeshift file to short\nplease wait a little and try again"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 			if(status.playpic == 0)
