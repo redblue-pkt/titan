@@ -6229,7 +6229,7 @@ msgid "press red"
 msgstr "Presione Boton Rojo"
 
 #: skinadjust.h:200
-msgid "Titan will be restartet !"
+msgid "Titan will be restartet!"
 msgstr ""
 
 #: skin_default_skin.xml.h:2
@@ -13066,6 +13066,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Zap atras esta activado. Desea detener?"
-
-#~ msgid "Receiver now reboot !!!"
-#~ msgstr "Receptor se reiniciara ahora !!!"

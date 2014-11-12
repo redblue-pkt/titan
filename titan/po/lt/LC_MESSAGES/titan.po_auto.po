@@ -6183,7 +6183,7 @@ msgid "press red"
 msgstr "Press Red Button"
 
 #: skinadjust.h:200
-msgid "Titan will be restartet !"
+msgid "Titan will be restartet!"
 msgstr ""
 
 #: skin_default_skin.xml.h:2
@@ -12975,6 +12975,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Zapback aktivuoas. Ar norite j sustabdyti ?"
-
-#~ msgid "Receiver now reboot !!!"
-#~ msgstr "Receiver will reboot now!!!"

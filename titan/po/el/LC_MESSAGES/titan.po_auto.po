@@ -6076,7 +6076,7 @@ msgid "press red"
 msgstr "progressbar"
 
 #: skinadjust.h:200
-msgid "Titan will be restartet !"
+msgid "Titan will be restartet!"
 msgstr ""
 
 #: skin_default_skin.xml.h:2
