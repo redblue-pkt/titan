@@ -902,9 +902,11 @@ void deltunerconfig(flag)
 
 void screentunerconfig()
 {
-	int rcret = 0, ret = 0;
+	int rcret = 0, ret = 0, count = 0;
 	struct skin* tunerconfig = getscreen("tunerconfig");
 	struct skin* listbox = getscreennode(tunerconfig, "listbox");
+	struct skin* b4 = getscreennode(tunerconfig, "b4");
+	
 	struct dvbdev* dvbnode = dvbdev;
 	struct skin* tunernode = NULL;
 	char* tmpstr = NULL, *tmpstr1 = NULL;
@@ -912,12 +914,17 @@ void screentunerconfig()
 
 	listbox->aktline = 1;
 	listbox->aktpage = -1;
-	
+
+	b4->hidden = YES;
+
 	if(status.recording > 0 || status.streaming > 0)
 	{
 		textbox(_("Message"), _("Tunerconfig is not allowed if record\nor stream is running !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 		return;
 	}
+
+	drawscreen(tunerconfig, 0, 0);
+
 
 	while(dvbnode != NULL)
 	{
@@ -926,6 +933,7 @@ void screentunerconfig()
 			tunernode = addlistbox(tunerconfig, listbox, tunernode, 1);
 			if(tunernode != NULL)
 			{
+				count++;
 				tunernode->handle = (char*)dvbnode;	
 				changetunername(tunernode, dvbnode->adapter, dvbnode->devnr, dvbnode->feinfo->name, dvbnode->fehyprid);
 				tunernode->height = listbox->fontsize * 2;
@@ -939,6 +947,8 @@ void screentunerconfig()
 				changename(tunernode, dvbnode->feshortname);
 
 				setchoiceboxselection(tunernode, getconfig(dvbnode->feshortname, NULL));
+				if(count == 1 && ostrstr(dvbnode->feinfo->name, "DVB-S") != NULL)
+					b4->hidden = NO;
 			}
 		}
 		dvbnode = dvbnode->next;
@@ -956,6 +966,13 @@ void screentunerconfig()
 
 		if(listbox->select != NULL)
 			addconfigscreentmpcheck(listbox->select->name, listbox->select, "0");
+
+		if(ostrstr(listbox->select->text, "DVB-S") != NULL)
+			b4->hidden = NO;
+		else
+			b4->hidden = YES;	
+
+		drawscreen(tunerconfig, 0, 0);
 
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcred", NULL))
