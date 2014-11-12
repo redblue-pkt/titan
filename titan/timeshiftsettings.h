@@ -109,7 +109,6 @@ void screentimeshiftsettings()
 			status.aktservice->transponder = NULL;
 			servicecheckret(servicestart(status.aktservice->channel, NULL, NULL, 5), 0);
 		}
-		sleep(1);
 	}
 }
 
