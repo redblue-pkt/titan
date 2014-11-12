@@ -85,7 +85,7 @@ msgstr ""
 #: system_backup_restore.h:82 system_backup_restore.h:88
 #: system_backup_restore.h:95 system_update.h:257 system_update.h:263
 #: system_update.h:270 thefile.h:34 thefile.h:68 thefile.h:205 timeshift.h:113
-#: timeshift.h:156 timeshift.h:168 timeshiftsettings.h:45 titan.c:281
+#: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:281
 #: titan.c:345 titan.c:354 titan.c:994 titan.c:1003 titan.c:1128 titan.c:1149
 #: titan.c:1155 titan.c:1166 titan.c:1172 tithek.c:84 tithek_global.h:248
 #: tithek.h:670 tithek.h:1166 tithek.h:1209 tithek.h:1457 tithek.h:1479
@@ -201,7 +201,7 @@ msgstr ""
 #: system_backup_restore.h:80 system_backup_restore.h:82
 #: system_backup_restore.h:88 system_backup_restore.h:95 system_update.h:257
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
-#: thefile.h:205 timeshift.h:113 timeshift.h:156 timeshift.h:168
+#: thefile.h:205 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:281 titan.c:345 titan.c:354 titan.c:994
 #: titan.c:1003 titan.c:1128 titan.c:1149 titan.c:1155 titan.c:1166
 #: titan.c:1172 tithek.c:84 tithek_global.h:248 tithek.h:670 tithek.h:1166
@@ -609,7 +609,7 @@ msgstr ""
 #: stream.h:33 system_backup_restore.h:40 system_backup_restore.h:43
 #: system_backup_restore.h:80 system_backup_restore.h:82 system_update.h:257
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
-#: thefile.h:205 timeshift.h:113 timeshift.h:156 timeshift.h:168
+#: thefile.h:205 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:281 titan.c:345 titan.c:354 titan.c:1128
 #: titan.c:1149 titan.c:1155 titan.c:1166 titan.c:1172 tithek.c:84
 #: tithek_global.h:248 tithek.h:670 tithek.h:1166 tithek.h:1209 tithek.h:1457
@@ -8948,13 +8948,13 @@ msgstr ""
 msgid "Should Timeshift File deleted ?"
 msgstr ""
 
-#: timeshift.h:156
+#: timeshift.h:161
 msgid ""
 "Timeshift file to short\n"
 "please wait a little and try again"
 msgstr ""
 
-#: timeshift.h:168
+#: timeshift.h:173
 msgid "Can't start timeshift play !"
 msgstr ""
 
