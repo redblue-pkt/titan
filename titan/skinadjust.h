@@ -197,7 +197,7 @@ void screenskinadjust()
 			writeskinconfigtmp();
 			if(reboot == 1)
 			{
-				textbox(_("Message"), _("Titan will be restartet !"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+				textbox(_("Message"), _("Titan will be restartet!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 				oshutdown(3, 0);
 			}
       
