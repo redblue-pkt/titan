@@ -691,7 +691,10 @@ void screeninfobar()
 		{
 			//fuer HDMI IN test bei PIP
 			if(status.pipservice->dmxvideodev != NULL)
+			{
 				piphdmi(status.pipservice, 0);
+				continue;
+			}
 /*
 			struct skin* pluginnode = getplugin("Media Center");
 			void (*startplugin)(void);
