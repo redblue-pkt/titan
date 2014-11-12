@@ -388,7 +388,7 @@ int pipstop(struct service *node, int flag)
 
 	if(node != NULL)
 	{
-		if(node->videodev != NULL)
+		if(node->dmxvideodev != NULL)
 		{
 			node->fedev->felock--;
 			deltranspondertunablestatus();
@@ -400,16 +400,43 @@ int pipstop(struct service *node, int flag)
 		videostop(node->videodev, 1);
 		videoclose(node->videodev, -1);
 		
-		pippos(node->videodev, 0, 0, 0, 0, 1);
+		if(flag == 0)
+			pippos(node->videodev, 0, 0, 0, 0, 1);
 		
 		node->videodev = NULL;
-		dmxstop(node->dmxvideodev);
-		dmxclose(node->dmxvideodev, -1);
-		node->dmxvideodev = NULL;
+		
+		if(node->dmxvideodev != NULL)
+		{
+			dmxstop(node->dmxvideodev);
+			dmxclose(node->dmxvideodev, -1);
+			node->dmxvideodev = NULL;
+		}
 				
 		return 0;
 	}
 	return 1;
 }
+
+int piphdmi(struct service *node, int flag)
+{
+	struct dvbdev *videonode = NULL;
+	
+	if(node != NULL && node->type != NOTHING && node->type != HDMIIN)
+		pipstop(status.pipservice, 1);
+	
+	videonode = videoopen(0, 1);
+	node->videodev = videonode;
+	node->type = HDMIIN;
+	
+	if(videonode != NULL)
+	{
+		videoselectsource(videonode, VIDEO_SOURCE_HDMI);
+		videosetstreamtype(videonode, 0);
+		videoplay(videonode);
+	}
+	
+	return 0;
+}
+	
 
 #endif
