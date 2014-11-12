@@ -6116,7 +6116,7 @@ msgid "press red"
 msgstr "bấm nút màu đỏ"
 
 #: skinadjust.h:200
-msgid "Titan will be restartet !"
+msgid "Titan will be restartet!"
 msgstr ""
 
 #: skin_default_skin.xml.h:2
@@ -12846,6 +12846,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid "Receiver now reboot !!!"
-#~ msgstr "Đầu thu đang khởi động lại !!!"
