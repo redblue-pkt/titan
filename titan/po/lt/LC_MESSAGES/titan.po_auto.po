@@ -10277,115 +10277,115 @@ msgid "Network browser extension for better Win7 compatibility"
 msgstr ""
 
 #: tpk_description.h:108
-msgid "Networkbrowser scanning an manage cifs/nfs/ftp shares."
-msgstr ""
-
-#: tpk_description.h:109
 msgid "Networkfile libsmbclient 3.0.28b"
 msgstr ""
 
-#: tpk_description.h:110 tpk_showname.h:83
+#: tpk_description.h:109 tpk_showname.h:83
 msgid "Neutrino Keymap"
 msgstr ""
 
-#: tpk_description.h:111
+#: tpk_description.h:110
 msgid "newcs including all necessary config files."
 msgstr ""
 
-#: tpk_description.h:112
+#: tpk_description.h:111
 msgid "New Downloadfeed for your AAF - Duckbox"
 msgstr ""
 
-#: tpk_description.h:113
+#: tpk_description.h:112
 msgid "news Plugin"
 msgstr ""
 
-#: tpk_description.h:114
+#: tpk_description.h:113
 msgid "Nightly Version of OSCam 8755"
 msgstr ""
 
-#: tpk_description.h:115
+#: tpk_description.h:114
 msgid "Nightly Version of OSCam 8755 small Version"
 msgstr ""
 
-#: tpk_description.h:116
+#: tpk_description.h:115
 msgid "Nightly Version of OSCam 8933 2xSlot intern"
 msgstr ""
 
-#: tpk_description.h:117
+#: tpk_description.h:116
 msgid "Nogfx grey Skin"
 msgstr ""
 
-#: tpk_description.h:118
+#: tpk_description.h:117
 msgid "Nogfx Skin in black. Please use black Picons."
 msgstr ""
 
-#: tpk_description.h:119
+#: tpk_description.h:118
 msgid "Older Version of OSCam"
 msgstr ""
 
-#: tpk_description.h:120
+#: tpk_description.h:119
 msgid "Openvpn Server Tool for external Network access"
 msgstr ""
 
-#: tpk_description.h:121
+#: tpk_description.h:120
 msgid "optimize Plugin"
 msgstr ""
 
-#: tpk_description.h:122 tpk_showname.h:95
+#: tpk_description.h:121 tpk_showname.h:95
 msgid "oscam spezial"
 msgstr ""
 
-#: tpk_description.h:123
+#: tpk_description.h:122
 msgid "Partitions Tool fuer HDD > 2TB"
 msgstr ""
 
-#: tpk_description.h:124
+#: tpk_description.h:123
 msgid "Permanente Uhrzeit am Bildschirm"
 msgstr "Permanent time showing on your screen"
 
-#: tpk_description.h:125
+#: tpk_description.h:124
 msgid "Power off if box not used"
 msgstr "Shutdown the receiver if it is not used."
 
-#: tpk_description.h:126
+#: tpk_description.h:125
 msgid "remote Desktop Plugin"
 msgstr ""
 
-#: tpk_description.h:127
+#: tpk_description.h:126
 msgid "Samba"
 msgstr ""
 
-#: tpk_description.h:128
+#: tpk_description.h:127
 msgid "Samba Server"
 msgstr "Samba serveris"
 
-#: tpk_description.h:129
+#: tpk_description.h:128
 msgid "Sat: Bulldog Settings 3x Sat"
 msgstr ""
 
-#: tpk_description.h:130
+#: tpk_description.h:129
 msgid "Sat: Bulldog Settings Astra 19.2"
 msgstr ""
 
-#: tpk_description.h:131
+#: tpk_description.h:130
 msgid "Sat: Bulldog Settings Hotbird 13.0 + Astra 19.2"
 msgstr ""
 
-#: tpk_description.h:132
+#: tpk_description.h:131
 msgid "Sat: default Settings Astra 19.2"
 msgstr ""
 
-#: tpk_description.h:133
+#: tpk_description.h:132
 msgid "Sat: matze70 Astra 19.2 | 24.10.2014"
 msgstr ""
 
-#: tpk_description.h:134
+#: tpk_description.h:133
 msgid "Sat: matze70 new design Astra 19.2 | 24.10.2014"
 msgstr ""
 
-#: tpk_description.h:135
+#: tpk_description.h:134
 msgid "Sat: uljanow Sat 19.2 plus 13.0 | 21.10.2014"
+msgstr ""
+
+#: tpk_description.h:135
+msgid "Scan and manage cifs/nfs/ftp shares"
 msgstr ""
 
 #: tpk_description.h:136
