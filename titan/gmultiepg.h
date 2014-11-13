@@ -515,11 +515,11 @@ int screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 	akttime -= (((akttime) % 60));
 	time_t starttime = akttime;
 
-	if(chnode == NULL) chnode = status.aktservice->channel;
-	gmultiepgfilldesc(listbox, epgdesc, epgdate, epgnode, chnode, 1);
-
 	// try to adjust size before first drawscreen
 	gmultiepgchangesize(gmultiepg, listbox, channellistbox, timeline);
+
+	if(chnode == NULL) chnode = status.aktservice->channel;
+	gmultiepgfilldesc(listbox, epgdesc, epgdate, epgnode, chnode, 1);
 
 	//chalc screen, so we have all infos
 	drawscreen(gmultiepg, 2, 0);
