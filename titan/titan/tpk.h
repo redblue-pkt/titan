@@ -2972,8 +2972,6 @@ int tpklist()
 		if(minversion != 0 && minversion < PLUGINVERSION)
 			skip = 1;
 
-printf("name: %s\n",name);
-
 		if(skip == 0) 
 		{
 			filename = ostrcat(name, "_", 0, 0);
@@ -3186,7 +3184,7 @@ int tpkgetindex(int flag)
 
 		if(ostrcmp("97.74.32.10", ip) == 0)
 		{
-			if(ostrcmp(path, "//svn/ipk/atemio510-rev12841/sh4/titan") == 0)
+			if(ostrcmp(path, "/svn/tpk/sh4") == 0)
 			{
 				textbox(_("Message"), _("check your Secret Feed !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 				err = 1;
