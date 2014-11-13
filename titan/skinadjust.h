@@ -15,6 +15,9 @@ void screenskinadjust()
 	struct skin* bottomoffset = getscreennode(skinadjust, "bottomoffset");
 	struct skin* showrecfreesize = getscreennode(skinadjust, "showrecfreesize");
 	struct skin* listboxselect = getscreennode(skinadjust, "listboxselect");
+	struct skin* tithek_selectcol = getscreennode(skinadjust, "tithek_selectcol");
+	struct skin* filelistselect = getscreennode(skinadjust, "filelistselect");
+	
 	struct skin* oled_sel = getscreennode(skinadjust, "oled_sel");
 	struct skin* pic1 = getscreennode(skinadjust, "pic1");
 	struct skin* pic2 = getscreennode(skinadjust, "pic2");
@@ -99,6 +102,8 @@ void screenskinadjust()
 	setchoiceboxselection(showrecfreesize, getconfig("showrecfreesize", NULL));
 	
 	addchoicebox(listboxselect, "0", _("press red"));
+	addchoicebox(tithek_selectcol, "1", _("press green"));
+	addchoicebox(filelistselect, "2", _("press yellow"));
 
 	drawscreen(skinadjust, 0, 0);
 	addscreenrc(skinadjust, listbox);
@@ -171,6 +176,36 @@ void screenskinadjust()
 				if(tmpstr != NULL)
 					addskinconfigtmp("listboxselect", tmpstr);
 				if(oldlistboxselectcol != convertcol("listboxselect")) reboot = 1;
+				drawscreen(skinadjust, 0, 0);
+			}
+			
+			continue;		
+		}
+
+		if(rcret == getrcconfigint("rcgreen", NULL))
+		{
+			if(listbox->select != NULL && ostrcmp(listbox->select->name, "tithek_selectcol") == 0)
+			{
+				long oldtithek_selectcol = convertcol("tithek_selectcol");
+				char* tmpstr = screencolorpicker(getskinconfig("tithek_selectcol", NULL), 0, 0, 0);
+				if(tmpstr != NULL)
+					addskinconfigtmp("tithek_selectcol", tmpstr);
+				if(oldtithek_selectcol != convertcol("tithek_selectcol")) reboot = 1;
+				drawscreen(skinadjust, 0, 0);
+			}
+			
+			continue;		
+		}
+
+		if(rcret == getrcconfigint("rcyellow", NULL))
+		{
+			if(listbox->select != NULL && ostrcmp(listbox->select->name, "filelistselect") == 0)
+			{
+				long oldfilelistselect = convertcol("filelistselect");
+				char* tmpstr = screencolorpicker(getskinconfig("filelistselect", NULL), 0, 0, 0);
+				if(tmpstr != NULL)
+					addskinconfigtmp("filelistselect", tmpstr);
+				if(oldfilelistselect != convertcol("filelistselect")) reboot = 1;
 				drawscreen(skinadjust, 0, 0);
 			}
 			
