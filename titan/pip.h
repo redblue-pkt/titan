@@ -70,6 +70,9 @@ int pipstartreal(struct channel* chnode, char* pin, int flag)
 	status.pipservice->transponder = tpnode;
 	status.pipservice->channel = chnode;
 	status.pipservice->type = CHANNEL;
+	free(status.pipservice->channellist);
+	status.pipservice->channellist = ostrcat(status.aktservice->channellist, NULL, 0, 0);
+	
 
 	//got frontend dev
 	if(flag == 0)
@@ -440,6 +443,7 @@ int piphdmi(struct service *node, int flag)
 
 int pipswap(struct service *node)
 {
+	char* tmpstr ostrcat(node->channellist, NULL, 0, 0);
 	struct channel* chnodeP = node->channel;
 	struct channel* chnodeT = status.aktservice->channel;
 	
@@ -474,7 +478,7 @@ void pipmenu()
 		dst_width = 180;
 		dst_height = 144;
 	}
-	ifdst_height == 0)
+	if(dst_height == 0)
 	{
 		dst_width = 180;
 		dst_height = 144;
@@ -538,29 +542,29 @@ void pipmenu()
 		}
 		if(rcret == getrcconfigint("rcright", NULL))
 		{
-			if(dst_left+1 < 720-pip_dst_width) dst_left++;
+			if(dst_left+1 < 720-dst_width) dst_left++;
 		}
 		
 		if(rcret == getrcconfigint("rcchdown", NULL))
 		{
-			if(pip_dst_width-4 > 10)
+			if(dst_width-4 > 10)
 			{
-				pip_dst_width = pip_dst_width - 4;
-				pip_dst_height = 576 * pip_dst_width / 720;
+				dst_width = dst_width - 4;
+				dst_height = 576 * dst_width / 720;
 			}
 		}
 		if(rcret == getrcconfigint("rcchup", NULL))
 		{
-			if(pip_dst_width+4 < 720)
+			if(dst_width+4 < 720)
 			{
-				pip_dst_width = pip_dst_width + 4;
-				pip_dst_height = 576 * pip_dst_width / 720;
+				dst_width = dst_width + 4;
+				dst_height = 576 * dst_width / 720;
 				
-				if(pip_dst_width + dst_left > 720)
-					dst_left = 720 - pip_dst_width;
+				if(dst_width + dst_left > 720)
+					dst_left = 720 - dst_width;
 					
-				if(pip_dst_height + dst_top > 576)
-					dst_top = 576 - pip_dst_height;
+				if(dst_height + dst_top > 576)
+					dst_top = 576 - dst_height;
 			}
 		}
 		pippos(status.pipservice->videodev, dst_width, dst_height, dst_left, dst_top, 1);
