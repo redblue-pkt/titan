@@ -446,8 +446,7 @@ int pipswap(struct service *node)
 	char* tmpstr = NULL;
 	struct channel* chnodeP = node->channel;
 	struct channel* chnodeT = status.aktservice->channel;
-	
-	if(node->type == CHANNEL)
+	if(node->type == CHANNEL && chnodeP != NULL && chnodeP != chnodeT)
 	{
 		pipstop(node, 0);
 		tmpstr = ostrcat(node->channellist, NULL, 0, 0);
@@ -521,9 +520,13 @@ void pipmenu()
 			{
 				pipstop(status.pipservice, 1);
 				pipstart(status.aktservice->channel, NULL, 0);
+				changetext(hdmi, "HDMI-in");
 			}
 			else
+			{
 				piphdmi(status.pipservice, 0);
+				changetext(hdmi, "live TV");
+			}
 			continue;
 		}
 		
