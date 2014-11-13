@@ -6603,9 +6603,9 @@ char* system_logs(int mode)
 	{
 //		if(file_exist("/etc/.beta"))
 #ifdef MIPSEL
-			path = ostrcat(path, "/svn/image-beta/changelog.mipsel.git", 1, 0);
+			path = ostrcat(path, "/svn/image-beta/changelog.git.mipsel", 1, 0);
 #else
-			path = ostrcat(path, "/svn/image-beta/changelog.sh4.git", 1, 0);
+			path = ostrcat(path, "/svn/image-beta/changelog.git.sh4", 1, 0);
 #endif
 //		else
 //			path = ostrcat(path, "/svn/image/changelog.git", 1, 0);
