@@ -951,6 +951,7 @@ void screeninfobar()
 			}
 			else
 			{
+				clearscreen(infobar);
 				pipmenu();
 				clearscreen(infobar);
 				//pipstop(status.pipservice, 0);
