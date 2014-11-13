@@ -2421,7 +2421,7 @@ msgstr "Fehler, Streaming kann nicht gestoppt werden"
 #: httpdfunc.h:5357 httpdfunc.h:5466 skin_default_skin.xml.h:664
 #: webif_system.h:2 webif_system_update.h:1
 msgid "System Update"
-msgstr "System Aktualisierung"
+msgstr "Softwareaktualisierung"
 
 #: httpdfunc.h:5480 system_update.h:220
 msgid "starting Full Update ?"
@@ -7068,17 +7068,17 @@ msgid ""
 "Flash: Flash range is deleted after update, mnt: flash range to permanently "
 "update available, swap: USB medium permanently"
 msgstr ""
-"MNT Installation (flash): wird bei Update nicht gelöscht\n"
-"FLASH Installation (flash): !wird bei Update gelöscht!\n"
+"MNT Installation (flash): wird bei Update nicht gelöscht!\n"
+"FLASH Installation (flash): wird bei Update gelöscht!\n"
 "SWAP Installation (USB/HDD): wird bei Update nicht gelöscht"
 
 #: skin_default_skin.xml.h:246 webif_system_update.h:2
 msgid "Flashupdate (online)"
-msgstr "Softwareaktualisierung (Online)"
+msgstr "Flash-Image (Online)"
 
 #: skin_default_skin.xml.h:247 webif_system_update.h:3
 msgid "Flashupdate (tmp)"
-msgstr "Softwareaktualisierung (Lokal/Backup)"
+msgstr "Flash-Image (Lokal/Sicherung)"
 
 #: skin_default_skin.xml.h:248
 msgid "Fontsize adjust in pixel"
@@ -8535,11 +8535,11 @@ msgstr ""
 
 #: skin_default_skin.xml.h:659
 msgid "System - Flashupdate (online)"
-msgstr "Softwareaktualisierung (Online)"
+msgstr "Flash-Image Aktualisierung (Online)"
 
 #: skin_default_skin.xml.h:660
 msgid "System - Flashupdate (tmp)"
-msgstr "Softwareaktualisierung (tmp)"
+msgstr "Flash-Image Aktualisierung (Lokal/Backup)"
 
 #: skin_default_skin.xml.h:661 webif_info.h:6 webif_systeminfo.h:1
 msgid "System Info"
@@ -8552,11 +8552,11 @@ msgstr "System Informationen"
 
 #: skin_default_skin.xml.h:665
 msgid "System - Usbupdate (online)"
-msgstr "USB Systemaktualisierung (Online)"
+msgstr "USB-Image Aktualisieren (Online)"
 
 #: skin_default_skin.xml.h:666
 msgid "System - Usbupdate (tmp)"
-msgstr "USB Systemaktualisierung (tmp)"
+msgstr "USB-Image Aktualisieren (Lokal)"
 
 #: skin_default_skin.xml.h:667
 msgid "sz"
@@ -8769,11 +8769,11 @@ msgstr "Aktualisiere vorhandene Einträge"
 
 #: skin_default_skin.xml.h:734
 msgid "Usbupdate (online)"
-msgstr "USB-Aktualisierung (Online)"
+msgstr "USB-Image (Online)"
 
 #: skin_default_skin.xml.h:735
 msgid "Usbupdate (tmp)"
-msgstr "Softwareaktualisierung (USB)"
+msgstr "USB-Image (Lokal)"
 
 #: skin_default_skin.xml.h:737
 msgid "Use EPG Endtime"
@@ -12331,23 +12331,23 @@ msgstr "System Sysinfos Hauptmenü"
 
 #: webif_help.h:99
 msgid "systemupdate_flash_online_menu"
-msgstr "Softwareaktualisierung (Online)"
+msgstr "Flash-Image Aktualisierung (Online)"
 
 #: webif_help.h:100
 msgid "systemupdate_flash_tmp_menu"
-msgstr "Softwareaktualisierung (Lokal)"
+msgstr "Flash-Image Aktualisierung (Lokal)"
 
 #: webif_help.h:101
 msgid "systemupdatemenu"
-msgstr "Systemaktualisierung Menü"
+msgstr "Systemaktualisierungs Menü"
 
 #: webif_help.h:102
 msgid "systemupdate_usb_online_menu"
-msgstr "USB Systemaktualisierung (Online)"
+msgstr "USB-Image Aktualisierung (Online)"
 
 #: webif_help.h:103
 msgid "systemupdate_usb_tmp_menu"
-msgstr "USB Systemaktualisierung (Lokal)"
+msgstr "USB-Image Aktualisierung (Lokal)"
 
 #: webif_help.h:104
 msgid "textinputhist"
