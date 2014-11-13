@@ -1036,6 +1036,7 @@ void setskinnodeslocked(int flag)
 
 #ifdef MIPSEL
 			if(ostrcmp("system_backup", child->name) == 0) child->locked = 1;
+			if(ostrcmp("system_update_usb_tmp", child->name) == 0) child->locked = 1;
 #endif
 			if(checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1)
 			{
