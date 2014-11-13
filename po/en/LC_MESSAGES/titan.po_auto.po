@@ -10632,15 +10632,19 @@ msgstr ""
 msgid "check your Secret Feed !"
 msgstr "Check the secret feed address!"
 
-#: tpk.h:3441
+#: tpk.h:3439
+msgid "installed"
+msgstr ""
+
+#: tpk.h:3448
 msgid "Section: "
 msgstr ""
 
-#: tpk.h:3444
+#: tpk.h:3451
 msgid "Description:"
 msgstr ""
 
-#: tpk.h:3449 tpk.new.h:3411
+#: tpk.h:3456 tpk.new.h:3411
 msgid "no description found"
 msgstr "No description found"
 
