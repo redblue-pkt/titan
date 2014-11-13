@@ -443,15 +443,20 @@ int piphdmi(struct service *node, int flag)
 
 int pipswap(struct service *node)
 {
-	char* tmpstr = ostrcat(node->channellist, NULL, 0, 0);
+	char* tmpstr = NULL;
 	struct channel* chnodeP = node->channel;
 	struct channel* chnodeT = status.aktservice->channel;
 	
 	if(node->type == CHANNEL)
 	{
 		pipstop(node, 0);
+		tmpstr = ostrcat(node->channellist, NULL, 0, 0);
 		servicecheckret(servicestart(chnodeP, tmpstr, NULL, 0), 0);
+		free(tmpstr); tmpstr = NULL;
+		
 		pipstart(chnodeT, NULL, 0);
+		free(node->channellist);
+		node->channellist = ostrcat(status.lastservice->channellist, NULL, 0, 0);
 	}
 	else
 	{
@@ -524,7 +529,7 @@ void pipmenu()
 		
 		if(rcret == getrcconfigint("rcblue", NULL))
 		{
-			pipswap();
+			pipswap(status.pipservice);
 			continue;
 		}
 			
