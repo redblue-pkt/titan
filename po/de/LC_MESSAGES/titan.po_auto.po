@@ -7074,7 +7074,7 @@ msgstr "Softwareaktualisierung (Online)"
 
 #: skin_default_skin.xml.h:246 webif_system_update.h:3
 msgid "Flashupdate (tmp)"
-msgstr "Softwareaktualisierung (Lokal)"
+msgstr "Softwareaktualisierung (Lokal/Backup)"
 
 #: skin_default_skin.xml.h:247
 msgid "Fontsize adjust in pixel"
