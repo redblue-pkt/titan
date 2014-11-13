@@ -392,8 +392,8 @@ int pipstop(struct service *node, int flag)
 		{
 			node->fedev->felock--;
 			deltranspondertunablestatus();
+			if(node->type != NOTHING && node->type != STILLPIC) caservicedel(node, NULL);
 		}
-		if(node->type != NOTHING && node->type != STILLPIC) caservicedel(node, NULL);
 
 		node->type = NOTHING;
 
@@ -432,10 +432,139 @@ int piphdmi(struct service *node, int flag)
 	{
 		videoselectsource(videonode, VIDEO_SOURCE_HDMI);
 		videosetstreamtype(videonode, 0);
-		videoplay(videonode);
+		videoplay(videonode); 
 	}
 	
 	return 0;
+}
+
+int pipswap(struct service *node)
+{
+	struct channel* chnodeP = node->channel;
+	struct channel* chnodeT = status.aktservice->channel;
+	
+	if(node->type == CHANNEL)
+	{
+		pipstop(node, 0);
+		servicecheckret(servicestart(chnodeP, tmpstr, NULL, 0), 0);
+		pipstart(chnodeT, NULL, 0);
+	}
+	else
+	{
+		return 1;
+	}
+	return 0;
+}
+	
+	
+
+void pipmenu()
+{
+	struct skin* pipscreen = getscreen("pipscreen");
+	struct skin* hdmi = getscreennode(pipscreen, "hdmi");
+	int rcret = 0;
+	
+	int dst_width = getconfigint("pip_dst_width", NULL);
+	int dst_height = getconfigint("pip_dst_height", NULL);
+	int dst_left = getconfigint("pip_dst_left", NULL);
+	int dst_top = getconfigint("pip_dst_top", NULL);
+
+	if(dst_width == 0)
+	{
+		dst_width = 180;
+		dst_height = 144;
+	}
+	ifdst_height == 0)
+	{
+		dst_width = 180;
+		dst_height = 144;
+	}
+	if(dst_left == 0) dst_left = 505;
+	if(dst_top == 0) dst_top = 36;
+		
+	if(status.pipservice->type == HDMIIN)
+		changetext(hdmi, "live TV");
+	
+	while(1)
+	{
+		drawscreen(pipscreen, 0, 0);
+		rcret = waitrc(pipscreen, 0, 0);
+		clearscreen(pipscreen);
+		
+		if(rcret == getrcconfigint("rcexit", NULL))
+		{
+			pipstop(status.pipservice, 0);
+			break;
+		}
+			
+		if(rcret == getrcconfigint("rcok", NULL))
+		{
+			addconfigint("pip_dst_width", dst_width);
+			addconfigint("pip_dst_height", dst_height);
+			addconfigint("pip_dst_left", dst_left);
+			addconfigint("pip_dst_top", dst_top);
+			break;
+		}
+		
+		if(rcret == getrcconfigint("rcred", NULL))
+		{
+			if(status.pipservice->type == HDMIIN)
+			{
+				pipstop(status.pipservice, 1);
+				pipstart(status.aktservice->channel, NULL, 0);
+			}
+			else
+				piphdmi(status.pipservice, 0);
+			continue;
+		}
+		
+		if(rcret == getrcconfigint("rcblue", NULL))
+		{
+			pipswap();
+			continue;
+		}
+			
+		if(rcret == getrcconfigint("rcdown", NULL))
+		{
+			if(dst_top+1 < 576-dst_height) dst_top++;
+		}
+		if(rcret == getrcconfigint("rcup", NULL))
+		{
+			if(dst_top-1 > 0) dst_top--;
+		}
+		if(rcret == getrcconfigint("rcleft", NULL))
+		{
+			if(dst_left-1 > 0) dst_left--;
+		}
+		if(rcret == getrcconfigint("rcright", NULL))
+		{
+			if(dst_left+1 < 720-pip_dst_width) dst_left++;
+		}
+		
+		if(rcret == getrcconfigint("rcchdown", NULL))
+		{
+			if(pip_dst_width-4 > 10)
+			{
+				pip_dst_width = pip_dst_width - 4;
+				pip_dst_height = 576 * pip_dst_width / 720;
+			}
+		}
+		if(rcret == getrcconfigint("rcchup", NULL))
+		{
+			if(pip_dst_width+4 < 720)
+			{
+				pip_dst_width = pip_dst_width + 4;
+				pip_dst_height = 576 * pip_dst_width / 720;
+				
+				if(pip_dst_width + dst_left > 720)
+					dst_left = 720 - pip_dst_width;
+					
+				if(pip_dst_height + dst_top > 576)
+					dst_top = 576 - pip_dst_height;
+			}
+		}
+		pippos(status.pipservice->videodev, dst_width, dst_height, dst_left, dst_top, 1);
+	}
 }
 	
 

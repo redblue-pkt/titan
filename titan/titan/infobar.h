@@ -689,12 +689,6 @@ void screeninfobar()
 		}
 		if(rcret == getrcconfigint("rcmedia", NULL))
 		{
-			//fuer HDMI IN test bei PIP
-			if(status.pipservice->dmxvideodev != NULL)
-			{
-				piphdmi(status.pipservice, 0);
-				continue;
-			}
 /*
 			struct skin* pluginnode = getplugin("Media Center");
 			void (*startplugin)(void);
@@ -874,7 +868,7 @@ void screeninfobar()
 			{
 				tmpstr = ostrcat(status.lastservice->channellist, NULL, 0, 0);
 				servicecheckret(servicestart(status.lastservice->channel, tmpstr, NULL, 0), 0);
-				free(tmpstr); tmpstr = NULL;
+				free(tmpstr); tmpstr = NULL; 
 			}
 			infobartimeout = 0;
 			infobar = infobar1;
@@ -957,7 +951,9 @@ void screeninfobar()
 			}
 			else
 			{
-				pipstop(status.pipservice, 0);
+				pipmenu();
+				clearscreen(infobar);
+				//pipstop(status.pipservice, 0);
 				pipchannel = NULL;
 			}
 		}
