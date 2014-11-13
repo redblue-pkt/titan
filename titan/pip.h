@@ -443,7 +443,7 @@ int piphdmi(struct service *node, int flag)
 
 int pipswap(struct service *node)
 {
-	char* tmpstr ostrcat(node->channellist, NULL, 0, 0);
+	char* tmpstr = ostrcat(node->channellist, NULL, 0, 0);
 	struct channel* chnodeP = node->channel;
 	struct channel* chnodeT = status.aktservice->channel;
 	
