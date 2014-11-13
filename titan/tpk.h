@@ -2165,7 +2165,7 @@ int tpkinstall(char* file, char* installpath, int flag)
 				{
 					err("can't install tpk with same group %s (group %d)", path, tpknode->group);
 					ret = 1;
-          groupskip = 1; 					
+					groupskip = 1; 					
 					goto end;
 				}
 				node = node->next;
@@ -2949,7 +2949,7 @@ int tpklist()
 
 		//check group
 		int skip = 0;
-		 /* 
+/* 
 		if(group != 0)
 		{
 			struct tpk* node = tpkinstalled;
@@ -2963,7 +2963,7 @@ int tpklist()
 				node = node->next;
 			}
 		}
-    */ 		
+*/ 		
 		//check boxtype
 		if(boxtype != NULL && ostrcmp(boxtype, "*") != 0 && ostrstr(boxtype, getboxtype()) == NULL)
 			skip = 1;
@@ -2971,6 +2971,8 @@ int tpklist()
 		//check minversion
 		if(minversion != 0 && minversion < PLUGINVERSION)
 			skip = 1;
+
+printf("name: %s\n",name);
 
 		if(skip == 0) 
 		{
@@ -3184,7 +3186,7 @@ int tpkgetindex(int flag)
 
 		if(ostrcmp("97.74.32.10", ip) == 0)
 		{
-			if(ostrcmp(path, "/svn/tpk/sh4") == 0)
+			if(ostrcmp(path, "//svn/ipk/atemio510-rev12841/sh4/titan") == 0)
 			{
 				textbox(_("Message"), _("check your Secret Feed !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 				err = 1;
@@ -3425,14 +3427,21 @@ struct menulist* tpkmenulist(struct menulist* mlist, char* paramskinname, char* 
 			
 			//check if tpk is in section
 			if(section != NULL && ostrcmp(node->section, section) != 0)
-				skip = 1;
+				skip = 2;
 
-			if(skip == 1)
+			if(skip == 2)
 			{
 				node = node->next;
 				continue;
 			}
-			
+
+			if(skip == 1)
+			{
+				tmpstr = ostrcat(tmpstr, "(", 1, 0);
+				tmpstr = ostrcat(tmpstr, _("installed"), 1, 0);
+				tmpstr = ostrcat(tmpstr, ") ", 1, 0);
+			}
+
 			tmpstr = ostrcat(tmpstr, _(node->showname), 1, 0);
 			tmpstr = ostrcat(tmpstr, " v.", 1, 0);
 			tmpstr = ostrcat(tmpstr, oitoa(node->version), 1, 1);
@@ -3484,7 +3493,11 @@ struct menulist* tpkmenulist(struct menulist* mlist, char* paramskinname, char* 
 				free(tmpstr3); tmpstr3 = NULL;
 			}
 
-			tmpmlist = addmenulist(&mlist, tmpstr, tmpinfo, tmppic, 0, 0);
+			if(skip == 1)
+				tmpmlist = addmenulist(&mlist, tmpstr, tmpinfo, tmppic, 1, 0);
+			else
+				tmpmlist = addmenulist(&mlist, tmpstr, tmpinfo, tmppic, 0, 0);
+			
 			char* size = oitoa(node->size);
 			changemenulistparam(tmpmlist, node->filename, node->url, node->usepath, size);
 			free(size); size = NULL;
