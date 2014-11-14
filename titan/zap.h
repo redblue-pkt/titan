@@ -107,7 +107,7 @@ start:
 			node = node->prev;
 	}
 
-	if(virtualzap != 0)
+	if(virtualzap != 0 && status.pipzap == 0)
 	{
 		if(node != NULL)
 			lastnode = node;
@@ -231,7 +231,7 @@ start:
 		}
 	}
 
-	if(virtualzap != 0)
+	if(virtualzap != 0 && status.pipzap == 0)
 	{
 		if(node != NULL)
 			lastnode = node;
@@ -322,7 +322,7 @@ start:
 		}
 	}
 
-	if(virtualzap != 0)
+	if(virtualzap != 0 && status.pipzap == 0)
 	{
 		if(node != NULL)
 			lastnode = node;
@@ -410,7 +410,7 @@ start:
 		}
 	}
 
-	if(virtualzap != 0)
+	if(virtualzap != 0 && status.pipzap == 0)
 	{
 		if(node != NULL)
 			lastnode = node;
