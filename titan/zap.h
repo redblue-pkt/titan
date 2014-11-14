@@ -136,7 +136,7 @@ start:
 		if(status.pipzap == 0)
 			servicecheckret(servicestart(node, NULL, NULL, 0), 0);
 		else
-			pipstart(pipstart(node, NULL, 0));
+			pipstart(node, NULL, 0);
 
 	return 0;
 }
@@ -163,7 +163,7 @@ int zapbouquet(int zapdir, char* aktblist)
 					if(status.pipzap == 0)
 						servicecheckret(servicestart(tmpchannel, NULL, NULL, 0), 0);
 					else
-						pipstart(pipstart(tmpchannel, NULL, 0));
+						pipstart(tmpchannel, NULL, 0);
 				}
 				return 0;
 			}
@@ -245,7 +245,7 @@ start:
 		if(status.pipzap == 0)
 			servicecheckret(servicestart(node, NULL, NULL, 0), 0);
 		else
-			pipstart(pipstart(node, NULL, 0));
+			pipstart(node, NULL, 0);
 
 	return 0;
 }
@@ -326,7 +326,7 @@ start:
 		if(status.pipzap == 0)
 			servicecheckret(servicestart(node, NULL, NULL, 0), 0);
 		else
-			pipstart(pipstart(node, NULL, 0));
+			pipstart(node, NULL, 0);
 	
 	return 0;
 }
@@ -404,7 +404,7 @@ start:
 		if(status.pipzap == 0)
 			servicecheckret(servicestart(node, NULL, NULL, 0), 0);
 		else
-			pipstart(pipstart(node, NULL, 0));
+			pipstart(node, NULL, 0);
 
 	return 0;
 }
