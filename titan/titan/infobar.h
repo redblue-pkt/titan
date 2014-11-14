@@ -948,14 +948,15 @@ void screeninfobar()
 			{
 				pipchannel = status.aktservice->channel;
 				printf("++++ RC: %i\n",pipstart(pipchannel, NULL, 0));
+				pipchannel = NULL;
 			}
 			else
 			{
-				clearscreen(infobar);
 				pipmenu();
+				drawscreen(skin, 0, 0);
 				clearscreen(infobar);
 				//pipstop(status.pipservice, 0);
-				pipchannel = NULL;
+				continue;
 			}
 		}
 	
