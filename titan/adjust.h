@@ -374,7 +374,8 @@ void screenadjust()
 			status.expertmodus = getconfigint("expertmodus", NULL);					
 			addconfigscreencheck("infobarprogram", infobarprogram, "0");
 			status.infobarprogram = getconfigint("infobarprogram", NULL);
-			addconfigscreencheck("crosscontrol", crosscontrol, "0");
+			addconfigscreen("crosscontrol", crosscontrol);
+			//addconfigscreencheck("crosscontrol", crosscontrol, "0");
 			status.crosscontrol = getconfigint("crosscontrol", NULL);
 			addconfigscreencheck("emucontrol", emucontrol, "0");
 
