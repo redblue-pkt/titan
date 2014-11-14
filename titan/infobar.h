@@ -892,8 +892,11 @@ void screeninfobar()
 				zapup();
 			clearscreen(infobar);
 			drawscreen(skin, 0, 0);
-			infobartimeout = 0;
-			status.infobar = 2;
+			if(status.pipzap == 0)
+			{	
+				infobartimeout = 0;
+				status.infobar = 2;
+			}
 			continue;
 		}
 		if(rcret == getrcconfigint("rcchdown", NULL) || (status.crosscontrol > 0 && status.play == 0 && status.pause == 0 && rcret == getrcconfigint("rcup", NULL)))
@@ -909,8 +912,11 @@ void screeninfobar()
 				zapdown();
 			clearscreen(infobar);
 			drawscreen(skin, 0, 0);
-			infobartimeout = 0;
-			status.infobar = 2;
+			if(status.pipzap == 0)
+			{	
+				infobartimeout = 0;
+				status.infobar = 2;
+			}
 			continue;
 		}
 		if(rcret == rcnumber(rcret))

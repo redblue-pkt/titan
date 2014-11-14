@@ -76,7 +76,17 @@ start:
 int zapall(int zapdir)
 {
 	int rcret = 0;
-	struct channel* node = status.aktservice->channel, *lastnode = status.aktservice->channel;
+	struct channel* node = NULL, *lastnode = NULL;
+	if(status.pipzap == 0)
+	{
+		node = status.aktservice->channel;
+		lastnode = status.aktservice->channel;
+	}
+	else
+	{
+		node = status.pipservice->channel;
+		lastnode = status.pipservice->channel;
+	}
 	struct skin* infobar = getscreen("infobar");
 	struct channel* tmpchnode = status.aktservice->channel;
 	int virtualzap = status.virtualzap * 1000;
@@ -145,7 +155,12 @@ int zapbouquet(int zapdir, char* aktblist)
 {
 	// got pointer to mainbouquet
 	struct mainbouquet* mainbouquetnode = NULL;
-
+	struct channel* channel = NULL;
+	if(status.pipzap == 0)
+		channel = status.aktservice->channel;
+	else
+		channel = status.pipservice->channel;
+	
 	mainbouquetnode = getmainbouquet(aktblist + 10);
 	if(mainbouquetnode != NULL && mainbouquetnode->bouquet != NULL)
 	{
@@ -153,7 +168,7 @@ int zapbouquet(int zapdir, char* aktblist)
 		struct bouquet* node = mainbouquetnode->bouquet;
 		while(node != NULL)
 		{
-			if(node->channel == status.aktservice->channel)
+			if(node->channel == channel)
 			{
 				struct channel* tmpchannel = NULL;
 				
@@ -176,7 +191,17 @@ int zapbouquet(int zapdir, char* aktblist)
 int zapaz(int zapdir, char* aktblist)
 {
 	int rcret = 0;
-	struct channel* node = status.aktservice->channel, *lastnode = status.aktservice->channel;
+	struct channel* node = NULL, *lastnode = NULL;
+	if(status.pipzap == 0)
+	{
+		node = status.aktservice->channel;
+		lastnode = status.aktservice->channel;
+	}
+	else
+	{
+		node = status.pipservice->channel;
+		lastnode = status.pipservice->channel;
+	}
 	struct skin* infobar = getscreen("infobar");
 	struct channel* tmpchnode = status.aktservice->channel;
 	int virtualzap = status.virtualzap * 1000;
@@ -253,7 +278,17 @@ start:
 int zapsat(int zapdir, char* aktblist)
 {
 	int rcret = 0;
-	struct channel* node = status.aktservice->channel, *lastnode = status.aktservice->channel;
+	struct channel* node = NULL, *lastnode = NULL;
+	if(status.pipzap == 0)
+	{
+		node = status.aktservice->channel;
+		lastnode = status.aktservice->channel;
+	}
+	else
+	{
+		node = status.pipservice->channel;
+		lastnode = status.pipservice->channel;
+	}
 	struct sat* satnode = getsat(aktblist + 6);
 	struct transponder* tpnode = NULL;
 	struct skin* infobar = getscreen("infobar");
@@ -334,7 +369,17 @@ start:
 int zapprovider(int zapdir, char* aktblist)
 {
 	int rcret = 0;
-	struct channel* node = status.aktservice->channel, *lastnode = status.aktservice->channel;
+	struct channel* node = NULL, *lastnode = NULL;
+	if(status.pipzap == 0)
+	{
+		node = status.aktservice->channel;
+		lastnode = status.aktservice->channel;
+	}
+	else
+	{
+		node = status.pipservice->channel;
+		lastnode = status.pipservice->channel;
+	}
 	struct provider* providernode = getproviderbyname(aktblist + 11);
 	struct skin* infobar = getscreen("infobar");
 	struct channel* tmpchnode = status.aktservice->channel;
