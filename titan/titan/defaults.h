@@ -124,6 +124,7 @@ void setdefaults()
 	status.virtualzap = getconfigint("virtualzap", NULL);
 	status.fontsizeadjust = getskinconfigint("fontsizeadjust", NULL);
 	status.rcskipms = getconfigint("rcskipms", NULL);
+	status.pipzap = 0;
 	
 	if(checkbox("ATEMIO7600") == 1) delconfig("fastzap");
 	if(status.filelistselectcol == 0) status.filelistselectcol = status.listboxselectcol;

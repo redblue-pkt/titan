@@ -368,6 +368,9 @@ int pipstart(struct channel* chnode, char* pin, int flag)
 	if(dst_left == 0) dst_left = 505;
 	if(dst_top == 0) dst_top = 36;
 
+	if(status.pipservice->type == CHANNEL)
+		pipstop(status.pipservice, 1);
+	
 	ret = pipstartreal(chnode, pin, flag);
 	
 	if(status.secondzap != 0 && ret == 0 && (flag == 0 || flag > 2))
@@ -381,6 +384,7 @@ int pipstart(struct channel* chnode, char* pin, int flag)
 		status.pipservice->fedev->felock++;
 		deltranspondertunablestatus();
 		ret = pippos(status.pipservice->videodev, dst_width, dst_height, dst_left, dst_top, 1);
+		status.pipzap = getconfigint("pip_zap", NULL);
 	}
 
 	return ret;
@@ -414,7 +418,7 @@ int pipstop(struct service *node, int flag)
 			dmxclose(node->dmxvideodev, -1);
 			node->dmxvideodev = NULL;
 		}
-				
+		status.pipzap = 0;		
 		return 0;
 	}
 	return 1;
@@ -437,6 +441,7 @@ int piphdmi(struct service *node, int flag)
 		videosetstreamtype(videonode, 0);
 		videoplay(videonode); 
 	}
+	status.pipzap = 0;
 	
 	return 0;
 }
