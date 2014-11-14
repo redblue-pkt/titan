@@ -1532,9 +1532,10 @@ struct status
 	//cec mipsel
 	int cec_fixedAddress;
 	int hdmiFd;
+
+#endif
 	//pip Einstellungen
 	int pipzap;
-#endif
 } status;
 
 struct fb
