@@ -3489,7 +3489,7 @@ msgstr "Netzwerk Browser - gefundene cifs/nfs Freigaben"
 msgid "Choose your cifs/nfs Share from the following list"
 msgstr ""
 "Freigaben des Servers\n"
-"Zum Bearbeiten und Speichern bitte Freigabe auswählen und -OK- drücken. "
+"Zum Bearbeiten und Speichern bitte Freigabe auswählen und -OK- drücken.\n"
 "Für Windows Freigaben (cifs/smb) muss evtl. Authentifizierung benutzt "
 "werden."
 
@@ -3578,7 +3578,7 @@ msgstr "Netzwerk Browser - Freigaben"
 msgid "Choose your Shares from the following list"
 msgstr ""
 "Liste Ihrer gespeicherten Freigaben. Zum Bearbeiten Eintrag wählen und -"
-"Grün- drücken. Um weitere Freigaben hinzuzufügen bitte -Suche- benutzen. "
+"Grün- drücken. Um weitere Freigaben hinzuzufügen bitte -Suche- benutzen.\n"
 "Für den Zugriff auf passwortgeschützte Windows Freigaben bitte Menü "
 "drücken und die Benutzerdaten eingeben."
 
@@ -4132,7 +4132,7 @@ msgstr "Suche diesen Titel bei Internet-Radio (local)"
 #: play.h:706
 msgid "Choose your Red-Menu entry from the following list"
 msgstr ""
-"Wählen Sie den gewünschten Eintrag für das Rot Menü aus der folgenden "
+"Wählen Sie den gewünschten Eintrag für das Rot Menü aus der folgenden\n"
 "Liste"
 
 #: play.h:1193
@@ -6173,7 +6173,7 @@ msgid ""
 "Choose your Media plugin item from the following list and show it so the "
 "plugin button"
 msgstr ""
-"Wählen Sie den gewünschten Eintrag für das Media Menü aus der folgenden "
+"Wählen Sie den gewünschten Eintrag für das Media Menü aus der folgenden\n"
 "Liste"
 
 #: settings_pluginbutton.h:6
@@ -7233,7 +7233,7 @@ msgstr "Hier können Sie Ihre CI-Module konfigurieren"
 #: skin_default_skin.xml.h:286
 msgid "Here you can configure the smartcard readers."
 msgstr ""
-"Hier können Sie Ihre Smartcards zurücksetzen. Sollten keine Karten "
+"Hier können Sie Ihre Smartcards zurücksetzen. Sollten keine Karten\n"
 "angezeigt werden, dann ist ein Softcam mit Zugriff auf die Kartenleser aktiv."
 
 #: skin_default_skin.xml.h:287
