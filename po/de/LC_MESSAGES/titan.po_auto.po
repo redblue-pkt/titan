@@ -6236,11 +6236,11 @@ msgstr "Rote Taste drücken"
 
 #: skinadjust.h:105
 msgid "press green"
-msgstr ""
+msgstr "Grüne Taste drücken"
 
 #: skinadjust.h:106
 msgid "press yellow"
-msgstr ""
+msgstr "Gelbe Taste drücken"
 
 #: skinadjust.h:235
 msgid "Titan will be restartet!"
