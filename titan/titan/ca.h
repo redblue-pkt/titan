@@ -1528,6 +1528,9 @@ void cacheck(struct stimerthread* self, struct dvbdev* dvbnode)
 #ifdef SH4
 	unsigned char* tmpbuf = NULL;
 #endif
+#ifdef SIMULATE
+	unsigned char* tmpbuf = NULL;
+#endif
 	if(dvbnode == NULL) return;
 	canode = dvbnode->caslot;
 

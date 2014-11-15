@@ -62,6 +62,9 @@
 #include <regex.h>
 #include <mntent.h>
 #include <termios.h>
+#ifdef SIMULATE
+#include <sys/stat.h>
+#endif
 
 //for freetype
 #include <ft2build.h>
