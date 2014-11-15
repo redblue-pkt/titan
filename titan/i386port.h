@@ -6,6 +6,25 @@ int setmixer(struct dvbdev* node, int left, int right)
 	return 0;
 }
 
+int setvmpegrect(struct dvbdev* node, int posx, int posy, int wh, int flag)
+{
+	int ret = 0;
+	return ret;
+}
+
+int cagetslotinfo(struct dvbdev* node, ca_slot_info_t* info)
+{
+	int ret = 0;
+	return 0;
+}
+
+int resettvpic()
+{
+	int ret = 0;
+
+	return ret;
+}
+
 int setencoding(struct channel* chnode, struct dvbdev* videonode)
 {
 	int ret = 1;
