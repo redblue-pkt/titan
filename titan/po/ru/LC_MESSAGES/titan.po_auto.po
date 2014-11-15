@@ -1824,23 +1824,23 @@ msgstr "Имя пользователя"
 msgid "Wait for connect or press EXIT"
 msgstr ""
 
-#: gmultiepg.h:551 gmultiepg.h:751
+#: gmultiepg.h:549 gmultiepg.h:751
 msgid "GRAPHIC MULTI EPG - Bouquets"
 msgstr ""
 
-#: gmultiepg.h:564
+#: gmultiepg.h:562
 msgid "GRAPHIC MULTI EPG - Channel"
 msgstr ""
 
-#: gmultiepg.h:577
+#: gmultiepg.h:575
 msgid "GRAPHIC MULTI EPG - Satellites"
 msgstr ""
 
-#: gmultiepg.h:590
+#: gmultiepg.h:588
 msgid "GRAPHIC MULTI EPG - Provider"
 msgstr ""
 
-#: gmultiepg.h:603
+#: gmultiepg.h:601
 msgid "GRAPHIC MULTI EPG - All Channels"
 msgstr ""
 
