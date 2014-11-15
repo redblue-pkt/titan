@@ -14,7 +14,9 @@ GROUP=${13}
 DISTRO=${14}
 ARCH=${15}
 
-if [ $HELP = 1 ];then
+HELP=0
+
+if [ "$HELP" = "1" ];then
 	#svn build
 	sudo apt-get install subversion
 	sudo apt-get install advancecomp pngquant
