@@ -521,10 +521,8 @@ int screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 	if(chnode == NULL) chnode = status.aktservice->channel;
 	gmultiepgfilldesc(listbox, epgdesc, epgdate, epgnode, chnode, 1);
 
-	//chalc screen, so we have all infos
-	//drawscreen(gmultiepg, 2, 0);
-	//tobayer, try another thing to improve initial load of gmultiepg
-	drawscreen(gmultiepg, 0, 0);
+	//calc screen, so we have all infos
+	drawscreen(gmultiepg, 2, 0);
 
 	time_t addtime = (listbox->iwidth / zoom) * 60;
 	addtime -= (((addtime / 60) % 15) * 60);
@@ -619,10 +617,12 @@ int screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 		b4->hidden = YES;
 	}
 
-	//gmultiepgchangesize(gmultiepg, listbox, channellistbox, timeline);
+	gmultiepgchangesize(gmultiepg, listbox, channellistbox, timeline);
 
 	tmpstr = NULL;
-	drawscreen(gmultiepg, 2, 0);
+	//tobayer, try another thing to improve initial load of gmultiepg
+	drawscreen(gmultiepg, 0, 0);
+	//drawscreen(gmultiepg, 2, 0);
 	addscreenrc(gmultiepg, listbox);
 	listbox->aktpage = channellistbox->aktpage;
 
