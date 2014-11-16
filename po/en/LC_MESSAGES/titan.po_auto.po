@@ -8,11 +8,11 @@ msgstr ""
 #: channellist.h:915 channellist.h:920 channellist.h:922 channellist.h:1006
 #: divxstage.h:36 divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336
 #: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:263 epgsettings.h:289
-#: epgsettings.h:303 extensions.h:175 extensions.h:226 extensions.h:235
-#: extensions.h:239 extensions.h:244 extensions.h:252 extensions.h:287
-#: extensions.h:295 extensions.h:302 extensions.h:309 extensions.h:341
-#: extensions.h:367 extensions.h:398 extensions.h:405 extensions.h:429
-#: extensions.h:433 extensions.h:441 extensions.h:487 facebook.h:66
+#: epgsettings.h:303 extensions.h:185 extensions.h:236 extensions.h:245
+#: extensions.h:249 extensions.h:254 extensions.h:262 extensions.h:297
+#: extensions.h:305 extensions.h:312 extensions.h:319 extensions.h:351
+#: extensions.h:377 extensions.h:408 extensions.h:415 extensions.h:439
+#: extensions.h:443 extensions.h:451 extensions.h:497 facebook.h:66
 #: facebook.h:157 facebook.h:167 faststream.h:30 faststream.h:79
 #: faststream.h:91 faststream.h:103 faststream.h:160 filemanager.h:95
 #: filemanager.h:100 filemanager.h:206 filemanager.h:279 filemanager.h:289
@@ -91,12 +91,12 @@ msgstr ""
 #: tithek.h:670 tithek.h:1166 tithek.h:1209 tithek.h:1457 tithek.h:1479
 #: tithek.h:1495 tithek.h:2065 tithek.h:2092 tithek.h:2106 tithek.h:2116
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
-#: tmdb.h:759 tmdb.h:922 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3189
-#: tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
-#: tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:922
-#: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:60
-#: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
-#: vidstream.h:167 webif_index.atemio5200.h:38 webif_index.atemio6200.h:38
+#: tmdb.h:759 tmdb.h:922 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.new.h:3167
+#: tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327
+#: tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:922 unlock.h:20 unlock.h:66
+#: unlock.h:71 unlock.h:75 videomode.h:60 videoweed.h:35 videoweed.h:80
+#: vidstream.h:45 vidstream.h:86 vidstream.h:98 vidstream.h:167
+#: webif_index.atemio5200.h:38 webif_index.atemio6200.h:38
 #: webif_index.atemio7600.h:48 webif_index.atemio-nemesis.h:38
 #: webif_rc.atemio510.h:33 webif_rc_virtual.atemio510.h:33
 #: webif_rc_virtual.atemio5200.h:20 webif_rc_virtual.atemio520.h:20
@@ -114,11 +114,11 @@ msgstr ""
 #: channellist.h:920 channellist.h:922 channellist.h:1006 divxstage.h:36
 #: divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336 dlna.h:345
 #: dvdplay.h:62 epgsearch.h:27 epgsettings.h:263 epgsettings.h:289
-#: epgsettings.h:303 extensions.h:175 extensions.h:226 extensions.h:235
-#: extensions.h:239 extensions.h:244 extensions.h:252 extensions.h:287
-#: extensions.h:295 extensions.h:302 extensions.h:309 extensions.h:341
-#: extensions.h:367 extensions.h:398 extensions.h:405 extensions.h:429
-#: extensions.h:433 extensions.h:441 extensions.h:487 facebook.h:66
+#: epgsettings.h:303 extensions.h:185 extensions.h:236 extensions.h:245
+#: extensions.h:249 extensions.h:254 extensions.h:262 extensions.h:297
+#: extensions.h:305 extensions.h:312 extensions.h:319 extensions.h:351
+#: extensions.h:377 extensions.h:408 extensions.h:415 extensions.h:439
+#: extensions.h:443 extensions.h:451 extensions.h:497 facebook.h:66
 #: facebook.h:157 facebook.h:167 faststream.h:30 faststream.h:79
 #: faststream.h:91 faststream.h:103 faststream.h:160 filemanager.h:95
 #: filemanager.h:100 filemanager.h:206 filemanager.h:279 filemanager.h:289
@@ -208,7 +208,7 @@ msgstr ""
 #: tithek.h:1209 tithek.h:1457 tithek.h:1479 tithek.h:1495 tithek.h:2065
 #: tithek.h:2092 tithek.h:2106 tithek.h:2116 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922
-#: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3189 tpk.new.h:3167 tsSchnitt.c:108
+#: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.new.h:3167 tsSchnitt.c:108
 #: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
 #: tsSchnitt.c:347 tunerconfig.h:922 unlock.h:20 unlock.h:66 unlock.h:71
 #: unlock.h:75 videomode.h:60 videoweed.h:35 videoweed.h:80 vidstream.h:45
@@ -550,8 +550,8 @@ msgstr ""
 #: channellist.h:920 channellist.h:922 channellist.h:1006 divxstage.h:36
 #: divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336 dlna.h:345
 #: dvdplay.h:62 epgsearch.h:27 epgsettings.h:263 epgsettings.h:289
-#: extensions.h:252 extensions.h:309 extensions.h:341 extensions.h:401
-#: extensions.h:405 extensions.h:441 facebook.h:66 facebook.h:157
+#: extensions.h:262 extensions.h:319 extensions.h:351 extensions.h:411
+#: extensions.h:415 extensions.h:451 facebook.h:66 facebook.h:157
 #: facebook.h:167 faststream.h:30 faststream.h:79 faststream.h:91
 #: faststream.h:103 faststream.h:160 filemanager.h:95 filemanager.h:100
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:329
@@ -615,12 +615,12 @@ msgstr ""
 #: tithek_global.h:248 tithek.h:670 tithek.h:1166 tithek.h:1209 tithek.h:1457
 #: tithek.h:1479 tithek.h:2065 tithek.h:2092 tithek.h:2106 tithek.h:2116
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
-#: tmdb.h:759 tmdb.h:922 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3189
-#: tpk.new.h:3167 tunerconfig.h:922 unlock.h:20 unlock.h:66 unlock.h:71
-#: unlock.h:75 videomode.h:60 videoweed.h:35 videoweed.h:80 vidstream.h:45
-#: vidstream.h:86 vidstream.h:98 vidstream.h:167 webif_boxcontrol.h:2
-#: xupnpd.h:60 xupnpd.h:71 xupnpd.h:73 xvidstage.h:54 xvidstage.h:100
-#: xvidstage.h:177 youtube.h:215 zapback.c:79 zdf.h:29
+#: tmdb.h:759 tmdb.h:922 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.new.h:3167
+#: tunerconfig.h:922 unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75
+#: videomode.h:60 videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86
+#: vidstream.h:98 vidstream.h:167 webif_boxcontrol.h:2 xupnpd.h:60 xupnpd.h:71
+#: xupnpd.h:73 xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:215
+#: zapback.c:79 zdf.h:29
 msgid "Message"
 msgstr ""
 
@@ -1401,69 +1401,69 @@ msgstr ""
 msgid "Feed"
 msgstr "Please enter feed address"
 
-#: extensions.h:87
+#: extensions.h:97
 msgid "Installation start"
 msgstr "Installation started"
 
-#: extensions.h:89
+#: extensions.h:99
 msgid "Remove start"
 msgstr "Removing started"
 
-#: extensions.h:98
+#: extensions.h:108
 msgid "New free space (KB): "
 msgstr ""
 
-#: extensions.h:104
+#: extensions.h:114
 msgid "Install success"
 msgstr "Installation accomplished successfully"
 
-#: extensions.h:106
+#: extensions.h:116
 msgid "Install error"
 msgstr "ERROR: Installation failed!"
 
-#: extensions.h:108
+#: extensions.h:118
 msgid "Remove success"
 msgstr "Removed successfully"
 
-#: extensions.h:110
+#: extensions.h:120
 msgid "Remove error"
 msgstr "ERROR: Removing failed!"
 
-#: extensions.h:130 httpdfunc.h:5703
+#: extensions.h:140 httpdfunc.h:5703
 msgid "Install to MNT"
 msgstr "Install to MNT (Flash)"
 
-#: extensions.h:142 httpdfunc.h:5721
+#: extensions.h:152 httpdfunc.h:5721
 msgid "Install to FLASH"
 msgstr "Install to FLASH"
 
-#: extensions.h:156 httpdfunc.h:5741
+#: extensions.h:166 httpdfunc.h:5741
 msgid "Install to SWAP"
 msgstr "Install to SWAP (USB oder HDD)"
 
-#: extensions.h:169 httpdfunc.h:5687
+#: extensions.h:179 httpdfunc.h:5687
 msgid "Choice Install Medium"
 msgstr "Choose the installation medium"
 
-#: extensions.h:175 extensions.h:226 extensions.h:487
+#: extensions.h:185 extensions.h:236 extensions.h:497
 msgid "Tpk Install Info"
 msgstr "Install Information"
 
-#: extensions.h:175 httpdfunc.h:5755
+#: extensions.h:185 httpdfunc.h:5755
 msgid "Can't install Package. Package to big."
 msgstr ""
 "ERROR: The designated package is too big\n"
 "and cannot be installed."
 
-#: extensions.h:202 httpdfunc.h:5518
+#: extensions.h:212 httpdfunc.h:5518
 msgid "Tpk Install - select section"
 msgstr "Installation - Choose Category"
 
-#: extensions.h:207 httpdfunc.h:5582 skin_default_skin.xml.h:696
+#: extensions.h:217 httpdfunc.h:5582 skin_default_skin.xml.h:696
 msgid "Tpk Install - select file"
 msgstr "Installation - Selection"
 
-#: extensions.h:212 extensions.h:239 extensions.h:395 httpdfunc.h:5841
+#: extensions.h:222 extensions.h:249 extensions.h:405 httpdfunc.h:5841
 #: tpk.h:2990
 msgid ""
 "It may only be a package to be installed. If they want to install another "
@@ -1477,59 +1477,59 @@ msgstr ""
 "plugin not be visible after updating to a new version of TitanNit you will\n"
 "have to perform an online plugin update."
 
-#: extensions.h:217 extensions.h:359
+#: extensions.h:227 extensions.h:369
 msgid "Installing"
 msgstr ""
 
-#: extensions.h:223 extensions.h:363
+#: extensions.h:233 extensions.h:373
 msgid "starting"
 msgstr "Starting"
 
-#: extensions.h:235 httpdfunc.h:5804
+#: extensions.h:245 httpdfunc.h:5804
 msgid "Tpk Install Info - Install OK"
 msgstr "Installed successfully"
 
-#: extensions.h:239 extensions.h:244 httpdfunc.h:5806 httpdfunc.h:5808
+#: extensions.h:249 extensions.h:254 httpdfunc.h:5806 httpdfunc.h:5808
 msgid "Tpk Install Info - Install ERROR"
 msgstr "ERROR: Installation failed!"
 
-#: extensions.h:252 httpdfunc.h:5862 httpdfunc.h:5864 httpdfunc.h:6129
+#: extensions.h:262 httpdfunc.h:5862 httpdfunc.h:5864 httpdfunc.h:6129
 msgid "TPK Install done, your system will reboot !"
 msgstr ""
 "Installed successfully.\n"
 "Your Receiver will restart now"
 
-#: extensions.h:276 httpdfunc.h:5997
+#: extensions.h:286 httpdfunc.h:5997
 msgid "Tpk Remove - select file"
 msgstr "Remove - Selection"
 
-#: extensions.h:282
+#: extensions.h:292
 msgid "Removeing"
 msgstr ""
 
-#: extensions.h:287
+#: extensions.h:297
 msgid "Tpk Remove Info"
 msgstr "Remove Information"
 
-#: extensions.h:295 httpdfunc.h:6077
+#: extensions.h:305 httpdfunc.h:6077
 msgid "Tpk Remove Info - Remove OK"
 msgstr "Removed successfully"
 
-#: extensions.h:302 httpdfunc.h:6081
+#: extensions.h:312 httpdfunc.h:6081
 msgid "Tpk Remove Info - Remove ERROR"
 msgstr "ERROR: Removing failed"
 
-#: extensions.h:309 httpdfunc.h:6127
+#: extensions.h:319 httpdfunc.h:6127
 msgid "TPK Remove done, your system will reboot !"
 msgstr ""
 "Removed successfully.\n"
 "Your Receiver will restart now"
 
-#: extensions.h:341 extensions.h:487
+#: extensions.h:351 extensions.h:497
 msgid "No plugin found."
 msgstr ""
 
-#: extensions.h:401
+#: extensions.h:411
 msgid ""
 "Some plugins needs restart.\n"
 "If the plugin is not active\n"
@@ -1538,25 +1538,25 @@ msgstr ""
 "Some plugins need a restart.\n"
 "Your Receiver will restart now"
 
-#: extensions.h:405
+#: extensions.h:415
 msgid "TPK Tmp Install done, your system will reboot !"
 msgstr ""
 "Installed successfully from tmp.\n"
 "Your Receiver will restart now"
 
-#: extensions.h:429 extensions.h:433 httpdfunc.h:6166 httpdfunc.h:6178
+#: extensions.h:439 extensions.h:443 httpdfunc.h:6166 httpdfunc.h:6178
 msgid "Tpk Update Info - Update ERROR"
 msgstr "ERROR: Update failed!"
 
-#: extensions.h:429 httpdfunc.h:6169
+#: extensions.h:439 httpdfunc.h:6169
 msgid "Can't get all TPK index !"
 msgstr "ATTENTION: Can't retrieve full plugin index!"
 
-#: extensions.h:433 httpdfunc.h:6181
+#: extensions.h:443 httpdfunc.h:6181
 msgid "Can't update all packages !"
 msgstr "ERROR: Not all plugins were updated!"
 
-#: extensions.h:441 httpdfunc.h:6198
+#: extensions.h:451 httpdfunc.h:6198
 msgid "TPK Upgrade done, your system will reboot !"
 msgstr ""
 "Updated successfully.\n"
@@ -10632,10 +10632,6 @@ msgstr ""
 msgid "xupnpd Medien Server (upnp)"
 msgstr ""
 
-#: tpk.h:3189 tpk.new.h:3167
-msgid "check your Secret Feed !"
-msgstr "Check the secret feed address!"
-
 #: tpk.h:3439
 msgid "installed"
 msgstr ""
@@ -10651,6 +10647,10 @@ msgstr ""
 #: tpk.h:3456 tpk.new.h:3411
 msgid "no description found"
 msgstr "No description found"
+
+#: tpk.new.h:3167
+msgid "check your Secret Feed !"
+msgstr "Check the secret feed address!"
 
 #: tpk_section.h:1
 msgid "bootlogos"
