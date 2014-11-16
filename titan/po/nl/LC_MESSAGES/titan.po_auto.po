@@ -1846,7 +1846,7 @@ msgstr "Server naam"
 msgid "Wait for connect or press EXIT"
 msgstr "Wacht op verbinding of druk op EXIT"
 
-#: gmultiepg.h:549 gmultiepg.h:755
+#: gmultiepg.h:549 gmultiepg.h:756
 msgid "GRAPHIC MULTI EPG - Bouquets"
 msgstr "Grafische multi EPG - Favorieten"
 
