@@ -617,18 +617,22 @@ int screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 		b4->hidden = YES;
 	}
 
-	gmultiepgchangesize(gmultiepg, listbox, channellistbox, timeline);
+	// tobayer, moved more to the beginning
+	//gmultiepgchangesize(gmultiepg, listbox, channellistbox, timeline);
 
 	tmpstr = NULL;
-	//tobayer, try another thing to improve initial load of gmultiepg
-	drawscreen(gmultiepg, 0, 0);
-	//drawscreen(gmultiepg, 2, 0);
+	drawscreen(gmultiepg, 2, 0);
 	addscreenrc(gmultiepg, listbox);
 	listbox->aktpage = channellistbox->aktpage;
 
 	createtimeline(gmultiepg, timeline, akttime, zoom);
 
 	drawchannellistgmepg(gmultiepg, list, listbox);
+
+	//tobayer, try another thing to improve initial load of gmultiepg
+	drawscreen(gmultiepg, 2, 0);
+	gmultiepgfilldesc(listbox, epgdesc, epgdate, NULL, NULL, 0);
+	drawscreen(gmultiepg, 0, 0);
 
 	while(1)
 	{
