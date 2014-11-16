@@ -618,7 +618,7 @@ int screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 	}
 
 	// tobayer, moved more to the beginning
-	//gmultiepgchangesize(gmultiepg, listbox, channellistbox, timeline);
+	gmultiepgchangesize(gmultiepg, listbox, channellistbox, timeline);
 
 	tmpstr = NULL;
 	drawscreen(gmultiepg, 2, 0);
@@ -632,6 +632,7 @@ int screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 	//tobayer, try another thing to improve initial load of gmultiepg
 	drawscreen(gmultiepg, 2, 0);
 	gmultiepgfilldesc(listbox, epgdesc, epgdate, NULL, NULL, 0);
+	clearscreen(gmultiepg);
 	drawscreen(gmultiepg, 0, 0);
 
 	while(1)
