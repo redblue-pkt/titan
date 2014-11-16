@@ -3181,16 +3181,17 @@ int tpkgetindex(int flag)
 			fileline[len] = '\0';
 
 		tpkgeturl(fileline, &ip, &path, &port);
-/*
+
 		if(ostrcmp("97.74.32.10", ip) == 0)
 		{
-			if(ostrcmp(path, "/svn/tpk/sh4") == 0)
+//			if(ostrcmp(path, "/svn/tpk/sh4") == 0)
+			if(ostrcmp(path, "/svn/tpk/nightly-sh4-secret") == 0)
 			{
 				textbox(_("Message"), _("check your Secret Feed !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 				err = 1;
 			}
 		}
-*/
+
 		if(ip != NULL && path != NULL)
 		{
 			if(ostrcmp("97.74.32.10", ip) == 0 && !file_exist("/etc/.beta"))
