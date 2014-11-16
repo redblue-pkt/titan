@@ -3181,7 +3181,7 @@ int tpkgetindex(int flag)
 			fileline[len] = '\0';
 
 		tpkgeturl(fileline, &ip, &path, &port);
-
+/*
 		if(ostrcmp("97.74.32.10", ip) == 0)
 		{
 			if(ostrcmp(path, "/svn/tpk/sh4") == 0)
@@ -3190,7 +3190,7 @@ int tpkgetindex(int flag)
 				err = 1;
 			}
 		}
-
+*/
 		if(ip != NULL && path != NULL)
 		{
 			if(ostrcmp("97.74.32.10", ip) == 0 && !file_exist("/etc/.beta"))

@@ -8,7 +8,7 @@ void screenfeed(int flag)
 	char* tmpstr = NULL, *line = NULL, *lastline = NULL;
 	char* pos = NULL;
 
-	tmpstr = readsys(getconfig("feed", NULL), 3); //line3
+	tmpstr = readsys(getconfig("feed", NULL), 4); //line4
 	tmpstr = string_replace("src/gz secret http://", "", tmpstr, 1);
 
 	if(tmpstr != NULL)
@@ -53,7 +53,17 @@ void screenfeed(int flag)
 		else
 			line = ostrcat(line, tmpstr, 1, 0);
 		free(tmpstr); tmpstr = NULL;
+/////
+		if(line[strlen(line) - 1] != '\n')
+			line = ostrcat(line, "\n", 1, 0);
 
+		tmpstr = readsys(getconfig("feed", NULL), 3); //line3
+		if(tmpstr == NULL || (tmpstr != NULL && strlen(tmpstr) == 0))
+			line = ostrcat(line, "#\n", 1, 0);
+		else
+			line = ostrcat(line, tmpstr, 1, 0);
+		free(tmpstr); tmpstr = NULL;
+/////
 		if(line[strlen(line) - 1] == '\n')
 			tmpstr = ostrcat(line, "src/gz secret http://", 0, 0);
 		else
