@@ -425,8 +425,10 @@ unsigned char* dvbgetpmt(struct dvbdev* fenode, unsigned char* patbuf, int servi
 		free(buf);
 		return NULL;
 	}
-	
-	dmxsetsource(dmxnode, fenode->fedmxsource);
+	// error
+	if(checkbox("ATEMIO-NEMESIS") != 1)
+		dmxsetsource(dmxnode, fenode->fedmxsource);
+
 	dmxsetfilter(dmxnode, *pmtpid, 0, 2);
 
 	for (i = 0; i < 64; i++)
