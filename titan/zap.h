@@ -143,11 +143,12 @@ start:
 	}
 	
 	if(node != NULL)
+	{
 		if(status.pipzap == 0)
 			servicecheckret(servicestart(node, NULL, NULL, 0), 0);
 		else
 			pipstart(node, NULL, 0);
-
+	}
 	return 0;
 }
 
@@ -267,11 +268,12 @@ start:
 	}
 	
 	if(node != NULL)
+	{
 		if(status.pipzap == 0)
 			servicecheckret(servicestart(node, NULL, NULL, 0), 0);
 		else
 			pipstart(node, NULL, 0);
-
+	}
 	return 0;
 }
 
@@ -358,11 +360,12 @@ start:
 	}
 
 	if(node != NULL)
+	{
 		if(status.pipzap == 0)
 			servicecheckret(servicestart(node, NULL, NULL, 0), 0);
 		else
 			pipstart(node, NULL, 0);
-	
+	}
 	return 0;
 }
 
@@ -446,11 +449,12 @@ start:
 	}
 
 	if(node != NULL)
+	{
 		if(status.pipzap == 0)
 			servicecheckret(servicestart(node, NULL, NULL, 0), 0);
 		else
 			pipstart(node, NULL, 0);
-
+	}
 	return 0;
 }
 
