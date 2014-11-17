@@ -2358,7 +2358,7 @@ msgid "Devices"
 msgstr "Dispositivos"
 
 #: httpdfunc.h:5008 panel_settings_autostart.h:210 settings_autostart.h:315
-#: skin_default_skin.xml.h:652 webif_info_sysinfos.h:7
+#: skin_default_skin.xml.h:651 webif_info_sysinfos.h:7
 msgid "Swap"
 msgstr "Swap (RAM extensión)"
 
@@ -4373,7 +4373,7 @@ msgid "Start on boot"
 msgstr "arranque automático"
 
 #: plugins_dlna_skin.xml.h:14 plugins_tsSchnitt_skin.xml.h:9
-#: plugins_xupnpd_skin.xml.h:3 skin_default_skin.xml.h:642
+#: plugins_xupnpd_skin.xml.h:3 skin_default_skin.xml.h:641
 #: skins_dlna_skin.xml.h:14 skins_tsSchnitt_skin.xml.h:9
 #: skins_xupnpd_skin.xml.h:3
 msgid "STOP"
@@ -7705,12 +7705,12 @@ msgid "Menulist"
 msgstr "Lista de Menus"
 
 #: skin_default_skin.xml.h:398
-msgid "Menu Protect"
-msgstr "Protejer Menu"
-
-#: skin_default_skin.xml.h:399
 msgid "MENUPROTECT"
 msgstr "Proteccion Menu"
+
+#: skin_default_skin.xml.h:399
+msgid "Menu Protect"
+msgstr "Protejer Menu"
 
 #: skin_default_skin.xml.h:400
 msgid "MHW2 EPG"
@@ -8454,7 +8454,7 @@ msgstr "paso de frecuencia"
 msgid "Step signalrate"
 msgstr "Paso de tasa de señal"
 
-#: skin_default_skin.xml.h:641
+#: skin_default_skin.xml.h:642
 msgid "(Stop)"
 msgstr ""
 
@@ -8490,7 +8490,7 @@ msgstr "Subcanales"
 msgid "Subtitle"
 msgstr "Subtitulos"
 
-#: skin_default_skin.xml.h:651
+#: skin_default_skin.xml.h:652
 msgid "->swap<-"
 msgstr ""
 
