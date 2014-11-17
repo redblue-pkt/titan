@@ -34,6 +34,7 @@ void screenshoot(int flag)
 //flag 1: playerstop
 void set_player_sound(int flag)
 {
+#ifdef SH4
 	char* vol = NULL, *cmd = NULL;
 
 	if(flag == 0)
@@ -65,6 +66,7 @@ void set_player_sound(int flag)
 	system(cmd);
 	free(cmd), cmd = NULL;
 	free(vol), vol = NULL;
+#endif
 }
 
 //flag 0: with wait message
