@@ -90,7 +90,7 @@
 #define OVERSION "1.56"
 #define PROGNAME "titan"
 #define COPYRIGHT "NIT"
-#define CRONTRIBUT "obi, black, dvboxer, oxygen, gost"
+#define CRONTRIBUT "obi, gost"
 #define PLUGINVERSION 0
 
 #define _(x) gettext(x)
