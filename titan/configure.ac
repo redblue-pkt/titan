@@ -5,7 +5,7 @@ TUXBOX_BOXTYPE
 
 AC_PROG_CC
 AC_PROG_CXX
-AM_PROG_LIBTOOL
+#AM_PROG_LIBTOOL
 
 AC_ARG_ENABLE([multicom324],
 	[AS_HELP_STRING(--enable-multicom324,    enable multicom324 stuff)],
