@@ -1,3 +1,3 @@
 AUTOMAKE_OPTIONS = gnu
 
-SUBDIRS = titan plugins
+SUBDIRS = plugins titan
