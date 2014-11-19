@@ -34,5 +34,6 @@ libeplayer3      : $enable_eplayer3
 ])
 
 AC_OUTPUT([
+Makefile
 titan/Makefile
 ])
