@@ -1106,11 +1106,11 @@ int checkchipset(char* input)
 
 	chipset = string_toupper(readsys("/proc/stb/info/chipset", 1));
 
-	if(ostrcmp(chipset, box) == 0)
+	if(ostrcmp(chipset, input) == 0)
 		ret = 1;
 
 	free(chipset); chipset = NULL;
-	free(box); box = NULL;
+	free(input); input = NULL;
 
 	return ret;
 }
