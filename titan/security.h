@@ -483,7 +483,24 @@ char* getcpuid()
 			mac1 = ostrcat(mac1, (&ret[0])->part, 1, 0);
 			mac1 = ostrcat(mac1, (&ret[1])->part, 1, 0);
 			mac1 = ostrcat(mac1, (&ret[2])->part, 1, 0);
-			if(checkbox("ATEMIO5200") = 1 || checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1 || checkbox("ATEMIO6200") == 1)
+
+			//ATEMIO-NEMESIS = ini-8000am = bcm7424
+			//ATEMIO-6200 = ini-2000am = bcm7362
+			//ATEMIO-5200 = ini-1000am = bcm7358
+			if(checkbox("ATEMIO-NEMESIS") == 1 && checkbox("ini-8000am") == 1 && checkchipset("bcm7424") == 1)
+				printf("found real ATEMIO-NEMESIS\n");
+			if(checkbox("ATEMIO5200") == 1 && checkrealbox("ini-2000am") == 1 && checkchipset("bcm7362") == 1)
+				printf("found real ATEMIO5200\n");
+			if(checkbox("ATEMIO6000") == 1 && checkrealbox("ini-1000am") == 1 && checkchipset("bcm7358") == 1)
+				printf("found real ATEMIO6000\n");
+			if(checkbox("ATEMIO6100") == 1 && checkrealbox("ini-1000am") == 1 && checkchipset("bcm7358") == 1)
+				printf("found real ATEMIO6100\n");
+			if(checkbox("ATEMIO6200") == 1 && checkrealbox("ini-1000am") == 1 && checkchipset("bcm7358") == 1)
+				printf("found real ATEMIO6200\n");
+			if(checkbox("ATEMIO520") == 1 && checkrealbox("atemio520") == 1)
+				printf("found real ATEMIO520\n");
+
+			if(checkbox("ATEMIO5200") == 1 || checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1 || checkbox("ATEMIO6200") == 1)
 			{
 				mac2 = ostrcat(mac2, "00", 1, 0);
 				mac2 = ostrcat(mac2, "00", 1, 0);
@@ -1080,6 +1097,44 @@ char* getboxtype()
 	}
 
 	return status.boxtype;
+}
+
+int checkchipset(char* input)
+{
+	char* chipset = NULL;
+	int ret = 0;
+
+	chipset = string_toupper(readsys("/proc/stb/info/chipset", 1));
+
+	if(ostrcmp(chipset, box) == 0)
+		ret = 1;
+
+	free(chipset); chipset = NULL;
+	free(box); box = NULL;
+
+	return ret;
+}
+
+int checkrealbox(char* box)
+{
+	char* boxversion = NULL;
+	int ret = 0;
+
+#ifdef MIPSEL
+	if(isfile("/proc/stb/info/boxtype")	== 0) return 0;
+	boxversion = string_toupper(readsys("/proc/stb/info/boxtype", 1));
+#else
+	if(isfile("/proc/stb/info/model") == 0) return 0;
+	boxversion = string_toupper(readsys("/proc/stb/info/model", 1));
+#endif
+
+	if(ostrcmp(boxversion, box) == 0)
+		ret = 1;
+	
+	free(boxversion); boxversion = NULL;
+	free(box); box = NULL;
+
+	return ret;
 }
 
 int checkbox(char* box)
