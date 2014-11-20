@@ -1097,6 +1097,21 @@ char* getboxtype()
 	{
 		if(isfile("/etc/model")	== 0) return NULL;
 		status.boxtype = string_toupper(readsys("/etc/model", 1));
+/*		
+		if(checkbox("ATEMIO-NEMESIS") == 1 && checkrealbox("ini-8000am") == 1 && checkchipset("bcm7424") == 1)
+			status.boxtype = "ATEMIO-NEMESIS";
+		elif(checkbox("ATEMIO5200") == 1 && checkrealbox("ini-1000am") == 1 && checkchipset("bcm7362") == 1)
+			status.boxtype = "ATEMIO5200";
+		elif(checkbox("ATEMIO6000") == 1 && checkrealbox("ini-2000am") == 1 && checkchipset("bcm7358") == 1)
+			status.boxtype = "ATEMIO6000";
+		elif(checkbox("ATEMIO6100") == 1 && checkrealbox("ini-2000am") == 1 && checkchipset("bcm7358") == 1)
+			status.boxtype = "ATEMIO6100";
+		elif(checkbox("ATEMIO6200") == 1 && checkrealbox("ini-2000am") == 1 && checkchipset("bcm7358") == 1)
+			status.boxtype = "ATEMIO6200";
+		elif(checkbox("ATEMIO520") == 1 && checkrealbox("atemio520") == 1)
+			status.boxtype = "ATEMIO520";
+*/	
+
 	}
 
 	return status.boxtype;
