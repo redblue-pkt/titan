@@ -484,18 +484,21 @@ char* getcpuid()
 			mac1 = ostrcat(mac1, (&ret[1])->part, 1, 0);
 			mac1 = ostrcat(mac1, (&ret[2])->part, 1, 0);
 
-			//ATEMIO-NEMESIS = ini-8000am = bcm7424
-			//ATEMIO-6200 = ini-2000am = bcm7362
-			//ATEMIO-5200 = ini-1000am = bcm7358
+			//NEMESIS = ini-8000am = bcm7424 = 00:1E:A0
+			//5200 = ini-1000am = bcm7358 = 00:1E:A0
+			//6000 = ini-2000am = bcm7362 = 00:1E:C0
+			//6100 = ini-2000am = bcm7362 = 00:1E:C0
+			//6200 = ini-2000am = bcm7362 = 00:1E:C0
+
 			if(checkbox("ATEMIO-NEMESIS") == 1 && checkrealbox("ini-8000am") == 1 && checkchipset("bcm7424") == 1)
 				printf("found real ATEMIO-NEMESIS\n");
-			if(checkbox("ATEMIO5200") == 1 && checkrealbox("ini-2000am") == 1 && checkchipset("bcm7362") == 1)
+			if(checkbox("ATEMIO5200") == 1 && checkrealbox("ini-1000am") == 1 && checkchipset("bcm7362") == 1)
 				printf("found real ATEMIO5200\n");
-			if(checkbox("ATEMIO6000") == 1 && checkrealbox("ini-1000am") == 1 && checkchipset("bcm7358") == 1)
+			if(checkbox("ATEMIO6000") == 1 && checkrealbox("ini-2000am") == 1 && checkchipset("bcm7358") == 1)
 				printf("found real ATEMIO6000\n");
-			if(checkbox("ATEMIO6100") == 1 && checkrealbox("ini-1000am") == 1 && checkchipset("bcm7358") == 1)
+			if(checkbox("ATEMIO6100") == 1 && checkrealbox("ini-2000am") == 1 && checkchipset("bcm7358") == 1)
 				printf("found real ATEMIO6100\n");
-			if(checkbox("ATEMIO6200") == 1 && checkrealbox("ini-1000am") == 1 && checkchipset("bcm7358") == 1)
+			if(checkbox("ATEMIO6200") == 1 && checkrealbox("ini-2000am") == 1 && checkchipset("bcm7358") == 1)
 				printf("found real ATEMIO6200\n");
 			if(checkbox("ATEMIO520") == 1 && checkrealbox("atemio520") == 1)
 				printf("found real ATEMIO520\n");
