@@ -3489,9 +3489,8 @@ msgstr "Netzwerk Browser - gefundene cifs/nfs Freigaben"
 msgid "Choose your cifs/nfs Share from the following list"
 msgstr ""
 "Freigaben des Servers\n"
-"Zum Bearbeiten und Speichern bitte Freigabe auswählen und -OK- drücken.\n"
-"Für Windows Freigaben (cifs/smb) muss evtl. Authentifizierung benutzt "
-"werden."
+"Zum Bearbeiten und Speichern bitte Freigabe auswählen und -OK-\ndrücken. "
+"Für Windows Freigaben (cifs/smb) muss evtl. Authentifizierung\nbenutzt werden."
 
 #: networkbrowser.h:1340
 msgid "Add Cifs Network Share"
@@ -3579,8 +3578,8 @@ msgid "Choose your Shares from the following list"
 msgstr ""
 "Liste Ihrer gespeicherten Freigaben. Zum Bearbeiten Eintrag wählen und -"
 "Grün- drücken. Um weitere Freigaben hinzuzufügen bitte -Suche- benutzen.\n"
-"Für den Zugriff auf passwortgeschützte Windows Freigaben bitte Menü "
-"drücken und die Benutzerdaten eingeben."
+"Für den Zugriff auf passwortgeschützte Windows Freigaben bitte\n"
+"Menü drücken und die Benutzerdaten eingeben."
 
 #: networkbrowser.h:1907
 msgid "Are you sure you want remove this share?"
