@@ -3579,8 +3579,8 @@ msgstr "Netzwerk Browser - Freigaben"
 msgid "Choose your Shares from the following list"
 msgstr ""
 "Liste Ihrer gespeicherten Freigaben. Zum Bearbeiten Eintrag wählen und -"
-"Grün- drücken. Um weitere Freigaben hinzuzufügen bitte -Suche- benutzen.\n"
-"Für den Zugriff auf passwortgeschützte Windows Freigaben bitte\n"
+"Grün- drücken. Um weitere Freigaben hinzuzufügen bitte -Suche-\nbenutzen. "
+"Für den Zugriff auf passwortgeschützte Windows Freigaben\nbitte "
 "Menü drücken und die Benutzerdaten eingeben."
 
 #: networkbrowser.h:1907
