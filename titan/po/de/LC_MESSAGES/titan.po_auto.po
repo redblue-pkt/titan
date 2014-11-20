@@ -3951,15 +3951,15 @@ msgstr "Tauschen"
 
 #: pip.h:603
 msgid "pip menu"
-msgstr ""
+msgstr "PiP Menü"
 
 #: pip.h:604
 msgid "pip end"
-msgstr ""
+msgstr "PiP Menü Exit"
 
 #: pip.h:608
 msgid "pip zap"
-msgstr ""
+msgstr "PiP zap"
 
 #: played.h:90
 msgid "This video has been deleted. We apologize for the inconvenience."
@@ -7623,7 +7623,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:365
 msgid "key pip"
-msgstr ""
+msgstr "PiP Taste"
 
 #: skin_default_skin.xml.h:366
 msgid "l"
@@ -8396,7 +8396,7 @@ msgstr "HDMI-CEC Einstellungen"
 
 #: skin_default_skin.xml.h:600
 msgid "Setup PIP"
-msgstr ""
+msgstr "PiP Einstellungen"
 
 #: skin_default_skin.xml.h:601
 msgid "Show EPG screen (EPG button)"
