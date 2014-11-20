@@ -81,9 +81,16 @@ void menucheckentry(struct skin* child)
 		child->hidden = NO; 
 #else 
 		child->hidden = YES; 
-#endif 
-}
+#endif
 
+	if(ostrcmp(child->name, "settings_pip") == 0)
+	{
+	 if(checkbox("ATEMIO-NEMESIS") == 1)
+	 	child->hidden = NO;
+	 else
+	 	child->hidden = YES;
+	}
+}
 //flag 1: fist call
 struct skin* menu(struct skin* menu, int flag)
 {
@@ -758,6 +765,11 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 	{
 		if(check == 1) return 0;
 		screensettings_mediabutton();
+	}
+	else if(ostrcmp("settings_pip", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		pipsetup();
 	}
 	else if(ostrcmp("feed", menuentry->name) == 0)
 	{
