@@ -483,9 +483,18 @@ char* getcpuid()
 			mac1 = ostrcat(mac1, (&ret[0])->part, 1, 0);
 			mac1 = ostrcat(mac1, (&ret[1])->part, 1, 0);
 			mac1 = ostrcat(mac1, (&ret[2])->part, 1, 0);
-			mac2 = ostrcat(mac2, (&ret[3])->part, 1, 0);
-			mac2 = ostrcat(mac2, (&ret[4])->part, 1, 0);
-			mac2 = ostrcat(mac2, (&ret[5])->part, 1, 0);
+			if(checkbox("ATEMIO5200") = 1 || checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1 || checkbox("ATEMIO6200") == 1)
+			{
+				mac2 = ostrcat(mac2, "00", 1, 0);
+				mac2 = ostrcat(mac2, "00", 1, 0);
+				mac2 = ostrcat(mac2, "00", 1, 0);
+			}
+			else
+			{
+				mac2 = ostrcat(mac2, (&ret[3])->part, 1, 0);
+				mac2 = ostrcat(mac2, (&ret[4])->part, 1, 0);
+				mac2 = ostrcat(mac2, (&ret[5])->part, 1, 0);
+			}
 		}
 
 		free(ret); ret = NULL;
