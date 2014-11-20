@@ -31,7 +31,7 @@ msgstr ""
 #: hwtest.h:564 hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617
 #: hwtest.h:632 hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685
 #: imdbapi.h:200 imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200
-#: infobar.h:566 infobar.h:688 info.h:27 keyactions.h:290 lcdpearl1.c:49
+#: infobar.h:593 infobar.h:715 info.h:27 keyactions.h:290 lcdpearl1.c:49
 #: lcdsamsung.c:101 log.h:46 log.h:48 mboxinfo.c:49 mboxinfo.c:73
 #: mboxinfo.c:77 mboxinfo.c:163 mc_audioplayer.h:333 mc_audioplayer.h:605
 #: mc_audioplayer.h:716 mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
@@ -137,7 +137,7 @@ msgstr "Ok"
 #: hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566 hwtest.h:586
 #: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
 #: hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626 inadyn.h:188
-#: inadyn.h:190 inadyn.h:200 infobar.h:566 infobar.h:688 info.h:27
+#: inadyn.h:190 inadyn.h:200 infobar.h:593 infobar.h:715 info.h:27
 #: keyactions.h:290 log.h:46 log.h:48 marker.h:215 marker.h:229 mboxinfo.c:49
 #: mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163 mc_audioplayer.h:333
 #: mc_audioplayer.h:605 mc_audioplayer.h:716 mc_dateibrowser.h:36
@@ -568,7 +568,7 @@ msgstr "Si/VZAP infinito"
 #: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
 #: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626
-#: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:566 infobar.h:688
+#: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:593 infobar.h:715
 #: keyactions.h:290 language.h:49 lcdpearl1.c:49 lcdsamsung.c:101 log.h:46
 #: log.h:48 marker.h:215 marker.h:229 mc_audioplayer.h:333
 #: mc_audioplayer.h:605 mc_audioplayer.h:716 mc_dateibrowser.h:36
@@ -1895,7 +1895,8 @@ msgstr ""
 "Para otros sistemas de archivo\n"
 " cambie a modo experto (Ajustes -> Avanzado -> Modo Experto = sí) "
 
-#: harddisk.h:167 plugins_mc_skin.xml.h:18 skins_mc_skin.xml.h:18
+#: harddisk.h:167 pip.h:599 pip.h:607 plugins_mc_skin.xml.h:18
+#: skins_mc_skin.xml.h:18
 msgid "default"
 msgstr "Defecto"
 
@@ -2730,7 +2731,7 @@ msgstr ""
 msgid "DYNDNS now stopped"
 msgstr "DYNDNS detenido"
 
-#: infobar.h:566 mc_audioplayer.h:333 mc_main.h:273 mc_pictureplayer.h:124
+#: infobar.h:593 mc_audioplayer.h:333 mc_main.h:273 mc_pictureplayer.h:124
 #: mc_videoplayer.h:332 menu.h:216
 msgid ""
 "Shooting Background done !\n"
@@ -2739,7 +2740,7 @@ msgstr ""
 "Exitosa captura de pantalla.\n"
 "Captura de pantalla guardada en: /tmp/screenshot.jpg"
 
-#: infobar.h:688
+#: infobar.h:715
 msgid "Internet Browser Plugin not installed !"
 msgstr "Internet Browser Plugin no instalado!"
 
@@ -3941,6 +3942,22 @@ msgid ""
 msgstr ""
 "Realmente desea iniciar el Asistente? \n"
 "El receptor se reiniciara y el Asistente ser realizado!"
+
+#: pip.h:600 skin_default_skin.xml.h:651
+msgid "->swap<-"
+msgstr ""
+
+#: pip.h:603
+msgid "pip menu"
+msgstr ""
+
+#: pip.h:604
+msgid "pip end"
+msgstr ""
+
+#: pip.h:608
+msgid "pip zap"
+msgstr ""
 
 #: played.h:90
 msgid "This video has been deleted. We apologize for the inconvenience."
@@ -8489,10 +8506,6 @@ msgstr "Subcanales"
 #: webif_rc_virtual.atemio510.h:12
 msgid "Subtitle"
 msgstr "Subtitulos"
-
-#: skin_default_skin.xml.h:651
-msgid "->swap<-"
-msgstr ""
 
 #: skin_default_skin.xml.h:653
 msgid "Switch TV to the correct input"
