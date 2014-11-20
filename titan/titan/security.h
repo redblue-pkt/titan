@@ -1110,7 +1110,6 @@ int checkchipset(char* input)
 		ret = 1;
 
 	free(chipset); chipset = NULL;
-	free(input); input = NULL;
 
 	return ret;
 }
@@ -1132,7 +1131,6 @@ int checkrealbox(char* box)
 		ret = 1;
 	
 	free(boxversion); boxversion = NULL;
-	free(box); box = NULL;
 
 	return ret;
 }
