@@ -587,7 +587,7 @@ void pipmenu()
 void pipsetup()
 {
 	struct skin* pipmenu = getscreen("pipsetup");
-	struct skin* kchupdown = getscreennode(chupdown, "pipzap");
+	struct skin* kchupdown = getscreennode(pipmenu, "pipzap");
 	struct skin* kpip = getscreennode(pipmenu, "pip");
 	struct skin* k0 = getscreennode(pipmenu, "null");
 	
