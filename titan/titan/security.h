@@ -487,7 +487,7 @@ char* getcpuid()
 			//ATEMIO-NEMESIS = ini-8000am = bcm7424
 			//ATEMIO-6200 = ini-2000am = bcm7362
 			//ATEMIO-5200 = ini-1000am = bcm7358
-			if(checkbox("ATEMIO-NEMESIS") == 1 && checkbox("ini-8000am") == 1 && checkchipset("bcm7424") == 1)
+			if(checkbox("ATEMIO-NEMESIS") == 1 && checkrealbox("ini-8000am") == 1 && checkchipset("bcm7424") == 1)
 				printf("found real ATEMIO-NEMESIS\n");
 			if(checkbox("ATEMIO5200") == 1 && checkrealbox("ini-2000am") == 1 && checkchipset("bcm7362") == 1)
 				printf("found real ATEMIO5200\n");
