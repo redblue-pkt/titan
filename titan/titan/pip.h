@@ -584,5 +584,54 @@ void pipmenu()
 	}
 }
 	
+void pipsetup()
+{
+	struct skin* pipmenu = getscreen("pipsetup");
+	struct skin* kchupdown = getscreennode(chupdown, "pipzap");
+	struct skin* kpip = getscreennode(pipmenu, "pip");
+	struct skin* k0 = getscreennode(pipmenu, "null");
+	
+	struct skin* listbox = getscreennode(pipmenu, "listbox");
+	struct skin* tmp = NULL;
+
+	int rcret = 0;
+	
+	addchoicebox(k0, "0", _("default"));
+	addchoicebox(k0, "1", _("->swap<-"));
+	setchoiceboxselection(k0, getconfig("pip_swap", NULL));
+	
+	addchoicebox(kpip, "0", _("pip menu"));
+	addchoicebox(kpip, "1", _("pip end"));
+	setchoiceboxselection(kpip, getconfig("pip_screen", NULL));
+	
+	addchoicebox(kchupdown, "0", _("default"));
+	addchoicebox(kchupdown, "1", _("pip zap"));
+	setchoiceboxselection(kchupdown, getconfig("pip_zap", NULL));
+	
+	drawscreen(pipmenu, 0, 0);
+	addscreenrc(pipmenu, listbox);
+	tmp = listbox->select;
+	
+	while(1)
+	{
+		addscreenrc(pipmenu, tmp);
+		rcret = waitrc(pipmenu, 0, 0);
+		tmp = listbox->select;
+		
+		if(rcret == getrcconfigint("rcexit", NULL))
+			break;
+		if(rcret == getrcconfigint("rcok", NULL))	
+		{
+			addconfig("pip_swap", k0->ret);
+			addconfig("pip_screen", kpip->ret);
+			addconfig("pip_zap", kchupdown->ret);
+			break;
+		}
+		drawscreen(pipmenu, 0, 0);
+	}
+	delownerrc(pipmenu);
+	clearscreen(pipmenu);
+}
+
 
 #endif

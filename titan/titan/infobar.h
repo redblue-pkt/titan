@@ -146,6 +146,33 @@ void screeninfobar()
 			}
 		}
 
+		if(status.pipservice->videodev != NULL)
+		{
+			if(rcret == getrcconfigint("rcpip", NULL))
+			{
+				if(getconfigint("pip_screen", NULL) == 1)
+				{
+					pipstop(status.pipservice, 0);
+					continue;
+				}
+				else
+				{
+					pipmenu();
+					drawscreen(skin, 0, 0);
+					clearscreen(infobar);
+					continue;
+				}
+			}
+			if(rcret == getrcconfigint("rc0", NULL))
+			{
+				if(getconfigint("pip_swap", NULL) == 1)
+				{
+					pipswap(status.pipservice);
+					continue;
+				}
+			}
+		}
+
 		if(rcret == getrcconfigint("rcpause", NULL) || /*checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO5200") == 1 || checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1 || checkbox("ATEMIO6200") == 1 || */((checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1) && rcret == getrcconfigint("rcplay", NULL) && status.pause == 0 && status.slowspeed == 0 && status.playspeed == 0 && ostrcmp(getconfig("remotecontrol", NULL), "0") == 0))
 		{
 			//timeshift
@@ -955,14 +982,6 @@ void screeninfobar()
 				pipchannel = status.aktservice->channel;
 				printf("++++ RC: %i\n",pipstart(pipchannel, NULL, 0));
 				pipchannel = NULL;
-			}
-			else
-			{
-				pipmenu();
-				drawscreen(skin, 0, 0);
-				clearscreen(infobar);
-				//pipstop(status.pipservice, 0);
-				continue;
 			}
 		}
 	
