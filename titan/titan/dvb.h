@@ -426,7 +426,7 @@ unsigned char* dvbgetpmt(struct dvbdev* fenode, unsigned char* patbuf, int servi
 		return NULL;
 	}
 	// error
-	if(checkbox("ATEMIO-NEMESIS") != 1)
+//	if(checkbox("ATEMIO-NEMESIS") != 1)
 		dmxsetsource(dmxnode, fenode->fedmxsource);
 
 	dmxsetfilter(dmxnode, *pmtpid, 0, 2);
