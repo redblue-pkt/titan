@@ -2359,7 +2359,7 @@ msgid "Devices"
 msgstr "Dispositivos"
 
 #: httpdfunc.h:5008 panel_settings_autostart.h:210 settings_autostart.h:315
-#: skin_default_skin.xml.h:656 webif_info_sysinfos.h:7
+#: skin_default_skin.xml.h:657 webif_info_sysinfos.h:7
 msgid "Swap"
 msgstr "Swap (RAM extensión)"
 
@@ -3943,7 +3943,7 @@ msgstr ""
 "Realmente desea iniciar el Asistente? \n"
 "El receptor se reiniciara y el Asistente ser realizado!"
 
-#: pip.h:600 skin_default_skin.xml.h:657
+#: pip.h:600 skin_default_skin.xml.h:656
 msgid "->swap<-"
 msgstr ""
 
@@ -4390,7 +4390,7 @@ msgid "Start on boot"
 msgstr "arranque automático"
 
 #: plugins_dlna_skin.xml.h:14 plugins_tsSchnitt_skin.xml.h:9
-#: plugins_xupnpd_skin.xml.h:3 skin_default_skin.xml.h:646
+#: plugins_xupnpd_skin.xml.h:3 skin_default_skin.xml.h:647
 #: skins_dlna_skin.xml.h:14 skins_tsSchnitt_skin.xml.h:9
 #: skins_xupnpd_skin.xml.h:3
 msgid "STOP"
@@ -7730,12 +7730,12 @@ msgid "Menulist"
 msgstr "Lista de Menus"
 
 #: skin_default_skin.xml.h:400
-msgid "MENUPROTECT"
-msgstr "Proteccion Menu"
-
-#: skin_default_skin.xml.h:401
 msgid "Menu Protect"
 msgstr "Protejer Menu"
+
+#: skin_default_skin.xml.h:401
+msgid "MENUPROTECT"
+msgstr "Proteccion Menu"
 
 #: skin_default_skin.xml.h:402
 msgid "MHW2 EPG"
@@ -8487,7 +8487,7 @@ msgstr "paso de frecuencia"
 msgid "Step signalrate"
 msgstr "Paso de tasa de señal"
 
-#: skin_default_skin.xml.h:647
+#: skin_default_skin.xml.h:646
 msgid "(Stop)"
 msgstr ""
 
