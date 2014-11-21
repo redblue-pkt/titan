@@ -475,13 +475,13 @@ int dmxsetsource(struct dvbdev* node, int source)
 	}
 #endif
 //mipsel feinfo work
-#ifdef SH4
+//#ifdef SH4
 	debug(200, "DMX_SET_SOURCE=%d", source);
 	if(ioctl(node->fd, DMX_SET_SOURCE, &source) < 0)
 	{
 		perr("DMX_SET_SOURCE");
 	}
-#endif
+//#endif
 	return 0;
 }
 
