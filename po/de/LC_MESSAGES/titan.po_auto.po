@@ -7996,7 +7996,7 @@ msgstr "PIN Einstellungen"
 
 #: skin_default_skin.xml.h:471
 msgid "PIP funktions"
-msgstr ""
+msgstr "PiP Funktionen"
 
 #: skin_default_skin.xml.h:472
 msgid "PLAY"
