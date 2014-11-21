@@ -2332,7 +2332,7 @@ msgid "Devices"
 msgstr "Apparaten"
 
 #: httpdfunc.h:5008 panel_settings_autostart.h:210 settings_autostart.h:315
-#: skin_default_skin.xml.h:657 webif_info_sysinfos.h:7
+#: skin_default_skin.xml.h:656 webif_info_sysinfos.h:7
 msgid "Swap"
 msgstr "Wisselbestand"
 
@@ -3903,7 +3903,7 @@ msgstr ""
 "Wilt u de wizzard starten?\n"
 "De ontvanger zal herstarten en de wizzard wordt uitgevoerd!"
 
-#: pip.h:600 skin_default_skin.xml.h:656
+#: pip.h:600 skin_default_skin.xml.h:657
 msgid "->swap<-"
 msgstr ""
 
@@ -4348,7 +4348,7 @@ msgid "Start on boot"
 msgstr "Automatische opstarten"
 
 #: plugins_dlna_skin.xml.h:14 plugins_tsSchnitt_skin.xml.h:9
-#: plugins_xupnpd_skin.xml.h:3 skin_default_skin.xml.h:647
+#: plugins_xupnpd_skin.xml.h:3 skin_default_skin.xml.h:646
 #: skins_dlna_skin.xml.h:14 skins_tsSchnitt_skin.xml.h:9
 #: skins_xupnpd_skin.xml.h:3
 msgid "STOP"
@@ -7634,11 +7634,11 @@ msgid "Menulist"
 msgstr "Menulijst"
 
 #: skin_default_skin.xml.h:400
-msgid "Menu Protect"
+msgid "MENUPROTECT"
 msgstr "Beveilig menu"
 
 #: skin_default_skin.xml.h:401
-msgid "MENUPROTECT"
+msgid "Menu Protect"
 msgstr "Beveilig menu"
 
 #: skin_default_skin.xml.h:402
@@ -8386,7 +8386,7 @@ msgstr "Frequentie stap"
 msgid "Step signalrate"
 msgstr "Signalrate stap"
 
-#: skin_default_skin.xml.h:646
+#: skin_default_skin.xml.h:647
 msgid "(Stop)"
 msgstr ""
 
