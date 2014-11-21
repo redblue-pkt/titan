@@ -966,4 +966,36 @@ char* servicecheckret(int ret, int flag)
 	return tmpstr;
 }
 
+#ifdef MIPSEL
+void servicefullHDMIin_start()
+{
+	audiostop(status.aktservice->audiodev);
+	videostop(status.aktservice->videodev, 1);
+						
+	audioselectsource(status.aktservice->audiodev, AUDIO_SOURCE_HDMI);
+	videoselectsource(status.aktservice->videodev, VIDEO_SOURCE_HDMI);
+	videosetstreamtype(status.aktservice->videodev, 0);
+			
+	audioplay(tatus.aktservice->audiodev);
+	videoplay(status.aktservice->videodev);
+}
+
+void servicefullHDMIin_stop()
+{
+	struct channel* chnode = status.aktservice->channel;
+	
+	audiostop(status.aktservice->audiodev);
+	videostop(status.aktservice->videodev, 1);
+						
+	audioselectsource(status.aktservice->audiodev, AUDIO_SOURCE_DEMUX);
+	videoselectsource(status.aktservice->videodev, VIDEO_SOURCE_DEMUX);
+	videosetstreamtype(status.aktservice->videodev, 0);
+	audiosetbypassmode(audionode, chnode->audiocodec);
+	setencoding(chnode, videonode);
+			
+	audioplay(tatus.aktservice->audiodev);
+	videoplay(status.aktservice->videodev);
+}
+#endif
+
 #endif
