@@ -976,7 +976,7 @@ void servicefullHDMIin_start()
 	videoselectsource(status.aktservice->videodev, VIDEO_SOURCE_HDMI);
 	videosetstreamtype(status.aktservice->videodev, 0);
 			
-	audioplay(tatus.aktservice->audiodev);
+	audioplay(status.aktservice->audiodev);
 	videoplay(status.aktservice->videodev);
 }
 
@@ -990,10 +990,10 @@ void servicefullHDMIin_stop()
 	audioselectsource(status.aktservice->audiodev, AUDIO_SOURCE_DEMUX);
 	videoselectsource(status.aktservice->videodev, VIDEO_SOURCE_DEMUX);
 	videosetstreamtype(status.aktservice->videodev, 0);
-	audiosetbypassmode(audionode, chnode->audiocodec);
-	setencoding(chnode, videonode);
+	audiosetbypassmode(status.aktservice->audiodev, chnode->audiocodec);
+	setencoding(chnode, status.aktservice->videodev);
 			
-	audioplay(tatus.aktservice->audiodev);
+	audioplay(status.aktservice->audiodev);
 	videoplay(status.aktservice->videodev);
 }
 #endif
