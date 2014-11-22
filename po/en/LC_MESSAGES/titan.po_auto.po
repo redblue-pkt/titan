@@ -2347,7 +2347,7 @@ msgid "Devices"
 msgstr ""
 
 #: httpdfunc.h:5008 panel_settings_autostart.h:210 settings_autostart.h:315
-#: skin_default_skin.xml.h:656 webif_info_sysinfos.h:7
+#: skin_default_skin.xml.h:657 webif_info_sysinfos.h:7
 msgid "Swap"
 msgstr ""
 
@@ -3926,7 +3926,7 @@ msgstr ""
 "Do you really want to start the Wizard?\n"
 "The Receiver will reboot and the Wizard will be performed!"
 
-#: pip.h:600 skin_default_skin.xml.h:657
+#: pip.h:600 skin_default_skin.xml.h:656
 msgid "->swap<-"
 msgstr ""
 
@@ -4371,7 +4371,7 @@ msgid "Start on boot"
 msgstr ""
 
 #: plugins_dlna_skin.xml.h:14 plugins_tsSchnitt_skin.xml.h:9
-#: plugins_xupnpd_skin.xml.h:3 skin_default_skin.xml.h:646
+#: plugins_xupnpd_skin.xml.h:3 skin_default_skin.xml.h:647
 #: skins_dlna_skin.xml.h:14 skins_tsSchnitt_skin.xml.h:9
 #: skins_xupnpd_skin.xml.h:3
 msgid "STOP"
@@ -7674,12 +7674,12 @@ msgid "Menulist"
 msgstr ""
 
 #: skin_default_skin.xml.h:399
-msgid "MENUPROTECT"
-msgstr "Menu Protection"
-
-#: skin_default_skin.xml.h:400
 msgid "Menu Protect"
 msgstr "Protect Menu"
+
+#: skin_default_skin.xml.h:400
+msgid "MENUPROTECT"
+msgstr "Menu Protection"
 
 #: skin_default_skin.xml.h:401
 msgid "MHW2 EPG"
@@ -8430,7 +8430,7 @@ msgstr "Frequency step"
 msgid "Step signalrate"
 msgstr "Signalrate step"
 
-#: skin_default_skin.xml.h:647
+#: skin_default_skin.xml.h:646
 msgid "(Stop)"
 msgstr ""
 
