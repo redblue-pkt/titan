@@ -3185,7 +3185,12 @@ int tpkgetindex(int flag)
 		if(ostrcmp("97.74.32.10", ip) == 0)
 		{
 //			if(ostrcmp(path, "/svn/tpk/sh4") == 0)
+
+#ifdef SH4
 			if(ostrcmp(path, "/svn/tpk/nightly-sh4-secret") == 0)
+#else
+			if(ostrcmp(path, "/svn/tpk/nightly-mipsel-secret") == 0)
+#endif
 			{
 				textbox(_("Message"), _("check your Secret Feed !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 				err = 1;
