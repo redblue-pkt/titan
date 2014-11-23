@@ -4205,12 +4205,13 @@ msgstr ""
 #: plugins_instar_skin.xml.h:15 plugins_lcdpearl1_skin.xml.h:11
 #: plugins_lcdsamsung_skin.xml.h:14 plugins_panel_skin.xml.h:21
 #: plugins_stock_skin.xml.h:5 plugins_stopifnotused_skin.xml.h:5
-#: plugins_tmdb_skin.xml.h:7 skins_autotimer_skin.xml.h:8
-#: skins_callmonitor1_skin.xml.h:18 skins_imdbapi_skin.xml.h:7
-#: skins_imdb_skin.xml.h:7 skins_instar_skin.xml.h:15
-#: skins_lcdpearl1_skin.xml.h:11 skins_lcdsamsung_skin.xml.h:14
-#: skins_panel_skin.xml.h:21 skins_stock_skin.xml.h:5
-#: skins_stopifnotused_skin.xml.h:5 skins_tmdb_skin.xml.h:7
+#: plugins_tmdb_skin.xml.h:7 skin_default_skin.xml.h:563
+#: skins_autotimer_skin.xml.h:8 skins_callmonitor1_skin.xml.h:18
+#: skins_imdbapi_skin.xml.h:7 skins_imdb_skin.xml.h:7
+#: skins_instar_skin.xml.h:15 skins_lcdpearl1_skin.xml.h:11
+#: skins_lcdsamsung_skin.xml.h:14 skins_panel_skin.xml.h:21
+#: skins_stock_skin.xml.h:5 skins_stopifnotused_skin.xml.h:5
+#: skins_tmdb_skin.xml.h:7
 msgid "SAVE"
 msgstr "Save"
 
@@ -8196,10 +8197,6 @@ msgstr "Meter"
 
 #: skin_default_skin.xml.h:561
 msgid "Saturation"
-msgstr ""
-
-#: skin_default_skin.xml.h:563
-msgid "save"
 msgstr ""
 
 #: skin_default_skin.xml.h:565
