@@ -77,7 +77,11 @@ void screenfeed(int flag)
 
 		tmpstr = ostrcat(tmpstr, lastline, 1, 0);
 //		tmpstr = ostrcat(tmpstr, "/svn/tpk/sh4", 1, 0);
+#ifdef SH4
 		tmpstr = ostrcat(tmpstr, "/svn/tpk/nightly-sh4-secret", 1, 0);	
+#else
+		tmpstr = ostrcat(tmpstr, "/svn/tpk/nightly-mipsel-secret", 1, 0);
+#endif
 		writesys(getconfig("feed", NULL), tmpstr, 0);
 	}
 
