@@ -1018,6 +1018,9 @@ firstwizzardstep1:
 			servicecheckret(serviceret, 0);
 	}
 
+// fixt manual start 
+	resettvpic();
+
 	//start auto shutdown thread
 	addtimer(&checkshutdowntimer, START, 10000, -1, NULL, NULL, NULL);
 	//start demo mode
