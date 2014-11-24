@@ -1,17 +1,3 @@
-msgid ""
-msgstr ""
-"Project-Id-Version: TitanNit 1.56\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-07 10:44+0200\n"
-"PO-Revision-Date: 2014-11-23 14:17+0100\n"
-"Last-Translator:  <aaf-caliban@e.mail.de>\n"
-"Language-Team: German <_obiwan_@web.de>\n"
-"Language: de\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
-
 #: about.h:9
 msgid "System-Info"
 msgstr "System Information"
@@ -22,11 +8,11 @@ msgstr "System Information"
 #: channellist.h:915 channellist.h:920 channellist.h:922 channellist.h:1006
 #: divxstage.h:36 divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336
 #: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:263 epgsettings.h:289
-#: epgsettings.h:303 extensions.h:186 extensions.h:237 extensions.h:246
-#: extensions.h:250 extensions.h:255 extensions.h:263 extensions.h:298
-#: extensions.h:306 extensions.h:313 extensions.h:320 extensions.h:352
-#: extensions.h:378 extensions.h:409 extensions.h:416 extensions.h:440
-#: extensions.h:444 extensions.h:452 extensions.h:498 facebook.h:66
+#: epgsettings.h:303 extensions.h:190 extensions.h:241 extensions.h:250
+#: extensions.h:254 extensions.h:259 extensions.h:267 extensions.h:302
+#: extensions.h:310 extensions.h:317 extensions.h:324 extensions.h:356
+#: extensions.h:382 extensions.h:413 extensions.h:420 extensions.h:444
+#: extensions.h:448 extensions.h:456 extensions.h:502 facebook.h:66
 #: facebook.h:157 facebook.h:167 faststream.h:30 faststream.h:79
 #: faststream.h:91 faststream.h:103 faststream.h:160 filemanager.h:95
 #: filemanager.h:100 filemanager.h:206 filemanager.h:279 filemanager.h:289
@@ -100,12 +86,12 @@ msgstr "System Information"
 #: system_backup_restore.h:95 system_update.h:257 system_update.h:263
 #: system_update.h:270 thefile.h:34 thefile.h:68 thefile.h:205 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:281
-#: titan.c:345 titan.c:354 titan.c:994 titan.c:1003 titan.c:1128 titan.c:1149
-#: titan.c:1155 titan.c:1166 titan.c:1172 tithek.c:84 tithek_global.h:248
+#: titan.c:345 titan.c:354 titan.c:994 titan.c:1003 titan.c:1131 titan.c:1152
+#: titan.c:1158 titan.c:1169 titan.c:1175 tithek.c:84 tithek_global.h:248
 #: tithek.h:670 tithek.h:1166 tithek.h:1209 tithek.h:1457 tithek.h:1479
 #: tithek.h:1495 tithek.h:2065 tithek.h:2092 tithek.h:2106 tithek.h:2116
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
-#: tmdb.h:759 tmdb.h:922 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3190
+#: tmdb.h:759 tmdb.h:922 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3195
 #: tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
 #: tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:922
 #: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:60
@@ -128,11 +114,11 @@ msgstr "Ok"
 #: channellist.h:920 channellist.h:922 channellist.h:1006 divxstage.h:36
 #: divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336 dlna.h:345
 #: dvdplay.h:62 epgsearch.h:27 epgsettings.h:263 epgsettings.h:289
-#: epgsettings.h:303 extensions.h:186 extensions.h:237 extensions.h:246
-#: extensions.h:250 extensions.h:255 extensions.h:263 extensions.h:298
-#: extensions.h:306 extensions.h:313 extensions.h:320 extensions.h:352
-#: extensions.h:378 extensions.h:409 extensions.h:416 extensions.h:440
-#: extensions.h:444 extensions.h:452 extensions.h:498 facebook.h:66
+#: epgsettings.h:303 extensions.h:190 extensions.h:241 extensions.h:250
+#: extensions.h:254 extensions.h:259 extensions.h:267 extensions.h:302
+#: extensions.h:310 extensions.h:317 extensions.h:324 extensions.h:356
+#: extensions.h:382 extensions.h:413 extensions.h:420 extensions.h:444
+#: extensions.h:448 extensions.h:456 extensions.h:502 facebook.h:66
 #: facebook.h:157 facebook.h:167 faststream.h:30 faststream.h:79
 #: faststream.h:91 faststream.h:103 faststream.h:160 filemanager.h:95
 #: filemanager.h:100 filemanager.h:206 filemanager.h:279 filemanager.h:289
@@ -217,12 +203,12 @@ msgstr "Ok"
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:281 titan.c:345 titan.c:354 titan.c:994
-#: titan.c:1003 titan.c:1128 titan.c:1149 titan.c:1155 titan.c:1166
-#: titan.c:1172 tithek.c:84 tithek_global.h:248 tithek.h:670 tithek.h:1166
+#: titan.c:1003 titan.c:1131 titan.c:1152 titan.c:1158 titan.c:1169
+#: titan.c:1175 tithek.c:84 tithek_global.h:248 tithek.h:670 tithek.h:1166
 #: tithek.h:1209 tithek.h:1457 tithek.h:1479 tithek.h:1495 tithek.h:2065
 #: tithek.h:2092 tithek.h:2106 tithek.h:2116 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922
-#: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3190 tpk.new.h:3167 tsSchnitt.c:108
+#: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3195 tpk.new.h:3167 tsSchnitt.c:108
 #: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
 #: tsSchnitt.c:347 tunerconfig.h:922 unlock.h:20 unlock.h:66 unlock.h:71
 #: unlock.h:75 videomode.h:60 videoweed.h:35 videoweed.h:80 vidstream.h:45
@@ -564,8 +550,8 @@ msgstr "Ja/VZAP unendlich"
 #: channellist.h:920 channellist.h:922 channellist.h:1006 divxstage.h:36
 #: divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336 dlna.h:345
 #: dvdplay.h:62 epgsearch.h:27 epgsettings.h:263 epgsettings.h:289
-#: extensions.h:263 extensions.h:320 extensions.h:352 extensions.h:412
-#: extensions.h:416 extensions.h:452 facebook.h:66 facebook.h:157
+#: extensions.h:267 extensions.h:324 extensions.h:356 extensions.h:416
+#: extensions.h:420 extensions.h:456 facebook.h:66 facebook.h:157
 #: facebook.h:167 faststream.h:30 faststream.h:79 faststream.h:91
 #: faststream.h:103 faststream.h:160 filemanager.h:95 filemanager.h:100
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:329
@@ -624,12 +610,12 @@ msgstr "Ja/VZAP unendlich"
 #: system_backup_restore.h:80 system_backup_restore.h:82 system_update.h:257
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 timeshift.h:113 timeshift.h:161 timeshift.h:173
-#: timeshiftsettings.h:45 titan.c:281 titan.c:345 titan.c:354 titan.c:1128
-#: titan.c:1149 titan.c:1155 titan.c:1166 titan.c:1172 tithek.c:84
+#: timeshiftsettings.h:45 titan.c:281 titan.c:345 titan.c:354 titan.c:1131
+#: titan.c:1152 titan.c:1158 titan.c:1169 titan.c:1175 tithek.c:84
 #: tithek_global.h:248 tithek.h:670 tithek.h:1166 tithek.h:1209 tithek.h:1457
 #: tithek.h:1479 tithek.h:2065 tithek.h:2092 tithek.h:2106 tithek.h:2116
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
-#: tmdb.h:759 tmdb.h:922 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3190
+#: tmdb.h:759 tmdb.h:922 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3195
 #: tpk.new.h:3167 tunerconfig.h:922 unlock.h:20 unlock.h:66 unlock.h:71
 #: unlock.h:75 videomode.h:60 videoweed.h:35 videoweed.h:80 vidstream.h:45
 #: vidstream.h:86 vidstream.h:98 vidstream.h:167 webif_boxcontrol.h:2
@@ -812,7 +798,8 @@ msgstr ""
 
 #: browser.h:206
 msgid "Choose your Internet Favorite from the following list"
-msgstr "Wählen Sie das gewünschte Internet Lesezeichen aus der folgenden Liste"
+msgstr ""
+"Wählen Sie das gewünschte Internet Lesezeichen aus der folgenden Liste"
 
 #: callmon_main.h:39
 msgid ""
@@ -1416,67 +1403,67 @@ msgstr ""
 msgid "Feed"
 msgstr "Bitte Feed Adresse eingeben"
 
-#: extensions.h:98
+#: extensions.h:102
 msgid "Installation start"
 msgstr "Installation gestartet"
 
-#: extensions.h:100
+#: extensions.h:104
 msgid "Remove start"
 msgstr "Entfernen gestartet"
 
-#: extensions.h:109
+#: extensions.h:113
 msgid "New free space (KB): "
 msgstr "Neuer freier Speicher (KB): "
 
-#: extensions.h:115
+#: extensions.h:119
 msgid "Install success"
 msgstr "Installation erfolgreich"
 
-#: extensions.h:117
+#: extensions.h:121
 msgid "Install error"
 msgstr "Installation fehlgeschlagen"
 
-#: extensions.h:119
+#: extensions.h:123
 msgid "Remove success"
 msgstr "Löschen erfolgreich"
 
-#: extensions.h:121
+#: extensions.h:125
 msgid "Remove error"
 msgstr "Löschen fehlgeschlagen"
 
-#: extensions.h:141 httpdfunc.h:5703
+#: extensions.h:145 httpdfunc.h:5703
 msgid "Install to MNT"
 msgstr "MNT Installation (FLASH)"
 
-#: extensions.h:153 httpdfunc.h:5721
+#: extensions.h:157 httpdfunc.h:5721
 msgid "Install to FLASH"
 msgstr "FLASH Installation (FLASH)"
 
-#: extensions.h:167 httpdfunc.h:5741
+#: extensions.h:171 httpdfunc.h:5741
 msgid "Install to SWAP"
 msgstr "SWAP Installation (USB oder HDD)"
 
-#: extensions.h:180 httpdfunc.h:5687
+#: extensions.h:184 httpdfunc.h:5687
 msgid "Choice Install Medium"
 msgstr "Installation Auswahl"
 
-#: extensions.h:186 extensions.h:237 extensions.h:498
+#: extensions.h:190 extensions.h:241 extensions.h:502
 msgid "Tpk Install Info"
 msgstr "Info zur TPK Installation"
 
-#: extensions.h:186 httpdfunc.h:5755
+#: extensions.h:190 httpdfunc.h:5755
 msgid "Can't install Package. Package to big."
 msgstr "Paket zu groß. Installation nicht möglich."
 
-#: extensions.h:213 httpdfunc.h:5518
+#: extensions.h:217 httpdfunc.h:5518
 msgid "Tpk Install - select section"
 msgstr "TPK installieren - Kategorie wählen"
 
-#: extensions.h:218 httpdfunc.h:5582 skin_default_skin.xml.h:701
+#: extensions.h:222 httpdfunc.h:5582 skin_default_skin.xml.h:701
 msgid "Tpk Install - select file"
 msgstr "TPK installieren - Datei wählen"
 
-#: extensions.h:223 extensions.h:250 extensions.h:406 httpdfunc.h:5841
+#: extensions.h:227 extensions.h:254 extensions.h:410 httpdfunc.h:5841
 #: tpk.h:2990
 msgid ""
 "It may only be a package to be installed. If they want to install another "
@@ -1489,59 +1476,59 @@ msgstr ""
 "Neuinstallation der TitanNit Software im TitanNit Menü nicht sichtbar, dann "
 "führen Sie bitte eine TPK Aktualisierung durch. "
 
-#: extensions.h:228 extensions.h:370
+#: extensions.h:232 extensions.h:374
 msgid "Installing"
 msgstr "Installation von"
 
-#: extensions.h:234 extensions.h:374
+#: extensions.h:238 extensions.h:378
 msgid "starting"
 msgstr "durchführen"
 
-#: extensions.h:246 httpdfunc.h:5804
+#: extensions.h:250 httpdfunc.h:5804
 msgid "Tpk Install Info - Install OK"
 msgstr "Paket erfolgreich installiert"
 
-#: extensions.h:250 extensions.h:255 httpdfunc.h:5806 httpdfunc.h:5808
+#: extensions.h:254 extensions.h:259 httpdfunc.h:5806 httpdfunc.h:5808
 msgid "Tpk Install Info - Install ERROR"
 msgstr "Paket konnte nicht installiert werden"
 
-#: extensions.h:263 httpdfunc.h:5862 httpdfunc.h:5864 httpdfunc.h:6129
+#: extensions.h:267 httpdfunc.h:5862 httpdfunc.h:5864 httpdfunc.h:6129
 msgid "TPK Install done, your system will reboot !"
 msgstr ""
 "TPK Installation abgeschlossen\n"
 "Ihr Receiver wird neu gestartet"
 
-#: extensions.h:287 httpdfunc.h:5997
+#: extensions.h:291 httpdfunc.h:5997
 msgid "Tpk Remove - select file"
 msgstr "Erweiterung löschen"
 
-#: extensions.h:293
+#: extensions.h:297
 msgid "Removeing"
 msgstr "Entfernen von"
 
-#: extensions.h:298
+#: extensions.h:302
 msgid "Tpk Remove Info"
 msgstr "Info zur TPK Deinstallation"
 
-#: extensions.h:306 httpdfunc.h:6077
+#: extensions.h:310 httpdfunc.h:6077
 msgid "Tpk Remove Info - Remove OK"
 msgstr "Erweiterung erfolgreich gelöscht"
 
-#: extensions.h:313 httpdfunc.h:6081
+#: extensions.h:317 httpdfunc.h:6081
 msgid "Tpk Remove Info - Remove ERROR"
 msgstr "Erweiterung konnte nicht gelöscht werden"
 
-#: extensions.h:320 httpdfunc.h:6127
+#: extensions.h:324 httpdfunc.h:6127
 msgid "TPK Remove done, your system will reboot !"
 msgstr ""
 "Die Erweiterung wurde erfolgreich entfernt.\n"
 "Ihr Receiver wird jetzt neu starten."
 
-#: extensions.h:352 extensions.h:498
+#: extensions.h:356 extensions.h:502
 msgid "No plugin found."
 msgstr "Keine Erweiterung gefunden"
 
-#: extensions.h:412
+#: extensions.h:416
 msgid ""
 "Some plugins needs restart.\n"
 "If the plugin is not active\n"
@@ -1550,25 +1537,25 @@ msgstr ""
 "Einige Erweiterungen benötigen einen Neustart.\n"
 "Wenn die Erweiterung nicht verfügbar ist, bitte neu starten"
 
-#: extensions.h:416
+#: extensions.h:420
 msgid "TPK Tmp Install done, your system will reboot !"
 msgstr ""
 "Erweiterung Tmp Installation abgeschlossen\n"
 "Ihr Receiver wird neu gestartet"
 
-#: extensions.h:440 extensions.h:444 httpdfunc.h:6166 httpdfunc.h:6178
+#: extensions.h:444 extensions.h:448 httpdfunc.h:6166 httpdfunc.h:6178
 msgid "Tpk Update Info - Update ERROR"
 msgstr "Erweiterung Update Info - Update Fehler"
 
-#: extensions.h:440 httpdfunc.h:6169
+#: extensions.h:444 httpdfunc.h:6169
 msgid "Can't get all TPK index !"
 msgstr "Fehler beim Download der Paket Listen!"
 
-#: extensions.h:444 httpdfunc.h:6181
+#: extensions.h:448 httpdfunc.h:6181
 msgid "Can't update all packages !"
 msgstr "Es konnten nicht alle Erweiterungen aktualisiert werden!"
 
-#: extensions.h:452 httpdfunc.h:6198
+#: extensions.h:456 httpdfunc.h:6198
 msgid "TPK Upgrade done, your system will reboot !"
 msgstr ""
 "Aktualisierung abgeschlossen\n"
@@ -1671,7 +1658,8 @@ msgstr "Menü"
 
 #: filemanager.h:89
 msgid "Choose your Filemanager Option from the following list"
-msgstr "Wählen Sie die gewünschte Datei Manager Option aus der folgenden Liste"
+msgstr ""
+"Wählen Sie die gewünschte Datei Manager Option aus der folgenden Liste"
 
 #: filemanager.h:95
 msgid "Can't rename file !"
@@ -2366,7 +2354,7 @@ msgid "Devices"
 msgstr "Geräte"
 
 #: httpdfunc.h:5008 panel_settings_autostart.h:210 settings_autostart.h:315
-#: skin_default_skin.xml.h:656 webif_info_sysinfos.h:7
+#: skin_default_skin.xml.h:657 webif_info_sysinfos.h:7
 msgid "Swap"
 msgstr "Swap Datei (RAM Erweiterung)"
 
@@ -2960,6 +2948,60 @@ msgstr "Ihr Marker wurde erfolgreich gesetzt"
 #: mboxinfo.c:49
 msgid "File not found !!"
 msgstr "Datei nicht gefunden"
+
+#: mboxinfo.c:77 mc_imdb.h:78 mc_imdb.h:79 mc_imdb.h:80 mc_imdb.h:81
+#: mc_imdb.h:82 mc_view.h:17 mc_view.h:18 mc_view.h:19 mc_view.h:20
+#: mc_view.h:21 mc_view.h:22 plugins_autotimer_skin.xml.h:13
+#: plugins_callmonitor1_skin.xml.h:19 plugins_catcatch_skin.xml.h:7
+#: plugins_dlna_skin.xml.h:15 plugins_facebook_skin.xml.h:6
+#: plugins_filemanager_skin.xml.h:6 plugins_gmediarender_skin.xml.h:1
+#: plugins_imdbapi_skin.xml.h:11 plugins_imdb_skin.xml.h:11
+#: plugins_instar_skin.xml.h:17 plugins_keylock_skin.xml.h:1
+#: plugins_lcdpearl1_skin.xml.h:14 plugins_lcdsamsung_skin.xml.h:18
+#: plugins_mboxinfo_skin.xml.h:3 plugins_mc_skin.xml.h:70
+#: plugins_networkbrowser_skin.xml.h:37 plugins_news_skin.xml.h:5
+#: plugins_optimize_skin.xml.h:4 plugins_panel_skin.xml.h:28
+#: plugins_permtime_skin.xml.h:1 plugins_readerconfig_skin.xml.h:10
+#: plugins_rgui_skin.xml.h:9 plugins_stock_skin.xml.h:6
+#: plugins_stopifnotused_skin.xml.h:8 plugins_streaminfo_skin.xml.h:6
+#: plugins_sudoku_skin.xml.h:18 plugins_tithek_skin.xml.h:24
+#: plugins_tiwakeup_skin.xml.h:9 plugins_tmc_skin.xml.h:18
+#: plugins_tmdb_skin.xml.h:11 plugins_tsSchnitt_skin.xml.h:11
+#: plugins_weather_skin.xml.h:4 plugins_wins3_skin.xml.h:4
+#: plugins_wm2014_skin.xml.h:1 plugins_wm2014_skin.xml.h:21
+#: plugins_xupnpd_skin.xml.h:5 plugins_zapback_skin.xml.h:7
+#: skin_default_skin.xml.h:779 skins_autotimer_skin.xml.h:13
+#: skins_callmonitor1_skin.xml.h:19 skins_catcatch_skin.xml.h:7
+#: skins_dlna_skin.xml.h:15 skins_facebook_skin.xml.h:6
+#: skins_filemanager_skin.xml.h:6 skins_gmediarender_skin.xml.h:1
+#: skins_imdbapi_skin.xml.h:11 skins_imdb_skin.xml.h:11
+#: skins_instar_skin.xml.h:17 skins_keylock_skin.xml.h:1
+#: skins_lcdpearl1_skin.xml.h:14 skins_lcdsamsung_skin.xml.h:18
+#: skins_mboxinfo_skin.xml.h:3 skins_mc_skin.xml.h:70
+#: skins_networkbrowser_skin.xml.h:37 skins_news_skin.xml.h:5
+#: skins_optimize_skin.xml.h:4 skins_panel_skin.xml.h:28
+#: skins_permtime_skin.xml.h:1 skins_readerconfig_skin.xml.h:10
+#: skins_rgui_skin.xml.h:9 skins_stock_skin.xml.h:6
+#: skins_stopifnotused_skin.xml.h:8 skins_streaminfo_skin.xml.h:6
+#: skins_sudoku_skin.xml.h:18 skins_tithek_skin.xml.h:24
+#: skins_tiwakeup_skin.xml.h:9 skins_tmc_skin.xml.h:18
+#: skins_tmdb_skin.xml.h:11 skins_tsSchnitt_skin.xml.h:11
+#: skins_weather_skin.xml.h:4 skins_wins3_skin.xml.h:4
+#: skins_wm2014_skin.xml.h:1 skins_wm2014_skin.xml.h:21
+#: skins_xupnpd_skin.xml.h:5 skins_zapback_skin.xml.h:7 tithek_mainmenu.h:1
+msgid ""
+msgstr ""
+"Project-Id-Version: TitanNit 1.56\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-07 10:44+0200\n"
+"PO-Revision-Date: 2014-11-23 14:17+0100\n"
+"Last-Translator:  <aaf-caliban@e.mail.de>\n"
+"Language-Team: German <_obiwan_@web.de>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
 
 #: mc_audioplayer.h:408 mc_global.h:1079 mc_pictureplayer.h:150
 #: mc_videoplayer.h:428
@@ -3904,7 +3946,7 @@ msgstr ""
 "Soll der Assistent gestartet werden?\n"
 "Die Box wird neu gestartet und der Assistent wird ausgeführt"
 
-#: pip.h:600 skin_default_skin.xml.h:657
+#: pip.h:600 skin_default_skin.xml.h:656
 msgid "->swap<-"
 msgstr "Tauschen"
 
@@ -4358,7 +4400,7 @@ msgid "Start on boot"
 msgstr "automatischer Start"
 
 #: plugins_dlna_skin.xml.h:14 plugins_tsSchnitt_skin.xml.h:9
-#: plugins_xupnpd_skin.xml.h:3 skin_default_skin.xml.h:646
+#: plugins_xupnpd_skin.xml.h:3 skin_default_skin.xml.h:647
 #: skins_dlna_skin.xml.h:14 skins_tsSchnitt_skin.xml.h:9
 #: skins_xupnpd_skin.xml.h:3
 msgid "STOP"
@@ -7175,7 +7217,8 @@ msgstr "Hier können Sie Ihre Einstellungen sichern und wiederherstellen"
 
 #: skin_default_skin.xml.h:280
 msgid "Here you can check the reception of the current station."
-msgstr "Hier können Sie die Signalqualität des aktuellen Senders überprüfen"
+msgstr ""
+"Hier können Sie die Signalqualität des aktuellen Senders überprüfen"
 
 #: skin_default_skin.xml.h:281
 msgid ""
@@ -7705,12 +7748,12 @@ msgid "Menulist"
 msgstr "Menüliste"
 
 #: skin_default_skin.xml.h:399
-msgid "MENUPROTECT"
-msgstr "Menüschutz"
-
-#: skin_default_skin.xml.h:400
 msgid "Menu Protect"
 msgstr "Menü schützen"
+
+#: skin_default_skin.xml.h:400
+msgid "MENUPROTECT"
+msgstr "Menüschutz"
 
 #: skin_default_skin.xml.h:401
 msgid "MHW2 EPG"
@@ -8461,7 +8504,7 @@ msgstr "Frequenzratenschritt"
 msgid "Step signalrate"
 msgstr "Signalratenschritt"
 
-#: skin_default_skin.xml.h:647
+#: skin_default_skin.xml.h:646
 msgid "(Stop)"
 msgstr "(Stopp)"
 
@@ -9362,11 +9405,11 @@ msgstr "Erstinstallationsassistent"
 msgid "Settings OK ?"
 msgstr "Einstellungen speichern?"
 
-#: titan.c:1128
+#: titan.c:1131
 msgid "Receiver successful unlocked"
 msgstr "Ihr Receiver wurde erfolgreich freigeschaltet"
 
-#: titan.c:1149
+#: titan.c:1152
 msgid ""
 "Free space in /var to little!\n"
 "This can make problems!"
@@ -9374,7 +9417,7 @@ msgstr ""
 "FEHLER: Der freie Speicher in /var reicht nicht aus!\n"
 "Dies kann zu Problemen führen!"
 
-#: titan.c:1155
+#: titan.c:1158
 msgid ""
 "/var not writeable!\n"
 "Repair it?"
@@ -9382,7 +9425,7 @@ msgstr ""
 "FEHLER: /var ist nicht beschreibbar!\n"
 "Soll es repariert werden?"
 
-#: titan.c:1166
+#: titan.c:1169
 msgid ""
 "Free space in /mnt to little!\n"
 "This can make problems!"
@@ -9390,7 +9433,7 @@ msgstr ""
 "FEHLER: Der Speicher in /mnt ist nicht ausreichend!\n"
 "Das kann zu Problemen führen!"
 
-#: titan.c:1172
+#: titan.c:1175
 msgid ""
 "/mnt not writeable!\n"
 "Repair it?"
@@ -9398,11 +9441,11 @@ msgstr ""
 "FEHLER: /mnt ist nicht beschreibbar!\n"
 "Soll ein Reparaturversuch gestartet werden?"
 
-#: titan.c:1221
+#: titan.c:1224
 msgid "Unknown Error."
 msgstr "unbekannter Fehler"
 
-#: titan.c:1223
+#: titan.c:1226
 msgid "Automatic stop in 10 seconds."
 msgstr "Automatisches Beenden in 10 Sekunden."
 
@@ -10716,23 +10759,23 @@ msgstr ""
 msgid "xupnpd Medien Server (upnp)"
 msgstr ""
 
-#: tpk.h:3190 tpk.new.h:3167
+#: tpk.h:3195 tpk.new.h:3167
 msgid "check your Secret Feed !"
 msgstr "Bitte den Secret Feed überprüfen!"
 
-#: tpk.h:3440
+#: tpk.h:3445
 msgid "installed"
 msgstr "installiert"
 
-#: tpk.h:3449
+#: tpk.h:3454
 msgid "Section: "
 msgstr "Rubrik: "
 
-#: tpk.h:3452
+#: tpk.h:3457
 msgid "Description:"
 msgstr "Beschreibung: "
 
-#: tpk.h:3457 tpk.new.h:3411
+#: tpk.h:3462 tpk.new.h:3411
 msgid "no description found"
 msgstr "keine Beschreibung gefunden"
 
