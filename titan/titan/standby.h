@@ -70,6 +70,14 @@ void screenstandby()
 	setcecstandby(1);
 	if(file_exist("/bin/vdstandby") == 1)
 		system("vdstandby -a");
+
+// mipsel work set unknown videomod = display > off	(set)
+#if MIPSEL
+	char* savevideomode = NULL;
+	savevideomode = getvideomode();
+	setvideomode("720p24", 0);
+#endif
+
 	while(1)
 	{
 		rcret = waitrc(standbyscreen, 10000, 0);
@@ -88,6 +96,12 @@ void screenstandby()
 		}
 		free(loctime); loctime = 0;
 	}
+
+// mipsel work set unknown videomode = display > off (reset)
+#if MIPSEL
+	setvideomode(savevideomode, 0);
+	free(savevideomode), savevideomode = NULL;
+#endif
 
 	if(status.epgscanlistthread != NULL)
 	{
