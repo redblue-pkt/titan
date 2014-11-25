@@ -521,7 +521,7 @@ struct ddvd_spu_return merge(struct ddvd_spu_return a, struct ddvd_spu_return b)
 }
 
 //needed for titan
-#if defined(__sh__)
+//#if defined(__sh__)
 int ddvd_get_dvd_aspect(struct ddvd *playerconfig)
 {
 	if(playerconfig != NULL)
@@ -529,7 +529,7 @@ int ddvd_get_dvd_aspect(struct ddvd *playerconfig)
 	else
 		return -1;
 }
-#endif
+//#endif
 
 static int calc_x_scale_offset(int dvd_aspect, int tv_mode, int tv_mode2, int tv_aspect)
 {
