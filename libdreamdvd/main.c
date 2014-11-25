@@ -28,10 +28,10 @@
 #include "a52dec.h"
 #include <asm/types.h>
 
-#ifdef __sh__
+//#ifdef __sh__
 //aktivate LPCM Support
 #define HARDWARE_SUPPORT_LPCM
-#endif
+//#endif
 
 /*
  * local helper functions
