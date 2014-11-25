@@ -198,9 +198,9 @@ void ddvd_close(struct ddvd *pconfig);
 
 // returns the dvd aspect
 // needed for titan
-//#if defined(__sh__)
+#if defined(__sh__)
 int ddvd_get_dvd_aspect();
-//#endif
+#endif
 
 /* 
  * messages recieved from ddvd_get_next_message
