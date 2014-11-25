@@ -4710,6 +4710,7 @@ char* webadjustsend(char* param, int fmt)
 	free(tmpstr), tmpstr = NULL;
   	
 	buf = webadjust(NULL, fmt);
+	writeconfigtmp();
 	writeallconfig(1);
 
 	return buf;
