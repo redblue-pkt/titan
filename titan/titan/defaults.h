@@ -81,6 +81,8 @@ void setdefaults()
 	addconfigdef("playerstart", "60");
 	addconfigdef("playerstop", "70");
 	addconfigdef("vmpegapplydev", "/proc/stb/vmpeg/%d/dst_apply");
+	addconfigdef("encoderdev", "/dev/encoder%d");
+	addconfigdef("enc_decoder", "/proc/stb/encoder/%d/decoder");
 	
 	status.expertmodus = getconfigint("expertmodus", NULL);
 	status.pmtmode = getconfigint("pmtmode", NULL);
