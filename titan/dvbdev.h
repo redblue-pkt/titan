@@ -74,16 +74,26 @@ struct dvbdev* adddvbdev(char *dev, int adapter, int devnr, int fd, int type, st
 	}
 	if(type == ENCODERDEV)
 	{
-		FILE* fbencoder = fopen(dev, "r");
 		int number = 99;
-		if(fbencoder != NULL)
+		char *buf = NULL, *enc_decoder = NULL;
+		enc_decoder = getconfig("enc_decoder", NULL);
+		if(enc_decoder != NULL) 
 		{
-			fscanf(fbencoder, "%i", &number);
-			fclose(fbencoder);
+			buf = malloc(MINMALLOC);
+			if(buf != NULL)
+			{
+				sprintf(buf, enc_decoder, devnr);
+				FILE* fbencoder = fopen(buf, "r");
+				if(fbencoder != NULL)
+				{
+					fscanf(fbencoder, "%i", &number);
+					fclose(fbencoder);
+				}
+			}
 		}
 		newnode->decoder = number;
+		free(buf);
 	}
-
 	if(node != NULL)
 	{
 		if(last == NULL)
