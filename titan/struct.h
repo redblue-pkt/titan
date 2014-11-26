@@ -114,8 +114,8 @@
 //#define MAXFRONTENDDEV 2
 //#endif
 #define MAXDEMUXDEVOPEN 10
-#define MAXAUDIODEV 1
-#define MAXVIDEODEV 2
+#define MAXAUDIODEV 4
+#define MAXVIDEODEV 4
 #define MAXCIDEV 4
 #define MAXCADEV 4
 #ifndef MIPSEL
@@ -124,6 +124,7 @@
 #else
 #define MAXDVRDEV 5
 #define MAXDEMUXDEV 5
+#define MAXENCODERDEV 2
 #define DVB_API_VERSION 5
 #endif	 
 #define MAXSCDEV 2
@@ -202,7 +203,7 @@ enum {BOTTOMLEFT, BOTTOMRIGHT, TOPLEFT, TOPRIGHT};
 enum {LEFTRIGHT=1, TOPBOTTOM, LEFTMIDDLE, TOPMIDDLE};
 enum {NO, YES, AUTONO, AUTOYES};
 enum {UNDEF=0, LISTBOX=1, TEXTBOX=2, CHOICEBOX=4, INPUTBOX=8, INPUTBOXNUM=16, FILELIST=32, PROGRESSBAR=64, MENU=128, MULTIPROGRESSBAR=256, GRID=512, GRIDBR=1024, PASSWORD=2048};
-enum {FRONTENDDEV, DEMUXDEV, VIDEODEV, AUDIODEV, CADEV, CIDEV, FRONTENDDEVDUMMY, DVRDEV, SCDEV};
+enum {FRONTENDDEV, DEMUXDEV, VIDEODEV, AUDIODEV, CADEV, CIDEV, FRONTENDDEVDUMMY, DVRDEV, SCDEV, ENCODERDEV};
 enum {TV, RADIO};
 enum {RECDIRECT, RECTIMER, RECTIMESHIFT, RECSTREAM, RECPLAY};
 enum {AC3 = 0, MPEGA = 1, DTS = 2, LPCM = 6, AAC = 8, AACHE = 9};
@@ -1002,6 +1003,7 @@ struct dvbdev
 	uint8_t devnr;
 	uint8_t felock;
 	uint8_t deactive;
+	uint8_t decoder;
 	struct transponder* felasttransponder;
 	struct transponder* feakttransponder;
 	int feunicable;
@@ -1961,6 +1963,7 @@ unsigned char data[256];
 unsigned char cec_physicalAddress[2];
 unsigned char cec_logicalAddress;
 unsigned char cec_deviceType;
+
 #endif
 
 #endif

@@ -244,6 +244,7 @@ struct channelslot *channelslot = NULL;
 #include "oled.h"
 #ifdef MIPSEL
 #include "cec.h"
+#include "encoder.h"
 #endif
 
 
@@ -849,6 +850,10 @@ int main(int argc, char *argv[])
 	ret = cigetdev();
 	ret = dvrgetdev();
 	ret = scgetdev();
+#ifdef MIPSEL
+	ret = encodergetdev();
+#endif
+
 	settunerstatus();
 
 	//start ca slot watching threads

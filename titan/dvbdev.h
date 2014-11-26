@@ -72,6 +72,17 @@ struct dvbdev* adddvbdev(char *dev, int adapter, int devnr, int fd, int type, st
 			}
 		}
 	}
+	if(type == ENCODERDEV)
+	{
+		FILE* fbencoder = fopen(dev, "r");
+		int number = 99;
+		if(fbencoder != NULL)
+		{
+			fscanf(fbencoder, "%i", &number);
+			fclose(fbencoder);
+		}
+		newnode->decoder = number;
+	}
 
 	if(node != NULL)
 	{
