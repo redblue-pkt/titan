@@ -16,7 +16,7 @@ struct dvbdev* encoderopen()
 
 	if(node != NULL)
 	{
-		if((fd = open(node->dev, O_RDWR)) < 0)
+		if((fd = open(node->dev, O_RDONLY)) < 0)
 		{
 			debug(200, "open encoder failed %s", node->dev);
 			node = NULL;
@@ -35,7 +35,7 @@ int encoderopendirect(char* encoderdev)
 {
 	int fd = -1;
 
-	if((fd = open(encoderdev, O_RDWR)) < 0)
+	if((fd = open(encoderdev, O_RDONLY)) < 0)
 	{
 		debug(200, "open encoder failed %s", encoderdev);
 	}
@@ -78,11 +78,11 @@ int encodergetdev()
 	i = 0;
 	for(y = 0; y < MAXENCODERDEV; y++)
 	{
+		printf("++++ y: %i\n", y);
 		sprintf(buf, encoderdev, y);
-		fd = encoderopendirect(buf);
+		fd = file_exist(buf);
 		if(fd >= 0)
 		{
-			encoderclose(NULL, fd);
 			count++;
 			adddvbdev(buf, i, y, -1, ENCODERDEV, NULL, NULL, NULL, 0);
 		}
