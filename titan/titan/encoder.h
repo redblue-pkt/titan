@@ -78,16 +78,14 @@ int encodergetdev()
 	i = 0;
 	for(y = 0; y < MAXENCODERDEV; y++)
 	{
-		printf("++++ y: %i\n", y);
 		sprintf(buf, encoderdev, y);
 		fd = file_exist(buf);
-		if(fd >= 0)
+		if(fd > 0)
 		{
 			count++;
 			adddvbdev(buf, i, y, -1, ENCODERDEV, NULL, NULL, NULL, 0);
 		}
 	}
-
 	free(buf);
 	return count;
 }
