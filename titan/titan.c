@@ -851,7 +851,7 @@ int main(int argc, char *argv[])
 	ret = dvrgetdev();
 	ret = scgetdev();
 #ifdef MIPSEL
-	ret = encodergetdev();
+	//ret = encodergetdev();
 #endif
 
 	settunerstatus();
