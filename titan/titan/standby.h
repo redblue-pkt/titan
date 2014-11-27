@@ -75,7 +75,7 @@ void screenstandby()
 #if MIPSEL
 	char* savevideomode = NULL;
 	savevideomode = getvideomode();
-	setvideomode("720p24", 0);
+	setvideomode("720p24", 1);
 #endif
 
 	while(1)
@@ -99,7 +99,7 @@ void screenstandby()
 
 // mipsel work set unknown videomode = display > off (reset)
 #if MIPSEL
-	setvideomode(savevideomode, 0);
+	setvideomode(savevideomode, 1);
 	free(savevideomode), savevideomode = NULL;
 #endif
 
