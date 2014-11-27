@@ -83,6 +83,7 @@ void setdefaults()
 	addconfigdef("vmpegapplydev", "/proc/stb/vmpeg/%d/dst_apply");
 	addconfigdef("encoderdev", "/dev/encoder%d");
 	addconfigdef("enc_decoder", "/proc/stb/encoder/%d/decoder");
+	addconfigdef("enc_all", "/proc/stb/encoder/%d/%s");
 	
 	status.expertmodus = getconfigint("expertmodus", NULL);
 	status.pmtmode = getconfigint("pmtmode", NULL);

@@ -300,6 +300,15 @@ void recordstop(struct service* node, int ret)
 			filename = ostrcat(basename(node->recname), NULL, 0, 0);
 		}
 			
+#ifdef MIPSEL
+		if(node->encoderdev != NULL)
+		{
+			if(node->videodev != NULL)
+				videostop(node->videodev, 1);
+			if(node->audiodev != NULL)
+				audiostop(node->audiodev);
+		}
+#endif
 		delservice(node, 0);
 
 		if(type == RECORDSTREAM)
@@ -530,6 +539,15 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 	{
 		dmxstart(servicenode->dmxvideodev);
 		servicenode->recdmxstart = 1;
+#ifdef MIPSEL
+		if(servicenode->encoderdev != NULL)
+		{
+			if(servicenode->videodev != NULL)
+				videoplay(servicenode->videodev);
+			if(servicenode->audiodev != NULL)
+				audioplay(servicenode->audiodev);
+		}
+#endif
 	}
 	while(1)
 	{	
@@ -857,7 +875,7 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 	unsigned char* patbuf = NULL, *pmtbuf = NULL;
 	struct epg* epgnode = NULL;
 	struct service* servicenode = NULL;
-	struct dvbdev* fenode = NULL, *dmxnode = NULL;
+	struct dvbdev* fenode = NULL, *dmxnode = NULL, *encnode = NULL, *videonode = NULL, *audionode = NULL;
 	struct audiotrack* atrack = NULL;
 	struct subtitle *subnode = NULL;
 	char* tmpstr = NULL;
@@ -887,6 +905,10 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 			fd = recordfd;
 			break;
 		case RECSTREAM:
+			servicetype = RECORDSTREAM;
+			fd = recordfd;
+			break;
+				case RECSTREAMENC:
 			servicetype = RECORDSTREAM;
 			fd = recordfd;
 			break;
@@ -929,7 +951,7 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 			break;
 	}
 
-	if(type != RECSTREAM && type != RECPLAY)
+	if(type != RECSTREAM && type != RECSTREAMENC && type != RECPLAY)
 	{
 		if(!isdir(path))
 		{
@@ -991,7 +1013,7 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 		fenode = fegetfree(tpnode, 2, NULL);
 		if(fenode == NULL)
 		{
-			if(status.standby == 0 && type == RECSTREAM)
+			if(status.standby == 0 && (type == RECSTREAM || type == RECSTREAMENC))
 			{
 				ret = 5;
 				goto end;
@@ -1061,7 +1083,7 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 			servicenode->recsrcfd = dmxnode->fd;
 			if(type == RECTIMESHIFT)
 				dmxsetbuffersize(dmxnode, getconfigint("dmxtimeshiftbuffersize", NULL));
-			else if(type == RECSTREAM)
+			else if(type == RECSTREAM || type == RECSTREAMENC )
 				dmxsetbuffersize(dmxnode, getconfigint("dmxstreambuffersize", NULL));
 			else
 				dmxsetbuffersize(dmxnode, getconfigint("dmxrecordbuffersize", NULL));
@@ -1105,33 +1127,63 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 				goto end;
 #endif
 			}
-			if(chnode->audiopid > 0) dmxaddpid(dmxnode, chnode->audiopid);
-			if(chnode->videopid > 0) dmxaddpid(dmxnode, chnode->videopid);
-			dmxaddpid(dmxnode, chnode->pmtpid);
-			//add all audiotracks
-			atrack = chnode->audiotrack;
-			while(atrack != NULL)
+#ifdef MIPSEL
+			if(type != RECSTREAMENC)
 			{
-				if(atrack->audiopid > 0 && atrack->audiopid != chnode->audiopid)
-					dmxaddpid(dmxnode, atrack->audiopid);
-				if(atrack->audiopid == chnode->pcrpid) pcrpidmatch = 1;
-				atrack = atrack->next;
+				int vpes = 0;
+				int apes = 0;
+				encnode = encoderopen();
+				switch(encnode->decoder)
+				{
+					case 2: vpes = DMX_PES_VIDEO2; break;
+					case 3: vpes = DMX_PES_VIDEO3; break;
+				}
+				dmxsetpesfilter(servicenode->dmxvideodev, chnode->videopid, input, DMX_OUT_DECODER, vpes, 0);
+				videonode = videoopen(0, encnode->decoder);
+				switch(encnode->decoder)
+				{
+					case 2: apes = DMX_PES_AUDIO2; break;
+					case 3: apes = DMX_PES_AUDIO3; break;
+				}
+				audionode = audioopen(encnode->decoder);
+				dmxsetpesfilter(servicenode->dmxaudiodev, chnode->audiopid, input, DMX_OUT_DECODER, apes, 0);
+				servicenode->audiodev = audionode;
+				servicenode->videodev = videonode;
+				servicenode->encoderdev = encnode;
 			}
-			if(chnode->pcrpid > 0 && chnode->pcrpid != chnode->videopid && chnode->pcrpid != chnode->audiopid && pcrpidmatch == 0) dmxaddpid(dmxnode, chnode->pcrpid);
-			
-			//add all subtitle
-			m_lock(&status.subtitlemutex, 8);
-			subnode = chnode->subtitle;
-			while(subnode != NULL)
+			else
 			{
-				if(subnode->pid > 0)
-					dmxaddpid(dmxnode, subnode->pid);
-				subnode = subnode->next;
-			}
-			m_unlock(&status.subtitlemutex, 8);
+#endif
+				if(chnode->audiopid > 0) dmxaddpid(dmxnode, chnode->audiopid);
+				if(chnode->videopid > 0) dmxaddpid(dmxnode, chnode->videopid);
+				dmxaddpid(dmxnode, chnode->pmtpid);
+				//add all audiotracks
+				atrack = chnode->audiotrack;
+				while(atrack != NULL)
+				{
+					if(atrack->audiopid > 0 && atrack->audiopid != chnode->audiopid)
+						dmxaddpid(dmxnode, atrack->audiopid);
+					if(atrack->audiopid == chnode->pcrpid) pcrpidmatch = 1;
+					atrack = atrack->next;
+				}
+				if(chnode->pcrpid > 0 && chnode->pcrpid != chnode->videopid && chnode->pcrpid != chnode->audiopid && pcrpidmatch == 0) dmxaddpid(dmxnode, chnode->pcrpid);
 			
-			//add epg pid
-			if(getconfigint("epg2record", NULL) == 1) dmxaddpid(dmxnode, 0x12);	
+				//add all subtitle
+				m_lock(&status.subtitlemutex, 8);
+				subnode = chnode->subtitle;
+				while(subnode != NULL)
+				{
+					if(subnode->pid > 0)
+						dmxaddpid(dmxnode, subnode->pid);
+					subnode = subnode->next;
+				}
+				m_unlock(&status.subtitlemutex, 8);
+			
+				//add epg pid
+				if(getconfigint("epg2record", NULL) == 1) dmxaddpid(dmxnode, 0x12);	
+#ifdef MIPSEL
+			}
+#endif
 		}
 		else
 		{
@@ -1150,10 +1202,14 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 
 	if(filefd < 0)
 		deltranspondertunablestatus();
+#ifdef MIPSEL
+	else if(type != RECSTREAMENC)
+		servicenode->recsrcfd = encnode->fd;
+#endif
 	else
 		servicenode->recsrcfd = filefd;
 
-	if(type == RECSTREAM)
+	if(type == RECSTREAM || type == RECSTREAMENC)
 	{
 		status.streaming++;
 		servicenode->recname = ostrcat("stream ", oitoa(recordfd), 0, 1);
@@ -1176,7 +1232,7 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 			VFD_Recordthread = addtimer(&vfdrecordthread, START, 10000, 1, NULL, NULL, NULL);
 	}
 
-	if(type != RECSTREAM && type != RECTIMESHIFT && type != RECPLAY)
+	if(type != RECSTREAM && type != RECSTREAMENC && type != RECTIMESHIFT && type != RECPLAY)
 		recordwriteepg(filename, chnode, rectimernode);
 
 	//start readwrite thread
@@ -1201,6 +1257,18 @@ end:
 	return ret;
 }
 
+#ifdef MIPSEL
+int recordstartencode(struct channel* chnode, int filefd, int recordfd, int type, time_t endtime, struct rectimer* rectimernode,	int bitrate, int width, int height, int framerate, int interlaced, int aspectratio)
+{
+	if(type == RECSTREAMENC)
+	{
+		if(encoderset(-1, 1, bitrate, width, height, framerate, interlaced, aspectratio) != 0)
+			return -1;
+	}	
+	return recordstartreal(chnode, filefd, recordfd, type, endtime, rectimernode, 188);
+}
+#endif
+		
 int recordstart(struct channel* chnode, int filefd, int recordfd, int type, time_t endtime, struct rectimer* rectimernode)
 {
 	return recordstartreal(chnode, filefd, recordfd, type, endtime, rectimernode, 188);
