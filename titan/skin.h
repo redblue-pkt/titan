@@ -1690,7 +1690,8 @@ int drawjpgsw(struct jpeg_decompress_struct* cinfo, unsigned char* buf, int posx
 			for(i=0; i<width*3; i++) 
  				tmpbuf[location++] = buffer[0][i];
  		}
-		if(getconfigint("extended_scale", NULL) == 1)
+		//extendet_scale wegen schreibfehler in alter config
+		if(getconfigint("extended_scale", NULL) == 1 || getconfigint("extendet_scale", NULL) == 1)
 			scalebuf = resize(tmpbuf, width, height, scalewidth, scaleheight, 2, NULL, 1);
 		else	
 			scalebuf = resize(tmpbuf, width, height, scalewidth, scaleheight, 1, NULL, 1);
