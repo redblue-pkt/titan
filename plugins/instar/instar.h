@@ -270,6 +270,8 @@ void instar_main()
 	
 	if(rcode == 1)
 	{
+		if(checkbox("ATEMIO5200") == 1)
+			addconfig("pic_scale", "1");
 		while(1)
 		{
 			if(ostrcmp(getlist(myconfig, "InstarCam1", NULL), "ein") == 0)
@@ -327,6 +329,8 @@ void instar_main()
 			if(rcode == 0)
 				break;
 		}
+		if(checkbox("ATEMIO5200") == 1)
+			addconfig("pic_scale", "0");
 	}
 	writelist(myconfig, instarconf);
 	freelist(myconfig);
