@@ -161,19 +161,16 @@ void freeblacklist(struct blacklist* node)
 
 void ckeckkillnetthread()
 {
-//	if(checkbox("ATEMIO510") == 1)
-//	{
-		int count = 0;
-		while(count < 12)
-		{
-			count++;
-			sleep(5);
-			if(status.security == 0)
-				killnet();
-			else
-				count = 12;
-		}
-//	}
+	int count = 0;
+	while(count < 12)
+	{
+		count++;
+		sleep(5);
+		if(status.security == 0)
+			killnet();
+		else
+			count = 12;
+	}
 }
 
 int checkreseller()
@@ -489,59 +486,25 @@ char* getcpuid()
 			//6000 = ini-2000am = bcm7362 = 00:1E:C0
 			//6100 = ini-2000am = bcm7362 = 00:1E:C0
 			//6200 = ini-2000am = bcm7362 = 00:1E:C0
-		
-printf("mac1: %s\n", mac1);
-if(checkrealbox("INI-8000AM") == 1)
-	printf("found INI-8000AM\n");
-else
-	printf("not found ini-8000am\n");
-
-if(checkchipset("BCM7424") == 1)
-	printf("found BCM7424\n");
-else
-	printf("not found bcm7424\n");
-
-if(ostrcmp(mac1, "001EA0") == 0)
-	printf("found 00:1E:A0\n");
-else
-	printf("not found 00:1E:A0\n");
-
 
 			int check = 0;
 			if(checkbox("ATEMIO-NEMESIS") == 1 && checkrealbox("INI-8000AM") == 1 && checkchipset("BCM7424") == 1 && ostrcmp(mac1, "001EA0") == 0)
-			{
 				check = 1;
-				printf("found real ATEMIO-NEMESIS\n");
-			}
-			else if(checkbox("ATEMIO5200") == 1 && checkrealbox("INI-1000AM") == 1 && checkchipset("BCM7362") == 1 && ostrcmp(mac1, "001EA0") == 0)
-			{
+			else if(checkbox("ATEMIO5200") == 1 && checkrealbox("INI-1000AM") == 1 && checkchipset("BCM7358") == 1 && ostrcmp(mac1, "001EA0") == 0)
 				check = 1;
-				printf("found real ATEMIO5200\n");
-			}
-			else if(checkbox("ATEMIO6000") == 1 && checkrealbox("INI-2000AM") == 1 && checkchipset("BCM7358") == 1 && ostrcmp(mac1, "001EC0") == 0)
-			{
+			else if(checkbox("ATEMIO6000") == 1 && checkrealbox("INI-2000AM") == 1 && checkchipset("BCM7362") == 1 && ostrcmp(mac1, "001EC0") == 0)
 				check = 1;
-				printf("found real ATEMIO6000\n");
-			}
-			else if(checkbox("ATEMIO6100") == 1 && checkrealbox("INI-2000AM") == 1 && checkchipset("BCM7358") == 1 && ostrcmp(mac1, "001EC0") == 0)
-			{
+			else if(checkbox("ATEMIO6100") == 1 && checkrealbox("INI-2000AM") == 1 && checkchipset("BCM7362") == 1 && ostrcmp(mac1, "001EC0") == 0)
 				check = 1;
-				printf("found real ATEMIO6100\n");
-			}
-			else if(checkbox("ATEMIO6200") == 1 && checkrealbox("INI-2000AM") == 1 && checkchipset("BCM7358") == 1 && ostrcmp(mac1, "001EC0") == 0)
-			{
+			else if(checkbox("ATEMIO6200") == 1 && checkrealbox("INI-2000AM") == 1 && checkchipset("BCM7362") == 1 && ostrcmp(mac1, "001EC0") == 0)
 				check = 1;
-				printf("found real ATEMIO6200\n");
-			}
 			else if(checkbox("ATEMIO520") == 1 && checkrealbox("ATEMIO520") == 1 && ostrcmp(mac1, "00E124") == 0)
-			{
 				check = 1;
-				printf("found real ATEMIO520\n");
-			}
 
 //			if(checkbox("ATEMIO5200") == 1 || checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1 || checkbox("ATEMIO6200") == 1)
 			if(check == 1)
 			{
+				printf("[titan] found real %s (use Free Lizense)\n", status.boxtype);
 				mac2 = ostrcat(mac2, "00", 1, 0);
 				mac2 = ostrcat(mac2, "00", 1, 0);
 				mac2 = ostrcat(mac2, "00", 1, 0);
@@ -1134,21 +1097,6 @@ char* getboxtype()
 	{
 		if(isfile("/etc/model")	== 0) return NULL;
 		status.boxtype = string_toupper(readsys("/etc/model", 1));
-/*		
-		if(checkbox("ATEMIO-NEMESIS") == 1 && checkrealbox("ini-8000am") == 1 && checkchipset("bcm7424") == 1)
-			status.boxtype = "ATEMIO-NEMESIS";
-		elif(checkbox("ATEMIO5200") == 1 && checkrealbox("ini-1000am") == 1 && checkchipset("bcm7362") == 1)
-			status.boxtype = "ATEMIO5200";
-		elif(checkbox("ATEMIO6000") == 1 && checkrealbox("ini-2000am") == 1 && checkchipset("bcm7358") == 1)
-			status.boxtype = "ATEMIO6000";
-		elif(checkbox("ATEMIO6100") == 1 && checkrealbox("ini-2000am") == 1 && checkchipset("bcm7358") == 1)
-			status.boxtype = "ATEMIO6100";
-		elif(checkbox("ATEMIO6200") == 1 && checkrealbox("ini-2000am") == 1 && checkchipset("bcm7358") == 1)
-			status.boxtype = "ATEMIO6200";
-		elif(checkbox("ATEMIO520") == 1 && checkrealbox("atemio520") == 1)
-			status.boxtype = "ATEMIO520";
-*/	
-
 	}
 
 	return status.boxtype;
@@ -1160,9 +1108,6 @@ int checkchipset(char* input)
 	int ret = 0;
 
 	chipset = string_toupper(readsys("/proc/stb/info/chipset", 1));
-
-printf("chipset: %s\n", chipset);
-printf("input: %s\n", input);
 
 	if(ostrcmp(chipset, input) == 0)
 		ret = 1;
@@ -1184,9 +1129,6 @@ int checkrealbox(char* box)
 	if(isfile("/proc/stb/info/model") == 0) return 0;
 	boxversion = string_toupper(readsys("/proc/stb/info/model", 1));
 #endif
-
-printf("boxversion: %s\n", boxversion);
-printf("box: %s\n", box);
 
 	if(ostrcmp(boxversion, box) == 0)
 		ret = 1;
