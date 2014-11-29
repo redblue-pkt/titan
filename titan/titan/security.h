@@ -489,7 +489,24 @@ char* getcpuid()
 			//6000 = ini-2000am = bcm7362 = 00:1E:C0
 			//6100 = ini-2000am = bcm7362 = 00:1E:C0
 			//6200 = ini-2000am = bcm7362 = 00:1E:C0
-			
+		
+printf("mac1: %s\n", mac1);
+if(checkrealbox("ini-8000am") == 1)
+	printf("found ini-8000am\n");
+else
+	printf("not found ini-8000am\n");
+
+if(checkchipset("bcm7424") == 1)
+	printf("found bcm7424\n");
+else
+	printf("not found bcm7424\n");
+
+if(ostrcmp(mac1, "00:1E:A0") == 0)
+	printf("found 00:1E:A0\n");
+else
+	printf("not found 00:1E:A0\n");
+
+
 			int check = 0;
 			if(checkbox("ATEMIO-NEMESIS") == 1 && checkrealbox("ini-8000am") == 1 && checkchipset("bcm7424") == 1 && ostrcmp(mac1, "00:1E:A0") == 0)
 			{
@@ -1144,6 +1161,9 @@ int checkchipset(char* input)
 
 	chipset = string_toupper(readsys("/proc/stb/info/chipset", 1));
 
+printf("chipset: %s\n", chipset);
+printf("input: %s\n", input);
+
 	if(ostrcmp(chipset, input) == 0)
 		ret = 1;
 
@@ -1164,6 +1184,9 @@ int checkrealbox(char* box)
 	if(isfile("/proc/stb/info/model") == 0) return 0;
 	boxversion = string_toupper(readsys("/proc/stb/info/model", 1));
 #endif
+
+printf("boxversion: %s\n", boxversion);
+printf("box: %s\n", box);
 
 	if(ostrcmp(boxversion, box) == 0)
 		ret = 1;
