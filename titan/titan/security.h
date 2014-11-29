@@ -491,49 +491,49 @@ char* getcpuid()
 			//6200 = ini-2000am = bcm7362 = 00:1E:C0
 		
 printf("mac1: %s\n", mac1);
-if(checkrealbox("ini-8000am") == 1)
-	printf("found ini-8000am\n");
+if(checkrealbox("INI-8000AM") == 1)
+	printf("found INI-8000AM\n");
 else
 	printf("not found ini-8000am\n");
 
-if(checkchipset("bcm7424") == 1)
-	printf("found bcm7424\n");
+if(checkchipset("BCM7424") == 1)
+	printf("found BCM7424\n");
 else
 	printf("not found bcm7424\n");
 
-if(ostrcmp(mac1, "00:1E:A0") == 0)
+if(ostrcmp(mac1, "001EA0") == 0)
 	printf("found 00:1E:A0\n");
 else
 	printf("not found 00:1E:A0\n");
 
 
 			int check = 0;
-			if(checkbox("ATEMIO-NEMESIS") == 1 && checkrealbox("ini-8000am") == 1 && checkchipset("bcm7424") == 1 && ostrcmp(mac1, "00:1E:A0") == 0)
+			if(checkbox("ATEMIO-NEMESIS") == 1 && checkrealbox("INI-8000AM") == 1 && checkchipset("BCM7424") == 1 && ostrcmp(mac1, "001EA0") == 0)
 			{
 				check = 1;
 				printf("found real ATEMIO-NEMESIS\n");
 			}
-			else if(checkbox("ATEMIO5200") == 1 && checkrealbox("ini-1000am") == 1 && checkchipset("bcm7362") == 1 && ostrcmp(mac1, "00:1E:A0") == 0)
+			else if(checkbox("ATEMIO5200") == 1 && checkrealbox("INI-1000AM") == 1 && checkchipset("BCM7362") == 1 && ostrcmp(mac1, "001EA0") == 0)
 			{
 				check = 1;
 				printf("found real ATEMIO5200\n");
 			}
-			else if(checkbox("ATEMIO6000") == 1 && checkrealbox("ini-2000am") == 1 && checkchipset("bcm7358") == 1 && ostrcmp(mac1, "00:1E:C0") == 0)
+			else if(checkbox("ATEMIO6000") == 1 && checkrealbox("INI-2000AM") == 1 && checkchipset("BCM7358") == 1 && ostrcmp(mac1, "001EC0") == 0)
 			{
 				check = 1;
 				printf("found real ATEMIO6000\n");
 			}
-			else if(checkbox("ATEMIO6100") == 1 && checkrealbox("ini-2000am") == 1 && checkchipset("bcm7358") == 1 && ostrcmp(mac1, "00:1E:C0") == 0)
+			else if(checkbox("ATEMIO6100") == 1 && checkrealbox("INI-2000AM") == 1 && checkchipset("BCM7358") == 1 && ostrcmp(mac1, "001EC0") == 0)
 			{
 				check = 1;
 				printf("found real ATEMIO6100\n");
 			}
-			else if(checkbox("ATEMIO6200") == 1 && checkrealbox("ini-2000am") == 1 && checkchipset("bcm7358") == 1 && ostrcmp(mac1, "00:1E:C0") == 0)
+			else if(checkbox("ATEMIO6200") == 1 && checkrealbox("INI-2000AM") == 1 && checkchipset("BCM7358") == 1 && ostrcmp(mac1, "001EC0") == 0)
 			{
 				check = 1;
 				printf("found real ATEMIO6200\n");
 			}
-			else if(checkbox("ATEMIO520") == 1 && checkrealbox("atemio520") == 1 && ostrcmp(mac1, "00:E1:24") == 0)
+			else if(checkbox("ATEMIO520") == 1 && checkrealbox("ATEMIO520") == 1 && ostrcmp(mac1, "00E124") == 0)
 			{
 				check = 1;
 				printf("found real ATEMIO520\n");
