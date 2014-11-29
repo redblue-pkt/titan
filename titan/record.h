@@ -1128,7 +1128,7 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 #endif
 			}
 #ifdef MIPSEL
-			if(type != RECSTREAMENC)
+			if(type == RECSTREAMENC)
 			{
 				int vpes = 0;
 				int apes = 0;
@@ -1203,7 +1203,7 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 	if(filefd < 0)
 		deltranspondertunablestatus();
 #ifdef MIPSEL
-	else if(type != RECSTREAMENC)
+	else if(type == RECSTREAMENC)
 		servicenode->recsrcfd = encnode->fd;
 #endif
 	else
