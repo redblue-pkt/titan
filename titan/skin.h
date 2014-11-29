@@ -571,7 +571,7 @@ struct skin* addscreennode(struct skin* node, char* line, struct skin* last)
 			free(ret);
 		}
 		// disable skinadjust is verry slow... atemio6200 ??
-		if(checkbox("ATEMIO5200") != 1 || getconfig("pic_scale", NULL) == 1)
+		if(checkbox("ATEMIO5200") != 1 || getconfigint("pic_scale", NULL) == 1)
 		{
 			ret = getxmlentry(line, " picwidth=");
 			if(ret != NULL)
