@@ -653,7 +653,7 @@ int main(int argc, char *argv[])
 	ret = setaudiodelaybitstream(getconfig("audiodelaybitstream", NULL));
 	ret = addinetworkall(NULL);
   
-//#ifndef SIMULATE
+#ifndef SIMULATE
 	if(getconfigint("sos", NULL) == 0)
 	{
 		if(ostrcmp(string_newline(gettimeinfo()), TIMECODE) == 1)
@@ -715,7 +715,7 @@ int main(int argc, char *argv[])
 		startnet();
 		setskinnodeslocked(0);
 	}
-//#endif
+#endif
 
 	if(file_exist("/mnt/config/dualboot.enigma2"))
 	{
