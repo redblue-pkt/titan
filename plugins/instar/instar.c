@@ -19,9 +19,13 @@ void init(void)
 	char* tmpstr = NULL;
 	pluginaktiv = 1;
 	
+	if(checkbox("ATEMIO5200") == 1)
+			addconfig("pic_scale", "1");
 	tmpstr = createpluginpath("/instar/skin.xml", 0);
 	readscreen(tmpstr, 118, 1);
 	free(tmpstr); tmpstr = NULL;
+	if(checkbox("ATEMIO5200") == 1)
+			addconfig("pic_scale", "0");
 
 	debug(10, "INSTAR Plugin loadet !!!");
 }
