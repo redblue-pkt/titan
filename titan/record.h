@@ -535,19 +535,26 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 		}
 	}
 	
+#ifdef MIPSEL
+	if(servicenode->encoderdev != NULL)
+	{
+		if(servicenode->videodev != NULL)
+		{
+	 		dmxstart(servicenode->dmxvideodev);
+		}
+		if(servicenode->audiodev != NULL)
+		{
+			dmxstart(servicenode->dmxaudiodev);
+		}
+		servicenode->recdmxstart = 1;
+	}
+#endif	
+	
+	
 	if(servicenode->recdmxstart == 0)
 	{
 		dmxstart(servicenode->dmxvideodev);
 		servicenode->recdmxstart = 1;
-#ifdef MIPSEL
-		if(servicenode->encoderdev != NULL)
-		{
-			if(servicenode->videodev != NULL)
-				videoplay(servicenode->videodev);
-			if(servicenode->audiodev != NULL)
-				audioplay(servicenode->audiodev);
-		}
-#endif
 	}
 	while(1)
 	{	
@@ -1130,26 +1137,45 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 #ifdef MIPSEL
 			if(type == RECSTREAMENC)
 			{
-				int vpes = 0;
-				int apes = 0;
-				encnode = encoderopen();
-				switch(encnode->decoder)
-				{
-					case 2: vpes = DMX_PES_VIDEO2; break;
-					case 3: vpes = DMX_PES_VIDEO3; break;
-				}
-				dmxsetpesfilter(servicenode->dmxvideodev, chnode->videopid, input, DMX_OUT_DECODER, vpes, 0);
-				videonode = videoopen(0, encnode->decoder);
-				switch(encnode->decoder)
-				{
-					case 2: apes = DMX_PES_AUDIO2; break;
-					case 3: apes = DMX_PES_AUDIO3; break;
-				}
-				audionode = audioopen(encnode->decoder);
-				dmxsetpesfilter(servicenode->dmxaudiodev, chnode->audiopid, input, DMX_OUT_DECODER, apes, 0);
-				servicenode->audiodev = audionode;
-				servicenode->videodev = videonode;
+				dmxstop(dmxnode);
+				dmxclose(dmxnode, -1);
+				dmxnode = NULL;
+				servicenode->dmxaudiodev = dmxopen(fenode);
+				servicenode->dmxvideodev = dmxopen(fenode);
+				dmxstop(servicenode->dmxvideodev);
+				dmxstop(servicenode->dmxaudiodev);
+				
+				encnode = encoderopen(1);
 				servicenode->encoderdev = encnode;
+
+				switch(encnode->decoder)
+				{
+					case 2: dmxsetpesfilter(servicenode->dmxaudiodev, chnode->audiopid, input, DMX_OUT_DECODER, DMX_PES_AUDIO2, 0); break;
+					case 3: dmxsetpesfilter(servicenode->dmxaudiodev, chnode->audiopid, input, DMX_OUT_DECODER, DMX_PES_AUDIO3, 0); break;
+				}
+								
+				switch(encnode->decoder)
+				{
+					case 2: dmxsetpesfilter(servicenode->dmxvideodev, chnode->videopid, input, DMX_OUT_DECODER, DMX_PES_VIDEO2, 0); break;
+					case 3: dmxsetpesfilter(servicenode->dmxvideodev, chnode->videopid, input, DMX_OUT_DECODER, DMX_PES_VIDEO3, 0); break;
+				}
+						
+				
+				audionode = audioopen(encnode->decoder);
+				servicenode->audiodev = audionode;
+				audioselectsource(servicenode->audiodev, AUDIO_SOURCE_DEMUX);
+				audioplay(servicenode->audiodev);
+				
+				
+				videonode = videoopen(0, encnode->decoder);
+				servicenode->videodev = videonode;
+				videoselectsource(servicenode->videodev, VIDEO_SOURCE_DEMUX);
+				videoplay(servicenode->videodev);
+				
+				audiostop(servicenode->audiodev);
+				audioplay(servicenode->audiodev);
+
+
 			}
 			else
 			{
@@ -1202,12 +1228,12 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 
 	if(filefd < 0)
 		deltranspondertunablestatus();
-#ifdef MIPSEL
-	else if(type == RECSTREAMENC)
-		servicenode->recsrcfd = encnode->fd;
-#endif
 	else
 		servicenode->recsrcfd = filefd;
+#ifdef MIPSEL
+	if(type == RECSTREAMENC)
+		servicenode->recsrcfd = encnode->fd;
+#endif
 
 	if(type == RECSTREAM || type == RECSTREAMENC)
 	{
