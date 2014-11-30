@@ -10781,7 +10781,7 @@ msgstr "Bootlogos"
 
 #: tpk_section.h:2
 msgid "browser"
-msgstr ""
+msgstr "Webbrowser"
 
 #: tpk_section.h:3
 msgid "emus"
@@ -10793,11 +10793,11 @@ msgstr "Fonts"
 
 #: tpk_section.h:5
 msgid "games"
-msgstr ""
+msgstr "Spiele"
 
 #: tpk_section.h:6
 msgid "infos"
-msgstr ""
+msgstr "Infos"
 
 #: tpk_section.h:7
 msgid "keymaps"
@@ -10837,7 +10837,7 @@ msgstr "Tools"
 
 #: tpk_section.h:17
 msgid "wireless"
-msgstr ""
+msgstr "Wireless"
 
 #: tpk_showname.h:1
 msgid "3 Wins"
