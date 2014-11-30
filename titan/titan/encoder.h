@@ -2,7 +2,7 @@
 #define ENCODER_H
 
 
-struct dvbdev* encoderopen()
+struct dvbdev* encoderopen(int flag)
 {
 	int fd = -1;
 	struct dvbdev* node = dvbdev;
@@ -16,6 +16,7 @@ struct dvbdev* encoderopen()
 
 	if(node != NULL)
 	{
+		if(flag == 0) return node;
 		if((fd = open(node->dev, O_RDONLY)) < 0)
 		{
 			debug(200, "open encoder failed %s", node->dev);
@@ -90,16 +91,17 @@ int encodergetdev()
 	return count;
 }
 
-int encodernextdev()
+int encodernextdev(int flag)
 {
 	int ret = 0;
-	struct dvbdev* node = encoderopen();
+	struct dvbdev* node = encoderopen(flag);
 	if(node == NULL)
 		ret = -1;
 	else
 	{
 		ret = node->devnr;
-		encoderclose(node, 0);
+		if(flag == 1)
+			encoderclose(node, 0);
 	}
 	return ret;
 }
@@ -108,10 +110,9 @@ int encoderset(int dev, int flag, int bitrate, int width, int height, int framer
 {
 	char *buf = NULL, *encoderdev = NULL;
 	int nextdev = dev;
-	
 	if (nextdev < 0)
 	{ 
-		nextdev = encodernextdev();
+		nextdev = encodernextdev(0);
 		if(nextdev < 0)
 			return -1;
 	}
