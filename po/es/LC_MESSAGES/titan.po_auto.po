@@ -65,8 +65,8 @@ msgstr ""
 #: primeshare.h:79 primeshare.h:124 putlocker.h:32 putlocker.h:79
 #: putlocker.h:85 putlocker.h:91 putlocker.h:142 putlocker.h:152
 #: putlocker.h:225 readerconfig.h:343 readerconfig.h:443 readerconfig.h:444
-#: readerconfig.h:488 readerconfig.h:489 record.h:378 record.h:1023
-#: record.h:1520 rectimer.h:577 rectimer.h:1231 rectimer.h:1377
+#: readerconfig.h:488 readerconfig.h:489 record.h:378 record.h:1030
+#: record.h:1546 rectimer.h:577 rectimer.h:1231 rectimer.h:1377
 #: rectimer.h:1389 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:31 scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1901
@@ -177,7 +177,7 @@ msgstr "Ok"
 #: putlocker.h:85 putlocker.h:91 putlocker.h:142 putlocker.h:152
 #: putlocker.h:225 readerconfig.h:343 readerconfig.h:443 readerconfig.h:444
 #: readerconfig.h:488 readerconfig.h:489 record.h:90 record.h:378
-#: record.h:1023 record.h:1244 record.h:1495 record.h:1520 rectimer.h:577
+#: record.h:1030 record.h:1270 record.h:1521 record.h:1546 rectimer.h:577
 #: rectimer.h:1231 rectimer.h:1377 rectimer.h:1389 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:31
@@ -596,7 +596,7 @@ msgstr "Si/VZAP infinito"
 #: putlocker.h:32 putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:343 readerconfig.h:443
 #: readerconfig.h:444 readerconfig.h:488 readerconfig.h:489 record.h:378
-#: record.h:1023 record.h:1244 record.h:1495 record.h:1520 rectimer.h:577
+#: record.h:1030 record.h:1270 record.h:1521 record.h:1546 rectimer.h:577
 #: rectimer.h:1231 rectimer.h:1377 rectimer.h:1389 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:31
@@ -2407,8 +2407,8 @@ msgstr "Acerca de titan"
 msgid "Streaming"
 msgstr ""
 
-#: httpdfunc.h:5253 httpdfunc.h:5299 record.h:1370 record.h:1379 record.h:1390
-#: record.h:1425 record.h:1434 record.h:1466 skin_default_skin.xml.h:645
+#: httpdfunc.h:5253 httpdfunc.h:5299 record.h:1396 record.h:1405 record.h:1416
+#: record.h:1451 record.h:1460 record.h:1492 skin_default_skin.xml.h:645
 #: stream.h:15 stream.h:37
 msgid "stop"
 msgstr "Stop"
@@ -5720,7 +5720,7 @@ msgstr "Grabacion/Timeshift/Stream"
 msgid "Box recording finished poweroff in 30sec !"
 msgstr "grabacion termino. Receptor de apagado en 30 segundos"
 
-#: record.h:1023
+#: record.h:1030
 msgid ""
 "Can't find free Tuner for Record.\n"
 "Switch to Recording/Timeshift Channel ?"
@@ -5728,11 +5728,11 @@ msgstr ""
 "ERROR: No se puede encontrar un sintonizador libre para la grabacion. \n"
 "Cambie a grabacion/Timeshift Canal?"
 
-#: record.h:1243
+#: record.h:1269
 msgid "Timer Record start !"
 msgstr "Temporizador de grabacion comenzo!"
 
-#: record.h:1388 record.h:1462 skin_default_skin.xml.h:508
+#: record.h:1414 record.h:1488 skin_default_skin.xml.h:508
 #: webif_index.atemio5200.h:59 webif_index.atemio5200.h:115
 #: webif_index.atemio6200.h:59 webif_index.atemio6200.h:115
 #: webif_index.atemio7600.h:47 webif_index.atemio7600.h:109
@@ -5748,28 +5748,28 @@ msgstr "Temporizador de grabacion comenzo!"
 msgid "Record"
 msgstr "Grabar"
 
-#: record.h:1440 record.h:1449 record.h:1472
+#: record.h:1466 record.h:1475 record.h:1498
 msgid "change"
 msgstr "Cambiar"
 
-#: record.h:1458 record.h:1488
+#: record.h:1484 record.h:1514
 msgid "add recording (stop after current event)"
 msgstr "Añadir grabacion (parada despues del evento actual)"
 
-#: record.h:1459 record.h:1501
+#: record.h:1485 record.h:1527
 msgid "add recording (indefinitely)"
 msgstr "Añadir grabacion (Ilimitado)"
 
-#: record.h:1460 record.h:1506
+#: record.h:1486 record.h:1532
 msgid "add recording (enter duration)"
 msgstr "Añadir grabacion (Introduzca duracion)"
 
-#: record.h:1495
+#: record.h:1521
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr ""
 "No se puede obtener el tiempo EPG o la EPG Final de tiempo es defectuoso."
 
-#: record.h:1520
+#: record.h:1546
 msgid "Record started"
 msgstr "Grabacion comenzada"
 
