@@ -10345,7 +10345,7 @@ msgid "Treiber fuer Samsung LCD"
 msgstr ""
 
 #: tpk_description.h:170
-msgid "Unitymedia NRW | 20.11.2014 (caliban)"
+msgid "Unitymedia NRW | 1.12.2014 (caliban)"
 msgstr ""
 
 #: tpk_description.h:171
