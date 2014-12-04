@@ -2305,7 +2305,7 @@ msgid "Devices"
 msgstr " Thiết bị"
 
 #: httpdfunc.h:5009 panel_settings_autostart.h:210 settings_autostart.h:315
-#: skin_default_skin.xml.h:657 webif_info_sysinfos.h:7
+#: skin_default_skin.xml.h:656 webif_info_sysinfos.h:7
 msgid "Swap"
 msgstr "Trao đổi"
 
@@ -3866,7 +3866,7 @@ msgstr ""
 "Bạn muốn khởi động wizard?\n"
 "Đầu thu sẽ khởi động lại và wizard sẽ được bắt đầu"
 
-#: pip.h:600 skin_default_skin.xml.h:656
+#: pip.h:600 skin_default_skin.xml.h:657
 msgid "->swap<-"
 msgstr ""
 
@@ -4312,7 +4312,7 @@ msgid "Start on boot"
 msgstr "Bắt đầu khởi động"
 
 #: plugins_dlna_skin.xml.h:14 plugins_tsSchnitt_skin.xml.h:9
-#: plugins_xupnpd_skin.xml.h:3 skin_default_skin.xml.h:647
+#: plugins_xupnpd_skin.xml.h:3 skin_default_skin.xml.h:646
 #: skins_dlna_skin.xml.h:14 skins_tsSchnitt_skin.xml.h:9
 #: skins_xupnpd_skin.xml.h:3
 msgid "STOP"
@@ -7554,12 +7554,12 @@ msgid "Menulist"
 msgstr "Danh sách menu"
 
 #: skin_default_skin.xml.h:399
-msgid "Menu Protect"
-msgstr "Khóa Menu"
-
-#: skin_default_skin.xml.h:400
 msgid "MENUPROTECT"
 msgstr "KHÓA MENU"
+
+#: skin_default_skin.xml.h:400
+msgid "Menu Protect"
+msgstr "Khóa Menu"
 
 #: skin_default_skin.xml.h:401
 msgid "MHW2 EPG"
@@ -8306,7 +8306,7 @@ msgstr "dịch tần số"
 msgid "Step signalrate"
 msgstr "dịch tốc độ tín hiệu"
 
-#: skin_default_skin.xml.h:646
+#: skin_default_skin.xml.h:647
 msgid "(Stop)"
 msgstr ""
 
