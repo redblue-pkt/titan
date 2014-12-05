@@ -4348,7 +4348,7 @@ msgid "Start on boot"
 msgstr "Automatische opstarten"
 
 #: plugins_dlna_skin.xml.h:14 plugins_tsSchnitt_skin.xml.h:9
-#: plugins_xupnpd_skin.xml.h:3 skin_default_skin.xml.h:623
+#: plugins_xupnpd_skin.xml.h:3 skin_default_skin.xml.h:624
 #: skins_dlna_skin.xml.h:14 skins_tsSchnitt_skin.xml.h:9
 #: skins_xupnpd_skin.xml.h:3
 msgid "STOP"
@@ -7577,11 +7577,11 @@ msgid "Menulist"
 msgstr "Menulijst"
 
 #: skin_default_skin.xml.h:387
-msgid "MENUPROTECT"
+msgid "Menu Protect"
 msgstr "Beveilig menu"
 
 #: skin_default_skin.xml.h:388
-msgid "Menu Protect"
+msgid "MENUPROTECT"
 msgstr "Beveilig menu"
 
 #: skin_default_skin.xml.h:389
@@ -8289,7 +8289,7 @@ msgstr "Frequentie stap"
 msgid "Step signalrate"
 msgstr "Signalrate stap"
 
-#: skin_default_skin.xml.h:624
+#: skin_default_skin.xml.h:623
 msgid "(Stop)"
 msgstr ""
 
