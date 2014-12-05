@@ -11264,62 +11264,58 @@ msgid "Webbrowser Netsurf"
 msgstr ""
 
 #: tpk_showname.h:206
-msgid "Webbrowser Netsurf 3.3"
-msgstr ""
-
-#: tpk_showname.h:207
 msgid "Wlan 8192cu"
 msgstr ""
 
-#: tpk_showname.h:208
+#: tpk_showname.h:207
 msgid "Wlan 8712u"
 msgstr ""
 
-#: tpk_showname.h:209
+#: tpk_showname.h:208
 msgid "Wlan rt2870sta"
 msgstr ""
 
-#: tpk_showname.h:210
+#: tpk_showname.h:209
 msgid "Wlan rt3070sta"
 msgstr ""
 
-#: tpk_showname.h:211
+#: tpk_showname.h:210
 msgid "Wlan rt5370sta"
 msgstr ""
 
-#: tpk_showname.h:212
+#: tpk_showname.h:211
 msgid "WM2014"
 msgstr ""
 
-#: tpk_showname.h:213
+#: tpk_showname.h:212
 msgid "XPicons LightTransparent (Astra 19.2E)"
 msgstr ""
 
-#: tpk_showname.h:214
+#: tpk_showname.h:213
 msgid "XPicons LightTransparent (Astra 23.5E)"
 msgstr ""
 
-#: tpk_showname.h:215
+#: tpk_showname.h:214
 msgid "XPicons LightTransparent (Astra 28.2E)"
 msgstr ""
 
-#: tpk_showname.h:216
+#: tpk_showname.h:215
 msgid "XPicons LightTransparent (Hotbird 13.0E)"
 msgstr ""
 
-#: tpk_showname.h:217
+#: tpk_showname.h:216
 msgid "XPicons LightTransparent (small - Astra 19.2E)"
 msgstr ""
 
-#: tpk_showname.h:218
+#: tpk_showname.h:217
 msgid "xupnpd"
 msgstr ""
 
-#: tpk_showname.h:219
+#: tpk_showname.h:218
 msgid "zapback (Werbezapper)"
 msgstr ""
 
-#: tpk_showname.h:220
+#: tpk_showname.h:219
 msgid "Zombie"
 msgstr ""
 
