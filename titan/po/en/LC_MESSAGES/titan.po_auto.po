@@ -12948,24 +12948,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Zapback is activated. Do you want to stop it?"
-
-#~ msgid ""
-#~ "After the automatic search they must save the channel found with ok. If "
-#~ "you do not do this and go to exit out the search not saved."
-#~ msgstr ""
-#~ "Press OK or Exit after the scan, found channels are saved automatically."
-
-#~ msgid "position"
-#~ msgstr "Position"
-
-#~ msgid "Scan Auto"
-#~ msgstr "Automatic channel scan running ..."
-
-#~ msgid "Scan Auto Config"
-#~ msgstr "Automatic channel scan"
-
-#~ msgid "Scan Manual"
-#~ msgstr "Manual scan running ..."
-
-#~ msgid "Scan Manual Config"
-#~ msgstr "Manual channel scan"
