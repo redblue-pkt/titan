@@ -2293,7 +2293,7 @@ msgid "Devices"
 msgstr "Urządzenia"
 
 #: httpdfunc.h:5009 panel_settings_autostart.h:210 settings_autostart.h:315
-#: skin_default_skin.xml.h:657 webif_info_sysinfos.h:7
+#: skin_default_skin.xml.h:656 webif_info_sysinfos.h:7
 msgid "Swap"
 msgstr ""
 
@@ -3844,7 +3844,7 @@ msgid ""
 "The Box will reboot and the Wizard will be started!"
 msgstr ""
 
-#: pip.h:600 skin_default_skin.xml.h:656
+#: pip.h:600 skin_default_skin.xml.h:657
 msgid "->swap<-"
 msgstr ""
 
@@ -4290,7 +4290,7 @@ msgid "Start on boot"
 msgstr ""
 
 #: plugins_dlna_skin.xml.h:14 plugins_tsSchnitt_skin.xml.h:9
-#: plugins_xupnpd_skin.xml.h:3 skin_default_skin.xml.h:647
+#: plugins_xupnpd_skin.xml.h:3 skin_default_skin.xml.h:646
 #: skins_dlna_skin.xml.h:14 skins_tsSchnitt_skin.xml.h:9
 #: skins_xupnpd_skin.xml.h:3
 msgid "STOP"
@@ -7509,12 +7509,12 @@ msgid "Menulist"
 msgstr ""
 
 #: skin_default_skin.xml.h:399
-msgid "Menu Protect"
-msgstr "Menu Zabezpieczeń"
-
-#: skin_default_skin.xml.h:400
 msgid "MENUPROTECT"
 msgstr ""
+
+#: skin_default_skin.xml.h:400
+msgid "Menu Protect"
+msgstr "Menu Zabezpieczeń"
 
 #: skin_default_skin.xml.h:401
 msgid "MHW2 EPG"
@@ -8261,7 +8261,7 @@ msgstr "Częśtotliwość testowa"
 msgid "Step signalrate"
 msgstr ""
 
-#: skin_default_skin.xml.h:646
+#: skin_default_skin.xml.h:647
 msgid "(Stop)"
 msgstr ""
 
@@ -10362,70 +10362,74 @@ msgid "Webbrowser Plugin"
 msgstr ""
 
 #: tpk_description.h:175
-msgid "Werbezapper"
+msgid "Webbrowser Plugin "
 msgstr ""
 
 #: tpk_description.h:176
-msgid "White 3D Picons Astra 19.2"
+msgid "Werbezapper"
 msgstr ""
 
 #: tpk_description.h:177
-msgid "White 3D Picons - Astra 23.5E."
+msgid "White 3D Picons Astra 19.2"
 msgstr ""
 
 #: tpk_description.h:178
-msgid "White 3D Picons - Astra 28.2E."
+msgid "White 3D Picons - Astra 23.5E."
 msgstr ""
 
 #: tpk_description.h:179
-msgid "White 3D Picons - Hotbird 13.0E."
+msgid "White 3D Picons - Astra 28.2E."
 msgstr ""
 
 #: tpk_description.h:180
-msgid "White70 Picons Astra 19.2"
+msgid "White 3D Picons - Hotbird 13.0E."
 msgstr ""
 
 #: tpk_description.h:181
-msgid "White70 Picons - Astra 23.5E."
+msgid "White70 Picons Astra 19.2"
 msgstr ""
 
 #: tpk_description.h:182
-msgid "White70 Picons - Astra 28.2E"
+msgid "White70 Picons - Astra 23.5E."
 msgstr ""
 
 #: tpk_description.h:183
-msgid "White70 Picons - Hotbird 13.0E."
+msgid "White70 Picons - Astra 28.2E"
 msgstr ""
 
 #: tpk_description.h:184
-msgid "wireless 8192cu.ko model"
+msgid "White70 Picons - Hotbird 13.0E."
 msgstr ""
 
 #: tpk_description.h:185
-msgid "wireless modul 8712u.ko"
+msgid "wireless 8192cu.ko model"
 msgstr ""
 
 #: tpk_description.h:186
-msgid "wireless modul rt2870sta.ko"
+msgid "wireless modul 8712u.ko"
 msgstr ""
 
 #: tpk_description.h:187
-msgid "wireless modul rt3070sta.ko"
+msgid "wireless modul rt2870sta.ko"
 msgstr ""
 
 #: tpk_description.h:188
-msgid "wireless modul rt5370sta.ko"
+msgid "wireless modul rt3070sta.ko"
 msgstr ""
 
 #: tpk_description.h:189
-msgid "WM2014 Plugin"
+msgid "wireless modul rt5370sta.ko"
 msgstr ""
 
 #: tpk_description.h:190
-msgid "Wooden clock - Standby - Samsung LCD Skin Channel."
+msgid "WM2014 Plugin"
 msgstr ""
 
 #: tpk_description.h:191
+msgid "Wooden clock - Standby - Samsung LCD Skin Channel."
+msgstr ""
+
+#: tpk_description.h:192
 msgid "xupnpd Medien Server (upnp)"
 msgstr ""
 
@@ -11258,58 +11262,62 @@ msgid "Webbrowser Netsurf"
 msgstr ""
 
 #: tpk_showname.h:206
-msgid "Wlan 8192cu"
+msgid "Webbrowser Netsurf 3.3"
 msgstr ""
 
 #: tpk_showname.h:207
-msgid "Wlan 8712u"
+msgid "Wlan 8192cu"
 msgstr ""
 
 #: tpk_showname.h:208
-msgid "Wlan rt2870sta"
+msgid "Wlan 8712u"
 msgstr ""
 
 #: tpk_showname.h:209
-msgid "Wlan rt3070sta"
+msgid "Wlan rt2870sta"
 msgstr ""
 
 #: tpk_showname.h:210
-msgid "Wlan rt5370sta"
+msgid "Wlan rt3070sta"
 msgstr ""
 
 #: tpk_showname.h:211
-msgid "WM2014"
+msgid "Wlan rt5370sta"
 msgstr ""
 
 #: tpk_showname.h:212
-msgid "XPicons LightTransparent (Astra 19.2E)"
+msgid "WM2014"
 msgstr ""
 
 #: tpk_showname.h:213
-msgid "XPicons LightTransparent (Astra 23.5E)"
+msgid "XPicons LightTransparent (Astra 19.2E)"
 msgstr ""
 
 #: tpk_showname.h:214
-msgid "XPicons LightTransparent (Astra 28.2E)"
+msgid "XPicons LightTransparent (Astra 23.5E)"
 msgstr ""
 
 #: tpk_showname.h:215
-msgid "XPicons LightTransparent (Hotbird 13.0E)"
+msgid "XPicons LightTransparent (Astra 28.2E)"
 msgstr ""
 
 #: tpk_showname.h:216
-msgid "XPicons LightTransparent (small - Astra 19.2E)"
+msgid "XPicons LightTransparent (Hotbird 13.0E)"
 msgstr ""
 
 #: tpk_showname.h:217
-msgid "xupnpd"
+msgid "XPicons LightTransparent (small - Astra 19.2E)"
 msgstr ""
 
 #: tpk_showname.h:218
-msgid "zapback (Werbezapper)"
+msgid "xupnpd"
 msgstr ""
 
 #: tpk_showname.h:219
+msgid "zapback (Werbezapper)"
+msgstr ""
+
+#: tpk_showname.h:220
 msgid "Zombie"
 msgstr ""
 
