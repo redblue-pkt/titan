@@ -212,12 +212,13 @@ start:
 			addmenulist(&mlist1, "16", _("16 Bit"), NULL, 0, 0);
 			addmenulist(&mlist1, "32", _("32 Bit"), NULL, 0, 0);
 			mbox1 = menulistbox(mlist1, "menulist", _("Browser Resolution"), _("Choose your Resolution"), NULL, NULL, 0, 0);
-
+			printf("mbox1->name %s", mbox1->name);
+			printf("mbox1->text %s", mbox1->text);
 			drawscreen(skin, 0, 0);
 			status.sec = 0; //deaktivate spinner
 			tmpstr = ostrcat("nsfb.sh -f linux -b ", mbox1->name, 0, 0);
 			tmpstr = ostrcat(tmpstr, " ", 1, 0);
-			tmpstr = ostrcat(tmpstr, mbox->name, 1, 0);
+			tmpstr = ostrcat(tmpstr, mbox->param, 1, 0);
 			printf("cmd: %s\n", tmpstr);			
 //			tmpstr = ostrcat("nsfb.sh -f linux ", mbox->param, 0, 0);
 			system(tmpstr);
