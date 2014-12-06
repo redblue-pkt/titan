@@ -785,16 +785,32 @@ msgstr "Câble"
 msgid "Terrestrial"
 msgstr "Terrestre"
 
-#: browser.h:191
+#: browser.h:192
 msgid "Home"
 msgstr "accueil"
 
-#: browser.h:206
+#: browser.h:207
 msgid "Browser Favoriten"
 msgstr "favori Navigateur Internet "
 
-#: browser.h:206
+#: browser.h:207
 msgid "Choose your Internet Favorite from the following list"
+msgstr ""
+
+#: browser.h:212
+msgid "16 Bit"
+msgstr ""
+
+#: browser.h:213
+msgid "32 Bit"
+msgstr ""
+
+#: browser.h:214
+msgid "Browser Resolution"
+msgstr ""
+
+#: browser.h:214
+msgid "Choose your Resolution"
 msgstr ""
 
 #: callmon_main.h:39
