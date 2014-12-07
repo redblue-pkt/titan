@@ -108,7 +108,7 @@ echo "[titan]--------------------------------------------------------"
 
 rm -rf "$HOME"/flashimg/source.titan/skin
 mkdir "$HOME"/flashimg/source.titan/skin	
-svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source/skinsdefault/_path_/usr/local/share/titan/skin/default "$HOME"/flashimg/source.titan/skin/default
+svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source/skinsdefault_default/_path_/usr/local/share/titan/skin/default "$HOME"/flashimg/source.titan/skin/default
 
 echo "[titan]--------------------------------------------------------"
 echo "[titan] get skin done"
