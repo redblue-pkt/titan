@@ -1438,11 +1438,15 @@ void screenrecorddirect()
 	struct menulist* mlist = NULL, *mbox = NULL, *tmpmbox = NULL;
 	struct stimerthread *recthumbfirstthread = NULL;
 
+	struct skin* load = getscreen("loading");
+	drawscreen(load, 0, 0);
 	cmd = ostrcat("ls -al ", getconfig("rec_path", NULL), 0, 0);
-	cmd = ostrcat(cmd, " >/dev/null &", 1, 0);
+//	cmd = ostrcat(cmd, " >/dev/null &", 1, 0);
+	cmd = ostrcat(cmd, " >/dev/null", 1, 0);
  	printf("cmd: %s\n", cmd);
  	system(cmd);
 	free(cmd), cmd = NULL;
+	clearscreen(load);
 	
 	while(servicenode != NULL)
 	{
