@@ -452,6 +452,7 @@ void checkrectimer(struct stimerthread* self)
 	struct rectimer* node = NULL, *newnode = NULL;
 	struct channel* chnode = NULL;
 	time_t t = 0, begin = 0, end = 0;
+printf("checkrectimer start\n");
 
 	if(self == NULL) return;
 
@@ -537,6 +538,14 @@ void checkrectimer(struct stimerthread* self)
 			}
 			else
 			{
+				//workaround for standby recording
+				char* cmd = NULL;
+				cmd = ostrcat("ls -al ", getconfig("rec_path", NULL), 0, 0);
+				cmd = ostrcat(cmd, " >/dev/null", 1, 0);
+			 	printf("cmd: %s\n", cmd);
+			 	system(cmd);
+				free(cmd), cmd = NULL;
+				// workaround end	
 				ret = recordstart(chnode, -1, 0, RECTIMER, node->end, node);
 				if(ret == 14) ret = 0;
 			}
