@@ -800,18 +800,26 @@ msgid "Choose your Internet Favorite from the following list"
 msgstr "Seleccione los marcadores de internet de la lista de abajo"
 
 #: browser.h:212
-msgid "16 Bit"
+msgid "32 Bit Scale 100 Percent"
 msgstr ""
 
 #: browser.h:213
-msgid "32 Bit"
+msgid "32 Bit Scale 200 Percent"
 msgstr ""
 
 #: browser.h:214
+msgid "16 Bit Scale 100 Percent"
+msgstr ""
+
+#: browser.h:215
+msgid "16 Bit Scale 200 Percent"
+msgstr ""
+
+#: browser.h:217
 msgid "Browser Resolution"
 msgstr ""
 
-#: browser.h:214
+#: browser.h:217
 msgid "Choose your Resolution"
 msgstr ""
 
