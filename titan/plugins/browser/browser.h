@@ -243,6 +243,8 @@ void screenbrowser()
 
 	freemenulist(mlist, 1);
 	freebrowserfav();
+	resettvpic();
+
 	setosdtransparent(getskinconfigint("osdtransparent", NULL));
 	if(status.aktservice->channel != NULL)
 		servicestart(status.aktservice->channel, NULL, NULL, 3);
