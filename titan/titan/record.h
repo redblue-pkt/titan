@@ -1431,7 +1431,7 @@ void screenrecordstop()
 
 void screenrecorddirect()
 {
-	char* tmpstr = NULL, *cmd = NULL;
+	char* tmpstr = NULL;
 	int ret = 0, ret1 = 0, newstart = 0;
 	struct service* servicenode = service;
 	struct epg* epgnode = NULL;
@@ -1440,7 +1440,7 @@ void screenrecorddirect()
 
 	struct skin* load = getscreen("loading");
 	drawscreen(load, 0, 0);
-	wakeup_record_device()
+	wakeup_record_device();
 	clearscreen(load);
 	
 	while(servicenode != NULL)
