@@ -1870,23 +1870,23 @@ msgstr "Server naam"
 msgid "Wait for connect or press EXIT"
 msgstr "Wacht op verbinding of druk op EXIT"
 
-#: gmultiepg.h:549 gmultiepg.h:756
+#: gmultiepg.h:546 gmultiepg.h:746
 msgid "GRAPHIC MULTI EPG - Bouquets"
 msgstr "Grafische multi EPG - Favorieten"
 
-#: gmultiepg.h:562
+#: gmultiepg.h:559
 msgid "GRAPHIC MULTI EPG - Channel"
 msgstr "Grafische multi EPG - Kanaal"
 
-#: gmultiepg.h:575
+#: gmultiepg.h:572
 msgid "GRAPHIC MULTI EPG - Satellites"
 msgstr "Grafische multi EPG - Satellieten"
 
-#: gmultiepg.h:588
+#: gmultiepg.h:585
 msgid "GRAPHIC MULTI EPG - Provider"
 msgstr "Grafische multi EPG - Providers"
 
-#: gmultiepg.h:601
+#: gmultiepg.h:598
 msgid "GRAPHIC MULTI EPG - All Channels"
 msgstr "Grafische multi EPG - Alle kanalen"
 
