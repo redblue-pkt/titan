@@ -250,45 +250,4 @@ start:
 	flushrc(500);
 }
 
-/*
-void screenbrowseradjust()
-{
-	int rcret = 0;
-	char* tmpstr = NULL;
-	struct skin* browseradjust = getscreen("browseradjust");
-	struct skin* listbox = getscreennode(browseradjust, "listbox");
-	struct skin* scale = getscreennode(browseradjust, "scale");
-
-	changeinput(scale, "100\n90\n80\n70\n60\n50\n110\n120\n130\n140\n150\n160\n170\n180\n190\n200");
-	tmpstr = readfiletomem("/mnt/config/choices", 0);
-	
-	readscale = string_resub("scale:", "\n", tmpstr, 0);
-	printf(scale: %s\n", readscale);
-	setchoiceboxselection(scale, readscale);
-
-	drawscreen(browseradjust, 0, 0);
-	addscreenrc(browseradjust, listbox);
-
-	tmp = listbox->select;
-	while(1)
-	{
-		addscreenrc(browseradjust, tmp);
-		rcret = waitrc(browseradjust, 0, 0);
-		tmp = listbox->select;
-
-		if(rcret == getrcconfigint("rcexit", NULL)) break;
-		if(rcret == getrcconfigint("rcok", NULL))
-		{
-			addconfigscreencheck("scale", readscale, "0");
-			char* cmd = NULL;
-			cmd = ostrcat('sed "s/scale:.*/scale:', readscal, 0, 0)
-			cmd = ostrcat(cmd, '/" -i /mnt/config/choices' , 1, 0)
-			printf("cmd: %s\n", cmd);
-			system(cmd); 
-			break;
-		}
-	}
-}
-*/
-
 #endif
