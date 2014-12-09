@@ -237,7 +237,8 @@ start:
 			free(tmpstr); tmpstr = NULL;
 			freemenulist(mlist1, 1);
 		}
-		goto start;
+// not working restart currently keycodes from nsfb close the plugin..
+//		goto start;
 	}
 
 	freemenulist(mlist, 1);
