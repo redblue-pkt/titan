@@ -6711,13 +6711,23 @@ char* getmoviedev()
 	return buf;
 }
 
-void hddwakeup(char* dev)
+void wakeup_record_device()
 {
-	char* cmd = NULL;
-	cmd = ostrcat("sdparm -C START ", dev, 0, 0);
+	char* cmd = NULL, *dev = NULL;
+
+	dev = getmoviedev();
+	if(dev == NULL)
+	{
+		cmd = ostrcat("ls -al ", getconfig("rec_path", NULL), 0, 0);
+		cmd = ostrcat(cmd, " >/dev/null", 1, 0);
+	}
+	else
+		cmd = ostrcat("sdparm -C START ", dev, 0, 0);
+
 	printf("cmd: %s\n", cmd);
 	system(cmd);
-	free(cmd), cmd = NULL;	
+	free(dev), dev = NULL;
+	free(cmd), cmd = NULL;
 }
 
 #endif
