@@ -541,10 +541,18 @@ printf("checkrectimer start\n");
 				//workaround for standby recording
 				char* cmd = NULL;
 				cmd = ostrcat("ls -al ", getconfig("rec_path", NULL), 0, 0);
-				cmd = ostrcat(cmd, " >/dev/null", 1, 0);
+//				cmd = ostrcat(cmd, " >/dev/null", 1, 0);
 			 	printf("cmd: %s\n", cmd);
 			 	system(cmd);
 				free(cmd), cmd = NULL;
+			 	sleep(1);
+				cmd = NULL;
+				cmd = ostrcat("ls -al ", getconfig("rec_path", NULL), 0, 0);
+//				cmd = ostrcat(cmd, " >/dev/null", 1, 0);
+			 	printf("cmd: %s\n", cmd);
+			 	system(cmd);
+				free(cmd), cmd = NULL;
+
 				// workaround end	
 				ret = recordstart(chnode, -1, 0, RECTIMER, node->end, node);
 				if(ret == 14) ret = 0;
