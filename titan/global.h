@@ -6722,7 +6722,7 @@ void wakeup_record_device()
 		cmd = ostrcat(cmd, " >/dev/null", 1, 0);
 	}
 	else
-		cmd = ostrcat("sdparm -C START ", dev, 0, 0);
+		cmd = ostrcat("sdparm -C START /dev/", dev, 0, 0);
 
 	printf("cmd: %s\n", cmd);
 	system(cmd);
