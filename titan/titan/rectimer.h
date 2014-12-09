@@ -579,6 +579,12 @@ system("ls -al /media/hdd/");
 printf("ls -al /media/hdd/movie/\n");
 system("ls -al /media/hdd/movie/");
 
+printf("ls -al /media/autofs/\n");
+system("ls -al /media/autofs/");
+
+printf("ls -al /media/autofs/sda1/\n");
+system("ls -al /media/autofs/sda1/");
+
 				// workaround end	
 				ret = recordstart(chnode, -1, 0, RECTIMER, node->end, node);
 				if(ret == 14) ret = 0;
