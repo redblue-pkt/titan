@@ -209,18 +209,30 @@ start:
 	{
 		if(mbox->param != NULL)
 		{
-			addmenulist(&mlist1, "16", _("16 Bit"), NULL, 0, 0);
-			addmenulist(&mlist1, "32", _("32 Bit"), NULL, 0, 0);
+			addmenulist(&mlist1, "32 Bit Scale 100 Percent", _("32 Bit Scale 100 Percent"), NULL, 0, 0);
+			addmenulist(&mlist1, "32 Bit Scale 200 Percent", _("32 Bit Scale 200 Percent"), NULL, 0, 0);
+			addmenulist(&mlist1, "16 Bit Scale 100 Percent", _("16 Bit Scale 100 Percent"), NULL, 0, 0);
+			addmenulist(&mlist1, "16 Bit Scale 200 Percent", _("16 Bit Scale 200 Percent"), NULL, 0, 0);
+
 			mbox1 = menulistbox(mlist1, "menulist", _("Browser Resolution"), _("Choose your Resolution"), NULL, NULL, 0, 0);
 			printf("mbox1->name %s", mbox1->name);
 			printf("mbox1->text %s", mbox1->text);
 			drawscreen(skin, 0, 0);
 			status.sec = 0; //deaktivate spinner
-			tmpstr = ostrcat("nsfb.sh -f linux -b ", mbox1->name, 0, 0);
-			tmpstr = ostrcat(tmpstr, " ", 1, 0);
-			tmpstr = ostrcat(tmpstr, mbox->param, 1, 0);
-			printf("cmd: %s\n", tmpstr);			
-//			tmpstr = ostrcat("nsfb.sh -f linux ", mbox->param, 0, 0);
+			if(ostrcmp(mbox1->name, "32 Bit Scale 100 Percent") == 0)
+				tmpstr = ostrcat("nsfb.sh -f --scale=100 linux -b 32 ", mbox->param, 0, 0);
+			else if(ostrcmp(mbox1->name, "32 Bit Scale 200 Percent") == 0)
+				tmpstr = ostrcat("nsfb.sh -f --scale=200 linux -b 32 ", mbox->param, 0, 0);
+			else if(ostrcmp(mbox1->name, "16 Bit Scale 100 Percent") == 0)
+				tmpstr = ostrcat("nsfb.sh -f --scale=100 linux -b 16 ", mbox->param, 0, 0);
+			else if(ostrcmp(mbox1->name, "16 Bit Scale 200 Percent") == 0)
+				tmpstr = ostrcat("nsfb.sh -f --scale=200 linux -b 16 ", mbox->param, 0, 0);
+
+//			tmpstr = ostrcat("nsfb.sh -f linux -b ", mbox1->name, 0, 0);
+//			tmpstr = ostrcat(tmpstr, " ", 1, 0);
+//			tmpstr = ostrcat(tmpstr, mbox->param, 1, 0);
+
+			printf("cmd: %s\n", tmpstr);
 			system(tmpstr);
 			free(tmpstr); tmpstr = NULL;
 		}
@@ -237,5 +249,46 @@ start:
 		servicestart(status.lastservice->channel, NULL, NULL, 0);
 	flushrc(500);
 }
+
+/*
+void screenbrowseradjust()
+{
+	int rcret = 0;
+	char* tmpstr = NULL;
+	struct skin* browseradjust = getscreen("browseradjust");
+	struct skin* listbox = getscreennode(browseradjust, "listbox");
+	struct skin* scale = getscreennode(browseradjust, "scale");
+
+	changeinput(scale, "100\n90\n80\n70\n60\n50\n110\n120\n130\n140\n150\n160\n170\n180\n190\n200");
+	tmpstr = readfiletomem("/mnt/config/choices", 0);
+	
+	readscale = string_resub("scale:", "\n", tmpstr, 0);
+	printf(scale: %s\n", readscale);
+	setchoiceboxselection(scale, readscale);
+
+	drawscreen(browseradjust, 0, 0);
+	addscreenrc(browseradjust, listbox);
+
+	tmp = listbox->select;
+	while(1)
+	{
+		addscreenrc(browseradjust, tmp);
+		rcret = waitrc(browseradjust, 0, 0);
+		tmp = listbox->select;
+
+		if(rcret == getrcconfigint("rcexit", NULL)) break;
+		if(rcret == getrcconfigint("rcok", NULL))
+		{
+			addconfigscreencheck("scale", readscale, "0");
+			char* cmd = NULL;
+			cmd = ostrcat('sed "s/scale:.*/scale:', readscal, 0, 0)
+			cmd = ostrcat(cmd, '/" -i /mnt/config/choices' , 1, 0)
+			printf("cmd: %s\n", cmd);
+			system(cmd); 
+			break;
+		}
+	}
+}
+*/
 
 #endif
