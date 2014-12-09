@@ -215,18 +215,18 @@ start:
 			addmenulist(&mlist1, "16 Bit Scale 200 Percent", _("16 Bit Scale 200 Percent"), NULL, 0, 0);
 
 			mbox1 = menulistbox(mlist1, "menulist", _("Browser Resolution"), _("Choose your Resolution"), NULL, NULL, 0, 0);
-			printf("mbox1->name %s", mbox1->name);
-			printf("mbox1->text %s", mbox1->text);
+			printf("mbox1->name %s\n", mbox1->name);
+			printf("mbox1->text %s\n", mbox1->text);
 			drawscreen(skin, 0, 0);
 			status.sec = 0; //deaktivate spinner
 			if(ostrcmp(mbox1->name, "32 Bit Scale 100 Percent") == 0)
-				tmpstr = ostrcat("nsfb.sh -f --scale=100 linux -b 32 ", mbox->param, 0, 0);
+				tmpstr = ostrcat("nsfb.sh --scale=100 -f linux -b 32 ", mbox->param, 0, 0);
 			else if(ostrcmp(mbox1->name, "32 Bit Scale 200 Percent") == 0)
-				tmpstr = ostrcat("nsfb.sh -f --scale=200 linux -b 32 ", mbox->param, 0, 0);
+				tmpstr = ostrcat("nsfb.sh --scale=200 -f linux -b 32 ", mbox->param, 0, 0);
 			else if(ostrcmp(mbox1->name, "16 Bit Scale 100 Percent") == 0)
-				tmpstr = ostrcat("nsfb.sh -f --scale=100 linux -b 16 ", mbox->param, 0, 0);
+				tmpstr = ostrcat("nsfb.sh -f --scale=100 -f linux -b 16 ", mbox->param, 0, 0);
 			else if(ostrcmp(mbox1->name, "16 Bit Scale 200 Percent") == 0)
-				tmpstr = ostrcat("nsfb.sh -f --scale=200 linux -b 16 ", mbox->param, 0, 0);
+				tmpstr = ostrcat("nsfb.sh --scale=200 -f linux -b 16 ", mbox->param, 0, 0);
 
 //			tmpstr = ostrcat("nsfb.sh -f linux -b ", mbox1->name, 0, 0);
 //			tmpstr = ostrcat(tmpstr, " ", 1, 0);
