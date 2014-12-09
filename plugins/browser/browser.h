@@ -235,12 +235,12 @@ start:
 			printf("cmd: %s\n", tmpstr);
 			system(tmpstr);
 			free(tmpstr); tmpstr = NULL;
+			freemenulist(mlist1, 1);
 		}
 		goto start;
 	}
 
 	freemenulist(mlist, 1);
-	freemenulist(mlist1, 1);
 	freebrowserfav();
 	setosdtransparent(getskinconfigint("osdtransparent", NULL));
 	if(status.aktservice->channel != NULL)
