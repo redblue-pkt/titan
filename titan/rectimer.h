@@ -543,7 +543,11 @@ printf("sdparm -C START /dev/sda\n");
 system("sdparm -C START /dev/sda");
 printf("########################################\n");
 
-
+				char* moviedev = getmoviedev();
+				if(moviedev != NULL)
+					hddwakeup(moviedev);
+				free(moviedev), moviedev = NULL;
+				 
 				//workaround for standby recording
 				char* cmd = NULL;
 				cmd = ostrcat("ls -al ", getconfig("rec_path", NULL), 0, 0);
@@ -552,7 +556,7 @@ printf("########################################\n");
 			 	system(cmd);
 				free(cmd), cmd = NULL;
 printf("########################################\n");
-
+/*
 			 	sleep(5);
 				cmd = NULL;
 				cmd = ostrcat("ls -al ", getconfig("rec_path", NULL), 0, 0);
@@ -603,7 +607,7 @@ printf("########################################\n");
 printf("ls -al /media/autofs/sda1/\n");
 system("ls -al /media/autofs/sda1/");
 printf("########################################\n");
-
+*/
 				// workaround end	
 				ret = recordstart(chnode, -1, 0, RECTIMER, node->end, node);
 				if(ret == 14) ret = 0;

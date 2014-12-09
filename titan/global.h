@@ -6696,4 +6696,28 @@ char* getimgnamereal()
 	return tmpstr;
 }
 
+char* getmoviedev()
+{
+	char* tmpstr = NULL;
+	char* buf = NULL;
+	tmpstr = readfiletomem("/tmp/.moviedev", 1);
+	printf("tmpstr: %s\n", tmpstr);
+
+	buf = oregex("sd([a-z]{1,1}).*", tmpstr);
+	printf("buf: %s\n", buf);
+
+	free(tmpstr), tmpstr = NULL;
+
+	return buf;
+}
+
+void hddwakeup(char* dev)
+{
+	char* cmd = NULL;
+	cmd = ostrcat("sdparm -C START ", dev, 0, 0);
+	printf("cmd: %s\n", cmd);
+	system(cmd);
+	free(cmd), cmd = NULL;	
+}
+
 #endif
