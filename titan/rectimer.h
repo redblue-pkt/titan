@@ -545,13 +545,33 @@ printf("checkrectimer start\n");
 			 	printf("cmd: %s\n", cmd);
 			 	system(cmd);
 				free(cmd), cmd = NULL;
-			 	sleep(1);
+			 	sleep(2);
 				cmd = NULL;
 				cmd = ostrcat("ls -al ", getconfig("rec_path", NULL), 0, 0);
 //				cmd = ostrcat(cmd, " >/dev/null", 1, 0);
 			 	printf("cmd: %s\n", cmd);
 			 	system(cmd);
 				free(cmd), cmd = NULL;
+
+printf("fdisk -l\n");
+system("fdisk -l");
+
+printf("ls -al /media\n");
+system("ls -al /media");
+printf("ls -al /media/hdd/\n");
+system("ls -al /media/hdd/");
+printf("ls -al /media/hdd/movie\n");
+system("ls -al /media/hdd/movie");
+printf("sdparm -C START /dev/sda\n");
+system("sdparm -C START /dev/sda");
+printf("fdisk -l\n");
+system("fdisk -l");
+printf("ls -al /media\n");
+system("ls -al /media");
+printf("ls -al /media/hdd/\n");
+system("ls -al /media/hdd/");
+printf("ls -al /media/hdd/movie\n");
+system("ls -al /media/hdd/movie");
 
 				// workaround end	
 				ret = recordstart(chnode, -1, 0, RECTIMER, node->end, node);
