@@ -538,6 +538,11 @@ printf("checkrectimer start\n");
 			}
 			else
 			{
+
+printf("sdparm -C START /dev/sda\n");
+system("sdparm -C START /dev/sda");
+
+
 				//workaround for standby recording
 				char* cmd = NULL;
 				cmd = ostrcat("ls -al ", getconfig("rec_path", NULL), 0, 0);
@@ -553,6 +558,8 @@ printf("checkrectimer start\n");
 			 	system(cmd);
 				free(cmd), cmd = NULL;
 
+
+
 printf("fdisk -l\n");
 system("fdisk -l");
 
@@ -562,8 +569,7 @@ printf("ls -al /media/hdd/\n");
 system("ls -al /media/hdd/");
 printf("ls -al /media/hdd/movie\n");
 system("ls -al /media/hdd/movie");
-printf("sdparm -C START /dev/sda\n");
-system("sdparm -C START /dev/sda");
+
 printf("fdisk -l\n");
 system("fdisk -l");
 printf("ls -al /media\n");
