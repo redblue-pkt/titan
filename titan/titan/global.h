@@ -6698,8 +6698,8 @@ char* getimgnamereal()
 
 char* getmoviedev()
 {
-	char* tmpstr = NULL;
-	char* buf = NULL;
+	char* tmpstr = NULL, *buf = NULL;
+
 	tmpstr = readfiletomem("/tmp/.moviedev", 1);
 	printf("tmpstr: %s\n", tmpstr);
 
@@ -6717,13 +6717,11 @@ void wakeup_record_device()
 
 	dev = getmoviedev();
 	if(dev == NULL)
-	{
 		cmd = ostrcat("ls -al ", getconfig("rec_path", NULL), 0, 0);
-		cmd = ostrcat(cmd, " >/dev/null", 1, 0);
-	}
 	else
 		cmd = ostrcat("sdparm -C START /dev/", dev, 0, 0);
 
+//	cmd = ostrcat(cmd, " >/dev/null", 1, 0);
 	printf("cmd: %s\n", cmd);
 	system(cmd);
 	free(dev), dev = NULL;
