@@ -515,13 +515,10 @@ int screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 	akttime -= (((akttime) % 60));
 	time_t starttime = akttime;
 
-	// try to adjust size before first drawscreen
-	gmultiepgchangesize(gmultiepg, listbox, channellistbox, timeline);
-
 	if(chnode == NULL) chnode = status.aktservice->channel;
 	gmultiepgfilldesc(listbox, epgdesc, epgdate, epgnode, chnode, 1);
 
-	//calc screen, so we have all infos
+	//chalc screen, so we have all infos
 	drawscreen(gmultiepg, 2, 0);
 
 	time_t addtime = (listbox->iwidth / zoom) * 60;
@@ -617,7 +614,6 @@ int screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 		b4->hidden = YES;
 	}
 
-	// tobayer, moved more to the beginning
 	gmultiepgchangesize(gmultiepg, listbox, channellistbox, timeline);
 
 	tmpstr = NULL;
@@ -628,12 +624,6 @@ int screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 	createtimeline(gmultiepg, timeline, akttime, zoom);
 
 	drawchannellistgmepg(gmultiepg, list, listbox);
-
-	//tobayer, try another thing to improve initial load of gmultiepg
-	drawscreen(gmultiepg, 2, 0);
-	gmultiepgfilldesc(listbox, epgdesc, epgdate, NULL, NULL, 0);
-	clearscreen(gmultiepg);
-	drawscreen(gmultiepg, 0, 0);
 
 	while(1)
 	{
