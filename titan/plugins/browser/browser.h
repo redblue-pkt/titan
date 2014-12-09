@@ -202,7 +202,7 @@ void screenbrowser()
 		node = node->next;
 	}
 
-start:
+//start:
 	drawscreen(skin, 0, 0);
 	mbox = menulistbox(mlist, "menulist", _("Browser Favoriten"), _("Choose your Internet Favorite from the following list"), NULL, NULL, 0, 0);
 	if(mbox != NULL)
