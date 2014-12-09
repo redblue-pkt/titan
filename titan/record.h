@@ -889,6 +889,8 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 	struct transponder* tpnode = NULL;
 	int input = DMX_IN_FRONTEND;
 
+	wakeup_record_device();
+
 	if(chnode == NULL && filefd < 0)
 	{
 		ret = 8;
@@ -1438,11 +1440,6 @@ void screenrecorddirect()
 	struct menulist* mlist = NULL, *mbox = NULL, *tmpmbox = NULL;
 	struct stimerthread *recthumbfirstthread = NULL;
 
-	struct skin* load = getscreen("loading");
-	drawscreen(load, 0, 0);
-	wakeup_record_device();
-	clearscreen(load);
-	
 	while(servicenode != NULL)
 	{
 		if(servicenode->type == RECORDDIRECT && servicenode->recname != NULL)
@@ -1512,7 +1509,6 @@ void screenrecorddirect()
 		}
 		if(ostrcmp(mbox->name, _("add recording (stop after current event)")) == 0)
 		{
-			wakeup_record_device();
 			epgnode = getepgbytime(status.aktservice->channel, time(NULL) + 60);
 #ifndef SIMULATE
 			if(epgnode != NULL && epgnode->endtime > time(NULL))
@@ -1526,7 +1522,6 @@ void screenrecorddirect()
 		}
 		if(ostrcmp(mbox->name, _("add recording (indefinitely)")) == 0)
 		{
-			wakeup_record_device();
 			ret = recordstart(status.aktservice->channel, -1, 0, RECDIRECT, 0, NULL);
 			newstart = 1;
 		}
@@ -1536,7 +1531,6 @@ void screenrecorddirect()
 
 			if(ret1 > 0)
 			{
-				wakeup_record_device();
 				ret = recordstart(status.aktservice->channel, -1, 0, RECDIRECT, time(NULL) + (ret1 * 60), NULL);
 				newstart = 1;
 			}
