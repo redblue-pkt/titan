@@ -1440,12 +1440,7 @@ void screenrecorddirect()
 
 	struct skin* load = getscreen("loading");
 	drawscreen(load, 0, 0);
-	cmd = ostrcat("ls -al ", getconfig("rec_path", NULL), 0, 0);
-//	cmd = ostrcat(cmd, " >/dev/null &", 1, 0);
-	cmd = ostrcat(cmd, " >/dev/null", 1, 0);
- 	printf("cmd: %s\n", cmd);
- 	system(cmd);
-	free(cmd), cmd = NULL;
+	wakeup_record_device()
 	clearscreen(load);
 	
 	while(servicenode != NULL)
@@ -1517,6 +1512,7 @@ void screenrecorddirect()
 		}
 		if(ostrcmp(mbox->name, _("add recording (stop after current event)")) == 0)
 		{
+			wakeup_record_device();
 			epgnode = getepgbytime(status.aktservice->channel, time(NULL) + 60);
 #ifndef SIMULATE
 			if(epgnode != NULL && epgnode->endtime > time(NULL))
@@ -1530,6 +1526,7 @@ void screenrecorddirect()
 		}
 		if(ostrcmp(mbox->name, _("add recording (indefinitely)")) == 0)
 		{
+			wakeup_record_device();
 			ret = recordstart(status.aktservice->channel, -1, 0, RECDIRECT, 0, NULL);
 			newstart = 1;
 		}
@@ -1539,6 +1536,7 @@ void screenrecorddirect()
 
 			if(ret1 > 0)
 			{
+				wakeup_record_device();
 				ret = recordstart(status.aktservice->channel, -1, 0, RECDIRECT, time(NULL) + (ret1 * 60), NULL);
 				newstart = 1;
 			}
