@@ -1885,23 +1885,23 @@ msgstr "Server Name"
 msgid "Wait for connect or press EXIT"
 msgstr ""
 
-#: gmultiepg.h:549 gmultiepg.h:756
+#: gmultiepg.h:546 gmultiepg.h:746
 msgid "GRAPHIC MULTI EPG - Bouquets"
 msgstr "Graphic Multi EPG - Favourites"
 
-#: gmultiepg.h:562
+#: gmultiepg.h:559
 msgid "GRAPHIC MULTI EPG - Channel"
 msgstr "Graphic Multi EPG - Channels"
 
-#: gmultiepg.h:575
+#: gmultiepg.h:572
 msgid "GRAPHIC MULTI EPG - Satellites"
 msgstr "Graphic Multi EPG - Satellites"
 
-#: gmultiepg.h:588
+#: gmultiepg.h:585
 msgid "GRAPHIC MULTI EPG - Provider"
 msgstr "Graphic Multi EPG - Providers"
 
-#: gmultiepg.h:601
+#: gmultiepg.h:598
 msgid "GRAPHIC MULTI EPG - All Channels"
 msgstr "Graphic Multi EPG - All Channels"
 

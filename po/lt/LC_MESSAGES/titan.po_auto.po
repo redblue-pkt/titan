@@ -1878,23 +1878,23 @@ msgstr "Serverio pavadinimas"
 msgid "Wait for connect or press EXIT"
 msgstr "Palaukite prijungimo ar paspauskite mygtuk EXIT"
 
-#: gmultiepg.h:549 gmultiepg.h:756
+#: gmultiepg.h:546 gmultiepg.h:746
 msgid "GRAPHIC MULTI EPG - Bouquets"
 msgstr "Grafinis Multi EPG - Mgstamiausi"
 
-#: gmultiepg.h:562
+#: gmultiepg.h:559
 msgid "GRAPHIC MULTI EPG - Channel"
 msgstr "Grafinis Multi EPG - Kanalai"
 
-#: gmultiepg.h:575
+#: gmultiepg.h:572
 msgid "GRAPHIC MULTI EPG - Satellites"
 msgstr "Grafinis Multi EPG - Palydovai"
 
-#: gmultiepg.h:588
+#: gmultiepg.h:585
 msgid "GRAPHIC MULTI EPG - Provider"
 msgstr "Grafinis Multi EPG - Tiekjai"
 
-#: gmultiepg.h:601
+#: gmultiepg.h:598
 msgid "GRAPHIC MULTI EPG - All Channels"
 msgstr "Grafinis Multi EPG - Visi kanalai"
 
