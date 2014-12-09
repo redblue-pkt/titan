@@ -538,9 +538,10 @@ printf("checkrectimer start\n");
 			}
 			else
 			{
-
+printf("########################################\n");
 printf("sdparm -C START /dev/sda\n");
 system("sdparm -C START /dev/sda");
+printf("########################################\n");
 
 
 				//workaround for standby recording
@@ -550,6 +551,8 @@ system("sdparm -C START /dev/sda");
 			 	printf("cmd: %s\n", cmd);
 			 	system(cmd);
 				free(cmd), cmd = NULL;
+printf("########################################\n");
+
 			 	sleep(5);
 				cmd = NULL;
 				cmd = ostrcat("ls -al ", getconfig("rec_path", NULL), 0, 0);
@@ -559,31 +562,47 @@ system("sdparm -C START /dev/sda");
 				free(cmd), cmd = NULL;
 
 
+printf("########################################\n");
 
 printf("fdisk -l\n");
 system("fdisk -l");
+printf("########################################\n");
 
 printf("ls -al /media/\n");
 system("ls -al /media/");
+printf("########################################\n");
+
 printf("ls -al /media/hdd/\n");
 system("ls -al /media/hdd/");
+printf("########################################\n");
+
 printf("ls -al /media/hdd/movie/\n");
 system("ls -al /media/hdd/movie/");
+printf("########################################\n");
 
 printf("fdisk -l\n");
 system("fdisk -l");
+printf("########################################\n");
+
 printf("ls -al /media/\n");
 system("ls -al /media/");
+printf("########################################\n");
+
 printf("ls -al /media/hdd/\n");
 system("ls -al /media/hdd/");
+printf("########################################\n");
+
 printf("ls -al /media/hdd/movie/\n");
 system("ls -al /media/hdd/movie/");
+printf("########################################\n");
 
 printf("ls -al /media/autofs/\n");
 system("ls -al /media/autofs/");
+printf("########################################\n");
 
 printf("ls -al /media/autofs/sda1/\n");
 system("ls -al /media/autofs/sda1/");
+printf("########################################\n");
 
 				// workaround end	
 				ret = recordstart(chnode, -1, 0, RECTIMER, node->end, node);
