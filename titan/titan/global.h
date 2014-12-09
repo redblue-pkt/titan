@@ -6719,7 +6719,7 @@ void wakeup_record_device()
 	if(dev == NULL)
 		cmd = ostrcat("ls -al ", getconfig("rec_path", NULL), 0, 0);
 	else
-		cmd = ostrcat("sdparm -C START /dev/", dev, 0, 0);
+		cmd = ostrcat("sdparm -C START /dev/sd", dev, 0, 0);
 
 //	cmd = ostrcat(cmd, " >/dev/null", 1, 0);
 	printf("cmd: %s\n", cmd);
