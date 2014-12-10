@@ -9793,18 +9793,22 @@ msgid "VOX-Now"
 msgstr ""
 
 #: tithek_mainmenu.h:52
-msgid "XXX-Beeg"
+msgid "Watchmovies"
 msgstr ""
 
 #: tithek_mainmenu.h:53
-msgid "XXX-XVIDEOS"
+msgid "XXX-Beeg"
 msgstr ""
 
 #: tithek_mainmenu.h:54
-msgid "Youtube"
+msgid "XXX-XVIDEOS"
 msgstr ""
 
 #: tithek_mainmenu.h:55
+msgid "Youtube"
+msgstr ""
+
+#: tithek_mainmenu.h:56
 msgid "ZDF"
 msgstr ""
 
