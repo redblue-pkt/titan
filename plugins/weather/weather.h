@@ -147,7 +147,7 @@ struct weather* getweather(char* location)
 	//tmpsearch = ostrcat(tmpsearch, "&hl=de", 1, 0);
 	//tmpsearch = stringreplacechar(tmpsearch, ' ', '+');
 
-	tmpstr = gethttp("weather.service.msn.com", tmpsearch, 80, NULL, NULL, 5000, NULL, 0);
+	tmpstr = gethttp("msn.com/en-us/weather", tmpsearch, 80, NULL, NULL, 5000, NULL, 0);
 	//tmpstr = gethttp("www.google.com", tmpsearch, 80, NULL, NULL, 5000, NULL, 0);
 
 	free(tmpsearch); tmpsearch = NULL;
