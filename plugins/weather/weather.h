@@ -136,7 +136,7 @@ struct weather* getweather(char* location)
 	char* lang = NULL;
 	lang = ostrcat(_("en-GB"), NULL, 0, 0);
 
-	tmpsearch = ostrcat("data.aspx?weadegreetype=C&culture=", lang, 0, 0);
+	tmpsearch = ostrcat("data.aspx?src=vista&weadegreetype=C&culture=", lang, 0, 0);
 	tmpsearch = ostrcat(tmpsearch, "&weasearchstr=", 1, 0);
 	tmpsearch = ostrcat(tmpsearch, location, 1, 0);
 	free(lang), lang = NULL;   
