@@ -139,15 +139,15 @@ struct weather* getweather(char* location)
 	tmpsearch = ostrcat("data.aspx?weadegreetype=C&culture=", lang, 0, 0);
 	tmpsearch = ostrcat(tmpsearch, "&weasearchstr=", 1, 0);
 	tmpsearch = ostrcat(tmpsearch, location, 1, 0);
-	free(lang), lang = NULL;
+	free(lang), lang = NULL;   
 
-	//tmpsearch = ostrcat("data.aspx?weadegreetype=C&culture=de-DE&weasearchstr=", location, 0, 0);
+	//tmpsearch = ostrcat("data.aspx?src=vista&weadegreetype=C&culture=de-DE&weasearchstr=", location, 0, 0);
 	//tmpsearch = ostrcat("ig/api?weather=", location, 0, 0);
 	//TODO: implement auto language (from titan.cfg)
 	//tmpsearch = ostrcat(tmpsearch, "&hl=de", 1, 0);
 	//tmpsearch = stringreplacechar(tmpsearch, ' ', '+');
 
-	tmpstr = gethttp("msn.com/en-us/weather", tmpsearch, 80, NULL, NULL, 5000, NULL, 0);
+	tmpstr = gethttp("weather.service.msn.com", tmpsearch, 80, NULL, NULL, 5000, NULL, 0);
 	//tmpstr = gethttp("www.google.com", tmpsearch, 80, NULL, NULL, 5000, NULL, 0);
 
 	free(tmpsearch); tmpsearch = NULL;
