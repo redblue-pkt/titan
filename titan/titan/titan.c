@@ -848,7 +848,8 @@ int main(int argc, char *argv[])
 	ret = dvrgetdev();
 	ret = scgetdev();
 #ifdef MIPSEL
-	//ret = encodergetdev();
+	if(checkbox("ATEMIO-NEMESIS") == 1)
+		ret = encodergetdev();
 #endif
 
 	settunerstatus();
