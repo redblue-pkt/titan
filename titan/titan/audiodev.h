@@ -10,6 +10,9 @@ struct dvbdev* audioopen(int adapter)
 	{
 		if(node->fd == -1 && node->type == AUDIODEV && node->adapter == adapter)
 			break;
+		//workaround for more then one audiodev
+		if(node->fd == -1 && node->type == AUDIODEV && node->devnr == adapter)
+			break;
 		node = node->next;
 	}
 
