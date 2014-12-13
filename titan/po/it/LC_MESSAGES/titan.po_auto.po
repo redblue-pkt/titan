@@ -65,8 +65,8 @@ msgstr ""
 #: primeshare.h:79 primeshare.h:124 putlocker.h:32 putlocker.h:79
 #: putlocker.h:85 putlocker.h:91 putlocker.h:142 putlocker.h:152
 #: putlocker.h:225 readerconfig.h:343 readerconfig.h:443 readerconfig.h:444
-#: readerconfig.h:488 readerconfig.h:489 record.h:387 record.h:1025
-#: record.h:1535 rectimer.h:578 rectimer.h:1232 rectimer.h:1378
+#: readerconfig.h:488 readerconfig.h:489 record.h:387 record.h:1028
+#: record.h:1538 rectimer.h:578 rectimer.h:1232 rectimer.h:1378
 #: rectimer.h:1390 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:31 scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1901
@@ -76,7 +76,7 @@ msgstr ""
 #: skins_mboxinfo_skin.xml.h:2 skins_mc_skin.xml.h:38
 #: skins_optimize_skin.xml.h:3 skins_rgui_skin.xml.h:3
 #: skins_sudoku_skin.xml.h:13 skins_tiwakeup_skin.xml.h:3
-#: skins_wins3_skin.xml.h:3 sock.h:952 softcam.h:403 solarmovie.h:35
+#: skins_wins3_skin.xml.h:3 sock.h:957 softcam.h:403 solarmovie.h:35
 #: solarmovie.h:47 solarmovie.h:304 spinner.h:18 stopifnotused.c:31
 #: streamcloud.h:31 streamcloud.h:74 streamcloud.h:84 streamcloud.h:97
 #: streamcloud.h:128 streamcloud.h:167 stream.h:33 system_backup_restore.h:31
@@ -177,7 +177,7 @@ msgstr "Ok"
 #: putlocker.h:85 putlocker.h:91 putlocker.h:142 putlocker.h:152
 #: putlocker.h:225 readerconfig.h:343 readerconfig.h:443 readerconfig.h:444
 #: readerconfig.h:488 readerconfig.h:489 record.h:90 record.h:387
-#: record.h:1025 record.h:1265 record.h:1510 record.h:1535 rectimer.h:578
+#: record.h:1028 record.h:1268 record.h:1513 record.h:1538 rectimer.h:578
 #: rectimer.h:1232 rectimer.h:1378 rectimer.h:1390 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:31
@@ -192,7 +192,7 @@ msgstr "Ok"
 #: skins_mc_skin.xml.h:22 skins_optimize_skin.xml.h:2
 #: skins_panel_skin.xml.h:15 skins_rgui_skin.xml.h:2
 #: skins_stopifnotused_skin.xml.h:4 skins_sudoku_skin.xml.h:7
-#: skins_tiwakeup_skin.xml.h:2 skins_wins3_skin.xml.h:1 sock.h:952
+#: skins_tiwakeup_skin.xml.h:2 skins_wins3_skin.xml.h:1 sock.h:957
 #: softcam.h:403 solarmovie.h:35 solarmovie.h:47 solarmovie.h:304 spinner.h:18
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:84
 #: streamcloud.h:97 streamcloud.h:128 streamcloud.h:167 stream.h:33
@@ -596,14 +596,14 @@ msgstr ""
 #: putlocker.h:32 putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:343 readerconfig.h:443
 #: readerconfig.h:444 readerconfig.h:488 readerconfig.h:489 record.h:387
-#: record.h:1025 record.h:1265 record.h:1510 record.h:1535 rectimer.h:578
+#: record.h:1028 record.h:1268 record.h:1513 record.h:1538 rectimer.h:578
 #: rectimer.h:1232 rectimer.h:1378 rectimer.h:1390 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:31
 #: scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1646 scan.h:1901
 #: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 service.h:712 service.h:957
 #: shared.h:29 shared.h:65 shared.h:82 skinadjust.h:235 skinselector.h:218
-#: sock.h:952 softcam.h:403 solarmovie.h:35 solarmovie.h:47 solarmovie.h:304
+#: sock.h:957 softcam.h:403 solarmovie.h:35 solarmovie.h:47 solarmovie.h:304
 #: spinner.h:18 stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74
 #: streamcloud.h:84 streamcloud.h:97 streamcloud.h:128 streamcloud.h:167
 #: stream.h:33 system_backup_restore.h:40 system_backup_restore.h:43
@@ -2374,8 +2374,8 @@ msgstr ""
 msgid "Streaming"
 msgstr ""
 
-#: httpdfunc.h:5253 httpdfunc.h:5299 record.h:1391 record.h:1400 record.h:1411
-#: record.h:1440 record.h:1449 record.h:1481 skin_default_skin.xml.h:645
+#: httpdfunc.h:5253 httpdfunc.h:5299 record.h:1394 record.h:1403 record.h:1414
+#: record.h:1443 record.h:1452 record.h:1484 skin_default_skin.xml.h:645
 #: stream.h:15 stream.h:37
 msgid "stop"
 msgstr "bootstop"
@@ -5644,7 +5644,7 @@ msgstr ""
 msgid "Box recording finished poweroff in 30sec !"
 msgstr "Registrazione Finita. Box sara spento in 30 secondi !"
 
-#: record.h:1025
+#: record.h:1028
 msgid ""
 "Can't find free Tuner for Record.\n"
 "Switch to Recording/Timeshift Channel ?"
@@ -5652,11 +5652,11 @@ msgstr ""
 "nessun tener trovato.\n"
 "per registrazione/Timeschift cambiare canale ?"
 
-#: record.h:1264
+#: record.h:1267
 msgid "Timer Record start !"
 msgstr "Timer registrazione partita !"
 
-#: record.h:1409 record.h:1477 skin_default_skin.xml.h:508
+#: record.h:1412 record.h:1480 skin_default_skin.xml.h:508
 #: webif_index.atemio5200.h:59 webif_index.atemio5200.h:115
 #: webif_index.atemio6200.h:59 webif_index.atemio6200.h:115
 #: webif_index.atemio7600.h:47 webif_index.atemio7600.h:109
@@ -5672,27 +5672,27 @@ msgstr "Timer registrazione partita !"
 msgid "Record"
 msgstr "Registra"
 
-#: record.h:1455 record.h:1464 record.h:1487
+#: record.h:1458 record.h:1467 record.h:1490
 msgid "change"
 msgstr "modifica"
 
-#: record.h:1473 record.h:1503
+#: record.h:1476 record.h:1506
 msgid "add recording (stop after current event)"
 msgstr "aggiungere registrazione (questa trasmissione)"
 
-#: record.h:1474 record.h:1516
+#: record.h:1477 record.h:1519
 msgid "add recording (indefinitely)"
 msgstr "aggiungere registrazione (all infinito)"
 
-#: record.h:1475 record.h:1521
+#: record.h:1478 record.h:1524
 msgid "add recording (enter duration)"
 msgstr "aggiungere registrazione (dare durata)"
 
-#: record.h:1510
+#: record.h:1513
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr "EPG non puo essere trovato oppure non e ok"
 
-#: record.h:1535
+#: record.h:1538
 msgid "Record started"
 msgstr "Partita registrazione"
 
@@ -8752,7 +8752,7 @@ msgstr ""
 "Nessuna Configurazione per lo Skin Trovato.\n"
 "Non puo erssere Attivato"
 
-#: sock.h:950
+#: sock.h:955
 msgid "Download finished!"
 msgstr "Download finito!"
 
