@@ -875,7 +875,10 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 	unsigned char* patbuf = NULL, *pmtbuf = NULL;
 	struct epg* epgnode = NULL;
 	struct service* servicenode = NULL;
-	struct dvbdev* fenode = NULL, *dmxnode = NULL, *encnode = NULL, *videonode = NULL, *audionode = NULL;
+	struct dvbdev* fenode = NULL, *dmxnode = NULL,
+#ifdef MIPSEL
+	struct dvbdev* encnode = NULL, *videonode = NULL, *audionode = NULL;
+#endif
 	struct audiotrack* atrack = NULL;
 	struct subtitle *subnode = NULL;
 	char* tmpstr = NULL;
