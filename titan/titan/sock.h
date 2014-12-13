@@ -308,7 +308,7 @@ int sockportcreate(int *fd, int port, int maxconn)
 		return 1;
 	}
 
-	if(setsockopt(*fd, SOL_SOCKET, SO_REUSEADDR, (const void *)&sockoptactive, sizeof (int)) < 0)
+	if(setsockopt(*fd, SOL_SOCKET, (SO_REUSEPORT | SO_REUSEADDR), (const void *)&sockoptactive, sizeof (int)) < 0)
 	{
 		perr("network port %u open: error setsockopt", port);
 
