@@ -304,9 +304,18 @@ void recordstop(struct service* node, int ret)
 		if(node->encoderdev != NULL)
 		{
 			if(node->videodev != NULL)
+			{
 				videostop(node->videodev, 1);
+				videoclose(node->videodev, -1);
+				dmxclose(node->dmxvideodev, -1);
+			}
 			if(node->audiodev != NULL)
+			{
 				audiostop(node->audiodev);
+				audioclose(node->audiodev, -1);
+				dmxclose(node->dmxaudiodev, -1);
+			}
+			encoderclose(node->encoderdev, -1);
 		}
 #endif
 		delservice(node, 0);
@@ -534,22 +543,6 @@ int readwritethread(struct stimerthread* stimer, struct service* servicenode, in
 			return 1;
 		}
 	}
-	
-#ifdef MIPSEL
-	if(servicenode->encoderdev != NULL)
-	{
-		if(servicenode->videodev != NULL)
-		{
-	 		dmxstart(servicenode->dmxvideodev);
-		}
-		if(servicenode->audiodev != NULL)
-		{
-			dmxstart(servicenode->dmxaudiodev);
-		}
-		servicenode->recdmxstart = 1;
-	}
-#endif	
-	
 	
 	if(servicenode->recdmxstart == 0)
 	{
@@ -1139,45 +1132,45 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 #ifdef MIPSEL
 			if(type == RECSTREAMENC)
 			{
-				dmxstop(dmxnode);
-				dmxclose(dmxnode, -1);
-				dmxnode = NULL;
-				servicenode->dmxaudiodev = dmxopen(fenode);
-				servicenode->dmxvideodev = dmxopen(fenode);
-				dmxstop(servicenode->dmxvideodev);
-				dmxstop(servicenode->dmxaudiodev);
 				
+				dmxclose(dmxnode, -1);
+
 				encnode = encoderopen(1);
 				servicenode->encoderdev = encnode;
-
-				switch(encnode->decoder)
-				{
-					case 2: dmxsetpesfilter(servicenode->dmxaudiodev, chnode->audiopid, input, DMX_OUT_DECODER, DMX_PES_AUDIO2, 0); break;
-					case 3: dmxsetpesfilter(servicenode->dmxaudiodev, chnode->audiopid, input, DMX_OUT_DECODER, DMX_PES_AUDIO3, 0); break;
-				}
-								
-				switch(encnode->decoder)
-				{
-					case 2: dmxsetpesfilter(servicenode->dmxvideodev, chnode->videopid, input, DMX_OUT_DECODER, DMX_PES_VIDEO2, 0); break;
-					case 3: dmxsetpesfilter(servicenode->dmxvideodev, chnode->videopid, input, DMX_OUT_DECODER, DMX_PES_VIDEO3, 0); break;
-				}
-						
 				
+				servicenode->dmxaudiodev = dmxopen(fenode);
+				dmxsetbuffersize(servicenode->dmxaudiodev, getconfigint("dmxaudiobuffersize", NULL));
+				dmxsetsource(servicenode->dmxaudiodev, fenode->fedmxsource);
+				switch(encnode->decoder)
+				{
+					case 2: dmxsetpesfilter(servicenode->dmxaudiodev, chnode->audiopid, -1, DMX_OUT_DECODER, DMX_PES_AUDIO2, 0); break;
+					case 3: dmxsetpesfilter(servicenode->dmxaudiodev, chnode->audiopid, -1, DMX_OUT_DECODER, DMX_PES_AUDIO3, 0); break;
+				}
+				usleep(1000);	
+
 				audionode = audioopen(encnode->decoder);
 				servicenode->audiodev = audionode;
 				audioselectsource(servicenode->audiodev, AUDIO_SOURCE_DEMUX);
+				audiosetbypassmode(servicenode->audiodev, 1);
 				audioplay(servicenode->audiodev);
+		
+				servicenode->dmxvideodev = dmxopen(fenode);
+				dmxsetbuffersize(servicenode->dmxvideodev, getconfigint("dmxvideobuffersize", NULL));
+				dmxsetsource(servicenode->dmxvideodev, fenode->fedmxsource);
 				
+				switch(encnode->decoder)
+				{
+					case 2: dmxsetpesfilter(servicenode->dmxvideodev, chnode->videopid, -1, DMX_OUT_DECODER, DMX_PES_VIDEO2, 0); break;
+					case 3: dmxsetpesfilter(servicenode->dmxvideodev, chnode->videopid, -1, DMX_OUT_DECODER, DMX_PES_VIDEO3, 0); break;
+				}
 				
 				videonode = videoopen(0, encnode->decoder);
 				servicenode->videodev = videonode;
 				videoselectsource(servicenode->videodev, VIDEO_SOURCE_DEMUX);
+				setencoding(chnode, servicenode->videodev);
 				videoplay(servicenode->videodev);
-				
-				audiostop(servicenode->audiodev);
-				audioplay(servicenode->audiodev);
-
-
+				 
+				servicenode->recdmxstart = 1;
 			}
 			else
 			{
