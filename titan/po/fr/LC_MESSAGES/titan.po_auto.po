@@ -65,8 +65,8 @@ msgstr ""
 #: primeshare.h:79 primeshare.h:124 putlocker.h:32 putlocker.h:79
 #: putlocker.h:85 putlocker.h:91 putlocker.h:142 putlocker.h:152
 #: putlocker.h:225 readerconfig.h:343 readerconfig.h:443 readerconfig.h:444
-#: readerconfig.h:488 readerconfig.h:489 record.h:378 record.h:1032
-#: record.h:1542 rectimer.h:578 rectimer.h:1232 rectimer.h:1378
+#: readerconfig.h:488 readerconfig.h:489 record.h:387 record.h:1025
+#: record.h:1535 rectimer.h:578 rectimer.h:1232 rectimer.h:1378
 #: rectimer.h:1390 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:31 scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1901
@@ -86,8 +86,8 @@ msgstr ""
 #: system_backup_restore.h:95 system_update.h:257 system_update.h:263
 #: system_update.h:270 thefile.h:34 thefile.h:68 thefile.h:205 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
-#: titan.c:346 titan.c:355 titan.c:996 titan.c:1005 titan.c:1133 titan.c:1154
-#: titan.c:1160 titan.c:1171 titan.c:1177 tithek.c:84 tithek_global.h:248
+#: titan.c:346 titan.c:355 titan.c:997 titan.c:1006 titan.c:1134 titan.c:1155
+#: titan.c:1161 titan.c:1172 titan.c:1178 tithek.c:84 tithek_global.h:248
 #: tithek.h:670 tithek.h:1166 tithek.h:1209 tithek.h:1457 tithek.h:1479
 #: tithek.h:1495 tithek.h:2065 tithek.h:2092 tithek.h:2106 tithek.h:2116
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
@@ -176,8 +176,8 @@ msgstr ""
 #: primeshare.h:79 primeshare.h:124 putlocker.h:32 putlocker.h:79
 #: putlocker.h:85 putlocker.h:91 putlocker.h:142 putlocker.h:152
 #: putlocker.h:225 readerconfig.h:343 readerconfig.h:443 readerconfig.h:444
-#: readerconfig.h:488 readerconfig.h:489 record.h:90 record.h:378
-#: record.h:1032 record.h:1272 record.h:1517 record.h:1542 rectimer.h:578
+#: readerconfig.h:488 readerconfig.h:489 record.h:90 record.h:387
+#: record.h:1025 record.h:1265 record.h:1510 record.h:1535 rectimer.h:578
 #: rectimer.h:1232 rectimer.h:1378 rectimer.h:1390 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:31
@@ -202,9 +202,9 @@ msgstr ""
 #: system_backup_restore.h:88 system_backup_restore.h:95 system_update.h:257
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 timeshift.h:113 timeshift.h:161 timeshift.h:173
-#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:996
-#: titan.c:1005 titan.c:1133 titan.c:1154 titan.c:1160 titan.c:1171
-#: titan.c:1177 tithek.c:84 tithek_global.h:248 tithek.h:670 tithek.h:1166
+#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:997
+#: titan.c:1006 titan.c:1134 titan.c:1155 titan.c:1161 titan.c:1172
+#: titan.c:1178 tithek.c:84 tithek_global.h:248 tithek.h:670 tithek.h:1166
 #: tithek.h:1209 tithek.h:1457 tithek.h:1479 tithek.h:1495 tithek.h:2065
 #: tithek.h:2092 tithek.h:2106 tithek.h:2116 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922
@@ -595,8 +595,8 @@ msgstr "oui / vzap sans fin"
 #: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
 #: putlocker.h:32 putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:343 readerconfig.h:443
-#: readerconfig.h:444 readerconfig.h:488 readerconfig.h:489 record.h:378
-#: record.h:1032 record.h:1272 record.h:1517 record.h:1542 rectimer.h:578
+#: readerconfig.h:444 readerconfig.h:488 readerconfig.h:489 record.h:387
+#: record.h:1025 record.h:1265 record.h:1510 record.h:1535 rectimer.h:578
 #: rectimer.h:1232 rectimer.h:1378 rectimer.h:1390 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:31
@@ -610,8 +610,8 @@ msgstr "oui / vzap sans fin"
 #: system_backup_restore.h:80 system_backup_restore.h:82 system_update.h:257
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 timeshift.h:113 timeshift.h:161 timeshift.h:173
-#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1133
-#: titan.c:1154 titan.c:1160 titan.c:1171 titan.c:1177 tithek.c:84
+#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1134
+#: titan.c:1155 titan.c:1161 titan.c:1172 titan.c:1178 tithek.c:84
 #: tithek_global.h:248 tithek.h:670 tithek.h:1166 tithek.h:1209 tithek.h:1457
 #: tithek.h:1479 tithek.h:2065 tithek.h:2092 tithek.h:2106 tithek.h:2116
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
@@ -2368,8 +2368,8 @@ msgstr "À propos"
 msgid "Streaming"
 msgstr ""
 
-#: httpdfunc.h:5253 httpdfunc.h:5299 record.h:1398 record.h:1407 record.h:1418
-#: record.h:1447 record.h:1456 record.h:1488 skin_default_skin.xml.h:645
+#: httpdfunc.h:5253 httpdfunc.h:5299 record.h:1391 record.h:1400 record.h:1411
+#: record.h:1440 record.h:1449 record.h:1481 skin_default_skin.xml.h:645
 #: stream.h:15 stream.h:37
 msgid "stop"
 msgstr "Stop"
@@ -2714,7 +2714,7 @@ msgstr ""
 msgid "Email  \t\tinfo@atemio.de"
 msgstr ""
 
-#: info.h:27 plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9 titan.c:1005
+#: info.h:27 plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9 titan.c:1006
 #: webif_index.atemio510.h:15 webif_index.atemio5200.h:15
 #: webif_index.atemio5200.h:43 webif_index.atemio5200.h:99
 #: webif_index.atemio6000.h:15 webif_index.atemio6100.h:15
@@ -5618,21 +5618,21 @@ msgstr ""
 msgid "Record / Timeshift / Stream"
 msgstr "Enregistrement chronométré"
 
-#: record.h:378
+#: record.h:387
 msgid "Box recording finished poweroff in 30sec !"
 msgstr ""
 
-#: record.h:1032
+#: record.h:1025
 msgid ""
 "Can't find free Tuner for Record.\n"
 "Switch to Recording/Timeshift Channel ?"
 msgstr ""
 
-#: record.h:1271
+#: record.h:1264
 msgid "Timer Record start !"
 msgstr "Chemin enregistrement chronométré"
 
-#: record.h:1416 record.h:1484 skin_default_skin.xml.h:508
+#: record.h:1409 record.h:1477 skin_default_skin.xml.h:508
 #: webif_index.atemio5200.h:59 webif_index.atemio5200.h:115
 #: webif_index.atemio6200.h:59 webif_index.atemio6200.h:115
 #: webif_index.atemio7600.h:47 webif_index.atemio7600.h:109
@@ -5648,27 +5648,27 @@ msgstr "Chemin enregistrement chronométré"
 msgid "Record"
 msgstr "enregistrer"
 
-#: record.h:1462 record.h:1471 record.h:1494
+#: record.h:1455 record.h:1464 record.h:1487
 msgid "change"
 msgstr "Chaine"
 
-#: record.h:1480 record.h:1510
+#: record.h:1473 record.h:1503
 msgid "add recording (stop after current event)"
 msgstr "ajout d'enregistrement (stopper après l'émission)"
 
-#: record.h:1481 record.h:1523
+#: record.h:1474 record.h:1516
 msgid "add recording (indefinitely)"
 msgstr "ajout d'enregistrement (indéfiniment)"
 
-#: record.h:1482 record.h:1528
+#: record.h:1475 record.h:1521
 msgid "add recording (enter duration)"
 msgstr ""
 
-#: record.h:1517
+#: record.h:1510
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr ""
 
-#: record.h:1542
+#: record.h:1535
 msgid "Record started"
 msgstr "Chemin pour Enregistrement"
 
@@ -9105,67 +9105,67 @@ msgstr ""
 msgid "Error: no audio device found !!"
 msgstr ""
 
-#: titan.c:863
+#: titan.c:864
 msgid "Error: skin not found !!"
 msgstr ""
 
-#: titan.c:947
+#: titan.c:948
 msgid "RemoteControl Old Version"
 msgstr ""
 
-#: titan.c:948
+#: titan.c:949
 msgid "RemoteControl Long Version"
 msgstr ""
 
-#: titan.c:955
+#: titan.c:956
 msgid "Select Your Remote Control"
 msgstr ""
 
-#: titan.c:955
+#: titan.c:956
 msgid "Choose your Remotecontrol Model from the following list"
 msgstr ""
 
-#: titan.c:996
+#: titan.c:997
 msgid "First Wizzard"
 msgstr "Réglages assisté"
 
-#: titan.c:996
+#: titan.c:997
 msgid "Settings OK ?"
 msgstr "Réglages"
 
-#: titan.c:1133
+#: titan.c:1134
 msgid "Receiver successful unlocked"
 msgstr ""
 
-#: titan.c:1154
+#: titan.c:1155
 msgid ""
 "Free space in /var to little!\n"
 "This can make problems!"
 msgstr ""
 
-#: titan.c:1160
+#: titan.c:1161
 msgid ""
 "/var not writeable!\n"
 "Repair it?"
 msgstr ""
 
-#: titan.c:1171
+#: titan.c:1172
 msgid ""
 "Free space in /mnt to little!\n"
 "This can make problems!"
 msgstr ""
 
-#: titan.c:1177
+#: titan.c:1178
 msgid ""
 "/mnt not writeable!\n"
 "Repair it?"
 msgstr ""
 
-#: titan.c:1226
+#: titan.c:1227
 msgid "Unknown Error."
 msgstr ""
 
-#: titan.c:1228
+#: titan.c:1229
 msgid "Automatic stop in 10 seconds."
 msgstr ""
 
