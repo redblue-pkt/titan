@@ -15,6 +15,11 @@ void screenhttpdsettings()
 	struct skin* rguidport = getscreennode(httpdsettings, "rguidport");
 	struct skin* webifip = getscreennode(httpdsettings, "webifip");
 	struct skin* streamzapping = getscreennode(httpdsettings, "streamzapping");
+	struct skin* transcode = getscreennode(httpdsettings, "transcode");
+	struct skin* bitrate = getscreennode(httpdsettings, "bitrate");
+	struct skin* resolution = getscreennode(httpdsettings, "resolution");
+	struct skin* aspectratio = getscreennode(httpdsettings, "aspectratio");
+	
 
 	struct skin* tmp = NULL;
 	char* tmpstr = NULL, *pos = NULL;
@@ -60,6 +65,78 @@ void screenhttpdsettings()
 	addchoicebox(streamzapping, "0", _("no"));
 	addchoicebox(streamzapping, "1", _("yes"));
 	setchoiceboxselection(streamzapping, getconfig("streamzapping", NULL));
+	
+#ifndef MIPSEL
+	transcode->hidden=YES;
+	bitrate->hidden=YES;
+	resolution->hidden=YES;
+	aspectratio->hidden=YES;
+
+#else
+	addchoicebox(transcode, "0", _("off"));
+	addchoicebox(transcode, "1", _("on"));
+	setchoiceboxselection(transcode, getconfig("web_trans_transcode", NULL));
+	
+	addchoicebox(bitrate, "-1", _("Auto"));
+	addchoicebox(bitrate, "100000", "100 Kbits");
+	addchoicebox(bitrate, "150000", "150 Kbits");
+	addchoicebox(bitrate, "200000", "200 Kbits");
+	addchoicebox(bitrate, "250000", "250 Kbits");
+	addchoicebox(bitrate, "300000", "300 Kbits");
+	addchoicebox(bitrate, "350000", "350 Kbits");
+	addchoicebox(bitrate, "400000", "400 Kbits");
+	addchoicebox(bitrate, "450000", "450 Kbits");
+	addchoicebox(bitrate, "500000", "500 Kbits");
+	addchoicebox(bitrate, "750000", "750 Kbits");
+	addchoicebox(bitrate, "1000000", "1 Mbits");
+	addchoicebox(bitrate, "1500000", "1.5 Mbits");
+	addchoicebox(bitrate, "2000000", "2 Mbits");
+	addchoicebox(bitrate, "2500000", "2.5 Mbits");
+	addchoicebox(bitrate, "3000000", "3 Mbits");
+	addchoicebox(bitrate, "3500000", "3.5 Mbits");
+	addchoicebox(bitrate, "4000000", "4 Mbits");
+	addchoicebox(bitrate, "4500000", "4.5 Mbits");
+	addchoicebox(bitrate, "5000000", "5 Mbits");
+	addchoicebox(bitrate, "10000000", "10 Mbits");
+	setchoiceboxselection(bitrate, getconfig("web_trans_bitrate", NULL));
+	
+	addchoicebox(resolution, "0", "480p");
+	addchoicebox(resolution, "1", "576p");
+	addchoicebox(resolution, "2", "720p");
+	addchoicebox(resolution, "3", "320x240");
+	addchoicebox(resolution, "4", "160x120");
+	setchoiceboxselection(resolution, getconfig("web_trans_resolution", NULL));
+
+	addchoicebox(aspectratio, "0", _("auto"));
+	addchoicebox(aspectratio, "1", "4x3");
+	addchoicebox(aspectratio, "2", "16x9");
+	setchoiceboxselection(aspectratio, getconfig("web_trans_aspectratio", NULL));
+
+	if(checkbox("ATEMIO-NEMESIS") != 1)
+	{
+		transcode->hidden=YES;
+		bitrate->hidden=YES;
+		resolution->hidden=YES;
+		aspectratio->hidden=YES;
+	}
+	else
+	{
+		transcode->hidden=NO;
+		if(getconfigint("web_trans_transcode", NULL) == 0)
+		{
+			bitrate->hidden=YES;
+			resolution->hidden=YES;
+			aspectratio->hidden=YES;
+		}
+		else
+		{	
+			bitrate->hidden=NO;
+			resolution->hidden=NO;
+			aspectratio->hidden=NO;
+		}
+	}
+#endif
+	
 
 	drawscreen(httpdsettings, 0, 0);
 	addscreenrc(httpdsettings, listbox);
@@ -127,8 +204,33 @@ void screenhttpdsettings()
 				int rport = atoi(rguidport->ret);
 				addconfigint("rguidport", rport);
 			}
+#ifndef MIPSEL
 			break;
 		}
+#else
+			addconfigscreencheck("web_trans_transcode", transcode, "0");
+			addconfigscreencheck("web_trans_bitrate", bitrate, "0");
+			addconfigscreencheck("web_trans_resolution", resolution, "0");
+			addconfigscreencheck("web_trans_aspectratio", aspectratio, "0");
+			break;
+		}
+		if((rcret == getrcconfigint("rcleft", NULL) || rcret == getrcconfigint("rcright", NULL)) && listbox->select != NULL && ostrcmp(listbox->select->name, "transcode") == 0)
+		{
+			if(ostrcmp(transcode->ret, "0") == 0)
+			{
+				bitrate->hidden=YES;
+				resolution->hidden=YES;
+				aspectratio->hidden=YES;
+			}
+			else
+			{
+				bitrate->hidden=NO;
+				resolution->hidden=NO;
+				aspectratio->hidden=NO;
+			}
+			drawscreen(httpdsettings, 0, 0);
+		}
+#endif
 	}
 
 	delownerrc(httpdsettings);
