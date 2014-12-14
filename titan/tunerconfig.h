@@ -570,6 +570,9 @@ start:
 			addconfigint(tmpstr, maxsat);
 			free(tmpstr); tmpstr = NULL;
 			writeallconfig(1);
+// test reload tuner
+			changedvbdev(tuner);
+
 			break;
 		}
 	}
@@ -718,6 +721,9 @@ int screentunerreceptiondvbc(struct dvbdev* tuner)
 			addconfigint(tmpstr, 1);
 			free(tmpstr); tmpstr = NULL;
 			writeallconfig(1);
+// test reload tuner
+			changedvbdev(tuner);
+
 			break;
 		}
 	}
@@ -771,6 +777,9 @@ int screentunerreceptiondvbt(struct dvbdev* tuner)
 			addconfigint(tmpstr, 1);
 			free(tmpstr); tmpstr = NULL;
 			writeallconfig(1);
+// test reload tuner
+			changedvbdev(tuner);
+
 			break;
 		}
 	}
