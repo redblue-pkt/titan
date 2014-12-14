@@ -147,8 +147,16 @@ void streamthreadfunc(struct stimerthread* timernode)
 
 						if(status.lastservice->channel != chnode && getconfigint("streamzapping", NULL) == 1)
 							servicecheckret(servicestart(chnode, NULL, NULL, 5), 0);
-
+#ifndef MIPSEL
 						ret = recordstart(chnode, -1, connfd, RECSTREAM, 0, NULL);
+#else
+						if(getconfigint("web_trans_transcode", NULL) == 0)
+							ret = recordstart(chnode, -1, connfd, RECSTREAM, 0, NULL);
+						else
+						{
+								ret = recordstartencode(chnode, -1, connfd, RECSTREAMENC, 0, NULL,	1024*1024, 360, 288, 25000, 0, 0);
+						}
+#endif
 					}
 					if(ret == 3)
 					{
