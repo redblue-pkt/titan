@@ -76,7 +76,7 @@ msgstr "Sistemos informacija"
 #: skins_mboxinfo_skin.xml.h:2 skins_mc_skin.xml.h:38
 #: skins_optimize_skin.xml.h:3 skins_rgui_skin.xml.h:3
 #: skins_sudoku_skin.xml.h:13 skins_tiwakeup_skin.xml.h:3
-#: skins_wins3_skin.xml.h:3 sock.h:957 softcam.h:403 solarmovie.h:35
+#: skins_wins3_skin.xml.h:3 sock.h:952 softcam.h:403 solarmovie.h:35
 #: solarmovie.h:47 solarmovie.h:304 spinner.h:18 stopifnotused.c:31
 #: streamcloud.h:31 streamcloud.h:74 streamcloud.h:84 streamcloud.h:97
 #: streamcloud.h:128 streamcloud.h:167 stream.h:33 system_backup_restore.h:31
@@ -192,7 +192,7 @@ msgstr "Gerai"
 #: skins_mc_skin.xml.h:22 skins_optimize_skin.xml.h:2
 #: skins_panel_skin.xml.h:15 skins_rgui_skin.xml.h:2
 #: skins_stopifnotused_skin.xml.h:4 skins_sudoku_skin.xml.h:7
-#: skins_tiwakeup_skin.xml.h:2 skins_wins3_skin.xml.h:1 sock.h:957
+#: skins_tiwakeup_skin.xml.h:2 skins_wins3_skin.xml.h:1 sock.h:952
 #: softcam.h:403 solarmovie.h:35 solarmovie.h:47 solarmovie.h:304 spinner.h:18
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:84
 #: streamcloud.h:97 streamcloud.h:128 streamcloud.h:167 stream.h:33
@@ -603,7 +603,7 @@ msgstr "taip / vzap begalinis"
 #: scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1646 scan.h:1901
 #: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 service.h:712 service.h:957
 #: shared.h:29 shared.h:65 shared.h:82 skinadjust.h:235 skinselector.h:218
-#: sock.h:957 softcam.h:403 solarmovie.h:35 solarmovie.h:47 solarmovie.h:304
+#: sock.h:952 softcam.h:403 solarmovie.h:35 solarmovie.h:47 solarmovie.h:304
 #: spinner.h:18 stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74
 #: streamcloud.h:84 streamcloud.h:97 streamcloud.h:128 streamcloud.h:167
 #: stream.h:33 system_backup_restore.h:40 system_backup_restore.h:43
@@ -8865,7 +8865,7 @@ msgstr ""
 "No skinconfig found in selected skin.\n"
 "cannot change to selected skin."
 
-#: sock.h:955
+#: sock.h:950
 msgid "Download finished!"
 msgstr "Siuntimas baigtas!"
 
