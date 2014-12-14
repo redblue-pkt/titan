@@ -307,11 +307,8 @@ int sockportcreate(int *fd, int port, int maxconn)
 		perr("open socket");
 		return 1;
 	}
-#ifdef MIPSEL
-	if(setsockopt(*fd, SOL_SOCKET, (SO_REUSEPORT | SO_REUSEADDR), (const void *)&sockoptactive, sizeof (int)) < 0)
-#else
+
 	if(setsockopt(*fd, SOL_SOCKET, SO_REUSEADDR, (const void *)&sockoptactive, sizeof (int)) < 0)
-#endif
 	{
 		perr("network port %u open: error setsockopt", port);
 
@@ -319,7 +316,6 @@ int sockportcreate(int *fd, int port, int maxconn)
 		return 1;
 	}
 
-	int option = 1;
 	while(1)
 	{
 		ret = bind(*fd, &servaddr, sizeof(servaddr));
@@ -331,7 +327,6 @@ int sockportcreate(int *fd, int port, int maxconn)
 			return 1;
 		}
 		break;
-
 	}
 
 	while(1)
