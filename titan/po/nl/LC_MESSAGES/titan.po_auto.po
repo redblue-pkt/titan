@@ -10147,7 +10147,7 @@ msgstr ""
 
 #: tpk_description.h:70
 msgid ""
-"Expert Version 9848 of OScam 2xSlot intern + 1xUSB (blocked EMM for V13 and "
+"Expert Version 10081 of OScam 2xSlot intern + 1xUSB (blocked EMM for V13 and "
 "V14) including 0x07 patch"
 msgstr ""
 
