@@ -232,8 +232,8 @@ msgstr "Exit"
 #: httpdfunc.h:4120 httpdfunc.h:4178 httpdfunc.h:4200 httpdfunc.h:4301
 #: httpdfunc.h:4323 httpdfunc.h:4367 httpdfunc.h:4389 httpdfunc.h:4411
 #: httpdfunc.h:4440 httpdfunc.h:4462 httpdfunc.h:4507 httpdfunc.h:4530
-#: httpdfunc.h:4554 httpdfunc.h:4624 httpdsettings.h:22 httpdsettings.h:52
-#: httpdsettings.h:60 inadyn.h:138 mc_audioplayer_settings.h:45
+#: httpdfunc.h:4554 httpdfunc.h:4624 httpdsettings.h:27 httpdsettings.h:57
+#: httpdsettings.h:65 inadyn.h:138 mc_audioplayer_settings.h:45
 #: mc_audioplayer_settings.h:51 mc_audioplayer_settings.h:55
 #: mc_pictureplayer_settings.h:75 mc_videoplayer_settings.h:39
 #: mc_videoplayer_settings.h:43 mc_videoplayer_settings.h:49 mediadb.h:1085
@@ -299,7 +299,7 @@ msgstr ""
 #: httpdfunc.h:4185 httpdfunc.h:4308 httpdfunc.h:4330 httpdfunc.h:4374
 #: httpdfunc.h:4396 httpdfunc.h:4418 httpdfunc.h:4447 httpdfunc.h:4469
 #: httpdfunc.h:4514 httpdfunc.h:4537 httpdfunc.h:4561 httpdfunc.h:4632
-#: httpdsettings.h:23 httpdsettings.h:53 httpdsettings.h:61 inadyn.h:139
+#: httpdsettings.h:28 httpdsettings.h:58 httpdsettings.h:66 inadyn.h:139
 #: mc_audioplayer_settings.h:46 mc_audioplayer_settings.h:52
 #: mc_audioplayer_settings.h:56 mc_pictureplayer_settings.h:76
 #: mc_videoplayer_settings.h:40 mc_videoplayer_settings.h:44
@@ -453,23 +453,23 @@ msgid "4 GB"
 msgstr ""
 
 #: adjust.h:147 adjust.h:268 httpdfunc.h:4098 httpdfunc.h:4579
-#: httpdsettings.h:45
+#: httpdsettings.h:50
 msgid "extern"
 msgstr "external"
 
 #: adjust.h:148 adjust.h:269 httpdfunc.h:4105 httpdfunc.h:4586
-#: httpdsettings.h:44
+#: httpdsettings.h:49
 msgid "intern"
 msgstr "internal"
 
 #: adjust.h:155 autotimer.c:479 autotimer.c:512 avsettings.h:69
-#: fancontrol.h:108 httpdfunc.h:4142 rectimer.h:1187 transponder.h:121
-#: transponder.h:133 transponder.h:157 transponder.h:167 transponder.h:193
-#: transponder.h:200 transponder.h:226 transponder.h:234 transponder.h:258
-#: transponder.h:268 transponder.h:294 transponder.h:301 transponder.h:319
-#: transponder.h:337 transponder.h:363 transponder.h:372 transponder.h:378
-#: transponder.h:385 transponder.h:417 transponder.h:427 transponder.h:476
-#: transponder.h:512
+#: fancontrol.h:108 httpdfunc.h:4142 httpdsettings.h:110 rectimer.h:1187
+#: transponder.h:121 transponder.h:133 transponder.h:157 transponder.h:167
+#: transponder.h:193 transponder.h:200 transponder.h:226 transponder.h:234
+#: transponder.h:258 transponder.h:268 transponder.h:294 transponder.h:301
+#: transponder.h:319 transponder.h:337 transponder.h:363 transponder.h:372
+#: transponder.h:378 transponder.h:385 transponder.h:417 transponder.h:427
+#: transponder.h:476 transponder.h:512
 msgid "auto"
 msgstr "automatic"
 
@@ -699,7 +699,7 @@ msgid "Settings succesfull saved"
 msgstr "Settings saved successfully"
 
 #: avsettings.h:68 avsettings.h:84 fancontrol.h:110 harddisk.h:886
-#: lnbconfig.h:144 mc_pictureplayer_settings.h:34
+#: httpdsettings.h:76 lnbconfig.h:144 mc_pictureplayer_settings.h:34
 #: mc_pictureplayer_settings.h:38 mc_pictureplayer_settings.h:67
 #: mc_videoplayer_settings.h:53 network.h:392 panel_settings_autostart.h:61
 #: panel_settings_overclocking.h:276 readerconfig.h:413
@@ -729,7 +729,7 @@ msgstr "8 Seconds"
 msgid "10 sec"
 msgstr "10 Seconds"
 
-#: avsettings.h:85 fancontrol.h:109 lnbconfig.h:143
+#: avsettings.h:85 fancontrol.h:109 httpdsettings.h:77 lnbconfig.h:143
 #: mc_pictureplayer_settings.h:35 mc_pictureplayer_settings.h:39
 #: readerconfig.h:416 transponder.h:257 transponder.h:266 transponder.h:416
 #: transponder.h:425
@@ -2500,6 +2500,10 @@ msgstr ""
 
 #: httpdfunc.h:6298 skin_default_skin.xml.h:597 webif_system.h:4
 msgid "Settings backup/restore"
+msgstr ""
+
+#: httpdsettings.h:80
+msgid "Auto"
 msgstr ""
 
 #: hwtest.h:88
