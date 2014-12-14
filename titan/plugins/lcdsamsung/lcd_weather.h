@@ -73,7 +73,7 @@ struct weather* getweather(char* location)
 	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL;
 	char* tmpsearch = NULL;
 
-	tmpsearch = ostrcat("data.aspx?weadegreetype=C&culture=de-DE&weasearchstr=", location, 0, 0);
+	tmpsearch = ostrcat("data.aspx?src=vista&weadegreetype=C&culture=de-DE&weasearchstr=", location, 0, 0);
 	//TODO: implement auto language (from titan.cfg)
 	//tmpsearch = ostrcat(tmpsearch, "&hl=de", 1, 0);
 //	tmpsearch = stringreplacechar(tmpsearch, ' ', '+');
