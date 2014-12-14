@@ -292,7 +292,7 @@ void webcreatechannelbody(char** buf, int line, struct channel* chnode, char* ch
 		ostrcatbig(buf, transponderid, maxlen, pos);
 		ostrcatbig(buf, "><img style=\"margin-left: 5\" border=0 src=img/singleepg.png alt=\"Single EPG\" width=16 height=16></a>", maxlen, pos);
 
-		//m3u stream + webstream
+		//m3u stream, transcode stream + webstream
 		if(ret == 0)
 		{
 			ostrcatbig(buf, "<a target=nothing href=query?getm3u&", maxlen, pos);
@@ -300,6 +300,12 @@ void webcreatechannelbody(char** buf, int line, struct channel* chnode, char* ch
 			ostrcatbig(buf, ",", maxlen, pos);
 			ostrcatbig(buf, transponderid, maxlen, pos);
 			ostrcatbig(buf, "><img style=\"margin-left: 5\" border=0 src=img/stream.png alt=Stream width=16 height=16></a>", maxlen, pos);
+
+			ostrcatbig(buf, "<a target=nothing href=query?gettranscodem3u&", maxlen, pos);
+			ostrcatbig(buf, serviceid, maxlen, pos);
+			ostrcatbig(buf, ",", maxlen, pos);
+			ostrcatbig(buf, transponderid, maxlen, pos);
+			ostrcatbig(buf, "><img style=\"margin-left: 5\" border=0 src=img/transstream.png alt=Stream Transcode width=16 height=16></a>", maxlen, pos);
 
 			ostrcatbig(buf, "<a target=_blank href=query?getvideo&", maxlen, pos);
 			ostrcatbig(buf, serviceid, maxlen, pos);
@@ -2010,6 +2016,17 @@ char* webgetfilelist(char* param, char* link, char* dellink, char* path, char* m
 						ostrcatbig(&buf, "\">", &maxlen, &pos);
 
 						ostrcatbig(&buf, "<img border=0 src=img/stream.png width=16 height=16 alt=Stream></a>", &maxlen, &pos);
+
+					//transstream png
+					if(checkbit(flag, 3) == 1)
+					{
+						ostrcatbig(&buf, "<a target=nothing href=\"query?gettranscodem3u&0,0,", &maxlen, &pos);
+						ostrcatbig(&buf, filelistpath->text, &maxlen, &pos);
+						ostrcatbig(&buf, "/", &maxlen, &pos);
+						ostrcatbig(&buf, node->text, &maxlen, &pos);
+						ostrcatbig(&buf, "\">", &maxlen, &pos);
+
+						ostrcatbig(&buf, "<img border=0 src=img/transstream.png width=16 height=16 alt=Stream Transcode></a>", &maxlen, &pos);
 					}
 					//webstream png
 					if(checkbit(flag, 4) == 1)
