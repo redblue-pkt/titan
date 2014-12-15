@@ -622,9 +622,9 @@ int main(int argc, char *argv[])
 
 	if(checkbox("UFS922") == 1)
 		setfanspeed(-1, 0);
-  if(checkbox("ATEMIO-NEMESIS") == 1)
-  {
-  	if(getconfigint("fanmode", NULL) == 0)
+	if(checkbox("ATEMIO-NEMESIS") == 1)
+	{
+		if(getconfigint("fanmode", NULL) == 0)
 			addconfig("fanmode", "3");
 		writesys("/proc/stb/fp/fan", getconfig("fanmode", NULL), 1);
 	}
@@ -853,6 +853,14 @@ int main(int argc, char *argv[])
 #endif
 
 	settunerstatus();
+
+	if(file_exist("/var/etc/.opticum9600.workaround"))
+	{
+		printf("opticum.workaround start\n");
+		unlink("/var/etc/.opticum9600.workaround");
+		oshutdown(3, 1);
+		printf("opticum.workaround end\n");
+	}
 
 	//start ca slot watching threads
 	castart();
