@@ -154,7 +154,7 @@ void streamthreadfunc(struct stimerthread* timernode)
 							ret = recordstart(chnode, -1, connfd, RECSTREAM, 0, NULL);
 						else
 						{
-								ret = recordstartencode(chnode, -1, connfd, RECSTREAMENC, 0, NULL,	1024*1024, 360, 288, 25000, 0, 0);
+								ret = recordstartencode(chnode, -1, connfd, RECSTREAMENC, 0, NULL,	0, 0, 0, 0, 0, 0);
 						}
 #endif
 					}

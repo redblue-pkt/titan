@@ -1286,6 +1286,11 @@ int recordstartencode(struct channel* chnode, int filefd, int recordfd, int type
 {
 	if(type == RECSTREAMENC)
 	{
+		if(bitrate == 0)
+		{
+			if(encodersetweb(-1, 1) != 0)
+				return -1;
+		}	
 		if(encoderset(-1, 1, bitrate, width, height, framerate, interlaced, aspectratio) != 0)
 			return -1;
 	}	

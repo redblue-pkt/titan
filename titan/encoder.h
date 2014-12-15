@@ -148,6 +148,52 @@ int encoderset(int dev, int flag, int bitrate, int width, int height, int framer
 	free(buf); buf=NULL;
 	return 0;
 }
-
-
+int encodersetweb(int dev, int flag)
+{
+	int bitrate = 1024*1024;
+	int width = 360;
+	int height = 280:
+	int framrate = 25000;
+	int interlaced = 0;
+	int aspectratio = 0;
+	int help = 0;
+	int ret;
+	
+	help = getconfigint("web_trans_bitrate", NULL);
+	if(help != 0)
+		bitrate = help;
+	
+	help = getconfigint("web_trans_resolution", NULL):
+	if(help == 0)
+	{
+		width = 640;
+		height = 480;
+	}
+	else if(help == 1)
+	{
+		width = 720;
+		height = 576;
+	}
+	else if(help == 2)
+	{
+		width = 1280;
+		height = 720;
+	}	
+	else if(help == 3)
+	{
+		width = 320;
+		height = 240;
+	}	
+	else if(help == 4)
+	{
+		width = 160;
+		height = 120;
+	}	
+	
+	aspectratio = getconfigint("web_trans_aspectratio", NULL);
+	
+	ret = encoderset(dev, flag, bitrate, width, height, framerate, interlaced, aspectratio);
+	return ret;
+}
+	
 #endif
