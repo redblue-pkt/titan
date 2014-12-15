@@ -86,8 +86,8 @@ msgstr ""
 #: system_backup_restore.h:95 system_update.h:257 system_update.h:263
 #: system_update.h:270 thefile.h:34 thefile.h:68 thefile.h:205 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
-#: titan.c:346 titan.c:355 titan.c:999 titan.c:1008 titan.c:1136 titan.c:1157
-#: titan.c:1163 titan.c:1174 titan.c:1180 tithek.c:84 tithek_global.h:248
+#: titan.c:346 titan.c:355 titan.c:1007 titan.c:1016 titan.c:1144 titan.c:1165
+#: titan.c:1171 titan.c:1182 titan.c:1188 tithek.c:84 tithek_global.h:248
 #: tithek.h:670 tithek.h:1166 tithek.h:1209 tithek.h:1457 tithek.h:1479
 #: tithek.h:1495 tithek.h:2065 tithek.h:2092 tithek.h:2106 tithek.h:2116
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
@@ -202,9 +202,9 @@ msgstr "k"
 #: system_backup_restore.h:88 system_backup_restore.h:95 system_update.h:257
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 timeshift.h:113 timeshift.h:161 timeshift.h:173
-#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:999
-#: titan.c:1008 titan.c:1136 titan.c:1157 titan.c:1163 titan.c:1174
-#: titan.c:1180 tithek.c:84 tithek_global.h:248 tithek.h:670 tithek.h:1166
+#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1007
+#: titan.c:1016 titan.c:1144 titan.c:1165 titan.c:1171 titan.c:1182
+#: titan.c:1188 tithek.c:84 tithek_global.h:248 tithek.h:670 tithek.h:1166
 #: tithek.h:1209 tithek.h:1457 tithek.h:1479 tithek.h:1495 tithek.h:2065
 #: tithek.h:2092 tithek.h:2106 tithek.h:2116 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922
@@ -610,8 +610,8 @@ msgstr ""
 #: system_backup_restore.h:80 system_backup_restore.h:82 system_update.h:257
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 timeshift.h:113 timeshift.h:161 timeshift.h:173
-#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1136
-#: titan.c:1157 titan.c:1163 titan.c:1174 titan.c:1180 tithek.c:84
+#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1144
+#: titan.c:1165 titan.c:1171 titan.c:1182 titan.c:1188 tithek.c:84
 #: tithek_global.h:248 tithek.h:670 tithek.h:1166 tithek.h:1209 tithek.h:1457
 #: tithek.h:1479 tithek.h:2065 tithek.h:2092 tithek.h:2106 tithek.h:2116
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
@@ -2717,7 +2717,7 @@ msgstr ""
 msgid "Email  \t\tinfo@atemio.de"
 msgstr ""
 
-#: info.h:27 plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9 titan.c:1008
+#: info.h:27 plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9 titan.c:1016
 #: webif_index.atemio510.h:15 webif_index.atemio5200.h:15
 #: webif_index.atemio5200.h:43 webif_index.atemio5200.h:99
 #: webif_index.atemio6000.h:15 webif_index.atemio6100.h:15
@@ -9128,53 +9128,53 @@ msgstr ""
 msgid "Error: skin not found !!"
 msgstr ""
 
-#: titan.c:950
+#: titan.c:958
 msgid "RemoteControl Old Version"
 msgstr ""
 
-#: titan.c:951
+#: titan.c:959
 msgid "RemoteControl Long Version"
 msgstr ""
 
-#: titan.c:958
+#: titan.c:966
 msgid "Select Your Remote Control"
 msgstr ""
 
-#: titan.c:958
+#: titan.c:966
 msgid "Choose your Remotecontrol Model from the following list"
 msgstr ""
 
-#: titan.c:999
+#: titan.c:1007
 msgid "First Wizzard"
 msgstr "ассистент настройки"
 
-#: titan.c:999
+#: titan.c:1007
 msgid "Settings OK ?"
 msgstr "Настройки"
 
-#: titan.c:1136
+#: titan.c:1144
 msgid "Receiver successful unlocked"
 msgstr ""
 
-#: titan.c:1157
+#: titan.c:1165
 msgid ""
 "Free space in /var to little!\n"
 "This can make problems!"
 msgstr ""
 
-#: titan.c:1163
+#: titan.c:1171
 msgid ""
 "/var not writeable!\n"
 "Repair it?"
 msgstr ""
 
-#: titan.c:1174
+#: titan.c:1182
 msgid ""
 "Free space in /mnt to little!\n"
 "This can make problems!"
 msgstr ""
 
-#: titan.c:1180
+#: titan.c:1188
 msgid ""
 "/mnt not writeable!\n"
 "Repair it?"
