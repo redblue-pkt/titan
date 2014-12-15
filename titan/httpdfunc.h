@@ -904,6 +904,50 @@ char* webgetm3u(char* param, int connfd, int fmt)
 	return buf;
 }
 
+char* webgettranscodem3u(char* param, int connfd, int fmt)
+{
+	int extip = 1;
+	char* buf = NULL, *ip = NULL, *tmpbuf = NULL;
+	struct sockaddr_in sin;
+	socklen_t len = sizeof(sin);
+
+	if(param == NULL) return NULL;
+
+	if(getconfigint("webifip", NULL) == 1)
+		ip = getispip();
+
+	if(ip == NULL)
+	{
+		if(getsockname(connfd, &sin, &len) < 0)
+		{
+			perr("getsockname");
+			return NULL;
+		}
+
+		extip = 0;
+		ip = inet_ntoa(sin.sin_addr);
+			if(ip == NULL) return NULL;
+	}
+
+	buf = ostrcat(buf, "#EXTM3U\n", 1, 0);
+	buf = ostrcat(buf, "#EXTVLCOPT--http-reconnect=true\n", 1, 0);
+	buf = ostrcat(buf, "http://", 1, 0);
+	buf = ostrcat(buf, ip, 1, 0);
+	buf = ostrcat(buf, ":", 1, 0);
+	buf = ostrcat(buf, getconfig("streamport", NULL), 1, 0);
+	buf = ostrcat(buf, "/", 1, 0);
+
+	tmpbuf = htmlencode(param);
+	if(tmpbuf != NULL)
+		param = tmpbuf;
+
+	buf = ostrcat(buf, param, 1, 0);
+	free(tmpbuf); tmpbuf = NULL;
+
+	if(extip == 1) free(ip);
+	return buf;
+}
+
 char* webgetvideo(char* param, int connfd, int fmt)
 {
 	int extip = 1;
