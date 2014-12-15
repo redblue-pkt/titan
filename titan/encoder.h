@@ -152,7 +152,7 @@ int encodersetweb(int dev, int flag)
 {
 	int bitrate = 1024*1024;
 	int width = 360;
-	int height = 280:
+	int height = 280;
 	int framerate = 25000;
 	int interlaced = 0;
 	int aspectratio = 0;
@@ -163,7 +163,7 @@ int encodersetweb(int dev, int flag)
 	if(help != 0)
 		bitrate = help;
 	
-	help = getconfigint("web_trans_resolution", NULL):
+	help = getconfigint("web_trans_resolution", NULL);
 	if(help == 0)
 	{
 		width = 640;
