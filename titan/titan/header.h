@@ -8,6 +8,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//encoder.h
+void encoderclose(struct dvbdev* node, int fd);
+
 // httpfunc.h
 char* webgetupdate(char* param, int fmt);
 
