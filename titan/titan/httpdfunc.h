@@ -2091,24 +2091,24 @@ char* webgetfilelist(char* param, char* link, char* dellink, char* path, char* m
 	
 						ostrcatbig(&buf, "<img border=0 src=img/icon_restart.png width=16 height=16 alt=Download></a>", &maxlen, &pos);
 					}
+					
+					else
+					{
+						ostrcatbig(&buf, node->text, &maxlen, &pos);
+						ostrcatbig(&buf, "#1", &maxlen, &pos);
+						ostrcatbig(&buf, "\n", &maxlen, &pos);
+					}
 				}
-				else
+				if(fmt == 0)
 				{
-					ostrcatbig(&buf, node->text, &maxlen, &pos);
-					ostrcatbig(&buf, "#1", &maxlen, &pos);
-					ostrcatbig(&buf, "\n", &maxlen, &pos);
+					ostrcatbig(&buf, "</td>", &maxlen, &pos);
+					ostrcatbig(&buf, "</tr>", &maxlen, &pos);
 				}
 			}
-			if(fmt == 0)
-			{
-				ostrcatbig(&buf, "</td>", &maxlen, &pos);
-				ostrcatbig(&buf, "</tr>", &maxlen, &pos);
-			}
-		}
 
 		node = node->next;
+		}
 	}
-
 	if(maxcount > MAXHTMLLINE)
 	{
 		int i;
