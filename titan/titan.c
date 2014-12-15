@@ -856,14 +856,6 @@ int main(int argc, char *argv[])
 
 	settunerstatus();
 
-	if(!file_exist("/tmp/.opticum9600.workaround"))
-	{
-		printf("opticum.workaround start\n");
-		system("touch /tmp/.opticum9600.workaround");
-		oshutdown(3, 1);
-		printf("opticum.workaround end\n");
-	}
-
 	//start ca slot watching threads
 	castart();
 
@@ -1196,6 +1188,14 @@ firstwizzardstep1:
 	}
 
 	addtimer(&guestthread, START, 1000, 1, NULL, NULL, NULL);
+
+	if(!file_exist("/tmp/.opticum9600.workaround"))
+	{
+		printf("opticum.workaround start\n");
+		system("touch /tmp/.opticum9600.workaround");
+		oshutdown(3, 1);
+		printf("opticum.workaround end\n");
+	}
 
 	screeninfobar();
 
