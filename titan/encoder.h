@@ -153,7 +153,7 @@ int encodersetweb(int dev, int flag)
 	int bitrate = 1024*1024;
 	int width = 360;
 	int height = 280:
-	int framrate = 25000;
+	int framerate = 25000;
 	int interlaced = 0;
 	int aspectratio = 0;
 	int help = 0;
