@@ -909,7 +909,7 @@ int main(int argc, char *argv[])
 	else
 		serviceret = servicestart(getchannel(getconfigint("rserviceid", NULL), getconfigllu("rtransponderid", NULL)), getconfig("rchannellist", NULL),  NULL, 0);
 
-	if(!file_exist("/tmp/.opticum9600.workaround"))
+	if(checkbox("IPBOX9000") == 1 && !file_exist("/tmp/.opticum9600.workaround"))
 	{
 		printf("opticum.workaround start\n");
 		system("touch /tmp/.opticum9600.workaround");
