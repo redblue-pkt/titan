@@ -485,7 +485,7 @@ char* getcpuid()
 			//5200 = ini-1000am = bcm7358 = 00:1E:A0
 			//6000 = ini-2000am = bcm7362 = 00:1E:C0
 			//6100 = ini-2000am = bcm7362 = 00:1E:C0
-			//6200 = ini-2000am = bcm7362 = 00:1E:C0
+			//6200 = ini-2000am = bcm7362 = 00:1E:C0 00:1A:B0
 
 			int check = 0;
 			if(checkbox("ATEMIO-NEMESIS") == 1 && checkrealbox("INI-8000AM") == 1 && checkchipset("BCM7424") == 1 && ostrcmp(mac1, "001EA0") == 0)
@@ -496,7 +496,7 @@ char* getcpuid()
 				check = 1;
 			else if(checkbox("ATEMIO6100") == 1 && checkrealbox("INI-2000AM") == 1 && checkchipset("BCM7362") == 1 && ostrcmp(mac1, "001EC0") == 0)
 				check = 1;
-			else if(checkbox("ATEMIO6200") == 1 && checkrealbox("INI-2000AM") == 1 && checkchipset("BCM7362") == 1 && ostrcmp(mac1, "001EC0") == 0)
+			else if(checkbox("ATEMIO6200") == 1 && checkrealbox("INI-2000AM") == 1 && checkchipset("BCM7362") == 1 && ostrcmp(mac1, "001AB0") == 0)
 				check = 1;
 			else if(checkbox("ATEMIO520") == 1 && checkrealbox("ATEMIO520") == 1 && ostrcmp(mac1, "00E124") == 0)
 				check = 1;
