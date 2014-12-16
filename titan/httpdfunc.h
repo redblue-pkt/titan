@@ -4673,28 +4673,31 @@ printf("webadjust fmt: %d\n",fmt);
 	
 ///////////////////	
 #ifdef MIPSEL
-	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
-	ostrcatbig(&buf, _("Dualboot Menu TitanNit / E2"), &maxlen, &pos);
-	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"dualboot\" border=\"0\">", &maxlen, &pos);
-
-//		if(getconfigint("dualboot", NULL) == 0)
-	if(!file_exist("/mnt/config/dualboot"))
-		ostrcatbig(&buf, "<option value=\"0\" selected>", &maxlen, &pos);		
-	else
-		ostrcatbig(&buf, "<option value=\"0\">", &maxlen, &pos);
-	ostrcatbig(&buf, _("no"), &maxlen, &pos);
-	ostrcatbig(&buf, "</option>", &maxlen, &pos);
-
-//		if(getconfigint("dualboot", NULL) == 1)
-	if(file_exist("/mnt/config/dualboot"))
-		ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);		
-	else
-		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
-	ostrcatbig(&buf, _("yes"), &maxlen, &pos);
-	ostrcatbig(&buf, "</option>", &maxlen, &pos);
-
-	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);	
-	sendstr = ostrcat(sendstr, ", dualboot.value", 1 , 0);
+	if(file_exist("/usr/bin/enigma2"))
+	{
+		ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+		ostrcatbig(&buf, _("Dualboot Menu TitanNit / E2"), &maxlen, &pos);
+		ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"dualboot\" border=\"0\">", &maxlen, &pos);
+	
+	//		if(getconfigint("dualboot", NULL) == 0)
+		if(!file_exist("/mnt/config/dualboot"))
+			ostrcatbig(&buf, "<option value=\"0\" selected>", &maxlen, &pos);		
+		else
+			ostrcatbig(&buf, "<option value=\"0\">", &maxlen, &pos);
+		ostrcatbig(&buf, _("no"), &maxlen, &pos);
+		ostrcatbig(&buf, "</option>", &maxlen, &pos);
+	
+	//		if(getconfigint("dualboot", NULL) == 1)
+		if(file_exist("/mnt/config/dualboot"))
+			ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);		
+		else
+			ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
+		ostrcatbig(&buf, _("yes"), &maxlen, &pos);
+		ostrcatbig(&buf, "</option>", &maxlen, &pos);
+	
+		ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);	
+		sendstr = ostrcat(sendstr, ", dualboot.value", 1 , 0);
+	}
 #endif
 	
 
