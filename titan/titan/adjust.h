@@ -253,6 +253,9 @@ void screenadjust()
 	dualboot->hidden = YES;
 #endif
 
+	if(!file_exist("/usr/bin/enigma2"))
+		dualboot->hidden = YES;
+
 	if(status.security == 0 || checkemu() == 0)
 		emucontrol->hidden = YES;
 	else
