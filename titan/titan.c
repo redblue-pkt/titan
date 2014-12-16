@@ -431,7 +431,7 @@ void oshutdown(int exitcode, int flag)
 	
 	//stop fan 
 	if(checkbox("ATEMIO-NEMESIS") == 1)
- 		writesys("/proc/stb/fp/fan", "1", 1);
+		writesys("/proc/stb/fp/fan", "1", 1);
  		
 	//reset ci devices
 	while(dvbnode != NULL)
@@ -622,9 +622,9 @@ int main(int argc, char *argv[])
 
 	if(checkbox("UFS922") == 1)
 		setfanspeed(-1, 0);
-  if(checkbox("ATEMIO-NEMESIS") == 1)
-  {
-  	if(getconfigint("fanmode", NULL) == 0)
+	if(checkbox("ATEMIO-NEMESIS") == 1)
+	{
+		if(getconfigint("fanmode", NULL) == 0)
 			addconfig("fanmode", "3");
 		writesys("/proc/stb/fp/fan", getconfig("fanmode", NULL), 1);
 	}
