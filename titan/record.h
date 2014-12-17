@@ -1149,7 +1149,8 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 					case 2: dmxsetpesfilter(servicenode->dmxaudiodev, chnode->audiopid, -1, DMX_OUT_DECODER, DMX_PES_AUDIO2, 0); break;
 					case 3: dmxsetpesfilter(servicenode->dmxaudiodev, chnode->audiopid, -1, DMX_OUT_DECODER, DMX_PES_AUDIO3, 0); break;
 				}
-				usleep(1000);	
+				usleep(1000);
+				usleep(900);	
 
 				audionode = audioopen(encnode->decoder);
 				servicenode->audiodev = audionode;
@@ -1291,7 +1292,7 @@ int recordstartencode(struct channel* chnode, int filefd, int recordfd, int type
 			if(encodersetweb(-1, 1) != 0)
 				return -1;
 		}	
-		if(encoderset(-1, 1, bitrate, width, height, framerate, interlaced, aspectratio) != 0)
+		else if(encoderset(-1, 1, bitrate, width, height, framerate, interlaced, aspectratio) != 0)
 			return -1;
 	}	
 	return recordstartreal(chnode, filefd, recordfd, type, endtime, rectimernode, 188);
