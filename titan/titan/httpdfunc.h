@@ -281,9 +281,13 @@ void webcreatechannelbody(char** buf, int line, struct channel* chnode, char* ch
 	if(fmt == 0) 
 	{
 		if(chnode->servicetype == 0)
-			ostrcatbig(buf, "</td><td width=100 align=right valign=middle nowrap><img style=\"margin-left: 5\" border=0 src=img/tv.png title=TV alt=TV width=16 height=16>", maxlen, pos);
+			ostrcatbig(buf, "</td><td width=100 align=right valign=middle nowrap><img style=\"margin-left: 5\" border=0 src=img/tv.png title=\"", maxlen, pos);
+			ostrcatbig(buf, _("TV"), maxlen, pos);
+			ostrcatbig(buf, "\" width=16 height=16></a>", maxlen, pos);		
 		else
-			ostrcatbig(buf, "</td><td width=100 align=right valign=middle nowrap><img style=\"margin-left: 5\" border=0 src=img/radio.png title=Radio alt=Radio width=16 height=16>", maxlen, pos);
+			ostrcatbig(buf, "</td><td width=100 align=right valign=middle nowrap><img style=\"margin-left: 5\" border=0 src=img/radio.png title=\"", maxlen, pos);
+			ostrcatbig(buf, _("Radio"), maxlen, pos);
+			ostrcatbig(buf, "\" width=16 height=16></a>", maxlen, pos);
 
 		//single epg
 		ostrcatbig(buf, "<a target=main href=query?getsingleepg&", maxlen, pos);
@@ -301,22 +305,30 @@ void webcreatechannelbody(char** buf, int line, struct channel* chnode, char* ch
 			ostrcatbig(buf, serviceid, maxlen, pos);
 			ostrcatbig(buf, ",", maxlen, pos);
 			ostrcatbig(buf, transponderid, maxlen, pos);
-			ostrcatbig(buf, "><img style=\"margin-left: 5\" border=0 src=img/stream.png title=Stream alt=Stream width=16 height=16></a>", maxlen, pos);
+			ostrcatbig(buf, "><img style=\"margin-left: 5\" border=0 src=img/stream.png title=\"", maxlen, pos);
+			ostrcatbig(buf, _("Stream"), maxlen, pos);
+			ostrcatbig(buf, "\" width=16 height=16></a>", maxlen, pos);
 
 			ostrcatbig(buf, "<a target=nothing href=query?gettranscodem3u&", maxlen, pos);
 			ostrcatbig(buf, serviceid, maxlen, pos);
 			ostrcatbig(buf, ",", maxlen, pos);
 			ostrcatbig(buf, transponderid, maxlen, pos);
-			ostrcatbig(buf, "><img style=\"margin-left: 5\" border=0 src=img/transstream.png title=Stream Transcode alt=Stream Transcode width=16 height=16></a>", maxlen, pos);
+			ostrcatbig(buf, "><img style=\"margin-left: 5\" border=0 src=img/transstream.png title=\"", maxlen, pos);
+			ostrcatbig(buf, _("Stream Transcode"), maxlen, pos);
+			ostrcatbig(buf, "\" width=16 height=16></a>", maxlen, pos);
 
 			ostrcatbig(buf, "<a target=_blank href=query?getvideo&", maxlen, pos);
 			ostrcatbig(buf, serviceid, maxlen, pos);
 			ostrcatbig(buf, ",", maxlen, pos);
 			ostrcatbig(buf, transponderid, maxlen, pos);
-			ostrcatbig(buf, "><img style=\"margin-left: 5\" border=0 src=img/webstream.png title=Web Stream alt=WebStream width=16 height=16></a>", maxlen, pos);
+			ostrcatbig(buf, "><img style=\"margin-left: 5\" border=0 src=img/webstream.png title=\"", maxlen, pos);
+			ostrcatbig(buf, _("WebStream"), maxlen, pos);
+			ostrcatbig(buf, "\" width=16 height=16></a>", maxlen, pos);
 		}
 		else
-			ostrcatbig(buf, "<img style=\"margin-left: 5\" border=0 src=img/cross.png title= Sender nicht verfügbar alt=\"Channel not availabel\" width=16 height=16>", maxlen, pos);
+			ostrcatbig(buf, "<img style=\"margin-left: 5\" border=0 src=img/cross.png title=\"", maxlen, pos);
+			ostrcatbig(buf, _("Channel not available"), maxlen, pos);
+			ostrcatbig(buf, "\" width=16 height=16></a>", maxlen, pos);
 		ostrcatbig(buf, "</td></tr>", maxlen, pos);
 	}
 
