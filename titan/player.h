@@ -1866,7 +1866,7 @@ unsigned long long playergetpts()
 #endif
 
 #ifdef EPLAYER4
-	GstFormat fmt = GST_FORMAT_TIME; //Returns time in nanosecs
+	enum GstFormat fmt = GST_FORMAT_TIME; //Returns time in nanosecs
 	
 /*
 	if(pipeline)
@@ -1897,7 +1897,7 @@ unsigned long long playergetpts()
 
 		gst_object_unref(sink);
 
-		if(!use_get_decoder_time && !gst_element_query_position(pipeline, &fmt, (gint64*)&pos))
+		if(!use_get_decoder_time && !gst_element_query_position(pipeline, &fmt, &pos))
 			return 0;
 
 		/* pos is in nanoseconds. we have 90 000 pts per second. */
