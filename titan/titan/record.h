@@ -1135,6 +1135,7 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 #ifdef MIPSEL
 			if(type == RECSTREAMENC)
 			{
+				int helpsleep = getconfigint("enc_timing", NULL);
 				
 				dmxclose(dmxnode, -1);
 
@@ -1150,7 +1151,10 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 					case 3: dmxsetpesfilter(servicenode->dmxaudiodev, chnode->audiopid, -1, DMX_OUT_DECODER, DMX_PES_AUDIO3, 0); break;
 				}
 				//usleep(1000);
-				usleep(500);	
+				if(helpsleep == 0)
+					usleep(300);	
+				else
+					usleep(helpsleep);
 
 				audionode = audioopen(encnode->decoder);
 				servicenode->audiodev = audionode;
