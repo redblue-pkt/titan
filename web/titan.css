@@ -13,8 +13,8 @@
 
 .line1 {background-color: #454545;}
 .line2 {background-color: #505050;}
-/*.line1 td:nth-child(2){text-align: center}
-.line2 td:nth-child(2){text-align: center}
+.line1 td:nth-child(2){text-align: center; width: 110px}
+.line2 td:nth-child(2){text-align: center; width: 110px}
 /*.line1 td:last-child:not([class="gepgcell"]){border-radius: 0px 5px 5px 0px;}
 .line2 td:last-child:not([class="gepgcell"]){border-radius: 0px 5px 5px 0px;}
 .line1 td:first-child:not([class="gepgcell"]){ border-radius: 5px 0px 0px 5px;}
