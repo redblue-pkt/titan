@@ -2138,10 +2138,6 @@ msgstr ""
 msgid "Stream"
 msgstr ""
 
-#: httpdfunc.h:323
-msgid "Stream Transcode"
-msgstr ""
-
 #: httpdfunc.h:331
 msgid "WebStream"
 msgstr ""
