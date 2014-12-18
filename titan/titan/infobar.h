@@ -175,7 +175,7 @@ void screeninfobar()
 
 		if(rcret != getrcconfigint("rcmute", NULL) && status.mute > 0)
 		{
-			printf("skip rccode: rcret=%d\n", rcret)
+			printf("skip rccode: rcret=%d\n", rcret);
 			continue;
 		}
 
