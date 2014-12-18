@@ -1866,7 +1866,7 @@ unsigned long long playergetpts()
 #endif
 
 #ifdef EPLAYER4
-	enum GstFormat fmt = GST_FORMAT_TIME; //Returns time in nanosecs
+	GstFormat fmt = GST_FORMAT_TIME; //Returns time in nanosecs
 	
 /*
 	if(pipeline)
