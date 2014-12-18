@@ -290,9 +290,9 @@ void webcreatechannelbody(char** buf, int line, struct channel* chnode, char* ch
 		ostrcatbig(buf, serviceid, maxlen, pos);
 		ostrcatbig(buf, "&", maxlen, pos);
 		ostrcatbig(buf, transponderid, maxlen, pos);
-		ostrcatbig(buf, "><img style=\"margin-left: 5\" border=0 src=img/singleepg.png title=", maxlen, pos);
+		ostrcatbig(buf, "><img style=\"margin-left: 5\" border=0 src=img/singleepg.png title=\"", maxlen, pos);
 		ostrcatbig(buf, _("Single EPG"), maxlen, pos);
-		ostrcatbig(buf, " width=16 height=16></a>", maxlen, pos);
+		ostrcatbig(buf, "\" width=16 height=16></a>", maxlen, pos);
 
 		//m3u stream, transcode stream + webstream
 		if(ret == 0)
