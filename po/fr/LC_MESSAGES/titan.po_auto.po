@@ -6414,7 +6414,7 @@ msgid "Ask on channel switch"
 msgstr ""
 
 #: skin_default_skin.xml.h:80
-msgid "__aspectratio"
+msgid "Aspect Ratio"
 msgstr ""
 
 #: skin_default_skin.xml.h:81
@@ -6537,7 +6537,7 @@ msgid "BER:"
 msgstr ""
 
 #: skin_default_skin.xml.h:113
-msgid "__Bitrate"
+msgid "Bitrate"
 msgstr ""
 
 #: skin_default_skin.xml.h:114
@@ -8002,8 +8002,10 @@ msgstr "Type de répétition"
 msgid "RESET"
 msgstr "Réinitialiser"
 
-#: skin_default_skin.xml.h:534
-msgid "__Resolution"
+#: skin_default_skin.xml.h:534 webif_index.atemio7600.h:18
+#: webif_index.atemio7600.h:118 webif_rc.atemio520.h:4 webif_rc.atemio530.h:4
+#: webif_rc.atemio7600.h:51
+msgid "Resolution"
 msgstr ""
 
 #: skin_default_skin.xml.h:535
@@ -12697,11 +12699,6 @@ msgstr ""
 #: webif_rc.atemio510.h:3 webif_rc.atemio7600.h:32
 #: webif_rc_virtual.atemio510.h:3
 msgid "Page Up"
-msgstr ""
-
-#: webif_index.atemio7600.h:18 webif_index.atemio7600.h:118
-#: webif_rc.atemio520.h:4 webif_rc.atemio530.h:4 webif_rc.atemio7600.h:51
-msgid "Resolution"
 msgstr ""
 
 #: webif_index.atemio7600.h:19 webif_index.atemio7600.h:117

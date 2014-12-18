@@ -6578,8 +6578,8 @@ msgid "Ask on channel switch"
 msgstr "Nachfragen bei Senderwechsel"
 
 #: skin_default_skin.xml.h:80
-msgid "__aspectratio"
-msgstr "Seitenverhältnis"
+msgid "Aspect Ratio"
+msgstr ""
 
 #: skin_default_skin.xml.h:81
 msgid "Aspect Ratio:"
@@ -6703,8 +6703,8 @@ msgid "BER:"
 msgstr ""
 
 #: skin_default_skin.xml.h:113
-msgid "__Bitrate"
-msgstr "Bitrate"
+msgid "Bitrate"
+msgstr ""
 
 #: skin_default_skin.xml.h:114
 msgid "Blindscan"
@@ -8242,8 +8242,10 @@ msgstr "Wiederholungsmodus"
 msgid "RESET"
 msgstr "Zurücksetzen"
 
-#: skin_default_skin.xml.h:534
-msgid "__Resolution"
+#: skin_default_skin.xml.h:534 webif_index.atemio7600.h:18
+#: webif_index.atemio7600.h:118 webif_rc.atemio520.h:4 webif_rc.atemio530.h:4
+#: webif_rc.atemio7600.h:51
+msgid "Resolution"
 msgstr "Auflösung"
 
 #: skin_default_skin.xml.h:535
@@ -13029,11 +13031,6 @@ msgstr "virtuelle Fernbedienung anzeigen"
 msgid "Page Up"
 msgstr "Seite rauf"
 
-#: webif_index.atemio7600.h:18 webif_index.atemio7600.h:118
-#: webif_rc.atemio520.h:4 webif_rc.atemio530.h:4 webif_rc.atemio7600.h:51
-msgid "Resolution"
-msgstr "Auflösung"
-
 #: webif_index.atemio7600.h:19 webif_index.atemio7600.h:117
 #: webif_rc.atemio510.h:9 webif_rc.atemio7600.h:50
 #: webif_rc_virtual.atemio510.h:9
@@ -13229,3 +13226,12 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
+
+#~ msgid "__aspectratio"
+#~ msgstr "Seitenverhältnis"
+
+#~ msgid "__Bitrate"
+#~ msgstr "Bitrate"
+
+#~ msgid "__Resolution"
+#~ msgstr "Auflösung"
