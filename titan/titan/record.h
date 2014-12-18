@@ -1149,7 +1149,7 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 					case 2: dmxsetpesfilter(servicenode->dmxaudiodev, chnode->audiopid, -1, DMX_OUT_DECODER, DMX_PES_AUDIO2, 0); break;
 					case 3: dmxsetpesfilter(servicenode->dmxaudiodev, chnode->audiopid, -1, DMX_OUT_DECODER, DMX_PES_AUDIO3, 0); break;
 				}
-				usleep(1000);
+				//usleep(1000);
 				usleep(900);	
 
 				audionode = audioopen(encnode->decoder);
