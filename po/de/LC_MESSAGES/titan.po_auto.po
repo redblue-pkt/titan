@@ -13226,12 +13226,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid "__aspectratio"
-#~ msgstr "Seitenverhältnis"
-
-#~ msgid "__Bitrate"
-#~ msgstr "Bitrate"
-
-#~ msgid "__Resolution"
-#~ msgstr "Auflösung"
