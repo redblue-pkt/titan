@@ -24,8 +24,8 @@ msgstr ""
 #: gmediarender.h:115 harddisk.h:350 harddisk.h:355 harddisk.h:382
 #: harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641 harddisk.h:675
 #: harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733 harddisk.h:793
-#: harddisk.h:812 harddisk.h:815 harddisk.h:1046 hbbtv.h:362 httpdfunc.h:1190
-#: httpdfunc.h:3140 httpdfunc.h:5927 httpdfunc.h:6192 httpdfunc.h:6263
+#: harddisk.h:812 harddisk.h:815 harddisk.h:1046 hbbtv.h:362 httpdfunc.h:1192
+#: httpdfunc.h:3142 httpdfunc.h:5929 httpdfunc.h:6194 httpdfunc.h:6265
 #: hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113
 #: hwtest.h:206 hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492
 #: hwtest.h:564 hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617
@@ -131,8 +131,8 @@ msgstr "Ok"
 #: harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641 harddisk.h:675
 #: harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733 harddisk.h:793
 #: harddisk.h:812 harddisk.h:815 harddisk.h:1046 hbbtv.h:362 hello.c:36
-#: httpdfunc.h:1190 httpdfunc.h:3140 httpdfunc.h:5927 httpdfunc.h:6192
-#: httpdfunc.h:6263 hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103
+#: httpdfunc.h:1192 httpdfunc.h:3142 httpdfunc.h:5929 httpdfunc.h:6194
+#: httpdfunc.h:6265 hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103
 #: hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390 hwtest.h:411
 #: hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566 hwtest.h:586
 #: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
@@ -227,12 +227,12 @@ msgstr "Thoát"
 #: blindscanadjust.h:158 blindscanadjust.h:187 blindscanadjust.h:191 cec.h:142
 #: cec.h:146 cec.h:150 cec.h:154 cec.h:158 cec.h:162 cec.h:166 cec.h:170
 #: cec.h:174 dlna.h:276 epgsettings.h:134 epgsettings.h:187 epgsettings.h:196
-#: epgsettings.h:200 epgsettings.h:205 epgsettings.h:210 httpdfunc.h:3693
-#: httpdfunc.h:3731 httpdfunc.h:3754 httpdfunc.h:3783 httpdfunc.h:3934
-#: httpdfunc.h:4181 httpdfunc.h:4239 httpdfunc.h:4261 httpdfunc.h:4362
-#: httpdfunc.h:4384 httpdfunc.h:4428 httpdfunc.h:4450 httpdfunc.h:4472
-#: httpdfunc.h:4501 httpdfunc.h:4523 httpdfunc.h:4568 httpdfunc.h:4591
-#: httpdfunc.h:4615 httpdfunc.h:4687 httpdsettings.h:27 httpdsettings.h:57
+#: epgsettings.h:200 epgsettings.h:205 epgsettings.h:210 httpdfunc.h:3695
+#: httpdfunc.h:3733 httpdfunc.h:3756 httpdfunc.h:3785 httpdfunc.h:3936
+#: httpdfunc.h:4183 httpdfunc.h:4241 httpdfunc.h:4263 httpdfunc.h:4364
+#: httpdfunc.h:4386 httpdfunc.h:4430 httpdfunc.h:4452 httpdfunc.h:4474
+#: httpdfunc.h:4503 httpdfunc.h:4525 httpdfunc.h:4570 httpdfunc.h:4593
+#: httpdfunc.h:4617 httpdfunc.h:4689 httpdsettings.h:27 httpdsettings.h:57
 #: httpdsettings.h:65 inadyn.h:138 mc_audioplayer_settings.h:45
 #: mc_audioplayer_settings.h:51 mc_audioplayer_settings.h:55
 #: mc_pictureplayer_settings.h:75 mc_videoplayer_settings.h:39
@@ -275,15 +275,15 @@ msgstr "Thoát"
 msgid "no"
 msgstr "không"
 
-#: adjust.h:68 httpdfunc.h:3700 webif_help.h:35
+#: adjust.h:68 httpdfunc.h:3702 webif_help.h:35
 msgid "infobar"
 msgstr ""
 
-#: adjust.h:69 httpdfunc.h:3707 webif_help.h:26
+#: adjust.h:69 httpdfunc.h:3709 webif_help.h:26
 msgid "epg"
 msgstr ""
 
-#: adjust.h:70 epgsettings.h:138 httpdfunc.h:3714
+#: adjust.h:70 epgsettings.h:138 httpdfunc.h:3716
 msgid "Channel EPG"
 msgstr "EPG"
 
@@ -295,10 +295,10 @@ msgstr "EPG"
 #: blindscanadjust.h:159 blindscanadjust.h:188 blindscanadjust.h:192 cec.h:143
 #: cec.h:147 cec.h:151 cec.h:155 cec.h:159 cec.h:163 cec.h:167 cec.h:171
 #: cec.h:175 dlna.h:277 epgsettings.h:135 epgsettings.h:188 epgsettings.h:197
-#: httpdfunc.h:3738 httpdfunc.h:3790 httpdfunc.h:3941 httpdfunc.h:4188
-#: httpdfunc.h:4246 httpdfunc.h:4369 httpdfunc.h:4391 httpdfunc.h:4435
-#: httpdfunc.h:4457 httpdfunc.h:4479 httpdfunc.h:4508 httpdfunc.h:4530
-#: httpdfunc.h:4575 httpdfunc.h:4598 httpdfunc.h:4622 httpdfunc.h:4695
+#: httpdfunc.h:3740 httpdfunc.h:3792 httpdfunc.h:3943 httpdfunc.h:4190
+#: httpdfunc.h:4248 httpdfunc.h:4371 httpdfunc.h:4393 httpdfunc.h:4437
+#: httpdfunc.h:4459 httpdfunc.h:4481 httpdfunc.h:4510 httpdfunc.h:4532
+#: httpdfunc.h:4577 httpdfunc.h:4600 httpdfunc.h:4624 httpdfunc.h:4697
 #: httpdsettings.h:28 httpdsettings.h:58 httpdsettings.h:66 inadyn.h:139
 #: mc_audioplayer_settings.h:46 mc_audioplayer_settings.h:52
 #: mc_audioplayer_settings.h:56 mc_pictureplayer_settings.h:76
@@ -338,59 +338,59 @@ msgstr "EPG"
 msgid "yes"
 msgstr "đồng ý"
 
-#: adjust.h:92 httpdfunc.h:3761
+#: adjust.h:92 httpdfunc.h:3763
 msgid "medium"
 msgstr ""
 
-#: adjust.h:93 adjust.h:172 httpdfunc.h:3768 httpdfunc.h:4304
+#: adjust.h:93 adjust.h:172 httpdfunc.h:3770 httpdfunc.h:4306
 #: mc_audioplayer_settings.h:35 mc_pictureplayer_settings.h:50
 #: mc_videoplayer_settings.h:31 moduleconfig.h:248 plugins_mc_skin.xml.h:23
 #: skins_mc_skin.xml.h:23
 msgid "fast"
 msgstr "Nhanh"
 
-#: adjust.h:100 httpdfunc.h:3805 mc_audioplayer_settings.h:27
+#: adjust.h:100 httpdfunc.h:3807 mc_audioplayer_settings.h:27
 #: mc_pictureplayer_settings.h:42 mc_videoplayer_settings.h:23
 #: plugins_mc_skin.xml.h:7 skin_default_skin.xml.h:75 skins_mc_skin.xml.h:7
 msgid "alpha"
 msgstr ""
 
-#: adjust.h:101 httpdfunc.h:3812 mc_audioplayer_settings.h:28
+#: adjust.h:101 httpdfunc.h:3814 mc_audioplayer_settings.h:28
 #: mc_pictureplayer_settings.h:43 mc_videoplayer_settings.h:24
 #: plugins_mc_skin.xml.h:49 skin_default_skin.xml.h:542 skins_mc_skin.xml.h:49
 msgid "reverse alpha"
 msgstr "đảo ngược thứ tự alpha"
 
-#: adjust.h:102 httpdfunc.h:3819 mc_audioplayer_settings.h:29
+#: adjust.h:102 httpdfunc.h:3821 mc_audioplayer_settings.h:29
 #: mc_pictureplayer_settings.h:44 mc_videoplayer_settings.h:25
 #: plugins_mc_skin.xml.h:55 skin_default_skin.xml.h:615 skins_mc_skin.xml.h:55
 msgid "size"
 msgstr "kích thước"
 
-#: adjust.h:103 httpdfunc.h:3826 mc_audioplayer_settings.h:30
+#: adjust.h:103 httpdfunc.h:3828 mc_audioplayer_settings.h:30
 #: mc_pictureplayer_settings.h:45 mc_videoplayer_settings.h:26
 #: plugins_mc_skin.xml.h:51 skin_default_skin.xml.h:544 skins_mc_skin.xml.h:51
 msgid "reverse size"
 msgstr "đảo ngược kích thước"
 
-#: adjust.h:104 httpdfunc.h:3833 mc_audioplayer_settings.h:31
+#: adjust.h:104 httpdfunc.h:3835 mc_audioplayer_settings.h:31
 #: mc_pictureplayer_settings.h:46 mc_videoplayer_settings.h:27
 #: plugins_mc_skin.xml.h:16 skin_default_skin.xml.h:171 skins_mc_skin.xml.h:16
 #: vfdisplay.h:46
 msgid "date"
 msgstr "ngày"
 
-#: adjust.h:105 httpdfunc.h:3840 mc_audioplayer_settings.h:32
+#: adjust.h:105 httpdfunc.h:3842 mc_audioplayer_settings.h:32
 #: mc_pictureplayer_settings.h:47 mc_videoplayer_settings.h:28
 #: plugins_mc_skin.xml.h:50 skin_default_skin.xml.h:543 skins_mc_skin.xml.h:50
 msgid "reverse date"
 msgstr "đảo ngược ngày"
 
-#: adjust.h:108 httpdfunc.h:3855
+#: adjust.h:108 httpdfunc.h:3857
 msgid "Power Menu"
 msgstr "Đóng menu"
 
-#: adjust.h:109 httpdfunc.h:3862 skin_default_skin.xml.h:489
+#: adjust.h:109 httpdfunc.h:3864 skin_default_skin.xml.h:489
 #: webif_index.atemio510.h:4 webif_index.atemio5200.h:4
 #: webif_index.atemio6000.h:4 webif_index.atemio6100.h:4
 #: webif_index.atemio6200.h:4 webif_index.atemio7600.h:2
@@ -398,7 +398,7 @@ msgstr "Đóng menu"
 msgid "Power Off"
 msgstr "tắt nguồn"
 
-#: adjust.h:110 httpdfunc.h:3869 powerofftimer.h:118
+#: adjust.h:110 httpdfunc.h:3871 powerofftimer.h:118
 #: skin_default_skin.xml.h:638 webif_index.atemio510.h:7
 #: webif_index.atemio5200.h:7 webif_index.atemio6000.h:7
 #: webif_index.atemio6100.h:7 webif_index.atemio6200.h:7
@@ -407,7 +407,7 @@ msgstr "tắt nguồn"
 msgid "Standby"
 msgstr ""
 
-#: adjust.h:111 httpdfunc.h:3876 skin_default_skin.xml.h:538 softcam.h:291
+#: adjust.h:111 httpdfunc.h:3878 skin_default_skin.xml.h:538 softcam.h:291
 #: webif_index.atemio510.h:5 webif_index.atemio5200.h:5
 #: webif_index.atemio6000.h:5 webif_index.atemio6100.h:5
 #: webif_index.atemio6200.h:5 webif_index.atemio7600.h:3
@@ -415,55 +415,55 @@ msgstr ""
 msgid "Restart"
 msgstr "Khởi động lại"
 
-#: adjust.h:112 httpdfunc.h:3883
+#: adjust.h:112 httpdfunc.h:3885
 msgid "Gui Restart"
 msgstr "Khởi động lại GUI"
 
 #: adjust.h:115 adjust.h:125 adjust.h:179 epgsettings.h:147 epgsettings.h:153
-#: httpdfunc.h:3898 httpdfunc.h:3956 httpdfunc.h:4347 network.h:612
+#: httpdfunc.h:3900 httpdfunc.h:3958 httpdfunc.h:4349 network.h:612
 msgid "deaktiv"
 msgstr "tắt"
 
-#: adjust.h:116 httpdfunc.h:3905
+#: adjust.h:116 httpdfunc.h:3907
 msgid "1 sec"
 msgstr ""
 
-#: adjust.h:117 avsettings.h:78 httpdfunc.h:3912
+#: adjust.h:117 avsettings.h:78 httpdfunc.h:3914
 msgid "2 sec"
 msgstr ""
 
-#: adjust.h:118 httpdfunc.h:3919 pin.h:188
+#: adjust.h:118 httpdfunc.h:3921 pin.h:188
 msgid "endless"
 msgstr "liên tục"
 
-#: adjust.h:126 httpdfunc.h:3963
+#: adjust.h:126 httpdfunc.h:3965
 msgid "1 GB"
 msgstr ""
 
-#: adjust.h:127 httpdfunc.h:3970
+#: adjust.h:127 httpdfunc.h:3972
 msgid "2 GB"
 msgstr ""
 
-#: adjust.h:128 httpdfunc.h:3977
+#: adjust.h:128 httpdfunc.h:3979
 msgid "3 GB"
 msgstr ""
 
-#: adjust.h:129 httpdfunc.h:3984
+#: adjust.h:129 httpdfunc.h:3986
 msgid "4 GB"
 msgstr ""
 
-#: adjust.h:147 adjust.h:271 httpdfunc.h:4159 httpdfunc.h:4640
+#: adjust.h:147 adjust.h:271 httpdfunc.h:4161 httpdfunc.h:4642
 #: httpdsettings.h:50
 msgid "extern"
 msgstr ""
 
-#: adjust.h:148 adjust.h:272 httpdfunc.h:4166 httpdfunc.h:4647
+#: adjust.h:148 adjust.h:272 httpdfunc.h:4168 httpdfunc.h:4649
 #: httpdsettings.h:49
 msgid "intern"
 msgstr ""
 
 #: adjust.h:155 autotimer.c:479 autotimer.c:512 avsettings.h:69
-#: fancontrol.h:108 httpdfunc.h:4203 httpdsettings.h:110 rectimer.h:1187
+#: fancontrol.h:108 httpdfunc.h:4205 httpdsettings.h:110 rectimer.h:1187
 #: transponder.h:121 transponder.h:133 transponder.h:157 transponder.h:167
 #: transponder.h:193 transponder.h:200 transponder.h:226 transponder.h:234
 #: transponder.h:258 transponder.h:268 transponder.h:294 transponder.h:301
@@ -474,74 +474,74 @@ msgid "auto"
 msgstr "tự động"
 
 #: adjust.h:156 autotimer.c:480 autotimer.c:513 epgsettings.h:215
-#: httpdfunc.h:4210 rectimer.h:1188
+#: httpdfunc.h:4212 rectimer.h:1188
 msgid "nothing"
 msgstr "không"
 
 #: adjust.h:157 autotimer.c:481 autotimer.c:514 fancontrol.h:72
-#: httpdfunc.h:4217 rectimer.h:1189 stopifnotused.c:112 webif_help.h:91
+#: httpdfunc.h:4219 rectimer.h:1189 stopifnotused.c:112 webif_help.h:91
 msgid "standby"
 msgstr "Standby"
 
-#: adjust.h:158 autotimer.c:482 autotimer.c:515 httpdfunc.h:4224
+#: adjust.h:158 autotimer.c:482 autotimer.c:515 httpdfunc.h:4226
 #: rectimer.h:1190 stopifnotused.c:111
 msgid "power off"
 msgstr "tắt nguồn"
 
-#: adjust.h:166 httpdfunc.h:4268
+#: adjust.h:166 httpdfunc.h:4270
 msgid "anim. width"
 msgstr "chiều rộng"
 
-#: adjust.h:167 httpdfunc.h:4275
+#: adjust.h:167 httpdfunc.h:4277
 msgid "anim. height"
 msgstr "chiều cao"
 
-#: adjust.h:168 httpdfunc.h:4282
+#: adjust.h:168 httpdfunc.h:4284
 msgid "anim. both"
 msgstr "cả hai"
 
-#: adjust.h:171 httpdfunc.h:4297
+#: adjust.h:171 httpdfunc.h:4299
 msgid "very fast"
 msgstr "rất nhanh"
 
-#: adjust.h:173 fancontrol.h:65 httpdfunc.h:4311 timeshiftsettings.h:49
+#: adjust.h:173 fancontrol.h:65 httpdfunc.h:4313 timeshiftsettings.h:49
 #: tmc.h:557
 msgid "normal"
 msgstr ""
 
-#: adjust.h:174 httpdfunc.h:4318 moduleconfig.h:246 tmc.h:556
+#: adjust.h:174 httpdfunc.h:4320 moduleconfig.h:246 tmc.h:556
 msgid "slow"
 msgstr "chậm"
 
-#: adjust.h:175 httpdfunc.h:4325
+#: adjust.h:175 httpdfunc.h:4327
 msgid "very slow"
 msgstr "rất chậm"
 
-#: adjust.h:178 httpdfunc.h:4340 pin.h:106
+#: adjust.h:178 httpdfunc.h:4342 pin.h:106
 msgid "hidden"
 msgstr "ẩn"
 
-#: adjust.h:190 httpdfunc.h:4406
+#: adjust.h:190 httpdfunc.h:4408
 msgid "channel-movie"
 msgstr ""
 
-#: adjust.h:191 httpdfunc.h:4413
+#: adjust.h:191 httpdfunc.h:4415
 msgid "movie-channel"
 msgstr ""
 
-#: adjust.h:205 httpdfunc.h:4486
+#: adjust.h:205 httpdfunc.h:4488
 msgid "expert (11)"
 msgstr ""
 
-#: adjust.h:214 httpdfunc.h:4537
+#: adjust.h:214 httpdfunc.h:4539
 msgid "yes / vzap 1 sec"
 msgstr ""
 
-#: adjust.h:215 httpdfunc.h:4544
+#: adjust.h:215 httpdfunc.h:4546
 msgid "yes / vzap 2 sec"
 msgstr ""
 
-#: adjust.h:216 httpdfunc.h:4551
+#: adjust.h:216 httpdfunc.h:4553
 msgid "yes / vzap endless"
 msgstr ""
 
@@ -562,8 +562,8 @@ msgstr ""
 #: global.h:6238 global.h:6257 global.h:6432 gmediarender.h:115 harddisk.h:633
 #: harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731
 #: harddisk.h:733 harddisk.h:793 harddisk.h:812 harddisk.h:815 hbbtv.h:362
-#: hello.c:36 httpdfunc.h:1190 httpdfunc.h:5541 httpdfunc.h:5927
-#: httpdfunc.h:6192 httpdfunc.h:6263 hwtest.h:88 hwtest.h:93 hwtest.h:98
+#: hello.c:36 httpdfunc.h:1192 httpdfunc.h:5543 httpdfunc.h:5929
+#: httpdfunc.h:6194 httpdfunc.h:6265 hwtest.h:88 hwtest.h:93 hwtest.h:98
 #: hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390
 #: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
@@ -746,8 +746,8 @@ msgid ""
 "Realy run it?"
 msgstr ""
 
-#: bgdownload.h:93 bgdownload.h:154 global.h:6672 httpdfunc.h:2757
-#: httpdfunc.h:2769 httpdfunc.h:5324 httpdfunc.h:5370 hwtest.h:478
+#: bgdownload.h:93 bgdownload.h:154 global.h:6672 httpdfunc.h:2759
+#: httpdfunc.h:2771 httpdfunc.h:5326 httpdfunc.h:5372 hwtest.h:478
 #: moduleconfig.h:345 skin_default_skin.xml.h:738 skinselector.h:138
 #: stream.h:22 transponder.h:122 transponder.h:158 transponder.h:194
 #: transponder.h:227 transponder.h:259 transponder.h:295 transponder.h:330
@@ -1351,7 +1351,8 @@ msgstr ""
 msgid "Music"
 msgstr ""
 
-#: epgsettings.h:139 epgsettings.h:180 skin_default_skin.xml.h:613
+#: epgsettings.h:139 epgsettings.h:180 httpdfunc.h:294
+#: skin_default_skin.xml.h:613
 msgid "Single EPG"
 msgstr "EPG"
 
@@ -1444,19 +1445,19 @@ msgstr "Đã hủy thành công!"
 msgid "Remove error"
 msgstr "lỗi"
 
-#: extensions.h:145 httpdfunc.h:5768
+#: extensions.h:145 httpdfunc.h:5770
 msgid "Install to MNT"
 msgstr "Cài đặt lỗi !"
 
-#: extensions.h:157 httpdfunc.h:5786
+#: extensions.h:157 httpdfunc.h:5788
 msgid "Install to FLASH"
 msgstr "Cài đặt lỗi !"
 
-#: extensions.h:171 httpdfunc.h:5806
+#: extensions.h:171 httpdfunc.h:5808
 msgid "Install to SWAP"
 msgstr "Cài đặt lỗi !"
 
-#: extensions.h:184 httpdfunc.h:5752
+#: extensions.h:184 httpdfunc.h:5754
 msgid "Choice Install Medium"
 msgstr ""
 
@@ -1464,19 +1465,19 @@ msgstr ""
 msgid "Tpk Install Info"
 msgstr "Cài đặt lỗi !"
 
-#: extensions.h:190 httpdfunc.h:5820
+#: extensions.h:190 httpdfunc.h:5822
 msgid "Can't install Package. Package to big."
 msgstr ""
 
-#: extensions.h:217 httpdfunc.h:5583
+#: extensions.h:217 httpdfunc.h:5585
 msgid "Tpk Install - select section"
 msgstr ""
 
-#: extensions.h:222 httpdfunc.h:5647 skin_default_skin.xml.h:704
+#: extensions.h:222 httpdfunc.h:5649 skin_default_skin.xml.h:704
 msgid "Tpk Install - select file"
 msgstr ""
 
-#: extensions.h:227 extensions.h:254 extensions.h:410 httpdfunc.h:5906
+#: extensions.h:227 extensions.h:254 extensions.h:410 httpdfunc.h:5908
 #: tpk.h:2990
 msgid ""
 "It may only be a package to be installed. If they want to install another "
@@ -1493,19 +1494,19 @@ msgstr "Đang cài đặt"
 msgid "starting"
 msgstr "Đang bắt đầu"
 
-#: extensions.h:250 httpdfunc.h:5869
+#: extensions.h:250 httpdfunc.h:5871
 msgid "Tpk Install Info - Install OK"
 msgstr ""
 
-#: extensions.h:254 extensions.h:259 httpdfunc.h:5871 httpdfunc.h:5873
+#: extensions.h:254 extensions.h:259 httpdfunc.h:5873 httpdfunc.h:5875
 msgid "Tpk Install Info - Install ERROR"
 msgstr ""
 
-#: extensions.h:267 httpdfunc.h:5927 httpdfunc.h:5929 httpdfunc.h:6194
+#: extensions.h:267 httpdfunc.h:5929 httpdfunc.h:5931 httpdfunc.h:6196
 msgid "TPK Install done, your system will reboot !"
 msgstr ""
 
-#: extensions.h:291 httpdfunc.h:6062
+#: extensions.h:291 httpdfunc.h:6064
 msgid "Tpk Remove - select file"
 msgstr ""
 
@@ -1517,15 +1518,15 @@ msgstr "Đang hủy"
 msgid "Tpk Remove Info"
 msgstr "xóa"
 
-#: extensions.h:310 httpdfunc.h:6142
+#: extensions.h:310 httpdfunc.h:6144
 msgid "Tpk Remove Info - Remove OK"
 msgstr ""
 
-#: extensions.h:317 httpdfunc.h:6146
+#: extensions.h:317 httpdfunc.h:6148
 msgid "Tpk Remove Info - Remove ERROR"
 msgstr ""
 
-#: extensions.h:324 httpdfunc.h:6192
+#: extensions.h:324 httpdfunc.h:6194
 msgid "TPK Remove done, your system will reboot !"
 msgstr ""
 
@@ -1547,19 +1548,19 @@ msgstr ""
 msgid "TPK Tmp Install done, your system will reboot !"
 msgstr ""
 
-#: extensions.h:444 extensions.h:448 httpdfunc.h:6231 httpdfunc.h:6243
+#: extensions.h:444 extensions.h:448 httpdfunc.h:6233 httpdfunc.h:6245
 msgid "Tpk Update Info - Update ERROR"
 msgstr ""
 
-#: extensions.h:444 httpdfunc.h:6234
+#: extensions.h:444 httpdfunc.h:6236
 msgid "Can't get all TPK index !"
 msgstr "không có tín hiệu"
 
-#: extensions.h:448 httpdfunc.h:6246
+#: extensions.h:448 httpdfunc.h:6248
 msgid "Can't update all packages !"
 msgstr "Không thể phát lại!"
 
-#: extensions.h:456 httpdfunc.h:6263
+#: extensions.h:456 httpdfunc.h:6265
 msgid "TPK Upgrade done, your system will reboot !"
 msgstr ""
 
@@ -1829,7 +1830,7 @@ msgstr ""
 msgid "Version"
 msgstr ""
 
-#: global.h:6654 httpdfunc.h:5430 skin_default_skin.xml.h:348
+#: global.h:6654 httpdfunc.h:5432 skin_default_skin.xml.h:348
 msgid "Installed:"
 msgstr "Cài đặt"
 
@@ -2090,180 +2091,180 @@ msgstr ""
 msgid "Hello World !"
 msgstr ""
 
-#: httpdfunc.h:3528 skin_default_skin.xml.h:764
+#: httpdfunc.h:3530 skin_default_skin.xml.h:764
 msgid "Volumebar Timeout"
 msgstr "Vượt quá giới hạn"
 
-#: httpdfunc.h:3548 skin_default_skin.xml.h:345
+#: httpdfunc.h:3550 skin_default_skin.xml.h:345
 msgid "Infobar Timeout"
 msgstr "Thời gian ẩn thanh thông tin"
 
-#: httpdfunc.h:3568 skin_default_skin.xml.h:344
+#: httpdfunc.h:3570 skin_default_skin.xml.h:344
 msgid "Infobar Sleep"
 msgstr "Thời gian thanh thông tin hiển thị"
 
-#: httpdfunc.h:3590 skin_default_skin.xml.h:634
+#: httpdfunc.h:3592 skin_default_skin.xml.h:634
 msgid "Spinnerspeed"
 msgstr "Tốc độ quay"
 
-#: httpdfunc.h:3623 skin_default_skin.xml.h:635
+#: httpdfunc.h:3625 skin_default_skin.xml.h:635
 msgid "Spinnertime"
 msgstr "Thời gian quay"
 
-#: httpdfunc.h:3655 skin_default_skin.xml.h:274
+#: httpdfunc.h:3657 skin_default_skin.xml.h:274
 msgid "Hangtime"
 msgstr "Hang time"
 
-#: httpdfunc.h:3686 skin_default_skin.xml.h:585
+#: httpdfunc.h:3688 skin_default_skin.xml.h:585
 msgid "Second Infobar"
 msgstr "Thanh thông tin thứ hai"
 
-#: httpdfunc.h:3724 skin_default_skin.xml.h:200
+#: httpdfunc.h:3726 skin_default_skin.xml.h:200
 msgid "Don't clear TV on zap (only with fastzap)"
 msgstr "Không thể xóa"
 
-#: httpdfunc.h:3747 skin_default_skin.xml.h:238
+#: httpdfunc.h:3749 skin_default_skin.xml.h:238
 msgid "Fastzap"
 msgstr "Schnelles Umschalten"
 
-#: httpdfunc.h:3776 skin_default_skin.xml.h:236
+#: httpdfunc.h:3778 skin_default_skin.xml.h:236
 msgid "Faststop"
 msgstr "Dừng nhanh"
 
-#: httpdfunc.h:3798 skin_default_skin.xml.h:190
+#: httpdfunc.h:3800 skin_default_skin.xml.h:190
 msgid "Dirsort"
 msgstr "Sắp xếp"
 
-#: httpdfunc.h:3848 skin_default_skin.xml.h:488
+#: httpdfunc.h:3850 skin_default_skin.xml.h:488
 msgid "Power aktion"
 msgstr "Bật/tắt nguồn"
 
-#: httpdfunc.h:3891 skin_default_skin.xml.h:761
+#: httpdfunc.h:3893 skin_default_skin.xml.h:761
 msgid "Virtualzap Timeout"
 msgstr " Virtualzap Timeout"
 
-#: httpdfunc.h:3927 skin_default_skin.xml.h:237
+#: httpdfunc.h:3929 skin_default_skin.xml.h:237
 msgid "Fast Text Render"
 msgstr "Dịch văn bản nhanh"
 
-#: httpdfunc.h:3949 skin_default_skin.xml.h:518
+#: httpdfunc.h:3951 skin_default_skin.xml.h:518
 msgid "Record Split Size"
 msgstr "Kích thước chia bản ghi"
 
-#: httpdfunc.h:3994 skin_default_skin.xml.h:511
+#: httpdfunc.h:3996 skin_default_skin.xml.h:511
 msgid "Record Forerun (min)"
 msgstr "Thời gian ghi (phút)"
 
-#: httpdfunc.h:4026 skin_default_skin.xml.h:514
+#: httpdfunc.h:4028 skin_default_skin.xml.h:514
 msgid "Record Overrun (min)"
 msgstr "Thời gian theo dõi (phút)"
 
-#: httpdfunc.h:4058 skin_default_skin.xml.h:619
+#: httpdfunc.h:4060 skin_default_skin.xml.h:619
 msgid "Skip 1/3"
 msgstr "Đợi 1/3"
 
-#: httpdfunc.h:4090 skin_default_skin.xml.h:620
+#: httpdfunc.h:4092 skin_default_skin.xml.h:620
 msgid "Skip 4/6"
 msgstr "Đợi 4/6"
 
-#: httpdfunc.h:4122 skin_default_skin.xml.h:621
+#: httpdfunc.h:4124 skin_default_skin.xml.h:621
 msgid "Skip 7/9"
 msgstr "Đợi 7/9"
 
-#: httpdfunc.h:4152 skin_default_skin.xml.h:474
+#: httpdfunc.h:4154 skin_default_skin.xml.h:474
 msgid "Player for .ts"
 msgstr "phát định dạng .ts"
 
-#: httpdfunc.h:4174 skin_default_skin.xml.h:130
+#: httpdfunc.h:4176 skin_default_skin.xml.h:130
 msgid "Change Channelname auto."
 msgstr "Tự động thay đổi tên chương trình"
 
-#: httpdfunc.h:4196 skin_default_skin.xml.h:594
+#: httpdfunc.h:4198 skin_default_skin.xml.h:594
 msgid "Set action after rec"
 msgstr "thiết lập sau khi ghi"
 
-#: httpdfunc.h:4232 skin_default_skin.xml.h:610
+#: httpdfunc.h:4234 skin_default_skin.xml.h:610
 msgid "Show Timeline in Channellist"
 msgstr "đưa thanh thời gian ở danh sách kênh"
 
-#: httpdfunc.h:4254 skin_default_skin.xml.h:76
+#: httpdfunc.h:4256 skin_default_skin.xml.h:76
 msgid "Animated Screens"
 msgstr "màn hình động"
 
-#: httpdfunc.h:4290 skin_default_skin.xml.h:77
+#: httpdfunc.h:4292 skin_default_skin.xml.h:77
 msgid "Animated Speed"
 msgstr "tốc độ ảnh động"
 
-#: httpdfunc.h:4333 skin_default_skin.xml.h:136
+#: httpdfunc.h:4335 skin_default_skin.xml.h:136
 msgid "Channellist view"
 msgstr "xem trước"
 
-#: httpdfunc.h:4355
+#: httpdfunc.h:4357
 msgid "Show last pos Question"
 msgstr "Đưa vị trí quét cuối cùng"
 
-#: httpdfunc.h:4377 skin_default_skin.xml.h:541
+#: httpdfunc.h:4379 skin_default_skin.xml.h:541
 msgid "Resync Recording immediately"
 msgstr "Đồng bộ khi ghi"
 
-#: httpdfunc.h:4399 skin_default_skin.xml.h:512
+#: httpdfunc.h:4401 skin_default_skin.xml.h:512
 msgid "Recording name"
 msgstr "Đang ghi tên"
 
-#: httpdfunc.h:4421 httpdfunc.h:5190 skin_default_skin.xml.h:433
+#: httpdfunc.h:4423 httpdfunc.h:5192 skin_default_skin.xml.h:433
 #: webif_info.h:2
 msgid "Newsletter"
 msgstr "Hộp thư"
 
-#: httpdfunc.h:4443 skin_default_skin.xml.h:605
+#: httpdfunc.h:4445 skin_default_skin.xml.h:605
 msgid "Show hidden files"
 msgstr "Đưa các file ẩn"
 
-#: httpdfunc.h:4465 skin_default_skin.xml.h:229
+#: httpdfunc.h:4467 skin_default_skin.xml.h:229
 msgid "Expert Modus"
 msgstr " Expert Modus "
 
-#: httpdfunc.h:4494 skin_default_skin.xml.h:606
+#: httpdfunc.h:4496 skin_default_skin.xml.h:606
 msgid "Show infobar on program change"
 msgstr "Hiển thị thanh thông tin khi thay đổi chương trình"
 
-#: httpdfunc.h:4516 skin_default_skin.xml.h:746
+#: httpdfunc.h:4518 skin_default_skin.xml.h:746
 msgid "Use cross control for fast zapping and vol"
 msgstr "Sử dụng các phím di chuyển để sửa đổi"
 
-#: httpdfunc.h:4561 skin_default_skin.xml.h:174
+#: httpdfunc.h:4563 skin_default_skin.xml.h:174
 msgid "Deactivate Crypt Support on Media Playback"
 msgstr ""
 
-#: httpdfunc.h:4584 skin_default_skin.xml.h:175
+#: httpdfunc.h:4586 skin_default_skin.xml.h:175
 msgid "Deactivate MiniTV"
 msgstr "Tắt cửa sổ xem trước MIniTV"
 
-#: httpdfunc.h:4608 skin_default_skin.xml.h:56
+#: httpdfunc.h:4610 skin_default_skin.xml.h:56
 msgid "Activate CEC"
 msgstr "kích hoạt CEC"
 
-#: httpdfunc.h:4633 skin_default_skin.xml.h:556
+#: httpdfunc.h:4635 skin_default_skin.xml.h:556
 msgid "SATA Connector"
 msgstr ""
 
-#: httpdfunc.h:4658 skin_default_skin.xml.h:693
+#: httpdfunc.h:4660 skin_default_skin.xml.h:693
 msgid "Time to wait after seek for fill buffer"
 msgstr "Thời gian đợi sau khi tìm kiếm bộ đệm khác"
 
-#: httpdfunc.h:4679 skin_default_skin.xml.h:203
+#: httpdfunc.h:4681 skin_default_skin.xml.h:203
 msgid "Dualboot Menu TitanNit / E2"
 msgstr ""
 
-#: httpdfunc.h:4845
+#: httpdfunc.h:4847
 msgid "Error, Program not started."
 msgstr ""
 
-#: httpdfunc.h:4847
+#: httpdfunc.h:4849
 msgid "Program started successfully"
 msgstr ""
 
-#: httpdfunc.h:4919 skin_default_skin.xml.h:1 webif_index.atemio510.h:16
+#: httpdfunc.h:4921 skin_default_skin.xml.h:1 webif_index.atemio510.h:16
 #: webif_index.atemio5200.h:16 webif_index.atemio5200.h:70
 #: webif_index.atemio5200.h:126 webif_index.atemio6000.h:16
 #: webif_index.atemio6100.h:16 webif_index.atemio6200.h:16
@@ -2276,185 +2277,185 @@ msgstr ""
 msgid "Help"
 msgstr ""
 
-#: httpdfunc.h:5017 skin_default_skin.xml.h:672 system_infos.h:14
+#: httpdfunc.h:5019 skin_default_skin.xml.h:672 system_infos.h:14
 #: webif_info_systeminfos.h:2
 msgid "System Status"
 msgstr "Cập nhật hệ thống"
 
-#: httpdfunc.h:5019 system_infos.h:16
+#: httpdfunc.h:5021 system_infos.h:16
 msgid "Free Space"
 msgstr "Dung lượng còn trống"
 
-#: httpdfunc.h:5021 skin_default_skin.xml.h:360 system_infos.h:18
+#: httpdfunc.h:5023 skin_default_skin.xml.h:360 system_infos.h:18
 #: webif_info_systeminfos.h:4
 msgid "Kernel"
 msgstr ""
 
-#: httpdfunc.h:5023 skin_default_skin.xml.h:414 system_infos.h:20
+#: httpdfunc.h:5025 skin_default_skin.xml.h:414 system_infos.h:20
 #: webif_info_systeminfos.h:5
 msgid "Mounts"
 msgstr ""
 
-#: httpdfunc.h:5025 hwtest.h:181 hwtest.h:396 network.h:284 network.h:299
+#: httpdfunc.h:5027 hwtest.h:181 hwtest.h:396 network.h:284 network.h:299
 #: plugins_mc_skin.xml.h:37 plugins_panel_skin.xml.h:18
 #: skin_default_skin.xml.h:425 skins_mc_skin.xml.h:37
 #: skins_panel_skin.xml.h:18 system_infos.h:22 webif_info_systeminfos.h:6
 msgid "Network"
 msgstr "mạng"
 
-#: httpdfunc.h:5027 skin_default_skin.xml.h:507 system_infos.h:24
+#: httpdfunc.h:5029 skin_default_skin.xml.h:507 system_infos.h:24
 #: webif_info_systeminfos.h:7
 msgid "Ram"
 msgstr ""
 
-#: httpdfunc.h:5063 skin_default_skin.xml.h:161 webif_info_sysinfos.h:2
+#: httpdfunc.h:5065 skin_default_skin.xml.h:161 webif_info_sysinfos.h:2
 msgid "CPU"
 msgstr ""
 
-#: httpdfunc.h:5065 skin_default_skin.xml.h:398 webif_info_sysinfos.h:3
+#: httpdfunc.h:5067 skin_default_skin.xml.h:398 webif_info_sysinfos.h:3
 msgid "Memory"
 msgstr "Bộ nhớ"
 
-#: httpdfunc.h:5067 skin_default_skin.xml.h:418 webif_info_sysinfos.h:4
+#: httpdfunc.h:5069 skin_default_skin.xml.h:418 webif_info_sysinfos.h:4
 msgid "MTD"
 msgstr ""
 
-#: httpdfunc.h:5069 skin_default_skin.xml.h:411 webif_info_sysinfos.h:5
+#: httpdfunc.h:5071 skin_default_skin.xml.h:411 webif_info_sysinfos.h:5
 msgid "Module"
 msgstr "Môđun"
 
-#: httpdfunc.h:5071 skin_default_skin.xml.h:188 system_infos_sysinfo.h:23
+#: httpdfunc.h:5073 skin_default_skin.xml.h:188 system_infos_sysinfo.h:23
 #: webif_info_sysinfos.h:6
 msgid "Devices"
 msgstr " Thiết bị"
 
-#: httpdfunc.h:5073 panel_settings_autostart.h:210 settings_autostart.h:315
+#: httpdfunc.h:5075 panel_settings_autostart.h:210 settings_autostart.h:315
 #: skin_default_skin.xml.h:660 webif_info_sysinfos.h:7
 msgid "Swap"
 msgstr "Trao đổi"
 
-#: httpdfunc.h:5075 skin_default_skin.xml.h:702 webif_info_sysinfos.h:8
+#: httpdfunc.h:5077 skin_default_skin.xml.h:702 webif_info_sysinfos.h:8
 msgid "Top"
 msgstr "Về đầu"
 
-#: httpdfunc.h:5077 skin_default_skin.xml.h:500 webif_info_sysinfos.h:9
+#: httpdfunc.h:5079 skin_default_skin.xml.h:500 webif_info_sysinfos.h:9
 msgid "Prozesslist"
 msgstr ""
 
-#: httpdfunc.h:5079 skin_default_skin.xml.h:742 webif_info_sysinfos.h:10
+#: httpdfunc.h:5081 skin_default_skin.xml.h:742 webif_info_sysinfos.h:10
 msgid "USB"
 msgstr ""
 
-#: httpdfunc.h:5115
+#: httpdfunc.h:5117
 msgid "Hotline"
 msgstr ""
 
-#: httpdfunc.h:5117
+#: httpdfunc.h:5119
 msgid "Svn Changelog"
 msgstr ""
 
-#: httpdfunc.h:5119 skin_default_skin.xml.h:261 webif_info_logs.h:3
+#: httpdfunc.h:5121 skin_default_skin.xml.h:261 webif_info_logs.h:3
 msgid "Git Changelog"
 msgstr "Chương trình"
 
-#: httpdfunc.h:5121
+#: httpdfunc.h:5123
 msgid "titan Log"
 msgstr ""
 
-#: httpdfunc.h:5123
+#: httpdfunc.h:5125
 msgid "Svn Changelog Full"
 msgstr ""
 
-#: httpdfunc.h:5125
+#: httpdfunc.h:5127
 msgid "Git Changelog Full"
 msgstr ""
 
-#: httpdfunc.h:5158 skin_default_skin.xml.h:51 webif_info.h:3
+#: httpdfunc.h:5160 skin_default_skin.xml.h:51 webif_info.h:3
 msgid "About"
 msgstr "Giới thiệu"
 
-#: httpdfunc.h:5301 skin_default_skin.xml.h:653 stream.h:36 webif_info.h:4
+#: httpdfunc.h:5303 skin_default_skin.xml.h:653 stream.h:36 webif_info.h:4
 msgid "Streaming"
 msgstr ""
 
-#: httpdfunc.h:5317 httpdfunc.h:5363 record.h:1400 record.h:1409 record.h:1420
+#: httpdfunc.h:5319 httpdfunc.h:5365 record.h:1400 record.h:1409 record.h:1420
 #: record.h:1449 record.h:1458 record.h:1490 skin_default_skin.xml.h:648
 #: stream.h:15 stream.h:37
 msgid "stop"
 msgstr "Dừng khởi động"
 
-#: httpdfunc.h:5335 stream.h:33
+#: httpdfunc.h:5337 stream.h:33
 msgid "No Live Stream running"
 msgstr "Không có luồng nào đang phát"
 
-#: httpdfunc.h:5390
+#: httpdfunc.h:5392
 msgid "Streaming succesfull stopped."
 msgstr ""
 
-#: httpdfunc.h:5393
+#: httpdfunc.h:5395
 msgid "ERROR, Streaming can not be stopped."
 msgstr ""
 
-#: httpdfunc.h:5422 httpdfunc.h:5531 skin_default_skin.xml.h:673
+#: httpdfunc.h:5424 httpdfunc.h:5533 skin_default_skin.xml.h:673
 #: webif_system.h:2 webif_system_update.h:1
 msgid "System Update"
 msgstr "Cập nhật hệ thống"
 
-#: httpdfunc.h:5545 system_update.h:220
+#: httpdfunc.h:5547 system_update.h:220
 msgid "starting Full Update ?"
 msgstr "bắt đầu cập nhật?"
 
-#: httpdfunc.h:5550
+#: httpdfunc.h:5552
 msgid ""
 "System Update started Please wait 5 Minutes and Refresh this Page, more "
 "infos they see on your TV."
 msgstr ""
 
-#: httpdfunc.h:5596
+#: httpdfunc.h:5598
 msgid "No Tpk Sections Found."
 msgstr ""
 
-#: httpdfunc.h:5660 httpdfunc.h:5814 httpdfunc.h:6075
+#: httpdfunc.h:5662 httpdfunc.h:5816 httpdfunc.h:6077
 msgid "No Tpk Files Found."
 msgstr ""
 
-#: httpdfunc.h:5895 httpdfunc.h:5903 httpdfunc.h:5913
+#: httpdfunc.h:5897 httpdfunc.h:5905 httpdfunc.h:5915
 msgid "Install Log:"
 msgstr ""
 
-#: httpdfunc.h:5962 skin_default_skin.xml.h:708 webif_system_extensions.h:4
+#: httpdfunc.h:5964 skin_default_skin.xml.h:708 webif_system_extensions.h:4
 msgid "TPK tmp (tmp)"
 msgstr ""
 
-#: httpdfunc.h:5964 skin_default_skin.xml.h:706 webif_system_extensions.h:5
+#: httpdfunc.h:5966 skin_default_skin.xml.h:706 webif_system_extensions.h:5
 msgid "TPK media (media)"
 msgstr ""
 
-#: httpdfunc.h:6007
+#: httpdfunc.h:6009
 msgid "No Tpk Files Found on /tmp Directory."
 msgstr ""
 
-#: httpdfunc.h:6011
+#: httpdfunc.h:6013
 msgid "No Tpk Files Found on Media Devices."
 msgstr ""
 
-#: httpdfunc.h:6168 httpdfunc.h:6178
+#: httpdfunc.h:6170 httpdfunc.h:6180
 msgid "Remove Log:"
 msgstr ""
 
-#: httpdfunc.h:6253
+#: httpdfunc.h:6255
 msgid "Tpk Update Info - Update OK"
 msgstr ""
 
-#: httpdfunc.h:6292 skin_default_skin.xml.h:592 webif_info.h:1
+#: httpdfunc.h:6294 skin_default_skin.xml.h:592 webif_info.h:1
 msgid "Service"
 msgstr "Dịch vụ"
 
-#: httpdfunc.h:6327 skin_default_skin.xml.h:667 webif_system.h:3
+#: httpdfunc.h:6329 skin_default_skin.xml.h:667 webif_system.h:3
 msgid "System Backup"
 msgstr ""
 
-#: httpdfunc.h:6362 skin_default_skin.xml.h:600 webif_system.h:4
+#: httpdfunc.h:6364 skin_default_skin.xml.h:600 webif_system.h:4
 msgid "Settings backup/restore"
 msgstr "Thiết lập sao lưu/khôi phục lại"
 
