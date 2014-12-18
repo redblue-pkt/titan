@@ -2151,7 +2151,7 @@ msgstr ""
 
 #: httpdfunc.h:337
 msgid "Channel not available"
-msgstr ""
+msgstr "Sender nicht verfügbar"
 
 #: httpdfunc.h:3550 skin_default_skin.xml.h:764
 msgid "Volumebar Timeout"
@@ -2372,7 +2372,7 @@ msgstr "Arbeitsspeicher"
 
 #: httpdfunc.h:5085 skin_default_skin.xml.h:161 webif_info_sysinfos.h:2
 msgid "CPU"
-msgstr "Cpu"
+msgstr ""
 
 #: httpdfunc.h:5087 skin_default_skin.xml.h:398 webif_info_sysinfos.h:3
 msgid "Memory"
@@ -6579,7 +6579,7 @@ msgstr "Nachfragen bei Senderwechsel"
 
 #: skin_default_skin.xml.h:80
 msgid "__aspectratio"
-msgstr ""
+msgstr "Seitenverhältnis"
 
 #: skin_default_skin.xml.h:81
 msgid "Aspect Ratio:"
@@ -6704,7 +6704,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:113
 msgid "__Bitrate"
-msgstr ""
+msgstr "Bitrate"
 
 #: skin_default_skin.xml.h:114
 msgid "Blindscan"
@@ -8244,7 +8244,7 @@ msgstr "Zurücksetzen"
 
 #: skin_default_skin.xml.h:534
 msgid "__Resolution"
-msgstr ""
+msgstr "Auflösung"
 
 #: skin_default_skin.xml.h:535
 msgid "Resolution:"
