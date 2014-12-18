@@ -313,16 +313,16 @@ void webcreatechannelbody(char** buf, int line, struct channel* chnode, char* ch
 			ostrcatbig(buf, _("Stream"), maxlen, pos);
 			ostrcatbig(buf, "\" width=16 height=16></a>", maxlen, pos);
 
-			if(checkrealbox("ini-8000am") == 1)
-			{
-				ostrcatbig(buf, "<a target=nothing href=query?gettranscodem3u&", maxlen, pos);
-				ostrcatbig(buf, serviceid, maxlen, pos);
-				ostrcatbig(buf, ",", maxlen, pos);
-				ostrcatbig(buf, transponderid, maxlen, pos);
-				ostrcatbig(buf, "><img style=\"margin-left: 5\" border=0 src=img/transstream.png title=\"", maxlen, pos);
-				ostrcatbig(buf, _("Stream Transcode"), maxlen, pos);
-				ostrcatbig(buf, "\" width=16 height=16></a>", maxlen, pos);
-			}
+			//if(checkrealbox("ini-8000am") == 1)
+			//{
+			//	ostrcatbig(buf, "<a target=nothing href=query?gettranscodem3u&", maxlen, pos);
+			//	ostrcatbig(buf, serviceid, maxlen, pos);
+			//	ostrcatbig(buf, ",", maxlen, pos);
+			//	ostrcatbig(buf, transponderid, maxlen, pos);
+			//	ostrcatbig(buf, "><img style=\"margin-left: 5\" border=0 src=img/transstream.png title=\"", maxlen, pos);
+			//	ostrcatbig(buf, _("Stream Transcode"), maxlen, pos);
+			//	ostrcatbig(buf, "\" width=16 height=16></a>", maxlen, pos);
+			//}
 			ostrcatbig(buf, "<a target=_blank href=query?getvideo&", maxlen, pos);
 			ostrcatbig(buf, serviceid, maxlen, pos);
 			ostrcatbig(buf, ",", maxlen, pos);
