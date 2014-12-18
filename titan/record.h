@@ -1152,7 +1152,7 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 				}
 				//usleep(1000);
 				if(helpsleep == 0)
-					usleep(300);	
+					usleep(500);	
 				else
 					usleep(helpsleep);
 
