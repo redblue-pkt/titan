@@ -885,6 +885,7 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 	struct transponder* tpnode = NULL;
 	int input = DMX_IN_FRONTEND;
 
+	//wakeup hdd work
 	wakeup_record_device();
 
 	if(chnode == NULL && filefd < 0)
