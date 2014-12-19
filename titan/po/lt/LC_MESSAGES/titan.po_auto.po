@@ -31,7 +31,7 @@ msgstr "Sistemos informacija"
 #: hwtest.h:564 hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617
 #: hwtest.h:632 hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685
 #: imdbapi.h:200 imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200
-#: infobar.h:593 infobar.h:715 info.h:27 keyactions.h:290 lcdpearl1.c:49
+#: infobar.h:598 infobar.h:720 info.h:27 keyactions.h:290 lcdpearl1.c:49
 #: lcdsamsung.c:101 log.h:46 log.h:48 mboxinfo.c:49 mboxinfo.c:73
 #: mboxinfo.c:77 mboxinfo.c:163 mc_audioplayer.h:333 mc_audioplayer.h:605
 #: mc_audioplayer.h:716 mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
@@ -65,13 +65,13 @@ msgstr "Sistemos informacija"
 #: primeshare.h:79 primeshare.h:124 putlocker.h:32 putlocker.h:79
 #: putlocker.h:85 putlocker.h:91 putlocker.h:142 putlocker.h:152
 #: putlocker.h:225 readerconfig.h:343 readerconfig.h:443 readerconfig.h:444
-#: readerconfig.h:488 readerconfig.h:489 record.h:387 record.h:1028
-#: record.h:1548 rectimer.h:578 rectimer.h:1232 rectimer.h:1378
+#: readerconfig.h:488 readerconfig.h:489 record.h:387 record.h:1029
+#: record.h:1549 rectimer.h:578 rectimer.h:1232 rectimer.h:1378
 #: rectimer.h:1390 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:31 scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1901
-#: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 scriptexec.h:41 service.h:712
-#: service.h:957 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:235
+#: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 scriptexec.h:41 service.h:715
+#: service.h:960 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:235
 #: skins_dlna_skin.xml.h:8 skinselector.h:218 skins_facebook_skin.xml.h:5
 #: skins_mboxinfo_skin.xml.h:2 skins_mc_skin.xml.h:38
 #: skins_optimize_skin.xml.h:3 skins_rgui_skin.xml.h:3
@@ -137,7 +137,7 @@ msgstr "Gerai"
 #: hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566 hwtest.h:586
 #: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
 #: hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626 inadyn.h:188
-#: inadyn.h:190 inadyn.h:200 infobar.h:593 infobar.h:715 info.h:27
+#: inadyn.h:190 inadyn.h:200 infobar.h:598 infobar.h:720 info.h:27
 #: keyactions.h:290 log.h:46 log.h:48 marker.h:215 marker.h:229 mboxinfo.c:49
 #: mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163 mc_audioplayer.h:333
 #: mc_audioplayer.h:605 mc_audioplayer.h:716 mc_dateibrowser.h:36
@@ -177,13 +177,13 @@ msgstr "Gerai"
 #: putlocker.h:85 putlocker.h:91 putlocker.h:142 putlocker.h:152
 #: putlocker.h:225 readerconfig.h:343 readerconfig.h:443 readerconfig.h:444
 #: readerconfig.h:488 readerconfig.h:489 record.h:90 record.h:387
-#: record.h:1028 record.h:1273 record.h:1523 record.h:1548 rectimer.h:578
+#: record.h:1029 record.h:1274 record.h:1524 record.h:1549 rectimer.h:578
 #: rectimer.h:1232 rectimer.h:1378 rectimer.h:1390 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:31
 #: scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1901 scan.h:1992
-#: scan.h:2358 scart.h:12 scart.h:25 scriptexec.h:41 service.h:712
-#: service.h:957 shared.h:29 shared.h:65 shared.h:82
+#: scan.h:2358 scart.h:12 scart.h:25 scriptexec.h:41 service.h:715
+#: service.h:960 shared.h:29 shared.h:65 shared.h:82
 #: skin_default_skin.xml.h:228 skins_autotimer_skin.xml.h:7
 #: skins_callmonitor1_skin.xml.h:11 skins_catcatch_skin.xml.h:4
 #: skins_dlna_skin.xml.h:2 skinselector.h:218 skins_facebook_skin.xml.h:4
@@ -568,7 +568,7 @@ msgstr "taip / vzap begalinis"
 #: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
 #: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626
-#: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:593 infobar.h:715
+#: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:598 infobar.h:720
 #: keyactions.h:290 language.h:49 lcdpearl1.c:49 lcdsamsung.c:101 log.h:46
 #: log.h:48 marker.h:215 marker.h:229 mc_audioplayer.h:333
 #: mc_audioplayer.h:605 mc_audioplayer.h:716 mc_dateibrowser.h:36
@@ -596,12 +596,12 @@ msgstr "taip / vzap begalinis"
 #: putlocker.h:32 putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:343 readerconfig.h:443
 #: readerconfig.h:444 readerconfig.h:488 readerconfig.h:489 record.h:387
-#: record.h:1028 record.h:1273 record.h:1523 record.h:1548 rectimer.h:578
+#: record.h:1029 record.h:1274 record.h:1524 record.h:1549 rectimer.h:578
 #: rectimer.h:1232 rectimer.h:1378 rectimer.h:1390 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:31
 #: scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1646 scan.h:1901
-#: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 service.h:712 service.h:957
+#: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 service.h:715 service.h:960
 #: shared.h:29 shared.h:65 shared.h:82 skinadjust.h:235 skinselector.h:218
 #: sock.h:952 softcam.h:403 solarmovie.h:35 solarmovie.h:47 solarmovie.h:304
 #: spinner.h:18 stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74
@@ -2426,8 +2426,8 @@ msgstr "Apie Titan"
 msgid "Streaming"
 msgstr "Srautinimas"
 
-#: httpdfunc.h:5339 httpdfunc.h:5385 record.h:1404 record.h:1413 record.h:1424
-#: record.h:1453 record.h:1462 record.h:1494 skin_default_skin.xml.h:648
+#: httpdfunc.h:5339 httpdfunc.h:5385 record.h:1405 record.h:1414 record.h:1425
+#: record.h:1454 record.h:1463 record.h:1495 skin_default_skin.xml.h:648
 #: stream.h:15 stream.h:37
 msgid "stop"
 msgstr "Stabdyti"
@@ -2757,7 +2757,7 @@ msgstr ""
 msgid "DYNDNS now stopped"
 msgstr ""
 
-#: infobar.h:593 mc_audioplayer.h:333 mc_main.h:273 mc_pictureplayer.h:124
+#: infobar.h:598 mc_audioplayer.h:333 mc_main.h:273 mc_pictureplayer.h:124
 #: mc_videoplayer.h:332 menu.h:223
 msgid ""
 "Shooting Background done !\n"
@@ -2766,7 +2766,7 @@ msgstr ""
 "Screenshot successfull.\n"
 "Screenshot saved in: /tmp/screenshot.jpg"
 
-#: infobar.h:715
+#: infobar.h:720
 msgid "Internet Browser Plugin not installed !"
 msgstr ""
 
@@ -5722,7 +5722,7 @@ msgstr ""
 msgid "Box recording finished poweroff in 30sec !"
 msgstr "Recording finished. Receiver will Power-Off in 30 Seconds"
 
-#: record.h:1028
+#: record.h:1029
 msgid ""
 "Can't find free Tuner for Record.\n"
 "Switch to Recording/Timeshift Channel ?"
@@ -5730,11 +5730,11 @@ msgstr ""
 "ERROR: Can't find a free Tuner for the recording.\n"
 "Switch to Recording/Timeshift Channel?"
 
-#: record.h:1272
+#: record.h:1273
 msgid "Timer Record start !"
 msgstr "Laikmatis raymas prasidjo !"
 
-#: record.h:1422 record.h:1490 skin_default_skin.xml.h:510
+#: record.h:1423 record.h:1491 skin_default_skin.xml.h:510
 #: webif_index.atemio5200.h:59 webif_index.atemio5200.h:115
 #: webif_index.atemio6200.h:59 webif_index.atemio6200.h:115
 #: webif_index.atemio7600.h:47 webif_index.atemio7600.h:109
@@ -5750,27 +5750,27 @@ msgstr "Laikmatis raymas prasidjo !"
 msgid "Record"
 msgstr "raas"
 
-#: record.h:1468 record.h:1477 record.h:1500
+#: record.h:1469 record.h:1478 record.h:1501
 msgid "change"
 msgstr "Pakeisti"
 
-#: record.h:1486 record.h:1516
+#: record.h:1487 record.h:1517
 msgid "add recording (stop after current event)"
 msgstr "Add recording (stop after current event)"
 
-#: record.h:1487 record.h:1529
+#: record.h:1488 record.h:1530
 msgid "add recording (indefinitely)"
 msgstr "Add recording (Unlimited)"
 
-#: record.h:1488 record.h:1534
+#: record.h:1489 record.h:1535
 msgid "add recording (enter duration)"
 msgstr "Add recording (Enter duration)"
 
-#: record.h:1523
+#: record.h:1524
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr "Can't get EPG time or the EPG Endtime is faulty."
 
-#: record.h:1548
+#: record.h:1549
 msgid "Record started"
 msgstr "Recording started"
 
@@ -6110,7 +6110,7 @@ msgstr ""
 msgid "Script execute"
 msgstr "Vykdyti scenarij"
 
-#: service.h:712
+#: service.h:715
 msgid ""
 "Timeshift is running !!!\n"
 "Stop it and switch ?"
@@ -6118,7 +6118,7 @@ msgstr ""
 "Timeshift veikia !!! \n"
 "Stop Timeshift ir pakeisti kanal ?"
 
-#: service.h:940
+#: service.h:943
 msgid ""
 "Can't find a Tuner.\n"
 "All Tuners in use or no Tuner defined."
@@ -6126,17 +6126,17 @@ msgstr ""
 "Nerandate Tuner.\n"
 "All Tuner naudoti ar ne Tuner defined."
 
-#: service.h:943
+#: service.h:946
 msgid "Tuning to Channel failed!"
 msgstr "KLAIDA: Kanalo nra"
 
-#: service.h:946
+#: service.h:949
 msgid "Can't open frontend dev or Frontend Type unknown!"
 msgstr ""
 "KLAIDA: Nepavyko atidaryti rengini ssajaName or\n"
 "Frontend Tipas unknown."
 
-#: service.h:951
+#: service.h:954
 msgid "Channellist empty or corrupt (channel not found)!"
 msgstr ""
 "KLAIDA: Channellist tuias arba corrupt\n"
