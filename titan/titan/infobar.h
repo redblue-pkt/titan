@@ -173,6 +173,7 @@ void screeninfobar()
 			}
 		}
 
+// workaround for crash, disable
 		if(rcret != getrcconfigint("rcmute", NULL) && status.mute > 0)
 		{
 			printf("skip rccode: rcret=%d\n", rcret);
