@@ -313,7 +313,7 @@ void webcreatechannelbody(char** buf, int line, struct channel* chnode, char* ch
 			ostrcatbig(buf, _("Stream"), maxlen, pos);
 			ostrcatbig(buf, "\" width=16 height=16></a>", maxlen, pos);
 
-			/*if(checkrealbox("ini-8000am") == 1)
+			if(checkrealbox("ini-8000am") == 1)
 			{
 				ostrcatbig(buf, "<a target=nothing href=query?gettranscodem3u&", maxlen, pos);
 				ostrcatbig(buf, serviceid, maxlen, pos);
@@ -322,7 +322,7 @@ void webcreatechannelbody(char** buf, int line, struct channel* chnode, char* ch
 				ostrcatbig(buf, "><img style=\"margin-left: 5\" border=0 src=img/transstream.png title=\"", maxlen, pos);
 				ostrcatbig(buf, _("Stream Transcode"), maxlen, pos);
 				ostrcatbig(buf, "\" width=16 height=16></a>", maxlen, pos);
-			}*/
+			}
 			ostrcatbig(buf, "<a target=_blank href=query?getvideo&", maxlen, pos);
 			ostrcatbig(buf, serviceid, maxlen, pos);
 			ostrcatbig(buf, ",", maxlen, pos);
@@ -925,7 +925,7 @@ char* webgetm3u(char* param, int connfd, int fmt)
 	if(extip == 1) free(ip);
 	return buf;
 }
-/*
+
 char* webgettranscodem3u(char* param, int connfd, int fmt)
 {
 	int extip = 1;
@@ -969,7 +969,7 @@ char* webgettranscodem3u(char* param, int connfd, int fmt)
 	if(extip == 1) free(ip);
 	return buf;
 }
-*/
+
 char* webgetvideo(char* param, int connfd, int fmt)
 {
 	int extip = 1;
