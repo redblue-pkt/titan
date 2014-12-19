@@ -1050,6 +1050,12 @@ void setskinnodeslocked(int flag)
 			{
 				if(ostrcmp("vfdisplay", child->name) == 0) child->locked = 1;
 			}
+
+			// dont show this menus
+			if(checkbox("ATEMIO520") == 1)
+			{
+				if(ostrcmp("system_backup", child->name) == 0) child->locked = 1;
+			}
 		
 			if(checkbox("UFS910") == 1)
 			{
