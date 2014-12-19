@@ -1173,6 +1173,7 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 					case 3: dmxsetpesfilter(servicenode->dmxvideodev, chnode->videopid, -1, DMX_OUT_DECODER, DMX_PES_VIDEO3, 0); break;
 				}
 				
+				usleep(900);
 				videonode = videoopen(0, encnode->decoder);
 				servicenode->videodev = videonode;
 				videoselectsource(servicenode->videodev, VIDEO_SOURCE_DEMUX);
