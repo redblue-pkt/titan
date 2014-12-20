@@ -877,6 +877,37 @@ void screeninfobar()
 			subtitlepause(0);
 			continue;
 		}
+		if(rcret == getrcconfigint("rcfrontpower", NULL))
+		{
+			subtitlepause(1);
+			status.infobar = 0;
+			status.infobaraktiv = 0;
+			clearscreen(infobar);
+			drawscreen(skin, 0, 0);
+			switch(getconfigint("frontpoweraktion", NULL))
+			{
+				case 1: //power off
+					oshutdown(1, 1);
+					break;
+				case 2: //standby
+					status.standby = 1;
+					break;
+				case 3: //restart
+					oshutdown(2, 1);
+					break;
+				case 4: //Gui restart
+					oshutdown(3, 1);
+					break;
+				default:
+					status.standby = 1;
+					break;
+			}
+			status.updatevfd = START;
+			drawscreen(skin, 0, 0);
+			status.infobaraktiv = 1;
+			subtitlepause(0);
+			continue;
+		}
 		if(rcret == getrcconfigint("rcrecall", NULL))
 		{
 			subtitlepause(1);
