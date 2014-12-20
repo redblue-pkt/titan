@@ -20,6 +20,7 @@ void screenadjust()
 	struct skin* faststop = getscreennode(adjust, "faststop");
 	struct skin* dirsort = getscreennode(adjust, "dirsort");
 	struct skin* poweraktion = getscreennode(adjust, "poweraktion");
+	struct skin* frontpoweraktion = getscreennode(adjust, "frontpoweraktion");
 	struct skin* virtualzap = getscreennode(adjust, "virtualzap");
 	struct skin* fasttextrender = getscreennode(adjust, "fasttextrender");
 	struct skin* recsplitsize = getscreennode(adjust, "recsplitsize");
@@ -111,7 +112,14 @@ void screenadjust()
 	addchoicebox(poweraktion, "3", _("Restart"));
 	addchoicebox(poweraktion, "4", _("Gui Restart"));
 	setchoiceboxselection(poweraktion, getconfig("poweraktion", NULL));
-	
+
+	addchoicebox(frontpoweraktion, "0", _("Power Menu"));
+	addchoicebox(frontpoweraktion, "1", _("Power Off"));
+	addchoicebox(frontpoweraktion, "2", _("Standby"));
+	addchoicebox(frontpoweraktion, "3", _("Restart"));
+	addchoicebox(frontpoweraktion, "4", _("Gui Restart"));
+	setchoiceboxselection(frontpoweraktion, getconfig("frontpoweraktion", NULL));
+
 	addchoicebox(virtualzap, "0", _("deaktiv"));
 	addchoicebox(virtualzap, "1", _("1 sec"));
 	addchoicebox(virtualzap, "2", _("2 sec"));
@@ -331,6 +339,7 @@ void screenadjust()
 			addconfigscreencheck("faststop", faststop, "0");
 			addconfigscreencheck("dirsort", dirsort, "0");
 			addconfigscreencheck("poweraktion", poweraktion, "0");
+			addconfigscreencheck("frontpoweraktion", frontpoweraktion, "0");
 			addconfigscreencheck("recforerun", recforerun, "0");
 			addconfigscreencheck("recoverrun", recoverrun, "0");
 			addconfigscreencheck("virtualzap", virtualzap, "0");
