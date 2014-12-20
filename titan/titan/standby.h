@@ -82,7 +82,7 @@ void screenstandby()
 	{
 		rcret = waitrc(standbyscreen, 10000, 0);
 
-		if(rcret == getrcconfigint("rcpower", NULL)) break;
+		if(rcret == getrcconfigint("rcpower", NULL) || rcret == getrcconfigint("rcfrontpower", NULL)) break;
 
 		//check for epg update
 		loctime = gettime(NULL, "%H:%M");
