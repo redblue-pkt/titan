@@ -313,7 +313,7 @@ void webcreatechannelbody(char** buf, int line, struct channel* chnode, char* ch
 			ostrcatbig(buf, _("Stream"), maxlen, pos);
 			ostrcatbig(buf, "\" width=16 height=16></a>", maxlen, pos);
 
-			if(stat(/proc/stb/encoder) ==1)
+			if(stat("/proc/stb/encoder") ==1)
 			{
 				ostrcatbig(buf, "<a target=nothing href=query?gettranscodem3u&", maxlen, pos);
 				ostrcatbig(buf, serviceid, maxlen, pos);
