@@ -313,7 +313,8 @@ void webcreatechannelbody(char** buf, int line, struct channel* chnode, char* ch
 			ostrcatbig(buf, _("Stream"), maxlen, pos);
 			ostrcatbig(buf, "\" width=16 height=16></a>", maxlen, pos);
 
-			if(file_exist("/proc/stb/encoder"))
+#ifdef MIPSEL
+			if(file_exist("/proc/stb/encoder") &&  getconfigint("web_trans_transcode", NULL) == 1)
 			{
 				ostrcatbig(buf, "<a target=nothing href=query?gettranscodem3u&", maxlen, pos);
 				ostrcatbig(buf, serviceid, maxlen, pos);
@@ -323,6 +324,7 @@ void webcreatechannelbody(char** buf, int line, struct channel* chnode, char* ch
 				ostrcatbig(buf, _("Stream Transcode"), maxlen, pos);
 				ostrcatbig(buf, "\" width=16 height=16></a>", maxlen, pos);
 			}
+#endif
 			ostrcatbig(buf, "<a target=_blank href=query?getvideo&", maxlen, pos);
 			ostrcatbig(buf, serviceid, maxlen, pos);
 			ostrcatbig(buf, ",", maxlen, pos);
@@ -888,6 +890,10 @@ char* webgetm3u(char* param, int connfd, int fmt)
 	char* buf = NULL, *ip = NULL, *tmpbuf = NULL;
 	struct sockaddr_in sin;
 	socklen_t len = sizeof(sin);
+	
+#ifdef MIPSEL
+	status.encode = 0;
+#endif		
 
 	if(param == NULL) return NULL;
 
@@ -926,6 +932,7 @@ char* webgetm3u(char* param, int connfd, int fmt)
 	return buf;
 }
 
+#ifdef MIPSEL
 char* webgettranscodem3u(char* param, int connfd, int fmt)
 {
 	int extip = 1;
@@ -933,6 +940,8 @@ char* webgettranscodem3u(char* param, int connfd, int fmt)
 	struct sockaddr_in sin;
 	socklen_t len = sizeof(sin);
 
+	status.encode = 1;
+
 	if(param == NULL) return NULL;
 
 	if(getconfigint("webifip", NULL) == 1)
@@ -969,6 +978,7 @@ char* webgettranscodem3u(char* param, int connfd, int fmt)
 	if(extip == 1) free(ip);
 	return buf;
 }
+#endif
 
 char* webgetvideo(char* param, int connfd, int fmt)
 {
@@ -2083,10 +2093,11 @@ char* webgetfilelist(char* param, char* link, char* dellink, char* path, char* m
 						ostrcatbig(&buf, "<img border=0 src=img/stream.png width=16 height=16 alt=Stream></a>", &maxlen, &pos);
 					}
 					//transstream png
+#ifdef MIPSEL
 					if(checkbit(flag, 3) == 1)
 					{
 						
-						if(file_exist("/proc/stb/encoder"))						
+						if(file_exist("/proc/stb/encoder") &&  getconfigint("web_trans_transcode", NULL) == 1)						
 						{													
 							ostrcatbig(&buf, "<a target=nothing href=\"query?gettranscodem3u&0,0,", &maxlen, &pos);
 							ostrcatbig(&buf, filelistpath->text, &maxlen, &pos);
@@ -2096,6 +2107,7 @@ char* webgetfilelist(char* param, char* link, char* dellink, char* path, char* m
 							ostrcatbig(&buf, "<img border=0 src=img/transstream.png width=16 height=16 alt=Stream Transcode></a>", &maxlen, &pos);
 						}
 					}
+#endif
 					//webstream png
 					if(checkbit(flag, 4) == 1)
 					{

@@ -1538,7 +1538,7 @@ struct status
 	//cec mipsel
 	int cec_fixedAddress;
 	int hdmiFd;
-
+	int status.webencode;
 #endif
 	//pip Einstellungen
 	int pipzap;

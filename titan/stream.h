@@ -150,10 +150,11 @@ void streamthreadfunc(struct stimerthread* timernode)
 #ifndef MIPSEL
 						ret = recordstart(chnode, -1, connfd, RECSTREAM, 0, NULL);
 #else
-						if(getconfigint("web_trans_transcode", NULL) == 0)
+						if(status.webencode == 0)
 							ret = recordstart(chnode, -1, connfd, RECSTREAM, 0, NULL);
 						else
 						{
+								status.webencode = 0;
 								ret = recordstartencode(chnode, -1, connfd, RECSTREAMENC, 0, NULL,	0, 0, 0, 0, 0, 0);
 						}
 #endif

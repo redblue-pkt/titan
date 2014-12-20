@@ -429,15 +429,17 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 			mime = "audio/x-mpegurl";
 		}
 	}
+#ifdef MIPSEL
 	else if(ostrcmp(query, "gettranscodem3u") == 0)
 	{
-		buf = webgetm3u(param, *connfd, fmt);
+		buf = webgettranscodem3u(param, *connfd, fmt);
 		if(fmt == 0)
 		{
 			ext = "Content-Disposition: attachment; filename=transstream.m3u";
 			mime = "audio/x-mpegurl";
 		}
 	}
+#endif
 	else if(ostrcmp(query, "getvideo") == 0)
 		buf = webgetvideo(param, *connfd, fmt);
 	else if(ostrcmp(query, "videoplay") == 0 || ostrcmp(query, "videoplay=") == 0)
