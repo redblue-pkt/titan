@@ -892,7 +892,7 @@ char* webgetm3u(char* param, int connfd, int fmt)
 	socklen_t len = sizeof(sin);
 	
 #ifdef MIPSEL
-	status.encode = 0;
+	status.webencode = 0;
 #endif		
 
 	if(param == NULL) return NULL;
@@ -940,7 +940,7 @@ char* webgettranscodem3u(char* param, int connfd, int fmt)
 	struct sockaddr_in sin;
 	socklen_t len = sizeof(sin);
 
-	status.encode = 1;
+	status.webencode = 1;
 
 	if(param == NULL) return NULL;
 
