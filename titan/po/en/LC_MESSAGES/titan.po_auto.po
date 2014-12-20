@@ -7142,7 +7142,7 @@ msgstr "Frequency: "
 
 #: skin_default_skin.xml.h:256
 msgid "Frontpanel Power Aktion"
-msgstr ""
+msgstr "Frontpanel Power Action"
 
 #: skin_default_skin.xml.h:257
 msgid "g"
@@ -8144,7 +8144,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:526
 msgid "Remotecontrol Power Aktion"
-msgstr ""
+msgstr "Remotecontrol Power Action"
 
 #: skin_default_skin.xml.h:527
 msgid "Remove emthy Bouquet"
