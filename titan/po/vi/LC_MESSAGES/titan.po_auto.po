@@ -7046,7 +7046,7 @@ msgid "Frequency:"
 msgstr "Tần số:"
 
 #: skin_default_skin.xml.h:256
-msgid "Frontpanel Power aktion"
+msgid "Frontpanel Power Aktion"
 msgstr ""
 
 #: skin_default_skin.xml.h:257
@@ -8021,7 +8021,7 @@ msgid "Remember film position"
 msgstr ""
 
 #: skin_default_skin.xml.h:526
-msgid "Remotecontrol Power aktion"
+msgid "Remotecontrol Power Aktion"
 msgstr ""
 
 #: skin_default_skin.xml.h:527
