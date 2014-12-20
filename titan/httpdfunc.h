@@ -2080,19 +2080,21 @@ char* webgetfilelist(char* param, char* link, char* dellink, char* path, char* m
 						ostrcatbig(&buf, "/", &maxlen, &pos);
 						ostrcatbig(&buf, node->text, &maxlen, &pos);
 						ostrcatbig(&buf, "\">", &maxlen, &pos);
-
 						ostrcatbig(&buf, "<img border=0 src=img/stream.png width=16 height=16 alt=Stream></a>", &maxlen, &pos);
 					}
 					//transstream png
 					if(checkbit(flag, 3) == 1)
 					{
-						ostrcatbig(&buf, "<a target=nothing href=\"query?gettranscodem3u&0,0,", &maxlen, &pos);
-						ostrcatbig(&buf, filelistpath->text, &maxlen, &pos);
-						ostrcatbig(&buf, "/", &maxlen, &pos);
-						ostrcatbig(&buf, node->text, &maxlen, &pos);
-						ostrcatbig(&buf, "\">", &maxlen, &pos);
-
-						ostrcatbig(&buf, "<img border=0 src=img/transstream.png width=16 height=16 alt=Stream Transcode></a>", &maxlen, &pos);
+						
+						if(file_exist("/proc/stb/encoder"))						
+						{													
+							ostrcatbig(&buf, "<a target=nothing href=\"query?gettranscodem3u&0,0,", &maxlen, &pos);
+							ostrcatbig(&buf, filelistpath->text, &maxlen, &pos);
+							ostrcatbig(&buf, "/", &maxlen, &pos);
+							ostrcatbig(&buf, node->text, &maxlen, &pos);
+							ostrcatbig(&buf, "\">", &maxlen, &pos);
+							ostrcatbig(&buf, "<img border=0 src=img/transstream.png width=16 height=16 alt=Stream Transcode></a>", &maxlen, &pos);
+						}
 					}
 					//webstream png
 					if(checkbit(flag, 4) == 1)
