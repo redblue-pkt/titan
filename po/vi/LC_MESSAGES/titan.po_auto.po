@@ -2154,8 +2154,8 @@ msgid "Dirsort"
 msgstr "Sắp xếp"
 
 #: httpdfunc.h:3884
-msgid "Power aktion"
-msgstr "Bật/tắt nguồn"
+msgid "Remotecontrol Power aktion"
+msgstr ""
 
 #: httpdfunc.h:3927 skin_default_skin.xml.h:256
 msgid "Frontpanel Power Aktion"
@@ -12985,3 +12985,6 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
+
+#~ msgid "Power aktion"
+#~ msgstr "Bật/tắt nguồn"

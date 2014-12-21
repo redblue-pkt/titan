@@ -2189,8 +2189,8 @@ msgid "Dirsort"
 msgstr "Riuoti pagal"
 
 #: httpdfunc.h:3884
-msgid "Power aktion"
-msgstr "Reakcija  Power Mygtuko paspaudim"
+msgid "Remotecontrol Power aktion"
+msgstr ""
 
 #: httpdfunc.h:3927 skin_default_skin.xml.h:256
 msgid "Frontpanel Power Aktion"
@@ -13114,3 +13114,6 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Zapback aktivuoas. Ar norite j sustabdyti ?"
+
+#~ msgid "Power aktion"
+#~ msgstr "Reakcija  Power Mygtuko paspaudim"

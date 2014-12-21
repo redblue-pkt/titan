@@ -2181,8 +2181,8 @@ msgid "Dirsort"
 msgstr "Map sortering"
 
 #: httpdfunc.h:3884
-msgid "Power aktion"
-msgstr "Aktie bij het indrukken van de aan/uit knop"
+msgid "Remotecontrol Power aktion"
+msgstr ""
 
 #: httpdfunc.h:3927 skin_default_skin.xml.h:256
 msgid "Frontpanel Power Aktion"
@@ -13084,3 +13084,6 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Zapback is reeds actief... Stoppen?"
+
+#~ msgid "Power aktion"
+#~ msgstr "Aktie bij het indrukken van de aan/uit knop"

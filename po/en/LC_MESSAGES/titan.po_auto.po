@@ -2196,8 +2196,8 @@ msgid "Dirsort"
 msgstr "Directory sort by"
 
 #: httpdfunc.h:3884
-msgid "Power aktion"
-msgstr "Reaction to Power Button usage"
+msgid "Remotecontrol Power aktion"
+msgstr ""
 
 #: httpdfunc.h:3927 skin_default_skin.xml.h:256
 msgid "Frontpanel Power Aktion"
@@ -13136,3 +13136,6 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Zapback is activated. Do you want to stop it?"
+
+#~ msgid "Power aktion"
+#~ msgstr "Reaction to Power Button usage"
