@@ -976,12 +976,16 @@ int gstbuscall(GstBus *bus, GstMessage *msg, CustomData *data)
 			//m_event((iPlayableService*)this, evBuffering);
 */
 
+			if (data->is_live) break;
+			gst_message_parse_buffering (msg, &status.bufferpercent);
+
 			if(status.prefillbuffer == 1) 
  			{
 //				gint percent = 0;
-				if (data->is_live) break;
-				gst_message_parse_buffering (msg, &status.bufferpercent);
+//				if (data->is_live) break;
+//				gst_message_parse_buffering (msg, &status.bufferpercent);
 				g_print ("Buffering (%3d%%)\r", status.bufferpercent);
+
 				if (status.bufferpercent < 100)
 				{
 					gst_element_set_state (data->pipeline, GST_STATE_PAUSED);
@@ -998,12 +1002,14 @@ int gstbuscall(GstBus *bus, GstMessage *msg, CustomData *data)
 	
 					drawscreen(load, 0, 0);
 					drawscreen(waitmsgbar, 0, 0);
+					status.cleaninfobar = 0;
 				}
 				else
 				{
 					drawscreen(skin, 0, 0);
 					gst_element_set_state (data->pipeline, GST_STATE_PLAYING);
 					status.prefillbuffer = 0;
+					status.cleaninfobar = 1;
 				}
 	
 			} 
@@ -1012,6 +1018,12 @@ int gstbuscall(GstBus *bus, GstMessage *msg, CustomData *data)
 				drawscreen(skin, 0, 0);
 				gst_element_set_state (data->pipeline, GST_STATE_PLAYING);
 				status.prefillbuffer = 0;
+				status.cleaninfobar = 1;
+			}
+			else if(status.cleaninfobar == 1)
+			{
+				drawscreen(skin, 0, 0);
+				status.cleaninfobar = 0;
 			}
 
 			break;
