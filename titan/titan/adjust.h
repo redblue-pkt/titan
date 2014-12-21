@@ -113,11 +113,8 @@ void screenadjust()
 	addchoicebox(poweraktion, "4", _("Gui Restart"));
 	setchoiceboxselection(poweraktion, getconfig("poweraktion", NULL));
 
-	addchoicebox(frontpoweraktion, "0", _("Power Menu"));
 	addchoicebox(frontpoweraktion, "1", _("Power Off"));
 	addchoicebox(frontpoweraktion, "2", _("Standby"));
-	addchoicebox(frontpoweraktion, "3", _("Restart"));
-	addchoicebox(frontpoweraktion, "4", _("Gui Restart"));
 	setchoiceboxselection(frontpoweraktion, getconfig("frontpoweraktion", NULL));
 
 	addchoicebox(virtualzap, "0", _("deaktiv"));
