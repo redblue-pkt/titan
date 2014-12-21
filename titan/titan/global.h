@@ -4379,7 +4379,21 @@ int setmute(int value)
 			debug(100, "set %s to %d", mutedev, value);
 			//if(status.volautochangevalue != 0 && value == 0) setvol(getvol());
 #ifdef MIPSEL
-			ret = audiosetmute(status.aktservice->audiodev, value);
+			struct dvbdev *audionode = NULL;
+			int openaudio = 0;
+			if(status.aktservice != NULL)
+			{
+				if(status.aktservice->audiodev == NULL)
+				{
+					audionode = audioopen(0); //we must open the audio device for set mute in external player
+					openaudio = 1;
+				}
+				else
+					audionode = status.aktservice->audiodev;
+			}
+			ret = audiosetmute(audionode, value);
+			if(openaudio == 1)
+				audioclose(audionode, -1);
 #else
 			ret = writesysint(mutedev, value, 0);
 #endif
