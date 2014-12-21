@@ -82,9 +82,6 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	if(flag == 6) secondzap = 1;
 	if(flag == 4) flag = 0;
 
-	//wakeup hdd work
-	if(flag == 1 || flag == 2) wakeup_record_device();
-
 	if(flag == 0 && status.aktservice->type == CHANNEL && status.aktservice->channel != NULL && chnode == status.aktservice->channel)
 	{
 		m_unlock(&status.servicemutex, 2);
@@ -256,12 +253,20 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	if(flag != 0) checkpmt = 1;
 
 	//set mute for scat problem
+#ifdef MIPSEL	
+	if(status.mute != 0)
+	{
+		setmute(0);
+		tmpmute = 1;
+	}
+#else
 	if(status.mute == 0)
 	{
 		tmpmute = 1;
 		//setmute(1);
 		audiosetmute(status.aktservice->audiodev, 1);
 	}
+#endif		
 	audiostop(status.aktservice->audiodev);
 	//demux pcr start
 	if(flag == 0 && chnode->pcrpid > 0)
@@ -425,6 +430,13 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 			err("can't get free video dev");
 	}
 
+#ifdef MIPSEL
+	if(tmpmute == 1)
+	{
+		tmpmute = 0;
+		setmute(1);
+	}
+#else	
 	//unset mute if set here
 	if(tmpmute == 1)
 	{
@@ -434,6 +446,7 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	}
 	if(status.mute != 1)
 		audioplay(status.aktservice->audiodev);
+#endif
 	
 	//check pmt if not done
 	if(checkpmt == 0)
