@@ -3881,7 +3881,7 @@ printf("webadjust fmt: %d\n",fmt);
 
 ///////////////////rcpower
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
-	ostrcatbig(&buf, _("Power aktion"), &maxlen, &pos);
+	ostrcatbig(&buf, _("Remotecontrol Power aktion"), &maxlen, &pos);
 	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"poweraktion\" border=\"0\">", &maxlen, &pos);
 	
 	if(getconfigint("poweraktion", NULL) == 0)
