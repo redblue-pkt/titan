@@ -13231,6 +13231,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid "Power aktion"
-#~ msgstr "Verhalten bei Betätigung der EIN/AUS Taste"
