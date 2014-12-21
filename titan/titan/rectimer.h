@@ -452,7 +452,6 @@ void checkrectimer(struct stimerthread* self)
 	struct rectimer* node = NULL, *newnode = NULL;
 	struct channel* chnode = NULL;
 	time_t t = 0, begin = 0, end = 0;
-printf("checkrectimer start\n");
 
 	if(self == NULL) return;
 
