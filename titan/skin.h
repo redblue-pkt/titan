@@ -80,14 +80,13 @@ void* convertfunc(char *value, uint8_t *rettype)
 	}
 	if(ostrcmp("getreccount", value) == 0)
 		return &getreccount;
+	
 	if(ostrcmp("getrec", value) == 0)
 	{
 		*rettype = FUNCPIC;
 		return &getrec;
 	}
 
-	if(ostrcmp("getreccount", value) == 0)
-		return &getreccount;
 	if(ostrcmp("getoledrec", value) == 0)
 	{
 		*rettype = FUNCPIC;
