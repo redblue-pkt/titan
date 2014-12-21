@@ -1075,7 +1075,9 @@ int resetvmpeg(struct dvbdev* node)
 	ret = setvmpeg(node, 0, 3);
 	
 	ret = setvmpeg(node, 0, 99);
-	
+
+	status.tvpic = 0;
+			
 	return ret;
 }
 
@@ -1091,10 +1093,7 @@ int resettvpic()
 	int ret = 0;
 
 	if(status.tvpic > 0 && status.aktservice != NULL)
-	{
-		status.tvpic = 0;
 		ret = resetvmpeg(status.aktservice->videodev);
-	}
 
 	return ret;
 }
