@@ -82,6 +82,9 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 	if(flag == 6) secondzap = 1;
 	if(flag == 4) flag = 0;
 
+	//wakeup hdd work 
+	if(flag == 1 || flag == 2) wakeup_record_device(); 
+	
 	if(flag == 0 && status.aktservice->type == CHANNEL && status.aktservice->channel != NULL && chnode == status.aktservice->channel)
 	{
 		m_unlock(&status.servicemutex, 2);
