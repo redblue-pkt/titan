@@ -2144,8 +2144,8 @@ msgstr ""
 msgid "Dirsort"
 msgstr "Trier"
 
-#: httpdfunc.h:3884
-msgid "Remotecontrol Power aktion"
+#: httpdfunc.h:3884 skin_default_skin.xml.h:526
+msgid "Remotecontrol Power Aktion"
 msgstr ""
 
 #: httpdfunc.h:3927 skin_default_skin.xml.h:256
@@ -7977,10 +7977,6 @@ msgstr "Recharge"
 
 #: skin_default_skin.xml.h:525
 msgid "Remember film position"
-msgstr ""
-
-#: skin_default_skin.xml.h:526
-msgid "Remotecontrol Power Aktion"
 msgstr ""
 
 #: skin_default_skin.xml.h:527

@@ -2195,9 +2195,9 @@ msgstr "Fast titan reboot"
 msgid "Dirsort"
 msgstr "Directory sort by"
 
-#: httpdfunc.h:3884
-msgid "Remotecontrol Power aktion"
-msgstr ""
+#: httpdfunc.h:3884 skin_default_skin.xml.h:526
+msgid "Remotecontrol Power Aktion"
+msgstr "Remotecontrol Power Action"
 
 #: httpdfunc.h:3927 skin_default_skin.xml.h:256
 msgid "Frontpanel Power Aktion"
@@ -8142,10 +8142,6 @@ msgstr "Reload"
 #: skin_default_skin.xml.h:525
 msgid "Remember film position"
 msgstr ""
-
-#: skin_default_skin.xml.h:526
-msgid "Remotecontrol Power Aktion"
-msgstr "Remotecontrol Power Action"
 
 #: skin_default_skin.xml.h:527
 msgid "Remove emthy Bouquet"
