@@ -70,8 +70,8 @@ msgstr "Sistemos informacija"
 #: rectimer.h:1389 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:31 scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1901
-#: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 scriptexec.h:41 service.h:728
-#: service.h:973 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:235
+#: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 scriptexec.h:41 service.h:731
+#: service.h:976 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:235
 #: skins_dlna_skin.xml.h:8 skinselector.h:218 skins_facebook_skin.xml.h:5
 #: skins_mboxinfo_skin.xml.h:2 skins_mc_skin.xml.h:38
 #: skins_optimize_skin.xml.h:3 skins_rgui_skin.xml.h:3
@@ -182,8 +182,8 @@ msgstr "Gerai"
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:31
 #: scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1901 scan.h:1992
-#: scan.h:2358 scart.h:12 scart.h:25 scriptexec.h:41 service.h:728
-#: service.h:973 shared.h:29 shared.h:65 shared.h:82
+#: scan.h:2358 scart.h:12 scart.h:25 scriptexec.h:41 service.h:731
+#: service.h:976 shared.h:29 shared.h:65 shared.h:82
 #: skin_default_skin.xml.h:228 skins_autotimer_skin.xml.h:7
 #: skins_callmonitor1_skin.xml.h:11 skins_catcatch_skin.xml.h:4
 #: skins_dlna_skin.xml.h:2 skinselector.h:218 skins_facebook_skin.xml.h:4
@@ -602,7 +602,7 @@ msgstr "taip / vzap begalinis"
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:31
 #: scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1646 scan.h:1901
-#: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 service.h:728 service.h:973
+#: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 service.h:731 service.h:976
 #: shared.h:29 shared.h:65 shared.h:82 skinadjust.h:235 skinselector.h:218
 #: sock.h:952 softcam.h:403 solarmovie.h:35 solarmovie.h:47 solarmovie.h:304
 #: spinner.h:18 stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74
@@ -6119,7 +6119,7 @@ msgstr ""
 msgid "Script execute"
 msgstr "Vykdyti scenarij"
 
-#: service.h:728
+#: service.h:731
 msgid ""
 "Timeshift is running !!!\n"
 "Stop it and switch ?"
@@ -6127,7 +6127,7 @@ msgstr ""
 "Timeshift veikia !!! \n"
 "Stop Timeshift ir pakeisti kanal ?"
 
-#: service.h:956
+#: service.h:959
 msgid ""
 "Can't find a Tuner.\n"
 "All Tuners in use or no Tuner defined."
@@ -6135,17 +6135,17 @@ msgstr ""
 "Nerandate Tuner.\n"
 "All Tuner naudoti ar ne Tuner defined."
 
-#: service.h:959
+#: service.h:962
 msgid "Tuning to Channel failed!"
 msgstr "KLAIDA: Kanalo nra"
 
-#: service.h:962
+#: service.h:965
 msgid "Can't open frontend dev or Frontend Type unknown!"
 msgstr ""
 "KLAIDA: Nepavyko atidaryti rengini ssajaName or\n"
 "Frontend Tipas unknown."
 
-#: service.h:967
+#: service.h:970
 msgid "Channellist empty or corrupt (channel not found)!"
 msgstr ""
 "KLAIDA: Channellist tuias arba corrupt\n"
