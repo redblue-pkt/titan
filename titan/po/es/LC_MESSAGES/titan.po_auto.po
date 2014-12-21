@@ -13205,6 +13205,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Zap atras esta activado. Desea detener?"
-
-#~ msgid "Power aktion"
-#~ msgstr "Reaccion al uso del boton de encendido"

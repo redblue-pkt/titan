@@ -13114,6 +13114,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Zapback aktivuoas. Ar norite j sustabdyti ?"
-
-#~ msgid "Power aktion"
-#~ msgstr "Reakcija  Power Mygtuko paspaudim"
