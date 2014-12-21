@@ -2188,8 +2188,8 @@ msgstr "GreitasTtitan perkrovimas"
 msgid "Dirsort"
 msgstr "Riuoti pagal"
 
-#: httpdfunc.h:3884
-msgid "Remotecontrol Power aktion"
+#: httpdfunc.h:3884 skin_default_skin.xml.h:526
+msgid "Remotecontrol Power Aktion"
 msgstr ""
 
 #: httpdfunc.h:3927 skin_default_skin.xml.h:256
@@ -8121,10 +8121,6 @@ msgstr "Perkrauti"
 #: skin_default_skin.xml.h:525
 msgid "Remember film position"
 msgstr "Prisiminti kino pozicij"
-
-#: skin_default_skin.xml.h:526
-msgid "Remotecontrol Power Aktion"
-msgstr ""
 
 #: skin_default_skin.xml.h:527
 msgid "Remove emthy Bouquet"
