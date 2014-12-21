@@ -3879,7 +3879,7 @@ printf("webadjust fmt: %d\n",fmt);
 	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
 	sendstr = ostrcat(sendstr, ", dirsort.value", 1 , 0);
 
-///////////////////
+///////////////////rcpower
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("Power aktion"), &maxlen, &pos);
 	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"poweraktion\" border=\"0\">", &maxlen, &pos);
@@ -3921,6 +3921,28 @@ printf("webadjust fmt: %d\n",fmt);
 	
 	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
 	sendstr = ostrcat(sendstr, ", poweraktion.value", 1 , 0);
+
+///////////////////frontpower
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Frontpanel Power Aktion"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"frontpoweraktion\" border=\"0\">", &maxlen, &pos);
+	
+	if(getconfigint("frontpoweraktion", NULL) == 1)
+		ostrcatbig(&buf, "<option value=\"1\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"1\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Power Off"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	if(getconfigint("frontpoweraktion", NULL) == 2)
+		ostrcatbig(&buf, "<option value=\"2\" selected>", &maxlen, &pos);		
+	else
+		ostrcatbig(&buf, "<option value=\"2\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("Standby"), &maxlen, &pos);
+	ostrcatbig(&buf, "</option>", &maxlen, &pos);
+
+	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+	sendstr = ostrcat(sendstr, ", frontpoweraktion.value", 1 , 0);
 
 ///////////////////
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
