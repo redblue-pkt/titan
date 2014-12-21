@@ -4378,7 +4378,12 @@ int setmute(int value)
 		{
 			debug(100, "set %s to %d", mutedev, value);
 			//if(status.volautochangevalue != 0 && value == 0) setvol(getvol());
+#ifdef MIPSEL
+			ret = audiosetmute(status.aktservice->audiodev, value);
+#else
 			ret = writesysint(mutedev, value, 0);
+#endif
+		
 			if(ret == 0) status.mute = value;
 			if(status.volautochangevalue != 0 && value == 0) setvol(getvol());
 //			if(value == 1)
