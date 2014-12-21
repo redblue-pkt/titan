@@ -33,6 +33,11 @@ void* convertfunc(char *value, uint8_t *rettype)
 		*rettype = FUNCPIC;
 		return &getpicon;
 	}
+	if(ostrcmp("getoledmute", value) == 0)
+	{
+		*rettype = FUNCPIC;
+		return &getoledmute;
+	}
 	if(ostrcmp("getalternatepicon", value) == 0)
 	{
 		*rettype = FUNCPIC;
@@ -80,6 +85,15 @@ void* convertfunc(char *value, uint8_t *rettype)
 		*rettype = FUNCPIC;
 		return &getrec;
 	}
+
+	if(ostrcmp("getreccount", value) == 0)
+		return &getreccount;
+	if(ostrcmp("getoledrec", value) == 0)
+	{
+		*rettype = FUNCPIC;
+		return &getoledrec;
+	}
+
 	if(ostrcmp("gethbbtv", value) == 0)
 	{
 		*rettype = FUNCPIC;
