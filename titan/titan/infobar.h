@@ -174,11 +174,11 @@ void screeninfobar()
 		}
 
 // workaround for crash, disable
-		if(rcret != getrcconfigint("rcmute", NULL) && status.mute > 0 && status.standby != 1)
-		{
-			printf("skip rccode: rcret=%d\n", rcret);
-			continue;
-		}
+//		if(rcret != getrcconfigint("rcmute", NULL) && status.mute > 0 && status.standby != 1)
+//		{
+//			printf("skip rccode: rcret=%d\n", rcret);
+//			continue;
+//		}
 
 		if(rcret == getrcconfigint("rcpause", NULL) || /*checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO5200") == 1 || checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1 || checkbox("ATEMIO6200") == 1 || */((checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1) && rcret == getrcconfigint("rcplay", NULL) && status.pause == 0 && status.slowspeed == 0 && status.playspeed == 0 && ostrcmp(getconfig("remotecontrol", NULL), "0") == 0))
 		{
