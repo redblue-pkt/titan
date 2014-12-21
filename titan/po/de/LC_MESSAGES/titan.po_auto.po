@@ -353,38 +353,38 @@ msgstr "schnell"
 #: mc_pictureplayer_settings.h:42 mc_videoplayer_settings.h:23
 #: plugins_mc_skin.xml.h:7 skin_default_skin.xml.h:75 skins_mc_skin.xml.h:7
 msgid "alpha"
-msgstr "Alphabetisch A > Z"
+msgstr "Alphabetisch A - Z"
 
 #: adjust.h:102 httpdfunc.h:3848 mc_audioplayer_settings.h:28
 #: mc_pictureplayer_settings.h:43 mc_videoplayer_settings.h:24
 #: plugins_mc_skin.xml.h:49 skin_default_skin.xml.h:543 skins_mc_skin.xml.h:49
 msgid "reverse alpha"
-msgstr "Alphabetisch Z > A"
+msgstr "Alphabetisch Z - A"
 
 #: adjust.h:103 httpdfunc.h:3855 mc_audioplayer_settings.h:29
 #: mc_pictureplayer_settings.h:44 mc_videoplayer_settings.h:25
 #: plugins_mc_skin.xml.h:55 skin_default_skin.xml.h:616 skins_mc_skin.xml.h:55
 msgid "size"
-msgstr "Klein > Groß"
+msgstr "Größe absteigend"
 
 #: adjust.h:104 httpdfunc.h:3862 mc_audioplayer_settings.h:30
 #: mc_pictureplayer_settings.h:45 mc_videoplayer_settings.h:26
 #: plugins_mc_skin.xml.h:51 skin_default_skin.xml.h:545 skins_mc_skin.xml.h:51
 msgid "reverse size"
-msgstr "Groß > Klein"
+msgstr "Größe aufsteigend"
 
 #: adjust.h:105 httpdfunc.h:3869 mc_audioplayer_settings.h:31
 #: mc_pictureplayer_settings.h:46 mc_videoplayer_settings.h:27
 #: plugins_mc_skin.xml.h:16 skin_default_skin.xml.h:171 skins_mc_skin.xml.h:16
 #: vfdisplay.h:46
 msgid "date"
-msgstr "Datum Neu > Alt"
+msgstr "Datum Neu - Alt"
 
 #: adjust.h:106 httpdfunc.h:3876 mc_audioplayer_settings.h:32
 #: mc_pictureplayer_settings.h:47 mc_videoplayer_settings.h:28
 #: plugins_mc_skin.xml.h:50 skin_default_skin.xml.h:544 skins_mc_skin.xml.h:50
 msgid "reverse date"
-msgstr "Datum Alt > Neu"
+msgstr "Datum Alt - Neu"
 
 #: adjust.h:109 httpdfunc.h:3891
 msgid "Power Menu"
