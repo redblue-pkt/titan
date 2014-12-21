@@ -221,7 +221,7 @@ msgstr "Thoát"
 #: adjust.h:68 adjust.h:83 adjust.h:92 adjust.h:97 adjust.h:129 adjust.h:159
 #: adjust.h:169 adjust.h:173 adjust.h:190 adjust.h:194 adjust.h:202
 #: adjust.h:206 adjust.h:210 adjust.h:216 adjust.h:220 adjust.h:227
-#: adjust.h:231 adjust.h:235 adjust.h:241 adjust.h:247 adjust.h:288
+#: adjust.h:231 adjust.h:235 adjust.h:241 adjust.h:247 adjust.h:289
 #: autotimer.c:453 autotimer.c:486 avsettings.h:156 avsettings.h:192
 #: avsettings.h:196 blindscanadjust.h:150 blindscanadjust.h:154
 #: blindscanadjust.h:158 blindscanadjust.h:187 blindscanadjust.h:191 cec.h:142
@@ -452,12 +452,12 @@ msgstr ""
 msgid "4 GB"
 msgstr ""
 
-#: adjust.h:155 adjust.h:279 httpdfunc.h:4195 httpdfunc.h:4676
+#: adjust.h:155 adjust.h:280 httpdfunc.h:4195 httpdfunc.h:4676
 #: httpdsettings.h:50
 msgid "extern"
 msgstr ""
 
-#: adjust.h:156 adjust.h:280 httpdfunc.h:4202 httpdfunc.h:4683
+#: adjust.h:156 adjust.h:281 httpdfunc.h:4202 httpdfunc.h:4683
 #: httpdsettings.h:49
 msgid "intern"
 msgstr ""
