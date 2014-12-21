@@ -142,6 +142,43 @@ char* getrec(struct skin* node, char* path)
 	return tmpstr;
 }
 
+#ifdef MIPSEL
+///rec png
+	char* getoledrec(struct skin* node, char* path)
+	{
+		char* tmpstr = NULL;
+
+		if(status.recording > 0)
+		{
+			tmpstr = ostrcat("oled_rec.png", NULL, 0, 0);
+
+			if(path != NULL)
+				tmpstr = ostrcat("/", tmpstr, 0, 1);
+			tmpstr = ostrcat(path, tmpstr, 0, 1);
+		}
+	
+		return tmpstr;
+	}
+///mute png
+	char* getoledmute(struct skin* node, char* path)
+		{
+			char* tmpstr = NULL;
+
+			if(status.mute > 0)
+			{
+				tmpstr = ostrcat("oled_mute.png", NULL, 0, 0);
+
+				if(path != NULL)
+					tmpstr = ostrcat("/", tmpstr, 0, 1);
+				tmpstr = ostrcat(path, tmpstr, 0, 1);
+			}
+		
+			return tmpstr;
+		}
+
+#endif
+
+
 char* getcrypt(struct skin* node, char* path)
 {
 	char* tmpstr = NULL;
