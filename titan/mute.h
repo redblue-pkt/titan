@@ -29,7 +29,10 @@ void screenmute(struct skin* screen, struct skin* node, int flag)
 #endif
 		setnodeattr(mute, framebuffer, 0);
 		if(status.drawallwaysbg[0] != NULL)
+		{
 			free(status.drawallwaysbg[0]);
+			status.drawallwaysbg[0] = NULL;
+		}
 		status.drawallwaysbg[0] = savescreen(mute);
 		if(flag == 2 || flag == 3)
 			drawscreen(mute, 0, 2);
