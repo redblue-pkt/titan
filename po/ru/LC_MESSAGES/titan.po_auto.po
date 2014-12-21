@@ -218,10 +218,10 @@ msgstr "k"
 msgid "EXIT"
 msgstr "Выход"
 
-#: adjust.h:68 adjust.h:83 adjust.h:92 adjust.h:97 adjust.h:129 adjust.h:159
-#: adjust.h:169 adjust.h:173 adjust.h:190 adjust.h:194 adjust.h:202
-#: adjust.h:206 adjust.h:210 adjust.h:216 adjust.h:220 adjust.h:227
-#: adjust.h:231 adjust.h:235 adjust.h:241 adjust.h:247 adjust.h:289
+#: adjust.h:68 adjust.h:83 adjust.h:92 adjust.h:97 adjust.h:126 adjust.h:156
+#: adjust.h:166 adjust.h:170 adjust.h:187 adjust.h:191 adjust.h:199
+#: adjust.h:203 adjust.h:207 adjust.h:213 adjust.h:217 adjust.h:224
+#: adjust.h:228 adjust.h:232 adjust.h:238 adjust.h:244 adjust.h:286
 #: autotimer.c:453 autotimer.c:486 avsettings.h:156 avsettings.h:192
 #: avsettings.h:196 blindscanadjust.h:150 blindscanadjust.h:154
 #: blindscanadjust.h:158 blindscanadjust.h:187 blindscanadjust.h:191 cec.h:142
@@ -287,10 +287,10 @@ msgstr ""
 msgid "Channel EPG"
 msgstr ""
 
-#: adjust.h:84 adjust.h:98 adjust.h:130 adjust.h:160 adjust.h:170 adjust.h:191
-#: adjust.h:195 adjust.h:203 adjust.h:207 adjust.h:211 adjust.h:217
-#: adjust.h:221 adjust.h:228 adjust.h:232 adjust.h:236 adjust.h:242
-#: adjust.h:246 autotimer.c:454 autotimer.c:487 avsettings.h:157
+#: adjust.h:84 adjust.h:98 adjust.h:127 adjust.h:157 adjust.h:167 adjust.h:188
+#: adjust.h:192 adjust.h:200 adjust.h:204 adjust.h:208 adjust.h:214
+#: adjust.h:218 adjust.h:225 adjust.h:229 adjust.h:233 adjust.h:239
+#: adjust.h:243 autotimer.c:454 autotimer.c:487 avsettings.h:157
 #: avsettings.h:193 blindscanadjust.h:151 blindscanadjust.h:155
 #: blindscanadjust.h:159 blindscanadjust.h:188 blindscanadjust.h:192 cec.h:143
 #: cec.h:147 cec.h:151 cec.h:155 cec.h:159 cec.h:163 cec.h:167 cec.h:171
@@ -342,7 +342,7 @@ msgstr ""
 msgid "medium"
 msgstr ""
 
-#: adjust.h:94 adjust.h:180 httpdfunc.h:3804 httpdfunc.h:4340
+#: adjust.h:94 adjust.h:177 httpdfunc.h:3804 httpdfunc.h:4340
 #: mc_audioplayer_settings.h:35 mc_pictureplayer_settings.h:50
 #: mc_videoplayer_settings.h:31 moduleconfig.h:248 plugins_mc_skin.xml.h:23
 #: skins_mc_skin.xml.h:23
@@ -386,11 +386,11 @@ msgstr "Дата"
 msgid "reverse date"
 msgstr "Сброс даты"
 
-#: adjust.h:109 adjust.h:116 httpdfunc.h:3891
+#: adjust.h:109 httpdfunc.h:3891
 msgid "Power Menu"
 msgstr ""
 
-#: adjust.h:110 adjust.h:117 httpdfunc.h:3898 skin_default_skin.xml.h:489
+#: adjust.h:110 adjust.h:116 httpdfunc.h:3898 skin_default_skin.xml.h:489
 #: webif_index.atemio510.h:4 webif_index.atemio5200.h:4
 #: webif_index.atemio6000.h:4 webif_index.atemio6100.h:4
 #: webif_index.atemio6200.h:4 webif_index.atemio7600.h:2
@@ -398,7 +398,7 @@ msgstr ""
 msgid "Power Off"
 msgstr "Выключение"
 
-#: adjust.h:111 adjust.h:118 httpdfunc.h:3905 powerofftimer.h:118
+#: adjust.h:111 adjust.h:117 httpdfunc.h:3905 powerofftimer.h:118
 #: skin_default_skin.xml.h:639 webif_index.atemio510.h:7
 #: webif_index.atemio5200.h:7 webif_index.atemio6000.h:7
 #: webif_index.atemio6100.h:7 webif_index.atemio6200.h:7
@@ -407,62 +407,62 @@ msgstr "Выключение"
 msgid "Standby"
 msgstr ""
 
-#: adjust.h:112 adjust.h:119 httpdfunc.h:3912 skin_default_skin.xml.h:539
-#: softcam.h:291 webif_index.atemio510.h:5 webif_index.atemio5200.h:5
+#: adjust.h:112 httpdfunc.h:3912 skin_default_skin.xml.h:539 softcam.h:291
+#: webif_index.atemio510.h:5 webif_index.atemio5200.h:5
 #: webif_index.atemio6000.h:5 webif_index.atemio6100.h:5
 #: webif_index.atemio6200.h:5 webif_index.atemio7600.h:3
 #: webif_index.atemio-nemesis.h:5 webif_index.h:5 webif_powercontrol.h:2
 msgid "Restart"
 msgstr "Перезапуск"
 
-#: adjust.h:113 adjust.h:120 httpdfunc.h:3919
+#: adjust.h:113 httpdfunc.h:3919
 msgid "Gui Restart"
 msgstr "GUI перезапуск"
 
-#: adjust.h:123 adjust.h:133 adjust.h:187 epgsettings.h:147 epgsettings.h:153
+#: adjust.h:120 adjust.h:130 adjust.h:184 epgsettings.h:147 epgsettings.h:153
 #: httpdfunc.h:3934 httpdfunc.h:3992 httpdfunc.h:4383 network.h:612
 msgid "deaktiv"
 msgstr ""
 
-#: adjust.h:124 httpdfunc.h:3941
+#: adjust.h:121 httpdfunc.h:3941
 msgid "1 sec"
 msgstr ""
 
-#: adjust.h:125 avsettings.h:78 httpdfunc.h:3948
+#: adjust.h:122 avsettings.h:78 httpdfunc.h:3948
 msgid "2 sec"
 msgstr ""
 
-#: adjust.h:126 httpdfunc.h:3955 pin.h:188
+#: adjust.h:123 httpdfunc.h:3955 pin.h:188
 msgid "endless"
 msgstr ""
 
-#: adjust.h:134 httpdfunc.h:3999
+#: adjust.h:131 httpdfunc.h:3999
 msgid "1 GB"
 msgstr ""
 
-#: adjust.h:135 httpdfunc.h:4006
+#: adjust.h:132 httpdfunc.h:4006
 msgid "2 GB"
 msgstr ""
 
-#: adjust.h:136 httpdfunc.h:4013
+#: adjust.h:133 httpdfunc.h:4013
 msgid "3 GB"
 msgstr ""
 
-#: adjust.h:137 httpdfunc.h:4020
+#: adjust.h:134 httpdfunc.h:4020
 msgid "4 GB"
 msgstr ""
 
-#: adjust.h:155 adjust.h:280 httpdfunc.h:4195 httpdfunc.h:4676
+#: adjust.h:152 adjust.h:277 httpdfunc.h:4195 httpdfunc.h:4676
 #: httpdsettings.h:50
 msgid "extern"
 msgstr ""
 
-#: adjust.h:156 adjust.h:281 httpdfunc.h:4202 httpdfunc.h:4683
+#: adjust.h:153 adjust.h:278 httpdfunc.h:4202 httpdfunc.h:4683
 #: httpdsettings.h:49
 msgid "intern"
 msgstr ""
 
-#: adjust.h:163 autotimer.c:479 autotimer.c:512 avsettings.h:69
+#: adjust.h:160 autotimer.c:479 autotimer.c:512 avsettings.h:69
 #: fancontrol.h:108 httpdfunc.h:4239 httpdsettings.h:110 rectimer.h:1186
 #: transponder.h:121 transponder.h:133 transponder.h:157 transponder.h:167
 #: transponder.h:193 transponder.h:200 transponder.h:226 transponder.h:234
@@ -473,75 +473,75 @@ msgstr ""
 msgid "auto"
 msgstr ""
 
-#: adjust.h:164 autotimer.c:480 autotimer.c:513 epgsettings.h:215
+#: adjust.h:161 autotimer.c:480 autotimer.c:513 epgsettings.h:215
 #: httpdfunc.h:4246 rectimer.h:1187
 msgid "nothing"
 msgstr ""
 
-#: adjust.h:165 autotimer.c:481 autotimer.c:514 fancontrol.h:72
+#: adjust.h:162 autotimer.c:481 autotimer.c:514 fancontrol.h:72
 #: httpdfunc.h:4253 rectimer.h:1188 stopifnotused.c:112 webif_help.h:91
 msgid "standby"
 msgstr "Standby"
 
-#: adjust.h:166 autotimer.c:482 autotimer.c:515 httpdfunc.h:4260
+#: adjust.h:163 autotimer.c:482 autotimer.c:515 httpdfunc.h:4260
 #: rectimer.h:1189 stopifnotused.c:111
 msgid "power off"
 msgstr "Выключение"
 
-#: adjust.h:174 httpdfunc.h:4304
+#: adjust.h:171 httpdfunc.h:4304
 msgid "anim. width"
 msgstr ""
 
-#: adjust.h:175 httpdfunc.h:4311
+#: adjust.h:172 httpdfunc.h:4311
 msgid "anim. height"
 msgstr ""
 
-#: adjust.h:176 httpdfunc.h:4318
+#: adjust.h:173 httpdfunc.h:4318
 msgid "anim. both"
 msgstr ""
 
-#: adjust.h:179 httpdfunc.h:4333
+#: adjust.h:176 httpdfunc.h:4333
 msgid "very fast"
 msgstr ""
 
-#: adjust.h:181 fancontrol.h:65 httpdfunc.h:4347 timeshiftsettings.h:49
+#: adjust.h:178 fancontrol.h:65 httpdfunc.h:4347 timeshiftsettings.h:49
 #: tmc.h:557
 msgid "normal"
 msgstr ""
 
-#: adjust.h:182 httpdfunc.h:4354 moduleconfig.h:246 tmc.h:556
+#: adjust.h:179 httpdfunc.h:4354 moduleconfig.h:246 tmc.h:556
 msgid "slow"
 msgstr ""
 
-#: adjust.h:183 httpdfunc.h:4361
+#: adjust.h:180 httpdfunc.h:4361
 msgid "very slow"
 msgstr ""
 
-#: adjust.h:186 httpdfunc.h:4376 pin.h:106
+#: adjust.h:183 httpdfunc.h:4376 pin.h:106
 msgid "hidden"
 msgstr ""
 
-#: adjust.h:198 httpdfunc.h:4442
+#: adjust.h:195 httpdfunc.h:4442
 msgid "channel-movie"
 msgstr ""
 
-#: adjust.h:199 httpdfunc.h:4449
+#: adjust.h:196 httpdfunc.h:4449
 msgid "movie-channel"
 msgstr ""
 
-#: adjust.h:213 httpdfunc.h:4522
+#: adjust.h:210 httpdfunc.h:4522
 msgid "expert (11)"
 msgstr ""
 
-#: adjust.h:222 httpdfunc.h:4573
+#: adjust.h:219 httpdfunc.h:4573
 msgid "yes / vzap 1 sec"
 msgstr ""
 
-#: adjust.h:223 httpdfunc.h:4580
+#: adjust.h:220 httpdfunc.h:4580
 msgid "yes / vzap 2 sec"
 msgstr ""
 
-#: adjust.h:224 httpdfunc.h:4587
+#: adjust.h:221 httpdfunc.h:4587
 msgid "yes / vzap endless"
 msgstr ""
 
