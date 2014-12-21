@@ -256,9 +256,10 @@ void screenadjust()
 
 #ifdef MIPSEL
 	dualboot->hidden = NO;
-#endif
-#ifdef SH4
+	frontpoweraktion->hidden = NO;
+#else
 	dualboot->hidden = YES;
+	frontpoweraktion->hidden = YES;
 #endif
 
 	if(!file_exist("/usr/bin/enigma2"))
