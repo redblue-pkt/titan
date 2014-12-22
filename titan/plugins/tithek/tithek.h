@@ -1348,6 +1348,8 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 
 		if(!ostrncmp("http://", tmpstr1, 7))
 		{
+			// wakeup hdd for downloading
+			wakeup_record_device();
 			if(flag == 4)
 			{
 #ifdef EPLAYER3
