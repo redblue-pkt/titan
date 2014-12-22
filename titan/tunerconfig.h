@@ -1044,13 +1044,16 @@ void screentunerconfig()
 	//tune new if tunerconfig saved
 	if(ret == 1)
 	{
-		drawscreen(skin, 0, 0);
 		ret = servicestop(status.aktservice, 1, 1);
 		if(ret == 0)
 		{
 			status.aktservice->transponder = NULL;
 			servicecheckret(servicestart(status.aktservice->channel, NULL, NULL, 5), 0);
 		}
+		resettvpic();
+		drawscreen(tunerconfig, 0, 0);
+		clearscreen(tunerconfig);
+		drawscreen(skin, 0, 0);
 	}
 }
 
