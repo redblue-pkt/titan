@@ -1527,6 +1527,27 @@ playerstart:
 			while((playertype == 0 && playerisplaying()) || (playertype == 1 && playerisplayingts()))
 			{
 				rcret = waitrc(playinfobar, rcwait, 0);
+#ifdef MIPSEL
+				if(waitofbuffer == 1 &&	status.prefillbuffer == 0 && status.cleaninfobar == 1)
+				{
+					drawscreen(skin, 0, 0);
+					screenplayinfobar(file, showname, 0, playertype, flag);
+					waitofbuffer = 0;
+					status.cleaninfobar = 0;
+					
+				}
+				else if(waitofbuffer == 0 && status.prefillbuffer == 0 && status.cleaninfobar == 0)
+				{
+					playinfobarcount++;
+					if(playinfobarstatus > 0)
+						screenplayinfobar(file, showname, 0, playertype, flag);
+					if(playinfobarstatus == 1 && playinfobarcount >= getconfigint("infobartimeout", NULL))
+					{
+						playinfobarstatus = 0;
+						screenplayinfobar(NULL, NULL, 1, playertype, flag);
+					}
+				}
+#else
 				playinfobarcount++;
 				if(playinfobarstatus > 0)
 					screenplayinfobar(file, showname, 0, playertype, flag);
@@ -1536,22 +1557,12 @@ playerstart:
 					screenplayinfobar(NULL, NULL, 1, playertype, flag);
 				}
 
-#ifdef MIPSEL
-				if(waitofbuffer == 1 &&	status.prefillbuffer == 0 && status.cleaninfobar == 1)
-				{
-					screenplayinfobar(file, showname, 0, playertype, flag);
-					waitofbuffer = 0;
-					status.cleaninfobar = 0;
-				}
-#else
 				if(waitofbuffer == 1 &&	status.prefillbuffer == 0)
 				{
 					screenplayinfobar(file, showname, 0, playertype, flag);
 					waitofbuffer = 0;
 				}
 #endif
-
-
 				if(flag == 4)
 				{
 					if(status.play == 1 && screensaver != NULL)
