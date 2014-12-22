@@ -1024,6 +1024,8 @@ int gstbuscall(GstBus *bus, GstMessage *msg, CustomData *data)
 			{
 				drawscreen(skin, 0, 0);
 				status.cleaninfobar = 0;
+				sleep(10);
+				drawscreen(skin, 0, 0);
 			}
 
 			break;
