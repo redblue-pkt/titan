@@ -1535,12 +1535,22 @@ playerstart:
 					playinfobarstatus = 0;
 					screenplayinfobar(NULL, NULL, 1, playertype, flag);
 				}
-				
+
+#ifdef MIPSEL
+				if(waitofbuffer == 1 &&	status.prefillbuffer == 0 && status.cleaninfobar == 1)
+				{
+					screenplayinfobar(file, showname, 0, playertype, flag);
+					waitofbuffer = 0;
+					status.cleaninfobar = 0;
+				}
+#else
 				if(waitofbuffer == 1 &&	status.prefillbuffer == 0)
 				{
 					screenplayinfobar(file, showname, 0, playertype, flag);
 					waitofbuffer = 0;
 				}
+#endif
+
 
 				if(flag == 4)
 				{

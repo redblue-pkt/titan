@@ -1006,7 +1006,7 @@ int gstbuscall(GstBus *bus, GstMessage *msg, CustomData *data)
 				}
 				else
 				{
-					drawscreen(skin, 0, 0);
+//					drawscreen(skin, 0, 0);
 					gst_element_set_state (data->pipeline, GST_STATE_PLAYING);
 					status.prefillbuffer = 0;
 					status.cleaninfobar = 1;
@@ -1015,17 +1015,15 @@ int gstbuscall(GstBus *bus, GstMessage *msg, CustomData *data)
 			} 
 			else if(status.prefillbuffer == 2) 
 			{
-				drawscreen(skin, 0, 0);
+//				drawscreen(skin, 0, 0);
 				gst_element_set_state (data->pipeline, GST_STATE_PLAYING);
 				status.prefillbuffer = 0;
 				status.cleaninfobar = 1;
 			}
 			else if(status.cleaninfobar == 1)
 			{
-				drawscreen(skin, 0, 0);
+//				drawscreen(skin, 0, 0);
 				status.cleaninfobar = 0;
-				sleep(10);
-				drawscreen(skin, 0, 0);
 			}
 
 			break;
