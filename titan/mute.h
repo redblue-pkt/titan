@@ -17,6 +17,7 @@ void screenmute(struct skin* screen, struct skin* node, int flag)
 		setmute(2);
 	else if(status.mute == 0 || status.mute == 2)
 	{
+		m_lock(&status.vfdmutex, 3);
 		if(status.mute == 2)
 			setvol(getconfigint("vol", NULL));
 		setmute(1);
@@ -39,6 +40,7 @@ void screenmute(struct skin* screen, struct skin* node, int flag)
 		else
 			drawscreen(mute, 0, 0);
 		status.drawallways[0] = mute;
+		m_unlock(&status.vfdmutex, 3);
 	}
 	else
 	{
@@ -49,6 +51,7 @@ void screenmute(struct skin* screen, struct skin* node, int flag)
 		system("amixer -c 1 set Analog unmute &");
 		system("amixer -c 1 set SPDIF unmute &");
 #endif
+		m_lock(&status.vfdmutex, 3);
 		setmute(0);
 		if(flag == 2 || flag == 3)
 			clearscreennolock(mute);
@@ -62,6 +65,7 @@ void screenmute(struct skin* screen, struct skin* node, int flag)
 		status.drawallways[0] = NULL;
 		if(flag == 0 || flag == 2)
 			blitfb(0);
+		m_unlock(&status.vfdmutex, 3);
 	}
 }
 
