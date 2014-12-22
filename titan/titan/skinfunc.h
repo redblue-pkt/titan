@@ -176,6 +176,23 @@ char* getrec(struct skin* node, char* path)
 			return tmpstr;
 		}
 
+///timeshift png
+	char* getoledtimeshift(struct skin* node, char* path)
+		{
+			char* tmpstr = NULL;
+
+			if(status.timeshift > 0)
+			{
+				tmpstr = ostrcat("oled_timeshift.png", NULL, 0, 0);
+
+				if(path != NULL)
+					tmpstr = ostrcat("/", tmpstr, 0, 1);
+				tmpstr = ostrcat(path, tmpstr, 0, 1);
+			}
+		
+			return tmpstr;
+		}
+
 #endif
 
 

@@ -39,6 +39,18 @@ void* convertfunc(char *value, uint8_t *rettype)
 		*rettype = FUNCPIC;
 		return &getoledmute;
 	}
+
+	if(ostrcmp("getoledtimeshift", value) == 0)
+	{
+		*rettype = FUNCPIC;
+		return &getoledtimeshift;
+	}
+
+	if(ostrcmp("getoledrec", value) == 0)
+	{
+		*rettype = FUNCPIC;
+		return &getoledrec;
+	}
 #endif
 	if(ostrcmp("getalternatepicon", value) == 0)
 	{
@@ -88,13 +100,7 @@ void* convertfunc(char *value, uint8_t *rettype)
 		*rettype = FUNCPIC;
 		return &getrec;
 	}
-#ifdef MIPSEL
-	if(ostrcmp("getoledrec", value) == 0)
-	{
-		*rettype = FUNCPIC;
-		return &getoledrec;
-	}
-#endif
+
 	if(ostrcmp("gethbbtv", value) == 0)
 	{
 		*rettype = FUNCPIC;
