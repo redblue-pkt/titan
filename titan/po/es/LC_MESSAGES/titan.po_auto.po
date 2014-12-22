@@ -88,8 +88,8 @@ msgstr ""
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
 #: titan.c:346 titan.c:355 titan.c:1005 titan.c:1014 titan.c:1142 titan.c:1163
 #: titan.c:1169 titan.c:1180 titan.c:1186 tithek.c:84 tithek_global.h:248
-#: tithek.h:670 tithek.h:1166 tithek.h:1209 tithek.h:1457 tithek.h:1479
-#: tithek.h:1495 tithek.h:2065 tithek.h:2092 tithek.h:2106 tithek.h:2116
+#: tithek.h:670 tithek.h:1166 tithek.h:1209 tithek.h:1459 tithek.h:1481
+#: tithek.h:1497 tithek.h:2067 tithek.h:2094 tithek.h:2108 tithek.h:2118
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
 #: tmdb.h:759 tmdb.h:922 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3195
 #: tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
@@ -205,8 +205,8 @@ msgstr "Ok"
 #: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1005
 #: titan.c:1014 titan.c:1142 titan.c:1163 titan.c:1169 titan.c:1180
 #: titan.c:1186 tithek.c:84 tithek_global.h:248 tithek.h:670 tithek.h:1166
-#: tithek.h:1209 tithek.h:1457 tithek.h:1479 tithek.h:1495 tithek.h:2065
-#: tithek.h:2092 tithek.h:2106 tithek.h:2116 tiwakeup.h:66 tiwakeup.h:68
+#: tithek.h:1209 tithek.h:1459 tithek.h:1481 tithek.h:1497 tithek.h:2067
+#: tithek.h:2094 tithek.h:2108 tithek.h:2118 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922
 #: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3195 tpk.new.h:3167 tsSchnitt.c:108
 #: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
@@ -613,8 +613,8 @@ msgstr "Si/VZAP infinito"
 #: thefile.h:205 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1142
 #: titan.c:1163 titan.c:1169 titan.c:1180 titan.c:1186 tithek.c:84
-#: tithek_global.h:248 tithek.h:670 tithek.h:1166 tithek.h:1209 tithek.h:1457
-#: tithek.h:1479 tithek.h:2065 tithek.h:2092 tithek.h:2106 tithek.h:2116
+#: tithek_global.h:248 tithek.h:670 tithek.h:1166 tithek.h:1209 tithek.h:1459
+#: tithek.h:1481 tithek.h:2067 tithek.h:2094 tithek.h:2108 tithek.h:2118
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
 #: tmdb.h:759 tmdb.h:922 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3195
 #: tpk.new.h:3167 tunerconfig.h:931 unlock.h:20 unlock.h:66 unlock.h:71
@@ -5279,8 +5279,8 @@ msgstr "tiThek Menu"
 msgid "TiThek Settings"
 msgstr "tiThek"
 
-#: plugins_tithek_skin.xml.h:3 skins_tithek_skin.xml.h:3 tithek.h:1544
-#: tithek.h:2134
+#: plugins_tithek_skin.xml.h:3 skins_tithek_skin.xml.h:3 tithek.h:1546
+#: tithek.h:2136
 msgid "ADD FAV"
 msgstr "Añadir"
 
@@ -9504,7 +9504,7 @@ msgstr ""
 msgid "Tithek - Mainmenu"
 msgstr "TiThek - Menu Principal"
 
-#: tithek_global.h:248 tithek.h:2065
+#: tithek_global.h:248 tithek.h:2067
 msgid "The hoster is not yet supported !"
 msgstr "El proveedor de alojamiento no se admite en la actualidad!"
 
@@ -9542,81 +9542,81 @@ msgstr "Elija Playback"
 msgid "Streaming Playback (default)"
 msgstr "Transmisin directa (por defecto)"
 
-#: tithek.h:1354
+#: tithek.h:1356
 msgid "Streaming Playback Caching (1MB)"
 msgstr "Secuencia con Cache (1 MB)"
 
-#: tithek.h:1361
+#: tithek.h:1363
 msgid "Streaming Playback Caching (5MB)"
 msgstr "Secuencia con Cache (5 MB)"
 
-#: tithek.h:1364
+#: tithek.h:1366
 msgid "Streaming Playback Caching (10MB)"
 msgstr "Secuencia con cache (10 MB)"
 
-#: tithek.h:1370
+#: tithek.h:1372
 msgid "File Caching Playback (10MB / 120s)"
 msgstr "Buffer de reproduccin (10 MB / 120 seg)"
 
-#: tithek.h:1371
+#: tithek.h:1373
 msgid "File Caching Playback (20MB / 240s)"
 msgstr "Buffer Playback (20MB / 240 Seg)"
 
-#: tithek.h:1372
+#: tithek.h:1374
 msgid "File Caching Playback (30MB / 360s)"
 msgstr "Buffer Playback (30MB / 360 Seg)"
 
-#: tithek.h:1374
+#: tithek.h:1376
 msgid "Download Full File"
 msgstr "Descargar archivo completo a Ruta Stream"
 
-#: tithek.h:1375
+#: tithek.h:1377
 msgid "Download Full File (background)"
 msgstr "Descargar archivo completo a Stream camino en fondo"
 
-#: tithek.h:1379
+#: tithek.h:1381
 msgid "Choose your Streaming Playback Modus from the following list"
 msgstr ""
 "Seleccione el modo de reproducción de flujo deseado de la siguiente lista"
 
-#: tithek.h:1450 tithek.h:1469
+#: tithek.h:1452 tithek.h:1471
 msgid "Filename"
 msgstr "Nombre del archivo"
 
-#: tithek.h:1457
+#: tithek.h:1459
 msgid "Start playback"
 msgstr "Inicio playback"
 
-#: tithek.h:1479
+#: tithek.h:1481
 msgid "Can't get Streamurl !"
 msgstr "STREAMURL no es accesible!"
 
-#: tithek.h:1495
+#: tithek.h:1497
 msgid "TitanNit Tithek disclaimer"
 msgstr "TiThek disclaimer"
 
-#: tithek.h:1537 tithek.h:1670 tithek.h:2088 tithek.h:2102 tithek.h:2112
-#: tithek.h:2127
+#: tithek.h:1539 tithek.h:1672 tithek.h:2090 tithek.h:2104 tithek.h:2114
+#: tithek.h:2129
 msgid "Tithek - Mainmenu - Favoriten"
 msgstr ""
 
-#: tithek.h:1539 tithek.h:2129
+#: tithek.h:1541 tithek.h:2131
 msgid "EDIT FAV"
 msgstr "Editar Favoritos"
 
-#: tithek.h:1576
+#: tithek.h:1578
 msgid "Page"
 msgstr "Pagina"
 
-#: tithek.h:2092
+#: tithek.h:2094
 msgid "Remove this Favorite ?"
 msgstr "Desea eliminar la entrada seleccionada de sus favoritos?"
 
-#: tithek.h:2106
+#: tithek.h:2108
 msgid "Add this link as Favorite ?"
 msgstr "Quieres añadir el enlace a tus favoritos?"
 
-#: tithek.h:2116
+#: tithek.h:2118
 msgid "Edit this Favorite ?"
 msgstr "Editar este favorito?"
 
