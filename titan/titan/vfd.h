@@ -234,7 +234,13 @@ int writevfd(char *value)
 		return writevfdioctl(value);
 		
 	if(checkbox("ATEMIO-NEMESIS"))
-		return oledtext(value);
+	{
+		int oledret = 0;
+		m_lock(&status.vfdmutex, 3);
+		oledret = oledtext(value);
+		m_unlock(&status.vfdmutex, 3);
+		return oledret;
+	}
 
 	vfddev = getconfig("vfddev", NULL);
 
