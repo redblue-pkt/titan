@@ -96,7 +96,8 @@ void screenstandby()
 		}
 		free(loctime); loctime = 0;
 	}
-
+	status.updatevfd = STOP;
+	m_lock(&status.vfdmutex, 3);
 // mipsel work set unknown videomode = display > off (reset)
 #if MIPSEL
 	setvideomode(savevideomode, 1);
@@ -161,6 +162,8 @@ void screenstandby()
 	free(tmpstr); tmpstr = NULL;
 
 	subtitlepause(0);
+	m_unlock(&status.vfdmutex, 3);
+	status.updatevfd = START;
 }
 
 #endif
