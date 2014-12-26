@@ -104,7 +104,7 @@ void screenstandby()
 // mipsel work set unknown videomode = display > off (reset)
 #if MIPSEL
 	setvideomode(savevideomode, 1);
-	free(savevideomode), savevideomode = NULL;
+	free(savevideomode); savevideomode = NULL;
 #endif
 
 	if(status.epgscanlistthread != NULL)
