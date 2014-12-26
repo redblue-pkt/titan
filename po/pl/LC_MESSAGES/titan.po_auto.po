@@ -31,7 +31,7 @@ msgstr ""
 #: hwtest.h:564 hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617
 #: hwtest.h:632 hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685
 #: imdbapi.h:200 imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200
-#: infobar.h:599 infobar.h:721 info.h:27 keyactions.h:290 lcdpearl1.c:49
+#: infobar.h:599 infobar.h:721 info.h:27 keyactions.h:205 lcdpearl1.c:49
 #: lcdsamsung.c:101 log.h:46 log.h:48 mboxinfo.c:49 mboxinfo.c:73
 #: mboxinfo.c:77 mboxinfo.c:163 mc_audioplayer.h:333 mc_audioplayer.h:605
 #: mc_audioplayer.h:716 mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
@@ -138,7 +138,7 @@ msgstr ""
 #: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
 #: hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626 inadyn.h:188
 #: inadyn.h:190 inadyn.h:200 infobar.h:599 infobar.h:721 info.h:27
-#: keyactions.h:290 log.h:46 log.h:48 marker.h:215 marker.h:229 mboxinfo.c:49
+#: keyactions.h:205 log.h:46 log.h:48 marker.h:215 marker.h:229 mboxinfo.c:49
 #: mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163 mc_audioplayer.h:333
 #: mc_audioplayer.h:605 mc_audioplayer.h:716 mc_dateibrowser.h:36
 #: mc_global.h:773 mc_global.h:1020 mc_internetbrowser.h:36 mc_main.h:50
@@ -570,7 +570,7 @@ msgstr ""
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
 #: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626
 #: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:599 infobar.h:721
-#: keyactions.h:290 language.h:49 lcdpearl1.c:49 lcdsamsung.c:101 log.h:46
+#: keyactions.h:205 language.h:49 lcdpearl1.c:49 lcdsamsung.c:101 log.h:46
 #: log.h:48 marker.h:215 marker.h:229 mc_audioplayer.h:333
 #: mc_audioplayer.h:605 mc_audioplayer.h:716 mc_dateibrowser.h:36
 #: mc_global.h:773 mc_global.h:1020 mc_internetbrowser.h:36 mc_main.h:50
@@ -1356,13 +1356,13 @@ msgstr ""
 msgid "Single EPG"
 msgstr "Pojedyńcze EPG"
 
-#: epgsettings.h:140 epgsettings.h:181 keyactions.h:90
+#: epgsettings.h:140 epgsettings.h:181 keyactions.h:79
 #: settings_bluebutton.h:16 settings_pluginbutton.h:17 settings_redbutton.h:17
 #: skin_default_skin.xml.h:420
 msgid "Multi EPG"
 msgstr ""
 
-#: epgsettings.h:141 keyactions.h:91 settings_bluebutton.h:17
+#: epgsettings.h:141 keyactions.h:80 settings_bluebutton.h:17
 #: settings_pluginbutton.h:18 settings_redbutton.h:18
 #: skin_default_skin.xml.h:268
 msgid "Graphic Multi EPG"
@@ -1711,7 +1711,7 @@ msgstr ""
 msgid "This file is private and only viewable by the owner."
 msgstr ""
 
-#: global.h:5563 keyactions.h:290
+#: global.h:5563 keyactions.h:205
 msgid "ERROR cant read res"
 msgstr ""
 
@@ -2770,47 +2770,47 @@ msgstr ""
 msgid "ein"
 msgstr "Start"
 
-#: keyactions.h:22
+#: keyactions.h:21
 msgid "Key Action - Plugins"
 msgstr ""
 
-#: keyactions.h:25 play.h:650
+#: keyactions.h:24 play.h:650
 msgid "MediaDB Scan Info"
 msgstr ""
 
-#: keyactions.h:53 settings_mediabutton.h:12
+#: keyactions.h:52 settings_mediabutton.h:12
 msgid "Record Player"
 msgstr ""
 
-#: keyactions.h:81 settings_mediabutton.h:42 skin_default_skin.xml.h:398
+#: keyactions.h:70 settings_mediabutton.h:42 skin_default_skin.xml.h:398
 msgid "Media Player"
 msgstr "Odtwarzacz audio"
 
-#: keyactions.h:86 settings_pluginbutton.h:13 settings_redbutton.h:13
+#: keyactions.h:75 settings_pluginbutton.h:13 settings_redbutton.h:13
 msgid "Auto Resolution"
 msgstr "Auto rozdzielczość"
 
-#: keyactions.h:88 settings_bluebutton.h:14 settings_pluginbutton.h:15
+#: keyactions.h:77 settings_bluebutton.h:14 settings_pluginbutton.h:15
 #: settings_redbutton.h:15 skin_default_skin.xml.h:626
 msgid "Softcam Panel"
 msgstr "Panel EMU"
 
-#: keyactions.h:92 settings_bluebutton.h:18 settings_pluginbutton.h:19
+#: keyactions.h:81 settings_bluebutton.h:18 settings_pluginbutton.h:19
 #: settings_redbutton.h:19
 msgid "Sleep Timer"
 msgstr "Timer"
 
-#: keyactions.h:93 settings_bluebutton.h:19 settings_pluginbutton.h:20
+#: keyactions.h:82 settings_bluebutton.h:19 settings_pluginbutton.h:20
 #: settings_redbutton.h:20 skin_default_skin.xml.h:139
 msgid "Child Protection"
 msgstr "Kontrola rodzicielska"
 
-#: keyactions.h:94 settings_bluebutton.h:20 settings_pluginbutton.h:21
+#: keyactions.h:83 settings_bluebutton.h:20 settings_pluginbutton.h:21
 #: settings_redbutton.h:21 videomode.h:24
 msgid "Subchannel"
 msgstr "Kanał"
 
-#: keyactions.h:95 play.h:687 settings_bluebutton.h:21
+#: keyactions.h:84 play.h:687 settings_bluebutton.h:21
 #: settings_pluginbutton.h:22 settings_redbutton.h:22
 #: skin_default_skin.xml.h:202
 msgid "Downloads"
