@@ -12,7 +12,6 @@ void screenkeyactions(int key, int flag)
 	char* keyconf = NULL;
 	struct skin* pluginnode = NULL;
 	void (*startplugin)(void);
-	char* tmpstr = NULL;
 	struct skin* plugin = getscreen("plugin");
 	struct skin* child = plugin->child;
 	struct menulist* mlist = NULL, *mbox = NULL;
@@ -56,25 +55,15 @@ void screenkeyactions(int key, int flag)
 				if(child->del == PLUGINDELMARK && (status.security == 1 || (status.security == 0 && checkpluginskip(child->name) == 0)))
 				{
 					if(ostrcmp(child->name, "Media Center") == 0)
-					{
 						addmenulist(&mlist, child->name, _(child->name), child->pic, 0, 0);			
-					}
 					else if(ostrcmp(child->name, "TiTan Mediathek") == 0)
-					{
 						addmenulist(&mlist, child->name, _(child->name), child->pic, 0, 0);
-					}
 					else if(ostrcmp(child->name, "Titan Media Center") == 0)
-					{
 						addmenulist(&mlist, child->name, _(child->name), child->pic, 0, 0);
-					}
 					else if(ostrcmp(child->name, "GmediaRender") == 0)
-					{
 						addmenulist(&mlist, child->name, _(child->name), child->pic, 0, 0);
-					}
 					else if(ostrcmp(child->name, "DVD Player") == 0)
-					{
 						addmenulist(&mlist, child->name, _(child->name), child->pic, 0, 0);
-					}
 				}
 				child = child->next;
 			}
@@ -96,15 +85,15 @@ void screenkeyactions(int key, int flag)
 		}
 	
 		mbox = menulistbox(mlist, NULL, skintitle, NULL, NULL, NULL, 1, 0);
-		if(mbox != NULL) keyconf = mbox->name;
-		free(tmpstr); tmpstr = NULL;
+		if(mbox != NULL) keyconf = ostrcat(mbox->name, NULL, 0, 0);
+		freemenulist(mlist, 1); mlist = NULL;
 	}
 	else
 	{
-		if(key == 0) keyconf = getconfig("bluekey", NULL);
-		if(key == 1) keyconf = getconfig("redkey", NULL);
-		if(key == 2) keyconf = getconfig("pluginkey", NULL);
-		if(key == 3) keyconf = getconfig("mediakey", NULL);
+		if(key == 0) keyconf = ostrcat(getconfig("bluekey", NULL), NULL, 0, 0);
+		if(key == 1) keyconf = ostrcat(getconfig("redkey", NULL), NULL, 0, 0);
+		if(key == 2) keyconf = ostrcat(getconfig("pluginkey", NULL), NULL, 0, 0);
+		if(key == 3) keyconf = ostrcat(getconfig("mediakey", NULL), NULL, 0, 0);
 	}
 	
 	if(flag == 0 && keyconf == NULL)
@@ -112,130 +101,56 @@ void screenkeyactions(int key, int flag)
 		if(key == 1) screenkeyactions(1, 1);
 		if(key == 2) screenkeyactions(2, 1);
 		if(key == 3) screenkeyactions(3, 1);
-		freemenulist(mlist, 1); mlist = NULL;
-		resettvpic();
-		return;
 	}
-
-	if(status.security == 0 && checkpluginskip(keyconf) == 1) return;
-						
-	debug(60, "key=%s", keyconf);
-	if(ostrcmp(keyconf, "Softcam Panel") == 0)
+	else
 	{
-		screensoftcam();
-		freemenulist(mlist, 1); mlist = NULL;
+		if(status.security == 0 && checkpluginskip(keyconf) == 1) return;
 		resettvpic();
-		return;
-	}
-	else if(ostrcmp(keyconf, "Subchannel") == 0)
-	{
-		screenlinkedchannel();
-		freemenulist(mlist, 1); mlist = NULL;
-		resettvpic();
-		return;
-	}
-	else if(ostrcmp(keyconf, "Auto Resolution") == 0)
-	{
-		keyactions_setres();
-		freemenulist(mlist, 1); mlist = NULL;
-		resettvpic();
-		return;
-	}
-	else if(ostrcmp(keyconf, "Extensions List") == 0)
-	{
-		screenkeyactions(1, 1);
-		freemenulist(mlist, 1); mlist = NULL;
-		resettvpic();
-		return;
-	}
-	else if(ostrcmp(keyconf, "Multi EPG") == 0)
-	{
-		screenmultiepg(NULL, NULL, 0);
-		freemenulist(mlist, 1); mlist = NULL;
-		resettvpic();
-		return;
-	}
-	else if(ostrcmp(keyconf, "Graphic Multi EPG") == 0)
-	{
-		screengmultiepg(NULL, NULL, 0);
-		freemenulist(mlist, 1); mlist = NULL;
-		resettvpic();
-		return;
-	}
-	else if(ostrcmp(keyconf, "Sleep Timer") == 0)
-	{
-		screenpowerofftimer();
-		freemenulist(mlist, 1); mlist = NULL;
-		resettvpic();
-		return;
-	}
-	else if(ostrcmp(keyconf, "Child Protection") == 0)
-	{
-		screenpin();
-		freemenulist(mlist, 1); mlist = NULL;
-		resettvpic();
-		return;
-	}
-	else if(ostrcmp(keyconf, "Downloads") == 0)
-	{
-		screenbgdownload(0);
-		freemenulist(mlist, 1); mlist = NULL;
-		resettvpic();
-		return;
-	}
-	else if(ostrcmp(keyconf, "MediaDB Scan Info") == 0)
-	{
-		get_mediadb_scan_info();
-		freemenulist(mlist, 1); mlist = NULL;
-		resettvpic();
-		return;
-	}
-	else if(ostrcmp(keyconf, "Record Player") == 0)
-	{
-		resettvpic();
-		screenplay(NULL, NULL, 1, 0);
-		freemenulist(mlist, 1); mlist = NULL;
-		resettvpic();
-		return;
-	}
-	else if(ostrcmp(keyconf, "Media Player") == 0)
-	{
-		resettvpic();
-		screenplay(NULL, NULL, 0, 0);
-		freemenulist(mlist, 1); mlist = NULL;
-		resettvpic();
-		return;
-	}
-	else if(ostrcmp(keyconf, "Media Plugins List") == 0)
-	{
-		screenkeyactions(3, 1);
-		freemenulist(mlist, 1); mlist = NULL;
-		resettvpic();
-		return;
-	}
-		
-	pluginnode = getplugin(keyconf);
-
-	if(pluginnode != NULL)
-	{
-		startplugin = dlsym(pluginnode->pluginhandle, "start");
-		if(startplugin != NULL)
+							
+		debug(60, "key=%s", keyconf);
+		if(ostrcmp(keyconf, "Softcam Panel") == 0)
+			screensoftcam();
+		else if(ostrcmp(keyconf, "Subchannel") == 0)
+			screenlinkedchannel();
+		else if(ostrcmp(keyconf, "Auto Resolution") == 0)
+			keyactions_setres();
+		else if(ostrcmp(keyconf, "Extensions List") == 0)
+			screenkeyactions(1, 1);
+		else if(ostrcmp(keyconf, "Multi EPG") == 0)
+			screenmultiepg(NULL, NULL, 0);
+		else if(ostrcmp(keyconf, "Graphic Multi EPG") == 0)
+			screengmultiepg(NULL, NULL, 0);
+		else if(ostrcmp(keyconf, "Sleep Timer") == 0)
+			screenpowerofftimer();
+		else if(ostrcmp(keyconf, "Child Protection") == 0)
+			screenpin();
+		else if(ostrcmp(keyconf, "Downloads") == 0)
+			screenbgdownload(0);
+		else if(ostrcmp(keyconf, "MediaDB Scan Info") == 0)
+			get_mediadb_scan_info();
+		else if(ostrcmp(keyconf, "Record Player") == 0)
+			screenplay(NULL, NULL, 1, 0);
+		else if(ostrcmp(keyconf, "Media Player") == 0)
+			screenplay(NULL, NULL, 0, 0);
+		else if(ostrcmp(keyconf, "Media Plugins List") == 0)
+			screenkeyactions(3, 1);
+		else
 		{
-			resettvpic();
-			startplugin();
-			resettvpic();
+			pluginnode = getplugin(keyconf);
+		
+			if(pluginnode != NULL)
+			{
+				startplugin = dlsym(pluginnode->pluginhandle, "start");
+				if(startplugin != NULL)
+					startplugin();
+			}
+			else if(keyconf != NULL)
+				screenkeyactions(1, 1);
 		}
 	}
-	else if(keyconf != NULL)
-	{
-		screenkeyactions(1, 1);
-		freemenulist(mlist, 1); mlist = NULL;
-		resettvpic();
-		return;
-	}
 
+	free(keyconf), keyconf = NULL;
 	resettvpic();
-	freemenulist(mlist, 1); mlist = NULL;
 	return;
 }
 
