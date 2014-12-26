@@ -78,6 +78,9 @@ void screenstandby()
 	setvideomode("720p24", 1);
 #endif
 
+	//workaround..  sometimes reboot
+	writerc(getrcconfigint("rcexit", NULL));
+	
 	while(1)
 	{
 		rcret = waitrc(standbyscreen, 10000, 0);
