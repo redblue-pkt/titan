@@ -75,7 +75,8 @@ void screenstandby()
 #if MIPSEL
 	char* savevideomode = NULL;
 	savevideomode = getvideomode();
-	setvideomode("720p24", 1);
+	//setvideomode("720p24", 1);
+	writesys("/proc/stb/avs/0/input", "aux", 1);
 #endif
 
 	//workaround..  sometimes reboot
@@ -103,6 +104,7 @@ void screenstandby()
 	m_lock(&status.vfdmutex, 3);
 // mipsel work set unknown videomode = display > off (reset)
 #if MIPSEL
+	writesys("/proc/stb/avs/0/input", "encoder", 1);
 	setvideomode(savevideomode, 1);
 	free(savevideomode); savevideomode = NULL;
 #endif
