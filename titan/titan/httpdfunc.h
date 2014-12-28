@@ -4728,6 +4728,38 @@ printf("webadjust fmt: %d\n",fmt);
 	}	
 	ostrcatbig(&buf, "</select></td></tr>", &maxlen, &pos);
 	sendstr = ostrcat(sendstr, ", playerbufferseektime.value", 1 , 0);
+
+///////////////////debuglevel
+	tmpstr = ostrcat("10\n40\n50\n60\n70\n80\n90\n99\n100\n130\n150\n200\n250\n270\n300\n400\n900\n1000", NULL, 0, 0);
+
+	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
+	ostrcatbig(&buf, _("debuglevel"), &maxlen, &pos);
+	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"debuglevel\" border=\"0\">", &maxlen, &pos);
+
+	count = 0;
+	ret1 = strsplit(tmpstr, "\n", &count);
+	max = count - 1;
+
+	if(ret1 != NULL)
+	{
+		for(i = 0; i <= max; i++)
+		{
+			ostrcatbig(&buf, "<option value=\"", &maxlen, &pos);
+			ostrcatbig(&buf, ret1[i].part, &maxlen, &pos);		
+			tmpstr1 = ostrcat(ret1[i].part, NULL, 0, 0);
+			if(getconfigint("debuglevel", NULL) == atoi(tmpstr1))
+				ostrcatbig(&buf, "\" selected>", &maxlen, &pos);		
+			else
+				ostrcatbig(&buf, "\">", &maxlen, &pos);
+			ostrcatbig(&buf, ret1[i].part, &maxlen, &pos);
+			ostrcatbig(&buf, "</option>", &maxlen, &pos);
+		}
+	}
+	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
+	sendstr = ostrcat(sendstr, ", debuglevel.value", 1 , 0);
+	free(ret1), ret1 = NULL;
+	free(tmpstr), tmpstr = NULL;
+	free(tmpstr1), tmpstr1 = NULL;
 	
 ///////////////////	
 #ifdef MIPSEL
