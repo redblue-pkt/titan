@@ -25,7 +25,7 @@ msgstr ""
 #: harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641 harddisk.h:675
 #: harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733 harddisk.h:793
 #: harddisk.h:812 harddisk.h:815 harddisk.h:1046 hbbtv.h:362 httpdfunc.h:1222
-#: httpdfunc.h:3176 httpdfunc.h:6017 httpdfunc.h:6282 httpdfunc.h:6353
+#: httpdfunc.h:3176 httpdfunc.h:6019 httpdfunc.h:6284 httpdfunc.h:6355
 #: hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113
 #: hwtest.h:206 hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492
 #: hwtest.h:564 hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617
@@ -131,8 +131,8 @@ msgstr ""
 #: harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641 harddisk.h:675
 #: harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733 harddisk.h:793
 #: harddisk.h:812 harddisk.h:815 harddisk.h:1046 hbbtv.h:362 hello.c:36
-#: httpdfunc.h:1222 httpdfunc.h:3176 httpdfunc.h:6017 httpdfunc.h:6282
-#: httpdfunc.h:6353 hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103
+#: httpdfunc.h:1222 httpdfunc.h:3176 httpdfunc.h:6019 httpdfunc.h:6284
+#: httpdfunc.h:6355 hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103
 #: hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390 hwtest.h:411
 #: hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566 hwtest.h:586
 #: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
@@ -232,7 +232,7 @@ msgstr "SORTIE"
 #: httpdfunc.h:4239 httpdfunc.h:4297 httpdfunc.h:4319 httpdfunc.h:4420
 #: httpdfunc.h:4442 httpdfunc.h:4486 httpdfunc.h:4508 httpdfunc.h:4530
 #: httpdfunc.h:4559 httpdfunc.h:4581 httpdfunc.h:4626 httpdfunc.h:4649
-#: httpdfunc.h:4673 httpdfunc.h:4777 httpdsettings.h:27 httpdsettings.h:57
+#: httpdfunc.h:4673 httpdfunc.h:4779 httpdsettings.h:27 httpdsettings.h:57
 #: httpdsettings.h:65 inadyn.h:138 mc_audioplayer_settings.h:45
 #: mc_audioplayer_settings.h:51 mc_audioplayer_settings.h:55
 #: mc_pictureplayer_settings.h:75 mc_videoplayer_settings.h:39
@@ -298,7 +298,7 @@ msgstr "EPG Canal"
 #: httpdfunc.h:3774 httpdfunc.h:3826 httpdfunc.h:3999 httpdfunc.h:4246
 #: httpdfunc.h:4304 httpdfunc.h:4427 httpdfunc.h:4449 httpdfunc.h:4493
 #: httpdfunc.h:4515 httpdfunc.h:4537 httpdfunc.h:4566 httpdfunc.h:4588
-#: httpdfunc.h:4633 httpdfunc.h:4656 httpdfunc.h:4680 httpdfunc.h:4785
+#: httpdfunc.h:4633 httpdfunc.h:4656 httpdfunc.h:4680 httpdfunc.h:4787
 #: httpdsettings.h:28 httpdsettings.h:58 httpdsettings.h:66 inadyn.h:139
 #: mc_audioplayer_settings.h:46 mc_audioplayer_settings.h:52
 #: mc_audioplayer_settings.h:56 mc_pictureplayer_settings.h:76
@@ -563,8 +563,8 @@ msgstr "oui / vzap sans fin"
 #: global.h:6257 global.h:6276 global.h:6451 gmediarender.h:115 harddisk.h:633
 #: harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731
 #: harddisk.h:733 harddisk.h:793 harddisk.h:812 harddisk.h:815 hbbtv.h:362
-#: hello.c:36 httpdfunc.h:1222 httpdfunc.h:5631 httpdfunc.h:6017
-#: httpdfunc.h:6282 httpdfunc.h:6353 hwtest.h:88 hwtest.h:93 hwtest.h:98
+#: hello.c:36 httpdfunc.h:1222 httpdfunc.h:5633 httpdfunc.h:6019
+#: httpdfunc.h:6284 httpdfunc.h:6355 hwtest.h:88 hwtest.h:93 hwtest.h:98
 #: hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390
 #: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
@@ -748,7 +748,7 @@ msgid ""
 msgstr "ce plugin est seulement pour les bêta-testeurs.  "
 
 #: bgdownload.h:93 bgdownload.h:154 global.h:6691 httpdfunc.h:2793
-#: httpdfunc.h:2805 httpdfunc.h:5414 httpdfunc.h:5460 hwtest.h:478
+#: httpdfunc.h:2805 httpdfunc.h:5416 httpdfunc.h:5462 hwtest.h:478
 #: moduleconfig.h:345 skin_default_skin.xml.h:739 skinselector.h:138
 #: stream.h:22 transponder.h:122 transponder.h:158 transponder.h:194
 #: transponder.h:227 transponder.h:259 transponder.h:295 transponder.h:330
@@ -1448,19 +1448,19 @@ msgstr "Supprime Service"
 msgid "Remove error"
 msgstr "Supprime Service"
 
-#: extensions.h:145 httpdfunc.h:5858
+#: extensions.h:145 httpdfunc.h:5860
 msgid "Install to MNT"
 msgstr "Installer"
 
-#: extensions.h:157 httpdfunc.h:5876
+#: extensions.h:157 httpdfunc.h:5878
 msgid "Install to FLASH"
 msgstr "Installer"
 
-#: extensions.h:171 httpdfunc.h:5896
+#: extensions.h:171 httpdfunc.h:5898
 msgid "Install to SWAP"
 msgstr "Installer"
 
-#: extensions.h:184 httpdfunc.h:5842
+#: extensions.h:184 httpdfunc.h:5844
 msgid "Choice Install Medium"
 msgstr ""
 
@@ -1468,19 +1468,19 @@ msgstr ""
 msgid "Tpk Install Info"
 msgstr "Installer"
 
-#: extensions.h:190 httpdfunc.h:5910
+#: extensions.h:190 httpdfunc.h:5912
 msgid "Can't install Package. Package to big."
 msgstr ""
 
-#: extensions.h:217 httpdfunc.h:5673
+#: extensions.h:217 httpdfunc.h:5675
 msgid "Tpk Install - select section"
 msgstr "Ipk installation - Sélectionne un fichier"
 
-#: extensions.h:222 httpdfunc.h:5737 skin_default_skin.xml.h:705
+#: extensions.h:222 httpdfunc.h:5739 skin_default_skin.xml.h:705
 msgid "Tpk Install - select file"
 msgstr "Ipk installation - Sélectionne un fichier"
 
-#: extensions.h:227 extensions.h:254 extensions.h:410 httpdfunc.h:5996
+#: extensions.h:227 extensions.h:254 extensions.h:410 httpdfunc.h:5998
 #: tpk.h:2990
 msgid ""
 "It may only be a package to be installed. If they want to install another "
@@ -1497,19 +1497,19 @@ msgstr "Installer"
 msgid "starting"
 msgstr "Redémarrer Titan"
 
-#: extensions.h:250 httpdfunc.h:5959
+#: extensions.h:250 httpdfunc.h:5961
 msgid "Tpk Install Info - Install OK"
 msgstr ""
 
-#: extensions.h:254 extensions.h:259 httpdfunc.h:5961 httpdfunc.h:5963
+#: extensions.h:254 extensions.h:259 httpdfunc.h:5963 httpdfunc.h:5965
 msgid "Tpk Install Info - Install ERROR"
 msgstr ""
 
-#: extensions.h:267 httpdfunc.h:6017 httpdfunc.h:6019 httpdfunc.h:6284
+#: extensions.h:267 httpdfunc.h:6019 httpdfunc.h:6021 httpdfunc.h:6286
 msgid "TPK Install done, your system will reboot !"
 msgstr ""
 
-#: extensions.h:291 httpdfunc.h:6152
+#: extensions.h:291 httpdfunc.h:6154
 msgid "Tpk Remove - select file"
 msgstr "Ipk installation - Sélectionne un fichier"
 
@@ -1521,15 +1521,15 @@ msgstr ""
 msgid "Tpk Remove Info"
 msgstr ""
 
-#: extensions.h:310 httpdfunc.h:6232
+#: extensions.h:310 httpdfunc.h:6234
 msgid "Tpk Remove Info - Remove OK"
 msgstr ""
 
-#: extensions.h:317 httpdfunc.h:6236
+#: extensions.h:317 httpdfunc.h:6238
 msgid "Tpk Remove Info - Remove ERROR"
 msgstr ""
 
-#: extensions.h:324 httpdfunc.h:6282
+#: extensions.h:324 httpdfunc.h:6284
 msgid "TPK Remove done, your system will reboot !"
 msgstr ""
 
@@ -1548,19 +1548,19 @@ msgstr ""
 msgid "TPK Tmp Install done, your system will reboot !"
 msgstr ""
 
-#: extensions.h:444 extensions.h:448 httpdfunc.h:6321 httpdfunc.h:6333
+#: extensions.h:444 extensions.h:448 httpdfunc.h:6323 httpdfunc.h:6335
 msgid "Tpk Update Info - Update ERROR"
 msgstr ""
 
-#: extensions.h:444 httpdfunc.h:6324
+#: extensions.h:444 httpdfunc.h:6326
 msgid "Can't get all TPK index !"
 msgstr ""
 
-#: extensions.h:448 httpdfunc.h:6336
+#: extensions.h:448 httpdfunc.h:6338
 msgid "Can't update all packages !"
 msgstr ""
 
-#: extensions.h:456 httpdfunc.h:6353
+#: extensions.h:456 httpdfunc.h:6355
 msgid "TPK Upgrade done, your system will reboot !"
 msgstr ""
 
@@ -1830,7 +1830,7 @@ msgstr ""
 msgid "Version"
 msgstr ""
 
-#: global.h:6673 httpdfunc.h:5520 skin_default_skin.xml.h:349
+#: global.h:6673 httpdfunc.h:5522 skin_default_skin.xml.h:349
 msgid "Installed:"
 msgstr ""
 
@@ -2224,7 +2224,7 @@ msgstr ""
 msgid "Recording name"
 msgstr "Enregistrement chronométré"
 
-#: httpdfunc.h:4479 httpdfunc.h:5280 skin_default_skin.xml.h:434
+#: httpdfunc.h:4479 httpdfunc.h:5282 skin_default_skin.xml.h:434
 #: webif_info.h:2
 msgid "Newsletter"
 msgstr "letterbox"
@@ -2265,23 +2265,23 @@ msgstr ""
 msgid "Time to wait after seek for fill buffer"
 msgstr ""
 
-#: httpdfunc.h:4736
+#: httpdfunc.h:4737
 msgid "debuglevel"
 msgstr ""
 
-#: httpdfunc.h:4769 skin_default_skin.xml.h:203
+#: httpdfunc.h:4771 skin_default_skin.xml.h:203
 msgid "Dualboot Menu TitanNit / E2"
 msgstr ""
 
-#: httpdfunc.h:4935
+#: httpdfunc.h:4937
 msgid "Error, Program not started."
 msgstr ""
 
-#: httpdfunc.h:4937
+#: httpdfunc.h:4939
 msgid "Program started successfully"
 msgstr ""
 
-#: httpdfunc.h:5009 skin_default_skin.xml.h:1 webif_index.atemio510.h:16
+#: httpdfunc.h:5011 skin_default_skin.xml.h:1 webif_index.atemio510.h:16
 #: webif_index.atemio5200.h:16 webif_index.atemio5200.h:70
 #: webif_index.atemio5200.h:126 webif_index.atemio6000.h:16
 #: webif_index.atemio6100.h:16 webif_index.atemio6200.h:16
@@ -2294,185 +2294,185 @@ msgstr ""
 msgid "Help"
 msgstr "Aide"
 
-#: httpdfunc.h:5107 skin_default_skin.xml.h:673 system_infos.h:14
+#: httpdfunc.h:5109 skin_default_skin.xml.h:673 system_infos.h:14
 #: webif_info_systeminfos.h:2
 msgid "System Status"
 msgstr "Système"
 
-#: httpdfunc.h:5109 system_infos.h:16
+#: httpdfunc.h:5111 system_infos.h:16
 msgid "Free Space"
 msgstr "Esapce Libre"
 
-#: httpdfunc.h:5111 skin_default_skin.xml.h:361 system_infos.h:18
+#: httpdfunc.h:5113 skin_default_skin.xml.h:361 system_infos.h:18
 #: webif_info_systeminfos.h:4
 msgid "Kernel"
 msgstr "Noyau"
 
-#: httpdfunc.h:5113 skin_default_skin.xml.h:415 system_infos.h:20
+#: httpdfunc.h:5115 skin_default_skin.xml.h:415 system_infos.h:20
 #: webif_info_systeminfos.h:5
 msgid "Mounts"
 msgstr ""
 
-#: httpdfunc.h:5115 hwtest.h:181 hwtest.h:396 network.h:284 network.h:299
+#: httpdfunc.h:5117 hwtest.h:181 hwtest.h:396 network.h:284 network.h:299
 #: plugins_mc_skin.xml.h:37 plugins_panel_skin.xml.h:18
 #: skin_default_skin.xml.h:426 skins_mc_skin.xml.h:37
 #: skins_panel_skin.xml.h:18 system_infos.h:22 webif_info_systeminfos.h:6
 msgid "Network"
 msgstr "Réseau"
 
-#: httpdfunc.h:5117 skin_default_skin.xml.h:507 system_infos.h:24
+#: httpdfunc.h:5119 skin_default_skin.xml.h:507 system_infos.h:24
 #: webif_info_systeminfos.h:7
 msgid "Ram"
 msgstr ""
 
-#: httpdfunc.h:5153 skin_default_skin.xml.h:161 webif_info_sysinfos.h:2
+#: httpdfunc.h:5155 skin_default_skin.xml.h:161 webif_info_sysinfos.h:2
 msgid "CPU"
 msgstr ""
 
-#: httpdfunc.h:5155 skin_default_skin.xml.h:399 webif_info_sysinfos.h:3
+#: httpdfunc.h:5157 skin_default_skin.xml.h:399 webif_info_sysinfos.h:3
 msgid "Memory"
 msgstr "Mémoire"
 
-#: httpdfunc.h:5157 skin_default_skin.xml.h:419 webif_info_sysinfos.h:4
+#: httpdfunc.h:5159 skin_default_skin.xml.h:419 webif_info_sysinfos.h:4
 msgid "MTD"
 msgstr ""
 
-#: httpdfunc.h:5159 skin_default_skin.xml.h:412 webif_info_sysinfos.h:5
+#: httpdfunc.h:5161 skin_default_skin.xml.h:412 webif_info_sysinfos.h:5
 msgid "Module"
 msgstr ""
 
-#: httpdfunc.h:5161 skin_default_skin.xml.h:188 system_infos_sysinfo.h:23
+#: httpdfunc.h:5163 skin_default_skin.xml.h:188 system_infos_sysinfo.h:23
 #: webif_info_sysinfos.h:6
 msgid "Devices"
 msgstr "Dispositif"
 
-#: httpdfunc.h:5163 panel_settings_autostart.h:210 settings_autostart.h:315
+#: httpdfunc.h:5165 panel_settings_autostart.h:210 settings_autostart.h:315
 #: skin_default_skin.xml.h:661 webif_info_sysinfos.h:7
 msgid "Swap"
 msgstr ""
 
-#: httpdfunc.h:5165 skin_default_skin.xml.h:703 webif_info_sysinfos.h:8
+#: httpdfunc.h:5167 skin_default_skin.xml.h:703 webif_info_sysinfos.h:8
 msgid "Top"
 msgstr "Haut"
 
-#: httpdfunc.h:5167 skin_default_skin.xml.h:500 webif_info_sysinfos.h:9
+#: httpdfunc.h:5169 skin_default_skin.xml.h:500 webif_info_sysinfos.h:9
 msgid "Prozesslist"
 msgstr ""
 
-#: httpdfunc.h:5169 skin_default_skin.xml.h:743 webif_info_sysinfos.h:10
+#: httpdfunc.h:5171 skin_default_skin.xml.h:743 webif_info_sysinfos.h:10
 msgid "USB"
 msgstr ""
 
-#: httpdfunc.h:5205
+#: httpdfunc.h:5207
 msgid "Hotline"
 msgstr ""
 
-#: httpdfunc.h:5207
+#: httpdfunc.h:5209
 msgid "Svn Changelog"
 msgstr ""
 
-#: httpdfunc.h:5209 skin_default_skin.xml.h:262 webif_info_logs.h:3
+#: httpdfunc.h:5211 skin_default_skin.xml.h:262 webif_info_logs.h:3
 msgid "Git Changelog"
 msgstr ""
 
-#: httpdfunc.h:5211
+#: httpdfunc.h:5213
 msgid "titan Log"
 msgstr ""
 
-#: httpdfunc.h:5213
+#: httpdfunc.h:5215
 msgid "Svn Changelog Full"
 msgstr ""
 
-#: httpdfunc.h:5215
+#: httpdfunc.h:5217
 msgid "Git Changelog Full"
 msgstr ""
 
-#: httpdfunc.h:5248 skin_default_skin.xml.h:51 webif_info.h:3
+#: httpdfunc.h:5250 skin_default_skin.xml.h:51 webif_info.h:3
 msgid "About"
 msgstr "À propos"
 
-#: httpdfunc.h:5391 skin_default_skin.xml.h:654 stream.h:36 webif_info.h:4
+#: httpdfunc.h:5393 skin_default_skin.xml.h:654 stream.h:36 webif_info.h:4
 msgid "Streaming"
 msgstr ""
 
-#: httpdfunc.h:5407 httpdfunc.h:5453 record.h:1406 record.h:1415 record.h:1426
+#: httpdfunc.h:5409 httpdfunc.h:5455 record.h:1406 record.h:1415 record.h:1426
 #: record.h:1455 record.h:1464 record.h:1496 skin_default_skin.xml.h:649
 #: stream.h:15 stream.h:37
 msgid "stop"
 msgstr "Stop"
 
-#: httpdfunc.h:5425 stream.h:33
+#: httpdfunc.h:5427 stream.h:33
 msgid "No Live Stream running"
 msgstr ""
 
-#: httpdfunc.h:5480
+#: httpdfunc.h:5482
 msgid "Streaming succesfull stopped."
 msgstr ""
 
-#: httpdfunc.h:5483
+#: httpdfunc.h:5485
 msgid "ERROR, Streaming can not be stopped."
 msgstr ""
 
-#: httpdfunc.h:5512 httpdfunc.h:5621 skin_default_skin.xml.h:674
+#: httpdfunc.h:5514 httpdfunc.h:5623 skin_default_skin.xml.h:674
 #: webif_system.h:2 webif_system_update.h:1
 msgid "System Update"
 msgstr "System - USB-Update (tmp)"
 
-#: httpdfunc.h:5635 system_update.h:220
+#: httpdfunc.h:5637 system_update.h:220
 msgid "starting Full Update ?"
 msgstr ""
 
-#: httpdfunc.h:5640
+#: httpdfunc.h:5642
 msgid ""
 "System Update started Please wait 5 Minutes and Refresh this Page, more "
 "infos they see on your TV."
 msgstr ""
 
-#: httpdfunc.h:5686
+#: httpdfunc.h:5688
 msgid "No Tpk Sections Found."
 msgstr ""
 
-#: httpdfunc.h:5750 httpdfunc.h:5904 httpdfunc.h:6165
+#: httpdfunc.h:5752 httpdfunc.h:5906 httpdfunc.h:6167
 msgid "No Tpk Files Found."
 msgstr ""
 
-#: httpdfunc.h:5985 httpdfunc.h:5993 httpdfunc.h:6003
+#: httpdfunc.h:5987 httpdfunc.h:5995 httpdfunc.h:6005
 msgid "Install Log:"
 msgstr ""
 
-#: httpdfunc.h:6052 skin_default_skin.xml.h:709 webif_system_extensions.h:4
+#: httpdfunc.h:6054 skin_default_skin.xml.h:709 webif_system_extensions.h:4
 msgid "TPK tmp (tmp)"
 msgstr "TPK tmp"
 
-#: httpdfunc.h:6054 skin_default_skin.xml.h:707 webif_system_extensions.h:5
+#: httpdfunc.h:6056 skin_default_skin.xml.h:707 webif_system_extensions.h:5
 msgid "TPK media (media)"
 msgstr ""
 
-#: httpdfunc.h:6097
+#: httpdfunc.h:6099
 msgid "No Tpk Files Found on /tmp Directory."
 msgstr ""
 
-#: httpdfunc.h:6101
+#: httpdfunc.h:6103
 msgid "No Tpk Files Found on Media Devices."
 msgstr ""
 
-#: httpdfunc.h:6258 httpdfunc.h:6268
+#: httpdfunc.h:6260 httpdfunc.h:6270
 msgid "Remove Log:"
 msgstr ""
 
-#: httpdfunc.h:6343
+#: httpdfunc.h:6345
 msgid "Tpk Update Info - Update OK"
 msgstr ""
 
-#: httpdfunc.h:6382 skin_default_skin.xml.h:593 webif_info.h:1
+#: httpdfunc.h:6384 skin_default_skin.xml.h:593 webif_info.h:1
 msgid "Service"
 msgstr ""
 
-#: httpdfunc.h:6417 skin_default_skin.xml.h:668 webif_system.h:3
+#: httpdfunc.h:6419 skin_default_skin.xml.h:668 webif_system.h:3
 msgid "System Backup"
 msgstr ""
 
-#: httpdfunc.h:6452 skin_default_skin.xml.h:601 webif_system.h:4
+#: httpdfunc.h:6454 skin_default_skin.xml.h:601 webif_system.h:4
 msgid "Settings backup/restore"
 msgstr "Réglages sauvegarde/restauration"
 
