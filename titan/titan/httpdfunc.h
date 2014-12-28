@@ -4730,6 +4730,7 @@ printf("webadjust fmt: %d\n",fmt);
 	sendstr = ostrcat(sendstr, ", playerbufferseektime.value", 1 , 0);
 
 ///////////////////debuglevel
+#ifdef BETA	
 	tmpstr = ostrcat("10\n40\n50\n60\n70\n80\n90\n99\n100\n130\n150\n200\n250\n270\n300\n400\n900\n1000", NULL, 0, 0);
 
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
@@ -4760,6 +4761,7 @@ printf("webadjust fmt: %d\n",fmt);
 	free(ret1), ret1 = NULL;
 	free(tmpstr), tmpstr = NULL;
 	free(tmpstr1), tmpstr1 = NULL;
+#endif
 	
 ///////////////////	
 #ifdef MIPSEL
