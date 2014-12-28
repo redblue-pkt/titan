@@ -464,9 +464,8 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 				festatus = fegetunlock(fenode);
 				if(festatus != 0)
 				{
-					debug(200, "second fegetunlock");	
-					usleep(1000*2000);
-					festatus = fegetunlock(fenode);
+					debug(200, "fegetunlock rc:%d ... now fewait", festatus);	
+					festatus = fewait(fenode);
 				}
 			}
 
