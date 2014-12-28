@@ -460,7 +460,15 @@ int servicestartreal(struct channel* chnode, char* channellist, char* pin, int f
 			if(fenode->felasttransponder != tpnode)
 				festatus = fewait(fenode);
 			else
+			{
 				festatus = fegetunlock(fenode);
+				if(festatus != 0)
+				{
+					debug(200, "second fegetunlock");	
+					usleep(1000);
+					festatus = fegetunlock(fenode);
+				}
+			}
 
 			if(debug_level == 200)
 			{
