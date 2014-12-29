@@ -100,6 +100,10 @@ void screenstandby()
 		}
 		free(loctime); loctime = 0;
 	}
+	//workaround after standby poweroff menu reboot
+	writerc(getrcconfigint("rcexit", NULL));
+	rcret = waitrc(standbyscreen, 1000, 0);
+	//
 	status.updatevfd = STOP;
 	m_lock(&status.vfdmutex, 3);
 // mipsel work set unknown videomode = display > off (reset)
