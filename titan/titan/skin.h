@@ -163,6 +163,8 @@ void* convertfunc(char *value, uint8_t *rettype)
 		return &getepgmarkeddesc;
 	if(ostrcmp("getepgaktdesc", value) == 0)
 		return &getepgaktdesc;
+	if(ostrcmp("getepgnextdesc", value) == 0)
+		return &getepgnextdesc;
 	if(ostrcmp("getaktchannelname", value) == 0)
 		return &getaktchannelname;
 	if(ostrcmp("getakttuner", value) == 0)
