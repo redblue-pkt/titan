@@ -1889,7 +1889,8 @@ int setrtctime(int value)
 	char *rtctimedev = NULL, *tmpstr = NULL;
 	int ret = 0;
 
-	value += 7200; 
+	//value += 7200; 
+	value += 3600; 
 
 	rtctimedev = getconfig("rtctimedev", NULL);
 
