@@ -671,6 +671,24 @@ char* getepgaktdesc(struct skin* node)
 	return NULL;
 }
 
+char* getepgnextdesc(struct skin* node)
+{
+	struct epg* epgnode = NULL;
+
+	if(status.aktservice->channel != NULL)
+	{
+		epgnode = getepgakt(status.aktservice->channel);
+		if(epgnode != NULL)
+		{
+			epgnode = epgnode->next;
+			if(epgnode != NULL)
+				return epgdescunzip(epgnode);
+		}
+	}
+
+	return NULL;
+}
+
 char* getepgmarkeddesc(struct skin* node)
 {
 	struct epg* epgnode = NULL;
