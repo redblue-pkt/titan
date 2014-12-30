@@ -2130,6 +2130,9 @@ int checkdate()
 		if(dvbgetdate(&dvbtime, 10000000) == 0) //10 sek
 		{
 			setsystime(&dvbtime);
+#ifdef MIPSEL
+			setrtctime(time(NULL));
+#endif
 			status.timeupdatecount = 0;
 			return 0;
 		}
