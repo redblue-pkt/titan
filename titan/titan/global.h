@@ -1866,10 +1866,6 @@ int setwakeuptimerdev(time_t value)
 	if(value != 0x7FFFFFFF && value - diff > time(NULL))
 		value -= diff;
 
-#ifdef MIPSEL	
-	value += 7200;
-#endif
-	
 	wakeuptimerdev = getconfig("wakeuptimerdev", NULL);
 
 	if(wakeuptimerdev != NULL && value >= time(NULL))
