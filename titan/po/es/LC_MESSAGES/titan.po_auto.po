@@ -20,7 +20,7 @@ msgstr ""
 #: filenuke.h:96 filenuke.h:108 filenuke.h:157 firedrive.h:33 firedrive.h:66
 #: firedrive.h:72 firedrive.h:122 firedrive.h:128 firedrive.h:138 flashx.h:26
 #: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:5564 global.h:6189 global.h:6258 global.h:6277 global.h:6452
+#: global.h:5567 global.h:6192 global.h:6261 global.h:6280 global.h:6455
 #: gmediarender.h:115 harddisk.h:350 harddisk.h:355 harddisk.h:382
 #: harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641 harddisk.h:675
 #: harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733 harddisk.h:793
@@ -126,7 +126,7 @@ msgstr "Ok"
 #: filenuke.h:96 filenuke.h:108 filenuke.h:157 firedrive.h:33 firedrive.h:66
 #: firedrive.h:72 firedrive.h:122 firedrive.h:128 firedrive.h:138 flashx.h:26
 #: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:5564 global.h:6189 global.h:6258 global.h:6277 global.h:6452
+#: global.h:5567 global.h:6192 global.h:6261 global.h:6280 global.h:6455
 #: gmediarender.h:115 harddisk.h:350 harddisk.h:355 harddisk.h:382
 #: harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641 harddisk.h:675
 #: harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733 harddisk.h:793
@@ -559,8 +559,8 @@ msgstr "Si/VZAP infinito"
 #: filenuke.h:37 filenuke.h:84 filenuke.h:96 filenuke.h:108 filenuke.h:157
 #: firedrive.h:33 firedrive.h:66 firedrive.h:72 firedrive.h:122
 #: firedrive.h:128 firedrive.h:138 flashx.h:26 flashx.h:84 flashx.h:138
-#: flashx.h:195 flashx.h:233 flashx.h:270 global.h:5564 global.h:6189
-#: global.h:6258 global.h:6277 global.h:6452 gmediarender.h:115 harddisk.h:633
+#: flashx.h:195 flashx.h:233 flashx.h:270 global.h:5567 global.h:6192
+#: global.h:6261 global.h:6280 global.h:6455 gmediarender.h:115 harddisk.h:633
 #: harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731
 #: harddisk.h:733 harddisk.h:793 harddisk.h:812 harddisk.h:815 hbbtv.h:362
 #: hello.c:36 httpdfunc.h:1222 httpdfunc.h:5633 httpdfunc.h:6019
@@ -749,7 +749,7 @@ msgstr ""
 "Este Plugin es solo para Betatesters y podria cambiar\n"
 "su configuracion. quieres ejecutar la aplicacion?"
 
-#: bgdownload.h:93 bgdownload.h:154 global.h:6692 httpdfunc.h:2793
+#: bgdownload.h:93 bgdownload.h:154 global.h:6695 httpdfunc.h:2793
 #: httpdfunc.h:2805 httpdfunc.h:5416 httpdfunc.h:5462 hwtest.h:478
 #: moduleconfig.h:345 skin_default_skin.xml.h:739 skinselector.h:138
 #: stream.h:22 transponder.h:122 transponder.h:158 transponder.h:194
@@ -1744,95 +1744,95 @@ msgstr "El archivo seleccionado no existe o ha sido borrado"
 msgid "This file is private and only viewable by the owner."
 msgstr ""
 
-#: global.h:5564 keyactions.h:205
+#: global.h:5567 keyactions.h:205
 msgid "ERROR cant read res"
 msgstr "ERROR: No se puede leer la resolucion"
 
-#: global.h:5789 rectimer.h:1080 skin_default_skin.xml.h:414
+#: global.h:5792 rectimer.h:1080 skin_default_skin.xml.h:414
 msgid "Monday"
 msgstr "Lunes"
 
-#: global.h:5790 rectimer.h:1081 skin_default_skin.xml.h:716
+#: global.h:5793 rectimer.h:1081 skin_default_skin.xml.h:716
 msgid "Tuesday"
 msgstr "Martes"
 
-#: global.h:5791 rectimer.h:1082 skin_default_skin.xml.h:773
+#: global.h:5794 rectimer.h:1082 skin_default_skin.xml.h:773
 msgid "Wednesday"
 msgstr "Miercoles"
 
-#: global.h:5792 rectimer.h:1083 skin_default_skin.xml.h:685
+#: global.h:5795 rectimer.h:1083 skin_default_skin.xml.h:685
 msgid "Thursday"
 msgstr "Jueves"
 
-#: global.h:5793 rectimer.h:1084 skin_default_skin.xml.h:255
+#: global.h:5796 rectimer.h:1084 skin_default_skin.xml.h:255
 msgid "Friday"
 msgstr "Viernes"
 
-#: global.h:5794 rectimer.h:1085 skin_default_skin.xml.h:565
+#: global.h:5797 rectimer.h:1085 skin_default_skin.xml.h:565
 msgid "Saturday"
 msgstr "Sabado"
 
-#: global.h:5795 rectimer.h:1086 skin_default_skin.xml.h:659
+#: global.h:5798 rectimer.h:1086 skin_default_skin.xml.h:659
 msgid "Sunday"
 msgstr "Domingo"
 
-#: global.h:5799
+#: global.h:5802
 msgid "Mon"
 msgstr ""
 
-#: global.h:5800
+#: global.h:5803
 msgid "Tue"
 msgstr "Mar"
 
-#: global.h:5801
+#: global.h:5804
 msgid "Wed"
 msgstr "Mier"
 
-#: global.h:5802
+#: global.h:5805
 msgid "Thu"
 msgstr "Juev"
 
-#: global.h:5803
+#: global.h:5806
 msgid "Fri"
 msgstr "Vier"
 
-#: global.h:5804
+#: global.h:5807
 msgid "Sat"
 msgstr "Satelite"
 
-#: global.h:5805
+#: global.h:5808
 msgid "Sun"
 msgstr "Dom"
 
-#: global.h:6065
+#: global.h:6068
 msgid "Tuner "
 msgstr "Tuner"
 
-#: global.h:6074
+#: global.h:6077
 msgid "Multituner adjustable"
 msgstr "Multituner ajustable"
 
-#: global.h:6124
+#: global.h:6127
 msgid "Create Transponder (Sat)"
 msgstr "Crear Transpondedor (Sat)"
 
-#: global.h:6125
+#: global.h:6128
 msgid "Create Transponder (Cable)"
 msgstr "Crear Transpondedor (cable)"
 
-#: global.h:6126
+#: global.h:6129
 msgid "Create Transponder (Terrestrial)"
 msgstr "Crear Transpondedor (Terrestre)"
 
-#: global.h:6127
+#: global.h:6130
 msgid "Create Transponder (All)"
 msgstr "Crear Transpondedor (Todo)"
 
-#: global.h:6129
+#: global.h:6132
 msgid "Select Your Serach Modus"
 msgstr "Seleccione el modo de busqueda"
 
-#: global.h:6189
+#: global.h:6192
 msgid ""
 "Transponder/Satellite Convert done, please use channel search on next Boot.\n"
 "Your System will reboot !"
@@ -1842,15 +1842,15 @@ msgstr ""
 "sistema.\n"
 "Su receptor se reiniciara!"
 
-#: global.h:6253
+#: global.h:6256
 msgid "Error: Transponder Source file not found"
 msgstr "ERROR: Ninguna fuente transpondedor archivo encontrado!"
 
-#: global.h:6275
+#: global.h:6278
 msgid "Error: Transponder Source file no data"
 msgstr "ERROR: El archivo transpondedor esta vacia!"
 
-#: global.h:6452
+#: global.h:6455
 msgid ""
 "Standard favorites have been successfully applied.\n"
 "Your System will reboot !"
@@ -1858,27 +1858,27 @@ msgstr ""
 "Favoritos estandar se han importado.\n"
 " El receptor se reiniciara ahora."
 
-#: global.h:6667
+#: global.h:6670
 msgid "Image"
 msgstr ""
 
-#: global.h:6670
+#: global.h:6673
 msgid "Version"
 msgstr ""
 
-#: global.h:6674 httpdfunc.h:5522 skin_default_skin.xml.h:349
+#: global.h:6677 httpdfunc.h:5522 skin_default_skin.xml.h:349
 msgid "Installed:"
 msgstr "Instalado:"
 
-#: global.h:6678
+#: global.h:6681
 msgid "Copyright"
 msgstr "© Copyright"
 
-#: global.h:6687 skin_default_skin.xml.h:717
+#: global.h:6690 skin_default_skin.xml.h:717
 msgid "Tuner"
 msgstr ""
 
-#: global.h:6694 skin_default_skin.xml.h:723
+#: global.h:6697 skin_default_skin.xml.h:723
 msgid "Tunertype"
 msgstr "Tuner Tipo"
 
