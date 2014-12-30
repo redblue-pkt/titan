@@ -6747,6 +6747,7 @@ void wakeup_record_device()
 }
 
 #ifdef MIPSEL
+
 int setrtctimemips()
 {
 	char *rtctimedev = NULL, *tmpstr = NULL;
