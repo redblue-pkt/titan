@@ -594,10 +594,11 @@ for ROUND in $PLIST;do
 done
 
 cp -a "$HOME"/flashimg/source.titan/help "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan
-titan-merge.cfg
 cp -a "$HOME"/flashimg/source.titan/var.settings/* "$HOME"/flashimg/BUILD/titan/var/etc/titan
 cat "$HOME"/flashimg/BUILD/titan/var/etc/titan/titan-merge.sh4.cfg "$HOME"/flashimg/BUILD/titan/var/etc/titan/titan-merge.all.cfg | sort -u > "$HOME"/flashimg/BUILD/titan/var/etc/titan/titan-merge.cfg 
+sed 's/&/\\&/g' -i "$HOME"/flashimg/BUILD/titan/var/etc/titan/titan-merge.cfg
 rm -rf "$HOME"/flashimg/BUILD/titan/var/etc/titan/titan-merge.*.cfg
+
 mkdir "$HOME"/flashimg/BUILD/titan/var/etc/titan.mnt
 cp -a "$HOME"/flashimg/source.titan/mnt.settings/* "$HOME"/flashimg/BUILD/titan/var/etc/titan.mnt
 cp -a "$HOME"/flashimg/source.titan/skin "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan
