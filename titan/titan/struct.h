@@ -144,7 +144,7 @@
 #define MAXSAT 64
 #define MAXBGDOWNLOAD 10
 #ifdef MIPSEL
-#define EPGSCANLOG "/mnt/epgscan.log"
+#define EPGSCANLOG "/mnt/log/epgscan.log"
 #else
 #define EPGSCANLOG "/tmp/epgscan.log"
 #endif
