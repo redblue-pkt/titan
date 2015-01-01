@@ -135,13 +135,13 @@ void epgscanlistthread(struct stimerthread* self)
 	
 	debug(400, "epgscan thread start, wait for right time");
 	
-	fd = fopen(EPGSCANLOG, "w");
-	if(fd == NULL)
-	{
-		perr("can't open %s", EPGSCANLOG);
-	}
-	else
-		fprintf(fd, "epgscan thread start, wait for right time\n");
+	//fd = fopen(EPGSCANLOG, "w");
+	//if(fd == NULL)
+	//{
+	//	perr("can't open %s", EPGSCANLOG);
+	//}
+	//else
+	//	fprintf(fd, "epgscan thread start, wait for right time\n");
 
 	if(status.standby != 0) startmode = 1;
 
@@ -159,6 +159,14 @@ void epgscanlistthread(struct stimerthread* self)
 		goto end;
 	}
 
+	fd = fopen(EPGSCANLOG, "w");
+	if(fd == NULL)
+	{
+		perr("can't open %s", EPGSCANLOG);
+	}
+	else
+		fprintf(fd, "epgscan thread start, wait for right time\n");
+	
 	//wait for right time
 	while(self->aktion != STOP && time(NULL) < 1072224000) // 01.01.2004
 		usleep(1 * 1000000);
