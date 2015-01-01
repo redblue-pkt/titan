@@ -32,7 +32,7 @@ int oledtext(char *value)
 	
 	if(status.updatevfd == PAUSE)
 		OLED_nemesis = getscreen("OLED_nemesis_menu");
-	else if(status.standby == 1)
+	else if(status.standby > 0)
 		OLED_nemesis = getscreen("OLED_nemesis_standby");
 	else
 	{
@@ -44,7 +44,10 @@ int oledtext(char *value)
 	
 	struct skin* textbox = getscreennode(OLED_nemesis, "textbox");
 	
-	changetext(textbox, value);
+	if(status.standby == 2 && status.epgscanlistthread != NULL)
+		changetext(textbox, "EPG-Scan");
+	else
+		changetext(textbox, value);
 	drawscreen(OLED_nemesis, 0, 0);
 	
 	return 0;
