@@ -143,7 +143,11 @@
 #define MAXLONGKEY 10
 #define MAXSAT 64
 #define MAXBGDOWNLOAD 10
+#ifdef MIPSEL
+#define EPGSCANLOG "/mnt/epgscan.log"
+#else
 #define EPGSCANLOG "/tmp/epgscan.log"
+#endif
 #define MAXCHANNELHISTORY 6
 #define HILO(x) (x##_hi << 8 | x##_lo)
 #define HILO32(x) (x##_hi << 24 | x##_mh << 16 | x##_ml << 8 | x##_lo)
