@@ -1836,7 +1836,7 @@ void checkboxstart()
 
 	while(node != NULL)
 	{
-		if(node->status < 2)
+		if(node->status < 2 || node->status == 4)
 		{
 			time_t akttime = time(NULL);
 			time_t begin = node->begin - getconfigint("wakeuptimerdevdiff", NULL);
