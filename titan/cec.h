@@ -1,6 +1,7 @@
 #ifndef CEC_H
 #define CEC_H
 
+
 void hdmiEvent()
 {
 	fd_set rfds;
