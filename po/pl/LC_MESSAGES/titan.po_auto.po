@@ -224,9 +224,9 @@ msgstr "WYJŚCIE"
 #: adjust.h:228 adjust.h:232 adjust.h:238 adjust.h:244 adjust.h:286
 #: autotimer.c:453 autotimer.c:486 avsettings.h:156 avsettings.h:192
 #: avsettings.h:196 blindscanadjust.h:150 blindscanadjust.h:154
-#: blindscanadjust.h:158 blindscanadjust.h:187 blindscanadjust.h:191 cec.h:142
-#: cec.h:146 cec.h:150 cec.h:154 cec.h:158 cec.h:162 cec.h:166 cec.h:170
-#: cec.h:174 dlna.h:276 epgsettings.h:134 epgsettings.h:187 epgsettings.h:196
+#: blindscanadjust.h:158 blindscanadjust.h:187 blindscanadjust.h:191 cec.h:143
+#: cec.h:147 cec.h:151 cec.h:155 cec.h:159 cec.h:163 cec.h:167 cec.h:171
+#: cec.h:175 dlna.h:276 epgsettings.h:134 epgsettings.h:187 epgsettings.h:196
 #: epgsettings.h:200 epgsettings.h:205 epgsettings.h:210 httpdfunc.h:3729
 #: httpdfunc.h:3767 httpdfunc.h:3790 httpdfunc.h:3819 httpdfunc.h:3992
 #: httpdfunc.h:4239 httpdfunc.h:4297 httpdfunc.h:4319 httpdfunc.h:4420
@@ -292,9 +292,9 @@ msgstr ""
 #: adjust.h:218 adjust.h:225 adjust.h:229 adjust.h:233 adjust.h:239
 #: adjust.h:243 autotimer.c:454 autotimer.c:487 avsettings.h:157
 #: avsettings.h:193 blindscanadjust.h:151 blindscanadjust.h:155
-#: blindscanadjust.h:159 blindscanadjust.h:188 blindscanadjust.h:192 cec.h:143
-#: cec.h:147 cec.h:151 cec.h:155 cec.h:159 cec.h:163 cec.h:167 cec.h:171
-#: cec.h:175 dlna.h:277 epgsettings.h:135 epgsettings.h:188 epgsettings.h:197
+#: blindscanadjust.h:159 blindscanadjust.h:188 blindscanadjust.h:192 cec.h:144
+#: cec.h:148 cec.h:152 cec.h:156 cec.h:160 cec.h:164 cec.h:168 cec.h:172
+#: cec.h:176 dlna.h:277 epgsettings.h:135 epgsettings.h:188 epgsettings.h:197
 #: httpdfunc.h:3774 httpdfunc.h:3826 httpdfunc.h:3999 httpdfunc.h:4246
 #: httpdfunc.h:4304 httpdfunc.h:4427 httpdfunc.h:4449 httpdfunc.h:4493
 #: httpdfunc.h:4515 httpdfunc.h:4537 httpdfunc.h:4566 httpdfunc.h:4588
