@@ -2468,11 +2468,8 @@ msgstr "Pradti Full Update ?"
 
 #: httpdfunc.h:5651
 msgid ""
-"System Update started Please wait 5 Minutes and Refresh this Page, more "
-"infos they see on your TV."
+"System Update started. This can take up to 5 minutes. More details on TV."
 msgstr ""
-"Sistemos atnaujinimas pradjo Praome palaukti 5 minutes ir perkraukite  "
-"puslap , daugiau infos jie mato savo TV."
 
 #: httpdfunc.h:5697
 msgid "No Tpk Sections Found."
@@ -13130,3 +13127,10 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Zapback aktivuoas. Ar norite j sustabdyti ?"
+
+#~ msgid ""
+#~ "System Update started Please wait 5 Minutes and Refresh this Page, more "
+#~ "infos they see on your TV."
+#~ msgstr ""
+#~ "Sistemos atnaujinimas pradjo Praome palaukti 5 minutes ir perkraukite  "
+#~ "puslap , daugiau infos jie mato savo TV."
