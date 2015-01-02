@@ -13149,10 +13149,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Zapback is activated. Do you want to stop it?"
-
-#~ msgid ""
-#~ "System Update started Please wait 5 Minutes and Refresh this Page, more "
-#~ "infos they see on your TV."
-#~ msgstr ""
-#~ "System Update started, please wait around 5 Minutes and refresh this "
-#~ "Page. Further infos are shown on your TV."
