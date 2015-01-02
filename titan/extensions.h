@@ -379,7 +379,7 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 				tmpinfo = ostrcat(tmpinfo, " ?", 1, 0);
 				debug(130, "tmpinfo: %s", tmpinfo);
 	
-				if(textbox(_(text2), _(tmpinfo), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0) == 2)
+				if(textbox(_(text2), _(tmpinfo), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0) == 1)
 				{
 					char* log = NULL;
 					int ret = 0;				
