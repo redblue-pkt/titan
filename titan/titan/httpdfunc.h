@@ -4741,7 +4741,8 @@ printf("webadjust fmt: %d\n",fmt);
 
 	count = 0;
 	ret1 = strsplit(tmpstr, "\n", &count);
-	ret2 = strsplit(tmpstr2, "\n");
+	count = 0;	
+	ret2 = strsplit(tmpstr2, "\n", &count);
 	max = count - 1;
 
 	if(ret1 != NULL)
