@@ -4732,6 +4732,7 @@ printf("webadjust fmt: %d\n",fmt);
 ///////////////////debuglevel
 #ifdef BETA	
 	tmpstr = ostrcat("10\n40\n50\n60\n70\n80\n90\n99\n100\n130\n150\n200\n250\n270\n300\n400\n900\n1000", NULL, 0, 0);
+	tmpstr2 = ostrcat(" - Minimal\n - TopfieldVFD\n - MediaCenter\n - Menulist\n  - Network Browser\n - Harddisk\n - Screensaver\n - Tithek\n - Global\n - TPK\n - ePlyer\n - Tuning\n - Stream/Record/Softcam\n - EPG\n - Radiotext\n - Subtitle\n - Mutex\n - Function", NULL, 0, 0);
 
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("debuglevel"), &maxlen, &pos);
@@ -4739,6 +4740,7 @@ printf("webadjust fmt: %d\n",fmt);
 
 	count = 0;
 	ret1 = strsplit(tmpstr, "\n", &count);
+	ret2 = strsplit(tmpstr2, "\n",);
 	max = count - 1;
 
 	if(ret1 != NULL)
@@ -4753,14 +4755,17 @@ printf("webadjust fmt: %d\n",fmt);
 			else
 				ostrcatbig(&buf, "\">", &maxlen, &pos);
 			ostrcatbig(&buf, ret1[i].part, &maxlen, &pos);
+			ostrcatbig(&buf, ret2[i].part, &maxlen, &pos);
 			ostrcatbig(&buf, "</option>", &maxlen, &pos);
 		}
 	}
 	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
 	sendstr = ostrcat(sendstr, ", debuglevel.value", 1 , 0);
 	free(ret1), ret1 = NULL;
+	free(ret2), ret2 = NULL;
 	free(tmpstr), tmpstr = NULL;
 	free(tmpstr1), tmpstr1 = NULL;
+	free(tmpstr2), tmpstr2 = NULL;
 #endif
 	
 ///////////////////	
