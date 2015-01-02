@@ -4733,7 +4733,7 @@ printf("webadjust fmt: %d\n",fmt);
 #ifdef BETA
 	struct splitstr* ret2 = NULL;	
 	tmpstr = ostrcat("10\n40\n50\n60\n70\n80\n90\n99\n100\n130\n150\n200\n250\n270\n300\n400\n900\n1000", NULL, 0, 0);
-	tmpstr2 = ostrcat(" - Minimal\n - TopfieldVFD\n - MediaCenter\n - Menulist\n  - Network Browser\n - Harddisk\n - Screensaver\n - Tithek\n - Global\n - TPK\n - ePlyer\n - Tuning\n - Stream/Record/Softcam\n - EPG\n - Radiotext\n - Subtitle\n - Mutex\n - Function", NULL, 0, 0);
+	tmpstr2 = ostrcat(" - Minimal\n - TopfieldVFD\n - MediaCenter\n - Menulist\n  - Network Browser\n - Harddisk\n - Screensaver\n - Tithek\n - Global\n - TPK\n - ePlayer\n - Tuning\n - Stream/Record/Softcam\n - EPG\n - Radiotext\n - Subtitle\n - Mutex\n - Function", NULL, 0, 0);
 
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("debuglevel"), &maxlen, &pos);
@@ -5648,7 +5648,7 @@ char* webgetupdate(char* param, int fmt)
 	buf = ostrcat(buf, "if(bRepeat==true)\n", 1, 0);
 	buf = ostrcat(buf, "{\n", 1, 0);
 	buf = ostrcat(buf, "document.getElementById(\"updatetitle\").innerHTML = \"", 1, 0);
-	buf = ostrcat(buf, _("System Update started Please wait 5 Minutes and Refresh this Page, more infos they see on your TV."), 1, 0);
+	buf = ostrcat(buf, _("System Update started. This can take up to 5 minutes. More details on TV."), 1, 0);
 	buf = ostrcat(buf, "\";\n", 1, 0);
 	buf = ostrcat(buf, "window.location = \"../queryraw?getsystem&", 1, 0);
 	buf = ostrcat(buf, cmd, 1, 0);
