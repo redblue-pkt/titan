@@ -4868,7 +4868,9 @@ char* webadjustsend(char* param, int fmt)
 	buf = webadjust(NULL, fmt);
 	writeconfigtmp();
 	writeallconfig(1);
-
+#ifdef BETA
+setdebuglevel();
+#endif
 	return buf;
 }
 
