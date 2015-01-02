@@ -2477,10 +2477,8 @@ msgstr "Запустить полное обновление FLASH ?"
 
 #: httpdfunc.h:5651
 msgid ""
-"System Update started Please wait 5 Minutes and Refresh this Page, more "
-"infos they see on your TV."
+"System Update started. This can take up to 5 minutes. More details on TV."
 msgstr ""
-"Обновление системы запущено, Подождите 5 мин."
 
 #: httpdfunc.h:5697
 msgid "No Tpk Sections Found."
@@ -13192,3 +13190,9 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
+
+#~ msgid ""
+#~ "System Update started Please wait 5 Minutes and Refresh this Page, more "
+#~ "infos they see on your TV."
+#~ msgstr ""
+#~ "Обновление системы запущено, Подождите 5 мин."

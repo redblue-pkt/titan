@@ -2487,8 +2487,7 @@ msgstr "Iniciar actualizacin completa?"
 
 #: httpdfunc.h:5651
 msgid ""
-"System Update started Please wait 5 Minutes and Refresh this Page, more "
-"infos they see on your TV."
+"System Update started. This can take up to 5 minutes. More details on TV."
 msgstr ""
 
 #: httpdfunc.h:5697
