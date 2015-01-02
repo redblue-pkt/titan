@@ -263,6 +263,11 @@ int writevfd(char *value)
 			memcpy(tmpvalue, value, 63);
 			tmpvalue[62] = '\0';
 		}
+		else if(status.standby > 0 && getconfigint("vfdisplaystandby", NULL) == 0 && (checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100")) )
+		{	
+			memcpy(tmpvalue, value, len);
+			tmpvalue[5] = '\0';
+		}
 		else if((checkbox("ATEMIO530") == 1 || checkbox("ATEMIO520") == 1 || checkbox("IPBOX91") == 1 || checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1) && len > 4)
 		{
 			memcpy(tmpvalue, value, 4);
