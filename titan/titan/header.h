@@ -8,6 +8,9 @@
 #ifndef HEADER_H
 #define HEADER_H
 
+//security.h
+checkgthread();
+	
 //encoder.h
 void encoderclose(struct dvbdev* node, int fd);
 
