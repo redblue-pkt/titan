@@ -3911,6 +3911,9 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 		return 1;
 	}
 
+	//checkoled
+	m_lock(&status.oledmutex, 25);	
+	
 	if(flag == 0 || flag == 4)
 		m_lock(&status.drawingmutex, 0);
 
@@ -3922,6 +3925,7 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 		if(flag == 0 || flag == 4)
 			m_unlock(&status.drawingmutex, 0);
 		err("setnodeattr ret = 1");
+		m_unlock(&status.oledmutex, 25);
 		return 1;
 	}
 	debug(100, "start drawscree with screenname=%s", node->name);
@@ -3935,6 +3939,7 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 				{
 					if(flag == 0 || flag == 4)
 						m_unlock(&status.drawingmutex, 0);
+					m_unlock(&status.oledmutex, 25);
 					return -2;
 				}
 				lcdskinfb = addfb("lcdskinfb", 999, 800, 480, 4, -1, newskinfb, 4 * 800 * 480);
@@ -3945,6 +3950,7 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 				{
 					if(flag == 0 || flag == 4)
 						m_unlock(&status.drawingmutex, 0);
+					m_unlock(&status.oledmutex, 25);
 					return -2;
 				}
 				lcdskinfb = addfb("lcdskinfb", 999, 800, 480, 4, -1, newskinfb, 4 * 800 * 480);
@@ -3955,6 +3961,7 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 				{
 					if(flag == 0 || flag == 4)
 						m_unlock(&status.drawingmutex, 0);
+					m_unlock(&status.oledmutex, 25);
 					return -2;
 				}
 				lcdskinfb = addfb("lcdskinfb", 999, 800, 600, 4, -1, newskinfb, 4 * 800 * 600);
@@ -3965,6 +3972,7 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 				{
 					if(flag == 0 || flag == 4)
 						m_unlock(&status.drawingmutex, 0);
+					m_unlock(&status.oledmutex, 25);
 					return -2;
 				}
 				lcdskinfb = addfb("lcdskinfb", 999, 800, 600, 4, -1, newskinfb, 4 * 800 * 600);
@@ -3975,6 +3983,7 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 				{
 					if(flag == 0 || flag == 4)
 						m_unlock(&status.drawingmutex, 0);
+					m_unlock(&status.oledmutex, 25);
 					return -2;
 				}
 				lcdskinfb = addfb("lcdskinfb", 999, 800, 480, 4, -1, newskinfb, 4 * 800 * 480);
@@ -3985,6 +3994,7 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 				{
 					if(flag == 0 || flag == 4)
 						m_unlock(&status.drawingmutex, 0);
+					m_unlock(&status.oledmutex, 25);
 					return -2;
 				}
 				lcdskinfb = addfb("lcdskinfb", 999, 1024, 600, 4, -1, newskinfb, 4 * 1024 * 600);
@@ -3995,6 +4005,7 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 				{
 					if(flag == 0 || flag == 4)
 						m_unlock(&status.drawingmutex, 0);
+					m_unlock(&status.oledmutex, 25);
 					return -2;
 				}
 				lcdskinfb = addfb("lcdskinfb", 999, 1024, 600, 4, -1, newskinfb, 4 * 1024 * 600);
@@ -4005,6 +4016,7 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 				{
 					if(flag == 0 || flag == 4)
 						m_unlock(&status.drawingmutex, 0);
+					m_unlock(&status.oledmutex, 25);
 					return -2;
 				}
 				lcdskinfb = addfb("lcdskinfb", 999, 320, 240, 4, -1, newskinfb, 4 * 320 * 240);
@@ -4030,6 +4042,7 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 			{
 				if(flag == 0 || flag == 4)
 					m_unlock(&status.drawingmutex, 0);
+				m_unlock(&status.oledmutex, 25);
 				return -2;
 			}
 #endif
@@ -4038,7 +4051,7 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 		//memset(lcdskinfb->fb, 0, lcdskinfb->varfbsize);
 		skinfb = lcdskinfb;
 	}
-	if(node->name != NULL && ostrstr(node->name, "OLED_") != NULL)
+	else if(node->name != NULL && ostrstr(node->name, "OLED_") != NULL)
 	{
 		if(oledskinfb == NULL) {
 			if(node->name != NULL && ostrstr(node->name, "OLED_nemesis") != NULL) {
@@ -4055,6 +4068,8 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 		merkskinfb = skinfb;
 		skinfb = oledskinfb;
 	}
+	else
+		m_unlock(&status.oledmutex, 25);
 
 	if(screencalc == 0 || flag == 4)
 	{
@@ -4131,6 +4146,7 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 			lcdskinfb = NULL;
 		}
 		debug(100, "no framebuffer end");
+		m_unlock(&status.oledmutex, 25);
 	}
 	//else
 	//{
