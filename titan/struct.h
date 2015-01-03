@@ -1549,6 +1549,10 @@ struct status
 #endif
 	//pip Einstellungen
 	int pipzap;
+	// guest
+	int whilecount;
+	int sleepcount;
+	char* url;
 } status;
 
 struct fb

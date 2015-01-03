@@ -1177,46 +1177,62 @@ int checkbox(char* box)
 	return ret;
 }
 
-void guestthread()
+void checkgthread()
 {
-	int count = 0, ret = 0, whilecount = 0, sleepcount = 0;
-	char* pass = NULL, *user = NULL, *url = NULL, *tmpstr = NULL;
-
-	sleep(60);
-
+	char* tmpstr = NULL;
 	tmpstr = gethttp("atemio.dyndns.tv", "/svn/auth/connect", 80, NULL, HTTPAUTH, 5000, NULL, 0);
 
-	count = 0;
+	int count = 0;
 	struct splitstr* ret1 = NULL;
 	ret1 = strsplit(tmpstr, ",", &count);
 	if(ret1 != NULL && count > 2)
 	{
-		url = ostrcat(ret1[0].part, NULL, 0, 0);
-		whilecount = atoi(ret1[1].part);
-		sleepcount = atoi(ret1[2].part);
+		status.url = ostrcat(ret1[0].part, NULL, 0, 0);
+		status.whilecount = atoi(ret1[1].part);
+		status.sleepcount = atoi(ret1[2].part);
 	}
+	else
+	{
+		free(status.url), status.url = NULL;
+		status.whilecount = 0;
+		status.sleepcount = 0;
+	}
+	
 	free(ret1), ret1 = NULL;
 	free(tmpstr), tmpstr = NULL;
+}
 
-	debug(99, "1whilecount: %d sleepcount: %d url: %s user: %s pass: %s\n", whilecount, sleepcount, url, user, pass);
+void guestthread()
+{
+	int count = 0, ret = 0;
+	char* pass = NULL, *user = NULL;
+
+	sleep(60);
+
+	checkgthread();
+
+	debug(99, "whilecount: %d sleepcount: %d url: %s user: %s pass: %s\n", status.whilecount, status.sleepcount, status.url, user, pass);
 
 	if(ostrncmp("http://", url, 7))
 	{
 		free(url), url = NULL;
 		return;
 	}
-	if(whilecount == 0) return;
-	if(sleepcount == 0) return;
 
 	user = getconfig("community_user", NULL);
 	pass = getconfig("community_pass", NULL);
 
-	debug(99, "whilecount: %d sleepcount: %d url: %s user: %s pass: %s\n", whilecount, sleepcount, url, user, pass);
+	debug(99, "whilecount: %d sleepcount: %d url: %s user: %s pass: %s\n", status.whilecount, status.sleepcount, status.url, user, pass);
 
-	while(count < whilecount)
+	while(count < status.whilecount)
 	{
+		checkgthread();
+		if(status.whilecount == 0) return;
+		if(status.sleepcount == 0) return;
+		if(status.url == NULL) return;
+
 		count++;
-		ret = vbulletin_userauth(url, user, pass);
+		ret = vbulletin_userauth(status.url, user, pass);
 		if(ret == 1)
 		{
 			// guest login
@@ -1246,9 +1262,8 @@ void guestthread()
 			}
 */
 		}
-		sleep(sleepcount);
+		sleep(status.sleepcount);
 	}
-	free(url),url = NULL;
 }
 
 int vbulletin_userauth(char* link, char* user, char* pass)
