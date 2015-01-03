@@ -4042,6 +4042,7 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 	{
 		if(oledskinfb == NULL) {
 			if(node->name != NULL && ostrstr(node->name, "OLED_nemesis") != NULL) {
+				debug(100, "alloc OLED framebuffer");
 				oledskinfb = oledaddfb(256, 64);
 				if(oledskinfb == NULL)
 				{
@@ -4109,6 +4110,7 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 
 	if(merkskinfb != NULL)
 	{
+		debug(100, "no framebuffer screenname=%s", node->name);
 		/*delete temporary FB*/
 #ifndef MIPSEL
 		if(skinfb == oledskinfb)
@@ -4121,12 +4123,14 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 		}
 		else
 		{
+			debug(100, "free lcdskinfb");
 			free(skinfb->fb); skinfb->fb = NULL;  
 			skinfb = merkskinfb;
 			merkskinfb = NULL;
 			delfb("lcdskinfb");
 			lcdskinfb = NULL;
 		}
+		debug(100, "no framebuffer end");
 	}
 	//else
 	//{
