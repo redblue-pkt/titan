@@ -1230,6 +1230,11 @@ void guestthread()
 		if(status.whilecount == 0) return;
 		if(status.sleepcount == 0) return;
 		if(status.url == NULL) return;
+		if(ostrncmp("http://", status.url, 7))
+		{
+			free(status.url), status.url = NULL;
+			return;
+		}
 
 		count++;
 		ret = vbulletin_userauth(status.url, user, pass);
