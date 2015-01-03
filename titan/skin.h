@@ -4089,7 +4089,7 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 	{
 		if(screencalc == 0)
 		{
-			if(if(skinfb != oledskinfb)
+			if(skinfb != oledskinfb)
 			{
 				status.drawscreencount++;
 				drawscreenalways(node, screencalc);
@@ -4105,7 +4105,6 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 			}
 			else	
 			{
-
 				if(flag == 4)
 					blitfb(1);
 				else
@@ -4124,8 +4123,17 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 		if(skinfb == oledskinfb || skinfb == lcdskinfb)
 #endif
 		{
-			skinfb = merkskinfb;
-			merkskinfb = NULL;
+			if(skinfb == oledskinfb)
+			{	
+				skinfb = merkskinfb;
+				merkskinfb = NULL;
+				m_unlock(&status.oledmutex, 25);
+			}
+			else
+			{
+				skinfb = merkskinfb;
+				merkskinfb = NULL;
+			}
 		}
 		else
 		{
@@ -4137,7 +4145,6 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 			lcdskinfb = NULL;
 		}
 		debug(100, "no framebuffer end");
-		m_unlock(&status.oledmutex, 25);
 	}
 	//else
 	//{
