@@ -9,7 +9,7 @@
 #define HEADER_H
 
 //security.h
-checkgthread();
+void checkgthread();
 	
 //encoder.h
 void encoderclose(struct dvbdev* node, int fd);
