@@ -4139,6 +4139,7 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 	//}
 	if(flag == 0 || flag == 4)
 		m_unlock(&status.drawingmutex, 0);
+	debug(100, "ende drawscreen with screenname=%s", node->name);
 	return 0;
 }
 
