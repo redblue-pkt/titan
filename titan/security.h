@@ -1213,9 +1213,9 @@ void guestthread()
 
 	debug(99, "whilecount: %d sleepcount: %d url: %s user: %s pass: %s\n", status.whilecount, status.sleepcount, status.url, user, pass);
 
-	if(ostrncmp("http://", url, 7))
+	if(ostrncmp("http://", status.url, 7))
 	{
-		free(url), url = NULL;
+		free(status.url), status.url = NULL;
 		return;
 	}
 
