@@ -3864,6 +3864,8 @@ int drawscreenalways(struct skin* node, int screencalc)
 int drawscreennode(struct skin *node, char* nodename, int screencalc)
 {
 	node = getscreennode(node, nodename);
+	
+	m_lock(&status.oledmutex, 25);
 	m_lock(&status.drawingmutex, 0);
 	if(node != status.skinerr)
 		drawnode(node, 1);
@@ -3871,6 +3873,7 @@ int drawscreennode(struct skin *node, char* nodename, int screencalc)
 	drawscreenalways(node, screencalc);
 	blitfb(0);
 	m_unlock(&status.drawingmutex, 0);
+	m_unlock(&status.oledmutex, 25);
 
 	return 0;
 }
@@ -3911,9 +3914,6 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 		return 1;
 	}
 
-	//checkoled
-	m_lock(&status.oledmutex, 25);	
-	
 	if(flag == 0 || flag == 4)
 		m_lock(&status.drawingmutex, 0);
 
@@ -3925,12 +3925,12 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 		if(flag == 0 || flag == 4)
 			m_unlock(&status.drawingmutex, 0);
 		err("setnodeattr ret = 1");
-		m_unlock(&status.oledmutex, 25);
 		return 1;
 	}
 	debug(100, "start drawscree with screenname=%s", node->name);
 	if(node->name != NULL && ostrstr(node->name, "LCD_") != NULL)
 	{
+		m_lock(&status.oledmutex, 25);
 		if(lcdskinfb == NULL) {
 #ifndef MIPSEL			
 			if(node->name != NULL && ostrstr(node->name, "LCD_spf87") != NULL) {
@@ -4053,6 +4053,7 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 	}
 	else if(node->name != NULL && ostrstr(node->name, "OLED_") != NULL)
 	{
+		m_lock(&status.oledmutex, 25);
 		if(oledskinfb == NULL) {
 			if(node->name != NULL && ostrstr(node->name, "OLED_nemesis") != NULL) {
 				debug(100, "alloc OLED framebuffer");
@@ -4068,8 +4069,6 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 		merkskinfb = skinfb;
 		skinfb = oledskinfb;
 	}
-	else
-		m_unlock(&status.oledmutex, 25);
 
 	if(screencalc == 0 || flag == 4)
 	{
