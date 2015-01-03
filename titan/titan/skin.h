@@ -3843,7 +3843,8 @@ int drawscreenalways(struct skin* node, int screencalc)
 {
 	int i, ret = 0;
 	int tmp = sizeof(status.drawallways) / sizeof(skin);
-
+	
+	m_lock(&status.oledmutex, 25);
 	for(i = 0; i < tmp; i++)
 	{
 		if(status.drawallways[i] != NULL)
@@ -3857,23 +3858,21 @@ int drawscreenalways(struct skin* node, int screencalc)
 			}
 		}
 	}
-
+	m_unlock(&status.oledmutex, 25);
+	
 	return ret;
 }
 
 int drawscreennode(struct skin *node, char* nodename, int screencalc)
 {
 	node = getscreennode(node, nodename);
-	
-	m_lock(&status.oledmutex, 25);
+
 	m_lock(&status.drawingmutex, 0);
 	if(node != status.skinerr)
 		drawnode(node, 1);
-
 	drawscreenalways(node, screencalc);
 	blitfb(0);
 	m_unlock(&status.drawingmutex, 0);
-	m_unlock(&status.oledmutex, 25);
 
 	return 0;
 }
@@ -4100,9 +4099,6 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 	{
 		if(screencalc == 0)
 		{
-			status.drawscreencount++;
-			drawscreenalways(node, screencalc);
-
 			if(merkskinfb != NULL) 
 			{	
 				if(node->name != NULL && ostrstr(node->name, "LCD_spf") != NULL) 
@@ -4114,6 +4110,8 @@ int drawscreen(struct skin* node, int screencalc, int flag)
 			}
 			else	
 			{
+				status.drawscreencount++;
+				drawscreenalways(node, screencalc);
 				if(flag == 4)
 					blitfb(1);
 				else
