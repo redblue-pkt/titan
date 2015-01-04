@@ -730,16 +730,6 @@ char* websetmute(char* param, int fmt)
 			buf = ostrcat(buf, "<a href=query?setmute&1><img src=img/speak_on.png border=0 alt=\"Mute on\"></img></a>", 1, 0);
 		else
 			buf = ostrcat(buf, "<a href=query?setmute&0><img src=img/speak_off.png border=0 alt=\"Mute off\"></img></a>", 1, 0);
-			buf = ostrcat(buf, "<a href=query?setvol&10><img src=img/led_off.png border=0></img></a> ", 1, 0);
-			buf = ostrcat(buf, "<a href=query?setvol&20><img src=img/led_off.png border=0></img></a> ", 1, 0);
-			buf = ostrcat(buf, "<a href=query?setvol&30><img src=img/led_off.png border=0></img></a> ", 1, 0);
-			buf = ostrcat(buf, "<a href=query?setvol&40><img src=img/led_off.png border=0></img></a> ", 1, 0);
-			buf = ostrcat(buf, "<a href=query?setvol&50><img src=img/led_off.png border=0></img></a> ", 1, 0);
-			buf = ostrcat(buf, "<a href=query?setvol&60><img src=img/led_off.png border=0></img></a> ", 1, 0);
-			buf = ostrcat(buf, "<a href=query?setvol&70><img src=img/led_off.png border=0></img></a> ", 1, 0);
-			buf = ostrcat(buf, "<a href=query?setvol&80><img src=img/led_off.png border=0></img></a> ", 1, 0);
-			buf = ostrcat(buf, "<a href=query?setvol&90><img src=img/led_off.png border=0></img></a> ", 1, 0);
-			buf = ostrcat(buf, "<a href=query?setvol&100><img src=img/led_off.png border=0></img></a> ", 1, 0);
 		buf = ostrcat(buf, "</center></body></html>", 1, 0);
 	}
 	else
