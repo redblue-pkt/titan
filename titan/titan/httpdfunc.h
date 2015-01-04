@@ -3542,7 +3542,7 @@ char* webadjust(char* param, int fmt)
 printf("webadjust param: %s\n",param);
 printf("webadjust fmt: %d\n",fmt);
 
-	char* buf = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *sendstr = NULL;
+	char* buf = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *sendstr = NULL;
 	int i = 0, max = 0, count = 0, maxlen = 0, pos = 0;
 
 	
@@ -4731,6 +4731,7 @@ printf("webadjust fmt: %d\n",fmt);
 
 ///////////////////debuglevel
 #ifdef BETA
+	char* tmpstr2 = NULL;	
 	struct splitstr* ret2 = NULL;	
 	tmpstr = ostrcat("10\n40\n50\n60\n70\n80\n90\n99\n100\n130\n150\n200\n250\n270\n300\n400\n900\n1000", NULL, 0, 0);
 	tmpstr2 = ostrcat(" - Minimal\n - TopfieldVFD\n - MediaCenter\n - Menulist\n  - Network Browser\n - Harddisk\n - Screensaver\n - Tithek\n - Global\n - TPK\n - ePlayer\n - Tuning\n - Stream/Record/Softcam\n - EPG\n - Radiotext\n - Subtitle\n - Mutex\n - Function", NULL, 0, 0);
