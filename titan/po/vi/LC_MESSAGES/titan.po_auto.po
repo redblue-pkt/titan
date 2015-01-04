@@ -16,8 +16,8 @@ msgstr ""
 #: facebook.h:157 facebook.h:167 faststream.h:30 faststream.h:79
 #: faststream.h:91 faststream.h:103 faststream.h:160 filemanager.h:95
 #: filemanager.h:100 filemanager.h:206 filemanager.h:279 filemanager.h:289
-#: filemanager.h:319 filemanager.h:329 filenuke.h:37 filenuke.h:84
-#: filenuke.h:96 filenuke.h:108 filenuke.h:157 firedrive.h:33 firedrive.h:66
+#: filemanager.h:319 filemanager.h:329 filenuke.h:46 filenuke.h:94
+#: filenuke.h:106 filenuke.h:118 filenuke.h:190 firedrive.h:33 firedrive.h:66
 #: firedrive.h:72 firedrive.h:122 firedrive.h:128 firedrive.h:138 flashx.h:26
 #: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
 #: global.h:5566 global.h:6191 global.h:6260 global.h:6279 global.h:6454
@@ -62,15 +62,16 @@ msgstr ""
 #: plugins_optimize_skin.xml.h:3 plugins_rgui_skin.xml.h:3
 #: plugins_sudoku_skin.xml.h:13 plugins_tiwakeup_skin.xml.h:3
 #: plugins_wins3_skin.xml.h:3 possetup.h:98 primeshare.h:29 primeshare.h:73
-#: primeshare.h:79 primeshare.h:124 putlocker.h:32 putlocker.h:79
-#: putlocker.h:85 putlocker.h:91 putlocker.h:142 putlocker.h:152
-#: putlocker.h:225 readerconfig.h:343 readerconfig.h:443 readerconfig.h:444
-#: readerconfig.h:488 readerconfig.h:489 record.h:387 record.h:1029
-#: record.h:1550 rectimer.h:577 rectimer.h:1231 rectimer.h:1377
-#: rectimer.h:1389 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
-#: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
-#: rtl2now.h:31 scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1901
-#: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 scriptexec.h:41 service.h:738
+#: primeshare.h:79 primeshare.h:124 promptfile.h:46 promptfile.h:94
+#: promptfile.h:136 putlocker.h:32 putlocker.h:79 putlocker.h:85
+#: putlocker.h:91 putlocker.h:142 putlocker.h:152 putlocker.h:225
+#: readerconfig.h:343 readerconfig.h:443 readerconfig.h:444 readerconfig.h:488
+#: readerconfig.h:489 record.h:387 record.h:1029 record.h:1550 rectimer.h:577
+#: rectimer.h:1231 rectimer.h:1377 rectimer.h:1389 restoredefault.h:10
+#: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
+#: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:31
+#: scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1901 scan.h:1992
+#: scan.h:2358 scart.h:12 scart.h:25 scriptexec.h:41 service.h:738
 #: service.h:983 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:235
 #: skins_dlna_skin.xml.h:8 skinselector.h:218 skins_facebook_skin.xml.h:5
 #: skins_mboxinfo_skin.xml.h:2 skins_mc_skin.xml.h:38
@@ -87,7 +88,7 @@ msgstr ""
 #: system_update.h:270 thefile.h:34 thefile.h:68 thefile.h:205 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
 #: titan.c:346 titan.c:355 titan.c:1005 titan.c:1014 titan.c:1142 titan.c:1163
-#: titan.c:1169 titan.c:1180 titan.c:1186 tithek.c:84 tithek_global.h:248
+#: titan.c:1169 titan.c:1180 titan.c:1186 tithek.c:85 tithek_global.h:250
 #: tithek.h:670 tithek.h:1166 tithek.h:1209 tithek.h:1459 tithek.h:1481
 #: tithek.h:1497 tithek.h:2067 tithek.h:2094 tithek.h:2108 tithek.h:2118
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
@@ -122,8 +123,8 @@ msgstr "Ok"
 #: facebook.h:157 facebook.h:167 faststream.h:30 faststream.h:79
 #: faststream.h:91 faststream.h:103 faststream.h:160 filemanager.h:95
 #: filemanager.h:100 filemanager.h:206 filemanager.h:279 filemanager.h:289
-#: filemanager.h:319 filemanager.h:329 filenuke.h:37 filenuke.h:84
-#: filenuke.h:96 filenuke.h:108 filenuke.h:157 firedrive.h:33 firedrive.h:66
+#: filemanager.h:319 filemanager.h:329 filenuke.h:46 filenuke.h:94
+#: filenuke.h:106 filenuke.h:118 filenuke.h:190 firedrive.h:33 firedrive.h:66
 #: firedrive.h:72 firedrive.h:122 firedrive.h:128 firedrive.h:138 flashx.h:26
 #: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
 #: global.h:5566 global.h:6191 global.h:6260 global.h:6279 global.h:6454
@@ -173,16 +174,16 @@ msgstr "Ok"
 #: plugins_rgui_skin.xml.h:2 plugins_stopifnotused_skin.xml.h:4
 #: plugins_sudoku_skin.xml.h:7 plugins_tiwakeup_skin.xml.h:2
 #: plugins_wins3_skin.xml.h:1 possetup.h:98 primeshare.h:29 primeshare.h:73
-#: primeshare.h:79 primeshare.h:124 putlocker.h:32 putlocker.h:79
-#: putlocker.h:85 putlocker.h:91 putlocker.h:142 putlocker.h:152
-#: putlocker.h:225 readerconfig.h:343 readerconfig.h:443 readerconfig.h:444
-#: readerconfig.h:488 readerconfig.h:489 record.h:90 record.h:387
-#: record.h:1029 record.h:1275 record.h:1525 record.h:1550 rectimer.h:577
-#: rectimer.h:1231 rectimer.h:1377 rectimer.h:1389 restoredefault.h:10
-#: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
-#: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:31
-#: scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1901 scan.h:1992
-#: scan.h:2358 scart.h:12 scart.h:25 scriptexec.h:41 service.h:738
+#: primeshare.h:79 primeshare.h:124 promptfile.h:46 promptfile.h:94
+#: promptfile.h:136 putlocker.h:32 putlocker.h:79 putlocker.h:85
+#: putlocker.h:91 putlocker.h:142 putlocker.h:152 putlocker.h:225
+#: readerconfig.h:343 readerconfig.h:443 readerconfig.h:444 readerconfig.h:488
+#: readerconfig.h:489 record.h:90 record.h:387 record.h:1029 record.h:1275
+#: record.h:1525 record.h:1550 rectimer.h:577 rectimer.h:1231 rectimer.h:1377
+#: rectimer.h:1389 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
+#: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
+#: rtl2now.h:31 scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1901
+#: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 scriptexec.h:41 service.h:738
 #: service.h:983 shared.h:29 shared.h:65 shared.h:82
 #: skin_default_skin.xml.h:228 skins_autotimer_skin.xml.h:7
 #: skins_callmonitor1_skin.xml.h:11 skins_catcatch_skin.xml.h:4
@@ -204,7 +205,7 @@ msgstr "Ok"
 #: thefile.h:205 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1005
 #: titan.c:1014 titan.c:1142 titan.c:1163 titan.c:1169 titan.c:1180
-#: titan.c:1186 tithek.c:84 tithek_global.h:248 tithek.h:670 tithek.h:1166
+#: titan.c:1186 tithek.c:85 tithek_global.h:250 tithek.h:670 tithek.h:1166
 #: tithek.h:1209 tithek.h:1459 tithek.h:1481 tithek.h:1497 tithek.h:2067
 #: tithek.h:2094 tithek.h:2108 tithek.h:2118 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922
@@ -556,7 +557,7 @@ msgstr ""
 #: facebook.h:167 faststream.h:30 faststream.h:79 faststream.h:91
 #: faststream.h:103 faststream.h:160 filemanager.h:95 filemanager.h:100
 #: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:329
-#: filenuke.h:37 filenuke.h:84 filenuke.h:96 filenuke.h:108 filenuke.h:157
+#: filenuke.h:46 filenuke.h:94 filenuke.h:106 filenuke.h:118 filenuke.h:190
 #: firedrive.h:33 firedrive.h:66 firedrive.h:72 firedrive.h:122
 #: firedrive.h:128 firedrive.h:138 flashx.h:26 flashx.h:84 flashx.h:138
 #: flashx.h:195 flashx.h:233 flashx.h:270 global.h:5566 global.h:6191
@@ -594,7 +595,8 @@ msgstr ""
 #: played.h:84 played.h:90 played.h:102 played.h:114 played.h:171 player.h:101
 #: play.h:614 play.h:1286 play.h:1488 play.h:1697 play.h:1708 possetup.h:98
 #: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
-#: putlocker.h:32 putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
+#: promptfile.h:46 promptfile.h:94 promptfile.h:136 putlocker.h:32
+#: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:343 readerconfig.h:443
 #: readerconfig.h:444 readerconfig.h:488 readerconfig.h:489 record.h:387
 #: record.h:1029 record.h:1275 record.h:1525 record.h:1550 rectimer.h:577
@@ -612,8 +614,8 @@ msgstr ""
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1142
-#: titan.c:1163 titan.c:1169 titan.c:1180 titan.c:1186 tithek.c:84
-#: tithek_global.h:248 tithek.h:670 tithek.h:1166 tithek.h:1209 tithek.h:1459
+#: titan.c:1163 titan.c:1169 titan.c:1180 titan.c:1186 tithek.c:85
+#: tithek_global.h:250 tithek.h:670 tithek.h:1166 tithek.h:1209 tithek.h:1459
 #: tithek.h:1481 tithek.h:2067 tithek.h:2094 tithek.h:2108 tithek.h:2118
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
 #: tmdb.h:759 tmdb.h:922 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3195
@@ -1210,10 +1212,10 @@ msgstr "trái"
 msgid "west"
 msgstr "phải"
 
-#: divxstage.h:36 faststream.h:30 filenuke.h:37 firedrive.h:33 flashx.h:26
+#: divxstage.h:36 faststream.h:30 filenuke.h:46 firedrive.h:33 flashx.h:26
 #: movreel.h:30 movshare.h:34 novamov.h:35 nowvideo.h:44 played.h:30
-#: primeshare.h:29 putlocker.h:32 shared.h:29 streamcloud.h:31 thefile.h:34
-#: videoweed.h:35 vidstream.h:45 xvidstage.h:54
+#: primeshare.h:29 promptfile.h:46 putlocker.h:32 shared.h:29 streamcloud.h:31
+#: thefile.h:34 videoweed.h:35 vidstream.h:45 xvidstage.h:54
 msgid "Hoster Url not http://"
 msgstr ""
 
@@ -1224,15 +1226,16 @@ msgid ""
 msgstr ""
 
 #: divxstage.h:150 faststream.h:79 faststream.h:90 faststream.h:102
-#: faststream.h:160 filenuke.h:84 filenuke.h:95 filenuke.h:107 filenuke.h:157
+#: faststream.h:160 filenuke.h:94 filenuke.h:105 filenuke.h:117 filenuke.h:190
 #: firedrive.h:66 firedrive.h:122 firedrive.h:137 flashx.h:83 flashx.h:137
 #: flashx.h:194 flashx.h:232 flashx.h:269 movreel.h:79 movreel.h:102
 #: movreel.h:114 movreel.h:166 movreel.h:214 movshare.h:157 played.h:84
 #: played.h:101 played.h:113 played.h:171 primeshare.h:73 primeshare.h:124
-#: putlocker.h:79 putlocker.h:142 putlocker.h:151 putlocker.h:225 shared.h:82
-#: solarmovie.h:35 solarmovie.h:46 streamcloud.h:84 streamcloud.h:97
-#: streamcloud.h:128 streamcloud.h:167 vidstream.h:86 vidstream.h:97
-#: vidstream.h:167 xvidstage.h:100 xvidstage.h:177
+#: promptfile.h:94 promptfile.h:136 putlocker.h:79 putlocker.h:142
+#: putlocker.h:151 putlocker.h:225 shared.h:82 solarmovie.h:35 solarmovie.h:46
+#: streamcloud.h:84 streamcloud.h:97 streamcloud.h:128 streamcloud.h:167
+#: vidstream.h:86 vidstream.h:97 vidstream.h:167 xvidstage.h:100
+#: xvidstage.h:177
 msgid "The page is temporarily unavailable"
 msgstr ""
 
@@ -9301,16 +9304,16 @@ msgstr "Không xác định được lỗi."
 msgid "Automatic stop in 10 seconds."
 msgstr "Tự động dừng trong 5 giây !"
 
-#: tithek.c:84
+#: tithek.c:85
 msgid ""
 "Alternativ Audio Firmware not working korrekt with all videos (DTSDOWNMIX)!"
 msgstr ""
 
-#: tithek.c:106
+#: tithek.c:107
 msgid "Tithek - Mainmenu"
 msgstr ""
 
-#: tithek_global.h:248 tithek.h:2067
+#: tithek_global.h:250 tithek.h:2067
 msgid "The hoster is not yet supported !"
 msgstr "Máy chủ chưa được hỗ trợ !"
 
