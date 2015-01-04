@@ -13113,9 +13113,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Zapback aktivuoas. Ar norite j sustabdyti ?"
-
-#~ msgid "The file that you requested could not be found"
-#~ msgstr "Failas, kur praoma negaljo rasti"
-
-#~ msgid "No such file No such user exist File not found"
-#~ msgstr "Nra tokio failo Tokio vartotojo neegzistuoja Failas nerastas"

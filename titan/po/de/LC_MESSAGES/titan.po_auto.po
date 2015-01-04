@@ -13230,9 +13230,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid "The file that you requested could not be found"
-#~ msgstr "Die Datei die Sie angefordert haben konnte nicht gefunden werden."
-
-#~ msgid "No such file No such user exist File not found"
-#~ msgstr "Die Datei oder der Benutzer existiert nicht mehr."
