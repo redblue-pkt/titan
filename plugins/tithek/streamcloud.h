@@ -75,7 +75,7 @@ char* streamcloud(char* link)
 		goto end;
 	}
 
-	waitmsgbar(16, 0, _("Connect with Hoster wait 16 seconds"), 1);
+//	waitmsgbar(16, 0, _("Connect with Hoster wait 16 seconds"), 1);
 	
 	titheklog(debuglevel, "/tmp/streamcould1_get", NULL, NULL, NULL, tmpstr);
 
@@ -131,7 +131,8 @@ char* streamcloud(char* link)
 
 	hash = ostrcat(hash, "hash=", 1, 0);
 	hash = ostrcat(hash, hashline, 1, 0);
-	hash = ostrcat(hash, "&imhuman=Weiter+zum+Video", 1, 0);
+//	hash = ostrcat(hash, "&imhuman=Weiter+zum+Video", 1, 0);
+	hash = ostrcat(hash, "&imhuman=Watch+video+now", 1, 0);	
 	hash = ostrcat(hash, "&usr_login=", 1, 0);	
 	hash = ostrcat(hash, usr_login, 1, 0);
 	hash = ostrcat(hash, "&referer=", 1, 0);
@@ -141,10 +142,11 @@ char* streamcloud(char* link)
 	hash = ostrcat(hash, "&id=", 1, 0);	
 	hash = ostrcat(hash, id, 1, 0);
 	hash = ostrcat(hash, "&op=", 1, 0);
-	hash = ostrcat(hash, op, 1, 0);
+//	hash = ostrcat(hash, op, 1, 0);
+	hash = ostrcat(hash, "download2", 1, 0);
 	debug(99, "hash: %s", hash);
 	hashlen = oitoa(strlen(hash));
-
+/*
 	send = ostrcat(send, "POST ", 1, 0);
 	send = ostrcat(send, tmppath, 1, 0);
 	send = ostrcat(send, " HTTP/1.1\r\nContent-Length: ", 1, 0);
@@ -154,6 +156,24 @@ char* streamcloud(char* link)
 	send = ostrcat(send, "\r\nCookie: afc=", 1, 0);
 	send = ostrcat(send, cookie, 1, 0);
 	send = ostrcat(send, "\r\nContent-Type: application/x-www-form-urlencoded\r\n\r\n", 1, 0);
+	send = ostrcat(send, hash, 1, 0);
+	debug(99, "send: %s", send);
+*/
+	send = ostrcat(send, "POST ", 1, 0);
+	send = ostrcat(send, tmppath, 1, 0);
+	send = ostrcat(send, " HTTP/1.0\r\nContent-Length: ", 1, 0);
+	send = ostrcat(send, hashlen, 1, 0);
+	send = ostrcat(send, "\r\nAccept-Encoding: gzip", 1, 0);	
+	send = ostrcat(send, "\r\nHost: ", 1, 0);
+	send = ostrcat(send, tmphost, 1, 0);
+	send = ostrcat(send, "\r\nUser-Agent: Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:30.0) Gecko/20100101 Firefox/30.0", 1, 0);
+	send = ostrcat(send, "\r\nConnection: close", 1, 0);
+	send = ostrcat(send, "\r\nReferer: ", 1, 0);
+	send = ostrcat(send, link, 1, 0);
+//	send = ostrcat(send, "\r\nCookie: ", 1, 0);
+//	send = ostrcat(send, cokkie, 1, 0);
+	send = ostrcat(send, "\r\nContent-Type: application/x-www-form-urlencoded", 1, 0);
+	send = ostrcat(send, "\r\n\r\n", 1, 0);
 	send = ostrcat(send, hash, 1, 0);
 	debug(99, "send: %s", send);
 
