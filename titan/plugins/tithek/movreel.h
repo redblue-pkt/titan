@@ -43,129 +43,46 @@ char* movreel(char* link)
 	}
 
 	tmppath = ostrcat("/", path, 0, 0);
-//	free(path), path = NULL;
 
-/////////////
-
-
-/*
-	tmphost = ostrcat("www.", host, 0, 0);
-	tmppath = ostrcat("/", file, 0, 0);
-	debug(99, "tmphost: %s", tmphost);
-	ip = get_ip(tmphost);
-	debug(99, "ip: %s", ip);
-	debug(99, "test host only: %s", get_ip(host));
-	debug(99, "tmppath: %s", tmppath);
-*/
+	if(!ostrncmp("www.", tmphost, 7))
+		tmphost = ostrcat("www.", tmphost, 0, 1);
+	tmppath = string_replace(".html", "", tmppath, 1);
 
 	send = ostrcat(send, "GET ", 1, 0);
 	send = ostrcat(send, tmppath, 1, 0);
-	send = ostrcat(send, " HTTP/1.1\r\nAccept-Encoding: identity\r\n", 1, 0);
-	send = ostrcat(send, "Accept-Language: de-DE,de;q=0.8,en-US;q=0.6,en;q=0.4\r\n", 1, 0);
-	send = ostrcat(send, "Host: ", 1, 0);
+	send = ostrcat(send, " HTTP/1.0", 1, 0);
+	send = ostrcat(send, "\r\nHost: ", 1, 0);
 	send = ostrcat(send, tmphost, 1, 0);
-	send = ostrcat(send, "\r\nUser-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; de-DE; rv:1.9.0.3) Gecko/2008092417 Firefox/3.0.3\r\n", 1, 0);
-	send = ostrcat(send, "Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7\r\n", 1, 0);
-	send = ostrcat(send, "Connection: close\r\nCookie: xxx2=ok;\r\n\r\n", 1, 0);
+	send = ostrcat(send, "\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1", 1, 0);
+	send = ostrcat(send, "\r\nConnection: close", 1, 0);
+	send = ostrcat(send, "\r\nAccept-Encoding: gzip", 1, 0);	
+	send = ostrcat(send, "\r\n\r\n", 1, 0);
 	debug(99, "send: %s", send);
 
-	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
+	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 15000, 1);
 	free(send), send = NULL;
 	debug(99, "tmpstr: %s", tmpstr);
 	titheklog(debuglevel, "/tmp/movreel1_get", NULL, NULL, NULL, tmpstr);
+	char* cokkie = string_resub("Set-Cookie: ", ";", tmpstr, 0);
 
-	if(tmpstr == NULL)
-	{
-		textbox(_("Message"), _("The page is temporarily unavailable") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
-		goto end;
-	}
-
-	if(tmpstr == NULL || ostrstr(tmpstr, "Die von Ihnen angeforderte Datei konnte nicht gefunden werden") != NULL)
-	{
-		textbox(_("Message"), _("The file that you requested could not be found"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 400, 0, 0);
-		goto end;
-	}
-
-	if(tmpstr == NULL || ostrstr(tmpstr, "No such file No such user exist File not found") != NULL)
-	{
-		textbox(_("Message"), _("No such file No such user exist File not found"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 400, 0, 0);
-		goto end;
-	}
-
-	if(tmpstr == NULL || ostrstr(tmpstr, "<title>The page is temporarily unavailable</title>") != NULL)
-	{
-		error = string_resub("<td align=\"center\" valign=\"middle\">", "</td>", tmpstr, 0);
-		string_deltags(error);
-		stringreplacechar(error, '|', '\0');
-		error = strstrip(error);
-		if(error == NULL || strlen(error) == 0)
-			error = ostrcat(_("The page is temporarily unavailable"), error, 0, 1);
-		textbox(_("Message"), error, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 400, 0, 0);
-		goto end;
-	}
-
-	if(ostrstr(tmpstr, "<title>Direct IP access not allowed") != NULL)
-	{
-		error = string_resub("<title>", "</title>", tmpstr, 0);
-		string_deltags(error);
-		stringreplacechar(error, '|', '\0');
-		error = strstrip(error);
-		if(error == NULL || strlen(error) == 0)
-			error = ostrcat(_("The page is temporarily unavailable"), error, 0, 1);
-		textbox(_("Message"), error, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 400, 0, 0);
-		goto end;
-	}
-
-	//get hash from tmpstr
-	char* pos1 = ostrstr(tmpstr, "<input type=\"hidden\" name=\"fname\" value=");
-	fname = getxmlentry(pos1, "value=");
-	debug(99, "fname: %s", fname);
-	if(fname == NULL) goto end;
-
-	char* pos2 = ostrstr(tmpstr, "<input type=\"hidden\" name=\"id\" value=");
-	id = getxmlentry(pos2, "value=");
-	debug(99, "id: %s", id);
-	if(id == NULL) goto end;
-
-	char* pos3 = ostrstr(tmpstr, "<input type=\"hidden\" name=\"op\" value=");
-	op = getxmlentry(pos3, "value=");
-	free(tmpstr); tmpstr = NULL;
-	debug(99, "op: %s", op);
-	if(op == NULL) goto end;
-	free(tmpstr), tmpstr = NULL;
-
-	hash = ostrcat(hash, "id=", 1, 0);	
-	hash = ostrcat(hash, id, 1, 0);
-	hash = ostrcat(hash, "&referer=&fname=", 1, 0);
-	hash = ostrcat(hash, fname, 1, 0);
-	hash = ostrcat(hash, "&method_free=%20Kostenloser%20Download&usr_login=&op=", 1, 0);
-	hash = ostrcat(hash, op, 1, 0);
-	debug(99, "hash: %s", hash);
-
-	hashlen = oitoa(strlen(hash));
-	
-	//create send string
-	send = ostrcat(send, "POST /", 1, 0);
-	send = ostrcat(send, id, 1, 0);
-	send = ostrcat(send, " HTTP/1.0\r\nContent-Length: ", 1, 0);
-	send = ostrcat(send, hashlen, 1, 0);
-	send = ostrcat(send, "\r\nAccept-Encoding: gzip\r\nConnection: close\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nHost: ", 1, 0);
+	send = ostrcat(send, "GET ", 1, 0);
+	send = ostrcat(send, tmppath, 1, 0);
+	send = ostrcat(send, " HTTP/1.0", 1, 0);
+	send = ostrcat(send, "\r\nHost: ", 1, 0);
 	send = ostrcat(send, tmphost, 1, 0);
-	send = ostrcat(send, "\r\nContent-Type: application/x-www-form-urlencoded\r\n\r\n", 1, 0);
-	send = ostrcat(send, hash, 1, 0);
+	send = ostrcat(send, "\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1", 1, 0);
+	send = ostrcat(send, "\r\nCookie: ", 1, 0);
+	send = ostrcat(send, cokkie, 1, 0);
+	send = ostrcat(send, "\r\nConnection: close", 1, 0);
+	send = ostrcat(send, "\r\nAccept-Encoding: gzip", 1, 0);	
+	send = ostrcat(send, "\r\n\r\n", 1, 0);
 	debug(99, "send: %s", send);
-	free(hash), hash = NULL;
 
-	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 0);
+	free(tmpstr), tmpstr = NULL;
+	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 15000, 1);
 	free(send), send = NULL;
 	debug(99, "tmpstr: %s", tmpstr);
-	titheklog(debuglevel, "/tmp/movreel2_post", NULL, NULL, NULL, tmpstr);
-
-	if(tmpstr == NULL)
-	{
-		textbox(_("Message"), _("The page is temporarily unavailable") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
-		goto end;
-	}
+	titheklog(debuglevel, "/tmp/movreel2_get", NULL, NULL, NULL, tmpstr);
 
 	char* pos4 = ostrstr(tmpstr, "<input type=\"hidden\" name=\"id\" value=");
 	id = getxmlentry(pos4, "value=");
@@ -182,12 +99,13 @@ char* movreel(char* link)
 	debug(99, "op: %s", op);
 	if(op == NULL) goto end;
 
-	hash = ostrcat(hash, "id=", 1, 0);	
-	hash = ostrcat(hash, id, 1, 0);
-	hash = ostrcat(hash, "&referer=&rand=", 1, 0);
+	hash = ostrcat(hash, "rand=", 1, 0);
 	hash = ostrcat(hash, rand, 1, 0);
-	hash = ostrcat(hash, "&method_free=%20Kostenloser%20Download&usr_login=&op=", 1, 0);
+	hash = ostrcat(hash, "&referer=%22&method_premium=&down_script=1&method_free=%22&id=", 1, 0);
+	hash = ostrcat(hash, id, 1, 0);
+	hash = ostrcat(hash, "&op=", 1, 0);
 	hash = ostrcat(hash, op, 1, 0);
+
 	debug(99, "hash: %s", hash);
 
 	hashlen = oitoa(strlen(hash));
@@ -199,12 +117,17 @@ char* movreel(char* link)
 	send = ostrcat(send, hashlen, 1, 0);
 	send = ostrcat(send, "\r\nAccept-Encoding: gzip\r\nConnection: close\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nHost: ", 1, 0);
 	send = ostrcat(send, tmphost, 1, 0);
+
+	send = ostrcat(send, "\r\nCookie: ", 1, 0);
+	send = ostrcat(send, cokkie, 1, 0);
+
 	send = ostrcat(send, "\r\nContent-Type: application/x-www-form-urlencoded\r\n\r\n", 1, 0);
 	send = ostrcat(send, hash, 1, 0);
 	debug(99, "send: %s", send);
 	free(hash), hash = NULL;
-	
-	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 0);
+	free(cokkie), cokkie = NULL;
+
+	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 15000, 0);
 	free(send), send = NULL;
 	debug(99, "post: %s", tmpstr);
 	titheklog(debuglevel, "/tmp/movreel3_post", NULL, NULL, NULL, tmpstr);
@@ -215,7 +138,9 @@ char* movreel(char* link)
 		goto end;
 	}
 
-	streamlink = string_resub("var file_link = '", "'", tmpstr, 0);		
+	char* streamlink1 = string_resub("<span style=", "</span>", tmpstr, 0);		
+	streamlink = string_resub("<a href=\"", "\"", streamlink1, 0);		
+	free(streamlink1); streamlink1 = NULL;
 
 	titheklog(debuglevel, "/tmp/movreel4_streamlink", NULL, NULL, NULL, streamlink);
 
