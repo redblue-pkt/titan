@@ -52,7 +52,7 @@ void* convertfunc(char *value, uint8_t *rettype)
 		return &getoledrec;
 	}
 
-	if(ostrcmp("getstreaming", value) == 0)
+	if(ostrcmp("getoledstreaming", value) == 0)
 	{
 		*rettype = FUNCPIC;
 		return &getoledstreaming;
