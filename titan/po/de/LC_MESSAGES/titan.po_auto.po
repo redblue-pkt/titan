@@ -13243,6 +13243,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid "Connect with Hoster wait 16 seconds"
-#~ msgstr "Verbinde mit dem Hoster, warten Sie 16 Sekunden"
