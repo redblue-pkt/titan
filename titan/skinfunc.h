@@ -193,6 +193,23 @@ char* getrec(struct skin* node, char* path)
 			return tmpstr;
 		}
 
+///streaming png
+	char* getoledstreaming(struct skin* node, char* path)
+		{
+			char* tmpstr = NULL;
+
+			if(status.streaming > 0)
+			{
+				tmpstr = ostrcat("oled_streaming.png", NULL, 0, 0);
+
+				if(path != NULL)
+					tmpstr = ostrcat("/", tmpstr, 0, 1);
+				tmpstr = ostrcat(path, tmpstr, 0, 1);
+			}
+		
+			return tmpstr;
+		}
+
 #endif
 
 
