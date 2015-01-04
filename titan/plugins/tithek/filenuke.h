@@ -25,6 +25,15 @@ char* filenuke(char* link)
 
 	tmplink = ostrcat(link, NULL, 0, 0);
 
+	debug(99, "tmplink: %s", tmplink);
+
+	char* referer = NULL;
+//	htmldecode(referer, tmplink);
+	referer = htmlencode(tmplink);
+	referer = string_replace_all("/", "%2F", referer, 1);
+	debug(99, "referer: %s", referer);
+	
+	
 	if(ostrstr(link, "/Out/?s=") != NULL)
 	{
 		tmplink = string_replace("/Out/?s=", "", tmplink, 1);
@@ -63,15 +72,16 @@ char* filenuke(char* link)
 	debug(99, "test host only: %s", get_ip(host));
 	debug(99, "tmppath: %s", tmppath);
 */
+
 	send = ostrcat(send, "GET ", 1, 0);
 	send = ostrcat(send, tmppath, 1, 0);
-	send = ostrcat(send, " HTTP/1.1\r\nAccept-Encoding: identity\r\n", 1, 0);
-	send = ostrcat(send, "Accept-Language: de-DE,de;q=0.8,en-US;q=0.6,en;q=0.4\r\n", 1, 0);
-	send = ostrcat(send, "Host: ", 1, 0);
+	send = ostrcat(send, " HTTP/1.0", 1, 0);
+	send = ostrcat(send, "\r\nHost: ", 1, 0);
 	send = ostrcat(send, tmphost, 1, 0);
-	send = ostrcat(send, "\r\nUser-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; de-DE; rv:1.9.0.3) Gecko/2008092417 Firefox/3.0.3\r\n", 1, 0);
-	send = ostrcat(send, "Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7\r\n", 1, 0);
-	send = ostrcat(send, "Connection: close\r\nCookie: xxx2=ok;\r\n\r\n", 1, 0);
+	send = ostrcat(send, "\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1", 1, 0);
+	send = ostrcat(send, "\r\nConnection: close", 1, 0);
+	send = ostrcat(send, "\r\nAccept-Encoding: gzip", 1, 0);	
+	send = ostrcat(send, "\r\n\r\n", 1, 0);
 	debug(99, "send: %s", send);
 
 	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
@@ -113,19 +123,24 @@ char* filenuke(char* link)
 	char* pos1 = ostrstr(tmpstr, "<input type=\"hidden\" name=\"fname\" value=");
 	fname = getxmlentry(pos1, "value=");
 	debug(99, "fname: %s", fname);
-	if(fname == NULL) goto end;
+//	if(fname == NULL) goto end;
 
 	char* pos2 = ostrstr(tmpstr, "<input type=\"hidden\" name=\"id\" value=");
 	id = getxmlentry(pos2, "value=");
 	debug(99, "id: %s", id);
-	if(id == NULL) goto end;
+//	if(id == NULL) goto end;
+
+	char* cokkie = string_resub("Set-Cookie: ", ";", tmpstr, 0);
 
 	char* pos3 = ostrstr(tmpstr, "<input type=\"hidden\" name=\"op\" value=");
 	op = getxmlentry(pos3, "value=");
 	free(tmpstr); tmpstr = NULL;
 	debug(99, "op: %s", op);
-	if(op == NULL) goto end;
+//	if(op == NULL) goto end;
 
+
+
+/*
 	hash = ostrcat(hash, "id=", 1, 0);	
 	hash = ostrcat(hash, id, 1, 0);
 	hash = ostrcat(hash, "&referer=&fname=", 1, 0);
@@ -133,19 +148,37 @@ char* filenuke(char* link)
 	hash = ostrcat(hash, "&method_free=Free&usr_login=&op=", 1, 0);
 	hash = ostrcat(hash, op, 1, 0);
 	debug(99, "hash: %s", hash);
+*/
+	hash = ostrcat(hash, "method_free=Free&referer=", 1, 0);
+	hash = ostrcat(hash, referer, 1, 0);
+	hash = ostrcat(hash, "&usr_login=&op=download1", 1, 0);
+	debug(99, "hash: %s", hash);
 
 	hashlen = oitoa(strlen(hash));
 	
 	//create send string
-	send = ostrcat(send, "POST /", 1, 0);
-	send = ostrcat(send, id, 1, 0);
+//	send = ostrcat(send, "POST /", 1, 0);
+//	send = ostrcat(send, id, 1, 0);
+	send = ostrcat(send, "POST ", 1, 0);
+	send = ostrcat(send, tmppath, 1, 0);
+
 	send = ostrcat(send, " HTTP/1.0\r\nContent-Length: ", 1, 0);
 	send = ostrcat(send, hashlen, 1, 0);
-	send = ostrcat(send, "\r\nAccept-Encoding: gzip\r\nConnection: close\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nHost: ", 1, 0);
+	send = ostrcat(send, "\r\nAccept-Encoding: gzip", 1, 0);	
+	send = ostrcat(send, "\r\nHost: ", 1, 0);
 	send = ostrcat(send, tmphost, 1, 0);
-	send = ostrcat(send, "\r\nContent-Type: application/x-www-form-urlencoded\r\n\r\n", 1, 0);
+	send = ostrcat(send, "\r\nUser-Agent: Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:30.0) Gecko/20100101 Firefox/30.0", 1, 0);
+	send = ostrcat(send, "\r\nConnection: close", 1, 0);
+	send = ostrcat(send, "\r\nReferer: ", 1, 0);
+	send = ostrcat(send, link, 1, 0);
+	send = ostrcat(send, "\r\nCookie: ", 1, 0);
+	send = ostrcat(send, cokkie, 1, 0);
+	send = ostrcat(send, "\r\nContent-Type: application/x-www-form-urlencoded", 1, 0);
+	send = ostrcat(send, "\r\n\r\n", 1, 0);
 	send = ostrcat(send, hash, 1, 0);
 	debug(99, "send: %s", send);
+
+	free(cokkie), cokkie = NULL;
 	
 	post = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 0);
 	free(send), send = NULL;
@@ -168,124 +201,135 @@ char* filenuke(char* link)
 	debug(99, "post: %s", post);
 	titheklog(debuglevel, "/tmp/filenuke4_post2", NULL, NULL, NULL, post);
 
-	free(tmpstr),tmpstr = NULL;
-	free(b36code),b36code = NULL;
-	tmpstr = string_resub(";return p}('", ");'", post, 0);
-	debug(99, "tmpstr: %s", tmpstr);
-	titheklog(debuglevel, "/tmp/filenuke5_tmpstr2", NULL, NULL, NULL, tmpstr);
-
-	b36code = oregex(".*;',[0-9]{2,2},[0-9]{2,2},'(.*)'.split.*", post);
-	
-	b36code = string_replace_all("||", "| |", b36code, 1);
-	debug(99, "b36code: %s", b36code);
-	titheklog(debuglevel, "/tmp/filenuke6_b36code2", NULL, NULL, NULL, b36code);
-	
-	struct splitstr* ret1 = NULL;
-	int count = 0;
-	int i = 0;
-	ret1 = strsplit(b36code, "|", &count);
-
-	charlist = ostrcat(charlist, "\"", 1, 0);
-	charlist = ostrcat(charlist, "|", 1, 0);
-	charlist = ostrcat(charlist, "'", 1, 0);
-	charlist = ostrcat(charlist, "|", 1, 0);
-	charlist = ostrcat(charlist, ".", 1, 0);
-	charlist = ostrcat(charlist, "|", 1, 0);
-	charlist = ostrcat(charlist, ";", 1, 0);
-	charlist = ostrcat(charlist, "|", 1, 0);
-	charlist = ostrcat(charlist, ":", 1, 0);
-	charlist = ostrcat(charlist, "|", 1, 0);
-	charlist = ostrcat(charlist, "=", 1, 0);
-	charlist = ostrcat(charlist, "|", 1, 0);
-	charlist = ostrcat(charlist, ",", 1, 0);
-	charlist = ostrcat(charlist, "|", 1, 0);
-	charlist = ostrcat(charlist, " ", 1, 0);
-	charlist = ostrcat(charlist, "|", 1, 0);
-	charlist = ostrcat(charlist, "\\", 1, 0);
-	charlist = ostrcat(charlist, "|", 1, 0);
-	charlist = ostrcat(charlist, "/", 1, 0);
-	charlist = ostrcat(charlist, "|", 1, 0);
-	charlist = ostrcat(charlist, "(", 1, 0);
-	charlist = ostrcat(charlist, "|", 1, 0);
-	charlist = ostrcat(charlist, ")", 1, 0);
-
-	for(i = 0; i < count; i++)
+	streamlink = string_resub("var lnk1 = '", "';", post, 0);
+	if(streamlink != NULL)
+		streamlink = ostrcat(streamlink, "|User-Agent=Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:30.0) Gecko/20100101 Firefox/30.0", 1, 0);
+	else
 	{
-		if(ostrstr((&ret1[i])->part, " ") != NULL)
-		{
-			printf("continue\n");
-			continue;
-		}
-		char* x = oltostr(i, 36);
-
-		struct splitstr* ret2 = NULL;
-		int count2 = 0;
-		int i2 = 0;
-		tmpstr2 = ostrcat(charlist, NULL, 0, 0);
-		ret2 = strsplit(tmpstr2, "|", &count2);
-		for(i2 = 0; i2 < count2; i2++)
-		{
-			struct splitstr* ret3 = NULL;
-			int count3 = 0;
-			int i3 = 0;
-			tmpstr3 = ostrcat(charlist, NULL, 0, 0);
-			ret3 = strsplit(tmpstr3, "|", &count3);
-			for(i3 = 0; i3 < count3; i3++)
-			{
-				debug(99, "-----------------------------------------------");
-				debug(99, "replace %s%s%s <> %s%s%s",(&ret2[i2])->part, x, (&ret3[i3])->part, (&ret2[i2])->part, (&ret1[i])->part, (&ret3[i3])->part);
-
-				base = ostrcat(base, (&ret2[i2])->part, 1, 0);
-				base = ostrcat(base, x, 1, 0);
-				base = ostrcat(base, (&ret3[i3])->part, 1, 0);		
-				search = ostrcat(search, (&ret2[i2])->part, 1, 0);
-				search = ostrcat(search, (&ret1[i])->part, 1, 0);
-				search = ostrcat(search, (&ret3[i3])->part, 1, 0);
-				tmpstr = string_replace_all(base, search, tmpstr, 1);
-				free(base), base = NULL;
-				free(search), search = NULL;
-			}
-			free(ret3), ret3 = NULL;
-			free(tmpstr3), tmpstr3 = NULL;
-		}
-		free(ret2), ret2 = NULL;
-		free(tmpstr2), tmpstr2 = NULL;
-		free(x);
-	}
-	free(ret1), ret1 = NULL;
-	free(b36code), b36code = NULL;
-	free(post), post = NULL;
-	free(charlist), charlist = NULL;
-
-	titheklog(debuglevel, "/tmp/filenuke7_tmpstr_last", NULL, NULL, NULL, tmpstr);
-
-	streamlink = oregex(".*file.*(http:.*video.flv).*image.*", tmpstr);
-	if(streamlink == NULL)
-		streamlink = oregex(".*file.*(http:.*video.mp4).*image.*", tmpstr);				
-
-	if(streamlink == NULL)
-		streamlink = oregex(".*file.*(http:.*video.mkv).*image.*", tmpstr);
-
-	if(streamlink == NULL)
-		streamlink = oregex(".*file.*(http:.*video.avi).*image.*", tmpstr);
-
-	if(streamlink == NULL)
-		streamlink = oregex(".*src=.*(http:.*video.mp4).*\".*", tmpstr);
-
-	if(streamlink == NULL)
-		streamlink = oregex(".*src=.*(http:.*video.mkv).*\".*", tmpstr);
-
-	if(streamlink == NULL)
-		streamlink = oregex(".*src=.*(http:.*video.avi).*\".*", tmpstr);
+		free(tmpstr),tmpstr = NULL;
+		free(b36code),b36code = NULL;
+		tmpstr = string_resub(";return p}('", ");'", post, 0);
+		debug(99, "tmpstr: %s", tmpstr);
+		titheklog(debuglevel, "/tmp/filenuke5_tmpstr2", NULL, NULL, NULL, tmpstr);
+	
+		b36code = oregex(".*;',[0-9]{2,2},[0-9]{2,2},'(.*)'.split.*", post);
 		
-	if(streamlink == NULL)
-		streamlink = oregex(".*value=.*(http:.*video.mp4).*\".*", tmpstr);				
-
-	if(streamlink == NULL)
-		streamlink = oregex(".*value=.*(http:.*video.mkv).*\".*", tmpstr);
-
-	if(streamlink == NULL)
-		streamlink = oregex(".*value=.*(http:.*video.avi).*\".*", tmpstr);			
+		b36code = string_replace_all("||", "| |", b36code, 1);
+		debug(99, "b36code: %s", b36code);
+		titheklog(debuglevel, "/tmp/filenuke6_b36code2", NULL, NULL, NULL, b36code);
+		
+		struct splitstr* ret1 = NULL;
+		int count = 0;
+		int i = 0;
+		ret1 = strsplit(b36code, "|", &count);
+	
+		charlist = ostrcat(charlist, "\"", 1, 0);
+		charlist = ostrcat(charlist, "|", 1, 0);
+		charlist = ostrcat(charlist, "'", 1, 0);
+		charlist = ostrcat(charlist, "|", 1, 0);
+		charlist = ostrcat(charlist, ".", 1, 0);
+		charlist = ostrcat(charlist, "|", 1, 0);
+		charlist = ostrcat(charlist, ";", 1, 0);
+		charlist = ostrcat(charlist, "|", 1, 0);
+		charlist = ostrcat(charlist, ":", 1, 0);
+		charlist = ostrcat(charlist, "|", 1, 0);
+		charlist = ostrcat(charlist, "=", 1, 0);
+		charlist = ostrcat(charlist, "|", 1, 0);
+		charlist = ostrcat(charlist, ",", 1, 0);
+		charlist = ostrcat(charlist, "|", 1, 0);
+		charlist = ostrcat(charlist, " ", 1, 0);
+		charlist = ostrcat(charlist, "|", 1, 0);
+		charlist = ostrcat(charlist, "\\", 1, 0);
+		charlist = ostrcat(charlist, "|", 1, 0);
+		charlist = ostrcat(charlist, "/", 1, 0);
+		charlist = ostrcat(charlist, "|", 1, 0);
+		charlist = ostrcat(charlist, "(", 1, 0);
+		charlist = ostrcat(charlist, "|", 1, 0);
+		charlist = ostrcat(charlist, ")", 1, 0);
+	
+		for(i = 0; i < count; i++)
+		{
+			if(ostrstr((&ret1[i])->part, " ") != NULL)
+			{
+				printf("continue\n");
+				continue;
+			}
+			char* x = oltostr(i, 36);
+	
+			struct splitstr* ret2 = NULL;
+			int count2 = 0;
+			int i2 = 0;
+			tmpstr2 = ostrcat(charlist, NULL, 0, 0);
+			ret2 = strsplit(tmpstr2, "|", &count2);
+			for(i2 = 0; i2 < count2; i2++)
+			{
+				struct splitstr* ret3 = NULL;
+				int count3 = 0;
+				int i3 = 0;
+				tmpstr3 = ostrcat(charlist, NULL, 0, 0);
+				ret3 = strsplit(tmpstr3, "|", &count3);
+				for(i3 = 0; i3 < count3; i3++)
+				{
+					debug(99, "-----------------------------------------------");
+					debug(99, "replace %s%s%s <> %s%s%s",(&ret2[i2])->part, x, (&ret3[i3])->part, (&ret2[i2])->part, (&ret1[i])->part, (&ret3[i3])->part);
+	
+					base = ostrcat(base, (&ret2[i2])->part, 1, 0);
+					base = ostrcat(base, x, 1, 0);
+					base = ostrcat(base, (&ret3[i3])->part, 1, 0);		
+					search = ostrcat(search, (&ret2[i2])->part, 1, 0);
+					search = ostrcat(search, (&ret1[i])->part, 1, 0);
+					search = ostrcat(search, (&ret3[i3])->part, 1, 0);
+					tmpstr = string_replace_all(base, search, tmpstr, 1);
+					free(base), base = NULL;
+					free(search), search = NULL;
+				}
+				free(ret3), ret3 = NULL;
+				free(tmpstr3), tmpstr3 = NULL;
+			}
+			free(ret2), ret2 = NULL;
+			free(tmpstr2), tmpstr2 = NULL;
+			free(x);
+		}
+		free(ret1), ret1 = NULL;
+		free(b36code), b36code = NULL;
+		free(post), post = NULL;
+		free(charlist), charlist = NULL;
+	
+		titheklog(debuglevel, "/tmp/filenuke7_tmpstr_last", NULL, NULL, NULL, tmpstr);
+	
+		if(streamlink == NULL)
+			streamlink = oregex(".*file.*(http:.*video.flv).*image.*", tmpstr);
+	
+		if(streamlink == NULL)
+			streamlink = oregex(".*file.*(http:.*video.mp4).*image.*", tmpstr);				
+	
+		if(streamlink == NULL)
+			streamlink = oregex(".*file.*(http:.*video.mkv).*image.*", tmpstr);
+	
+		if(streamlink == NULL)
+			streamlink = oregex(".*file.*(http:.*video.avi).*image.*", tmpstr);
+	
+		if(streamlink == NULL)
+			streamlink = oregex(".*src=.*(http:.*video.mp4).*\".*", tmpstr);
+	
+		if(streamlink == NULL)
+			streamlink = oregex(".*src=.*(http:.*video.mkv).*\".*", tmpstr);
+	
+		if(streamlink == NULL)
+			streamlink = oregex(".*src=.*(http:.*video.avi).*\".*", tmpstr);
+			
+		if(streamlink == NULL)
+			streamlink = oregex(".*value=.*(http:.*video.mp4).*\".*", tmpstr);				
+	
+		if(streamlink == NULL)
+			streamlink = oregex(".*value=.*(http:.*video.mkv).*\".*", tmpstr);
+	
+		if(streamlink == NULL)
+			streamlink = oregex(".*value=.*(http:.*video.avi).*\".*", tmpstr);			
+	
+		if(streamlink == NULL)
+			streamlink = string_resub("var lnk1 = '", "';", tmpstr, 0);
+	}
 
 	titheklog(debuglevel, "/tmp/filenuke8_streamlink", NULL, NULL, NULL, streamlink);
 

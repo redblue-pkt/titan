@@ -44,6 +44,7 @@
 #include "firedrive.h"
 #include "shared.h"
 #include "thefile.h"
+#include "promptfile.h"
 
 char pluginname[] = "TiTan Mediathek";
 char plugindesc[] = "TiTan Mediathek";
