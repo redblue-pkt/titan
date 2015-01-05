@@ -1203,8 +1203,26 @@ void backgrounddl(char* link, char* filename)
 	debug(99, "path: %s", path);
 	debug(99, "local: %s", file);
 	debug(99, "---------------------------------------");
-	
-	ret = startbgdownload(host, path, port, file, NULL, 30000, 1);
+		
+	if(ostrstr(path, "|User-Agent=") != NULL)
+	{
+		stringreplacechar(path, '|', '\0');
+		printf("page changed: %s\n", path);
+
+		char* cmd = NULL;
+		cmd = ostrcat("wget --user-agent=\'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:30.0) Gecko/20100101 Firefox/30.0\' \'http://", host, 0, 0);
+		cmd = ostrcat(cmd, "/", 1, 0);
+		cmd = ostrcat(cmd, path, 1, 0);
+		cmd = ostrcat(cmd, "\' -O \'", 1, 0);
+		cmd = ostrcat(cmd, file, 1, 0);
+		cmd = ostrcat(cmd, "\' &", 1, 0);
+		printf("cmd: %s\n", cmd);
+		ret = system(cmd);
+		free(cmd), cmd = NULL;
+	}
+	else
+		ret = startbgdownload(host, path, port, file, NULL, 30000, 1);
+
 	if(ret == 1)
 		textbox(_("Message"), _("Can't start download.\nPlease try later."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 					
