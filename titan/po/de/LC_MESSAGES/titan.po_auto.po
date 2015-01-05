@@ -8250,7 +8250,7 @@ msgstr "Auflösung"
 
 #: skin_default_skin.xml.h:536
 msgid "Resolution:"
-msgstr "Auflösung:"
+msgstr "Auflösung TV:"
 
 #: skin_default_skin.xml.h:537
 msgid "Resolution (current)"
@@ -8796,11 +8796,11 @@ msgstr "Empfang"
 
 #: skin_default_skin.xml.h:724
 msgid "TV Resolution (h):"
-msgstr "TV Auflösung (Höhe):"
+msgstr "Auflösung Sender (Höhe):"
 
 #: skin_default_skin.xml.h:725
 msgid "TV Resolution (w):"
-msgstr "TV Auflösung (Breite):"
+msgstr "Auflösung Sender (Breite):"
 
 #: skin_default_skin.xml.h:726
 msgid "Two step mute"

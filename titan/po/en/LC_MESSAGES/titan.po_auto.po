@@ -8173,8 +8173,8 @@ msgid "Resolution"
 msgstr ""
 
 #: skin_default_skin.xml.h:536
-msgid "Resolution:"
-msgstr "Resolution: "
+msgid "Resolution :"
+msgstr "Resolution TV: "
 
 #: skin_default_skin.xml.h:537
 msgid "Resolution (current)"
@@ -8720,11 +8720,11 @@ msgstr "Reception"
 
 #: skin_default_skin.xml.h:724
 msgid "TV Resolution (h):"
-msgstr "TV Resolution (h): "
+msgstr "Resolution Channel (h): "
 
 #: skin_default_skin.xml.h:725
 msgid "TV Resolution (w):"
-msgstr "TV Resolution (w): "
+msgstr "Resolution Channel (w): "
 
 #: skin_default_skin.xml.h:726
 msgid "Two step mute"
