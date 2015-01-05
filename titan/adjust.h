@@ -415,8 +415,8 @@ void screenadjust()
 			addconfigscreen("playerbuffersize", playerbuffersize);
 			addconfigscreen("playerbufferseektime", playerbufferseektime);
 
-			addconfigscreen("community_user", community_user);
-			addconfigscreen("community_pass", community_pass);
+			addconfigscreen("community_user", MDString(community_user));
+			addconfigscreen("community_pass", MDString(community_pass));
 				
 			writeallconfig(1);
 			break;
