@@ -8173,7 +8173,7 @@ msgid "Resolution"
 msgstr ""
 
 #: skin_default_skin.xml.h:536
-msgid "Resolution :"
+msgid "Resolution:"
 msgstr "Resolution TV: "
 
 #: skin_default_skin.xml.h:537
