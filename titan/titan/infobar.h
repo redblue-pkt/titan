@@ -1011,7 +1011,7 @@ void screeninfobar()
 				}
 			}
 		}
-		if(rcret == getrcconfigint("rcpip", NULL) && checkbox("ATEMIO-NEMESIS") == 1)
+		if(rcret == getrcconfigint("rcpip", NULL) && (checkbox("ATEMIO-NEMESIS") == 1 || checkbox("UFS922") == 1))
 		//if(rcret == getrcconfigint("rcpip", NULL) && checkbox("ATEMIO5200") != 1) // ATEMIO6200 ???
 		{
 			if(status.pipservice->videodev == NULL)
