@@ -759,43 +759,43 @@ char* websetvol(char* param, int fmt)
 	if(fmt == 0)
 	{
 		buf = ostrcat(buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><link rel=stylesheet type=text/css href=titan.css></head><body class=body><center>", 1, 0);
-		if(vol >=10)
+		if((vol >=10) && (status.mute != 1))
 			buf = ostrcat(buf, "<a href=query?setvol&10><img src=img/led_on.png border=0></img></a> ", 1, 0);
 		else
 			buf = ostrcat(buf, "<a href=query?setvol&10><img src=img/led_off.png border=0></img></a> ", 1, 0);
-		if(vol >=20)
+		if((vol >=20) && (status.mute != 1))
 			buf = ostrcat(buf, "<a href=query?setvol&20><img src=img/led_on.png border=0></img></a> ", 1, 0);
 		else
 			buf = ostrcat(buf, "<a href=query?setvol&20><img src=img/led_off.png border=0></img></a> ", 1, 0);
-		if(vol >=30)
+		if((vol >=30) && (status.mute != 1))
 			buf = ostrcat(buf, "<a href=query?setvol&30><img src=img/led_on.png border=0></img></a> ", 1, 0);
 		else
 			buf = ostrcat(buf, "<a href=query?setvol&30><img src=img/led_off.png border=0></img></a> ", 1, 0);
-		if(vol >=40)
+		if((vol >=40) && (status.mute != 1))
 			buf = ostrcat(buf, "<a href=query?setvol&40><img src=img/led_on.png border=0></img></a> ", 1, 0);
 		else
 			buf = ostrcat(buf, "<a href=query?setvol&40><img src=img/led_off.png border=0></img></a> ", 1, 0);
-		if(vol >=50)
+		if((vol >=50) && (status.mute != 1))
 			buf = ostrcat(buf, "<a href=query?setvol&50><img src=img/led_on.png border=0></img></a> ", 1, 0);
 		else
 			buf = ostrcat(buf, "<a href=query?setvol&50><img src=img/led_off.png border=0></img></a> ", 1, 0);
-		if(vol >=60)
+		if((vol >=60) && (status.mute != 1))
 			buf = ostrcat(buf, "<a href=query?setvol&60><img src=img/led_on.png border=0></img></a> ", 1, 0);
 		else
 			buf = ostrcat(buf, "<a href=query?setvol&60><img src=img/led_off.png border=0></img></a> ", 1, 0);
-		if(vol >=70)
+		if((vol >=70) && (status.mute != 1))
 			buf = ostrcat(buf, "<a href=query?setvol&70><img src=img/led_on.png border=0></img></a> ", 1, 0);
 		else
 			buf = ostrcat(buf, "<a href=query?setvol&70><img src=img/led_off.png border=0></img></a> ", 1, 0);
-		if(vol >=80)
+		if((vol >=80) && (status.mute != 1))
 			buf = ostrcat(buf, "<a href=query?setvol&80><img src=img/led_on.png border=0></img></a> ", 1, 0);
 		else
 			buf = ostrcat(buf, "<a href=query?setvol&80><img src=img/led_off.png border=0></img></a> ", 1, 0);
-		if(vol >=90)
+		if((vol >=90) && (status.mute != 1))
 			buf = ostrcat(buf, "<a href=query?setvol&90><img src=img/led_on.png border=0></img></a> ", 1, 0);
 		else
 			buf = ostrcat(buf, "<a href=query?setvol&90><img src=img/led_off.png border=0></img></a> ", 1, 0);
-		if(vol >=100)
+		if((vol >=100) && (status.mute != 1))
 			buf = ostrcat(buf, "<a href=query?setvol&100><img src=img/led_on.png border=0></img></a> ", 1, 0);
 		else
 			buf = ostrcat(buf, "<a href=query?setvol&100><img src=img/led_off.png border=0></img></a> ", 1, 0);
@@ -4733,8 +4733,8 @@ printf("webadjust fmt: %d\n",fmt);
 #ifdef BETA
 	char* tmpstr2 = NULL;	
 	struct splitstr* ret2 = NULL;	
-	tmpstr = ostrcat("10\n40\n50\n60\n70\n80\n90\n99\n100\n130\n150\n200\n250\n270\n300\n400\n900\n1000", NULL, 0, 0);
-	tmpstr2 = ostrcat(" - Minimal\n - TopfieldVFD\n - MediaCenter\n - Menulist\n  - Network Browser\n - Harddisk\n - Screensaver\n - Tithek\n - Global\n - TPK\n - ePlayer\n - Tuning\n - Stream/Record/Softcam\n - EPG\n - Radiotext\n - Subtitle\n - Mutex\n - Function", NULL, 0, 0);
+	tmpstr = ostrcat("10\n40\n50\n60\n70\n80\n90\n99\n100\n130\n150\n200\n250\n270\n300\n400\n500\n900\n1000", NULL, 0, 0);
+	tmpstr2 = ostrcat(" - Minimal\n - TopfieldVFD\n - MediaCenter\n - Menulist\n  - Network Browser\n - Harddisk\n - Screensaver\n - Tithek\n - Global\n - TPK\n - ePlayer\n - Tuning\n - Stream/Record/Softcam\n - EPG\n - Radiotext\n - Subtitle\n - Scan\n - Mutex\n - Function", NULL, 0, 0);
 
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("debuglevel"), &maxlen, &pos);

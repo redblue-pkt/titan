@@ -143,24 +143,25 @@ char* getrec(struct skin* node, char* path)
 }
 
 #ifdef MIPSEL
-///rec png
-	char* getoledrec(struct skin* node, char* path)
+	if(checkrealbox("INI-8000AM") == 1)
 	{
-		char* tmpstr = NULL;
-
-		if(status.recording > 0)
+	//rec png
+		char* getoledrec(struct skin* node, char* path)
 		{
-			tmpstr = ostrcat("oled_rec.png", NULL, 0, 0);
+			char* tmpstr = NULL;
 
-			if(path != NULL)
-				tmpstr = ostrcat("/", tmpstr, 0, 1);
-			tmpstr = ostrcat(path, tmpstr, 0, 1);
-		}
+			if(status.recording > 0)
+			{
+				tmpstr = ostrcat("oled_rec.png", NULL, 0, 0);
+
+				if(path != NULL) tmpstr = ostrcat("/", tmpstr, 0, 1);
+				tmpstr = ostrcat(path, tmpstr, 0, 1);
+			}
 	
-		return tmpstr;
-	}
-///mute png
-	char* getoledmute(struct skin* node, char* path)
+			return tmpstr;
+		}
+	//mute png
+		char* getoledmute(struct skin* node, char* path)
 		{
 			char* tmpstr = NULL;
 
@@ -168,16 +169,15 @@ char* getrec(struct skin* node, char* path)
 			{
 				tmpstr = ostrcat("oled_mute.png", NULL, 0, 0);
 
-				if(path != NULL)
-					tmpstr = ostrcat("/", tmpstr, 0, 1);
+				if(path != NULL) tmpstr = ostrcat("/", tmpstr, 0, 1);
 				tmpstr = ostrcat(path, tmpstr, 0, 1);
 			}
 		
 			return tmpstr;
 		}
 
-///timeshift png
-	char* getoledtimeshift(struct skin* node, char* path)
+	//timeshift png
+		char* getoledtimeshift(struct skin* node, char* path)
 		{
 			char* tmpstr = NULL;
 
@@ -185,16 +185,15 @@ char* getrec(struct skin* node, char* path)
 			{
 				tmpstr = ostrcat("oled_timeshift.png", NULL, 0, 0);
 
-				if(path != NULL)
-					tmpstr = ostrcat("/", tmpstr, 0, 1);
+				if(path != NULL) tmpstr = ostrcat("/", tmpstr, 0, 1);
 				tmpstr = ostrcat(path, tmpstr, 0, 1);
 			}
 		
 			return tmpstr;
 		}
 
-///streaming png
-	char* getoledstreaming(struct skin* node, char* path)
+	//streaming png
+		char* getoledstreaming(struct skin* node, char* path)
 		{
 			char* tmpstr = NULL;
 
@@ -202,14 +201,13 @@ char* getrec(struct skin* node, char* path)
 			{
 				tmpstr = ostrcat("oled_streaming.png", NULL, 0, 0);
 
-				if(path != NULL)
-					tmpstr = ostrcat("/", tmpstr, 0, 1);
+				if(path != NULL) tmpstr = ostrcat("/", tmpstr, 0, 1);
 				tmpstr = ostrcat(path, tmpstr, 0, 1);
 			}
 		
 			return tmpstr;
 		}
-
+	}
 #endif
 
 

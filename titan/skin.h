@@ -33,32 +33,36 @@ void* convertfunc(char *value, uint8_t *rettype)
 		*rettype = FUNCPIC;
 		return &getpicon;
 	}
+
 #ifdef MIPSEL
-	if(ostrcmp("getoledmute", value) == 0)
-	{
-		*rettype = FUNCPIC;
-		return &getoledmute;
-	}
+	if(checkrealbox("INI-8000AM") == 1)
+	{	
+		if(ostrcmp("getoledmute", value) == 0)
+		{
+			*rettype = FUNCPIC;
+			return &getoledmute;
+		}
 
-	if(ostrcmp("getoledtimeshift", value) == 0)
-	{
-		*rettype = FUNCPIC;
-		return &getoledtimeshift;
-	}
+		if(ostrcmp("getoledtimeshift", value) == 0)
+		{
+			*rettype = FUNCPIC;
+			return &getoledtimeshift;
+		}
 
-	if(ostrcmp("getoledrec", value) == 0)
-	{
-		*rettype = FUNCPIC;
-		return &getoledrec;
-	}
+		if(ostrcmp("getoledrec", value) == 0)
+		{
+			*rettype = FUNCPIC;
+			return &getoledrec;
+		}
 
-	if(ostrcmp("getoledstreaming", value) == 0)
-	{
-		*rettype = FUNCPIC;
-		return &getoledstreaming;
+		if(ostrcmp("getoledstreaming", value) == 0)
+		{
+			*rettype = FUNCPIC;
+			return &getoledstreaming;
+		}
 	}
-
 #endif
+
 	if(ostrcmp("getalternatepicon", value) == 0)
 	{
 		*rettype = FUNCPIC;
