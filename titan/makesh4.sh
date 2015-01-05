@@ -118,9 +118,9 @@ echo "[titan]--------------------------------------------------------"
 echo "[titan] get settings"
 echo "[titan]--------------------------------------------------------"
 rm -rf "$HOME"/flashimg/source.titan/settings.svn
-if [ "$BOXTYPE" = "ufs910" ] || [ "$BOXTYPE" = "ufs922" ];then
+if [ "$TYPE" = "ufs910" ] || [ "$TYPE" = "ufs922" ];then
 	svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source/settings_default_sat_1_0/mnt/settings "$HOME"/flashimg/source.titan/settings.svn
-elif [ "$BOXTYPE" = "ipbox9000" ];then
+elif [ "$TYPE" = "ipbox9000" ];then
 	svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source/settings_kabelplus_cable_1_0/mnt/settings "$HOME"/flashimg/source.titan/settings.svn
 else
 	svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source/settings_default_all_2_0/mnt/settings "$HOME"/flashimg/source.titan/settings.svn
