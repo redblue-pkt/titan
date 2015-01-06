@@ -743,6 +743,7 @@ void screeninfobar()
 			subtitlepause(1);
 			status.infobar = 0;
 			clearscreen(infobar);
+			status.updatevfd = PAUSE;
 			screenkeyactions(3, 0);
 			status.updatevfd = START;
 			drawscreen(skin, 0, 0);
