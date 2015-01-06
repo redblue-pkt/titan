@@ -719,10 +719,10 @@ int playerstart(char* file)
 
 		if(ostrstr(tmpfile, "file://") == NULL)
 			//status.playercan = 0x7E7F;
-			status.playercan = 0x7FFF;
+			status.playercan = 0x7EFF;
 		else
 			//status.playercan = 0x7E7F;
-			status.playercan = 0x7FFF;
+			status.playercan = 0x7EFF;
 	
 		pipeline = gst_element_factory_make("playbin2", "playbin");
 
