@@ -733,6 +733,26 @@ int playerstart(char* file)
 		if(size > 0)
 			status.prefillbuffer = 1;
 
+		if(ostrstr(file, "|User-Agent=") != NULL)
+		{
+			char* tmpstr = NULL;
+			tmpstr = ostrcat(file, NULL, 0, 0);
+			tmpstr = string_replace("|User-Agent=", "|", useragent, 1);
+			int count1 = 0;
+			struct splitstr* ret1 = NULL;
+			ret1 = strsplit(tmpstr, "|", &count);
+			if(ret1 != NULL && count >= 2)
+			{
+				printf("[player.h] set user-agent: %s\n",ret1[1].part);
+				g_object_set(G_OBJECT(pipeline), "user-agent", ret1[1].part, NULL);
+			}
+			free(ret1), ret1 = NULL;
+			free(tmpstr), tmpstr = NULL;
+//			g_object_set(G_OBJECT(pipeline), "user-agent", "Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:30.0) Gecko/20100101 Firefox/30.0", NULL);
+			stringreplacechar(tmpfile, '|', '\0');
+			printf("tmpfile changed: %s\n", tmpfile);
+		}
+
 		g_object_set(G_OBJECT(pipeline), "buffer-duration", size * GST_SECOND, NULL);
 		g_object_set(G_OBJECT(pipeline), "buffer-size", size, NULL);
 // enable buffersizeend
