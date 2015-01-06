@@ -740,8 +740,8 @@ int playerstart(char* file)
 			tmpstr = string_replace("|User-Agent=", "|", useragent, 1);
 			int count1 = 0;
 			struct splitstr* ret1 = NULL;
-			ret1 = strsplit(tmpstr, "|", &count);
-			if(ret1 != NULL && count >= 2)
+			ret1 = strsplit(tmpstr, "|", &count1);
+			if(ret1 != NULL && count1 >= 2)
 			{
 				printf("[player.h] set user-agent: %s\n",ret1[1].part);
 				g_object_set(G_OBJECT(pipeline), "user-agent", ret1[1].part, NULL);
