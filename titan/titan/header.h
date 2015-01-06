@@ -10,6 +10,8 @@
 
 //security.h
 void checkgthread();
+int checkrealbox(char* box);
+int checkchipset(char* input);
 	
 //encoder.h
 void encoderclose(struct dvbdev* node, int fd);
