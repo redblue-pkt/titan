@@ -31,6 +31,7 @@ extern ManagerHandler_t ManagerHandler;
 GstElement *pipeline = NULL;
 unsigned long long m_gst_startpts = 0;
 CustomData data;
+GstElement *video_sink = NULL;
 #endif
 
 //titan player
@@ -1275,6 +1276,11 @@ int playerstop()
 #endif
 
 #ifdef EPLAYER4
+	if(video_sink)
+	{
+		gst_object_unref (video_sink);
+		video_sink = NULL;
+	}
 	if(pipeline)
 	{
 		gst_element_set_state(pipeline, GST_STATE_NULL);
@@ -1322,7 +1328,11 @@ void playercontinue()
 
 #ifdef EPLAYER4
 	if(pipeline)
+	{
+		if(status.playspeed != 0)
+			playersend_ff_fr_event(1);
 		gst_element_set_state(pipeline, GST_STATE_PLAYING);
+	}
 #endif
 }
 
@@ -1347,6 +1357,25 @@ void playerff(int speed)
 
 	if(player && player->playback)
 		player->playback->Command(player, PLAYBACK_FASTFORWARD, &speedmap);
+#endif
+
+#ifdef EPLAYER4
+	gdouble rate = 0;
+	
+	if (speed < 1) speed = 1;
+	if (speed > 7) speed = 7;
+
+	switch(speed)
+	{
+		case 1: rate = 2; break;
+		case 2: rate = 4; break;
+		case 3: rate = 8; break;
+		case 4: rate = 16; break;
+		case 5: rate = 32; break;
+		case 6: rate = 64; break;
+		case 7: rate = 128; break;
+	}
+	playersend_ff_fr_event(rate);
 #endif
 }
 
@@ -1395,6 +1424,25 @@ void playerfr(int speed)
 
 	if(player && player->playback)
 		player->playback->Command(player, PLAYBACK_FASTBACKWARD, &speedmap);
+#endif
+
+#ifdef EPLAYER4
+	gdouble rate = 0;
+	
+	if (speed > -1) speed = -1;
+	if (speed < -7) speed = -7;
+
+	switch(speed)
+	{
+		case -1: rate = -2; break;
+		case -2: rate = -4; break;
+		case -3: rate = -8; break;
+		case -4: rate = -16; break;
+		case -5: rate = -32; break;
+		case -6: rate = -64; break;
+		case -7: rate = -128; break;
+	}
+	playersend_ff_fr_event(rate);
 #endif
 }
 
@@ -2556,6 +2604,40 @@ static void analyze_streams(CustomData *data)
 	g_print("\n");
 	g_print("Currently playing video stream %d, audio stream %d and subtitle stream %d\n", data->current_video, data->current_audio, data->current_text);
 	g_print("Type any number and hit ENTER to select a different subtitle stream\n");
+}
+#endif
+
+#ifdef EPLAYER4
+void playersend_ff_fr_event(gdouble rate) {
+	gint64 position;
+	GstFormat format = GST_FORMAT_TIME;
+	GstEvent *seek_event;
+   
+	/* Obtain the current position, needed for the seek event */
+	if (!gst_element_query_position (pipeline, &format, &position)) {
+		g_printerr ("Unable to retrieve current position.\n");
+		return;
+	}
+   
+	/* Create the seek event */
+	if (rate > 0)
+	{	
+		seek_event = gst_event_new_seek (rate, GST_FORMAT_TIME, GST_SEEK_FLAG_FLUSH | GST_SEEK_FLAG_ACCURATE,GST_SEEK_TYPE_SET, position, GST_SEEK_TYPE_NONE, 0);
+  } 
+	else
+	{
+		seek_event = gst_event_new_seek (rate, GST_FORMAT_TIME, GST_SEEK_FLAG_FLUSH | GST_SEEK_FLAG_ACCURATE,GST_SEEK_TYPE_SET, 0, GST_SEEK_TYPE_SET, position);
+	}
+   
+	if (video_sink == NULL) {
+		/* If we have not done so, obtain the sink through which we will send the seek events */
+		g_object_get (pipeline, "video-sink", &video_sink, NULL);
+	}
+   
+	/* Send the event */
+	gst_element_send_event (video_sink, seek_event);
+   
+	g_print ("Current rate: %g\n", rate);
 }
 #endif
 
