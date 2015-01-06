@@ -737,7 +737,7 @@ int playerstart(char* file)
 		{
 			char* tmpstr = NULL;
 			tmpstr = ostrcat(file, NULL, 0, 0);
-			tmpstr = string_replace("|User-Agent=", "|", useragent, 1);
+			tmpstr = string_replace("|User-Agent=", "|", tmpstr, 1);
 			int count1 = 0;
 			struct splitstr* ret1 = NULL;
 			ret1 = strsplit(tmpstr, "|", &count1);
