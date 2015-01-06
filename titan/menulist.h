@@ -303,13 +303,15 @@ struct menulist* menulistboxext(struct menulist* mlist, char* paramskinname, cha
 		}
 		if(rcret == getrcconfigint("rcok", NULL) || rcret == getrcconfigint("rcred", NULL) || rcret == getrcconfigint("rcgreen", NULL) || rcret == getrcconfigint("rcyellow", NULL) || rcret == getrcconfigint("rcblue", NULL) || rcret == getrcconfigint("rcmenu", NULL))
 		{
+			if(listbox->select != NULL)
+				writevfdmenu(listbox->select->text);
 			if(rcreturn == NULL && rcret != getrcconfigint("rcok", NULL))
 				continue;
-
 			if(listbox->select != NULL)
 				ret = (struct menulist*)listbox->select->handle;
 			break;
 		}
+		
 	}
 
 	free(skinname); skinname = NULL;
