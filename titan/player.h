@@ -718,9 +718,11 @@ int playerstart(char* file)
 		}
 
 		if(ostrstr(tmpfile, "file://") == NULL)
-			status.playercan = 0x7E7F;
+			//status.playercan = 0x7E7F;
+			status.playercan = 0x7FFF;
 		else
-			status.playercan = 0x7E7F;
+			//status.playercan = 0x7E7F;
+			status.playercan = 0x7FFF;
 	
 		pipeline = gst_element_factory_make("playbin2", "playbin");
 
@@ -2321,7 +2323,7 @@ off64_t playergetptspos(unsigned long long fpts, off64_t pos, int dir, int praez
 	
 	if(type > 3)
 	{
-		printf("type %i nicht unterstützt\n", type);
+		printf("type %i nicht unterstï¿½tzt\n", type);
 		return -1;
 	}
 	
@@ -2542,7 +2544,7 @@ static void analyze_streams(CustomData *data)
 		{
 			g_print("video stream %d:\n", i);
 			gst_tag_list_get_string(tags, GST_TAG_VIDEO_CODEC, &str);
-			g_print("  codec: %s\n", str ? str : "unknown");
+			g_print("ï¿½ codec: %s\n", str ? str : "unknown");
 			g_free(str);
 			gst_tag_list_free(tags);
 		}
@@ -2559,17 +2561,17 @@ static void analyze_streams(CustomData *data)
 			g_print("audio stream %d:\n", i);
 			if(gst_tag_list_get_string (tags, GST_TAG_AUDIO_CODEC, &str))
 			{
-				g_print("  codec: %s\n", str);
+				g_print("ï¿½ codec: %s\n", str);
 				g_free(str);
 			}
 			if(gst_tag_list_get_string (tags, GST_TAG_LANGUAGE_CODE, &str))
 			{
-				g_print("  language: %s\n", str);
+				g_print("ï¿½ language: %s\n", str);
 				g_free(str);
 			}
 			if(gst_tag_list_get_uint (tags, GST_TAG_BITRATE, &rate))
 			{
-				g_print("  bitrate: %d\n", rate);
+				g_print("ï¿½ bitrate: %d\n", rate);
 			}
 			gst_tag_list_free(tags);
 		}
@@ -2586,14 +2588,14 @@ static void analyze_streams(CustomData *data)
 		{
 			if(gst_tag_list_get_string (tags, GST_TAG_LANGUAGE_CODE, &str))
 			{
-				g_print("  language: %s\n", str);
+				g_print("ï¿½ language: %s\n", str);
 				g_free(str);
 			}
 			gst_tag_list_free(tags);
 		}
 		else
 		{
-			g_print("  no tags found\n");
+			g_print("ï¿½ no tags found\n");
 		}
 	}
 
