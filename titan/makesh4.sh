@@ -121,7 +121,7 @@ rm -rf "$HOME"/flashimg/source.titan/settings.svn
 if [ "$TYPE" = "ufs910" ] || [ "$TYPE" = "ufs922" ];then
 	svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source/settings_default_sat_1_0/mnt/settings "$HOME"/flashimg/source.titan/settings.svn
 elif [ "$TYPE" = "ipbox9000" ];then
-	svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source/settings_kabelplus_cable_1_0/mnt/settings "$HOME"/flashimg/source.titan/settings.svn
+	svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source/settings_default_all_2_0/mnt/settings "$HOME"/flashimg/source.titan/settings.svn
 else
 	svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source/settings_default_all_2_0/mnt/settings "$HOME"/flashimg/source.titan/settings.svn
 fi
