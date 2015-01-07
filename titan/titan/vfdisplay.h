@@ -43,7 +43,7 @@ void screenvfdisplay()
 	if(checkbox("ATEMIO530") == 0 && checkbox("ATEMIO520") == 0 && checkbox("IPBOX91") == 0 && checkbox("ATEMIO6000") == 0 && checkbox("ATEMIO6100") == 0)
 	{
 		addchoicebox(vfdstandby, "2", _("date + time"));
-		addchoicebox(vfdstandby, "3", _("date"));
+		addchoicebox(vfdstandby, "3", _("vfddate"));
 	}
 	setchoiceboxselection(vfdstandby, getconfig("vfdisplaystandby", NULL));
 	
