@@ -523,7 +523,10 @@ void updatevfd()
 				tmpstr = ostrcat(tmpstr, " ", 1, 0);
 				break;
 			case 2: // date + time
-				tmpstr = ostrcat(tmpstr, gettime(NULL, "%d.%m %H:%M"), 1, 1);
+				if(checkbox("ATEMIO-NEMESIS") == 1)
+					tmpstr = ostrcat(tmpstr, gettime(NULL, "%d.%m - %H:%M"), 1, 1);
+				else
+					tmpstr = ostrcat(tmpstr, gettime(NULL, "%d.%m %H:%M"), 1, 1);
 				break;
 			case 3: // date
 				tmpstr = ostrcat(tmpstr, gettime(NULL, "%d.%m.%y"), 1, 1);
@@ -613,7 +616,7 @@ void vfdrecordthread()
 		while(VFD_Recordthread->aktion != STOP && getconfigint("vfdisplayrecord", NULL) == 3 && status.recording > 0)
 		{
 			action = 2;
-			if(checkbox("ATEMIO5200") == 1 || checkbox("ATEMIO6200") == 1)
+			if(checkbox("ATEMIO5200") == 1 || checkbox("ATEMIO6200") == 1 || checkbox("ATEMIO-NEMESIS") == 1)
 				writevfd("RECORD");
 			else if(checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1)
 				writevfd("REC");
