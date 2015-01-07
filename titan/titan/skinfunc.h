@@ -259,11 +259,11 @@ char* getsdhd(struct skin* node, char* path)
 
 	if(getaktvideosize() == 0) //videosize is ok
 	{
-		if(status.videosize.w == 720)
+		if(status.videosize.h == 576)
 			tmpstr = ostrcat("sd.png", NULL, 0, 0);
-		else if(status.videosize.w == 1280)
+		else if(status.videosize.h == 720)
 			tmpstr = ostrcat("hdready.png", NULL, 0, 0);
-		else if(status.videosize.w == 1920)
+		else if(status.videosize.h == 1080)
 			tmpstr = ostrcat("hd.png", NULL, 0, 0);
 	}
 	
@@ -291,6 +291,54 @@ char* getresolution(struct skin* node, char* path)
 		tmpstr = ostrcat("/", tmpstr, 0, 1);
 	tmpstr = ostrcat(path, tmpstr, 0, 1);
 	
+	return tmpstr;
+}
+
+char* getchannelresolution(struct skin* node, char* path)
+{
+	char* tmpstr = NULL;
+
+	videoreadqwidth(status.aktservice->videodev);
+
+//	if(getaktvideosize() == 0) //videosize is ok
+//	{
+		if(status.videosize.h == 576)
+			tmpstr = ostrcat("576.png", NULL, 0, 0);
+		else if(status.videosize.h == 720)
+			tmpstr = ostrcat("720.png", NULL, 0, 0);
+		else if(status.videosize.h == 1080)
+			tmpstr = ostrcat("1080.png", NULL, 0, 0);
+//	}
+	
+	if(tmpstr == NULL) tmpstr = ostrcat("novideo.png", NULL, 0, 0);
+
+	if(path != NULL)
+		tmpstr = ostrcat("/", tmpstr, 0, 1);
+	tmpstr = ostrcat(path, tmpstr, 0, 1);
+
+	return tmpstr;
+}
+
+char* getchannelaspect(struct skin* node, char* path)
+{
+	char* tmpstr = NULL;
+	
+	videoreadqwidth(status.aktservice->videodev);
+
+//	if(getaktvideosize() == 0) //videosize is ok
+//	{
+		if(status.videosize.aspect_ratio == 0)
+			tmpstr = ostrcat("4_3.png", NULL, 0, 0);
+		else if(status.videosize.aspect_ratio == 1)
+			tmpstr = ostrcat("16_9.png", NULL, 0, 0);
+//	}
+	
+	if(tmpstr == NULL) tmpstr = ostrcat("novideo.png", NULL, 0, 0);
+
+	if(path != NULL)
+		tmpstr = ostrcat("/", tmpstr, 0, 1);
+	tmpstr = ostrcat(path, tmpstr, 0, 1);
+
 	return tmpstr;
 }
 

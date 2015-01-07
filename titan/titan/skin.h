@@ -91,6 +91,11 @@ void* convertfunc(char *value, uint8_t *rettype)
 		*rettype = FUNCPIC;
 		return &getresolution;
 	}
+	if(ostrcmp("getchannelresolution", value) == 0)
+	{
+		*rettype = FUNCPIC;
+		return &getchannelresolution;
+	}
 	if(ostrcmp("getsdhd", value) == 0)
 	{
 		*rettype = FUNCPIC;
@@ -100,6 +105,11 @@ void* convertfunc(char *value, uint8_t *rettype)
 	{
 		*rettype = FUNCPIC;
 		return &getaspectmode;
+	}
+	if(ostrcmp("getchannelaspect", value) == 0)
+	{
+		*rettype = FUNCPIC;
+		return &getchannelaspect;
 	}
 	if(ostrcmp("getreccount", value) == 0)
 		return &getreccount;
