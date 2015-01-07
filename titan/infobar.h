@@ -617,6 +617,7 @@ void screeninfobar()
 			status.infobar = 0;
 			status.infobaraktiv = 0;
 			clearscreen(infobar);
+			status.updatevfd = PAUSE;
 			screenkeyactions(1, 0);
 			status.infobaraktiv = 1;
 			status.updatevfd = START;
