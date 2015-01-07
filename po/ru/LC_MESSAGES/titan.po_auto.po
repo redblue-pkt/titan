@@ -31,7 +31,7 @@ msgstr "Системная информация"
 #: hwtest.h:564 hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617
 #: hwtest.h:632 hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685
 #: imdbapi.h:200 imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200
-#: infobar.h:599 infobar.h:722 info.h:27 keyactions.h:205 lcdpearl1.c:49
+#: infobar.h:599 infobar.h:721 info.h:27 keyactions.h:205 lcdpearl1.c:49
 #: lcdsamsung.c:101 log.h:46 log.h:48 mboxinfo.c:49 mboxinfo.c:73
 #: mboxinfo.c:77 mboxinfo.c:163 mc_audioplayer.h:333 mc_audioplayer.h:605
 #: mc_audioplayer.h:716 mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
@@ -136,7 +136,7 @@ msgstr "ОК"
 #: hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566 hwtest.h:586
 #: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
 #: hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626 inadyn.h:188
-#: inadyn.h:190 inadyn.h:200 infobar.h:599 infobar.h:722 info.h:27
+#: inadyn.h:190 inadyn.h:200 infobar.h:599 infobar.h:721 info.h:27
 #: keyactions.h:205 log.h:46 log.h:48 marker.h:215 marker.h:229 mboxinfo.c:49
 #: mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163 mc_audioplayer.h:333
 #: mc_audioplayer.h:605 mc_audioplayer.h:716 mc_dateibrowser.h:36
@@ -219,7 +219,7 @@ msgstr ""
 #: adjust.h:68 adjust.h:83 adjust.h:92 adjust.h:97 adjust.h:126 adjust.h:156
 #: adjust.h:166 adjust.h:170 adjust.h:187 adjust.h:191 adjust.h:199
 #: adjust.h:203 adjust.h:207 adjust.h:213 adjust.h:217 adjust.h:224
-#: adjust.h:228 adjust.h:232 adjust.h:238 adjust.h:244 adjust.h:292
+#: adjust.h:228 adjust.h:232 adjust.h:238 adjust.h:244 adjust.h:286
 #: autotimer.c:453 autotimer.c:486 avsettings.h:156 avsettings.h:192
 #: avsettings.h:196 blindscanadjust.h:150 blindscanadjust.h:154
 #: blindscanadjust.h:158 blindscanadjust.h:187 blindscanadjust.h:191 cec.h:143
@@ -374,6 +374,7 @@ msgstr "размер наоборот"
 #: adjust.h:105 httpdfunc.h:3869 mc_audioplayer_settings.h:31
 #: mc_pictureplayer_settings.h:46 mc_videoplayer_settings.h:27
 #: plugins_mc_skin.xml.h:16 skin_default_skin.xml.h:171 skins_mc_skin.xml.h:16
+#: vfdisplay.h:46
 msgid "date"
 msgstr "Дата"
 
@@ -450,12 +451,12 @@ msgstr ""
 msgid "4 GB"
 msgstr ""
 
-#: adjust.h:152 adjust.h:283 httpdfunc.h:4217 httpdfunc.h:4698
+#: adjust.h:152 adjust.h:277 httpdfunc.h:4217 httpdfunc.h:4698
 #: httpdsettings.h:50
 msgid "extern"
 msgstr ""
 
-#: adjust.h:153 adjust.h:284 httpdfunc.h:4224 httpdfunc.h:4705
+#: adjust.h:153 adjust.h:278 httpdfunc.h:4224 httpdfunc.h:4705
 #: httpdsettings.h:49
 msgid "intern"
 msgstr ""
@@ -566,7 +567,7 @@ msgstr ""
 #: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
 #: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626
-#: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:599 infobar.h:722
+#: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:599 infobar.h:721
 #: keyactions.h:205 language.h:49 lcdpearl1.c:49 lcdsamsung.c:101 log.h:46
 #: log.h:48 marker.h:215 marker.h:229 mc_audioplayer.h:333
 #: mc_audioplayer.h:605 mc_audioplayer.h:716 mc_dateibrowser.h:36
@@ -2778,7 +2779,7 @@ msgid ""
 "Save Screenshoot Path: /tmp/screenshot.jpg"
 msgstr ""
 
-#: infobar.h:722
+#: infobar.h:721
 msgid "Internet Browser Plugin not installed !"
 msgstr ""
 
@@ -3975,7 +3976,7 @@ msgstr ""
 msgid "This video has been deleted. We apologize for the inconvenience."
 msgstr ""
 
-#: player.h:1020
+#: player.h:998
 msgid "Buffering Stream - Cancel with Exit"
 msgstr ""
 
@@ -11914,10 +11915,6 @@ msgstr "номер канала"
 #: vfdisplay.h:45
 msgid "date + time"
 msgstr "дата+время"
-
-#: vfdisplay.h:46
-msgid "vfddate"
-msgstr ""
 
 #: vfdisplay.h:51
 msgid "blink"
