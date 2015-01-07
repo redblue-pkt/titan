@@ -248,8 +248,10 @@ void screenadjust()
 	changemask(community_user, "abcdefghijklmnopqrstuvwxyz");
 	changeinput(community_user, getconfig("community_user", NULL));
 
-	changemask(community_pass, "abcdefghijklmnopqrstuvwxyz");
-	changeinput(community_pass, getconfig("community_pass", NULL));
+//	changemask(community_pass, "abcdefghijklmnopqrstuvwxyz");
+//	changeinput(community_pass, getconfig("community_pass", NULL));
+	changemask(community_pass, "****");
+	changeinput(community_pass, "****");
 
 #ifdef MIPSEL
 	dualboot->hidden = NO;
@@ -416,7 +418,19 @@ void screenadjust()
 			addconfigscreen("playerbufferseektime", playerbufferseektime);
 
 			addconfigscreen("community_user", community_user);
-			addconfigscreen("community_pass", community_pass);
+			// hid pass text and convert to md5sum
+			if(community_pass->ret != NULL && ostrcmp(community_pass->ret, "****") != 0)
+			{
+				debug(10, "community_pass: write");
+				if(strlen(community_pass->ret) != 32)
+				{
+					debug(10, "community_pass: convert to md5");
+					community_pass->ret = ostrcat(MDString(community_pass->ret), NULL, 1, 0);
+				}
+				addconfigscreen("community_pass", community_pass);
+			}
+			else
+				debug(10, "community_pass: skipped");
 
 			writeallconfig(1);
 			break;
