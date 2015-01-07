@@ -219,7 +219,7 @@ msgstr "WYJŚCIE"
 #: adjust.h:68 adjust.h:83 adjust.h:92 adjust.h:97 adjust.h:126 adjust.h:156
 #: adjust.h:166 adjust.h:170 adjust.h:187 adjust.h:191 adjust.h:199
 #: adjust.h:203 adjust.h:207 adjust.h:213 adjust.h:217 adjust.h:224
-#: adjust.h:228 adjust.h:232 adjust.h:238 adjust.h:244 adjust.h:286
+#: adjust.h:228 adjust.h:232 adjust.h:238 adjust.h:244 adjust.h:292
 #: autotimer.c:453 autotimer.c:486 avsettings.h:156 avsettings.h:192
 #: avsettings.h:196 blindscanadjust.h:150 blindscanadjust.h:154
 #: blindscanadjust.h:158 blindscanadjust.h:187 blindscanadjust.h:191 cec.h:143
@@ -451,12 +451,12 @@ msgstr ""
 msgid "4 GB"
 msgstr ""
 
-#: adjust.h:152 adjust.h:277 httpdfunc.h:4217 httpdfunc.h:4698
+#: adjust.h:152 adjust.h:283 httpdfunc.h:4217 httpdfunc.h:4698
 #: httpdsettings.h:50
 msgid "extern"
 msgstr ""
 
-#: adjust.h:153 adjust.h:278 httpdfunc.h:4224 httpdfunc.h:4705
+#: adjust.h:153 adjust.h:284 httpdfunc.h:4224 httpdfunc.h:4705
 #: httpdsettings.h:49
 msgid "intern"
 msgstr ""
