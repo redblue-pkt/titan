@@ -11826,7 +11826,7 @@ msgstr "Datum + Tijd"
 
 #: vfdisplay.h:46
 msgid "vfddate"
-msgstr ""
+msgstr "Datum"
 
 #: vfdisplay.h:51
 msgid "blink"

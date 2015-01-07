@@ -3620,8 +3620,8 @@ msgstr "Mostrar compartidos"
 #: networkbrowser.h:1875
 msgid "Choose your Shares from the following list"
 msgstr ""
-"lista de sus acciones. elige Editar entrada y pulse -VERDE-. Para agregar m√"
-"°s acciones por favor utiliza -Buscar-. Para acceder a los recursos "
+"lista de sus acciones. elige Editar entrada y pulse -VERDE-. Para agregar m\C3"
+"\A1s acciones por favor utiliza -Buscar-. Para acceder a los recursos "
 "compartidos de Windows protegidos con contrase√±a por favor presione men√∫ y "
 "entrar los datos del usuario."
 
@@ -11945,7 +11945,7 @@ msgstr "Fecha y Hora"
 
 #: vfdisplay.h:46
 msgid "vfddate"
-msgstr ""
+msgstr "Fecha"
 
 #: vfdisplay.h:51
 msgid "blink"

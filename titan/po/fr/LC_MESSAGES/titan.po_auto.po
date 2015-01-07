@@ -11633,15 +11633,15 @@ msgstr "Petit"
 
 #: vfdisplay.h:38
 msgid "channel number"
-msgstr "Chaine + Temps"
+msgstr "Chaine Numéro"
 
 #: vfdisplay.h:45
 msgid "date + time"
-msgstr "Chaine + Temps"
+msgstr "Date + Temps"
 
 #: vfdisplay.h:46
 msgid "vfddate"
-msgstr ""
+msgstr "Date"
 
 #: vfdisplay.h:51
 msgid "blink"

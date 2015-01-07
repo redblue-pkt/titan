@@ -11638,7 +11638,7 @@ msgstr ""
 
 #: vfdisplay.h:46
 msgid "vfddate"
-msgstr ""
+msgstr "Data"
 
 #: vfdisplay.h:51
 msgid "blink"
@@ -11654,11 +11654,11 @@ msgstr ""
 
 #: vfdisplay.h:54
 msgid "star"
-msgstr "Restart"
+msgstr "Gwiazda"
 
 #: vfdisplay.h:55
 msgid "blink star"
-msgstr ""
+msgstr "migać gwiazda"
 
 #: videomode.h:14
 msgid "letterbox"

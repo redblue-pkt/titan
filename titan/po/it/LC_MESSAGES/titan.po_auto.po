@@ -11685,7 +11685,7 @@ msgstr ""
 
 #: vfdisplay.h:38
 msgid "channel number"
-msgstr "Nome canale + tempo"
+msgstr "Nome canale"
 
 #: vfdisplay.h:45
 msgid "date + time"
@@ -11693,7 +11693,7 @@ msgstr "Data + Tempo"
 
 #: vfdisplay.h:46
 msgid "vfddate"
-msgstr ""
+msgstr "Data"
 
 #: vfdisplay.h:51
 msgid "blink"

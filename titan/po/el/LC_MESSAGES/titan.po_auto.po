@@ -11640,7 +11640,7 @@ msgstr ""
 
 #: vfdisplay.h:46
 msgid "vfddate"
-msgstr ""
+msgstr "ημερομηνία"
 
 #: vfdisplay.h:51
 msgid "blink"
