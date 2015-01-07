@@ -252,7 +252,7 @@ void screenadjust()
 //	changeinput(community_pass, getconfig("community_pass", NULL));
 	changemask(community_pass, "****");
 
-	if(strlen(getconfig("community_pass", NULL)) != 32)
+	if(getconfig("community_pass", NULL) != NULL && strlen(getconfig("community_pass", NULL)) != 32)
 		changeinput(community_pass, getconfig("community_pass", NULL));
 	else
 		changeinput(community_pass, "****");
