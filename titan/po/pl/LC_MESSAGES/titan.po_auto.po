@@ -374,7 +374,6 @@ msgstr "odwróć wielkość"
 #: adjust.h:105 httpdfunc.h:3869 mc_audioplayer_settings.h:31
 #: mc_pictureplayer_settings.h:46 mc_videoplayer_settings.h:27
 #: plugins_mc_skin.xml.h:16 skin_default_skin.xml.h:171 skins_mc_skin.xml.h:16
-#: vfdisplay.h:46
 msgid "date"
 msgstr "data"
 
@@ -11635,6 +11634,10 @@ msgstr "Szukaj kanał"
 
 #: vfdisplay.h:45
 msgid "date + time"
+msgstr ""
+
+#: vfdisplay.h:46
+msgid "vfddate"
 msgstr ""
 
 #: vfdisplay.h:51
