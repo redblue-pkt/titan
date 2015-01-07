@@ -291,6 +291,9 @@ struct menulist* menulistboxext(struct menulist* mlist, char* paramskinname, cha
 
 	while(1)
 	{
+		if(listbox->select != NULL)
+			writevfdmenu(listbox->select->text);
+		
 		rcret = waitrc(screen, 0, 0);
 		if(rcreturn != NULL) *rcreturn = rcret;
 
@@ -301,8 +304,6 @@ struct menulist* menulistboxext(struct menulist* mlist, char* paramskinname, cha
 			screenlinkedchannel();
 			break;
 		}
-		if(listbox->select != NULL)
-			writevfdmenu(listbox->select->text);
 		if(rcret == getrcconfigint("rcok", NULL) || rcret == getrcconfigint("rcred", NULL) || rcret == getrcconfigint("rcgreen", NULL) || rcret == getrcconfigint("rcyellow", NULL) || rcret == getrcconfigint("rcblue", NULL) || rcret == getrcconfigint("rcmenu", NULL))
 		{
 			if(rcreturn == NULL && rcret != getrcconfigint("rcok", NULL))
