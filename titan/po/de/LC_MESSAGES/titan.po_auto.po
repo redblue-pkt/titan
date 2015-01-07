@@ -11981,7 +11981,7 @@ msgstr "Ein/Ausblenden"
 
 #: vfdisplay.h:53
 msgid "show record"
-msgstr "Zeige 'RECORD'"
+msgstr "Zeige RECORD"
 
 #: vfdisplay.h:54
 msgid "star"
