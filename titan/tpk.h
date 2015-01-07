@@ -3040,7 +3040,7 @@ int tpkupdate(int flag)
 		tpknode = tpkmainlist;
 		while(tpknode != NULL)
 		{
-printf("check upgrade....%s\n", tpknode->name);
+//printf("check upgrade....%s\n", tpknode->name);
 			// disable settings upgrade group 100
 			if(ostrcmp(tpkinstallednode->name, tpknode->name) == 0 && tpknode->version > tpkinstallednode->version && tpkinstallednode->group != 100)
 			{
