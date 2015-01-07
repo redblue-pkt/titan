@@ -251,8 +251,12 @@ void screenadjust()
 //	changemask(community_pass, "abcdefghijklmnopqrstuvwxyz");
 //	changeinput(community_pass, getconfig("community_pass", NULL));
 	changemask(community_pass, "****");
-	changeinput(community_pass, "****");
 
+	if(strlen(getconfig("community_pass", NULL)) != 32)
+		changeinput(community_pass, getconfig("community_pass", NULL));
+	else
+		changeinput(community_pass, "****");
+	
 #ifdef MIPSEL
 	dualboot->hidden = NO;
 	frontpoweraktion->hidden = NO;
