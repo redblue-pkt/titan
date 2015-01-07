@@ -257,15 +257,15 @@ char* getsdhd(struct skin* node, char* path)
 
 	videoreadqwidth(status.aktservice->videodev);
 
-	if(getaktvideosize() == 0) //videosize is ok
-	{
+//	if(getaktvideosize() == 0) //videosize is ok
+//	{
 		if(status.videosize.h == 576)
 			tmpstr = ostrcat("sd.png", NULL, 0, 0);
 		else if(status.videosize.h == 720)
 			tmpstr = ostrcat("hdready.png", NULL, 0, 0);
 		else if(status.videosize.h == 1080)
 			tmpstr = ostrcat("hd.png", NULL, 0, 0);
-	}
+//	}
 	
 	if(tmpstr == NULL) tmpstr = ostrcat("novideo.png", NULL, 0, 0);
 
