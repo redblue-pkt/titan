@@ -2184,7 +2184,12 @@ int tpkinstall(char* file, char* installpath, int flag)
 	//check minversion
 	if(tpknode->minversion != 0 && tpknode->minversion < PLUGINVERSION)
 	{
+printf("--------------------\n");
+printf("install %s\n", tpknode->name);
 printf("minversion to short %d\n", tpknode->minversion);
+printf("pluginversion %d\n", PLUGINVERSION);
+printf("--------------------\n");
+
 		err("minversion to short %d", tpknode->minversion);
 		ret = 1;
 		goto end;
@@ -3035,11 +3040,11 @@ int tpkupdate(int flag)
 		tpknode = tpkmainlist;
 		while(tpknode != NULL)
 		{
-printf("check upgrade....\n");
+printf("check upgrade....%s\n", tpknode->name);
 			// disable settings upgrade group 100
 			if(ostrcmp(tpkinstallednode->name, tpknode->name) == 0 && tpknode->version > tpkinstallednode->version && tpkinstallednode->group != 100)
 			{
-printf("start upgrade....\n");
+printf("start upgrade....%s\n", tpknode->name);
 
 				//TODO: remove file that never exist in new pakages
 				tmpstr = ostrcat(tmpstr, EXTRACTDIR, 1, 0);
