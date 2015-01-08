@@ -2,8 +2,9 @@
 KERNELDIR=$1
 ROOTDIR=$2
 TYPE=$3
+SRCDIR=$4
 
-cd "$HOME"/flashimg/source.titan/titan/tools
+cd "$HOME"/flashimg/$SRCDIR/titan/tools
 
 rm tmp
 rm tmp.gz

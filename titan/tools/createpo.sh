@@ -3,6 +3,7 @@
 SVNUSER=$1
 GROUP=$2
 TYPE=update
+SRCDIR=$3
 
 if [ -z "$1" ]; then
 	echo "usage: createpo.sh <svnuser> <update|new>"
@@ -14,17 +15,17 @@ if [ -z "$2" ]; then
 	exit
 fi
 
-rm -rf "$HOME"/flashimg/source.titan/titan/tools/tmp
-mkdir -p "$HOME"/flashimg/source.titan/titan/tools/tmp
+rm -rf "$HOME"/flashimg/$SRCDIR/titan/tools/tmp
+mkdir -p "$HOME"/flashimg/$SRCDIR/titan/tools/tmp
 
-LIST=`find "$HOME"/flashimg/source.titan/titan "$HOME"/flashimg/source.titan/plugins -type f -name "*.h"`
-LIST="$LIST "`find "$HOME"/flashimg/source.titan/titan "$HOME"/flashimg/source.titan/plugins -type f -name "*.c"`
-POLIST=`find "$HOME"/flashimg/source.titan/po -type f -name "*_auto.po"`
-SKINLIST=`find "$HOME"/flashimg/source.titan -type f -name "*kin.xml"`
-HLIST=`find "$HOME"/flashimg/source.titan/web -type f -name "*.html"`
+LIST=`find "$HOME"/flashimg/$SRCDIR/titan "$HOME"/flashimg/$SRCDIR/plugins -type f -name "*.h"`
+LIST="$LIST "`find "$HOME"/flashimg/$SRCDIR/titan "$HOME"/flashimg/$SRCDIR/plugins -type f -name "*.c"`
+POLIST=`find "$HOME"/flashimg/$SRCDIR/po -type f -name "*_auto.po"`
+SKINLIST=`find "$HOME"/flashimg/$SRCDIR -type f -name "*kin.xml"`
+HLIST=`find "$HOME"/flashimg/$SRCDIR/web -type f -name "*.html"`
 
 for ROUND in $LIST; do
-	cp -a $ROUND "$HOME"/flashimg/source.titan/titan/tools/tmp
+	cp -a $ROUND "$HOME"/flashimg/$SRCDIR/titan/tools/tmp
 done
 
 for ROUND in $HLIST; do
@@ -32,10 +33,10 @@ for ROUND in $HLIST; do
 	echo "[createpo] webif update $ROUND"
 	echo "[createpo] webif update $FILENAME"
 
-	cat $ROUND | sed 's/_(/\ntmpstr = _(/g' | grep ^"tmpstr = _(" | sed 's/").*/");/g' >> "$HOME"/flashimg/source.titan/titan/tools/tmp/webif_$FILENAME.h
+	cat $ROUND | sed 's/_(/\ntmpstr = _(/g' | grep ^"tmpstr = _(" | sed 's/").*/");/g' >> "$HOME"/flashimg/$SRCDIR/titan/tools/tmp/webif_$FILENAME.h
 done
 
-cd "$HOME"/flashimg/source.titan/titan/tools/tmp
+cd "$HOME"/flashimg/$SRCDIR/titan/tools/tmp
 
 for ROUND in $SKINLIST; do
 	echo "[createpo] skin update $ROUND"
@@ -44,20 +45,20 @@ for ROUND in $SKINLIST; do
 	SECTION2=`echo $ROUND | tr "/" "\n" | tail -n2 | head -n1`
 
 	echo "[createpo] skin " "$SECTION1"_"$SECTION2"_"$NAME".h
-	cp "$HOME"/flashimg/source.titan/titan/tools/dummy "$HOME"/flashimg/source.titan/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME".h
+	cp "$HOME"/flashimg/$SRCDIR/titan/tools/dummy "$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME".h
 
-	cat $ROUND | grep title= | sed 's/title=/\ntitle=/' | grep ^title= | cut -d '"' -f2 | sort -u | sed '/^ *$/d' | tr '\n' '#' | sed 's/#\+/\");\ntmpstr = _(\"\ /g'| sed 's/" /"/' >>"$HOME"/flashimg/source.titan/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME".h
-	cat $ROUND | grep text= | sed 's/text=/\ntext=/' | grep ^text= | cut -d '"' -f2 | sort -u | sed '/^ *$/d' | tr '\n' '#' | sed 's/#\+/\");\ntmpstr = _(\"\ /g'| sed 's/" /"/' >>"$HOME"/flashimg/source.titan/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME".h
+	cat $ROUND | grep title= | sed 's/title=/\ntitle=/' | grep ^title= | cut -d '"' -f2 | sort -u | sed '/^ *$/d' | tr '\n' '#' | sed 's/#\+/\");\ntmpstr = _(\"\ /g'| sed 's/" /"/' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME".h
+	cat $ROUND | grep text= | sed 's/text=/\ntext=/' | grep ^text= | cut -d '"' -f2 | sort -u | sed '/^ *$/d' | tr '\n' '#' | sed 's/#\+/\");\ntmpstr = _(\"\ /g'| sed 's/" /"/' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME".h
 done
 
-cat "$HOME"/ipk/source*/*/CONTROL/control | grep Section: | sort -u | sed 's!Section: !tmpstr = _("!g' | sed 's!Package:!\nPackage!g' | grep ^tmpstr | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/source.titan/titan/tools/tmp/tpk_section.h
-cat "$HOME"/ipk/source*/*/CONTROL/control | grep Showname: | sort -u | sed 's!Showname: !tmpstr = _("!g' | sed 's!Package:!\nPackage!g' | grep ^tmpstr | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/source.titan/titan/tools/tmp/tpk_showname.h
-cat "$HOME"/ipk/source*/*/CONTROL/control | grep Description: | sort -u | sed 's!Description: !tmpstr = _("!g' | sed 's!Package:!\nPackage!g' | grep ^tmpstr | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/source.titan/titan/tools/tmp/tpk_description.h
-cat "$HOME"/flashimg/source.titan/skins/tithek/tithekmainmenu/*.list | grep -v internettv | cut -d"#" -f1 | sort -u | sed -e 's/^/tmpstr = _("/' | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/source.titan/titan/tools/tmp/tithek_mainmenu.h
-#cat /var/www/atemio/web/mediathek/*/*.category.list  | cut -d"#" -f1 | sort -u | sed -e 's/^/tmpstr = _("/' | grep -v link= | grep -v title= | tr '\0' '#' | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/source.titan/titan/tools/tmp/tithek_submenu.h
-ls "$HOME"/flashimg/source.titan/help/*/ | sed 's/.txt/");/g' | sed 's/^/tmpstr = _("/g' >> "$HOME"/flashimg/source.titan/titan/tools/tmp/webif_help.h
+cat "$HOME"/ipk/source*/*/CONTROL/control | grep Section: | sort -u | sed 's!Section: !tmpstr = _("!g' | sed 's!Package:!\nPackage!g' | grep ^tmpstr | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/tpk_section.h
+cat "$HOME"/ipk/source*/*/CONTROL/control | grep Showname: | sort -u | sed 's!Showname: !tmpstr = _("!g' | sed 's!Package:!\nPackage!g' | grep ^tmpstr | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/tpk_showname.h
+cat "$HOME"/ipk/source*/*/CONTROL/control | grep Description: | sort -u | sed 's!Description: !tmpstr = _("!g' | sed 's!Package:!\nPackage!g' | grep ^tmpstr | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/tpk_description.h
+cat "$HOME"/flashimg/$SRCDIR/skins/tithek/tithekmainmenu/*.list | grep -v internettv | cut -d"#" -f1 | sort -u | sed -e 's/^/tmpstr = _("/' | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/tithek_mainmenu.h
+#cat /var/www/atemio/web/mediathek/*/*.category.list  | cut -d"#" -f1 | sort -u | sed -e 's/^/tmpstr = _("/' | grep -v link= | grep -v title= | tr '\0' '#' | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/tithek_submenu.h
+ls "$HOME"/flashimg/$SRCDIR/help/*/ | sed 's/.txt/");/g' | sed 's/^/tmpstr = _("/g' >> "$HOME"/flashimg/$SRCDIR/titan/tools/tmp/webif_help.h
 
-file --mime-encoding "$HOME"/flashimg/source.titan/po/*/*/*.po >> "$HOME"/flashimg/source.titan/error/coding.log 2>&1
+file --mime-encoding "$HOME"/flashimg/$SRCDIR/po/*/*/*.po >> "$HOME"/flashimg/$SRCDIR/error/coding.log 2>&1
 
 error=0
 
@@ -84,17 +85,17 @@ for ROUND in $POLIST; do
 		if [ ! -e "$ROUND_UTF" ] || [ `cat "$ROUND_UTF" | wc -l` -eq 0 ]; then error="2"; break;fi
 
 		cmd="xgettext --omit-header -j -k_ *.* -o $ROUND_UTF"
-		echo "[createpo.sh] $cmd" >> "$HOME"/flashimg/source.titan/error/po.log
-		$cmd >> "$HOME"/flashimg/source.titan/error/po.log 2>&1
+		echo "[createpo.sh] $cmd" >> "$HOME"/flashimg/$SRCDIR/error/po.log
+		$cmd >> "$HOME"/flashimg/$SRCDIR/error/po.log 2>&1
 		if [ ! -e "$ROUND_UTF" ] || [ `cat "$ROUND_UTF" | wc -l` -eq 0 ]; then error="3"; break;fi
-		log=`cat "$HOME"/flashimg/source.titan/error/po.log`
+		log=`cat "$HOME"/flashimg/$SRCDIR/error/po.log`
 		if [ `echo $log | grep "fatal error" | wc -l` -gt 0 ]; then error="4"; break;fi
 
 		cmd="xgettext --omit-header -k_ *.* -o $ROUND_NEW"
-		echo "[createpo.sh] $cmd" >> "$HOME"/flashimg/source.titan/error/po.log
-		$cmd >> "$HOME"/flashimg/source.titan/error/po.log 2>&1
+		echo "[createpo.sh] $cmd" >> "$HOME"/flashimg/$SRCDIR/error/po.log
+		$cmd >> "$HOME"/flashimg/$SRCDIR/error/po.log 2>&1
 		if [ ! -e "$ROUND_NEW" ] || [ `cat "$ROUND_NEW" | wc -l` -eq 0 ]; then error="5"; break;fi
-		log=`cat "$HOME"/flashimg/source.titan/error/po.log`
+		log=`cat "$HOME"/flashimg/$SRCDIR/error/po.log`
 		if [ `echo $log | grep "fatal error" | wc -l` -gt 0 ]; then error="6";break;fi
 
 		echo "[createpo.sh] msgmerge $ROUND_UTF $ROUND_NEW > $ROUND_NEW_MERGE"
@@ -124,7 +125,7 @@ else
 fi
 echo ROUND: $ROUND
 
-#if [ "$ROUND" = "/home/atemio/flashimg/source.titan/po/vn/LC_MESSAGES/titan.po_auto.po" ];then
+#if [ "$ROUND" = "/home/atemio/flashimg/$SRCDIR/po/vn/LC_MESSAGES/titan.po_auto.po" ];then
 		cat $ROUND_MERGE | sed 's/"Content-Type:.*//g' > $OUTFILE_PO
 #else
 #		cat $ROUND_MERGE > $OUTFILE_PO 
@@ -132,10 +133,10 @@ echo ROUND: $ROUND
 		if [ ! -e "$OUTFILE_PO" ] || [ `cat "$OUTFILE_PO" | wc -l` -eq 0 ]; then error="11"; break;fi
 
 		cmd="msgfmt -v $OUTFILE_PO -o $OUTFILE_MO"
-		echo "[createpo.sh] $cmd" >> "$HOME"/flashimg/source.titan/error/po.log
-		$cmd >> "$HOME"/flashimg/source.titan/error/po.log 2>&1
+		echo "[createpo.sh] $cmd" >> "$HOME"/flashimg/$SRCDIR/error/po.log
+		$cmd >> "$HOME"/flashimg/$SRCDIR/error/po.log 2>&1
 		if [ ! -e "$OUTFILE_MO" ] || [ `cat "$OUTFILE_MO" | wc -l` -eq 0 ]; then error="12"; break;fi
-		log=`cat "$HOME"/flashimg/source.titan/error/po.log`
+		log=`cat "$HOME"/flashimg/$SRCDIR/error/po.log`
 		if [ `echo $log | grep "fatal error" | wc -l` -gt 0 ]; then error="13"; break;fi
 
 		iconv -f UTF-8 -t ISO-8859-1 $ROUND_NEW_MERGE > $ROUND
@@ -158,45 +159,45 @@ if [ $error != 0 ];then
 	echo "[createpo.sh] found error($error)"
 fi
 
-file --mime-encoding "$HOME"/flashimg/source.titan/po/*/*/*.po >> "$HOME"/flashimg/source.titan/error/coding.log 2>&1
+file --mime-encoding "$HOME"/flashimg/$SRCDIR/po/*/*/*.po >> "$HOME"/flashimg/$SRCDIR/error/coding.log 2>&1
 
 echo "[createpo.sh] ###################### error log start ##########################"
-cat "$HOME"/flashimg/source.titan/error/po.log
+cat "$HOME"/flashimg/$SRCDIR/error/po.log
 echo "[createpo.sh] ####################### error log end ###########################"
 
 echo "[createpo.sh] check user $SVNUSER"
 echo "[createpo.sh] check group $GROUP"
 
-cd "$HOME"/flashimg/source.titan/po
+cd "$HOME"/flashimg/$SRCDIR/po
 if [ "$SVNUSER" = "aafsvn" ] && [ "$GROUP" = "dev" ] && [ "$error" = "0" ];then
 	echo "[createpo.sh] svn commit -m [titan] autoupdate po files"
 	svn commit -m "[titan] autoupdate po files"
-	svn commit "$HOME"/flashimg/source.titan/po
+	svn commit "$HOME"/flashimg/$SRCDIR/po
 elif [ "$SVNUSER" = "aafsvn" ] && [ "$GROUP" = "dev" ];then
 	echo "[createpo.sh] svn commit -m [titan] ERROR autoupdate po files"
 	
-	cp -a "$HOME"/flashimg/source.titan/error/po.log "$HOME"/flashimg/source.titan/error/create_po_error_code
+	cp -a "$HOME"/flashimg/$SRCDIR/error/po.log "$HOME"/flashimg/$SRCDIR/error/create_po_error_code
 	
-	LINE=`cat "$HOME"/flashimg/source.titan/error/po.log | grep -n "fatal error" | cut -d: -f1`
+	LINE=`cat "$HOME"/flashimg/$SRCDIR/error/po.log | grep -n "fatal error" | cut -d: -f1`
 	if [ ! -z "$LINE" ];then
 		LINE=`expr $LINE - 1`
-		FILE=`cat "$HOME"/flashimg/source.titan/error/po.log | sed -ne ""$LINE"p" | cut -d: -f1`
-		LINE=`cat "$HOME"/flashimg/source.titan/error/po.log | sed -ne ""$LINE"p" | cut -d: -f2`
+		FILE=`cat "$HOME"/flashimg/$SRCDIR/error/po.log | sed -ne ""$LINE"p" | cut -d: -f1`
+		LINE=`cat "$HOME"/flashimg/$SRCDIR/error/po.log | sed -ne ""$LINE"p" | cut -d: -f2`
 		LINE1=`expr $LINE - 1`
 		LINE2=`expr $LINE + 1`
-		echo "[createpo.sh] ############################################" >> "$HOME"/flashimg/source.titan/error/create_po_error_code
-		echo "[createpo.sh] ###### error should be in the middle #######" >> "$HOME"/flashimg/source.titan/error/create_po_error_code
-		echo "[createpo.sh] ############################################" >> "$HOME"/flashimg/source.titan/error/create_po_error_code
-		cat -n "$FILE" | sed -ne ""$LINE1","$LINE2"p" >> "$HOME"/flashimg/source.titan/error/create_po_error_code
-		echo "[createpo.sh] ############################################" >> "$HOME"/flashimg/source.titan/error/create_po_error_code
+		echo "[createpo.sh] ############################################" >> "$HOME"/flashimg/$SRCDIR/error/create_po_error_code
+		echo "[createpo.sh] ###### error should be in the middle #######" >> "$HOME"/flashimg/$SRCDIR/error/create_po_error_code
+		echo "[createpo.sh] ############################################" >> "$HOME"/flashimg/$SRCDIR/error/create_po_error_code
+		cat -n "$FILE" | sed -ne ""$LINE1","$LINE2"p" >> "$HOME"/flashimg/$SRCDIR/error/create_po_error_code
+		echo "[createpo.sh] ############################################" >> "$HOME"/flashimg/$SRCDIR/error/create_po_error_code
 	fi
 
-	echo "[createpo.sh] ################## coding #################" >> "$HOME"/flashimg/source.titan/error/create_po_error_code
-	cat "$HOME"/flashimg/source.titan/error/coding.log >> "$HOME"/flashimg/source.titan/error/create_po_error_code
+	echo "[createpo.sh] ################## coding #################" >> "$HOME"/flashimg/$SRCDIR/error/create_po_error_code
+	cat "$HOME"/flashimg/$SRCDIR/error/coding.log >> "$HOME"/flashimg/$SRCDIR/error/create_po_error_code
 
-	cd "$HOME"/flashimg/source.titan/error
+	cd "$HOME"/flashimg/$SRCDIR/error
 	svn commit -m "[titan] ERROR autoupdate po files"
-	svn commit "$HOME"/flashimg/source.titan/error/create_po_error_code
+	svn commit "$HOME"/flashimg/$SRCDIR/error/create_po_error_code
 else
 	echo "[createpo.sh] skip: svn commit"
 fi
