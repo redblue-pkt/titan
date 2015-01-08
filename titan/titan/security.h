@@ -1327,16 +1327,9 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 
 	hash = ostrcat("vb_login_username=", user, 0, 0);
 	hash = ostrcat(hash, "&vb_login_password=&vb_login_password_hint=Kennwort&s=&securitytoken=guest&do=login&vb_login_md5password=", 1, 0);
-	if(strlen(pass) != 32)
-		hash = ostrcat(hash, MDString(pass), 1, 1);
-	else
-		hash = ostrcat(hash, pass, 1, 1);
+	hash = ostrcat(hash, MDString(pass), 1, 1);
 	hash = ostrcat(hash, "&vb_login_md5password_utf=", 1, 0);
-	if(strlen(pass) != 32)
-		hash = ostrcat(hash, MDString(pass), 1, 1);
-	else
-		hash = ostrcat(hash, pass, 1, 1);
-
+	hash = ostrcat(hash, MDString(pass), 1, 1);
 	hashlen = oitoa(strlen(hash));
 
 	send = ostrcat(send, "POST ", 1, 0);
