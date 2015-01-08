@@ -122,8 +122,10 @@ getteletext (FUNCPIC)
 getcrypt (FUNCPIC)
 gethbbtv (FUNCPIC)
 getresolution (FUNCPIC)
+getchannelresolution (FUNCPIC)
 getsdhd (FUNCPIC)
 getaspectmode (FUNCPIC)
+getchannelaspect (FUNCPIC)
 getreccount
 getrec (FUNCPIC)
 getplaypic (FUNCPIC)
@@ -134,6 +136,8 @@ getepgmarkedtimeline (FUNCPROGRESS)
 getepgakttimeline (FUNCPROGRESS)
 getsnrline (FUNCPROGRESS)
 getsignalline (FUNCPROGRESS)
+getwlanlinkquality (FUNCPROGRESS)
+getbufferstatus (FUNCPROGRESS)
 gettvpic
 getepgmarkeddesc
 getepgaktdesc
@@ -150,6 +154,7 @@ getepgaktsubtitle
 getepgnexttitle
 getepgnextstart
 getepgnextend
+getepgnextdesc
 getepgakttimeremaining
 getepgnexttimeremaining
 getchannelnr
@@ -175,3 +180,5 @@ getoscamcw1
 getoscamsystem
 getoscamsource
 getemu
+getrecfreesizetext 
+getwlanlinkqualitytext
