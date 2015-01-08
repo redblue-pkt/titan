@@ -13,6 +13,7 @@ BOX=${12}
 GROUP=${13}
 DISTRO=${14}
 ARCH=${15}
+SRCDIR=${16}
 
 HELP=0
 
@@ -40,7 +41,7 @@ if [ "$HELP" = "1" ];then
 	sudo update-grub 
 fi
 
-cd "$HOME"/flashimg/source.titan/titan
+cd "$HOME"/flashimg/$SRCDIR/titan
 
-gcc -DSIMULATE -DI386 -DNOFB-DCAMSUPP -Os -mhard-float -export-dynamic -Wall -Wno-unused-but-set-variable -Wno-implicit-function-declaration -Wno-unused-result -Wunused-variable -Wno-parentheses -Wno-maybe-uninitialized -I/usr/include/freetype2 -I "$HOME"/flashimg/source.titan/libdreamdvd -I "$HOME" -c titan.c
+gcc -DSIMULATE -DI386 -DNOFB-DCAMSUPP -Os -mhard-float -export-dynamic -Wall -Wno-unused-but-set-variable -Wno-implicit-function-declaration -Wno-unused-result -Wunused-variable -Wno-parentheses -Wno-maybe-uninitialized -I/usr/include/freetype2 -I "$HOME"/flashimg/$SRCDIR/libdreamdvd -I "$HOME" -c titan.c
 /bin/bash libtool --tag=CC --mode=link gcc -DSIMULATE -DI386 -DNOFB -Os -export-dynamic -Wall -Wno-unused-but-set-variable -pipe -Os  -Wl,-rpath -Wl,/usr/lib -Wl,-rpath-link -Wl,/usr/lib -L/lib -L/usr/lib -L/usr/lib/i386-linux-gnu -o titan titan.o -lpthread -ldl -lpng -lfreetype -ljpeg -lz -lm
