@@ -371,7 +371,7 @@ void screenavsettings(int flag)
 			{
 				ret = getwss();
 				if(ostrcmp(ret, wssmode->ret) != 0)
-					setaac(wssmode->ret); 
+					setwss(wssmode->ret); 
 				free(ret); ret = NULL;
 			}
 			if(mode3d->ret != NULL)
