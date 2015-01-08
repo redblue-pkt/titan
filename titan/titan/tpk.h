@@ -3038,7 +3038,7 @@ int tpkupdate(int flag)
 			// disable settings upgrade group 100
 			if(ostrcmp(tpkinstallednode->name, tpknode->name) == 0 && tpknode->version > tpkinstallednode->version && tpkinstallednode->group != 100 && tpknode->minversion != 0 && tpknode->minversion < PLUGINVERSION)
 			{
-				debug(10, "Tpk Upgrade: %s (%d > %d)\n", tpknode->name, tpkinstallednode->version, tpknode->version);
+				debug(10, "Tpk Upgrade: %s (Installed Version: %d > Upgrade Version: %d) (Min Version: %d < Plugin Version: %d)\n", tpknode->name, tpkinstallednode->version, tpknode->version, tpknode->minversion, PLUGINVERSION);
 				//TODO: remove file that never exist in new pakages
 				tmpstr = ostrcat(tmpstr, EXTRACTDIR, 1, 0);
 				tmpstr = ostrcat(tmpstr, "/", 1, 0);
