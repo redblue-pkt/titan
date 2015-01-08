@@ -431,12 +431,13 @@ void screenadjust()
 				if(strlen(tmpstr) != 32)
 				{
 					debug(99, "community_pass: convert to md5");
-					char* pass = MDString(tmpstr);
-					free(tmpstr), tmpstr = NULL;
-					tmpstr = ostrcat(pass, NULL, 0, 0);
-					free(pass), pass = NULL;
+					char* tmpstr1 = NULL;
+					tmpstr1 = ostrcat(MDString(tmpstr), NULL, 1, 0);
+					addconfigscreen("community_pass", tmpstr1);
+					free(tmpstr1), tmpstr1 = NULL;
 				}
-				addconfigscreen("community_pass", tmpstr);
+				else
+					addconfigscreen("community_pass", tmpstr);
 				free(tmpstr), tmpstr = NULL;
 			}
 			else
