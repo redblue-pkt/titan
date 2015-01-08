@@ -13,14 +13,15 @@ BOX=${12}
 GROUP=${13}
 DISTRO=${14}
 ARCH=${15}
+SRCDIR=${16}
 
 rm "$HOME"/flashimg/.ipk-build-error
 
 # work
-#mv -f "$HOME"/flashimg/source.titan/titan/struct.mipsel.h "$HOME"/flashimg/source.titan/titan/struct.h
+#mv -f "$HOME"/flashimg/$SRCDIR/titan/struct.mipsel.h "$HOME"/flashimg/$SRCDIR/titan/struct.h
 
 #if [ "$GROUP" = "dev" ];then
-#	mv -f "$HOME"/flashimg/source.titan/titan/skin.mipsel.h "$HOME"/flashimg/source.titan/titan/skin.h
+#	mv -f "$HOME"/flashimg/$SRCDIR/titan/skin.mipsel.h "$HOME"/flashimg/$SRCDIR/titan/skin.h
 #fi
 
 if [ -z "$TYPE" ]; then
@@ -106,9 +107,9 @@ echo "[titan]--------------------------------------------------------"
 echo "[titan] get skin"
 echo "[titan]--------------------------------------------------------"
 
-rm -rf "$HOME"/flashimg/source.titan/skin
-mkdir "$HOME"/flashimg/source.titan/skin	
-svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source/skinsdefault_default/_path_/usr/local/share/titan/skin/default "$HOME"/flashimg/source.titan/skin/default
+rm -rf "$HOME"/flashimg/$SRCDIR/skin
+mkdir "$HOME"/flashimg/$SRCDIR/skin	
+svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source/skinsdefault_default/_path_/usr/local/share/titan/skin/default "$HOME"/flashimg/$SRCDIR/skin/default
 
 echo "[titan]--------------------------------------------------------"
 echo "[titan] get skin done"
@@ -117,33 +118,33 @@ echo "[titan]--------------------------------------------------------"
 echo "[titan]--------------------------------------------------------"
 echo "[titan] get settings"
 echo "[titan]--------------------------------------------------------"
-rm -rf "$HOME"/flashimg/source.titan/settings.svn
+rm -rf "$HOME"/flashimg/$SRCDIR/settings.svn
 if [ "$TYPE" = "ufs910" ] || [ "$TYPE" = "ufs922" ];then
-	svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source/settings_default_sat_1_0/mnt/settings "$HOME"/flashimg/source.titan/settings.svn
+	svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source/settings_default_sat_1_0/mnt/settings "$HOME"/flashimg/$SRCDIR/settings.svn
 elif [ "$TYPE" = "ipbox9000" ];then
-	svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source/settings_default_all_2_0/mnt/settings "$HOME"/flashimg/source.titan/settings.svn
+	svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source/settings_default_all_2_0/mnt/settings "$HOME"/flashimg/$SRCDIR/settings.svn
 else
-	svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source/settings_default_all_2_0/mnt/settings "$HOME"/flashimg/source.titan/settings.svn
+	svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source/settings_default_all_2_0/mnt/settings "$HOME"/flashimg/$SRCDIR/settings.svn
 fi
-sort -u "$HOME"/flashimg/source.titan/settings.svn/channel > "$HOME"/flashimg/source.titan/settings.svn/channel.sort
-mv -f "$HOME"/flashimg/source.titan/settings.svn/channel.sort "$HOME"/flashimg/source.titan/settings.svn/channel
-sed s/"^ *"// -i "$HOME"/flashimg/source.titan/settings.svn/channel
+sort -u "$HOME"/flashimg/$SRCDIR/settings.svn/channel > "$HOME"/flashimg/$SRCDIR/settings.svn/channel.sort
+mv -f "$HOME"/flashimg/$SRCDIR/settings.svn/channel.sort "$HOME"/flashimg/$SRCDIR/settings.svn/channel
+sed s/"^ *"// -i "$HOME"/flashimg/$SRCDIR/settings.svn/channel
 
 echo "[titan]--------------------------------------------------------"
 echo "[titan] get settings done"
 echo "[titan]--------------------------------------------------------"
 
-cp -a "$HOME"/flashimg/source.titan/skins/[^.]* "$HOME"/flashimg/source.titan/plugins
+cp -a "$HOME"/flashimg/$SRCDIR/skins/[^.]* "$HOME"/flashimg/$SRCDIR/plugins
 
 echo "[titan]--------------------------------------------------------"
 echo "[titan] cleanup"
 echo "[titan]--------------------------------------------------------"
 
-cd "$HOME"/flashimg/source.titan/titan
+cd "$HOME"/flashimg/$SRCDIR/titan
 rm -rf titan
 rm -rf titan.o
-rm -rf `find "$HOME"/flashimg/source.titan/plugins -type f -name "*.o"`
-rm -rf `find "$HOME"/flashimg/source.titan/plugins -type f -name "*.so"`
+rm -rf `find "$HOME"/flashimg/$SRCDIR/plugins -type f -name "*.o"`
+rm -rf `find "$HOME"/flashimg/$SRCDIR/plugins -type f -name "*.so"`
 
 echo "[titan]--------------------------------------------------------"
 echo "[titan] cleanup done"
@@ -153,7 +154,7 @@ echo "[titan]--------------------------------------------------------"
 #echo "[titan] Make Securety"
 #echo "[titan]--------------------------------------------------------"
 
-"$HOME"/flashimg/source.titan/titan/tools/gettitancode.sh $KERNELDIR $ROOTDIR $TYPE
+"$HOME"/flashimg/$SRCDIR/titan/tools/gettitancode.sh $KERNELDIR $ROOTDIR $TYPE $SRCDIR
 
 #echo "[titan]--------------------------------------------------------"
 #echo "[titan] Security done"
@@ -163,8 +164,8 @@ echo "[titan]--------------------------------------------------------"
 echo "[titan] Make Tpkdir"
 echo "[titan]--------------------------------------------------------"
 
-echo "$HOME"/flashimg/source.titan/titan/tools/gettpk.sh $IPKDIR $VERSION
-"$HOME"/flashimg/source.titan/titan/tools/gettpk.sh $IPKDIR $VERSION
+echo "$HOME"/flashimg/$SRCDIR/titan/tools/gettpk.sh $IPKDIR $VERSION $SRCDIR
+"$HOME"/flashimg/$SRCDIR/titan/tools/gettpk.sh $IPKDIR $VERSION $SRCDIR
 
 echo "[titan]--------------------------------------------------------"
 echo "[titan] Tpkdir done"
@@ -179,10 +180,10 @@ if [ $BUILDTYPE == 222 ]; then
 	echo make curl
 	make curl
 			
-	cd "$HOME"/flashimg/source.titan/netsurf
+	cd "$HOME"/flashimg/$SRCDIR/netsurf
 	./makesh4.sh $STM
-	cd "$HOME"/flashimg/source.titan/titan
-	if [ ! -e "$HOME"/flashimg/source.titan/netsurf/netsurf-2.8/nsfb ]; then
+	cd "$HOME"/flashimg/$SRCDIR/titan
+	if [ ! -e "$HOME"/flashimg/$SRCDIR/netsurf/netsurf-2.8/nsfb ]; then
 		echo "[titan]--------------------------------------------------------"
 		echo "[titan] netsurf building error !!!"
 		echo "[titan] check your src"
@@ -204,7 +205,7 @@ if [ $BUILDTYPE == 222 ]; then
 	make minidlna-clean
 	echo make minidlna
 	make minidlna
-	cd "$HOME"/flashimg/source.titan/titan
+	cd "$HOME"/flashimg/$SRCDIR/titan
 	
 	if [ ! -e "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/sbin/minidlna ]; then
 		echo "[titan]--------------------------------------------------------"
@@ -228,7 +229,7 @@ if [ $BUILDTYPE == 222 ]; then
 		make curlftpfs-clean
 		echo make curlftpfs
 		make curlftpfs
-		cd "$HOME"/flashimg/source.titan/titan
+		cd "$HOME"/flashimg/$SRCDIR/titan
 		
 		if [ ! -e "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/curlftpfs ]; then
 			echo "[titan]--------------------------------------------------------"
@@ -252,7 +253,7 @@ if [ $BUILDTYPE == 222 ]; then
 		make djmount-clean
 		echo make djmount
 		make djmount
-		cd "$HOME"/flashimg/source.titan/titan
+		cd "$HOME"/flashimg/$SRCDIR/titan
 		
 		if [ ! -e "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/djmount ]; then
 			echo "[titan]--------------------------------------------------------"
@@ -276,7 +277,7 @@ if [ $BUILDTYPE == 222 ]; then
 		make sshfs-clean
 		echo make sshfs
 		make sshfs
-		cd "$HOME"/flashimg/source.titan/titan
+		cd "$HOME"/flashimg/$SRCDIR/titan
 		
 		if [ ! -e "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/sshfs ]; then
 			echo "[titan]--------------------------------------------------------"
@@ -300,7 +301,7 @@ if [ $BUILDTYPE == 222 ]; then
 		make rarfs-clean
 		echo make rarfs
 		make rarfs
-		cd "$HOME"/flashimg/source.titan/titan
+		cd "$HOME"/flashimg/$SRCDIR/titan
 		
 		if [ ! -e "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/rarfs ]; then
 			echo "[titan]--------------------------------------------------------"
@@ -324,7 +325,7 @@ if [ $BUILDTYPE == 222 ]; then
 		make gst_plugins_dvbmediasink-clean
 		echo make gst_plugins_dvbmediasink
 		make gst_plugins_dvbmediasink
-		cd "$HOME"/flashimg/source.titan/titan
+		cd "$HOME"/flashimg/$SRCDIR/titan
 		
 		if [ ! -e "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/gstreamer-0.10 ]; then
 			echo "[titan]--------------------------------------------------------"
@@ -348,7 +349,7 @@ if [ $BUILDTYPE == 222 ]; then
 		make directfb-clean
 		echo make directfb
 		make directfb
-		cd "$HOME"/flashimg/source.titan/titan
+		cd "$HOME"/flashimg/$SRCDIR/titan
 		
 		if [ ! -e "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/directfb-1.4-5 ]; then
 			echo "[titan]--------------------------------------------------------"
@@ -368,8 +369,8 @@ if [ $BUILDTYPE == 222 ]; then
 		echo "[titan]--------------------------------------------------------"
 
 
-		"$HOME"/flashimg/source.titan/gmediarender/makesh4.sh $STM $MEDIAFW
-		if [ ! -e "$HOME"/flashimg/source.titan/gmediarender/src/gmediarender ]; then
+		"$HOME"/flashimg/$SRCDIR/gmediarender/makesh4.sh $STM $MEDIAFW
+		if [ ! -e "$HOME"/flashimg/$SRCDIR/gmediarender/src/gmediarender ]; then
 			echo "[titan]--------------------------------------------------------"
 			echo "[titan] gmediarender building error !!!"
 			echo "[titan] check your src"
@@ -383,7 +384,7 @@ if [ $BUILDTYPE == 222 ]; then
 		make gmediarender-clean
 		echo make gmediarender
 		make gmediarender
-		cd "$HOME"/flashimg/source.titan/titan
+		cd "$HOME"/flashimg/$SRCDIR/titan
 		
 		if [ ! -e "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/gmediarender ]; then
 			echo "[titan]--------------------------------------------------------"
@@ -404,10 +405,10 @@ if [ $BUILDTYPE == 0 ] || [ $BUILDTYPE == 1 ]; then
 	#echo "[titan]--------------------------------------------------------"
 	#echo "[titan] libipkg"
 	#echo "[titan]--------------------------------------------------------"
-	#cd "$HOME"/flashimg/source.titan/libipkg
+	#cd "$HOME"/flashimg/$SRCDIR/libipkg
 	#./makesh4.sh $STM
-	#cd "$HOME"/flashimg/source.titan/titan
-	#if [ ! -e "$HOME"/flashimg/source.titan/libipkg/.libs/libipkg.so.0.0.0 ]; then
+	#cd "$HOME"/flashimg/$SRCDIR/titan
+	#if [ ! -e "$HOME"/flashimg/$SRCDIR/libipkg/.libs/libipkg.so.0.0.0 ]; then
 	#	echo "[titan]--------------------------------------------------------"
 	#	echo "[titan] ipkg building error !!!"
 	#	echo "[titan] check your src"
@@ -423,10 +424,10 @@ if [ $BUILDTYPE == 0 ] || [ $BUILDTYPE == 1 ]; then
 	echo "[titan]--------------------------------------------------------"
 	echo "[titan] libdreamdvd"
 	echo "[titan]--------------------------------------------------------"
-	cd "$HOME"/flashimg/source.titan/libdreamdvd
+	cd "$HOME"/flashimg/$SRCDIR/libdreamdvd
 	./makesh4.sh $STM
-	cd "$HOME"/flashimg/source.titan/titan
-	if [ ! -e "$HOME"/flashimg/source.titan/libdreamdvd/.libs/libdreamdvd.so.0.0.0 ]; then
+	cd "$HOME"/flashimg/$SRCDIR/titan
+	if [ ! -e "$HOME"/flashimg/$SRCDIR/libdreamdvd/.libs/libdreamdvd.so.0.0.0 ]; then
 		echo "[titan]--------------------------------------------------------"
 		echo "[titan] libdreamdvd building error !!!"
 		echo "[titan] check your src"
@@ -434,7 +435,7 @@ if [ $BUILDTYPE == 0 ] || [ $BUILDTYPE == 1 ]; then
 		touch "$HOME"/flashimg/.ipk-build-error
 		exit 1
 	fi
-	cp "$HOME"/flashimg/source.titan/libdreamdvd/.libs/libdreamdvd.so.0.0.0 "$ROOTDIR"/lib
+	cp "$HOME"/flashimg/$SRCDIR/libdreamdvd/.libs/libdreamdvd.so.0.0.0 "$ROOTDIR"/lib
 	
 	echo "[titan]--------------------------------------------------------"
 	echo "[titan] libdreamdvd done"
@@ -479,22 +480,22 @@ fi
 "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/devkit/sh4/bin/sh4-linux-gcc -DSH4 -D$eplayer -DDVDPLAYER -Os $devflag -export-dynamic -Wall -Wno-unused-but-set-variable \
 	-I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/include/freetype2 \
 	-I $eplayerinclude \
-	-I "$HOME"/flashimg/source.titan/libdreamdvd \
+	-I "$HOME"/flashimg/$SRCDIR/libdreamdvd \
 	-I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/driver/bpamem \
 	-I "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/cvs/apps/misc/tools/libmmeimage \
-	-I "$HOME"/flashimg/source.titan \
+	-I "$HOME"/flashimg/$SRCDIR \
 	-c titan.c
 	
 #"$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/devkit/sh4/bin/sh4-linux-gcc -Os -Wl,-rpath -Wl,/usr/lib $devflag -export-dynamic -lpthread -ldl -lpng -lfreetype -l$eplayerlib -ldreamdvd -ljpeg -lmmeimage -lmme_host -Wall \
 #	titan.o \
 #	-o titan
 
-#cd "$HOME"/flashimg/source.titan/titan
+#cd "$HOME"/flashimg/$SRCDIR/titan
 #mkdir .deps
 
-#"$HOME"/flashimg/BUILDGIT/checkout_$STM/tdt/tufsbox/devkit/sh4/bin/sh4-linux-gcc -DPACKAGE_NAME=\"tuxbox-apps-titan\" -DPACKAGE_TARNAME=\"tuxbox-titan\" -DPACKAGE_VERSION=\"0.0.1\" -DPACKAGE_STRING=\"tuxbox-apps-titan\ 0.0.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"tuxbox-titan\" -DVERSION=\"0.0.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -I. -I"$HOME"/flashimg/BUILDGIT/checkout_$STM/tdt/tufsbox/cdkroot/usr/include -I"$HOME"/flashimg/BUILDGIT/checkout_$STM/tdt/tufsbox/cdkroot/usr/include/freetype2 -I"$HOME"/flashimg/BUILDGIT/checkout_$STM/tdt/cvs/driver/bpamem -I"$HOME"/flashimg/BUILDGIT/checkout_$STM/tdt/cvs/apps/misc/tools/libeplayer3/include -I"$HOME"/flashimg/BUILDGIT/checkout_$STM/tdt/cvs/apps/misc/tools/libmmeimage -I"$HOME"/flashimg/source.titan/titan  -I"$HOME"/flashimg/BUILDGIT/checkout_$STM/tdt/cvs/driver/bpamem -I"$HOME"/flashimg/source.titan/libdreamdvd -DSH4 -DEPLAYER3 -Deplayer3 -DDVDPLAYER -Os -export-dynamic -Wall -Wno-unused-but-set-variable -pipe -Os -MT titan-titan.o -MD -MP -MF .deps/titan-titan.Tpo -c -o titan-titan.o `test -f 'titan.c' || echo './'`titan.c
+#"$HOME"/flashimg/BUILDGIT/checkout_$STM/tdt/tufsbox/devkit/sh4/bin/sh4-linux-gcc -DPACKAGE_NAME=\"tuxbox-apps-titan\" -DPACKAGE_TARNAME=\"tuxbox-titan\" -DPACKAGE_VERSION=\"0.0.1\" -DPACKAGE_STRING=\"tuxbox-apps-titan\ 0.0.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"tuxbox-titan\" -DVERSION=\"0.0.1\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -I. -I"$HOME"/flashimg/BUILDGIT/checkout_$STM/tdt/tufsbox/cdkroot/usr/include -I"$HOME"/flashimg/BUILDGIT/checkout_$STM/tdt/tufsbox/cdkroot/usr/include/freetype2 -I"$HOME"/flashimg/BUILDGIT/checkout_$STM/tdt/cvs/driver/bpamem -I"$HOME"/flashimg/BUILDGIT/checkout_$STM/tdt/cvs/apps/misc/tools/libeplayer3/include -I"$HOME"/flashimg/BUILDGIT/checkout_$STM/tdt/cvs/apps/misc/tools/libmmeimage -I"$HOME"/flashimg/$SRCDIR/titan  -I"$HOME"/flashimg/BUILDGIT/checkout_$STM/tdt/cvs/driver/bpamem -I"$HOME"/flashimg/$SRCDIR/libdreamdvd -DSH4 -DEPLAYER3 -Deplayer3 -DDVDPLAYER -Os -export-dynamic -Wall -Wno-unused-but-set-variable -pipe -Os -MT titan-titan.o -MD -MP -MF .deps/titan-titan.Tpo -c -o titan-titan.o `test -f 'titan.c' || echo './'`titan.c
 /bin/sh "$HOME"/flashimg/BUILDGIT/checkout_$STM/tdt/tufsbox/host/bin/libtool --tag=CC   --mode=link "$HOME"/flashimg/BUILDGIT/checkout_$STM/tdt/tufsbox/devkit/sh4/bin/sh4-linux-gcc -DSH4 -Deplayer3 -DDVDPLAYER -Os -export-dynamic -Wall -Wno-unused-but-set-variable -pipe -Os  -Wl,-rpath -Wl,/usr/lib -Wl,-rpath-link -Wl,/home/atemio/flashimg/BUILDGIT/checkout_$STM/tdt/tufsbox/cdkroot/usr/lib -L/home/atemio/flashimg/BUILDGIT/checkout_$STM/tdt/tufsbox/cdkroot/lib -L/home/atemio/flashimg/BUILDGIT/checkout_$STM/tdt/tufsbox/cdkroot/usr/lib -o titan titan.o -lpthread -ldl -lpng -lfreetype -leplayer3 -ldreamdvd -ljpeg -lmmeimage -lmme_host 
-cp "$HOME"/flashimg/source.titan/titan/.libs/titan "$HOME"/flashimg/source.titan/titan
+cp "$HOME"/flashimg/$SRCDIR/titan/.libs/titan "$HOME"/flashimg/$SRCDIR/titan
 "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/devkit/sh4/bin/sh4-linux-strip titan
 
 echo "[titan]--------------------------------------------------------"
@@ -517,10 +518,10 @@ echo "[titan]--------------------------------------------------------"
 echo "[titan] Make TPK Binary"
 echo "[titan]--------------------------------------------------------"
 
-rm -rf "$HOME"/flashimg/source.titan/tpk/tpk
-"$HOME"/flashimg/source.titan/tpk/make.sh
+rm -rf "$HOME"/flashimg/$SRCDIR/tpk/tpk
+"$HOME"/flashimg/$SRCDIR/tpk/make.sh $SRCDIR
 
-if [ ! -e "$HOME"/flashimg/source.titan/tpk/tpk ]; then
+if [ ! -e "$HOME"/flashimg/$SRCDIR/tpk/tpk ]; then
 	echo "[titan]--------------------------------------------------------"
 	echo "[titan] building error !!!"
 	echo "[titan] check your src"
@@ -536,7 +537,7 @@ echo "[titan]--------------------------------------------------------"
 echo "[titan]--------------------------------------------------------"
 echo "[titan] Make Plugins"
 echo "[titan]--------------------------------------------------------"
-"$HOME"/flashimg/source.titan/plugins/makesh4.sh "$STM" "$MEDIAFW" "$GROUP" "$BOX" "$DISTRO"
+"$HOME"/flashimg/$SRCDIR/plugins/makesh4.sh "$STM" "$MEDIAFW" "$GROUP" "$BOX" "$DISTRO"
 echo "[titan]--------------------------------------------------------"
 echo "[titan] Plugins done"
 echo "[titan]--------------------------------------------------------"
@@ -545,7 +546,7 @@ if [ "$TYPE" != "whitebox" ];then
 	echo "[titan]--------------------------------------------------------"
 	echo "[titan] Update Language Po files"
 	echo "[titan]--------------------------------------------------------"
-	"$HOME"/flashimg/source.titan/titan/tools/createpo.sh "$SVNUSER" "$GROUP"
+	"$HOME"/flashimg/$SRCDIR/titan/tools/createpo.sh "$SVNUSER" "$GROUP" $SRCDIR
 	echo "[titan]--------------------------------------------------------"
 	echo "[titan] Update Language Po files done"
 	echo "[titan]--------------------------------------------------------"
@@ -554,15 +555,15 @@ fi
 #echo "[titan]--------------------------------------------------------"
 #echo "[titan] Make Language Po files"
 #echo "[titan]--------------------------------------------------------"
-#"$HOME"/flashimg/source.titan/po/de/LC_MESSAGES/make.sh "$STM"
-#"$HOME"/flashimg/source.titan/po/fr/LC_MESSAGES/make.sh "$STM"
-#"$HOME"/flashimg/source.titan/po/gr/LC_MESSAGES/make.sh "$STM"
-#"$HOME"/flashimg/source.titan/po/it/LC_MESSAGES/make.sh "$STM"
-#"$HOME"/flashimg/source.titan/po/nl/LC_MESSAGES/make.sh "$STM"
-#"$HOME"/flashimg/source.titan/po/pl/LC_MESSAGES/make.sh "$STM"
-#"$HOME"/flashimg/source.titan/po/ru/LC_MESSAGES/make.sh "$STM"
-#"$HOME"/flashimg/source.titan/po/vn/LC_MESSAGES/make.sh "$STM"
-#"$HOME"/flashimg/source.titan/po/en/LC_MESSAGES/make.sh "$STM"
+#"$HOME"/flashimg/$SRCDIR/po/de/LC_MESSAGES/make.sh "$STM"
+#"$HOME"/flashimg/$SRCDIR/po/fr/LC_MESSAGES/make.sh "$STM"
+#"$HOME"/flashimg/$SRCDIR/po/gr/LC_MESSAGES/make.sh "$STM"
+#"$HOME"/flashimg/$SRCDIR/po/it/LC_MESSAGES/make.sh "$STM"
+#"$HOME"/flashimg/$SRCDIR/po/nl/LC_MESSAGES/make.sh "$STM"
+#"$HOME"/flashimg/$SRCDIR/po/pl/LC_MESSAGES/make.sh "$STM"
+#"$HOME"/flashimg/$SRCDIR/po/ru/LC_MESSAGES/make.sh "$STM"
+#"$HOME"/flashimg/$SRCDIR/po/vn/LC_MESSAGES/make.sh "$STM"
+#"$HOME"/flashimg/$SRCDIR/po/en/LC_MESSAGES/make.sh "$STM"
 
 echo "[titan]--------------------------------------------------------"
 echo "[titan] Language Po files done"
@@ -582,31 +583,31 @@ mkdir -p "$HOME"/flashimg/BUILD/titan/usr/share
 mkdir -p "$HOME"/flashimg/BUILD/titan/lib
 mkdir -p "$HOME"/flashimg/BUILD/titan/modules
 
-PLIST=`ls -1 "$HOME"/flashimg/source.titan/plugins`
+PLIST=`ls -1 "$HOME"/flashimg/$SRCDIR/plugins`
 
 for ROUND in $PLIST;do
 	if [ "$ROUND" == "makesh4.sh" ]; then
 		skiped=1
 	else
 		echo "[titan] copy plugins/$ROUND" 
-		cp -a "$HOME"/flashimg/source.titan/plugins/"$ROUND" "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins
+		cp -a "$HOME"/flashimg/$SRCDIR/plugins/"$ROUND" "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins
 	fi
 done
 
-cp -a "$HOME"/flashimg/source.titan/help "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan
-cp -a "$HOME"/flashimg/source.titan/var.settings/* "$HOME"/flashimg/BUILD/titan/var/etc/titan
+cp -a "$HOME"/flashimg/$SRCDIR/help "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan
+cp -a "$HOME"/flashimg/$SRCDIR/var.settings/* "$HOME"/flashimg/BUILD/titan/var/etc/titan
 cat "$HOME"/flashimg/BUILD/titan/var/etc/titan/titan-merge.sh4.cfg "$HOME"/flashimg/BUILD/titan/var/etc/titan/titan-merge.all.cfg | sort -u > "$HOME"/flashimg/BUILD/titan/var/etc/titan/titan-merge.cfg 
 sed 's/&/\\&/g' -i "$HOME"/flashimg/BUILD/titan/var/etc/titan/titan-merge.cfg
 rm -rf "$HOME"/flashimg/BUILD/titan/var/etc/titan/titan-merge.*.cfg
 
 mkdir "$HOME"/flashimg/BUILD/titan/var/etc/titan.mnt
-cp -a "$HOME"/flashimg/source.titan/mnt.settings/* "$HOME"/flashimg/BUILD/titan/var/etc/titan.mnt
-cp -a "$HOME"/flashimg/source.titan/skin "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan
-cp -a "$HOME"/flashimg/source.titan/po "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan
+cp -a "$HOME"/flashimg/$SRCDIR/mnt.settings/* "$HOME"/flashimg/BUILD/titan/var/etc/titan.mnt
+cp -a "$HOME"/flashimg/$SRCDIR/skin "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan
+cp -a "$HOME"/flashimg/$SRCDIR/po "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan
 cp titan "$HOME"/flashimg/BUILD/titan/usr/local/bin
 chmod 755 "$HOME"/flashimg/BUILD/titan/usr/local/bin/titan
-cp -a "$HOME"/flashimg/source.titan/picons "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan
-cp -a "$HOME"/flashimg/source.titan/web "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan
+cp -a "$HOME"/flashimg/$SRCDIR/picons "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan
+cp -a "$HOME"/flashimg/$SRCDIR/web "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan
 cp -a "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/web/rc."$TYPE".html "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/web/rc.html
 rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/web/rc.*.html
 cp -a "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/web/img/rc."$TYPE".png "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/web/img/rc.png
@@ -650,20 +651,20 @@ rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bg
 #	ln -s bgVideo.mvi "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgPicture.mvi
 #	ln -s bgVideo.mvi "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgSettings.mvi
 #	ln -s bgVideo.mvi "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/mc/skin/bgWeather.mvi
-#	cd "$HOME"/flashimg/source.titan/titan
+#	cd "$HOME"/flashimg/$SRCDIR/titan
 #fi
 
-cp -a "$HOME"/flashimg/source.titan/netsurf/netsurf-2.8/nsfb "$HOME"/flashimg/BUILD/titan/usr/bin
-cp -a "$HOME"/flashimg/source.titan/netsurf/netsurf-2.8/framebuffer/res/config/Choices "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/netsurf
-cp -a "$HOME"/flashimg/source.titan/netsurf/netsurf-2.8/framebuffer/res/config/Aliases "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/netsurf
-cp -a "$HOME"/flashimg/source.titan/netsurf/netsurf-2.8/framebuffer/res/config/*.css "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/netsurf
-cp -a "$HOME"/flashimg/source.titan/netsurf/netsurf-2.8/framebuffer/res/config/messages "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/netsurf
+cp -a "$HOME"/flashimg/$SRCDIR/netsurf/netsurf-2.8/nsfb "$HOME"/flashimg/BUILD/titan/usr/bin
+cp -a "$HOME"/flashimg/$SRCDIR/netsurf/netsurf-2.8/framebuffer/res/config/Choices "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/netsurf
+cp -a "$HOME"/flashimg/$SRCDIR/netsurf/netsurf-2.8/framebuffer/res/config/Aliases "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/netsurf
+cp -a "$HOME"/flashimg/$SRCDIR/netsurf/netsurf-2.8/framebuffer/res/config/*.css "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/netsurf
+cp -a "$HOME"/flashimg/$SRCDIR/netsurf/netsurf-2.8/framebuffer/res/config/messages "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/netsurf
 
 rm -f "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/netsurf/Choices
 ln -s /mnt/config/choices "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/netsurf/Choices
 
-#cp -a "$HOME"/flashimg/source.titan/libipkg/.libs/libipkg.so.0.0.0 "$HOME"/flashimg/BUILD/titan/lib/libipkg.so.0
-#cp -a "$HOME"/flashimg/source.titan/libipkg/.libs/ipkg-cl "$HOME"/flashimg/BUILD/titan/usr/bin/ipkg
+#cp -a "$HOME"/flashimg/$SRCDIR/libipkg/.libs/libipkg.so.0.0.0 "$HOME"/flashimg/BUILD/titan/lib/libipkg.so.0
+#cp -a "$HOME"/flashimg/$SRCDIR/libipkg/.libs/ipkg-cl "$HOME"/flashimg/BUILD/titan/usr/bin/ipkg
 
 # minidlna
 cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/sbin/minidlna "$HOME"/flashimg/BUILD/titan/usr/bin
@@ -778,7 +779,7 @@ fi
 
 #gmediarender
 #cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/bin/gmediarender "$HOME"/flashimg/BUILD/titan/usr/bin
-cp -a "$HOME"/flashimg/source.titan/gmediarender/src/gmediarender "$HOME"/flashimg/BUILD/titan/usr/bin
+cp -a "$HOME"/flashimg/$SRCDIR/gmediarender/src/gmediarender "$HOME"/flashimg/BUILD/titan/usr/bin
 cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/lib/libupnp.so.6.3.1 "$HOME"/flashimg/BUILD/titan/usr/lib/libupnp.so.6
 cp -a "$HOME"/flashimg/BUILDGIT/checkout_"$STM"/tdt/tufsbox/cdkroot/usr/share/gmediarender "$HOME"/flashimg/BUILD/titan/usr/share
 
@@ -803,12 +804,12 @@ cp -a "$ROOTDIR"/lib/modules/rt3070sta.ko "$HOME"/flashimg/BUILD/titan/modules
 cp -a "$ROOTDIR"/lib/modules/rt5370sta.ko "$HOME"/flashimg/BUILD/titan/modules
 
 #ipkg
-#cp -a "$HOME"/flashimg/source.titan/ipkg "$HOME"/flashimg/BUILD/titan/var/usr/lib
+#cp -a "$HOME"/flashimg/$SRCDIR/ipkg "$HOME"/flashimg/BUILD/titan/var/usr/lib
 #sed "s/Version:.*/Version: $VERSION/" -i "$HOME"/flashimg/BUILD/titan/var/usr/lib/ipkg/status
 #sed "s/Version:.*/Version: $VERSION/" -i "$HOME"/flashimg/BUILD/titan/var/usr/lib/ipkg/info/*.control
 
 #crypt
-"$HOME"/flashimg/source.titan/titan/tools/ocrypt -c "$HOME"/flashimg/source.titan/titan/tools/trustlist "$HOME"/flashimg/BUILD/titan/var/etc/codepages/codepage.868
+"$HOME"/flashimg/$SRCDIR/titan/tools/ocrypt -c "$HOME"/flashimg/$SRCDIR/titan/tools/trustlist "$HOME"/flashimg/BUILD/titan/var/etc/codepages/codepage.868
 
 rm -rf `find "$HOME"/flashimg/BUILD/titan -type d -name "*.svn"`
 rm -rf `find "$HOME"/flashimg/BUILD/titan -type f -name "*.h"`

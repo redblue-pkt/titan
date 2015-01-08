@@ -1,10 +1,11 @@
 #!/bin/sh
 TPKDIR=$1
 VERSION=$2
+SRCDIR=3
 
 . "$HOME"/flashimg/config/make-config
 
-cd "$HOME"/flashimg/source.titan/titan/tools
+cd "$HOME"/flashimg/$SRCDIR/titan/tools
 
 echo gettpkg extensions.h patch 1
 cat ../extensions.h | sed s!/svn/tpk/sh4!$TPKDIR! > extensions.h.tmp
