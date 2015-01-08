@@ -425,16 +425,18 @@ void screenadjust()
 			// hid pass text and convert to md5sum
 			if(community_pass->ret != NULL && ostrcmp(community_pass->ret, "****") != 0)
 			{
-				debug(10, "community_pass: write");
+				debug(99, "community_pass: write");
 				if(strlen(community_pass->ret) != 32)
 				{
-					debug(10, "community_pass: convert to md5");
+					debug(99, "community_pass: convert to md5");
+					debug(99, "community_pass1: %s", community_pass->ret);
 					community_pass->ret = ostrcat(MDString(community_pass->ret), NULL, 1, 0);
+					debug(99, "community_pass2: %s", community_pass->ret);
 				}
 				addconfigscreen("community_pass", community_pass);
 			}
 			else
-				debug(10, "community_pass: skipped");
+				debug(99, "community_pass: skipped");
 
 			writeallconfig(1);
 			break;
