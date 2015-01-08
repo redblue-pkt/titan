@@ -3574,6 +3574,31 @@ char* getaacchoices()
 	return value;
 }
 
+char* getwsschoices()
+{
+	char *wsschoicesdev = NULL;
+	char *value = NULL;
+
+	wsschoicesdev = getconfig("wsschoicesdev", NULL);
+
+	if(wsschoicesdev == NULL)
+	{
+		err("NULL detect");
+		return NULL;
+	}
+
+	value = readsys(wsschoicesdev, 1);
+	if(value == NULL)
+	{
+		err("NULL detect");
+		return NULL;
+	}
+
+	value = convertspacetolf(value);
+
+	return value;
+}
+
 int setciclock(int slotnr, char* value)
 {
 	char* ciclockdev = NULL, *tmpstr = NULL;
@@ -3733,6 +3758,24 @@ int setaac(char* value)
 	return 0;
 }
 
+int setwss(char* value)
+{
+	char* wssdev = NULL;
+	int ret = 0;
+
+	wssdev = getconfig("wssdev", NULL);
+
+	if(wssdev != NULL && value != NULL)
+	{
+		debug(100, "set %s to %s", wssdev, value);
+		ret = writesys(wssdev, value, 0);
+		if(ret == 0) addconfig("av_wssmode", value);
+		return ret;
+	}
+
+	return 0;
+}
+
 char* getac3()
 {
 	char *ac3dev = NULL;
@@ -3770,6 +3813,29 @@ char* getaac()
 	}
 
 	value = readsys(aacdev, 1);
+	if(value == NULL)
+	{
+		err("NULL detect");
+		return NULL;
+	}
+
+	return value;
+}
+
+char* getwss()
+{
+	char *wssdev = NULL;
+	char *value = NULL;
+
+	wssdev = getconfig("wssdev", NULL);
+
+	if(wssdev == NULL)
+	{
+		err("NULL detect");
+		return NULL;
+	}
+
+	value = readsys(wssdev, 1);
 	if(value == NULL)
 	{
 		err("NULL detect");

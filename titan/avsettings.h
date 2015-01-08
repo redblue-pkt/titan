@@ -23,6 +23,7 @@ void screenavsettings(int flag)
 	struct skin* ac3default = getscreennode(avsettings, "ac3default");
 	struct skin* ac3mode = getscreennode(avsettings, "ac3mode");
 	struct skin* aacmode = getscreennode(avsettings, "aacmode");
+	struct skin* wssmode = getscreennode(avsettings, "wssmode");
 	struct skin* volautochangevalue = getscreennode(avsettings, "volautochangevalue");
 	struct skin* mode3d = getscreennode(avsettings, "mode3d");
 	struct skin* autosubtitle = getscreennode(avsettings, "autosubtitle");
@@ -173,6 +174,17 @@ void screenavsettings(int flag)
 
 #ifdef SH4
 		aacmode->hidden = YES;
+#endif
+
+	ret = getwsschoices();
+	changeinput(wssmode, ret);
+	free(ret); ret = NULL;
+	ret = getwss();
+	setchoiceboxselection(wssmode, ret);
+	free(ret); ret = NULL;
+
+#ifdef SH4
+		wssmode->hidden = YES;
 #endif
 	
 	changeinput(volautochangevalue, "0\n5\n10\n15\n20\n25\n30\n35\n40\n45\n50\n55\n60\n65\n70\n75");
@@ -353,6 +365,13 @@ void screenavsettings(int flag)
 				ret = getaac();
 				if(ostrcmp(ret, aacmode->ret) != 0)
 					setaac(aacmode->ret); 
+				free(ret); ret = NULL;
+			}
+			if(wssmode->ret != NULL)
+			{
+				ret = getwss();
+				if(ostrcmp(ret, wssmode->ret) != 0)
+					setaac(wssmode->ret); 
 				free(ret); ret = NULL;
 			}
 			if(mode3d->ret != NULL)
