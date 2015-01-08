@@ -426,19 +426,14 @@ void screenadjust()
 			if(community_pass->ret != NULL && ostrcmp(community_pass->ret, "****") != 0)
 			{
 				debug(99, "community_pass: write");
-				char* tmpstr = NULL;
-				tmpstr = ostrcat(community_pass->ret, NULL, 0, 0);
-				if(strlen(tmpstr) != 32)
+				if(strlen(community_pass->ret) != 32)
 				{
 					debug(99, "community_pass: convert to md5");
-					char* tmpstr1 = NULL;
-					tmpstr1 = ostrcat(MDString(tmpstr), NULL, 1, 0);
-					addconfigscreen("community_pass", tmpstr1);
-					free(tmpstr1), tmpstr1 = NULL;
+					char* tmpstr = NULL;
+					tmpstr = ostrcat(MDString(community_pass->ret), NULL, 1, 0);
+					community_pass->ret = ostrcat(tmpstr, NULL, 1, 0);
 				}
-				else
-					addconfigscreen("community_pass", tmpstr);
-				free(tmpstr), tmpstr = NULL;
+				addconfigscreen("community_pass", community_pass);
 			}
 			else
 				debug(99, "community_pass: skipped");
