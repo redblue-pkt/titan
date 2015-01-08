@@ -430,7 +430,11 @@ void screenadjust()
 				{
 					debug(99, "community_pass: convert to md5");
 					debug(99, "community_pass1: %s", community_pass->ret);
-					community_pass->ret = ostrcat(MDString(community_pass->ret), NULL, 1, 0);
+					char* tmpstr = NULL;
+					tmpstr = ostrcat(community_pass->ret, NULL, 0, 0);
+					free(community_pass->ret);
+					community_pass->ret = MDString(tmpstr);
+					free(tmpstr), tmpstr = NULL;
 					debug(99, "community_pass2: %s", community_pass->ret);
 				}
 				addconfigscreen("community_pass", community_pass);
