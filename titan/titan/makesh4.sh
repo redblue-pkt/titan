@@ -123,7 +123,7 @@ rm -rf "$HOME"/flashimg/$SRCDIR/settings.svn
 if [ "$TYPE" = "ufs910" ] || [ "$TYPE" = "ufs922" ];then
 	svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source/settings_default_sat_1_0/mnt/settings "$HOME"/flashimg/$SRCDIR/settings.svn
 elif [ "$TYPE1" = "homecastpro-sat" ];then
-	svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source/settings_default_all_2_0/mnt/settings "$HOME"/flashimg/$SRCDIR/settings.svn
+	svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source/settings_orf_1xsat_1_0/mnt/settings "$HOME"/flashimg/$SRCDIR/settings.svn
 elif [ "$TYPE1" = "homecastpro-cable" ];then
 	svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source/settings_kabelplus_cable_1_0/mnt/settings "$HOME"/flashimg/$SRCDIR/settings.svn
 else
