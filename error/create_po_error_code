@@ -55,15 +55,28 @@
                                                                                 Message conversion to user's charset will not work.
 1636 translated messages, 1219 untranslated messages.
 [createpo.sh] xgettext --omit-header -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/es/LC_MESSAGES/titan.po_auto.utf.po
-/home/atemio/flashimg/source.titan/po/es/LC_MESSAGES/titan.po_auto.utf.po:2233:78: invalid control sequence
-/home/atemio/flashimg/source.titan/po/es/LC_MESSAGES/titan.po_auto.utf.po:2234:3: invalid control sequence
-xgettext: found 2 fatal errors
+[createpo.sh] xgettext --omit-header -k_ *.* -o /home/atemio/flashimg/source.titan/po/es/LC_MESSAGES/titan.new.po
+[createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/es/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/es/LC_MESSAGES/titan.mo
+/home/atemio/flashimg/source.titan/po/es/LC_MESSAGES/titan.outfile.po: warning: Charset missing in header.
+                                                                                Message conversion to user's charset will not work.
+1774 translated messages, 1080 untranslated messages.
+[createpo.sh] xgettext --omit-header -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.utf.po
+/home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.utf.po:4318:79: invalid control sequence
+/home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.utf.po:4319:3: invalid control sequence
+/home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.utf.po:4319:6: invalid control sequence
+/home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.utf.po:6121:78: invalid control sequence
+/home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.utf.po:6122:3: invalid control sequence
+/home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.utf.po:6122:6: invalid control sequence
+/home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.utf.po:6715:79: invalid control sequence
+/home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.utf.po:6716:3: invalid control sequence
+/home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.utf.po:6716:6: invalid control sequence
+xgettext: found 9 fatal errors
 [createpo.sh] ############################################
 [createpo.sh] ###### error should be in the middle #######
 [createpo.sh] ############################################
-  2233	"lista de sus acciones. elige Editar entrada y pulse -VERDE-. Para agregar m\C3"
-  2234	"\A1s acciones por favor utiliza -Buscar-. Para acceder a los recursos "
-  2235	"compartidos de Windows protegidos con contraseÃ±a por favor presione menÃº y "
+  6715	"lá»i, káº¿t quáº£ tÃ¬m kiáº¿m cÃ³ má»t imdbid khÃ´ng há»£p lá» vÃ  do ÄÃ³ kh\EF"
+  6716	"\BF\BDï¿½ng thá» ÄÆ°á»£c lÆ°u trá»¯ trong cÃ¡c MediaDB "
+  6717	
 [createpo.sh] ############################################
 [createpo.sh] ################## coding #################
 /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.po:         utf-8
@@ -112,6 +125,10 @@ xgettext: found 2 fatal errors
 /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.clean.po: utf-8
 /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.po:       utf-8
 /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.utf.po:   utf-8
+/home/atemio/flashimg/source.titan/po/es/LC_MESSAGES/titan.merge.po:         utf-8
+/home/atemio/flashimg/source.titan/po/es/LC_MESSAGES/titan.new.merge.po:     utf-8
+/home/atemio/flashimg/source.titan/po/es/LC_MESSAGES/titan.new.po:           us-ascii
+/home/atemio/flashimg/source.titan/po/es/LC_MESSAGES/titan.outfile.po:       utf-8
 /home/atemio/flashimg/source.titan/po/es/LC_MESSAGES/titan.po:               utf-8
 /home/atemio/flashimg/source.titan/po/es/LC_MESSAGES/titan.po_auto.clean.po: utf-8
 /home/atemio/flashimg/source.titan/po/es/LC_MESSAGES/titan.po_auto.po:       utf-8
@@ -165,4 +182,6 @@ xgettext: found 2 fatal errors
 /home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.po:       unknown-8bit
 /home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.utf.po:   utf-8
 /home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po:               utf-8
+/home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.clean.po: utf-8
 /home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.po:       utf-8
+/home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.utf.po:   utf-8
