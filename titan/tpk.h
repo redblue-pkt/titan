@@ -2181,11 +2181,21 @@ int tpkinstall(char* file, char* installpath, int flag)
 		goto end;	
 	}
 
-	//check minversion
+	//check minversion not working...disable
+/*
 	if(tpknode->minversion != 0 && tpknode->minversion < PLUGINVERSION)
 	{
 		debug(10, "Tpk Install Skip: %s (%d < %d)\n", tpknode->name, tpknode->minversion, PLUGINVERSION);
 		err("minversion to short %d", tpknode->minversion);
+		ret = 1;
+		goto end;
+	}
+*/
+	//check minversion new
+	if(tpknode->minversion >= PLUGINVERSION)
+	{
+		debug(10, "Install Skip %s: Tpk Minversion greater Pluginversion (%d >= %d)\n", tpknode->name, tpknode->minversion, PLUGINVERSION);
+		err("minversion greater pluginversion %d", tpknode->minversion);
 		ret = 1;
 		goto end;
 	}
@@ -3036,9 +3046,9 @@ int tpkupdate(int flag)
 		while(tpknode != NULL)
 		{
 			// disable settings upgrade group 100
-			if(ostrcmp(tpkinstallednode->name, tpknode->name) == 0 && tpknode->version > tpkinstallednode->version && tpkinstallednode->group != 100 && tpknode->minversion != 0 && tpknode->minversion < PLUGINVERSION)
+			if(ostrcmp(tpkinstallednode->name, tpknode->name) == 0 && tpknode->version > tpkinstallednode->version && tpkinstallednode->group != 100 && tpknode->minversion <= PLUGINVERSION)
 			{
-				debug(10, "Tpk Upgrade: %s (Installed Version: %d > Upgrade Version: %d) (Min Version: %d < Plugin Version: %d)\n", tpknode->name, tpkinstallednode->version, tpknode->version, tpknode->minversion, PLUGINVERSION);
+				debug(10, "Tpk Upgrade: %s (Install Version: %d > Installed Version: %d) (Min Version: %d <= Plugin Version: %d) (Group: %d)\n", tpknode->name, tpkinstallednode->version, tpknode->version, tpknode->minversion, PLUGINVERSION, tpkinstallednode->group);
 				//TODO: remove file that never exist in new pakages
 				tmpstr = ostrcat(tmpstr, EXTRACTDIR, 1, 0);
 				tmpstr = ostrcat(tmpstr, "/", 1, 0);
