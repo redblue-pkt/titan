@@ -1,7 +1,7 @@
 #!/bin/sh
 TPKDIR=$1
 VERSION=$2
-SRCDIR=3
+SRCDIR=$3
 
 . "$HOME"/flashimg/config/make-config
 
