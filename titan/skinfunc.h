@@ -310,7 +310,7 @@ char* getchannelresolution(struct skin* node, char* path)
 			tmpstr = ostrcat("1080.png", NULL, 0, 0);
 //	}
 	
-	if(tmpstr == NULL) tmpstr = ostrcat("novideo.png", NULL, 0, 0);
+	if(tmpstr == NULL) tmpstr = ostrcat("novideores.png", NULL, 0, 0);
 
 	if(path != NULL)
 		tmpstr = ostrcat("/", tmpstr, 0, 1);
@@ -333,7 +333,7 @@ char* getchannelaspect(struct skin* node, char* path)
 			tmpstr = ostrcat("16_9.png", NULL, 0, 0);
 //	}
 	
-	if(tmpstr == NULL) tmpstr = ostrcat("novideo.png", NULL, 0, 0);
+	if(tmpstr == NULL) tmpstr = ostrcat("novideoasp.png", NULL, 0, 0);
 
 	if(path != NULL)
 		tmpstr = ostrcat("/", tmpstr, 0, 1);
