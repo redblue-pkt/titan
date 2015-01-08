@@ -373,6 +373,7 @@ void screenavsettings(int flag)
 				if(ostrcmp(ret, wssmode->ret) != 0)
 					setwss(wssmode->ret); 
 				free(ret); ret = NULL;
+				drawscreen(avsettings, 0, 0);
 			}
 			if(mode3d->ret != NULL)
 			{
