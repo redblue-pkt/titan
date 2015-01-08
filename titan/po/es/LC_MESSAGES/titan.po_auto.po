@@ -3619,7 +3619,10 @@ msgstr "Mostrar compartidos"
 
 #: networkbrowser.h:1875
 msgid "Choose your Shares from the following list"
-msgstr "Lista de sus acciones. Elija Editar entrada y - Verde - prensa. Para añadir más acciones por favor - Búsqueda - uso. Para el acceso con contraseña protegida lanza Windows, pulse Menú e introduzca los datos de usuario"
+msgstr "Lista de sus acciones. Elija Editar entrada y -Verde-"
+"prensa. Para añadir más acciones por favor -Búsqueda- uso."
+" Para el acceso con contraseña protegida lanza Windows, pulse"
+" Menú e introduzca los datos de usuario"
 
 #: networkbrowser.h:1907
 msgid "Are you sure you want remove this share?"
