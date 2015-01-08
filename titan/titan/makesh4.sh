@@ -502,6 +502,8 @@ echo "[titan]--------------------------------------------------------"
 echo "[titan] titan done"
 echo "[titan]--------------------------------------------------------"
 
+if [ "$SRCDIR" = "source.titan.building" ]; then exit 1; fi
+
 rm -rf "$HOME"/flashimg/BUILD/titan
 rm -rf "$HOME"/flashimg/BUILD/titan-smal
 
