@@ -14,6 +14,7 @@ GROUP=${13}
 DISTRO=${14}
 ARCH=${15}
 SRCDIR=${16}
+TYPE1=${17}
 
 rm "$HOME"/flashimg/.ipk-build-error
 
@@ -121,8 +122,10 @@ echo "[titan]--------------------------------------------------------"
 rm -rf "$HOME"/flashimg/$SRCDIR/settings.svn
 if [ "$TYPE" = "ufs910" ] || [ "$TYPE" = "ufs922" ];then
 	svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source/settings_default_sat_1_0/mnt/settings "$HOME"/flashimg/$SRCDIR/settings.svn
-elif [ "$TYPE" = "ipbox9000" ];then
+elif [ "$TYPE1" = "homecastpro-sat" ];then
 	svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source/settings_default_all_2_0/mnt/settings "$HOME"/flashimg/$SRCDIR/settings.svn
+elif [ "$TYPE1" = "homecastpro-cable" ];then
+	svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source/settings_kabelplus_cable_1_0/mnt/settings "$HOME"/flashimg/$SRCDIR/settings.svn
 else
 	svn co --username $SVNUSER --password $SVNPASS http://"$SVNURL"/svn/ipk/source/settings_default_all_2_0/mnt/settings "$HOME"/flashimg/$SRCDIR/settings.svn
 fi
