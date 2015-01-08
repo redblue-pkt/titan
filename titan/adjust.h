@@ -426,21 +426,15 @@ void screenadjust()
 			if(community_pass->ret != NULL && ostrcmp(community_pass->ret, "****") != 0)
 			{
 				debug(99, "community_pass: write");
-				if(strlen(community_pass->ret) != 32)
-				{
-					debug(99, "community_pass: convert to md5");
-					char* tmpstr = NULL;
-					tmpstr = ostrcat(MDString(community_pass->ret), NULL, 1, 0);
-					community_pass->ret = ostrcat(tmpstr, NULL, 1, 0);
-				}
+				debug(99, "community_pass: %s", community_pass->ret);
 				addconfigscreen("community_pass", community_pass);
 			}
 			else
 				debug(99, "community_pass: skipped");
 
 			writeallconfig(1);
-			debug(99, "community_pass2: %s", getconfig("community_pass", NULL));
-			
+			debug(99, "community_pass_read: %s", getconfig("community_pass", NULL));
+
 			break;
 		}
 	}
