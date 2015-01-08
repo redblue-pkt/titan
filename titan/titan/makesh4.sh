@@ -830,6 +830,7 @@ rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/tithek/men
 rm -rf "$HOME"/flashimg/BUILD/titan/var/usr/local/share/titan/plugins/tithek/tithekmainmenu
 
 cp -a "$HOME"/flashimg/BUILD/titan/var/etc/titan.mnt/titan."$TYPE".cfg "$HOME"/flashimg/BUILD/titan/var/etc/titan.mnt/titan.cfg
+cp -a "$HOME"/flashimg/BUILD/titan/var/etc/titan.mnt/titan."$TYPE1".cfg "$HOME"/flashimg/BUILD/titan/var/etc/titan.mnt/titan.cfg
 rm -rf "$HOME"/flashimg/BUILD/titan/var/etc/titan.mnt/titan.*.cfg
 
 cp -a "$HOME"/flashimg/BUILD/titan/var/etc/titan.mnt/rcconfig."$TYPE" "$HOME"/flashimg/BUILD/titan/var/etc/titan.mnt/rcconfig
