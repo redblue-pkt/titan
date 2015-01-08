@@ -3,49 +3,49 @@
 [createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.mo
 /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.outfile.po: warning: Charset missing in header.
                                                                                 Message conversion to user's charset will not work.
-792 translated messages, 2061 untranslated messages.
+792 translated messages, 2062 untranslated messages.
 [createpo.sh] xgettext --omit-header -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.utf.po
 [createpo.sh] xgettext --omit-header -k_ *.* -o /home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.new.po
 [createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.mo
 /home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.outfile.po: warning: Charset missing in header.
                                                                                 Message conversion to user's charset will not work.
-1418 translated messages, 1435 untranslated messages.
+1418 translated messages, 1436 untranslated messages.
 [createpo.sh] xgettext --omit-header -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.utf.po
 [createpo.sh] xgettext --omit-header -k_ *.* -o /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.new.po
 [createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.mo
 /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.outfile.po: warning: Charset missing in header.
                                                                                 Message conversion to user's charset will not work.
-1222 translated messages, 1631 untranslated messages.
+1222 translated messages, 1632 untranslated messages.
 [createpo.sh] xgettext --omit-header -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/el/LC_MESSAGES/titan.po_auto.utf.po
 [createpo.sh] xgettext --omit-header -k_ *.* -o /home/atemio/flashimg/source.titan/po/el/LC_MESSAGES/titan.new.po
 [createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/el/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/el/LC_MESSAGES/titan.mo
 /home/atemio/flashimg/source.titan/po/el/LC_MESSAGES/titan.outfile.po: warning: Charset missing in header.
                                                                                 Message conversion to user's charset will not work.
-737 translated messages, 2116 untranslated messages.
+737 translated messages, 2117 untranslated messages.
 [createpo.sh] xgettext --omit-header -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/it/LC_MESSAGES/titan.po_auto.utf.po
 [createpo.sh] xgettext --omit-header -k_ *.* -o /home/atemio/flashimg/source.titan/po/it/LC_MESSAGES/titan.new.po
 [createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/it/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/it/LC_MESSAGES/titan.mo
 /home/atemio/flashimg/source.titan/po/it/LC_MESSAGES/titan.outfile.po: warning: Charset missing in header.
                                                                                 Message conversion to user's charset will not work.
-905 translated messages, 1948 untranslated messages.
+905 translated messages, 1949 untranslated messages.
 [createpo.sh] xgettext --omit-header -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/pl/LC_MESSAGES/titan.po_auto.utf.po
 [createpo.sh] xgettext --omit-header -k_ *.* -o /home/atemio/flashimg/source.titan/po/pl/LC_MESSAGES/titan.new.po
 [createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/pl/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/pl/LC_MESSAGES/titan.mo
 /home/atemio/flashimg/source.titan/po/pl/LC_MESSAGES/titan.outfile.po: warning: Charset missing in header.
                                                                                 Message conversion to user's charset will not work.
-711 translated messages, 2142 untranslated messages.
+711 translated messages, 2143 untranslated messages.
 [createpo.sh] xgettext --omit-header -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.po_auto.utf.po
 [createpo.sh] xgettext --omit-header -k_ *.* -o /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.new.po
 [createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.mo
 /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.outfile.po: warning: Charset missing in header.
                                                                                 Message conversion to user's charset will not work.
-1985 translated messages, 868 untranslated messages.
+1985 translated messages, 869 untranslated messages.
 [createpo.sh] xgettext --omit-header -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/nl/LC_MESSAGES/titan.po_auto.utf.po
 [createpo.sh] xgettext --omit-header -k_ *.* -o /home/atemio/flashimg/source.titan/po/nl/LC_MESSAGES/titan.new.po
 [createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/nl/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/nl/LC_MESSAGES/titan.mo
 /home/atemio/flashimg/source.titan/po/nl/LC_MESSAGES/titan.outfile.po: warning: Charset missing in header.
                                                                                 Message conversion to user's charset will not work.
-1497 translated messages, 1356 untranslated messages.
+1497 translated messages, 1357 untranslated messages.
 [createpo.sh] xgettext --omit-header -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/lt/LC_MESSAGES/titan.po_auto.utf.po
 /home/atemio/flashimg/source.titan/po/lt/LC_MESSAGES/titan.po_auto.utf.po: warning: Charset missing in header.
                                                                                     Message conversion to user's charset will not work.
@@ -53,7 +53,7 @@
 [createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/lt/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/lt/LC_MESSAGES/titan.mo
 /home/atemio/flashimg/source.titan/po/lt/LC_MESSAGES/titan.outfile.po: warning: Charset missing in header.
                                                                                 Message conversion to user's charset will not work.
-1636 translated messages, 1218 untranslated messages.
+1636 translated messages, 1219 untranslated messages.
 [createpo.sh] xgettext --omit-header -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/es/LC_MESSAGES/titan.po_auto.utf.po
 /home/atemio/flashimg/source.titan/po/es/LC_MESSAGES/titan.po_auto.utf.po:2233:78: invalid control sequence
 /home/atemio/flashimg/source.titan/po/es/LC_MESSAGES/titan.po_auto.utf.po:2234:3: invalid control sequence
