@@ -2192,9 +2192,9 @@ int tpkinstall(char* file, char* installpath, int flag)
 	}
 */
 	//check minversion new
-	if(tpknode->minversion >= PLUGINVERSION)
+	if(tpknode->minversion != 0 && tpknode->minversion > PLUGINVERSION)
 	{
-		debug(10, "Install Skip %s: Tpk Minversion greater Pluginversion (%d >= %d)\n", tpknode->name, tpknode->minversion, PLUGINVERSION);
+		debug(10, "Install Skip %s: (Tpk Minversion %d > %d Pluginversion)\n", tpknode->name, tpknode->minversion, PLUGINVERSION);
 		err("minversion greater pluginversion %d", tpknode->minversion);
 		ret = 1;
 		goto end;
