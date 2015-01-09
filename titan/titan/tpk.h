@@ -2194,7 +2194,7 @@ int tpkinstall(char* file, char* installpath, int flag)
 	//check minversion new
 	if(tpknode->minversion != 0 && tpknode->minversion > PLUGINVERSION)
 	{
-		debug(10, "Install Skip %s: (Tpk Minversion %d > %d Pluginversion)\n", tpknode->name, tpknode->minversion, PLUGINVERSION);
+		debug(10, "Install Skip %s: (Tpk Minversion %d > %d Pluginversion)", tpknode->name, tpknode->minversion, PLUGINVERSION);
 		err("minversion greater pluginversion %d", tpknode->minversion);
 		ret = 1;
 		goto end;
@@ -3048,7 +3048,7 @@ int tpkupdate(int flag)
 			// disable settings upgrade group 100
 			if(ostrcmp(tpkinstallednode->name, tpknode->name) == 0 && tpknode->version > tpkinstallednode->version && tpkinstallednode->group != 100 && tpknode->minversion <= PLUGINVERSION)
 			{
-				debug(10, "Tpk Upgrade: %s (Install Version %d > %d Installed Version) (Min Version %d <= %d Plugin Version) (Group %d)\n", tpknode->name, tpknode->version, tpkinstallednode->version, tpknode->minversion, PLUGINVERSION, tpkinstallednode->group);
+				debug(10, "Tpk Upgrade: %s (Install Version %d > %d Installed Version) (Min Version %d <= %d Plugin Version) (Group %d)", tpknode->name, tpknode->version, tpkinstallednode->version, tpknode->minversion, PLUGINVERSION, tpkinstallednode->group);
 				//TODO: remove file that never exist in new pakages
 				tmpstr = ostrcat(tmpstr, EXTRACTDIR, 1, 0);
 				tmpstr = ostrcat(tmpstr, "/", 1, 0);
