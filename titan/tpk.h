@@ -2980,7 +2980,8 @@ int tpklist()
 			skip = 1;
 
 		//check minversion
-		if(minversion != 0 && minversion < PLUGINVERSION)
+//		if(minversion != 0 && minversion < PLUGINVERSION)
+		if(minversion != 0 && minversion > PLUGINVERSION)
 			skip = 1;
 
 		if(skip == 0) 
