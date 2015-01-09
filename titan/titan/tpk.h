@@ -2982,7 +2982,10 @@ int tpklist()
 		//check minversion
 //		if(minversion != 0 && minversion < PLUGINVERSION)
 		if(minversion != 0 && minversion > PLUGINVERSION)
+		{
+			debug(10, "List Skip %s: (Tpk Minversion %d > %d Pluginversion)", name, minversion, PLUGINVERSION);
 			skip = 1;
+		}
 
 		if(skip == 0) 
 		{
