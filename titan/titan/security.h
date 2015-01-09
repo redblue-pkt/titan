@@ -1278,7 +1278,7 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 	debug(99, "vbulletin url: %s", link);
 
 	int error = 0;
-	char* ip = NULL, *tmphost = NULL, *tmppath = NULL, *tmpstr = NULL, *send = NULL, *hash = NULL, *cookie1 = NULL, *cookie2 = NULL, *cookie3 = NULL, *tmplink = NULL, *pos = NULL, *path = NULL, *hashlen = NULL;
+	char* ip = NULL, *tmphost = NULL, *tmppath = NULL, *tmpstr = NULL, *send = NULL, *hash = NULL, *cookie1 = NULL, *cookie2 = NULL, *cookie3 = NULL, *cookie4 = NULL, *tmplink = NULL, *pos = NULL, *path = NULL, *hashlen = NULL, *boxpath = NULL;
 
 	tmplink = ostrcat(link, NULL, 0, 0);
 
@@ -1295,11 +1295,64 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 
 	tmppath = ostrcat("/", path, 0, 0);
 
+	if(checkbox("ATEMIO-NEMESIS") == 1)
+		boxpath = ostrcat("/forum/forumdisplay.php?390", NULL, 0, 0);
+	else if(checkbox("ATEMIO6000") == 1)
+		boxpath = ostrcat("/forum/forumdisplay.php?391", NULL, 0, 0);
+	else if(checkbox("ATEMIO6100") == 1)
+		boxpath = ostrcat("/forum/forumdisplay.php?392", NULL, 0, 0);
+	else if(checkbox("ATEMIO6200") == 1)
+		boxpath = ostrcat("/forum/forumdisplay.php?393", NULL, 0, 0);
+	else if(checkbox("ATEMIO5200") == 1)
+		boxpath = ostrcat("/forum/forumdisplay.php?394", NULL, 0, 0);
+	else if(checkbox("ATEMIO520") == 1)
+		boxpath = ostrcat("/forum/forumdisplay.php?395", NULL, 0, 0);
+	else if(checkbox("ATEMIO510") == 1)
+		boxpath = ostrcat("/forum/forumdisplay.php?396", NULL, 0, 0);
+	else if(checkbox("ATEVIO700") == 1)
+		boxpath = ostrcat("/forum/forumdisplay.php?397", NULL, 0, 0);
+	else if(checkbox("ATEVIO7000") == 1)
+		boxpath = ostrcat("/forum/forumdisplay.php?398", NULL, 0, 0);
+	else if(checkbox("ATEMIO7600") == 1)
+		boxpath = ostrcat("/forum/forumdisplay.php?399", NULL, 0, 0);
+	else if(checkbox("UFS910") == 1)
+		boxpath = ostrcat("/forum/forumdisplay.php?400", NULL, 0, 0);
+	else if(checkbox("UFS912") == 1)
+		boxpath = ostrcat("/forum/forumdisplay.php?401", NULL, 0, 0);
+	else if(checkbox("UFS913") == 1)
+		boxpath = ostrcat("/forum/forumdisplay.php?402", NULL, 0, 0);
+	else if(checkbox("UFS922") == 1)
+		boxpath = ostrcat("/forum/forumdisplay.php?403", NULL, 0, 0);
+	else if(checkbox("IPBOX91") == 1)
+		boxpath = ostrcat("/forum/forumdisplay.php?404", NULL, 0, 0);
+	else if(checkbox("IPBOX910") == 1)
+		boxpath = ostrcat("/forum/forumdisplay.php?405", NULL, 0, 0);
+	else if(checkbox("IPBOX900") == 1)
+		boxpath = ostrcat("/forum/forumdisplay.php?406", NULL, 0, 0);
+	else if(file_exist("/etc/.homecastpro-sat"))
+		boxpath = ostrcat("/forum/forumdisplay.php?408", NULL, 0, 0);
+	else if(file_exist("/etc/.homecastpro-cable"))
+		boxpath = ostrcat("/forum/forumdisplay.php?409", NULL, 0, 0);
+	else if(checkbox("IPBOX9000") == 1)
+		boxpath = ostrcat("/forum/forumdisplay.php?407", NULL, 0, 0);
+
+/*
+	else if(checkbox("XPEEDLX") == 1)
+		boxpath = ostrcat("/forum/forumdisplay.php?410", NULL, 0, 0);
+	else if(checkbox("XPEEDLX3") == 1)
+		boxpath = ostrcat("/forum/forumdisplay.php?411", NULL, 0, 0);
+	else if(checkbox("SEZAM-MARVEL") == 1)
+		boxpath = ostrcat("/forum/forumdisplay.php?412", NULL, 0, 0);
+*/
+
 	send = ostrcat(send, "GET ", 1, 0);
 	send = ostrcat(send, tmppath, 1, 0);
 	send = ostrcat(send, " HTTP/1.1\r\nHost: ", 1, 0);	
 	send = ostrcat(send, tmphost, 1, 0);
-	send = ostrcat(send, "\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nConnection: close\r\nAccept-Encoding: gzip\r\n\r\n", 1, 0);	
+	send = ostrcat(send, "\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1", 1, 0);
+	send = ostrcat(send, "\r\nConnection: close", 1, 0);
+	send = ostrcat(send, "\r\nAccept-Encoding: gzip", 1, 0);
+	send = ostrcat(send, "\r\n\r\n", 1, 0);
 	debug(99, "#############################################################################################################");
 	debug(99, "send1: %s", send);
 	debug(99, "#############################################################################################################");
@@ -1313,6 +1366,8 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 	debug(99, "cookie2: %s", cookie2);
 	cookie3 = string_resub("bb_lastactivity=", ";", tmpstr, 0);
 	debug(99, "cookie3: %s", cookie3);
+	cookie4 = string_resub("bb_forum_view=", ";", tmpstr, 0);
+	debug(99, "cookie4: %s", cookie4);
 
 	free(send), send = NULL;
 	free(tmpstr), tmpstr = NULL;
@@ -1322,28 +1377,45 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 		free(cookie1), cookie1 = NULL;
 		free(cookie2), cookie2 = NULL;
 		free(cookie3), cookie3 = NULL;
+		free(cookie4), cookie4 = NULL;
 		return 1;
 	}
 
 	hash = ostrcat("vb_login_username=", user, 0, 0);
 	hash = ostrcat(hash, "&vb_login_password=&vb_login_password_hint=Kennwort&s=&securitytoken=guest&do=login&vb_login_md5password=", 1, 0);
-	hash = ostrcat(hash, MDString(pass), 1, 1);
+	if(strlen(pass) != 32)
+		hash = ostrcat(hash, MDString(pass), 1, 1);
+	else
+		hash = ostrcat(hash, pass, 1, 1);
 	hash = ostrcat(hash, "&vb_login_md5password_utf=", 1, 0);
-	hash = ostrcat(hash, MDString(pass), 1, 1);
+	if(strlen(pass) != 32)
+		hash = ostrcat(hash, MDString(pass), 1, 1);
+	else
+		hash = ostrcat(hash, pass, 1, 1);
+
 	hashlen = oitoa(strlen(hash));
 
 	send = ostrcat(send, "POST ", 1, 0);
 	send = ostrcat(send, tmppath, 1, 0);
 	send = ostrcat(send, " HTTP/1.1\r\nContent-Length: ", 1, 0);
 	send = ostrcat(send, hashlen, 1, 0);
-	send = ostrcat(send, "\r\nAccept-Encoding: gzip\r\nConnection: close\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nHost: ", 1, 0);
+	send = ostrcat(send, "\r\nConnection: keep-alive", 1, 0);
+	send = ostrcat(send, "\r\nAccept-Encoding: gzip, deflate", 1, 0);
+//	send = ostrcat(send, "\r\nConnection: close", 1, 0);
+	send = ostrcat(send, "\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1", 1, 0);
+	send = ostrcat(send, "\r\nHost: ", 1, 0);
 	send = ostrcat(send, tmphost, 1, 0);
+	send = ostrcat(send, "\r\nReferer: ", 1, 0);
+	send = ostrcat(send, "http://www.aaf-digital.info/forum/forumdisplay.php?390", 1, 0);
 	send = ostrcat(send, "\r\nCookie: bb_sessionhash=", 1, 0);
 	send = ostrcat(send, cookie1, 1, 0);
 	send = ostrcat(send, "; bb_lastvisit=", 1, 0);	
 	send = ostrcat(send, cookie2, 1, 0);
 	send = ostrcat(send, "; bb_lastactivity=", 1, 0);	
 	send = ostrcat(send, cookie3, 1, 0);
+	send = ostrcat(send, "; bb_forum_view=", 1, 0);	
+	send = ostrcat(send, cookie4, 1, 0);
+
 	send = ostrcat(send, "\r\nContent-Type: application/x-www-form-urlencoded\r\n\r\n", 1, 0);	
 	send = ostrcat(send, hash, 1, 0);
 	free(hash); hash = NULL;
@@ -1356,12 +1428,67 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
 	debug(99, "tmpstr: %s", tmpstr);
 
+	free(cookie1), cookie1 = NULL;
+	cookie1 = string_resub("bb_sessionhash=", ";", tmpstr, 0);
+	debug(99, "cookie1: %s", cookie1);
+
 	if(ostrstr(tmpstr, "<input type=\"hidden\" name=\"securitytoken\" value=\"guest\" />") != NULL)
 		error = 1;
+
+	free(send); send = NULL;
+	free(tmpstr); tmpstr = NULL;
+
+	send = ostrcat(send, "GET ", 1, 0);
+	send = ostrcat(send, boxpath, 1, 0);
+	send = ostrcat(send, " HTTP/1.1\r\nHost: ", 1, 0);	
+	send = ostrcat(send, tmphost, 1, 0);
+	send = ostrcat(send, "\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1", 1, 0);
+	send = ostrcat(send, "\r\nConnection: keep-alive", 1, 0);
+	send = ostrcat(send, "\r\nAccept-Encoding: gzip, deflate, sdch", 1, 0);	
+	send = ostrcat(send, "\r\nReferer: ", 1, 0);	
+	send = ostrcat(send, link, 1, 0);
+	send = ostrcat(send, "\r\nCookie: bb_lastvisit=", 1, 0);
+	send = ostrcat(send, cookie2, 1, 0);
+	send = ostrcat(send, "; bb_forum_view=", 1, 0);	
+	send = ostrcat(send, cookie4, 1, 0);
+	send = ostrcat(send, "; bb_lastactivity=", 1, 0);	
+	send = ostrcat(send, cookie3, 1, 0);
+	send = ostrcat(send, "; bb_sessionhash=", 1, 0);	
+	send = ostrcat(send, cookie1, 1, 0);
+	send = ostrcat(send, "\r\n\r\n", 1, 0);
+
+	debug(99, "#############################################################################################################");
+	debug(99, "send3: %s", send);
+	debug(99, "#############################################################################################################");
+
+	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
+	debug(99, "tmpstr: %s", tmpstr);
+
+	free(send); send = NULL;
+	free(tmpstr); tmpstr = NULL;
+
+	send = ostrcat(send, "GET ", 1, 0);
+	send = ostrcat(send, boxpath, 1, 0);
+	send = ostrcat(send, " HTTP/1.1\r\nHost: ", 1, 0);	
+	send = ostrcat(send, tmphost, 1, 0);
+	send = ostrcat(send, "\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1", 1, 0);
+	send = ostrcat(send, "\r\nConnection: keep-alive", 1, 0);
+	send = ostrcat(send, "\r\nAccept-Encoding: gzip, deflate, sdch", 1, 0);	
+	send = ostrcat(send, "\r\nCookie: bb_sessionhash=", 1, 0);
+	send = ostrcat(send, cookie1, 1, 0);	
+	send = ostrcat(send, "\r\n\r\n", 1, 0);
+
+	debug(99, "#############################################################################################################");
+	debug(99, "send4: %s", send);
+	debug(99, "#############################################################################################################");
+
+	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
+	debug(99, "tmpstr: %s", tmpstr);
 
 	free(cookie1); cookie1 = NULL;
 	free(cookie2); cookie2 = NULL;
 	free(cookie3); cookie3 = NULL;
+	free(cookie4); cookie4 = NULL;
 	free(tmphost); tmphost = NULL;
 	free(send); send = NULL;
 	free(ip); ip = NULL;
