@@ -1,0 +1,14 @@
+Package: titan-plugin-network-networkbrowser
+Architecture: mipsel
+Showname: Networkbrowser
+Version: 32273
+Section: network
+Description: Scan and manage cifs/nfs/ftp shares
+Group: 0
+Minversion: 32072
+Preinstalled: 0
+Size: 132
+Titanname: Networkbrowser
+Usepath: *
+Boxtype: *
+Installpath: /var

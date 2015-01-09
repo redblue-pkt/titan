@@ -1,0 +1,14 @@
+Package: titan-plugin-infos-streaminfo
+Architecture: mipsel
+Showname: Streaminfo
+Version: 32273
+Section: infos
+Description: streaminfo Plugin
+Group: 0
+Minversion: 32072
+Preinstalled: 0
+Size: 22
+Titanname: Streaminfo
+Usepath: *
+Boxtype: *
+Installpath: /var

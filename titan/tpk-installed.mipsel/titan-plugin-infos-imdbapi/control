@@ -1,0 +1,14 @@
+Package: titan-plugin-infos-imdbapi
+Architecture: mipsel
+Showname: IMDb-API
+Version: 32273
+Section: infos
+Description: ImdBapi Info Plugin
+Group: 0
+Minversion: 32072
+Preinstalled: 0
+Size: 30
+Titanname: IMDb-API
+Usepath: *
+Boxtype: *
+Installpath: /var
