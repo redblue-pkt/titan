@@ -1,0 +1,14 @@
+Package: titan-plugin-infos-imdb
+Architecture: mipsel
+Showname: IMDb
+Version: 32273
+Section: infos
+Description: ImdB Info Plugin
+Group: 0
+Minversion: 32072
+Preinstalled: 0
+Size: 38
+Titanname: IMDb
+Usepath: *
+Boxtype: *
+Installpath: /var
