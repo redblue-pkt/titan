@@ -999,14 +999,15 @@ int gstbuscall(GstBus *bus, GstMessage *msg, CustomData *data)
 			//m_event((iPlayableService*)this, evBuffering);
 */
 
-			if (data->is_live) break;
-			gst_message_parse_buffering (msg, &status.bufferpercent);
+// playback stream jerky on start
+//			if (data->is_live) break;
+//			gst_message_parse_buffering (msg, &status.bufferpercent);
 
 			if(status.prefillbuffer == 1) 
  			{
 //				gint percent = 0;
-//				if (data->is_live) break;
-//				gst_message_parse_buffering (msg, &status.bufferpercent);
+				if (data->is_live) break;
+				gst_message_parse_buffering (msg, &status.bufferpercent);
 				g_print ("Buffering (%3d%%)\r", status.bufferpercent);
 
 				if (status.bufferpercent < 100)
