@@ -1484,7 +1484,9 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 	free(cookie2); cookie2 = NULL;
 	free(cookie3); cookie3 = NULL;
 	free(cookie4); cookie4 = NULL;
+	free(boxpath); boxpath = NULL;
 	free(tmphost); tmphost = NULL;
+	free(tmppath); tmppath = NULL
 	free(send); send = NULL;
 	free(ip); ip = NULL;
 	if(tmpstr == NULL) error = 1;
