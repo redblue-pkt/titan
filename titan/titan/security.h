@@ -1400,7 +1400,8 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 	send = ostrcat(send, "\r\nHost: ", 1, 0);
 	send = ostrcat(send, tmphost, 1, 0);
 	send = ostrcat(send, "\r\nReferer: ", 1, 0);
-	send = ostrcat(send, "http://www.aaf-digital.info/forum/forumdisplay.php?390", 1, 0);
+	send = ostrcat(send, "http://www.aaf-digital.info", 1, 0);
+	send = ostrcat(send, boxpath, 1, 0);
 	send = ostrcat(send, "\r\nCookie: bb_sessionhash=", 1, 0);
 	send = ostrcat(send, cookie1, 1, 0);
 	send = ostrcat(send, "; bb_lastvisit=", 1, 0);	
