@@ -1241,12 +1241,12 @@ void guestthread()
 		if(ret == 1)
 		{
 			// guest login
-			debug(199, "Community connecting: Guest OK");
+			debug(99, "Community connecting: Guest OK");
 		}
 		else
 		{
 			// user login	
-			debug(199, "Community connecting: UserAuth OK");
+			debug(99, "Community connecting: UserAuth OK");
 			debug(199, "set secret feed");
 			screenfeed(1);
 			if(!file_exist("/mnt/swapextensions/etc/.codecpack"))
