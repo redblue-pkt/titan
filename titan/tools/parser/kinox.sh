@@ -117,7 +117,7 @@ for ROUND0 in $main_list; do
 		TITLE=`echo $picname | sed 's!.jpg!!' | tr "_" " "`
 	
 		$wgetbin --no-check-certificate "http://kinox.me/$ROUND1" -O cache."$filename".list
-		PIC=`cat cache."$filename".list | tr '><' '>\n<' | grep $picname | cut -d '"' -f2 | sort -um`
+		PIC=http://kinox.me/`cat cache."$filename".list | tr '><' '>\n<' | grep $picname | cut -d '"' -f2 | sort -um`
 		LANG=`cat cache."$filename".list | grep 'alt="language" src="/gr/sys/lng' | sed 's!alt="language" src="/gr/sys/lng/!\n!' | tail -n1 |cut -d"." -f1`
 	 	LANGTXT=" (??)"
 
@@ -162,7 +162,7 @@ for ROUND3 in $LIST; do
 		TITLE=`echo $picname | sed 's!.jpg!!' | tr "_" " "`
 		TITLE=`echo $TITLE | sed -e 's/&#038;/&/g' -e 's/&amp;/und/g' -e 's/&quot;/"/g' -e 's/&lt;/\</g' -e 's/&#034;/\"/g' -e 's/&#039;/\"/g' # ' -e 's/#034;/\"/g' -e 's/#039;/\"/g' -e 's/&szlig;/Ãx/g' -e 's/&ndash;/-/g' -e 's/&Auml;/Ã/g' -e 's/&Uuml;/ÃS/g' -e 's/&Ouml;/Ã/g' -e 's/&auml;/Ã¤/g' -e 's/&uuml;/Ã¼/g' -e 's/&ouml;/Ã¶/g' -e 's/&eacute;/Ã©/g' -e 's/&egrave;/Ã¨/g' -e 's/%F6/Ã¶/g' -e 's/%FC/Ã¼/g' -e 's/%E4/Ã¤/g' -e 's/%26/&/g' -e 's/%C4/Ã/g' -e 's/%D6/Ã/g' -e 's/%DC/ÃS/g' -e 's/|/ /g' -e 's/(/ /g' -e 's/)/ /g' -e 's/+/ /g' -e 's/\//-/g' -e 's/,/ /g' -e 's/;/ /g' -e 's/:/ /g' -e 's/\.\+/./g'`
 
-		PIC=`cat cache."$count"."$filename3" | grep $ROUND3 | grep '<img src=' | cut -d'"' -f6`
+		PIC=http://kinox.me/`cat cache."$count"."$filename3" | grep $ROUND3 | grep '<img src=' | cut -d'"' -f6`
 		if [ -z "$PIC" ]; then
 			PIC="http://atemio.dyndns.tv/mediathek/menu/default.jpg"
 		fi
