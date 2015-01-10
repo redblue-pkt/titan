@@ -1211,7 +1211,7 @@ void guestthread()
 
 	checkgthread();
 
-	debug(99, "whilecount: %d sleepcount: %d url: %s user: %s pass: %s\n", status.whilecount, status.sleepcount, status.url, user, pass);
+	debug(199, "whilecount: %d sleepcount: %d url: %s user: %s pass: %s\n", status.whilecount, status.sleepcount, status.url, user, pass);
 
 	if(ostrncmp("http://", status.url, 7))
 	{
@@ -1222,7 +1222,7 @@ void guestthread()
 	user = getconfig("community_user", NULL);
 	pass = getconfig("community_pass", NULL);
 
-	debug(99, "whilecount: %d sleepcount: %d url: %s user: %s pass: %s\n", status.whilecount, status.sleepcount, status.url, user, pass);
+	debug(199, "whilecount: %d sleepcount: %d url: %s user: %s pass: %s\n", status.whilecount, status.sleepcount, status.url, user, pass);
 
 	while(count < status.whilecount)
 	{
@@ -1241,28 +1241,28 @@ void guestthread()
 		if(ret == 1)
 		{
 			// guest login
-			debug(99, "Community connecting: Guest OK");
+			debug(199, "Community connecting: Guest OK");
 		}
 		else
 		{
 			// user login	
-			debug(99, "Community connecting: UserAuth OK");
-			debug(99, "set secret feed");
+			debug(199, "Community connecting: UserAuth OK");
+			debug(199, "set secret feed");
 			screenfeed(1);
 			if(!file_exist("/mnt/swapextensions/etc/.codecpack"))
 			{
-				debug(99, "Community connecting: set codecpack");
+				debug(199, "Community connecting: set codecpack");
 				system("touch /mnt/swapextensions/etc/.codecpack");	
 			}
 
-			debug(99, "Community connecting: set nopluginversion");
+			debug(199, "Community connecting: set nopluginversion");
 			addconfigtmp("nopluginversion", "1");
 			writeallconfig(1);
 			loadplugin();
 /*
 			if(!file_exist("/var/etc/.tpkupgrade"))
 			{
-				debug(99, "Community connecting: tpk upgrade");
+				debug(199, "Community connecting: tpk upgrade");
 				screenextensions(3, NULL, NULL, 1);	
 			}
 */
@@ -1273,9 +1273,9 @@ void guestthread()
 
 int vbulletin_userauth(char* link, char* user, char* pass)
 {
-	debug(99, "vbulletin user: %s", user);
-	debug(99, "vbulletin pass: %s", pass);	
-	debug(99, "vbulletin url: %s", link);
+	debug(199, "vbulletin user: %s", user);
+	debug(199, "vbulletin pass: %s", pass);	
+	debug(199, "vbulletin url: %s", link);
 
 	int ret = 0;
 	char* ip = NULL, *tmphost = NULL, *tmppath = NULL, *tmpstr = NULL, *send = NULL, *hash = NULL, *cookie1 = NULL, *cookie2 = NULL, *cookie3 = NULL, *cookie4 = NULL, *tmplink = NULL, *pos = NULL, *path = NULL, *hashlen = NULL, *boxpath = NULL;
@@ -1355,21 +1355,21 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 		send = ostrcat(send, "\r\nConnection: close", 1, 0);
 		send = ostrcat(send, "\r\nAccept-Encoding: gzip", 1, 0);
 		send = ostrcat(send, "\r\n\r\n", 1, 0);
-		debug(99, "#############################################################################################################");
-		debug(99, "send1: %s", send);
-		debug(99, "#############################################################################################################");
+		debug(199, "#############################################################################################################");
+		debug(199, "send1: %s", send);
+		debug(199, "#############################################################################################################");
 	
 		tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
-		debug(99, "tmpstr: %s", tmpstr);
+		debug(199, "tmpstr: %s", tmpstr);
 
 		cookie1 = string_resub("bb_sessionhash=", ";", tmpstr, 0);
-		debug(99, "cookie1: %s", cookie1);
+		debug(199, "cookie1: %s", cookie1);
 		cookie2 = string_resub("bb_lastvisit=", ";", tmpstr, 0);
-		debug(99, "cookie2: %s", cookie2);
+		debug(199, "cookie2: %s", cookie2);
 		cookie3 = string_resub("bb_lastactivity=", ";", tmpstr, 0);
-		debug(99, "cookie3: %s", cookie3);
+		debug(199, "cookie3: %s", cookie3);
 		cookie4 = string_resub("bb_forum_view=", ";", tmpstr, 0);
-		debug(99, "cookie4: %s", cookie4);
+		debug(199, "cookie4: %s", cookie4);
 	
 		free(send), send = NULL;
 		free(tmpstr), tmpstr = NULL;
@@ -1408,16 +1408,16 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 		free(hash); hash = NULL;
 		free(hashlen); hashlen = NULL;
 	
-		debug(99, "#############################################################################################################");
-		debug(99, "send2: %s", send);
-		debug(99, "#############################################################################################################");
+		debug(199, "#############################################################################################################");
+		debug(199, "send2: %s", send);
+		debug(199, "#############################################################################################################");
 	
 		tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
-		debug(99, "tmpstr: %s", tmpstr);
+		debug(199, "tmpstr: %s", tmpstr);
 	
 		free(cookie1), cookie1 = NULL;
 		cookie1 = string_resub("bb_sessionhash=", ";", tmpstr, 0);
-		debug(99, "cookie1: %s", cookie1);
+		debug(199, "cookie1: %s", cookie1);
 	
 		free(send); send = NULL;
 		free(tmpstr); tmpstr = NULL;
@@ -1441,12 +1441,12 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 		send = ostrcat(send, cookie1, 1, 0);
 		send = ostrcat(send, "\r\n\r\n", 1, 0);
 	
-		debug(99, "#############################################################################################################");
-		debug(99, "send3: %s", send);
-		debug(99, "#############################################################################################################");
+		debug(199, "#############################################################################################################");
+		debug(199, "send3: %s", send);
+		debug(199, "#############################################################################################################");
 	
 		tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
-		debug(99, "tmpstr: %s", tmpstr);
+		debug(199, "tmpstr: %s", tmpstr);
 
 		free(send); send = NULL;
 		free(tmpstr); tmpstr = NULL;
@@ -1463,12 +1463,12 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 	send = ostrcat(send, cookie1, 1, 0);	
 	send = ostrcat(send, "\r\n\r\n", 1, 0);
 
-	debug(99, "#############################################################################################################");
-	debug(99, "send4: %s", send);
-	debug(99, "#############################################################################################################");
+	debug(199, "#############################################################################################################");
+	debug(199, "send4: %s", send);
+	debug(199, "#############################################################################################################");
 
 	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 1);
-	debug(99, "tmpstr: %s", tmpstr);
+	debug(199, "tmpstr: %s", tmpstr);
 
 	if(ostrstr(tmpstr, "<input type=\"hidden\" name=\"securitytoken\" value=\"guest\" />") != NULL)
 		ret = 1;
