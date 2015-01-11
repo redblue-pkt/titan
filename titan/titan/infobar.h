@@ -13,7 +13,9 @@ void screeninfobar()
 	if(infobar2_sel == NULL) ostrcat(infobar_sel, "infobar2", 0, 0); // fallback to default
 
 	struct skin* infobar1 = getscreen(infobar_sel);
+	debug(10, "get infobar1=%s", infobar_sel);
 	struct skin* infobar2 = getscreen(infobar2_sel);
+	debug(10, "get infobar2=%s", infobar2_sel);
 	struct skin* infobar = infobar1;
 	struct skin* infobarm = infobar1;
 
