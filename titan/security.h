@@ -1656,7 +1656,7 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 #ifdef BETA
 	debug(299, "send: %s", send);
 #endif
-	tmpstr = gethttpreal("atemio.dyndns.tv", "/control/", 80, NULL, NULL, NULL, 0, send, HTTPAUTH, 5000, 1);
+	tmpstr = gethttpreal("atemio.dyndns.tv", "/control/", 80, NULL, HTTPAUTH, NULL, 0, send, NULL, 5000, 1);
 #ifdef BETA
 	debug(299, "tmpstr: %s", tmpstr);
 #endif
