@@ -7,8 +7,8 @@ void screeninfobar()
 	struct channel* pipchannel = NULL; 
 	struct skin* playinfobarpic = getscreen("playinfobarpic");
 
-	char* infobar_sel = getskinconfig("infobar_selection", NULL);
-	char* infobar2_sel = getskinconfig("infobar2_selection", NULL);
+	char* infobar_sel = getskinconfig("infobar_selection", "infobar");
+	char* infobar2_sel = getskinconfig("infobar2_selection", "infobar2");
 	debug(10, "get infobar1=%s", infobar_sel);
 	debug(10, "get infobar2=%s", infobar2_sel);
 
