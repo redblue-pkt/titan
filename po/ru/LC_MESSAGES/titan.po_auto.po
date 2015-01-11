@@ -2,15 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TitanNit 1.59\n"
 "Report-Msgid-Bugs-To: \n"
-<<<<<<< .mine
 "POT-Creation-Date: 2014-02-07 10:44+0200\n"
 "PO-Revision-Date: 2015-01-11 20:59+0100\n"
 "Last-Translator:  <aaf-caliban@e.mail.de>\n"
-=======
-"POT-Creation-Date: 2014-02-07 10:44+0100\n"
-"PO-Revision-Date: 2015-01-11 19:32+0100\n"
-"Last-Translator: Bulldog <_Bulldog@aaf.info>\n"
->>>>>>> .r32336
 "Language-Team: German <_obiwan_@web.de>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
