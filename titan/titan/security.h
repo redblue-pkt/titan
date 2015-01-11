@@ -1643,6 +1643,9 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 	send = ostrcat(send, " HTTP/1.0\r\n", 1, 0);
 	send = ostrcat(send, "Content-Length: ", 1, 0);
 	send = ostrcat(send, hashlen, 1, 0);
+//	send = ostrcat(send, "\r\nAuthorization: Basic YVV0emhGUlR6dURGYTpKTkhaYmdobmp1eg==", 1, 0);
+	send = ostrcat(send, "\r\nAuthorization: Basic ", 1, 0);
+	send = ostrcat(send, HTTPAUTH, 1, 0);
 	send = ostrcat(send, "\r\nAccept-Encoding: gzip", 1, 0);	
 	send = ostrcat(send, "\r\nHost: ", 1, 0);
 	send = ostrcat(send, "atemio.dyndns.tv", 1, 0);
