@@ -20,6 +20,7 @@ void screenskinadjust()
 
 	struct skin* oled_sel = getscreennode(skinadjust, "oled_sel");
 	struct skin* infobar_sel = getscreennode(skinadjust, "infobar_sel");
+	struct skin* infobar2_sel = getscreennode(skinadjust, "infobar2_sel");
 	struct skin* pic1 = getscreennode(skinadjust, "pic1");
 	struct skin* pic2 = getscreennode(skinadjust, "pic2");
 
@@ -104,6 +105,14 @@ void screenskinadjust()
 	if(checkscreen("infobar_v3") != status.skinerr)
 		addchoicebox(infobar_sel, "infobar_v3","v3");
 	setchoiceboxselection(infobar_sel, getskinconfig("infobar_selection", NULL));
+
+	if(checkscreen("infobar2") != status.skinerr)
+		addchoicebox(infobar2_sel, "infobar2", "v1");
+	if(checkscreen("infobar2_v2") != status.skinerr)
+		addchoicebox(infobar2_sel, "infobar2_v2","v2");
+	if(checkscreen("infobar2_v3") != status.skinerr)
+		addchoicebox(infobar2_sel, "infobar2_v3","v3");
+	setchoiceboxselection(infobar2_sel, getskinconfig("infobar2_selection", NULL));
 
 	addchoicebox(showrecfreesize, "0", _("no"));
 	addchoicebox(showrecfreesize, "1", _("yes (Text in %)"));
@@ -241,12 +250,10 @@ void screenskinadjust()
 			char* oldinfobar_sel = getskinconfig("infobar_selection", NULL);
 			addskinconfigscreencheck("infobar_selection", infobar_sel, "0");
 			if(ostrcmp(oldinfobar_sel,getskinconfig("infobar_selection", NULL)) != 0) reboot = 1;
-			if(ostrcmp(getskinconfig("infobar_selection", NULL), "infobar") != 0)
-				addskinconfigscreencheck("infobar2_selection", "infobar2", "0");
-			if(ostrcmp(getskinconfig("infobar_selection", NULL), "infobar_v2") != 0)
-				addskinconfigscreencheck("infobar2_selection", "infobar2_v2", "0");
-			if(ostrcmp(getskinconfig("infobar_selection", NULL), "infobar_v3") != 0)
-				addskinconfigscreencheck("infobar2_selection", "infobar2_v3", "0");
+
+			char* oldinfobar2_sel = getskinconfig("infobar2_selection", NULL);
+			addskinconfigscreencheck("infobar2_selection", infobar2_sel, "0");
+			if(ostrcmp(oldinfobar2_sel,getskinconfig("infobar2_selection", NULL)) != 0) reboot = 1;
 
 			writeskinconfigtmp();
 			if(reboot == 1)
