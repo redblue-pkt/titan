@@ -6436,8 +6436,8 @@ msgid ""
 "Before you can see Signal/SNR/Ber you must zap to a channel of the satellite "
 "you are searching."
 msgstr ""
-"trước khi bạn có thể xem mức tín hiệu/SNR/bạn phải dò lại ch�"
-"���ơng trìnhĐang dò chương trình."
+"trước khi bạn có thể xem mức tín hiệu/SNR/bạn phải dò lại ch"
+"ơng trìnhĐang dò chương trình."
 
 #: skin_default_skin.xml.h:108
 msgid "Begin"
@@ -8761,8 +8761,8 @@ msgstr ""
 "cứng.\n"
 "Cảnh báo: Bản sao cũ sẽ được xóa!\n"
 "\n"
-"Trong khi đang sử dụng chức năng cập nhật, các thiết lập của b�"
-"���n sẽ được lưu và khôi phục tự động, nếu có thể!"
+"Trong khi đang sử dụng chức năng cập nhật, các thiết lập của b"
+"n sẽ được lưu và khôi phục tự động, nếu có thể!"
 
 #: system_backup_restore.h:31
 msgid "Restore Settings"
@@ -9529,8 +9529,8 @@ msgstr ""
 #: tmdb.h:922
 msgid "Error, found result without imdbid we can't this save in MediaDB"
 msgstr ""
-"lỗi, kết quả tìm kiếm có một imdbid không hợp lệ và do đó kh�"
-"���ng thể được lưu trữ trong các MediaDB "
+"lỗi, kết quả tìm kiếm có một imdbid không hợp lệ và do đó kh"
+"ng thể được lưu trữ trong các MediaDB "
 
 #: TopfieldVFD.c:68
 msgid ""
