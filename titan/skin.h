@@ -260,6 +260,10 @@ void* convertfunc(char *value, uint8_t *rettype)
 		return &getprovidername;
 	if(ostrcmp("getpowerofftime", value) == 0)
 		return &getpowerofftime;
+	if(ostrcmp("getredbutton", value) == 0)
+		return &getredbutton;
+	if(ostrcmp("getbluebutton", value) == 0)
+		return &getbluebutton;
 
 	return 0;
 }

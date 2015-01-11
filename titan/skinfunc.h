@@ -1325,4 +1325,26 @@ char* getwlanlinkqualitytext(struct skin* node)
 	return tmpstr;
 }
 
+char* getredbutton(struct skin* node)
+{
+	char* tmpstr = getconfig("redkey", NULL);
+
+	if(tmpstr == NULL) tmpstr = ostrcat(tmpstr, "Extensions List", 0, 0);
+
+	debug(10, "redbutton=%s", tmpstr);
+
+	return tmpstr;
+}
+
+char* getbluebutton(struct skin* node)
+{
+	char* tmpstr = getconfig("bluekey", NULL);
+
+	if(tmpstr == NULL) tmpstr = ostrcat(tmpstr, "TV / Radio Switch", 0, 0);
+
+	debug(10, "bluebutton=%s", tmpstr);
+
+	return tmpstr;
+}
+
 #endif
