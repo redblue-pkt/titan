@@ -241,6 +241,12 @@ void screenskinadjust()
 			char* oldinfobar_sel = getskinconfig("infobar_selection", NULL);
 			addskinconfigscreencheck("infobar_selection", infobar_sel, "0");
 			if(ostrcmp(oldinfobar_sel,getskinconfig("infobar_selection", NULL)) != 0) reboot = 1;
+			if(ostrcmp(getskinconfig("infobar_selection", NULL), "infobar") != 0)
+				addskinconfigscreencheck("infobar2_selection", "infobar2", "0");
+			if(ostrcmp(getskinconfig("infobar_selection", NULL), "infobar_v2") != 0)
+				addskinconfigscreencheck("infobar2_selection", "infobar2_v2", "0");
+			if(ostrcmp(getskinconfig("infobar_selection", NULL), "infobar_v3") != 0)
+				addskinconfigscreencheck("infobar2_selection", "infobar2_v3", "0");
 
 			writeskinconfigtmp();
 			if(reboot == 1)
