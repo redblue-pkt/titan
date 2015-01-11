@@ -1507,46 +1507,43 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 	struct splitstr* ret1 = NULL;
 
 	//Blacklist check
-	if(status.security == 1)
+	char* blackfile = NULL;
+	blackfile = gethttp("atemio.dyndns.tv", "/svn/auth/blacklist", 80, NULL, HTTPAUTH, 5000, NULL, 0);
+
+	count = 0;
+	if(blackfile != NULL)
+		ret1 = strsplit(blackfile, "\n", &count);
+
+	if(ret1 != NULL)
 	{
-		char* blackfile = NULL;
-		blackfile = gethttp("atemio.dyndns.tv", "/svn/auth/blacklist", 80, NULL, HTTPAUTH, 5000, NULL, 0);
-	
-		count = 0;
-		if(blackfile != NULL)
-			ret1 = strsplit(blackfile, "\n", &count);
-	
-		if(ret1 != NULL)
+		for(i = 0; i < count; i++)
 		{
-			for(i = 0; i < count; i++)
+			if(ostrncmp("AA", ret1[i].part, 2) == 0)
 			{
-				if(ostrncmp("AA", ret1[i].part, 2) == 0)
+				ret1[i].part = stringreplacecharonce(ret1[i].part, ',', '\0');
+				if(ret1 != NULL && ostrcmp(id, ret1[i].part) == 0)
 				{
-					ret1[i].part = stringreplacecharonce(ret1[i].part, ',', '\0');
-					if(ret1 != NULL && ostrcmp(id, ret1[i].part) == 0)
-					{
-						status.security = 0;
-						blacklist = 1;
-						break;
-					}
+					status.security = 0;
+					blacklist = 1;
+					break;
 				}
-				if(ostrncmp("BB", ret1[i].part, 2) == 0)
+			}
+			if(ostrncmp("BB", ret1[i].part, 2) == 0)
+			{
+				char* tmp = ret1[i].part + 2;
+				if(tmp != NULL && PLUGINVERSION == atoi(tmp))
 				{
-					char* tmp = ret1[i].part + 2;
-					if(tmp != NULL && PLUGINVERSION == atoi(tmp))
-					{
-						status.security = 0;
-						blacklist = 1;
-						printf("error: 9\n");		
-						destroy();
-						break;
-					}
+					status.security = 0;
+					blacklist = 1;
+					printf("error: 9\n");		
+					destroy();
+					break;
 				}
 			}
 		}
-		free(ret1); ret1 = NULL;
-		free(blackfile);
 	}
+	free(ret1); ret1 = NULL;
+	free(blackfile);
 
 /////////////
 
