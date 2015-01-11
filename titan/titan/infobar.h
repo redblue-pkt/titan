@@ -9,27 +9,23 @@ void screeninfobar()
 
 	char* infobar_sel = getskinconfig("infobar_selection", NULL);
 	char* infobar2_sel = getskinconfig("infobar2_selection", NULL);
-	debug(10, "get infobar1=%s", infobar_sel);
-	debug(10, "get infobar2=%s", infobar2_sel);
+	debug(10, "get initial infobar1=%s", infobar_sel);
+	debug(10, "get initial infobar2=%s", infobar2_sel);
 
-	//if(infobar_sel == NULL) ostrcat(infobar_sel, "infobar", 0, 0); // fallback to default
-	//if(ostrcmp(infobar_sel, NULL) == 0) {
 	if(infobar_sel == NULL) {
 		infobar_sel = ostrcat(infobar_sel, "infobar", 0, 0); // fallback to default
-		debug(10, "fallback, set infobar1=%s", infobar_sel);
+		debug(10, "fallback to default, set infobar1=%s", infobar_sel);
 	}
 
-	//if(infobar2_sel == NULL) ostrcat(infobar2_sel, "infobar2", 0, 0); // fallback to default
-	//if(ostrcmp(infobar2_sel, NULL) == 0) {
 	if(infobar2_sel == NULL) {
 		infobar2_sel = ostrcat(infobar2_sel, "infobar2", 0, 0); // fallback to default
-		debug(10, "fallback, set infobar2=%s", infobar2_sel);
+		debug(10, "fallback to default, set infobar2=%s", infobar2_sel);
 	}
 
 	struct skin* infobar1 = getscreen(infobar_sel);
-	debug(10, "get infobar1=%s", infobar_sel);
+	debug(10, "get final infobar1=%s", infobar_sel);
 	struct skin* infobar2 = getscreen(infobar2_sel);
-	debug(10, "get infobar2=%s", infobar2_sel);
+	debug(10, "get final infobar2=%s", infobar2_sel);
 	struct skin* infobar = infobar1;
 	struct skin* infobarm = infobar1;
 
