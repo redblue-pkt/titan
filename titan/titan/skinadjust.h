@@ -103,7 +103,7 @@ void screenskinadjust()
 		addchoicebox(infobar_sel, "infobar_v2","v2");
 	if(checkscreen("infobar_v3") != status.skinerr)
 		addchoicebox(infobar_sel, "infobar_v3","v3");
-	setchoiceboxselection(infobar_sel, getskinconfig("infobarselection", NULL));
+	setchoiceboxselection(infobar_sel, getskinconfig("infobar_selection", NULL));
 
 	addchoicebox(showrecfreesize, "0", _("no"));
 	addchoicebox(showrecfreesize, "1", _("yes (Text in %)"));
@@ -238,10 +238,9 @@ void screenskinadjust()
 			if(checkbox("ATEMIO-NEMESIS"))
 				addskinconfigscreencheck("OLED_nemesis", oled_sel, "0");
 
-			char* oldinfobar_sel = getskinconfig("infobarselection", NULL);
-			addskinconfigscreencheck("infobarselection", infobar_sel, "0");
-			if(ostrcmp(oldinfobar_sel,getskinconfig("infobarselection", NULL)) != 0) reboot = 1;
-			//status.infobar_sel = getskinconfig("infobarselection", NULL);
+			char* oldinfobar_sel = getskinconfig("infobar_selection", NULL);
+			addskinconfigscreencheck("infobar_selection", infobar_sel, "0");
+			if(ostrcmp(oldinfobar_sel,getskinconfig("infobar_selection", NULL)) != 0) reboot = 1;
 
 			writeskinconfigtmp();
 			if(reboot == 1)
