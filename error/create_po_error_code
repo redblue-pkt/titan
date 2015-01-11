@@ -59,22 +59,22 @@
                                                                                 Message conversion to user's charset will not work.
 1774 translated messages, 1085 untranslated messages.
 [createpo.sh] xgettext --omit-header -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.utf.po
-/home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.utf.po:4319:79: invalid control sequence
-/home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.utf.po:4320:3: invalid control sequence
-/home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.utf.po:4320:6: invalid control sequence
-/home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.utf.po:6122:78: invalid control sequence
-/home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.utf.po:6123:3: invalid control sequence
-/home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.utf.po:6123:6: invalid control sequence
-/home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.utf.po:6716:79: invalid control sequence
-/home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.utf.po:6717:3: invalid control sequence
-/home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.utf.po:6717:6: invalid control sequence
+/home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.utf.po:4318:79: invalid control sequence
+/home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.utf.po:4319:3: invalid control sequence
+/home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.utf.po:4319:6: invalid control sequence
+/home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.utf.po:6121:78: invalid control sequence
+/home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.utf.po:6122:3: invalid control sequence
+/home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.utf.po:6122:6: invalid control sequence
+/home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.utf.po:6715:79: invalid control sequence
+/home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.utf.po:6716:3: invalid control sequence
+/home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.utf.po:6716:6: invalid control sequence
 xgettext: found 9 fatal errors
 [createpo.sh] ############################################
 [createpo.sh] ###### error should be in the middle #######
 [createpo.sh] ############################################
-  6716	"lá»i, káº¿t quáº£ tÃ¬m kiáº¿m cÃ³ má»t imdbid khÃ´ng há»£p lá» vÃ  do ÄÃ³ kh\EF"
-  6717	"\BF\BDï¿½ng thá» ÄÆ°á»£c lÆ°u trá»¯ trong cÃ¡c MediaDB "
-  6718	
+  6715	"lá»i, káº¿t quáº£ tÃ¬m kiáº¿m cÃ³ má»t imdbid khÃ´ng há»£p lá» vÃ  do ÄÃ³ kh\EF"
+  6716	"\BF\BDï¿½ng thá» ÄÆ°á»£c lÆ°u trá»¯ trong cÃ¡c MediaDB "
+  6717	
 [createpo.sh] ############################################
 [createpo.sh] ################## coding #################
 /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.po:         utf-8
