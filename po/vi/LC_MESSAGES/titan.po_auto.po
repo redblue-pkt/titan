@@ -13021,21 +13021,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid "Power aktion"
-#~ msgstr "Bật/tắt nguồn"
-
-#~ msgid "Receiver now reboot !!!"
-#~ msgstr "Đầu thu đang khởi động lại !!!"
-
-#~ msgid "Networkbrowser scanning an manage cifs/nfs/ftp shares."
-#~ msgstr "Trình duyệt mạng – Dò cifs/nfs-Chia sẻ "
-
-#~ msgid "infos "
-#~ msgstr "thông tin"
-
-#~ msgid "player "
-#~ msgstr "player"
-
-#~ msgid "tools "
-#~ msgstr "dụng cụ"
