@@ -17,11 +17,12 @@ void screenskinadjust()
 	struct skin* listboxselect = getscreennode(skinadjust, "listboxselect");
 	struct skin* tithek_selectcol = getscreennode(skinadjust, "tithek_selectcol");
 	struct skin* filelistselect = getscreennode(skinadjust, "filelistselect");
-	
+
 	struct skin* oled_sel = getscreennode(skinadjust, "oled_sel");
+	struct skin* infobar_sel = getscreennode(skinadjust, "infobar_sel");
 	struct skin* pic1 = getscreennode(skinadjust, "pic1");
 	struct skin* pic2 = getscreennode(skinadjust, "pic2");
-	
+
 	struct skin* tmp = NULL;
 
 	changeinput(fontsizeadjust, "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n-15\n-14\n-13\n-12\n-11\n-10\n-9\n-8\n-7\n-6\n-5\n-4\n-3\n-2\n-1");
@@ -32,7 +33,7 @@ void screenskinadjust()
 	addchoicebox(listboxselecttype, "2", _("text"));
 	addchoicebox(listboxselecttype, "3", _("picture"));
 	setchoiceboxselection(listboxselecttype, getskinconfig("listboxselecttype", NULL));
-	
+
 	changeinput(osdtransparent, "0\n5\n10\n15\n20\n25\n30\n35\n40\n45\n50\n55\n60\n65\n70");
 	setchoiceboxselection(osdtransparent, getskinconfig("osdtransparent", NULL));
 
@@ -90,17 +91,25 @@ void screenskinadjust()
 			addchoicebox(oled_sel, "OLED_nemesis_v5","v5");
 		if(checkscreen("OLED_nemesis_v6") != status.skinerr)
 			addchoicebox(oled_sel, "OLED_nemesis_v6","v6");
-		
+
 		setchoiceboxselection(oled_sel, getskinconfig("OLED_nemesis", NULL));
 	}
 	else
 		oled_sel->hidden = YES;
 
+	if(checkscreen("infobar") != status.skinerr)
+		addchoicebox(infobar_sel, "infobar", "v1");
+	if(checkscreen("infobar_v2") != status.skinerr)
+		addchoicebox(infobar_sel, "infobar_v2","v2");
+	if(checkscreen("infobar_v3") != status.skinerr)
+		addchoicebox(infobar_sel, "infobar_v3","v3");
+	setchoiceboxselection(infobar_sel, getskinconfig("infobarselection", NULL));
+
 	addchoicebox(showrecfreesize, "0", _("no"));
 	addchoicebox(showrecfreesize, "1", _("yes (Text in %)"));
 	addchoicebox(showrecfreesize, "2", _("yes (Text in MB)"));
 	setchoiceboxselection(showrecfreesize, getconfig("showrecfreesize", NULL));
-	
+
 	addchoicebox(listboxselect, "0", _("press red"));
 	addchoicebox(tithek_selectcol, "1", _("press green"));
 	addchoicebox(filelistselect, "2", _("press yellow"));
@@ -119,19 +128,19 @@ void screenskinadjust()
 		addconfigscreencheck("fbleftoffset", leftoffset, "0");
 		if(status.leftoffset != getconfigint("fbleftoffset", NULL)) offsetchange = 1; 
 		status.leftoffset = getconfigint("fbleftoffset", NULL);
-		
+
 		addconfigscreencheck("fbrightoffset", rightoffset, "0");
 		if(status.rightoffset != getconfigint("fbrightoffset", NULL)) offsetchange = 1;
 		status.rightoffset = getconfigint("fbrightoffset", NULL);
-		
+
 		addconfigscreencheck("fbtopoffset", topoffset, "0");
 		if(status.topoffset != getconfigint("fbtopoffset", NULL)) offsetchange = 1;
 		status.topoffset = getconfigint("fbtopoffset", NULL);
-		
+
 		addconfigscreencheck("fbbottomoffset", bottomoffset, "0");
 		if(status.bottomoffset != getconfigint("fbbottomoffset", NULL)) offsetchange = 1;
 		status.bottomoffset = getconfigint("fbbottomoffset", NULL);
-			
+
 		if(offsetchange == 1 && (ostrcmp(getconfig("av_mode3d", NULL), "sbs") == 0 || ostrcmp(getconfig("av_mode3d", NULL), "tab") == 0)) clearfball();
 
 		drawscreen(skinadjust, 0, 0);
@@ -139,7 +148,7 @@ void screenskinadjust()
 #ifdef MIPSEL
 		setfbosd();
 #endif
-		
+
 		if((rcret == getrcconfigint("rcleft", NULL) || rcret == getrcconfigint("rcright", NULL)) && checkbox("ATEMIO-NEMESIS") == 1 && listbox->select != NULL && ostrcmp(listbox->select->name, "oled_sel") == 0)
 		{
 			char* tmpstr = NULL;
@@ -152,7 +161,7 @@ void screenskinadjust()
 			drawscreen(OLED_nemesis, 0, 0);
 			free(tmpstr);tmpstr=NULL;
 		}
-		
+
 		if(rcret == getrcconfigint("rcexit", NULL))
 		{
 			addconfigint("fbleftoffset", oleftoffset);
@@ -178,8 +187,8 @@ void screenskinadjust()
 				if(oldlistboxselectcol != convertcol("listboxselect")) reboot = 1;
 				drawscreen(skinadjust, 0, 0);
 			}
-			
-			continue;		
+
+			continue;
 		}
 
 		if(rcret == getrcconfigint("rcgreen", NULL))
@@ -193,8 +202,8 @@ void screenskinadjust()
 				if(oldtithek_selectcol != convertcol("tithek_selectcol")) reboot = 1;
 				drawscreen(skinadjust, 0, 0);
 			}
-			
-			continue;		
+
+			continue;
 		}
 
 		if(rcret == getrcconfigint("rcyellow", NULL))
@@ -208,8 +217,8 @@ void screenskinadjust()
 				if(oldfilelistselect != convertcol("filelistselect")) reboot = 1;
 				drawscreen(skinadjust, 0, 0);
 			}
-			
-			continue;		
+
+			continue;
 		}
 
 		if(rcret == getrcconfigint("rcok", NULL))
@@ -217,8 +226,8 @@ void screenskinadjust()
 			int oldfontsizeadjust = getskinconfigint("fontsizeadjust", NULL);
 			addskinconfigscreencheck("fontsizeadjust", fontsizeadjust, "0");
 			if(oldfontsizeadjust != getskinconfigint("fontsizeadjust", NULL)) reboot = 1;
-			status.fontsizeadjust = getskinconfigint("fontsizeadjust", NULL);			
-			
+			status.fontsizeadjust = getskinconfigint("fontsizeadjust", NULL);
+
 			addskinconfigscreencheck("listboxselecttype", listboxselecttype, "0");
 			status.listboxselecttype = getskinconfigint("listboxselecttype", NULL);
 			addskinconfigscreencheck("osdtransparent", osdtransparent, "0");
@@ -228,14 +237,19 @@ void screenskinadjust()
 
 			if(checkbox("ATEMIO-NEMESIS"))
 				addskinconfigscreencheck("OLED_nemesis", oled_sel, "0");
-			
+
+			char* oldinfobar_sel = getskinconfig("infobarselection", NULL);
+			addskinconfigscreencheck("infobarselection", infobar_sel, "0");
+			if(ostrcmp(oldinfobar_sel,getskinconfig("infobarselection", NULL)) != 0) reboot = 1;
+			status.infobar_sel = getskinconfig("infobarselection", NULL);
+
 			writeskinconfigtmp();
 			if(reboot == 1)
 			{
 				textbox(_("Message"), _("Titan will be restartet!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 				oshutdown(3, 0);
 			}
-      
+
 			break;
 		}
 	}
