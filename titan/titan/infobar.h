@@ -10,7 +10,7 @@ void screeninfobar()
 	char* infobar_sel = getskinconfig("infobar_selection", NULL);
 	char* infobar2_sel = getskinconfig("infobar2_selection", NULL);
 	if(infobar_sel == NULL) ostrcat(infobar_sel, "infobar", 0, 0); // fallback to default
-	if(infobar2_sel == NULL) ostrcat(infobar_sel, "infobar2", 0, 0); // fallback to default
+	if(infobar2_sel == NULL) ostrcat(infobar2_sel, "infobar2", 0, 0); // fallback to default
 
 	struct skin* infobar1 = getscreen(infobar_sel);
 	debug(10, "get infobar1=%s", infobar_sel);
