@@ -1254,6 +1254,7 @@ struct status
 	//deaktivates child protect if greater then akttime
 	time_t protecttime;
 	char* boxtype;
+	char* realboxtype;
 	pthread_t mainthread;
 	//videosize from stream
 	video_size_t videosize;
