@@ -13,13 +13,13 @@ void screeninfobar()
 	debug(10, "get infobar2=%s", infobar2_sel);
 
 	//if(infobar_sel == NULL) ostrcat(infobar_sel, "infobar", 0, 0); // fallback to default
-	if(ostrcmp(infobar_sel, NULL) == 0) {
+	if(ostrcmp(infobar_sel, NULL) != 0) {
 		ostrcat(infobar_sel, "infobar", 0, 0); // fallback to default
 		debug(10, "fallback, set infobar1=%s", infobar_sel);
 	}
 
 	//if(infobar2_sel == NULL) ostrcat(infobar2_sel, "infobar2", 0, 0); // fallback to default
-	if(ostrcmp(infobar2_sel, NULL) == 0) {
+	if(ostrcmp(infobar2_sel, NULL) != 0) {
 		ostrcat(infobar2_sel, "infobar", 0, 0); // fallback to default
 		debug(10, "fallback, set infobar2=%s", infobar2_sel);
 	}
