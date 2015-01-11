@@ -7,8 +7,8 @@ void screeninfobar()
 	struct channel* pipchannel = NULL; 
 	struct skin* playinfobarpic = getscreen("playinfobarpic");
 
-	char* infobar_sel = getskinconfig("infobar_selection", "infobar");
-	char* infobar2_sel = getskinconfig("infobar2_selection", "infobar2");
+	char* infobar_sel = getskinconfig("infobar_selection", NULL);
+	char* infobar2_sel = getskinconfig("infobar2_selection", NULL);
 	debug(10, "get infobar1=%s", infobar_sel);
 	debug(10, "get infobar2=%s", infobar2_sel);
 
@@ -20,7 +20,7 @@ void screeninfobar()
 
 	//if(infobar2_sel == NULL) ostrcat(infobar2_sel, "infobar2", 0, 0); // fallback to default
 	if(ostrcmp(infobar2_sel, NULL) != 0) {
-		infobar2_sel = ostrcat(infobar2_sel, "infobar", 0, 0); // fallback to default
+		infobar2_sel = ostrcat(infobar2_sel, "infobar2", 0, 0); // fallback to default
 		debug(10, "fallback, set infobar2=%s", infobar2_sel);
 	}
 
