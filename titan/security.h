@@ -1605,7 +1605,7 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 		if(idextra != NULL)
 			hash = ostrcat(hash, idextra, 1, 0);
 		else
-			hash = ostrcat(hash, "nono", 1, 0);
+			hash = ostrcat(hash, "NULL", 1, 0);
 		free(idextra), idextra = NULL;
 		hash = ostrcat(hash, ", mac => ", 1, 0);
 		hash = ostrcat(hash, mac, 1, 0);
@@ -1614,7 +1614,7 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 		if(ip != NULL)
 			hash = ostrcat(hash, ip, 1, 0);
 		else
-			hash = ostrcat(hash, "none", 1, 0);
+			hash = ostrcat(hash, "NULL", 1, 0);
 		free(ip), ip = NULL;
 		hash = ostrcat(hash, ", security => ", 1, 0);
 		hash = ostrcat(hash, oitoa(status.security), 1, 1);
@@ -1630,7 +1630,7 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 		else if(file_exist("/etc/.homecastpro-cable"))
 			hash = ostrcat(hash, "homecastpro-cable", 1, 0);
 		else
-			hash = ostrcat(hash, "none", 1, 0);
+			hash = ostrcat(hash, "NULL", 1, 0);
 		hash = ostrcat(hash, ", guestlogin => ", 1, 0);
 		hash = ostrcat(hash, oitoa(ret), 1, 1);
 		hash = ostrcat(hash, ", timestamp => ", 1, 0);
@@ -1653,7 +1653,7 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 		hash = ostrcat(hash, "&len=", 1, 0);
 		hash = ostrcat(hash, oitoa(buflen), 1, 1);
 		
-#ifdef BETA
+#ifdef OBI
 		debug(299, "hash: %s", hash);
 #endif
 		hashlen = oitoa(strlen(hash));
@@ -1675,11 +1675,11 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 		send = ostrcat(send, "\r\nContent-Type: application/x-www-form-urlencoded", 1, 0);
 		send = ostrcat(send, "\r\n\r\n", 1, 0);
 		send = ostrcat(send, hash, 1, 0);
-#ifdef BETA
+#ifdef OBI
 		debug(299, "send: %s", send);
 #endif
 		tmpstr = gethttpreal("atemio.dyndns.tv", "/control/", 80, NULL, HTTPAUTH, NULL, 0, send, NULL, 5000, 1);
-#ifdef BETA
+#ifdef OBI
 		debug(299, "tmpstr: %s", tmpstr);
 #endif
 	}
