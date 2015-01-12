@@ -697,7 +697,8 @@ int playerstart(char* file)
 #endif
 
 #ifdef EPLAYER4
-		int flags = 0x47; //(GST_PLAY_FLAG_VIDEO | GST_PLAY_FLAG_AUDIO | GST_PLAY_FLAG_NATIVE_VIDEO | GST_PLAY_FLAG_TEXT);
+		//int flags = 0x47; //(GST_PLAY_FLAG_VIDEO | GST_PLAY_FLAG_AUDIO | GST_PLAY_FLAG_NATIVE_VIDEO | GST_PLAY_FLAG_TEXT);
+		guint flags;
 		
 		if(pipeline != NULL)
 		{
@@ -725,6 +726,9 @@ int playerstart(char* file)
 			status.playercan = 0x7EFF;
 	
 		pipeline = gst_element_factory_make("playbin2", "playbin");
+		
+		g_object_get(G_OBJECT (pipeline), "flags", &flags, NULL);
+		flags |= GST_PLAY_FLAG_NATIVE_VIDEO;
 
 // enable buffersize start
 		int size = getconfigint("playerbuffersize", NULL);
@@ -757,8 +761,8 @@ int playerstart(char* file)
 		g_object_set(G_OBJECT(pipeline), "buffer-size", size, NULL);
 // enable buffersizeend
 
-		g_object_set(G_OBJECT(pipeline), "uri", tmpfile, NULL);
 		g_object_set(G_OBJECT(pipeline), "flags", flags, NULL);
+		g_object_set(G_OBJECT(pipeline), "uri", tmpfile, NULL);
 		free(tmpfile); tmpfile = NULL;
 
 ///////////////////
@@ -2072,7 +2076,10 @@ void playerchangesubtitletrack(int num)
 
 #ifdef EPLAYER4
 	if(pipeline != NULL)
-		g_object_set(G_OBJECT(pipeline), "current-text", num, NULL);	
+		{
+			printf("player: set current text to: %i\n", num);
+			g_object_set(G_OBJECT(pipeline), "current-text", num, NULL);	
+		}
 #endif
 }
 
@@ -2095,7 +2102,10 @@ void playerstopsubtitletrack()
 
 #ifdef EPLAYER4
 	if(pipeline != NULL)
+	{
+		printf("player: stop subtitle\n");
 		g_object_set(G_OBJECT(pipeline), "current-text", -1, NULL);
+	}
 #endif
 }
 
