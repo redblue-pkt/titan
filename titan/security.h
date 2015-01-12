@@ -1539,7 +1539,7 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 					{
 						status.security = 0;
 						blacklist = 1;
-						printf("error: 9\n");		
+						printf("error: 10\n");		
 						destroy();
 						break;
 					}
