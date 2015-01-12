@@ -1225,7 +1225,7 @@ void guestthread()
 	int count = 0, ret = 0;
 	char* pass = NULL, *user = NULL;
 
-	sleep(10);
+	sleep(60);
 
 	checkgthread();
 
