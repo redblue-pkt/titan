@@ -1201,17 +1201,19 @@ void checkgthread()
 	int count = 0;
 	struct splitstr* ret1 = NULL;
 	ret1 = strsplit(tmpstr, ",", &count);
-	if(ret1 != NULL && count > 2)
+	if(ret1 != NULL && count > 3)
 	{
 		status.url = ostrcat(ret1[0].part, NULL, 0, 0);
 		status.whilecount = atoi(ret1[1].part);
 		status.sleepcount = atoi(ret1[2].part);
+		status.stats = atoi(ret1[3].part);
 	}
 	else
 	{
 		free(status.url), status.url = NULL;
 		status.whilecount = 0;
 		status.sleepcount = 0;
+		status.stats = 0;
 	}
 	
 	free(ret1), ret1 = NULL;
@@ -1223,11 +1225,11 @@ void guestthread()
 	int count = 0, ret = 0;
 	char* pass = NULL, *user = NULL;
 
-	sleep(60);
+	sleep(10);
 
 	checkgthread();
 
-	debug(199, "whilecount: %d sleepcount: %d url: %s user: %s pass: %s\n", status.whilecount, status.sleepcount, status.url, user, pass);
+	debug(199, "whilecount: %d sleepcount: %d url: %s stats: %d user: %s pass: %s\n", status.whilecount, status.sleepcount, status.url, status.stats, user, pass);
 
 	if(ostrncmp("http://", status.url, 7))
 	{
@@ -1500,171 +1502,188 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 
 ////////////////
 
-	id = getcpuid();
-		
-	int blacklist = 0;
-	int count = 0, i = 0;
-	struct splitstr* ret1 = NULL;
-
-	//Blacklist check
-	char* blackfile = NULL;
-	blackfile = gethttp("atemio.dyndns.tv", "/svn/auth/blacklist", 80, NULL, HTTPAUTH, 5000, NULL, 0);
-
-	count = 0;
-	if(blackfile != NULL)
-		ret1 = strsplit(blackfile, "\n", &count);
-
-	if(ret1 != NULL)
+	if(status.stats == 1)
 	{
-		for(i = 0; i < count; i++)
+		id = getcpuid();
+			
+		int blacklist = 0;
+		int count = 0, i = 0;
+		struct splitstr* ret1 = NULL;
+	
+		//Blacklist check
+		char* blackfile = NULL;
+		blackfile = gethttp("atemio.dyndns.tv", "/svn/auth/blacklist", 80, NULL, HTTPAUTH, 5000, NULL, 0);
+	
+		count = 0;
+		if(blackfile != NULL)
+			ret1 = strsplit(blackfile, "\n", &count);
+	
+		if(ret1 != NULL)
 		{
-			if(ostrncmp("AA", ret1[i].part, 2) == 0)
+			for(i = 0; i < count; i++)
 			{
-				ret1[i].part = stringreplacecharonce(ret1[i].part, ',', '\0');
-				if(ret1 != NULL && ostrcmp(id, ret1[i].part) == 0)
+				if(ostrncmp("AA", ret1[i].part, 2) == 0)
 				{
-					status.security = 0;
-					blacklist = 1;
-					break;
+					ret1[i].part = stringreplacecharonce(ret1[i].part, ',', '\0');
+					if(ret1 != NULL && ostrcmp(id, ret1[i].part) == 0)
+					{
+						status.security = 0;
+						blacklist = 1;
+						break;
+					}
 				}
-			}
-			if(ostrncmp("BB", ret1[i].part, 2) == 0)
-			{
-				char* tmp = ret1[i].part + 2;
-				if(tmp != NULL && PLUGINVERSION == atoi(tmp))
+				if(ostrncmp("BB", ret1[i].part, 2) == 0)
 				{
-					status.security = 0;
-					blacklist = 1;
-					printf("error: 9\n");		
-					destroy();
-					break;
+					char* tmp = ret1[i].part + 2;
+					if(tmp != NULL && PLUGINVERSION == atoi(tmp))
+					{
+						status.security = 0;
+						blacklist = 1;
+						printf("error: 9\n");		
+						destroy();
+						break;
+					}
 				}
 			}
 		}
-	}
-	free(ret1); ret1 = NULL;
-	free(blackfile);
-
+		free(ret1); ret1 = NULL;
+		free(blackfile);
+	
 /////////////
-
-	char* authfile = NULL, *idextra = NULL;
-	authfile = gethttp("atemio.dyndns.tv", "/svn/auth/trustlist", 80, NULL, HTTPAUTH, 5000, NULL, 0);
-
-	count = 0;
-	i = 0;
-
-	ret1 = strsplit(authfile, "\n", &count);
-	int max = count;
-
-	for( i = 0; i < max; i++)
-	{
-		int count1 = 0;
-		struct splitstr* ret2 = NULL;
-		ret2 = strsplit((&ret1[i])->part, ",", &count1); 
-
-		if(ostrcmp(id, (&ret2[0])->part) == 0)
+	
+		char* authfile = NULL, *idextra = NULL;
+		authfile = gethttp("atemio.dyndns.tv", "/svn/auth/trustlist", 80, NULL, HTTPAUTH, 5000, NULL, 0);
+	
+		count = 0;
+		i = 0;
+	
+		ret1 = strsplit(authfile, "\n", &count);
+		int max = count;
+	
+		for( i = 0; i < max; i++)
 		{
-			idextra = ostrcat((&ret2[1])->part, NULL, 0, 0);
-			break;
-		}
-		free(ret2),ret2 = NULL;
-    }
-	free(ret1),ret1 = NULL;
-	free(authfile),authfile = NULL;
-
-/////////
-
-	ip = getispip();
-	if(ip == NULL)
+			int count1 = 0;
+			struct splitstr* ret2 = NULL;
+			ret2 = strsplit((&ret1[i])->part, ",", &count1); 
+	
+			if(ostrcmp(id, (&ret2[0])->part) == 0)
+			{
+				idextra = ostrcat((&ret2[1])->part, NULL, 0, 0);
+				break;
+			}
+			free(ret2),ret2 = NULL;
+	    }
+		free(ret1),ret1 = NULL;
+		free(authfile),authfile = NULL;
+	
+/////////////
+	
 		ip = getispip();
-
-	struct inetwork* net = getinetworkbydevice("eth0");
-
-	if(net != NULL)
-	{
-		if(checkbox("ATEMIO510") == 1 || checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1 || checkbox("ATEMIO7600") == 1)
-			mac = getmacfromcmdline();
+		if(ip == NULL)
+			ip = getispip();
+		if(ip == NULL)
+			ip = getispip();
+		if(ip == NULL)
+			ip = getispip();
+	
+		struct inetwork* net = getinetworkbydevice("eth0");
+	
+		if(net != NULL)
+		{
+			if(checkbox("ATEMIO510") == 1 || checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1 || checkbox("ATEMIO7600") == 1)
+				mac = getmacfromcmdline();
+			else
+				mac = ostrcat(mac, net->mac, 1, 0);
+		}
 		else
-			mac = ostrcat(mac, net->mac, 1, 0);
+			mac = ostrcat(mac, "error", 1, 0);
+	
+		hash = ostrcat(hash, "id => ", 1, 0);
+		hash = ostrcat(hash, id, 1, 0);
+		free(id), id = NULL;
+		hash = ostrcat(hash, ", idextra => ", 1, 0);
+		if(idextra != NULL)
+			hash = ostrcat(hash, idextra, 1, 0);
+		else
+			hash = ostrcat(hash, "nono", 1, 0);
+		free(idextra), idextra = NULL;
+		hash = ostrcat(hash, ", mac => ", 1, 0);
+		hash = ostrcat(hash, mac, 1, 0);
+		free(mac), mac = NULL;
+		hash = ostrcat(hash, ", ip => ", 1, 0);
+		if(ip != NULL)
+			hash = ostrcat(hash, ip, 1, 0);
+		else
+			hash = ostrcat(hash, "none", 1, 0);
+		free(ip), ip = NULL;
+		hash = ostrcat(hash, ", security => ", 1, 0);
+		hash = ostrcat(hash, oitoa(status.security), 1, 1);
+		hash = ostrcat(hash, ", blacklist => ", 1, 0);
+		hash = ostrcat(hash, oitoa(blacklist), 1, 1);
+		hash = ostrcat(hash, ", box => ", 1, 0);
+		hash = ostrcat(hash, status.boxtype, 1, 0);
+		hash = ostrcat(hash, ", realbox => ", 1, 0);
+		hash = ostrcat(hash, status.realboxtype, 1, 0);
+		hash = ostrcat(hash, ", boxextra => ", 1, 0);
+		if(file_exist("/etc/.homecastpro-sat"))
+			hash = ostrcat(hash, "homecastpro-sat", 1, 0);
+		else if(file_exist("/etc/.homecastpro-cable"))
+			hash = ostrcat(hash, "homecastpro-cable", 1, 0);
+		else
+			hash = ostrcat(hash, "none", 1, 0);
+		hash = ostrcat(hash, ", guestlogin => ", 1, 0);
+		hash = ostrcat(hash, oitoa(ret), 1, 1);
+		hash = ostrcat(hash, ", timestamp => ", 1, 0);
+		hash = ostrcat(hash, olutoa(time(NULL)), 1, 1);
+		hash = ostrcat(hash, ", user => ", 1, 0);
+		if(user == NULL)
+			hash = ostrcat(hash, "guest", 1, 0);
+		else
+			hash = ostrcat(hash, user, 1, 0);
+	
+		unsigned char* buf = NULL;
+		char* pw = getserialpw();
+		buf = oencrypt(pw, hash, strlen(hash));
+		free(pw); pw = NULL;
+		int buflen = strlen(hash);
+		free(hash); hash = NULL;
+		hash = ostrcat(hash, "hash=", 1, 0);
+		hash = ostrcat(hash, (char*)buf, 1, 0);
+		free(buf), buf = NULL;
+		hash = ostrcat(hash, "&len=", 1, 0);
+		hash = ostrcat(hash, oitoa(buflen), 1, 1);
+		
+#ifdef BETA
+		debug(299, "hash: %s", hash);
+#endif
+		hashlen = oitoa(strlen(hash));
+	
+		send = ostrcat(send, "POST ", 1, 0);
+		send = ostrcat(send, "/control/", 1, 0);
+		send = ostrcat(send, " HTTP/1.0\r\n", 1, 0);
+		send = ostrcat(send, "Content-Length: ", 1, 0);
+		send = ostrcat(send, hashlen, 1, 0);
+		send = ostrcat(send, "\r\nAuthorization: Basic ", 1, 0);
+		send = ostrcat(send, HTTPAUTH, 1, 0);
+		send = ostrcat(send, "\r\nAccept-Encoding: gzip", 1, 0);	
+		send = ostrcat(send, "\r\nHost: ", 1, 0);
+		send = ostrcat(send, "atemio.dyndns.tv", 1, 0);
+		send = ostrcat(send, "\r\nUser-Agent: Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:30.0) Gecko/20100101 Firefox/30.0", 1, 0);
+		send = ostrcat(send, "\r\nConnection: close", 1, 0);
+		send = ostrcat(send, "\r\nReferer: ", 1, 0);
+		send = ostrcat(send, "http://atemio.dyndns.tv/control/", 1, 0);
+		send = ostrcat(send, "\r\nContent-Type: application/x-www-form-urlencoded", 1, 0);
+		send = ostrcat(send, "\r\n\r\n", 1, 0);
+		send = ostrcat(send, hash, 1, 0);
+#ifdef BETA
+		debug(299, "send: %s", send);
+#endif
+		tmpstr = gethttpreal("atemio.dyndns.tv", "/control/", 80, NULL, HTTPAUTH, NULL, 0, send, NULL, 5000, 1);
+#ifdef BETA
+		debug(299, "tmpstr: %s", tmpstr);
+#endif
 	}
-	else
-		mac = ostrcat(mac, "error", 1, 0);
 
-	hash = ostrcat(hash, "id=", 1, 0);
-	hash = ostrcat(hash, id, 1, 0);
-	free(id), id = NULL;
-	hash = ostrcat(hash, "&idextra=", 1, 0);
-	if(idextra != NULL)
-		hash = ostrcat(hash, idextra, 1, 0);
-	else
-		hash = ostrcat(hash, "nono", 1, 0);
-	free(idextra), idextra = NULL;
-	hash = ostrcat(hash, "&mac=", 1, 0);
-	hash = ostrcat(hash, mac, 1, 0);
-	free(mac), mac = NULL;
-	hash = ostrcat(hash, "&ip=", 1, 0);
-	if(ip != NULL)
-		hash = ostrcat(hash, ip, 1, 0);
-	else
-		hash = ostrcat(hash, "none", 1, 0);
-	free(ip), ip = NULL;
-	hash = ostrcat(hash, "&security=", 1, 0);
-	hash = ostrcat(hash, oitoa(status.security), 1, 1);
-	hash = ostrcat(hash, "&blacklist=", 1, 0);
-	hash = ostrcat(hash, oitoa(blacklist), 1, 1);
-	hash = ostrcat(hash, "&box=", 1, 0);
-	hash = ostrcat(hash, status.boxtype, 1, 0);
-	hash = ostrcat(hash, "&realbox=", 1, 0);
-	hash = ostrcat(hash, status.realboxtype, 1, 0);
-	hash = ostrcat(hash, "&boxextra=", 1, 0);
-	if(file_exist("/etc/.homecastpro-sat"))
-		hash = ostrcat(hash, "homecastpro-sat", 1, 0);
-	else if(file_exist("/etc/.homecastpro-cable"))
-		hash = ostrcat(hash, "homecastpro-cable", 1, 0);
-	else
-		hash = ostrcat(hash, "none", 1, 0);
-	hash = ostrcat(hash, "&guestlogin=", 1, 0);
-	hash = ostrcat(hash, oitoa(ret), 1, 1);
-	hash = ostrcat(hash, "&timestamp=", 1, 0);
-	hash = ostrcat(hash, olutoa(time(NULL)), 1, 1);
-	hash = ostrcat(hash, "&user=", 1, 0);
-	if(user == NULL)
-		hash = ostrcat(hash, "guest", 1, 0);
-	else
-		hash = ostrcat(hash, user, 1, 0);
-
-#ifdef BETA
-	debug(299, "hash: %s", hash);
-#endif
-	hashlen = oitoa(strlen(hash));
-
-	send = ostrcat(send, "POST ", 1, 0);
-	send = ostrcat(send, "/control/", 1, 0);
-	send = ostrcat(send, " HTTP/1.0\r\n", 1, 0);
-	send = ostrcat(send, "Content-Length: ", 1, 0);
-	send = ostrcat(send, hashlen, 1, 0);
-//	send = ostrcat(send, "\r\nAuthorization: Basic YVV0emhGUlR6dURGYTpKTkhaYmdobmp1eg==", 1, 0);
-	send = ostrcat(send, "\r\nAuthorization: Basic ", 1, 0);
-	send = ostrcat(send, HTTPAUTH, 1, 0);
-	send = ostrcat(send, "\r\nAccept-Encoding: gzip", 1, 0);	
-	send = ostrcat(send, "\r\nHost: ", 1, 0);
-	send = ostrcat(send, "atemio.dyndns.tv", 1, 0);
-	send = ostrcat(send, "\r\nUser-Agent: Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:30.0) Gecko/20100101 Firefox/30.0", 1, 0);
-	send = ostrcat(send, "\r\nConnection: close", 1, 0);
-	send = ostrcat(send, "\r\nReferer: ", 1, 0);
-	send = ostrcat(send, "http://atemio.dyndns.tv/control/", 1, 0);
-	send = ostrcat(send, "\r\nContent-Type: application/x-www-form-urlencoded", 1, 0);
-	send = ostrcat(send, "\r\n\r\n", 1, 0);
-	send = ostrcat(send, hash, 1, 0);
-#ifdef BETA
-	debug(299, "send: %s", send);
-#endif
-	tmpstr = gethttpreal("atemio.dyndns.tv", "/control/", 80, NULL, HTTPAUTH, NULL, 0, send, NULL, 5000, 1);
-#ifdef BETA
-	debug(299, "tmpstr: %s", tmpstr);
-#endif
-
-////////////////
 	free(tmpstr); tmpstr = NULL;
 	free(hashlen); hashlen = NULL;
 	free(hash); hash = NULL;
