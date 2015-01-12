@@ -1327,14 +1327,14 @@ char* getwlanlinkqualitytext(struct skin* node)
 
 char* getredbutton(struct skin* node)
 {
-	char* tmpstr = ostrcat(getconfig("redkey", NULL), NULL, 1, 0);
+	char* tmpstr = ostrcat(getconfig("redkey", NULL), NULL, 0, 0);
 	if(tmpstr == NULL) tmpstr = ostrcat(tmpstr, "Extensions List", 1, 0);
 	return tmpstr;
 }
 
 char* getbluebutton(struct skin* node)
 {
-	char* tmpstr = ostrcat(getconfig("bluekey", NULL), NULL, 1, 0);
+	char* tmpstr = ostrcat(getconfig("bluekey", NULL), NULL, 0, 0);
 	if(tmpstr == NULL) tmpstr = ostrcat(tmpstr, "TV / Radio Switch", 1, 0);
 	return tmpstr;
 }
