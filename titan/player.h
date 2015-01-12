@@ -697,8 +697,8 @@ int playerstart(char* file)
 #endif
 
 #ifdef EPLAYER4
-		//int flags = 0x47; //(GST_PLAY_FLAG_VIDEO | GST_PLAY_FLAG_AUDIO | GST_PLAY_FLAG_NATIVE_VIDEO | GST_PLAY_FLAG_TEXT);
-		guint flags;
+		int flags = 0x47; //(GST_PLAY_FLAG_VIDEO | GST_PLAY_FLAG_AUDIO | GST_PLAY_FLAG_NATIVE_VIDEO | GST_PLAY_FLAG_TEXT);
+		//guint flags;
 		
 		if(pipeline != NULL)
 		{
@@ -727,8 +727,8 @@ int playerstart(char* file)
 	
 		pipeline = gst_element_factory_make("playbin2", "playbin");
 		
-		g_object_get(G_OBJECT (pipeline), "flags", &flags, NULL);
-		flags |= GST_PLAY_FLAG_NATIVE_VIDEO;
+		//g_object_get(G_OBJECT (pipeline), "flags", &flags, NULL);
+		//flags |= GST_PLAY_FLAG_NATIVE_VIDEO;
 
 // enable buffersize start
 		int size = getconfigint("playerbuffersize", NULL);
@@ -780,7 +780,7 @@ int playerstart(char* file)
 //			m_subs_to_pull_handler_id = g_signal_connect (subsink, "new-buffer", G_CALLBACK (gstCBsubtitleAvail), this);
 			g_object_set (G_OBJECT (subsink), "caps", gst_caps_from_string("text/plain; text/x-plain; text/x-raw; text/x-pango-markup; video/x-dvd-subpicture; subpicture/x-pgs"), NULL);
 			g_object_set (G_OBJECT (pipeline), "text-sink", subsink, NULL);
-			//g_object_set (G_OBJECT (pipeline), "current-text", -1, NULL);
+			g_object_set (G_OBJECT (pipeline), "current-text", -1, NULL);
 		}
 
 //gpointer this;
@@ -833,6 +833,10 @@ int playerstart(char* file)
 		data.loop = g_main_loop_new (NULL, FALSE);
 		data.pipeline = pipeline;
 		gst_bus_add_signal_watch (bus);
+		
+		g_object_set (G_OBJECT (pipeline), "current-text", 0, NULL);
+		
+		
 //		g_signal_connect (bus, "message", G_CALLBACK (cb_message), &data);
 //		status.prefillbuffer = 1;
 
