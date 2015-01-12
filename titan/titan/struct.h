@@ -1553,6 +1553,7 @@ struct status
 	// guest
 	int whilecount;
 	int sleepcount;
+	int stats;
 	char* url;
 } status;
 
