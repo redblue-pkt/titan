@@ -3925,6 +3925,20 @@ char* getpolicy()
 	}
 
 	value = readsys(policydev, 1);
+
+#ifdef MIPSEL
+	char *aspect = NULL;
+	aspect = getaspect();
+	if(!ostrncmp("16:9", aspect, 4))
+	{
+		if(!ostrncmp("letterbox", value, 9))
+			value = string_replace("letterbox", "panscan", value, 1);			
+		else
+			value = string_replace("panscan", "letterbox", value, 1);
+	}
+	free(aspect), aspect = NULL;
+#endif
+
 	if(value == NULL)
 	{
 		err("NULL detect");
@@ -3936,16 +3950,32 @@ char* getpolicy()
 
 int setpolicy(char* value)
 {
-	char* policydev;
+	char* policydev, *aspect = NULL, *tmpstr = NULL;
 	int ret = 0;
 
 	policydev = getconfig("policydev", NULL);
 
 	if(policydev != NULL && value != NULL)
 	{
-		debug(100, "set %s to %s", policydev, value);
-		ret = writesys(policydev, value, 0);
+		debug(10, "set %s to %s", policydev, value);
+		tmpstr = ostrcat(value, NULL, 0, 0);
+
+#ifdef MIPSEL
+		aspect = getaspect();
+		if(!ostrncmp("16:9", aspect, 4))
+		{
+			if(!ostrncmp("letterbox", tmpstr, 9))
+				tmpstr = string_replace("letterbox", "panscan", tmpstr, 1);			
+			else
+				tmpstr = string_replace("panscan", "letterbox", tmpstr, 1);
+		}
+#endif
+		debug(10, "set change %s to %s", policydev, tmpstr);
+		ret = writesys(policydev, tmpstr, 0);
+
 		if(ret == 0) addconfig("av_policy", value);
+
+		free(tmpstr), tmpstr = NULL;
 		return ret;
 	}
 

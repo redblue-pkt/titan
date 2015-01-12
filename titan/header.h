@@ -879,6 +879,7 @@ int phpkit_userauth(char* link, char* user, char* pass);
 int converte2settings(int flag);
 char* getmoviedev();
 void wakeup_record_device();
+char* getaspect();
 
 //rcconfig.h
 int getrcconfigint(char *key, char* ext);
