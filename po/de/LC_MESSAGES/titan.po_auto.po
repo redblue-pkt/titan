@@ -749,7 +749,7 @@ msgstr ""
 
 #: bgdownload.h:93 bgdownload.h:154 global.h:6760 httpdfunc.h:2793
 #: httpdfunc.h:2805 httpdfunc.h:5426 httpdfunc.h:5472 hwtest.h:478
-#: moduleconfig.h:345 skin_default_skin.xml.h:742 skinselector.h:138
+#: moduleconfig.h:345 skin_default_skin.xml.h:741 skinselector.h:138
 #: stream.h:22 transponder.h:122 transponder.h:158 transponder.h:194
 #: transponder.h:227 transponder.h:259 transponder.h:295 transponder.h:330
 #: transponder.h:348 transponder.h:364 transponder.h:418 transponder.h:451
@@ -1749,7 +1749,7 @@ msgstr "Montag"
 msgid "Tuesday"
 msgstr "Dienstag"
 
-#: global.h:5859 rectimer.h:1082 skin_default_skin.xml.h:776
+#: global.h:5859 rectimer.h:1082 skin_default_skin.xml.h:775
 msgid "Wednesday"
 msgstr "Mittwoch"
 
@@ -2155,7 +2155,7 @@ msgstr ""
 msgid "Channel not available"
 msgstr "Sender nicht verfügbar"
 
-#: httpdfunc.h:3564 skin_default_skin.xml.h:768
+#: httpdfunc.h:3564 skin_default_skin.xml.h:767
 msgid "Volumebar Timeout"
 msgstr "Zeit bis Lautstärkeanzeige ausgeblendet wird (sek)"
 
@@ -2207,7 +2207,7 @@ msgstr "Aktion bei Power Taste der Fernbedienung"
 msgid "Frontpanel Power Aktion"
 msgstr "Aktion bei Power Taste an Gerätefront"
 
-#: httpdfunc.h:3949 skin_default_skin.xml.h:765
+#: httpdfunc.h:3949 skin_default_skin.xml.h:764
 msgid "Virtualzap Timeout"
 msgstr "Virtuelles Umschalten"
 
@@ -2296,7 +2296,7 @@ msgstr "Expertenmodus"
 msgid "Show infobar on program change"
 msgstr "Infoleiste bei Sendungswechsel anzeigen"
 
-#: httpdfunc.h:4574 skin_default_skin.xml.h:750
+#: httpdfunc.h:4574 skin_default_skin.xml.h:749
 msgid "Use cross control for fast zapping and vol"
 msgstr "Benutze das Steuerkreuz für schnelles Umschalten und laut/leise"
 
@@ -2414,7 +2414,7 @@ msgstr "Top (Prozesse)"
 msgid "Prozesslist"
 msgstr "Prozessliste"
 
-#: httpdfunc.h:5181 skin_default_skin.xml.h:746 webif_info_sysinfos.h:10
+#: httpdfunc.h:5181 skin_default_skin.xml.h:745 webif_info_sysinfos.h:10
 msgid "USB"
 msgstr ""
 
@@ -3019,7 +3019,7 @@ msgstr "Datei nicht gefunden"
 #: plugins_weather_skin.xml.h:4 plugins_wins3_skin.xml.h:4
 #: plugins_wm2014_skin.xml.h:1 plugins_wm2014_skin.xml.h:21
 #: plugins_xupnpd_skin.xml.h:5 plugins_zapback_skin.xml.h:7
-#: skin_default_skin.xml.h:788 skins_autotimer_skin.xml.h:13
+#: skin_default_skin.xml.h:787 skins_autotimer_skin.xml.h:13
 #: skins_callmonitor1_skin.xml.h:19 skins_catcatch_skin.xml.h:7
 #: skins_dlna_skin.xml.h:15 skins_facebook_skin.xml.h:6
 #: skins_filemanager_skin.xml.h:6 skins_gmediarender_skin.xml.h:1
@@ -4056,7 +4056,7 @@ msgstr ""
 msgid "iD3Tag"
 msgstr ""
 
-#: play.h:639 skin_default_skin.xml.h:763
+#: play.h:639 skin_default_skin.xml.h:762
 msgid "Video Settings"
 msgstr "Video Einstellungen"
 
@@ -4951,7 +4951,7 @@ msgstr "Speicherort auf entferntem Rechner"
 msgid "sharename"
 msgstr "Freigabename"
 
-#: plugins_networkbrowser_skin.xml.h:29 skin_default_skin.xml.h:731
+#: plugins_networkbrowser_skin.xml.h:29 skin_default_skin.xml.h:730
 #: skins_networkbrowser_skin.xml.h:29
 msgid "type"
 msgstr "Typ"
@@ -4964,7 +4964,7 @@ msgstr "Benutze DNS Adresse"
 msgid "useproxy"
 msgstr "Benutze Proxy"
 
-#: plugins_networkbrowser_skin.xml.h:32 skin_default_skin.xml.h:754
+#: plugins_networkbrowser_skin.xml.h:32 skin_default_skin.xml.h:753
 #: skins_networkbrowser_skin.xml.h:32
 msgid "User"
 msgstr "Benutzer"
@@ -5085,7 +5085,7 @@ msgstr "Geschwindigkeit"
 msgid "Test"
 msgstr ""
 
-#: plugins_panel_skin.xml.h:25 skin_default_skin.xml.h:747
+#: plugins_panel_skin.xml.h:25 skin_default_skin.xml.h:746
 #: skins_panel_skin.xml.h:25
 msgid "Usb Device"
 msgstr "USB Geräte"
@@ -5333,7 +5333,7 @@ msgstr "Favoriten bearbeiten"
 msgid "Title"
 msgstr "Titel"
 
-#: plugins_tithek_skin.xml.h:21 skin_default_skin.xml.h:732
+#: plugins_tithek_skin.xml.h:21 skin_default_skin.xml.h:731
 #: skins_tithek_skin.xml.h:21
 msgid "Type"
 msgstr "Typ"
@@ -8802,206 +8802,202 @@ msgid "Tuner Reception"
 msgstr "Empfang"
 
 #: skin_default_skin.xml.h:726
-msgid "TV/Radio"
-msgstr ""
-
-#: skin_default_skin.xml.h:727
 msgid "TV Resolution (h):"
 msgstr "Auflösung Sender (H):"
 
-#: skin_default_skin.xml.h:728
+#: skin_default_skin.xml.h:727
 msgid "TV Resolution (w):"
 msgstr "Auflösung Sender (B):"
 
-#: skin_default_skin.xml.h:729
+#: skin_default_skin.xml.h:728
 msgid "Two step mute"
 msgstr "Zwei Stufen Stummschaltung"
 
-#: skin_default_skin.xml.h:730
+#: skin_default_skin.xml.h:729
 msgid "TXT PID:"
 msgstr "Txt Pid:"
 
-#: skin_default_skin.xml.h:733
+#: skin_default_skin.xml.h:732
 msgid "Type:"
 msgstr "Typ:"
 
-#: skin_default_skin.xml.h:734
+#: skin_default_skin.xml.h:733
 msgid "Type of Scan"
 msgstr "Art des Suchlaufs"
 
-#: skin_default_skin.xml.h:735
+#: skin_default_skin.xml.h:734
 msgid "u"
 msgstr ""
 
-#: skin_default_skin.xml.h:736
+#: skin_default_skin.xml.h:735
 msgid "U"
 msgstr ""
 
-#: skin_default_skin.xml.h:737
+#: skin_default_skin.xml.h:736
 msgid "ue"
 msgstr "ü"
 
-#: skin_default_skin.xml.h:738
+#: skin_default_skin.xml.h:737
 msgid "UE"
 msgstr "Ü"
 
-#: skin_default_skin.xml.h:739
+#: skin_default_skin.xml.h:738
 msgid "UNC:"
 msgstr ""
 
-#: skin_default_skin.xml.h:740
+#: skin_default_skin.xml.h:739
 msgid "Uncommitted Diseqc command"
 msgstr "Ungebundener DiSEqC Befehl"
 
-#: skin_default_skin.xml.h:741
+#: skin_default_skin.xml.h:740
 msgid "Unicable Configuration"
 msgstr "Unicable Einstellungen"
 
-#: skin_default_skin.xml.h:743
+#: skin_default_skin.xml.h:742
 msgid "UNLOAD"
 msgstr "Deaktivieren"
 
-#: skin_default_skin.xml.h:744
+#: skin_default_skin.xml.h:743
 msgid "update"
 msgstr "Aktualisieren"
 
-#: skin_default_skin.xml.h:745
+#: skin_default_skin.xml.h:744
 msgid "Update entrys on scan"
 msgstr "Aktualisiere vorhandene Einträge"
 
-#: skin_default_skin.xml.h:748
+#: skin_default_skin.xml.h:747
 msgid "Usbupdate (online)"
 msgstr "USB-Image (Online)"
 
-#: skin_default_skin.xml.h:749
+#: skin_default_skin.xml.h:748
 msgid "Usbupdate (tmp)"
 msgstr "USB-Image (Lokal)"
 
-#: skin_default_skin.xml.h:751
+#: skin_default_skin.xml.h:750
 msgid "Use EPG Endtime"
 msgstr "Zum Sendungsende"
 
-#: skin_default_skin.xml.h:752
+#: skin_default_skin.xml.h:751
 msgid "Use fixed physical address"
 msgstr "Benutze feste physikalische Adresse"
 
-#: skin_default_skin.xml.h:753
+#: skin_default_skin.xml.h:752
 msgid "Use numeric keys"
 msgstr "Nummerntasten zur Eingabe nutzen"
 
-#: skin_default_skin.xml.h:755
+#: skin_default_skin.xml.h:754
 msgid "v"
 msgstr ""
 
-#: skin_default_skin.xml.h:756
+#: skin_default_skin.xml.h:755
 msgid "V"
 msgstr ""
 
-#: skin_default_skin.xml.h:757
+#: skin_default_skin.xml.h:756
 msgid "VFDisplay"
 msgstr ""
 
-#: skin_default_skin.xml.h:758 tmc.h:399
+#: skin_default_skin.xml.h:757 tmc.h:399
 msgid "Video"
 msgstr "Bild"
 
-#: skin_default_skin.xml.h:759
+#: skin_default_skin.xml.h:758
 msgid "VideoMode Aspect Settings"
 msgstr "Bild Seitenverhältnis Einstellungen"
 
-#: skin_default_skin.xml.h:760
+#: skin_default_skin.xml.h:759
 msgid "VideoMode Resolution Settings"
 msgstr "Auflösung"
 
-#: skin_default_skin.xml.h:761
+#: skin_default_skin.xml.h:760
 msgid "VideoMode Settings"
 msgstr "Bildeinstellungen"
 
-#: skin_default_skin.xml.h:762
+#: skin_default_skin.xml.h:761
 msgid "Video PID:"
 msgstr ""
 
-#: skin_default_skin.xml.h:764
+#: skin_default_skin.xml.h:763
 msgid "Vietnamese"
 msgstr "Viet"
 
-#: skin_default_skin.xml.h:766
+#: skin_default_skin.xml.h:765
 msgid "Vol off"
 msgstr "Stumm"
 
-#: skin_default_skin.xml.h:767
+#: skin_default_skin.xml.h:766
 msgid "Voltage Mode"
 msgstr "Spannungsmodus"
 
-#: skin_default_skin.xml.h:769
+#: skin_default_skin.xml.h:768
 msgid "Votes"
 msgstr "Punkte"
 
-#: skin_default_skin.xml.h:770
+#: skin_default_skin.xml.h:769
 msgid "w"
 msgstr ""
 
-#: skin_default_skin.xml.h:771
+#: skin_default_skin.xml.h:770
 msgid "W"
 msgstr ""
 
-#: skin_default_skin.xml.h:772
+#: skin_default_skin.xml.h:771
 msgid "Wait for cam ready"
 msgstr "Wartezeit für CI-Module"
 
-#: skin_default_skin.xml.h:773
+#: skin_default_skin.xml.h:772
 msgid "Wakeup all connected devices"
 msgstr "Alle angeschlossenen Geräte aufwecken"
 
-#: skin_default_skin.xml.h:774
+#: skin_default_skin.xml.h:773
 msgid "Wakeup A/V Receiver"
 msgstr "A/V Receiver aufwecken"
 
-#: skin_default_skin.xml.h:775
+#: skin_default_skin.xml.h:774
 msgid "Wakeup TV"
 msgstr "TV aufwecken"
 
-#: skin_default_skin.xml.h:777
+#: skin_default_skin.xml.h:776
 msgid "WLAN Settings"
 msgstr "WLAN"
 
-#: skin_default_skin.xml.h:778
+#: skin_default_skin.xml.h:777
 msgid "WOL"
 msgstr ""
 
-#: skin_default_skin.xml.h:779
+#: skin_default_skin.xml.h:778
 msgid "Writer"
 msgstr "Autor"
 
-#: skin_default_skin.xml.h:780
+#: skin_default_skin.xml.h:779
 msgid "WSS Mode"
 msgstr ""
 
-#: skin_default_skin.xml.h:781
+#: skin_default_skin.xml.h:780
 msgid "x"
 msgstr ""
 
-#: skin_default_skin.xml.h:782
+#: skin_default_skin.xml.h:781
 msgid "X"
 msgstr ""
 
-#: skin_default_skin.xml.h:783
+#: skin_default_skin.xml.h:782
 msgid "y"
 msgstr ""
 
-#: skin_default_skin.xml.h:784
+#: skin_default_skin.xml.h:783
 msgid "Y"
 msgstr ""
 
-#: skin_default_skin.xml.h:785
+#: skin_default_skin.xml.h:784
 msgid "Year"
 msgstr "Jahr"
 
-#: skin_default_skin.xml.h:786
+#: skin_default_skin.xml.h:785
 msgid "z"
 msgstr ""
 
-#: skin_default_skin.xml.h:787
+#: skin_default_skin.xml.h:786
 msgid "Z"
 msgstr ""
 
