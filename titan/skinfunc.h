@@ -1329,7 +1329,7 @@ char* getredbutton(struct skin* node)
 {
 	char* tmpstr = NULL;
 
-	tmpstr = ostrcat(tmpstr, getconfig("redkey", NULL), 0, 0);
+	tmpstr = ostrcat(getconfig("redkey", NULL), NULL, 0, 0);
 	if(tmpstr == NULL) tmpstr = ostrcat(tmpstr, "Extensions List", 0, 0);
 
 	return tmpstr;
@@ -1339,7 +1339,7 @@ char* getbluebutton(struct skin* node)
 {
 	char* tmpstr = NULL;
 
-	tmpstr = ostrcat(tmpstr, getconfig("bluekey", NULL), 0, 0);
+	tmpstr = ostrcat(getconfig("bluekey", NULL), NULL, 0, 0);
 	if(tmpstr == NULL) tmpstr = ostrcat(tmpstr, "TV / Radio Switch", 0, 0);
 
 	return tmpstr;
