@@ -3969,6 +3969,7 @@ int setpolicy(char* value)
 			else
 				tmpstr = string_replace("panscan", "letterbox", tmpstr, 1);
 		}
+		free(aspect), aspect = NULL;
 #endif
 		debug(10, "set change %s to %s", policydev, tmpstr);
 		ret = writesys(policydev, tmpstr, 0);
