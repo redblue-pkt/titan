@@ -602,7 +602,7 @@ void playersubtitleAvail(GstElement *subsink, GstBuffer *buffer, gpointer user_d
 #else
 		size_t len = gst_buffer_get_size(buffer);
 #endif
-	printf("BUFFER_TIMESTAMP: %ull - BUFFER_DURATION: %ull in nano sekunden\n", buf_pos, duration_ns);
+	printf("BUFFER_TIMESTAMP: %lld - BUFFER_DURATION: %lld in ns\n", buf_pos, duration_ns);
 	printf("BUFFER_SIZE: %d\n", len);
 	printf("BUFFER_DATA: %s\n", GST_BUFFER_DATA(buffer));
 }
