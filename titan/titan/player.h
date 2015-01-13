@@ -815,6 +815,7 @@ int playerstart(char* file)
 		// Start playing //
 		GstStateChangeReturn ret;
 		ret = gst_element_set_state (pipeline, GST_STATE_PLAYING);
+		g_object_set (G_OBJECT (pipeline), "current-text", 0, NULL);
 		if(ret == GST_STATE_CHANGE_FAILURE)
 		{
 			g_printerr ("Unable to set the pipeline to the playing state.\n");
@@ -1926,6 +1927,9 @@ void playergetcurtrac(int type, int *CurTrackId, char** CurTrackEncoding, char**
 			case 1:
 				g_object_get(G_OBJECT(pipeline), "current-audio", CurTrackId, NULL);
 				break;
+			case 2:
+				g_object_get(G_OBJECT(pipeline), "current-text", CurTrackId, NULL);
+				break;
 		}
 		if(CurTrackId != NULL) {
 			debug(150, "Current Track ID: %d", *CurTrackId);
@@ -2071,6 +2075,7 @@ void playerchangesubtitletrack(int num)
 #endif
 
 #ifdef EPLAYER4
+	printf("player: set subtitle: %d\n", num);
 	if(pipeline != NULL)
 		g_object_set(G_OBJECT(pipeline), "current-text", num, NULL);	
 #endif
@@ -2094,6 +2099,7 @@ void playerstopsubtitletrack()
 #endif
 
 #ifdef EPLAYER4
+	printf("player: stop subtitle\n");
 	if(pipeline != NULL)
 		g_object_set(G_OBJECT(pipeline), "current-text", -1, NULL);
 #endif
