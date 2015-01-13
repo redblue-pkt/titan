@@ -32,6 +32,7 @@ GstElement *pipeline = NULL;
 unsigned long long m_gst_startpts = 0;
 CustomData data;
 GstElement *video_sink = NULL;
+GstBus bus;
 #endif
 
 //titan player
@@ -761,7 +762,6 @@ int playerstart(char* file)
 		g_object_set(G_OBJECT(pipeline), "buffer-size", size, NULL);
 // enable buffersizeend
 
-		g_object_set(G_OBJECT(pipeline), "flags", flags, NULL);
 		g_object_set(G_OBJECT(pipeline), "uri", tmpfile, NULL);
 		free(tmpfile); tmpfile = NULL;
 
@@ -772,7 +772,7 @@ int playerstart(char* file)
 		if (!ext)
 			ext = filename + strlen(filename);
 
-		GstElement *subsink = gst_element_factory_make("subsink", "subtitle_sink");
+/*		GstElement *subsink = gst_element_factory_make("subsink", "subtitle_sink");
 		if (!subsink)
 			printf("sorry, can't play: missing gst-plugin-subsink\n");
 		else
@@ -781,12 +781,12 @@ int playerstart(char* file)
 			g_object_set (G_OBJECT (subsink), "caps", gst_caps_from_string("text/plain; text/x-plain; text/x-raw; text/x-pango-markup; video/x-dvd-subpicture; subpicture/x-pgs"), NULL);
 			g_object_set (G_OBJECT (pipeline), "text-sink", subsink, NULL);
 			g_object_set (G_OBJECT (pipeline), "current-text", -1, NULL);
-		}
+		}    */
 
 //gpointer this;
 //memset (&this, 0, sizeof (this));
 
-		GstBus *bus = gst_pipeline_get_bus(GST_PIPELINE(pipeline));
+/*		GstBus *bus = gst_pipeline_get_bus(GST_PIPELINE(pipeline));
 #if GST_VERSION_MAJOR < 1
 //		gst_bus_set_sync_handler(bus, gstBusSyncHandler, this);
 		gst_bus_set_sync_handler(bus, GST_BUS_DROP, NULL);
@@ -794,8 +794,8 @@ int playerstart(char* file)
 //		gst_bus_set_sync_handler(bus, gstBusSyncHandler, this, NULL);
 		gst_bus_set_sync_handler(bus, GST_BUS_DROP, NULL, NULL);
 #endif
+		gst_object_unref(bus);*/
 
-		gst_object_unref(bus);
 		char srt_filename[ext - filename + 5];
 		strncpy(srt_filename,filename, ext - filename);
 		srt_filename[ext - filename] = '\0';
@@ -806,8 +806,12 @@ int playerstart(char* file)
 			printf("found srt1: %s\n",srt_filename);
 			printf("found srt2: %s\n",g_filename_to_uri(srt_filename, NULL, NULL));
 			g_object_set(G_OBJECT (pipeline), "suburi", g_filename_to_uri(srt_filename, NULL, NULL), NULL);		
+			g_object_set (G_OBJECT (pipeline), "subtitle-font-desc", "Sans, 18", NULL);
 		}
 // srt end	
+		g_object_set(G_OBJECT(pipeline), "flags", flags, NULL);
+		bus = gst_element_get_bus (data.playbin2);
+    gst_bus_add_watch (bus, (GstBusFunc)gstbuscall, &data);
 
 ///////////////////
 //		CustomData data;
@@ -1323,6 +1327,7 @@ int playerstop()
 	}
 	if(pipeline)
 	{
+		gst_object_unref (bus);
 		gst_element_set_state(pipeline, GST_STATE_NULL);
 		gst_object_unref(GST_OBJECT(pipeline));
 		pipeline = NULL;
