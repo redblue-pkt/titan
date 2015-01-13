@@ -32,7 +32,7 @@ GstElement *pipeline = NULL;
 unsigned long long m_gst_startpts = 0;
 CustomData data;
 GstElement *video_sink = NULL;
-GstBus bus;
+GstBus *bus;
 #endif
 
 //titan player
@@ -593,6 +593,303 @@ void playerafterendts()
 	playerstopts(2, 0);
 }
 
+#ifdef EPLAYER4
+int gstbuscall(GstBus *bus, GstMessage *msg, CustomData *data)
+{
+	int ret = 1;
+	if(!pipeline) return 0;
+	if(!msg) return ret;
+
+	gchar *sourceName = NULL;
+	GstObject *source = GST_MESSAGE_SRC(msg);
+
+	if(!GST_IS_OBJECT(source)) return ret;
+	sourceName = gst_object_get_name(source);
+
+	debug(150, "gst type: %s", GST_MESSAGE_TYPE_NAME(msg));
+
+	switch(GST_MESSAGE_TYPE(msg))
+	{
+		case GST_MESSAGE_EOS:
+			debug(150, "gst player eof");
+			ret = 0;
+			break;
+		case GST_MESSAGE_STATE_CHANGED:
+			debug(150, "gst message state changed");
+			if(GST_MESSAGE_SRC(msg) != GST_OBJECT(pipeline))
+				break; 
+
+			GstState old_state, new_state, pending_state;
+			gst_message_parse_state_changed(msg, &old_state, &new_state, &pending_state);
+			if(GST_MESSAGE_SRC(msg) == GST_OBJECT(pipeline))
+			{
+				if(new_state == GST_STATE_PLAYING)
+				{
+					/* Once we are in the playing state, analyze the streams */
+					analyze_streams(data);
+				}
+			}
+
+			if(old_state == new_state) break;
+	
+			debug(150, "gst state change %s -> %s", gst_element_state_get_name(old_state), gst_element_state_get_name(new_state));
+	
+			GstStateChange transition = (GstStateChange)GST_STATE_TRANSITION(old_state, new_state);
+	
+			switch(transition)
+			{
+				case GST_STATE_CHANGE_NULL_TO_READY:
+					break;
+				case GST_STATE_CHANGE_READY_TO_PAUSED:
+/*
+					GstElement *appsink = gst_bin_get_by_name(GST_BIN(pipeline), "subtitle_sink");
+ 					if(appsink)
+ 					{
+ 						g_object_set(G_OBJECT(appsink), "max-buffers", 2, NULL);
+ 						g_object_set(G_OBJECT(appsink), "sync", FALSE, NULL);
+ 						g_object_set(G_OBJECT(appsink), "emit-signals", TRUE, NULL);
+ 						gst_object_unref(appsink);
+ 					}
+*/
+					break;
+				case GST_STATE_CHANGE_PAUSED_TO_PLAYING:
+					//if(m_sourceinfo.is_streaming && m_streamingsrc_timeout )
+						//m_streamingsrc_timeout->stop();
+					break;
+				case GST_STATE_CHANGE_PLAYING_TO_PAUSED:
+					break;
+				case GST_STATE_CHANGE_PAUSED_TO_READY:
+					break;
+				case GST_STATE_CHANGE_READY_TO_NULL:
+					ret = 0;
+					break;
+			}
+			break;
+		case GST_MESSAGE_ERROR:
+			debug(150, "gst player error");
+
+			gchar *gdebug1;
+			GError *err;
+
+			gst_message_parse_error(msg, &err, &gdebug1);
+			g_free(gdebug1);
+
+			debug(150, "gst error: %s (%i) from %s", err->message, err->code, sourceName);
+			if(err->domain == GST_STREAM_ERROR)
+			{
+				if(err->code == GST_STREAM_ERROR_CODEC_NOT_FOUND )
+				{
+					//if(g_strrstr(sourceName, "videosink"))
+					//	m_event((iPlayableService*)this, evUser+11);
+					//else if ( g_strrstr(sourceName, "audiosink") )
+					//	m_event((iPlayableService*)this, evUser+10);
+				}
+			}
+			g_error_free(err);
+			break;
+		case GST_MESSAGE_INFO:
+			debug(150, "gst player info");
+
+/*
+			gchar *gdebug2;
+			GError *inf;
+	
+			gst_message_parse_info(msg, &inf, &gdebug2);
+			g_free(gdebug2);
+			if(inf->domain == GST_STREAM_ERROR && inf->code == GST_STREAM_ERROR_DECODE )
+			{
+				//if(g_strrstr(sourceName, "videosink"))
+				//	m_event((iPlayableService*)this, evUser+14);
+			}
+			g_error_free(inf);
+*/
+			break;
+		case GST_MESSAGE_TAG:
+			debug(150, "gst player tag");
+			break;
+		//case GST_MESSAGE_ASYNC_DONE:
+		//	debug(150, "gst player async done");
+		//	break;
+		case GST_MESSAGE_ELEMENT:
+			debug(150, "gst player element");
+			break;
+		case GST_MESSAGE_BUFFERING:
+			debug(150, "gst player buffering");
+
+/*
+			GstBufferingMode mode;
+			gst_message_parse_buffering(msg, &(m_bufferInfo.bufferPercent));
+			gst_message_parse_buffering_stats(msg, &mode, &(m_bufferInfo.avgInRate), &(m_bufferInfo.avgOutRate), &(m_bufferInfo.bufferingLeft));
+			//m_event((iPlayableService*)this, evBuffering);
+*/
+
+// playback stream jerky on start
+//			if (data->is_live) break;
+//			gst_message_parse_buffering (msg, &status.bufferpercent);
+
+			if(status.prefillbuffer == 1) 
+ 			{
+//				gint percent = 0;
+				if (data->is_live) break;
+				gst_message_parse_buffering (msg, &status.bufferpercent);
+				g_print ("Buffering (%3d%%)\r", status.bufferpercent);
+
+				if (status.bufferpercent < 100)
+				{
+					gst_element_set_state (data->pipeline, GST_STATE_PAUSED);
+					struct skin* waitmsgbar = getscreen("waitmsgbar");
+					struct skin* load = getscreen("loading");
+	
+					waitmsgbar->progresssize = status.bufferpercent;
+					char* tmpstr = NULL;
+					tmpstr = ostrcat(_("Buffering Stream - Cancel with Exit"), " (", 0, 0);
+					tmpstr = ostrcat(tmpstr, oitoa(waitmsgbar->progresssize), 1, 0);
+					tmpstr = ostrcat(tmpstr, "%)", 1, 0);
+					changetext(waitmsgbar, tmpstr);
+					free(tmpstr); tmpstr = NULL;
+	
+					drawscreen(load, 0, 0);
+					drawscreen(waitmsgbar, 0, 0);
+					status.cleaninfobar = 0;
+				}
+				else
+				{
+					drawscreen(skin, 0, 0);
+					gst_element_set_state (data->pipeline, GST_STATE_PLAYING);
+					status.prefillbuffer = 0;
+					status.cleaninfobar = 1;
+				}
+	
+			} 
+			else if(status.prefillbuffer == 2) 
+			{
+				drawscreen(skin, 0, 0);
+				gst_element_set_state (data->pipeline, GST_STATE_PLAYING);
+				status.prefillbuffer = 0;
+				status.cleaninfobar = 1;
+			}
+			else if(status.cleaninfobar == 1)
+			{
+				drawscreen(skin, 0, 0);
+				status.cleaninfobar = 0;
+			}
+
+			break;
+ 
+/*
+			GstBufferingMode mode;
+			gst_message_parse_buffering(msg, &(status.bufferpercent));
+			gst_message_parse_buffering_stats(msg, &mode, &(status.avgInRate), &(status.avgOutRate), &(status.bufferingLeft));
+
+//			printf("#########################################################\n");
+//			printf("Buffering %u percent done\n", status.bufferpercent);
+//			printf("avgInRate %d\n", status.avgInRate);
+//			printf("avgOutRate %d\n", status.avgOutRate);
+//			printf("bufferingLeft %lld\n", status.bufferingLeft);
+					
+			if(status.prefillbuffer == 1)
+			{
+				printf("status.prefillbuffer Buffering %u percent done\n", status.bufferpercent);
+
+				if (status.bufferpercent == 100)
+				{
+					GstState state;
+					gst_element_get_state(pipeline, &state, NULL, 0LL);
+					if (state != GST_STATE_PLAYING)
+					{
+						// eDebug("start playing");
+						gst_element_set_state (pipeline, GST_STATE_PLAYING);
+					}
+//					m_ignore_buffering_messages = 5;
+					status.prefillbuffer = 0;
+				}
+				else if (status.bufferpercent == 0)
+				{
+					// eDebug("start pause");
+					gst_element_set_state (pipeline, GST_STATE_PAUSED);
+//					m_ignore_buffering_messages = 0;
+				}
+			}
+*/
+/*
+				GstBufferingMode mode;
+				printf("GST_STATE_PAUSED\n");
+				gst_element_set_state (pipeline, GST_STATE_PAUSED);
+
+
+				gst_message_parse_buffering(msg, &(m_bufferInfo.bufferPercent));
+				// eDebug("Buffering %u percent done", m_bufferInfo.bufferPercent);
+				gst_message_parse_buffering_stats(msg, &mode, &(m_bufferInfo.avgInRate), &(m_bufferInfo.avgOutRate), &(m_bufferInfo.bufferingLeft));
+				m_event((iPlayableService*)this, evBuffering);
+				if (m_use_prefillbuffer && !m_is_live && --m_ignore_buffering_messages <= 0)
+				{
+					if (m_bufferInfo.bufferPercent == 100)
+					{
+						GstState state;
+						gst_element_get_state(pipeline, &state, NULL, 0LL);
+						if (state != GST_STATE_PLAYING)
+						{
+							// eDebug("start playing");
+							gst_element_set_state (pipeline, GST_STATE_PLAYING);
+						}
+						m_ignore_buffering_messages = 5;
+					}
+					else if (m_bufferInfo.bufferPercent == 0)
+					{
+						// eDebug("start pause");
+						gst_element_set_state (pipeline, GST_STATE_PAUSED);
+						m_ignore_buffering_messages = 0;
+					}
+					else
+					{
+						m_ignore_buffering_messages = 0;
+					}
+				}
+
+*/
+			break;
+		case GST_MESSAGE_STREAM_STATUS:
+			debug(150, "gst player stream status");
+
+/*
+			GstStreamStatusType type;
+			GstElement *owner;
+
+			gst_message_parse_stream_status(msg, &type, &owner);
+			if(type == GST_STREAM_STATUS_TYPE_CREATE && m_sourceinfo.is_streaming)
+			{
+				if(GST_IS_PAD(source))
+					owner = gst_pad_get_parent_element(GST_PAD(source));
+				else if(GST_IS_ELEMENT(source))
+					owner = GST_ELEMENT(source);
+				else
+					owner = NULL;
+				if(owner)
+				{
+					GstElementFactory *factory = gst_element_get_factory(GST_ELEMENT(owner));
+					const gchar *name = gst_plugin_feature_get_name(GST_PLUGIN_FEATURE(factory));
+					if (!strcmp(name, "souphttpsrc"))
+					{
+						//m_streamingsrc_timeout->start(10 * 1000, true);
+						g_object_set(G_OBJECT(owner), "timeout", 10, NULL);
+					}
+					
+				}
+				if(GST_IS_PAD(source))
+					gst_object_unref(owner);
+			}
+*/
+			break;
+		default:
+			debug(150, "gst player unknown message");
+			break;
+	}
+	g_free(sourceName);
+	return ret;
+}
+#endif
+
+
 //extern player
 int playerstart(char* file)
 {
@@ -892,301 +1189,6 @@ void playerinit(int argc, char* argv[])
 #endif
 }
 
-#ifdef EPLAYER4
-int gstbuscall(GstBus *bus, GstMessage *msg, CustomData *data)
-{
-	int ret = 1;
-	if(!pipeline) return 0;
-	if(!msg) return ret;
-
-	gchar *sourceName = NULL;
-	GstObject *source = GST_MESSAGE_SRC(msg);
-
-	if(!GST_IS_OBJECT(source)) return ret;
-	sourceName = gst_object_get_name(source);
-
-	debug(150, "gst type: %s", GST_MESSAGE_TYPE_NAME(msg));
-
-	switch(GST_MESSAGE_TYPE(msg))
-	{
-		case GST_MESSAGE_EOS:
-			debug(150, "gst player eof");
-			ret = 0;
-			break;
-		case GST_MESSAGE_STATE_CHANGED:
-			debug(150, "gst message state changed");
-			if(GST_MESSAGE_SRC(msg) != GST_OBJECT(pipeline))
-				break; 
-
-			GstState old_state, new_state, pending_state;
-			gst_message_parse_state_changed(msg, &old_state, &new_state, &pending_state);
-			if(GST_MESSAGE_SRC(msg) == GST_OBJECT(pipeline))
-			{
-				if(new_state == GST_STATE_PLAYING)
-				{
-					/* Once we are in the playing state, analyze the streams */
-					analyze_streams(data);
-				}
-			}
-
-			if(old_state == new_state) break;
-	
-			debug(150, "gst state change %s -> %s", gst_element_state_get_name(old_state), gst_element_state_get_name(new_state));
-	
-			GstStateChange transition = (GstStateChange)GST_STATE_TRANSITION(old_state, new_state);
-	
-			switch(transition)
-			{
-				case GST_STATE_CHANGE_NULL_TO_READY:
-					break;
-				case GST_STATE_CHANGE_READY_TO_PAUSED:
-/*
-					GstElement *appsink = gst_bin_get_by_name(GST_BIN(pipeline), "subtitle_sink");
- 					if(appsink)
- 					{
- 						g_object_set(G_OBJECT(appsink), "max-buffers", 2, NULL);
- 						g_object_set(G_OBJECT(appsink), "sync", FALSE, NULL);
- 						g_object_set(G_OBJECT(appsink), "emit-signals", TRUE, NULL);
- 						gst_object_unref(appsink);
- 					}
-*/
-					break;
-				case GST_STATE_CHANGE_PAUSED_TO_PLAYING:
-					//if(m_sourceinfo.is_streaming && m_streamingsrc_timeout )
-						//m_streamingsrc_timeout->stop();
-					break;
-				case GST_STATE_CHANGE_PLAYING_TO_PAUSED:
-					break;
-				case GST_STATE_CHANGE_PAUSED_TO_READY:
-					break;
-				case GST_STATE_CHANGE_READY_TO_NULL:
-					ret = 0;
-					break;
-			}
-			break;
-		case GST_MESSAGE_ERROR:
-			debug(150, "gst player error");
-
-			gchar *gdebug1;
-			GError *err;
-
-			gst_message_parse_error(msg, &err, &gdebug1);
-			g_free(gdebug1);
-
-			debug(150, "gst error: %s (%i) from %s", err->message, err->code, sourceName);
-			if(err->domain == GST_STREAM_ERROR)
-			{
-				if(err->code == GST_STREAM_ERROR_CODEC_NOT_FOUND )
-				{
-					//if(g_strrstr(sourceName, "videosink"))
-					//	m_event((iPlayableService*)this, evUser+11);
-					//else if ( g_strrstr(sourceName, "audiosink") )
-					//	m_event((iPlayableService*)this, evUser+10);
-				}
-			}
-			g_error_free(err);
-			break;
-		case GST_MESSAGE_INFO:
-			debug(150, "gst player info");
-
-/*
-			gchar *gdebug2;
-			GError *inf;
-	
-			gst_message_parse_info(msg, &inf, &gdebug2);
-			g_free(gdebug2);
-			if(inf->domain == GST_STREAM_ERROR && inf->code == GST_STREAM_ERROR_DECODE )
-			{
-				//if(g_strrstr(sourceName, "videosink"))
-				//	m_event((iPlayableService*)this, evUser+14);
-			}
-			g_error_free(inf);
-*/
-			break;
-		case GST_MESSAGE_TAG:
-			debug(150, "gst player tag");
-			break;
-		//case GST_MESSAGE_ASYNC_DONE:
-		//	debug(150, "gst player async done");
-		//	break;
-		case GST_MESSAGE_ELEMENT:
-			debug(150, "gst player element");
-			break;
-		case GST_MESSAGE_BUFFERING:
-			debug(150, "gst player buffering");
-
-/*
-			GstBufferingMode mode;
-			gst_message_parse_buffering(msg, &(m_bufferInfo.bufferPercent));
-			gst_message_parse_buffering_stats(msg, &mode, &(m_bufferInfo.avgInRate), &(m_bufferInfo.avgOutRate), &(m_bufferInfo.bufferingLeft));
-			//m_event((iPlayableService*)this, evBuffering);
-*/
-
-// playback stream jerky on start
-//			if (data->is_live) break;
-//			gst_message_parse_buffering (msg, &status.bufferpercent);
-
-			if(status.prefillbuffer == 1) 
- 			{
-//				gint percent = 0;
-				if (data->is_live) break;
-				gst_message_parse_buffering (msg, &status.bufferpercent);
-				g_print ("Buffering (%3d%%)\r", status.bufferpercent);
-
-				if (status.bufferpercent < 100)
-				{
-					gst_element_set_state (data->pipeline, GST_STATE_PAUSED);
-					struct skin* waitmsgbar = getscreen("waitmsgbar");
-					struct skin* load = getscreen("loading");
-	
-					waitmsgbar->progresssize = status.bufferpercent;
-					char* tmpstr = NULL;
-					tmpstr = ostrcat(_("Buffering Stream - Cancel with Exit"), " (", 0, 0);
-					tmpstr = ostrcat(tmpstr, oitoa(waitmsgbar->progresssize), 1, 0);
-					tmpstr = ostrcat(tmpstr, "%)", 1, 0);
-					changetext(waitmsgbar, tmpstr);
-					free(tmpstr); tmpstr = NULL;
-	
-					drawscreen(load, 0, 0);
-					drawscreen(waitmsgbar, 0, 0);
-					status.cleaninfobar = 0;
-				}
-				else
-				{
-					drawscreen(skin, 0, 0);
-					gst_element_set_state (data->pipeline, GST_STATE_PLAYING);
-					status.prefillbuffer = 0;
-					status.cleaninfobar = 1;
-				}
-	
-			} 
-			else if(status.prefillbuffer == 2) 
-			{
-				drawscreen(skin, 0, 0);
-				gst_element_set_state (data->pipeline, GST_STATE_PLAYING);
-				status.prefillbuffer = 0;
-				status.cleaninfobar = 1;
-			}
-			else if(status.cleaninfobar == 1)
-			{
-				drawscreen(skin, 0, 0);
-				status.cleaninfobar = 0;
-			}
-
-			break;
- 
-/*
-			GstBufferingMode mode;
-			gst_message_parse_buffering(msg, &(status.bufferpercent));
-			gst_message_parse_buffering_stats(msg, &mode, &(status.avgInRate), &(status.avgOutRate), &(status.bufferingLeft));
-
-//			printf("#########################################################\n");
-//			printf("Buffering %u percent done\n", status.bufferpercent);
-//			printf("avgInRate %d\n", status.avgInRate);
-//			printf("avgOutRate %d\n", status.avgOutRate);
-//			printf("bufferingLeft %lld\n", status.bufferingLeft);
-					
-			if(status.prefillbuffer == 1)
-			{
-				printf("status.prefillbuffer Buffering %u percent done\n", status.bufferpercent);
-
-				if (status.bufferpercent == 100)
-				{
-					GstState state;
-					gst_element_get_state(pipeline, &state, NULL, 0LL);
-					if (state != GST_STATE_PLAYING)
-					{
-						// eDebug("start playing");
-						gst_element_set_state (pipeline, GST_STATE_PLAYING);
-					}
-//					m_ignore_buffering_messages = 5;
-					status.prefillbuffer = 0;
-				}
-				else if (status.bufferpercent == 0)
-				{
-					// eDebug("start pause");
-					gst_element_set_state (pipeline, GST_STATE_PAUSED);
-//					m_ignore_buffering_messages = 0;
-				}
-			}
-*/
-/*
-				GstBufferingMode mode;
-				printf("GST_STATE_PAUSED\n");
-				gst_element_set_state (pipeline, GST_STATE_PAUSED);
-
-
-				gst_message_parse_buffering(msg, &(m_bufferInfo.bufferPercent));
-				// eDebug("Buffering %u percent done", m_bufferInfo.bufferPercent);
-				gst_message_parse_buffering_stats(msg, &mode, &(m_bufferInfo.avgInRate), &(m_bufferInfo.avgOutRate), &(m_bufferInfo.bufferingLeft));
-				m_event((iPlayableService*)this, evBuffering);
-				if (m_use_prefillbuffer && !m_is_live && --m_ignore_buffering_messages <= 0)
-				{
-					if (m_bufferInfo.bufferPercent == 100)
-					{
-						GstState state;
-						gst_element_get_state(pipeline, &state, NULL, 0LL);
-						if (state != GST_STATE_PLAYING)
-						{
-							// eDebug("start playing");
-							gst_element_set_state (pipeline, GST_STATE_PLAYING);
-						}
-						m_ignore_buffering_messages = 5;
-					}
-					else if (m_bufferInfo.bufferPercent == 0)
-					{
-						// eDebug("start pause");
-						gst_element_set_state (pipeline, GST_STATE_PAUSED);
-						m_ignore_buffering_messages = 0;
-					}
-					else
-					{
-						m_ignore_buffering_messages = 0;
-					}
-				}
-
-*/
-			break;
-		case GST_MESSAGE_STREAM_STATUS:
-			debug(150, "gst player stream status");
-
-/*
-			GstStreamStatusType type;
-			GstElement *owner;
-
-			gst_message_parse_stream_status(msg, &type, &owner);
-			if(type == GST_STREAM_STATUS_TYPE_CREATE && m_sourceinfo.is_streaming)
-			{
-				if(GST_IS_PAD(source))
-					owner = gst_pad_get_parent_element(GST_PAD(source));
-				else if(GST_IS_ELEMENT(source))
-					owner = GST_ELEMENT(source);
-				else
-					owner = NULL;
-				if(owner)
-				{
-					GstElementFactory *factory = gst_element_get_factory(GST_ELEMENT(owner));
-					const gchar *name = gst_plugin_feature_get_name(GST_PLUGIN_FEATURE(factory));
-					if (!strcmp(name, "souphttpsrc"))
-					{
-						//m_streamingsrc_timeout->start(10 * 1000, true);
-						g_object_set(G_OBJECT(owner), "timeout", 10, NULL);
-					}
-					
-				}
-				if(GST_IS_PAD(source))
-					gst_object_unref(owner);
-			}
-*/
-			break;
-		default:
-			debug(150, "gst player unknown message");
-			break;
-	}
-	g_free(sourceName);
-	return ret;
-}
-#endif
 
 int playergetbuffersize()
 {
