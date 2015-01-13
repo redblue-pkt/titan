@@ -592,6 +592,21 @@ void playerafterendts()
 	playerstopts(2, 0);
 }
 
+void playersubtitleAvail(GstElement *subsink, GstBuffer *buffer, gpointer user_data)
+{
+	gint64 buf_pos = GST_BUFFER_TIMESTAMP(buffer);
+	gint64 duration_ns = GST_BUFFER_DURATION(buffer);
+	
+#if GST_VERSION_MAJOR < 1
+		size_t len = GST_BUFFER_SIZE(buffer);
+#else
+		size_t len = gst_buffer_get_size(buffer);
+#endif
+	printf("BUFFER_TIMESTAMP: %ull - BUFFER_DURATION: %ull in nano sekunden\n", buf_pos, duration_ns);
+	printf("BUFFER_SIZE: %d\n", len);
+	printf("BUFFER_DATA: %s\n", GST_BUFFER_DATA(buffer));
+}
+
 //extern player
 int playerstart(char* file)
 {
@@ -774,6 +789,7 @@ int playerstart(char* file)
 		else
 		{
 //			m_subs_to_pull_handler_id = g_signal_connect (subsink, "new-buffer", G_CALLBACK (gstCBsubtitleAvail), this);
+			g_signal_connect (subsink, "new-buffer", G_CALLBACK (playersubtitleAvail), NULL);
 			g_object_set (G_OBJECT (subsink), "caps", gst_caps_from_string("text/plain; text/x-plain; text/x-raw; text/x-pango-markup; video/x-dvd-subpicture; subpicture/x-pgs"), NULL);
 			g_object_set (G_OBJECT (pipeline), "text-sink", subsink, NULL);
 			//g_object_set (G_OBJECT (pipeline), "current-text", -1, NULL);
