@@ -32,7 +32,6 @@ GstElement *pipeline = NULL;
 unsigned long long m_gst_startpts = 0;
 CustomData data;
 GstElement *video_sink = NULL;
-GstBus *bus;
 #endif
 
 //titan player
@@ -593,6 +592,300 @@ void playerafterendts()
 	playerstopts(2, 0);
 }
 
+//extern player
+int playerstart(char* file)
+{
+	char * tmpfile = NULL;
+	status.prefillbuffer = 0;
+	
+	if(file != NULL)
+	{
+#ifdef EPLAYER3
+		//use eplayer
+
+		if(player != NULL)
+		{
+			debug(150, "eplayer allready running");
+			playerstop();
+		}
+
+		player = calloc(1, sizeof(Context_t));
+
+		if(player == NULL)
+		{
+			err("no mem");
+			return 1;
+		}
+
+		if(ostrstr(file, "://") == NULL)
+			tmpfile = ostrcat("file://", file, 0, 0);
+		else
+			tmpfile = ostrcat(file, NULL, 0, 0);
+
+		if(tmpfile == NULL)
+		{
+			err("no mem");
+			free(player); player = NULL;
+			return 1;
+		}
+// move to mc
+//		set_player_sound(0);
+
+		if(ostrstr(tmpfile, "file://") == NULL)
+			status.playercan = 0x4650;
+		else
+			status.playercan = 0xFFFF;
+		
+		player->playback = &PlaybackHandler;
+		player->output = &OutputHandler;
+		player->container = &ContainerHandler;
+		player->manager = &ManagerHandler;
+		
+		//add container befor open, so we can set buffer size
+		char* ext = getfilenameext(tmpfile);
+		if(ext != NULL)
+		{
+			player->container->Command(player, CONTAINER_ADD, ext);
+			free(ext); ext = NULL;
+		}
+
+		//select container_ffmpeg, if we does not found a container with extensions
+		if(player->container->selectedContainer == NULL)
+			player->container->Command(player, CONTAINER_ADD, "mp3");
+
+		if(player && player->container && player->container->selectedContainer)
+		{
+			int size = getconfigint("playerbuffersize", NULL);
+			int seektime = getconfigint("playerbufferseektime", NULL);
+			player->container->selectedContainer->Command(player, CONTAINER_SET_BUFFER_SIZE, (void*)&size);
+			player->container->selectedContainer->Command(player, CONTAINER_SET_BUFFER_SEEK_TIME, (void*)&seektime);
+		}
+		
+		debug(150, "eplayername = %s", player->output->Name);
+
+		//Registrating output devices
+		player->output->Command(player, OUTPUT_ADD, "audio");
+		player->output->Command(player, OUTPUT_ADD, "video");
+		player->output->Command(player, OUTPUT_ADD, "subtitle");
+		
+		//for subtitle
+		SubtitleOutputDef_t subout;
+
+		subout.screen_width = skinfb->width;
+		subout.screen_height = skinfb->height;
+		subout.framebufferFD = skinfb->fd;
+		subout.destination = (uint32_t *)skinfb->fb;
+		subout.destStride = skinfb->pitch;
+		subout.shareFramebuffer = 1;
+		subout.framebufferBlit = blitfb1;
+
+		player->output->subtitle->Command(player, (OutputCmd_t)OUTPUT_SET_SUBTITLE_OUTPUT, (void*)&subout);
+		
+		if(player->playback->Command(player, PLAYBACK_OPEN, tmpfile) < 0)
+		{
+			free(player); player = NULL;
+			free(tmpfile);
+			return 1;
+		}
+
+		player->output->Command(player, OUTPUT_OPEN, NULL);
+		player->playback->Command(player, PLAYBACK_PLAY, NULL);
+
+		free(tmpfile);
+
+		return 0;
+#endif
+
+#ifdef EPLAYER4
+		int flags = 0x47; //(GST_PLAY_FLAG_VIDEO | GST_PLAY_FLAG_AUDIO | GST_PLAY_FLAG_NATIVE_VIDEO | GST_PLAY_FLAG_TEXT);
+		//guint flags;
+		
+		if(pipeline != NULL)
+		{
+			debug(150, "eplayer allready running");
+			playerstop();
+		}
+		
+		if(ostrstr(file, "://") == NULL)
+			tmpfile = ostrcat("file://", file, 0, 0);
+		else
+			tmpfile = ostrcat(file, NULL, 0, 0);
+
+		if(tmpfile == NULL)
+		{
+			err("no mem");
+			free(pipeline); pipeline = NULL;
+			return 1;
+		}
+
+		if(ostrstr(tmpfile, "file://") == NULL)
+			//status.playercan = 0x7E7F;
+			status.playercan = 0x7EFF;
+		else
+			//status.playercan = 0x7E7F;
+			status.playercan = 0x7EFF;
+	
+		pipeline = gst_element_factory_make("playbin2", "playbin");
+		
+		//g_object_get(G_OBJECT (pipeline), "flags", &flags, NULL);
+		//flags |= GST_PLAY_FLAG_NATIVE_VIDEO;
+
+// enable buffersize start
+		int size = getconfigint("playerbuffersize", NULL);
+		printf("size: %d\n",size);
+		
+		if(size > 0)
+			status.prefillbuffer = 1;
+
+		if(ostrstr(file, "|User-Agent=") != NULL)
+		{
+			char* tmpstr = NULL;
+			tmpstr = ostrcat(file, NULL, 0, 0);
+			tmpstr = string_replace("|User-Agent=", "|", tmpstr, 1);
+			int count1 = 0;
+			struct splitstr* ret1 = NULL;
+			ret1 = strsplit(tmpstr, "|", &count1);
+			if(ret1 != NULL && count1 >= 2)
+			{
+				printf("[player.h] set user-agent: %s\n",ret1[1].part);
+				g_object_set(G_OBJECT(pipeline), "user-agent", ret1[1].part, NULL);
+			}
+			free(ret1), ret1 = NULL;
+			free(tmpstr), tmpstr = NULL;
+//			g_object_set(G_OBJECT(pipeline), "user-agent", "Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:30.0) Gecko/20100101 Firefox/30.0", NULL);
+			stringreplacechar(tmpfile, '|', '\0');
+			printf("tmpfile changed: %s\n", tmpfile);
+		}
+
+		g_object_set(G_OBJECT(pipeline), "buffer-duration", size * GST_SECOND, NULL);
+		g_object_set(G_OBJECT(pipeline), "buffer-size", size, NULL);
+// enable buffersizeend
+
+		g_object_set(G_OBJECT(pipeline), "flags", flags, NULL);
+		g_object_set(G_OBJECT(pipeline), "uri", tmpfile, NULL);
+		free(tmpfile); tmpfile = NULL;
+
+///////////////////
+// srt subs start
+		const char *filename = file;
+		const char *ext = strrchr(filename, '.');
+		if (!ext)
+			ext = filename + strlen(filename);
+
+		GstElement *subsink = gst_element_factory_make("subsink", "subtitle_sink");
+		if (!subsink)
+			printf("sorry, can't play: missing gst-plugin-subsink\n");
+		else
+		{
+//			m_subs_to_pull_handler_id = g_signal_connect (subsink, "new-buffer", G_CALLBACK (gstCBsubtitleAvail), this);
+			g_object_set (G_OBJECT (subsink), "caps", gst_caps_from_string("text/plain; text/x-plain; text/x-raw; text/x-pango-markup; video/x-dvd-subpicture; subpicture/x-pgs"), NULL);
+			g_object_set (G_OBJECT (pipeline), "text-sink", subsink, NULL);
+			g_object_set (G_OBJECT (pipeline), "current-text", -1, NULL);
+		}
+
+//gpointer this;
+//memset (&this, 0, sizeof (this));
+
+		GstBus *bus = gst_pipeline_get_bus(GST_PIPELINE(pipeline));
+#if GST_VERSION_MAJOR < 1
+//		gst_bus_set_sync_handler(bus, gstBusSyncHandler, this);
+		gst_bus_set_sync_handler(bus, GST_BUS_DROP, NULL);
+#else
+//		gst_bus_set_sync_handler(bus, gstBusSyncHandler, this, NULL);
+		gst_bus_set_sync_handler(bus, GST_BUS_DROP, NULL, NULL);
+#endif
+
+		gst_object_unref(bus);
+		char srt_filename[ext - filename + 5];
+		strncpy(srt_filename,filename, ext - filename);
+		srt_filename[ext - filename] = '\0';
+		strcat(srt_filename, ".srt");
+
+		if(access(srt_filename, R_OK) >= 0)
+		{
+			printf("found srt1: %s\n",srt_filename);
+			printf("found srt2: %s\n",g_filename_to_uri(srt_filename, NULL, NULL));
+			g_object_set(G_OBJECT (pipeline), "suburi", g_filename_to_uri(srt_filename, NULL, NULL), NULL);		
+		}
+// srt end	
+
+///////////////////
+//		CustomData data;
+		memset (&data, 0, sizeof (data));
+		data.pipeline = pipeline;
+//		GstBus *bus;
+//		bus = gst_element_get_bus (pipeline);
+		
+		// Start playing //
+		GstStateChangeReturn ret;
+		ret = gst_element_set_state (pipeline, GST_STATE_PLAYING);
+		if(ret == GST_STATE_CHANGE_FAILURE)
+		{
+			g_printerr ("Unable to set the pipeline to the playing state.\n");
+			gst_object_unref (pipeline);
+			return -1;
+		}
+		else if(ret == GST_STATE_CHANGE_NO_PREROLL)
+		{
+			data.is_live = TRUE;
+		}
+
+		data.loop = g_main_loop_new (NULL, FALSE);
+		data.pipeline = pipeline;
+		gst_bus_add_signal_watch (bus);
+		
+		g_object_set (G_OBJECT (pipeline), "current-text", 0, NULL);
+//skip 		
+		unsigned long long pts;
+		GstFormat fmt = GST_FORMAT_TIME;
+		gint64 pos;
+		pts = playergetpts();
+		gint64 time_nanoseconds = pts * 11111LL;
+		gst_element_seek (pipeline, 1.0, GST_FORMAT_TIME, (GstSeekFlags)(GST_SEEK_FLAG_FLUSH | GST_SEEK_FLAG_KEY_UNIT), GST_SEEK_TYPE_SET, time_nanoseconds, GST_SEEK_TYPE_NONE, GST_CLOCK_TIME_NONE);
+//end skip		
+		
+		
+		
+//		g_signal_connect (bus, "message", G_CALLBACK (cb_message), &data);
+//		status.prefillbuffer = 1;
+
+//analyze_streams(data);
+
+		int count = 0;
+		m_gst_startpts = 0;
+		while(m_gst_startpts == 0 && count < 5)
+		{
+			count++;
+			sleep(1);
+			m_gst_startpts = playergetpts();
+		}
+
+		return 0;
+#endif
+	}
+	
+	return 1;
+}
+
+#ifdef EPLAYER4
+int setBufferSize(int size)
+{
+	int m_buffer_size = size;
+	g_object_set (G_OBJECT (pipeline), "buffer-size", m_buffer_size, NULL);
+	return 0;
+}
+#endif
+
+void playerinit(int argc, char* argv[])
+{
+#ifdef EPLAYER4
+//	GstBus *bus;
+//	GstStateChangeReturn ret;
+//	gint flags;
+	gst_init(&argc, &argv);
+#endif
+}
+
 #ifdef EPLAYER4
 int gstbuscall(GstBus *bus, GstMessage *msg, CustomData *data)
 {
@@ -889,307 +1182,6 @@ int gstbuscall(GstBus *bus, GstMessage *msg, CustomData *data)
 }
 #endif
 
-
-//extern player
-int playerstart(char* file)
-{
-	char * tmpfile = NULL;
-	status.prefillbuffer = 0;
-	
-	if(file != NULL)
-	{
-#ifdef EPLAYER3
-		//use eplayer
-
-		if(player != NULL)
-		{
-			debug(150, "eplayer allready running");
-			playerstop();
-		}
-
-		player = calloc(1, sizeof(Context_t));
-
-		if(player == NULL)
-		{
-			err("no mem");
-			return 1;
-		}
-
-		if(ostrstr(file, "://") == NULL)
-			tmpfile = ostrcat("file://", file, 0, 0);
-		else
-			tmpfile = ostrcat(file, NULL, 0, 0);
-
-		if(tmpfile == NULL)
-		{
-			err("no mem");
-			free(player); player = NULL;
-			return 1;
-		}
-// move to mc
-//		set_player_sound(0);
-
-		if(ostrstr(tmpfile, "file://") == NULL)
-			status.playercan = 0x4650;
-		else
-			status.playercan = 0xFFFF;
-		
-		player->playback = &PlaybackHandler;
-		player->output = &OutputHandler;
-		player->container = &ContainerHandler;
-		player->manager = &ManagerHandler;
-		
-		//add container befor open, so we can set buffer size
-		char* ext = getfilenameext(tmpfile);
-		if(ext != NULL)
-		{
-			player->container->Command(player, CONTAINER_ADD, ext);
-			free(ext); ext = NULL;
-		}
-
-		//select container_ffmpeg, if we does not found a container with extensions
-		if(player->container->selectedContainer == NULL)
-			player->container->Command(player, CONTAINER_ADD, "mp3");
-
-		if(player && player->container && player->container->selectedContainer)
-		{
-			int size = getconfigint("playerbuffersize", NULL);
-			int seektime = getconfigint("playerbufferseektime", NULL);
-			player->container->selectedContainer->Command(player, CONTAINER_SET_BUFFER_SIZE, (void*)&size);
-			player->container->selectedContainer->Command(player, CONTAINER_SET_BUFFER_SEEK_TIME, (void*)&seektime);
-		}
-		
-		debug(150, "eplayername = %s", player->output->Name);
-
-		//Registrating output devices
-		player->output->Command(player, OUTPUT_ADD, "audio");
-		player->output->Command(player, OUTPUT_ADD, "video");
-		player->output->Command(player, OUTPUT_ADD, "subtitle");
-		
-		//for subtitle
-		SubtitleOutputDef_t subout;
-
-		subout.screen_width = skinfb->width;
-		subout.screen_height = skinfb->height;
-		subout.framebufferFD = skinfb->fd;
-		subout.destination = (uint32_t *)skinfb->fb;
-		subout.destStride = skinfb->pitch;
-		subout.shareFramebuffer = 1;
-		subout.framebufferBlit = blitfb1;
-
-		player->output->subtitle->Command(player, (OutputCmd_t)OUTPUT_SET_SUBTITLE_OUTPUT, (void*)&subout);
-		
-		if(player->playback->Command(player, PLAYBACK_OPEN, tmpfile) < 0)
-		{
-			free(player); player = NULL;
-			free(tmpfile);
-			return 1;
-		}
-
-		player->output->Command(player, OUTPUT_OPEN, NULL);
-		player->playback->Command(player, PLAYBACK_PLAY, NULL);
-
-		free(tmpfile);
-
-		return 0;
-#endif
-
-#ifdef EPLAYER4
-		int flags = 0x47; //(GST_PLAY_FLAG_VIDEO | GST_PLAY_FLAG_AUDIO | GST_PLAY_FLAG_NATIVE_VIDEO | GST_PLAY_FLAG_TEXT);
-		//guint flags;
-		
-		if(pipeline != NULL)
-		{
-			debug(150, "eplayer allready running");
-			playerstop();
-		}
-		
-		if(ostrstr(file, "://") == NULL)
-			tmpfile = ostrcat("file://", file, 0, 0);
-		else
-			tmpfile = ostrcat(file, NULL, 0, 0);
-
-		if(tmpfile == NULL)
-		{
-			err("no mem");
-			free(pipeline); pipeline = NULL;
-			return 1;
-		}
-
-		if(ostrstr(tmpfile, "file://") == NULL)
-			//status.playercan = 0x7E7F;
-			status.playercan = 0x7EFF;
-		else
-			//status.playercan = 0x7E7F;
-			status.playercan = 0x7EFF;
-	
-		pipeline = gst_element_factory_make("playbin2", "playbin");
-		
-		//g_object_get(G_OBJECT (pipeline), "flags", &flags, NULL);
-		//flags |= GST_PLAY_FLAG_NATIVE_VIDEO;
-
-// enable buffersize start
-		int size = getconfigint("playerbuffersize", NULL);
-		printf("size: %d\n",size);
-		
-		if(size > 0)
-			status.prefillbuffer = 1;
-
-		if(ostrstr(file, "|User-Agent=") != NULL)
-		{
-			char* tmpstr = NULL;
-			tmpstr = ostrcat(file, NULL, 0, 0);
-			tmpstr = string_replace("|User-Agent=", "|", tmpstr, 1);
-			int count1 = 0;
-			struct splitstr* ret1 = NULL;
-			ret1 = strsplit(tmpstr, "|", &count1);
-			if(ret1 != NULL && count1 >= 2)
-			{
-				printf("[player.h] set user-agent: %s\n",ret1[1].part);
-				g_object_set(G_OBJECT(pipeline), "user-agent", ret1[1].part, NULL);
-			}
-			free(ret1), ret1 = NULL;
-			free(tmpstr), tmpstr = NULL;
-//			g_object_set(G_OBJECT(pipeline), "user-agent", "Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:30.0) Gecko/20100101 Firefox/30.0", NULL);
-			stringreplacechar(tmpfile, '|', '\0');
-			printf("tmpfile changed: %s\n", tmpfile);
-		}
-
-		g_object_set(G_OBJECT(pipeline), "buffer-duration", size * GST_SECOND, NULL);
-		g_object_set(G_OBJECT(pipeline), "buffer-size", size, NULL);
-// enable buffersizeend
-
-		g_object_set(G_OBJECT(pipeline), "uri", tmpfile, NULL);
-		free(tmpfile); tmpfile = NULL;
-
-///////////////////
-// srt subs start
-		const char *filename = file;
-		const char *ext = strrchr(filename, '.');
-		if (!ext)
-			ext = filename + strlen(filename);
-
-/*		GstElement *subsink = gst_element_factory_make("subsink", "subtitle_sink");
-		if (!subsink)
-			printf("sorry, can't play: missing gst-plugin-subsink\n");
-		else
-		{
-//			m_subs_to_pull_handler_id = g_signal_connect (subsink, "new-buffer", G_CALLBACK (gstCBsubtitleAvail), this);
-			g_object_set (G_OBJECT (subsink), "caps", gst_caps_from_string("text/plain; text/x-plain; text/x-raw; text/x-pango-markup; video/x-dvd-subpicture; subpicture/x-pgs"), NULL);
-			g_object_set (G_OBJECT (pipeline), "text-sink", subsink, NULL);
-			g_object_set (G_OBJECT (pipeline), "current-text", -1, NULL);
-		}    */
-
-//gpointer this;
-//memset (&this, 0, sizeof (this));
-
-/*		GstBus *bus = gst_pipeline_get_bus(GST_PIPELINE(pipeline));
-#if GST_VERSION_MAJOR < 1
-//		gst_bus_set_sync_handler(bus, gstBusSyncHandler, this);
-		gst_bus_set_sync_handler(bus, GST_BUS_DROP, NULL);
-#else
-//		gst_bus_set_sync_handler(bus, gstBusSyncHandler, this, NULL);
-		gst_bus_set_sync_handler(bus, GST_BUS_DROP, NULL, NULL);
-#endif
-		gst_object_unref(bus);*/
-
-		char srt_filename[ext - filename + 5];
-		strncpy(srt_filename,filename, ext - filename);
-		srt_filename[ext - filename] = '\0';
-		strcat(srt_filename, ".srt");
-
-		if(access(srt_filename, R_OK) >= 0)
-		{
-			printf("found srt1: %s\n",srt_filename);
-			printf("found srt2: %s\n",g_filename_to_uri(srt_filename, NULL, NULL));
-			g_object_set(G_OBJECT (pipeline), "suburi", g_filename_to_uri(srt_filename, NULL, NULL), NULL);		
-			g_object_set (G_OBJECT (pipeline), "subtitle-font-desc", "Sans, 18", NULL);
-		}
-// srt end	
-
-
-///////////////////
-//		CustomData data;
-		memset (&data, 0, sizeof (data));
-		data.pipeline = pipeline;
-		
-		g_object_set(G_OBJECT(pipeline), "flags", flags, NULL);
-		bus = gst_element_get_bus (data.playbin2);
-    gst_bus_add_watch (bus, (GstBusFunc)gstbuscall, &data);
-//		GstBus *bus;
-//		bus = gst_element_get_bus (pipeline);
-		
-		// Start playing //
-		GstStateChangeReturn ret;
-		ret = gst_element_set_state (pipeline, GST_STATE_PLAYING);
-		if(ret == GST_STATE_CHANGE_FAILURE)
-		{
-			g_printerr ("Unable to set the pipeline to the playing state.\n");
-			gst_object_unref (pipeline);
-			return -1;
-		}
-		else if(ret == GST_STATE_CHANGE_NO_PREROLL)
-		{
-			data.is_live = TRUE;
-		}
-
-		data.loop = g_main_loop_new (NULL, FALSE);
-		data.pipeline = pipeline;
-		gst_bus_add_signal_watch (bus);
-		
-		g_object_set (G_OBJECT (pipeline), "current-text", 0, NULL);
-//skip 		
-		unsigned long long pts;
-		GstFormat fmt = GST_FORMAT_TIME;
-		gint64 pos;
-		pts = playergetpts();
-		gint64 time_nanoseconds = pts * 11111LL;
-		gst_element_seek (pipeline, 1.0, GST_FORMAT_TIME, (GstSeekFlags)(GST_SEEK_FLAG_FLUSH | GST_SEEK_FLAG_KEY_UNIT), GST_SEEK_TYPE_SET, time_nanoseconds, GST_SEEK_TYPE_NONE, GST_CLOCK_TIME_NONE);
-//end skip		
-		
-		
-		
-//		g_signal_connect (bus, "message", G_CALLBACK (cb_message), &data);
-//		status.prefillbuffer = 1;
-
-//analyze_streams(data);
-
-		int count = 0;
-		m_gst_startpts = 0;
-		while(m_gst_startpts == 0 && count < 5)
-		{
-			count++;
-			sleep(1);
-			m_gst_startpts = playergetpts();
-		}
-
-		return 0;
-#endif
-	}
-	
-	return 1;
-}
-
-#ifdef EPLAYER4
-int setBufferSize(int size)
-{
-	int m_buffer_size = size;
-	g_object_set (G_OBJECT (pipeline), "buffer-size", m_buffer_size, NULL);
-	return 0;
-}
-#endif
-
-void playerinit(int argc, char* argv[])
-{
-#ifdef EPLAYER4
-//	GstBus *bus;
-//	GstStateChangeReturn ret;
-//	gint flags;
-	gst_init(&argc, &argv);
-#endif
-}
-
-
 int playergetbuffersize()
 {
 	int ret = 0;
@@ -1331,7 +1323,6 @@ int playerstop()
 	}
 	if(pipeline)
 	{
-		gst_object_unref (bus);
 		gst_element_set_state(pipeline, GST_STATE_NULL);
 		gst_object_unref(GST_OBJECT(pipeline));
 		pipeline = NULL;
