@@ -809,14 +809,16 @@ int playerstart(char* file)
 			g_object_set (G_OBJECT (pipeline), "subtitle-font-desc", "Sans, 18", NULL);
 		}
 // srt end	
-		g_object_set(G_OBJECT(pipeline), "flags", flags, NULL);
-		bus = gst_element_get_bus (data.playbin2);
-    gst_bus_add_watch (bus, (GstBusFunc)gstbuscall, &data);
+
 
 ///////////////////
 //		CustomData data;
 		memset (&data, 0, sizeof (data));
 		data.pipeline = pipeline;
+		
+		g_object_set(G_OBJECT(pipeline), "flags", flags, NULL);
+		bus = gst_element_get_bus (data.playbin2);
+    gst_bus_add_watch (bus, (GstBusFunc)gstbuscall, &data);
 //		GstBus *bus;
 //		bus = gst_element_get_bus (pipeline);
 		
