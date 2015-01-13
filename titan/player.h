@@ -698,7 +698,6 @@ int playerstart(char* file)
 
 #ifdef EPLAYER4
 		int flags = 0x47; //(GST_PLAY_FLAG_VIDEO | GST_PLAY_FLAG_AUDIO | GST_PLAY_FLAG_NATIVE_VIDEO | GST_PLAY_FLAG_TEXT);
-		//guint flags;
 		
 		if(pipeline != NULL)
 		{
@@ -726,9 +725,6 @@ int playerstart(char* file)
 			status.playercan = 0x7EFF;
 	
 		pipeline = gst_element_factory_make("playbin2", "playbin");
-		
-		//g_object_get(G_OBJECT (pipeline), "flags", &flags, NULL);
-		//flags |= GST_PLAY_FLAG_NATIVE_VIDEO;
 
 // enable buffersize start
 		int size = getconfigint("playerbuffersize", NULL);
@@ -761,8 +757,8 @@ int playerstart(char* file)
 		g_object_set(G_OBJECT(pipeline), "buffer-size", size, NULL);
 // enable buffersizeend
 
-		g_object_set(G_OBJECT(pipeline), "flags", flags, NULL);
 		g_object_set(G_OBJECT(pipeline), "uri", tmpfile, NULL);
+		g_object_set(G_OBJECT(pipeline), "flags", flags, NULL);
 		free(tmpfile); tmpfile = NULL;
 
 ///////////////////
@@ -780,7 +776,7 @@ int playerstart(char* file)
 //			m_subs_to_pull_handler_id = g_signal_connect (subsink, "new-buffer", G_CALLBACK (gstCBsubtitleAvail), this);
 			g_object_set (G_OBJECT (subsink), "caps", gst_caps_from_string("text/plain; text/x-plain; text/x-raw; text/x-pango-markup; video/x-dvd-subpicture; subpicture/x-pgs"), NULL);
 			g_object_set (G_OBJECT (pipeline), "text-sink", subsink, NULL);
-			g_object_set (G_OBJECT (pipeline), "current-text", -1, NULL);
+			//g_object_set (G_OBJECT (pipeline), "current-text", -1, NULL);
 		}
 
 //gpointer this;
@@ -833,19 +829,6 @@ int playerstart(char* file)
 		data.loop = g_main_loop_new (NULL, FALSE);
 		data.pipeline = pipeline;
 		gst_bus_add_signal_watch (bus);
-		
-		g_object_set (G_OBJECT (pipeline), "current-text", 0, NULL);
-//skip 		
-		unsigned long long pts;
-		GstFormat fmt = GST_FORMAT_TIME;
-		gint64 pos;
-		pts = playergetpts();
-		gint64 time_nanoseconds = pts * 11111LL;
-		gst_element_seek (pipeline, 1.0, GST_FORMAT_TIME, (GstSeekFlags)(GST_SEEK_FLAG_FLUSH | GST_SEEK_FLAG_KEY_UNIT), GST_SEEK_TYPE_SET, time_nanoseconds, GST_SEEK_TYPE_NONE, GST_CLOCK_TIME_NONE);
-//end skip		
-		
-		
-		
 //		g_signal_connect (bus, "message", G_CALLBACK (cb_message), &data);
 //		status.prefillbuffer = 1;
 
@@ -2089,19 +2072,7 @@ void playerchangesubtitletrack(int num)
 
 #ifdef EPLAYER4
 	if(pipeline != NULL)
-		{
-			g_object_set(G_OBJECT(pipeline), "current-text", -1, NULL);	
-			printf("player: set current text to: %i\n", num);
-			g_object_set(G_OBJECT(pipeline), "current-text", num, NULL);
-			//skip 		
-			unsigned long long pts;
-			GstFormat fmt = GST_FORMAT_TIME;
-			gint64 pos;
-			pts = playergetpts();
-			gint64 time_nanoseconds = pts * 11111LL;
-			gst_element_seek (pipeline, 1.0, GST_FORMAT_TIME, (GstSeekFlags)(GST_SEEK_FLAG_FLUSH | GST_SEEK_FLAG_KEY_UNIT), GST_SEEK_TYPE_SET, time_nanoseconds, GST_SEEK_TYPE_NONE, GST_CLOCK_TIME_NONE);
-			//end skip			
-		}
+		g_object_set(G_OBJECT(pipeline), "current-text", num, NULL);	
 #endif
 }
 
@@ -2124,10 +2095,7 @@ void playerstopsubtitletrack()
 
 #ifdef EPLAYER4
 	if(pipeline != NULL)
-	{
-		printf("player: stop subtitle\n");
 		g_object_set(G_OBJECT(pipeline), "current-text", -1, NULL);
-	}
 #endif
 }
 
