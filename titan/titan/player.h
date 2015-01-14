@@ -32,6 +32,11 @@ GstElement *pipeline = NULL;
 unsigned long long m_gst_startpts = 0;
 CustomData data;
 GstElement *video_sink = NULL;
+struct stimerthread* subtitlethread = NULL;
+int buf_pos_ms = 0;
+int duration_ms = 0;
+int subtitleflag = 0;
+char *subtext = NULL;
 #endif
 
 //titan player
@@ -592,8 +597,52 @@ void playerafterendts()
 	playerstopts(2, 0);
 }
 
+#ifdef EPLAYER4
+void playersubtitle_thread()
+{
+	char* tmpstr = NULL;
+	struct skin* framebuffer = getscreen("framebuffer");
+	struct skin* subtitle = getscreen("subtitle");
+	char* bg = NULL;
+	int count = 0;
+	
+	subtitle->bgcol = -1;
+	
+	setnodeattr(subtitle, framebuffer, 0);
+	bg = savescreen(subtitle);
+	
+	while(subtitlethread->aktion != STOP)
+	{
+		if(duration_ms != 0)
+		{
+			count = 0;
+			changetext(subtitle, subtext);
+			count = duration_ms / 100;
+			drawscreen(subtitle, 0, 0);
+			while(count > 0 && subtitlethread->aktion != STOP)
+			{
+				usleep(100);
+				count = count - 1;
+			}
+			changetext(subtitle, " ");
+			drawscreen(subtitle, 0, 0);
+			duration_ms = 0;
+		}
+		else
+			usleep(100);
+	}
+	free(subtext); subtext = NULL;
+	restorescreen(bg, subtitle);
+	blitfb(0);
+	subtitlethread = NULL;
+}
+#endif
+
+#ifdef EPLAYER4
 void playersubtitleAvail(GstElement *subsink, GstBuffer *buffer, gpointer user_data)
 {
+	if(subtiltleflag == 0) return;
+	
 	gint64 buf_pos = GST_BUFFER_TIMESTAMP(buffer);
 	gint64 duration_ns = GST_BUFFER_DURATION(buffer);
 	
@@ -602,10 +651,31 @@ void playersubtitleAvail(GstElement *subsink, GstBuffer *buffer, gpointer user_d
 #else
 		size_t len = gst_buffer_get_size(buffer);
 #endif
+	
+	if(subtitlethread == NULL)
+		subtitlethread = addtimer(&playersubtitle_thread, START, 10000, 1, NULL, NULL, NULL);
+	
 	printf("BUFFER_TIMESTAMP: %lld - BUFFER_DURATION: %lld in ns\n", buf_pos, duration_ns);
 	printf("BUFFER_SIZE: %d\n", len);
 	printf("BUFFER_DATA: %s\n", GST_BUFFER_DATA(buffer));
+	
+	while(duration_ms != 0 && subtitlethread != NULL)
+	{
+		usleep(100);
+	}
+	if(subtext != NULL)
+		free(subtext);
+	subtext = malloc(len);
+	if(subtext == NULL)
+	{
+		err("no mem");
+		return NULL;
+	}		
+	sprintf(subtext, "%s", GST_BUFFER_DATA(buffer));
+	buf_pos_ms  = buf_pos / 1000000ULL;
+	duration_ms = duration_ns / 1000000ULL;
 }
+#endif
 
 //extern player
 int playerstart(char* file)
@@ -792,6 +862,7 @@ int playerstart(char* file)
 			g_signal_connect (subsink, "new-buffer", G_CALLBACK (playersubtitleAvail), NULL);
 			g_object_set (G_OBJECT (subsink), "caps", gst_caps_from_string("text/plain; text/x-plain; text/x-raw; text/x-pango-markup; video/x-dvd-subpicture; subpicture/x-pgs"), NULL);
 			g_object_set (G_OBJECT (pipeline), "text-sink", subsink, NULL);
+			subtitleflag = 1;
 			//g_object_set (G_OBJECT (pipeline), "current-text", -1, NULL);
 		}
 
@@ -817,7 +888,7 @@ int playerstart(char* file)
 		{
 			printf("found srt1: %s\n",srt_filename);
 			printf("found srt2: %s\n",g_filename_to_uri(srt_filename, NULL, NULL));
-			g_object_set(G_OBJECT (pipeline), "suburi", g_filename_to_uri(srt_filename, NULL, NULL), NULL);		
+			g_object_set(G_OBJECT (pipeline), "suburi", g_filename_to_uri(srt_filename, NULL, NULL), NULL);	
 		}
 // srt end	
 
@@ -1316,6 +1387,8 @@ int playerstop()
 #endif
 
 #ifdef EPLAYER4
+	if(subtitlethread != 0)
+		subtitlethread->aktion = STOP;
 	if(video_sink)
 	{
 		gst_object_unref (video_sink);
@@ -1944,7 +2017,10 @@ void playergetcurtrac(int type, int *CurTrackId, char** CurTrackEncoding, char**
 				g_object_get(G_OBJECT(pipeline), "current-audio", CurTrackId, NULL);
 				break;
 			case 2:
-				g_object_get(G_OBJECT(pipeline), "current-text", CurTrackId, NULL);
+				if(subtitleflag == 0)
+					*CurTrackId = -1;
+				else 
+					g_object_get(G_OBJECT(pipeline), "current-text", CurTrackId, NULL);
 				break;
 		}
 		if(CurTrackId != NULL) {
@@ -2093,7 +2169,8 @@ void playerchangesubtitletrack(int num)
 #ifdef EPLAYER4
 	printf("player: set subtitle: %d\n", num);
 	if(pipeline != NULL)
-		g_object_set(G_OBJECT(pipeline), "current-text", num, NULL);	
+		g_object_set(G_OBJECT(pipeline), "current-text", num, NULL);
+	subtitleflag = 1;	
 #endif
 }
 
@@ -2116,8 +2193,11 @@ void playerstopsubtitletrack()
 
 #ifdef EPLAYER4
 	printf("player: stop subtitle\n");
-	if(pipeline != NULL)
-		g_object_set(G_OBJECT(pipeline), "current-text", -1, NULL);
+	subtitleflag = 0;
+	//if(pipeline != NULL)
+	//	g_object_set(G_OBJECT(pipeline), "current-text", -1, NULL);
+	if(subtitlethread != NULL)
+		subtitlethread->aktion = STOP;
 #endif
 }
 
