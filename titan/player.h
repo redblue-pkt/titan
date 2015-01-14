@@ -602,7 +602,7 @@ void playersubtitle_thread()
 {
 	char* tmpstr = NULL;
 	struct skin* framebuffer = getscreen("framebuffer");
-	struct skin* subtitle = getscreen("subtitle");
+	struct skin* subtitle = getscreen("gstsubtitle");
 	char* bg = NULL;
 	int count = 0;
 	
