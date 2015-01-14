@@ -620,7 +620,7 @@ void playersubtitle_thread()
 			drawscreen(subtitle, 0, 0);
 			while(count > 0 && subtitlethread->aktion != STOP)
 			{
-				usleep(100);
+				usleep(100000);
 				count = count - 1;
 			}
 			changetext(subtitle, " ");
@@ -628,7 +628,7 @@ void playersubtitle_thread()
 			duration_ms = 0;
 		}
 		else
-			usleep(100);
+			usleep(100000);
 	}
 	free(subtext); subtext = NULL;
 	restorescreen(bg, subtitle);
@@ -660,11 +660,11 @@ void playersubtitleAvail(GstElement *subsink, GstBuffer *buffer, gpointer user_d
 	
 	while(duration_ms != 0 && subtitlethread != NULL)
 	{
-		usleep(100);
+		usleep(100000);
 	}
 	if(subtext != NULL)
 		free(subtext);
-	subtext = malloc(len);
+	subtext = malloc(len+10);
 	if(subtext == NULL)
 	{
 		err("no mem");
