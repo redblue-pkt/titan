@@ -482,7 +482,7 @@ char *get_ip(char *host)
 	{
 		free(ip); ip = NULL;
 		free(buf); buf = NULL;
-		//workaround: if resolv.conf is changed, titan muﬂt stopped, so gethostbyname read resolv.conf new
+		//workaround: if resolv.conf is changed, titan must stopped, so gethostbyname read resolv.conf new
 		//the external tool read resolv.conf on each start
 		err("can't get ip, test with extern tool (%s)", host);
 
