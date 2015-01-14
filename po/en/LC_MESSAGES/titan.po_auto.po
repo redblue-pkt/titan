@@ -54,7 +54,7 @@ msgstr ""
 #: newsletter.h:292 novamov.h:35 novamov.h:80 nowvideo.h:44 nowvideo.h:99
 #: nowvideo.h:105 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:84 played.h:90 played.h:102 played.h:114 played.h:171
-#: player.h:102 play.h:497 play.h:614 play.h:1271 play.h:1277 play.h:1286
+#: player.h:107 play.h:497 play.h:614 play.h:1271 play.h:1277 play.h:1286
 #: play.h:1287 play.h:1488 play.h:1697 play.h:1708 plugins_dlna_skin.xml.h:8
 #: plugins_facebook_skin.xml.h:5 plugins_mboxinfo_skin.xml.h:2
 #: plugins_mc_skin.xml.h:38 plugins_optimize_skin.xml.h:3
@@ -159,7 +159,7 @@ msgstr ""
 #: network.h:884 network.h:906 newsletter.h:252 newsletter.h:292 novamov.h:35
 #: novamov.h:80 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105 panel_main.h:29
 #: panel_main.h:135 panel_settings_wizard.h:6 played.h:30 played.h:84
-#: played.h:90 played.h:102 played.h:114 played.h:171 player.h:102 play.h:497
+#: played.h:90 played.h:102 played.h:114 played.h:171 player.h:107 play.h:497
 #: play.h:614 play.h:1271 play.h:1277 play.h:1286 play.h:1287 play.h:1488
 #: play.h:1697 play.h:1708 plugins_autotimer_skin.xml.h:7
 #: plugins_callmonitor1_skin.xml.h:11 plugins_catcatch_skin.xml.h:4
@@ -587,7 +587,7 @@ msgstr ""
 #: network.h:785 network.h:793 network.h:819 network.h:823 network.h:877
 #: novamov.h:35 novamov.h:80 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105
 #: panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6 played.h:30
-#: played.h:84 played.h:90 played.h:102 played.h:114 played.h:171 player.h:102
+#: played.h:84 played.h:90 played.h:102 played.h:114 played.h:171 player.h:107
 #: play.h:614 play.h:1286 play.h:1488 play.h:1697 play.h:1708 possetup.h:98
 #: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
 #: promptfile.h:46 promptfile.h:94 promptfile.h:136 putlocker.h:32
@@ -3199,7 +3199,7 @@ msgstr ""
 "A VIDEO_TS path was found.\n"
 "Start playback with the DVD player?"
 
-#: mc_videoplayer.h:904 player.h:102
+#: mc_videoplayer.h:904 player.h:107
 msgid "Start at last position ?"
 msgstr "Resume from last position?"
 
@@ -3987,7 +3987,7 @@ msgstr "Pip zap"
 msgid "This video has been deleted. We apologize for the inconvenience."
 msgstr ""
 
-#: player.h:1038
+#: player.h:1109
 msgid "Buffering Stream - Cancel with Exit"
 msgstr ""
 
