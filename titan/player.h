@@ -640,7 +640,7 @@ void playersubtitle_thread()
 #ifdef EPLAYER4
 void playersubtitleAvail(GstElement *subsink, GstBuffer *buffer, gpointer user_data)
 {
-	if(subtitleflag == 0) return;
+	if(subtitleflag == 0 || subtitleflag == 2) return;
 	
 	gint64 buf_pos = GST_BUFFER_TIMESTAMP(buffer);
 	gint64 duration_ns = GST_BUFFER_DURATION(buffer);
@@ -1359,6 +1359,8 @@ void playerplay()
 #ifdef EPLAYER4
 	if(pipeline)
 		gst_element_set_state(pipeline, GST_STATE_PLAYING);
+	if(subtitleflag == 2)
+		subtitleflag = 1;
 #endif
 }
 
@@ -1386,6 +1388,7 @@ int playerstop()
 #endif
 
 #ifdef EPLAYER4
+	subtitleflag = 0;
 	if(subtitlethread != 0)
 		subtitlethread->aktion = STOP;
 	if(video_sink)
@@ -1473,7 +1476,7 @@ void playerff(int speed)
 
 #ifdef EPLAYER4
 	gdouble rate = 0;
-	
+	subtitleflag = 2;
 	if (speed < 1) speed = 1;
 	if (speed > 7) speed = 7;
 
