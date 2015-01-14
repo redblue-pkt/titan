@@ -600,7 +600,6 @@ void playerafterendts()
 #ifdef EPLAYER4
 void playersubtitle_thread()
 {
-	char* tmpstr = NULL;
 	struct skin* framebuffer = getscreen("framebuffer");
 	struct skin* subtitle = getscreen("gstsubtitle");
 	char* bg = NULL;
@@ -641,7 +640,7 @@ void playersubtitle_thread()
 #ifdef EPLAYER4
 void playersubtitleAvail(GstElement *subsink, GstBuffer *buffer, gpointer user_data)
 {
-	if(subtiltleflag == 0) return;
+	if(subtitleflag == 0) return;
 	
 	gint64 buf_pos = GST_BUFFER_TIMESTAMP(buffer);
 	gint64 duration_ns = GST_BUFFER_DURATION(buffer);
