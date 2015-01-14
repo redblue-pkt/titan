@@ -1447,6 +1447,8 @@ void playercontinue()
 		if(status.playspeed != 0)
 			playersend_ff_fr_event(1);
 		gst_element_set_state(pipeline, GST_STATE_PLAYING);
+		if(subtitleflag == 2)
+			subtitleflag = 1;
 	}
 #endif
 }
