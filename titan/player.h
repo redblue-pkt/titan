@@ -668,7 +668,7 @@ void playersubtitleAvail(GstElement *subsink, GstBuffer *buffer, gpointer user_d
 	if(subtext == NULL)
 	{
 		err("no mem");
-		return NULL;
+		return;
 	}		
 	sprintf(subtext, "%s", GST_BUFFER_DATA(buffer));
 	buf_pos_ms  = buf_pos / 1000000ULL;
