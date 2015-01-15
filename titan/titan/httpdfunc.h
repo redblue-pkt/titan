@@ -3396,6 +3396,17 @@ char* webgetsysteminfo(int fmt)
 		buf = ostrcat(buf, "0", 1, 0);
 	else
 		buf = ostrcat(buf, "1", 1, 0);
+		
+  //transcode
+  buf = ostrcat(buf, "#", 1, 0);
+#ifdef MIPSEL
+	if(file_exist("/proc/stb/encoder") && getconfigint("web_trans_transcode", NULL) == 1)
+		buf = ostrcat(buf, "1", 1, 0);
+	else
+		buf = ostrcat(buf, "0", 1, 0);
+#else
+	buf = ostrcat(buf, "0", 1, 0);
+#endif
 
 	if(fmt == 0)
 	{
