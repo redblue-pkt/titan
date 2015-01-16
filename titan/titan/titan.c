@@ -647,6 +647,7 @@ int main(int argc, char *argv[])
 	ret = setac3(getconfig("av_ac3mode", NULL));
 #ifdef MIPSEL
 	ret = setaac(getconfig("av_aacmode", NULL));
+	ret = setwss(getconfig("av_wssmode", NULL));
 #endif
 	ret = setmode3d(getconfig("av_mode3d", NULL));
 	ret = setvfdbrightness(getconfigint("vfdbrightness", NULL));

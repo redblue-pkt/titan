@@ -3772,6 +3772,12 @@ int setwss(char* value)
 		if(ret == 0) addconfig("av_wssmode", value);
 		return ret;
 	}
+	else if(wssdev != NULL && value == NULL)
+	{
+		debug(100, "set %s to %s", wssdev, "auto");
+		ret = writesys(wssdev, "auto", 0);
+		return ret;
+	}
 
 	return 0;
 }
