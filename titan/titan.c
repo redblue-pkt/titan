@@ -649,6 +649,7 @@ int main(int argc, char *argv[])
 	ret = setaac(getconfig("av_aacmode", NULL));
 	ret = setwss(getconfig("av_wssmode", NULL));
 #endif
+	ret = setpolicy(getconfig("av_policy", NULL));
 	ret = setmode3d(getconfig("av_mode3d", NULL));
 	ret = setvfdbrightness(getconfigint("vfdbrightness", NULL));
 	ret = setaudiodelaybitstream(getconfig("audiodelaybitstream", NULL));
