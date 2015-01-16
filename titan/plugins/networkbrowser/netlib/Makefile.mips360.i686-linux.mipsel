@@ -4,8 +4,8 @@ OBJS = list.o nbtscan.o range.o showmount.o smbinfo.o statusq.o
 
 DEPS = $(patsubst %.o,%.d,$(OBJS))
 
-CC = $(HOME)/flashimg/BUILDGIT/checkout_mips360/builds/atemio/inihde/tmp/sysroots/i686-linux/usr/bin/mipsel-oe-linux/mipsel-oe-linux-gcc
-AR = $(HOME)/flashimg/BUILDGIT/checkout_mips360/builds/atemio/inihde/tmp/sysroots/i686-linux/usr/bin/mipsel-oe-linux/mipsel-oe-linux-ar
+CC = $(HOME)/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/i686-linux/usr/bin/mipsel-oe-linux/mipsel-oe-linux-gcc
+AR = $(HOME)/flashimg/BUILDGIT/checkout_mips360/builds/titannit/inihdp/tmp/sysroots/i686-linux/usr/bin/mipsel-oe-linux/mipsel-oe-linux-ar
 
 CFLAGS = -Os -Wall -fPIC -I.
 
