@@ -13,12 +13,12 @@ void screeninfobar()
 	debug(10, "get initial infobar2=%s", infobar2_sel);
 
 	if(infobar_sel == NULL) {
-		infobar_sel = ostrcat(infobar_sel, "infobar", 0, 0); // fallback to default
+		infobar_sel = ostrcat(infobar_sel, "infobar", 1, 0); // fallback to default
 		debug(10, "fallback to default, set infobar1=%s", infobar_sel);
 	}
 
 	if(infobar2_sel == NULL) {
-		infobar2_sel = ostrcat(infobar2_sel, "infobar2", 0, 0); // fallback to default
+		infobar2_sel = ostrcat(infobar2_sel, "infobar2", 1, 0); // fallback to default
 		debug(10, "fallback to default, set infobar2=%s", infobar2_sel);
 	}
 
@@ -28,8 +28,6 @@ void screeninfobar()
 	debug(10, "final infobar2=%s", infobar2_sel);
 	struct skin* infobar = infobar1;
 	struct skin* infobarm = infobar1;
-
-	//free(infobar_sel); infobar_sel=NULL;free(infobar2_sel); infobar2_sel=NULL;
 
 	struct skin* standbymenu = NULL;
 	char* tmpstr = NULL; char* tmpnr = NULL;

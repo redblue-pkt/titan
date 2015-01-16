@@ -1,10 +1,23 @@
 #ifndef ZAP_H
 #define ZAP_H
 
+char* getinfobar()
+{
+	char* tmpstr = ostrcat(getskinconfig("infobar_selection", NULL), NULL, 0, 0);
+	debug(10, "get initial infobar1=%s", tmpstr);
+
+	if(tmpstr == NULL) {
+		tmpstr = ostrcat(tmpstr, "infobar", 1, 0); // fallback to default
+		debug(10, "fallback to default, set infobar1=%s", tmpstr);
+	}
+
+	return tmpstr;
+}
+
 struct channel* nextprev(int zapdir, struct bouquet* node)
 {
 	int rcret = 0;
-	struct skin* infobar = getscreen("infobar");
+	struct skin* infobar = getscreen(getinfobar());
 	struct channel* tmpchnode = status.aktservice->channel;
 	struct bouquet* tmpnode = node, *lastnode = node;
 	int virtualzap = status.virtualzap * 1000;
@@ -87,7 +100,7 @@ int zapall(int zapdir)
 		node = status.pipservice->channel;
 		lastnode = status.pipservice->channel;
 	}
-	struct skin* infobar = getscreen("infobar");
+	struct skin* infobar = getscreen(getinfobar());
 	struct channel* tmpchnode = status.aktservice->channel;
 	int virtualzap = status.virtualzap * 1000;
 
@@ -203,7 +216,7 @@ int zapaz(int zapdir, char* aktblist)
 		node = status.pipservice->channel;
 		lastnode = status.pipservice->channel;
 	}
-	struct skin* infobar = getscreen("infobar");
+	struct skin* infobar = getscreen(getinfobar());
 	struct channel* tmpchnode = status.aktservice->channel;
 	int virtualzap = status.virtualzap * 1000;
 
@@ -293,7 +306,7 @@ int zapsat(int zapdir, char* aktblist)
 	}
 	struct sat* satnode = getsat(aktblist + 6);
 	struct transponder* tpnode = NULL;
-	struct skin* infobar = getscreen("infobar");
+	struct skin* infobar = getscreen(getinfobar());
 	struct channel* tmpchnode = status.aktservice->channel;
 	int virtualzap = status.virtualzap * 1000;
 
@@ -384,7 +397,7 @@ int zapprovider(int zapdir, char* aktblist)
 		lastnode = status.pipservice->channel;
 	}
 	struct provider* providernode = getproviderbyname(aktblist + 11);
-	struct skin* infobar = getscreen("infobar");
+	struct skin* infobar = getscreen(getinfobar());
 	struct channel* tmpchnode = status.aktservice->channel;
 	int virtualzap = status.virtualzap * 1000;
 
