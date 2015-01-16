@@ -20,7 +20,7 @@ msgstr ""
 #: filenuke.h:106 filenuke.h:118 filenuke.h:190 firedrive.h:33 firedrive.h:66
 #: firedrive.h:72 firedrive.h:122 firedrive.h:128 firedrive.h:138 flashx.h:26
 #: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:5663 global.h:6288 global.h:6357 global.h:6376 global.h:6551
+#: global.h:5669 global.h:6294 global.h:6363 global.h:6382 global.h:6557
 #: gmediarender.h:115 harddisk.h:350 harddisk.h:355 harddisk.h:382
 #: harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641 harddisk.h:675
 #: harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733 harddisk.h:793
@@ -85,8 +85,8 @@ msgstr ""
 #: system_backup_restore.h:95 system_update.h:257 system_update.h:263
 #: system_update.h:270 thefile.h:34 thefile.h:68 thefile.h:205 timeshift.h:113
 #: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
-#: titan.c:346 titan.c:355 titan.c:1005 titan.c:1014 titan.c:1142 titan.c:1163
-#: titan.c:1169 titan.c:1180 titan.c:1186 tithek.c:85 tithek_global.h:250
+#: titan.c:346 titan.c:355 titan.c:1007 titan.c:1016 titan.c:1144 titan.c:1165
+#: titan.c:1171 titan.c:1182 titan.c:1188 tithek.c:85 tithek_global.h:250
 #: tithek.h:670 tithek.h:1166 tithek.h:1227 tithek.h:1477 tithek.h:1499
 #: tithek.h:1515 tithek.h:2085 tithek.h:2112 tithek.h:2126 tithek.h:2136
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
@@ -125,7 +125,7 @@ msgstr ""
 #: filenuke.h:106 filenuke.h:118 filenuke.h:190 firedrive.h:33 firedrive.h:66
 #: firedrive.h:72 firedrive.h:122 firedrive.h:128 firedrive.h:138 flashx.h:26
 #: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:5663 global.h:6288 global.h:6357 global.h:6376 global.h:6551
+#: global.h:5669 global.h:6294 global.h:6363 global.h:6382 global.h:6557
 #: gmediarender.h:115 harddisk.h:350 harddisk.h:355 harddisk.h:382
 #: harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641 harddisk.h:675
 #: harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733 harddisk.h:793
@@ -200,9 +200,9 @@ msgstr ""
 #: system_backup_restore.h:88 system_backup_restore.h:95 system_update.h:257
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 timeshift.h:113 timeshift.h:161 timeshift.h:173
-#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1005
-#: titan.c:1014 titan.c:1142 titan.c:1163 titan.c:1169 titan.c:1180
-#: titan.c:1186 tithek.c:85 tithek_global.h:250 tithek.h:670 tithek.h:1166
+#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1007
+#: titan.c:1016 titan.c:1144 titan.c:1165 titan.c:1171 titan.c:1182
+#: titan.c:1188 tithek.c:85 tithek_global.h:250 tithek.h:670 tithek.h:1166
 #: tithek.h:1227 tithek.h:1477 tithek.h:1499 tithek.h:1515 tithek.h:2085
 #: tithek.h:2112 tithek.h:2126 tithek.h:2136 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:759 tmdb.h:922
@@ -556,8 +556,8 @@ msgstr ""
 #: filenuke.h:46 filenuke.h:94 filenuke.h:106 filenuke.h:118 filenuke.h:190
 #: firedrive.h:33 firedrive.h:66 firedrive.h:72 firedrive.h:122
 #: firedrive.h:128 firedrive.h:138 flashx.h:26 flashx.h:84 flashx.h:138
-#: flashx.h:195 flashx.h:233 flashx.h:270 global.h:5663 global.h:6288
-#: global.h:6357 global.h:6376 global.h:6551 gmediarender.h:115 harddisk.h:633
+#: flashx.h:195 flashx.h:233 flashx.h:270 global.h:5669 global.h:6294
+#: global.h:6363 global.h:6382 global.h:6557 gmediarender.h:115 harddisk.h:633
 #: harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731
 #: harddisk.h:733 harddisk.h:793 harddisk.h:812 harddisk.h:815 hbbtv.h:362
 #: hello.c:36 httpdfunc.h:1222 httpdfunc.h:5654 httpdfunc.h:6040
@@ -608,8 +608,8 @@ msgstr ""
 #: system_backup_restore.h:80 system_backup_restore.h:82 system_update.h:257
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 timeshift.h:113 timeshift.h:161 timeshift.h:173
-#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1142
-#: titan.c:1163 titan.c:1169 titan.c:1180 titan.c:1186 tithek.c:85
+#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1144
+#: titan.c:1165 titan.c:1171 titan.c:1182 titan.c:1188 tithek.c:85
 #: tithek_global.h:250 tithek.h:670 tithek.h:1166 tithek.h:1227 tithek.h:1477
 #: tithek.h:1499 tithek.h:2085 tithek.h:2112 tithek.h:2126 tithek.h:2136
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
@@ -746,7 +746,7 @@ msgstr ""
 "This Plugin is only for Betatesters and could change\n"
 "your settings. Do you want to run the application?"
 
-#: bgdownload.h:93 bgdownload.h:154 global.h:6791 httpdfunc.h:2793
+#: bgdownload.h:93 bgdownload.h:154 global.h:6797 httpdfunc.h:2793
 #: httpdfunc.h:2805 httpdfunc.h:5437 httpdfunc.h:5483 hwtest.h:478
 #: moduleconfig.h:345 skin_default_skin.xml.h:741 skinselector.h:138
 #: stream.h:22 transponder.h:122 transponder.h:158 transponder.h:194
@@ -1740,95 +1740,95 @@ msgstr ""
 msgid "This file is private and only viewable by the owner."
 msgstr ""
 
-#: global.h:5663 keyactions.h:205
+#: global.h:5669 keyactions.h:205
 msgid "ERROR cant read res"
 msgstr "ERROR: can't read resolution"
 
-#: global.h:5888 rectimer.h:1080 skin_default_skin.xml.h:416
+#: global.h:5894 rectimer.h:1080 skin_default_skin.xml.h:416
 msgid "Monday"
 msgstr ""
 
-#: global.h:5889 rectimer.h:1081 skin_default_skin.xml.h:718
+#: global.h:5895 rectimer.h:1081 skin_default_skin.xml.h:718
 msgid "Tuesday"
 msgstr ""
 
-#: global.h:5890 rectimer.h:1082 skin_default_skin.xml.h:775
+#: global.h:5896 rectimer.h:1082 skin_default_skin.xml.h:775
 msgid "Wednesday"
 msgstr ""
 
-#: global.h:5891 rectimer.h:1083 skin_default_skin.xml.h:687
+#: global.h:5897 rectimer.h:1083 skin_default_skin.xml.h:687
 msgid "Thursday"
 msgstr ""
 
-#: global.h:5892 rectimer.h:1084 skin_default_skin.xml.h:255
+#: global.h:5898 rectimer.h:1084 skin_default_skin.xml.h:255
 msgid "Friday"
 msgstr ""
 
-#: global.h:5893 rectimer.h:1085 skin_default_skin.xml.h:567
+#: global.h:5899 rectimer.h:1085 skin_default_skin.xml.h:567
 msgid "Saturday"
 msgstr ""
 
-#: global.h:5894 rectimer.h:1086 skin_default_skin.xml.h:661
+#: global.h:5900 rectimer.h:1086 skin_default_skin.xml.h:661
 msgid "Sunday"
 msgstr ""
 
-#: global.h:5898
+#: global.h:5904
 msgid "Mon"
 msgstr ""
 
-#: global.h:5899
+#: global.h:5905
 msgid "Tue"
 msgstr ""
 
-#: global.h:5900
+#: global.h:5906
 msgid "Wed"
 msgstr ""
 
-#: global.h:5901
+#: global.h:5907
 msgid "Thu"
 msgstr ""
 
-#: global.h:5902
+#: global.h:5908
 msgid "Fri"
 msgstr ""
 
-#: global.h:5903
+#: global.h:5909
 msgid "Sat"
 msgstr ""
 
-#: global.h:5904
+#: global.h:5910
 msgid "Sun"
 msgstr ""
 
-#: global.h:6164
+#: global.h:6170
 msgid "Tuner "
 msgstr "Tuner"
 
-#: global.h:6173
+#: global.h:6179
 msgid "Multituner adjustable"
 msgstr ""
 
-#: global.h:6223
+#: global.h:6229
 msgid "Create Transponder (Sat)"
 msgstr ""
 
-#: global.h:6224
+#: global.h:6230
 msgid "Create Transponder (Cable)"
 msgstr ""
 
-#: global.h:6225
+#: global.h:6231
 msgid "Create Transponder (Terrestrial)"
 msgstr ""
 
-#: global.h:6226
+#: global.h:6232
 msgid "Create Transponder (All)"
 msgstr ""
 
-#: global.h:6228
+#: global.h:6234
 msgid "Select Your Serach Modus"
 msgstr "Select your search mode"
 
-#: global.h:6288
+#: global.h:6294
 msgid ""
 "Transponder/Satellite Convert done, please use channel search on next Boot.\n"
 "Your System will reboot !"
@@ -1837,15 +1837,15 @@ msgstr ""
 "Please perform a new channel scan after System reboot.\n"
 "Your Receiver will now reboot!"
 
-#: global.h:6352
+#: global.h:6358
 msgid "Error: Transponder Source file not found"
 msgstr "ERROR: No transponder source File fond!"
 
-#: global.h:6374
+#: global.h:6380
 msgid "Error: Transponder Source file no data"
 msgstr "ERROR: The transponder file is empty!"
 
-#: global.h:6551
+#: global.h:6557
 msgid ""
 "Standard favorites have been successfully applied.\n"
 "Your System will reboot !"
@@ -1853,27 +1853,27 @@ msgstr ""
 "Standard favourites have been imported.\n"
 "The Receiver will reboot now."
 
-#: global.h:6766
+#: global.h:6772
 msgid "Image"
 msgstr ""
 
-#: global.h:6769
+#: global.h:6775
 msgid "Version"
 msgstr ""
 
-#: global.h:6773 httpdfunc.h:5543 skin_default_skin.xml.h:351
+#: global.h:6779 httpdfunc.h:5543 skin_default_skin.xml.h:351
 msgid "Installed:"
 msgstr ""
 
-#: global.h:6777
+#: global.h:6783
 msgid "Copyright"
 msgstr "© Copyright"
 
-#: global.h:6786 skin_default_skin.xml.h:719
+#: global.h:6792 skin_default_skin.xml.h:719
 msgid "Tuner"
 msgstr ""
 
-#: global.h:6793 skin_default_skin.xml.h:725
+#: global.h:6799 skin_default_skin.xml.h:725
 msgid "Tunertype"
 msgstr ""
 
@@ -2801,7 +2801,7 @@ msgstr ""
 msgid "Email  \t\tinfo@atemio.de"
 msgstr ""
 
-#: info.h:27 plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9 titan.c:1014
+#: info.h:27 plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9 titan.c:1016
 #: webif_index.atemio510.h:15 webif_index.atemio5200.h:15
 #: webif_index.atemio5200.h:43 webif_index.atemio5200.h:99
 #: webif_index.atemio6000.h:15 webif_index.atemio6100.h:15
@@ -9336,59 +9336,59 @@ msgstr ""
 "Found a active download\n"
 "Really shutdown?"
 
-#: titan.c:817
+#: titan.c:819
 msgid "Error: open rc device !!"
 msgstr "ERROR: No Remote Control Found!"
 
-#: titan.c:823
+#: titan.c:825
 msgid "Error: no frontend device found !!"
 msgstr "ERROR: No Frontend Device Found!"
 
-#: titan.c:829
+#: titan.c:831
 msgid "Error: no demux device found !!"
 msgstr "ERROR: No Demux Device Found!"
 
-#: titan.c:835
+#: titan.c:837
 msgid "Error: no video device found !!"
 msgstr "ERROR: No Video Device Found!"
 
-#: titan.c:841
+#: titan.c:843
 msgid "Error: no audio device found !!"
 msgstr "ERROR: No Audio Device Found!"
 
-#: titan.c:864
+#: titan.c:866
 msgid "Error: skin not found !!"
 msgstr "ERROR: No Skin Found!"
 
-#: titan.c:956
+#: titan.c:958
 msgid "RemoteControl Old Version"
 msgstr "Remote Control old Version"
 
-#: titan.c:957
+#: titan.c:959
 msgid "RemoteControl Long Version"
 msgstr "Remote Control Long Version"
 
-#: titan.c:964
+#: titan.c:966
 msgid "Select Your Remote Control"
 msgstr "Remote Control Selection"
 
-#: titan.c:964
+#: titan.c:966
 msgid "Choose your Remotecontrol Model from the following list"
 msgstr "Choose your Remote control Model from the following list"
 
-#: titan.c:1005
+#: titan.c:1007
 msgid "First Wizzard"
 msgstr "First Installation Wizzard"
 
-#: titan.c:1005
+#: titan.c:1007
 msgid "Settings OK ?"
 msgstr "Save Settings?"
 
-#: titan.c:1142
+#: titan.c:1144
 msgid "Receiver successful unlocked"
 msgstr "Your Receiver was unlocked successfully."
 
-#: titan.c:1163
+#: titan.c:1165
 msgid ""
 "Free space in /var to little!\n"
 "This can make problems!"
@@ -9396,7 +9396,7 @@ msgstr ""
 "Insufficient space in /var!\n"
 "This will cause severe problems!"
 
-#: titan.c:1169
+#: titan.c:1171
 msgid ""
 "/var not writeable!\n"
 "Repair it?"
@@ -9404,7 +9404,7 @@ msgstr ""
 "/var is not writeable!\n"
 "Do you want to try and repair it?"
 
-#: titan.c:1180
+#: titan.c:1182
 msgid ""
 "Free space in /mnt to little!\n"
 "This can make problems!"
@@ -9412,7 +9412,7 @@ msgstr ""
 "Insufficient space in /mnt!\n"
 "This will cause severe problems!"
 
-#: titan.c:1186
+#: titan.c:1188
 msgid ""
 "/mnt not writeable!\n"
 "Repair it?"
@@ -9420,11 +9420,11 @@ msgstr ""
 "/mnt is not writeable!\n"
 "Do you want to try and repair it?"
 
-#: titan.c:1235
+#: titan.c:1237
 msgid "Unknown Error."
 msgstr ""
 
-#: titan.c:1237
+#: titan.c:1239
 msgid "Automatic stop in 10 seconds."
 msgstr "Automatic Stop in 10 Seconds."
 
