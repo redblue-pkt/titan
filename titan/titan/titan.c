@@ -639,8 +639,8 @@ int main(int argc, char *argv[])
 	system(getconfig("skriptbeforetv", NULL));
 	//ret = setcecstandby(0); --- > jetzt in checkboxstart
 	ret = setvideomode(getconfig("av_videomode", NULL), 0);
-	ret = setpolicy(getconfig("av_policy", NULL));
 	ret = setaspect(getconfig("av_aspect", NULL));
+	ret = setpolicy(getconfig("av_policy", NULL));
 	ret = setcolorformat(getconfig("av_colorformat", NULL), 0);
 	ret = setcolorformat(getconfig("av_colorformatscart", NULL), 1);
 	ret = setaudiosource(getconfig("av_audiosource", NULL));
