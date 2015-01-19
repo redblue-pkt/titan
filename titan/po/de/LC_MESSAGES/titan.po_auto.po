@@ -3043,7 +3043,7 @@ msgstr ""
 "Project-Id-Version: TitanNit 1.59\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-07 10:44+0100\n"
-"PO-Revision-Date: 2015-01-11 21:36+0100\n"
+"PO-Revision-Date: 2015-01-20 00:25+0100\n"
 "Last-Translator: Bulldog <_Bulldog@aaf.info>\n"
 "Language-Team: German <_obiwan_@web.de>\n"
 "Language: de\n"
@@ -10047,56 +10047,56 @@ msgstr "Position"
 
 #: tpk_description.h:1
 msgid "AAF MediaCenter the best multimedia Player on sh4."
-msgstr ""
+msgstr "AAF Mediacenter - Multimedia Player"
 
 #: tpk_description.h:2
 msgid ""
 "A collection of really nice folder icons for MediaCenter Videoplayer "
 "Coverview!"
-msgstr ""
+msgstr "Sammlung Ordner Bilder für den Mediaplayer"
 
 #: tpk_description.h:3
 msgid "all: test Settings Astra 19.2 all transponder"
-msgstr ""
+msgstr "Test Senderlisten für Astra 19.2 inklusive aller Transponder"
 
 #: tpk_description.h:4
 msgid "Alternative blue skin for Pearl LCD "
-msgstr ""
+msgstr "Alternativer blauer Skin für Pearl LCD"
 
 #: tpk_description.h:5
 msgid "Alternative skin for Pearl LCD"
-msgstr ""
+msgstr "Alternativer Skin für Pearl LCD"
 
 #: tpk_description.h:6
 msgid "Alternative skin for Pearl LCD Atemio style"
-msgstr ""
+msgstr "Pearl LCD Skin Atemio Style"
 
 #: tpk_description.h:7
 msgid "Alternative skin for Pearl LCD big/black"
-msgstr ""
+msgstr "Pearl LCD Skin groß/schwarz"
 
 #: tpk_description.h:8
 msgid "Alternative skin for Pearl LCD MRP style"
-msgstr ""
+msgstr "Pearl LCD Skin MRP Style"
 
 #: tpk_description.h:9
 msgid ""
 "Alternative skin for Pearl LCD - X-Light picons must be installed separately"
-msgstr ""
+msgstr "Pearl LCD Skin - X- Senderlogos müßen separat installiert werden"
 
 #: tpk_description.h:10
 msgid ""
 "Alternative skin for Samsung LCD - w/o picons (must be installed separately)"
-msgstr ""
+msgstr "Samsung LCD Skin - w/o Senderlogos müßen separat installiert werden"
 
 #: tpk_description.h:11
 msgid ""
 "Alternative skin for Samsung LCD - w/o Picons (must be installed separately)"
-msgstr ""
+msgstr "Samsung LCD Skin - w/o Senderlogos müßen separat installiert werden"
 
 #: tpk_description.h:12
 msgid "Astra 19.2e 23.5e Hotbird 13.0e Thor 0.8w KabelDeutschland (andy)"
-msgstr ""
+msgstr "Senderlisten für Hotbird 13.0, Astra 29.2 und 23.5 sowie Kabel Deutschland bei andy"
 
 #: tpk_description.h:13
 msgid "Automatisch Timer setzen"
@@ -10104,123 +10104,123 @@ msgstr ""
 
 #: tpk_description.h:14
 msgid "Black 3D Picons Astra 19.2"
-msgstr ""
+msgstr "Schwarze 3D Senderlogos für Astra 19.2 Ost"
 
 #: tpk_description.h:15
 msgid "Black 3D Picons - Astra 23.5E."
-msgstr ""
+msgstr "Schwarze 3D Senderlogos für Astra 23.5 Ost"
 
 #: tpk_description.h:16
 msgid "Black 3D Picons - Hotbird 13.0E."
-msgstr ""
+msgstr "Schwarze 3D Senderlogos für Hotbird 13.0 Ost"
 
 #: tpk_description.h:17
 msgid "Bootlogo 'Bikergirl'"
-msgstr ""
+msgstr "Startbild 'Bikergirl'"
 
 #: tpk_description.h:18
 msgid "Bootlogo 'Blueskull'"
-msgstr ""
+msgstr "Startbild 'Blueskull'"
 
 #: tpk_description.h:19
 msgid "Bootlogo 'Cityflash'"
-msgstr ""
+msgstr "Startbild 'Cityflash'"
 
 #: tpk_description.h:20
 msgid "Bootlogo 'Enigma Linux'"
-msgstr ""
+msgstr "Startbild 'Enigma Linux'"
 
 #: tpk_description.h:21
 msgid "Bootlogo 'Fantasygirl'"
-msgstr ""
+msgstr "Startbild 'Fantasygirl'"
 
 #: tpk_description.h:22
 msgid "Bootlogo 'Fantasygirl 2'"
-msgstr ""
+msgstr "Startbild 'Fantasygirl 2'"
 
 #: tpk_description.h:23
 msgid "Bootlogo 'Firelady'"
-msgstr ""
+msgstr "Startbild 'Firelady'"
 
 #: tpk_description.h:24
 msgid "Bootlogo 'Fireskull'"
-msgstr ""
+msgstr "Startbild 'Fireskull'"
 
 #: tpk_description.h:25
 msgid "Bootlogo 'Footballgirls'"
-msgstr ""
+msgstr "Startbild 'Footballgirls'"
 
 #: tpk_description.h:26
 msgid "Bootlogo 'Ghostrider'"
-msgstr ""
+msgstr "Startbild 'Ghostrider'"
 
 #: tpk_description.h:27
 msgid "Bootlogo 'Giantgirl'"
-msgstr ""
+msgstr "Startbild 'Giantgirl'"
 
 #: tpk_description.h:28
 msgid "Bootlogo 'Ice Age Scrap likes UFS910'"
-msgstr ""
+msgstr "Startbild 'Ice Age'"
 
 #: tpk_description.h:29
 msgid "Bootlogo 'Linuxgirl'"
-msgstr ""
+msgstr "Startbild 'Linuxgirl'"
 
 #: tpk_description.h:30
 msgid "Bootlogo 'Planets'"
-msgstr ""
+msgstr "Startbild 'Planets'"
 
 #: tpk_description.h:31
 msgid "Bootlogo 'The Grim Reaper'"
-msgstr ""
+msgstr "Startbild 'Grim Reaper'"
 
 #: tpk_description.h:32
 msgid "Bootlogo 'TitanNit Blood'"
-msgstr ""
+msgstr "Startbild 'TitanNit Blood'"
 
 #: tpk_description.h:33
 msgid "Bootlogo 'TitanNit Design 1'"
-msgstr ""
+msgstr "Startbild 'TitanNit 1'"
 
 #: tpk_description.h:34
 msgid "Bootlogo 'TitanNit Design 3'"
-msgstr ""
+msgstr "Startbild 'TitanNit 3'"
 
 #: tpk_description.h:35
 msgid "Bootlogo 'TitanNit Design 5'"
-msgstr ""
+msgstr "Startbild 'TitanNit 5'"
 
 #: tpk_description.h:36
 msgid "Bootlogo 'TitanNit_on_Fire'"
-msgstr ""
+msgstr "Startbild 'TitanNit on Fire'"
 
 #: tpk_description.h:37
 msgid "Bootlogo 'Zombie'"
-msgstr ""
+msgstr "Startbild 'Zombie'"
 
 #: tpk_description.h:38
 msgid "Cable: default Settings Kabel Deutschland"
-msgstr ""
+msgstr "Kabel Senderlisten - Kabel Deutschland"
 
 #: tpk_description.h:39
 msgid "Cable: Kabel Deutschland UH-Kreis"
-msgstr ""
+msgstr "Kabel Senderlisten - Kabel Deutschland UH-Kreis"
 
 #: tpk_description.h:40
 msgid "Cable: Kabel Primacom"
-msgstr ""
+msgstr "Kabel Senderlisten - Kabel Primacom"
 
 #: tpk_description.h:41
 msgid "Cable: sofatester Kabel BW"
-msgstr ""
+msgstr "Kabel Senderlisten - Kabel BW (Sofatester)"
 
 #: tpk_description.h:42
 msgid "Cable: Unitymedia2"
-msgstr ""
+msgstr "Kabel Senderlisten - Unitymedia 2"
 
 #: tpk_description.h:43
 msgid "Callmonitor Plugin"
-msgstr ""
+msgstr "Anrufmonitor"
 
 #: tpk_description.h:44 tpk_showname.h:14
 msgid "camd3"
@@ -10260,47 +10260,47 @@ msgstr ""
 
 #: tpk_description.h:53
 msgid "cut record files"
-msgstr ""
+msgstr "Schnitt Erweiterung für Aufnahmen"
 
 #: tpk_description.h:54
 msgid "Default Font "
-msgstr ""
+msgstr "Standard Schrift"
 
 #: tpk_description.h:55
 msgid "Default mod by maenne79"
-msgstr ""
+msgstr "Modifizierter Standard Skin (maenne79)"
 
 #: tpk_description.h:56
 msgid "Default Skin"
-msgstr ""
+msgstr "Standard Skin"
 
 #: tpk_description.h:57
 msgid "Default skin without MiniTV"
-msgstr ""
+msgstr "Standard Skin ohne MiniTV"
 
 #: tpk_description.h:58
 msgid "Default skin without MiniTV mod by maenne79"
-msgstr ""
+msgstr "Modifizierter Standard Skin ohne MiniTV (maenne79)"
 
 #: tpk_description.h:59
 msgid "Digital clock blue - Samsung LCD Skin Channel"
-msgstr ""
+msgstr "Digitale blaue Uhr - Samsung LCD"
 
 #: tpk_description.h:60
 msgid "dlna Medien Server (upnp)"
-msgstr ""
+msgstr "DLNA Medien Server (UPNP)"
 
 #: tpk_description.h:61
 msgid "DTS-Downmix firmware "
-msgstr ""
+msgstr "DTS-wandler"
 
 #: tpk_description.h:62
 msgid "dvdplayer plugin."
-msgstr ""
+msgstr "DVD-Abspiel Erweiterung"
 
 #: tpk_description.h:63
 msgid "DVD-Player plugin"
-msgstr ""
+msgstr "DVD-Abspiel Erweiterung"
 
 #: tpk_description.h:64
 msgid ""
@@ -10310,146 +10310,146 @@ msgstr ""
 
 #: tpk_description.h:65
 msgid "Emu Camd3 v3.902 for your box"
-msgstr ""
+msgstr "camd3 v3.902 Softcam"
 
 #: tpk_description.h:66
 msgid "Emu MBox v0.6 build 0010 for your box"
-msgstr ""
+msgstr "MBox v0.6 Softcam"
 
 #: tpk_description.h:67
 msgid "Emu MGCamd v1.35 for your box"
-msgstr ""
+msgstr "MGCamd v1.35 Softcam"
 
 #: tpk_description.h:68
 msgid "Emu MGCamd v1.38a and all Configs"
-msgstr ""
+msgstr "MGCamd v1.38a Softcam"
 
 #: tpk_description.h:69
 msgid "Emu scam 3.53 for your box"
-msgstr ""
+msgstr "scam 3.53 Softcam"
 
 #: tpk_description.h:70
 msgid "Emu scam 3.59 for your box"
-msgstr ""
+msgstr "scam 3.59 Softcam"
 
 #: tpk_description.h:71
 msgid "Emu scam 3.60 for your box"
-msgstr ""
+msgstr "scam 3.60 Softcam"
 
 #: tpk_description.h:72
 msgid "Emu vizcam 1.04 for your box"
-msgstr ""
+msgstr "vizcam 1.04 Softcam"
 
 #: tpk_description.h:73
 msgid ""
 "Expert Version of OScam 2xSlot intern + 1xUSB (blocked EMM for V13 and V14)"
-msgstr ""
+msgstr "oscam Expert für 2x Intern und 1xUSB (EMM geblockt für V13 und V14 Karten"
 
 #: tpk_description.h:74
 msgid "extended config Panel"
-msgstr ""
+msgstr "Erweitertes Einstellungs Menü"
 
 #: tpk_description.h:75
 msgid "filemanager"
-msgstr ""
+msgstr "Datei Manager"
 
 #: tpk_description.h:76
 msgid "first titan game"
-msgstr ""
+msgstr "Ein kleines titan Spiel"
 
 #: tpk_description.h:77
 msgid "Font 'Action Man Italic' "
-msgstr ""
+msgstr "Schrift 'Action Man Italic'"
 
 #: tpk_description.h:78
 msgid "Font 'Alpha Romanie G98'"
-msgstr ""
+msgstr "Schrift 'Alpha Romanie G98'"
 
 #: tpk_description.h:79
 msgid "Font 'Croissant' "
-msgstr ""
+msgstr "Schrift 'Croissant'"
 
 #: tpk_description.h:80
 msgid "Font 'Digiface Regular' "
-msgstr ""
+msgstr "Schrift 'Digiface Regular'"
 
 #: tpk_description.h:81
 msgid "Font 'Goodtime'"
-msgstr ""
+msgstr "Schrift 'Goodtime'"
 
 #: tpk_description.h:82
 msgid "Font 'I Hate Comic Sans'"
-msgstr ""
+msgstr "Schrift 'I hate comic Sans'"
 
 #: tpk_description.h:83
 msgid "Font 'Lydian Bolt Italic BT' "
-msgstr ""
+msgstr "Schrift 'Lydian old Italic BT'"
 
 #: tpk_description.h:84
 msgid "Font 'Mighty Zeo Caps'"
-msgstr ""
+msgstr "Schrift 'Mighty Zeo Caps'"
 
 #: tpk_description.h:85
 msgid "Font 'Monoglyceride DemiBold'"
-msgstr ""
+msgstr "Schrift 'Monoglyceride Demi Bold'"
 
 #: tpk_description.h:86
 msgid "Font 'New Gothic BT'"
-msgstr ""
+msgstr "Schrift 'New Gothic BT'"
 
 #: tpk_description.h:87
 msgid "Font 'Paddington Bold'"
-msgstr ""
+msgstr "Schrift 'Paddington Bold'"
 
 #: tpk_description.h:88
 msgid "Font 'Plover Bold'"
-msgstr ""
+msgstr "Schrift 'Plover Bold'"
 
 #: tpk_description.h:89
 msgid ""
 "gbox 800 with autoident for card hd+ and skyde including all necessary "
 "config files."
-msgstr ""
+msgstr "gbox 800 inklusive aller Konfigurationsdateien für HD+ und Sky Deutschland Karten"
 
 #: tpk_description.h:90
 msgid ""
 "gbox 804 with autoident for card hd+ and skyde including all necessary "
 "config files."
-msgstr ""
+msgstr "gbox 804 inklusive aller Konfigurationsdateien für HD+ und Sky Deutschland Karten"
 
 #: tpk_description.h:91
 msgid ""
 "gbox 806 with autoident for card hd+ and skyde including all necessary "
 "config files."
-msgstr ""
+msgstr "gbox 806 inklusive aller Konfigurationsdateien für HD+ und Sky Deutschland Karten"
 
 #: tpk_description.h:92
 msgid "Gold Picons Astra 19.2"
-msgstr ""
+msgstr "Senderlogos Gold für Astra 19.2 Ost"
 
 #: tpk_description.h:93
 msgid "Gold Picons - Astra 23.5E."
-msgstr ""
+msgstr "Senderlogos Gold für Astra 23.5 Ost"
 
 #: tpk_description.h:94
 msgid "Gold Picons - Astra 28.2E."
-msgstr ""
+msgstr "Senderlogos Gold für Astra 28.2 Ost"
 
 #: tpk_description.h:95
 msgid "Gold Picons - Hotbird 13.0E."
-msgstr ""
+msgstr "Senderlogos Gold für Hotbird 13.0 Ost"
 
 #: tpk_description.h:96
 msgid "ImdBapi Info Plugin"
-msgstr ""
+msgstr "ImdBapi Information"
 
 #: tpk_description.h:97
 msgid "ImdB Info Plugin"
-msgstr ""
+msgstr "ImdB Information"
 
 #: tpk_description.h:98
 msgid "IncubusCamd_1.22 including all necessary config files."
-msgstr ""
+msgstr "IncubusCamd v1.22 inklusive aller notwendigen Konfigurationsdateien"
 
 #: tpk_description.h:99
 msgid "IP-Kamera zB. Firma INSTAR"
@@ -10457,23 +10457,23 @@ msgstr ""
 
 #: tpk_description.h:100
 msgid "Kabel BW transparent Picons"
-msgstr ""
+msgstr "Kabel BW transparete Senderlogos"
 
 #: tpk_description.h:101
 msgid "Kabel Deutschland Picons black3d"
-msgstr ""
+msgstr "Kabel Deutschland schwarze 3D Senderlogos"
 
 #: tpk_description.h:102
 msgid "Kabel Deutschland transparent Picons"
-msgstr ""
+msgstr "Kabel Deutschland transparente Senderlogos"
 
 #: tpk_description.h:103
 msgid "Kabelplus ORF | 16.12.2014 (Olbord)"
-msgstr ""
+msgstr "Kabel Plus ORF - Stand 16.12.2014 (olbord)"
 
 #: tpk_description.h:104
 msgid "Lib extension for network (upnpfs/smbfs/ftpfs/rarfs)"
-msgstr ""
+msgstr "Netzwerktreiber (UPNPFS / SMBFGS / FTPFS / RARFS)"
 
 #: tpk_description.h:105
 msgid "MegaStyle blue Mini TV Skin"
