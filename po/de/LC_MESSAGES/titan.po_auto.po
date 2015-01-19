@@ -10096,7 +10096,9 @@ msgstr "Samsung LCD Skin - w/o Senderlogos müßen separat installiert werden"
 
 #: tpk_description.h:12
 msgid "Astra 19.2e 23.5e Hotbird 13.0e Thor 0.8w KabelDeutschland (andy)"
-msgstr "Senderlisten für Hotbird 13.0, Astra 29.2 und 23.5 sowie Kabel Deutschland bei andy"
+msgstr ""
+"Senderlisten für Hotbird 13.0, Astra 29.2 und 23.5 sowie Kabel Deutschland "
+"bei andy"
 
 #: tpk_description.h:13
 msgid "Automatisch Timer setzen"
@@ -10343,7 +10345,8 @@ msgstr "vizcam 1.04 Softcam"
 #: tpk_description.h:73
 msgid ""
 "Expert Version of OScam 2xSlot intern + 1xUSB (blocked EMM for V13 and V14)"
-msgstr "oscam Expert für 2x Intern und 1xUSB (EMM geblockt für V13 und V14 Karten"
+msgstr ""
+"oscam Expert für 2x Intern und 1xUSB (EMM geblockt für V13 und V14 Karten"
 
 #: tpk_description.h:74
 msgid "extended config Panel"
@@ -10409,19 +10412,25 @@ msgstr "Schrift 'Plover Bold'"
 msgid ""
 "gbox 800 with autoident for card hd+ and skyde including all necessary "
 "config files."
-msgstr "gbox 800 inklusive aller Konfigurationsdateien für HD+ und Sky Deutschland Karten"
+msgstr ""
+"gbox 800 inklusive aller Konfigurationsdateien für HD+ und Sky Deutschland "
+"Karten"
 
 #: tpk_description.h:90
 msgid ""
 "gbox 804 with autoident for card hd+ and skyde including all necessary "
 "config files."
-msgstr "gbox 804 inklusive aller Konfigurationsdateien für HD+ und Sky Deutschland Karten"
+msgstr ""
+"gbox 804 inklusive aller Konfigurationsdateien für HD+ und Sky Deutschland "
+"Karten"
 
 #: tpk_description.h:91
 msgid ""
 "gbox 806 with autoident for card hd+ and skyde including all necessary "
 "config files."
-msgstr "gbox 806 inklusive aller Konfigurationsdateien für HD+ und Sky Deutschland Karten"
+msgstr ""
+"gbox 806 inklusive aller Konfigurationsdateien für HD+ und Sky Deutschland "
+"Karten"
 
 #: tpk_description.h:92
 msgid "Gold Picons Astra 19.2"
