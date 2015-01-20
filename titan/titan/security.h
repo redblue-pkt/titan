@@ -1705,6 +1705,7 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 		if(ostrstr(tmpstr, "usererrormsg:") != NULL)
 		{
 			char* usererrormsg = string_resub("usererrormsg: ", "\n", tmpstr, 0);
+			strstrip(usererrormsg);
 			debug(299, "usererrormsg: %s", usererrormsg);
 			textbox(_("Message"), _(usererrormsg) , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
 			free(usererrormsg), usererrormsg = NULL;
