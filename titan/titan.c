@@ -1196,11 +1196,7 @@ firstwizzardstep1:
 	}
 
 	addtimer(&guestthread, START, 1000, 1, NULL, NULL, NULL);
-
-	if(file_exist("/etc/.homecastpro-sat") && !checkprozess("mixer") && checknoemu() == 1)
-		system("mixer");
-	else if(file_exist("/etc/.homecastpro-cable") && !checkprozess("mixer") && checknoemu() == 1)
-		system("mixer");
+	startinternreader(1);
  	
 	screeninfobar();
 
