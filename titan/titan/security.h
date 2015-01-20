@@ -1807,6 +1807,7 @@ void freeupdatelist(struct update* node)
 void startinternreader(int flag)
 {
 	if(!file_exist("/etc/.homecastpro-sat") && !file_exist("/etc/.homecastpro-cable")) return;
+	if(status.security == 0) return;
 
 	if(flag == 0)
 		system("killall -9 mixer >/dev/null");
