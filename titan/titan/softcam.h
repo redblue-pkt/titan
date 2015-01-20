@@ -350,7 +350,7 @@ void screensoftcam()
 		{
 			// deactivate or stop emu
 			drawscreen(loading, 0, 0);
-			
+
 			// check if cam is active
 			char* cmd = string_quote(listbox->select->name);
 			cmd = ostrcat("emu.sh active ", cmd, 0, 1);
@@ -359,12 +359,15 @@ void screensoftcam()
 			else
 				stopcam(listbox->select->name);
 			free(cmd); cmd = NULL;
+			startinternreader(1);
 		}
 		if(listbox->select != NULL && rcret == getrcconfigint("rcgreen", NULL))
 		{
+			startinternreader(0);
 			// restart emu
 			drawscreen(loading, 0, 0);
 			restartcam(listbox->select->name);
+			startinternreader(1);
 		}
 		if(rcret == getrcconfigint("rcyellow", NULL))
 		{
@@ -376,18 +379,22 @@ void screensoftcam()
 		}
 		if(listbox->select != NULL && rcret == getrcconfigint("rcblue", NULL))
 		{
+			startinternreader(0);
 			// activate emu
 			drawscreen(loading, 0, 0);
 			activate(listbox->select->name);
+			startinternreader(1);
 		}
 		if(listbox->select != NULL && rcret == getrcconfigint("rcok", NULL))
 		{
+			startinternreader(0);
 			// start/stop emu, depending if emu already runs
 			drawscreen(loading, 0, 0);
 			if(checkrunningcam(listbox->select->name) == 1)
 				stopcam(listbox->select->name);
 			else
 				startcam(listbox->select->name);
+			startinternreader(1);
 		}
 		if(rcret == getrcconfigint("rcmenu", NULL) && found == 1)
 		{

@@ -919,6 +919,19 @@ int checkemu()
 	return ret;
 }
 
+//check if emu ist installed, if not it hiddes the menu
+int checknoemu()
+{
+	int ret = 0;
+	char* tmpstr = NULL;
+	tmpstr = string_newline(command("emu.sh check"));
+	
+	if(ostrcmp(tmpstr, "not found") == 0) ret 1;
+	free(tmpstr), tmpstr = NULL;
+
+	return ret;
+}
+
 int checkpluginskip(char* name)
 {
 	if(ostrcmp(name, "3 Wins") == 0) return 1;
@@ -1789,6 +1802,16 @@ void freeupdatelist(struct update* node)
 		node->imgtype = 0;
 		free(node); node = NULL;
 	}
+}
+
+void startinternreader(int flag)
+{
+	if(!file_exist("/etc/.homecastpro-sat") && !file_exist("/etc/.homecastpro-cable")) return;
+
+	if(flag == 0)
+		system("killall -9 mixer >/dev/null");
+	else if(file_exist("/sbin/mixer") && !checkprozess("mixer") && checknoemu() == 1)
+		system("mixer");
 }
 
 #endif
