@@ -1648,6 +1648,10 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 		hash = ostrcat(hash, OVERSION, 1, 0);
 		hash = ostrcat(hash, ", pluginversion => ", 1, 0);
 		hash = ostrcat(hash, oitoa(PLUGINVERSION), 1, 1);
+		hash = ostrcat(hash, ", sos => ", 1, 0);
+		hash = ostrcat(hash, getconfigint("sos", NULL), 1, 0);
+		hash = ostrcat(hash, ", nopluginversion => ", 1, 0);
+		hash = ostrcat(hash, getconfigint("nopluginversion", NULL), 1, 0);
 		hash = ostrcat(hash, ", guestlogin => ", 1, 0);
 		hash = ostrcat(hash, oitoa(ret), 1, 1);
 		hash = ostrcat(hash, ", timestamp => ", 1, 0);
