@@ -443,6 +443,7 @@ start:
 				textbox(_("Message"), _("Oscam config written to medium !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
 				if(textbox(_("Message"), _("Restart Oscam ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0) == 1)
 				{
+					startinternreader(0);
 					char* cmd = NULL;
 					cmd = ostrcat("emu.sh restart" , NULL, 0, 0);
 					system(cmd);
@@ -488,6 +489,7 @@ start:
 				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
 				if(textbox(_("Message"), _("Restart Oscam ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0) == 1)
 				{
+					startinternreader(0);
 					char* cmd = NULL;
 					cmd = ostrcat("emu.sh restart" , NULL, 0, 0);
 					system(cmd);
@@ -498,6 +500,8 @@ start:
 			drawscreen(skinoscam, 0, 0);	
 		}
 	}
+
+	startinternreader(1);
 
 	free(dvbapi); dvbapi = NULL;
 	free(file); file = NULL;
