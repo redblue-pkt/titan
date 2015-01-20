@@ -1714,7 +1714,6 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 			textbox(_("Message"), _(usererrormsg) , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
 			free(usererrormsg), usererrormsg = NULL;
 		}
-#endif
 	}
 
 	free(tmpstr); tmpstr = NULL;
