@@ -1644,6 +1644,10 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 			hash = ostrcat(hash, "homecastpro-cable", 1, 0);
 		else
 			hash = ostrcat(hash, "NULL", 1, 0);
+		hash = ostrcat(hash, ", version => ", 1, 0);
+		hash = ostrcat(hash, OVERSION, 1, 0);
+		hash = ostrcat(hash, ", pluginversion => ", 1, 0);
+		hash = ostrcat(hash, oitoa(PLUGINVERSION), 1, 1);
 		hash = ostrcat(hash, ", guestlogin => ", 1, 0);
 		hash = ostrcat(hash, oitoa(ret), 1, 1);
 		hash = ostrcat(hash, ", timestamp => ", 1, 0);
