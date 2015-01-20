@@ -64,7 +64,7 @@ msgstr "Systeem informatie"
 #: promptfile.h:46 promptfile.h:94 promptfile.h:136 putlocker.h:32
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:343 readerconfig.h:443
-#: readerconfig.h:444 readerconfig.h:488 readerconfig.h:489 record.h:387
+#: readerconfig.h:444 readerconfig.h:489 readerconfig.h:490 record.h:387
 #: record.h:1029 record.h:1550 rectimer.h:577 rectimer.h:1231 rectimer.h:1377
 #: rectimer.h:1389 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
@@ -75,7 +75,7 @@ msgstr "Systeem informatie"
 #: skins_mboxinfo_skin.xml.h:2 skins_mc_skin.xml.h:38
 #: skins_optimize_skin.xml.h:3 skins_rgui_skin.xml.h:3
 #: skins_sudoku_skin.xml.h:13 skins_tiwakeup_skin.xml.h:3
-#: skins_wins3_skin.xml.h:3 sock.h:952 softcam.h:403 solarmovie.h:35
+#: skins_wins3_skin.xml.h:3 sock.h:952 softcam.h:410 solarmovie.h:35
 #: solarmovie.h:47 solarmovie.h:304 spinner.h:18 stopifnotused.c:31
 #: streamcloud.h:31 streamcloud.h:74 streamcloud.h:84 streamcloud.h:97
 #: streamcloud.h:128 streamcloud.h:187 stream.h:33 system_backup_restore.h:31
@@ -174,7 +174,7 @@ msgstr "Ok"
 #: promptfile.h:46 promptfile.h:94 promptfile.h:136 putlocker.h:32
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:343 readerconfig.h:443
-#: readerconfig.h:444 readerconfig.h:488 readerconfig.h:489 record.h:90
+#: readerconfig.h:444 readerconfig.h:489 readerconfig.h:490 record.h:90
 #: record.h:387 record.h:1029 record.h:1275 record.h:1525 record.h:1550
 #: rectimer.h:577 rectimer.h:1231 rectimer.h:1377 rectimer.h:1389
 #: restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
@@ -191,7 +191,7 @@ msgstr "Ok"
 #: skins_panel_skin.xml.h:15 skins_rgui_skin.xml.h:2
 #: skins_stopifnotused_skin.xml.h:4 skins_sudoku_skin.xml.h:7
 #: skins_tiwakeup_skin.xml.h:2 skins_wins3_skin.xml.h:1 sock.h:952
-#: softcam.h:403 solarmovie.h:35 solarmovie.h:47 solarmovie.h:304 spinner.h:18
+#: softcam.h:410 solarmovie.h:35 solarmovie.h:47 solarmovie.h:304 spinner.h:18
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:84
 #: streamcloud.h:97 streamcloud.h:128 streamcloud.h:187 stream.h:33
 #: system_backup_restore.h:31 system_backup_restore.h:40
@@ -593,7 +593,7 @@ msgstr "Ja / VZAP oneindig"
 #: promptfile.h:46 promptfile.h:94 promptfile.h:136 putlocker.h:32
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:343 readerconfig.h:443
-#: readerconfig.h:444 readerconfig.h:488 readerconfig.h:489 record.h:387
+#: readerconfig.h:444 readerconfig.h:489 readerconfig.h:490 record.h:387
 #: record.h:1029 record.h:1275 record.h:1525 record.h:1550 rectimer.h:577
 #: rectimer.h:1231 rectimer.h:1377 rectimer.h:1389 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
@@ -601,7 +601,7 @@ msgstr "Ja / VZAP oneindig"
 #: scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1646 scan.h:1901
 #: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 service.h:738 service.h:983
 #: shared.h:29 shared.h:65 shared.h:82 skinadjust.h:263 skinselector.h:218
-#: sock.h:952 softcam.h:403 solarmovie.h:35 solarmovie.h:47 solarmovie.h:304
+#: sock.h:952 softcam.h:410 solarmovie.h:35 solarmovie.h:47 solarmovie.h:304
 #: spinner.h:18 stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74
 #: streamcloud.h:84 streamcloud.h:97 streamcloud.h:128 streamcloud.h:187
 #: stream.h:33 system_backup_restore.h:40 system_backup_restore.h:43
@@ -5620,11 +5620,11 @@ msgstr ""
 msgid "No config file found."
 msgstr "Er is geen configuratie bestand gevonden."
 
-#: readerconfig.h:389 readerconfig.h:482
+#: readerconfig.h:389 readerconfig.h:483
 msgid "Dvbapi (enabled)"
 msgstr "Dvbapi (geactiveerd)"
 
-#: readerconfig.h:391 readerconfig.h:475
+#: readerconfig.h:391 readerconfig.h:476
 msgid "Dvbapi (disabled)"
 msgstr "Dvbapi (gedeactiveerd)"
 
@@ -5636,15 +5636,15 @@ msgstr "Reader geactiveerd"
 msgid "Oscam config written to medium !"
 msgstr "Oscam configuratie wordt opgeslagen!"
 
-#: readerconfig.h:444 readerconfig.h:489
+#: readerconfig.h:444 readerconfig.h:490
 msgid "Restart Oscam ?"
 msgstr "Oscam opnieuw starten?"
 
-#: readerconfig.h:474
+#: readerconfig.h:475
 msgid "Oscam dvbapi config disabled !"
 msgstr "Oscam dvbapi configuratie gedeactiveerd!"
 
-#: readerconfig.h:481
+#: readerconfig.h:482
 msgid "Oscam dvbapi config enabled !"
 msgstr "Oscam dvbapi configuratie geactiveerd!"
 
@@ -8888,7 +8888,7 @@ msgstr "Geen Softcam gevonden"
 msgid "Softcam selection:"
 msgstr "Softcam kiezen:"
 
-#: softcam.h:403
+#: softcam.h:410
 msgid "Reader Config Plugin not installed !"
 msgstr "Installer aub de reader configuratie plugin bij plugins"
 
@@ -9352,11 +9352,11 @@ msgstr ""
 "/mnt niet beschrijfbaar!\n"
 "Repareren?"
 
-#: titan.c:1237
+#: titan.c:1242
 msgid "Unknown Error."
 msgstr "Onbekende fout"
 
-#: titan.c:1239
+#: titan.c:1244
 msgid "Automatic stop in 10 seconds."
 msgstr "Automatische stop in 10 seconden."
 
