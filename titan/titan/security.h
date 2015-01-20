@@ -1702,11 +1702,15 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 		tmpstr = gethttpreal("atemio.dyndns.tv", "/control/", 80, NULL, HTTPAUTH, NULL, 0, send, NULL, 5000, 1);
 #ifdef OBI
 		debug(299, "tmpstr: %s", tmpstr);
+#endif
+
 		if(ostrstr(tmpstr, "usererrormsg:") != NULL)
 		{
 			char* usererrormsg = string_resub("usererrormsg: ", "\n", tmpstr, 0);
 			strstrip(usererrormsg);
+#ifdef OBI
 			debug(299, "usererrormsg: %s", usererrormsg);
+#endif
 			textbox(_("Message"), _(usererrormsg) , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
 			free(usererrormsg), usererrormsg = NULL;
 		}
