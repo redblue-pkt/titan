@@ -926,7 +926,7 @@ int checknoemu()
 	char* tmpstr = NULL;
 	tmpstr = string_newline(command("emu.sh check"));
 	
-	if(ostrcmp(tmpstr, "not found") == 0) ret 1;
+	if(ostrcmp(tmpstr, "not found") == 0) ret = 1;
 	free(tmpstr), tmpstr = NULL;
 
 	return ret;
