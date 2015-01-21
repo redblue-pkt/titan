@@ -814,7 +814,7 @@ int playerstart(char* file)
 		int size = getconfigint("playerbuffersize", NULL);
 		printf("size: %d\n",size);
 		
-		if(size > 0)
+		if(size > 0 && ostrstr(tmpfile, "file://") == NULL)
 			status.prefillbuffer = 1;
 
 		if(ostrstr(file, "|User-Agent=") != NULL)
