@@ -750,7 +750,6 @@ int checkprozess(char* input)
 //	printf("checkprozess: cmd=%s\n", cmd);
 
 	tmpstr = string_newline(command(cmd));
-	debug(123, "tmpstr %s", tmpstr);
 
 //	printf("checkprozess: tmpstr=%s\n", tmpstr);
 
@@ -759,8 +758,6 @@ int checkprozess(char* input)
 		ret = 0;
 	else
 		ret = 1;	
-
-	debug(123, "ret %d", ret);
 
 //	printf("checkprozess: ret=%d\n", ret);
 	free(tmpstr), tmpstr = NULL;
@@ -929,12 +926,10 @@ int checknoemu()
 	int ret = 0;
 	char* tmpstr = NULL;
 	tmpstr = string_newline(command("emu.sh check"));
-	debug(123, "tmpstr %s", tmpstr);
 
 	if(ostrcmp(tmpstr, "not found") == 0) ret = 1;
 	free(tmpstr), tmpstr = NULL;
 
-	debug(123, "ret %d", ret);
 	return ret;
 }
 
@@ -1831,24 +1826,13 @@ void freeupdatelist(struct update* node)
 
 void startinternreader(int flag)
 {
-
-	debug(123, "start flag %d", flag);
-
 	if(!file_exist("/etc/.homecastpro-sat") && !file_exist("/etc/.homecastpro-cable")) return;
 	if(status.security == 0) return;
 
-	debug(123, "check ok flag %d", flag);
-
 	if(flag == 0)
-	{
-		debug(123, "killall mixer flag %d", flag);
 		system("killall -9 mixer >/dev/null");
-	}
 	else if(file_exist("/sbin/mixer") && !checkprozess("mixer") && checknoemu() == 1)
-	{
-		debug(123, "start mixer flag %d", flag);
 		system("mixer");
-	}
 }
 
 #endif
