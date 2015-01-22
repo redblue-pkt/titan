@@ -97,7 +97,6 @@ void screengmediarender()
 	else
 		cmd = ostrcat(cmd, "/mnt/swapextensions/usr/local/share/titan/plugins/gmediarender/gmediarender.sh gmediarender-", 1, 0);
 	
-	cmd = ostrcat(cmd, "/var/usr/local/share/titan/plugins/gmediarender/gmediarender.sh gmediarender-", 1, 0);
 	cmd = ostrcat(cmd, status.boxtype, 1, 0);
 	cmd = ostrcat(cmd, " &", 1, 0);
 
