@@ -21,7 +21,7 @@ msgstr ""
 #: firedrive.h:72 firedrive.h:122 firedrive.h:128 firedrive.h:138 flashx.h:26
 #: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
 #: global.h:5669 global.h:6294 global.h:6363 global.h:6382 global.h:6557
-#: gmediarender.h:114 harddisk.h:350 harddisk.h:355 harddisk.h:382
+#: gmediarender.h:118 harddisk.h:350 harddisk.h:355 harddisk.h:382
 #: harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641 harddisk.h:675
 #: harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733 harddisk.h:793
 #: harddisk.h:812 harddisk.h:815 harddisk.h:1046 hbbtv.h:362 httpdfunc.h:1222
@@ -126,7 +126,7 @@ msgstr ""
 #: firedrive.h:72 firedrive.h:122 firedrive.h:128 firedrive.h:138 flashx.h:26
 #: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
 #: global.h:5669 global.h:6294 global.h:6363 global.h:6382 global.h:6557
-#: gmediarender.h:114 harddisk.h:350 harddisk.h:355 harddisk.h:382
+#: gmediarender.h:118 harddisk.h:350 harddisk.h:355 harddisk.h:382
 #: harddisk.h:386 harddisk.h:439 harddisk.h:633 harddisk.h:641 harddisk.h:675
 #: harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733 harddisk.h:793
 #: harddisk.h:812 harddisk.h:815 harddisk.h:1046 hbbtv.h:362 hello.c:36
@@ -557,7 +557,7 @@ msgstr ""
 #: firedrive.h:33 firedrive.h:66 firedrive.h:72 firedrive.h:122
 #: firedrive.h:128 firedrive.h:138 flashx.h:26 flashx.h:84 flashx.h:138
 #: flashx.h:195 flashx.h:233 flashx.h:270 global.h:5669 global.h:6294
-#: global.h:6363 global.h:6382 global.h:6557 gmediarender.h:114 harddisk.h:633
+#: global.h:6363 global.h:6382 global.h:6557 gmediarender.h:118 harddisk.h:633
 #: harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731
 #: harddisk.h:733 harddisk.h:793 harddisk.h:812 harddisk.h:815 hbbtv.h:362
 #: hello.c:36 httpdfunc.h:1222 httpdfunc.h:5654 httpdfunc.h:6040
@@ -1840,11 +1840,11 @@ msgstr ""
 msgid "Tunertype"
 msgstr ""
 
-#: gmediarender.h:108
+#: gmediarender.h:112
 msgid "Servername"
 msgstr "Όνομα χρήστη"
 
-#: gmediarender.h:112
+#: gmediarender.h:116
 msgid "Wait for connect or press EXIT"
 msgstr ""
 
