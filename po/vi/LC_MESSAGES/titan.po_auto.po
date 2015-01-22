@@ -10968,23 +10968,23 @@ msgid "Mbox v0.6b0010"
 msgstr ""
 
 #: tpk_showname.h:77
-msgid "mc (Midnight Commander)"
-msgstr ""
-
-#: tpk_showname.h:78
 msgid "Mediacenter"
 msgstr ""
 
-#: tpk_showname.h:79
+#: tpk_showname.h:78
 msgid "Mediacenter FolderIcons"
 msgstr ""
 
-#: tpk_showname.h:80
+#: tpk_showname.h:79
 msgid "Mgcamd v1.35"
 msgstr ""
 
-#: tpk_showname.h:81
+#: tpk_showname.h:80
 msgid "Mgcamd v1.38a"
+msgstr ""
+
+#: tpk_showname.h:81
+msgid "Midnight Commander"
 msgstr ""
 
 #: tpk_showname.h:82
