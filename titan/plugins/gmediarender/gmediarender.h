@@ -44,7 +44,11 @@ void gmediarendergetpic(struct skin* gmediarender, char* buf)
 */
 		gethttp(tmpip, path, port, "/tmp/gmediarenderpic.jpg", NULL, 5000, NULL, 0);
 		changepic(gmediarender, "/tmp/gmediarenderpic.jpg");
-		drawscreen(gmediarender, 0, 0);
+		gmediarender->picwidth = 1;
+		gmediarender->picheight = 1;
+		gmediarender->bgcol = 0;
+		gmediarender->picquality = getconfigint("mc_pp_picquality", NULL);
+		drawscreen(gmediarender, 0, 4);
 	}
 	if(cmpfilenameext(path, ".png") == 0)
 	{
