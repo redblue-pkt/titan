@@ -10181,181 +10181,183 @@ msgid ""
 msgstr ""
 
 #: tpk_description.h:73
-msgid "extended config Panel"
+msgid ""
+"Expert Version of OScam 2xSlot intern + 1xUSB (blocked EMM for V13 and V14) "
+"for small Memory Receiver"
 msgstr ""
 
 #: tpk_description.h:74
-msgid "filemanager"
+msgid "extended config Panel"
 msgstr ""
 
 #: tpk_description.h:75
-msgid "first titan game"
+msgid "filemanager"
 msgstr ""
 
 #: tpk_description.h:76
-msgid "Font 'Action Man Italic' "
+msgid "first titan game"
 msgstr ""
 
 #: tpk_description.h:77
-msgid "Font 'Alpha Romanie G98'"
+msgid "Font 'Action Man Italic' "
 msgstr ""
 
 #: tpk_description.h:78
-msgid "Font 'Croissant' "
+msgid "Font 'Alpha Romanie G98'"
 msgstr ""
 
 #: tpk_description.h:79
-msgid "Font 'Digiface Regular' "
+msgid "Font 'Croissant' "
 msgstr ""
 
 #: tpk_description.h:80
-msgid "Font 'Goodtime'"
+msgid "Font 'Digiface Regular' "
 msgstr ""
 
 #: tpk_description.h:81
-msgid "Font 'I Hate Comic Sans'"
+msgid "Font 'Goodtime'"
 msgstr ""
 
 #: tpk_description.h:82
-msgid "Font 'Lydian Bolt Italic BT' "
+msgid "Font 'I Hate Comic Sans'"
 msgstr ""
 
 #: tpk_description.h:83
-msgid "Font 'Mighty Zeo Caps'"
+msgid "Font 'Lydian Bolt Italic BT' "
 msgstr ""
 
 #: tpk_description.h:84
-msgid "Font 'Monoglyceride DemiBold'"
+msgid "Font 'Mighty Zeo Caps'"
 msgstr ""
 
 #: tpk_description.h:85
-msgid "Font 'New Gothic BT'"
+msgid "Font 'Monoglyceride DemiBold'"
 msgstr ""
 
 #: tpk_description.h:86
-msgid "Font 'Paddington Bold'"
+msgid "Font 'New Gothic BT'"
 msgstr ""
 
 #: tpk_description.h:87
-msgid "Font 'Plover Bold'"
+msgid "Font 'Paddington Bold'"
 msgstr ""
 
 #: tpk_description.h:88
+msgid "Font 'Plover Bold'"
+msgstr ""
+
+#: tpk_description.h:89
 msgid ""
 "gbox 800 with autoident for card hd+ and skyde including all necessary "
 "config files."
 msgstr ""
 
-#: tpk_description.h:89
+#: tpk_description.h:90
 msgid ""
 "gbox 804 with autoident for card hd+ and skyde including all necessary "
 "config files."
 msgstr ""
 
-#: tpk_description.h:90
+#: tpk_description.h:91
 msgid ""
 "gbox 806 with autoident for card hd+ and skyde including all necessary "
 "config files."
 msgstr ""
 
-#: tpk_description.h:91
+#: tpk_description.h:92
 msgid "Gold Picons Astra 19.2"
 msgstr ""
 
-#: tpk_description.h:92
+#: tpk_description.h:93
 msgid "Gold Picons - Astra 23.5E."
 msgstr ""
 
-#: tpk_description.h:93
+#: tpk_description.h:94
 msgid "Gold Picons - Astra 28.2E."
 msgstr ""
 
-#: tpk_description.h:94
+#: tpk_description.h:95
 msgid "Gold Picons - Hotbird 13.0E."
 msgstr ""
 
-#: tpk_description.h:95
+#: tpk_description.h:96
 msgid "ImdBapi Info Plugin"
 msgstr ""
 
-#: tpk_description.h:96
+#: tpk_description.h:97
 msgid "ImdB Info Plugin"
 msgstr ""
 
-#: tpk_description.h:97
+#: tpk_description.h:98
 msgid "IP-Kamera zB. Firma INSTAR"
 msgstr ""
 
-#: tpk_description.h:98
+#: tpk_description.h:99
 msgid "Kabel BW transparent Picons"
 msgstr ""
 
-#: tpk_description.h:99
+#: tpk_description.h:100
 msgid "Kabel Deutschland Picons black3d"
 msgstr ""
 
-#: tpk_description.h:100
+#: tpk_description.h:101
 msgid "Kabel Deutschland transparent Picons"
 msgstr ""
 
-#: tpk_description.h:101
+#: tpk_description.h:102
 msgid "Kabelplus ORF | 16.12.2014 (Olbord)"
 msgstr ""
 
-#: tpk_description.h:102
+#: tpk_description.h:103
 msgid "Lib extension for network (upnpfs/smbfs/ftpfs/rarfs)"
 msgstr ""
 
-#: tpk_description.h:103
+#: tpk_description.h:104
 msgid "MegaStyle blue Mini TV Skin"
 msgstr ""
 
-#: tpk_description.h:104
+#: tpk_description.h:105
 msgid "MegaStyle blue Skin"
 msgstr ""
 
-#: tpk_description.h:105
+#: tpk_description.h:106
 msgid "MegaStyle grey MiniTV Skin"
 msgstr ""
 
-#: tpk_description.h:106
+#: tpk_description.h:107
 msgid "MegaStyle grey Skin"
 msgstr ""
 
-#: tpk_description.h:107
+#: tpk_description.h:108
 msgid "MetrixHD skin. Use transparent XPicons."
 msgstr ""
 
-#: tpk_description.h:108
+#: tpk_description.h:109
 msgid "More audio/video formats playable"
 msgstr ""
 
-#: tpk_description.h:109
+#: tpk_description.h:110
 msgid "Network browser extension for better Win7 compatibility"
 msgstr ""
 
-#: tpk_description.h:110
+#: tpk_description.h:111
 msgid "Networkfile libsmbclient 3.0.28b"
 msgstr ""
 
-#: tpk_description.h:111 tpk_showname.h:82
+#: tpk_description.h:112 tpk_showname.h:82
 msgid "Neutrino Keymap"
 msgstr ""
 
-#: tpk_description.h:112
+#: tpk_description.h:113
 msgid "newcs including all necessary config files."
 msgstr ""
 
-#: tpk_description.h:113
+#: tpk_description.h:114
 msgid "New Downloadfeed for your AAF - Duckbox"
 msgstr ""
 
-#: tpk_description.h:114
-msgid "news Plugin"
-msgstr ""
-
 #: tpk_description.h:115
-msgid "Nightly Version of OSCam 8755 small Version"
+msgid "news Plugin"
 msgstr ""
 
 #: tpk_description.h:116
@@ -11045,11 +11047,11 @@ msgid "Open VPN (Server)"
 msgstr ""
 
 #: tpk_showname.h:88
-msgid "Oscam 8755small"
+msgid "OScam Expert"
 msgstr ""
 
 #: tpk_showname.h:89
-msgid "OScam Expert"
+msgid "OScam Small"
 msgstr ""
 
 #: tpk_showname.h:91
