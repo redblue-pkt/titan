@@ -815,7 +815,7 @@ void killnet()
 		cmd = ostrcat(cmd, " ", 1, 0);
 		cmd = ostrcat(cmd, "ftpd", 1, 0);		
 		cmd = ostrcat(cmd, " ", 1, 0);
-		cmd = ostrcat(cmd, "> /dev/null", 1, 0);
+		cmd = ostrcat(cmd, "> /dev/null 2>&1", 1, 0);
 		system(cmd);
 		free(cmd); cmd = NULL;
 
@@ -1840,7 +1840,7 @@ void startinternreader(int flag)
 	if(status.security == 0) return;
 
 	if(flag == 0)
-		system("killall -9 mixer >/dev/null");
+		system("killall -9 mixer > /dev/null 2>&1");
 	else if(file_exist("/sbin/mixer") && !checkprozess("mixer") && checknoemu() == 1)
 		system("mixer");
 }
