@@ -1003,9 +1003,9 @@ void screenmc_videoplayer()
 	clearscreen(blackscreen);
 	clearscreen(loadmediadb);
 
-	system("/bin/umount -fl `mount | grep fuse | grep rarfs | grep -v '/dev/' | cut -d ' ' -f3`; killall -9 rarfs");
-	system("/bin/umount -fl `mount | grep fuse | grep -v '/dev/' | cut -d ' ' -f3`; /bin/umount -fl `mount | grep iso9660 | cut -d ' ' -f3`  `mount | grep udf | cut -d ' ' -f3`; killall -9 rarfs fusesmb curlftpfs");
-	system("umount -a -f -t fuse.rarfs,iso9660,udf,fuse.djmount,fuse.fusesmb,fuse.curlftpfs");
+	system("/bin/umount -fl `mount | grep fuse | grep rarfs | grep -v '/dev/' | cut -d ' ' -f3` > /dev/null 2>&1; killall -9 rarfs > /dev/null 2>&1");
+	system("/bin/umount -fl `mount | grep fuse | grep -v '/dev/' | cut -d ' ' -f3` > /dev/null 2>&1; /bin/umount -fl `mount | grep iso9660 | cut -d ' ' -f3`  `mount | grep udf | cut -d ' ' -f3` > /dev/null 2>&1; killall -9 rarfs fusesmb curlftpfs > /dev/null 2>&1");
+	system("umount -a -f -t fuse.rarfs,iso9660,udf,fuse.djmount,fuse.fusesmb,fuse.curlftpfs > /dev/null 2>&1");
 
 	free(defaultmvi), defaultmvi = NULL;
 
