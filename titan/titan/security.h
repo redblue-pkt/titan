@@ -83,7 +83,7 @@ int checkhighflash()
 	else if(checkbox("SPARK") == 1)
 	{
 		cmd = ostrcat(cmd, "mtd7", 1, 0); 
-		size = ostrcat("03c00000", NULL, 0, 0); 
+		size = ostrcat("05800000", NULL, 0, 0); 
 	}
 	else
 	{
