@@ -80,6 +80,11 @@ int checkhighflash()
 		cmd = ostrcat(cmd, "mtd5", 1, 0); 
 		size = ostrcat("00c40000", NULL, 0, 0); 
 	}
+	else if(checkbox("SPARK") == 1)
+	{
+		cmd = ostrcat(cmd, "mtd7", 1, 0); 
+		size = ostrcat("03c00000", NULL, 0, 0); 
+	}
 	else
 	{
 		cmd = ostrcat(cmd, "mtd5", 1, 0); 
@@ -175,7 +180,7 @@ void ckeckkillnetthread()
 
 int checkreseller()
 {
-	if(checkbox("UFS910") == 1 || checkbox("UFS922") == 1 || checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO5200") == 1 || checkbox("UFS913") == 1 || checkbox("IPBOX91") == 1 || checkbox("IPBOX900") == 1 || checkbox("IPBOX910") == 1 || checkbox("IPBOX9000") == 1 || checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1 || checkbox("ATEMIO6200") == 1)
+	if(checkbox("UFS910") == 1 || checkbox("UFS922") == 1 || checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO5200") == 1 || checkbox("UFS913") == 1 || checkbox("IPBOX91") == 1 || checkbox("IPBOX900") == 1 || checkbox("IPBOX910") == 1 || checkbox("IPBOX9000") == 1 || checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1 || checkbox("ATEMIO6200") == 1 || checkbox("SPARK") == 1)
 	{
 		debug(10, "ResellerId: skipped");
 		debug(10, "boxtype: %s", getboxtype());
@@ -361,6 +366,11 @@ int checkflash()
 		dev = ostrcat(dev, "8", 1, 0);
 		dir = ostrcat(dir, "var", 1, 0);
 	} 
+	else if(checkbox("SPARK") == 1)
+	{
+		dev = ostrcat(dev, "7", 1, 0);
+		dir = ostrcat(dir, "mnt", 1, 0);
+	}
 	else if(checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO5200") == 1 || checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1 || checkbox("ATEMIO6200") == 1)
 	{
 		dev = ostrcat(dev, "rootfs", 1, 0);
