@@ -25,8 +25,10 @@ int showscreensaver()
 {
 	int mixedcol[] = {0, 0x020202, 0xBEBEBE, 0xffffff, 0xffff00, 0xff0000, 0xFFD39B, 0x00ff00, 0x0000ff};
 	int overscanx = 60, overscany = 60;
+#ifndef MIPSEL
 	if(screensaver->type == 3)
 		drawscreen(skin, 0, 0);
+#endif
 	if(screensaver == NULL) return 1;
 
 	if(screensaver->type != 3)
@@ -94,10 +96,20 @@ int showscreensaver()
 					path = ostrcat(path, "/", 1, 0);
 					path = ostrcat(path, screensaver->aktnode->text, 1, 0);
 					debug(90, "singlepicstart %s", path);
+#ifdef MIPSEL
+					struct skin* screensaverjpg = getscreen("screensaverjpg");
+					changepic(screensaverjpg, path);
+					screensaverjpg->picwidth = 1;
+					screensaverjpg->picheight = 1;
+					screensaverjpg->bgcol = 0;
+					screensaverjpg->picquality = getconfigint("mc_pp_picquality", NULL);
+					drawscreen(screensaverjpg, 0, 4);
+#else
 					if(screensaver->flag == 0)
 						singlepicstart(path, 0);
 					else if(screensaver->flag == 1)
 						singlepicstart(path, 1);
+#endif
 					free(path); path = NULL;
 					screensaver->aktnode = screensaver->aktnode->next;
 					break;
@@ -194,7 +206,11 @@ int initscreensaver()
 		screensaver->screen = getscreen("screensaveradjust");
 		screensaver->filelist = getscreennode(screensaver->screen, "filelist");
 		delmarkedscreennodes(screensaver->screen, FILELISTDELMARK);
+#ifdef MIPSEL
+		changemask(screensaver->filelist, "*.jpg");
+#else
 		changemask(screensaver->filelist, "*.mvi");
+#endif
 		changeinput(screensaver->filelist, screensaver->path);
 		createfilelist(screensaver->screen, screensaver->filelist, 0);
 	}
