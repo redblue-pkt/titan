@@ -815,7 +815,7 @@ void killnet()
 		cmd = ostrcat(cmd, " ", 1, 0);
 		cmd = ostrcat(cmd, "ftpd", 1, 0);		
 		cmd = ostrcat(cmd, " ", 1, 0);
-		cmd = ostrcat(cmd, "&", 1, 0);
+		cmd = ostrcat(cmd, "> /dev/null", 1, 0);
 		system(cmd);
 		free(cmd); cmd = NULL;
 
