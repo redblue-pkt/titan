@@ -59,12 +59,12 @@ void screenadjust()
 	changeinput(volbartimeout, "1\n2\n3\n4\n5\n6\n7\n8\n9\n10");
 	setchoiceboxselection(volbartimeout, getconfig("volbartimeout", NULL));
 
-	changeinput(infobartimeout, "1\n2\n3\n4\n5\n6\n7\n8\n9\n10");
+	changeinput(infobartimeout, "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n20\n30\n60\n10000");
 	setchoiceboxselection(infobartimeout, getconfig("infobartimeout", NULL));
 
 	changeinput(infobarsleep, "0\n1\n2\n3\n4\n5");
 	setchoiceboxselection(infobarsleep, getconfig("infobarsleep", NULL));
-	
+
 	addchoicebox(secondinfobar, "0", _("no"));
 	addchoicebox(secondinfobar, "1", _("infobar"));
 	addchoicebox(secondinfobar, "2", _("epg"));
