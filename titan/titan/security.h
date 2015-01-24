@@ -85,6 +85,11 @@ int checkhighflash()
 		cmd = ostrcat(cmd, "mtd7", 1, 0); 
 		size = ostrcat("05800000", NULL, 0, 0); 
 	}
+	else if(checkbox("SPARK7162") == 1)
+	{
+		cmd = ostrcat(cmd, "mtd7", 1, 0); 
+		size = ostrcat("05700000", NULL, 0, 0); 
+	}
 	else
 	{
 		cmd = ostrcat(cmd, "mtd5", 1, 0); 
@@ -180,7 +185,7 @@ void ckeckkillnetthread()
 
 int checkreseller()
 {
-	if(checkbox("UFS910") == 1 || checkbox("UFS922") == 1 || checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO5200") == 1 || checkbox("UFS913") == 1 || checkbox("IPBOX91") == 1 || checkbox("IPBOX900") == 1 || checkbox("IPBOX910") == 1 || checkbox("IPBOX9000") == 1 || checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1 || checkbox("ATEMIO6200") == 1 || checkbox("SPARK") == 1)
+	if(checkbox("UFS910") == 1 || checkbox("UFS922") == 1 || checkbox("UFC960") == 1 || checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO5200") == 1 || checkbox("UFS913") == 1 || checkbox("IPBOX91") == 1 || checkbox("IPBOX900") == 1 || checkbox("IPBOX910") == 1 || checkbox("IPBOX9000") == 1 || checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1 || checkbox("ATEMIO6200") == 1 || checkbox("SPARK") == 1 || checkbox("SPARK7162") == 1)
 	{
 		debug(10, "ResellerId: skipped");
 		debug(10, "boxtype: %s", getboxtype());
@@ -346,7 +351,7 @@ int checkflash()
 	char* dev = NULL;
 	char* dir = NULL;
 	
-	if((checkbox("ATEMIO7600") == 1) || (checkbox("ATEMIO510") == 1) || (checkbox("ATEVIO700") == 1) || (checkbox("ATEVIO7000") == 1) || (checkbox("UFS910") == 1) || (checkbox("UFS922") == 1) || (checkbox("ATEMIO520") == 1) || (checkbox("ATEMIO530") == 1))
+	if((checkbox("ATEMIO7600") == 1) || (checkbox("ATEMIO510") == 1) || (checkbox("ATEVIO700") == 1) || (checkbox("ATEVIO7000") == 1) || (checkbox("UFS910") == 1) || (checkbox("UFS922") == 1) || (checkbox("UFC960") == 1) || (checkbox("ATEMIO520") == 1) || (checkbox("ATEMIO530") == 1))
 	{
 		dev = ostrcat(dev, "3", 1, 0);
 		dir = ostrcat(dir, "var", 1, 0);		
@@ -366,7 +371,7 @@ int checkflash()
 		dev = ostrcat(dev, "8", 1, 0);
 		dir = ostrcat(dir, "var", 1, 0);
 	} 
-	else if(checkbox("SPARK") == 1)
+	else if(checkbox("SPARK") == 1 || checkbox("SPARK7162") == 1)
 	{
 		dev = ostrcat(dev, "7", 1, 0);
 		dir = ostrcat(dir, "mnt", 1, 0);
@@ -1058,7 +1063,7 @@ void setskinnodeslocked(int flag)
 			if(ostrcmp("Reader Config", child->name) == 0) child->locked = 1;
 
 			// hide this menu on all boxes without ATEMIO530
-			if(checkbox("ATEMIO510") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("UFS910") == 1 || checkbox("UFS922") == 1 || checkbox("UFS912") == 1 || checkbox("UFS913") == 1 || checkbox("ATEVIO700") == 1 || checkbox("ATEVIO7000") == 1 || checkbox("IPBOX91") == 1 || checkbox("IPBOX900") == 1 || checkbox("IPBOX910") == 1 || checkbox("IPBOX9000") == 1 || checkbox("SPARK") == 1 || checkbox("SPARK7162") == 1)
+			if(checkbox("ATEMIO510") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("UFS910") == 1 || checkbox("UFS922") == 1 || checkbox("UFC960") == 1 || checkbox("UFS912") == 1 || checkbox("UFS913") == 1 || checkbox("ATEVIO700") == 1 || checkbox("ATEVIO7000") == 1 || checkbox("IPBOX91") == 1 || checkbox("IPBOX900") == 1 || checkbox("IPBOX910") == 1 || checkbox("IPBOX9000") == 1 || checkbox("SPARK") == 1 || checkbox("SPARK7162") == 1)
 			{
 				if(ostrcmp("settings_pluginbutton", child->name) == 0) child->locked = 1;
 			}
@@ -1113,6 +1118,7 @@ void setskinnodeslocked(int flag)
 				if(status.timeshifttype == 1) child->locked = 0;
 				if(checkbox("UFS910") == 1) child->locked = 0;
 				if(checkbox("UFS922") == 1) child->locked = 0;
+				if(checkbox("UFC960") == 1) child->locked = 0;
 			}
 			
 			child = child->next;
@@ -1383,7 +1389,12 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 		boxpath = ostrcat("/forum/forumdisplay.php?409", NULL, 0, 0);
 	else if(checkbox("IPBOX9000") == 1)
 		boxpath = ostrcat("/forum/forumdisplay.php?407", NULL, 0, 0);
-
+	else if(checkbox("SPARK") == 1)
+		boxpath = ostrcat("/forum/forumdisplay.php?413", NULL, 0, 0);
+	else if(checkbox("SPARK7162") == 1)
+		boxpath = ostrcat("/forum/forumdisplay.php?414", NULL, 0, 0);
+	else if(checkbox("UFC960") == 1)
+		boxpath = ostrcat("/forum/forumdisplay.php?415", NULL, 0, 0);
 /*
 	else if(checkbox("XPEEDLX") == 1)
 		boxpath = ostrcat("/forum/forumdisplay.php?410", NULL, 0, 0);
