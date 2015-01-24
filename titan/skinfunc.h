@@ -153,7 +153,8 @@ char* getrec(struct skin* node, char* path)
 		{
 			tmpstr = ostrcat("oled_rec.png", NULL, 0, 0);
 
-			if(path != NULL) tmpstr = ostrcat("/", tmpstr, 0, 1);
+			if(path != NULL) 
+                tmpstr = ostrcat("/", tmpstr, 0, 1);
 			tmpstr = ostrcat(path, tmpstr, 0, 1);
 		}
 	
@@ -168,7 +169,8 @@ char* getrec(struct skin* node, char* path)
 		{
 			tmpstr = ostrcat("oled_mute.png", NULL, 0, 0);
 
-			if(path != NULL) tmpstr = ostrcat("/", tmpstr, 0, 1);
+			if(path != NULL) 
+                tmpstr = ostrcat("/", tmpstr, 0, 1);
 			tmpstr = ostrcat(path, tmpstr, 0, 1);
 		}
 		
@@ -184,7 +186,8 @@ char* getrec(struct skin* node, char* path)
 		{
 			tmpstr = ostrcat("oled_timeshift.png", NULL, 0, 0);
 
-			if(path != NULL) tmpstr = ostrcat("/", tmpstr, 0, 1);
+			if(path != NULL) 
+                tmpstr = ostrcat("/", tmpstr, 0, 1);
 			tmpstr = ostrcat(path, tmpstr, 0, 1);
 		}
 		
@@ -200,7 +203,8 @@ char* getrec(struct skin* node, char* path)
 		{
 			tmpstr = ostrcat("oled_streaming.png", NULL, 0, 0);
 
-			if(path != NULL) tmpstr = ostrcat("/", tmpstr, 0, 1);
+			if(path != NULL) 
+                tmpstr = ostrcat("/", tmpstr, 0, 1);
 			tmpstr = ostrcat(path, tmpstr, 0, 1);
 		}
 		
@@ -216,9 +220,7 @@ char* getrec(struct skin* node, char* path)
 	    {
 		    if(status.aktservice->channel->crypt > 0)
 			    tmpstr = ostrcat("oledcrypt.png", NULL, 0, 0);
-		    else
-			    tmpstr = ostrcat("olednocrypt.png", NULL, 0, 0);
-
+		    
 		    if(path != NULL)
 			    tmpstr = ostrcat("/", tmpstr, 0, 1);
 		    tmpstr = ostrcat(path, tmpstr, 0, 1);
@@ -242,8 +244,6 @@ char* getrec(struct skin* node, char* path)
 			    tmpstr = ostrcat("oled16_9.png", NULL, 0, 0);
     //	}
 	
-	    if(tmpstr == NULL) tmpstr = ostrcat("olednovideoasp.png", NULL, 0, 0);
-
 	    if(path != NULL)
 		    tmpstr = ostrcat("/", tmpstr, 0, 1);
 	    tmpstr = ostrcat(path, tmpstr, 0, 1);
@@ -268,8 +268,6 @@ char* getrec(struct skin* node, char* path)
 			    tmpstr = ostrcat("oled1080.png", NULL, 0, 0);
     //	}
 	
-	    if(tmpstr == NULL) tmpstr = ostrcat("olednovideores.png", NULL, 0, 0);
-
 	    if(path != NULL)
 		    tmpstr = ostrcat("/", tmpstr, 0, 1);
 	    tmpstr = ostrcat(path, tmpstr, 0, 1);
@@ -294,8 +292,6 @@ char* getrec(struct skin* node, char* path)
 			    tmpstr = ostrcat("oledhd.png", NULL, 0, 0);
     //	}
 	
-	    if(tmpstr == NULL) tmpstr = ostrcat("olednovideo.png", NULL, 0, 0);
-
 	    if(path != NULL)
 		    tmpstr = ostrcat("/", tmpstr, 0, 1);
 	    tmpstr = ostrcat(path, tmpstr, 0, 1);
