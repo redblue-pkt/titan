@@ -286,9 +286,7 @@ char* getrec(struct skin* node, char* path)
     //	{
 		    if(status.videosize.h == 576)
 			    tmpstr = ostrcat("oledsd.png", NULL, 0, 0);
-		    else if(status.videosize.h == 720)
-			    tmpstr = ostrcat("oledhdready.png", NULL, 0, 0);
-		    else if(status.videosize.h == 1080)
+		    else if(status.videosize.h == 720 || 1080)
 			    tmpstr = ostrcat("oledhd.png", NULL, 0, 0);
     //	}
 	
