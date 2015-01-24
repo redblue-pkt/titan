@@ -470,7 +470,7 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		if(check == 1) return 0;
 		screenharddisksleep();
 	}
-	else if(ostrcmp("addaptersettings", menuentry->name) == 0)
+	else if(ostrcmp("adaptersettings", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
 		screennetwork_adapter();
