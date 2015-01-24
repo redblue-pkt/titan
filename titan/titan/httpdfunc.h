@@ -4671,7 +4671,7 @@ printf("webadjust fmt: %d\n",fmt);
 	sendstr = ostrcat(sendstr, ", choiceminitv.value", 1 , 0);
 
 ///////////////////
-	if(checkbox("ATEMIO510") == 1 || checkbox("UFS912") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1)
+	if(checkbox("ATEMIO510") == 1 || checkbox("UFS912") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1 || checkbox("SPARK") == 1 || checkbox("SPARK7162") == 1)
 	{
 		ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
 		ostrcatbig(&buf, _("Activate CEC"), &maxlen, &pos);
