@@ -1058,13 +1058,13 @@ void setskinnodeslocked(int flag)
 			if(ostrcmp("Reader Config", child->name) == 0) child->locked = 1;
 
 			// hide this menu on all boxes without ATEMIO530
-			if(checkbox("ATEMIO510") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("UFS910") == 1 || checkbox("UFS922") == 1 || checkbox("UFS912") == 1 || checkbox("UFS913") == 1 || checkbox("ATEVIO700") == 1 || checkbox("ATEVIO7000") == 1 || checkbox("IPBOX91") == 1 || checkbox("IPBOX900") == 1 || checkbox("IPBOX910") == 1 || checkbox("IPBOX9000") == 1)
+			if(checkbox("ATEMIO510") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("UFS910") == 1 || checkbox("UFS922") == 1 || checkbox("UFS912") == 1 || checkbox("UFS913") == 1 || checkbox("ATEVIO700") == 1 || checkbox("ATEVIO7000") == 1 || checkbox("IPBOX91") == 1 || checkbox("IPBOX900") == 1 || checkbox("IPBOX910") == 1 || checkbox("IPBOX9000") == 1 || checkbox("SPARK") == 1 || checkbox("SPARK7162") == 1)
 			{
 				if(ostrcmp("settings_pluginbutton", child->name) == 0) child->locked = 1;
 			}
 
 			// hide this menu on all boxes without ufs912/ufs913
-			if(checkbox("UFS912") != 1 && checkbox("UFS913") != 1)
+			if(checkbox("UFS912") != 1 && checkbox("UFS913") != 1 && checkbox("SPARK") != 1 && checkbox("SPARK7162") != 1)
 			{
 				if(ostrcmp("overclocking", child->name) == 0) child->locked = 1;
 			}

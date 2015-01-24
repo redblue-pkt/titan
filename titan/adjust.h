@@ -272,7 +272,7 @@ void screenadjust()
 		emucontrol->hidden = YES;
 	else
 		emucontrol->hidden = NO;
-	if(checkbox("ATEMIO510") == 1 || checkbox("UFS912") == 1 || checkbox("UFS913") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1)
+	if(checkbox("ATEMIO510") == 1 || checkbox("UFS912") == 1 || checkbox("UFS913") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1 || checkbox("SPARK") == 1 || checkbox("SPARK7162") == 1)
 		usecec->hidden = NO;
 	else
 		usecec->hidden = YES;
@@ -398,7 +398,7 @@ void screenadjust()
 			if(ostrcmp(minitv->ret, "1") == 0) resettvpic();
 			addconfigscreencheck("minitv", minitv, "0");
 
-			if(checkbox("ATEMIO510") == 1 || checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("UFS912") == 1 || checkbox("UFS913") == 1)
+			if(checkbox("ATEMIO510") == 1 || checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("UFS912") == 1 || checkbox("UFS913") == 1 || checkbox("SPARK") == 1 || checkbox("SPARK7162") == 1)
 				addconfigscreencheck("usecec", usecec, "0");
 
 			if(checkbox("ATEMIO7600") == 1)
