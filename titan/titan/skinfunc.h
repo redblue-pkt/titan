@@ -219,7 +219,7 @@ char* getrec(struct skin* node, char* path)
 	    if(status.aktservice->channel != NULL)
 	    {
 		    if(status.aktservice->channel->crypt > 0)
-			    tmpstr = ostrcat("oledcrypt.png", NULL, 0, 0);
+			    tmpstr = ostrcat("oled_crypt.png", NULL, 0, 0);
 		    
 		    if(path != NULL)
 			    tmpstr = ostrcat("/", tmpstr, 0, 1);
@@ -239,9 +239,9 @@ char* getrec(struct skin* node, char* path)
     //	if(getaktvideosize() == 0) //videosize is ok
     //	{
 		    if(status.videosize.aspect_ratio == 0)
-			    tmpstr = ostrcat("oled4_3.png", NULL, 0, 0);
+			    tmpstr = ostrcat("oled_4_3.png", NULL, 0, 0);
 		    else if(status.videosize.aspect_ratio == 1)
-			    tmpstr = ostrcat("oled16_9.png", NULL, 0, 0);
+			    tmpstr = ostrcat("oled_16_9.png", NULL, 0, 0);
     //	}
 	
 	    if(path != NULL)
@@ -261,11 +261,11 @@ char* getrec(struct skin* node, char* path)
     //	if(getaktvideosize() == 0) //videosize is ok
     //	{
 		    if(status.videosize.h == 576)
-			    tmpstr = ostrcat("oled576.png", NULL, 0, 0);
+			    tmpstr = ostrcat("oled_576.png", NULL, 0, 0);
 		    else if(status.videosize.h == 720)
-			    tmpstr = ostrcat("oled720.png", NULL, 0, 0);
+			    tmpstr = ostrcat("oled_720.png", NULL, 0, 0);
 		    else if(status.videosize.h == 1080)
-			    tmpstr = ostrcat("oled1080.png", NULL, 0, 0);
+			    tmpstr = ostrcat("oled_1080.png", NULL, 0, 0);
     //	}
 	
 	    if(path != NULL)
@@ -285,9 +285,9 @@ char* getrec(struct skin* node, char* path)
     //	if(getaktvideosize() == 0) //videosize is ok
     //	{
 		    if(status.videosize.h == 576)
-			    tmpstr = ostrcat("oledsd.png", NULL, 0, 0);
+			    tmpstr = ostrcat("oled_sd.png", NULL, 0, 0);
 		    else if(status.videosize.h == 720 || 1080)
-			    tmpstr = ostrcat("oledhd.png", NULL, 0, 0);
+			    tmpstr = ostrcat("oled_hd.png", NULL, 0, 0);
     //	}
 	
 	    if(path != NULL)
