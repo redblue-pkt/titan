@@ -46,7 +46,7 @@ void screenvfdisplay()
 		addchoicebox(vfdstandby, "3", _("vfddate"));
 	}
 	setchoiceboxselection(vfdstandby, getconfig("vfdisplaystandby", NULL));
-	
+
 	addchoicebox(vfdrecord, "0", _("off"));
 	addchoicebox(vfdrecord, "1", _("blink"));
 	addchoicebox(vfdrecord, "2", _("fade out/in"));
@@ -55,10 +55,10 @@ void screenvfdisplay()
 	addchoicebox(vfdrecord, "5", _("blink star"));
 	setchoiceboxselection(vfdrecord, getconfig("vfdisplayrecord", NULL));
 
-	changeinput(at7000frontrun, "15\n14\n13\n12\n11\n10\n9\n8\n7\n6\n5\n4\n3\n2\n1");
+	changeinput(at7000frontrun, "15\n14\n13\n12\n11\n10\n9\n8\n7\n6\n5\n4\n3\n2\n1\n0");
 	setchoiceboxselection(at7000frontrun, getconfig("at7000frontrun", NULL));
-	
-	changeinput(at7000frontsleep, "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15");
+
+	changeinput(at7000frontsleep, "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15");
 	setchoiceboxselection(at7000frontsleep, getconfig("at7000frontsleep", NULL));
 
 	if(checkbox("ATEVIO7000") == 1)
