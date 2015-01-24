@@ -59,6 +59,30 @@ void* convertfunc(char *value, uint8_t *rettype)
 		return &getoledstreaming;
 	}
 
+    if(ostrcmp("getoledcrypt", value) == 0)
+	{
+		*rettype = FUNCPIC;
+		return &getoledcrypt;
+	}
+
+    if(ostrcmp("getoledchannelaspect", value) == 0)
+	{
+		*rettype = FUNCPIC;
+		return &getoledchannelaspect;
+	}
+
+    if(ostrcmp("getoledchannelresolution", value) == 0)
+	    {
+		    *rettype = FUNCPIC;
+		    return &getoledchannelresolution;
+	    }
+
+    if(ostrcmp("getoledsdhd", value) == 0)
+	{
+		*rettype = FUNCPIC;
+		return &getoledsdhd;
+	}
+
 #endif
 
 	if(ostrcmp("getalternatepicon", value) == 0)

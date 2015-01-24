@@ -143,6 +143,7 @@ char* getrec(struct skin* node, char* path)
 }
 
 #ifdef MIPSEL
+//oled indicators for Nemesis
 //rec png
 	char* getoledrec(struct skin* node, char* path)
 	{
@@ -205,6 +206,103 @@ char* getrec(struct skin* node, char* path)
 		
 		return tmpstr;
 	}
+
+//crypt png
+    char* getoledcrypt(struct skin* node, char* path)
+    {
+	    char* tmpstr = NULL;
+
+	    if(status.aktservice->channel != NULL)
+	    {
+		    if(status.aktservice->channel->crypt > 0)
+			    tmpstr = ostrcat("oledcrypt.png", NULL, 0, 0);
+		    else
+			    tmpstr = ostrcat("olednocrypt.png", NULL, 0, 0);
+
+		    if(path != NULL)
+			    tmpstr = ostrcat("/", tmpstr, 0, 1);
+		    tmpstr = ostrcat(path, tmpstr, 0, 1);
+	    }
+	
+	    return tmpstr;
+    }
+
+//real aspect png
+    char* getoledchannelaspect(struct skin* node, char* path)
+    {
+	    char* tmpstr = NULL;
+	
+	    videoreadqwidth(status.aktservice->videodev);
+
+    //	if(getaktvideosize() == 0) //videosize is ok
+    //	{
+		    if(status.videosize.aspect_ratio == 0)
+			    tmpstr = ostrcat("oled4_3.png", NULL, 0, 0);
+		    else if(status.videosize.aspect_ratio == 1)
+			    tmpstr = ostrcat("oled16_9.png", NULL, 0, 0);
+    //	}
+	
+	    if(tmpstr == NULL) tmpstr = ostrcat("olednovideoasp.png", NULL, 0, 0);
+
+	    if(path != NULL)
+		    tmpstr = ostrcat("/", tmpstr, 0, 1);
+	    tmpstr = ostrcat(path, tmpstr, 0, 1);
+
+	    return tmpstr;
+    }
+
+//real resolution png
+    char* getoledchannelresolution(struct skin* node, char* path)
+    {
+	    char* tmpstr = NULL;
+
+	    videoreadqwidth(status.aktservice->videodev);
+
+    //	if(getaktvideosize() == 0) //videosize is ok
+    //	{
+		    if(status.videosize.h == 576)
+			    tmpstr = ostrcat("oled576.png", NULL, 0, 0);
+		    else if(status.videosize.h == 720)
+			    tmpstr = ostrcat("oled720.png", NULL, 0, 0);
+		    else if(status.videosize.h == 1080)
+			    tmpstr = ostrcat("oled1080.png", NULL, 0, 0);
+    //	}
+	
+	    if(tmpstr == NULL) tmpstr = ostrcat("olednovideores.png", NULL, 0, 0);
+
+	    if(path != NULL)
+		    tmpstr = ostrcat("/", tmpstr, 0, 1);
+	    tmpstr = ostrcat(path, tmpstr, 0, 1);
+
+	    return tmpstr;
+    }
+
+//sh/hd png
+    char* getoledsdhd(struct skin* node, char* path)
+    {
+	    char* tmpstr = NULL;
+
+	    videoreadqwidth(status.aktservice->videodev);
+
+    //	if(getaktvideosize() == 0) //videosize is ok
+    //	{
+		    if(status.videosize.h == 576)
+			    tmpstr = ostrcat("oledsd.png", NULL, 0, 0);
+		    else if(status.videosize.h == 720)
+			    tmpstr = ostrcat("oledhdready.png", NULL, 0, 0);
+		    else if(status.videosize.h == 1080)
+			    tmpstr = ostrcat("oledhd.png", NULL, 0, 0);
+    //	}
+	
+	    if(tmpstr == NULL) tmpstr = ostrcat("olednovideo.png", NULL, 0, 0);
+
+	    if(path != NULL)
+		    tmpstr = ostrcat("/", tmpstr, 0, 1);
+	    tmpstr = ostrcat(path, tmpstr, 0, 1);
+
+	    return tmpstr;
+    }
+
 	
 #endif
 
