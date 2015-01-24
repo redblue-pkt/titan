@@ -3555,6 +3555,7 @@ printf("webadjust fmt: %d\n",fmt);
 
 	char* buf = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *sendstr = NULL;
 	int i = 0, max = 0, count = 0, maxlen = 0, pos = 0;
+	struct splitstr* ret1 = NULL;
 
 	
 	ostrcatbig(&buf, "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><link rel=\"stylesheet\" type=\"text/css\" href=\"titan.css\"></head>", &maxlen, &pos);
@@ -3590,23 +3591,36 @@ printf("webadjust fmt: %d\n",fmt);
 
 ///////////////////
 //	ostrcatbig(&buf, "<tr><td><font class=\"label\">Infobartimeout:&nbsp;</font></td><td><select name=\"infobartimeout\" border=\"0\"><option value=\"1\" selected>1</option><option value=\"2\">2</option><option value=\"3\">3</option><option value=\"4\">4</option><option value=\"5\">5</option><option value=\"6\">6</option><option value=\"7\">7</option><option value=\"8\">8</option><option value=\"9\">9</option><option value=\"10\">10</option></select></td></tr>", &maxlen, &pos);
-	max = 10;
+	tmpstr = ostrcat("1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n20\n30\n60\n10000", NULL, 0, 0);
+
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
 	ostrcatbig(&buf, _("Infobar Timeout"), &maxlen, &pos);
 	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"infobartimeout\" border=\"0\">", &maxlen, &pos);
-	for(i = 1; i <= max; i++)
+
+	count = 0;
+	ret1 = strsplit(tmpstr, "\n", &count);
+	max = count - 1;
+
+	if(ret1 != NULL)
 	{
-		ostrcatbig(&buf, "<option value=\"", &maxlen, &pos);
-		ostrcatbig(&buf, oitoa(i), &maxlen, &pos);	
-		if(getconfigint("infobartimeout", NULL) == i)
-			ostrcatbig(&buf, "\" selected>", &maxlen, &pos);		
-		else
-			ostrcatbig(&buf, "\">", &maxlen, &pos);
-		ostrcatbig(&buf, oitoa(i), &maxlen, &pos);
-		ostrcatbig(&buf, "</option>", &maxlen, &pos);
+		for(i = 0; i <= max; i++)
+		{
+			ostrcatbig(&buf, "<option value=\"", &maxlen, &pos);
+			ostrcatbig(&buf, ret1[i].part, &maxlen, &pos);
+			tmpstr1 = ostrcat(ret1[i].part, NULL, 0, 0);
+			if(getconfigint("infobartimeout", NULL) == atoi(tmpstr1))
+				ostrcatbig(&buf, "\" selected>", &maxlen, &pos);
+			else
+				ostrcatbig(&buf, "\">", &maxlen, &pos);
+			ostrcatbig(&buf, ret1[i].part, &maxlen, &pos);
+			ostrcatbig(&buf, "</option>", &maxlen, &pos);
+		}
 	}
 	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
 	sendstr = ostrcat(sendstr, ", infobartimeout.value", 1 , 0);
+	free(ret1), ret1 = NULL;
+	free(tmpstr), tmpstr = NULL;
+	free(tmpstr1), tmpstr1 = NULL;
 
 ///////////////////
 //	ostrcatbig(&buf, "<tr><td><font class=\"label\">Infobar Sleep:&nbsp;</font></td><td><select name=\"infobarsleep\" border=\"0\"><option value=\"0\">0</option><option value=\"1\" selected>1</option><option value=\"2\">2</option><option value=\"3\">3</option><option value=\"4\">4</option><option value=\"5\">5</option></select></td></tr>", &maxlen, &pos);
@@ -3638,7 +3652,6 @@ printf("webadjust fmt: %d\n",fmt);
 	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"spinnerspeed\" border=\"0\">", &maxlen, &pos);
 
 	count = 0;
-	struct splitstr* ret1 = NULL;
 	ret1 = strsplit(tmpstr, "\n", &count);
 	max = count - 1;
 
