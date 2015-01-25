@@ -13231,9 +13231,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid "Emu MBox v0.6 build 0010 for your box"
-#~ msgstr "MBox v0.6 Softcam"
-
-#~ msgid "IncubusCamd_1.22 including all necessary config files."
-#~ msgstr "IncubusCamd v1.22 inklusive aller notwendigen Konfigurationsdateien"
