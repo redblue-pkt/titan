@@ -1,4 +1,4 @@
-<screen fontcol=fontcol name=gmediarender fontsize=30 posx=0 posy=0 width=100% height=100% bordersize=0>
+<screen fontcol=fontcol name=gmediarender pic=%pluginpath%/gmediarender/skin/background.jpg fontsize=30 posx=0 posy=0 width=100% height=100% bordersize=0>
 <node name=picture picwidth=1280 picheight=720 valign=middle halign=center bordercol=bordercol bordersize=0 width=100% height=100%>
 <node textposx=100 name=picname posx=0 posy=30 width=100% height=30 fontcol=fontcol/>
 </screen>
