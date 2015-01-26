@@ -76,11 +76,12 @@ void gmediarendergetpic(struct skin* gmediarender, char* buf)
 void screengmediarender()
 {
 	int rcret = -1, ret = 0;
-	char* cmd = NULL, *buf = NULL;
-	char* tmpstr = NULL;
+	char* cmd = NULL, *buf = NULL, *tmpstr = NULL, *tmpstr1 = NULL;
 	int fifo = -1;
 	struct skin* gmediarender = getscreen("gmediarender");
-	
+	struct skin* servername = getscreennode(gmediarender, "servername");
+	struct skin* connect = getscreennode(gmediarender, "connect");
+
 	ret = servicestop(status.aktservice, 1, 1);
 	if(ret == 1) return;
 
@@ -100,14 +101,22 @@ void screengmediarender()
 	drawscreen(skin, 0, 0);
 	drawscreen(gmediarender, 0, 0);
 
+	tmpstr = ostrcat(status.boxtype, NULL, 0, 0);
+	struct inetwork* net = getinetworkbydevice("eth0");
+	if(net != NULL)
+	{
+		tmpstr = ostrcat(tmpstr, "-", 1, 0);
+		tmpstr = ostrcat(tmpstr, net->ip, 1, 0);
+	}
+
 	if(file_exist("/var/usr/local/share/titan/plugins/gmediarender/gmediarender.sh") == 1)
-		cmd = ostrcat(cmd, "/var/usr/local/share/titan/plugins/gmediarender/gmediarender.sh gmediarender-", 1, 0);
+		cmd = ostrcat(cmd, "/var/usr/local/share/titan/plugins/gmediarender/gmediarender.sh ", 1, 0);
 	else if(file_exist("/var/swap/usr/local/share/titan/plugins/gmediarender/gmediarender.sh") == 1)
-		cmd = ostrcat(cmd, "/var/swap/usr/local/share/titan/plugins/gmediarender/gmediarender.sh gmediarender-", 1, 0);
+		cmd = ostrcat(cmd, "/var/swap/usr/local/share/titan/plugins/gmediarender/gmediarender.sh ", 1, 0);
 	else
-		cmd = ostrcat(cmd, "/mnt/swapextensions/usr/local/share/titan/plugins/gmediarender/gmediarender.sh gmediarender-", 1, 0);
+		cmd = ostrcat(cmd, "/mnt/swapextensions/usr/local/share/titan/plugins/gmediarender/gmediarender.sh ", 1, 0);
 	
-	cmd = ostrcat(cmd, status.boxtype, 1, 0);
+	cmd = ostrcat(cmd, tmpstr, 1, 0);
 	cmd = ostrcat(cmd, " &", 1, 0);
 
 	//start renderer
@@ -115,14 +124,15 @@ void screengmediarender()
 	system(cmd);
 	free(cmd), cmd = NULL;
 
-	tmpstr = ostrcat(tmpstr, _("Servername"), 1, 0);
-	tmpstr = ostrcat(tmpstr, ": gmediarender-", 1, 0);
-	tmpstr = ostrcat(tmpstr, status.boxtype, 1, 0);
-	tmpstr = ostrcat(tmpstr, "\n\n", 1, 0);
-	tmpstr = ostrcat(tmpstr, _("Wait for connect or press EXIT"), 1, 0);
-
-	textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
+	tmpstr1 = ostrcat(tmpstr1, _("DLNA Renderer Name"), 1, 0);
+	tmpstr1 = ostrcat(tmpstr1, ": ", 1, 0);
+	tmpstr1 = ostrcat(tmpstr1, tmpstr, 1, 0);
+	changetext(servername, tmpstr1);
 	free(tmpstr), tmpstr = NULL;
+
+	tmpstr = ostrcat(_("Wait for connect or press EXIT"), NULL, 0, 0);
+	changetext(connect, tmpstr);
+
 	drawscreen(gmediarender, 0, 0);
 
 //load screenserver
@@ -142,6 +152,7 @@ void screengmediarender()
 			ret = read(fifo, buf, MINMALLOC);
 			if(ret > 0)
 			{
+				changetext(connect, _("DLNA Control Client connected !"));
 				buf[ret] = '\0';
 				if(ostrcmp(buf, "clear.png") == 0) //clear screen
 				{
@@ -212,6 +223,8 @@ void screengmediarender()
 		servicestart(status.lastservice->channel, NULL, NULL, 0);
 
 	free(buf); buf = NULL;
+	free(tmpstr), tmpstr = NULL;
+	free(tmpstr1), tmpstr1 = NULL;
 
 	//close fifo
 	close(fifo);
