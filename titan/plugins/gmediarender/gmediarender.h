@@ -3,6 +3,7 @@
 
 extern struct skin* skin;
 struct fb *fb = NULL;
+extern struct screensaver* screensaver;
 
 void gmediarendergetpic(struct skin* gmediarender, char* buf)
 {
@@ -97,6 +98,7 @@ void screengmediarender()
 	fifo = open("/tmp/gmediarender", O_RDONLY | O_NONBLOCK);
 
 	drawscreen(skin, 0, 0);
+	drawscreen(gmediarender, 0, 0);
 
 	if(file_exist("/var/usr/local/share/titan/plugins/gmediarender/gmediarender.sh") == 1)
 		cmd = ostrcat(cmd, "/var/usr/local/share/titan/plugins/gmediarender/gmediarender.sh gmediarender-", 1, 0);
@@ -121,10 +123,19 @@ void screengmediarender()
 
 	textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 7, 0);
 	free(tmpstr), tmpstr = NULL;
+	drawscreen(gmediarender, 0, 0);
 
+//load screenserver
+	int count = 0, screensaver_delay = 0, saver = 0, rcwait = 1000;
+	if(getconfigint("screensaver", NULL) == 1)
+	{
+		screensaver_delay = getconfigint("screensaver_delay", NULL);
+		initscreensaver();
+	}
+//	
 	while(1)
 	{
-		rcret = waitrc(NULL, 1000, 0);
+		rcret = waitrc(NULL, rcwait, 0);
 
 		if(fifo > -1)
 		{
@@ -133,10 +144,58 @@ void screengmediarender()
 			{
 				buf[ret] = '\0';
 				if(ostrcmp(buf, "clear.png") == 0) //clear screen
-					drawscreen(skin, 0, 0);
+				{
+					count = 0;
+					rcwait = 1000;
+//					if(getconfigint("screensaver", NULL) == 1)
+//						drawscreen(skin, 0, 0);
+//					else
+						drawscreen(gmediarender, 0, 0);
+					printf("clear.png set count=%d set rcwait=%d\n", count, rcwait);
+				}
+				else if(ostrcmp(buf, "saver.png") == 0) //saver screen
+				{
+					if(getconfigint("screensaver", NULL) == 1)
+					{
+						count = 1;
+						drawscreen(skin, 0, 0);
+					}
+					else
+					{
+//						count = 0;
+						changepic(gmediarender, "%pluginpath%/gmediarender/skin/background.jpg");
+						drawscreen(gmediarender, 0, 0);
+					}
+
+					printf("11saver.png set count=%d\n", count);
+				}
 				else
+				{
+					count = 0;
+					rcwait = 1000;
+					drawscreen(skin, 0, 0);
 					gmediarendergetpic(gmediarender, buf);
+					printf("buf: %s set count=%d\n set rcwait=%d", buf, count, rcwait);
+				}
 			}
+//check screenserver
+
+			if(getconfigint("screensaver", NULL) == 1)
+			{
+				if(count > 0 && screensaver != NULL)
+				{
+					count++;
+					printf("count++ %d\n", count);
+				}
+	
+				if(count > screensaver_delay && screensaver != NULL)
+				{
+					printf("showscreensaver %d\n", count);
+					showscreensaver();
+					rcwait = screensaver->speed;
+				}
+			}
+//////
 		}
 
  		if(rcret == getrcconfigint("rcexit", NULL)) break;
@@ -145,7 +204,10 @@ void screengmediarender()
 
 	//stop renderer
 	system("killall -9 gmediarender");
-			
+
+	//stop screenserver
+	deinitscreensaver();
+		
 	if(status.lastservice != NULL)
 		servicestart(status.lastservice->channel, NULL, NULL, 0);
 
