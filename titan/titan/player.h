@@ -803,10 +803,12 @@ int playerstart(char* file)
 
 		if(ostrstr(tmpfile, "file://") == NULL)
 			//status.playercan = 0x7E7F;
-			status.playercan = 0x7EFF;
+			//status.playercan = 0x7EFF;
+			status.playercan = 0xFEFF;
 		else
 			//status.playercan = 0x7E7F;
-			status.playercan = 0x7EFF;
+			//status.playercan = 0x7EFF;
+			status.playercan = 0xFEFF;
 	
 		pipeline = gst_element_factory_make("playbin2", "playbin");
 
@@ -1444,7 +1446,7 @@ void playercontinue()
 #ifdef EPLAYER4
 	if(pipeline)
 	{
-		if(status.playspeed != 0)
+		if(status.playspeed != 0 || status.slowspeed != 0)
 			playersend_ff_fr_event(1);
 		gst_element_set_state(pipeline, GST_STATE_PLAYING);
 		if(subtitleflag == 2)
@@ -1518,6 +1520,27 @@ void playerslow(int speed)
 	if(player && player->playback)
 		player->playback->Command(player, PLAYBACK_SLOWMOTION, &speedmap);
 #endif
+
+#ifdef EPLAYER4
+	gdouble rate = 0;
+	if (speed < 1) speed = 1;
+	if (speed > 7) speed = 7;
+		
+	switch(speed)
+	{
+		case 1: rate = 0.8; break;
+		case 2: rate = 0.7; break;
+		case 3: rate = 0.6; break;
+		case 4: rate = 0.5; break;
+		case 5: rate = 0.3; break;
+		case 6: rate = 0.2; break;
+		case 7: rate = 0.1; break;
+	}
+	gst_element_set_state(pipeline, GST_STATE_PLAYING);
+	playersend_ff_fr_event(rate);
+	
+#endif
+
 }
 
 void playerfr(int speed)

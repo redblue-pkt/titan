@@ -866,7 +866,7 @@ void playrcsf(char* file, char* showname, int* playinfobarstatus, int* playinfob
 			if(playertype == 1)
 				playerslowts((int)pow(2, status.slowspeed));
 			else if(playertype == 0)
-				playerslow(status.playspeed);
+				playerslow(status.slowspeed);
 			*playinfobarstatus = 2;
 			*playinfobarcount = 0;
 			screenplayinfobar(file, showname, 0, playertype, flag);
