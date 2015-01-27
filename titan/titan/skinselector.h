@@ -207,7 +207,18 @@ void screenskinselect(void)
 				free(tmpstr1), tmpstr1 = NULL;
 				
 				tmpstr = dirname(tmpstr);
-				tmpstr = ostrcat(tmpstr, "/skinconfig", 1, 0);
+				printf("skin install dir: %s\n", tmpstr);
+
+				if(ostrstr(link, "/var/usr/local/share/titan/skin/default") != NULL)
+					tmpstr = ostrcat(tmpstr, "/skinconfig", 1, 0);
+				else
+				{
+					free(tmpstr), tmpstr = NULL;
+					tmpstr = ostrcat("/mnt/config/skinconfig", NULL, 0, 0);
+				}
+
+				printf("skinconfig dir: %s\n", tmpstr);
+
 				if(file_exist(tmpstr))
 				{
 					addconfig("skinconfig", tmpstr);
