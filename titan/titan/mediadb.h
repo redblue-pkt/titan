@@ -2365,6 +2365,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 								
 				if(filesize < 1500000)
 				{
+#ifndef MIPSEL
 					mediadbffmpeg4(timestamp, tmpmeta);
 						
 					cmd = ostrcat(cmd, "cat ", 1, 0);
@@ -2381,6 +2382,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 						if(picsize < 2000)
 						{
 							debug(133, "size ok %d", picsize);
+#endif
 							mediadbjpegtran(tmpjpg, timestamp);
 						
 							if(file_exist(tmpjpg))
@@ -2397,6 +2399,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 									if(cmediadb == NULL) cmediadb = createmediadb(node, timestamp, type, shortname, NULL, NULL, NULL, NULL, NULL, NULL, NULL, plot, poster, NULL, NULL, shortpath, file, shortname, fileinfo, 0, backdrop);
 								}	
 							}
+#ifndef MIPSEL
 						}
 						else
 						{
@@ -2414,6 +2417,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 							filedebug(logfile, "#############\nERROR Localfile size is NULL skipped: %s/%s_backdrop1.jpg size=(%s) filesize(%lld) (%s)\n#############", getconfig("mediadbpath", NULL), timestamp, size, filesize, file);
 					}
 					free(size); size = NULL;
+#endif
 					unlink(tmpmeta);
 					unlink(tmpjpg);
 					unlink(tmpmpg);

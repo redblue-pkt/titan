@@ -443,6 +443,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 							if(filesize < 1500000)
 							{
 								char* cmd = NULL;
+#ifndef MIPSEL
 								cmd = ostrcat(cmd, "ffmpeg -i ", 1, 0);
 								cmd = ostrcat(cmd, tnode->backdrop, 1, 0);
 								cmd = ostrcat(cmd, " > ", 1, 0);
@@ -468,6 +469,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 									if(picsize < 2000)
 									{
 										debug(133, "size ok %d", picsize);
+#endif
 #ifdef MIPSEL
 										cmd = ostrcat(cmd, "cp -a ", 1, 0);
 										cmd = ostrcat(cmd, tmpjpg, 1, 0);
@@ -531,6 +533,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 											else
 												mvicount--;
 										}
+#ifndef MIPSEL
 									}
 									else
 									{
@@ -551,6 +554,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 									mvicount--;
 								}
 								free(size), size = NULL;
+#endif
 								unlink(tmpmeta);
 								unlink(tmpjpg);
 								unlink(tmpmpg);
@@ -614,6 +618,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 				if(filesize < 1500000)
 				{
 					char* cmd = NULL;
+#ifndef MIPSEL
 					cmd = ostrcat(cmd, "ffmpeg -i ", 1, 0);
 					cmd = ostrcat(cmd, tnode->postermid, 1, 0);
 					cmd = ostrcat(cmd, " > ", 1, 0);
@@ -638,6 +643,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 						if(picsize < 2000)
 						{
 							debug(133, "size ok %d", picsize);
+#endif
 #ifdef MIPSEL
 							cmd = ostrcat(cmd, "cp -a ", 1, 0);
 							cmd = ostrcat(cmd, tmpjpg, 1, 0);
@@ -697,6 +703,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 								}
 							}
 							free(cmd), cmd = NULL;
+#ifndef MIPSEL
 						}
 						else
 						{
@@ -714,6 +721,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 							filedebug(logfile, "#############\nERROR Postermid size is NULL skipped: %s size=(%s) filesize(%lld) (%s)\n#############", tnode->postermid, size, filesize, posterurl);
 					}
 					free(size), size = NULL;
+#endif
 					unlink(tmpmeta);
 					unlink(tmpjpg);
 					unlink(tmpmpg);
