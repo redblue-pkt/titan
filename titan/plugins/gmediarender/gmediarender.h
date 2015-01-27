@@ -159,9 +159,9 @@ void screengmediarender()
 					count = 0;
 					rcwait = 1000;
 //					if(getconfigint("screensaver", NULL) == 1)
-//						drawscreen(skin, 0, 0);
+						drawscreen(skin, 0, 0);
 //					else
-						drawscreen(gmediarender, 0, 0);
+//						drawscreen(gmediarender, 0, 0);
 //					printf("clear.png set count=%d set rcwait=%d\n", count, rcwait);
 				}
 				else if(ostrcmp(buf, "saver.png") == 0) //saver screen
@@ -184,7 +184,7 @@ void screengmediarender()
 				{
 					count = 0;
 					rcwait = 1000;
-					drawscreen(skin, 0, 0);
+//					drawscreen(skin, 0, 0);
 					gmediarendergetpic(gmediarender, buf);
 //					printf("buf: %s set count=%d\n set rcwait=%d", buf, count, rcwait);
 				}
