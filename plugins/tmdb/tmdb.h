@@ -442,7 +442,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 							
 							if(filesize < 1500000)
 							{
-								char* cmd = NULL;
+								char* cmd = NULL, *size = NULL;
 #ifndef MIPSEL
 								cmd = ostrcat(cmd, "ffmpeg -i ", 1, 0);
 								cmd = ostrcat(cmd, tnode->backdrop, 1, 0);
@@ -457,7 +457,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 								cmd = ostrcat(cmd, "cat ", 1, 0);
 								cmd = ostrcat(cmd, tmpmeta, 1, 0);
 								cmd = ostrcat(cmd, " | grep Stream | awk '{print $6}' | cut -d'x' -f1", 1, 0);
-								char* size = string_newline(command(cmd));
+								size = string_newline(command(cmd));
 								free(cmd), cmd = NULL;	
 								debug(133, "size %s", size);
 								if(size != NULL)
@@ -617,7 +617,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 				
 				if(filesize < 1500000)
 				{
-					char* cmd = NULL;
+					char* cmd = NULL, *size = NULL;
 #ifndef MIPSEL
 					cmd = ostrcat(cmd, "ffmpeg -i ", 1, 0);
 					cmd = ostrcat(cmd, tnode->postermid, 1, 0);
@@ -632,7 +632,7 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 					cmd = ostrcat(cmd, "cat ", 1, 0);
 					cmd = ostrcat(cmd, tmpmeta, 1, 0);
 					cmd = ostrcat(cmd, " | grep Stream | awk '{print $6}' | cut -d'x' -f1", 1, 0);
-					char* size = string_newline(command(cmd));
+					size = string_newline(command(cmd));
 					free(cmd), cmd = NULL;
 					debug(133, "size %s", size);
 					if(size != NULL)

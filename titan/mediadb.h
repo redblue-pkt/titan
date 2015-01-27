@@ -2362,16 +2362,17 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 				off64_t filesize = getfilesize(cmd);
 				debug(133, "filesize %lld", filesize);
 				free(cmd); cmd = NULL;
-								
+			
 				if(filesize < 1500000)
 				{
+					char* size = NULL;
 #ifndef MIPSEL
 					mediadbffmpeg4(timestamp, tmpmeta);
 						
 					cmd = ostrcat(cmd, "cat ", 1, 0);
 					cmd = ostrcat(cmd, tmpmeta, 1, 0);
 					cmd = ostrcat(cmd, " | grep Stream | awk '{print $6}' | cut -d'x' -f1", 1, 0);
-					char* size = string_newline(command(cmd));
+					size = string_newline(command(cmd));
 					free(cmd); cmd= NULL;
 					debug(133, "size %s", size);
 					if(size != NULL)
