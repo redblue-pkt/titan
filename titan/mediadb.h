@@ -2070,12 +2070,12 @@ int mediadbjpegtran(char* tmpjpg, char* timestamp)
 
 #ifdef MIPSEL
 	cmd = ostrcat(cmd, "cp -a ", 1, 0);
-	cmd = ostrcat(cmd, tmpjpg, 1, 0);
-	cmd = ostrcat(cmd, " ", 1, 0);
 	cmd = ostrcat(cmd, getconfig("mediadbpath", NULL), 1, 0);
 	cmd = ostrcat(cmd, "/", 1, 0);
 	cmd = ostrcat(cmd, timestamp, 1, 0);
 	cmd = ostrcat(cmd, "_backdrop1.jpg", 1, 0);
+	cmd = ostrcat(cmd, " ", 1, 0);
+	cmd = ostrcat(cmd, tmpjpg, 1, 0);
 #else
 	cmd = ostrcat(cmd, "jpegtran -outfile ", 1, 0);
 	cmd = ostrcat(cmd, tmpjpg, 1, 0);

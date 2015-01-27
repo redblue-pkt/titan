@@ -472,9 +472,9 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 #endif
 #ifdef MIPSEL
 										cmd = ostrcat(cmd, "cp -a ", 1, 0);
-										cmd = ostrcat(cmd, tmpjpg, 1, 0);
-										cmd = ostrcat(cmd, " ", 1, 0);
 										cmd = ostrcat(cmd, tnode->backdrop, 1, 0);
+										cmd = ostrcat(cmd, " ", 1, 0);
+										cmd = ostrcat(cmd, tmpjpg, 1, 0);
 #else
 										cmd = ostrcat(cmd, "jpegtran -outfile ", 1, 0);
 										cmd = ostrcat(cmd, tmpjpg, 1, 0);
@@ -646,14 +646,14 @@ struct tmdb* gettmdb(struct tmdb** first, char* input, int flag, int flag1)
 #endif
 #ifdef MIPSEL
 							cmd = ostrcat(cmd, "cp -a ", 1, 0);
-							cmd = ostrcat(cmd, tmpjpg, 1, 0);
-							cmd = ostrcat(cmd, " ", 1, 0);
 							cmd = ostrcat(cmd, tnode->postermid, 1, 0);
+							cmd = ostrcat(cmd, " ", 1, 0);
+							cmd = ostrcat(cmd, tmpjpg, 1, 0);
 #else
 							cmd = ostrcat(cmd, "jpegtran -outfile ", 1, 0);
 							cmd = ostrcat(cmd, tmpjpg, 1, 0);
 							cmd = ostrcat(cmd, " -copy none ", 1, 0);
-							cmd = ostrcat(cmd,tnode->postermid, 1, 0);
+							cmd = ostrcat(cmd, tnode->postermid, 1, 0);
 #endif
 							debug(133, "cmd %s", cmd);
 							system(cmd);
