@@ -162,7 +162,7 @@ void screengmediarender()
 //						drawscreen(skin, 0, 0);
 //					else
 						drawscreen(gmediarender, 0, 0);
-					printf("clear.png set count=%d set rcwait=%d\n", count, rcwait);
+//					printf("clear.png set count=%d set rcwait=%d\n", count, rcwait);
 				}
 				else if(ostrcmp(buf, "saver.png") == 0) //saver screen
 				{
@@ -178,7 +178,7 @@ void screengmediarender()
 						drawscreen(gmediarender, 0, 0);
 					}
 
-					printf("11saver.png set count=%d\n", count);
+//					printf("11saver.png set count=%d\n", count);
 				}
 				else
 				{
@@ -186,7 +186,7 @@ void screengmediarender()
 					rcwait = 1000;
 					drawscreen(skin, 0, 0);
 					gmediarendergetpic(gmediarender, buf);
-					printf("buf: %s set count=%d\n set rcwait=%d", buf, count, rcwait);
+//					printf("buf: %s set count=%d\n set rcwait=%d", buf, count, rcwait);
 				}
 			}
 //check screenserver
@@ -196,12 +196,12 @@ void screengmediarender()
 				if(count > 0 && screensaver != NULL)
 				{
 					count++;
-					printf("count++ %d\n", count);
+//					printf("count++ %d\n", count);
 				}
 	
 				if(count > screensaver_delay && screensaver != NULL)
 				{
-					printf("showscreensaver %d\n", count);
+//					printf("showscreensaver %d\n", count);
 					showscreensaver();
 					rcwait = screensaver->speed;
 				}
