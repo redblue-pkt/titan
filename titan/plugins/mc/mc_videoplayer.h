@@ -576,7 +576,7 @@ void screenmc_videoplayer()
 				free(tmpfilename), tmpfilename = NULL;
 			}
 			
-			servicestop(status.aktservice, 1, 1);
+//			servicestop(status.aktservice, 1, 1);
 			playrcstop(playertype, flag);
 			drawscreen(blackscreen, 0, 0);
 			drawscreen(loadmediadb, 0, 0);
