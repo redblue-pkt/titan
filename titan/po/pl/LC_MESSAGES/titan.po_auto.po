@@ -3909,7 +3909,7 @@ msgstr ""
 msgid "This video has been deleted. We apologize for the inconvenience."
 msgstr ""
 
-#: player.h:1108
+#: player.h:1110
 msgid "Buffering Stream - Cancel with Exit"
 msgstr ""
 
