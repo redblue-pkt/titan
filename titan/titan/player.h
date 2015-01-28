@@ -29,12 +29,13 @@ extern ManagerHandler_t ManagerHandler;
 
 #ifdef EPLAYER4
 GstElement *pipeline = NULL;
+gdouble m_framerate;
 unsigned long long m_gst_startpts = 0;
 CustomData data;
 GstElement *video_sink = NULL;
 struct stimerthread* subtitlethread = NULL;
-int buf_pos_ms = 0;
-int duration_ms = 0;
+uint32_t buf_pos_ms = 0;
+uint32_t duration_ms = 0;
 int subtitleflag = 0;
 char *subtext = NULL;
 #endif
@@ -640,19 +641,37 @@ void playersubtitle_thread()
 #ifdef EPLAYER4
 void playersubtitleAvail(GstElement *subsink, GstBuffer *buffer, gpointer user_data)
 {
+	printf("++++++ subtitelflag: %i\n", subtitleflag);
 	if(subtitleflag == 0 || subtitleflag == 2) return;
 	
 	gint64 buf_pos = GST_BUFFER_TIMESTAMP(buffer);
 	gint64 duration_ns = GST_BUFFER_DURATION(buffer);
 	
-#if GST_VERSION_MAJOR < 1
-		size_t len = GST_BUFFER_SIZE(buffer);
-#else
-		size_t len = gst_buffer_get_size(buffer);
-#endif
+	time_t running_pts = 0;
+	gint64 pos = 0;
+	int32_t decoder_ms;
+	GstFormat fmt = GST_FORMAT_TIME;
 	
+#if GST_VERSION_MAJOR < 1
+	if (!gst_element_query_position(pipeline, &fmt, &pos))
+#else
+	if (!gst_element_query_position(pipeline, fmt, &pos))
+#endif
+	{
+		err("gst_element_query_position failed");
+		return;
+	}
+	running_pts = pos / 11111LL;
+	decoder_ms = running_pts / 90;
+		
 	if(subtitlethread == NULL)
 		subtitlethread = addtimer(&playersubtitle_thread, START, 10000, 1, NULL, NULL, NULL);
+	
+#if GST_VERSION_MAJOR < 1
+	size_t len = GST_BUFFER_SIZE(buffer);
+#else
+	size_t len = gst_buffer_get_size(buffer);
+#endif
 	
 	printf("BUFFER_TIMESTAMP: %lld - BUFFER_DURATION: %lld in ns\n", buf_pos, duration_ns);
 	printf("BUFFER_SIZE: %d\n", len);
@@ -671,8 +690,13 @@ void playersubtitleAvail(GstElement *subsink, GstBuffer *buffer, gpointer user_d
 		return;
 	}		
 	sprintf(subtext, "%s", GST_BUFFER_DATA(buffer));
-	buf_pos_ms  = buf_pos / 1000000ULL;
+	
+	double convert_fps = 1.0;
+	buf_pos_ms  = (buf_pos / 1000000ULL) * convert_fps;
 	duration_ms = duration_ns / 1000000ULL;
+
+	printf("++++++ buff_pos  : %u\n", buf_pos_ms);
+	printf("++++++ decoder_ms: %i\n", decoder_ms);
 }
 #endif
 
@@ -809,7 +833,8 @@ int playerstart(char* file)
 			//status.playercan = 0x7E7F;
 			//status.playercan = 0x7EFF;
 			status.playercan = 0xFEFF;
-	
+		
+		m_framerate = -1;
 		pipeline = gst_element_factory_make("playbin2", "playbin");
 
 // enable buffersize start
@@ -1076,6 +1101,16 @@ int gstbuscall(GstBus *bus, GstMessage *msg, CustomData *data)
 		//	debug(150, "gst player async done");
 		//	break;
 		case GST_MESSAGE_ELEMENT:
+			printf("***************----***************-----**********\n");
+			const GstStructure *msgstruct = gst_message_get_structure(msg);
+			if (msgstruct)
+			{
+				const gchar *eventname = gst_structure_get_name(msgstruct);
+				if (!strcmp(eventname, "eventFrameRateChanged") || !strcmp(eventname, "eventFrameRateAvail"))
+				{
+					gst_structure_get_int (msgstruct, "frame_rate", &m_framerate);
+				}
+			}
 			debug(150, "gst player element");
 			break;
 		case GST_MESSAGE_BUFFERING:
@@ -1447,7 +1482,26 @@ void playercontinue()
 	if(pipeline)
 	{
 		if(status.playspeed != 0 || status.slowspeed != 0)
-			playersend_ff_fr_event(1);
+		{
+			//subtitle sync bug... start
+			gint64 time_nanoseconds = 0;
+			GstFormat fmt = GST_FORMAT_TIME;
+#if GST_VERSION_MAJOR < 1
+			if (!gst_element_query_position(pipeline, &fmt, &time_nanoseconds))
+#else
+			if (!gst_element_query_position(pipeline, fmt, &time_nanoseconds))
+#endif
+			{
+				err("gst_element_query_position failed");
+				return;
+			}
+			time_nanoseconds = time_nanoseconds - 90000;
+			if (!gst_element_seek (pipeline, 1, GST_FORMAT_TIME, (GstSeekFlags)(GST_SEEK_FLAG_FLUSH | GST_SEEK_FLAG_KEY_UNIT),GST_SEEK_TYPE_SET, time_nanoseconds,GST_SEEK_TYPE_NONE, GST_CLOCK_TIME_NONE))
+				printf("seekTo failed");
+			//subtitle sync bug... end
+
+			//playersend_ff_fr_event(1);
+		}		
 		gst_element_set_state(pipeline, GST_STATE_PLAYING);
 		if(subtitleflag == 2)
 			subtitleflag = 1;
