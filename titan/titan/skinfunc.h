@@ -348,10 +348,11 @@ char* getaspectmode(struct skin* node, char* path)
 		free(tmpstr); tmpstr = NULL;
 		tmpstr = ostrcat(tmpstr, "16_9.png", 1, 0);
 	}
+#endif
 	if(path != NULL)
 		tmpstr = ostrcat("/", tmpstr, 0, 1);
 	tmpstr = ostrcat(path, tmpstr, 0, 1);
-#endif
+
 	return tmpstr;
 }
 
