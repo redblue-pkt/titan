@@ -17,7 +17,11 @@ void screenstreaminfo()
 		tmpstr = getdevcontent("vmpegaspectdev");
 		if(tmpstr != NULL)
 		{
+#ifdef MIPSEL
+            if(ostrncmp(tmpstr, "0", 1) == 1)
+#else
 			if(ostrncmp(tmpstr, "0", 1) == 0)
+#endif
 				changetext(aspect, "4:3");
 			else
 				changetext(aspect, "16:9");
