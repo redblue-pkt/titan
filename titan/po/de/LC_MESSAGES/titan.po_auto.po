@@ -4012,7 +4012,7 @@ msgstr ""
 "Dieses Video wurde gelöscht. Wir entschuldigen uns für die "
 "Unannehmlichkeiten."
 
-#: player.h:1145
+#: player.h:1214
 msgid "Buffering Stream - Cancel with Exit"
 msgstr "Stream wird zwischengespeichert - abbrechen mit Exit"
 
