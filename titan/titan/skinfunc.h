@@ -325,21 +325,33 @@ char* getaspectmode(struct skin* node, char* path)
 	char* tmpstr = NULL;
 
 	tmpstr = getaspect();
-	if(ostrcmp(tmpstr, "4:3") == 1)
+
+#ifdef MIPSEL	
+    if(ostrcmp(tmpstr, "4:3") == 1)
 	{
 		free(tmpstr); tmpstr = NULL;
 		tmpstr = ostrcat(tmpstr, "4_3.png", 1, 0);
 	}
-	if(ostrcmp(tmpstr, "16:9") == 3 || 11)
+	if(ostrcmp(tmpstr, "16:9") == 3 || ostrcmp(tmpstr, "16:9") == 11)
 	{
 		free(tmpstr); tmpstr = NULL;
 		tmpstr = ostrcat(tmpstr, "16_9.png", 1, 0);
 	}
-
+#else
+    if(ostrcmp(tmpstr, "4:3") == 0)
+	{
+		free(tmpstr); tmpstr = NULL;
+		tmpstr = ostrcat(tmpstr, "4_3.png", 1, 0);
+	}
+	if(ostrcmp(tmpstr, "16:9") == 1)
+	{
+		free(tmpstr); tmpstr = NULL;
+		tmpstr = ostrcat(tmpstr, "16_9.png", 1, 0);
+	}
 	if(path != NULL)
 		tmpstr = ostrcat("/", tmpstr, 0, 1);
 	tmpstr = ostrcat(path, tmpstr, 0, 1);
-
+#endif
 	return tmpstr;
 }
 
@@ -417,13 +429,24 @@ char* getchannelaspect(struct skin* node, char* path)
 	
 	videoreadqwidth(status.aktservice->videodev);
 
+#ifdef MIPSEL
 //	if(getaktvideosize() == 0) //videosize is ok
 //	{
 		if(status.videosize.aspect_ratio == 1)
 			tmpstr = ostrcat("4_3.png", NULL, 0, 0);
-		else if(status.videosize.aspect_ratio == 3 || 11)
+		else if(status.videosize.aspect_ratio == 3 || status.videosize.aspect_ratio == 11)
 			tmpstr = ostrcat("16_9.png", NULL, 0, 0);
 //	}
+
+#else
+//	if(getaktvideosize() == 0) //videosize is ok
+//	{
+		if(status.videosize.aspect_ratio == 0)
+			tmpstr = ostrcat("4_3.png", NULL, 0, 0);
+		else if(status.videosize.aspect_ratio == 1)
+			tmpstr = ostrcat("16_9.png", NULL, 0, 0);
+//	}
+#endif
 	
 	if(tmpstr == NULL) tmpstr = ostrcat("novideoasp.png", NULL, 0, 0);
 
