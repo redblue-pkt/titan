@@ -240,7 +240,7 @@ char* getrec(struct skin* node, char* path)
     //	{
 		    if(status.videosize.aspect_ratio == 1)
 			    tmpstr = ostrcat("oled_4_3.png", NULL, 0, 0);
-		    else if(status.videosize.aspect_ratio == 3 || 11)
+		    else if(status.videosize.aspect_ratio == 3 || status.videosize.aspect_ratio == 11)
 			    tmpstr = ostrcat("oled_16_9.png", NULL, 0, 0);
     //	}
 	
