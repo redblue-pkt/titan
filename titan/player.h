@@ -599,6 +599,74 @@ void playerafterendts()
 }
 
 #ifdef EPLAYER4
+void playersubtitleclean(char* data, int len)
+{
+	char* zeichen = NULL;
+	int found = 1;
+	
+	while(found == 1)
+	{
+		found = 0;
+		zeichen = NULL;
+		zeichen = strstr(data, "&apos;"); 
+		if(zeichen != NULL)
+		{
+			zeichen[0] = '\'';
+			memcpy(zeichen+1, zeichen+6, len - (zeichen - data + 1));
+			found = 1;
+		}
+		zeichen = NULL;
+		zeichen = strstr(data, "&amp;"); 
+		if(zeichen != NULL)
+		{
+			zeichen[0] = '&';
+			memcpy(zeichen+1, zeichen+5, len - (zeichen - data + 1));
+			found = 1;
+		}
+		zeichen = NULL;
+		zeichen = strstr(data, "&quot;"); 
+		if(zeichen != NULL)
+		{
+			zeichen[0] = '"';
+			memcpy(zeichen+1, zeichen+6, len - (zeichen - data + 1));
+			found = 1;
+		}
+		zeichen = NULL;
+		zeichen = strstr(data, "&lt;"); 
+		if(zeichen != NULL)
+		{
+			zeichen[0] = '<';
+			memcpy(zeichen+1, zeichen+4, len - (zeichen - data + 1));
+			found = 1;
+		}
+		zeichen = NULL;
+		zeichen = strstr(data, "&gt;"); 
+		if(zeichen != NULL)
+		{
+			zeichen[0] = '<';
+			memcpy(zeichen+1, zeichen+4, len - (zeichen - data + 1));
+			found = 1;
+		}
+		//workaround da keine Aufbereitung
+		zeichen = NULL;
+		zeichen = strstr(data, "<i>"); 
+		if(zeichen != NULL)
+		{
+			memcpy(zeichen, zeichen+3, len - (zeichen - data + 1));
+			found = 1;
+		}
+		zeichen = NULL;
+		zeichen = strstr(data, "</i>"); 
+		if(zeichen != NULL)
+		{
+			memcpy(zeichen, zeichen+4, len - (zeichen - data + 1));
+			found = 1;
+		}
+	}
+}
+#endif
+
+#ifdef EPLAYER4
 void playersubtitle_thread()
 {
 	struct skin* framebuffer = getscreen("framebuffer");
@@ -641,7 +709,7 @@ void playersubtitle_thread()
 #ifdef EPLAYER4
 void playersubtitleAvail(GstElement *subsink, GstBuffer *buffer, gpointer user_data)
 {
-	printf("++++++ subtitelflag: %i\n", subtitleflag);
+	//printf("++++++ subtitelflag: %i\n", subtitleflag);
 	if(subtitleflag == 0 || subtitleflag == 2) return;
 	
 	gint64 buf_pos = GST_BUFFER_TIMESTAMP(buffer);
@@ -673,9 +741,9 @@ void playersubtitleAvail(GstElement *subsink, GstBuffer *buffer, gpointer user_d
 	size_t len = gst_buffer_get_size(buffer);
 #endif
 	
-	printf("BUFFER_TIMESTAMP: %lld - BUFFER_DURATION: %lld in ns\n", buf_pos, duration_ns);
-	printf("BUFFER_SIZE: %d\n", len);
-	printf("BUFFER_DATA: %s\n", GST_BUFFER_DATA(buffer));
+	//printf("BUFFER_TIMESTAMP: %lld - BUFFER_DURATION: %lld in ns\n", buf_pos, duration_ns);
+	//printf("BUFFER_SIZE: %d\n", len);
+	//printf("BUFFER_DATA: %s\n", GST_BUFFER_DATA(buffer));
 	
 	while(duration_ms != 0 && subtitlethread != NULL)
 	{
@@ -690,13 +758,14 @@ void playersubtitleAvail(GstElement *subsink, GstBuffer *buffer, gpointer user_d
 		return;
 	}		
 	sprintf(subtext, "%s", GST_BUFFER_DATA(buffer));
+	playersubtitleclean(subtext, len+10);
 	
 	double convert_fps = 1.0;
 	buf_pos_ms  = (buf_pos / 1000000ULL) * convert_fps;
 	duration_ms = duration_ns / 1000000ULL;
 
-	printf("++++++ buff_pos  : %u\n", buf_pos_ms);
-	printf("++++++ decoder_ms: %i\n", decoder_ms);
+	//printf("++++++ buff_pos  : %u\n", buf_pos_ms);
+	//printf("++++++ decoder_ms: %i\n", decoder_ms);
 }
 #endif
 
@@ -1101,7 +1170,7 @@ int gstbuscall(GstBus *bus, GstMessage *msg, CustomData *data)
 		//	debug(150, "gst player async done");
 		//	break;
 		case GST_MESSAGE_ELEMENT:
-			printf("***************----***************-----**********\n");
+			debug(150, "GST_MESSAGE_ELEMENT");
 			const GstStructure *msgstruct = gst_message_get_structure(msg);
 			if (msgstruct)
 			{
