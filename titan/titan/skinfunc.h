@@ -419,9 +419,9 @@ char* getchannelaspect(struct skin* node, char* path)
 
 //	if(getaktvideosize() == 0) //videosize is ok
 //	{
-		if(status.videosize.aspect_ratio == 0)
+		if(status.videosize.aspect_ratio == 1)
 			tmpstr = ostrcat("4_3.png", NULL, 0, 0);
-		else if(status.videosize.aspect_ratio == 1)
+		else if(status.videosize.aspect_ratio == 3 || 11)
 			tmpstr = ostrcat("16_9.png", NULL, 0, 0);
 //	}
 	
