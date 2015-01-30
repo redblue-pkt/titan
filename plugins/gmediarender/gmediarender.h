@@ -75,13 +75,14 @@ void gmediarendergetpic(struct skin* gmediarender, char* buf)
 
 void screengmediarender()
 {
-	int rcret = -1, ret = 0;
+	int rcret = -1, ret = 0, rcsaverwait = 0, count = 0, screensaver_delay = 0, rcwait = 1000;
 	char* cmd = NULL, *buf = NULL, *tmpstr = NULL, *tmpstr1 = NULL;
 	int fifo = -1;
 	struct skin* gmediarender = getscreen("gmediarender");
 	struct skin* servername = getscreennode(gmediarender, "servername");
 	struct skin* connect = getscreennode(gmediarender, "connect");
-
+	struct skin* loading = getscreen("loading");
+	
 	ret = servicestop(status.aktservice, 1, 1);
 	if(ret == 1) return;
 
@@ -136,13 +137,12 @@ void screengmediarender()
 	drawscreen(gmediarender, 0, 0);
 
 //load screenserver
-	int count = 0, screensaver_delay = 0, saver = 0, rcwait = 1000;
 	if(getconfigint("screensaver", NULL) == 1)
 	{
 		screensaver_delay = getconfigint("screensaver_delay", NULL);
 		initscreensaver();
 	}
-//	
+//
 	while(1)
 	{
 		rcret = waitrc(NULL, rcwait, 0);
@@ -154,39 +154,53 @@ void screengmediarender()
 			{
 				changetext(connect, _("DLNA Control Client connected !"));
 				buf[ret] = '\0';
+
 				if(ostrcmp(buf, "clear.png") == 0) //clear screen
+				{
+					servername->hidden = NO;
+					connect->hidden = NO;
+					count = 0;
+					rcwait = 1000;
+					rcsaverwait = 0;
+					servicestop(status.aktservice, 1, 1);
+					drawscreen(skin, 0, 0);
+				}
+				else if(ostrcmp(buf, "done.png") == 0) //clear screen
 				{
 					count = 0;
 					rcwait = 1000;
-//					if(getconfigint("screensaver", NULL) == 1)
-						drawscreen(skin, 0, 0);
-//					else
-//						drawscreen(gmediarender, 0, 0);
-//					printf("clear.png set count=%d set rcwait=%d\n", count, rcwait);
+					servicestop(status.aktservice, 1, 1);
+					drawscreen(skin, 0, 0);
+					changepic(gmediarender, "%pluginpath%/gmediarender/skin/background.jpg");
+					drawscreen(gmediarender, 0, 0);
 				}
 				else if(ostrcmp(buf, "saver.png") == 0) //saver screen
 				{
+					servername->hidden = NO;
+					connect->hidden = NO;
+
 					if(getconfigint("screensaver", NULL) == 1)
 					{
 						count = 1;
+						rcsaverwait = 0;
 						drawscreen(skin, 0, 0);
 					}
 					else
 					{
-//						count = 0;
+						servicestop(status.aktservice, 1, 1);
 						changepic(gmediarender, "%pluginpath%/gmediarender/skin/background.jpg");
 						drawscreen(gmediarender, 0, 0);
 					}
-
-//					printf("11saver.png set count=%d\n", count);
 				}
 				else
 				{
 					count = 0;
 					rcwait = 1000;
-//					drawscreen(skin, 0, 0);
+					servername->hidden = YES;
+					connect->hidden = YES;
+					drawscreen(skin, 0, 0);
+					drawscreen(loading, 0, 0);
 					gmediarendergetpic(gmediarender, buf);
-//					printf("buf: %s set count=%d\n set rcwait=%d", buf, count, rcwait);
 				}
 			}
 //check screenserver
@@ -196,17 +210,23 @@ void screengmediarender()
 				if(count > 0 && screensaver != NULL)
 				{
 					count++;
-//					printf("count++ %d\n", count);
 				}
-	
+
 				if(count > screensaver_delay && screensaver != NULL)
-				{
-//					printf("showscreensaver %d\n", count);
-					showscreensaver();
-					rcwait = screensaver->speed;
+				{						
+					if(rcsaverwait == 0)
+					{
+						showscreensaver();
+						rcsaverwait = screensaver->speed;
+					}
+
+					if(count * 1000 >= rcsaverwait)
+					{
+						showscreensaver();
+						rcsaverwait += screensaver->speed;
+					}
 				}
 			}
-//////
 		}
 
  		if(rcret == getrcconfigint("rcexit", NULL)) break;
