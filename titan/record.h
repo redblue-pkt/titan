@@ -1160,9 +1160,11 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 				audionode = audioopen(encnode->decoder);
 				servicenode->audiodev = audionode;
 				audioselectsource(servicenode->audiodev, AUDIO_SOURCE_DEMUX);
-				audiosetbypassmode(servicenode->audiodev, 1);
+				if(chnode->audiocodec != AC3)
+					audiosetbypassmode(servicenode->audiodev, 1);
+				else
+					audiosetbypassmode(servicenode->audiodev, 0);
 				audioplay(servicenode->audiodev);
-		
 				servicenode->dmxvideodev = dmxopen(fenode);
 				dmxsetbuffersize(servicenode->dmxvideodev, getconfigint("dmxvideobuffersize", NULL));
 				dmxsetsource(servicenode->dmxvideodev, fenode->fedmxsource);
