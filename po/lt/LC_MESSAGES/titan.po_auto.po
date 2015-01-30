@@ -1876,7 +1876,7 @@ msgstr ""
 msgid "Wait for connect or press EXIT"
 msgstr "Palaukite prijungimo ar paspauskite mygtuk EXIT"
 
-#: gmediarender.h:155
+#: gmediarender.h:156
 msgid "DLNA Control Client connected !"
 msgstr ""
 

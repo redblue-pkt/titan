@@ -1882,7 +1882,7 @@ msgstr ""
 "Warten Sie, bis die Verbindung hergestellt wurde\n"
 "oder brechen Sie durch -Exit- den Vorgang ab!"
 
-#: gmediarender.h:155
+#: gmediarender.h:156
 msgid "DLNA Control Client connected !"
 msgstr ""
 

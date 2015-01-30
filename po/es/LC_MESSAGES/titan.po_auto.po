@@ -1887,7 +1887,7 @@ msgstr ""
 "Tienes que esperar hasta que se establezca el proceso de conexion\n"
 " o cancelar -Exit-a traves del proceso"
 
-#: gmediarender.h:155
+#: gmediarender.h:156
 msgid "DLNA Control Client connected !"
 msgstr ""
 
