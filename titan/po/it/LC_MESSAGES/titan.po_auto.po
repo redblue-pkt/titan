@@ -1840,11 +1840,11 @@ msgstr ""
 msgid "Tunertype"
 msgstr ""
 
-#: gmediarender.h:127
+#: gmediarender.h:128
 msgid "DLNA Renderer Name"
 msgstr ""
 
-#: gmediarender.h:133
+#: gmediarender.h:134
 msgid "Wait for connect or press EXIT"
 msgstr ""
 
