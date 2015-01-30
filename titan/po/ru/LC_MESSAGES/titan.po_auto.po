@@ -1864,7 +1864,7 @@ msgstr ""
 "Подождите, пока соединение не будет уст�"
 "�новлено. Или нажмите -EXIT-"
 
-#: gmediarender.h:155
+#: gmediarender.h:156
 msgid "DLNA Control Client connected !"
 msgstr ""
 
