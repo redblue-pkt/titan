@@ -134,6 +134,7 @@ void screengmediarender()
 	tmpstr = ostrcat(_("Wait for connect or press EXIT"), NULL, 0, 0);
 	changetext(connect, tmpstr);
 
+	changepic(gmediarender, "%pluginpath%/gmediarender/skin/background.jpg");					
 	drawscreen(gmediarender, 0, 0);
 
 //load screenserver
@@ -145,7 +146,7 @@ void screengmediarender()
 //
 	while(1)
 	{
-		rcret = waitrc(NULL, rcwait, 0);
+		rcret = waitrcext(NULL, rcwait, 0, 0);
 
 		if(fifo > -1)
 		{
@@ -220,11 +221,20 @@ void screengmediarender()
 						rcsaverwait = screensaver->speed;
 					}
 
-					if(count * 1000 >= rcsaverwait)
+					if(screensaver->type == 2)
 					{
+						rcwait = screensaver->speed;
 						showscreensaver();
-						rcsaverwait += screensaver->speed;
 					}
+					else
+					{
+						if(count * 1000 >= rcsaverwait)
+						{
+							showscreensaver();
+							rcsaverwait += screensaver->speed;
+						}
+						rcwait = 1000;
+					}					
 				}
 			}
 		}
@@ -251,6 +261,9 @@ void screengmediarender()
 	unlink("/tmp/gmediarender");
 	unlink("/tmp/gmediarenderpic.jpg");
 	unlink("/tmp/gmediarenderpic.png");
+	delownerrc(gmediarender);
+	clearscreen(loading);
+	clearscreen(gmediarender);
 }
 
 #endif
