@@ -1571,7 +1571,14 @@ playerstart:
 					if(count > screensaver_delay && screensaver != NULL)
 					{
 						showscreensaver();
+#ifdef MIPSEL
+						if(screensaver->speed < 50)
+							rcwait = screensaver->speed * 10;
+						else
+							rcwait = screensaver->speed;
+#else
 						rcwait = screensaver->speed;
+#endif
 					}
 				}
 		
