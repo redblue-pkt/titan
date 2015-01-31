@@ -3967,7 +3967,7 @@ int setpolicy(char* value)
 		tmpstr = ostrcat(value, NULL, 0, 0);
 
 #ifdef MIPSEL
-		char* aspect = NULL
+		char* aspect = NULL;
 		aspect = getaspect();
 		if(!ostrncmp("16:9", aspect, 4))
 		{
