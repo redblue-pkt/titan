@@ -55,7 +55,7 @@ msgstr ""
 #: nowvideo.h:105 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:84 played.h:90 played.h:102 played.h:114 played.h:171
 #: player.h:108 play.h:497 play.h:614 play.h:1271 play.h:1277 play.h:1286
-#: play.h:1287 play.h:1488 play.h:1697 play.h:1708 plugins_dlna_skin.xml.h:8
+#: play.h:1287 play.h:1488 play.h:1704 play.h:1715 plugins_dlna_skin.xml.h:8
 #: plugins_facebook_skin.xml.h:5 plugins_mboxinfo_skin.xml.h:2
 #: plugins_mc_skin.xml.h:38 plugins_optimize_skin.xml.h:3
 #: plugins_rgui_skin.xml.h:3 plugins_sudoku_skin.xml.h:13
@@ -160,7 +160,7 @@ msgstr ""
 #: panel_main.h:135 panel_settings_wizard.h:6 played.h:30 played.h:84
 #: played.h:90 played.h:102 played.h:114 played.h:171 player.h:108 play.h:497
 #: play.h:614 play.h:1271 play.h:1277 play.h:1286 play.h:1287 play.h:1488
-#: play.h:1697 play.h:1708 plugins_autotimer_skin.xml.h:7
+#: play.h:1704 play.h:1715 plugins_autotimer_skin.xml.h:7
 #: plugins_callmonitor1_skin.xml.h:11 plugins_catcatch_skin.xml.h:4
 #: plugins_dlna_skin.xml.h:2 plugins_facebook_skin.xml.h:4
 #: plugins_instar_skin.xml.h:6 plugins_lcdpearl1_skin.xml.h:7
@@ -586,7 +586,7 @@ msgstr ""
 #: novamov.h:35 novamov.h:80 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105
 #: panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6 played.h:30
 #: played.h:84 played.h:90 played.h:102 played.h:114 played.h:171 player.h:108
-#: play.h:614 play.h:1286 play.h:1488 play.h:1697 play.h:1708 possetup.h:98
+#: play.h:614 play.h:1286 play.h:1488 play.h:1704 play.h:1715 possetup.h:98
 #: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
 #: promptfile.h:46 promptfile.h:94 promptfile.h:136 putlocker.h:32
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
@@ -4131,11 +4131,11 @@ msgstr ""
 msgid "SORT"
 msgstr "Sortuj"
 
-#: play.h:1697
+#: play.h:1704
 msgid "Marker autoseek is started"
 msgstr ""
 
-#: play.h:1708
+#: play.h:1715
 msgid "Marker autoseek is stopped"
 msgstr ""
 
