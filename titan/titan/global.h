@@ -1487,7 +1487,7 @@ void delspezchar(char* text, int flag)
 			if(tmpstr[0] == '/') tmpstr[0] = '-';
 			if(flag == 2)
 			{
-				if(tmpstr[0] == 'ยง') tmpstr[0] = '-';
+				if(tmpstr[0] == 'ย') tmpstr[0] = '-';
 				if(tmpstr[0] == '<') tmpstr[0] = '-';
  				if(tmpstr[0] == '>') tmpstr[0] = '-';
 				if(tmpstr[0] == ':') tmpstr[0] = '-';
@@ -3956,7 +3956,7 @@ char* getpolicy()
 
 int setpolicy(char* value)
 {
-	char* policydev, *aspect = NULL, *tmpstr = NULL;
+	char* policydev, *tmpstr = NULL;
 	int ret = 0;
 
 	policydev = getconfig("policydev", NULL);
@@ -3967,6 +3967,7 @@ int setpolicy(char* value)
 		tmpstr = ostrcat(value, NULL, 0, 0);
 
 #ifdef MIPSEL
+		char* aspect = NULL
 		aspect = getaspect();
 		if(!ostrncmp("16:9", aspect, 4))
 		{
