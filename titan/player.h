@@ -29,7 +29,7 @@ extern ManagerHandler_t ManagerHandler;
 
 #ifdef EPLAYER4
 GstElement *pipeline = NULL;
-gdouble m_framerate;
+gint m_framerate;
 unsigned long long m_gst_startpts = 0;
 CustomData data;
 GstElement *video_sink = NULL;
