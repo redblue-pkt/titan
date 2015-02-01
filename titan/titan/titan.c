@@ -636,7 +636,7 @@ int main(int argc, char *argv[])
 #ifdef MIPSEL
 	cecinit();
 #endif	
-	system(getconfig("skriptbeforetv", NULL))
+	system(getconfig("skriptbeforetv", NULL));
 #ifndef MIPSEL
 	ret = setcecstandby(0);
 #endif
