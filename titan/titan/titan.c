@@ -637,9 +637,7 @@ int main(int argc, char *argv[])
 	cecinit();
 #endif	
 	system(getconfig("skriptbeforetv", NULL));
-#ifndef MIPSEL
-	ret = setcecstandby(0);
-#endif
+//	ret = setcecstandby(0); --- > jetzt in checkboxstart
 	ret = setvideomode(getconfig("av_videomode", NULL), 0);
 	ret = setaspect(getconfig("av_aspect", NULL));
 	ret = setpolicy(getconfig("av_policy", NULL));
