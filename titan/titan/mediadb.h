@@ -1548,7 +1548,7 @@ printf("###### strip () strings start ##########################################
 
 // strip () strings
 // for (channel)-movie-(..).ts name
-	tmpstr1 = string_resub("(", ")", tmpstr, 0);
+	tmpstr1 = string_resub("(", ")", shortname, 0);
 	if(tmpstr1 != NULL)
 	{
 printf("found recnew filename strip (channel)-movie-(..).ts name from: %s\n", tmpstr);
@@ -1568,7 +1568,7 @@ printf("--------------------------------------------------\n");
 	free(tmpstr1); tmpstr1 = NULL;
 
 // for movie-(channel-...).ts name
-	tmpstr1 = string_resub("(", ")", tmpstr, 0);
+	tmpstr1 = string_resub("(", ")", shortname, 0);
 	if(tmpstr1 != NULL)
 	{
 printf("found recnew filename strip movie-(channel-...).ts name from: %s\n", tmpstr);
