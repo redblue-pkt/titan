@@ -862,7 +862,10 @@ char* recordcreatefilename(char* path, char* channelname, char* moviename, int t
 	strftime(buf, MINMALLOC, "%Y%m%d%H%M%S", loctime);
 	buf1 = ostrcat(buf, NULL, 1, 0);
 
-	tmpstr = ostrcat(tmpstr, "-", 1, 0);
+	if(type != RECTIMESHIFT && recordnamefmt == 1)
+		tmpstr = ostrcat(tmpstr, "-", 1, 0);
+	else
+		tmpstr = ostrcat(tmpstr, " (", 1, 0);	
 	tmpstr = ostrcat(tmpstr, buf1, 1, 1);
 	tmpstr = ostrcat(tmpstr, ")", 1, 0);
 	tmpstr = ostrcat(tmpstr, ".ts", 1, 0);
