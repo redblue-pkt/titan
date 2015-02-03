@@ -832,7 +832,7 @@ char* recordcreatefilename(char* path, char* channelname, char* moviename, int t
 			tmpstr = ostrcat(tmpstr, "unknown", 1, 0);
 		else
 			tmpstr = ostrcat(tmpstr, channelname, 1, 0);
-		tmpstr = ostrcat(tmpstr, ")-", 1, 0);
+		tmpstr = ostrcat(tmpstr, ") ", 1, 0);
 	}
 
 	if(moviename == NULL || strlen(moviename) == 0)
@@ -842,7 +842,7 @@ char* recordcreatefilename(char* path, char* channelname, char* moviename, int t
 
 	if(type != RECTIMESHIFT && recordnamefmt == 1)
 	{
-		tmpstr = ostrcat(tmpstr, "-(", 1, 0);
+		tmpstr = ostrcat(tmpstr, " (", 1, 0);
 		if(channelname == NULL || strlen(channelname) == 0)
 			tmpstr = ostrcat(tmpstr, "unknown", 1, 0);
 		else
