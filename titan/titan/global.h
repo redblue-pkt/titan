@@ -3912,6 +3912,14 @@ char* getpolicychoices()
 		return NULL;
 	}
 
+#ifdef MIPSEL
+	char *aspect = NULL;
+	aspect = getaspect();
+	if(!ostrncmp("16:9", aspect, 4))
+		value = string_replace("nonlinear", "", value, 1);
+	free(aspect), aspect = NULL;
+#endif
+
 	value = convertspacetolf(value);
 
 	return value;
