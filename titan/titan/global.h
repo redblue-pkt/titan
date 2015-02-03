@@ -3945,7 +3945,7 @@ char* getpolicy()
 		if(!ostrncmp("letterbox", value, 9))
 			value = string_replace("letterbox", "panscan", value, 1);			
 		else
-			value = string_replace("panscan", "letterbox", value, 1);
+			value = string_replace("panscan", "pillarbox", value, 1);
 	}
 	free(aspect), aspect = NULL;
 #endif
@@ -3979,7 +3979,7 @@ int setpolicy(char* value)
 		else
 		{		
 			if(!ostrncmp("letterbox", tmpstr, 9))
-				tmpstr = string_replace("letterbox", "panscan", tmpstr, 1);			
+				tmpstr = string_replace("pillarbox", "panscan", tmpstr, 1);			
 			else
 				tmpstr = string_replace("panscan", "letterbox", tmpstr, 1);
 		}
