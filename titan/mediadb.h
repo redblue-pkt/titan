@@ -1525,7 +1525,7 @@ char* createshortname(char* file, int *isrec, int *iscam, int flag)
 		fileinfo = ostrcat(fileinfo, "cam", 1, 0);
 	}
 	free(tmpstr1), tmpstr1 = NULL;
-	
+
 	if(*isrec == 0 && *iscam == 0)
 	{
 		string_tolower(shortname);
@@ -1543,6 +1543,51 @@ char* createshortname(char* file, int *isrec, int *iscam, int flag)
 		string_removechar(shortname);
 		strstrip(shortname);
 	}
+
+printf("###### strip () strings start ############################################\n");
+
+// strip () strings
+// for (channel)-movie-(..).ts name
+	tmpstr1 = string_resub("(", ")", tmpstr, 0);
+	if(tmpstr1 != NULL)
+	{
+printf("found recnew filename strip (channel)-movie-(..).ts name from: %s\n", tmpstr);
+		tmpstr1 = ostrcat("(", tmpstr1, 0, 1);
+		tmpstr1 = ostrcat(tmpstr1, ")", 1, 0);
+printf("showrname: %s\n", showrname);
+printf("tmpstr1: %s\n", tmpstr1);
+		shortname = string_replace(tmpstr1, "", shortname, 1);
+printf("shortname stripped: %s\n", shortname);
+printf("--------------------------------------------------\n");
+		if(fileinfo != NULL)
+			fileinfo = ostrcat(fileinfo, " ", 1, 0);
+		fileinfo = ostrcat(fileinfo, "recnew", 1, 0);
+		*isrec = 0;
+		*iscam = 0;
+	}
+	free(tmpstr1); tmpstr1 = NULL;
+
+// for movie-(channel-...).ts name
+	tmpstr1 = string_resub("(", ")", tmpstr, 0);
+	if(tmpstr1 != NULL)
+	{
+printf("found recnew filename strip movie-(channel-...).ts name from: %s\n", tmpstr);
+		tmpstr1 = ostrcat("(", tmpstr1, 0, 1);
+		tmpstr1 = ostrcat(tmpstr1, ")", 1, 0);
+printf("shortname: %s\n", shortname);
+printf("tmpstr1: %s\n", tmpstr1);
+		shortname = string_replace(tmpstr1, "", shortname, 1);
+printf("shortname stripped: %s\n", shortname);
+printf("--------------------------------------------------\n");
+		if(fileinfo != NULL)
+			fileinfo = ostrcat(fileinfo, " ", 1, 0);
+		fileinfo = ostrcat(fileinfo, "recnew", 1, 0);
+		*isrec = 0;
+		*iscam = 0;
+	}
+	free(tmpstr1); tmpstr1 = NULL;
+// end
+printf("###### strip () strings end ############################################\n");
 
 	string_tolower(tmpstr);
 
