@@ -1488,7 +1488,7 @@ void mediadbscanthread(struct stimerthread* self, char* path, int flag)
 // flag 2 = fileinfo
 char* createshortname(char* file, int *isrec, int *iscam, int flag)
 {
-	char* fileinfo = NULL, *shortname = NULL, *tmpstr = NULL;
+	char* fileinfo = NULL, *shortname = NULL, *tmpstr = NULL, *tmpstr1 = NULL;
 	//create imdb search name
 	shortname = ostrcat(file, NULL, 0, 0);
 
@@ -1540,7 +1540,7 @@ printf("--------------------------------------------------\n");
 // end
 printf("###### strip () strings end ############################################\n");
 
-	char* tmpstr1 = oregex(".*([0-9]{14,14}).*", tmpstr);
+	tmpstr1 = oregex(".*([0-9]{14,14}).*", tmpstr);
 	if(tmpstr1 != NULL)
 	{
 		shortname = string_replace(tmpstr1, "", shortname, 1);
