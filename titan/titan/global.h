@@ -3938,6 +3938,10 @@ char* getpolicy()
 	if(!ostrncmp("16:9", aspect, 4))
 	{
 		policydev = getconfig("policy2dev", NULL);
+		value = readsys(policydev, 1);
+	}
+	else
+	{
 		if(!ostrncmp("letterbox", value, 9))
 			value = string_replace("letterbox", "panscan", value, 1);			
 		else
@@ -3971,8 +3975,9 @@ int setpolicy(char* value)
 		char* aspect = NULL;
 		aspect = getaspect();
 		if(!ostrncmp("16:9", aspect, 4))
-		{
 			policydev = getconfig("policy2dev", NULL);
+		else
+		{		
 			if(!ostrncmp("letterbox", tmpstr, 9))
 				tmpstr = string_replace("letterbox", "panscan", tmpstr, 1);			
 			else
