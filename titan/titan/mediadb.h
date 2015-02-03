@@ -1554,7 +1554,7 @@ printf("###### strip () strings start ##########################################
 printf("found recnew filename strip (channel)-movie-(..).ts name from: %s\n", tmpstr);
 		tmpstr1 = ostrcat("(", tmpstr1, 0, 1);
 		tmpstr1 = ostrcat(tmpstr1, ")", 1, 0);
-printf("showrname: %s\n", showrname);
+printf("shortname: %s\n", shortname);
 printf("tmpstr1: %s\n", tmpstr1);
 		shortname = string_replace(tmpstr1, "", shortname, 1);
 printf("shortname stripped: %s\n", shortname);
