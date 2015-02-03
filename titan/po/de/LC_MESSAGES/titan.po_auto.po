@@ -6910,7 +6910,7 @@ msgstr "Stoppen"
 
 #: skin_default_skin.xml.h:176
 msgid "Debug Modus"
-msgstr "Fehlerbeseitigung"
+msgstr ""
 
 #: skin_default_skin.xml.h:177
 msgid "DEFAULT"
