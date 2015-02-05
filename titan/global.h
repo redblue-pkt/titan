@@ -3940,20 +3940,7 @@ char* getpolicychoices()
 
 #ifdef MIPSEL
 	free(value), value = NULL;
-//	value = ostrcat("16:9_set_bestfit_to_policy_show_justscale 16:9_set_letterbox_to_policy_show_panscan 16:9_set_panscan_to_policy_show_pillarbox 4:3_set_bestfit_to_policy2_show_justscale 4:3_set_letterbox_to_policy2_show_letterbox 4:3_set_panscan_to_policy2_show_panscan", NULL, 0, 0);
-
-	value = ostrcat(_("16:9_set_bestfit_to_policy_show_justscale"), NULL, 0, 0);
-	value = ostrcat(value, " ", 1, 0);
-	value = ostrcat(value, _("16:9_set_letterbox_to_policy_show_panscan"), 1, 0);
-	value = ostrcat(value, " ", 1, 0);
-	value = ostrcat(value, _("16:9_set_panscan_to_policy_show_pillarbox"), 1, 0);
-	value = ostrcat(value, " ", 1, 0);
-	value = ostrcat(value, _("4:3_set_bestfit_to_policy2_show_justscale"), 1, 0);
-	value = ostrcat(value, " ", 1, 0);
-	value = ostrcat(value, _("4:3_set_letterbox_to_policy2_show_letterbox"), 1, 0);
-	value = ostrcat(value, " ", 1, 0);
-	value = ostrcat(value, _("4:3_set_panscan_to_policy2_show_panscan"), 1, 0);
-
+	value = ostrcat("16:9_set_bestfit_to_policy_show_justscale 16:9_set_letterbox_to_policy_show_panscan 16:9_set_panscan_to_policy_show_pillarbox 4:3_set_bestfit_to_policy2_show_justscale 4:3_set_letterbox_to_policy2_show_letterbox 4:3_set_panscan_to_policy2_show_panscan", NULL, 0, 0);
 #endif
 
 	value = convertspacetolf(value);
