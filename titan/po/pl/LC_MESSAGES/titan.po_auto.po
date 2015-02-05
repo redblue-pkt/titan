@@ -640,7 +640,7 @@ msgstr ""
 #: skin_default_skin.xml.h:586 solarmovie.h:106 solarmovie.h:108
 #: solarmovie.h:219 solarmovie.h:221 tectime.h:13 tectime.h:15
 #: tithek_mainmenu.h:36 tmdb.h:898 tvtoast.h:837 tvtoast.h:839 xvideos.h:56
-#: xvideos.h:58 youtube.h:240 youtube.h:242 youtube.h:332 youtube.h:334
+#: xvideos.h:58 youtube.h:240 youtube.h:242 youtube.h:339 youtube.h:341
 #: zdf.h:147 zdf.h:149
 msgid "Search"
 msgstr "Szukaj kanał"
