@@ -260,7 +260,10 @@ int youtube_search(struct skin* grid, struct skin* listbox, struct skin* countla
 			path = ostrcat(path, "&max-results=50", 1, 0);
 					
 		char* tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
+//		writesys("/var/usr/local/share/titan/plugins/tithek/tmpstr1", tmpstr, 0);
+
 		tmpstr = string_replace_all("media:thumbnail", "\nthumbnail", tmpstr, 1);
+//		writesys("/var/usr/local/share/titan/plugins/tithek/tmpstr2", tmpstr, 0);
 
 		int count = 0;
 		int incount = 0;
@@ -273,10 +276,17 @@ int youtube_search(struct skin* grid, struct skin* listbox, struct skin* countla
 			int max = count;
 			for(i = 0; i < max; i++)
 			{
+				debug(99, "ret1[i].part=%s", ret1[i].part);
 				if(ostrstr(ret1[i].part, "http://i.ytimg.com/vi/") != NULL)
 				{
-					pic = oregex(".*thumbnail url=\'(http://i.ytimg.com/vi/.*/0.jpg).*", ret1[i].part);
-					id = oregex(".*thumbnail url=\'http://i.ytimg.com/vi/(.*)/0.jpg.*", ret1[i].part);
+					pic = oregex(".*thumbnail url=\'(http://i.ytimg.com/vi/.*/.*.jpg).*media:title.*", ret1[i].part);
+					id = oregex(".*thumbnail url=\'http://i.ytimg.com/vi/(.*)/.*.jpg.*media:title.*", ret1[i].part);
+					title = oregex(".*<media:title type='plain'>(.*)</media:title>.*", ret1[i].part);
+
+					debug(99, "title=%s", title);
+					debug(99, "id=%s", id);
+					debug(99, "pic=%s", pic);
+
 					int rcret = waitrc(NULL, 10, 0);
 					if(rcret == getrcconfigint("rcexit", NULL)) break;
 
@@ -285,11 +295,8 @@ int youtube_search(struct skin* grid, struct skin* listbox, struct skin* countla
 						incount += 1;
 						ip = ostrcat("www.youtube.com", NULL, 0, 0);
 						path = ostrcat("watch?v=", id, 0, 0);
-						title = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
-						title = string_resub("<meta name=\"title\" content=\"", "\">", title, 0);
 
 						line = ostrcat(line, title, 1, 0);
-//										line = ostrcat(line, "#http://www.youtube.com/watch?v=", 1, 0);
 						line = ostrcat(line, "#http://www.youtube.com/get_video_info?&video_id=", 1, 0);
 						line = ostrcat(line, id, 1, 0);
 						line = ostrcat(line, "#", 1, 0);
