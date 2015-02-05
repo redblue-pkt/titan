@@ -12009,7 +12009,7 @@ msgstr "16:9 Inhalt anzeigen als PillarBox"
 
 #: videomode.h:23
 msgid "4:3_set_bestfit_to_policy2_show_justscale"
-msgstr "16:9 Inhalt anzeigen als Just Scale"
+msgstr "4:3 Inhalt anzeigen als Just Scale"
 
 #: videomode.h:24
 msgid "4:3_set_letterbox_to_policy2_show_letterbox"
