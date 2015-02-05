@@ -20,7 +20,7 @@ msgstr "System Information"
 #: filenuke.h:106 filenuke.h:118 filenuke.h:190 firedrive.h:33 firedrive.h:66
 #: firedrive.h:72 firedrive.h:122 firedrive.h:128 firedrive.h:138 flashx.h:26
 #: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:5792 global.h:6417 global.h:6486 global.h:6505 global.h:6680
+#: global.h:5779 global.h:6404 global.h:6473 global.h:6492 global.h:6667
 #: harddisk.h:350 harddisk.h:355 harddisk.h:382 harddisk.h:386 harddisk.h:439
 #: harddisk.h:633 harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729
 #: harddisk.h:731 harddisk.h:733 harddisk.h:793 harddisk.h:812 harddisk.h:815
@@ -93,7 +93,7 @@ msgstr "System Information"
 #: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3211
 #: tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
 #: tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:931
-#: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:60
+#: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:67
 #: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
 #: vidstream.h:167 webif_index.atemio5200.h:38 webif_index.atemio6200.h:38
 #: webif_index.atemio7600.h:48 webif_index.atemio-nemesis.h:38
@@ -125,7 +125,7 @@ msgstr "Ok"
 #: filenuke.h:106 filenuke.h:118 filenuke.h:190 firedrive.h:33 firedrive.h:66
 #: firedrive.h:72 firedrive.h:122 firedrive.h:128 firedrive.h:138 flashx.h:26
 #: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:5792 global.h:6417 global.h:6486 global.h:6505 global.h:6680
+#: global.h:5779 global.h:6404 global.h:6473 global.h:6492 global.h:6667
 #: harddisk.h:350 harddisk.h:355 harddisk.h:382 harddisk.h:386 harddisk.h:439
 #: harddisk.h:633 harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729
 #: harddisk.h:731 harddisk.h:733 harddisk.h:793 harddisk.h:812 harddisk.h:815
@@ -208,7 +208,7 @@ msgstr "Ok"
 #: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3211 tpk.new.h:3167 tsSchnitt.c:108
 #: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
 #: tsSchnitt.c:347 tunerconfig.h:931 unlock.h:20 unlock.h:66 unlock.h:71
-#: unlock.h:75 videomode.h:60 videoweed.h:35 videoweed.h:80 vidstream.h:45
+#: unlock.h:75 videomode.h:67 videoweed.h:35 videoweed.h:80 vidstream.h:45
 #: vidstream.h:86 vidstream.h:98 vidstream.h:167 xupnpd.h:60 xupnpd.h:71
 #: xupnpd.h:73 xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:215
 #: zapback.c:79 zdf.h:29
@@ -555,8 +555,8 @@ msgstr "Ja/VZAP unendlich"
 #: filenuke.h:46 filenuke.h:94 filenuke.h:106 filenuke.h:118 filenuke.h:190
 #: firedrive.h:33 firedrive.h:66 firedrive.h:72 firedrive.h:122
 #: firedrive.h:128 firedrive.h:138 flashx.h:26 flashx.h:84 flashx.h:138
-#: flashx.h:195 flashx.h:233 flashx.h:270 global.h:5792 global.h:6417
-#: global.h:6486 global.h:6505 global.h:6680 harddisk.h:633 harddisk.h:641
+#: flashx.h:195 flashx.h:233 flashx.h:270 global.h:5779 global.h:6404
+#: global.h:6473 global.h:6492 global.h:6667 harddisk.h:633 harddisk.h:641
 #: harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733
 #: harddisk.h:793 harddisk.h:812 harddisk.h:815 hbbtv.h:362 hello.c:36
 #: httpdfunc.h:1222 httpdfunc.h:5667 httpdfunc.h:6053 httpdfunc.h:6318
@@ -613,7 +613,7 @@ msgstr "Ja/VZAP unendlich"
 #: tithek.h:2126 tithek.h:2136 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
 #: TopfieldVFD.c:72 tpk.h:3211 tpk.new.h:3167 tunerconfig.h:931 unlock.h:20
-#: unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:60 videoweed.h:35
+#: unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:67 videoweed.h:35
 #: videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98 vidstream.h:167
 #: webif_boxcontrol.h:2 xupnpd.h:60 xupnpd.h:71 xupnpd.h:73 xvidstage.h:54
 #: xvidstage.h:100 xvidstage.h:177 youtube.h:215 zapback.c:79 zdf.h:29
@@ -732,7 +732,7 @@ msgstr "10 Sekunden"
 msgid "on"
 msgstr "ein"
 
-#: avsettings.h:283 videomode.h:60
+#: avsettings.h:283 videomode.h:67
 msgid "Is this Videomode ok ?"
 msgstr "Ist dieser Videomodus ok?"
 
@@ -745,7 +745,7 @@ msgstr ""
 "könnte Ihre Einstellungen ändern.\n"
 "Möchten Sie es dennoch ausführen?"
 
-#: bgdownload.h:93 bgdownload.h:154 global.h:6920 httpdfunc.h:2793
+#: bgdownload.h:93 bgdownload.h:154 global.h:6907 httpdfunc.h:2793
 #: httpdfunc.h:2805 httpdfunc.h:5450 httpdfunc.h:5496 hwtest.h:478
 #: moduleconfig.h:345 skin_default_skin.xml.h:741 skinselector.h:138
 #: stream.h:22 transponder.h:122 transponder.h:158 transponder.h:194
@@ -1735,119 +1735,95 @@ msgstr "Die ausgewählte Datei existiert nicht oder wurde entfernt."
 msgid "This file is private and only viewable by the owner."
 msgstr "Diese Datei ist privat und nur für den Eigentümer sichtbar."
 
-#: global.h:3945
-msgid "16:9_set_bestfit_to_policy_show_justscale"
-msgstr "16:9 Inhalt anzeigen als Just Scale"
-
-#: global.h:3947
-msgid "16:9_set_letterbox_to_policy_show_panscan"
-msgstr "16:9 Inhalt anzeigen als Pan&Scan"
-
-#: global.h:3949
-msgid "16:9_set_panscan_to_policy_show_pillarbox"
-msgstr "16:9 Inhalt anzeigen als PillarBox"
-
-#: global.h:3951
-msgid "4:3_set_bestfit_to_policy2_show_justscale"
-msgstr "16:9 Inhalt anzeigen als Just Scale"
-
-#: global.h:3953
-msgid "4:3_set_letterbox_to_policy2_show_letterbox"
-msgstr "4:3 Inhalt anzeigen als Letterbox"
-
-#: global.h:3955
-msgid "4:3_set_panscan_to_policy2_show_panscan"
-msgstr "4:3 Inhalt anzeigen als Pan&Scan"
-
-#: global.h:5792 keyactions.h:205
+#: global.h:5779 keyactions.h:205
 msgid "ERROR cant read res"
 msgstr "FEHLER: Auflösung nicht erkannt"
 
-#: global.h:6017 rectimer.h:1080 skin_default_skin.xml.h:416
+#: global.h:6004 rectimer.h:1080 skin_default_skin.xml.h:416
 msgid "Monday"
 msgstr "Montag"
 
-#: global.h:6018 rectimer.h:1081 skin_default_skin.xml.h:718
+#: global.h:6005 rectimer.h:1081 skin_default_skin.xml.h:718
 msgid "Tuesday"
 msgstr "Dienstag"
 
-#: global.h:6019 rectimer.h:1082 skin_default_skin.xml.h:775
+#: global.h:6006 rectimer.h:1082 skin_default_skin.xml.h:775
 msgid "Wednesday"
 msgstr "Mittwoch"
 
-#: global.h:6020 rectimer.h:1083 skin_default_skin.xml.h:687
+#: global.h:6007 rectimer.h:1083 skin_default_skin.xml.h:687
 msgid "Thursday"
 msgstr "Donnerstag"
 
-#: global.h:6021 rectimer.h:1084 skin_default_skin.xml.h:255
+#: global.h:6008 rectimer.h:1084 skin_default_skin.xml.h:255
 msgid "Friday"
 msgstr "Freitag"
 
-#: global.h:6022 rectimer.h:1085 skin_default_skin.xml.h:567
+#: global.h:6009 rectimer.h:1085 skin_default_skin.xml.h:567
 msgid "Saturday"
 msgstr "Samstag"
 
-#: global.h:6023 rectimer.h:1086 skin_default_skin.xml.h:661
+#: global.h:6010 rectimer.h:1086 skin_default_skin.xml.h:661
 msgid "Sunday"
 msgstr "Sonntag"
 
-#: global.h:6027
+#: global.h:6014
 msgid "Mon"
 msgstr ""
 
-#: global.h:6028
+#: global.h:6015
 msgid "Tue"
 msgstr "Die"
 
-#: global.h:6029
+#: global.h:6016
 msgid "Wed"
 msgstr "Mit"
 
-#: global.h:6030
+#: global.h:6017
 msgid "Thu"
 msgstr "Don"
 
-#: global.h:6031
+#: global.h:6018
 msgid "Fri"
 msgstr "Fre"
 
-#: global.h:6032
+#: global.h:6019
 msgid "Sat"
 msgstr "Sam"
 
-#: global.h:6033
+#: global.h:6020
 msgid "Sun"
 msgstr "Son"
 
-#: global.h:6293
+#: global.h:6280
 msgid "Tuner "
 msgstr ""
 
-#: global.h:6302
+#: global.h:6289
 msgid "Multituner adjustable"
 msgstr "Multituner einstellbar"
 
-#: global.h:6352
+#: global.h:6339
 msgid "Create Transponder (Sat)"
 msgstr "Erstelle Transponder (Sat)"
 
-#: global.h:6353
+#: global.h:6340
 msgid "Create Transponder (Cable)"
 msgstr "Erstelle Transponder (Kabel)"
 
-#: global.h:6354
+#: global.h:6341
 msgid "Create Transponder (Terrestrial)"
 msgstr "Erstelle Transponder (Terrestrisch)"
 
-#: global.h:6355
+#: global.h:6342
 msgid "Create Transponder (All)"
 msgstr "Erstelle Transponder (Alle)"
 
-#: global.h:6357
+#: global.h:6344
 msgid "Select Your Serach Modus"
 msgstr "Wählen Sie den Such Modus"
 
-#: global.h:6417
+#: global.h:6404
 msgid ""
 "Transponder/Satellite Convert done, please use channel search on next Boot.\n"
 "Your System will reboot !"
@@ -1856,15 +1832,15 @@ msgstr ""
 "Bitte führen Sie einen Sendersuchlauf nach dem Reboot durch.\n"
 "Ihre Box wird nun neu gestartet!"
 
-#: global.h:6481
+#: global.h:6468
 msgid "Error: Transponder Source file not found"
 msgstr "Fehler: Transponder Quell Datei nicht gefunden"
 
-#: global.h:6503
+#: global.h:6490
 msgid "Error: Transponder Source file no data"
 msgstr "Fehler: Transponder ist leer"
 
-#: global.h:6680
+#: global.h:6667
 msgid ""
 "Standard favorites have been successfully applied.\n"
 "Your System will reboot !"
@@ -1872,27 +1848,27 @@ msgstr ""
 "Standard Favoriten erfolgreich importiert.\n"
 "Ihre Box wird nun neu gestartet!"
 
-#: global.h:6895
+#: global.h:6882
 msgid "Image"
 msgstr ""
 
-#: global.h:6898
+#: global.h:6885
 msgid "Version"
 msgstr ""
 
-#: global.h:6902 httpdfunc.h:5556 skin_default_skin.xml.h:351
+#: global.h:6889 httpdfunc.h:5556 skin_default_skin.xml.h:351
 msgid "Installed:"
 msgstr "Installiert:"
 
-#: global.h:6906
+#: global.h:6893
 msgid "Copyright"
 msgstr "© Copyright"
 
-#: global.h:6915 skin_default_skin.xml.h:719
+#: global.h:6902 skin_default_skin.xml.h:719
 msgid "Tuner"
 msgstr ""
 
-#: global.h:6922 skin_default_skin.xml.h:725
+#: global.h:6909 skin_default_skin.xml.h:725
 msgid "Tunertype"
 msgstr "Tuner Typ"
 
@@ -2903,7 +2879,7 @@ msgid "Child Protection"
 msgstr "Jugendschutz"
 
 #: keyactions.h:83 settings_bluebutton.h:20 settings_pluginbutton.h:21
-#: settings_redbutton.h:21 videomode.h:24
+#: settings_redbutton.h:21 videomode.h:31
 msgid "Subchannel"
 msgstr "Unterkanäle"
 
@@ -6449,7 +6425,7 @@ msgstr ""
 msgid "+"
 msgstr ""
 
-#: skin_default_skin.xml.h:37 videomode.h:27 videomode.h:89
+#: skin_default_skin.xml.h:37 videomode.h:34 videomode.h:96
 msgid "3D Mode"
 msgstr "3D Modus"
 
@@ -12019,15 +11995,39 @@ msgstr "Originalgröße"
 msgid "non"
 msgstr "Originalgröße"
 
-#: videomode.h:25 videomode.h:54
+#: videomode.h:20
+msgid "16:9_set_bestfit_to_policy_show_justscale"
+msgstr "16:9 Inhalt anzeigen als Just Scale"
+
+#: videomode.h:21
+msgid "16:9_set_letterbox_to_policy_show_panscan"
+msgstr "16:9 Inhalt anzeigen als Pan&Scan"
+
+#: videomode.h:22
+msgid "16:9_set_panscan_to_policy_show_pillarbox"
+msgstr "16:9 Inhalt anzeigen als PillarBox"
+
+#: videomode.h:23
+msgid "4:3_set_bestfit_to_policy2_show_justscale"
+msgstr "16:9 Inhalt anzeigen als Just Scale"
+
+#: videomode.h:24
+msgid "4:3_set_letterbox_to_policy2_show_letterbox"
+msgstr "4:3 Inhalt anzeigen als Letterbox"
+
+#: videomode.h:25
+msgid "4:3_set_panscan_to_policy2_show_panscan"
+msgstr "4:3 Inhalt anzeigen als Pan&Scan"
+
+#: videomode.h:32 videomode.h:61
 msgid "Resolution Settings"
 msgstr "Auflösung"
 
-#: videomode.h:26 videomode.h:76
+#: videomode.h:33 videomode.h:83
 msgid "Aspect Settings"
 msgstr "Seitenverhältnis"
 
-#: videomode.h:32 videomode.h:34
+#: videomode.h:39 videomode.h:41
 msgid "Videomode"
 msgstr "Video Modus"
 
