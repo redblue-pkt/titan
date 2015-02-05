@@ -4162,7 +4162,7 @@ int setaspect(char* value)
 			tmpstr = string_replace("set_", "", tmpstr, 1);
 			debug(10, "change %s to %s", aspectdev, tmpstr);
 			ret = writesys(aspectdev, tmpstr, 0);
-			addconfig("av_aspect", tmpstr);
+			if(ret == 0) addconfig("av_aspect", tmpstr);
 			free(tmpstr); tmpstr = NULL;
 			return ret;
 		}

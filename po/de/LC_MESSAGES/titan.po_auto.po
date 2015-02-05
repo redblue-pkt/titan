@@ -1737,27 +1737,27 @@ msgstr "Diese Datei ist privat und nur für den Eigentümer sichtbar."
 
 #: global.h:3945
 msgid "16:9_set_bestfit_to_policy_show_justscale"
-msgstr ""
+msgstr "16:9 Inhalt anzeigen als Just Scale"
 
 #: global.h:3947
 msgid "16:9_set_letterbox_to_policy_show_panscan"
-msgstr ""
+msgstr "16:9 Inhalt anzeigen als Pan&Scan"
 
 #: global.h:3949
 msgid "16:9_set_panscan_to_policy_show_pillarbox"
-msgstr ""
+msgstr "16:9 Inhalt anzeigen als PillarBox"
 
 #: global.h:3951
 msgid "4:3_set_bestfit_to_policy2_show_justscale"
-msgstr ""
+msgstr "16:9 Inhalt anzeigen als Just Scale"
 
 #: global.h:3953
 msgid "4:3_set_letterbox_to_policy2_show_letterbox"
-msgstr ""
+msgstr "4:3 Inhalt anzeigen als Letterbox"
 
 #: global.h:3955
 msgid "4:3_set_panscan_to_policy2_show_panscan"
-msgstr ""
+msgstr "4:3 Inhalt anzeigen als Pan&Scan"
 
 #: global.h:5792 keyactions.h:205
 msgid "ERROR cant read res"
