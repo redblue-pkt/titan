@@ -1905,12 +1905,47 @@ int setrtctime(int value)
 	return 0;
 }
 
+/*
+16:9_set_bestfit_to_policy_show_justscale
+16:9_set_letterbox_to_policy_show_panscan
+16:9_set_panscan_to_policy_show_pillarbox
+4:3_set_bestfit_to_policy2_show_justscale
+4:3_set_letterbox_to_policy2_show_letterbox
+4:3_set_panscan_to_policy2_show_panscan
+*/
+
 int changepolicy()
 {
 	char *tmppolicy = NULL, *tmpstr = NULL;
 
  	tmppolicy = getpolicy();
 
+#ifdef MIPSEL
+	char *aspect = NULL;
+	aspect = getaspect();
+
+printf("changepolicy: tmppolicy: %s\n",tmppolicy);
+	if(!ostrncmp("16:9", aspect, 4))
+	{
+		if(ostrcmp("16:9_set_bestfit_to_policy_show_justscale", tmppolicy) == 0)
+			tmpstr = ostrcat("16:9_set_letterbox_to_policy_show_panscan", NULL, 0, 0);
+		else if(ostrcmp("16:9_set_letterbox_to_policy_show_panscan", tmppolicy) == 0)
+			tmpstr = ostrcat("16:9_set_panscan_to_policy_show_pillarbox", NULL, 0, 0);
+		else if(ostrcmp("16:9_set_panscan_to_policy_show_pillarbox", tmppolicy) == 0)
+			tmpstr = ostrcat("16:9_set_bestfit_to_policy_show_justscale", NULL, 0, 0);
+
+	}
+	else
+	{
+		if(ostrcmp("4:3_set_bestfit_to_policy2_show_justscale", tmppolicy) == 0)
+			tmpstr = ostrcat("4:3_set_letterbox_to_policy2_show_letterbox", NULL, 0, 0);
+		else if(ostrcmp("4:3_set_letterbox_to_policy2_show_letterbox", tmppolicy) == 0)
+			tmpstr = ostrcat("4:3_set_panscan_to_policy2_show_panscan", NULL, 0, 0);
+		else if(ostrcmp("16:9_set_panscan_to_policy_show_pillarbox", tmppolicy) == 0)
+			tmpstr = ostrcat("4:3_set_bestfit_to_policy2_show_justscale", NULL, 0, 0);
+	}
+
+#else
 	if(!ostrncmp("letterbox", tmppolicy, 8))
 		tmpstr = ostrcat(tmpstr, "panscan", 1, 0);
 	else if(!ostrncmp("panscan", tmppolicy, 7))
@@ -1919,6 +1954,8 @@ int changepolicy()
 		tmpstr = ostrcat(tmpstr, "bestfit", 1, 0);
 	else if(!ostrncmp("bestfit", tmppolicy, 7))
 		tmpstr = ostrcat(tmpstr, "letterbox", 1, 0);
+#endif
+printf("changepolicy: tmpstr: %s\n",tmpstr);
 
 	setpolicy(tmpstr);
 
@@ -3913,11 +3950,8 @@ char* getpolicychoices()
 	}
 
 #ifdef MIPSEL
-	char *aspect = NULL;
-	aspect = getaspect();
-	if(!ostrncmp("16:9", aspect, 4))
-		value = string_replace("nonlinear", "", value, 1);
-	free(aspect), aspect = NULL;
+	free(value), value = NULL;
+	value = ostrcat("16:9_set_bestfit_to_policy_show_justscale 16:9_set_letterbox_to_policy_show_panscan 16:9_set_panscan_to_policy_show_pillarbox 4:3_set_bestfit_to_policy2_show_justscale 4:3_set_letterbox_to_policy2_show_letterbox 4:3_set_panscan_to_policy2_show_panscan", NULL, 0, 0);
 #endif
 
 	value = convertspacetolf(value);
@@ -3945,17 +3979,45 @@ char* getpolicy()
 	aspect = getaspect();
 	if(!ostrncmp("16:9", aspect, 4))
 	{
-		policydev = getconfig("policy2dev", NULL);
-		value = readsys(policydev, 1);
+		if(ostrcmp("bestfit", value) == 0)
+		{
+			free(value), value = NULL;
+			value = ostrcat("16:9_set_bestfit_to_policy_show_justscale", NULL, 0, 0);
+		}
+		else if(ostrcmp("letterbox", value) == 0)
+		{
+			free(value), value = NULL;
+			value = ostrcat("16:9_set_letterbox_to_policy_show_panscan", NULL, 0, 0);
+		}
+		else if(ostrcmp("panscan", value) == 0)
+		{
+			free(value), value = NULL;
+			value = ostrcat("16:9_set_panscan_to_policy_show_pillarbox", NULL, 0, 0);
+		}
 	}
 	else
 	{
-		if(!ostrncmp("letterbox", value, 9))
-			value = string_replace("letterbox", "panscan", value, 1);			
-		else
-			value = string_replace("panscan", "pillarbox", value, 1);
+		policydev = getconfig("policy2dev", NULL);
+		value = readsys(policydev, 1);
+
+		if(ostrcmp("bestfit", value) == 0)
+		{
+			free(value), value = NULL;
+			value = ostrcat("4:3_set_bestfit_to_policy2_show_justscale", NULL, 0, 0);
+		}
+		else if(ostrcmp("letterbox", value) == 0)
+		{
+			free(value), value = NULL;
+			value = ostrcat("4:3_set_letterbox_to_policy2_show_letterbox", NULL, 0, 0);
+		}
+		else if(ostrcmp("panscan", value) == 0)
+		{
+			free(value), value = NULL;
+			value = ostrcat("4:3_set_panscan_to_policy2_show_panscan", NULL, 0, 0);
+		}
 	}
 	free(aspect), aspect = NULL;
+
 #endif
 
 	if(value == NULL)
@@ -3980,18 +4042,45 @@ int setpolicy(char* value)
 		tmpstr = ostrcat(value, NULL, 0, 0);
 
 #ifdef MIPSEL
-		char* aspect = NULL;
-		aspect = getaspect();
-		if(!ostrncmp("16:9", aspect, 4))
-			policydev = getconfig("policy2dev", NULL);
-		else
-		{		
-			if(!ostrncmp("letterbox", tmpstr, 9))
-				tmpstr = string_replace("pillarbox", "panscan", tmpstr, 1);			
-			else
-				tmpstr = string_replace("panscan", "letterbox", tmpstr, 1);
+		if(ostrcmp("16:9_set_bestfit_to_policy_show_justscale", tmpstr) == 0)
+		{
+			free(tmpstr), tmpstr = NULL;
+			tmpstr = ostrcat("bestfit", NULL, 0, 0);
+			setaspect("set_16:9");
 		}
-		free(aspect), aspect = NULL;
+		else if(ostrcmp("16:9_set_letterbox_to_policy_show_panscan", tmpstr) == 0)
+		{
+			free(tmpstr), tmpstr = NULL;
+			tmpstr = ostrcat("letterbox", NULL, 0, 0);
+			setaspect("set_16:9");
+		}
+		else if(ostrcmp("16:9_set_panscan_to_policy_show_pillarbox", tmpstr) == 0)
+		{
+			free(tmpstr), tmpstr = NULL;
+			tmpstr = ostrcat("panscan", NULL, 0, 0);
+			setaspect("set_16:9");
+		}			
+		else if(ostrcmp("4:3_set_bestfit_to_policy2_show_justscale", tmpstr) == 0)
+		{
+			policydev = getconfig("policy2dev", NULL);
+			free(tmpstr), tmpstr = NULL;
+			tmpstr = ostrcat("bestfit", NULL, 0, 0);
+			setaspect("set_4:3");
+		}
+		else if(ostrcmp("4:3_set_letterbox_to_policy2_show_letterbox", tmpstr) == 0)
+		{
+			policydev = getconfig("policy2dev", NULL);
+			free(tmpstr), tmpstr = NULL;
+			tmpstr = ostrcat("letterbox", NULL, 0, 0);
+			setaspect("set_4:3");
+		}
+		else if(ostrcmp("4:3_set_panscan_to_policy2_show_panscan", tmpstr) == 0)
+		{
+			policydev = getconfig("policy2dev", NULL);
+			free(tmpstr), tmpstr = NULL;
+			tmpstr = ostrcat("panscan", NULL, 0, 0);
+			setaspect("set_4:3");
+		}
 #endif
 		debug(10, "set change %s to %s", policydev, tmpstr);
 		ret = writesys(policydev, tmpstr, 0);
@@ -4062,16 +4151,32 @@ int setaspect(char* value)
 
 	if(aspectdev != NULL && value != NULL)
 	{
-		debug(100, "set %s to %s", aspectdev, value);
-		ret = writesys(aspectdev, value, 0);
-		if(ret == 0)
-		{
-			addconfig("av_aspect", value);
+		debug(10, "set %s to %s", aspectdev, value);
 
-			//set policy new after change aspect
-			char* tmpstr = getpolicy();
-			setpolicy(tmpstr);
+		if(!ostrncmp("set_", value, 4))
+		{
+			char* tmpstr = NULL;
+			tmpstr = ostrcat(value, NULL, 0, 0);
+			tmpstr = string_replace("set_", "", tmpstr, 1);
+			debug(10, "change %s to %s", aspectdev, tmpstr);
+			ret = writesys(aspectdev, tmpstr, 0);
+			addconfig("av_aspect", tmpstr);
 			free(tmpstr); tmpstr = NULL;
+			return ret;
+		}
+		else
+		{
+			ret = writesys(aspectdev, value, 0);
+
+			if(ret == 0)
+			{
+				addconfig("av_aspect", value);
+	
+				//set policy new after change aspect
+				char* tmpstr = getpolicy();
+				setpolicy(tmpstr);
+				free(tmpstr); tmpstr = NULL;
+			}
 		}
 		return ret;
 	}
