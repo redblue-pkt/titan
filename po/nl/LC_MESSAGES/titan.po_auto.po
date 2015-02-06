@@ -3,7 +3,7 @@ msgid "System-Info"
 msgstr "Systeem informatie"
 
 #: about.h:9 ard.h:31 autotimer.c:537 autotimer.c:543 autotimer.c:568
-#: autotimer.c:575 autotimer.c:603 avsettings.h:283 betarobot.h:57
+#: autotimer.c:575 autotimer.c:603 avsettings.h:287 betarobot.h:57
 #: bgdownload.h:176 blindscanadjust.h:25 callmon_main.h:39 channellist.h:913
 #: channellist.h:915 channellist.h:920 channellist.h:922 channellist.h:1006
 #: divxstage.h:36 divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336
@@ -20,7 +20,7 @@ msgstr "Systeem informatie"
 #: filenuke.h:106 filenuke.h:118 filenuke.h:190 firedrive.h:33 firedrive.h:66
 #: firedrive.h:72 firedrive.h:122 firedrive.h:128 firedrive.h:138 flashx.h:26
 #: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:5804 global.h:6429 global.h:6498 global.h:6517 global.h:6692
+#: global.h:5808 global.h:6433 global.h:6502 global.h:6521 global.h:6696
 #: harddisk.h:350 harddisk.h:355 harddisk.h:382 harddisk.h:386 harddisk.h:439
 #: harddisk.h:633 harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729
 #: harddisk.h:731 harddisk.h:733 harddisk.h:793 harddisk.h:812 harddisk.h:815
@@ -108,7 +108,7 @@ msgid "OK"
 msgstr "Ok"
 
 #: about.h:9 ard.h:31 autotimer.c:537 autotimer.c:543 autotimer.c:568
-#: autotimer.c:575 autotimer.c:603 avsettings.h:283 betarobot.h:57
+#: autotimer.c:575 autotimer.c:603 avsettings.h:287 betarobot.h:57
 #: bgdownload.h:176 blindscanadjust.h:25 channellist.h:913 channellist.h:915
 #: channellist.h:920 channellist.h:922 channellist.h:1006 divxstage.h:36
 #: divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336 dlna.h:345
@@ -125,7 +125,7 @@ msgstr "Ok"
 #: filenuke.h:106 filenuke.h:118 filenuke.h:190 firedrive.h:33 firedrive.h:66
 #: firedrive.h:72 firedrive.h:122 firedrive.h:128 firedrive.h:138 flashx.h:26
 #: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:5804 global.h:6429 global.h:6498 global.h:6517 global.h:6692
+#: global.h:5808 global.h:6433 global.h:6502 global.h:6521 global.h:6696
 #: harddisk.h:350 harddisk.h:355 harddisk.h:382 harddisk.h:386 harddisk.h:439
 #: harddisk.h:633 harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729
 #: harddisk.h:731 harddisk.h:733 harddisk.h:793 harddisk.h:812 harddisk.h:815
@@ -219,8 +219,8 @@ msgstr "Exit"
 #: adjust.h:166 adjust.h:170 adjust.h:187 adjust.h:191 adjust.h:199
 #: adjust.h:203 adjust.h:207 adjust.h:213 adjust.h:217 adjust.h:224
 #: adjust.h:228 adjust.h:232 adjust.h:238 adjust.h:244 adjust.h:292
-#: autotimer.c:453 autotimer.c:486 avsettings.h:157 avsettings.h:204
-#: avsettings.h:208 blindscanadjust.h:150 blindscanadjust.h:154
+#: autotimer.c:453 autotimer.c:486 avsettings.h:161 avsettings.h:208
+#: avsettings.h:212 blindscanadjust.h:150 blindscanadjust.h:154
 #: blindscanadjust.h:158 blindscanadjust.h:187 blindscanadjust.h:191 cec.h:143
 #: cec.h:147 cec.h:151 cec.h:155 cec.h:159 cec.h:163 cec.h:167 cec.h:171
 #: cec.h:175 dlna.h:276 epgsettings.h:134 epgsettings.h:187 epgsettings.h:196
@@ -287,8 +287,8 @@ msgstr "Zender EPG"
 #: adjust.h:84 adjust.h:98 adjust.h:127 adjust.h:157 adjust.h:167 adjust.h:188
 #: adjust.h:192 adjust.h:200 adjust.h:204 adjust.h:208 adjust.h:214
 #: adjust.h:218 adjust.h:225 adjust.h:229 adjust.h:233 adjust.h:239
-#: adjust.h:243 autotimer.c:454 autotimer.c:487 avsettings.h:158
-#: avsettings.h:205 blindscanadjust.h:151 blindscanadjust.h:155
+#: adjust.h:243 autotimer.c:454 autotimer.c:487 avsettings.h:162
+#: avsettings.h:209 blindscanadjust.h:151 blindscanadjust.h:155
 #: blindscanadjust.h:159 blindscanadjust.h:188 blindscanadjust.h:192 cec.h:144
 #: cec.h:148 cec.h:152 cec.h:156 cec.h:160 cec.h:164 cec.h:168 cec.h:172
 #: cec.h:176 dlna.h:277 epgsettings.h:135 epgsettings.h:188 epgsettings.h:197
@@ -542,7 +542,7 @@ msgstr "Ja / VZAP 2 sek"
 msgid "yes / vzap endless"
 msgstr "Ja / VZAP oneindig"
 
-#: ard.h:31 avsettings.h:283 betarobot.h:57 bgdownload.h:176
+#: ard.h:31 avsettings.h:287 betarobot.h:57 bgdownload.h:176
 #: blindscanadjust.h:25 callmon_main.h:39 channellist.h:913 channellist.h:915
 #: channellist.h:920 channellist.h:922 channellist.h:1006 divxstage.h:36
 #: divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336 dlna.h:345
@@ -555,8 +555,8 @@ msgstr "Ja / VZAP oneindig"
 #: filenuke.h:46 filenuke.h:94 filenuke.h:106 filenuke.h:118 filenuke.h:190
 #: firedrive.h:33 firedrive.h:66 firedrive.h:72 firedrive.h:122
 #: firedrive.h:128 firedrive.h:138 flashx.h:26 flashx.h:84 flashx.h:138
-#: flashx.h:195 flashx.h:233 flashx.h:270 global.h:5804 global.h:6429
-#: global.h:6498 global.h:6517 global.h:6692 harddisk.h:633 harddisk.h:641
+#: flashx.h:195 flashx.h:233 flashx.h:270 global.h:5808 global.h:6433
+#: global.h:6502 global.h:6521 global.h:6696 harddisk.h:633 harddisk.h:641
 #: harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733
 #: harddisk.h:793 harddisk.h:812 harddisk.h:815 hbbtv.h:362 hello.c:36
 #: httpdfunc.h:1222 httpdfunc.h:5667 httpdfunc.h:6053 httpdfunc.h:6318
@@ -732,7 +732,7 @@ msgstr ""
 msgid "on"
 msgstr "Aan"
 
-#: avsettings.h:283 videomode.h:67
+#: avsettings.h:287 videomode.h:67
 msgid "Is this Videomode ok ?"
 msgstr "Is deze beeld instelling ok?"
 
@@ -744,7 +744,7 @@ msgstr ""
 "Deze plugin is alleen voor bèta testers en kan uw instellingen wijzigen!\n"
 "Echt starten?"
 
-#: bgdownload.h:93 bgdownload.h:154 global.h:6932 httpdfunc.h:2793
+#: bgdownload.h:93 bgdownload.h:154 global.h:6936 httpdfunc.h:2793
 #: httpdfunc.h:2805 httpdfunc.h:5450 httpdfunc.h:5496 hwtest.h:478
 #: moduleconfig.h:345 skin_default_skin.xml.h:741 skinselector.h:138
 #: stream.h:22 transponder.h:122 transponder.h:158 transponder.h:194
@@ -1728,165 +1728,165 @@ msgstr "Dit bestand bestaat niet of is verplaatst."
 msgid "This file is private and only viewable by the owner."
 msgstr ""
 
-#: global.h:1940 global.h:1951 global.h:3958 global.h:3999 global.h:4059
+#: global.h:1940 global.h:1951 global.h:3958 global.h:3999 global.h:4058
 #: videomode.h:20
 msgid "16:9_set_bestfit_to_policy_show_justscale"
 msgstr ""
 
-#: global.h:1941 global.h:1942 global.h:3960 global.h:4004 global.h:4065
+#: global.h:1941 global.h:1942 global.h:3960 global.h:4004 global.h:4064
 #: videomode.h:21
 msgid "16:9_set_letterbox_to_policy_show_panscan"
 msgstr ""
 
-#: global.h:1943 global.h:1944 global.h:3962 global.h:4009 global.h:4071
+#: global.h:1943 global.h:1944 global.h:3962 global.h:4009 global.h:4070
 #: videomode.h:22
 msgid "16:9_set_panscan_to_policy_show_pillarbox"
 msgstr ""
 
-#: global.h:1945 global.h:1946 global.h:3964 global.h:4020 global.h:4077
+#: global.h:1945 global.h:1946 global.h:3964 global.h:4020 global.h:4076
 #: videomode.h:23
 msgid "4:3_set_bestfit_to_policy2_show_justscale"
 msgstr ""
 
-#: global.h:1947 global.h:1948 global.h:3966 global.h:4025 global.h:4084
+#: global.h:1947 global.h:1948 global.h:3966 global.h:4025 global.h:4083
 #: videomode.h:24
 msgid "4:3_set_letterbox_to_policy2_show_letterbox"
 msgstr ""
 
-#: global.h:1949 global.h:1950 global.h:3968 global.h:4030 global.h:4091
+#: global.h:1949 global.h:1950 global.h:3968 global.h:4030 global.h:4090
 #: videomode.h:25
 msgid "4:3_set_panscan_to_policy2_show_panscan"
 msgstr ""
 
-#: global.h:5804 keyactions.h:205
+#: global.h:5808 keyactions.h:205
 msgid "ERROR cant read res"
 msgstr "Fout, resolutie kan niet worden vastgesteld."
 
-#: global.h:6029 rectimer.h:1080 skin_default_skin.xml.h:416
+#: global.h:6033 rectimer.h:1080 skin_default_skin.xml.h:416
 msgid "Monday"
 msgstr "Maandag"
 
-#: global.h:6030 rectimer.h:1081 skin_default_skin.xml.h:718
+#: global.h:6034 rectimer.h:1081 skin_default_skin.xml.h:718
 msgid "Tuesday"
 msgstr "Dinsdag"
 
-#: global.h:6031 rectimer.h:1082 skin_default_skin.xml.h:775
+#: global.h:6035 rectimer.h:1082 skin_default_skin.xml.h:775
 msgid "Wednesday"
 msgstr "Woensdag"
 
-#: global.h:6032 rectimer.h:1083 skin_default_skin.xml.h:687
+#: global.h:6036 rectimer.h:1083 skin_default_skin.xml.h:687
 msgid "Thursday"
 msgstr "Donderdag"
 
-#: global.h:6033 rectimer.h:1084 skin_default_skin.xml.h:255
+#: global.h:6037 rectimer.h:1084 skin_default_skin.xml.h:255
 msgid "Friday"
 msgstr "Vrijdag"
 
-#: global.h:6034 rectimer.h:1085 skin_default_skin.xml.h:567
+#: global.h:6038 rectimer.h:1085 skin_default_skin.xml.h:567
 msgid "Saturday"
 msgstr "Zaterdag"
 
-#: global.h:6035 rectimer.h:1086 skin_default_skin.xml.h:661
+#: global.h:6039 rectimer.h:1086 skin_default_skin.xml.h:661
 msgid "Sunday"
 msgstr "Zondag"
 
-#: global.h:6039
+#: global.h:6043
 msgid "Mon"
 msgstr ""
 
-#: global.h:6040
+#: global.h:6044
 msgid "Tue"
 msgstr ""
 
-#: global.h:6041
+#: global.h:6045
 msgid "Wed"
 msgstr ""
 
-#: global.h:6042
+#: global.h:6046
 msgid "Thu"
 msgstr ""
 
-#: global.h:6043
+#: global.h:6047
 msgid "Fri"
 msgstr ""
 
-#: global.h:6044
+#: global.h:6048
 msgid "Sat"
 msgstr "Satellieten"
 
-#: global.h:6045
+#: global.h:6049
 msgid "Sun"
 msgstr ""
 
-#: global.h:6305
+#: global.h:6309
 msgid "Tuner "
 msgstr ""
 
-#: global.h:6314
+#: global.h:6318
 msgid "Multituner adjustable"
 msgstr ""
 
-#: global.h:6364
+#: global.h:6368
 msgid "Create Transponder (Sat)"
 msgstr ""
 
-#: global.h:6365
+#: global.h:6369
 msgid "Create Transponder (Cable)"
 msgstr ""
 
-#: global.h:6366
+#: global.h:6370
 msgid "Create Transponder (Terrestrial)"
 msgstr ""
 
-#: global.h:6367
+#: global.h:6371
 msgid "Create Transponder (All)"
 msgstr ""
 
-#: global.h:6369
+#: global.h:6373
 msgid "Select Your Serach Modus"
 msgstr ""
 
-#: global.h:6429
+#: global.h:6433
 msgid ""
 "Transponder/Satellite Convert done, please use channel search on next Boot.\n"
 "Your System will reboot !"
 msgstr ""
 
-#: global.h:6493
+#: global.h:6497
 msgid "Error: Transponder Source file not found"
 msgstr ""
 
-#: global.h:6515
+#: global.h:6519
 msgid "Error: Transponder Source file no data"
 msgstr ""
 
-#: global.h:6692
+#: global.h:6696
 msgid ""
 "Standard favorites have been successfully applied.\n"
 "Your System will reboot !"
 msgstr ""
 
-#: global.h:6907
+#: global.h:6911
 msgid "Image"
 msgstr ""
 
-#: global.h:6910
+#: global.h:6914
 msgid "Version"
 msgstr "Versie"
 
-#: global.h:6914 httpdfunc.h:5556 skin_default_skin.xml.h:351
+#: global.h:6918 httpdfunc.h:5556 skin_default_skin.xml.h:351
 msgid "Installed:"
 msgstr "Geïnstalleerd:"
 
-#: global.h:6918
+#: global.h:6922
 msgid "Copyright"
 msgstr "© Copyright"
 
-#: global.h:6927 skin_default_skin.xml.h:719
+#: global.h:6931 skin_default_skin.xml.h:719
 msgid "Tuner"
 msgstr ""
 
-#: global.h:6934 skin_default_skin.xml.h:725
+#: global.h:6938 skin_default_skin.xml.h:725
 msgid "Tunertype"
 msgstr "Tuner type"
 
