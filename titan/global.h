@@ -1912,29 +1912,43 @@ int changepolicy()
  	tmppolicy = getpolicy();
 
 #ifdef MIPSEL
+/*
 	char *aspect = NULL;
 	aspect = getaspect();
 
 	if(!ostrncmp("16:9", aspect, 4))
 	{
-		if(ostrcmp("16:9_set_bestfit_to_policy_show_justscale", tmppolicy) == 0)
-			tmpstr = ostrcat("16:9_set_letterbox_to_policy_show_panscan", NULL, 0, 0);
-		else if(ostrcmp("16:9_set_letterbox_to_policy_show_panscan", tmppolicy) == 0)
-			tmpstr = ostrcat("16:9_set_panscan_to_policy_show_pillarbox", NULL, 0, 0);
-		else if(ostrcmp("16:9_set_panscan_to_policy_show_pillarbox", tmppolicy) == 0)
-			tmpstr = ostrcat("16:9_set_bestfit_to_policy_show_justscale", NULL, 0, 0);
+		if(ostrcmp(_("16:9_set_bestfit_to_policy_show_justscale"), _(tmppolicy)) == 0)
+			tmpstr = ostrcat(_("16:9_set_letterbox_to_policy_show_panscan"), NULL, 0, 0);
+		else if(ostrcmp(_("16:9_set_letterbox_to_policy_show_panscan"), _(tmppolicy)) == 0)
+			tmpstr = ostrcat(_("16:9_set_panscan_to_policy_show_pillarbox"), NULL, 0, 0);
+		else if(ostrcmp(_("16:9_set_panscan_to_policy_show_pillarbox"), _(tmppolicy)) == 0)
+			tmpstr = ostrcat(_("16:9_set_bestfit_to_policy_show_justscale"), NULL, 0, 0);
 
 	}
 	else
 	{
-		if(ostrcmp("4:3_set_bestfit_to_policy2_show_justscale", tmppolicy) == 0)
-			tmpstr = ostrcat("4:3_set_letterbox_to_policy2_show_letterbox", NULL, 0, 0);
-		else if(ostrcmp("4:3_set_letterbox_to_policy2_show_letterbox", tmppolicy) == 0)
-			tmpstr = ostrcat("4:3_set_panscan_to_policy2_show_panscan", NULL, 0, 0);
-		else if(ostrcmp("16:9_set_panscan_to_policy_show_pillarbox", tmppolicy) == 0)
-			tmpstr = ostrcat("4:3_set_bestfit_to_policy2_show_justscale", NULL, 0, 0);
+		if(ostrcmp(_("4:3_set_bestfit_to_policy2_show_justscale"), _(tmppolicy)) == 0)
+			tmpstr = ostrcat(_("4:3_set_letterbox_to_policy2_show_letterbox"), NULL, 0, 0);
+		else if(ostrcmp(_("4:3_set_letterbox_to_policy2_show_letterbox"), _(tmppolicy)) == 0)
+			tmpstr = ostrcat(_("4:3_set_panscan_to_policy2_show_panscan"), NULL, 0, 0);
+		else if(ostrcmp(_("4:3_set_panscan_to_policy2_show_panscan"), _(tmppolicy)) == 0)
+			tmpstr = ostrcat(_("4:3_set_bestfit_to_policy2_show_justscale"), NULL, 0, 0);
 	}
-
+	free(aspect), aspect = NULL;
+*/
+	if(ostrcmp(_("16:9_set_bestfit_to_policy_show_justscale"), _(tmppolicy)) == 0)
+		tmpstr = ostrcat(_("16:9_set_letterbox_to_policy_show_panscan"), NULL, 0, 0);
+	else if(ostrcmp(_("16:9_set_letterbox_to_policy_show_panscan"), _(tmppolicy)) == 0)
+		tmpstr = ostrcat(_("16:9_set_panscan_to_policy_show_pillarbox"), NULL, 0, 0);
+	else if(ostrcmp(_("16:9_set_panscan_to_policy_show_pillarbox"), _(tmppolicy)) == 0)
+		tmpstr = ostrcat(_("4:3_set_bestfit_to_policy2_show_justscale"), NULL, 0, 0);
+	else if(ostrcmp(_("4:3_set_bestfit_to_policy2_show_justscale"), _(tmppolicy)) == 0)
+		tmpstr = ostrcat(_("4:3_set_letterbox_to_policy2_show_letterbox"), NULL, 0, 0);
+	else if(ostrcmp(_("4:3_set_letterbox_to_policy2_show_letterbox"), _(tmppolicy)) == 0)
+		tmpstr = ostrcat(_("4:3_set_panscan_to_policy2_show_panscan"), NULL, 0, 0);
+	else if(ostrcmp(_("4:3_set_panscan_to_policy2_show_panscan"), _(tmppolicy)) == 0)
+		tmpstr = ostrcat(_("16:9_set_bestfit_to_policy_show_justscale"), NULL, 0, 0);
 #else
 	if(!ostrncmp("letterbox", tmppolicy, 8))
 		tmpstr = ostrcat(tmpstr, "panscan", 1, 0);
@@ -3940,10 +3954,21 @@ char* getpolicychoices()
 
 #ifdef MIPSEL
 	free(value), value = NULL;
-	value = ostrcat("16:9_set_bestfit_to_policy_show_justscale 16:9_set_letterbox_to_policy_show_panscan 16:9_set_panscan_to_policy_show_pillarbox 4:3_set_bestfit_to_policy2_show_justscale 4:3_set_letterbox_to_policy2_show_letterbox 4:3_set_panscan_to_policy2_show_panscan", NULL, 0, 0);
-#endif
-
+//	value = ostrcat("16:9_set_bestfit_to_policy_show_justscale 16:9_set_letterbox_to_policy_show_panscan 16:9_set_panscan_to_policy_show_pillarbox 4:3_set_bestfit_to_policy2_show_justscale 4:3_set_letterbox_to_policy2_show_letterbox 4:3_set_panscan_to_policy2_show_panscan", NULL, 0, 0);
+	value = ostrcat(_("16:9_set_bestfit_to_policy_show_justscale"), NULL, 0, 0); 
+	value = ostrcat(value, "\n", 1, 0); 
+	value = ostrcat(value, _("16:9_set_letterbox_to_policy_show_panscan"), 1, 0); 
+	value = ostrcat(value, "\n", 1, 0); 
+	value = ostrcat(value, _("16:9_set_panscan_to_policy_show_pillarbox"), 1, 0); 
+	value = ostrcat(value, "\n", 1, 0); 
+	value = ostrcat(value, _("4:3_set_bestfit_to_policy2_show_justscale"), 1, 0); 
+	value = ostrcat(value, "\n", 1, 0); 
+	value = ostrcat(value, _("4:3_set_letterbox_to_policy2_show_letterbox"), 1, 0); 
+	value = ostrcat(value, "\n", 1, 0); 
+	value = ostrcat(value, _("4:3_set_panscan_to_policy2_show_panscan"), 1, 0); 
+#else
 	value = convertspacetolf(value);
+#endif
 
 	return value;
 }
@@ -3971,17 +3996,17 @@ char* getpolicy()
 		if(ostrcmp("bestfit", value) == 0)
 		{
 			free(value), value = NULL;
-			value = ostrcat("16:9_set_bestfit_to_policy_show_justscale", NULL, 0, 0);
+			value = ostrcat(_("16:9_set_bestfit_to_policy_show_justscale"), NULL, 0, 0);
 		}
 		else if(ostrcmp("letterbox", value) == 0)
 		{
 			free(value), value = NULL;
-			value = ostrcat("16:9_set_letterbox_to_policy_show_panscan", NULL, 0, 0);
+			value = ostrcat(_("16:9_set_letterbox_to_policy_show_panscan"), NULL, 0, 0);
 		}
 		else if(ostrcmp("panscan", value) == 0)
 		{
 			free(value), value = NULL;
-			value = ostrcat("16:9_set_panscan_to_policy_show_pillarbox", NULL, 0, 0);
+			value = ostrcat(_("16:9_set_panscan_to_policy_show_pillarbox"), NULL, 0, 0);
 		}
 	}
 	else
@@ -3992,17 +4017,17 @@ char* getpolicy()
 		if(ostrcmp("bestfit", value) == 0)
 		{
 			free(value), value = NULL;
-			value = ostrcat("4:3_set_bestfit_to_policy2_show_justscale", NULL, 0, 0);
+			value = ostrcat(_("4:3_set_bestfit_to_policy2_show_justscale"), NULL, 0, 0);
 		}
 		else if(ostrcmp("letterbox", value) == 0)
 		{
 			free(value), value = NULL;
-			value = ostrcat("4:3_set_letterbox_to_policy2_show_letterbox", NULL, 0, 0);
+			value = ostrcat(_("4:3_set_letterbox_to_policy2_show_letterbox"), NULL, 0, 0);
 		}
 		else if(ostrcmp("panscan", value) == 0)
 		{
 			free(value), value = NULL;
-			value = ostrcat("4:3_set_panscan_to_policy2_show_panscan", NULL, 0, 0);
+			value = ostrcat(_("4:3_set_panscan_to_policy2_show_panscan"), NULL, 0, 0);
 		}
 	}
 	free(aspect), aspect = NULL;
@@ -4031,39 +4056,39 @@ int setpolicy(char* value)
 		tmpstr = ostrcat(value, NULL, 0, 0);
 
 #ifdef MIPSEL
-		if(ostrcmp("16:9_set_bestfit_to_policy_show_justscale", tmpstr) == 0)
+		if(ostrcmp(_("16:9_set_bestfit_to_policy_show_justscale"), tmpstr) == 0)
 		{
 			free(tmpstr), tmpstr = NULL;
 			tmpstr = ostrcat("bestfit", NULL, 0, 0);
 			setaspect("set_16:9");
 		}
-		else if(ostrcmp("16:9_set_letterbox_to_policy_show_panscan", tmpstr) == 0)
+		else if(ostrcmp(_("16:9_set_letterbox_to_policy_show_panscan"), tmpstr) == 0)
 		{
 			free(tmpstr), tmpstr = NULL;
 			tmpstr = ostrcat("letterbox", NULL, 0, 0);
 			setaspect("set_16:9");
 		}
-		else if(ostrcmp("16:9_set_panscan_to_policy_show_pillarbox", tmpstr) == 0)
+		else if(ostrcmp(_("16:9_set_panscan_to_policy_show_pillarbox"), tmpstr) == 0)
 		{
 			free(tmpstr), tmpstr = NULL;
 			tmpstr = ostrcat("panscan", NULL, 0, 0);
 			setaspect("set_16:9");
 		}			
-		else if(ostrcmp("4:3_set_bestfit_to_policy2_show_justscale", tmpstr) == 0)
+		else if(ostrcmp(_("4:3_set_bestfit_to_policy2_show_justscale"), tmpstr) == 0)
 		{
 			policydev = getconfig("policy2dev", NULL);
 			free(tmpstr), tmpstr = NULL;
 			tmpstr = ostrcat("bestfit", NULL, 0, 0);
 			setaspect("set_4:3");
 		}
-		else if(ostrcmp("4:3_set_letterbox_to_policy2_show_letterbox", tmpstr) == 0)
+		else if(ostrcmp(_("4:3_set_letterbox_to_policy2_show_letterbox"), tmpstr) == 0)
 		{
 			policydev = getconfig("policy2dev", NULL);
 			free(tmpstr), tmpstr = NULL;
 			tmpstr = ostrcat("letterbox", NULL, 0, 0);
 			setaspect("set_4:3");
 		}
-		else if(ostrcmp("4:3_set_panscan_to_policy2_show_panscan", tmpstr) == 0)
+		else if(ostrcmp(_("4:3_set_panscan_to_policy2_show_panscan"), tmpstr) == 0)
 		{
 			policydev = getconfig("policy2dev", NULL);
 			free(tmpstr), tmpstr = NULL;
