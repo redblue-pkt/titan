@@ -20,7 +20,7 @@ msgstr ""
 #: filenuke.h:106 filenuke.h:118 filenuke.h:190 firedrive.h:33 firedrive.h:66
 #: firedrive.h:72 firedrive.h:122 firedrive.h:128 firedrive.h:138 flashx.h:26
 #: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:5779 global.h:6404 global.h:6473 global.h:6492 global.h:6667
+#: global.h:5804 global.h:6429 global.h:6498 global.h:6517 global.h:6692
 #: harddisk.h:350 harddisk.h:355 harddisk.h:382 harddisk.h:386 harddisk.h:439
 #: harddisk.h:633 harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729
 #: harddisk.h:731 harddisk.h:733 harddisk.h:793 harddisk.h:812 harddisk.h:815
@@ -125,7 +125,7 @@ msgstr ""
 #: filenuke.h:106 filenuke.h:118 filenuke.h:190 firedrive.h:33 firedrive.h:66
 #: firedrive.h:72 firedrive.h:122 firedrive.h:128 firedrive.h:138 flashx.h:26
 #: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:5779 global.h:6404 global.h:6473 global.h:6492 global.h:6667
+#: global.h:5804 global.h:6429 global.h:6498 global.h:6517 global.h:6692
 #: harddisk.h:350 harddisk.h:355 harddisk.h:382 harddisk.h:386 harddisk.h:439
 #: harddisk.h:633 harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729
 #: harddisk.h:731 harddisk.h:733 harddisk.h:793 harddisk.h:812 harddisk.h:815
@@ -555,8 +555,8 @@ msgstr "oui / vzap sans fin"
 #: filenuke.h:46 filenuke.h:94 filenuke.h:106 filenuke.h:118 filenuke.h:190
 #: firedrive.h:33 firedrive.h:66 firedrive.h:72 firedrive.h:122
 #: firedrive.h:128 firedrive.h:138 flashx.h:26 flashx.h:84 flashx.h:138
-#: flashx.h:195 flashx.h:233 flashx.h:270 global.h:5779 global.h:6404
-#: global.h:6473 global.h:6492 global.h:6667 harddisk.h:633 harddisk.h:641
+#: flashx.h:195 flashx.h:233 flashx.h:270 global.h:5804 global.h:6429
+#: global.h:6498 global.h:6517 global.h:6692 harddisk.h:633 harddisk.h:641
 #: harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733
 #: harddisk.h:793 harddisk.h:812 harddisk.h:815 hbbtv.h:362 hello.c:36
 #: httpdfunc.h:1222 httpdfunc.h:5667 httpdfunc.h:6053 httpdfunc.h:6318
@@ -742,7 +742,7 @@ msgid ""
 "Realy run it?"
 msgstr "ce plugin est seulement pour les bêta-testeurs.  "
 
-#: bgdownload.h:93 bgdownload.h:154 global.h:6907 httpdfunc.h:2793
+#: bgdownload.h:93 bgdownload.h:154 global.h:6932 httpdfunc.h:2793
 #: httpdfunc.h:2805 httpdfunc.h:5450 httpdfunc.h:5496 hwtest.h:478
 #: moduleconfig.h:345 skin_default_skin.xml.h:741 skinselector.h:138
 #: stream.h:22 transponder.h:122 transponder.h:158 transponder.h:194
@@ -1709,135 +1709,165 @@ msgstr ""
 msgid "This file is private and only viewable by the owner."
 msgstr ""
 
-#: global.h:5779 keyactions.h:205
+#: global.h:1940 global.h:1951 global.h:3958 global.h:3999 global.h:4059
+#: videomode.h:20
+msgid "16:9_set_bestfit_to_policy_show_justscale"
+msgstr ""
+
+#: global.h:1941 global.h:1942 global.h:3960 global.h:4004 global.h:4065
+#: videomode.h:21
+msgid "16:9_set_letterbox_to_policy_show_panscan"
+msgstr ""
+
+#: global.h:1943 global.h:1944 global.h:3962 global.h:4009 global.h:4071
+#: videomode.h:22
+msgid "16:9_set_panscan_to_policy_show_pillarbox"
+msgstr ""
+
+#: global.h:1945 global.h:1946 global.h:3964 global.h:4020 global.h:4077
+#: videomode.h:23
+msgid "4:3_set_bestfit_to_policy2_show_justscale"
+msgstr ""
+
+#: global.h:1947 global.h:1948 global.h:3966 global.h:4025 global.h:4084
+#: videomode.h:24
+msgid "4:3_set_letterbox_to_policy2_show_letterbox"
+msgstr ""
+
+#: global.h:1949 global.h:1950 global.h:3968 global.h:4030 global.h:4091
+#: videomode.h:25
+msgid "4:3_set_panscan_to_policy2_show_panscan"
+msgstr ""
+
+#: global.h:5804 keyactions.h:205
 msgid "ERROR cant read res"
 msgstr ""
 
-#: global.h:6004 rectimer.h:1080 skin_default_skin.xml.h:416
+#: global.h:6029 rectimer.h:1080 skin_default_skin.xml.h:416
 msgid "Monday"
 msgstr "Lundi"
 
-#: global.h:6005 rectimer.h:1081 skin_default_skin.xml.h:718
+#: global.h:6030 rectimer.h:1081 skin_default_skin.xml.h:718
 msgid "Tuesday"
 msgstr "Mardi"
 
-#: global.h:6006 rectimer.h:1082 skin_default_skin.xml.h:775
+#: global.h:6031 rectimer.h:1082 skin_default_skin.xml.h:775
 msgid "Wednesday"
 msgstr "Mercredi"
 
-#: global.h:6007 rectimer.h:1083 skin_default_skin.xml.h:687
+#: global.h:6032 rectimer.h:1083 skin_default_skin.xml.h:687
 msgid "Thursday"
 msgstr "Jeudi"
 
-#: global.h:6008 rectimer.h:1084 skin_default_skin.xml.h:255
+#: global.h:6033 rectimer.h:1084 skin_default_skin.xml.h:255
 msgid "Friday"
 msgstr "Vendredi"
 
-#: global.h:6009 rectimer.h:1085 skin_default_skin.xml.h:567
+#: global.h:6034 rectimer.h:1085 skin_default_skin.xml.h:567
 msgid "Saturday"
 msgstr "Samedi"
 
-#: global.h:6010 rectimer.h:1086 skin_default_skin.xml.h:661
+#: global.h:6035 rectimer.h:1086 skin_default_skin.xml.h:661
 msgid "Sunday"
 msgstr "Dimanche"
 
-#: global.h:6014
+#: global.h:6039
 msgid "Mon"
 msgstr ""
 
-#: global.h:6015
+#: global.h:6040
 msgid "Tue"
 msgstr ""
 
-#: global.h:6016
+#: global.h:6041
 msgid "Wed"
 msgstr ""
 
-#: global.h:6017
+#: global.h:6042
 msgid "Thu"
 msgstr ""
 
-#: global.h:6018
+#: global.h:6043
 msgid "Fri"
 msgstr ""
 
-#: global.h:6019
+#: global.h:6044
 msgid "Sat"
 msgstr ""
 
-#: global.h:6020
+#: global.h:6045
 msgid "Sun"
 msgstr ""
 
-#: global.h:6280
+#: global.h:6305
 msgid "Tuner "
 msgstr ""
 
-#: global.h:6289
+#: global.h:6314
 msgid "Multituner adjustable"
 msgstr ""
 
-#: global.h:6339
+#: global.h:6364
 msgid "Create Transponder (Sat)"
 msgstr ""
 
-#: global.h:6340
+#: global.h:6365
 msgid "Create Transponder (Cable)"
 msgstr ""
 
-#: global.h:6341
+#: global.h:6366
 msgid "Create Transponder (Terrestrial)"
 msgstr ""
 
-#: global.h:6342
+#: global.h:6367
 msgid "Create Transponder (All)"
 msgstr ""
 
-#: global.h:6344
+#: global.h:6369
 msgid "Select Your Serach Modus"
 msgstr ""
 
-#: global.h:6404
+#: global.h:6429
 msgid ""
 "Transponder/Satellite Convert done, please use channel search on next Boot.\n"
 "Your System will reboot !"
 msgstr ""
 
-#: global.h:6468
+#: global.h:6493
 msgid "Error: Transponder Source file not found"
 msgstr ""
 
-#: global.h:6490
+#: global.h:6515
 msgid "Error: Transponder Source file no data"
 msgstr ""
 
-#: global.h:6667
+#: global.h:6692
 msgid ""
 "Standard favorites have been successfully applied.\n"
 "Your System will reboot !"
 msgstr ""
 
-#: global.h:6882
+#: global.h:6907
 msgid "Image"
 msgstr ""
 
-#: global.h:6885
+#: global.h:6910
 msgid "Version"
 msgstr ""
 
-#: global.h:6889 httpdfunc.h:5556 skin_default_skin.xml.h:351
+#: global.h:6914 httpdfunc.h:5556 skin_default_skin.xml.h:351
 msgid "Installed:"
 msgstr ""
 
-#: global.h:6893
+#: global.h:6918
 msgid "Copyright"
 msgstr "© Copyright"
 
-#: global.h:6902 skin_default_skin.xml.h:719
+#: global.h:6927 skin_default_skin.xml.h:719
 msgid "Tuner"
 msgstr ""
 
-#: global.h:6909 skin_default_skin.xml.h:725
+#: global.h:6934 skin_default_skin.xml.h:725
 msgid "Tunertype"
 msgstr "type de tuner"
 
@@ -11664,30 +11694,6 @@ msgstr ""
 
 #: videomode.h:18
 msgid "non"
-msgstr ""
-
-#: videomode.h:20
-msgid "16:9_set_bestfit_to_policy_show_justscale"
-msgstr ""
-
-#: videomode.h:21
-msgid "16:9_set_letterbox_to_policy_show_panscan"
-msgstr ""
-
-#: videomode.h:22
-msgid "16:9_set_panscan_to_policy_show_pillarbox"
-msgstr ""
-
-#: videomode.h:23
-msgid "4:3_set_bestfit_to_policy2_show_justscale"
-msgstr ""
-
-#: videomode.h:24
-msgid "4:3_set_letterbox_to_policy2_show_letterbox"
-msgstr ""
-
-#: videomode.h:25
-msgid "4:3_set_panscan_to_policy2_show_panscan"
 msgstr ""
 
 #: videomode.h:32 videomode.h:61
