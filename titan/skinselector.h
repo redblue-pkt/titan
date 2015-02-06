@@ -200,6 +200,7 @@ void screenskinselect(void)
 				struct splitstr* ret1 = NULL;
 				int count1 = 0;
 				char* tmpstr1 = NULL;
+				char* cmd = NULL;
 				tmpstr1 = ostrcat("", selection->name, 0, 0);
 				ret1 = strsplit(tmpstr1, " ", &count1);
 				tmpstr = ostrcat((&ret1[0])->part, "", 0, 0);
@@ -208,21 +209,28 @@ void screenskinselect(void)
 				
 				tmpstr = dirname(tmpstr);
 				printf("skin install dir: %s\n", tmpstr);
-
-				if(ostrstr(tmpstr, "/var/usr/local/share/titan/skin/default") != NULL)
-					tmpstr = ostrcat(tmpstr, "/skinconfig", 1, 0);
-				else
-				{
-					free(tmpstr), tmpstr = NULL;
-					tmpstr = ostrcat("/mnt/config/skinconfig", NULL, 0, 0);
-				}
-
-				printf("skinconfig dir: %s\n", tmpstr);
-
+	
+				tmpstr = ostrcat(tmpstr, "/skinconfig", 1, 0);
 				if(file_exist(tmpstr))
 				{
-					addconfig("skinconfig", tmpstr);
-					free(tmpstr); tmpstr = NULL;
+					if(ostrstr(getconfig("skinconfig", NULL), "/mnt/config/skinconfig") != NULL)
+					{	
+						cmd = ostrcat("cp -r ", getconfig("skinconfig", NULL), 0, 0);
+						cmd = ostrcat(cmd, " ", 1, 0);
+						cmd = ostrcat(cmd, getconfig("skinpath", NULL), 1, 0);
+						system(cmd);
+						free(cmd); cmd = NULL;
+					
+						cmd = ostrcat("cp -r ", tmpstr, NULL), 0, 0);
+						cmd = ostrcat(cmd, " ", 1, 0);
+						cmd = ostrcat(cmd, getconfig("skinconfig", NULL), 1, 0);
+						system(cmd);
+						free(cmd); cmd = NULL;
+					}
+					else
+					{
+						addconfig("skinconfig", tmpstr);
+					}
 				}
 				else
 				{
@@ -231,7 +239,8 @@ void screenskinselect(void)
 					free(tmpstr); tmpstr = NULL;
 					continue;
 				}
-
+				free(tmpstr), tmpstr = NULL;
+				
 				addconfig("skinfile", selection->name);
 
 				tmpstr = ostrcat(selection->name, NULL, 0, 0);
