@@ -4045,7 +4045,7 @@ char* getpolicy()
 
 int setpolicy(char* value)
 {
-	char* policydev, *tmpstr = NULL;
+	char* policydev, *tmpstr = NULL, *tmpstr2 = NULL;
 	int ret = 0;
 
 	policydev = getconfig("policydev", NULL);
@@ -4053,59 +4053,63 @@ int setpolicy(char* value)
 	if(policydev != NULL && value != NULL)
 	{
 		debug(10, "set %s to %s", policydev, value);
-		tmpstr = ostrcat(value, NULL, 0, 0);
 
 #ifdef MIPSEL
-		if(ostrcmp(_("16:9_set_bestfit_to_policy_show_justscale"), tmpstr) == 0)
+		if(ostrcmp(_("16:9_set_bestfit_to_policy_show_justscale"), _(value)) == 0)
 		{
-			free(tmpstr), tmpstr = NULL;
 			tmpstr = ostrcat("bestfit", NULL, 0, 0);
+			tmpstr2 = ostrcat("16:9_set_bestfit_to_policy_show_justscale", NULL, 0, 0);
 			setaspect("set_16:9");
 		}
-		else if(ostrcmp(_("16:9_set_letterbox_to_policy_show_panscan"), tmpstr) == 0)
+		else if(ostrcmp(_("16:9_set_letterbox_to_policy_show_panscan"), _(value)) == 0)
 		{
-			free(tmpstr), tmpstr = NULL;
 			tmpstr = ostrcat("letterbox", NULL, 0, 0);
+			tmpstr2 = ostrcat("16:9_set_letterbox_to_policy_show_panscan", NULL, 0, 0);
 			setaspect("set_16:9");
 		}
-		else if(ostrcmp(_("16:9_set_panscan_to_policy_show_pillarbox"), tmpstr) == 0)
+		else if(ostrcmp(_("16:9_set_panscan_to_policy_show_pillarbox"), _(value)) == 0)
 		{
-			free(tmpstr), tmpstr = NULL;
 			tmpstr = ostrcat("panscan", NULL, 0, 0);
+			tmpstr2 = ostrcat("16:9_set_panscan_to_policy_show_pillarbox", NULL, 0, 0);
 			setaspect("set_16:9");
 		}			
-		else if(ostrcmp(_("4:3_set_bestfit_to_policy2_show_justscale"), tmpstr) == 0)
+		else if(ostrcmp(_("4:3_set_bestfit_to_policy2_show_justscale"), _(value)) == 0)
 		{
 			policydev = getconfig("policy2dev", NULL);
-			free(tmpstr), tmpstr = NULL;
 			tmpstr = ostrcat("bestfit", NULL, 0, 0);
+			tmpstr2 = ostrcat("4:3_set_bestfit_to_policy2_show_justscale", NULL, 0, 0);
 			setaspect("set_4:3");
 		}
-		else if(ostrcmp(_("4:3_set_letterbox_to_policy2_show_letterbox"), tmpstr) == 0)
+		else if(ostrcmp(_("4:3_set_letterbox_to_policy2_show_letterbox"), _(value)) == 0)
 		{
 			policydev = getconfig("policy2dev", NULL);
-			free(tmpstr), tmpstr = NULL;
 			tmpstr = ostrcat("letterbox", NULL, 0, 0);
+			tmpstr2 = ostrcat("4:3_set_letterbox_to_policy2_show_letterbox", NULL, 0, 0);
 			setaspect("set_4:3");
 		}
-		else if(ostrcmp(_("4:3_set_panscan_to_policy2_show_panscan"), tmpstr) == 0)
+		else if(ostrcmp(_("4:3_set_panscan_to_policy2_show_panscan"), _(value)) == 0)
 		{
 			policydev = getconfig("policy2dev", NULL);
-			free(tmpstr), tmpstr = NULL;
 			tmpstr = ostrcat("panscan", NULL, 0, 0);
+			tmpstr2 = ostrcat("4:3_set_panscan_to_policy2_show_panscan", NULL, 0, 0);
 			setaspect("set_4:3");
 		}
+#else
+		tmpstr = ostrcat(value, NULL, 0, 0);
 #endif
 		debug(10, "set change %s to %s", policydev, tmpstr);
 		ret = writesys(policydev, tmpstr, 0);
 
+#ifdef MIPSEL
+		if(ret == 0) addconfig("av_policy", tmpstr2);
+#else
 		if(ret == 0) addconfig("av_policy", value);
-
-		free(tmpstr), tmpstr = NULL;
-		return ret;
+#endif
 	}
 
-	return 0;
+	free(tmpstr), tmpstr = NULL;
+	free(tmpstr2), tmpstr2 = NULL;
+	return ret;
 }
 
 char* getaspectchoices()
