@@ -110,6 +110,10 @@ void screenavsettings(int flag)
 	setchoiceboxselection(aspect, ret);
 	free(ret); ret = NULL;
 
+#ifdef MIPSEL
+	aspect->hidden = YES;
+#endif
+
 	ret = getcolorformat(2);
 	if(ret == NULL || strlen(ret) == 0)
 	{
@@ -323,6 +327,7 @@ void screenavsettings(int flag)
 					setpolicy(policy->ret); 
 				free(ret); ret = NULL;
 			}
+#ifndef MIPSEL
 			if(aspect->ret != NULL)
 			{
 				ret = getaspect();
@@ -330,6 +335,7 @@ void screenavsettings(int flag)
 					setaspect(aspect->ret); 
 				free(ret); ret = NULL;
 			}
+#endif
 			if(colformat->ret != NULL)
 			{
 				setcolorformat(colformat->ret, 0); 
