@@ -221,7 +221,7 @@ void screenskinselect(void)
 						system(cmd);
 						free(cmd); cmd = NULL;
 					
-						cmd = ostrcat("cp -f ", tmpstr, NULL), 0, 0);
+						cmd = ostrcat("cp -f ", tmpstr, 0, 0);
 						cmd = ostrcat(cmd, " ", 1, 0);
 						cmd = ostrcat(cmd, getconfig("skinconfig", NULL), 1, 0);
 						system(cmd);
