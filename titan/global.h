@@ -4101,9 +4101,17 @@ int setpolicy(char* value)
 		ret = writesys(policydev, tmpstr, 0);
 
 #ifdef MIPSEL
-		if(ret == 0) addconfig("av_policy", tmpstr2);
+		if(ret == 0) 
+		{
+			debug(10, "write %s to /mnt/config/titan.cfg", tmpstr2);
+			addconfig("av_policy", tmpstr2);
+		}
 #else
 		if(ret == 0) addconfig("av_policy", value);
+		{
+			debug(10, "write %s to /mnt/config/titan.cfg", value);
+			addconfig("av_policy", value);
+		}
 #endif
 	}
 
