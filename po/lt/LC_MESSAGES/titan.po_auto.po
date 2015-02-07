@@ -20,7 +20,7 @@ msgstr "Sistemos informacija"
 #: filenuke.h:106 filenuke.h:118 filenuke.h:190 firedrive.h:33 firedrive.h:66
 #: firedrive.h:72 firedrive.h:122 firedrive.h:128 firedrive.h:138 flashx.h:26
 #: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:5808 global.h:6433 global.h:6502 global.h:6521 global.h:6696
+#: global.h:5816 global.h:6441 global.h:6510 global.h:6529 global.h:6704
 #: harddisk.h:350 harddisk.h:355 harddisk.h:382 harddisk.h:386 harddisk.h:439
 #: harddisk.h:633 harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729
 #: harddisk.h:731 harddisk.h:733 harddisk.h:793 harddisk.h:812 harddisk.h:815
@@ -125,7 +125,7 @@ msgstr "Gerai"
 #: filenuke.h:106 filenuke.h:118 filenuke.h:190 firedrive.h:33 firedrive.h:66
 #: firedrive.h:72 firedrive.h:122 firedrive.h:128 firedrive.h:138 flashx.h:26
 #: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:5808 global.h:6433 global.h:6502 global.h:6521 global.h:6696
+#: global.h:5816 global.h:6441 global.h:6510 global.h:6529 global.h:6704
 #: harddisk.h:350 harddisk.h:355 harddisk.h:382 harddisk.h:386 harddisk.h:439
 #: harddisk.h:633 harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729
 #: harddisk.h:731 harddisk.h:733 harddisk.h:793 harddisk.h:812 harddisk.h:815
@@ -555,8 +555,8 @@ msgstr "taip / vzap begalinis"
 #: filenuke.h:46 filenuke.h:94 filenuke.h:106 filenuke.h:118 filenuke.h:190
 #: firedrive.h:33 firedrive.h:66 firedrive.h:72 firedrive.h:122
 #: firedrive.h:128 firedrive.h:138 flashx.h:26 flashx.h:84 flashx.h:138
-#: flashx.h:195 flashx.h:233 flashx.h:270 global.h:5808 global.h:6433
-#: global.h:6502 global.h:6521 global.h:6696 harddisk.h:633 harddisk.h:641
+#: flashx.h:195 flashx.h:233 flashx.h:270 global.h:5816 global.h:6441
+#: global.h:6510 global.h:6529 global.h:6704 harddisk.h:633 harddisk.h:641
 #: harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733
 #: harddisk.h:793 harddisk.h:812 harddisk.h:815 hbbtv.h:362 hello.c:36
 #: httpdfunc.h:1222 httpdfunc.h:5667 httpdfunc.h:6053 httpdfunc.h:6318
@@ -744,7 +744,7 @@ msgstr ""
 "This Plugin is only for Betatesters and could change\n"
 "your settings. Do you want to run the application?"
 
-#: bgdownload.h:93 bgdownload.h:154 global.h:6936 httpdfunc.h:2793
+#: bgdownload.h:93 bgdownload.h:154 global.h:6944 httpdfunc.h:2793
 #: httpdfunc.h:2805 httpdfunc.h:5450 httpdfunc.h:5496 hwtest.h:478
 #: moduleconfig.h:345 skin_default_skin.xml.h:741 skinselector.h:138
 #: stream.h:22 transponder.h:122 transponder.h:158 transponder.h:194
@@ -1761,95 +1761,95 @@ msgstr ""
 msgid "4:3_set_panscan_to_policy2_show_panscan"
 msgstr ""
 
-#: global.h:5808 keyactions.h:205
+#: global.h:5816 keyactions.h:205
 msgid "ERROR cant read res"
 msgstr "KLAIDA: negaliu skaityti rezoliucijos"
 
-#: global.h:6033 rectimer.h:1080 skin_default_skin.xml.h:416
+#: global.h:6041 rectimer.h:1080 skin_default_skin.xml.h:416
 msgid "Monday"
 msgstr "Pirmadienis"
 
-#: global.h:6034 rectimer.h:1081 skin_default_skin.xml.h:718
+#: global.h:6042 rectimer.h:1081 skin_default_skin.xml.h:718
 msgid "Tuesday"
 msgstr "Antradienis"
 
-#: global.h:6035 rectimer.h:1082 skin_default_skin.xml.h:775
+#: global.h:6043 rectimer.h:1082 skin_default_skin.xml.h:775
 msgid "Wednesday"
 msgstr "Treiadienis"
 
-#: global.h:6036 rectimer.h:1083 skin_default_skin.xml.h:687
+#: global.h:6044 rectimer.h:1083 skin_default_skin.xml.h:687
 msgid "Thursday"
 msgstr "Ketvirtadienis"
 
-#: global.h:6037 rectimer.h:1084 skin_default_skin.xml.h:255
+#: global.h:6045 rectimer.h:1084 skin_default_skin.xml.h:255
 msgid "Friday"
 msgstr "Penktadienis"
 
-#: global.h:6038 rectimer.h:1085 skin_default_skin.xml.h:567
+#: global.h:6046 rectimer.h:1085 skin_default_skin.xml.h:567
 msgid "Saturday"
 msgstr "etadienis"
 
-#: global.h:6039 rectimer.h:1086 skin_default_skin.xml.h:661
+#: global.h:6047 rectimer.h:1086 skin_default_skin.xml.h:661
 msgid "Sunday"
 msgstr "Sekmadienis"
 
-#: global.h:6043
+#: global.h:6051
 msgid "Mon"
 msgstr "Pir"
 
-#: global.h:6044
+#: global.h:6052
 msgid "Tue"
 msgstr "Ant"
 
-#: global.h:6045
+#: global.h:6053
 msgid "Wed"
 msgstr "Tre"
 
-#: global.h:6046
+#: global.h:6054
 msgid "Thu"
 msgstr "Ket"
 
-#: global.h:6047
+#: global.h:6055
 msgid "Fri"
 msgstr "Pen"
 
-#: global.h:6048
+#: global.h:6056
 msgid "Sat"
 msgstr "e"
 
-#: global.h:6049
+#: global.h:6057
 msgid "Sun"
 msgstr "Sek"
 
-#: global.h:6309
+#: global.h:6317
 msgid "Tuner "
 msgstr "Imtuvas"
 
-#: global.h:6318
+#: global.h:6326
 msgid "Multituner adjustable"
 msgstr "Multituner reguliuojamas"
 
-#: global.h:6368
+#: global.h:6376
 msgid "Create Transponder (Sat)"
 msgstr ""
 
-#: global.h:6369
+#: global.h:6377
 msgid "Create Transponder (Cable)"
 msgstr ""
 
-#: global.h:6370
+#: global.h:6378
 msgid "Create Transponder (Terrestrial)"
 msgstr ""
 
-#: global.h:6371
+#: global.h:6379
 msgid "Create Transponder (All)"
 msgstr ""
 
-#: global.h:6373
+#: global.h:6381
 msgid "Select Your Serach Modus"
 msgstr "Pasirinkite paiekos reimas"
 
-#: global.h:6433
+#: global.h:6441
 msgid ""
 "Transponder/Satellite Convert done, please use channel search on next Boot.\n"
 "Your System will reboot !"
@@ -1858,15 +1858,15 @@ msgstr ""
 "Praom atlikti nauj kanal skenavim po sistemos persikrovimo.\n"
 " imtuvas perkraunamas !"
 
-#: global.h:6497
+#: global.h:6505
 msgid "Error: Transponder Source file not found"
 msgstr "Klaida: Sistuvo altinis failas nerastas"
 
-#: global.h:6519
+#: global.h:6527
 msgid "Error: Transponder Source file no data"
 msgstr "Klaida: Sistuvo altinio failas nra duomen"
 
-#: global.h:6696
+#: global.h:6704
 msgid ""
 "Standard favorites have been successfully applied.\n"
 "Your System will reboot !"
@@ -1874,27 +1874,27 @@ msgstr ""
 "Standartiniai draugai buvo imported.\n"
 "The imtuvas persikraus now."
 
-#: global.h:6911
+#: global.h:6919
 msgid "Image"
 msgstr ""
 
-#: global.h:6914
+#: global.h:6922
 msgid "Version"
 msgstr "Versija"
 
-#: global.h:6918 httpdfunc.h:5556 skin_default_skin.xml.h:351
+#: global.h:6926 httpdfunc.h:5556 skin_default_skin.xml.h:351
 msgid "Installed:"
 msgstr "Instaliuota:"
 
-#: global.h:6922
+#: global.h:6930
 msgid "Copyright"
 msgstr "© Autorins teiss"
 
-#: global.h:6931 skin_default_skin.xml.h:719
+#: global.h:6939 skin_default_skin.xml.h:719
 msgid "Tuner"
 msgstr "Imtuvas"
 
-#: global.h:6938 skin_default_skin.xml.h:725
+#: global.h:6946 skin_default_skin.xml.h:725
 msgid "Tunertype"
 msgstr "Imtuvo Tipas"
 
