@@ -16,7 +16,7 @@ int dvdmenu = 0;
 int dvd_calc_y_fbscreen()
 {
 	int y_offset = 0;
-//#ifdef SH4
+#ifdef SH4
 	int dvd_aspect = 0;
 //#endif
 
@@ -45,13 +45,14 @@ int dvd_calc_y_fbscreen()
 
 
 #endif
+#endif
 	return y_offset;
 }
 
 int dvd_calc_x_fbscreen()
 {
 	int x_offset = 0;
-//#ifdef SH4
+#ifdef SH4
 	int dvd_aspect = 0;
 //#endif
 
@@ -79,6 +80,7 @@ int dvd_calc_x_fbscreen()
 	if(dvd_aspect >= 2 && tv_aspect == DDVD_16_10 && tv_policy2 == DDVD_PAN_SCAN)
 		x_offset = (dvdskinfb->width * 15 / 16 - dvdskinfb->width) / 2;
 
+#endif
 #endif
 	return x_offset;
 }
