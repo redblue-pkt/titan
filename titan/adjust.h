@@ -262,6 +262,7 @@ void screenadjust()
 // setdebuglevel
 #ifndef BETA
 	debuglevel->hidden = YES;
+#else
 	addchoicebox(debuglevel, "10", _("Minimal"));
 	addchoicebox(debuglevel, "40", _("TopfieldVFD"));
 	addchoicebox(debuglevel, "50", _("MediaCenter"));
