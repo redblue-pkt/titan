@@ -218,7 +218,7 @@ msgstr "Exit"
 #: adjust.h:69 adjust.h:84 adjust.h:93 adjust.h:98 adjust.h:127 adjust.h:157
 #: adjust.h:167 adjust.h:171 adjust.h:188 adjust.h:192 adjust.h:200
 #: adjust.h:204 adjust.h:208 adjust.h:214 adjust.h:218 adjust.h:225
-#: adjust.h:229 adjust.h:233 adjust.h:239 adjust.h:245 adjust.h:323
+#: adjust.h:229 adjust.h:233 adjust.h:239 adjust.h:245 adjust.h:324
 #: autotimer.c:453 autotimer.c:486 avsettings.h:161 avsettings.h:208
 #: avsettings.h:212 blindscanadjust.h:150 blindscanadjust.h:154
 #: blindscanadjust.h:158 blindscanadjust.h:187 blindscanadjust.h:191 cec.h:143
@@ -449,12 +449,12 @@ msgstr ""
 msgid "4 GB"
 msgstr ""
 
-#: adjust.h:153 adjust.h:314 httpdfunc.h:4241 httpdfunc.h:4722
+#: adjust.h:153 adjust.h:315 httpdfunc.h:4241 httpdfunc.h:4722
 #: httpdsettings.h:50
 msgid "extern"
 msgstr "external"
 
-#: adjust.h:154 adjust.h:315 httpdfunc.h:4248 httpdfunc.h:4729
+#: adjust.h:154 adjust.h:316 httpdfunc.h:4248 httpdfunc.h:4729
 #: httpdsettings.h:49
 msgid "intern"
 msgstr "internal"
@@ -542,68 +542,68 @@ msgstr ""
 msgid "yes / vzap endless"
 msgstr ""
 
-#: adjust.h:265
+#: adjust.h:266
 msgid "Minimal"
 msgstr ""
 
-#: adjust.h:266
+#: adjust.h:267
 msgid "TopfieldVFD"
 msgstr ""
 
-#: adjust.h:267
+#: adjust.h:268
 msgid "MediaCenter"
 msgstr ""
 
-#: adjust.h:268 skin_default_skin.xml.h:403
+#: adjust.h:269 skin_default_skin.xml.h:403
 msgid "Menulist"
 msgstr ""
 
-#: adjust.h:269 skin_default_skin.xml.h:431 tpk_showname.h:81
+#: adjust.h:270 skin_default_skin.xml.h:431 tpk_showname.h:81
 msgid "Networkbrowser"
 msgstr "Network Browser"
 
-#: adjust.h:270 harddisk.h:439 skin_default_skin.xml.h:276
+#: adjust.h:271 harddisk.h:439 skin_default_skin.xml.h:276
 msgid "Harddisk"
 msgstr "Storage Device"
 
-#: adjust.h:271 plugins_mc_skin.xml.h:52 plugins_tithek_skin.xml.h:16
+#: adjust.h:272 plugins_mc_skin.xml.h:52 plugins_tithek_skin.xml.h:16
 #: skins_mc_skin.xml.h:52 skins_tithek_skin.xml.h:16
 msgid "Screensaver"
 msgstr ""
 
-#: adjust.h:272
+#: adjust.h:273
 msgid "Tithek/HTTP Header"
 msgstr ""
 
-#: adjust.h:273
+#: adjust.h:274
 msgid "Global"
 msgstr ""
 
-#: adjust.h:274
+#: adjust.h:275
 msgid "TPK"
 msgstr ""
 
-#: adjust.h:275
+#: adjust.h:276
 msgid "IMDbScan"
 msgstr ""
 
-#: adjust.h:276
+#: adjust.h:277
 msgid "ePlayer"
 msgstr ""
 
-#: adjust.h:277
+#: adjust.h:278
 msgid "Community login"
 msgstr ""
 
-#: adjust.h:278
+#: adjust.h:279
 msgid "Tuning"
 msgstr ""
 
-#: adjust.h:279
+#: adjust.h:280
 msgid "Stream/Record/Softcam"
 msgstr ""
 
-#: adjust.h:280 play.h:1412 skin_default_skin.xml.h:216
+#: adjust.h:281 play.h:1412 skin_default_skin.xml.h:216
 #: webif_index.atemio5200.h:34 webif_index.atemio6200.h:34
 #: webif_index.atemio7600.h:65 webif_index.atemio7600.h:82
 #: webif_index.atemio-nemesis.h:34 webif_rc.atemio510.h:49
@@ -615,11 +615,11 @@ msgstr ""
 msgid "EPG"
 msgstr ""
 
-#: adjust.h:281
+#: adjust.h:282
 msgid "Radiotext"
 msgstr ""
 
-#: adjust.h:282 skin_default_skin.xml.h:660 webif_index.atemio5200.h:65
+#: adjust.h:283 skin_default_skin.xml.h:660 webif_index.atemio5200.h:65
 #: webif_index.atemio5200.h:121 webif_index.atemio6200.h:65
 #: webif_index.atemio6200.h:121 webif_index.atemio7600.h:27
 #: webif_index.atemio7600.h:79 webif_index.atemio-nemesis.h:65
@@ -631,19 +631,19 @@ msgstr ""
 msgid "Subtitle"
 msgstr ""
 
-#: adjust.h:283 plugins_tmc_skin.xml.h:15 skins_tmc_skin.xml.h:15
+#: adjust.h:284 plugins_tmc_skin.xml.h:15 skins_tmc_skin.xml.h:15
 msgid "Scan"
 msgstr ""
 
-#: adjust.h:284
+#: adjust.h:285
 msgid "MediaDB"
 msgstr ""
 
-#: adjust.h:285
+#: adjust.h:286
 msgid "Mutex"
 msgstr ""
 
-#: adjust.h:286
+#: adjust.h:287
 msgid "Function"
 msgstr ""
 
