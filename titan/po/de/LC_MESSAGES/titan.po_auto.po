@@ -10961,7 +10961,7 @@ msgstr ""
 
 #: tpk_section.h:5
 msgid "games"
-msgstr ""
+msgstr "Spiele"
 
 #: tpk_section.h:6
 msgid "infos"
