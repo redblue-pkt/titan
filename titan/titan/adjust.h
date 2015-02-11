@@ -263,28 +263,94 @@ void screenadjust()
 #ifndef BETA
 	debuglevel->hidden = YES;
 #else
-	addchoicebox(debuglevel, "10", _("Minimal"));
-	addchoicebox(debuglevel, "40", _("TopfieldVFD"));
-	addchoicebox(debuglevel, "50", _("MediaCenter"));
-	addchoicebox(debuglevel, "60", _("Menulist"));
-	addchoicebox(debuglevel, "70", _("Networkbrowser"));
-	addchoicebox(debuglevel, "80", _("Harddisk"));
-	addchoicebox(debuglevel, "90", _("Screensaver"));
-	addchoicebox(debuglevel, "99", _("Tithek/HTTP Header"));
-	addchoicebox(debuglevel, "100", _("Global"));
-	addchoicebox(debuglevel, "130", _("TPK"));
-	addchoicebox(debuglevel, "133", _("IMDbScan"));
-	addchoicebox(debuglevel, "150", _("ePlayer"));
-	addchoicebox(debuglevel, "199", _("Community login"));
-	addchoicebox(debuglevel, "200", _("Tuning"));
-	addchoicebox(debuglevel, "250", _("Stream/Record/Softcam"));
-	addchoicebox(debuglevel, "270", _("EPG"));
-	addchoicebox(debuglevel, "300", _("Radiotext"));
-	addchoicebox(debuglevel, "400", _("Subtitle"));
-	addchoicebox(debuglevel, "500", _("Scan"));
-	addchoicebox(debuglevel, "777", _("MediaDB"));
-	addchoicebox(debuglevel, "900", _("Mutex"));
-	addchoicebox(debuglevel, "1000", _("Function"));
+	tmpstr = ostrcat("10 - ", _("Minimal"), 0, 0);	
+	addchoicebox(debuglevel, "10", tmpstr);
+	free(tmpstr), tmpstr = NULL;
+	
+	tmpstr = ostrcat("40 - ", _("TopfieldVFD"), 0, 0);	
+	addchoicebox(debuglevel, "40", tmpstr);
+	free(tmpstr), tmpstr = NULL;
+	
+	tmpstr = ostrcat("50 - ", _("MediaCenter"), 0, 0);	
+	addchoicebox(debuglevel, "50", tmpstr);
+	free(tmpstr), tmpstr = NULL;
+	
+	tmpstr = ostrcat("60 - ", _("Menulist"), 0, 0);	
+	addchoicebox(debuglevel, "60", tmpstr);
+	free(tmpstr), tmpstr = NULL;
+	
+	tmpstr = ostrcat("70 - ", _("Networkbrowser"), 0, 0);	
+	addchoicebox(debuglevel, "70", tmpstr);
+	free(tmpstr), tmpstr = NULL;
+	
+	tmpstr = ostrcat("80 - ", _("Harddisk"), 0, 0);	
+	addchoicebox(debuglevel, "80", tmpstr);
+	free(tmpstr), tmpstr = NULL;
+	
+	tmpstr = ostrcat("90 - ", _("Screensaver"), 0, 0);	
+	addchoicebox(debuglevel, "90", tmpstr);
+	free(tmpstr), tmpstr = NULL;
+	
+	tmpstr = ostrcat("99 - ", _("Tithek/HTTP Header"), 0, 0);	
+	addchoicebox(debuglevel, "99", tmpstr);
+	free(tmpstr), tmpstr = NULL;
+	
+	tmpstr = ostrcat("100 - ", _("Global"), 0, 0);	
+	addchoicebox(debuglevel, "100", tmpstr);
+	free(tmpstr), tmpstr = NULL;
+	
+	tmpstr = ostrcat("130 - ", _("TPK"), 0, 0);	
+	addchoicebox(debuglevel, "130", tmpstr);
+	free(tmpstr), tmpstr = NULL;
+	
+	tmpstr = ostrcat("133 - ", _("IMDbScan"), 0, 0);	
+	addchoicebox(debuglevel, "133", tmpstr);
+	free(tmpstr), tmpstr = NULL;
+	
+	tmpstr = ostrcat("150 - ", _("ePlayer"), 0, 0);	
+	addchoicebox(debuglevel, "150", tmpstr);
+	free(tmpstr), tmpstr = NULL;
+	
+	tmpstr = ostrcat("199 - ", _("Community login"), 0, 0);	
+	addchoicebox(debuglevel, "199", tmpstr);
+	free(tmpstr), tmpstr = NULL;
+	
+	tmpstr = ostrcat("200 - ", _("Tuning"), 0, 0);	
+	addchoicebox(debuglevel, "200", tmpstr);
+	free(tmpstr), tmpstr = NULL;
+	
+	tmpstr = ostrcat("250 - ", _("Stream/Record/Softcam"), 0, 0);	
+	addchoicebox(debuglevel, "250", tmpstr);
+	free(tmpstr), tmpstr = NULL;
+	
+	tmpstr = ostrcat("270 - ", _("EPG"), 0, 0);	
+	addchoicebox(debuglevel, "270", tmpstr);
+	free(tmpstr), tmpstr = NULL;
+	
+	tmpstr = ostrcat("300 - ", _("Radiotext"), 0, 0);	
+	addchoicebox(debuglevel, "300", tmpstr);
+	free(tmpstr), tmpstr = NULL;
+	
+	tmpstr = ostrcat("400 - ", _("Subtitle"), 0, 0);	
+	addchoicebox(debuglevel, "400", tmpstr);
+	free(tmpstr), tmpstr = NULL;
+	
+	tmpstr = ostrcat("500 - ", _("Scan"), 0, 0);	
+	addchoicebox(debuglevel, "500", tmpstr);
+	free(tmpstr), tmpstr = NULL;
+	
+	tmpstr = ostrcat("777 - ", _("MediaDB"), 0, 0);	
+	addchoicebox(debuglevel, "777", tmpstr);
+	free(tmpstr), tmpstr = NULL;
+	
+	tmpstr = ostrcat("900 - ", _("Mutex"), 0, 0);	
+	addchoicebox(debuglevel, "900", tmpstr);
+	free(tmpstr), tmpstr = NULL;
+	
+	tmpstr = ostrcat("1000 - ", _("Function"), 0, 0);	
+	addchoicebox(debuglevel, "1000", tmpstr);
+	free(tmpstr), tmpstr = NULL;
+	
 	setchoiceboxselection(debuglevel, getconfig("debuglevel", NULL));
 #endif
 
