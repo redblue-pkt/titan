@@ -452,6 +452,11 @@ void screenadjust()
 			addconfigscreen("playerbuffersize", playerbuffersize);
 			addconfigscreen("playerbufferseektime", playerbufferseektime);
 
+#ifdef BETA
+			addconfigscreencheck("debuglevel", debuglevel, "0");
+			setdebuglevel();
+#endif
+
 			addconfigscreen("community_user", community_user);
 			// hid pass text and convert to md5sum
 			if(community_pass->ret != NULL && ostrcmp(community_pass->ret, "****") != 0)
@@ -462,11 +467,6 @@ void screenadjust()
 			}
 			else
 				debug(99, "community_pass: skipped");
-
-#ifdef BETA
-			addconfigscreencheck("debuglevel", debuglevel, "0");
-			setdebuglevel();
-#endif
 
 			writeallconfig(1);
 
