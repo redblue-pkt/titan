@@ -53,6 +53,7 @@ void screenadjust()
 	struct skin* dualboot = getscreennode(adjust, "dualboot");
 	struct skin* community_user = getscreennode(adjust, "community_user");
 	struct skin* community_pass = getscreennode(adjust, "community_pass");
+	struct skin* debuglevel = getscreennode(adjust, "debuglevel");
 
 	struct skin* tmp = NULL;
 
@@ -257,6 +258,36 @@ void screenadjust()
 	else
 		changeinput(community_pass, "****");
 	
+
+// setdebuglevel
+#ifndef BETA
+	debuglevel->hidden = YES;
+	addchoicebox(debuglevel, "10", _("Minimal"));
+	addchoicebox(debuglevel, "40", _("TopfieldVFD"));
+	addchoicebox(debuglevel, "50", _("MediaCenter"));
+	addchoicebox(debuglevel, "60", _("Menulist"));
+	addchoicebox(debuglevel, "70", _("Networkbrowser"));
+	addchoicebox(debuglevel, "80", _("Harddisk"));
+	addchoicebox(debuglevel, "90", _("Screensaver"));
+	addchoicebox(debuglevel, "99", _("Tithek/HTTP Header"));
+	addchoicebox(debuglevel, "100", _("Global"));
+	addchoicebox(debuglevel, "130", _("TPK"));
+	addchoicebox(debuglevel, "133", _("IMDbScan"));
+	addchoicebox(debuglevel, "150", _("ePlayer"));
+	addchoicebox(debuglevel, "199", _("Community login"));
+	addchoicebox(debuglevel, "200", _("Tuning"));
+	addchoicebox(debuglevel, "250", _("Stream/Record/Softcam"));
+	addchoicebox(debuglevel, "270", _("EPG"));
+	addchoicebox(debuglevel, "300", _("Radiotext"));
+	addchoicebox(debuglevel, "400", _("Subtitle"));
+	addchoicebox(debuglevel, "500", _("Scan"));
+	addchoicebox(debuglevel, "777", _("MediaDB"));
+	addchoicebox(debuglevel, "900", _("Mutex"));
+	addchoicebox(debuglevel, "1000", _("Function"));
+	setchoiceboxselection(debuglevel, getconfig("debuglevel", NULL));
+#endif
+
+
 #ifdef MIPSEL
 	dualboot->hidden = NO;
 	frontpoweraktion->hidden = NO;
@@ -432,7 +463,13 @@ void screenadjust()
 			else
 				debug(99, "community_pass: skipped");
 
+#ifdef BETA
+			addconfigscreencheck("debuglevel", debuglevel, "0");
+			setdebuglevel();
+#endif
+
 			writeallconfig(1);
+
 			debug(99, "community_pass_read: %s", getconfig("community_pass", NULL));
 
 			break;
