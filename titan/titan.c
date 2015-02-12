@@ -330,7 +330,7 @@ void oshutdown(int exitcode, int flag)
 		timeshiftstop(3);
 
 	//check if record running
-	if((flag == 1 || flag == 2 || flag == 3 || flag == 4 || flag == 5) && (status.recording > 0 || getrectimerbytimediff(300) != NULL))
+	if((flag == 1 || flag == 2 || flag == 3 || flag == 4 || flag == 5) && (status.streaming > 0 || status.recording > 0 || getrectimerbytimediff(300) != NULL))
 	{
 		if(flag == 4 && status.fixpowerofftime > 1)
 		{
