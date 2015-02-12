@@ -3324,7 +3324,7 @@ void drawnode(struct skin* node, int flag)
 				strftime(tmpnr, MINMALLOC, "%H:%M %d-%m-%Y", loctime);
 			free(loctime);
 		}
-		drawstring(tmpnr, 1, node->poscount, -1, node->iposx, node->iposy, node->iwidth, node->iheight, RIGHT, node->valign, node->font, node->fontsize, node->fontcol, node->transparent, 0, NULL, NULL, NULL, node->charspace, 0);
+		drawstring(tmpnr, 1, node->poscount, -1, node->iposx, node->iposy, node->iwidth, node->iheight, RIGHT, node->valign, node->font, node->fontsize, node->fontcol, node->transparent, 1, NULL, NULL, NULL, node->charspace, 0);
 		free(tmpnr);
 	}
 	if(node->title != NULL && node->fontsize > 1)
