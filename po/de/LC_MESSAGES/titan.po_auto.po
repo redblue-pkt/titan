@@ -2007,6 +2007,10 @@ msgstr ""
 msgid "Tunertype"
 msgstr "Tuner Typ"
 
+#: global.h:6960
+msgid "Frontcontroller"
+msgstr ""
+
 #: gmediarender.h:128
 msgid "DLNA Renderer Name"
 msgstr ""
