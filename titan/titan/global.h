@@ -1487,7 +1487,7 @@ void delspezchar(char* text, int flag)
 			if(tmpstr[0] == '/') tmpstr[0] = '-';
 			if(flag == 2)
 			{
-				if(tmpstr[0] == 'Â') tmpstr[0] = '-';
+				if(tmpstr[0] == '\C2') tmpstr[0] = '-';
 				if(tmpstr[0] == '<') tmpstr[0] = '-';
  				if(tmpstr[0] == '>') tmpstr[0] = '-';
 				if(tmpstr[0] == ':') tmpstr[0] = '-';
@@ -6927,6 +6927,10 @@ char* getabout()
 	text = ostrcat(text, " ", 1, 0);
 	text = ostrcat(text, imgversion, 1, 1);
 	text = ostrcat(text, "\n", 1, 0);
+	text = ostrcat(text, _("Frontcontroller"), 1, 0);
+	text = ostrcat(text, ": ", 1, 0);
+	tmpstr = readsys("/proc/stb/fp/version", 1);
+	text = ostrcat(text, tmpstr, 1, 1);
 	text = ostrcat(text, _("Copyright"), 1, 0);
 	text = ostrcat(text, ": ", 1, 0);
 	text = ostrcat(text, COPYRIGHT, 1, 0);
@@ -6954,12 +6958,6 @@ char* getabout()
 	}
 	
 	tmpstr = readfiletomem("/tmp/.firmware.log", 0);
-	text = ostrcat(text, tmpstr, 1, 1);
-
-	text = ostrcat(text, "\n", 1, 0);
-	text = ostrcat(text, _("Frontcontroller"), 1, 0);
-	text = ostrcat(text, ": ", 1, 0);
-	tmpstr = readsys("/proc/stb/fp/version", 1);
 	text = ostrcat(text, tmpstr, 1, 1);
 
 	return text;
