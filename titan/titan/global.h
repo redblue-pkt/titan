@@ -6960,7 +6960,7 @@ char* getabout()
 	text = ostrcat(text, _("Frontcontroller"), 1, 0);
 	text = ostrcat(text, ": ", 1, 0);
 	tmpstr = readsys("/proc/stb/fp/version", 1);
-	text = ostrcat(text, tmpstr, 1, 0);
+	text = ostrcat(text, tmpstr, 1, 1);
 
 	return text;
 }
