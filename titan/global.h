@@ -6956,7 +6956,7 @@ char* getabout()
 	tmpstr = readfiletomem("/tmp/.firmware.log", 0);
 	text = ostrcat(text, tmpstr, 1, 1);
 
-	text = ostrcat(text, "\n\n", 1, 0);
+	text = ostrcat(text, "\n", 1, 0);
 	text = ostrcat(text, _("Frontcontroller"), 1, 0);
 	text = ostrcat(text, ": ", 1, 0);
 	tmpstr = readsys("/proc/stb/fp/version", 1);
