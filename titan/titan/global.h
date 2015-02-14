@@ -6931,6 +6931,7 @@ char* getabout()
 	text = ostrcat(text, ": ", 1, 0);
 	tmpstr = readsys("/proc/stb/fp/version", 1);
 	text = ostrcat(text, tmpstr, 1, 1);
+	text = ostrcat(text, "\n", 1, 0);
 	text = ostrcat(text, _("Copyright"), 1, 0);
 	text = ostrcat(text, ": ", 1, 0);
 	text = ostrcat(text, COPYRIGHT, 1, 0);
