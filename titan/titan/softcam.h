@@ -411,9 +411,9 @@ void screensoftcam()
 		}
 		if(rcret == getrcconfigint("rcinfo", NULL))
 		{
-			char* extract = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL;
+			char* extract = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *cmd = NULL;
 
-			tmpstr = ostrcat(listbox->select->name, NULL, 0, 0);
+			tmpstr = string_quote(listbox->select->name);
 			string_tolower(tmpstr);
 			
 			if(listbox->select->name == NULL)
