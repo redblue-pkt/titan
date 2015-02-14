@@ -17,6 +17,7 @@ void screenskinadjust()
 	struct skin* listboxselect = getscreennode(skinadjust, "listboxselect");
 	struct skin* tithek_selectcol = getscreennode(skinadjust, "tithek_selectcol");
 	struct skin* filelistselect = getscreennode(skinadjust, "filelistselect");
+	struct skin* bordercolselect = getscreennode(skinadjust, "bordercolselect");
 
 	struct skin* oled_sel = getscreennode(skinadjust, "oled_sel");
 	struct skin* infobar_sel = getscreennode(skinadjust, "infobar_sel");
@@ -122,6 +123,7 @@ void screenskinadjust()
 	addchoicebox(listboxselect, "0", _("press red"));
 	addchoicebox(tithek_selectcol, "1", _("press green"));
 	addchoicebox(filelistselect, "2", _("press yellow"));
+	addchoicebox(bordercolselect, "2", _("press blue"));
 
 	drawscreen(skinadjust, 0, 0);
 	addscreenrc(skinadjust, listbox);
@@ -224,6 +226,21 @@ void screenskinadjust()
 				if(tmpstr != NULL)
 					addskinconfigtmp("filelistselect", tmpstr);
 				if(oldfilelistselect != convertcol("filelistselect")) reboot = 1;
+				drawscreen(skinadjust, 0, 0);
+			}
+
+			continue;
+		}
+
+		if(rcret == getrcconfigint("rcblue", NULL))
+		{
+			if(listbox->select != NULL && ostrcmp(listbox->select->name, "bordercolselect") == 0)
+			{
+				long oldbordercolselect = convertcol("bordercolselect");
+				char* tmpstr = screencolorpicker(getskinconfig("bordercolselect", NULL), 0, 0, 0);
+				if(tmpstr != NULL)
+					addskinconfigtmp("bordercolselect", tmpstr);
+				if(oldbordercolselect != convertcol("bordercolselect")) reboot = 1;
 				drawscreen(skinadjust, 0, 0);
 			}
 
