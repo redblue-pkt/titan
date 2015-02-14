@@ -446,6 +446,7 @@ void screensoftcam()
 
 			int ret = 1;
 
+			printf("tmpstr1: %s\n", tmpstr1);
 			gethttp("atemio.dyndns.tv", tmpstr1, 80, "/tmp/.tmp.tar.gz", HTTPAUTH, 5000, NULL, 0);		
 
 			printf("extract: %s\n", extract);
