@@ -63,8 +63,8 @@ msgstr ""
 #: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
 #: promptfile.h:46 promptfile.h:94 promptfile.h:136 putlocker.h:32
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
-#: putlocker.h:152 putlocker.h:225 readerconfig.h:343 readerconfig.h:443
-#: readerconfig.h:444 readerconfig.h:489 readerconfig.h:490 record.h:387
+#: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
+#: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
 #: record.h:1034 record.h:1557 rectimer.h:577 rectimer.h:1231 rectimer.h:1377
 #: rectimer.h:1389 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
@@ -172,8 +172,8 @@ msgstr ""
 #: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
 #: promptfile.h:46 promptfile.h:94 promptfile.h:136 putlocker.h:32
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
-#: putlocker.h:152 putlocker.h:225 readerconfig.h:343 readerconfig.h:443
-#: readerconfig.h:444 readerconfig.h:489 readerconfig.h:490 record.h:90
+#: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
+#: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:90
 #: record.h:387 record.h:1034 record.h:1282 record.h:1532 record.h:1557
 #: rectimer.h:577 rectimer.h:1231 rectimer.h:1377 rectimer.h:1389
 #: restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
@@ -695,8 +695,8 @@ msgstr ""
 #: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
 #: promptfile.h:46 promptfile.h:94 promptfile.h:136 putlocker.h:32
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
-#: putlocker.h:152 putlocker.h:225 readerconfig.h:343 readerconfig.h:443
-#: readerconfig.h:444 readerconfig.h:489 readerconfig.h:490 record.h:387
+#: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
+#: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
 #: record.h:1034 record.h:1282 record.h:1532 record.h:1557 rectimer.h:577
 #: rectimer.h:1231 rectimer.h:1377 rectimer.h:1389 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
@@ -803,7 +803,7 @@ msgstr "sauvegarder les réglages avec succès"
 #: httpdsettings.h:76 lnbconfig.h:144 mc_pictureplayer_settings.h:34
 #: mc_pictureplayer_settings.h:38 mc_pictureplayer_settings.h:67
 #: mc_videoplayer_settings.h:53 network.h:392 panel_settings_autostart.h:61
-#: panel_settings_overclocking.h:276 readerconfig.h:413
+#: panel_settings_overclocking.h:276 readerconfig.h:421
 #: settings_autostart.h:53 settings_overclocking.h:276 transponder.h:256
 #: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:826
 #: vfdisplay.h:42 vfdisplay.h:50
@@ -832,7 +832,7 @@ msgstr ""
 
 #: avsettings.h:86 fancontrol.h:109 httpdsettings.h:77 lnbconfig.h:143
 #: mc_pictureplayer_settings.h:35 mc_pictureplayer_settings.h:39
-#: readerconfig.h:416 transponder.h:257 transponder.h:266 transponder.h:416
+#: readerconfig.h:424 transponder.h:257 transponder.h:266 transponder.h:416
 #: transponder.h:425
 msgid "on"
 msgstr "marche"
@@ -5136,12 +5136,12 @@ msgstr ""
 msgid "Reader Config"
 msgstr ""
 
-#: plugins_readerconfig_skin.xml.h:8 readerconfig.h:268 readerconfig.h:338
+#: plugins_readerconfig_skin.xml.h:8 readerconfig.h:276 readerconfig.h:346
 #: skins_readerconfig_skin.xml.h:8
 msgid "Reader Configuration"
 msgstr ""
 
-#: plugins_readerconfig_skin.xml.h:9 readerconfig.h:383
+#: plugins_readerconfig_skin.xml.h:9 readerconfig.h:391
 #: skins_readerconfig_skin.xml.h:9
 msgid "Reader Selection"
 msgstr "Séléction Softcam:"
@@ -5626,59 +5626,59 @@ msgstr ""
 msgid "Found Firedrive.com Link, supporting comming soon..."
 msgstr ""
 
-#: readerconfig.h:258
+#: readerconfig.h:260 readerconfig.h:265
 msgid "first slot"
 msgstr ""
 
-#: readerconfig.h:259
+#: readerconfig.h:261 readerconfig.h:266
 msgid "second slot"
 msgstr ""
 
-#: readerconfig.h:310
+#: readerconfig.h:318
 msgid "Use config from Flash (permanent)"
 msgstr ""
 
-#: readerconfig.h:319
+#: readerconfig.h:327
 msgid "Use config from Flash (temporary)"
 msgstr ""
 
-#: readerconfig.h:328
+#: readerconfig.h:336
 msgid "Use config from Stick or HDD"
 msgstr ""
 
-#: readerconfig.h:338
+#: readerconfig.h:346
 msgid "Choose your Config File from the following list"
 msgstr ""
 
-#: readerconfig.h:343
+#: readerconfig.h:351
 msgid "No config file found."
 msgstr ""
 
-#: readerconfig.h:389 readerconfig.h:483
+#: readerconfig.h:397 readerconfig.h:491
 msgid "Dvbapi (enabled)"
 msgstr ""
 
-#: readerconfig.h:391 readerconfig.h:476
+#: readerconfig.h:399 readerconfig.h:484
 msgid "Dvbapi (disabled)"
 msgstr ""
 
-#: readerconfig.h:418
+#: readerconfig.h:426
 msgid "Reader active"
 msgstr "Désactiver"
 
-#: readerconfig.h:443
+#: readerconfig.h:451
 msgid "Oscam config written to medium !"
 msgstr ""
 
-#: readerconfig.h:444 readerconfig.h:490
+#: readerconfig.h:452 readerconfig.h:498
 msgid "Restart Oscam ?"
 msgstr "Redémarrer Titan"
 
-#: readerconfig.h:475
+#: readerconfig.h:483
 msgid "Oscam dvbapi config disabled !"
 msgstr ""
 
-#: readerconfig.h:482
+#: readerconfig.h:490
 msgid "Oscam dvbapi config enabled !"
 msgstr ""
 
