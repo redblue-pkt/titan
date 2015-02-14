@@ -72,7 +72,7 @@ msgstr ""
 #: scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1901 scan.h:1992
 #: scan.h:2358 scart.h:12 scart.h:25 scriptexec.h:41 security.h:1736
 #: service.h:738 service.h:983 shared.h:29 shared.h:65 shared.h:82
-#: skinadjust.h:280 skins_dlna_skin.xml.h:8 skinselector.h:237
+#: skinadjust.h:290 skins_dlna_skin.xml.h:8 skinselector.h:237
 #: skins_facebook_skin.xml.h:5 skins_mboxinfo_skin.xml.h:2
 #: skins_mc_skin.xml.h:38 skins_optimize_skin.xml.h:3 skins_rgui_skin.xml.h:3
 #: skins_sudoku_skin.xml.h:13 skins_tiwakeup_skin.xml.h:3
@@ -265,7 +265,7 @@ msgstr "SORTIE"
 #: settings_autostart.h:502 settings_autostart.h:511 settings_autostart.h:568
 #: settings_autostart.h:577 settings_autostart.h:586 settings_autostart.h:595
 #: settings_overclocking.h:214 settings_overclocking.h:234
-#: settings_overclocking.h:244 skinadjust.h:118 stopifnotused.c:94
+#: settings_overclocking.h:244 skinadjust.h:123 stopifnotused.c:94
 #: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:37
 #: tithek_settings.h:41 tithek_settings.h:45 tmc.h:531 tmc.h:535
 #: tunerconfig.h:184 tunerconfig.h:213 tunerconfig.h:244 tunerconfig.h:277
@@ -705,7 +705,7 @@ msgstr ""
 #: rtl2now.h:31 scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1646
 #: scan.h:1901 scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 security.h:1736
 #: service.h:738 service.h:983 shared.h:29 shared.h:65 shared.h:82
-#: skinadjust.h:280 skinselector.h:237 sock.h:952 softcam.h:410 softcam.h:468
+#: skinadjust.h:290 skinselector.h:237 sock.h:952 softcam.h:410 softcam.h:468
 #: softcam.h:469 solarmovie.h:35 solarmovie.h:47 solarmovie.h:304 spinner.h:18
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:84
 #: streamcloud.h:97 streamcloud.h:128 streamcloud.h:187 stream.h:33
@@ -6227,47 +6227,47 @@ msgstr ""
 msgid "Connect with Hoster wait 7 seconds"
 msgstr ""
 
-#: skinadjust.h:33
+#: skinadjust.h:38
 msgid "border"
 msgstr ""
 
-#: skinadjust.h:34
+#: skinadjust.h:39
 msgid "bar"
 msgstr ""
 
-#: skinadjust.h:35
+#: skinadjust.h:40
 msgid "text"
 msgstr ""
 
-#: skinadjust.h:36 tmc.h:542
+#: skinadjust.h:41 tmc.h:542
 msgid "picture"
 msgstr "Photo"
 
-#: skinadjust.h:119
+#: skinadjust.h:124
 msgid "yes (Text in %)"
 msgstr ""
 
-#: skinadjust.h:120
+#: skinadjust.h:125
 msgid "yes (Text in MB)"
 msgstr ""
 
-#: skinadjust.h:123 tunerconfig.h:302 tunerconfig.h:303
+#: skinadjust.h:128 tunerconfig.h:302 tunerconfig.h:303
 msgid "press red"
 msgstr ""
 
-#: skinadjust.h:124
+#: skinadjust.h:129
 msgid "press green"
 msgstr ""
 
-#: skinadjust.h:125
+#: skinadjust.h:130
 msgid "press yellow"
 msgstr ""
 
-#: skinadjust.h:126
+#: skinadjust.h:131
 msgid "press blue"
 msgstr ""
 
-#: skinadjust.h:280
+#: skinadjust.h:290
 msgid "Titan will be restartet!"
 msgstr ""
 
