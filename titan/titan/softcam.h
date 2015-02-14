@@ -418,7 +418,13 @@ void screensoftcam()
 			
 			if(listbox->select->name == NULL)
 			{
-				tmpstr1 = getoscamconfig();	
+				if(file_exist("/mnt/swapextensions/keys"))
+					tmpstr1 = ostrcat("/mnt/swapextensions", NULL, 0, 0);
+				else if(file_exist("/var/swap/keys"))
+					tmpstr1 = ostrcat("/var/swap", NULL, 0, 0);
+				else if(file_exist("/var/keys"))
+					tmpstr1 = ostrcat("/var/keys", NULL, 0, 0);
+
 				if(tmpstr1 == NULL) return;
 				extract = ostrcat("tar -zxvf /tmp/.tmp.tar.gz -C ", tmpstr1, 0, 0);
 				extract = ostrcat(extract, "/keys/", 1, 0);
