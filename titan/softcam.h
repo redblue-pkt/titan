@@ -413,9 +413,13 @@ void screensoftcam()
 		{
 			char* extract = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *cmd = NULL;
 
-			tmpstr = string_quote(listbox->select->name);
+			tmpstr = ostrcat(listbox->select->name, NULL, 0, 0);
+
 			string_tolower(tmpstr);
-			
+			tmpstr = stringreplacecharonce(tmpstr, '-', '\0');
+			tmpstr = stringreplacecharonce(tmpstr, '_', '\0');
+			tmpstr = stringreplacecharonce(tmpstr, '.', '\0');
+
 			if(listbox->select->name == NULL)
 			{
 				if(file_exist("/mnt/swapextensions/keys"))
