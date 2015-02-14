@@ -434,7 +434,7 @@ void screensoftcam()
 				free(tmpstr1), tmpstr1 = NULL;
 			}
 
-			tmpstr1 = ostrcat("/autokeys/", tmpstr, 0, 0);
+			tmpstr1 = ostrcat("/svn/auth/", tmpstr, 0, 0);
 			tmpstr1 = ostrcat(tmpstr1, ".tar.gz", 0, 0);
 
 			tmpstr2 = ostrcat(listbox->select->name, " ", 0, 0);
