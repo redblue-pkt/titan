@@ -25,6 +25,11 @@ void screenskinadjust()
 	struct skin* pic1 = getscreennode(skinadjust, "pic1");
 	struct skin* pic2 = getscreennode(skinadjust, "pic2");
 
+	struct skin* b4 = getscreennode(skinadjust, "b4");
+	struct skin* b5 = getscreennode(skinadjust, "b5");
+	struct skin* b6 = getscreennode(skinadjust, "b6");
+	struct skin* b7 = getscreennode(skinadjust, "b7");
+
 	struct skin* tmp = NULL;
 
 	changeinput(fontsizeadjust, "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n-15\n-14\n-13\n-12\n-11\n-10\n-9\n-8\n-7\n-6\n-5\n-4\n-3\n-2\n-1");
@@ -124,6 +129,11 @@ void screenskinadjust()
 	addchoicebox(tithek_selectcol, "1", _("press green"));
 	addchoicebox(filelistselect, "2", _("press yellow"));
 	addchoicebox(bordercolselect, "2", _("press blue"));
+
+	b4->hidden = YES;
+	b5->hidden = YES;
+	b6->hidden = YES;
+	b7->hidden = YES;
 
 	drawscreen(skinadjust, 0, 0);
 	addscreenrc(skinadjust, listbox);
@@ -283,6 +293,28 @@ void screenskinadjust()
 
 			break;
 		}
+
+		if(ostrcmp(listbox->select->name, "listboxselect") == 0)
+			b4->hidden = NO;
+		else
+			b4->hidden = YES;
+
+		if(ostrcmp(listbox->select->name, "tithek_selectcol") == 0)
+			b5->hidden = NO;
+		else
+			b5->hidden = YES;
+
+		if(ostrcmp(listbox->select->name, "filelistselect") == 0)
+			b6->hidden = NO;
+		else
+			b6->hidden = YES;
+
+		if(ostrcmp(listbox->select->name, "bordercolselect") == 0)
+			b7->hidden = NO;
+		else
+			b7->hidden = YES;
+
+		drawscreen(skinadjust, 0, 0);
 	}
 
 	delskinconfigtmpall();
