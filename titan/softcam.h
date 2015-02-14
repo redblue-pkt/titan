@@ -432,6 +432,7 @@ void screensoftcam()
 				if(tmpstr1 == NULL) return;
 				extract = ostrcat("tar -zxvf /tmp/.tmp.tar.gz -C ", tmpstr1, 0, 0);
 				extract = ostrcat(extract, "/keys/", 1, 0);
+				extract = ostrcat(extract, " > /dev/null 2>&1", 1, 0);
 				free(tmpstr1), tmpstr1 = NULL; 
 			}
 			else
@@ -447,20 +448,20 @@ void screensoftcam()
 			tmpstr1 = ostrcat("/svn/auth/", tmpstr, 0, 0);
 			tmpstr1 = ostrcat(tmpstr1, ".tar.gz", 0, 0);
 
-			tmpstr2 = ostrcat(listbox->select->name, " ", 0, 0);
+			tmpstr2 = ostrcat(tmpstr, " ", 0, 0);
 			tmpstr2 = ostrcat(tmpstr2, _("Keys Updatet !"), 1, 0);
 
 			tmpstr3 = ostrcat(_("Restart"), " ", 0, 0);
-			tmpstr3 = ostrcat(tmpstr3, listbox->select->name, 1, 0);
+			tmpstr3 = ostrcat(tmpstr3, tmpstr, 1, 0);
 			tmpstr3 = ostrcat(tmpstr3, " ?", 1, 0);
 
 			int ret = 1;
 
-			printf("tmpstr1: %s\n", tmpstr1);
+			debug(696, "tmpstr1: %s", tmpstr1);
 			gethttp("atemio.dyndns.tv", tmpstr1, 80, "/tmp/.tmp.tar.gz", HTTPAUTH, 5000, NULL, 0);		
 
-			printf("extract: %s\n", extract);
-			system(extract);
+			debug(696, "extract: %s", extract);
+			ret = system(extract);
 
 			if(ret == 0)
 			{
@@ -472,7 +473,7 @@ void screensoftcam()
 					free(cmd);
 				}
 			}
-			system("rm -rf /tmp/.tmp.tar.gz");
+			system("rm -rf /tmp/.tmp.tar.gz > /dev/null 2>&1");
 
 			free(tmpstr); tmpstr = NULL;
 			free(tmpstr1); tmpstr1 = NULL;
