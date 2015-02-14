@@ -409,6 +409,66 @@ void screensoftcam()
 			else
 				textbox(_("Message"), _("Reader Config Plugin not installed !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
 		}
+		if(rcret == getrcconfigint("rcinfo", NULL))
+		{
+			char* extract = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL;
+
+			tmpstr = ostrcat(listbox->select->name, NULL, 0, 0);
+			string_tolower(tmpstr);
+			
+			if(listbox->select->name == NULL)
+			{
+				tmpstr1 = getoscamconfig();	
+				if(tmpstr1 == NULL) return;
+				extract = ostrcat("tar -zxvf /tmp/.tmp.tar.gz -C ", tmpstr1, 0, 0);
+				extract = ostrcat(extract, "/keys/", 1, 0);
+				free(tmpstr1), tmpstr1 = NULL; 
+			}
+			else
+			{
+				cmd = ostrcat("/sbin/emu.sh keydir ", listbox->select->name, 0, 0);
+				tmpstr1 = string_newline(command(cmd));
+				extract = ostrcat("tar -zxvf /tmp/.tmp.tar.gz -C ", tmpstr1, 0, 0);
+				extract = ostrcat(extract, "/", 1, 0);
+				free(cmd), cmd = NULL;
+				free(tmpstr1), tmpstr1 = NULL;
+			}
+
+			tmpstr1 = ostrcat("/autokeys/", tmpstr, 0, 0);
+			tmpstr1 = ostrcat(tmpstr1, ".tar.gz", 0, 0);
+
+			tmpstr2 = ostrcat(listbox->select->name, " ", 0, 0);
+			tmpstr2 = ostrcat(tmpstr2, _("Keys Updatet !"), 1, 0);
+
+			tmpstr3 = ostrcat(_("Restart"), " ", 0, 0);
+			tmpstr3 = ostrcat(tmpstr3, listbox->select->name, 1, 0);
+			tmpstr3 = ostrcat(tmpstr3, " ?", 1, 0);
+
+			int ret = 1;
+
+			gethttp("atemio.dyndns.tv", tmpstr1, 80, "/tmp/.tmp.tar.gz", HTTPAUTH, 5000, NULL, 0);		
+
+			printf("extract: %s\n", extract);
+			system(extract);
+
+			if(ret == 0)
+			{
+				textbox(_("Message"), tmpstr2, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
+				if(textbox(_("Message"), tmpstr3, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0) == 1)
+				{
+					cmd = ostrcat("emu.sh restart" , NULL, 0, 0);
+					ret = system(cmd);
+					free(cmd);
+				}
+			}
+			system("rm -rf /tmp/.tmp.tar.gz");
+
+			free(tmpstr); tmpstr = NULL;
+			free(tmpstr1); tmpstr1 = NULL;
+			free(tmpstr2); tmpstr2 = NULL;
+			free(tmpstr3); tmpstr3 = NULL;
+			free(extract); extract = NULL;
+		}
 		if(rcret == RCTIMEOUT)
 		{
 			// update ecminfo
