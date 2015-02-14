@@ -364,12 +364,14 @@ void screenoscam(char* cfgfile)
 
 	struct skin* tmp = NULL;
 	struct oscam* node = NULL;
-	char* tmpstr = NULL, *file = NULL, *cmd = NULL, *dvbapi = NULL;
+	char* tmpstr = NULL, *file = NULL, *cmd = NULL, *dvbapi = NULL, *extract = NULL;
 
 	if(cfgfile == NULL)
 	{
 		tmpstr = getoscamconfig();	
 		if(tmpstr == NULL) return;
+		extract = ostrcat("tar -zxvf /tmp/.tmp.tar.gz -C ", tmpstr, 0, 0);
+		extract = ostrcat(extract, "/keys/", 1, 0);
 		dvbapi = ostrcat(tmpstr, "/keys/oscam.dvbapi", 0, 0);
 		file = ostrcat(tmpstr, "/keys/oscam.server", 0, 0);
 		free(tmpstr), tmpstr = NULL; 
@@ -379,6 +381,8 @@ void screenoscam(char* cfgfile)
 		cmd = ostrcat("/sbin/emu.sh keydir ", cfgfile, 0, 0);
 		tmpstr = string_newline(command(cmd));
 		dvbapi = ostrcat(tmpstr, "/oscam.dvbapi", 0, 0);
+		extract = ostrcat("tar -zxvf /tmp/.tmp.tar.gz -C ", tmpstr, 0, 0);
+		extract = ostrcat(extract, "/", 1, 0);
 		file = ostrcat(tmpstr, "/oscam.server", 0, 0);
 		free(cmd), cmd = NULL;
 		free(tmpstr), tmpstr = NULL;
@@ -507,10 +511,35 @@ start:
 			free(tmpstr); tmpstr = NULL;
 			drawscreen(skinoscam, 0, 0);	
 		}
+		if(rcret == getrcconfigint("rcyellow", NULL))
+		{
+			int ret = 1;
+
+			gethttp("www.stbsw.com", "/sat/keys/Oscam.keys.tar.gz", 80, "/tmp/.tmp.tar.gz", NULL, 5000, NULL, 0);		
+
+			printf("extract: %s\n", extract);
+			system(extract);
+			
+			if(ret == 0)
+			{
+				textbox(_("Message"), _("Oscam Keys Updatet !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
+				if(textbox(_("Message"), _("Restart Oscam ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0) == 1)
+				{
+					startinternreader(0);
+					char* cmd = NULL;
+					cmd = ostrcat("emu.sh restart" , NULL, 0, 0);
+					ret = system(cmd);
+					free(cmd);
+				}
+			}
+			free(tmpstr); tmpstr = NULL;
+			drawscreen(skinoscam, 0, 0);	
+		}
 	}
 
 	startinternreader(1);
 
+	free(extract); extract = NULL;
 	free(dvbapi); dvbapi = NULL;
 	free(file); file = NULL;
 	delmarkedscreennodes(skinoscam, 1);
