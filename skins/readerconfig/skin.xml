@@ -13,7 +13,6 @@
 		<node parent="buttonbar" name="b7" picmem="skin/key_control_cross_70x40.png" valign="middle" posx="140" posy="center" width="70" height="40">
 		<node parent="buttonbar" name="b1" picmem="skin/key_red_30x30.png"    textposx="40" valign="middle" posx="220" posy="center" width="200" height="30" text="EDIT">
 		<node parent="buttonbar" name="b2" picmem="skin/key_green_30x30.png"  textposx="40" valign="middle" posx="430" posy="center" width="270" height="30" text="Dvbapi">
-		<node parent="buttonbar" name="b3" picmem="skin/key_yellow_30x30.png"  textposx="40" valign="middle" posx="710" posy="center" width="200" height="30" text="Key-Update">
 </screen>
 
 #readerconfig fullscreen, max 1220x660, Xspace=30 !
