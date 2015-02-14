@@ -255,8 +255,16 @@ void screenoscamconfig(struct oscam* node, char* file)
 	addchoicebox(enable, "1", _("yes"));
 	setchoiceboxselection(enable, node->enable);
 
-	addchoicebox(device, "/dev/sci0", _("first slot"));
-	addchoicebox(device, "/dev/sci1", _("second slot"));
+	if(checkbox("ATEMIO-NEMESIS") == 1)
+	{
+		addchoicebox(device, "/dev/sci1", _("first slot"));
+		addchoicebox(device, "/dev/sci0", _("second slot"));
+	}
+	else
+	{
+		addchoicebox(device, "/dev/sci0", _("first slot"));
+		addchoicebox(device, "/dev/sci1", _("second slot"));
+	}
 	setchoiceboxselection(device, node->device);
 
 	if(node->device == NULL || (ostrcmp(node->device, "/dev/sci0") != 0 && ostrcmp(node->device, "/dev/sci1") != 0))
