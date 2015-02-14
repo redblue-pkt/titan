@@ -63,15 +63,16 @@ msgstr "Sistemos informacija"
 #: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
 #: promptfile.h:46 promptfile.h:94 promptfile.h:136 putlocker.h:32
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
-#: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
-#: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
-#: record.h:1034 record.h:1557 rectimer.h:577 rectimer.h:1231 rectimer.h:1377
-#: rectimer.h:1389 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
-#: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
-#: rtl2now.h:31 scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1901
-#: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 scriptexec.h:41
-#: security.h:1736 service.h:738 service.h:983 shared.h:29 shared.h:65
-#: shared.h:82 skinadjust.h:263 skins_dlna_skin.xml.h:8 skinselector.h:237
+#: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:455
+#: readerconfig.h:456 readerconfig.h:501 readerconfig.h:502 readerconfig.h:525
+#: readerconfig.h:526 record.h:387 record.h:1034 record.h:1557 rectimer.h:577
+#: rectimer.h:1231 rectimer.h:1377 rectimer.h:1389 restoredefault.h:10
+#: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
+#: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:31
+#: scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1901 scan.h:1992
+#: scan.h:2358 scart.h:12 scart.h:25 scriptexec.h:41 security.h:1736
+#: service.h:738 service.h:983 shared.h:29 shared.h:65 shared.h:82
+#: skinadjust.h:263 skins_dlna_skin.xml.h:8 skinselector.h:237
 #: skins_facebook_skin.xml.h:5 skins_mboxinfo_skin.xml.h:2
 #: skins_mc_skin.xml.h:38 skins_optimize_skin.xml.h:3 skins_rgui_skin.xml.h:3
 #: skins_sudoku_skin.xml.h:13 skins_tiwakeup_skin.xml.h:3
@@ -172,11 +173,11 @@ msgstr "Gerai"
 #: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
 #: promptfile.h:46 promptfile.h:94 promptfile.h:136 putlocker.h:32
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
-#: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
-#: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:90
-#: record.h:387 record.h:1034 record.h:1282 record.h:1532 record.h:1557
-#: rectimer.h:577 rectimer.h:1231 rectimer.h:1377 rectimer.h:1389
-#: restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
+#: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:455
+#: readerconfig.h:456 readerconfig.h:501 readerconfig.h:502 readerconfig.h:525
+#: readerconfig.h:526 record.h:90 record.h:387 record.h:1034 record.h:1282
+#: record.h:1532 record.h:1557 rectimer.h:577 rectimer.h:1231 rectimer.h:1377
+#: rectimer.h:1389 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:31 scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1901
 #: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 scriptexec.h:41
@@ -695,33 +696,34 @@ msgstr ""
 #: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
 #: promptfile.h:46 promptfile.h:94 promptfile.h:136 putlocker.h:32
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
-#: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
-#: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
-#: record.h:1034 record.h:1282 record.h:1532 record.h:1557 rectimer.h:577
-#: rectimer.h:1231 rectimer.h:1377 rectimer.h:1389 restoredefault.h:10
-#: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
-#: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:31
-#: scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1646 scan.h:1901
-#: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 security.h:1736 service.h:738
-#: service.h:983 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:263
-#: skinselector.h:237 sock.h:952 softcam.h:410 solarmovie.h:35 solarmovie.h:47
-#: solarmovie.h:304 spinner.h:18 stopifnotused.c:31 streamcloud.h:31
-#: streamcloud.h:74 streamcloud.h:84 streamcloud.h:97 streamcloud.h:128
-#: streamcloud.h:187 stream.h:33 system_backup_restore.h:40
-#: system_backup_restore.h:43 system_backup_restore.h:80
-#: system_backup_restore.h:82 system_update.h:257 system_update.h:263
-#: system_update.h:270 thefile.h:34 thefile.h:68 thefile.h:205 timeshift.h:113
-#: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
-#: titan.c:346 titan.c:355 titan.c:1146 titan.c:1167 titan.c:1173 titan.c:1184
-#: titan.c:1190 tithek.c:85 tithek_global.h:250 tithek.h:670 tithek.h:1166
-#: tithek.h:1227 tithek.h:1477 tithek.h:1499 tithek.h:2085 tithek.h:2112
-#: tithek.h:2126 tithek.h:2136 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
-#: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
-#: TopfieldVFD.c:72 tpk.h:3211 tpk.new.h:3167 tunerconfig.h:931 unlock.h:20
-#: unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:67 videoweed.h:35
-#: videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98 vidstream.h:167
-#: webif_boxcontrol.h:2 xupnpd.h:60 xupnpd.h:71 xupnpd.h:73 xvidstage.h:54
-#: xvidstage.h:100 xvidstage.h:177 youtube.h:215 zapback.c:79 zdf.h:29
+#: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:455
+#: readerconfig.h:456 readerconfig.h:501 readerconfig.h:502 readerconfig.h:525
+#: readerconfig.h:526 record.h:387 record.h:1034 record.h:1282 record.h:1532
+#: record.h:1557 rectimer.h:577 rectimer.h:1231 rectimer.h:1377
+#: rectimer.h:1389 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
+#: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
+#: rtl2now.h:31 scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1646
+#: scan.h:1901 scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 security.h:1736
+#: service.h:738 service.h:983 shared.h:29 shared.h:65 shared.h:82
+#: skinadjust.h:263 skinselector.h:237 sock.h:952 softcam.h:410
+#: solarmovie.h:35 solarmovie.h:47 solarmovie.h:304 spinner.h:18
+#: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:84
+#: streamcloud.h:97 streamcloud.h:128 streamcloud.h:187 stream.h:33
+#: system_backup_restore.h:40 system_backup_restore.h:43
+#: system_backup_restore.h:80 system_backup_restore.h:82 system_update.h:257
+#: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
+#: thefile.h:205 timeshift.h:113 timeshift.h:161 timeshift.h:173
+#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1146
+#: titan.c:1167 titan.c:1173 titan.c:1184 titan.c:1190 tithek.c:85
+#: tithek_global.h:250 tithek.h:670 tithek.h:1166 tithek.h:1227 tithek.h:1477
+#: tithek.h:1499 tithek.h:2085 tithek.h:2112 tithek.h:2126 tithek.h:2136
+#: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
+#: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3211
+#: tpk.new.h:3167 tunerconfig.h:931 unlock.h:20 unlock.h:66 unlock.h:71
+#: unlock.h:75 videomode.h:67 videoweed.h:35 videoweed.h:80 vidstream.h:45
+#: vidstream.h:86 vidstream.h:98 vidstream.h:167 webif_boxcontrol.h:2
+#: xupnpd.h:60 xupnpd.h:71 xupnpd.h:73 xvidstage.h:54 xvidstage.h:100
+#: xvidstage.h:177 youtube.h:215 zapback.c:79 zdf.h:29
 msgid "Message"
 msgstr "Praneimas"
 
@@ -803,7 +805,7 @@ msgstr "Nustatymai skmingai isaugoti"
 #: httpdsettings.h:76 lnbconfig.h:144 mc_pictureplayer_settings.h:34
 #: mc_pictureplayer_settings.h:38 mc_pictureplayer_settings.h:67
 #: mc_videoplayer_settings.h:53 network.h:392 panel_settings_autostart.h:61
-#: panel_settings_overclocking.h:276 readerconfig.h:421
+#: panel_settings_overclocking.h:276 readerconfig.h:425
 #: settings_autostart.h:53 settings_overclocking.h:276 transponder.h:256
 #: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:826
 #: vfdisplay.h:42 vfdisplay.h:50
@@ -832,7 +834,7 @@ msgstr "10 Sekundi"
 
 #: avsettings.h:86 fancontrol.h:109 httpdsettings.h:77 lnbconfig.h:143
 #: mc_pictureplayer_settings.h:35 mc_pictureplayer_settings.h:39
-#: readerconfig.h:424 transponder.h:257 transponder.h:266 transponder.h:416
+#: readerconfig.h:428 transponder.h:257 transponder.h:266 transponder.h:416
 #: transponder.h:425
 msgid "on"
 msgstr "jungta"
@@ -3132,7 +3134,7 @@ msgstr ""
 #: plugins_mboxinfo_skin.xml.h:3 plugins_mc_skin.xml.h:70
 #: plugins_networkbrowser_skin.xml.h:37 plugins_news_skin.xml.h:5
 #: plugins_optimize_skin.xml.h:4 plugins_panel_skin.xml.h:28
-#: plugins_permtime_skin.xml.h:1 plugins_readerconfig_skin.xml.h:10
+#: plugins_permtime_skin.xml.h:1 plugins_readerconfig_skin.xml.h:11
 #: plugins_rgui_skin.xml.h:9 plugins_stock_skin.xml.h:6
 #: plugins_stopifnotused_skin.xml.h:8 plugins_streaminfo_skin.xml.h:6
 #: plugins_sudoku_skin.xml.h:18 plugins_tithek_skin.xml.h:24
@@ -3151,7 +3153,7 @@ msgstr ""
 #: skins_mboxinfo_skin.xml.h:3 skins_mc_skin.xml.h:70
 #: skins_networkbrowser_skin.xml.h:37 skins_news_skin.xml.h:5
 #: skins_optimize_skin.xml.h:4 skins_panel_skin.xml.h:28
-#: skins_permtime_skin.xml.h:1 skins_readerconfig_skin.xml.h:10
+#: skins_permtime_skin.xml.h:1 skins_readerconfig_skin.xml.h:11
 #: skins_rgui_skin.xml.h:9 skins_stock_skin.xml.h:6
 #: skins_stopifnotused_skin.xml.h:8 skins_streaminfo_skin.xml.h:6
 #: skins_sudoku_skin.xml.h:18 skins_tithek_skin.xml.h:24
@@ -5216,16 +5218,20 @@ msgstr ""
 "Navigate using your Remote Control and the keys displayed below"
 
 #: plugins_readerconfig_skin.xml.h:7 skins_readerconfig_skin.xml.h:7
+msgid "Key-Update"
+msgstr ""
+
+#: plugins_readerconfig_skin.xml.h:8 skins_readerconfig_skin.xml.h:8
 msgid "Reader Config"
 msgstr "Reader"
 
-#: plugins_readerconfig_skin.xml.h:8 readerconfig.h:276 readerconfig.h:346
-#: skins_readerconfig_skin.xml.h:8
+#: plugins_readerconfig_skin.xml.h:9 readerconfig.h:276 readerconfig.h:346
+#: skins_readerconfig_skin.xml.h:9
 msgid "Reader Configuration"
 msgstr "Konfigracija"
 
-#: plugins_readerconfig_skin.xml.h:9 readerconfig.h:391
-#: skins_readerconfig_skin.xml.h:9
+#: plugins_readerconfig_skin.xml.h:10 readerconfig.h:395
+#: skins_readerconfig_skin.xml.h:10
 msgid "Reader Selection"
 msgstr "pasirinkimas"
 
@@ -5741,33 +5747,37 @@ msgstr ""
 msgid "No config file found."
 msgstr ""
 
-#: readerconfig.h:397 readerconfig.h:491
+#: readerconfig.h:401 readerconfig.h:495
 msgid "Dvbapi (enabled)"
 msgstr "DVBapi (enabled)"
 
-#: readerconfig.h:399 readerconfig.h:484
+#: readerconfig.h:403 readerconfig.h:488
 msgid "Dvbapi (disabled)"
 msgstr "DVBapi (disabled)"
 
-#: readerconfig.h:426
+#: readerconfig.h:430
 msgid "Reader active"
 msgstr "activated"
 
-#: readerconfig.h:451
+#: readerconfig.h:455
 msgid "Oscam config written to medium !"
 msgstr "OScam config saved!"
 
-#: readerconfig.h:452 readerconfig.h:498
+#: readerconfig.h:456 readerconfig.h:502 readerconfig.h:526
 msgid "Restart Oscam ?"
 msgstr "Restart OScam?"
 
-#: readerconfig.h:483
+#: readerconfig.h:487
 msgid "Oscam dvbapi config disabled !"
 msgstr "OScam DVBapi config disabled!"
 
-#: readerconfig.h:490
+#: readerconfig.h:494
 msgid "Oscam dvbapi config enabled !"
 msgstr "OScam DVBapi config enabled!"
+
+#: readerconfig.h:525
+msgid "Oscam Keys Updatet !"
+msgstr ""
 
 #: record.h:37
 msgid ""
