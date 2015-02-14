@@ -76,8 +76,8 @@ msgstr ""
 #: skins_facebook_skin.xml.h:5 skins_mboxinfo_skin.xml.h:2
 #: skins_mc_skin.xml.h:38 skins_optimize_skin.xml.h:3 skins_rgui_skin.xml.h:3
 #: skins_sudoku_skin.xml.h:13 skins_tiwakeup_skin.xml.h:3
-#: skins_wins3_skin.xml.h:3 sock.h:952 softcam.h:410 softcam.h:467
-#: softcam.h:468 solarmovie.h:35 solarmovie.h:47 solarmovie.h:304 spinner.h:18
+#: skins_wins3_skin.xml.h:3 sock.h:952 softcam.h:410 softcam.h:468
+#: softcam.h:469 solarmovie.h:35 solarmovie.h:47 solarmovie.h:304 spinner.h:18
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:84
 #: streamcloud.h:97 streamcloud.h:128 streamcloud.h:187 stream.h:33
 #: system_backup_restore.h:31 system_backup_restore.h:40
@@ -191,7 +191,7 @@ msgstr "Ok"
 #: skins_panel_skin.xml.h:15 skins_rgui_skin.xml.h:2
 #: skins_stopifnotused_skin.xml.h:4 skins_sudoku_skin.xml.h:7
 #: skins_tiwakeup_skin.xml.h:2 skins_wins3_skin.xml.h:1 sock.h:952
-#: softcam.h:410 softcam.h:467 softcam.h:468 solarmovie.h:35 solarmovie.h:47
+#: softcam.h:410 softcam.h:468 softcam.h:469 solarmovie.h:35 solarmovie.h:47
 #: solarmovie.h:304 spinner.h:18 stopifnotused.c:31 streamcloud.h:31
 #: streamcloud.h:74 streamcloud.h:84 streamcloud.h:97 streamcloud.h:128
 #: streamcloud.h:187 stream.h:33 system_backup_restore.h:31
@@ -406,7 +406,7 @@ msgid "Standby"
 msgstr ""
 
 #: adjust.h:113 httpdfunc.h:3936 skin_default_skin.xml.h:542 softcam.h:291
-#: softcam.h:453 webif_index.atemio510.h:5 webif_index.atemio5200.h:5
+#: softcam.h:454 webif_index.atemio510.h:5 webif_index.atemio5200.h:5
 #: webif_index.atemio6000.h:5 webif_index.atemio6100.h:5
 #: webif_index.atemio6200.h:5 webif_index.atemio7600.h:3
 #: webif_index.atemio-nemesis.h:5 webif_index.h:5 webif_powercontrol.h:2
@@ -705,8 +705,8 @@ msgstr ""
 #: rtl2now.h:31 scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1646
 #: scan.h:1901 scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 security.h:1736
 #: service.h:738 service.h:983 shared.h:29 shared.h:65 shared.h:82
-#: skinadjust.h:263 skinselector.h:237 sock.h:952 softcam.h:410 softcam.h:467
-#: softcam.h:468 solarmovie.h:35 solarmovie.h:47 solarmovie.h:304 spinner.h:18
+#: skinadjust.h:263 skinselector.h:237 sock.h:952 softcam.h:410 softcam.h:468
+#: softcam.h:469 solarmovie.h:35 solarmovie.h:47 solarmovie.h:304 spinner.h:18
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:84
 #: streamcloud.h:97 streamcloud.h:128 streamcloud.h:187 stream.h:33
 #: system_backup_restore.h:40 system_backup_restore.h:43
@@ -8939,7 +8939,7 @@ msgstr ""
 msgid "Reader Config Plugin not installed !"
 msgstr "thiết bị đọc chưa được cài đặt"
 
-#: softcam.h:451
+#: softcam.h:452
 msgid "Keys Updatet !"
 msgstr ""
 
