@@ -573,7 +573,7 @@ void screensettings_autostart_network()
 	if(node != NULL)
 	{
 		node->type = CHOICEBOX;
-		changetext(node, _("samba server")); changename(node, "sambaserver");
+		changetext(node, _("Samba Server")); changename(node, "sambaserver");
 		addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
 		setchoiceboxselection(node, getownconfig(node->name));
 	}
