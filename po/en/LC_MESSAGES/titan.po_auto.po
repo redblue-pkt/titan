@@ -9060,7 +9060,7 @@ msgid "Reader Config Plugin not installed !"
 msgstr "Reader Config Plugin not installed!"
 
 #: softcam.h:452
-msgid "Keys Updatet !"
+msgid "Keys Updated !"
 msgstr ""
 
 #: solarmovie.h:304
@@ -10730,7 +10730,7 @@ msgid "Treiber fuer Samsung LCD"
 msgstr ""
 
 #: tpk_description.h:164
-msgid "Unitymedia NRW | 5.2.2014 (caliban)"
+msgid "Unitymedia NRW | 15.2.2014 (caliban)"
 msgstr ""
 
 #: tpk_description.h:165
