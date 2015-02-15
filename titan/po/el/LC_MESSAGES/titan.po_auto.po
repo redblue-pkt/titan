@@ -3949,7 +3949,7 @@ msgstr "Ενεργοποίηση οδηγών PL2303"
 msgid "nfs server"
 msgstr "NFS server"
 
-#: panel_settings_autostart.h:327 settings_autostart.h:576
+#: panel_settings_autostart.h:327
 msgid "samba server"
 msgstr "Samba Server"
 
@@ -6163,6 +6163,10 @@ msgstr ""
 
 #: settings_autostart.h:215
 msgid "Cam Routing"
+msgstr ""
+
+#: settings_autostart.h:576 tpk_showname.h:118
+msgid "Samba Server"
 msgstr ""
 
 #: settings_autostart.h:594
@@ -11100,10 +11104,6 @@ msgstr ""
 
 #: tpk_showname.h:117
 msgid "RGUI"
-msgstr ""
-
-#: tpk_showname.h:118
-msgid "Samba Server"
 msgstr ""
 
 #: tpk_showname.h:119
