@@ -27,7 +27,7 @@ void screenvfdisplay()
 		standby->progresssize = (int)ceil(((float)vfdstandbybrightness * 14.28));
 	}
 
-	if(checkbox("ATEMIO530") == 0 && checkbox("ATEMIO520") == 0 && checkbox("IPBOX91") == 0 && checkbox("ATEMIO6000") == 0 && checkbox("ATEMIO6100") == 0)
+	if(checkbox("ATEMIO530") == 0 && checkbox("ATEMIO520") == 0 && checkbox("IPBOX91") == 0 && checkbox("ATEMIO6000") == 0 && checkbox("ATEMIO6100") == 0 && checkbox("SPARK") == 0 && checkbox("SPARK7162") == 0 )
 	{
 		addchoicebox(vfdnotstandby, "0", _("channel"));
 		addchoicebox(vfdnotstandby, "1", _("channel + time"));
@@ -40,7 +40,7 @@ void screenvfdisplay()
 
 	addchoicebox(vfdstandby, "0", _("time"));
 	addchoicebox(vfdstandby, "1", _("off"));
-	if(checkbox("ATEMIO530") == 0 && checkbox("ATEMIO520") == 0 && checkbox("IPBOX91") == 0 && checkbox("ATEMIO6000") == 0 && checkbox("ATEMIO6100") == 0)
+	if(checkbox("ATEMIO530") == 0 && checkbox("ATEMIO520") == 0 && checkbox("IPBOX91") == 0 && checkbox("ATEMIO6000") == 0 && checkbox("ATEMIO6100") == 0 && checkbox("SPARK") == 0 && checkbox("SPARK7162") == 0 )
 	{
 		addchoicebox(vfdstandby, "2", _("date + time"));
 		addchoicebox(vfdstandby, "3", _("vfddate"));
