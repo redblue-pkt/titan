@@ -2547,8 +2547,8 @@ msgstr ""
 msgid "Git Changelog"
 msgstr ""
 
-#: httpdfunc.h:5247
-msgid "titan Log"
+#: httpdfunc.h:5247 webif_info_logs.h:4
+msgid "Titan Log"
 msgstr ""
 
 #: httpdfunc.h:5249
@@ -2695,7 +2695,7 @@ msgstr "VFDisplay"
 msgid "Front Key"
 msgstr ""
 
-#: hwtest.h:180 hwtest.h:329
+#: hwtest.h:180 hwtest.h:329 hwtest.h:368
 msgid "Smartcard"
 msgstr ""
 
@@ -2749,10 +2749,6 @@ msgstr "Blauw"
 
 #: hwtest.h:305
 msgid "SCART 4:3 / 16:9"
-msgstr ""
-
-#: hwtest.h:368
-msgid "Smartcard "
 msgstr ""
 
 #: hwtest.h:371
@@ -3913,7 +3909,7 @@ msgstr "Hoog"
 msgid "showip"
 msgstr "Toon IP adres"
 
-#: panel_settings_autostart.h:70 settings_autostart.h:62
+#: panel_settings_autostart.h:70
 msgid "status"
 msgstr ""
 
@@ -6254,6 +6250,10 @@ msgstr "Frontend kan niet geopend worden of onbekend Type!"
 #: service.h:977
 msgid "Channellist empty or corrupt (channel not found)!"
 msgstr "Zenderlijst is leeg of corrupt (zender niet gevonden)!"
+
+#: settings_autostart.h:62 tmc.h:387
+msgid "Status"
+msgstr ""
 
 #: settings_autostart.h:206
 msgid "swts"
@@ -9863,10 +9863,6 @@ msgstr "Zeer klein (30 afbeeldingen)"
 msgid "show in list"
 msgstr "Laat in lijst zien"
 
-#: tmc.h:387
-msgid "Status"
-msgstr ""
-
 #: tmc.h:391
 msgid "idle"
 msgstr ""
@@ -13019,10 +13015,6 @@ msgstr ""
 
 #: webif_info.h:7 webif_info_logs.h:1
 msgid "Logs"
-msgstr ""
-
-#: webif_info_logs.h:4
-msgid "Titan Log"
 msgstr ""
 
 #: webif_info_logs.h:5

@@ -2508,8 +2508,8 @@ msgstr ""
 msgid "Git Changelog"
 msgstr "Kanał"
 
-#: httpdfunc.h:5247
-msgid "titan Log"
+#: httpdfunc.h:5247 webif_info_logs.h:4
+msgid "Titan Log"
 msgstr ""
 
 #: httpdfunc.h:5249
@@ -2656,7 +2656,7 @@ msgstr "Wyświetlacz VFD"
 msgid "Front Key"
 msgstr ""
 
-#: hwtest.h:180 hwtest.h:329
+#: hwtest.h:180 hwtest.h:329 hwtest.h:368
 msgid "Smartcard"
 msgstr ""
 
@@ -2710,10 +2710,6 @@ msgstr ""
 
 #: hwtest.h:305
 msgid "SCART 4:3 / 16:9"
-msgstr ""
-
-#: hwtest.h:368
-msgid "Smartcard "
 msgstr ""
 
 #: hwtest.h:371
@@ -3855,7 +3851,7 @@ msgstr ""
 msgid "showip"
 msgstr ""
 
-#: panel_settings_autostart.h:70 settings_autostart.h:62
+#: panel_settings_autostart.h:70
 msgid "status"
 msgstr ""
 
@@ -6153,6 +6149,10 @@ msgstr ""
 
 #: service.h:977
 msgid "Channellist empty or corrupt (channel not found)!"
+msgstr ""
+
+#: settings_autostart.h:62 tmc.h:387
+msgid "Status"
 msgstr ""
 
 #: settings_autostart.h:206
@@ -9712,10 +9712,6 @@ msgstr ""
 msgid "show in list"
 msgstr ""
 
-#: tmc.h:387
-msgid "Status"
-msgstr ""
-
 #: tmc.h:391
 msgid "idle"
 msgstr ""
@@ -12854,10 +12850,6 @@ msgstr ""
 
 #: webif_info.h:7 webif_info_logs.h:1
 msgid "Logs"
-msgstr ""
-
-#: webif_info_logs.h:4
-msgid "Titan Log"
 msgstr ""
 
 #: webif_info_logs.h:5

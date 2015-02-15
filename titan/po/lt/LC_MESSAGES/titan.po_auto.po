@@ -2555,8 +2555,8 @@ msgstr "Svn Pasikeitimai"
 msgid "Git Changelog"
 msgstr "Git Pasikeitimai"
 
-#: httpdfunc.h:5247
-msgid "titan Log"
+#: httpdfunc.h:5247 webif_info_logs.h:4
+msgid "Titan Log"
 msgstr "Titan urnalas"
 
 #: httpdfunc.h:5249
@@ -2703,7 +2703,7 @@ msgstr "LCD Ekranas"
 msgid "Front Key"
 msgstr "Priekinis Mygtukas"
 
-#: hwtest.h:180 hwtest.h:329
+#: hwtest.h:180 hwtest.h:329 hwtest.h:368
 msgid "Smartcard"
 msgstr "Lustin kortel"
 
@@ -2758,10 +2758,6 @@ msgstr "Mlyna"
 #: hwtest.h:305
 msgid "SCART 4:3 / 16:9"
 msgstr "SCART 4: 3 /16: 9"
-
-#: hwtest.h:368
-msgid "Smartcard "
-msgstr "Lustin kortel"
 
 #: hwtest.h:371
 msgid "Present"
@@ -3924,7 +3920,7 @@ msgstr ""
 msgid "showip"
 msgstr "Rodyti IP Adresas"
 
-#: panel_settings_autostart.h:70 settings_autostart.h:62
+#: panel_settings_autostart.h:70
 msgid "status"
 msgstr ""
 
@@ -6267,6 +6263,10 @@ msgid "Channellist empty or corrupt (channel not found)!"
 msgstr ""
 "KLAIDA: Channellist tuias arba corrupt\n"
 "Channel nerasta!"
+
+#: settings_autostart.h:62 tmc.h:387
+msgid "Status"
+msgstr ""
 
 #: settings_autostart.h:206
 msgid "swts"
@@ -9887,10 +9887,6 @@ msgstr "Show 30 entrys"
 msgid "show in list"
 msgstr "Show in List"
 
-#: tmc.h:387
-msgid "Status"
-msgstr ""
-
 #: tmc.h:391
 msgid "idle"
 msgstr ""
@@ -13045,10 +13041,6 @@ msgstr ""
 msgid "Logs"
 msgstr ""
 
-#: webif_info_logs.h:4
-msgid "Titan Log"
-msgstr "Titan urnalas"
-
 #: webif_info_logs.h:5
 msgid "Titan Changelog (Extern)"
 msgstr ""
@@ -13187,3 +13179,9 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Zapback aktivuoas. Ar norite j sustabdyti ?"
+
+#~ msgid "titan Log"
+#~ msgstr "Titan urnalas"
+
+#~ msgid "Smartcard "
+#~ msgstr "Lustin kortel"

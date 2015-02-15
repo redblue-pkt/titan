@@ -2564,8 +2564,8 @@ msgstr "Журнал изменений SVN"
 msgid "Git Changelog"
 msgstr "Журнал изменений GIT"
 
-#: httpdfunc.h:5247
-msgid "titan Log"
+#: httpdfunc.h:5247 webif_info_logs.h:4
+msgid "Titan Log"
 msgstr "Лог Titan"
 
 #: httpdfunc.h:5249
@@ -2712,7 +2712,7 @@ msgstr "Дисплей ресивера"
 msgid "Front Key"
 msgstr ""
 
-#: hwtest.h:180 hwtest.h:329
+#: hwtest.h:180 hwtest.h:329 hwtest.h:368
 msgid "Smartcard"
 msgstr ""
 
@@ -2766,10 +2766,6 @@ msgstr ""
 
 #: hwtest.h:305
 msgid "SCART 4:3 / 16:9"
-msgstr ""
-
-#: hwtest.h:368
-msgid "Smartcard "
 msgstr ""
 
 #: hwtest.h:371
@@ -3923,7 +3919,7 @@ msgstr ""
 msgid "showip"
 msgstr "Показ.IP на VFD при старте"
 
-#: panel_settings_autostart.h:70 settings_autostart.h:62
+#: panel_settings_autostart.h:70
 msgid "status"
 msgstr "Статус"
 
@@ -6246,6 +6242,10 @@ msgid "Channellist empty or corrupt (channel not found)!"
 msgstr ""
 "Список каналов пуст или поврежден (каналы не "
 "найдены) !"
+
+#: settings_autostart.h:62 tmc.h:387
+msgid "Status"
+msgstr "Статус"
 
 #: settings_autostart.h:206
 msgid "swts"
@@ -9866,10 +9866,6 @@ msgstr "по 30 на экране"
 msgid "show in list"
 msgstr "в виде списка"
 
-#: tmc.h:387
-msgid "Status"
-msgstr "Статус"
-
 #: tmc.h:391
 msgid "idle"
 msgstr ""
@@ -13010,10 +13006,6 @@ msgstr ""
 msgid "Logs"
 msgstr ""
 
-#: webif_info_logs.h:4
-msgid "Titan Log"
-msgstr "Лог Titan"
-
 #: webif_info_logs.h:5
 msgid "Titan Changelog (Extern)"
 msgstr ""
@@ -13152,3 +13144,6 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
+
+#~ msgid "titan Log"
+#~ msgstr "Лог Titan"
