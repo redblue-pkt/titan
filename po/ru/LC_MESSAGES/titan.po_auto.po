@@ -10210,396 +10210,396 @@ msgid "CCcam 2.3.0"
 msgstr ""
 
 #: tpk_description.h:47
-msgid "coolMiniTV Skin. "
-msgstr ""
-
-#: tpk_description.h:48
-msgid "cool Skin."
-msgstr ""
-
-#: tpk_description.h:49
 msgid "cut record files"
 msgstr ""
 
-#: tpk_description.h:50
+#: tpk_description.h:48
 msgid "Default Font "
 msgstr ""
 
-#: tpk_description.h:51
+#: tpk_description.h:49
 msgid "Default mod by maenne79"
 msgstr ""
 
-#: tpk_description.h:52
+#: tpk_description.h:50
 msgid "Default Skin"
 msgstr ""
 
-#: tpk_description.h:53
+#: tpk_description.h:51
 msgid "Default skin without MiniTV"
 msgstr ""
 
-#: tpk_description.h:54
+#: tpk_description.h:52
 msgid "Default skin without MiniTV mod by maenne79"
 msgstr ""
 
-#: tpk_description.h:55
+#: tpk_description.h:53
 msgid "Digital clock blue - Samsung LCD Skin Channel"
 msgstr ""
 
-#: tpk_description.h:56
+#: tpk_description.h:54
 msgid "dlna Medien Server (upnp)"
 msgstr ""
 
-#: tpk_description.h:57
+#: tpk_description.h:55
 msgid "DTS-Downmix firmware "
 msgstr ""
 
-#: tpk_description.h:58
+#: tpk_description.h:56
 msgid "dvdplayer plugin."
 msgstr ""
 
-#: tpk_description.h:59
+#: tpk_description.h:57
 msgid "DVD-Player plugin"
 msgstr ""
 
-#: tpk_description.h:60
+#: tpk_description.h:58
 msgid ""
 "E2 WebIf API erlaubt den Zugriff auf TitanNit mittels eines E2-Clients (z.B. "
 "dreaMote-App auf iPhone oder iPad, XBMC mit VU+, TVBrowser, FHEM, ...)"
 msgstr ""
 
-#: tpk_description.h:61
+#: tpk_description.h:59
 msgid "Emu Camd3 v3.902 for your box"
 msgstr ""
 
-#: tpk_description.h:62
+#: tpk_description.h:60
 msgid "Emu MGCamd v1.35 for your box"
 msgstr ""
 
-#: tpk_description.h:63
+#: tpk_description.h:61
 msgid "Emu MGCamd v1.38a and all Configs"
 msgstr ""
 
-#: tpk_description.h:64
+#: tpk_description.h:62
 msgid "Emu scam 3.53 for your box"
 msgstr ""
 
-#: tpk_description.h:65
+#: tpk_description.h:63
 msgid "Emu scam 3.59 for your box"
 msgstr ""
 
-#: tpk_description.h:66
+#: tpk_description.h:64
 msgid "Emu scam 3.60 for your box"
 msgstr ""
 
-#: tpk_description.h:67
+#: tpk_description.h:65
 msgid "Emu vizcam 1.04 for your box"
 msgstr ""
 
-#: tpk_description.h:68
+#: tpk_description.h:66
 msgid ""
 "Expert Version of OScam 2xSlot intern + 1xUSB (blocked EMM for V13 and V14)"
 msgstr ""
 
-#: tpk_description.h:69
+#: tpk_description.h:67
 msgid ""
 "Expert Version of OScam 2xSlot intern + 1xUSB (blocked EMM for V13 and V14) "
 "for small Memory Receiver"
 msgstr ""
 
-#: tpk_description.h:70
+#: tpk_description.h:68
 msgid "extended config Panel"
 msgstr ""
 
-#: tpk_description.h:71
+#: tpk_description.h:69
 msgid "filemanager"
 msgstr ""
 
-#: tpk_description.h:72
+#: tpk_description.h:70
 msgid "first titan game"
 msgstr ""
 
-#: tpk_description.h:73
+#: tpk_description.h:71
 msgid "Font 'Action Man Italic' "
 msgstr ""
 
-#: tpk_description.h:74
+#: tpk_description.h:72
 msgid "Font 'Alpha Romanie G98'"
 msgstr ""
 
-#: tpk_description.h:75
+#: tpk_description.h:73
 msgid "Font 'Croissant' "
 msgstr ""
 
-#: tpk_description.h:76
+#: tpk_description.h:74
 msgid "Font 'Digiface Regular' "
 msgstr ""
 
-#: tpk_description.h:77
+#: tpk_description.h:75
 msgid "Font 'Goodtime'"
 msgstr ""
 
-#: tpk_description.h:78
+#: tpk_description.h:76
 msgid "Font 'I Hate Comic Sans'"
 msgstr ""
 
-#: tpk_description.h:79
+#: tpk_description.h:77
 msgid "Font 'Lydian Bolt Italic BT' "
 msgstr ""
 
-#: tpk_description.h:80
+#: tpk_description.h:78
 msgid "Font 'Mighty Zeo Caps'"
 msgstr ""
 
-#: tpk_description.h:81
+#: tpk_description.h:79
 msgid "Font 'Monoglyceride DemiBold'"
 msgstr ""
 
-#: tpk_description.h:82
+#: tpk_description.h:80
 msgid "Font 'New Gothic BT'"
 msgstr ""
 
-#: tpk_description.h:83
+#: tpk_description.h:81
 msgid "Font 'Paddington Bold'"
 msgstr ""
 
-#: tpk_description.h:84
+#: tpk_description.h:82
 msgid "Font 'Plover Bold'"
 msgstr ""
 
-#: tpk_description.h:85
+#: tpk_description.h:83
 msgid ""
 "gbox 800 with autoident for card hd+ and skyde including all necessary "
 "config files."
 msgstr ""
 
-#: tpk_description.h:86
+#: tpk_description.h:84
 msgid ""
 "gbox 804 with autoident for card hd+ and skyde including all necessary "
 "config files."
 msgstr ""
 
-#: tpk_description.h:87
+#: tpk_description.h:85
 msgid ""
 "gbox 806 with autoident for card hd+ and skyde including all necessary "
 "config files."
 msgstr ""
 
-#: tpk_description.h:88
+#: tpk_description.h:86
 msgid "Gold Picons Astra 19.2"
 msgstr ""
 
-#: tpk_description.h:89
+#: tpk_description.h:87
 msgid "Gold Picons - Astra 23.5E."
 msgstr ""
 
-#: tpk_description.h:90
+#: tpk_description.h:88
 msgid "Gold Picons - Astra 28.2E."
 msgstr ""
 
-#: tpk_description.h:91
+#: tpk_description.h:89
 msgid "Gold Picons - Hotbird 13.0E."
 msgstr ""
 
-#: tpk_description.h:92
+#: tpk_description.h:90
 msgid "ImdBapi Info Plugin"
 msgstr ""
 
-#: tpk_description.h:93
+#: tpk_description.h:91
 msgid "ImdB Info Plugin"
 msgstr ""
 
-#: tpk_description.h:94
+#: tpk_description.h:92
 msgid "IP-Kamera zB. Firma INSTAR"
 msgstr ""
 
-#: tpk_description.h:95
+#: tpk_description.h:93
 msgid "Kabel BW transparent Picons"
 msgstr ""
 
-#: tpk_description.h:96
+#: tpk_description.h:94
 msgid "Kabel Deutschland Picons black3d"
 msgstr ""
 
-#: tpk_description.h:97
+#: tpk_description.h:95
 msgid "Kabel Deutschland transparent Picons"
 msgstr ""
 
-#: tpk_description.h:98
+#: tpk_description.h:96
 msgid "Kabelplus ORF | 16.12.2014 (Olbord)"
 msgstr ""
 
-#: tpk_description.h:99
+#: tpk_description.h:97
 msgid "Lib extension for network (upnpfs/smbfs/ftpfs/rarfs)"
 msgstr ""
 
-#: tpk_description.h:100
+#: tpk_description.h:98
 msgid "MegaStyle blue Mini TV Skin"
 msgstr ""
 
-#: tpk_description.h:101
+#: tpk_description.h:99
 msgid "MegaStyle blue Skin"
 msgstr ""
 
-#: tpk_description.h:102
+#: tpk_description.h:100
 msgid "MegaStyle grey MiniTV Skin"
 msgstr ""
 
-#: tpk_description.h:103
+#: tpk_description.h:101
 msgid "MegaStyle grey Skin"
 msgstr ""
 
-#: tpk_description.h:104
-msgid "MetrixHD skin. Use transparent XPicons."
+#: tpk_description.h:102
+msgid "MetrixHD skin for transparent xpicons"
 msgstr ""
 
-#: tpk_description.h:105
+#: tpk_description.h:103
 msgid "More audio/video formats playable"
 msgstr ""
 
-#: tpk_description.h:106
+#: tpk_description.h:104
 msgid "Network browser extension for better Win7 compatibility"
 msgstr ""
 
-#: tpk_description.h:107
+#: tpk_description.h:105
 msgid "Networkfile libsmbclient 3.0.28b"
 msgstr ""
 
-#: tpk_description.h:108 tpk_showname.h:77
+#: tpk_description.h:106 tpk_showname.h:77
 msgid "Neutrino Keymap"
 msgstr ""
 
-#: tpk_description.h:109
+#: tpk_description.h:107
 msgid "newcs including all necessary config files."
 msgstr ""
 
-#: tpk_description.h:110
+#: tpk_description.h:108
 msgid "New Downloadfeed for your AAF - Duckbox"
 msgstr ""
 
-#: tpk_description.h:111
+#: tpk_description.h:109
 msgid "news Plugin"
 msgstr ""
 
-#: tpk_description.h:112
-msgid "Nogfx grey Skin"
-msgstr ""
-
-#: tpk_description.h:113
-msgid "Nogfx Skin in black. Please use black Picons."
-msgstr ""
-
-#: tpk_description.h:114
+#: tpk_description.h:110
 msgid "Openvpn Server Tool for external Network access"
 msgstr ""
 
-#: tpk_description.h:115
+#: tpk_description.h:111
 msgid "optimize Plugin"
 msgstr ""
 
-#: tpk_description.h:116 tpk_showname.h:85
+#: tpk_description.h:112 tpk_showname.h:85
 msgid "oscam spezial"
 msgstr ""
 
-#: tpk_description.h:117
+#: tpk_description.h:113
 msgid "Partitions Tool fuer HDD > 2TB"
 msgstr ""
 
-#: tpk_description.h:118
+#: tpk_description.h:114
 msgid "Permanente Uhrzeit am Bildschirm"
 msgstr ""
 
-#: tpk_description.h:119
+#: tpk_description.h:115
 msgid "Power off if box not used"
 msgstr ""
 
-#: tpk_description.h:120
+#: tpk_description.h:116
 msgid "remote Desktop Plugin"
 msgstr ""
 
-#: tpk_description.h:121
+#: tpk_description.h:117
 msgid "Samba"
 msgstr ""
 
-#: tpk_description.h:122
+#: tpk_description.h:118
 msgid "Samba file server"
 msgstr ""
 
-#: tpk_description.h:123
+#: tpk_description.h:119
 msgid "Sat Astra ORF | 08.01.2015 (Olbord)"
 msgstr ""
 
-#: tpk_description.h:124
+#: tpk_description.h:120
 msgid "Sat: Bulldog Settings 3x Sat"
 msgstr ""
 
-#: tpk_description.h:125
+#: tpk_description.h:121
 msgid "Sat: Bulldog Settings Astra 19.2"
 msgstr ""
 
-#: tpk_description.h:126
+#: tpk_description.h:122
 msgid "Sat: Bulldog Settings Hotbird 13.0 + Astra 19.2"
 msgstr ""
 
-#: tpk_description.h:127
+#: tpk_description.h:123
 msgid "Sat: default Settings Astra 19.2"
 msgstr ""
 
-#: tpk_description.h:128
+#: tpk_description.h:124
 msgid "Sat: matze70 Astra 19.2 | 24.10.2014"
 msgstr ""
 
-#: tpk_description.h:129
+#: tpk_description.h:125
 msgid "Sat: matze70 new design Astra 19.2 | 24.10.2014"
 msgstr ""
 
-#: tpk_description.h:130
+#: tpk_description.h:126
 msgid "Sat: uljanow Sat 19.2 plus 13.0 | 21.10.2014"
 msgstr ""
 
-#: tpk_description.h:131
+#: tpk_description.h:127
 msgid "Scan and manage cifs/nfs/ftp shares"
 msgstr ""
 
-#: tpk_description.h:132
+#: tpk_description.h:128
 msgid ""
 "Screensaver FC Bayern pictures for MediaCenter Audioplayer and Radioplayer"
 msgstr ""
 
-#: tpk_description.h:133
+#: tpk_description.h:129
 msgid ""
 "Screensaver Hot Girls pictures for MediaCenter Audioplayer and Radioplayer"
 msgstr ""
 
-#: tpk_description.h:134
+#: tpk_description.h:130
 msgid "Screensaver pictures for MediaCenter Audioplayer and Radioplayer"
 msgstr ""
 
-#: tpk_description.h:135
+#: tpk_description.h:131
 msgid "scriptexec Plugin"
 msgstr ""
 
+#: tpk_description.h:132
+msgid "Skin 0Acht5Zehn black for black picons"
+msgstr ""
+
+#: tpk_description.h:133
+msgid "Skin 0Acht5Zehn grey for grey picons"
+msgstr ""
+
+#: tpk_description.h:134
+msgid "Skin 0Acht5Zehn white for white picons"
+msgstr ""
+
+#: tpk_description.h:135
+msgid "Skin cool"
+msgstr ""
+
 #: tpk_description.h:136
-msgid "Skin 0Acht5Zehn black. Please use black Picons."
+msgid "Skin coolMiniTV "
 msgstr ""
 
 #: tpk_description.h:137
-msgid "Skin 0Acht5Zehn grey. Please use grey Picons."
+msgid "Skin Nogfx black for black picons"
 msgstr ""
 
 #: tpk_description.h:138
-msgid "Skin 0Acht5Zehn white. Please use white Picons."
+msgid "Skin Nogfx grey"
 msgstr ""
 
 #: tpk_description.h:139
-msgid "Skin tobayer01. Please use grey Picons."
+msgid "Skin SmartTV for alternate picons"
 msgstr ""
 
 #: tpk_description.h:140
-msgid "Skin ufs912. Use white Picons."
+msgid "Skin tobayer01 for grey picons"
 msgstr ""
 
 #: tpk_description.h:141
-msgid "smartTV Skin. Please use alternate Picons."
+msgid "Skin UFS912 style for white picons"
 msgstr ""
 
 #: tpk_description.h:142
@@ -11459,11 +11459,11 @@ msgid "Settings Hotbird 13.0, Astra 19.2, Astra 28.2E"
 msgstr ""
 
 #: tpk_showname.h:160
-msgid "Skin 0Acht5Zehn (grau)"
+msgid "Skin 0Acht5Zehn (black)"
 msgstr ""
 
 #: tpk_showname.h:161
-msgid "Skin 0Acht5Zehn (schwarz)"
+msgid "Skin 0Acht5Zehn (grey)"
 msgstr ""
 
 #: tpk_showname.h:162
@@ -11519,7 +11519,7 @@ msgid "Skin Nogfx"
 msgstr ""
 
 #: tpk_showname.h:175
-msgid "Skin Nogfx (grau)"
+msgid "Skin Nogfx (grey)"
 msgstr ""
 
 #: tpk_showname.h:176
@@ -11531,7 +11531,7 @@ msgid "Skin Tobayer01"
 msgstr ""
 
 #: tpk_showname.h:178
-msgid "Skin UFS912"
+msgid "Skin UFS912 style"
 msgstr ""
 
 #: tpk_showname.h:179
