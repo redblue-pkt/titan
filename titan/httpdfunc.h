@@ -4761,7 +4761,7 @@ printf("webadjust fmt: %d\n",fmt);
 	tmpstr2 = ostrcat(" - Minimal\n - TopfieldVFD\n - MediaCenter\n - Menulist\n  - Network Browser\n - Harddisk\n - Screensaver\n - Tithek/HTTP Header\n - Global\n - TPK\n - IMDbScan\n - ePlayer\n - Community login\n - Tuning\n - Stream/Record/Softcam\n - EPG\n - Radiotext\n - Subtitle\n - Scan\n - MediaDB\n - Mutex\n - Function", NULL, 0, 0);
 
 	ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
-	ostrcatbig(&buf, _("debuglevel"), &maxlen, &pos);
+	ostrcatbig(&buf, _("Debuglevel"), &maxlen, &pos);
 	ostrcatbig(&buf, "&nbsp;</font></td><td><select name=\"debuglevel\" border=\"0\">", &maxlen, &pos);
 
 	count = 0;
