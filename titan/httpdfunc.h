@@ -5244,7 +5244,7 @@ char* webgetlogs(char* param, int fmt)
 		else if(mode == 2)
 			buf = ostrcat(buf, _("Git Changelog"), 1, 0);
 		else if(mode == 3)
-			buf = ostrcat(buf, _("titan Log"), 1, 0);
+			buf = ostrcat(buf, _("Titan Log"), 1, 0);
 		else if(mode == 4)
 			buf = ostrcat(buf, _("Svn Changelog Full"), 1, 0);
 		else if(mode == 5)
