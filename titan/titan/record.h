@@ -966,8 +966,23 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 	{
 		if(!isdir(path))
 		{
-			ret = 1;
-			goto end;
+			char *dev = NULL;
+			dev = getmoviedev();
+			if(dev == NULL)
+			{
+				ret = 1;
+				goto end;
+			}
+			else
+			{
+				free(dev);dev=NULL;
+				sleep(3);
+				if(!isdir(path))
+				{
+					ret = 1;
+					goto end;
+				}
+			}
 		}
 
 		//check HDD free space
