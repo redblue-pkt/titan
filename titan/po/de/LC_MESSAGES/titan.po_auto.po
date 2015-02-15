@@ -1,3 +1,17 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: TitanNit 1.60\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator:  <aaf-caliban@e.mail.de>\n"
+"Language-Team: German <_obiwan_@web.de>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"Language: de\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
 #: about.h:9
 msgid "System-Info"
 msgstr "System Information"
@@ -553,7 +567,7 @@ msgstr ""
 
 #: adjust.h:274 tpk_showname.h:70
 msgid "MediaCenter"
-msgstr ""
+msgstr "Media Center"
 
 #: adjust.h:278 skin_default_skin.xml.h:410
 msgid "Menulist"
@@ -594,7 +608,7 @@ msgstr ""
 
 #: adjust.h:314
 msgid "Community login"
-msgstr ""
+msgstr "Community-Login"
 
 #: adjust.h:318
 msgid "Tuning"
@@ -901,8 +915,7 @@ msgstr ""
 
 #: browser.h:207
 msgid "Choose your Internet Favorite from the following list"
-msgstr ""
-"Wählen Sie das gewünschte Internet Lesezeichen aus der folgenden Liste"
+msgstr "Wählen Sie das gewünschte Internet Lesezeichen aus der folgenden Liste"
 
 #: browser.h:212
 msgid "32 Bit Scale 100 Percent"
@@ -1173,9 +1186,7 @@ msgstr "Fehler beim Kopieren"
 
 #: copyfile.h:893 copyfile.h:894
 msgid "wait for stopping"
-msgstr ""
-"Vorgang abgebrochen\n"
-"Bitte warten!"
+msgstr "Vorgang abgeschlossen"
 
 #: dir.h:83 dir.h:92 dir.h:101 dir.h:110 plugins_lcdpearl1_skin.xml.h:2
 #: plugins_lcdsamsung_skin.xml.h:2 skins_lcdpearl1_skin.xml.h:2
@@ -1518,7 +1529,7 @@ msgstr "Ausschalten"
 
 #: epgsettings.h:263
 msgid "Deavtivate Refresh Time and After EPG in scan-mode"
-msgstr "Deaktiviere Aktualisierungszeit und 'Nach EPG Aktualisierung'"
+msgstr "Deaktiviere Aktualisierungszeit und 'Nach EPG-Aktualisierung'"
 
 #: epgsettings.h:289
 msgid "EPG resetet and now clear."
@@ -1526,7 +1537,7 @@ msgstr "EPG gelöscht"
 
 #: epgsettings.h:303
 msgid "EPG Scan Log"
-msgstr ""
+msgstr "EPG-Scan-Protokoll"
 
 #: extensions.h:25
 msgid "Feed"
@@ -1787,8 +1798,7 @@ msgstr "Menü"
 
 #: filemanager.h:89
 msgid "Choose your Filemanager Option from the following list"
-msgstr ""
-"Wählen Sie die gewünschte Datei Manager Option aus der folgenden Liste"
+msgstr "Wählen Sie die gewünschte Datei Manager Option aus der folgenden Liste"
 
 #: filemanager.h:95
 msgid "Can't rename file !"
@@ -2029,23 +2039,23 @@ msgstr ""
 
 #: gmultiepg.h:546 gmultiepg.h:746
 msgid "GRAPHIC MULTI EPG - Bouquets"
-msgstr "Grafisches-Multi-EPG - Favoriten"
+msgstr "Grafisches Multi-EPG - Favoriten"
 
 #: gmultiepg.h:559
 msgid "GRAPHIC MULTI EPG - Channel"
-msgstr "Grafisches-Multi-EPG - Sender"
+msgstr "Grafisches Multi-EPG - Sender"
 
 #: gmultiepg.h:572
 msgid "GRAPHIC MULTI EPG - Satellites"
-msgstr "Grafisches-Multi-EPG - Satellit"
+msgstr "Grafisches Multi-EPG - Satellit"
 
 #: gmultiepg.h:585
 msgid "GRAPHIC MULTI EPG - Provider"
-msgstr "Grafisches-Multi-EPG - Anbieter"
+msgstr "Grafisches Multi-EPG - Anbieter"
 
 #: gmultiepg.h:598
 msgid "GRAPHIC MULTI EPG - All Channels"
-msgstr "Grafisches-Multi-EPG - Alle Sender"
+msgstr "Grafisches Multi-EPG - Alle Sender"
 
 #: harddisk.h:127 harddisk.h:128
 msgid "Harddisk Format - Filesystem"
@@ -2222,15 +2232,16 @@ msgstr ""
 
 #: harddisk.h:877 harddisk.h:878
 msgid "Harddisk Sleep"
-msgstr "HDD Standby"
+msgstr "HDD-Standby"
 
 #: harddisk.h:879
 msgid "set here the default sleeptime for all your media drives"
-msgstr "Versetzt die Festplatte nach Ablauf der eingestellten Zeit in Standby"
+msgstr ""
+"Versetzt die Festplatte nach Ablauf der eingestellten Zeit in den Standby."
 
 #: harddisk.h:885 skin_default_skin.xml.h:702
 msgid "Time to sleep"
-msgstr "HDD Standby"
+msgstr "HDD-Standby"
 
 #: harddisk.h:887
 msgid "5 min"
@@ -2571,7 +2582,7 @@ msgstr "GIT Änderungsprotokoll"
 
 #: httpdfunc.h:5247 webif_info_logs.h:4
 msgid "Titan Log"
-msgstr ""
+msgstr "Titan-Protokoll"
 
 #: httpdfunc.h:5249
 msgid "Svn Changelog Full"
@@ -3132,60 +3143,6 @@ msgstr "Ihr Marker wurde erfolgreich gesetzt"
 #: mboxinfo.c:49
 msgid "File not found !!"
 msgstr "Datei nicht gefunden"
-
-#: mboxinfo.c:77 mc_imdb.h:78 mc_imdb.h:79 mc_imdb.h:80 mc_imdb.h:81
-#: mc_imdb.h:82 mc_view.h:17 mc_view.h:18 mc_view.h:19 mc_view.h:20
-#: mc_view.h:21 mc_view.h:22 plugins_autotimer_skin.xml.h:13
-#: plugins_callmonitor1_skin.xml.h:19 plugins_catcatch_skin.xml.h:7
-#: plugins_dlna_skin.xml.h:15 plugins_facebook_skin.xml.h:6
-#: plugins_filemanager_skin.xml.h:6 plugins_gmediarender_skin.xml.h:1
-#: plugins_imdbapi_skin.xml.h:11 plugins_imdb_skin.xml.h:11
-#: plugins_instar_skin.xml.h:17 plugins_keylock_skin.xml.h:1
-#: plugins_lcdpearl1_skin.xml.h:14 plugins_lcdsamsung_skin.xml.h:18
-#: plugins_mboxinfo_skin.xml.h:3 plugins_mc_skin.xml.h:70
-#: plugins_networkbrowser_skin.xml.h:37 plugins_news_skin.xml.h:5
-#: plugins_optimize_skin.xml.h:4 plugins_panel_skin.xml.h:28
-#: plugins_permtime_skin.xml.h:1 plugins_readerconfig_skin.xml.h:10
-#: plugins_rgui_skin.xml.h:9 plugins_stock_skin.xml.h:6
-#: plugins_stopifnotused_skin.xml.h:8 plugins_streaminfo_skin.xml.h:6
-#: plugins_sudoku_skin.xml.h:18 plugins_tithek_skin.xml.h:24
-#: plugins_tiwakeup_skin.xml.h:9 plugins_tmc_skin.xml.h:18
-#: plugins_tmdb_skin.xml.h:11 plugins_tsSchnitt_skin.xml.h:11
-#: plugins_weather_skin.xml.h:4 plugins_wins3_skin.xml.h:4
-#: plugins_wm2014_skin.xml.h:1 plugins_wm2014_skin.xml.h:21
-#: plugins_xupnpd_skin.xml.h:5 plugins_zapback_skin.xml.h:7
-#: skin_default_skin.xml.h:796 skins_autotimer_skin.xml.h:13
-#: skins_callmonitor1_skin.xml.h:19 skins_catcatch_skin.xml.h:7
-#: skins_dlna_skin.xml.h:15 skins_facebook_skin.xml.h:6
-#: skins_filemanager_skin.xml.h:6 skins_gmediarender_skin.xml.h:1
-#: skins_imdbapi_skin.xml.h:11 skins_imdb_skin.xml.h:11
-#: skins_instar_skin.xml.h:17 skins_keylock_skin.xml.h:1
-#: skins_lcdpearl1_skin.xml.h:14 skins_lcdsamsung_skin.xml.h:18
-#: skins_mboxinfo_skin.xml.h:3 skins_mc_skin.xml.h:70
-#: skins_networkbrowser_skin.xml.h:37 skins_news_skin.xml.h:5
-#: skins_optimize_skin.xml.h:4 skins_panel_skin.xml.h:28
-#: skins_permtime_skin.xml.h:1 skins_readerconfig_skin.xml.h:10
-#: skins_rgui_skin.xml.h:9 skins_stock_skin.xml.h:6
-#: skins_stopifnotused_skin.xml.h:8 skins_streaminfo_skin.xml.h:6
-#: skins_sudoku_skin.xml.h:18 skins_tithek_skin.xml.h:24
-#: skins_tiwakeup_skin.xml.h:9 skins_tmc_skin.xml.h:18
-#: skins_tmdb_skin.xml.h:11 skins_tsSchnitt_skin.xml.h:11
-#: skins_weather_skin.xml.h:4 skins_wins3_skin.xml.h:4
-#: skins_wm2014_skin.xml.h:1 skins_wm2014_skin.xml.h:21
-#: skins_xupnpd_skin.xml.h:5 skins_zapback_skin.xml.h:7 tithek_mainmenu.h:1
-msgid ""
-msgstr ""
-"Project-Id-Version: TitanNit 1.60\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-07 10:44+0100\n"
-"PO-Revision-Date: 2015-02-15 11:17+0100\n"
-"Last-Translator:  <aaf-caliban@e.mail.de>\n"
-"Language-Team: German <_obiwan_@web.de>\n"
-"Language: de\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
 
 #: mc_audioplayer.h:408 mc_global.h:1079 mc_pictureplayer.h:150
 #: mc_videoplayer.h:428
@@ -3919,7 +3876,7 @@ msgstr "Bouqueteinträge: "
 
 #: optimize.h:304
 msgid "EpgChannels: "
-msgstr "EPG Kanäle: "
+msgstr "EPG-Kanäle: "
 
 #: optimize.h:312
 msgid "ProviderCount: "
@@ -3968,7 +3925,7 @@ msgstr "Lade stmdvb.ko mit der useUnknown910 Option"
 
 #: panel_settings_autostart.h:112
 msgid "Old Audiofw"
-msgstr "Alte Audio Firmware"
+msgstr "Alte Audio-Firmware"
 
 #: panel_settings_autostart.h:122 settings_autostart.h:161
 msgid "No Audiosync"
@@ -4088,7 +4045,7 @@ msgstr "Nur beim Start übertakten"
 
 #: panel_settings_overclocking.h:222 settings_overclocking.h:222
 msgid "CPU frequency"
-msgstr "CPU Frequenz"
+msgstr "CPU-Frequenz"
 
 #: panel_settings_overclocking.h:233 settings_overclocking.h:233
 msgid "FDMA bypass"
@@ -4096,12 +4053,12 @@ msgstr ""
 
 #: panel_settings_overclocking.h:243 settings_overclocking.h:243
 msgid "Reduce Standby frequency"
-msgstr "CPU Frequenz im Standby reduzieren"
+msgstr "CPU-Frequenz im Standby reduzieren"
 
 #: panel_settings_overclocking.h:253 panel_settings_overclocking.h:319
 #: settings_overclocking.h:253 settings_overclocking.h:321
 msgid "Standby frequency"
-msgstr "CPU Frequenz im Standby"
+msgstr "CPU-Frequenz im Standby"
 
 #: panel_settings_overclocking.h:275 settings_overclocking.h:275
 msgid "Use Teletxt Workaround"
@@ -4129,7 +4086,7 @@ msgstr "Tauschen"
 
 #: pip.h:603
 msgid "pip menu"
-msgstr "PiP Menü"
+msgstr "PiP-Menü"
 
 #: pip.h:604
 msgid "pip end"
@@ -4137,7 +4094,7 @@ msgstr "PiP stoppen"
 
 #: pip.h:608
 msgid "pip zap"
-msgstr "PiP zap"
+msgstr "PiP-Zap"
 
 #: played.h:90
 msgid "This video has been deleted. We apologize for the inconvenience."
@@ -4194,7 +4151,7 @@ msgstr ""
 
 #: play.h:639 skin_default_skin.xml.h:771
 msgid "Video Settings"
-msgstr "Video Einstellungen"
+msgstr "Video-Einstellungen"
 
 #: play.h:640
 msgid "AV Settings"
@@ -4336,7 +4293,7 @@ msgstr "Springe von akt. Position vor (min)"
 
 #: play.h:1271 play.h:1277 plugins_tmc_skin.xml.h:1 skins_tmc_skin.xml.h:1
 msgid "EPG Info"
-msgstr ""
+msgstr "EPG-Info"
 
 #: play.h:1286
 msgid "Record in progress"
@@ -4606,7 +4563,7 @@ msgstr "Verschieben"
 #: plugins_filemanager_skin.xml.h:5 plugins_mc_skin.xml.h:65
 #: skins_filemanager_skin.xml.h:5 skins_mc_skin.xml.h:65
 msgid "View"
-msgstr "Ansehen"
+msgstr "Ansicht"
 
 #: plugins_imdbapi_skin.xml.h:1 plugins_imdb_skin.xml.h:1
 #: plugins_mc_skin.xml.h:4 skins_imdbapi_skin.xml.h:1 skins_imdb_skin.xml.h:1
@@ -5924,7 +5881,7 @@ msgstr "Aufnahme hinzufügen (Länge eingeben)"
 
 #: record.h:1547
 msgid "Can't get EPG time or EPG endtime not ok"
-msgstr "EPG Zeit kann nicht gefunden werden oder ist nicht korrekt!"
+msgstr "EPG-Zeit kann nicht gefunden werden oder ist nicht korrekt!"
 
 #: record.h:1572
 msgid "Record started"
@@ -5966,7 +5923,7 @@ msgstr "FEHLER: Timer nicht gestartet, Endzeit bereits vergangen"
 
 #: rectimer.h:577
 msgid "EPG Scan activate standby?"
-msgstr "EPG Scan startet bald, Standby aktivieren?"
+msgstr "EPG-Scan startet bald, Standby aktivieren?"
 
 #: rectimer.h:684
 msgid "stopped from user"
@@ -6530,11 +6487,17 @@ msgstr ""
 
 #: skin_default_skin.xml.h:37 videomode.h:34 videomode.h:96
 msgid "3D Mode"
-msgstr "3D Modus"
+msgstr "3D-Modus"
 
 #: skin_default_skin.xml.h:38
 msgid "3D-Mode Settings"
-msgstr "3D Einstellungen"
+msgstr "3D-Einstellungen"
+
+msgid "sbs"
+msgstr "Side-By-Side (Nebeneinander)"
+
+msgid "tab"
+msgstr "Top-And-Bottom (Untereinander)"
 
 #: skin_default_skin.xml.h:42
 msgid "+/- 5 Min"
@@ -6636,7 +6599,7 @@ msgstr "Ä"
 
 #: skin_default_skin.xml.h:67
 msgid "After EPG Scan"
-msgstr "Nach EPG Aktualisierung"
+msgstr "Nach EPG-Aktualisierung"
 
 #: skin_default_skin.xml.h:68
 msgid ""
@@ -6696,15 +6659,15 @@ msgstr "Atemio Hotline"
 
 #: skin_default_skin.xml.h:83
 msgid "Audio delay"
-msgstr "Audio Verzögerung"
+msgstr "Audio-Verzögerung"
 
 #: skin_default_skin.xml.h:84
 msgid "Audio PID:"
-msgstr ""
+msgstr "Audio-PID"
 
 #: skin_default_skin.xml.h:85
 msgid "Audio Source"
-msgstr "Audio Quelle"
+msgstr "Audio-Quelle"
 
 #: skin_default_skin.xml.h:86
 msgid "Audio/Subt."
@@ -6772,11 +6735,11 @@ msgstr ""
 
 #: skin_default_skin.xml.h:105
 msgid "Background2 Color"
-msgstr ""
+msgstr "Hintergrundfarbe 2"
 
 #: skin_default_skin.xml.h:106
 msgid "Background Color"
-msgstr ""
+msgstr "Hintergrundfarbe"
 
 #: skin_default_skin.xml.h:107
 msgid "Backup"
@@ -6837,7 +6800,7 @@ msgstr "Blaue Taste"
 
 #: skin_default_skin.xml.h:120
 msgid "Border Color"
-msgstr ""
+msgstr "Rahmenfarbe"
 
 #: skin_default_skin.xml.h:121
 msgid "Bouquet List"
@@ -6853,7 +6816,7 @@ msgstr "Helligkeit"
 
 #: skin_default_skin.xml.h:124
 msgid "Buttonbar Background2 Color"
-msgstr ""
+msgstr "Hintergrundfarbe 2 für Tastenleiste"
 
 #: skin_default_skin.xml.h:125
 msgid "c"
@@ -7005,7 +6968,7 @@ msgstr "System Sicherung erstellen"
 
 #: skin_default_skin.xml.h:170
 msgid "Create Thumb Picture"
-msgstr "Vorschau Bilder erstellen"
+msgstr "Vorschaubilder erstellen"
 
 #: skin_default_skin.xml.h:171
 msgid "Create Transponder List"
@@ -7149,7 +7112,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:221
 msgid "EPG button on EPG Screen"
-msgstr "EPG Taste im EPG"
+msgstr "EPG-Auswahl beim Betätigen der EPG-Taste in der Programminformation"
 
 #: skin_default_skin.xml.h:222
 msgid "Epgfreespace (KB)"
@@ -7173,11 +7136,11 @@ msgstr "EPG löschen"
 
 #: skin_default_skin.xml.h:227
 msgid "EPG Save Mode"
-msgstr "EPG Daten sichern"
+msgstr "EPG-Daten sichern"
 
 #: skin_default_skin.xml.h:228
 msgid "EPG Scanlist"
-msgstr "EPG Scanliste"
+msgstr "EPG-Scanliste"
 
 #: skin_default_skin.xml.h:229 webif_index.atemio510.h:17
 #: webif_index.atemio5200.h:17 webif_index.atemio6000.h:17
@@ -7189,7 +7152,7 @@ msgstr "Suche"
 
 #: skin_default_skin.xml.h:230
 msgid "EPG Settings"
-msgstr "EPG Einstellungen"
+msgstr "EPG-Einstellungen"
 
 #: skin_default_skin.xml.h:231
 msgid "EPG SHORT VIEW"
@@ -7268,7 +7231,7 @@ msgstr "Flash-Image (Lokal/Sicherung)"
 
 #: skin_default_skin.xml.h:253
 msgid "Font Color"
-msgstr ""
+msgstr "Schriftfarbe"
 
 #: skin_default_skin.xml.h:254
 msgid "Fontsize adjust in pixel"
@@ -7320,15 +7283,15 @@ msgstr "Gehe zu Startposition"
 
 #: skin_default_skin.xml.h:269
 msgid "Graph. EPG"
-msgstr "Grafisches-EPG"
+msgstr "Grafisches EPG"
 
 #: skin_default_skin.xml.h:270
 msgid "Graphic EPG"
-msgstr "Grafisches-EPG"
+msgstr "Grafisches EPG"
 
 #: skin_default_skin.xml.h:271
 msgid "Graphic EPG Picon"
-msgstr "Graphisches-EPG Senderlogos anzeigen"
+msgstr "Senderlogos im grafischen EPG anzeigen"
 
 #: skin_default_skin.xml.h:272
 msgid "Graphic EPG Zoom"
@@ -7392,8 +7355,7 @@ msgstr "Hier können Sie Ihre Einstellungen sichern und wiederherstellen"
 
 #: skin_default_skin.xml.h:288
 msgid "Here you can check the reception of the current station."
-msgstr ""
-"Hier können Sie die Signalqualität des aktuellen Senders überprüfen"
+msgstr "Hier können Sie die Signalqualität des aktuellen Senders überprüfen"
 
 #: skin_default_skin.xml.h:289
 msgid ""
@@ -7480,7 +7442,7 @@ msgstr "Hier können Sie erweiterte System Einstellungen vornehmen"
 
 #: skin_default_skin.xml.h:302
 msgid "Here you can make your audio/video autostart settings."
-msgstr "Hier können Sie den Audio/Video Autostart konfigurieren"
+msgstr "Hier können Sie den Audio/Video-Autostart konfigurieren"
 
 #: skin_default_skin.xml.h:303
 msgid "Here you can make your cam/emu autostart settings."
@@ -7585,7 +7547,7 @@ msgstr "Hier können Sie aus der folgenden Liste auswählen"
 
 #: skin_default_skin.xml.h:324
 msgid "Here you can select from the following list a skin."
-msgstr "Skin Auswahl:"
+msgstr "Skin-Auswahl:"
 
 #: skin_default_skin.xml.h:325
 msgid ""
@@ -7900,7 +7862,7 @@ msgstr "Manuelle terrestrische Suche"
 
 #: skin_default_skin.xml.h:398
 msgid "Mark Color"
-msgstr ""
+msgstr "Marker Farbe"
 
 #: skin_default_skin.xml.h:399
 msgid "Marker"
@@ -8157,11 +8119,11 @@ msgstr ""
 
 #: skin_default_skin.xml.h:476
 msgid "PIN:"
-msgstr "PIN Schutz:"
+msgstr "PIN-Schutz:"
 
 #: skin_default_skin.xml.h:477
 msgid "Pin Code"
-msgstr "PIN Schutz"
+msgstr "PIN-Schutz"
 
 #: skin_default_skin.xml.h:478
 msgid "Pin Code Channel"
@@ -8173,11 +8135,11 @@ msgstr "Menü mit PIN sperren"
 
 #: skin_default_skin.xml.h:480
 msgid "PIN Settings"
-msgstr "PIN Einstellungen"
+msgstr "PIN-Einstellungen"
 
 #: skin_default_skin.xml.h:481
 msgid "PIP functions"
-msgstr "PiP Funktionen"
+msgstr "PiP-Funktionen"
 
 #: skin_default_skin.xml.h:482
 msgid "PLAY"
@@ -8257,7 +8219,7 @@ msgstr "Programm Information"
 
 #: skin_default_skin.xml.h:503
 msgid "Progress Color"
-msgstr ""
+msgstr "Fortschrittsbalken Farbe"
 
 #: skin_default_skin.xml.h:504
 msgid "Protect Channel"
@@ -8583,11 +8545,11 @@ msgstr "HDMI-CEC Einstellungen"
 
 #: skin_default_skin.xml.h:613
 msgid "Setup PIP"
-msgstr "PiP Einstellungen"
+msgstr "PiP-Einstellungen"
 
 #: skin_default_skin.xml.h:614
 msgid "Show EPG screen (EPG button)"
-msgstr "Zeige EPG (EPG Taste)"
+msgstr "EPG-Auswahl beim Betätigen der EPG-Taste"
 
 #: skin_default_skin.xml.h:615
 msgid "Show HDD freesize"
@@ -8615,15 +8577,15 @@ msgstr ""
 
 #: skin_default_skin.xml.h:627
 msgid "Skin"
-msgstr "Skinauswahl"
+msgstr "Skin-Auswahl"
 
 #: skin_default_skin.xml.h:628 webif_settings.h:2
 msgid "Skin Adjust"
-msgstr "Skin Einstellungen"
+msgstr "Skin-Einstellungen"
 
 #: skin_default_skin.xml.h:629
 msgid "Skin Select"
-msgstr "Skinauswahl"
+msgstr "Skin-Auswahl"
 
 #: skin_default_skin.xml.h:633
 msgid "Skip privat CA descriptor"
@@ -8857,7 +8819,7 @@ msgstr "Titel"
 
 #: skin_default_skin.xml.h:711
 msgid "Title Color"
-msgstr ""
+msgstr "Titelfarbe"
 
 #: skin_default_skin.xml.h:712
 msgid "Tone Burst"
@@ -9035,8 +8997,8 @@ msgstr "Auflösung"
 msgid "VideoMode Settings"
 msgstr "Bildeinstellungen"
 
-#: skin_default_skin.xml.h:770
-msgid "Video PID:"
+#: skin_default_skin.xml.h:761
+msgid "Video-PID:"
 msgstr ""
 
 #: skin_default_skin.xml.h:772
@@ -9159,7 +9121,7 @@ msgstr ""
 
 #: softcam.h:452
 msgid "Keys Updated !"
-msgstr ""
+msgstr "Keys aktualisiert!"
 
 #: solarmovie.h:304
 msgid "This file doesn't exist, or has been removed"
@@ -9648,8 +9610,8 @@ msgstr "Automatisches Beenden in 10 Sekunden."
 msgid ""
 "Alternativ Audio Firmware not working korrekt with all videos (DTSDOWNMIX)!"
 msgstr ""
-"Die Alternativ Audio Firmware funktioniert nicht mit allen Videos "
-"(DTSDOWNMIX) "
+"Die alternative Audio-Firmware funktioniert nicht mit allen Videos (DTS-"
+"DOWNMIX) "
 
 #: tithek.c:107
 msgid "Tithek - Mainmenu"
@@ -10170,18 +10132,20 @@ msgid "POS"
 msgstr "Position"
 
 #: tpk_description.h:1
-msgid "AAF MediaCenter, the best multimedia player on mipsel"
-msgstr ""
+msgid "AAF MediaCenter the best multimedia player on mipsel"
+msgstr "Der beste Mediaplayer für die sh4/mipsel Plattform."
 
 #: tpk_description.h:2
 msgid "AAF MediaCenter, the best multimedia player on sh4"
-msgstr ""
+msgstr "Der beste Mediaplayer für die sh4/mipsel Plattform."
 
 #: tpk_description.h:3
 msgid ""
 "A collection of really nice folder icons for MediaCenter Videoplayer "
 "Coverview!"
 msgstr ""
+"Eine hübsche Sammlung von Ordner-Symbolen für den Videoplayer im Media "
+"Center (Cover-Ansicht)!"
 
 #: tpk_description.h:4
 msgid "all: test Settings Astra 19.2 all transponder"
@@ -10189,38 +10153,42 @@ msgstr ""
 
 #: tpk_description.h:5
 msgid "Alternative blue skin for Pearl LCD "
-msgstr ""
+msgstr "Alternativer blauer Skin für Pearl-LCD"
 
 #: tpk_description.h:6
 msgid "Alternative skin for Pearl LCD"
-msgstr ""
+msgstr "Alternativer schwarzer Skin für Pearl-LCD"
 
 #: tpk_description.h:7
 msgid "Alternative skin for Pearl LCD Atemio style"
-msgstr ""
+msgstr "Alternativer Skin für Pearl-LCD (Atemio-Stil)"
 
 #: tpk_description.h:8
 msgid "Alternative skin for Pearl LCD big/black"
-msgstr ""
+msgstr "Alternativer Skin für Pearl-LCD (groß/schwarz)"
 
 #: tpk_description.h:9
 msgid "Alternative skin for Pearl LCD MRP style"
-msgstr ""
+msgstr "Alternativer Skin für Pearl-LCD (MRP-Stil)"
 
 #: tpk_description.h:10
 msgid ""
 "Alternative skin for Pearl LCD - X-Light picons must be installed separately"
 msgstr ""
+"Alternativer Skin für Pearl-LCD (nur Senderlogo) - X-Light Senderlogos "
+"separat installieren!"
 
 #: tpk_description.h:11
 msgid ""
 "Alternative skin for Samsung LCD - w/o picons (must be installed separately)"
-msgstr ""
+msgstr "Alternativer Skin für Samsung-LCD - Senderlogos separat installieren!"
 
 #: tpk_description.h:12
 msgid ""
 "Alternative skin for Samsung LCD - w/o Picons (must be installed separately)"
 msgstr ""
+"Alternativer Skin für Samsung-LCD (Trikots) - Senderlogos separat "
+"installieren!"
 
 #: tpk_description.h:13
 msgid "Astra 19.2e 23.5e Hotbird 13.0e Thor 0.8w KabelDeutschland (andy)"
@@ -10232,15 +10200,15 @@ msgstr ""
 
 #: tpk_description.h:15
 msgid "Black 3D Picons Astra 19.2"
-msgstr ""
+msgstr "Schwarze 3D-Senderlogos - Astra 19.2"
 
 #: tpk_description.h:16
 msgid "Black 3D Picons - Astra 23.5E."
-msgstr ""
+msgstr "Schwarze 3D-Senderlogos - Astra 23.5E"
 
 #: tpk_description.h:17
 msgid "Black 3D Picons - Hotbird 13.0E."
-msgstr ""
+msgstr "Schwarze 3D-Senderlogos - Hotbird 13.0"
 
 #: tpk_description.h:18
 msgid "Bootlogo 'Bikergirl'"
@@ -10332,27 +10300,27 @@ msgstr ""
 
 #: tpk_description.h:40
 msgid "Cable: default Settings Kabel Deutschland"
-msgstr ""
+msgstr "Kabel: Standard-Senderliste Kabel Deutschland"
 
 #: tpk_description.h:41
 msgid "Cable: Kabel Deutschland UH-Kreis"
-msgstr ""
+msgstr "Kabel: Senderliste Kabel Deutschland UH-Kreis"
 
 #: tpk_description.h:42
 msgid "Cable: Kabel Primacom"
-msgstr ""
+msgstr "Kabel: Senderliste Primacom"
 
 #: tpk_description.h:43
 msgid "Cable: sofatester Kabel BW"
-msgstr ""
+msgstr "Kabel: Senderliste Kabel BW (sofatester)"
 
 #: tpk_description.h:44
 msgid "Cable: Unitymedia2"
-msgstr ""
+msgstr "Kabel: Senderliste Unitymedia"
 
 #: tpk_description.h:45
 msgid "Callmonitor Plugin"
-msgstr ""
+msgstr "Anrufmonitor zum Anzeigen ein- und ausgehender Anrufe"
 
 #: tpk_description.h:46 tpk_showname.h:14
 msgid "camd3"
@@ -10364,11 +10332,11 @@ msgstr ""
 
 #: tpk_description.h:48
 msgid "cut record files"
-msgstr ""
+msgstr "Aufnahmen schneiden"
 
 #: tpk_description.h:49 tpk_showname.h:21
 msgid "Default Font"
-msgstr ""
+msgstr "Standard-Schriftart"
 
 #: tpk_description.h:50
 msgid "Default mod by maenne79"
@@ -10388,7 +10356,7 @@ msgstr ""
 
 #: tpk_description.h:54
 msgid "Digital clock blue - Samsung LCD Skin Channel"
-msgstr ""
+msgstr "Alternativer Skin für Samsung-LCD (blaue Digital Uhr) - Betriebsmodus"
 
 #: tpk_description.h:55
 msgid "dlna Medien Server (upnp)"
@@ -10396,10 +10364,10 @@ msgstr ""
 
 #: tpk_description.h:56
 msgid "DTS-Downmix firmware "
-msgstr ""
+msgstr "DTS-Downmix-Firmware"
 
 #: tpk_description.h:57
-msgid "DVD-Player plugin"
+msgid "DVD-Player Plugin"
 msgstr ""
 
 #: tpk_description.h:58
@@ -10453,7 +10421,7 @@ msgstr ""
 
 #: tpk_description.h:69 tpk_showname.h:31
 msgid "File Manager"
-msgstr ""
+msgstr "Datei Manager"
 
 #: tpk_description.h:70
 msgid "first titan game"
@@ -10769,15 +10737,15 @@ msgstr ""
 
 #: tpk_description.h:146 tpk_showname.h:185
 msgid "Titan MediaCenter"
-msgstr ""
+msgstr "Titan Media Center"
 
 #: tpk_description.h:147
 msgid "TiThek the Multimedia-thek"
-msgstr ""
+msgstr "TiThek die Online Mediathek"
 
 #: tpk_description.h:148
 msgid "TMDb Movie Database Plugin"
-msgstr ""
+msgstr "TMDb Filmdatenbank"
 
 #: tpk_description.h:149
 msgid "Transparent Picons 19_2 (dark skins)."
@@ -10845,11 +10813,11 @@ msgstr ""
 
 #: tpk_description.h:165
 msgid "usbreset Plugin"
-msgstr ""
+msgstr "USB-Reset"
 
 #: tpk_description.h:166
 msgid "weather Plugin"
-msgstr ""
+msgstr "Wetter Plugin"
 
 #: tpk_description.h:167
 msgid "Webbrowser Plugin"
@@ -10922,6 +10890,7 @@ msgstr ""
 #: tpk_description.h:184
 msgid "Wooden clock - Standby - Samsung LCD Skin Channel."
 msgstr ""
+"Alternativer Skin für Samsung-LCD (analoge Uhr aus Holz) - Standby-Modus"
 
 #: tpk_description.h:185
 msgid "xupnpd Medien Server (upnp)"
@@ -10953,7 +10922,7 @@ msgstr "Bootlogos"
 
 #: tpk_section.h:2
 msgid "browser"
-msgstr "Webbrowser"
+msgstr "Internet Browser"
 
 #: tpk_section.h:3
 msgid "emus"
@@ -10973,15 +10942,15 @@ msgstr "Infos"
 
 #: tpk_section.h:7
 msgid "keymaps"
-msgstr "Tastenbelegungen"
+msgstr "Fernbedienungseinstellungen"
 
 #: tpk_section.h:8
 msgid "lcdpearlskins"
-msgstr "Pearl LCD Skins"
+msgstr "Pearl-LCD-Skins"
 
 #: tpk_section.h:9
 msgid "lcdsamsungskins"
-msgstr "Samsung LCD Skins"
+msgstr "Samsung-LCD-Skins"
 
 #: tpk_section.h:10 webif_help.h:58
 msgid "network"
@@ -11009,7 +10978,7 @@ msgstr "Tools"
 
 #: tpk_section.h:17
 msgid "wireless"
-msgstr ""
+msgstr "Wireless LAN"
 
 #: tpk_showname.h:1
 msgid "3 Wins"
@@ -11093,7 +11062,7 @@ msgstr ""
 
 #: tpk_showname.h:25
 msgid "DVD Player"
-msgstr ""
+msgstr "DVD-Player"
 
 #: tpk_showname.h:26
 msgid "Enigma2 WebIf API (Dreambox)"
@@ -11265,7 +11234,7 @@ msgstr ""
 
 #: tpk_showname.h:71
 msgid "MediaCenter FolderIcons"
-msgstr ""
+msgstr "Media Center Odnersymbole"
 
 #: tpk_showname.h:72
 msgid "Mgcamd v1.35"
@@ -11421,7 +11390,7 @@ msgstr ""
 
 #: tpk_showname.h:116
 msgid "Record cut"
-msgstr ""
+msgstr "Aufnahmen schneiden"
 
 #: tpk_showname.h:117
 msgid "RGUI"
@@ -11433,7 +11402,7 @@ msgstr ""
 
 #: tpk_showname.h:119
 msgid "SAT/Cable 19.2 23.5 13.0 0.8 KabelD (andy)"
-msgstr ""
+msgstr "Sat/Kabel 19.2 23.5 13.0 0.8 KabelD (andy)"
 
 #: tpk_showname.h:120
 msgid "scam 3.53"
@@ -11585,15 +11554,15 @@ msgstr ""
 
 #: tpk_showname.h:159
 msgid "Skin 0Acht5Zehn (black)"
-msgstr ""
+msgstr "Skin 0Acht5Zehn (schwarz)"
 
 #: tpk_showname.h:160
 msgid "Skin 0Acht5Zehn (grey)"
-msgstr ""
+msgstr "Skin 0Acht5Zehn (grau)"
 
 #: tpk_showname.h:161
 msgid "Skin 0Acht5Zehn (white)"
-msgstr ""
+msgstr "Skin 0Acht5Zehn (weiß)"
 
 #: tpk_showname.h:164
 msgid "Skin Default"
@@ -11635,9 +11604,9 @@ msgstr ""
 msgid "Skin Nogfx"
 msgstr ""
 
-#: tpk_showname.h:174
+#: tpk_showname.h:180
 msgid "Skin Nogfx (grey)"
-msgstr ""
+msgstr "Skin Nogfx (grau)"
 
 #: tpk_showname.h:175
 msgid "Skin SmartTV"
@@ -12214,15 +12183,15 @@ msgstr "Download"
 
 #: webif_help.h:23
 msgid "epgscanlist"
-msgstr "EPG Suchliste"
+msgstr "EPG-Suchliste"
 
 #: webif_help.h:24
 msgid "epgsearch"
-msgstr "EPG Suche"
+msgstr "EPG-Suche"
 
 #: webif_help.h:25
 msgid "epgsettings"
-msgstr "EPG Einstellungen"
+msgstr "EPG-Einstellungen"
 
 #: webif_help.h:27
 msgid "extensionsmenu"
@@ -12230,7 +12199,7 @@ msgstr "Erweiterungsmenü"
 
 #: webif_help.h:28
 msgid "gmultiepg"
-msgstr "Grafisches-EPG"
+msgstr "Grafisches Multi-EPG"
 
 #: webif_help.h:29
 msgid "harddisk_main"
@@ -12446,11 +12415,11 @@ msgstr "Einfach EPG"
 
 #: webif_help.h:86
 msgid "skinadjust"
-msgstr "Skin Einstellungen"
+msgstr "Skin-Einstellungen"
 
 #: webif_help.h:87
 msgid "skinselect"
-msgstr "Skinauswahl"
+msgstr "Skin-Auswahl"
 
 #: webif_help.h:88
 msgid "softcam"
