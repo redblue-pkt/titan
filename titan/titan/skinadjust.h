@@ -18,17 +18,20 @@ void screenskinadjust()
 	struct skin* tithek_selectcol = getscreennode(skinadjust, "tithek_selectcol");
 	struct skin* filelistselect = getscreennode(skinadjust, "filelistselect");
 	struct skin* bordercolselect = getscreennode(skinadjust, "bordercolselect");
+	struct skin* bgcol = getscreennode(skinadjust, "bgcol");
+	struct skin* bgcol2 = getscreennode(skinadjust, "bgcol2");
+	struct skin* fontcol = getscreennode(skinadjust, "fontcol");
+	struct skin* bordercol = getscreennode(skinadjust, "bordercol");
+	struct skin* progresscol = getscreennode(skinadjust, "progresscol");
+	struct skin* titlebgcol = getscreennode(skinadjust, "titlebgcol");
+	struct skin* markcol = getscreennode(skinadjust, "markcol");
 
 	struct skin* oled_sel = getscreennode(skinadjust, "oled_sel");
 	struct skin* infobar_sel = getscreennode(skinadjust, "infobar_sel");
 	struct skin* infobar2_sel = getscreennode(skinadjust, "infobar2_sel");
 	struct skin* pic1 = getscreennode(skinadjust, "pic1");
 	struct skin* pic2 = getscreennode(skinadjust, "pic2");
-
 	struct skin* b4 = getscreennode(skinadjust, "b4");
-	struct skin* b5 = getscreennode(skinadjust, "b5");
-	struct skin* b6 = getscreennode(skinadjust, "b6");
-	struct skin* b7 = getscreennode(skinadjust, "b7");
 
 	struct skin* tmp = NULL;
 
@@ -131,9 +134,6 @@ void screenskinadjust()
 	addchoicebox(bordercolselect, "2", _("press blue"));
 
 	b4->hidden = YES;
-	b5->hidden = YES;
-	b6->hidden = YES;
-	b7->hidden = YES;
 
 	drawscreen(skinadjust, 0, 0);
 	addscreenrc(skinadjust, listbox);
@@ -209,11 +209,6 @@ void screenskinadjust()
 				drawscreen(skinadjust, 0, 0);
 			}
 
-			continue;
-		}
-
-		if(rcret == getrcconfigint("rcgreen", NULL))
-		{
 			if(listbox->select != NULL && ostrcmp(listbox->select->name, "tithek_selectcol") == 0)
 			{
 				long oldtithek_selectcol = convertcol("tithek_selectcol");
@@ -224,11 +219,6 @@ void screenskinadjust()
 				drawscreen(skinadjust, 0, 0);
 			}
 
-			continue;
-		}
-
-		if(rcret == getrcconfigint("rcyellow", NULL))
-		{
 			if(listbox->select != NULL && ostrcmp(listbox->select->name, "filelistselect") == 0)
 			{
 				long oldfilelistselect = convertcol("filelistselect");
@@ -239,11 +229,6 @@ void screenskinadjust()
 				drawscreen(skinadjust, 0, 0);
 			}
 
-			continue;
-		}
-
-		if(rcret == getrcconfigint("rcblue", NULL))
-		{
 			if(listbox->select != NULL && ostrcmp(listbox->select->name, "bordercolselect") == 0)
 			{
 				long oldbordercolselect = convertcol("bordercolselect");
@@ -251,6 +236,76 @@ void screenskinadjust()
 				if(tmpstr != NULL)
 					addskinconfigtmp("bordercolselect", tmpstr);
 				if(oldbordercolselect != convertcol("bordercolselect")) reboot = 1;
+				drawscreen(skinadjust, 0, 0);
+			}
+
+			if(listbox->select != NULL && ostrcmp(listbox->select->name, "bgcol") == 0)
+			{
+				long oldbgcol = convertcol("bgcol");
+				char* tmpstr = screencolorpicker(getskinconfig("bgcol", NULL), 0, 0, 0);
+				if(tmpstr != NULL)
+					addskinconfigtmp("bgcol", tmpstr);
+				if(oldbgcol != convertcol("bgcol")) reboot = 1;
+				drawscreen(skinadjust, 0, 0);
+			}
+
+			if(listbox->select != NULL && ostrcmp(listbox->select->name, "bgcol2") == 0)
+			{
+				long oldbgcol2 = convertcol("bgcol2");
+				char* tmpstr = screencolorpicker(getskinconfig("bgcol2", NULL), 0, 0, 0);
+				if(tmpstr != NULL)
+					addskinconfigtmp("bgcol2", tmpstr);
+				if(oldbgcol2 != convertcol("bgcol2")) reboot = 1;
+				drawscreen(skinadjust, 0, 0);
+			}
+
+			if(listbox->select != NULL && ostrcmp(listbox->select->name, "fontcol") == 0)
+			{
+				long oldfontcol = convertcol("fontcol");
+				char* tmpstr = screencolorpicker(getskinconfig("fontcol", NULL), 0, 0, 0);
+				if(tmpstr != NULL)
+					addskinconfigtmp("fontcol", tmpstr);
+				if(oldfontcol != convertcol("fontcol")) reboot = 1;
+				drawscreen(skinadjust, 0, 0);
+			}
+
+			if(listbox->select != NULL && ostrcmp(listbox->select->name, "bordercol") == 0)
+			{
+				long oldbordercol = convertcol("bordercol");
+				char* tmpstr = screencolorpicker(getskinconfig("bordercol", NULL), 0, 0, 0);
+				if(tmpstr != NULL)
+					addskinconfigtmp("bordercol", tmpstr);
+				if(oldbordercol != convertcol("bordercol")) reboot = 1;
+				drawscreen(skinadjust, 0, 0);
+			}
+
+			if(listbox->select != NULL && ostrcmp(listbox->select->name, "progresscol") == 0)
+			{
+				long oldprogresscol = convertcol("progresscol");
+				char* tmpstr = screencolorpicker(getskinconfig("progresscol", NULL), 0, 0, 0);
+				if(tmpstr != NULL)
+					addskinconfigtmp("progresscol", tmpstr);
+				if(oldprogresscol != convertcol("progresscol")) reboot = 1;
+				drawscreen(skinadjust, 0, 0);
+			}
+
+			if(listbox->select != NULL && ostrcmp(listbox->select->name, "titlebgcol") == 0)
+			{
+				long oldtitlebgcol = convertcol("titlebgcol");
+				char* tmpstr = screencolorpicker(getskinconfig("titlebgcol", NULL), 0, 0, 0);
+				if(tmpstr != NULL)
+					addskinconfigtmp("titlebgcol", tmpstr);
+				if(oldtitlebgcol != convertcol("titlebgcol")) reboot = 1;
+				drawscreen(skinadjust, 0, 0);
+			}
+
+			if(listbox->select != NULL && ostrcmp(listbox->select->name, "markcol") == 0)
+			{
+				long oldmarkcol = convertcol("markcol");
+				char* tmpstr = screencolorpicker(getskinconfig("markcol", NULL), 0, 0, 0);
+				if(tmpstr != NULL)
+					addskinconfigtmp("markcol", tmpstr);
+				if(oldmarkcol != convertcol("markcol")) reboot = 1;
 				drawscreen(skinadjust, 0, 0);
 			}
 
@@ -296,24 +351,29 @@ void screenskinadjust()
 
 		if(ostrcmp(listbox->select->name, "listboxselect") == 0)
 			b4->hidden = NO;
+		else if(ostrcmp(listbox->select->name, "tithek_selectcol") == 0)
+			b4->hidden = NO;
+		else if(ostrcmp(listbox->select->name, "filelistselect") == 0)
+			b4->hidden = NO;
+		else if(ostrcmp(listbox->select->name, "bordercolselect") == 0)
+			b4->hidden = NO;
+		else if(ostrcmp(listbox->select->name, "bgcol") == 0)
+			b4->hidden = NO;
+		else if(ostrcmp(listbox->select->name, "bgcol2") == 0)
+			b4->hidden = NO;
+		else if(ostrcmp(listbox->select->name, "fontcol") == 0)
+			b4->hidden = NO;
+		else if(ostrcmp(listbox->select->name, "bordercol") == 0)
+			b4->hidden = NO;
+		else if(ostrcmp(listbox->select->name, "titlebgcol") == 0)
+			b4->hidden = NO;
+		else if(ostrcmp(listbox->select->name, "progresscol") == 0)
+			b4->hidden = NO;
+		else if(ostrcmp(listbox->select->name, "markcol") == 0)
+			b4->hidden = NO;
 		else
 			b4->hidden = YES;
-
-		if(ostrcmp(listbox->select->name, "tithek_selectcol") == 0)
-			b5->hidden = NO;
-		else
-			b5->hidden = YES;
-
-		if(ostrcmp(listbox->select->name, "filelistselect") == 0)
-			b6->hidden = NO;
-		else
-			b6->hidden = YES;
-
-		if(ostrcmp(listbox->select->name, "bordercolselect") == 0)
-			b7->hidden = NO;
-		else
-			b7->hidden = YES;
-
+	
 		drawscreen(skinadjust, 0, 0);
 	}
 
