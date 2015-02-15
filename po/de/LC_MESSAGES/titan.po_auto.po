@@ -13296,12 +13296,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid "sbs"
-#~ msgstr "Side-By-Side (Nebeneinander)"
-
-#~ msgid "tab"
-#~ msgstr "Top-And-Bottom (Untereinander)"
-
-#~ msgid "AAF MediaCenter the best multimedia player on mipsel"
-#~ msgstr "Der beste Mediaplayer für die sh4/mipsel Plattform."
