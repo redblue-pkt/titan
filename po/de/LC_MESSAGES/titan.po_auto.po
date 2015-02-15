@@ -13290,9 +13290,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid "press green"
-#~ msgstr "Grüne Taste drücken"
-
-#~ msgid "press yellow"
-#~ msgstr "Gelbe Taste drücken"
