@@ -4016,7 +4016,7 @@ msgstr "PL2303 Module"
 msgid "nfs server"
 msgstr "NFS serveris"
 
-#: panel_settings_autostart.h:327 settings_autostart.h:576
+#: panel_settings_autostart.h:327
 msgid "samba server"
 msgstr "Samba serveris"
 
@@ -6275,6 +6275,10 @@ msgstr "Load stmdvb.ko with swts Option"
 #: settings_autostart.h:215
 msgid "Cam Routing"
 msgstr "Load stmdvb.ko with CamRouting Otion"
+
+#: settings_autostart.h:576 tpk_showname.h:118
+msgid "Samba Server"
+msgstr ""
 
 #: settings_autostart.h:594
 msgid "ntpdate"
@@ -11281,10 +11285,6 @@ msgstr ""
 
 #: tpk_showname.h:117
 msgid "RGUI"
-msgstr ""
-
-#: tpk_showname.h:118
-msgid "Samba Server"
 msgstr ""
 
 #: tpk_showname.h:119
