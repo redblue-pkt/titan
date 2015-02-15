@@ -2569,8 +2569,8 @@ msgstr "SVN Änderungsprotokoll"
 msgid "Git Changelog"
 msgstr "GIT Änderungsprotokoll"
 
-#: httpdfunc.h:5247
-msgid "titan Log"
+#: httpdfunc.h:5247 webif_info_logs.h:4
+msgid "Titan Log"
 msgstr ""
 
 #: httpdfunc.h:5249
@@ -2717,7 +2717,7 @@ msgstr ""
 msgid "Front Key"
 msgstr ""
 
-#: hwtest.h:180 hwtest.h:329
+#: hwtest.h:180 hwtest.h:329 hwtest.h:368
 msgid "Smartcard"
 msgstr ""
 
@@ -2772,10 +2772,6 @@ msgstr "blau"
 #: hwtest.h:305
 msgid "SCART 4:3 / 16:9"
 msgstr "SCART 4:3/16:9"
-
-#: hwtest.h:368
-msgid "Smartcard "
-msgstr ""
 
 #: hwtest.h:371
 msgid "Present"
@@ -3954,7 +3950,7 @@ msgstr "hoch"
 msgid "showip"
 msgstr "Zeige IP Adresse im Display beim Start"
 
-#: panel_settings_autostart.h:70 settings_autostart.h:62
+#: panel_settings_autostart.h:70
 msgid "status"
 msgstr ""
 
@@ -6304,6 +6300,10 @@ msgstr "Frontend kann nicht geöffnet werden oder unbekannter Typ"
 #: service.h:977
 msgid "Channellist empty or corrupt (channel not found)!"
 msgstr "Senderliste fehlerhaft (Kanal nicht gefunden)!"
+
+#: settings_autostart.h:62 tmc.h:387
+msgid "Status"
+msgstr ""
 
 #: settings_autostart.h:206
 msgid "swts"
@@ -10027,10 +10027,6 @@ msgstr "sehr klein (30 Bilder)"
 msgid "show in list"
 msgstr "in Liste zeigen"
 
-#: tmc.h:387
-msgid "Status"
-msgstr ""
-
 #: tmc.h:391
 msgid "idle"
 msgstr "wartend"
@@ -13188,10 +13184,6 @@ msgstr ""
 
 #: webif_info.h:7 webif_info_logs.h:1
 msgid "Logs"
-msgstr ""
-
-#: webif_info_logs.h:4
-msgid "Titan Log"
 msgstr ""
 
 #: webif_info_logs.h:5
