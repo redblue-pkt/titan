@@ -449,7 +449,7 @@ void screensoftcam()
 			tmpstr1 = ostrcat(tmpstr1, ".tar.gz", 0, 0);
 
 			tmpstr2 = ostrcat(tmpstr, " ", 0, 0);
-			tmpstr2 = ostrcat(tmpstr2, _("Keys Updatet !"), 1, 0);
+			tmpstr2 = ostrcat(tmpstr2, _("Keys Updated !"), 1, 0);
 
 			tmpstr3 = ostrcat(_("Restart"), " ", 0, 0);
 			tmpstr3 = ostrcat(tmpstr3, tmpstr, 1, 0);
