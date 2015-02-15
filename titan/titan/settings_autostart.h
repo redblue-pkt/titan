@@ -59,7 +59,7 @@ void screensettings_autostart_default()
 	{
 		node->type = CHOICEBOX;
 		changetext(node, _("showip")); changename(node, "showip");
-		addchoicebox(node, "status", _("status")); addchoicebox(node, "ip", _("ip"));
+		addchoicebox(node, "status", _("Status")); addchoicebox(node, "ip", _("ip"));
 		setchoiceboxselection(node, getownconfig(node->name));
 	}
 /*

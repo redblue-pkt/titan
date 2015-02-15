@@ -365,9 +365,9 @@ void screenhwtest()
 						
 						if(status == 1)
 						{
-							tmpstr1 = ostrcat(tmpstr1, _("Smartcard "), 1, 0);
+							tmpstr1 = ostrcat(tmpstr1, _("Smartcard"), 1, 0);
 							tmpstr1 = ostrcat(tmpstr1, oitoa(smartcardcount), 1, 1);
-							tmpstr1 = ostrcat(tmpstr1, ": ", 1, 0);
+							tmpstr1 = ostrcat(tmpstr1, " : ", 1, 0);
 							tmpstr1 = ostrcat(tmpstr1, _("Present"), 1, 0);
 							tmpstr1 = ostrcat(tmpstr1, "\n", 1, 0);
 						}
