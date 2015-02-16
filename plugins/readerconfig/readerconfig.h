@@ -507,48 +507,6 @@ start:
 			free(tmpstr); tmpstr = NULL;
 			drawscreen(skinoscam, 0, 0);	
 		}
-		if(rcret == getrcconfigint("rcyellow", NULL))
-		{
-			int ret = 1;
-			
-			char* tmpstr = NULL;
-			tmpstr = ostrcat("
-			gethttp("www.stbsw.com", "/sat/keys/Oscam.keys.tar.gz", 80, "/tmp/.tmp.tar.gz", NULL, 5000, NULL, 0);		
-
-			tmpstr = ostrcat(dvbapi, ".disable", 0, 0);
-			if(tmpstr != NULL)
-			{
-				if(file_exist(dvbapi) == 1)
-				{
-					ret = rename(dvbapi, tmpstr);
-					free(tmpstr); tmpstr = NULL;
-					tmpstr = ostrcat(tmpstr, _("Oscam dvbapi config disabled !"), 0, 0);
-					changetext(b2, _("Dvbapi (disabled)"));
-				}
-				else if(file_exist(tmpstr) == 1)
-				{
-					ret = rename(tmpstr, dvbapi);
-					free(tmpstr); tmpstr = NULL;
-					tmpstr = ostrcat(tmpstr, _("Oscam dvbapi config enabled !"), 0, 0);
-					changetext(b2, _("Dvbapi (enabled)"));
-				}
-			}
-			
-			if(ret == 0)
-			{
-				textbox(_("Message"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
-				if(textbox(_("Message"), _("Restart Oscam ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0) == 1)
-				{
-					startinternreader(0);
-					char* cmd = NULL;
-					cmd = ostrcat("emu.sh restart" , NULL, 0, 0);
-					system(cmd);
-					free(cmd);
-				}			
-			}
-			free(tmpstr); tmpstr = NULL;
-			drawscreen(skinoscam, 0, 0);	
-		}
 	}
 
 	startinternreader(1);
