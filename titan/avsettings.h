@@ -202,6 +202,9 @@ void screenavsettings(int flag)
 	changeinput(mode3d, ret);
 	free(ret); ret = NULL;
 	ret = getmode3d();
+	addchoicebox(mode3d, "off", _("Off"));
+	addchoicebox(mode3d, "sbs", _("SideBySide"));
+	addchoicebox(mode3d, "tab", _("TopAndBottom"));	
 	setchoiceboxselection(mode3d, ret);
 	free(ret); ret = NULL;
 
