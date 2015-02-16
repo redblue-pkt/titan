@@ -1,7 +1,7 @@
 #ifndef SECURITY_H
 #define SECURITY_H
 
-#define TIMECODE ""
+#define BUILDCODE ""
 
 int checklowflash()
 {
@@ -745,7 +745,7 @@ void checkserial(char* input)
 
 #ifdef BETA
 	off64_t currtime = time(NULL);
-	off64_t buildtime = TIMECODE);
+	off64_t buildtime = BUILDCODE);
 	printf("--------------------------------\n");
 	printf("currtime: %lld\n", currtime);
 	printf("buildtime: %lld\n", buildtime);
