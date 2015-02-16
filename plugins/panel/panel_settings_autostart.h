@@ -67,7 +67,7 @@ void screenpanel_settings_autostart(int mode)
 		{
 			node->type = CHOICEBOX;
 			changetext(node, _("showip")); changename(node, "showip");
-			addchoicebox(node, "status", _("status")); addchoicebox(node, "ip", _("ip"));
+			addchoicebox(node, "status", _("Status")); addchoicebox(node, "ip", _("ip"));
 			setchoiceboxselection(node, getownconfig(node->name));
 		}
 
@@ -324,7 +324,7 @@ void screenpanel_settings_autostart(int mode)
 		if(node != NULL)
 		{
 			node->type = CHOICEBOX;
-			changetext(node, _("samba server")); changename(node, "sambaserver");
+			changetext(node, _("Samba Server")); changename(node, "sambaserver");
 			addchoicebox(node, "n", _("no")); addchoicebox(node, "y", _("yes"));
 			setchoiceboxselection(node, getownconfig(node->name));
 		}

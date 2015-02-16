@@ -2515,7 +2515,7 @@ void mediadbfindfilecb(char* path, char* file, int type, char* id, int flag)
 						tmpstr = ostrcat(tmpstr, ": ", 1, 0);
 						tmpstr = ostrcat(tmpstr, path, 1, 0);							
 						tmpstr = ostrcat(tmpstr, "\n", 1, 0);
-						tmpstr = ostrcat(tmpstr, _("title"), 1, 0);
+						tmpstr = ostrcat(tmpstr, _("Title"), 1, 0);
 						tmpstr = ostrcat(tmpstr, ": ", 1, 0);
 						tmpstr = ostrcat(tmpstr, imdb->title, 1, 0);							
 						tmpstr = ostrcat(tmpstr, "\n", 1, 0);

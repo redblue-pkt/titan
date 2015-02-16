@@ -3940,7 +3940,7 @@ printf("webadjust fmt: %d\n",fmt);
 		ostrcatbig(&buf, "<option value=\"4\" selected>", &maxlen, &pos);		
 	else
 		ostrcatbig(&buf, "<option value=\"4\">", &maxlen, &pos);
-	ostrcatbig(&buf, _("Gui Restart"), &maxlen, &pos);
+	ostrcatbig(&buf, _("GUI Restart"), &maxlen, &pos);
 	ostrcatbig(&buf, "</option>", &maxlen, &pos);	
 	
 	ostrcatbig(&buf,"</select></td></tr>", &maxlen, &pos);
