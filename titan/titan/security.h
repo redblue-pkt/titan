@@ -741,6 +741,17 @@ void checkserial(char* input)
 		free(blackfile);
 	}
 
+#ifdef BETA
+	off64_t currtime = time(NULL);
+	off64_t buildtime = oitoa64(TIMECODE);
+	printf("--------------------------------\n");
+	printf("currtime: %lld\n", currtime);
+	printf("buildtime: %lld\n", buildtime);
+	printf("--------------------------------\n");
+	if(buildtime + 120 >= currtime)
+		printf("demoversion done %lld + 120 >= %lld\n", buildtime, currtime);
+#endif
+
 	if(status.security == 1)
 	{
 		startnet();
