@@ -3,7 +3,7 @@ msgid "System-Info"
 msgstr "Системная информация"
 
 #: about.h:9 ard.h:31 autotimer.c:537 autotimer.c:543 autotimer.c:568
-#: autotimer.c:575 autotimer.c:603 avsettings.h:287 betarobot.h:57
+#: autotimer.c:575 autotimer.c:603 avsettings.h:290 betarobot.h:57
 #: bgdownload.h:176 blindscanadjust.h:25 callmon_main.h:39 channellist.h:913
 #: channellist.h:915 channellist.h:920 channellist.h:922 channellist.h:1006
 #: divxstage.h:36 divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336
@@ -109,7 +109,7 @@ msgid "OK"
 msgstr "ОК"
 
 #: about.h:9 ard.h:31 autotimer.c:537 autotimer.c:543 autotimer.c:568
-#: autotimer.c:575 autotimer.c:603 avsettings.h:287 betarobot.h:57
+#: autotimer.c:575 autotimer.c:603 avsettings.h:290 betarobot.h:57
 #: bgdownload.h:176 blindscanadjust.h:25 channellist.h:913 channellist.h:915
 #: channellist.h:920 channellist.h:922 channellist.h:1006 divxstage.h:36
 #: divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336 dlna.h:345
@@ -220,8 +220,8 @@ msgstr ""
 #: adjust.h:167 adjust.h:171 adjust.h:188 adjust.h:192 adjust.h:200
 #: adjust.h:204 adjust.h:208 adjust.h:214 adjust.h:218 adjust.h:225
 #: adjust.h:229 adjust.h:233 adjust.h:239 adjust.h:245 adjust.h:390
-#: autotimer.c:453 autotimer.c:486 avsettings.h:161 avsettings.h:208
-#: avsettings.h:212 blindscanadjust.h:150 blindscanadjust.h:154
+#: autotimer.c:453 autotimer.c:486 avsettings.h:161 avsettings.h:211
+#: avsettings.h:215 blindscanadjust.h:150 blindscanadjust.h:154
 #: blindscanadjust.h:158 blindscanadjust.h:187 blindscanadjust.h:191 cec.h:143
 #: cec.h:147 cec.h:151 cec.h:155 cec.h:159 cec.h:163 cec.h:167 cec.h:171
 #: cec.h:175 dlna.h:276 epgsettings.h:134 epgsettings.h:187 epgsettings.h:196
@@ -289,7 +289,7 @@ msgstr "EPG канала"
 #: adjust.h:193 adjust.h:201 adjust.h:205 adjust.h:209 adjust.h:215
 #: adjust.h:219 adjust.h:226 adjust.h:230 adjust.h:234 adjust.h:240
 #: adjust.h:244 autotimer.c:454 autotimer.c:487 avsettings.h:162
-#: avsettings.h:209 blindscanadjust.h:151 blindscanadjust.h:155
+#: avsettings.h:212 blindscanadjust.h:151 blindscanadjust.h:155
 #: blindscanadjust.h:159 blindscanadjust.h:188 blindscanadjust.h:192 cec.h:144
 #: cec.h:148 cec.h:152 cec.h:156 cec.h:160 cec.h:164 cec.h:168 cec.h:172
 #: cec.h:176 dlna.h:277 epgsettings.h:135 epgsettings.h:188 epgsettings.h:197
@@ -648,7 +648,7 @@ msgstr ""
 msgid "Function"
 msgstr ""
 
-#: ard.h:31 avsettings.h:287 betarobot.h:57 bgdownload.h:176
+#: ard.h:31 avsettings.h:290 betarobot.h:57 bgdownload.h:176
 #: blindscanadjust.h:25 callmon_main.h:39 channellist.h:913 channellist.h:915
 #: channellist.h:920 channellist.h:922 channellist.h:1006 divxstage.h:36
 #: divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336 dlna.h:345
@@ -839,7 +839,19 @@ msgstr "10 сек"
 msgid "on"
 msgstr "вкл"
 
-#: avsettings.h:287 videomode.h:67
+#: avsettings.h:205
+msgid "Off"
+msgstr ""
+
+#: avsettings.h:206
+msgid "SideBySide"
+msgstr ""
+
+#: avsettings.h:207
+msgid "TopAndBottom"
+msgstr ""
+
+#: avsettings.h:290 videomode.h:67
 msgid "Is this Videomode ok ?"
 msgstr "Видеорежим в порядке?"
 
