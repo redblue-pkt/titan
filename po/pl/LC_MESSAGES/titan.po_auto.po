@@ -12944,12 +12944,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid "Gui Restart"
-#~ msgstr "Restart GUI"
-
-#~ msgid "title"
-#~ msgstr "Napisy"
-
-#~ msgid "samba server"
-#~ msgstr "Serwer NFS"

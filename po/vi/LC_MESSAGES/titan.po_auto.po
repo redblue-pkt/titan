@@ -13030,12 +13030,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid "Gui Restart"
-#~ msgstr "Khởi động lại GUI"
-
-#~ msgid "title"
-#~ msgstr "nhan đề"
-
-#~ msgid "samba server"
-#~ msgstr " server Samba "

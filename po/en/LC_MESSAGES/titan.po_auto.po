@@ -13143,15 +13143,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Zapback is activated. Do you want to stop it?"
-
-#~ msgid "Gui Restart"
-#~ msgstr "Restart Titan"
-
-#~ msgid "title"
-#~ msgstr "Title"
-
-#~ msgid "status"
-#~ msgstr "Status"
-
-#~ msgid "samba server"
-#~ msgstr "Samba Server"
