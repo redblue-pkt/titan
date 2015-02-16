@@ -1098,6 +1098,11 @@ void setskinnodeslocked(int flag)
 				if(ostrcmp("restart", child->name) == 0) child->locked = 1;
 			}
 
+			if(checkbox("SPARK") == 1 || checkbox("SPARK7162") == 1)
+			{
+				if(ostrcmp("cinterface", child->name) == 0) child->locked = 1;
+			}
+
 #ifdef MIPSEL
 			if(ostrcmp("system_backup", child->name) == 0) child->locked = 1;
 			if(ostrcmp("system_update_usb_tmp", child->name) == 0) child->locked = 1;
