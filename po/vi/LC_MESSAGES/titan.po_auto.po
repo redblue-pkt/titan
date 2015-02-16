@@ -64,15 +64,14 @@ msgstr ""
 #: promptfile.h:46 promptfile.h:94 promptfile.h:136 putlocker.h:32
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
-#: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 readerconfig.h:539
-#: readerconfig.h:540 record.h:387 record.h:1049 record.h:1572 rectimer.h:577
-#: rectimer.h:1231 rectimer.h:1377 rectimer.h:1389 restoredefault.h:10
-#: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
-#: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:31
-#: scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1901 scan.h:1992
-#: scan.h:2358 scart.h:12 scart.h:25 scriptexec.h:41 security.h:1736
-#: service.h:738 service.h:983 shared.h:29 shared.h:65 shared.h:82
-#: skinadjust.h:349 skins_dlna_skin.xml.h:8 skinselector.h:237
+#: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
+#: record.h:1049 record.h:1572 rectimer.h:577 rectimer.h:1231 rectimer.h:1377
+#: rectimer.h:1389 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
+#: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
+#: rtl2now.h:31 scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1901
+#: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 scriptexec.h:41
+#: security.h:1736 service.h:738 service.h:983 shared.h:29 shared.h:65
+#: shared.h:82 skinadjust.h:349 skins_dlna_skin.xml.h:8 skinselector.h:237
 #: skins_facebook_skin.xml.h:5 skins_mboxinfo_skin.xml.h:2
 #: skins_mc_skin.xml.h:38 skins_optimize_skin.xml.h:3 skins_rgui_skin.xml.h:3
 #: skins_sudoku_skin.xml.h:13 skins_tiwakeup_skin.xml.h:3
@@ -174,10 +173,10 @@ msgstr "Ok"
 #: promptfile.h:46 promptfile.h:94 promptfile.h:136 putlocker.h:32
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
-#: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 readerconfig.h:539
-#: readerconfig.h:540 record.h:90 record.h:387 record.h:1049 record.h:1297
-#: record.h:1547 record.h:1572 rectimer.h:577 rectimer.h:1231 rectimer.h:1377
-#: rectimer.h:1389 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
+#: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:90
+#: record.h:387 record.h:1049 record.h:1297 record.h:1547 record.h:1572
+#: rectimer.h:577 rectimer.h:1231 rectimer.h:1377 rectimer.h:1389
+#: restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:31 scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1901
 #: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 scriptexec.h:41
@@ -697,16 +696,16 @@ msgstr ""
 #: promptfile.h:46 promptfile.h:94 promptfile.h:136 putlocker.h:32
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
-#: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 readerconfig.h:539
-#: readerconfig.h:540 record.h:387 record.h:1049 record.h:1297 record.h:1547
-#: record.h:1572 rectimer.h:577 rectimer.h:1231 rectimer.h:1377
-#: rectimer.h:1389 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
-#: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
-#: rtl2now.h:31 scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1646
-#: scan.h:1901 scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 security.h:1736
-#: service.h:738 service.h:983 shared.h:29 shared.h:65 shared.h:82
-#: skinadjust.h:349 skinselector.h:237 sock.h:952 softcam.h:410 softcam.h:468
-#: softcam.h:469 solarmovie.h:35 solarmovie.h:47 solarmovie.h:304 spinner.h:18
+#: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
+#: record.h:1049 record.h:1297 record.h:1547 record.h:1572 rectimer.h:577
+#: rectimer.h:1231 rectimer.h:1377 rectimer.h:1389 restoredefault.h:10
+#: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
+#: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:31
+#: scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1646 scan.h:1901
+#: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 security.h:1736 service.h:738
+#: service.h:983 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:349
+#: skinselector.h:237 sock.h:952 softcam.h:410 softcam.h:468 softcam.h:469
+#: solarmovie.h:35 solarmovie.h:47 solarmovie.h:304 spinner.h:18
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:84
 #: streamcloud.h:97 streamcloud.h:128 streamcloud.h:187 stream.h:33
 #: system_backup_restore.h:40 system_backup_restore.h:43
@@ -5691,11 +5690,11 @@ msgstr ""
 msgid "No config file found."
 msgstr "Không tìm thấy"
 
-#: readerconfig.h:397 readerconfig.h:491 readerconfig.h:533
+#: readerconfig.h:397 readerconfig.h:491
 msgid "Dvbapi (enabled)"
 msgstr ""
 
-#: readerconfig.h:399 readerconfig.h:484 readerconfig.h:526
+#: readerconfig.h:399 readerconfig.h:484
 msgid "Dvbapi (disabled)"
 msgstr ""
 
@@ -5707,15 +5706,15 @@ msgstr "cho phép thiết bị đọc"
 msgid "Oscam config written to medium !"
 msgstr ""
 
-#: readerconfig.h:452 readerconfig.h:498 readerconfig.h:540
+#: readerconfig.h:452 readerconfig.h:498
 msgid "Restart Oscam ?"
 msgstr "Khởi động lại"
 
-#: readerconfig.h:483 readerconfig.h:525
+#: readerconfig.h:483
 msgid "Oscam dvbapi config disabled !"
 msgstr ""
 
-#: readerconfig.h:490 readerconfig.h:532
+#: readerconfig.h:490
 msgid "Oscam dvbapi config enabled !"
 msgstr ""
 
