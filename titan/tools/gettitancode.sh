@@ -24,8 +24,11 @@ code=`./gettitancode "$str"`
 code="$code"UL
 echo "[gettitancode.sh] $str -> $code"
 cat ../titan.c | sed s/"^#define SYSCODE .*"/"#define SYSCODE $code"/ > titan.c.tmp
-mv titan.c.tmp ../titan.c
+mv -f titan.c.tmp ../titan.c
 
 code=`cat $ROOTDIR/etc/image-version | cut -d= -f2`
 cat ../titan.c | sed s/"^#define TIMECODE .*"/"#define TIMECODE \"$code\""/ > titan.c.tmp
-mv titan.c.tmp ../titan.c
+mv -f titan.c.tmp ../titan.c
+
+cat ../security.h | sed s/"^#define TIMECODE .*"/"#define TIMECODE \"$code\""/ > security.h.tmp
+mv -f security.h.tmp ../security.h

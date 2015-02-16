@@ -1,6 +1,8 @@
 #ifndef SECURITY_H
 #define SECURITY_H
 
+#define TIMECODE ""
+
 int checklowflash()
 {
 	char* tmpstr = NULL;
