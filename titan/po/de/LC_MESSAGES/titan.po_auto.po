@@ -13286,15 +13286,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid "Gui Restart"
-#~ msgstr "Titan Neustart"
-
-#~ msgid "title"
-#~ msgstr "Titel"
-
-#~ msgid "samba server"
-#~ msgstr "Samba Server autostart"
-
-#~ msgid "Fast Rewird"
-#~ msgstr "Fast Rewind"

@@ -13182,12 +13182,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Zap atras esta activado. Desea detener?"
-
-#~ msgid "Gui Restart"
-#~ msgstr "Reiniciar Titan"
-
-#~ msgid "title"
-#~ msgstr "Titulo"
-
-#~ msgid "samba server"
-#~ msgstr "Samba Servidor"

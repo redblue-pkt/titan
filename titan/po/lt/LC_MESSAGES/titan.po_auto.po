@@ -13133,12 +13133,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Zapback aktivuoas. Ar norite j sustabdyti ?"
-
-#~ msgid "Gui Restart"
-#~ msgstr "Titan Perkrauti"
-
-#~ msgid "title"
-#~ msgstr "Pavadinimas"
-
-#~ msgid "samba server"
-#~ msgstr "Samba serveris"
