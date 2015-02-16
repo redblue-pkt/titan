@@ -1,17 +1,3 @@
-msgid ""
-msgstr ""
-"Project-Id-Version: TitanNit 1.60\n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Last-Translator:  <aaf-caliban@e.mail.de>\n"
-"Language-Team: German <_obiwan_@web.de>\n"
-"Language: de\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-
 #: about.h:9
 msgid "System-Info"
 msgstr "System Information"
@@ -426,8 +412,12 @@ msgstr ""
 msgid "Restart"
 msgstr "Neustart"
 
-#: adjust.h:114 httpdfunc.h:3943
-msgid "Gui Restart"
+#: adjust.h:114 httpdfunc.h:3943 skin_default_skin.xml.h:277
+#: webif_index.atemio510.h:6 webif_index.atemio5200.h:6
+#: webif_index.atemio6000.h:6 webif_index.atemio6100.h:6
+#: webif_index.atemio6200.h:6 webif_index.atemio7600.h:4
+#: webif_index.atemio-nemesis.h:6 webif_index.h:6 webif_powercontrol.h:3
+msgid "GUI Restart"
 msgstr "Titan Neustart"
 
 #: adjust.h:121 adjust.h:131 adjust.h:185 epgsettings.h:147 epgsettings.h:153
@@ -926,7 +916,8 @@ msgstr ""
 
 #: browser.h:207
 msgid "Choose your Internet Favorite from the following list"
-msgstr "Wählen Sie das gewünschte Internet Lesezeichen aus der folgenden Liste"
+msgstr ""
+"Wählen Sie das gewünschte Internet Lesezeichen aus der folgenden Liste"
 
 #: browser.h:212
 msgid "32 Bit Scale 100 Percent"
@@ -1809,7 +1800,8 @@ msgstr "Menü"
 
 #: filemanager.h:89
 msgid "Choose your Filemanager Option from the following list"
-msgstr "Wählen Sie die gewünschte Datei Manager Option aus der folgenden Liste"
+msgstr ""
+"Wählen Sie die gewünschte Datei Manager Option aus der folgenden Liste"
 
 #: filemanager.h:95
 msgid "Can't rename file !"
@@ -3155,6 +3147,60 @@ msgstr "Ihr Marker wurde erfolgreich gesetzt"
 msgid "File not found !!"
 msgstr "Datei nicht gefunden"
 
+#: mboxinfo.c:77 mc_imdb.h:78 mc_imdb.h:79 mc_imdb.h:80 mc_imdb.h:81
+#: mc_imdb.h:82 mc_view.h:17 mc_view.h:18 mc_view.h:19 mc_view.h:20
+#: mc_view.h:21 mc_view.h:22 plugins_autotimer_skin.xml.h:13
+#: plugins_callmonitor1_skin.xml.h:19 plugins_catcatch_skin.xml.h:7
+#: plugins_dlna_skin.xml.h:15 plugins_facebook_skin.xml.h:6
+#: plugins_filemanager_skin.xml.h:6 plugins_gmediarender_skin.xml.h:1
+#: plugins_imdbapi_skin.xml.h:11 plugins_imdb_skin.xml.h:11
+#: plugins_instar_skin.xml.h:17 plugins_keylock_skin.xml.h:1
+#: plugins_lcdpearl1_skin.xml.h:14 plugins_lcdsamsung_skin.xml.h:18
+#: plugins_mboxinfo_skin.xml.h:3 plugins_mc_skin.xml.h:70
+#: plugins_networkbrowser_skin.xml.h:37 plugins_news_skin.xml.h:5
+#: plugins_optimize_skin.xml.h:4 plugins_panel_skin.xml.h:28
+#: plugins_permtime_skin.xml.h:1 plugins_readerconfig_skin.xml.h:10
+#: plugins_rgui_skin.xml.h:9 plugins_stock_skin.xml.h:6
+#: plugins_stopifnotused_skin.xml.h:8 plugins_streaminfo_skin.xml.h:6
+#: plugins_sudoku_skin.xml.h:18 plugins_tithek_skin.xml.h:24
+#: plugins_tiwakeup_skin.xml.h:9 plugins_tmc_skin.xml.h:18
+#: plugins_tmdb_skin.xml.h:11 plugins_tsSchnitt_skin.xml.h:11
+#: plugins_weather_skin.xml.h:4 plugins_wins3_skin.xml.h:4
+#: plugins_wm2014_skin.xml.h:1 plugins_wm2014_skin.xml.h:21
+#: plugins_xupnpd_skin.xml.h:5 plugins_zapback_skin.xml.h:7
+#: skin_default_skin.xml.h:796 skins_autotimer_skin.xml.h:13
+#: skins_callmonitor1_skin.xml.h:19 skins_catcatch_skin.xml.h:7
+#: skins_dlna_skin.xml.h:15 skins_facebook_skin.xml.h:6
+#: skins_filemanager_skin.xml.h:6 skins_gmediarender_skin.xml.h:1
+#: skins_imdbapi_skin.xml.h:11 skins_imdb_skin.xml.h:11
+#: skins_instar_skin.xml.h:17 skins_keylock_skin.xml.h:1
+#: skins_lcdpearl1_skin.xml.h:14 skins_lcdsamsung_skin.xml.h:18
+#: skins_mboxinfo_skin.xml.h:3 skins_mc_skin.xml.h:70
+#: skins_networkbrowser_skin.xml.h:37 skins_news_skin.xml.h:5
+#: skins_optimize_skin.xml.h:4 skins_panel_skin.xml.h:28
+#: skins_permtime_skin.xml.h:1 skins_readerconfig_skin.xml.h:10
+#: skins_rgui_skin.xml.h:9 skins_stock_skin.xml.h:6
+#: skins_stopifnotused_skin.xml.h:8 skins_streaminfo_skin.xml.h:6
+#: skins_sudoku_skin.xml.h:18 skins_tithek_skin.xml.h:24
+#: skins_tiwakeup_skin.xml.h:9 skins_tmc_skin.xml.h:18
+#: skins_tmdb_skin.xml.h:11 skins_tsSchnitt_skin.xml.h:11
+#: skins_weather_skin.xml.h:4 skins_wins3_skin.xml.h:4
+#: skins_wm2014_skin.xml.h:1 skins_wm2014_skin.xml.h:21
+#: skins_xupnpd_skin.xml.h:5 skins_zapback_skin.xml.h:7 tithek_mainmenu.h:1
+msgid ""
+msgstr ""
+"Project-Id-Version: TitanNit 1.60\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator:  <aaf-caliban@e.mail.de>\n"
+"Language-Team: German <_obiwan_@web.de>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
 #: mc_audioplayer.h:408 mc_global.h:1079 mc_pictureplayer.h:150
 #: mc_videoplayer.h:428
 msgid "Repeat-On"
@@ -3402,8 +3448,9 @@ msgstr "Datei"
 msgid "path"
 msgstr "Pfad"
 
-#: mediadb.h:2518
-msgid "title"
+#: mediadb.h:2518 plugins_tithek_skin.xml.h:20 skin_default_skin.xml.h:709
+#: skins_tithek_skin.xml.h:20
+msgid "Title"
 msgstr "Titel"
 
 #: mediadb.h:2522
@@ -3918,8 +3965,8 @@ msgstr "hoch"
 msgid "showip"
 msgstr "Zeige IP Adresse im Display beim Start"
 
-#: panel_settings_autostart.h:70
-msgid "status"
+#: panel_settings_autostart.h:70 settings_autostart.h:62 tmc.h:387
+msgid "Status"
 msgstr ""
 
 #: panel_settings_autostart.h:70 settings_autostart.h:62
@@ -4014,9 +4061,9 @@ msgstr "Aktiviere PL2303 Kartenleser Treiber"
 msgid "nfs server"
 msgstr "NFSD Kernel Server autostart"
 
-#: panel_settings_autostart.h:327
-msgid "samba server"
-msgstr "Samba Server autostart"
+#: panel_settings_autostart.h:327 settings_autostart.h:576 tpk_showname.h:118
+msgid "Samba Server"
+msgstr ""
 
 #: panel_settings_autostart.h:336 settings_autostart.h:585
 msgid "scan wlan"
@@ -5414,11 +5461,6 @@ msgstr ""
 msgid "TiThek - Favorite Edit"
 msgstr "Favoriten bearbeiten"
 
-#: plugins_tithek_skin.xml.h:20 skin_default_skin.xml.h:709
-#: skins_tithek_skin.xml.h:20
-msgid "Title"
-msgstr "Titel"
-
 #: plugins_tithek_skin.xml.h:21 skin_default_skin.xml.h:740
 #: skins_tithek_skin.xml.h:21
 msgid "Type"
@@ -6269,10 +6311,6 @@ msgstr "Frontend kann nicht geöffnet werden oder unbekannter Typ"
 msgid "Channellist empty or corrupt (channel not found)!"
 msgstr "Senderliste fehlerhaft (Kanal nicht gefunden)!"
 
-#: settings_autostart.h:62 tmc.h:387
-msgid "Status"
-msgstr ""
-
 #: settings_autostart.h:206
 msgid "swts"
 msgstr "Lade stmdvb.ko mit der swts Option"
@@ -6280,10 +6318,6 @@ msgstr "Lade stmdvb.ko mit der swts Option"
 #: settings_autostart.h:215
 msgid "Cam Routing"
 msgstr "Lade stmdvb.ko mit der camRouting Option"
-
-#: settings_autostart.h:576 tpk_showname.h:118
-msgid "Samba Server"
-msgstr ""
 
 #: settings_autostart.h:594
 msgid "ntpdate"
@@ -7318,14 +7352,6 @@ msgstr "Schutzintervall"
 msgid "Guardinterval:"
 msgstr "Schutzintervall:"
 
-#: skin_default_skin.xml.h:277 webif_index.atemio510.h:6
-#: webif_index.atemio5200.h:6 webif_index.atemio6000.h:6
-#: webif_index.atemio6100.h:6 webif_index.atemio6200.h:6
-#: webif_index.atemio7600.h:4 webif_index.atemio-nemesis.h:6 webif_index.h:6
-#: webif_powercontrol.h:3
-msgid "GUI Restart"
-msgstr "Titan Neustart"
-
 #: skin_default_skin.xml.h:278
 msgid "h"
 msgstr ""
@@ -7364,7 +7390,8 @@ msgstr "Hier können Sie Ihre Einstellungen sichern und wiederherstellen"
 
 #: skin_default_skin.xml.h:288
 msgid "Here you can check the reception of the current station."
-msgstr "Hier können Sie die Signalqualität des aktuellen Senders überprüfen"
+msgstr ""
+"Hier können Sie die Signalqualität des aktuellen Senders überprüfen"
 
 #: skin_default_skin.xml.h:289
 msgid ""
@@ -8684,7 +8711,7 @@ msgstr "gespeicherte Position"
 msgid "Stream Path"
 msgstr "Ordner für Stream"
 
-#: skin_default_skin.xml.h:666
+#: skin_default_skin.xml.h:666 webif_streamconfig.h:6
 msgid "Stream Port"
 msgstr ""
 
@@ -12907,13 +12934,16 @@ msgstr "Gelb"
 msgid "Blue"
 msgstr "Blau"
 
-#: webif_index.atemio5200.h:55 webif_index.atemio6200.h:55
+#: webif_index.atemio5200.h:55 webif_index.atemio5200.h:114
+#: webif_index.atemio6200.h:55 webif_index.atemio6200.h:114
 #: webif_index.atemio7600.h:103 webif_index.atemio-nemesis.h:55
-#: webif_rc.atemio520.h:40 webif_rc.atemio530.h:40 webif_rc.atemio7600.h:36
-#: webif_rc_virtual.atemio5200.h:14 webif_rc_virtual.atemio520.h:14
-#: webif_rc_virtual.atemio530.h:14 webif_rc_virtual.atemio6000.h:14
-#: webif_rc_virtual.atemio6100.h:14 webif_rc_virtual.atemio6200.h:14
-#: webif_rc_virtual.atemio-nemesis.h:14
+#: webif_index.atemio-nemesis.h:114 webif_rc.atemio5200.h:41
+#: webif_rc.atemio520.h:40 webif_rc.atemio530.h:40 webif_rc.atemio6000.h:41
+#: webif_rc.atemio6100.h:41 webif_rc.atemio6200.h:41 webif_rc.atemio7600.h:36
+#: webif_rc.atemio-nemesis.h:41 webif_rc_virtual.atemio5200.h:14
+#: webif_rc_virtual.atemio520.h:14 webif_rc_virtual.atemio530.h:14
+#: webif_rc_virtual.atemio6000.h:14 webif_rc_virtual.atemio6100.h:14
+#: webif_rc_virtual.atemio6200.h:14 webif_rc_virtual.atemio-nemesis.h:14
 msgid "Fast Rewind"
 msgstr "Schneller Rücklauf"
 
@@ -12978,11 +13008,15 @@ msgstr ""
 msgid "Plugin"
 msgstr ""
 
-#: webif_index.atemio5200.h:64 webif_index.atemio6200.h:64
-#: webif_index.atemio7600.h:112 webif_index.atemio-nemesis.h:64
-#: webif_rc.atemio7600.h:45
-msgid "Pip"
-msgstr "PiP"
+#: webif_index.atemio5200.h:64 webif_index.atemio5200.h:120
+#: webif_index.atemio6200.h:64 webif_index.atemio6200.h:120
+#: webif_index.atemio7600.h:23 webif_index.atemio7600.h:112
+#: webif_index.atemio-nemesis.h:120 webif_rc.atemio510.h:8
+#: webif_rc.atemio5200.h:47 webif_rc.atemio520.h:6 webif_rc.atemio530.h:6
+#: webif_rc.atemio6000.h:47 webif_rc.atemio6100.h:47 webif_rc.atemio6200.h:47
+#: webif_rc.atemio-nemesis.h:47 webif_rc_virtual.atemio510.h:8
+msgid "PiP"
+msgstr ""
 
 #: webif_index.atemio5200.h:66 webif_index.atemio5200.h:122
 #: webif_index.atemio6200.h:66 webif_index.atemio6200.h:122
@@ -13046,22 +13080,6 @@ msgstr "EPG"
 msgid "Recall"
 msgstr ""
 
-#: webif_index.atemio5200.h:114 webif_index.atemio6200.h:114
-#: webif_index.atemio-nemesis.h:114 webif_rc.atemio5200.h:41
-#: webif_rc.atemio6000.h:41 webif_rc.atemio6100.h:41 webif_rc.atemio6200.h:41
-#: webif_rc.atemio-nemesis.h:41
-msgid "Fast Rewird"
-msgstr "Fast Rewind"
-
-#: webif_index.atemio5200.h:120 webif_index.atemio6200.h:120
-#: webif_index.atemio7600.h:23 webif_index.atemio-nemesis.h:120
-#: webif_rc.atemio510.h:8 webif_rc.atemio5200.h:47 webif_rc.atemio520.h:6
-#: webif_rc.atemio530.h:6 webif_rc.atemio6000.h:47 webif_rc.atemio6100.h:47
-#: webif_rc.atemio6200.h:47 webif_rc.atemio-nemesis.h:47
-#: webif_rc_virtual.atemio510.h:8
-msgid "PiP"
-msgstr ""
-
 #: webif_index.atemio5200.h:128 webif_index.atemio6200.h:128
 #: webif_index.atemio7600.h:120 webif_index.atemio-nemesis.h:128
 msgid "switch to virtual remote"
@@ -13111,14 +13129,18 @@ msgstr ""
 msgid "Page Down"
 msgstr "Seite runter"
 
-#: webif_index.atemio7600.h:113 webif_rc.atemio7600.h:46
-msgid "Pip Switch"
+#: webif_index.atemio7600.h:113
+msgid "PiP Switch"
 msgstr ""
 
 #: webif_index.atemio7600.h:114 webif_rc.atemio520.h:36
 #: webif_rc.atemio530.h:36 webif_rc.atemio7600.h:47
 msgid "Archive"
 msgstr ""
+
+#: webif_index.atemio-nemesis.h:64 webif_rc.atemio7600.h:45
+msgid "Pip"
+msgstr "PiP"
 
 #: webif_info.h:7 webif_info_logs.h:1
 msgid "Logs"
@@ -13181,6 +13203,10 @@ msgstr "Fenster schließen"
 msgid "Tv/Radio"
 msgstr ""
 
+#: webif_rc.atemio7600.h:46
+msgid "Pip Switch"
+msgstr ""
+
 #: webif_shootmain.h:1
 msgid "Screenshot create"
 msgstr "erstelle Screenshot"
@@ -13225,10 +13251,6 @@ msgstr ""
 msgid "Oplayer HD lite"
 msgstr ""
 
-#: webif_streamconfig.h:6
-msgid "Streamport"
-msgstr ""
-
 #: webif_timer.h:1
 msgid "Timer List"
 msgstr "Timer Liste"
@@ -13264,3 +13286,15 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
+
+#~ msgid "Gui Restart"
+#~ msgstr "Titan Neustart"
+
+#~ msgid "title"
+#~ msgstr "Titel"
+
+#~ msgid "samba server"
+#~ msgstr "Samba Server autostart"
+
+#~ msgid "Fast Rewird"
+#~ msgstr "Fast Rewind"

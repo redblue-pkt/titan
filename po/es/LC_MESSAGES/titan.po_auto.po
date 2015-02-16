@@ -412,8 +412,12 @@ msgstr "Reposo"
 msgid "Restart"
 msgstr "Reiniciar"
 
-#: adjust.h:114 httpdfunc.h:3943
-msgid "Gui Restart"
+#: adjust.h:114 httpdfunc.h:3943 skin_default_skin.xml.h:277
+#: webif_index.atemio510.h:6 webif_index.atemio5200.h:6
+#: webif_index.atemio6000.h:6 webif_index.atemio6100.h:6
+#: webif_index.atemio6200.h:6 webif_index.atemio7600.h:4
+#: webif_index.atemio-nemesis.h:6 webif_index.h:6 webif_powercontrol.h:3
+msgid "GUI Restart"
 msgstr "Reiniciar Titan"
 
 #: adjust.h:121 adjust.h:131 adjust.h:185 epgsettings.h:147 epgsettings.h:153
@@ -3451,8 +3455,9 @@ msgstr "Archivo"
 msgid "path"
 msgstr "Pelicula ruta"
 
-#: mediadb.h:2518
-msgid "title"
+#: mediadb.h:2518 plugins_tithek_skin.xml.h:20 skin_default_skin.xml.h:709
+#: skins_tithek_skin.xml.h:20
+msgid "Title"
 msgstr "Titulo"
 
 #: mediadb.h:2522
@@ -3958,8 +3963,8 @@ msgstr "alta"
 msgid "showip"
 msgstr "Mostrar Direccion IP"
 
-#: panel_settings_autostart.h:70
-msgid "status"
+#: panel_settings_autostart.h:70 settings_autostart.h:62 tmc.h:387
+msgid "Status"
 msgstr ""
 
 #: panel_settings_autostart.h:70 settings_autostart.h:62
@@ -4054,9 +4059,9 @@ msgstr "PL2303 Modulo"
 msgid "nfs server"
 msgstr "NFS Servidor"
 
-#: panel_settings_autostart.h:327
-msgid "samba server"
-msgstr "Samba Servidor"
+#: panel_settings_autostart.h:327 settings_autostart.h:576 tpk_showname.h:118
+msgid "Samba Server"
+msgstr ""
 
 #: panel_settings_autostart.h:336 settings_autostart.h:585
 msgid "scan wlan"
@@ -5455,11 +5460,6 @@ msgstr ""
 msgid "TiThek - Favorite Edit"
 msgstr "Editar Favorito"
 
-#: plugins_tithek_skin.xml.h:20 skin_default_skin.xml.h:709
-#: skins_tithek_skin.xml.h:20
-msgid "Title"
-msgstr "Titulo"
-
 #: plugins_tithek_skin.xml.h:21 skin_default_skin.xml.h:740
 #: skins_tithek_skin.xml.h:21
 msgid "Type"
@@ -6309,10 +6309,6 @@ msgstr ""
 msgid "Channellist empty or corrupt (channel not found)!"
 msgstr "Lista de canales vacíos o corruptos (canal no encontrado)!"
 
-#: settings_autostart.h:62 tmc.h:387
-msgid "Status"
-msgstr ""
-
 #: settings_autostart.h:206
 msgid "swts"
 msgstr "Dejar carga stmdvb.ko con la opcion wts "
@@ -6320,10 +6316,6 @@ msgstr "Dejar carga stmdvb.ko con la opcion wts "
 #: settings_autostart.h:215
 msgid "Cam Routing"
 msgstr "Dejar carga Stmdvb.ko con opcion CamRouting "
-
-#: settings_autostart.h:576 tpk_showname.h:118
-msgid "Samba Server"
-msgstr ""
 
 #: settings_autostart.h:594
 msgid "ntpdate"
@@ -7342,14 +7334,6 @@ msgstr ""
 #: skin_default_skin.xml.h:276
 msgid "Guardinterval:"
 msgstr ""
-
-#: skin_default_skin.xml.h:277 webif_index.atemio510.h:6
-#: webif_index.atemio5200.h:6 webif_index.atemio6000.h:6
-#: webif_index.atemio6100.h:6 webif_index.atemio6200.h:6
-#: webif_index.atemio7600.h:4 webif_index.atemio-nemesis.h:6 webif_index.h:6
-#: webif_powercontrol.h:3
-msgid "GUI Restart"
-msgstr "Reiniciar Titan"
 
 #: skin_default_skin.xml.h:278
 msgid "h"
@@ -8639,7 +8623,7 @@ msgstr ""
 msgid "Stream Path"
 msgstr ""
 
-#: skin_default_skin.xml.h:666
+#: skin_default_skin.xml.h:666 webif_streamconfig.h:6
 msgid "Stream Port"
 msgstr ""
 
@@ -12846,13 +12830,16 @@ msgstr ""
 msgid "Blue"
 msgstr ""
 
-#: webif_index.atemio5200.h:55 webif_index.atemio6200.h:55
+#: webif_index.atemio5200.h:55 webif_index.atemio5200.h:114
+#: webif_index.atemio6200.h:55 webif_index.atemio6200.h:114
 #: webif_index.atemio7600.h:103 webif_index.atemio-nemesis.h:55
-#: webif_rc.atemio520.h:40 webif_rc.atemio530.h:40 webif_rc.atemio7600.h:36
-#: webif_rc_virtual.atemio5200.h:14 webif_rc_virtual.atemio520.h:14
-#: webif_rc_virtual.atemio530.h:14 webif_rc_virtual.atemio6000.h:14
-#: webif_rc_virtual.atemio6100.h:14 webif_rc_virtual.atemio6200.h:14
-#: webif_rc_virtual.atemio-nemesis.h:14
+#: webif_index.atemio-nemesis.h:114 webif_rc.atemio5200.h:41
+#: webif_rc.atemio520.h:40 webif_rc.atemio530.h:40 webif_rc.atemio6000.h:41
+#: webif_rc.atemio6100.h:41 webif_rc.atemio6200.h:41 webif_rc.atemio7600.h:36
+#: webif_rc.atemio-nemesis.h:41 webif_rc_virtual.atemio5200.h:14
+#: webif_rc_virtual.atemio520.h:14 webif_rc_virtual.atemio530.h:14
+#: webif_rc_virtual.atemio6000.h:14 webif_rc_virtual.atemio6100.h:14
+#: webif_rc_virtual.atemio6200.h:14 webif_rc_virtual.atemio-nemesis.h:14
 msgid "Fast Rewind"
 msgstr ""
 
@@ -12917,10 +12904,14 @@ msgstr ""
 msgid "Plugin"
 msgstr ""
 
-#: webif_index.atemio5200.h:64 webif_index.atemio6200.h:64
-#: webif_index.atemio7600.h:112 webif_index.atemio-nemesis.h:64
-#: webif_rc.atemio7600.h:45
-msgid "Pip"
+#: webif_index.atemio5200.h:64 webif_index.atemio5200.h:120
+#: webif_index.atemio6200.h:64 webif_index.atemio6200.h:120
+#: webif_index.atemio7600.h:23 webif_index.atemio7600.h:112
+#: webif_index.atemio-nemesis.h:120 webif_rc.atemio510.h:8
+#: webif_rc.atemio5200.h:47 webif_rc.atemio520.h:6 webif_rc.atemio530.h:6
+#: webif_rc.atemio6000.h:47 webif_rc.atemio6100.h:47 webif_rc.atemio6200.h:47
+#: webif_rc.atemio-nemesis.h:47 webif_rc_virtual.atemio510.h:8
+msgid "PiP"
 msgstr ""
 
 #: webif_index.atemio5200.h:66 webif_index.atemio5200.h:122
@@ -12985,22 +12976,6 @@ msgstr ""
 msgid "Recall"
 msgstr ""
 
-#: webif_index.atemio5200.h:114 webif_index.atemio6200.h:114
-#: webif_index.atemio-nemesis.h:114 webif_rc.atemio5200.h:41
-#: webif_rc.atemio6000.h:41 webif_rc.atemio6100.h:41 webif_rc.atemio6200.h:41
-#: webif_rc.atemio-nemesis.h:41
-msgid "Fast Rewird"
-msgstr ""
-
-#: webif_index.atemio5200.h:120 webif_index.atemio6200.h:120
-#: webif_index.atemio7600.h:23 webif_index.atemio-nemesis.h:120
-#: webif_rc.atemio510.h:8 webif_rc.atemio5200.h:47 webif_rc.atemio520.h:6
-#: webif_rc.atemio530.h:6 webif_rc.atemio6000.h:47 webif_rc.atemio6100.h:47
-#: webif_rc.atemio6200.h:47 webif_rc.atemio-nemesis.h:47
-#: webif_rc_virtual.atemio510.h:8
-msgid "PiP"
-msgstr ""
-
 #: webif_index.atemio5200.h:128 webif_index.atemio6200.h:128
 #: webif_index.atemio7600.h:120 webif_index.atemio-nemesis.h:128
 msgid "switch to virtual remote"
@@ -13050,13 +13025,17 @@ msgstr ""
 msgid "Page Down"
 msgstr ""
 
-#: webif_index.atemio7600.h:113 webif_rc.atemio7600.h:46
-msgid "Pip Switch"
+#: webif_index.atemio7600.h:113
+msgid "PiP Switch"
 msgstr ""
 
 #: webif_index.atemio7600.h:114 webif_rc.atemio520.h:36
 #: webif_rc.atemio530.h:36 webif_rc.atemio7600.h:47
 msgid "Archive"
+msgstr ""
+
+#: webif_index.atemio-nemesis.h:64 webif_rc.atemio7600.h:45
+msgid "Pip"
 msgstr ""
 
 #: webif_info.h:7 webif_info_logs.h:1
@@ -13120,6 +13099,10 @@ msgstr ""
 msgid "Tv/Radio"
 msgstr ""
 
+#: webif_rc.atemio7600.h:46
+msgid "Pip Switch"
+msgstr ""
+
 #: webif_shootmain.h:1
 msgid "Screenshot create"
 msgstr ""
@@ -13164,10 +13147,6 @@ msgstr ""
 msgid "Oplayer HD lite"
 msgstr ""
 
-#: webif_streamconfig.h:6
-msgid "Streamport"
-msgstr ""
-
 #: webif_timer.h:1
 msgid "Timer List"
 msgstr ""
@@ -13203,3 +13182,12 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Zap atras esta activado. Desea detener?"
+
+#~ msgid "Gui Restart"
+#~ msgstr "Reiniciar Titan"
+
+#~ msgid "title"
+#~ msgstr "Titulo"
+
+#~ msgid "samba server"
+#~ msgstr "Samba Servidor"
