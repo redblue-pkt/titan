@@ -745,7 +745,7 @@ void checkserial(char* input)
 
 #ifdef BETA
 	off64_t currtime = time(NULL);
-	off64_t buildtime = BUILDCODE);
+	off64_t buildtime = BUILDCODE;
 	printf("--------------------------------\n");
 	printf("currtime: %lld\n", currtime);
 	printf("buildtime: %lld\n", buildtime);
