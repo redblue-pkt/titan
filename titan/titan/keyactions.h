@@ -27,7 +27,7 @@ void screenkeyactions(int key, int flag)
 		{
 			while(child != NULL)
 			{
-				if(child->del == PLUGINDELMARK && (status.security == 1 || (status.security == 0 && checkpluginskip(child->name) == 0)))
+				if(child->del == PLUGINDELMARK && (status.security >= 1 || (status.security == 0 && checkpluginskip(child->name) == 0)))
 				{
 					if(!ostrncmp("TMDb", child->name, 4))
 					{
@@ -52,7 +52,7 @@ void screenkeyactions(int key, int flag)
 			addmenulist(&mlist, "Record Player", _("Record Player"), NULL, 0, 0);
 			while(child != NULL)
 			{
-				if(child->del == PLUGINDELMARK && (status.security == 1 || (status.security == 0 && checkpluginskip(child->name) == 0)))
+				if(child->del == PLUGINDELMARK && (status.security >= 1 || (status.security == 0 && checkpluginskip(child->name) == 0)))
 				{
 					if(ostrcmp(child->name, "Media Center") == 0)
 						addmenulist(&mlist, child->name, _(child->name), child->pic, 0, 0);			

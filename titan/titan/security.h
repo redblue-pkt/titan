@@ -660,7 +660,7 @@ void trialendemodethread(struct stimerthread* self)
 
 void trialcheckmodethread(struct stimerthread* self)
 {
-	sleep(20);
+	sleep(30);
 	off64_t currtime = time(NULL);
 	off64_t buildtime = BUILDCODE;
 	int trt = TRT;
@@ -671,7 +671,7 @@ void trialcheckmodethread(struct stimerthread* self)
 	tmpstr = ostrcat(tmpstr, " ", 1, 0);
 	tmpstr = ostrcat(tmpstr, "sec", 1, 0);
 
-	textbox(_("Info"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 5, 0);
+	textbox(_("Info"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
 	free(tmpstr), tmpstr = NULL;
 }
 
@@ -679,7 +679,7 @@ void checkserial(char* input)
 {
 	char* filename = "/var/etc/codepages/codepage.868", *pw = NULL, *buf = NULL;
 	unsigned char* authbuf = NULL;
-	int count = 0, i = 0, kill = 1;
+	int count = 0, i = 0, kill = 1, foundblacklist = 0;
 	off64_t len = 0;
 	struct splitstr* ret = NULL;
 
@@ -726,7 +726,7 @@ void checkserial(char* input)
 		writeserial(input);
 	}
 // ufs910 work end
-	
+
 	//Blacklist check
 	if(status.security == 1)
 	{
@@ -747,6 +747,7 @@ void checkserial(char* input)
 					if(ret != NULL && ostrcmp(input, ret[i].part) == 0)
 					{
 						status.security = 0;
+						foundblacklist = 1;
 						break;
 					}
 				}
@@ -758,6 +759,7 @@ void checkserial(char* input)
 						status.security = 0;
 						printf("error: 9\n");		
 						destroy();
+						foundblacklist = 1;
 						break;
 					}
 				}
@@ -768,7 +770,7 @@ void checkserial(char* input)
 	}
 
 #ifdef BETA
-	if(status.security == 0)
+	if(status.security == 0 && foundblacklist == 0)
 	{
 		off64_t currtime = time(NULL);
 		off64_t buildtime = BUILDCODE;
@@ -782,6 +784,7 @@ void checkserial(char* input)
 			startnet();
 			setskinnodeslocked(0);
 			kill = 0;
+			status.security = 2;
 		}
 	}
 #endif

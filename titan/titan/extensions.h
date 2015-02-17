@@ -474,7 +474,7 @@ void screenextensions_check(int flag)
 	struct hdd *node = NULL;
 	char* tmpstr = NULL, *tmpstr1 = NULL;
 
-	if(status.security == 1)
+	if(status.security >= 1)
 	{
 		addhddall();
 		node = hdd;

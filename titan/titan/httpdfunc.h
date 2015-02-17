@@ -4637,7 +4637,7 @@ printf("webadjust fmt: %d\n",fmt);
 	sendstr = ostrcat(sendstr, ", crosscontrol.value", 1 , 0);
 	
 ///////////////////
-	if(status.security == 1)
+	if(status.security >= 1)
 	{
 		ostrcatbig(&buf, "<tr><td><font class=\"label\">", &maxlen, &pos);
 		ostrcatbig(&buf, _("Deactivate Crypt Support on Media Playback"), &maxlen, &pos);
