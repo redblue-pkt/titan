@@ -2132,7 +2132,7 @@ char* getcurrentdir(char* path)
 
 char* convert_timesec(int sec)
 {
-	int hour = 0, min = 0, seconds = 0;
+	int hrs = 0, mins = 0, days = 0;
 	char* buf = NULL;
 
 	buf = malloc(9);
@@ -2142,20 +2142,64 @@ char* convert_timesec(int sec)
 		return NULL;
 	}
 
-	seconds = sec % 60;
-	min = (sec / 60) % 60;
-	hour = sec / 3600;
+	mins = (sec / 60) % 60;
+	hrs = mins / 60;
 
-	if(seconds < 0) seconds = 0;
-	if(min < 0) min = 0;
-	if(hour < 0 || hour > 23)
+	if(mins < 0) mins = 0;
+	if(hrs < 0) hrs = 0;
+	if(mins < 60) hrs = 0;
+
+	if(hrs < 24)
 	{
-		hour = 0;
-		min = 0;
-		seconds = 0;
+		days = 0;
+		hrs = hrs % 24;
+	}
+	else
+	{
+		days = hrs / 24;
+		hrs = hrs % 24;
+	}
+	if(hrs < 0) hrs = 0;
+	if(days < 0) days = 0;
+
+	snprintf(buf, 9, "%02d:%02d:%02d", days, hrs, min);
+
+	return buf;
+}
+
+char* convert_timesec2(int sec)
+{
+	int hrs = 0, mins = 0, days = 0;
+	char* buf = NULL;
+
+	buf = malloc(9);
+	if(buf == NULL)
+	{
+		err("no mem");
+		return NULL;
 	}
 
-	snprintf(buf, 9, "%02d:%02d:%02d", hour, min, seconds);
+	mins = (sec / 60) % 60;
+	hrs = mins / 60;
+
+	if(mins < 0) mins = 0;
+	if(hrs < 0) hrs = 0;
+	if(mins < 60) hrs = 0;
+
+	if(hrs < 24)
+	{
+		days = 0;
+		hrs = hrs % 24;
+	}
+	else
+	{
+		days = hrs / 24;
+		hrs = hrs % 24;
+	}
+	if(hrs < 0) hrs = 0;
+	if(days < 0) days = 0;
+
+	snprintf(buf, 9, "%02dDays %02dHrs %02dMin", days, hrs, mins);
 
 	return buf;
 }
