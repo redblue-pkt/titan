@@ -61,7 +61,7 @@ void screenvfdisplay()
 	changeinput(at7000frontsleep, "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15");
 	setchoiceboxselection(at7000frontsleep, getconfig("at7000frontsleep", NULL));
 
-	if(checkbox("ATEVIO7000") == 1)
+	if(checkbox("ATEVIO7000") == 1 && checkbox("Atemio7600") == 1)
 	{
 		at7000frontrun->hidden = NO;
 		at7000frontsleep->hidden = NO;
@@ -131,7 +131,7 @@ void screenvfdisplay()
 			addconfigint("vfdbrightness", vfdbrightness);
 			addconfigint("vfdstandbybrightness", vfdstandbybrightness);
 
-			if(checkbox("ATEVIO7000") == 1)
+			if(checkbox("ATEVIO7000") == 1 && checkbox("Atemio7600") == 1)
 			{
 				addconfigscreencheck("at7000frontrun", at7000frontrun, "0");
 				addconfigscreencheck("at7000frontsleep", at7000frontsleep, "0");
