@@ -26,10 +26,10 @@ echo 1111111
 echo "[gettitancode.sh] $str -> $code"
 cat ../titan.c | sed s/"^#define SYSCODE .*"/"#define SYSCODE $code"/ > titan.c.tmp
 mv -f titan.c.tmp ../titan.c
-echo 2222222
+echo 2222222 $ROOTDIR
 code=`cat $ROOTDIR/etc/image-version | cut -d= -f2`
 cat ../titan.c | sed s/"^#define TIMECODE .*"/"#define TIMECODE \"$code\""/ > titan.c.tmp
 mv -f titan.c.tmp ../titan.c
-echo 3333333
+echo 3333333 $ROOTDIR
 cat ../security.h | sed s/"^#define BUILDCODE .*"/"#define BUILDCODE $code"/ > security.h.tmp
 mv -f security.h.tmp ../security.h
