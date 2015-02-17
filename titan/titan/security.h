@@ -1,7 +1,8 @@
 #ifndef SECURITY_H
 #define SECURITY_H
 
-#define BUILDCODE ""
+#define BUILDCODE 1424136341
+#define TRT 1183000
 
 int checklowflash()
 {
@@ -651,11 +652,34 @@ int writeserial(char* cpuid)
 	return 0;
 }
 
+void trialendemodethread(struct stimerthread* self)
+{
+	sleep(30);
+	textbox(_("Info"), _("!!! Trial Test Time ended !!!\n\nfor new Trial Time install a New Nightly Image via USB\nor get a Serial Lizense from Atemio !!!\n\nContact:\nTel +49 (0) 6403/97759-0\nFax +49 (0) 6403/97759-10\nEmail info@atemio.de\nWebseite www.atemio.de"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 700, 0, 0);
+}
+
+void trialcheckmodethread(struct stimerthread* self)
+{
+	sleep(20);
+	off64_t currtime = time(NULL);
+	off64_t buildtime = BUILDCODE;
+	int trt = TRT;
+
+	char* tmpstr = NULL;
+	tmpstr = ostrcat(_("Trial Test Time ended in"), " ", 0, 0);
+	tmpstr = ostrcat(tmpstr, convert_timesec(buildtime + trt - currtime), 1, 1);
+	tmpstr = ostrcat(tmpstr, " ", 1, 0);
+	tmpstr = ostrcat(tmpstr, "sec", 1, 0);
+
+	textbox(_("Info"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 5, 0);
+	free(tmpstr), tmpstr = NULL;
+}
+
 void checkserial(char* input)
 {
 	char* filename = "/var/etc/codepages/codepage.868", *pw = NULL, *buf = NULL;
 	unsigned char* authbuf = NULL;
-	int count = 0, i = 0;
+	int count = 0, i = 0, kill = 1;
 	off64_t len = 0;
 	struct splitstr* ret = NULL;
 
@@ -744,14 +768,22 @@ void checkserial(char* input)
 	}
 
 #ifdef BETA
-	off64_t currtime = time(NULL);
-	off64_t buildtime = BUILDCODE;
-	printf("--------------------------------\n");
-	printf("currtime: %lld\n", currtime);
-	printf("buildtime: %lld\n", buildtime);
-	printf("--------------------------------\n");
-	if(buildtime + 600 >= currtime)
-		printf("demoversion done %lld + 600 >= %lld\n", buildtime, currtime);
+	if(status.security == 0)
+	{
+		off64_t currtime = time(NULL);
+		off64_t buildtime = BUILDCODE;
+		int trt = TRT;
+
+		if(currtime >= buildtime + trt)
+			addtimer(&trialendemodethread, START, 600000, -1, NULL, NULL, NULL);
+		else
+		{
+			addtimer(&trialcheckmodethread, START, 1000, 1, NULL, NULL, NULL);
+			startnet();
+			setskinnodeslocked(0);
+			kill = 0;
+		}
+	}
 #endif
 
 	if(status.security == 1)
@@ -763,7 +795,8 @@ void checkserial(char* input)
 	if(status.security == 0)
 		unlink(filename);
 	
-	killnet();
+	if(kill == 1)
+		killnet();
 }
 
 int checkprozess(char* input)
