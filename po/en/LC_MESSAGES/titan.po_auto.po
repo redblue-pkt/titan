@@ -12965,8 +12965,9 @@ msgstr ""
 msgid "TV / Radio"
 msgstr ""
 
-#: webif_index.atemio7600.h:21
-msgid "Archiv"
+#: webif_index.atemio7600.h:21 webif_index.atemio7600.h:114
+#: webif_rc.atemio520.h:36 webif_rc.atemio530.h:36 webif_rc.atemio7600.h:47
+msgid "Archive"
 msgstr ""
 
 #: webif_index.atemio7600.h:22
@@ -12999,11 +13000,6 @@ msgstr ""
 
 #: webif_index.atemio7600.h:113
 msgid "PiP Switch"
-msgstr ""
-
-#: webif_index.atemio7600.h:114 webif_rc.atemio520.h:36
-#: webif_rc.atemio530.h:36 webif_rc.atemio7600.h:47
-msgid "Archive"
 msgstr ""
 
 #: webif_index.atemio-nemesis.h:64 webif_rc.atemio7600.h:45
