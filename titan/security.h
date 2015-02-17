@@ -522,7 +522,7 @@ char* getcpuid()
 //			if(checkbox("ATEMIO5200") == 1 || checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1 || checkbox("ATEMIO6200") == 1)
 			if(check == 1)
 			{
-				printf("[titan] found real %s (use Free Lizense)\n", status.boxtype);
+				printf("[titan] found real %s (use Free License)\n", status.boxtype);
 				mac2 = ostrcat(mac2, "00", 1, 0);
 				mac2 = ostrcat(mac2, "00", 1, 0);
 				mac2 = ostrcat(mac2, "00", 1, 0);
@@ -655,7 +655,7 @@ int writeserial(char* cpuid)
 void trialendemodethread(struct stimerthread* self)
 {
 	sleep(30);
-	textbox(_("Info"), _("!!! Trial Test Time ended !!!\n\nfor new Trial Time install a New Nightly Image via USB\nor get a Serial Lizense from Atemio !!!\n\nContact:\nTel +49 (0) 6403/97759-0\nFax +49 (0) 6403/97759-10\nEmail info@atemio.de\nWebseite www.atemio.de"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 700, 0, 0);
+	textbox(_("Info"), _("!!! Trial period ended !!!\n\nFor new trial period install a new nightly image via USB\nor purchase a license from Atemio !!!\n\nContact:\nTel +49 (0) 6403/97759-0\nFax +49 (0) 6403/97759-10\nEmail info@atemio.de\nWebsite www.atemio.de"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 700, 0, 0);
 }
 
 void trialcheckmodethread(struct stimerthread* self)
@@ -666,7 +666,7 @@ void trialcheckmodethread(struct stimerthread* self)
 	int trt = TRT;
 
 	char* tmpstr = NULL;
-	tmpstr = ostrcat(_("Trial Test Time ended in"), " ", 0, 0);
+	tmpstr = ostrcat(_("Trial period ends in"), " ", 0, 0);
 	tmpstr = ostrcat(tmpstr, convert_timesec(buildtime + trt - currtime), 1, 1);
 	tmpstr = ostrcat(tmpstr, " ", 1, 0);
 	tmpstr = ostrcat(tmpstr, "sec", 1, 0);
