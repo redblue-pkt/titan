@@ -280,14 +280,18 @@ msgstr "Barre d'infos"
 
 #: adjust.h:71 adjust.h:326 httpdfunc.h:3767 play.h:1412
 #: skin_default_skin.xml.h:220 webif_index.atemio5200.h:34
-#: webif_index.atemio6200.h:34 webif_index.atemio7600.h:65
+#: webif_index.atemio5200.h:90 webif_index.atemio6200.h:34
+#: webif_index.atemio6200.h:90 webif_index.atemio7600.h:65
 #: webif_index.atemio7600.h:82 webif_index.atemio-nemesis.h:34
 #: webif_index.atemio-nemesis.h:90 webif_rc.atemio510.h:49
-#: webif_rc.atemio7600.h:15 webif_rc_virtual.atemio510.h:2
-#: webif_rc_virtual.atemio510.h:49 webif_rc_virtual.atemio5200.h:37
-#: webif_rc_virtual.atemio520.h:37 webif_rc_virtual.atemio530.h:37
-#: webif_rc_virtual.atemio6000.h:37 webif_rc_virtual.atemio6100.h:37
-#: webif_rc_virtual.atemio6200.h:37 webif_rc_virtual.atemio-nemesis.h:37
+#: webif_rc.atemio5200.h:17 webif_rc.atemio520.h:24 webif_rc.atemio530.h:24
+#: webif_rc.atemio6000.h:17 webif_rc.atemio6100.h:17 webif_rc.atemio6200.h:17
+#: webif_rc.atemio7600.h:15 webif_rc.atemio-nemesis.h:17
+#: webif_rc_virtual.atemio510.h:2 webif_rc_virtual.atemio510.h:49
+#: webif_rc_virtual.atemio5200.h:37 webif_rc_virtual.atemio520.h:37
+#: webif_rc_virtual.atemio530.h:37 webif_rc_virtual.atemio6000.h:37
+#: webif_rc_virtual.atemio6100.h:37 webif_rc_virtual.atemio6200.h:37
+#: webif_rc_virtual.atemio-nemesis.h:37
 msgid "EPG"
 msgstr ""
 
@@ -12734,13 +12738,6 @@ msgstr ""
 #: webif_rc.atemio6000.h:3 webif_rc.atemio6100.h:3 webif_rc.atemio6200.h:3
 #: webif_rc.atemio-nemesis.h:3
 msgid "Stb"
-msgstr ""
-
-#: webif_index.atemio5200.h:90 webif_index.atemio6200.h:90
-#: webif_rc.atemio5200.h:17 webif_rc.atemio520.h:24 webif_rc.atemio530.h:24
-#: webif_rc.atemio6000.h:17 webif_rc.atemio6100.h:17 webif_rc.atemio6200.h:17
-#: webif_rc.atemio-nemesis.h:17
-msgid "Epg"
 msgstr ""
 
 #: webif_index.atemio5200.h:101 webif_index.atemio6200.h:101
