@@ -70,10 +70,11 @@ msgstr "System Information"
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:31 scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1901
 #: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 scriptexec.h:41
-#: security.h:1741 service.h:738 service.h:983 shared.h:29 shared.h:65
-#: shared.h:82 skinadjust.h:349 skins_dlna_skin.xml.h:8 skinselector.h:237
-#: skins_facebook_skin.xml.h:5 skins_mboxinfo_skin.xml.h:2
-#: skins_mc_skin.xml.h:38 skins_optimize_skin.xml.h:3 skins_rgui_skin.xml.h:3
+#: security.h:658 security.h:674 security.h:1787 service.h:738 service.h:983
+#: shared.h:29 shared.h:65 shared.h:82 skinadjust.h:349
+#: skins_dlna_skin.xml.h:8 skinselector.h:237 skins_facebook_skin.xml.h:5
+#: skins_mboxinfo_skin.xml.h:2 skins_mc_skin.xml.h:38
+#: skins_optimize_skin.xml.h:3 skins_rgui_skin.xml.h:3
 #: skins_sudoku_skin.xml.h:13 skins_tiwakeup_skin.xml.h:3
 #: skins_wins3_skin.xml.h:3 sock.h:952 softcam.h:410 softcam.h:468
 #: softcam.h:469 solarmovie.h:35 solarmovie.h:47 solarmovie.h:304 spinner.h:18
@@ -180,38 +181,39 @@ msgstr "Ok"
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:31 scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1901
 #: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 scriptexec.h:41
-#: security.h:1741 service.h:738 service.h:983 shared.h:29 shared.h:65
-#: shared.h:82 skin_default_skin.xml.h:232 skins_autotimer_skin.xml.h:7
-#: skins_callmonitor1_skin.xml.h:11 skins_catcatch_skin.xml.h:4
-#: skins_dlna_skin.xml.h:2 skinselector.h:237 skins_facebook_skin.xml.h:4
-#: skins_instar_skin.xml.h:6 skins_lcdpearl1_skin.xml.h:7
-#: skins_lcdsamsung_skin.xml.h:8 skins_mboxinfo_skin.xml.h:1
-#: skins_mc_skin.xml.h:22 skins_optimize_skin.xml.h:2
-#: skins_panel_skin.xml.h:15 skins_rgui_skin.xml.h:2
-#: skins_stopifnotused_skin.xml.h:4 skins_sudoku_skin.xml.h:7
-#: skins_tiwakeup_skin.xml.h:2 skins_wins3_skin.xml.h:1 sock.h:952
-#: softcam.h:410 softcam.h:468 softcam.h:469 solarmovie.h:35 solarmovie.h:47
-#: solarmovie.h:304 spinner.h:18 stopifnotused.c:31 streamcloud.h:31
-#: streamcloud.h:74 streamcloud.h:84 streamcloud.h:97 streamcloud.h:128
-#: streamcloud.h:187 stream.h:33 system_backup_restore.h:31
-#: system_backup_restore.h:40 system_backup_restore.h:43
-#: system_backup_restore.h:51 system_backup_restore.h:80
-#: system_backup_restore.h:82 system_backup_restore.h:88
-#: system_backup_restore.h:95 system_update.h:257 system_update.h:263
-#: system_update.h:270 thefile.h:34 thefile.h:68 thefile.h:205 timeshift.h:113
-#: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
-#: titan.c:346 titan.c:355 titan.c:1009 titan.c:1018 titan.c:1146 titan.c:1167
-#: titan.c:1173 titan.c:1184 titan.c:1190 tithek.c:85 tithek_global.h:250
-#: tithek.h:670 tithek.h:1166 tithek.h:1227 tithek.h:1477 tithek.h:1499
-#: tithek.h:1515 tithek.h:2085 tithek.h:2112 tithek.h:2126 tithek.h:2136
-#: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
-#: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3211
-#: tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
-#: tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:931
-#: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:67
-#: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
-#: vidstream.h:167 xupnpd.h:60 xupnpd.h:71 xupnpd.h:73 xvidstage.h:54
-#: xvidstage.h:100 xvidstage.h:177 youtube.h:215 zapback.c:79 zdf.h:29
+#: security.h:658 security.h:674 security.h:1787 service.h:738 service.h:983
+#: shared.h:29 shared.h:65 shared.h:82 skin_default_skin.xml.h:232
+#: skins_autotimer_skin.xml.h:7 skins_callmonitor1_skin.xml.h:11
+#: skins_catcatch_skin.xml.h:4 skins_dlna_skin.xml.h:2 skinselector.h:237
+#: skins_facebook_skin.xml.h:4 skins_instar_skin.xml.h:6
+#: skins_lcdpearl1_skin.xml.h:7 skins_lcdsamsung_skin.xml.h:8
+#: skins_mboxinfo_skin.xml.h:1 skins_mc_skin.xml.h:22
+#: skins_optimize_skin.xml.h:2 skins_panel_skin.xml.h:15
+#: skins_rgui_skin.xml.h:2 skins_stopifnotused_skin.xml.h:4
+#: skins_sudoku_skin.xml.h:7 skins_tiwakeup_skin.xml.h:2
+#: skins_wins3_skin.xml.h:1 sock.h:952 softcam.h:410 softcam.h:468
+#: softcam.h:469 solarmovie.h:35 solarmovie.h:47 solarmovie.h:304 spinner.h:18
+#: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:84
+#: streamcloud.h:97 streamcloud.h:128 streamcloud.h:187 stream.h:33
+#: system_backup_restore.h:31 system_backup_restore.h:40
+#: system_backup_restore.h:43 system_backup_restore.h:51
+#: system_backup_restore.h:80 system_backup_restore.h:82
+#: system_backup_restore.h:88 system_backup_restore.h:95 system_update.h:257
+#: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
+#: thefile.h:205 timeshift.h:113 timeshift.h:161 timeshift.h:173
+#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1009
+#: titan.c:1018 titan.c:1146 titan.c:1167 titan.c:1173 titan.c:1184
+#: titan.c:1190 tithek.c:85 tithek_global.h:250 tithek.h:670 tithek.h:1166
+#: tithek.h:1227 tithek.h:1477 tithek.h:1499 tithek.h:1515 tithek.h:2085
+#: tithek.h:2112 tithek.h:2126 tithek.h:2136 tiwakeup.h:66 tiwakeup.h:68
+#: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
+#: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3211 tpk.new.h:3167 tsSchnitt.c:108
+#: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
+#: tsSchnitt.c:347 tunerconfig.h:931 unlock.h:20 unlock.h:66 unlock.h:71
+#: unlock.h:75 videomode.h:67 videoweed.h:35 videoweed.h:80 vidstream.h:45
+#: vidstream.h:86 vidstream.h:98 vidstream.h:167 xupnpd.h:60 xupnpd.h:71
+#: xupnpd.h:73 xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:215
+#: zapback.c:79 zdf.h:29
 msgid "EXIT"
 msgstr "Exit"
 
@@ -706,7 +708,7 @@ msgstr ""
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:31
 #: scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1646 scan.h:1901
-#: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 security.h:1741 service.h:738
+#: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 security.h:1787 service.h:738
 #: service.h:983 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:349
 #: skinselector.h:237 sock.h:952 softcam.h:410 softcam.h:468 softcam.h:469
 #: solarmovie.h:35 solarmovie.h:47 solarmovie.h:304 spinner.h:18
@@ -2958,22 +2960,23 @@ msgstr ""
 msgid "Email  \t\tinfo@atemio.de"
 msgstr ""
 
-#: info.h:27 plugins_tmc_skin.xml.h:9 skins_tmc_skin.xml.h:9 titan.c:1018
-#: webif_index.atemio510.h:15 webif_index.atemio5200.h:15
-#: webif_index.atemio5200.h:43 webif_index.atemio5200.h:99
-#: webif_index.atemio6000.h:15 webif_index.atemio6100.h:15
-#: webif_index.atemio6200.h:15 webif_index.atemio6200.h:43
-#: webif_index.atemio6200.h:99 webif_index.atemio7600.h:13
-#: webif_index.atemio7600.h:63 webif_index.atemio7600.h:83
-#: webif_index.atemio-nemesis.h:15 webif_index.atemio-nemesis.h:43
-#: webif_index.atemio-nemesis.h:99 webif_index.h:16 webif_rc.atemio510.h:5
-#: webif_rc.atemio5200.h:26 webif_rc.atemio520.h:23 webif_rc.atemio530.h:23
-#: webif_rc.atemio6000.h:26 webif_rc.atemio6100.h:26 webif_rc.atemio6200.h:26
-#: webif_rc.atemio7600.h:16 webif_rc.atemio-nemesis.h:26
-#: webif_rc_virtual.atemio510.h:5 webif_rc_virtual.atemio5200.h:35
-#: webif_rc_virtual.atemio520.h:35 webif_rc_virtual.atemio530.h:35
-#: webif_rc_virtual.atemio6000.h:35 webif_rc_virtual.atemio6100.h:35
-#: webif_rc_virtual.atemio6200.h:35 webif_rc_virtual.atemio-nemesis.h:35
+#: info.h:27 plugins_tmc_skin.xml.h:9 security.h:658 security.h:674
+#: skins_tmc_skin.xml.h:9 titan.c:1018 webif_index.atemio510.h:15
+#: webif_index.atemio5200.h:15 webif_index.atemio5200.h:43
+#: webif_index.atemio5200.h:99 webif_index.atemio6000.h:15
+#: webif_index.atemio6100.h:15 webif_index.atemio6200.h:15
+#: webif_index.atemio6200.h:43 webif_index.atemio6200.h:99
+#: webif_index.atemio7600.h:13 webif_index.atemio7600.h:63
+#: webif_index.atemio7600.h:83 webif_index.atemio-nemesis.h:15
+#: webif_index.atemio-nemesis.h:43 webif_index.atemio-nemesis.h:99
+#: webif_index.h:16 webif_rc.atemio510.h:5 webif_rc.atemio5200.h:26
+#: webif_rc.atemio520.h:23 webif_rc.atemio530.h:23 webif_rc.atemio6000.h:26
+#: webif_rc.atemio6100.h:26 webif_rc.atemio6200.h:26 webif_rc.atemio7600.h:16
+#: webif_rc.atemio-nemesis.h:26 webif_rc_virtual.atemio510.h:5
+#: webif_rc_virtual.atemio5200.h:35 webif_rc_virtual.atemio520.h:35
+#: webif_rc_virtual.atemio530.h:35 webif_rc_virtual.atemio6000.h:35
+#: webif_rc_virtual.atemio6100.h:35 webif_rc_virtual.atemio6200.h:35
+#: webif_rc_virtual.atemio-nemesis.h:35
 msgid "Info"
 msgstr ""
 
@@ -6282,6 +6285,24 @@ msgstr "Skript hat keine Ausgabe oder wurde im Hintergrund gestartet."
 #: scriptexec.h:41 tpk_showname.h:154 tpk_showname.h:155
 msgid "Script execute"
 msgstr "Skript ausführen"
+
+#: security.h:658
+msgid ""
+"!!! Trial period ended !!!\n"
+"\n"
+"For new trial period install a new nightly image via USB\n"
+"or purchase a license from Atemio !!!\n"
+"\n"
+"Contact:\n"
+"Tel +49 (0) 6403/97759-0\n"
+"Fax +49 (0) 6403/97759-10\n"
+"Email info@atemio.de\n"
+"Website www.atemio.de"
+msgstr ""
+
+#: security.h:669
+msgid "Trial period ends in"
+msgstr ""
 
 #: service.h:738
 msgid ""
