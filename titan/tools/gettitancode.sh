@@ -13,18 +13,17 @@ rm tmp
 rm tmp.gz
 rm tmp.lzma
 
-#if [ $TYPE == "ufs910" ];then
-#	dd if=$KERNELDIR of=tmp.lzma bs=1 skip=64
-#	lzma -d tmp.lzma
-#else
-	dd if=$KERNELDIR of=tmp.gz bs=1 skip=64
-	gzip -d tmp.gz
-#fi
-
 if [ "$CPU" = "sh4" ];then
+	#if [ $TYPE == "ufs910" ];then
+	#	dd if=$KERNELDIR of=tmp.lzma bs=1 skip=64
+	#	lzma -d tmp.lzma
+	#else
+		dd if=$KERNELDIR of=tmp.gz bs=1 skip=64
+		gzip -d tmp.gz
+	#fi
 	str=`strings tmp | grep "Linux version 2.6" | sed 's/Linux version //' | sed 's/(.*)//' | sed 's/  / /'`
 else
-	str=`strings tmp | grep "Linux version 3." | sed 's/Linux version //' | sed 's/(.*)//' | sed 's/  / /'`
+	str=`strings $KERNELDIR | grep "Linux version 3." | sed 's/Linux version //' | sed 's/(.*)//' | sed 's/  / /'`
 fi
 
 code=`./gettitancode "$str"`
