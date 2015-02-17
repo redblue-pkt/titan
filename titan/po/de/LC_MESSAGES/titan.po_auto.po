@@ -7164,20 +7164,20 @@ msgid "EPG button on EPG Screen"
 msgstr "EPG-Auswahl beim Betätigen der EPG-Taste in der Programminformation"
 
 #: skin_default_skin.xml.h:222
-msgid "Epgfreespace (KB)"
-msgstr "Frei zu verbleibender Speicher (KB)"
+msgid "EPGfreespace (KB)"
+msgstr ""
 
 #: skin_default_skin.xml.h:223
-msgid "Epg List Mode"
-msgstr "Hintergrundsuche"
+msgid "EPG List Mode"
+msgstr ""
 
 #: skin_default_skin.xml.h:224
 msgid "EPG Path"
 msgstr "Speicherpfad"
 
 #: skin_default_skin.xml.h:225
-msgid "Epg Refresh Time"
-msgstr "Aktualisierungszeit"
+msgid "EPG Refresh Time"
+msgstr ""
 
 #: skin_default_skin.xml.h:226
 msgid "EPG Reset"
@@ -13285,5 +13285,11 @@ msgstr ""
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
 
-#~ msgid "Pip"
-#~ msgstr "PiP"
+#~ msgid "Epgfreespace (KB)"
+#~ msgstr "Frei zu verbleibender Speicher (KB)"
+
+#~ msgid "Epg List Mode"
+#~ msgstr "Hintergrundsuche"
+
+#~ msgid "Epg Refresh Time"
+#~ msgstr "Aktualisierungszeit"
