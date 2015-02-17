@@ -667,9 +667,9 @@ void trialcheckmodethread(struct stimerthread* self)
 
 	char* tmpstr = NULL;
 	tmpstr = ostrcat(_("Trial period ends in"), " ", 0, 0);
-	tmpstr = ostrcat(tmpstr, convert_timesec(buildtime + trt - currtime), 1, 1);
-	tmpstr = ostrcat(tmpstr, " ", 1, 0);
-	tmpstr = ostrcat(tmpstr, "sec", 1, 0);
+	tmpstr = ostrcat(tmpstr, convert_timesec2(buildtime + trt - currtime), 1, 1);
+//	tmpstr = ostrcat(tmpstr, " ", 1, 0);
+//	tmpstr = ostrcat(tmpstr, "sec", 1, 0);
 
 	textbox(_("Info"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
 	free(tmpstr), tmpstr = NULL;
