@@ -2132,7 +2132,7 @@ char* getcurrentdir(char* path)
 
 char* convert_timesec(int sec)
 {
-	int hrs = 0, mins = 0, days = 0;
+	int hour = 0, min = 0, seconds = 0;
 	char* buf = NULL;
 
 	buf = malloc(9);
@@ -2142,27 +2142,20 @@ char* convert_timesec(int sec)
 		return NULL;
 	}
 
-	mins = (sec / 60) % 60;
-	hrs = mins / 60;
+	seconds = sec % 60;
+	min = (sec / 60) % 60;
+	hour = sec / 3600;
 
-	if(mins < 0) mins = 0;
-	if(hrs < 0) hrs = 0;
-	if(mins < 60) hrs = 0;
-
-	if(hrs < 24)
+	if(seconds < 0) seconds = 0;
+	if(min < 0) min = 0;
+	if(hour < 0 || hour > 23)
 	{
-		days = 0;
-		hrs = hrs % 24;
+		hour = 0;
+		min = 0;
+		seconds = 0;
 	}
-	else
-	{
-		days = hrs / 24;
-		hrs = hrs % 24;
-	}
-	if(hrs < 0) hrs = 0;
-	if(days < 0) days = 0;
 
-	snprintf(buf, 9, "%02d:%02d:%02d", days, hrs, min);
+	snprintf(buf, 9, "%02d:%02d:%02d", hour, min, seconds);
 
 	return buf;
 }
