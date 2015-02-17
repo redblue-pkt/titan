@@ -3764,7 +3764,7 @@ printf("webadjust fmt: %d\n",fmt);
 		ostrcatbig(&buf, "<option value=\"2\" selected>", &maxlen, &pos);		
 	else
 		ostrcatbig(&buf, "<option value=\"2\">", &maxlen, &pos);
-	ostrcatbig(&buf, _("epg"), &maxlen, &pos);
+	ostrcatbig(&buf, _("EPG"), &maxlen, &pos);
 	ostrcatbig(&buf, "</option>", &maxlen, &pos);
 
 	if(getconfigint("secondinfobar", NULL) == 3)

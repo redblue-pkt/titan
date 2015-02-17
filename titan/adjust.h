@@ -68,7 +68,7 @@ void screenadjust()
 
 	addchoicebox(secondinfobar, "0", _("no"));
 	addchoicebox(secondinfobar, "1", _("infobar"));
-	addchoicebox(secondinfobar, "2", _("epg"));
+	addchoicebox(secondinfobar, "2", _("EPG"));
 	addchoicebox(secondinfobar, "3", _("Channel EPG"));
 	setchoiceboxselection(secondinfobar, getconfig("secondinfobar", NULL));
 
