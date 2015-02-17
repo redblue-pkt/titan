@@ -6,6 +6,8 @@ SRCDIR=$4
 
 cd "$HOME"/flashimg/$SRCDIR/titan/tools
 
+echo 000000 "$HOME"/flashimg/$SRCDIR/titan/tools
+
 rm tmp
 rm tmp.gz
 rm tmp.lzma
@@ -22,14 +24,14 @@ str=`strings tmp | grep "Linux version 2.6" | sed 's/Linux version //' | sed 's/
 
 code=`./gettitancode "$str"`
 code="$code"UL
-echo 1111111
+echo 1111111 code1: $code
 echo "[gettitancode.sh] $str -> $code"
 cat ../titan.c | sed s/"^#define SYSCODE .*"/"#define SYSCODE $code"/ > titan.c.tmp
 mv -f titan.c.tmp ../titan.c
-echo 2222222 $ROOTDIR
+echo 2222222 code2: $code ROOTDIR: $ROOTDIR
 code=`cat $ROOTDIR/etc/image-version | cut -d= -f2`
-cat ../titan.c | sed s/"^#define TIMECODE .*"/"#define TIMECODE \"$code\""/ > titan.c.tmp
+cat ../titan.c | sed "s/^#define TIMECODE .*/#define TIMECODE \"$code\"/" > titan.c.tmp
 mv -f titan.c.tmp ../titan.c
-echo 3333333 $ROOTDIR
-cat ../security.h | sed s/"^#define BUILDCODE .*"/"#define BUILDCODE $code"/ > security.h.tmp
+echo 3333333 code2: $code ROOTDIR: $ROOTDIR
+cat ../security.h | sed "s/^#define BUILDCODE .*/#define BUILDCODE $code/" > security.h.tmp
 mv -f security.h.tmp ../security.h
