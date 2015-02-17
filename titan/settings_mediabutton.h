@@ -13,7 +13,7 @@ void screensettings_mediabutton()
 
 	while(child != NULL)
 	{
-		if(child->del == PLUGINDELMARK && (status.security == 1 || (status.security == 0 && checkpluginskip(child->name) == 0)))
+		if(child->del == PLUGINDELMARK && (status.security >= 1 || (status.security == 0 && checkpluginskip(child->name) == 0)))
 		{
 			if(ostrcmp(child->name, "Media Center") == 0)
 			{

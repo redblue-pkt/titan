@@ -689,7 +689,7 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 	//add plugins
 	while(child != NULL)
 	{
-		if(child->del == PLUGINDELMARK && (status.security == 1 || (status.security == 0 && checkpluginskip(child->name) == 0)))
+		if(child->del == PLUGINDELMARK && (status.security >= 1 || (status.security == 0 && checkpluginskip(child->name) == 0)))
 		{
 			if(ostrcmp(child->name, "Streaminfo") == 0 && status.play == 1)
 				addmenulist(&mlist, child->name, _(child->name), child->pic, 0, 0);
