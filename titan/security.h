@@ -878,13 +878,13 @@ void killnet()
 
 unsigned long getsysinfo()
 {
-
+/*
 #ifdef MIPSEL
 	debug(10, "syscode: skipped");
 	debug(10, "boxtype: %s", getboxtype());
 	return 0;
 #endif
-
+*/
 	char* tmpstr = NULL;
 	struct utsname info;
 	int i = 0, len = 0;
