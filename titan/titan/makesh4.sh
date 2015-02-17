@@ -14,7 +14,8 @@ GROUP=${13}
 DISTRO=${14}
 ARCH=${15}
 SRCDIR=${16}
-TYPE1=${17}
+CPU=${17}
+TYPE1=${18}
 
 rm "$HOME"/flashimg/.ipk-build-error
 
@@ -157,7 +158,7 @@ echo "[titan]--------------------------------------------------------"
 #echo "[titan] Make Securety"
 #echo "[titan]--------------------------------------------------------"
 
-"$HOME"/flashimg/$SRCDIR/titan/tools/gettitancode.sh $KERNELDIR $ROOTDIR $TYPE $SRCDIR
+"$HOME"/flashimg/$SRCDIR/titan/tools/gettitancode.sh $KERNELDIR $ROOTDIR $TYPE $SRCDIR $CPU
 
 #echo "[titan]--------------------------------------------------------"
 #echo "[titan] Security done"

@@ -3,6 +3,7 @@ KERNELDIR=$1
 ROOTDIR=$2
 TYPE=$3
 SRCDIR=$4
+CPU=$5
 
 cd "$HOME"/flashimg/$SRCDIR/titan/tools
 
@@ -20,7 +21,11 @@ rm tmp.lzma
 	gzip -d tmp.gz
 #fi
 
-str=`strings tmp | grep "Linux version 2.6" | sed 's/Linux version //' | sed 's/(.*)//' | sed 's/  / /'`
+if [ "$CPU" = "sh4" ];then
+	str=`strings tmp | grep "Linux version 2.6" | sed 's/Linux version //' | sed 's/(.*)//' | sed 's/  / /'`
+else
+	str=`strings tmp | grep "Linux version 3." | sed 's/Linux version //' | sed 's/(.*)//' | sed 's/  / /'`
+fi
 
 code=`./gettitancode "$str"`
 code="$code"UL
