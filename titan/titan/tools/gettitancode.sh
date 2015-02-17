@@ -6,7 +6,7 @@ SRCDIR=$4
 
 cd "$HOME"/flashimg/$SRCDIR/titan/tools
 
-echo 000000 "$HOME"/flashimg/$SRCDIR/titan/tools
+echo 000000 "$HOME"/flashimg/$SRCDIR/titan/tools $KERNELDIR
 
 rm tmp
 rm tmp.gz
