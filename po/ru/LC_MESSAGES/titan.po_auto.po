@@ -7093,11 +7093,11 @@ msgid "EPG button on EPG Screen"
 msgstr ""
 
 #: skin_default_skin.xml.h:222
-msgid "Epgfreespace (KB)"
+msgid "EPGfreespace (KB)"
 msgstr ""
 
 #: skin_default_skin.xml.h:223
-msgid "Epg List Mode"
+msgid "EPG List Mode"
 msgstr ""
 
 #: skin_default_skin.xml.h:224
@@ -7105,7 +7105,7 @@ msgid "EPG Path"
 msgstr ""
 
 #: skin_default_skin.xml.h:225
-msgid "Epg Refresh Time"
+msgid "EPG Refresh Time"
 msgstr ""
 
 #: skin_default_skin.xml.h:226
