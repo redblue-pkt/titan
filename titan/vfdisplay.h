@@ -14,8 +14,9 @@ void screenvfdisplay()
 	struct skin* vfdrecord = getscreennode(vfdisplay, "vfdrecord");
 	struct skin* at7000frontrun = getscreennode(vfdisplay, "at7000frontrun");
 	struct skin* at7000frontsleep = getscreennode(vfdisplay, "at7000frontsleep");
+	struct skin* oled_sel = getscreennode(vfdisplay, "oled_sel");
 	struct skin* tmp = NULL;
-
+	
 	if(brightness != NULL)
 	{
 		vfdbrightness = getconfigint("vfdbrightness", NULL);
@@ -27,6 +28,26 @@ void screenvfdisplay()
 		standby->progresssize = (int)ceil(((float)vfdstandbybrightness * 14.28));
 	}
 
+	if(checkbox("ATEMIO-NEMESIS"))
+	{
+		if(checkscreen("OLED_nemesis") != status.skinerr)
+			addchoicebox(oled_sel, "OLED_nemesis", "v1");
+		if(checkscreen("OLED_nemesis_v2") != status.skinerr)
+			addchoicebox(oled_sel, "OLED_nemesis_v2","v2");
+		if(checkscreen("OLED_nemesis_v3") != status.skinerr)
+			addchoicebox(oled_sel, "OLED_nemesis_v3","v3");
+		if(checkscreen("OLED_nemesis_v4") != status.skinerr)
+			addchoicebox(oled_sel, "OLED_nemesis_v4","v4");
+		if(checkscreen("OLED_nemesis_v5") != status.skinerr)
+			addchoicebox(oled_sel, "OLED_nemesis_v5","v5");
+		if(checkscreen("OLED_nemesis_v6") != status.skinerr)
+			addchoicebox(oled_sel, "OLED_nemesis_v6","v6");
+
+		setchoiceboxselection(oled_sel, getskinconfig("OLED_nemesis", NULL));
+	}
+	else
+		oled_sel->hidden = YES;
+	
 	if(checkbox("ATEMIO530") == 0 && checkbox("ATEMIO520") == 0 && checkbox("IPBOX91") == 0 && checkbox("ATEMIO6000") == 0 && checkbox("ATEMIO6100") == 0 && checkbox("SPARK") == 0)
 	{
 		addchoicebox(vfdnotstandby, "0", _("channel"));
@@ -83,6 +104,19 @@ void screenvfdisplay()
 		tmp = listbox->select;
 	
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
+		
+		if((rcret == getrcconfigint("rcleft", NULL) || rcret == getrcconfigint("rcright", NULL)) && checkbox("ATEMIO-NEMESIS") == 1 && listbox->select != NULL && ostrcmp(listbox->select->name, "oled_sel") == 0)
+		{
+			tmpstr = ostrcat(tmpstr, oled_sel->ret, 0, 0);
+			struct skin* OLED_nemesis = getscreen(tmpstr);
+			if(status.skinerr == OLED_nemesis)
+				OLED_nemesis = getscreen("OLED_nemesis");
+			struct skin* textbox = getscreennode(OLED_nemesis, "textbox");
+			changetext(textbox, tmpstr);
+			drawscreen(OLED_nemesis, 0, 0);
+			free(tmpstr);tmpstr=NULL;
+		}
+		
 		if(listbox->select != NULL && ostrcmp(listbox->select->name, "brightness") == 0)
 		{
 			if(rcret == getrcconfigint("rcright", NULL))
@@ -139,6 +173,9 @@ void screenvfdisplay()
 				system(tmpstr);
 				free(tmpstr); tmpstr=NULL;
 			}
+			
+			if(checkbox("ATEMIO-NEMESIS"))
+				addskinconfigscreencheck("OLED_nemesis", oled_sel, "0");
 
 			break;
 		}
