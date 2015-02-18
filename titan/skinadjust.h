@@ -232,7 +232,7 @@ void screenskinadjust()
 				cmd = ostrcat(cmd, "/skinconfig ", 1, 0);
 				cmd = ostrcat(cmd, getconfig("skinconfig", NULL), 1, 0);
 			}
-			printf("cmd: %cmd\n");	
+			printf("cmd: %s\n", cmd);	
 			system(cmd);
 			free(cmd); cmd = NULL;
 
