@@ -859,7 +859,7 @@ msgstr ""
 
 #: bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2793 httpdfunc.h:2805
 #: httpdfunc.h:5450 httpdfunc.h:5496 hwtest.h:478 moduleconfig.h:345
-#: security.h:1957 skin_default_skin.xml.h:750 skinselector.h:138 stream.h:22
+#: security.h:1958 skin_default_skin.xml.h:750 skinselector.h:138 stream.h:22
 #: transponder.h:122 transponder.h:158 transponder.h:194 transponder.h:227
 #: transponder.h:259 transponder.h:295 transponder.h:330 transponder.h:348
 #: transponder.h:364 transponder.h:418 transponder.h:451 transponder.h:480
@@ -6216,11 +6216,11 @@ msgid ""
 "Website www.atemio.de"
 msgstr ""
 
-#: security.h:671 security.h:1936
+#: security.h:671 security.h:1937
 msgid "Trial period ends in"
 msgstr ""
 
-#: security.h:673 security.h:1938
+#: security.h:673 security.h:1939
 msgid " Days "
 msgstr ""
 
@@ -6232,19 +6232,19 @@ msgstr ""
 msgid "Version"
 msgstr "Versie"
 
-#: security.h:1924
+#: security.h:1925
 msgid "Frontcontroller"
 msgstr ""
 
-#: security.h:1943
+#: security.h:1944
 msgid "Copyright"
 msgstr "© Copyright"
 
-#: security.h:1952 skin_default_skin.xml.h:728
+#: security.h:1953 skin_default_skin.xml.h:728
 msgid "Tuner"
 msgstr ""
 
-#: security.h:1959 skin_default_skin.xml.h:734
+#: security.h:1960 skin_default_skin.xml.h:734
 msgid "Tunertype"
 msgstr "Tuner type"
 
