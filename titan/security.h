@@ -174,11 +174,12 @@ void freeblacklist(struct blacklist* node)
 
 void ckeckkillnetthread()
 {
+
 	int count = 0;
 	while(count < 12)
 	{
 		count++;
-		sleep(5);
+		sleep(40);
 		if(status.security == 0)
 			killnet();
 		else
@@ -506,6 +507,7 @@ char* getcpuid()
 			//6200 = ini-2000am = bcm7362 = 00:1E:C0 00:1A:B0
 
 			int check = 0;
+
 			if(checkbox("ATEMIO-NEMESIS") == 1 && checkrealbox("INI-8000AM") == 1 && checkchipset("BCM7424") == 1 && ostrcmp(mac1, "001EA0") == 0)
 				check = 1;
 			else if(checkbox("ATEMIO5200") == 1 && checkrealbox("INI-1000AM") == 1 && checkchipset("BCM7358") == 1 && ostrcmp(mac1, "001EA0") == 0)
@@ -519,7 +521,6 @@ char* getcpuid()
 			else if(checkbox("ATEMIO520") == 1 && checkrealbox("ATEMIO520") == 1 && ostrcmp(mac1, "00E124") == 0)
 				check = 1;
 
-//			if(checkbox("ATEMIO5200") == 1 || checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1 || checkbox("ATEMIO6200") == 1)
 			if(check == 1)
 			{
 				printf("[titan] found real %s (use Free License)\n", status.boxtype);
@@ -661,17 +662,17 @@ void trialendemodethread(struct stimerthread* self)
 void trialcheckmodethread(struct stimerthread* self)
 {
 	sleep(30);
+
 	off64_t currtime = time(NULL);
 	off64_t buildtime = BUILDCODE;
 	int trt = TRT;
 
 	char* tmpstr = NULL;
 	tmpstr = ostrcat(_("Trial period ends in"), " ", 0, 0);
-	tmpstr = ostrcat(tmpstr, convert_timesec2(buildtime + trt - currtime), 1, 1);
-//	tmpstr = ostrcat(tmpstr, " ", 1, 0);
-//	tmpstr = ostrcat(tmpstr, "sec", 1, 0);
+	tmpstr = ostrcat(tmpstr, convert_dtimesec(buildtime + trt - currtime), 1, 1);
+	tmpstr = string_replace("_", _(" Days "), tmpstr, 1);
 
-	textbox(_("Info"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0);
+	textbox(_("Info"), tmpstr, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 10, 0);
 	free(tmpstr), tmpstr = NULL;
 }
 
@@ -679,7 +680,7 @@ void checkserial(char* input)
 {
 	char* filename = "/var/etc/codepages/codepage.868", *pw = NULL, *buf = NULL;
 	unsigned char* authbuf = NULL;
-	int count = 0, i = 0, kill = 1, foundblacklist = 0;
+	int count = 0, i = 0, blacklist = 0;
 	off64_t len = 0;
 	struct splitstr* ret = NULL;
 
@@ -722,7 +723,7 @@ void checkserial(char* input)
 // ufs910 work start
 	if(checkbox("UFS910"))
 	{
-		status.security = 1;
+		status.security = 3;
 		writeserial(input);
 	}
 // ufs910 work end
@@ -747,7 +748,7 @@ void checkserial(char* input)
 					if(ret != NULL && ostrcmp(input, ret[i].part) == 0)
 					{
 						status.security = 0;
-						foundblacklist = 1;
+						blacklist = 1;
 						break;
 					}
 				}
@@ -759,7 +760,7 @@ void checkserial(char* input)
 						status.security = 0;
 						printf("error: 9\n");		
 						destroy();
-						foundblacklist = 1;
+						blacklist = 1;
 						break;
 					}
 				}
@@ -770,7 +771,7 @@ void checkserial(char* input)
 	}
 
 #ifdef BETA
-	if(status.security == 0 && foundblacklist == 0)
+	if(status.security == 0 && blacklist == 0)
 	{
 		off64_t currtime = time(NULL);
 		off64_t buildtime = BUILDCODE;
@@ -781,15 +782,12 @@ void checkserial(char* input)
 		else
 		{
 			addtimer(&trialcheckmodethread, START, 1000, 1, NULL, NULL, NULL);
-			startnet();
-			setskinnodeslocked(0);
-			kill = 0;
 			status.security = 2;
 		}
 	}
 #endif
 
-	if(status.security == 1)
+	if(status.security >= 1)
 	{
 		startnet();
 		setskinnodeslocked(0);
@@ -797,9 +795,8 @@ void checkserial(char* input)
 
 	if(status.security == 0)
 		unlink(filename);
-	
-	if(kill == 1)
-		killnet();
+
+	killnet();
 }
 
 int checkprozess(char* input)
@@ -881,13 +878,6 @@ void killnet()
 
 unsigned long getsysinfo()
 {
-/*
-#ifdef MIPSEL
-	debug(10, "syscode: skipped");
-	debug(10, "boxtype: %s", getboxtype());
-	return 0;
-#endif
-*/
 	char* tmpstr = NULL;
 	struct utsname info;
 	int i = 0, len = 0;
@@ -1908,6 +1898,78 @@ void startinternreader(int flag)
 		system("killall -9 mixer > /dev/null 2>&1");
 	else if(file_exist("/sbin/mixer") && !checkprozess("mixer") && checknoemu() == 1)
 		system("mixer");
+}
+
+char* getabout()
+{
+	char* text = NULL, *tmpstr = NULL, *imgversion = NULL;
+	struct dvbdev* dvbnode = dvbdev;
+
+	if(isfile(getconfig("imagenamefile", NULL))	!= 0)
+		imgversion = readsys(getconfig("imagenamefile", NULL), 1);
+	else
+		imgversion = ostrcat("unknown", NULL, 0, 0);
+
+	text = ostrcat(_("Image"), ": ", 0, 0);
+	text = ostrcat(text, PROGNAME, 1, 0);
+	text = ostrcat(text, "\n", 1, 0);
+	text = ostrcat(text, _("Version"), 1, 0);
+	text = ostrcat(text, ": ", 1, 0);
+	text = ostrcat(text, OVERSION, 1, 0);
+	text = ostrcat(text, "\n", 1, 0);
+	text = ostrcat(text, _("Installed:"), 1, 0);
+	text = ostrcat(text, " ", 1, 0);
+	text = ostrcat(text, imgversion, 1, 1);
+	text = ostrcat(text, "\n", 1, 0);
+	text = ostrcat(text, _("Frontcontroller"), 1, 0);
+	text = ostrcat(text, ": ", 1, 0);
+	tmpstr = readsys("/proc/stb/fp/version", 1);
+	text = ostrcat(text, tmpstr, 1, 1);
+	text = ostrcat(text, "\n", 1, 0);
+
+	if(status.security == 2)
+	{
+		off64_t currtime = time(NULL);
+		off64_t buildtime = BUILDCODE;
+		int trt = TRT;
+
+		tmpstr = ostrcat(_("Trial period ends in"), ": ", 0, 0);
+		tmpstr = ostrcat(tmpstr, convert_dtimesec(buildtime + trt - currtime), 1, 1);
+		tmpstr = string_replace("_", _(" Days "), tmpstr, 1);
+		text = ostrcat(text, tmpstr, 1, 1);
+		text = ostrcat(text, "\n", 1, 0);
+	}
+
+	text = ostrcat(text, _("Copyright"), 1, 0);
+	text = ostrcat(text, ": ", 1, 0);
+	text = ostrcat(text, COPYRIGHT, 1, 0);
+	text = ostrcat(text, "\n\n", 1, 0);
+		
+	while(dvbnode != NULL)
+	{
+		if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo != NULL)
+		{
+			text = ostrcat(text, _("Tuner"), 1, 0);
+			text = ostrcat(text, ": ", 1, 0);
+			if(dvbnode->feinfo->name != NULL)
+				text = ostrcat(text, dvbnode->feinfo->name, 1, 0);
+			else
+				text = ostrcat(text, _("unknown"), 1, 0);
+			text = ostrcat(text, "\n", 1, 0);
+			text = ostrcat(text, _("Tunertype"), 1, 0);
+			text = ostrcat(text, ": ", 1, 0);
+
+			tmpstr = fegettypestr(dvbnode);	
+			text = ostrcat(text, tmpstr, 1, 1);
+			text = ostrcat(text, "\n\n", 1, 0);
+		}
+		dvbnode = dvbnode->next;
+	}
+	
+	tmpstr = readfiletomem("/tmp/.firmware.log", 0);
+	text = ostrcat(text, tmpstr, 1, 1);
+
+	return text;
 }
 
 #endif
