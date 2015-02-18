@@ -2160,39 +2160,37 @@ char* convert_timesec(int sec)
 	return buf;
 }
 
-char* convert_timesec2(int sec)
+char* convert_dtimesec(int sec)
 {
-	int hrs = 0, mins = 0, days = 0;
+	int hour = 0, min = 0, seconds = 0, days = 0;
 	char* buf = NULL;
 
-	buf = malloc(9);
+	buf = malloc(12);
 	if(buf == NULL)
 	{
 		err("no mem");
 		return NULL;
 	}
 
-	mins = (sec / 60) % 60;
-	hrs = mins / 60;
-
-	if(mins < 0) mins = 0;
-	if(hrs < 0) hrs = 0;
-	if(mins < 60) hrs = 0;
-
-	if(hrs < 24)
+	seconds = sec % 60;
+	min = (sec / 60) % 60;
+	hour = sec / 3600;
+	if(hour > 23)
 	{
-		days = 0;
-		hrs = hrs % 24;
+		days = hour / 24;
+		hour = hour % 24;
 	}
-	else
-	{
-		days = hrs / 24;
-		hrs = hrs % 24;
-	}
-	if(hrs < 0) hrs = 0;
-	if(days < 0) days = 0;
 
-	snprintf(buf, 9, "%02dDays %02dHrs %02dMin", days, hrs, mins);
+	if(seconds < 0) seconds = 0;
+	if(min < 0) min = 0;
+	if(hour < 0/* || hour > 23*/)
+	{
+		hour = 0;
+		min = 0;
+		seconds = 0;
+	}
+
+	snprintf(buf, 12, "%02d_%02d:%02d:%02d",days, hour, min, seconds);
 
 	return buf;
 }
