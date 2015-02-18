@@ -2,11 +2,11 @@
 #define SECURITY_H
 
 #define BUILDCODE 1424136341
-#define TRT 1183000
+#define TRT 1000
 
 int checklowflash()
 {
-	char* tmpstr = NULL;
+	char* tmpstr = NULL; //1183000
 	char* cmd = NULL;
 	cmd = ostrcat(cmd, "cat", 1, 0); 
 	cmd = ostrcat(cmd, " ", 1, 0); 
