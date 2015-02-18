@@ -206,7 +206,7 @@ int instar_settings()
 	setchoiceboxselection(onCam1, getlist(myconfig, "InstarCam1", NULL));	
 	addchoicebox(typCam1, "0", "0");
 	addchoicebox(typCam1, "1", "1");
-	setchoiceboxselection(typCam1, getconfigint("instar_1", NULL));
+	setchoiceboxselection(typCam1, getconfig("instar_1", NULL));
 	changemask(ipCam1, "abcdefghijklmnopqrstuvwxyz");
   changeinput(ipCam1, getlist(myconfig, "InstarCam1IP", NULL));
   changemask(portCam1, "0000");
@@ -221,7 +221,7 @@ int instar_settings()
 	setchoiceboxselection(onCam2, getlist(myconfig, "InstarCam2", NULL));	
 	addchoicebox(typCam2, "0", "0");
 	addchoicebox(typCam2, "1", "1");
-	setchoiceboxselection(typCam2, getconfigint("instar_2", NULL));
+	setchoiceboxselection(typCam2, getconfig("instar_2", NULL));
 	changemask(ipCam2, "abcdefghijklmnopqrstuvwxyz");
   changeinput(ipCam2, getlist(myconfig, "InstarCam2IP", NULL));
   changemask(portCam2, "0000");
