@@ -829,7 +829,7 @@ void startnet()
 {
 	char* cmd = NULL;
 
-	if(status.security == 1)
+	if(status.security >= 1)
 	{
 		cmd = ostrcat(cmd, "/", 1, 0);
 		cmd = ostrcat(cmd, "usr", 1, 0);
@@ -1090,7 +1090,7 @@ void setskinnodeslocked(int flag)
 			else if(ostrcmp("Reader Config", child->name) == 0) child->locked = flag;
 			else if(ostrcmp("system_update_usb_tmp", child->name) == 0) child->locked = flag;
 
-			if(status.expertmodus >= 11 && status.security == 1)
+			if(status.expertmodus >= 11 && status.security >= 1)
 				tmpflag = 0;
 			else
 				tmpflag = 1;
@@ -1921,12 +1921,13 @@ char* getabout()
 	text = ostrcat(text, " ", 1, 0);
 	text = ostrcat(text, imgversion, 1, 1);
 	text = ostrcat(text, "\n", 1, 0);
+#ifdef MIPSEL
 	text = ostrcat(text, _("Frontcontroller"), 1, 0);
 	text = ostrcat(text, ": ", 1, 0);
 	tmpstr = readsys("/proc/stb/fp/version", 1);
 	text = ostrcat(text, tmpstr, 1, 1);
 	text = ostrcat(text, "\n", 1, 0);
-
+#endif
 	if(status.security == 2)
 	{
 		off64_t currtime = time(NULL);
