@@ -6941,64 +6941,6 @@ char* system_logs(int mode)
 	return tmpstr;
 }
 
-char* getabout()
-{
-	char* text = NULL, *tmpstr = NULL, *imgversion = NULL;
-	struct dvbdev* dvbnode = dvbdev;
-
-	if(isfile(getconfig("imagenamefile", NULL))	!= 0)
-		imgversion = readsys(getconfig("imagenamefile", NULL), 1);
-	else
-		imgversion = ostrcat("unknown", NULL, 0, 0);
-
-	text = ostrcat(_("Image"), ": ", 0, 0);
-	text = ostrcat(text, PROGNAME, 1, 0);
-	text = ostrcat(text, "\n", 1, 0);
-	text = ostrcat(text, _("Version"), 1, 0);
-	text = ostrcat(text, ": ", 1, 0);
-	text = ostrcat(text, OVERSION, 1, 0);
-	text = ostrcat(text, "\n", 1, 0);
-	text = ostrcat(text, _("Installed:"), 1, 0);
-	text = ostrcat(text, " ", 1, 0);
-	text = ostrcat(text, imgversion, 1, 1);
-	text = ostrcat(text, "\n", 1, 0);
-	text = ostrcat(text, _("Frontcontroller"), 1, 0);
-	text = ostrcat(text, ": ", 1, 0);
-	tmpstr = readsys("/proc/stb/fp/version", 1);
-	text = ostrcat(text, tmpstr, 1, 1);
-	text = ostrcat(text, "\n", 1, 0);
-	text = ostrcat(text, _("Copyright"), 1, 0);
-	text = ostrcat(text, ": ", 1, 0);
-	text = ostrcat(text, COPYRIGHT, 1, 0);
-	text = ostrcat(text, "\n\n", 1, 0);
-		
-	while(dvbnode != NULL)
-	{
-		if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo != NULL)
-		{
-			text = ostrcat(text, _("Tuner"), 1, 0);
-			text = ostrcat(text, ": ", 1, 0);
-			if(dvbnode->feinfo->name != NULL)
-				text = ostrcat(text, dvbnode->feinfo->name, 1, 0);
-			else
-				text = ostrcat(text, _("unknown"), 1, 0);
-			text = ostrcat(text, "\n", 1, 0);
-			text = ostrcat(text, _("Tunertype"), 1, 0);
-			text = ostrcat(text, ": ", 1, 0);
-
-			tmpstr = fegettypestr(dvbnode);	
-			text = ostrcat(text, tmpstr, 1, 1);
-			text = ostrcat(text, "\n\n", 1, 0);
-		}
-		dvbnode = dvbnode->next;
-	}
-	
-	tmpstr = readfiletomem("/tmp/.firmware.log", 0);
-	text = ostrcat(text, tmpstr, 1, 1);
-
-	return text;
-}
-
 char* getimgnamereal()
 {
 	char* tmpstr = NULL;
