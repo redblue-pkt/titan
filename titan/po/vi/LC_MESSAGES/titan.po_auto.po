@@ -814,7 +814,7 @@ msgstr "Đã lưu các thiết lập"
 #: panel_settings_overclocking.h:276 readerconfig.h:421
 #: settings_autostart.h:53 settings_overclocking.h:276 transponder.h:256
 #: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:826
-#: vfdisplay.h:42 vfdisplay.h:50
+#: vfdisplay.h:63 vfdisplay.h:71
 msgid "off"
 msgstr "tắt"
 
@@ -11787,55 +11787,55 @@ msgstr ""
 msgid "Choose your Devices from the following list"
 msgstr ""
 
-#: vfdisplay.h:32
+#: vfdisplay.h:53
 msgid "channel"
 msgstr "chương trình"
 
-#: vfdisplay.h:33
+#: vfdisplay.h:54
 msgid "channel + time"
 msgstr " chương trình + thời gian"
 
-#: vfdisplay.h:34
+#: vfdisplay.h:55
 msgid "time + channel"
 msgstr "thời gian + chương trình"
 
-#: vfdisplay.h:35 vfdisplay.h:41
+#: vfdisplay.h:56 vfdisplay.h:62
 msgid "time"
 msgstr "thời gian"
 
-#: vfdisplay.h:36
+#: vfdisplay.h:57
 msgid "time small"
 msgstr "thời gian ngắn"
 
-#: vfdisplay.h:38
+#: vfdisplay.h:59
 msgid "channel number"
 msgstr " chương trình + thời gian"
 
-#: vfdisplay.h:45
+#: vfdisplay.h:66
 msgid "date + time"
 msgstr "ngày + giờ"
 
-#: vfdisplay.h:46
+#: vfdisplay.h:67
 msgid "vfddate"
 msgstr ""
 
-#: vfdisplay.h:51
+#: vfdisplay.h:72
 msgid "blink"
 msgstr ""
 
-#: vfdisplay.h:52
+#: vfdisplay.h:73
 msgid "fade out/in"
 msgstr ""
 
-#: vfdisplay.h:53
+#: vfdisplay.h:74
 msgid "show record"
 msgstr "ghi"
 
-#: vfdisplay.h:54
+#: vfdisplay.h:75
 msgid "star"
 msgstr "Khởi động lại"
 
-#: vfdisplay.h:55
+#: vfdisplay.h:76
 msgid "blink star"
 msgstr ""
 

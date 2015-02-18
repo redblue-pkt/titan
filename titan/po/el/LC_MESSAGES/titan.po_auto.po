@@ -814,7 +814,7 @@ msgstr ""
 #: panel_settings_overclocking.h:276 readerconfig.h:421
 #: settings_autostart.h:53 settings_overclocking.h:276 transponder.h:256
 #: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:826
-#: vfdisplay.h:42 vfdisplay.h:50
+#: vfdisplay.h:63 vfdisplay.h:71
 msgid "off"
 msgstr ""
 
@@ -11703,55 +11703,55 @@ msgstr ""
 msgid "Choose your Devices from the following list"
 msgstr ""
 
-#: vfdisplay.h:32
+#: vfdisplay.h:53
 msgid "channel"
 msgstr "Κανάλι"
 
-#: vfdisplay.h:33
+#: vfdisplay.h:54
 msgid "channel + time"
 msgstr "Ρύθμιση - Αναζήτηση Καναλιών"
 
-#: vfdisplay.h:34
+#: vfdisplay.h:55
 msgid "time + channel"
 msgstr "Προστασία καναλιού με PIN"
 
-#: vfdisplay.h:35 vfdisplay.h:41
+#: vfdisplay.h:56 vfdisplay.h:62
 msgid "time"
 msgstr "Hangtime"
 
-#: vfdisplay.h:36
+#: vfdisplay.h:57
 msgid "time small"
 msgstr "Μικρό"
 
-#: vfdisplay.h:38
+#: vfdisplay.h:59
 msgid "channel number"
 msgstr "Αναζήτηση Καναλιών"
 
-#: vfdisplay.h:45
+#: vfdisplay.h:66
 msgid "date + time"
 msgstr ""
 
-#: vfdisplay.h:46
+#: vfdisplay.h:67
 msgid "vfddate"
 msgstr "ημερομηνία"
 
-#: vfdisplay.h:51
+#: vfdisplay.h:72
 msgid "blink"
 msgstr ""
 
-#: vfdisplay.h:52
+#: vfdisplay.h:73
 msgid "fade out/in"
 msgstr ""
 
-#: vfdisplay.h:53
+#: vfdisplay.h:74
 msgid "show record"
 msgstr "fsckrecord"
 
-#: vfdisplay.h:54
+#: vfdisplay.h:75
 msgid "star"
 msgstr "Επανεκκίνηση"
 
-#: vfdisplay.h:55
+#: vfdisplay.h:76
 msgid "blink star"
 msgstr ""
 

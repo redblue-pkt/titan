@@ -814,7 +814,7 @@ msgstr "Einstellungen wurden erfolgreich gespeichert"
 #: panel_settings_overclocking.h:276 readerconfig.h:421
 #: settings_autostart.h:53 settings_overclocking.h:276 transponder.h:256
 #: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:826
-#: vfdisplay.h:42 vfdisplay.h:50
+#: vfdisplay.h:63 vfdisplay.h:71
 msgid "off"
 msgstr "aus"
 
@@ -12043,55 +12043,55 @@ msgstr ""
 msgid "Choose your Devices from the following list"
 msgstr "Wählen Sie ein USB Gerät aus der folgenden Liste"
 
-#: vfdisplay.h:32
+#: vfdisplay.h:53
 msgid "channel"
 msgstr "Sender"
 
-#: vfdisplay.h:33
+#: vfdisplay.h:54
 msgid "channel + time"
 msgstr "Sender + Uhrzeit"
 
-#: vfdisplay.h:34
+#: vfdisplay.h:55
 msgid "time + channel"
 msgstr "Uhrzeit + Sender"
 
-#: vfdisplay.h:35 vfdisplay.h:41
+#: vfdisplay.h:56 vfdisplay.h:62
 msgid "time"
 msgstr "Uhrzeit"
 
-#: vfdisplay.h:36
+#: vfdisplay.h:57
 msgid "time small"
 msgstr "Uhrzeit (klein)"
 
-#: vfdisplay.h:38
+#: vfdisplay.h:59
 msgid "channel number"
 msgstr "Sender Nr."
 
-#: vfdisplay.h:45
+#: vfdisplay.h:66
 msgid "date + time"
 msgstr "Datum + Uhrzeit"
 
-#: vfdisplay.h:46
+#: vfdisplay.h:67
 msgid "vfddate"
 msgstr "Datum"
 
-#: vfdisplay.h:51
+#: vfdisplay.h:72
 msgid "blink"
 msgstr "blinken"
 
-#: vfdisplay.h:52
+#: vfdisplay.h:73
 msgid "fade out/in"
 msgstr "Ein/Ausblenden"
 
-#: vfdisplay.h:53
+#: vfdisplay.h:74
 msgid "show record"
 msgstr "Zeige RECORD"
 
-#: vfdisplay.h:54
+#: vfdisplay.h:75
 msgid "star"
 msgstr "Stern"
 
-#: vfdisplay.h:55
+#: vfdisplay.h:76
 msgid "blink star"
 msgstr "Stern blinkend"
 
