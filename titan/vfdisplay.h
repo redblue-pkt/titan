@@ -68,13 +68,19 @@ void screenvfdisplay()
 	}
 	setchoiceboxselection(vfdstandby, getconfig("vfdisplaystandby", NULL));
 
-	addchoicebox(vfdrecord, "0", _("off"));
-	addchoicebox(vfdrecord, "1", _("blink"));
-	addchoicebox(vfdrecord, "2", _("fade out/in"));
-	addchoicebox(vfdrecord, "3", _("show record"));
-	addchoicebox(vfdrecord, "4", _("star"));
-	addchoicebox(vfdrecord, "5", _("blink star"));
-	setchoiceboxselection(vfdrecord, getconfig("vfdisplayrecord", NULL));
+	if(checkbox("ATEMIO-NEMESIS"))
+	vfdrecord->hidden = YES
+	else
+	{
+		vfdrecord->hidden = NO
+		addchoicebox(vfdrecord, "0", _("off"));
+		addchoicebox(vfdrecord, "1", _("blink"));
+		addchoicebox(vfdrecord, "2", _("fade out/in"));
+		addchoicebox(vfdrecord, "3", _("show record"));
+		addchoicebox(vfdrecord, "4", _("star"));
+		addchoicebox(vfdrecord, "5", _("blink star"));
+		setchoiceboxselection(vfdrecord, getconfig("vfdisplayrecord", NULL));
+	}
 
 	changeinput(at7000frontrun, "15\n14\n13\n12\n11\n10\n9\n8\n7\n6\n5\n4\n3\n2\n1\n0");
 	setchoiceboxselection(at7000frontrun, getconfig("at7000frontrun", NULL));
