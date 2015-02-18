@@ -70,7 +70,7 @@ msgstr ""
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:31 scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1901
 #: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 scriptexec.h:41
-#: security.h:659 security.h:675 security.h:1780 service.h:738 service.h:983
+#: security.h:660 security.h:676 security.h:1798 service.h:738 service.h:983
 #: shared.h:29 shared.h:65 shared.h:82 skinadjust.h:239 skinadjust.h:447
 #: skins_dlna_skin.xml.h:8 skinselector.h:237 skins_facebook_skin.xml.h:5
 #: skins_mboxinfo_skin.xml.h:2 skins_mc_skin.xml.h:38
@@ -181,7 +181,7 @@ msgstr ""
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:31 scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1901
 #: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 scriptexec.h:41
-#: security.h:659 security.h:675 security.h:1780 service.h:738 service.h:983
+#: security.h:660 security.h:676 security.h:1798 service.h:738 service.h:983
 #: shared.h:29 shared.h:65 shared.h:82 skin_default_skin.xml.h:235
 #: skins_autotimer_skin.xml.h:7 skins_callmonitor1_skin.xml.h:11
 #: skins_catcatch_skin.xml.h:4 skins_dlna_skin.xml.h:2 skinselector.h:237
@@ -709,7 +709,7 @@ msgstr ""
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:31
 #: scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1646 scan.h:1901
-#: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 security.h:1780 service.h:738
+#: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 security.h:1798 service.h:738
 #: service.h:983 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:239
 #: skinadjust.h:447 skinselector.h:237 sock.h:952 softcam.h:410 softcam.h:468
 #: softcam.h:469 solarmovie.h:35 solarmovie.h:47 solarmovie.h:304 spinner.h:18
@@ -857,7 +857,7 @@ msgstr "ce plugin est seulement pour les bêta-testeurs.  "
 
 #: bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2793 httpdfunc.h:2805
 #: httpdfunc.h:5450 httpdfunc.h:5496 hwtest.h:478 moduleconfig.h:345
-#: security.h:1958 skin_default_skin.xml.h:757 skinselector.h:138 stream.h:22
+#: security.h:1976 skin_default_skin.xml.h:757 skinselector.h:138 stream.h:22
 #: transponder.h:122 transponder.h:158 transponder.h:194 transponder.h:227
 #: transponder.h:259 transponder.h:295 transponder.h:330 transponder.h:348
 #: transponder.h:364 transponder.h:418 transponder.h:451 transponder.h:480
@@ -2532,7 +2532,7 @@ msgstr ""
 msgid "System Update"
 msgstr "System - USB-Update (tmp)"
 
-#: httpdfunc.h:5556 security.h:1920 skin_default_skin.xml.h:359
+#: httpdfunc.h:5556 security.h:1938 skin_default_skin.xml.h:359
 msgid "Installed:"
 msgstr ""
 
@@ -2858,7 +2858,7 @@ msgstr ""
 msgid "Email  \t\tinfo@atemio.de"
 msgstr ""
 
-#: info.h:27 plugins_tmc_skin.xml.h:9 security.h:659 security.h:675
+#: info.h:27 plugins_tmc_skin.xml.h:9 security.h:660 security.h:676
 #: skins_tmc_skin.xml.h:9 titan.c:1018 webif_index.atemio510.h:15
 #: webif_index.atemio5200.h:15 webif_index.atemio5200.h:43
 #: webif_index.atemio5200.h:99 webif_index.atemio6000.h:15
@@ -6109,7 +6109,7 @@ msgstr ""
 msgid "Script execute"
 msgstr ""
 
-#: security.h:659
+#: security.h:660
 msgid ""
 "!!! Trial period ended !!!\n"
 "\n"
@@ -6123,35 +6123,35 @@ msgid ""
 "Website www.atemio.de"
 msgstr ""
 
-#: security.h:671 security.h:1937
+#: security.h:672 security.h:1955
 msgid "Trial period ends in"
 msgstr ""
 
-#: security.h:673 security.h:1939
+#: security.h:674 security.h:1957
 msgid " Days "
 msgstr ""
 
-#: security.h:1913
+#: security.h:1931
 msgid "Image"
 msgstr ""
 
-#: security.h:1916
+#: security.h:1934
 msgid "Version"
 msgstr ""
 
-#: security.h:1925
+#: security.h:1943
 msgid "Frontcontroller"
 msgstr ""
 
-#: security.h:1944
+#: security.h:1962
 msgid "Copyright"
 msgstr "© Copyright"
 
-#: security.h:1953 skin_default_skin.xml.h:735
+#: security.h:1971 skin_default_skin.xml.h:735
 msgid "Tuner"
 msgstr ""
 
-#: security.h:1960 skin_default_skin.xml.h:741
+#: security.h:1978 skin_default_skin.xml.h:741
 msgid "Tunertype"
 msgstr "type de tuner"
 
