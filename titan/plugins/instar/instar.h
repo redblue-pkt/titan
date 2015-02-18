@@ -183,11 +183,13 @@ int instar_settings()
 	struct skin* listbox = getscreennode(instar_einstellungen, "listbox");
 	struct skin* autoCam = getscreennode(instar_einstellungen, "autoCam");
 	struct skin* onCam1 = getscreennode(instar_einstellungen, "onCam1");
+	struct skin* typCam1 = getscreennode(instar_einstellungen, "typCam1");
 	struct skin* ipCam1 = getscreennode(instar_einstellungen, "ipCam1");
 	struct skin* portCam1 = getscreennode(instar_einstellungen, "portCam1");
 	struct skin* userCam1 = getscreennode(instar_einstellungen, "userCam1");
 	struct skin* passCam1 = getscreennode(instar_einstellungen, "passCam1");
 	struct skin* onCam2 = getscreennode(instar_einstellungen, "onCam2");
+	struct skin* typCam2 = getscreennode(instar_einstellungen, "typCam2");
 	struct skin* ipCam2 = getscreennode(instar_einstellungen, "ipCam2");
 	struct skin* portCam2 = getscreennode(instar_einstellungen, "portCam2");
 	struct skin* userCam2 = getscreennode(instar_einstellungen, "userCam2");
