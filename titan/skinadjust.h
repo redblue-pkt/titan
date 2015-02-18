@@ -222,6 +222,7 @@ void screenskinadjust()
 
 		if(rcret == getrcconfigint("rcred", NULL))
 		{
+			char* cmd = NULL;
 			if(ostrstr(getconfig("skinpath", NULL), "/var/usr/local/share/titan/skin/default") != NULL)
 				cmd = ostrcat("cp -a /etc/titan.restore/mnt/config/skinconfig ", getconfig("skinconfig", NULL), 0, 0);
 			else
