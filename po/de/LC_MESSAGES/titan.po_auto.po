@@ -5800,7 +5800,9 @@ msgstr "FEHLER: Kann Datei nicht öffnen!"
 
 #: record.h:49
 msgid "Can't open FRONTEND device"
-msgstr "FEHLER: Frontend-Gerät kann nicht geöffnet\nwerden!"
+msgstr ""
+"FEHLER: Frontend-Gerät kann nicht geöffnet\n"
+"werden!"
 
 #: record.h:52
 msgid "Can't open DMX device"
