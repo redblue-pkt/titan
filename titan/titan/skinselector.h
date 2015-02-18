@@ -213,24 +213,24 @@ void screenskinselect(void)
 				tmpstr = ostrcat(tmpstr, "/skinconfig", 1, 0);
 				if(file_exist(tmpstr))
 				{
-					if(ostrstr(getconfig("skinconfig", NULL), "/mnt/config/skinconfig") != NULL)
-					{	
-						cmd = ostrcat("cp -f ", getconfig("skinconfig", NULL), 0, 0);
-						cmd = ostrcat(cmd, " ", 1, 0);
-						cmd = ostrcat(cmd, getconfig("skinpath", NULL), 1, 0);
-						system(cmd);
-						free(cmd); cmd = NULL;
+					//if(ostrstr(getconfig("skinconfig", NULL), "/mnt/config/skinconfig") != NULL)
+					//{	
+					//	cmd = ostrcat("cp -f ", getconfig("skinconfig", NULL), 0, 0);
+					//	cmd = ostrcat(cmd, " ", 1, 0);
+					//	cmd = ostrcat(cmd, getconfig("skinpath", NULL), 1, 0);
+					//	system(cmd);
+					//	free(cmd); cmd = NULL;
 					
-						cmd = ostrcat("cp -f ", tmpstr, 0, 0);
-						cmd = ostrcat(cmd, " ", 1, 0);
-						cmd = ostrcat(cmd, getconfig("skinconfig", NULL), 1, 0);
-						system(cmd);
-						free(cmd); cmd = NULL;
-					}
-					else
-					{
+					//	cmd = ostrcat("cp -f ", tmpstr, 0, 0);
+					//	cmd = ostrcat(cmd, " ", 1, 0);
+					//	cmd = ostrcat(cmd, getconfig("skinconfig", NULL), 1, 0);
+					//	system(cmd);
+					//	free(cmd); cmd = NULL;
+					//}
+					//else
+					//{
 						addconfig("skinconfig", tmpstr);
-					}
+					//}
 				}
 				else
 				{
