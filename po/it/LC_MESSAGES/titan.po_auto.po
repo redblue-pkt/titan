@@ -71,7 +71,7 @@ msgstr ""
 #: rtl2now.h:31 scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1901
 #: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 scriptexec.h:41
 #: security.h:659 security.h:675 security.h:1780 service.h:738 service.h:983
-#: shared.h:29 shared.h:65 shared.h:82 skinadjust.h:349
+#: shared.h:29 shared.h:65 shared.h:82 skinadjust.h:239 skinadjust.h:447
 #: skins_dlna_skin.xml.h:8 skinselector.h:237 skins_facebook_skin.xml.h:5
 #: skins_mboxinfo_skin.xml.h:2 skins_mc_skin.xml.h:38
 #: skins_optimize_skin.xml.h:3 skins_rgui_skin.xml.h:3
@@ -266,7 +266,7 @@ msgstr "Exit"
 #: settings_autostart.h:502 settings_autostart.h:511 settings_autostart.h:568
 #: settings_autostart.h:577 settings_autostart.h:586 settings_autostart.h:595
 #: settings_overclocking.h:214 settings_overclocking.h:234
-#: settings_overclocking.h:244 skinadjust.h:127 stopifnotused.c:94
+#: settings_overclocking.h:244 skinadjust.h:134 stopifnotused.c:94
 #: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:37
 #: tithek_settings.h:41 tithek_settings.h:45 tmc.h:531 tmc.h:535
 #: tunerconfig.h:184 tunerconfig.h:213 tunerconfig.h:244 tunerconfig.h:277
@@ -710,9 +710,9 @@ msgstr ""
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:31
 #: scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1646 scan.h:1901
 #: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 security.h:1780 service.h:738
-#: service.h:983 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:349
-#: skinselector.h:237 sock.h:952 softcam.h:410 softcam.h:468 softcam.h:469
-#: solarmovie.h:35 solarmovie.h:47 solarmovie.h:304 spinner.h:18
+#: service.h:983 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:239
+#: skinadjust.h:447 skinselector.h:237 sock.h:952 softcam.h:410 softcam.h:468
+#: softcam.h:469 solarmovie.h:35 solarmovie.h:47 solarmovie.h:304 spinner.h:18
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:84
 #: streamcloud.h:97 streamcloud.h:128 streamcloud.h:187 stream.h:33
 #: system_backup_restore.h:40 system_backup_restore.h:43
@@ -6278,31 +6278,31 @@ msgstr ""
 msgid "Connect with Hoster wait 7 seconds"
 msgstr ""
 
-#: skinadjust.h:42
+#: skinadjust.h:49
 msgid "border"
 msgstr ""
 
-#: skinadjust.h:43
+#: skinadjust.h:50
 msgid "bar"
 msgstr ""
 
-#: skinadjust.h:44
+#: skinadjust.h:51
 msgid "text"
 msgstr ""
 
-#: skinadjust.h:45 tmc.h:542
+#: skinadjust.h:52 tmc.h:542
 msgid "picture"
 msgstr ""
 
-#: skinadjust.h:128
+#: skinadjust.h:135
 msgid "yes (Text in %)"
 msgstr ""
 
-#: skinadjust.h:129
+#: skinadjust.h:136
 msgid "yes (Text in MB)"
 msgstr ""
 
-#: skinadjust.h:349
+#: skinadjust.h:239 skinadjust.h:447
 msgid "Titan will be restartet!"
 msgstr ""
 
