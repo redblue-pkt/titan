@@ -814,7 +814,7 @@ msgstr "Nustatymai skmingai isaugoti"
 #: panel_settings_overclocking.h:276 readerconfig.h:421
 #: settings_autostart.h:53 settings_overclocking.h:276 transponder.h:256
 #: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:826
-#: vfdisplay.h:42 vfdisplay.h:50
+#: vfdisplay.h:63 vfdisplay.h:71
 msgid "off"
 msgstr "Ijungti"
 
@@ -11890,55 +11890,55 @@ msgstr ""
 msgid "Choose your Devices from the following list"
 msgstr "Pasirinkite prietaisus i srao"
 
-#: vfdisplay.h:32
+#: vfdisplay.h:53
 msgid "channel"
 msgstr "Kanalas"
 
-#: vfdisplay.h:33
+#: vfdisplay.h:54
 msgid "channel + time"
 msgstr "Kanalo pavadinimas + Laikas"
 
-#: vfdisplay.h:34
+#: vfdisplay.h:55
 msgid "time + channel"
 msgstr "Laikas + Kanalo pavadinimas"
 
-#: vfdisplay.h:35 vfdisplay.h:41
+#: vfdisplay.h:56 vfdisplay.h:62
 msgid "time"
 msgstr "Laikas"
 
-#: vfdisplay.h:36
+#: vfdisplay.h:57
 msgid "time small"
 msgstr "Time small"
 
-#: vfdisplay.h:38
+#: vfdisplay.h:59
 msgid "channel number"
 msgstr "Kanalo numeris"
 
-#: vfdisplay.h:45
+#: vfdisplay.h:66
 msgid "date + time"
 msgstr "Date + Time"
 
-#: vfdisplay.h:46
+#: vfdisplay.h:67
 msgid "vfddate"
 msgstr "Data"
 
-#: vfdisplay.h:51
+#: vfdisplay.h:72
 msgid "blink"
 msgstr "Blink"
 
-#: vfdisplay.h:52
+#: vfdisplay.h:73
 msgid "fade out/in"
 msgstr "Fade in/out"
 
-#: vfdisplay.h:53
+#: vfdisplay.h:74
 msgid "show record"
 msgstr "Show 'Record'"
 
-#: vfdisplay.h:54
+#: vfdisplay.h:75
 msgid "star"
 msgstr "Star"
 
-#: vfdisplay.h:55
+#: vfdisplay.h:76
 msgid "blink star"
 msgstr "Blinking star"
 

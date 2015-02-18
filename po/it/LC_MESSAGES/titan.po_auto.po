@@ -814,7 +814,7 @@ msgstr "Impostazioni salvate con successo"
 #: panel_settings_overclocking.h:276 readerconfig.h:421
 #: settings_autostart.h:53 settings_overclocking.h:276 transponder.h:256
 #: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:826
-#: vfdisplay.h:42 vfdisplay.h:50
+#: vfdisplay.h:63 vfdisplay.h:71
 msgid "off"
 msgstr ""
 
@@ -11756,55 +11756,55 @@ msgstr ""
 msgid "Choose your Devices from the following list"
 msgstr ""
 
-#: vfdisplay.h:32
+#: vfdisplay.h:53
 msgid "channel"
 msgstr "Nome Canale"
 
-#: vfdisplay.h:33
+#: vfdisplay.h:54
 msgid "channel + time"
 msgstr "Nome canale + tempo"
 
-#: vfdisplay.h:34
+#: vfdisplay.h:55
 msgid "time + channel"
 msgstr ""
 
-#: vfdisplay.h:35 vfdisplay.h:41
+#: vfdisplay.h:56 vfdisplay.h:62
 msgid "time"
 msgstr ""
 
-#: vfdisplay.h:36
+#: vfdisplay.h:57
 msgid "time small"
 msgstr ""
 
-#: vfdisplay.h:38
+#: vfdisplay.h:59
 msgid "channel number"
 msgstr "Nome canale"
 
-#: vfdisplay.h:45
+#: vfdisplay.h:66
 msgid "date + time"
 msgstr "Data + Tempo"
 
-#: vfdisplay.h:46
+#: vfdisplay.h:67
 msgid "vfddate"
 msgstr "Data"
 
-#: vfdisplay.h:51
+#: vfdisplay.h:72
 msgid "blink"
 msgstr ""
 
-#: vfdisplay.h:52
+#: vfdisplay.h:73
 msgid "fade out/in"
 msgstr ""
 
-#: vfdisplay.h:53
+#: vfdisplay.h:74
 msgid "show record"
 msgstr ""
 
-#: vfdisplay.h:54
+#: vfdisplay.h:75
 msgid "star"
 msgstr ""
 
-#: vfdisplay.h:55
+#: vfdisplay.h:76
 msgid "blink star"
 msgstr ""
 
