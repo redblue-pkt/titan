@@ -2,7 +2,7 @@
 #define SECURITY_H
 
 #define BUILDCODE 1424136341
-#define TRT 1000
+#define TRT 3600
 
 int checklowflash()
 {
@@ -1118,6 +1118,12 @@ void setskinnodeslocked(int flag)
 			if(checkbox("ATEMIO510") == 1)
 			{
 				if(ostrcmp("vfdisplay", child->name) == 0) child->locked = 1;
+			}
+
+			if(status.security == 2)
+			{
+				if(ostrcmp("systemupdatemenu", child->name) == 0) child->locked = 1;
+				if(ostrcmp("system_backup", child->name) == 0) child->locked = 1;
 			}
 
 			// dont show this menus
