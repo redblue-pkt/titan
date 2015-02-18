@@ -6270,14 +6270,24 @@ msgid ""
 "Email info@atemio.de\n"
 "Website www.atemio.de"
 msgstr ""
+"!!! 14 Tägige Testphase abgelaufen !!!\n"
+"\n"
+"Um eine neue Testphase nutzen zu können, müssen Sie ein aktuelles Nightly Image\n"
+"via USB einspielen oder Sie Ordern Sich eine Lizens bei Atemio !!!\n"
+"\n"
+"Kontakt:\n"
+"Tel +49 (0) 6403/97759-0\n"
+"Fax +49 (0) 6403/97759-10\n"
+"Email info@atemio.de\n"
+"Website www.atemio.de"
 
 #: security.h:672 security.h:1961
 msgid "Trial period ends in"
-msgstr ""
+msgstr "14 Tägige Testphase endet in"
 
 #: security.h:674 security.h:1963
 msgid " Days "
-msgstr ""
+msgstr " Tage "
 
 #: security.h:1937
 msgid "Image"

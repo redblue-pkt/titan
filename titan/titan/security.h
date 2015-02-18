@@ -657,7 +657,7 @@ void trialendemodethread(struct stimerthread* self)
 {
 	if(status.security >= 1) return;
 	sleep(30);
-	textbox(_("Info"), _("!!! Trial period ended !!!\n\nFor new trial period install a new nightly image via USB\nor purchase a license from Atemio !!!\n\nContact:\nTel +49 (0) 6403/97759-0\nFax +49 (0) 6403/97759-10\nEmail info@atemio.de\nWebsite www.atemio.de"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 700, 0, 0);
+	textbox(_("Info"), _("!!! Trial period ended !!!\n\nFor new trial period install a new nightly image via USB\nor purchase a license from Atemio !!!\n\nContact:\nTel +49 (0) 6403/97759-0\nFax +49 (0) 6403/97759-10\nEmail info@atemio.de\nWebsite www.atemio.de"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 400, 30, 0);
 }
 
 void trialcheckmodethread(struct stimerthread* self)
@@ -779,7 +779,7 @@ void checkserial(char* input)
 		int trt = TRT;
 
 		if(currtime >= buildtime + trt)
-			addtimer(&trialendemodethread, START, 600000, -1, NULL, NULL, NULL);
+			addtimer(&trialendemodethread, START, 7200000, -1, NULL, NULL, NULL);
 		else
 		{
 			addtimer(&trialcheckmodethread, START, 1000, 1, NULL, NULL, NULL);
