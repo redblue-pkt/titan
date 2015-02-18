@@ -18,7 +18,14 @@ void screenskinadjust()
 	struct skin* listboxselect = getscreennode(skinadjust, "listboxselect");
 	struct skin* tithek_selectcol = getscreennode(skinadjust, "tithek_selectcol");
 	struct skin* filelistselect = getscreennode(skinadjust, "filelistselect");
+	struct skin* buttonbar_bgcol = getscreennode(skinadjust, "buttonbar_bgcol");
 	struct skin* buttonbar_bgcol2 = getscreennode(skinadjust, "buttonbar_bgcol2");
+	struct skin* buttonbar_bordercol = getscreennode(skinadjust, "buttonbar_bordercol");
+	struct skin* buttonbar_fontcol = getscreennode(skinadjust, "buttonbar_fontcol");
+	struct skin* titlebar_bgcol = getscreennode(skinadjust, "titlebar_bgcol");
+	struct skin* titlebar_bgcol2 = getscreennode(skinadjust, "titlebar_bgcol2");
+	struct skin* titlebar_bordercol = getscreennode(skinadjust, "titlebar_bordercol");
+	struct skin* titlebar_fontcol = getscreennode(skinadjust, "titlebar_fontcol");
 	struct skin* bgcol = getscreennode(skinadjust, "bgcol");
 	struct skin* bgcol2 = getscreennode(skinadjust, "bgcol2");
 	struct skin* fontcol = getscreennode(skinadjust, "fontcol");
@@ -32,7 +39,7 @@ void screenskinadjust()
 	struct skin* infobar2_sel = getscreennode(skinadjust, "infobar2_sel");
 	struct skin* pic1 = getscreennode(skinadjust, "pic1");
 	struct skin* pic2 = getscreennode(skinadjust, "pic2");
-	struct skin* b4 = getscreennode(skinadjust, "b4");
+	struct skin* b5 = getscreennode(skinadjust, "b5");
 
 	struct skin* tmp = NULL;
 
@@ -131,20 +138,26 @@ void screenskinadjust()
 
 
 //	addchoicebox(listboxselect, "0", _("press red"));
-
 	addchoicebox(listboxselect, "0", getskinconfig("markcol", NULL));
 	addchoicebox(tithek_selectcol, "1", getskinconfig("tithek_selectcol", NULL));
 	addchoicebox(filelistselect, "2", getskinconfig("filelistselect", NULL));
-	addchoicebox(buttonbar_bgcol2, "3", getskinconfig("buttonbar_bgcol2", NULL));
-	addchoicebox(bgcol, "3", getskinconfig("bgcol", NULL));
-	addchoicebox(bgcol2, "4", getskinconfig("bgcol2", NULL));
-	addchoicebox(fontcol, "5", getskinconfig("fontcol", NULL));
-	addchoicebox(bordercol, "6", getskinconfig("bordercol", NULL));
-	addchoicebox(progresscol, "7", getskinconfig("progresscol", NULL));
-	addchoicebox(titlebgcol, "8", getskinconfig("titlebgcol", NULL));
-	addchoicebox(markcol, "9", getskinconfig("markcol", NULL));
+	addchoicebox(buttonbar_bgcol, "3", getskinconfig("buttonbar_bgcol", NULL));
+	addchoicebox(buttonbar_bgcol2, "4", getskinconfig("buttonbar_bgcol2", NULL));
+	addchoicebox(buttonbar_bordercol, "5", getskinconfig("buttonbar_bordercol", NULL));
+	addchoicebox(buttonbar_fontcol, "6", getskinconfig("buttonbar_fontcol", NULL));
+	addchoicebox(titlebar_bgcol, "7", getskinconfig("titlebar_bgcol", NULL));
+	addchoicebox(titlebar_bgcol2, "8", getskinconfig("titlebar_bgcol2", NULL));
+	addchoicebox(titlebar_bordercol, "9", getskinconfig("titlebar_bordercol", NULL));
+	addchoicebox(titlebar_fontcol, "10", getskinconfig("titlebar_fontcol", NULL));
+	addchoicebox(bgcol, "11", getskinconfig("bgcol", NULL));
+	addchoicebox(bgcol2, "12", getskinconfig("bgcol2", NULL));
+	addchoicebox(fontcol, "13", getskinconfig("fontcol", NULL));
+	addchoicebox(bordercol, "14", getskinconfig("bordercol", NULL));
+	addchoicebox(progresscol, "15", getskinconfig("progresscol", NULL));
+	addchoicebox(titlebgcol, "16", getskinconfig("titlebgcol", NULL));
+	addchoicebox(markcol, "17", getskinconfig("markcol", NULL));
 
-	b4->hidden = YES;
+	b5->hidden = YES;
 
 	drawscreen(skinadjust, 0, 0);
 	addscreenrc(skinadjust, listbox);
@@ -209,6 +222,27 @@ void screenskinadjust()
 
 		if(rcret == getrcconfigint("rcred", NULL))
 		{
+			if(ostrstr(getconfig("skinpath", NULL), "/var/usr/local/share/titan/skin/default") != NULL)
+				cmd = ostrcat("cp -a /etc/titan.restore/mnt/config/skinconfig ", getconfig("skinconfig", NULL), 0, 0);
+			else
+			{
+				cmd = ostrcat(cmd, "cp -a ", 1, 0);
+				cmd = ostrcat(cmd, getconfig("skinpath", NULL), 1, 0);
+				cmd = ostrcat(cmd, "/skinconfig ", 1, 0);
+				cmd = ostrcat(cmd, getconfig("skinconfig", NULL), 1, 0);
+			}
+			printf("cmd: %cmd\n");	
+			system(cmd);
+			free(cmd); cmd = NULL;
+
+			textbox(_("Message"), _("Titan will be restartet!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+			oshutdown(3, 0);
+
+			break;
+		}
+
+		if(rcret == getrcconfigint("rcgreen", NULL))
+		{
 			if(listbox->select != NULL && ostrcmp(listbox->select->name, "listboxselect") == 0)
 			{
 				long oldlistboxselectcol = convertcol("listboxselect");
@@ -236,6 +270,15 @@ void screenskinadjust()
 				if(oldfilelistselect != convertcol("filelistselect")) reboot = 1;
 			}
 
+			if(listbox->select != NULL && ostrcmp(listbox->select->name, "buttonbar_bgcol") == 0)
+			{
+				long oldbuttonbar_bgcol = convertcol("buttonbar_bgcol");
+				tmpstr = screencolorpicker(getskinconfig("buttonbar_bgcol", NULL), 0, 0, 0);
+				if(tmpstr != NULL)
+					addskinconfigtmp("buttonbar_bgcol", tmpstr);
+				if(oldbuttonbar_bgcol != convertcol("buttonbar_bgcol")) reboot = 1;
+			}
+
 			if(listbox->select != NULL && ostrcmp(listbox->select->name, "buttonbar_bgcol2") == 0)
 			{
 				long oldbuttonbar_bgcol2 = convertcol("buttonbar_bgcol2");
@@ -243,6 +286,60 @@ void screenskinadjust()
 				if(tmpstr != NULL)
 					addskinconfigtmp("buttonbar_bgcol2", tmpstr);
 				if(oldbuttonbar_bgcol2 != convertcol("buttonbar_bgcol2")) reboot = 1;
+			}
+
+			if(listbox->select != NULL && ostrcmp(listbox->select->name, "buttonbar_bordercol") == 0)
+			{
+				long oldbuttonbar_bordercol = convertcol("buttonbar_bordercol");
+				tmpstr = screencolorpicker(getskinconfig("buttonbar_bordercol", NULL), 0, 0, 0);
+				if(tmpstr != NULL)
+					addskinconfigtmp("buttonbar_bordercol", tmpstr);
+				if(oldbuttonbar_bordercol != convertcol("buttonbar_bordercol")) reboot = 1;
+			}
+
+			if(listbox->select != NULL && ostrcmp(listbox->select->name, "buttonbar_fontcol") == 0)
+			{
+				long oldbuttonbar_fontcol = convertcol("buttonbar_fontcol");
+				tmpstr = screencolorpicker(getskinconfig("buttonbar_fontcol", NULL), 0, 0, 0);
+				if(tmpstr != NULL)
+					addskinconfigtmp("buttonbar_fontcol", tmpstr);
+				if(oldbuttonbar_fontcol != convertcol("buttonbar_fontcol")) reboot = 1;
+			}
+
+			if(listbox->select != NULL && ostrcmp(listbox->select->name, "titlebar_bgcol") == 0)
+			{
+				long oldtitlebar_bgcol = convertcol("titlebar_bgcol");
+				tmpstr = screencolorpicker(getskinconfig("titlebar_bgcol", NULL), 0, 0, 0);
+				if(tmpstr != NULL)
+					addskinconfigtmp("titlebar_bgcol", tmpstr);
+				if(oldtitlebar_bgcol != convertcol("titlebar_bgcol")) reboot = 1;
+			}
+
+			if(listbox->select != NULL && ostrcmp(listbox->select->name, "titlebar_bgcol2") == 0)
+			{
+				long oldtitlebar_bgcol2 = convertcol("titlebar_bgcol2");
+				tmpstr = screencolorpicker(getskinconfig("titlebar_bgcol2", NULL), 0, 0, 0);
+				if(tmpstr != NULL)
+					addskinconfigtmp("titlebar_bgcol2", tmpstr);
+				if(oldtitlebar_bgcol2 != convertcol("titlebar_bgcol2")) reboot = 1;
+			}
+
+			if(listbox->select != NULL && ostrcmp(listbox->select->name, "titlebar_bordercol") == 0)
+			{
+				long oldtitlebar_bordercol = convertcol("titlebar_bordercol");
+				tmpstr = screencolorpicker(getskinconfig("titlebar_bordercol", NULL), 0, 0, 0);
+				if(tmpstr != NULL)
+					addskinconfigtmp("titlebar_bordercol", tmpstr);
+				if(oldtitlebar_bordercol != convertcol("titlebar_bordercol")) reboot = 1;
+			}
+
+			if(listbox->select != NULL && ostrcmp(listbox->select->name, "titlebar_fontcol") == 0)
+			{
+				long oldtitlebar_fontcol = convertcol("titlebar_fontcol");
+				tmpstr = screencolorpicker(getskinconfig("titlebar_fontcol", NULL), 0, 0, 0);
+				if(tmpstr != NULL)
+					addskinconfigtmp("titlebar_fontcol", tmpstr);
+				if(oldtitlebar_fontcol != convertcol("titlebar_fontcol")) reboot = 1;
 			}
 
 			if(listbox->select != NULL && ostrcmp(listbox->select->name, "bgcol") == 0)
@@ -354,29 +451,43 @@ void screenskinadjust()
 		}
 
 		if(ostrcmp(listbox->select->name, "listboxselect") == 0)
-			b4->hidden = NO;
+			b5->hidden = NO;
 		else if(ostrcmp(listbox->select->name, "tithek_selectcol") == 0)
-			b4->hidden = NO;
+			b5->hidden = NO;
 		else if(ostrcmp(listbox->select->name, "filelistselect") == 0)
-			b4->hidden = NO;
+			b5->hidden = NO;
+		else if(ostrcmp(listbox->select->name, "buttonbar_bgcol") == 0)
+			b5->hidden = NO;
 		else if(ostrcmp(listbox->select->name, "buttonbar_bgcol2") == 0)
-			b4->hidden = NO;
+			b5->hidden = NO;
+		else if(ostrcmp(listbox->select->name, "buttonbar_bordercol") == 0)
+			b5->hidden = NO;
+		else if(ostrcmp(listbox->select->name, "buttonbar_fontcol") == 0)
+			b5->hidden = NO;
+		else if(ostrcmp(listbox->select->name, "titlebar_bgcol") == 0)
+			b5->hidden = NO;
+		else if(ostrcmp(listbox->select->name, "titlebar_bgcol2") == 0)
+			b5->hidden = NO;
+		else if(ostrcmp(listbox->select->name, "titlebar_bordercol") == 0)
+			b5->hidden = NO;
+		else if(ostrcmp(listbox->select->name, "titlebar_fontcol") == 0)
+			b5->hidden = NO;
 		else if(ostrcmp(listbox->select->name, "bgcol") == 0)
-			b4->hidden = NO;
+			b5->hidden = NO;
 		else if(ostrcmp(listbox->select->name, "bgcol2") == 0)
-			b4->hidden = NO;
+			b5->hidden = NO;
 		else if(ostrcmp(listbox->select->name, "fontcol") == 0)
-			b4->hidden = NO;
+			b5->hidden = NO;
 		else if(ostrcmp(listbox->select->name, "bordercol") == 0)
-			b4->hidden = NO;
+			b5->hidden = NO;
 		else if(ostrcmp(listbox->select->name, "titlebgcol") == 0)
-			b4->hidden = NO;
+			b5->hidden = NO;
 		else if(ostrcmp(listbox->select->name, "progresscol") == 0)
-			b4->hidden = NO;
+			b5->hidden = NO;
 		else if(ostrcmp(listbox->select->name, "markcol") == 0)
-			b4->hidden = NO;
+			b5->hidden = NO;
 		else
-			b4->hidden = YES;
+			b5->hidden = YES;
 	
 		drawscreen(skinadjust, 0, 0);
 	}
