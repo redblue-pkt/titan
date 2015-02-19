@@ -677,6 +677,12 @@ void trialcheckmodethread(struct stimerthread* self)
 	free(tmpstr), tmpstr = NULL;
 }
 
+// status.security = 0 expired
+// status.security = 1 valid
+// status.security = 2 Trial Lizens
+// status.security = 3 ufs910 Free Lizense
+// status.security = 4 atemio Free Lizense
+
 void checkserial(char* input)
 {
 	char* filename = "/var/etc/codepages/codepage.868", *pw = NULL, *buf = NULL;
@@ -2008,7 +2014,9 @@ char* getabout()
 #endif
 	tmpstr = ostrcat(_("Lizense"), ": ", 0, 0);
 
-	if(status.security == 2)
+	if(status.security == 1)
+		tmpstr = ostrcat(tmpstr, _("valid"), 1, 0);
+	else if(status.security == 2)
 	{
 		off64_t currtime = time(NULL);
 		off64_t buildtime = BUILDCODE;
@@ -2020,12 +2028,12 @@ char* getabout()
 		tmpstr = string_replace("_", _(" Days "), tmpstr, 1);
 		text = ostrcat(text, tmpstr, 1, 1);
 	}
-	else if(status.security == 1)
-		tmpstr = ostrcat(tmpstr, _("valid"), 1, 0);
-	else if(status.security >= 3)
-		tmpstr = ostrcat(tmpstr, _("Free Lizense"), 1, 0);	
+	else if(status.security == 3)
+		tmpstr = ostrcat(tmpstr, _("Ufs910 Free Lizense"), 1, 0);	
+	else if(status.security == 4)
+		tmpstr = ostrcat(tmpstr, _("Atemio Free Lizense"), 1, 0);	
 	else
-		tmpstr = ostrcat(tmpstr, _("extinct"), 1, 0);
+		tmpstr = ostrcat(tmpstr, _("expired"), 1, 0);
 
 	text = ostrcat(text, "\n", 1, 0);
 
