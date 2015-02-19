@@ -70,7 +70,7 @@ msgstr ""
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:31 scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1901
 #: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 scriptexec.h:41
-#: security.h:660 security.h:676 security.h:1864 service.h:738 service.h:983
+#: security.h:660 security.h:677 security.h:1865 service.h:738 service.h:983
 #: shared.h:29 shared.h:65 shared.h:82 skinadjust.h:317 skinadjust.h:713
 #: skins_dlna_skin.xml.h:8 skinselector.h:237 skins_facebook_skin.xml.h:5
 #: skins_mboxinfo_skin.xml.h:2 skins_mc_skin.xml.h:38
@@ -181,7 +181,7 @@ msgstr ""
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:31 scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1901
 #: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 scriptexec.h:41
-#: security.h:660 security.h:676 security.h:1864 service.h:738 service.h:983
+#: security.h:660 security.h:677 security.h:1865 service.h:738 service.h:983
 #: shared.h:29 shared.h:65 shared.h:82 skin_default_skin.xml.h:245
 #: skins_autotimer_skin.xml.h:7 skins_callmonitor1_skin.xml.h:11
 #: skins_catcatch_skin.xml.h:4 skins_dlna_skin.xml.h:2 skinselector.h:237
@@ -709,7 +709,7 @@ msgstr ""
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:31
 #: scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1646 scan.h:1901
-#: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 security.h:1864 service.h:738
+#: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 security.h:1865 service.h:738
 #: service.h:983 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:317
 #: skinadjust.h:713 skinselector.h:237 sock.h:952 softcam.h:410 softcam.h:468
 #: softcam.h:469 solarmovie.h:35 solarmovie.h:47 solarmovie.h:304 spinner.h:18
@@ -859,7 +859,7 @@ msgstr ""
 
 #: bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2793 httpdfunc.h:2805
 #: httpdfunc.h:5450 httpdfunc.h:5496 hwtest.h:478 moduleconfig.h:345
-#: security.h:2054 skin_default_skin.xml.h:774 skinselector.h:138 stream.h:22
+#: security.h:2055 skin_default_skin.xml.h:774 skinselector.h:138 stream.h:22
 #: transponder.h:122 transponder.h:158 transponder.h:194 transponder.h:227
 #: transponder.h:259 transponder.h:295 transponder.h:330 transponder.h:348
 #: transponder.h:364 transponder.h:418 transponder.h:451 transponder.h:480
@@ -2583,7 +2583,7 @@ msgstr ""
 msgid "System Update"
 msgstr ""
 
-#: httpdfunc.h:5556 security.h:2004 skin_default_skin.xml.h:370
+#: httpdfunc.h:5556 security.h:2005 skin_default_skin.xml.h:370
 msgid "Installed:"
 msgstr ""
 
@@ -2918,7 +2918,7 @@ msgstr ""
 msgid "Email  \t\tinfo@atemio.de"
 msgstr ""
 
-#: info.h:27 plugins_tmc_skin.xml.h:9 security.h:660 security.h:676
+#: info.h:27 plugins_tmc_skin.xml.h:9 security.h:660 security.h:677
 #: skins_tmc_skin.xml.h:9 titan.c:1018 webif_index.atemio510.h:15
 #: webif_index.atemio5200.h:15 webif_index.atemio5200.h:43
 #: webif_index.atemio5200.h:99 webif_index.atemio6000.h:15
@@ -6238,55 +6238,55 @@ msgid ""
 "Website www.atemio.de"
 msgstr ""
 
-#: security.h:672 security.h:2025
+#: security.h:673 security.h:2026
 msgid "Trial period ends in"
 msgstr ""
 
-#: security.h:674 security.h:2028
+#: security.h:675 security.h:2029
 msgid " Days "
 msgstr ""
 
-#: security.h:1997
+#: security.h:1998
 msgid "Image"
 msgstr ""
 
-#: security.h:2000
+#: security.h:2001
 msgid "Version"
 msgstr ""
 
-#: security.h:2009
+#: security.h:2010
 msgid "Frontcontroller"
 msgstr ""
 
-#: security.h:2015
+#: security.h:2016
 msgid "Lizense"
 msgstr ""
 
-#: security.h:2018
+#: security.h:2019
 msgid "valid"
 msgstr ""
 
-#: security.h:2031
+#: security.h:2032
 msgid "Ufs910 Free Lizense"
 msgstr ""
 
-#: security.h:2033
+#: security.h:2034
 msgid "Atemio Free Lizense"
 msgstr ""
 
-#: security.h:2035
+#: security.h:2036
 msgid "expired"
 msgstr ""
 
-#: security.h:2040
+#: security.h:2041
 msgid "Copyright"
 msgstr "© Copyright"
 
-#: security.h:2049 skin_default_skin.xml.h:752
+#: security.h:2050 skin_default_skin.xml.h:752
 msgid "Tuner"
 msgstr ""
 
-#: security.h:2056 skin_default_skin.xml.h:758
+#: security.h:2057 skin_default_skin.xml.h:758
 msgid "Tunertype"
 msgstr ""
 
