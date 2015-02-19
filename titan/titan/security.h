@@ -832,6 +832,14 @@ void startnet()
 
 	if(status.security >= 1)
 	{
+		cmd = ostrcat(cmd, "ifconfig eth0 up > /dev/null 2>&1", 1, 0);
+		system(cmd);
+		free(cmd); cmd = NULL;
+
+		cmd = ostrcat(cmd, "/etc/init.d/networking -i eth0 -s no start > /dev/null 2>&1", 1, 0);
+		system(cmd);
+		free(cmd); cmd = NULL;
+
 		cmd = ostrcat(cmd, "/", 1, 0);
 		cmd = ostrcat(cmd, "usr", 1, 0);
 		cmd = ostrcat(cmd, "/", 1, 0);
@@ -853,8 +861,12 @@ void killnet()
 {
 	if(status.security == 0)
 	{
-		status.expertmodus = 0;	
+		status.expertmodus = 0;
 		char* cmd = NULL;
+		cmd = ostrcat(cmd, "emu.sh stop", 1, 0);
+		system(cmd);
+		free(cmd); cmd = NULL;	
+
 		cmd = ostrcat(cmd, "killall", 1, 0);
 		cmd = ostrcat(cmd, " ", 1, 0);
 		cmd = ostrcat(cmd, "-9", 1, 0);
@@ -865,13 +877,33 @@ void killnet()
 		cmd = ostrcat(cmd, " ", 1, 0);
 		cmd = ostrcat(cmd, "vsftpd", 1, 0);
 		cmd = ostrcat(cmd, " ", 1, 0);
-		cmd = ostrcat(cmd, "ftpd", 1, 0);		
+		cmd = ostrcat(cmd, "oscam", 1, 0);		
+		cmd = ostrcat(cmd, " ", 1, 0);
+		cmd = ostrcat(cmd, "mgcamd", 1, 0);
+		cmd = ostrcat(cmd, " ", 1, 0);
+		cmd = ostrcat(cmd, "gbox", 1, 0);
+		cmd = ostrcat(cmd, " ", 1, 0);
+		cmd = ostrcat(cmd, "camd3", 1, 0);
+		cmd = ostrcat(cmd, " ", 1, 0);
+		cmd = ostrcat(cmd, "ftpd", 1, 0);
 		cmd = ostrcat(cmd, " ", 1, 0);
 		cmd = ostrcat(cmd, "> /dev/null 2>&1", 1, 0);
 		system(cmd);
 		free(cmd); cmd = NULL;
 
-		cmd = ostrcat(cmd, "emu.sh stop", 1, 0);
+		cmd = ostrcat(cmd, "ifconfig eth0 down > /dev/null 2>&1", 1, 0);
+		system(cmd);
+		free(cmd); cmd = NULL;
+
+		cmd = ostrcat(cmd, "ifconfig wlan0 down > /dev/null 2>&1", 1, 0);
+		system(cmd);
+		free(cmd); cmd = NULL;
+
+		cmd = ostrcat(cmd, "ifconfig ra0 down > /dev/null 2>&1", 1, 0);
+		system(cmd);
+		free(cmd); cmd = NULL;
+
+		cmd = ostrcat(cmd, "emu.sh stop > /dev/null 2>&1", 1, 0);
 		system(cmd);
 		free(cmd); cmd = NULL;	
 	}
