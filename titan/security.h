@@ -883,6 +883,12 @@ void killnet()
 		cmd = ostrcat(cmd, " ", 1, 0);
 		cmd = ostrcat(cmd, "gbox", 1, 0);
 		cmd = ostrcat(cmd, " ", 1, 0);
+		cmd = ostrcat(cmd, "cccam", 1, 0);
+		cmd = ostrcat(cmd, " ", 1, 0);
+		cmd = ostrcat(cmd, "newcs", 1, 0);
+		cmd = ostrcat(cmd, " ", 1, 0);
+		cmd = ostrcat(cmd, "scam", 1, 0);
+		cmd = ostrcat(cmd, " ", 1, 0);
 		cmd = ostrcat(cmd, "camd3", 1, 0);
 		cmd = ostrcat(cmd, " ", 1, 0);
 		cmd = ostrcat(cmd, "ftpd", 1, 0);
