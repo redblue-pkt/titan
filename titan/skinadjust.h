@@ -136,8 +136,6 @@ void screenskinadjust()
 	addchoicebox(showrecfreesize, "2", _("yes (Text in MB)"));
 	setchoiceboxselection(showrecfreesize, getconfig("showrecfreesize", NULL));
 
-
-//	addchoicebox(listboxselect, "0", _("press red"));
 	addchoicebox(listboxselect, "0", getskinconfig("markcol", NULL));
 	addchoicebox(tithek_selectcol, "1", getskinconfig("tithek_selectcol", NULL));
 	addchoicebox(filelistselect, "2", getskinconfig("filelistselect", NULL));
@@ -149,13 +147,65 @@ void screenskinadjust()
 	addchoicebox(titlebar_bgcol2, "8", getskinconfig("titlebar_bgcol2", NULL));
 	addchoicebox(titlebar_bordercol, "9", getskinconfig("titlebar_bordercol", NULL));
 	addchoicebox(titlebar_fontcol, "10", getskinconfig("titlebar_fontcol", NULL));
-	addchoicebox(bgcol, "11", getskinconfig("bgcol", NULL));
-	addchoicebox(bgcol2, "12", getskinconfig("bgcol2", NULL));
-	addchoicebox(fontcol, "13", getskinconfig("fontcol", NULL));
-	addchoicebox(bordercol, "14", getskinconfig("bordercol", NULL));
-	addchoicebox(progresscol, "15", getskinconfig("progresscol", NULL));
-	addchoicebox(titlebgcol, "16", getskinconfig("titlebgcol", NULL));
-	addchoicebox(markcol, "17", getskinconfig("markcol", NULL));
+	addchoicebox(okcol, "11", getskinconfig("okcol", NULL));
+	addchoicebox(exitcol, "12", getskinconfig("exitcol", NULL));
+	addchoicebox(deaktivcol, "13", getskinconfig("deaktivcol", NULL));
+	addchoicebox(bgcol, "14", getskinconfig("bgcol", NULL));
+	addchoicebox(bgcol2, "15", getskinconfig("bgcol2", NULL));
+	addchoicebox(fontcol, "16", getskinconfig("fontcol", NULL));
+	addchoicebox(bordercol, "17", getskinconfig("bordercol", NULL));
+	addchoicebox(progresscol, "18", getskinconfig("progresscol", NULL));
+	addchoicebox(titlebgcol, "19", getskinconfig("titlebgcol", NULL));
+	addchoicebox(markcol, "20", getskinconfig("markcol", NULL));
+	addchoicebox(cpmode_bgcol, "21", getskinconfig("cpmode_bgcol", NULL));
+	addchoicebox(cpmode_fontcol, "22", getskinconfig("cpmode_fontcol", NULL));
+	addchoicebox(editmode_bgcol, "23", getskinconfig("editmode_bgcol", NULL));
+	addchoicebox(editmode_fontcol, "24", getskinconfig("editmode_fontcol", NULL));
+	addchoicebox(mvmode_fontcol, "25", getskinconfig("mvmode_fontcol", NULL));
+	addchoicebox(protectmode_bgcol, "26", getskinconfig("protectmode_bgcol", NULL));
+	addchoicebox(protectmode_fontcol, "27", getskinconfig("protectmode_fontcol", NULL));
+	addchoicebox(rec_progress, "28", getskinconfig("rec_progress", NULL));
+	addchoicebox(epgcol1, "29", getskinconfig("epgcol1", NULL));
+	addchoicebox(epgcol2, "30", getskinconfig("epgcol2", NULL));
+	addchoicebox(epgcol3, "31", getskinconfig("epgcol3", NULL));
+	addchoicebox(emuaktivecol, "32", getskinconfig("emuaktivecol", NULL));
+	addchoicebox(emurunningcol, "33", getskinconfig("emurunningcol", NULL));
+
+	listboxselect->fontcol2 = convertcol(getskinconfig("listboxselect", NULL));
+	tithek_selectcol->fontcol2 = convertcol(getskinconfig("tithek_selectcol", NULL));
+	filelistselect->fontcol2 = convertcol(getskinconfig("filelistselect", NULL));
+	buttonbar_bgcol->fontcol2 = convertcol(getskinconfig("buttonbar_bgcol", NULL));
+	buttonbar_bgcol2->fontcol2 = convertcol(getskinconfig("buttonbar_bgcol2", NULL));
+	buttonbar_bordercol->fontcol2 = convertcol(getskinconfig("buttonbar_bordercol", NULL));
+	buttonbar_fontcol->fontcol2 = convertcol(getskinconfig("buttonbar_fontcol", NULL));
+	titlebar_bgcol->fontcol2 = convertcol(getskinconfig("titlebar_bgcol", NULL));
+	titlebar_bgcol2->fontcol2 = convertcol(getskinconfig("titlebar_bgcol2", NULL));
+	titlebar_bordercol->fontcol2 = convertcol(getskinconfig("titlebar_bordercol", NULL));
+	titlebar_fontcol->fontcol2 = convertcol(getskinconfig("titlebar_fontcol", NULL));
+	okcol->fontcol2 = convertcol(getskinconfig("okcol", NULL));
+	exitcol->fontcol2 = convertcol(getskinconfig("exitcol", NULL));
+	deaktivcol->fontcol2 = convertcol(getskinconfig("deaktivcol", NULL));
+	bgcol->fontcol2 = convertcol(getskinconfig("bgcol", NULL));
+	bgcol2->fontcol2 = convertcol(getskinconfig("bgcol2", NULL));
+	fontcol->fontcol2 = convertcol(getskinconfig("fontcol", NULL));
+	bordercol->fontcol2 = convertcol(getskinconfig("bordercol", NULL));
+	progresscol->fontcol2 = convertcol(getskinconfig("progresscol", NULL));
+	titlebgcol->fontcol2 = convertcol(getskinconfig("titlebgcol", NULL));
+	markcol->fontcol2 = convertcol(getskinconfig("markcol", NULL));
+	rec_progress->fontcol2 = convertcol(getskinconfig("rec_progress", NULL));
+	cpmode_bgcol->fontcol2 = convertcol(getskinconfig("cpmode_bgcol", NULL));
+	cpmode_fontcol->fontcol2 = convertcol(getskinconfig("cpmode_fontcol", NULL));
+	editmode_bgcol->fontcol2 = convertcol(getskinconfig("editmode_bgcol", NULL));
+	editmode_fontcol->fontcol2 = convertcol(getskinconfig("editmode_fontcol", NULL));
+	mvmode_bgcol->fontcol2 = convertcol(getskinconfig("mvmode_bgcol", NULL));
+	mvmode_fontcol->fontcol2 = convertcol(getskinconfig("mvmode_fontcol", NULL));
+	protectmode_bgcol->fontcol2 = convertcol(getskinconfig("protectmode_bgcol", NULL));
+	protectmode_fontcol->fontcol2 = convertcol(getskinconfig("protectmode_fontcol", NULL));
+	epgcol1->fontcol2 = convertcol(getskinconfig("epgcol1", NULL));
+	epgcol2->fontcol2 = convertcol(getskinconfig("epgcol2", NULL));
+	epgcol3->fontcol2 = convertcol(getskinconfig("epgcol3", NULL));
+	emuaktivecol->fontcol2 = convertcol(getskinconfig("emuaktivecol", NULL));
+	emurunningcol->fontcol2 = convertcol(getskinconfig("emurunningcol", NULL));
 
 	b5->hidden = YES;
 
@@ -251,6 +301,7 @@ void screenskinadjust()
 				if(tmpstr != NULL)
 					addskinconfigtmp("listboxselect", tmpstr);
 				if(oldlistboxselectcol != convertcol("listboxselect")) reboot = 1;
+				listboxselect->fontcol2 = convertcol(tmpstr);
 			}
 
 			if(listbox->select != NULL && ostrcmp(listbox->select->name, "tithek_selectcol") == 0)
@@ -260,6 +311,7 @@ void screenskinadjust()
 				if(tmpstr != NULL)
 					addskinconfigtmp("tithek_selectcol", tmpstr);
 				if(oldtithek_selectcol != convertcol("tithek_selectcol")) reboot = 1;
+				tithek_selectcol->fontcol2 = convertcol(tmpstr);
 			}
 
 			if(listbox->select != NULL && ostrcmp(listbox->select->name, "filelistselect") == 0)
@@ -269,6 +321,7 @@ void screenskinadjust()
 				if(tmpstr != NULL)
 					addskinconfigtmp("filelistselect", tmpstr);
 				if(oldfilelistselect != convertcol("filelistselect")) reboot = 1;
+				filelistselect->fontcol2 = convertcol(tmpstr);
 			}
 
 			if(listbox->select != NULL && ostrcmp(listbox->select->name, "buttonbar_bgcol") == 0)
@@ -278,6 +331,7 @@ void screenskinadjust()
 				if(tmpstr != NULL)
 					addskinconfigtmp("buttonbar_bgcol", tmpstr);
 				if(oldbuttonbar_bgcol != convertcol("buttonbar_bgcol")) reboot = 1;
+				buttonbar_bgcol->fontcol2 = convertcol(tmpstr);
 			}
 
 			if(listbox->select != NULL && ostrcmp(listbox->select->name, "buttonbar_bgcol2") == 0)
@@ -287,6 +341,7 @@ void screenskinadjust()
 				if(tmpstr != NULL)
 					addskinconfigtmp("buttonbar_bgcol2", tmpstr);
 				if(oldbuttonbar_bgcol2 != convertcol("buttonbar_bgcol2")) reboot = 1;
+				buttonbar_bgcol2->fontcol2 = convertcol(tmpstr);
 			}
 
 			if(listbox->select != NULL && ostrcmp(listbox->select->name, "buttonbar_bordercol") == 0)
@@ -296,6 +351,7 @@ void screenskinadjust()
 				if(tmpstr != NULL)
 					addskinconfigtmp("buttonbar_bordercol", tmpstr);
 				if(oldbuttonbar_bordercol != convertcol("buttonbar_bordercol")) reboot = 1;
+				buttonbar_bordercol->fontcol2 = convertcol(tmpstr);
 			}
 
 			if(listbox->select != NULL && ostrcmp(listbox->select->name, "buttonbar_fontcol") == 0)
@@ -305,6 +361,7 @@ void screenskinadjust()
 				if(tmpstr != NULL)
 					addskinconfigtmp("buttonbar_fontcol", tmpstr);
 				if(oldbuttonbar_fontcol != convertcol("buttonbar_fontcol")) reboot = 1;
+				buttonbar_fontcol->fontcol2 = convertcol(tmpstr);
 			}
 
 			if(listbox->select != NULL && ostrcmp(listbox->select->name, "titlebar_bgcol") == 0)
@@ -314,6 +371,7 @@ void screenskinadjust()
 				if(tmpstr != NULL)
 					addskinconfigtmp("titlebar_bgcol", tmpstr);
 				if(oldtitlebar_bgcol != convertcol("titlebar_bgcol")) reboot = 1;
+				titlebar_bgcol->fontcol2 = convertcol(tmpstr);
 			}
 
 			if(listbox->select != NULL && ostrcmp(listbox->select->name, "titlebar_bgcol2") == 0)
@@ -323,6 +381,7 @@ void screenskinadjust()
 				if(tmpstr != NULL)
 					addskinconfigtmp("titlebar_bgcol2", tmpstr);
 				if(oldtitlebar_bgcol2 != convertcol("titlebar_bgcol2")) reboot = 1;
+				titlebar_bgcol2->fontcol2 = convertcol(tmpstr);
 			}
 
 			if(listbox->select != NULL && ostrcmp(listbox->select->name, "titlebar_bordercol") == 0)
@@ -332,6 +391,7 @@ void screenskinadjust()
 				if(tmpstr != NULL)
 					addskinconfigtmp("titlebar_bordercol", tmpstr);
 				if(oldtitlebar_bordercol != convertcol("titlebar_bordercol")) reboot = 1;
+				titlebar_bordercol->fontcol2 = convertcol(tmpstr);
 			}
 
 			if(listbox->select != NULL && ostrcmp(listbox->select->name, "titlebar_fontcol") == 0)
@@ -341,6 +401,37 @@ void screenskinadjust()
 				if(tmpstr != NULL)
 					addskinconfigtmp("titlebar_fontcol", tmpstr);
 				if(oldtitlebar_fontcol != convertcol("titlebar_fontcol")) reboot = 1;
+				titlebar_fontcol->fontcol2 = convertcol(tmpstr);
+			}
+
+			if(listbox->select != NULL && ostrcmp(listbox->select->name, "okcol") == 0)
+			{
+				long oldokcol = convertcol("okcol");
+				tmpstr = screencolorpicker(getskinconfig("okcol", NULL), 0, 0, 0);
+				if(tmpstr != NULL)
+					addskinconfigtmp("okcol", tmpstr);
+				if(oldokcol != convertcol("okcol")) reboot = 1;
+				okcol->fontcol2 = convertcol(tmpstr);
+			}
+
+			if(listbox->select != NULL && ostrcmp(listbox->select->name, "exitcol") == 0)
+			{
+				long oldexitcol = convertcol("exitcol");
+				tmpstr = screencolorpicker(getskinconfig("exitcol", NULL), 0, 0, 0);
+				if(tmpstr != NULL)
+					addskinconfigtmp("exitcol", tmpstr);
+				if(oldexitcol != convertcol("exitcol")) reboot = 1;
+				okcol->fontcol2 = convertcol(tmpstr);
+			}
+
+			if(listbox->select != NULL && ostrcmp(listbox->select->name, "deaktivcol") == 0)
+			{
+				long olddeaktivcol = convertcol("deaktivcol");
+				tmpstr = screencolorpicker(getskinconfig("deaktivcol", NULL), 0, 0, 0);
+				if(tmpstr != NULL)
+					addskinconfigtmp("deaktivcol", tmpstr);
+				if(olddeaktivcol != convertcol("deaktivcol")) reboot = 1;
+				deaktivcol->fontcol2 = convertcol(tmpstr);
 			}
 
 			if(listbox->select != NULL && ostrcmp(listbox->select->name, "bgcol") == 0)
@@ -350,6 +441,7 @@ void screenskinadjust()
 				if(tmpstr != NULL)
 					addskinconfigtmp("bgcol", tmpstr);
 				if(oldbgcol != convertcol("bgcol")) reboot = 1;
+				bgcol->fontcol2 = convertcol(tmpstr);
 			}
 
 			if(listbox->select != NULL && ostrcmp(listbox->select->name, "bgcol2") == 0)
@@ -359,6 +451,7 @@ void screenskinadjust()
 				if(tmpstr != NULL)
 					addskinconfigtmp("bgcol2", tmpstr);
 				if(oldbgcol2 != convertcol("bgcol2")) reboot = 1;
+				bgcol2->fontcol2 = convertcol(tmpstr);
 			}
 
 			if(listbox->select != NULL && ostrcmp(listbox->select->name, "fontcol") == 0)
@@ -368,6 +461,7 @@ void screenskinadjust()
 				if(tmpstr != NULL)
 					addskinconfigtmp("fontcol", tmpstr);
 				if(oldfontcol != convertcol("fontcol")) reboot = 1;
+				fontcol->fontcol2 = convertcol(tmpstr);
 			}
 
 			if(listbox->select != NULL && ostrcmp(listbox->select->name, "bordercol") == 0)
@@ -377,6 +471,7 @@ void screenskinadjust()
 				if(tmpstr != NULL)
 					addskinconfigtmp("bordercol", tmpstr);
 				if(oldbordercol != convertcol("bordercol")) reboot = 1;
+				bordercol->fontcol2 = convertcol(tmpstr);
 			}
 
 			if(listbox->select != NULL && ostrcmp(listbox->select->name, "progresscol") == 0)
@@ -386,6 +481,7 @@ void screenskinadjust()
 				if(tmpstr != NULL)
 					addskinconfigtmp("progresscol", tmpstr);
 				if(oldprogresscol != convertcol("progresscol")) reboot = 1;
+				progresscol->fontcol2 = convertcol(tmpstr);
 			}
 
 			if(listbox->select != NULL && ostrcmp(listbox->select->name, "titlebgcol") == 0)
@@ -395,6 +491,7 @@ void screenskinadjust()
 				if(tmpstr != NULL)
 					addskinconfigtmp("titlebgcol", tmpstr);
 				if(oldtitlebgcol != convertcol("titlebgcol")) reboot = 1;
+				titlebgcol->fontcol2 = convertcol(tmpstr);
 			}
 
 			if(listbox->select != NULL && ostrcmp(listbox->select->name, "markcol") == 0)
@@ -404,6 +501,157 @@ void screenskinadjust()
 				if(tmpstr != NULL)
 					addskinconfigtmp("markcol", tmpstr);
 				if(oldmarkcol != convertcol("markcol")) reboot = 1;
+				markcol->fontcol2 = convertcol(tmpstr);
+			}
+
+			if(listbox->select != NULL && ostrcmp(listbox->select->name, "cpmode_bgcol") == 0)
+			{
+				long oldcpmode_bgcol = convertcol("cpmode_bgcol");
+				tmpstr = screencolorpicker(getskinconfig("cpmode_bgcol", NULL), 0, 0, 0);
+				if(tmpstr != NULL)
+					addskinconfigtmp("cpmode_bgcol", tmpstr);
+				if(oldcpmode_bgcol != convertcol("cpmode_bgcol")) reboot = 1;
+				cpmode_bgcol->fontcol2 = convertcol(tmpstr);
+			}
+
+			if(listbox->select != NULL && ostrcmp(listbox->select->name, "cpmode_fontcol") == 0)
+			{
+				long oldcpmode_fontcol = convertcol("cpmode_fontcol");
+				tmpstr = screencolorpicker(getskinconfig("cpmode_fontcol", NULL), 0, 0, 0);
+				if(tmpstr != NULL)
+					addskinconfigtmp("cpmode_fontcol", tmpstr);
+				if(oldcpmode_fontcol != convertcol("cpmode_fontcol")) reboot = 1;
+				cpmode_fontcol->fontcol2 = convertcol(tmpstr);
+			}
+
+			if(listbox->select != NULL && ostrcmp(listbox->select->name, "editmode_bgcol") == 0)
+			{
+				long oldeditmode_bgcol = convertcol("editmode_bgcol");
+				tmpstr = screencolorpicker(getskinconfig("editmode_bgcol", NULL), 0, 0, 0);
+				if(tmpstr != NULL)
+					addskinconfigtmp("editmode_bgcol", tmpstr);
+				if(oldeditmode_bgcol != convertcol("editmode_bgcol")) reboot = 1;
+				editmode_bgcol->fontcol2 = convertcol(tmpstr);
+			}
+
+			if(listbox->select != NULL && ostrcmp(listbox->select->name, "editmode_fontcol") == 0)
+			{
+				long oldeditmode_fontcol = convertcol("editmode_fontcol");
+				tmpstr = screencolorpicker(getskinconfig("editmode_fontcol", NULL), 0, 0, 0);
+				if(tmpstr != NULL)
+					addskinconfigtmp("editmode_fontcol", tmpstr);
+				if(oldeditmode_fontcol != convertcol("editmode_fontcol")) reboot = 1;
+				editmode_fontcol->fontcol2 = convertcol(tmpstr);
+			}
+
+			if(listbox->select != NULL && ostrcmp(listbox->select->name, "mvmode_bgcol") == 0)
+			{
+				long oldmvmode_bgcol = convertcol("mvmode_bgcol");
+				tmpstr = screencolorpicker(getskinconfig("mvmode_bgcol", NULL), 0, 0, 0);
+				if(tmpstr != NULL)
+					addskinconfigtmp("mvmode_bgcol", tmpstr);
+				if(oldmvmode_bgcol != convertcol("mvmode_bgcol")) reboot = 1;
+				mvmode_bgcol->fontcol2 = convertcol(tmpstr);
+			}
+
+			if(listbox->select != NULL && ostrcmp(listbox->select->name, "mvmode_bgcol") == 0)
+			{
+				long oldmvmode_bgcol = convertcol("mvmode_bgcol");
+				tmpstr = screencolorpicker(getskinconfig("mvmode_bgcol", NULL), 0, 0, 0);
+				if(tmpstr != NULL)
+					addskinconfigtmp("mvmode_bgcol", tmpstr);
+				if(oldmvmode_bgcol != convertcol("mvmode_bgcol")) reboot = 1;
+				mvmode_bgcol->fontcol2 = convertcol(tmpstr);
+			}
+
+			if(listbox->select != NULL && ostrcmp(listbox->select->name, "mvmode_fontcol") == 0)
+			{
+				long oldmvmode_fontcol = convertcol("mvmode_fontcol");
+				tmpstr = screencolorpicker(getskinconfig("mvmode_fontcol", NULL), 0, 0, 0);
+				if(tmpstr != NULL)
+					addskinconfigtmp("mvmode_fontcol", tmpstr);
+				if(oldmvmode_fontcol != convertcol("mvmode_fontcol")) reboot = 1;
+				mvmode_fontcol->fontcol2 = convertcol(tmpstr);
+			}
+
+			if(listbox->select != NULL && ostrcmp(listbox->select->name, "protectmode_bgcol") == 0)
+			{
+				long oldprotectmode_bgcol = convertcol("protectmode_bgcol");
+				tmpstr = screencolorpicker(getskinconfig("protectmode_bgcol", NULL), 0, 0, 0);
+				if(tmpstr != NULL)
+					addskinconfigtmp("protectmode_bgcol", tmpstr);
+				if(oldprotectmode_bgcol != convertcol("protectmode_bgcol")) reboot = 1;
+				protectmode_bgcol->fontcol2 = convertcol(tmpstr);
+			}
+
+			if(listbox->select != NULL && ostrcmp(listbox->select->name, "protectmode_fontcol") == 0)
+			{
+				long oldprotectmode_fontcol = convertcol("protectmode_fontcol");
+				tmpstr = screencolorpicker(getskinconfig("protectmode_fontcol", NULL), 0, 0, 0);
+				if(tmpstr != NULL)
+					addskinconfigtmp("protectmode_fontcol", tmpstr);
+				if(oldprotectmode_fontcol != convertcol("protectmode_fontcol")) reboot = 1;
+				protectmode_fontcol->fontcol2 = convertcol(tmpstr);
+			}
+
+			if(listbox->select != NULL && ostrcmp(listbox->select->name, "rec_progress") == 0)
+			{
+				long oldrec_progress = convertcol("rec_progress");
+				tmpstr = screencolorpicker(getskinconfig("rec_progress", NULL), 0, 0, 0);
+				if(tmpstr != NULL)
+					addskinconfigtmp("rec_progress", tmpstr);
+				if(oldrec_progress != convertcol("rec_progress")) reboot = 1;
+				rec_progress->fontcol2 = convertcol(tmpstr);
+			}
+
+			if(listbox->select != NULL && ostrcmp(listbox->select->name, "epgcol1") == 0)
+			{
+				long oldepgcol1 = convertcol("epgcol1");
+				tmpstr = screencolorpicker(getskinconfig("epgcol1", NULL), 0, 0, 0);
+				if(tmpstr != NULL)
+					addskinconfigtmp("epgcol1", tmpstr);
+				if(oldepgcol1 != convertcol("epgcol1")) reboot = 1;
+				epgcol1->fontcol2 = convertcol(tmpstr);
+			}						
+
+			if(listbox->select != NULL && ostrcmp(listbox->select->name, "epgcol2") == 0)
+			{
+				long oldepgcol2 = convertcol("epgcol2");
+				tmpstr = screencolorpicker(getskinconfig("epgcol2", NULL), 0, 0, 0);
+				if(tmpstr != NULL)
+					addskinconfigtmp("epgcol2", tmpstr);
+				if(oldepgcol2 != convertcol("epgcol2")) reboot = 1;
+				epgcol2->fontcol2 = convertcol(tmpstr);
+			}
+
+			if(listbox->select != NULL && ostrcmp(listbox->select->name, "epgcol3") == 0)
+			{
+				long oldepgcol3 = convertcol("epgcol3");
+				tmpstr = screencolorpicker(getskinconfig("epgcol3", NULL), 0, 0, 0);
+				if(tmpstr != NULL)
+					addskinconfigtmp("epgcol3", tmpstr);
+				if(oldepgcol3 != convertcol("epgcol3")) reboot = 1;
+				epgcol3->fontcol2 = convertcol(tmpstr);
+			}
+
+			if(listbox->select != NULL && ostrcmp(listbox->select->name, "emuaktivecol") == 0)
+			{
+				long oldemuaktivecol = convertcol("emuaktivecol");
+				tmpstr = screencolorpicker(getskinconfig("emuaktivecol", NULL), 0, 0, 0);
+				if(tmpstr != NULL)
+					addskinconfigtmp("emuaktivecol", tmpstr);
+				if(oldemuaktivecol != convertcol("emuaktivecol")) reboot = 1;
+				emuaktivecol->fontcol2 = convertcol(tmpstr);
+			}
+
+			if(listbox->select != NULL && ostrcmp(listbox->select->name, "emurunningcol") == 0)
+			{
+				long oldemurunningcol = convertcol("emurunningcol");
+				tmpstr = screencolorpicker(getskinconfig("emurunningcol", NULL), 0, 0, 0);
+				if(tmpstr != NULL)
+					addskinconfigtmp("emurunningcol", tmpstr);
+				if(oldemurunningcol != convertcol("emurunningcol")) reboot = 1;
+				emurunningcol->fontcol2 = convertcol(tmpstr);
 			}
 
 			drawscreen(skinadjust, 0, 0);
@@ -473,6 +721,12 @@ void screenskinadjust()
 			b5->hidden = NO;
 		else if(ostrcmp(listbox->select->name, "titlebar_fontcol") == 0)
 			b5->hidden = NO;
+		else if(ostrcmp(listbox->select->name, "okcol") == 0)
+			b5->hidden = NO;
+		else if(ostrcmp(listbox->select->name, "exitcol") == 0)
+			b5->hidden = NO;
+		else if(ostrcmp(listbox->select->name, "deaktivcol") == 0)
+			b5->hidden = NO;
 		else if(ostrcmp(listbox->select->name, "bgcol") == 0)
 			b5->hidden = NO;
 		else if(ostrcmp(listbox->select->name, "bgcol2") == 0)
@@ -487,9 +741,37 @@ void screenskinadjust()
 			b5->hidden = NO;
 		else if(ostrcmp(listbox->select->name, "markcol") == 0)
 			b5->hidden = NO;
+		else if(ostrcmp(listbox->select->name, "cpmode_bgcol") == 0)
+			b5->hidden = NO;
+		else if(ostrcmp(listbox->select->name, "cpmode_fontcol") == 0)
+			b5->hidden = NO;
+		else if(ostrcmp(listbox->select->name, "editmode_bgcol") == 0)
+			b5->hidden = NO;
+		else if(ostrcmp(listbox->select->name, "editmode_fontcol") == 0)
+			b5->hidden = NO;
+		else if(ostrcmp(listbox->select->name, "mvmode_bgcol") == 0)
+			b5->hidden = NO;
+		else if(ostrcmp(listbox->select->name, "mvmode_fontcol") == 0)
+			b5->hidden = NO;
+		else if(ostrcmp(listbox->select->name, "protectmode_bgcol") == 0)
+			b5->hidden = NO;
+		else if(ostrcmp(listbox->select->name, "protectmode_fontcol") == 0)
+			b5->hidden = NO;
+		else if(ostrcmp(listbox->select->name, "rec_progress") == 0)
+			b5->hidden = NO;
+		else if(ostrcmp(listbox->select->name, "epgcol1") == 0)
+			b5->hidden = NO;
+		else if(ostrcmp(listbox->select->name, "epgcol2") == 0)
+			b5->hidden = NO;
+		else if(ostrcmp(listbox->select->name, "epgcol3") == 0)
+			b5->hidden = NO;
+		else if(ostrcmp(listbox->select->name, "emuaktivecol") == 0)
+			b5->hidden = NO;
+		else if(ostrcmp(listbox->select->name, "emurunningcol") == 0)
+			b5->hidden = NO;
 		else
 			b5->hidden = YES;
-	
+
 		drawscreen(skinadjust, 0, 0);
 	}
 
