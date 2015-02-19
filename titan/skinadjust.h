@@ -33,6 +33,22 @@ void screenskinadjust()
 	struct skin* progresscol = getscreennode(skinadjust, "progresscol");
 	struct skin* titlebgcol = getscreennode(skinadjust, "titlebgcol");
 	struct skin* markcol = getscreennode(skinadjust, "markcol");
+	struct skin* okcol = getscreennode(skinadjust, "okcol");
+	struct skin* exitcol = getscreennode(skinadjust, "exitcol");
+	struct skin* deaktivcol = getscreennode(skinadjust, "deaktivcol");
+	struct skin* cpmode_bgcol = getscreennode(skinadjust, "cpmode_bgcol");
+	struct skin* cpmode_fontcol = getscreennode(skinadjust, "cpmode_fontcol");
+	struct skin* editmode_bgcol = getscreennode(skinadjust, "editmode_bgcol");
+	struct skin* editmode_fontcol = getscreennode(skinadjust, "editmode_fontcol");
+	struct skin* mvmode_fontcol = getscreennode(skinadjust, "mvmode_fontcol");
+	struct skin* protectmode_bgcol = getscreennode(skinadjust, "protectmode_bgcol");
+	struct skin* protectmode_fontcol = getscreennode(skinadjust, "protectmode_fontcol");
+	struct skin* rec_progress = getscreennode(skinadjust, "rec_progress");
+	struct skin* epgcol1 = getscreennode(skinadjust, "epgcol1");
+	struct skin* epgcol2 = getscreennode(skinadjust, "epgcol2");
+	struct skin* epgcol3 = getscreennode(skinadjust, "epgcol3");
+	struct skin* emuaktivecol = getscreennode(skinadjust, "emuaktivecol");
+	struct skin* emurunningcol = getscreennode(skinadjust, "emurunningcol");
 
 	struct skin* oled_sel = getscreennode(skinadjust, "oled_sel");
 	struct skin* infobar_sel = getscreennode(skinadjust, "infobar_sel");
@@ -207,6 +223,17 @@ void screenskinadjust()
 	emuaktivecol->fontcol2 = convertcol(getskinconfig("emuaktivecol", NULL));
 	emurunningcol->fontcol2 = convertcol(getskinconfig("emurunningcol", NULL));
 
+	if(status.security == 0 || checkemu() == 0)
+	{
+		emuaktivecol->hidden = YES;
+		emurunningcol->hidden = YES;
+	}
+	else
+	{
+		emuaktivecol->hidden = NO;
+		emurunningcol->hidden = NO;
+	}
+					
 	b5->hidden = YES;
 
 	drawscreen(skinadjust, 0, 0);
