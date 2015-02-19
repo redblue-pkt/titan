@@ -2579,6 +2579,7 @@ void wrapstr(char* string, char* fontname, int fontsize, int mwidth, int charspa
 
 //flag 0: normal
 //flag 1: password
+//flag 2: color
 int drawstring(char* string, unsigned long linecount, unsigned int poscount, unsigned int markpos, int posx, int posy, int mwidth, int mheight, int halign, int valign, char* fontname, int fontsize, long color, int transparent, int wrap, int* lastposx, int* lastposy, int* len, int charspace, int flag)
 {
 	int charwidth = 0, lineend = 0;
@@ -2592,11 +2593,17 @@ int drawstring(char* string, unsigned long linecount, unsigned int poscount, uns
 	char* tmpstr = NULL;
 
 	if(string == NULL || color == -1) return 1;
+//printf("string: %s\n", string);
 	
 	if(flag == 1)
 	{
 		string = mask(NULL, strlen(string), "*");
 		tmpstr = string;
+	}	
+
+	if(flag == 2)
+	{
+		color = convertcol(string);
 	}	
 
 	transparent = (transparent - 255) * -1;
@@ -2627,13 +2634,18 @@ int drawstring(char* string, unsigned long linecount, unsigned int poscount, uns
 		return 1;
 	}
 
+
+
 	while(*string != '\0')
 	{
 		charcount++;
-		if(markpos == charcount)
-			color = status.markcol;
-		else
-			color = tmpcol;
+		if(flag != 2)
+		{
+			if(markpos == charcount)
+				color = status.markcol;
+			else
+				color = tmpcol;
+		}
 
 		if(*string == '\n')
 		{
@@ -3251,7 +3263,12 @@ void drawnode(struct skin* node, int flag)
 	if(node->input != NULL)
 	{
 		if(node->type & CHOICEBOX)
-			drawstring(node->input, 1, node->poscount, -1, node->iposx, node->iposy, node->iwidth, node->iheight, RIGHT, node->valign, node->font, node->fontsize, color, node->transparent, 0, NULL, NULL, &len, node->charspace, 0);
+		{
+			if(node->fontcol2 != 0 )
+				drawstring(node->input, 1, node->poscount, -1, node->iposx, node->iposy, node->iwidth, node->iheight, RIGHT, node->valign, node->font, node->fontsize, node->fontcol2, node->transparent, 0, NULL, NULL, &len, node->charspace, 0);
+			else
+				drawstring(node->input, 1, node->poscount, -1, node->iposx, node->iposy, node->iwidth, node->iheight, RIGHT, node->valign, node->font, node->fontsize, color, node->transparent, 0, NULL, NULL, &len, node->charspace, 0);
+		}
 		if((node->type & INPUTBOX) || (node->type & INPUTBOXNUM))
 		{
 			if(node->type & PASSWORD)
@@ -3324,7 +3341,7 @@ void drawnode(struct skin* node, int flag)
 				strftime(tmpnr, MINMALLOC, "%H:%M %d-%m-%Y", loctime);
 			free(loctime);
 		}
-		drawstring(tmpnr, 1, node->poscount, -1, node->iposx, node->iposy, node->iwidth, node->iheight, RIGHT, node->valign, node->font, node->fontsize, node->fontcol, node->transparent, 1, NULL, NULL, NULL, node->charspace, 0);
+		drawstring(tmpnr, 1, node->poscount, -1, node->iposx, node->iposy, node->iwidth, node->iheight, RIGHT, node->valign, node->font, node->fontsize, node->fontcol, node->transparent, 0, NULL, NULL, NULL, node->charspace, 0);
 		free(tmpnr);
 	}
 	if(node->title != NULL && node->fontsize > 1)
