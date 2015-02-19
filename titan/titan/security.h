@@ -2,11 +2,11 @@
 #define SECURITY_H
 
 #define BUILDCODE 1424136341
-#define TRT 30000
+#define TRT 1183000
 
 int checklowflash()
 {
-	char* tmpstr = NULL; //1183000
+	char* tmpstr = NULL;
 	char* cmd = NULL;
 	cmd = ostrcat(cmd, "cat", 1, 0); 
 	cmd = ostrcat(cmd, " ", 1, 0); 
@@ -657,7 +657,7 @@ void trialendemodethread(struct stimerthread* self)
 {
 	if(status.security >= 1) return;
 	sleep(30);
-	textbox(_("Info"), _("!!! Trial period ended !!!\n\nFor new trial period install a new nightly image via USB\nor purchase a license from Atemio !!!\n\nContact:\nTel +49 (0) 6403/97759-0\nFax +49 (0) 6403/97759-10\nEmail info@atemio.de\nWebsite www.atemio.de"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 400, 30, 0);
+	textbox(_("Info"), _("!!! Trial period ended !!!\n\nFor new trial period install a new nightly image via USB\nor purchase a license from Atemio !!!\n\nContact:\nTel +49 (0) 6403/97759-0\nFax +49 (0) 6403/97759-10\nEmail info@atemio.de\nWebsite www.atemio.de"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1100, 400, 30, 0);
 }
 
 void trialcheckmodethread(struct stimerthread* self)
@@ -771,7 +771,7 @@ void checkserial(char* input)
 		free(blackfile);
 	}
 
-#ifdef BETA
+//#ifdef BETA
 	if(status.security == 0 && blacklist == 0)
 	{
 		off64_t currtime = time(NULL);
@@ -786,7 +786,7 @@ void checkserial(char* input)
 			status.security = 2;
 		}
 	}
-#endif
+//#endif
 
 	if(status.security >= 1)
 	{
@@ -1694,7 +1694,7 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 		free(ret1),ret1 = NULL;
 		free(authfile),authfile = NULL;
 
-#ifdef BETA
+//#ifdef BETA
 	if(status.security == 2)
 	{
 		off64_t currtime = time(NULL);
@@ -1709,7 +1709,7 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 			setskinnodeslocked(1);
 		}
 	}
-#endif
+//#endif
 
 /////////////
 	
