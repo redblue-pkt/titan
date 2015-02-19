@@ -72,7 +72,7 @@ void screenvfdisplay()
 		vfdrecord->hidden = YES;
 	else
 	{
-		vfdrecord->hidden = NO
+		vfdrecord->hidden = NO;
 		addchoicebox(vfdrecord, "0", _("off"));
 		addchoicebox(vfdrecord, "1", _("blink"));
 		addchoicebox(vfdrecord, "2", _("fade out/in"));
