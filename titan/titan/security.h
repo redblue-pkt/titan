@@ -722,7 +722,7 @@ void checkserial(char* input)
 	free(authbuf);
 
 // ufs910 work start
-	if(checkbox("UFS910"))
+	if(checkbox("UFS910") == 1 && checkrealbox("UFS910"") == 1)
 	{
 		status.security = 3;
 		writeserial(input);
@@ -788,6 +788,22 @@ void checkserial(char* input)
 	}
 //#endif
 
+	if(status.security == 1)
+	{
+		if(checkbox("ATEMIO-NEMESIS") == 1 && checkrealbox("INI-8000AM") == 1 && checkchipset("BCM7424") == 1)
+			status.security = 4;
+		else if(checkbox("ATEMIO5200") == 1 && checkrealbox("INI-1000AM") == 1 && checkchipset("BCM7358") == 1)
+			status.security = 4;
+		else if(checkbox("ATEMIO6000") == 1 && checkrealbox("INI-2000AM") == 1 && checkchipset("BCM7362") == 1)
+			status.security = 4;
+		else if(checkbox("ATEMIO6100") == 1 && checkrealbox("INI-2000AM") == 1 && checkchipset("BCM7362") == 1)
+			status.security = 4;
+		else if(checkbox("ATEMIO6200") == 1 && checkrealbox("INI-2000AM") == 1 && checkchipset("BCM7362") == 1)
+			status.security = 4;
+		else if(checkbox("ATEMIO520") == 1 && checkrealbox("ATEMIO520") == 1)
+			status.security = 4;
+	}
+				
 	if(status.security >= 1)
 	{
 		startnet();
@@ -1990,18 +2006,28 @@ char* getabout()
 	text = ostrcat(text, tmpstr, 1, 1);
 	text = ostrcat(text, "\n", 1, 0);
 #endif
+	tmpstr = ostrcat(_("Lizense"), ": ", 0, 0);
+
 	if(status.security == 2)
 	{
 		off64_t currtime = time(NULL);
 		off64_t buildtime = BUILDCODE;
 		int trt = TRT;
 
-		tmpstr = ostrcat(_("Trial period ends in"), ": ", 0, 0);
+		tmpstr = ostrcat(tmpstr, _("Trial period ends in"), 1, 0);
+		tmpstr = ostrcat(tmpstr, " ", 1, 0);
 		tmpstr = ostrcat(tmpstr, convert_dtimesec(buildtime + trt - currtime), 1, 1);
 		tmpstr = string_replace("_", _(" Days "), tmpstr, 1);
 		text = ostrcat(text, tmpstr, 1, 1);
-		text = ostrcat(text, "\n", 1, 0);
 	}
+	else if(status.security == 1)
+		tmpstr = ostrcat(tmpstr, _("valid"), 1, 0);
+	else if(status.security >= 3)
+		tmpstr = ostrcat(tmpstr, _("Free Lizense"), 1, 0);	
+	else
+		tmpstr = ostrcat(tmpstr, _("extinct"), 1, 0);
+
+	text = ostrcat(text, "\n", 1, 0);
 
 	text = ostrcat(text, _("Copyright"), 1, 0);
 	text = ostrcat(text, ": ", 1, 0);
