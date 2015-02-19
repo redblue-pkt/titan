@@ -2,7 +2,7 @@
 #define SECURITY_H
 
 #define BUILDCODE 1424136341
-#define TRT 3600
+#define TRT 600
 
 int checklowflash()
 {
