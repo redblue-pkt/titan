@@ -2026,7 +2026,6 @@ char* getabout()
 		tmpstr = ostrcat(tmpstr, " ", 1, 0);
 		tmpstr = ostrcat(tmpstr, convert_dtimesec(buildtime + trt - currtime), 1, 1);
 		tmpstr = string_replace("_", _(" Days "), tmpstr, 1);
-		text = ostrcat(text, tmpstr, 1, 1);
 	}
 	else if(status.security == 3)
 		tmpstr = ostrcat(tmpstr, _("Ufs910 Free Lizense"), 1, 0);	
@@ -2035,6 +2034,7 @@ char* getabout()
 	else
 		tmpstr = ostrcat(tmpstr, _("expired"), 1, 0);
 
+	text = ostrcat(text, tmpstr, 1, 1);
 	text = ostrcat(text, "\n", 1, 0);
 
 	text = ostrcat(text, _("Copyright"), 1, 0);
