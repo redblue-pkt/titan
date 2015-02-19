@@ -40,6 +40,7 @@ void screenskinadjust()
 	struct skin* cpmode_fontcol = getscreennode(skinadjust, "cpmode_fontcol");
 	struct skin* editmode_bgcol = getscreennode(skinadjust, "editmode_bgcol");
 	struct skin* editmode_fontcol = getscreennode(skinadjust, "editmode_fontcol");
+	struct skin* mvmode_bgcol = getscreennode(skinadjust, "mvmode_bgcol");
 	struct skin* mvmode_fontcol = getscreennode(skinadjust, "mvmode_fontcol");
 	struct skin* protectmode_bgcol = getscreennode(skinadjust, "protectmode_bgcol");
 	struct skin* protectmode_fontcol = getscreennode(skinadjust, "protectmode_fontcol");
@@ -569,16 +570,6 @@ void screenskinadjust()
 					addskinconfigtmp("editmode_fontcol", tmpstr);
 				if(oldeditmode_fontcol != convertcol("editmode_fontcol")) reboot = 1;
 				editmode_fontcol->fontcol2 = convertcol(tmpstr);
-			}
-
-			if(listbox->select != NULL && ostrcmp(listbox->select->name, "mvmode_bgcol") == 0)
-			{
-				long oldmvmode_bgcol = convertcol("mvmode_bgcol");
-				tmpstr = screencolorpicker(getskinconfig("mvmode_bgcol", NULL), 0, 0, 0);
-				if(tmpstr != NULL)
-					addskinconfigtmp("mvmode_bgcol", tmpstr);
-				if(oldmvmode_bgcol != convertcol("mvmode_bgcol")) reboot = 1;
-				mvmode_bgcol->fontcol2 = convertcol(tmpstr);
 			}
 
 			if(listbox->select != NULL && ostrcmp(listbox->select->name, "mvmode_bgcol") == 0)
