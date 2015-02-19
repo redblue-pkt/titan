@@ -2593,7 +2593,6 @@ int drawstring(char* string, unsigned long linecount, unsigned int poscount, uns
 	char* tmpstr = NULL;
 
 	if(string == NULL || color == -1) return 1;
-//printf("string: %s\n", string);
 	
 	if(flag == 1)
 	{
