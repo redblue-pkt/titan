@@ -6154,15 +6154,15 @@ msgstr ""
 msgid "valid"
 msgstr ""
 
-#: security.h:2032
+#: security.h:2031
 msgid "Ufs910 Free Lizense"
 msgstr ""
 
-#: security.h:2034
+#: security.h:2033
 msgid "Atemio Free Lizense"
 msgstr ""
 
-#: security.h:2036
+#: security.h:2035
 msgid "expired"
 msgstr ""
 
