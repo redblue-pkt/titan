@@ -68,8 +68,8 @@ void screenvfdisplay()
 	}
 	setchoiceboxselection(vfdstandby, getconfig("vfdisplaystandby", NULL));
 
-	if(checkbox("ATEMIO-NEMESIS"))
-	vfdrecord->hidden = YES
+	if(checkbox("ATEMIO-NEMESIS") == 1)
+		vfdrecord->hidden = YES;
 	else
 	{
 		vfdrecord->hidden = NO
