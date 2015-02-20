@@ -2013,7 +2013,7 @@ char* getabout()
 	text = ostrcat(text, tmpstr, 1, 1);
 	text = ostrcat(text, "\n", 1, 0);
 #endif
-	tmpstr = ostrcat(_("Lizense"), ": ", 0, 0);
+	tmpstr = ostrcat(_("License"), ": ", 0, 0);
 
 	if(status.security == 1)
 		tmpstr = ostrcat(tmpstr, _("valid"), 1, 0);
@@ -2029,11 +2029,11 @@ char* getabout()
 		tmpstr = string_replace("_", _(" Days "), tmpstr, 1);
 	}
 	else if(status.security == 3)
-		tmpstr = ostrcat(tmpstr, _("Ufs910 Free Lizense"), 1, 0);	
+		tmpstr = ostrcat(tmpstr, _("UFS910 free license"), 1, 0);	
 	else if(status.security == 4)
-		tmpstr = ostrcat(tmpstr, _("Atemio Free Lizense"), 1, 0);	
+		tmpstr = ostrcat(tmpstr, _("Atemio free license"), 1, 0);	
 	else if(status.security == 5)
-		tmpstr = ostrcat(tmpstr, _("Dev Free Lizense"), 1, 0);
+		tmpstr = ostrcat(tmpstr, _("Dev free license"), 1, 0);
 	else
 		tmpstr = ostrcat(tmpstr, _("expired"), 1, 0);
 
