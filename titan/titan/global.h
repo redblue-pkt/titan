@@ -6097,8 +6097,8 @@ char* translate_time(char* input, int flag)
 
 char* gethypridtunerchoices(int dev)
 {
-	char *hypridtunerchoices = NULL;
 	char *value = NULL;
+	char *hypridtunerchoices = NULL;
 	char *tmpstr = NULL;
 	char *tmpstr1 = NULL;
 	char *tmpstr2 = NULL;
@@ -6123,6 +6123,8 @@ char* gethypridtunerchoices(int dev)
 	start = ostrcat("NIM Socket ", oitoa(dev), 0, 0);
 	start = ostrcat(start, ":", 1, 0);
 
+#ifdef MIPSEL
+
 	tmpstr1 = string_resub(start, "I2C_Device", tmpstr, 0);
 	tmpstr2 = string_resub("Mode ", ":", tmpstr1, 0);
 	tmpstr3 = oregex(".*Mode ([0-9]{1}):.*", tmpstr1);
@@ -6137,7 +6139,21 @@ char* gethypridtunerchoices(int dev)
 	free(tmpstr1), tmpstr1 = NULL;
 	free(tmpstr2), tmpstr2 = NULL;
 	free(tmpstr3), tmpstr3 = NULL;
+#else
+	tmpstr1 = string_resub(start, "Frontend_Device", tmpstr, 0);
+	free(start), start = NULL;
 
+	printf("-----------------------------------\n");
+	printf("tmpstr1: %s\n", tmpstr1);
+
+	if(ostrstr(tmpstr1, "(T/C)") != NULL)
+	{
+		value = ostrcat("t", "\n", 0, 0);
+		value = ostrcat(value, "c", 1, 0);
+	}
+	printf("value: %s\n", value);
+	free(tmpstr1), tmpstr1 = NULL;
+#endif
 	return value;
 }
 
@@ -6160,6 +6176,7 @@ char* gethypridtunerchoicesvalue(int dev)
 		return NULL;
 	}
 
+#ifdef MIPSEL
 	start = ostrcat("NIM Socket ", oitoa(dev), 0, 0);
 	start = ostrcat(start, ":", 1, 0);
 	tmpstr1 = string_resub(start, "I2C_Device", tmpstr, 0);
@@ -6194,13 +6211,31 @@ char* gethypridtunerchoicesvalue(int dev)
 	free(ret1), ret1 = NULL;			
 	free(tmpstr1), tmpstr1 = NULL;
 	free(hypridlist), hypridlist = NULL;
+#else
+	tmpstr1 = string_resub(start, "Frontend_Device", tmpstr, 0);
+	free(start), start = NULL;
+
+	printf("-----------------------------------\n");
+	printf("tmpstr1: %s\n", tmpstr1);
+
+	if(ostrstr(tmpstr1, "(T/C)") != NULL)
+	{
+		value = ostrcat("DVB-T", "\n", 0, 0);
+		value = ostrcat(value, "DVB-C", 1, 0);
+	}
+	printf("value: %s\n", value);
+	free(tmpstr3), tmpstr3 = NULL;
+#endif
 
 	return value;
 }
 
 char* gethypridtunerchoicesvaluename(int dev, char* hyprid)
 {
-	char* hypridtunerchoices = NULL, *value = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *start = NULL;
+
+	char* value = NULL;
+#ifdef MIPSEL
+	char* hypridtunerchoices = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *start = NULL;
 
 	hypridtunerchoices = getconfig("hypridtunerchoices", NULL);
 
@@ -6233,7 +6268,12 @@ char* gethypridtunerchoicesvaluename(int dev, char* hyprid)
 	free(tmpstr1), tmpstr1 = NULL;
 	free(tmpstr2), tmpstr2 = NULL;
 	free(start), start = NULL;
-
+#else
+	if(ostrstr(hyprid, "t") != NULL)
+		value = ostrcat("DVB-T", NULL, 0, 0);
+	elif(ostrstr(hyprid, "c") != NULL)
+		value = ostrcat("DVB-C", NULL, 0, 0);
+#endif
 	return value;
 }
 
