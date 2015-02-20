@@ -6303,23 +6303,23 @@ msgid "Frontcontroller"
 msgstr ""
 
 #: security.h:2016
-msgid "Lizense"
-msgstr "Lizenz"
+msgid "License"
+msgstr ""
 
 #: security.h:2019
 msgid "valid"
 msgstr "gültig"
 
 #: security.h:2032
-msgid "Ufs910 Free Lizense"
-msgstr "Ufs910 Kostenlose Lizenz"
+msgid "UFS910 free license"
+msgstr ""
 
 #: security.h:2034
-msgid "Atemio Free Lizense"
-msgstr "Atemio kostenlose Lizenz"
+msgid "Atemio free license"
+msgstr ""
 
 #: security.h:2036
-msgid "Dev Free Lizense"
+msgid "Dev free license"
 msgstr ""
 
 #: security.h:2038
@@ -13424,3 +13424,12 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
+
+#~ msgid "Lizense"
+#~ msgstr "Lizenz"
+
+#~ msgid "Ufs910 Free Lizense"
+#~ msgstr "Ufs910 Kostenlose Lizenz"
+
+#~ msgid "Atemio Free Lizense"
+#~ msgstr "Atemio kostenlose Lizenz"
