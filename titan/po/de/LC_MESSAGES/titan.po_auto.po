@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: TitanNit 1.60\n"
+"Project-Id-Version: TitanNit 1.62\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
 "Last-Translator:  <aaf-caliban@e.mail.de>\n"
@@ -8153,7 +8153,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:469
 msgid "OLED selection"
-msgstr "Oled Skin Auswahl"
+msgstr "OLED Skin Auswahl"
 
 #: skin_default_skin.xml.h:470
 msgid "ONID:"
