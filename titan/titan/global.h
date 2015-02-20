@@ -6101,9 +6101,13 @@ char* gethypridtunerchoices(int dev)
 	char *hypridtunerchoices = NULL;
 	char *tmpstr = NULL;
 	char *tmpstr1 = NULL;
+	char* start = NULL;
+
+#ifdef MIPSEL
 	char *tmpstr2 = NULL;
 	char *tmpstr3 = NULL;
-	char* start = NULL;
+#endif
+
 
 	hypridtunerchoices = getconfig("hypridtunerchoices", NULL);
 
@@ -6159,7 +6163,11 @@ char* gethypridtunerchoices(int dev)
 
 char* gethypridtunerchoicesvalue(int dev)
 {
-	char* hypridtunerchoices = NULL, *value = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *hypridlist = NULL, *start = NULL;
+	char* hypridtunerchoices = NULL, *value = NULL, *tmpstr = NULL, *tmpstr1 = NULL, *start = NULL;
+
+#ifdef MIPSEL
+	char* tmpstr2 = NULL, *hypridlist = NULL;
+#endif
 
 	hypridtunerchoices = getconfig("hypridtunerchoices", NULL);
 
@@ -6279,9 +6287,10 @@ char* gethypridtunerchoicesvaluename(int dev, char* hyprid)
 
 int sethypridtuner(int dev, char* value)
 {
+	int ret = 0;
+
 #ifdef MIPSEL
 	char* buf = NULL, *hypridtuner = NULL, *tmpstr = NULL;
-	int ret = 0;
 
 	hypridtuner = getconfig("hypridtuner", NULL);
 	
@@ -6307,6 +6316,7 @@ int sethypridtuner(int dev, char* value)
 	addconfigtmp("hypridtuner", value);
 	ret = writeconfigtmp();
 	writeallconfig(1);
+	return ret;
 #endif
 	return 0;
 }
