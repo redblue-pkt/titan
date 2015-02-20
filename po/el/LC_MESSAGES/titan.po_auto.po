@@ -6147,7 +6147,7 @@ msgid "Frontcontroller"
 msgstr ""
 
 #: security.h:2016
-msgid "Lizense"
+msgid "License"
 msgstr ""
 
 #: security.h:2019
@@ -6155,15 +6155,15 @@ msgid "valid"
 msgstr ""
 
 #: security.h:2032
-msgid "Ufs910 Free Lizense"
+msgid "UFS910 free license"
 msgstr ""
 
 #: security.h:2034
-msgid "Atemio Free Lizense"
+msgid "Atemio free license"
 msgstr ""
 
 #: security.h:2036
-msgid "Dev Free Lizense"
+msgid "Dev free license"
 msgstr ""
 
 #: security.h:2038
