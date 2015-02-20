@@ -6224,7 +6224,7 @@ char* gethypridtunerchoicesvalue(int dev)
 		value = ostrcat(value, "DVB-C", 1, 0);
 	}
 	printf("value: %s\n", value);
-	free(tmpstr3), tmpstr3 = NULL;
+	free(tmpstr1), tmpstr1 = NULL;
 #endif
 
 	return value;
@@ -6271,7 +6271,7 @@ char* gethypridtunerchoicesvaluename(int dev, char* hyprid)
 #else
 	if(ostrstr(hyprid, "t") != NULL)
 		value = ostrcat("DVB-T", NULL, 0, 0);
-	elif(ostrstr(hyprid, "c") != NULL)
+	else if(ostrstr(hyprid, "c") != NULL)
 		value = ostrcat("DVB-C", NULL, 0, 0);
 #endif
 	return value;
