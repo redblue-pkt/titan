@@ -66,7 +66,7 @@ void screenunlock()
 					textbox(_("Message"), _("Can't save Code.\nDelete Plugins to free space"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 10, 0);
 
 				checkserial(cpuid);
-				if(status.security == 1)
+				if(status.security >= 1 && status.security != 2)
 				{
 					textbox(_("Message"), _("Code ok"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 10, 0);
 					break;
