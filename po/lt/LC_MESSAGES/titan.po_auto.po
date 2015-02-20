@@ -859,7 +859,7 @@ msgstr ""
 
 #: bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2793 httpdfunc.h:2805
 #: httpdfunc.h:5450 httpdfunc.h:5496 hwtest.h:478 moduleconfig.h:345
-#: security.h:2055 skin_default_skin.xml.h:774 skinselector.h:138 stream.h:22
+#: security.h:2057 skin_default_skin.xml.h:774 skinselector.h:138 stream.h:22
 #: transponder.h:122 transponder.h:158 transponder.h:194 transponder.h:227
 #: transponder.h:259 transponder.h:295 transponder.h:330 transponder.h:348
 #: transponder.h:364 transponder.h:418 transponder.h:451 transponder.h:480
@@ -6266,18 +6266,22 @@ msgid "Atemio Free Lizense"
 msgstr ""
 
 #: security.h:2036
+msgid "Dev Free Lizense"
+msgstr ""
+
+#: security.h:2038
 msgid "expired"
 msgstr ""
 
-#: security.h:2041
+#: security.h:2043
 msgid "Copyright"
 msgstr "© Autorins teiss"
 
-#: security.h:2050 skin_default_skin.xml.h:752
+#: security.h:2052 skin_default_skin.xml.h:752
 msgid "Tuner"
 msgstr "Imtuvas"
 
-#: security.h:2057 skin_default_skin.xml.h:758
+#: security.h:2059 skin_default_skin.xml.h:758
 msgid "Tunertype"
 msgstr "Imtuvo Tipas"
 
