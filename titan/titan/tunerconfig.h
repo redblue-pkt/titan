@@ -642,6 +642,8 @@ int screentunerreceptionhyprid(struct dvbdev* tuner)
 //					realname = gethypridtunername(tuner->devnr, listbox->select->ret);
 //					strcpy(tuner->feinfo->name, realname);
 //					textbox(_("Message"), _("They need to switch the tuner Hyprid restart the gui !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
+					if(checkbox(SPARK7162) == 1)
+						textbox(_("Message"), _("They need to switch the tuner Hyprid a Box Restart!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
 					changedvbdev(tuner);
 				}
 			}
@@ -656,6 +658,8 @@ int screentunerreceptionhyprid(struct dvbdev* tuner)
 //					realname = gethypridtunername(tuner->devnr, listbox->select->ret);
 //					strcpy(tuner->feinfo->name, realname);
 //					textbox(_("Message"), _("They need to switch the tuner Hyprid restart the gui !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
+					if(checkbox(SPARK7162) == 1)
+						textbox(_("Message"), _("They need to switch the tuner Hyprid a Box Restart!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
 					changedvbdev(tuner);
 				}
 			}
