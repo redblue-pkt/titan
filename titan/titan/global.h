@@ -6279,6 +6279,7 @@ char* gethypridtunerchoicesvaluename(int dev, char* hyprid)
 
 int sethypridtuner(int dev, char* value)
 {
+#ifdef MIPSEL
 	char* buf = NULL, *hypridtuner = NULL, *tmpstr = NULL;
 	int ret = 0;
 
@@ -6302,7 +6303,11 @@ int sethypridtuner(int dev, char* value)
 		free(tmpstr); tmpstr = NULL;
 		return ret;
 	}
-
+#else
+	addconfigtmp("hypridtuner", value);
+	ret = writeconfigtmp();
+	writeallconfig(1);
+#endif
 	return 0;
 }
 
