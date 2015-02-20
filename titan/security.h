@@ -2032,6 +2032,8 @@ char* getabout()
 		tmpstr = ostrcat(tmpstr, _("Ufs910 Free Lizense"), 1, 0);	
 	else if(status.security == 4)
 		tmpstr = ostrcat(tmpstr, _("Atemio Free Lizense"), 1, 0);	
+	else if(status.security == 5)
+		tmpstr = ostrcat(tmpstr, _("Dev Free Lizense"), 1, 0);
 	else
 		tmpstr = ostrcat(tmpstr, _("expired"), 1, 0);
 
