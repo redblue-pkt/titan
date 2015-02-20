@@ -15,7 +15,7 @@ void screenunlock()
 	char* tmpstr = NULL, *cpuid = NULL, *pw = NULL;
 	unsigned char* buf = NULL;
 
-	if(status.security == 1)
+	if(status.security >= 1 && status.security != 2)
 	{
 		textbox(_("Message"), _("Spezialfunctions unlocked, no input required"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 10, 0);
 		return;
