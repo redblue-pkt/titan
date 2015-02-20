@@ -715,7 +715,7 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
-		status.security = 1;
+		status.security = 5;
 		startnet();
 		setskinnodeslocked(0);
 	}
@@ -1128,7 +1128,7 @@ firstwizzardstep1:
 		checkserial(cpuid);
 		free(cmd); cmd = NULL;
 
-		if(status.security == 1)
+		if(status.security >= 1)
 		{
 			char* mac = getmacfromcmdline();
 			if(mac != NULL)
