@@ -13373,32 +13373,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Остановить?"
-
-#~ msgid "Here you can make your cam/emu autostart settings."
-#~ msgstr "Здесь Вы можете настроить автозапуск cam/emu"
-
-#~ msgid "Here you can make your default autostart settings."
-#~ msgstr ""
-#~ "Здесь Вы можете настроить автозапуск по умолч�"
-#~ "�нию"
-
-#~ msgid "Here you can make your Overclocking settings."
-#~ msgstr "Здесь Вы можете настроить разгон процессора"
-
-#~ msgid "Here you can manage your Ci-Modul or Card Infos."
-#~ msgstr ""
-#~ "Здесь Вы можете управлять Ci-модулями или карточк�"
-#~ "�ми"
-
-#~ msgid ""
-#~ "Here you can set your manuel Channel search options. Very important, "
-#~ "before you start looking for a channel must be set to its tuner tuner "
-#~ "settings."
-#~ msgstr ""
-#~ "Здесь Вы можете настроить параметры ручного поиск�"
-#~ "� каналов. Очень важно перед этим тщательно н�"
-#~ "�строить тюнер"
-
-#~ msgid "Here you can start and manage your additional plug-ins."
-#~ msgstr ""
-#~ "Здесь Вы можете запускать и добавлять плагины"
