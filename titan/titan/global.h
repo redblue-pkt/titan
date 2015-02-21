@@ -6184,9 +6184,9 @@ char* gethypridtunerchoicesvalue(int dev)
 		return NULL;
 	}
 
-#ifdef MIPSEL
 	start = ostrcat("NIM Socket ", oitoa(dev), 0, 0);
 	start = ostrcat(start, ":", 1, 0);
+#ifdef MIPSEL
 	tmpstr1 = string_resub(start, "I2C_Device", tmpstr, 0);
 	free(start), start = NULL;
 
