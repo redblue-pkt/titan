@@ -13384,29 +13384,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid "Here you can make your cam/emu autostart settings."
-#~ msgstr "Softcam und USB Cardreader Autostart Optionen"
-
-#~ msgid "Here you can make your default autostart settings."
-#~ msgstr "Hier können Sie allgemeine Autostart Optionen konfigurieren"
-
-#~ msgid "Here you can make your Overclocking settings."
-#~ msgstr "Hier können Sie die CPU Übertaktung konfigurieren"
-
-#~ msgid "Here you can manage your Ci-Modul or Card Infos."
-#~ msgstr ""
-#~ "Menü Ihres CI-Moduls:\n"
-#~ "Einzelheiten zur Konfiguration entnehmen Sie bitte der Dokumentation des "
-#~ "Moduls."
-
-#~ msgid ""
-#~ "Here you can set your manuel Channel search options. Very important, "
-#~ "before you start looking for a channel must be set to its tuner tuner "
-#~ "settings."
-#~ msgstr ""
-#~ "Hier können sie die Einstellungen für den manuellen Suchlauf vornehmen. "
-#~ "Wichtig, vor der Sendersuche muss der Tuner eingestellt werden."
-
-#~ msgid "Here you can start and manage your additional plug-ins."
-#~ msgstr "Hier können Sie Ihre zusätzlichen Plugins starten und verwalten"
