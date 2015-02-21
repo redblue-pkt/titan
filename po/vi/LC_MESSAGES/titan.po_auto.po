@@ -11814,7 +11814,7 @@ msgid "Terrestrisch"
 msgstr ""
 
 #: tunerconfig.h:646 tunerconfig.h:662
-msgid "They need to switch the tuner Hyprid a Box Restart!"
+msgid "Hybrid tuner mode changed, receiver will be restarted!"
 msgstr ""
 
 #: tunerconfig.h:804
