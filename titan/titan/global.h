@@ -6147,7 +6147,7 @@ char* gethypridtunerchoices(int dev)
 	tmpstr1 = string_resub(start, "Frontend_Device", tmpstr, 0);
 	free(start), start = NULL;
 
-	printf("-----------------------------------\n");
+	printf("---gethypridtunerchoices--------------------------------\n");
 	printf("tmpstr1: %s\n", tmpstr1);
 
 	if(ostrstr(tmpstr1, "(T/C)") != NULL)
@@ -6156,6 +6156,8 @@ char* gethypridtunerchoices(int dev)
 		value = ostrcat(value, "c", 1, 0);
 	}
 	printf("value: %s\n", value);
+	printf("---gethypridtunerchoices--------------------------------\n");
+
 	free(tmpstr1), tmpstr1 = NULL;
 #endif
 	return value;
@@ -6223,7 +6225,7 @@ char* gethypridtunerchoicesvalue(int dev)
 	tmpstr1 = string_resub(start, "Frontend_Device", tmpstr, 0);
 	free(start), start = NULL;
 
-	printf("-----------------------------------\n");
+	printf("---gethypridtunerchoicesvalue--------------------------------\n");
 	printf("tmpstr1: %s\n", tmpstr1);
 
 	if(ostrstr(tmpstr1, "(T/C)") != NULL)
@@ -6232,6 +6234,7 @@ char* gethypridtunerchoicesvalue(int dev)
 		value = ostrcat(value, "DVB-C", 1, 0);
 	}
 	printf("value: %s\n", value);
+	printf("---gethypridtunerchoicesvalue--------------------------------\n");
 	free(tmpstr1), tmpstr1 = NULL;
 #endif
 
@@ -6277,10 +6280,14 @@ char* gethypridtunerchoicesvaluename(int dev, char* hyprid)
 	free(tmpstr2), tmpstr2 = NULL;
 	free(start), start = NULL;
 #else
+	printf("---gethypridtunerchoicesvalue--------------------------------\n");
 	if(ostrstr(hyprid, "t") != NULL)
 		value = ostrcat("DVB-T", NULL, 0, 0);
 	else if(ostrstr(hyprid, "c") != NULL)
 		value = ostrcat("DVB-C", NULL, 0, 0);
+	printf("value: %s\n", value);
+	printf("---gethypridtunerchoicesvalue--------------------------------\n");
+
 #endif
 	return value;
 }
@@ -6313,9 +6320,16 @@ int sethypridtuner(int dev, char* value)
 		return ret;
 	}
 #else
+	printf("---sethypridtuner--------------------------------\n");
+
 	addconfigtmp("hypridtuner", value);
 	ret = writeconfigtmp();
 	writeallconfig(1);
+
+	printf("value: %s\n", value);
+	printf("read titan.cfg: hypridtuner=%s\n", getconfig("frontenddev", NULL));
+	printf("---sethypridtuner--------------------------------\n");
+
 	return ret;
 #endif
 	return 0;
