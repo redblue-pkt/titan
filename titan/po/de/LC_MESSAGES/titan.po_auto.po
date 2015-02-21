@@ -1,3 +1,17 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: TitanNit 1.62\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator:  <aaf-caliban@e.mail.de>\n"
+"Language-Team: German <_obiwan_@web.de>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
 #: about.h:9
 msgid "System-Info"
 msgstr "System Information"
@@ -653,7 +667,7 @@ msgstr ""
 
 #: adjust.h:350
 msgid "Function"
-msgstr ""
+msgstr "Funktion"
 
 #: ard.h:31 avsettings.h:291 betarobot.h:57 bgdownload.h:176
 #: blindscanadjust.h:25 callmon_main.h:39 channellist.h:913 channellist.h:915
@@ -909,8 +923,7 @@ msgstr ""
 
 #: browser.h:207
 msgid "Choose your Internet Favorite from the following list"
-msgstr ""
-"Wählen Sie das gewünschte Internet Lesezeichen aus der folgenden Liste"
+msgstr "Wählen Sie das gewünschte Internet Lesezeichen aus der folgenden Liste"
 
 #: browser.h:212
 msgid "32 Bit Scale 100 Percent"
@@ -1793,8 +1806,7 @@ msgstr "Menü"
 
 #: filemanager.h:89
 msgid "Choose your Filemanager Option from the following list"
-msgstr ""
-"Wählen Sie die gewünschte Datei Manager Option aus der folgenden Liste"
+msgstr "Wählen Sie die gewünschte Datei Manager Option aus der folgenden Liste"
 
 #: filemanager.h:95
 msgid "Can't rename file !"
@@ -2698,7 +2710,7 @@ msgstr ""
 
 #: hwtest.h:177 hwtest.h:239
 msgid "Front Key"
-msgstr ""
+msgstr "Front Taste"
 
 #: hwtest.h:180 hwtest.h:329 hwtest.h:368
 msgid "Smartcard"
@@ -3116,60 +3128,6 @@ msgstr "Ihr Marker wurde erfolgreich gesetzt"
 #: mboxinfo.c:49
 msgid "File not found !!"
 msgstr "Datei nicht gefunden"
-
-#: mboxinfo.c:77 mc_imdb.h:78 mc_imdb.h:79 mc_imdb.h:80 mc_imdb.h:81
-#: mc_imdb.h:82 mc_view.h:17 mc_view.h:18 mc_view.h:19 mc_view.h:20
-#: mc_view.h:21 mc_view.h:22 plugins_autotimer_skin.xml.h:13
-#: plugins_callmonitor1_skin.xml.h:19 plugins_catcatch_skin.xml.h:7
-#: plugins_dlna_skin.xml.h:15 plugins_facebook_skin.xml.h:6
-#: plugins_filemanager_skin.xml.h:6 plugins_gmediarender_skin.xml.h:1
-#: plugins_imdbapi_skin.xml.h:11 plugins_imdb_skin.xml.h:11
-#: plugins_instar_skin.xml.h:18 plugins_keylock_skin.xml.h:1
-#: plugins_lcdpearl1_skin.xml.h:14 plugins_lcdsamsung_skin.xml.h:18
-#: plugins_mboxinfo_skin.xml.h:3 plugins_mc_skin.xml.h:70
-#: plugins_networkbrowser_skin.xml.h:38 plugins_news_skin.xml.h:5
-#: plugins_optimize_skin.xml.h:4 plugins_panel_skin.xml.h:28
-#: plugins_permtime_skin.xml.h:1 plugins_readerconfig_skin.xml.h:10
-#: plugins_rgui_skin.xml.h:9 plugins_stock_skin.xml.h:6
-#: plugins_stopifnotused_skin.xml.h:8 plugins_streaminfo_skin.xml.h:6
-#: plugins_sudoku_skin.xml.h:18 plugins_tithek_skin.xml.h:24
-#: plugins_tiwakeup_skin.xml.h:9 plugins_tmc_skin.xml.h:18
-#: plugins_tmdb_skin.xml.h:11 plugins_tsSchnitt_skin.xml.h:11
-#: plugins_weather_skin.xml.h:4 plugins_wins3_skin.xml.h:4
-#: plugins_wm2014_skin.xml.h:1 plugins_wm2014_skin.xml.h:21
-#: plugins_xupnpd_skin.xml.h:5 plugins_zapback_skin.xml.h:7
-#: skin_default_skin.xml.h:824 skins_autotimer_skin.xml.h:13
-#: skins_callmonitor1_skin.xml.h:19 skins_catcatch_skin.xml.h:7
-#: skins_dlna_skin.xml.h:15 skins_facebook_skin.xml.h:6
-#: skins_filemanager_skin.xml.h:6 skins_gmediarender_skin.xml.h:1
-#: skins_imdbapi_skin.xml.h:11 skins_imdb_skin.xml.h:11
-#: skins_instar_skin.xml.h:18 skins_keylock_skin.xml.h:1
-#: skins_lcdpearl1_skin.xml.h:14 skins_lcdsamsung_skin.xml.h:18
-#: skins_mboxinfo_skin.xml.h:3 skins_mc_skin.xml.h:70
-#: skins_networkbrowser_skin.xml.h:38 skins_news_skin.xml.h:5
-#: skins_optimize_skin.xml.h:4 skins_panel_skin.xml.h:28
-#: skins_permtime_skin.xml.h:1 skins_readerconfig_skin.xml.h:10
-#: skins_rgui_skin.xml.h:9 skins_stock_skin.xml.h:6
-#: skins_stopifnotused_skin.xml.h:8 skins_streaminfo_skin.xml.h:6
-#: skins_sudoku_skin.xml.h:18 skins_tithek_skin.xml.h:24
-#: skins_tiwakeup_skin.xml.h:9 skins_tmc_skin.xml.h:18
-#: skins_tmdb_skin.xml.h:11 skins_tsSchnitt_skin.xml.h:11
-#: skins_weather_skin.xml.h:4 skins_wins3_skin.xml.h:4
-#: skins_wm2014_skin.xml.h:1 skins_wm2014_skin.xml.h:21
-#: skins_xupnpd_skin.xml.h:5 skins_zapback_skin.xml.h:7 tithek_mainmenu.h:1
-msgid ""
-msgstr ""
-"Project-Id-Version: TitanNit 1.62\n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Last-Translator:  <aaf-caliban@e.mail.de>\n"
-"Language-Team: German <_obiwan_@web.de>\n"
-"Language: de\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
-"X-Poedit-SourceCharset: UTF-8\n"
 
 #: mc_audioplayer.h:408 mc_global.h:1079 mc_pictureplayer.h:150
 #: mc_videoplayer.h:428
@@ -4961,6 +4919,8 @@ msgid ""
 "A list of currently used network shares. You can add, edit, delete shares or "
 "search for new shares."
 msgstr ""
+"Liste der aktuell genutzten Netzwerkfreigaben. Sie können Freigaben "
+"hinzufügen, editieren, löschen oder neue Freigaben suchen."
 
 #: plugins_networkbrowser_skin.xml.h:3 skins_networkbrowser_skin.xml.h:3
 msgid "Auth Settings"
@@ -4988,13 +4948,14 @@ msgstr "Netzwerk Freigabe als Aufnahmeort"
 
 #: plugins_networkbrowser_skin.xml.h:11 skins_networkbrowser_skin.xml.h:11
 msgid "Here you can add and configure your network shares."
-msgstr ""
+msgstr "Hier können Sie Freigaben hinzufügen und konfigurieren."
 
 #: plugins_networkbrowser_skin.xml.h:12 skins_networkbrowser_skin.xml.h:12
 msgid ""
 "Here you can configure your login credentials for accessing password "
 "protected shares."
 msgstr ""
+"Hier können Sie die Zugangsdaten zu passwortgeschützten Freigaben eingeben."
 
 #: plugins_networkbrowser_skin.xml.h:13 skins_networkbrowser_skin.xml.h:13
 msgid ""
@@ -5221,11 +5182,11 @@ msgstr "aktiviert"
 
 #: plugins_readerconfig_skin.xml.h:5 skins_readerconfig_skin.xml.h:5
 msgid "Here you can activate/deactivate you OSCam readers."
-msgstr ""
+msgstr "Hier können Sie ihre OSCam Reader aktivieren bzw. deaktivieren."
 
 #: plugins_readerconfig_skin.xml.h:6 skins_readerconfig_skin.xml.h:6
 msgid "Here you can configure your OSCam reader."
-msgstr ""
+msgstr "Hier können Sie die OSCam Reader konfigurieren."
 
 #: plugins_readerconfig_skin.xml.h:7 skins_readerconfig_skin.xml.h:7
 msgid "Reader Config"
@@ -6300,7 +6261,7 @@ msgstr ""
 
 #: security.h:2016
 msgid "License"
-msgstr ""
+msgstr "Lizenz"
 
 #: security.h:2019
 msgid "valid"
@@ -6308,15 +6269,15 @@ msgstr "gültig"
 
 #: security.h:2032
 msgid "UFS910 free license"
-msgstr "UFS910 kostenlose Lizenz"
+msgstr "Kostenlose UFS910 Lizenz"
 
 #: security.h:2034
 msgid "Atemio free license"
-msgstr "Atemio kostenlose Lizenz"
+msgstr "Kostenlose Atemio Lizenz"
 
 #: security.h:2036
 msgid "Dev free license"
-msgstr ""
+msgstr "Kostenlose Entwickler Lizenz"
 
 #: security.h:2038
 msgid "expired"
@@ -7483,29 +7444,33 @@ msgstr ""
 
 #: skin_default_skin.xml.h:299
 msgid "Here you can adjust the network interface."
-msgstr ""
+msgstr "Hier können Sie die Netzwerkschnittstelle konfigurieren."
 
 #: skin_default_skin.xml.h:300
 msgid "Here you can adjust the PiP functions."
-msgstr ""
+msgstr "Hier können Sie die PiP Funktion konfigurieren."
 
 #: skin_default_skin.xml.h:301
 msgid ""
 "Here you can adjust your rotor equipment. Enter the latitude and longitude "
 "values by using the number keys."
 msgstr ""
+"Hier können Sie Ihre motorisierte Sat-Anlage konfigurieren.\n"
+"Benutzen Sie zur Eingabe der Längen- und Breitengrade die Zifferntasten."
 
 #: skin_default_skin.xml.h:302
 msgid "Here you can assign channels to a specific CI-Module."
 msgstr ""
+"Hier können Sie Sender einem bestimmten Modul zuordnen.\n"
+"OK zum Verlassen"
 
 #: skin_default_skin.xml.h:303
 msgid "Here you can backup and restore your configuration."
-msgstr ""
+msgstr "Hier können Sie Ihre Einstellungen sichern und wiederherstellen"
 
 #: skin_default_skin.xml.h:304
 msgid "Here you can check the signal quality of the current transponder."
-msgstr ""
+msgstr "Hier können Sie die Signalqualität des aktuellen Senders überprüfen."
 
 #: skin_default_skin.xml.h:305
 msgid ""
@@ -7513,10 +7478,16 @@ msgid ""
 "tuner(s) have to be configured before. Rotor equipment requires additional "
 "adjustments."
 msgstr ""
+"Hier können Sie einen Tuner für die Konfiguration auswählen.\n"
+"Für den Sendersuchlauf müssen Sie den/die Tuner konfigurieren. Für "
+"motorisierte Anlagen bitte zusätzlich die Motor Ansteuerung konfigurieren."
 
 #: skin_default_skin.xml.h:306
 msgid "Here you can configure dynamic DNS services."
 msgstr ""
+"DynDNS Dienste Konfiguration\n"
+"Folgende Dienste werden unterstützt:\n"
+"dyndns.org, freedns.afraid.org, zoneedit.com, no-ip.com"
 
 #: skin_default_skin.xml.h:307
 msgid ""
@@ -7525,16 +7496,24 @@ msgid ""
 "- Transcoding\n"
 "- RGUI"
 msgstr ""
+"Konfiguration von:\n"
+"- Webinterface\n"
+"- Transcoding\n"
+"- RGUI"
 
 #: skin_default_skin.xml.h:308
 msgid ""
 "Here you can configure your cable tuner. Choose your cable provider and "
 "start an automatic search."
 msgstr ""
+"Hier können Sie Ihren Kabel Tuner einstellen.\n"
+"Wählen Sie Ihren Kabel Anbieter und führen Sie anschließend einen "
+"automatischen Suchlauf durch.\n"
+"Bei der Kabelsuche sollte die Option \"Netzwerksuche\" aktiviert sein."
 
 #: skin_default_skin.xml.h:309
 msgid "Here you can configure your CI-Modules."
-msgstr ""
+msgstr "Hier können Sie Ihre CI-Module konfigurieren."
 
 #: skin_default_skin.xml.h:310
 msgid ""
@@ -7542,12 +7521,20 @@ msgid ""
 "When using DiSEqC, also define the used port. For advanced LNB/Unicable "
 "configuration, navigate to LNB/Unicable and press the red button."
 msgstr ""
+"Sat Tuner Konfiguration: Wählen Sie zunächst den Satelliten aus. Bei "
+"Verwendung von DiSEqC weisen Sie zusätzlich den verwendeten Port zu. Für "
+"erweiterte LNB/Unicable Konfiguration navigieren Sie zur Option LNB/Unicable "
+"und drücken Sie die rote Taste."
 
 #: skin_default_skin.xml.h:311
 msgid ""
 "Here you can configure your terrestrial tuner. Activate the terrestrial "
 "tuner and start an automatic search."
 msgstr ""
+"Hier können Sie den DVB-T Tuner einstellen.\n"
+"\n"
+"Aktivieren Sie den DVB-T Tuner und führen Sie anschließend einen "
+"automatischen Suchlauf durch."
 
 #: skin_default_skin.xml.h:312
 msgid ""
@@ -7555,10 +7542,16 @@ msgid ""
 "your SSID and press ok 2. Choose encryption type and enter key, accept with "
 "ok 3. Set automatic start if wanted and start with green."
 msgstr ""
+"Hier können Sie eine Verbindung mit Ihrem WLAN herstellen.\n"
+"1. Suche starten, die eigene SSID mit ok übernehmen.\n"
+"2. Schlüssel und Typ anpassen und mit ok bestätigen (speichern).\n"
+"3. Automatischer Start falls erwünscht, Start mit grün"
 
 #: skin_default_skin.xml.h:313
 msgid "Here you can control the fan mode."
 msgstr ""
+"Hier können Sie den Modus des Lüfters ändern. Auto ist die empfohlene "
+"Betriebsart."
 
 #: skin_default_skin.xml.h:314
 msgid ""
@@ -7566,34 +7559,44 @@ msgid ""
 "selected timer. Additionally, you can check the results of elapsed timer "
 "events."
 msgstr ""
+"Hier können Sie Timer erstellen, löschen und\n"
+"bearbeiten. OK um den ausgewählten Timer zu\n"
+"bearbeiten. Zusätzlich können Sie das\n"
+"Ergebnis bereits beendeter Timer prüfen."
 
 #: skin_default_skin.xml.h:315
 msgid "Here you can define channels or favorites for EPG scan/refresh."
 msgstr ""
+"Hier können Sie Sender und Favoriten festlegen, die im EPG Scan "
+"berücksichtigt werden sollen."
 
 #: skin_default_skin.xml.h:316
 msgid "Here you can define the paths for record, timeshift and movie player."
 msgstr ""
+"Hier können Sie die Pfade für Aufnahme, Timeshift und den Movieplayer "
+"festlegen."
 
 #: skin_default_skin.xml.h:317
 msgid "Here you can edit the channel list."
-msgstr ""
+msgstr "Hier können Sie die Senderliste editieren."
 
 #: skin_default_skin.xml.h:318
 msgid "Here you can edit timer events."
-msgstr ""
+msgstr "Hier können Sie Timer bearbeiten."
 
 #: skin_default_skin.xml.h:319
 msgid "Here you can enter the menu of your Ci-Module."
-msgstr ""
+msgstr "Hier können Sie das Menü Ihres CI-Moduls aufrufen."
 
 #: skin_default_skin.xml.h:320
 msgid "Here you can install plugins and extensions from our online offer."
 msgstr ""
+"Hier können Sie aus unserem aktuellen Online-Angebot Erweiterungen und "
+"Plugins installieren."
 
 #: skin_default_skin.xml.h:321
 msgid "Here you can make advanced settings."
-msgstr ""
+msgstr "Hier können Sie erweiterte System Einstellungen vornehmen."
 
 #: skin_default_skin.xml.h:322
 msgid "Here you can make your audio/video autostart settings."
@@ -7602,26 +7605,33 @@ msgstr "Hier können Sie den Audio/Video-Autostart konfigurieren"
 #: skin_default_skin.xml.h:323
 msgid "Here you can make your Audio/Video settings."
 msgstr ""
+"Audio/Video Konfiguration:\n"
+"Hinweis: Die neue Auflösung muss bestätigt werden. Bei falscher Auflösung "
+"wird nach 5 Sekunden in den ursprünglichen Modus zurückgeschaltet."
 
 #: skin_default_skin.xml.h:324
 msgid "Here you can make your child safety autostart settings."
-msgstr ""
+msgstr "Hier können Sie den Jugendschutz Autostart konfigurieren."
 
 #: skin_default_skin.xml.h:325
 msgid "Here you can make your display settings."
 msgstr ""
+"Hier können Sie das Display konfigurieren und falls unterstützt, die "
+"Helligkeit der PowerLED verändern."
 
 #: skin_default_skin.xml.h:326
 msgid "Here you can make your EPG settings."
-msgstr ""
+msgstr "Hier können Sie die EPG Einstellungen konfigurieren."
 
 #: skin_default_skin.xml.h:327
 msgid "Here you can make your general autostart settings."
-msgstr ""
+msgstr "Hier können Sie allgemeine Autostart Optionen konfigurieren."
 
 #: skin_default_skin.xml.h:328
 msgid "Here you can make your HDMI-CEC settings."
 msgstr ""
+"Hier können Sie festlegen, wie angeschlossene Geräte auf Standby oder "
+"aufwachen dieses Receivers reagieren sollen."
 
 #: skin_default_skin.xml.h:329
 msgid "Here you can make your mediadb settings."
@@ -7637,7 +7647,7 @@ msgstr "Hier können Sie den Netzwerk Autostart konfigurieren"
 
 #: skin_default_skin.xml.h:332
 msgid "Here you can make your overclock settings."
-msgstr ""
+msgstr "Hier können Sie die CPU Übertaktung konfigurieren."
 
 #: skin_default_skin.xml.h:333
 msgid "Here you can make your PIN security settings."
@@ -7645,7 +7655,7 @@ msgstr "Hier können Sie Ihre PIN Sicherheitseinstellungen vornehmen"
 
 #: skin_default_skin.xml.h:334
 msgid "Here you can make your PIN security settings for menu access."
-msgstr ""
+msgstr "Hier können Sie den PIN Schutz für Menüs einstellen."
 
 #: skin_default_skin.xml.h:335
 msgid "Here you can make your screensaver settings."
@@ -7654,6 +7664,7 @@ msgstr "Hier können Sie Ihre Bildschirmschoner konfigurieren"
 #: skin_default_skin.xml.h:336
 msgid "Here you can make your softcam/USB cardreader autostart settings."
 msgstr ""
+"Hier können Sie den Softcam und USB Cardreader Autostart konfigurieren."
 
 #: skin_default_skin.xml.h:337
 msgid "Here you can make your timeshift settings."
@@ -7661,23 +7672,27 @@ msgstr "Hier können Sie die Timeshift Einstellungen anpassen"
 
 #: skin_default_skin.xml.h:338
 msgid "Here you can make your USB autostart settings."
-msgstr ""
+msgstr "USB Autostart Konfiguration"
 
 #: skin_default_skin.xml.h:339
 msgid "Here you can reset the smartcard reader(s)."
-msgstr ""
+msgstr "Hier können Sie Ihre Smartcards zurücksetzen."
 
 #: skin_default_skin.xml.h:340
 msgid "Here you can search the EPG for specific genre or keyword."
 msgstr ""
+"Hier können Sie den EPG nach bestimmten Genres oder\n"
+"Schlüsselwörtern durchsuchen."
 
 #: skin_default_skin.xml.h:341
 msgid "Here you can see the progress of all current downloads."
-msgstr ""
+msgstr "Hier können Sie den Fortschritt der aktuellen Downloads überwachen."
 
 #: skin_default_skin.xml.h:342
 msgid "Here you can select a skin from the following list."
 msgstr ""
+"Hier können Sie einen installierten Skin aus der folgenden Liste auswählen "
+"und aktivieren. Titan wird neu gestartet!"
 
 #: skin_default_skin.xml.h:343
 msgid "Here you can select from the following list."
@@ -7700,21 +7715,28 @@ msgstr ""
 
 #: skin_default_skin.xml.h:346
 msgid "Here you can select your network interface."
-msgstr ""
+msgstr "Hier können Sie eine Netzwerkschnittstelle auswählen."
 
 #: skin_default_skin.xml.h:347
 msgid "Here you can select your remote control type."
-msgstr ""
+msgstr "Hier können Sie die passende Fernbedienung auswählen."
 
 #: skin_default_skin.xml.h:348
 msgid ""
 "Here you can set your channel search options. Very important, before channel "
 "scan, the tuner must be configured correctly."
 msgstr ""
+"Hier können Sie den automatischen Sendersuchlauf einstellen und starten. "
+"Sehr wichtig: Vor dem Suchlauf müssen die Tuner unter System/Sendersuche/"
+"Konfiguration (Kabel/Sat/Terrestrisch) konfiguriert werden. Für Kabelsuche "
+"sollte die Option \"Netzwerksuche\" aktiviert sein."
 
 #: skin_default_skin.xml.h:349
 msgid "Here you can set your hybrid tuner. Choose the required tuner mode."
 msgstr ""
+"Hier können Sie den/die Hybrid Tuner einstellen.\n"
+"\n"
+"Wählen Sie den gewünschten Modus aus."
 
 #: skin_default_skin.xml.h:350
 msgid "Here you can set your language."
@@ -7725,6 +7747,8 @@ msgid ""
 "Here you can set your manual channel search options. Very important, before "
 "channel scan, the tuner must be configured correctly."
 msgstr ""
+"Hier können sie die Einstellungen für den manuellen Suchlauf vornehmen. Sehr "
+"wichtig, vor der Sendersuche muss der Tuner eingestellt werden."
 
 #: skin_default_skin.xml.h:352
 msgid "Here you can set your timezone."
@@ -7735,10 +7759,12 @@ msgid ""
 "Here you can start a blind scan, depending on your satellite configuration, "
 "this process can take very long."
 msgstr ""
+"Hier können Sie einen Blindscan durchführen, abhängig von Ihrer vorhandenen "
+"Konfiguration kann dieser Vorgang sehr lange dauern."
 
 #: skin_default_skin.xml.h:354
 msgid "Here you can start and manage your additional plugins."
-msgstr ""
+msgstr "Hier können Sie Ihre zusätzlichen Plugins starten und verwalten."
 
 #: skin_default_skin.xml.h:355
 msgid "Here you can test your network."
@@ -9122,7 +9148,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:793
 msgid "VFDisplay"
-msgstr ""
+msgstr "Display"
 
 #: skin_default_skin.xml.h:794 tmc.h:399
 msgid "Video"
@@ -9198,7 +9224,7 @@ msgstr "Autor"
 
 #: skin_default_skin.xml.h:816
 msgid "WSS Mode"
-msgstr ""
+msgstr "WSS Modus"
 
 #: skin_default_skin.xml.h:817
 msgid "x"
@@ -10800,7 +10826,7 @@ msgstr ""
 
 #: tpk_description.h:126
 msgid "Scan and manage cifs/nfs/ftp shares"
-msgstr ""
+msgstr "Suche und Verwaltung von CIFS/SMB, NFS und FTP Freigaben"
 
 #: tpk_description.h:127
 msgid ""
@@ -13242,7 +13268,7 @@ msgstr "Seite runter"
 
 #: webif_index.atemio7600.h:113 webif_rc.atemio7600.h:46
 msgid "PiP Switch"
-msgstr ""
+msgstr "PiP Tausch"
 
 #: webif_info.h:7 webif_info_logs.h:1
 msgid "Logs"
