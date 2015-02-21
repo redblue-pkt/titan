@@ -88,11 +88,13 @@ void screenvfdisplay()
 	changeinput(at7000frontsleep, "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15");
 	setchoiceboxselection(at7000frontsleep, getconfig("at7000frontsleep", NULL));
 
-	if(checkbox("ATEVIO7000") == 1 || checkbox("ATEMIO7600") == 1 || checkbox("SPARK") == 1)
+	if(checkbox("ATEVIO7000") == 1 || checkbox("SPARK") == 1)
 	{
 		at7000frontrun->hidden = NO;
 		at7000frontsleep->hidden = NO;
 	}
+	else if(checkbox("ATEMIO7600") == 1)
+		at7000frontrun->hidden = NO;
 	else
 	{
 		at7000frontrun->hidden = YES;
