@@ -3127,7 +3127,7 @@ msgstr "Datei nicht gefunden"
 #: plugins_instar_skin.xml.h:18 plugins_keylock_skin.xml.h:1
 #: plugins_lcdpearl1_skin.xml.h:14 plugins_lcdsamsung_skin.xml.h:18
 #: plugins_mboxinfo_skin.xml.h:3 plugins_mc_skin.xml.h:70
-#: plugins_networkbrowser_skin.xml.h:37 plugins_news_skin.xml.h:5
+#: plugins_networkbrowser_skin.xml.h:38 plugins_news_skin.xml.h:5
 #: plugins_optimize_skin.xml.h:4 plugins_panel_skin.xml.h:28
 #: plugins_permtime_skin.xml.h:1 plugins_readerconfig_skin.xml.h:10
 #: plugins_rgui_skin.xml.h:9 plugins_stock_skin.xml.h:6
@@ -3146,7 +3146,7 @@ msgstr "Datei nicht gefunden"
 #: skins_instar_skin.xml.h:18 skins_keylock_skin.xml.h:1
 #: skins_lcdpearl1_skin.xml.h:14 skins_lcdsamsung_skin.xml.h:18
 #: skins_mboxinfo_skin.xml.h:3 skins_mc_skin.xml.h:70
-#: skins_networkbrowser_skin.xml.h:37 skins_news_skin.xml.h:5
+#: skins_networkbrowser_skin.xml.h:38 skins_news_skin.xml.h:5
 #: skins_optimize_skin.xml.h:4 skins_panel_skin.xml.h:28
 #: skins_permtime_skin.xml.h:1 skins_readerconfig_skin.xml.h:10
 #: skins_rgui_skin.xml.h:9 skins_stock_skin.xml.h:6
@@ -3688,8 +3688,8 @@ msgstr "SSL versuchen"
 msgid "ssl_control"
 msgstr "SSL Einstellungen"
 
-#: networkbrowser.h:1598 plugins_networkbrowser_skin.xml.h:28
-#: skins_networkbrowser_skin.xml.h:28
+#: networkbrowser.h:1598 plugins_networkbrowser_skin.xml.h:29
+#: skins_networkbrowser_skin.xml.h:29
 msgid "ssl"
 msgstr "SSL"
 
@@ -4331,9 +4331,9 @@ msgstr "Aufnahme läuft"
 msgid "Really Delete ?"
 msgstr "wirklich löschen?"
 
-#: play.h:1412 plugins_networkbrowser_skin.xml.h:5 plugins_stock_skin.xml.h:4
+#: play.h:1412 plugins_networkbrowser_skin.xml.h:6 plugins_stock_skin.xml.h:4
 #: plugins_weather_skin.xml.h:2 skin_default_skin.xml.h:189
-#: skins_networkbrowser_skin.xml.h:5 skins_stock_skin.xml.h:4
+#: skins_networkbrowser_skin.xml.h:6 skins_stock_skin.xml.h:4
 #: skins_weather_skin.xml.h:2
 msgid "DEL"
 msgstr "Löschen"
@@ -4623,9 +4623,9 @@ msgid "Release:"
 msgstr "Veröffentlicht:"
 
 #: plugins_imdbapi_skin.xml.h:8 plugins_imdb_skin.xml.h:8
-#: plugins_networkbrowser_skin.xml.h:25 plugins_tmdb_skin.xml.h:8
+#: plugins_networkbrowser_skin.xml.h:26 plugins_tmdb_skin.xml.h:8
 #: skin_default_skin.xml.h:619 skins_imdbapi_skin.xml.h:8
-#: skins_imdb_skin.xml.h:8 skins_networkbrowser_skin.xml.h:25
+#: skins_imdb_skin.xml.h:8 skins_networkbrowser_skin.xml.h:26
 #: skins_tmdb_skin.xml.h:8
 msgid "SEARCH"
 msgstr "Suchen"
@@ -4814,9 +4814,9 @@ msgstr "Standard Verzeichnis"
 msgid "details"
 msgstr "Details"
 
-#: plugins_mc_skin.xml.h:21 plugins_networkbrowser_skin.xml.h:7
+#: plugins_mc_skin.xml.h:21 plugins_networkbrowser_skin.xml.h:8
 #: plugins_readerconfig_skin.xml.h:3 skin_default_skin.xml.h:219
-#: skins_mc_skin.xml.h:21 skins_networkbrowser_skin.xml.h:7
+#: skins_mc_skin.xml.h:21 skins_networkbrowser_skin.xml.h:8
 #: skins_readerconfig_skin.xml.h:3
 msgid "EDIT"
 msgstr "Bearbeiten"
@@ -4957,138 +4957,140 @@ msgid "ADD"
 msgstr "Hinzufügen"
 
 #: plugins_networkbrowser_skin.xml.h:2 skins_networkbrowser_skin.xml.h:2
+msgid ""
+"A list of currently used network shares. You can add, edit, delete shares or "
+"search for new shares."
+msgstr ""
+
+#: plugins_networkbrowser_skin.xml.h:3 skins_networkbrowser_skin.xml.h:3
 msgid "Auth Settings"
 msgstr "Authentifizierung"
 
-#: plugins_networkbrowser_skin.xml.h:3 skins_networkbrowser_skin.xml.h:3
+#: plugins_networkbrowser_skin.xml.h:4 skins_networkbrowser_skin.xml.h:4
 msgid "AUTH SETTINGS"
 msgstr "Authentifizierung"
 
-#: plugins_networkbrowser_skin.xml.h:4 skins_networkbrowser_skin.xml.h:4
+#: plugins_networkbrowser_skin.xml.h:5 skins_networkbrowser_skin.xml.h:5
 msgid "COPY"
 msgstr "Kopieren"
 
-#: plugins_networkbrowser_skin.xml.h:6 skins_networkbrowser_skin.xml.h:6
+#: plugins_networkbrowser_skin.xml.h:7 skins_networkbrowser_skin.xml.h:7
 msgid "dnsaddresse"
 msgstr "DNS Adresse"
 
-#: plugins_networkbrowser_skin.xml.h:8 skins_networkbrowser_skin.xml.h:8
+#: plugins_networkbrowser_skin.xml.h:9 skins_networkbrowser_skin.xml.h:9
 msgid "ftpport"
 msgstr "FTP Port"
 
-#: plugins_networkbrowser_skin.xml.h:9 skins_networkbrowser_skin.xml.h:9
+#: plugins_networkbrowser_skin.xml.h:10 skins_networkbrowser_skin.xml.h:10
 msgid "hddreplacement"
 msgstr "Netzwerk Freigabe als Aufnahmeort"
 
-#: plugins_networkbrowser_skin.xml.h:10 skins_networkbrowser_skin.xml.h:10
-msgid ""
-"Here you can configure your Auth Data. Use to navigate the control cross and "
-"the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie Ihre User Authentifizierung konfigurieren"
-
 #: plugins_networkbrowser_skin.xml.h:11 skins_networkbrowser_skin.xml.h:11
-msgid ""
-"Here you can configure your network shares. Use to navigate the control "
-"cross and the extra buttons displayed with your remote control to select."
-msgstr "Freigabe bearbeiten und speichern"
+msgid "Here you can add and configure your network shares."
+msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:12 skins_networkbrowser_skin.xml.h:12
 msgid ""
-"If you don't find Windows shares you need to disable 'Password protected "
+"Here you can configure your login credentials for accessing password "
+"protected shares."
+msgstr ""
+
+#: plugins_networkbrowser_skin.xml.h:13 skins_networkbrowser_skin.xml.h:13
+msgid ""
+"If you don't find Windows shares, you need to disable 'Password protected "
 "sharing' in the 'Network and Sharing Center'."
 msgstr ""
-"Sollten keine Windows Freigaben sichtbar sein, muss 'Kennwortgeschützte "
-"Freigaben' im 'Netzwerk- und Freigabecenter' abgeschaltet werden."
 
-#: plugins_networkbrowser_skin.xml.h:13 skin_default_skin.xml.h:378
-#: skins_networkbrowser_skin.xml.h:13
+#: plugins_networkbrowser_skin.xml.h:14 skin_default_skin.xml.h:378
+#: skins_networkbrowser_skin.xml.h:14
 msgid "ipaddress"
 msgstr "IP Adresse"
 
-#: plugins_networkbrowser_skin.xml.h:14 skins_networkbrowser_skin.xml.h:14
+#: plugins_networkbrowser_skin.xml.h:15 skins_networkbrowser_skin.xml.h:15
 msgid "options"
 msgstr "Optionen"
 
-#: plugins_networkbrowser_skin.xml.h:15 skins_networkbrowser_skin.xml.h:15
+#: plugins_networkbrowser_skin.xml.h:16 skins_networkbrowser_skin.xml.h:16
 msgid "password"
 msgstr "Passwort"
 
-#: plugins_networkbrowser_skin.xml.h:16 skin_default_skin.xml.h:490
-#: skins_networkbrowser_skin.xml.h:16
+#: plugins_networkbrowser_skin.xml.h:17 skin_default_skin.xml.h:490
+#: skins_networkbrowser_skin.xml.h:17
 msgid "Password"
 msgstr "Passwort"
 
-#: plugins_networkbrowser_skin.xml.h:17 skins_networkbrowser_skin.xml.h:17
+#: plugins_networkbrowser_skin.xml.h:18 skins_networkbrowser_skin.xml.h:18
 msgid "protocol"
 msgstr "Protokoll"
 
-#: plugins_networkbrowser_skin.xml.h:18 skins_networkbrowser_skin.xml.h:18
+#: plugins_networkbrowser_skin.xml.h:19 skins_networkbrowser_skin.xml.h:19
 msgid "proxy"
 msgstr "Proxy"
 
-#: plugins_networkbrowser_skin.xml.h:19 skins_networkbrowser_skin.xml.h:19
+#: plugins_networkbrowser_skin.xml.h:20 skins_networkbrowser_skin.xml.h:20
 msgid "proxyauth"
 msgstr "Proxy Authentifizierung"
 
-#: plugins_networkbrowser_skin.xml.h:20 skins_networkbrowser_skin.xml.h:20
+#: plugins_networkbrowser_skin.xml.h:21 skins_networkbrowser_skin.xml.h:21
 msgid "proxyip"
 msgstr "IP für Proxyserver"
 
-#: plugins_networkbrowser_skin.xml.h:21 skins_networkbrowser_skin.xml.h:21
+#: plugins_networkbrowser_skin.xml.h:22 skins_networkbrowser_skin.xml.h:22
 msgid "proxypass"
 msgstr "Passwort für Proxyserver"
 
-#: plugins_networkbrowser_skin.xml.h:22 skins_networkbrowser_skin.xml.h:22
+#: plugins_networkbrowser_skin.xml.h:23 skins_networkbrowser_skin.xml.h:23
 msgid "proxyport"
 msgstr "Port für Proxyserver"
 
-#: plugins_networkbrowser_skin.xml.h:23 skins_networkbrowser_skin.xml.h:23
+#: plugins_networkbrowser_skin.xml.h:24 skins_networkbrowser_skin.xml.h:24
 msgid "proxyuser"
 msgstr "Benutzername für Proxyserver"
 
-#: plugins_networkbrowser_skin.xml.h:24 skins_networkbrowser_skin.xml.h:24
+#: plugins_networkbrowser_skin.xml.h:25 skins_networkbrowser_skin.xml.h:25
 msgid "rsize"
 msgstr "Lese Puffergröße"
 
-#: plugins_networkbrowser_skin.xml.h:26 skins_networkbrowser_skin.xml.h:26
+#: plugins_networkbrowser_skin.xml.h:27 skins_networkbrowser_skin.xml.h:27
 msgid "sharedir"
 msgstr "Speicherort auf entferntem Rechner"
 
-#: plugins_networkbrowser_skin.xml.h:27 skins_networkbrowser_skin.xml.h:27
+#: plugins_networkbrowser_skin.xml.h:28 skins_networkbrowser_skin.xml.h:28
 msgid "sharename"
 msgstr "Freigabename"
 
-#: plugins_networkbrowser_skin.xml.h:29 skin_default_skin.xml.h:767
-#: skins_networkbrowser_skin.xml.h:29
+#: plugins_networkbrowser_skin.xml.h:30 skin_default_skin.xml.h:767
+#: skins_networkbrowser_skin.xml.h:30
 msgid "type"
 msgstr "Typ"
 
-#: plugins_networkbrowser_skin.xml.h:30 skins_networkbrowser_skin.xml.h:30
+#: plugins_networkbrowser_skin.xml.h:31 skins_networkbrowser_skin.xml.h:31
 msgid "usedns"
 msgstr "Benutze DNS Adresse"
 
-#: plugins_networkbrowser_skin.xml.h:31 skins_networkbrowser_skin.xml.h:31
+#: plugins_networkbrowser_skin.xml.h:32 skins_networkbrowser_skin.xml.h:32
 msgid "useproxy"
 msgstr "Benutze Proxy"
 
-#: plugins_networkbrowser_skin.xml.h:32 skin_default_skin.xml.h:790
-#: skins_networkbrowser_skin.xml.h:32
+#: plugins_networkbrowser_skin.xml.h:33 skin_default_skin.xml.h:790
+#: skins_networkbrowser_skin.xml.h:33
 msgid "User"
 msgstr "Benutzer"
 
-#: plugins_networkbrowser_skin.xml.h:33 skins_networkbrowser_skin.xml.h:33
+#: plugins_networkbrowser_skin.xml.h:34 skins_networkbrowser_skin.xml.h:34
 msgid "userauth"
 msgstr "Benutzer Authentifizierung"
 
-#: plugins_networkbrowser_skin.xml.h:34 skins_networkbrowser_skin.xml.h:34
+#: plugins_networkbrowser_skin.xml.h:35 skins_networkbrowser_skin.xml.h:35
 msgid "username"
 msgstr "Benutzername"
 
-#: plugins_networkbrowser_skin.xml.h:35 skins_networkbrowser_skin.xml.h:35
+#: plugins_networkbrowser_skin.xml.h:36 skins_networkbrowser_skin.xml.h:36
 msgid "usessl"
 msgstr "SSL verwenden"
 
-#: plugins_networkbrowser_skin.xml.h:36 skins_networkbrowser_skin.xml.h:36
+#: plugins_networkbrowser_skin.xml.h:37 skins_networkbrowser_skin.xml.h:37
 msgid "wsize"
 msgstr "Schreib Puffergröße"
 
@@ -5218,20 +5220,12 @@ msgid "Enable"
 msgstr "aktiviert"
 
 #: plugins_readerconfig_skin.xml.h:5 skins_readerconfig_skin.xml.h:5
-msgid ""
-"Here you can aktivate/deaktivate you readers. Use to navigate the control "
-"cross and the extra buttons displayed with your remote control to select."
+msgid "Here you can activate/deactivate you OSCam readers."
 msgstr ""
-"Hier können Sie ihren Kartenleser aktivieren bzw. deaktivieren.\n"
-"Bei allen Boxen ist der 1.Kartenleser unten, außer bei der Nemesis Box.\n"
-"Bei Boxen mit nur einem Kartenleser, wird als Gerät der Kartenschacht\n"
-"unten angegeben."
 
 #: plugins_readerconfig_skin.xml.h:6 skins_readerconfig_skin.xml.h:6
-msgid ""
-"Here you can configure your reader. Use to navigate the control cross and "
-"the extra buttons displayed with your remote control to select."
-msgstr "Hier können Sie Ihre Kartenleser auswählen"
+msgid "Here you can configure your OSCam reader."
+msgstr ""
 
 #: plugins_readerconfig_skin.xml.h:7 skins_readerconfig_skin.xml.h:7
 msgid "Reader Config"
@@ -7492,35 +7486,39 @@ msgid "Here you can adjust the network interface."
 msgstr ""
 
 #: skin_default_skin.xml.h:300
+msgid "Here you can adjust the PiP functions."
+msgstr ""
+
+#: skin_default_skin.xml.h:301
 msgid ""
 "Here you can adjust your rotor equipment. Enter the latitude and longitude "
 "values by using the number keys."
 msgstr ""
 
-#: skin_default_skin.xml.h:301
+#: skin_default_skin.xml.h:302
 msgid "Here you can assign channels to a specific CI-Module."
 msgstr ""
 
-#: skin_default_skin.xml.h:302
+#: skin_default_skin.xml.h:303
 msgid "Here you can backup and restore your configuration."
 msgstr ""
 
-#: skin_default_skin.xml.h:303
+#: skin_default_skin.xml.h:304
 msgid "Here you can check the signal quality of the current transponder."
 msgstr ""
 
-#: skin_default_skin.xml.h:304
+#: skin_default_skin.xml.h:305
 msgid ""
 "Here you can choose a tuner for configuration. For a channel search, the "
 "tuner(s) have to be configured before. Rotor equipment requires additional "
 "adjustments."
 msgstr ""
 
-#: skin_default_skin.xml.h:305
+#: skin_default_skin.xml.h:306
 msgid "Here you can configure dynamic DNS services."
 msgstr ""
 
-#: skin_default_skin.xml.h:306
+#: skin_default_skin.xml.h:307
 msgid ""
 "Here you can configure:\n"
 "- Webinterface\n"
@@ -7528,138 +7526,130 @@ msgid ""
 "- RGUI"
 msgstr ""
 
-#: skin_default_skin.xml.h:307
+#: skin_default_skin.xml.h:308
 msgid ""
 "Here you can configure your cable tuner. Choose your cable provider and "
 "start an automatic search."
 msgstr ""
 
-#: skin_default_skin.xml.h:308
+#: skin_default_skin.xml.h:309
 msgid "Here you can configure your CI-Modules."
 msgstr ""
 
-#: skin_default_skin.xml.h:309
+#: skin_default_skin.xml.h:310
 msgid ""
 "Here you can configure your satellite tuner. First, select the satellite. "
 "When using DiSEqC, also define the used port. For advanced LNB/Unicable "
 "configuration, navigate to LNB/Unicable and press the red button."
 msgstr ""
 
-#: skin_default_skin.xml.h:310
+#: skin_default_skin.xml.h:311
 msgid ""
 "Here you can configure your terrestrial tuner. Activate the terrestrial "
 "tuner and start an automatic search."
 msgstr ""
 
-#: skin_default_skin.xml.h:311
+#: skin_default_skin.xml.h:312
 msgid ""
 "Here you can connect to your wireless network. 1. Use search button, select "
 "your SSID and press ok 2. Choose encryption type and enter key, accept with "
 "ok 3. Set automatic start if wanted and start with green."
 msgstr ""
 
-#: skin_default_skin.xml.h:312
+#: skin_default_skin.xml.h:313
 msgid "Here you can control the fan mode."
 msgstr ""
 
-#: skin_default_skin.xml.h:313
+#: skin_default_skin.xml.h:314
 msgid ""
 "Here you can create, delete and edit timer events. Press ok to edit the "
 "selected timer. Additionally, you can check the results of elapsed timer "
 "events."
 msgstr ""
 
-#: skin_default_skin.xml.h:314
+#: skin_default_skin.xml.h:315
 msgid "Here you can define channels or favorites for EPG scan/refresh."
 msgstr ""
 
-#: skin_default_skin.xml.h:315
+#: skin_default_skin.xml.h:316
 msgid "Here you can define the paths for record, timeshift and movie player."
 msgstr ""
 
-#: skin_default_skin.xml.h:316
+#: skin_default_skin.xml.h:317
 msgid "Here you can edit the channel list."
 msgstr ""
 
-#: skin_default_skin.xml.h:317
+#: skin_default_skin.xml.h:318
 msgid "Here you can edit timer events."
 msgstr ""
 
-#: skin_default_skin.xml.h:318
+#: skin_default_skin.xml.h:319
 msgid "Here you can install plugins and extensions from our online offer."
 msgstr ""
 
-#: skin_default_skin.xml.h:319
+#: skin_default_skin.xml.h:320
 msgid "Here you can make advanced settings."
 msgstr ""
 
-#: skin_default_skin.xml.h:320
+#: skin_default_skin.xml.h:321
 msgid "Here you can make your audio/video autostart settings."
 msgstr "Hier können Sie den Audio/Video-Autostart konfigurieren"
 
-#: skin_default_skin.xml.h:321
+#: skin_default_skin.xml.h:322
 msgid "Here you can make your Audio/Video settings."
 msgstr ""
 
-#: skin_default_skin.xml.h:322
+#: skin_default_skin.xml.h:323
 msgid "Here you can make your cam/emu autostart settings."
 msgstr "Softcam und USB Cardreader Autostart Optionen"
 
-#: skin_default_skin.xml.h:323
+#: skin_default_skin.xml.h:324
 msgid "Here you can make your child safety autostart settings."
 msgstr ""
 
-#: skin_default_skin.xml.h:324
+#: skin_default_skin.xml.h:325
 msgid "Here you can make your default autostart settings."
 msgstr "Hier können Sie allgemeine Autostart Optionen konfigurieren"
 
-#: skin_default_skin.xml.h:325
+#: skin_default_skin.xml.h:326
 msgid "Here you can make your display settings."
 msgstr ""
 
-#: skin_default_skin.xml.h:326
+#: skin_default_skin.xml.h:327
 msgid "Here you can make your EPG settings."
 msgstr ""
 
-#: skin_default_skin.xml.h:327
+#: skin_default_skin.xml.h:328
 msgid "Here you can make your HDMI-CEC settings."
 msgstr ""
 
-#: skin_default_skin.xml.h:328
+#: skin_default_skin.xml.h:329
 msgid "Here you can make your mediadb settings."
 msgstr "Hier können Sie die MediaDB konfigurieren"
 
-#: skin_default_skin.xml.h:329
+#: skin_default_skin.xml.h:330
 msgid "Here you can make your module settings."
 msgstr "Hier können Sie die Einstellungen für CI-Module anpassen"
 
-#: skin_default_skin.xml.h:330
+#: skin_default_skin.xml.h:331
 msgid "Here you can make your network autostart settings."
 msgstr "Hier können Sie den Netzwerk Autostart konfigurieren"
 
-#: skin_default_skin.xml.h:331
+#: skin_default_skin.xml.h:332
 msgid "Here you can make your Overclocking settings."
 msgstr "Hier können Sie die CPU Übertaktung konfigurieren"
 
-#: skin_default_skin.xml.h:332
+#: skin_default_skin.xml.h:333
 msgid "Here you can make your PIN security settings."
 msgstr "Hier können Sie Ihre PIN Sicherheitseinstellungen vornehmen"
 
-#: skin_default_skin.xml.h:333
+#: skin_default_skin.xml.h:334
 msgid "Here you can make your PIN security settings for menu access."
 msgstr ""
 
-#: skin_default_skin.xml.h:334
+#: skin_default_skin.xml.h:335
 msgid "Here you can make your screensaver settings."
 msgstr "Hier können Sie Ihre Bildschirmschoner konfigurieren"
-
-#: skin_default_skin.xml.h:335
-msgid ""
-"Here you can make your system settings. Use to navigate the control cross "
-"and the extra buttons displayed with your remote control to select."
-msgstr ""
-"Hier können Sie festlegen, wie angeschlossene Geräte auf Standby oder "
-"aufwachen dieses Receivers reagieren sollen."
 
 #: skin_default_skin.xml.h:336
 msgid "Here you can make your timeshift settings."
@@ -13399,3 +13389,41 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
+
+#~ msgid ""
+#~ "Here you can configure your Auth Data. Use to navigate the control cross "
+#~ "and the extra buttons displayed with your remote control to select."
+#~ msgstr "Hier können Sie Ihre User Authentifizierung konfigurieren"
+
+#~ msgid ""
+#~ "Here you can configure your network shares. Use to navigate the control "
+#~ "cross and the extra buttons displayed with your remote control to select."
+#~ msgstr "Freigabe bearbeiten und speichern"
+
+#~ msgid ""
+#~ "If you don't find Windows shares you need to disable 'Password protected "
+#~ "sharing' in the 'Network and Sharing Center'."
+#~ msgstr ""
+#~ "Sollten keine Windows Freigaben sichtbar sein, muss 'Kennwortgeschützte "
+#~ "Freigaben' im 'Netzwerk- und Freigabecenter' abgeschaltet werden."
+
+#~ msgid ""
+#~ "Here you can aktivate/deaktivate you readers. Use to navigate the control "
+#~ "cross and the extra buttons displayed with your remote control to select."
+#~ msgstr ""
+#~ "Hier können Sie ihren Kartenleser aktivieren bzw. deaktivieren.\n"
+#~ "Bei allen Boxen ist der 1.Kartenleser unten, außer bei der Nemesis Box.\n"
+#~ "Bei Boxen mit nur einem Kartenleser, wird als Gerät der Kartenschacht\n"
+#~ "unten angegeben."
+
+#~ msgid ""
+#~ "Here you can configure your reader. Use to navigate the control cross and "
+#~ "the extra buttons displayed with your remote control to select."
+#~ msgstr "Hier können Sie Ihre Kartenleser auswählen"
+
+#~ msgid ""
+#~ "Here you can make your system settings. Use to navigate the control cross "
+#~ "and the extra buttons displayed with your remote control to select."
+#~ msgstr ""
+#~ "Hier können Sie festlegen, wie angeschlossene Geräte auf Standby oder "
+#~ "aufwachen dieses Receivers reagieren sollen."
