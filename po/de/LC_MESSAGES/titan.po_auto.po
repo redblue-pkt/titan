@@ -13399,10 +13399,3 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
-
-#~ msgid ""
-#~ "Here you can adjust your rotor equipment. Enter the latitude and "
-#~ "longitude values by using the number keys."
-#~ msgstr ""
-#~ "Hier können Sie Ihre motorisierte Sat-Anlage konfigurieren.\n"
-#~ "Zur Eingabe der Längen- und Breitengrade benutzen Sie die Zifferntasten."
