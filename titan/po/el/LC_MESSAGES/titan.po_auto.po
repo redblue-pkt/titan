@@ -20,7 +20,7 @@ msgstr ""
 #: filenuke.h:106 filenuke.h:118 filenuke.h:190 firedrive.h:33 firedrive.h:66
 #: firedrive.h:72 firedrive.h:122 firedrive.h:128 firedrive.h:138 flashx.h:26
 #: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:5851 global.h:6531 global.h:6600 global.h:6619 global.h:6794
+#: global.h:5851 global.h:6545 global.h:6614 global.h:6633 global.h:6808
 #: harddisk.h:350 harddisk.h:355 harddisk.h:382 harddisk.h:386 harddisk.h:439
 #: harddisk.h:633 harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729
 #: harddisk.h:731 harddisk.h:733 harddisk.h:793 harddisk.h:812 harddisk.h:815
@@ -94,7 +94,7 @@ msgstr ""
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
 #: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3211 tpk.new.h:3167 tsSchnitt.c:108
 #: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
-#: tsSchnitt.c:347 tunerconfig.h:646 tunerconfig.h:662 tunerconfig.h:935
+#: tsSchnitt.c:347 tunerconfig.h:647 tunerconfig.h:666 tunerconfig.h:941
 #: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:67
 #: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
 #: vidstream.h:167 webif_index.atemio5200.h:38 webif_index.atemio6200.h:38
@@ -127,7 +127,7 @@ msgstr ""
 #: filenuke.h:106 filenuke.h:118 filenuke.h:190 firedrive.h:33 firedrive.h:66
 #: firedrive.h:72 firedrive.h:122 firedrive.h:128 firedrive.h:138 flashx.h:26
 #: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:5851 global.h:6531 global.h:6600 global.h:6619 global.h:6794
+#: global.h:5851 global.h:6545 global.h:6614 global.h:6633 global.h:6808
 #: harddisk.h:350 harddisk.h:355 harddisk.h:382 harddisk.h:386 harddisk.h:439
 #: harddisk.h:633 harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729
 #: harddisk.h:731 harddisk.h:733 harddisk.h:793 harddisk.h:812 harddisk.h:815
@@ -210,7 +210,7 @@ msgstr ""
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
 #: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3211 tpk.new.h:3167 tsSchnitt.c:108
 #: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
-#: tsSchnitt.c:347 tunerconfig.h:646 tunerconfig.h:662 tunerconfig.h:935
+#: tsSchnitt.c:347 tunerconfig.h:647 tunerconfig.h:666 tunerconfig.h:941
 #: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:67
 #: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
 #: vidstream.h:167 xupnpd.h:60 xupnpd.h:71 xupnpd.h:73 xvidstage.h:54
@@ -668,8 +668,8 @@ msgstr ""
 #: filenuke.h:46 filenuke.h:94 filenuke.h:106 filenuke.h:118 filenuke.h:190
 #: firedrive.h:33 firedrive.h:66 firedrive.h:72 firedrive.h:122
 #: firedrive.h:128 firedrive.h:138 flashx.h:26 flashx.h:84 flashx.h:138
-#: flashx.h:195 flashx.h:233 flashx.h:270 global.h:5851 global.h:6531
-#: global.h:6600 global.h:6619 global.h:6794 harddisk.h:633 harddisk.h:641
+#: flashx.h:195 flashx.h:233 flashx.h:270 global.h:5851 global.h:6545
+#: global.h:6614 global.h:6633 global.h:6808 harddisk.h:633 harddisk.h:641
 #: harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733
 #: harddisk.h:793 harddisk.h:812 harddisk.h:815 hbbtv.h:362 hello.c:36
 #: httpdfunc.h:1222 httpdfunc.h:5667 httpdfunc.h:6053 httpdfunc.h:6318
@@ -726,7 +726,7 @@ msgstr ""
 #: tithek.h:1499 tithek.h:2085 tithek.h:2112 tithek.h:2126 tithek.h:2136
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
 #: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3211
-#: tpk.new.h:3167 tunerconfig.h:646 tunerconfig.h:662 tunerconfig.h:935
+#: tpk.new.h:3167 tunerconfig.h:647 tunerconfig.h:666 tunerconfig.h:941
 #: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:67
 #: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
 #: vidstream.h:167 webif_boxcontrol.h:2 xupnpd.h:60 xupnpd.h:71 xupnpd.h:73
@@ -815,7 +815,7 @@ msgstr ""
 #: mc_videoplayer_settings.h:53 network.h:392 panel_settings_autostart.h:61
 #: panel_settings_overclocking.h:276 readerconfig.h:421
 #: settings_autostart.h:53 settings_overclocking.h:276 transponder.h:256
-#: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:830
+#: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:836
 #: vfdisplay.h:63 vfdisplay.h:76
 msgid "off"
 msgstr ""
@@ -1911,49 +1911,49 @@ msgstr "SAT"
 msgid "Sun"
 msgstr ""
 
-#: global.h:6407
+#: global.h:6421
 msgid "Tuner "
 msgstr "Tuner"
 
-#: global.h:6416
+#: global.h:6430
 msgid "Multituner adjustable"
 msgstr ""
 
-#: global.h:6466
+#: global.h:6480
 msgid "Create Transponder (Sat)"
 msgstr ""
 
-#: global.h:6467
+#: global.h:6481
 msgid "Create Transponder (Cable)"
 msgstr ""
 
-#: global.h:6468
+#: global.h:6482
 msgid "Create Transponder (Terrestrial)"
 msgstr ""
 
-#: global.h:6469
+#: global.h:6483
 msgid "Create Transponder (All)"
 msgstr ""
 
-#: global.h:6471
+#: global.h:6485
 msgid "Select Your Serach Modus"
 msgstr ""
 
-#: global.h:6531
+#: global.h:6545
 msgid ""
 "Transponder/Satellite Convert done, please use channel search on next Boot.\n"
 "Your System will reboot !"
 msgstr ""
 
-#: global.h:6595
+#: global.h:6609
 msgid "Error: Transponder Source file not found"
 msgstr ""
 
-#: global.h:6617
+#: global.h:6631
 msgid "Error: Transponder Source file no data"
 msgstr ""
 
-#: global.h:6794
+#: global.h:6808
 msgid ""
 "Standard favorites have been successfully applied.\n"
 "Your System will reboot !"
@@ -11741,19 +11741,19 @@ msgstr ""
 msgid "Terrestrisch"
 msgstr ""
 
-#: tunerconfig.h:646 tunerconfig.h:662
+#: tunerconfig.h:647 tunerconfig.h:666
 msgid "Hybrid tuner mode changed, receiver will be restarted!"
 msgstr ""
 
-#: tunerconfig.h:804
+#: tunerconfig.h:810
 msgid "direct connect"
 msgstr ""
 
-#: tunerconfig.h:815
+#: tunerconfig.h:821
 msgid "loop to Tuner"
 msgstr ""
 
-#: tunerconfig.h:935
+#: tunerconfig.h:941
 msgid ""
 "Tunerconfig is not allowed if record\n"
 "or stream is running !"
