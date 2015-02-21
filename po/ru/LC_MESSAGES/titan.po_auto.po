@@ -7565,41 +7565,40 @@ msgid "Here you can edit timer events."
 msgstr ""
 
 #: skin_default_skin.xml.h:319
-msgid "Here you can install plugins and extensions from our online offer."
+msgid "Here you can enter the menu of your Ci-Module."
 msgstr ""
 
 #: skin_default_skin.xml.h:320
-msgid "Here you can make advanced settings."
+msgid "Here you can install plugins and extensions from our online offer."
 msgstr ""
 
 #: skin_default_skin.xml.h:321
+msgid "Here you can make advanced settings."
+msgstr ""
+
+#: skin_default_skin.xml.h:322
 msgid "Here you can make your audio/video autostart settings."
 msgstr ""
 "Здесь Вы можете настроить автозапуск аудио/видео"
 
-#: skin_default_skin.xml.h:322
+#: skin_default_skin.xml.h:323
 msgid "Here you can make your Audio/Video settings."
 msgstr ""
-
-#: skin_default_skin.xml.h:323
-msgid "Here you can make your cam/emu autostart settings."
-msgstr "Здесь Вы можете настроить автозапуск cam/emu"
 
 #: skin_default_skin.xml.h:324
 msgid "Here you can make your child safety autostart settings."
 msgstr ""
 
 #: skin_default_skin.xml.h:325
-msgid "Here you can make your default autostart settings."
-msgstr ""
-"Здесь Вы можете настроить автозапуск по умолчанию"
-
-#: skin_default_skin.xml.h:326
 msgid "Here you can make your display settings."
 msgstr ""
 
-#: skin_default_skin.xml.h:327
+#: skin_default_skin.xml.h:326
 msgid "Here you can make your EPG settings."
+msgstr ""
+
+#: skin_default_skin.xml.h:327
+msgid "Here you can make your general autostart settings."
 msgstr ""
 
 #: skin_default_skin.xml.h:328
@@ -7619,8 +7618,8 @@ msgid "Here you can make your network autostart settings."
 msgstr "Здесь Вы можете настроить автозапуск сети"
 
 #: skin_default_skin.xml.h:332
-msgid "Here you can make your Overclocking settings."
-msgstr "Здесь Вы можете настроить разгон процессора"
+msgid "Here you can make your overclock settings."
+msgstr ""
 
 #: skin_default_skin.xml.h:333
 msgid "Here you can make your PIN security settings."
@@ -7635,18 +7634,16 @@ msgid "Here you can make your screensaver settings."
 msgstr "Здесь Вы можете настроить экранную заставку"
 
 #: skin_default_skin.xml.h:336
+msgid "Here you can make your softcam/USB cardreader autostart settings."
+msgstr ""
+
+#: skin_default_skin.xml.h:337
 msgid "Here you can make your timeshift settings."
 msgstr "Здесь Вы можете настроить таймшифт"
 
-#: skin_default_skin.xml.h:337
+#: skin_default_skin.xml.h:338
 msgid "Here you can make your USB autostart settings."
 msgstr ""
-
-#: skin_default_skin.xml.h:338
-msgid "Here you can manage your Ci-Modul or Card Infos."
-msgstr ""
-"Здесь Вы можете управлять Ci-модулями или карточк�"
-"�ми"
 
 #: skin_default_skin.xml.h:339
 msgid "Here you can reset the smartcard reader(s)."
@@ -7710,12 +7707,9 @@ msgstr "Здесь Вы можете выбрать язык интерфейс�
 
 #: skin_default_skin.xml.h:351
 msgid ""
-"Here you can set your manuel Channel search options. Very important, before "
-"you start looking for a channel must be set to its tuner tuner settings."
+"Here you can set your manual channel search options. Very important, before "
+"channel scan, the tuner must be configured correctly."
 msgstr ""
-"Здесь Вы можете настроить параметры ручного поиска "
-"каналов. Очень важно перед этим тщательно н�"
-"�строить тюнер"
 
 #: skin_default_skin.xml.h:352
 msgid "Here you can set your timezone."
@@ -7728,8 +7722,8 @@ msgid ""
 msgstr ""
 
 #: skin_default_skin.xml.h:354
-msgid "Here you can start and manage your additional plug-ins."
-msgstr "Здесь Вы можете запускать и добавлять плагины"
+msgid "Here you can start and manage your additional plugins."
+msgstr ""
 
 #: skin_default_skin.xml.h:355
 msgid "Here you can test your network."
@@ -13379,3 +13373,32 @@ msgstr ""
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Остановить?"
+
+#~ msgid "Here you can make your cam/emu autostart settings."
+#~ msgstr "Здесь Вы можете настроить автозапуск cam/emu"
+
+#~ msgid "Here you can make your default autostart settings."
+#~ msgstr ""
+#~ "Здесь Вы можете настроить автозапуск по умолч�"
+#~ "�нию"
+
+#~ msgid "Here you can make your Overclocking settings."
+#~ msgstr "Здесь Вы можете настроить разгон процессора"
+
+#~ msgid "Here you can manage your Ci-Modul or Card Infos."
+#~ msgstr ""
+#~ "Здесь Вы можете управлять Ci-модулями или карточк�"
+#~ "�ми"
+
+#~ msgid ""
+#~ "Here you can set your manuel Channel search options. Very important, "
+#~ "before you start looking for a channel must be set to its tuner tuner "
+#~ "settings."
+#~ msgstr ""
+#~ "Здесь Вы можете настроить параметры ручного поиск�"
+#~ "� каналов. Очень важно перед этим тщательно н�"
+#~ "�строить тюнер"
+
+#~ msgid "Here you can start and manage your additional plug-ins."
+#~ msgstr ""
+#~ "Здесь Вы можете запускать и добавлять плагины"
