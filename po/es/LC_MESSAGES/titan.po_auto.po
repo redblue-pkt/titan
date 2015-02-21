@@ -94,17 +94,18 @@ msgstr ""
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
 #: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3211 tpk.new.h:3167 tsSchnitt.c:108
 #: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
-#: tsSchnitt.c:347 tunerconfig.h:931 unlock.h:20 unlock.h:66 unlock.h:71
-#: unlock.h:75 videomode.h:67 videoweed.h:35 videoweed.h:80 vidstream.h:45
-#: vidstream.h:86 vidstream.h:98 vidstream.h:167 webif_index.atemio5200.h:38
-#: webif_index.atemio6200.h:38 webif_index.atemio7600.h:48
-#: webif_index.atemio-nemesis.h:38 webif_rc.atemio510.h:33
-#: webif_rc_virtual.atemio510.h:33 webif_rc_virtual.atemio5200.h:20
-#: webif_rc_virtual.atemio520.h:20 webif_rc_virtual.atemio530.h:20
-#: webif_rc_virtual.atemio6000.h:20 webif_rc_virtual.atemio6100.h:20
-#: webif_rc_virtual.atemio6200.h:20 webif_rc_virtual.atemio-nemesis.h:20
-#: xupnpd.h:60 xupnpd.h:71 xupnpd.h:73 xvidstage.h:54 xvidstage.h:100
-#: xvidstage.h:177 youtube.h:215 zapback.c:79 zdf.h:29
+#: tsSchnitt.c:347 tunerconfig.h:646 tunerconfig.h:662 tunerconfig.h:935
+#: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:67
+#: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
+#: vidstream.h:167 webif_index.atemio5200.h:38 webif_index.atemio6200.h:38
+#: webif_index.atemio7600.h:48 webif_index.atemio-nemesis.h:38
+#: webif_rc.atemio510.h:33 webif_rc_virtual.atemio510.h:33
+#: webif_rc_virtual.atemio5200.h:20 webif_rc_virtual.atemio520.h:20
+#: webif_rc_virtual.atemio530.h:20 webif_rc_virtual.atemio6000.h:20
+#: webif_rc_virtual.atemio6100.h:20 webif_rc_virtual.atemio6200.h:20
+#: webif_rc_virtual.atemio-nemesis.h:20 xupnpd.h:60 xupnpd.h:71 xupnpd.h:73
+#: xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:215 zapback.c:79
+#: zdf.h:29
 msgid "OK"
 msgstr "Ok"
 
@@ -209,11 +210,11 @@ msgstr "Ok"
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
 #: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3211 tpk.new.h:3167 tsSchnitt.c:108
 #: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
-#: tsSchnitt.c:347 tunerconfig.h:931 unlock.h:20 unlock.h:66 unlock.h:71
-#: unlock.h:75 videomode.h:67 videoweed.h:35 videoweed.h:80 vidstream.h:45
-#: vidstream.h:86 vidstream.h:98 vidstream.h:167 xupnpd.h:60 xupnpd.h:71
-#: xupnpd.h:73 xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:215
-#: zapback.c:79 zdf.h:29
+#: tsSchnitt.c:347 tunerconfig.h:646 tunerconfig.h:662 tunerconfig.h:935
+#: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:67
+#: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
+#: vidstream.h:167 xupnpd.h:60 xupnpd.h:71 xupnpd.h:73 xvidstage.h:54
+#: xvidstage.h:100 xvidstage.h:177 youtube.h:215 zapback.c:79 zdf.h:29
 msgid "EXIT"
 msgstr "Salir"
 
@@ -725,11 +726,12 @@ msgstr ""
 #: tithek.h:1499 tithek.h:2085 tithek.h:2112 tithek.h:2126 tithek.h:2136
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
 #: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3211
-#: tpk.new.h:3167 tunerconfig.h:931 unlock.h:20 unlock.h:66 unlock.h:71
-#: unlock.h:75 videomode.h:67 videoweed.h:35 videoweed.h:80 vidstream.h:45
-#: vidstream.h:86 vidstream.h:98 vidstream.h:167 webif_boxcontrol.h:2
-#: xupnpd.h:60 xupnpd.h:71 xupnpd.h:73 xvidstage.h:54 xvidstage.h:100
-#: xvidstage.h:177 youtube.h:215 zapback.c:79 zdf.h:29
+#: tpk.new.h:3167 tunerconfig.h:646 tunerconfig.h:662 tunerconfig.h:935
+#: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:67
+#: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
+#: vidstream.h:167 webif_boxcontrol.h:2 xupnpd.h:60 xupnpd.h:71 xupnpd.h:73
+#: xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:215 zapback.c:79
+#: zdf.h:29
 msgid "Message"
 msgstr "Mensaje"
 
@@ -813,7 +815,7 @@ msgstr "Configuracion guardada con EExito"
 #: mc_videoplayer_settings.h:53 network.h:392 panel_settings_autostart.h:61
 #: panel_settings_overclocking.h:276 readerconfig.h:421
 #: settings_autostart.h:53 settings_overclocking.h:276 transponder.h:256
-#: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:826
+#: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:830
 #: vfdisplay.h:63 vfdisplay.h:76
 msgid "off"
 msgstr "Off"
@@ -11954,15 +11956,19 @@ msgstr ""
 msgid "Terrestrisch"
 msgstr "Terrestre"
 
-#: tunerconfig.h:800
+#: tunerconfig.h:646 tunerconfig.h:662
+msgid "They need to switch the tuner Hyprid a Box Restart!"
+msgstr ""
+
+#: tunerconfig.h:804
 msgid "direct connect"
 msgstr "Conexion Directa"
 
-#: tunerconfig.h:811
+#: tunerconfig.h:815
 msgid "loop to Tuner"
 msgstr "Bucle para Tuner"
 
-#: tunerconfig.h:931
+#: tunerconfig.h:935
 msgid ""
 "Tunerconfig is not allowed if record\n"
 "or stream is running !"
