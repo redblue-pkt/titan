@@ -7435,8 +7435,8 @@ msgstr ""
 
 #: skin_default_skin.xml.h:300
 msgid ""
-"Here you can adjust your rotor equipment. Enter the latitude and longitude "
-"values by using the number keys."
+"Here you can adjust your rotor equipment.\n"
+"Enter the latitude and longitude values by using the number keys."
 msgstr ""
 
 #: skin_default_skin.xml.h:301
