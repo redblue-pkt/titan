@@ -1059,7 +1059,6 @@ char* webgetbouquetm3u(char* param, int connfd, int fmt)
 		}
 	}
 	if(extip == 1) free(ip);
-	free(streamport); streamport = NULL;
 	return buf;
 }
 
