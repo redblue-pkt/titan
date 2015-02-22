@@ -7343,10 +7343,14 @@ msgid ""
 msgstr ""
 
 #: skin_default_skin.xml.h:306
-msgid "Here you can configure dynamic DNS services."
+msgid "Here you can configure CI-Modules."
 msgstr ""
 
 #: skin_default_skin.xml.h:307
+msgid "Here you can configure dynamic DNS services."
+msgstr ""
+
+#: skin_default_skin.xml.h:308
 msgid ""
 "Here you can configure:\n"
 "- Webinterface\n"
@@ -7354,14 +7358,10 @@ msgid ""
 "- RGUI"
 msgstr ""
 
-#: skin_default_skin.xml.h:308
+#: skin_default_skin.xml.h:309
 msgid ""
 "Here you can configure your cable tuner. Choose your cable provider and "
 "start an automatic search."
-msgstr ""
-
-#: skin_default_skin.xml.h:309
-msgid "Here you can configure your CI-Modules."
 msgstr ""
 
 #: skin_default_skin.xml.h:310
