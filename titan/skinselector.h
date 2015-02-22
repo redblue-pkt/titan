@@ -200,7 +200,7 @@ void screenskinselect(void)
 				struct splitstr* ret1 = NULL;
 				int count1 = 0;
 				char* tmpstr1 = NULL;
-				char* cmd = NULL;
+				//char* cmd = NULL; not used, one warning less
 				tmpstr1 = ostrcat("", selection->name, 0, 0);
 				ret1 = strsplit(tmpstr1, " ", &count1);
 				tmpstr = ostrcat((&ret1[0])->part, "", 0, 0);
