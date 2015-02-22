@@ -89,7 +89,7 @@ for ROUND in $POLIST; do
 		cmd="xgettext --omit-header --no-wrap -j -k_ *.* -o $ROUND_CLEAN"
 		echo "[createpo.sh] $cmd" >> "$HOME"/flashimg/$SRCDIR/error/po.log		
 		$cmd >> "$HOME"/flashimg/$SRCDIR/error/po.log 2>&1
-		if [ ! -e "$ROUND_UTF" ] || [ `cat "$ROUND_UTF" | wc -l` -eq 0 ]; then error="3"; break;fi
+		if [ ! -e "$ROUND_CLEAN" ] || [ `cat "$ROUND_CLEAN" | wc -l` -eq 0 ]; then error="3"; break;fi
 		log=`cat "$HOME"/flashimg/$SRCDIR/error/po.log`
 		if [ `echo $log | grep "fatal error" | wc -l` -gt 0 ]; then error="4"; break;fi
 		##Nun haben wir schon ALLE neuen msgid's mit drin! > *.*
