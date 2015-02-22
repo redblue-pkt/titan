@@ -440,7 +440,7 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 		}
 	}
 #endif
-	/*else if(ostrcmp(query, "getbouquetm3u") == 0)
+	else if(ostrcmp(query, "getbouquetm3u") == 0)
 	{
 		buf = webgetbouquetm3u(param, *connfd, fmt);
 		if(fmt == 0)
@@ -448,7 +448,7 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 			ext = "Content-Disposition: attachment; filename=bouquetstream.m3u";
 			mime = "audio/x-mpegurl";
 		}
-	}*/
+	}
 	else if(ostrcmp(query, "getvideo") == 0)
 		buf = webgetvideo(param, *connfd, fmt);
 	else if(ostrcmp(query, "videoplay") == 0 || ostrcmp(query, "videoplay=") == 0)
