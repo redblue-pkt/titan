@@ -7348,11 +7348,7 @@ msgid "Here you can configure dynamic DNS services."
 msgstr ""
 
 #: skin_default_skin.xml.h:307
-msgid ""
-"Here you can configure:\n"
-"- Webinterface\n"
-"- Transcoding\n"
-"- RGUI"
+msgid "Here you can configure: Webinterface, Transcoding and RGUI"
 msgstr ""
 
 #: skin_default_skin.xml.h:308
