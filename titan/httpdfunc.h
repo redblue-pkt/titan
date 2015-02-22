@@ -691,13 +691,32 @@ char* webgetbouquet(int fmt)
 			ostrcatbig(&buf, "<td width=50 nowrap align=right valign=middle><img style=\"margin-left: 5\" border=0 src=", &maxlen, &pos);
 
 			if(node->type == 0)
-				ostrcatbig(&buf, "img/tv.png width=16 height=16 alt=TV>", &maxlen, &pos);
+			{
+				ostrcatbig(&buf, "img/tv.png title=\"", &maxlen, &pos);
+				ostrcatbig(&buf, _("TV"), maxlen, pos);
+			}
 			else
-				ostrcatbig(&buf, "img/radio.png width=16 height=16 alt=Radio>", &maxlen, &pos);
+			{
+				ostrcatbig(&buf, "img/radio.png title=\"", &maxlen, &pos);
+				ostrcatbig(&buf, _("Radio"), maxlen, pos);
+			}
+				
+			ostrcatbig(&buf, "\" width=16 height=16>", maxlen, pos);
+			
 			ostrcatbig(&buf, "<a href=\"query?getgmultiepg&", &maxlen, &pos);
 			ostrcatbig(&buf, node->name, &maxlen, &pos);
 			ostrcatbig(&buf, "\">", &maxlen, &pos);
-			ostrcatbig(&buf, "<img style=\"margin-left: 5\" border=0 width=16 height=16 alt=\"Graphical Multi EPG\" src=img/gmultiepg.png></a>", &maxlen, &pos);
+			ostrcatbig(&buf, "<img style=\"margin-left: 5\" border=0 src=img/gmultiepg.png title=\"", &maxlen, &pos);
+			ostrcatbig(&buf, _("GRAPHIC MULTI EPG - Bouquets"), maxlen, pos);
+			ostrcatbig(&buf, "\" width=16 height=16></a>", maxlen, pos);
+		
+			ostrcatbig(&buf, "<a href=\"query?getbouquetm3u&", &maxlen, &pos);
+			ostrcatbig(&buf, node->name, &maxlen, &pos);
+			ostrcatbig(&buf, "\">", &maxlen, &pos);
+			ostrcatbig(&buf, "<img style=\"margin-left: 5\" border=0 src=img/bouquetstream.png title=\"", &maxlen, &pos);
+			ostrcatbig(&buf, _("Playlist download"), maxlen, pos);
+			ostrcatbig(&buf, "\" width=16 height=16></a>", maxlen, pos);			
+			
 			ostrcatbig(&buf, "</td></tr>", &maxlen, &pos);
 		}
 		else
