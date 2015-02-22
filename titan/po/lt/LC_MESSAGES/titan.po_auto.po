@@ -4962,7 +4962,8 @@ msgstr ""
 msgid ""
 "Here you can configure your login credentials for accessing password "
 "protected shares."
-msgstr ""
+msgstr "ia galite nustatyti savo autentifikavimo informacij.\n"
+"Navigate naudojant nuotolinio valdymo pult ir rodomais emiau klaviais"
 
 #: plugins_networkbrowser_skin.xml.h:13 skins_networkbrowser_skin.xml.h:13
 msgid ""
@@ -5189,7 +5190,9 @@ msgstr "traukti"
 
 #: plugins_readerconfig_skin.xml.h:5 skins_readerconfig_skin.xml.h:5
 msgid "Here you can activate/deactivate you OSCam readers."
-msgstr ""
+msgstr "ia galite jungti / ijungti savo skaitytojui ( ai).\n"
+"\n"
+"Navigate naudojantis nuotolinio valdymo pultu ir rodomais emiau klaviais"
 
 #: plugins_readerconfig_skin.xml.h:6 skins_readerconfig_skin.xml.h:6
 msgid "Here you can configure your OSCam reader."
