@@ -284,13 +284,13 @@ void webcreatechannelbody(char** buf, int line, struct channel* chnode, char* ch
 		{
 			ostrcatbig(buf, "</td><td width=100 align=right valign=middle nowrap><img style=\"margin-left: 5\" border=0 src=img/tv.png title=\"", maxlen, pos);
 			ostrcatbig(buf, _("TV"), maxlen, pos);
-			ostrcatbig(buf, "\" width=16 height=16></a>", maxlen, pos);		
+			ostrcatbig(buf, "\" width=16 height=16>", maxlen, pos);		
 		}
 		else
 		{
 			ostrcatbig(buf, "</td><td width=100 align=right valign=middle nowrap><img style=\"margin-left: 5\" border=0 src=img/radio.png title=\"", maxlen, pos);
 			ostrcatbig(buf, _("Radio"), maxlen, pos);
-			ostrcatbig(buf, "\" width=16 height=16></a>", maxlen, pos);
+			ostrcatbig(buf, "\" width=16 height=16>", maxlen, pos);
 		}
 
 		//single epg
@@ -691,13 +691,32 @@ char* webgetbouquet(int fmt)
 			ostrcatbig(&buf, "<td width=50 nowrap align=right valign=middle><img style=\"margin-left: 5\" border=0 src=", &maxlen, &pos);
 
 			if(node->type == 0)
-				ostrcatbig(&buf, "img/tv.png width=16 height=16 alt=TV>", &maxlen, &pos);
+			{
+				ostrcatbig(&buf, "img/tv.png title=\"", &maxlen, &pos);
+				ostrcatbig(buf, _("TV"), maxlen, pos);
+			}
 			else
-				ostrcatbig(&buf, "img/radio.png width=16 height=16 alt=Radio>", &maxlen, &pos);
+			{
+				ostrcatbig(&buf, "img/radio.png title=\"", &maxlen, &pos);
+				ostrcatbig(buf, _("Radio"), maxlen, pos);
+			}
+				
+			ostrcatbig(buf, "\" width=16 height=16>", maxlen, pos);
+			
 			ostrcatbig(&buf, "<a href=\"query?getgmultiepg&", &maxlen, &pos);
 			ostrcatbig(&buf, node->name, &maxlen, &pos);
 			ostrcatbig(&buf, "\">", &maxlen, &pos);
-			ostrcatbig(&buf, "<img style=\"margin-left: 5\" border=0 width=16 height=16 alt=\"Graphical Multi EPG\" src=img/gmultiepg.png></a>", &maxlen, &pos);
+			ostrcatbig(&buf, "<img style=\"margin-left: 5\" border=0 src=img/gmultiepg.png title=\"", &maxlen, &pos);
+			ostrcatbig(buf, _("GRAPHIC MULTI EPG - Bouquets"), maxlen, pos);
+			ostrcatbig(buf, "\" width=16 height=16></a>", maxlen, pos);
+		
+			ostrcatbig(&buf, "<a href=\"query?getbouquetm3u&", &maxlen, &pos);
+			ostrcatbig(&buf, node->name, &maxlen, &pos);
+			ostrcatbig(&buf, "\">", &maxlen, &pos);
+			ostrcatbig(&buf, "<img style=\"margin-left: 5\" border=0 src=img/bouquetstream.png title=\"", &maxlen, &pos);
+			ostrcatbig(buf, _("Playlist download"), maxlen, pos);
+			ostrcatbig(buf, "\" width=16 height=16></a>", maxlen, pos);			
+			
 			ostrcatbig(&buf, "</td></tr>", &maxlen, &pos);
 		}
 		else
@@ -979,6 +998,70 @@ char* webgettranscodem3u(char* param, int connfd, int fmt)
 	return buf;
 }
 #endif
+
+char* webgetbouquetm3u(char* param, int connfd, int fmt)
+{
+	int extip = 1;
+	char* buf = NULL, *ip = NULL, *streamport = NULL;
+	struct sockaddr_in sin;
+	struct mainbouquet *mbouquet = NULL;
+	struct bouquet *node = NULL;
+	struct channel* chnode = NULL;
+	socklen_t len = sizeof(sin);
+	
+	if(param == NULL) return NULL;
+
+	if(getconfigint("webifip", NULL) == 1)
+		ip = getispip();
+
+	if(ip == NULL)
+	{
+		if(getsockname(connfd, &sin, &len) < 0)
+		{
+			perr("getsockname");
+			return NULL;
+		}
+
+		extip = 0;
+		ip = inet_ntoa(sin.sin_addr);
+			if(ip == NULL) return NULL;
+	}
+	
+	streamport = getconfig("streamport", NULL);
+
+	buf = ostrcat(buf, "#EXTM3U\n", 1, 0);
+	buf = ostrcat(buf, "#EXTVLCOPT--http-reconnect=true\n", 1, 0);
+	
+	mbouquet = getmainbouquet(param);
+	if(mbouquet != NULL)
+	{
+		node = mbouquet->bouquet;
+		while(node != NULL)
+		{
+			chnode = getchannel(node->serviceid, node->transponderid);
+			if(chnode != NULL)
+			{
+				buf = ostrcat(buf, "#EXTINF:-1,", 1, 0);
+				buf = ostrcat(buf, chnode->name, 1, 0);
+				buf = ostrcat(buf, "\n", 1, 0);
+
+				buf = ostrcat(buf, "http://", 1, 0);
+				buf = ostrcat(buf, ip, 1, 0);
+				buf = ostrcat(buf, ":", 1, 0);
+				buf = ostrcat(buf, streamport, 1, 0);
+				buf = ostrcat(buf, "/", 1, 0);
+				buf = ostrcat(buf, oitoa(chnode->serviceid), 1, 0);
+				buf = ostrcat(buf, "%2c", 1, 0);
+				buf = ostrcat(buf, ollutoa(chnode->transponderid), 1, 0);
+				buf = ostrcat(buf, "\n", 1, 0);
+			}
+			node = node->next;
+		}
+	}
+	if(extip == 1) free(ip);
+	free(streamport); streamport = NULL;
+	return buf;
+}
 
 char* webgetvideo(char* param, int connfd, int fmt)
 {
