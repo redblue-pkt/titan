@@ -107,7 +107,7 @@ for ROUND in $POLIST; do
 
 				iconv -f UTF-8 -t ISO-8859-1 $ROUND_MERGE_UTF > $ROUND_MERGE
 				if [ ! -e "$ROUND_MERGE" ] || [ `cat "$ROUND_MERGE" | wc -l` -eq 0 ]; then error="10"; break;fi
-		else
+		#else
 		###
 		#		cat $ROUND_NEW_MERGE >$ROUND_MERGE
 		
