@@ -94,28 +94,6 @@ for ROUND in $POLIST; do
 		if [ `echo $log | grep "fatal error" | wc -l` -gt 0 ]; then error="4"; break;fi
 		##Nun haben wir schon ALLE neuen msgid's mit drin! > *.*
 		
-		###
-		use_edit_po=0
-		if [ "$use_edit_po" = "1" ];then
-				iconv -f ISO-8859-1 -t UTF-8 $ROUND_EDIT > $ROUND_EDIT_UTF
-				if [ ! -e "$ROUND_EDIT_UTF" ] || [ `cat "$ROUND_EDIT_UTF" | wc -l` -eq 0 ]; then error="8"; break;fi
-
-		#		echo "[createpo.sh] msgmerge $ROUND_NEW_MERGE $ROUND_EDIT_UTF > $ROUND_MERGE_UTF"
-		#		msgmerge $ROUND_NEW_MERGE $ROUND_EDIT_UTF > $ROUND_MERGE_UTF
-				msgmerge $ROUND_EDIT_UTF $ROUND_NEW_MERGE > $ROUND_MERGE_UTF
-				if [ ! -e "$ROUND_NEW_MERGE" ] || [ `cat "$ROUND_NEW_MERGE" | wc -l` -eq 0 ]; then error="9"; break;fi
-
-				iconv -f UTF-8 -t ISO-8859-1 $ROUND_MERGE_UTF > $ROUND_MERGE
-				if [ ! -e "$ROUND_MERGE" ] || [ `cat "$ROUND_MERGE" | wc -l` -eq 0 ]; then error="10"; break;fi
-		#else
-		###
-		#		cat $ROUND_NEW_MERGE >$ROUND_MERGE
-		
-		## wozu hier noch mal was konvertieren??
-		##		iconv -f UTF-8 -t ISO-8859-1 $ROUND_NEW_MERGE > $ROUND_MERGE
-		##		if [ ! -e "$ROUND_MERGE" ] || [ `cat "$ROUND_MERGE" | wc -l` -eq 0 ]; then error="10"; break;fi
-		###
-		fi
 		echo ROUND: $ROUND
 
 		#if [ "$ROUND" = "/home/atemio/flashimg/$SRCDIR/po/vn/LC_MESSAGES/titan.po_auto.po" ];then
