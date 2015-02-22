@@ -1069,8 +1069,8 @@ msgstr "Bescherm Modus"
 msgid "Edit mode"
 msgstr "Hernoem Modus"
 
-#: channellist.h:689 channellist.h:1765 httpdfunc.h:292 httpdfunc.h:701
-#: scan.h:530 skin_default_skin.xml.h:539 webif_index.atemio5200.h:69
+#: channellist.h:689 channellist.h:1765 httpdfunc.h:292 scan.h:530
+#: skin_default_skin.xml.h:539 webif_index.atemio5200.h:69
 #: webif_index.atemio5200.h:125 webif_index.atemio6200.h:69
 #: webif_index.atemio6200.h:125 webif_index.atemio-nemesis.h:69
 #: webif_index.atemio-nemesis.h:125 webif_rc.atemio5200.h:52
@@ -1079,8 +1079,7 @@ msgstr "Hernoem Modus"
 msgid "Radio"
 msgstr ""
 
-#: channellist.h:694 channellist.h:1760 httpdfunc.h:286 httpdfunc.h:696
-#: scan.h:528
+#: channellist.h:694 channellist.h:1760 httpdfunc.h:286 scan.h:528
 msgid "TV"
 msgstr ""
 
@@ -1994,7 +1993,7 @@ msgstr "Wacht op verbinding of druk op EXIT"
 msgid "DLNA Control Client connected !"
 msgstr ""
 
-#: gmultiepg.h:546 gmultiepg.h:746 httpdfunc.h:710
+#: gmultiepg.h:546 gmultiepg.h:746
 msgid "GRAPHIC MULTI EPG - Bouquets"
 msgstr "Grafische multi EPG - Favorieten"
 
@@ -2251,10 +2250,6 @@ msgstr ""
 
 #: httpdfunc.h:339
 msgid "Channel not available"
-msgstr ""
-
-#: httpdfunc.h:717
-msgid "Playlist download"
 msgstr ""
 
 #: httpdfunc.h:3659 skin_default_skin.xml.h:804
