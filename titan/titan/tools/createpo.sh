@@ -97,9 +97,9 @@ for ROUND in $POLIST; do
 		echo ROUND: $ROUND
 
 		#if [ "$ROUND" = "/home/atemio/flashimg/$SRCDIR/po/vn/LC_MESSAGES/titan.po_auto.po" ];then
-				## hier reicht nun ROUND_CLEAN
+				## hier reicht nun ROUND_CLEAN, aber wozu "Content-Type:" rauslöschen?
 				## cat $ROUND_MERGE | sed 's/"Content-Type:.*//g' > $OUTFILE_PO
-				cat $ROUND_CLEAN | sed 's/"Content-Type:.*//g' > $OUTFILE_PO
+				cat $ROUND_CLEAN > $OUTFILE_PO
 				
 		#else
 		#		cat $ROUND_MERGE > $OUTFILE_PO 
