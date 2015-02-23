@@ -26,15 +26,23 @@
 [createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/lt/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/lt/LC_MESSAGES/titan.mo
 1256 translated messages, 1641 untranslated messages.
 [createpo.sh] xgettext --omit-header --no-wrap -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/es/LC_MESSAGES/titan.po_auto.clean.po
-/home/atemio/flashimg/source.titan/po/es/LC_MESSAGES/titan.po_auto.clean.po:2299:77: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/es/LC_MESSAGES/titan.po_auto.clean.po:2300:2: invalid multibyte sequence
-xgettext: found 2 fatal errors
+[createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/es/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/es/LC_MESSAGES/titan.mo
+1832 translated messages, 1065 untranslated messages.
+[createpo.sh] xgettext --omit-header --no-wrap -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.clean.po
+/home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.clean.po:4042:9: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.clean.po:6321:64: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.clean.po:6322:2: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.clean.po:6322:3: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.clean.po:6912:62: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.clean.po:6913:2: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.clean.po:6913:3: invalid multibyte sequence
+xgettext: found 7 fatal errors
 [createpo.sh] ############################################
 [createpo.sh] ###### error should be in the middle #######
 [createpo.sh] ############################################
-  2299	"lista de sus acciones. elige Editar entrada y pulse -VERDE-. Para agregar m�"
-  2300	"�s acciones por favor utiliza -Buscar-. Para acceder a los recursos "
-  2301	"compartidos de Windows protegidos con contraseña por favor presione menú y "
+  6912	"lỗi, kết quả tìm kiếm có một imdbid không hợp lệ và do đó kh�"
+  6913	"���ng thể được lưu trữ trong các MediaDB "
+  6914	
 [createpo.sh] ############################################
 [createpo.sh] ################## coding #################
 /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.po:         utf-8
@@ -71,8 +79,9 @@ xgettext: found 2 fatal errors
 /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po:               utf-8
 /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.clean.po: us-ascii
 /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.po:       us-ascii
+/home/atemio/flashimg/source.titan/po/es/LC_MESSAGES/titan.outfile.po:       utf-8
 /home/atemio/flashimg/source.titan/po/es/LC_MESSAGES/titan.po:               utf-8
-/home/atemio/flashimg/source.titan/po/es/LC_MESSAGES/titan.po_auto.clean.po: unknown-8bit
+/home/atemio/flashimg/source.titan/po/es/LC_MESSAGES/titan.po_auto.clean.po: utf-8
 /home/atemio/flashimg/source.titan/po/es/LC_MESSAGES/titan.po_auto.po:       utf-8
 /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.outfile.po:       utf-8
 /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po:               utf-8
@@ -99,4 +108,5 @@ xgettext: found 2 fatal errors
 /home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.clean.po: utf-8
 /home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.po:       utf-8
 /home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po:               utf-8
+/home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.clean.po: unknown-8bit
 /home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.po:       utf-8
