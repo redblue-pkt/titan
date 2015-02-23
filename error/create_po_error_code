@@ -2,49 +2,40 @@
 [createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.mo
 809 translated messages, 2088 untranslated messages.
 [createpo.sh] xgettext --omit-header --no-wrap -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.clean.po
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.clean.po:2057:46: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.clean.po:2058:2: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.clean.po:2183:48: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.clean.po:2184:2: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.clean.po:2188:47: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.clean.po:2189:2: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.clean.po:2887:51: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.clean.po:2888:2: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.clean.po:3851:51: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.clean.po:3852:2: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.clean.po:3864:46: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.clean.po:3865:2: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.clean.po:4178:48: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.clean.po:4179:2: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.clean.po:4226:48: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.clean.po:4227:2: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.clean.po:4420:87: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.clean.po:4421:2: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.clean.po:4538:51: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.clean.po:4539:2: invalid multibyte sequence
-xgettext: too many errors, aborting
 [createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.mo
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.outfile.po:2057:46: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.outfile.po:2058:2: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.outfile.po:2183:48: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.outfile.po:2184:2: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.outfile.po:2188:47: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.outfile.po:2189:2: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.outfile.po:2887:51: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.outfile.po:2888:2: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.outfile.po:3851:51: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.outfile.po:3852:2: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.outfile.po:3864:46: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.outfile.po:3865:2: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.outfile.po:4178:48: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.outfile.po:4179:2: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.outfile.po:4226:48: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.outfile.po:4227:2: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.outfile.po:4420:87: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.outfile.po:4421:2: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.outfile.po:4538:51: invalid multibyte sequence
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.outfile.po:4539:2: invalid multibyte sequence
-msgfmt: too many errors, aborting
+2017 translated messages, 880 untranslated messages.
+[createpo.sh] xgettext --omit-header --no-wrap -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.clean.po
+[createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.mo
+909 translated messages, 1988 untranslated messages.
+[createpo.sh] xgettext --omit-header --no-wrap -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/el/LC_MESSAGES/titan.po_auto.clean.po
+[createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/el/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/el/LC_MESSAGES/titan.mo
+455 translated messages, 2442 untranslated messages.
+[createpo.sh] xgettext --omit-header --no-wrap -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/it/LC_MESSAGES/titan.po_auto.clean.po
+[createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/it/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/it/LC_MESSAGES/titan.mo
+662 translated messages, 2235 untranslated messages.
+[createpo.sh] xgettext --omit-header --no-wrap -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/pl/LC_MESSAGES/titan.po_auto.clean.po
+[createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/pl/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/pl/LC_MESSAGES/titan.mo
+427 translated messages, 2470 untranslated messages.
+[createpo.sh] xgettext --omit-header --no-wrap -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.po_auto.clean.po
+[createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.mo
+2066 translated messages, 831 untranslated messages.
+[createpo.sh] xgettext --omit-header --no-wrap -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/nl/LC_MESSAGES/titan.po_auto.clean.po
+[createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/nl/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/nl/LC_MESSAGES/titan.mo
+1136 translated messages, 1761 untranslated messages.
+[createpo.sh] xgettext --omit-header --no-wrap -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/lt/LC_MESSAGES/titan.po_auto.clean.po
+[createpo.sh] msgfmt -v /home/atemio/flashimg/source.titan/po/lt/LC_MESSAGES/titan.outfile.po -o /home/atemio/flashimg/source.titan/po/lt/LC_MESSAGES/titan.mo
+1256 translated messages, 1641 untranslated messages.
+[createpo.sh] xgettext --omit-header --no-wrap -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/es/LC_MESSAGES/titan.po_auto.clean.po
+/home/atemio/flashimg/source.titan/po/es/LC_MESSAGES/titan.po_auto.clean.po:2299:77: invalid multibyte sequence
+/home/atemio/flashimg/source.titan/po/es/LC_MESSAGES/titan.po_auto.clean.po:2300:2: invalid multibyte sequence
+xgettext: found 2 fatal errors
+[createpo.sh] ############################################
+[createpo.sh] ###### error should be in the middle #######
+[createpo.sh] ############################################
+  2299	"lista de sus acciones. elige Editar entrada y pulse -VERDE-. Para agregar m√"
+  2300	"°s acciones por favor utiliza -Buscar-. Para acceder a los recursos "
+  2301	"compartidos de Windows protegidos con contrase√±a por favor presione men√∫ y "
+[createpo.sh] ############################################
 [createpo.sh] ################## coding #################
 /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.po:         utf-8
 /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.po_auto.po: utf-8
@@ -65,32 +56,47 @@ msgfmt: too many errors, aborting
 /home/atemio/flashimg/source.titan/po/pl/LC_MESSAGES/titan.po:         utf-8
 /home/atemio/flashimg/source.titan/po/pl/LC_MESSAGES/titan.po_auto.po: utf-8
 /home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po:         utf-8
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.po: unknown-8bit
+/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.po: utf-8
 /home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po:         utf-8
 /home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.po: utf-8
+/home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.outfile.po:       utf-8
 /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.po:               utf-8
+/home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.po_auto.clean.po: utf-8
 /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.po_auto.po:       utf-8
+/home/atemio/flashimg/source.titan/po/el/LC_MESSAGES/titan.outfile.po:       utf-8
 /home/atemio/flashimg/source.titan/po/el/LC_MESSAGES/titan.po:               utf-8
+/home/atemio/flashimg/source.titan/po/el/LC_MESSAGES/titan.po_auto.clean.po: utf-8
 /home/atemio/flashimg/source.titan/po/el/LC_MESSAGES/titan.po_auto.po:       utf-8
+/home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.outfile.po:       us-ascii
 /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po:               utf-8
+/home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.clean.po: us-ascii
 /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.po:       us-ascii
 /home/atemio/flashimg/source.titan/po/es/LC_MESSAGES/titan.po:               utf-8
+/home/atemio/flashimg/source.titan/po/es/LC_MESSAGES/titan.po_auto.clean.po: unknown-8bit
 /home/atemio/flashimg/source.titan/po/es/LC_MESSAGES/titan.po_auto.po:       utf-8
 /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.outfile.po:       utf-8
 /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po:               utf-8
 /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.clean.po: utf-8
 /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.po:       utf-8
+/home/atemio/flashimg/source.titan/po/it/LC_MESSAGES/titan.outfile.po:       utf-8
 /home/atemio/flashimg/source.titan/po/it/LC_MESSAGES/titan.po:               utf-8
+/home/atemio/flashimg/source.titan/po/it/LC_MESSAGES/titan.po_auto.clean.po: utf-8
 /home/atemio/flashimg/source.titan/po/it/LC_MESSAGES/titan.po_auto.po:       utf-8
+/home/atemio/flashimg/source.titan/po/lt/LC_MESSAGES/titan.outfile.po:       us-ascii
 /home/atemio/flashimg/source.titan/po/lt/LC_MESSAGES/titan.po:               utf-8
+/home/atemio/flashimg/source.titan/po/lt/LC_MESSAGES/titan.po_auto.clean.po: us-ascii
 /home/atemio/flashimg/source.titan/po/lt/LC_MESSAGES/titan.po_auto.po:       us-ascii
+/home/atemio/flashimg/source.titan/po/nl/LC_MESSAGES/titan.outfile.po:       utf-8
 /home/atemio/flashimg/source.titan/po/nl/LC_MESSAGES/titan.po:               utf-8
+/home/atemio/flashimg/source.titan/po/nl/LC_MESSAGES/titan.po_auto.clean.po: utf-8
 /home/atemio/flashimg/source.titan/po/nl/LC_MESSAGES/titan.po_auto.po:       utf-8
+/home/atemio/flashimg/source.titan/po/pl/LC_MESSAGES/titan.outfile.po:       utf-8
 /home/atemio/flashimg/source.titan/po/pl/LC_MESSAGES/titan.po:               utf-8
+/home/atemio/flashimg/source.titan/po/pl/LC_MESSAGES/titan.po_auto.clean.po: utf-8
 /home/atemio/flashimg/source.titan/po/pl/LC_MESSAGES/titan.po_auto.po:       utf-8
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.outfile.po:       unknown-8bit
+/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.outfile.po:       utf-8
 /home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po:               utf-8
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.clean.po: unknown-8bit
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.po:       unknown-8bit
+/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.clean.po: utf-8
+/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.po:       utf-8
 /home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po:               utf-8
 /home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.po:       utf-8
