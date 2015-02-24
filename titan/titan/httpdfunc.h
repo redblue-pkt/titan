@@ -3456,11 +3456,12 @@ char* webgetrecfreesize(int fmt)
 			
 	buf = ostrcat(buf, getconfig("rec_path", NULL), 1, 0);
 	buf = ostrcat(buf, "#", 1, 0);
-	buf = ostrcat(buf,ollutoa(full), 1, 0);
+	buf = ostrcat(buf, ollutoa(full), 1, 0);
 	buf = ostrcat(buf, "#", 1, 0);
-	buf = ostrcat(buf,ollutoa(free), 1, 0);
+	buf = ostrcat(buf, ollutoa(free), 1, 0);
 	buf = ostrcat(buf, "#", 1, 0);
-	buf = ostrcat(oitoa(proz), " %", 1, 0);	
+	buf = ostrcat(buf, oitoa(proz), 1, 0);	
+	buf = ostrcat(buf, " %", 1, 0);	
 	buf = ostrcat(buf, "#", 1, 0);
 
 	return buf;
