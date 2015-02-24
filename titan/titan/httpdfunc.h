@@ -3443,6 +3443,29 @@ char* webgetconfig(int fmt)
 	return buf;
 }
 
+char* webgetrecfreesize(int fmt)
+{
+	char* buf = NULL;
+	unsigned long long full = getfullspace(getconfig("rec_path", NULL));
+	unsigned long long free = getfreespace(getconfig("rec_path", NULL));
+	int proz = 0;
+	
+	if(full > 0 && full >= free) proz = ((full - free) * 100) / full;
+	if(proz < 0) proz = 0;
+	if(proz > 100) proz = 100;
+			
+	buf = ostrcat(buf, getconfig("rec_path", NULL), 1, 0);
+	buf = ostrcat(buf, "#", 1, 0);
+	buf = ostrcat(buf,ollutoa(full), 1, 0);
+	buf = ostrcat(buf, "#", 1, 0);
+	buf = ostrcat(buf,ollutoa(free), 1, 0);
+	buf = ostrcat(buf, "#", 1, 0);
+	buf = ostrcat(oitoa(proz), " %", 1, 0);	
+	buf = ostrcat(buf, "#", 1, 0);
+
+	return buf;
+}
+
 char* webgetsysteminfo(int fmt)
 {
 	char* buf = NULL;
