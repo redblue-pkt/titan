@@ -1050,9 +1050,9 @@ char* webgetbouquetm3u(char* param, int connfd, int fmt)
 				buf = ostrcat(buf, ":", 1, 0);
 				buf = ostrcat(buf, streamport, 1, 0);
 				buf = ostrcat(buf, "/", 1, 0);
-				buf = ostrcat(buf, oitoa(chnode->serviceid), 1, 0);
+				buf = ostrcat(buf, oitoa(chnode->serviceid), 1, 1);
 				buf = ostrcat(buf, "%2c", 1, 0);
-				buf = ostrcat(buf, ollutoa(chnode->transponderid), 1, 0);
+				buf = ostrcat(buf, ollutoa(chnode->transponderid), 1, 1);
 				buf = ostrcat(buf, "\n", 1, 0);
 			}
 			node = node->next;
@@ -3456,11 +3456,11 @@ char* webgetrecfreesize(int fmt)
 			
 	buf = ostrcat(buf, getconfig("rec_path", NULL), 1, 0);
 	buf = ostrcat(buf, "#", 1, 0);
-	buf = ostrcat(buf, ollutoa(full), 1, 0);
+	buf = ostrcat(buf, ollutoa(full), 1, 1);
 	buf = ostrcat(buf, "#", 1, 0);
-	buf = ostrcat(buf, ollutoa(free), 1, 0);
+	buf = ostrcat(buf, ollutoa(free), 1, 1);
 	buf = ostrcat(buf, "#", 1, 0);
-	buf = ostrcat(buf, oitoa(proz), 1, 0);	
+	buf = ostrcat(buf, oitoa(proz), 1, 1);	
 	buf = ostrcat(buf, " %", 1, 0);	
 	buf = ostrcat(buf, "#", 1, 0);
 
