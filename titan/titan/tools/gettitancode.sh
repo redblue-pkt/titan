@@ -34,6 +34,9 @@ cat ../titan.c | sed s/"^#define SYSCODE .*"/"#define SYSCODE $code"/ > titan.c.
 mv -f titan.c.tmp ../titan.c
 echo 2222222 code2: $code ROOTDIR: $ROOTDIR
 code=`cat $ROOTDIR/etc/image-version | cut -d= -f2`
+if [ -z "$code" ];then
+	code=`date +%s`
+fi
 cat ../titan.c | sed "s/^#define TIMECODE .*/#define TIMECODE \"$code\"/" > titan.c.tmp
 mv -f titan.c.tmp ../titan.c
 echo 3333333 code2: $code ROOTDIR: $ROOTDIR
