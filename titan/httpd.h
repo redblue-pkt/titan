@@ -169,6 +169,8 @@ void checkquery(int* connfd, char* query, int auth, int fmt)
 	}
 	else if(ostrcmp(query, "getsysteminfo") == 0)
 		buf = webgetsysteminfo(fmt);
+	else if(ostrcmp(query, "getrecfreesize") == 0)
+		buf = webgetrecfreesize(fmt);	
 	else if(ostrcmp(query, "getrccodes") == 0)
 		buf = webgetrccodes(fmt);
 	else if(ostrcmp(query, "getmute") == 0)
