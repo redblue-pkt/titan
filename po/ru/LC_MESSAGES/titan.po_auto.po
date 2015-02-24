@@ -25,7 +25,7 @@ msgstr "Системная информация"
 #: harddisk.h:633 harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729
 #: harddisk.h:731 harddisk.h:733 harddisk.h:793 harddisk.h:812 harddisk.h:815
 #: harddisk.h:1046 hbbtv.h:362 httpdfunc.h:1304 httpdfunc.h:3258
-#: httpdfunc.h:6158 httpdfunc.h:6423 httpdfunc.h:6494 hwtest.h:88 hwtest.h:93
+#: httpdfunc.h:6159 httpdfunc.h:6424 httpdfunc.h:6495 hwtest.h:88 hwtest.h:93
 #: hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206
 #: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
 #: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
@@ -132,7 +132,7 @@ msgstr "ОК"
 #: harddisk.h:633 harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729
 #: harddisk.h:731 harddisk.h:733 harddisk.h:793 harddisk.h:812 harddisk.h:815
 #: harddisk.h:1046 hbbtv.h:362 hello.c:36 httpdfunc.h:1304 httpdfunc.h:3258
-#: httpdfunc.h:6158 httpdfunc.h:6423 httpdfunc.h:6494 hwtest.h:88 hwtest.h:93
+#: httpdfunc.h:6159 httpdfunc.h:6424 httpdfunc.h:6495 hwtest.h:88 hwtest.h:93
 #: hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206
 #: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
 #: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
@@ -227,12 +227,12 @@ msgstr "Выход"
 #: blindscanadjust.h:158 blindscanadjust.h:187 blindscanadjust.h:191 cec.h:143
 #: cec.h:147 cec.h:151 cec.h:155 cec.h:159 cec.h:163 cec.h:167 cec.h:171
 #: cec.h:175 dlna.h:276 epgsettings.h:134 epgsettings.h:187 epgsettings.h:196
-#: epgsettings.h:200 epgsettings.h:205 epgsettings.h:210 httpdfunc.h:3858
-#: httpdfunc.h:3896 httpdfunc.h:3919 httpdfunc.h:3948 httpdfunc.h:4121
-#: httpdfunc.h:4368 httpdfunc.h:4426 httpdfunc.h:4448 httpdfunc.h:4549
-#: httpdfunc.h:4571 httpdfunc.h:4615 httpdfunc.h:4637 httpdfunc.h:4659
-#: httpdfunc.h:4688 httpdfunc.h:4710 httpdfunc.h:4755 httpdfunc.h:4778
-#: httpdfunc.h:4802 httpdfunc.h:4916 httpdsettings.h:27 httpdsettings.h:57
+#: epgsettings.h:200 epgsettings.h:205 epgsettings.h:210 httpdfunc.h:3859
+#: httpdfunc.h:3897 httpdfunc.h:3920 httpdfunc.h:3949 httpdfunc.h:4122
+#: httpdfunc.h:4369 httpdfunc.h:4427 httpdfunc.h:4449 httpdfunc.h:4550
+#: httpdfunc.h:4572 httpdfunc.h:4616 httpdfunc.h:4638 httpdfunc.h:4660
+#: httpdfunc.h:4689 httpdfunc.h:4711 httpdfunc.h:4756 httpdfunc.h:4779
+#: httpdfunc.h:4803 httpdfunc.h:4917 httpdsettings.h:27 httpdsettings.h:57
 #: httpdsettings.h:65 inadyn.h:138 mc_audioplayer_settings.h:45
 #: mc_audioplayer_settings.h:51 mc_audioplayer_settings.h:55
 #: mc_pictureplayer_settings.h:75 mc_videoplayer_settings.h:39
@@ -275,11 +275,11 @@ msgstr "Выход"
 msgid "no"
 msgstr "Нет"
 
-#: adjust.h:70 httpdfunc.h:3865 webif_help.h:35
+#: adjust.h:70 httpdfunc.h:3866 webif_help.h:35
 msgid "infobar"
 msgstr "Инфобар 2"
 
-#: adjust.h:71 adjust.h:326 httpdfunc.h:3872 play.h:1412
+#: adjust.h:71 adjust.h:326 httpdfunc.h:3873 play.h:1412
 #: skin_default_skin.xml.h:230 webif_index.atemio5200.h:34
 #: webif_index.atemio5200.h:90 webif_index.atemio6200.h:34
 #: webif_index.atemio6200.h:90 webif_index.atemio7600.h:65
@@ -296,7 +296,7 @@ msgstr "Инфобар 2"
 msgid "EPG"
 msgstr ""
 
-#: adjust.h:72 epgsettings.h:138 httpdfunc.h:3879
+#: adjust.h:72 epgsettings.h:138 httpdfunc.h:3880
 msgid "Channel EPG"
 msgstr "EPG канала"
 
@@ -308,10 +308,10 @@ msgstr "EPG канала"
 #: blindscanadjust.h:159 blindscanadjust.h:188 blindscanadjust.h:192 cec.h:144
 #: cec.h:148 cec.h:152 cec.h:156 cec.h:160 cec.h:164 cec.h:168 cec.h:172
 #: cec.h:176 dlna.h:277 epgsettings.h:135 epgsettings.h:188 epgsettings.h:197
-#: httpdfunc.h:3903 httpdfunc.h:3955 httpdfunc.h:4128 httpdfunc.h:4375
-#: httpdfunc.h:4433 httpdfunc.h:4556 httpdfunc.h:4578 httpdfunc.h:4622
-#: httpdfunc.h:4644 httpdfunc.h:4666 httpdfunc.h:4695 httpdfunc.h:4717
-#: httpdfunc.h:4762 httpdfunc.h:4785 httpdfunc.h:4809 httpdfunc.h:4924
+#: httpdfunc.h:3904 httpdfunc.h:3956 httpdfunc.h:4129 httpdfunc.h:4376
+#: httpdfunc.h:4434 httpdfunc.h:4557 httpdfunc.h:4579 httpdfunc.h:4623
+#: httpdfunc.h:4645 httpdfunc.h:4667 httpdfunc.h:4696 httpdfunc.h:4718
+#: httpdfunc.h:4763 httpdfunc.h:4786 httpdfunc.h:4810 httpdfunc.h:4925
 #: httpdsettings.h:28 httpdsettings.h:58 httpdsettings.h:66 inadyn.h:139
 #: mc_audioplayer_settings.h:46 mc_audioplayer_settings.h:52
 #: mc_audioplayer_settings.h:56 mc_pictureplayer_settings.h:76
@@ -351,58 +351,58 @@ msgstr "EPG канала"
 msgid "yes"
 msgstr "Да"
 
-#: adjust.h:94 httpdfunc.h:3926
+#: adjust.h:94 httpdfunc.h:3927
 msgid "medium"
 msgstr "Средне"
 
-#: adjust.h:95 adjust.h:178 httpdfunc.h:3933 httpdfunc.h:4491
+#: adjust.h:95 adjust.h:178 httpdfunc.h:3934 httpdfunc.h:4492
 #: mc_audioplayer_settings.h:35 mc_pictureplayer_settings.h:50
 #: mc_videoplayer_settings.h:31 moduleconfig.h:248 plugins_mc_skin.xml.h:23
 #: skins_mc_skin.xml.h:23
 msgid "fast"
 msgstr "Быстро"
 
-#: adjust.h:102 httpdfunc.h:3970 mc_audioplayer_settings.h:27
+#: adjust.h:102 httpdfunc.h:3971 mc_audioplayer_settings.h:27
 #: mc_pictureplayer_settings.h:42 mc_videoplayer_settings.h:23
 #: plugins_mc_skin.xml.h:7 skin_default_skin.xml.h:75 skins_mc_skin.xml.h:7
 msgid "alpha"
 msgstr "По алфавиту"
 
-#: adjust.h:103 httpdfunc.h:3977 mc_audioplayer_settings.h:28
+#: adjust.h:103 httpdfunc.h:3978 mc_audioplayer_settings.h:28
 #: mc_pictureplayer_settings.h:43 mc_videoplayer_settings.h:24
 #: plugins_mc_skin.xml.h:49 skin_default_skin.xml.h:577 skins_mc_skin.xml.h:49
 msgid "reverse alpha"
 msgstr "Обратный алфавит"
 
-#: adjust.h:104 httpdfunc.h:3984 mc_audioplayer_settings.h:29
+#: adjust.h:104 httpdfunc.h:3985 mc_audioplayer_settings.h:29
 #: mc_pictureplayer_settings.h:44 mc_videoplayer_settings.h:25
 #: plugins_mc_skin.xml.h:55 skin_default_skin.xml.h:650 skins_mc_skin.xml.h:55
 msgid "size"
 msgstr "Размер"
 
-#: adjust.h:105 httpdfunc.h:3991 mc_audioplayer_settings.h:30
+#: adjust.h:105 httpdfunc.h:3992 mc_audioplayer_settings.h:30
 #: mc_pictureplayer_settings.h:45 mc_videoplayer_settings.h:26
 #: plugins_mc_skin.xml.h:51 skin_default_skin.xml.h:579 skins_mc_skin.xml.h:51
 msgid "reverse size"
 msgstr "Размер по убыванию"
 
-#: adjust.h:106 httpdfunc.h:3998 mc_audioplayer_settings.h:31
+#: adjust.h:106 httpdfunc.h:3999 mc_audioplayer_settings.h:31
 #: mc_pictureplayer_settings.h:46 mc_videoplayer_settings.h:27
 #: plugins_mc_skin.xml.h:16 skin_default_skin.xml.h:179 skins_mc_skin.xml.h:16
 msgid "date"
 msgstr "Дата"
 
-#: adjust.h:107 httpdfunc.h:4005 mc_audioplayer_settings.h:32
+#: adjust.h:107 httpdfunc.h:4006 mc_audioplayer_settings.h:32
 #: mc_pictureplayer_settings.h:47 mc_videoplayer_settings.h:28
 #: plugins_mc_skin.xml.h:50 skin_default_skin.xml.h:578 skins_mc_skin.xml.h:50
 msgid "reverse date"
 msgstr "Дата по убыванию"
 
-#: adjust.h:110 httpdfunc.h:4020
+#: adjust.h:110 httpdfunc.h:4021
 msgid "Power Menu"
 msgstr "Меню выключения"
 
-#: adjust.h:111 adjust.h:117 httpdfunc.h:4027 httpdfunc.h:4063
+#: adjust.h:111 adjust.h:117 httpdfunc.h:4028 httpdfunc.h:4064
 #: skin_default_skin.xml.h:519 webif_index.atemio510.h:4
 #: webif_index.atemio5200.h:4 webif_index.atemio6000.h:4
 #: webif_index.atemio6100.h:4 webif_index.atemio6200.h:4
@@ -411,7 +411,7 @@ msgstr "Меню выключения"
 msgid "Power Off"
 msgstr "Выключение"
 
-#: adjust.h:112 adjust.h:118 httpdfunc.h:4034 httpdfunc.h:4070
+#: adjust.h:112 adjust.h:118 httpdfunc.h:4035 httpdfunc.h:4071
 #: powerofftimer.h:118 skin_default_skin.xml.h:673 webif_index.atemio510.h:7
 #: webif_index.atemio5200.h:7 webif_index.atemio6000.h:7
 #: webif_index.atemio6100.h:7 webif_index.atemio6200.h:7
@@ -420,7 +420,7 @@ msgstr "Выключение"
 msgid "Standby"
 msgstr "Режим ожидания"
 
-#: adjust.h:113 httpdfunc.h:4041 skin_default_skin.xml.h:573 softcam.h:291
+#: adjust.h:113 httpdfunc.h:4042 skin_default_skin.xml.h:573 softcam.h:291
 #: softcam.h:454 webif_index.atemio510.h:5 webif_index.atemio5200.h:5
 #: webif_index.atemio6000.h:5 webif_index.atemio6100.h:5
 #: webif_index.atemio6200.h:5 webif_index.atemio7600.h:3
@@ -428,7 +428,7 @@ msgstr "Режим ожидания"
 msgid "Restart"
 msgstr "Рестарт"
 
-#: adjust.h:114 httpdfunc.h:4048 skin_default_skin.xml.h:291
+#: adjust.h:114 httpdfunc.h:4049 skin_default_skin.xml.h:291
 #: webif_index.atemio510.h:6 webif_index.atemio5200.h:6
 #: webif_index.atemio6000.h:6 webif_index.atemio6100.h:6
 #: webif_index.atemio6200.h:6 webif_index.atemio7600.h:4
@@ -437,50 +437,50 @@ msgid "GUI Restart"
 msgstr "Рестарт интерфейса"
 
 #: adjust.h:121 adjust.h:131 adjust.h:185 epgsettings.h:147 epgsettings.h:153
-#: httpdfunc.h:4085 httpdfunc.h:4143 httpdfunc.h:4534 network.h:612
+#: httpdfunc.h:4086 httpdfunc.h:4144 httpdfunc.h:4535 network.h:612
 msgid "deaktiv"
 msgstr "Выключено"
 
-#: adjust.h:122 httpdfunc.h:4092
+#: adjust.h:122 httpdfunc.h:4093
 msgid "1 sec"
 msgstr "1 сек"
 
-#: adjust.h:123 avsettings.h:79 httpdfunc.h:4099
+#: adjust.h:123 avsettings.h:79 httpdfunc.h:4100
 msgid "2 sec"
 msgstr "2 сек"
 
-#: adjust.h:124 httpdfunc.h:4106 pin.h:188
+#: adjust.h:124 httpdfunc.h:4107 pin.h:188
 msgid "endless"
 msgstr "Бесконечно"
 
-#: adjust.h:132 httpdfunc.h:4150
+#: adjust.h:132 httpdfunc.h:4151
 msgid "1 GB"
 msgstr "1 Гб"
 
-#: adjust.h:133 httpdfunc.h:4157
+#: adjust.h:133 httpdfunc.h:4158
 msgid "2 GB"
 msgstr "2 Гб"
 
-#: adjust.h:134 httpdfunc.h:4164
+#: adjust.h:134 httpdfunc.h:4165
 msgid "3 GB"
 msgstr "3 Гб"
 
-#: adjust.h:135 httpdfunc.h:4171
+#: adjust.h:135 httpdfunc.h:4172
 msgid "4 GB"
 msgstr "4 Гб"
 
-#: adjust.h:153 adjust.h:381 httpdfunc.h:4346 httpdfunc.h:4827
+#: adjust.h:153 adjust.h:381 httpdfunc.h:4347 httpdfunc.h:4828
 #: httpdsettings.h:50
 msgid "extern"
 msgstr "Внешний"
 
-#: adjust.h:154 adjust.h:382 httpdfunc.h:4353 httpdfunc.h:4834
+#: adjust.h:154 adjust.h:382 httpdfunc.h:4354 httpdfunc.h:4835
 #: httpdsettings.h:49
 msgid "intern"
 msgstr "Внутренний"
 
 #: adjust.h:161 autotimer.c:479 autotimer.c:512 avsettings.h:70
-#: fancontrol.h:108 httpdfunc.h:4390 httpdsettings.h:110 rectimer.h:1186
+#: fancontrol.h:108 httpdfunc.h:4391 httpdsettings.h:110 rectimer.h:1186
 #: transponder.h:121 transponder.h:133 transponder.h:157 transponder.h:167
 #: transponder.h:193 transponder.h:200 transponder.h:226 transponder.h:234
 #: transponder.h:258 transponder.h:268 transponder.h:294 transponder.h:301
@@ -491,74 +491,74 @@ msgid "auto"
 msgstr "Авто"
 
 #: adjust.h:162 autotimer.c:480 autotimer.c:513 epgsettings.h:215
-#: httpdfunc.h:4397 rectimer.h:1187
+#: httpdfunc.h:4398 rectimer.h:1187
 msgid "nothing"
 msgstr "Ничего"
 
 #: adjust.h:163 autotimer.c:481 autotimer.c:514 fancontrol.h:72
-#: httpdfunc.h:4404 rectimer.h:1188 stopifnotused.c:112 webif_help.h:91
+#: httpdfunc.h:4405 rectimer.h:1188 stopifnotused.c:112 webif_help.h:91
 msgid "standby"
 msgstr "Режим ожидания"
 
-#: adjust.h:164 autotimer.c:482 autotimer.c:515 httpdfunc.h:4411
+#: adjust.h:164 autotimer.c:482 autotimer.c:515 httpdfunc.h:4412
 #: rectimer.h:1189 stopifnotused.c:111
 msgid "power off"
 msgstr "Выключение"
 
-#: adjust.h:172 httpdfunc.h:4455
+#: adjust.h:172 httpdfunc.h:4456
 msgid "anim. width"
 msgstr "Горизонтально"
 
-#: adjust.h:173 httpdfunc.h:4462
+#: adjust.h:173 httpdfunc.h:4463
 msgid "anim. height"
 msgstr "Вертикально"
 
-#: adjust.h:174 httpdfunc.h:4469
+#: adjust.h:174 httpdfunc.h:4470
 msgid "anim. both"
 msgstr "Анимация"
 
-#: adjust.h:177 httpdfunc.h:4484
+#: adjust.h:177 httpdfunc.h:4485
 msgid "very fast"
 msgstr "Очень быстро"
 
-#: adjust.h:179 fancontrol.h:65 httpdfunc.h:4498 timeshiftsettings.h:49
+#: adjust.h:179 fancontrol.h:65 httpdfunc.h:4499 timeshiftsettings.h:49
 #: tmc.h:557
 msgid "normal"
 msgstr "Нормально"
 
-#: adjust.h:180 httpdfunc.h:4505 moduleconfig.h:246 tmc.h:556
+#: adjust.h:180 httpdfunc.h:4506 moduleconfig.h:246 tmc.h:556
 msgid "slow"
 msgstr "Медленно"
 
-#: adjust.h:181 httpdfunc.h:4512
+#: adjust.h:181 httpdfunc.h:4513
 msgid "very slow"
 msgstr "Очень медленно"
 
-#: adjust.h:184 httpdfunc.h:4527 pin.h:106
+#: adjust.h:184 httpdfunc.h:4528 pin.h:106
 msgid "hidden"
 msgstr "Скрыто"
 
-#: adjust.h:196 httpdfunc.h:4593
+#: adjust.h:196 httpdfunc.h:4594
 msgid "channel-movie"
 msgstr "Канал/Название"
 
-#: adjust.h:197 httpdfunc.h:4600
+#: adjust.h:197 httpdfunc.h:4601
 msgid "movie-channel"
 msgstr "Название/Канал"
 
-#: adjust.h:211 httpdfunc.h:4673
+#: adjust.h:211 httpdfunc.h:4674
 msgid "expert (11)"
 msgstr "Эксперт"
 
-#: adjust.h:220 httpdfunc.h:4724
+#: adjust.h:220 httpdfunc.h:4725
 msgid "yes / vzap 1 sec"
 msgstr ""
 
-#: adjust.h:221 httpdfunc.h:4731
+#: adjust.h:221 httpdfunc.h:4732
 msgid "yes / vzap 2 sec"
 msgstr ""
 
-#: adjust.h:222 httpdfunc.h:4738
+#: adjust.h:222 httpdfunc.h:4739
 msgid "yes / vzap endless"
 msgstr ""
 
@@ -672,8 +672,8 @@ msgstr ""
 #: global.h:6614 global.h:6633 global.h:6808 harddisk.h:633 harddisk.h:641
 #: harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733
 #: harddisk.h:793 harddisk.h:812 harddisk.h:815 hbbtv.h:362 hello.c:36
-#: httpdfunc.h:1304 httpdfunc.h:5772 httpdfunc.h:6158 httpdfunc.h:6423
-#: httpdfunc.h:6494 hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103
+#: httpdfunc.h:1304 httpdfunc.h:5773 httpdfunc.h:6159 httpdfunc.h:6424
+#: httpdfunc.h:6495 hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103
 #: hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390 hwtest.h:411
 #: hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566 hwtest.h:586
 #: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
@@ -861,7 +861,7 @@ msgstr ""
 "Продолжить?"
 
 #: bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2875 httpdfunc.h:2887
-#: httpdfunc.h:5555 httpdfunc.h:5601 hwtest.h:478 moduleconfig.h:345
+#: httpdfunc.h:5556 httpdfunc.h:5602 hwtest.h:478 moduleconfig.h:345
 #: security.h:2057 skin_default_skin.xml.h:778 skinselector.h:138 stream.h:22
 #: transponder.h:122 transponder.h:158 transponder.h:194 transponder.h:227
 #: transponder.h:259 transponder.h:295 transponder.h:330 transponder.h:348
@@ -1563,19 +1563,19 @@ msgstr "Удаление завершено"
 msgid "Remove error"
 msgstr "Ошибка удаления"
 
-#: extensions.h:145 httpdfunc.h:5999
+#: extensions.h:145 httpdfunc.h:6000
 msgid "Install to MNT"
 msgstr "Установка в MNT (Флэш)"
 
-#: extensions.h:157 httpdfunc.h:6017
+#: extensions.h:157 httpdfunc.h:6018
 msgid "Install to FLASH"
 msgstr "Установка во Флэш"
 
-#: extensions.h:171 httpdfunc.h:6037
+#: extensions.h:171 httpdfunc.h:6038
 msgid "Install to SWAP"
 msgstr "Установка в SWAP (USB или HDD)"
 
-#: extensions.h:184 httpdfunc.h:5983
+#: extensions.h:184 httpdfunc.h:5984
 msgid "Choice Install Medium"
 msgstr "Выбор носителя для установки"
 
@@ -1583,21 +1583,21 @@ msgstr "Выбор носителя для установки"
 msgid "Tpk Install Info"
 msgstr "Информация об установке"
 
-#: extensions.h:190 httpdfunc.h:6051
+#: extensions.h:190 httpdfunc.h:6052
 msgid "Can't install Package. Package to big."
 msgstr ""
 "Установка не выполнена. Плагин слишком �"
 "�ольшой"
 
-#: extensions.h:217 httpdfunc.h:5814
+#: extensions.h:217 httpdfunc.h:5815
 msgid "Tpk Install - select section"
 msgstr "Выбор категории"
 
-#: extensions.h:222 httpdfunc.h:5878 skin_default_skin.xml.h:744
+#: extensions.h:222 httpdfunc.h:5879 skin_default_skin.xml.h:744
 msgid "Tpk Install - select file"
 msgstr "Выбор файла"
 
-#: extensions.h:227 extensions.h:254 extensions.h:410 httpdfunc.h:6137
+#: extensions.h:227 extensions.h:254 extensions.h:410 httpdfunc.h:6138
 #: tpk.h:3005
 msgid ""
 "It may only be a package to be installed. If they want to install another "
@@ -1616,21 +1616,21 @@ msgstr "Установка"
 msgid "starting"
 msgstr "Выполнить"
 
-#: extensions.h:250 httpdfunc.h:6100
+#: extensions.h:250 httpdfunc.h:6101
 msgid "Tpk Install Info - Install OK"
 msgstr "Плагин успешно установлен"
 
-#: extensions.h:254 extensions.h:259 httpdfunc.h:6102 httpdfunc.h:6104
+#: extensions.h:254 extensions.h:259 httpdfunc.h:6103 httpdfunc.h:6105
 msgid "Tpk Install Info - Install ERROR"
 msgstr "Ошибка установки плагина"
 
-#: extensions.h:267 httpdfunc.h:6158 httpdfunc.h:6160 httpdfunc.h:6425
+#: extensions.h:267 httpdfunc.h:6159 httpdfunc.h:6161 httpdfunc.h:6426
 msgid "TPK Install done, your system will reboot !"
 msgstr ""
 "Установка плагина завершена. Ресивер будет �"
 "�ерезагружен"
 
-#: extensions.h:291 httpdfunc.h:6293
+#: extensions.h:291 httpdfunc.h:6294
 msgid "Tpk Remove - select file"
 msgstr "Выбор файла"
 
@@ -1642,15 +1642,15 @@ msgstr "Удаление"
 msgid "Tpk Remove Info"
 msgstr "Информация об удалении"
 
-#: extensions.h:310 httpdfunc.h:6373
+#: extensions.h:310 httpdfunc.h:6374
 msgid "Tpk Remove Info - Remove OK"
 msgstr "Плагин успешно удалён"
 
-#: extensions.h:317 httpdfunc.h:6377
+#: extensions.h:317 httpdfunc.h:6378
 msgid "Tpk Remove Info - Remove ERROR"
 msgstr "Ошибка удаления плагина"
 
-#: extensions.h:324 httpdfunc.h:6423
+#: extensions.h:324 httpdfunc.h:6424
 msgid "TPK Remove done, your system will reboot !"
 msgstr ""
 "Удаление плагина завершено. Ресивер будет �"
@@ -1674,19 +1674,19 @@ msgstr ""
 "Установка плагина из /tmp завершена. Ресивер бу�"
 "�ет перезагружен"
 
-#: extensions.h:444 extensions.h:448 httpdfunc.h:6462 httpdfunc.h:6474
+#: extensions.h:444 extensions.h:448 httpdfunc.h:6463 httpdfunc.h:6475
 msgid "Tpk Update Info - Update ERROR"
 msgstr "Ошибка обновления плагина"
 
-#: extensions.h:444 httpdfunc.h:6465
+#: extensions.h:444 httpdfunc.h:6466
 msgid "Can't get all TPK index !"
 msgstr "Не удалось загрузить список плагинов!"
 
-#: extensions.h:448 httpdfunc.h:6477
+#: extensions.h:448 httpdfunc.h:6478
 msgid "Can't update all packages !"
 msgstr "Обновления для плагинов не найдены!"
 
-#: extensions.h:456 httpdfunc.h:6494
+#: extensions.h:456 httpdfunc.h:6495
 msgid "TPK Upgrade done, your system will reboot !"
 msgstr ""
 "Плагины обновлены. Ресивер будет перезагружен"
@@ -2274,199 +2274,199 @@ msgstr "Канал не доступен"
 msgid "Playlist download"
 msgstr ""
 
-#: httpdfunc.h:3681 skin_default_skin.xml.h:804
+#: httpdfunc.h:3682 skin_default_skin.xml.h:804
 msgid "Volumebar Timeout"
 msgstr "Время показа уровня громкости (Сек)"
 
-#: httpdfunc.h:3702 skin_default_skin.xml.h:371
+#: httpdfunc.h:3703 skin_default_skin.xml.h:371
 msgid "Infobar Timeout"
 msgstr "Время показа инфобара (Сек)"
 
-#: httpdfunc.h:3734 skin_default_skin.xml.h:370
+#: httpdfunc.h:3735 skin_default_skin.xml.h:370
 msgid "Infobar Sleep"
 msgstr "Время ожидания инфобара (Сек)"
 
-#: httpdfunc.h:3756 skin_default_skin.xml.h:669
+#: httpdfunc.h:3757 skin_default_skin.xml.h:669
 msgid "Spinnerspeed"
 msgstr "Скорость спиннера"
 
-#: httpdfunc.h:3788 skin_default_skin.xml.h:670
+#: httpdfunc.h:3789 skin_default_skin.xml.h:670
 msgid "Spinnertime"
 msgstr "Время появления спиннера"
 
-#: httpdfunc.h:3820 skin_default_skin.xml.h:294
+#: httpdfunc.h:3821 skin_default_skin.xml.h:294
 msgid "Hangtime"
 msgstr "Время предупреждения (Сек)"
 
-#: httpdfunc.h:3851 skin_default_skin.xml.h:620
+#: httpdfunc.h:3852 skin_default_skin.xml.h:620
 msgid "Second Infobar"
 msgstr "Второй инфобар (Двойное нажатие INFO)"
 
-#: httpdfunc.h:3889 skin_default_skin.xml.h:210
+#: httpdfunc.h:3890 skin_default_skin.xml.h:210
 msgid "Don't clear TV on zap (only with fastzap)"
 msgstr ""
 "Не включать чёрный экран при быстром переключении"
 
-#: httpdfunc.h:3912 skin_default_skin.xml.h:256
+#: httpdfunc.h:3913 skin_default_skin.xml.h:256
 msgid "Fastzap"
 msgstr "Быстрое переключение"
 
-#: httpdfunc.h:3941 skin_default_skin.xml.h:254
+#: httpdfunc.h:3942 skin_default_skin.xml.h:254
 msgid "Faststop"
 msgstr "Быстрая остановка"
 
-#: httpdfunc.h:3963 skin_default_skin.xml.h:200
+#: httpdfunc.h:3964 skin_default_skin.xml.h:200
 msgid "Dirsort"
 msgstr "Сортировка папок"
 
-#: httpdfunc.h:4013 skin_default_skin.xml.h:560
+#: httpdfunc.h:4014 skin_default_skin.xml.h:560
 msgid "Remotecontrol Power Aktion"
 msgstr "Кнопка питания"
 
-#: httpdfunc.h:4056 skin_default_skin.xml.h:275
+#: httpdfunc.h:4057 skin_default_skin.xml.h:275
 msgid "Frontpanel Power Aktion"
 msgstr "Кнопка питания на передней панеле"
 
-#: httpdfunc.h:4078 skin_default_skin.xml.h:801
+#: httpdfunc.h:4079 skin_default_skin.xml.h:801
 msgid "Virtualzap Timeout"
 msgstr "Виртуальное переключение"
 
-#: httpdfunc.h:4114 skin_default_skin.xml.h:255
+#: httpdfunc.h:4115 skin_default_skin.xml.h:255
 msgid "Fast Text Render"
 msgstr "Быстрый рендер текста"
 
-#: httpdfunc.h:4136 skin_default_skin.xml.h:551
+#: httpdfunc.h:4137 skin_default_skin.xml.h:551
 msgid "Record Split Size"
 msgstr "Деление файлов на части при записи (Мб)"
 
-#: httpdfunc.h:4181 skin_default_skin.xml.h:544
+#: httpdfunc.h:4182 skin_default_skin.xml.h:544
 msgid "Record Forerun (min)"
 msgstr "Включение перед записью (Мин)"
 
-#: httpdfunc.h:4213 skin_default_skin.xml.h:547
+#: httpdfunc.h:4214 skin_default_skin.xml.h:547
 msgid "Record Overrun (min)"
 msgstr "Выключение после записи (Мин)"
 
-#: httpdfunc.h:4245 skin_default_skin.xml.h:654
+#: httpdfunc.h:4246 skin_default_skin.xml.h:654
 msgid "Skip 1/3"
 msgstr "Перемотка кнопками 1 или 3 (Сек)"
 
-#: httpdfunc.h:4277 skin_default_skin.xml.h:655
+#: httpdfunc.h:4278 skin_default_skin.xml.h:655
 msgid "Skip 4/6"
 msgstr "Перемотка кнопками 4 или 6 (Сек)"
 
-#: httpdfunc.h:4309 skin_default_skin.xml.h:656
+#: httpdfunc.h:4310 skin_default_skin.xml.h:656
 msgid "Skip 7/9"
 msgstr "Перемотка кнопками 7 или 9 (Сек)"
 
-#: httpdfunc.h:4339 skin_default_skin.xml.h:505
+#: httpdfunc.h:4340 skin_default_skin.xml.h:505
 msgid "Player for .ts"
 msgstr "Плеер для файлов *.ts"
 
-#: httpdfunc.h:4361 skin_default_skin.xml.h:136
+#: httpdfunc.h:4362 skin_default_skin.xml.h:136
 msgid "Change Channelname auto."
 msgstr ""
 "Автоматическое обновление названия канала"
 
-#: httpdfunc.h:4383 skin_default_skin.xml.h:629
+#: httpdfunc.h:4384 skin_default_skin.xml.h:629
 msgid "Set action after rec"
 msgstr "Действие после записи"
 
-#: httpdfunc.h:4419 skin_default_skin.xml.h:645
+#: httpdfunc.h:4420 skin_default_skin.xml.h:645
 msgid "Show Timeline in Channellist"
 msgstr "Показывать шкалу времени в списке каналов"
 
-#: httpdfunc.h:4441 skin_default_skin.xml.h:76
+#: httpdfunc.h:4442 skin_default_skin.xml.h:76
 msgid "Animated Screens"
 msgstr "Анимация меню"
 
-#: httpdfunc.h:4477 skin_default_skin.xml.h:77
+#: httpdfunc.h:4478 skin_default_skin.xml.h:77
 msgid "Animated Speed"
 msgstr "Скорость анимации"
 
-#: httpdfunc.h:4520 skin_default_skin.xml.h:142
+#: httpdfunc.h:4521 skin_default_skin.xml.h:142
 msgid "Channellist view"
 msgstr "Вид списка каналов"
 
-#: httpdfunc.h:4542
+#: httpdfunc.h:4543
 msgid "Show last pos Question"
 msgstr ""
 "Использовать диалог 'Продолжить с места ост�"
 "�новки'?"
 
-#: httpdfunc.h:4564 skin_default_skin.xml.h:576
+#: httpdfunc.h:4565 skin_default_skin.xml.h:576
 msgid "Resync Recording immediately"
 msgstr "Немедленная синхронизация записи (Нужно отключить кэш)"
 
-#: httpdfunc.h:4586 skin_default_skin.xml.h:545
+#: httpdfunc.h:4587 skin_default_skin.xml.h:545
 msgid "Recording name"
 msgstr "Названия файлов записи"
 
-#: httpdfunc.h:4608 httpdfunc.h:5421 skin_default_skin.xml.h:463
+#: httpdfunc.h:4609 httpdfunc.h:5422 skin_default_skin.xml.h:463
 #: webif_info.h:2
 msgid "Newsletter"
 msgstr "Новости от разработчиков"
 
-#: httpdfunc.h:4630 skin_default_skin.xml.h:640
+#: httpdfunc.h:4631 skin_default_skin.xml.h:640
 msgid "Show hidden files"
 msgstr "Показывать скрытые файлы"
 
-#: httpdfunc.h:4652 skin_default_skin.xml.h:247
+#: httpdfunc.h:4653 skin_default_skin.xml.h:247
 msgid "Expert Modus"
 msgstr "Режим эксперта"
 
-#: httpdfunc.h:4681 skin_default_skin.xml.h:641
+#: httpdfunc.h:4682 skin_default_skin.xml.h:641
 msgid "Show infobar on program change"
 msgstr ""
 "Показывать инфобар в начале/конце телепередачи"
 
-#: httpdfunc.h:4703 skin_default_skin.xml.h:786
+#: httpdfunc.h:4704 skin_default_skin.xml.h:786
 msgid "Use cross control for fast zapping and vol"
 msgstr ""
 "Использовать джойстик для переключения каналов "
 "и громкости"
 
-#: httpdfunc.h:4748 skin_default_skin.xml.h:182
+#: httpdfunc.h:4749 skin_default_skin.xml.h:182
 msgid "Deactivate Crypt Support on Media Playback"
 msgstr ""
 "Отключить поддержку Crypt при воспроизведении д�"
 "�нных/потоков"
 
-#: httpdfunc.h:4771 skin_default_skin.xml.h:183
+#: httpdfunc.h:4772 skin_default_skin.xml.h:183
 msgid "Deactivate MiniTV"
 msgstr "Отключить окно предварительного просмотра"
 
-#: httpdfunc.h:4795 skin_default_skin.xml.h:56
+#: httpdfunc.h:4796 skin_default_skin.xml.h:56
 msgid "Activate CEC"
 msgstr "Активировать HDMI-CEC"
 
-#: httpdfunc.h:4820 skin_default_skin.xml.h:591
+#: httpdfunc.h:4821 skin_default_skin.xml.h:591
 msgid "SATA Connector"
 msgstr "Коннектор SATA"
 
-#: httpdfunc.h:4845 skin_default_skin.xml.h:728
+#: httpdfunc.h:4846 skin_default_skin.xml.h:728
 msgid "Time to wait after seek for fill buffer"
 msgstr ""
 "Время ожидания автоматического заполнения �"
 "�уфера"
 
-#: httpdfunc.h:4869 skin_default_skin.xml.h:185
+#: httpdfunc.h:4870 skin_default_skin.xml.h:185
 msgid "Debuglevel"
 msgstr "Уровень отладки"
 
-#: httpdfunc.h:4908 skin_default_skin.xml.h:213
+#: httpdfunc.h:4909 skin_default_skin.xml.h:213
 msgid "Dualboot Menu TitanNit / E2"
 msgstr "Меню двойной загрузки TitanNit/E2"
 
-#: httpdfunc.h:5076
+#: httpdfunc.h:5077
 msgid "Error, Program not started."
 msgstr "Ошибка. Программа не стартовала!"
 
-#: httpdfunc.h:5078
+#: httpdfunc.h:5079
 msgid "Program started successfully"
 msgstr "Программа успешно стартовала"
 
-#: httpdfunc.h:5150 skin_default_skin.xml.h:1 webif_index.atemio510.h:16
+#: httpdfunc.h:5151 skin_default_skin.xml.h:1 webif_index.atemio510.h:16
 #: webif_index.atemio5200.h:16 webif_index.atemio5200.h:70
 #: webif_index.atemio5200.h:126 webif_index.atemio6000.h:16
 #: webif_index.atemio6100.h:16 webif_index.atemio6200.h:16
@@ -2479,190 +2479,190 @@ msgstr "Программа успешно стартовала"
 msgid "Help"
 msgstr "Помощь"
 
-#: httpdfunc.h:5248 skin_default_skin.xml.h:707 system_infos.h:14
+#: httpdfunc.h:5249 skin_default_skin.xml.h:707 system_infos.h:14
 #: webif_info_systeminfos.h:2
 msgid "System Status"
 msgstr "Статус системы"
 
-#: httpdfunc.h:5250 system_infos.h:16
+#: httpdfunc.h:5251 system_infos.h:16
 msgid "Free Space"
 msgstr "Свободное место"
 
-#: httpdfunc.h:5252 skin_default_skin.xml.h:386 system_infos.h:18
+#: httpdfunc.h:5253 skin_default_skin.xml.h:386 system_infos.h:18
 #: webif_info_systeminfos.h:4
 msgid "Kernel"
 msgstr "Ядро"
 
-#: httpdfunc.h:5254 skin_default_skin.xml.h:442 system_infos.h:20
+#: httpdfunc.h:5255 skin_default_skin.xml.h:442 system_infos.h:20
 #: webif_info_systeminfos.h:5
 msgid "Mounts"
 msgstr "Примонтировано"
 
-#: httpdfunc.h:5256 hwtest.h:181 hwtest.h:396 network.h:284 network.h:299
+#: httpdfunc.h:5257 hwtest.h:181 hwtest.h:396 network.h:284 network.h:299
 #: plugins_mc_skin.xml.h:37 plugins_panel_skin.xml.h:18
 #: skin_default_skin.xml.h:455 skins_mc_skin.xml.h:37
 #: skins_panel_skin.xml.h:18 system_infos.h:22 webif_info_systeminfos.h:6
 msgid "Network"
 msgstr "Сеть"
 
-#: httpdfunc.h:5258 skin_default_skin.xml.h:540 system_infos.h:24
+#: httpdfunc.h:5259 skin_default_skin.xml.h:540 system_infos.h:24
 #: webif_info_systeminfos.h:7
 msgid "Ram"
 msgstr "Оперативная память"
 
-#: httpdfunc.h:5294 skin_default_skin.xml.h:169 webif_info_sysinfos.h:2
+#: httpdfunc.h:5295 skin_default_skin.xml.h:169 webif_info_sysinfos.h:2
 msgid "CPU"
 msgstr "Процессор"
 
-#: httpdfunc.h:5296 skin_default_skin.xml.h:426 webif_info_sysinfos.h:3
+#: httpdfunc.h:5297 skin_default_skin.xml.h:426 webif_info_sysinfos.h:3
 msgid "Memory"
 msgstr "Память"
 
-#: httpdfunc.h:5298 skin_default_skin.xml.h:448 webif_info_sysinfos.h:4
+#: httpdfunc.h:5299 skin_default_skin.xml.h:448 webif_info_sysinfos.h:4
 msgid "MTD"
 msgstr "Распределение FLASH"
 
-#: httpdfunc.h:5300 skin_default_skin.xml.h:439 webif_info_sysinfos.h:5
+#: httpdfunc.h:5301 skin_default_skin.xml.h:439 webif_info_sysinfos.h:5
 msgid "Module"
 msgstr "Модули"
 
-#: httpdfunc.h:5302 skin_default_skin.xml.h:198 system_infos_sysinfo.h:23
+#: httpdfunc.h:5303 skin_default_skin.xml.h:198 system_infos_sysinfo.h:23
 #: webif_info_sysinfos.h:6
 msgid "Devices"
 msgstr "Устройства"
 
-#: httpdfunc.h:5304 panel_settings_autostart.h:210 settings_autostart.h:315
+#: httpdfunc.h:5305 panel_settings_autostart.h:210 settings_autostart.h:315
 #: skin_default_skin.xml.h:695 webif_info_sysinfos.h:7
 msgid "Swap"
 msgstr "SWAР"
 
-#: httpdfunc.h:5306 skin_default_skin.xml.h:742 webif_info_sysinfos.h:8
+#: httpdfunc.h:5307 skin_default_skin.xml.h:742 webif_info_sysinfos.h:8
 msgid "Top"
 msgstr "ТОР"
 
-#: httpdfunc.h:5308 skin_default_skin.xml.h:533 webif_info_sysinfos.h:9
+#: httpdfunc.h:5309 skin_default_skin.xml.h:533 webif_info_sysinfos.h:9
 msgid "Prozesslist"
 msgstr "Список"
 
-#: httpdfunc.h:5310 skin_default_skin.xml.h:782 webif_info_sysinfos.h:10
+#: httpdfunc.h:5311 skin_default_skin.xml.h:782 webif_info_sysinfos.h:10
 msgid "USB"
 msgstr "USB устройства "
 
-#: httpdfunc.h:5346
+#: httpdfunc.h:5347
 msgid "Hotline"
 msgstr "Горячая линия"
 
-#: httpdfunc.h:5348
+#: httpdfunc.h:5349
 msgid "Svn Changelog"
 msgstr "Журнал изменений SVN"
 
-#: httpdfunc.h:5350 skin_default_skin.xml.h:281 webif_info_logs.h:3
+#: httpdfunc.h:5351 skin_default_skin.xml.h:281 webif_info_logs.h:3
 msgid "Git Changelog"
 msgstr "Журнал изменений GIT"
 
-#: httpdfunc.h:5352 webif_info_logs.h:4
+#: httpdfunc.h:5353 webif_info_logs.h:4
 msgid "Titan Log"
 msgstr "Лог Titan"
 
-#: httpdfunc.h:5354
+#: httpdfunc.h:5355
 msgid "Svn Changelog Full"
 msgstr "Журнал изменений SVN (Полный)"
 
-#: httpdfunc.h:5356
+#: httpdfunc.h:5357
 msgid "Git Changelog Full"
 msgstr "Журнал изменений GIT (Полный)"
 
-#: httpdfunc.h:5389 skin_default_skin.xml.h:51 webif_info.h:3
+#: httpdfunc.h:5390 skin_default_skin.xml.h:51 webif_info.h:3
 msgid "About"
 msgstr "Информация о Titan"
 
-#: httpdfunc.h:5532 skin_default_skin.xml.h:688 stream.h:36 webif_info.h:4
+#: httpdfunc.h:5533 skin_default_skin.xml.h:688 stream.h:36 webif_info.h:4
 msgid "Streaming"
 msgstr "Стриминг"
 
-#: httpdfunc.h:5548 httpdfunc.h:5594 record.h:1428 record.h:1437 record.h:1448
+#: httpdfunc.h:5549 httpdfunc.h:5595 record.h:1428 record.h:1437 record.h:1448
 #: record.h:1477 record.h:1486 record.h:1518 skin_default_skin.xml.h:683
 #: stream.h:15 stream.h:37
 msgid "stop"
 msgstr "Стоп"
 
-#: httpdfunc.h:5566 stream.h:33
+#: httpdfunc.h:5567 stream.h:33
 msgid "No Live Stream running"
 msgstr "Работающих потоков на найдено"
 
-#: httpdfunc.h:5621
+#: httpdfunc.h:5622
 msgid "Streaming succesfull stopped."
 msgstr "Поток остановлен"
 
-#: httpdfunc.h:5624
+#: httpdfunc.h:5625
 msgid "ERROR, Streaming can not be stopped."
 msgstr "Ошибка. Поток не остановлен!"
 
-#: httpdfunc.h:5653 httpdfunc.h:5762 skin_default_skin.xml.h:708
+#: httpdfunc.h:5654 httpdfunc.h:5763 skin_default_skin.xml.h:708
 #: webif_system.h:2 webif_system_update.h:1
 msgid "System Update"
 msgstr "Обновление системы"
 
-#: httpdfunc.h:5661 security.h:2005 skin_default_skin.xml.h:374
+#: httpdfunc.h:5662 security.h:2005 skin_default_skin.xml.h:374
 msgid "Installed:"
 msgstr "Установлено"
 
-#: httpdfunc.h:5776 system_update.h:220
+#: httpdfunc.h:5777 system_update.h:220
 msgid "starting Full Update ?"
 msgstr "Запустить полное обновление FLASH?"
 
-#: httpdfunc.h:5781
+#: httpdfunc.h:5782
 msgid ""
 "System Update started. This can take up to 5 minutes. More details on TV."
 msgstr ""
 "Начато обновление системы. Это может занять до 5 "
 "минут"
 
-#: httpdfunc.h:5827
+#: httpdfunc.h:5828
 msgid "No Tpk Sections Found."
 msgstr "В этой секции плагины не найдены"
 
-#: httpdfunc.h:5891 httpdfunc.h:6045 httpdfunc.h:6306
+#: httpdfunc.h:5892 httpdfunc.h:6046 httpdfunc.h:6307
 msgid "No Tpk Files Found."
 msgstr "Файлы плагинов не найдены"
 
-#: httpdfunc.h:6126 httpdfunc.h:6134 httpdfunc.h:6144
+#: httpdfunc.h:6127 httpdfunc.h:6135 httpdfunc.h:6145
 msgid "Install Log:"
 msgstr "Лог установки"
 
-#: httpdfunc.h:6193 skin_default_skin.xml.h:748 webif_system_extensions.h:4
+#: httpdfunc.h:6194 skin_default_skin.xml.h:748 webif_system_extensions.h:4
 msgid "TPK tmp (tmp)"
 msgstr "Установка плагинов из /tmp"
 
-#: httpdfunc.h:6195 skin_default_skin.xml.h:746 webif_system_extensions.h:5
+#: httpdfunc.h:6196 skin_default_skin.xml.h:746 webif_system_extensions.h:5
 msgid "TPK media (media)"
 msgstr "Установка плагинов из /media"
 
-#: httpdfunc.h:6238
+#: httpdfunc.h:6239
 msgid "No Tpk Files Found on /tmp Directory."
 msgstr "Файлы плагинов в /tmp не найдены"
 
-#: httpdfunc.h:6242
+#: httpdfunc.h:6243
 msgid "No Tpk Files Found on Media Devices."
 msgstr "Файлы плагинов в /media не найдены"
 
-#: httpdfunc.h:6399 httpdfunc.h:6409
+#: httpdfunc.h:6400 httpdfunc.h:6410
 msgid "Remove Log:"
 msgstr "Лог удаления"
 
-#: httpdfunc.h:6484
+#: httpdfunc.h:6485
 msgid "Tpk Update Info - Update OK"
 msgstr "Обновление плагинов завершено"
 
-#: httpdfunc.h:6523 skin_default_skin.xml.h:627 webif_info.h:1
+#: httpdfunc.h:6524 skin_default_skin.xml.h:627 webif_info.h:1
 msgid "Service"
 msgstr "Канал"
 
-#: httpdfunc.h:6558 skin_default_skin.xml.h:702 webif_system.h:3
+#: httpdfunc.h:6559 skin_default_skin.xml.h:702 webif_system.h:3
 msgid "System Backup"
 msgstr "Бекап системы"
 
-#: httpdfunc.h:6593 skin_default_skin.xml.h:635 webif_system.h:4
+#: httpdfunc.h:6594 skin_default_skin.xml.h:635 webif_system.h:4
 msgid "Settings backup/restore"
 msgstr "Бэкап/ресторе настроек"
 
