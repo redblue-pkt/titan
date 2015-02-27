@@ -816,7 +816,7 @@ msgstr "sauvegarder les réglages avec succès"
 #: panel_settings_overclocking.h:276 readerconfig.h:421
 #: settings_autostart.h:53 settings_overclocking.h:276 transponder.h:256
 #: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:836
-#: vfdisplay.h:63 vfdisplay.h:76
+#: vfdisplay.h:63 vfdisplay.h:78
 msgid "off"
 msgstr " arrêt"
 
@@ -11878,23 +11878,23 @@ msgstr "Chaine + Temps"
 msgid "vfddate"
 msgstr ""
 
-#: vfdisplay.h:77
+#: vfdisplay.h:74 vfdisplay.h:79
 msgid "blink"
 msgstr ""
 
-#: vfdisplay.h:78
+#: vfdisplay.h:80
 msgid "fade out/in"
 msgstr ""
 
-#: vfdisplay.h:79
+#: vfdisplay.h:81
 msgid "show record"
 msgstr "Vérificateur des fichiers Partition de l'enregistrement "
 
-#: vfdisplay.h:80
+#: vfdisplay.h:82
 msgid "star"
 msgstr ""
 
-#: vfdisplay.h:81
+#: vfdisplay.h:83
 msgid "blink star"
 msgstr ""
 
