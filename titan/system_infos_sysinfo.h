@@ -30,11 +30,13 @@ void screensystem_infos_sysinfo(int mode)
 	else if(mode == 8)
 		changetitle(system_info, _("USB Info"));
 
+	drawscreen(system_info, 0, 0);
+
 	tmpstr = system_infos_sysinfo(mode);
 
-	drawscreen(system_info, 0, 0);
 	changetext(info, tmpstr);
 	free(tmpstr); tmpstr = NULL;
+	drawscreen(system_info, 0, 0);
 
 	while(1)
 	{
