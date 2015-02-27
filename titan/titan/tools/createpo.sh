@@ -24,6 +24,7 @@ POLIST=`find "$HOME"/flashimg/$SRCDIR/po -type f -name "*_auto.po"`
 SKINLIST=`find "$HOME"/flashimg/$SRCDIR -type f -name "*kin.xml"`
 HLIST=`find "$HOME"/flashimg/$SRCDIR/web -type f -name "*.html"`
 
+##aus /plugins alle *.h und *.c > tmp
 for ROUND in $LIST; do
 	cp -a $ROUND "$HOME"/flashimg/$SRCDIR/titan/tools/tmp
 done
@@ -59,6 +60,7 @@ cat "$HOME"/flashimg/$SRCDIR/skins/tithek/tithekmainmenu/*.list | grep -v intern
 ls "$HOME"/flashimg/$SRCDIR/help/*/ | sed 's/.txt/");/g' | sed 's/^/tmpstr = _("/g' >> "$HOME"/flashimg/$SRCDIR/titan/tools/tmp/webif_help.h
 
 file --mime-encoding "$HOME"/flashimg/$SRCDIR/po/*/*/*.po >> "$HOME"/flashimg/$SRCDIR/error/coding.log 2>&1
+##schreibt den mime-type ('text/plain; charset=us-ascii') in die coding.log
 
 error=0
 
@@ -68,81 +70,62 @@ for ROUND in $POLIST; do
 #	echo xgettext --omit-header -k_ *.* -o $ROUND
 	if [ "$TYPE" == "update" ]; then
 		ROUND_CLEAN=`echo $ROUND | sed 's!titan.po_auto.po!titan.po_auto.clean.po!'`
-		ROUND_UTF=`echo $ROUND | sed 's!titan.po_auto.po!titan.po_auto.utf.po!'`
+		#ROUND_UTF=`echo $ROUND | sed 's!titan.po_auto.po!titan.po_auto.utf.po!'`
+		OUTFILE_TMP_MO=`echo $ROUND | sed 's!titan.po_auto.po!titan.tmp.mo!'`
 		OUTFILE_MO=`echo $ROUND | sed 's!titan.po_auto.po!titan.mo!'`
 		OUTFILE_PO=`echo $ROUND | sed 's!titan.po_auto.po!titan.outfile.po!'`
 		ROUND_EDIT=`echo $ROUND | sed 's!titan.po_auto.po!titan.po!'`
-		ROUND_EDIT_UTF=`echo $ROUND | sed 's!titan.po_auto.po!titan.utf.po!'`
-		ROUND_MERGE_UTF=`echo $ROUND | sed 's!titan.po_auto.po!titan.merge.utf.po!'`
-		ROUND_MERGE=`echo $ROUND | sed 's!titan.po_auto.po!titan.merge.po!'`
-		ROUND_NEW=`echo $ROUND | sed 's!titan.po_auto.po!titan.new.po!'`
-		ROUND_NEW_MERGE=`echo $ROUND | sed 's!titan.po_auto.po!titan.new.merge.po!'`
-
-		cat $ROUND | sed '/#.*/d' > $ROUND_CLEAN
+		#ROUND_EDIT_UTF=`echo $ROUND | sed 's!titan.po_auto.po!titan.utf.po!'`
+		#ROUND_MERGE_UTF=`echo $ROUND | sed 's!titan.po_auto.po!titan.merge.utf.po!'`
+		#ROUND_MERGE=`echo $ROUND | sed 's!titan.po_auto.po!titan.merge.po!'`
+		#ROUND_NEW=`echo $ROUND | sed 's!titan.po_auto.po!titan.new.po!'`
+		#ROUND_NEW_MERGE=`echo $ROUND | sed 's!titan.po_auto.po!titan.new.merge.po!'`
+		
+		## "-nt" ("newer than")
+		if [ $ROUND -nt $ROUND_EDIT ]; then
+			##Aus der titan.po_auto.po alle Kommentare löschen und in titan.po_auto.clean.po speichern
+			cat $ROUND | sed '/#.*/d' > $ROUND_CLEAN
+		else
+			##Gleich die (neuere) titan.po verwenden
+			cat $ROUND_EDIT | sed '/#.*/d' > $ROUND_CLEAN
+		fi		
 		if [ ! -e "$ROUND_CLEAN" ] || [ `cat "$ROUND_CLEAN" | wc -l` -eq 0 ]; then error="1"; break;fi
 
-		iconv -f ISO-8859-1 -t UTF-8 $ROUND_CLEAN > $ROUND_UTF
-		if [ ! -e "$ROUND_UTF" ] || [ `cat "$ROUND_UTF" | wc -l` -eq 0 ]; then error="2"; break;fi
-
-		cmd="xgettext --omit-header -j -k_ *.* -o $ROUND_UTF"
-		echo "[createpo.sh] $cmd" >> "$HOME"/flashimg/$SRCDIR/error/po.log
+		##cmd="xgettext --omit-header -j -k_ *.* -o $ROUND_UTF"
+		##Der Parameter --no-wrap verhindert ein ändern der Zeilenlänge. Eine Fehlerursache weniger
+		cmd="xgettext --omit-header --no-wrap -j -k_ *.* -o $ROUND_CLEAN"
+		echo "[createpo.sh] $cmd" >> "$HOME"/flashimg/$SRCDIR/error/po.log		
 		$cmd >> "$HOME"/flashimg/$SRCDIR/error/po.log 2>&1
-		if [ ! -e "$ROUND_UTF" ] || [ `cat "$ROUND_UTF" | wc -l` -eq 0 ]; then error="3"; break;fi
+		if [ ! -e "$ROUND_CLEAN" ] || [ `cat "$ROUND_CLEAN" | wc -l` -eq 0 ]; then error="3"; break;fi
 		log=`cat "$HOME"/flashimg/$SRCDIR/error/po.log`
 		if [ `echo $log | grep "fatal error" | wc -l` -gt 0 ]; then error="4"; break;fi
-
-		cmd="xgettext --omit-header -k_ *.* -o $ROUND_NEW"
-		echo "[createpo.sh] $cmd" >> "$HOME"/flashimg/$SRCDIR/error/po.log
-		$cmd >> "$HOME"/flashimg/$SRCDIR/error/po.log 2>&1
-		if [ ! -e "$ROUND_NEW" ] || [ `cat "$ROUND_NEW" | wc -l` -eq 0 ]; then error="5"; break;fi
-		log=`cat "$HOME"/flashimg/$SRCDIR/error/po.log`
-		if [ `echo $log | grep "fatal error" | wc -l` -gt 0 ]; then error="6";break;fi
-
-		echo "[createpo.sh] msgmerge $ROUND_UTF $ROUND_NEW > $ROUND_NEW_MERGE"
-		msgmerge $ROUND_UTF $ROUND_NEW > $ROUND_NEW_MERGE
-	
-		if [ ! -e "$ROUND_NEW_MERGE" ] || [ `cat "$ROUND_NEW_MERGE" | wc -l` -eq 0 ]; then error="7"; break;fi
-###
-
-use_edit_po=0
-if [ "$use_edit_po" = "1" ];then
-		iconv -f ISO-8859-1 -t UTF-8 $ROUND_EDIT > $ROUND_EDIT_UTF
-		if [ ! -e "$ROUND_EDIT_UTF" ] || [ `cat "$ROUND_EDIT_UTF" | wc -l` -eq 0 ]; then error="8"; break;fi
-
-#		echo "[createpo.sh] msgmerge $ROUND_NEW_MERGE $ROUND_EDIT_UTF > $ROUND_MERGE_UTF"
-#		msgmerge $ROUND_NEW_MERGE $ROUND_EDIT_UTF > $ROUND_MERGE_UTF
-		msgmerge $ROUND_EDIT_UTF $ROUND_NEW_MERGE > $ROUND_MERGE_UTF
-		if [ ! -e "$ROUND_NEW_MERGE" ] || [ `cat "$ROUND_NEW_MERGE" | wc -l` -eq 0 ]; then error="9"; break;fi
-
-		iconv -f UTF-8 -t ISO-8859-1 $ROUND_MERGE_UTF > $ROUND_MERGE
-		if [ ! -e "$ROUND_MERGE" ] || [ `cat "$ROUND_MERGE" | wc -l` -eq 0 ]; then error="10"; break;fi
-else
-###
-#		cat $ROUND_NEW_MERGE >$ROUND_MERGE
-		iconv -f UTF-8 -t ISO-8859-1 $ROUND_NEW_MERGE > $ROUND_MERGE
-		if [ ! -e "$ROUND_MERGE" ] || [ `cat "$ROUND_MERGE" | wc -l` -eq 0 ]; then error="10"; break;fi
-###
-fi
-echo ROUND: $ROUND
-
-#if [ "$ROUND" = "/home/atemio/flashimg/$SRCDIR/po/vn/LC_MESSAGES/titan.po_auto.po" ];then
-		cat $ROUND_MERGE | sed 's/"Content-Type:.*//g' > $OUTFILE_PO
-#else
-#		cat $ROUND_MERGE > $OUTFILE_PO 
-#fi
+		##Nun haben wir schon ALLE neuen msgid's mit drin! > *.* sammelt alle neuen Einträge, -j sorgt für das Zusammenfügen 
+		
+		echo ROUND: $ROUND
+		
+		## hier reicht eigentlich nun ROUND_CLEAN, aber wozu "Content-Type:" rauslöschen?
+		cat $ROUND_CLEAN > $OUTFILE_PO
+		## mit dem Eintrag Content-Type gibt msgfmt zwar keine Warnungen aus, aber titan arbeitet damit falsch!??
+		## cat $ROUND_CLEAN | sed 's/"Content-Type:.*//g' > $OUTFILE_PO
+		## löschen es daher besser aus OUTFILE_MO
 		if [ ! -e "$OUTFILE_PO" ] || [ `cat "$OUTFILE_PO" | wc -l` -eq 0 ]; then error="11"; break;fi
 
-		cmd="msgfmt -v $OUTFILE_PO -o $OUTFILE_MO"
+		cmd="msgfmt -v $OUTFILE_PO -o $OUTFILE_TMP_MO"
 		echo "[createpo.sh] $cmd" >> "$HOME"/flashimg/$SRCDIR/error/po.log
 		$cmd >> "$HOME"/flashimg/$SRCDIR/error/po.log 2>&1
-		if [ ! -e "$OUTFILE_MO" ] || [ `cat "$OUTFILE_MO" | wc -l` -eq 0 ]; then error="12"; break;fi
+		if [ ! -e "$OUTFILE_TMP_MO" ] || [ `cat "$OUTFILE_TMP_MO" | wc -l` -eq 0 ]; then error="12"; break;fi
 		log=`cat "$HOME"/flashimg/$SRCDIR/error/po.log`
 		if [ `echo $log | grep "fatal error" | wc -l` -gt 0 ]; then error="13"; break;fi
-
-		iconv -f UTF-8 -t ISO-8859-1 $ROUND_NEW_MERGE > $ROUND
-#		iconv -f UTF-8 -t ISO-8859-1 $ROUND_MERGE > $ROUND
-#		cat $ROUND_MERGE > $ROUND
-		if [ ! -e "$ROUND" ] || [ `cat "$ROUND" | wc -l` -eq 0 ]; then error="14"; break;fi
+		
+		## Nun noch "Content-Type:" rauslöschen
+		cat $OUTFILE_TMP_MO | sed '/Content-Type:*/d' > $OUTFILE_MO
+		if [ ! -e "$ROUND_EDIT" ] || [ `cat "$ROUND_EDIT" | wc -l` -eq 0 ]; then error="14"; break;fi
+		
+		##noch so einige unnötige Konvertierungen!
+		##iconv -f UTF-8 -t ISO-8859-1 $ROUND_NEW_MERGE > $ROUND
+		#iconv -f UTF-8 -t ISO-8859-1 $ROUND_MERGE > $ROUND
+		cat $ROUND_CLEAN > $ROUND
+		if [ ! -e "$ROUND" ] || [ `cat "$ROUND" | wc -l` -eq 0 ]; then error="15"; break;fi
 
 		if [ ! -e $OUTFILE_MO ];then
 			cp -a $OUTFILE_PO $OUTFILE_ERROR
@@ -152,6 +135,11 @@ echo ROUND: $ROUND
 	else
 		xgettext --omit-header -k_ *.* -o $ROUND
 	fi
+	
+	##Aus der neuen titan.po_auto.po alle Kommentare löschen und in titan.po speichern
+	cat $ROUND | sed '/#.*/d' > $ROUND_EDIT
+	if [ ! -e "$ROUND_EDIT" ] || [ `cat "$ROUND_EDIT" | wc -l` -eq 0 ]; then error="16"; break;fi
+		
 	echo "[createpo.sh] ############################# end ##################################"
 done
 
