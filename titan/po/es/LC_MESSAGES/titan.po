@@ -9059,3 +9059,15 @@ msgstr ""
 
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Zap atras esta activado. Desea detener?"
+
+msgid "Emu Wicardd v1.15 for config for ntv,tricolor,ntv_hd"
+msgstr ""
+
+msgid "Sat: Ser6 Settings Eutelsat 36.0"
+msgstr ""
+
+msgid "Settings Eutelsat 36.0"
+msgstr ""
+
+msgid "Wicardd v1.15 "
+msgstr ""
