@@ -23,6 +23,8 @@ void screensystem_infos(int mode)
 	else if(mode == 5)
 		changetitle(system_info, _("Ram"));
 
+	drawscreen(system_info, 0, 0);
+
 	tmpstr = system_infos(mode);
 	changetext(info, tmpstr);
 		
