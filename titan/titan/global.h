@@ -6939,8 +6939,13 @@ char* system_infos_sysinfo(int mode)
 	else if(mode == 7)
 		tmpstr = command("ps");
 	else if(mode == 8)
-		tmpstr = command("cat /proc/bus/usb/devices");
-
+	{
+		tmpstr = command("lsusb");
+		tmpstr = ostrcat(tmpstr, "\n-------------------------------------------\n", 1, 0);
+		char* tmpstr2 = NULL;
+		tmpstr2 = command("cat /proc/bus/usb/devices");
+		tmpstr = ostrcat(tmpstr, tmpstr2, 1, 1);
+	}
 	return tmpstr;
 }
 
