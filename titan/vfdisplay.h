@@ -47,7 +47,7 @@ void screenvfdisplay()
 	}
 	else
 		oled_sel->hidden = YES;
-	
+
 	if(checkbox("ATEMIO530") == 0 && checkbox("ATEMIO520") == 0 && checkbox("IPBOX91") == 0 && checkbox("ATEMIO6000") == 0 && checkbox("ATEMIO6100") == 0 && checkbox("SPARK") == 0)
 	{
 		addchoicebox(vfdnotstandby, "0", _("channel"));
@@ -70,6 +70,8 @@ void screenvfdisplay()
 
 	if(checkbox("ATEMIO-NEMESIS") == 1)
 		vfdrecord->hidden = YES;
+	else if(checkbox("SPARK") == 1)
+		addchoicebox(vfdrecord, "1", _("blink"));
 	else
 	{
 		vfdrecord->hidden = NO;
