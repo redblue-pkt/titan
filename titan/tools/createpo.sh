@@ -110,7 +110,7 @@ for ROUND in $POLIST; do
 		## löschen es daher besser aus OUTFILE_MO
 		if [ ! -e "$OUTFILE_PO" ] || [ `cat "$OUTFILE_PO" | wc -l` -eq 0 ]; then error="11"; break;fi
 
-		cmd="msgfmt -v $OUTFILE_PO -o $OUTFILE_TMP_MO"
+		cmd="msgfmt -v $OUTFILE_PO -o $OUTFILE_MO"
 		echo "[createpo.sh] $cmd" >> "$HOME"/flashimg/$SRCDIR/error/po.log
 		$cmd >> "$HOME"/flashimg/$SRCDIR/error/po.log 2>&1
 		if [ ! -e "$OUTFILE_TMP_MO" ] || [ `cat "$OUTFILE_TMP_MO" | wc -l` -eq 0 ]; then error="12"; break;fi
