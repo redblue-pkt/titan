@@ -1,17 +1,3 @@
-msgid ""
-msgstr ""
-"Project-Id-Version: TitanNit 1.62\n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Last-Translator:  <aaf-caliban@e.mail.de>\n"
-"Language-Team: German <_obiwan_@web.de>\n"
-"Language: de\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-
 #: about.h:9
 msgid "System-Info"
 msgstr "System Information"
@@ -1350,8 +1336,7 @@ msgstr "Die eingegebene http Adresse wird nicht unterstützt!"
 
 #: divxstage.h:79 novamov.h:80 nowvideo.h:105 primeshare.h:79 shared.h:65
 #: thefile.h:68 videoweed.h:80
-msgid ""
-"The file is being transfered to our other servers. This may take few minutes."
+msgid "The file is being transfered to our other servers. This may take few minutes."
 msgstr ""
 "Die gewünschte Datei wird verschoben.\n"
 "Bitte versuchen Sie es in wenigen Minuten erneut!"
@@ -1614,16 +1599,8 @@ msgstr "TPK installieren - Datei wählen"
 
 #: extensions.h:227 extensions.h:254 extensions.h:410 httpdfunc.h:6138
 #: tpk.h:3005
-msgid ""
-"It may only be a package to be installed. If they want to install another "
-"package of this section, they only remove the installed packet. Is not the "
-"plugin after reinstalling the software TitanNit in TitanNit Menu Visible "
-"then perform an update by Tpk to: "
-msgstr ""
-"Wenn Sie ein anderes Paket aus dieser Sektion installieren wollen, entfernen "
-"Sie zuerst das installierte Paket. Ist das gewünschte Plugin nach einer "
-"Neuinstallation der TitanNit Software im TitanNit Menü nicht sichtbar, dann "
-"führen Sie bitte eine TPK Aktualisierung durch. "
+msgid "It may only be a package to be installed. If they want to install another package of this section, they only remove the installed packet. Is not the plugin after reinstalling the software TitanNit in TitanNit Menu Visible then perform an update by Tpk to: "
+msgstr "Wenn Sie ein anderes Paket aus dieser Sektion installieren wollen, entfernen Sie zuerst das installierte Paket. Ist das gewünschte Plugin nach einer Neuinstallation der TitanNit Software im TitanNit Menü nicht sichtbar, dann führen Sie bitte eine TPK Aktualisierung durch. "
 
 #: extensions.h:232 extensions.h:374
 msgid "Installing"
@@ -1718,8 +1695,7 @@ msgstr "Keine Verbindung zu Facebook"
 msgid ""
 "Facebook allready registered,\n"
 "Make new registration ?"
-msgstr ""
-"Sind Sie bereits bei Facebook angemeldet? Möchten Sie sich registrieren?"
+msgstr "Sind Sie bereits bei Facebook angemeldet? Möchten Sie sich registrieren?"
 
 #: facebook.h:471
 msgid "Group created"
@@ -2046,8 +2022,7 @@ msgstr "Datenträger formatieren - Dateisystem"
 msgid "select the format filesystem type for your media drive"
 msgstr ""
 "Auswahl des Dateisystems\n"
-"Für weitere Dateisysteme wechseln Sie bitte in den Expertenmodus "
-"(Einstellungen -> Erweitert -> Expertenmodus = ja)"
+"Für weitere Dateisysteme wechseln Sie bitte in den Expertenmodus (Einstellungen -> Erweitert -> Expertenmodus = ja)"
 
 #: harddisk.h:167 pip.h:599 pip.h:607 plugins_mc_skin.xml.h:18
 #: skins_mc_skin.xml.h:18
@@ -2068,51 +2043,35 @@ msgstr ""
 
 #: harddisk.h:230 harddisk.h:724
 msgid "use medium for record"
-msgstr ""
-"Datenträger für Aufnahmen nutzen?\n"
-"OK für Ja, Exit für Nein"
+msgstr "Datenträger für Aufnahmen nutzen"
 
 #: harddisk.h:235
 msgid "del medium for record"
-msgstr ""
-"Datenträger nicht für Aufnahmen nutzen?\n"
-"OK für Ja, Exit für Nein"
+msgstr "Datenträger nicht für Aufnahmen nutzen"
 
 #: harddisk.h:240 harddisk.h:729
 msgid "use medium for extension"
-msgstr ""
-"Datenträger für Erweiterungen (swapextensions) nutzen?\n"
-"OK für Ja, Exit für Nein"
+msgstr "Datenträger für Erweiterungen (swapextensions) nutzen"
 
 #: harddisk.h:245
 msgid "del medium for extension"
-msgstr ""
-"Datenträger nicht für Erweiterungen (swapextensions) nutzen?\n"
-"OK für Ja, Exit für Nein"
+msgstr "Datenträger nicht für Erweiterungen (swapextensions) nutzen"
 
 #: harddisk.h:250 harddisk.h:731
 msgid "use medium for swap"
-msgstr ""
-"Datenträger für RAM Erweiterung (swap) nutzen?\n"
-"OK für Ja, Exit für Nein"
+msgstr "Datenträger für RAM Erweiterung (swap) nutzen"
 
 #: harddisk.h:255
 msgid "del medium for swap"
-msgstr ""
-"Datenträger nicht für RAM Erweiterung (swap) nutzen?\n"
-"OK für Ja, Exit für Nein"
+msgstr "Datenträger nicht für RAM Erweiterung (swap) nutzen"
 
 #: harddisk.h:260 harddisk.h:733
 msgid "use medium for backup"
-msgstr ""
-"Datenträger für Sicherung/Wiederherstellung nutzen?\n"
-"OK für Ja, Exit für Nein"
+msgstr "Datenträger für Sicherung/Wiederherstellung nutzen"
 
 #: harddisk.h:265
 msgid "del medium for backup"
-msgstr ""
-"Datenträger nicht für Sicherung/Wiederherstellung nutzen?\n"
-"OK für Ja, Exit für Nein"
+msgstr "Datenträger nicht für Sicherung/Wiederherstellung nutzen"
 
 #: harddisk.h:350
 msgid "Are you sure you want to delete this directory?"
@@ -2233,8 +2192,7 @@ msgstr "HDD-Standby"
 
 #: harddisk.h:879
 msgid "set here the default sleeptime for all your media drives"
-msgstr ""
-"Versetzt die Festplatte nach Ablauf der eingestellten Zeit in den Standby."
+msgstr "Versetzt die Festplatte nach Ablauf der eingestellten Zeit in den Standby."
 
 #: harddisk.h:885 skin_default_skin.xml.h:726
 msgid "Time to sleep"
@@ -2633,8 +2591,7 @@ msgid "starting Full Update ?"
 msgstr "Flashvorgang starten?"
 
 #: httpdfunc.h:5782
-msgid ""
-"System Update started. This can take up to 5 minutes. More details on TV."
+msgid "System Update started. This can take up to 5 minutes. More details on TV."
 msgstr ""
 
 #: httpdfunc.h:5828
@@ -2949,8 +2906,7 @@ msgid ""
 "\n"
 "Board-ID SerialNr:"
 msgstr ""
-"Sollten die Online Funktionen deaktiviert sein, senden Sie bitte die hier "
-"angezeigte\n"
+"Sollten die Online Funktionen deaktiviert sein, senden Sie bitte die hier angezeigte\n"
 "Board-ID Seriennummer (AA...)und die Seriennummer unterhalb des\n"
 "Gerätes (AM...) an die eingeblendete E-Mail Adresse. \n"
 "\n"
@@ -3149,6 +3105,60 @@ msgstr "Ihr Marker wurde erfolgreich gesetzt"
 #: mboxinfo.c:49
 msgid "File not found !!"
 msgstr "Datei nicht gefunden"
+
+#: mboxinfo.c:77 mc_imdb.h:78 mc_imdb.h:79 mc_imdb.h:80 mc_imdb.h:81
+#: mc_imdb.h:82 mc_view.h:17 mc_view.h:18 mc_view.h:19 mc_view.h:20
+#: mc_view.h:21 mc_view.h:22 plugins_autotimer_skin.xml.h:13
+#: plugins_callmonitor1_skin.xml.h:19 plugins_catcatch_skin.xml.h:7
+#: plugins_dlna_skin.xml.h:15 plugins_facebook_skin.xml.h:6
+#: plugins_filemanager_skin.xml.h:6 plugins_gmediarender_skin.xml.h:1
+#: plugins_imdbapi_skin.xml.h:11 plugins_imdb_skin.xml.h:11
+#: plugins_instar_skin.xml.h:18 plugins_keylock_skin.xml.h:1
+#: plugins_lcdpearl1_skin.xml.h:14 plugins_lcdsamsung_skin.xml.h:18
+#: plugins_mboxinfo_skin.xml.h:3 plugins_mc_skin.xml.h:70
+#: plugins_networkbrowser_skin.xml.h:38 plugins_news_skin.xml.h:5
+#: plugins_optimize_skin.xml.h:4 plugins_panel_skin.xml.h:28
+#: plugins_permtime_skin.xml.h:1 plugins_readerconfig_skin.xml.h:10
+#: plugins_rgui_skin.xml.h:9 plugins_stock_skin.xml.h:6
+#: plugins_stopifnotused_skin.xml.h:8 plugins_streaminfo_skin.xml.h:6
+#: plugins_sudoku_skin.xml.h:18 plugins_tithek_skin.xml.h:24
+#: plugins_tiwakeup_skin.xml.h:9 plugins_tmc_skin.xml.h:18
+#: plugins_tmdb_skin.xml.h:11 plugins_tsSchnitt_skin.xml.h:11
+#: plugins_weather_skin.xml.h:4 plugins_wins3_skin.xml.h:4
+#: plugins_wm2014_skin.xml.h:1 plugins_wm2014_skin.xml.h:21
+#: plugins_xupnpd_skin.xml.h:5 plugins_zapback_skin.xml.h:7
+#: skin_default_skin.xml.h:824 skins_autotimer_skin.xml.h:13
+#: skins_callmonitor1_skin.xml.h:19 skins_catcatch_skin.xml.h:7
+#: skins_dlna_skin.xml.h:15 skins_facebook_skin.xml.h:6
+#: skins_filemanager_skin.xml.h:6 skins_gmediarender_skin.xml.h:1
+#: skins_imdbapi_skin.xml.h:11 skins_imdb_skin.xml.h:11
+#: skins_instar_skin.xml.h:18 skins_keylock_skin.xml.h:1
+#: skins_lcdpearl1_skin.xml.h:14 skins_lcdsamsung_skin.xml.h:18
+#: skins_mboxinfo_skin.xml.h:3 skins_mc_skin.xml.h:70
+#: skins_networkbrowser_skin.xml.h:38 skins_news_skin.xml.h:5
+#: skins_optimize_skin.xml.h:4 skins_panel_skin.xml.h:28
+#: skins_permtime_skin.xml.h:1 skins_readerconfig_skin.xml.h:10
+#: skins_rgui_skin.xml.h:9 skins_stock_skin.xml.h:6
+#: skins_stopifnotused_skin.xml.h:8 skins_streaminfo_skin.xml.h:6
+#: skins_sudoku_skin.xml.h:18 skins_tithek_skin.xml.h:24
+#: skins_tiwakeup_skin.xml.h:9 skins_tmc_skin.xml.h:18
+#: skins_tmdb_skin.xml.h:11 skins_tsSchnitt_skin.xml.h:11
+#: skins_weather_skin.xml.h:4 skins_wins3_skin.xml.h:4
+#: skins_wm2014_skin.xml.h:1 skins_wm2014_skin.xml.h:21
+#: skins_xupnpd_skin.xml.h:5 skins_zapback_skin.xml.h:7 tithek_mainmenu.h:1
+msgid ""
+msgstr ""
+"Project-Id-Version: TitanNit 1.62\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator:  <aaf-caliban@e.mail.de>\n"
+"Language-Team: German <_obiwan_@web.de>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 
 #: mc_audioplayer.h:408 mc_global.h:1079 mc_pictureplayer.h:150
 #: mc_videoplayer.h:428
@@ -3553,14 +3563,11 @@ msgstr "Verbindungs Fehler, versuchen Sie es später nocheinmal"
 
 #: movie4k.h:48
 msgid "Can not parse Main Stream URL, try again later."
-msgstr ""
-"Kann die Haupt Stream Url nicht durchsuchen, versuchen Sie es später "
-"nocheinmal"
+msgstr "Kann die Haupt Stream Url nicht durchsuchen, versuchen Sie es später nocheinmal"
 
 #: movie4k.h:92
 msgid "Can not parse Stream URL, try again later."
-msgstr ""
-"Kann die Stream Url nicht durchsuchen, versuchen Sie es später nocheinmal"
+msgstr "Kann die Stream Url nicht durchsuchen, versuchen Sie es später nocheinmal"
 
 #: movie4k.h:399
 msgid "set a cookie which will expire in 3 days and be accessible site wide"
@@ -3591,8 +3598,7 @@ msgid "MULTI EPG - All Channels"
 msgstr "Multi-EPG - Alle Sender"
 
 #: networkbrowser.h:944
-msgid ""
-"For Better Win7 Support install please Tpk Install > Network > Smbclient"
+msgid "For Better Win7 Support install please Tpk Install > Network > Smbclient"
 msgstr ""
 "Für eine bessere Unterstützung von Win7 Freigaben installieren Sie bitte\n"
 "TPK Installieren > Netzwerk > Smbclient (Win7)"
@@ -3719,8 +3725,7 @@ msgstr "Netzwerk Browser - Freigaben"
 #: networkbrowser.h:1875
 msgid "Choose your Shares from the following list"
 msgstr ""
-"Liste Ihrer gespeicherten Freigaben. Zum Bearbeiten Eintrag wählen und -"
-"Grün- drücken. Um weitere Freigaben hinzuzufügen bitte -Suche-\n"
+"Liste Ihrer gespeicherten Freigaben. Zum Bearbeiten Eintrag wählen und -Grün- drücken. Um weitere Freigaben hinzuzufügen bitte -Suche-\n"
 "benutzen. Für den Zugriff auf passwortgeschützte Windows Freigaben\n"
 "bitte Menü drücken und die Benutzerdaten eingeben."
 
@@ -4105,9 +4110,7 @@ msgstr "PiP-Zap"
 
 #: played.h:90
 msgid "This video has been deleted. We apologize for the inconvenience."
-msgstr ""
-"Dieses Video wurde gelöscht. Wir entschuldigen uns für die "
-"Unannehmlichkeiten."
+msgstr "Dieses Video wurde gelöscht. Wir entschuldigen uns für die Unannehmlichkeiten."
 
 #: player.h:1214
 msgid "Buffering Stream - Cancel with Exit"
@@ -4543,12 +4546,8 @@ msgid "Facebook Register"
 msgstr "Auf Facebook registrieren"
 
 #: plugins_facebook_skin.xml.h:3 skins_facebook_skin.xml.h:3
-msgid ""
-"Enter the shown url in your browser and enter the Code to register the "
-"receiver to facebook"
-msgstr ""
-"Besuchen Sie die angezeigte Web Adresse und geben Sie den Code ein, um Ihren "
-"Receiver bei Facebook zu registrieren."
+msgid "Enter the shown url in your browser and enter the Code to register the receiver to facebook"
+msgstr "Besuchen Sie die angezeigte Web Adresse und geben Sie den Code ein, um Ihren Receiver bei Facebook zu registrieren."
 
 #: plugins_filemanager_skin.xml.h:1 skins_filemanager_skin.xml.h:1
 msgid "Copy"
@@ -4936,12 +4935,8 @@ msgid "ADD"
 msgstr "Hinzufügen"
 
 #: plugins_networkbrowser_skin.xml.h:2 skins_networkbrowser_skin.xml.h:2
-msgid ""
-"A list of currently used network shares. You can add, edit, delete shares or "
-"search for new shares."
-msgstr ""
-"Liste der aktuell genutzten Netzwerkfreigaben. Sie können Freigaben "
-"hinzufügen, editieren, löschen oder neue Freigaben suchen."
+msgid "A list of currently used network shares. You can add, edit, delete shares or search for new shares."
+msgstr "Liste der aktuell genutzten Netzwerkfreigaben. Sie können Freigaben hinzufügen, editieren, löschen oder neue Freigaben suchen."
 
 #: plugins_networkbrowser_skin.xml.h:3 skins_networkbrowser_skin.xml.h:3
 msgid "Auth Settings"
@@ -4972,16 +4967,11 @@ msgid "Here you can add and configure your network shares."
 msgstr "Hier können Sie Freigaben hinzufügen und konfigurieren."
 
 #: plugins_networkbrowser_skin.xml.h:12 skins_networkbrowser_skin.xml.h:12
-msgid ""
-"Here you can configure your login credentials for accessing password "
-"protected shares."
-msgstr ""
-"Hier können Sie die Zugangsdaten zu passwortgeschützten Freigaben eingeben."
+msgid "Here you can configure your login credentials for accessing password protected shares."
+msgstr "Hier können Sie die Zugangsdaten zu passwortgeschützten Freigaben eingeben."
 
 #: plugins_networkbrowser_skin.xml.h:13 skins_networkbrowser_skin.xml.h:13
-msgid ""
-"If you don't find Windows shares, you need to disable 'Password protected "
-"sharing' in the 'Network and Sharing Center'."
+msgid "If you don't find Windows shares, you need to disable 'Password protected sharing' in the 'Network and Sharing Center'."
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:14 skin_default_skin.xml.h:378
@@ -5505,14 +5495,10 @@ msgid "select movie"
 msgstr "Filmdatei auswählen"
 
 #: plugins_tsSchnitt_skin.xml.h:8 skins_tsSchnitt_skin.xml.h:8
-msgid ""
-"Start movie in the internal player, set with 0 key marker during a movie. 5 "
-"key is for the marker overview. Then here select movie and start."
+msgid "Start movie in the internal player, set with 0 key marker during a movie. 5 key is for the marker overview. Then here select movie and start."
 msgstr ""
-"Starten Sie die Wiedergabe der ts Datei im internen Player und drücken Sie "
-"die Taste 0 um eine Markierung zu setzen.\n"
-"Drücken Sie die Taste 5 um eine Übersicht der Markierungen anzuzeigen und "
-"starten Sie anschliessend die Wiedergabe."
+"Starten Sie die Wiedergabe der ts Datei im internen Player und drücken Sie die Taste 0 um eine Markierung zu setzen.\n"
+"Drücken Sie die Taste 5 um eine Übersicht der Markierungen anzuzeigen und starten Sie anschliessend die Wiedergabe."
 
 #: plugins_tsSchnitt_skin.xml.h:10 skins_tsSchnitt_skin.xml.h:10
 msgid "ts - cut"
@@ -5991,8 +5977,7 @@ msgid ""
 "Do you really want to erase all data and backups from Swap?\n"
 "The Box will reboot and the erase will be started!"
 msgstr ""
-"Möchten Sie wirklich den Auslieferzustand wiederherstellen? Der Receiver "
-"wird\n"
+"Möchten Sie wirklich den Auslieferzustand wiederherstellen? Der Receiver wird\n"
 "für diesen Vorgang neu gestartet!"
 
 #: restoredefault.h:47
@@ -6000,8 +5985,7 @@ msgid ""
 "Do you really want to erase Swap (Settings are preserve)?\n"
 "The Box will reboot and the erase will be started!"
 msgstr ""
-"Möchten Sie wirklich den Konfigurationsbereich reparieren? Ihre "
-"Einstellungen\n"
+"Möchten Sie wirklich den Konfigurationsbereich reparieren? Ihre Einstellungen\n"
 "bleiben erhalten. Der Receiver wird für diesen Vorgang neu gestartet!"
 
 #: restoredefault.h:63 restoredefault.h:67 skin_default_skin.xml.h:575
@@ -6018,8 +6002,7 @@ msgstr "Auslieferzustand"
 
 #: restoredefault.h:67
 msgid "Choose your Restore Mode from the following list."
-msgstr ""
-"Wählen Sie den gewünschten Wiederherstellungsmodus aus der folgenden Liste"
+msgstr "Wählen Sie den gewünschten Wiederherstellungsmodus aus der folgenden Liste"
 
 #: rgui.h:30
 msgid "Can't connect to server !"
@@ -6034,9 +6017,7 @@ msgid "Connection to server lost !"
 msgstr "Verbindung zum Server verloren!"
 
 #: rtl2now.h:31
-msgid ""
-"Found Pay Stream visit the official Website and Order this Stream and try "
-"this again !"
+msgid "Found Pay Stream visit the official Website and Order this Stream and try this again !"
 msgstr ""
 "Kostenpflichtiger Stream gefunden.\n"
 "Bitte auf der offiziellen Website bestellen und erneut versuchen."
@@ -6139,9 +6120,7 @@ msgstr "Auf SCART-Ausgang wechseln"
 
 #: scart.h:25
 msgid "Videomode must be 576i for Scart"
-msgstr ""
-"Für die Nutzung des SCART-Anschlusses muss die Auflösung auf 576i "
-"eingestellt sein!"
+msgstr "Für die Nutzung des SCART-Anschlusses muss die Auflösung auf 576i eingestellt sein!"
 
 #: scconfig.h:42
 msgid "card present"
@@ -6250,8 +6229,7 @@ msgid ""
 msgstr ""
 "!!! 14 Tägige Testphase abgelaufen !!!\n"
 "\n"
-"Um eine neue Testphase nutzen zu können, müssen Sie ein aktuelles Nightly "
-"Image\n"
+"Um eine neue Testphase nutzen zu können, müssen Sie ein aktuelles Nightly Image\n"
 "via USB einspielen oder Sie Ordern Sich eine Lizens bei Atemio !!!\n"
 "\n"
 "Kontakt:\n"
@@ -6370,9 +6348,7 @@ msgid "Extensions List"
 msgstr "Erweiterungsliste"
 
 #: settings_bluebutton.h:34
-msgid ""
-"Choose your plugin / menu item from the following list and show it so the "
-"blue button"
+msgid "Choose your plugin / menu item from the following list and show it so the blue button"
 msgstr ""
 "Tastenbelegung:\n"
 "Wählen Sie einen Eintrag aus der Liste für die blaue Taste"
@@ -6386,9 +6362,7 @@ msgid "Media Plugins List"
 msgstr "Media Plugins Liste"
 
 #: settings_mediabutton.h:48
-msgid ""
-"Choose your Media plugin item from the following list and show it so the "
-"plugin button"
+msgid "Choose your Media plugin item from the following list and show it so the plugin button"
 msgstr ""
 "Tastenbelegung:\n"
 "Wählen Sie einen Eintrag aus der Liste für die Media Taste"
@@ -6398,9 +6372,7 @@ msgid "Plugin Key Action - Setup"
 msgstr "Plugin Taste - Belegungsmenü"
 
 #: settings_pluginbutton.h:35
-msgid ""
-"Choose your plugin / menu item from the following list and show it so the "
-"plugin button"
+msgid "Choose your plugin / menu item from the following list and show it so the plugin button"
 msgstr ""
 "Tastenbelegung:\n"
 "Wählen Sie einen Eintrag aus der Liste für die Plugin Taste"
@@ -6410,9 +6382,7 @@ msgid "Red Key Action - Setup"
 msgstr "Rote Taste - Belegungsmenü "
 
 #: settings_redbutton.h:35
-msgid ""
-"Choose your plugin / menu item from the following list and show it so the "
-"red button"
+msgid "Choose your plugin / menu item from the following list and show it so the red button"
 msgstr ""
 "Tastenbelegung:\n"
 "Wählen Sie einen Eintrag aus der Liste für die rote Taste"
@@ -6678,24 +6648,12 @@ msgid "After EPG Scan"
 msgstr "Nach EPG-Aktualisierung"
 
 #: skin_default_skin.xml.h:68
-msgid ""
-"After the automatic search they must save the channel found with ok. If you "
-"do not do this and go to exit out the search not saved."
-msgstr ""
-"Drücken Sie OK oder Exit nach dem Suchlauf, das Ergebnis wird automatisch "
-"gespeichert."
+msgid "After the automatic search they must save the channel found with ok. If you do not do this and go to exit out the search not saved."
+msgstr "Drücken Sie OK oder Exit nach dem Suchlauf, das Ergebnis wird automatisch gespeichert."
 
 #: skin_default_skin.xml.h:69
-msgid ""
-"After the manual search, you have to if they want to save all the sender to "
-"save the search with the green button. To add a station manually have to "
-"select the sender in the right box and then save it with the red button that "
-"station. If you do not do this and go to exit out the search not saved."
-msgstr ""
-"Nach der manuellen Suche müssen Sie mit -Grün- die gefundenen Kanäle "
-"abspeichern. Um manuell einen Kanal hinzuzufügen, müssen Sie den Kanal im "
-"rechten Feld markieren und anschließend mit -Rot- speichern. Mit -Exit- "
-"verlassen Sie den Suchlauf ohne Speicherung!"
+msgid "After the manual search, you have to if they want to save all the sender to save the search with the green button. To add a station manually have to select the sender in the right box and then save it with the red button that station. If you do not do this and go to exit out the search not saved."
+msgstr "Nach der manuellen Suche müssen Sie mit -Grün- die gefundenen Kanäle abspeichern. Um manuell einen Kanal hinzuzufügen, müssen Sie den Kanal im rechten Feld markieren und anschließend mit -Rot- speichern. Mit -Exit- verlassen Sie den Suchlauf ohne Speicherung!"
 
 #: skin_default_skin.xml.h:70
 msgid "After Timeshift"
@@ -6835,12 +6793,8 @@ msgid "Bandwidth:"
 msgstr "Bandbreite:"
 
 #: skin_default_skin.xml.h:111
-msgid ""
-"Before you can see Signal/SNR/Ber you must zap to a channel of the satellite "
-"you are searching."
-msgstr ""
-"Zur Anzeige von Signal/SNR/BER müssen Sie auf einen Kanal des Satelliten "
-"schalten, den Sie suchen."
+msgid "Before you can see Signal/SNR/Ber you must zap to a channel of the satellite you are searching."
+msgstr "Zur Anzeige von Signal/SNR/BER müssen Sie auf einen Kanal des Satelliten schalten, den Sie suchen."
 
 #: skin_default_skin.xml.h:112
 msgid "Begin"
@@ -7345,9 +7299,7 @@ msgid "Fix Shutdown Time"
 msgstr "Feste Abschaltzeit"
 
 #: skin_default_skin.xml.h:264
-msgid ""
-"Flash: Flash range is deleted after update, mnt: flash range to permanently "
-"update available, swap: USB medium permanently"
+msgid "Flash: Flash range is deleted after update, mnt: flash range to permanently update available, swap: USB medium permanently"
 msgstr ""
 "MNT Installation (flash): wird bei Update nicht gelöscht!\n"
 "FLASH Installation (flash): wird bei Update gelöscht!\n"
@@ -7472,9 +7424,7 @@ msgid "Here you can adjust the PiP functions."
 msgstr "Hier können Sie die PiP Funktion konfigurieren."
 
 #: skin_default_skin.xml.h:301
-msgid ""
-"Here you can adjust your rotor equipment. Enter the latitude and longitude "
-"values by using the number keys."
+msgid "Here you can adjust your rotor equipment. Enter the latitude and longitude values by using the number keys."
 msgstr ""
 "Hier können Sie Ihre motorisierte Sat-Anlage konfigurieren.\n"
 "Benutzen Sie zur Eingabe der Längen- und Breitengrade die Zifferntasten."
@@ -7494,14 +7444,10 @@ msgid "Here you can check the signal quality of the current transponder."
 msgstr "Hier können Sie die Signalqualität des aktuellen Senders überprüfen."
 
 #: skin_default_skin.xml.h:305
-msgid ""
-"Here you can choose a tuner for configuration. For a channel search, the "
-"tuner(s) have to be configured before. Rotor equipment requires additional "
-"adjustments."
+msgid "Here you can choose a tuner for configuration. For a channel search, the tuner(s) have to be configured before. Rotor equipment requires additional adjustments."
 msgstr ""
 "Hier können Sie einen Tuner für die Konfiguration auswählen.\n"
-"Für den Sendersuchlauf müssen Sie den/die Tuner konfigurieren. Für "
-"motorisierte Anlagen bitte zusätzlich die Motor Ansteuerung konfigurieren."
+"Für den Sendersuchlauf müssen Sie den/die Tuner konfigurieren. Für motorisierte Anlagen bitte zusätzlich die Motor Ansteuerung konfigurieren."
 
 #: skin_default_skin.xml.h:306
 msgid "Here you can configure dynamic DNS services."
@@ -7515,13 +7461,10 @@ msgid "Here you can configure: Webinterface, Transcoding and RGUI"
 msgstr ""
 
 #: skin_default_skin.xml.h:308
-msgid ""
-"Here you can configure your cable tuner. Choose your cable provider and "
-"start an automatic search."
+msgid "Here you can configure your cable tuner. Choose your cable provider and start an automatic search."
 msgstr ""
 "Hier können Sie Ihren Kabel Tuner einstellen.\n"
-"Wählen Sie Ihren Kabel Anbieter und führen Sie anschließend einen "
-"automatischen Suchlauf durch.\n"
+"Wählen Sie Ihren Kabel Anbieter und führen Sie anschließend einen automatischen Suchlauf durch.\n"
 "Bei der Kabelsuche sollte die Option \"Netzwerk durchsuchen\" aktiviert sein."
 
 #: skin_default_skin.xml.h:309
@@ -7529,31 +7472,18 @@ msgid "Here you can configure your CI-Modules."
 msgstr "Hier können Sie Ihre CI-Module konfigurieren."
 
 #: skin_default_skin.xml.h:310
-msgid ""
-"Here you can configure your satellite tuner. First, select the satellite. "
-"When using DiSEqC, also define the used port. For advanced LNB/Unicable "
-"configuration, navigate to LNB/Unicable and press the red button."
-msgstr ""
-"Sat Tuner Konfiguration: Wählen Sie zunächst den Satelliten aus. Bei "
-"Verwendung von DiSEqC weisen Sie zusätzlich den verwendeten Port zu. Für "
-"erweiterte LNB/Unicable Konfiguration navigieren Sie zur Option LNB/Unicable "
-"und drücken Sie die rote Taste."
+msgid "Here you can configure your satellite tuner. First, select the satellite. When using DiSEqC, also define the used port. For advanced LNB/Unicable configuration, navigate to LNB/Unicable and press the red button."
+msgstr "Sat Tuner Konfiguration: Wählen Sie zunächst den Satelliten aus. Bei Verwendung von DiSEqC weisen Sie zusätzlich den verwendeten Port zu. Für erweiterte LNB/Unicable Konfiguration navigieren Sie zur Option LNB/Unicable und drücken Sie die rote Taste."
 
 #: skin_default_skin.xml.h:311
-msgid ""
-"Here you can configure your terrestrial tuner. Activate the terrestrial "
-"tuner and start an automatic search."
+msgid "Here you can configure your terrestrial tuner. Activate the terrestrial tuner and start an automatic search."
 msgstr ""
 "Hier können Sie den DVB-T Tuner einstellen.\n"
 "\n"
-"Aktivieren Sie den DVB-T Tuner und führen Sie anschließend einen "
-"automatischen Suchlauf durch."
+"Aktivieren Sie den DVB-T Tuner und führen Sie anschließend einen automatischen Suchlauf durch."
 
 #: skin_default_skin.xml.h:312
-msgid ""
-"Here you can connect to your wireless network. 1. Use search button, select "
-"your SSID and press ok 2. Choose encryption type and enter key, accept with "
-"ok 3. Set automatic start if wanted and start with green."
+msgid "Here you can connect to your wireless network. 1. Use search button, select your SSID and press ok 2. Choose encryption type and enter key, accept with ok 3. Set automatic start if wanted and start with green."
 msgstr ""
 "Hier können Sie eine Verbindung mit Ihrem WLAN herstellen.\n"
 "1. Suche starten, die eigene SSID mit ok übernehmen.\n"
@@ -7562,15 +7492,10 @@ msgstr ""
 
 #: skin_default_skin.xml.h:313
 msgid "Here you can control the fan mode."
-msgstr ""
-"Hier können Sie den Modus des Lüfters ändern. Auto ist die empfohlene "
-"Betriebsart."
+msgstr "Hier können Sie den Modus des Lüfters ändern. Auto ist die empfohlene Betriebsart."
 
 #: skin_default_skin.xml.h:314
-msgid ""
-"Here you can create, delete and edit timer events. Press ok to edit the "
-"selected timer. Additionally, you can check the results of elapsed timer "
-"events."
+msgid "Here you can create, delete and edit timer events. Press ok to edit the selected timer. Additionally, you can check the results of elapsed timer events."
 msgstr ""
 "Hier können Sie Timer\n"
 "erstellen, löschen und\n"
@@ -7582,15 +7507,11 @@ msgstr ""
 
 #: skin_default_skin.xml.h:315
 msgid "Here you can define channels or favorites for EPG scan/refresh."
-msgstr ""
-"Hier können Sie Sender und Favoriten festlegen, die im EPG Scan "
-"berücksichtigt werden sollen."
+msgstr "Hier können Sie Sender und Favoriten festlegen, die im EPG Scan berücksichtigt werden sollen."
 
 #: skin_default_skin.xml.h:316
 msgid "Here you can define the paths for record, timeshift and movie player."
-msgstr ""
-"Hier können Sie die Pfade für Aufnahme, Timeshift und den Movieplayer "
-"festlegen."
+msgstr "Hier können Sie die Pfade für Aufnahme, Timeshift und den Movieplayer festlegen."
 
 #: skin_default_skin.xml.h:317
 msgid "Here you can edit the channel list."
@@ -7606,9 +7527,7 @@ msgstr "Hier können Sie das Menü Ihres CI-Moduls aufrufen."
 
 #: skin_default_skin.xml.h:320
 msgid "Here you can install plugins and extensions from our online offer."
-msgstr ""
-"Hier können Sie aus unserem aktuellen Online-Angebot Erweiterungen und "
-"Plugins installieren."
+msgstr "Hier können Sie aus unserem aktuellen Online-Angebot Erweiterungen und Plugins installieren."
 
 #: skin_default_skin.xml.h:321
 msgid "Here you can make advanced settings."
@@ -7622,8 +7541,7 @@ msgstr "Hier können Sie den Audio/Video-Autostart konfigurieren"
 msgid "Here you can make your Audio/Video settings."
 msgstr ""
 "Audio/Video Konfiguration:\n"
-"Hinweis: Die neue Auflösung muss bestätigt werden. Bei falscher Auflösung "
-"wird nach 5 Sekunden in den ursprünglichen Modus zurückgeschaltet."
+"Hinweis: Die neue Auflösung muss bestätigt werden. Bei falscher Auflösung wird nach 5 Sekunden in den ursprünglichen Modus zurückgeschaltet."
 
 #: skin_default_skin.xml.h:324
 msgid "Here you can make your child safety autostart settings."
@@ -7631,9 +7549,7 @@ msgstr "Hier können Sie den Jugendschutz Autostart konfigurieren."
 
 #: skin_default_skin.xml.h:325
 msgid "Here you can make your display settings."
-msgstr ""
-"Hier können Sie das Display konfigurieren und falls unterstützt, die "
-"Helligkeit der PowerLED verändern."
+msgstr "Hier können Sie das Display konfigurieren und falls unterstützt, die Helligkeit der PowerLED verändern."
 
 #: skin_default_skin.xml.h:326
 msgid "Here you can make your EPG settings."
@@ -7645,9 +7561,7 @@ msgstr "Hier können Sie allgemeine Autostart Optionen konfigurieren."
 
 #: skin_default_skin.xml.h:328
 msgid "Here you can make your HDMI-CEC settings."
-msgstr ""
-"Hier können Sie festlegen, wie angeschlossene Geräte auf Standby oder "
-"aufwachen dieses Receivers reagieren sollen."
+msgstr "Hier können Sie festlegen, wie angeschlossene Geräte auf Standby oder aufwachen dieses Receivers reagieren sollen."
 
 #: skin_default_skin.xml.h:329
 msgid "Here you can make your mediadb settings."
@@ -7679,8 +7593,7 @@ msgstr "Hier können Sie Ihre Bildschirmschoner konfigurieren"
 
 #: skin_default_skin.xml.h:336
 msgid "Here you can make your softcam/USB cardreader autostart settings."
-msgstr ""
-"Hier können Sie den Softcam und USB Cardreader Autostart konfigurieren."
+msgstr "Hier können Sie den Softcam und USB Cardreader Autostart konfigurieren."
 
 #: skin_default_skin.xml.h:337
 msgid "Here you can make your timeshift settings."
@@ -7706,25 +7619,20 @@ msgstr "Hier können Sie den Fortschritt der aktuellen Downloads überwachen."
 
 #: skin_default_skin.xml.h:342
 msgid "Here you can select a skin from the following list."
-msgstr ""
-"Hier können Sie einen installierten Skin aus der folgenden Liste auswählen "
-"und aktivieren. Titan wird neu gestartet!"
+msgstr "Hier können Sie einen installierten Skin aus der folgenden Liste auswählen und aktivieren. Titan wird neu gestartet!"
 
 #: skin_default_skin.xml.h:343
 msgid "Here you can select from the following list."
 msgstr "Hier können Sie aus der folgenden Liste auswählen"
 
 #: skin_default_skin.xml.h:344
-msgid ""
-"Here you can select the Transponder Mode. Please use a channel search after "
-"the Restart"
+msgid "Here you can select the Transponder Mode. Please use a channel search after the Restart"
 msgstr ""
 "Hier können Sie Ihre Transponder Auswahl vornehmen\n"
 "Führen Sie nach dem Neustart einen Kanalsuchlauf durch."
 
 #: skin_default_skin.xml.h:345
-msgid ""
-"Here you can select your hard disks and USB flash drives for configuration."
+msgid "Here you can select your hard disks and USB flash drives for configuration."
 msgstr ""
 "Hier können Sie Ihre Festplatten und USB-Sticks zur Konfiguration\n"
 "auswählen"
@@ -7738,14 +7646,8 @@ msgid "Here you can select your remote control type."
 msgstr "Hier können Sie die passende Fernbedienung auswählen."
 
 #: skin_default_skin.xml.h:348
-msgid ""
-"Here you can set your channel search options. Very important, before channel "
-"scan, the tuner must be configured correctly."
-msgstr ""
-"Hier können Sie den automatischen Sendersuchlauf einstellen und starten. "
-"Sehr wichtig: Vor dem Suchlauf müssen die Tuner unter System/Sendersuche/"
-"Konfiguration (Kabel/Sat/Terrestrisch) konfiguriert werden. Für Kabelsuche "
-"sollte die Option \"Netzwerk durchsuchen\" aktiviert sein."
+msgid "Here you can set your channel search options. Very important, before channel scan, the tuner must be configured correctly."
+msgstr "Hier können Sie den automatischen Sendersuchlauf einstellen und starten. Sehr wichtig: Vor dem Suchlauf müssen die Tuner unter System/Sendersuche/Konfiguration (Kabel/Sat/Terrestrisch) konfiguriert werden. Für Kabelsuche sollte die Option \"Netzwerk durchsuchen\" aktiviert sein."
 
 #: skin_default_skin.xml.h:349
 msgid "Here you can set your hybrid tuner. Choose the required tuner mode."
@@ -7759,9 +7661,7 @@ msgid "Here you can set your language."
 msgstr "Hier können Sie Ihre Sprache einstellen"
 
 #: skin_default_skin.xml.h:351
-msgid ""
-"Here you can set your manual channel search options. Very important, before "
-"channel scan, the tuner must be configured correctly."
+msgid "Here you can set your manual channel search options. Very important, before channel scan, the tuner must be configured correctly."
 msgstr ""
 "Hier können sie die Einstellungen für den manuellen Suchlauf vornehmen.\n"
 "Sehr wichtig, vor der Sendersuche muss der Tuner eingestellt werden."
@@ -7771,9 +7671,7 @@ msgid "Here you can set your timezone."
 msgstr "Hier können Sie Ihre Zeitzone einstellen"
 
 #: skin_default_skin.xml.h:353
-msgid ""
-"Here you can start a blind scan, depending on your satellite configuration, "
-"this process can take very long."
+msgid "Here you can start a blind scan, depending on your satellite configuration, this process can take very long."
 msgstr ""
 "Hier können Sie einen Blindscan durchführen, abhängig von Ihrer\n"
 "vorhandenen Konfiguration kann dieser Vorgang sehr lange dauern."
@@ -8313,8 +8211,7 @@ msgstr "Wiedergabeliste"
 #: skin_default_skin.xml.h:507
 msgid "Please contact Atemio for activation."
 msgstr ""
-"Bitte wenden Sie sich an Atemio, falls Ihre Freischaltung noch nicht wirksam "
-"ist.\n"
+"Bitte wenden Sie sich an Atemio, falls Ihre Freischaltung noch nicht wirksam ist.\n"
 "\n"
 "Navigieren Sie mit dem Steuerkreuz und den unten angezeigten Tasten."
 
@@ -9448,27 +9345,21 @@ msgstr "rechts"
 
 #: system_backup.h:15
 msgid ""
-"Backup to /tmp or /var/backup. If the free memory too small can a usb device "
-"will never use.\n"
+"Backup to /tmp or /var/backup. If the free memory too small can a usb device will never use.\n"
 "There must be a folder backup."
 msgstr ""
-"Das Image wird in /tmp oder /var/backup abgelegt. Falls der interne Speicher "
-"nicht ausreicht, kann die Sicherung auch auf einem USB Stick/HDD gespeichert "
-"werden.\n"
+"Das Image wird in /tmp oder /var/backup abgelegt. Falls der interne Speicher nicht ausreicht, kann die Sicherung auch auf einem USB Stick/HDD gespeichert werden.\n"
 "Es muss ein Ordner mit dem Namen 'backup' auf dem Datenträger sein."
 
 #: system_backup_restore.h:15
 msgid ""
-"Press -restore- and your saved settings will be restored from your "
-"swapstick / recording hdd! The Box will restart automatically for "
-"restoring!\n"
+"Press -restore- and your saved settings will be restored from your swapstick / recording hdd! The Box will restart automatically for restoring!\n"
 "\n"
 "Press -backup- to save your actual settings to swapstick / recording hdd.\n"
 "WARNING: The old backup will be deleted!"
 msgstr ""
 "-wiederherstellen- (Rot):\n"
-"Ihre Einstellungen werden aus einer zuvor erstellten Sicherung "
-"wiederhergestellt! Der Receiver wird automatisch neu gestartet!\n"
+"Ihre Einstellungen werden aus einer zuvor erstellten Sicherung wiederhergestellt! Der Receiver wird automatisch neu gestartet!\n"
 "\n"
 "-sichern- (Grün):\n"
 "Ihre Einstellungen werden gesichert.\n"
@@ -9687,8 +9578,7 @@ msgid ""
 "or record is starting in next time.\n"
 "Really shutdown ?"
 msgstr ""
-"ACHTUNG: Eine Aufnahme wird aufgezeichnet oder eine zeitgesteuerte Aufnahme "
-"startet gleich.\n"
+"ACHTUNG: Eine Aufnahme wird aufgezeichnet oder eine zeitgesteuerte Aufnahme startet gleich.\n"
 "Soll das System trotzdem neu gestartet werden?"
 
 #: titan.c:355
@@ -9792,11 +9682,8 @@ msgid "Automatic stop in 10 seconds."
 msgstr "Automatisches Beenden in 10 Sekunden."
 
 #: tithek.c:85
-msgid ""
-"Alternativ Audio Firmware not working korrekt with all videos (DTSDOWNMIX)!"
-msgstr ""
-"Die alternative Audio-Firmware funktioniert nicht mit allen Videos (DTS-"
-"DOWNMIX) "
+msgid "Alternativ Audio Firmware not working korrekt with all videos (DTSDOWNMIX)!"
+msgstr "Die alternative Audio-Firmware funktioniert nicht mit allen Videos (DTS-DOWNMIX) "
 
 #: tithek.c:107
 msgid "Tithek - Mainmenu"
@@ -9874,8 +9761,7 @@ msgstr "Datei in Streampfad herunterladen (im Hintergrund)"
 
 #: tithek.h:1399
 msgid "Choose your Streaming Playback Modus from the following list"
-msgstr ""
-"Wählen Sie den gewünschten Stream Playback Modus aus der folgenden Liste"
+msgstr "Wählen Sie den gewünschten Stream Playback Modus aus der folgenden Liste"
 
 #: tithek.h:1470 tithek.h:1489
 msgid "Filename"
@@ -10325,12 +10211,8 @@ msgid "AAF MediaCenter, the best multimedia player on sh4"
 msgstr "Der beste Mediaplayer für die sh4/mipsel Plattform."
 
 #: tpk_description.h:3
-msgid ""
-"A collection of really nice folder icons for MediaCenter Videoplayer "
-"Coverview!"
-msgstr ""
-"Eine hübsche Sammlung von Ordner-Symbolen für den Videoplayer im Media "
-"Center (Cover-Ansicht)!"
+msgid "A collection of really nice folder icons for MediaCenter Videoplayer Coverview!"
+msgstr "Eine hübsche Sammlung von Ordner-Symbolen für den Videoplayer im Media Center (Cover-Ansicht)!"
 
 #: tpk_description.h:4
 msgid "all: test Settings Astra 19.2 all transponder"
@@ -10357,23 +10239,16 @@ msgid "Alternative skin for Pearl LCD MRP style"
 msgstr "Alternativer Skin für Pearl-LCD (MRP-Stil)"
 
 #: tpk_description.h:10
-msgid ""
-"Alternative skin for Pearl LCD - X-Light picons must be installed separately"
-msgstr ""
-"Alternativer Skin für Pearl-LCD (nur Senderlogo) - X-Light Senderlogos "
-"separat installieren!"
+msgid "Alternative skin for Pearl LCD - X-Light picons must be installed separately"
+msgstr "Alternativer Skin für Pearl-LCD (nur Senderlogo) - X-Light Senderlogos separat installieren!"
 
 #: tpk_description.h:11
-msgid ""
-"Alternative skin for Samsung LCD - w/o picons (must be installed separately)"
+msgid "Alternative skin for Samsung LCD - w/o picons (must be installed separately)"
 msgstr "Alternativer Skin für Samsung-LCD - Senderlogos separat installieren!"
 
 #: tpk_description.h:12
-msgid ""
-"Alternative skin for Samsung LCD - w/o Picons (must be installed separately)"
-msgstr ""
-"Alternativer Skin für Samsung-LCD (Trikots) - Senderlogos separat "
-"installieren!"
+msgid "Alternative skin for Samsung LCD - w/o Picons (must be installed separately)"
+msgstr "Alternativer Skin für Samsung-LCD (Trikots) - Senderlogos separat installieren!"
 
 #: tpk_description.h:13
 msgid "Astra 19.2e 23.5e Hotbird 13.0e Thor 0.8w KabelDeutschland (andy)"
@@ -10560,9 +10435,7 @@ msgid "DVD-Player plugin"
 msgstr "DVD-Player Plugin"
 
 #: tpk_description.h:59
-msgid ""
-"E2 WebIf API erlaubt den Zugriff auf TitanNit mittels eines E2-Clients (z.B. "
-"dreaMote-App auf iPhone oder iPad, XBMC mit VU+, TVBrowser, FHEM, ...)"
+msgid "E2 WebIf API erlaubt den Zugriff auf TitanNit mittels eines E2-Clients (z.B. dreaMote-App auf iPhone oder iPad, XBMC mit VU+, TVBrowser, FHEM, ...)"
 msgstr ""
 
 #: tpk_description.h:60
@@ -10594,20 +10467,15 @@ msgid "Emu vizcam 1.04 for your box"
 msgstr ""
 
 #: tpk_description.h:68
-msgid ""
-"Expert Version 10266 of OScam 2xSlot intern + 1xUSB (blocked EMM for V13 and "
-"V14) for small Memory Receiver"
+msgid "Expert Version 10266 of OScam 2xSlot intern + 1xUSB (blocked EMM for V13 and V14) for small Memory Receiver"
 msgstr ""
 
 #: tpk_description.h:69
-msgid ""
-"Expert Version 10517 of OScam 2xSlot intern + 1xUSB (blocked EMM for V13 and "
-"V14)"
+msgid "Expert Version 10517 of OScam 2xSlot intern + 1xUSB (blocked EMM for V13 and V14)"
 msgstr ""
 
 #: tpk_description.h:70
-msgid ""
-"Expert Version of OScam 2xSlot intern + 1xUSB (blocked EMM for V13 and V14)"
+msgid "Expert Version of OScam 2xSlot intern + 1xUSB (blocked EMM for V13 and V14)"
 msgstr ""
 
 #: tpk_description.h:71
@@ -10671,21 +10539,15 @@ msgid "Font 'Plover Bold'"
 msgstr ""
 
 #: tpk_description.h:86
-msgid ""
-"gbox 800 with autoident for card hd+ and skyde including all necessary "
-"config files."
+msgid "gbox 800 with autoident for card hd+ and skyde including all necessary config files."
 msgstr ""
 
 #: tpk_description.h:87
-msgid ""
-"gbox 804 with autoident for card hd+ and skyde including all necessary "
-"config files."
+msgid "gbox 804 with autoident for card hd+ and skyde including all necessary config files."
 msgstr ""
 
 #: tpk_description.h:88
-msgid ""
-"gbox 806 with autoident for card hd+ and skyde including all necessary "
-"config files."
+msgid "gbox 806 with autoident for card hd+ and skyde including all necessary config files."
 msgstr ""
 
 #: tpk_description.h:89
@@ -10849,13 +10711,11 @@ msgid "Scan and manage cifs/nfs/ftp shares"
 msgstr "Suche und Verwaltung von CIFS/SMB, NFS und FTP Freigaben"
 
 #: tpk_description.h:130
-msgid ""
-"Screensaver FC Bayern pictures for MediaCenter Audioplayer and Radioplayer"
+msgid "Screensaver FC Bayern pictures for MediaCenter Audioplayer and Radioplayer"
 msgstr ""
 
 #: tpk_description.h:131
-msgid ""
-"Screensaver Hot Girls pictures for MediaCenter Audioplayer and Radioplayer"
+msgid "Screensaver Hot Girls pictures for MediaCenter Audioplayer and Radioplayer"
 msgstr ""
 
 #: tpk_description.h:132
@@ -11080,8 +10940,7 @@ msgstr ""
 
 #: tpk_description.h:187
 msgid "Wooden clock - Standby - Samsung LCD Skin Channel."
-msgstr ""
-"Alternativer Skin für Samsung-LCD (analoge Uhr aus Holz) - Standby-Modus"
+msgstr "Alternativer Skin für Samsung-LCD (analoge Uhr aus Holz) - Standby-Modus"
 
 #: tpk_description.h:188
 msgid "xupnpd Medien Server (upnp)"
