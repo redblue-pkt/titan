@@ -9036,3 +9036,6 @@ msgstr ""
 
 msgid "Wicardd v1.15 "
 msgstr ""
+
+msgid "Here you can configure CI-Modules."
+msgstr ""
