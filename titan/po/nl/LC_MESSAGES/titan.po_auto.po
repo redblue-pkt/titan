@@ -3085,8 +3085,7 @@ msgstr "Markering is geplaatst."
 msgid "File not found !!"
 msgstr "Bestand niet gevonden!"
 
-#: mboxinfo.c:77 mc_imdb.h:78 mc_imdb.h:79 mc_imdb.h:80 mc_imdb.h:81
-#: mc_imdb.h:82 mc_view.h:17 mc_view.h:18 mc_view.h:19 mc_view.h:20
+#: mboxinfo.c:77 mc_view.h:17 mc_view.h:18 mc_view.h:19 mc_view.h:20
 #: mc_view.h:21 mc_view.h:22 plugins_autotimer_skin.xml.h:13
 #: plugins_callmonitor1_skin.xml.h:19 plugins_catcatch_skin.xml.h:7
 #: plugins_dlna_skin.xml.h:15 plugins_facebook_skin.xml.h:6
