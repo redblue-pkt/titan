@@ -104,9 +104,9 @@ for ROUND in $POLIST; do
 		echo ROUND: $ROUND
 		
 		## hier reicht eigentlich nun ROUND_CLEAN, aber wozu "Content-Type:" rauslöschen?
-		cat $ROUND_CLEAN > $OUTFILE_PO
+		##cat $ROUND_CLEAN > $OUTFILE_PO
 		## mit dem Eintrag Content-Type gibt msgfmt zwar keine Warnungen aus, aber titan arbeitet damit falsch!??
-		## cat $ROUND_CLEAN | sed 's/"Content-Type:.*//g' > $OUTFILE_PO
+		cat $ROUND_CLEAN | sed 's/"Content-Type:.*//g' > $OUTFILE_PO
 		## löschen es daher besser aus OUTFILE_MO
 		if [ ! -e "$OUTFILE_PO" ] || [ `cat "$OUTFILE_PO" | wc -l` -eq 0 ]; then error="11"; break;fi
 
@@ -118,8 +118,8 @@ for ROUND in $POLIST; do
 		if [ `echo $log | grep "fatal error" | wc -l` -gt 0 ]; then error="13"; break;fi
 		
 		## Nun noch "Content-Type:" rauslöschen
-		cat $OUTFILE_TMP_MO | sed '/Content-Type:*/d' > $OUTFILE_MO
-		if [ ! -e "$ROUND_EDIT" ] || [ `cat "$ROUND_EDIT" | wc -l` -eq 0 ]; then error="14"; break;fi
+		##cat $OUTFILE_TMP_MO | sed '/Content-Type:*/d' > $OUTFILE_MO
+		##if [ ! -e "$ROUND_EDIT" ] || [ `cat "$ROUND_EDIT" | wc -l` -eq 0 ]; then error="14"; break;fi
 		
 		##noch so einige unnötige Konvertierungen!
 		##iconv -f UTF-8 -t ISO-8859-1 $ROUND_NEW_MERGE > $ROUND
