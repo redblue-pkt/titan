@@ -7449,25 +7449,24 @@ msgstr ""
 "Hier können Sie einen Tuner für die Konfiguration auswählen.\n"
 "Für den Sendersuchlauf müssen Sie den/die Tuner konfigurieren. Für motorisierte Anlagen bitte zusätzlich die Motor Ansteuerung konfigurieren."
 
-#: skin_default_skin.xml.h:306
+#: skin_default_skin.xml.h:307
 msgid "Here you can configure dynamic DNS services."
 msgstr ""
 "DynDNS Dienste Konfiguration\n"
 "Folgende Dienste werden unterstützt:\n"
 "dyndns.org, freedns.afraid.org, zoneedit.com, no-ip.com"
 
-#: skin_default_skin.xml.h:307
+#: skin_default_skin.xml.h:308
 msgid "Here you can configure: Webinterface, Transcoding and RGUI"
 msgstr ""
 
-#: skin_default_skin.xml.h:308
+#: skin_default_skin.xml.h:309
 msgid "Here you can configure your cable tuner. Choose your cable provider and start an automatic search."
 msgstr ""
 "Hier können Sie Ihren Kabel Tuner einstellen.\n"
 "Wählen Sie Ihren Kabel Anbieter und führen Sie anschließend einen automatischen Suchlauf durch.\n"
 "Bei der Kabelsuche sollte die Option \"Netzwerk durchsuchen\" aktiviert sein."
 
-#: skin_default_skin.xml.h:309
 msgid "Here you can configure your CI-Modules."
 msgstr "Hier können Sie Ihre CI-Module konfigurieren."
 
@@ -13308,4 +13307,8 @@ msgstr ""
 
 #: tpk_showname.h:201
 msgid "Wicardd v1.15 "
+msgstr ""
+
+#: skin_default_skin.xml.h:306
+msgid "Here you can configure CI-Modules."
 msgstr ""
