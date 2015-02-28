@@ -100,7 +100,7 @@ for ROUND in $POLIST; do
 		if [ `echo $log | grep "fatal error" | wc -l` -gt 0 ]; then error="4"; break;fi
 		##Nun haben wir schon ALLE neuen msgid's mit drin! > *.* sammelt alle neuen Einträge, -j sorgt für das Zusammenfügen 
 		
-		echo ROUND: $ROUND
+		##echo ROUND: $ROUND
 		
 		## hier reicht eigentlich nun ROUND_CLEAN, aber wozu "Content-Type:" rauslöschen?
 		##cat $ROUND_CLEAN > $OUTFILE_PO
@@ -119,7 +119,7 @@ for ROUND in $POLIST; do
 		##iconv -f UTF-8 -t ISO-8859-1 $ROUND_NEW_MERGE > $ROUND
 		#iconv -f UTF-8 -t ISO-8859-1 $ROUND_MERGE > $ROUND
 		cat $ROUND_CLEAN > $ROUND
-		if [ ! -e "$ROUND" ] || [ `cat "$ROUND" | wc -l` -eq 0 ]; then error="15"; break;fi
+		if [ ! -e "$ROUND" ] || [ `cat "$ROUND" | wc -l` -eq 0 ]; then error="14"; break;fi
 
 		if [ ! -e $OUTFILE_MO ];then
 			cp -a $OUTFILE_PO $OUTFILE_ERROR
@@ -133,7 +133,8 @@ for ROUND in $POLIST; do
 	##Aus der neuen titan.po_auto.po alle Kommentare löschen und in titan.po speichern
 	cat $ROUND | sed '/#.*/d' > $ROUND_EDIT
 	if [ ! -e "$ROUND_EDIT" ] || [ `cat "$ROUND_EDIT" | wc -l` -eq 0 ]; then error="16"; break;fi
-		
+	
+	echo "[createpo.sh] no error found ($error)"
 	echo "[createpo.sh] ############################# end ##################################"
 done
 
