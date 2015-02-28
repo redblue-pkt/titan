@@ -36,7 +36,7 @@ char* mc_imdb_sync(int mode, char* filepath, char* filename)
 
 	if (mc_imdb_background == 1){
 		if (isfile("/tmp/.imdbrunning")){
-			debug(50, "[mc_imdb_sync] skip is running");		
+			debug(50, "[mc_imdb_sync] skip is running");
 		} else {
 			unlink("/tmp/imdb.run");
 			debug(50, "[mc_imdb_sync] cmd: %s", cmd);
@@ -75,11 +75,11 @@ char* screenmc_imdb(int style, char* filepath, char* filename)
 	struct skin* all = getscreennode(mc_imdb, "all");
 
 	struct skin* tmp = NULL;
-	addchoicebox(file, "0", _(""));
-	addchoicebox(filealt, "1", _(""));
-	addchoicebox(filealtresult, "2", _(""));
-	addchoicebox(mvid, "3", _(""));
-	addchoicebox(all, "4", _(""));
+	addchoicebox(file, "0", (""));
+	addchoicebox(filealt, "1", (""));
+	addchoicebox(filealtresult, "2", (""));
+	addchoicebox(mvid, "3", (""));
+	addchoicebox(all, "4", (""));
 
 	drawscreen(mc_imdb, 0, 0);
 	addscreenrc(mc_imdb, listbox);
@@ -110,7 +110,7 @@ char* screenmc_imdb(int style, char* filepath, char* filename)
 			break;
 		}
 	}
-	
+
 	delownerrc(mc_imdb);
 	clearscreen(mc_imdb);
 	return 0;
