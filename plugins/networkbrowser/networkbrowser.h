@@ -378,14 +378,14 @@ struct networkbrowser* addnetworkbrowser(char *line, int count, struct networkbr
 				if(ostrstr(line, "user=,") != NULL)
 				{
 					treffer = 6;
-					ret = sscanf(line, "%s\t-fstype=cifs,%[^,],rsize=%[^,],wsize=%[^,],%*s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->ip, newnode->sharedir);
+					ret = sscanf(line, "%s\t-fstype=cifs,%[^,],iocharset=utf8,rsize=%[^,],wsize=%[^,],%*s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->ip, newnode->sharedir);
 				}
 				else
 				{
 					treffer = 8;
 					free(newnode->userauth); newnode->userauth = NULL;
 					newnode->userauth = ostrcat(newnode->userauth, "1", 1, 0);
-					ret = sscanf(line, "%s\t-fstype=cifs,%[^,],rsize=%[^,],wsize=%[^,],user=%[^,],pass=%s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->username, newnode->password, newnode->ip, newnode->sharedir);
+					ret = sscanf(line, "%s\t-fstype=cifs,%[^,],iocharset=utf8,rsize=%[^,],wsize=%[^,],user=%[^,],pass=%s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->username, newnode->password, newnode->ip, newnode->sharedir);
 				}
 			}
 			else
@@ -395,14 +395,14 @@ struct networkbrowser* addnetworkbrowser(char *line, int count, struct networkbr
 				if(ostrstr(line, "user=,") != NULL)
 				{
 					treffer = 6;
-					ret = sscanf(line, "%s\t-fstype=cifs,%[^,],rsize=%[^,],wsize=%[^,],%*s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->dns, newnode->sharedir);
+					ret = sscanf(line, "%s\t-fstype=cifs,%[^,],iocharset=utf8,rsize=%[^,],wsize=%[^,],%*s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->dns, newnode->sharedir);
 				}
 				else
 				{
 					treffer = 8;
 					free(newnode->userauth); newnode->userauth = NULL;
 					newnode->userauth = ostrcat(newnode->userauth, "1", 1, 0);
-					ret = sscanf(line, "%s\t-fstype=cifs,%[^,],rsize=%[^,],wsize=%[^,],user=%[^,],pass=%s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->username, newnode->password, newnode->dns, newnode->sharedir);
+					ret = sscanf(line, "%s\t-fstype=cifs,%[^,],iocharset=utf8,rsize=%[^,],wsize=%[^,],user=%[^,],pass=%s\t://%[^/]/%s", newnode->sharename, newnode->options, newnode->rsize, newnode->wsize, newnode->username, newnode->password, newnode->dns, newnode->sharedir);
 				}
 			}
 			if(ret != treffer)
