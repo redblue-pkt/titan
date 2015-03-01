@@ -7301,18 +7301,19 @@ msgstr ""
 msgid "Here you can choose a tuner for configuration. For a channel search, the tuner(s) have to be configured before. Rotor equipment requires additional adjustments."
 msgstr ""
 
-#: skin_default_skin.xml.h:307
+#: skin_default_skin.xml.h:306
 msgid "Here you can configure dynamic DNS services."
 msgstr ""
 
-#: skin_default_skin.xml.h:308
+#: skin_default_skin.xml.h:307
 msgid "Here you can configure: Webinterface, Transcoding and RGUI"
 msgstr ""
 
-#: skin_default_skin.xml.h:309
+#: skin_default_skin.xml.h:308
 msgid "Here you can configure your cable tuner. Choose your cable provider and start an automatic search."
 msgstr ""
 
+#: skin_default_skin.xml.h:309
 msgid "Here you can configure your CI-Modules."
 msgstr ""
 
@@ -13033,6 +13034,5 @@ msgstr ""
 msgid "Wicardd v1.15 "
 msgstr ""
 
-#: skin_default_skin.xml.h:306
 msgid "Here you can configure CI-Modules."
 msgstr ""
