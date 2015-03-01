@@ -995,7 +995,7 @@ int playerstart(char* file)
 //		bus = gst_element_get_bus (pipeline);
 		
 		// Start playing //
-/*
+
 		GstStateChangeReturn ret;
 		ret = gst_element_set_state (pipeline, GST_STATE_PLAYING);
 		g_object_set (G_OBJECT (pipeline), "current-text", 0, NULL);
@@ -1009,7 +1009,7 @@ int playerstart(char* file)
 		{
 			data.is_live = TRUE;
 		}
-*/
+
 		data.loop = g_main_loop_new (NULL, FALSE);
 		data.pipeline = pipeline;
 		gst_bus_add_signal_watch (bus);
