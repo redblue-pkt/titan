@@ -51,8 +51,8 @@ for ROUND in $SKINLIST; do
 	## sed '/\"\"/d' verhindert leere Einträge (zb. title="") - klappt so leider nicht!?
 	cat $ROUND | grep title= | sed 's/title=/\ntitle=/' | grep ^title= | cut -d '"' -f2 | sort -u | sed '/^ *$/d' | tr '\n' '#' | sed 's/#\+/\");\ntmpstr = _(\"\ /g'| sed 's/" /"/' | sed '/\"\"/d' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME"
 	cat $ROUND | grep text= | sed 's/text=/\ntext=/' | grep ^text= | cut -d '"' -f2 | sort -u | sed '/^ *$/d' | tr '\n' '#' | sed 's/#\+/\");\ntmpstr = _(\"\ /g'| sed 's/" /"/' | sed '/\"\"/d' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME"
-	## Test 2
-	cat "$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME"  | sed '/\"\"/d' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME".h
+	## Test 3 mit '/*\"\"*/d'
+	cat "$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME"  | sed '/*\"\"*/d' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME".h
 	rm "$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME" 
 done
 
@@ -70,7 +70,7 @@ error=0
 
 for ROUND in $POLIST; do
 	echo "[createpo.sh] ############################ start ###############################"
-	echo "[createpo.sh] update $ROUND"
+	##echo "[createpo.sh] update $ROUND"
 #	echo xgettext --omit-header -k_ *.* -o $ROUND
 	if [ "$TYPE" == "update" ]; then
 		ROUND_CLEAN=`echo $ROUND | sed 's!titan.po_auto.po!titan.po_auto.clean.po!'`
@@ -87,9 +87,11 @@ for ROUND in $POLIST; do
 		## "-nt" ("newer than")
 		if [ $ROUND -nt $ROUND_EDIT ]; then
 			##Aus der titan.po_auto.po alle Kommentare löschen und in titan.po_auto.clean.po speichern
-			cat $ROUND | sed '/#.*/d' > $ROUND_CLEAN
+			echo "[createpo.sh] update $ROUND"
+			cat $ROUND | sed '/#.*/d' > $ROUND_CLEAN			
 		else
 			##Gleich die (neuere) titan.po verwenden
+			echo "[createpo.sh] update $ROUND_EDIT"
 			cat $ROUND_EDIT | sed '/#.*/d' > $ROUND_CLEAN
 		fi		
 		if [ ! -e "$ROUND_CLEAN" ] || [ `cat "$ROUND_CLEAN" | wc -l` -eq 0 ]; then error="1"; break;fi
@@ -105,7 +107,8 @@ for ROUND in $POLIST; do
 		##Nun haben wir schon ALLE neuen msgid's mit drin! > *.* sammelt alle neuen Einträge, -j sorgt für das Zusammenfügen 
 		##enthält aber noch alte (nicht mehr verwendete) msgid's
 		
-		cmd="xgettext --omit-header -k_ *.* -o $ROUND_NEW"
+		##-s sortierte Ausgabe erstellen
+		cmd="xgettext --omit-header -s -k_ *.* -o $ROUND_NEW"
 		echo "[createpo.sh] $cmd" >> "$HOME"/flashimg/$SRCDIR/error/po.log
 		$cmd >> "$HOME"/flashimg/$SRCDIR/error/po.log 2>&1
 		if [ ! -e "$ROUND_NEW" ] || [ `cat "$ROUND_NEW" | wc -l` -eq 0 ]; then error="5"; break;fi
