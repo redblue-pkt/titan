@@ -46,16 +46,15 @@ for ROUND in $SKINLIST; do
 	SECTION2=`echo $ROUND | tr "/" "\n" | tail -n2 | head -n1`
 
 	echo "[createpo] skin update" "$SECTION1"_"$SECTION2"_"$NAME".h from "$ROUND"
-	cp "$HOME"/flashimg/$SRCDIR/titan/tools/dummy "$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME".h
+	cp "$HOME"/flashimg/$SRCDIR/titan/tools/dummy "$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME"
 
-	## sed '/""/d' verhindert leere Einträge (zb. title="")
-	cat $ROUND | grep title= | sed 's/title=/\ntitle=/' | grep ^title= | cut -d '"' -f2 | sort -u | sed '/^ *$/d' | tr '\n' '#' | sed 's/#\+/\");\ntmpstr = _(\"\ /g'| sed 's/" /"/' | sed '/^tmpstr = _("")*$/d' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME".h
-	cat $ROUND | grep text= | sed 's/text=/\ntext=/' | grep ^text= | cut -d '"' -f2 | sort -u | sed '/^ *$/d' | tr '\n' '#' | sed 's/#\+/\");\ntmpstr = _(\"\ /g'| sed 's/" /"/' | sed '/^tmpstr = _("")*$/d' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME".h
-	## Test 3 mit '/*\"\"*/d'
-	## Test 4 mit '/""/d'
-	## Test 5 mit '/^tmpstr = _("")*$/d'
-	##cat "$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME"  | sed '/""/d' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME".h
-	##rm "$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME" 
+	## dummy = 'tmpstr = _("'
+	cat $ROUND | grep title= | sed 's/title=/\ntitle=/' | grep ^title= | cut -d '"' -f2 | sort -u | sed '/^ *$/d' | tr '\n' '#' | sed 's/#\+/\");\ntmpstr = _(\"\ /g'| sed 's/" /"/' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME"
+	cat $ROUND | grep text= | sed 's/text=/\ntext=/' | grep ^text= | cut -d '"' -f2 | sort -u | sed '/^ *$/d' | tr '\n' '#' | sed 's/#\+/\");\ntmpstr = _(\"\ /g'| sed 's/" /"/' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME"
+	## Letzte Zeile = 'tmpstr = _("' und das führt zu 'msgid = ""' !!
+	## weg damit:
+	cat "$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME"  | grep ';' > "$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME".h
+	rm "$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME" 
 done
 
 cat "$HOME"/ipk/source*/*/CONTROL/control | grep Section: | sort -u | sed 's!Section: !tmpstr = _("!g' | sed 's!Package:!\nPackage!g' | grep ^tmpstr | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/tpk_section.h
