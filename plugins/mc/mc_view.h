@@ -14,12 +14,12 @@ int screenmc_view()
 	struct skin* fast = getscreennode(mc_view, "fast");
 	struct skin* tmp = NULL;
 	
-	addchoicebox(defaults, "0", _(""));
-	addchoicebox(big, "1", _(""));
-	addchoicebox(fullcover, "2", _(""));
-	addchoicebox(details, "3", _(""));
-	addchoicebox(small, "4", _(""));
-	addchoicebox(fast, "5", _(""));
+	addchoicebox(defaults, "0", (""));
+	addchoicebox(big, "1", (""));
+	addchoicebox(fullcover, "2", (""));
+	addchoicebox(details, "3", (""));
+	addchoicebox(small, "4", (""));
+	addchoicebox(fast, "5", (""));
 
 	drawscreen(mc_view, 0, 0);
 	addscreenrc(mc_view, listbox);
