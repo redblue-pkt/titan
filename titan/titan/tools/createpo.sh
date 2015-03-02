@@ -45,12 +45,15 @@ for ROUND in $SKINLIST; do
 	SECTION1=`echo $ROUND | tr "/" "\n" | tail -n3 | head -n1`
 	SECTION2=`echo $ROUND | tr "/" "\n" | tail -n2 | head -n1`
 
-	echo "[createpo] skin update " "$SECTION1"_"$SECTION2"_"$NAME".h from "$ROUND"
-	cp "$HOME"/flashimg/$SRCDIR/titan/tools/dummy "$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME".h
+	echo "[createpo] skin update" "$SECTION1"_"$SECTION2"_"$NAME".h from "$ROUND"
+	cp "$HOME"/flashimg/$SRCDIR/titan/tools/dummy "$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME"
 
-	## sed '/\"\"/d' verhindert leere Einträge (zb. title="")
-	cat $ROUND | grep title= | sed 's/title=/\ntitle=/' | grep ^title= | cut -d '"' -f2 | sort -u | sed '/^ *$/d' | tr '\n' '#' | sed 's/#\+/\");\ntmpstr = _(\"\ /g'| sed 's/" /"/' | sed '/\"\"/d' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME".h
-	cat $ROUND | grep text= | sed 's/text=/\ntext=/' | grep ^text= | cut -d '"' -f2 | sort -u | sed '/^ *$/d' | tr '\n' '#' | sed 's/#\+/\");\ntmpstr = _(\"\ /g'| sed 's/" /"/' | sed '/\"\"/d' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME".h
+	## sed '/\"\"/d' verhindert leere Einträge (zb. title="") - klappt so leider nicht!?
+	cat $ROUND | grep title= | sed 's/title=/\ntitle=/' | grep ^title= | cut -d '"' -f2 | sort -u | sed '/^ *$/d' | tr '\n' '#' | sed 's/#\+/\");\ntmpstr = _(\"\ /g'| sed 's/" /"/' | sed '/\"\"/d' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME"
+	cat $ROUND | grep text= | sed 's/text=/\ntext=/' | grep ^text= | cut -d '"' -f2 | sort -u | sed '/^ *$/d' | tr '\n' '#' | sed 's/#\+/\");\ntmpstr = _(\"\ /g'| sed 's/" /"/' | sed '/\"\"/d' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME"
+	## Test 2
+	cat "$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME"  | sed '/\"\"/d' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME".h
+	rm "$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME" 
 done
 
 cat "$HOME"/ipk/source*/*/CONTROL/control | grep Section: | sort -u | sed 's!Section: !tmpstr = _("!g' | sed 's!Package:!\nPackage!g' | grep ^tmpstr | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/tpk_section.h
@@ -110,7 +113,8 @@ for ROUND in $POLIST; do
 		if [ `echo $log | grep "fatal error" | wc -l` -gt 0 ]; then error="6";break;fi
 
 		echo "[createpo.sh] msgmerge $ROUND_CLEAN $ROUND_NEW > $ROUND_NEW_MERGE"
-		msgmerge $ROUND_CLEAN $ROUND_NEW > $ROUND_NEW_MERGE	
+		##-q Fortschrittsanzeige unterdrücken
+		msgmerge -q $ROUND_CLEAN $ROUND_NEW > $ROUND_NEW_MERGE	
 		if [ ! -e "$ROUND_NEW_MERGE" ] || [ `cat "$ROUND_NEW_MERGE" | wc -l` -eq 0 ]; then error="7"; break;fi
 				
 		##echo ROUND: $ROUND
@@ -154,13 +158,12 @@ done
 
 if [ $error != 0 ];then
 	echo "[createpo.sh] found error($error)"
+	echo "[createpo.sh] ###################### error log start ##########################"
+	cat "$HOME"/flashimg/$SRCDIR/error/po.log
+	echo "[createpo.sh] ####################### error log end ###########################"	
 fi
 
 file --mime-encoding "$HOME"/flashimg/$SRCDIR/po/*/*/*.po >> "$HOME"/flashimg/$SRCDIR/error/coding.log 2>&1
-
-echo "[createpo.sh] ###################### error log start ##########################"
-cat "$HOME"/flashimg/$SRCDIR/error/po.log
-echo "[createpo.sh] ####################### error log end ###########################"
 
 echo "[createpo.sh] check user $SVNUSER"
 echo "[createpo.sh] check group $GROUP"
