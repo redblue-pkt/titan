@@ -1,22 +1,21 @@
-#: mboxinfo.c:77 mc_view.h:17 mc_view.h:18 mc_view.h:19 mc_view.h:20
-#: mc_view.h:21 mc_view.h:22 plugins_autotimer_skin.xml.h:13
-#: plugins_callmonitor1_skin.xml.h:19 plugins_catcatch_skin.xml.h:7
-#: plugins_dlna_skin.xml.h:15 plugins_facebook_skin.xml.h:6
-#: plugins_filemanager_skin.xml.h:6 plugins_gmediarender_skin.xml.h:1
-#: plugins_imdbapi_skin.xml.h:11 plugins_imdb_skin.xml.h:11
-#: plugins_instar_skin.xml.h:18 plugins_keylock_skin.xml.h:1
-#: plugins_lcdpearl1_skin.xml.h:14 plugins_lcdsamsung_skin.xml.h:18
-#: plugins_mboxinfo_skin.xml.h:3 plugins_mc_skin.xml.h:70
-#: plugins_networkbrowser_skin.xml.h:38 plugins_news_skin.xml.h:5
-#: plugins_optimize_skin.xml.h:4 plugins_panel_skin.xml.h:28
-#: plugins_permtime_skin.xml.h:1 plugins_readerconfig_skin.xml.h:10
-#: plugins_rgui_skin.xml.h:9 plugins_stock_skin.xml.h:6
-#: plugins_stopifnotused_skin.xml.h:8 plugins_streaminfo_skin.xml.h:6
-#: plugins_sudoku_skin.xml.h:18 plugins_tithek_skin.xml.h:24
-#: plugins_tiwakeup_skin.xml.h:9 plugins_tmc_skin.xml.h:18
-#: plugins_tmdb_skin.xml.h:11 plugins_tsSchnitt_skin.xml.h:11
-#: plugins_weather_skin.xml.h:4 plugins_wins3_skin.xml.h:4
-#: plugins_wm2014_skin.xml.h:20 plugins_xupnpd_skin.xml.h:5
+#: plugins_autotimer_skin.xml.h:13 plugins_callmonitor1_skin.xml.h:19
+#: plugins_catcatch_skin.xml.h:7 plugins_dlna_skin.xml.h:15
+#: plugins_facebook_skin.xml.h:6 plugins_filemanager_skin.xml.h:6
+#: plugins_gmediarender_skin.xml.h:1 plugins_imdbapi_skin.xml.h:11
+#: plugins_imdb_skin.xml.h:11 plugins_instar_skin.xml.h:18
+#: plugins_keylock_skin.xml.h:1 plugins_lcdpearl1_skin.xml.h:14
+#: plugins_lcdsamsung_skin.xml.h:18 plugins_mboxinfo_skin.xml.h:3
+#: plugins_mc_skin.xml.h:70 plugins_networkbrowser_skin.xml.h:38
+#: plugins_news_skin.xml.h:5 plugins_optimize_skin.xml.h:4
+#: plugins_panel_skin.xml.h:28 plugins_permtime_skin.xml.h:1
+#: plugins_readerconfig_skin.xml.h:10 plugins_rgui_skin.xml.h:9
+#: plugins_stock_skin.xml.h:6 plugins_stopifnotused_skin.xml.h:8
+#: plugins_streaminfo_skin.xml.h:6 plugins_sudoku_skin.xml.h:18
+#: plugins_tithek_skin.xml.h:24 plugins_tiwakeup_skin.xml.h:9
+#: plugins_tmc_skin.xml.h:18 plugins_tmdb_skin.xml.h:11
+#: plugins_tsSchnitt_skin.xml.h:11 plugins_weather_skin.xml.h:4
+#: plugins_wins3_skin.xml.h:4 plugins_wm2014_skin.xml.h:1
+#: plugins_wm2014_skin.xml.h:21 plugins_xupnpd_skin.xml.h:5
 #: plugins_zapback_skin.xml.h:7 skin_default_skin.xml.h:824
 #: skins_autotimer_skin.xml.h:13 skins_callmonitor1_skin.xml.h:19
 #: skins_catcatch_skin.xml.h:7 skins_dlna_skin.xml.h:15
@@ -34,8 +33,9 @@
 #: skins_tithek_skin.xml.h:24 skins_tiwakeup_skin.xml.h:9
 #: skins_tmc_skin.xml.h:18 skins_tmdb_skin.xml.h:11
 #: skins_tsSchnitt_skin.xml.h:11 skins_weather_skin.xml.h:4
-#: skins_wins3_skin.xml.h:4 skins_wm2014_skin.xml.h:20
-#: skins_xupnpd_skin.xml.h:5 skins_zapback_skin.xml.h:7 tithek_mainmenu.h:1
+#: skins_wins3_skin.xml.h:4 skins_wm2014_skin.xml.h:1
+#: skins_wm2014_skin.xml.h:21 skins_xupnpd_skin.xml.h:5
+#: skins_zapback_skin.xml.h:7 tithek_mainmenu.h:1
 msgid ""
 msgstr ""
 "Project-Id-Version: TitanNit 1.62\n"
@@ -1668,7 +1668,7 @@ msgstr "Разрешение браузера"
 msgid "Buffering Stream - Cancel with Exit"
 msgstr "Буферизация - Выход по кнопке Exit"
 
-#: plugins_wm2014_skin.xml.h:3 skins_wm2014_skin.xml.h:3
+#: plugins_wm2014_skin.xml.h:4 skins_wm2014_skin.xml.h:4
 msgid "Button 1..8 => Group A..H"
 msgstr "Кнопки 1..8 => Группа A..H"
 
@@ -2605,7 +2605,7 @@ msgstr "Дата"
 msgid "Data: "
 msgstr "Каналы данных"
 
-#: plugins_wm2014_skin.xml.h:4 skins_wm2014_skin.xml.h:4
+#: plugins_wm2014_skin.xml.h:5 skins_wm2014_skin.xml.h:5
 msgid "Date"
 msgstr "Дата"
 
@@ -2617,7 +2617,7 @@ msgstr "Файловый браузер"
 msgid "Day"
 msgstr "День"
 
-#: plugins_wm2014_skin.xml.h:5 skins_wm2014_skin.xml.h:5
+#: plugins_wm2014_skin.xml.h:6 skins_wm2014_skin.xml.h:6
 msgid "Day "
 msgstr "День"
 
@@ -2803,7 +2803,7 @@ msgstr ""
 msgid "DiSEqC Mode"
 msgstr "Режим DiSEqC"
 
-#: plugins_wm2014_skin.xml.h:6 skins_wm2014_skin.xml.h:6
+#: plugins_wm2014_skin.xml.h:7 skins_wm2014_skin.xml.h:7
 msgid "Diff"
 msgstr "Разница"
 
@@ -2920,7 +2920,7 @@ msgstr "Загрузка завершена!"
 msgid "Downloads"
 msgstr "Загрузки"
 
-#: plugins_wm2014_skin.xml.h:7 skins_wm2014_skin.xml.h:7
+#: plugins_wm2014_skin.xml.h:8 skins_wm2014_skin.xml.h:8
 msgid "Draw"
 msgstr ""
 
@@ -4066,7 +4066,7 @@ msgstr ""
 msgid "Go to startpos"
 msgstr "Переход к начальной позиции"
 
-#: plugins_wm2014_skin.xml.h:8 skins_wm2014_skin.xml.h:8
+#: plugins_wm2014_skin.xml.h:9 skins_wm2014_skin.xml.h:9
 msgid "Goals"
 msgstr ""
 
@@ -5293,7 +5293,7 @@ msgstr "Логи"
 msgid "Longitude"
 msgstr "Долгота"
 
-#: plugins_wm2014_skin.xml.h:9 skins_wm2014_skin.xml.h:9
+#: plugins_wm2014_skin.xml.h:10 skins_wm2014_skin.xml.h:10
 msgid "Lost"
 msgstr ""
 
@@ -6780,7 +6780,7 @@ msgstr "Плейлист"
 msgid "Playbackbuffer Size"
 msgstr "Размер буфера"
 
-#: plugins_wm2014_skin.xml.h:10 skins_wm2014_skin.xml.h:10
+#: plugins_wm2014_skin.xml.h:11 skins_wm2014_skin.xml.h:11
 msgid "Played"
 msgstr ""
 
@@ -6862,7 +6862,7 @@ msgstr "Установки"
 msgid "Plugins"
 msgstr "Плагины"
 
-#: plugins_wm2014_skin.xml.h:11 skins_wm2014_skin.xml.h:11
+#: plugins_wm2014_skin.xml.h:12 skins_wm2014_skin.xml.h:12
 msgid "Points"
 msgstr ""
 
@@ -7390,8 +7390,8 @@ msgstr "Поиск"
 msgid "Reduce Standby frequency"
 msgstr "Снижать частоту процессора в режиме ожидания"
 
-#: plugins_wm2014_skin.xml.h:12 skin_default_skin.xml.h:556
-#: skins_wm2014_skin.xml.h:12 softcam.h:292
+#: plugins_wm2014_skin.xml.h:13 skin_default_skin.xml.h:556
+#: skins_wm2014_skin.xml.h:13 softcam.h:292
 msgid "Refresh"
 msgstr "Обновить"
 
@@ -9253,15 +9253,15 @@ msgstr "TXT PID"
 msgid "Tastensperre Plugin - entsperren mit rot/rot/gruen"
 msgstr ""
 
-#: plugins_wm2014_skin.xml.h:13 skins_wm2014_skin.xml.h:13
+#: plugins_wm2014_skin.xml.h:14 skins_wm2014_skin.xml.h:14
 msgid "Team"
 msgstr ""
 
-#: plugins_wm2014_skin.xml.h:14 skins_wm2014_skin.xml.h:14
+#: plugins_wm2014_skin.xml.h:15 skins_wm2014_skin.xml.h:15
 msgid "Team 1"
 msgstr ""
 
-#: plugins_wm2014_skin.xml.h:15 skins_wm2014_skin.xml.h:15
+#: plugins_wm2014_skin.xml.h:16 skins_wm2014_skin.xml.h:16
 msgid "Team 2"
 msgstr ""
 
@@ -9410,7 +9410,7 @@ msgstr "Настройки медиа центра"
 msgid "TiThek the Multimedia-thek"
 msgstr ""
 
-#: plugins_wm2014_skin.xml.h:16 skins_wm2014_skin.xml.h:16
+#: plugins_wm2014_skin.xml.h:17 skins_wm2014_skin.xml.h:17
 msgid "Time"
 msgstr "Время"
 
@@ -10494,7 +10494,7 @@ msgstr ""
 msgid "Wlan rt5370sta"
 msgstr ""
 
-#: plugins_wm2014_skin.xml.h:19 skins_wm2014_skin.xml.h:19
+#: plugins_wm2014_skin.xml.h:20 skins_wm2014_skin.xml.h:20
 msgid "Won"
 msgstr ""
 
@@ -10636,11 +10636,11 @@ msgstr "Увеличение"
 msgid "["
 msgstr ""
 
-#: plugins_wm2014_skin.xml.h:1 skins_wm2014_skin.xml.h:1
+#: plugins_wm2014_skin.xml.h:2 skins_wm2014_skin.xml.h:2
 msgid "[0] => Finals"
 msgstr ""
 
-#: plugins_wm2014_skin.xml.h:2 skins_wm2014_skin.xml.h:2
+#: plugins_wm2014_skin.xml.h:3 skins_wm2014_skin.xml.h:3
 msgid "[9] => Last 16"
 msgstr ""
 
@@ -13058,7 +13058,7 @@ msgstr ""
 msgid "volume"
 msgstr "Громкость"
 
-#: plugins_wm2014_skin.xml.h:17 skins_wm2014_skin.xml.h:17
+#: plugins_wm2014_skin.xml.h:18 skins_wm2014_skin.xml.h:18
 msgid "vs"
 msgstr ""
 
@@ -13102,7 +13102,7 @@ msgstr "Белый"
 msgid "whitelist"
 msgstr "Белый список"
 
-#: plugins_wm2014_skin.xml.h:18 skins_wm2014_skin.xml.h:18
+#: plugins_wm2014_skin.xml.h:19 skins_wm2014_skin.xml.h:19
 msgid "will be set by plugin"
 msgstr "Будет установлен плагин"
 
