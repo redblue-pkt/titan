@@ -31,8 +31,8 @@ done
 
 for ROUND in $HLIST; do
 	FILENAME=`echo $ROUND | sed 's/.html//g' | tr '/' '\n' | tail -n1`
-	echo "[createpo] webif update $ROUND"
-	echo "[createpo] webif update $FILENAME"
+	##echo "[createpo] webif update $ROUND"
+	echo "[createpo] webif update $FILENAME from $ROUND"
 
 	cat $ROUND | sed 's/_(/\ntmpstr = _(/g' | grep ^"tmpstr = _(" | sed 's/").*/");/g' >> "$HOME"/flashimg/$SRCDIR/titan/tools/tmp/webif_$FILENAME.h
 done
@@ -40,16 +40,17 @@ done
 cd "$HOME"/flashimg/$SRCDIR/titan/tools/tmp
 
 for ROUND in $SKINLIST; do
-	echo "[createpo] skin update $ROUND"
+	##echo "[createpo] skin update $ROUND"
 	NAME=`echo $ROUND | tr "/" "\n" | tail -n1`
 	SECTION1=`echo $ROUND | tr "/" "\n" | tail -n3 | head -n1`
 	SECTION2=`echo $ROUND | tr "/" "\n" | tail -n2 | head -n1`
 
-	echo "[createpo] skin " "$SECTION1"_"$SECTION2"_"$NAME".h
+	echo "[createpo] skin update " "$SECTION1"_"$SECTION2"_"$NAME".h from "$ROUND"
 	cp "$HOME"/flashimg/$SRCDIR/titan/tools/dummy "$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME".h
 
-	cat $ROUND | grep title= | sed 's/title=/\ntitle=/' | grep ^title= | cut -d '"' -f2 | sort -u | sed '/^ *$/d' | tr '\n' '#' | sed 's/#\+/\");\ntmpstr = _(\"\ /g'| sed 's/" /"/' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME".h
-	cat $ROUND | grep text= | sed 's/text=/\ntext=/' | grep ^text= | cut -d '"' -f2 | sort -u | sed '/^ *$/d' | tr '\n' '#' | sed 's/#\+/\");\ntmpstr = _(\"\ /g'| sed 's/" /"/' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME".h
+	## sed '/\"\"/d' verhindert leere Einträge (zb. title="")
+	cat $ROUND | grep title= | sed 's/title=/\ntitle=/' | grep ^title= | cut -d '"' -f2 | sort -u | sed '/^ *$/d' | tr '\n' '#' | sed 's/#\+/\");\ntmpstr = _(\"\ /g'| sed 's/" /"/' | sed '/\"\"/d' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME".h
+	cat $ROUND | grep text= | sed 's/text=/\ntext=/' | grep ^text= | cut -d '"' -f2 | sort -u | sed '/^ *$/d' | tr '\n' '#' | sed 's/#\+/\");\ntmpstr = _(\"\ /g'| sed 's/" /"/' | sed '/\"\"/d' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME".h
 done
 
 cat "$HOME"/ipk/source*/*/CONTROL/control | grep Section: | sort -u | sed 's!Section: !tmpstr = _("!g' | sed 's!Package:!\nPackage!g' | grep ^tmpstr | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/tpk_section.h
@@ -77,8 +78,8 @@ for ROUND in $POLIST; do
 		#ROUND_EDIT_UTF=`echo $ROUND | sed 's!titan.po_auto.po!titan.utf.po!'`
 		#ROUND_MERGE_UTF=`echo $ROUND | sed 's!titan.po_auto.po!titan.merge.utf.po!'`
 		#ROUND_MERGE=`echo $ROUND | sed 's!titan.po_auto.po!titan.merge.po!'`
-		#ROUND_NEW=`echo $ROUND | sed 's!titan.po_auto.po!titan.new.po!'`
-		#ROUND_NEW_MERGE=`echo $ROUND | sed 's!titan.po_auto.po!titan.new.merge.po!'`
+		ROUND_NEW=`echo $ROUND | sed 's!titan.po_auto.po!titan.new.po!'`
+		ROUND_NEW_MERGE=`echo $ROUND | sed 's!titan.po_auto.po!titan.new.merge.po!'`
 		
 		## "-nt" ("newer than")
 		if [ $ROUND -nt $ROUND_EDIT ]; then
@@ -99,13 +100,25 @@ for ROUND in $POLIST; do
 		log=`cat "$HOME"/flashimg/$SRCDIR/error/po.log`
 		if [ `echo $log | grep "fatal error" | wc -l` -gt 0 ]; then error="4"; break;fi
 		##Nun haben wir schon ALLE neuen msgid's mit drin! > *.* sammelt alle neuen Einträge, -j sorgt für das Zusammenfügen 
+		##enthält aber noch alte (nicht mehr verwendete) msgid's
 		
+		cmd="xgettext --omit-header -k_ *.* -o $ROUND_NEW"
+		echo "[createpo.sh] $cmd" >> "$HOME"/flashimg/$SRCDIR/error/po.log
+		$cmd >> "$HOME"/flashimg/$SRCDIR/error/po.log 2>&1
+		if [ ! -e "$ROUND_NEW" ] || [ `cat "$ROUND_NEW" | wc -l` -eq 0 ]; then error="5"; break;fi
+		log=`cat "$HOME"/flashimg/$SRCDIR/error/po.log`
+		if [ `echo $log | grep "fatal error" | wc -l` -gt 0 ]; then error="6";break;fi
+
+		echo "[createpo.sh] msgmerge $ROUND_CLEAN $ROUND_NEW > $ROUND_NEW_MERGE"
+		msgmerge $ROUND_CLEAN $ROUND_NEW > $ROUND_NEW_MERGE	
+		if [ ! -e "$ROUND_NEW_MERGE" ] || [ `cat "$ROUND_NEW_MERGE" | wc -l` -eq 0 ]; then error="7"; break;fi
+				
 		##echo ROUND: $ROUND
 		
-		## hier reicht eigentlich nun ROUND_CLEAN, aber wozu "Content-Type:" rauslöschen?
+		## hier reicht eigentlich nun ROUND_NEW_MERGE, aber wozu "Content-Type:" rauslöschen?
 		##cat $ROUND_CLEAN > $OUTFILE_PO
 		## mit dem Eintrag Content-Type gibt msgfmt zwar keine Warnungen aus, aber titan arbeitet damit falsch!??
-		cat $ROUND_CLEAN | sed 's/"Content-Type:.*//g' > $OUTFILE_PO
+		cat $ROUND_NEW_MERGE | sed 's/"Content-Type:.*//g' > $OUTFILE_PO
 		if [ ! -e "$OUTFILE_PO" ] || [ `cat "$OUTFILE_PO" | wc -l` -eq 0 ]; then error="11"; break;fi
 
 		cmd="msgfmt -v $OUTFILE_PO -o $OUTFILE_MO"
@@ -118,10 +131,11 @@ for ROUND in $POLIST; do
 		##noch so einige unnötige Konvertierungen!
 		##iconv -f UTF-8 -t ISO-8859-1 $ROUND_NEW_MERGE > $ROUND
 		#iconv -f UTF-8 -t ISO-8859-1 $ROUND_MERGE > $ROUND
-		cat $ROUND_CLEAN > $ROUND
+		cat $ROUND_NEW_MERGE > $ROUND
 		if [ ! -e "$ROUND" ] || [ `cat "$ROUND" | wc -l` -eq 0 ]; then error="14"; break;fi
 
 		if [ ! -e $OUTFILE_MO ];then
+			## wohl nie aufgetreten: $OUTFILE_ERROR/$OUTFILE_ERROR_AUTO sind nicht definiert
 			cp -a $OUTFILE_PO $OUTFILE_ERROR
 			cp -a $OUTFILE_PO $OUTFILE_ERROR_AUTO
 			error="15"
