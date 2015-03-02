@@ -52,7 +52,8 @@ for ROUND in $SKINLIST; do
 	cat $ROUND | grep title= | sed 's/title=/\ntitle=/' | grep ^title= | cut -d '"' -f2 | sort -u | sed '/^ *$/d' | tr '\n' '#' | sed 's/#\+/\");\ntmpstr = _(\"\ /g'| sed 's/" /"/' | sed '/\"\"/d' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME"
 	cat $ROUND | grep text= | sed 's/text=/\ntext=/' | grep ^text= | cut -d '"' -f2 | sort -u | sed '/^ *$/d' | tr '\n' '#' | sed 's/#\+/\");\ntmpstr = _(\"\ /g'| sed 's/" /"/' | sed '/\"\"/d' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME"
 	## Test 3 mit '/*\"\"*/d'
-	cat "$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME"  | sed '/*\"\"*/d' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME".h
+	## Test 4 mit '/""/d'
+	cat "$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME"  | sed '/""/d' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME".h
 	rm "$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME" 
 done
 
@@ -107,7 +108,7 @@ for ROUND in $POLIST; do
 		##Nun haben wir schon ALLE neuen msgid's mit drin! > *.* sammelt alle neuen Einträge, -j sorgt für das Zusammenfügen 
 		##enthält aber noch alte (nicht mehr verwendete) msgid's
 		
-		##-s sortierte Ausgabe erstellen
+		##-s sortierte Ausgabe erstellen. Bringt die msgid "" an den Anfang!
 		cmd="xgettext --omit-header -s -k_ *.* -o $ROUND_NEW"
 		echo "[createpo.sh] $cmd" >> "$HOME"/flashimg/$SRCDIR/error/po.log
 		$cmd >> "$HOME"/flashimg/$SRCDIR/error/po.log 2>&1
