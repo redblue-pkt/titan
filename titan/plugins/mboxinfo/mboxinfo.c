@@ -74,7 +74,7 @@ int show_info(char *titelname, char *filename)
 	}
 	else
 	{
-		textbox(_(titelname), _(""), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), '\0', 0, '\0', 0, 600, 200, 0, 0);
+		textbox(_(titelname), (""), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), '\0', 0, '\0', 0, 600, 200, 0, 0);
 	}
 
 	fclose(fd);
