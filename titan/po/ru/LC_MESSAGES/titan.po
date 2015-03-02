@@ -64,6 +64,9 @@ msgstr "(Стоп)"
 msgid ")"
 msgstr ""
 
+msgid "*"
+msgstr ""
+
 msgid "+"
 msgstr ""
 
