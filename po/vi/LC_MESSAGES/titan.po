@@ -2168,9 +2168,6 @@ msgstr ""
 msgid "Emu Control"
 msgstr ""
 
-msgid "Emu MGCamd v1.35 for your box"
-msgstr ""
-
 msgid "Emu MGCamd v1.38a and all Configs"
 msgstr ""
 
@@ -2300,20 +2297,6 @@ msgstr " Expert Modus "
 
 msgid "Expert Modus"
 msgstr " Expert Modus "
-
-msgid ""
-"Expert Version 10266 of OScam 2xSlot intern + 1xUSB (blocked EMM for V13 and "
-"V14) for small Memory Receiver"
-msgstr ""
-
-msgid ""
-"Expert Version 10517 of OScam 2xSlot intern + 1xUSB (blocked EMM for V13 and "
-"V14)"
-msgstr ""
-
-msgid ""
-"Expert Version of OScam 2xSlot intern + 1xUSB (blocked EMM for V13 and V14)"
-msgstr ""
 
 msgid "Ext. Modul detect (needs reboot)"
 msgstr "Tìm modul mở rộng (cần khởi động lại)"
@@ -2698,12 +2681,6 @@ msgstr ""
 
 msgid "GUI Restart"
 msgstr "Khởi động lại GUI"
-
-msgid "Gbox 800"
-msgstr ""
-
-msgid "Gbox 804"
-msgstr ""
 
 msgid "Gbox 806"
 msgstr ""
@@ -3859,9 +3836,6 @@ msgstr "Tin nhắn"
 msgid "MetrixHD skin for transparent xpicons"
 msgstr ""
 
-msgid "Mgcamd v1.35"
-msgstr ""
-
 msgid "Mgcamd v1.38a"
 msgstr ""
 
@@ -4201,12 +4175,6 @@ msgid "OSD Transparent"
 msgstr "Độ trong suốt"
 
 msgid "OSD+TV"
-msgstr ""
-
-msgid "OScam Expert"
-msgstr ""
-
-msgid "OScam Small"
 msgstr ""
 
 msgid "OTHER"
@@ -7723,16 +7691,6 @@ msgid "games"
 msgstr "trò chơ"
 
 msgid "gateway"
-msgstr ""
-
-msgid ""
-"gbox 800 with autoident for card hd+ and skyde including all necessary "
-"config files."
-msgstr ""
-
-msgid ""
-"gbox 804 with autoident for card hd+ and skyde including all necessary "
-"config files."
 msgstr ""
 
 msgid ""

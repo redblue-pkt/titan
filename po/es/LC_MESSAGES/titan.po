@@ -2230,9 +2230,6 @@ msgstr "Softcam camd3.902"
 msgid "Emu Control"
 msgstr "Softcam control"
 
-msgid "Emu MGCamd v1.35 for your box"
-msgstr "Softcam MGCamd V1.35"
-
 msgid "Emu MGCamd v1.38a and all Configs"
 msgstr "Softcam MGCamd V1.38"
 
@@ -2363,20 +2360,6 @@ msgstr "Modo Experto"
 
 msgid "Expert Modus"
 msgstr "Modo Experto"
-
-msgid ""
-"Expert Version 10266 of OScam 2xSlot intern + 1xUSB (blocked EMM for V13 and "
-"V14) for small Memory Receiver"
-msgstr ""
-
-msgid ""
-"Expert Version 10517 of OScam 2xSlot intern + 1xUSB (blocked EMM for V13 and "
-"V14)"
-msgstr ""
-
-msgid ""
-"Expert Version of OScam 2xSlot intern + 1xUSB (blocked EMM for V13 and V14)"
-msgstr ""
 
 msgid "Ext. Modul detect (needs reboot)"
 msgstr "Ext. Deteccion Modulo (necesario reiniciar)"
@@ -2787,12 +2770,6 @@ msgstr "Verde"
 
 msgid "GUI Restart"
 msgstr "Reiniciar Titan"
-
-msgid "Gbox 800"
-msgstr ""
-
-msgid "Gbox 804"
-msgstr ""
 
 msgid "Gbox 806"
 msgstr ""
@@ -3975,9 +3952,6 @@ msgstr "Mensaje"
 msgid "MetrixHD skin for transparent xpicons"
 msgstr ""
 
-msgid "Mgcamd v1.35"
-msgstr ""
-
 msgid "Mgcamd v1.38a"
 msgstr ""
 
@@ -4317,12 +4291,6 @@ msgid "OSD Transparent"
 msgstr "maxima transparencia OSD"
 
 msgid "OSD+TV"
-msgstr ""
-
-msgid "OScam Expert"
-msgstr ""
-
-msgid "OScam Small"
 msgstr ""
 
 msgid "OTHER"
@@ -7895,20 +7863,6 @@ msgid "gateway"
 msgstr "Puerta de Enlace"
 
 msgid ""
-"gbox 800 with autoident for card hd+ and skyde including all necessary "
-"config files."
-msgstr ""
-"gbox 800 con autoident para hd tarjeta + y Skyde Incluyendo todos config "
-"archivos necesarios"
-
-msgid ""
-"gbox 804 with autoident for card hd+ and skyde including all necessary "
-"config files."
-msgstr ""
-"gbox 804 con autoident para hd tarjeta + y Skyde Incluyendo todos los "
-"archivos de configuración necesarios"
-
-msgid ""
 "gbox 806 with autoident for card hd+ and skyde including all necessary "
 "config files."
 msgstr ""
@@ -9212,3 +9166,6 @@ msgstr ""
 
 msgid "~"
 msgstr ""
+
+
+

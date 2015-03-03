@@ -2191,9 +2191,6 @@ msgstr ""
 msgid "Emu Control"
 msgstr "Контроль эмулятора"
 
-msgid "Emu MGCamd v1.35 for your box"
-msgstr "Эмулятор MGCamd v1.35"
-
 msgid "Emu MGCamd v1.38a and all Configs"
 msgstr "Эмулятор MGCamd v1.38a"
 
@@ -2323,20 +2320,6 @@ msgstr "Режим эксперта"
 
 msgid "Expert Modus"
 msgstr "Режим эксперта"
-
-msgid ""
-"Expert Version 10266 of OScam 2xSlot intern + 1xUSB (blocked EMM for V13 and "
-"V14) for small Memory Receiver"
-msgstr ""
-
-msgid ""
-"Expert Version 10517 of OScam 2xSlot intern + 1xUSB (blocked EMM for V13 and "
-"V14)"
-msgstr ""
-
-msgid ""
-"Expert Version of OScam 2xSlot intern + 1xUSB (blocked EMM for V13 and V14)"
-msgstr ""
 
 msgid "Ext. Modul detect (needs reboot)"
 msgstr "Внутренний модуль обнаружен (Требуется перезагрузка)"
@@ -2733,12 +2716,6 @@ msgstr "Зелёная"
 
 msgid "GUI Restart"
 msgstr "Рестарт интерфейса"
-
-msgid "Gbox 800"
-msgstr ""
-
-msgid "Gbox 804"
-msgstr ""
 
 msgid "Gbox 806"
 msgstr ""
@@ -3908,9 +3885,6 @@ msgstr "Сообщение"
 msgid "MetrixHD skin for transparent xpicons"
 msgstr ""
 
-msgid "Mgcamd v1.35"
-msgstr ""
-
 msgid "Mgcamd v1.38a"
 msgstr ""
 
@@ -4249,12 +4223,6 @@ msgstr "Прозрачность"
 
 msgid "OSD+TV"
 msgstr "OSD+Видео"
-
-msgid "OScam Expert"
-msgstr ""
-
-msgid "OScam Small"
-msgstr ""
 
 msgid "OTHER"
 msgstr "Другие"
@@ -7795,16 +7763,6 @@ msgid "gateway"
 msgstr "Шлюз"
 
 msgid ""
-"gbox 800 with autoident for card hd+ and skyde including all necessary "
-"config files."
-msgstr ""
-
-msgid ""
-"gbox 804 with autoident for card hd+ and skyde including all necessary "
-"config files."
-msgstr ""
-
-msgid ""
 "gbox 806 with autoident for card hd+ and skyde including all necessary "
 "config files."
 msgstr ""
@@ -9102,3 +9060,4 @@ msgstr ""
 
 msgid "~"
 msgstr ""
+
