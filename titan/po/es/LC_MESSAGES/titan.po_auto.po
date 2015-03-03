@@ -13275,9 +13275,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "Emu scam 3.53 for your box"
-#~ msgstr "Softcam SCam V3.53"
-
-#~ msgid "Emu scam 3.59 for your box"
-#~ msgstr "Softcam SCam V3.59"
