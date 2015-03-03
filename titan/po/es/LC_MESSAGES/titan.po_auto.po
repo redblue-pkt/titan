@@ -13283,20 +13283,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "Emu MGCamd v1.35 for your box"
-#~ msgstr "Softcam MGCamd V1.35"
-
-#~ msgid ""
-#~ "gbox 800 with autoident for card hd+ and skyde including all necessary "
-#~ "config files."
-#~ msgstr ""
-#~ "gbox 800 con autoident para hd tarjeta + y Skyde Incluyendo todos config "
-#~ "archivos necesarios"
-
-#~ msgid ""
-#~ "gbox 804 with autoident for card hd+ and skyde including all necessary "
-#~ "config files."
-#~ msgstr ""
-#~ "gbox 804 con autoident para hd tarjeta + y Skyde Incluyendo todos los "
-#~ "archivos de configuración necesarios"

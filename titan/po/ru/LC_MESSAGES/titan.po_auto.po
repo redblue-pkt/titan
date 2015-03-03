@@ -13177,6 +13177,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "Emu MGCamd v1.35 for your box"
-#~ msgstr "Эмулятор MGCamd v1.35"
