@@ -2168,12 +2168,6 @@ msgstr ""
 msgid "Emu not found"
 msgstr "nessun Emu trovato"
 
-msgid "Emu scam 3.53 for your box"
-msgstr ""
-
-msgid "Emu scam 3.59 for your box"
-msgstr ""
-
 msgid "Emu scam 3.60 for your box"
 msgstr ""
 
@@ -4222,6 +4216,9 @@ msgstr ""
 
 msgid "Orgname:"
 msgstr "Nome utente"
+
+msgid "Oscam"
+msgstr ""
 
 msgid "Oscam config written to medium !"
 msgstr "Oscam Config e stata salvata!"
@@ -6806,6 +6803,9 @@ msgstr ""
 msgid "Version"
 msgstr ""
 
+msgid "Version 10469 of OScam"
+msgstr ""
+
 msgid "Vertikal"
 msgstr ""
 
@@ -8300,12 +8300,6 @@ msgstr ""
 
 msgid "save network settings ?"
 msgstr "Salva impostazioni rete?"
-
-msgid "scam 3.53"
-msgstr ""
-
-msgid "scam 3.59"
-msgstr ""
 
 msgid "scam 3.60"
 msgstr ""

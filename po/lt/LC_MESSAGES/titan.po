@@ -2211,12 +2211,6 @@ msgstr ""
 msgid "Emu not found"
 msgstr "Softcam nerastas"
 
-msgid "Emu scam 3.53 for your box"
-msgstr ""
-
-msgid "Emu scam 3.59 for your box"
-msgstr ""
-
 msgid "Emu scam 3.60 for your box"
 msgstr ""
 
@@ -4306,6 +4300,9 @@ msgstr ""
 
 msgid "Orgname:"
 msgstr "Organizacijos pavadinimas :"
+
+msgid "Oscam"
+msgstr ""
 
 msgid "Oscam config written to medium !"
 msgstr "OScam config saved!"
@@ -6931,6 +6928,9 @@ msgstr ""
 msgid "Version"
 msgstr "Versija"
 
+msgid "Version 10469 of OScam"
+msgstr ""
+
 msgid "Vertikal"
 msgstr ""
 
@@ -8428,12 +8428,6 @@ msgstr "Palydov paieka"
 
 msgid "save network settings ?"
 msgstr "Isaugoti tinklo nustatymus ?"
-
-msgid "scam 3.53"
-msgstr ""
-
-msgid "scam 3.59"
-msgstr ""
 
 msgid "scam 3.60"
 msgstr ""

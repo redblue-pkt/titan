@@ -2199,12 +2199,6 @@ msgstr ""
 msgid "Emu not found"
 msgstr "Geen Softcam gevonden"
 
-msgid "Emu scam 3.53 for your box"
-msgstr ""
-
-msgid "Emu scam 3.59 for your box"
-msgstr ""
-
 msgid "Emu scam 3.60 for your box"
 msgstr ""
 
@@ -4289,6 +4283,9 @@ msgstr ""
 
 msgid "Orgname:"
 msgstr "Organisatie:"
+
+msgid "Oscam"
+msgstr ""
 
 msgid "Oscam config written to medium !"
 msgstr "Oscam configuratie wordt opgeslagen!"
@@ -6898,6 +6895,9 @@ msgstr ""
 msgid "Version"
 msgstr "Versie"
 
+msgid "Version 10469 of OScam"
+msgstr ""
+
 msgid "Vertikal"
 msgstr "Vertikaal"
 
@@ -8394,12 +8394,6 @@ msgstr ""
 
 msgid "save network settings ?"
 msgstr "Netwerkinstellingen opslaan? "
-
-msgid "scam 3.53"
-msgstr ""
-
-msgid "scam 3.59"
-msgstr ""
 
 msgid "scam 3.60"
 msgstr ""
