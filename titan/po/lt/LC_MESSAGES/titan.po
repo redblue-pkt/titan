@@ -2199,9 +2199,6 @@ msgstr ""
 msgid "Emu Control"
 msgstr "Softcam kontrol"
 
-msgid "Emu MGCamd v1.35 for your box"
-msgstr ""
-
 msgid "Emu MGCamd v1.38a and all Configs"
 msgstr ""
 
@@ -2331,20 +2328,6 @@ msgstr "Iplstinis"
 
 msgid "Expert Modus"
 msgstr "Expert Mode"
-
-msgid ""
-"Expert Version 10266 of OScam 2xSlot intern + 1xUSB (blocked EMM for V13 and "
-"V14) for small Memory Receiver"
-msgstr ""
-
-msgid ""
-"Expert Version 10517 of OScam 2xSlot intern + 1xUSB (blocked EMM for V13 and "
-"V14)"
-msgstr ""
-
-msgid ""
-"Expert Version of OScam 2xSlot intern + 1xUSB (blocked EMM for V13 and V14)"
-msgstr ""
 
 msgid "Ext. Modul detect (needs reboot)"
 msgstr ""
@@ -2742,12 +2725,6 @@ msgstr "alia"
 
 msgid "GUI Restart"
 msgstr "Titan Perkrauti"
-
-msgid "Gbox 800"
-msgstr ""
-
-msgid "Gbox 804"
-msgstr ""
 
 msgid "Gbox 806"
 msgstr ""
@@ -3923,9 +3900,6 @@ msgstr "Praneimas"
 msgid "MetrixHD skin for transparent xpicons"
 msgstr ""
 
-msgid "Mgcamd v1.35"
-msgstr ""
-
 msgid "Mgcamd v1.38a"
 msgstr ""
 
@@ -4265,12 +4239,6 @@ msgid "OSD Transparent"
 msgstr ""
 
 msgid "OSD+TV"
-msgstr ""
-
-msgid "OScam Expert"
-msgstr ""
-
-msgid "OScam Small"
 msgstr ""
 
 msgid "OTHER"
@@ -7824,16 +7792,6 @@ msgid "games"
 msgstr ""
 
 msgid "gateway"
-msgstr ""
-
-msgid ""
-"gbox 800 with autoident for card hd+ and skyde including all necessary "
-"config files."
-msgstr ""
-
-msgid ""
-"gbox 804 with autoident for card hd+ and skyde including all necessary "
-"config files."
 msgstr ""
 
 msgid ""
