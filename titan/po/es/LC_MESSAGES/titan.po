@@ -2242,12 +2242,6 @@ msgstr ""
 msgid "Emu not found"
 msgstr "Softcam no encontrado"
 
-msgid "Emu scam 3.53 for your box"
-msgstr "Softcam SCam V3.53"
-
-msgid "Emu scam 3.59 for your box"
-msgstr "Softcam SCam V3.59"
-
 msgid "Emu scam 3.60 for your box"
 msgstr "Softcam SCam V3.60"
 
@@ -4358,6 +4352,9 @@ msgstr "Posicion Orbital: "
 
 msgid "Orgname:"
 msgstr "Organizacion nombre:"
+
+msgid "Oscam"
+msgstr ""
 
 msgid "Oscam config written to medium !"
 msgstr "OScam config guardada!"
@@ -6997,6 +6994,9 @@ msgstr ""
 msgid "Version"
 msgstr ""
 
+msgid "Version 10469 of OScam"
+msgstr ""
+
 msgid "Vertikal"
 msgstr ""
 
@@ -8499,12 +8499,6 @@ msgstr "Recepcion Satfinder"
 msgid "save network settings ?"
 msgstr "Guardar configuracion de red?"
 
-msgid "scam 3.53"
-msgstr ""
-
-msgid "scam 3.59"
-msgstr ""
-
 msgid "scam 3.60"
 msgstr ""
 
@@ -9166,3 +9160,5 @@ msgstr ""
 
 msgid "~"
 msgstr ""
+
+

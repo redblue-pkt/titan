@@ -2203,12 +2203,6 @@ msgstr ""
 msgid "Emu not found"
 msgstr "Эмулятор не найден"
 
-msgid "Emu scam 3.53 for your box"
-msgstr ""
-
-msgid "Emu scam 3.59 for your box"
-msgstr ""
-
 msgid "Emu scam 3.60 for your box"
 msgstr ""
 
@@ -4289,6 +4283,9 @@ msgstr "Орбитальная позиция"
 
 msgid "Orgname:"
 msgstr "Организация"
+
+msgid "Oscam"
+msgstr ""
 
 msgid "Oscam config written to medium !"
 msgstr ""
@@ -6901,6 +6898,9 @@ msgstr ""
 msgid "Version"
 msgstr "Версия"
 
+msgid "Version 10469 of OScam"
+msgstr ""
+
 msgid "Vertikal"
 msgstr "Вертикальная"
 
@@ -8396,12 +8396,6 @@ msgstr "Уровень и качество сигнала"
 
 msgid "save network settings ?"
 msgstr "Сохранить настройки сети?"
-
-msgid "scam 3.53"
-msgstr ""
-
-msgid "scam 3.59"
-msgstr ""
 
 msgid "scam 3.60"
 msgstr ""
