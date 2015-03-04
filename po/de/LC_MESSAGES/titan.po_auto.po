@@ -5060,7 +5060,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:391
 msgid "K-Update"
-msgstr ""
+msgstr "Updater"
 
 #: spinner.h:18
 msgid "KILL"
