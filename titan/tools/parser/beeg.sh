@@ -25,7 +25,8 @@ if [ "$buildtype" = "full" ];then
 	$wgetbin http://beeg.com -O cache.beeg.main.html
 	
 	sectionstags=`cat cache.beeg.main.html | grep 'href="/tag/' | cut -d '"' -f4`
-	count=`cat cache.beeg.main.html | grep ^'<a href="/section/home/' | grep 'target="_self">' | cut -d ">" -f2 | cut -d"<" -f1 | tail -n1`
+#	count=`cat cache.beeg.main.html | grep ^'<a href="/section/home/' | grep 'target="_self">' | cut -d ">" -f2 | cut -d"<" -f1 | tail -n1`
+	count=`echo $sectionstags | tr ' ' '\n' | wc -l`
 	echo "[beeg.sh] count: $count"
 	i=1
 	until [ "$i" -gt "$count" ]
