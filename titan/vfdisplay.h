@@ -54,8 +54,8 @@ void screenvfdisplay()
 		addchoicebox(vfdnotstandby, "1", _("channel + time"));
 		addchoicebox(vfdnotstandby, "2", _("time + channel"));
 		addchoicebox(vfdnotstandby, "3", _("time"));
-		addchoicebox(vfdnotstandby, "4", _("time small"));
 	}
+	addchoicebox(vfdnotstandby, "4", _("time small"));
 	addchoicebox(vfdnotstandby, "5", _("channel number"));
 	setchoiceboxselection(vfdnotstandby, getconfig("vfdisplay", NULL));
 
@@ -67,6 +67,8 @@ void screenvfdisplay()
 		addchoicebox(vfdstandby, "3", _("vfddate"));
 	}
 	setchoiceboxselection(vfdstandby, getconfig("vfdisplaystandby", NULL));
+
+//record
 
 	if(checkbox("ATEMIO-NEMESIS") == 1)
 		vfdrecord->hidden = YES;
@@ -83,6 +85,8 @@ void screenvfdisplay()
 		addchoicebox(vfdrecord, "5", _("blink star"));
 		setchoiceboxselection(vfdrecord, getconfig("vfdisplayrecord", NULL));
 	}
+
+//powerled
 
 	changeinput(at7000frontrun, "15\n14\n13\n12\n11\n10\n9\n8\n7\n6\n5\n4\n3\n2\n1\n0");
 	setchoiceboxselection(at7000frontrun, getconfig("at7000frontrun", NULL));
