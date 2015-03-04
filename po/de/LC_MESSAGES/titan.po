@@ -3619,7 +3619,7 @@ msgid "Keyboard"
 msgstr "Tastatur"
 
 msgid "Keys Updated !"
-msgstr "Keys aktualisiert!"
+msgstr "aktualisiert!"
 
 msgid "KinoX"
 msgstr ""
