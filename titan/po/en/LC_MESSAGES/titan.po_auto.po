@@ -10824,11 +10824,11 @@ msgstr ""
 msgid "blindscanadjust"
 msgstr ""
 
-#: vfdisplay.h:74 vfdisplay.h:79
+#: vfdisplay.h:76 vfdisplay.h:81
 msgid "blink"
 msgstr "Blink"
 
-#: vfdisplay.h:83
+#: vfdisplay.h:85
 msgid "blink star"
 msgstr "Blinking star"
 
@@ -11239,7 +11239,7 @@ msgstr "external"
 msgid "f"
 msgstr ""
 
-#: vfdisplay.h:80
+#: vfdisplay.h:82
 msgid "fade out/in"
 msgstr "Fade in/out"
 
@@ -11871,7 +11871,7 @@ msgstr ""
 #: panel_settings_overclocking.h:276 readerconfig.h:421
 #: settings_autostart.h:53 settings_overclocking.h:276 transponder.h:256
 #: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:836
-#: vfdisplay.h:63 vfdisplay.h:78
+#: vfdisplay.h:63 vfdisplay.h:80
 msgid "off"
 msgstr "Off"
 
@@ -12427,7 +12427,7 @@ msgstr "Show entrys (Auto amount)"
 msgid "show in list"
 msgstr "Show in List"
 
-#: vfdisplay.h:81
+#: vfdisplay.h:83
 msgid "show record"
 msgstr "Show 'Record'"
 
@@ -12533,7 +12533,7 @@ msgstr "Standby"
 msgid "standbymenu"
 msgstr ""
 
-#: vfdisplay.h:82
+#: vfdisplay.h:84
 msgid "star"
 msgstr "Star"
 
@@ -12743,7 +12743,7 @@ msgstr "Time"
 msgid "time + channel"
 msgstr "Time + Channelname"
 
-#: vfdisplay.h:57
+#: vfdisplay.h:58
 msgid "time small"
 msgstr "Time small"
 

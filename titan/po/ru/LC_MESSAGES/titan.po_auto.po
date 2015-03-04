@@ -10784,11 +10784,11 @@ msgstr "Чёрный"
 msgid "blindscanadjust"
 msgstr "Слепой поиск"
 
-#: vfdisplay.h:74 vfdisplay.h:79
+#: vfdisplay.h:76 vfdisplay.h:81
 msgid "blink"
 msgstr "Мигающий"
 
-#: vfdisplay.h:83
+#: vfdisplay.h:85
 msgid "blink star"
 msgstr "Мигающая звёздочка + название канала"
 
@@ -11199,7 +11199,7 @@ msgstr "Внешний"
 msgid "f"
 msgstr ""
 
-#: vfdisplay.h:80
+#: vfdisplay.h:82
 msgid "fade out/in"
 msgstr "Плавно мигающий"
 
@@ -11831,7 +11831,7 @@ msgstr ""
 #: panel_settings_overclocking.h:276 readerconfig.h:421
 #: settings_autostart.h:53 settings_overclocking.h:276 transponder.h:256
 #: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:836
-#: vfdisplay.h:63 vfdisplay.h:78
+#: vfdisplay.h:63 vfdisplay.h:80
 msgid "off"
 msgstr "Выкл"
 
@@ -12390,7 +12390,7 @@ msgstr "Автоматически"
 msgid "show in list"
 msgstr "В виде списка"
 
-#: vfdisplay.h:81
+#: vfdisplay.h:83
 msgid "show record"
 msgstr "Индикатор записи"
 
@@ -12496,7 +12496,7 @@ msgstr "Режим ожидания"
 msgid "standbymenu"
 msgstr ""
 
-#: vfdisplay.h:82
+#: vfdisplay.h:84
 msgid "star"
 msgstr "Звёздочка + название канала"
 
@@ -12706,7 +12706,7 @@ msgstr "Время"
 msgid "time + channel"
 msgstr "Время + канал"
 
-#: vfdisplay.h:57
+#: vfdisplay.h:58
 msgid "time small"
 msgstr "Время (Мелко)"
 
