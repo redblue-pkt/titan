@@ -3565,7 +3565,7 @@ msgid "K"
 msgstr ""
 
 msgid "K-Update"
-msgstr ""
+msgstr "Updater"
 
 msgid "KILL"
 msgstr "Rot"
