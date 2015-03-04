@@ -5133,7 +5133,7 @@ msgstr "Tastatur"
 
 #: softcam.h:452
 msgid "Keys Updated !"
-msgstr "Keys aktualisiert!"
+msgstr "aktualisiert!"
 
 #: tithek_mainmenu.h:23
 msgid "KinoX"
