@@ -4235,6 +4235,9 @@ msgstr ""
 msgid "OSD+TV"
 msgstr ""
 
+msgid "OScam 2xSlot intern + 1xUSB (blocked EMM for V13 and V14)"
+msgstr ""
+
 msgid "OTHER"
 msgstr "Kiti"
 
@@ -4300,9 +4303,6 @@ msgstr ""
 
 msgid "Orgname:"
 msgstr "Organizacijos pavadinimas :"
-
-msgid "Oscam"
-msgstr ""
 
 msgid "Oscam config written to medium !"
 msgstr "OScam config saved!"
@@ -6928,9 +6928,6 @@ msgstr ""
 msgid "Version"
 msgstr "Versija"
 
-msgid "Version 10469 of OScam"
-msgstr ""
-
 msgid "Vertikal"
 msgstr ""
 
@@ -8209,6 +8206,9 @@ msgstr ""
 
 msgid "options"
 msgstr "Options"
+
+msgid "oscam"
+msgstr ""
 
 msgid "ownpos"
 msgstr ""
