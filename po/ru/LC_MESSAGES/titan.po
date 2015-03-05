@@ -4218,6 +4218,9 @@ msgstr "Прозрачность"
 msgid "OSD+TV"
 msgstr "OSD+Видео"
 
+msgid "OScam 2xSlot intern + 1xUSB (blocked EMM for V13 and V14)"
+msgstr ""
+
 msgid "OTHER"
 msgstr "Другие"
 
@@ -4283,9 +4286,6 @@ msgstr "Орбитальная позиция"
 
 msgid "Orgname:"
 msgstr "Организация"
-
-msgid "Oscam"
-msgstr ""
 
 msgid "Oscam config written to medium !"
 msgstr ""
@@ -6898,9 +6898,6 @@ msgstr ""
 msgid "Version"
 msgstr "Версия"
 
-msgid "Version 10469 of OScam"
-msgstr ""
-
 msgid "Vertikal"
 msgstr "Вертикальная"
 
@@ -8177,6 +8174,9 @@ msgstr "Плагин оптимизации системы"
 
 msgid "options"
 msgstr "Опции"
+
+msgid "oscam"
+msgstr ""
 
 msgid "ownpos"
 msgstr ""
