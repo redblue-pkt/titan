@@ -4979,7 +4979,7 @@ msgstr "Клавиатура"
 
 #: softcam.h:452
 msgid "Keys Updated !"
-msgstr ""
+msgstr "Updated !"
 
 #: tithek_mainmenu.h:23
 msgid "KinoX"
