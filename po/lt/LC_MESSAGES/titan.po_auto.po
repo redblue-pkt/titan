@@ -2413,19 +2413,19 @@ msgstr ""
 msgid "Create Thumb Picture"
 msgstr ""
 
-#: global.h:6483
+#: global.h:6494
 msgid "Create Transponder (All)"
 msgstr ""
 
-#: global.h:6481
+#: global.h:6492
 msgid "Create Transponder (Cable)"
 msgstr ""
 
-#: global.h:6480
+#: global.h:6491
 msgid "Create Transponder (Sat)"
 msgstr ""
 
-#: global.h:6482
+#: global.h:6493
 msgid "Create Transponder (Terrestrial)"
 msgstr ""
 
@@ -3085,7 +3085,7 @@ msgstr "KLAIDA : nepavyko nustatyti ymekl  fail"
 #: filenuke.h:106 filenuke.h:118 filenuke.h:190 firedrive.h:33 firedrive.h:66
 #: firedrive.h:72 firedrive.h:122 firedrive.h:128 firedrive.h:138 flashx.h:26
 #: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:5851 global.h:6545 global.h:6614 global.h:6633 global.h:6808
+#: global.h:5851 global.h:6556 global.h:6625 global.h:6644 global.h:6819
 #: harddisk.h:350 harddisk.h:355 harddisk.h:382 harddisk.h:386 harddisk.h:439
 #: harddisk.h:633 harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729
 #: harddisk.h:731 harddisk.h:733 harddisk.h:793 harddisk.h:812 harddisk.h:815
@@ -3324,11 +3324,11 @@ msgstr ""
 msgid "Error, found result without imdbid we can't this save in MediaDB"
 msgstr "ERROR: Due to a false IMDBID the value cannot be stored in MediaDB"
 
-#: global.h:6631
+#: global.h:6642
 msgid "Error: Transponder Source file no data"
 msgstr "Klaida: Sistuvo altinio failas nra duomen"
 
-#: global.h:6609
+#: global.h:6620
 msgid "Error: Transponder Source file not found"
 msgstr "Klaida: Sistuvo altinis failas nerastas"
 
@@ -3857,11 +3857,11 @@ msgstr ""
 msgid "Frequency:"
 msgstr ""
 
-#: global.h:6090
+#: global.h:6101
 msgid "Fri"
 msgstr "Pen"
 
-#: global.h:6080 rectimer.h:1084 skin_default_skin.xml.h:273
+#: global.h:6081 global.h:6091 rectimer.h:1084 skin_default_skin.xml.h:273
 msgid "Friday"
 msgstr "Penktadienis"
 
@@ -5584,8 +5584,8 @@ msgstr ""
 #: filenuke.h:46 filenuke.h:94 filenuke.h:106 filenuke.h:118 filenuke.h:190
 #: firedrive.h:33 firedrive.h:66 firedrive.h:72 firedrive.h:122
 #: firedrive.h:128 firedrive.h:138 flashx.h:26 flashx.h:84 flashx.h:138
-#: flashx.h:195 flashx.h:233 flashx.h:270 global.h:5851 global.h:6545
-#: global.h:6614 global.h:6633 global.h:6808 harddisk.h:633 harddisk.h:641
+#: flashx.h:195 flashx.h:233 flashx.h:270 global.h:5851 global.h:6556
+#: global.h:6625 global.h:6644 global.h:6819 harddisk.h:633 harddisk.h:641
 #: harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733
 #: harddisk.h:793 harddisk.h:812 harddisk.h:815 hbbtv.h:362 hello.c:36
 #: httpdfunc.h:1304 httpdfunc.h:5773 httpdfunc.h:6159 httpdfunc.h:6424
@@ -5719,11 +5719,11 @@ msgstr "Modulio tipas"
 msgid "Module info"
 msgstr "Modul Information"
 
-#: global.h:6086
+#: global.h:6097
 msgid "Mon"
 msgstr "Pir"
 
-#: global.h:6076 rectimer.h:1080 skin_default_skin.xml.h:440
+#: global.h:6077 global.h:6087 rectimer.h:1080 skin_default_skin.xml.h:440
 msgid "Monday"
 msgstr "Pirmadienis"
 
@@ -5809,7 +5809,7 @@ msgstr "Keli Palydovai"
 msgid "Multiple Service"
 msgstr "Kelios Paslaugos"
 
-#: global.h:6430
+#: global.h:6441
 msgid "Multituner adjustable"
 msgstr "Multituner reguliuojamas"
 
@@ -6115,7 +6115,7 @@ msgstr ""
 #: filenuke.h:106 filenuke.h:118 filenuke.h:190 firedrive.h:33 firedrive.h:66
 #: firedrive.h:72 firedrive.h:122 firedrive.h:128 firedrive.h:138 flashx.h:26
 #: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:5851 global.h:6545 global.h:6614 global.h:6633 global.h:6808
+#: global.h:5851 global.h:6556 global.h:6625 global.h:6644 global.h:6819
 #: harddisk.h:350 harddisk.h:355 harddisk.h:382 harddisk.h:386 harddisk.h:439
 #: harddisk.h:633 harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729
 #: harddisk.h:731 harddisk.h:733 harddisk.h:793 harddisk.h:812 harddisk.h:815
@@ -7731,7 +7731,7 @@ msgstr ""
 msgid "Samsung SPF.. Settings"
 msgstr "Samba Server Settings"
 
-#: global.h:6091
+#: global.h:6102
 msgid "Sat"
 msgstr "e"
 
@@ -7811,7 +7811,7 @@ msgstr ""
 msgid "Saturation"
 msgstr ""
 
-#: global.h:6081 rectimer.h:1085 skin_default_skin.xml.h:598
+#: global.h:6082 global.h:6092 rectimer.h:1085 skin_default_skin.xml.h:598
 msgid "Saturday"
 msgstr "etadienis"
 
@@ -8247,7 +8247,7 @@ msgstr ""
 msgid "Select Your Remote Control"
 msgstr "Remote Control Selection"
 
-#: global.h:6485
+#: global.h:6496
 msgid "Select Your Serach Modus"
 msgstr "Pasirinkite paiekos reimas"
 
@@ -8738,7 +8738,7 @@ msgstr "Sportas"
 msgid "StandBy Mode"
 msgstr ""
 
-#: global.h:6808
+#: global.h:6819
 msgid ""
 "Standard favorites have been successfully applied.\n"
 "Your System will reboot !"
@@ -8971,11 +8971,11 @@ msgstr ""
 msgid "Sudoku Help"
 msgstr ""
 
-#: global.h:6092
+#: global.h:6103
 msgid "Sun"
 msgstr "Sek"
 
-#: global.h:6082 rectimer.h:1086 skin_default_skin.xml.h:692
+#: global.h:6083 global.h:6093 rectimer.h:1086 skin_default_skin.xml.h:692
 msgid "Sunday"
 msgstr "Sekmadienis"
 
@@ -9322,11 +9322,11 @@ msgstr ""
 msgid "Thriller"
 msgstr "Trileris"
 
-#: global.h:6089
+#: global.h:6100
 msgid "Thu"
 msgstr "Ket"
 
-#: global.h:6079 rectimer.h:1083 skin_default_skin.xml.h:718
+#: global.h:6080 global.h:6090 rectimer.h:1083 skin_default_skin.xml.h:718
 msgid "Thursday"
 msgstr "Ketvirtadienis"
 
@@ -9755,7 +9755,7 @@ msgstr ""
 msgid "Transponder changed"
 msgstr "Sistuvas pakeistas"
 
-#: global.h:6545
+#: global.h:6556
 msgid ""
 "Transponder/Satellite Convert done, please use channel search on next Boot.\n"
 "Your System will reboot !"
@@ -9788,11 +9788,11 @@ msgstr ""
 msgid "Trial period ends in"
 msgstr ""
 
-#: global.h:6087
+#: global.h:6098
 msgid "Tue"
 msgstr "Ant"
 
-#: global.h:6077 rectimer.h:1081 skin_default_skin.xml.h:754
+#: global.h:6078 global.h:6088 rectimer.h:1081 skin_default_skin.xml.h:754
 msgid "Tuesday"
 msgstr "Antradienis"
 
@@ -9804,7 +9804,7 @@ msgstr "ERROR: Tuning to Channel failed"
 msgid "Tuner"
 msgstr "Imtuvas"
 
-#: global.h:6421
+#: global.h:6432
 msgid "Tuner "
 msgstr "Imtuvas"
 
@@ -10362,11 +10362,11 @@ msgstr ""
 msgid "Webbrowser Plugin "
 msgstr ""
 
-#: global.h:6088
+#: global.h:6099
 msgid "Wed"
 msgstr "Tre"
 
-#: global.h:6078 rectimer.h:1082 skin_default_skin.xml.h:811
+#: global.h:6079 global.h:6089 rectimer.h:1082 skin_default_skin.xml.h:811
 msgid "Wednesday"
 msgstr "Treiadienis"
 
