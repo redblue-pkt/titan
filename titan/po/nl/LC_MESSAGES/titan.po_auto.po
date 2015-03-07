@@ -4906,7 +4906,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:391
 msgid "K-Update"
-msgstr ""
+msgstr "Updater"
 
 #: spinner.h:18
 msgid "KILL"
@@ -4979,7 +4979,7 @@ msgstr ""
 
 #: softcam.h:452
 msgid "Keys Updated !"
-msgstr ""
+msgstr "Updated !"
 
 #: tithek_mainmenu.h:23
 msgid "KinoX"
