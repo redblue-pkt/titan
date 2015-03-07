@@ -6065,6 +6065,7 @@ char* fixport(char* input, int flag)
 
 //flag 0: Mon > Montag
 //flag 1: Mon > Mon
+//flag 2: Monday > Montag
 char* translate_time(char* input, int flag)
 {
 	char* tmpstr = NULL;
@@ -6081,8 +6082,18 @@ char* translate_time(char* input, int flag)
 		tmpstr = string_replace_all("Sat", _("Saturday"), tmpstr, 1);
 		tmpstr = string_replace_all("Sun", _("Sunday"), tmpstr, 1);
 	}
+	else if(flag == 2)
+	{
+		tmpstr = string_replace_all("Monday", _("Monday"), tmpstr, 1);
+		tmpstr = string_replace_all("Tuesday", _("Tuesday"), tmpstr, 1);
+		tmpstr = string_replace_all("Wednesday", _("Wednesday"), tmpstr, 1);
+		tmpstr = string_replace_all("Thursday", _("Thursday"), tmpstr, 1);
+		tmpstr = string_replace_all("Friday", _("Friday"), tmpstr, 1);
+		tmpstr = string_replace_all("Saturday", _("Saturday"), tmpstr, 1);
+		tmpstr = string_replace_all("Sunday", _("Sunday"), tmpstr, 1);
+	}
 	else
-	{	
+	{
 		tmpstr = string_replace("Mon", _("Mon"), tmpstr, 1);
 		tmpstr = string_replace("Tue", _("Tue"), tmpstr, 1);
 		tmpstr = string_replace("Wed", _("Wed"), tmpstr, 1);

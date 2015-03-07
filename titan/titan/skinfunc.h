@@ -971,7 +971,8 @@ char* gettime(struct skin* node, char* format)
 		buf1 = ostrcat(buf, NULL, 1, 0);
 	}
 
-	buf1 = translate_time(buf1, 1);
+	if(ostrstr(format, "%a")) buf1 = translate_time(buf1, 1);
+	if(ostrstr(format, "%A")) buf1 = translate_time(buf1, 2);
 
 	free(loctime);
 	return buf1;
