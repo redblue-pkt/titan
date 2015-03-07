@@ -3465,7 +3465,7 @@ msgid "Keyboard"
 msgstr "Клавиатура"
 
 msgid "Keys Updated !"
-msgstr ""
+msgstr "Updated !"
 
 msgid "KinoX"
 msgstr ""

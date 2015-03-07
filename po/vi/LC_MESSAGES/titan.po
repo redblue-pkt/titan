@@ -3368,7 +3368,7 @@ msgid "K"
 msgstr ""
 
 msgid "K-Update"
-msgstr ""
+msgstr "Updater"
 
 msgid "KILL"
 msgstr "xóa"
@@ -3422,7 +3422,7 @@ msgid "Keyboard"
 msgstr "Bàn phím"
 
 msgid "Keys Updated !"
-msgstr ""
+msgstr "Updated !"
 
 msgid "KinoX"
 msgstr ""

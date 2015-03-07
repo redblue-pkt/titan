@@ -3478,7 +3478,7 @@ msgid "K"
 msgstr ""
 
 msgid "K-Update"
-msgstr ""
+msgstr "Updater"
 
 msgid "KILL"
 msgstr "Rojo"
@@ -3532,7 +3532,7 @@ msgid "Keyboard"
 msgstr "teclado"
 
 msgid "Keys Updated !"
-msgstr ""
+msgstr "Updated !"
 
 msgid "KinoX"
 msgstr ""
