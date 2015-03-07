@@ -3320,7 +3320,7 @@ msgid "K"
 msgstr ""
 
 msgid "K-Update"
-msgstr ""
+msgstr "Updater"
 
 msgid "KILL"
 msgstr ""
@@ -3374,7 +3374,7 @@ msgid "Keyboard"
 msgstr "Clavier"
 
 msgid "Keys Updated !"
-msgstr ""
+msgstr "Updated !"
 
 msgid "KinoX"
 msgstr ""
