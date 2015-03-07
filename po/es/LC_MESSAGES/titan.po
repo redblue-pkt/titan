@@ -4287,9 +4287,6 @@ msgstr "maxima transparencia OSD"
 msgid "OSD+TV"
 msgstr ""
 
-msgid "OScam 2xSlot intern + 1xUSB (blocked EMM for V13 and V14)"
-msgstr ""
-
 msgid "OTHER"
 msgstr "Otros"
 
@@ -4355,6 +4352,9 @@ msgstr "Posicion Orbital: "
 
 msgid "Orgname:"
 msgstr "Organizacion nombre:"
+
+msgid "Oscam"
+msgstr ""
 
 msgid "Oscam config written to medium !"
 msgstr "OScam config guardada!"
@@ -6994,6 +6994,9 @@ msgstr ""
 msgid "Version"
 msgstr ""
 
+msgid "Version 10469 of OScam"
+msgstr ""
+
 msgid "Vertikal"
 msgstr ""
 
@@ -8276,9 +8279,6 @@ msgstr "Optimizacion de Lista de Canales"
 
 msgid "options"
 msgstr "Opciones"
-
-msgid "oscam"
-msgstr ""
 
 msgid "ownpos"
 msgstr ""

@@ -4171,9 +4171,6 @@ msgstr "Độ trong suốt"
 msgid "OSD+TV"
 msgstr ""
 
-msgid "OScam 2xSlot intern + 1xUSB (blocked EMM for V13 and V14)"
-msgstr ""
-
 msgid "OTHER"
 msgstr "khác"
 
@@ -4239,6 +4236,9 @@ msgstr "Vị trí quỹ đạo:"
 
 msgid "Orgname:"
 msgstr "tên người dùng"
+
+msgid "Oscam"
+msgstr ""
 
 msgid "Oscam config written to medium !"
 msgstr ""
@@ -6830,6 +6830,9 @@ msgstr ""
 msgid "Version"
 msgstr ""
 
+msgid "Version 10469 of OScam"
+msgstr ""
+
 msgid "Vertikal"
 msgstr ""
 
@@ -8105,9 +8108,6 @@ msgstr "Tối ưu hóa"
 
 msgid "options"
 msgstr "tùy chọn"
-
-msgid "oscam"
-msgstr ""
 
 msgid "ownpos"
 msgstr ""

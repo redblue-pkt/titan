@@ -4116,9 +4116,6 @@ msgstr ""
 msgid "OSD+TV"
 msgstr ""
 
-msgid "OScam 2xSlot intern + 1xUSB (blocked EMM for V13 and V14)"
-msgstr ""
-
 msgid "OTHER"
 msgstr ""
 
@@ -4184,6 +4181,9 @@ msgstr "Position orbitale"
 
 msgid "Orgname:"
 msgstr "Nom utilisateur"
+
+msgid "Oscam"
+msgstr ""
 
 msgid "Oscam config written to medium !"
 msgstr ""
@@ -6760,6 +6760,9 @@ msgstr ""
 msgid "Version"
 msgstr ""
 
+msgid "Version 10469 of OScam"
+msgstr ""
+
 msgid "Vertikal"
 msgstr "verticale"
 
@@ -8031,9 +8034,6 @@ msgstr ""
 
 msgid "options"
 msgstr "Options"
-
-msgid "oscam"
-msgstr ""
 
 msgid "ownpos"
 msgstr ""
