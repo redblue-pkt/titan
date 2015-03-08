@@ -966,7 +966,7 @@ msgstr "Apple Movie Trailer"
 
 #: global.h:6101
 msgid "April"
-msgstr "April"
+msgstr ""
 
 #: webif_index.atemio7600.h:21 webif_index.atemio7600.h:114
 #: webif_rc.atemio520.h:36 webif_rc.atemio530.h:36 webif_rc.atemio7600.h:47
@@ -1163,7 +1163,7 @@ msgstr "Ton/Untertitel"
 
 #: global.h:6105
 msgid "August"
-msgstr "August"
+msgstr ""
 
 #: plugins_lcdpearl1_skin.xml.h:5 skins_lcdpearl1_skin.xml.h:5
 msgid "Auswahl"
@@ -2687,7 +2687,7 @@ msgstr ""
 
 #: global.h:6109
 msgid "December"
-msgstr "Dezember"
+msgstr ""
 
 #: powerofftimer.h:117
 msgid "DeepStandby"
@@ -3640,7 +3640,7 @@ msgstr ""
 
 #: global.h:6099
 msgid "February"
-msgstr "Februar"
+msgstr ""
 
 #: extensions.h:25
 msgid "Feed"
@@ -5063,11 +5063,11 @@ msgstr ""
 
 #: global.h:6098
 msgid "January"
-msgstr "Januar"
+msgstr ""
 
 #: global.h:6104
 msgid "July"
-msgstr "Juli"
+msgstr ""
 
 #: mc_pictureplayer_settings.h:59 mc_pictureplayer_settings.h:65
 #: skin_default_skin.xml.h:382
@@ -5080,7 +5080,7 @@ msgstr "Springe von akt. Position vor (min)"
 
 #: global.h:6103
 msgid "June"
-msgstr "Juni"
+msgstr ""
 
 #: skin_default_skin.xml.h:384
 msgid "K"
@@ -5507,7 +5507,7 @@ msgstr "Manuelle terrestrische Suche"
 
 #: global.h:6100
 msgid "March"
-msgstr "März"
+msgstr ""
 
 #: skin_default_skin.xml.h:415
 msgid "Mark Color"
@@ -5551,7 +5551,7 @@ msgstr "Maximale Signalrate"
 
 #: global.h:6102
 msgid "May"
-msgstr "Mai"
+msgstr ""
 
 #: webif_index.atemio5200.h:44 webif_index.atemio5200.h:100
 #: webif_index.atemio6200.h:44 webif_index.atemio6200.h:100
@@ -6260,7 +6260,7 @@ msgstr "nicht angelegt"
 
 #: global.h:6108
 msgid "November"
-msgstr "November"
+msgstr ""
 
 #: panel_settings.h:27 settings_autostart.h:303
 msgid "Ntfs Write"
@@ -6427,7 +6427,7 @@ msgstr "mehr"
 
 #: global.h:6107
 msgid "October"
-msgstr "Oktober"
+msgstr ""
 
 #: webif_help.h:1
 msgid "Offline Help"
@@ -8470,7 +8470,7 @@ msgstr "Entfernten Receiver in Standby versetzen?"
 
 #: global.h:6106
 msgid "September"
-msgstr "September"
+msgstr ""
 
 #: skin_default_skin.xml.h:625
 msgid "Serial Input"
