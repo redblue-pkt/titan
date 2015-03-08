@@ -32,14 +32,14 @@ void screenshortepg(struct channel* chnode, struct epg* epgnode, int flag)
 		loctime = olocaltime(&epgnode->starttime);
 		ostrftime(buf, MINMALLOC, "%d.%m. (%a) %H:%M", loctime);
 		tmpstr = ostrcat(tmpstr, buf, 1, 0);
-		tmpstr = translate_time(tmpstr, 0);
+		tmpstr = translate_time(tmpstr, 1);
 		free(loctime); loctime = NULL;
 		tmpstr = ostrcat(tmpstr, "\n", 1, 0);
 
 		loctime = olocaltime(&epgnode->endtime);
 		ostrftime(buf, MINMALLOC, "%d.%m. (%a) %H:%M", loctime);
 		tmpstr = ostrcat(tmpstr, buf, 1, 0);
-		tmpstr = translate_time(tmpstr, 0);
+		tmpstr = translate_time(tmpstr, 1);
 
 		free(loctime); loctime = NULL;
 		tmpstr = ostrcat(tmpstr, "\n\n", 1, 0);
