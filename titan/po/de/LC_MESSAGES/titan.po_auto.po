@@ -3164,8 +3164,8 @@ msgstr "FEHLER: In dieser Datei kann kein Marker gesetzt werden"
 #: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
 #: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
 #: hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200
-#: imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:618
-#: infobar.h:742 info.h:27 keyactions.h:205 log.h:46 log.h:48 marker.h:215
+#: imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:611
+#: infobar.h:735 info.h:27 keyactions.h:205 log.h:46 log.h:48 marker.h:215
 #: marker.h:229 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
 #: mc_audioplayer.h:333 mc_audioplayer.h:605 mc_audioplayer.h:716
 #: mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
@@ -5010,7 +5010,7 @@ msgstr "Schnittstelle"
 msgid "Internet Browser"
 msgstr ""
 
-#: infobar.h:742
+#: infobar.h:735
 msgid "Internet Browser Plugin not installed !"
 msgstr "Internet Browser Plugin nicht installiert!"
 
@@ -5771,7 +5771,7 @@ msgstr "Menüliste"
 #: hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566 hwtest.h:586
 #: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
 #: hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626 inadyn.h:188
-#: inadyn.h:190 inadyn.h:200 infobar.h:618 infobar.h:742 keyactions.h:205
+#: inadyn.h:190 inadyn.h:200 infobar.h:611 infobar.h:735 keyactions.h:205
 #: language.h:49 lcdpearl1.c:49 lcdsamsung.c:101 log.h:46 log.h:48
 #: marker.h:215 marker.h:229 mc_audioplayer.h:333 mc_audioplayer.h:605
 #: mc_audioplayer.h:716 mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
@@ -5804,8 +5804,8 @@ msgstr "Menüliste"
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:31
 #: scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1646 scan.h:1901
 #: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 security.h:1865 service.h:738
-#: service.h:983 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:317
-#: skinadjust.h:713 skinselector.h:237 sock.h:952 softcam.h:410 softcam.h:468
+#: service.h:983 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:307
+#: skinadjust.h:703 skinselector.h:237 sock.h:952 softcam.h:410 softcam.h:468
 #: softcam.h:469 solarmovie.h:35 solarmovie.h:47 solarmovie.h:304 spinner.h:18
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:84
 #: streamcloud.h:97 streamcloud.h:128 streamcloud.h:187 stream.h:33
@@ -6306,8 +6306,8 @@ msgstr "Ö"
 #: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
 #: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
 #: hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200
-#: imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:618
-#: infobar.h:742 info.h:27 keyactions.h:205 lcdpearl1.c:49 lcdsamsung.c:101
+#: imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:611
+#: infobar.h:735 info.h:27 keyactions.h:205 lcdpearl1.c:49 lcdsamsung.c:101
 #: log.h:46 log.h:48 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
 #: mc_audioplayer.h:333 mc_audioplayer.h:605 mc_audioplayer.h:716
 #: mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
@@ -6347,7 +6347,7 @@ msgstr "Ö"
 #: rtl2now.h:31 scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1901
 #: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 scriptexec.h:41
 #: security.h:660 security.h:677 security.h:1865 service.h:738 service.h:983
-#: shared.h:29 shared.h:65 shared.h:82 skinadjust.h:317 skinadjust.h:713
+#: shared.h:29 shared.h:65 shared.h:82 skinadjust.h:307 skinadjust.h:703
 #: skins_dlna_skin.xml.h:7 skinselector.h:237 skins_facebook_skin.xml.h:3
 #: skins_mboxinfo_skin.xml.h:2 skins_mc_skin.xml.h:35
 #: skins_optimize_skin.xml.h:2 skins_rgui_skin.xml.h:2
@@ -8579,7 +8579,7 @@ msgstr "PiP-Einstellungen"
 msgid "Sharename can't be empty!"
 msgstr "Freigabename darf nicht leer sein!"
 
-#: infobar.h:618 mc_audioplayer.h:333 mc_main.h:273 mc_pictureplayer.h:124
+#: infobar.h:611 mc_audioplayer.h:333 mc_main.h:273 mc_pictureplayer.h:124
 #: mc_videoplayer.h:332 menu.h:223
 msgid ""
 "Shooting Background done !\n"
@@ -9713,7 +9713,7 @@ msgstr "Titan-Protokoll"
 msgid "Titan MediaCenter"
 msgstr "Titan Media Center"
 
-#: skinadjust.h:317 skinadjust.h:713
+#: skinadjust.h:307 skinadjust.h:703
 msgid "Titan will be restartet!"
 msgstr "Titan wird neu gestartet!"
 
@@ -12003,7 +12003,7 @@ msgstr "NFSD Kernel Server autostart"
 #: settings_autostart.h:502 settings_autostart.h:511 settings_autostart.h:568
 #: settings_autostart.h:577 settings_autostart.h:586 settings_autostart.h:595
 #: settings_overclocking.h:214 settings_overclocking.h:234
-#: settings_overclocking.h:244 skinadjust.h:151 stopifnotused.c:94
+#: settings_overclocking.h:244 skinadjust.h:141 stopifnotused.c:94
 #: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:37
 #: tithek_settings.h:41 tithek_settings.h:45 tmc.h:531 tmc.h:535
 #: tunerconfig.h:184 tunerconfig.h:213 tunerconfig.h:244 tunerconfig.h:277
@@ -13398,11 +13398,11 @@ msgstr "gelb"
 msgid "yes"
 msgstr "Ja"
 
-#: skinadjust.h:152
+#: skinadjust.h:142
 msgid "yes (Text in %)"
 msgstr "Ja (Text in %)"
 
-#: skinadjust.h:153
+#: skinadjust.h:143
 msgid "yes (Text in MB)"
 msgstr "Ja (Text in MB)"
 
