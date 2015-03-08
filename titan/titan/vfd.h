@@ -38,16 +38,13 @@ int setvfdbrightness(int value)
 {
 
 #ifdef MIPSEL
-	//if(checkbox("ATEMIO-NEMESIS") == 1)
-	//{
-		FILE *f=fopen("/proc/stb/lcd/oled_brightness", "w");
-		if (!f)
-			return 1;
-		int brightness = value * 36;
-		fprintf(f, "%d", brightness);
-		fclose(f);
-		return 0;
-	//}
+	FILE *f=fopen("/proc/stb/lcd/oled_brightness", "w");
+	if (!f)
+		return 1;
+	int brightness = value * 36;
+	fprintf(f, "%d", brightness);
+	fclose(f);
+	return 0;
 #endif
 
 	char *vfddev;
@@ -233,7 +230,7 @@ int writevfd(char *value)
 	if(checkbox("TF7700"))
 		return writevfdioctl(value);
 		
-	if(checkbox("ATEMIO-NEMESIS"))
+	if(checkchipset("BCM7424") == 1) //inihdp
 	{
 		int oledret = 0;
 		m_lock(&status.vfdmutex, 3);
@@ -528,7 +525,7 @@ void updatevfd()
 				tmpstr = ostrcat(tmpstr, " ", 1, 0);
 				break;
 			case 2: // date + time
-				if(checkbox("ATEMIO-NEMESIS") == 1)
+				if(checkchipset("BCM7424") == 1) //inihdp
 					tmpstr = ostrcat(tmpstr, gettime(NULL, "%d.%m - %H:%M"), 1, 1);
 				else
 					tmpstr = ostrcat(tmpstr, gettime(NULL, "%d.%m %H:%M"), 1, 1);
@@ -621,7 +618,7 @@ void vfdrecordthread()
 		while(VFD_Recordthread->aktion != STOP && getconfigint("vfdisplayrecord", NULL) == 3 && status.recording > 0)
 		{
 			action = 2;
-			if(checkbox("ATEMIO5200") == 1 || checkbox("ATEMIO6200") == 1 || checkbox("ATEMIO-NEMESIS") == 1)
+			if(checkchipset("BCM7358") == 1 || checkbox("ATEMIO6200") == 1 || checkchipset("BCM7424") == 1) //inihde inihdp
 				writevfd("RECORD");
 			else if(checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1 || checkbox("SPARK") == 1)
 				writevfd("REC");

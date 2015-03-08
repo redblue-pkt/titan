@@ -57,7 +57,7 @@ void screenstandby()
 	}
 	if(checkbox("UFS922") == 1)
 		setfanspeed(-2, 0);
-	else if(checkbox("ATEMIO-NEMESIS") == 1)
+	else if(checkchipset("BCM7424") == 1) // inihdp
 	{	
 		if(getconfigint("fanmode", NULL) == 3)
 			writesys("/proc/stb/fp/fan", "1", 1);
@@ -125,7 +125,7 @@ void screenstandby()
 	}
 	if(checkbox("UFS922") == 1)
 		setfanspeed(-1, 0);
-	else if(checkbox("ATEMIO-NEMESIS") == 1)	
+	else if(checkchipset("BCM7424") == 1)	//inihdp
 		writesys("/proc/stb/fp/fan", getconfig("fanmode", NULL), 1);
 	
 	setcecstandby(0);
