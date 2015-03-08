@@ -638,6 +638,9 @@ msgstr "App Hintergrund"
 msgid "Apple Trailer"
 msgstr "Apple Movie Trailer"
 
+msgid "April"
+msgstr ""
+
 msgid "Archive"
 msgstr ""
 
@@ -782,6 +785,9 @@ msgstr "Audio-Verzögerung"
 
 msgid "Audio/Subt."
 msgstr "Ton/Untertitel"
+
+msgid "August"
+msgstr ""
 
 msgid "Auswahl"
 msgstr ""
@@ -1908,6 +1914,9 @@ msgstr ""
 msgid "Debuglevel"
 msgstr ""
 
+msgid "December"
+msgstr ""
+
 msgid "DeepStandby"
 msgstr "Ausschalten"
 
@@ -2485,6 +2494,9 @@ msgid "Fav"
 msgstr "Favoriten"
 
 msgid "Favoriten"
+msgstr ""
+
+msgid "February"
 msgstr ""
 
 msgid "Feed"
@@ -3555,11 +3567,20 @@ msgstr "Italiano"
 msgid "J"
 msgstr ""
 
+msgid "January"
+msgstr ""
+
+msgid "July"
+msgstr ""
+
 msgid "Jump"
 msgstr "Springen"
 
 msgid "Jump To (min)"
 msgstr "Springe von akt. Position vor (min)"
+
+msgid "June"
+msgstr ""
 
 msgid "K"
 msgstr ""
@@ -3864,6 +3885,9 @@ msgstr "Manuelle Kabelsuche"
 msgid "Manual Search Terrestrial"
 msgstr "Manuelle terrestrische Suche"
 
+msgid "March"
+msgstr ""
+
 msgid "Mark Color"
 msgstr "Marker Farbe"
 
@@ -3894,6 +3918,9 @@ msgstr "Maximale Frequenz"
 
 msgid "Maximal signalrate"
 msgstr "Maximale Signalrate"
+
+msgid "May"
+msgstr ""
 
 msgid "Media"
 msgstr ""
@@ -4334,6 +4361,9 @@ msgstr "StopIfNotUsed Einstellungen"
 msgid "Note created"
 msgstr "nicht angelegt"
 
+msgid "November"
+msgstr ""
+
 msgid "Ntfs Write"
 msgstr "NTFS-Schreibunterstützung benutzen"
 
@@ -4378,6 +4408,9 @@ msgstr ""
 
 msgid "OTHER"
 msgstr "mehr"
+
+msgid "October"
+msgstr ""
 
 msgid "Offline Help"
 msgstr "Offline Hilfe"
@@ -5791,6 +5824,9 @@ msgstr "Übermittle alle CAIDs an das Modul"
 
 msgid "Send remote box into standby ?"
 msgstr "Entfernten Receiver in Standby versetzen?"
+
+msgid "September"
+msgstr ""
 
 msgid "Serial Input"
 msgstr "Serieller Anschluss"

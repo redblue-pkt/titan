@@ -613,6 +613,9 @@ msgstr ""
 msgid "Apple Trailer"
 msgstr "Apple Movie Trailer"
 
+msgid "April"
+msgstr ""
+
 msgid "Archive"
 msgstr ""
 
@@ -756,6 +759,9 @@ msgid "Audio delay"
 msgstr ""
 
 msgid "Audio/Subt."
+msgstr ""
+
+msgid "August"
 msgstr ""
 
 msgid "Auswahl"
@@ -1857,6 +1863,9 @@ msgstr ""
 msgid "Debuglevel"
 msgstr ""
 
+msgid "December"
+msgstr ""
+
 msgid "DeepStandby"
 msgstr "Power off"
 
@@ -2434,6 +2443,9 @@ msgstr "Favourites"
 
 msgid "Favoriten"
 msgstr "Favourites"
+
+msgid "February"
+msgstr ""
 
 msgid "Feed"
 msgstr "Please enter feed address"
@@ -3425,11 +3437,20 @@ msgstr ""
 msgid "J"
 msgstr ""
 
+msgid "January"
+msgstr ""
+
+msgid "July"
+msgstr ""
+
 msgid "Jump"
 msgstr ""
 
 msgid "Jump To (min)"
 msgstr "Jump to (min)"
+
+msgid "June"
+msgstr ""
 
 msgid "K"
 msgstr ""
@@ -3734,6 +3755,9 @@ msgstr ""
 msgid "Manual Search Terrestrial"
 msgstr ""
 
+msgid "March"
+msgstr ""
+
 msgid "Mark Color"
 msgstr ""
 
@@ -3759,6 +3783,9 @@ msgid "Maximal frequency"
 msgstr ""
 
 msgid "Maximal signalrate"
+msgstr ""
+
+msgid "May"
 msgstr ""
 
 msgid "Media"
@@ -4198,6 +4225,9 @@ msgstr "StopIfNotUsed Settings"
 msgid "Note created"
 msgstr ""
 
+msgid "November"
+msgstr ""
+
 msgid "Ntfs Write"
 msgstr "NTFS write"
 
@@ -4242,6 +4272,9 @@ msgstr ""
 
 msgid "OTHER"
 msgstr "Other"
+
+msgid "October"
+msgstr ""
 
 msgid "Offline Help"
 msgstr ""
@@ -5643,6 +5676,9 @@ msgstr ""
 
 msgid "Send remote box into standby ?"
 msgstr "Set remote Receiver to standby?"
+
+msgid "September"
+msgstr ""
 
 msgid "Serial Input"
 msgstr ""

@@ -606,6 +606,9 @@ msgstr ""
 msgid "Apple Trailer"
 msgstr ""
 
+msgid "April"
+msgstr ""
+
 msgid "Archive"
 msgstr ""
 
@@ -750,6 +753,9 @@ msgstr "trễ âm thanh"
 
 msgid "Audio/Subt."
 msgstr "Audio/Phụ đề"
+
+msgid "August"
+msgstr ""
 
 msgid "Auswahl"
 msgstr ""
@@ -1824,6 +1830,9 @@ msgstr "Chế độ gỡ lỗi"
 msgid "Debuglevel"
 msgstr ""
 
+msgid "December"
+msgstr ""
+
 msgid "DeepStandby"
 msgstr "Standby"
 
@@ -2394,6 +2403,9 @@ msgid "Fav"
 msgstr ""
 
 msgid "Favoriten"
+msgstr ""
+
+msgid "February"
 msgstr ""
 
 msgid "Feed"
@@ -3358,10 +3370,19 @@ msgstr "Tiếng Ý"
 msgid "J"
 msgstr ""
 
+msgid "January"
+msgstr ""
+
+msgid "July"
+msgstr ""
+
 msgid "Jump"
 msgstr ""
 
 msgid "Jump To (min)"
+msgstr ""
+
+msgid "June"
 msgstr ""
 
 msgid "K"
@@ -3667,6 +3688,9 @@ msgstr "Dò bằng tay"
 msgid "Manual Search Terrestrial"
 msgstr "Dò bằng tay"
 
+msgid "March"
+msgstr ""
+
 msgid "Mark Color"
 msgstr ""
 
@@ -3693,6 +3717,9 @@ msgstr "Tần số cực đại"
 
 msgid "Maximal signalrate"
 msgstr "Tốc độ tín hiệu cực đại"
+
+msgid "May"
+msgstr ""
 
 msgid "Media"
 msgstr ""
@@ -4129,6 +4156,9 @@ msgstr "các thiết lập không sử dụng "
 msgid "Note created"
 msgstr ""
 
+msgid "November"
+msgstr ""
+
 msgid "Ntfs Write"
 msgstr ""
 
@@ -4173,6 +4203,9 @@ msgstr ""
 
 msgid "OTHER"
 msgstr "khác"
+
+msgid "October"
+msgstr ""
 
 msgid "Offline Help"
 msgstr ""
@@ -5567,6 +5600,9 @@ msgstr "Gửi tất cả ID CA tới môđun"
 
 msgid "Send remote box into standby ?"
 msgstr "Bạn có muốn chuyển chế độ chờ không?"
+
+msgid "September"
+msgstr ""
 
 msgid "Serial Input"
 msgstr "Đầu vào nối tiếp"

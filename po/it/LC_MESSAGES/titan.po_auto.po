@@ -929,6 +929,10 @@ msgstr ""
 msgid "Apple Trailer"
 msgstr "Apple Movie Trailer"
 
+#: global.h:6101
+msgid "April"
+msgstr ""
+
 #: webif_index.atemio7600.h:21 webif_index.atemio7600.h:114
 #: webif_rc.atemio520.h:36 webif_rc.atemio530.h:36 webif_rc.atemio7600.h:47
 msgid "Archive"
@@ -1116,6 +1120,10 @@ msgstr ""
 
 #: skin_default_skin.xml.h:85
 msgid "Audio/Subt."
+msgstr ""
+
+#: global.h:6105
+msgid "August"
 msgstr ""
 
 #: plugins_lcdpearl1_skin.xml.h:5 skins_lcdpearl1_skin.xml.h:5
@@ -2376,19 +2384,19 @@ msgstr ""
 msgid "Create Thumb Picture"
 msgstr ""
 
-#: global.h:6494
+#: global.h:6510
 msgid "Create Transponder (All)"
 msgstr ""
 
-#: global.h:6492
+#: global.h:6508
 msgid "Create Transponder (Cable)"
 msgstr ""
 
-#: global.h:6491
+#: global.h:6507
 msgid "Create Transponder (Sat)"
 msgstr ""
 
-#: global.h:6493
+#: global.h:6509
 msgid "Create Transponder (Terrestrial)"
 msgstr ""
 
@@ -2581,6 +2589,10 @@ msgstr ""
 
 #: httpdfunc.h:4870 skin_default_skin.xml.h:184
 msgid "Debuglevel"
+msgstr ""
+
+#: global.h:6109
+msgid "December"
 msgstr ""
 
 #: powerofftimer.h:117
@@ -3042,7 +3054,7 @@ msgstr ""
 #: filenuke.h:106 filenuke.h:118 filenuke.h:190 firedrive.h:33 firedrive.h:66
 #: firedrive.h:72 firedrive.h:122 firedrive.h:128 firedrive.h:138 flashx.h:26
 #: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:5851 global.h:6556 global.h:6625 global.h:6644 global.h:6819
+#: global.h:5851 global.h:6572 global.h:6641 global.h:6660 global.h:6835
 #: harddisk.h:350 harddisk.h:355 harddisk.h:382 harddisk.h:386 harddisk.h:439
 #: harddisk.h:633 harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729
 #: harddisk.h:731 harddisk.h:733 harddisk.h:793 harddisk.h:812 harddisk.h:815
@@ -3279,11 +3291,11 @@ msgstr ""
 msgid "Error, found result without imdbid we can't this save in MediaDB"
 msgstr ""
 
-#: global.h:6642
+#: global.h:6658
 msgid "Error: Transponder Source file no data"
 msgstr ""
 
-#: global.h:6620
+#: global.h:6636
 msgid "Error: Transponder Source file not found"
 msgstr ""
 
@@ -3519,6 +3531,10 @@ msgstr "Favoriti"
 
 #: tithek_mainmenu.h:16
 msgid "Favoriten"
+msgstr ""
+
+#: global.h:6099
+msgid "February"
 msgstr ""
 
 #: extensions.h:25
@@ -3798,11 +3814,11 @@ msgstr ""
 msgid "Frequency:"
 msgstr ""
 
-#: global.h:6101
+#: global.h:6117
 msgid "Fri"
 msgstr ""
 
-#: global.h:6081 global.h:6091 rectimer.h:1084 skin_default_skin.xml.h:273
+#: global.h:6082 global.h:6092 rectimer.h:1084 skin_default_skin.xml.h:273
 msgid "Friday"
 msgstr "Venerdì"
 
@@ -4833,6 +4849,14 @@ msgstr ""
 msgid "J"
 msgstr ""
 
+#: global.h:6098
+msgid "January"
+msgstr ""
+
+#: global.h:6104
+msgid "July"
+msgstr ""
+
 #: mc_pictureplayer_settings.h:59 mc_pictureplayer_settings.h:65
 #: skin_default_skin.xml.h:382
 msgid "Jump"
@@ -4840,6 +4864,10 @@ msgstr ""
 
 #: play.h:1193
 msgid "Jump To (min)"
+msgstr ""
+
+#: global.h:6103
+msgid "June"
 msgstr ""
 
 #: skin_default_skin.xml.h:384
@@ -5265,6 +5293,10 @@ msgstr ""
 msgid "Manual Search Terrestrial"
 msgstr ""
 
+#: global.h:6100
+msgid "March"
+msgstr ""
+
 #: skin_default_skin.xml.h:415
 msgid "Mark Color"
 msgstr ""
@@ -5299,6 +5331,10 @@ msgstr ""
 
 #: skin_default_skin.xml.h:418
 msgid "Maximal signalrate"
+msgstr ""
+
+#: global.h:6102
+msgid "May"
 msgstr ""
 
 #: webif_index.atemio5200.h:44 webif_index.atemio5200.h:100
@@ -5505,8 +5541,8 @@ msgstr ""
 #: filenuke.h:46 filenuke.h:94 filenuke.h:106 filenuke.h:118 filenuke.h:190
 #: firedrive.h:33 firedrive.h:66 firedrive.h:72 firedrive.h:122
 #: firedrive.h:128 firedrive.h:138 flashx.h:26 flashx.h:84 flashx.h:138
-#: flashx.h:195 flashx.h:233 flashx.h:270 global.h:5851 global.h:6556
-#: global.h:6625 global.h:6644 global.h:6819 harddisk.h:633 harddisk.h:641
+#: flashx.h:195 flashx.h:233 flashx.h:270 global.h:5851 global.h:6572
+#: global.h:6641 global.h:6660 global.h:6835 harddisk.h:633 harddisk.h:641
 #: harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733
 #: harddisk.h:793 harddisk.h:812 harddisk.h:815 hbbtv.h:362 hello.c:36
 #: httpdfunc.h:1304 httpdfunc.h:5773 httpdfunc.h:6159 httpdfunc.h:6424
@@ -5640,11 +5676,11 @@ msgstr ""
 msgid "Module info"
 msgstr "Informazione Moduli"
 
-#: global.h:6097
+#: global.h:6113
 msgid "Mon"
 msgstr ""
 
-#: global.h:6077 global.h:6087 rectimer.h:1080 skin_default_skin.xml.h:440
+#: global.h:6078 global.h:6088 rectimer.h:1080 skin_default_skin.xml.h:440
 msgid "Monday"
 msgstr "Lunedì"
 
@@ -5730,7 +5766,7 @@ msgstr ""
 msgid "Multiple Service"
 msgstr ""
 
-#: global.h:6441
+#: global.h:6457
 msgid "Multituner adjustable"
 msgstr ""
 
@@ -5997,6 +6033,10 @@ msgstr ""
 msgid "Note created"
 msgstr ""
 
+#: global.h:6108
+msgid "November"
+msgstr ""
+
 #: panel_settings.h:27 settings_autostart.h:303
 msgid "Ntfs Write"
 msgstr ""
@@ -6031,7 +6071,7 @@ msgstr ""
 #: filenuke.h:106 filenuke.h:118 filenuke.h:190 firedrive.h:33 firedrive.h:66
 #: firedrive.h:72 firedrive.h:122 firedrive.h:128 firedrive.h:138 flashx.h:26
 #: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:5851 global.h:6556 global.h:6625 global.h:6644 global.h:6819
+#: global.h:5851 global.h:6572 global.h:6641 global.h:6660 global.h:6835
 #: harddisk.h:350 harddisk.h:355 harddisk.h:382 harddisk.h:386 harddisk.h:439
 #: harddisk.h:633 harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729
 #: harddisk.h:731 harddisk.h:733 harddisk.h:793 harddisk.h:812 harddisk.h:815
@@ -6158,6 +6198,10 @@ msgstr ""
 
 #: plugins_tmdb_skin.xml.h:3 skins_tmdb_skin.xml.h:3
 msgid "OTHER"
+msgstr ""
+
+#: global.h:6107
+msgid "October"
 msgstr ""
 
 #: webif_help.h:1
@@ -7634,7 +7678,7 @@ msgstr ""
 msgid "Samsung SPF.. Settings"
 msgstr "Impostazioni Samba Server"
 
-#: global.h:6102
+#: global.h:6118
 msgid "Sat"
 msgstr "SAT"
 
@@ -7714,7 +7758,7 @@ msgstr ""
 msgid "Saturation"
 msgstr ""
 
-#: global.h:6082 global.h:6092 rectimer.h:1085 skin_default_skin.xml.h:598
+#: global.h:6083 global.h:6093 rectimer.h:1085 skin_default_skin.xml.h:598
 msgid "Saturday"
 msgstr "Sabato"
 
@@ -8152,7 +8196,7 @@ msgstr ""
 msgid "Select Your Remote Control"
 msgstr ""
 
-#: global.h:6496
+#: global.h:6512
 msgid "Select Your Serach Modus"
 msgstr ""
 
@@ -8175,6 +8219,10 @@ msgstr ""
 #: rgui.h:118
 msgid "Send remote box into standby ?"
 msgstr "Send remote box into standby?"
+
+#: global.h:6106
+msgid "September"
+msgstr ""
 
 #: skin_default_skin.xml.h:625
 msgid "Serial Input"
@@ -8639,7 +8687,7 @@ msgstr "Ftp Port"
 msgid "StandBy Mode"
 msgstr ""
 
-#: global.h:6819
+#: global.h:6835
 msgid ""
 "Standard favorites have been successfully applied.\n"
 "Your System will reboot !"
@@ -8866,11 +8914,11 @@ msgstr ""
 msgid "Sudoku Help"
 msgstr ""
 
-#: global.h:6103
+#: global.h:6119
 msgid "Sun"
 msgstr ""
 
-#: global.h:6083 global.h:6093 rectimer.h:1086 skin_default_skin.xml.h:692
+#: global.h:6084 global.h:6094 rectimer.h:1086 skin_default_skin.xml.h:692
 msgid "Sunday"
 msgstr "Domenica"
 
@@ -9207,11 +9255,11 @@ msgstr ""
 msgid "Thriller"
 msgstr ""
 
-#: global.h:6100
+#: global.h:6116
 msgid "Thu"
 msgstr ""
 
-#: global.h:6080 global.h:6090 rectimer.h:1083 skin_default_skin.xml.h:718
+#: global.h:6081 global.h:6091 rectimer.h:1083 skin_default_skin.xml.h:718
 msgid "Thursday"
 msgstr "Giovedì"
 
@@ -9635,7 +9683,7 @@ msgstr ""
 msgid "Transponder changed"
 msgstr "Transponder e stato cambiato"
 
-#: global.h:6556
+#: global.h:6572
 msgid ""
 "Transponder/Satellite Convert done, please use channel search on next Boot.\n"
 "Your System will reboot !"
@@ -9665,11 +9713,11 @@ msgstr ""
 msgid "Trial period ends in"
 msgstr ""
 
-#: global.h:6098
+#: global.h:6114
 msgid "Tue"
 msgstr ""
 
-#: global.h:6078 global.h:6088 rectimer.h:1081 skin_default_skin.xml.h:754
+#: global.h:6079 global.h:6089 rectimer.h:1081 skin_default_skin.xml.h:754
 msgid "Tuesday"
 msgstr "Martedì"
 
@@ -9681,7 +9729,7 @@ msgstr "errore nel cambio canale"
 msgid "Tuner"
 msgstr ""
 
-#: global.h:6432
+#: global.h:6448
 msgid "Tuner "
 msgstr "Tuner"
 
@@ -10237,11 +10285,11 @@ msgstr ""
 msgid "Webbrowser Plugin "
 msgstr ""
 
-#: global.h:6099
+#: global.h:6115
 msgid "Wed"
 msgstr ""
 
-#: global.h:6079 global.h:6089 rectimer.h:1082 skin_default_skin.xml.h:811
+#: global.h:6080 global.h:6090 rectimer.h:1082 skin_default_skin.xml.h:811
 msgid "Wednesday"
 msgstr "Mercoledì"
 

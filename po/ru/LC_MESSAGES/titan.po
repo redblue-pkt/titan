@@ -624,6 +624,9 @@ msgstr "Добавил историю"
 msgid "Apple Trailer"
 msgstr ""
 
+msgid "April"
+msgstr ""
+
 msgid "Archive"
 msgstr "Архив"
 
@@ -763,6 +766,9 @@ msgstr "Задержка звука"
 
 msgid "Audio/Subt."
 msgstr "Аудио/Субтитры"
+
+msgid "August"
+msgstr ""
 
 msgid "Auswahl"
 msgstr "Выбор"
@@ -1847,6 +1853,9 @@ msgstr "Отладка модулей"
 msgid "Debuglevel"
 msgstr "Уровень отладки"
 
+msgid "December"
+msgstr ""
+
 msgid "DeepStandby"
 msgstr "Выключение"
 
@@ -2420,6 +2429,9 @@ msgstr "Фавориты"
 
 msgid "Favoriten"
 msgstr "Фавориты"
+
+msgid "February"
+msgstr ""
 
 msgid "Feed"
 msgstr "Введите адрес фида"
@@ -3401,11 +3413,20 @@ msgstr "Итальянский"
 msgid "J"
 msgstr ""
 
+msgid "January"
+msgstr ""
+
+msgid "July"
+msgstr ""
+
 msgid "Jump"
 msgstr ""
 
 msgid "Jump To (min)"
 msgstr "Перейти к (Мин)"
+
+msgid "June"
+msgstr ""
 
 msgid "K"
 msgstr ""
@@ -3710,6 +3731,9 @@ msgstr "Ручной поиск кабельного ТВ"
 msgid "Manual Search Terrestrial"
 msgstr "Ручной поиск наземного ТВ"
 
+msgid "March"
+msgstr ""
+
 msgid "Mark Color"
 msgstr ""
 
@@ -3736,6 +3760,9 @@ msgstr "Макс частота"
 
 msgid "Maximal signalrate"
 msgstr "Макс сигнал"
+
+msgid "May"
+msgstr ""
 
 msgid "Media"
 msgstr "Медиа"
@@ -4176,6 +4203,9 @@ msgstr "Не использовать настройки"
 msgid "Note created"
 msgstr "Примечание создано"
 
+msgid "November"
+msgstr ""
+
 msgid "Ntfs Write"
 msgstr "Поддержка записи NTFS"
 
@@ -4220,6 +4250,9 @@ msgstr "OSD+Видео"
 
 msgid "OTHER"
 msgstr "Другие"
+
+msgid "October"
+msgstr ""
 
 msgid "Offline Help"
 msgstr "Помощь (Офлайн)"
@@ -5625,6 +5658,9 @@ msgstr "Отправить все CAID модулей"
 
 msgid "Send remote box into standby ?"
 msgstr "Отправить дистанционно ресивер в режим ожидания?"
+
+msgid "September"
+msgstr ""
 
 msgid "Serial Input"
 msgstr "Последовательный вход"

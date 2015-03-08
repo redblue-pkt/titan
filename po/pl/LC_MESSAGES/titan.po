@@ -603,6 +603,9 @@ msgstr ""
 msgid "Apple Trailer"
 msgstr "Zwiastun Apple"
 
+msgid "April"
+msgstr ""
+
 msgid "Archive"
 msgstr ""
 
@@ -735,6 +738,9 @@ msgid "Audio delay"
 msgstr ""
 
 msgid "Audio/Subt."
+msgstr ""
+
+msgid "August"
 msgstr ""
 
 msgid "Auswahl"
@@ -1795,6 +1801,9 @@ msgstr ""
 msgid "Debuglevel"
 msgstr ""
 
+msgid "December"
+msgstr ""
+
 msgid "DeepStandby"
 msgstr "uśpienie"
 
@@ -2353,6 +2362,9 @@ msgid "Fav"
 msgstr "Ulubione"
 
 msgid "Favoriten"
+msgstr ""
+
+msgid "February"
 msgstr ""
 
 msgid "Feed"
@@ -3306,10 +3318,19 @@ msgstr ""
 msgid "J"
 msgstr ""
 
+msgid "January"
+msgstr ""
+
+msgid "July"
+msgstr ""
+
 msgid "Jump"
 msgstr ""
 
 msgid "Jump To (min)"
+msgstr ""
+
+msgid "June"
 msgstr ""
 
 msgid "K"
@@ -3615,6 +3636,9 @@ msgstr ""
 msgid "Manual Search Terrestrial"
 msgstr ""
 
+msgid "March"
+msgstr ""
+
 msgid "Mark Color"
 msgstr ""
 
@@ -3640,6 +3664,9 @@ msgid "Maximal frequency"
 msgstr ""
 
 msgid "Maximal signalrate"
+msgstr ""
+
+msgid "May"
 msgstr ""
 
 msgid "Media"
@@ -4070,6 +4097,9 @@ msgstr "Ustawienia obrotnicy"
 msgid "Note created"
 msgstr ""
 
+msgid "November"
+msgstr ""
+
 msgid "Ntfs Write"
 msgstr ""
 
@@ -4113,6 +4143,9 @@ msgid "OSD+TV"
 msgstr ""
 
 msgid "OTHER"
+msgstr ""
+
+msgid "October"
 msgstr ""
 
 msgid "Offline Help"
@@ -5499,6 +5532,9 @@ msgid "Send all CAID to modules"
 msgstr ""
 
 msgid "Send remote box into standby ?"
+msgstr ""
+
+msgid "September"
 msgstr ""
 
 msgid "Serial Input"
