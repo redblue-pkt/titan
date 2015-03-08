@@ -1915,7 +1915,7 @@ msgid "Debuglevel"
 msgstr ""
 
 msgid "December"
-msgstr ""
+msgstr "Dezember"
 
 msgid "DeepStandby"
 msgstr "Ausschalten"
@@ -2497,7 +2497,7 @@ msgid "Favoriten"
 msgstr ""
 
 msgid "February"
-msgstr ""
+msgstr "Februar"
 
 msgid "Feed"
 msgstr "Bitte Feed Adresse eingeben"
@@ -3568,10 +3568,10 @@ msgid "J"
 msgstr ""
 
 msgid "January"
-msgstr ""
+msgstr "Januar"
 
 msgid "July"
-msgstr ""
+msgstr "Juli"
 
 msgid "Jump"
 msgstr "Springen"
@@ -3580,7 +3580,7 @@ msgid "Jump To (min)"
 msgstr "Springe von akt. Position vor (min)"
 
 msgid "June"
-msgstr ""
+msgstr "Juni"
 
 msgid "K"
 msgstr ""
@@ -3886,7 +3886,7 @@ msgid "Manual Search Terrestrial"
 msgstr "Manuelle terrestrische Suche"
 
 msgid "March"
-msgstr ""
+msgstr "März"
 
 msgid "Mark Color"
 msgstr "Marker Farbe"
@@ -3920,7 +3920,7 @@ msgid "Maximal signalrate"
 msgstr "Maximale Signalrate"
 
 msgid "May"
-msgstr ""
+msgstr "Mai"
 
 msgid "Media"
 msgstr ""
@@ -4410,7 +4410,7 @@ msgid "OTHER"
 msgstr "mehr"
 
 msgid "October"
-msgstr ""
+msgstr "Oktober"
 
 msgid "Offline Help"
 msgstr "Offline Hilfe"
