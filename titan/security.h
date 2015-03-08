@@ -58,17 +58,17 @@ int checkhighflash()
 	cmd = ostrcat(cmd, " ", 1, 0); 
 	cmd = ostrcat(cmd, "grep", 1, 0); 
 	cmd = ostrcat(cmd, " ", 1, 0);
-	if(checkbox("ATEMIO5200") == 1)
+	if(if(checkchipset("BCM7358") == 1) // inihde
 	{
 		cmd = ostrcat(cmd, "mtd1", 1, 0); 
 		size = ostrcat("13900000", NULL, 0, 0);
 	}
-	else if(checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1 || checkbox("ATEMIO6200") == 1)
+	else if(checkchipset("BCM7362") == 1) // inihde2am
 	{
 		cmd = ostrcat(cmd, "mtd1", 1, 0); 
 		size = ostrcat("13800000", NULL, 0, 0);
 	}
-	else if(checkbox("ATEMIO-NEMESIS") == 1)
+	else if(checkchipset("BCM7424") == 1) // inihdp
 	{
 		cmd = ostrcat(cmd, "mtd1", 1, 0); 
 		size = ostrcat("6f900000", NULL, 0, 0); 
@@ -189,7 +189,7 @@ void ckeckkillnetthread()
 
 int checkreseller()
 {
-	if(checkbox("UFS910") == 1 || checkbox("UFS922") == 1 || checkbox("UFC960") == 1 || checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO5200") == 1 || checkbox("UFS913") == 1 || checkbox("IPBOX91") == 1 || checkbox("IPBOX900") == 1 || checkbox("IPBOX910") == 1 || checkbox("IPBOX9000") == 1 || checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1 || checkbox("ATEMIO6200") == 1 || checkbox("SPARK") == 1 || checkbox("SPARK7162") == 1)
+	if(checkbox("UFS910") == 1 || checkbox("UFS922") == 1 || checkbox("UFC960") == 1 || checkbox("SPARK") == 1 || checkbox("SPARK7162") == 1 || file_exist("/etc/.mipsel"))
 	{
 		debug(10, "ResellerId: skipped");
 		debug(10, "boxtype: %s", getboxtype());
@@ -380,7 +380,7 @@ int checkflash()
 		dev = ostrcat(dev, "7", 1, 0);
 		dir = ostrcat(dir, "mnt", 1, 0);
 	}
-	else if(checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO5200") == 1 || checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1 || checkbox("ATEMIO6200") == 1)
+	else (file_exist("/etc/.mipsel"))
 	{
 		dev = ostrcat(dev, "rootfs", 1, 0);
 		dir = ostrcat(dir, "/", 1, 0);
@@ -391,7 +391,7 @@ int checkflash()
 		dir = ostrcat(dir, "var", 1, 0);
 	}
 	
-	if(checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO5200") == 1 || checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1 || checkbox("ATEMIO6200") == 1)
+	if(file_exist("/etc/.mipsel"))
 	{
 		cmd = ostrcat(cmd, "mount", 1, 0);
 		cmd = ostrcat(cmd, " | ", 1, 0);

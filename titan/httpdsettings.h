@@ -112,7 +112,7 @@ void screenhttpdsettings()
 	addchoicebox(aspectratio, "2", "16x9");
 	setchoiceboxselection(aspectratio, getconfig("web_trans_aspectratio", NULL));
 
-	if(checkbox("ATEMIO-NEMESIS") != 1)
+	if(checkchipset("BCM7424") != 1)
 	{
 		transcode->hidden=YES;
 		bitrate->hidden=YES;

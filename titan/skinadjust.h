@@ -102,17 +102,7 @@ void screenskinadjust()
 	otopoffset = getconfigint("fbtopoffset", NULL);
 	obottomoffset = getconfigint("fbbottomoffset", NULL);
 
-// why this ? and atemio6200 ?
-	if(checkbox("ATEMIO5200") == 3)
-	{
-		leftoffset->hidden = YES;
-		rightoffset->hidden = YES;
-		topoffset->hidden = YES;
-		bottomoffset->hidden = YES;
-		pic1->hidden = YES;
-		pic2->hidden = YES;
-	}
-	if(checkbox("ATEMIO-NEMESIS"))
+	if(checkchipset("BCM7424") == 1) // inihdp
 	{
 		if(checkscreen("OLED_nemesis") != status.skinerr)
 			addchoicebox(oled_sel, "OLED_nemesis", "v1");
@@ -272,7 +262,7 @@ void screenskinadjust()
 		setfbosd();
 #endif
 
-		if((rcret == getrcconfigint("rcleft", NULL) || rcret == getrcconfigint("rcright", NULL)) && checkbox("ATEMIO-NEMESIS") == 1 && listbox->select != NULL && ostrcmp(listbox->select->name, "oled_sel") == 0)
+		if((rcret == getrcconfigint("rcleft", NULL) || rcret == getrcconfigint("rcright", NULL)) && checkchipset("BCM7424") == 1 && listbox->select != NULL && ostrcmp(listbox->select->name, "oled_sel") == 0)
 		{
 			tmpstr = ostrcat(tmpstr, oled_sel->ret, 0, 0);
 			struct skin* OLED_nemesis = getscreen(tmpstr);
@@ -694,7 +684,7 @@ void screenskinadjust()
 			addconfigscreencheck("showrecfreesize", showrecfreesize, "0");
 			status.showrecfreesize = getconfigint("showrecfreesize", NULL);
 
-			if(checkbox("ATEMIO-NEMESIS"))
+			if(checkchipset("BCM7424") == 1) //inihdp
 				addskinconfigscreencheck("OLED_nemesis", oled_sel, "0");
 
 			char* oldinfobar_sel = getskinconfig("infobar_selection", NULL);

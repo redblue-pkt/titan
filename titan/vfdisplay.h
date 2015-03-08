@@ -28,7 +28,7 @@ void screenvfdisplay()
 		standby->progresssize = (int)ceil(((float)vfdstandbybrightness * 14.28));
 	}
 
-	if(checkbox("ATEMIO-NEMESIS"))
+	if(checkchipset("BCM7424") == 1) // inihdp
 	{
 		if(checkscreen("OLED_nemesis") != status.skinerr)
 			addchoicebox(oled_sel, "OLED_nemesis", "v1");
@@ -70,7 +70,7 @@ void screenvfdisplay()
 
 //record
 
-	if(checkbox("ATEMIO-NEMESIS") == 1)
+	if(checkchipset("BCM7424") == 1) //inihdp
 		vfdrecord->hidden = YES;
 	else if(checkbox("SPARK") == 1)
 		addchoicebox(vfdrecord, "1", _("blink"));
@@ -119,7 +119,7 @@ void screenvfdisplay()
 	
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		
-		if((rcret == getrcconfigint("rcleft", NULL) || rcret == getrcconfigint("rcright", NULL)) && checkbox("ATEMIO-NEMESIS") == 1 && listbox->select != NULL && ostrcmp(listbox->select->name, "oled_sel") == 0)
+		if((rcret == getrcconfigint("rcleft", NULL) || rcret == getrcconfigint("rcright", NULL)) && checkchipset("BCM7424") == 1 && listbox->select != NULL && ostrcmp(listbox->select->name, "oled_sel") == 0) // inihdp
 		{
 			tmpstr = ostrcat(tmpstr, oled_sel->ret, 0, 0);
 			struct skin* OLED_nemesis = getscreen(tmpstr);
@@ -188,7 +188,7 @@ void screenvfdisplay()
 				free(tmpstr); tmpstr=NULL;
 			}
 			
-			if(checkbox("ATEMIO-NEMESIS"))
+			if(checkchipset("BCM7424") == 1) //inihdp
 				addskinconfigscreencheck("OLED_nemesis", oled_sel, "0");
 
 			break;

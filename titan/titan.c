@@ -430,7 +430,7 @@ void oshutdown(int exitcode, int flag)
 	}
 	
 	//stop fan 
-	if(checkbox("ATEMIO-NEMESIS") == 1)
+	if(checkchipset("BCM7424") == 1) //inihdp
 		writesys("/proc/stb/fp/fan", "1", 1);
  		
 	//reset ci devices
@@ -622,7 +622,7 @@ int main(int argc, char *argv[])
 
 	if(checkbox("UFS922") == 1)
 		setfanspeed(-1, 0);
-	if(checkbox("ATEMIO-NEMESIS") == 1)
+	if(checkchipset("BCM7424") == 1) //inihdp
 	{
 		if(getconfigint("fanmode", NULL) == 0)
 			addconfig("fanmode", "3");
@@ -696,7 +696,7 @@ int main(int argc, char *argv[])
 			destroy();
 			exit(100);
 		}
-		if((checkbox("ATEMIO-NEMESIS") == 1 || checkbox("ATEMIO5200") == 1 || checkbox("UFS913") == 1 || checkbox("ATEMIO6200") == 1 || checkbox("ATEMIO6100") == 1 || checkbox("ATEMIO6200") == 1 || checkbox("SPARK") == 1 || checkbox("SPARK7162") == 1 || checkbox("IPBOX91") == 1 || checkbox("IPBOX900") == 1 || checkbox("IPBOX910") == 1 || checkbox("IPBOX9000") == 1) && checkhighflash() != 0)
+		if((checkchipset("BCM7424") == 1 || checkchipset("BCM7358") == 1 || checkchipset("BCM7362") == 1 || checkbox("UFS913") == 1 || checkbox("SPARK") == 1 || checkbox("SPARK7162") == 1 || checkbox("IPBOX91") == 1 || checkbox("IPBOX900") == 1 || checkbox("IPBOX910") == 1 || checkbox("IPBOX9000") == 1) && checkhighflash() != 0)
 		{
 			printf("error: 7\n");		
 			destroy();
@@ -852,7 +852,7 @@ int main(int argc, char *argv[])
 	ret = dvrgetdev();
 	ret = scgetdev();
 #ifdef MIPSEL
-	if(checkbox("ATEMIO-NEMESIS") == 1)
+	if(checkchipset("BCM7424") == 1) //inihdp
 		ret = encodergetdev();
 #endif
 
