@@ -6066,6 +6066,7 @@ char* fixport(char* input, int flag)
 //flag 0: Mon > Montag
 //flag 1: Mon > Mon
 //flag 2: Monday > Montag
+//flag 3: January > Januar
 char* translate_time(char* input, int flag)
 {
 	char* tmpstr = NULL;
@@ -6091,6 +6092,21 @@ char* translate_time(char* input, int flag)
 		tmpstr = string_replace_all("Friday", _("Friday"), tmpstr, 1);
 		tmpstr = string_replace_all("Saturday", _("Saturday"), tmpstr, 1);
 		tmpstr = string_replace_all("Sunday", _("Sunday"), tmpstr, 1);
+	}
+	else if(flag == 3)
+	{
+		tmpstr = string_replace_all("January", _("January"), tmpstr, 1);
+		tmpstr = string_replace_all("February", _("February"), tmpstr, 1);
+		tmpstr = string_replace_all("March", _("March"), tmpstr, 1);
+		tmpstr = string_replace_all("April", _("April"), tmpstr, 1);
+		tmpstr = string_replace_all("May", _("May"), tmpstr, 1);
+		tmpstr = string_replace_all("June", _("June"), tmpstr, 1);
+		tmpstr = string_replace_all("July", _("July"), tmpstr, 1);
+		tmpstr = string_replace_all("August", _("August"), tmpstr, 1);
+		tmpstr = string_replace_all("September", _("September"), tmpstr, 1);
+		tmpstr = string_replace_all("October", _("October"), tmpstr, 1);
+		tmpstr = string_replace_all("November", _("November"), tmpstr, 1);
+		tmpstr = string_replace_all("December", _("December"), tmpstr, 1);
 	}
 	else
 	{
