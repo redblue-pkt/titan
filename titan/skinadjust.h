@@ -54,8 +54,8 @@ void screenskinadjust()
 	struct skin* oled_sel = getscreennode(skinadjust, "oled_sel");
 	struct skin* infobar_sel = getscreennode(skinadjust, "infobar_sel");
 	struct skin* infobar2_sel = getscreennode(skinadjust, "infobar2_sel");
-	struct skin* pic1 = getscreennode(skinadjust, "pic1");
-	struct skin* pic2 = getscreennode(skinadjust, "pic2");
+//	struct skin* pic1 = getscreennode(skinadjust, "pic1");
+//	struct skin* pic2 = getscreennode(skinadjust, "pic2");
 	struct skin* b5 = getscreennode(skinadjust, "b5");
 
 	struct skin* tmp = NULL;
