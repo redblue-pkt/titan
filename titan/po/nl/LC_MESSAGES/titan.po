@@ -610,6 +610,9 @@ msgstr "App verhaal"
 msgid "Apple Trailer"
 msgstr "Apple Movie Trailer"
 
+msgid "April"
+msgstr ""
+
 msgid "Archive"
 msgstr ""
 
@@ -753,6 +756,9 @@ msgid "Audio delay"
 msgstr ""
 
 msgid "Audio/Subt."
+msgstr ""
+
+msgid "August"
 msgstr ""
 
 msgid "Auswahl"
@@ -1839,6 +1845,9 @@ msgstr ""
 msgid "Debuglevel"
 msgstr ""
 
+msgid "December"
+msgstr ""
+
 msgid "DeepStandby"
 msgstr "Diepe slaapstand"
 
@@ -2418,6 +2427,9 @@ msgstr "Favorieten"
 
 msgid "Favoriten"
 msgstr "Favorieten"
+
+msgid "February"
+msgstr ""
 
 msgid "Feed"
 msgstr "Feed adres ingaven AUB"
@@ -3401,11 +3413,20 @@ msgstr ""
 msgid "J"
 msgstr ""
 
+msgid "January"
+msgstr ""
+
+msgid "July"
+msgstr ""
+
 msgid "Jump"
 msgstr "Spring"
 
 msgid "Jump To (min)"
 msgstr "Spring naar (min)"
+
+msgid "June"
+msgstr ""
 
 msgid "K"
 msgstr ""
@@ -3710,6 +3731,9 @@ msgstr ""
 msgid "Manual Search Terrestrial"
 msgstr ""
 
+msgid "March"
+msgstr ""
+
 msgid "Mark Color"
 msgstr ""
 
@@ -3735,6 +3759,9 @@ msgid "Maximal frequency"
 msgstr ""
 
 msgid "Maximal signalrate"
+msgstr ""
+
+msgid "May"
 msgstr ""
 
 msgid "Media"
@@ -4176,6 +4203,9 @@ msgstr "Niet gebruikte instellingen"
 msgid "Note created"
 msgstr "Notitie gemaakt"
 
+msgid "November"
+msgstr ""
+
 msgid "Ntfs Write"
 msgstr "NTFS schrijven"
 
@@ -4220,6 +4250,9 @@ msgstr ""
 
 msgid "OTHER"
 msgstr "Anders"
+
+msgid "October"
+msgstr ""
 
 msgid "Offline Help"
 msgstr ""
@@ -5616,6 +5649,9 @@ msgstr ""
 
 msgid "Send remote box into standby ?"
 msgstr "Zet remote box in standby?"
+
+msgid "September"
+msgstr ""
 
 msgid "Serial Input"
 msgstr ""

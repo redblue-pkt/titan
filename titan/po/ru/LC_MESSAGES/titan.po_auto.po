@@ -950,6 +950,10 @@ msgstr "Добавил историю"
 msgid "Apple Trailer"
 msgstr ""
 
+#: global.h:6101
+msgid "April"
+msgstr ""
+
 #: webif_index.atemio7600.h:21 webif_index.atemio7600.h:114
 #: webif_rc.atemio520.h:36 webif_rc.atemio530.h:36 webif_rc.atemio7600.h:47
 msgid "Archive"
@@ -1137,6 +1141,10 @@ msgstr "Задержка звука"
 #: skin_default_skin.xml.h:85
 msgid "Audio/Subt."
 msgstr "Аудио/Субтитры"
+
+#: global.h:6105
+msgid "August"
+msgstr ""
 
 #: plugins_lcdpearl1_skin.xml.h:5 skins_lcdpearl1_skin.xml.h:5
 msgid "Auswahl"
@@ -2409,19 +2417,19 @@ msgstr "Создать меню настроек"
 msgid "Create Thumb Picture"
 msgstr "Кэшировать изображение"
 
-#: global.h:6494
+#: global.h:6510
 msgid "Create Transponder (All)"
 msgstr "Создать транспондер (Все)"
 
-#: global.h:6492
+#: global.h:6508
 msgid "Create Transponder (Cable)"
 msgstr "Создать транспондер (Кабельное)"
 
-#: global.h:6491
+#: global.h:6507
 msgid "Create Transponder (Sat)"
 msgstr "Создать транспондер (Спутник)"
 
-#: global.h:6493
+#: global.h:6509
 msgid "Create Transponder (Terrestrial)"
 msgstr "Создать транспондер (Наземное)"
 
@@ -2615,6 +2623,10 @@ msgstr "Отладка модулей"
 #: httpdfunc.h:4870 skin_default_skin.xml.h:184
 msgid "Debuglevel"
 msgstr "Уровень отладки"
+
+#: global.h:6109
+msgid "December"
+msgstr ""
 
 #: powerofftimer.h:117
 msgid "DeepStandby"
@@ -3077,7 +3089,7 @@ msgstr "Ошибка. Нельзя установить маркер на это
 #: filenuke.h:106 filenuke.h:118 filenuke.h:190 firedrive.h:33 firedrive.h:66
 #: firedrive.h:72 firedrive.h:122 firedrive.h:128 firedrive.h:138 flashx.h:26
 #: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:5851 global.h:6556 global.h:6625 global.h:6644 global.h:6819
+#: global.h:5851 global.h:6572 global.h:6641 global.h:6660 global.h:6835
 #: harddisk.h:350 harddisk.h:355 harddisk.h:382 harddisk.h:386 harddisk.h:439
 #: harddisk.h:633 harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729
 #: harddisk.h:731 harddisk.h:733 harddisk.h:793 harddisk.h:812 harddisk.h:815
@@ -3316,11 +3328,11 @@ msgstr "Ошибка. Программа не стартовала!"
 msgid "Error, found result without imdbid we can't this save in MediaDB"
 msgstr "Ошибка, данные не могут быть сохранены в MediaDB"
 
-#: global.h:6642
+#: global.h:6658
 msgid "Error: Transponder Source file no data"
 msgstr "Ошибка: Исходный файл транспондера пуст"
 
-#: global.h:6620
+#: global.h:6636
 msgid "Error: Transponder Source file not found"
 msgstr "Ошибка: Исходный файл транспондера не найден"
 
@@ -3559,6 +3571,10 @@ msgstr "Фавориты"
 #: tithek_mainmenu.h:16
 msgid "Favoriten"
 msgstr "Фавориты"
+
+#: global.h:6099
+msgid "February"
+msgstr ""
 
 #: extensions.h:25
 msgid "Feed"
@@ -3848,11 +3864,11 @@ msgstr "Частота"
 msgid "Frequency:"
 msgstr "Частота"
 
-#: global.h:6101
+#: global.h:6117
 msgid "Fri"
 msgstr ""
 
-#: global.h:6081 global.h:6091 rectimer.h:1084 skin_default_skin.xml.h:273
+#: global.h:6082 global.h:6092 rectimer.h:1084 skin_default_skin.xml.h:273
 msgid "Friday"
 msgstr "Пятница"
 
@@ -4891,6 +4907,14 @@ msgstr "Итальянский"
 msgid "J"
 msgstr ""
 
+#: global.h:6098
+msgid "January"
+msgstr ""
+
+#: global.h:6104
+msgid "July"
+msgstr ""
+
 #: mc_pictureplayer_settings.h:59 mc_pictureplayer_settings.h:65
 #: skin_default_skin.xml.h:382
 msgid "Jump"
@@ -4899,6 +4923,10 @@ msgstr ""
 #: play.h:1193
 msgid "Jump To (min)"
 msgstr "Перейти к (Мин)"
+
+#: global.h:6103
+msgid "June"
+msgstr ""
 
 #: skin_default_skin.xml.h:384
 msgid "K"
@@ -5323,6 +5351,10 @@ msgstr "Ручной поиск кабельного ТВ"
 msgid "Manual Search Terrestrial"
 msgstr "Ручной поиск наземного ТВ"
 
+#: global.h:6100
+msgid "March"
+msgstr ""
+
 #: skin_default_skin.xml.h:415
 msgid "Mark Color"
 msgstr ""
@@ -5358,6 +5390,10 @@ msgstr "Макс частота"
 #: skin_default_skin.xml.h:418
 msgid "Maximal signalrate"
 msgstr "Макс сигнал"
+
+#: global.h:6102
+msgid "May"
+msgstr ""
 
 #: webif_index.atemio5200.h:44 webif_index.atemio5200.h:100
 #: webif_index.atemio6200.h:44 webif_index.atemio6200.h:100
@@ -5569,8 +5605,8 @@ msgstr ""
 #: filenuke.h:46 filenuke.h:94 filenuke.h:106 filenuke.h:118 filenuke.h:190
 #: firedrive.h:33 firedrive.h:66 firedrive.h:72 firedrive.h:122
 #: firedrive.h:128 firedrive.h:138 flashx.h:26 flashx.h:84 flashx.h:138
-#: flashx.h:195 flashx.h:233 flashx.h:270 global.h:5851 global.h:6556
-#: global.h:6625 global.h:6644 global.h:6819 harddisk.h:633 harddisk.h:641
+#: flashx.h:195 flashx.h:233 flashx.h:270 global.h:5851 global.h:6572
+#: global.h:6641 global.h:6660 global.h:6835 harddisk.h:633 harddisk.h:641
 #: harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733
 #: harddisk.h:793 harddisk.h:812 harddisk.h:815 hbbtv.h:362 hello.c:36
 #: httpdfunc.h:1304 httpdfunc.h:5773 httpdfunc.h:6159 httpdfunc.h:6424
@@ -5704,11 +5740,11 @@ msgstr "Тип модуля"
 msgid "Module info"
 msgstr "Модули"
 
-#: global.h:6097
+#: global.h:6113
 msgid "Mon"
 msgstr ""
 
-#: global.h:6077 global.h:6087 rectimer.h:1080 skin_default_skin.xml.h:440
+#: global.h:6078 global.h:6088 rectimer.h:1080 skin_default_skin.xml.h:440
 msgid "Monday"
 msgstr "Понедельник"
 
@@ -5794,7 +5830,7 @@ msgstr "Мульти спутник"
 msgid "Multiple Service"
 msgstr "Мульти канал"
 
-#: global.h:6441
+#: global.h:6457
 msgid "Multituner adjustable"
 msgstr "Мульти-тюнер"
 
@@ -6064,6 +6100,10 @@ msgstr "Не использовать настройки"
 msgid "Note created"
 msgstr "Примечание создано"
 
+#: global.h:6108
+msgid "November"
+msgstr ""
+
 #: panel_settings.h:27 settings_autostart.h:303
 msgid "Ntfs Write"
 msgstr "Поддержка записи NTFS"
@@ -6098,7 +6138,7 @@ msgstr ""
 #: filenuke.h:106 filenuke.h:118 filenuke.h:190 firedrive.h:33 firedrive.h:66
 #: firedrive.h:72 firedrive.h:122 firedrive.h:128 firedrive.h:138 flashx.h:26
 #: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:5851 global.h:6556 global.h:6625 global.h:6644 global.h:6819
+#: global.h:5851 global.h:6572 global.h:6641 global.h:6660 global.h:6835
 #: harddisk.h:350 harddisk.h:355 harddisk.h:382 harddisk.h:386 harddisk.h:439
 #: harddisk.h:633 harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729
 #: harddisk.h:731 harddisk.h:733 harddisk.h:793 harddisk.h:812 harddisk.h:815
@@ -6226,6 +6266,10 @@ msgstr "OSD+Видео"
 #: plugins_tmdb_skin.xml.h:3 skins_tmdb_skin.xml.h:3
 msgid "OTHER"
 msgstr "Другие"
+
+#: global.h:6107
+msgid "October"
+msgstr ""
 
 #: webif_help.h:1
 msgid "Offline Help"
@@ -7718,7 +7762,7 @@ msgstr ""
 msgid "Samsung SPF.. Settings"
 msgstr "Настройка Samsung SPF"
 
-#: global.h:6102
+#: global.h:6118
 msgid "Sat"
 msgstr ""
 
@@ -7798,7 +7842,7 @@ msgstr "Уровень и качество сигнала"
 msgid "Saturation"
 msgstr "Насыщенность"
 
-#: global.h:6082 global.h:6092 rectimer.h:1085 skin_default_skin.xml.h:598
+#: global.h:6083 global.h:6093 rectimer.h:1085 skin_default_skin.xml.h:598
 msgid "Saturday"
 msgstr "Суббота"
 
@@ -8234,7 +8278,7 @@ msgstr "Выберите провайдера"
 msgid "Select Your Remote Control"
 msgstr "Выберите Ваш пульт управления"
 
-#: global.h:6496
+#: global.h:6512
 msgid "Select Your Serach Modus"
 msgstr "Выберите режим поиска"
 
@@ -8257,6 +8301,10 @@ msgstr "Отправить все CAID модулей"
 #: rgui.h:118
 msgid "Send remote box into standby ?"
 msgstr "Отправить дистанционно ресивер в режим ожидания?"
+
+#: global.h:6106
+msgid "September"
+msgstr ""
 
 #: skin_default_skin.xml.h:625
 msgid "Serial Input"
@@ -8723,7 +8771,7 @@ msgstr "Спорт"
 msgid "StandBy Mode"
 msgstr "Режим выключеня"
 
-#: global.h:6819
+#: global.h:6835
 msgid ""
 "Standard favorites have been successfully applied.\n"
 "Your System will reboot !"
@@ -8950,11 +8998,11 @@ msgstr "Игра Sudoku"
 msgid "Sudoku Help"
 msgstr ""
 
-#: global.h:6103
+#: global.h:6119
 msgid "Sun"
 msgstr ""
 
-#: global.h:6083 global.h:6093 rectimer.h:1086 skin_default_skin.xml.h:692
+#: global.h:6084 global.h:6094 rectimer.h:1086 skin_default_skin.xml.h:692
 msgid "Sunday"
 msgstr "Воскресенье"
 
@@ -9295,11 +9343,11 @@ msgstr ""
 msgid "Thriller"
 msgstr "Триллер"
 
-#: global.h:6100
+#: global.h:6116
 msgid "Thu"
 msgstr ""
 
-#: global.h:6080 global.h:6090 rectimer.h:1083 skin_default_skin.xml.h:718
+#: global.h:6081 global.h:6091 rectimer.h:1083 skin_default_skin.xml.h:718
 msgid "Thursday"
 msgstr "Четверг"
 
@@ -9726,7 +9774,7 @@ msgstr ""
 msgid "Transponder changed"
 msgstr "Транспондер был изменён"
 
-#: global.h:6556
+#: global.h:6572
 msgid ""
 "Transponder/Satellite Convert done, please use channel search on next Boot.\n"
 "Your System will reboot !"
@@ -9758,11 +9806,11 @@ msgstr ""
 msgid "Trial period ends in"
 msgstr ""
 
-#: global.h:6098
+#: global.h:6114
 msgid "Tue"
 msgstr ""
 
-#: global.h:6078 global.h:6088 rectimer.h:1081 skin_default_skin.xml.h:754
+#: global.h:6079 global.h:6089 rectimer.h:1081 skin_default_skin.xml.h:754
 msgid "Tuesday"
 msgstr "Вторник"
 
@@ -9774,7 +9822,7 @@ msgstr "Не удалось настроиться на канал"
 msgid "Tuner"
 msgstr "Тюнер"
 
-#: global.h:6432
+#: global.h:6448
 msgid "Tuner "
 msgstr "Тюнер"
 
@@ -10330,11 +10378,11 @@ msgstr "Веб-браузер "
 msgid "Webbrowser Plugin "
 msgstr "Веб-браузер "
 
-#: global.h:6099
+#: global.h:6115
 msgid "Wed"
 msgstr ""
 
-#: global.h:6079 global.h:6089 rectimer.h:1082 skin_default_skin.xml.h:811
+#: global.h:6080 global.h:6090 rectimer.h:1082 skin_default_skin.xml.h:811
 msgid "Wednesday"
 msgstr "Среда"
 

@@ -620,6 +620,9 @@ msgstr "App Hintergrund"
 msgid "Apple Trailer"
 msgstr "Apple Trailer peliculas"
 
+msgid "April"
+msgstr ""
+
 msgid "Archive"
 msgstr ""
 
@@ -764,6 +767,9 @@ msgstr "Retraso Audio"
 
 msgid "Audio/Subt."
 msgstr "Audio/Subtitulos"
+
+msgid "August"
+msgstr ""
 
 msgid "Auswahl"
 msgstr "seleccion"
@@ -1882,6 +1888,9 @@ msgstr "Debug Modo"
 msgid "Debuglevel"
 msgstr ""
 
+msgid "December"
+msgstr ""
+
 msgid "DeepStandby"
 msgstr "Apagado"
 
@@ -2460,6 +2469,9 @@ msgstr "Favoritos"
 
 msgid "Favoriten"
 msgstr "Favoritos"
+
+msgid "February"
+msgstr ""
 
 msgid "Feed"
 msgstr "Por Favor intruducir direccion de fuente"
@@ -3468,11 +3480,20 @@ msgstr "Italiano"
 msgid "J"
 msgstr ""
 
+msgid "January"
+msgstr ""
+
+msgid "July"
+msgstr ""
+
 msgid "Jump"
 msgstr "Saltar"
 
 msgid "Jump To (min)"
 msgstr "Saltar a Posicion (min)"
+
+msgid "June"
+msgstr ""
 
 msgid "K"
 msgstr ""
@@ -3777,6 +3798,9 @@ msgstr "busqueda cable Manual"
 msgid "Manual Search Terrestrial"
 msgstr "Bsqueda Manual terrestre"
 
+msgid "March"
+msgstr ""
+
 msgid "Mark Color"
 msgstr ""
 
@@ -3805,6 +3829,9 @@ msgstr "Maxima Frecuencia"
 
 msgid "Maximal signalrate"
 msgstr "Velocidad maxima de la señal"
+
+msgid "May"
+msgstr ""
 
 msgid "Media"
 msgstr ""
@@ -4245,6 +4272,9 @@ msgstr "Pare si no se utiliza configuracion"
 msgid "Note created"
 msgstr "No se aplica"
 
+msgid "November"
+msgstr ""
+
 msgid "Ntfs Write"
 msgstr "NTFS escribir"
 
@@ -4289,6 +4319,9 @@ msgstr ""
 
 msgid "OTHER"
 msgstr "Otros"
+
+msgid "October"
+msgstr ""
 
 msgid "Offline Help"
 msgstr ""
@@ -5698,6 +5731,9 @@ msgstr "Enviar todos caids a modulos"
 
 msgid "Send remote box into standby ?"
 msgstr "estaablecer receptor remoto al modo de espera?"
+
+msgid "September"
+msgstr ""
 
 msgid "Serial Input"
 msgstr "Puerto Serie"

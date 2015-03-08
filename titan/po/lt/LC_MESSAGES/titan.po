@@ -612,6 +612,9 @@ msgstr ""
 msgid "Apple Trailer"
 msgstr "Apple Movie Trailer"
 
+msgid "April"
+msgstr ""
+
 msgid "Archive"
 msgstr ""
 
@@ -755,6 +758,9 @@ msgid "Audio delay"
 msgstr ""
 
 msgid "Audio/Subt."
+msgstr ""
+
+msgid "August"
 msgstr ""
 
 msgid "Auswahl"
@@ -1851,6 +1857,9 @@ msgstr ""
 msgid "Debuglevel"
 msgstr ""
 
+msgid "December"
+msgstr ""
+
 msgid "DeepStandby"
 msgstr "Power off"
 
@@ -2428,6 +2437,9 @@ msgstr ""
 
 msgid "Favoriten"
 msgstr "Mgstami"
+
+msgid "February"
+msgstr ""
 
 msgid "Feed"
 msgstr "Praome vesti adres"
@@ -3420,11 +3432,20 @@ msgstr ""
 msgid "J"
 msgstr ""
 
+msgid "January"
+msgstr ""
+
+msgid "July"
+msgstr ""
+
 msgid "Jump"
 msgstr "Pereiti"
 
 msgid "Jump To (min)"
 msgstr "Pereiti  (min)"
+
+msgid "June"
+msgstr ""
 
 msgid "K"
 msgstr ""
@@ -3729,6 +3750,9 @@ msgstr ""
 msgid "Manual Search Terrestrial"
 msgstr ""
 
+msgid "March"
+msgstr ""
+
 msgid "Mark Color"
 msgstr ""
 
@@ -3754,6 +3778,9 @@ msgid "Maximal frequency"
 msgstr ""
 
 msgid "Maximal signalrate"
+msgstr ""
+
+msgid "May"
 msgstr ""
 
 msgid "Media"
@@ -4193,6 +4220,9 @@ msgstr "StopIfNotUsed Settings"
 msgid "Note created"
 msgstr ""
 
+msgid "November"
+msgstr ""
+
 msgid "Ntfs Write"
 msgstr "NTFS write"
 
@@ -4237,6 +4267,9 @@ msgstr ""
 
 msgid "OTHER"
 msgstr "Kiti"
+
+msgid "October"
+msgstr ""
 
 msgid "Offline Help"
 msgstr ""
@@ -5638,6 +5671,9 @@ msgstr ""
 
 msgid "Send remote box into standby ?"
 msgstr "Nustatyti nuotolinio imtuv  budjimo reim ?"
+
+msgid "September"
+msgstr ""
 
 msgid "Serial Input"
 msgstr ""
