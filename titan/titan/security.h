@@ -380,7 +380,7 @@ int checkflash()
 		dev = ostrcat(dev, "7", 1, 0);
 		dir = ostrcat(dir, "mnt", 1, 0);
 	}
-	else (file_exist("/etc/.mipsel"))
+	else if(file_exist("/etc/.mipsel"))
 	{
 		dev = ostrcat(dev, "rootfs", 1, 0);
 		dir = ostrcat(dir, "/", 1, 0);
