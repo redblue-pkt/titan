@@ -58,7 +58,7 @@ int checkhighflash()
 	cmd = ostrcat(cmd, " ", 1, 0); 
 	cmd = ostrcat(cmd, "grep", 1, 0); 
 	cmd = ostrcat(cmd, " ", 1, 0);
-	if(if(checkchipset("BCM7358") == 1) // inihde
+	if(checkchipset("BCM7358") == 1) // inihde
 	{
 		cmd = ostrcat(cmd, "mtd1", 1, 0); 
 		size = ostrcat("13900000", NULL, 0, 0);
