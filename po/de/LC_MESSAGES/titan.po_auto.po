@@ -2687,7 +2687,7 @@ msgstr ""
 
 #: global.h:6109
 msgid "December"
-msgstr ""
+msgstr "Dezember"
 
 #: powerofftimer.h:117
 msgid "DeepStandby"
@@ -3640,7 +3640,7 @@ msgstr ""
 
 #: global.h:6099
 msgid "February"
-msgstr ""
+msgstr "Februar"
 
 #: extensions.h:25
 msgid "Feed"
@@ -5063,11 +5063,11 @@ msgstr ""
 
 #: global.h:6098
 msgid "January"
-msgstr ""
+msgstr "Januar"
 
 #: global.h:6104
 msgid "July"
-msgstr ""
+msgstr "Juli"
 
 #: mc_pictureplayer_settings.h:59 mc_pictureplayer_settings.h:65
 #: skin_default_skin.xml.h:382
@@ -5080,7 +5080,7 @@ msgstr "Springe von akt. Position vor (min)"
 
 #: global.h:6103
 msgid "June"
-msgstr ""
+msgstr "Juni"
 
 #: skin_default_skin.xml.h:384
 msgid "K"
@@ -5507,7 +5507,7 @@ msgstr "Manuelle terrestrische Suche"
 
 #: global.h:6100
 msgid "March"
-msgstr ""
+msgstr "März"
 
 #: skin_default_skin.xml.h:415
 msgid "Mark Color"
@@ -5551,7 +5551,7 @@ msgstr "Maximale Signalrate"
 
 #: global.h:6102
 msgid "May"
-msgstr ""
+msgstr "Mai"
 
 #: webif_index.atemio5200.h:44 webif_index.atemio5200.h:100
 #: webif_index.atemio6200.h:44 webif_index.atemio6200.h:100
@@ -6427,7 +6427,7 @@ msgstr "mehr"
 
 #: global.h:6107
 msgid "October"
-msgstr ""
+msgstr "Oktober"
 
 #: webif_help.h:1
 msgid "Offline Help"
