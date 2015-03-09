@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 SVNUSER=$1
 GROUP=$2
