@@ -739,7 +739,7 @@ msgstr "Ενέργεια μετά"
 msgid "Action Man Italic"
 msgstr ""
 
-#: skin_default_skin.xml.h:53 softcam.h:295
+#: skin_default_skin.xml.h:53 softcam.h:294
 msgid "Activate"
 msgstr "Ενεργοποίηση"
 
@@ -2554,7 +2554,7 @@ msgstr "Ημέρα"
 msgid "Day: "
 msgstr ""
 
-#: skin_default_skin.xml.h:180 softcam.h:292
+#: skin_default_skin.xml.h:180 softcam.h:291
 msgid "Deactivate"
 msgstr "Απενεργοποίηση"
 
@@ -3103,8 +3103,8 @@ msgstr ""
 #: skins_optimize_skin.xml.h:1 skins_panel_skin.xml.h:10
 #: skins_rgui_skin.xml.h:1 skins_stopifnotused_skin.xml.h:3
 #: skins_sudoku_skin.xml.h:7 skins_tiwakeup_skin.xml.h:1
-#: skins_wins3_skin.xml.h:1 sock.h:952 softcam.h:413 softcam.h:476
-#: softcam.h:477 solarmovie.h:35 solarmovie.h:47 solarmovie.h:304 spinner.h:18
+#: skins_wins3_skin.xml.h:1 sock.h:952 softcam.h:411 softcam.h:474
+#: softcam.h:475 solarmovie.h:35 solarmovie.h:47 solarmovie.h:304 spinner.h:18
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:84
 #: streamcloud.h:97 streamcloud.h:128 streamcloud.h:187 stream.h:33
 #: system_backup_restore.h:31 system_backup_restore.h:40
@@ -4918,7 +4918,7 @@ msgstr ""
 msgid "Keyboard"
 msgstr ""
 
-#: softcam.h:460
+#: softcam.h:458
 msgid "Keys Updated !"
 msgstr "Updated !"
 
@@ -5557,8 +5557,8 @@ msgstr ""
 #: scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1646 scan.h:1901
 #: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 security.h:1865 service.h:738
 #: service.h:983 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:307
-#: skinadjust.h:703 skinselector.h:237 sock.h:952 softcam.h:413 softcam.h:476
-#: softcam.h:477 solarmovie.h:35 solarmovie.h:47 solarmovie.h:304 spinner.h:18
+#: skinadjust.h:703 skinselector.h:237 sock.h:952 softcam.h:411 softcam.h:474
+#: softcam.h:475 solarmovie.h:35 solarmovie.h:47 solarmovie.h:304 spinner.h:18
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:84
 #: streamcloud.h:97 streamcloud.h:128 streamcloud.h:187 stream.h:33
 #: system_backup_restore.h:40 system_backup_restore.h:43
@@ -6098,8 +6098,8 @@ msgstr ""
 #: skins_mboxinfo_skin.xml.h:2 skins_mc_skin.xml.h:35
 #: skins_optimize_skin.xml.h:2 skins_rgui_skin.xml.h:2
 #: skins_sudoku_skin.xml.h:13 skins_tiwakeup_skin.xml.h:2
-#: skins_wins3_skin.xml.h:3 sock.h:952 softcam.h:413 softcam.h:476
-#: softcam.h:477 solarmovie.h:35 solarmovie.h:47 solarmovie.h:304 spinner.h:18
+#: skins_wins3_skin.xml.h:3 sock.h:952 softcam.h:411 softcam.h:474
+#: softcam.h:475 solarmovie.h:35 solarmovie.h:47 solarmovie.h:304 spinner.h:18
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:84
 #: streamcloud.h:97 streamcloud.h:128 streamcloud.h:187 stream.h:33
 #: system_backup_restore.h:31 system_backup_restore.h:40
@@ -7061,7 +7061,7 @@ msgstr ""
 msgid "Reader Config"
 msgstr "Ρυθμίσεις Betatester"
 
-#: softcam.h:413
+#: softcam.h:411
 msgid "Reader Config Plugin not installed !"
 msgstr ""
 
@@ -7242,7 +7242,7 @@ msgid "Reduce Standby frequency"
 msgstr "Συχνότητα ελέγχου"
 
 #: plugins_wm2014_skin.xml.h:13 skin_default_skin.xml.h:554
-#: skins_wm2014_skin.xml.h:13 softcam.h:294
+#: skins_wm2014_skin.xml.h:13 softcam.h:293
 msgid "Refresh"
 msgstr "Ανανέωση"
 
@@ -7367,8 +7367,8 @@ msgstr "Ρυθμίσεις Ανάλυσης Video"
 msgid "Resolution:"
 msgstr ""
 
-#: adjust.h:113 httpdfunc.h:4042 skin_default_skin.xml.h:571 softcam.h:293
-#: softcam.h:462 webif_index.atemio510.h:5 webif_index.atemio5200.h:5
+#: adjust.h:113 httpdfunc.h:4042 skin_default_skin.xml.h:571 softcam.h:292
+#: softcam.h:460 webif_index.atemio510.h:5 webif_index.atemio5200.h:5
 #: webif_index.atemio6000.h:5 webif_index.atemio6100.h:5
 #: webif_index.atemio6200.h:5 webif_index.atemio7600.h:3
 #: webif_index.atemio-nemesis.h:5 webif_index.h:5 webif_powercontrol.h:2
@@ -8585,7 +8585,7 @@ msgstr "Ρυθμίσεις Softcam"
 msgid "Softcam Selection"
 msgstr ""
 
-#: softcam.h:291
+#: softcam.h:290
 msgid "Softcam selection:"
 msgstr "Επιλογή Softcam"
 
@@ -13079,6 +13079,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "K-Update"
-#~ msgstr "Updater"
