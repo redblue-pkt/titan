@@ -3431,9 +3431,6 @@ msgstr ""
 msgid "K"
 msgstr ""
 
-msgid "K-Update"
-msgstr "Updater"
-
 msgid "KILL"
 msgstr "Rood"
 
@@ -9083,3 +9080,4 @@ msgstr ""
 
 msgid "~"
 msgstr ""
+

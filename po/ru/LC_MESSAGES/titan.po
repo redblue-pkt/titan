@@ -3431,9 +3431,6 @@ msgstr ""
 msgid "K"
 msgstr ""
 
-msgid "K-Update"
-msgstr "Обн ключи"
-
 msgid "KILL"
 msgstr "Убить прцесс"
 
@@ -9090,3 +9087,4 @@ msgstr ""
 
 msgid "~"
 msgstr ""
+
