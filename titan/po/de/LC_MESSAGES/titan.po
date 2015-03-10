@@ -3585,9 +3585,6 @@ msgstr "Juni"
 msgid "K"
 msgstr ""
 
-msgid "K-Update"
-msgstr "Updater"
-
 msgid "KILL"
 msgstr "Rot"
 
@@ -9310,3 +9307,4 @@ msgstr ""
 
 msgid "~"
 msgstr ""
+

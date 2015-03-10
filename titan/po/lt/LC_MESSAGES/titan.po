@@ -3450,9 +3450,6 @@ msgstr ""
 msgid "K"
 msgstr ""
 
-msgid "K-Update"
-msgstr "Updater"
-
 msgid "KILL"
 msgstr "Raudona"
 
@@ -9119,3 +9116,4 @@ msgstr ""
 
 msgid "~"
 msgstr ""
+
