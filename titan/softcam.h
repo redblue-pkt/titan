@@ -280,7 +280,6 @@ void screensoftcam()
 	struct skin* b_yellow = getscreennode(softcam, "b3");
 	struct skin* b_blue = getscreennode(softcam, "b4");
 	struct skin* b_menu = getscreennode(softcam, "b7");
-	struct skin* b8 = getscreennode(softcam, "b8");
 
 	struct skin* pluginnode = NULL;
 	void (*startplugin)(char*);
@@ -302,7 +301,6 @@ void screensoftcam()
 
 	// add emu's to selectionbox
 	fillmenubox();
-	b8->hidden = YES;
 
 	drawscreen(softcam, 2, 0);
 	addscreenrc(softcam, listbox);
