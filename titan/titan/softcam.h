@@ -280,6 +280,8 @@ void screensoftcam()
 	struct skin* b_yellow = getscreennode(softcam, "b3");
 	struct skin* b_blue = getscreennode(softcam, "b4");
 	struct skin* b_menu = getscreennode(softcam, "b7");
+	struct skin* b8 = getscreennode(softcam, "b8");
+
 	struct skin* pluginnode = NULL;
 	void (*startplugin)(char*);
 
@@ -300,6 +302,7 @@ void screensoftcam()
 
 	// add emu's to selectionbox
 	fillmenubox();
+	b8->hidden = YES;
 
 	drawscreen(softcam, 2, 0);
 	addscreenrc(softcam, listbox);
@@ -411,6 +414,10 @@ void screensoftcam()
 		}
 		if(rcret == getrcconfigint("rcinfo", NULL))
 		{
+			int pinret = 0;
+			pinret = screenpincheck(4, NULL);
+			if(pinret == 1) continue;
+
 			char* extract = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *tmpstr3 = NULL, *cmd = NULL;
 
 			tmpstr = ostrcat(listbox->select->name, NULL, 0, 0);
@@ -441,6 +448,7 @@ void screensoftcam()
 				tmpstr1 = string_newline(command(cmd));
 				extract = ostrcat("tar -zxvf /tmp/.tmp.tar.gz -C ", tmpstr1, 0, 0);
 				extract = ostrcat(extract, "/", 1, 0);
+				extract = ostrcat(extract, " > /dev/null 2>&1", 1, 0);
 				free(cmd), cmd = NULL;
 				free(tmpstr1), tmpstr1 = NULL;
 			}

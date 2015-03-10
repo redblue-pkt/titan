@@ -51,6 +51,11 @@ int screenpincheck(int type, char* pin)
 			  if(ostrcmp(pincheck->ret, "9898") == 0)
 					ret = 0;
 			}
+			else if(type == 4)
+			{
+			  if(ostrcmp(pincheck->ret, "1397") == 0)
+					ret = 0;
+			}
 			else
 			{
 				if(ostrcmp(pincheck->ret, getconfig("pincodemenu", NULL)) == 0)
