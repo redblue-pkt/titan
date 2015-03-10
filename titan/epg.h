@@ -57,7 +57,7 @@ start:
 
 			loctime = localtime(&epgnode->starttime);
 			ostrftime(buf, MINMALLOC, listbox->param1, loctime);
-			buf = translate_time(buf, 0);
+			buf = translate_time(buf, 1);
 			changetext(tmp, buf);
 			changetext2(tmp, epgnode->title);
 			tmp->handle = (char*)epgnode;
