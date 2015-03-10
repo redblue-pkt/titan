@@ -450,6 +450,7 @@ void gmultiepgfilldesc(struct skin* listbox, struct skin* epgdesc, struct skin* 
 			strftime(buf2, 50, "%d.%m. (%a) %H:%M", loctime);
 		free(loctime); loctime = NULL;
 
+		buf2 = translate_time(buf2, 1);
 		changetext(epgdate, buf2);
 		free(buf2); buf2 = NULL;
 	}
