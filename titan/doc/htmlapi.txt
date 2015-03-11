@@ -359,6 +359,12 @@ descr:		displayed your local test page
 param:		yes
 example:	queryraw?gettestpage&/tmp/test.html
 
+query:	getrecfreesize
+raw:			recPath#fullSize#freeSize#percent(x %)#
+desc:			getrecfreesize
+param:		no
+example:	queryraw?getrecfreesize
+
 query:	videoplay
 raw: 			play: play (on error "can not start playback")
 raw:			stop: stop (on error "not in play mode")
