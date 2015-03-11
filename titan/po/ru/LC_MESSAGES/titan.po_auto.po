@@ -10129,7 +10129,7 @@ msgid "Version"
 msgstr "Версия"
 
 #: tpk_description.h:161
-msgid "Version 10469 of OScam"
+msgid "Version 10267 of OScam"
 msgstr ""
 
 #: tpk_description.h:162
