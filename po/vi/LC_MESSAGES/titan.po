@@ -6866,6 +6866,9 @@ msgstr ""
 msgid "Version 10469 of OScam"
 msgstr ""
 
+msgid "Version 10627 of OScam"
+msgstr ""
+
 msgid "Vertikal"
 msgstr ""
 
