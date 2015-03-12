@@ -72,8 +72,6 @@ void screenvfdisplay()
 
 	if(checkchipset("BCM7424") == 1) //inihdp
 		vfdrecord->hidden = YES;
-	else if(checkbox("SPARK") == 1)
-		addchoicebox(vfdrecord, "1", _("blink"));
 	else
 	{
 		vfdrecord->hidden = NO;
