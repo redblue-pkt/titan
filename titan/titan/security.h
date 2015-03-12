@@ -1495,26 +1495,32 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 		boxpath = ostrcat("/forum/forumdisplay.php?405", NULL, 0, 0);
 	else if(checkbox("IPBOX900") == 1)
 		boxpath = ostrcat("/forum/forumdisplay.php?406", NULL, 0, 0);
-	else if(file_exist("/etc/.homecastpro-sat"))
-		boxpath = ostrcat("/forum/forumdisplay.php?408", NULL, 0, 0);
-	else if(file_exist("/etc/.homecastpro-cable"))
-		boxpath = ostrcat("/forum/forumdisplay.php?409", NULL, 0, 0);
-	else if(checkbox("IPBOX9000") == 1)
+	else if(checkbox("IPBOX9000") == 1 && !file_exist("/etc/.homecastpro-sat") && !file_exist("/etc/.homecastpro-cable"))
 		boxpath = ostrcat("/forum/forumdisplay.php?407", NULL, 0, 0);
+	else if(checkbox("IPBOX9000") == 1 && file_exist("/etc/.homecastpro-sat"))
+		boxpath = ostrcat("/forum/forumdisplay.php?408", NULL, 0, 0);
+	else if(checkbox("IPBOX9000") == 1 && file_exist("/etc/.homecastpro-cable"))
+		boxpath = ostrcat("/forum/forumdisplay.php?409", NULL, 0, 0);
+	else if(checkbox("XPEEDLX") == 1)
+		boxpath = ostrcat("/forum/forumdisplay.php?410", NULL, 0, 0);
+	else if(checkbox("XPEEDLX3") == 1)
+		boxpath = ostrcat("/forum/forumdisplay.php?411", NULL, 0, 0);
+	else if(checkbox("SEZAMMARVEL") == 1)
+		boxpath = ostrcat("/forum/forumdisplay.php?412", NULL, 0, 0);
 	else if(checkbox("SPARK") == 1)
 		boxpath = ostrcat("/forum/forumdisplay.php?413", NULL, 0, 0);
 	else if(checkbox("SPARK7162") == 1)
 		boxpath = ostrcat("/forum/forumdisplay.php?414", NULL, 0, 0);
 	else if(checkbox("UFC960") == 1)
 		boxpath = ostrcat("/forum/forumdisplay.php?415", NULL, 0, 0);
-/*
-	else if(checkbox("XPEEDLX") == 1)
-		boxpath = ostrcat("/forum/forumdisplay.php?410", NULL, 0, 0);
-	else if(checkbox("XPEEDLX3") == 1)
-		boxpath = ostrcat("/forum/forumdisplay.php?411", NULL, 0, 0);
-	else if(checkbox("SEZAM-MARVEL") == 1)
-		boxpath = ostrcat("/forum/forumdisplay.php?412", NULL, 0, 0);
-*/
+	else if(checkbox("MBULTRA") == 1)
+		boxpath = ostrcat("/forum/forumdisplay.php?416", NULL, 0, 0);
+	else if(checkbox("BEYONWIZT4") == 1)
+		boxpath = ostrcat("/forum/forumdisplay.php?417", NULL, 0, 0);
+	else if(checkbox("MBMINI") == 1)
+		boxpath = ostrcat("/forum/forumdisplay.php?418", NULL, 0, 0);
+	else if(checkbox("SEZAM1000HD") == 1)
+		boxpath = ostrcat("/forum/forumdisplay.php?419", NULL, 0, 0);
 
 	if(user != NULL && pass != NULL)
 	{	
