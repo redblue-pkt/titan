@@ -1268,16 +1268,16 @@ char* getrealboxtype()
 
 int checkchipset(char* input)
 {
-	char* chipset = NULL;
 	int ret = 0;
-
+#ifdef MIPSEL
+	char* chipset = NULL;
 	chipset = string_toupper(readsys("/proc/stb/info/chipset", 1));
 
 	if(ostrcmp(chipset, input) == 0)
 		ret = 1;
 
 	free(chipset); chipset = NULL;
-
+#endif
 	return ret;
 }
 
