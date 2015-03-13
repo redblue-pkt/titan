@@ -189,7 +189,10 @@ void ckeckkillnetthread()
 
 int checkreseller()
 {
-	if(checkbox("UFS910") == 1 || checkbox("UFS922") == 1 || checkbox("UFC960") == 1 || checkbox("SPARK") == 1 || checkbox("SPARK7162") == 1 || file_exist("/etc/.mipsel"))
+	// disabled not needed anymore
+	return 0;
+	
+	if(checkbox("UFS910") == 1 || checkbox("UFS922") == 1 || checkbox("UFC960") == 1 || checkbox("UFS913") == 1 || checkbox("IPBOX91") == 1 || checkbox("IPBOX900") == 1 || checkbox("IPBOX910") == 1 || checkbox("IPBOX9000") == 1 || checkbox("SPARK") == 1 || checkbox("SPARK7162") == 1 || file_exist("/etc/.mipsel"))
 	{
 		debug(10, "ResellerId: skipped");
 		debug(10, "boxtype: %s", getboxtype());
