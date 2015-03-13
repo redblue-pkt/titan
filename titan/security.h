@@ -1510,20 +1510,20 @@ int vbulletin_userauth(char* link, char* user, char* pass)
 		boxpath = ostrcat("/forum/forumdisplay.php?411", NULL, 0, 0);
 	else if(checkbox("SEZAMMARVEL") == 1)
 		boxpath = ostrcat("/forum/forumdisplay.php?412", NULL, 0, 0);
-	else if(checkbox("SPARK") == 1)
-		boxpath = ostrcat("/forum/forumdisplay.php?413", NULL, 0, 0);
-	else if(checkbox("SPARK7162") == 1)
-		boxpath = ostrcat("/forum/forumdisplay.php?414", NULL, 0, 0);
 	else if(checkbox("UFC960") == 1)
-		boxpath = ostrcat("/forum/forumdisplay.php?415", NULL, 0, 0);
-	else if(checkbox("MBULTRA") == 1)
-		boxpath = ostrcat("/forum/forumdisplay.php?416", NULL, 0, 0);
-	else if(checkbox("BEYONWIZT4") == 1)
-		boxpath = ostrcat("/forum/forumdisplay.php?417", NULL, 0, 0);
-	else if(checkbox("MBMINI") == 1)
-		boxpath = ostrcat("/forum/forumdisplay.php?418", NULL, 0, 0);
-	else if(checkbox("SEZAM1000HD") == 1)
 		boxpath = ostrcat("/forum/forumdisplay.php?419", NULL, 0, 0);
+	else if(checkbox("MBULTRA") == 1)
+		boxpath = ostrcat("/forum/forumdisplay.php?420", NULL, 0, 0);
+	else if(checkbox("BEYONWIZT4") == 1)
+		boxpath = ostrcat("/forum/forumdisplay.php?421", NULL, 0, 0);
+	else if(checkbox("MBMINI") == 1)
+		boxpath = ostrcat("/forum/forumdisplay.php?422", NULL, 0, 0);
+	else if(checkbox("SEZAM1000HD") == 1)
+		boxpath = ostrcat("/forum/forumdisplay.php?423", NULL, 0, 0);
+	else if(checkbox("SPARK") == 1)
+		boxpath = ostrcat("/forum/forumdisplay.php?432", NULL, 0, 0);
+	else if(checkbox("SPARK7162") == 1)
+		boxpath = ostrcat("/forum/forumdisplay.php?433", NULL, 0, 0);
 
 	if(user != NULL && pass != NULL)
 	{	
