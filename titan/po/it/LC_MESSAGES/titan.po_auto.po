@@ -20,7 +20,7 @@ msgstr ""
 msgid " : NOT OKAY!"
 msgstr ""
 
-#: security.h:675 security.h:2029
+#: security.h:678 security.h:2038
 msgid " Days "
 msgstr ""
 
@@ -32,7 +32,7 @@ msgstr ""
 msgid "!!! This is a DEMO Version !!!"
 msgstr ""
 
-#: security.h:660
+#: security.h:663
 msgid ""
 "!!! Trial period ended !!!\n"
 "\n"
@@ -1091,7 +1091,7 @@ msgstr "Impostazione Tuner"
 msgid "Atemio WLAN configuration"
 msgstr "LNB configurazioni"
 
-#: security.h:2034
+#: security.h:2043
 msgid "Atemio free license"
 msgstr ""
 
@@ -2362,7 +2362,7 @@ msgstr ""
 msgid "Copy satlist successfull"
 msgstr ""
 
-#: security.h:2043
+#: security.h:2052
 msgid "Copyright"
 msgstr "© Copyright"
 
@@ -2701,7 +2701,7 @@ msgstr ""
 "Rosso  = Finire il Processo\n"
 "Verde = Restart Del sistema"
 
-#: security.h:2036
+#: security.h:2045
 msgid "Dev free license"
 msgstr ""
 
@@ -3120,7 +3120,7 @@ msgstr ""
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:31 scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1901
 #: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 scriptexec.h:41
-#: security.h:660 security.h:677 security.h:1865 service.h:738 service.h:983
+#: security.h:663 security.h:680 security.h:1874 service.h:738 service.h:983
 #: shared.h:29 shared.h:65 shared.h:82 skin_default_skin.xml.h:244
 #: skins_autotimer_skin.xml.h:6 skins_callmonitor1_skin.xml.h:10
 #: skins_catcatch_skin.xml.h:3 skins_dlna_skin.xml.h:1 skinselector.h:237
@@ -3854,7 +3854,7 @@ msgstr "VFDisplay"
 msgid "Front Key"
 msgstr ""
 
-#: security.h:2010
+#: security.h:2019
 msgid "Frontcontroller"
 msgstr ""
 
@@ -4615,7 +4615,7 @@ msgid ""
 "sharing' in the 'Network and Sharing Center'."
 msgstr ""
 
-#: security.h:1998
+#: security.h:2007
 msgid "Image"
 msgstr ""
 
@@ -4631,7 +4631,7 @@ msgstr ""
 msgid "Inc. AC3 Audio in %"
 msgstr ""
 
-#: info.h:27 plugins_tmc_skin.xml.h:8 security.h:660 security.h:677
+#: info.h:27 plugins_tmc_skin.xml.h:8 security.h:663 security.h:680
 #: skins_tmc_skin.xml.h:8 titan.c:1018 webif_index.atemio510.h:15
 #: webif_index.atemio5200.h:15 webif_index.atemio5200.h:43
 #: webif_index.atemio5200.h:99 webif_index.atemio6000.h:15
@@ -4798,7 +4798,7 @@ msgstr "Install error"
 msgid "Installation start"
 msgstr "Installing"
 
-#: httpdfunc.h:5662 security.h:2005 skin_default_skin.xml.h:373
+#: httpdfunc.h:5662 security.h:2014 skin_default_skin.xml.h:373
 msgid "Installed:"
 msgstr "Installa"
 
@@ -5137,7 +5137,7 @@ msgstr ""
 msgid "Lib extension for network (upnpfs/smbfs/ftpfs/rarfs)"
 msgstr ""
 
-#: security.h:2016
+#: security.h:2025
 msgid "License"
 msgstr ""
 
@@ -5592,7 +5592,7 @@ msgstr ""
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:31
 #: scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1646 scan.h:1901
-#: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 security.h:1865 service.h:738
+#: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 security.h:1874 service.h:738
 #: service.h:983 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:307
 #: skinadjust.h:703 skinselector.h:237 sock.h:952 softcam.h:411 softcam.h:474
 #: softcam.h:475 solarmovie.h:35 solarmovie.h:47 solarmovie.h:304 spinner.h:18
@@ -6131,7 +6131,7 @@ msgstr ""
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:31 scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1901
 #: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 scriptexec.h:41
-#: security.h:660 security.h:677 security.h:1865 service.h:738 service.h:983
+#: security.h:663 security.h:680 security.h:1874 service.h:738 service.h:983
 #: shared.h:29 shared.h:65 shared.h:82 skinadjust.h:307 skinadjust.h:703
 #: skins_dlna_skin.xml.h:7 skinselector.h:237 skins_facebook_skin.xml.h:3
 #: skins_mboxinfo_skin.xml.h:2 skins_mc_skin.xml.h:35
@@ -9721,7 +9721,7 @@ msgstr ""
 msgid "Treiber fuer Samsung LCD"
 msgstr ""
 
-#: security.h:673 security.h:2026
+#: security.h:676 security.h:2035
 msgid "Trial period ends in"
 msgstr ""
 
@@ -9737,7 +9737,7 @@ msgstr "Martedì"
 msgid "Tune to channel failed"
 msgstr "errore nel cambio canale"
 
-#: security.h:2052 skin_default_skin.xml.h:754
+#: security.h:2061 skin_default_skin.xml.h:754
 msgid "Tuner"
 msgstr ""
 
@@ -9775,7 +9775,7 @@ msgid ""
 "or stream is running !"
 msgstr ""
 
-#: security.h:2059 skin_default_skin.xml.h:760
+#: security.h:2068 skin_default_skin.xml.h:760
 msgid "Tunertype"
 msgstr ""
 
@@ -9840,7 +9840,7 @@ msgstr ""
 msgid "UE"
 msgstr ""
 
-#: security.h:2032
+#: security.h:2041
 msgid "UFS910 free license"
 msgstr ""
 
@@ -10029,7 +10029,7 @@ msgstr ""
 msgid "VOX-Now"
 msgstr ""
 
-#: security.h:2001
+#: security.h:2010
 msgid "Version"
 msgstr ""
 
@@ -10752,11 +10752,11 @@ msgstr "nero"
 msgid "blindscanadjust"
 msgstr ""
 
-#: vfdisplay.h:76 vfdisplay.h:81
+#: vfdisplay.h:79
 msgid "blink"
 msgstr ""
 
-#: vfdisplay.h:85
+#: vfdisplay.h:83
 msgid "blink star"
 msgstr ""
 
@@ -11143,7 +11143,7 @@ msgstr ""
 msgid "expert (11)"
 msgstr ""
 
-#: security.h:2038
+#: security.h:2047
 msgid "expired"
 msgstr ""
 
@@ -11168,7 +11168,7 @@ msgstr ""
 msgid "f"
 msgstr ""
 
-#: vfdisplay.h:82
+#: vfdisplay.h:80
 msgid "fade out/in"
 msgstr ""
 
@@ -11800,7 +11800,7 @@ msgstr ""
 #: panel_settings_overclocking.h:276 readerconfig.h:421
 #: settings_autostart.h:53 settings_overclocking.h:276 transponder.h:256
 #: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:836
-#: vfdisplay.h:63 vfdisplay.h:80
+#: vfdisplay.h:63 vfdisplay.h:78
 msgid "off"
 msgstr ""
 
@@ -12356,7 +12356,7 @@ msgstr ""
 msgid "show in list"
 msgstr ""
 
-#: vfdisplay.h:83
+#: vfdisplay.h:81
 msgid "show record"
 msgstr ""
 
@@ -12462,7 +12462,7 @@ msgstr "Standby"
 msgid "standbymenu"
 msgstr ""
 
-#: vfdisplay.h:84
+#: vfdisplay.h:82
 msgid "star"
 msgstr ""
 
@@ -12777,7 +12777,7 @@ msgstr ""
 
 #: bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2875 httpdfunc.h:2887
 #: httpdfunc.h:5556 httpdfunc.h:5602 hwtest.h:478 moduleconfig.h:345
-#: security.h:2057 skin_default_skin.xml.h:776 skinselector.h:138 stream.h:22
+#: security.h:2066 skin_default_skin.xml.h:776 skinselector.h:138 stream.h:22
 #: transponder.h:122 transponder.h:158 transponder.h:194 transponder.h:227
 #: transponder.h:259 transponder.h:295 transponder.h:330 transponder.h:348
 #: transponder.h:364 transponder.h:418 transponder.h:451 transponder.h:480
@@ -12870,7 +12870,7 @@ msgstr ""
 msgid "v"
 msgstr ""
 
-#: security.h:2019
+#: security.h:2028
 msgid "valid"
 msgstr ""
 
