@@ -645,7 +645,7 @@ msgid ""
 "search for new shares."
 msgstr ""
 
-#: networkbrowser.h:1750
+#: networkbrowser.h:1772
 msgid "A mount entry with this name already exists!"
 msgstr "Такое имя уже существует!"
 
@@ -774,15 +774,15 @@ msgstr "Актеры"
 msgid "Adapter Settings"
 msgstr "Настройки адаптера"
 
-#: networkbrowser.h:1340
+#: networkbrowser.h:1362
 msgid "Add Cifs Network Share"
 msgstr "Добавить сетевую общую папку CIFS"
 
-#: networkbrowser.h:1430
+#: networkbrowser.h:1452
 msgid "Add Ftpfs Network Share"
 msgstr "Добавить сетевую общую папку FTP"
 
-#: networkbrowser.h:1390
+#: networkbrowser.h:1412
 msgid "Add Nfs Network Share"
 msgstr "Добавить сетевую общую папку NFS"
 
@@ -936,11 +936,11 @@ msgstr "Скорость анимации"
 msgid "Animation"
 msgstr "Анимация"
 
-#: networkbrowser.h:1005 networkbrowser.h:1011 networkbrowser.h:1021
+#: networkbrowser.h:1027 networkbrowser.h:1033 networkbrowser.h:1043
 msgid "Anonymous login Access Denied !"
 msgstr "Анонимный вход запрещён"
 
-#: networkbrowser.h:1009 networkbrowser.h:1025
+#: networkbrowser.h:1031 networkbrowser.h:1047
 msgid "Anonymous login successful"
 msgstr "Анонимный вход осуществлён"
 
@@ -969,7 +969,7 @@ msgstr ""
 msgid "Archive"
 msgstr "Архив"
 
-#: networkbrowser.h:1907
+#: networkbrowser.h:1929
 msgid "Are you sure you want remove this share?"
 msgstr "Удалить эту сетевую общую папку?"
 
@@ -1010,7 +1010,7 @@ msgstr ""
 "ОК = Запустить восстановление\n"
 "EXIT= Отменить восстановление"
 
-#: networkbrowser.h:1755
+#: networkbrowser.h:1777
 msgid "Are you sure you want to save this network mount?"
 msgstr "Сохранить эту точку монтирования?"
 
@@ -2104,7 +2104,7 @@ msgstr "Выберите как воспроизвести файл"
 msgid "Choose your Config File from the following list"
 msgstr "Выберите нужную конфигурацию из списка ниже"
 
-#: networkbrowser.h:1181
+#: networkbrowser.h:1203
 msgid "Choose your DNS-Share from the following list"
 msgstr ""
 "Список обнаруженных сетевых папок\n"
@@ -2153,7 +2153,7 @@ msgstr "Выберите разрешение"
 msgid "Choose your Restore Mode from the following list."
 msgstr "Выберите способ сброса настроек из списка ниже"
 
-#: networkbrowser.h:1875
+#: networkbrowser.h:1897
 msgid "Choose your Shares from the following list"
 msgstr "Выберите для изменения, добавления новой сетевой папки"
 
@@ -2181,7 +2181,7 @@ msgstr "Выберите Unicable SCR из списка"
 msgid "Choose your Unicable product from the following list"
 msgstr "Выберите версию из списка"
 
-#: networkbrowser.h:1207
+#: networkbrowser.h:1229
 msgid "Choose your cifs/nfs Share from the following list"
 msgstr "Выберите для изменения, добавления новую сетевых папок"
 
@@ -3124,10 +3124,10 @@ msgstr "Ошибка. Нельзя установить маркер на это
 #: mediadb.h:1477 mediadb.h:2525 mediadbsettings.h:95 menu.h:168 menu.h:223
 #: menu.h:987 menu.h:989 movie4k.h:36 movie4k.h:48 movie4k.h:92 movie4k.h:399
 #: movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78 movshare.h:157
-#: movshare.h:163 myvideo.h:86 networkbrowser.h:944 networkbrowser.h:1005
-#: networkbrowser.h:1009 networkbrowser.h:1011 networkbrowser.h:1021
-#: networkbrowser.h:1025 networkbrowser.h:1189 networkbrowser.h:1743
-#: networkbrowser.h:1750 networkbrowser.h:1755 networkbrowser.h:1907
+#: movshare.h:163 myvideo.h:86 networkbrowser.h:966 networkbrowser.h:1027
+#: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
+#: networkbrowser.h:1047 networkbrowser.h:1211 networkbrowser.h:1765
+#: networkbrowser.h:1772 networkbrowser.h:1777 networkbrowser.h:1929
 #: network.h:284 network.h:299 network.h:335 network.h:436 network.h:577
 #: network.h:785 network.h:793 network.h:819 network.h:823 network.h:877
 #: network.h:884 network.h:906 newsletter.h:252 newsletter.h:292 novamov.h:35
@@ -3755,7 +3755,7 @@ msgstr "Размер шрифта в пикселях"
 msgid "Footballgirls"
 msgstr ""
 
-#: networkbrowser.h:944
+#: networkbrowser.h:966
 msgid ""
 "For Better Win7 Support install please Tpk Install > Network > Smbclient"
 msgstr "Для лучшей поддержки Win7 установите Smbclient"
@@ -5637,10 +5637,10 @@ msgstr ""
 #: mediadb.h:1477 mediadbsettings.h:95 menu.h:168 menu.h:223 movie4k.h:36
 #: movie4k.h:48 movie4k.h:92 movie4k.h:399 movreel.h:30 movreel.h:137
 #: movshare.h:34 movshare.h:78 movshare.h:157 movshare.h:163 myvideo.h:86
-#: networkbrowser.h:944 networkbrowser.h:1005 networkbrowser.h:1009
-#: networkbrowser.h:1011 networkbrowser.h:1021 networkbrowser.h:1025
-#: networkbrowser.h:1189 networkbrowser.h:1743 networkbrowser.h:1750
-#: networkbrowser.h:1755 networkbrowser.h:1907 network.h:436 network.h:577
+#: networkbrowser.h:966 networkbrowser.h:1027 networkbrowser.h:1031
+#: networkbrowser.h:1033 networkbrowser.h:1043 networkbrowser.h:1047
+#: networkbrowser.h:1211 networkbrowser.h:1765 networkbrowser.h:1772
+#: networkbrowser.h:1777 networkbrowser.h:1929 network.h:436 network.h:577
 #: network.h:785 network.h:793 network.h:819 network.h:823 network.h:877
 #: novamov.h:35 novamov.h:80 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105
 #: panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6 played.h:30
@@ -5946,15 +5946,15 @@ msgstr ""
 msgid "Networkbrowser"
 msgstr "Сетевой браузер"
 
-#: networkbrowser.h:1875
+#: networkbrowser.h:1897
 msgid "Networkbrowser - show Shares"
 msgstr "Настройка папок"
 
-#: networkbrowser.h:1181
+#: networkbrowser.h:1203
 msgid "Networkbrowser - show scanned DNS-Shares"
 msgstr "Обнаруженные папки"
 
-#: networkbrowser.h:1207
+#: networkbrowser.h:1229
 msgid "Networkbrowser - show scanned cifs/nfs-Shares"
 msgstr "Сканирование CIFS/NFS"
 
@@ -6172,10 +6172,10 @@ msgstr ""
 #: mediadb.h:1477 mediadb.h:2525 mediadbsettings.h:95 menu.h:168 menu.h:223
 #: menu.h:987 menu.h:989 movie4k.h:36 movie4k.h:48 movie4k.h:92 movie4k.h:399
 #: movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78 movshare.h:157
-#: movshare.h:163 myvideo.h:86 networkbrowser.h:944 networkbrowser.h:1005
-#: networkbrowser.h:1009 networkbrowser.h:1011 networkbrowser.h:1021
-#: networkbrowser.h:1025 networkbrowser.h:1189 networkbrowser.h:1743
-#: networkbrowser.h:1750 networkbrowser.h:1755 networkbrowser.h:1907
+#: movshare.h:163 myvideo.h:86 networkbrowser.h:966 networkbrowser.h:1027
+#: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
+#: networkbrowser.h:1047 networkbrowser.h:1211 networkbrowser.h:1765
+#: networkbrowser.h:1772 networkbrowser.h:1777 networkbrowser.h:1929
 #: network.h:263 network.h:271 network.h:284 network.h:299 network.h:335
 #: network.h:436 network.h:577 network.h:785 network.h:793 network.h:819
 #: network.h:823 network.h:877 network.h:884 network.h:906 newsletter.h:252
@@ -7902,7 +7902,7 @@ msgstr "Блок сканирования"
 msgid "ScanList"
 msgstr "Лист сканирования"
 
-#: networkbrowser.h:1160 networkbrowser.h:1161
+#: networkbrowser.h:1182 networkbrowser.h:1183
 msgid "Scanning Network Shares, please wait !!"
 msgstr "Идёт сканирование, ждите!"
 
@@ -8421,7 +8421,7 @@ msgstr "Параметры HDMI-CEC"
 msgid "Setup PIP"
 msgstr "Параметры PiP"
 
-#: networkbrowser.h:1743
+#: networkbrowser.h:1765
 msgid "Sharename can't be empty!"
 msgstr "Имя папки не может быть пустым!"
 
@@ -10067,7 +10067,7 @@ msgstr "Использовать время окончания EPG"
 msgid "Use Teletxt Workaround"
 msgstr "Альтернативный метод для видеотекста"
 
-#: networkbrowser.h:1189
+#: networkbrowser.h:1211
 msgid "Use User authentication ?"
 msgstr "Использовать аутентификацию пользователя?"
 
@@ -10976,7 +10976,7 @@ msgstr ""
 msgid "check your Secret Feed !"
 msgstr "Проверьте Ваш скрытый фид!"
 
-#: networkbrowser.h:1559
+#: networkbrowser.h:1581
 msgid "cifs"
 msgstr "CIFS"
 
@@ -11327,7 +11327,7 @@ msgstr "Проверка файлофой системы root"
 msgid "ftdi"
 msgstr ""
 
-#: networkbrowser.h:1561
+#: networkbrowser.h:1583
 msgid "ftpfs"
 msgstr "FTPfs"
 
@@ -11411,7 +11411,7 @@ msgstr "Скрыть"
 msgid "hold"
 msgstr "Удержать"
 
-#: networkbrowser.h:1603
+#: networkbrowser.h:1625
 msgid "html"
 msgstr ""
 
@@ -11756,7 +11756,7 @@ msgstr ""
 msgid "newsletter"
 msgstr "Новости от разработчиков"
 
-#: networkbrowser.h:1560
+#: networkbrowser.h:1582
 msgid "nfs"
 msgstr "NFS"
 
@@ -11786,9 +11786,9 @@ msgstr "Автостарт NFS сервера"
 #: mediadb.h:1092 mediadb.h:1107 mediadbsettings.h:28 mediadbsettings.h:32
 #: mediadbsettings.h:51 mediadbsettings.h:66 mediadbsettings.h:70
 #: moduleconfig.h:243 moduleconfig.h:251 moduleconfig.h:255 moduleconfig.h:259
-#: moduleconfig.h:263 networkbrowser.h:1606 networkbrowser.h:1610
-#: networkbrowser.h:1619 networkbrowser.h:1624 networkbrowser.h:1628
-#: networkbrowser.h:1654 network.h:691 panel_settings_autostart.h:35
+#: moduleconfig.h:263 networkbrowser.h:1628 networkbrowser.h:1632
+#: networkbrowser.h:1641 networkbrowser.h:1646 networkbrowser.h:1650
+#: networkbrowser.h:1676 network.h:691 panel_settings_autostart.h:35
 #: panel_settings_autostart.h:96 panel_settings_autostart.h:113
 #: panel_settings_autostart.h:123 panel_settings_autostart.h:141
 #: panel_settings_autostart.h:150 panel_settings_autostart.h:159
@@ -12260,7 +12260,7 @@ msgstr "Размер по убыванию"
 msgid "right"
 msgstr "Вправо"
 
-#: networkbrowser.h:1664
+#: networkbrowser.h:1686
 msgid "ro"
 msgstr "Только чтение"
 
@@ -12272,7 +12272,7 @@ msgstr "Размер буфера чтения"
 msgid "running"
 msgstr "Активен"
 
-#: networkbrowser.h:1663
+#: networkbrowser.h:1685
 msgid "rw"
 msgstr "Чтение/Запись"
 
@@ -12502,11 +12502,11 @@ msgstr "Медленно"
 msgid "small"
 msgstr "Маленький"
 
-#: networkbrowser.h:1602
+#: networkbrowser.h:1624
 msgid "socks4"
 msgstr ""
 
-#: networkbrowser.h:1601
+#: networkbrowser.h:1623
 msgid "socks5"
 msgstr ""
 
@@ -12535,16 +12535,16 @@ msgstr "Скорость"
 msgid "spinner"
 msgstr ""
 
-#: networkbrowser.h:1598 plugins_networkbrowser_skin.xml.h:29
+#: networkbrowser.h:1620 plugins_networkbrowser_skin.xml.h:29
 #: skins_networkbrowser_skin.xml.h:29
 msgid "ssl"
 msgstr "SSL"
 
-#: networkbrowser.h:1597
+#: networkbrowser.h:1619
 msgid "ssl_control"
 msgstr "Контроль SSL"
 
-#: networkbrowser.h:1596
+#: networkbrowser.h:1618
 msgid "ssl_try"
 msgstr ""
 
@@ -12711,7 +12711,7 @@ msgstr ""
 msgid "t"
 msgstr ""
 
-#: networkbrowser.h:1660
+#: networkbrowser.h:1682
 msgid "tcp"
 msgstr ""
 
@@ -12845,7 +12845,7 @@ msgstr "Тип"
 msgid "u"
 msgstr ""
 
-#: networkbrowser.h:1659
+#: networkbrowser.h:1681
 msgid "udp"
 msgstr ""
 
@@ -13165,8 +13165,8 @@ msgstr "Жёлтая"
 #: mediadbsettings.h:29 mediadbsettings.h:33 mediadbsettings.h:52
 #: mediadbsettings.h:67 mediadbsettings.h:71 moduleconfig.h:242
 #: moduleconfig.h:252 moduleconfig.h:256 moduleconfig.h:260 moduleconfig.h:264
-#: networkbrowser.h:1607 networkbrowser.h:1611 networkbrowser.h:1620
-#: networkbrowser.h:1625 networkbrowser.h:1629 networkbrowser.h:1655
+#: networkbrowser.h:1629 networkbrowser.h:1633 networkbrowser.h:1642
+#: networkbrowser.h:1647 networkbrowser.h:1651 networkbrowser.h:1677
 #: network.h:692 panel_settings_autostart.h:35 panel_settings_autostart.h:96
 #: panel_settings_autostart.h:113 panel_settings_autostart.h:123
 #: panel_settings_autostart.h:141 panel_settings_autostart.h:150
