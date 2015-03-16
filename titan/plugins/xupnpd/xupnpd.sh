@@ -9,6 +9,13 @@
 
 export PATH=$PATH:/var/swap/bin:/mnt/swapextensions/bin:/var/bin
 
+if [ -e /mnt/swapextensions/bin/xupnpd ];then
+	INSTDIR=/mnt/swapextensions
+else
+	INSTDIR=/var/swap
+fi	
+export XUPNPDROOTDIR=$INSTDIR/etc/xupnpd
+
 model=`cat /etc/model`
 NAME=xupnpd
 DESC="xupnpd-$model"
@@ -19,7 +26,7 @@ IP=`ifconfig | grep inet | grep Bcast | awk '{print $2}' | cut -d":" -f2`
  
 case $1 in
   start)
-	bouquet2m3u http://$IP:22222/ /mnt/swapextensions/etc/xupnpd/playlists
+	bouquet2m3u http://$IP:22222/ $INSTDIR/etc/xupnpd/playlists
     start-stop-daemon --verbose --start --exec xupnpd
   ;;
   stop)
