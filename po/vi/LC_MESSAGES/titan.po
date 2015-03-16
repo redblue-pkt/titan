@@ -6445,7 +6445,7 @@ msgstr ""
 msgid "Titan MediaCenter"
 msgstr "Media Center"
 
-msgid "Titan will be restartet!"
+msgid "Titan will be restarted!"
 msgstr ""
 
 msgid "TitanNit Blood"

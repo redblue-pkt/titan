@@ -6695,8 +6695,8 @@ msgstr "Titan-Protokoll"
 msgid "Titan MediaCenter"
 msgstr "Titan Media Center"
 
-msgid "Titan will be restartet!"
-msgstr "Titan wird neu gestartet!"
+msgid "Titan will be restarted!"
+msgstr ""
 
 msgid "TitanNit Blood"
 msgstr ""
@@ -9310,3 +9310,4 @@ msgstr ""
 
 msgid "~"
 msgstr ""
+
