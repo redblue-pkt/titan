@@ -427,6 +427,7 @@ void gmultiepgfilldesc(struct skin* listbox, struct skin* epgdesc, struct skin* 
 	char* tmpstr = NULL;
 
 	changetext(epgdesc, NULL);
+	changetext(epgdate, NULL);
 
 	if(flag == 0)
 	{
@@ -438,21 +439,35 @@ void gmultiepgfilldesc(struct skin* listbox, struct skin* epgdesc, struct skin* 
 
 	if(epgnode != NULL)
 	{
-		if(epgnode->title != NULL)
-			tmpstr = ostrcat(epgnode->title, " - ", 0, 0);
-		tmpstr = ostrcat(tmpstr, epgdescunzip(epgnode), 1, 1);
-		changetext(epgdesc, tmpstr);
-		free(tmpstr); tmpstr = NULL;
-		
 		char* buf2 = malloc(50);
 		struct tm* loctime = olocaltime(&epgnode->starttime);
 		if(loctime != NULL)
 			strftime(buf2, 50, "%d.%m. (%a) %H:%M", loctime);
 		free(loctime); loctime = NULL;
 
+		char* buf3 = malloc(50);
+		loctime = olocaltime(&epgnode->endtime);
+		if(loctime != NULL)
+			strftime(buf3, 50, "%H:%M", loctime);
+		free(loctime); loctime = NULL;
+
 		buf2 = translate_time(buf2, 1);
+		//buf3 = translate_time(buf3, 1);
+		buf2 = ostrcat(buf2, "-", 1, 0);
+		buf2 = ostrcat(buf2, buf3, 1, 0);
 		changetext(epgdate, buf2);
+		tmpstr = ostrcat(buf2, " - ", 0, 0);
 		free(buf2); buf2 = NULL;
+		free(buf3); buf3 = NULL;
+
+		if(epgnode->title != NULL)
+		{
+			tmpstr = ostrcat(tmpstr, epgnode->title, 1, 0);
+			tmpstr = ostrcat(tmpstr, " - ", 1, 0);
+		}
+		tmpstr = ostrcat(tmpstr, epgdescunzip(epgnode), 1, 1);
+		changetext(epgdesc, tmpstr);
+		free(tmpstr); tmpstr = NULL;
 	}
 }
 
