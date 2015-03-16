@@ -9476,7 +9476,7 @@ msgid "Titan MediaCenter"
 msgstr "Media Center"
 
 #: skinadjust.h:307 skinadjust.h:703
-msgid "Titan will be restartet!"
+msgid "Titan will be restarted!"
 msgstr ""
 
 #: tpk_showname.h:182
