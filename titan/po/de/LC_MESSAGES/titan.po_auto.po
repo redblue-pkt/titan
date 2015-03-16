@@ -9727,7 +9727,7 @@ msgstr "Titan Media Center"
 
 #: skinadjust.h:307 skinadjust.h:703
 msgid "Titan will be restarted!"
-msgstr ""
+msgstr "Titan wird neu gestartet!"
 
 #: tpk_showname.h:182
 msgid "TitanNit Blood"
@@ -13455,6 +13455,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "Titan will be restartet!"
-#~ msgstr "Titan wird neu gestartet!"

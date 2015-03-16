@@ -9538,7 +9538,7 @@ msgstr "Медиацент Titan"
 
 #: skinadjust.h:307 skinadjust.h:703
 msgid "Titan will be restarted!"
-msgstr ""
+msgstr "Titan будет перезагружен!"
 
 #: tpk_showname.h:182
 msgid "TitanNit Blood"
@@ -13235,6 +13235,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "Titan will be restartet!"
-#~ msgstr "Titan будет перезагружен!"
