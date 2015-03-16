@@ -4390,14 +4390,14 @@ int changetitle(struct skin* node, char* text)
 	if(node != NULL)
 	{
 		free(node->title);
-		if(text != NULL)
+		if( (text != NULL) && (node->fontsize > 1) )
 		{
 			node->title = strdup(text);
 			node->titlesize = node->fontsize + 6;
 		}
 		else
 		{
-			node->title = text;
+			node->title = NULL;
 			node->titlesize = 0;
 		}
 		ret = 0;
