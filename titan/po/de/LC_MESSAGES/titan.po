@@ -1366,7 +1366,9 @@ msgid "Can't start timeshift play !"
 msgstr "Timeshift Wiedergabe kann nicht gestartet werden!"
 
 msgid "Can't update all packages !"
-msgstr "Es konnten nicht alle Erweiterungen aktualisiert werden!"
+msgstr ""
+"Es konnten nicht alle Erweiterungen\n"
+"aktualisiert werden!"
 
 msgid "Cancel"
 msgstr "Abbrechen"
