@@ -1951,7 +1951,9 @@ msgstr "Timeshift Wiedergabe kann nicht gestartet werden!"
 
 #: extensions.h:448 httpdfunc.h:6478
 msgid "Can't update all packages !"
-msgstr "Es konnten nicht alle Erweiterungen aktualisiert werden!"
+msgstr ""
+"Es konnten nicht alle Erweiterungen\n"
+"aktualisiert werden!"
 
 #: plugins_panel_skin.xml.h:7 skin_default_skin.xml.h:133
 #: skins_panel_skin.xml.h:7
