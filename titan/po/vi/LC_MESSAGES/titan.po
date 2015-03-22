@@ -6285,6 +6285,12 @@ msgid "The video no longer exists"
 msgstr ""
 
 msgid ""
+"There may only be one package installed from this section. To install "
+"another package from this section, remove the installed one. If the package "
+"is not visible after a software update, perform a TPK update to: "
+msgstr ""
+
+msgid ""
 "This Plugin is only for Betatester and can change your Settings!\n"
 "Realy run it?"
 msgstr ""

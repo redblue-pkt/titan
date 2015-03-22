@@ -4812,7 +4812,6 @@ msgid "Is this Videomode ok ?"
 msgstr "mode vidéo est correcte?"
 
 #: extensions.h:227 extensions.h:254 extensions.h:410 httpdfunc.h:6138
-#: tpk.h:3005
 msgid ""
 "It may only be a package to be installed. If they want to install another "
 "package of this section, they only remove the installed packet. Is not the "
@@ -9188,6 +9187,13 @@ msgstr ""
 
 #: movshare.h:78 movshare.h:163
 msgid "The video no longer exists"
+msgstr ""
+
+#: tpk.h:3005
+msgid ""
+"There may only be one package installed from this section. To install "
+"another package from this section, remove the installed one. If the package "
+"is not visible after a software update, perform a TPK update to: "
 msgstr ""
 
 #: betarobot.h:57
