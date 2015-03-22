@@ -1,7 +1,6 @@
-#: plugins_wm2014_skin.xml.h:1 skins_wm2014_skin.xml.h:1 tithek_mainmenu.h:1
 msgid ""
 msgstr ""
-"Project-Id-Version: TitanNit 1.62\n"
+"Project-Id-Version: TitanNit 1.64\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
 "Last-Translator:  <aaf-caliban@e.mail.de>\n"
@@ -4391,6 +4390,8 @@ msgstr ""
 #: skin_default_skin.xml.h:306
 msgid "Here you can configure: Webinterface, Transcoding and RGUI"
 msgstr ""
+"Hier können Sie Einstellungen für Webinterface, Transcoding und RGUI "
+"vornehmen."
 
 #: skin_default_skin.xml.h:311
 msgid ""
@@ -4713,7 +4714,7 @@ msgstr ""
 
 #: tunerconfig.h:647 tunerconfig.h:666
 msgid "Hybrid tuner mode changed, receiver will be restarted!"
-msgstr ""
+msgstr "Hybrid Tuner Modus wurde geändert, Receiver wird neu gestartet!"
 
 #: skin_default_skin.xml.h:363
 msgid "I"
@@ -4822,6 +4823,8 @@ msgid ""
 "If you don't find Windows shares, you need to disable 'Password protected "
 "sharing' in the 'Network and Sharing Center'."
 msgstr ""
+"Sollten keine Windows Freigaben sichtbar sein, muss 'Passwortgeschützte "
+"Freigaben' im 'Netzwerk- und Freigabecenter' abgeschaltet werden."
 
 #: security.h:2007
 msgid "Image"
