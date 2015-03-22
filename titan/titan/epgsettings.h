@@ -216,7 +216,7 @@ void screenepgsettings()
 	addchoicebox(epg_afterevent, "1", _("poweroff"));
 	setchoiceboxselection(epg_afterevent, getconfig("epg_afterevent", NULL));
 
-	b4->hidden = YES;
+	b4->hidden = NO;
 	b4->usesavebg = 1;
 
 	drawscreen(epgsettings, 0, 0);
