@@ -3002,7 +3002,7 @@ int tpklist()
 			filename = ostrcat(filename, oitoa(version), 1, 1);
 			filename = ostrcat(filename, "_", 1, 0);
 			filename = ostrcat(filename, arch, 1, 0);
-			tpknode = addtpk(name, " ", section, _("It may only be a package to be installed. If they want to install another package of this section, they only remove the installed packet. Is not the plugin after reinstalling the software TitanNit in TitanNit Menu Visible then perform an update by Tpk to: "), arch, filename, titanname, version, group, minversion, preinstalled, url, size, NULL, usepath, boxtype, NULL);
+			tpknode = addtpk(name, " ", section, _("There may only be one package installed from this section. To install another package from this section, remove the installed one. If the package is not visible after a software update, perform a TPK update to: "), arch, filename, titanname, version, group, minversion, preinstalled, url, size, NULL, usepath, boxtype, NULL);
 		}		
 	}
 
