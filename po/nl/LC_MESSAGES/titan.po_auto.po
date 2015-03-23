@@ -2699,7 +2699,7 @@ msgstr "Verwijder niet gebruikte ingangen voor scan"
 msgid "Delete wrong inputs"
 msgstr ""
 
-#: tpk.h:3473
+#: tpk.h:3478
 msgid "Description:"
 msgstr "Beschrijving:"
 
@@ -3177,7 +3177,7 @@ msgstr "ERROR.. markering kan niet geplaatst worden"
 #: tithek.h:1227 tithek.h:1477 tithek.h:1499 tithek.h:1515 tithek.h:2085
 #: tithek.h:2112 tithek.h:2126 tithek.h:2136 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
-#: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3211 tpk.new.h:3167 tsSchnitt.c:108
+#: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108
 #: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
 #: tsSchnitt.c:347 tunerconfig.h:647 tunerconfig.h:666 tunerconfig.h:941
 #: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:67
@@ -5668,7 +5668,7 @@ msgstr ""
 #: tithek_global.h:250 tithek.h:670 tithek.h:1166 tithek.h:1227 tithek.h:1477
 #: tithek.h:1499 tithek.h:2085 tithek.h:2112 tithek.h:2126 tithek.h:2136
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
-#: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3211
+#: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216
 #: tpk.new.h:3167 tunerconfig.h:647 tunerconfig.h:666 tunerconfig.h:941
 #: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:67
 #: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
@@ -6219,7 +6219,7 @@ msgstr ""
 #: tithek.h:1227 tithek.h:1477 tithek.h:1499 tithek.h:1515 tithek.h:2085
 #: tithek.h:2112 tithek.h:2126 tithek.h:2136 tiwakeup.h:66 tiwakeup.h:68
 #: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
-#: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3211 tpk.new.h:3167 tsSchnitt.c:108
+#: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108
 #: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
 #: tsSchnitt.c:347 tunerconfig.h:647 tunerconfig.h:666 tunerconfig.h:941
 #: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:67
@@ -8264,7 +8264,7 @@ msgstr "Seizoen"
 msgid "Second Infobar"
 msgstr "Tweede informatiebalk"
 
-#: tpk.h:3470
+#: tpk.h:3475
 msgid "Section: "
 msgstr "Sectie:"
 
@@ -9313,7 +9313,7 @@ msgstr ""
 msgid "The video no longer exists"
 msgstr ""
 
-#: tpk.h:3005
+#: tpk.h:3010
 msgid ""
 "There may only be one package installed from this section. To install "
 "another package from this section, remove the installed one. If the package "
@@ -10972,7 +10972,7 @@ msgstr ""
 msgid "channelslotlist"
 msgstr ""
 
-#: tpk.h:3211 tpk.new.h:3167
+#: tpk.h:3216 tpk.new.h:3167
 msgid "check your Secret Feed !"
 msgstr "Controleer de Secret Feed!"
 
@@ -11479,7 +11479,7 @@ msgstr "Initialiseren"
 msgid "install"
 msgstr ""
 
-#: tpk.h:3461
+#: tpk.h:3466
 msgid "installed"
 msgstr ""
 
@@ -11821,7 +11821,7 @@ msgstr "NFS server"
 msgid "no"
 msgstr "Nee"
 
-#: tpk.h:3478 tpk.new.h:3411
+#: tpk.h:3483 tpk.new.h:3411
 msgid "no description found"
 msgstr "Geen beschrijving gevonden"
 
