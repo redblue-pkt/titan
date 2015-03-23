@@ -2174,8 +2174,13 @@ int tpkinstall(char* file, char* installpath, int flag)
 	}
 	
 	//check boxtype
+	printf("getboxtype: %s\n", getboxtype());
+	printf("tpknode->boxtype: %s\n", tpknode->boxtype);
+	printf("tpknode->name: %s\n", tpknode->name);
+
 	if(tpknode->boxtype != NULL && ostrcmp(tpknode->boxtype, "*") != 0 && ostrstr(tpknode->boxtype, getboxtype()) == NULL)
 	{
+		printf("skiped\n");
 		err("boxtype not allowed %s", tpknode->boxtype);
 		ret = 1;
 		goto end;	
