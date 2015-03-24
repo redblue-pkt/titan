@@ -944,6 +944,13 @@ void removefav(char* title, char* link, char* pic, char* localname, char* menuti
 	else
 		writesys(getconfig("tithek_fav", NULL), tmpstr1, 0);
 
+	if(!ostrncmp("/", link, 1))
+	{
+		free(tmpstr1); tmpstr1 = NULL;
+		tmpstr1 = ostrcat("rm -f ", link, 0, 0);
+		system(tmpstr1);
+	}
+
 	free(ret); ret = NULL;
 	free(tmpstr); tmpstr = NULL;
 	free(tmpstr1); tmpstr1 = NULL;
@@ -956,6 +963,49 @@ void addfav(char* title, char* link, char* pic, char* localname, char* menutitle
 	char* tmpstr = NULL, *tmpstr1 = NULL, *input = NULL;
 	struct splitstr* ret = NULL;
 
+	char* savefile = NULL;
+
+	struct menulist* mlist = NULL, *mbox = NULL;
+	char* favlist = command("ls -1 /mnt/config/favorite*");
+	printf("favlist: %s\n", favlist);
+	ret = strsplit(favlist, "\n", &count);
+
+	if(ret != NULL)
+	{
+		for(i = 0; i < count; i++)
+		{
+			char* cmd = ostrcat("cat ", getconfig("tithek_fav", NULL), 0, 0);
+			cmd = ostrcat(cmd, " | grep '#", 1, 0);
+			cmd = ostrcat(cmd, (ret[i]).part, 1, 0);
+
+			cmd = ostrcat(cmd, "#' | cut -d'#' -f1", 1, 0);
+			printf("cmd: %s\n", cmd);
+			tmpstr = command(cmd);
+			if(tmpstr == NULL)
+				tmpstr = ostrcat(_("Favorite Mainmenu"), NULL, 0, 0);
+			addmenulist(&mlist, tmpstr, (ret[i]).part, NULL, 0, 0);
+			printf("(ret[i]).part: %s\n", (ret[i]).part);
+			printf("tmpstr: %s\n", tmpstr);
+			free(tmpstr), tmpstr = NULL;
+			free(cmd), cmd = NULL;
+		}
+
+	}
+	else
+		addmenulist(&mlist, "Favorite Mainmenu", getconfig("tithek_fav", NULL), NULL, 0, 0);
+
+	free(ret), ret = NULL;
+
+	mbox = menulistbox(mlist, NULL, NULL, NULL, NULL, NULL, 1, 0);
+	if(mbox != NULL)
+	{
+		printf("mbox->name %s\n", mbox->name);
+		printf("mbox->text %s\n", mbox->text);
+		savefile = ostrcat(mbox->text, NULL, 0, 0);
+	}
+	else
+		savefile = ostrcat(getconfig("tithek_fav", NULL), NULL, 0, 0);
+				
 	input = ostrcat(input, title, 1, 0);
 	input = ostrcat(input, "#", 1, 0);
 	input = ostrcat(input, link, 1, 0);
@@ -973,8 +1023,8 @@ void addfav(char* title, char* link, char* pic, char* localname, char* menutitle
 	tmpstr1 = ostrcat(tmpstr1, input, 1, 0);
 	tmpstr1 = ostrcat(tmpstr1, "\n", 1, 0);
 
-	tmpstr = readfiletomem(getconfig("tithek_fav", NULL), 0);
-	
+	tmpstr = readfiletomem(savefile, 0);
+
 	ret = strsplit(tmpstr, "\n", &count);
 
 	if(ret != NULL)
@@ -992,8 +1042,16 @@ void addfav(char* title, char* link, char* pic, char* localname, char* menutitle
 	if(tmpstr1 != NULL && strlen(tmpstr1) > 0)
 		tmpstr1[strlen(tmpstr1) - 1] = '\0';
 
-	writesys(getconfig("tithek_fav", NULL), tmpstr1, 0);
+	writesys(savefile, tmpstr1, 0);
 
+	if(!ostrncmp("/", link, 1))
+	{
+		free(tmpstr1); tmpstr1 = NULL;
+		tmpstr1 = ostrcat("touch ", link, 0, 0);
+		system(tmpstr1);
+	}
+
+	free(mbox); mbox = NULL;
 	free(ret); ret = NULL;
 	free(tmpstr); tmpstr = NULL;
 	free(tmpstr1); tmpstr1 = NULL;
@@ -1554,7 +1612,8 @@ void screentithekplay(char* titheklink, char* title, int first)
 	b5->usesavebg = 1;
 	drawscreen(grid, 2, 0);
 
-	if(ostrcmp(title, _("Tithek - Mainmenu - Favoriten")) == 0)
+//	if(ostrcmp(title, _("Tithek - Mainmenu - Favoriten")) == 0)
+	if(ostrstr(title, _("Tithek - Mainmenu - Favoriten")) != NULL)
 	{
 		changetext(b4, _("EDIT FAV"));
 		b5->hidden = NO;
@@ -1687,7 +1746,8 @@ waitrcstart:
 //			drawscreen(grid, 0, 0);
 		}
 
-		if(ostrcmp(title, _("Tithek - Mainmenu - Favoriten")) == 0)
+//		if(ostrcmp(title, _("Tithek - Mainmenu - Favoriten")) == 0)
+		if(ostrstr(title, _("Tithek - Mainmenu - Favoriten")) != NULL)
 		{
 //			changetext(b4, _("EDIT FAV"));
 			b5->hidden = NO;
@@ -1723,7 +1783,34 @@ waitrcstart:
 				debug(99, "tmpstr: %s", tmpstr);
 
 				int check = playrcred(tmpstr, NULL, 1, 0, 99);
-				if(check == 2)
+				if(check == 0 || check == 1000)
+				{
+					char* search = textinputhist(_("Create Sub Menu"), " ", "searchhist");
+					if(search != NULL)
+					{
+						strstrip(search);
+						char* tmpstr = ostrcat(search, NULL, 0, 0);
+						tmpstr = string_replace_all(" ", "_", tmpstr, 1);
+						tmpstr = string_replace_all(".", "_", tmpstr, 1);
+						tmpstr = string_replace_all("-", "_", tmpstr, 1);
+						tmpstr = string_replace_all("._.", "_", tmpstr, 1);
+						tmpstr = string_replace_all("__", "_", tmpstr, 1);
+						string_tolower(tmpstr);
+						strstrip(tmpstr);
+						char* tmpstr1 = NULL;
+						tmpstr1 = ostrcat(getconfig("tithek_fav", NULL), "_", 0, 0);
+						tmpstr1 = ostrcat(tmpstr1, tmpstr, 1, 0);
+						if(textbox(_("Message"), _("Add this Sub Folder as Favorite ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0) == 1)
+							addfav(search, tmpstr1, "http://imageshack.us/md/up/grd/mediathek/menu/default.jpg", tmpstr, title, check);
+						free(tmpstr), tmpstr = NULL;
+						free(tmpstr1), tmpstr1 = NULL;
+					}
+					free(search), search = NULL;
+
+					pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
+					if(pagecount == 0) return;
+				}
+				else if(check == 2)
 				{
 					if(kinox_search(grid, listbox, countlabel, load, ((struct tithek*)listbox->select->handle)->link, "KinoX - Search", tmpstr, 0) == 0)
 						if(screenlistbox(grid, listbox, countlabel, "KinoX - Search", titheklink, &pagecount, &tithekexit, &oaktpage, &oaktline, &ogridcol, 0, 0) == 0) break;
@@ -1872,6 +1959,37 @@ why ?
 				}
 */
 				free(tmpstr), tmpstr = NULL;
+			}
+			else
+			{
+				int check = playrcred(NULL, NULL, 1, 0, 199);
+				if(check == 0 || check == 1000)
+				{
+					char* search = textinputhist(_("Create Sub Menu"), " ", "searchhist");
+					if(search != NULL)
+					{
+						strstrip(search);
+						char* tmpstr = ostrcat(search, NULL, 0, 0);
+						tmpstr = string_replace_all(" ", "_", tmpstr, 1);
+						tmpstr = string_replace_all(".", "_", tmpstr, 1);
+						tmpstr = string_replace_all("-", "_", tmpstr, 1);
+						tmpstr = string_replace_all("._.", "_", tmpstr, 1);
+						tmpstr = string_replace_all("__", "_", tmpstr, 1);
+						string_tolower(tmpstr);
+						strstrip(tmpstr);
+						char* tmpstr1 = NULL;
+						tmpstr1 = ostrcat(getconfig("tithek_fav", NULL), "_", 0, 0);
+						tmpstr1 = ostrcat(tmpstr1, tmpstr, 1, 0);
+						if(textbox(_("Message"), _("Add this Sub Folder as Favorite ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0) == 1)
+							addfav(search, tmpstr1, "http://imageshack.us/md/up/grd/mediathek/menu/default.jpg", tmpstr, title, check);
+						free(tmpstr), tmpstr = NULL;
+						free(tmpstr1), tmpstr1 = NULL;
+					}
+					free(search), search = NULL;
+	
+					pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
+					if(pagecount == 0) return;
+				}
 			}
 		}
 		else if(rcret == getrcconfigint("rcok", NULL))
@@ -2105,11 +2223,12 @@ why ?
 				drawscreen(grid, 0, 0);
 			}			
 		}
-		else if(rcret == getrcconfigint("rcyellow", NULL) && ostrcmp(title, _("Tithek - Mainmenu - Favoriten")) == 0)
+//		else if(rcret == getrcconfigint("rcyellow", NULL) && ostrcmp(title, _("Tithek - Mainmenu - Favoriten")) == 0)
+		else if(rcret == getrcconfigint("rcyellow", NULL) && ostrstr(title, _("Tithek - Mainmenu - Favoriten")) != NULL)
 		{
 			if(listbox->select != NULL && listbox->select->handle != NULL)
 			{
-				if(textbox(_("Message"), _("Remove this Favorite ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0) == 1)
+				if(textbox(_("Message"), _("Remove this Favorite ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 5, 0) == 1)
 				{
 					removefav(((struct tithek*)listbox->select->handle)->title, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, ((struct tithek*)listbox->select->handle)->menutitle, ((struct tithek*)listbox->select->handle)->flag);		
 					pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
@@ -2119,21 +2238,25 @@ why ?
 				}
 			}
 		}
-		else if(rcret == getrcconfigint("rcgreen", NULL) && ostrcmp(title, _("Tithek - Mainmenu - Favoriten")) != 0)
+//		else if(rcret == getrcconfigint("rcgreen", NULL) && ostrcmp(title, _("Tithek - Mainmenu - Favoriten")) != 0)
+//		else if(rcret == getrcconfigint("rcgreen", NULL) && (ostrcmp(title, _("Tithek - Mainmenu - Favoriten")) == 0 || !ostrncmp("/", ((struct tithek*)listbox->select->handle)->link, 1)))
+		else if(rcret == getrcconfigint("rcgreen", NULL) && ostrstr(title, _("Tithek - Mainmenu - Favoriten")) == NULL)
 		{
 			if(listbox->select != NULL && listbox->select->handle != NULL)
 			{
-				if(textbox(_("Message"), _("Add this link as Favorite ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0) == 1)
+				if(textbox(_("Message"), _("Add this link as Favorite ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 5, 0) == 1)
 				{
 					addfav(((struct tithek*)listbox->select->handle)->title, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, ((struct tithek*)listbox->select->handle)->menutitle, ((struct tithek*)listbox->select->handle)->flag);		
 				}
 			}
 		}
-		else if(rcret == getrcconfigint("rcgreen", NULL) && ostrcmp(title, _("Tithek - Mainmenu - Favoriten")) == 0)
+//		else if(rcret == getrcconfigint("rcgreen", NULL) && ostrcmp(title, _("Tithek - Mainmenu - Favoriten")) == 0)
+//		else if(rcret == getrcconfigint("rcgreen", NULL) && (ostrcmp(title, _("Tithek - Mainmenu - Favoriten")) == 0 || !ostrncmp("/", ((struct tithek*)listbox->select->handle)->link, 1)))
+		else if(rcret == getrcconfigint("rcgreen", NULL) && ostrstr(title, _("Tithek - Mainmenu - Favoriten")) != NULL)
 		{
 			if(listbox->select != NULL && listbox->select->handle != NULL)
 			{
-				if(textbox(_("Message"), _("Edit this Favorite ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0) == 1)
+				if(textbox(_("Message"), _("Edit this Favorite ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 5, 0) == 1)
 				{
 					editfav(((struct tithek*)listbox->select->handle)->title, ((struct tithek*)listbox->select->handle)->link, ((struct tithek*)listbox->select->handle)->pic, ((struct tithek*)listbox->select->handle)->localname, ((struct tithek*)listbox->select->handle)->menutitle, ((struct tithek*)listbox->select->handle)->flag);		
 					pagecount = createtithekplay(titheklink, grid, listbox, countlabel, 0);
@@ -2144,7 +2267,8 @@ why ?
 			}
 		}
 
-		if(ostrcmp(title, _("Tithek - Mainmenu - Favoriten")) == 0)
+//		if(ostrcmp(title, _("Tithek - Mainmenu - Favoriten")) == 0)
+		if(ostrstr(title, _("Tithek - Mainmenu - Favoriten")) != NULL)
 		{
 			changetext(b4, _("EDIT FAV"));
 			b5->hidden = NO;
