@@ -494,6 +494,9 @@ msgstr "Добавить таймер"
 msgid "Add iMDB manuel"
 msgstr "Добавлять iMDB "
 
+msgid "Add this Sub Folder as Favorite ?"
+msgstr ""
+
 msgid "Add this link as Favorite ?"
 msgstr "Добавить ссылку в фаворит?"
 
@@ -1695,6 +1698,15 @@ msgstr "Делать запись видео"
 msgid "Create Settings Menu"
 msgstr "Создать меню настроек"
 
+msgid "Create Sub Menu"
+msgstr ""
+
+msgid "Create Sub Menu Favorite"
+msgstr ""
+
+msgid "Create Sub Menu Favorite (Password)"
+msgstr ""
+
 msgid "Create Thumb Picture"
 msgstr "Кэшировать изображение"
 
@@ -2426,6 +2438,9 @@ msgstr "Быстрое переключение"
 
 msgid "Fav"
 msgstr "Фавориты"
+
+msgid "Favorite Mainmenu"
+msgstr ""
 
 msgid "Favoriten"
 msgstr "Фавориты"

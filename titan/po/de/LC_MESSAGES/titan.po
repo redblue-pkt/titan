@@ -508,6 +508,9 @@ msgstr "Timer hinzufügen"
 msgid "Add iMDB manuel"
 msgstr "Manuell IMDb hinzufügen"
 
+msgid "Add this Sub Folder as Favorite ?"
+msgstr ""
+
 msgid "Add this link as Favorite ?"
 msgstr "Möchten Sie diesen Link zu Ihren Favoriten hinzufügen?"
 
@@ -1758,6 +1761,15 @@ msgstr "Erstelle Aufnahme Vorschaubild"
 msgid "Create Settings Menu"
 msgstr "Transponder Erstellungsmenü"
 
+msgid "Create Sub Menu"
+msgstr ""
+
+msgid "Create Sub Menu Favorite"
+msgstr ""
+
+msgid "Create Sub Menu Favorite (Password)"
+msgstr ""
+
 msgid "Create Thumb Picture"
 msgstr "Vorschaubilder erstellen"
 
@@ -2494,6 +2506,9 @@ msgstr "Schnelles Umschalten"
 
 msgid "Fav"
 msgstr "Favoriten"
+
+msgid "Favorite Mainmenu"
+msgstr ""
 
 msgid "Favoriten"
 msgstr ""
