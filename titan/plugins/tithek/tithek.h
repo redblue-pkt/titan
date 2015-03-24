@@ -1561,6 +1561,7 @@ void submenu(struct skin* listbox, struct skin* load, char* title)
 
 void screentithekplay(char* titheklink, char* title, int first)
 {
+	int savevol = 0;
 	if(!file_exist("/mnt/swapextensions/player"))
 		mkdir("/mnt/swapextensions/player", 0777); 
 
@@ -1587,9 +1588,11 @@ void screentithekplay(char* titheklink, char* title, int first)
 	int rcret = -1, oaktline = 1, oaktpage = -1, ogridcol = 0, pagecount = 0;
 
 	writesysint("/proc/sys/vm/drop_caches", 3, 0); 
-	
+
 	if(first == 1)
 	{ 
+		savevol = getvol();
+
 		mkdir("/tmp/tithek", 777);
 		if(status.mcaktiv == 0)
 		{
@@ -2290,6 +2293,8 @@ why ?
 
 	if(first == 1)
 	{
+		setvol(savevol);
+
 		freetithek();
 		delallfiles("/tmp/tithek", NULL);
 		if(status.mcaktiv == 0)
