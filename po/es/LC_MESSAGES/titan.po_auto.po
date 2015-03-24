@@ -4886,7 +4886,7 @@ msgstr "Entrada 8"
 msgid "Input 9"
 msgstr "Entrada 9"
 
-#: textinput.h:15 textinputhist.h:122
+#: textinput.h:15 textinputhist.h:123
 msgid "Input field"
 msgstr "Box campo"
 
