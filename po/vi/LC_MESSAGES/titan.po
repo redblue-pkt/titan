@@ -488,6 +488,9 @@ msgstr ""
 msgid "Add iMDB manuel"
 msgstr ""
 
+msgid "Add this Sub Folder as Favorite ?"
+msgstr ""
+
 msgid "Add this link as Favorite ?"
 msgstr " Muốn thêm vào mục ưa thích này?"
 
@@ -1672,6 +1675,15 @@ msgstr "Ghi âm"
 msgid "Create Settings Menu"
 msgstr ""
 
+msgid "Create Sub Menu"
+msgstr ""
+
+msgid "Create Sub Menu Favorite"
+msgstr ""
+
+msgid "Create Sub Menu Favorite (Password)"
+msgstr ""
+
 msgid "Create Thumb Picture"
 msgstr "Tạo hình ảnh"
 
@@ -2400,6 +2412,9 @@ msgid "Fastzap"
 msgstr "Schnelles Umschalten"
 
 msgid "Fav"
+msgstr ""
+
+msgid "Favorite Mainmenu"
 msgstr ""
 
 msgid "Favoriten"

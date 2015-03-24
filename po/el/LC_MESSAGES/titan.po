@@ -485,6 +485,9 @@ msgstr ""
 msgid "Add iMDB manuel"
 msgstr ""
 
+msgid "Add this Sub Folder as Favorite ?"
+msgstr ""
+
 msgid "Add this link as Favorite ?"
 msgstr ""
 
@@ -1647,6 +1650,15 @@ msgstr ""
 msgid "Create Settings Menu"
 msgstr ""
 
+msgid "Create Sub Menu"
+msgstr ""
+
+msgid "Create Sub Menu Favorite"
+msgstr ""
+
+msgid "Create Sub Menu Favorite (Password)"
+msgstr ""
+
 msgid "Create Thumb Picture"
 msgstr ""
 
@@ -2360,6 +2372,9 @@ msgstr "Γρήγορο zapping"
 
 msgid "Fav"
 msgstr "Αγαπημένα"
+
+msgid "Favorite Mainmenu"
+msgstr ""
 
 msgid "Favoriten"
 msgstr ""

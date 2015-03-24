@@ -716,8 +716,8 @@ msgstr "Alle Sender hinzufügen"
 msgid "ADD BOUQUET"
 msgstr "Favoriten hinzufügen"
 
-#: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1 tithek.h:1564
-#: tithek.h:2154
+#: plugins_tithek_skin.xml.h:1 skins_tithek_skin.xml.h:1 tithek.h:1626
+#: tithek.h:2281
 msgid "ADD FAV"
 msgstr "Fav Hinzufügen"
 
@@ -808,7 +808,11 @@ msgstr "Timer hinzufügen"
 msgid "Add iMDB manuel"
 msgstr "Manuell IMDb hinzufügen"
 
-#: tithek.h:2126
+#: tithek.h:1806 tithek.h:1986
+msgid "Add this Sub Folder as Favorite ?"
+msgstr ""
+
+#: tithek.h:2250
 msgid "Add this link as Favorite ?"
 msgstr "Möchten Sie diesen Link zu Ihren Favoriten hinzufügen?"
 
@@ -1859,7 +1863,7 @@ msgstr ""
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr "EPG-Zeit kann nicht gefunden werden oder ist nicht korrekt!"
 
-#: tithek.h:1499
+#: tithek.h:1557
 msgid "Can't get Streamurl !"
 msgstr "Streamadresse ist nicht erreichbar!"
 
@@ -1922,7 +1926,7 @@ msgstr ""
 msgid "Can't show this file!"
 msgstr "Diese Datei kann nicht angezeigt werden"
 
-#: tithek.h:1227
+#: tithek.h:1285
 msgid ""
 "Can't start download.\n"
 "Please try later."
@@ -1933,7 +1937,7 @@ msgstr ""
 #: dvdplay.h:62 mc_audioplayer.h:605 mc_audioplayer.h:716 mc_global.h:773
 #: mc_global.h:1020 mc_pictureplayer.h:100 mc_pictureplayer.h:242
 #: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:749
-#: mc_videoplayer.h:888 play.h:1488
+#: mc_videoplayer.h:888 play.h:1501
 msgid "Can't start playback !"
 msgstr "Wiedergabe kann nicht gestartet werden!"
 
@@ -2136,7 +2140,7 @@ msgstr "Installation Auswahl"
 msgid "Choice Menu"
 msgstr "Auswahlmenü"
 
-#: tithek.h:1362
+#: tithek.h:1420
 msgid "Choice Playback"
 msgstr "Wiedergabe auswählen"
 
@@ -2178,7 +2182,7 @@ msgstr ""
 msgid "Choose your Playlist Mode from the following list"
 msgstr "Wählen Sie den gewünschten Playlist Modus aus der folgenden Liste"
 
-#: play.h:706
+#: play.h:715
 msgid "Choose your Red-Menu entry from the following list"
 msgstr ""
 "Wählen Sie den gewünschten Eintrag für das Rot Menü aus der folgenden\n"
@@ -2209,7 +2213,7 @@ msgstr ""
 msgid "Choose your Streaming Format from the following list"
 msgstr "Wählen Sie das gewünschte Streaming Format aus der folgenden Liste"
 
-#: tithek.h:1399
+#: tithek.h:1457
 msgid "Choose your Streaming Playback Modus from the following list"
 msgstr ""
 "Wählen Sie den gewünschten Stream Playback Modus aus der folgenden Liste"
@@ -2486,6 +2490,18 @@ msgstr "Erstelle Aufnahme Vorschaubild"
 msgid "Create Settings Menu"
 msgstr "Transponder Erstellungsmenü"
 
+#: tithek.h:1791 tithek.h:1971
+msgid "Create Sub Menu"
+msgstr ""
+
+#: play.h:654
+msgid "Create Sub Menu Favorite"
+msgstr ""
+
+#: play.h:655
+msgid "Create Sub Menu Favorite (Password)"
+msgstr ""
+
 #: skin_default_skin.xml.h:174
 msgid "Create Thumb Picture"
 msgstr "Vorschaubilder erstellen"
@@ -2534,7 +2550,7 @@ msgstr ""
 msgid "DEFAULT"
 msgstr "Voreinstellung"
 
-#: play.h:1412 plugins_networkbrowser_skin.xml.h:6 plugins_stock_skin.xml.h:3
+#: play.h:1425 plugins_networkbrowser_skin.xml.h:6 plugins_stock_skin.xml.h:3
 #: plugins_weather_skin.xml.h:2 skin_default_skin.xml.h:188
 #: skins_networkbrowser_skin.xml.h:6 skins_stock_skin.xml.h:3
 #: skins_weather_skin.xml.h:2
@@ -2955,11 +2971,11 @@ msgstr ""
 msgid "Download (KB): "
 msgstr ""
 
-#: tithek.h:1394
+#: tithek.h:1452
 msgid "Download Full File"
 msgstr "Datei in Streampfad herunterladen"
 
-#: tithek.h:1395
+#: tithek.h:1453
 msgid "Download Full File (background)"
 msgstr "Datei in Streampfad herunterladen (im Hintergrund)"
 
@@ -2967,7 +2983,7 @@ msgstr "Datei in Streampfad herunterladen (im Hintergrund)"
 msgid "Download finished!"
 msgstr "Download abgeschlossen!"
 
-#: keyactions.h:84 play.h:687 settings_bluebutton.h:21
+#: keyactions.h:84 play.h:693 settings_bluebutton.h:21
 #: settings_pluginbutton.h:22 settings_redbutton.h:22
 #: skin_default_skin.xml.h:211
 msgid "Downloads"
@@ -3014,7 +3030,7 @@ msgstr ""
 msgid "EDIT"
 msgstr "Bearbeiten"
 
-#: tithek.h:1559 tithek.h:2149
+#: tithek.h:1621 tithek.h:2276
 msgid "EDIT FAV"
 msgstr "Fav Bearbeiten"
 
@@ -3034,7 +3050,7 @@ msgstr "Tuner bearbeiten"
 msgid "EJECT"
 msgstr "Auswerfen"
 
-#: adjust.h:71 adjust.h:326 httpdfunc.h:3873 play.h:1412
+#: adjust.h:71 adjust.h:326 httpdfunc.h:3873 play.h:1425
 #: skin_default_skin.xml.h:229 webif_index.atemio5200.h:34
 #: webif_index.atemio5200.h:90 webif_index.atemio6200.h:34
 #: webif_index.atemio6200.h:90 webif_index.atemio7600.h:65
@@ -3051,7 +3067,7 @@ msgstr "Auswerfen"
 msgid "EPG"
 msgstr "EPG"
 
-#: play.h:1271 play.h:1277 plugins_tmc_skin.xml.h:17 skins_tmc_skin.xml.h:17
+#: play.h:1284 play.h:1290 plugins_tmc_skin.xml.h:17 skins_tmc_skin.xml.h:17
 msgid "EPG Info"
 msgstr "EPG-Info"
 
@@ -3183,7 +3199,7 @@ msgstr "FEHLER: In dieser Datei kann kein Marker gesetzt werden"
 #: mc_audioplayer.h:333 mc_audioplayer.h:605 mc_audioplayer.h:716
 #: mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
 #: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
-#: mc_main.h:100 mc_main.h:273 mc_main.h:282 mc_mediathek.h:35
+#: mc_main.h:100 mc_main.h:274 mc_main.h:283 mc_mediathek.h:35
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
 #: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:332
 #: mc_videoplayer.h:749 mc_videoplayer.h:784 mc_videoplayer.h:888
@@ -3201,8 +3217,8 @@ msgstr "FEHLER: In dieser Datei kann kein Marker gesetzt werden"
 #: novamov.h:80 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105 panel_main.h:29
 #: panel_main.h:135 panel_settings_wizard.h:6 played.h:30 played.h:84
 #: played.h:90 played.h:102 played.h:114 played.h:171 player.h:108 play.h:497
-#: play.h:614 play.h:1271 play.h:1277 play.h:1286 play.h:1287 play.h:1488
-#: play.h:1704 play.h:1715 plugins_autotimer_skin.xml.h:6
+#: play.h:614 play.h:1284 play.h:1290 play.h:1299 play.h:1300 play.h:1501
+#: play.h:1717 play.h:1728 plugins_autotimer_skin.xml.h:6
 #: plugins_callmonitor1_skin.xml.h:10 plugins_catcatch_skin.xml.h:3
 #: plugins_dlna_skin.xml.h:1 plugins_facebook_skin.xml.h:2
 #: plugins_instar_skin.xml.h:5 plugins_lcdpearl1_skin.xml.h:6
@@ -3244,17 +3260,18 @@ msgstr "FEHLER: In dieser Datei kann kein Marker gesetzt werden"
 #: thefile.h:205 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1009
 #: titan.c:1018 titan.c:1146 titan.c:1167 titan.c:1173 titan.c:1184
-#: titan.c:1190 tithek.c:85 tithek_global.h:250 tithek.h:670 tithek.h:1166
-#: tithek.h:1227 tithek.h:1477 tithek.h:1499 tithek.h:1515 tithek.h:2085
-#: tithek.h:2112 tithek.h:2126 tithek.h:2136 tiwakeup.h:66 tiwakeup.h:68
-#: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
-#: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108
-#: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
-#: tsSchnitt.c:347 tunerconfig.h:647 tunerconfig.h:666 tunerconfig.h:941
-#: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:67
-#: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
-#: vidstream.h:167 xupnpd.h:60 xupnpd.h:71 xupnpd.h:73 xvidstage.h:54
-#: xvidstage.h:100 xvidstage.h:177 youtube.h:215 zapback.c:79 zdf.h:29
+#: titan.c:1190 tithek.c:85 tithek_global.h:250 tithek.h:670 tithek.h:1224
+#: tithek.h:1285 tithek.h:1535 tithek.h:1557 tithek.h:1574 tithek.h:1806
+#: tithek.h:1986 tithek.h:2206 tithek.h:2234 tithek.h:2250 tithek.h:2262
+#: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
+#: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216
+#: tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
+#: tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:647
+#: tunerconfig.h:666 tunerconfig.h:941 unlock.h:20 unlock.h:66 unlock.h:71
+#: unlock.h:75 videomode.h:67 videoweed.h:35 videoweed.h:80 vidstream.h:45
+#: vidstream.h:86 vidstream.h:98 vidstream.h:167 xupnpd.h:60 xupnpd.h:71
+#: xupnpd.h:73 xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:215
+#: zapback.c:79 zdf.h:29
 msgid "EXIT"
 msgstr "Exit"
 
@@ -3286,7 +3303,7 @@ msgstr "Wiedergabeliste bearbeiten"
 msgid "Edit mode"
 msgstr "Umbenennen"
 
-#: tithek.h:2136
+#: tithek.h:2262
 msgid "Edit this Favorite ?"
 msgstr "Diesen Favoriten bearbeiten?"
 
@@ -3648,6 +3665,10 @@ msgstr "Schnelles Umschalten"
 msgid "Fav"
 msgstr "Favoriten"
 
+#: tithek.h:985
+msgid "Favorite Mainmenu"
+msgstr ""
+
 #: tithek_mainmenu.h:16
 msgid "Favoriten"
 msgstr ""
@@ -3660,15 +3681,15 @@ msgstr "Februar"
 msgid "Feed"
 msgstr "Bitte Feed Adresse eingeben"
 
-#: tithek.h:1390
+#: tithek.h:1448
 msgid "File Caching Playback (10MB / 120s)"
 msgstr "Im Cache zwischenspeichern (10MB/120 Sek)"
 
-#: tithek.h:1391
+#: tithek.h:1449
 msgid "File Caching Playback (20MB / 240s)"
 msgstr "Im Cache zwischenspeichern (20MB/240 Sek)"
 
-#: tithek.h:1392
+#: tithek.h:1450
 msgid "File Caching Playback (30MB / 360s)"
 msgstr "Im Cache zwischenspeichern (30MB/360 Sek)"
 
@@ -3697,7 +3718,7 @@ msgstr "Cursor Farbe für Datei Liste"
 msgid "Filelist-Mode"
 msgstr "Datei-Modus"
 
-#: tithek.h:1470 tithek.h:1489
+#: tithek.h:1528 tithek.h:1547
 msgid "Filename"
 msgstr "Dateiname"
 
@@ -5091,7 +5112,7 @@ msgstr "Juli"
 msgid "Jump"
 msgstr "Springen"
 
-#: play.h:1193
+#: play.h:1206
 msgid "Jump To (min)"
 msgstr "Springe von akt. Position vor (min)"
 
@@ -5530,13 +5551,13 @@ msgstr "Marker Farbe"
 msgid "Marker"
 msgstr ""
 
-#: play.h:1704
+#: play.h:1717
 msgid "Marker autoseek is started"
 msgstr ""
 "Automatische Suche nach Markierungen\n"
 "gestartet"
 
-#: play.h:1715
+#: play.h:1728
 msgid "Marker autoseek is stopped"
 msgstr ""
 "Automatische Suche nach Markierungen\n"
@@ -5754,7 +5775,7 @@ msgstr "Menü schützen"
 msgid "Menu Title"
 msgstr "Menü Titel"
 
-#: mc_main.h:282 menu.h:168 panel_main.h:29 panel_main.h:135
+#: mc_main.h:283 menu.h:168 panel_main.h:29 panel_main.h:135
 msgid "Menu not implemented !"
 msgstr "Menü noch nicht verfügbar!"
 
@@ -5790,7 +5811,7 @@ msgstr "Menüliste"
 #: marker.h:215 marker.h:229 mc_audioplayer.h:333 mc_audioplayer.h:605
 #: mc_audioplayer.h:716 mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
 #: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
-#: mc_main.h:100 mc_main.h:273 mc_main.h:282 mc_mediathek.h:35
+#: mc_main.h:100 mc_main.h:274 mc_main.h:283 mc_mediathek.h:35
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
 #: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:332
 #: mc_videoplayer.h:749 mc_videoplayer.h:784 mc_videoplayer.h:888
@@ -5806,7 +5827,7 @@ msgstr "Menüliste"
 #: novamov.h:35 novamov.h:80 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105
 #: panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6 played.h:30
 #: played.h:84 played.h:90 played.h:102 played.h:114 played.h:171 player.h:108
-#: play.h:614 play.h:1286 play.h:1488 play.h:1704 play.h:1715 possetup.h:98
+#: play.h:614 play.h:1299 play.h:1501 play.h:1717 play.h:1728 possetup.h:98
 #: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
 #: promptfile.h:46 promptfile.h:94 promptfile.h:136 putlocker.h:32
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
@@ -5829,16 +5850,16 @@ msgstr "Menüliste"
 #: thefile.h:205 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1146
 #: titan.c:1167 titan.c:1173 titan.c:1184 titan.c:1190 tithek.c:85
-#: tithek_global.h:250 tithek.h:670 tithek.h:1166 tithek.h:1227 tithek.h:1477
-#: tithek.h:1499 tithek.h:2085 tithek.h:2112 tithek.h:2126 tithek.h:2136
-#: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
-#: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216
-#: tpk.new.h:3167 tunerconfig.h:647 tunerconfig.h:666 tunerconfig.h:941
-#: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:67
-#: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
-#: vidstream.h:167 webif_boxcontrol.h:2 xupnpd.h:60 xupnpd.h:71 xupnpd.h:73
-#: xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:215 zapback.c:79
-#: zdf.h:29
+#: tithek_global.h:250 tithek.h:670 tithek.h:1224 tithek.h:1285 tithek.h:1535
+#: tithek.h:1557 tithek.h:1806 tithek.h:1986 tithek.h:2206 tithek.h:2234
+#: tithek.h:2250 tithek.h:2262 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
+#: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
+#: TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tunerconfig.h:647
+#: tunerconfig.h:666 tunerconfig.h:941 unlock.h:20 unlock.h:66 unlock.h:71
+#: unlock.h:75 videomode.h:67 videoweed.h:35 videoweed.h:80 vidstream.h:45
+#: vidstream.h:86 vidstream.h:98 vidstream.h:167 webif_boxcontrol.h:2
+#: xupnpd.h:60 xupnpd.h:71 xupnpd.h:73 xvidstage.h:54 xvidstage.h:100
+#: xvidstage.h:177 youtube.h:215 zapback.c:79 zdf.h:29
 msgid "Message"
 msgstr "Mitteilung"
 
@@ -6327,7 +6348,7 @@ msgstr "Ö"
 #: mc_audioplayer.h:333 mc_audioplayer.h:605 mc_audioplayer.h:716
 #: mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
 #: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
-#: mc_main.h:100 mc_main.h:273 mc_main.h:282 mc_mediathek.h:35
+#: mc_main.h:100 mc_main.h:274 mc_main.h:283 mc_mediathek.h:35
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
 #: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:332
 #: mc_videoplayer.h:749 mc_videoplayer.h:784 mc_videoplayer.h:888
@@ -6345,8 +6366,8 @@ msgstr "Ö"
 #: newsletter.h:292 novamov.h:35 novamov.h:80 nowvideo.h:44 nowvideo.h:99
 #: nowvideo.h:105 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:84 played.h:90 played.h:102 played.h:114 played.h:171
-#: player.h:108 play.h:497 play.h:614 play.h:1271 play.h:1277 play.h:1286
-#: play.h:1287 play.h:1488 play.h:1704 play.h:1715 plugins_dlna_skin.xml.h:7
+#: player.h:108 play.h:497 play.h:614 play.h:1284 play.h:1290 play.h:1299
+#: play.h:1300 play.h:1501 play.h:1717 play.h:1728 plugins_dlna_skin.xml.h:7
 #: plugins_facebook_skin.xml.h:3 plugins_mboxinfo_skin.xml.h:2
 #: plugins_mc_skin.xml.h:35 plugins_optimize_skin.xml.h:2
 #: plugins_rgui_skin.xml.h:2 plugins_sudoku_skin.xml.h:13
@@ -6379,24 +6400,24 @@ msgstr "Ö"
 #: thefile.h:205 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1009
 #: titan.c:1018 titan.c:1146 titan.c:1167 titan.c:1173 titan.c:1184
-#: titan.c:1190 tithek.c:85 tithek_global.h:250 tithek.h:670 tithek.h:1166
-#: tithek.h:1227 tithek.h:1477 tithek.h:1499 tithek.h:1515 tithek.h:2085
-#: tithek.h:2112 tithek.h:2126 tithek.h:2136 tiwakeup.h:66 tiwakeup.h:68
-#: tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960
-#: TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108
-#: tsSchnitt.c:123 tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342
-#: tsSchnitt.c:347 tunerconfig.h:647 tunerconfig.h:666 tunerconfig.h:941
-#: unlock.h:20 unlock.h:66 unlock.h:71 unlock.h:75 videomode.h:67
-#: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
-#: vidstream.h:167 webif_index.atemio5200.h:38 webif_index.atemio6200.h:38
-#: webif_index.atemio7600.h:48 webif_index.atemio-nemesis.h:38
-#: webif_rc.atemio510.h:33 webif_rc_virtual.atemio510.h:33
-#: webif_rc_virtual.atemio5200.h:20 webif_rc_virtual.atemio520.h:20
-#: webif_rc_virtual.atemio530.h:20 webif_rc_virtual.atemio6000.h:20
-#: webif_rc_virtual.atemio6100.h:20 webif_rc_virtual.atemio6200.h:20
-#: webif_rc_virtual.atemio-nemesis.h:20 webif_rc_virtual.h:20 xupnpd.h:60
-#: xupnpd.h:71 xupnpd.h:73 xvidstage.h:54 xvidstage.h:100 xvidstage.h:177
-#: youtube.h:215 zapback.c:79 zdf.h:29
+#: titan.c:1190 tithek.c:85 tithek_global.h:250 tithek.h:670 tithek.h:1224
+#: tithek.h:1285 tithek.h:1535 tithek.h:1557 tithek.h:1574 tithek.h:1806
+#: tithek.h:1986 tithek.h:2206 tithek.h:2234 tithek.h:2250 tithek.h:2262
+#: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
+#: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216
+#: tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
+#: tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:647
+#: tunerconfig.h:666 tunerconfig.h:941 unlock.h:20 unlock.h:66 unlock.h:71
+#: unlock.h:75 videomode.h:67 videoweed.h:35 videoweed.h:80 vidstream.h:45
+#: vidstream.h:86 vidstream.h:98 vidstream.h:167 webif_index.atemio5200.h:38
+#: webif_index.atemio6200.h:38 webif_index.atemio7600.h:48
+#: webif_index.atemio-nemesis.h:38 webif_rc.atemio510.h:33
+#: webif_rc_virtual.atemio510.h:33 webif_rc_virtual.atemio5200.h:20
+#: webif_rc_virtual.atemio520.h:20 webif_rc_virtual.atemio530.h:20
+#: webif_rc_virtual.atemio6000.h:20 webif_rc_virtual.atemio6100.h:20
+#: webif_rc_virtual.atemio6200.h:20 webif_rc_virtual.atemio-nemesis.h:20
+#: webif_rc_virtual.h:20 xupnpd.h:60 xupnpd.h:71 xupnpd.h:73 xvidstage.h:54
+#: xvidstage.h:100 xvidstage.h:177 youtube.h:215 zapback.c:79 zdf.h:29
 msgid "OK"
 msgstr "Ok"
 
@@ -6620,7 +6641,7 @@ msgstr ""
 msgid "Paddington Bold"
 msgstr ""
 
-#: tithek.h:1596
+#: tithek.h:1658
 msgid "Page"
 msgstr "Seite"
 
@@ -7375,7 +7396,7 @@ msgstr "aktiviert"
 msgid "Real URL with http://"
 msgstr "Tatsächliche URL (http://...)"
 
-#: play.h:1287
+#: play.h:1300
 msgid "Really Delete ?"
 msgstr "wirklich löschen?"
 
@@ -7481,7 +7502,7 @@ msgstr "Aufnahme Timer"
 msgid "Record cut"
 msgstr "Aufnahmen schneiden"
 
-#: play.h:1286
+#: play.h:1299
 msgid "Record in progress"
 msgstr "Aufnahme läuft"
 
@@ -7569,7 +7590,7 @@ msgstr "Fernbedienung alte Version"
 msgid "Remotecontrol Power Aktion"
 msgstr "Aktion bei Power Taste der Fernbedienung"
 
-#: tithek.h:1162
+#: tithek.h:1220
 msgid "Remove Cachefile ?"
 msgstr "Zwischenspeicher leeren?"
 
@@ -7597,7 +7618,7 @@ msgstr "Entfernen gestartet"
 msgid "Remove success"
 msgstr "Löschen erfolgreich"
 
-#: tithek.h:2112
+#: tithek.h:2234
 msgid "Remove this Favorite ?"
 msgstr "Möchten Sie diesen Eintrag aus Ihren Favoriten löschen?"
 
@@ -7820,7 +7841,7 @@ msgstr "SCART 4:3/16:9"
 msgid "SEARCH"
 msgstr "Suchen"
 
-#: dvdplay.h:29 play.h:1412 plugins_dlna_skin.xml.h:9 skins_dlna_skin.xml.h:9
+#: dvdplay.h:29 play.h:1425 plugins_dlna_skin.xml.h:9 skins_dlna_skin.xml.h:9
 msgid "SELECT"
 msgstr "Auswählen"
 
@@ -7840,7 +7861,7 @@ msgstr ""
 msgid "SNR:"
 msgstr ""
 
-#: play.h:1412
+#: play.h:1425
 msgid "SORT"
 msgstr "Sortieren"
 
@@ -8321,115 +8342,115 @@ msgstr "Suche Film"
 msgid "Search Serie"
 msgstr "Suche Serie"
 
-#: play.h:673
+#: play.h:678
 msgid "Search on ARD (local)"
 msgstr "Suche diesen Titel bei ARD (local)"
 
-#: play.h:664
+#: play.h:669
 msgid "Search on Beeg (local)"
 msgstr "Suche diesen Titel bei Beeg (local)"
 
-#: play.h:666
+#: play.h:671
 msgid "Search on FilmOn (local)"
 msgstr "Suche diesen Titel bei FilmOn (local)"
 
-#: play.h:676
+#: play.h:681
 msgid "Search on Giga (local)"
 msgstr "Suche diesen Titel bei Giga (local)"
 
-#: play.h:684
+#: play.h:689
 msgid "Search on InternetRadio (local)"
 msgstr "Suche diesen Titel bei Internet-Radio (local)"
 
-#: play.h:683
+#: play.h:688
 msgid "Search on InternetTv (local)"
 msgstr "Suche diesen Titel bei Internet-Tv (local)"
 
-#: play.h:656
+#: play.h:661
 msgid "Search on KinoX"
 msgstr "Suche diesen Titel bei KinoX"
 
-#: play.h:657
+#: play.h:662
 msgid "Search on KinoX (local)"
 msgstr "Suche diesen Titel bei KinoX (local)"
 
-#: play.h:663
+#: play.h:668
 msgid "Search on Mle-HD (local)"
 msgstr "Suche diesen Titel bei Mle-HD (local)"
 
-#: play.h:658
+#: play.h:663
 msgid "Search on Movie4k"
 msgstr "Suche diesen Titel bei Movie4k"
 
-#: play.h:659
+#: play.h:664
 msgid "Search on Movie4k (local)"
 msgstr "Suche diesen Titel bei Movie4k (local)"
 
-#: play.h:671
+#: play.h:676
 msgid "Search on MyVideo"
 msgstr "Suche diesen Titel bei MyVideo"
 
-#: play.h:672
+#: play.h:677
 msgid "Search on MyVideo (local)"
 msgstr "Suche diesen Titel bei MyVideo (local)"
 
-#: play.h:682
+#: play.h:687
 msgid "Search on NTV-Now (local)"
 msgstr "Suche diesen Titel bei NTV-Now (local)"
 
-#: play.h:668
+#: play.h:673
 msgid "Search on Netzkino (local)"
 msgstr "Suche diesen Titel bei Netzkino (local)"
 
-#: play.h:677
+#: play.h:682
 msgid "Search on Rtl-Now (local)"
 msgstr "Suche diesen Titel bei Rtl-Now (local)"
 
-#: play.h:678
+#: play.h:683
 msgid "Search on Rtl2-Now (local)"
 msgstr "Suche diesen Titel bei Rtl2-Now (local)"
 
-#: play.h:681
+#: play.h:686
 msgid "Search on RtlNitro-Now (local)"
 msgstr "Suche diesen Titel bei RtlNitro-Now (local)"
 
-#: play.h:662
+#: play.h:667
 msgid "Search on Solarmovies (local)"
 msgstr "Suche diesen Titel bei Solarmovies (local)"
 
-#: play.h:660
+#: play.h:665
 msgid "Search on Solarmovies (movie)"
 msgstr "Suche diesen Titel bei Solarmovies (movie)"
 
-#: play.h:661
+#: play.h:666
 msgid "Search on Solarmovies (serie)"
 msgstr "Suche diesen Titel bei Solarmovies (serie)"
 
-#: play.h:679
+#: play.h:684
 msgid "Search on SuperRTL-Now (local)"
 msgstr "Suche diesen Titel bei SuperRTL-Now (local)"
 
-#: play.h:675
+#: play.h:680
 msgid "Search on TecTime (local)"
 msgstr "Suche diesen Titel bei TecTime (local)"
 
-#: play.h:680
+#: play.h:685
 msgid "Search on VOX-Now (local)"
 msgstr "Suche diesen Titel bei VOX-Now (local)"
 
-#: play.h:665
+#: play.h:670
 msgid "Search on Xvideos (local)"
 msgstr "Suche diesen Titel bei Xvideos (local)"
 
-#: play.h:669
+#: play.h:674
 msgid "Search on Youtube"
 msgstr "Suche diesen Titel bei Youtube"
 
-#: play.h:670
+#: play.h:675
 msgid "Search on Youtube (local)"
 msgstr "Suche diesen Titel bei Youtube (local)"
 
-#: play.h:674
+#: play.h:679
 msgid "Search on ZDF (local)"
 msgstr "Suche diesen Titel bei ZDF (local)"
 
@@ -8596,7 +8617,7 @@ msgstr "PiP-Einstellungen"
 msgid "Sharename can't be empty!"
 msgstr "Freigabename darf nicht leer sein!"
 
-#: infobar.h:611 mc_audioplayer.h:333 mc_main.h:273 mc_pictureplayer.h:124
+#: infobar.h:611 mc_audioplayer.h:333 mc_main.h:274 mc_pictureplayer.h:124
 #: mc_videoplayer.h:332 menu.h:223
 msgid ""
 "Shooting Background done !\n"
@@ -9028,7 +9049,7 @@ msgstr ""
 msgid "Start on boot"
 msgstr "automatischer Start"
 
-#: tithek.h:1477
+#: tithek.h:1535
 msgid "Start playback"
 msgstr "Beginne Wiedergabe"
 
@@ -9136,19 +9157,19 @@ msgstr ""
 msgid "Streaming"
 msgstr ""
 
-#: tithek.h:1365
+#: tithek.h:1423
 msgid "Streaming Playback (default)"
 msgstr "Direktes Streamen (standard)"
 
-#: tithek.h:1384
+#: tithek.h:1442
 msgid "Streaming Playback Caching (10MB)"
 msgstr "Direktes Streamen mit Puffer (10MB)"
 
-#: tithek.h:1374
+#: tithek.h:1432
 msgid "Streaming Playback Caching (1MB)"
 msgstr "Direktes Streamen mit Puffer (1MB)"
 
-#: tithek.h:1381
+#: tithek.h:1439
 msgid "Streaming Playback Caching (5MB)"
 msgstr "Direktes Streamen mit Puffer (5MB)"
 
@@ -9477,7 +9498,7 @@ msgstr ""
 "Die gewünschte Datei wird verschoben.\n"
 "Bitte versuchen Sie es in wenigen Minuten erneut!"
 
-#: tithek_global.h:250 tithek.h:2085
+#: tithek_global.h:250 tithek.h:2206
 msgid "The hoster is not yet supported !"
 msgstr "Der Anbieter wird zur Zeit nicht unterstützt!"
 
@@ -9761,7 +9782,7 @@ msgstr ""
 msgid "TitanNit Leather"
 msgstr ""
 
-#: tithek.h:1515
+#: tithek.h:1574
 msgid "TitanNit Tithek disclaimer"
 msgstr "TiThek Haftungsausschluss:"
 
@@ -9780,8 +9801,8 @@ msgstr ""
 msgid "Tithek - Mainmenu"
 msgstr "TiThek - Hauptmenü"
 
-#: tithek.h:1557 tithek.h:1690 tithek.h:2108 tithek.h:2122 tithek.h:2132
-#: tithek.h:2147
+#: tithek.h:1619 tithek.h:1753 tithek.h:2230 tithek.h:2246 tithek.h:2258
+#: tithek.h:2274
 msgid "Tithek - Mainmenu - Favoriten"
 msgstr "TiThek - Hauptmenü - Favoriten"
 
@@ -12304,7 +12325,7 @@ msgid "please wait"
 msgstr "bitte warten"
 
 #: plugins_sudoku_skin.xml.h:15 plugins_tithek_skin.xml.h:12
-#: skins_sudoku_skin.xml.h:15 skins_tithek_skin.xml.h:12 tithek.h:1149
+#: skins_sudoku_skin.xml.h:15 skins_tithek_skin.xml.h:12 tithek.h:1207
 msgid "please wait..."
 msgstr "bitte warten"
 

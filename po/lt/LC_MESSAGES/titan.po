@@ -492,6 +492,9 @@ msgstr "Pridti Laikmatis"
 msgid "Add iMDB manuel"
 msgstr "Rankiniu bdu pridti IMDB"
 
+msgid "Add this Sub Folder as Favorite ?"
+msgstr ""
+
 msgid "Add this link as Favorite ?"
 msgstr "Ar norite pridti i nuorod  savo mgstamiausi ?"
 
@@ -1699,6 +1702,15 @@ msgstr ""
 msgid "Create Settings Menu"
 msgstr ""
 
+msgid "Create Sub Menu"
+msgstr ""
+
+msgid "Create Sub Menu Favorite"
+msgstr ""
+
+msgid "Create Sub Menu Favorite (Password)"
+msgstr ""
+
 msgid "Create Thumb Picture"
 msgstr ""
 
@@ -2433,6 +2445,9 @@ msgid "Fastzap"
 msgstr ""
 
 msgid "Fav"
+msgstr ""
+
+msgid "Favorite Mainmenu"
 msgstr ""
 
 msgid "Favoriten"

@@ -492,6 +492,9 @@ msgstr ""
 msgid "Add iMDB manuel"
 msgstr "iMDB manueel invoegen"
 
+msgid "Add this Sub Folder as Favorite ?"
+msgstr ""
+
 msgid "Add this link as Favorite ?"
 msgstr "Wilt u deze favoriet toevoegen?"
 
@@ -1687,6 +1690,15 @@ msgstr ""
 msgid "Create Settings Menu"
 msgstr ""
 
+msgid "Create Sub Menu"
+msgstr ""
+
+msgid "Create Sub Menu Favorite"
+msgstr ""
+
+msgid "Create Sub Menu Favorite (Password)"
+msgstr ""
+
 msgid "Create Thumb Picture"
 msgstr ""
 
@@ -2424,6 +2436,9 @@ msgstr "Snel omschakelen"
 
 msgid "Fav"
 msgstr "Favorieten"
+
+msgid "Favorite Mainmenu"
+msgstr ""
 
 msgid "Favoriten"
 msgstr "Favorieten"
