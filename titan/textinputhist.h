@@ -113,6 +113,7 @@ char* textinputhist(char* title, char* text, char* histname)
 	struct skin* textinputhist = getscreen("textinputhist");
 	struct skin* listbox = getscreennode(textinputhist, "listbox");
 	struct skin* input = getscreennode(textinputhist, "input");
+	struct skin* titletext = getscreennode(textinputhist, "titletext");
 	struct skin* framebuffer = getscreen("framebuffer");
 	char* ret = NULL, *bg = NULL, *tmpstr = NULL;
 
@@ -122,6 +123,8 @@ char* textinputhist(char* title, char* text, char* histname)
 	if(title == NULL) title = ostrcat(_("Input field"), NULL, 0, 0);
 
 	changetitle(textinputhist, _(title));
+	changetext(titletext, _(title));
+
 	height = textinputhist->height;
 	if(title != NULL)
 		textinputhist->height += textinputhist->fontsize + 6 + (textinputhist->bordersize * 2);
