@@ -1537,7 +1537,7 @@ start:
 	}
 	else
 	{
-		b1->hidden = YES;
+		b1->hidden = NO;
 		b2->hidden = YES;
 		b3->hidden = YES;
 		b4->hidden = YES;
@@ -1556,6 +1556,15 @@ start:
 			delmarkedscreennodes(recordtimer, 1);
 			goto start;
 		}
+		if(flag == 1 && rcret == getrcconfigint("rcred", NULL)) // delete log
+		{
+			flag = 1;
+			delrectimer((struct rectimer*)listbox->select->handle, 1, 0);
+			
+			delmarkedscreennodes(recordtimer, 1);
+			goto start;
+		}
+		
 		if(rcret == getrcconfigint("rcexit", NULL))
 		{
 			if(flag == 0)
