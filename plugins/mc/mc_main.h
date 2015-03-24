@@ -134,6 +134,7 @@ void mc_main()
 	int rcret = 0, ret = 0;
 	char* videomode = NULL, *currvideomode = NULL;
 
+	int savevol = getvol();
 	set_player_sound(0);
 
 	writevfdmenu("Mediacenter");
@@ -393,6 +394,7 @@ void mc_main()
 	}
 
 	set_player_sound(1);
+	setvol(savevol);
 
 	free(videomode),videomode = NULL;
 	free(currvideomode),currvideomode = NULL;
