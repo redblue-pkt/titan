@@ -208,29 +208,14 @@ void screenskinselect(void)
 				free(tmpstr1), tmpstr1 = NULL;
 				
 				tmpstr = dirname(tmpstr);
-				printf("skin install dir: %s\n", tmpstr);
-	
 				tmpstr = ostrcat(tmpstr, "/skinconfig", 1, 0);
+
 				if(file_exist(tmpstr))
 				{
-					//if(ostrstr(getconfig("skinconfig", NULL), "/mnt/config/skinconfig") != NULL)
-					//{	
-					//	cmd = ostrcat("cp -f ", getconfig("skinconfig", NULL), 0, 0);
-					//	cmd = ostrcat(cmd, " ", 1, 0);
-					//	cmd = ostrcat(cmd, getconfig("skinpath", NULL), 1, 0);
-					//	system(cmd);
-					//	free(cmd); cmd = NULL;
-					
-					//	cmd = ostrcat("cp -f ", tmpstr, 0, 0);
-					//	cmd = ostrcat(cmd, " ", 1, 0);
-					//	cmd = ostrcat(cmd, getconfig("skinconfig", NULL), 1, 0);
-					//	system(cmd);
-					//	free(cmd); cmd = NULL;
-					//}
-					//else
-					//{
+					if(ostrcmp(getconfig("skinpath", NULL), "/var/usr/local/share/titan/skin/default") != 0)				
+						addconfig("skinconfig", "/mnt/config/skinconfig");
+					else
 						addconfig("skinconfig", tmpstr);
-					//}
 				}
 				else
 				{
@@ -245,6 +230,12 @@ void screenskinselect(void)
 
 				tmpstr = ostrcat(selection->name, NULL, 0, 0);
 				addconfig("skinpath", dirname(tmpstr));
+
+				debug(10, "-----------------------------------------------------------------");
+				debug(10, "write: skinpath=%s", getconfig("skinpath", NULL));
+				debug(10, "write: skinfile=%s", getconfig("skinfile", NULL));
+				debug(10, "write: skinconfig=%s", getconfig("skinconfig", NULL));
+				debug(10, "-----------------------------------------------------------------");
 
 				skinchanged = 1;
 				free(tmpstr); tmpstr = NULL;
