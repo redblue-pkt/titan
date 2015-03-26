@@ -201,21 +201,29 @@ void screenskinselect(void)
 				int count1 = 0;
 				char* tmpstr1 = NULL;
 				//char* cmd = NULL; not used, one warning less
-				tmpstr1 = ostrcat("", selection->name, 0, 0);
+				tmpstr1 = ostrcat(selection->name, NULL, 0, 0);
 				ret1 = strsplit(tmpstr1, " ", &count1);
-				tmpstr = ostrcat((&ret1[0])->part, "", 0, 0);
+				tmpstr = ostrcat((&ret1[0])->part, NULL, 0, 0);
 				free(ret1), ret1 = NULL;
 				free(tmpstr1), tmpstr1 = NULL;
 				
 				tmpstr = dirname(tmpstr);
 				tmpstr = ostrcat(tmpstr, "/skinconfig", 1, 0);
 
+				debug(10,"skin tmpstr: %s", tmpstr);
+
 				if(file_exist(tmpstr))
 				{
 					if(ostrcmp(getconfig("skinpath", NULL), "/var/usr/local/share/titan/skin/default") != 0)				
+					{
+						debug(10,"found default skin use=/mnt/config/skinconfig");
 						addconfig("skinconfig", "/mnt/config/skinconfig");
+					}
 					else
+					{
+						debug(10,"found external skin use=%s", tmpstr);
 						addconfig("skinconfig", tmpstr);
+					}
 				}
 				else
 				{
