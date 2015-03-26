@@ -233,6 +233,22 @@ void showproviderchannel(struct skin* channellist, struct skin* listbox, struct 
 	}
 }
 
+int checkproviderchannel(struct provider* providernode)
+{
+	struct channel* tmpchannel = channel;
+
+	while(tmpchannel != NULL)
+	{
+		if(tmpchannel->provider == providernode)
+		{
+			if(tmpchannel->servicetype == status.servicetype && channelnottunable(tmpchannel) != 1)
+				return 1;
+		}
+		tmpchannel = tmpchannel->next;
+	}
+	return 0;
+}
+
 void showprovider(struct skin* channellist, struct skin* listbox)
 {
 	struct provider *node = provider;
@@ -240,14 +256,21 @@ void showprovider(struct skin* channellist, struct skin* listbox)
 
 	while(node != NULL)
 	{
-		providernode = addlistbox(channellist, listbox, providernode, 2);
-		if(providernode != NULL)
+		if(checkproviderchannel(node) == 1)
 		{
-			changetext(providernode, node->name);
-			changename(providernode, node->name);
-			providernode->handle = (char*) node;
-			providernode->handle1 = (char*) node;
+			node->flag = 1;
+			providernode = addlistbox(channellist, listbox, providernode, 2);
+			if(providernode != NULL)
+			{
+				changetext(providernode, node->name);
+				changename(providernode, node->name);
+				providernode->handle = (char*) node;
+				providernode->handle1 = (char*) node;
+			}
 		}
+		else
+			node->flag = 0;
+
 		node = node->next;
 	}
 }
