@@ -211,10 +211,11 @@ void screenskinselect(void)
 				tmpstr = ostrcat(tmpstr, "/skinconfig", 1, 0);
 
 				debug(10,"skin tmpstr: %s", tmpstr);
+				debug(10,"skin skinpath: %s", getconfig("skinpath", NULL));
 
 				if(file_exist(tmpstr))
 				{
-					if(ostrcmp(getconfig("skinpath", NULL), "/var/usr/local/share/titan/skin/default") != 0)				
+					if(ostrcmp(getconfig("skinpath", NULL), "/var/usr/local/share/titan/skin/default") == 0)				
 					{
 						debug(10,"found default skin use=/mnt/config/skinconfig");
 						addconfig("skinconfig", "/mnt/config/skinconfig");
