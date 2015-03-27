@@ -7087,7 +7087,7 @@ void setdefaultbouquets()
 {
 	if(textbox(_("Message"), _("Start Restore Default Bouquets ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 	{
-		system("rm -rf /mnt/settings/bouquets.* > /dev/null 2>&1");
+		system("rm -f /mnt/settings/bouquets.* > /dev/null 2>&1");
 		system("cp -a /etc/titan.restore/mnt/settings/bouquets.cfg /mnt/settings/bouquets.cfg > /dev/null 2>&1");
 		system("cp -a /etc/titan.restore/mnt/settings/bouquets.*.tv /mnt/settings > /dev/null 2>&1");
 		system("cp -a /etc/titan.restore/mnt/settings/bouquets.*.radio /mnt/settings > /dev/null 2>&1");
@@ -7102,6 +7102,39 @@ void setdefaultsettings()
 	{
 		system("rm -rf /mnt/settings/* > /dev/null 2>&1");
 		system("cp -a /etc/titan.restore/mnt/settings/* /mnt/settings > /dev/null 2>&1");
+		textbox(_("Message"), _("Titan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+		oshutdown(3, 0);
+	}
+}
+
+void setdefaultproviders()
+{
+	if(textbox(_("Message"), _("Start Restore Default Providers ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+	{
+		system("rm -f /mnt/settings/provider > /dev/null 2>&1");
+		system("cp -a /etc/titan.restore/mnt/settings/provider /mnt/settings > /dev/null 2>&1");
+		textbox(_("Message"), _("Titan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+		oshutdown(3, 0);
+	}
+}
+
+void setdefaultchannels()
+{
+	if(textbox(_("Message"), _("Start Restore Default Channels ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+	{
+		system("rm -f /mnt/settings/channel > /dev/null 2>&1");
+		system("cp -a /etc/titan.restore/mnt/settings/channel /mnt/settings > /dev/null 2>&1");
+		textbox(_("Message"), _("Titan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+		oshutdown(3, 0);
+	}
+}
+
+void setdefaultsats()
+{
+	if(textbox(_("Message"), _("Start Restore Default Sats ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+	{
+		system("rm -f /mnt/settings/satellites > /dev/null 2>&1");
+		system("cp -a /etc/titan.restore/mnt/settings/satellites /mnt/settings > /dev/null 2>&1");
 		textbox(_("Message"), _("Titan will be restarted!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 		oshutdown(3, 0);
 	}
