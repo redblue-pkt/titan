@@ -7439,14 +7439,6 @@ msgstr "Chế độ lập lại"
 msgid "Reset"
 msgstr ""
 
-#: global.h:7088
-msgid "Reset to Default Bouquets ?"
-msgstr ""
-
-#: global.h:7101
-msgid "Reset to Default Settings ?"
-msgstr ""
-
 #: skin_default_skin.xml.h:568 webif_index.atemio7600.h:18
 #: webif_index.atemio7600.h:118 webif_rc.atemio520.h:4 webif_rc.atemio530.h:4
 #: webif_rc.atemio7600.h:51
@@ -8814,6 +8806,14 @@ msgstr "Bắt đầu HTTPD"
 #: webif_index.atemio6200.h:8 webif_index.atemio7600.h:6
 #: webif_index.atemio-nemesis.h:8 webif_index.h:8
 msgid "Start Record"
+msgstr ""
+
+#: global.h:7088
+msgid "Start Restore Default Bouquets ?"
+msgstr ""
+
+#: global.h:7101
+msgid "Start Restore Default Channel Settings ?"
 msgstr ""
 
 #: network.h:793

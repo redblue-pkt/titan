@@ -5252,12 +5252,6 @@ msgstr "Wiederholungsmodus"
 msgid "Reset"
 msgstr ""
 
-msgid "Reset to Default Bouquets ?"
-msgstr ""
-
-msgid "Reset to Default Settings ?"
-msgstr ""
-
 msgid "Resolution"
 msgstr "Auflösung"
 
@@ -6224,6 +6218,12 @@ msgstr "Autostart RGUID"
 
 msgid "Start Record"
 msgstr "Aufnahme starten"
+
+msgid "Start Restore Default Bouquets ?"
+msgstr ""
+
+msgid "Start Restore Default Channel Settings ?"
+msgstr ""
 
 msgid "Start Wlan ?"
 msgstr "Möchten Sie WLAN jetzt starten?"
