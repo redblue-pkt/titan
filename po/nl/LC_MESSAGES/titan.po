@@ -5111,7 +5111,13 @@ msgstr ""
 msgid "Restore Default Channel Settings"
 msgstr ""
 
-msgid "Restore Default Provider"
+msgid "Restore Default Channels"
+msgstr ""
+
+msgid "Restore Default Providers"
+msgstr ""
+
+msgid "Restore Default Sats"
 msgstr ""
 
 msgid "Restore Settings"
@@ -6044,6 +6050,15 @@ msgid "Start Restore Default Bouquets ?"
 msgstr ""
 
 msgid "Start Restore Default Channel Settings ?"
+msgstr ""
+
+msgid "Start Restore Default Channels ?"
+msgstr ""
+
+msgid "Start Restore Default Providers ?"
+msgstr ""
+
+msgid "Start Restore Default Sats ?"
 msgstr ""
 
 msgid "Start Wlan ?"
