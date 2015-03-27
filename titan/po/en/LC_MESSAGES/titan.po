@@ -5138,6 +5138,9 @@ msgstr ""
 msgid "Restore Default Channel Settings"
 msgstr ""
 
+msgid "Restore Default Provider"
+msgstr ""
+
 msgid "Restore Settings"
 msgstr ""
 
