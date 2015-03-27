@@ -5082,12 +5082,6 @@ msgstr "Тип повтора"
 msgid "Reset"
 msgstr "Сброс"
 
-msgid "Reset to Default Bouquets ?"
-msgstr ""
-
-msgid "Reset to Default Settings ?"
-msgstr ""
-
 msgid "Resolution"
 msgstr "Разрешение"
 
@@ -6048,6 +6042,12 @@ msgstr "Старт RGUID"
 
 msgid "Start Record"
 msgstr "Старт записи"
+
+msgid "Start Restore Default Bouquets ?"
+msgstr ""
+
+msgid "Start Restore Default Channel Settings ?"
+msgstr ""
 
 msgid "Start Wlan ?"
 msgstr "Запустить WiFi?"
