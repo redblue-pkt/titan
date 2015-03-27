@@ -15,13 +15,6 @@ if [ -z "$2" ]; then
 	exit
 fi
 
-CHECK=`whoami`
-if [ "$CHECK" != "atemio" ]; then
-	echo "[createpo.sh] exit, building only with user atemio"
-	exit
-fi
-
-
 rm -rf "$HOME"/flashimg/$SRCDIR/titan/tools/tmp
 mkdir -p "$HOME"/flashimg/$SRCDIR/titan/tools/tmp
 
@@ -208,6 +201,13 @@ elif [ "$SVNUSER" = "aafsvn" ] && [ "$GROUP" = "dev" ];then
 	cat "$HOME"/flashimg/$SRCDIR/error/coding.log >> "$HOME"/flashimg/$SRCDIR/error/create_po_error_code
 
 	cd "$HOME"/flashimg/$SRCDIR/error
+
+CHECK=`whoami`
+if [ "$CHECK" != "atemio" ]; then
+	echo "[createpo.sh] exit, building only with user atemio"
+	exit
+fi
+
 	svn commit -m "[titan] ERROR autoupdate po files"
 	svn commit "$HOME"/flashimg/$SRCDIR/error/create_po_error_code
 else
