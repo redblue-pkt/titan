@@ -1097,6 +1097,9 @@ msgstr "Бутлого 'Zombie'"
 msgid "Border Color"
 msgstr ""
 
+msgid "Bouquet Color"
+msgstr ""
+
 msgid "Bouquet List"
 msgstr "Список букетов"
 
