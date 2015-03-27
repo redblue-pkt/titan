@@ -1,4 +1,3 @@
-#: plugins_wm2014_skin.xml.h:1 skins_wm2014_skin.xml.h:1
 msgid ""
 msgstr ""
 "Project-Id-Version: TitanNit 1.64\n"
@@ -2985,7 +2984,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:232
 msgid "Epg Color 1"
-msgstr ""
+msgstr "EPG Farbe 1"
 
 #: skin_default_skin.xml.h:233
 msgid "Epg Color 2"
