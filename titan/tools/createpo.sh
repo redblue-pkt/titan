@@ -6,14 +6,21 @@ TYPE=update
 SRCDIR=$3
 
 if [ -z "$1" ]; then
-	echo "usage: createpo.sh <svnuser> <update|new>"
+	echo "[createpo.sh] usage: createpo.sh <svnuser> <update|new>"
 	exit
 fi
 
 if [ -z "$2" ]; then
-	echo "usage: createpo.sh <svnuser> <update|new>"
+	echo "[createpo.sh] usage: createpo.sh <svnuser> <update|new>"
 	exit
 fi
+
+CHECK=`whoami`
+if [ "$CHECK != "atemio" ]; then
+	echo "[createpo.sh] exit, building only with user atemio"
+	exit
+fi
+
 
 rm -rf "$HOME"/flashimg/$SRCDIR/titan/tools/tmp
 mkdir -p "$HOME"/flashimg/$SRCDIR/titan/tools/tmp
