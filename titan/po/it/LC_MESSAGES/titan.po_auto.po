@@ -839,7 +839,7 @@ msgstr "Attivare nuove impostazioni di rete ?"
 msgid "Album:"
 msgstr ""
 
-#: channellist.h:794 channellist.h:795 channellist.h:1235 channellist.h:1236
+#: channellist.h:771 channellist.h:772 channellist.h:1212 channellist.h:1213
 msgid "All Channels"
 msgstr "tutti i canali"
 
@@ -1594,7 +1594,7 @@ msgstr "Bouquets: "
 msgid "BouquetEntrys: "
 msgstr ""
 
-#: channellist.h:725 channellist.h:1251 channellist.h:1252 channellist.h:1464
+#: channellist.h:702 channellist.h:1228 channellist.h:1229 channellist.h:1441
 #: webif_channellist.h:5
 msgid "Bouquets"
 msgstr "Favoriti"
@@ -1840,7 +1840,7 @@ msgstr "Il file non puo essere aperto"
 msgid "Can't open frontend dev or Frontend Type unknown!"
 msgstr "Frontend non può essere aperto o tipo sconosciuto"
 
-#: channellist.h:1029
+#: channellist.h:1006
 msgid "Can't remove akive Service"
 msgstr "il canale corrente non puo essere cancellato"
 
@@ -1937,7 +1937,7 @@ msgstr "Channel Allocation"
 msgid "Change: "
 msgstr "Aggiungi Feed"
 
-#: channellist.h:742 channellist.h:1604 skin_default_skin.xml.h:137
+#: channellist.h:719 channellist.h:1581 skin_default_skin.xml.h:137
 msgid "Channel"
 msgstr "Nome Canale"
 
@@ -2036,7 +2036,7 @@ msgstr "Lista canali con errori (Nessun canale trovato)!"
 msgid "Channellist view"
 msgstr ""
 
-#: channellist.h:1319 channellist.h:1320
+#: channellist.h:1296 channellist.h:1297
 msgid "Channels A-Z"
 msgstr "Canali A-Z"
 
@@ -2346,23 +2346,23 @@ msgstr ""
 msgid "Copy Modus Font Color"
 msgstr ""
 
-#: channellist.h:619
+#: channellist.h:596
 msgid "Copy mode"
 msgstr ""
 
-#: channellist.h:938
+#: channellist.h:915
 msgid "Copy providerlist not ok"
 msgstr ""
 
-#: channellist.h:936
+#: channellist.h:913
 msgid "Copy providerlist successfull"
 msgstr ""
 
-#: channellist.h:945
+#: channellist.h:922
 msgid "Copy satlist not ok"
 msgstr ""
 
-#: channellist.h:943
+#: channellist.h:920
 msgid "Copy satlist successfull"
 msgstr ""
 
@@ -3065,8 +3065,8 @@ msgstr ""
 
 #: about.h:9 ard.h:31 autotimer.c:537 autotimer.c:543 autotimer.c:568
 #: autotimer.c:575 autotimer.c:603 avsettings.h:291 betarobot.h:57
-#: bgdownload.h:176 blindscanadjust.h:25 channellist.h:936 channellist.h:938
-#: channellist.h:943 channellist.h:945 channellist.h:1029 divxstage.h:36
+#: bgdownload.h:176 blindscanadjust.h:25 channellist.h:913 channellist.h:915
+#: channellist.h:920 channellist.h:922 channellist.h:1006 divxstage.h:36
 #: divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336 dlna.h:345
 #: dvdplay.h:62 epgsearch.h:27 epgsettings.h:263 epgsettings.h:289
 #: epgsettings.h:303 extensions.h:190 extensions.h:241 extensions.h:250
@@ -3197,7 +3197,7 @@ msgstr ""
 msgid "Edit Playlist"
 msgstr "Editare Playlist"
 
-#: channellist.h:637
+#: channellist.h:614
 msgid "Edit mode"
 msgstr "edit Mode"
 
@@ -5558,8 +5558,8 @@ msgid "Menulist"
 msgstr ""
 
 #: ard.h:31 avsettings.h:291 betarobot.h:57 bgdownload.h:176
-#: blindscanadjust.h:25 callmon_main.h:39 channellist.h:936 channellist.h:938
-#: channellist.h:943 channellist.h:945 channellist.h:1029 divxstage.h:36
+#: blindscanadjust.h:25 callmon_main.h:39 channellist.h:913 channellist.h:915
+#: channellist.h:920 channellist.h:922 channellist.h:1006 divxstage.h:36
 #: divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336 dlna.h:345
 #: dvdplay.h:62 epgsearch.h:27 epgsettings.h:263 epgsettings.h:289
 #: extensions.h:267 extensions.h:324 extensions.h:356 extensions.h:416
@@ -5754,7 +5754,7 @@ msgstr ""
 msgid "Move Modus Font Color"
 msgstr ""
 
-#: channellist.h:601
+#: channellist.h:578
 msgid "Move mode"
 msgstr "Modalitï¿½ spostamento"
 
@@ -6085,8 +6085,8 @@ msgstr ""
 
 #: about.h:9 ard.h:31 autotimer.c:537 autotimer.c:543 autotimer.c:568
 #: autotimer.c:575 autotimer.c:603 avsettings.h:291 betarobot.h:57
-#: bgdownload.h:176 blindscanadjust.h:25 callmon_main.h:39 channellist.h:936
-#: channellist.h:938 channellist.h:943 channellist.h:945 channellist.h:1029
+#: bgdownload.h:176 blindscanadjust.h:25 callmon_main.h:39 channellist.h:913
+#: channellist.h:915 channellist.h:920 channellist.h:922 channellist.h:1006
 #: divxstage.h:36 divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336
 #: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:263 epgsettings.h:289
 #: epgsettings.h:303 extensions.h:190 extensions.h:241 extensions.h:250
@@ -6943,7 +6943,7 @@ msgstr ""
 msgid "Protect Modus Font Color"
 msgstr ""
 
-#: channellist.h:628
+#: channellist.h:605
 msgid "Protect mode"
 msgstr ""
 
@@ -6951,7 +6951,7 @@ msgstr ""
 msgid "Prov"
 msgstr ""
 
-#: channellist.h:775 channellist.h:1353 channellist.h:1354 channellist.h:1678
+#: channellist.h:752 channellist.h:1330 channellist.h:1331 channellist.h:1655
 #: webif_channellist.h:3
 msgid "Provider"
 msgstr ""
@@ -7061,7 +7061,7 @@ msgstr ""
 msgid "RTL2-Now"
 msgstr ""
 
-#: channellist.h:712 channellist.h:1788 httpdfunc.h:292 httpdfunc.h:701
+#: channellist.h:689 channellist.h:1765 httpdfunc.h:292 httpdfunc.h:701
 #: scan.h:530 skin_default_skin.xml.h:537 webif_index.atemio5200.h:69
 #: webif_index.atemio5200.h:125 webif_index.atemio6200.h:69
 #: webif_index.atemio6200.h:125 webif_index.atemio-nemesis.h:69
@@ -7354,7 +7354,7 @@ msgstr ""
 msgid "Remove error"
 msgstr ""
 
-#: channellist.h:610
+#: channellist.h:587
 msgid "Remove mode"
 msgstr ""
 
@@ -7778,7 +7778,7 @@ msgstr "Scegliere Satellite"
 msgid "Satellite"
 msgstr ""
 
-#: channellist.h:758 channellist.h:1285 channellist.h:1286 channellist.h:1538
+#: channellist.h:735 channellist.h:1262 channellist.h:1263 channellist.h:1515
 msgid "Satellites"
 msgstr "Satelliti"
 
@@ -9131,7 +9131,7 @@ msgstr ""
 msgid "TSID:"
 msgstr ""
 
-#: channellist.h:717 channellist.h:1783 httpdfunc.h:286 httpdfunc.h:696
+#: channellist.h:694 channellist.h:1760 httpdfunc.h:286 httpdfunc.h:696
 #: scan.h:528
 msgid "TV"
 msgstr ""

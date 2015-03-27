@@ -7515,7 +7515,7 @@ msgid "broadcast"
 msgstr "Broadcast address"
 
 msgid "browser"
-msgstr ""
+msgstr "Browser"
 
 msgid "burlywood1"
 msgstr ""
@@ -7740,7 +7740,7 @@ msgid "empty"
 msgstr "No Module"
 
 msgid "emus"
-msgstr ""
+msgstr "Softcams"
 
 msgid "en-GB"
 msgstr ""
@@ -7821,7 +7821,7 @@ msgid "first titan game"
 msgstr ""
 
 msgid "fonts"
-msgstr ""
+msgstr "Fonts"
 
 msgid "found"
 msgstr ""
@@ -7943,7 +7943,7 @@ msgid "infomenu"
 msgstr ""
 
 msgid "infos"
-msgstr ""
+msgstr "Infos"
 
 msgid "initializing"
 msgstr "initializing"
@@ -8000,10 +8000,10 @@ msgid "language"
 msgstr ""
 
 msgid "lcdpearlskins"
-msgstr ""
+msgstr "Pearl LCD Skins"
 
 msgid "lcdsamsungskins"
-msgstr ""
+msgstr "Samsung LCD Skins"
 
 msgid "left"
 msgstr ""
@@ -8309,7 +8309,7 @@ msgid "pic5"
 msgstr "Picture 5"
 
 msgid "picons"
-msgstr ""
+msgstr "Picons"
 
 msgid "picture"
 msgstr "Picture"
@@ -8333,7 +8333,7 @@ msgid "pl2303"
 msgstr "PL2303 Module"
 
 msgid "player"
-msgstr ""
+msgstr "Player"
 
 msgid "playinfobar"
 msgstr ""
@@ -8579,7 +8579,7 @@ msgid "set startchannel"
 msgstr ""
 
 msgid "settings"
-msgstr ""
+msgstr "Settings"
 
 msgid "settingsmenu"
 msgstr ""
@@ -8636,7 +8636,7 @@ msgid "skinadjust"
 msgstr ""
 
 msgid "skins"
-msgstr ""
+msgstr "Skins"
 
 msgid "skinselect"
 msgstr ""
@@ -8864,7 +8864,7 @@ msgid "toneburst, uncommitted, committed"
 msgstr ""
 
 msgid "tools"
-msgstr ""
+msgstr "Tools"
 
 msgid "tpkinstall"
 msgstr ""
