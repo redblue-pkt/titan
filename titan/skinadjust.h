@@ -50,6 +50,7 @@ void screenskinadjust()
 	struct skin* epgcol3 = getscreennode(skinadjust, "epgcol3");
 	struct skin* emuaktivecol = getscreennode(skinadjust, "emuaktivecol");
 	struct skin* emurunningcol = getscreennode(skinadjust, "emurunningcol");
+	struct skin* favcol = getscreennode(skinadjust, "favcol");
 
 	struct skin* oled_sel = getscreennode(skinadjust, "oled_sel");
 	struct skin* infobar_sel = getscreennode(skinadjust, "infobar_sel");
@@ -177,6 +178,7 @@ void screenskinadjust()
 	addchoicebox(epgcol3, "31", getskinconfig("epgcol3", NULL));
 	addchoicebox(emuaktivecol, "32", getskinconfig("emuaktivecol", NULL));
 	addchoicebox(emurunningcol, "33", getskinconfig("emurunningcol", NULL));
+	addchoicebox(favcol, "34", getskinconfig("favcol", NULL));
 
 	listboxselect->fontcol2 = convertcol(getskinconfig("listboxselect", NULL));
 	tithek_selectcol->fontcol2 = convertcol(getskinconfig("tithek_selectcol", NULL));
@@ -213,6 +215,7 @@ void screenskinadjust()
 	epgcol3->fontcol2 = convertcol(getskinconfig("epgcol3", NULL));
 	emuaktivecol->fontcol2 = convertcol(getskinconfig("emuaktivecol", NULL));
 	emurunningcol->fontcol2 = convertcol(getskinconfig("emurunningcol", NULL));
+	favcol->fontcol2 = convertcol(getskinconfig("favcol", NULL));
 
 	if(status.security == 0 || checkemu() == 0)
 	{
@@ -662,6 +665,16 @@ void screenskinadjust()
 				emurunningcol->fontcol2 = convertcol(tmpstr);
 			}
 
+			if(listbox->select != NULL && ostrcmp(listbox->select->name, "favcol") == 0)
+			{
+				long oldfavcol = convertcol("favcol");
+				tmpstr = screencolorpicker(getskinconfig("favcol", NULL), 0, 0, 0);
+				if(tmpstr != NULL)
+					addskinconfigtmp("favcol", tmpstr);
+				if(oldfavcol != convertcol("favcol")) reboot = 1;
+				favcol->fontcol2 = convertcol(tmpstr);
+			}
+
 			drawscreen(skinadjust, 0, 0);
 
 			debug(10, "%s set %s", listbox->select->name, tmpstr);
@@ -776,6 +789,8 @@ void screenskinadjust()
 		else if(ostrcmp(listbox->select->name, "emuaktivecol") == 0)
 			b5->hidden = NO;
 		else if(ostrcmp(listbox->select->name, "emurunningcol") == 0)
+			b5->hidden = NO;
+		else if(ostrcmp(listbox->select->name, "favcol") == 0)
 			b5->hidden = NO;
 		else
 			b5->hidden = YES;
