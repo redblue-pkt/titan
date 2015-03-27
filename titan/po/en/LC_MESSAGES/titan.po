@@ -1084,6 +1084,9 @@ msgstr ""
 msgid "Border Color"
 msgstr ""
 
+msgid "Bouquet Color"
+msgstr ""
+
 msgid "Bouquet List"
 msgstr ""
 

@@ -1117,6 +1117,9 @@ msgstr ""
 msgid "Border Color"
 msgstr "Rahmenfarbe"
 
+msgid "Bouquet Color"
+msgstr ""
+
 msgid "Bouquet List"
 msgstr "Favoriten Liste"
 
