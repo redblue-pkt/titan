@@ -7085,7 +7085,7 @@ void wakeup_record_device()
 
 void setdefaultbouquets()
 {
-	if(textbox(_("Message"), _("Reset to Default Bouquets ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+	if(textbox(_("Message"), _("Start Restore Default Bouquets ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 	{
 		system("rm -rf /mnt/settings/bouquets.* > /dev/null 2>&1");
 		system("cp -a /etc/titan.restore/mnt/settings/bouquets.cfg /mnt/settings/bouquets.cfg > /dev/null 2>&1");
@@ -7098,7 +7098,7 @@ void setdefaultbouquets()
 
 void setdefaultsettings()
 {
-	if(textbox(_("Message"), _("Reset to Default Settings ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+	if(textbox(_("Message"), _("Start Restore Default Channel Settings ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 	{
 		system("rm -rf /mnt/settings/* > /dev/null 2>&1");
 		system("cp -a /etc/titan.restore/mnt/settings/* /mnt/settings > /dev/null 2>&1");
