@@ -5252,6 +5252,12 @@ msgstr "Wiederholungsmodus"
 msgid "Reset"
 msgstr ""
 
+msgid "Reset to Default Bouquets ?"
+msgstr ""
+
+msgid "Reset to Default Settings ?"
+msgstr ""
+
 msgid "Resolution"
 msgstr "Auflösung"
 
@@ -5281,6 +5287,12 @@ msgstr "OScam Neustart?"
 
 msgid "Restore"
 msgstr "Wiederherstellen"
+
+msgid "Restore Default Bouquets"
+msgstr ""
+
+msgid "Restore Default Channel Settings"
+msgstr ""
 
 msgid "Restore Settings"
 msgstr "Einstellungen wiederherstellen"

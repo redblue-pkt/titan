@@ -5155,6 +5155,12 @@ msgstr "modo de repeticion"
 msgid "Reset"
 msgstr "Restablecer"
 
+msgid "Reset to Default Bouquets ?"
+msgstr ""
+
+msgid "Reset to Default Settings ?"
+msgstr ""
+
 msgid "Resolution"
 msgstr ""
 
@@ -5184,6 +5190,12 @@ msgstr "Reiniciar OScam?"
 
 msgid "Restore"
 msgstr "Restaurar"
+
+msgid "Restore Default Bouquets"
+msgstr ""
+
+msgid "Restore Default Channel Settings"
+msgstr ""
 
 msgid "Restore Settings"
 msgstr "Restaurar Configuracion"

@@ -4963,6 +4963,12 @@ msgstr "Type de répétition"
 msgid "Reset"
 msgstr "Réinitialiser"
 
+msgid "Reset to Default Bouquets ?"
+msgstr ""
+
+msgid "Reset to Default Settings ?"
+msgstr ""
+
 msgid "Resolution"
 msgstr ""
 
@@ -4992,6 +4998,12 @@ msgstr "Redémarrer Titan"
 
 msgid "Restore"
 msgstr "Restaurer"
+
+msgid "Restore Default Bouquets"
+msgstr ""
+
+msgid "Restore Default Channel Settings"
+msgstr ""
 
 msgid "Restore Settings"
 msgstr "Réglages de Rotor"
