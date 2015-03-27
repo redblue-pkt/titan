@@ -5082,6 +5082,12 @@ msgstr "Тип повтора"
 msgid "Reset"
 msgstr "Сброс"
 
+msgid "Reset to Default Bouquets ?"
+msgstr ""
+
+msgid "Reset to Default Settings ?"
+msgstr ""
+
 msgid "Resolution"
 msgstr "Разрешение"
 
@@ -5111,6 +5117,12 @@ msgstr "Перезапустить Oscam?"
 
 msgid "Restore"
 msgstr "Восстановить"
+
+msgid "Restore Default Bouquets"
+msgstr ""
+
+msgid "Restore Default Channel Settings"
+msgstr ""
 
 msgid "Restore Settings"
 msgstr "Восстановление настроек"

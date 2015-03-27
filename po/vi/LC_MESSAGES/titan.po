@@ -5026,6 +5026,12 @@ msgstr "Chế độ lập lại"
 msgid "Reset"
 msgstr ""
 
+msgid "Reset to Default Bouquets ?"
+msgstr ""
+
+msgid "Reset to Default Settings ?"
+msgstr ""
+
 msgid "Resolution"
 msgstr ""
 
@@ -5055,6 +5061,12 @@ msgstr "Khởi động lại"
 
 msgid "Restore"
 msgstr "Khôi phục"
+
+msgid "Restore Default Bouquets"
+msgstr ""
+
+msgid "Restore Default Channel Settings"
+msgstr ""
 
 msgid "Restore Settings"
 msgstr "Thiết lập khôi phục lại"

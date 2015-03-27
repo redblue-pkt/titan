@@ -5102,6 +5102,12 @@ msgstr ""
 msgid "Reset"
 msgstr ""
 
+msgid "Reset to Default Bouquets ?"
+msgstr ""
+
+msgid "Reset to Default Settings ?"
+msgstr ""
+
 msgid "Resolution"
 msgstr ""
 
@@ -5130,6 +5136,12 @@ msgid "Restart Oscam ?"
 msgstr "Restart OScam?"
 
 msgid "Restore"
+msgstr ""
+
+msgid "Restore Default Bouquets"
+msgstr ""
+
+msgid "Restore Default Channel Settings"
 msgstr ""
 
 msgid "Restore Settings"
