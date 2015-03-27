@@ -78,6 +78,8 @@ void showallchannel(struct skin* channellist, struct skin* listbox, struct skin*
 				changechannelepg(tmpchannel, chnode);
 				if(tmpchannel->protect > 0)
 					chnode->fontcol = convertcol("protectcol");
+				if(checkbouguet(tmpchannel) == 1)
+					chnode->fontcol = convertcol("favcol");
 				changetext(chnode, tmpchannel->name);
 				chnode->handle = (char*) tmpchannel;
 				chnode->handle1 = (char*) tmpchannel;
@@ -110,6 +112,25 @@ void showallchannel(struct skin* channellist, struct skin* listbox, struct skin*
 		}
 		tmpchannel = tmpchannel->next;
 	}
+}
+
+int checkbouguet(struct channel* tmpchannel)
+{
+	struct mainbouquet* mainbouquetnode = mainbouquet;
+	struct bouquet* bouquetnode = NULL;
+	while(mainbouquetnode != NULL)
+	{
+		bouquetnode = mainbouquetnode->bouquet;
+		while(bouquetnode != NULL)
+		{
+			if(bouquetnode->channel != NULL && bouquetnode->channel->serviceid == tmpchannel->serviceid && bouquetnode->channel->transponderid == tmpchannel->transponderid)
+				return 1;
+
+			bouquetnode = bouquetnode->next;
+		}
+		mainbouquetnode = mainbouquetnode->next;
+	}
+	return 0;	
 }
 
 void showbouquetchannel(struct skin* channellist, struct skin* listbox, struct skin* channeltimeline, struct bouquet* firstbouquet, struct mainbouquet* mbouquet, int mode)
@@ -154,7 +175,6 @@ void showbouquetchannel(struct skin* channellist, struct skin* listbox, struct s
 						else
 							chnode->deaktivcol = deaktivcol;
 					}
-						
 					if(status.showchanneltimeline == 1 && channeltimeline != status.skinerr)
 					{
 						chnode->textposx = channeltimeline->width + 10;
@@ -258,7 +278,7 @@ void showprovider(struct skin* channellist, struct skin* listbox)
 	{
 		if(checkprovider(node) == 1)
 		{
-//			node->flag = 1;
+			node->flag = 1;
 			providernode = addlistbox(channellist, listbox, providernode, 2);
 			if(providernode != NULL)
 			{
@@ -268,8 +288,8 @@ void showprovider(struct skin* channellist, struct skin* listbox)
 				providernode->handle1 = (char*) node;
 			}
 		}
-//		else
-//			node->flag = 0;
+		else
+			node->flag = 0;
 
 		node = node->next;
 	}
