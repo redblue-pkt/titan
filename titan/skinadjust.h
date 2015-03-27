@@ -52,7 +52,6 @@ void screenskinadjust()
 	struct skin* emurunningcol = getscreennode(skinadjust, "emurunningcol");
 	struct skin* favcol = getscreennode(skinadjust, "favcol");
 
-	struct skin* oled_sel = getscreennode(skinadjust, "oled_sel");
 	struct skin* infobar_sel = getscreennode(skinadjust, "infobar_sel");
 	struct skin* infobar2_sel = getscreennode(skinadjust, "infobar2_sel");
 //	struct skin* pic1 = getscreennode(skinadjust, "pic1");
@@ -102,26 +101,6 @@ void screenskinadjust()
 	orightoffset = getconfigint("fbrightoffset", NULL); 
 	otopoffset = getconfigint("fbtopoffset", NULL);
 	obottomoffset = getconfigint("fbbottomoffset", NULL);
-
-	if(checkchipset("BCM7424") == 1) // inihdp
-	{
-		if(checkscreen("OLED_nemesis") != status.skinerr)
-			addchoicebox(oled_sel, "OLED_nemesis", "v1");
-		if(checkscreen("OLED_nemesis_v2") != status.skinerr)
-			addchoicebox(oled_sel, "OLED_nemesis_v2","v2");
-		if(checkscreen("OLED_nemesis_v3") != status.skinerr)
-			addchoicebox(oled_sel, "OLED_nemesis_v3","v3");
-		if(checkscreen("OLED_nemesis_v4") != status.skinerr)
-			addchoicebox(oled_sel, "OLED_nemesis_v4","v4");
-		if(checkscreen("OLED_nemesis_v5") != status.skinerr)
-			addchoicebox(oled_sel, "OLED_nemesis_v5","v5");
-		if(checkscreen("OLED_nemesis_v6") != status.skinerr)
-			addchoicebox(oled_sel, "OLED_nemesis_v6","v6");
-
-		setchoiceboxselection(oled_sel, getskinconfig("OLED_nemesis", NULL));
-	}
-	else
-		oled_sel->hidden = YES;
 
 	if(checkscreen("infobar") != status.skinerr)
 		addchoicebox(infobar_sel, "infobar", "v1");
@@ -264,18 +243,6 @@ void screenskinadjust()
 #ifdef MIPSEL
 		setfbosd();
 #endif
-
-		if((rcret == getrcconfigint("rcleft", NULL) || rcret == getrcconfigint("rcright", NULL)) && checkchipset("BCM7424") == 1 && listbox->select != NULL && ostrcmp(listbox->select->name, "oled_sel") == 0)
-		{
-			tmpstr = ostrcat(tmpstr, oled_sel->ret, 0, 0);
-			struct skin* OLED_nemesis = getscreen(tmpstr);
-			if(status.skinerr == OLED_nemesis)
-				OLED_nemesis = getscreen("OLED_nemesis");
-			struct skin* textbox = getscreennode(OLED_nemesis, "textbox");
-			changetext(textbox, tmpstr);
-			drawscreen(OLED_nemesis, 0, 0);
-			free(tmpstr);tmpstr=NULL;
-		}
 
 		if(rcret == getrcconfigint("rcexit", NULL))
 		{
@@ -696,9 +663,6 @@ void screenskinadjust()
 			setosdtransparent(getskinconfigint("osdtransparent", NULL));
 			addconfigscreencheck("showrecfreesize", showrecfreesize, "0");
 			status.showrecfreesize = getconfigint("showrecfreesize", NULL);
-
-			if(checkchipset("BCM7424") == 1) //inihdp
-				addskinconfigscreencheck("OLED_nemesis", oled_sel, "0");
 
 			char* oldinfobar_sel = getskinconfig("infobar_selection", NULL);
 			addskinconfigscreencheck("infobar_selection", infobar_sel, "0");
