@@ -1653,20 +1653,23 @@ start:
 				}
 				if(tmpaktlist == NULL) break;
 
-				delmarkedscreennodes(channellist, 1);
-				struct skin* tmpnode = addlistbox(channellist, listbox, NULL, 2);
-				if(tmpnode != NULL)
+				if(checkproviderchannel(tmpaktlist) == 1)
 				{
-					listbox->aktline = 1;
-					listbox->aktpage = -1;
-
-					drawscreen(channellist, 2, 0);
-					changetext(tmpnode, tmpaktlist->name);
-					tmpnode->handle = (char*)tmpaktlist;
-					tmpnode->handle1 = (char*)tmpaktlist;
-					rcret = getrcconfigint("rcok", NULL);
-					list = PROVIDERLIST;
-					break;
+					delmarkedscreennodes(channellist, 1);
+					struct skin* tmpnode = addlistbox(channellist, listbox, NULL, 2);
+					if(tmpnode != NULL)
+					{
+						listbox->aktline = 1;
+						listbox->aktpage = -1;
+	
+						drawscreen(channellist, 2, 0);
+						changetext(tmpnode, tmpaktlist->name);
+						tmpnode->handle = (char*)tmpaktlist;
+						tmpnode->handle1 = (char*)tmpaktlist;
+						rcret = getrcconfigint("rcok", NULL);
+						list = PROVIDERLIST;
+						break;
+					}
 				}
 			}
 		}
