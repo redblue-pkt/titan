@@ -252,9 +252,6 @@ msgstr ""
 msgid "3 GB"
 msgstr ""
 
-msgid "3 Wins"
-msgstr "3 conexiones"
-
 msgid "30"
 msgstr ""
 
@@ -269,9 +266,6 @@ msgstr "3D Modulos"
 
 msgid "3D-Mode Settings"
 msgstr "3D Configuracion"
-
-msgid "3dsettings"
-msgstr ""
 
 msgid "3s"
 msgstr "3 Segundos"
@@ -376,13 +370,6 @@ msgid "A"
 msgstr ""
 
 msgid ""
-"A collection of really nice folder icons for MediaCenter Videoplayer "
-"Coverview!"
-msgstr ""
-"Una bonita selección de imágenes para el Media Center reproductor de vídeo y "
-"de la cubierta preliminar!"
-
-msgid ""
 "A list of currently used network shares. You can add, edit, delete shares or "
 "search for new shares."
 msgstr ""
@@ -406,12 +393,6 @@ msgid "A/V Settings"
 msgstr "Audio/Video Ajustes"
 
 msgid "AAC Mode"
-msgstr ""
-
-msgid "AAF MediaCenter, the best multimedia player on mipsel"
-msgstr ""
-
-msgid "AAF MediaCenter, the best multimedia player on sh4"
 msgstr ""
 
 msgid "AC3 Mode"
@@ -457,9 +438,6 @@ msgid "About"
 msgstr "Acerca de titan"
 
 msgid "Action"
-msgstr ""
-
-msgid "Action Man Italic"
 msgstr ""
 
 msgid "Activate"
@@ -545,53 +523,17 @@ msgstr ""
 msgid "All Channels"
 msgstr "Todos los Canales"
 
-msgid "All New first"
-msgstr "Todas las novedades Entradas primero"
-
-msgid "All Sorted"
-msgstr "Todas las entradas ordenadas"
-
 msgid "All new channels added!"
 msgstr "Todos los nuevos canales añadidos!"
 
 msgid "Allowed Zapping via Streamlink"
 msgstr "Permitir el cambio por Livestream"
 
-msgid "Alpha Romanie G98"
-msgstr ""
-
 msgid ""
 "Alternativ Audio Firmware not working korrekt with all videos (DTSDOWNMIX)!"
 msgstr ""
 "Alternativa Firmware audio no funcionar correctamente con todos los videos\n"
 "(DTSDOWNMIX)!"
-
-msgid "Alternative blue skin for Pearl LCD "
-msgstr ""
-
-msgid "Alternative skin for Pearl LCD"
-msgstr ""
-
-msgid ""
-"Alternative skin for Pearl LCD - X-Light picons must be installed separately"
-msgstr ""
-
-msgid "Alternative skin for Pearl LCD Atemio style"
-msgstr ""
-
-msgid "Alternative skin for Pearl LCD MRP style"
-msgstr ""
-
-msgid "Alternative skin for Pearl LCD big/black"
-msgstr ""
-
-msgid ""
-"Alternative skin for Samsung LCD - w/o Picons (must be installed separately)"
-msgstr ""
-
-msgid ""
-"Alternative skin for Samsung LCD - w/o picons (must be installed separately)"
-msgstr ""
 
 msgid "Amount of files: "
 msgstr "Total de Archivos: "
@@ -690,59 +632,8 @@ msgstr "Relacion de Aspecto:"
 msgid "Aspect Settings"
 msgstr "Aspecto Ajustes"
 
-msgid "Astra 19.2"
-msgstr ""
-
-msgid "Astra 19.2 (matze70)"
-msgstr ""
-
-msgid "Astra 19.2 (uljanow) plus Hotbird 13.0"
-msgstr ""
-
-msgid "Astra 19.2 - new (matze70)"
-msgstr ""
-
-msgid "Astra 19.2 and all transponder"
-msgstr ""
-
-msgid "Astra 19.2e 23.5e Hotbird 13.0e Thor 0.8w KabelDeutschland (andy)"
-msgstr ""
-
-msgid "Astra ORF"
-msgstr ""
-
 msgid "Atemio (hotline)"
 msgstr "Atemio (Hotline)"
-
-msgid "Atemio Cable Tuner scan"
-msgstr "Atemio buscar sintonizador cable"
-
-msgid "Atemio Channelsearch 4xSat"
-msgstr "busqueda Atemio Canal 4 satelites"
-
-msgid "Atemio Harddisc formating"
-msgstr "Atemio Disco duro formateando"
-
-msgid "Atemio Network configuration stable IP"
-msgstr "configuracion Atemio Red IP estatica"
-
-msgid "Atemio Series Recoding"
-msgstr "Atemio grabacion de serie"
-
-msgid "Atemio Skin (Gui Design)"
-msgstr ""
-
-msgid "Atemio TitanNit Trailer"
-msgstr "Atemio TitanNit Vista preliminar"
-
-msgid "Atemio TitanNit zap Menu"
-msgstr ""
-
-msgid "Atemio Tuner configuration Sat"
-msgstr "configuracion del sintonizador de satelite"
-
-msgid "Atemio WLAN configuration"
-msgstr "Atemio WLAN Configuración"
 
 msgid "Atemio free license"
 msgstr ""
@@ -789,9 +680,6 @@ msgstr "Resolucion Automatica"
 msgid "Auto Scan"
 msgstr "Exploracion automatica"
 
-msgid "Auto Timer"
-msgstr ""
-
 msgid "Auto resolution"
 msgstr "Resolucion Automatica"
 
@@ -821,9 +709,6 @@ msgstr "Parada automatica en 10 segundos"
 
 msgid "Automatic update"
 msgstr ""
-
-msgid "Automatisch Timer setzen"
-msgstr "automaticamente ajustar el temporizador"
 
 msgid "Automount"
 msgstr "Integracion automatica"
@@ -977,22 +862,7 @@ msgstr ""
 msgid "Benutzer-Kamera 2"
 msgstr ""
 
-msgid "Bikergirl"
-msgstr ""
-
 msgid "Bitrate"
-msgstr ""
-
-msgid "Black 3D Picons - Astra 23.5E."
-msgstr ""
-
-msgid "Black 3D Picons - Hotbird 13.0E."
-msgstr ""
-
-msgid "Black 3D Picons Astra 19.2"
-msgstr ""
-
-msgid "Black Picons - Eutelsat 36.0E."
 msgstr ""
 
 msgid "Blindscan"
@@ -1016,9 +886,6 @@ msgstr "Boton Azul"
 msgid "Blue Key Action - Setup"
 msgstr "Azul Key - configuracion de Funciones"
 
-msgid "Blueskull"
-msgstr ""
-
 msgid "Boot RGB Fix"
 msgstr "RGB Fix activo en el arranque"
 
@@ -1027,72 +894,6 @@ msgstr "Resolucion de arranque"
 
 msgid "Bootlogo"
 msgstr "pantalla con el logotipo de arranque en el inicio"
-
-msgid "Bootlogo 'Bikergirl'"
-msgstr ""
-
-msgid "Bootlogo 'Blueskull'"
-msgstr ""
-
-msgid "Bootlogo 'Cityflash'"
-msgstr ""
-
-msgid "Bootlogo 'Enigma Linux'"
-msgstr ""
-
-msgid "Bootlogo 'Fantasygirl 2'"
-msgstr ""
-
-msgid "Bootlogo 'Fantasygirl'"
-msgstr ""
-
-msgid "Bootlogo 'Firelady'"
-msgstr ""
-
-msgid "Bootlogo 'Fireskull'"
-msgstr ""
-
-msgid "Bootlogo 'Footballgirls'"
-msgstr ""
-
-msgid "Bootlogo 'Ghostrider'"
-msgstr ""
-
-msgid "Bootlogo 'Giantgirl'"
-msgstr ""
-
-msgid "Bootlogo 'Ice Age Scrap likes UFS910'"
-msgstr ""
-
-msgid "Bootlogo 'Linuxgirl'"
-msgstr ""
-
-msgid "Bootlogo 'Planets'"
-msgstr ""
-
-msgid "Bootlogo 'The Grim Reaper'"
-msgstr ""
-
-msgid "Bootlogo 'TitanNit Blood'"
-msgstr ""
-
-msgid "Bootlogo 'TitanNit Design 1'"
-msgstr ""
-
-msgid "Bootlogo 'TitanNit Design 3'"
-msgstr ""
-
-msgid "Bootlogo 'TitanNit Design 5'"
-msgstr ""
-
-msgid "Bootlogo 'TitanNit Leather'"
-msgstr ""
-
-msgid "Bootlogo 'TitanNit_on_Fire'"
-msgstr ""
-
-msgid "Bootlogo 'Zombie'"
-msgstr ""
 
 msgid "Border Color"
 msgstr ""
@@ -1178,9 +979,6 @@ msgstr "CI-Modulo encontrado: "
 msgid "CAMx"
 msgstr ""
 
-msgid "CCcam 2.3.0"
-msgstr ""
-
 msgid "CLEAR INPUT"
 msgstr "Borrar entrada"
 
@@ -1202,24 +1000,6 @@ msgstr ""
 msgid "Cable: "
 msgstr "Cable:"
 
-msgid "Cable: Kabel Deutschland UH-Kreis"
-msgstr ""
-
-msgid "Cable: Kabel Primacom"
-msgstr ""
-
-msgid "Cable: Unitymedia2"
-msgstr ""
-
-msgid "Cable: default Settings Kabel Deutschland"
-msgstr "Cable: Lista de canales por cable estándar Alemania"
-
-msgid "Cable: sofatester Kabel BW"
-msgstr ""
-
-msgid "CallMonitor"
-msgstr ""
-
 msgid "CallMonitor Settings"
 msgstr "Ajustes"
 
@@ -1232,19 +1012,11 @@ msgstr ""
 "\n"
 "Compruebe su configuracion!"
 
-msgid "Callmonitor Plugin"
-msgstr ""
-"monitor de llamada para la visualización de las llamadas entrantes y "
-"salientes"
-
 msgid "Cam / Emu"
 msgstr "Softcam y USB driver"
 
 msgid "Cam Routing"
 msgstr "Dejar carga Stmdvb.ko con opcion CamRouting "
-
-msgid "Camd3 v3.902 "
-msgstr ""
 
 msgid "Can not parse Main Stream URL, try again later."
 msgstr ""
@@ -1358,9 +1130,6 @@ msgstr "Cancelar"
 
 msgid "Cat-Catch"
 msgstr ""
-
-msgid "Category"
-msgstr "Categoria"
 
 msgid "Change Channelname"
 msgstr "Actualizacion nombre de canal"
@@ -1571,9 +1340,6 @@ msgstr ""
 msgid "Ci-Modul internal Menu"
 msgstr "CI-Modulo interno Menu"
 
-msgid "Cityflash"
-msgstr ""
-
 msgid "Clear"
 msgstr "Limpiar"
 
@@ -1596,9 +1362,6 @@ msgstr "Codigo 1: "
 
 msgid "Code2"
 msgstr "Codigo 2: "
-
-msgid "Codepack"
-msgstr "Codecpack"
 
 msgid "Coderate HP"
 msgstr ""
@@ -1764,9 +1527,6 @@ msgstr "Importar Lista de Transpondedores"
 msgid "Create new"
 msgstr "Crear Nuevo"
 
-msgid "Croissant"
-msgstr ""
-
 msgid "Currency: "
 msgstr "Moneda: "
 
@@ -1790,9 +1550,6 @@ msgstr "Descripcion"
 
 msgid "DI"
 msgstr "MAR"
-
-msgid "DLNA (Minidlna Server)"
-msgstr ""
 
 msgid "DLNA Control Client connected !"
 msgstr ""
@@ -1825,23 +1582,11 @@ msgstr ""
 msgid "DO"
 msgstr "JUEV"
 
-msgid "DTS Downmix"
-msgstr ""
-
-msgid "DTS-Downmix firmware "
-msgstr ""
-
 msgid "DVBS"
 msgstr "DVB-S"
 
 msgid "DVBS2"
 msgstr "DVB-S2"
-
-msgid "DVD Player"
-msgstr ""
-
-msgid "DVD-Player plugin"
-msgstr ""
 
 msgid "DYNDNS Settings"
 msgstr "DYNDNS"
@@ -1914,21 +1659,6 @@ msgstr "Defecto"
 
 msgid "Default Autostart"
 msgstr "General"
-
-msgid "Default Font"
-msgstr "Fuente por Defecto"
-
-msgid "Default Skin"
-msgstr "Standard Skin"
-
-msgid "Default mod by maenne79"
-msgstr ""
-
-msgid "Default skin without MiniTV"
-msgstr "Standard Skin sin MiniTV"
-
-msgid "Default skin without MiniTV mod by maenne79"
-msgstr ""
 
 msgid "Del EPG before scan"
 msgstr "Eliminar EPG antes del escaneo"
@@ -2014,12 +1744,6 @@ msgid "DiSEqC Mode"
 msgstr "DiSEqC Modus"
 
 msgid "Diff"
-msgstr ""
-
-msgid "Digiface Regular"
-msgstr ""
-
-msgid "Digital clock blue - Samsung LCD Skin Channel"
 msgstr ""
 
 msgid "Director"
@@ -2114,11 +1838,6 @@ msgid "Dvbapi (enabled)"
 msgstr "DVBapi (habilitado)"
 
 msgid "E"
-msgstr ""
-
-msgid ""
-"E2 WebIf API erlaubt den Zugriff auf TitanNit mittels eines E2-Clients (z.B. "
-"dreaMote-App auf iPhone oder iPad, XBMC mit VU+, TVBrowser, FHEM, ...)"
 msgstr ""
 
 msgid "EDIT"
@@ -2248,29 +1967,14 @@ msgstr ""
 msgid "Emu Active Color"
 msgstr ""
 
-msgid "Emu Camd3 v3.902 for your box"
-msgstr "Softcam camd3.902"
-
 msgid "Emu Control"
 msgstr "Softcam control"
-
-msgid "Emu MGCamd v1.38a and all Configs"
-msgstr "Softcam MGCamd V1.38"
 
 msgid "Emu Running Color"
 msgstr ""
 
-msgid "Emu Wicardd v1.15 for config for ntv,tricolor,ntv_hd"
-msgstr ""
-
 msgid "Emu not found"
 msgstr "Softcam no encontrado"
-
-msgid "Emu scam 3.60 for your box"
-msgstr "Softcam SCam V3.60"
-
-msgid "Emu vizcam 1.04 for your box"
-msgstr "Softcam vizcam V1.04"
 
 msgid "Enable"
 msgstr "Activar"
@@ -2282,12 +1986,6 @@ msgid "Engine Systems"
 msgstr "Sistema Motorizado"
 
 msgid "English"
-msgstr ""
-
-msgid "Enigma2 WebIf API (Dreambox)"
-msgstr ""
-
-msgid "Enigmalinux"
 msgstr ""
 
 msgid ""
@@ -2458,12 +2156,6 @@ msgstr "Fan control"
 msgid "Fantasy"
 msgstr "Fantasia"
 
-msgid "Fantasygirl"
-msgstr ""
-
-msgid "Fantasygirl 2"
-msgstr ""
-
 msgid "Fast Forward"
 msgstr ""
 
@@ -2485,9 +2177,6 @@ msgstr "Favoritos"
 msgid "Favorite Mainmenu"
 msgstr ""
 
-msgid "Favoriten"
-msgstr "Favoritos"
-
 msgid "February"
 msgstr ""
 
@@ -2502,9 +2191,6 @@ msgstr "Buffer Playback (20MB / 240 Seg)"
 
 msgid "File Caching Playback (30MB / 360s)"
 msgstr "Buffer Playback (30MB / 360 Seg)"
-
-msgid "File Manager"
-msgstr "Administrador de archivos"
 
 msgid "File exist, overwrite?"
 msgstr ""
@@ -2538,17 +2224,8 @@ msgstr "Tamaño Archivo (MB): "
 msgid "Filesystem Check"
 msgstr "Comprobar sistema de archivos"
 
-msgid "FilmOn"
-msgstr ""
-
 msgid "Fine move"
 msgstr "Mover el motor lentamente"
-
-msgid "Firelady"
-msgstr ""
-
-msgid "Fireskull"
-msgstr ""
 
 msgid "First Wizzard"
 msgstr "Wizzard Primera Instalacion"
@@ -2575,50 +2252,11 @@ msgstr "Actualizacion de software (Linea)"
 msgid "Flashupdate (tmp)"
 msgstr "Actualizacion de software (Local)"
 
-msgid "Font 'Action Man Italic' "
-msgstr "Fuente 'Accion Man Italic'"
-
-msgid "Font 'Alpha Romanie G98'"
-msgstr "Fuente 'Alpha Romanie G98'"
-
-msgid "Font 'Croissant' "
-msgstr "Fuentet 'Croissant'"
-
-msgid "Font 'Digiface Regular' "
-msgstr "Fuente 'Digiface Regular'"
-
-msgid "Font 'Goodtime'"
-msgstr "Fuente 'Goodtime'"
-
-msgid "Font 'I Hate Comic Sans'"
-msgstr "Fuente 'I Hate Comic Sans'"
-
-msgid "Font 'Lydian Bolt Italic BT' "
-msgstr "Fuente 'Lydian Bolt Italic BT' "
-
-msgid "Font 'Mighty Zeo Caps'"
-msgstr "Fuente 'Mighty Zeo Caps'"
-
-msgid "Font 'Monoglyceride DemiBold'"
-msgstr "Fuentet 'Monoglyceride DemiBold'"
-
-msgid "Font 'New Gothic BT'"
-msgstr "Fuente 'New Gothic BT'"
-
-msgid "Font 'Paddington Bold'"
-msgstr "Fuente 'Paddington Bold'"
-
-msgid "Font 'Plover Bold'"
-msgstr "Fuente 'Plover Bold'"
-
 msgid "Font Color"
 msgstr ""
 
 msgid "Fontsize adjust in pixel"
 msgstr "tamaño de la fuente en píxeles"
-
-msgid "Footballgirls"
-msgstr ""
 
 msgid ""
 "For Better Win7 Support install please Tpk Install > Network > Smbclient"
@@ -2795,9 +2433,6 @@ msgstr "Verde"
 msgid "GUI Restart"
 msgstr "Reiniciar Titan"
 
-msgid "Gbox 806"
-msgstr ""
-
 msgid "Genre"
 msgstr ""
 
@@ -2806,12 +2441,6 @@ msgstr ""
 
 msgid "German"
 msgstr "Aleman"
-
-msgid "Ghostrider"
-msgstr ""
-
-msgid "Giantgirl"
-msgstr ""
 
 msgid "Git Changelog"
 msgstr ""
@@ -2825,31 +2454,13 @@ msgstr ""
 msgid "Global"
 msgstr ""
 
-msgid "GmediaRender"
-msgstr ""
-
 msgid "Go to startpos"
 msgstr "Ir a Posicion de inicio"
 
 msgid "Goals"
 msgstr ""
 
-msgid "Gold Picons - Astra 23.5E."
-msgstr ""
-
-msgid "Gold Picons - Astra 28.2E."
-msgstr ""
-
-msgid "Gold Picons - Hotbird 13.0E."
-msgstr ""
-
-msgid "Gold Picons Astra 19.2"
-msgstr ""
-
 msgid "GoodPlayer"
-msgstr ""
-
-msgid "Goodtime"
 msgstr ""
 
 msgid "Graph. EPG"
@@ -3220,25 +2831,10 @@ msgstr ""
 msgid "How many days"
 msgstr "Dias de almacenamiento EPG por adelantado"
 
-msgid "HowTo Feedadresse Eingeben"
-msgstr "Cmo agregar a fuente la direccion"
-
-msgid "HowTo Picons Einrichten"
-msgstr "Cmo instalar y utilizar Picons"
-
-msgid "HowTo Secret"
-msgstr "Manual añadir ip secreta"
-
-msgid "HowTo Sky V13 Einrichten"
-msgstr "Manual Preparar Sky V13"
-
 msgid "Hybrid tuner mode changed, receiver will be restarted!"
 msgstr ""
 
 msgid "I"
-msgstr ""
-
-msgid "I Hate Comic Sans"
 msgstr ""
 
 msgid "ID"
@@ -3259,14 +2855,8 @@ msgstr ""
 msgid "IMDB Search"
 msgstr "IMDb Buscar"
 
-msgid "IMDb"
-msgstr ""
-
 msgid "IMDb - Plugin"
 msgstr "IMDB Plugins"
-
-msgid "IMDb-API"
-msgstr ""
 
 msgid "IMDb-API - Plugin"
 msgstr "IMDb-API"
@@ -3283,9 +2873,6 @@ msgstr "Stream Direccion (IP)"
 msgid "IP-FritzBox"
 msgstr ""
 
-msgid "IP-Kamera"
-msgstr ""
-
 msgid "IP-Kamera 1"
 msgstr ""
 
@@ -3293,12 +2880,6 @@ msgid "IP-Kamera 2"
 msgstr ""
 
 msgid "IP-Kamera Einstellungen"
-msgstr ""
-
-msgid "IP-Kamera zB. Firma INSTAR"
-msgstr "IP Camera eg. INSTAR"
-
-msgid "Ice Age Scrap likes UFS910"
 msgstr ""
 
 msgid "Icon 1"
@@ -3320,12 +2901,6 @@ msgstr ""
 
 msgid "Image"
 msgstr ""
-
-msgid "ImdB Info Plugin"
-msgstr "IMDb Info"
-
-msgid "ImdBapi Info Plugin"
-msgstr "IMDbapi Info"
 
 msgid "Inc. AC3 Audio in %"
 msgstr "Conoce AC3 Audio Volumen reduciendo Stereo-audio en%"
@@ -3461,9 +3036,6 @@ msgstr ""
 msgid "Internet Browser Plugin not installed !"
 msgstr "Internet Browser Plugin no instalado!"
 
-msgid "Internet Radio"
-msgstr ""
-
 msgid "Interval"
 msgstr "Intervalo"
 
@@ -3519,33 +3091,6 @@ msgstr ""
 msgid "KILL"
 msgstr "Rojo"
 
-msgid "Kabel BW (sofatester)"
-msgstr ""
-
-msgid "Kabel BW transparent Picons"
-msgstr ""
-
-msgid "Kabel Deutschland"
-msgstr ""
-
-msgid "Kabel Deutschland Picons black3d"
-msgstr ""
-
-msgid "Kabel Deutschland UH-Kreis"
-msgstr ""
-
-msgid "Kabel Deutschland transparent Picons"
-msgstr ""
-
-msgid "Kabel Primacom"
-msgstr ""
-
-msgid "Kabelplus ORF"
-msgstr ""
-
-msgid "Kabelplus ORF | 16.12.2014 (Olbord)"
-msgstr ""
-
 msgid "Kamera 1"
 msgstr ""
 
@@ -3561,58 +3106,13 @@ msgstr "key"
 msgid "Key Action - Plugins"
 msgstr "Inicio rapido"
 
-msgid "KeyLock"
-msgstr ""
-
 msgid "Keyboard"
 msgstr "teclado"
 
 msgid "Keys Updated !"
 msgstr "Updated !"
 
-msgid "KinoX"
-msgstr ""
-
 msgid "L"
-msgstr ""
-
-msgid "LCD Pearl"
-msgstr ""
-
-msgid "LCD Pearl Skin MRP"
-msgstr ""
-
-msgid "LCD Pearl skin Atemio"
-msgstr ""
-
-msgid "LCD Pearl skin big/black"
-msgstr ""
-
-msgid "LCD Pearl skin black"
-msgstr ""
-
-msgid "LCD Pearl skin blue"
-msgstr ""
-
-msgid "LCD Pearl skin only picon"
-msgstr ""
-
-msgid "LCD Samsung SPF.."
-msgstr ""
-
-msgid "LCD Samsung skin analog clock"
-msgstr ""
-
-msgid "LCD Samsung skin digital clock (blue) - operating mode"
-msgstr ""
-
-msgid "LCD Samsung skin digital clock tricots"
-msgstr ""
-
-msgid "LCD Samsung skin digital clock yellow"
-msgstr ""
-
-msgid "LCD Samsung skin wooden clock"
 msgstr ""
 
 msgid "LED - brightness running"
@@ -3684,12 +3184,6 @@ msgstr ""
 msgid "Level:"
 msgstr "Nivel:"
 
-msgid "Lib Pack (ufs910/ufs922)"
-msgstr ""
-
-msgid "Lib extension for network (upnpfs/smbfs/ftpfs/rarfs)"
-msgstr "extensión protocolo de red (upnpfs/smbfs/ftpfs/rarfs)"
-
 msgid "License"
 msgstr ""
 
@@ -3698,9 +3192,6 @@ msgstr "Limites"
 
 msgid "Link postet"
 msgstr "Enlace publicado"
-
-msgid "Linuxgirl"
-msgstr ""
 
 msgid "Listbox Select"
 msgstr "establecer tipo de Cursor"
@@ -3743,9 +3234,6 @@ msgstr "Profundo: "
 
 msgid "Lowest temp: "
 msgstr "Menor Temperatura:"
-
-msgid "Lydian Bolt Italic BT"
-msgstr ""
 
 msgid "M"
 msgstr ""
@@ -3881,9 +3369,6 @@ msgstr "Media Plugins Lista"
 msgid "MediaCenter"
 msgstr ""
 
-msgid "MediaCenter FolderIcons"
-msgstr ""
-
 msgid "MediaDB"
 msgstr ""
 
@@ -3931,35 +3416,8 @@ msgstr "MediaDB Guarda Ruta"
 msgid "MediaDB scan finished"
 msgstr "Media DB exploracion finalizada"
 
-msgid "Mediacenter AudioPlayer Playlisten Preview"
-msgstr "Mediacenter Audio Player vista preliminar"
-
-msgid "Mediacenter AudioPlayer Screensaver Preview"
-msgstr "Audioplayer Screensaver vista preliminar"
-
-msgid "Mediacenter Mediathek Kinox Preview"
-msgstr "biblioteca Mediacenter Kinox vista preliminar"
-
-msgid "Mediacenter Mediathek Myvideo/Rtl2/InternetTv/Radio Preview"
-msgstr "Mediathek Myvideo/Rtl2/InternetTv/Radio vista preliminar"
-
-msgid "Mediacenter VideoPlayer Preview"
-msgstr "Video Player vista preliminar"
-
 msgid "Mediathek"
 msgstr "En linea Mediathek"
-
-msgid "MegaStyle blue Mini TV Skin"
-msgstr ""
-
-msgid "MegaStyle blue Skin"
-msgstr ""
-
-msgid "MegaStyle grey MiniTV Skin"
-msgstr ""
-
-msgid "MegaStyle grey Skin"
-msgstr ""
 
 msgid "Memory"
 msgstr "Memoria"
@@ -3984,15 +3442,6 @@ msgstr "Lista de Menus"
 
 msgid "Message"
 msgstr "Mensaje"
-
-msgid "MetrixHD skin for transparent xpicons"
-msgstr ""
-
-msgid "Mgcamd v1.38a"
-msgstr ""
-
-msgid "Mighty Zeo Caps"
-msgstr ""
 
 msgid "Minimal"
 msgstr ""
@@ -4042,12 +3491,6 @@ msgstr ""
 msgid "Monday"
 msgstr "Lunes"
 
-msgid "Monoglyceride DemiBold"
-msgstr ""
-
-msgid "More audio/video formats playable"
-msgstr ""
-
 msgid "Mounts"
 msgstr "Dispositivos Montados"
 
@@ -4077,9 +3520,6 @@ msgstr "Mover"
 
 msgid "Moven"
 msgstr "Movimiento"
-
-msgid "Movie4k"
-msgstr ""
 
 msgid "Moviepath"
 msgstr "Ruta a Peliculas"
@@ -4114,9 +3554,6 @@ msgstr ""
 msgid "My Video"
 msgstr ""
 
-msgid "MyVideo"
-msgstr ""
-
 msgid "N"
 msgstr ""
 
@@ -4128,9 +3565,6 @@ msgstr "siguiente"
 
 msgid "NONE"
 msgstr "Ninguno"
-
-msgid "NTV-Now"
-msgstr ""
 
 msgid "Name"
 msgstr ""
@@ -4159,9 +3593,6 @@ msgstr "Buscar Red"
 msgid "Network Test"
 msgstr "Prueba de Conexion"
 
-msgid "Network browser extension for better Win7 compatibility"
-msgstr "extensión del navegador de red para una mejor compatibilidad Win7"
-
 msgid "Networkbrowser"
 msgstr "Navegador de red"
 
@@ -4174,21 +3605,6 @@ msgstr "Network Browser - servidor encontrado"
 msgid "Networkbrowser - show scanned cifs/nfs-Shares"
 msgstr "Mostrar escaneado CIFS/NFS-Compartidos"
 
-msgid "Networkfile libsmbclient 3.0.28b"
-msgstr "SMB (Windows) libsmbclient 3.0.28b"
-
-msgid "Netzkino"
-msgstr ""
-
-msgid "Neutrino Keymap"
-msgstr ""
-
-msgid "New Downloadfeed for your AAF - Duckbox"
-msgstr ""
-
-msgid "New Gothic BT"
-msgstr ""
-
 msgid "New free space (KB): "
 msgstr "Nuevo espacio libre (KB): "
 
@@ -4197,9 +3613,6 @@ msgstr "Nuevo juego (facil)"
 
 msgid "New game (hard)"
 msgstr "Nuevo juego (dificil)"
-
-msgid "Newcs"
-msgstr ""
 
 msgid "News"
 msgstr "Ultimas noticias"
@@ -4371,9 +3784,6 @@ msgstr "Solo uso la tasa de señal por defecto"
 msgid "Only free scan"
 msgstr "Solo Servicios FTA"
 
-msgid "Open VPN (Server)"
-msgstr ""
-
 msgid "Open settings menu"
 msgstr "Abrir ajustes menu"
 
@@ -4381,9 +3791,6 @@ msgid "Open: "
 msgstr "Apertura: "
 
 msgid "OpenTV EPG"
-msgstr ""
-
-msgid "Openvpn Server Tool for external Network access"
 msgstr ""
 
 msgid "Oplayer HD"
@@ -4400,9 +3807,6 @@ msgstr "Posicion Orbital: "
 
 msgid "Orgname:"
 msgstr "Organizacion nombre:"
-
-msgid "Oscam"
-msgstr ""
 
 msgid "Oscam config written to medium !"
 msgstr "OScam config guardada!"
@@ -4461,9 +3865,6 @@ msgstr "Previo"
 msgid "PSK 8"
 msgstr ""
 
-msgid "Paddington Bold"
-msgstr ""
-
 msgid "Page"
 msgstr "Pagina"
 
@@ -4478,12 +3879,6 @@ msgstr "Atemio Panel"
 
 msgid "Parental"
 msgstr ""
-
-msgid "Parted"
-msgstr ""
-
-msgid "Partitions Tool fuer HDD > 2TB"
-msgstr "Herramienta de Partición de disco duro> 2 TB"
 
 msgid "Password"
 msgstr "Contraseña"
@@ -4505,12 +3900,6 @@ msgstr ""
 
 msgid "Pearl LCD Settings"
 msgstr "Pearl LCD Ajustes"
-
-msgid "Permanent Time"
-msgstr ""
-
-msgid "Permanente Uhrzeit am Bildschirm"
-msgstr "Muestra permanente la hora en la pantalla"
 
 msgid "Photos postet"
 msgstr "fotos publicadas"
@@ -4548,81 +3937,6 @@ msgstr "Calidad de imagen"
 msgid "Picdenom Mode"
 msgstr "Foto Software-decodificacion"
 
-msgid "Picons Black (Eutelsat)"
-msgstr ""
-
-msgid "Picons Black3D (ASTRA 19.2)"
-msgstr ""
-
-msgid "Picons Black3D (Astra 23.5)"
-msgstr ""
-
-msgid "Picons Black3D (Hotbird)"
-msgstr ""
-
-msgid "Picons Gold Nugget  (ASTRA 19.2)"
-msgstr ""
-
-msgid "Picons Gold Nugget (Astra 23.5)"
-msgstr ""
-
-msgid "Picons Gold Nugget (Astra 28.2)"
-msgstr ""
-
-msgid "Picons Gold Nugget (Hotbird 13.0)"
-msgstr ""
-
-msgid "Picons Kabel BW"
-msgstr ""
-
-msgid "Picons Kabel Black3D"
-msgstr ""
-
-msgid "Picons Kabel Transparent"
-msgstr ""
-
-msgid "Picons Spiegel (ASTRA 19.2)"
-msgstr ""
-
-msgid "Picons Transparent (ASTRA 19.2)"
-msgstr ""
-
-msgid "Picons Transparent (Astra 23.5)"
-msgstr ""
-
-msgid "Picons Transparent (Astra 28.2)"
-msgstr ""
-
-msgid "Picons Transparent (Hotbird 13.0)"
-msgstr ""
-
-msgid "Picons Transparent (small-uljanow)"
-msgstr ""
-
-msgid "Picons White3D  (ASTRA 19.2)"
-msgstr ""
-
-msgid "Picons White3D (Astra 23.5)"
-msgstr ""
-
-msgid "Picons White3D (Astra 28.2)"
-msgstr ""
-
-msgid "Picons White3D (Hotbird 13.0)"
-msgstr ""
-
-msgid "Picons White70  (ASTRA 19.2)"
-msgstr ""
-
-msgid "Picons White70 (Astra 23.5)"
-msgstr ""
-
-msgid "Picons White70 (Astra 28.2)"
-msgstr ""
-
-msgid "Picons White70 (Hotbird 13.0)"
-msgstr ""
-
 msgid "Picture"
 msgstr "Foto"
 
@@ -4649,9 +3963,6 @@ msgstr "Canal de bloqueo con PIN"
 
 msgid "Pin Code menu"
 msgstr "Bloqueo de men con PIN"
-
-msgid "Planets"
-msgstr ""
 
 msgid "Play"
 msgstr ""
@@ -4712,9 +4023,6 @@ msgstr ""
 
 msgid "Plot:"
 msgstr "Accion:"
-
-msgid "Plover Bold"
-msgstr ""
 
 msgid "Plugin"
 msgstr ""
@@ -4778,9 +4086,6 @@ msgstr "Apagado"
 
 msgid "Power Off Timer"
 msgstr "Apagado Temporizado"
-
-msgid "Power off if box not used"
-msgstr "Apagar el receptor si no se utiliza."
 
 msgid "PowerControl"
 msgstr ""
@@ -4915,9 +4220,6 @@ msgstr "Restablecer"
 msgid "RESTORE ERROR"
 msgstr "!!! RESTAURAR ERROR !!!"
 
-msgid "RGUI"
-msgstr ""
-
 msgid "RGUI Client"
 msgstr "RGUI Klient"
 
@@ -4925,12 +4227,6 @@ msgid "RGUID Port"
 msgstr ""
 
 msgid "RS232"
-msgstr ""
-
-msgid "RTL-Now"
-msgstr ""
-
-msgid "RTL2-Now"
 msgstr ""
 
 msgid "Radio"
@@ -5049,9 +4345,6 @@ msgstr "Grabar Dividido Tamaño"
 
 msgid "Record Timer"
 msgstr "Grabacion Programada"
-
-msgid "Record cut"
-msgstr ""
 
 msgid "Record in progress"
 msgstr "grabacion activa"
@@ -5236,9 +4529,6 @@ msgstr ""
 msgid "Rotor Settings"
 msgstr "Motor"
 
-msgid "RtlNitro-Now"
-msgstr ""
-
 msgid "Runtime"
 msgstr "Plazo"
 
@@ -5253,9 +4543,6 @@ msgstr ""
 
 msgid "SAT"
 msgstr "Satelite"
-
-msgid "SAT/Cable 19.2 23.5 13.0 0.8 KabelD (andy)"
-msgstr ""
 
 msgid "SATA Connector"
 msgstr "Conector SATA"
@@ -5289,9 +4576,6 @@ msgstr "Enviar"
 
 msgid "SID:"
 msgstr "SID: "
-
-msgid "SMB Client Lib v3.0.28b (/media/smbfs)"
-msgstr ""
 
 msgid "SNR:"
 msgstr "SNR: "
@@ -5359,17 +4643,11 @@ msgstr "Samba Servidor"
 msgid "Samba Server Settings"
 msgstr "Samba Servidor Ajustes"
 
-msgid "Samba file server"
-msgstr ""
-
 msgid "Samsung SPF.. Settings"
 msgstr "Samba Servidor Ajustes"
 
 msgid "Sat"
 msgstr "Satelite"
-
-msgid "Sat Astra ORF | 08.01.2015 (Olbord)"
-msgstr ""
 
 msgid "Sat Config"
 msgstr "Satelite(s)"
@@ -5382,30 +4660,6 @@ msgstr "Satelite/Provider"
 
 msgid "Sat: "
 msgstr "Satelite: "
-
-msgid "Sat: Bulldog Settings 3x Sat"
-msgstr ""
-
-msgid "Sat: Bulldog Settings Astra 19.2"
-msgstr ""
-
-msgid "Sat: Bulldog Settings Hotbird 13.0 + Astra 19.2"
-msgstr ""
-
-msgid "Sat: Ser6 Settings Eutelsat 36.0"
-msgstr ""
-
-msgid "Sat: default Settings Astra 19.2"
-msgstr ""
-
-msgid "Sat: matze70 Astra 19.2 | 24.10.2014"
-msgstr ""
-
-msgid "Sat: matze70 new design Astra 19.2 | 24.10.2014"
-msgstr ""
-
-msgid "Sat: uljanow Sat 19.2 plus 13.0 | 21.10.2014"
-msgstr ""
 
 msgid "SatCount: "
 msgstr "Numero de satelites:"
@@ -5449,9 +4703,6 @@ msgstr ""
 msgid "Scan Manual Config"
 msgstr ""
 
-msgid "Scan and manage cifs/nfs/ftp shares"
-msgstr ""
-
 msgid "Scan is not allowed if record or stream is running !"
 msgstr ""
 "ERROR: Exploracion no esta permitido durante una grabacion / corriente "
@@ -5490,110 +4741,6 @@ msgstr "Protector de Pantalla"
 msgid "Screensaver Adjust"
 msgstr "Protector de Pantalla"
 
-msgid "Screensaver Animation Kidds"
-msgstr ""
-
-msgid "Screensaver Beach"
-msgstr ""
-
-msgid "Screensaver Bikes and Motorcycles"
-msgstr ""
-
-msgid "Screensaver Brands and Logos"
-msgstr ""
-
-msgid "Screensaver Cars"
-msgstr ""
-
-msgid "Screensaver Celebrations"
-msgstr ""
-
-msgid "Screensaver Celebrities"
-msgstr ""
-
-msgid "Screensaver Christmas"
-msgstr ""
-
-msgid "Screensaver Creative Graphics"
-msgstr ""
-
-msgid "Screensaver Cute"
-msgstr ""
-
-msgid "Screensaver Default"
-msgstr ""
-
-msgid "Screensaver Digital Universe"
-msgstr ""
-
-msgid "Screensaver Dreamy Fantasy"
-msgstr ""
-
-msgid "Screensaver Eisriesenwelt"
-msgstr ""
-
-msgid ""
-"Screensaver FC Bayern pictures for MediaCenter Audioplayer and Radioplayer"
-msgstr ""
-
-msgid "Screensaver FCBayern"
-msgstr ""
-
-msgid "Screensaver Fantasy Girls"
-msgstr ""
-
-msgid "Screensaver Flowers"
-msgstr ""
-
-msgid "Screensaver Games"
-msgstr ""
-
-msgid "Screensaver HDR-Pictures"
-msgstr ""
-
-msgid ""
-"Screensaver Hot Girls pictures for MediaCenter Audioplayer and Radioplayer"
-msgstr ""
-
-msgid "Screensaver Hotgirls"
-msgstr ""
-
-msgid "Screensaver Hotgirls 2"
-msgstr ""
-
-msgid "Screensaver Inspirational"
-msgstr ""
-
-msgid "Screensaver Love"
-msgstr ""
-
-msgid "Screensaver Movies"
-msgstr ""
-
-msgid "Screensaver Nature and Landscape"
-msgstr ""
-
-msgid "Screensaver Others"
-msgstr ""
-
-msgid "Screensaver Photography"
-msgstr ""
-
-msgid "Screensaver Planes"
-msgstr ""
-
-msgid "Screensaver Radio"
-msgstr ""
-
-msgid "Screensaver Sports"
-msgstr ""
-
-msgid "Screensaver Travel World"
-msgstr ""
-
-msgid "Screensaver pictures for MediaCenter Audioplayer and Radioplayer"
-msgstr ""
-
 msgid "Screenshot All"
 msgstr ""
 
@@ -5614,30 +4761,6 @@ msgstr "El guión no tiene salida o se inició en el fondo"
 
 msgid "Search"
 msgstr "Buscar"
-
-msgid "Search (10)"
-msgstr "Buscar 10 Resultados"
-
-msgid "Search (20)"
-msgstr "Buscar 20 Resultados"
-
-msgid "Search (25)"
-msgstr "Buscar 25 Resultados"
-
-msgid "Search (50)"
-msgstr "Buscar 50 Resultados"
-
-msgid "Search (local)"
-msgstr "Buscar (local)"
-
-msgid "Search Cast"
-msgstr "Buscar ocupacion"
-
-msgid "Search Movie"
-msgstr "Buscar pelicula"
-
-msgid "Search Serie"
-msgstr "Buscar Series"
 
 msgid "Search on ARD (local)"
 msgstr "Buscar este objeto en ARD (local)"
@@ -5807,18 +4930,6 @@ msgstr ""
 msgid "Settings"
 msgstr "ajustes"
 
-msgid "Settings Astra 19.2"
-msgstr ""
-
-msgid "Settings Eutelsat 36.0"
-msgstr ""
-
-msgid "Settings Hotbird 13.0, Astra 19.2"
-msgstr ""
-
-msgid "Settings Hotbird 13.0, Astra 19.2, Astra 28.2E"
-msgstr "Settings Hotbird 13.0/Astra 19.2/Astra 28.2E (Bulldog)"
-
 msgid "Settings OK ?"
 msgstr "Guardar la configuracion?"
 
@@ -5913,92 +5024,11 @@ msgstr "Unico Transpondedor"
 msgid "Skin"
 msgstr "Seleccionar Skin"
 
-msgid "Skin 0Acht5Zehn (black)"
-msgstr ""
-
-msgid "Skin 0Acht5Zehn (grey)"
-msgstr ""
-
-msgid "Skin 0Acht5Zehn (white)"
-msgstr ""
-
-msgid "Skin 0Acht5Zehn black for black picons"
-msgstr ""
-
-msgid "Skin 0Acht5Zehn grey for grey picons"
-msgstr ""
-
-msgid "Skin 0Acht5Zehn white for white picons"
-msgstr ""
-
 msgid "Skin Adjust"
 msgstr "Ajustes de Skin"
 
-msgid "Skin Cool"
-msgstr ""
-
-msgid "Skin Cool MiniTV"
-msgstr ""
-
-msgid "Skin DefNoMiniTV"
-msgstr ""
-
-msgid "Skin DefNoMiniTV mod"
-msgstr ""
-
-msgid "Skin Default"
-msgstr ""
-
-msgid "Skin Default mod"
-msgstr ""
-
-msgid "Skin MegaStyle blue"
-msgstr ""
-
-msgid "Skin MegaStyle blue Mini TV"
-msgstr ""
-
-msgid "Skin MegaStyle grey"
-msgstr ""
-
-msgid "Skin MegaStyle grey MiniTV"
-msgstr ""
-
-msgid "Skin MetrixHD"
-msgstr ""
-
-msgid "Skin Nogfx"
-msgstr ""
-
-msgid "Skin Nogfx (grey)"
-msgstr ""
-
-msgid "Skin Nogfx black for black picons"
-msgstr ""
-
-msgid "Skin Nogfx grey"
-msgstr ""
-
 msgid "Skin Select"
 msgstr "Seleccion de Skin"
-
-msgid "Skin SmartTV"
-msgstr ""
-
-msgid "Skin SmartTV for alternate picons"
-msgstr ""
-
-msgid "Skin Tobayer01"
-msgstr ""
-
-msgid "Skin UFS912 style"
-msgstr ""
-
-msgid "Skin UFS912 style for white picons"
-msgstr ""
-
-msgid "Skin tobayer01 for grey picons"
-msgstr ""
 
 msgid "Skip 1/3"
 msgstr "Indicacion para botones 1/3 (seg)"
@@ -6030,12 +5060,6 @@ msgstr ""
 msgid "Smartcard Ports found: "
 msgstr "Smartcard Puertros encontrados"
 
-msgid "SmbClient (Win7)"
-msgstr ""
-
-msgid "Social Network Client for Facebook."
-msgstr ""
-
 msgid "Softcam Panel"
 msgstr "Softcam"
 
@@ -6044,9 +5068,6 @@ msgstr "Softcam seleccion: "
 
 msgid "Softcam selection:"
 msgstr "Softcam seleccion: "
-
-msgid "Solarmovie"
-msgstr ""
 
 msgid "Soll der Schnitt wirklich abgebrochen werden?"
 msgstr "esta seguro de que desea cancelar corte?"
@@ -6195,9 +5216,6 @@ msgstr ""
 msgid "Stop AutoTimer"
 msgstr "Stop Autotimer"
 
-msgid "Stop if not used"
-msgstr ""
-
 msgid "Storage position"
 msgstr "Posicion almacenada"
 
@@ -6258,9 +5276,6 @@ msgstr "Subcanales"
 msgid "Subtitle"
 msgstr "Subtitulos"
 
-msgid "Sudoku"
-msgstr ""
-
 msgid "Sudoku Help"
 msgstr "Sudoku Ayuda"
 
@@ -6269,9 +5284,6 @@ msgstr "Dom"
 
 msgid "Sunday"
 msgstr "Domingo"
-
-msgid "SuperRTL-Now"
-msgstr ""
 
 msgid "Svn Changelog"
 msgstr ""
@@ -6355,14 +5367,8 @@ msgstr "Prueba"
 msgid "TITLE"
 msgstr "Titulo"
 
-msgid "TMDb"
-msgstr ""
-
 msgid "TMDb - Plugin"
 msgstr "TMDb"
-
-msgid "TMDb Movie Database Plugin"
-msgstr ""
 
 msgid "TPK"
 msgstr ""
@@ -6429,9 +5435,6 @@ msgstr ""
 msgid "TXT PID:"
 msgstr "TXT PID: "
 
-msgid "Tastensperre Plugin - entsperren mit rot/rot/gruen"
-msgstr "Bloqueo de teclas Plugin - desbloquearlo con rojo/rojo/verde"
-
 msgid "Team"
 msgstr ""
 
@@ -6439,9 +5442,6 @@ msgid "Team 1"
 msgstr ""
 
 msgid "Team 2"
-msgstr ""
-
-msgid "TecTime"
 msgstr ""
 
 msgid "Terrestrial"
@@ -6458,9 +5458,6 @@ msgstr "Prueba"
 
 msgid "Text"
 msgstr "Texto"
-
-msgid "The Grim Reaper"
-msgstr ""
 
 msgid ""
 "The file is being transfered to our other servers. This may take few minutes."
@@ -6523,9 +5520,6 @@ msgstr "Juev"
 msgid "Thursday"
 msgstr "Jueves"
 
-msgid "TiTan Mediathek"
-msgstr ""
-
 msgid "TiThek - Favorite Edit"
 msgstr "Editar Favorito"
 
@@ -6538,9 +5532,6 @@ msgstr ""
 msgid "TiThek Settings"
 msgstr "tiThek"
 
-msgid "TiThek the Multimedia-thek"
-msgstr ""
-
 msgid "Time"
 msgstr "Hora"
 
@@ -6552,9 +5543,6 @@ msgstr "Es hora de dejar (min)"
 
 msgid "Time to wait after seek for fill buffer"
 msgstr "Tiempo de espera despues de tratar de llenar bufer"
-
-msgid "TimeTv"
-msgstr ""
 
 msgid "Timer"
 msgstr ""
@@ -6638,9 +5626,6 @@ msgstr "Tiempo Zona"
 msgid "Tint"
 msgstr "Matiz"
 
-msgid "Tips und Tricks"
-msgstr "Consejos yTrucos"
-
 msgid "Titan Changelog"
 msgstr ""
 
@@ -6650,34 +5635,13 @@ msgstr ""
 msgid "Titan Log"
 msgstr ""
 
-msgid "Titan MediaCenter"
-msgstr ""
-
 msgid "Titan will be restarted!"
-msgstr ""
-
-msgid "TitanNit Blood"
-msgstr ""
-
-msgid "TitanNit Design 1"
-msgstr ""
-
-msgid "TitanNit Design 3"
-msgstr ""
-
-msgid "TitanNit Design 5"
-msgstr ""
-
-msgid "TitanNit Leather"
 msgstr ""
 
 msgid "TitanNit Tithek disclaimer"
 msgstr "TiThek disclaimer"
 
 msgid "TitanNit Web Control"
-msgstr ""
-
-msgid "TitanNit on fire"
 msgstr ""
 
 msgid "Tithek - Mainmenu"
@@ -6800,39 +5764,6 @@ msgstr "Transmision"
 msgid "Transmission:"
 msgstr "Transmision: "
 
-msgid "Transparent Picons (dark Skins)"
-msgstr ""
-
-msgid "Transparent Picons (dark skins) - Astra 23.5E."
-msgstr ""
-
-msgid "Transparent Picons (dark skins) - Astra 28.2E."
-msgstr ""
-
-msgid "Transparent Picons (dark skins) - Hotbird 13.0E."
-msgstr ""
-
-msgid "Transparent Picons 19_2 (dark skins)."
-msgstr ""
-
-msgid "Transparent XPicons - Astra 19.2E"
-msgstr ""
-
-msgid "Transparent XPicons - Astra 23.5E"
-msgstr ""
-
-msgid "Transparent XPicons - Astra 28.2E"
-msgstr ""
-
-msgid "Transparent XPicons - Hotbird 13.0E"
-msgstr ""
-
-msgid "Transparent XPicons - small - Astra 19.2E"
-msgstr ""
-
-msgid "Transparent small black-Skins 19,2 Picons | 21.10.2014"
-msgstr ""
-
 msgid "Transponder changed"
 msgstr "Transpondedor Cambiado"
 
@@ -6850,15 +5781,6 @@ msgstr "Transpondedor: "
 
 msgid "Transponderlist"
 msgstr "Transpondedor Lista"
-
-msgid "Treiber fuer Pearl LCD V4.0"
-msgstr "Driver para Pearl LCD V4.0"
-
-msgid "Treiber fuer Pearl LCD V5.0"
-msgstr ""
-
-msgid "Treiber fuer Samsung LCD"
-msgstr "Driver para Samsung LCD"
 
 msgid "Trial period ends in"
 msgstr ""
@@ -6919,9 +5841,6 @@ msgstr ""
 msgid "Tv/Radio"
 msgstr ""
 
-msgid "TvToast"
-msgstr ""
-
 msgid "Two step mute"
 msgstr "Dos pasos silencio"
 
@@ -6958,9 +5877,6 @@ msgstr "Desconocido"
 msgid "UNLOAD"
 msgstr "Desactivar"
 
-msgid "UPNP Media Render"
-msgstr ""
-
 msgid "USB"
 msgstr ""
 
@@ -6977,9 +5893,6 @@ msgid "USB Ports found: "
 msgstr "USB Puerto encontrado"
 
 msgid "USB Reset"
-msgstr ""
-
-msgid "USB-RESET"
 msgstr ""
 
 msgid "Unchanged"
@@ -6999,15 +5912,6 @@ msgstr "fabricante Unicable"
 
 msgid "Unicable product"
 msgstr "Producto Unicable"
-
-msgid "Unitymedia (langerhans)"
-msgstr ""
-
-msgid "Unitymedia NRW"
-msgstr ""
-
-msgid "Unitymedia NRW | 15.2.2014 (caliban)"
-msgstr ""
 
 msgid "Unknown Error."
 msgstr "Error desconocido"
@@ -7075,13 +5979,7 @@ msgstr "Video Ajustes"
 msgid "VLC Player"
 msgstr "Reproducir Video"
 
-msgid "VOX-Now"
-msgstr ""
-
 msgid "Version"
-msgstr ""
-
-msgid "Version 10627 of OScam"
 msgstr ""
 
 msgid "Vertikal"
@@ -7191,12 +6089,6 @@ msgstr ""
 "WLAN comenzo.\n"
 "Ahora puede configurar la nueva interfaz."
 
-msgid "WM2014"
-msgstr ""
-
-msgid "WM2014 Plugin"
-msgstr ""
-
 msgid "WOL"
 msgstr ""
 
@@ -7238,9 +6130,6 @@ msgstr ""
 msgid "War"
 msgstr "Guerra"
 
-msgid "Watchmovies"
-msgstr ""
-
 msgid "Weather"
 msgstr "Tiempo"
 
@@ -7253,23 +6142,11 @@ msgstr "Web Radio"
 msgid "WebStream"
 msgstr ""
 
-msgid "Webbrowser Netsurf"
-msgstr ""
-
-msgid "Webbrowser Plugin"
-msgstr "Internet Browser"
-
-msgid "Webbrowser Plugin "
-msgstr "Internet Browser"
-
 msgid "Wed"
 msgstr "Mier"
 
 msgid "Wednesday"
 msgstr "Miercoles"
-
-msgid "Werbezapper"
-msgstr "Publicidadzapper"
 
 msgid "Western"
 msgstr ""
@@ -7277,58 +6154,13 @@ msgstr ""
 msgid "Wettervorhersage"
 msgstr "weather forecast"
 
-msgid "White 3D Picons - Astra 23.5E."
-msgstr ""
-
-msgid "White 3D Picons - Astra 28.2E."
-msgstr ""
-
-msgid "White 3D Picons - Hotbird 13.0E."
-msgstr ""
-
-msgid "White 3D Picons Astra 19.2"
-msgstr ""
-
-msgid "White70 Picons - Astra 23.5E."
-msgstr ""
-
-msgid "White70 Picons - Astra 28.2E"
-msgstr ""
-
-msgid "White70 Picons - Hotbird 13.0E."
-msgstr ""
-
-msgid "White70 Picons Astra 19.2"
-msgstr ""
-
-msgid "Wicardd v1.15 "
-msgstr ""
-
 msgid "Wizard"
 msgstr "asistente para la instalacion"
-
-msgid "Wlan 8192cu"
-msgstr ""
-
-msgid "Wlan 8712u"
-msgstr ""
 
 msgid "Wlan Stick not found"
 msgstr "WLAN ningun stick encontrado"
 
-msgid "Wlan rt2870sta"
-msgstr ""
-
-msgid "Wlan rt3070sta"
-msgstr ""
-
-msgid "Wlan rt5370sta"
-msgstr ""
-
 msgid "Won"
-msgstr ""
-
-msgid "Wooden clock - Standby - Samsung LCD Skin Channel."
 msgstr ""
 
 msgid "Write error"
@@ -7348,27 +6180,6 @@ msgstr ""
 
 msgid "X-Resolution"
 msgstr "X-Resolucion: "
-
-msgid "XPicons LightTransparent (Astra 19.2E)"
-msgstr ""
-
-msgid "XPicons LightTransparent (Astra 23.5E)"
-msgstr ""
-
-msgid "XPicons LightTransparent (Astra 28.2E)"
-msgstr ""
-
-msgid "XPicons LightTransparent (Hotbird 13.0E)"
-msgstr ""
-
-msgid "XPicons LightTransparent (small - Astra 19.2E)"
-msgstr ""
-
-msgid "XXX-Beeg"
-msgstr ""
-
-msgid "XXX-XVIDEOS"
-msgstr ""
 
 msgid "Xupnpd Server"
 msgstr "xupnpd - DLNA Media Server"
@@ -7400,13 +6211,7 @@ msgstr ""
 "\n"
 "Quieres que el receptor se apague?"
 
-msgid "Youtube"
-msgstr ""
-
 msgid "Z"
-msgstr ""
-
-msgid "ZDF"
 msgstr ""
 
 msgid "ZapBack"
@@ -7414,9 +6219,6 @@ msgstr "Cambie atras"
 
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Zap atras esta activado. Desea detener?"
-
-msgid "Zombie"
-msgstr ""
 
 msgid "Zoom"
 msgstr ""
@@ -7475,9 +6277,6 @@ msgstr "Añadir grabacion (parada despues del evento actual)"
 msgid "add service"
 msgstr "Añadir servicio"
 
-msgid "adjust"
-msgstr "Avanzado"
-
 msgid "ae"
 msgstr "Ä"
 
@@ -7489,9 +6288,6 @@ msgstr "Mostrar en Reposo"
 
 msgid "all"
 msgstr "Todo"
-
-msgid "all: test Settings Astra 19.2 all transponder"
-msgstr ""
 
 msgid "alle Menus anzeigen"
 msgstr "mostrar todos los menus"
@@ -7520,17 +6316,11 @@ msgstr "Anchura de Animacion"
 msgid "ask"
 msgstr "Pedir"
 
-msgid "aspectsettings"
-msgstr ""
-
 msgid "audio"
 msgstr "Musica"
 
 msgid "audio / picture"
 msgstr "Audio/Picture"
-
-msgid "audiotrack"
-msgstr ""
 
 msgid "aus"
 msgstr "Off"
@@ -7541,14 +6331,8 @@ msgstr "llamadas salientes"
 msgid "auto"
 msgstr "automatico"
 
-msgid "autores"
-msgstr ""
-
 msgid "autostart"
 msgstr "Autoinicio"
-
-msgid "avsettings"
-msgstr ""
 
 msgid "b"
 msgstr ""
@@ -7571,17 +6355,11 @@ msgstr "mejor"
 msgid "bestfit"
 msgstr "ampliar a la pantalla"
 
-msgid "bgdownload"
-msgstr ""
-
 msgid "big"
 msgstr "bruto"
 
 msgid "black"
 msgstr "Negro"
-
-msgid "blindscanadjust"
-msgstr ""
 
 msgid "blink"
 msgstr "Parpadear"
@@ -7592,34 +6370,19 @@ msgstr "Iniciar Parpadeo"
 msgid "blue"
 msgstr "Azul"
 
-msgid "bootlogos"
-msgstr "Bootlogos"
-
 msgid "bootstop"
 msgstr "parada de arranque"
 
 msgid "border"
 msgstr "Borde"
 
-msgid "bouquetlist"
-msgstr ""
-
 msgid "broadcast"
 msgstr "direccion de difusion"
-
-msgid "browser"
-msgstr "Navegador de Red"
 
 msgid "burlywood1"
 msgstr ""
 
 msgid "c"
-msgstr ""
-
-msgid "caidlock"
-msgstr ""
-
-msgid "camd3"
 msgstr ""
 
 msgid "can't create new channel"
@@ -7661,21 +6424,6 @@ msgstr "Numero de Canal"
 msgid "channel-movie"
 msgstr "Titulo Canal"
 
-msgid "channelbynr"
-msgstr ""
-
-msgid "channelhistory"
-msgstr ""
-
-msgid "channellist"
-msgstr ""
-
-msgid "channelmenu"
-msgstr ""
-
-msgid "channelslotlist"
-msgstr ""
-
 msgid "check your Secret Feed !"
 msgstr "Revisa el feed IP secreto!"
 
@@ -7708,9 +6456,6 @@ msgstr "Crear una copia de seguridad del sistema"
 
 msgid "cut is running"
 msgstr "Corre Seccion"
-
-msgid "cut record files"
-msgstr "ts cutter - cortar grabaciones locales"
 
 msgid "d"
 msgstr ""
@@ -7769,29 +6514,17 @@ msgstr "Detalles"
 msgid "dhcp"
 msgstr "Automatico (DHCP)"
 
-msgid "dir"
-msgstr ""
-
 msgid "direct connect"
 msgstr "Conexion Directa"
 
 msgid "direkter Start"
 msgstr "inicio directo"
 
-msgid "dirlabel"
-msgstr ""
-
-msgid "dirsort"
-msgstr "Directorio ordenar por"
-
 msgid "disable"
 msgstr "discapacitado"
 
 msgid "diseqcscreen"
 msgstr "DiSEqC"
-
-msgid "dlna Medien Server (upnp)"
-msgstr "DLNA Media Server UPNP)"
 
 msgid "dnsaddresse"
 msgstr "DNS Direccion"
@@ -7804,9 +6537,6 @@ msgstr "DNS-Servidor 2"
 
 msgid "double"
 msgstr "doble"
-
-msgid "download"
-msgstr ""
 
 msgid "download error"
 msgstr "ERROR: Descarga Fallida!"
@@ -7832,9 +6562,6 @@ msgstr "llamada entrante"
 msgid "empty"
 msgstr "No Modulo"
 
-msgid "emus"
-msgstr "Softcams"
-
 msgid "en-GB"
 msgstr "es-ES"
 
@@ -7846,18 +6573,6 @@ msgstr "Finalizar busqueda"
 
 msgid "endless"
 msgstr "infinito"
-
-msgid "epg"
-msgstr ""
-
-msgid "epgscanlist"
-msgstr ""
-
-msgid "epgsearch"
-msgstr ""
-
-msgid "epgsettings"
-msgstr ""
 
 msgid "error"
 msgstr "!!! ERROR !!!"
@@ -7872,12 +6587,6 @@ msgid "expired"
 msgstr ""
 
 msgid "ext"
-msgstr ""
-
-msgid "extended config Panel"
-msgstr "Menú Configuración avanzada"
-
-msgid "extensionsmenu"
 msgstr ""
 
 msgid "extern"
@@ -7910,12 +6619,6 @@ msgstr "Alternativa archivo resultado"
 msgid "first slot"
 msgstr "Primera ranura"
 
-msgid "first titan game"
-msgstr "El primer juego Titan"
-
-msgid "fonts"
-msgstr "Fuentes"
-
 msgid "found"
 msgstr "Encontrado"
 
@@ -7943,21 +6646,8 @@ msgstr "Fondo completo cubierto"
 msgid "g"
 msgstr ""
 
-msgid "games"
-msgstr "Juegos"
-
 msgid "gateway"
 msgstr "Puerta de Enlace"
-
-msgid ""
-"gbox 806 with autoident for card hd+ and skyde including all necessary "
-"config files."
-msgstr ""
-"gbox 806 con autoident para hd tarjeta + y Skyde Incluyendo todos los "
-"archivos de configuración necesarios"
-
-msgid "gmultiepg"
-msgstr ""
 
 msgid "goto position"
 msgstr "Ir a la Posicion"
@@ -7971,20 +6661,8 @@ msgstr "gris"
 msgid "h"
 msgstr ""
 
-msgid "harddisk_main"
-msgstr ""
-
-msgid "harddiskmenu"
-msgstr ""
-
-msgid "hbbtv Browser"
-msgstr ""
-
 msgid "hddreplacement"
 msgstr "Utilice recurso compartido de red para las grabaciones"
-
-msgid "helpbox"
-msgstr ""
 
 msgid "hidden"
 msgstr "escondido"
@@ -7997,9 +6675,6 @@ msgstr "Mantener"
 
 msgid "html"
 msgstr "HTML"
-
-msgid "httpdsettings"
-msgstr ""
 
 msgid "i"
 msgstr ""
@@ -8025,20 +6700,8 @@ msgstr ""
 msgid "in background"
 msgstr "En el fondo"
 
-msgid "inadynsettings"
-msgstr ""
-
 msgid "infobar"
 msgstr "Infobar"
-
-msgid "infobar2"
-msgstr ""
-
-msgid "infomenu"
-msgstr ""
-
-msgid "infos"
-msgstr "Infos"
 
 msgid "initializing"
 msgstr "inicializar"
@@ -8047,9 +6710,6 @@ msgid "install"
 msgstr "Instalar"
 
 msgid "installed"
-msgstr ""
-
-msgid "interfacelist"
 msgstr ""
 
 msgid "intern"
@@ -8082,23 +6742,11 @@ msgstr ""
 msgid "key pip"
 msgstr ""
 
-msgid "keymaps"
-msgstr "Keymaps"
-
 msgid "l"
 msgstr ""
 
 msgid "lan"
 msgstr "LAN"
-
-msgid "language"
-msgstr "Lenguaje"
-
-msgid "lcdpearlskins"
-msgstr "LCD Pearl Skins"
-
-msgid "lcdsamsungskins"
-msgstr "LCD Samsung Skins"
 
 msgid "left"
 msgstr ""
@@ -8121,15 +6769,6 @@ msgstr "Limites off"
 msgid "limits on"
 msgstr "Limites On"
 
-msgid "linkedchannel"
-msgstr ""
-
-msgid "listedit"
-msgstr ""
-
-msgid "lnbscreen"
-msgstr ""
-
 msgid "localname"
 msgstr "nombre local"
 
@@ -8138,12 +6777,6 @@ msgstr "Bloqueado -> Deje bloqueado"
 
 msgid "locked -> unlock it"
 msgstr "Bloqueado -> Desbloquelo"
-
-msgid "log"
-msgstr "Log"
-
-msgid "logo"
-msgstr ""
 
 msgid "loop to Tuner"
 msgstr "Bucle para Tuner"
@@ -8154,44 +6787,14 @@ msgstr "bajo"
 msgid "m"
 msgstr ""
 
-msgid "mainmenu"
-msgstr ""
-
-msgid "manualscan"
-msgstr ""
-
-msgid "marker"
-msgstr ""
-
-msgid "mediadbedit"
-msgstr ""
-
-msgid "mediadbsettings"
-msgstr ""
-
 msgid "medium"
 msgstr "medio"
-
-msgid "menulist"
-msgstr "Lista de Menus"
-
-msgid "menuprotect"
-msgstr "Proteccion Menu"
-
-msgid "messagebox"
-msgstr ""
 
 msgid "middle"
 msgstr "medio"
 
 msgid "mixed mode"
 msgstr "Modo Mixto"
-
-msgid "moduleadjust"
-msgstr ""
-
-msgid "moduleconfig"
-msgstr ""
 
 msgid "move east"
 msgstr "Mover Este"
@@ -8205,12 +6808,6 @@ msgstr "Mover Oeste"
 msgid "movie-channel"
 msgstr "Titulo Canal"
 
-msgid "multiepg"
-msgstr ""
-
-msgid "mute"
-msgstr ""
-
 msgid "mvid"
 msgstr ""
 
@@ -8223,29 +6820,11 @@ msgstr "No"
 msgid "netmask"
 msgstr "Mascara de Red"
 
-msgid "network"
-msgstr "Red"
-
-msgid "network_test"
-msgstr ""
-
-msgid "networkmenu"
-msgstr ""
-
 msgid "never"
 msgstr "Nunca"
 
 msgid "never del file"
 msgstr "Nunca elimine archivo Timeshift"
-
-msgid "newcs including all necessary config files."
-msgstr "NewCS + configs"
-
-msgid "news Plugin"
-msgstr "Plugins nuevos"
-
-msgid "newsletter"
-msgstr "Noticias"
 
 msgid "nfs"
 msgstr "NFS"
@@ -8293,9 +6872,6 @@ msgid "ntfsmount"
 msgstr "NTFS-montaje"
 
 msgid "ntpdate"
-msgstr ""
-
-msgid "numinput"
 msgstr ""
 
 msgid "o"
@@ -8361,19 +6937,10 @@ msgstr "solo apagado/reiniciar"
 msgid "open in new window"
 msgstr ""
 
-msgid "optimize Plugin"
-msgstr "Optimizacion de Lista de Canales"
-
 msgid "options"
 msgstr "Opciones"
 
-msgid "ownpos"
-msgstr ""
-
 msgid "p"
-msgstr ""
-
-msgid "panel_settings_fancontrol"
 msgstr ""
 
 msgid "panscan"
@@ -8403,17 +6970,8 @@ msgstr "Imagen 4"
 msgid "pic5"
 msgstr "Imagen 5"
 
-msgid "picons"
-msgstr "Senderlogos"
-
 msgid "picture"
 msgstr "Foto"
-
-msgid "pin"
-msgstr "PIN"
-
-msgid "pincheck"
-msgstr ""
 
 msgid "pip end"
 msgstr ""
@@ -8427,31 +6985,13 @@ msgstr ""
 msgid "pl2303"
 msgstr "PL2303 Modulo"
 
-msgid "player"
-msgstr "Multimedia Player"
-
-msgid "playinfobar"
-msgstr ""
-
-msgid "playlist"
-msgstr "Playlist"
-
-msgid "playlist_main"
-msgstr ""
-
 msgid "please wait"
 msgstr "Por Favor Espere"
 
 msgid "please wait..."
 msgstr "Espere por favor ..."
 
-msgid "plugin"
-msgstr ""
-
 msgid "position"
-msgstr ""
-
-msgid "possetup"
 msgstr ""
 
 msgid "power off"
@@ -8459,9 +6999,6 @@ msgstr "Apagado"
 
 msgid "poweroff"
 msgstr "Apagado"
-
-msgid "powerofftimerscreen"
-msgstr ""
 
 msgid "press red"
 msgstr "Presione Boton Rojo"
@@ -8502,9 +7039,6 @@ msgstr "buffering"
 msgid "q"
 msgstr ""
 
-msgid "quickmenu"
-msgstr ""
-
 msgid "r"
 msgstr ""
 
@@ -8517,29 +7051,11 @@ msgstr "Grabar"
 msgid "record"
 msgstr "Grabar"
 
-msgid "recordduration"
-msgstr ""
-
-msgid "recordlist"
-msgstr "Lista de grabaciones"
-
-msgid "recordpath"
-msgstr ""
-
-msgid "rectimer"
-msgstr ""
-
-msgid "rectimerext"
-msgstr ""
-
 msgid "red"
 msgstr "Rojo"
 
 msgid "redKey"
 msgstr "Boton Rojo"
-
-msgid "remote Desktop Plugin"
-msgstr ""
 
 msgid "remove service"
 msgstr "Eliminar de los favoritos"
@@ -8549,9 +7065,6 @@ msgstr "Cambiar el nombre del canal"
 
 msgid "repeate"
 msgstr "Repita"
-
-msgid "resolutionsettings"
-msgstr ""
 
 msgid "reverse alpha"
 msgstr "descender alfabeticamente"
@@ -8580,14 +7093,8 @@ msgstr "lectura/ecritura"
 msgid "s"
 msgstr ""
 
-msgid "satfinder"
-msgstr "Recepcion Satfinder"
-
 msgid "save network settings ?"
 msgstr "Guardar configuracion de red?"
-
-msgid "scam 3.60"
-msgstr ""
 
 msgid "scan"
 msgstr "Exploracion"
@@ -8621,12 +7128,6 @@ msgstr "Foto"
 
 msgid "screensaver type"
 msgstr "Tipo"
-
-msgid "screensaveradjust"
-msgstr ""
-
-msgid "scriptexec Plugin"
-msgstr "scripts personalizados (/mnt/scripts) run"
 
 msgid "search east"
 msgstr "Buscar Este"
@@ -8668,9 +7169,6 @@ msgstr "Seleccione la unidad en la lista que desea formatear"
 msgid "select the media drive from Device List for fsck"
 msgstr "Seleccione la unidad en la lista que desea comprobar"
 
-msgid "serviceinfo"
-msgstr "Informacion Canal"
-
 msgid "set a cookie which will expire in 3 days and be accessible site wide"
 msgstr ""
 
@@ -8680,20 +7178,11 @@ msgstr "Fije la hora de la unidad sueño"
 msgid "set startchannel"
 msgstr "establecer como inicio canal"
 
-msgid "settings"
-msgstr "ajustes"
-
-msgid "settingsmenu"
-msgstr ""
-
 msgid "sharedir"
 msgstr "Directorio Compartido"
 
 msgid "sharename"
 msgstr "Nombre Compartido"
-
-msgid "shortepg"
-msgstr ""
 
 msgid "show 12 entrys"
 msgstr "Mostrar 12 entradas"
@@ -8722,9 +7211,6 @@ msgstr "Mostrar Grabar"
 msgid "showip"
 msgstr "Mostrar Direccion IP"
 
-msgid "singleepg"
-msgstr ""
-
 msgid "size"
 msgstr "Tamaño"
 
@@ -8732,15 +7218,6 @@ msgid "size (default)"
 msgstr "Tamaño (defecto)"
 
 msgid "skin (picmem jpg)"
-msgstr ""
-
-msgid "skinadjust"
-msgstr ""
-
-msgid "skins"
-msgstr "Skins"
-
-msgid "skinselect"
 msgstr ""
 
 msgid "slow"
@@ -8755,9 +7232,6 @@ msgstr "Socks4"
 msgid "socks5"
 msgstr "Socks5"
 
-msgid "softcam"
-msgstr ""
-
 msgid "sorry found no harddisk"
 msgstr "Lo sentimos, no hay ningun dispositivo conectado encontrado!"
 
@@ -8769,9 +7243,6 @@ msgstr "Sur"
 
 msgid "speed"
 msgstr "Velocidad"
-
-msgid "spinner"
-msgstr ""
 
 msgid "ssl"
 msgstr "SSL"
@@ -8787,9 +7258,6 @@ msgstr "Nocturno-Img"
 
 msgid "standby"
 msgstr "Reposo"
-
-msgid "standbymenu"
-msgstr ""
 
 msgid "star"
 msgstr "Iniciar"
@@ -8818,9 +7286,6 @@ msgstr "Paso Este"
 msgid "step west"
 msgstr "Paso Oeste"
 
-msgid "stock Plugin"
-msgstr "Cuota Mercado"
-
 msgid "stop"
 msgstr "Stop"
 
@@ -8829,12 +7294,6 @@ msgstr "Detenido Manualmente"
 
 msgid "store position"
 msgstr "Guardar Posicion"
-
-msgid "streaminfo Plugin"
-msgstr ""
-
-msgid "subtitle"
-msgstr "Subtitulos"
 
 msgid "succesfull create or delelete directory"
 msgstr "Directorio creado o borrado con eExito"
@@ -8860,39 +7319,6 @@ msgstr ""
 msgid "swts"
 msgstr "Dejar carga stmdvb.ko con la opcion wts "
 
-msgid "system_backup"
-msgstr ""
-
-msgid "system_backup_restore"
-msgstr ""
-
-msgid "system_infos_main"
-msgstr ""
-
-msgid "system_sysinfos_main"
-msgstr ""
-
-msgid "systeminfo"
-msgstr ""
-
-msgid "systemmenu"
-msgstr ""
-
-msgid "systemupdate_flash_online_menu"
-msgstr ""
-
-msgid "systemupdate_flash_tmp_menu"
-msgstr ""
-
-msgid "systemupdate_usb_online_menu"
-msgstr ""
-
-msgid "systemupdate_usb_tmp_menu"
-msgstr ""
-
-msgid "systemupdatemenu"
-msgstr ""
-
 msgid "sz"
 msgstr "ß"
 
@@ -8917,12 +7343,6 @@ msgstr "Test-Transpondedor no encontrado"
 msgid "text"
 msgstr "Texto"
 
-msgid "textinput"
-msgstr ""
-
-msgid "textinputhist"
-msgstr ""
-
 msgid "thereafter on this Channel:"
 msgstr "Lo siguiente en este canal:"
 
@@ -8944,18 +7364,6 @@ msgstr "Hora y Canal"
 msgid "time small"
 msgstr "Hora pequeña"
 
-msgid "timermenu"
-msgstr ""
-
-msgid "timeshift"
-msgstr ""
-
-msgid "timeshiftsettings"
-msgstr ""
-
-msgid "timezone"
-msgstr "Tiempo Zona"
-
 msgid "toneburst, committed"
 msgstr ""
 
@@ -8965,29 +7373,11 @@ msgstr ""
 msgid "toneburst, uncommitted, committed"
 msgstr ""
 
-msgid "tools"
-msgstr "Herramientas"
-
-msgid "tpkinstall"
-msgstr ""
-
 msgid "transparent (mvi)"
 msgstr ""
 
 msgid "ts - cut"
 msgstr "ts - corte"
-
-msgid "tunerconfig"
-msgstr "Tuner"
-
-msgid "tunerreceptiondvbc"
-msgstr ""
-
-msgid "tunerreceptiondvbs"
-msgstr ""
-
-msgid "tunerreceptiondvbt"
-msgstr ""
 
 msgid "type"
 msgstr "Tipo"
@@ -9019,9 +7409,6 @@ msgstr ""
 msgid "unknown"
 msgstr "Desconocido"
 
-msgid "unlock"
-msgstr ""
-
 msgid "unlock -> leaf unlock"
 msgstr "Desbloqueado -> Deja desbloqueado"
 
@@ -9036,9 +7423,6 @@ msgstr "Actualizacion"
 
 msgid "updatelist"
 msgstr "Lista actualizada"
-
-msgid "usbreset Plugin"
-msgstr "USB reinicio extension"
 
 msgid "use last Directory"
 msgstr "Usar siempre último directorio"
@@ -9097,9 +7481,6 @@ msgstr "Muy lentamente"
 msgid "vfddate"
 msgstr ""
 
-msgid "vfdisplay"
-msgstr "VF-Display"
-
 msgid "videmode"
 msgstr "Videomodo"
 
@@ -9111,18 +7492,6 @@ msgstr "Video/Audio"
 
 msgid "video / picture"
 msgstr "Video/Picture"
-
-msgid "videomode"
-msgstr "Video Modo"
-
-msgid "videosettings"
-msgstr ""
-
-msgid "vizcam 1.04"
-msgstr ""
-
-msgid "volume"
-msgstr ""
 
 msgid "vs"
 msgstr ""
@@ -9139,12 +7508,6 @@ msgstr "ATENCION: Espere Descargar para detener."
 msgid "waiting"
 msgstr "esperando"
 
-msgid "weather Plugin"
-msgstr "Weather extension"
-
-msgid "webdir"
-msgstr ""
-
 msgid "weekly"
 msgstr "Semanal"
 
@@ -9160,27 +7523,6 @@ msgstr "Lista Blanca"
 msgid "will be set by plugin"
 msgstr ""
 
-msgid "wireless"
-msgstr "WLAN"
-
-msgid "wireless 8192cu.ko model"
-msgstr ""
-
-msgid "wireless modul 8712u.ko"
-msgstr ""
-
-msgid "wireless modul rt2870sta.ko"
-msgstr ""
-
-msgid "wireless modul rt3070sta.ko"
-msgstr ""
-
-msgid "wireless modul rt5370sta.ko"
-msgstr ""
-
-msgid "wlansettings"
-msgstr ""
-
 msgid "workdays"
 msgstr "Los das de trabajo"
 
@@ -9188,12 +7530,6 @@ msgid "wsize"
 msgstr "Escribir tamaño buffer"
 
 msgid "x"
-msgstr ""
-
-msgid "xupnpd"
-msgstr ""
-
-msgid "xupnpd Medien Server (upnp)"
 msgstr ""
 
 msgid ""
@@ -9236,9 +7572,6 @@ msgstr "Si/VZAP infinito"
 msgid "z"
 msgstr ""
 
-msgid "zapback (Werbezapper)"
-msgstr ""
-
 msgid "{"
 msgstr ""
 
@@ -9247,3 +7580,120 @@ msgstr ""
 
 msgid "~"
 msgstr ""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
