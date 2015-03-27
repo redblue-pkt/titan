@@ -76,10 +76,10 @@ void showallchannel(struct skin* channellist, struct skin* listbox, struct skin*
 			if(chnode != NULL)
 			{
 				changechannelepg(tmpchannel, chnode);
-				if(tmpchannel->protect > 0)
-					chnode->fontcol = convertcol("protectcol");
 				if(checkbouguet(tmpchannel) == 1)
 					chnode->fontcol = convertcol("favcol");
+				if(tmpchannel->protect > 0)
+					chnode->fontcol = convertcol("protectcol");
 				changetext(chnode, tmpchannel->name);
 				chnode->handle = (char*) tmpchannel;
 				chnode->handle1 = (char*) tmpchannel;
