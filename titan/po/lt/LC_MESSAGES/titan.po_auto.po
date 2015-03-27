@@ -846,7 +846,7 @@ msgstr "Aktyvuoti nauj tinklo konfigracij ?"
 msgid "Album:"
 msgstr "Albumas:"
 
-#: channellist.h:771 channellist.h:772 channellist.h:1212 channellist.h:1213
+#: channellist.h:794 channellist.h:795 channellist.h:1235 channellist.h:1236
 msgid "All Channels"
 msgstr "Visi kanalai"
 
@@ -1607,7 +1607,7 @@ msgstr "No. Puokts :"
 msgid "BouquetEntrys: "
 msgstr "Puokt raai:"
 
-#: channellist.h:702 channellist.h:1228 channellist.h:1229 channellist.h:1441
+#: channellist.h:725 channellist.h:1251 channellist.h:1252 channellist.h:1464
 #: webif_channellist.h:5
 msgid "Bouquets"
 msgstr "Mgstami"
@@ -1859,7 +1859,7 @@ msgstr ""
 "KLAIDA: Nepavyko atidaryti rengini ssajaName or\n"
 "Frontend Tipas unknown."
 
-#: channellist.h:1006
+#: channellist.h:1029
 msgid "Can't remove akive Service"
 msgstr "Negalima paalinti aktyvaus Serviso"
 
@@ -1960,7 +1960,7 @@ msgstr "Pakeisti  SCART ivest"
 msgid "Change: "
 msgstr "Pokytis:"
 
-#: channellist.h:719 channellist.h:1581 skin_default_skin.xml.h:137
+#: channellist.h:742 channellist.h:1604 skin_default_skin.xml.h:137
 msgid "Channel"
 msgstr "Kanalas"
 
@@ -2065,7 +2065,7 @@ msgstr ""
 msgid "Channellist view"
 msgstr "Kanal sarao vaizdas"
 
-#: channellist.h:1296 channellist.h:1297
+#: channellist.h:1319 channellist.h:1320
 msgid "Channels A-Z"
 msgstr "Kanalai A-Z"
 
@@ -2383,23 +2383,23 @@ msgstr ""
 msgid "Copy Modus Font Color"
 msgstr ""
 
-#: channellist.h:596
+#: channellist.h:619
 msgid "Copy mode"
 msgstr "Kopijuoti"
 
-#: channellist.h:915
+#: channellist.h:938
 msgid "Copy providerlist not ok"
 msgstr "DMESIO : Transliuotojai nenukopijuoti"
 
-#: channellist.h:913
+#: channellist.h:936
 msgid "Copy providerlist successfull"
 msgstr "Transliuotojai skmingai nukopijuoti"
 
-#: channellist.h:922
+#: channellist.h:945
 msgid "Copy satlist not ok"
 msgstr "DMESIO : kanalai nenukopijuoti"
 
-#: channellist.h:920
+#: channellist.h:943
 msgid "Copy satlist successfull"
 msgstr "Kanalai skmingai nukopijuoti"
 
@@ -3108,8 +3108,8 @@ msgstr "KLAIDA : nepavyko nustatyti ymekl  fail"
 
 #: about.h:9 ard.h:31 autotimer.c:537 autotimer.c:543 autotimer.c:568
 #: autotimer.c:575 autotimer.c:603 avsettings.h:291 betarobot.h:57
-#: bgdownload.h:176 blindscanadjust.h:25 channellist.h:913 channellist.h:915
-#: channellist.h:920 channellist.h:922 channellist.h:1006 divxstage.h:36
+#: bgdownload.h:176 blindscanadjust.h:25 channellist.h:936 channellist.h:938
+#: channellist.h:943 channellist.h:945 channellist.h:1029 divxstage.h:36
 #: divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336 dlna.h:345
 #: dvdplay.h:62 epgsearch.h:27 epgsettings.h:263 epgsettings.h:289
 #: epgsettings.h:303 extensions.h:190 extensions.h:241 extensions.h:250
@@ -3240,7 +3240,7 @@ msgstr ""
 msgid "Edit Playlist"
 msgstr "Redaguoti Grojarat"
 
-#: channellist.h:614
+#: channellist.h:637
 msgid "Edit mode"
 msgstr "Redaguoti"
 
@@ -5637,8 +5637,8 @@ msgid "Menulist"
 msgstr ""
 
 #: ard.h:31 avsettings.h:291 betarobot.h:57 bgdownload.h:176
-#: blindscanadjust.h:25 callmon_main.h:39 channellist.h:913 channellist.h:915
-#: channellist.h:920 channellist.h:922 channellist.h:1006 divxstage.h:36
+#: blindscanadjust.h:25 callmon_main.h:39 channellist.h:936 channellist.h:938
+#: channellist.h:943 channellist.h:945 channellist.h:1029 divxstage.h:36
 #: divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336 dlna.h:345
 #: dvdplay.h:62 epgsearch.h:27 epgsettings.h:263 epgsettings.h:289
 #: extensions.h:267 extensions.h:324 extensions.h:356 extensions.h:416
@@ -5833,7 +5833,7 @@ msgstr ""
 msgid "Move Modus Font Color"
 msgstr ""
 
-#: channellist.h:578
+#: channellist.h:601
 msgid "Move mode"
 msgstr "Perkelti"
 
@@ -6169,8 +6169,8 @@ msgstr ""
 
 #: about.h:9 ard.h:31 autotimer.c:537 autotimer.c:543 autotimer.c:568
 #: autotimer.c:575 autotimer.c:603 avsettings.h:291 betarobot.h:57
-#: bgdownload.h:176 blindscanadjust.h:25 callmon_main.h:39 channellist.h:913
-#: channellist.h:915 channellist.h:920 channellist.h:922 channellist.h:1006
+#: bgdownload.h:176 blindscanadjust.h:25 callmon_main.h:39 channellist.h:936
+#: channellist.h:938 channellist.h:943 channellist.h:945 channellist.h:1029
 #: divxstage.h:36 divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336
 #: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:263 epgsettings.h:289
 #: epgsettings.h:303 extensions.h:190 extensions.h:241 extensions.h:250
@@ -7040,7 +7040,7 @@ msgstr ""
 msgid "Protect Modus Font Color"
 msgstr ""
 
-#: channellist.h:605
+#: channellist.h:628
 msgid "Protect mode"
 msgstr "Apsaugoti"
 
@@ -7048,7 +7048,7 @@ msgstr "Apsaugoti"
 msgid "Prov"
 msgstr ""
 
-#: channellist.h:752 channellist.h:1330 channellist.h:1331 channellist.h:1655
+#: channellist.h:775 channellist.h:1353 channellist.h:1354 channellist.h:1678
 #: webif_channellist.h:3
 msgid "Provider"
 msgstr "Transliuotojas"
@@ -7158,7 +7158,7 @@ msgstr ""
 msgid "RTL2-Now"
 msgstr ""
 
-#: channellist.h:689 channellist.h:1765 httpdfunc.h:292 httpdfunc.h:701
+#: channellist.h:712 channellist.h:1788 httpdfunc.h:292 httpdfunc.h:701
 #: scan.h:530 skin_default_skin.xml.h:537 webif_index.atemio5200.h:69
 #: webif_index.atemio5200.h:125 webif_index.atemio6200.h:69
 #: webif_index.atemio6200.h:125 webif_index.atemio-nemesis.h:69
@@ -7451,7 +7451,7 @@ msgstr ""
 msgid "Remove error"
 msgstr "KLAIDA : alinimas nepavyko!"
 
-#: channellist.h:587
+#: channellist.h:610
 msgid "Remove mode"
 msgstr "Paalinti"
 
@@ -7875,7 +7875,7 @@ msgstr "Satellite Type"
 msgid "Satellite"
 msgstr ""
 
-#: channellist.h:735 channellist.h:1262 channellist.h:1263 channellist.h:1515
+#: channellist.h:758 channellist.h:1285 channellist.h:1286 channellist.h:1538
 msgid "Satellites"
 msgstr "Palydovas"
 
@@ -9244,7 +9244,7 @@ msgstr ""
 msgid "TSID:"
 msgstr ""
 
-#: channellist.h:694 channellist.h:1760 httpdfunc.h:286 httpdfunc.h:696
+#: channellist.h:717 channellist.h:1783 httpdfunc.h:286 httpdfunc.h:696
 #: scan.h:528
 msgid "TV"
 msgstr "Televizija"
