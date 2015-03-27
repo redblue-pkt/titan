@@ -258,7 +258,7 @@ void showprovider(struct skin* channellist, struct skin* listbox)
 	{
 		if(checkprovider(node) == 1)
 		{
-			node->flag = 1;
+//			node->flag = 1;
 			providernode = addlistbox(channellist, listbox, providernode, 2);
 			if(providernode != NULL)
 			{
@@ -268,8 +268,8 @@ void showprovider(struct skin* channellist, struct skin* listbox)
 				providernode->handle1 = (char*) node;
 			}
 		}
-		else
-			node->flag = 0;
+//		else
+//			node->flag = 0;
 
 		node = node->next;
 	}
