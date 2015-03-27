@@ -16,7 +16,7 @@ if [ -z "$2" ]; then
 fi
 
 CHECK=`whoami`
-if [ "$CHECK != "atemio" ]; then
+if [ "$CHECK" != "atemio" ]; then
 	echo "[createpo.sh] exit, building only with user atemio"
 	exit
 fi
