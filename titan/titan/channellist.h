@@ -76,7 +76,7 @@ void showallchannel(struct skin* channellist, struct skin* listbox, struct skin*
 			if(chnode != NULL)
 			{
 				changechannelepg(tmpchannel, chnode);
-				if(checkbouguet(tmpchannel) == 1)
+				if(checkbouquet(tmpchannel) == 1)
 					chnode->fontcol = convertcol("favcol");
 				if(tmpchannel->protect > 0)
 					chnode->fontcol = convertcol("protectcol");
@@ -114,7 +114,7 @@ void showallchannel(struct skin* channellist, struct skin* listbox, struct skin*
 	}
 }
 
-int checkbouguet(struct channel* tmpchannel)
+int checkbouquet(struct channel* tmpchannel)
 {
 	struct mainbouquet* mainbouquetnode = mainbouquet;
 	struct bouquet* bouquetnode = NULL;

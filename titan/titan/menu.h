@@ -365,6 +365,11 @@ int menucall(struct skin* menunode, struct skin* menuentry, int check)
 		struct skin* screen = getscreen("systemmenu");
 		menu(screen, 0);
 	}
+	else if(ostrcmp("setdefaultsettings", menuentry->name) == 0)
+	{
+		if(check == 1) return 0;
+		setdefaultsettings();
+	}
 	else if(ostrcmp("system_grid", menuentry->name) == 0)
 	{
 		if(check == 1) return 0;
