@@ -393,7 +393,7 @@ msgstr ""
 
 #: tpk_showname.h:1
 msgid "3 Wins"
-msgstr ""
+msgstr "3 conexiones"
 
 #: stopifnotused.c:100
 msgid "30"
@@ -637,6 +637,8 @@ msgid ""
 "A collection of really nice folder icons for MediaCenter Videoplayer "
 "Coverview!"
 msgstr ""
+"Una bonita selección de imágenes para el Media Center reproductor de vídeo y "
+"de la cubierta preliminar!"
 
 #: plugins_networkbrowser_skin.xml.h:2 skins_networkbrowser_skin.xml.h:2
 msgid ""
@@ -852,7 +854,7 @@ msgstr "Activar nueva configuracion de red?"
 msgid "Album:"
 msgstr ""
 
-#: channellist.h:794 channellist.h:795 channellist.h:1235 channellist.h:1236
+#: channellist.h:771 channellist.h:772 channellist.h:1212 channellist.h:1213
 msgid "All Channels"
 msgstr "Todos los Canales"
 
@@ -1225,7 +1227,7 @@ msgstr ""
 
 #: tpk_description.h:14
 msgid "Automatisch Timer setzen"
-msgstr ""
+msgstr "automaticamente ajustar el temporizador"
 
 #: plugins_panel_skin.xml.h:4 skins_panel_skin.xml.h:4
 msgid "Automount"
@@ -1619,7 +1621,7 @@ msgstr "Numero de Bouquets: "
 msgid "BouquetEntrys: "
 msgstr "Bouquet Entradas: "
 
-#: channellist.h:725 channellist.h:1251 channellist.h:1252 channellist.h:1464
+#: channellist.h:702 channellist.h:1228 channellist.h:1229 channellist.h:1441
 #: webif_channellist.h:5
 msgid "Bouquets"
 msgstr "Favoritos"
@@ -1753,7 +1755,7 @@ msgstr ""
 
 #: tpk_description.h:41
 msgid "Cable: default Settings Kabel Deutschland"
-msgstr ""
+msgstr "Cable: Lista de canales por cable estándar Alemania"
 
 #: tpk_description.h:44
 msgid "Cable: sofatester Kabel BW"
@@ -1780,6 +1782,8 @@ msgstr ""
 #: tpk_description.h:46
 msgid "Callmonitor Plugin"
 msgstr ""
+"monitor de llamada para la visualización de las llamadas entrantes y "
+"salientes"
 
 #: plugins_panel_skin.xml.h:6 skin_default_skin.xml.h:131
 #: skins_panel_skin.xml.h:6
@@ -1875,7 +1879,7 @@ msgstr ""
 "ERROR: No se puede abrir DispositivoFrontend o\n"
 "Tipo Frontend es desconocido."
 
-#: channellist.h:1029
+#: channellist.h:1006
 msgid "Can't remove akive Service"
 msgstr "No se puede quitar el servicio activo"
 
@@ -1976,7 +1980,7 @@ msgstr "Cambiar a la salida SCART"
 msgid "Change: "
 msgstr "Cambio: "
 
-#: channellist.h:742 channellist.h:1604 skin_default_skin.xml.h:137
+#: channellist.h:719 channellist.h:1581 skin_default_skin.xml.h:137
 msgid "Channel"
 msgstr "Canal"
 
@@ -2080,7 +2084,7 @@ msgstr "Lista de canales vacíos o corruptos (canal no encontrado)!"
 msgid "Channellist view"
 msgstr "Ver Lista de Canales"
 
-#: channellist.h:1319 channellist.h:1320
+#: channellist.h:1296 channellist.h:1297
 msgid "Channels A-Z"
 msgstr "Canales A-Z"
 
@@ -2276,7 +2280,7 @@ msgstr "Codigo 2: "
 
 #: tpk_showname.h:19
 msgid "Codepack"
-msgstr ""
+msgstr "Codecpack"
 
 #: skin_default_skin.xml.h:152
 msgid "Coderate HP"
@@ -2408,23 +2412,23 @@ msgstr ""
 msgid "Copy Modus Font Color"
 msgstr ""
 
-#: channellist.h:619
+#: channellist.h:596
 msgid "Copy mode"
 msgstr "Copiar"
 
-#: channellist.h:938
+#: channellist.h:915
 msgid "Copy providerlist not ok"
 msgstr "ATENCION: Providers no copiados"
 
-#: channellist.h:936
+#: channellist.h:913
 msgid "Copy providerlist successfull"
 msgstr "Proveedores copiados con Exito"
 
-#: channellist.h:945
+#: channellist.h:922
 msgid "Copy satlist not ok"
 msgstr "ATENCION: Canales no copiados"
 
-#: channellist.h:943
+#: channellist.h:920
 msgid "Copy satlist successfull"
 msgstr "Canales copiados con Exito"
 
@@ -2699,11 +2703,11 @@ msgstr "General"
 
 #: tpk_description.h:50 tpk_showname.h:21
 msgid "Default Font"
-msgstr ""
+msgstr "Fuente por Defecto"
 
 #: tpk_description.h:52
 msgid "Default Skin"
-msgstr ""
+msgstr "Standard Skin"
 
 #: tpk_description.h:51
 msgid "Default mod by maenne79"
@@ -2711,7 +2715,7 @@ msgstr ""
 
 #: tpk_description.h:53
 msgid "Default skin without MiniTV"
-msgstr ""
+msgstr "Standard Skin sin MiniTV"
 
 #: tpk_description.h:54
 msgid "Default skin without MiniTV mod by maenne79"
@@ -3135,8 +3139,8 @@ msgstr "ERROR: No se puede establecer marcadores en este archivo"
 
 #: about.h:9 ard.h:31 autotimer.c:537 autotimer.c:543 autotimer.c:568
 #: autotimer.c:575 autotimer.c:603 avsettings.h:291 betarobot.h:57
-#: bgdownload.h:176 blindscanadjust.h:25 channellist.h:936 channellist.h:938
-#: channellist.h:943 channellist.h:945 channellist.h:1029 divxstage.h:36
+#: bgdownload.h:176 blindscanadjust.h:25 channellist.h:913 channellist.h:915
+#: channellist.h:920 channellist.h:922 channellist.h:1006 divxstage.h:36
 #: divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336 dlna.h:345
 #: dvdplay.h:62 epgsearch.h:27 epgsettings.h:263 epgsettings.h:289
 #: epgsettings.h:303 extensions.h:190 extensions.h:241 extensions.h:250
@@ -3267,7 +3271,7 @@ msgstr ""
 msgid "Edit Playlist"
 msgstr "Editar Playlist"
 
-#: channellist.h:637
+#: channellist.h:614
 msgid "Edit mode"
 msgstr "Editar"
 
@@ -3285,7 +3289,7 @@ msgstr ""
 
 #: tpk_description.h:60
 msgid "Emu Camd3 v3.902 for your box"
-msgstr ""
+msgstr "Softcam camd3.902"
 
 #: panel_settings_autostart.h:285 settings_autostart.h:429
 msgid "Emu Control"
@@ -3293,7 +3297,7 @@ msgstr "Softcam control"
 
 #: tpk_description.h:61
 msgid "Emu MGCamd v1.38a and all Configs"
-msgstr ""
+msgstr "Softcam MGCamd V1.38"
 
 #: skin_default_skin.xml.h:225
 msgid "Emu Running Color"
@@ -3309,11 +3313,11 @@ msgstr "Softcam no encontrado"
 
 #: tpk_description.h:62
 msgid "Emu scam 3.60 for your box"
-msgstr ""
+msgstr "Softcam SCam V3.60"
 
 #: tpk_description.h:63
 msgid "Emu vizcam 1.04 for your box"
-msgstr ""
+msgstr "Softcam vizcam V1.04"
 
 #: plugins_readerconfig_skin.xml.h:4 skins_readerconfig_skin.xml.h:4
 msgid "Enable"
@@ -3663,7 +3667,7 @@ msgstr "Buffer Playback (30MB / 360 Seg)"
 
 #: tpk_description.h:66 tpk_showname.h:31
 msgid "File Manager"
-msgstr ""
+msgstr "Administrador de archivos"
 
 #: tithek.h:670
 msgid "File exist, overwrite?"
@@ -3759,51 +3763,51 @@ msgstr "Actualizacion de software (Local)"
 
 #: tpk_description.h:68
 msgid "Font 'Action Man Italic' "
-msgstr ""
+msgstr "Fuente 'Accion Man Italic'"
 
 #: tpk_description.h:69
 msgid "Font 'Alpha Romanie G98'"
-msgstr ""
+msgstr "Fuente 'Alpha Romanie G98'"
 
 #: tpk_description.h:70
 msgid "Font 'Croissant' "
-msgstr ""
+msgstr "Fuentet 'Croissant'"
 
 #: tpk_description.h:71
 msgid "Font 'Digiface Regular' "
-msgstr ""
+msgstr "Fuente 'Digiface Regular'"
 
 #: tpk_description.h:72
 msgid "Font 'Goodtime'"
-msgstr ""
+msgstr "Fuente 'Goodtime'"
 
 #: tpk_description.h:73
 msgid "Font 'I Hate Comic Sans'"
-msgstr ""
+msgstr "Fuente 'I Hate Comic Sans'"
 
 #: tpk_description.h:74
 msgid "Font 'Lydian Bolt Italic BT' "
-msgstr ""
+msgstr "Fuente 'Lydian Bolt Italic BT' "
 
 #: tpk_description.h:75
 msgid "Font 'Mighty Zeo Caps'"
-msgstr ""
+msgstr "Fuente 'Mighty Zeo Caps'"
 
 #: tpk_description.h:76
 msgid "Font 'Monoglyceride DemiBold'"
-msgstr ""
+msgstr "Fuentet 'Monoglyceride DemiBold'"
 
 #: tpk_description.h:77
 msgid "Font 'New Gothic BT'"
-msgstr ""
+msgstr "Fuente 'New Gothic BT'"
 
 #: tpk_description.h:78
 msgid "Font 'Paddington Bold'"
-msgstr ""
+msgstr "Fuente 'Paddington Bold'"
 
 #: tpk_description.h:79
 msgid "Font 'Plover Bold'"
-msgstr ""
+msgstr "Fuente 'Plover Bold'"
 
 #: skin_default_skin.xml.h:266
 msgid "Font Color"
@@ -4720,7 +4724,7 @@ msgstr ""
 
 #: tpk_description.h:87
 msgid "IP-Kamera zB. Firma INSTAR"
-msgstr ""
+msgstr "IP Camera eg. INSTAR"
 
 #: tpk_showname.h:41
 msgid "Ice Age Scrap likes UFS910"
@@ -4754,11 +4758,11 @@ msgstr ""
 
 #: tpk_description.h:86
 msgid "ImdB Info Plugin"
-msgstr ""
+msgstr "IMDb Info"
 
 #: tpk_description.h:85
 msgid "ImdBapi Info Plugin"
-msgstr ""
+msgstr "IMDbapi Info"
 
 #: skin_default_skin.xml.h:366
 msgid "Inc. AC3 Audio in %"
@@ -5276,7 +5280,7 @@ msgstr ""
 
 #: tpk_description.h:92
 msgid "Lib extension for network (upnpfs/smbfs/ftpfs/rarfs)"
-msgstr ""
+msgstr "extensión protocolo de red (upnpfs/smbfs/ftpfs/rarfs)"
 
 #: security.h:2025
 msgid "License"
@@ -5685,8 +5689,8 @@ msgid "Menulist"
 msgstr "Lista de Menus"
 
 #: ard.h:31 avsettings.h:291 betarobot.h:57 bgdownload.h:176
-#: blindscanadjust.h:25 callmon_main.h:39 channellist.h:936 channellist.h:938
-#: channellist.h:943 channellist.h:945 channellist.h:1029 divxstage.h:36
+#: blindscanadjust.h:25 callmon_main.h:39 channellist.h:913 channellist.h:915
+#: channellist.h:920 channellist.h:922 channellist.h:1006 divxstage.h:36
 #: divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336 dlna.h:345
 #: dvdplay.h:62 epgsearch.h:27 epgsettings.h:263 epgsettings.h:289
 #: extensions.h:267 extensions.h:324 extensions.h:356 extensions.h:416
@@ -5881,7 +5885,7 @@ msgstr ""
 msgid "Move Modus Font Color"
 msgstr ""
 
-#: channellist.h:601
+#: channellist.h:578
 msgid "Move mode"
 msgstr "Mover"
 
@@ -6023,7 +6027,7 @@ msgstr "Prueba de Conexion"
 
 #: tpk_description.h:99
 msgid "Network browser extension for better Win7 compatibility"
-msgstr ""
+msgstr "extensión del navegador de red para una mejor compatibilidad Win7"
 
 #: adjust.h:282 skin_default_skin.xml.h:456 tpk_showname.h:73
 msgid "Networkbrowser"
@@ -6043,7 +6047,7 @@ msgstr "Mostrar escaneado CIFS/NFS-Compartidos"
 
 #: tpk_description.h:100
 msgid "Networkfile libsmbclient 3.0.28b"
-msgstr ""
+msgstr "SMB (Windows) libsmbclient 3.0.28b"
 
 #: tithek_mainmenu.h:31
 msgid "Netzkino"
@@ -6217,8 +6221,8 @@ msgstr "Ö"
 
 #: about.h:9 ard.h:31 autotimer.c:537 autotimer.c:543 autotimer.c:568
 #: autotimer.c:575 autotimer.c:603 avsettings.h:291 betarobot.h:57
-#: bgdownload.h:176 blindscanadjust.h:25 callmon_main.h:39 channellist.h:936
-#: channellist.h:938 channellist.h:943 channellist.h:945 channellist.h:1029
+#: bgdownload.h:176 blindscanadjust.h:25 callmon_main.h:39 channellist.h:913
+#: channellist.h:915 channellist.h:920 channellist.h:922 channellist.h:1006
 #: divxstage.h:36 divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336
 #: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:263 epgsettings.h:289
 #: epgsettings.h:303 extensions.h:190 extensions.h:241 extensions.h:250
@@ -6571,7 +6575,7 @@ msgstr ""
 
 #: tpk_description.h:107
 msgid "Partitions Tool fuer HDD > 2TB"
-msgstr ""
+msgstr "Herramienta de Partición de disco duro> 2 TB"
 
 #: plugins_networkbrowser_skin.xml.h:17 skin_default_skin.xml.h:488
 #: skins_networkbrowser_skin.xml.h:17
@@ -6619,7 +6623,7 @@ msgstr ""
 
 #: tpk_description.h:108
 msgid "Permanente Uhrzeit am Bildschirm"
-msgstr ""
+msgstr "Muestra permanente la hora en la pantalla"
 
 #: facebook.h:478
 msgid "Photos postet"
@@ -7012,7 +7016,7 @@ msgstr "Apagado Temporizado"
 
 #: tpk_description.h:109
 msgid "Power off if box not used"
-msgstr ""
+msgstr "Apagar el receptor si no se utiliza."
 
 #: webif_boxcontrol.h:1
 msgid "PowerControl"
@@ -7094,7 +7098,7 @@ msgstr ""
 msgid "Protect Modus Font Color"
 msgstr ""
 
-#: channellist.h:628
+#: channellist.h:605
 msgid "Protect mode"
 msgstr "Proteger"
 
@@ -7102,7 +7106,7 @@ msgstr "Proteger"
 msgid "Prov"
 msgstr "Proveedor"
 
-#: channellist.h:775 channellist.h:1353 channellist.h:1354 channellist.h:1678
+#: channellist.h:752 channellist.h:1330 channellist.h:1331 channellist.h:1655
 #: webif_channellist.h:3
 msgid "Provider"
 msgstr "Proveedor"
@@ -7212,7 +7216,7 @@ msgstr ""
 msgid "RTL2-Now"
 msgstr ""
 
-#: channellist.h:712 channellist.h:1788 httpdfunc.h:292 httpdfunc.h:701
+#: channellist.h:689 channellist.h:1765 httpdfunc.h:292 httpdfunc.h:701
 #: scan.h:530 skin_default_skin.xml.h:537 webif_index.atemio5200.h:69
 #: webif_index.atemio5200.h:125 webif_index.atemio6200.h:69
 #: webif_index.atemio6200.h:125 webif_index.atemio-nemesis.h:69
@@ -7505,7 +7509,7 @@ msgstr "Retire favoritos vacios"
 msgid "Remove error"
 msgstr "ERROR: Eliminacion Fallida!"
 
-#: channellist.h:610
+#: channellist.h:587
 msgid "Remove mode"
 msgstr "Eliminar"
 
@@ -7929,7 +7933,7 @@ msgstr "Satelite Tipo"
 msgid "Satellite"
 msgstr "Satelite"
 
-#: channellist.h:758 channellist.h:1285 channellist.h:1286 channellist.h:1538
+#: channellist.h:735 channellist.h:1262 channellist.h:1263 channellist.h:1515
 msgid "Satellites"
 msgstr "Satelite"
 
@@ -8488,7 +8492,7 @@ msgstr ""
 
 #: tpk_showname.h:153
 msgid "Settings Hotbird 13.0, Astra 19.2, Astra 28.2E"
-msgstr ""
+msgstr "Settings Hotbird 13.0/Astra 19.2/Astra 28.2E (Bulldog)"
 
 #: titan.c:1009
 msgid "Settings OK ?"
@@ -9300,7 +9304,7 @@ msgstr "Editar Transpondedor "
 msgid "TSID:"
 msgstr "TSID: "
 
-#: channellist.h:717 channellist.h:1783 httpdfunc.h:286 httpdfunc.h:696
+#: channellist.h:694 channellist.h:1760 httpdfunc.h:286 httpdfunc.h:696
 #: scan.h:528
 msgid "TV"
 msgstr ""
@@ -9333,7 +9337,7 @@ msgstr "TXT PID: "
 
 #: tpk_description.h:140
 msgid "Tastensperre Plugin - entsperren mit rot/rot/gruen"
-msgstr ""
+msgstr "Bloqueo de teclas Plugin - desbloquearlo con rojo/rojo/verde"
 
 #: plugins_wm2014_skin.xml.h:14 skins_wm2014_skin.xml.h:14
 msgid "Team"
@@ -9922,7 +9926,7 @@ msgstr "Transpondedor Lista"
 
 #: tpk_description.h:155
 msgid "Treiber fuer Pearl LCD V4.0"
-msgstr ""
+msgstr "Driver para Pearl LCD V4.0"
 
 #: tpk_description.h:156
 msgid "Treiber fuer Pearl LCD V5.0"
@@ -9930,7 +9934,7 @@ msgstr ""
 
 #: tpk_description.h:157
 msgid "Treiber fuer Samsung LCD"
-msgstr ""
+msgstr "Driver para Samsung LCD"
 
 #: security.h:676 security.h:2035
 msgid "Trial period ends in"
@@ -10507,11 +10511,11 @@ msgstr ""
 
 #: tpk_description.h:163
 msgid "Webbrowser Plugin"
-msgstr ""
+msgstr "Internet Browser"
 
 #: tpk_description.h:164
 msgid "Webbrowser Plugin "
-msgstr ""
+msgstr "Internet Browser"
 
 #: global.h:6115
 msgid "Wed"
@@ -10523,7 +10527,7 @@ msgstr "Miercoles"
 
 #: tpk_description.h:165
 msgid "Werbezapper"
-msgstr ""
+msgstr "Publicidadzapper"
 
 #: epgsearch.h:324
 msgid "Western"
@@ -10981,7 +10985,7 @@ msgstr "Azul"
 
 #: tpk_section.h:1
 msgid "bootlogos"
-msgstr ""
+msgstr "Bootlogos"
 
 #: panel_settings_autostart.h:44
 msgid "bootstop"
@@ -11001,7 +11005,7 @@ msgstr "direccion de difusion"
 
 #: tpk_section.h:2
 msgid "browser"
-msgstr ""
+msgstr "Navegador de Red"
 
 #: screensaveradjust.h:36
 msgid "burlywood1"
@@ -11143,7 +11147,7 @@ msgstr "Corre Seccion"
 
 #: tpk_description.h:49
 msgid "cut record files"
-msgstr ""
+msgstr "ts cutter - cortar grabaciones locales"
 
 #: skin_default_skin.xml.h:176
 msgid "d"
@@ -11256,7 +11260,7 @@ msgstr "DiSEqC"
 
 #: tpk_description.h:56
 msgid "dlna Medien Server (upnp)"
-msgstr ""
+msgstr "DLNA Media Server UPNP)"
 
 #: plugins_networkbrowser_skin.xml.h:7 skins_networkbrowser_skin.xml.h:7
 msgid "dnsaddresse"
@@ -11312,7 +11316,7 @@ msgstr "No Modulo"
 
 #: tpk_section.h:3
 msgid "emus"
-msgstr ""
+msgstr "Softcams"
 
 #: weather.h:137
 msgid "en-GB"
@@ -11368,7 +11372,7 @@ msgstr ""
 
 #: tpk_description.h:65
 msgid "extended config Panel"
-msgstr ""
+msgstr "Menú Configuración avanzada"
 
 #: webif_help.h:27
 msgid "extensionsmenu"
@@ -11420,11 +11424,11 @@ msgstr "Primera ranura"
 
 #: tpk_description.h:67
 msgid "first titan game"
-msgstr ""
+msgstr "El primer juego Titan"
 
 #: tpk_section.h:4
 msgid "fonts"
-msgstr ""
+msgstr "Fuentes"
 
 #: tithek.h:887
 msgid "found"
@@ -11465,7 +11469,7 @@ msgstr ""
 
 #: tpk_section.h:5
 msgid "games"
-msgstr ""
+msgstr "Juegos"
 
 #: skin_default_skin.xml.h:277
 msgid "gateway"
@@ -11476,6 +11480,8 @@ msgid ""
 "gbox 806 with autoident for card hd+ and skyde including all necessary "
 "config files."
 msgstr ""
+"gbox 806 con autoident para hd tarjeta + y Skyde Incluyendo todos los "
+"archivos de configuración necesarios"
 
 #: webif_help.h:28
 msgid "gmultiepg"
@@ -11588,7 +11594,7 @@ msgstr ""
 
 #: tpk_section.h:6
 msgid "infos"
-msgstr ""
+msgstr "Infos"
 
 #: moduleconfig.h:356
 msgid "initializing"
@@ -11653,7 +11659,7 @@ msgstr ""
 
 #: tpk_section.h:7
 msgid "keymaps"
-msgstr ""
+msgstr "Keymaps"
 
 #: skin_default_skin.xml.h:391
 msgid "l"
@@ -11669,11 +11675,11 @@ msgstr "Lenguaje"
 
 #: tpk_section.h:8
 msgid "lcdpearlskins"
-msgstr ""
+msgstr "LCD Pearl Skins"
 
 #: tpk_section.h:9
 msgid "lcdsamsungskins"
-msgstr ""
+msgstr "LCD Samsung Skins"
 
 #: sudoku.c:167
 msgid "left"
@@ -11865,11 +11871,11 @@ msgstr "Nunca elimine archivo Timeshift"
 
 #: tpk_description.h:102
 msgid "newcs including all necessary config files."
-msgstr ""
+msgstr "NewCS + configs"
 
 #: tpk_description.h:104
 msgid "news Plugin"
-msgstr ""
+msgstr "Plugins nuevos"
 
 #: webif_help.h:59
 msgid "newsletter"
@@ -12101,7 +12107,7 @@ msgstr ""
 
 #: tpk_description.h:106
 msgid "optimize Plugin"
-msgstr ""
+msgstr "Optimizacion de Lista de Canales"
 
 #: plugins_networkbrowser_skin.xml.h:15 skins_networkbrowser_skin.xml.h:15
 msgid "options"
@@ -12157,7 +12163,7 @@ msgstr "Imagen 5"
 
 #: tpk_section.h:11
 msgid "picons"
-msgstr ""
+msgstr "Senderlogos"
 
 #: skinadjust.h:69 tmc.h:542
 msgid "picture"
@@ -12189,7 +12195,7 @@ msgstr "PL2303 Modulo"
 
 #: tpk_section.h:12
 msgid "player"
-msgstr ""
+msgstr "Multimedia Player"
 
 #: webif_help.h:65
 msgid "playinfobar"
@@ -12461,7 +12467,7 @@ msgstr ""
 
 #: tpk_description.h:125
 msgid "scriptexec Plugin"
-msgstr ""
+msgstr "scripts personalizados (/mnt/scripts) run"
 
 #: possetup.h:37
 msgid "search east"
@@ -12532,7 +12538,7 @@ msgstr "establecer como inicio canal"
 
 #: tpk_section.h:14
 msgid "settings"
-msgstr ""
+msgstr "ajustes"
 
 #: webif_help.h:83
 msgid "settingsmenu"
@@ -12611,7 +12617,7 @@ msgstr ""
 
 #: tpk_section.h:15
 msgid "skins"
-msgstr ""
+msgstr "Skins"
 
 #: webif_help.h:87
 msgid "skinselect"
@@ -12722,7 +12728,7 @@ msgstr "Paso Oeste"
 
 #: tpk_description.h:137
 msgid "stock Plugin"
-msgstr ""
+msgstr "Cuota Mercado"
 
 #: httpdfunc.h:5549 httpdfunc.h:5595 record.h:1428 record.h:1437 record.h:1448
 #: record.h:1477 record.h:1486 record.h:1518 skin_default_skin.xml.h:681
@@ -12929,7 +12935,7 @@ msgstr ""
 
 #: tpk_section.h:16
 msgid "tools"
-msgstr ""
+msgstr "Herramientas"
 
 #: webif_help.h:110
 msgid "tpkinstall"
@@ -13034,7 +13040,7 @@ msgstr "Lista actualizada"
 
 #: tpk_description.h:160
 msgid "usbreset Plugin"
-msgstr ""
+msgstr "USB reinicio extension"
 
 #: plugins_mc_skin.xml.h:58 skins_mc_skin.xml.h:58
 msgid "use last Directory"
@@ -13170,7 +13176,7 @@ msgstr "esperando"
 
 #: tpk_description.h:162
 msgid "weather Plugin"
-msgstr ""
+msgstr "Weather extension"
 
 #: webif_help.h:120
 msgid "webdir"
@@ -13198,7 +13204,7 @@ msgstr ""
 
 #: tpk_section.h:17
 msgid "wireless"
-msgstr ""
+msgstr "WLAN"
 
 #: tpk_description.h:174
 msgid "wireless 8192cu.ko model"

@@ -847,7 +847,7 @@ msgstr "Activate new network configuration?"
 msgid "Album:"
 msgstr ""
 
-#: channellist.h:794 channellist.h:795 channellist.h:1235 channellist.h:1236
+#: channellist.h:771 channellist.h:772 channellist.h:1212 channellist.h:1213
 msgid "All Channels"
 msgstr ""
 
@@ -1608,7 +1608,7 @@ msgstr "No. of Bouquets: "
 msgid "BouquetEntrys: "
 msgstr "Bouquet Entries: "
 
-#: channellist.h:725 channellist.h:1251 channellist.h:1252 channellist.h:1464
+#: channellist.h:702 channellist.h:1228 channellist.h:1229 channellist.h:1441
 #: webif_channellist.h:5
 msgid "Bouquets"
 msgstr "Favourites"
@@ -1863,7 +1863,7 @@ msgstr ""
 "ERROR: Can't open Frontend Device or\n"
 "Frontend Type is unknown."
 
-#: channellist.h:1029
+#: channellist.h:1006
 msgid "Can't remove akive Service"
 msgstr "Can't remove active Service"
 
@@ -1964,7 +1964,7 @@ msgstr "Change to SCART output"
 msgid "Change: "
 msgstr ""
 
-#: channellist.h:742 channellist.h:1604 skin_default_skin.xml.h:137
+#: channellist.h:719 channellist.h:1581 skin_default_skin.xml.h:137
 msgid "Channel"
 msgstr ""
 
@@ -2069,7 +2069,7 @@ msgstr ""
 msgid "Channellist view"
 msgstr ""
 
-#: channellist.h:1319 channellist.h:1320
+#: channellist.h:1296 channellist.h:1297
 msgid "Channels A-Z"
 msgstr ""
 
@@ -2387,23 +2387,23 @@ msgstr ""
 msgid "Copy Modus Font Color"
 msgstr ""
 
-#: channellist.h:619
+#: channellist.h:596
 msgid "Copy mode"
 msgstr "Copy"
 
-#: channellist.h:938
+#: channellist.h:915
 msgid "Copy providerlist not ok"
 msgstr "ATTENTION: Providers not copied"
 
-#: channellist.h:936
+#: channellist.h:913
 msgid "Copy providerlist successfull"
 msgstr "Providers copied successfully"
 
-#: channellist.h:945
+#: channellist.h:922
 msgid "Copy satlist not ok"
 msgstr "ATTENTION: Channels not copied"
 
-#: channellist.h:943
+#: channellist.h:920
 msgid "Copy satlist successfull"
 msgstr "Channels copied successfully"
 
@@ -3114,8 +3114,8 @@ msgstr "ERROR: can't set marker in this file"
 
 #: about.h:9 ard.h:31 autotimer.c:537 autotimer.c:543 autotimer.c:568
 #: autotimer.c:575 autotimer.c:603 avsettings.h:291 betarobot.h:57
-#: bgdownload.h:176 blindscanadjust.h:25 channellist.h:936 channellist.h:938
-#: channellist.h:943 channellist.h:945 channellist.h:1029 divxstage.h:36
+#: bgdownload.h:176 blindscanadjust.h:25 channellist.h:913 channellist.h:915
+#: channellist.h:920 channellist.h:922 channellist.h:1006 divxstage.h:36
 #: divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336 dlna.h:345
 #: dvdplay.h:62 epgsearch.h:27 epgsettings.h:263 epgsettings.h:289
 #: epgsettings.h:303 extensions.h:190 extensions.h:241 extensions.h:250
@@ -3246,7 +3246,7 @@ msgstr ""
 msgid "Edit Playlist"
 msgstr ""
 
-#: channellist.h:637
+#: channellist.h:614
 msgid "Edit mode"
 msgstr "Edit"
 
@@ -5642,8 +5642,8 @@ msgid "Menulist"
 msgstr ""
 
 #: ard.h:31 avsettings.h:291 betarobot.h:57 bgdownload.h:176
-#: blindscanadjust.h:25 callmon_main.h:39 channellist.h:936 channellist.h:938
-#: channellist.h:943 channellist.h:945 channellist.h:1029 divxstage.h:36
+#: blindscanadjust.h:25 callmon_main.h:39 channellist.h:913 channellist.h:915
+#: channellist.h:920 channellist.h:922 channellist.h:1006 divxstage.h:36
 #: divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336 dlna.h:345
 #: dvdplay.h:62 epgsearch.h:27 epgsettings.h:263 epgsettings.h:289
 #: extensions.h:267 extensions.h:324 extensions.h:356 extensions.h:416
@@ -5838,7 +5838,7 @@ msgstr ""
 msgid "Move Modus Font Color"
 msgstr ""
 
-#: channellist.h:601
+#: channellist.h:578
 msgid "Move mode"
 msgstr "Move"
 
@@ -6174,8 +6174,8 @@ msgstr ""
 
 #: about.h:9 ard.h:31 autotimer.c:537 autotimer.c:543 autotimer.c:568
 #: autotimer.c:575 autotimer.c:603 avsettings.h:291 betarobot.h:57
-#: bgdownload.h:176 blindscanadjust.h:25 callmon_main.h:39 channellist.h:936
-#: channellist.h:938 channellist.h:943 channellist.h:945 channellist.h:1029
+#: bgdownload.h:176 blindscanadjust.h:25 callmon_main.h:39 channellist.h:913
+#: channellist.h:915 channellist.h:920 channellist.h:922 channellist.h:1006
 #: divxstage.h:36 divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336
 #: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:263 epgsettings.h:289
 #: epgsettings.h:303 extensions.h:190 extensions.h:241 extensions.h:250
@@ -7045,7 +7045,7 @@ msgstr ""
 msgid "Protect Modus Font Color"
 msgstr ""
 
-#: channellist.h:628
+#: channellist.h:605
 msgid "Protect mode"
 msgstr "Protect"
 
@@ -7053,7 +7053,7 @@ msgstr "Protect"
 msgid "Prov"
 msgstr ""
 
-#: channellist.h:775 channellist.h:1353 channellist.h:1354 channellist.h:1678
+#: channellist.h:752 channellist.h:1330 channellist.h:1331 channellist.h:1655
 #: webif_channellist.h:3
 msgid "Provider"
 msgstr ""
@@ -7163,7 +7163,7 @@ msgstr ""
 msgid "RTL2-Now"
 msgstr ""
 
-#: channellist.h:712 channellist.h:1788 httpdfunc.h:292 httpdfunc.h:701
+#: channellist.h:689 channellist.h:1765 httpdfunc.h:292 httpdfunc.h:701
 #: scan.h:530 skin_default_skin.xml.h:537 webif_index.atemio5200.h:69
 #: webif_index.atemio5200.h:125 webif_index.atemio6200.h:69
 #: webif_index.atemio6200.h:125 webif_index.atemio-nemesis.h:69
@@ -7456,7 +7456,7 @@ msgstr ""
 msgid "Remove error"
 msgstr "ERROR: Removing failed!"
 
-#: channellist.h:610
+#: channellist.h:587
 msgid "Remove mode"
 msgstr "Remove"
 
@@ -7880,7 +7880,7 @@ msgstr "Satellite Type"
 msgid "Satellite"
 msgstr ""
 
-#: channellist.h:758 channellist.h:1285 channellist.h:1286 channellist.h:1538
+#: channellist.h:735 channellist.h:1262 channellist.h:1263 channellist.h:1515
 msgid "Satellites"
 msgstr ""
 
@@ -9249,7 +9249,7 @@ msgstr ""
 msgid "TSID:"
 msgstr ""
 
-#: channellist.h:717 channellist.h:1783 httpdfunc.h:286 httpdfunc.h:696
+#: channellist.h:694 channellist.h:1760 httpdfunc.h:286 httpdfunc.h:696
 #: scan.h:528
 msgid "TV"
 msgstr ""
@@ -10945,7 +10945,7 @@ msgstr "Broadcast address"
 
 #: tpk_section.h:2
 msgid "browser"
-msgstr ""
+msgstr "Browser"
 
 #: screensaveradjust.h:36
 msgid "burlywood1"
@@ -11256,7 +11256,7 @@ msgstr "No Module"
 
 #: tpk_section.h:3
 msgid "emus"
-msgstr ""
+msgstr "Softcams"
 
 #: weather.h:137
 msgid "en-GB"
@@ -11368,7 +11368,7 @@ msgstr ""
 
 #: tpk_section.h:4
 msgid "fonts"
-msgstr ""
+msgstr "Fonts"
 
 #: tithek.h:887
 msgid "found"
@@ -11532,7 +11532,7 @@ msgstr ""
 
 #: tpk_section.h:6
 msgid "infos"
-msgstr ""
+msgstr "Infos"
 
 #: moduleconfig.h:356
 msgid "initializing"
@@ -11613,11 +11613,11 @@ msgstr ""
 
 #: tpk_section.h:8
 msgid "lcdpearlskins"
-msgstr ""
+msgstr "Pearl LCD Skins"
 
 #: tpk_section.h:9
 msgid "lcdsamsungskins"
-msgstr ""
+msgstr "Samsung LCD Skins"
 
 #: sudoku.c:167
 msgid "left"
@@ -12101,7 +12101,7 @@ msgstr "Picture 5"
 
 #: tpk_section.h:11
 msgid "picons"
-msgstr ""
+msgstr "Picons"
 
 #: skinadjust.h:69 tmc.h:542
 msgid "picture"
@@ -12133,7 +12133,7 @@ msgstr "PL2303 Module"
 
 #: tpk_section.h:12
 msgid "player"
-msgstr ""
+msgstr "Player"
 
 #: webif_help.h:65
 msgid "playinfobar"
@@ -12469,7 +12469,7 @@ msgstr ""
 
 #: tpk_section.h:14
 msgid "settings"
-msgstr ""
+msgstr "Settings"
 
 #: webif_help.h:83
 msgid "settingsmenu"
@@ -12548,7 +12548,7 @@ msgstr ""
 
 #: tpk_section.h:15
 msgid "skins"
-msgstr ""
+msgstr "Skins"
 
 #: webif_help.h:87
 msgid "skinselect"
@@ -12866,7 +12866,7 @@ msgstr ""
 
 #: tpk_section.h:16
 msgid "tools"
-msgstr ""
+msgstr "Tools"
 
 #: webif_help.h:110
 msgid "tpkinstall"

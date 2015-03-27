@@ -379,6 +379,7 @@ msgid ""
 "A collection of really nice folder icons for MediaCenter Videoplayer "
 "Coverview!"
 msgstr ""
+"Коллекция симпатичных иконок папок для MediaCenter Videoplayer Coverview!"
 
 msgid ""
 "A list of currently used network shares. You can add, edit, delete shares or "
@@ -564,31 +565,37 @@ msgid ""
 msgstr "Альтернативный кодек работает не корректно с видео (DTSDOWNMIX)!"
 
 msgid "Alternative blue skin for Pearl LCD "
-msgstr ""
+msgstr "Альтернативный синий скин для Pearl LCD"
 
 msgid "Alternative skin for Pearl LCD"
-msgstr ""
+msgstr "Альтернативный скин для Pearl LCD"
 
 msgid ""
 "Alternative skin for Pearl LCD - X-Light picons must be installed separately"
 msgstr ""
+"Альтернативный скин для Pearl LCD - X-Light Picons (Должен быть установлен "
+"отдельно)"
 
 msgid "Alternative skin for Pearl LCD Atemio style"
-msgstr ""
+msgstr "Альтернативный скин для Pearl LCD в стиле Atemio"
 
 msgid "Alternative skin for Pearl LCD MRP style"
-msgstr ""
+msgstr "Альтернативный скин для Pearl LCD в стиле MRP"
 
 msgid "Alternative skin for Pearl LCD big/black"
-msgstr ""
+msgstr "Альтернативный скин для Pearl LCD (Большой/чёрный)"
 
 msgid ""
 "Alternative skin for Samsung LCD - w/o Picons (must be installed separately)"
 msgstr ""
+"Альтернативный скин для Samsung LCD - W/O Picons (Должен быть установлен "
+"отдельно)"
 
 msgid ""
 "Alternative skin for Samsung LCD - w/o picons (must be installed separately)"
 msgstr ""
+"Альтернативный скин для Samsung LCD - W/O Picons (Должен быть установлен "
+"отдельно)"
 
 msgid "Amount of files: "
 msgstr "Количество файлов "
@@ -815,7 +822,7 @@ msgid "Automatic update"
 msgstr "Автообновление"
 
 msgid "Automatisch Timer setzen"
-msgstr ""
+msgstr "Автоматическая установка таймера"
 
 msgid "Automount"
 msgstr "Автомонтирование"
@@ -977,13 +984,13 @@ msgid "Bitrate"
 msgstr "Битрейт"
 
 msgid "Black 3D Picons - Astra 23.5E."
-msgstr ""
+msgstr "Чёрные 3D пиконы Astra 23.5E"
 
 msgid "Black 3D Picons - Hotbird 13.0E."
-msgstr ""
+msgstr "Чёрные 3D пиконы Hotbird 13.0E"
 
 msgid "Black 3D Picons Astra 19.2"
-msgstr ""
+msgstr "Чёрные 3D пиконы Astra 19.2"
 
 msgid "Black Picons - Eutelsat 36.0E."
 msgstr ""
@@ -1022,70 +1029,70 @@ msgid "Bootlogo"
 msgstr "Загружать логотип при старте"
 
 msgid "Bootlogo 'Bikergirl'"
-msgstr ""
+msgstr "Бутлого 'Bikergirl'"
 
 msgid "Bootlogo 'Blueskull'"
-msgstr ""
+msgstr "Бутлого 'Blueskull'"
 
 msgid "Bootlogo 'Cityflash'"
-msgstr ""
+msgstr "Бутлого 'Cityflash'"
 
 msgid "Bootlogo 'Enigma Linux'"
-msgstr ""
+msgstr "Бутлого 'Enigma Linux'"
 
 msgid "Bootlogo 'Fantasygirl 2'"
-msgstr ""
+msgstr "Бутлого 'Fantasygirl 2'"
 
 msgid "Bootlogo 'Fantasygirl'"
-msgstr ""
+msgstr "Бутлого 'Fantasygirl'"
 
 msgid "Bootlogo 'Firelady'"
-msgstr ""
+msgstr "Бутлого 'Firelady'"
 
 msgid "Bootlogo 'Fireskull'"
-msgstr ""
+msgstr "Бутлого 'Fireskull'"
 
 msgid "Bootlogo 'Footballgirls'"
-msgstr ""
+msgstr "Бутлого 'Footballgirls'"
 
 msgid "Bootlogo 'Ghostrider'"
-msgstr ""
+msgstr "Бутлого 'Ghostrider'"
 
 msgid "Bootlogo 'Giantgirl'"
-msgstr ""
+msgstr "Бутлого 'Giantgirl'"
 
 msgid "Bootlogo 'Ice Age Scrap likes UFS910'"
-msgstr ""
+msgstr "Бутлого 'Ice Age Scrap likes UFS910'"
 
 msgid "Bootlogo 'Linuxgirl'"
-msgstr ""
+msgstr "Бутлого 'Linuxgirl'"
 
 msgid "Bootlogo 'Planets'"
-msgstr ""
+msgstr "Бутлого 'Planets'"
 
 msgid "Bootlogo 'The Grim Reaper'"
-msgstr ""
+msgstr "Бутлого 'The Grim Reaper'"
 
 msgid "Bootlogo 'TitanNit Blood'"
-msgstr ""
+msgstr "Бутлого 'TitanNit Blood'"
 
 msgid "Bootlogo 'TitanNit Design 1'"
-msgstr ""
+msgstr "Бутлого 'TitanNit Design 1'"
 
 msgid "Bootlogo 'TitanNit Design 3'"
-msgstr ""
+msgstr "Бутлого 'TitanNit Design 3'"
 
 msgid "Bootlogo 'TitanNit Design 5'"
-msgstr ""
+msgstr "Бутлого 'TitanNit Design 5'"
 
 msgid "Bootlogo 'TitanNit Leather'"
-msgstr ""
+msgstr "Бутлого 'TitanNit Leather'"
 
 msgid "Bootlogo 'TitanNit_on_Fire'"
-msgstr ""
+msgstr "Бутлого 'TitanNit_on_Fire'"
 
 msgid "Bootlogo 'Zombie'"
-msgstr ""
+msgstr "Бутлого 'Zombie'"
 
 msgid "Border Color"
 msgstr ""
@@ -1193,19 +1200,19 @@ msgid "Cable: "
 msgstr "Кабельные"
 
 msgid "Cable: Kabel Deutschland UH-Kreis"
-msgstr ""
+msgstr "Кабельное: Настройки по умолчанию Kabel Deutschland"
 
 msgid "Cable: Kabel Primacom"
-msgstr ""
+msgstr "Кабельное: Kabel Primacom"
 
 msgid "Cable: Unitymedia2"
-msgstr ""
+msgstr "Кабельное: Unitymedia2"
 
 msgid "Cable: default Settings Kabel Deutschland"
 msgstr ""
 
 msgid "Cable: sofatester Kabel BW"
-msgstr ""
+msgstr "Кабельное: Sofatester Kabel BW"
 
 msgid "CallMonitor"
 msgstr ""
@@ -1557,7 +1564,7 @@ msgid "Code2"
 msgstr "Код 2"
 
 msgid "Codepack"
-msgstr ""
+msgstr "Пакет кодеков"
 
 msgid "Coderate HP"
 msgstr "Кодовая скорость HP"
@@ -1795,10 +1802,10 @@ msgid "DVBS2"
 msgstr ""
 
 msgid "DVD Player"
-msgstr ""
+msgstr "DVD плеер"
 
 msgid "DVD-Player plugin"
-msgstr ""
+msgstr "DVD плеер"
 
 msgid "DYNDNS Settings"
 msgstr "Параметры DYNDNS"
@@ -1874,7 +1881,7 @@ msgid "Default Font"
 msgstr ""
 
 msgid "Default Skin"
-msgstr ""
+msgstr "Скин по умолчанию"
 
 msgid "Default mod by maenne79"
 msgstr ""
@@ -2206,7 +2213,7 @@ msgid "Emu Control"
 msgstr "Контроль эмулятора"
 
 msgid "Emu MGCamd v1.38a and all Configs"
-msgstr ""
+msgstr "Эмулятор MGCamd v1.38a"
 
 msgid "Emu Running Color"
 msgstr ""
@@ -2454,7 +2461,7 @@ msgid "File Caching Playback (30MB / 360s)"
 msgstr "Кэширование файлов воспроизведения (30Мб/360 сек)"
 
 msgid "File Manager"
-msgstr ""
+msgstr "Файловый менеджер"
 
 msgid "File exist, overwrite?"
 msgstr "Файл существует, перезаписать?"
@@ -2771,16 +2778,16 @@ msgid "Goals"
 msgstr ""
 
 msgid "Gold Picons - Astra 23.5E."
-msgstr ""
+msgstr "Золотые пиконы Astra 23.5E"
 
 msgid "Gold Picons - Astra 28.2E."
-msgstr ""
+msgstr "Золотые пиконы Astra 28.2E"
 
 msgid "Gold Picons - Hotbird 13.0E."
-msgstr ""
+msgstr "Золотые пиконы Hotbird 13.0E"
 
 msgid "Gold Picons Astra 19.2"
-msgstr ""
+msgstr "Золотые пиконы Astra 19.2"
 
 msgid "GoodPlayer"
 msgstr ""
@@ -3190,13 +3197,13 @@ msgid "IMDB Search"
 msgstr "IMDB поиск"
 
 msgid "IMDb"
-msgstr ""
+msgstr "Плагин IMDb"
 
 msgid "IMDb - Plugin"
 msgstr "Плагин IMDB"
 
 msgid "IMDb-API"
-msgstr ""
+msgstr "Плагин IMDb-API"
 
 msgid "IMDb-API - Plugin"
 msgstr "Плагин IMDb-API"
@@ -3214,7 +3221,7 @@ msgid "IP-FritzBox"
 msgstr ""
 
 msgid "IP-Kamera"
-msgstr ""
+msgstr "IP-камера"
 
 msgid "IP-Kamera 1"
 msgstr ""
@@ -5195,7 +5202,7 @@ msgid "SID:"
 msgstr "SID"
 
 msgid "SMB Client Lib v3.0.28b (/media/smbfs)"
-msgstr ""
+msgstr "SMB клиент"
 
 msgid "SNR:"
 msgstr "SNR"
@@ -5933,7 +5940,7 @@ msgid "Smartcard Ports found: "
 msgstr "Порты смарт-карт "
 
 msgid "SmbClient (Win7)"
-msgstr ""
+msgstr "SMB клиент (Win7)"
 
 msgid "Social Network Client for Facebook."
 msgstr ""
@@ -6138,7 +6145,7 @@ msgid "Subtitle"
 msgstr "Субтитры"
 
 msgid "Sudoku"
-msgstr ""
+msgstr "Игра Sudoku"
 
 msgid "Sudoku Help"
 msgstr ""
@@ -6235,7 +6242,7 @@ msgid "TITLE"
 msgstr "Название"
 
 msgid "TMDb"
-msgstr ""
+msgstr "Плагин TMDb"
 
 msgid "TMDb - Plugin"
 msgstr "Плагины"
@@ -6395,7 +6402,7 @@ msgid "Thursday"
 msgstr "Четверг"
 
 msgid "TiTan Mediathek"
-msgstr ""
+msgstr "Медиотека TiTan"
 
 msgid "TiThek - Favorite Edit"
 msgstr "Редактор фаворитов"
@@ -6518,7 +6525,7 @@ msgid "Titan Log"
 msgstr "Лог Titan"
 
 msgid "Titan MediaCenter"
-msgstr ""
+msgstr "Медиацент Titan"
 
 msgid "Titan will be restarted!"
 msgstr "Titan будет перезагружен!"
@@ -7114,13 +7121,13 @@ msgid "WebStream"
 msgstr "Web поток"
 
 msgid "Webbrowser Netsurf"
-msgstr ""
+msgstr "Веб-браузер Netsurf"
 
 msgid "Webbrowser Plugin"
-msgstr ""
+msgstr "Веб-браузер "
 
 msgid "Webbrowser Plugin "
-msgstr ""
+msgstr "Веб-браузер "
 
 msgid "Wed"
 msgstr ""
@@ -7351,7 +7358,7 @@ msgid "all"
 msgstr "Все"
 
 msgid "all: test Settings Astra 19.2 all transponder"
-msgstr ""
+msgstr "Сеттинги Astra 19.2"
 
 msgid "alle Menus anzeigen"
 msgstr "Показать все меню"
@@ -7453,7 +7460,7 @@ msgid "blue"
 msgstr "Синяя"
 
 msgid "bootlogos"
-msgstr ""
+msgstr "Бутлого"
 
 msgid "bootstop"
 msgstr "Остановка загрузки"
@@ -7468,7 +7475,7 @@ msgid "broadcast"
 msgstr "Адрес передачи"
 
 msgid "browser"
-msgstr ""
+msgstr "Браузеры"
 
 msgid "burlywood1"
 msgstr "Древесный"
@@ -7570,7 +7577,7 @@ msgid "cut is running"
 msgstr "Операция выполняется"
 
 msgid "cut record files"
-msgstr ""
+msgstr "Резка записанных файлов"
 
 msgid "d"
 msgstr ""
@@ -7693,7 +7700,7 @@ msgid "empty"
 msgstr "Нет модуля"
 
 msgid "emus"
-msgstr ""
+msgstr "Эмуляторы"
 
 msgid "en-GB"
 msgstr "ru-RU"
@@ -7771,10 +7778,10 @@ msgid "first slot"
 msgstr "Первый слот"
 
 msgid "first titan game"
-msgstr ""
+msgstr "Первая игра Titan"
 
 msgid "fonts"
-msgstr ""
+msgstr "Шрифты"
 
 msgid "found"
 msgstr "Найдено"
@@ -7804,7 +7811,7 @@ msgid "g"
 msgstr ""
 
 msgid "games"
-msgstr ""
+msgstr "Игры"
 
 msgid "gateway"
 msgstr "Шлюз"
@@ -7896,7 +7903,7 @@ msgid "infomenu"
 msgstr ""
 
 msgid "infos"
-msgstr ""
+msgstr "Информаторы"
 
 msgid "initializing"
 msgstr "Инициализация"
@@ -7941,7 +7948,7 @@ msgid "key pip"
 msgstr "Кнопка PiP"
 
 msgid "keymaps"
-msgstr ""
+msgstr "Клавиатура"
 
 msgid "l"
 msgstr ""
@@ -7953,10 +7960,10 @@ msgid "language"
 msgstr "Язык меню"
 
 msgid "lcdpearlskins"
-msgstr ""
+msgstr "Скины LCD Pearl"
 
 msgid "lcdsamsungskins"
-msgstr ""
+msgstr "Скины LCD Samsung"
 
 msgid "left"
 msgstr "Влево"
@@ -8220,7 +8227,7 @@ msgid "open in new window"
 msgstr "Открыть в новом окне"
 
 msgid "optimize Plugin"
-msgstr ""
+msgstr "Плагин оптимизации системы"
 
 msgid "options"
 msgstr "Опции"
@@ -8262,7 +8269,7 @@ msgid "pic5"
 msgstr ""
 
 msgid "picons"
-msgstr ""
+msgstr "Пиконы"
 
 msgid "picture"
 msgstr "Картинка"
@@ -8286,7 +8293,7 @@ msgid "pl2303"
 msgstr ""
 
 msgid "player"
-msgstr ""
+msgstr "Плеер"
 
 msgid "playinfobar"
 msgstr ""
@@ -8484,7 +8491,7 @@ msgid "screensaveradjust"
 msgstr ""
 
 msgid "scriptexec Plugin"
-msgstr ""
+msgstr "Плагин запуска скриптов"
 
 msgid "search east"
 msgstr "Поиск Восток"
@@ -8535,7 +8542,7 @@ msgid "set startchannel"
 msgstr "Сделать канал стартовым"
 
 msgid "settings"
-msgstr ""
+msgstr "Сеттинги"
 
 msgid "settingsmenu"
 msgstr ""
@@ -8592,7 +8599,7 @@ msgid "skinadjust"
 msgstr ""
 
 msgid "skins"
-msgstr ""
+msgstr "Скины"
 
 msgid "skinselect"
 msgstr ""
@@ -8820,7 +8827,7 @@ msgid "toneburst, uncommitted, committed"
 msgstr ""
 
 msgid "tools"
-msgstr ""
+msgstr "Утилиты"
 
 msgid "tpkinstall"
 msgstr ""
@@ -8994,7 +9001,7 @@ msgid "waiting"
 msgstr "Ожидание"
 
 msgid "weather Plugin"
-msgstr ""
+msgstr "Плагин погоды"
 
 msgid "webdir"
 msgstr ""
@@ -9015,7 +9022,7 @@ msgid "will be set by plugin"
 msgstr "Будет установлен плагин"
 
 msgid "wireless"
-msgstr ""
+msgstr "Беспроводная сеть"
 
 msgid "wireless 8192cu.ko model"
 msgstr ""

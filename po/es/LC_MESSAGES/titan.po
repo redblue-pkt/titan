@@ -253,7 +253,7 @@ msgid "3 GB"
 msgstr ""
 
 msgid "3 Wins"
-msgstr ""
+msgstr "3 conexiones"
 
 msgid "30"
 msgstr ""
@@ -379,6 +379,8 @@ msgid ""
 "A collection of really nice folder icons for MediaCenter Videoplayer "
 "Coverview!"
 msgstr ""
+"Una bonita selección de imágenes para el Media Center reproductor de vídeo y "
+"de la cubierta preliminar!"
 
 msgid ""
 "A list of currently used network shares. You can add, edit, delete shares or "
@@ -821,7 +823,7 @@ msgid "Automatic update"
 msgstr ""
 
 msgid "Automatisch Timer setzen"
-msgstr ""
+msgstr "automaticamente ajustar el temporizador"
 
 msgid "Automount"
 msgstr "Integracion automatica"
@@ -1207,7 +1209,7 @@ msgid "Cable: Unitymedia2"
 msgstr ""
 
 msgid "Cable: default Settings Kabel Deutschland"
-msgstr ""
+msgstr "Cable: Lista de canales por cable estándar Alemania"
 
 msgid "Cable: sofatester Kabel BW"
 msgstr ""
@@ -1229,6 +1231,8 @@ msgstr ""
 
 msgid "Callmonitor Plugin"
 msgstr ""
+"monitor de llamada para la visualización de las llamadas entrantes y "
+"salientes"
 
 msgid "Cam / Emu"
 msgstr "Softcam y USB driver"
@@ -1591,7 +1595,7 @@ msgid "Code2"
 msgstr "Codigo 2: "
 
 msgid "Codepack"
-msgstr ""
+msgstr "Codecpack"
 
 msgid "Coderate HP"
 msgstr ""
@@ -1909,16 +1913,16 @@ msgid "Default Autostart"
 msgstr "General"
 
 msgid "Default Font"
-msgstr ""
+msgstr "Fuente por Defecto"
 
 msgid "Default Skin"
-msgstr ""
+msgstr "Standard Skin"
 
 msgid "Default mod by maenne79"
 msgstr ""
 
 msgid "Default skin without MiniTV"
-msgstr ""
+msgstr "Standard Skin sin MiniTV"
 
 msgid "Default skin without MiniTV mod by maenne79"
 msgstr ""
@@ -2242,13 +2246,13 @@ msgid "Emu Active Color"
 msgstr ""
 
 msgid "Emu Camd3 v3.902 for your box"
-msgstr ""
+msgstr "Softcam camd3.902"
 
 msgid "Emu Control"
 msgstr "Softcam control"
 
 msgid "Emu MGCamd v1.38a and all Configs"
-msgstr ""
+msgstr "Softcam MGCamd V1.38"
 
 msgid "Emu Running Color"
 msgstr ""
@@ -2260,10 +2264,10 @@ msgid "Emu not found"
 msgstr "Softcam no encontrado"
 
 msgid "Emu scam 3.60 for your box"
-msgstr ""
+msgstr "Softcam SCam V3.60"
 
 msgid "Emu vizcam 1.04 for your box"
-msgstr ""
+msgstr "Softcam vizcam V1.04"
 
 msgid "Enable"
 msgstr "Activar"
@@ -2497,7 +2501,7 @@ msgid "File Caching Playback (30MB / 360s)"
 msgstr "Buffer Playback (30MB / 360 Seg)"
 
 msgid "File Manager"
-msgstr ""
+msgstr "Administrador de archivos"
 
 msgid "File exist, overwrite?"
 msgstr ""
@@ -2569,40 +2573,40 @@ msgid "Flashupdate (tmp)"
 msgstr "Actualizacion de software (Local)"
 
 msgid "Font 'Action Man Italic' "
-msgstr ""
+msgstr "Fuente 'Accion Man Italic'"
 
 msgid "Font 'Alpha Romanie G98'"
-msgstr ""
+msgstr "Fuente 'Alpha Romanie G98'"
 
 msgid "Font 'Croissant' "
-msgstr ""
+msgstr "Fuentet 'Croissant'"
 
 msgid "Font 'Digiface Regular' "
-msgstr ""
+msgstr "Fuente 'Digiface Regular'"
 
 msgid "Font 'Goodtime'"
-msgstr ""
+msgstr "Fuente 'Goodtime'"
 
 msgid "Font 'I Hate Comic Sans'"
-msgstr ""
+msgstr "Fuente 'I Hate Comic Sans'"
 
 msgid "Font 'Lydian Bolt Italic BT' "
-msgstr ""
+msgstr "Fuente 'Lydian Bolt Italic BT' "
 
 msgid "Font 'Mighty Zeo Caps'"
-msgstr ""
+msgstr "Fuente 'Mighty Zeo Caps'"
 
 msgid "Font 'Monoglyceride DemiBold'"
-msgstr ""
+msgstr "Fuentet 'Monoglyceride DemiBold'"
 
 msgid "Font 'New Gothic BT'"
-msgstr ""
+msgstr "Fuente 'New Gothic BT'"
 
 msgid "Font 'Paddington Bold'"
-msgstr ""
+msgstr "Fuente 'Paddington Bold'"
 
 msgid "Font 'Plover Bold'"
-msgstr ""
+msgstr "Fuente 'Plover Bold'"
 
 msgid "Font Color"
 msgstr ""
@@ -3289,7 +3293,7 @@ msgid "IP-Kamera Einstellungen"
 msgstr ""
 
 msgid "IP-Kamera zB. Firma INSTAR"
-msgstr ""
+msgstr "IP Camera eg. INSTAR"
 
 msgid "Ice Age Scrap likes UFS910"
 msgstr ""
@@ -3315,10 +3319,10 @@ msgid "Image"
 msgstr ""
 
 msgid "ImdB Info Plugin"
-msgstr ""
+msgstr "IMDb Info"
 
 msgid "ImdBapi Info Plugin"
-msgstr ""
+msgstr "IMDbapi Info"
 
 msgid "Inc. AC3 Audio in %"
 msgstr "Conoce AC3 Audio Volumen reduciendo Stereo-audio en%"
@@ -3681,7 +3685,7 @@ msgid "Lib Pack (ufs910/ufs922)"
 msgstr ""
 
 msgid "Lib extension for network (upnpfs/smbfs/ftpfs/rarfs)"
-msgstr ""
+msgstr "extensión protocolo de red (upnpfs/smbfs/ftpfs/rarfs)"
 
 msgid "License"
 msgstr ""
@@ -4153,7 +4157,7 @@ msgid "Network Test"
 msgstr "Prueba de Conexion"
 
 msgid "Network browser extension for better Win7 compatibility"
-msgstr ""
+msgstr "extensión del navegador de red para una mejor compatibilidad Win7"
 
 msgid "Networkbrowser"
 msgstr "Navegador de red"
@@ -4168,7 +4172,7 @@ msgid "Networkbrowser - show scanned cifs/nfs-Shares"
 msgstr "Mostrar escaneado CIFS/NFS-Compartidos"
 
 msgid "Networkfile libsmbclient 3.0.28b"
-msgstr ""
+msgstr "SMB (Windows) libsmbclient 3.0.28b"
 
 msgid "Netzkino"
 msgstr ""
@@ -4476,7 +4480,7 @@ msgid "Parted"
 msgstr ""
 
 msgid "Partitions Tool fuer HDD > 2TB"
-msgstr ""
+msgstr "Herramienta de Partición de disco duro> 2 TB"
 
 msgid "Password"
 msgstr "Contraseña"
@@ -4503,7 +4507,7 @@ msgid "Permanent Time"
 msgstr ""
 
 msgid "Permanente Uhrzeit am Bildschirm"
-msgstr ""
+msgstr "Muestra permanente la hora en la pantalla"
 
 msgid "Photos postet"
 msgstr "fotos publicadas"
@@ -4773,7 +4777,7 @@ msgid "Power Off Timer"
 msgstr "Apagado Temporizado"
 
 msgid "Power off if box not used"
-msgstr ""
+msgstr "Apagar el receptor si no se utiliza."
 
 msgid "PowerControl"
 msgstr ""
@@ -5795,7 +5799,7 @@ msgid "Settings Hotbird 13.0, Astra 19.2"
 msgstr ""
 
 msgid "Settings Hotbird 13.0, Astra 19.2, Astra 28.2E"
-msgstr ""
+msgstr "Settings Hotbird 13.0/Astra 19.2/Astra 28.2E (Bulldog)"
 
 msgid "Settings OK ?"
 msgstr "Guardar la configuracion?"
@@ -6393,7 +6397,7 @@ msgid "TXT PID:"
 msgstr "TXT PID: "
 
 msgid "Tastensperre Plugin - entsperren mit rot/rot/gruen"
-msgstr ""
+msgstr "Bloqueo de teclas Plugin - desbloquearlo con rojo/rojo/verde"
 
 msgid "Team"
 msgstr ""
@@ -6815,13 +6819,13 @@ msgid "Transponderlist"
 msgstr "Transpondedor Lista"
 
 msgid "Treiber fuer Pearl LCD V4.0"
-msgstr ""
+msgstr "Driver para Pearl LCD V4.0"
 
 msgid "Treiber fuer Pearl LCD V5.0"
 msgstr ""
 
 msgid "Treiber fuer Samsung LCD"
-msgstr ""
+msgstr "Driver para Samsung LCD"
 
 msgid "Trial period ends in"
 msgstr ""
@@ -7220,10 +7224,10 @@ msgid "Webbrowser Netsurf"
 msgstr ""
 
 msgid "Webbrowser Plugin"
-msgstr ""
+msgstr "Internet Browser"
 
 msgid "Webbrowser Plugin "
-msgstr ""
+msgstr "Internet Browser"
 
 msgid "Wed"
 msgstr "Mier"
@@ -7232,7 +7236,7 @@ msgid "Wednesday"
 msgstr "Miercoles"
 
 msgid "Werbezapper"
-msgstr ""
+msgstr "Publicidadzapper"
 
 msgid "Western"
 msgstr ""
@@ -7556,7 +7560,7 @@ msgid "blue"
 msgstr "Azul"
 
 msgid "bootlogos"
-msgstr ""
+msgstr "Bootlogos"
 
 msgid "bootstop"
 msgstr "parada de arranque"
@@ -7571,7 +7575,7 @@ msgid "broadcast"
 msgstr "direccion de difusion"
 
 msgid "browser"
-msgstr ""
+msgstr "Navegador de Red"
 
 msgid "burlywood1"
 msgstr ""
@@ -7673,7 +7677,7 @@ msgid "cut is running"
 msgstr "Corre Seccion"
 
 msgid "cut record files"
-msgstr ""
+msgstr "ts cutter - cortar grabaciones locales"
 
 msgid "d"
 msgstr ""
@@ -7754,7 +7758,7 @@ msgid "diseqcscreen"
 msgstr "DiSEqC"
 
 msgid "dlna Medien Server (upnp)"
-msgstr ""
+msgstr "DLNA Media Server UPNP)"
 
 msgid "dnsaddresse"
 msgstr "DNS Direccion"
@@ -7796,7 +7800,7 @@ msgid "empty"
 msgstr "No Modulo"
 
 msgid "emus"
-msgstr ""
+msgstr "Softcams"
 
 msgid "en-GB"
 msgstr "es-ES"
@@ -7838,7 +7842,7 @@ msgid "ext"
 msgstr ""
 
 msgid "extended config Panel"
-msgstr ""
+msgstr "Menú Configuración avanzada"
 
 msgid "extensionsmenu"
 msgstr ""
@@ -7874,10 +7878,10 @@ msgid "first slot"
 msgstr "Primera ranura"
 
 msgid "first titan game"
-msgstr ""
+msgstr "El primer juego Titan"
 
 msgid "fonts"
-msgstr ""
+msgstr "Fuentes"
 
 msgid "found"
 msgstr "Encontrado"
@@ -7907,7 +7911,7 @@ msgid "g"
 msgstr ""
 
 msgid "games"
-msgstr ""
+msgstr "Juegos"
 
 msgid "gateway"
 msgstr "Puerta de Enlace"
@@ -7916,6 +7920,8 @@ msgid ""
 "gbox 806 with autoident for card hd+ and skyde including all necessary "
 "config files."
 msgstr ""
+"gbox 806 con autoident para hd tarjeta + y Skyde Incluyendo todos los "
+"archivos de configuración necesarios"
 
 msgid "gmultiepg"
 msgstr ""
@@ -7999,7 +8005,7 @@ msgid "infomenu"
 msgstr ""
 
 msgid "infos"
-msgstr ""
+msgstr "Infos"
 
 msgid "initializing"
 msgstr "inicializar"
@@ -8044,7 +8050,7 @@ msgid "key pip"
 msgstr ""
 
 msgid "keymaps"
-msgstr ""
+msgstr "Keymaps"
 
 msgid "l"
 msgstr ""
@@ -8056,10 +8062,10 @@ msgid "language"
 msgstr "Lenguaje"
 
 msgid "lcdpearlskins"
-msgstr ""
+msgstr "LCD Pearl Skins"
 
 msgid "lcdsamsungskins"
-msgstr ""
+msgstr "LCD Samsung Skins"
 
 msgid "left"
 msgstr ""
@@ -8200,10 +8206,10 @@ msgid "never del file"
 msgstr "Nunca elimine archivo Timeshift"
 
 msgid "newcs including all necessary config files."
-msgstr ""
+msgstr "NewCS + configs"
 
 msgid "news Plugin"
-msgstr ""
+msgstr "Plugins nuevos"
 
 msgid "newsletter"
 msgstr "Noticias"
@@ -8323,7 +8329,7 @@ msgid "open in new window"
 msgstr ""
 
 msgid "optimize Plugin"
-msgstr ""
+msgstr "Optimizacion de Lista de Canales"
 
 msgid "options"
 msgstr "Opciones"
@@ -8365,7 +8371,7 @@ msgid "pic5"
 msgstr "Imagen 5"
 
 msgid "picons"
-msgstr ""
+msgstr "Senderlogos"
 
 msgid "picture"
 msgstr "Foto"
@@ -8389,7 +8395,7 @@ msgid "pl2303"
 msgstr "PL2303 Modulo"
 
 msgid "player"
-msgstr ""
+msgstr "Multimedia Player"
 
 msgid "playinfobar"
 msgstr ""
@@ -8587,7 +8593,7 @@ msgid "screensaveradjust"
 msgstr ""
 
 msgid "scriptexec Plugin"
-msgstr ""
+msgstr "scripts personalizados (/mnt/scripts) run"
 
 msgid "search east"
 msgstr "Buscar Este"
@@ -8642,7 +8648,7 @@ msgid "set startchannel"
 msgstr "establecer como inicio canal"
 
 msgid "settings"
-msgstr ""
+msgstr "ajustes"
 
 msgid "settingsmenu"
 msgstr ""
@@ -8699,7 +8705,7 @@ msgid "skinadjust"
 msgstr ""
 
 msgid "skins"
-msgstr ""
+msgstr "Skins"
 
 msgid "skinselect"
 msgstr ""
@@ -8780,7 +8786,7 @@ msgid "step west"
 msgstr "Paso Oeste"
 
 msgid "stock Plugin"
-msgstr ""
+msgstr "Cuota Mercado"
 
 msgid "stop"
 msgstr "Stop"
@@ -8927,7 +8933,7 @@ msgid "toneburst, uncommitted, committed"
 msgstr ""
 
 msgid "tools"
-msgstr ""
+msgstr "Herramientas"
 
 msgid "tpkinstall"
 msgstr ""
@@ -8999,7 +9005,7 @@ msgid "updatelist"
 msgstr "Lista actualizada"
 
 msgid "usbreset Plugin"
-msgstr ""
+msgstr "USB reinicio extension"
 
 msgid "use last Directory"
 msgstr "Usar siempre último directorio"
@@ -9101,7 +9107,7 @@ msgid "waiting"
 msgstr "esperando"
 
 msgid "weather Plugin"
-msgstr ""
+msgstr "Weather extension"
 
 msgid "webdir"
 msgstr ""
@@ -9122,7 +9128,7 @@ msgid "will be set by plugin"
 msgstr ""
 
 msgid "wireless"
-msgstr ""
+msgstr "WLAN"
 
 msgid "wireless 8192cu.ko model"
 msgstr ""

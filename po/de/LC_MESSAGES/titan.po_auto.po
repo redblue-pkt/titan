@@ -648,6 +648,8 @@ msgid ""
 "A collection of really nice folder icons for MediaCenter Videoplayer "
 "Coverview!"
 msgstr ""
+"Eine hübsche Sammlung von Ordner-Symbolen für den Videoplayer im Media "
+"Center (Cover-Ansicht)!"
 
 #: plugins_networkbrowser_skin.xml.h:2 skins_networkbrowser_skin.xml.h:2
 msgid ""
@@ -685,11 +687,11 @@ msgstr ""
 
 #: tpk_description.h:1
 msgid "AAF MediaCenter, the best multimedia player on mipsel"
-msgstr ""
+msgstr "Der beste Mediaplayer für die sh4/mipsel Plattform"
 
 #: tpk_description.h:2
 msgid "AAF MediaCenter, the best multimedia player on sh4"
-msgstr ""
+msgstr "Der beste Mediaplayer für die sh4/mipsel Plattform."
 
 #: skin_default_skin.xml.h:52
 msgid "AC3 Mode"
@@ -866,7 +868,7 @@ msgstr "Neue Netzwerk Einstellungen aktivieren?"
 msgid "Album:"
 msgstr ""
 
-#: channellist.h:794 channellist.h:795 channellist.h:1235 channellist.h:1236
+#: channellist.h:771 channellist.h:772 channellist.h:1212 channellist.h:1213
 msgid "All Channels"
 msgstr "Alle Sender"
 
@@ -899,38 +901,42 @@ msgstr ""
 
 #: tpk_description.h:5
 msgid "Alternative blue skin for Pearl LCD "
-msgstr ""
+msgstr "Alternativer blauer Skin für Pearl-LCD"
 
 #: tpk_description.h:6
 msgid "Alternative skin for Pearl LCD"
-msgstr ""
+msgstr "Alternativer schwarzer Skin für Pearl-LCD"
 
 #: tpk_description.h:10
 msgid ""
 "Alternative skin for Pearl LCD - X-Light picons must be installed separately"
 msgstr ""
+"Alternativer Skin für Pearl-LCD (nur Senderlogo) - X-Light Senderlogos "
+"separat installieren!"
 
 #: tpk_description.h:7
 msgid "Alternative skin for Pearl LCD Atemio style"
-msgstr ""
+msgstr "Alternativer Skin für Pearl-LCD (Atemio-Stil)"
 
 #: tpk_description.h:9
 msgid "Alternative skin for Pearl LCD MRP style"
-msgstr ""
+msgstr "Alternativer Skin für Pearl-LCD (MRP-Stil)"
 
 #: tpk_description.h:8
 msgid "Alternative skin for Pearl LCD big/black"
-msgstr ""
+msgstr "Alternativer Skin für Pearl-LCD (groß/schwarz)"
 
 #: tpk_description.h:12
 msgid ""
 "Alternative skin for Samsung LCD - w/o Picons (must be installed separately)"
 msgstr ""
+"Alternativer Skin für Samsung-LCD (Trikots) - Senderlogos separat "
+"installieren!"
 
 #: tpk_description.h:11
 msgid ""
 "Alternative skin for Samsung LCD - w/o picons (must be installed separately)"
-msgstr ""
+msgstr "Alternativer Skin für Samsung-LCD - Senderlogos separat installieren!"
 
 #: copyfile.h:839
 msgid "Amount of files: "
@@ -1454,15 +1460,15 @@ msgstr ""
 
 #: tpk_description.h:16
 msgid "Black 3D Picons - Astra 23.5E."
-msgstr ""
+msgstr "Schwarze 3D-Senderlogos - Astra 23.5E"
 
 #: tpk_description.h:17
 msgid "Black 3D Picons - Hotbird 13.0E."
-msgstr ""
+msgstr "Schwarze 3D-Senderlogos - Hotbird 13.0"
 
 #: tpk_description.h:15
 msgid "Black 3D Picons Astra 19.2"
-msgstr ""
+msgstr "Schwarze 3D-Senderlogos - Astra 19.2"
 
 #: tpk_description.h:18
 msgid "Black Picons - Eutelsat 36.0E."
@@ -1635,7 +1641,7 @@ msgstr "Bouquets: "
 msgid "BouquetEntrys: "
 msgstr "Bouqueteinträge: "
 
-#: channellist.h:725 channellist.h:1251 channellist.h:1252 channellist.h:1464
+#: channellist.h:702 channellist.h:1228 channellist.h:1229 channellist.h:1441
 #: webif_channellist.h:5
 msgid "Bouquets"
 msgstr "Favoriten"
@@ -1757,23 +1763,23 @@ msgstr "Kabel: "
 
 #: tpk_description.h:42
 msgid "Cable: Kabel Deutschland UH-Kreis"
-msgstr ""
+msgstr "Kabel: Senderliste Kabel Deutschland UH-Kreis"
 
 #: tpk_description.h:43
 msgid "Cable: Kabel Primacom"
-msgstr ""
+msgstr "Kabel: Senderliste Primacom"
 
 #: tpk_description.h:45
 msgid "Cable: Unitymedia2"
-msgstr ""
+msgstr "Kabel: Senderliste Unitymedia"
 
 #: tpk_description.h:41
 msgid "Cable: default Settings Kabel Deutschland"
-msgstr ""
+msgstr "Kabel: Standard-Senderliste Kabel Deutschland"
 
 #: tpk_description.h:44
 msgid "Cable: sofatester Kabel BW"
-msgstr ""
+msgstr "Kabel: Senderliste Kabel BW (sofatester)"
 
 #: tpk_showname.h:13
 msgid "CallMonitor"
@@ -1795,7 +1801,7 @@ msgstr ""
 
 #: tpk_description.h:46
 msgid "Callmonitor Plugin"
-msgstr ""
+msgstr "Anrufmonitor zum Anzeigen ein- und ausgehender Anrufe"
 
 #: plugins_panel_skin.xml.h:6 skin_default_skin.xml.h:131
 #: skins_panel_skin.xml.h:6
@@ -1891,7 +1897,7 @@ msgstr "FEHLER: Kann Datei nicht öffnen!"
 msgid "Can't open frontend dev or Frontend Type unknown!"
 msgstr "Frontend kann nicht geöffnet werden oder unbekannter Typ"
 
-#: channellist.h:1029
+#: channellist.h:1006
 msgid "Can't remove akive Service"
 msgstr "Aktiver Sender kann nicht gelöscht werden!"
 
@@ -1997,7 +2003,7 @@ msgstr "Auf SCART-Ausgang wechseln"
 msgid "Change: "
 msgstr "Änderung: "
 
-#: channellist.h:742 channellist.h:1604 skin_default_skin.xml.h:137
+#: channellist.h:719 channellist.h:1581 skin_default_skin.xml.h:137
 msgid "Channel"
 msgstr "Sender"
 
@@ -2100,7 +2106,7 @@ msgstr "Senderliste fehlerhaft (Kanal nicht gefunden)!"
 msgid "Channellist view"
 msgstr "Nichtempfangbare Sender"
 
-#: channellist.h:1319 channellist.h:1320
+#: channellist.h:1296 channellist.h:1297
 msgid "Channels A-Z"
 msgstr "Sender A-Z"
 
@@ -2436,23 +2442,23 @@ msgstr ""
 msgid "Copy Modus Font Color"
 msgstr ""
 
-#: channellist.h:619
+#: channellist.h:596
 msgid "Copy mode"
 msgstr "Kopieren"
 
-#: channellist.h:938
+#: channellist.h:915
 msgid "Copy providerlist not ok"
 msgstr "Kopieren des Anbieters abgebrochen"
 
-#: channellist.h:936
+#: channellist.h:913
 msgid "Copy providerlist successfull"
 msgstr "Anbieter erfolgreich kopiert"
 
-#: channellist.h:945
+#: channellist.h:922
 msgid "Copy satlist not ok"
 msgstr "Kopieren des Satelliten abgebrochen"
 
-#: channellist.h:943
+#: channellist.h:920
 msgid "Copy satlist successfull"
 msgstr "Satelliten erfolgreich kopiert"
 
@@ -2613,7 +2619,7 @@ msgstr ""
 
 #: tpk_description.h:57
 msgid "DTS-Downmix firmware "
-msgstr ""
+msgstr "DTS-Downmix-Firmware"
 
 #: transponder.h:572 transponder.h:579
 msgid "DVBS"
@@ -2625,11 +2631,11 @@ msgstr "DVB-S2"
 
 #: tpk_showname.h:25
 msgid "DVD Player"
-msgstr ""
+msgstr "DVD-Player"
 
 #: tpk_description.h:58
 msgid "DVD-Player plugin"
-msgstr ""
+msgstr "DVD-Player Plugin"
 
 #: skin_default_skin.xml.h:215
 msgid "DYNDNS Settings"
@@ -2725,7 +2731,7 @@ msgstr "Allgemein"
 
 #: tpk_description.h:50 tpk_showname.h:21
 msgid "Default Font"
-msgstr ""
+msgstr "Standard-Schriftart"
 
 #: tpk_description.h:52
 msgid "Default Skin"
@@ -2871,7 +2877,7 @@ msgstr ""
 
 #: tpk_description.h:55
 msgid "Digital clock blue - Samsung LCD Skin Channel"
-msgstr ""
+msgstr "Alternativer Skin für Samsung-LCD (blaue Digital Uhr) - Betriebsmodus"
 
 #: skin_default_skin.xml.h:198
 msgid "Director"
@@ -3161,8 +3167,8 @@ msgstr "FEHLER: In dieser Datei kann kein Marker gesetzt werden"
 
 #: about.h:9 ard.h:31 autotimer.c:537 autotimer.c:543 autotimer.c:568
 #: autotimer.c:575 autotimer.c:603 avsettings.h:291 betarobot.h:57
-#: bgdownload.h:176 blindscanadjust.h:25 channellist.h:936 channellist.h:938
-#: channellist.h:943 channellist.h:945 channellist.h:1029 divxstage.h:36
+#: bgdownload.h:176 blindscanadjust.h:25 channellist.h:913 channellist.h:915
+#: channellist.h:920 channellist.h:922 channellist.h:1006 divxstage.h:36
 #: divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336 dlna.h:345
 #: dvdplay.h:62 epgsearch.h:27 epgsettings.h:263 epgsettings.h:289
 #: epgsettings.h:303 extensions.h:190 extensions.h:241 extensions.h:250
@@ -3293,7 +3299,7 @@ msgstr ""
 msgid "Edit Playlist"
 msgstr "Wiedergabeliste bearbeiten"
 
-#: channellist.h:637
+#: channellist.h:614
 msgid "Edit mode"
 msgstr "Umbenennen"
 
@@ -3689,7 +3695,7 @@ msgstr "Im Cache zwischenspeichern (30MB/360 Sek)"
 
 #: tpk_description.h:66 tpk_showname.h:31
 msgid "File Manager"
-msgstr ""
+msgstr "Datei Manager"
 
 #: tithek.h:670
 msgid "File exist, overwrite?"
@@ -5634,7 +5640,7 @@ msgstr "Media Center"
 
 #: tpk_showname.h:69
 msgid "MediaCenter FolderIcons"
-msgstr ""
+msgstr "Media Center Odnersymbole"
 
 #: adjust.h:342
 msgid "MediaDB"
@@ -5778,8 +5784,8 @@ msgid "Menulist"
 msgstr "Menüliste"
 
 #: ard.h:31 avsettings.h:291 betarobot.h:57 bgdownload.h:176
-#: blindscanadjust.h:25 callmon_main.h:39 channellist.h:936 channellist.h:938
-#: channellist.h:943 channellist.h:945 channellist.h:1029 divxstage.h:36
+#: blindscanadjust.h:25 callmon_main.h:39 channellist.h:913 channellist.h:915
+#: channellist.h:920 channellist.h:922 channellist.h:1006 divxstage.h:36
 #: divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336 dlna.h:345
 #: dvdplay.h:62 epgsearch.h:27 epgsettings.h:263 epgsettings.h:289
 #: extensions.h:267 extensions.h:324 extensions.h:356 extensions.h:416
@@ -5974,7 +5980,7 @@ msgstr ""
 msgid "Move Modus Font Color"
 msgstr ""
 
-#: channellist.h:601
+#: channellist.h:578
 msgid "Move mode"
 msgstr "Verschieben"
 
@@ -6310,8 +6316,8 @@ msgstr "Ö"
 
 #: about.h:9 ard.h:31 autotimer.c:537 autotimer.c:543 autotimer.c:568
 #: autotimer.c:575 autotimer.c:603 avsettings.h:291 betarobot.h:57
-#: bgdownload.h:176 blindscanadjust.h:25 callmon_main.h:39 channellist.h:936
-#: channellist.h:938 channellist.h:943 channellist.h:945 channellist.h:1029
+#: bgdownload.h:176 blindscanadjust.h:25 callmon_main.h:39 channellist.h:913
+#: channellist.h:915 channellist.h:920 channellist.h:922 channellist.h:1006
 #: divxstage.h:36 divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336
 #: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:263 epgsettings.h:289
 #: epgsettings.h:303 extensions.h:190 extensions.h:241 extensions.h:250
@@ -7187,7 +7193,7 @@ msgstr ""
 msgid "Protect Modus Font Color"
 msgstr ""
 
-#: channellist.h:628
+#: channellist.h:605
 msgid "Protect mode"
 msgstr "Schützen"
 
@@ -7195,7 +7201,7 @@ msgstr "Schützen"
 msgid "Prov"
 msgstr "Anbieter"
 
-#: channellist.h:775 channellist.h:1353 channellist.h:1354 channellist.h:1678
+#: channellist.h:752 channellist.h:1330 channellist.h:1331 channellist.h:1655
 #: webif_channellist.h:3
 msgid "Provider"
 msgstr "Anbieter"
@@ -7305,7 +7311,7 @@ msgstr ""
 msgid "RTL2-Now"
 msgstr ""
 
-#: channellist.h:712 channellist.h:1788 httpdfunc.h:292 httpdfunc.h:701
+#: channellist.h:689 channellist.h:1765 httpdfunc.h:292 httpdfunc.h:701
 #: scan.h:530 skin_default_skin.xml.h:537 webif_index.atemio5200.h:69
 #: webif_index.atemio5200.h:125 webif_index.atemio6200.h:69
 #: webif_index.atemio6200.h:125 webif_index.atemio-nemesis.h:69
@@ -7494,7 +7500,7 @@ msgstr "Aufnahme Timer"
 
 #: tpk_showname.h:112
 msgid "Record cut"
-msgstr ""
+msgstr "Aufnahmen schneiden"
 
 #: play.h:1299
 msgid "Record in progress"
@@ -7600,7 +7606,7 @@ msgstr "Lösche leeres Bouquet"
 msgid "Remove error"
 msgstr "Löschen fehlgeschlagen"
 
-#: channellist.h:610
+#: channellist.h:587
 msgid "Remove mode"
 msgstr "Löschen"
 
@@ -7786,7 +7792,7 @@ msgstr "Satelliten"
 
 #: tpk_showname.h:115
 msgid "SAT/Cable 19.2 23.5 13.0 0.8 KabelD (andy)"
-msgstr ""
+msgstr "Sat/Kabel 19.2 23.5 13.0 0.8 KabelD (andy)"
 
 #: httpdfunc.h:4821 skin_default_skin.xml.h:589
 msgid "SATA Connector"
@@ -8026,7 +8032,7 @@ msgstr "Satelliten Auswahl"
 msgid "Satellite"
 msgstr "Satellit"
 
-#: channellist.h:758 channellist.h:1285 channellist.h:1286 channellist.h:1538
+#: channellist.h:735 channellist.h:1262 channellist.h:1263 channellist.h:1515
 msgid "Satellites"
 msgstr "Satelliten"
 
@@ -8072,7 +8078,7 @@ msgstr "Suchlauf manuell Einstellungen"
 
 #: tpk_description.h:121
 msgid "Scan and manage cifs/nfs/ftp shares"
-msgstr ""
+msgstr "Suche und Verwaltung von CIFS/SMB, NFS und FTP Freigaben"
 
 #: scan.h:1901
 msgid "Scan is not allowed if record or stream is running !"
@@ -8720,15 +8726,15 @@ msgstr "Skin-Auswahl"
 
 #: tpk_showname.h:154
 msgid "Skin 0Acht5Zehn (black)"
-msgstr ""
+msgstr "Skin 0Acht5Zehn (schwarz)"
 
 #: tpk_showname.h:155
 msgid "Skin 0Acht5Zehn (grey)"
-msgstr ""
+msgstr "Skin 0Acht5Zehn (grau)"
 
 #: tpk_showname.h:156
 msgid "Skin 0Acht5Zehn (white)"
-msgstr ""
+msgstr "Skin 0Acht5Zehn (weiß)"
 
 #: tpk_description.h:126
 msgid "Skin 0Acht5Zehn black for black picons"
@@ -8796,7 +8802,7 @@ msgstr ""
 
 #: tpk_showname.h:169
 msgid "Skin Nogfx (grey)"
-msgstr ""
+msgstr "Skin Nogfx (grau)"
 
 #: tpk_description.h:131
 msgid "Skin Nogfx black for black picons"
@@ -9339,7 +9345,7 @@ msgstr "TMDb"
 
 #: tpk_description.h:143
 msgid "TMDb Movie Database Plugin"
-msgstr ""
+msgstr "TMDb Filmdatenbank"
 
 #: adjust.h:302
 msgid "TPK"
@@ -9397,7 +9403,7 @@ msgstr "Transponder auswählen"
 msgid "TSID:"
 msgstr "Tsid:"
 
-#: channellist.h:717 channellist.h:1783 httpdfunc.h:286 httpdfunc.h:696
+#: channellist.h:694 channellist.h:1760 httpdfunc.h:286 httpdfunc.h:696
 #: scan.h:528
 msgid "TV"
 msgstr ""
@@ -9597,7 +9603,7 @@ msgstr "TiThek Einstellungen"
 
 #: tpk_description.h:142
 msgid "TiThek the Multimedia-thek"
-msgstr ""
+msgstr "TiThek die Online Mediathek"
 
 #: plugins_wm2014_skin.xml.h:17 skins_wm2014_skin.xml.h:17
 msgid "Time"
@@ -9750,7 +9756,7 @@ msgstr "Titan-Protokoll"
 
 #: tpk_description.h:141 tpk_showname.h:180
 msgid "Titan MediaCenter"
-msgstr ""
+msgstr "Titan Media Center"
 
 #: skinadjust.h:307 skinadjust.h:703
 msgid "Titan will be restarted!"
@@ -10705,6 +10711,7 @@ msgstr "Gewonnen"
 #: tpk_description.h:180
 msgid "Wooden clock - Standby - Samsung LCD Skin Channel."
 msgstr ""
+"Alternativer Skin für Samsung-LCD (analoge Uhr aus Holz) - Standby-Modus"
 
 #: record.h:61
 msgid "Write error"
@@ -11083,7 +11090,7 @@ msgstr "blau"
 
 #: tpk_section.h:1
 msgid "bootlogos"
-msgstr ""
+msgstr "Bootlogos"
 
 #: panel_settings_autostart.h:44
 msgid "bootstop"
@@ -11103,7 +11110,7 @@ msgstr "Broadcast Adresse"
 
 #: tpk_section.h:2
 msgid "browser"
-msgstr ""
+msgstr "Internet Browser"
 
 #: screensaveradjust.h:36
 msgid "burlywood1"
@@ -11245,7 +11252,7 @@ msgstr "Schnitt läuft"
 
 #: tpk_description.h:49
 msgid "cut record files"
-msgstr ""
+msgstr "Aufnahmen schneiden"
 
 #: skin_default_skin.xml.h:176
 msgid "d"
@@ -11422,7 +11429,7 @@ msgstr "kein Modul"
 
 #: tpk_section.h:3
 msgid "emus"
-msgstr ""
+msgstr "Softcams"
 
 #: weather.h:137
 msgid "en-GB"
@@ -11534,7 +11541,7 @@ msgstr ""
 
 #: tpk_section.h:4
 msgid "fonts"
-msgstr ""
+msgstr "Schriftarten"
 
 #: tithek.h:887
 msgid "found"
@@ -11575,7 +11582,7 @@ msgstr ""
 
 #: tpk_section.h:5
 msgid "games"
-msgstr ""
+msgstr "Spiele"
 
 #: skin_default_skin.xml.h:277
 msgid "gateway"
@@ -11698,7 +11705,7 @@ msgstr "Info Menü"
 
 #: tpk_section.h:6
 msgid "infos"
-msgstr ""
+msgstr "Infos"
 
 #: moduleconfig.h:356
 msgid "initializing"
@@ -11763,7 +11770,7 @@ msgstr "PiP Taste"
 
 #: tpk_section.h:7
 msgid "keymaps"
-msgstr ""
+msgstr "Fernbedienungseinstellungen"
 
 #: skin_default_skin.xml.h:391
 msgid "l"
@@ -11779,11 +11786,11 @@ msgstr "Sprache"
 
 #: tpk_section.h:8
 msgid "lcdpearlskins"
-msgstr ""
+msgstr "Pearl-LCD-Skins"
 
 #: tpk_section.h:9
 msgid "lcdsamsungskins"
-msgstr ""
+msgstr "Samsung-LCD-Skins"
 
 #: sudoku.c:167
 msgid "left"
@@ -12267,7 +12274,7 @@ msgstr "Bild 5"
 
 #: tpk_section.h:11
 msgid "picons"
-msgstr ""
+msgstr "Senderlogos"
 
 #: skinadjust.h:69 tmc.h:542
 msgid "picture"
@@ -12299,7 +12306,7 @@ msgstr "Aktiviere PL2303 Kartenleser Treiber"
 
 #: tpk_section.h:12
 msgid "player"
-msgstr ""
+msgstr "Multimedia Player"
 
 #: webif_help.h:65
 msgid "playinfobar"
@@ -12643,7 +12650,7 @@ msgstr "Startsender festlegen"
 
 #: tpk_section.h:14
 msgid "settings"
-msgstr ""
+msgstr "Senderlisten"
 
 #: webif_help.h:83
 msgid "settingsmenu"
@@ -12722,7 +12729,7 @@ msgstr "Skin-Einstellungen"
 
 #: tpk_section.h:15
 msgid "skins"
-msgstr ""
+msgstr "Skins"
 
 #: webif_help.h:87
 msgid "skinselect"
@@ -13040,7 +13047,7 @@ msgstr ""
 
 #: tpk_section.h:16
 msgid "tools"
-msgstr ""
+msgstr "Tools"
 
 #: webif_help.h:110
 msgid "tpkinstall"
@@ -13145,7 +13152,7 @@ msgstr "Update Liste"
 
 #: tpk_description.h:160
 msgid "usbreset Plugin"
-msgstr ""
+msgstr "USB-Reset"
 
 #: plugins_mc_skin.xml.h:58 skins_mc_skin.xml.h:58
 msgid "use last Directory"
@@ -13289,7 +13296,7 @@ msgstr "warte"
 
 #: tpk_description.h:162
 msgid "weather Plugin"
-msgstr ""
+msgstr "Wetter Plugin"
 
 #: webif_help.h:120
 msgid "webdir"
@@ -13317,7 +13324,7 @@ msgstr "wird vom Plugin eingestellt"
 
 #: tpk_section.h:17
 msgid "wireless"
-msgstr ""
+msgstr "Wireless LAN"
 
 #: tpk_description.h:174
 msgid "wireless 8192cu.ko model"

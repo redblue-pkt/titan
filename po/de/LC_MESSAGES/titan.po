@@ -390,6 +390,8 @@ msgid ""
 "A collection of really nice folder icons for MediaCenter Videoplayer "
 "Coverview!"
 msgstr ""
+"Eine hübsche Sammlung von Ordner-Symbolen für den Videoplayer im Media "
+"Center (Cover-Ansicht)!"
 
 msgid ""
 "A list of currently used network shares. You can add, edit, delete shares or "
@@ -420,10 +422,10 @@ msgid "AAC Mode"
 msgstr ""
 
 msgid "AAF MediaCenter, the best multimedia player on mipsel"
-msgstr ""
+msgstr "Der beste Mediaplayer für die sh4/mipsel Plattform"
 
 msgid "AAF MediaCenter, the best multimedia player on sh4"
-msgstr ""
+msgstr "Der beste Mediaplayer für die sh4/mipsel Plattform."
 
 msgid "AC3 Mode"
 msgstr "Dolby Digital (AC3) Modus"
@@ -579,31 +581,35 @@ msgstr ""
 "DOWNMIX) "
 
 msgid "Alternative blue skin for Pearl LCD "
-msgstr ""
+msgstr "Alternativer blauer Skin für Pearl-LCD"
 
 msgid "Alternative skin for Pearl LCD"
-msgstr ""
+msgstr "Alternativer schwarzer Skin für Pearl-LCD"
 
 msgid ""
 "Alternative skin for Pearl LCD - X-Light picons must be installed separately"
 msgstr ""
+"Alternativer Skin für Pearl-LCD (nur Senderlogo) - X-Light Senderlogos "
+"separat installieren!"
 
 msgid "Alternative skin for Pearl LCD Atemio style"
-msgstr ""
+msgstr "Alternativer Skin für Pearl-LCD (Atemio-Stil)"
 
 msgid "Alternative skin for Pearl LCD MRP style"
-msgstr ""
+msgstr "Alternativer Skin für Pearl-LCD (MRP-Stil)"
 
 msgid "Alternative skin for Pearl LCD big/black"
-msgstr ""
+msgstr "Alternativer Skin für Pearl-LCD (groß/schwarz)"
 
 msgid ""
 "Alternative skin for Samsung LCD - w/o Picons (must be installed separately)"
 msgstr ""
+"Alternativer Skin für Samsung-LCD (Trikots) - Senderlogos separat "
+"installieren!"
 
 msgid ""
 "Alternative skin for Samsung LCD - w/o picons (must be installed separately)"
-msgstr ""
+msgstr "Alternativer Skin für Samsung-LCD - Senderlogos separat installieren!"
 
 msgid "Amount of files: "
 msgstr "Anzahl Dateien: "
@@ -998,13 +1004,13 @@ msgid "Bitrate"
 msgstr ""
 
 msgid "Black 3D Picons - Astra 23.5E."
-msgstr ""
+msgstr "Schwarze 3D-Senderlogos - Astra 23.5E"
 
 msgid "Black 3D Picons - Hotbird 13.0E."
-msgstr ""
+msgstr "Schwarze 3D-Senderlogos - Hotbird 13.0"
 
 msgid "Black 3D Picons Astra 19.2"
-msgstr ""
+msgstr "Schwarze 3D-Senderlogos - Astra 19.2"
 
 msgid "Black Picons - Eutelsat 36.0E."
 msgstr ""
@@ -1214,19 +1220,19 @@ msgid "Cable: "
 msgstr "Kabel: "
 
 msgid "Cable: Kabel Deutschland UH-Kreis"
-msgstr ""
+msgstr "Kabel: Senderliste Kabel Deutschland UH-Kreis"
 
 msgid "Cable: Kabel Primacom"
-msgstr ""
+msgstr "Kabel: Senderliste Primacom"
 
 msgid "Cable: Unitymedia2"
-msgstr ""
+msgstr "Kabel: Senderliste Unitymedia"
 
 msgid "Cable: default Settings Kabel Deutschland"
-msgstr ""
+msgstr "Kabel: Standard-Senderliste Kabel Deutschland"
 
 msgid "Cable: sofatester Kabel BW"
-msgstr ""
+msgstr "Kabel: Senderliste Kabel BW (sofatester)"
 
 msgid "CallMonitor"
 msgstr ""
@@ -1244,7 +1250,7 @@ msgstr ""
 "Bitte überprüfen Sie Ihre Einstellungen!"
 
 msgid "Callmonitor Plugin"
-msgstr ""
+msgstr "Anrufmonitor zum Anzeigen ein- und ausgehender Anrufe"
 
 msgid "Cam / Emu"
 msgstr "Softcam und USB Treiber"
@@ -1850,7 +1856,7 @@ msgid "DTS Downmix"
 msgstr ""
 
 msgid "DTS-Downmix firmware "
-msgstr ""
+msgstr "DTS-Downmix-Firmware"
 
 msgid "DVBS"
 msgstr "DVB-S"
@@ -1859,10 +1865,10 @@ msgid "DVBS2"
 msgstr "DVB-S2"
 
 msgid "DVD Player"
-msgstr ""
+msgstr "DVD-Player"
 
 msgid "DVD-Player plugin"
-msgstr ""
+msgstr "DVD-Player Plugin"
 
 msgid "DYNDNS Settings"
 msgstr "Dyndns"
@@ -1935,7 +1941,7 @@ msgid "Default Autostart"
 msgstr "Allgemein"
 
 msgid "Default Font"
-msgstr ""
+msgstr "Standard-Schriftart"
 
 msgid "Default Skin"
 msgstr ""
@@ -2039,7 +2045,7 @@ msgid "Digiface Regular"
 msgstr ""
 
 msgid "Digital clock blue - Samsung LCD Skin Channel"
-msgstr ""
+msgstr "Alternativer Skin für Samsung-LCD (blaue Digital Uhr) - Betriebsmodus"
 
 msgid "Director"
 msgstr "Regisseur"
@@ -2523,7 +2529,7 @@ msgid "File Caching Playback (30MB / 360s)"
 msgstr "Im Cache zwischenspeichern (30MB/360 Sek)"
 
 msgid "File Manager"
-msgstr ""
+msgstr "Datei Manager"
 
 msgid "File exist, overwrite?"
 msgstr ""
@@ -3968,7 +3974,7 @@ msgid "MediaCenter"
 msgstr "Media Center"
 
 msgid "MediaCenter FolderIcons"
-msgstr ""
+msgstr "Media Center Odnersymbole"
 
 msgid "MediaDB"
 msgstr ""
@@ -5139,7 +5145,7 @@ msgid "Record Timer"
 msgstr "Aufnahme Timer"
 
 msgid "Record cut"
-msgstr ""
+msgstr "Aufnahmen schneiden"
 
 msgid "Record in progress"
 msgstr "Aufnahme läuft"
@@ -5330,7 +5336,7 @@ msgid "SAT"
 msgstr "Satelliten"
 
 msgid "SAT/Cable 19.2 23.5 13.0 0.8 KabelD (andy)"
-msgstr ""
+msgstr "Sat/Kabel 19.2 23.5 13.0 0.8 KabelD (andy)"
 
 msgid "SATA Connector"
 msgstr "SATA Anschluss"
@@ -5525,7 +5531,7 @@ msgid "Scan Manual Config"
 msgstr "Suchlauf manuell Einstellungen"
 
 msgid "Scan and manage cifs/nfs/ftp shares"
-msgstr ""
+msgstr "Suche und Verwaltung von CIFS/SMB, NFS und FTP Freigaben"
 
 msgid "Scan is not allowed if record or stream is running !"
 msgstr ""
@@ -5989,13 +5995,13 @@ msgid "Skin"
 msgstr "Skin-Auswahl"
 
 msgid "Skin 0Acht5Zehn (black)"
-msgstr ""
+msgstr "Skin 0Acht5Zehn (schwarz)"
 
 msgid "Skin 0Acht5Zehn (grey)"
-msgstr ""
+msgstr "Skin 0Acht5Zehn (grau)"
 
 msgid "Skin 0Acht5Zehn (white)"
-msgstr ""
+msgstr "Skin 0Acht5Zehn (weiß)"
 
 msgid "Skin 0Acht5Zehn black for black picons"
 msgstr ""
@@ -6046,7 +6052,7 @@ msgid "Skin Nogfx"
 msgstr ""
 
 msgid "Skin Nogfx (grey)"
-msgstr ""
+msgstr "Skin Nogfx (grau)"
 
 msgid "Skin Nogfx black for black picons"
 msgstr ""
@@ -6422,7 +6428,7 @@ msgid "TMDb - Plugin"
 msgstr "TMDb"
 
 msgid "TMDb Movie Database Plugin"
-msgstr ""
+msgstr "TMDb Filmdatenbank"
 
 msgid "TPK"
 msgstr ""
@@ -6602,7 +6608,7 @@ msgid "TiThek Settings"
 msgstr "TiThek Einstellungen"
 
 msgid "TiThek the Multimedia-thek"
-msgstr ""
+msgstr "TiThek die Online Mediathek"
 
 msgid "Time"
 msgstr "Uhrzeit"
@@ -6714,7 +6720,7 @@ msgid "Titan Log"
 msgstr "Titan-Protokoll"
 
 msgid "Titan MediaCenter"
-msgstr ""
+msgstr "Titan Media Center"
 
 msgid "Titan will be restarted!"
 msgstr "Titan wird neu gestartet!"
@@ -7393,6 +7399,7 @@ msgstr "Gewonnen"
 
 msgid "Wooden clock - Standby - Samsung LCD Skin Channel."
 msgstr ""
+"Alternativer Skin für Samsung-LCD (analoge Uhr aus Holz) - Standby-Modus"
 
 msgid "Write error"
 msgstr "!!! SCHREIBFEHLER !!!"
@@ -7658,7 +7665,7 @@ msgid "blue"
 msgstr "blau"
 
 msgid "bootlogos"
-msgstr ""
+msgstr "Bootlogos"
 
 msgid "bootstop"
 msgstr ""
@@ -7673,7 +7680,7 @@ msgid "broadcast"
 msgstr "Broadcast Adresse"
 
 msgid "browser"
-msgstr ""
+msgstr "Internet Browser"
 
 msgid "burlywood1"
 msgstr ""
@@ -7775,7 +7782,7 @@ msgid "cut is running"
 msgstr "Schnitt läuft"
 
 msgid "cut record files"
-msgstr ""
+msgstr "Aufnahmen schneiden"
 
 msgid "d"
 msgstr ""
@@ -7906,7 +7913,7 @@ msgid "empty"
 msgstr "kein Modul"
 
 msgid "emus"
-msgstr ""
+msgstr "Softcams"
 
 msgid "en-GB"
 msgstr "de-DE"
@@ -7987,7 +7994,7 @@ msgid "first titan game"
 msgstr ""
 
 msgid "fonts"
-msgstr ""
+msgstr "Schriftarten"
 
 msgid "found"
 msgstr "gefunden"
@@ -8017,7 +8024,7 @@ msgid "g"
 msgstr ""
 
 msgid "games"
-msgstr ""
+msgstr "Spiele"
 
 msgid "gateway"
 msgstr "Gateway"
@@ -8109,7 +8116,7 @@ msgid "infomenu"
 msgstr "Info Menü"
 
 msgid "infos"
-msgstr ""
+msgstr "Infos"
 
 msgid "initializing"
 msgstr "initialisieren"
@@ -8154,7 +8161,7 @@ msgid "key pip"
 msgstr "PiP Taste"
 
 msgid "keymaps"
-msgstr ""
+msgstr "Fernbedienungseinstellungen"
 
 msgid "l"
 msgstr ""
@@ -8166,10 +8173,10 @@ msgid "language"
 msgstr "Sprache"
 
 msgid "lcdpearlskins"
-msgstr ""
+msgstr "Pearl-LCD-Skins"
 
 msgid "lcdsamsungskins"
-msgstr ""
+msgstr "Samsung-LCD-Skins"
 
 msgid "left"
 msgstr "links"
@@ -8475,7 +8482,7 @@ msgid "pic5"
 msgstr "Bild 5"
 
 msgid "picons"
-msgstr ""
+msgstr "Senderlogos"
 
 msgid "picture"
 msgstr "Bild"
@@ -8499,7 +8506,7 @@ msgid "pl2303"
 msgstr "Aktiviere PL2303 Kartenleser Treiber"
 
 msgid "player"
-msgstr ""
+msgstr "Multimedia Player"
 
 msgid "playinfobar"
 msgstr "Wiedergabe Informationsleiste"
@@ -8753,7 +8760,7 @@ msgid "set startchannel"
 msgstr "Startsender festlegen"
 
 msgid "settings"
-msgstr ""
+msgstr "Senderlisten"
 
 msgid "settingsmenu"
 msgstr "Einstellungsmenü"
@@ -8810,7 +8817,7 @@ msgid "skinadjust"
 msgstr "Skin-Einstellungen"
 
 msgid "skins"
-msgstr ""
+msgstr "Skins"
 
 msgid "skinselect"
 msgstr "Skin-Auswahl"
@@ -9038,7 +9045,7 @@ msgid "toneburst, uncommitted, committed"
 msgstr ""
 
 msgid "tools"
-msgstr ""
+msgstr "Tools"
 
 msgid "tpkinstall"
 msgstr "TPK Installation"
@@ -9110,7 +9117,7 @@ msgid "updatelist"
 msgstr "Update Liste"
 
 msgid "usbreset Plugin"
-msgstr ""
+msgstr "USB-Reset"
 
 msgid "use last Directory"
 msgstr "Benutze immer letztes Verzeichnis"
@@ -9220,7 +9227,7 @@ msgid "waiting"
 msgstr "warte"
 
 msgid "weather Plugin"
-msgstr ""
+msgstr "Wetter Plugin"
 
 msgid "webdir"
 msgstr "Webdir"
@@ -9241,7 +9248,7 @@ msgid "will be set by plugin"
 msgstr "wird vom Plugin eingestellt"
 
 msgid "wireless"
-msgstr ""
+msgstr "Wireless LAN"
 
 msgid "wireless 8192cu.ko model"
 msgstr ""
