@@ -12811,7 +12811,7 @@ msgstr "Keine Festplatte/USB-Stick gefunden"
 
 #: skin_default_skin.xml.h:667
 msgid "sort service"
-msgstr "Favoriten sortieren"
+msgstr "Liste sortieren"
 
 #: diseqcconfig.h:255
 msgid "south"
