@@ -233,7 +233,7 @@ void showproviderchannel(struct skin* channellist, struct skin* listbox, struct 
 	}
 }
 
-int checkproviderchannel(struct provider* providernode)
+int checkprovider(struct provider* providernode)
 {
 	struct channel* tmpchannel = channel;
 
@@ -256,7 +256,7 @@ void showprovider(struct skin* channellist, struct skin* listbox)
 
 	while(node != NULL)
 	{
-		if(checkproviderchannel(node) == 1)
+		if(checkprovider(node) == 1)
 		{
 			node->flag = 1;
 			providernode = addlistbox(channellist, listbox, providernode, 2);
@@ -1653,7 +1653,7 @@ start:
 				}
 				if(tmpaktlist == NULL) break;
 
-				if(checkproviderchannel(tmpaktlist) == 1)
+				if(checkprovider(tmpaktlist) == 1)
 				{
 					delmarkedscreennodes(channellist, 1);
 					struct skin* tmpnode = addlistbox(channellist, listbox, NULL, 2);
