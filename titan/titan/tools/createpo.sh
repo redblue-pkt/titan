@@ -22,11 +22,13 @@ LIST=`find "$HOME"/flashimg/$SRCDIR/titan "$HOME"/flashimg/$SRCDIR/plugins -type
 LIST="$LIST "`find "$HOME"/flashimg/$SRCDIR/titan "$HOME"/flashimg/$SRCDIR/plugins -type f -name "*.c"`
 POLIST=`find "$HOME"/flashimg/$SRCDIR/po -type f -name "*_auto.po"`
 SKINLIST=`find "$HOME"/flashimg/$SRCDIR -type f -name "*kin.xml"`
+SKINLIST="$SKINLIST "`find "$HOME"/ipk/source -type f -name "*kin.xml"`
 HLIST=`find "$HOME"/flashimg/$SRCDIR/web -type f -name "*.html"`
 
 ##aus /plugins alle *.h und *.c > tmp
 for ROUND in $LIST; do
-	cp -a $ROUND "$HOME"/flashimg/$SRCDIR/titan/tools/tmp
+	#cp -a $ROUND "$HOME"/flashimg/$SRCDIR/titan/tools/tmp
+	cat $ROUND | sed 's/\x0D$//' >> "$HOME"/flashimg/$SRCDIR/titan/tools/tmp
 done
 
 for ROUND in $HLIST; do
@@ -49,8 +51,8 @@ for ROUND in $SKINLIST; do
 	cp "$HOME"/flashimg/$SRCDIR/titan/tools/dummy "$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME"
 
 	## dummy = 'tmpstr = _("'
-	cat $ROUND | grep text= | sed 's/text=/\ntext=/' | grep ^text= | cut -d '"' -f2 | sort -u | sed '/^ *$/d' | tr '\n' '#' | sed 's/#\+/\");\ntmpstr = _(\"\ /g'| sed 's/" /"/' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME"
-	cat $ROUND | grep title= | sed 's/title=/\ntitle=/' | grep ^title= | cut -d '"' -f2 | sort -u | sed '/^ *$/d' | tr '\n' '#' | sed 's/#\+/\");\ntmpstr = _(\"\ /g'| sed 's/" /"/' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME"
+	cat $ROUND | sed 's/\x0D$//' | grep text= | sed 's/text=/\ntext=/' | grep ^text= | cut -d '"' -f2 | sort -u | sed '/^ *$/d' | tr '\n' '#' | sed 's/#\+/\");\ntmptext = _(\"\ /g'| sed 's/" /"/' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME"
+	cat $ROUND | sed 's/\x0D$//' | grep title= | sed 's/title=/\ntitle=/' | grep ^title= | cut -d '"' -f2 | sort -u | sed '/^ *$/d' | tr '\n' '#' | sed 's/#\+/\");\ntmptitle = _(\"\ /g'| sed 's/" /"/' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME"
 	## Reihenfolge getauscht wegen einigen Files ohne 'title='
 	## Letzte Zeile = 'tmpstr = _("' und das führt zu 'msgid = ""' !!
 	## weg damit:
