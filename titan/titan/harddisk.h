@@ -200,7 +200,7 @@ void screenfilesystem(char* dev)
 
 void screenconfigurehdd(char* dev)
 {
-	int i, y = 2, rcret = 0, ret = 0, mode = 0;
+	int i, y = 1, rcret = 0, ret = 0;
 	struct skin* screen = getscreen("harddisk_main");
 	struct skin* titletext = getscreennode(screen, "titletext");
 	struct skin* details = getscreennode(screen, "details");
@@ -208,63 +208,104 @@ void screenconfigurehdd(char* dev)
 
 	struct skin* load = getscreen("loading");
 	struct skin* tmp = NULL;
-	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL;
-	char* path = NULL;
-
+	char* tmpstr = NULL, *tmpstr1 = NULL, *tmpstr2 = NULL, *path = NULL, *mountpath = NULL, *cmd = NULL;
+	int record = 0, swapextensions = 0, swapdir = 0, backup = 0;
 	delmarkedscreennodes(screen, 1);
 	listbox->aktpage = -1;
 	listbox->aktline = 1;
 	changetitle(screen, _("Harddisk Configure"));
 	if(titletext != status.skinerr) changetext(titletext, _("Harddisk Configure"));
 	if(details != status.skinerr) changetext(details, _("select the function for the specified device"));
-		
-	if(status.expertmodus > 9) y = 8;
 
+	mountpath = getconfig("mountpath", NULL);
+	mountpath = ostrcat(mountpath, "/", 0, 0);
+	mountpath = ostrcat(mountpath, dev, 1, 0);
+	mountpath = ostrcat(mountpath, "/", 1, 0);
+	
+	if(status.expertmodus > 9) y = 4;
 	for(i = 0; i < y; i++)
-	{
+	{			
 		tmp = addlistbox(screen, listbox, tmp, 1);
 		if(tmp != NULL)
 		{
+			tmp->type = CHOICEBOX;
 			if(i == 0)
 			{
 				tmpstr = _("use medium for record");
-				tmpstr1 = "addrecord";
+				tmpstr1 = "record";
+				path = ostrcat(mountpath, "movie", 0, 0);
+				if(file_exist(path))
+				{
+					addchoicebox(tmp, "1", _("yes"));			
+					addchoicebox(tmp, "0", _("no"));
+					record = 1;
+				}
+				else
+				{
+					addchoicebox(tmp, "0", _("no"));
+					addchoicebox(tmp, "1", _("yes"));			
+					record = 0;
+				}
+				free(path), path = NULL;
 			}
 			else if(i == 1)
 			{
-				tmpstr = _("del medium for record");
-				tmpstr1 = "delrecord";
+				tmpstr = _("use medium for extension");
+				tmpstr1 = "swapextensions";
+				path = ostrcat(mountpath, "swapextensions", 0, 0);
+				if(file_exist(path))
+				{
+					addchoicebox(tmp, "1", _("yes"));			
+					addchoicebox(tmp, "0", _("no"));
+					swapextensions = 1;
+				}
+				else
+				{
+					addchoicebox(tmp, "0", _("no"));
+					addchoicebox(tmp, "1", _("yes"));			
+					swapextensions = 0;
+				}
+				free(path), path = NULL;
 			}
 			else if(i == 2)
 			{
-				tmpstr = _("use medium for extension");
-				tmpstr1 = "addext";
+				tmpstr = _("use medium for swap");
+				tmpstr1 = "swapdir";
+				path = ostrcat(mountpath, "swapdir", 0, 0);
+				if(file_exist(path))
+				{
+					addchoicebox(tmp, "1", _("yes"));			
+					addchoicebox(tmp, "0", _("no"));
+					swapdir = 1;
+				}
+				else
+				{
+					addchoicebox(tmp, "0", _("no"));
+					addchoicebox(tmp, "1", _("yes"));			
+					swapdir = 0;
+				}
+				free(path), path = NULL;
 			}
 			else if(i == 3)
 			{
-				tmpstr = _("del medium for extension");
-				tmpstr1 = "delext";
-			}
-			else if(i == 4)
-			{
-				tmpstr = _("use medium for swap");
-				tmpstr1 = "addswap";
-			}
-			else if(i == 5)
-			{
-				tmpstr = _("del medium for swap");
-				tmpstr1 = "delswap";
-			}
-			else if(i == 6)
-			{
 				tmpstr = _("use medium for backup");
-				tmpstr1 = "addbackup";
+				tmpstr1 = "backup";
+				path = ostrcat(mountpath, "backup", 0, 0);
+				if(file_exist(path))
+				{
+					addchoicebox(tmp, "1", _("yes"));			
+					addchoicebox(tmp, "0", _("no"));
+					backup = 1;
+				}
+				else
+				{
+					addchoicebox(tmp, "0", _("no"));
+					addchoicebox(tmp, "1", _("yes"));			
+					backup = 0;
+				}
+				free(path), path = NULL;
 			}
-			else if(i == 7)
-			{
-				tmpstr = _("del medium for backup");
-				tmpstr1 = "delbackup";
-			}
+
 			tmpstr2 = ostrcat(tmpstr2, getconfig("skinpath", NULL), 1, 0);
 			tmpstr2 = ostrcat(tmpstr2, "/skin/", 1, 0);
 			tmpstr2 = ostrcat(tmpstr2, tmpstr1, 1, 0);
@@ -289,130 +330,142 @@ void screenconfigurehdd(char* dev)
 	}
 
 	drawscreen(screen, 0, 0);
-	addscreenrc(screen, listbox);
+	tmp = listbox->select;
 
 	while (1)
 	{
+		addscreenrc(screen, tmp);
+
 		rcret = waitrc(screen, 0, 0);
+		tmp = listbox->select;
+
+		if(ostrcmp(listbox->select->name, "record") == 0)
+			record = atoi(listbox->select->ret);
+		if(ostrcmp(listbox->select->name, "swapextensions") == 0)
+			swapextensions = atoi(listbox->select->ret);
+		if(ostrcmp(listbox->select->name, "swapdir") == 0)
+			swapdir = atoi(listbox->select->ret);
+		if(ostrcmp(listbox->select->name, "backup") == 0)
+			backup = atoi(listbox->select->ret);
 
 		if(rcret==getrcconfigint("rcexit",NULL)) break;
-		if(listbox->select != NULL && rcret==getrcconfigint("rcok",NULL))
+		if(listbox->select != NULL && rcret == getrcconfigint("rcok", NULL))
 		{
-			path = getconfig("mountpath", NULL);
-			path = ostrcat(path, "/", 0, 0);
-			path = ostrcat(path, dev, 1, 0);
-			path = ostrcat(path, "/", 1, 0);
-
-			if(ostrcmp(listbox->select->name, "addrecord") == 0)
+			if(record == 0)
 			{
-				mode = 0;
-				path = ostrcat(path, "movie", 1, 0);
-			}
-			if(ostrcmp(listbox->select->name, "addswap") == 0)
-			{
-				mode = 0;
-				path = ostrcat(path, "swapdir", 1, 0);
-			}
-			if(ostrcmp(listbox->select->name, "addext") == 0)
-			{
-				mode = 0;
-				path = ostrcat(path, "swapextensions", 1, 0);
-			}
-			if(ostrcmp(listbox->select->name, "addbackup") == 0)
-			{
-				mode = 0;
-				path = ostrcat(path, "backup", 1, 0);
-			}
-			if(ostrcmp(listbox->select->name, "delrecord") == 0)
-			{
-				mode = 1;
-				path = ostrcat(path, "movie", 1, 0);
-			}
-			if(ostrcmp(listbox->select->name, "delswap") == 0)
-			{
-				mode = 1;
-				path = ostrcat(path, "swapdir", 1, 0);
-			}
-			if(ostrcmp(listbox->select->name, "delext") == 0)
-			{
-				mode = 1;
-				path = ostrcat(path, "swapextensions", 1, 0);
-			}
-			if(ostrcmp(listbox->select->name, "delbackup") == 0)
-			{
-				mode = 1;
-				path = ostrcat(path, "backup", 1, 0);
-			}
-
-			if(mode == 0) ret = mkdir(path, 0777);
-			if(mode == 1)
-			{
-				if(textbox("Message", _("Are you sure you want to delete this directory?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
+				path = ostrcat(mountpath, "movie", 0, 0);
+				if(file_exist(path))
 				{
-					ret = rmdir(path);
-					if(ret < 0)
+					if(textbox("Message", _("Are you sure you want to delete this Record directory?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
 					{
-						if(textbox("Message", _("Directory has content\nReally delete directory and content?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
-						{
-							drawscreen(load, 0, 0);
-							ret = -1;
-							
-							if(ostrcmp(listbox->select->name, "delswap") == 0)
-								system("hotplug.sh delSwap");
-							
-							char* cmd = NULL;
-							cmd = ostrcat("rm -rf ", path, 0, 0);
-							system(cmd);
-							free(cmd); cmd = NULL;
-							if(file_exist(path) == 0) ret = 0;
-							clearscreen(load);
-						}
-						else
-							ret = 9999;
+						drawscreen(load, 0, 0);
+						cmd = ostrcat("rm -rf ", path, 0, 0);
+						system(cmd);
+						free(cmd); cmd = NULL;
+						system("hotplug.sh delRecord");
+						clearscreen(load);
 					}
 				}
-				else
-					ret = 9999;
+				free(path), path = NULL;
 			}
-			free(path); path = NULL;
-			if(ret < 0)
+			else if(record == 1)
 			{
-				if(mode == 0) perr("mkdir");
-				if(mode == 1) perr("rmdir");
-				textbox("Message", _("can't create or delete directory"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 5, 0);
-			}
-			else if(ret != 9999)
-			{
-				textbox("Message", _("succesfull create or delelete directory"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 5, 0);
-				//start hotplug after create/del dir
-				if(ostrcmp(listbox->select->name, "addrecord") == 0 || ostrcmp(listbox->select->name, "addswap") == 0 || ostrcmp(listbox->select->name, "addext") == 0 || ostrcmp(listbox->select->name, "addbackup") == 0)
+				path = ostrcat(mountpath, "movie", 0, 0);
+				if(!file_exist(path))
 				{
 					drawscreen(load, 0, 0);
+					ret = mkdir(path, 0777);				
 					system("hotplug.sh first");
 					clearscreen(load);
 				}
-				if(ostrcmp(listbox->select->name, "delrecord") == 0)
+				free(path), path = NULL;
+			}
+
+			if(swapextensions == 0)
+			{
+				path = ostrcat(mountpath, "swapextensions", 0, 0);
+				if(file_exist(path))
 				{
 					drawscreen(load, 0, 0);
-					system("hotplug.sh delRecord");
-					clearscreen(load);
-				}
-				if(ostrcmp(listbox->select->name, "delext") == 0)
-				{
-					drawscreen(load, 0, 0);
+					cmd = ostrcat("rm -rf ", path, 0, 0);
+					system(cmd);
+					free(cmd); cmd = NULL;
 					system("hotplug.sh delSwapextensions");
 					clearscreen(load);
 				}
-				if(ostrcmp(listbox->select->name, "delbackup") == 0)
+				free(path), path = NULL;
+			}
+			else if(swapextensions == 1)
+			{
+				path = ostrcat(mountpath, "swapextensions", 0, 0);
+				if(!file_exist(path))
 				{
 					drawscreen(load, 0, 0);
+					ret = mkdir(path, 0777);				
+					system("hotplug.sh first");
+					clearscreen(load);
+				}
+				free(path), path = NULL;
+			}
+
+			if(swapdir == 0)
+			{
+				path = ostrcat(mountpath, "swapdir", 0, 0);
+				if(file_exist(path))
+				{
+					drawscreen(load, 0, 0);
+					system("hotplug.sh delSwap");
+					cmd = ostrcat("rm -rf ", path, 0, 0);
+					system(cmd);
+					free(cmd); cmd = NULL;
+					clearscreen(load);
+				}
+				free(path), path = NULL;
+			}
+			else if(swapdir == 1)
+			{
+				path = ostrcat(mountpath, "swapdir", 0, 0);
+				if(!file_exist(path))
+				{
+					drawscreen(load, 0, 0);
+					ret = mkdir(path, 0777);				
+					system("hotplug.sh first");
+					clearscreen(load);
+				}
+				free(path), path = NULL;
+			}
+
+			if(backup == 0)
+			{
+				path = ostrcat(mountpath, "backup", 0, 0);
+				if(file_exist(path))
+				{
+					drawscreen(load, 0, 0);
+					cmd = ostrcat("rm -rf ", path, 0, 0);
+					system(cmd);
+					free(cmd); cmd = NULL;
 					system("hotplug.sh delBackup");
 					clearscreen(load);
 				}
+				free(path), path = NULL;
 			}
-			drawscreen(screen, 0, 0);
+			else if(backup == 1)
+			{
+				path = ostrcat(mountpath, "backup", 0, 0);
+				if(!file_exist(path))
+				{
+					drawscreen(load, 0, 0);
+					ret = mkdir(path, 0777);				
+					system("hotplug.sh first");
+					clearscreen(load);
+				}
+				free(path), path = NULL;
+			}
+			break;
 		}
 	}
+
+	free(mountpath), mountpath = NULL;
 	delownerrc(screen);
 	delmarkedscreennodes(screen, 1);
 	clearscreen(screen);
