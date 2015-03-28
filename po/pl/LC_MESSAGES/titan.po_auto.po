@@ -1790,13 +1790,13 @@ msgid ""
 "All Tuners in use or no Tuner defined."
 msgstr ""
 
-#: record.h:1049
+#: record.h:1054
 msgid ""
 "Can't find free Tuner for Record.\n"
 "Switch to Recording/Timeshift Channel ?"
 msgstr ""
 
-#: record.h:1547
+#: record.h:1552
 msgid "Can't get EPG time or EPG endtime not ok"
 msgstr ""
 
@@ -3102,7 +3102,7 @@ msgstr ""
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:90
-#: record.h:387 record.h:1049 record.h:1297 record.h:1547 record.h:1572
+#: record.h:387 record.h:1054 record.h:1302 record.h:1552 record.h:1577
 #: rectimer.h:577 rectimer.h:1231 rectimer.h:1377 rectimer.h:1389
 #: restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
@@ -5571,7 +5571,7 @@ msgstr ""
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
-#: record.h:1049 record.h:1297 record.h:1547 record.h:1572 rectimer.h:577
+#: record.h:1054 record.h:1302 record.h:1552 record.h:1577 rectimer.h:577
 #: rectimer.h:1231 rectimer.h:1377 rectimer.h:1389 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:31
@@ -6109,7 +6109,7 @@ msgstr ""
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
-#: record.h:1049 record.h:1572 rectimer.h:577 rectimer.h:1231 rectimer.h:1377
+#: record.h:1054 record.h:1577 rectimer.h:577 rectimer.h:1231 rectimer.h:1377
 #: rectimer.h:1389 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:31 scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1901
@@ -7155,7 +7155,7 @@ msgstr ""
 msgid "Receiver unlock"
 msgstr ""
 
-#: record.h:1446 record.h:1514 skin_default_skin.xml.h:542
+#: record.h:1451 record.h:1519 skin_default_skin.xml.h:542
 #: webif_index.atemio5200.h:59 webif_index.atemio5200.h:115
 #: webif_index.atemio6200.h:59 webif_index.atemio6200.h:115
 #: webif_index.atemio7600.h:47 webif_index.atemio7600.h:109
@@ -7219,7 +7219,7 @@ msgstr "Timer nagrywania"
 msgid "Record path"
 msgstr ""
 
-#: record.h:1572
+#: record.h:1577
 msgid "Record started"
 msgstr "Ścieżka nagrywania"
 
@@ -9370,7 +9370,7 @@ msgstr ""
 msgid "Timer Record Path"
 msgstr ""
 
-#: record.h:1296
+#: record.h:1301
 msgid "Timer Record start !"
 msgstr "Ścieżka nagrywania z timera"
 
@@ -10592,15 +10592,15 @@ msgstr "Aktywuj"
 msgid "active"
 msgstr "Deaktywuj"
 
-#: record.h:1512 record.h:1558
+#: record.h:1517 record.h:1563
 msgid "add recording (enter duration)"
 msgstr ""
 
-#: record.h:1511 record.h:1553
+#: record.h:1516 record.h:1558
 msgid "add recording (indefinitely)"
 msgstr ""
 
-#: record.h:1510 record.h:1540
+#: record.h:1515 record.h:1545
 msgid "add recording (stop after current event)"
 msgstr ""
 
@@ -10843,7 +10843,7 @@ msgstr ""
 msgid "center"
 msgstr ""
 
-#: record.h:1492 record.h:1501 record.h:1524
+#: record.h:1497 record.h:1506 record.h:1529
 msgid "change"
 msgstr ""
 
@@ -12498,8 +12498,8 @@ msgstr ""
 msgid "stock Plugin"
 msgstr ""
 
-#: httpdfunc.h:5549 httpdfunc.h:5595 record.h:1428 record.h:1437 record.h:1448
-#: record.h:1477 record.h:1486 record.h:1518 skin_default_skin.xml.h:687
+#: httpdfunc.h:5549 httpdfunc.h:5595 record.h:1433 record.h:1442 record.h:1453
+#: record.h:1482 record.h:1491 record.h:1523 skin_default_skin.xml.h:687
 #: stream.h:15 stream.h:37
 msgid "stop"
 msgstr "Faststop"
