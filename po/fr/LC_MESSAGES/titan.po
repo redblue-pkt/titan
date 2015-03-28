@@ -621,7 +621,7 @@ msgid ""
 "Box reboots after check"
 msgstr ""
 
-msgid "Are you sure you want to delete this directory?"
+msgid "Are you sure you want to delete this Record directory?"
 msgstr ""
 
 msgid ""
@@ -1059,6 +1059,9 @@ msgid "Bootlogo 'Zombie'"
 msgstr ""
 
 msgid "Border Color"
+msgstr ""
+
+msgid "Bouquet Color"
 msgstr ""
 
 msgid "Bouquet List"
@@ -1936,11 +1939,6 @@ msgid "Director"
 msgstr ""
 
 msgid "Director:"
-msgstr ""
-
-msgid ""
-"Directory has content\n"
-"Really delete directory and content?"
 msgstr ""
 
 msgid "Dirsort"
@@ -4990,6 +4988,21 @@ msgstr "Redémarrer Titan"
 msgid "Restore"
 msgstr "Restaurer"
 
+msgid "Restore Default Bouquets"
+msgstr ""
+
+msgid "Restore Default Channel Settings"
+msgstr ""
+
+msgid "Restore Default Channels"
+msgstr ""
+
+msgid "Restore Default Providers"
+msgstr ""
+
+msgid "Restore Default Sats"
+msgstr ""
+
 msgid "Restore Settings"
 msgstr "Réglages de Rotor"
 
@@ -5909,6 +5922,21 @@ msgid "Start RGUID"
 msgstr "Démarre HTTPD"
 
 msgid "Start Record"
+msgstr ""
+
+msgid "Start Restore Default Bouquets ?"
+msgstr ""
+
+msgid "Start Restore Default Channel Settings ?"
+msgstr ""
+
+msgid "Start Restore Default Channels ?"
+msgstr ""
+
+msgid "Start Restore Default Providers ?"
+msgstr ""
+
+msgid "Start Restore Default Sats ?"
 msgstr ""
 
 msgid "Start Wlan ?"
@@ -7352,9 +7380,6 @@ msgstr ""
 msgid "can't create new transponer"
 msgstr ""
 
-msgid "can't create or delete directory"
-msgstr ""
-
 msgid "cancel"
 msgstr "Annuler"
 
@@ -7468,18 +7493,6 @@ msgstr "défaut"
 
 msgid "default Directory"
 msgstr "Repertoire Imdb"
-
-msgid "del medium for backup"
-msgstr ""
-
-msgid "del medium for extension"
-msgstr ""
-
-msgid "del medium for record"
-msgstr ""
-
-msgid "del medium for swap"
-msgstr ""
 
 msgid "del startchannel"
 msgstr "Supprime chaine de démarrage"
@@ -8550,9 +8563,6 @@ msgstr ""
 
 msgid "subtitle"
 msgstr "Sous Titre"
-
-msgid "succesfull create or delelete directory"
-msgstr ""
 
 msgid "success"
 msgstr ""
