@@ -259,7 +259,7 @@ msgstr ""
 msgid "10"
 msgstr ""
 
-#: harddisk.h:885
+#: harddisk.h:887
 msgid "10 min"
 msgstr "10 мин"
 
@@ -283,7 +283,7 @@ msgstr "13В"
 msgid "15"
 msgstr ""
 
-#: harddisk.h:886
+#: harddisk.h:888
 msgid "15 min"
 msgstr "15 мин"
 
@@ -391,6 +391,10 @@ msgstr ""
 msgid "3 GB"
 msgstr "3 Гб"
 
+#: tpk_showname.h:1
+msgid "3 Wins"
+msgstr ""
+
 #: stopifnotused.c:100
 msgid "30"
 msgstr ""
@@ -478,7 +482,7 @@ msgstr "4 сек"
 msgid "5"
 msgstr ""
 
-#: harddisk.h:885
+#: harddisk.h:887
 msgid "5 min"
 msgstr "5 мин"
 
@@ -519,7 +523,7 @@ msgstr "6 сек"
 msgid "60"
 msgstr ""
 
-#: harddisk.h:886
+#: harddisk.h:888
 msgid "60 min"
 msgstr "60 мин"
 
@@ -628,6 +632,12 @@ msgstr ""
 msgid "A"
 msgstr ""
 
+#: tpk_description.h:3
+msgid ""
+"A collection of really nice folder icons for MediaCenter Videoplayer "
+"Coverview!"
+msgstr ""
+
 #: plugins_networkbrowser_skin.xml.h:2 skins_networkbrowser_skin.xml.h:2
 msgid ""
 "A list of currently used network shares. You can add, edit, delete shares or "
@@ -659,6 +669,14 @@ msgstr "Параметры Аудио/Видео"
 #: skin_default_skin.xml.h:48
 msgid "AAC Mode"
 msgstr "AAC режим"
+
+#: tpk_description.h:1
+msgid "AAF MediaCenter, the best multimedia player on mipsel"
+msgstr ""
+
+#: tpk_description.h:2
+msgid "AAF MediaCenter, the best multimedia player on sh4"
+msgstr ""
 
 #: skin_default_skin.xml.h:52
 msgid "AC3 Mode"
@@ -724,6 +742,10 @@ msgstr "Информация о Titan"
 #: skins_stopifnotused_skin.xml.h:1
 msgid "Action"
 msgstr "Экшн"
+
+#: tpk_showname.h:2
+msgid "Action Man Italic"
+msgstr ""
 
 #: skin_default_skin.xml.h:53 softcam.h:294
 msgid "Activate"
@@ -851,10 +873,49 @@ msgstr "Все новые каналы сохранены!"
 msgid "Allowed Zapping via Streamlink"
 msgstr "Разрешить переключение через Streamlink"
 
+#: tpk_showname.h:3
+msgid "Alpha Romanie G98"
+msgstr ""
+
 #: tithek.c:85
 msgid ""
 "Alternativ Audio Firmware not working korrekt with all videos (DTSDOWNMIX)!"
 msgstr "Альтернативный кодек работает не корректно с видео (DTSDOWNMIX)!"
+
+#: tpk_description.h:5
+msgid "Alternative blue skin for Pearl LCD "
+msgstr ""
+
+#: tpk_description.h:6
+msgid "Alternative skin for Pearl LCD"
+msgstr ""
+
+#: tpk_description.h:10
+msgid ""
+"Alternative skin for Pearl LCD - X-Light picons must be installed separately"
+msgstr ""
+
+#: tpk_description.h:7
+msgid "Alternative skin for Pearl LCD Atemio style"
+msgstr ""
+
+#: tpk_description.h:9
+msgid "Alternative skin for Pearl LCD MRP style"
+msgstr ""
+
+#: tpk_description.h:8
+msgid "Alternative skin for Pearl LCD big/black"
+msgstr ""
+
+#: tpk_description.h:12
+msgid ""
+"Alternative skin for Samsung LCD - w/o Picons (must be installed separately)"
+msgstr ""
+
+#: tpk_description.h:11
+msgid ""
+"Alternative skin for Samsung LCD - w/o picons (must be installed separately)"
+msgstr ""
 
 #: copyfile.h:839
 msgid "Amount of files: "
@@ -909,7 +970,7 @@ msgstr "Архив"
 msgid "Are you sure you want remove this share?"
 msgstr "Удалить эту сетевую общую папку?"
 
-#: harddisk.h:813
+#: harddisk.h:815
 msgid ""
 "Are you sure you want to check this Partition?\n"
 "Box reboots after check"
@@ -917,17 +978,17 @@ msgstr ""
 "Проверить раздел? После проверки ресивер\n"
 "будет перезагружен!"
 
-#: harddisk.h:348
+#: harddisk.h:350
 msgid "Are you sure you want to delete this directory?"
 msgstr "Удалить эту директорию?"
 
-#: harddisk.h:673
+#: harddisk.h:675
 msgid ""
 "Are you sure you want to format this Partition?\n"
 "Box reboots after format"
 msgstr "Форматировать этот раздел? Ресивер будет перезагружен!"
 
-#: harddisk.h:639
+#: harddisk.h:641
 msgid ""
 "Are you sure you want to remove all Partitions\n"
 "on this device and create a new Partition 1?\n"
@@ -974,6 +1035,34 @@ msgstr "Соотношение сторон"
 #: videomode.h:33 videomode.h:83
 msgid "Aspect Settings"
 msgstr "Соотношение сторон"
+
+#: tpk_showname.h:4
+msgid "Astra 19.2"
+msgstr ""
+
+#: tpk_showname.h:6
+msgid "Astra 19.2 (matze70)"
+msgstr ""
+
+#: tpk_showname.h:8
+msgid "Astra 19.2 (uljanow) plus Hotbird 13.0"
+msgstr ""
+
+#: tpk_showname.h:7
+msgid "Astra 19.2 - new (matze70)"
+msgstr ""
+
+#: tpk_showname.h:5
+msgid "Astra 19.2 and all transponder"
+msgstr ""
+
+#: tpk_description.h:13
+msgid "Astra 19.2e 23.5e Hotbird 13.0e Thor 0.8w KabelDeutschland (andy)"
+msgstr ""
+
+#: tpk_showname.h:9
+msgid "Astra ORF"
+msgstr ""
 
 #: skin_default_skin.xml.h:81 webif_info.h:5
 msgid "Atemio (hotline)"
@@ -1084,6 +1173,10 @@ msgstr "Авто разрешение"
 msgid "Auto Scan"
 msgstr "Автопоиск"
 
+#: tpk_showname.h:10
+msgid "Auto Timer"
+msgstr ""
+
 #: skin_default_skin.xml.h:91
 msgid "Auto resolution"
 msgstr "Авто разрешение"
@@ -1123,6 +1216,10 @@ msgstr "Автостоп через 10 сек"
 #: webif_shootmain.h:6
 msgid "Automatic update"
 msgstr "Автообновление"
+
+#: tpk_description.h:14
+msgid "Automatisch Timer setzen"
+msgstr ""
 
 #: plugins_panel_skin.xml.h:4 skins_panel_skin.xml.h:4
 msgid "Automount"
@@ -1326,9 +1423,29 @@ msgstr ""
 msgid "Benutzer-Kamera 2"
 msgstr ""
 
+#: tpk_showname.h:11
+msgid "Bikergirl"
+msgstr ""
+
 #: skin_default_skin.xml.h:114
 msgid "Bitrate"
 msgstr "Битрейт"
+
+#: tpk_description.h:16
+msgid "Black 3D Picons - Astra 23.5E."
+msgstr ""
+
+#: tpk_description.h:17
+msgid "Black 3D Picons - Hotbird 13.0E."
+msgstr ""
+
+#: tpk_description.h:15
+msgid "Black 3D Picons Astra 19.2"
+msgstr ""
+
+#: tpk_description.h:18
+msgid "Black Picons - Eutelsat 36.0E."
+msgstr ""
 
 #: skin_default_skin.xml.h:115
 msgid "Blindscan"
@@ -1369,6 +1486,10 @@ msgstr "Синяя кнопка"
 msgid "Blue Key Action - Setup"
 msgstr "Выбор"
 
+#: tpk_showname.h:12
+msgid "Blueskull"
+msgstr ""
+
 #: panel_settings_autostart.h:176 settings_autostart.h:140
 msgid "Boot RGB Fix"
 msgstr "Загрузка с опцией RGB Fix"
@@ -1380,6 +1501,94 @@ msgstr "Разрешение при загрузке"
 #: panel_settings_autostart.h:140 settings_autostart.h:131
 msgid "Bootlogo"
 msgstr "Загружать логотип при старте"
+
+#: tpk_description.h:19
+msgid "Bootlogo 'Bikergirl'"
+msgstr ""
+
+#: tpk_description.h:20
+msgid "Bootlogo 'Blueskull'"
+msgstr ""
+
+#: tpk_description.h:21
+msgid "Bootlogo 'Cityflash'"
+msgstr ""
+
+#: tpk_description.h:22
+msgid "Bootlogo 'Enigma Linux'"
+msgstr ""
+
+#: tpk_description.h:24
+msgid "Bootlogo 'Fantasygirl 2'"
+msgstr ""
+
+#: tpk_description.h:23
+msgid "Bootlogo 'Fantasygirl'"
+msgstr ""
+
+#: tpk_description.h:25
+msgid "Bootlogo 'Firelady'"
+msgstr ""
+
+#: tpk_description.h:26
+msgid "Bootlogo 'Fireskull'"
+msgstr ""
+
+#: tpk_description.h:27
+msgid "Bootlogo 'Footballgirls'"
+msgstr ""
+
+#: tpk_description.h:28
+msgid "Bootlogo 'Ghostrider'"
+msgstr ""
+
+#: tpk_description.h:29
+msgid "Bootlogo 'Giantgirl'"
+msgstr ""
+
+#: tpk_description.h:30
+msgid "Bootlogo 'Ice Age Scrap likes UFS910'"
+msgstr ""
+
+#: tpk_description.h:31
+msgid "Bootlogo 'Linuxgirl'"
+msgstr ""
+
+#: tpk_description.h:32
+msgid "Bootlogo 'Planets'"
+msgstr ""
+
+#: tpk_description.h:33
+msgid "Bootlogo 'The Grim Reaper'"
+msgstr ""
+
+#: tpk_description.h:34
+msgid "Bootlogo 'TitanNit Blood'"
+msgstr ""
+
+#: tpk_description.h:35
+msgid "Bootlogo 'TitanNit Design 1'"
+msgstr ""
+
+#: tpk_description.h:36
+msgid "Bootlogo 'TitanNit Design 3'"
+msgstr ""
+
+#: tpk_description.h:37
+msgid "Bootlogo 'TitanNit Design 5'"
+msgstr ""
+
+#: tpk_description.h:38
+msgid "Bootlogo 'TitanNit Leather'"
+msgstr ""
+
+#: tpk_description.h:39
+msgid "Bootlogo 'TitanNit_on_Fire'"
+msgstr ""
+
+#: tpk_description.h:40
+msgid "Bootlogo 'Zombie'"
+msgstr ""
 
 #: skin_default_skin.xml.h:119
 msgid "Border Color"
@@ -1497,6 +1706,10 @@ msgstr "Порты CAM "
 msgid "CAMx"
 msgstr ""
 
+#: tpk_description.h:48 tpk_showname.h:17
+msgid "CCcam 2.3.0"
+msgstr ""
+
 #: skin_default_skin.xml.h:150
 msgid "CLEAR INPUT"
 msgstr "Чистый вход"
@@ -1525,6 +1738,30 @@ msgstr "Кабельное"
 msgid "Cable: "
 msgstr "Кабельные"
 
+#: tpk_description.h:42
+msgid "Cable: Kabel Deutschland UH-Kreis"
+msgstr ""
+
+#: tpk_description.h:43
+msgid "Cable: Kabel Primacom"
+msgstr ""
+
+#: tpk_description.h:45
+msgid "Cable: Unitymedia2"
+msgstr ""
+
+#: tpk_description.h:41
+msgid "Cable: default Settings Kabel Deutschland"
+msgstr ""
+
+#: tpk_description.h:44
+msgid "Cable: sofatester Kabel BW"
+msgstr ""
+
+#: tpk_showname.h:13
+msgid "CallMonitor"
+msgstr ""
+
 #: plugins_callmonitor1_skin.xml.h:18 skins_callmonitor1_skin.xml.h:18
 msgid "CallMonitor Settings"
 msgstr "Настройки CallMonitor"
@@ -1536,6 +1773,10 @@ msgid ""
 "check your parameter "
 msgstr ""
 
+#: tpk_description.h:46
+msgid "Callmonitor Plugin"
+msgstr ""
+
 #: plugins_panel_skin.xml.h:6 skin_default_skin.xml.h:132
 #: skins_panel_skin.xml.h:6
 msgid "Cam / Emu"
@@ -1544,6 +1785,10 @@ msgstr "Эмуляторы/Cam"
 #: settings_autostart.h:215
 msgid "Cam Routing"
 msgstr "Загрузка с опцией Cam Routing"
+
+#: tpk_showname.h:15
+msgid "Camd3 v3.902 "
+msgstr ""
 
 #: movie4k.h:48
 msgid "Can not parse Main Stream URL, try again later."
@@ -1683,7 +1928,7 @@ msgstr "Обновления для плагинов не найдены!"
 msgid "Cancel"
 msgstr "Отмена"
 
-#: plugins_catcatch_skin.xml.h:6 skins_catcatch_skin.xml.h:6
+#: plugins_catcatch_skin.xml.h:6 skins_catcatch_skin.xml.h:6 tpk_showname.h:16
 msgid "Cat-Catch"
 msgstr ""
 
@@ -1967,6 +2212,10 @@ msgstr "Выберите из списка плагин для запуска с
 msgid "Ci-Modul internal Menu"
 msgstr "Меню Ci модуля"
 
+#: tpk_showname.h:18
+msgid "Cityflash"
+msgstr ""
+
 #: skin_default_skin.xml.h:148
 msgid "Clear"
 msgstr "Очистить"
@@ -1994,6 +2243,10 @@ msgstr "Код 1"
 #: skin_default_skin.xml.h:152
 msgid "Code2"
 msgstr "Код 2"
+
+#: tpk_showname.h:19
+msgid "Codepack"
+msgstr ""
 
 #: skin_default_skin.xml.h:153
 msgid "Coderate HP"
@@ -2211,6 +2464,10 @@ msgstr "Создать список транспондеров"
 msgid "Create new"
 msgstr "Создать новый"
 
+#: tpk_showname.h:20
+msgid "Croissant"
+msgstr ""
+
 #: stock.h:209
 msgid "Currency: "
 msgstr "Валюта "
@@ -2245,6 +2502,10 @@ msgstr "Описание"
 #: plugins_lcdsamsung_skin.xml.h:5 skins_lcdsamsung_skin.xml.h:5
 msgid "DI"
 msgstr "D"
+
+#: tpk_showname.h:23
+msgid "DLNA (Minidlna Server)"
+msgstr ""
 
 #: gmediarender.h:156
 msgid "DLNA Control Client connected !"
@@ -2286,12 +2547,28 @@ msgstr "Система DNS"
 msgid "DO"
 msgstr "D"
 
+#: tpk_showname.h:24
+msgid "DTS Downmix"
+msgstr ""
+
+#: tpk_description.h:57
+msgid "DTS-Downmix firmware "
+msgstr ""
+
 #: transponder.h:572 transponder.h:579
 msgid "DVBS"
 msgstr ""
 
 #: transponder.h:573 transponder.h:581
 msgid "DVBS2"
+msgstr ""
+
+#: tpk_showname.h:25
+msgid "DVD Player"
+msgstr ""
+
+#: tpk_description.h:58
+msgid "DVD-Player plugin"
 msgstr ""
 
 #: skin_default_skin.xml.h:216
@@ -2385,6 +2662,26 @@ msgstr "По умолчанию"
 #: skin_default_skin.xml.h:188
 msgid "Default Autostart"
 msgstr "Автозапуск по умолчанию"
+
+#: tpk_description.h:50 tpk_showname.h:21
+msgid "Default Font"
+msgstr ""
+
+#: tpk_description.h:52
+msgid "Default Skin"
+msgstr ""
+
+#: tpk_description.h:51
+msgid "Default mod by maenne79"
+msgstr ""
+
+#: tpk_description.h:53
+msgid "Default skin without MiniTV"
+msgstr ""
+
+#: tpk_description.h:54
+msgid "Default skin without MiniTV mod by maenne79"
+msgstr ""
 
 #: skin_default_skin.xml.h:190
 msgid "Del EPG before scan"
@@ -2508,6 +2805,14 @@ msgstr "Режим DiSEqC"
 msgid "Diff"
 msgstr "Разница"
 
+#: tpk_showname.h:22
+msgid "Digiface Regular"
+msgstr ""
+
+#: tpk_description.h:55
+msgid "Digital clock blue - Samsung LCD Skin Channel"
+msgstr ""
+
 #: skin_default_skin.xml.h:199
 msgid "Director"
 msgstr "Режиссер"
@@ -2518,7 +2823,7 @@ msgstr "Режиссер"
 msgid "Director:"
 msgstr "Режиссер"
 
-#: harddisk.h:353
+#: harddisk.h:355
 msgid ""
 "Directory has content\n"
 "Really delete directory and content?"
@@ -2642,6 +2947,12 @@ msgstr "Dvbapi (Включен)"
 msgid "E"
 msgstr ""
 
+#: tpk_description.h:59
+msgid ""
+"E2 WebIf API erlaubt den Zugriff auf TitanNit mittels eines E2-Clients (z.B. "
+"dreaMote-App auf iPhone oder iPad, XBMC mit VU+, TVBrowser, FHEM, ...)"
+msgstr ""
+
 #: plugins_mc_skin.xml.h:18 plugins_networkbrowser_skin.xml.h:8
 #: plugins_readerconfig_skin.xml.h:3 skin_default_skin.xml.h:219
 #: skins_mc_skin.xml.h:18 skins_networkbrowser_skin.xml.h:8
@@ -2754,7 +3065,7 @@ msgstr "Размер свободного пространства (Кб)"
 msgid "ERROR"
 msgstr "ОШИБКА!"
 
-#: harddisk.h:791
+#: harddisk.h:793
 msgid ""
 "ERROR\n"
 "partition could not be created"
@@ -2804,10 +3115,10 @@ msgstr "Ошибка. Нельзя установить маркер на это
 #: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
 #: global.h:5851 global.h:6572 global.h:6641 global.h:6660 global.h:6835
 #: global.h:7088 global.h:7101 global.h:7112 global.h:7123 global.h:7134
-#: harddisk.h:348 harddisk.h:353 harddisk.h:380 harddisk.h:384 harddisk.h:437
-#: harddisk.h:631 harddisk.h:639 harddisk.h:673 harddisk.h:722 harddisk.h:727
-#: harddisk.h:729 harddisk.h:731 harddisk.h:791 harddisk.h:810 harddisk.h:813
-#: harddisk.h:1044 hbbtv.h:362 hello.c:36 httpdfunc.h:1304 httpdfunc.h:3258
+#: harddisk.h:350 harddisk.h:355 harddisk.h:382 harddisk.h:386 harddisk.h:439
+#: harddisk.h:633 harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729
+#: harddisk.h:731 harddisk.h:733 harddisk.h:793 harddisk.h:812 harddisk.h:815
+#: harddisk.h:1046 hbbtv.h:362 hello.c:36 httpdfunc.h:1304 httpdfunc.h:3258
 #: httpdfunc.h:6159 httpdfunc.h:6424 httpdfunc.h:6495 hwtest.h:88 hwtest.h:93
 #: hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206
 #: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
@@ -2935,17 +3246,37 @@ msgstr ""
 msgid "Emu Active Color"
 msgstr ""
 
+#: tpk_description.h:60
+msgid "Emu Camd3 v3.902 for your box"
+msgstr ""
+
 #: panel_settings_autostart.h:285 settings_autostart.h:429
 msgid "Emu Control"
 msgstr "Контроль эмулятора"
+
+#: tpk_description.h:61
+msgid "Emu MGCamd v1.38a and all Configs"
+msgstr ""
 
 #: skin_default_skin.xml.h:226
 msgid "Emu Running Color"
 msgstr ""
 
+#: tpk_description.h:64
+msgid "Emu Wicardd v1.15 for config for ntv,tricolor,ntv_hd"
+msgstr ""
+
 #: softcam.h:119
 msgid "Emu not found"
 msgstr "Эмулятор не найден"
+
+#: tpk_description.h:62
+msgid "Emu scam 3.60 for your box"
+msgstr ""
+
+#: tpk_description.h:63
+msgid "Emu vizcam 1.04 for your box"
+msgstr ""
 
 #: plugins_readerconfig_skin.xml.h:4 skins_readerconfig_skin.xml.h:4
 msgid "Enable"
@@ -2962,6 +3293,14 @@ msgstr "Система привода"
 #: skin_default_skin.xml.h:229
 msgid "English"
 msgstr "Английский"
+
+#: tpk_showname.h:26
+msgid "Enigma2 WebIf API (Dreambox)"
+msgstr ""
+
+#: tpk_showname.h:27
+msgid "Enigmalinux"
+msgstr ""
 
 #: plugins_facebook_skin.xml.h:1 skins_facebook_skin.xml.h:1
 msgid ""
@@ -3152,7 +3491,7 @@ msgstr "Файловый браузер"
 msgid "FREQU"
 msgstr ""
 
-#: plugins_facebook_skin.xml.h:4 skins_facebook_skin.xml.h:4
+#: plugins_facebook_skin.xml.h:4 skins_facebook_skin.xml.h:4 tpk_showname.h:28
 msgid "Facebook"
 msgstr ""
 
@@ -3196,6 +3535,14 @@ msgstr "Управление охлаждением"
 #: epgsearch.h:276
 msgid "Fantasy"
 msgstr "Фэнтази"
+
+#: tpk_showname.h:29
+msgid "Fantasygirl"
+msgstr ""
+
+#: tpk_showname.h:30
+msgid "Fantasygirl 2"
+msgstr ""
 
 #: webif_index.atemio5200.h:58 webif_index.atemio5200.h:111
 #: webif_index.atemio6200.h:58 webif_index.atemio6200.h:111
@@ -3276,6 +3623,10 @@ msgstr "Кэширование файлов воспроизведения (20М
 msgid "File Caching Playback (30MB / 360s)"
 msgstr "Кэширование файлов воспроизведения (30Мб/360 сек)"
 
+#: tpk_description.h:66 tpk_showname.h:31
+msgid "File Manager"
+msgstr ""
+
 #: tithek.h:670
 msgid "File exist, overwrite?"
 msgstr "Файл существует, перезаписать?"
@@ -3327,6 +3678,14 @@ msgstr ""
 msgid "Fine move"
 msgstr "Пошагово"
 
+#: tpk_showname.h:32
+msgid "Firelady"
+msgstr ""
+
+#: tpk_showname.h:33
+msgid "Fireskull"
+msgstr ""
+
 #: titan.c:1009
 msgid "First Wizzard"
 msgstr "Мастер настроек"
@@ -3355,6 +3714,54 @@ msgstr "Обновление системы (Онлайн)"
 msgid "Flashupdate (tmp)"
 msgstr "Обновление системы (Локально)"
 
+#: tpk_description.h:68
+msgid "Font 'Action Man Italic' "
+msgstr ""
+
+#: tpk_description.h:69
+msgid "Font 'Alpha Romanie G98'"
+msgstr ""
+
+#: tpk_description.h:70
+msgid "Font 'Croissant' "
+msgstr ""
+
+#: tpk_description.h:71
+msgid "Font 'Digiface Regular' "
+msgstr ""
+
+#: tpk_description.h:72
+msgid "Font 'Goodtime'"
+msgstr ""
+
+#: tpk_description.h:73
+msgid "Font 'I Hate Comic Sans'"
+msgstr ""
+
+#: tpk_description.h:74
+msgid "Font 'Lydian Bolt Italic BT' "
+msgstr ""
+
+#: tpk_description.h:75
+msgid "Font 'Mighty Zeo Caps'"
+msgstr ""
+
+#: tpk_description.h:76
+msgid "Font 'Monoglyceride DemiBold'"
+msgstr ""
+
+#: tpk_description.h:77
+msgid "Font 'New Gothic BT'"
+msgstr ""
+
+#: tpk_description.h:78
+msgid "Font 'Paddington Bold'"
+msgstr ""
+
+#: tpk_description.h:79
+msgid "Font 'Plover Bold'"
+msgstr ""
+
 #: skin_default_skin.xml.h:267
 msgid "Font Color"
 msgstr ""
@@ -3362,6 +3769,10 @@ msgstr ""
 #: skin_default_skin.xml.h:268
 msgid "Fontsize adjust in pixel"
 msgstr "Размер шрифта в пикселях"
+
+#: tpk_showname.h:34
+msgid "Footballgirls"
+msgstr ""
 
 #: networkbrowser.h:966
 msgid ""
@@ -3419,7 +3830,7 @@ msgstr ""
 "Найден Wlan адаптер, но нет драйвера\n"
 "Установите драйвер "
 
-#: harddisk.h:1044
+#: harddisk.h:1046
 msgid ""
 "Found new Stick/HDD.\n"
 "You can configure it in Harddisk Menu."
@@ -3576,6 +3987,10 @@ msgstr "Зелёная"
 msgid "GUI Restart"
 msgstr "Рестарт интерфейса"
 
+#: tpk_showname.h:35
+msgid "Gbox 806"
+msgstr ""
+
 #: skin_default_skin.xml.h:279
 msgid "Genre"
 msgstr "Жанры"
@@ -3591,6 +4006,14 @@ msgstr "Жанр"
 #: skin_default_skin.xml.h:280
 msgid "German"
 msgstr "Немецкий"
+
+#: tpk_showname.h:36
+msgid "Ghostrider"
+msgstr ""
+
+#: tpk_showname.h:37
+msgid "Giantgirl"
+msgstr ""
 
 #: httpdfunc.h:5351 skin_default_skin.xml.h:281 webif_info_logs.h:3
 msgid "Git Changelog"
@@ -3608,6 +4031,10 @@ msgstr "Журнал изменений GIT (Полный)"
 msgid "Global"
 msgstr ""
 
+#: tpk_showname.h:38
+msgid "GmediaRender"
+msgstr ""
+
 #: skin_default_skin.xml.h:282
 msgid "Go to startpos"
 msgstr "Переход к начальной позиции"
@@ -3616,8 +4043,28 @@ msgstr "Переход к начальной позиции"
 msgid "Goals"
 msgstr ""
 
+#: tpk_description.h:82
+msgid "Gold Picons - Astra 23.5E."
+msgstr ""
+
+#: tpk_description.h:83
+msgid "Gold Picons - Astra 28.2E."
+msgstr ""
+
+#: tpk_description.h:84
+msgid "Gold Picons - Hotbird 13.0E."
+msgstr ""
+
+#: tpk_description.h:81
+msgid "Gold Picons Astra 19.2"
+msgstr ""
+
 #: webif_streamconfig.h:2
 msgid "GoodPlayer"
+msgstr ""
+
+#: tpk_showname.h:39
+msgid "Goodtime"
 msgstr ""
 
 #: skin_default_skin.xml.h:283
@@ -3681,11 +4128,11 @@ msgstr "Ч"
 msgid "HBBTV Favoriten"
 msgstr "HBBTV фаворит"
 
-#: harddisk.h:477
+#: harddisk.h:479
 msgid "HDD "
 msgstr ""
 
-#: harddisk.h:631
+#: harddisk.h:633
 msgid ""
 "HDD > 2TB unsupported.\n"
 "You must first install plugin parted, then you can use this panel."
@@ -3727,15 +4174,15 @@ msgstr "Время предупреждения (Сек)"
 msgid "Hard"
 msgstr ""
 
-#: adjust.h:286 harddisk.h:437 skin_default_skin.xml.h:295
+#: adjust.h:286 harddisk.h:439 skin_default_skin.xml.h:295
 msgid "Harddisk"
 msgstr "Жёсткий диск"
 
-#: harddisk.h:217 harddisk.h:218 harddisk.h:457 harddisk.h:458
+#: harddisk.h:217 harddisk.h:218 harddisk.h:459 harddisk.h:460
 msgid "Harddisk Configure"
 msgstr "Настройка разделов"
 
-#: harddisk.h:445 harddisk.h:446
+#: harddisk.h:447 harddisk.h:448
 msgid "Harddisk Format"
 msgstr "Форматировать диски/разделы"
 
@@ -3743,11 +4190,11 @@ msgstr "Форматировать диски/разделы"
 msgid "Harddisk Format - Filesystem"
 msgstr "Файловая система"
 
-#: harddisk.h:451 harddisk.h:452
+#: harddisk.h:453 harddisk.h:454
 msgid "Harddisk Fsck"
 msgstr "Проверка файловой системы"
 
-#: harddisk.h:875 harddisk.h:876
+#: harddisk.h:877 harddisk.h:878
 msgid "Harddisk Sleep"
 msgstr "Время до отключения"
 
@@ -4139,6 +4586,10 @@ msgstr ""
 msgid "I"
 msgstr ""
 
+#: tpk_showname.h:42
+msgid "I Hate Comic Sans"
+msgstr ""
+
 #: skin_default_skin.xml.h:365 tpchoice.h:52
 msgid "ID"
 msgstr ""
@@ -4161,9 +4612,17 @@ msgstr ""
 msgid "IMDB Search"
 msgstr "IMDB поиск"
 
+#: tpk_showname.h:43
+msgid "IMDb"
+msgstr ""
+
 #: plugins_imdb_skin.xml.h:4 skins_imdb_skin.xml.h:4
 msgid "IMDb - Plugin"
 msgstr "Плагин IMDB"
+
+#: tpk_showname.h:44
+msgid "IMDb-API"
+msgstr ""
 
 #: plugins_imdbapi_skin.xml.h:4 skins_imdbapi_skin.xml.h:4
 msgid "IMDb-API - Plugin"
@@ -4185,6 +4644,10 @@ msgstr "IP потока"
 msgid "IP-FritzBox"
 msgstr ""
 
+#: tpk_showname.h:45
+msgid "IP-Kamera"
+msgstr ""
+
 #: plugins_instar_skin.xml.h:6 skins_instar_skin.xml.h:6
 msgid "IP-Kamera 1"
 msgstr ""
@@ -4195,6 +4658,14 @@ msgstr ""
 
 #: plugins_instar_skin.xml.h:17 skins_instar_skin.xml.h:17
 msgid "IP-Kamera Einstellungen"
+msgstr ""
+
+#: tpk_description.h:87
+msgid "IP-Kamera zB. Firma INSTAR"
+msgstr ""
+
+#: tpk_showname.h:41
+msgid "Ice Age Scrap likes UFS910"
 msgstr ""
 
 #: screensaveradjust.h:41
@@ -4222,6 +4693,14 @@ msgstr ""
 #: security.h:2007
 msgid "Image"
 msgstr "Имидж"
+
+#: tpk_description.h:86
+msgid "ImdB Info Plugin"
+msgstr ""
+
+#: tpk_description.h:85
+msgid "ImdBapi Info Plugin"
+msgstr ""
 
 #: skin_default_skin.xml.h:367
 msgid "Inc. AC3 Audio in %"
@@ -4267,7 +4746,7 @@ msgstr "Время показа инфобара (Сек)"
 msgid "Information"
 msgstr "Информация"
 
-#: harddisk.h:810
+#: harddisk.h:812
 msgid ""
 "Information: This hard drive size can take a file\n"
 "system check between 30 minutes and 1.5 hours."
@@ -4487,6 +4966,42 @@ msgstr ""
 msgid "KILL"
 msgstr "Убить прцесс"
 
+#: tpk_showname.h:46
+msgid "Kabel BW (sofatester)"
+msgstr ""
+
+#: tpk_description.h:88
+msgid "Kabel BW transparent Picons"
+msgstr ""
+
+#: tpk_showname.h:47
+msgid "Kabel Deutschland"
+msgstr ""
+
+#: tpk_description.h:89
+msgid "Kabel Deutschland Picons black3d"
+msgstr ""
+
+#: tpk_showname.h:48
+msgid "Kabel Deutschland UH-Kreis"
+msgstr ""
+
+#: tpk_description.h:90
+msgid "Kabel Deutschland transparent Picons"
+msgstr ""
+
+#: tpk_showname.h:50
+msgid "Kabel Primacom"
+msgstr ""
+
+#: tpk_showname.h:49
+msgid "Kabelplus ORF"
+msgstr ""
+
+#: tpk_description.h:91
+msgid "Kabelplus ORF | 16.12.2014 (Olbord)"
+msgstr ""
+
 #: plugins_instar_skin.xml.h:8 skins_instar_skin.xml.h:8
 msgid "Kamera 1"
 msgstr ""
@@ -4508,6 +5023,10 @@ msgstr "Ключ"
 msgid "Key Action - Plugins"
 msgstr "Плагины"
 
+#: tpk_showname.h:51
+msgid "KeyLock"
+msgstr ""
+
 #: skin_default_skin.xml.h:389
 msgid "Keyboard"
 msgstr "Клавиатура"
@@ -4522,6 +5041,58 @@ msgstr ""
 
 #: skin_default_skin.xml.h:393
 msgid "L"
+msgstr ""
+
+#: tpk_showname.h:52
+msgid "LCD Pearl"
+msgstr ""
+
+#: tpk_showname.h:57
+msgid "LCD Pearl Skin MRP"
+msgstr ""
+
+#: tpk_showname.h:53
+msgid "LCD Pearl skin Atemio"
+msgstr ""
+
+#: tpk_showname.h:54
+msgid "LCD Pearl skin big/black"
+msgstr ""
+
+#: tpk_showname.h:55
+msgid "LCD Pearl skin black"
+msgstr ""
+
+#: tpk_showname.h:56
+msgid "LCD Pearl skin blue"
+msgstr ""
+
+#: tpk_showname.h:58
+msgid "LCD Pearl skin only picon"
+msgstr ""
+
+#: tpk_showname.h:64
+msgid "LCD Samsung SPF.."
+msgstr ""
+
+#: tpk_showname.h:59
+msgid "LCD Samsung skin analog clock"
+msgstr ""
+
+#: tpk_showname.h:60
+msgid "LCD Samsung skin digital clock (blue) - operating mode"
+msgstr ""
+
+#: tpk_showname.h:61
+msgid "LCD Samsung skin digital clock tricots"
+msgstr ""
+
+#: tpk_showname.h:62
+msgid "LCD Samsung skin digital clock yellow"
+msgstr ""
+
+#: tpk_showname.h:63
+msgid "LCD Samsung skin wooden clock"
 msgstr ""
 
 #: skin_default_skin.xml.h:397
@@ -4634,6 +5205,14 @@ msgstr "Влево"
 msgid "Level:"
 msgstr "Уровень"
 
+#: tpk_showname.h:65
+msgid "Lib Pack (ufs910/ufs922)"
+msgstr ""
+
+#: tpk_description.h:92
+msgid "Lib extension for network (upnpfs/smbfs/ftpfs/rarfs)"
+msgstr ""
+
 #: security.h:2025
 msgid "License"
 msgstr ""
@@ -4645,6 +5224,10 @@ msgstr "Предел"
 #: facebook.h:476
 msgid "Link postet"
 msgstr "Ссылка размещена"
+
+#: tpk_showname.h:66
+msgid "Linuxgirl"
+msgstr ""
 
 #: skin_default_skin.xml.h:400
 msgid "Listbox Select"
@@ -4701,6 +5284,10 @@ msgstr "Ширина "
 #: weather.h:442 weather.h:460 weather.h:478 weather.h:496
 msgid "Lowest temp: "
 msgstr "Мин температура "
+
+#: tpk_showname.h:67
+msgid "Lydian Bolt Italic BT"
+msgstr ""
 
 #: skin_default_skin.xml.h:410
 msgid "M"
@@ -4881,9 +5468,13 @@ msgstr "Медиаплеер"
 msgid "Media Plugins List"
 msgstr "Список медиаплагинов"
 
-#: adjust.h:274
+#: adjust.h:274 tpk_showname.h:68
 msgid "MediaCenter"
 msgstr "Медиацентр"
+
+#: tpk_showname.h:69
+msgid "MediaCenter FolderIcons"
+msgstr ""
 
 #: adjust.h:342
 msgid "MediaDB"
@@ -4971,6 +5562,22 @@ msgstr ""
 msgid "Mediathek"
 msgstr "Медиатека"
 
+#: tpk_description.h:93
+msgid "MegaStyle blue Mini TV Skin"
+msgstr ""
+
+#: tpk_description.h:94
+msgid "MegaStyle blue Skin"
+msgstr ""
+
+#: tpk_description.h:95
+msgid "MegaStyle grey MiniTV Skin"
+msgstr ""
+
+#: tpk_description.h:96
+msgid "MegaStyle grey Skin"
+msgstr ""
+
 #: httpdfunc.h:5297 skin_default_skin.xml.h:425 webif_info_sysinfos.h:3
 msgid "Memory"
 msgstr "Память"
@@ -5028,9 +5635,9 @@ msgstr ""
 #: flashx.h:195 flashx.h:233 flashx.h:270 global.h:5851 global.h:6572
 #: global.h:6641 global.h:6660 global.h:6835 global.h:7088 global.h:7094
 #: global.h:7101 global.h:7105 global.h:7112 global.h:7116 global.h:7123
-#: global.h:7127 global.h:7134 global.h:7138 harddisk.h:631 harddisk.h:639
-#: harddisk.h:673 harddisk.h:722 harddisk.h:727 harddisk.h:729 harddisk.h:731
-#: harddisk.h:791 harddisk.h:810 harddisk.h:813 hbbtv.h:362 hello.c:36
+#: global.h:7127 global.h:7134 global.h:7138 harddisk.h:633 harddisk.h:641
+#: harddisk.h:675 harddisk.h:724 harddisk.h:729 harddisk.h:731 harddisk.h:733
+#: harddisk.h:793 harddisk.h:812 harddisk.h:815 hbbtv.h:362 hello.c:36
 #: httpdfunc.h:1304 httpdfunc.h:5773 httpdfunc.h:6159 httpdfunc.h:6424
 #: httpdfunc.h:6495 hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103
 #: hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390 hwtest.h:411
@@ -5093,6 +5700,18 @@ msgstr ""
 #: xvidstage.h:177 youtube.h:215 zapback.c:79 zdf.h:29
 msgid "Message"
 msgstr "Сообщение"
+
+#: tpk_description.h:97
+msgid "MetrixHD skin for transparent xpicons"
+msgstr ""
+
+#: tpk_showname.h:70
+msgid "Mgcamd v1.38a"
+msgstr ""
+
+#: tpk_showname.h:71
+msgid "Mighty Zeo Caps"
+msgstr ""
 
 #: adjust.h:266
 msgid "Minimal"
@@ -5157,6 +5776,14 @@ msgstr ""
 #: global.h:6078 global.h:6088 rectimer.h:1080 skin_default_skin.xml.h:440
 msgid "Monday"
 msgstr "Понедельник"
+
+#: tpk_showname.h:72
+msgid "Monoglyceride DemiBold"
+msgstr ""
+
+#: tpk_description.h:98
+msgid "More audio/video formats playable"
+msgstr ""
 
 #: httpdfunc.h:5255 skin_default_skin.xml.h:441 system_infos.h:20
 #: webif_info_systeminfos.h:5
@@ -5331,7 +5958,11 @@ msgstr "Сканирование сети"
 msgid "Network Test"
 msgstr "Тест сети"
 
-#: adjust.h:282 skin_default_skin.xml.h:457
+#: tpk_description.h:99
+msgid "Network browser extension for better Win7 compatibility"
+msgstr ""
+
+#: adjust.h:282 skin_default_skin.xml.h:457 tpk_showname.h:73
 msgid "Networkbrowser"
 msgstr "Сетевой браузер"
 
@@ -5347,8 +5978,24 @@ msgstr "Обнаруженные папки"
 msgid "Networkbrowser - show scanned cifs/nfs-Shares"
 msgstr "Сканирование CIFS/NFS"
 
+#: tpk_description.h:100
+msgid "Networkfile libsmbclient 3.0.28b"
+msgstr ""
+
 #: tithek_mainmenu.h:31
 msgid "Netzkino"
+msgstr ""
+
+#: tpk_description.h:101 tpk_showname.h:74
+msgid "Neutrino Keymap"
+msgstr ""
+
+#: tpk_description.h:103
+msgid "New Downloadfeed for your AAF - Duckbox"
+msgstr ""
+
+#: tpk_showname.h:76
+msgid "New Gothic BT"
 msgstr ""
 
 #: extensions.h:113
@@ -5363,7 +6010,11 @@ msgstr ""
 msgid "New game (hard)"
 msgstr ""
 
-#: plugins_news_skin.xml.h:4 skins_news_skin.xml.h:4
+#: tpk_showname.h:75
+msgid "Newcs"
+msgstr ""
+
+#: plugins_news_skin.xml.h:4 skins_news_skin.xml.h:4 tpk_showname.h:77
 msgid "News"
 msgstr "Последние новости"
 
@@ -5520,10 +6171,10 @@ msgstr ""
 #: global.h:5851 global.h:6572 global.h:6641 global.h:6660 global.h:6835
 #: global.h:7088 global.h:7094 global.h:7101 global.h:7105 global.h:7112
 #: global.h:7116 global.h:7123 global.h:7127 global.h:7134 global.h:7138
-#: harddisk.h:348 harddisk.h:353 harddisk.h:380 harddisk.h:384 harddisk.h:437
-#: harddisk.h:631 harddisk.h:639 harddisk.h:673 harddisk.h:722 harddisk.h:727
-#: harddisk.h:729 harddisk.h:731 harddisk.h:791 harddisk.h:810 harddisk.h:813
-#: harddisk.h:1044 hbbtv.h:362 httpdfunc.h:1304 httpdfunc.h:3258
+#: harddisk.h:350 harddisk.h:355 harddisk.h:382 harddisk.h:386 harddisk.h:439
+#: harddisk.h:633 harddisk.h:641 harddisk.h:675 harddisk.h:724 harddisk.h:729
+#: harddisk.h:731 harddisk.h:733 harddisk.h:793 harddisk.h:812 harddisk.h:815
+#: harddisk.h:1046 hbbtv.h:362 httpdfunc.h:1304 httpdfunc.h:3258
 #: httpdfunc.h:6159 httpdfunc.h:6424 httpdfunc.h:6495 hwtest.h:88 hwtest.h:93
 #: hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206
 #: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
@@ -5701,6 +6352,10 @@ msgstr "Только скорость сигнала"
 msgid "Only free scan"
 msgstr "Только бесплатные"
 
+#: tpk_showname.h:78
+msgid "Open VPN (Server)"
+msgstr ""
+
 #: plugins_sudoku_skin.xml.h:14 skins_sudoku_skin.xml.h:14
 msgid "Open settings menu"
 msgstr "Открыть параметры меню"
@@ -5713,6 +6368,10 @@ msgstr "Открыто "
 msgid "OpenTV EPG"
 msgstr "EPG OpenTV"
 
+#: tpk_description.h:105
+msgid "Openvpn Server Tool for external Network access"
+msgstr ""
+
 #: webif_streamconfig.h:4
 msgid "Oplayer HD"
 msgstr ""
@@ -5721,7 +6380,7 @@ msgstr ""
 msgid "Oplayer HD lite"
 msgstr ""
 
-#: plugins_optimize_skin.xml.h:3 skins_optimize_skin.xml.h:3
+#: plugins_optimize_skin.xml.h:3 skins_optimize_skin.xml.h:3 tpk_showname.h:79
 msgid "Optimize"
 msgstr "Оптимизатор"
 
@@ -5732,6 +6391,10 @@ msgstr "Орбитальная позиция"
 #: plugins_tmdb_skin.xml.h:2 skins_tmdb_skin.xml.h:2
 msgid "Orgname:"
 msgstr "Организация"
+
+#: tpk_showname.h:80
+msgid "Oscam"
+msgstr ""
 
 #: readerconfig.h:451
 msgid "Oscam config written to medium !"
@@ -5812,6 +6475,10 @@ msgstr "Предыдущий"
 msgid "PSK 8"
 msgstr ""
 
+#: tpk_showname.h:81
+msgid "Paddington Bold"
+msgstr ""
+
 #: tithek.h:1658
 msgid "Page"
 msgstr "Страница"
@@ -5827,13 +6494,21 @@ msgstr "Страница вниз"
 msgid "Page Up"
 msgstr "Страница вверх"
 
-#: plugins_panel_skin.xml.h:26 skins_panel_skin.xml.h:26
+#: plugins_panel_skin.xml.h:26 skins_panel_skin.xml.h:26 tpk_showname.h:82
 msgid "Panel"
 msgstr "Панель"
 
 #: panel_settings_autostart.h:350 settings_autostart.h:501
 msgid "Parental"
 msgstr "Родительский контроль"
+
+#: tpk_showname.h:83
+msgid "Parted"
+msgstr ""
+
+#: tpk_description.h:107
+msgid "Partitions Tool fuer HDD > 2TB"
+msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:17 skin_default_skin.xml.h:489
 #: skins_networkbrowser_skin.xml.h:17
@@ -5874,6 +6549,14 @@ msgstr "Пауза"
 #: plugins_lcdpearl1_skin.xml.h:13 skins_lcdpearl1_skin.xml.h:13
 msgid "Pearl LCD Settings"
 msgstr "Настройки Pearl LCD"
+
+#: tpk_showname.h:84
+msgid "Permanent Time"
+msgstr ""
+
+#: tpk_description.h:108
+msgid "Permanente Uhrzeit am Bildschirm"
+msgstr ""
 
 #: facebook.h:478
 msgid "Photos postet"
@@ -5930,6 +6613,106 @@ msgstr "Качество вывода фото"
 msgid "Picdenom Mode"
 msgstr "Режим просмотра"
 
+#: tpk_showname.h:88
+msgid "Picons Black (Eutelsat)"
+msgstr ""
+
+#: tpk_showname.h:85
+msgid "Picons Black3D (ASTRA 19.2)"
+msgstr ""
+
+#: tpk_showname.h:86
+msgid "Picons Black3D (Astra 23.5)"
+msgstr ""
+
+#: tpk_showname.h:87
+msgid "Picons Black3D (Hotbird)"
+msgstr ""
+
+#: tpk_showname.h:89
+msgid "Picons Gold Nugget  (ASTRA 19.2)"
+msgstr ""
+
+#: tpk_showname.h:90
+msgid "Picons Gold Nugget (Astra 23.5)"
+msgstr ""
+
+#: tpk_showname.h:91
+msgid "Picons Gold Nugget (Astra 28.2)"
+msgstr ""
+
+#: tpk_showname.h:92
+msgid "Picons Gold Nugget (Hotbird 13.0)"
+msgstr ""
+
+#: tpk_showname.h:94
+msgid "Picons Kabel BW"
+msgstr ""
+
+#: tpk_showname.h:93
+msgid "Picons Kabel Black3D"
+msgstr ""
+
+#: tpk_showname.h:95
+msgid "Picons Kabel Transparent"
+msgstr ""
+
+#: tpk_showname.h:96
+msgid "Picons Spiegel (ASTRA 19.2)"
+msgstr ""
+
+#: tpk_showname.h:97
+msgid "Picons Transparent (ASTRA 19.2)"
+msgstr ""
+
+#: tpk_showname.h:98
+msgid "Picons Transparent (Astra 23.5)"
+msgstr ""
+
+#: tpk_showname.h:99
+msgid "Picons Transparent (Astra 28.2)"
+msgstr ""
+
+#: tpk_showname.h:100
+msgid "Picons Transparent (Hotbird 13.0)"
+msgstr ""
+
+#: tpk_showname.h:101
+msgid "Picons Transparent (small-uljanow)"
+msgstr ""
+
+#: tpk_showname.h:102
+msgid "Picons White3D  (ASTRA 19.2)"
+msgstr ""
+
+#: tpk_showname.h:103
+msgid "Picons White3D (Astra 23.5)"
+msgstr ""
+
+#: tpk_showname.h:104
+msgid "Picons White3D (Astra 28.2)"
+msgstr ""
+
+#: tpk_showname.h:105
+msgid "Picons White3D (Hotbird 13.0)"
+msgstr ""
+
+#: tpk_showname.h:106
+msgid "Picons White70  (ASTRA 19.2)"
+msgstr ""
+
+#: tpk_showname.h:107
+msgid "Picons White70 (Astra 23.5)"
+msgstr ""
+
+#: tpk_showname.h:108
+msgid "Picons White70 (Astra 28.2)"
+msgstr ""
+
+#: tpk_showname.h:109
+msgid "Picons White70 (Hotbird 13.0)"
+msgstr ""
+
 #: skin_default_skin.xml.h:491 tmc.h:417
 msgid "Picture"
 msgstr "Картинка"
@@ -5965,6 +6748,10 @@ msgstr "Пин-код канала"
 #: skin_default_skin.xml.h:499
 msgid "Pin Code menu"
 msgstr "Пин-код меню"
+
+#: tpk_showname.h:110
+msgid "Planets"
+msgstr ""
 
 #: webif_index.atemio7600.h:46 webif_index.atemio7600.h:104
 #: webif_rc.atemio510.h:31 webif_rc.atemio7600.h:37
@@ -6045,6 +6832,10 @@ msgstr "Участок"
 #: skins_imdb_skin.xml.h:5 skins_tmdb_skin.xml.h:4
 msgid "Plot:"
 msgstr "Сюжет"
+
+#: tpk_showname.h:111
+msgid "Plover Bold"
+msgstr ""
 
 #: webif_index.atemio5200.h:62 webif_index.atemio5200.h:118
 #: webif_index.atemio6200.h:62 webif_index.atemio6200.h:118
@@ -6151,6 +6942,10 @@ msgstr "Выключение"
 #: skin_default_skin.xml.h:520
 msgid "Power Off Timer"
 msgstr "Таймер выключения"
+
+#: tpk_description.h:109
+msgid "Power off if box not used"
+msgstr ""
 
 #: webif_boxcontrol.h:1
 msgid "PowerControl"
@@ -6325,6 +7120,10 @@ msgstr "Сброс"
 #: system_backup_restore.h:51
 msgid "RESTORE ERROR"
 msgstr "Ошибка восстановления!"
+
+#: tpk_showname.h:113
+msgid "RGUI"
+msgstr ""
 
 #: plugins_rgui_skin.xml.h:8 skins_rgui_skin.xml.h:8
 msgid "RGUI Client"
@@ -6530,6 +7329,10 @@ msgstr "Деление файлов на части при записи (Мб)"
 #: skin_default_skin.xml.h:551
 msgid "Record Timer"
 msgstr "Параметры записи"
+
+#: tpk_showname.h:112
+msgid "Record cut"
+msgstr ""
 
 #: play.h:1299
 msgid "Record in progress"
@@ -6839,6 +7642,10 @@ msgstr ""
 msgid "SAT"
 msgstr ""
 
+#: tpk_showname.h:115
+msgid "SAT/Cable 19.2 23.5 13.0 0.8 KabelD (andy)"
+msgstr ""
+
 #: httpdfunc.h:4821 skin_default_skin.xml.h:595
 msgid "SATA Connector"
 msgstr "Коннектор SATA"
@@ -6897,6 +7704,10 @@ msgstr "Отправка"
 #: skin_default_skin.xml.h:650
 msgid "SID:"
 msgstr "SID"
+
+#: tpk_showname.h:173
+msgid "SMB Client Lib v3.0.28b (/media/smbfs)"
+msgstr ""
 
 #: skin_default_skin.xml.h:663
 msgid "SNR:"
@@ -6962,7 +7773,7 @@ msgstr ""
 msgid "START"
 msgstr "Старт"
 
-#: harddisk.h:483
+#: harddisk.h:485
 msgid "STICK "
 msgstr "Стик "
 
@@ -6989,7 +7800,7 @@ msgstr "Хороший порт"
 msgid "SZ"
 msgstr ""
 
-#: panel_settings_autostart.h:327 settings_autostart.h:576
+#: panel_settings_autostart.h:327 settings_autostart.h:576 tpk_showname.h:114
 msgid "Samba Server"
 msgstr ""
 
@@ -6997,12 +7808,20 @@ msgstr ""
 msgid "Samba Server Settings"
 msgstr "Параметры Samba-сервера"
 
+#: tpk_description.h:111
+msgid "Samba file server"
+msgstr ""
+
 #: plugins_lcdsamsung_skin.xml.h:17 skins_lcdsamsung_skin.xml.h:17
 msgid "Samsung SPF.. Settings"
 msgstr "Настройка Samsung SPF"
 
 #: global.h:6118
 msgid "Sat"
+msgstr ""
+
+#: tpk_description.h:112
+msgid "Sat Astra ORF | 08.01.2015 (Olbord)"
 msgstr ""
 
 #: skin_default_skin.xml.h:596
@@ -7020,6 +7839,38 @@ msgstr "Спутники/Провайдеры"
 #: blindscanadjust.h:13
 msgid "Sat: "
 msgstr "Спутники"
+
+#: tpk_description.h:113
+msgid "Sat: Bulldog Settings 3x Sat"
+msgstr ""
+
+#: tpk_description.h:114
+msgid "Sat: Bulldog Settings Astra 19.2"
+msgstr ""
+
+#: tpk_description.h:115
+msgid "Sat: Bulldog Settings Hotbird 13.0 + Astra 19.2"
+msgstr ""
+
+#: tpk_description.h:119
+msgid "Sat: Ser6 Settings Eutelsat 36.0"
+msgstr ""
+
+#: tpk_description.h:116
+msgid "Sat: default Settings Astra 19.2"
+msgstr ""
+
+#: tpk_description.h:117
+msgid "Sat: matze70 Astra 19.2 | 24.10.2014"
+msgstr ""
+
+#: tpk_description.h:118
+msgid "Sat: matze70 new design Astra 19.2 | 24.10.2014"
+msgstr ""
+
+#: tpk_description.h:120
+msgid "Sat: uljanow Sat 19.2 plus 13.0 | 21.10.2014"
+msgstr ""
 
 #: optimize.h:264
 msgid "SatCount: "
@@ -7077,6 +7928,10 @@ msgstr "Ручное сканирование"
 msgid "Scan Manual Config"
 msgstr "Параметры ручного сканирования"
 
+#: tpk_description.h:121
+msgid "Scan and manage cifs/nfs/ftp shares"
+msgstr ""
+
 #: scan.h:1901
 msgid "Scan is not allowed if record or stream is running !"
 msgstr "Сканирование не доступно, если ведётся запись!"
@@ -7126,6 +7981,144 @@ msgstr "Заставка"
 msgid "Screensaver Adjust"
 msgstr "Настройки заставки"
 
+#: tpk_showname.h:117
+msgid "Screensaver Animation Kidds"
+msgstr ""
+
+#: tpk_showname.h:118
+msgid "Screensaver Beach"
+msgstr ""
+
+#: tpk_showname.h:119
+msgid "Screensaver Bikes and Motorcycles"
+msgstr ""
+
+#: tpk_showname.h:120
+msgid "Screensaver Brands and Logos"
+msgstr ""
+
+#: tpk_showname.h:121
+msgid "Screensaver Cars"
+msgstr ""
+
+#: tpk_showname.h:122
+msgid "Screensaver Celebrations"
+msgstr ""
+
+#: tpk_showname.h:123
+msgid "Screensaver Celebrities"
+msgstr ""
+
+#: tpk_showname.h:124
+msgid "Screensaver Christmas"
+msgstr ""
+
+#: tpk_showname.h:125
+msgid "Screensaver Creative Graphics"
+msgstr ""
+
+#: tpk_showname.h:126
+msgid "Screensaver Cute"
+msgstr ""
+
+#: tpk_showname.h:127
+msgid "Screensaver Default"
+msgstr ""
+
+#: tpk_showname.h:128
+msgid "Screensaver Digital Universe"
+msgstr ""
+
+#: tpk_showname.h:129
+msgid "Screensaver Dreamy Fantasy"
+msgstr ""
+
+#: tpk_showname.h:130
+msgid "Screensaver Eisriesenwelt"
+msgstr ""
+
+#: tpk_description.h:122
+msgid ""
+"Screensaver FC Bayern pictures for MediaCenter Audioplayer and Radioplayer"
+msgstr ""
+
+#: tpk_showname.h:132
+msgid "Screensaver FCBayern"
+msgstr ""
+
+#: tpk_showname.h:131
+msgid "Screensaver Fantasy Girls"
+msgstr ""
+
+#: tpk_showname.h:133
+msgid "Screensaver Flowers"
+msgstr ""
+
+#: tpk_showname.h:134
+msgid "Screensaver Games"
+msgstr ""
+
+#: tpk_showname.h:135
+msgid "Screensaver HDR-Pictures"
+msgstr ""
+
+#: tpk_description.h:123
+msgid ""
+"Screensaver Hot Girls pictures for MediaCenter Audioplayer and Radioplayer"
+msgstr ""
+
+#: tpk_showname.h:136
+msgid "Screensaver Hotgirls"
+msgstr ""
+
+#: tpk_showname.h:137
+msgid "Screensaver Hotgirls 2"
+msgstr ""
+
+#: tpk_showname.h:138
+msgid "Screensaver Inspirational"
+msgstr ""
+
+#: tpk_showname.h:139
+msgid "Screensaver Love"
+msgstr ""
+
+#: tpk_showname.h:140
+msgid "Screensaver Movies"
+msgstr ""
+
+#: tpk_showname.h:141
+msgid "Screensaver Nature and Landscape"
+msgstr ""
+
+#: tpk_showname.h:142
+msgid "Screensaver Others"
+msgstr ""
+
+#: tpk_showname.h:143
+msgid "Screensaver Photography"
+msgstr ""
+
+#: tpk_showname.h:144
+msgid "Screensaver Planes"
+msgstr ""
+
+#: tpk_showname.h:145
+msgid "Screensaver Radio"
+msgstr ""
+
+#: tpk_showname.h:146
+msgid "Screensaver Sports"
+msgstr ""
+
+#: tpk_showname.h:147
+msgid "Screensaver Travel World"
+msgstr ""
+
+#: tpk_description.h:124
+msgid "Screensaver pictures for MediaCenter Audioplayer and Radioplayer"
+msgstr ""
+
 #: webif_boxcontrol.h:4
 msgid "Screenshot All"
 msgstr "Полный скриншот"
@@ -7142,7 +8135,7 @@ msgstr "Скриншот видео"
 msgid "Screenshot create"
 msgstr "Скриншот"
 
-#: scriptexec.h:41
+#: scriptexec.h:41 tpk_showname.h:148 tpk_showname.h:149
 msgid "Script execute"
 msgstr "Выполнение скриптов"
 
@@ -7434,6 +8427,22 @@ msgstr "Перевести в режим ожидания все устройс�
 msgid "Settings"
 msgstr "Сеттинги"
 
+#: tpk_showname.h:150
+msgid "Settings Astra 19.2"
+msgstr ""
+
+#: tpk_showname.h:151
+msgid "Settings Eutelsat 36.0"
+msgstr ""
+
+#: tpk_showname.h:152
+msgid "Settings Hotbird 13.0, Astra 19.2"
+msgstr ""
+
+#: tpk_showname.h:153
+msgid "Settings Hotbird 13.0, Astra 19.2, Astra 28.2E"
+msgstr ""
+
 #: titan.c:1009
 msgid "Settings OK ?"
 msgstr "Настройки в порядке?"
@@ -7565,13 +8574,121 @@ msgstr "Одиночный транспондер"
 msgid "Skin"
 msgstr "Выбор скина"
 
+#: tpk_showname.h:154
+msgid "Skin 0Acht5Zehn (black)"
+msgstr ""
+
+#: tpk_showname.h:155
+msgid "Skin 0Acht5Zehn (grey)"
+msgstr ""
+
+#: tpk_showname.h:156
+msgid "Skin 0Acht5Zehn (white)"
+msgstr ""
+
+#: tpk_description.h:126
+msgid "Skin 0Acht5Zehn black for black picons"
+msgstr ""
+
+#: tpk_description.h:127
+msgid "Skin 0Acht5Zehn grey for grey picons"
+msgstr ""
+
+#: tpk_description.h:128
+msgid "Skin 0Acht5Zehn white for white picons"
+msgstr ""
+
 #: skin_default_skin.xml.h:656 webif_settings.h:2
 msgid "Skin Adjust"
 msgstr "Настройки скина"
 
+#: tpk_description.h:129 tpk_showname.h:157
+msgid "Skin Cool"
+msgstr ""
+
+#: tpk_description.h:130 tpk_showname.h:158
+msgid "Skin Cool MiniTV"
+msgstr ""
+
+#: tpk_showname.h:161
+msgid "Skin DefNoMiniTV"
+msgstr ""
+
+#: tpk_showname.h:162
+msgid "Skin DefNoMiniTV mod"
+msgstr ""
+
+#: tpk_showname.h:159
+msgid "Skin Default"
+msgstr ""
+
+#: tpk_showname.h:160
+msgid "Skin Default mod"
+msgstr ""
+
+#: tpk_showname.h:163
+msgid "Skin MegaStyle blue"
+msgstr ""
+
+#: tpk_showname.h:164
+msgid "Skin MegaStyle blue Mini TV"
+msgstr ""
+
+#: tpk_showname.h:165
+msgid "Skin MegaStyle grey"
+msgstr ""
+
+#: tpk_showname.h:166
+msgid "Skin MegaStyle grey MiniTV"
+msgstr ""
+
+#: tpk_showname.h:167
+msgid "Skin MetrixHD"
+msgstr ""
+
+#: tpk_showname.h:168
+msgid "Skin Nogfx"
+msgstr ""
+
+#: tpk_showname.h:169
+msgid "Skin Nogfx (grey)"
+msgstr ""
+
+#: tpk_description.h:131
+msgid "Skin Nogfx black for black picons"
+msgstr ""
+
+#: tpk_description.h:132
+msgid "Skin Nogfx grey"
+msgstr ""
+
 #: skin_default_skin.xml.h:657
 msgid "Skin Select"
 msgstr "Выбор скина"
+
+#: tpk_showname.h:170
+msgid "Skin SmartTV"
+msgstr ""
+
+#: tpk_description.h:133
+msgid "Skin SmartTV for alternate picons"
+msgstr ""
+
+#: tpk_showname.h:171
+msgid "Skin Tobayer01"
+msgstr ""
+
+#: tpk_showname.h:172
+msgid "Skin UFS912 style"
+msgstr ""
+
+#: tpk_description.h:135
+msgid "Skin UFS912 style for white picons"
+msgstr ""
+
+#: tpk_description.h:134
+msgid "Skin tobayer01 for grey picons"
+msgstr ""
 
 #: httpdfunc.h:4246 skin_default_skin.xml.h:658
 msgid "Skip 1/3"
@@ -7619,6 +8736,14 @@ msgstr "Смарт-карта"
 #: hwtest.h:386
 msgid "Smartcard Ports found: "
 msgstr "Порты смарт-карт "
+
+#: tpk_showname.h:174
+msgid "SmbClient (Win7)"
+msgstr ""
+
+#: tpk_description.h:136
+msgid "Social Network Client for Facebook."
+msgstr ""
 
 #: keyactions.h:77 settings_bluebutton.h:14 settings_pluginbutton.h:15
 #: settings_redbutton.h:15 skin_default_skin.xml.h:664
@@ -7822,6 +8947,7 @@ msgid "Step signalrate"
 msgstr "Шаг силы сигнала"
 
 #: plugins_stock_skin.xml.h:5 skins_stock_skin.xml.h:5 stock.h:187
+#: tpk_showname.h:175
 msgid "Stock"
 msgstr ""
 
@@ -7843,6 +8969,10 @@ msgstr "Стоп"
 #: autotimer.c:537 autotimer.c:543
 msgid "Stop AutoTimer"
 msgstr "Остановить автотаймер"
+
+#: tpk_showname.h:176
+msgid "Stop if not used"
+msgstr ""
 
 #: skin_default_skin.xml.h:691
 msgid "Storage position"
@@ -7881,6 +9011,7 @@ msgid "Stream/Record/Softcam"
 msgstr ""
 
 #: plugins_streaminfo_skin.xml.h:3 skins_streaminfo_skin.xml.h:3
+#: tpk_showname.h:177
 msgid "Streaminfo"
 msgstr "Инфо о потоке"
 
@@ -7932,6 +9063,10 @@ msgstr "Субканал"
 #: webif_rc_virtual.atemio510.h:12
 msgid "Subtitle"
 msgstr "Субтитры"
+
+#: tpk_description.h:139 tpk_showname.h:178
+msgid "Sudoku"
+msgstr ""
 
 #: plugins_sudoku_skin.xml.h:16 skins_sudoku_skin.xml.h:16
 msgid "Sudoku Help"
@@ -8062,9 +9197,17 @@ msgstr "Тест"
 msgid "TITLE"
 msgstr "Название"
 
+#: tpk_showname.h:188
+msgid "TMDb"
+msgstr ""
+
 #: plugins_tmdb_skin.xml.h:10 skins_tmdb_skin.xml.h:10
 msgid "TMDb - Plugin"
 msgstr "Плагины"
+
+#: tpk_description.h:143
+msgid "TMDb Movie Database Plugin"
+msgstr ""
 
 #: adjust.h:302
 msgid "TPK"
@@ -8145,6 +9288,10 @@ msgstr "ТВ"
 msgid "TXT PID:"
 msgstr "TXT PID"
 
+#: tpk_description.h:140
+msgid "Tastensperre Plugin - entsperren mit rot/rot/gruen"
+msgstr ""
+
 #: plugins_wm2014_skin.xml.h:14 skins_wm2014_skin.xml.h:14
 msgid "Team"
 msgstr ""
@@ -8192,6 +9339,10 @@ msgstr "Тест"
 #: webif_rc_virtual.atemio-nemesis.h:13 webif_rc_virtual.h:13
 msgid "Text"
 msgstr "Текст"
+
+#: tpk_showname.h:179
+msgid "The Grim Reaper"
+msgstr ""
 
 #: divxstage.h:79 novamov.h:80 nowvideo.h:105 primeshare.h:79 shared.h:65
 #: thefile.h:68 videoweed.h:80
@@ -8281,6 +9432,10 @@ msgstr ""
 msgid "Thursday"
 msgstr "Четверг"
 
+#: tpk_showname.h:181
+msgid "TiTan Mediathek"
+msgstr ""
+
 #: plugins_tithek_skin.xml.h:17 skins_tithek_skin.xml.h:17
 msgid "TiThek - Favorite Edit"
 msgstr "Редактор фаворитов"
@@ -8297,11 +9452,15 @@ msgstr "Выберите цвет выделения файлов в медиа�
 msgid "TiThek Settings"
 msgstr "Настройки медиа центра"
 
+#: tpk_description.h:142
+msgid "TiThek the Multimedia-thek"
+msgstr ""
+
 #: plugins_wm2014_skin.xml.h:17 skins_wm2014_skin.xml.h:17
 msgid "Time"
 msgstr "Время"
 
-#: harddisk.h:883 skin_default_skin.xml.h:730
+#: harddisk.h:885 skin_default_skin.xml.h:730
 msgid "Time to sleep"
 msgstr "Время до отключения "
 
@@ -8442,10 +9601,34 @@ msgstr ""
 msgid "Titan Log"
 msgstr "Лог Titan"
 
+#: tpk_description.h:141 tpk_showname.h:180
+msgid "Titan MediaCenter"
+msgstr ""
+
 #: global.h:7094 global.h:7105 global.h:7116 global.h:7127 global.h:7138
 #: skinadjust.h:277 skinadjust.h:680
 msgid "Titan will be restarted!"
 msgstr "Titan будет перезагружен!"
+
+#: tpk_showname.h:182
+msgid "TitanNit Blood"
+msgstr ""
+
+#: tpk_showname.h:183
+msgid "TitanNit Design 1"
+msgstr ""
+
+#: tpk_showname.h:184
+msgid "TitanNit Design 3"
+msgstr ""
+
+#: tpk_showname.h:185
+msgid "TitanNit Design 5"
+msgstr ""
+
+#: tpk_showname.h:186
+msgid "TitanNit Leather"
+msgstr ""
 
 #: tithek.h:1574
 msgid "TitanNit Tithek disclaimer"
@@ -8457,6 +9640,10 @@ msgstr "Отказ от ответственности"
 #: webif_index.atemio-nemesis.h:1 webif_index.h:1
 msgid "TitanNit Web Control"
 msgstr "Веб-контроль TitanNit"
+
+#: tpk_showname.h:187
+msgid "TitanNit on fire"
+msgstr ""
 
 #: tithek.c:107
 msgid "Tithek - Mainmenu"
@@ -8621,6 +9808,50 @@ msgstr "Передача"
 msgid "Transmission:"
 msgstr "Передача"
 
+#: tpk_description.h:145
+msgid "Transparent Picons (dark Skins)"
+msgstr ""
+
+#: tpk_description.h:146
+msgid "Transparent Picons (dark skins) - Astra 23.5E."
+msgstr ""
+
+#: tpk_description.h:147
+msgid "Transparent Picons (dark skins) - Astra 28.2E."
+msgstr ""
+
+#: tpk_description.h:148
+msgid "Transparent Picons (dark skins) - Hotbird 13.0E."
+msgstr ""
+
+#: tpk_description.h:144
+msgid "Transparent Picons 19_2 (dark skins)."
+msgstr ""
+
+#: tpk_description.h:150
+msgid "Transparent XPicons - Astra 19.2E"
+msgstr ""
+
+#: tpk_description.h:151
+msgid "Transparent XPicons - Astra 23.5E"
+msgstr ""
+
+#: tpk_description.h:152
+msgid "Transparent XPicons - Astra 28.2E"
+msgstr ""
+
+#: tpk_description.h:153
+msgid "Transparent XPicons - Hotbird 13.0E"
+msgstr ""
+
+#: tpk_description.h:154
+msgid "Transparent XPicons - small - Astra 19.2E"
+msgstr ""
+
+#: tpk_description.h:149
+msgid "Transparent small black-Skins 19,2 Picons | 21.10.2014"
+msgstr ""
+
 #: scan.h:2358
 msgid "Transponder changed"
 msgstr "Транспондер был изменён"
@@ -8640,6 +9871,18 @@ msgstr "Транспондеров "
 #: tpchoice.h:21
 msgid "Transponderlist"
 msgstr "Список транспондеров"
+
+#: tpk_description.h:155
+msgid "Treiber fuer Pearl LCD V4.0"
+msgstr ""
+
+#: tpk_description.h:156
+msgid "Treiber fuer Pearl LCD V5.0"
+msgstr ""
+
+#: tpk_description.h:157
+msgid "Treiber fuer Samsung LCD"
+msgstr ""
 
 #: security.h:676 security.h:2035
 msgid "Trial period ends in"
@@ -8778,6 +10021,10 @@ msgstr "Неизвестно"
 msgid "UNLOAD"
 msgstr "Выгрузить"
 
+#: tpk_description.h:159
+msgid "UPNP Media Render"
+msgstr ""
+
 #: httpdfunc.h:5311 skin_default_skin.xml.h:786 webif_info_sysinfos.h:10
 msgid "USB"
 msgstr "USB устройства "
@@ -8802,6 +10049,10 @@ msgstr "Порты USB "
 msgid "USB Reset"
 msgstr "Сброс USB"
 
+#: tpk_showname.h:191
+msgid "USB-RESET"
+msgstr ""
+
 #: scan.h:2274
 msgid "Unchanged"
 msgstr "Не изменять"
@@ -8825,6 +10076,18 @@ msgstr "Выбор провайдера"
 #: unicable.h:212
 msgid "Unicable product"
 msgstr "Версия Unicable"
+
+#: tpk_showname.h:189
+msgid "Unitymedia (langerhans)"
+msgstr ""
+
+#: tpk_showname.h:190
+msgid "Unitymedia NRW"
+msgstr ""
+
+#: tpk_description.h:158
+msgid "Unitymedia NRW | 15.2.2014 (caliban)"
+msgstr ""
 
 #: titan.c:1240
 msgid "Unknown Error."
@@ -8934,6 +10197,10 @@ msgstr ""
 #: security.h:2010
 msgid "Version"
 msgstr "Версия"
+
+#: tpk_description.h:161
+msgid "Version 10627 of OScam"
+msgstr ""
 
 #: transponder.h:450 transponder.h:458
 msgid "Vertikal"
@@ -9096,6 +10363,14 @@ msgid ""
 " You can now configure the new interface."
 msgstr "WiFi запущен. Настройте адаптер WiFi"
 
+#: tpk_showname.h:201
+msgid "WM2014"
+msgstr ""
+
+#: tpk_description.h:179
+msgid "WM2014 Plugin"
+msgstr ""
+
 #: skin_default_skin.xml.h:818
 msgid "WOL"
 msgstr ""
@@ -9156,7 +10431,8 @@ msgstr "Военные"
 msgid "Watchmovies"
 msgstr ""
 
-#: plugins_weather_skin.xml.h:3 skins_weather_skin.xml.h:3 weather.h:426
+#: plugins_weather_skin.xml.h:3 skins_weather_skin.xml.h:3 tpk_showname.h:193
+#: weather.h:426
 msgid "Weather"
 msgstr "Погода"
 
@@ -9172,6 +10448,18 @@ msgstr "Плеер Web-радио"
 msgid "WebStream"
 msgstr "Web поток"
 
+#: tpk_showname.h:194
+msgid "Webbrowser Netsurf"
+msgstr ""
+
+#: tpk_description.h:163
+msgid "Webbrowser Plugin"
+msgstr ""
+
+#: tpk_description.h:164
+msgid "Webbrowser Plugin "
+msgstr ""
+
 #: global.h:6115
 msgid "Wed"
 msgstr ""
@@ -9179,6 +10467,10 @@ msgstr ""
 #: global.h:6080 global.h:6090 rectimer.h:1082 skin_default_skin.xml.h:816
 msgid "Wednesday"
 msgstr "Среда"
+
+#: tpk_description.h:165
+msgid "Werbezapper"
+msgstr ""
 
 #: epgsearch.h:324
 msgid "Western"
@@ -9189,16 +10481,76 @@ msgstr "Вестерн"
 msgid "Wettervorhersage"
 msgstr "Прогноз погоды"
 
+#: tpk_description.h:167
+msgid "White 3D Picons - Astra 23.5E."
+msgstr ""
+
+#: tpk_description.h:168
+msgid "White 3D Picons - Astra 28.2E."
+msgstr ""
+
+#: tpk_description.h:169
+msgid "White 3D Picons - Hotbird 13.0E."
+msgstr ""
+
+#: tpk_description.h:166
+msgid "White 3D Picons Astra 19.2"
+msgstr ""
+
+#: tpk_description.h:171
+msgid "White70 Picons - Astra 23.5E."
+msgstr ""
+
+#: tpk_description.h:172
+msgid "White70 Picons - Astra 28.2E"
+msgstr ""
+
+#: tpk_description.h:173
+msgid "White70 Picons - Hotbird 13.0E."
+msgstr ""
+
+#: tpk_description.h:170
+msgid "White70 Picons Astra 19.2"
+msgstr ""
+
+#: tpk_showname.h:195
+msgid "Wicardd v1.15 "
+msgstr ""
+
 #: plugins_panel_skin.xml.h:22 skins_panel_skin.xml.h:22
 msgid "Wizard"
 msgstr "Мастер настройки"
+
+#: tpk_showname.h:196
+msgid "Wlan 8192cu"
+msgstr ""
+
+#: tpk_showname.h:197
+msgid "Wlan 8712u"
+msgstr ""
 
 #: network.h:903
 msgid "Wlan Stick not found"
 msgstr "WiFi адаптер не найден"
 
+#: tpk_showname.h:198
+msgid "Wlan rt2870sta"
+msgstr ""
+
+#: tpk_showname.h:199
+msgid "Wlan rt3070sta"
+msgstr ""
+
+#: tpk_showname.h:200
+msgid "Wlan rt5370sta"
+msgstr ""
+
 #: plugins_wm2014_skin.xml.h:20 skins_wm2014_skin.xml.h:20
 msgid "Won"
+msgstr ""
+
+#: tpk_description.h:180
+msgid "Wooden clock - Standby - Samsung LCD Skin Channel."
 msgstr ""
 
 #: record.h:61
@@ -9225,6 +10577,26 @@ msgstr "X-позиция"
 #: plugins_streaminfo_skin.xml.h:4 skins_streaminfo_skin.xml.h:4
 msgid "X-Resolution"
 msgstr "Х-разрешение"
+
+#: tpk_showname.h:202
+msgid "XPicons LightTransparent (Astra 19.2E)"
+msgstr ""
+
+#: tpk_showname.h:203
+msgid "XPicons LightTransparent (Astra 23.5E)"
+msgstr ""
+
+#: tpk_showname.h:204
+msgid "XPicons LightTransparent (Astra 28.2E)"
+msgstr ""
+
+#: tpk_showname.h:205
+msgid "XPicons LightTransparent (Hotbird 13.0E)"
+msgstr ""
+
+#: tpk_showname.h:206
+msgid "XPicons LightTransparent (small - Astra 19.2E)"
+msgstr ""
 
 #: tithek_mainmenu.h:53
 msgid "XXX-Beeg"
@@ -9302,6 +10674,10 @@ msgstr "Восстановить"
 #: zapback.c:79
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr "Остановить?"
+
+#: tpk_showname.h:209
+msgid "Zombie"
+msgstr ""
 
 #: webif_index.atemio7600.h:22
 msgid "Zoom"
@@ -9401,6 +10777,10 @@ msgstr "Активен в режиме ожидания"
 msgid "all"
 msgstr "Все"
 
+#: tpk_description.h:4
+msgid "all: test Settings Astra 19.2 all transponder"
+msgstr ""
+
 #: plugins_lcdpearl1_skin.xml.h:4 plugins_lcdsamsung_skin.xml.h:4
 #: skins_lcdpearl1_skin.xml.h:4 skins_lcdsamsung_skin.xml.h:4
 msgid "alle Menus anzeigen"
@@ -9492,7 +10872,7 @@ msgstr ""
 msgid "b"
 msgstr ""
 
-#: harddisk.h:526
+#: harddisk.h:528
 msgid "backup"
 msgstr "Сохранить"
 
@@ -9546,6 +10926,10 @@ msgstr "Мигающая звёздочка + название канала"
 msgid "blue"
 msgstr "Синяя"
 
+#: tpk_section.h:1
+msgid "bootlogos"
+msgstr ""
+
 #: panel_settings_autostart.h:44
 msgid "bootstop"
 msgstr "Остановка загрузки"
@@ -9562,6 +10946,10 @@ msgstr ""
 msgid "broadcast"
 msgstr "Адрес передачи"
 
+#: tpk_section.h:2
+msgid "browser"
+msgstr ""
+
 #: screensaveradjust.h:36
 msgid "burlywood1"
 msgstr "Древесный"
@@ -9574,6 +10962,10 @@ msgstr ""
 msgid "caidlock"
 msgstr ""
 
+#: tpk_description.h:47 tpk_showname.h:14
+msgid "camd3"
+msgstr ""
+
 #: hwtest.h:113
 msgid "can't create new channel"
 msgstr "Новый канал не создан"
@@ -9582,7 +10974,7 @@ msgstr "Новый канал не создан"
 msgid "can't create new transponer"
 msgstr "Новый транспондер не создан"
 
-#: harddisk.h:380
+#: harddisk.h:382
 msgid "can't create or delete directory"
 msgstr "ОШИБКА: Директория не может быть создана/удалена!"
 
@@ -9696,6 +11088,10 @@ msgstr "Создать резервную копию"
 msgid "cut is running"
 msgstr "Операция выполняется"
 
+#: tpk_description.h:49
+msgid "cut record files"
+msgstr ""
+
 #: skin_default_skin.xml.h:177
 msgid "d"
 msgstr ""
@@ -9745,6 +11141,22 @@ msgstr "По умолчанию"
 msgid "default Directory"
 msgstr "Папка по умолчанию"
 
+#: harddisk.h:265
+msgid "del medium for backup"
+msgstr ""
+
+#: harddisk.h:245
+msgid "del medium for extension"
+msgstr ""
+
+#: harddisk.h:235
+msgid "del medium for record"
+msgstr ""
+
+#: harddisk.h:255
+msgid "del medium for swap"
+msgstr ""
+
 #: skin_default_skin.xml.h:195
 msgid "del startchannel"
 msgstr "Не использовать как стартовый"
@@ -9787,6 +11199,10 @@ msgstr "Выкл"
 
 #: skin_default_skin.xml.h:204 webif_help.h:21
 msgid "diseqcscreen"
+msgstr ""
+
+#: tpk_description.h:56
+msgid "dlna Medien Server (upnp)"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:7 skins_networkbrowser_skin.xml.h:7
@@ -9841,6 +11257,10 @@ msgstr "Входящие звонки"
 msgid "empty"
 msgstr "Нет модуля"
 
+#: tpk_section.h:3
+msgid "emus"
+msgstr ""
+
 #: weather.h:137
 msgid "en-GB"
 msgstr "ru-RU"
@@ -9889,9 +11309,13 @@ msgstr "Эксперт"
 msgid "expired"
 msgstr ""
 
-#: harddisk.h:502
+#: harddisk.h:504
 msgid "ext"
 msgstr "Внешний"
+
+#: tpk_description.h:65
+msgid "extended config Panel"
+msgstr ""
 
 #: webif_help.h:27
 msgid "extensionsmenu"
@@ -9941,6 +11365,14 @@ msgstr "Альтернативный файл"
 msgid "first slot"
 msgstr "Первый слот"
 
+#: tpk_description.h:67
+msgid "first titan game"
+msgstr ""
+
+#: tpk_section.h:4
+msgid "fonts"
+msgstr ""
+
 #: tithek.h:887
 msgid "found"
 msgstr "Найдено"
@@ -9978,9 +11410,19 @@ msgstr "Отдельным списком"
 msgid "g"
 msgstr ""
 
+#: tpk_section.h:5
+msgid "games"
+msgstr ""
+
 #: skin_default_skin.xml.h:278
 msgid "gateway"
 msgstr "Шлюз"
+
+#: tpk_description.h:80
+msgid ""
+"gbox 806 with autoident for card hd+ and skyde including all necessary "
+"config files."
+msgstr ""
 
 #: webif_help.h:28
 msgid "gmultiepg"
@@ -10008,6 +11450,10 @@ msgstr ""
 
 #: webif_help.h:30
 msgid "harddiskmenu"
+msgstr ""
+
+#: tpk_showname.h:40
+msgid "hbbtv Browser"
 msgstr ""
 
 #: plugins_networkbrowser_skin.xml.h:10 skins_networkbrowser_skin.xml.h:10
@@ -10087,6 +11533,10 @@ msgstr ""
 msgid "infomenu"
 msgstr ""
 
+#: tpk_section.h:6
+msgid "infos"
+msgstr ""
+
 #: moduleconfig.h:356
 msgid "initializing"
 msgstr "Инициализация"
@@ -10148,6 +11598,10 @@ msgstr "Кнопка канала вверх/вниз"
 msgid "key pip"
 msgstr "Кнопка PiP"
 
+#: tpk_section.h:7
+msgid "keymaps"
+msgstr ""
+
 #: skin_default_skin.xml.h:392
 msgid "l"
 msgstr ""
@@ -10158,6 +11612,14 @@ msgstr "LAN"
 
 #: webif_help.h:38
 msgid "language"
+msgstr ""
+
+#: tpk_section.h:8
+msgid "lcdpearlskins"
+msgstr ""
+
+#: tpk_section.h:9
+msgid "lcdsamsungskins"
 msgstr ""
 
 #: sudoku.c:167
@@ -10328,7 +11790,7 @@ msgstr "Нет"
 msgid "netmask"
 msgstr "Маска сети"
 
-#: webif_help.h:58
+#: tpk_section.h:10 webif_help.h:58
 msgid "network"
 msgstr ""
 
@@ -10347,6 +11809,14 @@ msgstr "Никогда"
 #: timeshiftsettings.h:55
 msgid "never del file"
 msgstr "Никогда не удалять файл таймшифта"
+
+#: tpk_description.h:102
+msgid "newcs including all necessary config files."
+msgstr ""
+
+#: tpk_description.h:104
+msgid "news Plugin"
+msgstr ""
 
 #: webif_help.h:59
 msgid "newsletter"
@@ -10369,51 +11839,51 @@ msgstr "Автостарт NFS сервера"
 #: blindscanadjust.h:158 blindscanadjust.h:187 blindscanadjust.h:191 cec.h:143
 #: cec.h:147 cec.h:151 cec.h:155 cec.h:159 cec.h:163 cec.h:167 cec.h:171
 #: cec.h:175 dlna.h:276 epgsettings.h:134 epgsettings.h:187 epgsettings.h:196
-#: epgsettings.h:200 epgsettings.h:205 epgsettings.h:210 harddisk.h:255
-#: httpdfunc.h:3859 httpdfunc.h:3897 httpdfunc.h:3920 httpdfunc.h:3949
-#: httpdfunc.h:4122 httpdfunc.h:4369 httpdfunc.h:4427 httpdfunc.h:4449
-#: httpdfunc.h:4550 httpdfunc.h:4572 httpdfunc.h:4616 httpdfunc.h:4638
-#: httpdfunc.h:4660 httpdfunc.h:4689 httpdfunc.h:4711 httpdfunc.h:4756
-#: httpdfunc.h:4779 httpdfunc.h:4803 httpdfunc.h:4917 httpdsettings.h:27
-#: httpdsettings.h:57 httpdsettings.h:65 inadyn.h:138
-#: mc_audioplayer_settings.h:45 mc_audioplayer_settings.h:51
-#: mc_audioplayer_settings.h:55 mc_pictureplayer_settings.h:75
-#: mc_videoplayer_settings.h:39 mc_videoplayer_settings.h:43
-#: mc_videoplayer_settings.h:49 mediadb.h:1085 mediadb.h:1092 mediadb.h:1107
-#: mediadbsettings.h:28 mediadbsettings.h:32 mediadbsettings.h:51
-#: mediadbsettings.h:66 mediadbsettings.h:70 moduleconfig.h:243
-#: moduleconfig.h:251 moduleconfig.h:255 moduleconfig.h:259 moduleconfig.h:263
-#: networkbrowser.h:1628 networkbrowser.h:1632 networkbrowser.h:1641
-#: networkbrowser.h:1646 networkbrowser.h:1650 networkbrowser.h:1676
-#: network.h:691 panel_settings_autostart.h:35 panel_settings_autostart.h:96
-#: panel_settings_autostart.h:113 panel_settings_autostart.h:123
-#: panel_settings_autostart.h:141 panel_settings_autostart.h:150
-#: panel_settings_autostart.h:159 panel_settings_autostart.h:168
-#: panel_settings_autostart.h:177 panel_settings_autostart.h:193
-#: panel_settings_autostart.h:202 panel_settings_autostart.h:211
-#: panel_settings_autostart.h:237 panel_settings_autostart.h:286
-#: panel_settings_autostart.h:295 panel_settings_autostart.h:304
-#: panel_settings_autostart.h:319 panel_settings_autostart.h:328
-#: panel_settings_autostart.h:337 panel_settings_autostart.h:351
-#: panel_settings_autostart.h:360 panel_settings_overclocking.h:214
-#: panel_settings_overclocking.h:234 panel_settings_overclocking.h:244
-#: pin.h:109 pin.h:181 pin.h:185 pin.h:199 play.h:583 play.h:590 play.h:605
-#: readerconfig.h:254 rectimer.h:1090 rectimer.h:1095 rectimer.h:1100
-#: rectimer.h:1105 rectimer.h:1110 rectimer.h:1115 rectimer.h:1120 scan.h:1775
-#: scan.h:2254 scan.h:2258 scan.h:2262 scan.h:2266 scan.h:2270 scan.h:2279
-#: scan.h:2283 screensaveradjust.h:19 settings_autostart.h:26
-#: settings_autostart.h:132 settings_autostart.h:141 settings_autostart.h:162
-#: settings_autostart.h:198 settings_autostart.h:207 settings_autostart.h:216
-#: settings_autostart.h:227 settings_autostart.h:285 settings_autostart.h:305
-#: settings_autostart.h:316 settings_autostart.h:430 settings_autostart.h:439
-#: settings_autostart.h:448 settings_autostart.h:502 settings_autostart.h:511
-#: settings_autostart.h:568 settings_autostart.h:577 settings_autostart.h:586
-#: settings_autostart.h:595 settings_overclocking.h:214
-#: settings_overclocking.h:234 settings_overclocking.h:244 skinadjust.h:121
-#: stopifnotused.c:94 timeshiftsettings.h:59 timeshiftsettings.h:63
-#: tithek_settings.h:37 tithek_settings.h:41 tithek_settings.h:45 tmc.h:531
-#: tmc.h:535 tunerconfig.h:184 tunerconfig.h:213 tunerconfig.h:244
-#: tunerconfig.h:277 xupnpd.h:30
+#: epgsettings.h:200 epgsettings.h:205 epgsettings.h:210 httpdfunc.h:3859
+#: httpdfunc.h:3897 httpdfunc.h:3920 httpdfunc.h:3949 httpdfunc.h:4122
+#: httpdfunc.h:4369 httpdfunc.h:4427 httpdfunc.h:4449 httpdfunc.h:4550
+#: httpdfunc.h:4572 httpdfunc.h:4616 httpdfunc.h:4638 httpdfunc.h:4660
+#: httpdfunc.h:4689 httpdfunc.h:4711 httpdfunc.h:4756 httpdfunc.h:4779
+#: httpdfunc.h:4803 httpdfunc.h:4917 httpdsettings.h:27 httpdsettings.h:57
+#: httpdsettings.h:65 inadyn.h:138 mc_audioplayer_settings.h:45
+#: mc_audioplayer_settings.h:51 mc_audioplayer_settings.h:55
+#: mc_pictureplayer_settings.h:75 mc_videoplayer_settings.h:39
+#: mc_videoplayer_settings.h:43 mc_videoplayer_settings.h:49 mediadb.h:1085
+#: mediadb.h:1092 mediadb.h:1107 mediadbsettings.h:28 mediadbsettings.h:32
+#: mediadbsettings.h:51 mediadbsettings.h:66 mediadbsettings.h:70
+#: moduleconfig.h:243 moduleconfig.h:251 moduleconfig.h:255 moduleconfig.h:259
+#: moduleconfig.h:263 networkbrowser.h:1628 networkbrowser.h:1632
+#: networkbrowser.h:1641 networkbrowser.h:1646 networkbrowser.h:1650
+#: networkbrowser.h:1676 network.h:691 panel_settings_autostart.h:35
+#: panel_settings_autostart.h:96 panel_settings_autostart.h:113
+#: panel_settings_autostart.h:123 panel_settings_autostart.h:141
+#: panel_settings_autostart.h:150 panel_settings_autostart.h:159
+#: panel_settings_autostart.h:168 panel_settings_autostart.h:177
+#: panel_settings_autostart.h:193 panel_settings_autostart.h:202
+#: panel_settings_autostart.h:211 panel_settings_autostart.h:237
+#: panel_settings_autostart.h:286 panel_settings_autostart.h:295
+#: panel_settings_autostart.h:304 panel_settings_autostart.h:319
+#: panel_settings_autostart.h:328 panel_settings_autostart.h:337
+#: panel_settings_autostart.h:351 panel_settings_autostart.h:360
+#: panel_settings_overclocking.h:214 panel_settings_overclocking.h:234
+#: panel_settings_overclocking.h:244 pin.h:109 pin.h:181 pin.h:185 pin.h:199
+#: play.h:583 play.h:590 play.h:605 readerconfig.h:254 rectimer.h:1090
+#: rectimer.h:1095 rectimer.h:1100 rectimer.h:1105 rectimer.h:1110
+#: rectimer.h:1115 rectimer.h:1120 scan.h:1775 scan.h:2254 scan.h:2258
+#: scan.h:2262 scan.h:2266 scan.h:2270 scan.h:2279 scan.h:2283
+#: screensaveradjust.h:19 settings_autostart.h:26 settings_autostart.h:132
+#: settings_autostart.h:141 settings_autostart.h:162 settings_autostart.h:198
+#: settings_autostart.h:207 settings_autostart.h:216 settings_autostart.h:227
+#: settings_autostart.h:285 settings_autostart.h:305 settings_autostart.h:316
+#: settings_autostart.h:430 settings_autostart.h:439 settings_autostart.h:448
+#: settings_autostart.h:502 settings_autostart.h:511 settings_autostart.h:568
+#: settings_autostart.h:577 settings_autostart.h:586 settings_autostart.h:595
+#: settings_overclocking.h:214 settings_overclocking.h:234
+#: settings_overclocking.h:244 skinadjust.h:121 stopifnotused.c:94
+#: timeshiftsettings.h:59 timeshiftsettings.h:63 tithek_settings.h:37
+#: tithek_settings.h:41 tithek_settings.h:45 tmc.h:531 tmc.h:535
+#: tunerconfig.h:184 tunerconfig.h:213 tunerconfig.h:244 tunerconfig.h:277
+#: xupnpd.h:30
 msgid "no"
 msgstr "Нет"
 
@@ -10485,7 +11955,7 @@ msgstr ""
 msgid "oe"
 msgstr ""
 
-#: avsettings.h:69 avsettings.h:85 fancontrol.h:110 harddisk.h:884
+#: avsettings.h:69 avsettings.h:85 fancontrol.h:110 harddisk.h:886
 #: httpdsettings.h:76 lnbconfig.h:144 mc_pictureplayer_settings.h:34
 #: mc_pictureplayer_settings.h:38 mc_pictureplayer_settings.h:67
 #: mc_videoplayer_settings.h:53 network.h:392 panel_settings_autostart.h:61
@@ -10576,6 +12046,10 @@ msgstr "Только при выключении/рестарте"
 msgid "open in new window"
 msgstr "Открыть в новом окне"
 
+#: tpk_description.h:106
+msgid "optimize Plugin"
+msgstr ""
+
 #: plugins_networkbrowser_skin.xml.h:15 skins_networkbrowser_skin.xml.h:15
 msgid "options"
 msgstr "Опции"
@@ -10628,6 +12102,10 @@ msgstr ""
 msgid "pic5"
 msgstr ""
 
+#: tpk_section.h:11
+msgid "picons"
+msgstr ""
+
 #: skinadjust.h:69 tmc.h:542
 msgid "picture"
 msgstr "Картинка"
@@ -10654,6 +12132,10 @@ msgstr ""
 
 #: panel_settings_autostart.h:303 settings_autostart.h:447
 msgid "pl2303"
+msgstr ""
+
+#: tpk_section.h:12
+msgid "player"
 msgstr ""
 
 #: webif_help.h:65
@@ -10770,7 +12252,7 @@ msgstr "Готово"
 msgid "rec"
 msgstr ""
 
-#: autotimer.c:475 autotimer.c:508 harddisk.h:538 rectimer.h:1049
+#: autotimer.c:475 autotimer.c:508 harddisk.h:540 rectimer.h:1049
 msgid "record"
 msgstr "Запись"
 
@@ -10801,6 +12283,10 @@ msgstr "Красная"
 #: avsettings.h:71
 msgid "redKey"
 msgstr "Красная кнопка"
+
+#: tpk_description.h:110
+msgid "remote Desktop Plugin"
+msgstr ""
 
 #: skin_default_skin.xml.h:562
 msgid "remove service"
@@ -10868,6 +12354,10 @@ msgstr ""
 msgid "save network settings ?"
 msgstr "Сохранить настройки сети?"
 
+#: tpk_showname.h:116
+msgid "scam 3.60"
+msgstr ""
+
 #: epgsettings.h:148 tmc.h:389 webif_help.h:79
 msgid "scan"
 msgstr "Поиск"
@@ -10888,7 +12378,7 @@ msgstr "Автостарт WiFi"
 msgid "schaltet zurueck auf Sender"
 msgstr "Переключает обратно на канал"
 
-#: skin_default_skin.xml.h:614 webif_help.h:81
+#: skin_default_skin.xml.h:614 tpk_section.h:13 webif_help.h:81
 msgid "screensaver"
 msgstr "Заставка"
 
@@ -10914,6 +12404,10 @@ msgstr "Тип заставки"
 
 #: webif_help.h:80
 msgid "screensaveradjust"
+msgstr ""
+
+#: tpk_description.h:125
+msgid "scriptexec Plugin"
 msgstr ""
 
 #: possetup.h:37
@@ -10948,15 +12442,15 @@ msgstr "Для выбора других файловых систем вклю�
 msgid "select the function for the specified device"
 msgstr "Выберите действие для выбранного жёсткого диска или раздела"
 
-#: harddisk.h:459
+#: harddisk.h:461
 msgid "select the media drive from Device List for configuration"
 msgstr "Выберите раздел диска для его конфигурирования"
 
-#: harddisk.h:447
+#: harddisk.h:449
 msgid "select the media drive from Device List for formating"
 msgstr "Выберите диск или раздел диска для форматирования"
 
-#: harddisk.h:453
+#: harddisk.h:455
 msgid "select the media drive from Device List for fsck"
 msgstr "Выберите диск или раздел диска для проверки файловой системы"
 
@@ -10968,7 +12462,7 @@ msgstr ""
 msgid "set a cookie which will expire in 3 days and be accessible site wide"
 msgstr ""
 
-#: harddisk.h:877
+#: harddisk.h:879
 msgid "set here the default sleeptime for all your media drives"
 msgstr ""
 "Выберите время до отключения для всех подключенных\n"
@@ -10978,6 +12472,10 @@ msgstr ""
 #: skin_default_skin.xml.h:637
 msgid "set startchannel"
 msgstr "Сделать канал стартовым"
+
+#: tpk_section.h:14
+msgid "settings"
+msgstr ""
 
 #: webif_help.h:83
 msgid "settingsmenu"
@@ -11054,6 +12552,10 @@ msgstr ""
 msgid "skinadjust"
 msgstr ""
 
+#: tpk_section.h:15
+msgid "skins"
+msgstr ""
+
 #: webif_help.h:87
 msgid "skinselect"
 msgstr ""
@@ -11078,7 +12580,7 @@ msgstr ""
 msgid "softcam"
 msgstr ""
 
-#: harddisk.h:437
+#: harddisk.h:439
 msgid "sorry found no harddisk"
 msgstr "Диски не найдены"
 
@@ -11161,6 +12663,10 @@ msgstr "Шаг Восток"
 msgid "step west"
 msgstr "Шаг Запад"
 
+#: tpk_description.h:137
+msgid "stock Plugin"
+msgstr ""
+
 #: httpdfunc.h:5549 httpdfunc.h:5595 record.h:1428 record.h:1437 record.h:1448
 #: record.h:1477 record.h:1486 record.h:1518 skin_default_skin.xml.h:687
 #: stream.h:15 stream.h:37
@@ -11175,11 +12681,15 @@ msgstr "Остановлено пользователем"
 msgid "store position"
 msgstr "Сохранить"
 
+#: tpk_description.h:138
+msgid "streaminfo Plugin"
+msgstr ""
+
 #: webif_help.h:92
 msgid "subtitle"
 msgstr ""
 
-#: harddisk.h:384
+#: harddisk.h:386
 msgid "succesfull create or delelete directory"
 msgstr "Директория успешно создана/удалена"
 
@@ -11187,7 +12697,7 @@ msgstr "Директория успешно создана/удалена"
 msgid "success"
 msgstr "Сделано"
 
-#: harddisk.h:514
+#: harddisk.h:516
 msgid "swap"
 msgstr "SWAР"
 
@@ -11360,6 +12870,10 @@ msgstr ""
 msgid "toneburst, uncommitted, committed"
 msgstr ""
 
+#: tpk_section.h:16
+msgid "tools"
+msgstr ""
+
 #: webif_help.h:110
 msgid "tpkinstall"
 msgstr ""
@@ -11461,23 +12975,27 @@ msgstr "Обновить"
 msgid "updatelist"
 msgstr "Список обновлений"
 
+#: tpk_description.h:160
+msgid "usbreset Plugin"
+msgstr ""
+
 #: plugins_mc_skin.xml.h:58 skins_mc_skin.xml.h:58
 msgid "use last Directory"
 msgstr "Использовать последнюю папку"
 
-#: harddisk.h:249 harddisk.h:731
+#: harddisk.h:260 harddisk.h:733
 msgid "use medium for backup"
 msgstr "Использовать для бекапа"
 
-#: harddisk.h:237 harddisk.h:727
+#: harddisk.h:240 harddisk.h:729
 msgid "use medium for extension"
 msgstr "Использовать для установки плагинов"
 
-#: harddisk.h:231 harddisk.h:722
+#: harddisk.h:230 harddisk.h:724
 msgid "use medium for record"
 msgstr "Использовать для записи"
 
-#: harddisk.h:243 harddisk.h:729
+#: harddisk.h:250 harddisk.h:731
 msgid "use medium for swap"
 msgstr "Использовать для расширения памяти (Swap)"
 
@@ -11565,6 +13083,10 @@ msgstr ""
 msgid "videosettings"
 msgstr ""
 
+#: tpk_showname.h:192
+msgid "vizcam 1.04"
+msgstr ""
+
 #: webif_help.h:119
 msgid "volume"
 msgstr ""
@@ -11588,6 +13110,10 @@ msgstr "Дождитесь конца загрузки"
 #: rectimer.h:1504
 msgid "waiting"
 msgstr "Ожидание"
+
+#: tpk_description.h:162
+msgid "weather Plugin"
+msgstr ""
 
 #: webif_help.h:120
 msgid "webdir"
@@ -11613,6 +13139,30 @@ msgstr "Белый список"
 msgid "will be set by plugin"
 msgstr "Будет установлен плагин"
 
+#: tpk_section.h:17
+msgid "wireless"
+msgstr ""
+
+#: tpk_description.h:174
+msgid "wireless 8192cu.ko model"
+msgstr ""
+
+#: tpk_description.h:175
+msgid "wireless modul 8712u.ko"
+msgstr ""
+
+#: tpk_description.h:176
+msgid "wireless modul rt2870sta.ko"
+msgstr ""
+
+#: tpk_description.h:177
+msgid "wireless modul rt3070sta.ko"
+msgstr ""
+
+#: tpk_description.h:178
+msgid "wireless modul rt5370sta.ko"
+msgstr ""
+
 #: webif_help.h:121
 msgid "wlansettings"
 msgstr ""
@@ -11627,6 +13177,14 @@ msgstr "Размер буфера записи"
 
 #: skin_default_skin.xml.h:821
 msgid "x"
+msgstr ""
+
+#: tpk_showname.h:207
+msgid "xupnpd"
+msgstr ""
+
+#: tpk_description.h:181
+msgid "xupnpd Medien Server (upnp)"
 msgstr ""
 
 #: xupnpd.h:73
@@ -11661,12 +13219,12 @@ msgstr "Жёлтая"
 #: blindscanadjust.h:159 blindscanadjust.h:188 blindscanadjust.h:192 cec.h:144
 #: cec.h:148 cec.h:152 cec.h:156 cec.h:160 cec.h:164 cec.h:168 cec.h:172
 #: cec.h:176 dlna.h:277 epgsettings.h:135 epgsettings.h:188 epgsettings.h:197
-#: harddisk.h:255 httpdfunc.h:3904 httpdfunc.h:3956 httpdfunc.h:4129
-#: httpdfunc.h:4376 httpdfunc.h:4434 httpdfunc.h:4557 httpdfunc.h:4579
-#: httpdfunc.h:4623 httpdfunc.h:4645 httpdfunc.h:4667 httpdfunc.h:4696
-#: httpdfunc.h:4718 httpdfunc.h:4763 httpdfunc.h:4786 httpdfunc.h:4810
-#: httpdfunc.h:4925 httpdsettings.h:28 httpdsettings.h:58 httpdsettings.h:66
-#: inadyn.h:139 mc_audioplayer_settings.h:46 mc_audioplayer_settings.h:52
+#: httpdfunc.h:3904 httpdfunc.h:3956 httpdfunc.h:4129 httpdfunc.h:4376
+#: httpdfunc.h:4434 httpdfunc.h:4557 httpdfunc.h:4579 httpdfunc.h:4623
+#: httpdfunc.h:4645 httpdfunc.h:4667 httpdfunc.h:4696 httpdfunc.h:4718
+#: httpdfunc.h:4763 httpdfunc.h:4786 httpdfunc.h:4810 httpdfunc.h:4925
+#: httpdsettings.h:28 httpdsettings.h:58 httpdsettings.h:66 inadyn.h:139
+#: mc_audioplayer_settings.h:46 mc_audioplayer_settings.h:52
 #: mc_audioplayer_settings.h:56 mc_pictureplayer_settings.h:76
 #: mc_videoplayer_settings.h:40 mc_videoplayer_settings.h:44
 #: mc_videoplayer_settings.h:50 mediadb.h:1083 mediadb.h:1090 mediadb.h:1105
@@ -11726,6 +13284,10 @@ msgstr ""
 
 #: skin_default_skin.xml.h:826
 msgid "z"
+msgstr ""
+
+#: tpk_showname.h:208
+msgid "zapback (Werbezapper)"
 msgstr ""
 
 #: skin_default_skin.xml.h:22
