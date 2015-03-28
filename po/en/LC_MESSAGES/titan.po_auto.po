@@ -13313,28 +13313,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid ""
-#~ "Directory has content\n"
-#~ "Really delete directory and content?"
-#~ msgstr ""
-#~ "Directory has content\n"
-#~ "Really delete the directory and the content?"
-
-#~ msgid "can't create or delete directory"
-#~ msgstr "ERROR: Can't create or delete directory"
-
-#~ msgid "del medium for backup"
-#~ msgstr "Remove as Backup-device"
-
-#~ msgid "del medium for extension"
-#~ msgstr "Remove as extensions-device"
-
-#~ msgid "del medium for record"
-#~ msgstr "Remove as Recordings-device"
-
-#~ msgid "del medium for swap"
-#~ msgstr "Remove as swap-device"
-
-#~ msgid "succesfull create or delelete directory"
-#~ msgstr "Succesfully created or deleted directory"

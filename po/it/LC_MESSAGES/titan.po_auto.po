@@ -13179,21 +13179,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "Are you sure you want to delete this directory?"
-#~ msgstr "Cancellare questa cartella ?"
-
-#~ msgid "can't create or delete directory"
-#~ msgstr "Cartella non puo essere cambiata"
-
-#~ msgid "del medium for backup"
-#~ msgstr "L'unità non viene utilizzata il backup e il ripristino"
-
-#~ msgid "del medium for extension"
-#~ msgstr "non usare l unita per estensioni"
-
-#~ msgid "del medium for record"
-#~ msgstr "Non usare il medium per reggistrazioni"
-
-#~ msgid "del medium for swap"
-#~ msgstr "Non usare l unita per lo Swap"
