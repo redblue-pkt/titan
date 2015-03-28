@@ -622,8 +622,8 @@ msgstr ""
 "Sei sicuro di voler controllare questa partizione?\n"
 "Il ricevitore fara subito dopo restart."
 
-msgid "Are you sure you want to delete this directory?"
-msgstr "Cancellare questa cartella ?"
+msgid "Are you sure you want to delete this Record directory?"
+msgstr ""
 
 msgid ""
 "Are you sure you want to format this Partition?\n"
@@ -1959,11 +1959,6 @@ msgstr ""
 
 msgid "Director:"
 msgstr "Imdb Directory"
-
-msgid ""
-"Directory has content\n"
-"Really delete directory and content?"
-msgstr ""
 
 msgid "Dirsort"
 msgstr "Ordinamento Cartelle"
@@ -7432,9 +7427,6 @@ msgstr "il service non puo essere creato"
 msgid "can't create new transponer"
 msgstr "il service non puo essere creato"
 
-msgid "can't create or delete directory"
-msgstr "Cartella non puo essere cambiata"
-
 msgid "cancel"
 msgstr ""
 
@@ -7547,18 +7539,6 @@ msgid "default"
 msgstr "Valore predefinito"
 
 msgid "default Directory"
-msgstr ""
-
-msgid "del medium for backup"
-msgstr ""
-
-msgid "del medium for extension"
-msgstr ""
-
-msgid "del medium for record"
-msgstr ""
-
-msgid "del medium for swap"
 msgstr ""
 
 msgid "del startchannel"
@@ -8631,9 +8611,6 @@ msgstr ""
 msgid "subtitle"
 msgstr ""
 
-msgid "succesfull create or delelete directory"
-msgstr ""
-
 msgid "success"
 msgstr "Remove success"
 
@@ -9040,3 +9017,5 @@ msgstr ""
 
 msgid "~"
 msgstr ""
+
+

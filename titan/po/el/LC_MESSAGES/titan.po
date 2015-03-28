@@ -620,7 +620,7 @@ msgid ""
 "Box reboots after check"
 msgstr ""
 
-msgid "Are you sure you want to delete this directory?"
+msgid "Are you sure you want to delete this Record directory?"
 msgstr ""
 
 msgid ""
@@ -1936,11 +1936,6 @@ msgstr ""
 
 msgid "Director:"
 msgstr "Κατάλογος Imdb"
-
-msgid ""
-"Directory has content\n"
-"Really delete directory and content?"
-msgstr ""
 
 msgid "Dirsort"
 msgstr "Ταξινόμηση φακέλων"
@@ -7381,9 +7376,6 @@ msgstr ""
 msgid "can't create new transponer"
 msgstr ""
 
-msgid "can't create or delete directory"
-msgstr ""
-
 msgid "cancel"
 msgstr ""
 
@@ -7497,18 +7489,6 @@ msgstr "Προρυθμίσεις"
 
 msgid "default Directory"
 msgstr "Κατάλογος Imdb"
-
-msgid "del medium for backup"
-msgstr ""
-
-msgid "del medium for extension"
-msgstr ""
-
-msgid "del medium for record"
-msgstr ""
-
-msgid "del medium for swap"
-msgstr ""
 
 msgid "del startchannel"
 msgstr ""
@@ -8578,9 +8558,6 @@ msgid "streaminfo Plugin"
 msgstr ""
 
 msgid "subtitle"
-msgstr ""
-
-msgid "succesfull create or delelete directory"
 msgstr ""
 
 msgid "success"
