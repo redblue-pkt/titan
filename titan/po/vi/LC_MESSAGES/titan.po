@@ -533,6 +533,12 @@ msgstr ""
 msgid "All Channels"
 msgstr "Tất cả các chương trình"
 
+msgid "All New first"
+msgstr ""
+
+msgid "All Sorted"
+msgstr ""
+
 msgid "All new channels added!"
 msgstr "Tất cả các chương trình mới được thêm vào!"
 
@@ -692,6 +698,36 @@ msgid "Astra ORF"
 msgstr ""
 
 msgid "Atemio (hotline)"
+msgstr ""
+
+msgid "Atemio Cable Tuner scan"
+msgstr ""
+
+msgid "Atemio Channelsearch 4xSat"
+msgstr ""
+
+msgid "Atemio Harddisc formating"
+msgstr ""
+
+msgid "Atemio Network configuration stable IP"
+msgstr ""
+
+msgid "Atemio Series Recoding"
+msgstr ""
+
+msgid "Atemio Skin (Gui Design)"
+msgstr ""
+
+msgid "Atemio TitanNit Trailer"
+msgstr ""
+
+msgid "Atemio TitanNit zap Menu"
+msgstr ""
+
+msgid "Atemio Tuner configuration Sat"
+msgstr ""
+
+msgid "Atemio WLAN configuration"
 msgstr ""
 
 msgid "Atemio free license"
@@ -1291,6 +1327,9 @@ msgid "Cancel"
 msgstr "hủy"
 
 msgid "Cat-Catch"
+msgstr ""
+
+msgid "Category"
 msgstr ""
 
 msgid "Change Channelname"
@@ -2381,6 +2420,9 @@ msgstr ""
 msgid "Favorite Mainmenu"
 msgstr ""
 
+msgid "Favoriten"
+msgstr ""
+
 msgid "February"
 msgstr ""
 
@@ -2428,6 +2470,9 @@ msgstr ""
 
 msgid "Filesystem Check"
 msgstr "Kiểm tra tập tin hệ thống"
+
+msgid "FilmOn"
+msgstr ""
 
 msgid "Fine move"
 msgstr "di chuyển chính xác"
@@ -3077,6 +3122,18 @@ msgstr ""
 msgid "How many days"
 msgstr "Bao nhiêu ngày"
 
+msgid "HowTo Feedadresse Eingeben"
+msgstr ""
+
+msgid "HowTo Picons Einrichten"
+msgstr ""
+
+msgid "HowTo Secret"
+msgstr ""
+
+msgid "HowTo Sky V13 Einrichten"
+msgstr ""
+
 msgid "Hybrid tuner mode changed, receiver will be restarted!"
 msgstr ""
 
@@ -3300,6 +3357,9 @@ msgstr "Trình duyệt mạng"
 msgid "Internet Browser Plugin not installed !"
 msgstr ""
 
+msgid "Internet Radio"
+msgstr ""
+
 msgid "Interval"
 msgstr "Intervall"
 
@@ -3399,6 +3459,9 @@ msgstr "Bàn phím"
 
 msgid "Keys Updated !"
 msgstr "Updated !"
+
+msgid "KinoX"
+msgstr ""
 
 msgid "L"
 msgstr ""
@@ -3752,6 +3815,21 @@ msgstr "Vị trí MediaDB"
 msgid "MediaDB scan finished"
 msgstr "Tìm kiếm MediaDB hoàn thành"
 
+msgid "Mediacenter AudioPlayer Playlisten Preview"
+msgstr ""
+
+msgid "Mediacenter AudioPlayer Screensaver Preview"
+msgstr ""
+
+msgid "Mediacenter Mediathek Kinox Preview"
+msgstr ""
+
+msgid "Mediacenter Mediathek Myvideo/Rtl2/InternetTv/Radio Preview"
+msgstr ""
+
+msgid "Mediacenter VideoPlayer Preview"
+msgstr ""
+
 msgid "Mediathek"
 msgstr "Thư viện trực tuyến"
 
@@ -3884,6 +3962,9 @@ msgstr "di chuyển"
 msgid "Moven"
 msgstr "Di chuyển"
 
+msgid "Movie4k"
+msgstr ""
+
 msgid "Moviepath"
 msgstr "Thư mục phim"
 
@@ -3917,6 +3998,9 @@ msgstr ""
 msgid "My Video"
 msgstr ""
 
+msgid "MyVideo"
+msgstr ""
+
 msgid "N"
 msgstr ""
 
@@ -3928,6 +4012,9 @@ msgstr ""
 
 msgid "NONE"
 msgstr "không"
+
+msgid "NTV-Now"
+msgstr ""
 
 msgid "Name"
 msgstr "Tên"
@@ -3972,6 +4059,9 @@ msgid "Networkbrowser - show scanned cifs/nfs-Shares"
 msgstr "Trình duyệt mạng – Dò cifs/nfs-Chia sẻ "
 
 msgid "Networkfile libsmbclient 3.0.28b"
+msgstr ""
+
+msgid "Netzkino"
 msgstr ""
 
 msgid "Neutrino Keymap"
@@ -4708,6 +4798,12 @@ msgstr "Cổng HTPTD"
 msgid "RS232"
 msgstr ""
 
+msgid "RTL-Now"
+msgstr ""
+
+msgid "RTL2-Now"
+msgstr ""
+
 msgid "Radio"
 msgstr ""
 
@@ -5010,6 +5106,9 @@ msgstr "Vị trí roto"
 
 msgid "Rotor Settings"
 msgstr "Thiết lập roto"
+
+msgid "RtlNitro-Now"
+msgstr ""
 
 msgid "Runtime"
 msgstr "thời gian"
@@ -5384,6 +5483,30 @@ msgstr "Không có đầu ra."
 
 msgid "Search"
 msgstr "dò"
+
+msgid "Search (10)"
+msgstr ""
+
+msgid "Search (20)"
+msgstr ""
+
+msgid "Search (25)"
+msgstr ""
+
+msgid "Search (50)"
+msgstr ""
+
+msgid "Search (local)"
+msgstr ""
+
+msgid "Search Cast"
+msgstr ""
+
+msgid "Search Movie"
+msgstr ""
+
+msgid "Search Serie"
+msgstr ""
 
 msgid "Search on ARD (local)"
 msgstr ""
@@ -5789,6 +5912,9 @@ msgstr "Chọn thiết bị đọc"
 msgid "Softcam selection:"
 msgstr ""
 
+msgid "Solarmovie"
+msgstr ""
+
 msgid "Soll der Schnitt wirklich abgebrochen werden?"
 msgstr ""
 
@@ -6006,6 +6132,9 @@ msgstr ""
 msgid "Sunday"
 msgstr "Chủ nhật"
 
+msgid "SuperRTL-Now"
+msgstr ""
+
 msgid "Svn Changelog"
 msgstr ""
 
@@ -6166,6 +6295,9 @@ msgstr ""
 msgid "Team 2"
 msgstr ""
 
+msgid "TecTime"
+msgstr ""
+
 msgid "Terrestrial"
 msgstr ""
 
@@ -6271,6 +6403,9 @@ msgstr "thời gian để dừng lại"
 msgid "Time to wait after seek for fill buffer"
 msgstr "Thời gian đợi sau khi tìm kiếm bộ đệm khác"
 
+msgid "TimeTv"
+msgstr ""
+
 msgid "Timer"
 msgstr "Bộ định thời"
 
@@ -6348,6 +6483,9 @@ msgstr ""
 
 msgid "Tint"
 msgstr "màu sắc"
+
+msgid "Tips und Tricks"
+msgstr ""
 
 msgid "Titan Changelog"
 msgstr ""
@@ -6617,6 +6755,9 @@ msgstr ""
 msgid "Tv/Radio"
 msgstr ""
 
+msgid "TvToast"
+msgstr ""
+
 msgid "Two step mute"
 msgstr " Two step mute"
 
@@ -6769,6 +6910,9 @@ msgstr "THIẾT LẬP HIỂN THỊ"
 
 msgid "VLC Player"
 msgstr "Phát VLC"
+
+msgid "VOX-Now"
+msgstr ""
 
 msgid "Version"
 msgstr ""
@@ -6928,6 +7072,9 @@ msgstr ""
 msgid "War"
 msgstr "bar"
 
+msgid "Watchmovies"
+msgstr ""
+
 msgid "Weather"
 msgstr "thời tiết"
 
@@ -7051,6 +7198,12 @@ msgstr ""
 msgid "XPicons LightTransparent (small - Astra 19.2E)"
 msgstr ""
 
+msgid "XXX-Beeg"
+msgstr ""
+
+msgid "XXX-XVIDEOS"
+msgstr ""
+
 msgid "Xupnpd Server"
 msgstr ""
 
@@ -7078,7 +7231,13 @@ msgid ""
 "Stop the box??? "
 msgstr ""
 
+msgid "Youtube"
+msgstr ""
+
 msgid "Z"
+msgstr ""
+
+msgid "ZDF"
 msgstr ""
 
 msgid "ZapBack"
