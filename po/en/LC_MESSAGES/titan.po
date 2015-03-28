@@ -539,10 +539,10 @@ msgid "All Channels"
 msgstr ""
 
 msgid "All New first"
-msgstr ""
+msgstr "All new Entrys first"
 
 msgid "All Sorted"
-msgstr ""
+msgstr "All Entrys sorted"
 
 msgid "All new channels added!"
 msgstr "All new channels added!"
@@ -632,7 +632,7 @@ msgstr ""
 "Are you sure you want to check this partition?\n"
 "Your Receiver will reboot after checking the device."
 
-msgid "Are you sure you want to delete this Record directory?"
+msgid "Are you sure you want to delete this directory?"
 msgstr ""
 
 msgid ""
@@ -711,16 +711,16 @@ msgid "Atemio Cable Tuner scan"
 msgstr ""
 
 msgid "Atemio Channelsearch 4xSat"
-msgstr ""
+msgstr "Atemio Channel search 4 Satellites"
 
 msgid "Atemio Harddisc formating"
-msgstr ""
+msgstr "Atemio Harddisk formating"
 
 msgid "Atemio Network configuration stable IP"
-msgstr ""
+msgstr "Atemio Network configuration static IP"
 
 msgid "Atemio Series Recoding"
-msgstr ""
+msgstr "Atemio Serial Recording"
 
 msgid "Atemio Skin (Gui Design)"
 msgstr ""
@@ -732,7 +732,7 @@ msgid "Atemio TitanNit zap Menu"
 msgstr ""
 
 msgid "Atemio Tuner configuration Sat"
-msgstr ""
+msgstr "Tuner Configuration for Satellite"
 
 msgid "Atemio WLAN configuration"
 msgstr ""
@@ -1082,9 +1082,6 @@ msgid "Bootlogo 'Zombie'"
 msgstr ""
 
 msgid "Border Color"
-msgstr ""
-
-msgid "Bouquet Color"
 msgstr ""
 
 msgid "Bouquet List"
@@ -2003,6 +2000,13 @@ msgstr ""
 msgid "Director:"
 msgstr ""
 
+msgid ""
+"Directory has content\n"
+"Really delete directory and content?"
+msgstr ""
+"Directory has content\n"
+"Really delete the directory and the content?"
+
 msgid "Dirsort"
 msgstr "Directory sort by"
 
@@ -2453,7 +2457,7 @@ msgid "Favorite Mainmenu"
 msgstr ""
 
 msgid "Favoriten"
-msgstr ""
+msgstr "Favourites"
 
 msgid "February"
 msgstr ""
@@ -3173,16 +3177,16 @@ msgid "How many days"
 msgstr ""
 
 msgid "HowTo Feedadresse Eingeben"
-msgstr ""
+msgstr "How to add a Feed address"
 
 msgid "HowTo Picons Einrichten"
-msgstr ""
+msgstr "How to install and use Picons"
 
 msgid "HowTo Secret"
-msgstr ""
+msgstr "How to ad Secret Feed address"
 
 msgid "HowTo Sky V13 Einrichten"
-msgstr ""
+msgstr "How to setup a Sky V13 Smartcard"
 
 msgid "Hybrid tuner mode changed, receiver will be restarted!"
 msgstr ""
@@ -3878,19 +3882,19 @@ msgid "MediaDB scan finished"
 msgstr ""
 
 msgid "Mediacenter AudioPlayer Playlisten Preview"
-msgstr ""
+msgstr "Audioplayer Playlist Preview"
 
 msgid "Mediacenter AudioPlayer Screensaver Preview"
-msgstr ""
+msgstr "Audioplayer Screensaver  preview"
 
 msgid "Mediacenter Mediathek Kinox Preview"
-msgstr ""
+msgstr "Wmediathek kinOx previe"
 
 msgid "Mediacenter Mediathek Myvideo/Rtl2/InternetTv/Radio Preview"
-msgstr ""
+msgstr "Mediathek Myvideo/Rtl2/InternetTv/Radio Preview"
 
 msgid "Mediacenter VideoPlayer Preview"
-msgstr ""
+msgstr "Video Player Preview"
 
 msgid "Mediathek"
 msgstr "Online Mediathek"
@@ -5125,21 +5129,6 @@ msgstr "Restart OScam?"
 msgid "Restore"
 msgstr ""
 
-msgid "Restore Default Bouquets"
-msgstr ""
-
-msgid "Restore Default Channel Settings"
-msgstr ""
-
-msgid "Restore Default Channels"
-msgstr ""
-
-msgid "Restore Default Providers"
-msgstr ""
-
-msgid "Restore Default Sats"
-msgstr ""
-
 msgid "Restore Settings"
 msgstr ""
 
@@ -5554,28 +5543,28 @@ msgid "Search"
 msgstr ""
 
 msgid "Search (10)"
-msgstr ""
+msgstr "Search viewing 10 Results"
 
 msgid "Search (20)"
-msgstr ""
+msgstr "Search viewing 20 Results"
 
 msgid "Search (25)"
-msgstr ""
+msgstr "Search viewing 25 Results"
 
 msgid "Search (50)"
-msgstr ""
+msgstr "Search viewing 50 Results"
 
 msgid "Search (local)"
 msgstr ""
 
 msgid "Search Cast"
-msgstr ""
+msgstr "Search by Cast"
 
 msgid "Search Movie"
-msgstr ""
+msgstr "Search for a Movie"
 
 msgid "Search Serie"
-msgstr ""
+msgstr "Search for a Series"
 
 msgid "Search on ARD (local)"
 msgstr ""
@@ -6065,21 +6054,6 @@ msgid "Start RGUID"
 msgstr ""
 
 msgid "Start Record"
-msgstr ""
-
-msgid "Start Restore Default Bouquets ?"
-msgstr ""
-
-msgid "Start Restore Default Channel Settings ?"
-msgstr ""
-
-msgid "Start Restore Default Channels ?"
-msgstr ""
-
-msgid "Start Restore Default Providers ?"
-msgstr ""
-
-msgid "Start Restore Default Sats ?"
 msgstr ""
 
 msgid "Start Wlan ?"
@@ -6576,7 +6550,7 @@ msgid "Tint"
 msgstr ""
 
 msgid "Tips und Tricks"
-msgstr ""
+msgstr "Tips and Tricks"
 
 msgid "Titan Changelog"
 msgstr ""
@@ -7541,7 +7515,7 @@ msgid "broadcast"
 msgstr "Broadcast address"
 
 msgid "browser"
-msgstr ""
+msgstr "Browser"
 
 msgid "burlywood1"
 msgstr ""
@@ -7560,6 +7534,9 @@ msgstr ""
 
 msgid "can't create new transponer"
 msgstr ""
+
+msgid "can't create or delete directory"
+msgstr "ERROR: Can't create or delete directory"
 
 msgid "cancel"
 msgstr ""
@@ -7675,6 +7652,18 @@ msgstr ""
 msgid "default Directory"
 msgstr ""
 
+msgid "del medium for backup"
+msgstr "Remove as Backup-device"
+
+msgid "del medium for extension"
+msgstr "Remove as extensions-device"
+
+msgid "del medium for record"
+msgstr "Remove as Recordings-device"
+
+msgid "del medium for swap"
+msgstr "Remove as swap-device"
+
 msgid "del startchannel"
 msgstr ""
 
@@ -7751,7 +7740,7 @@ msgid "empty"
 msgstr "No Module"
 
 msgid "emus"
-msgstr ""
+msgstr "Softcams"
 
 msgid "en-GB"
 msgstr ""
@@ -7766,7 +7755,7 @@ msgid "endless"
 msgstr ""
 
 msgid "epg"
-msgstr ""
+msgstr "EPG"
 
 msgid "epgscanlist"
 msgstr ""
@@ -7832,7 +7821,7 @@ msgid "first titan game"
 msgstr ""
 
 msgid "fonts"
-msgstr ""
+msgstr "Fonts"
 
 msgid "found"
 msgstr ""
@@ -7954,7 +7943,7 @@ msgid "infomenu"
 msgstr ""
 
 msgid "infos"
-msgstr ""
+msgstr "Infos"
 
 msgid "initializing"
 msgstr "initializing"
@@ -8011,10 +8000,10 @@ msgid "language"
 msgstr ""
 
 msgid "lcdpearlskins"
-msgstr ""
+msgstr "Pearl LCD Skins"
 
 msgid "lcdsamsungskins"
-msgstr ""
+msgstr "Samsung LCD Skins"
 
 msgid "left"
 msgstr ""
@@ -8140,7 +8129,7 @@ msgid "netmask"
 msgstr ""
 
 msgid "network"
-msgstr ""
+msgstr "Network"
 
 msgid "network_test"
 msgstr ""
@@ -8320,7 +8309,7 @@ msgid "pic5"
 msgstr "Picture 5"
 
 msgid "picons"
-msgstr ""
+msgstr "Picons"
 
 msgid "picture"
 msgstr "Picture"
@@ -8344,7 +8333,7 @@ msgid "pl2303"
 msgstr "PL2303 Module"
 
 msgid "player"
-msgstr ""
+msgstr "Player"
 
 msgid "playinfobar"
 msgstr ""
@@ -8590,7 +8579,7 @@ msgid "set startchannel"
 msgstr ""
 
 msgid "settings"
-msgstr ""
+msgstr "Settings"
 
 msgid "settingsmenu"
 msgstr ""
@@ -8647,7 +8636,7 @@ msgid "skinadjust"
 msgstr ""
 
 msgid "skins"
-msgstr ""
+msgstr "Skins"
 
 msgid "skinselect"
 msgstr ""
@@ -8744,6 +8733,9 @@ msgstr ""
 
 msgid "subtitle"
 msgstr ""
+
+msgid "succesfull create or delelete directory"
+msgstr "Succesfully created or deleted directory"
 
 msgid "success"
 msgstr ""
@@ -8872,7 +8864,7 @@ msgid "toneburst, uncommitted, committed"
 msgstr ""
 
 msgid "tools"
-msgstr ""
+msgstr "Tools"
 
 msgid "tpkinstall"
 msgstr ""

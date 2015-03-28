@@ -453,7 +453,7 @@ msgid "Action"
 msgstr "thực thi"
 
 msgid "Action Man Italic"
-msgstr ""
+msgstr "Hành động sau đó"
 
 msgid "Activate"
 msgstr "Kích hoạt"
@@ -625,8 +625,8 @@ msgstr ""
 "Bạn muốn kiể tra phân vùng này?\n"
 " Đầu thu sẽ khởi động lại sau khi kiểm tra."
 
-msgid "Are you sure you want to delete this Record directory?"
-msgstr ""
+msgid "Are you sure you want to delete this directory?"
+msgstr "Bạn chắc chắn muốn xóa thư mục này ?"
 
 msgid ""
 "Are you sure you want to format this Partition?\n"
@@ -701,10 +701,10 @@ msgid "Atemio (hotline)"
 msgstr ""
 
 msgid "Atemio Cable Tuner scan"
-msgstr ""
+msgstr "Bạn có muốn kích hoạt tuner không ?"
 
 msgid "Atemio Channelsearch 4xSat"
-msgstr ""
+msgstr "kiểu dò chương trình"
 
 msgid "Atemio Harddisc formating"
 msgstr ""
@@ -725,10 +725,10 @@ msgid "Atemio TitanNit zap Menu"
 msgstr ""
 
 msgid "Atemio Tuner configuration Sat"
-msgstr ""
+msgstr " Cài đặt tuner"
 
 msgid "Atemio WLAN configuration"
-msgstr ""
+msgstr "Cấu hình LNB"
 
 msgid "Atemio free license"
 msgstr ""
@@ -776,7 +776,7 @@ msgid "Auto Scan"
 msgstr "Tự động dò"
 
 msgid "Auto Timer"
-msgstr ""
+msgstr "Bộ định thời"
 
 msgid "Auto resolution"
 msgstr "Độ phân giải tự động"
@@ -809,7 +809,7 @@ msgid "Automatic update"
 msgstr ""
 
 msgid "Automatisch Timer setzen"
-msgstr ""
+msgstr "Tự động dò"
 
 msgid "Automount"
 msgstr "Tự động tích hợp"
@@ -1077,9 +1077,6 @@ msgid "Bootlogo 'Zombie'"
 msgstr ""
 
 msgid "Border Color"
-msgstr ""
-
-msgid "Bouquet Color"
 msgstr ""
 
 msgid "Bouquet List"
@@ -1544,7 +1541,7 @@ msgid "Code2"
 msgstr "mã 2: "
 
 msgid "Codepack"
-msgstr ""
+msgstr "Passwword đúng"
 
 msgid "Coderate HP"
 msgstr "Tạo đường dẫn"
@@ -1770,7 +1767,7 @@ msgid "DO"
 msgstr "D"
 
 msgid "DTS Downmix"
-msgstr ""
+msgstr " AC3 downmix "
 
 msgid "DTS-Downmix firmware "
 msgstr ""
@@ -1782,7 +1779,7 @@ msgid "DVBS2"
 msgstr ""
 
 msgid "DVD Player"
-msgstr ""
+msgstr "Phát VLC"
 
 msgid "DVD-Player plugin"
 msgstr ""
@@ -1858,10 +1855,10 @@ msgid "Default Autostart"
 msgstr "Tự động khởi động"
 
 msgid "Default Font"
-msgstr ""
+msgstr "Biểu tượng mặc định"
 
 msgid "Default Skin"
-msgstr ""
+msgstr "Biểu tượng mặc định"
 
 msgid "Default mod by maenne79"
 msgstr ""
@@ -1969,6 +1966,11 @@ msgstr "Thư mục Imdb"
 
 msgid "Director:"
 msgstr "Thư mục Imdb"
+
+msgid ""
+"Directory has content\n"
+"Really delete directory and content?"
+msgstr ""
 
 msgid "Dirsort"
 msgstr ""
@@ -2732,7 +2734,7 @@ msgid "Global"
 msgstr ""
 
 msgid "GmediaRender"
-msgstr ""
+msgstr "Media Center"
 
 msgid "Go to startpos"
 msgstr "Tới vị trí bắt đầu"
@@ -2756,7 +2758,7 @@ msgid "GoodPlayer"
 msgstr ""
 
 msgid "Goodtime"
-msgstr ""
+msgstr "thời gian"
 
 msgid "Graph. EPG"
 msgstr "Lịch chương trình"
@@ -3353,7 +3355,7 @@ msgid "Internet Browser Plugin not installed !"
 msgstr ""
 
 msgid "Internet Radio"
-msgstr ""
+msgstr "Trình duyệt mạng"
 
 msgid "Interval"
 msgstr "Intervall"
@@ -3765,7 +3767,7 @@ msgid "MediaCenter"
 msgstr "Media Center"
 
 msgid "MediaCenter FolderIcons"
-msgstr ""
+msgstr "Biểu tượng Media Center"
 
 msgid "MediaDB"
 msgstr ""
@@ -3958,7 +3960,7 @@ msgid "Moven"
 msgstr "Di chuyển"
 
 msgid "Movie4k"
-msgstr ""
+msgstr "Thư mục phim"
 
 msgid "Moviepath"
 msgstr "Thư mục phim"
@@ -3994,7 +3996,7 @@ msgid "My Video"
 msgstr ""
 
 msgid "MyVideo"
-msgstr ""
+msgstr "My Video"
 
 msgid "N"
 msgstr ""
@@ -4359,7 +4361,7 @@ msgid "Parental"
 msgstr ""
 
 msgid "Parted"
-msgstr ""
+msgstr "Đã bắt đầu"
 
 msgid "Partitions Tool fuer HDD > 2TB"
 msgstr ""
@@ -4458,7 +4460,7 @@ msgid "Picons Kabel Black3D"
 msgstr ""
 
 msgid "Picons Kabel Transparent"
-msgstr ""
+msgstr "Độ trong suốt"
 
 msgid "Picons Spiegel (ASTRA 19.2)"
 msgstr ""
@@ -4917,7 +4919,7 @@ msgid "Record Timer"
 msgstr "Bộ đinh thời ghi"
 
 msgid "Record cut"
-msgstr ""
+msgstr "Thư mục chứa bản ghi"
 
 msgid "Record in progress"
 msgstr "Đang ghi tên"
@@ -5050,21 +5052,6 @@ msgstr "Khởi động lại"
 
 msgid "Restore"
 msgstr "Khôi phục"
-
-msgid "Restore Default Bouquets"
-msgstr ""
-
-msgid "Restore Default Channel Settings"
-msgstr ""
-
-msgid "Restore Default Channels"
-msgstr ""
-
-msgid "Restore Default Providers"
-msgstr ""
-
-msgid "Restore Default Sats"
-msgstr ""
 
 msgid "Restore Settings"
 msgstr "Thiết lập khôi phục lại"
@@ -5355,105 +5342,105 @@ msgid "Screensaver Adjust"
 msgstr "Điều chỉnh màn hình chờ"
 
 msgid "Screensaver Animation Kidds"
-msgstr ""
+msgstr "Điều chỉnh màn hình chờ"
 
 msgid "Screensaver Beach"
-msgstr ""
+msgstr "Màn hình chờ"
 
 msgid "Screensaver Bikes and Motorcycles"
-msgstr ""
+msgstr "khoảng thời gian màn hình chờ"
 
 msgid "Screensaver Brands and Logos"
-msgstr ""
+msgstr "Điều chỉnh màn hình chờ"
 
 msgid "Screensaver Cars"
-msgstr ""
+msgstr "Màn hình chờ"
 
 msgid "Screensaver Celebrations"
-msgstr ""
+msgstr "độ trễ màn hình chờ"
 
 msgid "Screensaver Celebrities"
-msgstr ""
+msgstr "kiểu màn hình chờ"
 
 msgid "Screensaver Christmas"
-msgstr ""
+msgstr "Điều chỉnh màn hình chờ"
 
 msgid "Screensaver Creative Graphics"
-msgstr ""
+msgstr "hình ảnh màn hình chờ"
 
 msgid "Screensaver Cute"
-msgstr ""
+msgstr "Điều chỉnh màn hình chờ"
 
 msgid "Screensaver Default"
-msgstr ""
+msgstr "Điều chỉnh màn hình chờ"
 
 msgid "Screensaver Digital Universe"
-msgstr ""
+msgstr "khoảng thời gian màn hình chờ"
 
 msgid "Screensaver Dreamy Fantasy"
-msgstr ""
+msgstr "độ trễ màn hình chờ"
 
 msgid "Screensaver Eisriesenwelt"
-msgstr ""
+msgstr "khoảng thời gian màn hình chờ"
 
 msgid ""
 "Screensaver FC Bayern pictures for MediaCenter Audioplayer and Radioplayer"
 msgstr ""
 
 msgid "Screensaver FCBayern"
-msgstr ""
+msgstr "kiểu màn hình chờ"
 
 msgid "Screensaver Fantasy Girls"
-msgstr ""
+msgstr "khoảng thời gian màn hình chờ"
 
 msgid "Screensaver Flowers"
-msgstr ""
+msgstr "Màn hình chờ"
 
 msgid "Screensaver Games"
-msgstr ""
+msgstr "Màn hình chờ"
 
 msgid "Screensaver HDR-Pictures"
-msgstr ""
+msgstr "Điều chỉnh màn hình chờ"
 
 msgid ""
 "Screensaver Hot Girls pictures for MediaCenter Audioplayer and Radioplayer"
 msgstr ""
 
 msgid "Screensaver Hotgirls"
-msgstr ""
+msgstr "Màn hình chờ"
 
 msgid "Screensaver Hotgirls 2"
-msgstr ""
+msgstr "khoảng thời gian màn hình chờ"
 
 msgid "Screensaver Inspirational"
-msgstr ""
+msgstr "khoảng thời gian màn hình chờ"
 
 msgid "Screensaver Love"
-msgstr ""
+msgstr "Màn hình chờ"
 
 msgid "Screensaver Movies"
-msgstr ""
+msgstr "Màn hình chờ"
 
 msgid "Screensaver Nature and Landscape"
 msgstr ""
 
 msgid "Screensaver Others"
-msgstr ""
+msgstr "kiểu màn hình chờ"
 
 msgid "Screensaver Photography"
-msgstr ""
+msgstr "kiểu màn hình chờ"
 
 msgid "Screensaver Planes"
-msgstr ""
+msgstr "Màn hình chờ"
 
 msgid "Screensaver Radio"
-msgstr ""
+msgstr "Màn hình chờ"
 
 msgid "Screensaver Sports"
-msgstr ""
+msgstr "Màn hình chờ"
 
 msgid "Screensaver Travel World"
-msgstr ""
+msgstr "khoảng thời gian màn hình chờ"
 
 msgid "Screensaver pictures for MediaCenter Audioplayer and Radioplayer"
 msgstr ""
@@ -5480,28 +5467,28 @@ msgid "Search"
 msgstr "dò"
 
 msgid "Search (10)"
-msgstr ""
+msgstr "Dò"
 
 msgid "Search (20)"
-msgstr ""
+msgstr "Dò"
 
 msgid "Search (25)"
-msgstr ""
+msgstr "Dò"
 
 msgid "Search (50)"
-msgstr ""
+msgstr "Dò"
 
 msgid "Search (local)"
-msgstr ""
+msgstr "Dò"
 
 msgid "Search Cast"
-msgstr ""
+msgstr "tìm kiếm bên trái"
 
 msgid "Search Movie"
-msgstr ""
+msgstr "Dò"
 
 msgid "Search Serie"
-msgstr ""
+msgstr "Dò"
 
 msgid "Search on ARD (local)"
 msgstr ""
@@ -5797,7 +5784,7 @@ msgid "Skin Adjust"
 msgstr "Điều chỉnh nền"
 
 msgid "Skin Cool"
-msgstr ""
+msgstr "Nền"
 
 msgid "Skin Cool MiniTV"
 msgstr ""
@@ -5809,13 +5796,13 @@ msgid "Skin DefNoMiniTV mod"
 msgstr ""
 
 msgid "Skin Default"
-msgstr ""
+msgstr "Mặc định"
 
 msgid "Skin Default mod"
 msgstr ""
 
 msgid "Skin MegaStyle blue"
-msgstr ""
+msgstr "Chọn nền"
 
 msgid "Skin MegaStyle blue Mini TV"
 msgstr ""
@@ -5845,7 +5832,7 @@ msgid "Skin Select"
 msgstr "Chọn nền"
 
 msgid "Skin SmartTV"
-msgstr ""
+msgstr "Chọn nền"
 
 msgid "Skin SmartTV for alternate picons"
 msgstr ""
@@ -5988,21 +5975,6 @@ msgid "Start RGUID"
 msgstr "Bắt đầu HTTPD"
 
 msgid "Start Record"
-msgstr ""
-
-msgid "Start Restore Default Bouquets ?"
-msgstr ""
-
-msgid "Start Restore Default Channel Settings ?"
-msgstr ""
-
-msgid "Start Restore Default Channels ?"
-msgstr ""
-
-msgid "Start Restore Default Providers ?"
-msgstr ""
-
-msgid "Start Restore Default Sats ?"
 msgstr ""
 
 msgid "Start Wlan ?"
@@ -6291,7 +6263,7 @@ msgid "Team 2"
 msgstr ""
 
 msgid "TecTime"
-msgstr ""
+msgstr "Bộ định thời"
 
 msgid "Terrestrial"
 msgstr ""
@@ -6369,7 +6341,7 @@ msgid "Thursday"
 msgstr "Thứ năm"
 
 msgid "TiTan Mediathek"
-msgstr ""
+msgstr "Thư viện trực tuyến"
 
 msgid "TiThek - Favorite Edit"
 msgstr ""
@@ -6399,7 +6371,7 @@ msgid "Time to wait after seek for fill buffer"
 msgstr "Thời gian đợi sau khi tìm kiếm bộ đệm khác"
 
 msgid "TimeTv"
-msgstr ""
+msgstr "Bộ định thời"
 
 msgid "Timer"
 msgstr "Bộ định thời"
@@ -6492,7 +6464,7 @@ msgid "Titan Log"
 msgstr ""
 
 msgid "Titan MediaCenter"
-msgstr ""
+msgstr "Media Center"
 
 msgid "Titan will be restarted!"
 msgstr ""
@@ -6519,7 +6491,7 @@ msgid "TitanNit Web Control"
 msgstr ""
 
 msgid "TitanNit on fire"
-msgstr ""
+msgstr "Không thể mở file"
 
 msgid "Tithek - Mainmenu"
 msgstr ""
@@ -6790,7 +6762,7 @@ msgid "UNLOAD"
 msgstr "KHÔNG TẢI ĐƯỢC"
 
 msgid "UPNP Media Render"
-msgstr ""
+msgstr "Media Center"
 
 msgid "USB"
 msgstr ""
@@ -6811,7 +6783,7 @@ msgid "USB Reset"
 msgstr ""
 
 msgid "USB-RESET"
-msgstr ""
+msgstr "KHỞI ĐỘNG LẠI"
 
 msgid "Unchanged"
 msgstr "Thay đổi"
@@ -7083,7 +7055,7 @@ msgid "WebStream"
 msgstr ""
 
 msgid "Webbrowser Netsurf"
-msgstr ""
+msgstr "Trình duyệt"
 
 msgid "Webbrowser Plugin"
 msgstr ""
@@ -7197,7 +7169,7 @@ msgid "XXX-Beeg"
 msgstr ""
 
 msgid "XXX-XVIDEOS"
-msgstr ""
+msgstr "VIDEO"
 
 msgid "Xupnpd Server"
 msgstr ""
@@ -7419,7 +7391,7 @@ msgid "blue"
 msgstr ""
 
 msgid "bootlogos"
-msgstr ""
+msgstr "Logo khởi động"
 
 msgid "bootstop"
 msgstr "Dừng khởi động"
@@ -7434,7 +7406,7 @@ msgid "broadcast"
 msgstr "phát sóng"
 
 msgid "browser"
-msgstr ""
+msgstr "trình duyệt"
 
 msgid "burlywood1"
 msgstr ""
@@ -7453,6 +7425,9 @@ msgstr "Không dò được kênh"
 
 msgid "can't create new transponer"
 msgstr "Không dò được kênh"
+
+msgid "can't create or delete directory"
+msgstr "Không thể tạo hoặc xóa thư mục"
 
 msgid "cancel"
 msgstr "hủy"
@@ -7567,6 +7542,18 @@ msgstr "MẶC ĐỊNH"
 
 msgid "default Directory"
 msgstr "Thư mục mặc định"
+
+msgid "del medium for backup"
+msgstr " không sử dụng cho sao luư dữ liệu"
+
+msgid "del medium for extension"
+msgstr "không sử dụng cho phần mở rộng"
+
+msgid "del medium for record"
+msgstr "không sử dụng cho việc ghi"
+
+msgid "del medium for swap"
+msgstr "không sử dụng cho các tập tin trao đổi"
 
 msgid "del startchannel"
 msgstr "bắt đầu xóa chương trình"
@@ -7725,7 +7712,7 @@ msgid "first titan game"
 msgstr ""
 
 msgid "fonts"
-msgstr ""
+msgstr "phông chữ"
 
 msgid "found"
 msgstr "tìm kiếm"
@@ -7755,7 +7742,7 @@ msgid "g"
 msgstr ""
 
 msgid "games"
-msgstr ""
+msgstr "trò chơ"
 
 msgid "gateway"
 msgstr ""
@@ -7787,7 +7774,7 @@ msgid "harddiskmenu"
 msgstr ""
 
 msgid "hbbtv Browser"
-msgstr ""
+msgstr "trình duyệt"
 
 msgid "hddreplacement"
 msgstr "thay ổ cứng"
@@ -7847,7 +7834,7 @@ msgid "infomenu"
 msgstr ""
 
 msgid "infos"
-msgstr ""
+msgstr "thông tin"
 
 msgid "initializing"
 msgstr "khởi tạo"
@@ -7904,10 +7891,10 @@ msgid "language"
 msgstr ""
 
 msgid "lcdpearlskins"
-msgstr ""
+msgstr "Pearl-LCD-Skins"
 
 msgid "lcdsamsungskins"
-msgstr ""
+msgstr "Samsung-LCD-Skins"
 
 msgid "left"
 msgstr ""
@@ -8033,7 +8020,7 @@ msgid "netmask"
 msgstr ""
 
 msgid "network"
-msgstr ""
+msgstr "mạng"
 
 msgid "network_test"
 msgstr ""
@@ -8051,7 +8038,7 @@ msgid "newcs including all necessary config files."
 msgstr ""
 
 msgid "news Plugin"
-msgstr ""
+msgstr "cdắm nguồn"
 
 msgid "newsletter"
 msgstr ""
@@ -8171,7 +8158,7 @@ msgid "open in new window"
 msgstr ""
 
 msgid "optimize Plugin"
-msgstr ""
+msgstr "Tối ưu hóa"
 
 msgid "options"
 msgstr "tùy chọn"
@@ -8213,7 +8200,7 @@ msgid "pic5"
 msgstr ""
 
 msgid "picons"
-msgstr ""
+msgstr "biểu tượng p"
 
 msgid "picture"
 msgstr "Hình ảnh"
@@ -8435,7 +8422,7 @@ msgid "screensaveradjust"
 msgstr ""
 
 msgid "scriptexec Plugin"
-msgstr ""
+msgstr "cho phép thực hiện"
 
 msgid "search east"
 msgstr "tìm kiếm bên trái"
@@ -8483,7 +8470,7 @@ msgid "set startchannel"
 msgstr "thiết lập chương trình"
 
 msgid "settings"
-msgstr ""
+msgstr "thiết lập"
 
 msgid "settingsmenu"
 msgstr ""
@@ -8540,7 +8527,7 @@ msgid "skinadjust"
 msgstr ""
 
 msgid "skins"
-msgstr ""
+msgstr "Nền"
 
 msgid "skinselect"
 msgstr ""
@@ -8621,7 +8608,7 @@ msgid "step west"
 msgstr "dịch phải"
 
 msgid "stock Plugin"
-msgstr ""
+msgstr "cdắm nguồn"
 
 msgid "stop"
 msgstr ""
@@ -8633,10 +8620,13 @@ msgid "store position"
 msgstr "vị trí lưu trữ"
 
 msgid "streaminfo Plugin"
-msgstr ""
+msgstr "Streaming"
 
 msgid "subtitle"
 msgstr ""
+
+msgid "succesfull create or delelete directory"
+msgstr "tạo hoặc xóa thư mực thành công"
 
 msgid "success"
 msgstr "Đã hủy thành công!"
@@ -8765,7 +8755,7 @@ msgid "toneburst, uncommitted, committed"
 msgstr ""
 
 msgid "tools"
-msgstr ""
+msgstr "dụng cụ"
 
 msgid "tpkinstall"
 msgstr ""
@@ -8939,7 +8929,7 @@ msgid "waiting"
 msgstr "Đang bắt đầu"
 
 msgid "weather Plugin"
-msgstr ""
+msgstr "thông tin thời tiết"
 
 msgid "webdir"
 msgstr ""
@@ -8960,7 +8950,7 @@ msgid "will be set by plugin"
 msgstr ""
 
 msgid "wireless"
-msgstr ""
+msgstr "không dây"
 
 msgid "wireless 8192cu.ko model"
 msgstr ""
