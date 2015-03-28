@@ -10941,30 +10941,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "Atemio Channelsearch 4xSat"
-#~ msgstr "Αναζήτηση Καναλιών"
-
-#~ msgid "Atemio Tuner configuration Sat"
-#~ msgstr "Tuner"
-
-#~ msgid "Atemio WLAN configuration"
-#~ msgstr "LNB"
-
-#~ msgid "Internet Radio"
-#~ msgstr "Internet Browser"
-
-#~ msgid "Movie4k"
-#~ msgstr "Διαδρομή αρχείου ταινιών"
-
-#~ msgid "MyVideo"
-#~ msgstr "My Video"
-
-#~ msgid "TecTime"
-#~ msgstr "Timer"
-
-#~ msgid "TimeTv"
-#~ msgstr "Timer"
-
-#~ msgid "XXX-XVIDEOS"
-#~ msgstr "VIDEO"
