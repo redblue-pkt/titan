@@ -254,7 +254,7 @@ msgstr ""
 msgid "10"
 msgstr ""
 
-#: harddisk.h:878
+#: harddisk.h:879
 msgid "10 min"
 msgstr ""
 
@@ -278,7 +278,7 @@ msgstr ""
 msgid "15"
 msgstr ""
 
-#: harddisk.h:879
+#: harddisk.h:880
 msgid "15 min"
 msgstr ""
 
@@ -473,7 +473,7 @@ msgstr ""
 msgid "5"
 msgstr ""
 
-#: harddisk.h:878
+#: harddisk.h:879
 msgid "5 min"
 msgstr ""
 
@@ -514,7 +514,7 @@ msgstr ""
 msgid "60"
 msgstr ""
 
-#: harddisk.h:879
+#: harddisk.h:880
 msgid "60 min"
 msgstr ""
 
@@ -895,7 +895,7 @@ msgstr ""
 msgid "Are you sure you want remove this share?"
 msgstr "Sei sicuro di voler rimuovere questa azione?"
 
-#: harddisk.h:806
+#: harddisk.h:807
 msgid ""
 "Are you sure you want to check this Partition?\n"
 "Box reboots after check"
@@ -903,11 +903,11 @@ msgstr ""
 "Sei sicuro di voler controllare questa partizione?\n"
 "Il ricevitore fara subito dopo restart."
 
-#: harddisk.h:341
+#: harddisk.h:342
 msgid "Are you sure you want to delete this directory?"
 msgstr "Cancellare questa cartella ?"
 
-#: harddisk.h:666
+#: harddisk.h:667
 msgid ""
 "Are you sure you want to format this Partition?\n"
 "Box reboots after format"
@@ -915,7 +915,7 @@ msgstr ""
 "formatare partizione?\n"
 "Il ricevitore fara subito dopo restart."
 
-#: harddisk.h:632
+#: harddisk.h:633
 msgid ""
 "Are you sure you want to remove all Partitions\n"
 "on this device and create a new Partition 1?\n"
@@ -2492,7 +2492,7 @@ msgstr ""
 msgid "Director:"
 msgstr "Imdb Directory"
 
-#: harddisk.h:346
+#: harddisk.h:347
 msgid ""
 "Directory has content\n"
 "Really delete directory and content?"
@@ -2726,7 +2726,7 @@ msgstr ""
 msgid "ERROR"
 msgstr ""
 
-#: harddisk.h:784
+#: harddisk.h:785
 msgid ""
 "ERROR\n"
 "partition could not be created"
@@ -2776,10 +2776,10 @@ msgstr ""
 #: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
 #: global.h:5851 global.h:6572 global.h:6641 global.h:6660 global.h:6835
 #: global.h:7088 global.h:7101 global.h:7112 global.h:7123 global.h:7134
-#: harddisk.h:341 harddisk.h:346 harddisk.h:373 harddisk.h:377 harddisk.h:430
-#: harddisk.h:624 harddisk.h:632 harddisk.h:666 harddisk.h:715 harddisk.h:720
-#: harddisk.h:722 harddisk.h:724 harddisk.h:784 harddisk.h:803 harddisk.h:806
-#: harddisk.h:1037 hbbtv.h:362 hello.c:36 httpdfunc.h:1304 httpdfunc.h:3258
+#: harddisk.h:342 harddisk.h:347 harddisk.h:374 harddisk.h:378 harddisk.h:431
+#: harddisk.h:625 harddisk.h:633 harddisk.h:667 harddisk.h:716 harddisk.h:721
+#: harddisk.h:723 harddisk.h:725 harddisk.h:785 harddisk.h:804 harddisk.h:807
+#: harddisk.h:1038 hbbtv.h:362 hello.c:36 httpdfunc.h:1304 httpdfunc.h:3258
 #: httpdfunc.h:6159 httpdfunc.h:6424 httpdfunc.h:6495 hwtest.h:88 hwtest.h:93
 #: hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206
 #: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
@@ -3378,7 +3378,7 @@ msgid ""
 "Please install driver: "
 msgstr ""
 
-#: harddisk.h:1037
+#: harddisk.h:1038
 msgid ""
 "Found new Stick/HDD.\n"
 "You can configure it in Harddisk Menu."
@@ -3638,11 +3638,11 @@ msgstr ""
 msgid "HBBTV Favoriten"
 msgstr ""
 
-#: harddisk.h:470
+#: harddisk.h:471
 msgid "HDD "
 msgstr ""
 
-#: harddisk.h:624
+#: harddisk.h:625
 msgid ""
 "HDD > 2TB unsupported.\n"
 "You must first install plugin parted, then you can use this panel."
@@ -3684,15 +3684,15 @@ msgstr ""
 msgid "Hard"
 msgstr ""
 
-#: adjust.h:286 harddisk.h:430 skin_default_skin.xml.h:295
+#: adjust.h:286 harddisk.h:431 skin_default_skin.xml.h:295
 msgid "Harddisk"
 msgstr "Hdd"
 
-#: harddisk.h:217 harddisk.h:218 harddisk.h:450 harddisk.h:451
+#: harddisk.h:217 harddisk.h:218 harddisk.h:451 harddisk.h:452
 msgid "Harddisk Configure"
 msgstr "Impostazioni HDD"
 
-#: harddisk.h:438 harddisk.h:439
+#: harddisk.h:439 harddisk.h:440
 msgid "Harddisk Format"
 msgstr ""
 
@@ -3700,11 +3700,11 @@ msgstr ""
 msgid "Harddisk Format - Filesystem"
 msgstr ""
 
-#: harddisk.h:444 harddisk.h:445
+#: harddisk.h:445 harddisk.h:446
 msgid "Harddisk Fsck"
 msgstr ""
 
-#: harddisk.h:868 harddisk.h:869
+#: harddisk.h:869 harddisk.h:870
 msgid "Harddisk Sleep"
 msgstr ""
 
@@ -4218,7 +4218,7 @@ msgstr ""
 msgid "Information"
 msgstr "Informazioni"
 
-#: harddisk.h:803
+#: harddisk.h:804
 msgid ""
 "Information: This hard drive size can take a file\n"
 "system check between 30 minutes and 1.5 hours."
@@ -4971,9 +4971,9 @@ msgstr ""
 #: flashx.h:195 flashx.h:233 flashx.h:270 global.h:5851 global.h:6572
 #: global.h:6641 global.h:6660 global.h:6835 global.h:7088 global.h:7094
 #: global.h:7101 global.h:7105 global.h:7112 global.h:7116 global.h:7123
-#: global.h:7127 global.h:7134 global.h:7138 harddisk.h:624 harddisk.h:632
-#: harddisk.h:666 harddisk.h:715 harddisk.h:720 harddisk.h:722 harddisk.h:724
-#: harddisk.h:784 harddisk.h:803 harddisk.h:806 hbbtv.h:362 hello.c:36
+#: global.h:7127 global.h:7134 global.h:7138 harddisk.h:625 harddisk.h:633
+#: harddisk.h:667 harddisk.h:716 harddisk.h:721 harddisk.h:723 harddisk.h:725
+#: harddisk.h:785 harddisk.h:804 harddisk.h:807 hbbtv.h:362 hello.c:36
 #: httpdfunc.h:1304 httpdfunc.h:5773 httpdfunc.h:6159 httpdfunc.h:6424
 #: httpdfunc.h:6495 hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103
 #: hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390 hwtest.h:411
@@ -5460,10 +5460,10 @@ msgstr ""
 #: global.h:5851 global.h:6572 global.h:6641 global.h:6660 global.h:6835
 #: global.h:7088 global.h:7094 global.h:7101 global.h:7105 global.h:7112
 #: global.h:7116 global.h:7123 global.h:7127 global.h:7134 global.h:7138
-#: harddisk.h:341 harddisk.h:346 harddisk.h:373 harddisk.h:377 harddisk.h:430
-#: harddisk.h:624 harddisk.h:632 harddisk.h:666 harddisk.h:715 harddisk.h:720
-#: harddisk.h:722 harddisk.h:724 harddisk.h:784 harddisk.h:803 harddisk.h:806
-#: harddisk.h:1037 hbbtv.h:362 httpdfunc.h:1304 httpdfunc.h:3258
+#: harddisk.h:342 harddisk.h:347 harddisk.h:374 harddisk.h:378 harddisk.h:431
+#: harddisk.h:625 harddisk.h:633 harddisk.h:667 harddisk.h:716 harddisk.h:721
+#: harddisk.h:723 harddisk.h:725 harddisk.h:785 harddisk.h:804 harddisk.h:807
+#: harddisk.h:1038 hbbtv.h:362 httpdfunc.h:1304 httpdfunc.h:3258
 #: httpdfunc.h:6159 httpdfunc.h:6424 httpdfunc.h:6495 hwtest.h:88 hwtest.h:93
 #: hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206
 #: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
@@ -6885,7 +6885,7 @@ msgstr ""
 msgid "START"
 msgstr ""
 
-#: harddisk.h:476
+#: harddisk.h:477
 msgid "STICK "
 msgstr ""
 
@@ -8220,7 +8220,7 @@ msgstr "Webserver Impostazioni"
 msgid "Time"
 msgstr ""
 
-#: harddisk.h:876 skin_default_skin.xml.h:730
+#: harddisk.h:877 skin_default_skin.xml.h:730
 msgid "Time to sleep"
 msgstr "standby HDD"
 
@@ -9403,7 +9403,7 @@ msgstr ""
 msgid "b"
 msgstr ""
 
-#: harddisk.h:519
+#: harddisk.h:520
 msgid "backup"
 msgstr "Crea Backup"
 
@@ -9493,7 +9493,7 @@ msgstr "il service non puo essere creato"
 msgid "can't create new transponer"
 msgstr "il service non puo essere creato"
 
-#: harddisk.h:373
+#: harddisk.h:374
 msgid "can't create or delete directory"
 msgstr "Cartella non puo essere cambiata"
 
@@ -9800,7 +9800,7 @@ msgstr ""
 msgid "expired"
 msgstr ""
 
-#: harddisk.h:495
+#: harddisk.h:496
 msgid "ext"
 msgstr "Avanti"
 
@@ -10396,7 +10396,7 @@ msgstr ""
 msgid "oe"
 msgstr ""
 
-#: avsettings.h:69 avsettings.h:85 fancontrol.h:110 harddisk.h:877
+#: avsettings.h:69 avsettings.h:85 fancontrol.h:110 harddisk.h:878
 #: httpdsettings.h:76 lnbconfig.h:144 mc_pictureplayer_settings.h:34
 #: mc_pictureplayer_settings.h:38 mc_pictureplayer_settings.h:67
 #: mc_videoplayer_settings.h:53 network.h:392 panel_settings_autostart.h:61
@@ -10681,7 +10681,7 @@ msgstr "Pronto"
 msgid "rec"
 msgstr "rosso"
 
-#: autotimer.c:475 autotimer.c:508 harddisk.h:531 rectimer.h:1049
+#: autotimer.c:475 autotimer.c:508 harddisk.h:532 rectimer.h:1049
 msgid "record"
 msgstr "registra"
 
@@ -10859,15 +10859,15 @@ msgstr ""
 msgid "select the function for the specified device"
 msgstr ""
 
-#: harddisk.h:452
+#: harddisk.h:453
 msgid "select the media drive from Device List for configuration"
 msgstr ""
 
-#: harddisk.h:440
+#: harddisk.h:441
 msgid "select the media drive from Device List for formating"
 msgstr ""
 
-#: harddisk.h:446
+#: harddisk.h:447
 msgid "select the media drive from Device List for fsck"
 msgstr ""
 
@@ -10879,7 +10879,7 @@ msgstr ""
 msgid "set a cookie which will expire in 3 days and be accessible site wide"
 msgstr ""
 
-#: harddisk.h:870
+#: harddisk.h:871
 msgid "set here the default sleeptime for all your media drives"
 msgstr ""
 
@@ -10986,7 +10986,7 @@ msgstr ""
 msgid "softcam"
 msgstr ""
 
-#: harddisk.h:430
+#: harddisk.h:431
 msgid "sorry found no harddisk"
 msgstr "nessun hdd o usb trovato"
 
@@ -11087,7 +11087,7 @@ msgstr ""
 msgid "subtitle"
 msgstr ""
 
-#: harddisk.h:377
+#: harddisk.h:378
 msgid "succesfull create or delelete directory"
 msgstr ""
 
@@ -11095,7 +11095,7 @@ msgstr ""
 msgid "success"
 msgstr "Remove success"
 
-#: harddisk.h:507
+#: harddisk.h:508
 msgid "swap"
 msgstr "Swap"
 
@@ -11373,19 +11373,19 @@ msgstr "Aggiorna Lista"
 msgid "use last Directory"
 msgstr ""
 
-#: harddisk.h:249 harddisk.h:724
+#: harddisk.h:249 harddisk.h:725
 msgid "use medium for backup"
 msgstr ""
 
-#: harddisk.h:237 harddisk.h:720
+#: harddisk.h:237 harddisk.h:721
 msgid "use medium for extension"
 msgstr ""
 
-#: harddisk.h:231 harddisk.h:715
+#: harddisk.h:231 harddisk.h:716
 msgid "use medium for record"
 msgstr ""
 
-#: harddisk.h:243 harddisk.h:722
+#: harddisk.h:243 harddisk.h:723
 msgid "use medium for swap"
 msgstr ""
 
