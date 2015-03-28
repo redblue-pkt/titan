@@ -13313,16 +13313,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid ""
-#~ "Directory has content\n"
-#~ "Really delete directory and content?"
-#~ msgstr ""
-#~ "Directory has content\n"
-#~ "Really delete the directory and the content?"
-
-#~ msgid "can't create or delete directory"
-#~ msgstr "ERROR: Can't create or delete directory"
-
-#~ msgid "succesfull create or delelete directory"
-#~ msgstr "Succesfully created or deleted directory"

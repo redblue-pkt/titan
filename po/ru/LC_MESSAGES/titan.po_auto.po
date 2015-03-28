@@ -13273,17 +13273,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "Are you sure you want to delete this directory?"
-#~ msgstr "Удалить эту директорию?"
-
-#~ msgid ""
-#~ "Directory has content\n"
-#~ "Really delete directory and content?"
-#~ msgstr "Директория содержит данные. Удалить её вместе с содержимым?"
-
-#~ msgid "can't create or delete directory"
-#~ msgstr "ОШИБКА: Директория не может быть создана/удалена!"
-
-#~ msgid "succesfull create or delelete directory"
-#~ msgstr "Директория успешно создана/удалена"
