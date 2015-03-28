@@ -13271,19 +13271,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "Are you sure you want to delete this directory?"
-#~ msgstr "Wilt u deze map wissen?"
-
-#~ msgid ""
-#~ "Directory has content\n"
-#~ "Really delete directory and content?"
-#~ msgstr ""
-#~ "Map is niet leeg\n"
-#~ "Map met inhoud verwijderen?"
-
-#~ msgid "can't create or delete directory"
-#~ msgstr "Kan map niet maken of verwijderen"
-
-#~ msgid "succesfull create or delelete directory"
-#~ msgstr "Map is succesvol verwijderd"

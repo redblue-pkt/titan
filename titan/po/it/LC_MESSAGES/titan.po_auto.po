@@ -13179,9 +13179,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "Are you sure you want to delete this directory?"
-#~ msgstr "Cancellare questa cartella ?"
-
-#~ msgid "can't create or delete directory"
-#~ msgstr "Cartella non puo essere cambiata"

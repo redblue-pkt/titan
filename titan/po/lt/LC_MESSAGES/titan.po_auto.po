@@ -13307,19 +13307,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "Are you sure you want to delete this directory?"
-#~ msgstr "Ar tikrai norite itrinti  aplank?"
-
-#~ msgid ""
-#~ "Directory has content\n"
-#~ "Really delete directory and content?"
-#~ msgstr ""
-#~ "Kataloge yra fail\n"
-#~ "Tikrai itrinti katalog ir turin ?"
-
-#~ msgid "can't create or delete directory"
-#~ msgstr "KLAIDA : Nepavyko sukurti ar itrinti katalog"
-
-#~ msgid "succesfull create or delelete directory"
-#~ msgstr "Skmingai sukurtas ar itrintas katalogas"
