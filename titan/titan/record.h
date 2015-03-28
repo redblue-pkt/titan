@@ -992,7 +992,7 @@ not needed we use wakeup_record_device on recordstartreal
 
 		//check HDD free space
 		//deaktivate, on my 500GB FAT32 HDD, this takes mor then 10 min
-#ifdev MIPSEL
+#ifdef MIPSEL
 		if(getfreespace(path) < getconfigint("recordfreespace", NULL) * 1024 * 1024)
 		{
 			ret = 2;
