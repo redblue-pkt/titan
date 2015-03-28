@@ -1,3 +1,4 @@
+#: plugins_wm2014_skin.xml.h:1 skins_wm2014_skin.xml.h:1 tithek_mainmenu.h:1
 msgid ""
 msgstr ""
 "Project-Id-Version: TitanNit 1.64\n"
@@ -7715,7 +7716,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:578
 msgid "Restore Default Sats"
-msgstr "Standard SAT Liste wiederherstellen"
+msgstr ""
 
 #: system_backup_restore.h:31
 msgid "Restore Settings"
