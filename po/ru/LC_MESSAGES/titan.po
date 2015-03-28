@@ -544,6 +544,12 @@ msgstr "Альбом"
 msgid "All Channels"
 msgstr "Все каналы"
 
+msgid "All New first"
+msgstr ""
+
+msgid "All Sorted"
+msgstr ""
+
 msgid "All new channels added!"
 msgstr "Все новые каналы сохранены!"
 
@@ -699,6 +705,36 @@ msgstr ""
 
 msgid "Atemio (hotline)"
 msgstr "Контакты Atemio"
+
+msgid "Atemio Cable Tuner scan"
+msgstr ""
+
+msgid "Atemio Channelsearch 4xSat"
+msgstr ""
+
+msgid "Atemio Harddisc formating"
+msgstr ""
+
+msgid "Atemio Network configuration stable IP"
+msgstr ""
+
+msgid "Atemio Series Recoding"
+msgstr ""
+
+msgid "Atemio Skin (Gui Design)"
+msgstr ""
+
+msgid "Atemio TitanNit Trailer"
+msgstr ""
+
+msgid "Atemio TitanNit zap Menu"
+msgstr ""
+
+msgid "Atemio Tuner configuration Sat"
+msgstr ""
+
+msgid "Atemio WLAN configuration"
+msgstr ""
 
 msgid "Atemio free license"
 msgstr ""
@@ -1304,6 +1340,9 @@ msgid "Cancel"
 msgstr "Отмена"
 
 msgid "Cat-Catch"
+msgstr ""
+
+msgid "Category"
 msgstr ""
 
 msgid "Change Channelname"
@@ -2399,6 +2438,9 @@ msgstr "Фавориты"
 msgid "Favorite Mainmenu"
 msgstr ""
 
+msgid "Favoriten"
+msgstr ""
+
 msgid "February"
 msgstr ""
 
@@ -2446,6 +2488,9 @@ msgstr "Размер файла (Мб) "
 
 msgid "Filesystem Check"
 msgstr "Проверка ФС"
+
+msgid "FilmOn"
+msgstr ""
 
 msgid "Fine move"
 msgstr "Пошагово"
@@ -3108,6 +3153,18 @@ msgstr "Горячая линия"
 msgid "How many days"
 msgstr "Сколько дней хранить EPG"
 
+msgid "HowTo Feedadresse Eingeben"
+msgstr ""
+
+msgid "HowTo Picons Einrichten"
+msgstr ""
+
+msgid "HowTo Secret"
+msgstr ""
+
+msgid "HowTo Sky V13 Einrichten"
+msgstr ""
+
 msgid "Hybrid tuner mode changed, receiver will be restarted!"
 msgstr ""
 
@@ -3336,6 +3393,9 @@ msgstr "Интернет браузер"
 msgid "Internet Browser Plugin not installed !"
 msgstr "Плагин браузера не установлен!"
 
+msgid "Internet Radio"
+msgstr ""
+
 msgid "Interval"
 msgstr "Интервал"
 
@@ -3435,6 +3495,9 @@ msgstr "Клавиатура"
 
 msgid "Keys Updated !"
 msgstr "Updated !"
+
+msgid "KinoX"
+msgstr ""
 
 msgid "L"
 msgstr ""
@@ -3794,6 +3857,21 @@ msgstr "Плагин MediaDB"
 msgid "MediaDB scan finished"
 msgstr "Сканиравание MediaDB завершено"
 
+msgid "Mediacenter AudioPlayer Playlisten Preview"
+msgstr ""
+
+msgid "Mediacenter AudioPlayer Screensaver Preview"
+msgstr ""
+
+msgid "Mediacenter Mediathek Kinox Preview"
+msgstr ""
+
+msgid "Mediacenter Mediathek Myvideo/Rtl2/InternetTv/Radio Preview"
+msgstr ""
+
+msgid "Mediacenter VideoPlayer Preview"
+msgstr ""
+
 msgid "Mediathek"
 msgstr "Медиатека"
 
@@ -3926,6 +4004,9 @@ msgstr "Перемещение"
 msgid "Moven"
 msgstr "Переместить"
 
+msgid "Movie4k"
+msgstr ""
+
 msgid "Moviepath"
 msgstr "Путь перемещения"
 
@@ -3959,6 +4040,9 @@ msgstr ""
 msgid "My Video"
 msgstr "Моё видео"
 
+msgid "MyVideo"
+msgstr ""
+
 msgid "N"
 msgstr ""
 
@@ -3970,6 +4054,9 @@ msgstr "Далее"
 
 msgid "NONE"
 msgstr "Ничего"
+
+msgid "NTV-Now"
+msgstr ""
 
 msgid "Name"
 msgstr "Имя"
@@ -4014,6 +4101,9 @@ msgid "Networkbrowser - show scanned cifs/nfs-Shares"
 msgstr "Сканирование CIFS/NFS"
 
 msgid "Networkfile libsmbclient 3.0.28b"
+msgstr ""
+
+msgid "Netzkino"
 msgstr ""
 
 msgid "Neutrino Keymap"
@@ -4757,6 +4847,12 @@ msgstr "Порт RGUID"
 msgid "RS232"
 msgstr ""
 
+msgid "RTL-Now"
+msgstr ""
+
+msgid "RTL2-Now"
+msgstr ""
+
 msgid "Radio"
 msgstr "Радио"
 
@@ -5061,6 +5157,9 @@ msgstr "Позиция мотора"
 
 msgid "Rotor Settings"
 msgstr "Параметры мотора"
+
+msgid "RtlNitro-Now"
+msgstr ""
 
 msgid "Runtime"
 msgstr "Время выполнения"
@@ -5435,6 +5534,30 @@ msgstr "Скрипт не имеет выхода или запущен в фо�
 
 msgid "Search"
 msgstr "Поиск"
+
+msgid "Search (10)"
+msgstr ""
+
+msgid "Search (20)"
+msgstr ""
+
+msgid "Search (25)"
+msgstr ""
+
+msgid "Search (50)"
+msgstr ""
+
+msgid "Search (local)"
+msgstr ""
+
+msgid "Search Cast"
+msgstr ""
+
+msgid "Search Movie"
+msgstr ""
+
+msgid "Search Serie"
+msgstr ""
 
 msgid "Search on ARD (local)"
 msgstr ""
@@ -5842,6 +5965,9 @@ msgstr "Выбор менеджера"
 msgid "Softcam selection:"
 msgstr "Выбор эмулятора"
 
+msgid "Solarmovie"
+msgstr ""
+
 msgid "Soll der Schnitt wirklich abgebrochen werden?"
 msgstr "Действительно отменить?"
 
@@ -6056,6 +6182,9 @@ msgstr ""
 msgid "Sunday"
 msgstr "Воскресенье"
 
+msgid "SuperRTL-Now"
+msgstr ""
+
 msgid "Svn Changelog"
 msgstr "Журнал изменений SVN"
 
@@ -6216,6 +6345,9 @@ msgstr ""
 msgid "Team 2"
 msgstr ""
 
+msgid "TecTime"
+msgstr ""
+
 msgid "Terrestrial"
 msgstr "Наземный"
 
@@ -6325,6 +6457,9 @@ msgstr "Время до отключения (Мин)"
 msgid "Time to wait after seek for fill buffer"
 msgstr "Время ожидания автоматического заполнения буфера"
 
+msgid "TimeTv"
+msgstr ""
+
 msgid "Timer"
 msgstr "Таймер"
 
@@ -6402,6 +6537,9 @@ msgstr "Часовой пояс"
 
 msgid "Tint"
 msgstr "Оттенок"
+
+msgid "Tips und Tricks"
+msgstr ""
 
 msgid "Titan Changelog"
 msgstr "Журнал изменений"
@@ -6678,6 +6816,9 @@ msgstr "ТВ"
 msgid "Tv/Radio"
 msgstr "ТВ/Радио"
 
+msgid "TvToast"
+msgstr ""
+
 msgid "Two step mute"
 msgstr "Два шага приглушения звука"
 
@@ -6830,6 +6971,9 @@ msgstr "Настройки отображения файлов видео"
 
 msgid "VLC Player"
 msgstr "Плеер VLC"
+
+msgid "VOX-Now"
+msgstr ""
 
 msgid "Version"
 msgstr "Версия"
@@ -6987,6 +7131,9 @@ msgstr "Пробуждение всех подключенных устройс�
 msgid "War"
 msgstr "Военные"
 
+msgid "Watchmovies"
+msgstr ""
+
 msgid "Weather"
 msgstr "Погода"
 
@@ -7110,6 +7257,12 @@ msgstr ""
 msgid "XPicons LightTransparent (small - Astra 19.2E)"
 msgstr ""
 
+msgid "XXX-Beeg"
+msgstr ""
+
+msgid "XXX-XVIDEOS"
+msgstr ""
+
 msgid "Xupnpd Server"
 msgstr ""
 
@@ -7140,7 +7293,13 @@ msgstr ""
 "\n"
 "Выключить ресивер? "
 
+msgid "Youtube"
+msgstr ""
+
 msgid "Z"
+msgstr ""
+
+msgid "ZDF"
 msgstr ""
 
 msgid "ZapBack"

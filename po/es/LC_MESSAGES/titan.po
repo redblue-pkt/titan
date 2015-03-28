@@ -543,6 +543,12 @@ msgstr ""
 msgid "All Channels"
 msgstr "Todos los Canales"
 
+msgid "All New first"
+msgstr ""
+
+msgid "All Sorted"
+msgstr ""
+
 msgid "All new channels added!"
 msgstr "Todos los nuevos canales añadidos!"
 
@@ -705,6 +711,36 @@ msgstr ""
 
 msgid "Atemio (hotline)"
 msgstr "Atemio (Hotline)"
+
+msgid "Atemio Cable Tuner scan"
+msgstr ""
+
+msgid "Atemio Channelsearch 4xSat"
+msgstr ""
+
+msgid "Atemio Harddisc formating"
+msgstr ""
+
+msgid "Atemio Network configuration stable IP"
+msgstr ""
+
+msgid "Atemio Series Recoding"
+msgstr ""
+
+msgid "Atemio Skin (Gui Design)"
+msgstr ""
+
+msgid "Atemio TitanNit Trailer"
+msgstr ""
+
+msgid "Atemio TitanNit zap Menu"
+msgstr ""
+
+msgid "Atemio Tuner configuration Sat"
+msgstr ""
+
+msgid "Atemio WLAN configuration"
+msgstr ""
 
 msgid "Atemio free license"
 msgstr ""
@@ -1317,6 +1353,9 @@ msgid "Cancel"
 msgstr "Cancelar"
 
 msgid "Cat-Catch"
+msgstr ""
+
+msgid "Category"
 msgstr ""
 
 msgid "Change Channelname"
@@ -2442,6 +2481,9 @@ msgstr "Favoritos"
 msgid "Favorite Mainmenu"
 msgstr ""
 
+msgid "Favoriten"
+msgstr ""
+
 msgid "February"
 msgstr ""
 
@@ -2491,6 +2533,9 @@ msgstr "Tamaño Archivo (MB): "
 
 msgid "Filesystem Check"
 msgstr "Comprobar sistema de archivos"
+
+msgid "FilmOn"
+msgstr ""
 
 msgid "Fine move"
 msgstr "Mover el motor lentamente"
@@ -3171,6 +3216,18 @@ msgstr ""
 msgid "How many days"
 msgstr "Dias de almacenamiento EPG por adelantado"
 
+msgid "HowTo Feedadresse Eingeben"
+msgstr ""
+
+msgid "HowTo Picons Einrichten"
+msgstr ""
+
+msgid "HowTo Secret"
+msgstr ""
+
+msgid "HowTo Sky V13 Einrichten"
+msgstr ""
+
 msgid "Hybrid tuner mode changed, receiver will be restarted!"
 msgstr ""
 
@@ -3400,6 +3457,9 @@ msgstr ""
 msgid "Internet Browser Plugin not installed !"
 msgstr "Internet Browser Plugin no instalado!"
 
+msgid "Internet Radio"
+msgstr ""
+
 msgid "Interval"
 msgstr "Intervalo"
 
@@ -3505,6 +3565,9 @@ msgstr "teclado"
 
 msgid "Keys Updated !"
 msgstr "Updated !"
+
+msgid "KinoX"
+msgstr ""
 
 msgid "L"
 msgstr ""
@@ -3864,6 +3927,21 @@ msgstr "MediaDB Guarda Ruta"
 msgid "MediaDB scan finished"
 msgstr "Media DB exploracion finalizada"
 
+msgid "Mediacenter AudioPlayer Playlisten Preview"
+msgstr ""
+
+msgid "Mediacenter AudioPlayer Screensaver Preview"
+msgstr ""
+
+msgid "Mediacenter Mediathek Kinox Preview"
+msgstr ""
+
+msgid "Mediacenter Mediathek Myvideo/Rtl2/InternetTv/Radio Preview"
+msgstr ""
+
+msgid "Mediacenter VideoPlayer Preview"
+msgstr ""
+
 msgid "Mediathek"
 msgstr "En linea Mediathek"
 
@@ -3996,6 +4074,9 @@ msgstr "Mover"
 msgid "Moven"
 msgstr "Movimiento"
 
+msgid "Movie4k"
+msgstr ""
+
 msgid "Moviepath"
 msgstr "Ruta a Peliculas"
 
@@ -4029,6 +4110,9 @@ msgstr ""
 msgid "My Video"
 msgstr ""
 
+msgid "MyVideo"
+msgstr ""
+
 msgid "N"
 msgstr ""
 
@@ -4040,6 +4124,9 @@ msgstr "siguiente"
 
 msgid "NONE"
 msgstr "Ninguno"
+
+msgid "NTV-Now"
+msgstr ""
 
 msgid "Name"
 msgstr ""
@@ -4084,6 +4171,9 @@ msgid "Networkbrowser - show scanned cifs/nfs-Shares"
 msgstr "Mostrar escaneado CIFS/NFS-Compartidos"
 
 msgid "Networkfile libsmbclient 3.0.28b"
+msgstr ""
+
+msgid "Netzkino"
 msgstr ""
 
 msgid "Neutrino Keymap"
@@ -4833,6 +4923,12 @@ msgstr ""
 msgid "RS232"
 msgstr ""
 
+msgid "RTL-Now"
+msgstr ""
+
+msgid "RTL2-Now"
+msgstr ""
+
 msgid "Radio"
 msgstr ""
 
@@ -5135,6 +5231,9 @@ msgstr ""
 
 msgid "Rotor Settings"
 msgstr "Motor"
+
+msgid "RtlNitro-Now"
+msgstr ""
 
 msgid "Runtime"
 msgstr "Plazo"
@@ -5511,6 +5610,30 @@ msgstr "El guión no tiene salida o se inició en el fondo"
 
 msgid "Search"
 msgstr "Buscar"
+
+msgid "Search (10)"
+msgstr ""
+
+msgid "Search (20)"
+msgstr ""
+
+msgid "Search (25)"
+msgstr ""
+
+msgid "Search (50)"
+msgstr ""
+
+msgid "Search (local)"
+msgstr ""
+
+msgid "Search Cast"
+msgstr ""
+
+msgid "Search Movie"
+msgstr ""
+
+msgid "Search Serie"
+msgstr ""
 
 msgid "Search on ARD (local)"
 msgstr "Buscar este objeto en ARD (local)"
@@ -5918,6 +6041,9 @@ msgstr "Softcam seleccion: "
 msgid "Softcam selection:"
 msgstr "Softcam seleccion: "
 
+msgid "Solarmovie"
+msgstr ""
+
 msgid "Soll der Schnitt wirklich abgebrochen werden?"
 msgstr "esta seguro de que desea cancelar corte?"
 
@@ -6140,6 +6266,9 @@ msgstr "Dom"
 msgid "Sunday"
 msgstr "Domingo"
 
+msgid "SuperRTL-Now"
+msgstr ""
+
 msgid "Svn Changelog"
 msgstr ""
 
@@ -6308,6 +6437,9 @@ msgstr ""
 msgid "Team 2"
 msgstr ""
 
+msgid "TecTime"
+msgstr ""
+
 msgid "Terrestrial"
 msgstr "Terrestre"
 
@@ -6417,6 +6549,9 @@ msgstr "Es hora de dejar (min)"
 msgid "Time to wait after seek for fill buffer"
 msgstr "Tiempo de espera despues de tratar de llenar bufer"
 
+msgid "TimeTv"
+msgstr ""
+
 msgid "Timer"
 msgstr ""
 
@@ -6498,6 +6633,9 @@ msgstr "Tiempo Zona"
 
 msgid "Tint"
 msgstr "Matiz"
+
+msgid "Tips und Tricks"
+msgstr ""
 
 msgid "Titan Changelog"
 msgstr ""
@@ -6777,6 +6915,9 @@ msgstr ""
 msgid "Tv/Radio"
 msgstr ""
 
+msgid "TvToast"
+msgstr ""
+
 msgid "Two step mute"
 msgstr "Dos pasos silencio"
 
@@ -6929,6 +7070,9 @@ msgstr "Video Ajustes"
 
 msgid "VLC Player"
 msgstr "Reproducir Video"
+
+msgid "VOX-Now"
+msgstr ""
 
 msgid "Version"
 msgstr ""
@@ -7090,6 +7234,9 @@ msgstr ""
 msgid "War"
 msgstr "Guerra"
 
+msgid "Watchmovies"
+msgstr ""
+
 msgid "Weather"
 msgstr "Tiempo"
 
@@ -7213,6 +7360,12 @@ msgstr ""
 msgid "XPicons LightTransparent (small - Astra 19.2E)"
 msgstr ""
 
+msgid "XXX-Beeg"
+msgstr ""
+
+msgid "XXX-XVIDEOS"
+msgstr ""
+
 msgid "Xupnpd Server"
 msgstr "xupnpd - DLNA Media Server"
 
@@ -7243,7 +7396,13 @@ msgstr ""
 "\n"
 "Quieres que el receptor se apague?"
 
+msgid "Youtube"
+msgstr ""
+
 msgid "Z"
+msgstr ""
+
+msgid "ZDF"
 msgstr ""
 
 msgid "ZapBack"
