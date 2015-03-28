@@ -58,12 +58,12 @@ for ROUND in $SKINLIST; do
 	rm "$HOME"/flashimg/$SRCDIR/titan/tools/tmp/"$SECTION1"_"$SECTION2"_"$NAME" 
 done
 
-cat "$HOME"/ipk/source*/*/CONTROL/control | sed -i 's/\x0D$//' | grep Section: | sort -u | sed 's!Section: !tmpstr = _("!g' | sed 's!Package:!\nPackage!g' | grep ^tmpstr | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/tpk_section.h
-cat "$HOME"/ipk/source*/*/CONTROL/control | sed -i 's/\x0D$//' | grep Showname: | sort -u | sed 's!Showname: !tmpstr = _("!g' | sed 's!Package:!\nPackage!g' | grep ^tmpstr | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/tpk_showname.h
-cat "$HOME"/ipk/source*/*/CONTROL/control | sed -i 's/\x0D$//' | grep Description: | sort -u | sed 's!Description: !tmpstr = _("!g' | sed 's!Package:!\nPackage!g' | grep ^tmpstr | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/tpk_description.h
+cat "$HOME"/ipk/source*/*/CONTROL/control | sed 's/\x0D$//' | grep Section: | sort -u | sed 's!Section: !tmpstr = _("!g' | sed 's!Package:!\nPackage!g' | grep ^tmpstr | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/tpk_section.h
+cat "$HOME"/ipk/source*/*/CONTROL/control | sed 's/\x0D$//' | grep Showname: | sort -u | sed 's!Showname: !tmpstr = _("!g' | sed 's!Package:!\nPackage!g' | grep ^tmpstr | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/tpk_showname.h
+cat "$HOME"/ipk/source*/*/CONTROL/control | sed 's/\x0D$//' | grep Description: | sort -u | sed 's!Description: !tmpstr = _("!g' | sed 's!Package:!\nPackage!g' | grep ^tmpstr | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/tpk_description.h
 cat "$HOME"/flashimg/$SRCDIR/skins/tithek/tithekmainmenu/*.list | sed -i 's/\x0D$//' | grep -v internettv | cut -d"#" -f1 | sort -u | sed -e 's/^/tmpstr = _("/' | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/tithek_mainmenu.h
 #cat /var/www/atemio/web/mediathek/*/*.category.list  | cut -d"#" -f1 | sort -u | sed -e 's/^/tmpstr = _("/' | grep -v link= | grep -v title= | tr '\0' '#' | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/tithek_submenu.h
-ls "$HOME"/flashimg/$SRCDIR/help/*/ | sed -i 's/\x0D$//' | sed 's/.txt/");/g' | sed 's/^/tmpstr = _("/g' >> "$HOME"/flashimg/$SRCDIR/titan/tools/tmp/webif_help.h
+ls "$HOME"/flashimg/$SRCDIR/help/*/ | sed 's/\x0D$//' | sed 's/.txt/");/g' | sed 's/^/tmpstr = _("/g' >> "$HOME"/flashimg/$SRCDIR/titan/tools/tmp/webif_help.h
 
 file --mime-encoding "$HOME"/flashimg/$SRCDIR/po/*/*/*.po >> "$HOME"/flashimg/$SRCDIR/error/coding.log 2>&1
 ##schreibt den mime-type ('text/plain; charset=us-ascii') in die coding.log
