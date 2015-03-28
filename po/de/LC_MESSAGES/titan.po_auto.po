@@ -1,4 +1,3 @@
-#: plugins_wm2014_skin.xml.h:1 skins_wm2014_skin.xml.h:1 tithek_mainmenu.h:1
 msgid ""
 msgstr ""
 "Project-Id-Version: TitanNit 1.64\n"
@@ -810,7 +809,7 @@ msgstr "Manuell IMDb hinzufügen"
 
 #: tithek.h:1806 tithek.h:1986
 msgid "Add this Sub Folder as Favorite ?"
-msgstr ""
+msgstr "Diesen Unterordner den Favoriten hinzufügen?"
 
 #: tithek.h:2250
 msgid "Add this link as Favorite ?"
@@ -1001,7 +1000,7 @@ msgstr ""
 
 #: harddisk.h:359
 msgid "Are you sure you want to delete this Record directory?"
-msgstr ""
+msgstr "Möchten Sie dieses Verzeichnis löschen?"
 
 #: harddisk.h:728
 msgid ""
@@ -1052,7 +1051,7 @@ msgstr "Seitenverhältnis"
 
 #: skin_default_skin.xml.h:79
 msgid "Aspect Ratio"
-msgstr ""
+msgstr "Seitenverhältnis"
 
 #: skin_default_skin.xml.h:80
 msgid "Aspect Ratio:"
@@ -2496,15 +2495,15 @@ msgstr "Transponder Erstellungsmenü"
 
 #: tithek.h:1791 tithek.h:1971
 msgid "Create Sub Menu"
-msgstr ""
+msgstr "Erzeuge Untermenü"
 
 #: play.h:654
 msgid "Create Sub Menu Favorite"
-msgstr ""
+msgstr "Erzeuge Untermenü Favorit"
 
 #: play.h:655
 msgid "Create Sub Menu Favorite (Password)"
-msgstr ""
+msgstr "Erzeuge Untermenü Favoriten (Passwortgeschützt)"
 
 #: skin_default_skin.xml.h:175
 msgid "Create Thumb Picture"
@@ -3310,7 +3309,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:225
 msgid "Emu Active Color"
-msgstr ""
+msgstr "Farbe aktives Softcam"
 
 #: tpk_description.h:60
 msgid "Emu Camd3 v3.902 for your box"
@@ -3326,7 +3325,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:226
 msgid "Emu Running Color"
-msgstr ""
+msgstr "Farbe gestartetes Softcam"
 
 #: tpk_description.h:64
 msgid "Emu Wicardd v1.15 for config for ntv,tricolor,ntv_hd"
@@ -3378,15 +3377,15 @@ msgstr ""
 
 #: skin_default_skin.xml.h:232
 msgid "Epg Color 1"
-msgstr ""
+msgstr "EPG Farbe 1"
 
 #: skin_default_skin.xml.h:233
 msgid "Epg Color 2"
-msgstr ""
+msgstr "EPG Farbe 2"
 
 #: skin_default_skin.xml.h:234
 msgid "Epg Color 3"
-msgstr ""
+msgstr "EPG Farbe 3"
 
 #: optimize.h:304
 msgid "EpgChannels: "
@@ -3483,7 +3482,7 @@ msgstr "Verlassen"
 
 #: skin_default_skin.xml.h:246
 msgid "Exit Color"
-msgstr ""
+msgstr "Exit Farbe"
 
 #: plugins_tithek_skin.xml.h:3 skins_tithek_skin.xml.h:3
 msgid "Exit Tithek"
@@ -3664,7 +3663,7 @@ msgstr "Favoriten"
 
 #: tithek.h:985
 msgid "Favorite Mainmenu"
-msgstr ""
+msgstr "Hauptmenü Favoriten"
 
 #: tithek_mainmenu.h:16
 msgid "Favoriten"
@@ -7706,23 +7705,23 @@ msgstr "Wiederherstellen"
 
 #: skin_default_skin.xml.h:574
 msgid "Restore Default Bouquets"
-msgstr ""
+msgstr "Standard Bouquet Liste wiederherstellen"
 
 #: skin_default_skin.xml.h:576
 msgid "Restore Default Channel Settings"
-msgstr ""
+msgstr "Komplette Standard Sender Liste wiederherstellen"
 
 #: skin_default_skin.xml.h:575
 msgid "Restore Default Channels"
-msgstr ""
+msgstr "Standard Sender Liste wiederherstellen"
 
 #: skin_default_skin.xml.h:577
 msgid "Restore Default Providers"
-msgstr ""
+msgstr "Standard Anbieter Liste wiederherstellen"
 
 #: skin_default_skin.xml.h:578
 msgid "Restore Default Sats"
-msgstr ""
+msgstr "Standard SAT Liste wiederherstellen"
 
 #: system_backup_restore.h:31
 msgid "Restore Settings"
@@ -12775,7 +12774,7 @@ msgstr "Keine Festplatte/USB-Stick gefunden"
 
 #: skin_default_skin.xml.h:667
 msgid "sort service"
-msgstr "Favoriten sortieren"
+msgstr "Liste sortieren"
 
 #: diseqcconfig.h:255
 msgid "south"
