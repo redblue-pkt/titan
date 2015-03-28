@@ -7684,7 +7684,7 @@ msgid "blue"
 msgstr "blau"
 
 msgid "bootlogos"
-msgstr ""
+msgstr "Bootlogos"
 
 msgid "bootstop"
 msgstr ""
