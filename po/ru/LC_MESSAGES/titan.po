@@ -636,8 +636,8 @@ msgstr ""
 "Проверить раздел? После проверки ресивер\n"
 "будет перезагружен!"
 
-msgid "Are you sure you want to delete this directory?"
-msgstr "Удалить эту директорию?"
+msgid "Are you sure you want to delete this Record directory?"
+msgstr ""
 
 msgid ""
 "Are you sure you want to format this Partition?\n"
@@ -1985,11 +1985,6 @@ msgstr "Режиссер"
 
 msgid "Director:"
 msgstr "Режиссер"
-
-msgid ""
-"Directory has content\n"
-"Really delete directory and content?"
-msgstr "Директория содержит данные. Удалить её вместе с содержимым?"
 
 msgid "Dirsort"
 msgstr "Сортировка папок"
@@ -7521,9 +7516,6 @@ msgstr "Новый канал не создан"
 msgid "can't create new transponer"
 msgstr "Новый транспондер не создан"
 
-msgid "can't create or delete directory"
-msgstr "ОШИБКА: Директория не может быть создана/удалена!"
-
 msgid "cancel"
 msgstr "Отмена"
 
@@ -7637,18 +7629,6 @@ msgstr "По умолчанию"
 
 msgid "default Directory"
 msgstr "Папка по умолчанию"
-
-msgid "del medium for backup"
-msgstr ""
-
-msgid "del medium for extension"
-msgstr ""
-
-msgid "del medium for record"
-msgstr ""
-
-msgid "del medium for swap"
-msgstr ""
 
 msgid "del startchannel"
 msgstr "Не использовать как стартовый"
@@ -8723,9 +8703,6 @@ msgstr ""
 msgid "subtitle"
 msgstr ""
 
-msgid "succesfull create or delelete directory"
-msgstr "Директория успешно создана/удалена"
-
 msgid "success"
 msgstr "Сделано"
 
@@ -9134,3 +9111,7 @@ msgstr ""
 
 msgid "~"
 msgstr ""
+
+
+
+

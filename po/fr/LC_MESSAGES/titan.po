@@ -621,7 +621,7 @@ msgid ""
 "Box reboots after check"
 msgstr ""
 
-msgid "Are you sure you want to delete this directory?"
+msgid "Are you sure you want to delete this Record directory?"
 msgstr ""
 
 msgid ""
@@ -1939,11 +1939,6 @@ msgid "Director"
 msgstr ""
 
 msgid "Director:"
-msgstr ""
-
-msgid ""
-"Directory has content\n"
-"Really delete directory and content?"
 msgstr ""
 
 msgid "Dirsort"
@@ -7385,9 +7380,6 @@ msgstr ""
 msgid "can't create new transponer"
 msgstr ""
 
-msgid "can't create or delete directory"
-msgstr ""
-
 msgid "cancel"
 msgstr "Annuler"
 
@@ -7501,18 +7493,6 @@ msgstr "défaut"
 
 msgid "default Directory"
 msgstr "Repertoire Imdb"
-
-msgid "del medium for backup"
-msgstr ""
-
-msgid "del medium for extension"
-msgstr ""
-
-msgid "del medium for record"
-msgstr ""
-
-msgid "del medium for swap"
-msgstr ""
 
 msgid "del startchannel"
 msgstr "Supprime chaine de démarrage"
@@ -8582,9 +8562,6 @@ msgid "streaminfo Plugin"
 msgstr ""
 
 msgid "subtitle"
-msgstr ""
-
-msgid "succesfull create or delelete directory"
 msgstr ""
 
 msgid "success"

@@ -632,7 +632,7 @@ msgstr ""
 "Are you sure you want to check this partition?\n"
 "Your Receiver will reboot after checking the device."
 
-msgid "Are you sure you want to delete this directory?"
+msgid "Are you sure you want to delete this Record directory?"
 msgstr ""
 
 msgid ""
@@ -2002,13 +2002,6 @@ msgstr ""
 
 msgid "Director:"
 msgstr ""
-
-msgid ""
-"Directory has content\n"
-"Really delete directory and content?"
-msgstr ""
-"Directory has content\n"
-"Really delete the directory and the content?"
 
 msgid "Dirsort"
 msgstr "Directory sort by"
@@ -7568,9 +7561,6 @@ msgstr ""
 msgid "can't create new transponer"
 msgstr ""
 
-msgid "can't create or delete directory"
-msgstr "ERROR: Can't create or delete directory"
-
 msgid "cancel"
 msgstr ""
 
@@ -7683,18 +7673,6 @@ msgid "default"
 msgstr ""
 
 msgid "default Directory"
-msgstr ""
-
-msgid "del medium for backup"
-msgstr ""
-
-msgid "del medium for extension"
-msgstr ""
-
-msgid "del medium for record"
-msgstr ""
-
-msgid "del medium for swap"
 msgstr ""
 
 msgid "del startchannel"
@@ -8767,9 +8745,6 @@ msgstr ""
 msgid "subtitle"
 msgstr ""
 
-msgid "succesfull create or delelete directory"
-msgstr "Succesfully created or deleted directory"
-
 msgid "success"
 msgstr ""
 
@@ -9176,3 +9151,6 @@ msgstr ""
 
 msgid "~"
 msgstr ""
+
+
+

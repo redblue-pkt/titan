@@ -629,8 +629,8 @@ msgstr ""
 "Weet u zeker dat u de partitie wilt testen?\n"
 "De ontvanger wordt vervolgens opnieuw opgestart."
 
-msgid "Are you sure you want to delete this directory?"
-msgstr "Wilt u deze map wissen?"
+msgid "Are you sure you want to delete this Record directory?"
+msgstr ""
 
 msgid ""
 "Are you sure you want to format this Partition?\n"
@@ -1984,13 +1984,6 @@ msgstr ""
 
 msgid "Director:"
 msgstr "Regisseur:"
-
-msgid ""
-"Directory has content\n"
-"Really delete directory and content?"
-msgstr ""
-"Map is niet leeg\n"
-"Map met inhoud verwijderen?"
 
 msgid "Dirsort"
 msgstr "Map sortering"
@@ -7526,9 +7519,6 @@ msgstr "kan nieuw test kanaal niet aanmaken"
 msgid "can't create new transponer"
 msgstr "kan nieuwe transponder niet aanmaken"
 
-msgid "can't create or delete directory"
-msgstr "Kan map niet maken of verwijderen"
-
 msgid "cancel"
 msgstr ""
 
@@ -7642,18 +7632,6 @@ msgstr "Standaardinstelling"
 
 msgid "default Directory"
 msgstr "Standaard map"
-
-msgid "del medium for backup"
-msgstr ""
-
-msgid "del medium for extension"
-msgstr ""
-
-msgid "del medium for record"
-msgstr ""
-
-msgid "del medium for swap"
-msgstr ""
 
 msgid "del startchannel"
 msgstr ""
@@ -8725,9 +8703,6 @@ msgstr ""
 msgid "subtitle"
 msgstr ""
 
-msgid "succesfull create or delelete directory"
-msgstr "Map is succesvol verwijderd"
-
 msgid "success"
 msgstr "Succes"
 
@@ -9134,3 +9109,7 @@ msgstr ""
 
 msgid "~"
 msgstr ""
+
+
+
+

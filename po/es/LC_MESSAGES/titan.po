@@ -637,8 +637,8 @@ msgstr ""
 "Seguro que desea comprobar estaa Particion?\n"
 "Su receptor se reiniciara despues de comprobar el dispositivo."
 
-msgid "Are you sure you want to delete this directory?"
-msgstr "Quieres eliminar este directorio?"
+msgid "Are you sure you want to delete this Record directory?"
+msgstr ""
 
 msgid ""
 "Are you sure you want to format this Partition?\n"
@@ -2023,13 +2023,6 @@ msgstr ""
 
 msgid "Director:"
 msgstr ""
-
-msgid ""
-"Directory has content\n"
-"Really delete directory and content?"
-msgstr ""
-"Directorio tiene contenido\n"
-"Desea borrar el directorio y el contenido?"
 
 msgid "Dirsort"
 msgstr "Directorio ordenar por"
@@ -7624,9 +7617,6 @@ msgstr "Los Nuevos Canale no se pueden crear"
 msgid "can't create new transponer"
 msgstr "Transpondedor no puede ser creado"
 
-msgid "can't create or delete directory"
-msgstr "ERROR: No se puede crear o suprimir directorio"
-
 msgid "cancel"
 msgstr "Cancelar"
 
@@ -7740,18 +7730,6 @@ msgstr "Defecto"
 
 msgid "default Directory"
 msgstr "Directorio por defecto"
-
-msgid "del medium for backup"
-msgstr ""
-
-msgid "del medium for extension"
-msgstr ""
-
-msgid "del medium for record"
-msgstr ""
-
-msgid "del medium for swap"
-msgstr ""
 
 msgid "del startchannel"
 msgstr "Eliminar inicio de canal"
@@ -8830,9 +8808,6 @@ msgstr ""
 msgid "subtitle"
 msgstr ""
 
-msgid "succesfull create or delelete directory"
-msgstr "Directorio creado o borrado con eExito"
-
 msgid "success"
 msgstr "Sucesos"
 
@@ -9241,3 +9216,7 @@ msgstr ""
 
 msgid "~"
 msgstr ""
+
+
+
+
