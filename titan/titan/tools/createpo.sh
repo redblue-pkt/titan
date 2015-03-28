@@ -22,13 +22,13 @@ LIST=`find "$HOME"/flashimg/$SRCDIR/titan "$HOME"/flashimg/$SRCDIR/plugins -type
 LIST="$LIST "`find "$HOME"/flashimg/$SRCDIR/titan "$HOME"/flashimg/$SRCDIR/plugins -type f -name "*.c"`
 POLIST=`find "$HOME"/flashimg/$SRCDIR/po -type f -name "*_auto.po"`
 SKINLIST=`find "$HOME"/flashimg/$SRCDIR -type f -name "*kin.xml"`
-SKINLIST="$SKINLIST "`find "$HOME"/ipk/source* -type f -name "*kin.xml"`
+#SKINLIST="$SKINLIST "`find "$HOME"/ipk/source* -type f -name "*kin.xml"`
 HLIST=`find "$HOME"/flashimg/$SRCDIR/web -type f -name "*.html"`
 
 ##aus /plugins alle *.h und *.c > tmp
 for ROUND in $LIST; do
-	#cp -a $ROUND "$HOME"/flashimg/$SRCDIR/titan/tools/tmp
-	cat $ROUND | sed 's/\x0D$//' >> "$HOME"/flashimg/$SRCDIR/titan/tools/tmp
+	cp -a $ROUND "$HOME"/flashimg/$SRCDIR/titan/tools/tmp
+	#cat $ROUND | sed 's/\x0D$//' >> "$HOME"/flashimg/$SRCDIR/titan/tools/tmp
 done
 
 for ROUND in $HLIST; do
