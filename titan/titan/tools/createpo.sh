@@ -22,7 +22,7 @@ LIST=`find "$HOME"/flashimg/$SRCDIR/titan "$HOME"/flashimg/$SRCDIR/plugins -type
 LIST="$LIST "`find "$HOME"/flashimg/$SRCDIR/titan "$HOME"/flashimg/$SRCDIR/plugins -type f -name "*.c"`
 POLIST=`find "$HOME"/flashimg/$SRCDIR/po -type f -name "*_auto.po"`
 SKINLIST=`find "$HOME"/flashimg/$SRCDIR -type f -name "*kin.xml"`
-SKINLIST="$SKINLIST "`find "$HOME"/ipk/source -type f -name "*kin.xml"`
+SKINLIST="$SKINLIST "`find "$HOME"/ipk/source* -type f -name "*kin.xml"`
 HLIST=`find "$HOME"/flashimg/$SRCDIR/web -type f -name "*.html"`
 
 ##aus /plugins alle *.h und *.c > tmp
