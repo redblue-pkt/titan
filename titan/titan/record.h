@@ -966,6 +966,10 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 	{
 		if(!isdir(path))
 		{
+			ret = 1;
+			goto end;
+/*
+not needed we use wakeup_record_device on recordstartreal
 			char *dev = NULL;
 			dev = getmoviedev();
 			if(dev == NULL)
@@ -983,17 +987,18 @@ int recordstartreal(struct channel* chnode, int filefd, int recordfd, int type, 
 					goto end;
 				}
 			}
+*/
 		}
 
 		//check HDD free space
 		//deaktivate, on my 500GB FAT32 HDD, this takes mor then 10 min
-/*
+#ifdev MIPSEL
 		if(getfreespace(path) < getconfigint("recordfreespace", NULL) * 1024 * 1024)
 		{
 			ret = 2;
 			goto end;
 		}
-*/
+#endif
 
 		filename = recordcreatefilename(path, chname, moviename, type);
 		if(filename == NULL)
