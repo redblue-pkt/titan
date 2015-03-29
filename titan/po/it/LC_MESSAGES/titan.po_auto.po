@@ -785,13 +785,13 @@ msgstr ""
 msgid "Add iMDB manuel"
 msgstr ""
 
-#: tithek.h:1806 tithek.h:1986
-msgid "Add this Sub Folder as Favorite ?"
-msgstr ""
-
 #: tithek.h:2250
 msgid "Add this link as Favorite ?"
 msgstr "importare questo Favorito ?"
+
+#: tithek.h:1806 tithek.h:1986
+msgid "Add this sub folder as Favorite ?"
+msgstr ""
 
 #: skin_default_skin.xml.h:63 webif_settings.h:1
 msgid "Adjust"
@@ -2398,10 +2398,6 @@ msgstr ""
 msgid "Create Settings Menu"
 msgstr ""
 
-#: tithek.h:1791 tithek.h:1971
-msgid "Create Sub Menu"
-msgstr ""
-
 #: play.h:654
 msgid "Create Sub Menu Favorite"
 msgstr ""
@@ -2437,6 +2433,10 @@ msgstr ""
 #: scan.h:2275
 msgid "Create new"
 msgstr "Crea Cartella"
+
+#: tithek.h:1791 tithek.h:1971
+msgid "Create sub folder"
+msgstr ""
 
 #: tpk_showname.h:20
 msgid "Croissant"
@@ -3557,12 +3557,12 @@ msgstr ""
 msgid "Fav"
 msgstr "Favoriti"
 
-#: tithek.h:985
-msgid "Favorite Mainmenu"
-msgstr ""
-
 #: tithek_mainmenu.h:16
 msgid "Favoriten"
+msgstr ""
+
+#: tithek.h:985
+msgid "Favorites"
 msgstr ""
 
 #: global.h:6099

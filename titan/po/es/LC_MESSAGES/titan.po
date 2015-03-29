@@ -495,11 +495,11 @@ msgstr ""
 msgid "Add iMDB manuel"
 msgstr "Añadir Manual IMDB"
 
-msgid "Add this Sub Folder as Favorite ?"
-msgstr ""
-
 msgid "Add this link as Favorite ?"
 msgstr "Quieres añadir el enlace a tus favoritos?"
+
+msgid "Add this sub folder as Favorite ?"
+msgstr ""
 
 msgid "Adjust"
 msgstr "Avanzado"
@@ -1734,9 +1734,6 @@ msgstr "Crear Grabar Previo"
 msgid "Create Settings Menu"
 msgstr "Menu de creacion de Transpondedor"
 
-msgid "Create Sub Menu"
-msgstr ""
-
 msgid "Create Sub Menu Favorite"
 msgstr ""
 
@@ -1763,6 +1760,9 @@ msgstr "Importar Lista de Transpondedores"
 
 msgid "Create new"
 msgstr "Crear Nuevo"
+
+msgid "Create sub folder"
+msgstr ""
 
 msgid "Croissant"
 msgstr ""
@@ -2475,11 +2475,11 @@ msgstr "Cambio rapido zap"
 msgid "Fav"
 msgstr "Favoritos"
 
-msgid "Favorite Mainmenu"
-msgstr ""
-
 msgid "Favoriten"
 msgstr "Favoritos"
+
+msgid "Favorites"
+msgstr ""
 
 msgid "February"
 msgstr ""
