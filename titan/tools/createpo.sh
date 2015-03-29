@@ -89,15 +89,15 @@ for ROUND in $POLIST; do
 		ROUND_NEW_MERGE=`echo $ROUND | sed 's!titan.po_auto.po!titan.new.merge.po!'`
 		
 		## "-nt" ("newer than")
-		if [ $ROUND -nt $ROUND_EDIT ]; then
+		#if [ $ROUND -nt $ROUND_EDIT ]; then
 			##Aus der titan.po_auto.po alle Kommentare löschen und in titan.po_auto.clean.po speichern
 			echo "[createpo.sh] update $ROUND "`stat -c=%y "$ROUND" `
 			cat $ROUND | sed '/#.*/d' > $ROUND_CLEAN			
-		else
+		#else
 			##Gleich die (neuere) titan.po verwenden
-			echo "[createpo.sh] update $ROUND_EDIT "`stat -c=%y "$ROUND" `
-			cat $ROUND_EDIT | sed '/#.*/d' > $ROUND_CLEAN
-		fi		
+		#	echo "[createpo.sh] update $ROUND_EDIT "`stat -c=%y "$ROUND" `
+		#	cat $ROUND_EDIT | sed '/#.*/d' > $ROUND_CLEAN
+		#fi		
 		if [ ! -e "$ROUND_CLEAN" ] || [ `cat "$ROUND_CLEAN" | wc -l` -eq 0 ]; then error="1"; break;fi
 
 		##cmd="xgettext --omit-header -j -k_ *.* -o $ROUND_UTF"
