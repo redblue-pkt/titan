@@ -314,7 +314,7 @@ var tableScroll = (function(){
 
 function delquestion(link)
 {
-	var answer = confirm("Realy delete this entry ?");
+	var answer = confirm("Really delete this entry?");
 	if(answer)
 		window.location=link;
 }
