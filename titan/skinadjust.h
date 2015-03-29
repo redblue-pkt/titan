@@ -196,6 +196,46 @@ void screenskinadjust()
 	emurunningcol->fontcol2 = convertcol(getskinconfig("emurunningcol", NULL));
 	favcol->fontcol2 = convertcol(getskinconfig("favcol", NULL));
 
+	if(status.expertmodus < 10)
+	{
+//		listboxselect->hidden = YES;
+//		tithek_selectcol->hidden = YES;
+//		filelistselect->hidden = YES;
+		buttonbar_bgcol->hidden = YES;
+		buttonbar_bgcol2->hidden = YES;
+		buttonbar_bordercol->hidden = YES;
+		buttonbar_fontcol->hidden = YES;
+		titlebar_bgcol->hidden = YES;
+		titlebar_bgcol2->hidden = YES;
+		titlebar_bordercol->hidden = YES;
+		titlebar_fontcol->hidden = YES;
+		okcol->hidden = YES;
+		exitcol->hidden = YES;
+		deaktivcol->hidden = YES;
+		bgcol->hidden = YES;
+		bgcol2->hidden = YES;
+		fontcol->hidden = YES;
+		bordercol->hidden = YES;
+		progresscol->hidden = YES;
+		titlebgcol->hidden = YES;
+		markcol->hidden = YES;
+		rec_progress->hidden = YES;
+		cpmode_bgcol->hidden = YES;
+		cpmode_fontcol->hidden = YES;
+		editmode_bgcol->hidden = YES;
+		editmode_fontcol->hidden = YES;
+		mvmode_bgcol->hidden = YES;
+		mvmode_fontcol->hidden = YES;
+		protectmode_bgcol->hidden = YES;
+		protectmode_fontcol->hidden = YES;
+		epgcol1->hidden = YES;
+		epgcol2->hidden = YES;
+		epgcol3->hidden = YES;
+		emuaktivecol->hidden = YES;
+		emurunningcol->hidden = YES;
+		favcol->hidden = YES;
+	}
+	
 	if(status.security == 0 || checkemu() == 0)
 	{
 		emuaktivecol->hidden = YES;
