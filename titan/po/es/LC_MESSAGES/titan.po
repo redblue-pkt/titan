@@ -1722,6 +1722,12 @@ msgstr ""
 msgid "Create Default Favorites"
 msgstr "Crear favoritos predeterminados"
 
+msgid "Create Favorites sub folder"
+msgstr ""
+
+msgid "Create Favorites sub folder(PIN secured)"
+msgstr ""
+
 msgid "Create Folder"
 msgstr "Crear Carpeta"
 
@@ -1733,12 +1739,6 @@ msgstr "Crear Grabar Previo"
 
 msgid "Create Settings Menu"
 msgstr "Menu de creacion de Transpondedor"
-
-msgid "Create Sub Menu Favorite"
-msgstr ""
-
-msgid "Create Sub Menu Favorite (Password)"
-msgstr ""
 
 msgid "Create Thumb Picture"
 msgstr "Crear miniaturas"

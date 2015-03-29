@@ -1656,6 +1656,12 @@ msgstr ""
 msgid "Create Default Favorites"
 msgstr ""
 
+msgid "Create Favorites sub folder"
+msgstr ""
+
+msgid "Create Favorites sub folder(PIN secured)"
+msgstr ""
+
 msgid "Create Folder"
 msgstr "Crea Cartella"
 
@@ -1666,12 +1672,6 @@ msgid "Create Record Picture"
 msgstr ""
 
 msgid "Create Settings Menu"
-msgstr ""
-
-msgid "Create Sub Menu Favorite"
-msgstr ""
-
-msgid "Create Sub Menu Favorite (Password)"
 msgstr ""
 
 msgid "Create Thumb Picture"

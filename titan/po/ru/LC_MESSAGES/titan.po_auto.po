@@ -2415,6 +2415,14 @@ msgstr "Авторские права"
 msgid "Create Default Favorites"
 msgstr "Импорт стандартных букетов"
 
+#: play.h:654
+msgid "Create Favorites sub folder"
+msgstr ""
+
+#: play.h:655
+msgid "Create Favorites sub folder(PIN secured)"
+msgstr ""
+
 #: filemanager.h:62 filemanager.h:87 filemanager.h:97
 msgid "Create Folder"
 msgstr "Создать папку"
@@ -2430,14 +2438,6 @@ msgstr "Делать запись видео"
 #: skin_default_skin.xml.h:173
 msgid "Create Settings Menu"
 msgstr "Создать меню настроек"
-
-#: play.h:654
-msgid "Create Sub Menu Favorite"
-msgstr ""
-
-#: play.h:655
-msgid "Create Sub Menu Favorite (Password)"
-msgstr ""
 
 #: skin_default_skin.xml.h:175
 msgid "Create Thumb Picture"

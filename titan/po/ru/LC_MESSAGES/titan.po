@@ -1689,6 +1689,12 @@ msgstr "Авторские права"
 msgid "Create Default Favorites"
 msgstr "Импорт стандартных букетов"
 
+msgid "Create Favorites sub folder"
+msgstr ""
+
+msgid "Create Favorites sub folder(PIN secured)"
+msgstr ""
+
 msgid "Create Folder"
 msgstr "Создать папку"
 
@@ -1700,12 +1706,6 @@ msgstr "Делать запись видео"
 
 msgid "Create Settings Menu"
 msgstr "Создать меню настроек"
-
-msgid "Create Sub Menu Favorite"
-msgstr ""
-
-msgid "Create Sub Menu Favorite (Password)"
-msgstr ""
 
 msgid "Create Thumb Picture"
 msgstr "Кэшировать изображение"
