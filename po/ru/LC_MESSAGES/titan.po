@@ -494,11 +494,11 @@ msgstr "Добавить таймер"
 msgid "Add iMDB manuel"
 msgstr "Добавлять iMDB "
 
-msgid "Add this Sub Folder as Favorite ?"
-msgstr ""
-
 msgid "Add this link as Favorite ?"
 msgstr "Добавить ссылку в фаворит?"
+
+msgid "Add this sub folder as Favorite ?"
+msgstr ""
 
 msgid "Adjust"
 msgstr "Общие настройки"
@@ -1701,9 +1701,6 @@ msgstr "Делать запись видео"
 msgid "Create Settings Menu"
 msgstr "Создать меню настроек"
 
-msgid "Create Sub Menu"
-msgstr ""
-
 msgid "Create Sub Menu Favorite"
 msgstr ""
 
@@ -1730,6 +1727,9 @@ msgstr "Создать список транспондеров"
 
 msgid "Create new"
 msgstr "Создать новый"
+
+msgid "Create sub folder"
+msgstr ""
 
 msgid "Croissant"
 msgstr ""
@@ -2437,11 +2437,11 @@ msgstr "Быстрое переключение"
 msgid "Fav"
 msgstr "Фавориты"
 
-msgid "Favorite Mainmenu"
-msgstr ""
-
 msgid "Favoriten"
 msgstr "Фавориты"
+
+msgid "Favorites"
+msgstr ""
 
 msgid "February"
 msgstr ""

@@ -795,13 +795,13 @@ msgstr ""
 msgid "Add iMDB manuel"
 msgstr "Añadir Manual IMDB"
 
-#: tithek.h:1806 tithek.h:1986
-msgid "Add this Sub Folder as Favorite ?"
-msgstr ""
-
 #: tithek.h:2250
 msgid "Add this link as Favorite ?"
 msgstr "Quieres añadir el enlace a tus favoritos?"
+
+#: tithek.h:1806 tithek.h:1986
+msgid "Add this sub folder as Favorite ?"
+msgstr ""
 
 #: skin_default_skin.xml.h:63 webif_settings.h:1
 msgid "Adjust"
@@ -2464,10 +2464,6 @@ msgstr "Crear Grabar Previo"
 msgid "Create Settings Menu"
 msgstr "Menu de creacion de Transpondedor"
 
-#: tithek.h:1791 tithek.h:1971
-msgid "Create Sub Menu"
-msgstr ""
-
 #: play.h:654
 msgid "Create Sub Menu Favorite"
 msgstr ""
@@ -2503,6 +2499,10 @@ msgstr "Importar Lista de Transpondedores"
 #: scan.h:2275
 msgid "Create new"
 msgstr "Crear Nuevo"
+
+#: tithek.h:1791 tithek.h:1971
+msgid "Create sub folder"
+msgstr ""
 
 #: tpk_showname.h:20
 msgid "Croissant"
@@ -3634,13 +3634,13 @@ msgstr "Cambio rapido zap"
 msgid "Fav"
 msgstr "Favoritos"
 
-#: tithek.h:985
-msgid "Favorite Mainmenu"
-msgstr ""
-
 #: tithek_mainmenu.h:16
 msgid "Favoriten"
 msgstr "Favoritos"
+
+#: tithek.h:985
+msgid "Favorites"
+msgstr ""
 
 #: global.h:6099
 msgid "February"
