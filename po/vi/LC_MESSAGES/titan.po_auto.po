@@ -13206,24 +13206,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "Are you sure you want to delete this directory?"
-#~ msgstr "Bạn chắc chắn muốn xóa thư mục này ?"
-
-#~ msgid "can't create or delete directory"
-#~ msgstr "Không thể tạo hoặc xóa thư mục"
-
-#~ msgid "del medium for backup"
-#~ msgstr " không sử dụng cho sao luư dữ liệu"
-
-#~ msgid "del medium for extension"
-#~ msgstr "không sử dụng cho phần mở rộng"
-
-#~ msgid "del medium for record"
-#~ msgstr "không sử dụng cho việc ghi"
-
-#~ msgid "del medium for swap"
-#~ msgstr "không sử dụng cho các tập tin trao đổi"
-
-#~ msgid "succesfull create or delelete directory"
-#~ msgstr "tạo hoặc xóa thư mực thành công"

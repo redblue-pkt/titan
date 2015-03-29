@@ -13307,31 +13307,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "Are you sure you want to delete this directory?"
-#~ msgstr "Ar tikrai norite itrinti  aplank?"
-
-#~ msgid ""
-#~ "Directory has content\n"
-#~ "Really delete directory and content?"
-#~ msgstr ""
-#~ "Kataloge yra fail\n"
-#~ "Tikrai itrinti katalog ir turin ?"
-
-#~ msgid "can't create or delete directory"
-#~ msgstr "KLAIDA : Nepavyko sukurti ar itrinti katalog"
-
-#~ msgid "del medium for backup"
-#~ msgstr "alinti kaip Backup - prietais"
-
-#~ msgid "del medium for extension"
-#~ msgstr "alinti kaip pltini - prietais"
-
-#~ msgid "del medium for record"
-#~ msgstr "alinti kaip Recordings - prietais"
-
-#~ msgid "del medium for swap"
-#~ msgstr "alinti kaip apsikeitimo (SWAP) prietais"
-
-#~ msgid "succesfull create or delelete directory"
-#~ msgstr "Skmingai sukurtas ar itrintas katalogas"

@@ -13384,31 +13384,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "Are you sure you want to delete this directory?"
-#~ msgstr "Quieres eliminar este directorio?"
-
-#~ msgid ""
-#~ "Directory has content\n"
-#~ "Really delete directory and content?"
-#~ msgstr ""
-#~ "Directorio tiene contenido\n"
-#~ "Desea borrar el directorio y el contenido?"
-
-#~ msgid "can't create or delete directory"
-#~ msgstr "ERROR: No se puede crear o suprimir directorio"
-
-#~ msgid "del medium for backup"
-#~ msgstr "Elimine como copia de seguridad del dispositivo"
-
-#~ msgid "del medium for extension"
-#~ msgstr "Retire como extensiones del dispositivo"
-
-#~ msgid "del medium for record"
-#~ msgstr "Quite la mayor Grabaciones dispositivo"
-
-#~ msgid "del medium for swap"
-#~ msgstr "Elimine como swap-dispositivo"
-
-#~ msgid "succesfull create or delelete directory"
-#~ msgstr "Directorio creado o borrado con eExito"
