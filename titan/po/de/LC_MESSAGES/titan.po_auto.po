@@ -1,3 +1,4 @@
+#: plugins_wm2014_skin.xml.h:1 skins_wm2014_skin.xml.h:1 tithek_mainmenu.h:1
 msgid ""
 msgstr ""
 "Project-Id-Version: TitanNit 1.64\n"
@@ -1051,7 +1052,7 @@ msgstr "Seitenverhältnis"
 
 #: skin_default_skin.xml.h:79
 msgid "Aspect Ratio"
-msgstr "Seitenverhältnis"
+msgstr ""
 
 #: skin_default_skin.xml.h:80
 msgid "Aspect Ratio:"
