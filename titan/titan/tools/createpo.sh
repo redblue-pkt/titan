@@ -65,7 +65,7 @@ cat "$HOME"/ipk/source*/*/CONTROL/control | sed 's/\x0D$//' | grep Showname: | s
 cat "$HOME"/ipk/source*/*/CONTROL/control | sed 's/\x0D$//' | grep Description: | sort -u | sed 's!Description: !tmpstr = _("!g' | sed 's!Package:!\nPackage!g' | grep ^tmpstr | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/tpk_description.h
 cat "$HOME"/flashimg/$SRCDIR/skins/tithek/tithekmainmenu/*.list | sed 's/\x0D$//' | grep -v internettv | cut -d"#" -f1 | sort -u | sed -e 's/^/tmpstr = _("/' | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/tithek_mainmenu.h
 #cat /var/www/atemio/web/mediathek/*/*.category.list  | cut -d"#" -f1 | sort -u | sed -e 's/^/tmpstr = _("/' | grep -v link= | grep -v title= | tr '\0' '#' | tr '\n' '#' | sed 's!#!");\n!g' >>"$HOME"/flashimg/$SRCDIR/titan/tools/tmp/tithek_submenu.h
-ls "$HOME"/flashimg/$SRCDIR/help/*/ | sed 's/\x0D$//' | sed 's/.txt/");/g' | sed 's/^/tmpstr = _("/g' >> "$HOME"/flashimg/$SRCDIR/titan/tools/tmp/webif_help.h
+ls "$HOME"/flashimg/$SRCDIR/help/*/ | sed 's/.txt/");/g' | sed 's/^/tmpstr = _("/g' >> "$HOME"/flashimg/$SRCDIR/titan/tools/tmp/webif_help.h
 
 file --mime-encoding "$HOME"/flashimg/$SRCDIR/po/*/*/*.po >> "$HOME"/flashimg/$SRCDIR/error/coding.log 2>&1
 ##schreibt den mime-type ('text/plain; charset=us-ascii') in die coding.log
@@ -91,11 +91,11 @@ for ROUND in $POLIST; do
 		## "-nt" ("newer than")
 		if [ $ROUND -nt $ROUND_EDIT ]; then
 			##Aus der titan.po_auto.po alle Kommentare löschen und in titan.po_auto.clean.po speichern
-			echo "[createpo.sh] update $ROUND"
+			echo "[createpo.sh] update $ROUND "`stat -c=%y "$ROUND" `
 			cat $ROUND | sed '/#.*/d' > $ROUND_CLEAN			
 		else
 			##Gleich die (neuere) titan.po verwenden
-			echo "[createpo.sh] update $ROUND_EDIT"
+			echo "[createpo.sh] update $ROUND_EDIT "`stat -c=%y "$ROUND" `
 			cat $ROUND_EDIT | sed '/#.*/d' > $ROUND_CLEAN
 		fi		
 		if [ ! -e "$ROUND_CLEAN" ] || [ `cat "$ROUND_CLEAN" | wc -l` -eq 0 ]; then error="1"; break;fi
