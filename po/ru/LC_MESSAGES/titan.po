@@ -1859,9 +1859,6 @@ msgstr "Отключить окно предварительного просм�
 msgid "Deaktive Color"
 msgstr ""
 
-msgid "Deavtivate Refresh Time and After EPG in scan-mode"
-msgstr "Отключите время обновления после поиска EPG"
-
 msgid "Debug Modus"
 msgstr "Отладка модулей"
 
@@ -9118,3 +9115,4 @@ msgstr ""
 
 msgid "~"
 msgstr ""
+

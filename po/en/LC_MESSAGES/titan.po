@@ -1867,11 +1867,6 @@ msgstr ""
 msgid "Deaktive Color"
 msgstr ""
 
-msgid "Deavtivate Refresh Time and After EPG in scan-mode"
-msgstr ""
-"Background scan activated.\n"
-"Timer scan and 'action after scan' is deactivated."
-
 msgid "Debug Modus"
 msgstr ""
 
@@ -9151,3 +9146,4 @@ msgstr ""
 
 msgid "~"
 msgstr ""
+

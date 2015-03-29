@@ -1836,9 +1836,6 @@ msgstr "Tắt cửa sổ xem trước MIniTV"
 msgid "Deaktive Color"
 msgstr ""
 
-msgid "Deavtivate Refresh Time and After EPG in scan-mode"
-msgstr ""
-
 msgid "Debug Modus"
 msgstr "Chế độ gỡ lỗi"
 

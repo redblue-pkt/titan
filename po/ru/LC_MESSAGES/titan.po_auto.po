@@ -1994,7 +1994,7 @@ msgstr "Распределение каналов"
 msgid "Channel Down"
 msgstr "Канал вниз"
 
-#: adjust.h:72 epgsettings.h:138 httpdfunc.h:3880
+#: adjust.h:72 epgsettings.h:139 httpdfunc.h:3880
 msgid "Channel EPG"
 msgstr "EPG канала"
 
@@ -2642,10 +2642,6 @@ msgstr "Отключить окно предварительного просм�
 msgid "Deaktive Color"
 msgstr ""
 
-#: epgsettings.h:263
-msgid "Deavtivate Refresh Time and After EPG in scan-mode"
-msgstr "Отключите время обновления после поиска EPG"
-
 #: skin_default_skin.xml.h:186
 msgid "Debug Modus"
 msgstr "Отладка модулей"
@@ -3026,7 +3022,7 @@ msgstr "Сокращённый EPG"
 msgid "EPG Save Mode"
 msgstr "Режим сохранения EPG"
 
-#: epgsettings.h:303
+#: epgsettings.h:315
 msgid "EPG Scan Log"
 msgstr "Лог скана EPG"
 
@@ -3054,7 +3050,7 @@ msgstr "Параметры EPG"
 msgid "EPG button on EPG Screen"
 msgstr "Кнопка EPG"
 
-#: epgsettings.h:289
+#: epgsettings.h:301
 msgid "EPG resetet and now clear."
 msgstr "Данные EPG удалены!"
 
@@ -3101,43 +3097,42 @@ msgstr "Ошибка. Нельзя установить маркер на это
 #: bgdownload.h:176 blindscanadjust.h:25 channellist.h:956 channellist.h:958
 #: channellist.h:963 channellist.h:965 channellist.h:1049 divxstage.h:36
 #: divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336 dlna.h:345
-#: dvdplay.h:62 epgsearch.h:27 epgsettings.h:263 epgsettings.h:289
-#: epgsettings.h:303 extensions.h:190 extensions.h:241 extensions.h:250
-#: extensions.h:254 extensions.h:259 extensions.h:267 extensions.h:302
-#: extensions.h:310 extensions.h:317 extensions.h:324 extensions.h:356
-#: extensions.h:382 extensions.h:413 extensions.h:420 extensions.h:444
-#: extensions.h:448 extensions.h:456 extensions.h:502 facebook.h:66
-#: facebook.h:157 facebook.h:167 faststream.h:30 faststream.h:79
-#: faststream.h:91 faststream.h:103 faststream.h:160 filemanager.h:95
-#: filemanager.h:100 filemanager.h:206 filemanager.h:279 filemanager.h:289
-#: filemanager.h:319 filemanager.h:329 filenuke.h:46 filenuke.h:94
-#: filenuke.h:106 filenuke.h:118 filenuke.h:190 firedrive.h:33 firedrive.h:66
-#: firedrive.h:72 firedrive.h:122 firedrive.h:128 firedrive.h:138 flashx.h:26
-#: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:5851 global.h:6572 global.h:6641 global.h:6660 global.h:6835
-#: global.h:7088 global.h:7101 global.h:7112 global.h:7123 global.h:7134
-#: harddisk.h:359 harddisk.h:492 harddisk.h:686 harddisk.h:694 harddisk.h:728
-#: harddisk.h:777 harddisk.h:782 harddisk.h:784 harddisk.h:786 harddisk.h:846
-#: harddisk.h:865 harddisk.h:868 harddisk.h:1099 hbbtv.h:362 hello.c:36
-#: httpdfunc.h:1304 httpdfunc.h:3258 httpdfunc.h:6159 httpdfunc.h:6424
-#: httpdfunc.h:6495 hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103
-#: hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390 hwtest.h:411
-#: hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566 hwtest.h:586
-#: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
-#: hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626 inadyn.h:188
-#: inadyn.h:190 inadyn.h:200 infobar.h:611 infobar.h:735 info.h:27
-#: keyactions.h:205 log.h:46 log.h:48 marker.h:215 marker.h:229 mboxinfo.c:49
-#: mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163 mc_audioplayer.h:333
-#: mc_audioplayer.h:605 mc_audioplayer.h:716 mc_dateibrowser.h:36
-#: mc_global.h:773 mc_global.h:1020 mc_internetbrowser.h:36 mc_main.h:50
-#: mc_main.h:55 mc_main.h:60 mc_main.h:95 mc_main.h:100 mc_main.h:274
-#: mc_main.h:283 mc_mediathek.h:35 mc_pictureplayer.h:100
-#: mc_pictureplayer.h:124 mc_pictureplayer.h:242 mc_pictureplayer.h:368
-#: mc_pictureplayer.h:461 mc_videoplayer.h:332 mc_videoplayer.h:749
-#: mc_videoplayer.h:784 mc_videoplayer.h:888 mc_videoplayer.h:904
-#: mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477
-#: mediadb.h:2525 mediadbsettings.h:95 menu.h:168 menu.h:223 menu.h:992
-#: menu.h:994 movie4k.h:36 movie4k.h:48 movie4k.h:92 movie4k.h:399
+#: dvdplay.h:62 epgsearch.h:27 epgsettings.h:301 epgsettings.h:315
+#: extensions.h:190 extensions.h:241 extensions.h:250 extensions.h:254
+#: extensions.h:259 extensions.h:267 extensions.h:302 extensions.h:310
+#: extensions.h:317 extensions.h:324 extensions.h:356 extensions.h:382
+#: extensions.h:413 extensions.h:420 extensions.h:444 extensions.h:448
+#: extensions.h:456 extensions.h:502 facebook.h:66 facebook.h:157
+#: facebook.h:167 faststream.h:30 faststream.h:79 faststream.h:91
+#: faststream.h:103 faststream.h:160 filemanager.h:95 filemanager.h:100
+#: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:319
+#: filemanager.h:329 filenuke.h:46 filenuke.h:94 filenuke.h:106 filenuke.h:118
+#: filenuke.h:190 firedrive.h:33 firedrive.h:66 firedrive.h:72 firedrive.h:122
+#: firedrive.h:128 firedrive.h:138 flashx.h:26 flashx.h:84 flashx.h:138
+#: flashx.h:195 flashx.h:233 flashx.h:270 global.h:5851 global.h:6572
+#: global.h:6641 global.h:6660 global.h:6835 global.h:7088 global.h:7101
+#: global.h:7112 global.h:7123 global.h:7134 harddisk.h:359 harddisk.h:492
+#: harddisk.h:686 harddisk.h:694 harddisk.h:728 harddisk.h:777 harddisk.h:782
+#: harddisk.h:784 harddisk.h:786 harddisk.h:846 harddisk.h:865 harddisk.h:868
+#: harddisk.h:1099 hbbtv.h:362 hello.c:36 httpdfunc.h:1304 httpdfunc.h:3258
+#: httpdfunc.h:6159 httpdfunc.h:6424 httpdfunc.h:6495 hwtest.h:88 hwtest.h:93
+#: hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206
+#: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
+#: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
+#: hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200
+#: imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:611
+#: infobar.h:735 info.h:27 keyactions.h:205 log.h:46 log.h:48 marker.h:215
+#: marker.h:229 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
+#: mc_audioplayer.h:333 mc_audioplayer.h:605 mc_audioplayer.h:716
+#: mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
+#: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
+#: mc_main.h:100 mc_main.h:274 mc_main.h:283 mc_mediathek.h:35
+#: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
+#: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:332
+#: mc_videoplayer.h:749 mc_videoplayer.h:784 mc_videoplayer.h:888
+#: mc_videoplayer.h:904 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
+#: mediadb.h:1477 mediadb.h:2525 mediadbsettings.h:95 menu.h:168 menu.h:223
+#: menu.h:992 menu.h:994 movie4k.h:36 movie4k.h:48 movie4k.h:92 movie4k.h:399
 #: movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78 movshare.h:157
 #: movshare.h:163 myvideo.h:86 networkbrowser.h:966 networkbrowser.h:1027
 #: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
@@ -4084,7 +4079,7 @@ msgstr "Показывать пиконы каналов"
 msgid "Graphic EPG Zoom"
 msgstr "Кратность увеличения графики EPG"
 
-#: epgsettings.h:141 keyactions.h:80 settings_bluebutton.h:17
+#: epgsettings.h:142 keyactions.h:80 settings_bluebutton.h:17
 #: settings_pluginbutton.h:18 settings_redbutton.h:18
 #: skin_default_skin.xml.h:287
 msgid "Graphic Multi EPG"
@@ -5624,31 +5619,31 @@ msgstr ""
 #: blindscanadjust.h:25 callmon_main.h:39 channellist.h:956 channellist.h:958
 #: channellist.h:963 channellist.h:965 channellist.h:1049 divxstage.h:36
 #: divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336 dlna.h:345
-#: dvdplay.h:62 epgsearch.h:27 epgsettings.h:263 epgsettings.h:289
-#: extensions.h:267 extensions.h:324 extensions.h:356 extensions.h:416
-#: extensions.h:420 extensions.h:456 facebook.h:66 facebook.h:157
-#: facebook.h:167 faststream.h:30 faststream.h:79 faststream.h:91
-#: faststream.h:103 faststream.h:160 filemanager.h:95 filemanager.h:100
-#: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:329
-#: filenuke.h:46 filenuke.h:94 filenuke.h:106 filenuke.h:118 filenuke.h:190
-#: firedrive.h:33 firedrive.h:66 firedrive.h:72 firedrive.h:122
-#: firedrive.h:128 firedrive.h:138 flashx.h:26 flashx.h:84 flashx.h:138
-#: flashx.h:195 flashx.h:233 flashx.h:270 global.h:5851 global.h:6572
-#: global.h:6641 global.h:6660 global.h:6835 global.h:7088 global.h:7094
-#: global.h:7101 global.h:7105 global.h:7112 global.h:7116 global.h:7123
-#: global.h:7127 global.h:7134 global.h:7138 harddisk.h:686 harddisk.h:694
-#: harddisk.h:728 harddisk.h:777 harddisk.h:782 harddisk.h:784 harddisk.h:786
-#: harddisk.h:846 harddisk.h:865 harddisk.h:868 hbbtv.h:362 hello.c:36
-#: httpdfunc.h:1304 httpdfunc.h:5773 httpdfunc.h:6159 httpdfunc.h:6424
-#: httpdfunc.h:6495 hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103
-#: hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390 hwtest.h:411
-#: hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566 hwtest.h:586
-#: hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679 hwtest.h:681
-#: hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626 inadyn.h:188
-#: inadyn.h:190 inadyn.h:200 infobar.h:611 infobar.h:735 keyactions.h:205
-#: language.h:49 lcdpearl1.c:49 lcdsamsung.c:101 log.h:46 log.h:48
-#: marker.h:215 marker.h:229 mc_audioplayer.h:333 mc_audioplayer.h:605
-#: mc_audioplayer.h:716 mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
+#: dvdplay.h:62 epgsearch.h:27 epgsettings.h:301 extensions.h:267
+#: extensions.h:324 extensions.h:356 extensions.h:416 extensions.h:420
+#: extensions.h:456 facebook.h:66 facebook.h:157 facebook.h:167
+#: faststream.h:30 faststream.h:79 faststream.h:91 faststream.h:103
+#: faststream.h:160 filemanager.h:95 filemanager.h:100 filemanager.h:206
+#: filemanager.h:279 filemanager.h:289 filemanager.h:329 filenuke.h:46
+#: filenuke.h:94 filenuke.h:106 filenuke.h:118 filenuke.h:190 firedrive.h:33
+#: firedrive.h:66 firedrive.h:72 firedrive.h:122 firedrive.h:128
+#: firedrive.h:138 flashx.h:26 flashx.h:84 flashx.h:138 flashx.h:195
+#: flashx.h:233 flashx.h:270 global.h:5851 global.h:6572 global.h:6641
+#: global.h:6660 global.h:6835 global.h:7088 global.h:7094 global.h:7101
+#: global.h:7105 global.h:7112 global.h:7116 global.h:7123 global.h:7127
+#: global.h:7134 global.h:7138 harddisk.h:686 harddisk.h:694 harddisk.h:728
+#: harddisk.h:777 harddisk.h:782 harddisk.h:784 harddisk.h:786 harddisk.h:846
+#: harddisk.h:865 harddisk.h:868 hbbtv.h:362 hello.c:36 httpdfunc.h:1304
+#: httpdfunc.h:5773 httpdfunc.h:6159 httpdfunc.h:6424 httpdfunc.h:6495
+#: hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113
+#: hwtest.h:206 hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492
+#: hwtest.h:564 hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617
+#: hwtest.h:632 hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685
+#: imdbapi.h:200 imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200
+#: infobar.h:611 infobar.h:735 keyactions.h:205 language.h:49 lcdpearl1.c:49
+#: lcdsamsung.c:101 log.h:46 log.h:48 marker.h:215 marker.h:229
+#: mc_audioplayer.h:333 mc_audioplayer.h:605 mc_audioplayer.h:716
+#: mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
 #: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
 #: mc_main.h:100 mc_main.h:274 mc_main.h:283 mc_mediathek.h:35
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
@@ -5846,7 +5841,7 @@ msgstr "Фильмы"
 msgid "Multi (EPG)"
 msgstr "Мульти EPG"
 
-#: epgsettings.h:140 epgsettings.h:181 keyactions.h:79
+#: epgsettings.h:141 epgsettings.h:182 keyactions.h:79
 #: settings_bluebutton.h:16 settings_pluginbutton.h:17 settings_redbutton.h:17
 #: skin_default_skin.xml.h:448
 msgid "Multi EPG"
@@ -6156,35 +6151,35 @@ msgstr ""
 #: bgdownload.h:176 blindscanadjust.h:25 callmon_main.h:39 channellist.h:956
 #: channellist.h:958 channellist.h:963 channellist.h:965 channellist.h:1049
 #: divxstage.h:36 divxstage.h:79 divxstage.h:150 dlna.h:334 dlna.h:336
-#: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:263 epgsettings.h:289
-#: epgsettings.h:303 extensions.h:190 extensions.h:241 extensions.h:250
-#: extensions.h:254 extensions.h:259 extensions.h:267 extensions.h:302
-#: extensions.h:310 extensions.h:317 extensions.h:324 extensions.h:356
-#: extensions.h:382 extensions.h:413 extensions.h:420 extensions.h:444
-#: extensions.h:448 extensions.h:456 extensions.h:502 facebook.h:66
-#: facebook.h:157 facebook.h:167 faststream.h:30 faststream.h:79
-#: faststream.h:91 faststream.h:103 faststream.h:160 filemanager.h:95
-#: filemanager.h:100 filemanager.h:206 filemanager.h:279 filemanager.h:289
-#: filemanager.h:319 filemanager.h:329 filenuke.h:46 filenuke.h:94
-#: filenuke.h:106 filenuke.h:118 filenuke.h:190 firedrive.h:33 firedrive.h:66
-#: firedrive.h:72 firedrive.h:122 firedrive.h:128 firedrive.h:138 flashx.h:26
-#: flashx.h:84 flashx.h:138 flashx.h:195 flashx.h:233 flashx.h:270
-#: global.h:5851 global.h:6572 global.h:6641 global.h:6660 global.h:6835
-#: global.h:7088 global.h:7094 global.h:7101 global.h:7105 global.h:7112
-#: global.h:7116 global.h:7123 global.h:7127 global.h:7134 global.h:7138
-#: harddisk.h:359 harddisk.h:492 harddisk.h:686 harddisk.h:694 harddisk.h:728
-#: harddisk.h:777 harddisk.h:782 harddisk.h:784 harddisk.h:786 harddisk.h:846
-#: harddisk.h:865 harddisk.h:868 harddisk.h:1099 hbbtv.h:362 httpdfunc.h:1304
-#: httpdfunc.h:3258 httpdfunc.h:6159 httpdfunc.h:6424 httpdfunc.h:6495
-#: hwtest.h:88 hwtest.h:93 hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113
-#: hwtest.h:206 hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492
-#: hwtest.h:564 hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617
-#: hwtest.h:632 hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685
-#: imdbapi.h:200 imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200
-#: infobar.h:611 infobar.h:735 info.h:27 keyactions.h:205 lcdpearl1.c:49
-#: lcdsamsung.c:101 log.h:46 log.h:48 mboxinfo.c:49 mboxinfo.c:73
-#: mboxinfo.c:77 mboxinfo.c:163 mc_audioplayer.h:333 mc_audioplayer.h:605
-#: mc_audioplayer.h:716 mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
+#: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:301 epgsettings.h:315
+#: extensions.h:190 extensions.h:241 extensions.h:250 extensions.h:254
+#: extensions.h:259 extensions.h:267 extensions.h:302 extensions.h:310
+#: extensions.h:317 extensions.h:324 extensions.h:356 extensions.h:382
+#: extensions.h:413 extensions.h:420 extensions.h:444 extensions.h:448
+#: extensions.h:456 extensions.h:502 facebook.h:66 facebook.h:157
+#: facebook.h:167 faststream.h:30 faststream.h:79 faststream.h:91
+#: faststream.h:103 faststream.h:160 filemanager.h:95 filemanager.h:100
+#: filemanager.h:206 filemanager.h:279 filemanager.h:289 filemanager.h:319
+#: filemanager.h:329 filenuke.h:46 filenuke.h:94 filenuke.h:106 filenuke.h:118
+#: filenuke.h:190 firedrive.h:33 firedrive.h:66 firedrive.h:72 firedrive.h:122
+#: firedrive.h:128 firedrive.h:138 flashx.h:26 flashx.h:84 flashx.h:138
+#: flashx.h:195 flashx.h:233 flashx.h:270 global.h:5851 global.h:6572
+#: global.h:6641 global.h:6660 global.h:6835 global.h:7088 global.h:7094
+#: global.h:7101 global.h:7105 global.h:7112 global.h:7116 global.h:7123
+#: global.h:7127 global.h:7134 global.h:7138 harddisk.h:359 harddisk.h:492
+#: harddisk.h:686 harddisk.h:694 harddisk.h:728 harddisk.h:777 harddisk.h:782
+#: harddisk.h:784 harddisk.h:786 harddisk.h:846 harddisk.h:865 harddisk.h:868
+#: harddisk.h:1099 hbbtv.h:362 httpdfunc.h:1304 httpdfunc.h:3258
+#: httpdfunc.h:6159 httpdfunc.h:6424 httpdfunc.h:6495 hwtest.h:88 hwtest.h:93
+#: hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206
+#: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
+#: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
+#: hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200
+#: imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:611
+#: infobar.h:735 info.h:27 keyactions.h:205 lcdpearl1.c:49 lcdsamsung.c:101
+#: log.h:46 log.h:48 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
+#: mc_audioplayer.h:333 mc_audioplayer.h:605 mc_audioplayer.h:716
+#: mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
 #: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
 #: mc_main.h:100 mc_main.h:274 mc_main.h:283 mc_mediathek.h:35
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
@@ -8545,7 +8540,7 @@ msgstr "Сигнал"
 msgid "Single (EPG)"
 msgstr "Простой EPG"
 
-#: epgsettings.h:139 epgsettings.h:180 httpdfunc.h:302
+#: epgsettings.h:140 epgsettings.h:181 httpdfunc.h:302
 #: skin_default_skin.xml.h:652
 msgid "Single EPG"
 msgstr "Простой EPG"
@@ -10800,7 +10795,7 @@ msgstr "Всегда удалять файл таймшифта"
 msgid "alpha"
 msgstr "По алфавиту"
 
-#: epgsettings.h:191 epgsettings.h:202 epgsettings.h:207 epgsettings.h:212
+#: epgsettings.h:192 epgsettings.h:203 epgsettings.h:208 epgsettings.h:213
 #: mediadbsettings.h:36
 msgid "always"
 msgstr "Всегда"
@@ -11111,7 +11106,7 @@ msgstr "Дата + время"
 msgid "datetime"
 msgstr "Дата и время создания"
 
-#: adjust.h:121 adjust.h:131 adjust.h:185 epgsettings.h:147 epgsettings.h:153
+#: adjust.h:121 adjust.h:131 adjust.h:185 epgsettings.h:148 epgsettings.h:154
 #: httpdfunc.h:4086 httpdfunc.h:4144 httpdfunc.h:4535 network.h:612
 msgid "deaktiv"
 msgstr "Выключено"
@@ -11782,7 +11777,7 @@ msgstr ""
 msgid "networkmenu"
 msgstr ""
 
-#: epgsettings.h:193 mediadbsettings.h:48
+#: epgsettings.h:194 mediadbsettings.h:48
 msgid "never"
 msgstr "Никогда"
 
@@ -11818,8 +11813,8 @@ msgstr "Автостарт NFS сервера"
 #: avsettings.h:216 blindscanadjust.h:150 blindscanadjust.h:154
 #: blindscanadjust.h:158 blindscanadjust.h:187 blindscanadjust.h:191 cec.h:143
 #: cec.h:147 cec.h:151 cec.h:155 cec.h:159 cec.h:163 cec.h:167 cec.h:171
-#: cec.h:175 dlna.h:276 epgsettings.h:134 epgsettings.h:187 epgsettings.h:196
-#: epgsettings.h:200 epgsettings.h:205 epgsettings.h:210 harddisk.h:240
+#: cec.h:175 dlna.h:276 epgsettings.h:135 epgsettings.h:188 epgsettings.h:197
+#: epgsettings.h:201 epgsettings.h:206 epgsettings.h:211 harddisk.h:240
 #: harddisk.h:245 harddisk.h:259 harddisk.h:264 harddisk.h:278 harddisk.h:283
 #: harddisk.h:297 harddisk.h:302 httpdfunc.h:3859 httpdfunc.h:3897
 #: httpdfunc.h:3920 httpdfunc.h:3949 httpdfunc.h:4122 httpdfunc.h:4369
@@ -11907,7 +11902,7 @@ msgstr "Север"
 msgid "not started akttime higher than timer endtime"
 msgstr "ОШИБКА: Текущее время больше, чем время окончания записи"
 
-#: adjust.h:162 autotimer.c:480 autotimer.c:513 epgsettings.h:215
+#: adjust.h:162 autotimer.c:480 autotimer.c:513 epgsettings.h:216
 #: httpdfunc.h:4398 rectimer.h:1187
 msgid "nothing"
 msgstr "Ничего"
@@ -12010,11 +12005,11 @@ msgstr "OSD"
 msgid "only TV"
 msgstr "Видео"
 
-#: epgsettings.h:201 epgsettings.h:206 epgsettings.h:211
+#: epgsettings.h:202 epgsettings.h:207 epgsettings.h:212
 msgid "only for scan"
 msgstr "Только поиск"
 
-#: epgsettings.h:192
+#: epgsettings.h:193
 msgid "only on power off / restart"
 msgstr "Только при выключении/рестарте"
 
@@ -12157,7 +12152,7 @@ msgstr ""
 msgid "power off"
 msgstr "Выключение"
 
-#: epgsettings.h:216
+#: epgsettings.h:217
 msgid "poweroff"
 msgstr "Выключение"
 
@@ -12339,7 +12334,7 @@ msgstr "Сохранить настройки сети?"
 msgid "scam 3.60"
 msgstr ""
 
-#: epgsettings.h:148 tmc.h:389 webif_help.h:79
+#: epgsettings.h:149 tmc.h:389 webif_help.h:79
 msgid "scan"
 msgstr "Поиск"
 
@@ -12347,7 +12342,7 @@ msgstr "Поиск"
 msgid "scan Directory"
 msgstr "Каталог отсканированных данных"
 
-#: epgsettings.h:150
+#: epgsettings.h:151
 msgid "scan and whitelist"
 msgstr "Поиск и белый список"
 
@@ -13108,7 +13103,7 @@ msgstr "Запад"
 msgid "white"
 msgstr "Белый"
 
-#: epgsettings.h:149
+#: epgsettings.h:150
 msgid "whitelist"
 msgstr "Белый список"
 
@@ -13195,7 +13190,7 @@ msgstr "Жёлтая"
 #: avsettings.h:213 blindscanadjust.h:151 blindscanadjust.h:155
 #: blindscanadjust.h:159 blindscanadjust.h:188 blindscanadjust.h:192 cec.h:144
 #: cec.h:148 cec.h:152 cec.h:156 cec.h:160 cec.h:164 cec.h:168 cec.h:172
-#: cec.h:176 dlna.h:277 epgsettings.h:135 epgsettings.h:188 epgsettings.h:197
+#: cec.h:176 dlna.h:277 epgsettings.h:136 epgsettings.h:189 epgsettings.h:198
 #: harddisk.h:239 harddisk.h:246 harddisk.h:258 harddisk.h:265 harddisk.h:277
 #: harddisk.h:284 harddisk.h:296 harddisk.h:303 httpdfunc.h:3904
 #: httpdfunc.h:3956 httpdfunc.h:4129 httpdfunc.h:4376 httpdfunc.h:4434
@@ -13280,3 +13275,6 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
+
+#~ msgid "Deavtivate Refresh Time and After EPG in scan-mode"
+#~ msgstr "Отключите время обновления после поиска EPG"
