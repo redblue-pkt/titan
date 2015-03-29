@@ -1,3 +1,4 @@
+
 #ifndef EPGSETTINGS_H
 #define EPGSETTINGS_H
 
@@ -101,6 +102,8 @@ void screenepgscanlist()
 
 void screenepgsettings()
 {
+printf("screenepgsettings.........................\n");
+
 	int rcret = 0;
 	char* ret = NULL;
 	struct skin* epgsettings = getscreen("epgsettings");
@@ -229,6 +232,17 @@ void screenepgsettings()
 		rcret = waitrc(epgsettings, 0, 0);
 		tmp = listbox->select;
 
+		if(epglistmode->ret != NULL && (ostrcmp(epglistmode->ret, "1") == 0 || ostrcmp(epglistmode->ret, "3") == 0))
+		{
+			epgrefresh->hidden = YES;
+			epg_afterevent->hidden = YES;
+		}
+		else
+		{
+			epgrefresh->hidden = NO;
+			epg_afterevent->hidden = NO;
+		}
+			
 		if(rcret == getrcconfigint("rcexit", NULL)) break;
 		if(rcret == getrcconfigint("rcok", NULL))
 		{
@@ -260,7 +274,7 @@ void screenepgsettings()
 			{   	
 				if(getconfigint("epg_listmode", NULL) == 1 || getconfigint("epg_listmode", NULL) == 3)
 				{
-					textbox(_("Message"), _("Deavtivate Refresh Time and After EPG in scan-mode"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 15, 0);
+//					textbox(_("Message"), _("Deavtivate Refresh Time and After EPG in scan-mode"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 15, 0);
 					delconfig("epg_refreshtime");
 					delconfig("epg_afterevent");		
 				}
