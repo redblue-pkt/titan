@@ -512,7 +512,7 @@ msgid "Add this link as Favorite ?"
 msgstr "Möchten Sie diesen Link zu Ihren Favoriten hinzufügen?"
 
 msgid "Add this sub folder as Favorite ?"
-msgstr ""
+msgstr "Diesen Unterordner den Favoriten hinzufügen?"
 
 msgid "Adjust"
 msgstr "Erweitert"
