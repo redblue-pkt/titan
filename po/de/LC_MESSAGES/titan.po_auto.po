@@ -1052,7 +1052,7 @@ msgstr "Seitenverhältnis"
 
 #: skin_default_skin.xml.h:79
 msgid "Aspect Ratio"
-msgstr ""
+msgstr "Seitenverhältnis"
 
 #: skin_default_skin.xml.h:80
 msgid "Aspect Ratio:"
