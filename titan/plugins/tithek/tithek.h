@@ -982,7 +982,7 @@ void addfav(char* title, char* link, char* pic, char* localname, char* menutitle
 			printf("cmd: %s\n", cmd);
 			tmpstr = command(cmd);
 			if(tmpstr == NULL)
-				tmpstr = ostrcat(_("Favorite Mainmenu"), NULL, 0, 0);
+				tmpstr = ostrcat(_("Favorites"), NULL, 0, 0);
 			addmenulist(&mlist, tmpstr, (ret[i]).part, NULL, 0, 0);
 			printf("(ret[i]).part: %s\n", (ret[i]).part);
 			printf("tmpstr: %s\n", tmpstr);
@@ -992,7 +992,7 @@ void addfav(char* title, char* link, char* pic, char* localname, char* menutitle
 
 	}
 	else
-		addmenulist(&mlist, "Favorite Mainmenu", getconfig("tithek_fav", NULL), NULL, 0, 0);
+		addmenulist(&mlist, "Favorites", getconfig("tithek_fav", NULL), NULL, 0, 0);
 
 	free(ret), ret = NULL;
 
@@ -1788,7 +1788,7 @@ waitrcstart:
 				int check = playrcred(tmpstr, NULL, 1, 0, 99);
 				if(check == 0 || check == 1000)
 				{
-					char* search = textinputhist(_("Create Sub Menu"), " ", "searchhist");
+					char* search = textinputhist(_("Create sub folder"), " ", "searchhist");
 					if(search != NULL)
 					{
 						strstrip(search);
@@ -1803,7 +1803,7 @@ waitrcstart:
 						char* tmpstr1 = NULL;
 						tmpstr1 = ostrcat(getconfig("tithek_fav", NULL), "_", 0, 0);
 						tmpstr1 = ostrcat(tmpstr1, tmpstr, 1, 0);
-						if(textbox(_("Message"), _("Add this Sub Folder as Favorite ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0) == 1)
+						if(textbox(_("Message"), _("Add this sub folder as Favorite ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0) == 1)
 							addfav(search, tmpstr1, "http://imageshack.us/md/up/grd/mediathek/menu/default.jpg", tmpstr, title, check);
 						free(tmpstr), tmpstr = NULL;
 						free(tmpstr1), tmpstr1 = NULL;
@@ -1968,7 +1968,7 @@ why ?
 				int check = playrcred(NULL, NULL, 1, 0, 199);
 				if(check == 0 || check == 1000)
 				{
-					char* search = textinputhist(_("Create Sub Menu"), " ", "searchhist");
+					char* search = textinputhist(_("Create sub folder"), " ", "searchhist");
 					if(search != NULL)
 					{
 						strstrip(search);
@@ -1983,7 +1983,7 @@ why ?
 						char* tmpstr1 = NULL;
 						tmpstr1 = ostrcat(getconfig("tithek_fav", NULL), "_", 0, 0);
 						tmpstr1 = ostrcat(tmpstr1, tmpstr, 1, 0);
-						if(textbox(_("Message"), _("Add this Sub Folder as Favorite ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0) == 1)
+						if(textbox(_("Message"), _("Add this sub folder as Favorite ?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0) == 1)
 							addfav(search, tmpstr1, "http://imageshack.us/md/up/grd/mediathek/menu/default.jpg", tmpstr, title, check);
 						free(tmpstr), tmpstr = NULL;
 						free(tmpstr1), tmpstr1 = NULL;
