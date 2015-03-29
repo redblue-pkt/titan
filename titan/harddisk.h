@@ -356,7 +356,7 @@ void screenconfigurehdd(char* dev)
 				path = ostrcat(mountpath, "movie", 0, 0);
 				if(file_exist(path))
 				{
-					if(textbox("Message", _("Are you sure you want to delete this Record directory?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
+					if(textbox("Message", _("Are you sure, you want to delete the record directory on this drive?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0) == 1)
 					{
 						drawscreen(load, 0, 0);
 						cmd = ostrcat("rm -rf ", path, 0, 0);
