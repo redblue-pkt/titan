@@ -963,10 +963,6 @@ msgid ""
 "Box reboots after check"
 msgstr ""
 
-#: harddisk.h:359
-msgid "Are you sure you want to delete this Record directory?"
-msgstr ""
-
 #: harddisk.h:728
 msgid ""
 "Are you sure you want to format this Partition?\n"
@@ -990,6 +986,10 @@ msgstr ""
 
 #: networkbrowser.h:1777
 msgid "Are you sure you want to save this network mount?"
+msgstr ""
+
+#: harddisk.h:359
+msgid "Are you sure, you want to delete the record directory on this drive?"
 msgstr ""
 
 #: play.h:422 play.h:456

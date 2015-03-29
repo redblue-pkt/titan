@@ -620,9 +620,6 @@ msgid ""
 "Box reboots after check"
 msgstr ""
 
-msgid "Are you sure you want to delete this Record directory?"
-msgstr ""
-
 msgid ""
 "Are you sure you want to format this Partition?\n"
 "Box reboots after format"
@@ -642,6 +639,9 @@ msgid ""
 msgstr ""
 
 msgid "Are you sure you want to save this network mount?"
+msgstr ""
+
+msgid "Are you sure, you want to delete the record directory on this drive?"
 msgstr ""
 
 msgid "Artist:"

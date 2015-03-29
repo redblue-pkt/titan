@@ -632,9 +632,6 @@ msgstr ""
 "Are you sure you want to check this partition?\n"
 "Your Receiver will reboot after checking the device."
 
-msgid "Are you sure you want to delete this Record directory?"
-msgstr ""
-
 msgid ""
 "Are you sure you want to format this Partition?\n"
 "Box reboots after format"
@@ -663,6 +660,9 @@ msgstr ""
 "EXIT = abort restore"
 
 msgid "Are you sure you want to save this network mount?"
+msgstr ""
+
+msgid "Are you sure, you want to delete the record directory on this drive?"
 msgstr ""
 
 msgid "Artist:"
