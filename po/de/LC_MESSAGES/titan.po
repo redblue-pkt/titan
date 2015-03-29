@@ -700,7 +700,7 @@ msgid "Aspect"
 msgstr "Seitenverhältnis"
 
 msgid "Aspect Ratio"
-msgstr ""
+msgstr "Seitenverhältnis"
 
 msgid "Aspect Ratio:"
 msgstr "Seitenverhältnis:"
