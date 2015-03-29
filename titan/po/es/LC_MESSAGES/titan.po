@@ -1892,11 +1892,6 @@ msgstr "Ventana MiniTV deshabilitada"
 msgid "Deaktive Color"
 msgstr ""
 
-msgid "Deavtivate Refresh Time and After EPG in scan-mode"
-msgstr ""
-"Exploracion de fondo activada.\n"
-"Exploracion Temporizador y 'accion despues de exploracion' se desactiva."
-
 msgid "Debug Modus"
 msgstr "Debug Modo"
 
@@ -9222,3 +9217,4 @@ msgstr ""
 
 msgid "~"
 msgstr ""
+

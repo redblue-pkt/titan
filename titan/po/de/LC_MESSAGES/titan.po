@@ -1922,9 +1922,6 @@ msgstr "Deaktiviere MiniTV Vorschau Fenster"
 msgid "Deaktive Color"
 msgstr ""
 
-msgid "Deavtivate Refresh Time and After EPG in scan-mode"
-msgstr "Deaktiviere Aktualisierungszeit und 'Nach EPG-Aktualisierung'"
-
 msgid "Debug Modus"
 msgstr ""
 
@@ -9334,3 +9331,4 @@ msgstr ""
 
 msgid "~"
 msgstr ""
+
