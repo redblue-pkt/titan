@@ -2392,6 +2392,14 @@ msgstr ""
 msgid "Create Default Favorites"
 msgstr ""
 
+#: play.h:654
+msgid "Create Favorites sub folder"
+msgstr ""
+
+#: play.h:655
+msgid "Create Favorites sub folder(PIN secured)"
+msgstr ""
+
 #: filemanager.h:62 filemanager.h:87 filemanager.h:97
 msgid "Create Folder"
 msgstr "Tạo thư mục"
@@ -2406,14 +2414,6 @@ msgstr "Ghi âm"
 
 #: skin_default_skin.xml.h:173
 msgid "Create Settings Menu"
-msgstr ""
-
-#: play.h:654
-msgid "Create Sub Menu Favorite"
-msgstr ""
-
-#: play.h:655
-msgid "Create Sub Menu Favorite (Password)"
 msgstr ""
 
 #: skin_default_skin.xml.h:175

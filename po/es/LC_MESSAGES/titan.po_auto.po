@@ -2448,6 +2448,14 @@ msgstr ""
 msgid "Create Default Favorites"
 msgstr "Crear favoritos predeterminados"
 
+#: play.h:654
+msgid "Create Favorites sub folder"
+msgstr ""
+
+#: play.h:655
+msgid "Create Favorites sub folder(PIN secured)"
+msgstr ""
+
 #: filemanager.h:62 filemanager.h:87 filemanager.h:97
 msgid "Create Folder"
 msgstr "Crear Carpeta"
@@ -2463,14 +2471,6 @@ msgstr "Crear Grabar Previo"
 #: skin_default_skin.xml.h:173
 msgid "Create Settings Menu"
 msgstr "Menu de creacion de Transpondedor"
-
-#: play.h:654
-msgid "Create Sub Menu Favorite"
-msgstr ""
-
-#: play.h:655
-msgid "Create Sub Menu Favorite (Password)"
-msgstr ""
 
 #: skin_default_skin.xml.h:175
 msgid "Create Thumb Picture"
