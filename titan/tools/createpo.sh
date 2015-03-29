@@ -28,14 +28,11 @@ HLIST=`find "$HOME"/flashimg/$SRCDIR/web -type f -name "*.html"`
 ##aus /plugins alle *.h und *.c > tmp
 for ROUND in $LIST; do
 	cp -a $ROUND "$HOME"/flashimg/$SRCDIR/titan/tools/tmp
-	#cat $ROUND | sed 's/\x0D$//' >> "$HOME"/flashimg/$SRCDIR/titan/tools/tmp
 done
 
 for ROUND in $HLIST; do
 	FILENAME=`echo $ROUND | sed 's/.html//g' | tr '/' '\n' | tail -n1`
-	##echo "[createpo] webif update $ROUND"
 	echo "[createpo] webif update $FILENAME from $ROUND"
-
 	cat $ROUND | sed 's/_(/\ntmpstr = _(/g' | grep ^"tmpstr = _(" | sed 's/").*/");/g' >> "$HOME"/flashimg/$SRCDIR/titan/tools/tmp/webif_$FILENAME.h
 done
 
@@ -88,16 +85,11 @@ for ROUND in $POLIST; do
 		ROUND_NEW=`echo $ROUND | sed 's!titan.po_auto.po!titan.new.po!'`
 		ROUND_NEW_MERGE=`echo $ROUND | sed 's!titan.po_auto.po!titan.new.merge.po!'`
 		
-		## "-nt" ("newer than")
-		#if [ $ROUND -nt $ROUND_EDIT ]; then
-			##Aus der titan.po_auto.po alle Kommentare löschen und in titan.po_auto.clean.po speichern
-			echo "[createpo.sh] update $ROUND "`stat -c=%y "$ROUND" `
-			cat $ROUND | sed '/#.*/d' > $ROUND_CLEAN			
-		#else
-			##Gleich die (neuere) titan.po verwenden
-		#	echo "[createpo.sh] update $ROUND_EDIT "`stat -c=%y "$ROUND" `
-		#	cat $ROUND_EDIT | sed '/#.*/d' > $ROUND_CLEAN
-		#fi		
+
+		##Aus der titan.po_auto.po alle Kommentare löschen und in titan.po_auto.clean.po speichern
+		echo "[createpo.sh] update $ROUND "`stat -c=%y "$ROUND" `
+		cat $ROUND | sed '/#.*/d' > $ROUND_CLEAN			
+	
 		if [ ! -e "$ROUND_CLEAN" ] || [ `cat "$ROUND_CLEAN" | wc -l` -eq 0 ]; then error="1"; break;fi
 
 		##cmd="xgettext --omit-header -j -k_ *.* -o $ROUND_UTF"
@@ -123,9 +115,7 @@ for ROUND in $POLIST; do
 		##-q Fortschrittsanzeige unterdrücken
 		msgmerge -q $ROUND_CLEAN $ROUND_NEW > $ROUND_NEW_MERGE	
 		if [ ! -e "$ROUND_NEW_MERGE" ] || [ `cat "$ROUND_NEW_MERGE" | wc -l` -eq 0 ]; then error="7"; break;fi
-				
-		##echo ROUND: $ROUND
-		
+
 		## hier reicht eigentlich nun ROUND_NEW_MERGE, aber wozu "Content-Type:" rauslöschen?
 		##cat $ROUND_CLEAN > $OUTFILE_PO
 		## mit dem Eintrag Content-Type gibt msgfmt zwar keine Warnungen aus, aber titan arbeitet damit falsch!??
@@ -139,9 +129,6 @@ for ROUND in $POLIST; do
 		log=`cat "$HOME"/flashimg/$SRCDIR/error/po.log`
 		if [ `echo $log | grep "fatal error" | wc -l` -gt 0 ]; then error="13"; break;fi
 			
-		##noch so einige unnötige Konvertierungen!
-		##iconv -f UTF-8 -t ISO-8859-1 $ROUND_NEW_MERGE > $ROUND
-		#iconv -f UTF-8 -t ISO-8859-1 $ROUND_MERGE > $ROUND
 		cat $ROUND_NEW_MERGE > $ROUND
 		if [ ! -e "$ROUND" ] || [ `cat "$ROUND" | wc -l` -eq 0 ]; then error="14"; break;fi
 
