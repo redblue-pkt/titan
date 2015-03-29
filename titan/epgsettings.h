@@ -102,8 +102,6 @@ void screenepgscanlist()
 
 void screenepgsettings()
 {
-printf("screenepgsettings.........................\n");
-
 	int rcret = 0;
 	char* ret = NULL;
 	struct skin* epgsettings = getscreen("epgsettings");
