@@ -651,8 +651,8 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 	}
 	else
 	{
-		addmenulist(&mlist, "Create Sub Menu Favorite", _("Create Sub Menu Favorite"), NULL, 0, 0);
-		addmenulist(&mlist, "Create Sub Menu Favorite (Password)", _("Create Sub Menu Favorite (Password)"), NULL, 0, 0);
+		addmenulist(&mlist, "Create Favorites sub folder", _("Create Favorites sub folder"), NULL, 0, 0);
+		addmenulist(&mlist, "Create Favorites sub folder(PIN secured)", _("Create Favorites sub folder(PIN secured)"), NULL, 0, 0);
 
 		if(flag < 199)
 		{
