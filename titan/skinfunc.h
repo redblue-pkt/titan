@@ -880,6 +880,20 @@ char* getepgmarkeddesc(struct skin* node)
 	return NULL;
 }
 
+char* getepgmarkedtitle(struct skin* node)
+{
+	struct epg* epgnode = NULL;
+
+	if(status.markedchannel != NULL)
+	{
+		epgnode = getepgakt(status.markedchannel);
+		if(epgnode != NULL)
+			return epgnode->title;
+	}
+
+	return NULL;
+}
+
 char* getepgmarkedlist(struct skin* node, char* ccount)
 {
 	struct epg* epgnode = NULL;
