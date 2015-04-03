@@ -947,12 +947,30 @@ char* getepgpicon(struct skin* node)
 	return tmpstr;
 }
 
+char* getepgalternatepicon(struct skin* node)
+{
+	char* tmpstr = NULL;
+	
+	if(status.epgchannel != NULL)
+		tmpstr = createpiconpath(status.epgchannel, 1);
+	return tmpstr;
+}
+
 char* getmarkedpicon(struct skin* node)
 {
 	char* tmpstr = NULL;
 	
 	if(status.markedchannel != NULL)
 		tmpstr = createpiconpath(status.markedchannel, 0);
+	return tmpstr;
+}
+
+char* getmarkedalternatepicon(struct skin* node)
+{
+	char* tmpstr = NULL;
+	
+	if(status.markedchannel != NULL)
+		tmpstr = createpiconpath(status.markedchannel, 1);
 	return tmpstr;
 }
 

@@ -95,10 +95,20 @@ void* convertfunc(char *value, uint8_t *rettype)
 		*rettype = FUNCPIC;
 		return &getepgpicon;
 	}
+	if(ostrcmp("getepgalternatepicon", value) == 0)
+	{
+		*rettype = FUNCPIC;
+		return &getepgalternatepicon;
+	}
 	if(ostrcmp("getmarkedpicon", value) == 0)
 	{
 		*rettype = FUNCPIC;
 		return &getmarkedpicon;
+	}
+	if(ostrcmp("getmarkedalternatepicon", value) == 0)
+	{
+		*rettype = FUNCPIC;
+		return &getmarkedalternatepicon;
 	}
 	if(ostrcmp("getsoundtype", value) == 0)
 	{
