@@ -947,6 +947,15 @@ char* getepgpicon(struct skin* node)
 	return tmpstr;
 }
 
+char* getmarkedpicon(struct skin* node)
+{
+	char* tmpstr = NULL;
+	
+	if(status.markedchannel != NULL)
+		tmpstr = createpiconpath(status.markedchannel, 0);
+	return tmpstr;
+}
+
 char* getpicon(struct skin* node)
 {
 	char* tmpstr = NULL;
