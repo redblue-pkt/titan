@@ -883,12 +883,16 @@ char* getepgmarkeddesc(struct skin* node)
 char* getepgmarkedtitle(struct skin* node)
 {
 	struct epg* epgnode = NULL;
+	char* tmpstr = NULL;
 
 	if(status.markedchannel != NULL)
 	{
 		epgnode = getepgakt(status.markedchannel);
 		if(epgnode != NULL)
-			return epgnode->title;
+		{
+			tmpstr = ostrcat(tmpstr, epgnode->title, 1, 0);
+			return tmpstr;
+		}
 	}
 
 	return NULL;
