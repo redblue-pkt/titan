@@ -204,6 +204,8 @@ void* convertfunc(char *value, uint8_t *rettype)
 		return &gettvpic;
 	if(ostrcmp("getepgmarkeddesc", value) == 0)
 		return &getepgmarkeddesc;
+	if(ostrcmp("getepgmarkedtitle", value) == 0)
+		return &getepgmarkedtitle;
 	if(ostrcmp("getepgaktdesc", value) == 0)
 		return &getepgaktdesc;
 	if(ostrcmp("getepgnextdesc", value) == 0)
