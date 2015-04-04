@@ -55,6 +55,8 @@ void screenvfdisplay()
 		addchoicebox(vfdnotstandby, "2", _("time + channel"));
 		addchoicebox(vfdnotstandby, "3", _("time"));
 	}
+	if(checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1)
+		addchoicebox(vfdnotstandby, "3", _("time"));
 	addchoicebox(vfdnotstandby, "4", _("time small"));
 	addchoicebox(vfdnotstandby, "5", _("channel number"));
 	setchoiceboxselection(vfdnotstandby, getconfig("vfdisplay", NULL));

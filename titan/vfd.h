@@ -265,6 +265,11 @@ int writevfd(char *value)
 			memcpy(tmpvalue, value, len);
 			tmpvalue[5] = '\0';
 		}
+		else if(getconfigint("vfdnotstandby", NULL) == 3 && (checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1 ))
+		{	
+			memcpy(tmpvalue, value, len);
+			tmpvalue[5] = '\0';
+		}
 		else if((checkbox("ATEMIO530") == 1 || checkbox("ATEMIO520") == 1 || checkbox("IPBOX91") == 1 || checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1 || checkbox("SPARK") == 1) && len > 4)
 		{
 			memcpy(tmpvalue, value, 4);
