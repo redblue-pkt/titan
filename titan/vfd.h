@@ -265,7 +265,7 @@ int writevfd(char *value)
 			memcpy(tmpvalue, value, len);
 			tmpvalue[5] = '\0';
 		}
-		else if(getconfigint("vfdnotstandby", NULL) == 3 && (checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1 ))
+		else if(getconfigint("vfdisplay", NULL) == 3 && (checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1 ))
 		{	
 			memcpy(tmpvalue, value, len);
 			tmpvalue[5] = '\0';
