@@ -491,6 +491,7 @@ void updatevfd()
 			case 5: // only channel number
 				if(oldvfdchannel != status.aktservice->channel)
 				{
+					tmpstr = ostrcat(tmpstr, "....", 1, 0);
 					if(status.aktservice->channel != NULL)
 					{
 						oldvfdchannel = status.aktservice->channel;
@@ -502,6 +503,7 @@ void updatevfd()
 								struct bouquet* bnode = getbouquetbychannel(mnode->bouquet, status.aktservice->channel->serviceid, status.aktservice->channel->transponderid);
 								if(bnode != NULL)
 								{
+									free(tmpstr); tmpstr=NULL;
 									tmpstr = ostrcat(tmpstr, oitoa(bnode->nr), 1, 1);
 									oldvfdchannelnr = bnode->nr;
 								}
