@@ -260,7 +260,7 @@ int writevfd(char *value)
 			memcpy(tmpvalue, value, 63);
 			tmpvalue[62] = '\0';
 		}
-		else if(status.standby > 0 && getconfigint("vfdisplaystandby", NULL) == 0 && (checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100")) )
+		else if(status.standby > 0 && getconfigint("vfdisplaystandby", NULL) == 0 && (checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1) )
 		{	
 			memcpy(tmpvalue, value, len);
 			tmpvalue[5] = '\0';
