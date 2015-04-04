@@ -10905,11 +10905,11 @@ msgstr "Zwart"
 msgid "blindscanadjust"
 msgstr ""
 
-#: vfdisplay.h:79
+#: vfdisplay.h:81
 msgid "blink"
 msgstr "Knipperen"
 
-#: vfdisplay.h:83
+#: vfdisplay.h:85
 msgid "blink star"
 msgstr "Knipperende ster"
 
@@ -10997,7 +10997,7 @@ msgstr "zender (EPG=Huidige zender)"
 msgid "channel + time"
 msgstr "Zendernaam + tijd"
 
-#: vfdisplay.h:59
+#: vfdisplay.h:61
 msgid "channel number"
 msgstr "Zendernaam + tijd"
 
@@ -11093,7 +11093,7 @@ msgstr "Dagelijks"
 msgid "date"
 msgstr "Datum"
 
-#: vfdisplay.h:66
+#: vfdisplay.h:68
 msgid "date + time"
 msgstr "Datum + Tijd"
 
@@ -11301,7 +11301,7 @@ msgstr ""
 msgid "f"
 msgstr ""
 
-#: vfdisplay.h:80
+#: vfdisplay.h:82
 msgid "fade out/in"
 msgstr "In/uit faden"
 
@@ -11934,7 +11934,7 @@ msgstr ""
 #: panel_settings_overclocking.h:276 readerconfig.h:421
 #: settings_autostart.h:53 settings_overclocking.h:276 transponder.h:256
 #: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:836
-#: vfdisplay.h:63 vfdisplay.h:78
+#: vfdisplay.h:65 vfdisplay.h:80
 msgid "off"
 msgstr "Uit"
 
@@ -12490,7 +12490,7 @@ msgstr "Afhankelijk van aantal automatisch aanpassen"
 msgid "show in list"
 msgstr "Laat in lijst zien"
 
-#: vfdisplay.h:81
+#: vfdisplay.h:83
 msgid "show record"
 msgstr "Toon 'record'"
 
@@ -12596,7 +12596,7 @@ msgstr "Standby"
 msgid "standbymenu"
 msgstr ""
 
-#: vfdisplay.h:82
+#: vfdisplay.h:84
 msgid "star"
 msgstr "Ster"
 
@@ -12795,7 +12795,7 @@ msgstr ""
 msgid "tiWakeup"
 msgstr ""
 
-#: vfdisplay.h:56 vfdisplay.h:62
+#: vfdisplay.h:56 vfdisplay.h:59 vfdisplay.h:64
 msgid "time"
 msgstr "Tijd"
 
@@ -12803,7 +12803,7 @@ msgstr "Tijd"
 msgid "time + channel"
 msgstr "Tijd + zendernaam"
 
-#: vfdisplay.h:58
+#: vfdisplay.h:60
 msgid "time small"
 msgstr "Tijd klein"
 
@@ -13016,7 +13016,7 @@ msgstr "Zeer snel"
 msgid "very slow"
 msgstr "Zeer langzaam"
 
-#: vfdisplay.h:67
+#: vfdisplay.h:69
 msgid "vfddate"
 msgstr "Datum"
 

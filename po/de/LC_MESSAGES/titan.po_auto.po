@@ -11118,11 +11118,11 @@ msgstr "schwarz"
 msgid "blindscanadjust"
 msgstr "Blindscan"
 
-#: vfdisplay.h:79
+#: vfdisplay.h:81
 msgid "blink"
 msgstr "blinken"
 
-#: vfdisplay.h:83
+#: vfdisplay.h:85
 msgid "blink star"
 msgstr "Stern blinkend"
 
@@ -11210,7 +11210,7 @@ msgstr "Sender (EPG=aktiver Sender)"
 msgid "channel + time"
 msgstr "Sender + Uhrzeit"
 
-#: vfdisplay.h:59
+#: vfdisplay.h:61
 msgid "channel number"
 msgstr "Sender Nr."
 
@@ -11306,7 +11306,7 @@ msgstr "Täglich"
 msgid "date"
 msgstr "Datum (Neu-Alt)"
 
-#: vfdisplay.h:66
+#: vfdisplay.h:68
 msgid "date + time"
 msgstr "Datum + Uhrzeit"
 
@@ -11514,7 +11514,7 @@ msgstr ""
 msgid "f"
 msgstr ""
 
-#: vfdisplay.h:80
+#: vfdisplay.h:82
 msgid "fade out/in"
 msgstr "Ein/Ausblenden"
 
@@ -12147,7 +12147,7 @@ msgstr "ö"
 #: panel_settings_overclocking.h:276 readerconfig.h:421
 #: settings_autostart.h:53 settings_overclocking.h:276 transponder.h:256
 #: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:836
-#: vfdisplay.h:63 vfdisplay.h:78
+#: vfdisplay.h:65 vfdisplay.h:80
 msgid "off"
 msgstr "aus"
 
@@ -12711,7 +12711,7 @@ msgstr "automatisch anpassen"
 msgid "show in list"
 msgstr "in Liste zeigen"
 
-#: vfdisplay.h:81
+#: vfdisplay.h:83
 msgid "show record"
 msgstr "Zeige RECORD"
 
@@ -12817,7 +12817,7 @@ msgstr "Standby"
 msgid "standbymenu"
 msgstr "Standby Menü"
 
-#: vfdisplay.h:82
+#: vfdisplay.h:84
 msgid "star"
 msgstr "Stern"
 
@@ -13016,7 +13016,7 @@ msgstr ""
 msgid "tiWakeup"
 msgstr "Wecker"
 
-#: vfdisplay.h:56 vfdisplay.h:62
+#: vfdisplay.h:56 vfdisplay.h:59 vfdisplay.h:64
 msgid "time"
 msgstr "Uhrzeit"
 
@@ -13024,7 +13024,7 @@ msgstr "Uhrzeit"
 msgid "time + channel"
 msgstr "Uhrzeit + Sender"
 
-#: vfdisplay.h:58
+#: vfdisplay.h:60
 msgid "time small"
 msgstr "Uhrzeit (klein)"
 
@@ -13245,7 +13245,7 @@ msgstr "sehr schnell"
 msgid "very slow"
 msgstr "sehr langsam"
 
-#: vfdisplay.h:67
+#: vfdisplay.h:69
 msgid "vfddate"
 msgstr "Datum"
 

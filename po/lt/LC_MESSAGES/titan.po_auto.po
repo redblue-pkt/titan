@@ -10939,11 +10939,11 @@ msgstr "juodas"
 msgid "blindscanadjust"
 msgstr ""
 
-#: vfdisplay.h:79
+#: vfdisplay.h:81
 msgid "blink"
 msgstr "Blink"
 
-#: vfdisplay.h:83
+#: vfdisplay.h:85
 msgid "blink star"
 msgstr "Blinking star"
 
@@ -11031,7 +11031,7 @@ msgstr ""
 msgid "channel + time"
 msgstr "Kanalo pavadinimas + Laikas"
 
-#: vfdisplay.h:59
+#: vfdisplay.h:61
 msgid "channel number"
 msgstr "Kanalo numeris"
 
@@ -11127,7 +11127,7 @@ msgstr "kasdien"
 msgid "date"
 msgstr "Data"
 
-#: vfdisplay.h:66
+#: vfdisplay.h:68
 msgid "date + time"
 msgstr "Date + Time"
 
@@ -11335,7 +11335,7 @@ msgstr "iorinis"
 msgid "f"
 msgstr ""
 
-#: vfdisplay.h:80
+#: vfdisplay.h:82
 msgid "fade out/in"
 msgstr "Fade in/out"
 
@@ -11968,7 +11968,7 @@ msgstr ""
 #: panel_settings_overclocking.h:276 readerconfig.h:421
 #: settings_autostart.h:53 settings_overclocking.h:276 transponder.h:256
 #: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:836
-#: vfdisplay.h:63 vfdisplay.h:78
+#: vfdisplay.h:65 vfdisplay.h:80
 msgid "off"
 msgstr "Ijungti"
 
@@ -12526,7 +12526,7 @@ msgstr "Show entrys (Auto amount)"
 msgid "show in list"
 msgstr "Show in List"
 
-#: vfdisplay.h:81
+#: vfdisplay.h:83
 msgid "show record"
 msgstr "Show 'Record'"
 
@@ -12632,7 +12632,7 @@ msgstr "Budti"
 msgid "standbymenu"
 msgstr ""
 
-#: vfdisplay.h:82
+#: vfdisplay.h:84
 msgid "star"
 msgstr "Star"
 
@@ -12831,7 +12831,7 @@ msgstr ""
 msgid "tiWakeup"
 msgstr "Wake Up"
 
-#: vfdisplay.h:56 vfdisplay.h:62
+#: vfdisplay.h:56 vfdisplay.h:59 vfdisplay.h:64
 msgid "time"
 msgstr "Laikas"
 
@@ -12839,7 +12839,7 @@ msgstr "Laikas"
 msgid "time + channel"
 msgstr "Laikas + Kanalo pavadinimas"
 
-#: vfdisplay.h:58
+#: vfdisplay.h:60
 msgid "time small"
 msgstr "Time small"
 
@@ -13052,7 +13052,7 @@ msgstr "labai greitas"
 msgid "very slow"
 msgstr "labai ltas"
 
-#: vfdisplay.h:67
+#: vfdisplay.h:69
 msgid "vfddate"
 msgstr "Data"
 
