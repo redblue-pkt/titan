@@ -62,10 +62,7 @@ void createtimeline(struct skin* gmultiepg, struct skin* timeline, time_t akttim
 			node->prozwidth = 0;
 			node->posx = posx;
 			node->width = 30 * zoom; //30 min * zoom pixel
-			if(timeline->bordersize != NULL)
-				node->bordersize = timeline->bordersize;
-			else
-				node->bordersize = 1;
+			node->bordersize = timeline->bordersize;
 			posx += node->width;
 			if(posx > timeline->iwidth)
 				node->width -= (posx - timeline->iwidth);
