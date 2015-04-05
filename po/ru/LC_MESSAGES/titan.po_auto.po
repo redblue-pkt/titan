@@ -3110,8 +3110,8 @@ msgstr "Ошибка. Нельзя установить маркер на это
 #: filenuke.h:190 firedrive.h:33 firedrive.h:66 firedrive.h:72 firedrive.h:122
 #: firedrive.h:128 firedrive.h:138 flashx.h:26 flashx.h:84 flashx.h:138
 #: flashx.h:195 flashx.h:233 flashx.h:270 global.h:5851 global.h:6572
-#: global.h:6641 global.h:6660 global.h:6835 global.h:7088 global.h:7101
-#: global.h:7112 global.h:7123 global.h:7134 harddisk.h:359 harddisk.h:492
+#: global.h:6641 global.h:6660 global.h:6835 global.h:7091 global.h:7104
+#: global.h:7115 global.h:7126 global.h:7137 harddisk.h:359 harddisk.h:492
 #: harddisk.h:686 harddisk.h:694 harddisk.h:728 harddisk.h:777 harddisk.h:782
 #: harddisk.h:784 harddisk.h:786 harddisk.h:846 harddisk.h:865 harddisk.h:868
 #: harddisk.h:1099 hbbtv.h:362 hello.c:36 httpdfunc.h:1304 httpdfunc.h:3258
@@ -5629,9 +5629,9 @@ msgstr ""
 #: firedrive.h:66 firedrive.h:72 firedrive.h:122 firedrive.h:128
 #: firedrive.h:138 flashx.h:26 flashx.h:84 flashx.h:138 flashx.h:195
 #: flashx.h:233 flashx.h:270 global.h:5851 global.h:6572 global.h:6641
-#: global.h:6660 global.h:6835 global.h:7088 global.h:7094 global.h:7101
-#: global.h:7105 global.h:7112 global.h:7116 global.h:7123 global.h:7127
-#: global.h:7134 global.h:7138 harddisk.h:686 harddisk.h:694 harddisk.h:728
+#: global.h:6660 global.h:6835 global.h:7091 global.h:7097 global.h:7104
+#: global.h:7108 global.h:7115 global.h:7119 global.h:7126 global.h:7130
+#: global.h:7137 global.h:7141 harddisk.h:686 harddisk.h:694 harddisk.h:728
 #: harddisk.h:777 harddisk.h:782 harddisk.h:784 harddisk.h:786 harddisk.h:846
 #: harddisk.h:865 harddisk.h:868 hbbtv.h:362 hello.c:36 httpdfunc.h:1304
 #: httpdfunc.h:5773 httpdfunc.h:6159 httpdfunc.h:6424 httpdfunc.h:6495
@@ -6164,9 +6164,9 @@ msgstr ""
 #: filenuke.h:190 firedrive.h:33 firedrive.h:66 firedrive.h:72 firedrive.h:122
 #: firedrive.h:128 firedrive.h:138 flashx.h:26 flashx.h:84 flashx.h:138
 #: flashx.h:195 flashx.h:233 flashx.h:270 global.h:5851 global.h:6572
-#: global.h:6641 global.h:6660 global.h:6835 global.h:7088 global.h:7094
-#: global.h:7101 global.h:7105 global.h:7112 global.h:7116 global.h:7123
-#: global.h:7127 global.h:7134 global.h:7138 harddisk.h:359 harddisk.h:492
+#: global.h:6641 global.h:6660 global.h:6835 global.h:7091 global.h:7097
+#: global.h:7104 global.h:7108 global.h:7115 global.h:7119 global.h:7126
+#: global.h:7130 global.h:7137 global.h:7141 harddisk.h:359 harddisk.h:492
 #: harddisk.h:686 harddisk.h:694 harddisk.h:728 harddisk.h:777 harddisk.h:782
 #: harddisk.h:784 harddisk.h:786 harddisk.h:846 harddisk.h:865 harddisk.h:868
 #: harddisk.h:1099 hbbtv.h:362 httpdfunc.h:1304 httpdfunc.h:3258
@@ -8863,23 +8863,23 @@ msgstr "Старт RGUID"
 msgid "Start Record"
 msgstr "Старт записи"
 
-#: global.h:7088
+#: global.h:7091
 msgid "Start Restore Default Bouquets ?"
 msgstr ""
 
-#: global.h:7101
+#: global.h:7104
 msgid "Start Restore Default Channel Settings ?"
 msgstr ""
 
-#: global.h:7123
+#: global.h:7126
 msgid "Start Restore Default Channels ?"
 msgstr ""
 
-#: global.h:7112
+#: global.h:7115
 msgid "Start Restore Default Providers ?"
 msgstr ""
 
-#: global.h:7134
+#: global.h:7137
 msgid "Start Restore Default Sats ?"
 msgstr ""
 
@@ -9596,7 +9596,7 @@ msgstr "Лог Titan"
 msgid "Titan MediaCenter"
 msgstr "Медиацент Titan"
 
-#: global.h:7094 global.h:7105 global.h:7116 global.h:7127 global.h:7138
+#: global.h:7097 global.h:7108 global.h:7119 global.h:7130 global.h:7141
 #: skinadjust.h:317 skinadjust.h:720
 msgid "Titan will be restarted!"
 msgstr "Titan будет перезагружен!"
