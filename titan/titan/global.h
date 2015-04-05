@@ -7072,7 +7072,10 @@ void wakeup_record_device()
 
 	dev = getmoviedev();
 	if(dev == NULL)
+	{
 		cmd = ostrcat("ls -al ", getconfig("rec_path", NULL), 0, 0);
+		cmd = ostrcat(cmd," > /dev/null 2>&1", 1, 0);
+	}
 	else
 		cmd = ostrcat("sdparm -C START /dev/sd", dev, 0, 0);
 
