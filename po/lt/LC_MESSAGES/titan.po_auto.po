@@ -3958,23 +3958,23 @@ msgstr ""
 msgid "G"
 msgstr ""
 
-#: gmultiepg.h:617
+#: gmultiepg.h:614
 msgid "GRAPHIC MULTI EPG - All Channels"
 msgstr "Grafinis Multi EPG - Visi kanalai"
 
-#: gmultiepg.h:565 gmultiepg.h:765 httpdfunc.h:710
+#: gmultiepg.h:562 gmultiepg.h:762 httpdfunc.h:710
 msgid "GRAPHIC MULTI EPG - Bouquets"
 msgstr "Grafinis Multi EPG - Mgstamiausi"
 
-#: gmultiepg.h:578
+#: gmultiepg.h:575
 msgid "GRAPHIC MULTI EPG - Channel"
 msgstr "Grafinis Multi EPG - Kanalai"
 
-#: gmultiepg.h:604
+#: gmultiepg.h:601
 msgid "GRAPHIC MULTI EPG - Provider"
 msgstr "Grafinis Multi EPG - Tiekjai"
 
-#: gmultiepg.h:591
+#: gmultiepg.h:588
 msgid "GRAPHIC MULTI EPG - Satellites"
 msgstr "Grafinis Multi EPG - Palydovai"
 
