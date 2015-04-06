@@ -3901,23 +3901,23 @@ msgstr ""
 msgid "G"
 msgstr ""
 
-#: gmultiepg.h:614
+#: gmultiepg.h:619 gmultiepg.h:620
 msgid "GRAPHIC MULTI EPG - All Channels"
 msgstr "MULTI EPG - Tutti i Canali"
 
-#: gmultiepg.h:562 gmultiepg.h:762 httpdfunc.h:710
+#: gmultiepg.h:563 gmultiepg.h:766 httpdfunc.h:710
 msgid "GRAPHIC MULTI EPG - Bouquets"
 msgstr "Grafico-Multi-EPG - Favoriti"
 
-#: gmultiepg.h:575
+#: gmultiepg.h:577
 msgid "GRAPHIC MULTI EPG - Channel"
 msgstr "Grafico-Multi-EPG - Favoriti"
 
-#: gmultiepg.h:601
+#: gmultiepg.h:605
 msgid "GRAPHIC MULTI EPG - Provider"
 msgstr "Grafico-Multi-EPG - Favoriti"
 
-#: gmultiepg.h:588
+#: gmultiepg.h:591
 msgid "GRAPHIC MULTI EPG - Satellites"
 msgstr "Grafico-Multi-EPG - Favoriti"
 
