@@ -221,10 +221,19 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 		case 5: cmpfunc = rdatesort64; break;
 		default: cmpfunc = oalphasort64; break;
 	}
-
+	char* timestamp = NULL;
+	timestamp = gettimestamp();
+	printf("filelist.h --> createfilelist: scandir64 start %s\n",timestamp);
+	free(timestamp); timestamp = NULL;
+	
 	count = scandir64(node->input , &filelist, 0, cmpfunc);
+	
+	timestamp = gettimestamp();
+	printf("filelist.h --> createfilelist: scandir64 ende %s\n",timestamp);
+	free(timestamp); timestamp = NULL;
 	if(count < 0)
 	{
+		printf("filelist.h --> createfilelist: scandir64 failback");
 		if(getconfig("failbackpath", NULL) != NULL)
 		{
 			perr("scandir");
