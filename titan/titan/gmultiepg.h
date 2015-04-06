@@ -504,6 +504,7 @@ int screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 	struct skin* epgdesc = getscreennode(gmultiepg, "epgdesc");
 	struct skin* epgdate = getscreennode(gmultiepg, "epgdate");
 	struct skin* timeline = getscreennode(gmultiepg, "timeline");
+	struct skin* titletext = getscreennode(gmultiepg, "titletext");
 	struct skin* b2 = getscreennode(gmultiepg, "b2");
 	struct skin* b3 = getscreennode(gmultiepg, "b3");
 	struct skin* b4 = getscreennode(gmultiepg, "b4");
@@ -563,6 +564,7 @@ int screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 			tmpstr1 = ostrcat(tmpstr1, " - ", 1, 0);
 			tmpstr1 = ostrcat(tmpstr1, tmpstr + 10, 1, 0);
 			if(nochanneltitle == 0) changetitle(gmultiepg, tmpstr1);
+			if(titletext != status.skinerr) changetext(titletext, tmpstr1);
 			free(tmpstr1); tmpstr1 = NULL;
 			list = BOUQUETCHANNEL;
 			aktlist = (void*)mainbouquetnode;
@@ -576,6 +578,7 @@ int screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 		tmpstr1 = ostrcat(tmpstr1, " - ", 1, 0);
 		tmpstr1 = ostrcat(tmpstr1, tmpstr + 6, 1, 0);
 		if(nochanneltitle == 0) changetitle(gmultiepg, tmpstr1);
+		if(titletext != status.skinerr) changetext(titletext, tmpstr1);
 		free(tmpstr1); tmpstr1 = NULL;
 		list = AZCHANNEL;
 		character = (int)tmpstr[6];
@@ -589,6 +592,7 @@ int screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 		tmpstr1 = ostrcat(tmpstr1, " - ", 1, 0);
 		tmpstr1 = ostrcat(tmpstr1, tmpstr + 6, 1, 0);
 		if(nochanneltitle == 0) changetitle(gmultiepg, tmpstr1);
+		if(titletext != status.skinerr) changetext(titletext, tmpstr1);
 		free(tmpstr1); tmpstr1 = NULL;
 		satnode = getsat(tmpstr + 6);
 		list = SATCHANNEL;
@@ -602,6 +606,7 @@ int screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 		tmpstr1 = ostrcat(tmpstr1, " - ", 1, 0);
 		tmpstr1 = ostrcat(tmpstr1, tmpstr + 11, 1, 0);
 		if(nochanneltitle == 0) changetitle(gmultiepg, tmpstr1);
+		if(titletext != status.skinerr) changetext(titletext, tmpstr1);
 		free(tmpstr1); tmpstr1 = NULL;
 		providernode = getproviderbyname(tmpstr + 11);
 		list = PROVIDERCHANNEL;
@@ -612,6 +617,7 @@ int screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 	else
 	{
 		if(nochanneltitle == 0) changetitle(gmultiepg, _("GRAPHIC MULTI EPG - All Channels"));
+		if(titletext != status.skinerr) changetext(titletext, _("GRAPHIC MULTI EPG - All Channels"));
 		list = ALLCHANNEL;
 		showallgmepgchannel(gmultiepg, channellistbox, listbox, timeline, zoom, akttime, aktchannel, 0);
 		selectchannelgmepg(channellistbox);
@@ -757,14 +763,12 @@ int screengmultiepg(struct channel* chnode, struct epg* epgnode, int flag)
 					addconfigtmp("rchannellist", tmp);
 				free(tmp); tmp = NULL;
 
-				if(nochanneltitle == 0)
-				{
-					tmpstr1 = ostrcat(tmpstr1, _("GRAPHIC MULTI EPG - Bouquets"), 0, 0);
-					tmpstr1 = ostrcat(tmpstr1, " - ", 1, 0);
-					tmpstr1 = ostrcat(tmpstr1, mnode->name, 1, 0);
-					changetitle(gmultiepg, tmpstr1);
-					free(tmpstr1); tmpstr1 = NULL;
-				}
+				tmpstr1 = ostrcat(tmpstr1, _("GRAPHIC MULTI EPG - Bouquets"), 0, 0);
+				tmpstr1 = ostrcat(tmpstr1, " - ", 1, 0);
+				tmpstr1 = ostrcat(tmpstr1, mnode->name, 1, 0);
+				if(nochanneltitle == 0) changetitle(gmultiepg, tmpstr1);
+				if(titletext != status.skinerr) changetext(titletext, tmpstr1);
+				free(tmpstr1); tmpstr1 = NULL;
 
 				if(status.servicetype == 0)
 					aktchannel = getchannel(getconfigint("serviceid", NULL), getconfigllu("transponderid", NULL));
