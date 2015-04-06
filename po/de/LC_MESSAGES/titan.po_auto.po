@@ -4028,23 +4028,23 @@ msgstr "Funktion"
 msgid "G"
 msgstr ""
 
-#: gmultiepg.h:614
+#: gmultiepg.h:619 gmultiepg.h:620
 msgid "GRAPHIC MULTI EPG - All Channels"
 msgstr "Grafisches Multi-EPG - Alle Sender"
 
-#: gmultiepg.h:562 gmultiepg.h:762 httpdfunc.h:710
+#: gmultiepg.h:563 gmultiepg.h:766 httpdfunc.h:710
 msgid "GRAPHIC MULTI EPG - Bouquets"
 msgstr "Grafisches Multi-EPG - Favoriten"
 
-#: gmultiepg.h:575
+#: gmultiepg.h:577
 msgid "GRAPHIC MULTI EPG - Channel"
 msgstr "Grafisches Multi-EPG - Sender"
 
-#: gmultiepg.h:601
+#: gmultiepg.h:605
 msgid "GRAPHIC MULTI EPG - Provider"
 msgstr "Grafisches Multi-EPG - Anbieter"
 
-#: gmultiepg.h:588
+#: gmultiepg.h:591
 msgid "GRAPHIC MULTI EPG - Satellites"
 msgstr "Grafisches Multi-EPG - Satellit"
 
