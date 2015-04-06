@@ -221,6 +221,7 @@ int createfilelist(struct skin* screen, struct skin* node, int view)
 		case 5: cmpfunc = rdatesort64; break;
 		default: cmpfunc = oalphasort64; break;
 	}
+	printf("filelist.h --> createfilelist: scandir64 dir:%s sort:%i\n",node->input, getconfigint("dirsort", NULL));
 	char* timestamp = NULL;
 	timestamp = gettimestamp();
 	printf("filelist.h --> createfilelist: scandir64 start %s\n",timestamp);
