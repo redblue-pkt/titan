@@ -1,4 +1,3 @@
-#: plugins_wm2014_skin.xml.h:1 skins_wm2014_skin.xml.h:1 tithek_mainmenu.h:1
 msgid ""
 msgstr ""
 "Project-Id-Version: TitanNit 1.64\n"
@@ -2736,19 +2735,19 @@ msgstr "Standard-Schriftart"
 
 #: tpk_description.h:52
 msgid "Default Skin"
-msgstr ""
+msgstr "Standard Skin"
 
 #: tpk_description.h:51
 msgid "Default mod by maenne79"
-msgstr ""
+msgstr "Standard Skin mod | maenne79"
 
 #: tpk_description.h:53
 msgid "Default skin without MiniTV"
-msgstr ""
+msgstr "Standard Skin ohne MiniTV"
 
 #: tpk_description.h:54
 msgid "Default skin without MiniTV mod by maenne79"
-msgstr ""
+msgstr "Standard Skin mod ohne MiniTV | maenne79"
 
 #: skin_default_skin.xml.h:190
 msgid "Del EPG before scan"
@@ -3282,11 +3281,11 @@ msgstr "Bearbeiten"
 
 #: skin_default_skin.xml.h:221
 msgid "Edit Modus Background Color"
-msgstr ""
+msgstr "Bearbeiten Modus Hintergrundfarbe"
 
 #: skin_default_skin.xml.h:222
 msgid "Edit Modus Font Color"
-msgstr ""
+msgstr "Bearbeiten Modus Schriftfarbe"
 
 #: mc_global.h:607
 msgid "Edit Playlist"
@@ -3479,7 +3478,7 @@ msgstr "Verlassen"
 
 #: skin_default_skin.xml.h:246
 msgid "Exit Color"
-msgstr ""
+msgstr "Exit Farbe"
 
 #: plugins_tithek_skin.xml.h:3 skins_tithek_skin.xml.h:3
 msgid "Exit Tithek"
@@ -3782,51 +3781,51 @@ msgstr "Flash-Image (Lokal/Sicherung)"
 
 #: tpk_description.h:68
 msgid "Font 'Action Man Italic' "
-msgstr ""
+msgstr "Schriftart 'Action Man Italic' "
 
 #: tpk_description.h:69
 msgid "Font 'Alpha Romanie G98'"
-msgstr ""
+msgstr "Schriftart 'Alpha Romanie G98'"
 
 #: tpk_description.h:70
 msgid "Font 'Croissant' "
-msgstr ""
+msgstr "Schriftart 'Croissant' "
 
 #: tpk_description.h:71
 msgid "Font 'Digiface Regular' "
-msgstr ""
+msgstr "Schriftart 'Digiface Regular' "
 
 #: tpk_description.h:72
 msgid "Font 'Goodtime'"
-msgstr ""
+msgstr "Schriftart 'Goodtime'"
 
 #: tpk_description.h:73
 msgid "Font 'I Hate Comic Sans'"
-msgstr ""
+msgstr "Schriftart 'I Hate Comic Sans'"
 
 #: tpk_description.h:74
 msgid "Font 'Lydian Bolt Italic BT' "
-msgstr ""
+msgstr "Schriftart 'Lydian Bolt Italic BT' "
 
 #: tpk_description.h:75
 msgid "Font 'Mighty Zeo Caps'"
-msgstr ""
+msgstr "Schriftart 'Mighty Zeo Caps'"
 
 #: tpk_description.h:76
 msgid "Font 'Monoglyceride DemiBold'"
-msgstr ""
+msgstr "Schriftart 'Monoglyceride DemiBold'"
 
 #: tpk_description.h:77
 msgid "Font 'New Gothic BT'"
-msgstr ""
+msgstr "Schriftart 'New Gothic BT'"
 
 #: tpk_description.h:78
 msgid "Font 'Paddington Bold'"
-msgstr ""
+msgstr "Schriftart 'Paddington Bold'"
 
 #: tpk_description.h:79
 msgid "Font 'Plover Bold'"
-msgstr ""
+msgstr "Schriftart 'Plover Bold'"
 
 #: skin_default_skin.xml.h:267
 msgid "Font Color"
@@ -4297,7 +4296,7 @@ msgstr "Hilfe"
 
 #: plugins_readerconfig_skin.xml.h:5 skins_readerconfig_skin.xml.h:5
 msgid "Here you can activate/deactivate you OSCam readers."
-msgstr "Hier können Sie ihre OSCam Reader aktivieren bzw. deaktivieren."
+msgstr "Hier können Sie Ihre OSCam Reader aktivieren bzw. deaktivieren."
 
 #: plugins_networkbrowser_skin.xml.h:11 skins_networkbrowser_skin.xml.h:11
 msgid "Here you can add and configure your network shares."
@@ -4436,7 +4435,7 @@ msgstr ""
 "bearbeiten. OK um den\n"
 "ausgewählten Timer zu\n"
 "bearbeiten. Zusätzlich können\n"
-"Sie dasErgebnis bereits\n"
+"Sie das Ergebnis bereits\n"
 "beendeter Timer prüfen."
 
 #: skin_default_skin.xml.h:315
@@ -4619,7 +4618,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:350
 msgid "Here you can set your language."
-msgstr "Hier können Sie Ihre Sprache einstellen"
+msgstr "Hier können Sie die gewünschte Sprache einstellen"
 
 #: skin_default_skin.xml.h:351
 msgid ""
@@ -7414,7 +7413,7 @@ msgstr "Download wirklich beenden?"
 
 #: skin_default_skin.xml.h:551
 msgid "Rec Progress Color"
-msgstr ""
+msgstr "Aufnahme Fortschritt Farbe"
 
 #: webif_index.atemio5200.h:101 webif_index.atemio6200.h:101
 #: webif_index.atemio7600.h:28 webif_index.atemio7600.h:85
@@ -7648,7 +7647,7 @@ msgstr "Wiederholungsmodus"
 #: webif_message.h:2 webif_playurl.h:3 webif_playurl.h:6
 #: webif_streamconfig.h:7
 msgid "Reset"
-msgstr ""
+msgstr "Zurücksetzen"
 
 #: skin_default_skin.xml.h:567 webif_index.atemio7600.h:18
 #: webif_index.atemio7600.h:118 webif_rc.atemio520.h:4 webif_rc.atemio530.h:4
@@ -9040,23 +9039,23 @@ msgstr "Aufnahme starten"
 
 #: global.h:7091
 msgid "Start Restore Default Bouquets ?"
-msgstr ""
+msgstr "Standard Bouquets wiederherstellen?"
 
 #: global.h:7104
 msgid "Start Restore Default Channel Settings ?"
-msgstr ""
+msgstr "Komplette Standard Senderliste wiederherstellen?"
 
 #: global.h:7126
 msgid "Start Restore Default Channels ?"
-msgstr ""
+msgstr "Standard Senderliste wiederherstellen?"
 
 #: global.h:7115
 msgid "Start Restore Default Providers ?"
-msgstr ""
+msgstr "Standard Anbieterliste wiederherstellen?"
 
 #: global.h:7137
 msgid "Start Restore Default Sats ?"
-msgstr ""
+msgstr "Standard SAT Liste wiederherstellen?"
 
 #: network.h:793
 msgid "Start Wlan ?"
