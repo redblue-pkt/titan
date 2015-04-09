@@ -1,4 +1,3 @@
-#: plugins_wm2014_skin.xml.h:1 skins_wm2014_skin.xml.h:1 tithek_mainmenu.h:1
 msgid ""
 msgstr ""
 "Project-Id-Version: TitanNit 1.64\n"
@@ -10128,8 +10127,9 @@ msgid ""
 "Tunerconfig is not allowed if record\n"
 "or stream is running !"
 msgstr ""
-"Tunerkonfiguration ist während einer aktiven Aufnahme\n"
-"oder einer Streamwiedergabe nicht zugelassen."
+"Tunerkonfiguration ist während einer aktiven\n"
+"Aufnahme oder einer Streamwiedergabe nicht\n"
+"möglich ."
 
 #: security.h:2068 skin_default_skin.xml.h:765
 msgid "Tunertype"
