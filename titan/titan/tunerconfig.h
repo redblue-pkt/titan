@@ -966,7 +966,7 @@ void screentunerconfig()
 				changename(tunernode, dvbnode->feshortname);
 
 				setchoiceboxselection(tunernode, getconfig(dvbnode->feshortname, NULL));
-				if(count == 1 && ostrstr(dvbnode->feinfo->name, "DVB-S") != NULL)
+				if(count == 1 && ostrstr(dvbnode->feinfo->name, "DVB-S") != NULL || ostrstr(dvbnode->feinfo->name, "Multistandard") != NULL)
 					b4->hidden = NO;
 			}
 		}
