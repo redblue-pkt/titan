@@ -78,8 +78,9 @@ struct weather* getweather(char* location)
 	//tmpsearch = ostrcat(tmpsearch, "&hl=de", 1, 0);
 //	tmpsearch = stringreplacechar(tmpsearch, ' ', '+');
 
+	printf("[lcd_weather] tmpsearch: %s\n", tmpsearch);
 	tmpstr = gethttp("weather.service.msn.com", tmpsearch, 80, NULL, NULL, 5000, NULL, 0);
-
+	printf("[lcd_weather] tmpstr: %s\n", tmpstr);
 	free(tmpsearch); tmpsearch = NULL;
 
 	if(tmpstr != NULL)
