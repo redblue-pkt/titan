@@ -5354,23 +5354,23 @@ msgstr "MTD Information"
 msgid "MTH House"
 msgstr ""
 
-#: multiepg.h:497
+#: multiepg.h:502 multiepg.h:503
 msgid "MULTI EPG - All Channels"
 msgstr "Multi EPG - Visi kanalai"
 
-#: multiepg.h:445 multiepg.h:635
+#: multiepg.h:446 multiepg.h:639
 msgid "MULTI EPG - Bouquets"
 msgstr "Multi EPG - Mgstamiausi"
 
-#: multiepg.h:458
+#: multiepg.h:460
 msgid "MULTI EPG - Channel"
 msgstr "Multi EPG - Kanalai"
 
-#: multiepg.h:484
+#: multiepg.h:488
 msgid "MULTI EPG - Provider"
 msgstr "Keli EPG - Tiekjai"
 
-#: multiepg.h:471
+#: multiepg.h:474
 msgid "MULTI EPG - Satellites"
 msgstr "Multi EPG - Palydovai"
 

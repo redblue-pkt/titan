@@ -5294,23 +5294,23 @@ msgstr "Thông tin MTD"
 msgid "MTH House"
 msgstr ""
 
-#: multiepg.h:497
+#: multiepg.h:502 multiepg.h:503
 msgid "MULTI EPG - All Channels"
 msgstr "EPG – Tất cả các chương trình"
 
-#: multiepg.h:445 multiepg.h:635
+#: multiepg.h:446 multiepg.h:639
 msgid "MULTI EPG - Bouquets"
 msgstr "Nhóm lịch chương trình"
 
-#: multiepg.h:458
+#: multiepg.h:460
 msgid "MULTI EPG - Channel"
 msgstr "EPG – Tất cả các chương trình"
 
-#: multiepg.h:484
+#: multiepg.h:488
 msgid "MULTI EPG - Provider"
 msgstr ""
 
-#: multiepg.h:471
+#: multiepg.h:474
 msgid "MULTI EPG - Satellites"
 msgstr "EPG – Tất cả các chương trình"
 
