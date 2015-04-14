@@ -13263,6 +13263,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "Cable: Unitymedia2"
-#~ msgstr "Кабельное: Unitymedia2"
