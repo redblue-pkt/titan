@@ -986,7 +986,7 @@ void screentunerconfig()
 		if(listbox->select != NULL)
 			addconfigscreentmpcheck(listbox->select->name, listbox->select, "0");
 
-		if(ostrstr(listbox->select->text, "DVB-S") != NULL)
+		if(ostrstr(listbox->select->text, "DVB-S") != NULL || ostrstr(listbox->select->text, "STV090x") != NULL)
 			b4->hidden = NO;
 		else
 			b4->hidden = YES;	
