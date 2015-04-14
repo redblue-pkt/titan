@@ -341,7 +341,7 @@ void recordstop(struct service* node, int ret)
 		if(file_exist(getconfig("skriptafterrec", NULL)))
 		{
 			char* cmd = NULL;
-			cmd = ostrcat(getconfig("skriptafterrec", NULL), " \"", 1, 0);
+			cmd = ostrcat(getconfig("skriptafterrec", NULL), " \"", 0, 0);
 			cmd = ostrcat(cmd, dname, 1, 0);
 			cmd = ostrcat(cmd, "/", 1, 0);
 			cmd = ostrcat(cmd, filename, 1, 0);
