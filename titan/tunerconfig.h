@@ -987,7 +987,7 @@ void screentunerconfig()
 			addconfigscreentmpcheck(listbox->select->name, listbox->select, "0");
 
 //		if(ostrstr(listbox->select->text, "DVB-S") != NULL || ostrstr(listbox->select->text, "STV090x") != NULL)		
-		if(listbox->select != NULL && listbox->select->handle != NULL && if(listbox->select != NULL && listbox->select->handle != NULL && ((struct dvbdev*)listbox->select->handle)->feinfo->type == FE_QPSK)		
+		if(listbox->select != NULL && listbox->select->handle != NULL && listbox->select != NULL && listbox->select->handle != NULL && ((struct dvbdev*)listbox->select->handle)->feinfo->type == FE_QPSK)		
 			b4->hidden = NO;
 		else
 			b4->hidden = YES;	
