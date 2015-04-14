@@ -123,7 +123,7 @@ void screenskinadjust()
 	addchoicebox(showrecfreesize, "2", _("yes (Text in MB)"));
 	setchoiceboxselection(showrecfreesize, getconfig("showrecfreesize", NULL));
 
-	addchoicebox(listboxselect, "0", getskinconfig("markcol", NULL));
+	addchoicebox(listboxselect, "0", getskinconfig("listboxselect", NULL));
 	addchoicebox(tithek_selectcol, "1", getskinconfig("tithek_selectcol", NULL));
 	addchoicebox(filelistselect, "2", getskinconfig("filelistselect", NULL));
 	addchoicebox(buttonbar_bgcol, "3", getskinconfig("buttonbar_bgcol", NULL));
