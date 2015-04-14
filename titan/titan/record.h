@@ -342,9 +342,9 @@ void recordstop(struct service* node, int ret)
 		{
 			char* cmd = NULL;
 			cmd = ostrcat(getconfig("skriptafterrec", NULL), " \"", 1, 0);
-			cmd = ostrcat(cmd, ostrcat(dname, NULL, 0, 0), 1, 0);
+			cmd = ostrcat(cmd, dname, 1, 0);
 			cmd = ostrcat(cmd, "/", 1, 0);
-			cmd = ostrcat(cmd, ostrcat(filename, NULL, 0, 0), 1, 0);
+			cmd = ostrcat(cmd, filename, 1, 0);
 			cmd = ostrcat(cmd, "\" &", 1, 0);
 			debug(250, "start cmd: %s", cmd);
 			system(cmd);
@@ -352,8 +352,8 @@ void recordstop(struct service* node, int ret)
 			free(cmd), cmd = NULL;
 		}
 
-		free(dname); dname = NULL;
-		free(filename); filename = NULL;
+		free(dname), dname = NULL;
+		free(filename), filename = NULL;
 
 		//afterevent: 0 = auto
 		//afterevent: 1 = nothing
