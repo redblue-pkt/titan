@@ -258,7 +258,7 @@ void screenownpos()
 	changeinput(longpos, NULL);
 	addchoicebox(longpos, "0", _("east"));
 	addchoicebox(longpos, "1", _("west"));
-	setchoiceboxselection(latpos, getconfig("longpos", NULL));
+	setchoiceboxselection(longpos, getconfig("longpos", NULL));
 
 	drawscreen(ownpos, 0, 0);
 	addscreenrc(ownpos, listbox);
