@@ -30,6 +30,9 @@ int oledtext(char *value)
 {
 	struct skin* OLED_nemesis = NULL;
 	
+	if(geconfigint(oled_off, NULL) == 1)
+		return 0;
+	
 	if(status.updatevfd == PAUSE)
 		OLED_nemesis = getscreen("OLED_nemesis_menu");
 	else if(status.standby > 0)

@@ -161,6 +161,8 @@ void LCD_Samsung1_thread()
 	int weatherref = 0;
 	char* startlcd = NULL;
 	
+	printf("lcd_samsung thread started\n");
+	
 	if(ostrcmp(getconfig("lcd_samsung_plugin_wetter", NULL), "yes") == 0)
 	{
 		if(ostrcmp(getconfig("lcd_samsung_plugin_type", NULL), "spf75h") == 0)
@@ -543,12 +545,15 @@ void LCD_Samsung1_thread()
 				if(type == 1)
 				{
 					// Wettervorhersage
+					printf("lcd_samsung wetter = %s\n", getconfig("lcd_samsung_plugin_wetter", NULL));
 					if(ostrcmp(getconfig("lcd_samsung_plugin_wetter", NULL), "yes") == 0)
 					{
 						if(weatherwrite == 0)
 						{
-							if(weatherthread == NULL)
+							printf("lcd_samsung weatherwrite=0\n");
+							f(weatherthread == NULL)
 							{
+								printf("lcd_samsung weatherthread=NULL\n");
 								if(!file_exist("/tmp/lcdweather"))
 									weatherthread = addtimer(&lcd_writeweather, START, 10000, 1, NULL, NULL, NULL);
 								else
