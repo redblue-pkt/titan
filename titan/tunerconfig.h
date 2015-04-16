@@ -944,7 +944,6 @@ void screentunerconfig()
 
 	drawscreen(tunerconfig, 0, 0);
 
-
 	while(dvbnode != NULL)
 	{
 		if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo != NULL)
@@ -966,7 +965,7 @@ void screentunerconfig()
 				changename(tunernode, dvbnode->feshortname);
 
 				setchoiceboxselection(tunernode, getconfig(dvbnode->feshortname, NULL));
-				if(count == 1 && ostrstr(dvbnode->feinfo->name, "DVB-S") != NULL)
+				if(count == 1 && dvbnode->feinfo->type == FE_QPSK)
 					b4->hidden = NO;
 			}
 		}
