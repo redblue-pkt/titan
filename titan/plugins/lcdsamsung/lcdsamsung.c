@@ -551,7 +551,7 @@ void LCD_Samsung1_thread()
 						if(weatherwrite == 0)
 						{
 							printf("lcd_samsung weatherwrite=0\n");
-							f(weatherthread == NULL)
+							if(weatherthread == NULL)
 							{
 								printf("lcd_samsung weatherthread=NULL\n");
 								if(!file_exist("/tmp/lcdweather"))
