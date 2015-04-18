@@ -90,6 +90,16 @@ void menucheckentry(struct skin* child)
 		else
 			child->hidden = YES;
 	}
+
+	//hide ci menu
+	if(ostrcmp(child->name, "cinterface") == 0)
+	{
+		// atemio6100/6000
+		if(checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1)
+			child->hidden = YES;
+		else
+			child->hidden = NO;
+	}
 }
 //flag 1: fist call
 struct skin* menu(struct skin* menu, int flag)
