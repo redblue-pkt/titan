@@ -734,7 +734,7 @@ int playrcred(char* file, char* showname, int playinfobarstatus, int playertype,
 		else if(ostrcmp(mbox->name, "Delete File") == 0)
 		{
 			playcheckdirrcret(file, 1);
-//			ret = 7;
+			ret = 9999;
 		}
 		else if(ostrcmp(mbox->name, "Downloads") == 0)
 			screenbgdownload(1);

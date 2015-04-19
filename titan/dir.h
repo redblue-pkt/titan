@@ -177,15 +177,26 @@ char* screendirreal(char* path, char* mask, char* selection, int *dirrcret, char
 			}
 			continue;
 		}
-
+printf("1111: flag=%d\n", flag);
 		if(rcret == getrcconfigint("rcok", NULL) || (b1 != NULL && rcret == getrcconfigint("rcred", NULL)) || (b3 != NULL && rcret == getrcconfigint("rcyellow", NULL)) || (b4 != NULL && rcret == getrcconfigint("rcblue", NULL)))
 		{
+printf("2222\n");
+
 			if(filelist->select != NULL && filelist->select->input != NULL) //dir
 			{
+printf("3333\n");
+
 				if(dirrcret != NULL)
 				{
+printf("4444\n");
+
 					if(((flag & 2) || (flag & 16)) && b1 != NULL && rcret == getrcconfigint("rcred", NULL))
 					{
+printf("5555\n");
+ret = createpath(filelistpath->text, filelist->select->text);
+printf("ret=%s\n", ret);
+
+
 						*dirrcret = 1;
 						break;
 					}
@@ -247,7 +258,7 @@ char* screendirreal(char* path, char* mask, char* selection, int *dirrcret, char
 		if(rcret == getrcconfigint("rcinfo", NULL) && status.play == 0 && flag == 64)
 		{
 			char* file = createpath(filelistpath->text, filelist->select->text);
-			if(playrcred(file, NULL, 0, 1, 1) == 7)
+			if(playrcred(file, NULL, 0, 1, 1) == 9999)
 			{
 				delmarkedscreennodes(dir, FILELISTDELMARK);
 				createfilelist(dir, filelist, 0);
