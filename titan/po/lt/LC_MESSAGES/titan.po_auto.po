@@ -3145,8 +3145,8 @@ msgstr "KLAIDA : nepavyko nustatyti ymekl  fail"
 #: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:332
 #: mc_videoplayer.h:749 mc_videoplayer.h:784 mc_videoplayer.h:888
 #: mc_videoplayer.h:904 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
-#: mediadb.h:1477 mediadb.h:2525 mediadbsettings.h:95 menu.h:178 menu.h:233
-#: menu.h:1002 menu.h:1004 movie4k.h:36 movie4k.h:48 movie4k.h:92
+#: mediadb.h:1477 mediadb.h:2525 mediadbsettings.h:95 menu.h:194 menu.h:249
+#: menu.h:1018 menu.h:1020 movie4k.h:36 movie4k.h:48 movie4k.h:92
 #: movie4k.h:399 movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78
 #: movshare.h:157 movshare.h:163 myvideo.h:86 networkbrowser.h:966
 #: networkbrowser.h:1027 networkbrowser.h:1031 networkbrowser.h:1033
@@ -3348,7 +3348,7 @@ msgstr "ERROR: Can't create Filename"
 msgid "Error file not supported"
 msgstr "KLAIDA: Failo tipas nepalaikomas"
 
-#: menu.h:1002
+#: menu.h:1018
 msgid "Error in Save Settings"
 msgstr "KLAIDA: Nustatymai negali bti isaugoti!"
 
@@ -5624,7 +5624,7 @@ msgstr ""
 msgid "Menu Title"
 msgstr ""
 
-#: mc_main.h:283 menu.h:178 panel_main.h:29 panel_main.h:135
+#: mc_main.h:283 menu.h:194 panel_main.h:29 panel_main.h:135
 msgid "Menu not implemented !"
 msgstr "Meniu nra !"
 
@@ -5667,7 +5667,7 @@ msgstr ""
 #: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:332
 #: mc_videoplayer.h:749 mc_videoplayer.h:784 mc_videoplayer.h:888
 #: mc_videoplayer.h:904 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
-#: mediadb.h:1477 mediadbsettings.h:95 menu.h:178 menu.h:233 movie4k.h:36
+#: mediadb.h:1477 mediadbsettings.h:95 menu.h:194 menu.h:249 movie4k.h:36
 #: movie4k.h:48 movie4k.h:92 movie4k.h:399 movreel.h:30 movreel.h:137
 #: movshare.h:34 movshare.h:78 movshare.h:157 movshare.h:163 myvideo.h:86
 #: networkbrowser.h:966 networkbrowser.h:1027 networkbrowser.h:1031
@@ -6205,8 +6205,8 @@ msgstr ""
 #: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:332
 #: mc_videoplayer.h:749 mc_videoplayer.h:784 mc_videoplayer.h:888
 #: mc_videoplayer.h:904 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
-#: mediadb.h:1477 mediadb.h:2525 mediadbsettings.h:95 menu.h:178 menu.h:233
-#: menu.h:1002 menu.h:1004 movie4k.h:36 movie4k.h:48 movie4k.h:92
+#: mediadb.h:1477 mediadb.h:2525 mediadbsettings.h:95 menu.h:194 menu.h:249
+#: menu.h:1018 menu.h:1020 movie4k.h:36 movie4k.h:48 movie4k.h:92
 #: movie4k.h:399 movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78
 #: movshare.h:157 movshare.h:163 myvideo.h:86 networkbrowser.h:966
 #: networkbrowser.h:1027 networkbrowser.h:1031 networkbrowser.h:1033
@@ -7911,7 +7911,7 @@ msgstr "etadienis"
 msgid "Save"
 msgstr "Saugoti"
 
-#: autotimer.c:603 menu.h:1002 menu.h:1004 skin_default_skin.xml.h:604
+#: autotimer.c:603 menu.h:1018 menu.h:1020 skin_default_skin.xml.h:604
 msgid "Save Settings"
 msgstr "Isaugoti nustatymus"
 
@@ -8458,7 +8458,7 @@ msgstr "Save Settings?"
 msgid "Settings backup/restore"
 msgstr "Nustatymai atsargin kopija / atkurti"
 
-#: autotimer.c:603 menu.h:1004
+#: autotimer.c:603 menu.h:1020
 msgid "Settings succesfull saved"
 msgstr "Nustatymai skmingai isaugoti"
 
@@ -8475,7 +8475,7 @@ msgid "Sharename can't be empty!"
 msgstr "KLAIDA: BendroNaudojimoPavadinimas turi bti raytas !"
 
 #: infobar.h:611 mc_audioplayer.h:333 mc_main.h:274 mc_pictureplayer.h:124
-#: mc_videoplayer.h:332 menu.h:233
+#: mc_videoplayer.h:332 menu.h:249
 msgid ""
 "Shooting Background done !\n"
 "Save Screenshoot Path: /tmp/screenshot.jpg"
