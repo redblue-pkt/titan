@@ -3174,8 +3174,8 @@ msgstr "ERROR: No se puede establecer marcadores en este archivo"
 #: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:332
 #: mc_videoplayer.h:749 mc_videoplayer.h:784 mc_videoplayer.h:888
 #: mc_videoplayer.h:904 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
-#: mediadb.h:1477 mediadb.h:2525 mediadbsettings.h:95 menu.h:194 menu.h:249
-#: menu.h:1018 menu.h:1020 movie4k.h:36 movie4k.h:48 movie4k.h:92
+#: mediadb.h:1477 mediadb.h:2525 mediadbsettings.h:95 menu.h:185 menu.h:240
+#: menu.h:1009 menu.h:1011 movie4k.h:36 movie4k.h:48 movie4k.h:92
 #: movie4k.h:399 movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78
 #: movshare.h:157 movshare.h:163 myvideo.h:86 networkbrowser.h:966
 #: networkbrowser.h:1027 networkbrowser.h:1031 networkbrowser.h:1033
@@ -3377,7 +3377,7 @@ msgstr "ERROR: No se puede crear fichero"
 msgid "Error file not supported"
 msgstr "ERROR: Tipo de archivo no soportado"
 
-#: menu.h:1018
+#: menu.h:1009
 msgid "Error in Save Settings"
 msgstr "ERROR: Los ajustes no podran guardarse!"
 
@@ -5674,7 +5674,7 @@ msgstr "Protejer Menu"
 msgid "Menu Title"
 msgstr "Menu Titulo"
 
-#: mc_main.h:283 menu.h:194 panel_main.h:29 panel_main.h:135
+#: mc_main.h:283 menu.h:185 panel_main.h:29 panel_main.h:135
 msgid "Menu not implemented !"
 msgstr "Menu no disponible!"
 
@@ -5717,7 +5717,7 @@ msgstr "Lista de Menus"
 #: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:332
 #: mc_videoplayer.h:749 mc_videoplayer.h:784 mc_videoplayer.h:888
 #: mc_videoplayer.h:904 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
-#: mediadb.h:1477 mediadbsettings.h:95 menu.h:194 menu.h:249 movie4k.h:36
+#: mediadb.h:1477 mediadbsettings.h:95 menu.h:185 menu.h:240 movie4k.h:36
 #: movie4k.h:48 movie4k.h:92 movie4k.h:399 movreel.h:30 movreel.h:137
 #: movshare.h:34 movshare.h:78 movshare.h:157 movshare.h:163 myvideo.h:86
 #: networkbrowser.h:966 networkbrowser.h:1027 networkbrowser.h:1031
@@ -6255,8 +6255,8 @@ msgstr "Ö"
 #: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:332
 #: mc_videoplayer.h:749 mc_videoplayer.h:784 mc_videoplayer.h:888
 #: mc_videoplayer.h:904 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
-#: mediadb.h:1477 mediadb.h:2525 mediadbsettings.h:95 menu.h:194 menu.h:249
-#: menu.h:1018 menu.h:1020 movie4k.h:36 movie4k.h:48 movie4k.h:92
+#: mediadb.h:1477 mediadb.h:2525 mediadbsettings.h:95 menu.h:185 menu.h:240
+#: menu.h:1009 menu.h:1011 movie4k.h:36 movie4k.h:48 movie4k.h:92
 #: movie4k.h:399 movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78
 #: movshare.h:157 movshare.h:163 myvideo.h:86 networkbrowser.h:966
 #: networkbrowser.h:1027 networkbrowser.h:1031 networkbrowser.h:1033
@@ -7967,7 +7967,7 @@ msgstr "Sabado"
 msgid "Save"
 msgstr "Guardar"
 
-#: autotimer.c:603 menu.h:1018 menu.h:1020 skin_default_skin.xml.h:604
+#: autotimer.c:603 menu.h:1009 menu.h:1011 skin_default_skin.xml.h:604
 msgid "Save Settings"
 msgstr "Guarda Configuracion"
 
@@ -8516,7 +8516,7 @@ msgstr "Guardar la configuracion?"
 msgid "Settings backup/restore"
 msgstr "Configuracion backup/restaurar"
 
-#: autotimer.c:603 menu.h:1020
+#: autotimer.c:603 menu.h:1011
 msgid "Settings succesfull saved"
 msgstr "Configuracion guardada con EExito"
 
@@ -8533,7 +8533,7 @@ msgid "Sharename can't be empty!"
 msgstr "ERROR: nombre de recurso compartido debe ingresar!"
 
 #: infobar.h:611 mc_audioplayer.h:333 mc_main.h:274 mc_pictureplayer.h:124
-#: mc_videoplayer.h:332 menu.h:249
+#: mc_videoplayer.h:332 menu.h:240
 msgid ""
 "Shooting Background done !\n"
 "Save Screenshoot Path: /tmp/screenshot.jpg"
