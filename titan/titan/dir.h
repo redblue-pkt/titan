@@ -198,7 +198,7 @@ char* screendirreal(char* path, char* mask, char* selection, int *dirrcret, char
 						*dirrcret = 4;
 						break;
 					}
-					if(flag == 64 && b1 != NULL && rcret == getrcconfigint("rcred", NULL))
+					if(flag == 64 && b1 != NULL && rcret == getrcconfigint("rcred", NULL)) // remove folder
 					{
 						ret = createpath(filelistpath->text, filelist->select->text);
 						*dirrcret = 1;
