@@ -13382,9 +13382,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "MENU"
-#~ msgstr "Menu"
-
-#~ msgid "deaktivate"
-#~ msgstr "desactivar"

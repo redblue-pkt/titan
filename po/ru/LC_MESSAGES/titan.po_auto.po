@@ -13280,9 +13280,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "MENU"
-#~ msgstr "Меню"
-
-#~ msgid "deaktivate"
-#~ msgstr "Остановить"
