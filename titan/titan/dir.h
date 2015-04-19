@@ -177,52 +177,30 @@ char* screendirreal(char* path, char* mask, char* selection, int *dirrcret, char
 			}
 			continue;
 		}
-printf("1111: flag=%d\n", flag);
 		if(rcret == getrcconfigint("rcok", NULL) || (b1 != NULL && rcret == getrcconfigint("rcred", NULL)) || (b3 != NULL && rcret == getrcconfigint("rcyellow", NULL)) || (b4 != NULL && rcret == getrcconfigint("rcblue", NULL)))
 		{
-printf("2222\n");
-
 			if(filelist->select != NULL && filelist->select->input != NULL) //dir
 			{
-printf("3333\n");
-
 				if(dirrcret != NULL)
 				{
-printf("4444\n");
-
 					if(((flag & 2) || (flag & 16)) && b1 != NULL && rcret == getrcconfigint("rcred", NULL))
 					{
-printf("5555\n");
-ret = createpath(filelistpath->text, filelist->select->text);
-printf("ret=%s\n", ret);
-
-
 						*dirrcret = 1;
 						break;
 					}
 					if(((flag & 4) || (flag & 32)) && b3 != NULL && rcret == getrcconfigint("rcyellow", NULL))
 					{
-printf("6666\n");
-ret = createpath(filelistpath->text, filelist->select->text);
-printf("ret=%s\n", ret);
 						*dirrcret = 4;
 						break;
 					}
 					if(((flag & 8) || (flag & 64)) && b4 != NULL && rcret == getrcconfigint("rcblue", NULL))
 					{
-printf("7777\n");
-ret = createpath(filelistpath->text, filelist->select->text);
-printf("ret=%s\n", ret);
 						*dirrcret = 4;
 						break;
 					}
-					if(b1 != NULL && rcret == getrcconfigint("rcred", NULL))
+					if(flag == 64 && b1 != NULL && rcret == getrcconfigint("rcred", NULL))
 					{
-printf("8888\n");
-ret = createpath(filelistpath->text, filelist->select->text);
-printf("ret=%s\n", ret);
-
-
+						ret = createpath(filelistpath->text, filelist->select->text);
 						*dirrcret = 1;
 						break;
 					}
