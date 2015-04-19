@@ -1207,8 +1207,8 @@ void setskinnodeslocked(int flag)
 			{
 				if(ostrcmp("restart", child->name) == 0) child->locked = 1;
 			}
-
-			if(checkbox("SPARK") == 1 || checkbox("SPARK7162") == 1)
+			// hide ci menu
+			if(checkbox("SPARK") == 1 || checkbox("SPARK7162") == 1 || checkbox("ATEMIO6000") == 1 || checkbox("ATEMIO6100") == 1)
 			{
 				if(ostrcmp("cinterface", child->name) == 0) child->locked = 1;
 			}
