@@ -1906,7 +1906,7 @@ msgstr ""
 #: dvdplay.h:62 mc_audioplayer.h:605 mc_audioplayer.h:716 mc_global.h:773
 #: mc_global.h:1020 mc_pictureplayer.h:100 mc_pictureplayer.h:242
 #: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:749
-#: mc_videoplayer.h:888 play.h:1501
+#: mc_videoplayer.h:888 play.h:1508
 msgid "Can't start playback !"
 msgstr ""
 
@@ -2499,7 +2499,7 @@ msgstr ""
 msgid "DEFAULT"
 msgstr ""
 
-#: play.h:1425 plugins_networkbrowser_skin.xml.h:6 plugins_stock_skin.xml.h:3
+#: play.h:1432 plugins_networkbrowser_skin.xml.h:6 plugins_stock_skin.xml.h:3
 #: plugins_weather_skin.xml.h:2 skin_default_skin.xml.h:190
 #: skins_networkbrowser_skin.xml.h:6 skins_stock_skin.xml.h:3
 #: skins_weather_skin.xml.h:2
@@ -2993,7 +2993,7 @@ msgstr ""
 msgid "EJECT"
 msgstr "Eject"
 
-#: adjust.h:71 adjust.h:326 httpdfunc.h:3873 play.h:1425
+#: adjust.h:71 adjust.h:326 httpdfunc.h:3873 play.h:1432
 #: skin_default_skin.xml.h:231 webif_index.atemio5200.h:34
 #: webif_index.atemio5200.h:90 webif_index.atemio6200.h:34
 #: webif_index.atemio6200.h:90 webif_index.atemio7600.h:65
@@ -3163,7 +3163,7 @@ msgstr "ERROR: can't set marker in this file"
 #: nowvideo.h:105 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:84 played.h:90 played.h:102 played.h:114 played.h:171
 #: player.h:108 play.h:497 play.h:614 play.h:1284 play.h:1290 play.h:1299
-#: play.h:1300 play.h:1501 play.h:1717 play.h:1728
+#: play.h:1300 play.h:1508 play.h:1724 play.h:1735
 #: plugins_autotimer_skin.xml.h:6 plugins_callmonitor1_skin.xml.h:10
 #: plugins_catcatch_skin.xml.h:3 plugins_dlna_skin.xml.h:1
 #: plugins_facebook_skin.xml.h:2 plugins_instar_skin.xml.h:5
@@ -5409,11 +5409,11 @@ msgstr ""
 msgid "Marker"
 msgstr ""
 
-#: play.h:1717
+#: play.h:1724
 msgid "Marker autoseek is started"
 msgstr "Marker autoseek started"
 
-#: play.h:1728
+#: play.h:1735
 msgid "Marker autoseek is stopped"
 msgstr "Marker autoseek stopped"
 
@@ -5681,7 +5681,7 @@ msgstr ""
 #: novamov.h:35 novamov.h:80 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105
 #: panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6 played.h:30
 #: played.h:84 played.h:90 played.h:102 played.h:114 played.h:171 player.h:108
-#: play.h:614 play.h:1299 play.h:1501 play.h:1717 play.h:1728 possetup.h:98
+#: play.h:614 play.h:1299 play.h:1508 play.h:1724 play.h:1735 possetup.h:98
 #: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
 #: promptfile.h:46 promptfile.h:94 promptfile.h:136 putlocker.h:32
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
@@ -6222,7 +6222,7 @@ msgstr ""
 #: nowvideo.h:44 nowvideo.h:99 nowvideo.h:105 panel_main.h:29 panel_main.h:135
 #: panel_settings_wizard.h:6 played.h:30 played.h:84 played.h:90 played.h:102
 #: played.h:114 played.h:171 player.h:108 play.h:497 play.h:614 play.h:1284
-#: play.h:1290 play.h:1299 play.h:1300 play.h:1501 play.h:1717 play.h:1728
+#: play.h:1290 play.h:1299 play.h:1300 play.h:1508 play.h:1724 play.h:1735
 #: plugins_dlna_skin.xml.h:7 plugins_facebook_skin.xml.h:3
 #: plugins_mboxinfo_skin.xml.h:2 plugins_mc_skin.xml.h:35
 #: plugins_optimize_skin.xml.h:2 plugins_rgui_skin.xml.h:2
@@ -7703,7 +7703,7 @@ msgstr ""
 msgid "SEARCH"
 msgstr "Search"
 
-#: dvdplay.h:29 play.h:1425 plugins_dlna_skin.xml.h:9 skins_dlna_skin.xml.h:9
+#: dvdplay.h:29 play.h:1432 plugins_dlna_skin.xml.h:9 skins_dlna_skin.xml.h:9
 msgid "SELECT"
 msgstr "Select"
 
@@ -7723,7 +7723,7 @@ msgstr ""
 msgid "SNR:"
 msgstr ""
 
-#: play.h:1425
+#: play.h:1432
 msgid "SORT"
 msgstr ""
 
