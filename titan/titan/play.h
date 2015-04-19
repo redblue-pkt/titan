@@ -1300,6 +1300,13 @@ int playcheckdirrcret(char* file, int dirrcret)
 		else if(textbox(_("Really Delete ?"), file, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 200, 0, 0) == 1)
 		{
 			unlink(file);
+			if(file_exist(file))
+			{
+				char* cmd = ostrcat("rm -rf ", file, 0, 0);
+				debug(10, "cmd: %s", cmd);
+				system(cmd);
+				free(cmd), cmd = NULL;
+			}			
 			epgfilename = changefilenameext(file, ".epg");
 			unlink(epgfilename);
 			free(epgfilename); epgfilename = NULL;
