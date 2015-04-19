@@ -1,7 +1,7 @@
 #: plugins_wm2014_skin.xml.h:1 skins_wm2014_skin.xml.h:1 tithek_mainmenu.h:1
 msgid ""
 msgstr ""
-"Project-Id-Version: TitanNit 1.62\n"
+"Project-Id-Version: TitanNit 1.65\n"
 "POT-Creation-Date: 2014-02-07 10:44+0100\n"
 "PO-Revision-Date: 2015-01-11 21:36+0100\n"
 "Last-Translator: Ser6 <ser6@bk.ru>\n"
@@ -1719,7 +1719,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:147
 msgid "CI-MENU"
-msgstr ""
+msgstr "CI-Меню"
 
 #: skin_default_skin.xml.h:151
 msgid "CLEAR INPUT"
@@ -11113,7 +11113,7 @@ msgstr "Дата и время создания"
 
 #: moduleconfig.h:169
 msgid "deactivate"
-msgstr ""
+msgstr "Остановить"
 
 #: adjust.h:121 adjust.h:131 adjust.h:185 epgsettings.h:148 epgsettings.h:154
 #: httpdfunc.h:4086 httpdfunc.h:4144 httpdfunc.h:4535 network.h:612
