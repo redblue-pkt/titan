@@ -216,7 +216,7 @@ printf("ret=%s\n", ret);
 						*dirrcret = 4;
 						break;
 					}
-					if(flag = 64 && b1 != NULL && rcret == getrcconfigint("rcred", NULL))
+					if(b1 != NULL && rcret == getrcconfigint("rcred", NULL))
 					{
 printf("8888\n");
 ret = createpath(filelistpath->text, filelist->select->text);
