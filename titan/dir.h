@@ -202,11 +202,17 @@ printf("ret=%s\n", ret);
 					}
 					if(((flag & 4) || (flag & 32)) && b3 != NULL && rcret == getrcconfigint("rcyellow", NULL))
 					{
+printf("6666\n");
+ret = createpath(filelistpath->text, filelist->select->text);
+printf("ret=%s\n", ret);
 						*dirrcret = 4;
 						break;
 					}
 					if(((flag & 8) || (flag & 64)) && b4 != NULL && rcret == getrcconfigint("rcblue", NULL))
 					{
+printf("7777\n");
+ret = createpath(filelistpath->text, filelist->select->text);
+printf("ret=%s\n", ret);
 						*dirrcret = 4;
 						break;
 					}
