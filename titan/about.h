@@ -10,7 +10,7 @@ int screenabout(void)
 	free(tmpstr);
 
 	return 0;
-}
+} 
 
 #endif
 
