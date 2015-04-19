@@ -1,7 +1,6 @@
-#: plugins_wm2014_skin.xml.h:1 skins_wm2014_skin.xml.h:1 tithek_mainmenu.h:1
 msgid ""
 msgstr ""
-"Project-Id-Version: TitanNit 1.64\n"
+"Project-Id-Version: TitanNit 1.65\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
 "Last-Translator:  <aaf-caliban@e.mail.de>\n"
@@ -1740,7 +1739,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:147
 msgid "CI-MENU"
-msgstr ""
+msgstr "CI-Menü"
 
 #: skin_default_skin.xml.h:151
 msgid "CLEAR INPUT"
@@ -4336,7 +4335,7 @@ msgstr ""
 #: skin_default_skin.xml.h:303
 msgid "Here you can assign channels to a specific CI-Module."
 msgstr ""
-"Hier können Sie Sender einem bestimmten Modul zuordnen.\n"
+"Hier können Sie Sender und Favoriten einem bestimmten Modul zuordnen.\n"
 "OK zum Verlassen"
 
 #: skin_default_skin.xml.h:304
@@ -10943,7 +10942,7 @@ msgstr ""
 
 #: moduleconfig.h:168
 msgid "activate"
-msgstr "Aktivieren"
+msgstr "aktivieren"
 
 #: softcam.h:93 softcam.h:105
 msgid "active"
@@ -11323,7 +11322,7 @@ msgstr "Datum Uhrzeit"
 
 #: moduleconfig.h:169
 msgid "deactivate"
-msgstr ""
+msgstr "deaktivieren"
 
 #: adjust.h:121 adjust.h:131 adjust.h:185 epgsettings.h:148 epgsettings.h:154
 #: httpdfunc.h:4086 httpdfunc.h:4144 httpdfunc.h:4535 network.h:612

@@ -1,7 +1,7 @@
 #: plugins_wm2014_skin.xml.h:1 skins_wm2014_skin.xml.h:1 tithek_mainmenu.h:1
 msgid ""
 msgstr ""
-"Project-Id-Version: TitanNit 1.49\n"
+"Project-Id-Version: TitanNit 1.65\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-07 10:44+0200\n"
 "PO-Revision-Date: 2014-02-07 17:47+0200\n"
@@ -11044,7 +11044,7 @@ msgstr "ngày giờ"
 
 #: moduleconfig.h:169
 msgid "deactivate"
-msgstr ""
+msgstr "tắt"
 
 #: adjust.h:121 adjust.h:131 adjust.h:185 epgsettings.h:148 epgsettings.h:154
 #: httpdfunc.h:4086 httpdfunc.h:4144 httpdfunc.h:4535 network.h:612
