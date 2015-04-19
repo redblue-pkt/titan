@@ -65,6 +65,22 @@ void menucheckentry(struct skin* child)
 		}
 		return;
 	}
+
+	// Hide rotor setup when no sat tuner is installed
+	if(ostrcmp(child->name, "rotorsettings") == 0)
+	{
+		child->hidden = YES;
+		while(dvbnode != NULL)
+		{
+			if(dvbnode->type == FRONTENDDEV && dvbnode->feinfo != NULL && dvbnode->feinfo->type == FE_QPSK)
+			{
+				child->hidden = NO;
+				break;
+			}
+			dvbnode = dvbnode->next;
+		}
+		return;
+	}
 	
 	// Hide FanControl when no ufs922
 	if(ostrcmp(child->name, "fancontrol") == 0)
