@@ -863,7 +863,7 @@ msgstr ""
 msgid "Alpha Romanie G98"
 msgstr ""
 
-#: tithek.c:85
+#: tithek.c:86
 msgid ""
 "Alternativ Audio Firmware not working korrekt with all videos (DTSDOWNMIX)!"
 msgstr ""
@@ -3094,10 +3094,10 @@ msgstr ""
 #: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
 #: hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200
 #: imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:611
-#: infobar.h:735 info.h:27 keyactions.h:205 log.h:46 log.h:48 marker.h:215
-#: marker.h:229 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
-#: mc_audioplayer.h:333 mc_audioplayer.h:605 mc_audioplayer.h:716
-#: mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
+#: infobar.h:735 info.h:27 keyactions.h:205 letwatch.h:30 letwatch.h:69
+#: log.h:46 log.h:48 marker.h:215 marker.h:229 mboxinfo.c:49 mboxinfo.c:73
+#: mboxinfo.c:77 mboxinfo.c:163 mc_audioplayer.h:333 mc_audioplayer.h:605
+#: mc_audioplayer.h:716 mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
 #: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
 #: mc_main.h:100 mc_main.h:274 mc_main.h:283 mc_mediathek.h:35
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
@@ -3160,7 +3160,7 @@ msgstr ""
 #: thefile.h:205 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1009
 #: titan.c:1018 titan.c:1146 titan.c:1167 titan.c:1173 titan.c:1184
-#: titan.c:1190 tithek.c:85 tithek_global.h:250 tithek.h:670 tithek.h:1224
+#: titan.c:1190 tithek.c:86 tithek_global.h:252 tithek.h:670 tithek.h:1224
 #: tithek.h:1285 tithek.h:1535 tithek.h:1557 tithek.h:1574 tithek.h:1806
 #: tithek.h:1986 tithek.h:2206 tithek.h:2234 tithek.h:2250 tithek.h:2262
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
@@ -4499,9 +4499,9 @@ msgid "Horror"
 msgstr ""
 
 #: divxstage.h:36 faststream.h:30 filenuke.h:46 firedrive.h:33 flashx.h:26
-#: movreel.h:30 movshare.h:34 novamov.h:35 nowvideo.h:44 played.h:30
-#: primeshare.h:29 promptfile.h:46 putlocker.h:32 shared.h:29 streamcloud.h:31
-#: thefile.h:34 videoweed.h:35 vidstream.h:45 xvidstage.h:54
+#: letwatch.h:30 movreel.h:30 movshare.h:34 novamov.h:35 nowvideo.h:44
+#: played.h:30 primeshare.h:29 promptfile.h:46 putlocker.h:32 shared.h:29
+#: streamcloud.h:31 thefile.h:34 videoweed.h:35 vidstream.h:45 xvidstage.h:54
 msgid "Hoster Url not http://"
 msgstr ""
 
@@ -5581,8 +5581,8 @@ msgstr ""
 #: hwtest.h:632 hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685
 #: imdbapi.h:200 imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200
 #: infobar.h:611 infobar.h:735 keyactions.h:205 language.h:49 lcdpearl1.c:49
-#: lcdsamsung.c:101 log.h:46 log.h:48 marker.h:215 marker.h:229
-#: mc_audioplayer.h:333 mc_audioplayer.h:605 mc_audioplayer.h:716
+#: lcdsamsung.c:101 letwatch.h:30 letwatch.h:69 log.h:46 log.h:48 marker.h:215
+#: marker.h:229 mc_audioplayer.h:333 mc_audioplayer.h:605 mc_audioplayer.h:716
 #: mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
 #: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
 #: mc_main.h:100 mc_main.h:274 mc_main.h:283 mc_mediathek.h:35
@@ -5623,8 +5623,8 @@ msgstr ""
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1146
-#: titan.c:1167 titan.c:1173 titan.c:1184 titan.c:1190 tithek.c:85
-#: tithek_global.h:250 tithek.h:670 tithek.h:1224 tithek.h:1285 tithek.h:1535
+#: titan.c:1167 titan.c:1173 titan.c:1184 titan.c:1190 tithek.c:86
+#: tithek_global.h:252 tithek.h:670 tithek.h:1224 tithek.h:1285 tithek.h:1535
 #: tithek.h:1557 tithek.h:1806 tithek.h:1986 tithek.h:2206 tithek.h:2234
 #: tithek.h:2250 tithek.h:2262 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
@@ -6114,9 +6114,9 @@ msgstr ""
 #: hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200
 #: imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:611
 #: infobar.h:735 info.h:27 keyactions.h:205 lcdpearl1.c:49 lcdsamsung.c:101
-#: log.h:46 log.h:48 mboxinfo.c:49 mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163
-#: mc_audioplayer.h:333 mc_audioplayer.h:605 mc_audioplayer.h:716
-#: mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
+#: letwatch.h:30 letwatch.h:69 log.h:46 log.h:48 mboxinfo.c:49 mboxinfo.c:73
+#: mboxinfo.c:77 mboxinfo.c:163 mc_audioplayer.h:333 mc_audioplayer.h:605
+#: mc_audioplayer.h:716 mc_dateibrowser.h:36 mc_global.h:773 mc_global.h:1020
 #: mc_internetbrowser.h:36 mc_main.h:50 mc_main.h:55 mc_main.h:60 mc_main.h:95
 #: mc_main.h:100 mc_main.h:274 mc_main.h:283 mc_mediathek.h:35
 #: mc_pictureplayer.h:100 mc_pictureplayer.h:124 mc_pictureplayer.h:242
@@ -6171,7 +6171,7 @@ msgstr ""
 #: thefile.h:205 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1009
 #: titan.c:1018 titan.c:1146 titan.c:1167 titan.c:1173 titan.c:1184
-#: titan.c:1190 tithek.c:85 tithek_global.h:250 tithek.h:670 tithek.h:1224
+#: titan.c:1190 tithek.c:86 tithek_global.h:252 tithek.h:670 tithek.h:1224
 #: tithek.h:1285 tithek.h:1535 tithek.h:1557 tithek.h:1574 tithek.h:1806
 #: tithek.h:1986 tithek.h:2206 tithek.h:2234 tithek.h:2250 tithek.h:2262
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
@@ -9270,20 +9270,20 @@ msgid ""
 "The file is being transfered to our other servers. This may take few minutes."
 msgstr ""
 
-#: tithek_global.h:250 tithek.h:2206
+#: tithek_global.h:252 tithek.h:2206
 msgid "The hoster is not yet supported !"
 msgstr ""
 
 #: divxstage.h:150 faststream.h:79 faststream.h:90 faststream.h:102
 #: faststream.h:160 filenuke.h:94 filenuke.h:105 filenuke.h:117 filenuke.h:190
 #: firedrive.h:66 firedrive.h:122 firedrive.h:137 flashx.h:83 flashx.h:137
-#: flashx.h:194 flashx.h:232 flashx.h:269 movreel.h:137 movshare.h:157
-#: played.h:84 played.h:101 played.h:113 played.h:171 primeshare.h:73
-#: primeshare.h:124 promptfile.h:94 promptfile.h:136 putlocker.h:79
-#: putlocker.h:142 putlocker.h:151 putlocker.h:225 shared.h:82 solarmovie.h:35
-#: solarmovie.h:46 streamcloud.h:84 streamcloud.h:97 streamcloud.h:128
-#: streamcloud.h:187 vidstream.h:86 vidstream.h:97 vidstream.h:167
-#: xvidstage.h:100 xvidstage.h:177
+#: flashx.h:194 flashx.h:232 flashx.h:269 letwatch.h:69 movreel.h:137
+#: movshare.h:157 played.h:84 played.h:101 played.h:113 played.h:171
+#: primeshare.h:73 primeshare.h:124 promptfile.h:94 promptfile.h:136
+#: putlocker.h:79 putlocker.h:142 putlocker.h:151 putlocker.h:225 shared.h:82
+#: solarmovie.h:35 solarmovie.h:46 streamcloud.h:84 streamcloud.h:97
+#: streamcloud.h:128 streamcloud.h:187 vidstream.h:86 vidstream.h:97
+#: vidstream.h:167 xvidstage.h:100 xvidstage.h:177
 msgid "The page is temporarily unavailable"
 msgstr ""
 
@@ -9561,7 +9561,7 @@ msgstr ""
 msgid "TitanNit on fire"
 msgstr ""
 
-#: tithek.c:107
+#: tithek.c:108
 msgid "Tithek - Mainmenu"
 msgstr ""
 
