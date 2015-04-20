@@ -51,7 +51,16 @@ int oledtext(char *value)
 		changetext(textbox, "EPG-Scan");
 	else
 		changetext(textbox, value);
-	drawscreen(OLED_nemesis, 0, 0);
+	if(getconfigint("oled_mutex", NULL) == 1)
+	{
+		m_lock(&status.drawingmutex, 0);
+		drawscreen(OLED_nemesis, 0, 2);
+		m_unlock(&status.drawingmutex, 0);
+	}
+	else
+		drawscreen(OLED_nemesis, 0, 0);
+	
+	
 	
 	return 0;
 }
