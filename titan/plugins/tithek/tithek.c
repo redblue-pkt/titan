@@ -48,6 +48,7 @@
 #include "letwatch.h"
 #include "vidbull.h"
 #include "vodlocker.h"
+#include "vidto.h"
 
 char pluginname[] = "TiTan Mediathek";
 char plugindesc[] = "TiTan Mediathek";
