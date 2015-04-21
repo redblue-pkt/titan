@@ -49,9 +49,9 @@ char* solarmovie(char* link)
 	}
             
 	string_strip_whitechars(tmpstr);
-	if(ostrstr(tmpstr, "<div class=\"thirdPartyEmbContainer\">") != NULL)
+	if(ostrstr(tmpstr, "<div class=\"thirdPartyEmbContainer\"") != NULL)
 	{
-		tmpstr1 = string_resub("<div class=\"thirdPartyEmbContainer\">", "</div>", tmpstr, 0);
+		tmpstr1 = string_resub("<div class=\"thirdPartyEmbContainer\"", "</div>", tmpstr, 0);
 		stringreplacechar(tmpstr1, '\n', ' ');
 
 		url = oregex(".*(http://.*).*\"", tmpstr1);
