@@ -47,6 +47,7 @@
 #include "promptfile.h"
 #include "letwatch.h"
 #include "vidbull.h"
+#include "vodlocker.h"
 
 char pluginname[] = "TiTan Mediathek";
 char plugindesc[] = "TiTan Mediathek";
