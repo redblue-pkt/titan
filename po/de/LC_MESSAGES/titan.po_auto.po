@@ -3251,9 +3251,9 @@ msgstr "FEHLER: In dieser Datei kann kein Marker gesetzt werden"
 #: skins_sudoku_skin.xml.h:7 skins_tiwakeup_skin.xml.h:1
 #: skins_wins3_skin.xml.h:1 sock.h:952 softcam.h:411 softcam.h:474
 #: softcam.h:475 solarmovie.h:35 solarmovie.h:47 solarmovie.h:304 spinner.h:18
-#: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:84
-#: streamcloud.h:97 streamcloud.h:128 streamcloud.h:187 stream.h:33
-#: system_backup_restore.h:31 system_backup_restore.h:40
+#: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:80
+#: streamcloud.h:90 streamcloud.h:103 streamcloud.h:134 streamcloud.h:193
+#: stream.h:33 system_backup_restore.h:31 system_backup_restore.h:40
 #: system_backup_restore.h:43 system_backup_restore.h:51
 #: system_backup_restore.h:80 system_backup_restore.h:82
 #: system_backup_restore.h:88 system_backup_restore.h:95 system_update.h:257
@@ -5840,9 +5840,9 @@ msgstr "Menüliste"
 #: service.h:983 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:317
 #: skinadjust.h:720 skinselector.h:231 sock.h:952 softcam.h:411 softcam.h:474
 #: softcam.h:475 solarmovie.h:35 solarmovie.h:47 solarmovie.h:304 spinner.h:18
-#: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:84
-#: streamcloud.h:97 streamcloud.h:128 streamcloud.h:187 stream.h:33
-#: system_backup_restore.h:40 system_backup_restore.h:43
+#: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:80
+#: streamcloud.h:90 streamcloud.h:103 streamcloud.h:134 streamcloud.h:193
+#: stream.h:33 system_backup_restore.h:40 system_backup_restore.h:43
 #: system_backup_restore.h:80 system_backup_restore.h:82 system_update.h:257
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 timeshift.h:113 timeshift.h:161 timeshift.h:173
@@ -6392,9 +6392,9 @@ msgstr "Ö"
 #: skins_sudoku_skin.xml.h:13 skins_tiwakeup_skin.xml.h:2
 #: skins_wins3_skin.xml.h:3 sock.h:952 softcam.h:411 softcam.h:474
 #: softcam.h:475 solarmovie.h:35 solarmovie.h:47 solarmovie.h:304 spinner.h:18
-#: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:84
-#: streamcloud.h:97 streamcloud.h:128 streamcloud.h:187 stream.h:33
-#: system_backup_restore.h:31 system_backup_restore.h:40
+#: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:80
+#: streamcloud.h:90 streamcloud.h:103 streamcloud.h:134 streamcloud.h:193
+#: stream.h:33 system_backup_restore.h:31 system_backup_restore.h:40
 #: system_backup_restore.h:43 system_backup_restore.h:51
 #: system_backup_restore.h:80 system_backup_restore.h:82
 #: system_backup_restore.h:88 system_backup_restore.h:95 system_update.h:257
@@ -9556,14 +9556,14 @@ msgstr "Der Anbieter wird zur Zeit nicht unterstützt!"
 #: played.h:171 primeshare.h:73 primeshare.h:124 promptfile.h:94
 #: promptfile.h:136 putlocker.h:79 putlocker.h:142 putlocker.h:151
 #: putlocker.h:225 shared.h:82 solarmovie.h:35 solarmovie.h:46
-#: streamcloud.h:84 streamcloud.h:97 streamcloud.h:128 streamcloud.h:187
+#: streamcloud.h:90 streamcloud.h:103 streamcloud.h:134 streamcloud.h:193
 #: vidbull.h:92 vidstream.h:86 vidstream.h:97 vidstream.h:167 vidto.h:67
 #: vidto.h:88 vidto.h:122 vidto.h:168 vodlocker.h:69 xvidstage.h:100
 #: xvidstage.h:177
 msgid "The page is temporarily unavailable"
 msgstr "Die gewünschte Seite ist vorübergehend nicht erreichbar"
 
-#: streamcloud.h:74
+#: streamcloud.h:74 streamcloud.h:80
 msgid "The page not found, file removed"
 msgstr "Die gewünschte Seite wurde nicht gefunden, Datei vom Hoster entfernt"
 
