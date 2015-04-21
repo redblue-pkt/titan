@@ -201,7 +201,7 @@ char* filenuke(char* link)
 	debug(99, "post: %s", post);
 	titheklog(debuglevel, "/tmp/filenuke4_post2", NULL, NULL, NULL, post);
 
-	streamlink = string_resub("var lnk1 = '", "';", post, 0);
+	streamlink = string_resub("var lnk234 = '", "';", post, 0);
 	if(streamlink != NULL)
 	{
 		streamlink = ostrcat(streamlink, "|User-Agent=Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:30.0) Gecko/20100101 Firefox/30.0", 1, 0);
