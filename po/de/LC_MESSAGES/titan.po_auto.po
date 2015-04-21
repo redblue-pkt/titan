@@ -892,7 +892,7 @@ msgstr "Erlaube Umschalten durch Live Stream"
 msgid "Alpha Romanie G98"
 msgstr ""
 
-#: tithek.c:88
+#: tithek.c:89
 msgid ""
 "Alternativ Audio Firmware not working korrekt with all videos (DTSDOWNMIX)!"
 msgstr ""
@@ -2389,7 +2389,7 @@ msgstr "Wetter: "
 msgid "Configure"
 msgstr "Datenträger konfigurieren"
 
-#: faststream.h:107 played.h:118
+#: faststream.h:107 played.h:118 vidto.h:77
 msgid "Connect with Hoster wait 10 seconds"
 msgstr "Verbinde mit dem Hoster, warten Sie 10 Sekunden"
 
@@ -3261,7 +3261,7 @@ msgstr "FEHLER: In dieser Datei kann kein Marker gesetzt werden"
 #: thefile.h:205 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1009
 #: titan.c:1018 titan.c:1146 titan.c:1167 titan.c:1173 titan.c:1184
-#: titan.c:1190 tithek.c:88 tithek_global.h:256 tithek.h:670 tithek.h:1224
+#: titan.c:1190 tithek.c:89 tithek_global.h:258 tithek.h:670 tithek.h:1224
 #: tithek.h:1285 tithek.h:1535 tithek.h:1557 tithek.h:1574 tithek.h:1806
 #: tithek.h:1986 tithek.h:2206 tithek.h:2234 tithek.h:2250 tithek.h:2262
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
@@ -3271,9 +3271,10 @@ msgstr "FEHLER: In dieser Datei kann kein Marker gesetzt werden"
 #: tunerconfig.h:666 tunerconfig.h:941 unlock.h:20 unlock.h:66 unlock.h:71
 #: unlock.h:75 vidbull.h:30 vidbull.h:92 vidbull.h:98 videomode.h:67
 #: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
-#: vidstream.h:167 vodlocker.h:30 vodlocker.h:69 vodlocker.h:75 xupnpd.h:60
-#: xupnpd.h:71 xupnpd.h:73 xvidstage.h:54 xvidstage.h:100 xvidstage.h:177
-#: youtube.h:215 zapback.c:79 zdf.h:29
+#: vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:88 vidto.h:122
+#: vidto.h:168 vidto.h:174 vodlocker.h:30 vodlocker.h:69 vodlocker.h:75
+#: xupnpd.h:60 xupnpd.h:71 xupnpd.h:73 xvidstage.h:54 xvidstage.h:100
+#: xvidstage.h:177 youtube.h:215 zapback.c:79 zdf.h:29
 msgid "EXIT"
 msgstr "Exit"
 
@@ -4705,7 +4706,7 @@ msgstr ""
 #: letwatch.h:30 movreel.h:30 movshare.h:34 novamov.h:35 nowvideo.h:44
 #: played.h:30 primeshare.h:29 promptfile.h:46 putlocker.h:32 shared.h:29
 #: streamcloud.h:31 thefile.h:34 vidbull.h:30 videoweed.h:35 vidstream.h:45
-#: vodlocker.h:30 xvidstage.h:54
+#: vidto.h:31 vodlocker.h:30 xvidstage.h:54
 msgid "Hoster Url not http://"
 msgstr "Die eingegebene http Adresse wird nicht unterstützt!"
 
@@ -5846,8 +5847,8 @@ msgstr "Menüliste"
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1146
-#: titan.c:1167 titan.c:1173 titan.c:1184 titan.c:1190 tithek.c:88
-#: tithek_global.h:256 tithek.h:670 tithek.h:1224 tithek.h:1285 tithek.h:1535
+#: titan.c:1167 titan.c:1173 titan.c:1184 titan.c:1190 tithek.c:89
+#: tithek_global.h:258 tithek.h:670 tithek.h:1224 tithek.h:1285 tithek.h:1535
 #: tithek.h:1557 tithek.h:1806 tithek.h:1986 tithek.h:2206 tithek.h:2234
 #: tithek.h:2250 tithek.h:2262 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
 #: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
@@ -5855,7 +5856,8 @@ msgstr "Menüliste"
 #: tunerconfig.h:666 tunerconfig.h:941 unlock.h:20 unlock.h:66 unlock.h:71
 #: unlock.h:75 vidbull.h:30 vidbull.h:92 vidbull.h:98 videomode.h:67
 #: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
-#: vidstream.h:167 vodlocker.h:30 vodlocker.h:69 vodlocker.h:75
+#: vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:88 vidto.h:122
+#: vidto.h:168 vidto.h:174 vodlocker.h:30 vodlocker.h:69 vodlocker.h:75
 #: webif_boxcontrol.h:2 xupnpd.h:60 xupnpd.h:71 xupnpd.h:73 xvidstage.h:54
 #: xvidstage.h:100 xvidstage.h:177 youtube.h:215 zapback.c:79 zdf.h:29
 msgid "Message"
@@ -6400,7 +6402,7 @@ msgstr "Ö"
 #: thefile.h:205 timeshift.h:113 timeshift.h:161 timeshift.h:173
 #: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1009
 #: titan.c:1018 titan.c:1146 titan.c:1167 titan.c:1173 titan.c:1184
-#: titan.c:1190 tithek.c:88 tithek_global.h:256 tithek.h:670 tithek.h:1224
+#: titan.c:1190 tithek.c:89 tithek_global.h:258 tithek.h:670 tithek.h:1224
 #: tithek.h:1285 tithek.h:1535 tithek.h:1557 tithek.h:1574 tithek.h:1806
 #: tithek.h:1986 tithek.h:2206 tithek.h:2234 tithek.h:2250 tithek.h:2262
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
@@ -6410,7 +6412,8 @@ msgstr "Ö"
 #: tunerconfig.h:666 tunerconfig.h:941 unlock.h:20 unlock.h:66 unlock.h:71
 #: unlock.h:75 vidbull.h:30 vidbull.h:92 vidbull.h:98 videomode.h:67
 #: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
-#: vidstream.h:167 vodlocker.h:30 vodlocker.h:69 vodlocker.h:75
+#: vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:88 vidto.h:122
+#: vidto.h:168 vidto.h:174 vodlocker.h:30 vodlocker.h:69 vodlocker.h:75
 #: webif_index.atemio5200.h:38 webif_index.atemio6200.h:38
 #: webif_index.atemio7600.h:48 webif_index.atemio-nemesis.h:38
 #: webif_rc.atemio510.h:33 webif_rc_virtual.atemio510.h:33
@@ -9542,7 +9545,7 @@ msgstr ""
 "Die gewünschte Datei wird verschoben.\n"
 "Bitte versuchen Sie es in wenigen Minuten erneut!"
 
-#: tithek_global.h:256 tithek.h:2206
+#: tithek_global.h:258 tithek.h:2206
 msgid "The hoster is not yet supported !"
 msgstr "Der Anbieter wird zur Zeit nicht unterstützt!"
 
@@ -9555,8 +9558,8 @@ msgstr "Der Anbieter wird zur Zeit nicht unterstützt!"
 #: putlocker.h:79 putlocker.h:142 putlocker.h:151 putlocker.h:225 shared.h:82
 #: solarmovie.h:35 solarmovie.h:46 streamcloud.h:84 streamcloud.h:97
 #: streamcloud.h:128 streamcloud.h:187 vidbull.h:92 vidstream.h:86
-#: vidstream.h:97 vidstream.h:167 vodlocker.h:69 xvidstage.h:100
-#: xvidstage.h:177
+#: vidstream.h:97 vidstream.h:167 vidto.h:67 vidto.h:88 vidto.h:122
+#: vidto.h:168 vodlocker.h:69 xvidstage.h:100 xvidstage.h:177
 msgid "The page is temporarily unavailable"
 msgstr "Die gewünschte Seite ist vorübergehend nicht erreichbar"
 
@@ -9564,7 +9567,8 @@ msgstr "Die gewünschte Seite ist vorübergehend nicht erreichbar"
 msgid "The page not found, file removed"
 msgstr "Die gewünschte Seite wurde nicht gefunden, Datei vom Hoster entfernt"
 
-#: movshare.h:78 movshare.h:163 vidbull.h:98 vodlocker.h:75
+#: movshare.h:78 movshare.h:163 vidbull.h:98 vidto.h:73 vidto.h:174
+#: vodlocker.h:75
 msgid "The video no longer exists"
 msgstr "Dieses Video existiert nicht mehr."
 
@@ -9846,7 +9850,7 @@ msgstr ""
 msgid "TitanNit on fire"
 msgstr ""
 
-#: tithek.c:110
+#: tithek.c:111
 msgid "Tithek - Mainmenu"
 msgstr "TiThek - Hauptmenü"
 
