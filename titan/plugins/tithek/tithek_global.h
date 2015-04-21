@@ -248,6 +248,8 @@ char* hoster(char* url)
 		streamurl = promptfile(url);
 	else if(ostrstr(tmplink, "letwatch") != NULL)
 		streamurl = letwatch(url);
+	else if(ostrstr(tmplink, "vidbull") != NULL)
+		streamurl = vidbull(url);
 	else
 		textbox(_("Message"), _("The hoster is not yet supported !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 5, 0);
 
