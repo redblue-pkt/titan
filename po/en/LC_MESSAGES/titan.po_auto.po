@@ -2333,7 +2333,7 @@ msgstr ""
 msgid "Configure"
 msgstr ""
 
-#: faststream.h:113 played.h:118 vidto.h:77
+#: faststream.h:113 played.h:118 vidto.h:83
 msgid "Connect with Hoster wait 10 seconds"
 msgstr ""
 "Connecting to Host\n"
@@ -3215,10 +3215,11 @@ msgstr "ERROR: can't set marker in this file"
 #: tunerconfig.h:666 tunerconfig.h:941 unlock.h:20 unlock.h:66 unlock.h:71
 #: unlock.h:75 vidbull.h:30 vidbull.h:67 vidbull.h:73 videomode.h:67
 #: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
-#: vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:88 vidto.h:122
-#: vidto.h:168 vidto.h:174 vodlocker.h:30 vodlocker.h:74 vodlocker.h:80
-#: vodlocker.h:86 xupnpd.h:60 xupnpd.h:71 xupnpd.h:73 xvidstage.h:54
-#: xvidstage.h:100 xvidstage.h:177 youtube.h:215 zapback.c:79 zdf.h:29
+#: vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:79 vidto.h:94
+#: vidto.h:128 vidto.h:174 vidto.h:180 vodlocker.h:30 vodlocker.h:74
+#: vodlocker.h:80 vodlocker.h:86 xupnpd.h:60 xupnpd.h:71 xupnpd.h:73
+#: xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:215 zapback.c:79
+#: zdf.h:29
 msgid "EXIT"
 msgstr "Exit"
 
@@ -5711,11 +5712,11 @@ msgstr ""
 #: tunerconfig.h:666 tunerconfig.h:941 unlock.h:20 unlock.h:66 unlock.h:71
 #: unlock.h:75 vidbull.h:30 vidbull.h:67 vidbull.h:73 videomode.h:67
 #: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
-#: vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:88 vidto.h:122
-#: vidto.h:168 vidto.h:174 vodlocker.h:30 vodlocker.h:74 vodlocker.h:80
-#: vodlocker.h:86 webif_boxcontrol.h:2 xupnpd.h:60 xupnpd.h:71 xupnpd.h:73
-#: xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:215 zapback.c:79
-#: zdf.h:29
+#: vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:79 vidto.h:94
+#: vidto.h:128 vidto.h:174 vidto.h:180 vodlocker.h:30 vodlocker.h:74
+#: vodlocker.h:80 vodlocker.h:86 webif_boxcontrol.h:2 xupnpd.h:60 xupnpd.h:71
+#: xupnpd.h:73 xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:215
+#: zapback.c:79 zdf.h:29
 msgid "Message"
 msgstr ""
 
@@ -6268,17 +6269,17 @@ msgstr ""
 #: tunerconfig.h:666 tunerconfig.h:941 unlock.h:20 unlock.h:66 unlock.h:71
 #: unlock.h:75 vidbull.h:30 vidbull.h:67 vidbull.h:73 videomode.h:67
 #: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
-#: vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:88 vidto.h:122
-#: vidto.h:168 vidto.h:174 vodlocker.h:30 vodlocker.h:74 vodlocker.h:80
-#: vodlocker.h:86 webif_index.atemio5200.h:38 webif_index.atemio6200.h:38
-#: webif_index.atemio7600.h:48 webif_index.atemio-nemesis.h:38
-#: webif_rc.atemio510.h:33 webif_rc_virtual.atemio510.h:33
-#: webif_rc_virtual.atemio5200.h:20 webif_rc_virtual.atemio520.h:20
-#: webif_rc_virtual.atemio530.h:20 webif_rc_virtual.atemio6000.h:20
-#: webif_rc_virtual.atemio6100.h:20 webif_rc_virtual.atemio6200.h:20
-#: webif_rc_virtual.atemio-nemesis.h:20 webif_rc_virtual.h:20 xupnpd.h:60
-#: xupnpd.h:71 xupnpd.h:73 xvidstage.h:54 xvidstage.h:100 xvidstage.h:177
-#: youtube.h:215 zapback.c:79 zdf.h:29
+#: vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:79 vidto.h:94
+#: vidto.h:128 vidto.h:174 vidto.h:180 vodlocker.h:30 vodlocker.h:74
+#: vodlocker.h:80 vodlocker.h:86 webif_index.atemio5200.h:38
+#: webif_index.atemio6200.h:38 webif_index.atemio7600.h:48
+#: webif_index.atemio-nemesis.h:38 webif_rc.atemio510.h:33
+#: webif_rc_virtual.atemio510.h:33 webif_rc_virtual.atemio5200.h:20
+#: webif_rc_virtual.atemio520.h:20 webif_rc_virtual.atemio530.h:20
+#: webif_rc_virtual.atemio6000.h:20 webif_rc_virtual.atemio6100.h:20
+#: webif_rc_virtual.atemio6200.h:20 webif_rc_virtual.atemio-nemesis.h:20
+#: webif_rc_virtual.h:20 xupnpd.h:60 xupnpd.h:71 xupnpd.h:73 xvidstage.h:54
+#: xvidstage.h:100 xvidstage.h:177 youtube.h:215 zapback.c:79 zdf.h:29
 msgid "OK"
 msgstr ""
 
@@ -9387,6 +9388,11 @@ msgstr ""
 "The designated file is being transfered to our other Servers.\n"
 "This may take a few Minutes. Please try again later."
 
+#: vidto.h:79
+msgid ""
+"The file you were looking for could not be found, sorry for any inconvenience"
+msgstr ""
+
 #: tithek_global.h:258 tithek.h:2206
 msgid "The hoster is not yet supported !"
 msgstr "The hoster is not supported at present!"
@@ -9400,7 +9406,7 @@ msgstr "The hoster is not supported at present!"
 #: putlocker.h:225 shared.h:82 solarmovie.h:35 solarmovie.h:46
 #: streamcloud.h:90 streamcloud.h:103 streamcloud.h:134 streamcloud.h:193
 #: vidbull.h:67 vidstream.h:86 vidstream.h:97 vidstream.h:167 vidto.h:67
-#: vidto.h:88 vidto.h:122 vidto.h:168 vodlocker.h:74 xvidstage.h:100
+#: vidto.h:94 vidto.h:128 vidto.h:174 vodlocker.h:74 xvidstage.h:100
 #: xvidstage.h:177
 msgid "The page is temporarily unavailable"
 msgstr "The designated page is temporarily unavailable."
@@ -9410,7 +9416,7 @@ msgid "The page not found, file removed"
 msgstr ""
 
 #: divxstage.h:156 faststream.h:109 letwatch.h:75 movshare.h:78 movshare.h:163
-#: vidbull.h:73 vidto.h:73 vidto.h:174 vodlocker.h:80
+#: vidbull.h:73 vidto.h:73 vidto.h:180 vodlocker.h:80
 msgid "The video no longer exists"
 msgstr ""
 
