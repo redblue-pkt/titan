@@ -43,9 +43,9 @@ char* vidbull(char* link)
 	}
 
 	tmppath = ostrcat("/", path, 0, 0);
-	tmppath = string_replace_all(".html", "", tmppath, 1);
+//	tmppath = string_replace_all(".html", "", tmppath, 1);
 
-	tmphost = ostrcat("www.", tmphost, 0 ,1);
+//	tmphost = ostrcat("www.", tmphost, 0 ,1);
 
 	send = ostrcat(send, "GET ", 1, 0);
 	send = ostrcat(send, tmppath, 1, 0);
