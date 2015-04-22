@@ -26,6 +26,7 @@ watch-horror-movies.html
 watch-romance-movies.html
 watch-sci-fi-movies.html
 watch-thriller-movies.html
+watch-movies-of-2015.html
 watch-movies-of-2014.html
 watch-movies-of-2013.html
 watch-movies-of-2012.html
@@ -121,6 +122,7 @@ tv/watch-horror-tv-shows.html
 tv/watch-romance-tv-shows.html
 tv/watch-sci-fi-tv-shows.html
 tv/watch-thriller-tv-shows.html
+tv/watch-tv-shows-2015.html
 tv/watch-tv-shows-2014.html
 tv/watch-tv-shows-2013.html
 tv/watch-tv-shows-2012.html
@@ -209,10 +211,8 @@ tv/watch-tv-shows-1930.html
 "
 else
 watchlist="
-watch-movies-of-2014.html
-watch-movies-of-2013.html
-tv/watch-tv-shows-2014.html
-tv/watch-tv-shows-2013.html
+watch-movies-of-2015.html
+tv/watch-tv-shows-2015.html
 "
 fi
 
