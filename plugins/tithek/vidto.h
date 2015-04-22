@@ -74,6 +74,12 @@ char* vidto(char* link)
 		goto end;
 	}
 
+	if(ostrstr(tmpstr, "The file you were looking for could not be found, sorry for any inconvenience") != NULL)
+	{
+		textbox(_("Message"), _("The file you were looking for could not be found, sorry for any inconvenience") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
+		goto end;
+	}
+
 	waitmsgbar(10, 0, _("Connect with Hoster wait 10 seconds"), 1);
 
 	cookie = string_resub("Set-Cookie: file_id=", ";", tmpstr, 0);	
