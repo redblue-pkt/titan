@@ -3368,7 +3368,7 @@ msgstr ""
 msgid "EpgChannels: "
 msgstr "EPG Canales: "
 
-#: kinox.h:300 movie4k.h:859 movie4k.h:1107 solarmovie.h:472
+#: kinox.h:300 movie4k.h:859 movie4k.h:1107 solarmovie.h:549
 msgid "Episode"
 msgstr "Episodio"
 
@@ -8379,7 +8379,7 @@ msgstr "Buscar este objeto eni ZDF (local)"
 msgid "Search only aktual epg ?"
 msgstr "Buscar dentro de la actual EPG"
 
-#: kinox.h:296 movie4k.h:855 movie4k.h:987 movie4k.h:1103 solarmovie.h:468
+#: kinox.h:296 movie4k.h:855 movie4k.h:987 movie4k.h:1103 solarmovie.h:545
 msgid "Season"
 msgstr "Temporada"
 
