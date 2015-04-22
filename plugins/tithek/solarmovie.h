@@ -360,21 +360,98 @@ printf("11111111111111111111111111111\n");
 //			free(tmpstr), tmpstr = NULL;
 //			tmpstr = command("cat /tmp/tithek/get_zcat");
 			char* tmpcat = string_resub("<tbody>", "</tbody>", tmpstr, 0);
+//new
+			stringreplacechar(tmpcat, '\n', ' ');
+			string_strip_whitechars(tmpcat);
+			tmpcat = string_replace_all("td class=\"qualit", "\ntd class=\"qualit", tmpcat, 1);
+//end
+			int count = 0;
+			struct splitstr* ret1 = NULL;
+			ret1 = strsplit(tmpcat, "\n", &count);
+			int max = count;
+			int i = 0, incount = 0;
+			for(i = 0; i < max; i++)
+			{
+				debug(99, "ret1[i].part: %s", ret1[i].part);
+
+				id = string_resub("/link/show/", "/", ret1[i].part, 0);
+				debug(99, "id: %s", id);
+
+				if(id == NULL) continue;
+
+				quality = string_resub("qualityCell js-link-format\" style=\"text-transform: uppercase;\">", "</td>", ret1[i].part, 0);
+				update = string_resub("oddCell\" style=\"color: #59636a;\">", "</td>", ret1[i].part, 0);
+				string_remove_whitechars(quality);
+				strstrip(quality);
+ 
+ 				tmphname = oregex(".*<a href=\"/link/show/.*> (.*) </a>.*", ret1[i].part);
+ 				debug(99, "tmphname: %s", tmphname);
+                                    
+				string_remove_whitechars(tmphname);
+				strstrip(tmphname);
+
+				pichname = ostrcat(tmphname, NULL, 0, 0);
+				string_tolower(pichname);
+				pichname = stringreplacecharonce(pichname, '.', '\0');
+
+				int type = 43;
+				debug(99, "(%d/\?\?) %s id: %s quality: %s update: %s pic: %s", i, tmphname, id, quality, update, pichname);
+
+				incount += 1;
+				line = ostrcat(line, tmphname, 1, 0);
+				if(quality != NULL)
+				{
+					line = ostrcat(line, " (", 1, 0);					
+					line = ostrcat(line, quality, 1, 0);					
+					line = ostrcat(line, ")", 1, 0);					
+				}
+				if(update != NULL)
+				{
+					line = ostrcat(line, " (", 1, 0);					
+					line = ostrcat(line, update, 1, 0);					
+					line = ostrcat(line, ")", 1, 0);					
+				}					
+				line = ostrcat(line, "#", 1, 0);
+				line = ostrcat(line, "http://www.solarmovie.is/link/play/", 1, 0);
+				line = ostrcat(line, id, 1, 0);
+				line = ostrcat(line, "#", 1, 0);
+				line = ostrcat(line, "http://atemio.dyndns.tv/mediathek/menu/", 1, 0);
+				line = ostrcat(line, pichname, 1, 0);
+				line = ostrcat(line, ".jpg#solarmovie_", 1, 0);
+				line = ostrcat(line, pichname, 1, 0);
+				line = ostrcat(line, ".jpg#Solarmovie - ", 1, 0);
+				line = ostrcat(line, title, 1, 0);
+				line = ostrcat(line, "#", 1, 0);
+				line = ostrcat(line, oitoa(type), 1, 0);
+				line = ostrcat(line, "\n", 1, 0);
+				free(hname), hname = NULL;
+							
+				free(pichname), pichname = NULL;		
+				free(tmphname), tmphname = NULL;
+				free(id), id = NULL;
+				debug(99, "#######################################################");
+
+			}
+				
+/*
+//			string_strip_whitechars(tmpstr);
+			writesys("/var/usr/local/share/titan/plugins/tithek/1solarmovie8_tmpcat", tmpcat, 0);
 	
 			char* ptmpcat = ostrstr(tmpcat, "<td class=\"qualit");
+			writesys("/var/usr/local/share/titan/plugins/tithek/1solarmovie8_ptmpcat", ptmpcat, 0);
+
 			int i = 0, incount = 0;
 			while(ptmpcat != NULL)
 			{
 				i++;
 				tmpstr1 = ostrcat(tmpstr1, string_resub("<td class=\"qualit", "<div class=\"linkDetails\">", ptmpcat, 0), 1, 1);
+			writesys("/var/usr/local/share/titan/plugins/tithek/1solarmovie8_tmpstr1", tmpstr1, 0);
+//return;
 				ptmpcat += 5;
 				ptmpcat = ostrstr(ptmpcat, "<td class=\"qualit");
 	
 				if(ptmpcat != NULL)
 				{
-//					id = string_resub("<a href=\"/link/show/", "/", tmpstr1, 0);
-//					id = oregex(".*/link/show/(.*)/\">.*", tmpstr1);
-//					id = oregex(".*/link/show/(.*)/.*\">.*", tmpstr1);
 					char* tmpid = oregex(".*<a href=\"/link/(.*)/.*", tmpstr1);
 //					debug(99, "tmpid: %s", tmpid);
 					id = string_resub("show/", "/", tmpid, 0);
@@ -388,7 +465,6 @@ printf("11111111111111111111111111111\n");
 					string_remove_whitechars(quality);
 					strstrip(quality);
 					
-//					tmphname = oregex(".*/\">(.*)</a>.*", tmpstr1);
 					tmphname = oregex(".*<a href=\"/link/show/.*\">(.*)</a>.*", tmpstr1);
 
 					string_remove_whitechars(tmphname);
@@ -435,6 +511,7 @@ printf("11111111111111111111111111111\n");
 					free(id), id = NULL;		
 				}
 			}
+*/
 			free(tmpcat); tmpcat = NULL;
 		}	
 	}
