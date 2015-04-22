@@ -3296,7 +3296,7 @@ msgstr ""
 msgid "EpgChannels: "
 msgstr "EPG Canali: "
 
-#: kinox.h:300 movie4k.h:859 movie4k.h:1107 solarmovie.h:549
+#: kinox.h:300 movie4k.h:859 movie4k.h:1107 solarmovie.h:551
 msgid "Episode"
 msgstr "Episodio"
 
@@ -8228,7 +8228,7 @@ msgstr "Search on Kinox"
 msgid "Search only aktual epg ?"
 msgstr "Search on Youtube"
 
-#: kinox.h:296 movie4k.h:855 movie4k.h:987 movie4k.h:1103 solarmovie.h:545
+#: kinox.h:296 movie4k.h:855 movie4k.h:987 movie4k.h:1103 solarmovie.h:547
 msgid "Season"
 msgstr ""
 

@@ -3327,7 +3327,7 @@ msgstr ""
 msgid "EpgChannels: "
 msgstr "EPG Kanalen: "
 
-#: kinox.h:300 movie4k.h:859 movie4k.h:1107 solarmovie.h:549
+#: kinox.h:300 movie4k.h:859 movie4k.h:1107 solarmovie.h:551
 msgid "Episode"
 msgstr "Aflevering"
 
@@ -8299,7 +8299,7 @@ msgstr "Zoek op ZDF (lokaal)"
 msgid "Search only aktual epg ?"
 msgstr "Alleen in actuele EPG zoeken?"
 
-#: kinox.h:296 movie4k.h:855 movie4k.h:987 movie4k.h:1103 solarmovie.h:545
+#: kinox.h:296 movie4k.h:855 movie4k.h:987 movie4k.h:1103 solarmovie.h:547
 msgid "Season"
 msgstr "Seizoen"
 
