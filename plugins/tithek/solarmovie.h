@@ -49,32 +49,48 @@ char* solarmovie(char* link)
 	}
             
 	string_strip_whitechars(tmpstr);
-	if(ostrstr(tmpstr, "<div class=\"thirdPartyEmbContainer\"") != NULL)
+
+
+	tmpstr1 = string_resub("<iframe name=\"service_frame\" class=\"service_frame\"", "</iframe>", tmpstr, 0);
+printf("tmpstr1: %s\n",tmpstr1);
+
+	url = string_resub("src=\"", "\"", tmpstr1, 0);
+printf("url: %s\n",url);
+
+	free(tmpstr1), tmpstr1 = NULL;
+
+//	if(ostrncmp("http://", url, 7) == 0)
+	if(url == NULL)
 	{
-		tmpstr1 = string_resub("<div class=\"thirdPartyEmbContainer\"", "</div>", tmpstr, 0);
-		stringreplacechar(tmpstr1, '\n', ' ');
+		free(url), url = NULL;
 
-		url = oregex(".*(http://.*).*\"", tmpstr1);
-		stringreplacechar(url, '"', '\0');
-
-		if(url == NULL)
-			url = string_resub("<center><iframe src=\"", "\"", tmpstr1, 0);
-		if(url == NULL)
-			url = string_resub("<center><IFRAME SRC=\"", "\"", tmpstr1, 0);
-
-		if(url == NULL || ostrncmp("http://", url, 7) == 1)
+		if(ostrstr(tmpstr, "<div class=\"thirdPartyEmbContainer\"") != NULL)
 		{
-			free(url); url = NULL;
-			url = oregex(".*src=\"(http://.*)&width.*", tmpstr1);
+			tmpstr1 = string_resub("<div class=\"thirdPartyEmbContainer\"", "</div>", tmpstr, 0);
+			stringreplacechar(tmpstr1, '\n', ' ');
+	
+			url = oregex(".*(http://.*).*\"", tmpstr1);
+			stringreplacechar(url, '"', '\0');
+	
+			if(url == NULL)
+				url = string_resub("<center><iframe src=\"", "\"", tmpstr1, 0);
+			if(url == NULL)
+				url = string_resub("<center><IFRAME SRC=\"", "\"", tmpstr1, 0);
+	
+			if(url == NULL || ostrncmp("http://", url, 7) == 1)
+			{
+				free(url); url = NULL;
+				url = oregex(".*src=\"(http://.*)&width.*", tmpstr1);
+			}
 		}
-	}
-	else
-	{
-		//char* tmpurl = oregex(".*<iframe name=\"service_frame\" class=\"service_frame\" src=\"(http://.*)\".*", tmpstr);
-		//url = oregex("(http://.*)\".*", tmpurl);
-		//free(tmpurl); tmpurl == NULL;
-		url = string_resub("<iframe name=\"service_frame\" class=\"service_frame\" src=\"", "\"", tmpstr, 0);
-		url = string_replace_all("embed", "file", url, 1);
+		else
+		{
+			//char* tmpurl = oregex(".*<iframe name=\"service_frame\" class=\"service_frame\" src=\"(http://.*)\".*", tmpstr);
+			//url = oregex("(http://.*)\".*", tmpurl);
+			//free(tmpurl); tmpurl == NULL;
+			url = string_resub("<iframe name=\"service_frame\" class=\"service_frame\" src=\"", "\"", tmpstr, 0);
+			url = string_replace_all("embed", "file", url, 1);
+		}
 	}
 
 	debug(99, "url: %s", url);

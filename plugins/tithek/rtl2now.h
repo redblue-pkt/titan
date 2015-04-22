@@ -21,9 +21,12 @@ char* now(char* link, char* url, char* name, char* title, int flag)
 
 	char* tmpstr = NULL;
 	tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
-		
+printf("00000000\n");
+
 	if(flag == 1)
 	{
+printf("111111111\n");
+
 //		if(ostrstr(tmpstr, "<!-- 3-->") == NULL)
 //			textbox(_("Message"), _("Found Pay Stream visit the official Website and Order this Stream and try this again !") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 400, 0, 0);
 
@@ -41,8 +44,12 @@ char* now(char* link, char* url, char* name, char* title, int flag)
 	}
 	else if(flag == 2)
 	{
+printf("22222222\n");
+
 		if(ostrstr(tmpstr, "rtmpe://") != NULL)
 		{
+printf("22222222aaaaaaaaaaa\n");
+
 			tmpstr = string_resub("rtmpe://", ".f4v", tmpstr, 0);
 
 			char* tmpstr9 = NULL;
@@ -103,6 +110,8 @@ char* now(char* link, char* url, char* name, char* title, int flag)
 		}
 		else
 		{	
+printf("2222222bbbbbbbbbb\n");
+
 			tmpstr = string_resub("<filename", "</filename>", tmpstr, 1);
 			tmpstr = string_resub("<![CDATA[", "]]", tmpstr, 1);
 
@@ -111,7 +120,11 @@ char* now(char* link, char* url, char* name, char* title, int flag)
 			ret2 = strsplit(tmpstr, "/", &count2);
 			if(count2 > 6)
 			{
-				ret2[6].part = string_replace_remove_last_chars(".f4m?ts=", "", ret2[6].part, 0);
+//				ret2[6].part = string_replace_remove_last_chars(".f4m?ts=", "", ret2[6].part, 0);
+				ret2[6].part = string_replace_remove_last_chars(".f4m", "", ret2[6].part, 0);
+
+printf("2222222cccccccccc\n");
+
 				srand(time(NULL));
 				int r = rand() % 34;
 				printf("random.randint1: %d\n",r);
@@ -156,6 +169,58 @@ char* now(char* link, char* url, char* name, char* title, int flag)
 				streamurl = ostrcat(streamurl, " pageUrl=", 1, 0);			
 				streamurl = ostrcat(streamurl, link, 1, 0);
 			}
+			else if(count2 > 5)
+			{
+//				ret2[6].part = string_replace_remove_last_chars(".f4m?ts=", "", ret2[6].part, 0);
+				ret2[5].part = string_replace_remove_last_chars(".f4m", "", ret2[5].part, 0);
+
+printf("2222222ccccccc11111111111\n");
+
+				srand(time(NULL));
+				int r = rand() % 34;
+				printf("random.randint1: %d\n",r);
+				if(r == 0)
+				{
+					sleep(1);
+					srand(time(NULL));
+					r = rand() % 34;
+					printf("random.randint2: %d\n",r);
+				}
+				if(r == 0)
+				{
+					sleep(1);
+					srand(time(NULL));
+					r = rand() % 34;
+					printf("random.randint3: %d\n",r);
+				}
+				if(r == 0)
+				{
+					sleep(1);
+					srand(time(NULL));
+					r = rand() % 34;
+					printf("random.randint4: %d\n",r);
+				}
+
+				streamurl = ostrcat("rtmpe://fms-fra", oitoa(r), 0, 0);
+//				streamurl = ostrcat("rtmpe://fms-fra26.rtl.de/", ret2[3].part, 0, 0);
+				streamurl = ostrcat(streamurl, ".rtl.de/", 1, 0);
+				streamurl = ostrcat(streamurl, ret2[3].part, 1, 0);
+				streamurl = ostrcat(streamurl, "/", 1, 0);
+				streamurl = ostrcat(streamurl, " playpath=mp4:", 1, 0);
+				streamurl = ostrcat(streamurl, ret2[5].part, 1, 0);
+				streamurl = ostrcat(streamurl, "/", 1, 0);
+//		streamurl = ostrcat(streamurl, ret2[5].part, 1, 0);
+				streamurl = ostrcat(streamurl, " swfVfy=1", 1, 0);
+				streamurl = ostrcat(streamurl, " swfUrl=http://", 1, 0);
+				streamurl = ostrcat(streamurl, ip, 1, 0);
+				streamurl = ostrcat(streamurl, "/includes/vodplayer.swf", 1, 0);
+				streamurl = ostrcat(streamurl, " app=", 1, 0);
+				streamurl = ostrcat(streamurl, ret2[3].part, 1, 0);
+				streamurl = ostrcat(streamurl, "/_definst_", 1, 0);
+				streamurl = ostrcat(streamurl, " pageUrl=", 1, 0);			
+				streamurl = ostrcat(streamurl, link, 1, 0);
+			}
+			
 			free(ret2), ret2 = NULL;
 		}
 	}

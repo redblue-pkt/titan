@@ -104,6 +104,12 @@ char* faststream(char* link)
 		goto end;
 	}
 
+	if(ostrstr(tmpstr, "Die von Ihnen angeforderte Datei konnte nicht gefunden werden..") != NULL)
+	{
+		textbox(_("Message"), _("The video no longer exists") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
+		goto end;
+	}
+
 	waitmsgbar(10, 0, _("Connect with Hoster wait 10 seconds"), 1);
 
 	//get hash from tmpstr
@@ -160,7 +166,6 @@ char* faststream(char* link)
 		textbox(_("Message"), _("The page is temporarily unavailable") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
 		goto end;
 	}
-
 
 	streamlink = string_resub("file: \"", "\"", tmpstr, 0);		
 

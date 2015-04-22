@@ -42,9 +42,14 @@ char* vodlocker(char* link)
 		path = pos + 1;
 	}
 
-	tmppath = ostrcat("/embed-", path, 0, 0);
-	tmppath = ostrcat(tmppath, "-640x400.html", 1, 0);
-	
+	if(ostrstr(link, "embed-") != NULL)
+		tmppath = ostrcat("/", path, 0, 0);
+	else
+	{
+		tmppath = ostrcat("/embed-", path, 0, 0);
+		tmppath = ostrcat(tmppath, "-640x400.html", 1, 0);
+	}
+
 //	free(path), path = NULL;
 
 /////////////
@@ -73,6 +78,12 @@ char* vodlocker(char* link)
 	if(ostrstr(tmpstr, "404 Not Found") != NULL)
 	{
 		textbox(_("Message"), _("The video no longer exists") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
+		goto end;
+	}
+
+	if(ostrstr(tmpstr, "Video encoding error") != NULL)
+	{
+		textbox(_("Message"), _("Video encoding error") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
 		goto end;
 	}
 

@@ -151,6 +151,12 @@ char* divxstage(char* link)
 		goto end;
 	}
 
+	if(ostrstr(tmpstr, "404 - Not Found") != NULL)
+	{
+		textbox(_("Message"), _("The video no longer exists") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
+		goto end;
+	}
+
 	streamlink = string_resub("url=", "&", tmpstr, 0);
 	debug(99, "streamlink1: %s", streamlink);
 	htmldecode(streamlink, streamlink);
