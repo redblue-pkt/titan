@@ -395,7 +395,7 @@ printf("11111111111111111111111111111\n");
 				pichname = stringreplacecharonce(pichname, '.', '\0');
 
 				int type = 43;
-				debug(99, "(%d/\?\?) %s id: %s quality: %s update: %s pic: %s", i, tmphname, id, quality, update, pichname);
+				debug(99, "(%d/%d) %s id: %s quality: %s update: %s pic: %s", i, max, tmphname, id, quality, update, pichname);
 
 				incount += 1;
 				line = ostrcat(line, tmphname, 1, 0);
