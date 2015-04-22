@@ -429,8 +429,10 @@ printf("11111111111111111111111111111\n");
 				free(pichname), pichname = NULL;		
 				free(tmphname), tmphname = NULL;
 				free(id), id = NULL;
-				debug(99, "#######################################################");
+				free(quality), quality = NULL;
+				free(update), update = NULL;
 
+				debug(99, "#######################################################");
 			}
 				
 /*
