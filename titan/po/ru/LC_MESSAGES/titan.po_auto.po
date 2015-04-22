@@ -21,7 +21,7 @@ msgstr " - OK!"
 msgid " : NOT OKAY!"
 msgstr ": Плохо!"
 
-#: security.h:678 security.h:2038
+#: security.h:678 security.h:2041
 msgid " Days "
 msgstr ""
 
@@ -1115,7 +1115,7 @@ msgstr "Конфигурация тюнера"
 msgid "Atemio WLAN configuration"
 msgstr "WiFi конфигурация"
 
-#: security.h:2043
+#: security.h:2046
 msgid "Atemio free license"
 msgstr ""
 
@@ -2403,7 +2403,7 @@ msgstr "Не удалось скопировать список спутнико
 msgid "Copy satlist successfull"
 msgstr "Список спутников скопирован успешно"
 
-#: security.h:2052
+#: security.h:2055
 msgid "Copyright"
 msgstr "Авторские права"
 
@@ -2758,7 +2758,7 @@ msgstr ""
 " Красная кнопка = Завершить процесс\n"
 " Зелёная кнопка = Рестарт системы"
 
-#: security.h:2045
+#: security.h:2048
 msgid "Dev free license"
 msgstr ""
 
@@ -3173,7 +3173,7 @@ msgstr "Ошибка. Нельзя установить маркер на это
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1901
 #: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 scriptexec.h:41
-#: security.h:663 security.h:680 security.h:1874 service.h:738 service.h:983
+#: security.h:663 security.h:680 security.h:1877 service.h:738 service.h:983
 #: shared.h:29 shared.h:65 shared.h:82 skin_default_skin.xml.h:246
 #: skins_autotimer_skin.xml.h:6 skins_callmonitor1_skin.xml.h:10
 #: skins_catcatch_skin.xml.h:3 skins_dlna_skin.xml.h:1 skinselector.h:231
@@ -3926,7 +3926,7 @@ msgstr "Дисплей ресивера"
 msgid "Front Key"
 msgstr "Кнопки панели"
 
-#: security.h:2019
+#: security.h:2022
 msgid "Frontcontroller"
 msgstr ""
 
@@ -4694,7 +4694,7 @@ msgid ""
 "sharing' in the 'Network and Sharing Center'."
 msgstr ""
 
-#: security.h:2007
+#: security.h:2010
 msgid "Image"
 msgstr "Имидж"
 
@@ -4879,7 +4879,7 @@ msgstr "Установка в SWAP (USB или HDD)"
 msgid "Installation start"
 msgstr "Запуск установки"
 
-#: httpdfunc.h:5662 security.h:2014 skin_default_skin.xml.h:375
+#: httpdfunc.h:5662 security.h:2017 skin_default_skin.xml.h:375
 msgid "Installed:"
 msgstr "Установлено"
 
@@ -5217,7 +5217,7 @@ msgstr ""
 msgid "Lib extension for network (upnpfs/smbfs/ftpfs/rarfs)"
 msgstr ""
 
-#: security.h:2025
+#: security.h:2028
 msgid "License"
 msgstr ""
 
@@ -5676,7 +5676,7 @@ msgstr ""
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
 #: scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1646 scan.h:1901
-#: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 security.h:1874 service.h:738
+#: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 security.h:1877 service.h:738
 #: service.h:983 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:317
 #: skinadjust.h:720 skinselector.h:231 sock.h:952 softcam.h:411 softcam.h:474
 #: softcam.h:475 solarmovie.h:35 solarmovie.h:47 solarmovie.h:320 spinner.h:18
@@ -6223,7 +6223,7 @@ msgstr ""
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1901
 #: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 scriptexec.h:41
-#: security.h:663 security.h:680 security.h:1874 service.h:738 service.h:983
+#: security.h:663 security.h:680 security.h:1877 service.h:738 service.h:983
 #: shared.h:29 shared.h:65 shared.h:82 skinadjust.h:317 skinadjust.h:720
 #: skins_dlna_skin.xml.h:7 skinselector.h:231 skins_facebook_skin.xml.h:3
 #: skins_mboxinfo_skin.xml.h:2 skins_mc_skin.xml.h:35
@@ -9897,7 +9897,7 @@ msgstr ""
 msgid "Treiber fuer Samsung LCD"
 msgstr ""
 
-#: security.h:676 security.h:2035
+#: security.h:676 security.h:2038
 msgid "Trial period ends in"
 msgstr ""
 
@@ -9913,7 +9913,7 @@ msgstr "Вторник"
 msgid "Tune to channel failed"
 msgstr "Не удалось настроиться на канал"
 
-#: security.h:2061 skin_default_skin.xml.h:759
+#: security.h:2064 skin_default_skin.xml.h:759
 msgid "Tuner"
 msgstr "Тюнер"
 
@@ -9953,7 +9953,7 @@ msgstr ""
 "Настройка тюнера не доступна\n"
 "при записи или стриминге!"
 
-#: security.h:2068 skin_default_skin.xml.h:765
+#: security.h:2071 skin_default_skin.xml.h:765
 msgid "Tunertype"
 msgstr "Тип тюнера"
 
@@ -10014,7 +10014,7 @@ msgstr ""
 msgid "UE"
 msgstr ""
 
-#: security.h:2041
+#: security.h:2044
 msgid "UFS910 free license"
 msgstr ""
 
@@ -10199,7 +10199,7 @@ msgstr "Плеер VLC"
 msgid "VOX-Now"
 msgstr ""
 
-#: security.h:2010
+#: security.h:2013
 msgid "Version"
 msgstr "Версия"
 
@@ -11290,7 +11290,7 @@ msgstr "События"
 msgid "expert (11)"
 msgstr "Эксперт"
 
-#: security.h:2047
+#: security.h:2050
 msgid "expired"
 msgstr ""
 
@@ -12924,7 +12924,7 @@ msgstr "Universal"
 
 #: bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2875 httpdfunc.h:2887
 #: httpdfunc.h:5556 httpdfunc.h:5602 hwtest.h:478 moduleconfig.h:345
-#: security.h:2066 skin_default_skin.xml.h:781 skinselector.h:138 stream.h:22
+#: security.h:2069 skin_default_skin.xml.h:781 skinselector.h:138 stream.h:22
 #: transponder.h:122 transponder.h:158 transponder.h:194 transponder.h:227
 #: transponder.h:259 transponder.h:295 transponder.h:330 transponder.h:348
 #: transponder.h:364 transponder.h:418 transponder.h:451 transponder.h:480
@@ -13017,7 +13017,7 @@ msgstr "Использовать SSL"
 msgid "v"
 msgstr ""
 
-#: security.h:2028
+#: security.h:2031
 msgid "valid"
 msgstr ""
 
