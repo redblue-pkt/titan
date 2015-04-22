@@ -1355,7 +1355,8 @@ void checkgthread()
 	}
 	else
 	{
-		free(status.url), status.url = NULL;
+		if(status.url != NULL)
+			free(status.url), status.url = NULL;
 		status.whilecount = 0;
 		status.sleepcount = 0;
 		status.stats = 0;
@@ -1378,7 +1379,8 @@ void guestthread()
 
 	if(ostrncmp("http://", status.url, 7))
 	{
-		free(status.url), status.url = NULL;
+		if(status.url != NULL)
+			free(status.url), status.url = NULL;
 		return;
 	}
 
@@ -1395,7 +1397,8 @@ void guestthread()
 		if(status.url == NULL) return;
 		if(ostrncmp("http://", status.url, 7))
 		{
-			free(status.url), status.url = NULL;
+			if(status.url != NULL)
+				free(status.url), status.url = NULL;
 			return;
 		}
 
