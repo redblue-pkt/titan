@@ -70,6 +70,12 @@ char* letwatch(char* link)
 		goto end;
 	}
 
+	if(ostrstr(tmpstr, "404 Not Found") != NULL)
+	{
+		textbox(_("Message"), _("The video no longer exists") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
+		goto end;
+	}
+
 	streamlink = string_resub("file:\"", "\"", tmpstr, 0);		
 
 	titheklog(debuglevel, "/tmp/letwatch4_streamlink", NULL, NULL, NULL, streamlink);

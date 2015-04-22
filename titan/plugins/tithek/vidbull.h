@@ -47,31 +47,6 @@ char* vidbull(char* link)
 
 	tmphost = ostrcat("www.", tmphost, 0 ,1);
 
-//	free(path), path = NULL;
-
-/////////////
-//17:54:59 T:2284  NOTICE: 'GET /xl0rxekh8c7b HTTP/1.1\r\nHost: www.vidbull.com\r\nUser-Agent: Mozilla/5.0 (Linux; Android 4.4; Nexus 5 Build/BuildID) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/30.0.0.0 Mobile Safari/537.36\r\nConnection: close\r\nAccept-Encoding: gzip\r\n\r\n'
-/*
-GET /xl0rxekh8c7b HTTP/1.1\r\n
-Host: www.vidbull.com\r\n
-User-Agent: Mozilla/5.0 (Linux; Android 4.4; Nexus 5 Build/BuildID) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/30.0.0.0 Mobile Safari/537.36\r\n
-Connection: close\r\n
-Accept-Encoding: gzip\r\n\r\n'
-
-[titan] send: GET /dasoa03go9iz HTTP/1.1
-Host: www.vidbull.com
-User-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1
-Connection: close
-Accept-Encoding: gzip
-
-
-[titan] send: 
-GET /dasoa03go9iz.html HTTP/1.1
-Host: vidbull.com
-User-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1
-Connection: close
-Accept-Encoding: gzip
-*/
 	send = ostrcat(send, "GET ", 1, 0);
 	send = ostrcat(send, tmppath, 1, 0);
 	send = ostrcat(send, " HTTP/1.1\r\n", 1, 0);
@@ -93,7 +68,7 @@ Accept-Encoding: gzip
 		goto end;
 	}
 
-	if(ostrstr(tmpstr, "File Not Found (404)") != NULL)
+	if(ostrstr(tmpstr, "File Not Found") != NULL)
 	{
 		textbox(_("Message"), _("The video no longer exists") , _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1200, 200, 0, 0);
 		goto end;

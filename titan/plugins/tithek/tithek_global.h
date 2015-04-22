@@ -224,11 +224,11 @@ char* hoster(char* url)
 		streamurl = movreel(url);
 	else if(ostrstr(tmplink, "novamov") != NULL)
 		streamurl = novamov(url);
-	else if(ostrstr(tmplink, "divxstage") != NULL)
+	else if(ostrstr(tmplink, "divxstage") != NULL || ostrstr(tmplink, "cloudtime") != NULL)
 		streamurl = divxstage(url);
 	else if(ostrstr(tmplink, "primeshare") != NULL)
 		streamurl = primeshare(url);
-	else if(ostrstr(tmplink, "faststream") != NULL)
+	else if(ostrstr(tmplink, "faststream") != NULL || ostrstr(tmplink, "fastvideo") != NULL)
 		streamurl = faststream(url);
 	else if(ostrstr(tmplink, "played") != NULL)
 		streamurl = played(url);
