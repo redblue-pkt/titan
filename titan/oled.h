@@ -33,10 +33,10 @@ int oledtext(char *value)
 	if(getconfigint("oled_off", NULL) == 1)
 		return 0;
 	
- 	if(getconfigint("oled_mutex", NULL) == 1)
-	{
-		m_lock(&status.drawingmutex, 0);
-	}
+ 	//if(getconfigint("oled_mutex", NULL) == 1)
+	//{
+	m_lock(&status.drawingmutex, 0);
+	//}
 	
 	if(status.updatevfd == PAUSE)
 		OLED_nemesis = getscreen("OLED_nemesis_menu");
@@ -56,13 +56,13 @@ int oledtext(char *value)
 		changetext(textbox, "EPG-Scan");
 	else
 		changetext(textbox, value);
-	if(getconfigint("oled_mutex", NULL) == 1)
-	{
-		drawscreen(OLED_nemesis, 0, 2);
-		m_unlock(&status.drawingmutex, 0);
-	}
-	else
-		drawscreen(OLED_nemesis, 0, 0);
+	//if(getconfigint("oled_mutex", NULL) == 1)
+	//{
+	drawscreen(OLED_nemesis, 0, 2);
+	m_unlock(&status.drawingmutex, 0);
+	//}
+	//else
+	//	drawscreen(OLED_nemesis, 0, 0);
 	
 	
 	
