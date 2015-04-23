@@ -33,6 +33,11 @@ int oledtext(char *value)
 	if(getconfigint("oled_off", NULL) == 1)
 		return 0;
 	
+ 	if(getconfigint("oled_mutex", NULL) == 1)
+	{
+		m_lock(&status.drawingmutex, 0);
+	}
+	
 	if(status.updatevfd == PAUSE)
 		OLED_nemesis = getscreen("OLED_nemesis_menu");
 	else if(status.standby > 0)
@@ -53,7 +58,6 @@ int oledtext(char *value)
 		changetext(textbox, value);
 	if(getconfigint("oled_mutex", NULL) == 1)
 	{
-		m_lock(&status.drawingmutex, 0);
 		drawscreen(OLED_nemesis, 0, 2);
 		m_unlock(&status.drawingmutex, 0);
 	}
