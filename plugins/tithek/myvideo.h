@@ -216,6 +216,7 @@ char* myvideo(char* link)
 int myvideo_search(struct skin* grid, struct skin* listbox, struct skin* countlabel, struct skin* load, char* link, char* title, char* searchstr, int flag)
 {
 	int ret = 1;
+	int debuglevel = getconfigint("debuglevel", NULL);
 
 	if(listbox == NULL || listbox->select == NULL || listbox->select->handle == NULL)
 		return ret;
@@ -247,10 +248,26 @@ int myvideo_search(struct skin* grid, struct skin* listbox, struct skin* countla
 		else
 			path = ostrcat("Top_100/Top_100_Single_Charts", NULL, 0, 0);
 		
-		char* tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
-		tmpstr = string_replace_all("<", "\n", tmpstr, 1);
-		tmpstr = string_replace_all(">", "\n", tmpstr, 1);
+		char* tmpstr = NULL;
+		char* tmpstr1 = NULL;
+		tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
+		titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/myvideo1_search_tmpstr", NULL, NULL, NULL, tmpstr);
 
+		if(flag == 0)
+		{
+			tmpstr = string_replace_all("<", "\n", tmpstr, 1);
+			tmpstr = string_replace_all(">", "\n", tmpstr, 1);
+			titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/myvideo2_search_tmpstr_replace", NULL, NULL, NULL, tmpstr);
+		}
+		else
+		{
+			tmpstr1 = string_resub("MV.contentLists.chartlist = {", "</script>", tmpstr, 0);	
+			titheklog(debuglevel, "/var/usr/local/share/titan/plugins/tithek/myvideo2_search_tmpstr1_resub", NULL, NULL, NULL, tmpstr1);
+			free(tmpstr), tmpstr = NULL;
+			tmpstr = ostrcat(tmpstr1, NULL, 0, 0);
+			free(tmpstr1), tmpstr1 = NULL;			
+		}
+		
 		int count = 0;
 		int incount = 0;
 		int i = 0;
@@ -261,7 +278,9 @@ int myvideo_search(struct skin* grid, struct skin* listbox, struct skin* countla
 		{
 			int max = count;
 			for(i = 0; i < max; i++)
-			{								
+			{
+				debug(99, "1111ret1[i].part=%s", ret1[i].part);					
+
 				if(ostrstr(ret1[i].part, "img id='i") != NULL)
 				{
 					debug(99, "---------------------------");
@@ -275,34 +294,55 @@ int myvideo_search(struct skin* grid, struct skin* listbox, struct skin* countla
 					debug(99, "pic: %s", pic);
 					debug(99, "id: %s", id);
 					debug(99, "---------------------------");
+				}
+				else if(ostrstr(ret1[i].part, "{\"id\":") != NULL)
+				{
+					debug(99, "---------------------------");
+					debug(99, "ret1[i].part: %s", ret1[i].part);
+					int rcret = waitrc(NULL, 10, 0);
+					if(rcret == getrcconfigint("rcexit", NULL)) break;
+//					pic = oregex(".*{\"id\":(.*),\".*", ret1[i].part);
+//					id = oregex(".*{\"id\":(.*),\".*", ret1[i].part);
+//					title = oregex(".*alt='(.*)' onmouseover=.*", ret1[i].part);
 
-					if(id != NULL)
-					{
-						incount += 1;
-						line = ostrcat(line, title, 1, 0);
+					id = string_resub("{\"id\":", ",\"", ret1[i].part, 0);	
+					pic = string_resub("\"thumbnail\":\"", "\",", ret1[i].part, 0);	
+					title = string_resub("\"title\":\"", "\",", ret1[i].part, 0);	
+					pic = string_replace_all("\\", "", pic, 1);
+			
+					debug(99, "title: %s", title);
+					debug(99, "pic: %s", pic);
+					debug(99, "id: %s", id);
+					debug(99, "---------------------------");
+				}
+				if(id != NULL)
+				{
+					incount += 1;
+					line = ostrcat(line, title, 1, 0);
 //						line = ostrcat(line, "#http://www.myvideo.de/dynamic/get_player_video_xml.php?flash_playertype=SER&ID=", 1, 0);
 // de fix
-						line = ostrcat(line, "#http://www.myvideo.de/dynamic/get_player_video_xml.php?domain=www.myvideo.de&flash_playertype=D&ds=1&autorun=yes&ID=", 1, 0);
-						line = ostrcat(line, id, 1, 0);
+					line = ostrcat(line, "#http://www.myvideo.de/dynamic/get_player_video_xml.php?domain=www.myvideo.de&flash_playertype=D&ds=1&autorun=yes&ID=", 1, 0);
+					line = ostrcat(line, id, 1, 0);
 //						line = ostrcat(line, "&_countlimit=4&autorun=yes;pageUrl=http://www.myvideo.de/watch/", 1, 0);										
 // de fix
-						line = ostrcat(line, "&_countlimit=4;pageUrl=http://www.myvideo.de/watch/", 1, 0);										
-						line = ostrcat(line, id, 1, 0);
-						line = ostrcat(line, "/;playpath=flv:movie24/a0/", 1, 0);
-						line = ostrcat(line, id, 1, 0);
-						line = ostrcat(line, ";", 1, 0);
-						line = ostrcat(line, id, 1, 0);																				
-						line = ostrcat(line, "#", 1, 0);
-						line = ostrcat(line, pic, 1, 0);
-						line = ostrcat(line, "#myvideo_search_", 1, 0);
-						line = ostrcat(line, oitoa(incount + time(NULL)), 1, 0);
-						line = ostrcat(line, ".jpg#MyVideo - Search#12\n", 1, 0);
-						free(ip), ip = NULL;
-						free(path), path = NULL;
-						free(title), title = NULL;
-					}
-
+					line = ostrcat(line, "&_countlimit=4;pageUrl=http://www.myvideo.de/watch/", 1, 0);										
+					line = ostrcat(line, id, 1, 0);
+					line = ostrcat(line, "/;playpath=flv:movie24/a0/", 1, 0);
+					line = ostrcat(line, id, 1, 0);
+					line = ostrcat(line, ";", 1, 0);
+					line = ostrcat(line, id, 1, 0);																				
+					line = ostrcat(line, "#", 1, 0);
+					line = ostrcat(line, pic, 1, 0);
+					line = ostrcat(line, "#myvideo_search_", 1, 0);
+					line = ostrcat(line, oitoa(incount + time(NULL)), 1, 0);
+					line = ostrcat(line, ".jpg#MyVideo - Search#12\n", 1, 0);
+					free(ip), ip = NULL;
+					free(path), path = NULL;
+					free(title), title = NULL;
 				}
+				free(title), title = NULL;
+				free(pic), pic = NULL;
+				free(id), id = NULL;
 			}
 			free(ret1), ret1 = NULL;
 
