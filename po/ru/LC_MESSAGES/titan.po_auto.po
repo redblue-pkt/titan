@@ -2914,7 +2914,7 @@ msgstr "Загрузить весь файл"
 msgid "Download Full File (background)"
 msgstr "Загрузить весь файл (В фоновом режиме)"
 
-#: sock.h:950
+#: sock.h:952
 msgid "Download finished!"
 msgstr "Загрузка завершена!"
 
@@ -3183,7 +3183,7 @@ msgstr "Ошибка. Нельзя установить маркер на это
 #: skins_optimize_skin.xml.h:1 skins_panel_skin.xml.h:10
 #: skins_rgui_skin.xml.h:1 skins_stopifnotused_skin.xml.h:3
 #: skins_sudoku_skin.xml.h:7 skins_tiwakeup_skin.xml.h:1
-#: skins_wins3_skin.xml.h:1 sock.h:952 softcam.h:411 softcam.h:474
+#: skins_wins3_skin.xml.h:1 sock.h:954 softcam.h:411 softcam.h:474
 #: softcam.h:475 solarmovie.h:35 solarmovie.h:47 solarmovie.h:320 spinner.h:18
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:80
 #: streamcloud.h:90 streamcloud.h:103 streamcloud.h:134 streamcloud.h:193
@@ -5678,7 +5678,7 @@ msgstr ""
 #: scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1646 scan.h:1901
 #: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 security.h:1877 service.h:738
 #: service.h:983 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:317
-#: skinadjust.h:720 skinselector.h:231 sock.h:952 softcam.h:411 softcam.h:474
+#: skinadjust.h:720 skinselector.h:231 sock.h:954 softcam.h:411 softcam.h:474
 #: softcam.h:475 solarmovie.h:35 solarmovie.h:47 solarmovie.h:320 spinner.h:18
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:80
 #: streamcloud.h:90 streamcloud.h:103 streamcloud.h:134 streamcloud.h:193
@@ -6229,7 +6229,7 @@ msgstr ""
 #: skins_mboxinfo_skin.xml.h:2 skins_mc_skin.xml.h:35
 #: skins_optimize_skin.xml.h:2 skins_rgui_skin.xml.h:2
 #: skins_sudoku_skin.xml.h:13 skins_tiwakeup_skin.xml.h:2
-#: skins_wins3_skin.xml.h:3 sock.h:952 softcam.h:411 softcam.h:474
+#: skins_wins3_skin.xml.h:3 sock.h:954 softcam.h:411 softcam.h:474
 #: softcam.h:475 solarmovie.h:35 solarmovie.h:47 solarmovie.h:320 spinner.h:18
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:80
 #: streamcloud.h:90 streamcloud.h:103 streamcloud.h:134 streamcloud.h:193
@@ -8150,7 +8150,7 @@ msgstr "Скрипт не имеет выхода или запущен в фо�
 #: imdb.h:712 internetradio.h:13 internetradio.h:15 internettv.h:13
 #: internettv.h:15 kinox.h:33 kinox.h:35 kinox.h:179 kinox.h:181 kinox.h:797
 #: kinox.h:799 mlehd.h:90 mlehd.h:92 movie4k.h:134 movie4k.h:136 movie4k.h:291
-#: movie4k.h:293 myvideo.h:228 myvideo.h:230 myvideo.h:333 myvideo.h:335
+#: movie4k.h:293 myvideo.h:229 myvideo.h:231 myvideo.h:373 myvideo.h:375
 #: netzkino.h:13 netzkino.h:15 rtl2now.h:249 rtl2now.h:251 rtl2now.h:313
 #: rtl2now.h:315 rtl2now.h:377 rtl2now.h:379 rtl2now.h:441 rtl2now.h:443
 #: rtl2now.h:505 rtl2now.h:507 rtl2now.h:569 rtl2now.h:571
