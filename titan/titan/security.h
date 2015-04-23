@@ -71,7 +71,7 @@ int checkhighflash()
 	else if(checkchipset("BCM7424") == 1) // inihdp
 	{
 		cmd = ostrcat(cmd, "mtd1", 1, 0); 
-		size = ostrcat("0x6f500000", NULL, 0, 0); 
+		size = ostrcat("6f500000", NULL, 0, 0); 
 	}
 	else if(checkbox("UFS913") == 1)
 	{
