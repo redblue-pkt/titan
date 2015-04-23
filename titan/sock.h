@@ -745,7 +745,8 @@ char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, 
 			else
 			{
 				buf = realloc(buf, count);
-				memcpy(buf, tmpbuf, count);
+				if(buf != NULL)
+					memcpy(buf, tmpbuf, count);
 			}
 		}
 	
@@ -801,7 +802,8 @@ char* gethttpreal(char* host, char* page, int port, char* filename, char* auth, 
 		{
 			count = count + ret;
 			buf = realloc(buf, count);
-			memcpy(buf + count - ret, tmpbuf, ret);
+			if(buf != NULL)
+				memcpy(buf + count - ret, tmpbuf, ret);
 		}
 		memset(tmpbuf, 0, ret);
 		
