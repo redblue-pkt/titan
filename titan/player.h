@@ -2218,7 +2218,8 @@ unsigned long long playergetpts()
 /*
 	if(pipeline)
 	{
-		gst_element_query_position(pipeline, &fmt, (gint64*)&pts);
+//		gst_element_query_position(pipeline, &fmt, (gint64*)&pts);
+		gst_element_query_position(pipeline, fmt, (gint64*)&pts);
 		sec = pts / 1000000000;
 		pts = sec * 90000;
 		debug(150, "Pts = %02d:%02d:%02d (%llu.0000 sec)", (int)((sec / 60) / 60) % 60, (int)(sec / 60) % 60, (int)sec % 60, sec);
@@ -2244,7 +2245,8 @@ unsigned long long playergetpts()
 
 		gst_object_unref(sink);
 
-		if(!use_get_decoder_time && !gst_element_query_position(pipeline, &fmt, &pos))
+//		if(!use_get_decoder_time && !gst_element_query_position(pipeline, &fmt, &pos))
+		if(!use_get_decoder_time && !gst_element_query_position(pipeline, fmt, &pos))
 			return 0;
 
 		/* pos is in nanoseconds. we have 90 000 pts per second. */
@@ -2907,7 +2909,8 @@ void playersend_ff_fr_event(gdouble rate) {
 	GstEvent *seek_event;
    
 	/* Obtain the current position, needed for the seek event */
-	if (!gst_element_query_position (pipeline, &format, &position)) {
+//	if (!gst_element_query_position (pipeline, &format, &position)) {
+	if (!gst_element_query_position (pipeline, format, &position)) {
 		g_printerr ("Unable to retrieve current position.\n");
 		return;
 	}
