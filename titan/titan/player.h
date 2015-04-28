@@ -756,8 +756,14 @@ void playersubtitleAvail(GstElement *subsink, GstBuffer *buffer, gpointer user_d
 	{
 		err("no mem");
 		return;
-	}		
-	sprintf(subtext, "%s", GST_BUFFER_DATA(buffer));
+	}
+	guint8 *data;
+//	gsize size;
+	GstMapInfo map;
+	gst_buffer_map(buffer, &map, GST_MAP_READ);
+	data = map.data;
+	sprintf(subtext, "%s", data);
+//	sprintf(subtext, "%s", GST_BUFFER_DATA(buffer));
 	playersubtitleclean(subtext, len+10);
 	
 	double convert_fps = 1.0;
