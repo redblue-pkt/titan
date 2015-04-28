@@ -770,8 +770,8 @@ void playersubtitleAvail(GstElement *subsink, GstBuffer *buffer, gpointer user_d
 	}
 	guint8 *data;
 //	gsize size;
-	GstMapInfo map;
-	gst_buffer_map(buffer, &map, GST_MAP_READ);
+//	GstMapInfo map;
+//	gst_buffer_map(buffer, &map, GST_MAP_READ);
 	data = map.data;
 	sprintf(subtext, "%s", data);
 //	sprintf(subtext, "%s", GST_BUFFER_DATA(buffer));
