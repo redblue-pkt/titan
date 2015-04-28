@@ -2280,7 +2280,8 @@ double playergetlength()
 
 	if(pipeline)
 	{
-		gst_element_query_duration(pipeline, &fmt, &len);
+//		gst_element_query_duration(pipeline, &fmt, &len);
+		gst_element_query_duration(pipeline, fmt, &len);
 		length = len / 1000000000;
 		if(length < 0) length = 0;
 		debug(150, "Length = %02d:%02d:%02d (%.4f sec)", (int)((length / 60) / 60) % 60, (int)(length / 60) % 60, (int)length % 60, length);
