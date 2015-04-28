@@ -738,9 +738,20 @@ void playersubtitleAvail(GstElement *subsink, GstBuffer *buffer, gpointer user_d
 //#if GST_VERSION_MAJOR < 1
 //	size_t len = GST_BUFFER_SIZE(buffer);
 //#else
-	size_t len = gst_buffer_get_size(buffer);
+//	size_t len = gst_buffer_get_size(buffer);
+	GstMapInfo map;
+	if(!gst_buffer_map(buffer, &map, GST_MAP_READ))
+	{
+		printf("eServiceMP3::pullSubtitle gst_buffer_map failed\n");
+		return;
+	}
+	gint64 buf_pos = GST_BUFFER_PTS(buffer);
+	size_t len = map.size;
+	printf("gst_buffer_get_size %zu map.size %zu\n", gst_buffer_get_size(buffer), len);
+
 //#endif
-	
+	gint64 duration_ns = GST_BUFFER_DURATION(buffer);
+			
 	//printf("BUFFER_TIMESTAMP: %lld - BUFFER_DURATION: %lld in ns\n", buf_pos, duration_ns);
 	//printf("BUFFER_SIZE: %d\n", len);
 	//printf("BUFFER_DATA: %s\n", GST_BUFFER_DATA(buffer));
