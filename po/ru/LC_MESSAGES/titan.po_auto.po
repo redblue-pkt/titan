@@ -3122,7 +3122,7 @@ msgstr "Ошибка. Нельзя установить маркер на это
 #: global.h:7137 harddisk.h:359 harddisk.h:492 harddisk.h:686 harddisk.h:694
 #: harddisk.h:728 harddisk.h:777 harddisk.h:782 harddisk.h:784 harddisk.h:786
 #: harddisk.h:846 harddisk.h:865 harddisk.h:868 harddisk.h:1099 hbbtv.h:362
-#: hello.c:36 httpdfunc.h:1304 httpdfunc.h:3258 httpdfunc.h:6159
+#: hello.c:37 httpdfunc.h:1304 httpdfunc.h:3258 httpdfunc.h:6159
 #: httpdfunc.h:6424 httpdfunc.h:6495 hwtest.h:88 hwtest.h:93 hwtest.h:98
 #: hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390
 #: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
@@ -4205,7 +4205,7 @@ msgstr "Время до отключения"
 msgid "Hardware Test"
 msgstr "Аппаратное тестирование"
 
-#: hello.c:36
+#: hello.c:37
 msgid "Hello World !"
 msgstr "Всем привет!"
 
@@ -5637,7 +5637,7 @@ msgstr ""
 #: global.h:7126 global.h:7130 global.h:7137 global.h:7141 harddisk.h:686
 #: harddisk.h:694 harddisk.h:728 harddisk.h:777 harddisk.h:782 harddisk.h:784
 #: harddisk.h:786 harddisk.h:846 harddisk.h:865 harddisk.h:868 hbbtv.h:362
-#: hello.c:36 httpdfunc.h:1304 httpdfunc.h:5773 httpdfunc.h:6159
+#: hello.c:37 httpdfunc.h:1304 httpdfunc.h:5773 httpdfunc.h:6159
 #: httpdfunc.h:6424 httpdfunc.h:6495 hwtest.h:88 hwtest.h:93 hwtest.h:98
 #: hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390
 #: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
