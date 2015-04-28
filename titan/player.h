@@ -910,7 +910,11 @@ int playerstart(char* file)
 			status.playercan = 0xFEFF;
 		
 		m_framerate = -1;
-		pipeline = gst_element_factory_make("playbin2", "playbin");
+//#if GST_VERSION_MAJOR < 1
+//		pipeline = gst_element_factory_make("playbin2", "playbin");
+//#else
+		pipeline = gst_element_factory_make("playbin", "playbin");
+//#endif
 
 // enable buffersize start
 		int size = getconfigint("playerbuffersize", NULL);
