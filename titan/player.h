@@ -720,11 +720,11 @@ void playersubtitleAvail(GstElement *subsink, GstBuffer *buffer, gpointer user_d
 	int32_t decoder_ms;
 	GstFormat fmt = GST_FORMAT_TIME;
 	
-#if GST_VERSION_MAJOR < 1
-	if (!gst_element_query_position(pipeline, &fmt, &pos))
-#else
+//#if GST_VERSION_MAJOR < 1
+//	if (!gst_element_query_position(pipeline, &fmt, &pos))
+//#else
 	if (!gst_element_query_position(pipeline, fmt, &pos))
-#endif
+//#endif
 	{
 		err("gst_element_query_position failed");
 		return;
@@ -735,11 +735,11 @@ void playersubtitleAvail(GstElement *subsink, GstBuffer *buffer, gpointer user_d
 	if(subtitlethread == NULL)
 		subtitlethread = addtimer(&playersubtitle_thread, START, 10000, 1, NULL, NULL, NULL);
 	
-#if GST_VERSION_MAJOR < 1
-	size_t len = GST_BUFFER_SIZE(buffer);
-#else
+//#if GST_VERSION_MAJOR < 1
+//	size_t len = GST_BUFFER_SIZE(buffer);
+//#else
 	size_t len = gst_buffer_get_size(buffer);
-#endif
+//#endif
 	
 	//printf("BUFFER_TIMESTAMP: %lld - BUFFER_DURATION: %lld in ns\n", buf_pos, duration_ns);
 	//printf("BUFFER_SIZE: %d\n", len);
@@ -957,11 +957,11 @@ int playerstart(char* file)
 			g_signal_connect (subsink, "new-buffer", G_CALLBACK (playersubtitleAvail), NULL);
 			g_object_set (G_OBJECT (subsink), "caps", gst_caps_from_string("text/plain; text/x-plain; text/x-raw; text/x-pango-markup; video/x-dvd-subpicture; subpicture/x-pgs"), NULL);
 
-#if GST_VERSION_MAJOR < 1
-			g_object_set (G_OBJECT (subsink), "caps", gst_caps_from_string("text/plain; text/x-plain; text/x-raw; text/x-pango-markup; video/x-dvd-subpicture; subpicture/x-pgs"), NULL);
-#else
+//#if GST_VERSION_MAJOR < 1
+//			g_object_set (G_OBJECT (subsink), "caps", gst_caps_from_string("text/plain; text/x-plain; text/x-raw; text/x-pango-markup; video/x-dvd-subpicture; subpicture/x-pgs"), NULL);
+//#else
 			g_object_set (G_OBJECT (subsink), "caps", gst_caps_from_string("text/plain; text/x-plain; text/x-raw; text/x-pango-markup; subpicture/x-dvd; subpicture/x-pgs"), NULL);
-#endif
+//#endif
 
 			g_object_set (G_OBJECT (pipeline), "text-sink", subsink, NULL);
 			subtitleflag = 1;
@@ -972,13 +972,13 @@ int playerstart(char* file)
 //memset (&this, 0, sizeof (this));
 
 		GstBus *bus = gst_pipeline_get_bus(GST_PIPELINE(pipeline));
-#if GST_VERSION_MAJOR < 1
-//		gst_bus_set_sync_handler(bus, gstBusSyncHandler, this);
-		gst_bus_set_sync_handler(bus, GST_BUS_DROP, NULL);
-#else
+//#if GST_VERSION_MAJOR < 1
+////		gst_bus_set_sync_handler(bus, gstBusSyncHandler, this);
+//		gst_bus_set_sync_handler(bus, GST_BUS_DROP, NULL);
+//#else
 //		gst_bus_set_sync_handler(bus, gstBusSyncHandler, this, NULL);
 		gst_bus_set_sync_handler(bus, GST_BUS_DROP, NULL, NULL);
-#endif
+//#endif
 
 		gst_object_unref(bus);
 		char srt_filename[ext - filename + 5];
@@ -1563,11 +1563,11 @@ void playercontinue()
 			//subtitle sync bug... start
 			gint64 time_nanoseconds = 0;
 			GstFormat fmt = GST_FORMAT_TIME;
-#if GST_VERSION_MAJOR < 1
-			if (!gst_element_query_position(pipeline, &fmt, &time_nanoseconds))
-#else
+//#if GST_VERSION_MAJOR < 1
+//			if (!gst_element_query_position(pipeline, &fmt, &time_nanoseconds))
+//#else
 			if (!gst_element_query_position(pipeline, fmt, &time_nanoseconds))
-#endif
+//#endif
 			{
 				err("gst_element_query_position failed");
 				return;
@@ -1787,11 +1787,11 @@ audiotype_t gstCheckAudioPad(GstStructure* structure)
 		return atAC3;
 	else if(gst_structure_has_name(structure, "audio/x-dts") || gst_structure_has_name(structure, "audio/dts"))
 		return atDTS;
-#if GST_VERSION_MAJOR < 1
-	else if(gst_structure_has_name(structure, "audio/x-raw-int"))
-#else
+//#if GST_VERSION_MAJOR < 1
+//	else if(gst_structure_has_name(structure, "audio/x-raw-int"))
+//#else
 	else if(gst_structure_has_name(structure, "audio/x-raw"))
-#endif
+//#endif
 		return atPCM;
 
 	return atUnknown;
@@ -1802,11 +1802,11 @@ subtype_t getSubtitleType(GstPad* pad, gchar *g_codec)
 {
 g_codec = NULL;
 	subtype_t type = stUnknown;
-#if GST_VERSION_MAJOR < 1
-	GstCaps* caps = gst_pad_get_negotiated_caps(pad);
-#else
+//#if GST_VERSION_MAJOR < 1
+//	GstCaps* caps = gst_pad_get_negotiated_caps(pad);
+//#else
 	GstCaps* caps = gst_pad_get_current_caps(pad);
-#endif
+//#endif
 	if (!caps && !g_codec)
 	{
 		caps = gst_pad_get_allowed_caps(pad);
@@ -1821,11 +1821,11 @@ g_codec = NULL;
 			// eDebug("getSubtitleType::subtitle probe caps type=%s", g_type ? g_type : "(null)");
 			if (g_type)
 			{
-#if GST_VERSION_MAJOR < 1
-				if ( !strcmp(g_type, "video/x-dvd-subpicture") )
-#else
+//#if GST_VERSION_MAJOR < 1
+//				if ( !strcmp(g_type, "video/x-dvd-subpicture") )
+//#else
 				if ( !strcmp(g_type, "subpicture/x-dvd") )
-#endif
+//#endif
 					type = stVOB;
 				else if ( !strcmp(g_type, "text/x-pango-markup") )
 					type = stSRT;
@@ -1951,11 +1951,11 @@ char** playergettracklist(int type)
 					GstPad* pad = 0;
 					
 					g_signal_emit_by_name (pipeline, "get-audio-pad", i, &pad);
-#if GST_VERSION_MAJOR < 1
-					GstCaps* caps = gst_pad_get_negotiated_caps(pad);
-#else
+//#if GST_VERSION_MAJOR < 1
+//					GstCaps* caps = gst_pad_get_negotiated_caps(pad);
+//#else
 					GstCaps* caps = gst_pad_get_current_caps(pad);
-#endif
+//#endif
 					if(!caps)
 						continue;
 					
@@ -1964,11 +1964,11 @@ char** playergettracklist(int type)
 
 					g_signal_emit_by_name(pipeline, "get-audio-tags", i, &tags);
 
-#if GST_VERSION_MAJOR < 1
-					if(tags && gst_is_tag_list(tags))
-#else
+//#if GST_VERSION_MAJOR < 1
+//					if(tags && gst_is_tag_list(tags))
+//#else
 					if(tags && GST_IS_TAG_LIST(tags))
-#endif
+//#endif
 					{
 						if(gst_tag_list_get_string(tags, GST_TAG_AUDIO_CODEC, &g_codec))
 						{
@@ -2027,11 +2027,11 @@ char** playergettracklist(int type)
 					g_signal_emit_by_name (pipeline, "get-text-pad", i, &pad);
 					printf("SubTitle Type: %d\n", getSubtitleType(pad, g_codec));
 
-#if GST_VERSION_MAJOR < 1
-					GstCaps* caps = gst_pad_get_negotiated_caps(pad);
-#else
+//#if GST_VERSION_MAJOR < 1
+//					GstCaps* caps = gst_pad_get_negotiated_caps(pad);
+//#else
 					GstCaps* caps = gst_pad_get_current_caps(pad);
-#endif
+//#endif
 					if (!caps && !g_codec)
 					{
 						caps = gst_pad_get_allowed_caps(pad);
@@ -2042,11 +2042,11 @@ char** playergettracklist(int type)
 
 					g_signal_emit_by_name(pipeline, "get-text-tags", i, &tags);
 					
-#if GST_VERSION_MAJOR < 1
-					if (tags && gst_is_tag_list(tags))
-#else
+//#if GST_VERSION_MAJOR < 1
+//					if (tags && gst_is_tag_list(tags))
+//#else
 					if (tags && GST_IS_TAG_LIST(tags))
-#endif
+//#endif
 					{
 						if(gst_tag_list_get_string(tags, GST_TAG_SUBTITLE_CODEC, &g_codec));
 						{
@@ -2099,11 +2099,11 @@ char** playergettracklist(int type)
 					
 					g_signal_emit_by_name(pipeline, "get-video-tags", i, &tags);
 					
-#if GST_VERSION_MAJOR < 1
-					if (tags && gst_is_tag_list(tags))
-#else
+//#if GST_VERSION_MAJOR < 1
+//					if (tags && gst_is_tag_list(tags))
+//#else
 					if (tags && GST_IS_TAG_LIST(tags))
-#endif
+//#endif
 					{
 						if(gst_tag_list_get_string(tags, GST_TAG_VIDEO_CODEC, &g_codec));
 						{
