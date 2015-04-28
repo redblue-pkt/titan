@@ -747,7 +747,7 @@ void playersubtitleAvail(GstElement *subsink, GstBuffer *buffer, gpointer user_d
 	}
 	gint64 buf_pos = GST_BUFFER_PTS(buffer);
 	size_t len = map.size;
-	printf("gst_buffer_get_size %zu map.size %zu\n", gst_buffer_get_size(buffer), len);
+//	printf("gst_buffer_get_size %zu map.size %zu\n", gst_buffer_get_size(buffer), len);
 
 //#endif
 	gint64 duration_ns = GST_BUFFER_DURATION(buffer);
