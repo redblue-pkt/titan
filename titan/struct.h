@@ -62,7 +62,7 @@
 #include <regex.h>
 #include <mntent.h>
 #include <termios.h>
-#ifdef SIMULATE || EPLAYER4
+#ifndef SH4
 #include <sys/stat.h>
 #endif
 
