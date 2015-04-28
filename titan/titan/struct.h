@@ -62,9 +62,9 @@
 #include <regex.h>
 #include <mntent.h>
 #include <termios.h>
-//#ifdef SIMULATE
+#ifdef SIMULATE || EPLAYER4
 #include <sys/stat.h>
-//#endif
+#endif
 
 //for freetype
 #include <ft2build.h>
