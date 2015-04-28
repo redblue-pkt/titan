@@ -712,8 +712,8 @@ void playersubtitleAvail(GstElement *subsink, GstBuffer *buffer, gpointer user_d
 	//printf("++++++ subtitelflag: %i\n", subtitleflag);
 	if(subtitleflag == 0 || subtitleflag == 2) return;
 	
-	gint64 buf_pos = GST_BUFFER_TIMESTAMP(buffer);
-	gint64 duration_ns = GST_BUFFER_DURATION(buffer);
+//	gint64 buf_pos = GST_BUFFER_TIMESTAMP(buffer);
+//	gint64 duration_ns = GST_BUFFER_DURATION(buffer);
 	
 	time_t running_pts = 0;
 	gint64 pos = 0;
