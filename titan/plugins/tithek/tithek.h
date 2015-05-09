@@ -228,7 +228,7 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 		cmd = ostrcat(cmd, "w.sola", 1, 0);
 		cmd = ostrcat(cmd, "rmovi", 1, 0);
 		cmd = ostrcat(cmd, "e.", 1, 0);
-		cmd = ostrcat(cmd, "es", 1, 0);
+		cmd = ostrcat(cmd, "is", 1, 0);
 		
 		for(i = 0; i < 3; i++)
 		{
