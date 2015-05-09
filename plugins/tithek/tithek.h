@@ -228,7 +228,7 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 		cmd = ostrcat(cmd, "w.sola", 1, 0);
 		cmd = ostrcat(cmd, "rmovi", 1, 0);
 		cmd = ostrcat(cmd, "e.", 1, 0);
-		cmd = ostrcat(cmd, "so", 1, 0);
+		cmd = ostrcat(cmd, "es", 1, 0);
 		
 		for(i = 0; i < 3; i++)
 		{
@@ -247,7 +247,7 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 		cmd = ostrcat(cmd, "w.mov", 1, 0);
 		cmd = ostrcat(cmd, "ie4k", 1, 0);
 		cmd = ostrcat(cmd, ".", 1, 0);
-		cmd = ostrcat(cmd, "to", 1, 0);
+		cmd = ostrcat(cmd, "me", 1, 0);
 		
 		for(i = 0; i < 3; i++)
 		{
@@ -284,7 +284,7 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 		cmd = ostrcat(cmd, "kin", 1, 0);
 		cmd = ostrcat(cmd, "ox", 1, 0);
 		cmd = ostrcat(cmd, ".", 1, 0);
-		cmd = ostrcat(cmd, "to", 1, 0);
+		cmd = ostrcat(cmd, "me", 1, 0);
 		
 		for(i = 0; i < 3; i++)
 		{
