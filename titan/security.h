@@ -1213,6 +1213,23 @@ void setskinnodeslocked(int flag)
 				if(ostrcmp("cinterface", child->name) == 0) child->locked = 1;
 			}
 
+			// hide fancontrol
+			if(checkbox("UFS922") != 1 && checkbox("IPBOX91") != 1 && checkbox("IPBOX900") != 1 && checkbox("IPBOX910") != 1 && checkbox("IPBOX9000") != 1 && checkchipset("BCM7424") != 1) //inihdp
+			{
+				if(ostrcmp("fancontrol", child->name) == 0) child->locked = 1;
+			}
+
+			// Hide cec when sh4 
+#ifndef MIPSEL 
+			if(ostrcmp("ceccontrol", child->name) == 0) child->locked = 1; 
+#endif
+
+			// Hid Pip 
+			if(checkchipset("BCM7424") != 1) //inihdp
+			{
+				if(ostrcmp("settings_pip", child->name) == 0) child->locked = 1; 
+			}
+
 #ifdef MIPSEL
 			if(ostrcmp("system_backup", child->name) == 0) child->locked = 1;
 			if(ostrcmp("system_update_usb_tmp", child->name) == 0) child->locked = 1;
