@@ -21,7 +21,7 @@ msgstr ""
 msgid " : NOT OKAY!"
 msgstr " : No se pudo!"
 
-#: security.h:678 security.h:2041
+#: security.h:678 security.h:2058
 msgid " Days "
 msgstr ""
 
@@ -1116,7 +1116,7 @@ msgstr "configuracion del sintonizador de satelite"
 msgid "Atemio WLAN configuration"
 msgstr "Atemio WLAN Configuración"
 
-#: security.h:2046
+#: security.h:2063
 msgid "Atemio free license"
 msgstr ""
 
@@ -2436,7 +2436,7 @@ msgstr "ATENCION: Canales no copiados"
 msgid "Copy satlist successfull"
 msgstr "Canales copiados con Exito"
 
-#: security.h:2055
+#: security.h:2072
 msgid "Copyright"
 msgstr "© Copyright"
 
@@ -2791,7 +2791,7 @@ msgstr ""
 "Rojo = kill del Proceso\n"
 "Verde = reiniciar Sistema"
 
-#: security.h:2048
+#: security.h:2065
 msgid "Dev free license"
 msgstr ""
 
@@ -3174,41 +3174,41 @@ msgstr "ERROR: No se puede establecer marcadores en este archivo"
 #: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:332
 #: mc_videoplayer.h:749 mc_videoplayer.h:784 mc_videoplayer.h:888
 #: mc_videoplayer.h:904 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
-#: mediadb.h:1477 mediadb.h:2525 mediadbsettings.h:95 menu.h:185 menu.h:240
-#: menu.h:1009 menu.h:1011 movie4k.h:36 movie4k.h:48 movie4k.h:92
-#: movie4k.h:399 movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78
-#: movshare.h:157 movshare.h:163 myvideo.h:86 networkbrowser.h:966
-#: networkbrowser.h:1027 networkbrowser.h:1031 networkbrowser.h:1033
-#: networkbrowser.h:1043 networkbrowser.h:1047 networkbrowser.h:1211
-#: networkbrowser.h:1765 networkbrowser.h:1772 networkbrowser.h:1777
-#: networkbrowser.h:1929 network.h:284 network.h:299 network.h:335
-#: network.h:436 network.h:577 network.h:785 network.h:793 network.h:819
-#: network.h:823 network.h:877 network.h:884 network.h:906 newsletter.h:252
-#: newsletter.h:292 novamov.h:35 novamov.h:80 nowvideo.h:44 nowvideo.h:99
-#: nowvideo.h:105 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
-#: played.h:30 played.h:84 played.h:90 played.h:102 played.h:114 played.h:171
-#: player.h:108 play.h:497 play.h:614 play.h:1284 play.h:1290 play.h:1299
-#: play.h:1300 play.h:1508 play.h:1724 play.h:1735
-#: plugins_autotimer_skin.xml.h:6 plugins_callmonitor1_skin.xml.h:10
-#: plugins_catcatch_skin.xml.h:3 plugins_dlna_skin.xml.h:1
-#: plugins_facebook_skin.xml.h:2 plugins_instar_skin.xml.h:5
-#: plugins_lcdpearl1_skin.xml.h:6 plugins_lcdsamsung_skin.xml.h:7
-#: plugins_mboxinfo_skin.xml.h:1 plugins_mc_skin.xml.h:19
-#: plugins_optimize_skin.xml.h:1 plugins_panel_skin.xml.h:10
-#: plugins_rgui_skin.xml.h:1 plugins_stopifnotused_skin.xml.h:3
-#: plugins_sudoku_skin.xml.h:7 plugins_tiwakeup_skin.xml.h:1
-#: plugins_wins3_skin.xml.h:1 possetup.h:98 primeshare.h:29 primeshare.h:73
-#: primeshare.h:79 primeshare.h:124 promptfile.h:46 promptfile.h:94
-#: promptfile.h:136 putlocker.h:32 putlocker.h:79 putlocker.h:85
-#: putlocker.h:91 putlocker.h:142 putlocker.h:152 putlocker.h:225
-#: readerconfig.h:351 readerconfig.h:451 readerconfig.h:452 readerconfig.h:497
-#: readerconfig.h:498 record.h:90 record.h:387 record.h:1054 record.h:1302
-#: record.h:1552 record.h:1577 rectimer.h:577 rectimer.h:1231 rectimer.h:1377
-#: rectimer.h:1389 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
+#: mediadb.h:1477 mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215
+#: menu.h:984 menu.h:986 movie4k.h:36 movie4k.h:48 movie4k.h:92 movie4k.h:399
+#: movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78 movshare.h:157
+#: movshare.h:163 myvideo.h:86 networkbrowser.h:966 networkbrowser.h:1027
+#: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
+#: networkbrowser.h:1047 networkbrowser.h:1211 networkbrowser.h:1765
+#: networkbrowser.h:1772 networkbrowser.h:1777 networkbrowser.h:1929
+#: network.h:284 network.h:299 network.h:335 network.h:436 network.h:577
+#: network.h:785 network.h:793 network.h:819 network.h:823 network.h:877
+#: network.h:884 network.h:906 newsletter.h:252 newsletter.h:292 novamov.h:35
+#: novamov.h:80 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105 panel_main.h:29
+#: panel_main.h:135 panel_settings_wizard.h:6 played.h:30 played.h:84
+#: played.h:90 played.h:102 played.h:114 played.h:171 player.h:108 play.h:497
+#: play.h:614 play.h:1284 play.h:1290 play.h:1299 play.h:1300 play.h:1508
+#: play.h:1724 play.h:1735 plugins_autotimer_skin.xml.h:6
+#: plugins_callmonitor1_skin.xml.h:10 plugins_catcatch_skin.xml.h:3
+#: plugins_dlna_skin.xml.h:1 plugins_facebook_skin.xml.h:2
+#: plugins_instar_skin.xml.h:5 plugins_lcdpearl1_skin.xml.h:6
+#: plugins_lcdsamsung_skin.xml.h:7 plugins_mboxinfo_skin.xml.h:1
+#: plugins_mc_skin.xml.h:19 plugins_optimize_skin.xml.h:1
+#: plugins_panel_skin.xml.h:10 plugins_rgui_skin.xml.h:1
+#: plugins_stopifnotused_skin.xml.h:3 plugins_sudoku_skin.xml.h:7
+#: plugins_tiwakeup_skin.xml.h:1 plugins_wins3_skin.xml.h:1 possetup.h:98
+#: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
+#: promptfile.h:46 promptfile.h:94 promptfile.h:136 putlocker.h:32
+#: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
+#: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
+#: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:90
+#: record.h:387 record.h:1054 record.h:1302 record.h:1552 record.h:1577
+#: rectimer.h:577 rectimer.h:1231 rectimer.h:1377 rectimer.h:1389
+#: restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1901
 #: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 scriptexec.h:41
-#: security.h:663 security.h:680 security.h:1877 service.h:738 service.h:983
+#: security.h:663 security.h:680 security.h:1894 service.h:738 service.h:983
 #: shared.h:29 shared.h:65 shared.h:82 skin_default_skin.xml.h:246
 #: skins_autotimer_skin.xml.h:6 skins_callmonitor1_skin.xml.h:10
 #: skins_catcatch_skin.xml.h:3 skins_dlna_skin.xml.h:1 skinselector.h:231
@@ -3380,7 +3380,7 @@ msgstr "ERROR: No se puede crear fichero"
 msgid "Error file not supported"
 msgstr "ERROR: Tipo de archivo no soportado"
 
-#: menu.h:1009
+#: menu.h:984
 msgid "Error in Save Settings"
 msgstr "ERROR: Los ajustes no podran guardarse!"
 
@@ -3976,7 +3976,7 @@ msgstr "VFD Display"
 msgid "Front Key"
 msgstr ""
 
-#: security.h:2022
+#: security.h:2039
 msgid "Frontcontroller"
 msgstr ""
 
@@ -4750,7 +4750,7 @@ msgid ""
 "sharing' in the 'Network and Sharing Center'."
 msgstr ""
 
-#: security.h:2010
+#: security.h:2027
 msgid "Image"
 msgstr ""
 
@@ -4936,7 +4936,7 @@ msgstr "Instalar para SWAP (USB o HDD)"
 msgid "Installation start"
 msgstr "La instalacion comenzo"
 
-#: httpdfunc.h:5662 security.h:2017 skin_default_skin.xml.h:375
+#: httpdfunc.h:5662 security.h:2034 skin_default_skin.xml.h:375
 msgid "Installed:"
 msgstr "Instalado:"
 
@@ -5280,7 +5280,7 @@ msgstr ""
 msgid "Lib extension for network (upnpfs/smbfs/ftpfs/rarfs)"
 msgstr "extensión protocolo de red (upnpfs/smbfs/ftpfs/rarfs)"
 
-#: security.h:2028
+#: security.h:2045
 msgid "License"
 msgstr ""
 
@@ -5674,7 +5674,7 @@ msgstr "Protejer Menu"
 msgid "Menu Title"
 msgstr "Menu Titulo"
 
-#: mc_main.h:283 menu.h:185 panel_main.h:29 panel_main.h:135
+#: mc_main.h:283 menu.h:160 panel_main.h:29 panel_main.h:135
 msgid "Menu not implemented !"
 msgstr "Menu no disponible!"
 
@@ -5717,7 +5717,7 @@ msgstr "Lista de Menus"
 #: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:332
 #: mc_videoplayer.h:749 mc_videoplayer.h:784 mc_videoplayer.h:888
 #: mc_videoplayer.h:904 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
-#: mediadb.h:1477 mediadbsettings.h:95 menu.h:185 menu.h:240 movie4k.h:36
+#: mediadb.h:1477 mediadbsettings.h:95 menu.h:160 menu.h:215 movie4k.h:36
 #: movie4k.h:48 movie4k.h:92 movie4k.h:399 movreel.h:30 movreel.h:137
 #: movshare.h:34 movshare.h:78 movshare.h:157 movshare.h:163 myvideo.h:86
 #: networkbrowser.h:966 networkbrowser.h:1027 networkbrowser.h:1031
@@ -5739,7 +5739,7 @@ msgstr "Lista de Menus"
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
 #: scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1646 scan.h:1901
-#: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 security.h:1877 service.h:738
+#: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 security.h:1894 service.h:738
 #: service.h:983 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:317
 #: skinadjust.h:720 skinselector.h:231 sock.h:954 softcam.h:411 softcam.h:474
 #: softcam.h:475 solarmovie.h:35 solarmovie.h:47 solarmovie.h:320 spinner.h:18
@@ -6259,8 +6259,8 @@ msgstr "Ö"
 #: mc_pictureplayer.h:461 mc_videoplayer.h:332 mc_videoplayer.h:749
 #: mc_videoplayer.h:784 mc_videoplayer.h:888 mc_videoplayer.h:904
 #: mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130 mediadb.h:1477
-#: mediadb.h:2525 mediadbsettings.h:95 menu.h:185 menu.h:240 menu.h:1009
-#: menu.h:1011 movie4k.h:36 movie4k.h:48 movie4k.h:92 movie4k.h:399
+#: mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215 menu.h:984
+#: menu.h:986 movie4k.h:36 movie4k.h:48 movie4k.h:92 movie4k.h:399
 #: movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78 movshare.h:157
 #: movshare.h:163 myvideo.h:86 networkbrowser.h:966 networkbrowser.h:1027
 #: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
@@ -6288,7 +6288,7 @@ msgstr "Ö"
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1901
 #: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 scriptexec.h:41
-#: security.h:663 security.h:680 security.h:1877 service.h:738 service.h:983
+#: security.h:663 security.h:680 security.h:1894 service.h:738 service.h:983
 #: shared.h:29 shared.h:65 shared.h:82 skinadjust.h:317 skinadjust.h:720
 #: skins_dlna_skin.xml.h:7 skinselector.h:231 skins_facebook_skin.xml.h:3
 #: skins_mboxinfo_skin.xml.h:2 skins_mc_skin.xml.h:35
@@ -7973,7 +7973,7 @@ msgstr "Sabado"
 msgid "Save"
 msgstr "Guardar"
 
-#: autotimer.c:603 menu.h:1009 menu.h:1011 skin_default_skin.xml.h:604
+#: autotimer.c:603 menu.h:984 menu.h:986 skin_default_skin.xml.h:604
 msgid "Save Settings"
 msgstr "Guarda Configuracion"
 
@@ -8522,7 +8522,7 @@ msgstr "Guardar la configuracion?"
 msgid "Settings backup/restore"
 msgstr "Configuracion backup/restaurar"
 
-#: autotimer.c:603 menu.h:1011
+#: autotimer.c:603 menu.h:986
 msgid "Settings succesfull saved"
 msgstr "Configuracion guardada con EExito"
 
@@ -8539,7 +8539,7 @@ msgid "Sharename can't be empty!"
 msgstr "ERROR: nombre de recurso compartido debe ingresar!"
 
 #: infobar.h:611 mc_audioplayer.h:333 mc_main.h:274 mc_pictureplayer.h:124
-#: mc_videoplayer.h:332 menu.h:240
+#: mc_videoplayer.h:332 menu.h:215
 msgid ""
 "Shooting Background done !\n"
 "Save Screenshoot Path: /tmp/screenshot.jpg"
@@ -9988,7 +9988,7 @@ msgstr ""
 msgid "Treiber fuer Samsung LCD"
 msgstr "Driver para Samsung LCD"
 
-#: security.h:676 security.h:2038
+#: security.h:676 security.h:2055
 msgid "Trial period ends in"
 msgstr ""
 
@@ -10004,7 +10004,7 @@ msgstr "Martes"
 msgid "Tune to channel failed"
 msgstr "ERROR: Para sintonizar Canal fracaso"
 
-#: security.h:2064 skin_default_skin.xml.h:759
+#: security.h:2081 skin_default_skin.xml.h:759
 msgid "Tuner"
 msgstr ""
 
@@ -10045,7 +10045,7 @@ msgstr ""
 "grabacion\n"
 "o corriente durante la reproduccion"
 
-#: security.h:2071 skin_default_skin.xml.h:765
+#: security.h:2088 skin_default_skin.xml.h:765
 msgid "Tunertype"
 msgstr "Tuner Tipo"
 
@@ -10106,7 +10106,7 @@ msgstr ""
 msgid "UE"
 msgstr "Ü"
 
-#: security.h:2044
+#: security.h:2061
 msgid "UFS910 free license"
 msgstr ""
 
@@ -10291,7 +10291,7 @@ msgstr "Reproducir Video"
 msgid "VOX-Now"
 msgstr ""
 
-#: security.h:2013
+#: security.h:2030
 msgid "Version"
 msgstr ""
 
@@ -11394,7 +11394,7 @@ msgstr "Evento"
 msgid "expert (11)"
 msgstr "Modo Experto (11)"
 
-#: security.h:2050
+#: security.h:2067
 msgid "expired"
 msgstr ""
 
@@ -13034,7 +13034,7 @@ msgstr ""
 
 #: bgdownload.h:93 bgdownload.h:154 httpdfunc.h:2875 httpdfunc.h:2887
 #: httpdfunc.h:5556 httpdfunc.h:5602 hwtest.h:478 moduleconfig.h:345
-#: security.h:2069 skin_default_skin.xml.h:781 skinselector.h:138 stream.h:22
+#: security.h:2086 skin_default_skin.xml.h:781 skinselector.h:138 stream.h:22
 #: transponder.h:122 transponder.h:158 transponder.h:194 transponder.h:227
 #: transponder.h:259 transponder.h:295 transponder.h:330 transponder.h:348
 #: transponder.h:364 transponder.h:418 transponder.h:451 transponder.h:480
@@ -13127,7 +13127,7 @@ msgstr "use SSL"
 msgid "v"
 msgstr ""
 
-#: security.h:2031
+#: security.h:2048
 msgid "valid"
 msgstr ""
 
