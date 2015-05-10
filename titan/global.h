@@ -1487,7 +1487,7 @@ void delspezchar(char* text, int flag)
 			if(tmpstr[0] == '/') tmpstr[0] = '-';
 			if(flag == 2)
 			{
-				if(tmpstr[0] == '§') tmpstr[0] = '-';
+				if(tmpstr[0] == '\A7') tmpstr[0] = '-';
 				if(tmpstr[0] == '<') tmpstr[0] = '-';
  				if(tmpstr[0] == '>') tmpstr[0] = '-';
 				if(tmpstr[0] == ':') tmpstr[0] = '-';
@@ -3966,6 +3966,48 @@ char* getaudiodelaybitstream()
 
 	return value;
 }
+
+int setaudiodelaypcm(char* value)
+{
+	char* audiodelaypcmdev = NULL;
+	int ret = 0;
+
+	audiodelaypcmdev = getconfig("audiodelaypcmdev", NULL);
+
+	if(audiodelaypcmdev != NULL && value != NULL)
+	{
+		debug(100, "set %s to %s", audiodelaypcmdev, value);
+		ret = writesys(audiodelaypcmdev, value, 0);
+		if(ret == 0) addconfig("audiodelaypcm", value);
+		return ret;
+	}
+
+	return 0;
+}
+
+char* getaudiodelaypcm()
+{
+	char *audiodelaypcmdev = NULL;
+	char *value = NULL;
+
+	audiodelaypcmdev = getconfig("audiodelaypcmdev", NULL);
+
+	if(audiodelaypcmdev == NULL)
+	{
+		err("NULL detect");
+		return NULL;
+	}
+
+	value = readsys(audiodelaypcmdev, 1);
+	if(value == NULL)
+	{
+		err("NULL detect");
+		return NULL;
+	}
+
+	return value;
+}
+
 
 char* getpolicychoices()
 {
