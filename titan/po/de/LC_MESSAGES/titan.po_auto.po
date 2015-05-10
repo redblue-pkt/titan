@@ -1,16 +1,15 @@
-#: plugins_wm2014_skin.xml.h:1 skins_wm2014_skin.xml.h:1 tithek_mainmenu.h:1
 msgid ""
 msgstr ""
 "Project-Id-Version: TitanNit 1.65\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
-"Last-Translator:  <aaf-caliban@e.mail.de>\n"
+"Last-Translator: aaf-caliban@e.mail.de\n"
 "Language-Team: German <_obiwan_@web.de>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.7.5\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #: hwtest.h:442
@@ -683,7 +682,7 @@ msgstr "Audio/Video"
 
 #: skin_default_skin.xml.h:48
 msgid "AAC Mode"
-msgstr ""
+msgstr "AAC Modus"
 
 #: tpk_description.h:1
 msgid "AAF MediaCenter, the best multimedia player on mipsel"
@@ -1170,11 +1169,11 @@ msgstr "Tonspur wählen"
 
 #: skin_default_skin.xml.h:82
 msgid "Audio delay (bitstream)"
-msgstr ""
+msgstr "Audio Verzögerung (bitstream)"
 
 #: skin_default_skin.xml.h:83
 msgid "Audio delay (pcm)"
-msgstr ""
+msgstr "Audio Verzögerung (pcm)"
 
 #: skin_default_skin.xml.h:86
 msgid "Audio/Subt."
