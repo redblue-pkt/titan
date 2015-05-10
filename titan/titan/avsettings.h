@@ -1,8 +1,8 @@
 #ifndef AVSETTINGS_H
 #define AVSETTINGS_H
 
-//flag 0: whithout vfd output
-//flag 1: whith vfd output
+//flag 0: without vfd output
+//flag 1: with vfd output
 void screenavsettings(int flag)
 {
 	int rcret = 0;
@@ -28,6 +28,7 @@ void screenavsettings(int flag)
 	struct skin* mode3d = getscreennode(avsettings, "mode3d");
 	struct skin* autosubtitle = getscreennode(avsettings, "autosubtitle");
 	struct skin* audiodelaybitstream = getscreennode(avsettings, "audiodelaybitstream");
+	struct skin* audiodelaypcm = getscreennode(avsettings, "audiodelaypcm");
 	struct skin* playerstart = getscreennode(avsettings, "playerstart");
 	struct skin* playerstop = getscreennode(avsettings, "playerstop");
 
@@ -226,6 +227,19 @@ void screenavsettings(int flag)
 	addchoicebox(audiodelaybitstream, "3500", "100ms");
 	setchoiceboxselection(audiodelaybitstream, getconfig("audiodelaybitstream", NULL));
 
+	addchoicebox(audiodelaypcm, "0", _("no"));
+	addchoicebox(audiodelaypcm, "350", "10ms");
+	addchoicebox(audiodelaypcm, "700", "20ms");
+	addchoicebox(audiodelaypcm, "1050", "30ms");
+	addchoicebox(audiodelaypcm, "1400", "40ms");
+	addchoicebox(audiodelaypcm, "1750", "50ms");
+	addchoicebox(audiodelaypcm, "2100", "60ms");
+	addchoicebox(audiodelaypcm, "2450", "70ms");
+	addchoicebox(audiodelaypcm, "2800", "80ms");
+	addchoicebox(audiodelaypcm, "3150", "90ms");
+	addchoicebox(audiodelaypcm, "3500", "100ms");
+	setchoiceboxselection(audiodelaypcm, getconfig("audiodelaypcm", NULL));
+
 	drawscreen(avsettings, 0, 0);
 	addscreenrc(avsettings, listbox);
 
@@ -402,6 +416,14 @@ void screenavsettings(int flag)
 				ret = getaudiodelaybitstream();
 				if(ostrcmp(ret, audiodelaybitstream->ret) != 0)
 					setaudiodelaybitstream(audiodelaybitstream->ret);
+				free(ret); ret = NULL;
+			}
+
+			if(audiodelaypcm->ret != NULL)
+			{
+				ret = getaudiodelaypcm();
+				if(ostrcmp(ret, audiodelaypcm->ret) != 0)
+					setaudiodelaypcm(audiodelaypcm->ret);
 				free(ret); ret = NULL;
 			}
 
