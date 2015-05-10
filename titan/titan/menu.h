@@ -81,31 +81,6 @@ void menucheckentry(struct skin* child)
 		}
 		return;
 	}
-	
-	// Hide FanControl when no ufs922
-	if(ostrcmp(child->name, "fancontrol") == 0)
-	{
-		if(checkbox("UFS922") == 1 || checkchipset("BCM7424") == 1)
-			child->hidden = NO;
-		else
-			child->hidden = YES;
-	}
-	// Hide cec when sh4 
-	if(ostrcmp(child->name, "ceccontrol") == 0) 
-#ifdef MIPSEL 
-		child->hidden = NO; 
-#else 
-		child->hidden = YES; 
-#endif
-
-	if(ostrcmp(child->name, "settings_pip") == 0)
-	{
-		// ufs922 / atemio7600 ??
-		if(checkchipset("BCM7424") == 1)
-			child->hidden = NO;
-		else
-			child->hidden = YES;
-	}
 }
 
 //flag 1: fist call
