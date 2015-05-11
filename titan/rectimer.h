@@ -1230,7 +1230,7 @@ void screenrectimerext(struct rectimer* node, int flag)
 				{
 					debug(10, "create Folder: %s", tmppath);
 					changeinput(path, tmppath);
-					changetext(path, tmppath);
+//					changetext(path, tmppath);
 				}
 				else
 				{
