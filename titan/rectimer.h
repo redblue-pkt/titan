@@ -1221,15 +1221,23 @@ void screenrectimerext(struct rectimer* node, int flag)
 				delspezchar(tmppath, 2);
 				tmppath = ostrcat("/", tmppath, 0, 1);				
 				tmppath = ostrcat(getconfig("rec_path", NULL), tmppath, 0, 1);
-				
-				if(tmppath != NULL && mkdir(tmppath, 0777) == 0)
+
+				if(tmppath != NULL && file_exist(tmppath))
 				{
+					debug(10, "skip create folder exist: %s", tmppath);
+				{
+				else if(tmppath != NULL && mkdir(tmppath, 0777) == 0)
+				{
+					debug(10, "create Folder: %s", tmppath);
 					changeinput(path, tmppath);
 					changetext(path, tmppath);
 				}
 				else
+				{
+					debug(10, "error: cant create Folder: %s", tmppath);
 					textbox(_("Message"), "Can't create Path", _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
-				
+				}
+			
 				drawscreen(rectimerext, 0, 0);
 				free(tmppath); tmppath = NULL;
 			}
