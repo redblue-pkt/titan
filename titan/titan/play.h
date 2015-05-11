@@ -1302,7 +1302,8 @@ int playcheckdirrcret(char* file, int dirrcret)
 			unlink(file);
 			if(file_exist(file))
 			{
-				char* cmd = ostrcat("rm -rf ", file, 0, 0);
+				char* cmd = ostrcat("rm -rf \"", file, 0, 0);
+				cmd = ostrcat(cmd, "\"", 1, 0);
 				debug(10, "cmd: %s", cmd);
 				system(cmd);
 				free(cmd), cmd = NULL;
