@@ -1225,7 +1225,7 @@ void screenrectimerext(struct rectimer* node, int flag)
 				if(tmppath != NULL && file_exist(tmppath))
 				{
 					debug(10, "skip create folder exist: %s", tmppath);
-				{
+				}
 				else if(tmppath != NULL && mkdir(tmppath, 0777) == 0)
 				{
 					debug(10, "create Folder: %s", tmppath);
