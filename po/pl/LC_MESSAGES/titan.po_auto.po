@@ -1871,7 +1871,7 @@ msgstr ""
 #: dvdplay.h:62 mc_audioplayer.h:605 mc_audioplayer.h:716 mc_global.h:773
 #: mc_global.h:1020 mc_pictureplayer.h:100 mc_pictureplayer.h:242
 #: mc_pictureplayer.h:368 mc_pictureplayer.h:461 mc_videoplayer.h:749
-#: mc_videoplayer.h:888 play.h:1508
+#: mc_videoplayer.h:888 play.h:1509
 msgid "Can't start playback !"
 msgstr ""
 
@@ -2447,7 +2447,7 @@ msgstr ""
 msgid "DEFAULT"
 msgstr ""
 
-#: play.h:1432 plugins_networkbrowser_skin.xml.h:6 plugins_stock_skin.xml.h:3
+#: play.h:1433 plugins_networkbrowser_skin.xml.h:6 plugins_stock_skin.xml.h:3
 #: plugins_weather_skin.xml.h:2 skin_default_skin.xml.h:191
 #: skins_networkbrowser_skin.xml.h:6 skins_stock_skin.xml.h:3
 #: skins_weather_skin.xml.h:2
@@ -2927,7 +2927,7 @@ msgstr ""
 msgid "EJECT"
 msgstr ""
 
-#: adjust.h:71 adjust.h:326 httpdfunc.h:3873 play.h:1432
+#: adjust.h:71 adjust.h:326 httpdfunc.h:3873 play.h:1433
 #: skin_default_skin.xml.h:232 webif_index.atemio5200.h:34
 #: webif_index.atemio5200.h:90 webif_index.atemio6200.h:34
 #: webif_index.atemio6200.h:90 webif_index.atemio7600.h:65
@@ -3094,8 +3094,8 @@ msgstr ""
 #: novamov.h:80 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105 panel_main.h:29
 #: panel_main.h:135 panel_settings_wizard.h:6 played.h:30 played.h:84
 #: played.h:90 played.h:102 played.h:114 played.h:171 player.h:108 play.h:497
-#: play.h:614 play.h:1284 play.h:1290 play.h:1299 play.h:1300 play.h:1508
-#: play.h:1724 play.h:1735 plugins_autotimer_skin.xml.h:6
+#: play.h:614 play.h:1284 play.h:1290 play.h:1299 play.h:1300 play.h:1509
+#: play.h:1725 play.h:1736 plugins_autotimer_skin.xml.h:6
 #: plugins_callmonitor1_skin.xml.h:10 plugins_catcatch_skin.xml.h:3
 #: plugins_dlna_skin.xml.h:1 plugins_facebook_skin.xml.h:2
 #: plugins_instar_skin.xml.h:5 plugins_lcdpearl1_skin.xml.h:6
@@ -3110,7 +3110,7 @@ msgstr ""
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:90
 #: record.h:387 record.h:1054 record.h:1302 record.h:1552 record.h:1577
-#: rectimer.h:577 rectimer.h:1231 rectimer.h:1377 rectimer.h:1389
+#: rectimer.h:577 rectimer.h:1238 rectimer.h:1385 rectimer.h:1397
 #: restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1901
@@ -5302,11 +5302,11 @@ msgstr ""
 msgid "Marker"
 msgstr ""
 
-#: play.h:1724
+#: play.h:1725
 msgid "Marker autoseek is started"
 msgstr ""
 
-#: play.h:1735
+#: play.h:1736
 msgid "Marker autoseek is stopped"
 msgstr ""
 
@@ -5572,14 +5572,14 @@ msgstr ""
 #: novamov.h:35 novamov.h:80 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105
 #: panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6 played.h:30
 #: played.h:84 played.h:90 played.h:102 played.h:114 played.h:171 player.h:108
-#: play.h:614 play.h:1299 play.h:1508 play.h:1724 play.h:1735 possetup.h:98
+#: play.h:614 play.h:1299 play.h:1509 play.h:1725 play.h:1736 possetup.h:98
 #: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
 #: promptfile.h:46 promptfile.h:94 promptfile.h:136 putlocker.h:32
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
 #: record.h:1054 record.h:1302 record.h:1552 record.h:1577 rectimer.h:577
-#: rectimer.h:1231 rectimer.h:1377 rectimer.h:1389 restoredefault.h:10
+#: rectimer.h:1238 rectimer.h:1385 rectimer.h:1397 restoredefault.h:10
 #: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
 #: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
 #: scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1646 scan.h:1901
@@ -6110,7 +6110,7 @@ msgstr ""
 #: nowvideo.h:105 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
 #: played.h:30 played.h:84 played.h:90 played.h:102 played.h:114 played.h:171
 #: player.h:108 play.h:497 play.h:614 play.h:1284 play.h:1290 play.h:1299
-#: play.h:1300 play.h:1508 play.h:1724 play.h:1735 plugins_dlna_skin.xml.h:7
+#: play.h:1300 play.h:1509 play.h:1725 play.h:1736 plugins_dlna_skin.xml.h:7
 #: plugins_facebook_skin.xml.h:3 plugins_mboxinfo_skin.xml.h:2
 #: plugins_mc_skin.xml.h:35 plugins_optimize_skin.xml.h:2
 #: plugins_rgui_skin.xml.h:2 plugins_sudoku_skin.xml.h:13
@@ -6120,8 +6120,8 @@ msgstr ""
 #: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
 #: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
 #: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
-#: record.h:1054 record.h:1577 rectimer.h:577 rectimer.h:1231 rectimer.h:1377
-#: rectimer.h:1389 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
+#: record.h:1054 record.h:1577 rectimer.h:577 rectimer.h:1238 rectimer.h:1385
+#: rectimer.h:1397 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
 #: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
 #: rtl2now.h:34 scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1901
 #: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 scriptexec.h:41
@@ -7578,7 +7578,7 @@ msgstr ""
 msgid "SEARCH"
 msgstr ""
 
-#: dvdplay.h:29 play.h:1432 plugins_dlna_skin.xml.h:9 skins_dlna_skin.xml.h:9
+#: dvdplay.h:29 play.h:1433 plugins_dlna_skin.xml.h:9 skins_dlna_skin.xml.h:9
 msgid "SELECT"
 msgstr ""
 
@@ -7598,7 +7598,7 @@ msgstr ""
 msgid "SNR:"
 msgstr ""
 
-#: play.h:1432
+#: play.h:1433
 msgid "SORT"
 msgstr "Sortuj"
 
@@ -11147,7 +11147,7 @@ msgstr ""
 msgid "epgsettings"
 msgstr ""
 
-#: rectimer.h:1510
+#: rectimer.h:1518
 msgid "error"
 msgstr ""
 
@@ -11873,7 +11873,7 @@ msgstr ""
 msgid "on"
 msgstr ""
 
-#: rectimer.h:1060 rectimer.h:1469 rectimer.h:1480
+#: rectimer.h:1060 rectimer.h:1477 rectimer.h:1488
 msgid "once"
 msgstr ""
 
@@ -12104,7 +12104,7 @@ msgstr ""
 msgid "ready"
 msgstr ""
 
-#: rectimer.h:1466
+#: rectimer.h:1474
 msgid "rec"
 msgstr ""
 
@@ -12152,7 +12152,7 @@ msgstr ""
 msgid "rename service"
 msgstr ""
 
-#: rectimer.h:1061 rectimer.h:1471 rectimer.h:1482
+#: rectimer.h:1061 rectimer.h:1479 rectimer.h:1490
 msgid "repeate"
 msgstr "Powtórz"
 
@@ -12190,7 +12190,7 @@ msgstr "o"
 msgid "rsize"
 msgstr ""
 
-#: audiotrack.h:48 play.h:278 play.h:286 rectimer.h:1506 subtitle.h:1624
+#: audiotrack.h:48 play.h:278 play.h:286 rectimer.h:1514 subtitle.h:1624
 msgid "running"
 msgstr ""
 
@@ -12542,7 +12542,7 @@ msgstr ""
 msgid "subtitle"
 msgstr ""
 
-#: rectimer.h:1508
+#: rectimer.h:1516
 msgid "success"
 msgstr ""
 
@@ -12550,7 +12550,7 @@ msgstr ""
 msgid "swap"
 msgstr "Swap"
 
-#: rectimer.h:1477
+#: rectimer.h:1485
 msgid "switch"
 msgstr "przełącznik"
 
@@ -12956,7 +12956,7 @@ msgstr ""
 msgid "wait for stopping download"
 msgstr ""
 
-#: rectimer.h:1504
+#: rectimer.h:1512
 msgid "waiting"
 msgstr ""
 
