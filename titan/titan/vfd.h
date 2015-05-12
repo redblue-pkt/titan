@@ -531,6 +531,11 @@ void updatevfd()
 		{
 			case 1: // off
 				tmpstr = ostrcat(tmpstr, " ", 1, 0);
+				if(checkchipset("BCM7424") == 1) //inihdp
+				{
+					free(tmpstr);
+					return;
+				}
 				break;
 			case 2: // date + time
 				if(checkchipset("BCM7424") == 1) //inihdp

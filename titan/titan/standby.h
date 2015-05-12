@@ -45,7 +45,13 @@ void screenstandby()
 	setfbtransparent(0);
 	setvfdbrightness(getconfigint("vfdstandbybrightness", NULL));
 	setoverclockfreq(0);
-
+	
+	if(checkchipset("BCM7424") == 1) //inihdp
+	{
+		if(getconfigint("vfdisplaystandby", NULL) == 1)
+		  	setvfdbrightness(0);
+	}
+	
 	if(checkbox("ATEVIO7000") == 1)
 	{
 		if(getconfig("at7000frontsleep", NULL) != NULL)
