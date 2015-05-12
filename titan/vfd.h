@@ -439,7 +439,8 @@ void updatevfd()
 	char* tmpstr = NULL;
 
 	// Set VFD icons:
-	setvfdicon(VFD_REC, status.recording > 0);
+	if(checkchipset("BCM7424") != 1) //inihdp
+		setvfdicon(VFD_REC, status.recording > 0);
 	if(status.standby == 0 && checkbox("ATEMIO530") != 1 && checkbox("ATEMIO520") != 1 && checkbox("IPBOX91") != 1 && checkbox("ATEMIO6000") != 1 && checkbox("ATEMIO6100") != 1)
 	{
 		//setvfdicon(VFD_USB, 0);
@@ -549,7 +550,8 @@ void updatevfd()
 		}
 
 		// Switch off all VFD icons:
-		setallvfdsymbols(0);
+		if(checkchipset("BCM7424") != 1) //inihdp
+			setallvfdsymbols(0);
 	}
 	if(VFD_Recordthread != NULL && getconfigint("vfdisplayrecord", NULL) == 3 && status.recording > 0)
 	{ }
