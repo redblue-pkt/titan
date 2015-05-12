@@ -4404,6 +4404,9 @@ int changetitle(struct skin* node, char* text)
 {
 	int ret = 1;
 
+	struct skin* titletext = getscreennode(node, "titletext");
+	if( (text != NULL) && (titletext != status.skinerr) ) changetext(titletext, text);
+
 	if(node != NULL)
 	{
 		free(node->title);
