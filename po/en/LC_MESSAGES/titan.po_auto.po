@@ -833,7 +833,7 @@ msgstr ""
 
 #: skin_default_skin.xml.h:71
 msgid "Aktion after"
-msgstr ""
+msgstr "Action after"
 
 #: plugins_callmonitor1_skin.xml.h:3 skins_callmonitor1_skin.xml.h:3
 msgid "Aktion wenn standby"
@@ -11593,7 +11593,7 @@ msgstr "internal"
 
 #: skin_default_skin.xml.h:377
 msgid "internet"
-msgstr ""
+msgstr "Internet"
 
 #: panel_settings_autostart.h:70 settings_autostart.h:62
 msgid "ip"
