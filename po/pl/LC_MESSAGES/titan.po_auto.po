@@ -10070,7 +10070,7 @@ msgid "Version"
 msgstr ""
 
 #: tpk_description.h:163
-msgid "Version 10650 of OScam"
+msgid "Version 10660 of OScam"
 msgstr ""
 
 #: transponder.h:450 transponder.h:458
