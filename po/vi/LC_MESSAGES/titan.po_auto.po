@@ -254,7 +254,7 @@ msgstr ""
 msgid "10"
 msgstr ""
 
-#: harddisk.h:940
+#: harddisk.h:930
 msgid "10 min"
 msgstr ""
 
@@ -278,7 +278,7 @@ msgstr ""
 msgid "15"
 msgstr ""
 
-#: harddisk.h:941
+#: harddisk.h:931
 msgid "15 min"
 msgstr ""
 
@@ -477,7 +477,7 @@ msgstr "s"
 msgid "5"
 msgstr ""
 
-#: harddisk.h:940
+#: harddisk.h:930
 msgid "5 min"
 msgstr ""
 
@@ -518,7 +518,7 @@ msgstr ""
 msgid "60"
 msgstr ""
 
-#: harddisk.h:941
+#: harddisk.h:931
 msgid "60 min"
 msgstr ""
 
@@ -842,7 +842,7 @@ msgstr " Kích hoạt tính năng thiết lập mạng mới?"
 msgid "Album:"
 msgstr ""
 
-#: channellist.h:814 channellist.h:815 channellist.h:1255 channellist.h:1256
+#: channellist.h:804 channellist.h:1244
 msgid "All Channels"
 msgstr "Tất cả các chương trình"
 
@@ -959,7 +959,7 @@ msgstr ""
 msgid "Are you sure you want remove this share?"
 msgstr "Bạn có muốn xóa chia sẻ này?"
 
-#: harddisk.h:868
+#: harddisk.h:860
 msgid ""
 "Are you sure you want to check this Partition?\n"
 "Box reboots after check"
@@ -967,7 +967,7 @@ msgstr ""
 "Bạn muốn kiể tra phân vùng này?\n"
 " Đầu thu sẽ khởi động lại sau khi kiểm tra."
 
-#: harddisk.h:728
+#: harddisk.h:720
 msgid ""
 "Are you sure you want to format this Partition?\n"
 "Box reboots after format"
@@ -975,7 +975,7 @@ msgstr ""
 "Bạn muốn định dạng phân vùng này?\n"
 " Đầu thu sẽ khởi động lại sau khi định dạng."
 
-#: harddisk.h:694
+#: harddisk.h:686
 msgid ""
 "Are you sure you want to remove all Partitions\n"
 "on this device and create a new Partition 1?\n"
@@ -1001,7 +1001,7 @@ msgstr ""
 msgid "Are you sure you want to save this network mount?"
 msgstr "Bạn có muốn lưu lại không?"
 
-#: harddisk.h:359
+#: harddisk.h:355
 msgid "Are you sure, you want to delete the record directory on this drive?"
 msgstr ""
 
@@ -1611,7 +1611,7 @@ msgstr "số lượng nhóm: "
 msgid "BouquetEntrys: "
 msgstr "nhập số nhóm: "
 
-#: channellist.h:745 channellist.h:1271 channellist.h:1272 channellist.h:1484
+#: channellist.h:739 channellist.h:1259 channellist.h:1468
 #: webif_channellist.h:5
 msgid "Bouquets"
 msgstr "Nhóm"
@@ -1859,7 +1859,7 @@ msgstr "Không thể mở file"
 msgid "Can't open frontend dev or Frontend Type unknown!"
 msgstr "Không thể mở hoặc không biết loại đầu vào"
 
-#: channellist.h:1049
+#: channellist.h:1038
 msgid "Can't remove akive Service"
 msgstr "Không thể xóa dịch vụ hiện tại"
 
@@ -1955,7 +1955,7 @@ msgstr "Danh sách kênh"
 msgid "Change: "
 msgstr "Change Feed"
 
-#: channellist.h:762 channellist.h:1624 skin_default_skin.xml.h:139
+#: channellist.h:755 channellist.h:1606 skin_default_skin.xml.h:139
 msgid "Channel"
 msgstr "chương trình"
 
@@ -2054,7 +2054,7 @@ msgstr "Danh sách chương trình rỗng(không tìm thấy chương trình) !"
 msgid "Channellist view"
 msgstr "xem trước"
 
-#: channellist.h:1339 channellist.h:1340
+#: channellist.h:1325
 msgid "Channels A-Z"
 msgstr "Chương trình từ A-Z"
 
@@ -2368,19 +2368,19 @@ msgstr ""
 msgid "Copy mode"
 msgstr "sao chép"
 
-#: channellist.h:958
+#: channellist.h:947
 msgid "Copy providerlist not ok"
 msgstr " Sao chép các nhà cung cấp dịch vụ không thành công "
 
-#: channellist.h:956
+#: channellist.h:945
 msgid "Copy providerlist successfull"
 msgstr " Sao chép các nhà cung cấp dịch vụ thành công "
 
-#: channellist.h:965
+#: channellist.h:954
 msgid "Copy satlist not ok"
 msgstr ""
 
-#: channellist.h:963
+#: channellist.h:952
 msgid "Copy satlist successfull"
 msgstr ""
 
@@ -3051,7 +3051,7 @@ msgstr "Freier EPG Speicher"
 msgid "ERROR"
 msgstr "Lỗi khởi động"
 
-#: harddisk.h:846
+#: harddisk.h:838
 msgid ""
 "ERROR\n"
 "partition could not be created"
@@ -3083,8 +3083,8 @@ msgstr "Lỗi… không thể thiết lập nhà sản xuất trong file này"
 
 #: about.h:9 ard.h:31 autotimer.c:537 autotimer.c:543 autotimer.c:568
 #: autotimer.c:575 autotimer.c:603 avsettings.h:305 betarobot.h:57
-#: bgdownload.h:176 blindscanadjust.h:25 channellist.h:956 channellist.h:958
-#: channellist.h:963 channellist.h:965 channellist.h:1049 divxstage.h:36
+#: bgdownload.h:176 blindscanadjust.h:25 channellist.h:945 channellist.h:947
+#: channellist.h:952 channellist.h:954 channellist.h:1038 divxstage.h:36
 #: divxstage.h:79 divxstage.h:150 divxstage.h:156 dlna.h:334 dlna.h:336
 #: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:301 epgsettings.h:315
 #: extensions.h:190 extensions.h:241 extensions.h:250 extensions.h:254
@@ -3100,9 +3100,9 @@ msgstr "Lỗi… không thể thiết lập nhà sản xuất trong file này"
 #: firedrive.h:72 firedrive.h:122 firedrive.h:128 firedrive.h:138 flashx.h:23
 #: flashx.h:68 global.h:5893 global.h:6614 global.h:6683 global.h:6702
 #: global.h:6877 global.h:7133 global.h:7146 global.h:7157 global.h:7168
-#: global.h:7179 harddisk.h:359 harddisk.h:492 harddisk.h:686 harddisk.h:694
-#: harddisk.h:728 harddisk.h:777 harddisk.h:782 harddisk.h:784 harddisk.h:786
-#: harddisk.h:846 harddisk.h:865 harddisk.h:868 harddisk.h:1099 hbbtv.h:362
+#: global.h:7179 harddisk.h:355 harddisk.h:487 harddisk.h:678 harddisk.h:686
+#: harddisk.h:720 harddisk.h:769 harddisk.h:774 harddisk.h:776 harddisk.h:778
+#: harddisk.h:838 harddisk.h:857 harddisk.h:860 harddisk.h:1089 hbbtv.h:362
 #: hello.c:37 httpdfunc.h:1304 httpdfunc.h:3258 httpdfunc.h:6159
 #: httpdfunc.h:6424 httpdfunc.h:6495 hwtest.h:88 hwtest.h:93 hwtest.h:98
 #: hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390
@@ -3218,7 +3218,7 @@ msgstr ""
 msgid "Edit Playlist"
 msgstr "Chỉnh sửa danh sách"
 
-#: channellist.h:657
+#: channellist.h:655
 msgid "Edit mode"
 msgstr "chỉnh sửa"
 
@@ -3803,7 +3803,7 @@ msgid ""
 "Please install driver: "
 msgstr ""
 
-#: harddisk.h:1099
+#: harddisk.h:1089
 msgid ""
 "Found new Stick/HDD.\n"
 "You can configure it in Harddisk Menu."
@@ -3927,23 +3927,23 @@ msgstr ""
 msgid "G"
 msgstr ""
 
-#: gmultiepg.h:619 gmultiepg.h:620
+#: gmultiepg.h:614
 msgid "GRAPHIC MULTI EPG - All Channels"
 msgstr "EPG – Tất cả các chương trình"
 
-#: gmultiepg.h:563 gmultiepg.h:766 httpdfunc.h:710
+#: gmultiepg.h:562 gmultiepg.h:760 httpdfunc.h:710
 msgid "GRAPHIC MULTI EPG - Bouquets"
 msgstr "Nhóm lịch chương trình"
 
-#: gmultiepg.h:577
+#: gmultiepg.h:575
 msgid "GRAPHIC MULTI EPG - Channel"
 msgstr "Nhóm lịch chương trình"
 
-#: gmultiepg.h:605
+#: gmultiepg.h:601
 msgid "GRAPHIC MULTI EPG - Provider"
 msgstr "Nhóm lịch chương trình"
 
-#: gmultiepg.h:591
+#: gmultiepg.h:588
 msgid "GRAPHIC MULTI EPG - Satellites"
 msgstr "Nhóm lịch chương trình"
 
@@ -4100,11 +4100,11 @@ msgstr ""
 msgid "HBBTV Favoriten"
 msgstr ""
 
-#: harddisk.h:532
+#: harddisk.h:524
 msgid "HDD "
 msgstr ""
 
-#: harddisk.h:686
+#: harddisk.h:678
 msgid ""
 "HDD > 2TB unsupported.\n"
 "You must first install plugin parted, then you can use this panel."
@@ -4146,27 +4146,27 @@ msgstr "Hang time"
 msgid "Hard"
 msgstr ""
 
-#: adjust.h:286 harddisk.h:492 skin_default_skin.xml.h:297
+#: adjust.h:286 harddisk.h:487 skin_default_skin.xml.h:297
 msgid "Harddisk"
 msgstr "Ổ cứng"
 
-#: harddisk.h:216 harddisk.h:217 harddisk.h:512 harddisk.h:513
+#: harddisk.h:213 harddisk.h:505
 msgid "Harddisk Configure"
 msgstr "Cấu hình ổ cứng"
 
-#: harddisk.h:500 harddisk.h:501
+#: harddisk.h:495
 msgid "Harddisk Format"
 msgstr ""
 
-#: harddisk.h:127 harddisk.h:128
+#: harddisk.h:126
 msgid "Harddisk Format - Filesystem"
 msgstr "Định dạng ổ cứng – Danh sách các thiết bị"
 
-#: harddisk.h:506 harddisk.h:507
+#: harddisk.h:500
 msgid "Harddisk Fsck"
 msgstr ""
 
-#: harddisk.h:930 harddisk.h:931
+#: harddisk.h:921
 msgid "Harddisk Sleep"
 msgstr "Ổ cứng"
 
@@ -4713,7 +4713,7 @@ msgstr "Thời gian ẩn thanh thông tin"
 msgid "Information"
 msgstr " Thông tin "
 
-#: harddisk.h:865
+#: harddisk.h:857
 msgid ""
 "Information: This hard drive size can take a file\n"
 "system check between 30 minutes and 1.5 hours."
@@ -4788,7 +4788,7 @@ msgstr ""
 msgid "Input 9"
 msgstr ""
 
-#: textinput.h:15 textinputhist.h:123
+#: textinput.h:15 textinputhist.h:122
 msgid "Input field"
 msgstr ""
 
@@ -5306,23 +5306,23 @@ msgstr "Thông tin MTD"
 msgid "MTH House"
 msgstr ""
 
-#: multiepg.h:502 multiepg.h:503
+#: multiepg.h:497
 msgid "MULTI EPG - All Channels"
 msgstr "EPG – Tất cả các chương trình"
 
-#: multiepg.h:446 multiepg.h:639
+#: multiepg.h:445 multiepg.h:633
 msgid "MULTI EPG - Bouquets"
 msgstr "Nhóm lịch chương trình"
 
-#: multiepg.h:460
+#: multiepg.h:458
 msgid "MULTI EPG - Channel"
 msgstr "EPG – Tất cả các chương trình"
 
-#: multiepg.h:488
+#: multiepg.h:484
 msgid "MULTI EPG - Provider"
 msgstr ""
 
-#: multiepg.h:474
+#: multiepg.h:471
 msgid "MULTI EPG - Satellites"
 msgstr "EPG – Tất cả các chương trình"
 
@@ -5579,8 +5579,8 @@ msgid "Menulist"
 msgstr ""
 
 #: ard.h:31 avsettings.h:305 betarobot.h:57 bgdownload.h:176
-#: blindscanadjust.h:25 callmon_main.h:39 channellist.h:956 channellist.h:958
-#: channellist.h:963 channellist.h:965 channellist.h:1049 divxstage.h:36
+#: blindscanadjust.h:25 callmon_main.h:39 channellist.h:945 channellist.h:947
+#: channellist.h:952 channellist.h:954 channellist.h:1038 divxstage.h:36
 #: divxstage.h:79 divxstage.h:150 divxstage.h:156 dlna.h:334 dlna.h:336
 #: dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:301 extensions.h:267
 #: extensions.h:324 extensions.h:356 extensions.h:416 extensions.h:420
@@ -5593,9 +5593,9 @@ msgstr ""
 #: firedrive.h:128 firedrive.h:138 flashx.h:23 flashx.h:68 global.h:5893
 #: global.h:6614 global.h:6683 global.h:6702 global.h:6877 global.h:7133
 #: global.h:7139 global.h:7146 global.h:7150 global.h:7157 global.h:7161
-#: global.h:7168 global.h:7172 global.h:7179 global.h:7183 harddisk.h:686
-#: harddisk.h:694 harddisk.h:728 harddisk.h:777 harddisk.h:782 harddisk.h:784
-#: harddisk.h:786 harddisk.h:846 harddisk.h:865 harddisk.h:868 hbbtv.h:362
+#: global.h:7168 global.h:7172 global.h:7179 global.h:7183 harddisk.h:678
+#: harddisk.h:686 harddisk.h:720 harddisk.h:769 harddisk.h:774 harddisk.h:776
+#: harddisk.h:778 harddisk.h:838 harddisk.h:857 harddisk.h:860 hbbtv.h:362
 #: hello.c:37 httpdfunc.h:1304 httpdfunc.h:5773 httpdfunc.h:6159
 #: httpdfunc.h:6424 httpdfunc.h:6495 hwtest.h:88 hwtest.h:93 hwtest.h:98
 #: hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390
@@ -5780,7 +5780,7 @@ msgstr ""
 msgid "Move Modus Font Color"
 msgstr ""
 
-#: channellist.h:621
+#: channellist.h:623
 msgid "Move mode"
 msgstr "di chuyển"
 
@@ -6116,8 +6116,8 @@ msgstr "E"
 
 #: about.h:9 ard.h:31 autotimer.c:537 autotimer.c:543 autotimer.c:568
 #: autotimer.c:575 autotimer.c:603 avsettings.h:305 betarobot.h:57
-#: bgdownload.h:176 blindscanadjust.h:25 callmon_main.h:39 channellist.h:956
-#: channellist.h:958 channellist.h:963 channellist.h:965 channellist.h:1049
+#: bgdownload.h:176 blindscanadjust.h:25 callmon_main.h:39 channellist.h:945
+#: channellist.h:947 channellist.h:952 channellist.h:954 channellist.h:1038
 #: divxstage.h:36 divxstage.h:79 divxstage.h:150 divxstage.h:156 dlna.h:334
 #: dlna.h:336 dlna.h:345 dvdplay.h:62 epgsearch.h:27 epgsettings.h:301
 #: epgsettings.h:315 extensions.h:190 extensions.h:241 extensions.h:250
@@ -6134,10 +6134,10 @@ msgstr "E"
 #: firedrive.h:138 flashx.h:23 flashx.h:68 global.h:5893 global.h:6614
 #: global.h:6683 global.h:6702 global.h:6877 global.h:7133 global.h:7139
 #: global.h:7146 global.h:7150 global.h:7157 global.h:7161 global.h:7168
-#: global.h:7172 global.h:7179 global.h:7183 harddisk.h:359 harddisk.h:492
-#: harddisk.h:686 harddisk.h:694 harddisk.h:728 harddisk.h:777 harddisk.h:782
-#: harddisk.h:784 harddisk.h:786 harddisk.h:846 harddisk.h:865 harddisk.h:868
-#: harddisk.h:1099 hbbtv.h:362 httpdfunc.h:1304 httpdfunc.h:3258
+#: global.h:7172 global.h:7179 global.h:7183 harddisk.h:355 harddisk.h:487
+#: harddisk.h:678 harddisk.h:686 harddisk.h:720 harddisk.h:769 harddisk.h:774
+#: harddisk.h:776 harddisk.h:778 harddisk.h:838 harddisk.h:857 harddisk.h:860
+#: harddisk.h:1089 hbbtv.h:362 httpdfunc.h:1304 httpdfunc.h:3258
 #: httpdfunc.h:6159 httpdfunc.h:6424 httpdfunc.h:6495 hwtest.h:88 hwtest.h:93
 #: hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206
 #: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
@@ -6985,7 +6985,7 @@ msgstr ""
 msgid "Protect Modus Font Color"
 msgstr ""
 
-#: channellist.h:648
+#: channellist.h:647
 msgid "Protect mode"
 msgstr "khóa"
 
@@ -6993,7 +6993,7 @@ msgstr "khóa"
 msgid "Prov"
 msgstr "Nhà cung cấp"
 
-#: channellist.h:795 channellist.h:1373 channellist.h:1374 channellist.h:1701
+#: channellist.h:786 channellist.h:1358 channellist.h:1682
 #: webif_channellist.h:3
 msgid "Provider"
 msgstr ""
@@ -7099,7 +7099,7 @@ msgstr ""
 msgid "RTL2-Now"
 msgstr ""
 
-#: channellist.h:732 channellist.h:1811 httpdfunc.h:292 httpdfunc.h:701
+#: channellist.h:726 channellist.h:1791 httpdfunc.h:292 httpdfunc.h:701
 #: scan.h:530 skin_default_skin.xml.h:538 webif_index.atemio5200.h:69
 #: webif_index.atemio5200.h:125 webif_index.atemio6200.h:69
 #: webif_index.atemio6200.h:125 webif_index.atemio-nemesis.h:69
@@ -7392,7 +7392,7 @@ msgstr "xóa"
 msgid "Remove error"
 msgstr "lỗi"
 
-#: channellist.h:630
+#: channellist.h:631
 msgid "Remove mode"
 msgstr "xóa"
 
@@ -7725,7 +7725,7 @@ msgstr ""
 msgid "START"
 msgstr "bắt đầu"
 
-#: harddisk.h:538
+#: harddisk.h:530
 msgid "STICK "
 msgstr ""
 
@@ -7836,7 +7836,7 @@ msgstr "Loại vệ tinh"
 msgid "Satellite"
 msgstr "Vệ tinh"
 
-#: channellist.h:778 channellist.h:1305 channellist.h:1306 channellist.h:1558
+#: channellist.h:770 channellist.h:1292 channellist.h:1541
 msgid "Satellites"
 msgstr "Vệ tinh"
 
@@ -9218,7 +9218,7 @@ msgstr ""
 msgid "TSID:"
 msgstr ""
 
-#: channellist.h:737 channellist.h:1806 httpdfunc.h:286 httpdfunc.h:696
+#: channellist.h:731 channellist.h:1786 httpdfunc.h:286 httpdfunc.h:696
 #: scan.h:528
 msgid "TV"
 msgstr ""
@@ -9420,7 +9420,7 @@ msgstr ""
 msgid "Time"
 msgstr "thời gian"
 
-#: harddisk.h:938 skin_default_skin.xml.h:730
+#: harddisk.h:928 skin_default_skin.xml.h:730
 msgid "Time to sleep"
 msgstr "Thời gian tắt"
 
@@ -10812,7 +10812,7 @@ msgstr ""
 msgid "b"
 msgstr ""
 
-#: harddisk.h:581
+#: harddisk.h:573
 msgid "backup"
 msgstr "Sao lưu"
 
@@ -11068,7 +11068,7 @@ msgstr "Tắt giao diện mạng ?"
 msgid "debug"
 msgstr ""
 
-#: harddisk.h:167 pip.h:599 pip.h:607 plugins_mc_skin.xml.h:15
+#: harddisk.h:165 pip.h:599 pip.h:607 plugins_mc_skin.xml.h:15
 #: skins_mc_skin.xml.h:15
 msgid "default"
 msgstr "MẶC ĐỊNH"
@@ -11237,7 +11237,7 @@ msgstr ""
 msgid "expired"
 msgstr ""
 
-#: harddisk.h:557
+#: harddisk.h:549
 msgid "ext"
 msgstr "Tiếp theo"
 
@@ -11768,8 +11768,8 @@ msgstr "NFS-Server"
 #: blindscanadjust.h:191 cec.h:143 cec.h:147 cec.h:151 cec.h:155 cec.h:159
 #: cec.h:163 cec.h:167 cec.h:171 cec.h:175 dlna.h:276 epgsettings.h:135
 #: epgsettings.h:188 epgsettings.h:197 epgsettings.h:201 epgsettings.h:206
-#: epgsettings.h:211 harddisk.h:240 harddisk.h:245 harddisk.h:259
-#: harddisk.h:264 harddisk.h:278 harddisk.h:283 harddisk.h:297 harddisk.h:302
+#: epgsettings.h:211 harddisk.h:236 harddisk.h:241 harddisk.h:255
+#: harddisk.h:260 harddisk.h:274 harddisk.h:279 harddisk.h:293 harddisk.h:298
 #: httpdfunc.h:3859 httpdfunc.h:3897 httpdfunc.h:3920 httpdfunc.h:3949
 #: httpdfunc.h:4122 httpdfunc.h:4369 httpdfunc.h:4427 httpdfunc.h:4449
 #: httpdfunc.h:4550 httpdfunc.h:4572 httpdfunc.h:4616 httpdfunc.h:4638
@@ -11885,7 +11885,7 @@ msgstr ""
 msgid "oe"
 msgstr "E"
 
-#: avsettings.h:70 avsettings.h:86 fancontrol.h:110 harddisk.h:939
+#: avsettings.h:70 avsettings.h:86 fancontrol.h:110 harddisk.h:929
 #: httpdsettings.h:76 lnbconfig.h:144 mc_pictureplayer_settings.h:34
 #: mc_pictureplayer_settings.h:38 mc_pictureplayer_settings.h:67
 #: mc_videoplayer_settings.h:53 network.h:392 panel_settings_autostart.h:61
@@ -12182,7 +12182,7 @@ msgstr "sẵn sàng"
 msgid "rec"
 msgstr "màu đỏ"
 
-#: autotimer.c:475 autotimer.c:508 harddisk.h:593 rectimer.h:1049
+#: autotimer.c:475 autotimer.c:508 harddisk.h:585 rectimer.h:1049
 msgid "record"
 msgstr "Ghi"
 
@@ -12364,23 +12364,23 @@ msgstr ""
 msgid "select movie"
 msgstr ""
 
-#: harddisk.h:129
+#: harddisk.h:127
 msgid "select the format filesystem type for your media drive"
 msgstr ""
 
-#: harddisk.h:218
+#: harddisk.h:214
 msgid "select the function for the specified device"
 msgstr ""
 
-#: harddisk.h:514
+#: harddisk.h:506
 msgid "select the media drive from Device List for configuration"
 msgstr ""
 
-#: harddisk.h:502
+#: harddisk.h:496
 msgid "select the media drive from Device List for formating"
 msgstr ""
 
-#: harddisk.h:508
+#: harddisk.h:501
 msgid "select the media drive from Device List for fsck"
 msgstr ""
 
@@ -12392,7 +12392,7 @@ msgstr ""
 msgid "set a cookie which will expire in 3 days and be accessible site wide"
 msgstr ""
 
-#: harddisk.h:932
+#: harddisk.h:922
 msgid "set here the default sleeptime for all your media drives"
 msgstr ""
 
@@ -12507,7 +12507,7 @@ msgstr ""
 msgid "softcam"
 msgstr ""
 
-#: harddisk.h:492
+#: harddisk.h:487
 msgid "sorry found no harddisk"
 msgstr "xin lỗi không tìm thấy ổ cứng"
 
@@ -12620,7 +12620,7 @@ msgstr ""
 msgid "success"
 msgstr "Đã hủy thành công!"
 
-#: harddisk.h:569
+#: harddisk.h:561
 msgid "swap"
 msgstr "Trao đổi"
 
@@ -12906,19 +12906,19 @@ msgstr ""
 msgid "use last Directory"
 msgstr "sử dụng thư mục cuối"
 
-#: harddisk.h:291 harddisk.h:786
+#: harddisk.h:287 harddisk.h:778
 msgid "use medium for backup"
 msgstr "sử dụng công cụ để sao lưu"
 
-#: harddisk.h:253 harddisk.h:782
+#: harddisk.h:249 harddisk.h:774
 msgid "use medium for extension"
 msgstr "sử dụng công cụ để mở rộng"
 
-#: harddisk.h:234 harddisk.h:777
+#: harddisk.h:230 harddisk.h:769
 msgid "use medium for record"
 msgstr "sử dụng công cụ để ghi"
 
-#: harddisk.h:272 harddisk.h:784
+#: harddisk.h:268 harddisk.h:776
 msgid "use medium for swap"
 msgstr "Sử dụng công cụ để hoán đổi"
 
@@ -13140,8 +13140,8 @@ msgstr ""
 #: blindscanadjust.h:159 blindscanadjust.h:188 blindscanadjust.h:192 cec.h:144
 #: cec.h:148 cec.h:152 cec.h:156 cec.h:160 cec.h:164 cec.h:168 cec.h:172
 #: cec.h:176 dlna.h:277 epgsettings.h:136 epgsettings.h:189 epgsettings.h:198
-#: harddisk.h:239 harddisk.h:246 harddisk.h:258 harddisk.h:265 harddisk.h:277
-#: harddisk.h:284 harddisk.h:296 harddisk.h:303 httpdfunc.h:3904
+#: harddisk.h:235 harddisk.h:242 harddisk.h:254 harddisk.h:261 harddisk.h:273
+#: harddisk.h:280 harddisk.h:292 harddisk.h:299 httpdfunc.h:3904
 #: httpdfunc.h:3956 httpdfunc.h:4129 httpdfunc.h:4376 httpdfunc.h:4434
 #: httpdfunc.h:4557 httpdfunc.h:4579 httpdfunc.h:4623 httpdfunc.h:4645
 #: httpdfunc.h:4667 httpdfunc.h:4696 httpdfunc.h:4718 httpdfunc.h:4763
