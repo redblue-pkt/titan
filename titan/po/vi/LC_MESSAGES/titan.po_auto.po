@@ -2233,8 +2233,8 @@ msgid "Code2"
 msgstr "mã 2: "
 
 #: tpk_showname.h:19
-msgid "Codepack"
-msgstr "Passwword đúng"
+msgid "Codecpack"
+msgstr ""
 
 #: skin_default_skin.xml.h:155
 msgid "Coderate HP"
@@ -13224,3 +13224,6 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
+
+#~ msgid "Codepack"
+#~ msgstr "Passwword đúng"

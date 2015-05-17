@@ -2318,7 +2318,7 @@ msgid "Code2"
 msgstr "Schlüssel 2: "
 
 #: tpk_showname.h:19
-msgid "Codepack"
+msgid "Codecpack"
 msgstr ""
 
 #: skin_default_skin.xml.h:155
