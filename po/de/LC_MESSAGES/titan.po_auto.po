@@ -1,4 +1,3 @@
-#: plugins_wm2014_skin.xml.h:1 skins_wm2014_skin.xml.h:1 tithek_mainmenu.h:1
 msgid ""
 msgstr ""
 "Project-Id-Version: TitanNit 1.65\n"
@@ -9099,9 +9098,9 @@ msgid ""
 "key is for the marker overview. Then here select movie and start."
 msgstr ""
 "Starten Sie die Wiedergabe der ts Datei im internen Player und drücken Sie "
-"die Taste 0 um eine Markierung zu setzen.\n"
-"Drücken Sie die Taste 5 um eine Übersicht der Markierungen anzuzeigen und "
-"starten Sie anschliessend die Wiedergabe."
+"die Taste 0, um eine Markierung zu setzen.\n"
+"Drücken Sie die Taste 5, um eine Übersicht der Markierungen anzuzeigen und "
+"starten Sie anschließend die Wiedergabe."
 
 #: plugins_dlna_skin.xml.h:12 skin_default_skin.xml.h:683
 #: skins_dlna_skin.xml.h:12
@@ -12643,7 +12642,7 @@ msgstr "zweiter Kartenschacht (oben)"
 
 #: plugins_tsSchnitt_skin.xml.h:6 skins_tsSchnitt_skin.xml.h:6
 msgid "select movie"
-msgstr "Filmdatei auswählen"
+msgstr "Film auswählen"
 
 #: harddisk.h:127
 msgid "select the format filesystem type for your media drive"
