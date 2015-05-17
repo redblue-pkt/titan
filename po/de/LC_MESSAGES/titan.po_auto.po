@@ -1,3 +1,4 @@
+#: plugins_wm2014_skin.xml.h:1 skins_wm2014_skin.xml.h:1 tithek_mainmenu.h:1
 msgid ""
 msgstr ""
 "Project-Id-Version: TitanNit 1.65\n"
@@ -5083,7 +5084,7 @@ msgstr ""
 msgid "Is this Videomode ok ?"
 msgstr "Ist dieser Videomodus ok?"
 
-#: extensions.h:227 extensions.h:254 extensions.h:410 httpdfunc.h:6138
+#: extensions.h:227 extensions.h:254 extensions.h:410
 msgid ""
 "It may only be a package to be installed. If they want to install another "
 "package of this section, they only remove the installed packet. Is not the "
@@ -9588,7 +9589,7 @@ msgstr "Die gewünschte Seite wurde nicht gefunden, Datei vom Hoster entfernt"
 msgid "The video no longer exists"
 msgstr "Dieses Video existiert nicht mehr."
 
-#: tpk.h:3010
+#: httpdfunc.h:6138 tpk.h:3010
 msgid ""
 "There may only be one package installed from this section. To install "
 "another package from this section, remove the installed one. If the package "
