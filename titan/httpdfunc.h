@@ -6135,7 +6135,7 @@ char* webgettpkinstall(char* param, int fmt)
 		buf = ostrcat(buf, _("Install Log:"), 1, 0);
 		buf = ostrcat(buf, "<br>", 1, 0);
 		buf = ostrcat(buf, "<br>", 1, 0);
-		buf = ostrcat(buf, _("It may only be a package to be installed. If they want to install another package of this section, they only remove the installed packet. Is not the plugin after reinstalling the software TitanNit in TitanNit Menu Visible then perform an update by Tpk to: "), 1, 0);
+		buf = ostrcat(buf, _("There may only be one package installed from this section. To install another package from this section, remove the installed one. If the package is not visible after a software update, perform a TPK update to: "), 1, 0);
 	}
 	else
 	{
