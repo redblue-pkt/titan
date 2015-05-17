@@ -13400,6 +13400,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "Codepack"
-#~ msgstr "Codecpack"
