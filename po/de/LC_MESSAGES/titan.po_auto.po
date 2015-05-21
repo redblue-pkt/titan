@@ -13523,6 +13523,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "SAT/Cable 19.2 23.5 13.0 0.8 KabelD (andy)"
-#~ msgstr "Sat/Kabel 19.2 23.5 13.0 0.8 KabelD (andy)"
