@@ -1034,11 +1034,11 @@ msgid "Astra 19.2 - new (matze70)"
 msgstr ""
 
 #: tpk_showname.h:5
-msgid "Astra 19.2 and all transponder"
+msgid "Astra 19.2 KabelD and all transponder | 20.05.2015"
 msgstr ""
 
 #: tpk_description.h:13
-msgid "Astra 19.2e 23.5e Hotbird 13.0e Thor 0.8w KabelDeutschland (andy)"
+msgid "Astra 19.2e Hotbird 13.0e KabelDeutschland (andy)"
 msgstr ""
 
 #: tpk_showname.h:9
@@ -7532,7 +7532,7 @@ msgid "SAT"
 msgstr ""
 
 #: tpk_showname.h:117
-msgid "SAT/Cable 19.2 23.5 13.0 0.8 KabelD (andy)"
+msgid "SAT/Cable 19.2 13.0 KabelD | 20.05.2015"
 msgstr ""
 
 #: httpdfunc.h:4821 skin_default_skin.xml.h:595
@@ -10644,7 +10644,7 @@ msgid "all"
 msgstr "Toutes"
 
 #: tpk_description.h:4
-msgid "all: test Settings Astra 19.2 all transponder"
+msgid "all: Settings Astra 19.2 KabelD all transponder"
 msgstr ""
 
 #: plugins_lcdpearl1_skin.xml.h:4 plugins_lcdsamsung_skin.xml.h:4
