@@ -656,7 +656,7 @@ int main(int argc, char *argv[])
 	ret = setvfdbrightness(getconfigint("vfdbrightness", NULL));
 	ret = setaudiodelaybitstream(getconfig("audiodelaybitstream", NULL));
 	ret = addinetworkall(NULL);
-  
+  ret = system("df | grep titan");
 #ifndef SIMULATE
 	if(getconfigint("sos", NULL) == 0)
 	{
@@ -678,11 +678,14 @@ int main(int argc, char *argv[])
 			destroy();
 			exit(100);
 		}
-		if(getsysinfo() != SYSCODE)
+		if(ret > 0)
 		{
-			printf("error: 4\n");		
-			destroy();
-			exit(100);
+			if(getsysinfo() != SYSCODE)
+			{
+				printf("error: 4\n");		
+				destroy();
+				exit(100);
+			}
 		}
 		if(file_exist("/mnt/swapextensions/etc/.vnumber") == 1)
 		{
@@ -690,11 +693,14 @@ int main(int argc, char *argv[])
 			destroy();
 			exit(100);
 		}
-		if(checkflash() != 0)
+		if(ret > 0)
 		{
-			printf("error: 6\n");		
-			destroy();
-			exit(100);
+			if(checkflash() != 0)
+			{
+				printf("error: 6\n");		
+				destroy();
+				exit(100);
+			}
 		}
 		if((checkchipset("BCM7424") == 1 || checkchipset("BCM7358") == 1 || checkchipset("BCM7362") == 1 || checkbox("UFS913") == 1 || checkbox("SPARK") == 1 || checkbox("SPARK7162") == 1 || checkbox("IPBOX91") == 1 || checkbox("IPBOX900") == 1 || checkbox("IPBOX910") == 1 || checkbox("IPBOX9000") == 1) && checkhighflash() != 0)
 		{
