@@ -179,13 +179,13 @@ msgstr ""
 msgid "/"
 msgstr ""
 
-#: titan.c:1203
+#: titan.c:1202
 msgid ""
 "/mnt not writeable!\n"
 "Repair it?"
 msgstr ""
 
-#: titan.c:1186
+#: titan.c:1185
 msgid ""
 "/var not writeable!\n"
 "Repair it?"
@@ -1207,7 +1207,7 @@ msgstr "Tự động dò"
 msgid "Automatic start last subtitle"
 msgstr "Tự động bắt đầu phụ đề"
 
-#: titan.c:1255
+#: titan.c:1254
 msgid "Automatic stop in 10 seconds."
 msgstr "Tự động dừng trong 5 giây !"
 
@@ -2130,7 +2130,7 @@ msgstr ""
 msgid "Choose your Red-Menu entry from the following list"
 msgstr ""
 
-#: titan.c:981
+#: titan.c:980
 msgid "Choose your Remotecontrol Model from the following list"
 msgstr ""
 
@@ -3174,9 +3174,9 @@ msgstr "Lỗi… không thể thiết lập nhà sản xuất trong file này"
 #: system_backup_restore.h:88 system_backup_restore.h:95 system_update.h:257
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 timeshift.h:113 timeshift.h:161 timeshift.h:173
-#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1022
-#: titan.c:1031 titan.c:1159 titan.c:1180 titan.c:1186 titan.c:1197
-#: titan.c:1203 tithek.c:89 tithek_global.h:258 tithek.h:670 tithek.h:1224
+#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1021
+#: titan.c:1030 titan.c:1158 titan.c:1179 titan.c:1185 titan.c:1196
+#: titan.c:1202 tithek.c:89 tithek_global.h:258 tithek.h:670 tithek.h:1224
 #: tithek.h:1285 tithek.h:1535 tithek.h:1557 tithek.h:1574 tithek.h:1806
 #: tithek.h:1986 tithek.h:2206 tithek.h:2234 tithek.h:2250 tithek.h:2262
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
@@ -3350,27 +3350,27 @@ msgstr ""
 msgid "Error: Transponder Source file not found"
 msgstr ""
 
-#: titan.c:858
+#: titan.c:857
 msgid "Error: no audio device found !!"
 msgstr " Lỗi: không tìm thấy thiết bị audio!!"
 
-#: titan.c:846
+#: titan.c:845
 msgid "Error: no demux device found !!"
 msgstr "Lỗi: không tìm thấy các thiết bị tách kênh!"
 
-#: titan.c:840
+#: titan.c:839
 msgid "Error: no frontend device found !!"
 msgstr "Lỗi: không tìm thấy thiết bị vào!"
 
-#: titan.c:852
+#: titan.c:851
 msgid "Error: no video device found !!"
 msgstr "Lỗi: không tìm thấy thiết bị video !!"
 
-#: titan.c:834
+#: titan.c:833
 msgid "Error: open rc device !!"
 msgstr " Lỗi: mở thiết bị rc !"
 
-#: titan.c:881
+#: titan.c:880
 msgid "Error: skin not found !!"
 msgstr "Lỗi: không tìm thấy nền!"
 
@@ -3668,7 +3668,7 @@ msgstr ""
 msgid "Fireskull"
 msgstr ""
 
-#: titan.c:1022
+#: titan.c:1021
 msgid "First Wizzard"
 msgstr "Wizzard đầu tiên"
 
@@ -3839,7 +3839,7 @@ msgstr "Tỷ lệ lớn nhất"
 msgid "Free Space"
 msgstr "Dung lượng còn trống"
 
-#: titan.c:1197
+#: titan.c:1196
 msgid ""
 "Free space in /mnt to little!\n"
 "This can make problems!"
@@ -3847,7 +3847,7 @@ msgstr ""
 "Không đủ khoảng trống\n"
 " Điều này có thể dẫn đến vấn đề !"
 
-#: titan.c:1180
+#: titan.c:1179
 msgid ""
 "Free space in /var to little!\n"
 "This can make problems!"
@@ -4674,7 +4674,7 @@ msgid "Inc. AC3 Audio in %"
 msgstr "Audio AC3 %"
 
 #: info.h:27 plugins_tmc_skin.xml.h:8 security.h:663 security.h:680
-#: skins_tmc_skin.xml.h:8 titan.c:1031 webif_index.atemio510.h:15
+#: skins_tmc_skin.xml.h:8 titan.c:1030 webif_index.atemio510.h:15
 #: webif_index.atemio5200.h:15 webif_index.atemio5200.h:43
 #: webif_index.atemio5200.h:99 webif_index.atemio6000.h:15
 #: webif_index.atemio6100.h:15 webif_index.atemio6200.h:15
@@ -5645,8 +5645,8 @@ msgstr ""
 #: system_backup_restore.h:80 system_backup_restore.h:82 system_update.h:257
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 timeshift.h:113 timeshift.h:161 timeshift.h:173
-#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1159
-#: titan.c:1180 titan.c:1186 titan.c:1197 titan.c:1203 tithek.c:89
+#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1158
+#: titan.c:1179 titan.c:1185 titan.c:1196 titan.c:1202 tithek.c:89
 #: tithek_global.h:258 tithek.h:670 tithek.h:1224 tithek.h:1285 tithek.h:1535
 #: tithek.h:1557 tithek.h:1806 tithek.h:1986 tithek.h:2206 tithek.h:2234
 #: tithek.h:2250 tithek.h:2262 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
@@ -6200,9 +6200,9 @@ msgstr "E"
 #: system_backup_restore.h:88 system_backup_restore.h:95 system_update.h:257
 #: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
 #: thefile.h:205 timeshift.h:113 timeshift.h:161 timeshift.h:173
-#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1022
-#: titan.c:1031 titan.c:1159 titan.c:1180 titan.c:1186 titan.c:1197
-#: titan.c:1203 tithek.c:89 tithek_global.h:258 tithek.h:670 tithek.h:1224
+#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1021
+#: titan.c:1030 titan.c:1158 titan.c:1179 titan.c:1185 titan.c:1196
+#: titan.c:1202 tithek.c:89 tithek_global.h:258 tithek.h:670 tithek.h:1224
 #: tithek.h:1285 tithek.h:1535 tithek.h:1557 tithek.h:1574 tithek.h:1806
 #: tithek.h:1986 tithek.h:2206 tithek.h:2234 tithek.h:2250 tithek.h:2262
 #: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
@@ -7224,7 +7224,7 @@ msgstr ""
 msgid "Receiver reboots now !!!"
 msgstr "Đầu thu đang khởi động lại !!!"
 
-#: titan.c:1159
+#: titan.c:1158
 msgid "Receiver successful unlocked"
 msgstr "Khóa đầu vào"
 
@@ -7364,11 +7364,11 @@ msgstr ""
 msgid "Remote"
 msgstr ""
 
-#: titan.c:974
+#: titan.c:973
 msgid "RemoteControl Long Version"
 msgstr ""
 
-#: titan.c:973
+#: titan.c:972
 msgid "RemoteControl Old Version"
 msgstr ""
 
@@ -8280,7 +8280,7 @@ msgstr "Lựa chọn đường dẫn"
 msgid "Select Unicable Manufacturer"
 msgstr "Nhà sản xuất cáp đơn"
 
-#: titan.c:981
+#: titan.c:980
 msgid "Select Your Remote Control"
 msgstr ""
 
@@ -8395,7 +8395,7 @@ msgstr ""
 msgid "Settings Hotbird 13.0, Astra 19.2, Astra 28.2E"
 msgstr ""
 
-#: titan.c:1022
+#: titan.c:1021
 msgid "Settings OK ?"
 msgstr " Thiết lập OK ?"
 
@@ -10034,7 +10034,7 @@ msgstr ""
 msgid "Unitymedia NRW | 14.4.2015 (caliban)"
 msgstr ""
 
-#: titan.c:1253
+#: titan.c:1252
 msgid "Unknown Error."
 msgstr "Không xác định được lỗi."
 
