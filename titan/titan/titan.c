@@ -656,10 +656,9 @@ int main(int argc, char *argv[])
 	ret = setvfdbrightness(getconfigint("vfdbrightness", NULL));
 	ret = setaudiodelaybitstream(getconfig("audiodelaybitstream", NULL));
 	ret = addinetworkall(NULL);
-  ret = system("df | grep titan");
   ret = 1;
   if(file_exist("/var/etc/.usbimage"))
-  	ret = 0;
+  	ret = system("mount | grep titan");
   
 #ifndef SIMULATE
 	if(getconfigint("sos", NULL) == 0)
