@@ -11857,7 +11857,7 @@ msgstr "Begrenzung aus"
 
 #: possetup.h:52
 msgid "limits on"
-msgstr "Begrenzung Ein"
+msgstr "Begrenzung ein"
 
 #: webif_help.h:39
 msgid "linkedchannel"
@@ -12895,7 +12895,7 @@ msgstr "Abbruch durch Benutzer"
 
 #: possetup.h:57
 msgid "store position"
-msgstr "speichere Position"
+msgstr "Position speichern"
 
 #: tpk_description.h:140
 msgid "streaminfo Plugin"
