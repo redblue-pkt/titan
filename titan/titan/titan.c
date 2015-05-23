@@ -657,6 +657,10 @@ int main(int argc, char *argv[])
 	ret = setaudiodelaybitstream(getconfig("audiodelaybitstream", NULL));
 	ret = addinetworkall(NULL);
   ret = system("df | grep titan");
+  ret = 1;
+  if(file_exist("/var/etc/.usbimage"))
+  	ret = 0;
+  
 #ifndef SIMULATE
 	if(getconfigint("sos", NULL) == 0)
 	{
