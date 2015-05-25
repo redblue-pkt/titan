@@ -30,19 +30,20 @@ void screenvfdisplay()
 
 	if(checkchipset("BCM7424") == 1) // inihdp
 	{
+		char *tmp1 = NULL, *tmp2 = NULL;		
+		int i = 0;		
 		if(checkscreen("OLED_nemesis") != status.skinerr)
-			addchoicebox(oled_sel, "OLED_nemesis", "v1");
-		if(checkscreen("OLED_nemesis_v2") != status.skinerr)
-			addchoicebox(oled_sel, "OLED_nemesis_v2","v2");
-		if(checkscreen("OLED_nemesis_v3") != status.skinerr)
-			addchoicebox(oled_sel, "OLED_nemesis_v3","v3");
-		if(checkscreen("OLED_nemesis_v4") != status.skinerr)
-			addchoicebox(oled_sel, "OLED_nemesis_v4","v4");
-		if(checkscreen("OLED_nemesis_v5") != status.skinerr)
-			addchoicebox(oled_sel, "OLED_nemesis_v5","v5");
-		if(checkscreen("OLED_nemesis_v6") != status.skinerr)
-			addchoicebox(oled_sel, "OLED_nemesis_v6","v6");
-
+			addchoicebox(oled_sel, "OLED_nemesis", "v1");		
+		for (i=2;i<30;i++)
+		{
+			tmp1 = ostrcat("OLED_nemesis_v",oitoa(i), 0, 0);
+			tmp2 = ostrcat("v",oitoa(i), 0, 0);
+			if(checkscreen(tmp1) != status.skinerr)
+   				addchoicebox(oled_sel, tmp1,tmp2);
+			free(tmp1);tmp1=NULL;
+			free(tmp2);tmp2=NULL;
+		}
+		
 		setchoiceboxselection(oled_sel, getskinconfig("OLED_nemesis", NULL));
 	}
 	else
