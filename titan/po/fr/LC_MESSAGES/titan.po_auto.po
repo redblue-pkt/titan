@@ -10780,11 +10780,11 @@ msgstr "noir"
 msgid "blindscanadjust"
 msgstr ""
 
-#: vfdisplay.h:81
+#: vfdisplay.h:82
 msgid "blink"
 msgstr ""
 
-#: vfdisplay.h:85
+#: vfdisplay.h:86
 msgid "blink star"
 msgstr ""
 
@@ -10860,7 +10860,7 @@ msgstr ""
 msgid "change"
 msgstr "Chaine"
 
-#: vfdisplay.h:53
+#: vfdisplay.h:54
 msgid "channel"
 msgstr "Chaine"
 
@@ -10868,11 +10868,11 @@ msgstr "Chaine"
 msgid "channel (EPG=Current channel)"
 msgstr ""
 
-#: vfdisplay.h:54
+#: vfdisplay.h:55
 msgid "channel + time"
 msgstr "Chaine + Temps"
 
-#: vfdisplay.h:61
+#: vfdisplay.h:62
 msgid "channel number"
 msgstr "Chaine + Temps"
 
@@ -10968,7 +10968,7 @@ msgstr "quotidien"
 msgid "date"
 msgstr ""
 
-#: vfdisplay.h:68
+#: vfdisplay.h:69
 msgid "date + time"
 msgstr "Chaine + Temps"
 
@@ -11184,7 +11184,7 @@ msgstr "externe"
 msgid "f"
 msgstr ""
 
-#: vfdisplay.h:82
+#: vfdisplay.h:83
 msgid "fade out/in"
 msgstr ""
 
@@ -11818,7 +11818,7 @@ msgstr "Ö"
 #: panel_settings_overclocking.h:276 readerconfig.h:421
 #: settings_autostart.h:53 settings_overclocking.h:276 transponder.h:256
 #: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:836
-#: vfdisplay.h:65 vfdisplay.h:80
+#: vfdisplay.h:66 vfdisplay.h:81
 msgid "off"
 msgstr " arrêt"
 
@@ -12374,7 +12374,7 @@ msgstr ""
 msgid "show in list"
 msgstr ""
 
-#: vfdisplay.h:83
+#: vfdisplay.h:84
 msgid "show record"
 msgstr "Vérificateur des fichiers Partition de l'enregistrement "
 
@@ -12480,7 +12480,7 @@ msgstr "Veille"
 msgid "standbymenu"
 msgstr ""
 
-#: vfdisplay.h:84
+#: vfdisplay.h:85
 msgid "star"
 msgstr ""
 
@@ -12679,15 +12679,15 @@ msgstr ""
 msgid "tiWakeup"
 msgstr ""
 
-#: vfdisplay.h:56 vfdisplay.h:59 vfdisplay.h:64
+#: vfdisplay.h:57 vfdisplay.h:60 vfdisplay.h:65
 msgid "time"
 msgstr "Heure"
 
-#: vfdisplay.h:55
+#: vfdisplay.h:56
 msgid "time + channel"
 msgstr "Temps + Chaine"
 
-#: vfdisplay.h:60
+#: vfdisplay.h:61
 msgid "time small"
 msgstr "Petit"
 
@@ -12900,7 +12900,7 @@ msgstr "très rapide"
 msgid "very slow"
 msgstr "très lent"
 
-#: vfdisplay.h:69
+#: vfdisplay.h:70
 msgid "vfddate"
 msgstr ""
 

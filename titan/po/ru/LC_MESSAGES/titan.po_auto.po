@@ -10923,11 +10923,11 @@ msgstr "Чёрный"
 msgid "blindscanadjust"
 msgstr "Слепой поиск"
 
-#: vfdisplay.h:81
+#: vfdisplay.h:82
 msgid "blink"
 msgstr "Мигающий"
 
-#: vfdisplay.h:85
+#: vfdisplay.h:86
 msgid "blink star"
 msgstr "Мигающая звёздочка + название канала"
 
@@ -11003,7 +11003,7 @@ msgstr "Центр"
 msgid "change"
 msgstr "Изменить"
 
-#: vfdisplay.h:53
+#: vfdisplay.h:54
 msgid "channel"
 msgstr "Канал"
 
@@ -11011,11 +11011,11 @@ msgstr "Канал"
 msgid "channel (EPG=Current channel)"
 msgstr "Канал (EPG = Текущий канал)"
 
-#: vfdisplay.h:54
+#: vfdisplay.h:55
 msgid "channel + time"
 msgstr "Канал + время"
 
-#: vfdisplay.h:61
+#: vfdisplay.h:62
 msgid "channel number"
 msgstr "Номер канала"
 
@@ -11111,7 +11111,7 @@ msgstr "Ежедневно"
 msgid "date"
 msgstr "Дата"
 
-#: vfdisplay.h:68
+#: vfdisplay.h:69
 msgid "date + time"
 msgstr "Дата + время"
 
@@ -11327,7 +11327,7 @@ msgstr "Внешний"
 msgid "f"
 msgstr ""
 
-#: vfdisplay.h:82
+#: vfdisplay.h:83
 msgid "fade out/in"
 msgstr "Плавно мигающий"
 
@@ -11961,7 +11961,7 @@ msgstr ""
 #: panel_settings_overclocking.h:276 readerconfig.h:421
 #: settings_autostart.h:53 settings_overclocking.h:276 transponder.h:256
 #: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:836
-#: vfdisplay.h:65 vfdisplay.h:80
+#: vfdisplay.h:66 vfdisplay.h:81
 msgid "off"
 msgstr "Выкл"
 
@@ -12520,7 +12520,7 @@ msgstr "Автоматически"
 msgid "show in list"
 msgstr "В виде списка"
 
-#: vfdisplay.h:83
+#: vfdisplay.h:84
 msgid "show record"
 msgstr "Индикатор записи"
 
@@ -12626,7 +12626,7 @@ msgstr "Режим ожидания"
 msgid "standbymenu"
 msgstr ""
 
-#: vfdisplay.h:84
+#: vfdisplay.h:85
 msgid "star"
 msgstr "Звёздочка + название канала"
 
@@ -12825,15 +12825,15 @@ msgstr "Пульт Titan"
 msgid "tiWakeup"
 msgstr ""
 
-#: vfdisplay.h:56 vfdisplay.h:59 vfdisplay.h:64
+#: vfdisplay.h:57 vfdisplay.h:60 vfdisplay.h:65
 msgid "time"
 msgstr "Время"
 
-#: vfdisplay.h:55
+#: vfdisplay.h:56
 msgid "time + channel"
 msgstr "Время + канал"
 
-#: vfdisplay.h:60
+#: vfdisplay.h:61
 msgid "time small"
 msgstr "Время (Мелко)"
 
@@ -13046,7 +13046,7 @@ msgstr "Очень быстро"
 msgid "very slow"
 msgstr "Очень медленно"
 
-#: vfdisplay.h:69
+#: vfdisplay.h:70
 msgid "vfddate"
 msgstr "VFD"
 

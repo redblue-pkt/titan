@@ -10959,11 +10959,11 @@ msgstr ""
 msgid "blindscanadjust"
 msgstr ""
 
-#: vfdisplay.h:81
+#: vfdisplay.h:82
 msgid "blink"
 msgstr "Blink"
 
-#: vfdisplay.h:85
+#: vfdisplay.h:86
 msgid "blink star"
 msgstr "Blinking star"
 
@@ -11039,7 +11039,7 @@ msgstr ""
 msgid "change"
 msgstr "Change"
 
-#: vfdisplay.h:53
+#: vfdisplay.h:54
 msgid "channel"
 msgstr "Channelname"
 
@@ -11047,11 +11047,11 @@ msgstr "Channelname"
 msgid "channel (EPG=Current channel)"
 msgstr ""
 
-#: vfdisplay.h:54
+#: vfdisplay.h:55
 msgid "channel + time"
 msgstr "Channelname + Time"
 
-#: vfdisplay.h:61
+#: vfdisplay.h:62
 msgid "channel number"
 msgstr "Channel number"
 
@@ -11147,7 +11147,7 @@ msgstr "Daily"
 msgid "date"
 msgstr ""
 
-#: vfdisplay.h:68
+#: vfdisplay.h:69
 msgid "date + time"
 msgstr "Date + Time"
 
@@ -11363,7 +11363,7 @@ msgstr "external"
 msgid "f"
 msgstr ""
 
-#: vfdisplay.h:82
+#: vfdisplay.h:83
 msgid "fade out/in"
 msgstr "Fade in/out"
 
@@ -11997,7 +11997,7 @@ msgstr ""
 #: panel_settings_overclocking.h:276 readerconfig.h:421
 #: settings_autostart.h:53 settings_overclocking.h:276 transponder.h:256
 #: transponder.h:264 transponder.h:415 transponder.h:423 tunerconfig.h:836
-#: vfdisplay.h:65 vfdisplay.h:80
+#: vfdisplay.h:66 vfdisplay.h:81
 msgid "off"
 msgstr "Off"
 
@@ -12553,7 +12553,7 @@ msgstr "Show entrys (Auto amount)"
 msgid "show in list"
 msgstr "Show in List"
 
-#: vfdisplay.h:83
+#: vfdisplay.h:84
 msgid "show record"
 msgstr "Show 'Record'"
 
@@ -12659,7 +12659,7 @@ msgstr "Standby"
 msgid "standbymenu"
 msgstr ""
 
-#: vfdisplay.h:84
+#: vfdisplay.h:85
 msgid "star"
 msgstr "Star"
 
@@ -12858,15 +12858,15 @@ msgstr ""
 msgid "tiWakeup"
 msgstr "Wake Up"
 
-#: vfdisplay.h:56 vfdisplay.h:59 vfdisplay.h:64
+#: vfdisplay.h:57 vfdisplay.h:60 vfdisplay.h:65
 msgid "time"
 msgstr "Time"
 
-#: vfdisplay.h:55
+#: vfdisplay.h:56
 msgid "time + channel"
 msgstr "Time + Channelname"
 
-#: vfdisplay.h:60
+#: vfdisplay.h:61
 msgid "time small"
 msgstr "Time small"
 
@@ -13079,7 +13079,7 @@ msgstr ""
 msgid "very slow"
 msgstr ""
 
-#: vfdisplay.h:69
+#: vfdisplay.h:70
 msgid "vfddate"
 msgstr "Date"
 
