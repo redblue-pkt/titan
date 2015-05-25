@@ -36,8 +36,8 @@ void screenvfdisplay()
 			addchoicebox(oled_sel, "OLED_nemesis", "v1");		
 		for (i=2;i<30;i++)
 		{
-			tmp1 = ostrcat("OLED_nemesis_v",oitoa(i), 0, 0);
-			tmp2 = ostrcat("v",oitoa(i), 0, 0);
+			tmp1 = ostrcat("OLED_nemesis_v",oitoa(i), 0, 1);
+			tmp2 = ostrcat("v",oitoa(i), 0, 1);
 			if(checkscreen(tmp1) != status.skinerr)
    				addchoicebox(oled_sel, tmp1,tmp2);
 			free(tmp1);tmp1=NULL;
