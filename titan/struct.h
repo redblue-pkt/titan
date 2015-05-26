@@ -1555,7 +1555,7 @@ struct status
 	int sleepcount;
 	int stats;
 	char* url;
-	char* hdd;
+	char* hddnode;
 } status;
 
 struct fb
