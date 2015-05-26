@@ -3090,7 +3090,7 @@ msgstr ""
 #: global.h:6877 global.h:7133 global.h:7146 global.h:7157 global.h:7168
 #: global.h:7179 harddisk.h:355 harddisk.h:487 harddisk.h:678 harddisk.h:686
 #: harddisk.h:720 harddisk.h:769 harddisk.h:774 harddisk.h:776 harddisk.h:778
-#: harddisk.h:838 harddisk.h:857 harddisk.h:860 harddisk.h:1093 hbbtv.h:362
+#: harddisk.h:838 harddisk.h:857 harddisk.h:860 harddisk.h:1091 hbbtv.h:362
 #: hello.c:37 httpdfunc.h:1304 httpdfunc.h:3258 httpdfunc.h:6159
 #: httpdfunc.h:6424 httpdfunc.h:6495 hwtest.h:88 hwtest.h:93 hwtest.h:98
 #: hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206 hwtest.h:390
@@ -3789,7 +3789,7 @@ msgid ""
 "Please install driver: "
 msgstr ""
 
-#: harddisk.h:1093
+#: harddisk.h:1091
 msgid ""
 "Found new Stick/HDD.\n"
 "You can configure it in Harddisk Menu."
@@ -6117,7 +6117,7 @@ msgstr ""
 #: global.h:7172 global.h:7179 global.h:7183 harddisk.h:355 harddisk.h:487
 #: harddisk.h:678 harddisk.h:686 harddisk.h:720 harddisk.h:769 harddisk.h:774
 #: harddisk.h:776 harddisk.h:778 harddisk.h:838 harddisk.h:857 harddisk.h:860
-#: harddisk.h:1093 hbbtv.h:362 httpdfunc.h:1304 httpdfunc.h:3258
+#: harddisk.h:1091 hbbtv.h:362 httpdfunc.h:1304 httpdfunc.h:3258
 #: httpdfunc.h:6159 httpdfunc.h:6424 httpdfunc.h:6495 hwtest.h:88 hwtest.h:93
 #: hwtest.h:98 hwtest.h:103 hwtest.h:108 hwtest.h:113 hwtest.h:206
 #: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
