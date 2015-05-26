@@ -979,7 +979,7 @@ void delhdd(char* device, int flag)
 			if(node == hdd)
 			{
 				hdd = node->next;
-				status.hdd = hdd;
+				status.hddnode = hdd;
 				if(hdd != NULL)
 					hdd->prev = NULL;
 			}
@@ -1055,8 +1055,10 @@ struct hdd* addhdd(char* device, int partition, unsigned long long size, int rem
 	}
 
 	if(prev == NULL)
+	{
 		hdd = newnode;
-		status.hdd = hdd;
+		status.hddnode = hdd;
+	}
 	else
 	{
 		prev->next = newnode;
