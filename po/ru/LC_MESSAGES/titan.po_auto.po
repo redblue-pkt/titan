@@ -13391,18 +13391,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "Schnitt endet mit Fehler !!!!!"
-#~ msgstr "Ошибка создания раздела!"
-
-#~ msgid "Schnitt erfolgreich beendet"
-#~ msgstr "Раздел успешно создан!"
-
-#~ msgid "Schnitt ist in Arbeit"
-#~ msgstr "Раздел находится в стадии создания"
-
-#~ msgid "Soll der Schnitt wirklich abgebrochen werden?"
-#~ msgstr "Действительно отменить?"
-
-#~ msgid "cut is running"
-#~ msgstr "Операция выполняется"
