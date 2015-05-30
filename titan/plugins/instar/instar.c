@@ -27,7 +27,7 @@ void init(void)
 	if(checkbox("ATEMIO5200") == 1)
 			addconfig("pic_scale", "0");
 
-	debug(10, "INSTAR Plugin loadet !!!");
+	debug(10, "INSTAR Plugin loaded !!!");
 }
 
 //wird beim entladen ausgefuehrt

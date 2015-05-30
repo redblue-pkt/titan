@@ -14,7 +14,7 @@ int pluginversion = PLUGINVERSION;
 void init(void)
 {
 	pluginaktiv = 1;
-	debug(10, "Browser Plugin loadet !!!");
+	debug(10, "Browser Plugin loaded !!!");
 }
 
 //wird beim entladen ausgefuehrt
