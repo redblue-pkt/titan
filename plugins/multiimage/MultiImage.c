@@ -358,6 +358,7 @@ int multiimage_install(char* imagefile, char* mdev)
 	char* path2 = NULL;
 	char* path3 = NULL;
 	char* cmd = NULL;
+	char* cmd = tmp;
 	char* iname = NULL;
 
 	struct skin* tmp = NULL;
@@ -407,6 +408,7 @@ int multiimage_install(char* imagefile, char* mdev)
 	clearscreen(multiinstall);
 	if(rc == 1)
 	{
+		tmp = createpluginpath("/multiimage/ubireader/ubi_reader-master/scripts/ubireader_extract_files", 0);
 		cmd = createpluginpath("/multiimage/multi_unpack.sh", 0);
 		cmd = ostrcat(cmd, " ", 1, 0);
 		cmd = ostrcat(cmd, imagefile, 1, 0);
@@ -414,9 +416,12 @@ int multiimage_install(char* imagefile, char* mdev)
 		cmd = ostrcat(cmd, iname, 1, 0);
 		cmd = ostrcat(cmd, " ", 1, 0);
 		cmd = ostrcat(cmd, path, 1, 0);
+		cmd = ostrcat(cmd, " ", 1, 0);
+		cmd = ostrcat(cmd, tmp, 1, 0);
 		cmd = ostrcat(cmd, " &", 1, 0);
 		system(cmd);
 		free(cmd); cmd=NULL;
+		free(tmp); cmd=NULL;
 		textbox(_("Message"), _("INFO\nExtracting process is running in background.\nA message will be shown when finished."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 250, 10, 0);
 		
 		Multi_Image_thread = addtimer(&multiimage_thread, START, 10000, 1, NULL, NULL, NULL);
