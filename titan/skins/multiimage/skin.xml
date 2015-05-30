@@ -1,25 +1,25 @@
-<screen name="multipart" title="MultiImage Gerät erstellen" titlealign=center fontcol=fontcol valign=bottom fontsize=28 posx=center posy=center width=50% height=70% bordercol=bordercol bordersize=2 bgcol=bgcol>
-<node bordercol=bordercol scrollbar=auto type=listbox posy=35 posx=center name=listbox width=85% height=60>
-<node name=device type=choicebox parent=listbox valign=middle posx=0 text="Gerät auswählen" bordercol=bordercol bordersize=2 width=100% height=30>
-<node name="textbox1" type="textbox" text="Verzeichnis des gewählten Gerätes" scrollbar="no" posy=95 posx=center width=85% height=30 fontsize=25>
-<node name="textbox2" type="textbox" text="DIR" scrollbar="auto" posy=135 posx=center width=85% height=300 fontsize=20>
-<node name=b2 text="EXIT" halign=center valign=middle bordercol=exitcol bordersize=2 bordertype=2 posx=0 posy=0 width=150 height=30/>
-<node name=blue text="formatieren" halign=center valign=middle bordercol=blue bordersize=2 bordertype=2 posx=160 posy=0 width=150 height=30/>
+<screen name="multipart" title="Create MultiImage device" titlealign=center fontcol=fontcol valign=bottom fontsize=28 posx=center posy=center width=50% height=70% bordercol=bordercol bordersize=2 bgcol=bgcol>
+	<node bordercol=bordercol scrollbar=auto type=listbox posy=35 posx=center name=listbox width=85% height=60>
+	<node name=device type=choicebox parent=listbox valign=middle posx=0 text="Select device" bordercol=bordercol bordersize=2 width=100% height=30>
+	<node name="textbox1" type="textbox" text="Directory of selected device" scrollbar="no" posy=95 posx=center width=85% height=30 fontsize=25>
+	<node name="textbox2" type="textbox" text="DIR" scrollbar="auto" posy=135 posx=center width=85% height=300 fontsize=20>
+	<node name=b2 text="EXIT" halign=center valign=middle bordercol=exitcol bordersize=2 bordertype=2 posx=0 posy=0 width=150 height=30/>
+	<node name=blue text="format" halign=center valign=middle bordercol=blue bordersize=2 bordertype=2 posx=160 posy=0 width=150 height=30/>
 </screen>
 
-<screen name="multiimage" title="MultiImage verwalten" titlealign=center fontcol=fontcol valign=bottom fontsize=28 posx=center posy=center width=50% height=70% bordercol=bordercol bordersize=2 bgcol=bgcol>
-<node bordercol=bordercol scrollbar=auto type=listbox posy=center posx=center name=listbox width=85% height=85%>
-<node name="images" text="kein Image installiert" parent=listbox valign=middle posx=0 bordercol=bordercol bordersize=2 width=100% height=30 hidden="yes">
-<node name=b1 text="EXIT" halign=center valign=middle bordercol=exitcol bordersize=2 bordertype=2 posx=0 posy=0 width=150 height=30/>
-<node name=b2 text="löschen" halign=center valign=middle bordercol=red bordersize=2 bordertype=2 posx=160 posy=0 width=150 height=30/>
-<node name=b3 text="installieren" halign=center valign=middle bordercol=green bordersize=2 bordertype=2 posx=320 posy=0 width=150 height=30/>
-<node name=b3 text="formatieren" halign=center valign=middle bordercol=blue bordersize=2 bordertype=2 posx=480 posy=0 width=150 height=30/>
+<screen name="multiimage" title="Manage MultiImage" titlealign=center fontcol=fontcol valign=bottom fontsize=28 posx=center posy=center width=50% height=70% bordercol=bordercol bordersize=2 bgcol=bgcol>
+	<node bordercol=bordercol scrollbar=auto type=listbox posy=center posx=center name=listbox width=85% height=85%>
+	<node name="images" text="No Image installed" parent=listbox valign=middle posx=0 bordercol=bordercol bordersize=2 width=100% height=30 hidden="yes">
+	<node name=b1 text="EXIT" halign=center valign=middle bordercol=exitcol bordersize=2 bordertype=2 posx=0 posy=0 width=150 height=30/>
+	<node name=b2 text="delete" halign=center valign=middle bordercol=red bordersize=2 bordertype=2 posx=160 posy=0 width=150 height=30/>
+	<node name=b3 text="install" halign=center valign=middle bordercol=green bordersize=2 bordertype=2 posx=320 posy=0 width=150 height=30/>
+	<node name=b3 text="format" halign=center valign=middle bordercol=blue bordersize=2 bordertype=2 posx=480 posy=0 width=150 height=30/>
 </screen>
 
-<screen name="multiinstall" title="MultiImage installieren" titlealign=center fontcol=fontcol valign=bottom fontsize=28 posx=center posy=center width=50% height=70% bordercol=bordercol bordersize=2 bgcol=bgcol>
-<node name="text1" type="textbox" fontsize="20" posx=center posy="40" width=85% height=60 text="gewähltes Image">
-<node bordercol=bordercol scrollbar=auto type=listbox posx=center name=listbox width=85% height=85%>
-<node name=imagename type="inputbox" parent=listbox valign=middle posx=0 text="Image Name: " bordercol=bordercol bordersize=2 width=100% height=30>
-<node name=b1 text="EXIT" halign=center valign=middle bordercol=exitcol bordersize=2 bordertype=2 posx=0 posy=0 width=150 height=30/>
-<node name=b2 text="START" halign=center valign=middle bordercol=red bordersize=2 bordertype=2 posx=160 posy=0 width=150 height=30/>
+<screen name="multiinstall" title="MultiImage Installation" titlealign=center fontcol=fontcol valign=bottom fontsize=28 posx=center posy=center width=50% height=70% bordercol=bordercol bordersize=2 bgcol=bgcol>
+	<node name="text1" type="textbox" fontsize="20" posx=center posy="40" width=85% height=60 text="selected Image">
+	<node bordercol=bordercol scrollbar=auto type=listbox posx=center name=listbox width=85% height=85%>
+	<node name=imagename type="inputbox" parent=listbox valign=middle posx=0 text="Image name: " bordercol=bordercol bordersize=2 width=100% height=30>
+	<node name=b1 text="EXIT" halign=center valign=middle bordercol=exitcol bordersize=2 bordertype=2 posx=0 posy=0 width=150 height=30/>
+	<node name=b2 text="START" halign=center valign=middle bordercol=red bordersize=2 bordertype=2 posx=160 posy=0 width=150 height=30/>
 </screen>
