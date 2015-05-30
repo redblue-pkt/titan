@@ -2479,6 +2479,22 @@ msgstr ""
 msgid "Currency: "
 msgstr "Munteenheid: "
 
+#: tsSchnitt.c:129
+msgid "Cut finished with error!"
+msgstr ""
+
+#: tsSchnitt.c:327
+msgid "Cut in progress"
+msgstr ""
+
+#: tsSchnitt.c:342
+msgid "Cut is running"
+msgstr ""
+
+#: tsSchnitt.c:123
+msgid "Cut successfully completed"
+msgstr ""
+
 #: plugins_tsSchnitt_skin.xml.h:1 skins_tsSchnitt_skin.xml.h:1
 msgid "Cutstatus:"
 msgstr "Knipstatus:"
@@ -8026,18 +8042,6 @@ msgstr "Zoeken naar netwerk shares, ogenblik AUB!"
 msgid "Scart On Standby"
 msgstr "Scart op standby"
 
-#: tsSchnitt.c:129
-msgid "Schnitt endet mit Fehler !!!!!"
-msgstr ""
-
-#: tsSchnitt.c:123
-msgid "Schnitt erfolgreich beendet"
-msgstr ""
-
-#: tsSchnitt.c:327
-msgid "Schnitt ist in Arbeit"
-msgstr ""
-
 #: epgsearch.h:308
 msgid "Scifi"
 msgstr ""
@@ -8848,10 +8852,6 @@ msgstr "Softcam kiezen:"
 msgid "Solarmovie"
 msgstr ""
 
-#: tsSchnitt.c:347
-msgid "Soll der Schnitt wirklich abgebrochen werden?"
-msgstr ""
-
 #: extensions.h:416
 msgid ""
 "Some plugins needs restart.\n"
@@ -9173,6 +9173,10 @@ msgstr "Zondag"
 
 #: tithek_mainmenu.h:45
 msgid "SuperRTL-Now"
+msgstr ""
+
+#: tsSchnitt.c:347
+msgid "Sure to cancel the cut process?"
 msgstr ""
 
 #: MultiImage.c:318
@@ -11166,10 +11170,6 @@ msgstr "Hoes"
 
 #: skin_default_skin.xml.h:176
 msgid "create System Backup"
-msgstr ""
-
-#: tsSchnitt.c:342
-msgid "cut is running"
 msgstr ""
 
 #: tpk_description.h:48

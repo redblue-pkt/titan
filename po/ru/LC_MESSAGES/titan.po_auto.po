@@ -2487,6 +2487,22 @@ msgstr ""
 msgid "Currency: "
 msgstr "Валюта "
 
+#: tsSchnitt.c:129
+msgid "Cut finished with error!"
+msgstr ""
+
+#: tsSchnitt.c:327
+msgid "Cut in progress"
+msgstr ""
+
+#: tsSchnitt.c:342
+msgid "Cut is running"
+msgstr ""
+
+#: tsSchnitt.c:123
+msgid "Cut successfully completed"
+msgstr ""
+
 #: plugins_tsSchnitt_skin.xml.h:1 skins_tsSchnitt_skin.xml.h:1
 msgid "Cutstatus:"
 msgstr "Статус"
@@ -8037,18 +8053,6 @@ msgstr "Идёт сканирование, ждите!"
 msgid "Scart On Standby"
 msgstr "При старте переходить в режим ожидания"
 
-#: tsSchnitt.c:129
-msgid "Schnitt endet mit Fehler !!!!!"
-msgstr "Ошибка создания раздела!"
-
-#: tsSchnitt.c:123
-msgid "Schnitt erfolgreich beendet"
-msgstr "Раздел успешно создан!"
-
-#: tsSchnitt.c:327
-msgid "Schnitt ist in Arbeit"
-msgstr "Раздел находится в стадии создания"
-
 #: epgsearch.h:308
 msgid "Scifi"
 msgstr "Фантастика"
@@ -8859,10 +8863,6 @@ msgstr "Выбор эмулятора"
 msgid "Solarmovie"
 msgstr ""
 
-#: tsSchnitt.c:347
-msgid "Soll der Schnitt wirklich abgebrochen werden?"
-msgstr "Действительно отменить?"
-
 #: extensions.h:416
 msgid ""
 "Some plugins needs restart.\n"
@@ -9179,6 +9179,10 @@ msgstr "Воскресенье"
 
 #: tithek_mainmenu.h:45
 msgid "SuperRTL-Now"
+msgstr ""
+
+#: tsSchnitt.c:347
+msgid "Sure to cancel the cut process?"
 msgstr ""
 
 #: MultiImage.c:318
@@ -11171,10 +11175,6 @@ msgstr "В виде иконок"
 #: skin_default_skin.xml.h:176
 msgid "create System Backup"
 msgstr "Создать резервную копию"
-
-#: tsSchnitt.c:342
-msgid "cut is running"
-msgstr "Операция выполняется"
 
 #: tpk_description.h:48
 msgid "cut record files"
@@ -13391,3 +13391,18 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
+
+#~ msgid "Schnitt endet mit Fehler !!!!!"
+#~ msgstr "Ошибка создания раздела!"
+
+#~ msgid "Schnitt erfolgreich beendet"
+#~ msgstr "Раздел успешно создан!"
+
+#~ msgid "Schnitt ist in Arbeit"
+#~ msgstr "Раздел находится в стадии создания"
+
+#~ msgid "Soll der Schnitt wirklich abgebrochen werden?"
+#~ msgstr "Действительно отменить?"
+
+#~ msgid "cut is running"
+#~ msgstr "Операция выполняется"

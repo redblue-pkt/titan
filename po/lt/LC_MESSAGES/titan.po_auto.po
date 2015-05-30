@@ -2491,6 +2491,22 @@ msgstr ""
 msgid "Currency: "
 msgstr "Valiuta:"
 
+#: tsSchnitt.c:129
+msgid "Cut finished with error!"
+msgstr ""
+
+#: tsSchnitt.c:327
+msgid "Cut in progress"
+msgstr ""
+
+#: tsSchnitt.c:342
+msgid "Cut is running"
+msgstr ""
+
+#: tsSchnitt.c:123
+msgid "Cut successfully completed"
+msgstr ""
+
 #: plugins_tsSchnitt_skin.xml.h:1 skins_tsSchnitt_skin.xml.h:1
 msgid "Cutstatus:"
 msgstr ""
@@ -8048,18 +8064,6 @@ msgstr "Skenuojamas tinklas , praome palaukti !"
 msgid "Scart On Standby"
 msgstr "Scart output during Standby"
 
-#: tsSchnitt.c:129
-msgid "Schnitt endet mit Fehler !!!!!"
-msgstr "Cutting returned ERROR !!!"
-
-#: tsSchnitt.c:123
-msgid "Schnitt erfolgreich beendet"
-msgstr "Cutting completed successfully"
-
-#: tsSchnitt.c:327
-msgid "Schnitt ist in Arbeit"
-msgstr "Cutting in progress"
-
 #: epgsearch.h:308
 msgid "Scifi"
 msgstr "MokslinFantastika"
@@ -8870,10 +8874,6 @@ msgstr "Softcam pasirinkimas:"
 msgid "Solarmovie"
 msgstr ""
 
-#: tsSchnitt.c:347
-msgid "Soll der Schnitt wirklich abgebrochen werden?"
-msgstr "Do you really want to abort cutting?"
-
 #: extensions.h:416
 msgid ""
 "Some plugins needs restart.\n"
@@ -9198,6 +9198,10 @@ msgstr "Sekmadienis"
 
 #: tithek_mainmenu.h:45
 msgid "SuperRTL-Now"
+msgstr ""
+
+#: tsSchnitt.c:347
+msgid "Sure to cancel the cut process?"
 msgstr ""
 
 #: MultiImage.c:318
@@ -11200,10 +11204,6 @@ msgstr "virelis"
 
 #: skin_default_skin.xml.h:176
 msgid "create System Backup"
-msgstr ""
-
-#: tsSchnitt.c:342
-msgid "cut is running"
 msgstr ""
 
 #: tpk_description.h:48
@@ -13418,3 +13418,15 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
+
+#~ msgid "Schnitt endet mit Fehler !!!!!"
+#~ msgstr "Cutting returned ERROR !!!"
+
+#~ msgid "Schnitt erfolgreich beendet"
+#~ msgstr "Cutting completed successfully"
+
+#~ msgid "Schnitt ist in Arbeit"
+#~ msgstr "Cutting in progress"
+
+#~ msgid "Soll der Schnitt wirklich abgebrochen werden?"
+#~ msgstr "Do you really want to abort cutting?"
