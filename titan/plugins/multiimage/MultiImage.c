@@ -3,7 +3,7 @@
 #include "../../titan/header.h"
 
 char pluginname[] = "MultiImage";
-char plugindesc[] = "Images vom USB Gerät startenR";
+char plugindesc[] = "Start Images from USB device";
 char pluginpic[] = "%pluginpath%/multiimage/MultiImage.png";
 
 int pluginaktiv = 0;
@@ -19,7 +19,7 @@ void multiimage_thread()
 		sleep(3);
 		if(file_exist("/tmp/multiende") == 1)
 		{
-			textbox(_("Message"), _("INFO\nImage wurde entpackt"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 500, 200, 0, 0);
+			textbox(_("Message"), _("INFO\nImage extracted"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 500, 200, 0, 0);
 			remove("/tmp/multiende");
 			break;
 		}
@@ -153,7 +153,7 @@ int no_mdev()
 	fclose(fd);	
 	if(mdev == NULL)
 	{
-		textbox("MultiImage", "Kein Gerät verfügbar", _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 500, 200, 0, 0);
+		textbox("MultiImage", "No device available", _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 500, 200, 0, 0);
 		return 1;
 	}
 	setchoiceboxselection(device, mdev);
@@ -209,7 +209,7 @@ int no_mdev()
 	if(mdev == NULL)
 		return 1;	
 	
-	if(textbox("MultiImage", "Alle Daten auf dem gewählten Gerät werden gelöscht.\nOK?", _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
+	if(textbox("MultiImage", "All data on this device will be deleted!\nOK?", _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
 	{
 		free(mdev); mdev = NULL;
 		return 1;
@@ -221,7 +221,7 @@ int no_mdev()
 	free(cmd); cmd = NULL;
 	if(ret != 0)
 	{
-		textbox(_("Message"), _("ERROR\npartition could not be created"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 500, 200, 0, 0);
+		textbox(_("Message"), _("ERROR\nPartition could not be created"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 500, 200, 0, 0);
 		return 1;
 	}
 	path = getconfig("mountpath", NULL);
@@ -393,10 +393,10 @@ int multiimage_install(char* imagefile, char* mdev)
 			if(file_exist(path3) == 1)
 			{
 				free(path3); path3=NULL;
-				textbox(_("Message"), _("ERROR\nImage Name schon vorhanden"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 500, 200, 0, 0);
+				textbox(_("Message"), _("ERROR\nImage already present!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 500, 200, 0, 0);
 				continue;
 			}
-			textbox(_("Message"), _("INFO\nDas Entpacken wird einige Minuten dauern"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+			textbox(_("Message"), _("INFO\nExtracting will take a few minutes ..."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 			iname = ostrcat(imagename->ret, NULL, 1, 0);
 			rc = 1;
 			break;
@@ -417,7 +417,7 @@ int multiimage_install(char* imagefile, char* mdev)
 		cmd = ostrcat(cmd, " &", 1, 0);
 		system(cmd);
 		free(cmd); cmd=NULL;
-		textbox(_("Message"), _("INFO\nDas Entpacken wird im Hindergrund ausgeführt.\nNach Beendigung bekommen sie eine Meldung."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 250, 10, 0);
+		textbox(_("Message"), _("INFO\nExtracting process is running in background.\nA message will be shown when finished."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 250, 10, 0);
 		
 		Multi_Image_thread = addtimer(&multiimage_thread, START, 10000, 1, NULL, NULL, NULL);
 	}
@@ -438,7 +438,7 @@ void multi_main(void)
 	
 	while (mdev == NULL)
 	{
-		if(textbox("MultiImage", "Kein MultiImage Gerät gefunden.\nGerät erstellen?", _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 500, 200, 0, 0) == 2)
+		if(textbox("MultiImage", "No MultiImage device found.\nCreate device?", _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 500, 200, 0, 0) == 2)
 			return;
 		if(no_mdev() != 0)
 			return;		
@@ -483,7 +483,7 @@ void init(void)
 	tmpstr = createpluginpath("/multiimage/skin.xml", 0);
 	readscreen(tmpstr, 122, 1);
 
-	debug(10, "MultiImage Plugin loadet !!!");
+	debug(10, "MultiImage Plugin loaded!!!");
 }
 
 //wird beim entladen ausgefuehrt
@@ -507,7 +507,7 @@ void start(void)
 {
 	if(Multi_Image_thread != NULL)
 	{
-		if(textbox("MultiImage", "Image Erstellung läuft!!!\nErstellung abbrechen?", _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 500, 200, 0, 0) == 2)
+		if(textbox("MultiImage", "Image creation running!!!\nStop process?", _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 500, 200, 0, 0) == 2)
 			return;
 		Multi_Image_thread->aktion = STOP;
 		struct skin* load = getscreen("loading");
