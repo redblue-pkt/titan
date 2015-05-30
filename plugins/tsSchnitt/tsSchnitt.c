@@ -120,13 +120,13 @@ void tsSchnitt_thread()
 					tmpstr = ostrcat(tmpstr, "\"", 0, 0);
 					rc = system(tmpstr);
 					free(tmpstr);tmpstr= NULL;
-					textbox(_("INFO"), _("Schnitt erfolgreich beendet"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+					textbox(_("INFO"), _("Cut successfully completed"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 				}
 				else
 				{
 					remove(cutfile);
 					ischnitt = 3;
-					textbox(_("ERROR"), _("Schnitt endet mit Fehler !!!!!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+					textbox(_("ERROR"), _("Cut finished with error!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 				}
 			}
 			else
@@ -158,7 +158,7 @@ void init(void)
 	readscreen(tmpstr, 122, 1);
 	free(tmpstr); tmpstr = NULL;
 		
-	debug(10, "Record cut Plugin loadet !!!");
+	debug(10, "Record cut Plugin loaded !!!");
 }
 
 //wird beim entladen ausgefuehrt
@@ -175,7 +175,7 @@ void deinit(void)
 
 	delmarkedscreen(122);
 	pluginaktiv = 0;
-	debug(10, "Record cut Plugin loadet !!!");
+	debug(10, "Record cut Plugin loaded !!!");
 }
 
 //wird in der Pluginverwaltung bzw Menue ausfeguehrt
@@ -324,7 +324,7 @@ void start(void)
 				}
 				else
 				{
-					textbox(_("ERROR"), _("Schnitt ist in Arbeit"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+					textbox(_("ERROR"), _("Cut in progress"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 				}
 			}
 			if (rcret == getrcconfigint("rcblue", NULL))
@@ -339,12 +339,12 @@ void start(void)
 				}
 				else
 				{
-					textbox(_("ERROR"), _("cut is running"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+					textbox(_("ERROR"), _("Cut is running"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
 				}
 			}
 			if (rcret == getrcconfigint("rcred", NULL) && tsSchnittThread != NULL)
 			{
-				if(textbox(_("Frage"), _("Soll der Schnitt wirklich abgebrochen werden?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+				if(textbox(_("Frage"), _("Sure to cancel the cut process?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 				{
 					drawscreen(load, 0, 0);
 					tsSchnittThread->aktion = STOP;

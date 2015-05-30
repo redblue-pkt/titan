@@ -385,7 +385,7 @@ void init(void)
 	tmpstr = createpluginpath("/autotimer/skin.xml", 0);
 	readscreen(tmpstr, 120, 1);
 	free(tmpstr); tmpstr = NULL;
-	debug(10, "Autot Timer Plugin loadet !!!");
+	debug(10, "Autot Timer Plugin loaded !!!");
 	if(getconfig("at1_akt", NULL) != NULL)
 	{
 		if(getconfigint("at1_running", NULL) == 1)
@@ -411,7 +411,7 @@ void deinit(void)
 	}
 	delmarkedscreen(120);
 	pluginaktiv = 0;
-	debug(10, "Autot Timer removed !!!");
+	debug(10, "Auto Timer removed !!!");
 }
 
 //wird in der Pluginverwaltung bzw Menue ausfeguehrt
