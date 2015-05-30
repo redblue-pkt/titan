@@ -13422,15 +13422,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "Schnitt endet mit Fehler !!!!!"
-#~ msgstr "Cutting returned ERROR !!!"
-
-#~ msgid "Schnitt erfolgreich beendet"
-#~ msgstr "Cutting completed successfully"
-
-#~ msgid "Schnitt ist in Arbeit"
-#~ msgstr "Cutting in progress"
-
-#~ msgid "Soll der Schnitt wirklich abgebrochen werden?"
-#~ msgstr "Do you really want to abort cutting?"

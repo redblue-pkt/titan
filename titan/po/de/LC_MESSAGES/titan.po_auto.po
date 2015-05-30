@@ -13616,9 +13616,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "Schnitt endet mit Fehler !!!!!"
-#~ msgstr "Schnitt beendet mit Fehler!"
-
-#~ msgid "cut is running"
-#~ msgstr "Schnitt läuft"

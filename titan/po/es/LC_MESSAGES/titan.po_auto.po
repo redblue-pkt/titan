@@ -13493,18 +13493,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid "Schnitt endet mit Fehler !!!!!"
-#~ msgstr "Corte responde ERROR !!!"
-
-#~ msgid "Schnitt erfolgreich beendet"
-#~ msgstr "Corte ha completado con Exito"
-
-#~ msgid "Schnitt ist in Arbeit"
-#~ msgstr "Corte en progreso"
-
-#~ msgid "Soll der Schnitt wirklich abgebrochen werden?"
-#~ msgstr "esta seguro de que desea cancelar corte?"
-
-#~ msgid "cut is running"
-#~ msgstr "Corre Seccion"
