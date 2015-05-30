@@ -358,7 +358,7 @@ int multiimage_install(char* imagefile, char* mdev)
 	char* path2 = NULL;
 	char* path3 = NULL;
 	char* cmd = NULL;
-	char* cmd = tmp;
+	char* tmp = NULL;
 	char* iname = NULL;
 
 	struct skin* tmp = NULL;
