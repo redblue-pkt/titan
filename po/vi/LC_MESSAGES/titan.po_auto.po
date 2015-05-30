@@ -2408,6 +2408,10 @@ msgstr ""
 msgid "Create Folder"
 msgstr "Tạo thư mục"
 
+#: plugins_multiimage_skin.xml.h:12 skins_multiimage_skin.xml.h:12
+msgid "Create MultiImage device"
+msgstr ""
+
 #: skin_default_skin.xml.h:173
 msgid "Create Path"
 msgstr "Tạo đường dẫn"
@@ -2490,6 +2494,10 @@ msgstr ""
 #: plugins_lcdsamsung_skin.xml.h:5 skins_lcdsamsung_skin.xml.h:5
 msgid "DI"
 msgstr "D"
+
+#: plugins_multiimage_skin.xml.h:2 skins_multiimage_skin.xml.h:2
+msgid "DIR"
+msgstr ""
 
 #: tpk_showname.h:23
 msgid "DLNA (Minidlna Server)"
@@ -2815,6 +2823,10 @@ msgstr "Thư mục Imdb"
 msgid "Director:"
 msgstr "Thư mục Imdb"
 
+#: plugins_multiimage_skin.xml.h:3 skins_multiimage_skin.xml.h:3
+msgid "Directory of selected device"
+msgstr ""
+
 #: httpdfunc.h:3964 skin_default_skin.xml.h:202
 msgid "Dirsort"
 msgstr ""
@@ -3051,6 +3063,18 @@ msgstr "Freier EPG Speicher"
 msgid "ERROR"
 msgstr "Lỗi khởi động"
 
+#: MultiImage.c:396
+msgid ""
+"ERROR\n"
+"Image already present!"
+msgstr ""
+
+#: MultiImage.c:224
+msgid ""
+"ERROR\n"
+"Partition could not be created"
+msgstr ""
+
 #: harddisk.h:838
 msgid ""
 "ERROR\n"
@@ -3123,23 +3147,26 @@ msgstr "Lỗi… không thể thiết lập nhà sản xuất trong file này"
 #: mediadb.h:1477 mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215
 #: menu.h:984 menu.h:986 movie4k.h:36 movie4k.h:48 movie4k.h:92 movie4k.h:399
 #: movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78 movshare.h:157
-#: movshare.h:163 myvideo.h:86 networkbrowser.h:966 networkbrowser.h:1027
-#: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
-#: networkbrowser.h:1047 networkbrowser.h:1211 networkbrowser.h:1765
-#: networkbrowser.h:1772 networkbrowser.h:1777 networkbrowser.h:1929
-#: network.h:284 network.h:299 network.h:335 network.h:436 network.h:577
-#: network.h:785 network.h:793 network.h:819 network.h:823 network.h:877
-#: network.h:884 network.h:906 newsletter.h:252 newsletter.h:292 novamov.h:35
-#: novamov.h:80 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105 panel_main.h:29
-#: panel_main.h:135 panel_settings_wizard.h:6 played.h:30 played.h:84
-#: played.h:90 played.h:102 played.h:114 played.h:171 player.h:108 play.h:497
-#: play.h:614 play.h:1284 play.h:1290 play.h:1299 play.h:1300 play.h:1509
-#: play.h:1725 play.h:1736 plugins_autotimer_skin.xml.h:6
-#: plugins_callmonitor1_skin.xml.h:10 plugins_catcatch_skin.xml.h:3
-#: plugins_dlna_skin.xml.h:1 plugins_facebook_skin.xml.h:2
-#: plugins_instar_skin.xml.h:5 plugins_lcdpearl1_skin.xml.h:6
-#: plugins_lcdsamsung_skin.xml.h:7 plugins_mboxinfo_skin.xml.h:1
-#: plugins_mc_skin.xml.h:19 plugins_optimize_skin.xml.h:1
+#: movshare.h:163 MultiImage.c:22 MultiImage.c:156 MultiImage.c:212
+#: MultiImage.c:224 MultiImage.c:320 MultiImage.c:396 MultiImage.c:399
+#: MultiImage.c:420 MultiImage.c:441 MultiImage.c:510 myvideo.h:86
+#: networkbrowser.h:966 networkbrowser.h:1027 networkbrowser.h:1031
+#: networkbrowser.h:1033 networkbrowser.h:1043 networkbrowser.h:1047
+#: networkbrowser.h:1211 networkbrowser.h:1765 networkbrowser.h:1772
+#: networkbrowser.h:1777 networkbrowser.h:1929 network.h:284 network.h:299
+#: network.h:335 network.h:436 network.h:577 network.h:785 network.h:793
+#: network.h:819 network.h:823 network.h:877 network.h:884 network.h:906
+#: newsletter.h:252 newsletter.h:292 novamov.h:35 novamov.h:80 nowvideo.h:44
+#: nowvideo.h:99 nowvideo.h:105 panel_main.h:29 panel_main.h:135
+#: panel_settings_wizard.h:6 played.h:30 played.h:84 played.h:90 played.h:102
+#: played.h:114 played.h:171 player.h:108 play.h:497 play.h:614 play.h:1284
+#: play.h:1290 play.h:1299 play.h:1300 play.h:1509 play.h:1725 play.h:1736
+#: plugins_autotimer_skin.xml.h:6 plugins_callmonitor1_skin.xml.h:10
+#: plugins_catcatch_skin.xml.h:3 plugins_dlna_skin.xml.h:1
+#: plugins_facebook_skin.xml.h:2 plugins_instar_skin.xml.h:5
+#: plugins_lcdpearl1_skin.xml.h:6 plugins_lcdsamsung_skin.xml.h:7
+#: plugins_mboxinfo_skin.xml.h:1 plugins_mc_skin.xml.h:19
+#: plugins_multiimage_skin.xml.h:4 plugins_optimize_skin.xml.h:1
 #: plugins_panel_skin.xml.h:10 plugins_rgui_skin.xml.h:1
 #: plugins_stopifnotused_skin.xml.h:3 plugins_sudoku_skin.xml.h:7
 #: plugins_tiwakeup_skin.xml.h:1 plugins_wins3_skin.xml.h:1 possetup.h:98
@@ -3161,36 +3188,36 @@ msgstr "Lỗi… không thể thiết lập nhà sản xuất trong file này"
 #: skins_facebook_skin.xml.h:2 skins_instar_skin.xml.h:5
 #: skins_lcdpearl1_skin.xml.h:6 skins_lcdsamsung_skin.xml.h:7
 #: skins_mboxinfo_skin.xml.h:1 skins_mc_skin.xml.h:19
-#: skins_optimize_skin.xml.h:1 skins_panel_skin.xml.h:10
-#: skins_rgui_skin.xml.h:1 skins_stopifnotused_skin.xml.h:3
-#: skins_sudoku_skin.xml.h:7 skins_tiwakeup_skin.xml.h:1
-#: skins_wins3_skin.xml.h:1 sock.h:954 softcam.h:411 softcam.h:474
-#: softcam.h:475 solarmovie.h:35 solarmovie.h:47 solarmovie.h:320 spinner.h:18
-#: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:80
-#: streamcloud.h:90 streamcloud.h:103 streamcloud.h:134 streamcloud.h:193
-#: stream.h:33 system_backup_restore.h:31 system_backup_restore.h:40
-#: system_backup_restore.h:43 system_backup_restore.h:51
-#: system_backup_restore.h:80 system_backup_restore.h:82
-#: system_backup_restore.h:88 system_backup_restore.h:95 system_update.h:257
-#: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
-#: thefile.h:205 timeshift.h:113 timeshift.h:161 timeshift.h:173
-#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1021
-#: titan.c:1030 titan.c:1158 titan.c:1179 titan.c:1185 titan.c:1196
-#: titan.c:1202 tithek.c:89 tithek_global.h:258 tithek.h:670 tithek.h:1224
-#: tithek.h:1285 tithek.h:1535 tithek.h:1557 tithek.h:1574 tithek.h:1806
-#: tithek.h:1986 tithek.h:2206 tithek.h:2234 tithek.h:2250 tithek.h:2262
-#: tiwakeup.h:66 tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017
-#: tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216
-#: tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123 tsSchnitt.c:129
-#: tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347 tunerconfig.h:647
-#: tunerconfig.h:666 tunerconfig.h:941 unlock.h:20 unlock.h:66 unlock.h:71
-#: unlock.h:75 vidbull.h:30 vidbull.h:67 vidbull.h:73 videomode.h:67
-#: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
-#: vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:79 vidto.h:94
-#: vidto.h:128 vidto.h:174 vidto.h:180 vodlocker.h:30 vodlocker.h:74
-#: vodlocker.h:80 vodlocker.h:86 xupnpd.h:60 xupnpd.h:71 xupnpd.h:73
-#: xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:215 zapback.c:79
-#: zdf.h:29
+#: skins_multiimage_skin.xml.h:4 skins_optimize_skin.xml.h:1
+#: skins_panel_skin.xml.h:10 skins_rgui_skin.xml.h:1
+#: skins_stopifnotused_skin.xml.h:3 skins_sudoku_skin.xml.h:7
+#: skins_tiwakeup_skin.xml.h:1 skins_wins3_skin.xml.h:1 sock.h:954
+#: softcam.h:411 softcam.h:474 softcam.h:475 solarmovie.h:35 solarmovie.h:47
+#: solarmovie.h:320 spinner.h:18 stopifnotused.c:31 streamcloud.h:31
+#: streamcloud.h:74 streamcloud.h:80 streamcloud.h:90 streamcloud.h:103
+#: streamcloud.h:134 streamcloud.h:193 stream.h:33 system_backup_restore.h:31
+#: system_backup_restore.h:40 system_backup_restore.h:43
+#: system_backup_restore.h:51 system_backup_restore.h:80
+#: system_backup_restore.h:82 system_backup_restore.h:88
+#: system_backup_restore.h:95 system_update.h:257 system_update.h:263
+#: system_update.h:270 thefile.h:34 thefile.h:68 thefile.h:205 timeshift.h:113
+#: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
+#: titan.c:346 titan.c:355 titan.c:1021 titan.c:1030 titan.c:1158 titan.c:1179
+#: titan.c:1185 titan.c:1196 titan.c:1202 tithek.c:89 tithek_global.h:258
+#: tithek.h:670 tithek.h:1224 tithek.h:1285 tithek.h:1535 tithek.h:1557
+#: tithek.h:1574 tithek.h:1806 tithek.h:1986 tithek.h:2206 tithek.h:2234
+#: tithek.h:2250 tithek.h:2262 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
+#: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
+#: TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tsSchnitt.c:108 tsSchnitt.c:123
+#: tsSchnitt.c:129 tsSchnitt.c:327 tsSchnitt.c:342 tsSchnitt.c:347
+#: tunerconfig.h:647 tunerconfig.h:666 tunerconfig.h:941 unlock.h:20
+#: unlock.h:66 unlock.h:71 unlock.h:75 vidbull.h:30 vidbull.h:67 vidbull.h:73
+#: videomode.h:67 videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86
+#: vidstream.h:98 vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:79
+#: vidto.h:94 vidto.h:128 vidto.h:174 vidto.h:180 vodlocker.h:30
+#: vodlocker.h:74 vodlocker.h:80 vodlocker.h:86 xupnpd.h:60 xupnpd.h:71
+#: xupnpd.h:73 xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:215
+#: zapback.c:79 zdf.h:29
 msgid "EXIT"
 msgstr ""
 
@@ -4603,6 +4630,25 @@ msgstr ""
 msgid "INFO"
 msgstr ""
 
+#: MultiImage.c:420
+msgid ""
+"INFO\n"
+"Extracting process is running in background.\n"
+"A message will be shown when finished."
+msgstr ""
+
+#: MultiImage.c:399
+msgid ""
+"INFO\n"
+"Extracting will take a few minutes ..."
+msgstr ""
+
+#: MultiImage.c:22
+msgid ""
+"INFO\n"
+"Image extracted"
+msgstr ""
+
 #: skin_default_skin.xml.h:381
 msgid "IP for Stream"
 msgstr ""
@@ -4659,6 +4705,10 @@ msgstr ""
 
 #: security.h:2027
 msgid "Image"
+msgstr ""
+
+#: plugins_multiimage_skin.xml.h:6 skins_multiimage_skin.xml.h:6
+msgid "Image name: "
 msgstr ""
 
 #: tpk_description.h:88
@@ -5330,6 +5380,10 @@ msgstr "EPG – Tất cả các chương trình"
 msgid "Main Menu"
 msgstr "Menu chính"
 
+#: plugins_multiimage_skin.xml.h:13 skins_multiimage_skin.xml.h:13
+msgid "Manage MultiImage"
+msgstr ""
+
 #: skin_default_skin.xml.h:414
 msgid "Manual Search"
 msgstr "Dò bằng tay"
@@ -5615,51 +5669,52 @@ msgstr ""
 #: mc_videoplayer.h:904 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
 #: mediadb.h:1477 mediadbsettings.h:95 menu.h:160 menu.h:215 movie4k.h:36
 #: movie4k.h:48 movie4k.h:92 movie4k.h:399 movreel.h:30 movreel.h:137
-#: movshare.h:34 movshare.h:78 movshare.h:157 movshare.h:163 myvideo.h:86
-#: networkbrowser.h:966 networkbrowser.h:1027 networkbrowser.h:1031
-#: networkbrowser.h:1033 networkbrowser.h:1043 networkbrowser.h:1047
-#: networkbrowser.h:1211 networkbrowser.h:1765 networkbrowser.h:1772
-#: networkbrowser.h:1777 networkbrowser.h:1929 network.h:436 network.h:577
-#: network.h:785 network.h:793 network.h:819 network.h:823 network.h:877
-#: novamov.h:35 novamov.h:80 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105
-#: panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6 played.h:30
-#: played.h:84 played.h:90 played.h:102 played.h:114 played.h:171 player.h:108
-#: play.h:614 play.h:1299 play.h:1509 play.h:1725 play.h:1736 possetup.h:98
-#: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
-#: promptfile.h:46 promptfile.h:94 promptfile.h:136 putlocker.h:32
-#: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
-#: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
-#: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
-#: record.h:1054 record.h:1302 record.h:1552 record.h:1577 rectimer.h:577
-#: rectimer.h:1238 rectimer.h:1385 rectimer.h:1397 restoredefault.h:10
-#: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
-#: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
-#: scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1646 scan.h:1901
-#: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 security.h:1894 service.h:738
-#: service.h:983 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:317
-#: skinadjust.h:720 skinselector.h:231 sock.h:954 softcam.h:411 softcam.h:474
-#: softcam.h:475 solarmovie.h:35 solarmovie.h:47 solarmovie.h:320 spinner.h:18
-#: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:80
-#: streamcloud.h:90 streamcloud.h:103 streamcloud.h:134 streamcloud.h:193
-#: stream.h:33 system_backup_restore.h:40 system_backup_restore.h:43
-#: system_backup_restore.h:80 system_backup_restore.h:82 system_update.h:257
-#: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
-#: thefile.h:205 timeshift.h:113 timeshift.h:161 timeshift.h:173
-#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1158
-#: titan.c:1179 titan.c:1185 titan.c:1196 titan.c:1202 tithek.c:89
-#: tithek_global.h:258 tithek.h:670 tithek.h:1224 tithek.h:1285 tithek.h:1535
-#: tithek.h:1557 tithek.h:1806 tithek.h:1986 tithek.h:2206 tithek.h:2234
-#: tithek.h:2250 tithek.h:2262 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
-#: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
-#: TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tunerconfig.h:647
-#: tunerconfig.h:666 tunerconfig.h:941 unlock.h:20 unlock.h:66 unlock.h:71
-#: unlock.h:75 vidbull.h:30 vidbull.h:67 vidbull.h:73 videomode.h:67
-#: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
-#: vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:79 vidto.h:94
-#: vidto.h:128 vidto.h:174 vidto.h:180 vodlocker.h:30 vodlocker.h:74
-#: vodlocker.h:80 vodlocker.h:86 webif_boxcontrol.h:2 xupnpd.h:60 xupnpd.h:71
-#: xupnpd.h:73 xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:215
-#: zapback.c:79 zdf.h:29
+#: movshare.h:34 movshare.h:78 movshare.h:157 movshare.h:163 MultiImage.c:22
+#: MultiImage.c:224 MultiImage.c:396 MultiImage.c:399 MultiImage.c:420
+#: myvideo.h:86 networkbrowser.h:966 networkbrowser.h:1027
+#: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
+#: networkbrowser.h:1047 networkbrowser.h:1211 networkbrowser.h:1765
+#: networkbrowser.h:1772 networkbrowser.h:1777 networkbrowser.h:1929
+#: network.h:436 network.h:577 network.h:785 network.h:793 network.h:819
+#: network.h:823 network.h:877 novamov.h:35 novamov.h:80 nowvideo.h:44
+#: nowvideo.h:99 nowvideo.h:105 panel_main.h:29 panel_main.h:135
+#: panel_settings_wizard.h:6 played.h:30 played.h:84 played.h:90 played.h:102
+#: played.h:114 played.h:171 player.h:108 play.h:614 play.h:1299 play.h:1509
+#: play.h:1725 play.h:1736 possetup.h:98 primeshare.h:29 primeshare.h:73
+#: primeshare.h:79 primeshare.h:124 promptfile.h:46 promptfile.h:94
+#: promptfile.h:136 putlocker.h:32 putlocker.h:79 putlocker.h:85
+#: putlocker.h:91 putlocker.h:142 putlocker.h:152 putlocker.h:225
+#: readerconfig.h:351 readerconfig.h:451 readerconfig.h:452 readerconfig.h:497
+#: readerconfig.h:498 record.h:387 record.h:1054 record.h:1302 record.h:1552
+#: record.h:1577 rectimer.h:577 rectimer.h:1238 rectimer.h:1385
+#: rectimer.h:1397 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
+#: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
+#: rtl2now.h:34 scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1646
+#: scan.h:1901 scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 security.h:1894
+#: service.h:738 service.h:983 shared.h:29 shared.h:65 shared.h:82
+#: skinadjust.h:317 skinadjust.h:720 skinselector.h:231 sock.h:954
+#: softcam.h:411 softcam.h:474 softcam.h:475 solarmovie.h:35 solarmovie.h:47
+#: solarmovie.h:320 spinner.h:18 stopifnotused.c:31 streamcloud.h:31
+#: streamcloud.h:74 streamcloud.h:80 streamcloud.h:90 streamcloud.h:103
+#: streamcloud.h:134 streamcloud.h:193 stream.h:33 system_backup_restore.h:40
+#: system_backup_restore.h:43 system_backup_restore.h:80
+#: system_backup_restore.h:82 system_update.h:257 system_update.h:263
+#: system_update.h:270 thefile.h:34 thefile.h:68 thefile.h:205 timeshift.h:113
+#: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
+#: titan.c:346 titan.c:355 titan.c:1158 titan.c:1179 titan.c:1185 titan.c:1196
+#: titan.c:1202 tithek.c:89 tithek_global.h:258 tithek.h:670 tithek.h:1224
+#: tithek.h:1285 tithek.h:1535 tithek.h:1557 tithek.h:1806 tithek.h:1986
+#: tithek.h:2206 tithek.h:2234 tithek.h:2250 tithek.h:2262 tiwakeup.h:66
+#: tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797
+#: tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167
+#: tunerconfig.h:647 tunerconfig.h:666 tunerconfig.h:941 unlock.h:20
+#: unlock.h:66 unlock.h:71 unlock.h:75 vidbull.h:30 vidbull.h:67 vidbull.h:73
+#: videomode.h:67 videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86
+#: vidstream.h:98 vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:79
+#: vidto.h:94 vidto.h:128 vidto.h:174 vidto.h:180 vodlocker.h:30
+#: vodlocker.h:74 vodlocker.h:80 vodlocker.h:86 webif_boxcontrol.h:2
+#: xupnpd.h:60 xupnpd.h:71 xupnpd.h:73 xvidstage.h:54 xvidstage.h:100
+#: xvidstage.h:177 youtube.h:215 zapback.c:79 zdf.h:29
 msgid "Message"
 msgstr "Tin nhắn"
 
@@ -5817,6 +5872,18 @@ msgstr "EPG"
 msgid "Multi Sat"
 msgstr "Nhiều vệ tinh"
 
+#: tpk_description.h:101
+msgid "MultiGUI Plugin"
+msgstr ""
+
+#: tpk_showname.h:75
+msgid "MultiImage"
+msgstr ""
+
+#: plugins_multiimage_skin.xml.h:14 skins_multiimage_skin.xml.h:14
+msgid "MultiImage Installation"
+msgstr ""
+
 #: moduleconfig.h:375
 msgid "Multiple Service"
 msgstr "Nhiều dịch vụ"
@@ -5920,11 +5987,11 @@ msgstr "Dò tìm mạng"
 msgid "Network Test"
 msgstr "Kiểm tra mạng"
 
-#: tpk_description.h:101
+#: tpk_description.h:102
 msgid "Network browser extension for better Win7 compatibility"
 msgstr ""
 
-#: adjust.h:282 skin_default_skin.xml.h:458 tpk_showname.h:75
+#: adjust.h:282 skin_default_skin.xml.h:458 tpk_showname.h:76
 msgid "Networkbrowser"
 msgstr "Trình duyệt mạng"
 
@@ -5940,7 +6007,7 @@ msgstr "Trình duyệt mạng – Dò DNS-Chia sẻ"
 msgid "Networkbrowser - show scanned cifs/nfs-Shares"
 msgstr "Trình duyệt mạng – Dò cifs/nfs-Chia sẻ "
 
-#: tpk_description.h:102
+#: tpk_description.h:103
 msgid "Networkfile libsmbclient 3.0.28b"
 msgstr ""
 
@@ -5948,15 +6015,15 @@ msgstr ""
 msgid "Netzkino"
 msgstr ""
 
-#: tpk_description.h:103 tpk_showname.h:76
+#: tpk_description.h:104 tpk_showname.h:77
 msgid "Neutrino Keymap"
 msgstr ""
 
-#: tpk_description.h:105
+#: tpk_description.h:106
 msgid "New Downloadfeed for your AAF - Duckbox"
 msgstr ""
 
-#: tpk_showname.h:78
+#: tpk_showname.h:79
 msgid "New Gothic BT"
 msgstr ""
 
@@ -5972,11 +6039,11 @@ msgstr ""
 msgid "New game (hard)"
 msgstr ""
 
-#: tpk_showname.h:77
+#: tpk_showname.h:78
 msgid "Newcs"
 msgstr ""
 
-#: plugins_news_skin.xml.h:4 skins_news_skin.xml.h:4 tpk_showname.h:79
+#: plugins_news_skin.xml.h:4 skins_news_skin.xml.h:4 tpk_showname.h:80
 msgid "News"
 msgstr "Mới"
 
@@ -6007,6 +6074,10 @@ msgstr "Thiết lập Server NFS"
 #: panel_settings_autostart.h:122 settings_autostart.h:161
 msgid "No Audiosync"
 msgstr "không đồng bộ audio"
+
+#: plugins_multiimage_skin.xml.h:8 skins_multiimage_skin.xml.h:8
+msgid "No Image installed"
+msgstr ""
 
 #: httpdfunc.h:5567 stream.h:33
 msgid "No Live Stream running"
@@ -6158,18 +6229,21 @@ msgstr "E"
 #: mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215 menu.h:984
 #: menu.h:986 movie4k.h:36 movie4k.h:48 movie4k.h:92 movie4k.h:399
 #: movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78 movshare.h:157
-#: movshare.h:163 myvideo.h:86 networkbrowser.h:966 networkbrowser.h:1027
-#: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
-#: networkbrowser.h:1047 networkbrowser.h:1211 networkbrowser.h:1765
-#: networkbrowser.h:1772 networkbrowser.h:1777 networkbrowser.h:1929
-#: network.h:263 network.h:271 network.h:284 network.h:299 network.h:335
-#: network.h:436 network.h:577 network.h:785 network.h:793 network.h:819
-#: network.h:823 network.h:877 network.h:884 network.h:906 newsletter.h:252
-#: newsletter.h:292 novamov.h:35 novamov.h:80 nowvideo.h:44 nowvideo.h:99
-#: nowvideo.h:105 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
-#: played.h:30 played.h:84 played.h:90 played.h:102 played.h:114 played.h:171
-#: player.h:108 play.h:497 play.h:614 play.h:1284 play.h:1290 play.h:1299
-#: play.h:1300 play.h:1509 play.h:1725 play.h:1736 plugins_dlna_skin.xml.h:7
+#: movshare.h:163 MultiImage.c:22 MultiImage.c:156 MultiImage.c:212
+#: MultiImage.c:224 MultiImage.c:320 MultiImage.c:396 MultiImage.c:399
+#: MultiImage.c:420 MultiImage.c:441 MultiImage.c:510 myvideo.h:86
+#: networkbrowser.h:966 networkbrowser.h:1027 networkbrowser.h:1031
+#: networkbrowser.h:1033 networkbrowser.h:1043 networkbrowser.h:1047
+#: networkbrowser.h:1211 networkbrowser.h:1765 networkbrowser.h:1772
+#: networkbrowser.h:1777 networkbrowser.h:1929 network.h:263 network.h:271
+#: network.h:284 network.h:299 network.h:335 network.h:436 network.h:577
+#: network.h:785 network.h:793 network.h:819 network.h:823 network.h:877
+#: network.h:884 network.h:906 newsletter.h:252 newsletter.h:292 novamov.h:35
+#: novamov.h:80 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105 panel_main.h:29
+#: panel_main.h:135 panel_settings_wizard.h:6 played.h:30 played.h:84
+#: played.h:90 played.h:102 played.h:114 played.h:171 player.h:108 play.h:497
+#: play.h:614 play.h:1284 play.h:1290 play.h:1299 play.h:1300 play.h:1509
+#: play.h:1725 play.h:1736 plugins_dlna_skin.xml.h:7
 #: plugins_facebook_skin.xml.h:3 plugins_mboxinfo_skin.xml.h:2
 #: plugins_mc_skin.xml.h:35 plugins_optimize_skin.xml.h:2
 #: plugins_rgui_skin.xml.h:2 plugins_sudoku_skin.xml.h:13
@@ -6319,7 +6393,7 @@ msgstr " Sử dụng tỷ lệ tín hiệu tiêu chuẩn "
 msgid "Only free scan"
 msgstr "Dò các chương trình miễn phí"
 
-#: tpk_showname.h:80
+#: tpk_showname.h:81
 msgid "Open VPN (Server)"
 msgstr ""
 
@@ -6335,7 +6409,7 @@ msgstr ""
 msgid "OpenTV EPG"
 msgstr ""
 
-#: tpk_description.h:107
+#: tpk_description.h:108
 msgid "Openvpn Server Tool for external Network access"
 msgstr ""
 
@@ -6347,7 +6421,7 @@ msgstr ""
 msgid "Oplayer HD lite"
 msgstr ""
 
-#: plugins_optimize_skin.xml.h:3 skins_optimize_skin.xml.h:3 tpk_showname.h:81
+#: plugins_optimize_skin.xml.h:3 skins_optimize_skin.xml.h:3 tpk_showname.h:82
 msgid "Optimize"
 msgstr "Tối ưu hóa"
 
@@ -6359,7 +6433,7 @@ msgstr "Vị trí quỹ đạo:"
 msgid "Orgname:"
 msgstr "tên người dùng"
 
-#: tpk_showname.h:82
+#: tpk_showname.h:83
 msgid "Oscam"
 msgstr ""
 
@@ -6442,7 +6516,7 @@ msgstr "trở lại"
 msgid "PSK 8"
 msgstr ""
 
-#: tpk_showname.h:83
+#: tpk_showname.h:84
 msgid "Paddington Bold"
 msgstr ""
 
@@ -6461,7 +6535,7 @@ msgstr ""
 msgid "Page Up"
 msgstr ""
 
-#: plugins_panel_skin.xml.h:26 skins_panel_skin.xml.h:26 tpk_showname.h:84
+#: plugins_panel_skin.xml.h:26 skins_panel_skin.xml.h:26 tpk_showname.h:85
 msgid "Panel"
 msgstr "Panen"
 
@@ -6469,11 +6543,11 @@ msgstr "Panen"
 msgid "Parental"
 msgstr ""
 
-#: tpk_showname.h:85
+#: tpk_showname.h:86
 msgid "Parted"
 msgstr "Đã bắt đầu"
 
-#: tpk_description.h:109
+#: tpk_description.h:110
 msgid "Partitions Tool fuer HDD > 2TB"
 msgstr ""
 
@@ -6517,11 +6591,11 @@ msgstr ""
 msgid "Pearl LCD Settings"
 msgstr "thiết lập LCD"
 
-#: tpk_showname.h:86
+#: tpk_showname.h:87
 msgid "Permanent Time"
 msgstr ""
 
-#: tpk_description.h:110
+#: tpk_description.h:111
 msgid "Permanente Uhrzeit am Bildschirm"
 msgstr ""
 
@@ -6580,103 +6654,103 @@ msgstr "Chất lượng hình ảnh"
 msgid "Picdenom Mode"
 msgstr "Chế độ giải mã phần mềm"
 
-#: tpk_showname.h:90
+#: tpk_showname.h:91
 msgid "Picons Black (Eutelsat)"
 msgstr ""
 
-#: tpk_showname.h:87
+#: tpk_showname.h:88
 msgid "Picons Black3D (ASTRA 19.2)"
 msgstr ""
 
-#: tpk_showname.h:88
+#: tpk_showname.h:89
 msgid "Picons Black3D (Astra 23.5)"
 msgstr ""
 
-#: tpk_showname.h:89
+#: tpk_showname.h:90
 msgid "Picons Black3D (Hotbird)"
 msgstr ""
 
-#: tpk_showname.h:91
+#: tpk_showname.h:92
 msgid "Picons Gold Nugget  (ASTRA 19.2)"
 msgstr ""
 
-#: tpk_showname.h:92
+#: tpk_showname.h:93
 msgid "Picons Gold Nugget (Astra 23.5)"
 msgstr ""
 
-#: tpk_showname.h:93
+#: tpk_showname.h:94
 msgid "Picons Gold Nugget (Astra 28.2)"
 msgstr ""
 
-#: tpk_showname.h:94
+#: tpk_showname.h:95
 msgid "Picons Gold Nugget (Hotbird 13.0)"
 msgstr ""
 
-#: tpk_showname.h:96
+#: tpk_showname.h:97
 msgid "Picons Kabel BW"
 msgstr ""
 
-#: tpk_showname.h:95
+#: tpk_showname.h:96
 msgid "Picons Kabel Black3D"
 msgstr ""
 
-#: tpk_showname.h:97
+#: tpk_showname.h:98
 msgid "Picons Kabel Transparent"
 msgstr "Độ trong suốt"
 
-#: tpk_showname.h:98
+#: tpk_showname.h:99
 msgid "Picons Spiegel (ASTRA 19.2)"
 msgstr ""
 
-#: tpk_showname.h:99
+#: tpk_showname.h:100
 msgid "Picons Transparent (ASTRA 19.2)"
 msgstr ""
 
-#: tpk_showname.h:100
+#: tpk_showname.h:101
 msgid "Picons Transparent (Astra 23.5)"
 msgstr ""
 
-#: tpk_showname.h:101
+#: tpk_showname.h:102
 msgid "Picons Transparent (Astra 28.2)"
 msgstr ""
 
-#: tpk_showname.h:102
+#: tpk_showname.h:103
 msgid "Picons Transparent (Hotbird 13.0)"
 msgstr ""
 
-#: tpk_showname.h:103
+#: tpk_showname.h:104
 msgid "Picons Transparent (small-uljanow)"
 msgstr ""
 
-#: tpk_showname.h:104
+#: tpk_showname.h:105
 msgid "Picons White3D  (ASTRA 19.2)"
 msgstr ""
 
-#: tpk_showname.h:105
+#: tpk_showname.h:106
 msgid "Picons White3D (Astra 23.5)"
 msgstr ""
 
-#: tpk_showname.h:106
+#: tpk_showname.h:107
 msgid "Picons White3D (Astra 28.2)"
 msgstr ""
 
-#: tpk_showname.h:107
+#: tpk_showname.h:108
 msgid "Picons White3D (Hotbird 13.0)"
 msgstr ""
 
-#: tpk_showname.h:108
+#: tpk_showname.h:109
 msgid "Picons White70  (ASTRA 19.2)"
 msgstr ""
 
-#: tpk_showname.h:109
+#: tpk_showname.h:110
 msgid "Picons White70 (Astra 23.5)"
 msgstr ""
 
-#: tpk_showname.h:110
+#: tpk_showname.h:111
 msgid "Picons White70 (Astra 28.2)"
 msgstr ""
 
-#: tpk_showname.h:111
+#: tpk_showname.h:112
 msgid "Picons White70 (Hotbird 13.0)"
 msgstr ""
 
@@ -6716,7 +6790,7 @@ msgstr "Mật khẩu của chương trình"
 msgid "Pin Code menu"
 msgstr "Mật khẩu của menu"
 
-#: tpk_showname.h:112
+#: tpk_showname.h:113
 msgid "Planets"
 msgstr ""
 
@@ -6795,7 +6869,7 @@ msgstr ""
 msgid "Plot:"
 msgstr ""
 
-#: tpk_showname.h:113
+#: tpk_showname.h:114
 msgid "Plover Bold"
 msgstr ""
 
@@ -6903,7 +6977,7 @@ msgstr "tắt nguồn"
 msgid "Power Off Timer"
 msgstr "Ausschalttimer"
 
-#: tpk_description.h:111
+#: tpk_description.h:112
 msgid "Power off if box not used"
 msgstr ""
 
@@ -7075,7 +7149,7 @@ msgstr ""
 msgid "RESTORE ERROR"
 msgstr "LỖI KHÔI PHỤC LẠI!"
 
-#: tpk_showname.h:115
+#: tpk_showname.h:116
 msgid "RGUI"
 msgstr ""
 
@@ -7284,7 +7358,7 @@ msgstr "Kích thước chia bản ghi"
 msgid "Record Timer"
 msgstr "Bộ đinh thời ghi"
 
-#: tpk_showname.h:114
+#: tpk_showname.h:115
 msgid "Record cut"
 msgstr "Thư mục chứa bản ghi"
 
@@ -7594,7 +7668,7 @@ msgstr ""
 msgid "SAT"
 msgstr "Vệ tinh"
 
-#: tpk_showname.h:117
+#: tpk_showname.h:118
 msgid "SAT/Cable 19.2 13.0 KabelD | 20.05.2015"
 msgstr ""
 
@@ -7657,7 +7731,7 @@ msgstr ""
 msgid "SID:"
 msgstr ""
 
-#: tpk_showname.h:177
+#: tpk_showname.h:178
 msgid "SMB Client Lib v3.0.28b (/media/smbfs)"
 msgstr ""
 
@@ -7715,11 +7789,12 @@ msgstr ""
 
 #: plugins_autotimer_skin.xml.h:9 plugins_dlna_skin.xml.h:11
 #: plugins_instar_skin.xml.h:15 plugins_lcdpearl1_skin.xml.h:11
-#: plugins_lcdsamsung_skin.xml.h:14 plugins_stopifnotused_skin.xml.h:5
-#: plugins_tsSchnitt_skin.xml.h:7 plugins_xupnpd_skin.xml.h:2
-#: skin_default_skin.xml.h:681 skins_autotimer_skin.xml.h:9
-#: skins_dlna_skin.xml.h:11 skins_instar_skin.xml.h:15
-#: skins_lcdpearl1_skin.xml.h:11 skins_lcdsamsung_skin.xml.h:14
+#: plugins_lcdsamsung_skin.xml.h:14 plugins_multiimage_skin.xml.h:11
+#: plugins_stopifnotused_skin.xml.h:5 plugins_tsSchnitt_skin.xml.h:7
+#: plugins_xupnpd_skin.xml.h:2 skin_default_skin.xml.h:681
+#: skins_autotimer_skin.xml.h:9 skins_dlna_skin.xml.h:11
+#: skins_instar_skin.xml.h:15 skins_lcdpearl1_skin.xml.h:11
+#: skins_lcdsamsung_skin.xml.h:14 skins_multiimage_skin.xml.h:11
 #: skins_stopifnotused_skin.xml.h:5 skins_tsSchnitt_skin.xml.h:7
 #: skins_xupnpd_skin.xml.h:2
 msgid "START"
@@ -7752,7 +7827,7 @@ msgstr ""
 msgid "SZ"
 msgstr "S"
 
-#: panel_settings_autostart.h:327 settings_autostart.h:576 tpk_showname.h:116
+#: panel_settings_autostart.h:327 settings_autostart.h:576 tpk_showname.h:117
 msgid "Samba Server"
 msgstr ""
 
@@ -7760,7 +7835,7 @@ msgstr ""
 msgid "Samba Server Settings"
 msgstr "Thiết lập server Samba"
 
-#: tpk_description.h:113
+#: tpk_description.h:114
 msgid "Samba file server"
 msgstr ""
 
@@ -7772,7 +7847,7 @@ msgstr "Thiết lập server Samba"
 msgid "Sat"
 msgstr "Vệ tinh"
 
-#: tpk_description.h:114
+#: tpk_description.h:115
 msgid "Sat Astra ORF | 08.01.2015 (Olbord)"
 msgstr ""
 
@@ -7792,35 +7867,35 @@ msgstr "Nhà cung cấp:"
 msgid "Sat: "
 msgstr ""
 
-#: tpk_description.h:115
+#: tpk_description.h:116
 msgid "Sat: Bulldog Settings 3x Sat"
 msgstr ""
 
-#: tpk_description.h:116
+#: tpk_description.h:117
 msgid "Sat: Bulldog Settings Astra 19.2"
 msgstr ""
 
-#: tpk_description.h:117
+#: tpk_description.h:118
 msgid "Sat: Bulldog Settings Hotbird 13.0 + Astra 19.2"
 msgstr ""
 
-#: tpk_description.h:121
+#: tpk_description.h:122
 msgid "Sat: Ser6 Settings Eutelsat 36.0"
 msgstr ""
 
-#: tpk_description.h:118
+#: tpk_description.h:119
 msgid "Sat: default Settings Astra 19.2"
 msgstr ""
 
-#: tpk_description.h:119
+#: tpk_description.h:120
 msgid "Sat: matze70 Astra 19.2 | 24.10.2014"
 msgstr ""
 
-#: tpk_description.h:120
+#: tpk_description.h:121
 msgid "Sat: matze70 new design Astra 19.2 | 09.05.2015"
 msgstr ""
 
-#: tpk_description.h:122
+#: tpk_description.h:123
 msgid "Sat: uljanow Sat 19.2 plus 13.0 | 21.10.2014"
 msgstr ""
 
@@ -7880,7 +7955,7 @@ msgstr ""
 msgid "Scan Manual Config"
 msgstr ""
 
-#: tpk_description.h:123
+#: tpk_description.h:124
 msgid "Scan and manage cifs/nfs/ftp shares"
 msgstr ""
 
@@ -7933,141 +8008,141 @@ msgstr "màn hình chờ"
 msgid "Screensaver Adjust"
 msgstr "Điều chỉnh màn hình chờ"
 
-#: tpk_showname.h:119
+#: tpk_showname.h:120
 msgid "Screensaver Animation Kidds"
 msgstr "Điều chỉnh màn hình chờ"
 
-#: tpk_showname.h:120
+#: tpk_showname.h:121
 msgid "Screensaver Beach"
 msgstr "Màn hình chờ"
 
-#: tpk_showname.h:121
+#: tpk_showname.h:122
 msgid "Screensaver Bikes and Motorcycles"
 msgstr "khoảng thời gian màn hình chờ"
 
-#: tpk_showname.h:122
+#: tpk_showname.h:123
 msgid "Screensaver Brands and Logos"
 msgstr "Điều chỉnh màn hình chờ"
 
-#: tpk_showname.h:123
+#: tpk_showname.h:124
 msgid "Screensaver Cars"
 msgstr "Màn hình chờ"
 
-#: tpk_showname.h:124
+#: tpk_showname.h:125
 msgid "Screensaver Celebrations"
 msgstr "độ trễ màn hình chờ"
 
-#: tpk_showname.h:125
+#: tpk_showname.h:126
 msgid "Screensaver Celebrities"
 msgstr "kiểu màn hình chờ"
 
-#: tpk_showname.h:126
+#: tpk_showname.h:127
 msgid "Screensaver Christmas"
 msgstr "Điều chỉnh màn hình chờ"
 
-#: tpk_showname.h:127
+#: tpk_showname.h:128
 msgid "Screensaver Creative Graphics"
 msgstr "hình ảnh màn hình chờ"
 
-#: tpk_showname.h:128
+#: tpk_showname.h:129
 msgid "Screensaver Cute"
 msgstr "Điều chỉnh màn hình chờ"
 
-#: tpk_showname.h:129
+#: tpk_showname.h:130
 msgid "Screensaver Default"
 msgstr "Điều chỉnh màn hình chờ"
 
-#: tpk_showname.h:130
+#: tpk_showname.h:131
 msgid "Screensaver Digital Universe"
 msgstr "khoảng thời gian màn hình chờ"
 
-#: tpk_showname.h:131
+#: tpk_showname.h:132
 msgid "Screensaver Dreamy Fantasy"
 msgstr "độ trễ màn hình chờ"
 
-#: tpk_showname.h:132
+#: tpk_showname.h:133
 msgid "Screensaver Eisriesenwelt"
 msgstr "khoảng thời gian màn hình chờ"
 
-#: tpk_description.h:124
+#: tpk_description.h:125
 msgid ""
 "Screensaver FC Bayern pictures for MediaCenter Audioplayer and Radioplayer"
 msgstr ""
 
-#: tpk_showname.h:134
+#: tpk_showname.h:135
 msgid "Screensaver FCBayern"
 msgstr "kiểu màn hình chờ"
 
-#: tpk_showname.h:133
+#: tpk_showname.h:134
 msgid "Screensaver Fantasy Girls"
 msgstr "khoảng thời gian màn hình chờ"
 
-#: tpk_showname.h:135
+#: tpk_showname.h:136
 msgid "Screensaver Flowers"
 msgstr "Màn hình chờ"
 
-#: tpk_showname.h:136
+#: tpk_showname.h:137
 msgid "Screensaver Games"
 msgstr "Màn hình chờ"
 
-#: tpk_showname.h:137
+#: tpk_showname.h:138
 msgid "Screensaver HDR-Pictures"
 msgstr "Điều chỉnh màn hình chờ"
 
-#: tpk_description.h:125
+#: tpk_description.h:126
 msgid ""
 "Screensaver Hot Girls pictures for MediaCenter Audioplayer and Radioplayer"
 msgstr ""
 
-#: tpk_showname.h:138
+#: tpk_showname.h:139
 msgid "Screensaver Hotgirls"
 msgstr "Màn hình chờ"
 
-#: tpk_showname.h:139
+#: tpk_showname.h:140
 msgid "Screensaver Hotgirls 2"
 msgstr "khoảng thời gian màn hình chờ"
 
-#: tpk_showname.h:140
+#: tpk_showname.h:141
 msgid "Screensaver Inspirational"
 msgstr "khoảng thời gian màn hình chờ"
 
-#: tpk_showname.h:141
+#: tpk_showname.h:142
 msgid "Screensaver Love"
 msgstr "Màn hình chờ"
 
-#: tpk_showname.h:142
+#: tpk_showname.h:143
 msgid "Screensaver Movies"
 msgstr "Màn hình chờ"
 
-#: tpk_showname.h:143
+#: tpk_showname.h:144
 msgid "Screensaver Nature and Landscape"
 msgstr ""
 
-#: tpk_showname.h:144
+#: tpk_showname.h:145
 msgid "Screensaver Others"
 msgstr "kiểu màn hình chờ"
 
-#: tpk_showname.h:145
+#: tpk_showname.h:146
 msgid "Screensaver Photography"
 msgstr "kiểu màn hình chờ"
 
-#: tpk_showname.h:146
+#: tpk_showname.h:147
 msgid "Screensaver Planes"
 msgstr "Màn hình chờ"
 
-#: tpk_showname.h:147
+#: tpk_showname.h:148
 msgid "Screensaver Radio"
 msgstr "Màn hình chờ"
 
-#: tpk_showname.h:148
+#: tpk_showname.h:149
 msgid "Screensaver Sports"
 msgstr "Màn hình chờ"
 
-#: tpk_showname.h:149
+#: tpk_showname.h:150
 msgid "Screensaver Travel World"
 msgstr "khoảng thời gian màn hình chờ"
 
-#: tpk_description.h:126
+#: tpk_description.h:127
 msgid "Screensaver pictures for MediaCenter Audioplayer and Radioplayer"
 msgstr ""
 
@@ -8087,7 +8162,7 @@ msgstr ""
 msgid "Screenshot create"
 msgstr ""
 
-#: scriptexec.h:41 tpk_showname.h:150 tpk_showname.h:151
+#: scriptexec.h:41 tpk_showname.h:151 tpk_showname.h:152
 msgid "Script execute"
 msgstr "cho phép thực hiện"
 
@@ -8292,6 +8367,10 @@ msgstr ""
 msgid "Select backup:"
 msgstr "Chọn sao lưu:"
 
+#: plugins_multiimage_skin.xml.h:9 skins_multiimage_skin.xml.h:9
+msgid "Select device"
+msgstr ""
+
 #: plugins_tsSchnitt_skin.xml.h:5 skins_tsSchnitt_skin.xml.h:5
 msgid "Selected:"
 msgstr "Chọn sao lưu:"
@@ -8379,19 +8458,19 @@ msgstr ""
 msgid "Settings"
 msgstr "thiết lập"
 
-#: tpk_showname.h:152
+#: tpk_showname.h:153
 msgid "Settings Astra 19.2"
 msgstr ""
 
-#: tpk_showname.h:153
+#: tpk_showname.h:154
 msgid "Settings Eutelsat 36.0"
 msgstr ""
 
-#: tpk_showname.h:154
+#: tpk_showname.h:155
 msgid "Settings Hotbird 13.0, Astra 19.2"
 msgstr ""
 
-#: tpk_showname.h:155
+#: tpk_showname.h:156
 msgid "Settings Hotbird 13.0, Astra 19.2, Astra 28.2E"
 msgstr ""
 
@@ -8524,27 +8603,27 @@ msgstr "Một bộ phát đáp"
 msgid "Skin"
 msgstr "Nền"
 
-#: tpk_showname.h:156
+#: tpk_showname.h:157
 msgid "Skin 0Acht5Zehn (black)"
 msgstr ""
 
-#: tpk_showname.h:157
+#: tpk_showname.h:158
 msgid "Skin 0Acht5Zehn (grey)"
 msgstr ""
 
-#: tpk_showname.h:158
+#: tpk_showname.h:159
 msgid "Skin 0Acht5Zehn (white)"
 msgstr ""
 
-#: tpk_description.h:128
+#: tpk_description.h:129
 msgid "Skin 0Acht5Zehn black for black picons"
 msgstr ""
 
-#: tpk_description.h:129
+#: tpk_description.h:130
 msgid "Skin 0Acht5Zehn grey for grey picons"
 msgstr ""
 
-#: tpk_description.h:130
+#: tpk_description.h:131
 msgid "Skin 0Acht5Zehn white for white picons"
 msgstr ""
 
@@ -8552,71 +8631,71 @@ msgstr ""
 msgid "Skin Adjust"
 msgstr "Điều chỉnh nền"
 
-#: tpk_description.h:131 tpk_showname.h:159
+#: tpk_description.h:132 tpk_showname.h:160
 msgid "Skin Cool"
 msgstr "Nền"
 
-#: tpk_description.h:132 tpk_showname.h:160
+#: tpk_description.h:133 tpk_showname.h:161
 msgid "Skin Cool MiniTV"
 msgstr ""
 
-#: tpk_showname.h:165
+#: tpk_showname.h:166
 msgid "Skin DefNoMiniTV"
 msgstr ""
 
-#: tpk_showname.h:166
+#: tpk_showname.h:167
 msgid "Skin DefNoMiniTV mod"
 msgstr ""
 
-#: tpk_showname.h:161
+#: tpk_showname.h:162
 msgid "Skin Default"
 msgstr "Mặc định"
 
-#: tpk_showname.h:163
+#: tpk_showname.h:164
 msgid "Skin Default NoMiniTV XPicon mod"
 msgstr ""
 
-#: tpk_showname.h:164
+#: tpk_showname.h:165
 msgid "Skin Default XPicon mod"
 msgstr ""
 
-#: tpk_showname.h:162
+#: tpk_showname.h:163
 msgid "Skin Default mod"
 msgstr ""
 
-#: tpk_showname.h:167
+#: tpk_showname.h:168
 msgid "Skin MegaStyle blue"
 msgstr "Chọn nền"
 
-#: tpk_showname.h:168
+#: tpk_showname.h:169
 msgid "Skin MegaStyle blue Mini TV"
 msgstr ""
 
-#: tpk_showname.h:169
+#: tpk_showname.h:170
 msgid "Skin MegaStyle grey"
 msgstr ""
 
-#: tpk_showname.h:170
+#: tpk_showname.h:171
 msgid "Skin MegaStyle grey MiniTV"
 msgstr ""
 
-#: tpk_showname.h:171
+#: tpk_showname.h:172
 msgid "Skin MetrixHD"
 msgstr ""
 
-#: tpk_showname.h:172
+#: tpk_showname.h:173
 msgid "Skin Nogfx"
 msgstr ""
 
-#: tpk_showname.h:173
+#: tpk_showname.h:174
 msgid "Skin Nogfx (grey)"
 msgstr ""
 
-#: tpk_description.h:133
+#: tpk_description.h:134
 msgid "Skin Nogfx black for black picons"
 msgstr ""
 
-#: tpk_description.h:134
+#: tpk_description.h:135
 msgid "Skin Nogfx grey"
 msgstr ""
 
@@ -8624,27 +8703,27 @@ msgstr ""
 msgid "Skin Select"
 msgstr "Chọn nền"
 
-#: tpk_showname.h:174
+#: tpk_showname.h:175
 msgid "Skin SmartTV"
 msgstr "Chọn nền"
 
-#: tpk_description.h:135
+#: tpk_description.h:136
 msgid "Skin SmartTV for alternate picons"
 msgstr ""
 
-#: tpk_showname.h:175
+#: tpk_showname.h:176
 msgid "Skin Tobayer01"
 msgstr ""
 
-#: tpk_showname.h:176
+#: tpk_showname.h:177
 msgid "Skin UFS912 style"
 msgstr ""
 
-#: tpk_description.h:137
+#: tpk_description.h:138
 msgid "Skin UFS912 style for white picons"
 msgstr ""
 
-#: tpk_description.h:136
+#: tpk_description.h:137
 msgid "Skin tobayer01 for grey picons"
 msgstr ""
 
@@ -8695,11 +8774,11 @@ msgstr ""
 msgid "Smartcard Ports found: "
 msgstr ""
 
-#: tpk_showname.h:178
+#: tpk_showname.h:179
 msgid "SmbClient (Win7)"
 msgstr ""
 
-#: tpk_description.h:138
+#: tpk_description.h:139
 msgid "Social Network Client for Facebook."
 msgstr ""
 
@@ -8908,7 +8987,7 @@ msgid "Step signalrate"
 msgstr "dịch tốc độ tín hiệu"
 
 #: plugins_stock_skin.xml.h:5 skins_stock_skin.xml.h:5 stock.h:187
-#: tpk_showname.h:179
+#: tpk_showname.h:180
 msgid "Stock"
 msgstr ""
 
@@ -8931,7 +9010,7 @@ msgstr ""
 msgid "Stop AutoTimer"
 msgstr ""
 
-#: tpk_showname.h:180
+#: tpk_showname.h:181
 msgid "Stop if not used"
 msgstr ""
 
@@ -8972,7 +9051,7 @@ msgid "Stream/Record/Softcam"
 msgstr ""
 
 #: plugins_streaminfo_skin.xml.h:3 skins_streaminfo_skin.xml.h:3
-#: tpk_showname.h:181
+#: tpk_showname.h:182
 msgid "Streaminfo"
 msgstr "Streaming"
 
@@ -9025,7 +9104,7 @@ msgstr "Các dịch vụ phụ"
 msgid "Subtitle"
 msgstr ""
 
-#: tpk_description.h:141 tpk_showname.h:182
+#: tpk_description.h:142 tpk_showname.h:183
 msgid "Sudoku"
 msgstr ""
 
@@ -9158,7 +9237,7 @@ msgstr "KIỂM TRA"
 msgid "TITLE"
 msgstr "nhan đề"
 
-#: tpk_showname.h:192
+#: tpk_showname.h:193
 msgid "TMDb"
 msgstr ""
 
@@ -9166,7 +9245,7 @@ msgstr ""
 msgid "TMDb - Plugin"
 msgstr "cdắm nguồn"
 
-#: tpk_description.h:145
+#: tpk_description.h:146
 msgid "TMDb Movie Database Plugin"
 msgstr ""
 
@@ -9249,7 +9328,7 @@ msgstr ""
 msgid "TXT PID:"
 msgstr "PID TXT:"
 
-#: tpk_description.h:142
+#: tpk_description.h:143
 msgid "Tastensperre Plugin - entsperren mit rot/rot/gruen"
 msgstr ""
 
@@ -9297,7 +9376,7 @@ msgstr "KIỂM TRA"
 msgid "Text"
 msgstr ""
 
-#: tpk_showname.h:183
+#: tpk_showname.h:184
 msgid "The Grim Reaper"
 msgstr ""
 
@@ -9392,7 +9471,7 @@ msgstr ""
 msgid "Thursday"
 msgstr "Thứ năm"
 
-#: tpk_showname.h:185
+#: tpk_showname.h:186
 msgid "TiTan Mediathek"
 msgstr "Thư viện trực tuyến"
 
@@ -9412,7 +9491,7 @@ msgstr ""
 msgid "TiThek Settings"
 msgstr "Thiết lập HTTP"
 
-#: tpk_description.h:144
+#: tpk_description.h:145
 msgid "TiThek the Multimedia-thek"
 msgstr ""
 
@@ -9561,7 +9640,7 @@ msgstr ""
 msgid "Titan Log"
 msgstr ""
 
-#: tpk_description.h:143 tpk_showname.h:184
+#: tpk_description.h:144 tpk_showname.h:185
 msgid "Titan MediaCenter"
 msgstr "Media Center"
 
@@ -9570,23 +9649,23 @@ msgstr "Media Center"
 msgid "Titan will be restarted!"
 msgstr ""
 
-#: tpk_showname.h:186
+#: tpk_showname.h:187
 msgid "TitanNit Blood"
 msgstr ""
 
-#: tpk_showname.h:187
+#: tpk_showname.h:188
 msgid "TitanNit Design 1"
 msgstr ""
 
-#: tpk_showname.h:188
+#: tpk_showname.h:189
 msgid "TitanNit Design 3"
 msgstr ""
 
-#: tpk_showname.h:189
+#: tpk_showname.h:190
 msgid "TitanNit Design 5"
 msgstr ""
 
-#: tpk_showname.h:190
+#: tpk_showname.h:191
 msgid "TitanNit Leather"
 msgstr ""
 
@@ -9601,7 +9680,7 @@ msgstr ""
 msgid "TitanNit Web Control"
 msgstr ""
 
-#: tpk_showname.h:191
+#: tpk_showname.h:192
 msgid "TitanNit on fire"
 msgstr "Không thể mở file"
 
@@ -9765,47 +9844,47 @@ msgstr ""
 msgid "Transmission:"
 msgstr "Bộ pháp đáp:"
 
-#: tpk_description.h:147
+#: tpk_description.h:148
 msgid "Transparent Picons (dark Skins)"
 msgstr ""
 
-#: tpk_description.h:148
+#: tpk_description.h:149
 msgid "Transparent Picons (dark skins) - Astra 23.5E."
 msgstr ""
 
-#: tpk_description.h:149
+#: tpk_description.h:150
 msgid "Transparent Picons (dark skins) - Astra 28.2E."
 msgstr ""
 
-#: tpk_description.h:150
+#: tpk_description.h:151
 msgid "Transparent Picons (dark skins) - Hotbird 13.0E."
 msgstr ""
 
-#: tpk_description.h:146
+#: tpk_description.h:147
 msgid "Transparent Picons 19_2 (dark skins)."
 msgstr ""
 
-#: tpk_description.h:152
+#: tpk_description.h:153
 msgid "Transparent XPicons - Astra 19.2E"
 msgstr ""
 
-#: tpk_description.h:153
+#: tpk_description.h:154
 msgid "Transparent XPicons - Astra 23.5E"
 msgstr ""
 
-#: tpk_description.h:154
+#: tpk_description.h:155
 msgid "Transparent XPicons - Astra 28.2E"
 msgstr ""
 
-#: tpk_description.h:155
+#: tpk_description.h:156
 msgid "Transparent XPicons - Hotbird 13.0E"
 msgstr ""
 
-#: tpk_description.h:156
+#: tpk_description.h:157
 msgid "Transparent XPicons - small - Astra 19.2E"
 msgstr ""
 
-#: tpk_description.h:151
+#: tpk_description.h:152
 msgid "Transparent small black-Skins 19,2 Picons | 21.10.2014"
 msgstr ""
 
@@ -9827,15 +9906,15 @@ msgstr "Bộ pháp đáp:"
 msgid "Transponderlist"
 msgstr "Bộ pháp đáp:"
 
-#: tpk_description.h:157
+#: tpk_description.h:158
 msgid "Treiber fuer Pearl LCD V4.0"
 msgstr ""
 
-#: tpk_description.h:158
+#: tpk_description.h:159
 msgid "Treiber fuer Pearl LCD V5.0"
 msgstr ""
 
-#: tpk_description.h:159
+#: tpk_description.h:160
 msgid "Treiber fuer Samsung LCD"
 msgstr ""
 
@@ -9970,7 +10049,7 @@ msgstr "không biết"
 msgid "UNLOAD"
 msgstr "KHÔNG TẢI ĐƯỢC"
 
-#: tpk_description.h:161
+#: tpk_description.h:162
 msgid "UPNP Media Render"
 msgstr "Media Center"
 
@@ -9998,7 +10077,7 @@ msgstr ""
 msgid "USB Reset"
 msgstr ""
 
-#: tpk_showname.h:194
+#: tpk_showname.h:195
 msgid "USB-RESET"
 msgstr "KHỞI ĐỘNG LẠI"
 
@@ -10026,11 +10105,11 @@ msgstr "Nhà sản xuất cáp đơn"
 msgid "Unicable product"
 msgstr "Sản phẩm cáp đơn"
 
-#: tpk_showname.h:193
+#: tpk_showname.h:194
 msgid "Unitymedia NRW"
 msgstr ""
 
-#: tpk_description.h:160
+#: tpk_description.h:161
 msgid "Unitymedia NRW | 14.4.2015 (caliban)"
 msgstr ""
 
@@ -10143,7 +10222,7 @@ msgstr ""
 msgid "Version"
 msgstr ""
 
-#: tpk_description.h:163
+#: tpk_description.h:164
 msgid "Version 10660 of OScam"
 msgstr ""
 
@@ -10314,11 +10393,11 @@ msgstr ""
 "bắt đầu WLAN.\n"
 "bạn có thể cấu hình giao diện mới"
 
-#: tpk_showname.h:204
+#: tpk_showname.h:205
 msgid "WM2014"
 msgstr ""
 
-#: tpk_description.h:180
+#: tpk_description.h:181
 msgid "WM2014 Plugin"
 msgstr ""
 
@@ -10378,7 +10457,7 @@ msgstr ""
 msgid "War"
 msgstr "bar"
 
-#: plugins_weather_skin.xml.h:3 skins_weather_skin.xml.h:3 tpk_showname.h:196
+#: plugins_weather_skin.xml.h:3 skins_weather_skin.xml.h:3 tpk_showname.h:197
 #: weather.h:426
 msgid "Weather"
 msgstr "thời tiết"
@@ -10395,11 +10474,11 @@ msgstr ""
 msgid "WebStream"
 msgstr ""
 
-#: tpk_showname.h:197
+#: tpk_showname.h:198
 msgid "Webbrowser Netsurf"
 msgstr "Trình duyệt"
 
-#: tpk_description.h:165
+#: tpk_description.h:166
 msgid "Webbrowser Plugin"
 msgstr ""
 
@@ -10411,7 +10490,7 @@ msgstr ""
 msgid "Wednesday"
 msgstr "Ngày thứ tư"
 
-#: tpk_description.h:166
+#: tpk_description.h:167
 msgid "Werbezapper"
 msgstr ""
 
@@ -10424,39 +10503,39 @@ msgstr ""
 msgid "Wettervorhersage"
 msgstr ""
 
-#: tpk_description.h:168
+#: tpk_description.h:169
 msgid "White 3D Picons - Astra 23.5E."
 msgstr ""
 
-#: tpk_description.h:169
+#: tpk_description.h:170
 msgid "White 3D Picons - Astra 28.2E."
 msgstr ""
 
-#: tpk_description.h:170
+#: tpk_description.h:171
 msgid "White 3D Picons - Hotbird 13.0E."
 msgstr ""
 
-#: tpk_description.h:167
+#: tpk_description.h:168
 msgid "White 3D Picons Astra 19.2"
 msgstr ""
 
-#: tpk_description.h:172
+#: tpk_description.h:173
 msgid "White70 Picons - Astra 23.5E."
 msgstr ""
 
-#: tpk_description.h:173
+#: tpk_description.h:174
 msgid "White70 Picons - Astra 28.2E"
 msgstr ""
 
-#: tpk_description.h:174
+#: tpk_description.h:175
 msgid "White70 Picons - Hotbird 13.0E."
 msgstr ""
 
-#: tpk_description.h:171
+#: tpk_description.h:172
 msgid "White70 Picons Astra 19.2"
 msgstr ""
 
-#: tpk_showname.h:198
+#: tpk_showname.h:199
 msgid "Wicardd v1.15 "
 msgstr ""
 
@@ -10464,11 +10543,11 @@ msgstr ""
 msgid "Wizard"
 msgstr ""
 
-#: tpk_showname.h:199
+#: tpk_showname.h:200
 msgid "Wlan 8192cu"
 msgstr ""
 
-#: tpk_showname.h:200
+#: tpk_showname.h:201
 msgid "Wlan 8712u"
 msgstr ""
 
@@ -10476,15 +10555,15 @@ msgstr ""
 msgid "Wlan Stick not found"
 msgstr ""
 
-#: tpk_showname.h:201
+#: tpk_showname.h:202
 msgid "Wlan rt2870sta"
 msgstr ""
 
-#: tpk_showname.h:202
+#: tpk_showname.h:203
 msgid "Wlan rt3070sta"
 msgstr ""
 
-#: tpk_showname.h:203
+#: tpk_showname.h:204
 msgid "Wlan rt5370sta"
 msgstr ""
 
@@ -10492,7 +10571,7 @@ msgstr ""
 msgid "Won"
 msgstr ""
 
-#: tpk_description.h:181
+#: tpk_description.h:182
 msgid "Wooden clock - Standby - Samsung LCD Skin Channel."
 msgstr ""
 
@@ -10521,23 +10600,23 @@ msgstr ""
 msgid "X-Resolution"
 msgstr "Độ phân giải"
 
-#: tpk_showname.h:205
+#: tpk_showname.h:206
 msgid "XPicons LightTransparent (Astra 19.2E)"
 msgstr ""
 
-#: tpk_showname.h:206
+#: tpk_showname.h:207
 msgid "XPicons LightTransparent (Astra 23.5E)"
 msgstr ""
 
-#: tpk_showname.h:207
+#: tpk_showname.h:208
 msgid "XPicons LightTransparent (Astra 28.2E)"
 msgstr ""
 
-#: tpk_showname.h:208
+#: tpk_showname.h:209
 msgid "XPicons LightTransparent (Hotbird 13.0E)"
 msgstr ""
 
-#: tpk_showname.h:209
+#: tpk_showname.h:210
 msgid "XPicons LightTransparent (small - Astra 19.2E)"
 msgstr ""
 
@@ -10615,7 +10694,7 @@ msgstr "Sao lưu"
 msgid "Zapback bereits aktiv ... Stoppen?"
 msgstr ""
 
-#: tpk_showname.h:212
+#: tpk_showname.h:213
 msgid "Zombie"
 msgstr ""
 
@@ -11081,7 +11160,8 @@ msgstr "Thư mục mặc định"
 msgid "del startchannel"
 msgstr "bắt đầu xóa chương trình"
 
-#: optimize.h:254 skin_default_skin.xml.h:193
+#: optimize.h:254 plugins_multiimage_skin.xml.h:1 skin_default_skin.xml.h:193
+#: skins_multiimage_skin.xml.h:1
 msgid "delete"
 msgstr "Xóa"
 
@@ -11301,6 +11381,10 @@ msgstr ""
 msgid "fonts"
 msgstr "phông chữ"
 
+#: plugins_multiimage_skin.xml.h:5 skins_multiimage_skin.xml.h:5
+msgid "format"
+msgstr ""
+
 #: tithek.h:887
 msgid "found"
 msgstr "tìm kiếm"
@@ -11469,7 +11553,8 @@ msgstr "thông tin"
 msgid "initializing"
 msgstr "khởi tạo"
 
-#: skin_default_skin.xml.h:375
+#: plugins_multiimage_skin.xml.h:7 skin_default_skin.xml.h:375
+#: skins_multiimage_skin.xml.h:7
 msgid "install"
 msgstr "cài đặt"
 
@@ -11738,11 +11823,11 @@ msgstr "không bao giờ"
 msgid "never del file"
 msgstr "không xóa file"
 
-#: tpk_description.h:104
+#: tpk_description.h:105
 msgid "newcs including all necessary config files."
 msgstr ""
 
-#: tpk_description.h:106
+#: tpk_description.h:107
 msgid "news Plugin"
 msgstr "cdắm nguồn"
 
@@ -11976,7 +12061,7 @@ msgstr "tắt nguồn / khởi động lại"
 msgid "open in new window"
 msgstr ""
 
-#: tpk_description.h:108
+#: tpk_description.h:109
 msgid "optimize Plugin"
 msgstr "Tối ưu hóa"
 
@@ -12214,7 +12299,7 @@ msgstr ""
 msgid "redKey"
 msgstr ""
 
-#: tpk_description.h:112
+#: tpk_description.h:113
 msgid "remote Desktop Plugin"
 msgstr ""
 
@@ -12284,7 +12369,7 @@ msgstr ""
 msgid "save network settings ?"
 msgstr "lưu thiết lập mạng?"
 
-#: tpk_showname.h:118
+#: tpk_showname.h:119
 msgid "scam 3.60"
 msgstr ""
 
@@ -12336,7 +12421,7 @@ msgstr "kiểu màn hình chờ"
 msgid "screensaveradjust"
 msgstr ""
 
-#: tpk_description.h:127
+#: tpk_description.h:128
 msgid "scriptexec Plugin"
 msgstr "cho phép thực hiện"
 
@@ -12382,6 +12467,10 @@ msgstr ""
 
 #: harddisk.h:501
 msgid "select the media drive from Device List for fsck"
+msgstr ""
+
+#: plugins_multiimage_skin.xml.h:10 skins_multiimage_skin.xml.h:10
+msgid "selected Image"
 msgstr ""
 
 #: webif_help.h:82
@@ -12590,7 +12679,7 @@ msgstr "dịch trái"
 msgid "step west"
 msgstr "dịch phải"
 
-#: tpk_description.h:139
+#: tpk_description.h:140
 msgid "stock Plugin"
 msgstr "cdắm nguồn"
 
@@ -12608,7 +12697,7 @@ msgstr ""
 msgid "store position"
 msgstr "vị trí lưu trữ"
 
-#: tpk_description.h:140
+#: tpk_description.h:141
 msgid "streaminfo Plugin"
 msgstr "Streaming"
 
@@ -12898,7 +12987,7 @@ msgstr "cập nhật"
 msgid "updatelist"
 msgstr "Danh sách cập nhật"
 
-#: tpk_description.h:162
+#: tpk_description.h:163
 msgid "usbreset Plugin"
 msgstr ""
 
@@ -13006,7 +13095,7 @@ msgstr ""
 msgid "videosettings"
 msgstr ""
 
-#: tpk_showname.h:195
+#: tpk_showname.h:196
 msgid "vizcam 1.04"
 msgstr ""
 
@@ -13034,7 +13123,7 @@ msgstr "vui long đợi để dừng download."
 msgid "waiting"
 msgstr "Đang bắt đầu"
 
-#: tpk_description.h:164
+#: tpk_description.h:165
 msgid "weather Plugin"
 msgstr "thông tin thời tiết"
 
@@ -13066,23 +13155,23 @@ msgstr ""
 msgid "wireless"
 msgstr "không dây"
 
-#: tpk_description.h:175
+#: tpk_description.h:176
 msgid "wireless 8192cu.ko model"
 msgstr ""
 
-#: tpk_description.h:176
+#: tpk_description.h:177
 msgid "wireless modul 8712u.ko"
 msgstr ""
 
-#: tpk_description.h:177
+#: tpk_description.h:178
 msgid "wireless modul rt2870sta.ko"
 msgstr ""
 
-#: tpk_description.h:178
+#: tpk_description.h:179
 msgid "wireless modul rt3070sta.ko"
 msgstr ""
 
-#: tpk_description.h:179
+#: tpk_description.h:180
 msgid "wireless modul rt5370sta.ko"
 msgstr ""
 
@@ -13102,11 +13191,11 @@ msgstr ""
 msgid "x"
 msgstr ""
 
-#: tpk_showname.h:210
+#: tpk_showname.h:211
 msgid "xupnpd"
 msgstr ""
 
-#: tpk_description.h:182
+#: tpk_description.h:183
 msgid "xupnpd Medien Server (upnp)"
 msgstr ""
 
@@ -13209,7 +13298,7 @@ msgstr ""
 msgid "z"
 msgstr ""
 
-#: tpk_showname.h:211
+#: tpk_showname.h:212
 msgid "zapback (Werbezapper)"
 msgstr ""
 
