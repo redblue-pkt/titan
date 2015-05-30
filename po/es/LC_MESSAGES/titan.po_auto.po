@@ -1,17 +1,16 @@
-#: plugins_wm2014_skin.xml.h:1 skins_wm2014_skin.xml.h:1 tithek_mainmenu.h:1
 msgid ""
 msgstr ""
 "Project-Id-Version: TitanNit 1.65\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-07 10:44+0200\n"
-"PO-Revision-Date: 2015-04-19 11:25+0100\n"
-"Last-Translator:  <aaf-caliban@e.mail.de>\n"
+"PO-Revision-Date: 2015-05-30 19:51+0100\n"
+"Last-Translator: aaf-caliban@e.mail.de\n"
 "Language-Team: German <_obiwan_@web.de>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.7.5\n"
 
 #: hwtest.h:442
 msgid " - OKAY!"
@@ -2522,19 +2521,19 @@ msgstr "Moneda: "
 
 #: tsSchnitt.c:129
 msgid "Cut finished with error!"
-msgstr ""
+msgstr "Corte responde ERROR!"
 
 #: tsSchnitt.c:327
 msgid "Cut in progress"
-msgstr ""
+msgstr "Corte en progreso"
 
 #: tsSchnitt.c:342
 msgid "Cut is running"
-msgstr ""
+msgstr "Corre Seccion"
 
 #: tsSchnitt.c:123
 msgid "Cut successfully completed"
-msgstr ""
+msgstr "Corte ha completado con Exito"
 
 #: plugins_tsSchnitt_skin.xml.h:1 skins_tsSchnitt_skin.xml.h:1
 msgid "Cutstatus:"
@@ -9260,7 +9259,7 @@ msgstr ""
 
 #: tsSchnitt.c:347
 msgid "Sure to cancel the cut process?"
-msgstr ""
+msgstr "esta seguro de que desea cancelar corte?"
 
 #: MultiImage.c:318
 msgid "Sure to delete Image?: "

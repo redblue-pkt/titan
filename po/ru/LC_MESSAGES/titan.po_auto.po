@@ -1,9 +1,8 @@
-#: plugins_wm2014_skin.xml.h:1 skins_wm2014_skin.xml.h:1 tithek_mainmenu.h:1
 msgid ""
 msgstr ""
 "Project-Id-Version: TitanNit 1.65\n"
 "POT-Creation-Date: 2014-02-07 10:44+0100\n"
-"PO-Revision-Date: 2015-05-17 22:29+0100\n"
+"PO-Revision-Date: 2015-05-30 19:50+0100\n"
 "Last-Translator: aaf-caliban@e.mail.de\n"
 "Language-Team: German <_obiwan_@web.de>\n"
 "Language: ru\n"
@@ -2489,19 +2488,19 @@ msgstr "Валюта "
 
 #: tsSchnitt.c:129
 msgid "Cut finished with error!"
-msgstr ""
+msgstr "Ошибка создания раздела!"
 
 #: tsSchnitt.c:327
 msgid "Cut in progress"
-msgstr ""
+msgstr "Раздел находится в стадии создания"
 
 #: tsSchnitt.c:342
 msgid "Cut is running"
-msgstr ""
+msgstr "Операция выполняется"
 
 #: tsSchnitt.c:123
 msgid "Cut successfully completed"
-msgstr ""
+msgstr "Раздел успешно создан!"
 
 #: plugins_tsSchnitt_skin.xml.h:1 skins_tsSchnitt_skin.xml.h:1
 msgid "Cutstatus:"
@@ -9183,7 +9182,7 @@ msgstr ""
 
 #: tsSchnitt.c:347
 msgid "Sure to cancel the cut process?"
-msgstr ""
+msgstr "Действительно отменить?"
 
 #: MultiImage.c:318
 msgid "Sure to delete Image?: "
