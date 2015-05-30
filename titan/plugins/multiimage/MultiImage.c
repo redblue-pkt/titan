@@ -315,8 +315,7 @@ int multiimage_screen(char* mdev)
 			if(listbox->select != NULL)
 			{	
 				rc = 1;
-				cmd = ostrcat("Soll Image ", listbox->select->name, 0, 0);
-				cmd = ostrcat(cmd, " wirklich gelöscht werden?", 1, 0);
+				cmd = ostrcat(_("Sure to delete Image: "), listbox->select->name, 0, 0);
 				if(textbox("MultiImage", cmd, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
 				{
 					free(cmd); cmd= NULL;
