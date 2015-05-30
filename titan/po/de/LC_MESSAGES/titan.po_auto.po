@@ -2551,6 +2551,22 @@ msgstr ""
 msgid "Currency: "
 msgstr "Währung: "
 
+#: tsSchnitt.c:129
+msgid "Cut finished with error!"
+msgstr ""
+
+#: tsSchnitt.c:327
+msgid "Cut in progress"
+msgstr ""
+
+#: tsSchnitt.c:342
+msgid "Cut is running"
+msgstr ""
+
+#: tsSchnitt.c:123
+msgid "Cut successfully completed"
+msgstr ""
+
 #: plugins_tsSchnitt_skin.xml.h:1 skins_tsSchnitt_skin.xml.h:1
 msgid "Cutstatus:"
 msgstr "Fortschritt:"
@@ -8208,18 +8224,6 @@ msgstr "Suche Netzwerk Freigaben, bitte warten!"
 msgid "Scart On Standby"
 msgstr "Scartausgabe im Standby"
 
-#: tsSchnitt.c:129
-msgid "Schnitt endet mit Fehler !!!!!"
-msgstr "Schnitt beendet mit Fehler!"
-
-#: tsSchnitt.c:123
-msgid "Schnitt erfolgreich beendet"
-msgstr ""
-
-#: tsSchnitt.c:327
-msgid "Schnitt ist in Arbeit"
-msgstr ""
-
 #: epgsearch.h:308
 msgid "Scifi"
 msgstr "Science Fiction"
@@ -9030,10 +9034,6 @@ msgstr "Softcam auswählen:"
 msgid "Solarmovie"
 msgstr ""
 
-#: tsSchnitt.c:347
-msgid "Soll der Schnitt wirklich abgebrochen werden?"
-msgstr ""
-
 #: extensions.h:416
 msgid ""
 "Some plugins needs restart.\n"
@@ -9358,6 +9358,10 @@ msgstr "Sonntag"
 
 #: tithek_mainmenu.h:45
 msgid "SuperRTL-Now"
+msgstr ""
+
+#: tsSchnitt.c:347
+msgid "Sure to cancel the cut process?"
 msgstr ""
 
 #: MultiImage.c:318
@@ -11383,10 +11387,6 @@ msgstr "Cover"
 #: skin_default_skin.xml.h:176
 msgid "create System Backup"
 msgstr "System Sicherung erstellen"
-
-#: tsSchnitt.c:342
-msgid "cut is running"
-msgstr "Schnitt läuft"
 
 #: tpk_description.h:48
 msgid "cut record files"
@@ -13616,3 +13616,9 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
+
+#~ msgid "Schnitt endet mit Fehler !!!!!"
+#~ msgstr "Schnitt beendet mit Fehler!"
+
+#~ msgid "cut is running"
+#~ msgstr "Schnitt läuft"
