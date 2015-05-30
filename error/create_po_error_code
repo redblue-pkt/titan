@@ -1,60 +1,30 @@
 [createpo.sh] xgettext --omit-header --no-wrap -j -k_ *.* -o /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.clean.po
-skin_0Acht5Zehn_black_skin.xml.h:28: warning: unterminated string literal
-skin_0Acht5Zehn_skin.xml.h:28: warning: unterminated string literal
-skin_0Acht5Zehn_white_skin.xml.h:28: warning: unterminated string literal
-skin_coolMiniTV_skin.xml.h:28: warning: unterminated string literal
-xgettext: Non-ASCII string at skin_coolMiniTV_skin.xml.h:32.
+xgettext: Non-ASCII string at plugins_multiimage_skin.xml.h:4.
           Please specify the source encoding through --from-code.
 [createpo.sh] xgettext --omit-header -s -k_ *.* -o /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.new.po
-skin_0Acht5Zehn_black_skin.xml.h:28: warning: unterminated string literal
-skin_0Acht5Zehn_skin.xml.h:28: warning: unterminated string literal
-skin_0Acht5Zehn_white_skin.xml.h:28: warning: unterminated string literal
-skin_coolMiniTV_skin.xml.h:28: warning: unterminated string literal
-xgettext: Non-ASCII string at skin_coolMiniTV_skin.xml.h:32.
+xgettext: Non-ASCII string at plugins_multiimage_skin.xml.h:4.
           Please specify the source encoding through --from-code.
 [createpo.sh] ################## coding #################
-/home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.po:         utf-8
 /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.po_auto.po: utf-8
-/home/atemio/flashimg/source.titan/po/el/LC_MESSAGES/titan.po:         utf-8
 /home/atemio/flashimg/source.titan/po/el/LC_MESSAGES/titan.po_auto.po: utf-8
-/home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po:         utf-8
 /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.po: utf-8
-/home/atemio/flashimg/source.titan/po/es/LC_MESSAGES/titan.po:         utf-8
 /home/atemio/flashimg/source.titan/po/es/LC_MESSAGES/titan.po_auto.po: utf-8
-/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po:         utf-8
 /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.po: utf-8
-/home/atemio/flashimg/source.titan/po/it/LC_MESSAGES/titan.po:         utf-8
 /home/atemio/flashimg/source.titan/po/it/LC_MESSAGES/titan.po_auto.po: utf-8
-/home/atemio/flashimg/source.titan/po/lt/LC_MESSAGES/titan.po:         utf-8
 /home/atemio/flashimg/source.titan/po/lt/LC_MESSAGES/titan.po_auto.po: utf-8
-/home/atemio/flashimg/source.titan/po/nl/LC_MESSAGES/titan.po:         utf-8
 /home/atemio/flashimg/source.titan/po/nl/LC_MESSAGES/titan.po_auto.po: utf-8
-/home/atemio/flashimg/source.titan/po/pl/LC_MESSAGES/titan.po:         utf-8
 /home/atemio/flashimg/source.titan/po/pl/LC_MESSAGES/titan.po_auto.po: utf-8
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po:         utf-8
 /home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.po: utf-8
-/home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po:         utf-8
 /home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.po: utf-8
-/home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.po:               utf-8
 /home/atemio/flashimg/source.titan/po/de/LC_MESSAGES/titan.po_auto.po:       utf-8
-/home/atemio/flashimg/source.titan/po/el/LC_MESSAGES/titan.po:               utf-8
 /home/atemio/flashimg/source.titan/po/el/LC_MESSAGES/titan.po_auto.po:       utf-8
-/home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po:               utf-8
 /home/atemio/flashimg/source.titan/po/en/LC_MESSAGES/titan.po_auto.po:       utf-8
-/home/atemio/flashimg/source.titan/po/es/LC_MESSAGES/titan.po:               utf-8
 /home/atemio/flashimg/source.titan/po/es/LC_MESSAGES/titan.po_auto.po:       utf-8
-/home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po:               utf-8
 /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.clean.po: utf-8
 /home/atemio/flashimg/source.titan/po/fr/LC_MESSAGES/titan.po_auto.po:       utf-8
-/home/atemio/flashimg/source.titan/po/it/LC_MESSAGES/titan.po:               utf-8
 /home/atemio/flashimg/source.titan/po/it/LC_MESSAGES/titan.po_auto.po:       utf-8
-/home/atemio/flashimg/source.titan/po/lt/LC_MESSAGES/titan.po:               utf-8
 /home/atemio/flashimg/source.titan/po/lt/LC_MESSAGES/titan.po_auto.po:       utf-8
-/home/atemio/flashimg/source.titan/po/nl/LC_MESSAGES/titan.po:               utf-8
 /home/atemio/flashimg/source.titan/po/nl/LC_MESSAGES/titan.po_auto.po:       utf-8
-/home/atemio/flashimg/source.titan/po/pl/LC_MESSAGES/titan.po:               utf-8
 /home/atemio/flashimg/source.titan/po/pl/LC_MESSAGES/titan.po_auto.po:       utf-8
-/home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po:               utf-8
 /home/atemio/flashimg/source.titan/po/ru/LC_MESSAGES/titan.po_auto.po:       utf-8
-/home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po:               utf-8
 /home/atemio/flashimg/source.titan/po/vi/LC_MESSAGES/titan.po_auto.po:       utf-8
