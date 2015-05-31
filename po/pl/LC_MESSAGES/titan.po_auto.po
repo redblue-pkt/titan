@@ -851,6 +851,12 @@ msgstr ""
 msgid "All Sorted"
 msgstr ""
 
+#: MultiImage.c:212
+msgid ""
+"All data on this device will be deleted!\n"
+"OK?"
+msgstr ""
+
 #: scan.h:1636
 msgid "All new channels added!"
 msgstr ""
@@ -4671,6 +4677,12 @@ msgstr ""
 msgid "Image"
 msgstr ""
 
+#: MultiImage.c:514
+msgid ""
+"Image creation running!!!\n"
+"Stop process?"
+msgstr ""
+
 #: plugins_multiimage_skin.xml.h:6 skins_multiimage_skin.xml.h:6
 msgid "Image name: "
 msgstr ""
@@ -6053,6 +6065,12 @@ msgid ""
 "Press OK to create it"
 msgstr ""
 
+#: MultiImage.c:445
+msgid ""
+"No MultiImage device found.\n"
+"Create device?"
+msgstr ""
+
 #: httpdfunc.h:6239
 msgid "No Tpk Files Found on /tmp Directory."
 msgstr ""
@@ -6082,6 +6100,10 @@ msgstr ""
 
 #: readerconfig.h:351
 msgid "No config file found."
+msgstr ""
+
+#: MultiImage.c:156
+msgid "No device available"
 msgstr ""
 
 #: record.h:64
