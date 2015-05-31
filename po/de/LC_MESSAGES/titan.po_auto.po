@@ -1,4 +1,3 @@
-#: plugins_wm2014_skin.xml.h:1 skins_wm2014_skin.xml.h:1 tithek_mainmenu.h:1
 msgid ""
 msgstr ""
 "Project-Id-Version: TitanNit 1.65\n"
@@ -885,6 +884,8 @@ msgid ""
 "All data on this device will be deleted!\n"
 "OK?"
 msgstr ""
+"Alle Daten auf diesem Datenträger werden gelöscht!\n"
+" Ok?"
 
 #: scan.h:1636
 msgid "All new channels added!"
@@ -2934,7 +2935,7 @@ msgstr "Regisseur:"
 
 #: plugins_multiimage_skin.xml.h:3 skins_multiimage_skin.xml.h:3
 msgid "Directory of selected device"
-msgstr ""
+msgstr "Verzeichnis des ausgewählten Datenträgers"
 
 #: httpdfunc.h:3964 skin_default_skin.xml.h:202
 msgid "Dirsort"
@@ -4941,6 +4942,8 @@ msgid ""
 "Image creation running!!!\n"
 "Stop process?"
 msgstr ""
+"Image Erstellung läuft!\n"
+"Vorgang abbrechen?"
 
 #: plugins_multiimage_skin.xml.h:6 skins_multiimage_skin.xml.h:6
 msgid "Image name: "
@@ -6326,7 +6329,7 @@ msgstr "Lade player2.ko mit der noaudiosync Option"
 
 #: plugins_multiimage_skin.xml.h:8 skins_multiimage_skin.xml.h:8
 msgid "No Image installed"
-msgstr ""
+msgstr "Kein Image installiert"
 
 #: httpdfunc.h:5567 stream.h:33
 msgid "No Live Stream running"
@@ -6345,6 +6348,8 @@ msgid ""
 "No MultiImage device found.\n"
 "Create device?"
 msgstr ""
+"Kein MultiImage Datenträger gefunden.\n"
+"Datenträger erstellen?"
 
 #: httpdfunc.h:6239
 msgid "No Tpk Files Found on /tmp Directory."
@@ -6382,7 +6387,7 @@ msgstr "Es wurde keine Konfigurationsdatei gefunden"
 
 #: MultiImage.c:156
 msgid "No device available"
-msgstr ""
+msgstr "Kein Datenträger gefunden"
 
 #: record.h:64
 msgid "No memory"
