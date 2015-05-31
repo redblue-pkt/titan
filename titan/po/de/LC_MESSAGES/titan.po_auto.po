@@ -1,4 +1,3 @@
-#: plugins_wm2014_skin.xml.h:1 skins_wm2014_skin.xml.h:1 tithek_mainmenu.h:1
 msgid ""
 msgstr ""
 "Project-Id-Version: TitanNit 1.65\n"
@@ -5611,7 +5610,7 @@ msgstr "Hauptmenü"
 
 #: plugins_multiimage_skin.xml.h:13 skins_multiimage_skin.xml.h:13
 msgid "Manage MultiImage"
-msgstr ""
+msgstr "MultiImage Verwaltung"
 
 #: skin_default_skin.xml.h:414
 msgid "Manual Search"
@@ -11679,7 +11678,7 @@ msgstr "Schriftarten"
 
 #: plugins_multiimage_skin.xml.h:5 skins_multiimage_skin.xml.h:5
 msgid "format"
-msgstr "formatieren"
+msgstr "Formatieren"
 
 #: tithek.h:887
 msgid "found"
