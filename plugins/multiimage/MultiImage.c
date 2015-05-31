@@ -511,7 +511,7 @@ void start(void)
 {
 	if(Multi_Image_thread != NULL)
 	{
-		if(textbox("MultiImage", _("Image creation running!!!\nStop process?)", _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 500, 200, 0, 0) == 2)
+		if(textbox("MultiImage", _("Image creation running!!!\nStop process?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 500, 200, 0, 0) == 2)
 			return;
 		Multi_Image_thread->aktion = STOP;
 		struct skin* load = getscreen("loading");
