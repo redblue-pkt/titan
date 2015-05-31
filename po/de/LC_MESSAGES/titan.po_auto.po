@@ -885,7 +885,7 @@ msgid ""
 "OK?"
 msgstr ""
 "Alle Daten auf diesem Datenträger werden gelöscht!\n"
-" Ok?"
+"Ok?"
 
 #: scan.h:1636
 msgid "All new channels added!"
