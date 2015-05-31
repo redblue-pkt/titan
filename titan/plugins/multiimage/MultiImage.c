@@ -153,7 +153,7 @@ int no_mdev()
 	fclose(fd);	
 	if(mdev == NULL)
 	{
-		textbox("MultiImage", "No device available", _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 500, 200, 0, 0);
+		textbox("MultiImage", _("No device available"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 500, 200, 0, 0);
 		return 1;
 	}
 	setchoiceboxselection(device, mdev);
@@ -209,7 +209,7 @@ int no_mdev()
 	if(mdev == NULL)
 		return 1;	
 	
-	if(textbox("MultiImage", "All data on this device will be deleted!\nOK?", _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
+	if(textbox("MultiImage", _("All data on this device will be deleted!\nOK?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
 	{
 		free(mdev); mdev = NULL;
 		return 1;
@@ -442,7 +442,7 @@ void multi_main(void)
 	
 	while (mdev == NULL)
 	{
-		if(textbox("MultiImage", "No MultiImage device found.\nCreate device?", _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 500, 200, 0, 0) == 2)
+		if(textbox("MultiImage", _("No MultiImage device found.\nCreate device?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 500, 200, 0, 0) == 2)
 			return;
 		if(no_mdev() != 0)
 			return;		
@@ -511,7 +511,7 @@ void start(void)
 {
 	if(Multi_Image_thread != NULL)
 	{
-		if(textbox("MultiImage", "Image creation running!!!\nStop process?", _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 500, 200, 0, 0) == 2)
+		if(textbox("MultiImage", _("Image creation running!!!\nStop process?)", _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 500, 200, 0, 0) == 2)
 			return;
 		Multi_Image_thread->aktion = STOP;
 		struct skin* load = getscreen("loading");
