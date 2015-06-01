@@ -2313,6 +2313,10 @@ msgstr ""
 msgid "Connection to server lost !"
 msgstr ""
 
+#: plugins_multiimage_skin.xml.h:1 skins_multiimage_skin.xml.h:1
+msgid "Content of selected device"
+msgstr ""
+
 #: skin_default_skin.xml.h:166
 msgid "Contrast"
 msgstr "Contraste"
@@ -2496,7 +2500,7 @@ msgstr ""
 msgid "DI"
 msgstr "D"
 
-#: plugins_multiimage_skin.xml.h:2 skins_multiimage_skin.xml.h:2
+#: plugins_multiimage_skin.xml.h:3 skins_multiimage_skin.xml.h:3
 msgid "DIR"
 msgstr ""
 
@@ -2684,9 +2688,9 @@ msgstr ""
 msgid "Del EPG before scan"
 msgstr "Effacer après scan?"
 
-#: plugins_filemanager_skin.xml.h:2 plugins_multiimage_skin.xml.h:1
+#: plugins_filemanager_skin.xml.h:2 plugins_multiimage_skin.xml.h:2
 #: plugins_tmc_skin.xml.h:2 skins_filemanager_skin.xml.h:2
-#: skins_multiimage_skin.xml.h:1 skins_tmc_skin.xml.h:2
+#: skins_multiimage_skin.xml.h:2 skins_tmc_skin.xml.h:2
 msgid "Delete"
 msgstr "Effacer"
 
@@ -2815,10 +2819,6 @@ msgstr ""
 #: plugins_tmc_skin.xml.h:3 skins_imdbapi_skin.xml.h:2 skins_imdb_skin.xml.h:2
 #: skins_tmc_skin.xml.h:3
 msgid "Director:"
-msgstr ""
-
-#: plugins_multiimage_skin.xml.h:3 skins_multiimage_skin.xml.h:3
-msgid "Directory of selected device"
 msgstr ""
 
 #: httpdfunc.h:3964 skin_default_skin.xml.h:202
@@ -8338,6 +8338,10 @@ msgstr "Séléction de sauvegarde"
 msgid "Select device"
 msgstr ""
 
+#: plugins_multiimage_skin.xml.h:12 skins_multiimage_skin.xml.h:12
+msgid "Selected image"
+msgstr ""
+
 #: plugins_tsSchnitt_skin.xml.h:5 skins_tsSchnitt_skin.xml.h:5
 msgid "Selected:"
 msgstr "Séléction de sauvegarde"
@@ -12428,10 +12432,6 @@ msgstr ""
 
 #: harddisk.h:501
 msgid "select the media drive from Device List for fsck"
-msgstr ""
-
-#: plugins_multiimage_skin.xml.h:12 skins_multiimage_skin.xml.h:12
-msgid "selected Image"
 msgstr ""
 
 #: webif_help.h:82
