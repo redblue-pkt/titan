@@ -389,7 +389,7 @@ int multiimage_install(char* imagefile, char* mdev)
 			break;
 		if(rcret == getrcconfigint("rcred", NULL))
 		{
-			textbox("Message", _("The install process will look in /tmp for an image.\n Please copy the image to /tmp as zip file."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, 800, 200, 0, 0);			
+			textbox("Message", _("The install process will look in /tmp for an image.\n Please copy the image to /tmp as zip file."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 800, 200, 0, 0);			
 			path3 = ostrcat(path2, "/", 0, 0);
 			path3 = ostrcat(path3, imagename->ret, 1, 0);
 			if(file_exist(path3) == 1)
