@@ -9404,10 +9404,8 @@ msgid "Sure to cancel the cut process?"
 msgstr "Soll der Schnitt wirklich abgebrochen werden?"
 
 #: MultiImage.c:318
-msgid ""
-"Sure to delete Image?\n"
-" "
-msgstr "Soll dieses Image wirklich gelöscht werden?"
+msgid "Sure to delete Image?\n"
+msgstr ""
 
 #: httpdfunc.h:5349
 msgid "Svn Changelog"
@@ -13657,3 +13655,8 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
+
+#~ msgid ""
+#~ "Sure to delete Image?\n"
+#~ " "
+#~ msgstr "Soll dieses Image wirklich gelöscht werden?"

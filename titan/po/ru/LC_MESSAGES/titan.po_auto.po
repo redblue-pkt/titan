@@ -9208,9 +9208,7 @@ msgid "Sure to cancel the cut process?"
 msgstr "Действительно отменить?"
 
 #: MultiImage.c:318
-msgid ""
-"Sure to delete Image?\n"
-" "
+msgid "Sure to delete Image?\n"
 msgstr ""
 
 #: httpdfunc.h:5349
