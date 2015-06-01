@@ -237,7 +237,8 @@ int no_mdev()
 	mkdir(cmd, 777);
 	free(cmd); cmd = NULL;
 	free(path); path = NULL;
-	free(mdev); mdev = NULL;	
+	free(mdev); mdev = NULL;
+	system ("echo MultiImage > /dev/vfd");	
 	
 	return 0;
 }
