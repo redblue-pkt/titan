@@ -3141,7 +3141,7 @@ msgstr "Memoria disponible libre (KB)"
 msgid "ERROR"
 msgstr "!!! ERROR !!!"
 
-#: MultiImage.c:396
+#: MultiImage.c:397
 msgid ""
 "ERROR\n"
 "Image already present!"
@@ -3228,8 +3228,8 @@ msgstr "ERROR: No se puede establecer marcadores en este archivo"
 #: menu.h:984 menu.h:986 movie4k.h:36 movie4k.h:48 movie4k.h:92 movie4k.h:399
 #: movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78 movshare.h:157
 #: movshare.h:163 MultiImage.c:22 MultiImage.c:156 MultiImage.c:212
-#: MultiImage.c:224 MultiImage.c:319 MultiImage.c:396 MultiImage.c:399
-#: MultiImage.c:424 MultiImage.c:445 MultiImage.c:514 myvideo.h:86
+#: MultiImage.c:224 MultiImage.c:319 MultiImage.c:397 MultiImage.c:400
+#: MultiImage.c:425 MultiImage.c:446 MultiImage.c:515 myvideo.h:86
 #: networkbrowser.h:966 networkbrowser.h:1027 networkbrowser.h:1031
 #: networkbrowser.h:1033 networkbrowser.h:1043 networkbrowser.h:1047
 #: networkbrowser.h:1211 networkbrowser.h:1765 networkbrowser.h:1772
@@ -4749,14 +4749,14 @@ msgstr ""
 msgid "INFO"
 msgstr "Informacion"
 
-#: MultiImage.c:424
+#: MultiImage.c:425
 msgid ""
 "INFO\n"
 "Extracting process is running in background.\n"
 "A message will be shown when finished."
 msgstr ""
 
-#: MultiImage.c:399
+#: MultiImage.c:400
 msgid ""
 "INFO\n"
 "Extracting will take a few minutes ..."
@@ -4826,7 +4826,7 @@ msgstr ""
 msgid "Image"
 msgstr ""
 
-#: MultiImage.c:514
+#: MultiImage.c:515
 msgid ""
 "Image creation running!!!\n"
 "Stop process?"
@@ -5810,7 +5810,7 @@ msgstr "Lista de Menus"
 #: mediadb.h:1477 mediadbsettings.h:95 menu.h:160 menu.h:215 movie4k.h:36
 #: movie4k.h:48 movie4k.h:92 movie4k.h:399 movreel.h:30 movreel.h:137
 #: movshare.h:34 movshare.h:78 movshare.h:157 movshare.h:163 MultiImage.c:22
-#: MultiImage.c:224 MultiImage.c:396 MultiImage.c:399 MultiImage.c:424
+#: MultiImage.c:224 MultiImage.c:397 MultiImage.c:400 MultiImage.c:425
 #: myvideo.h:86 networkbrowser.h:966 networkbrowser.h:1027
 #: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
 #: networkbrowser.h:1047 networkbrowser.h:1211 networkbrowser.h:1765
@@ -6231,7 +6231,7 @@ msgstr ""
 "No Directorio MediaDB encontrado\n"
 "Pulse Aceptar para crearla"
 
-#: MultiImage.c:445
+#: MultiImage.c:446
 msgid ""
 "No MultiImage device found.\n"
 "Create device?"
@@ -6380,20 +6380,20 @@ msgstr "Ö"
 #: menu.h:986 movie4k.h:36 movie4k.h:48 movie4k.h:92 movie4k.h:399
 #: movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78 movshare.h:157
 #: movshare.h:163 MultiImage.c:22 MultiImage.c:156 MultiImage.c:212
-#: MultiImage.c:224 MultiImage.c:319 MultiImage.c:396 MultiImage.c:399
-#: MultiImage.c:424 MultiImage.c:445 MultiImage.c:514 myvideo.h:86
-#: networkbrowser.h:966 networkbrowser.h:1027 networkbrowser.h:1031
-#: networkbrowser.h:1033 networkbrowser.h:1043 networkbrowser.h:1047
-#: networkbrowser.h:1211 networkbrowser.h:1765 networkbrowser.h:1772
-#: networkbrowser.h:1777 networkbrowser.h:1929 network.h:263 network.h:271
-#: network.h:284 network.h:299 network.h:335 network.h:436 network.h:577
-#: network.h:785 network.h:793 network.h:819 network.h:823 network.h:877
-#: network.h:884 network.h:906 newsletter.h:252 newsletter.h:292 novamov.h:35
-#: novamov.h:80 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105 panel_main.h:29
-#: panel_main.h:135 panel_settings_wizard.h:6 played.h:30 played.h:84
-#: played.h:90 played.h:102 played.h:114 played.h:171 player.h:108 play.h:497
-#: play.h:614 play.h:1284 play.h:1290 play.h:1299 play.h:1300 play.h:1509
-#: play.h:1725 play.h:1736 plugins_dlna_skin.xml.h:7
+#: MultiImage.c:224 MultiImage.c:319 MultiImage.c:391 MultiImage.c:397
+#: MultiImage.c:400 MultiImage.c:425 MultiImage.c:446 MultiImage.c:515
+#: myvideo.h:86 networkbrowser.h:966 networkbrowser.h:1027
+#: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
+#: networkbrowser.h:1047 networkbrowser.h:1211 networkbrowser.h:1765
+#: networkbrowser.h:1772 networkbrowser.h:1777 networkbrowser.h:1929
+#: network.h:263 network.h:271 network.h:284 network.h:299 network.h:335
+#: network.h:436 network.h:577 network.h:785 network.h:793 network.h:819
+#: network.h:823 network.h:877 network.h:884 network.h:906 newsletter.h:252
+#: newsletter.h:292 novamov.h:35 novamov.h:80 nowvideo.h:44 nowvideo.h:99
+#: nowvideo.h:105 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
+#: played.h:30 played.h:84 played.h:90 played.h:102 played.h:114 played.h:171
+#: player.h:108 play.h:497 play.h:614 play.h:1284 play.h:1290 play.h:1299
+#: play.h:1300 play.h:1509 play.h:1725 play.h:1736 plugins_dlna_skin.xml.h:7
 #: plugins_facebook_skin.xml.h:3 plugins_mboxinfo_skin.xml.h:2
 #: plugins_mc_skin.xml.h:35 plugins_optimize_skin.xml.h:2
 #: plugins_rgui_skin.xml.h:2 plugins_sudoku_skin.xml.h:13
@@ -9568,6 +9568,12 @@ msgstr ""
 #: tithek_global.h:258 tithek.h:2206
 msgid "The hoster is not yet supported !"
 msgstr "El proveedor de alojamiento no se admite en la actualidad!"
+
+#: MultiImage.c:391
+msgid ""
+"The install process will look in /tmp for an image.\n"
+" Please copy the image to /tmp as zip file."
+msgstr ""
 
 #: divxstage.h:150 faststream.h:79 faststream.h:90 faststream.h:102
 #: faststream.h:166 filenuke.h:94 filenuke.h:105 filenuke.h:117 filenuke.h:190
