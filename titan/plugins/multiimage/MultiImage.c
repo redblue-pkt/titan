@@ -20,7 +20,7 @@ void multiimage_panel_thread()
 	
 	struct skin* pluginnode = NULL;
 	void (*startplugin)(void);
-	printf("+++++++++++++ multiimage_panel_thread");
+
 	if (Multi_Image_thread == NULL)
 		return;
 	
@@ -42,7 +42,7 @@ void multiimage_panel_thread()
 void multiimage_thread()
 {
 	char* cmd = NULL;
-	printf("+++++++++++++ multiimage_thread");
+
 	while (Multi_Image_thread->aktion != STOP)
 	{
 		sleep(3);
