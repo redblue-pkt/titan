@@ -224,7 +224,7 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 			if(mbox1 != NULL && mbox1->param != NULL && mbox1->param1 != NULL)
 			{
 				debug(130, "file: %s", mbox1->name);
-				if(ostrstr(mbox1->name, _("It may only be a package to be installed. If they want to install another package of this section, they only remove the installed packet. Is not the plugin after reinstalling the software TitanNit in TitanNit Menu Visible then perform an update by Tpk to: ")) == NULL)
+				if(ostrstr(mbox1->name, _("There may only be one package installed from this section. To install another package from this section, remove the installed one. If the package is not visible after a software update, perform a TPK update to: ")) == NULL)
 				{
 					installpath = getinstallpath(mbox1->param2, mbox1->param3);
 					if(installpath != NULL)
@@ -251,7 +251,7 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 							}
 							else if(tpkret == 2)
 							{
-								textbox(_("Tpk Install Info - Install ERROR"), _("It may only be a package to be installed. If they want to install another package of this section, they only remove the installed packet. Is not the plugin after reinstalling the software TitanNit in TitanNit Menu Visible then perform an update by Tpk to: "), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 2);
+								textbox(_("Tpk Install Info - Install ERROR"), _("There may only be one package installed from this section. To install another package from this section, remove the installed one. If the package is not visible after a software update, perform a TPK update to: "), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 2);
 							}
 							else
 							{
@@ -407,7 +407,7 @@ void screenextensions(int mode, char* path, char* defentry, int first)
 					if(ret == 0) 
 						log = gettpklog(installpath, 0);
 					else if(ret == 2)
-						log = ostrcat(_("It may only be a package to be installed. If they want to install another package of this section, they only remove the installed packet. Is not the plugin after reinstalling the software TitanNit in TitanNit Menu Visible then perform an update by Tpk to: "), NULL, 0, 0);
+						log = ostrcat(_("There may only be one package installed from this section. To install another package from this section, remove the installed one. If the package is not visible after a software update, perform a TPK update to: "), NULL, 0, 0);
 					else
 						log = gettpklog(installpath, 1);
 					textbox(_(text2), log, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 1000, 600, 0, 0);

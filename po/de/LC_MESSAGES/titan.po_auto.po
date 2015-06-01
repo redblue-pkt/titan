@@ -1,4 +1,3 @@
-#: plugins_wm2014_skin.xml.h:1 skins_wm2014_skin.xml.h:1 tithek_mainmenu.h:1
 msgid ""
 msgstr ""
 "Project-Id-Version: TitanNit 1.65\n"
@@ -3929,7 +3928,7 @@ msgstr ""
 
 #: plugins_multiimage_skin.xml.h:6 skins_multiimage_skin.xml.h:6
 msgid "Format"
-msgstr ""
+msgstr "Formatieren"
 
 #: skin_default_skin.xml.h:271
 msgid "Format HDD"
@@ -4752,7 +4751,7 @@ msgstr "Höchsttemperatur: "
 
 #: plugins_multiimage_skin.xml.h:7 skins_multiimage_skin.xml.h:7
 msgid "Hint: Use TEXT button for editing the image name"
-msgstr ""
+msgstr "Hinweis: Benutzen Sie die TEXT Taste, um den Image Namen zu bearbeiten"
 
 #: epgsearch.h:244
 msgid "History"
@@ -5097,7 +5096,7 @@ msgstr "Eingabe der Zahlen 1 bis 9"
 
 #: plugins_multiimage_skin.xml.h:9 skins_multiimage_skin.xml.h:9
 msgid "Install"
-msgstr ""
+msgstr "Installieren"
 
 #: mc_dateibrowser.h:36
 msgid "Install File Manager Tpk first !"
@@ -6400,7 +6399,7 @@ msgstr "Kein Datenträger gefunden"
 
 #: plugins_multiimage_skin.xml.h:10 skins_multiimage_skin.xml.h:10
 msgid "No image installed"
-msgstr ""
+msgstr "Kein Image installiert"
 
 #: record.h:64
 msgid "No memory"
@@ -9709,6 +9708,8 @@ msgid ""
 "The install process will look in /tmp for an image.\n"
 "Please copy the zip file to /tmp."
 msgstr ""
+"Der Installations Vorgang sucht in /tmp nach einem Image.\n"
+"Bitte kopieren Sie die zip Datei nach /tmp."
 
 #: divxstage.h:150 faststream.h:79 faststream.h:90 faststream.h:102
 #: faststream.h:166 filenuke.h:94 filenuke.h:105 filenuke.h:117 filenuke.h:190
