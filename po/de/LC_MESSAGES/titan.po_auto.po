@@ -2423,6 +2423,10 @@ msgstr "Verbindungs Fehler, versuchen Sie es später nocheinmal"
 msgid "Connection to server lost !"
 msgstr "Verbindung zum Server verloren!"
 
+#: plugins_multiimage_skin.xml.h:1 skins_multiimage_skin.xml.h:1
+msgid "Content of selected device"
+msgstr ""
+
 #: skin_default_skin.xml.h:166
 msgid "Contrast"
 msgstr "Kontrast"
@@ -2606,7 +2610,7 @@ msgstr "Beschreibung"
 msgid "DI"
 msgstr ""
 
-#: plugins_multiimage_skin.xml.h:2 skins_multiimage_skin.xml.h:2
+#: plugins_multiimage_skin.xml.h:3 skins_multiimage_skin.xml.h:3
 msgid "DIR"
 msgstr ""
 
@@ -2798,9 +2802,9 @@ msgstr ""
 msgid "Del EPG before scan"
 msgstr "Lösche EPG vor der Suche"
 
-#: plugins_filemanager_skin.xml.h:2 plugins_multiimage_skin.xml.h:1
+#: plugins_filemanager_skin.xml.h:2 plugins_multiimage_skin.xml.h:2
 #: plugins_tmc_skin.xml.h:2 skins_filemanager_skin.xml.h:2
-#: skins_multiimage_skin.xml.h:1 skins_tmc_skin.xml.h:2
+#: skins_multiimage_skin.xml.h:2 skins_tmc_skin.xml.h:2
 msgid "Delete"
 msgstr "Löschen"
 
@@ -2934,10 +2938,6 @@ msgstr "Regisseur"
 #: skins_tmc_skin.xml.h:3
 msgid "Director:"
 msgstr "Regisseur:"
-
-#: plugins_multiimage_skin.xml.h:3 skins_multiimage_skin.xml.h:3
-msgid "Directory of selected device"
-msgstr "Verzeichnis des ausgewählten Datenträgers"
 
 #: httpdfunc.h:3964 skin_default_skin.xml.h:202
 msgid "Dirsort"
@@ -8643,6 +8643,10 @@ msgstr "Sicherung auswählen:"
 msgid "Select device"
 msgstr ""
 
+#: plugins_multiimage_skin.xml.h:12 skins_multiimage_skin.xml.h:12
+msgid "Selected image"
+msgstr ""
+
 #: plugins_tsSchnitt_skin.xml.h:5 skins_tsSchnitt_skin.xml.h:5
 msgid "Selected:"
 msgstr "ausgewählt:"
@@ -12807,10 +12811,6 @@ msgstr "Auswahl des Datenträgers zur Formatierung"
 msgid "select the media drive from Device List for fsck"
 msgstr "Auswahl des Datenträgers zur Dateisystemüberprüfung"
 
-#: plugins_multiimage_skin.xml.h:12 skins_multiimage_skin.xml.h:12
-msgid "selected Image"
-msgstr ""
-
 #: webif_help.h:82
 msgid "serviceinfo"
 msgstr "Sender Info"
@@ -13662,3 +13662,6 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
+
+#~ msgid "Directory of selected device"
+#~ msgstr "Verzeichnis des ausgewählten Datenträgers"
