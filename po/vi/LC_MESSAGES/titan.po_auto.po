@@ -3085,7 +3085,7 @@ msgstr "Freier EPG Speicher"
 msgid "ERROR"
 msgstr "Lỗi khởi động"
 
-#: MultiImage.c:398
+#: MultiImage.c:397
 msgid ""
 "ERROR\n"
 "Image already present!"
@@ -3169,9 +3169,8 @@ msgstr "Lỗi… không thể thiết lập nhà sản xuất trong file này"
 #: mediadb.h:1477 mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215
 #: menu.h:984 menu.h:986 movie4k.h:36 movie4k.h:48 movie4k.h:92 movie4k.h:399
 #: movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78 movshare.h:157
-#: movshare.h:163 MultiImage.c:22 MultiImage.c:156 MultiImage.c:212
-#: MultiImage.c:224 MultiImage.c:320 MultiImage.c:398 MultiImage.c:401
-#: MultiImage.c:426 MultiImage.c:447 MultiImage.c:516 myvideo.h:86
+#: movshare.h:163 MultiImage.c:156 MultiImage.c:212 MultiImage.c:224
+#: MultiImage.c:320 MultiImage.c:446 MultiImage.c:516 myvideo.h:86
 #: networkbrowser.h:966 networkbrowser.h:1027 networkbrowser.h:1031
 #: networkbrowser.h:1033 networkbrowser.h:1043 networkbrowser.h:1047
 #: networkbrowser.h:1211 networkbrowser.h:1765 networkbrowser.h:1772
@@ -4652,14 +4651,14 @@ msgstr ""
 msgid "INFO"
 msgstr ""
 
-#: MultiImage.c:426
+#: MultiImage.c:425
 msgid ""
 "INFO\n"
 "Extracting process is running in background.\n"
 "A message will be shown when finished."
 msgstr ""
 
-#: MultiImage.c:401
+#: MultiImage.c:400
 msgid ""
 "INFO\n"
 "Extracting will take a few minutes ..."
@@ -5698,7 +5697,7 @@ msgstr ""
 #: mediadb.h:1477 mediadbsettings.h:95 menu.h:160 menu.h:215 movie4k.h:36
 #: movie4k.h:48 movie4k.h:92 movie4k.h:399 movreel.h:30 movreel.h:137
 #: movshare.h:34 movshare.h:78 movshare.h:157 movshare.h:163 MultiImage.c:22
-#: MultiImage.c:224 MultiImage.c:398 MultiImage.c:401 MultiImage.c:426
+#: MultiImage.c:224 MultiImage.c:397 MultiImage.c:400 MultiImage.c:425
 #: myvideo.h:86 networkbrowser.h:966 networkbrowser.h:1027
 #: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
 #: networkbrowser.h:1047 networkbrowser.h:1211 networkbrowser.h:1765
@@ -6119,7 +6118,7 @@ msgstr ""
 " Không tìm thấy thư mục media!\n"
 " ấn Ok để tạo!"
 
-#: MultiImage.c:447
+#: MultiImage.c:446
 msgid ""
 "No MultiImage device found.\n"
 "Create device?"
@@ -6268,8 +6267,8 @@ msgstr "E"
 #: menu.h:986 movie4k.h:36 movie4k.h:48 movie4k.h:92 movie4k.h:399
 #: movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78 movshare.h:157
 #: movshare.h:163 MultiImage.c:22 MultiImage.c:156 MultiImage.c:212
-#: MultiImage.c:224 MultiImage.c:320 MultiImage.c:392 MultiImage.c:398
-#: MultiImage.c:401 MultiImage.c:426 MultiImage.c:447 MultiImage.c:516
+#: MultiImage.c:224 MultiImage.c:320 MultiImage.c:397 MultiImage.c:400
+#: MultiImage.c:425 MultiImage.c:446 MultiImage.c:460 MultiImage.c:516
 #: myvideo.h:86 networkbrowser.h:966 networkbrowser.h:1027
 #: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
 #: networkbrowser.h:1047 networkbrowser.h:1211 networkbrowser.h:1765
@@ -9425,7 +9424,7 @@ msgstr ""
 msgid "The hoster is not yet supported !"
 msgstr "Máy chủ chưa được hỗ trợ !"
 
-#: MultiImage.c:392
+#: MultiImage.c:460
 msgid ""
 "The install process will look in /tmp for an image.\n"
 " Please copy the image to /tmp as zip file."
