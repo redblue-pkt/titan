@@ -13,16 +13,11 @@ int pluginversion = 999999;
 char* imagepath = NULL;
 
 struct stimerthread* Multi_Image_thread = NULL;
-struct stimerthread* Multi_Image_Panel_thread = NULL;
 
 void multiimage_panel_thread()
 {
-	
 	struct skin* pluginnode = NULL;
 	void (*startplugin)(void);
-
-	if (Multi_Image_thread == NULL)
-		return;
 	
 	pluginnode = getplugin("MultiImage");
 	if(pluginnode != NULL)
@@ -35,14 +30,11 @@ void multiimage_panel_thread()
 			resettvpic();
 		}
 	}
-	Multi_Image_Panel_thread->aktion = STOP;
-	Multi_Image_Panel_thread = NULL; 
 }
 
 void multiimage_thread()
 {
 	char* cmd = NULL;
-
 	while (Multi_Image_thread->aktion != STOP)
 	{
 		sleep(3);
@@ -62,8 +54,10 @@ void multiimage_thread()
 		free(cmd); cmd = NULL;
 		
 	}
-	Multi_Image_Panel_thread = addtimer(&multiimage_panel_thread, START, 10000, 1, NULL, NULL, NULL);
-	Multi_Image_thread->aktion = STOP;
+	else
+	{
+		//addtimer(&multiimage_panel_thread, START, 10000, 1, NULL, NULL, NULL);
+	}
 	Multi_Image_thread = NULL;
 }
 
