@@ -19,7 +19,7 @@ void multiimage_thread()
 		sleep(3);
 		if(file_exist("/tmp/multiende") == 1)
 		{
-			textbox(_("Message"), _("INFO\nImage extracted"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 500, 200, 0, 0);
+			textbox(_("Message"), _("INFO\nImage extracted"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 500, 200, 0, 0);
 			remove("/tmp/multiende");
 			break;
 		}
@@ -389,16 +389,15 @@ int multiimage_install(char* imagefile, char* mdev)
 			break;
 		if(rcret == getrcconfigint("rcred", NULL))
 		{
-			textbox("Message", _("The install process will look in /tmp for an image.\n Please copy the image to /tmp as zip file."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 800, 200, 0, 0);			
 			path3 = ostrcat(path2, "/", 0, 0);
 			path3 = ostrcat(path3, imagename->ret, 1, 0);
 			if(file_exist(path3) == 1)
 			{
 				free(path3); path3=NULL;
-				textbox(_("Message"), _("ERROR\nImage already present!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 500, 200, 0, 0);
+				textbox(_("Message"), _("ERROR\nImage already present!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 500, 200, 0, 0);
 				continue;
 			}
-			textbox(_("Message"), _("INFO\nExtracting will take a few minutes ..."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+			textbox(_("Message"), _("INFO\nExtracting will take a few minutes ..."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 			iname = ostrcat(imagename->ret, NULL, 1, 0);
 			rc = 1;
 			break;
@@ -423,7 +422,7 @@ int multiimage_install(char* imagefile, char* mdev)
 		system(cmd);
 		free(cmd); cmd=NULL;
 		free(temp); temp=NULL;
-		textbox(_("Message"), _("INFO\nExtracting process is running in background.\nA message will be shown when finished."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 250, 10, 0);
+		textbox(_("Message"), _("INFO\nExtracting process is running in background.\nA message will be shown when finished."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 250, 10, 0);
 		
 		Multi_Image_thread = addtimer(&multiimage_thread, START, 10000, 1, NULL, NULL, NULL);
 	}
@@ -458,6 +457,7 @@ void multi_main(void)
 			break;
 		if(ret == 2)
 		{
+			textbox("Message", _("The install process will look in /tmp for an image.\n Please copy the image to /tmp as zip file."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 800, 200, 0, 0);					
 			imagefile = screendir("/tmp", "*.zip", NULL, NULL, NULL, NULL, 0, "SELECT", 0, NULL, 0, NULL, 0, 1200, 0, 600, 0, 0);
 			if(imagefile != NULL)
 			{
