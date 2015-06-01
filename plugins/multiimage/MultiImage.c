@@ -457,7 +457,7 @@ void multi_main(void)
 			break;
 		if(ret == 2)
 		{
-			textbox("Message", _("The install process will look in /tmp for an image.\n Please copy the image to /tmp as zip file."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 800, 200, 0, 0);					
+			textbox("Message", _("The install process will look in /tmp for an image.\nPlease copy the zip file to /tmp."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 150, 0, 0);					
 			imagefile = screendir("/tmp", "*.zip", NULL, NULL, NULL, NULL, 0, "SELECT", 0, NULL, 0, NULL, 0, 1200, 0, 600, 0, 0);
 			if(imagefile != NULL)
 			{
