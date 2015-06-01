@@ -9427,7 +9427,7 @@ msgstr "Máy chủ chưa được hỗ trợ !"
 #: MultiImage.c:460
 msgid ""
 "The install process will look in /tmp for an image.\n"
-" Please copy the image to /tmp as zip file."
+"Please copy the zip file to /tmp."
 msgstr ""
 
 #: divxstage.h:150 faststream.h:79 faststream.h:90 faststream.h:102
