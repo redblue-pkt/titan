@@ -3176,7 +3176,7 @@ msgstr "Frei zu verbleibender Speicher (KB)"
 msgid "ERROR"
 msgstr "!!! FEHLER !!!"
 
-#: MultiImage.c:397
+#: MultiImage.c:398
 msgid ""
 "ERROR\n"
 "Image already present!"
@@ -3265,8 +3265,8 @@ msgstr "FEHLER: In dieser Datei kann kein Marker gesetzt werden"
 #: menu.h:984 menu.h:986 movie4k.h:36 movie4k.h:48 movie4k.h:92 movie4k.h:399
 #: movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78 movshare.h:157
 #: movshare.h:163 MultiImage.c:22 MultiImage.c:156 MultiImage.c:212
-#: MultiImage.c:224 MultiImage.c:319 MultiImage.c:397 MultiImage.c:400
-#: MultiImage.c:425 MultiImage.c:446 MultiImage.c:515 myvideo.h:86
+#: MultiImage.c:224 MultiImage.c:320 MultiImage.c:398 MultiImage.c:401
+#: MultiImage.c:426 MultiImage.c:447 MultiImage.c:516 myvideo.h:86
 #: networkbrowser.h:966 networkbrowser.h:1027 networkbrowser.h:1031
 #: networkbrowser.h:1033 networkbrowser.h:1043 networkbrowser.h:1047
 #: networkbrowser.h:1211 networkbrowser.h:1765 networkbrowser.h:1772
@@ -4852,7 +4852,7 @@ msgstr ""
 msgid "INFO"
 msgstr ""
 
-#: MultiImage.c:425
+#: MultiImage.c:426
 msgid ""
 "INFO\n"
 "Extracting process is running in background.\n"
@@ -4862,7 +4862,7 @@ msgstr ""
 "Das Entpacken wird im Hintergrund ausgeführt.\n"
 "Nach Beendigung bekommen sie eine Meldung."
 
-#: MultiImage.c:400
+#: MultiImage.c:401
 msgid ""
 "INFO\n"
 "Extracting will take a few minutes ..."
@@ -4938,7 +4938,7 @@ msgstr ""
 msgid "Image"
 msgstr ""
 
-#: MultiImage.c:515
+#: MultiImage.c:516
 msgid ""
 "Image creation running!!!\n"
 "Stop process?"
@@ -5923,7 +5923,7 @@ msgstr "Menüliste"
 #: mediadb.h:1477 mediadbsettings.h:95 menu.h:160 menu.h:215 movie4k.h:36
 #: movie4k.h:48 movie4k.h:92 movie4k.h:399 movreel.h:30 movreel.h:137
 #: movshare.h:34 movshare.h:78 movshare.h:157 movshare.h:163 MultiImage.c:22
-#: MultiImage.c:224 MultiImage.c:397 MultiImage.c:400 MultiImage.c:425
+#: MultiImage.c:224 MultiImage.c:398 MultiImage.c:401 MultiImage.c:426
 #: myvideo.h:86 networkbrowser.h:966 networkbrowser.h:1027
 #: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
 #: networkbrowser.h:1047 networkbrowser.h:1211 networkbrowser.h:1765
@@ -6344,7 +6344,7 @@ msgstr ""
 "Kein MediaDB Verzeichnis gefunden!\n"
 "-OK- um es zu erstellen"
 
-#: MultiImage.c:446
+#: MultiImage.c:447
 msgid ""
 "No MultiImage device found.\n"
 "Create device?"
@@ -6495,8 +6495,8 @@ msgstr "Ö"
 #: menu.h:986 movie4k.h:36 movie4k.h:48 movie4k.h:92 movie4k.h:399
 #: movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78 movshare.h:157
 #: movshare.h:163 MultiImage.c:22 MultiImage.c:156 MultiImage.c:212
-#: MultiImage.c:224 MultiImage.c:319 MultiImage.c:391 MultiImage.c:397
-#: MultiImage.c:400 MultiImage.c:425 MultiImage.c:446 MultiImage.c:515
+#: MultiImage.c:224 MultiImage.c:320 MultiImage.c:392 MultiImage.c:398
+#: MultiImage.c:401 MultiImage.c:426 MultiImage.c:447 MultiImage.c:516
 #: myvideo.h:86 networkbrowser.h:966 networkbrowser.h:1027
 #: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
 #: networkbrowser.h:1047 networkbrowser.h:1211 networkbrowser.h:1765
@@ -9403,7 +9403,7 @@ msgstr ""
 msgid "Sure to cancel the cut process?"
 msgstr "Soll der Schnitt wirklich abgebrochen werden?"
 
-#: MultiImage.c:318
+#: MultiImage.c:319
 msgid "Sure to delete Image?\n"
 msgstr "Soll dieses Image wirklich gelöscht werden?\n"
 
@@ -9692,7 +9692,7 @@ msgstr ""
 msgid "The hoster is not yet supported !"
 msgstr "Der Anbieter wird zur Zeit nicht unterstützt!"
 
-#: MultiImage.c:391
+#: MultiImage.c:392
 msgid ""
 "The install process will look in /tmp for an image.\n"
 " Please copy the image to /tmp as zip file."
