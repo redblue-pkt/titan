@@ -10,10 +10,39 @@ int pluginaktiv = 0;
 //int pluginversion = PLUGINVERSION;
 int pluginversion = 999999;
 
+char* imagepath = NULL;
+
 struct stimerthread* Multi_Image_thread = NULL;
+struct stimerthread* Multi_Image_Panel_thread = NULL;
+
+void multiimage_panel_thread()
+{
+	
+	struct skin* pluginnode = NULL;
+	void (*startplugin)(void);
+	printf("+++++++++++++ multiimage_panel_thread");
+	if (Multi_Image_thread == NULL)
+		return;
+	
+	pluginnode = getplugin("MultiImage");
+	if(pluginnode != NULL)
+	{
+		startplugin = dlsym(pluginnode->pluginhandle, "start");
+		if(startplugin != NULL)
+		{
+			resettvpic();
+			startplugin();
+			resettvpic();
+		}
+	}
+	Multi_Image_Panel_thread->aktion = STOP;
+	Multi_Image_Panel_thread = NULL; 
+}
 
 void multiimage_thread()
 {
+	char* cmd = NULL;
+	printf("+++++++++++++ multiimage_thread");
 	while (Multi_Image_thread->aktion != STOP)
 	{
 		sleep(3);
@@ -28,7 +57,13 @@ void multiimage_thread()
 	{
 		system("killall multi_unpack.sh");
 		system("killall ubireader_extract_files");
+		cmd = ostrcat("rm -r ",imagepath, 0, 0);
+		system(cmd);
+		free(cmd); cmd = NULL;
+		
 	}
+	Multi_Image_Panel_thread = addtimer(&multiimage_panel_thread, START, 10000, 1, NULL, NULL, NULL);
+	Multi_Image_thread->aktion = STOP;
 	Multi_Image_thread = NULL;
 }
 
@@ -408,6 +443,11 @@ int multiimage_install(char* imagefile, char* mdev)
 	clearscreen(multiinstall);
 	if(rc == 1)
 	{
+		if(imagepath != NULL)
+			free(imagepath);
+		imagepath = NULL;
+		imagepath = ostrcat(path2, "/", 0, 0);
+		imagepath = ostrcat(imagepath, iname, 1, 0);
 		temp = createpluginpath("/multiimage/ubireader/ubi_reader-master/scripts/ubireader_extract_files", 0);
 		cmd = createpluginpath("/multiimage/multi_unpack.sh", 0);
 		cmd = ostrcat(cmd, " ", 1, 0);
