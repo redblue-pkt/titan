@@ -1,3 +1,4 @@
+#: plugins_wm2014_skin.xml.h:1 skins_wm2014_skin.xml.h:1 tithek_mainmenu.h:1
 msgid ""
 msgstr ""
 "Project-Id-Version: TitanNit 1.65\n"
@@ -5188,18 +5189,6 @@ msgstr ""
 msgid "Is this Videomode ok ?"
 msgstr "Ist dieser Videomodus ok?"
 
-#: extensions.h:227 extensions.h:254 extensions.h:410
-msgid ""
-"It may only be a package to be installed. If they want to install another "
-"package of this section, they only remove the installed packet. Is not the "
-"plugin after reinstalling the software TitanNit in TitanNit Menu Visible "
-"then perform an update by Tpk to: "
-msgstr ""
-"Wenn Sie ein anderes Paket aus dieser Sektion installieren wollen, entfernen "
-"Sie zuerst das installierte Paket. Ist das gewünschte Plugin nach einer "
-"Neuinstallation der TitanNit Software im TitanNit Menü nicht sichtbar, dann "
-"führen Sie bitte eine TPK Aktualisierung durch. "
-
 #: skin_default_skin.xml.h:382
 msgid "Italian"
 msgstr "Italiano"
@@ -9734,7 +9723,8 @@ msgstr "Die gewünschte Seite wurde nicht gefunden, Datei vom Hoster entfernt"
 msgid "The video no longer exists"
 msgstr "Dieses Video existiert nicht mehr."
 
-#: httpdfunc.h:6138 tpk.h:3010
+#: extensions.h:227 extensions.h:254 extensions.h:410 httpdfunc.h:6138
+#: tpk.h:3010
 msgid ""
 "There may only be one package installed from this section. To install "
 "another package from this section, remove the installed one. If the package "
@@ -13672,3 +13662,14 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
+
+#~ msgid ""
+#~ "It may only be a package to be installed. If they want to install another "
+#~ "package of this section, they only remove the installed packet. Is not "
+#~ "the plugin after reinstalling the software TitanNit in TitanNit Menu "
+#~ "Visible then perform an update by Tpk to: "
+#~ msgstr ""
+#~ "Wenn Sie ein anderes Paket aus dieser Sektion installieren wollen, "
+#~ "entfernen Sie zuerst das installierte Paket. Ist das gewünschte Plugin "
+#~ "nach einer Neuinstallation der TitanNit Software im TitanNit Menü nicht "
+#~ "sichtbar, dann führen Sie bitte eine TPK Aktualisierung durch. "

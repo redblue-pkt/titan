@@ -5014,17 +5014,6 @@ msgstr ""
 msgid "Is this Videomode ok ?"
 msgstr "Is deze beeld instelling ok?"
 
-#: extensions.h:227 extensions.h:254 extensions.h:410
-msgid ""
-"It may only be a package to be installed. If they want to install another "
-"package of this section, they only remove the installed packet. Is not the "
-"plugin after reinstalling the software TitanNit in TitanNit Menu Visible "
-"then perform an update by Tpk to: "
-msgstr ""
-"Er mag slechts 1 plugin uit deze sectie geïnstalleerd worden, wilt u een "
-"andere selecteren zult u eerst een geïnstalleerde plugin moeten verwijderen. "
-"Is de plugin niet in het TitanNit menu zichtbaar voer dan een TPK update uit:"
-
 #: skin_default_skin.xml.h:382
 msgid "Italian"
 msgstr ""
@@ -9522,7 +9511,8 @@ msgstr ""
 msgid "The video no longer exists"
 msgstr ""
 
-#: httpdfunc.h:6138 tpk.h:3010
+#: extensions.h:227 extensions.h:254 extensions.h:410 httpdfunc.h:6138
+#: tpk.h:3010
 msgid ""
 "There may only be one package installed from this section. To install "
 "another package from this section, remove the installed one. If the package "
@@ -13420,3 +13410,14 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
+
+#~ msgid ""
+#~ "It may only be a package to be installed. If they want to install another "
+#~ "package of this section, they only remove the installed packet. Is not "
+#~ "the plugin after reinstalling the software TitanNit in TitanNit Menu "
+#~ "Visible then perform an update by Tpk to: "
+#~ msgstr ""
+#~ "Er mag slechts 1 plugin uit deze sectie geïnstalleerd worden, wilt u een "
+#~ "andere selecteren zult u eerst een geïnstalleerde plugin moeten "
+#~ "verwijderen. Is de plugin niet in het TitanNit menu zichtbaar voer dan "
+#~ "een TPK update uit:"
