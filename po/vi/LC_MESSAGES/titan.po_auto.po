@@ -2414,7 +2414,7 @@ msgstr ""
 msgid "Create Folder"
 msgstr "Tạo thư mục"
 
-#: plugins_multiimage_skin.xml.h:12 skins_multiimage_skin.xml.h:12
+#: plugins_multiimage_skin.xml.h:14 skins_multiimage_skin.xml.h:14
 msgid "Create MultiImage device"
 msgstr ""
 
@@ -2709,8 +2709,9 @@ msgstr ""
 msgid "Del EPG before scan"
 msgstr "Xóa lịch chương trình trước khi dò"
 
-#: plugins_filemanager_skin.xml.h:2 plugins_tmc_skin.xml.h:2
-#: skins_filemanager_skin.xml.h:2 skins_tmc_skin.xml.h:2
+#: plugins_filemanager_skin.xml.h:2 plugins_multiimage_skin.xml.h:1
+#: plugins_tmc_skin.xml.h:2 skins_filemanager_skin.xml.h:2
+#: skins_multiimage_skin.xml.h:1 skins_tmc_skin.xml.h:2
 msgid "Delete"
 msgstr "Xóa"
 
@@ -3815,6 +3816,10 @@ msgid ""
 "Board-ID SerialNr:"
 msgstr ""
 
+#: plugins_multiimage_skin.xml.h:6 skins_multiimage_skin.xml.h:6
+msgid "Format"
+msgstr ""
+
 #: skin_default_skin.xml.h:271
 msgid "Format HDD"
 msgstr "Định dạng ổ cứng"
@@ -4548,6 +4553,10 @@ msgstr "High SR"
 msgid "Highest temp: "
 msgstr "Nhiệt độ cao nhất: "
 
+#: plugins_multiimage_skin.xml.h:7 skins_multiimage_skin.xml.h:7
+msgid "Hint: Use TEXT button for editing the image name"
+msgstr ""
+
 #: epgsearch.h:244
 msgid "History"
 msgstr "Danh sách kênh"
@@ -4734,7 +4743,7 @@ msgid ""
 "Stop process?"
 msgstr ""
 
-#: plugins_multiimage_skin.xml.h:6 skins_multiimage_skin.xml.h:6
+#: plugins_multiimage_skin.xml.h:8 skins_multiimage_skin.xml.h:8
 msgid "Image name: "
 msgstr ""
 
@@ -4871,6 +4880,10 @@ msgstr ""
 
 #: plugins_sudoku_skin.xml.h:9 skins_sudoku_skin.xml.h:9
 msgid "Input the numbers 1 to 9"
+msgstr ""
+
+#: plugins_multiimage_skin.xml.h:9 skins_multiimage_skin.xml.h:9
+msgid "Install"
 msgstr ""
 
 #: mc_dateibrowser.h:36
@@ -5407,7 +5420,7 @@ msgstr "EPG – Tất cả các chương trình"
 msgid "Main Menu"
 msgstr "Menu chính"
 
-#: plugins_multiimage_skin.xml.h:13 skins_multiimage_skin.xml.h:13
+#: plugins_multiimage_skin.xml.h:15 skins_multiimage_skin.xml.h:15
 msgid "Manage MultiImage"
 msgstr ""
 
@@ -5907,7 +5920,7 @@ msgstr ""
 msgid "MultiImage"
 msgstr ""
 
-#: plugins_multiimage_skin.xml.h:14 skins_multiimage_skin.xml.h:14
+#: plugins_multiimage_skin.xml.h:16 skins_multiimage_skin.xml.h:16
 msgid "MultiImage Installation"
 msgstr ""
 
@@ -6102,10 +6115,6 @@ msgstr "Thiết lập Server NFS"
 msgid "No Audiosync"
 msgstr "không đồng bộ audio"
 
-#: plugins_multiimage_skin.xml.h:8 skins_multiimage_skin.xml.h:8
-msgid "No Image installed"
-msgstr ""
-
 #: httpdfunc.h:5567 stream.h:33
 msgid "No Live Stream running"
 msgstr "Không có luồng nào đang phát"
@@ -6160,6 +6169,10 @@ msgstr "Không tìm thấy"
 
 #: MultiImage.c:156
 msgid "No device available"
+msgstr ""
+
+#: plugins_multiimage_skin.xml.h:10 skins_multiimage_skin.xml.h:10
+msgid "No image installed"
 msgstr ""
 
 #: record.h:64
@@ -7826,12 +7839,12 @@ msgstr ""
 
 #: plugins_autotimer_skin.xml.h:9 plugins_dlna_skin.xml.h:11
 #: plugins_instar_skin.xml.h:15 plugins_lcdpearl1_skin.xml.h:11
-#: plugins_lcdsamsung_skin.xml.h:14 plugins_multiimage_skin.xml.h:11
+#: plugins_lcdsamsung_skin.xml.h:14 plugins_multiimage_skin.xml.h:13
 #: plugins_stopifnotused_skin.xml.h:5 plugins_tsSchnitt_skin.xml.h:7
 #: plugins_xupnpd_skin.xml.h:2 skin_default_skin.xml.h:681
 #: skins_autotimer_skin.xml.h:9 skins_dlna_skin.xml.h:11
 #: skins_instar_skin.xml.h:15 skins_lcdpearl1_skin.xml.h:11
-#: skins_lcdsamsung_skin.xml.h:14 skins_multiimage_skin.xml.h:11
+#: skins_lcdsamsung_skin.xml.h:14 skins_multiimage_skin.xml.h:13
 #: skins_stopifnotused_skin.xml.h:5 skins_tsSchnitt_skin.xml.h:7
 #: skins_xupnpd_skin.xml.h:2
 msgid "START"
@@ -8392,7 +8405,7 @@ msgstr ""
 msgid "Select backup:"
 msgstr "Chọn sao lưu:"
 
-#: plugins_multiimage_skin.xml.h:9 skins_multiimage_skin.xml.h:9
+#: plugins_multiimage_skin.xml.h:11 skins_multiimage_skin.xml.h:11
 msgid "Select device"
 msgstr ""
 
@@ -11191,8 +11204,7 @@ msgstr "Thư mục mặc định"
 msgid "del startchannel"
 msgstr "bắt đầu xóa chương trình"
 
-#: optimize.h:254 plugins_multiimage_skin.xml.h:1 skin_default_skin.xml.h:193
-#: skins_multiimage_skin.xml.h:1
+#: optimize.h:254 skin_default_skin.xml.h:193
 msgid "delete"
 msgstr "Xóa"
 
@@ -11584,8 +11596,7 @@ msgstr "thông tin"
 msgid "initializing"
 msgstr "khởi tạo"
 
-#: plugins_multiimage_skin.xml.h:7 skin_default_skin.xml.h:375
-#: skins_multiimage_skin.xml.h:7
+#: skin_default_skin.xml.h:375
 msgid "install"
 msgstr "cài đặt"
 
@@ -12500,7 +12511,7 @@ msgstr ""
 msgid "select the media drive from Device List for fsck"
 msgstr ""
 
-#: plugins_multiimage_skin.xml.h:10 skins_multiimage_skin.xml.h:10
+#: plugins_multiimage_skin.xml.h:12 skins_multiimage_skin.xml.h:12
 msgid "selected Image"
 msgstr ""
 
