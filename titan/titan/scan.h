@@ -1601,9 +1601,9 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 		if(scantype != 3 && scaninfo.threadend == 1 && endmsgshow == 0)
 		{
 			if(scaninfo.tvcount + scaninfo.radiocount + scaninfo.datacount == 0)
-				textbox(_("Message"), _("Channel scan ended.\nNothing found."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
+				textbox(_("Message"), _("Channel scan ended.\nNothing found."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 800, 200, 0, 0);
 			else
-				textbox(_("Message"), _("Channel scan ended."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
+				textbox(_("Message"), _("Channel scan ended."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 800, 200, 0, 0);
 			endmsgshow = 1;		
 		}
 
@@ -1631,9 +1631,9 @@ void screenscan(struct transponder* transpondernode, struct skin* mscan, char* t
 			}
 			clearscreen(load);
 			if(scaninfo.tvcount + scaninfo.radiocount + scaninfo.datacount == 0)
-				textbox(_("Message"), _("Channel scan ended.\nNothing found."), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
+				textbox(_("Message"), _("Channel scan ended.\nNothing found."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 800, 200, 0, 0);
 			else
-				textbox(_("Message"), _("All new channels added!"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0);
+				textbox(_("Message"), _("All new channels added!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 		}
 
 		if(rcret == getrcconfigint("rcexit", NULL))
@@ -1898,7 +1898,7 @@ void screenscanconfig(int flag)
 
 	if(status.recording > 0 || status.streaming > 0)
 	{
-		textbox(_("Message"), _("Scan is not allowed if record or stream is running !"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
+		textbox(_("Message"), _("Scan is not allowed if record or stream is running !"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 800, 200, 0, 0);
 		return;
 	}
 
@@ -1989,7 +1989,7 @@ void screenscanconfig(int flag)
 
 	if(tunercount < 1)
 	{
-		textbox(_("Message"), _("No Tuner configured"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 800, 200, 0, 0);
+		textbox(_("Message"), _("No Tuner configured"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 800, 200, 0, 0);
 		return;
 	}
 
