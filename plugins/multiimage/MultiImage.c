@@ -14,24 +14,6 @@ char* imagepath = NULL;
 
 struct stimerthread* Multi_Image_thread = NULL;
 
-void multiimage_panel_thread()
-{
-	struct skin* pluginnode = NULL;
-	void (*startplugin)(void);
-	
-	pluginnode = getplugin("MultiImage");
-	if(pluginnode != NULL)
-	{
-		startplugin = dlsym(pluginnode->pluginhandle, "start");
-		if(startplugin != NULL)
-		{
-			resettvpic();
-			startplugin();
-			resettvpic();
-		}
-	}
-}
-
 void multiimage_thread()
 {
 	char* cmd = NULL;
@@ -56,7 +38,13 @@ void multiimage_thread()
 	}
 	else
 	{
-		//addtimer(&multiimage_panel_thread, START, 10000, 1, NULL, NULL, NULL);
+		if(status.extplugin != NULL)
+		{
+			free(status.extplugin);
+			status.extplugin = NULL;
+		}
+		//Aufruf des plugins
+		status.extplugin = ostrcat("MultiImage", NULL, 0, 0);
 	}
 	Multi_Image_thread = NULL;
 }
@@ -457,7 +445,7 @@ int multiimage_install(char* imagefile, char* mdev)
 		free(cmd); cmd=NULL;
 		free(temp); temp=NULL;
 		textbox(_("Message"), _("INFO\nExtracting process is running in background.\nA message will be shown when finished."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 250, 10, 0);
-		
+	
 		Multi_Image_thread = addtimer(&multiimage_thread, START, 10000, 1, NULL, NULL, NULL);
 	}
 
