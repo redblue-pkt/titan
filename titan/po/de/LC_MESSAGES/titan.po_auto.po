@@ -3251,7 +3251,7 @@ msgstr "FEHLER: In dieser Datei kann kein Marker gesetzt werden"
 #: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
 #: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626
-#: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:611 infobar.h:735
+#: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:633 infobar.h:757
 #: info.h:27 keyactions.h:205 letwatch.h:30 letwatch.h:69 letwatch.h:75
 #: log.h:46 log.h:48 marker.h:215 marker.h:229 mboxinfo.c:49 mboxinfo.c:73
 #: mboxinfo.c:77 mboxinfo.c:163 mc_audioplayer.h:333 mc_audioplayer.h:605
@@ -5159,7 +5159,7 @@ msgstr "Schnittstelle"
 msgid "Internet Browser"
 msgstr ""
 
-#: infobar.h:735
+#: infobar.h:757
 msgid "Internet Browser Plugin not installed !"
 msgstr "Internet Browser Plugin nicht installiert!"
 
@@ -5909,7 +5909,7 @@ msgstr "Menüliste"
 #: hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564 hwtest.h:566
 #: hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632 hwtest.h:679
 #: hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200 imdb.h:626
-#: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:611 infobar.h:735
+#: inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:633 infobar.h:757
 #: keyactions.h:205 language.h:49 lcdpearl1.c:49 lcdsamsung.c:101
 #: letwatch.h:30 letwatch.h:69 letwatch.h:75 log.h:46 log.h:48 marker.h:215
 #: marker.h:229 mc_audioplayer.h:333 mc_audioplayer.h:605 mc_audioplayer.h:716
@@ -6479,8 +6479,8 @@ msgstr "Ö"
 #: hwtest.h:390 hwtest.h:411 hwtest.h:456 hwtest.h:492 hwtest.h:564
 #: hwtest.h:566 hwtest.h:586 hwtest.h:602 hwtest.h:617 hwtest.h:632
 #: hwtest.h:679 hwtest.h:681 hwtest.h:683 hwtest.h:685 imdbapi.h:200
-#: imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:611
-#: infobar.h:735 info.h:27 keyactions.h:205 lcdpearl1.c:49 lcdsamsung.c:101
+#: imdb.h:626 inadyn.h:188 inadyn.h:190 inadyn.h:200 infobar.h:633
+#: infobar.h:757 info.h:27 keyactions.h:205 lcdpearl1.c:49 lcdsamsung.c:101
 #: letwatch.h:30 letwatch.h:69 letwatch.h:75 log.h:46 log.h:48 mboxinfo.c:49
 #: mboxinfo.c:73 mboxinfo.c:77 mboxinfo.c:163 mc_audioplayer.h:333
 #: mc_audioplayer.h:605 mc_audioplayer.h:716 mc_dateibrowser.h:36
@@ -8774,7 +8774,7 @@ msgstr "PiP-Einstellungen"
 msgid "Sharename can't be empty!"
 msgstr "Freigabename darf nicht leer sein!"
 
-#: infobar.h:611 mc_audioplayer.h:333 mc_main.h:274 mc_pictureplayer.h:124
+#: infobar.h:633 mc_audioplayer.h:333 mc_main.h:274 mc_pictureplayer.h:124
 #: mc_videoplayer.h:332 menu.h:215
 msgid ""
 "Shooting Background done !\n"
