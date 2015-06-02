@@ -866,7 +866,7 @@ msgstr "Todas las novedades Entradas primero"
 msgid "All Sorted"
 msgstr "Todas las entradas ordenadas"
 
-#: MultiImage.c:241
+#: MultiImage.c:229
 msgid ""
 "All data on this device will be deleted!\n"
 "OK?"
@@ -3142,13 +3142,13 @@ msgstr "Memoria disponible libre (KB)"
 msgid "ERROR"
 msgstr "!!! ERROR !!!"
 
-#: MultiImage.c:426
+#: MultiImage.c:414
 msgid ""
 "ERROR\n"
 "Image already present!"
 msgstr ""
 
-#: MultiImage.c:253
+#: MultiImage.c:241
 msgid ""
 "ERROR\n"
 "Partition could not be created"
@@ -3228,8 +3228,8 @@ msgstr "ERROR: No se puede establecer marcadores en este archivo"
 #: mediadb.h:1477 mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215
 #: menu.h:984 menu.h:986 movie4k.h:36 movie4k.h:48 movie4k.h:92 movie4k.h:399
 #: movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78 movshare.h:157
-#: movshare.h:163 MultiImage.c:185 MultiImage.c:241 MultiImage.c:253
-#: MultiImage.c:349 MultiImage.c:480 MultiImage.c:550 myvideo.h:86
+#: movshare.h:163 MultiImage.c:173 MultiImage.c:229 MultiImage.c:241
+#: MultiImage.c:337 MultiImage.c:468 MultiImage.c:538 myvideo.h:86
 #: networkbrowser.h:966 networkbrowser.h:1027 networkbrowser.h:1031
 #: networkbrowser.h:1033 networkbrowser.h:1043 networkbrowser.h:1047
 #: networkbrowser.h:1211 networkbrowser.h:1765 networkbrowser.h:1772
@@ -4757,20 +4757,20 @@ msgstr ""
 msgid "INFO"
 msgstr "Informacion"
 
-#: MultiImage.c:459
+#: MultiImage.c:447
 msgid ""
 "INFO\n"
 "Extracting process is running in background.\n"
 "A message will be shown when finished."
 msgstr ""
 
-#: MultiImage.c:429
+#: MultiImage.c:417
 msgid ""
 "INFO\n"
 "Extracting will take a few minutes ..."
 msgstr ""
 
-#: MultiImage.c:43
+#: MultiImage.c:25
 msgid ""
 "INFO\n"
 "Image extracted"
@@ -4834,7 +4834,7 @@ msgstr ""
 msgid "Image"
 msgstr ""
 
-#: MultiImage.c:550
+#: MultiImage.c:538
 msgid ""
 "Image creation running!!!\n"
 "Stop process?"
@@ -5807,8 +5807,8 @@ msgstr "Lista de Menus"
 #: mc_videoplayer.h:904 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
 #: mediadb.h:1477 mediadbsettings.h:95 menu.h:160 menu.h:215 movie4k.h:36
 #: movie4k.h:48 movie4k.h:92 movie4k.h:399 movreel.h:30 movreel.h:137
-#: movshare.h:34 movshare.h:78 movshare.h:157 movshare.h:163 MultiImage.c:43
-#: MultiImage.c:253 MultiImage.c:426 MultiImage.c:429 MultiImage.c:459
+#: movshare.h:34 movshare.h:78 movshare.h:157 movshare.h:163 MultiImage.c:25
+#: MultiImage.c:241 MultiImage.c:414 MultiImage.c:417 MultiImage.c:447
 #: myvideo.h:86 networkbrowser.h:966 networkbrowser.h:1027
 #: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
 #: networkbrowser.h:1047 networkbrowser.h:1211 networkbrowser.h:1765
@@ -6225,7 +6225,7 @@ msgstr ""
 "No Directorio MediaDB encontrado\n"
 "Pulse Aceptar para crearla"
 
-#: MultiImage.c:480
+#: MultiImage.c:468
 msgid ""
 "No MultiImage device found.\n"
 "Create device?"
@@ -6265,7 +6265,7 @@ msgstr ""
 msgid "No config file found."
 msgstr "No se encontró el archivo de configuración"
 
-#: MultiImage.c:185
+#: MultiImage.c:173
 msgid "No device available"
 msgstr ""
 
@@ -6377,9 +6377,9 @@ msgstr "Ö"
 #: mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215 menu.h:984
 #: menu.h:986 movie4k.h:36 movie4k.h:48 movie4k.h:92 movie4k.h:399
 #: movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78 movshare.h:157
-#: movshare.h:163 MultiImage.c:43 MultiImage.c:185 MultiImage.c:241
-#: MultiImage.c:253 MultiImage.c:349 MultiImage.c:426 MultiImage.c:429
-#: MultiImage.c:459 MultiImage.c:480 MultiImage.c:494 MultiImage.c:550
+#: movshare.h:163 MultiImage.c:25 MultiImage.c:173 MultiImage.c:229
+#: MultiImage.c:241 MultiImage.c:337 MultiImage.c:414 MultiImage.c:417
+#: MultiImage.c:447 MultiImage.c:468 MultiImage.c:482 MultiImage.c:538
 #: myvideo.h:86 networkbrowser.h:966 networkbrowser.h:1027
 #: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
 #: networkbrowser.h:1047 networkbrowser.h:1211 networkbrowser.h:1765
@@ -9286,7 +9286,7 @@ msgstr ""
 msgid "Sure to cancel the cut process?"
 msgstr "esta seguro de que desea cancelar corte?"
 
-#: MultiImage.c:348
+#: MultiImage.c:336
 msgid "Sure to delete Image?\n"
 msgstr ""
 
@@ -9571,7 +9571,7 @@ msgstr ""
 msgid "The hoster is not yet supported !"
 msgstr "El proveedor de alojamiento no se admite en la actualidad!"
 
-#: MultiImage.c:494
+#: MultiImage.c:482
 msgid ""
 "The install process will look in /tmp for an image.\n"
 "Please copy the zip file to /tmp."
