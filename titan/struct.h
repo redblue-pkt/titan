@@ -1555,6 +1555,8 @@ struct status
 	int sleepcount;
 	int stats;
 	char* url;
+	//externer plugin Aufruf
+	char* extplugin;
 } status;
 
 struct fb

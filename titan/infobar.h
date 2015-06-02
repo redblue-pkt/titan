@@ -192,6 +192,28 @@ void screeninfobar()
 			}
 		}
 
+		//Plugin von aussen aufrufen
+		if(rcret == RCTIMEOUT && status.extplugin != NULL)
+		{
+			subtitlepause(1);
+			status.infobar = 0;
+			clearscreen(infobar);
+
+			pluginnode = getplugin(status.extplugin);
+			free(status.extplugin); status.extplugin = NULL;
+			if(pluginnode != NULL)
+			{
+				startplugin = dlsym(pluginnode->pluginhandle, "start");
+				if(startplugin != NULL)
+					startplugin();
+			}
+			status.updatevfd = START;
+			drawscreen(skin, 0, 0);
+			subtitlepause(0);
+			continue;
+		}
+			
+		
 		if(rcret == getrcconfigint("rcpause", NULL) || ((checkbox("ATEMIO520") == 1 || checkbox("ATEMIO530") == 1) && rcret == getrcconfigint("rcplay", NULL) && status.pause == 0 && status.slowspeed == 0 && status.playspeed == 0 && ostrcmp(getconfig("remotecontrol", NULL), "0") == 0))
 		{
 			//timeshift
