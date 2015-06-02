@@ -13342,13 +13342,3 @@ msgstr ""
 #: skin_default_skin.xml.h:2
 msgid "~"
 msgstr ""
-
-#~ msgid ""
-#~ "Before you can see Signal/SNR/Ber you must zap to a channel of the "
-#~ "satellite you are searching."
-#~ msgstr ""
-#~ "trước khi bạn có thể xem mức tín hiệu/SNR/bạn phải dò lại ch����ơng "
-#~ "trìnhĐang dò chương trình."
-
-#~ msgid "Remove emthy Bouquet"
-#~ msgstr "xóa"
