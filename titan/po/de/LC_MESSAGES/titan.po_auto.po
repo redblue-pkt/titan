@@ -1,4 +1,3 @@
-#: plugins_wm2014_skin.xml.h:1 skins_wm2014_skin.xml.h:1 tithek_mainmenu.h:1
 msgid ""
 msgstr ""
 "Project-Id-Version: TitanNit 1.65\n"
@@ -834,6 +833,10 @@ msgid ""
 "channels. For adding a channel manually, select the channel in the right box "
 "and press the red button to save it. Press EXIT to discard all changes."
 msgstr ""
+"Drücken Sie -Grün-, um das Suchergebnis der manuellen Suche zu speichern. Um "
+"manuell einen Kanal hinzuzufügen, müssen Sie den Kanal im rechten Feld "
+"markieren und anschließend mit -Rot- speichern. Mit -Exit- verlassen Sie den "
+"Suchlauf ohne Speicherung."
 
 #: skin_default_skin.xml.h:69
 msgid "Age Protect"
@@ -3896,6 +3899,8 @@ msgid ""
 "For getting Signal/SNR/BER values, zap to a channel of the satellite you are "
 "searching."
 msgstr ""
+"Zur Anzeige der Signal/SNR/BER Werte müssen Sie auf einen Kanal des "
+"Satelliten schalten, den Sie suchen."
 
 #: info.h:23
 msgid ""
@@ -7728,7 +7733,7 @@ msgstr "Entfernen Log:"
 
 #: skin_default_skin.xml.h:560
 msgid "Remove empty Bouquet"
-msgstr ""
+msgstr "Lösche leeres Bouquet"
 
 #: extensions.h:125
 msgid "Remove error"
