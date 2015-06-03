@@ -845,7 +845,7 @@ msgstr ""
 msgid "All Sorted"
 msgstr ""
 
-#: MultiImage.c:229
+#: MultiImage.c:260
 msgid ""
 "All data on this device will be deleted!\n"
 "OK?"
@@ -2368,6 +2368,10 @@ msgstr "© Copyright"
 msgid "Copyright:"
 msgstr ""
 
+#: plugins_multiimage_skin.xml.h:2 skins_multiimage_skin.xml.h:2
+msgid "Create"
+msgstr ""
+
 #: skin_default_skin.xml.h:170
 msgid "Create Default Favorites"
 msgstr ""
@@ -2384,7 +2388,7 @@ msgstr ""
 msgid "Create Folder"
 msgstr ""
 
-#: plugins_multiimage_skin.xml.h:14 skins_multiimage_skin.xml.h:14
+#: plugins_multiimage_skin.xml.h:16 skins_multiimage_skin.xml.h:16
 msgid "Create MultiImage device"
 msgstr ""
 
@@ -2487,7 +2491,7 @@ msgstr ""
 msgid "DI"
 msgstr "D"
 
-#: plugins_multiimage_skin.xml.h:3 skins_multiimage_skin.xml.h:3
+#: plugins_multiimage_skin.xml.h:4 skins_multiimage_skin.xml.h:4
 msgid "DIR"
 msgstr ""
 
@@ -2675,9 +2679,9 @@ msgstr ""
 msgid "Del EPG before scan"
 msgstr "Effacer après scan?"
 
-#: plugins_filemanager_skin.xml.h:2 plugins_multiimage_skin.xml.h:2
+#: plugins_filemanager_skin.xml.h:2 plugins_multiimage_skin.xml.h:3
 #: plugins_tmc_skin.xml.h:2 skins_filemanager_skin.xml.h:2
-#: skins_multiimage_skin.xml.h:2 skins_tmc_skin.xml.h:2
+#: skins_multiimage_skin.xml.h:3 skins_tmc_skin.xml.h:2
 msgid "Delete"
 msgstr "Effacer"
 
@@ -3038,13 +3042,13 @@ msgstr "Espace libre EPG"
 msgid "ERROR"
 msgstr "Erreur"
 
-#: MultiImage.c:414
+#: MultiImage.c:351
 msgid ""
 "ERROR\n"
 "Image already present!"
 msgstr ""
 
-#: MultiImage.c:241
+#: MultiImage.c:271
 msgid ""
 "ERROR\n"
 "Partition could not be created"
@@ -3122,25 +3126,25 @@ msgstr ""
 #: mediadb.h:1477 mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215
 #: menu.h:984 menu.h:986 movie4k.h:36 movie4k.h:48 movie4k.h:92 movie4k.h:399
 #: movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78 movshare.h:157
-#: movshare.h:163 MultiImage.c:173 MultiImage.c:229 MultiImage.c:241
-#: MultiImage.c:337 MultiImage.c:468 MultiImage.c:538 myvideo.h:86
-#: networkbrowser.h:966 networkbrowser.h:1027 networkbrowser.h:1031
-#: networkbrowser.h:1033 networkbrowser.h:1043 networkbrowser.h:1047
-#: networkbrowser.h:1211 networkbrowser.h:1765 networkbrowser.h:1772
-#: networkbrowser.h:1777 networkbrowser.h:1929 network.h:284 network.h:299
-#: network.h:335 network.h:436 network.h:577 network.h:785 network.h:793
-#: network.h:819 network.h:823 network.h:877 network.h:884 network.h:906
-#: newsletter.h:252 newsletter.h:292 novamov.h:35 novamov.h:80 nowvideo.h:44
-#: nowvideo.h:99 nowvideo.h:105 panel_main.h:29 panel_main.h:135
-#: panel_settings_wizard.h:6 played.h:30 played.h:84 played.h:90 played.h:102
-#: played.h:114 played.h:171 player.h:108 play.h:497 play.h:614 play.h:1284
-#: play.h:1290 play.h:1299 play.h:1300 play.h:1509 play.h:1725 play.h:1736
+#: movshare.h:163 MultiImage.c:260 MultiImage.c:271 MultiImage.c:531
+#: MultiImage.c:584 MultiImage.c:656 myvideo.h:86 networkbrowser.h:966
+#: networkbrowser.h:1027 networkbrowser.h:1031 networkbrowser.h:1033
+#: networkbrowser.h:1043 networkbrowser.h:1047 networkbrowser.h:1211
+#: networkbrowser.h:1765 networkbrowser.h:1772 networkbrowser.h:1777
+#: networkbrowser.h:1929 network.h:284 network.h:299 network.h:335
+#: network.h:436 network.h:577 network.h:785 network.h:793 network.h:819
+#: network.h:823 network.h:877 network.h:884 network.h:906 newsletter.h:252
+#: newsletter.h:292 novamov.h:35 novamov.h:80 nowvideo.h:44 nowvideo.h:99
+#: nowvideo.h:105 panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6
+#: played.h:30 played.h:84 played.h:90 played.h:102 played.h:114 played.h:171
+#: player.h:108 play.h:497 play.h:614 play.h:1284 play.h:1290 play.h:1299
+#: play.h:1300 play.h:1509 play.h:1725 play.h:1736
 #: plugins_autotimer_skin.xml.h:6 plugins_callmonitor1_skin.xml.h:10
 #: plugins_catcatch_skin.xml.h:3 plugins_dlna_skin.xml.h:1
 #: plugins_facebook_skin.xml.h:2 plugins_instar_skin.xml.h:5
 #: plugins_lcdpearl1_skin.xml.h:6 plugins_lcdsamsung_skin.xml.h:7
 #: plugins_mboxinfo_skin.xml.h:1 plugins_mc_skin.xml.h:19
-#: plugins_multiimage_skin.xml.h:4 plugins_optimize_skin.xml.h:1
+#: plugins_multiimage_skin.xml.h:5 plugins_optimize_skin.xml.h:1
 #: plugins_panel_skin.xml.h:10 plugins_rgui_skin.xml.h:1
 #: plugins_stopifnotused_skin.xml.h:3 plugins_sudoku_skin.xml.h:7
 #: plugins_tiwakeup_skin.xml.h:1 plugins_wins3_skin.xml.h:1 possetup.h:98
@@ -3161,7 +3165,7 @@ msgstr ""
 #: skins_facebook_skin.xml.h:2 skins_instar_skin.xml.h:5
 #: skins_lcdpearl1_skin.xml.h:6 skins_lcdsamsung_skin.xml.h:7
 #: skins_mboxinfo_skin.xml.h:1 skins_mc_skin.xml.h:19
-#: skins_multiimage_skin.xml.h:4 skins_optimize_skin.xml.h:1
+#: skins_multiimage_skin.xml.h:5 skins_optimize_skin.xml.h:1
 #: skins_panel_skin.xml.h:10 skins_rgui_skin.xml.h:1
 #: skins_stopifnotused_skin.xml.h:3 skins_sudoku_skin.xml.h:7
 #: skins_tiwakeup_skin.xml.h:1 skins_wins3_skin.xml.h:1 sock.h:954
@@ -4604,23 +4608,27 @@ msgstr ""
 msgid "INFO"
 msgstr ""
 
-#: MultiImage.c:447
+#: MultiImage.c:400
 msgid ""
 "INFO\n"
 "Extracting process is running in background.\n"
 "A message will be shown when finished."
 msgstr ""
 
-#: MultiImage.c:417
+#: MultiImage.c:356
 msgid ""
 "INFO\n"
 "Extracting will take a few minutes ..."
 msgstr ""
 
-#: MultiImage.c:25
+#: MultiImage.c:46
 msgid ""
 "INFO\n"
 "Image extracted"
+msgstr ""
+
+#: MultiImage.c:315
+msgid "INSTALL"
 msgstr ""
 
 #: skin_default_skin.xml.h:380
@@ -4681,7 +4689,7 @@ msgstr ""
 msgid "Image"
 msgstr ""
 
-#: MultiImage.c:538
+#: MultiImage.c:656
 msgid ""
 "Image creation running!!!\n"
 "Stop process?"
@@ -5356,7 +5364,7 @@ msgstr ""
 msgid "Main Menu"
 msgstr "Menu Principal"
 
-#: plugins_multiimage_skin.xml.h:15 skins_multiimage_skin.xml.h:15
+#: plugins_multiimage_skin.xml.h:17 skins_multiimage_skin.xml.h:17
 msgid "Manage MultiImage"
 msgstr ""
 
@@ -5645,8 +5653,8 @@ msgstr "Liste de Menu"
 #: mc_videoplayer.h:904 mc_wetterinfo.h:36 mediadbedit.h:333 mediadb.h:1130
 #: mediadb.h:1477 mediadbsettings.h:95 menu.h:160 menu.h:215 movie4k.h:36
 #: movie4k.h:48 movie4k.h:92 movie4k.h:399 movreel.h:30 movreel.h:137
-#: movshare.h:34 movshare.h:78 movshare.h:157 movshare.h:163 MultiImage.c:25
-#: MultiImage.c:241 MultiImage.c:414 MultiImage.c:417 MultiImage.c:447
+#: movshare.h:34 movshare.h:78 movshare.h:157 movshare.h:163 MultiImage.c:46
+#: MultiImage.c:271 MultiImage.c:351 MultiImage.c:356 MultiImage.c:400
 #: myvideo.h:86 networkbrowser.h:966 networkbrowser.h:1027
 #: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
 #: networkbrowser.h:1047 networkbrowser.h:1211 networkbrowser.h:1765
@@ -5856,8 +5864,8 @@ msgstr ""
 msgid "MultiImage"
 msgstr ""
 
-#: plugins_multiimage_skin.xml.h:16 skins_multiimage_skin.xml.h:16
-msgid "MultiImage Installation"
+#: plugins_multiimage_skin.xml.h:18 skins_multiimage_skin.xml.h:18
+msgid "MultiImage Install/Rename"
 msgstr ""
 
 #: moduleconfig.h:375
@@ -6051,6 +6059,10 @@ msgstr "Réglages NFS Serveur"
 msgid "No Audiosync"
 msgstr "No audio sync"
 
+#: MultiImage.c:242
+msgid "No Linux partiton found on this device."
+msgstr ""
+
 #: httpdfunc.h:5567 stream.h:33
 msgid "No Live Stream running"
 msgstr ""
@@ -6061,7 +6073,7 @@ msgid ""
 "Press OK to create it"
 msgstr ""
 
-#: MultiImage.c:468
+#: MultiImage.c:584
 msgid ""
 "No MultiImage device found.\n"
 "Create device?"
@@ -6208,10 +6220,10 @@ msgstr "Ö"
 #: mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215 menu.h:984
 #: menu.h:986 movie4k.h:36 movie4k.h:48 movie4k.h:92 movie4k.h:399
 #: movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78 movshare.h:157
-#: movshare.h:163 MultiImage.c:25 MultiImage.c:173 MultiImage.c:229
-#: MultiImage.c:241 MultiImage.c:337 MultiImage.c:414 MultiImage.c:417
-#: MultiImage.c:447 MultiImage.c:468 MultiImage.c:482 MultiImage.c:538
-#: myvideo.h:86 networkbrowser.h:966 networkbrowser.h:1027
+#: movshare.h:163 MultiImage.c:46 MultiImage.c:173 MultiImage.c:242
+#: MultiImage.c:260 MultiImage.c:271 MultiImage.c:351 MultiImage.c:356
+#: MultiImage.c:400 MultiImage.c:531 MultiImage.c:584 MultiImage.c:600
+#: MultiImage.c:656 myvideo.h:86 networkbrowser.h:966 networkbrowser.h:1027
 #: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
 #: networkbrowser.h:1047 networkbrowser.h:1211 networkbrowser.h:1765
 #: networkbrowser.h:1772 networkbrowser.h:1777 networkbrowser.h:1929
@@ -6277,6 +6289,10 @@ msgstr "Ö"
 #: webif_rc_virtual.h:20 xupnpd.h:60 xupnpd.h:71 xupnpd.h:73 xvidstage.h:54
 #: xvidstage.h:100 xvidstage.h:177 youtube.h:215 zapback.c:79 zdf.h:29
 msgid "OK"
+msgstr ""
+
+#: plugins_multiimage_skin.xml.h:11 skins_multiimage_skin.xml.h:11
+msgid "OK = select image"
 msgstr ""
 
 #: skin_default_skin.xml.h:472
@@ -7116,6 +7132,10 @@ msgstr "Recharge"
 msgid "REMOVE ENTRY"
 msgstr "retirer l'entrée"
 
+#: MultiImage.c:320
+msgid "RENAME"
+msgstr ""
+
 #: skin_default_skin.xml.h:567
 msgid "RESET"
 msgstr "Réinitialiser"
@@ -7466,6 +7486,7 @@ msgid "Removeing"
 msgstr ""
 
 #: filemanager.h:23 filemanager.h:86 filemanager.h:92
+#: plugins_multiimage_skin.xml.h:12 skins_multiimage_skin.xml.h:12
 msgid "Rename"
 msgstr "Renommer"
 
@@ -7764,12 +7785,12 @@ msgstr ""
 
 #: plugins_autotimer_skin.xml.h:9 plugins_dlna_skin.xml.h:11
 #: plugins_instar_skin.xml.h:15 plugins_lcdpearl1_skin.xml.h:11
-#: plugins_lcdsamsung_skin.xml.h:14 plugins_multiimage_skin.xml.h:13
+#: plugins_lcdsamsung_skin.xml.h:14 plugins_multiimage_skin.xml.h:15
 #: plugins_stopifnotused_skin.xml.h:5 plugins_tsSchnitt_skin.xml.h:7
 #: plugins_xupnpd_skin.xml.h:2 skin_default_skin.xml.h:681
 #: skins_autotimer_skin.xml.h:9 skins_dlna_skin.xml.h:11
 #: skins_instar_skin.xml.h:15 skins_lcdpearl1_skin.xml.h:11
-#: skins_lcdsamsung_skin.xml.h:14 skins_multiimage_skin.xml.h:13
+#: skins_lcdsamsung_skin.xml.h:14 skins_multiimage_skin.xml.h:15
 #: skins_stopifnotused_skin.xml.h:5 skins_tsSchnitt_skin.xml.h:7
 #: skins_xupnpd_skin.xml.h:2
 msgid "START"
@@ -8330,11 +8351,11 @@ msgstr ""
 msgid "Select backup:"
 msgstr "Séléction de sauvegarde"
 
-#: plugins_multiimage_skin.xml.h:11 skins_multiimage_skin.xml.h:11
+#: plugins_multiimage_skin.xml.h:13 skins_multiimage_skin.xml.h:13
 msgid "Select device"
 msgstr ""
 
-#: plugins_multiimage_skin.xml.h:12 skins_multiimage_skin.xml.h:12
+#: plugins_multiimage_skin.xml.h:14 skins_multiimage_skin.xml.h:14
 msgid "Selected image"
 msgstr ""
 
@@ -9088,7 +9109,7 @@ msgstr ""
 msgid "Sure to cancel the cut process?"
 msgstr ""
 
-#: MultiImage.c:336
+#: MultiImage.c:530
 msgid "Sure to delete Image?\n"
 msgstr ""
 
@@ -9363,7 +9384,7 @@ msgstr ""
 msgid "The hoster is not yet supported !"
 msgstr ""
 
-#: MultiImage.c:482
+#: MultiImage.c:600
 msgid ""
 "The install process will look in /tmp for an image.\n"
 "Please copy the zip file to /tmp."
@@ -11341,10 +11362,6 @@ msgstr ""
 
 #: tpk_section.h:4
 msgid "fonts"
-msgstr ""
-
-#: plugins_multiimage_skin.xml.h:5 skins_multiimage_skin.xml.h:5
-msgid "format"
 msgstr ""
 
 #: tithek.h:887
