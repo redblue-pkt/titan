@@ -4,19 +4,22 @@
 	<node name="textbox1" type="textbox" text="Content of selected device" scrollbar="no" posy=95 posx=center width=85% height=30 fontsize=25>
 	<node name="textbox2" type="textbox" text="DIR" scrollbar="auto" posy=135 posx=center width=85% height=300 fontsize=20>
 	<node name=b2 text="EXIT" halign=center valign=middle bordercol=exitcol bordersize=2 bordertype=2 posx=0 posy=0 width=150 height=30/>
-	<node name=blue text="format" halign=center valign=middle bordercol=blue bordersize=2 bordertype=2 posx=160 posy=0 width=150 height=30/>
+	<node name=red text="Format" halign=center valign=middle bordercol=red bordersize=2 bordertype=2 posx=160 posy=0 width=150 height=30/>
+	<node name=green text="Create" halign=center valign=middle bordercol=green bordersize=2 bordertype=2 posx=320 posy=0 width=150 height=30/>
 </screen>
 
-<screen name="multiimage" title="Manage MultiImage" titlealign=center fontcol=fontcol valign=bottom fontsize=28 posx=center posy=center width=50% height=70% bordercol=bordercol bordersize=2 bgcol=bgcol>
-	<node bordercol=bordercol scrollbar=auto type=listbox posy=center posx=center name=listbox width=85% height=85%>
+<screen name="multiimage" title="Manage MultiImage" titlealign=center fontcol=fontcol valign=bottom fontsize=28 posx=center posy=center width=65% height=70% bordercol=bordercol bordersize=2 bgcol=bgcol>
+	<node name="hint" type="textbox" fontsize="22" posx=center posy="20" width=85% height=30 fontcol=yellow text="OK = select image">
+	<node bordercol=bordercol scrollbar=auto type=listbox posy=80 posx=center name=listbox width=85% height=85%>
 	<node name="images" text="No image installed" parent=listbox valign=middle posx=0 bordercol=bordercol bordersize=2 width=100% height=30 hidden="yes">
 	<node name=b1 text="EXIT" halign=center valign=middle bordercol=exitcol bordersize=2 bordertype=2 posx=0 posy=0 width=150 height=30/>
 	<node name=b2 text="Delete" halign=center valign=middle bordercol=red bordersize=2 bordertype=2 posx=160 posy=0 width=150 height=30/>
 	<node name=b3 text="Install" halign=center valign=middle bordercol=green bordersize=2 bordertype=2 posx=320 posy=0 width=150 height=30/>
-	<node name=b3 text="Format" halign=center valign=middle bordercol=blue bordersize=2 bordertype=2 posx=480 posy=0 width=150 height=30/>
+	<node name=b4 text="Format" halign=center valign=middle bordercol=blue bordersize=2 bordertype=2 posx=480 posy=0 width=150 height=30/>
+	<node name=b5 text="Rename" halign=center valign=middle bordercol=yellow bordersize=2 bordertype=2 posx=640 posy=0 width=150 height=30/>
 </screen>
 
-<screen name="multiinstall" title="MultiImage Installation" titlealign=center fontcol=fontcol valign=bottom fontsize=28 posx=center posy=center width=65% height=55% bordercol=bordercol bordersize=2 bgcol=bgcol>
+<screen name="multiinstall" title="MultiImage Install/Rename" titlealign=center fontcol=fontcol valign=bottom fontsize=28 posx=center posy=center width=65% height=55% bordercol=bordercol bordersize=2 bgcol=bgcol>
 	<node name="hint" type="textbox" fontsize="22" posx=center posy="40" width=85% height=30 text="Hint: Use TEXT button for editing the image name">
 	<node name="text1" type="textbox" fontsize="20" posx=center posy="100" width=85% height=30 text="Selected image">
 	<node bordercol=bordercol scrollbar=auto type=listbox posx=center name=listbox width=85% height=85%>

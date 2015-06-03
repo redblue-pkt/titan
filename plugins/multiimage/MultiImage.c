@@ -14,6 +14,27 @@ char* imagepath = NULL;
 
 struct stimerthread* Multi_Image_thread = NULL;
 
+char* get_dir(char* path)
+{
+	struct dirent* dirzeiger;
+	char* dirall = NULL;
+	DIR *dir = opendir(path);
+	if (dir != 0)
+	{
+		struct dirent* dirzeiger;
+		while(0 != (dirzeiger = readdir(dir)))
+		{
+			if(dirzeiger->d_name[0] != '.')
+			{
+				dirall = ostrcat(dirall, dirzeiger->d_name, 1, 0);
+				dirall = ostrcat(dirall, " \n", 1, 0);
+			}
+		}
+		closedir(dir);
+	}
+	return dirall;
+}
+
 void multiimage_thread()
 {
 	char* cmd = NULL;
@@ -100,28 +121,6 @@ char* find_multiimage_dev()
 }
 
 
-char* get_dir(char* path)
-{
-	struct dirent* dirzeiger;
-	char* dirall = NULL;
-	DIR *dir = opendir(path);
-	if (dir != 0)
-	{
-		struct dirent* dirzeiger;
-		while(0 != (dirzeiger = readdir(dir)))
-		{
-			if(dirzeiger->d_name[0] != '.')
-			{
-				dirall = ostrcat(dirall, dirzeiger->d_name, 1, 0);
-				dirall = ostrcat(dirall, " \n", 1, 0);
-			}
-		}
-		closedir(dir);
-	}
-	return dirall;
-}
-	
-
 int no_mdev()
 {
 	char* mdev = NULL;
@@ -131,6 +130,7 @@ int no_mdev()
 	struct skin* tmp = NULL;
 	int ret = 0;	
 	int rcret = 0;	
+	int ren = 0;
 	 
 	struct skin* multipart = getscreen("multipart");
 	struct skin* listbox = getscreennode(multipart, "listbox");
@@ -170,7 +170,7 @@ int no_mdev()
 	fclose(fd);	
 	if(mdev == NULL)
 	{
-		textbox("MultiImage", _("No device available"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 500, 200, 0, 0);
+		textbox("MultiImage", _("No device available"), _("OK"), getrcconfigint("rcok", NULL),NULL, 0, NULL, 0, NULL, 0, 500, 200, 0, 0);
 		return 1;
 	}
 	setchoiceboxselection(device, mdev);
@@ -209,7 +209,7 @@ int no_mdev()
 			free(mdev); mdev = NULL;
 		}
 
-		if(rcret == getrcconfigint("rcblue", NULL))
+		if(rcret == getrcconfigint("rcred", NULL))
 		{
 			mdev = ostrcat(mdev, device->ret, 1, 0);
 			cmd = ostrcat("umount /dev/", mdev, 0, 0);
@@ -218,6 +218,35 @@ int no_mdev()
 			free(cmd); cmd = NULL;
 			break;
 		}
+		if(rcret == getrcconfigint("rcgreen", NULL))
+		{
+			mdev = ostrcat(mdev, device->ret, 1, 0);
+			path = getconfig("mountpath", NULL);
+			path = ostrcat(path, "/", 0, 0);
+			path = ostrcat(path, mdev, 1, 0);
+			
+			cmd = ostrcat("mount | grep ", mdev, 0, 0);
+			cmd = ostrcat(cmd, " | grep ext[2,3,4]", 1, 0);
+			ret = system(cmd);
+			free(cmd); cmd = NULL;
+			if(ret == 0)
+			{
+				cmd = ostrcat(path, "/", 0, 0);
+				cmd = ostrcat(cmd, "titan_multi", 1, 0);
+				mkdir(cmd, 777);
+				free(cmd); cmd=NULL;
+				ren = 1;
+			}
+			else
+			{
+				textbox("ERROR", _("No Linux partiton found on this device."), _("OK"), getrcconfigint("rcok", NULL),NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+				ren = 0;
+			}
+			free(path); path=NULL;
+			free(mdev); mdev=NULL;
+			if(ren == 1)
+				break;
+		} 
 		drawscreen(multipart, 0, 0);
 	}
 	delownerrc(multipart);
@@ -226,148 +255,45 @@ int no_mdev()
 	if(mdev == NULL)
 		return 1;	
 	
-	if(textbox("MultiImage", _("All data on this device will be deleted!\nOK?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
-	{
+	if(ren != 1)
+	{ 
+		if(textbox("MultiImage", _("All data on this device will be deleted!\nOK?"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 2)
+		{
+			free(mdev); mdev = NULL;
+			return 1;
+		}
+		cmd = ostrcat("mkfs.ext2.gui /dev/" , mdev, 0, 0);
+		debug(81, "format cmd: %s", cmd);
+		ret = system(cmd);
+		free(cmd); cmd = NULL;
+		if(ret != 0)
+		{
+			textbox(_("Message"), _("ERROR\nPartition could not be created"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 500, 200, 0, 0);
+			return 1;
+		}
+		path = getconfig("mountpath", NULL);
+		path = ostrcat(path, "/", 0, 0);
+		path = ostrcat(path, mdev, 1, 0);
+		cmd = ostrcat("mount /dev/" , mdev, 0, 0);
+		cmd = ostrcat(cmd, " ", 1, 0);
+		cmd = ostrcat(cmd, path, 1, 0);
+		//system(cmd);
+		free(cmd); cmd = NULL;
+		cmd = ostrcat(path, "/", 0, 0);
+		cmd = ostrcat(cmd, "titan_multi", 1, 0);
+		mkdir(cmd, 777);
+		free(cmd); cmd = NULL;
+		free(path); path = NULL;
 		free(mdev); mdev = NULL;
-		return 1;
-	}
-	//cmd = ostrcat("/sbin/cmd.sh mkfs.ext2.gui /dev/" , mdev, 0, 0);
-	cmd = ostrcat("mkfs.ext2.gui /dev/" , mdev, 0, 0);
-	debug(81, "format cmd: %s", cmd);
-	ret = system(cmd);
-	free(cmd); cmd = NULL;
-	if(ret != 0)
-	{
-		textbox(_("Message"), _("ERROR\nPartition could not be created"), _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 500, 200, 0, 0);
-		return 1;
-	}
-	path = getconfig("mountpath", NULL);
-	path = ostrcat(path, "/", 0, 0);
-	path = ostrcat(path, mdev, 1, 0);
-	cmd = ostrcat("mount /dev/" , mdev, 0, 0);
-	cmd = ostrcat(cmd, " ", 1, 0);
-	cmd = ostrcat(cmd, path, 1, 0);
-	//system(cmd);
-	free(cmd); cmd = NULL;
-	cmd = ostrcat(path, "/", 0, 0);
-	cmd = ostrcat(cmd, "titan_multi", 0, 0);
-	mkdir(cmd, 777);
-	free(cmd); cmd = NULL;
-	free(path); path = NULL;
-	free(mdev); mdev = NULL;
-	system ("echo MultiImage > /dev/vfd");	
+		system ("echo MultiImage > /dev/vfd");
+	}	
 	
 	return 0;
 }
 	
-int multiimage_screen(char* mdev)
-{
-	struct skin* tmp = NULL;
-	char* path = NULL;
-	char* cmd = NULL;
-	struct dirent* dirzeiger;	
-	DIR *dir = NULL;
-	int rcret = 0;	
-	int rc = 0;
-	int test = 0;
-	
-	struct skin* multiimage = getscreen("multiimage");
-	struct skin* listbox = getscreennode(multiimage, "listbox");
-	struct skin* images = getscreennode(multiimage, "images");
-	struct skin* chnode1 = NULL;
-	
-	path = getconfig("mountpath", NULL);
-	path = ostrcat(path, "/", 0, 0);
-	path = ostrcat(path, mdev, 1, 0);
-	path = ostrcat(path, "/", 1, 0);
-	path = ostrcat(path,"titan_multi", 1, 0);
-	
-	delmarkedscreennodes(multiimage, 1);
-	listbox->aktpage = -1;
-	listbox->aktline = 1;
-	
-	dir = opendir(path);
-	if (dir != 0)
-	{
-		while(0 != (dirzeiger = readdir(dir)))
-		{
-			if(dirzeiger->d_name[0] != '.')
-			{
-				test = 1;
-				chnode1 = addlistbox(multiimage, listbox, chnode1, 1);
-				if(chnode1 != NULL)
-				{
-					chnode1->posy = images->posy;
-					chnode1->width = images->width;
-					chnode1->height = images->height;
-					chnode1->bordersize = images->bordersize;
-					chnode1->bordercol = images->bordercol;
-					chnode1->prozwidth = images->prozwidth;
-					chnode1->deaktivcol = images->deaktivcol;
-					chnode1->name = ostrcat(dirzeiger->d_name, NULL, 0, 0);
-					changetext(chnode1, dirzeiger->d_name);
-				}
-			}
-		}
-		closedir(dir);
-		if(test == 0)
-			images->hidden = NO;
-		else
-			images->hidden = YES;
-	}
-	drawscreen(multiimage, 0, 0);
-	addscreenrc(multiimage, listbox);
-	tmp = listbox->select;
-	while(1)
-	{
-		addscreenrc(multiimage, tmp);
-		rcret = waitrc(multiimage, 2000, 0);
-		tmp = listbox->select; 
-		if(rcret == getrcconfigint("rcexit", NULL))
-		{
-			 rc = 0;
-			 break;
-		}
-		if(rcret == getrcconfigint("rcred", NULL))
-		{
-			if(listbox->select != NULL)
-			{	
-				rc = 1;
-				cmd = ostrcat(_("Sure to delete Image?\n"), listbox->select->name, 0, 0);
-				if(textbox("MultiImage", cmd, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
-				{
-					free(cmd); cmd= NULL;
-					cmd = ostrcat("rm -r " , path, 0, 0);
-					cmd = ostrcat(cmd , "/", 1, 0);
-					cmd = ostrcat(cmd , listbox->select->name, 1, 0);
-					debug(81, "delete cmd: %s", cmd);
-					system(cmd);
-				}
-				free(cmd); cmd= NULL;
-				break;
-			}
-		}
-		if(rcret == getrcconfigint("rcgreen", NULL))
-		{
-			rc = 2;
-			break;
-		}
-		if(rcret == getrcconfigint("rcblue", NULL))
-		{
-			rc = 3;
-			break;
-		}
-		drawscreen(multiimage, 0, 0);
-	}
-	delownerrc(multiimage);
-	delmarkedscreennodes(multiimage, 1);
-	clearscreen(multiimage);
-	free(path); path=NULL;
-	
-	return rc;
-}
-
-int multiimage_install(char* imagefile, char* mdev)
+// type 1 = install image
+// type 2 = rename image
+int multiimage_install(char* imagefile, char* mdev, int type)
 {
 	int rcret = 0;
 	int rc = 0;
@@ -383,6 +309,17 @@ int multiimage_install(char* imagefile, char* mdev)
 	struct skin* listbox = getscreennode(multiinstall, "listbox");
 	struct skin* text1 = getscreennode(multiinstall, "text1");
 	struct skin* imagename = getscreennode(multiinstall, "imagename");
+	struct skin* b2 = getscreennode(multiinstall, "b2");
+	if(type == 1)
+	{
+		changetext(b2, _("INSTALL"));
+		changeinput(imagename, "imagename");
+	}
+	if(type == 2)
+	{
+		changetext(b2, _("RENAME"));
+		changeinput(imagename, imagefile);
+	}
 	
 	path = getconfig("mountpath", NULL);
 	path = ostrcat(path, "/", 0, 0);
@@ -392,7 +329,7 @@ int multiimage_install(char* imagefile, char* mdev)
 	path2 = ostrcat(path2,"titan_multi", 1, 0);
 		
 	changetext(text1, imagefile);
-	changeinput(imagename, "imagename");
+	
 	
 	drawscreen(multiinstall, 0, 0);
 	addscreenrc(multiinstall, listbox);
@@ -414,10 +351,26 @@ int multiimage_install(char* imagefile, char* mdev)
 				textbox(_("Message"), _("ERROR\nImage already present!"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 500, 200, 0, 0);
 				continue;
 			}
-			textbox(_("Message"), _("INFO\nExtracting will take a few minutes ..."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
-			iname = ostrcat(imagename->ret, NULL, 1, 0);
-			rc = 1;
-			break;
+			if(type == 1)
+			{
+				textbox(_("Message"), _("INFO\nExtracting will take a few minutes ..."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+				iname = ostrcat(imagename->ret, NULL, 1, 0);
+				rc = 1;
+				break;
+			}
+			if(type == 2)
+			{
+				temp = ostrcat(path2, "/", 0, 0);
+				temp = ostrcat(temp, imagefile, 1, 0);
+				cmd = ostrcat("mv ", temp, 0, 0);
+				cmd = ostrcat(cmd, " ", 1, 0);
+				cmd = ostrcat(cmd, path3, 1, 0);
+				system(cmd);
+				free(cmd); cmd=NULL;
+				free(temp); temp=NULL;
+				rc = 2;
+				break;
+			}
 		}
 		drawscreen(multiinstall, 0, 0);
 	}
@@ -455,6 +408,169 @@ int multiimage_install(char* imagefile, char* mdev)
 	return rc;
 }
 
+int multiimage_screen(char* mdev)
+{
+	struct skin* tmp = NULL;
+	char* path = NULL;
+	char* cmd = NULL;
+	char* tmpstr = NULL; 
+	char* selimage = NULL;
+	struct dirent* dirzeiger;	
+	DIR *dir = NULL;
+	int rcret = 0;	
+	int rc = 0;
+	int test = 0;
+	
+	struct skin* multiimage = getscreen("multiimage");
+	struct skin* listbox = getscreennode(multiimage, "listbox");
+	struct skin* images = getscreennode(multiimage, "images");
+	struct skin* chnode1 = NULL;
+	
+	path = getconfig("mountpath", NULL);
+	path = ostrcat(path, "/", 0, 0);
+	path = ostrcat(path, mdev, 1, 0);
+	path = ostrcat(path, "/", 1, 0);
+	path = ostrcat(path,"titan_multi", 1, 0);
+	
+	delmarkedscreennodes(multiimage, 1);
+	listbox->aktpage = -1;
+	listbox->aktline = 1;
+	
+	tmpstr = ostrcat(path, "/", 0, 0);
+	tmpstr = ostrcat(tmpstr, ".multi_image", 1, 0);
+	selimage = readsys(tmpstr, 1);
+	free(tmpstr); tmpstr=NULL;
+	
+	dir = opendir(path);
+	if (dir != 0)
+	{
+		while(0 != (dirzeiger = readdir(dir)))
+		{
+			if(dirzeiger->d_name[0] != '.')
+			{
+				test = 1;
+				chnode1 = addlistbox(multiimage, listbox, chnode1, 1);
+				if(chnode1 != NULL)
+				{
+					chnode1->posy = images->posy;
+					chnode1->width = images->width;
+					chnode1->height = images->height;
+					chnode1->bordersize = images->bordersize;
+					chnode1->bordercol = images->bordercol;
+					chnode1->prozwidth = images->prozwidth;
+					chnode1->deaktivcol = images->deaktivcol;
+					chnode1->name = ostrcat(dirzeiger->d_name, NULL, 0, 0);
+					if(selimage != NULL && ostrcmp(selimage, dirzeiger->d_name) == 0)
+					{
+						tmpstr = ostrcat(dirzeiger->d_name, "  (selected)", 0, 0);	
+						changetext(chnode1, tmpstr);
+						free(tmpstr); tmpstr=NULL;
+						test = 2;
+					}
+					else		
+						changetext(chnode1, dirzeiger->d_name);
+				}
+			}
+		}
+		closedir(dir);
+		free(selimage); selimage = NULL;
+		if(test == 0)
+			images->hidden = NO;
+		else 
+		{
+			images->hidden = YES;
+			chnode1 = addlistbox(multiimage, listbox, chnode1, 1);
+			if(chnode1 != NULL)
+			{
+				chnode1->posy = images->posy;
+				chnode1->width = images->width;
+				chnode1->height = images->height;
+				chnode1->bordersize = images->bordersize;
+				chnode1->bordercol = images->bordercol;
+				chnode1->prozwidth = images->prozwidth;
+				chnode1->deaktivcol = images->deaktivcol;
+				chnode1->name = ostrcat("Flash", NULL, 0, 0);
+				if(test == 1)
+					changetext(chnode1, "Flash  (selected)");
+				else
+					changetext(chnode1, "Flash");
+			}
+		}
+	}
+	drawscreen(multiimage, 0, 0);
+	addscreenrc(multiimage, listbox);
+	tmp = listbox->select;
+	while(1)
+	{
+		addscreenrc(multiimage, tmp);
+		rcret = waitrc(multiimage, 2000, 0);
+		tmp = listbox->select; 
+		if(rcret == getrcconfigint("rcok", NULL))
+		{
+			if(listbox->select != NULL)
+			{	
+				rc = 1;
+				tmpstr = ostrcat(path, "/", 0, 0);
+				tmpstr = ostrcat(tmpstr, ".multi_image", 1, 0);
+				writesys(tmpstr, listbox->select->name, 0);
+				free(tmpstr); tmpstr=NULL;
+				break;
+			}
+		}
+		if(rcret == getrcconfigint("rcexit", NULL))
+		{
+			 rc = 0;
+			 break;
+		}
+		if(rcret == getrcconfigint("rcred", NULL))
+		{
+			if(listbox->select != NULL)
+			{	
+				rc = 1;
+				cmd = ostrcat(_("Sure to delete Image?\n"), listbox->select->name, 0, 0);
+				if(textbox("MultiImage", cmd, _("OK"), getrcconfigint("rcok", NULL), _("EXIT"), getrcconfigint("rcexit", NULL), NULL, 0, NULL, 0, 600, 200, 0, 0) == 1)
+				{
+					free(cmd); cmd= NULL;
+					cmd = ostrcat("rm -r " , path, 0, 0);
+					cmd = ostrcat(cmd , "/", 1, 0);
+					cmd = ostrcat(cmd , listbox->select->name, 1, 0);
+					debug(81, "delete cmd: %s", cmd);
+					system(cmd);
+				}
+				free(cmd); cmd= NULL;
+				break;
+			}
+		}
+		if(rcret == getrcconfigint("rcgreen", NULL))
+		{
+			rc = 2;
+			break;
+		}
+		if(rcret == getrcconfigint("rcblue", NULL))
+		{
+			rc = 3;
+			break;
+		}
+		if(rcret == getrcconfigint("rcyellow", NULL))
+		{
+			rc = 1;
+			selimage = ostrcat(listbox->select->name, NULL, 0, 0); 
+			break;
+		}
+		drawscreen(multiimage, 0, 0);
+	}
+	delownerrc(multiimage);
+	delmarkedscreennodes(multiimage, 1);
+	clearscreen(multiimage);
+	free(path); path=NULL;
+	if(selimage != NULL)
+	{
+		multiimage_install(selimage, mdev, 2);
+		free(selimage); selimage = NULL;
+	}
+	return rc;
+}
+
 void multi_main(void)
 {
 	char* mdev = NULL;
@@ -477,13 +593,15 @@ void multi_main(void)
 		
 		if(ret == 0)
 			break;
+		if(ret == 1)
+			continue;
 		if(ret == 2)
 		{
 			textbox("Message", _("The install process will look in /tmp for an image.\nPlease copy the zip file to /tmp."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 800, 200, 0, 0);					
 			imagefile = screendir("/tmp", "*.zip", NULL, NULL, NULL, NULL, 0, "SELECT", 0, NULL, 0, NULL, 0, 1200, 0, 600, 0, 0);
 			if(imagefile != NULL)
 			{
-				ret = multiimage_install(imagefile, mdev);
+				ret = multiimage_install(imagefile, mdev, 1);
 				free(imagefile); imagefile=NULL;
 				if(ret == 1)
 					return;
