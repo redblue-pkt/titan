@@ -155,6 +155,8 @@ void screeninfobar()
 					free(screensaver->value);
 					rcwait = screensaver->speed;
 				}
+				if(status.extplugin != NULL && rcret == RCTIMEOUT)
+					break;
 			}
 			if(screensaver != NULL) screensaver->flag = 0;
 			deinitscreensaver();
