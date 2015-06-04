@@ -1,7 +1,6 @@
-#: plugins_wm2014_skin.xml.h:1 skins_wm2014_skin.xml.h:1 tithek_mainmenu.h:1
 msgid ""
 msgstr ""
-"Project-Id-Version: TitanNit 1.65\n"
+"Project-Id-Version: TitanNit 1.66\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
 "Last-Translator: aaf-caliban@e.mail.de\n"
@@ -3574,6 +3573,7 @@ msgid ""
 "A message will be shown when finished."
 msgstr ""
 "Das Entpacken wird einige Minuten dauern ...\n"
+"\n"
 "Der Vorgang wird im Hintergrund ausgeführt.\n"
 "Nach Beendigung bekommen sie eine Meldung."
 
