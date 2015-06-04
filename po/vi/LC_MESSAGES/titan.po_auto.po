@@ -3471,6 +3471,13 @@ msgstr "Mở rộng"
 msgid "Extensions List"
 msgstr "Danh sách mở rộng"
 
+#: MultiImage.c:401
+msgid ""
+"Extracting will take a few minutes ...\n"
+"Process is running in background.\n"
+"A message will be shown when finished."
+msgstr ""
+
 #: skin_default_skin.xml.h:251
 msgid "F"
 msgstr ""
@@ -4654,19 +4661,6 @@ msgstr ""
 msgid "INFO"
 msgstr ""
 
-#: MultiImage.c:402
-msgid ""
-"INFO\n"
-"Extracting process is running in background.\n"
-"A message will be shown when finished."
-msgstr ""
-
-#: MultiImage.c:358
-msgid ""
-"INFO\n"
-"Extracting will take a few minutes ..."
-msgstr ""
-
 #: MultiImage.c:46
 msgid ""
 "INFO\n"
@@ -5700,51 +5694,51 @@ msgstr ""
 #: mediadb.h:1477 mediadbsettings.h:95 menu.h:160 menu.h:215 movie4k.h:36
 #: movie4k.h:48 movie4k.h:92 movie4k.h:399 movreel.h:30 movreel.h:137
 #: movshare.h:34 movshare.h:78 movshare.h:157 movshare.h:163 MultiImage.c:46
-#: MultiImage.c:273 MultiImage.c:353 MultiImage.c:358 MultiImage.c:402
-#: myvideo.h:86 networkbrowser.h:966 networkbrowser.h:1027
-#: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
-#: networkbrowser.h:1047 networkbrowser.h:1211 networkbrowser.h:1765
-#: networkbrowser.h:1772 networkbrowser.h:1777 networkbrowser.h:1929
-#: network.h:436 network.h:577 network.h:785 network.h:793 network.h:819
-#: network.h:823 network.h:877 novamov.h:35 novamov.h:80 nowvideo.h:44
-#: nowvideo.h:99 nowvideo.h:105 panel_main.h:29 panel_main.h:135
-#: panel_settings_wizard.h:6 played.h:30 played.h:84 played.h:90 played.h:102
-#: played.h:114 played.h:171 player.h:108 play.h:614 play.h:1299 play.h:1509
-#: play.h:1725 play.h:1736 possetup.h:98 primeshare.h:29 primeshare.h:73
-#: primeshare.h:79 primeshare.h:124 promptfile.h:46 promptfile.h:94
-#: promptfile.h:136 putlocker.h:32 putlocker.h:79 putlocker.h:85
-#: putlocker.h:91 putlocker.h:142 putlocker.h:152 putlocker.h:225
-#: readerconfig.h:351 readerconfig.h:451 readerconfig.h:452 readerconfig.h:497
-#: readerconfig.h:498 record.h:387 record.h:1054 record.h:1302 record.h:1552
-#: record.h:1577 rectimer.h:577 rectimer.h:1238 rectimer.h:1385
-#: rectimer.h:1397 restoredefault.h:10 restoredefault.h:19 restoredefault.h:23
-#: restoredefault.h:32 restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134
-#: rtl2now.h:34 scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1646
-#: scan.h:1901 scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 security.h:1894
-#: service.h:738 service.h:983 shared.h:29 shared.h:65 shared.h:82
-#: skinadjust.h:317 skinadjust.h:720 skinselector.h:231 sock.h:954
-#: softcam.h:411 softcam.h:474 softcam.h:475 solarmovie.h:35 solarmovie.h:47
-#: solarmovie.h:320 spinner.h:18 stopifnotused.c:31 streamcloud.h:31
-#: streamcloud.h:74 streamcloud.h:80 streamcloud.h:90 streamcloud.h:103
-#: streamcloud.h:134 streamcloud.h:193 stream.h:33 system_backup_restore.h:40
-#: system_backup_restore.h:43 system_backup_restore.h:80
-#: system_backup_restore.h:82 system_update.h:257 system_update.h:263
-#: system_update.h:270 thefile.h:34 thefile.h:68 thefile.h:205 timeshift.h:113
-#: timeshift.h:161 timeshift.h:173 timeshiftsettings.h:45 titan.c:282
-#: titan.c:346 titan.c:355 titan.c:1158 titan.c:1179 titan.c:1185 titan.c:1196
-#: titan.c:1202 tithek.c:89 tithek_global.h:258 tithek.h:670 tithek.h:1224
-#: tithek.h:1285 tithek.h:1535 tithek.h:1557 tithek.h:1806 tithek.h:1986
-#: tithek.h:2206 tithek.h:2234 tithek.h:2250 tithek.h:2262 tiwakeup.h:66
-#: tiwakeup.h:68 tmc.h:702 tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797
-#: tmdb.h:960 TopfieldVFD.c:68 TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167
-#: tunerconfig.h:647 tunerconfig.h:666 tunerconfig.h:941 unlock.h:20
-#: unlock.h:66 unlock.h:71 unlock.h:75 vidbull.h:30 vidbull.h:67 vidbull.h:73
-#: videomode.h:67 videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86
-#: vidstream.h:98 vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:79
-#: vidto.h:94 vidto.h:128 vidto.h:174 vidto.h:180 vodlocker.h:30
-#: vodlocker.h:74 vodlocker.h:80 vodlocker.h:86 webif_boxcontrol.h:2
-#: xupnpd.h:60 xupnpd.h:71 xupnpd.h:73 xvidstage.h:54 xvidstage.h:100
-#: xvidstage.h:177 youtube.h:215 zapback.c:79 zdf.h:29
+#: MultiImage.c:273 MultiImage.c:353 MultiImage.c:401 myvideo.h:86
+#: networkbrowser.h:966 networkbrowser.h:1027 networkbrowser.h:1031
+#: networkbrowser.h:1033 networkbrowser.h:1043 networkbrowser.h:1047
+#: networkbrowser.h:1211 networkbrowser.h:1765 networkbrowser.h:1772
+#: networkbrowser.h:1777 networkbrowser.h:1929 network.h:436 network.h:577
+#: network.h:785 network.h:793 network.h:819 network.h:823 network.h:877
+#: novamov.h:35 novamov.h:80 nowvideo.h:44 nowvideo.h:99 nowvideo.h:105
+#: panel_main.h:29 panel_main.h:135 panel_settings_wizard.h:6 played.h:30
+#: played.h:84 played.h:90 played.h:102 played.h:114 played.h:171 player.h:108
+#: play.h:614 play.h:1299 play.h:1509 play.h:1725 play.h:1736 possetup.h:98
+#: primeshare.h:29 primeshare.h:73 primeshare.h:79 primeshare.h:124
+#: promptfile.h:46 promptfile.h:94 promptfile.h:136 putlocker.h:32
+#: putlocker.h:79 putlocker.h:85 putlocker.h:91 putlocker.h:142
+#: putlocker.h:152 putlocker.h:225 readerconfig.h:351 readerconfig.h:451
+#: readerconfig.h:452 readerconfig.h:497 readerconfig.h:498 record.h:387
+#: record.h:1054 record.h:1302 record.h:1552 record.h:1577 rectimer.h:577
+#: rectimer.h:1238 rectimer.h:1385 rectimer.h:1397 restoredefault.h:10
+#: restoredefault.h:19 restoredefault.h:23 restoredefault.h:32
+#: restoredefault.h:47 rgui.h:30 rgui.h:118 rgui.h:134 rtl2now.h:34
+#: scan.h:1604 scan.h:1606 scan.h:1634 scan.h:1636 scan.h:1646 scan.h:1901
+#: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 security.h:1894 service.h:738
+#: service.h:983 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:317
+#: skinadjust.h:720 skinselector.h:231 sock.h:954 softcam.h:411 softcam.h:474
+#: softcam.h:475 solarmovie.h:35 solarmovie.h:47 solarmovie.h:320 spinner.h:18
+#: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:80
+#: streamcloud.h:90 streamcloud.h:103 streamcloud.h:134 streamcloud.h:193
+#: stream.h:33 system_backup_restore.h:40 system_backup_restore.h:43
+#: system_backup_restore.h:80 system_backup_restore.h:82 system_update.h:257
+#: system_update.h:263 system_update.h:270 thefile.h:34 thefile.h:68
+#: thefile.h:205 timeshift.h:113 timeshift.h:161 timeshift.h:173
+#: timeshiftsettings.h:45 titan.c:282 titan.c:346 titan.c:355 titan.c:1158
+#: titan.c:1179 titan.c:1185 titan.c:1196 titan.c:1202 tithek.c:89
+#: tithek_global.h:258 tithek.h:670 tithek.h:1224 tithek.h:1285 tithek.h:1535
+#: tithek.h:1557 tithek.h:1806 tithek.h:1986 tithek.h:2206 tithek.h:2234
+#: tithek.h:2250 tithek.h:2262 tiwakeup.h:66 tiwakeup.h:68 tmc.h:702
+#: tmc.h:1007 tmc.h:1012 tmc.h:1017 tmdb.h:797 tmdb.h:960 TopfieldVFD.c:68
+#: TopfieldVFD.c:72 tpk.h:3216 tpk.new.h:3167 tunerconfig.h:647
+#: tunerconfig.h:666 tunerconfig.h:941 unlock.h:20 unlock.h:66 unlock.h:71
+#: unlock.h:75 vidbull.h:30 vidbull.h:67 vidbull.h:73 videomode.h:67
+#: videoweed.h:35 videoweed.h:80 vidstream.h:45 vidstream.h:86 vidstream.h:98
+#: vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:79 vidto.h:94
+#: vidto.h:128 vidto.h:174 vidto.h:180 vodlocker.h:30 vodlocker.h:74
+#: vodlocker.h:80 vodlocker.h:86 webif_boxcontrol.h:2 xupnpd.h:60 xupnpd.h:71
+#: xupnpd.h:73 xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:215
+#: zapback.c:79 zdf.h:29
 msgid "Message"
 msgstr "Tin nhắn"
 
@@ -6274,9 +6268,9 @@ msgstr "E"
 #: menu.h:986 movie4k.h:36 movie4k.h:48 movie4k.h:92 movie4k.h:399
 #: movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78 movshare.h:157
 #: movshare.h:163 MultiImage.c:46 MultiImage.c:175 MultiImage.c:244
-#: MultiImage.c:262 MultiImage.c:273 MultiImage.c:353 MultiImage.c:358
-#: MultiImage.c:402 MultiImage.c:533 MultiImage.c:591 MultiImage.c:607
-#: MultiImage.c:671 myvideo.h:86 networkbrowser.h:966 networkbrowser.h:1027
+#: MultiImage.c:262 MultiImage.c:273 MultiImage.c:353 MultiImage.c:401
+#: MultiImage.c:533 MultiImage.c:591 MultiImage.c:607 MultiImage.c:671
+#: myvideo.h:86 networkbrowser.h:966 networkbrowser.h:1027
 #: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
 #: networkbrowser.h:1047 networkbrowser.h:1211 networkbrowser.h:1765
 #: networkbrowser.h:1772 networkbrowser.h:1777 networkbrowser.h:1929
