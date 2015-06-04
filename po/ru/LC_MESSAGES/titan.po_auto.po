@@ -6151,7 +6151,7 @@ msgid "No Audiosync"
 msgstr "Загрузка с опцией No Audiosync"
 
 #: MultiImage.c:242
-msgid "No Linux partiton found on this device."
+msgid "No Linux partition found on this device."
 msgstr ""
 
 #: httpdfunc.h:5567 stream.h:33
