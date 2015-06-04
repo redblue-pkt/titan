@@ -851,7 +851,7 @@ msgstr "Nieuw eerst"
 msgid "All Sorted"
 msgstr "Gesorteerd"
 
-#: MultiImage.c:260
+#: MultiImage.c:262
 msgid ""
 "All data on this device will be deleted!\n"
 "OK?"
@@ -3092,13 +3092,13 @@ msgstr ""
 msgid "ERROR"
 msgstr "FOUT"
 
-#: MultiImage.c:351
+#: MultiImage.c:353
 msgid ""
 "ERROR\n"
 "Image already present!"
 msgstr ""
 
-#: MultiImage.c:271
+#: MultiImage.c:273
 msgid ""
 "ERROR\n"
 "Partition could not be created"
@@ -3178,8 +3178,8 @@ msgstr "ERROR.. markering kan niet geplaatst worden"
 #: mediadb.h:1477 mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215
 #: menu.h:984 menu.h:986 movie4k.h:36 movie4k.h:48 movie4k.h:92 movie4k.h:399
 #: movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78 movshare.h:157
-#: movshare.h:163 MultiImage.c:260 MultiImage.c:271 MultiImage.c:531
-#: MultiImage.c:584 MultiImage.c:656 myvideo.h:86 networkbrowser.h:966
+#: movshare.h:163 MultiImage.c:262 MultiImage.c:273 MultiImage.c:533
+#: MultiImage.c:591 MultiImage.c:671 myvideo.h:86 networkbrowser.h:966
 #: networkbrowser.h:1027 networkbrowser.h:1031 networkbrowser.h:1033
 #: networkbrowser.h:1043 networkbrowser.h:1047 networkbrowser.h:1211
 #: networkbrowser.h:1765 networkbrowser.h:1772 networkbrowser.h:1777
@@ -4692,14 +4692,14 @@ msgstr ""
 msgid "INFO"
 msgstr ""
 
-#: MultiImage.c:400
+#: MultiImage.c:402
 msgid ""
 "INFO\n"
 "Extracting process is running in background.\n"
 "A message will be shown when finished."
 msgstr ""
 
-#: MultiImage.c:356
+#: MultiImage.c:358
 msgid ""
 "INFO\n"
 "Extracting will take a few minutes ..."
@@ -4711,7 +4711,7 @@ msgid ""
 "Image extracted"
 msgstr ""
 
-#: MultiImage.c:315
+#: MultiImage.c:317
 msgid "INSTALL"
 msgstr ""
 
@@ -4773,7 +4773,7 @@ msgstr ""
 msgid "Image"
 msgstr ""
 
-#: MultiImage.c:656
+#: MultiImage.c:671
 msgid ""
 "Image creation running!!!\n"
 "Stop process?"
@@ -5744,7 +5744,7 @@ msgstr ""
 #: mediadb.h:1477 mediadbsettings.h:95 menu.h:160 menu.h:215 movie4k.h:36
 #: movie4k.h:48 movie4k.h:92 movie4k.h:399 movreel.h:30 movreel.h:137
 #: movshare.h:34 movshare.h:78 movshare.h:157 movshare.h:163 MultiImage.c:46
-#: MultiImage.c:271 MultiImage.c:351 MultiImage.c:356 MultiImage.c:400
+#: MultiImage.c:273 MultiImage.c:353 MultiImage.c:358 MultiImage.c:402
 #: myvideo.h:86 networkbrowser.h:966 networkbrowser.h:1027
 #: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
 #: networkbrowser.h:1047 networkbrowser.h:1211 networkbrowser.h:1765
@@ -6149,8 +6149,8 @@ msgstr ""
 msgid "No Audiosync"
 msgstr "Geen audio synchronisatie"
 
-#: MultiImage.c:242
-msgid "No Linux partition found on this device."
+#: MultiImage.c:244
+msgid "No Linux partiton found on this device."
 msgstr ""
 
 #: httpdfunc.h:5567 stream.h:33
@@ -6165,7 +6165,7 @@ msgstr ""
 "Geen MediaDB map gevonden!\n"
 "Druk op OK om deze maken"
 
-#: MultiImage.c:584
+#: MultiImage.c:591
 msgid ""
 "No MultiImage device found.\n"
 "Create device?"
@@ -6205,7 +6205,7 @@ msgstr ""
 msgid "No config file found."
 msgstr "Er is geen configuratie bestand gevonden."
 
-#: MultiImage.c:173
+#: MultiImage.c:175
 msgid "No device available"
 msgstr ""
 
@@ -6317,10 +6317,10 @@ msgstr ""
 #: mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215 menu.h:984
 #: menu.h:986 movie4k.h:36 movie4k.h:48 movie4k.h:92 movie4k.h:399
 #: movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78 movshare.h:157
-#: movshare.h:163 MultiImage.c:46 MultiImage.c:173 MultiImage.c:242
-#: MultiImage.c:260 MultiImage.c:271 MultiImage.c:351 MultiImage.c:356
-#: MultiImage.c:400 MultiImage.c:531 MultiImage.c:584 MultiImage.c:600
-#: MultiImage.c:656 myvideo.h:86 networkbrowser.h:966 networkbrowser.h:1027
+#: movshare.h:163 MultiImage.c:46 MultiImage.c:175 MultiImage.c:244
+#: MultiImage.c:262 MultiImage.c:273 MultiImage.c:353 MultiImage.c:358
+#: MultiImage.c:402 MultiImage.c:533 MultiImage.c:591 MultiImage.c:607
+#: MultiImage.c:671 myvideo.h:86 networkbrowser.h:966 networkbrowser.h:1027
 #: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
 #: networkbrowser.h:1047 networkbrowser.h:1211 networkbrowser.h:1765
 #: networkbrowser.h:1772 networkbrowser.h:1777 networkbrowser.h:1929
@@ -7239,7 +7239,7 @@ msgstr ""
 msgid "REMOVE ENTRY"
 msgstr ""
 
-#: MultiImage.c:320
+#: MultiImage.c:322
 msgid "RENAME"
 msgstr ""
 
@@ -9223,7 +9223,7 @@ msgstr ""
 msgid "Sure to cancel the cut process?"
 msgstr ""
 
-#: MultiImage.c:530
+#: MultiImage.c:532
 msgid "Sure to delete Image?\n"
 msgstr ""
 
@@ -9503,7 +9503,7 @@ msgstr ""
 msgid "The hoster is not yet supported !"
 msgstr "De hoster wordt momenteel nog niet ondersteund"
 
-#: MultiImage.c:600
+#: MultiImage.c:607
 msgid ""
 "The install process will look in /tmp for an image.\n"
 "Please copy the zip file to /tmp."
