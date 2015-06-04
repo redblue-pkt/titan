@@ -241,7 +241,7 @@ int no_mdev()
 			}
 			else
 			{
-				textbox("ERROR", _("No Linux partiton found on this device."), _("OK"), getrcconfigint("rcok", NULL),NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+				textbox("ERROR", _("No Linux partition found on this device."), _("OK"), getrcconfigint("rcok", NULL),NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 				ren = 0;
 			}
 			free(path); path=NULL;
