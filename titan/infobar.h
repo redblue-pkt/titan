@@ -155,8 +155,6 @@ void screeninfobar()
 					free(screensaver->value);
 					rcwait = screensaver->speed;
 				}
-				if(status.extplugin != NULL && rcret == RCTIMEOUT)
-					break;
 			}
 			if(screensaver != NULL) screensaver->flag = 0;
 			deinitscreensaver();
@@ -195,7 +193,8 @@ void screeninfobar()
 		}
 
 		//Plugin von aussen aufrufen
-		if(rcret == RCTIMEOUT && status.extplugin != NULL)
+		//if(rcret == RCTIMEOUT && status.extplugin != NULL)
+		if(status.extplugin != NULL)
 		{
 			subtitlepause(1);
 			status.infobar = 0;
