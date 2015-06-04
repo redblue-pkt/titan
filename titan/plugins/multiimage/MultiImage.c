@@ -65,8 +65,10 @@ void multiimage_thread()
 			status.extplugin = NULL;
 		}
 		//Aufruf des plugins
-		status.extplugin = ostrcat("MultiImage", NULL, 0, 0);
+		//status.extplugin = ostrcat("MultiImage", NULL, 0, 0);
 	}
+	free(imagepath); imagepath=NULL;
+	sleep(1);
 	Multi_Image_thread = NULL;
 }
 
@@ -239,7 +241,7 @@ int no_mdev()
 			}
 			else
 			{
-				textbox("ERROR", _("No Linux partition found on this device."), _("OK"), getrcconfigint("rcok", NULL),NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
+				textbox("ERROR", _("No Linux partiton found on this device."), _("OK"), getrcconfigint("rcok", NULL),NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 				ren = 0;
 			}
 			free(path); path=NULL;
@@ -557,6 +559,11 @@ int multiimage_screen(char* mdev)
 			selimage = ostrcat(listbox->select->name, NULL, 0, 0); 
 			break;
 		}
+		if(rcret == getrcconfigint("rcpower", NULL))
+		{
+			rc = 4;
+			break;
+		}
 		drawscreen(multiimage, 0, 0);
 	}
 	delownerrc(multiimage);
@@ -604,7 +611,10 @@ void multi_main(void)
 				ret = multiimage_install(imagefile, mdev, 1);
 				free(imagefile); imagefile=NULL;
 				if(ret == 1)
+				{
+					free(mdev); mdev=NULL;
 					return;
+				}
 			}
 		}
 		if(ret == 3)
@@ -613,6 +623,11 @@ void multi_main(void)
 				continue;		
 			free(mdev); mdev=NULL;
 			mdev = find_multiimage_dev();
+		}
+		if(ret == 4)
+		{
+			oshutdown(2, 1);
+			break;
 		}
 	}
 	free(mdev); mdev=NULL;
