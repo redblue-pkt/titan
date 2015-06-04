@@ -871,7 +871,7 @@ msgstr "Alle neuen zuerst"
 msgid "All Sorted"
 msgstr "Alle Einträge sortiert"
 
-#: MultiImage.c:260
+#: MultiImage.c:262
 msgid ""
 "All data on this device will be deleted!\n"
 "OK?"
@@ -3164,7 +3164,7 @@ msgstr "Frei zu verbleibender Speicher (KB)"
 msgid "ERROR"
 msgstr "!!! FEHLER !!!"
 
-#: MultiImage.c:351
+#: MultiImage.c:353
 msgid ""
 "ERROR\n"
 "Image already present!"
@@ -3172,7 +3172,7 @@ msgstr ""
 "FEHLER\n"
 "Image Name schon vorhanden!"
 
-#: MultiImage.c:271
+#: MultiImage.c:273
 msgid ""
 "ERROR\n"
 "Partition could not be created"
@@ -3252,8 +3252,8 @@ msgstr "FEHLER: In dieser Datei kann kein Marker gesetzt werden"
 #: mediadb.h:1477 mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215
 #: menu.h:984 menu.h:986 movie4k.h:36 movie4k.h:48 movie4k.h:92 movie4k.h:399
 #: movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78 movshare.h:157
-#: movshare.h:163 MultiImage.c:260 MultiImage.c:271 MultiImage.c:531
-#: MultiImage.c:584 MultiImage.c:656 myvideo.h:86 networkbrowser.h:966
+#: movshare.h:163 MultiImage.c:262 MultiImage.c:273 MultiImage.c:533
+#: MultiImage.c:591 MultiImage.c:671 myvideo.h:86 networkbrowser.h:966
 #: networkbrowser.h:1027 networkbrowser.h:1031 networkbrowser.h:1033
 #: networkbrowser.h:1043 networkbrowser.h:1047 networkbrowser.h:1211
 #: networkbrowser.h:1765 networkbrowser.h:1772 networkbrowser.h:1777
@@ -4854,7 +4854,7 @@ msgstr ""
 msgid "INFO"
 msgstr ""
 
-#: MultiImage.c:400
+#: MultiImage.c:402
 msgid ""
 "INFO\n"
 "Extracting process is running in background.\n"
@@ -4864,7 +4864,7 @@ msgstr ""
 "Das Entpacken wird im Hintergrund ausgeführt.\n"
 "Nach Beendigung bekommen sie eine Meldung."
 
-#: MultiImage.c:356
+#: MultiImage.c:358
 msgid ""
 "INFO\n"
 "Extracting will take a few minutes ..."
@@ -4880,7 +4880,7 @@ msgstr ""
 "INFO\n"
 "Image wurde entpackt"
 
-#: MultiImage.c:315
+#: MultiImage.c:317
 msgid "INSTALL"
 msgstr ""
 
@@ -4944,7 +4944,7 @@ msgstr ""
 msgid "Image"
 msgstr ""
 
-#: MultiImage.c:656
+#: MultiImage.c:671
 msgid ""
 "Image creation running!!!\n"
 "Stop process?"
@@ -5921,7 +5921,7 @@ msgstr "Menüliste"
 #: mediadb.h:1477 mediadbsettings.h:95 menu.h:160 menu.h:215 movie4k.h:36
 #: movie4k.h:48 movie4k.h:92 movie4k.h:399 movreel.h:30 movreel.h:137
 #: movshare.h:34 movshare.h:78 movshare.h:157 movshare.h:163 MultiImage.c:46
-#: MultiImage.c:271 MultiImage.c:351 MultiImage.c:356 MultiImage.c:400
+#: MultiImage.c:273 MultiImage.c:353 MultiImage.c:358 MultiImage.c:402
 #: myvideo.h:86 networkbrowser.h:966 networkbrowser.h:1027
 #: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
 #: networkbrowser.h:1047 networkbrowser.h:1211 networkbrowser.h:1765
@@ -6326,8 +6326,8 @@ msgstr "NFS Server Einstellungen"
 msgid "No Audiosync"
 msgstr "Lade player2.ko mit der noaudiosync Option"
 
-#: MultiImage.c:242
-msgid "No Linux partition found on this device."
+#: MultiImage.c:244
+msgid "No Linux partiton found on this device."
 msgstr ""
 
 #: httpdfunc.h:5567 stream.h:33
@@ -6342,7 +6342,7 @@ msgstr ""
 "Kein MediaDB Verzeichnis gefunden!\n"
 "-OK- um es zu erstellen"
 
-#: MultiImage.c:584
+#: MultiImage.c:591
 msgid ""
 "No MultiImage device found.\n"
 "Create device?"
@@ -6384,7 +6384,7 @@ msgstr ""
 msgid "No config file found."
 msgstr "Es wurde keine Konfigurationsdatei gefunden"
 
-#: MultiImage.c:173
+#: MultiImage.c:175
 msgid "No device available"
 msgstr "Kein Datenträger gefunden"
 
@@ -6496,10 +6496,10 @@ msgstr "Ö"
 #: mediadb.h:2525 mediadbsettings.h:95 menu.h:160 menu.h:215 menu.h:984
 #: menu.h:986 movie4k.h:36 movie4k.h:48 movie4k.h:92 movie4k.h:399
 #: movreel.h:30 movreel.h:137 movshare.h:34 movshare.h:78 movshare.h:157
-#: movshare.h:163 MultiImage.c:46 MultiImage.c:173 MultiImage.c:242
-#: MultiImage.c:260 MultiImage.c:271 MultiImage.c:351 MultiImage.c:356
-#: MultiImage.c:400 MultiImage.c:531 MultiImage.c:584 MultiImage.c:600
-#: MultiImage.c:656 myvideo.h:86 networkbrowser.h:966 networkbrowser.h:1027
+#: movshare.h:163 MultiImage.c:46 MultiImage.c:175 MultiImage.c:244
+#: MultiImage.c:262 MultiImage.c:273 MultiImage.c:353 MultiImage.c:358
+#: MultiImage.c:402 MultiImage.c:533 MultiImage.c:591 MultiImage.c:607
+#: MultiImage.c:671 myvideo.h:86 networkbrowser.h:966 networkbrowser.h:1027
 #: networkbrowser.h:1031 networkbrowser.h:1033 networkbrowser.h:1043
 #: networkbrowser.h:1047 networkbrowser.h:1211 networkbrowser.h:1765
 #: networkbrowser.h:1772 networkbrowser.h:1777 networkbrowser.h:1929
@@ -7429,7 +7429,7 @@ msgstr "Neu laden"
 msgid "REMOVE ENTRY"
 msgstr "Eintrag löschen"
 
-#: MultiImage.c:320
+#: MultiImage.c:322
 msgid "RENAME"
 msgstr ""
 
@@ -9422,7 +9422,7 @@ msgstr ""
 msgid "Sure to cancel the cut process?"
 msgstr "Soll der Schnitt wirklich abgebrochen werden?"
 
-#: MultiImage.c:530
+#: MultiImage.c:532
 msgid "Sure to delete Image?\n"
 msgstr "Soll dieses Image wirklich gelöscht werden?\n"
 
@@ -9711,7 +9711,7 @@ msgstr ""
 msgid "The hoster is not yet supported !"
 msgstr "Der Anbieter wird zur Zeit nicht unterstützt!"
 
-#: MultiImage.c:600
+#: MultiImage.c:607
 msgid ""
 "The install process will look in /tmp for an image.\n"
 "Please copy the zip file to /tmp."
