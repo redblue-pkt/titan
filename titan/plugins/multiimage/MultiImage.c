@@ -45,7 +45,6 @@ void multiimage_thread()
 		{
 			textbox(_("Message"), _("INFO\nImage extracted"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 500, 200, 0, 0);
 			remove("/tmp/multiende");
-			sleep(1);
 			break;
 		}
 	}
@@ -66,7 +65,8 @@ void multiimage_thread()
 			status.extplugin = NULL;
 		}
 		//Aufruf des plugins
-		//status.extplugin = ostrcat("MultiImage", NULL, 0, 0);
+		status.extplugin = ostrcat("MultiImage", NULL, 0, 0);
+		writerc(getrcconfigint("rcexit", NULL));
 	}
 	free(imagepath); imagepath=NULL;
 	Multi_Image_thread = NULL;
@@ -398,7 +398,7 @@ int multiimage_install(char* imagefile, char* mdev, int type)
 		system(cmd);
 		free(cmd); cmd=NULL;
 		free(temp); temp=NULL;
-		textbox(_("Message"), _("Extracting will take a few minutes ...\nProcess is running in background.\nA message will be shown when finished."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 300, 10, 0);
+		textbox(_("Message"), _("Extracting will take a few minutes ...\n\nProcess is running in background.\nA message will be shown when finished."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 300, 10, 0);
 		Multi_Image_thread = addtimer(&multiimage_thread, START, 10000, 1, NULL, NULL, NULL);
 	}
 
