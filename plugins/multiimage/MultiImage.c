@@ -45,6 +45,7 @@ void multiimage_thread()
 		{
 			textbox(_("Message"), _("INFO\nImage extracted"), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 500, 200, 0, 0);
 			remove("/tmp/multiende");
+			sleep(1);
 			break;
 		}
 	}
@@ -68,7 +69,6 @@ void multiimage_thread()
 		//status.extplugin = ostrcat("MultiImage", NULL, 0, 0);
 	}
 	free(imagepath); imagepath=NULL;
-	sleep(1);
 	Multi_Image_thread = NULL;
 }
 
@@ -355,7 +355,6 @@ int multiimage_install(char* imagefile, char* mdev, int type)
 			}
 			if(type == 1)
 			{
-				textbox(_("Message"), _("INFO\nExtracting will take a few minutes ..."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 200, 0, 0);
 				iname = ostrcat(imagename->ret, NULL, 1, 0);
 				rc = 1;
 				break;
@@ -399,8 +398,7 @@ int multiimage_install(char* imagefile, char* mdev, int type)
 		system(cmd);
 		free(cmd); cmd=NULL;
 		free(temp); temp=NULL;
-		textbox(_("Message"), _("INFO\nExtracting process is running in background.\nA message will be shown when finished."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 250, 10, 0);
-	
+		textbox(_("Message"), _("Extracting will take a few minutes ...\nProcess is running in background.\nA message will be shown when finished."), _("OK"), getrcconfigint("rcok", NULL), NULL, 0, NULL, 0, NULL, 0, 600, 300, 10, 0);
 		Multi_Image_thread = addtimer(&multiimage_thread, START, 10000, 1, NULL, NULL, NULL);
 	}
 
@@ -422,6 +420,7 @@ int multiimage_screen(char* mdev)
 	int rcret = 0;	
 	int rc = 0;
 	int test = 0;
+	int test2 = 0;
 	
 	struct skin* multiimage = getscreen("multiimage");
 	struct skin* listbox = getscreennode(multiimage, "listbox");
@@ -443,6 +442,7 @@ int multiimage_screen(char* mdev)
 	selimage = readsys(tmpstr, 1);
 	free(tmpstr); tmpstr=NULL;
 	
+	test2 = 0;
 	dir = opendir(path);
 	if (dir != 0)
 	{
@@ -467,7 +467,7 @@ int multiimage_screen(char* mdev)
 						tmpstr = ostrcat(dirzeiger->d_name, "  (selected)", 0, 0);	
 						changetext(chnode1, tmpstr);
 						free(tmpstr); tmpstr=NULL;
-						test = 2;
+						test2 = 1;
 					}
 					else		
 						changetext(chnode1, dirzeiger->d_name);
@@ -492,7 +492,7 @@ int multiimage_screen(char* mdev)
 				chnode1->prozwidth = images->prozwidth;
 				chnode1->deaktivcol = images->deaktivcol;
 				chnode1->name = ostrcat("Flash", NULL, 0, 0);
-				if(test == 1)
+				if(test2 == 0)
 					changetext(chnode1, "Flash  (selected)");
 				else
 					changetext(chnode1, "Flash");
