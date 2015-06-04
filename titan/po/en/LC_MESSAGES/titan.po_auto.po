@@ -2440,7 +2440,7 @@ msgstr ""
 msgid "Create Folder"
 msgstr ""
 
-#: plugins_multiimage_skin.xml.h:16 skins_multiimage_skin.xml.h:16
+#: plugins_multiimage_skin.xml.h:17 skins_multiimage_skin.xml.h:17
 msgid "Create MultiImage device"
 msgstr ""
 
@@ -5470,7 +5470,7 @@ msgstr "Multi EPG - Satellites"
 msgid "Main Menu"
 msgstr ""
 
-#: plugins_multiimage_skin.xml.h:17 skins_multiimage_skin.xml.h:17
+#: plugins_multiimage_skin.xml.h:18 skins_multiimage_skin.xml.h:18
 msgid "Manage MultiImage"
 msgstr ""
 
@@ -5972,7 +5972,7 @@ msgstr ""
 msgid "MultiImage"
 msgstr ""
 
-#: plugins_multiimage_skin.xml.h:18 skins_multiimage_skin.xml.h:18
+#: plugins_multiimage_skin.xml.h:19 skins_multiimage_skin.xml.h:19
 msgid "MultiImage Install/Rename"
 msgstr ""
 
@@ -6168,7 +6168,7 @@ msgid "No Audiosync"
 msgstr "No audio synchronisation"
 
 #: MultiImage.c:244
-msgid "No Linux partiton found on this device."
+msgid "No Linux partition found on this device."
 msgstr ""
 
 #: httpdfunc.h:5567 stream.h:33
@@ -6407,7 +6407,7 @@ msgid "OK"
 msgstr ""
 
 #: plugins_multiimage_skin.xml.h:11 skins_multiimage_skin.xml.h:11
-msgid "OK = select image"
+msgid "OK = select image for boot"
 msgstr ""
 
 #: skin_default_skin.xml.h:472
@@ -7075,6 +7075,10 @@ msgstr "Post on the wall of other User(s)"
 msgid "Power"
 msgstr ""
 
+#: plugins_multiimage_skin.xml.h:12 skins_multiimage_skin.xml.h:12
+msgid "Power = reboot receiver"
+msgstr ""
+
 #: adjust.h:110 httpdfunc.h:4021
 msgid "Power Menu"
 msgstr ""
@@ -7616,7 +7620,7 @@ msgid "Removeing"
 msgstr ""
 
 #: filemanager.h:23 filemanager.h:86 filemanager.h:92
-#: plugins_multiimage_skin.xml.h:12 skins_multiimage_skin.xml.h:12
+#: plugins_multiimage_skin.xml.h:13 skins_multiimage_skin.xml.h:13
 msgid "Rename"
 msgstr ""
 
@@ -7915,12 +7919,12 @@ msgstr ""
 
 #: plugins_autotimer_skin.xml.h:9 plugins_dlna_skin.xml.h:11
 #: plugins_instar_skin.xml.h:15 plugins_lcdpearl1_skin.xml.h:11
-#: plugins_lcdsamsung_skin.xml.h:14 plugins_multiimage_skin.xml.h:15
+#: plugins_lcdsamsung_skin.xml.h:14 plugins_multiimage_skin.xml.h:16
 #: plugins_stopifnotused_skin.xml.h:5 plugins_tsSchnitt_skin.xml.h:7
 #: plugins_xupnpd_skin.xml.h:2 skin_default_skin.xml.h:681
 #: skins_autotimer_skin.xml.h:9 skins_dlna_skin.xml.h:11
 #: skins_instar_skin.xml.h:15 skins_lcdpearl1_skin.xml.h:11
-#: skins_lcdsamsung_skin.xml.h:14 skins_multiimage_skin.xml.h:15
+#: skins_lcdsamsung_skin.xml.h:14 skins_multiimage_skin.xml.h:16
 #: skins_stopifnotused_skin.xml.h:5 skins_tsSchnitt_skin.xml.h:7
 #: skins_xupnpd_skin.xml.h:2
 msgid "START"
@@ -8481,11 +8485,11 @@ msgstr "Select your search mode"
 msgid "Select backup:"
 msgstr ""
 
-#: plugins_multiimage_skin.xml.h:13 skins_multiimage_skin.xml.h:13
+#: plugins_multiimage_skin.xml.h:14 skins_multiimage_skin.xml.h:14
 msgid "Select device"
 msgstr ""
 
-#: plugins_multiimage_skin.xml.h:14 skins_multiimage_skin.xml.h:14
+#: plugins_multiimage_skin.xml.h:15 skins_multiimage_skin.xml.h:15
 msgid "Selected image"
 msgstr ""
 
