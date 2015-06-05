@@ -1,4 +1,4 @@
-#: plugins_wm2014_skin.xml.h:1 skins_wm2014_skin.xml.h:1 tithek_mainmenu.h:1
+#: tithek_mainmenu.h:1
 msgid ""
 msgstr ""
 "Project-Id-Version: TitanNit 1.66\n"
@@ -1673,7 +1673,7 @@ msgstr "Browser Auflösung"
 msgid "Buffering Stream - Cancel with Exit"
 msgstr "Stream wird zwischengespeichert - abbrechen mit Exit"
 
-#: plugins_wm2014_skin.xml.h:4 skins_wm2014_skin.xml.h:4
+#: plugins_wm2014_skin.xml.h:3 skins_wm2014_skin.xml.h:3
 msgid "Button 1..8 => Group A..H"
 msgstr ""
 
@@ -2697,7 +2697,7 @@ msgstr ""
 msgid "Data: "
 msgstr ""
 
-#: plugins_wm2014_skin.xml.h:5 skins_wm2014_skin.xml.h:5
+#: plugins_wm2014_skin.xml.h:4 skins_wm2014_skin.xml.h:4
 msgid "Date"
 msgstr "Datum"
 
@@ -2709,7 +2709,7 @@ msgstr ""
 msgid "Day"
 msgstr "Tag"
 
-#: plugins_wm2014_skin.xml.h:6 skins_wm2014_skin.xml.h:6
+#: plugins_wm2014_skin.xml.h:5 skins_wm2014_skin.xml.h:5
 msgid "Day "
 msgstr "Tag"
 
@@ -2904,7 +2904,7 @@ msgstr ""
 msgid "DiSEqC Mode"
 msgstr "DiSEqC Modus"
 
-#: plugins_wm2014_skin.xml.h:7 skins_wm2014_skin.xml.h:7
+#: plugins_wm2014_skin.xml.h:6 skins_wm2014_skin.xml.h:6
 msgid "Diff"
 msgstr ""
 
@@ -3018,7 +3018,7 @@ msgstr "Download abgeschlossen!"
 msgid "Downloads"
 msgstr ""
 
-#: plugins_wm2014_skin.xml.h:8 skins_wm2014_skin.xml.h:8
+#: plugins_wm2014_skin.xml.h:7 skins_wm2014_skin.xml.h:7
 msgid "Draw"
 msgstr "Unentschieden"
 
@@ -4188,7 +4188,7 @@ msgstr ""
 msgid "Go to startpos"
 msgstr "Gehe zu Startposition"
 
-#: plugins_wm2014_skin.xml.h:9 skins_wm2014_skin.xml.h:9
+#: plugins_wm2014_skin.xml.h:8 skins_wm2014_skin.xml.h:8
 msgid "Goals"
 msgstr "Tore"
 
@@ -5529,7 +5529,7 @@ msgstr ""
 msgid "Longitude"
 msgstr "Längengrad"
 
-#: plugins_wm2014_skin.xml.h:10 skins_wm2014_skin.xml.h:10
+#: plugins_wm2014_skin.xml.h:9 skins_wm2014_skin.xml.h:9
 msgid "Lost"
 msgstr "Verloren"
 
@@ -7081,7 +7081,7 @@ msgstr "Wiedergabeliste"
 msgid "Playbackbuffer Size"
 msgstr "Wiedergabepuffer - Größe (http) Streams"
 
-#: plugins_wm2014_skin.xml.h:11 skins_wm2014_skin.xml.h:11
+#: plugins_wm2014_skin.xml.h:10 skins_wm2014_skin.xml.h:10
 msgid "Played"
 msgstr "Gespielt"
 
@@ -7167,7 +7167,7 @@ msgstr "Plugin Taste - Belegungsmenü"
 msgid "Plugins"
 msgstr "Zusatzprogramme"
 
-#: plugins_wm2014_skin.xml.h:12 skins_wm2014_skin.xml.h:12
+#: plugins_wm2014_skin.xml.h:11 skins_wm2014_skin.xml.h:11
 msgid "Points"
 msgstr "Punkte"
 
@@ -7706,8 +7706,8 @@ msgstr "Rot-Menü"
 msgid "Reduce Standby frequency"
 msgstr "CPU-Frequenz im Standby reduzieren"
 
-#: plugins_wm2014_skin.xml.h:13 skin_default_skin.xml.h:555
-#: skins_wm2014_skin.xml.h:13 softcam.h:293
+#: plugins_wm2014_skin.xml.h:12 skin_default_skin.xml.h:555
+#: skins_wm2014_skin.xml.h:12 softcam.h:293
 msgid "Refresh"
 msgstr "Aktualisieren"
 
@@ -9642,15 +9642,15 @@ msgstr "Txt Pid:"
 msgid "Tastensperre Plugin - entsperren mit rot/rot/gruen"
 msgstr ""
 
-#: plugins_wm2014_skin.xml.h:14 skins_wm2014_skin.xml.h:14
+#: plugins_wm2014_skin.xml.h:13 skins_wm2014_skin.xml.h:13
 msgid "Team"
 msgstr "Gruppe"
 
-#: plugins_wm2014_skin.xml.h:15 skins_wm2014_skin.xml.h:15
+#: plugins_wm2014_skin.xml.h:14 skins_wm2014_skin.xml.h:14
 msgid "Team 1"
 msgstr "Gruppe 1"
 
-#: plugins_wm2014_skin.xml.h:16 skins_wm2014_skin.xml.h:16
+#: plugins_wm2014_skin.xml.h:15 skins_wm2014_skin.xml.h:15
 msgid "Team 2"
 msgstr "Gruppe 2"
 
@@ -9826,7 +9826,7 @@ msgstr "TiThek Einstellungen"
 msgid "TiThek the Multimedia-thek"
 msgstr "TiThek die Online Mediathek"
 
-#: plugins_wm2014_skin.xml.h:17 skins_wm2014_skin.xml.h:17
+#: plugins_wm2014_skin.xml.h:16 skins_wm2014_skin.xml.h:16
 msgid "Time"
 msgstr "Uhrzeit"
 
@@ -10915,7 +10915,7 @@ msgstr ""
 msgid "Wlan rt5370sta"
 msgstr ""
 
-#: plugins_wm2014_skin.xml.h:20 skins_wm2014_skin.xml.h:20
+#: plugins_wm2014_skin.xml.h:19 skins_wm2014_skin.xml.h:19
 msgid "Won"
 msgstr "Gewonnen"
 
@@ -11060,11 +11060,11 @@ msgstr ""
 msgid "["
 msgstr ""
 
-#: plugins_wm2014_skin.xml.h:2 skins_wm2014_skin.xml.h:2
+#: plugins_wm2014_skin.xml.h:1 skins_wm2014_skin.xml.h:1
 msgid "[0] => Finals"
 msgstr ""
 
-#: plugins_wm2014_skin.xml.h:3 skins_wm2014_skin.xml.h:3
+#: plugins_wm2014_skin.xml.h:2 skins_wm2014_skin.xml.h:2
 msgid "[9] => Last 16"
 msgstr ""
 
@@ -13459,7 +13459,7 @@ msgstr ""
 msgid "volume"
 msgstr "Lautstärke"
 
-#: plugins_wm2014_skin.xml.h:18 skins_wm2014_skin.xml.h:18
+#: plugins_wm2014_skin.xml.h:17 skins_wm2014_skin.xml.h:17
 msgid "vs"
 msgstr "gegen"
 
@@ -13503,7 +13503,7 @@ msgstr "weiß"
 msgid "whitelist"
 msgstr "Weiße Liste"
 
-#: plugins_wm2014_skin.xml.h:19 skins_wm2014_skin.xml.h:19
+#: plugins_wm2014_skin.xml.h:18 skins_wm2014_skin.xml.h:18
 msgid "will be set by plugin"
 msgstr "wird vom Plugin eingestellt"
 
