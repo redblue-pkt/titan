@@ -2475,7 +2475,7 @@ msgstr ""
 
 #: plugins_multiimage_skin.xml.h:2 skins_multiimage_skin.xml.h:2
 msgid "Create"
-msgstr ""
+msgstr "Erstellen"
 
 #: skin_default_skin.xml.h:170
 msgid "Create Default Favorites"
@@ -3731,7 +3731,7 @@ msgstr ""
 
 #: tithek.h:985
 msgid "Favorites"
-msgstr ""
+msgstr "Favoriten"
 
 #: global.h:6141
 msgid "February"
