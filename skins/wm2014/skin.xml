@@ -75,7 +75,7 @@
 
 	<node name="box2" posx="28" posy="378" width="1164" height="34" bordersize="1" bordercol="#267FB2">
 
-	<node name="TableNo" text="#"      halign="left"   valign="center" posx="30"   posy="380" width="100" height="30" fontsize="30">
+	<node name="TableNo" text=""      halign="left"   valign="center" posx="30"   posy="380" width="100" height="30" fontsize="30">
 	<node name="Team"    text="Team"   halign="left"   valign="center" posx="180"  posy="380" width="300" height="30" fontsize="30">
 	<node name="Played"  text="Played" halign="center" valign="center" posx="480"  posy="380" width="110" height="30" fontsize="30">
 	<node name="Won"     text="Won"    halign="center" valign="center" posx="590"  posy="380" width="100" height="30" fontsize="30">
