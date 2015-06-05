@@ -1,4 +1,3 @@
-#: tithek_mainmenu.h:1
 msgid ""
 msgstr ""
 "Project-Id-Version: TitanNit 1.65\n"
@@ -650,7 +649,7 @@ msgid ""
 "Aborting backup..."
 msgstr "Nessuna directory di backup trovato"
 
-#: skin_default_skin.xml.h:100 tithek_mainmenu.h:14 webif_channellist.h:4
+#: skin_default_skin.xml.h:100 tithek_mainmenu.h:13 webif_channellist.h:4
 msgid "A-Z"
 msgstr ""
 
@@ -836,11 +835,11 @@ msgstr ""
 msgid "All Channels"
 msgstr "tutti i canali"
 
-#: tithek_mainmenu.h:2
+#: tithek_mainmenu.h:1
 msgid "All New first"
 msgstr ""
 
-#: tithek_mainmenu.h:3
+#: tithek_mainmenu.h:2
 msgid "All Sorted"
 msgstr ""
 
@@ -1054,43 +1053,43 @@ msgstr ""
 msgid "Atemio (hotline)"
 msgstr ""
 
-#: tithek_mainmenu.h:4
+#: tithek_mainmenu.h:3
 msgid "Atemio Cable Tuner scan"
 msgstr "attivare il Tuner DVB-C?"
 
-#: tithek_mainmenu.h:5
+#: tithek_mainmenu.h:4
 msgid "Atemio Channelsearch 4xSat"
 msgstr "Tipo di ricerca canali"
 
-#: tithek_mainmenu.h:6
+#: tithek_mainmenu.h:5
 msgid "Atemio Harddisc formating"
 msgstr ""
 
-#: tithek_mainmenu.h:7
+#: tithek_mainmenu.h:6
 msgid "Atemio Network configuration stable IP"
 msgstr ""
 
-#: tithek_mainmenu.h:8
+#: tithek_mainmenu.h:7
 msgid "Atemio Series Recoding"
 msgstr ""
 
-#: tithek_mainmenu.h:9
+#: tithek_mainmenu.h:8
 msgid "Atemio Skin (Gui Design)"
 msgstr ""
 
-#: tithek_mainmenu.h:10
+#: tithek_mainmenu.h:9
 msgid "Atemio TitanNit Trailer"
 msgstr ""
 
-#: tithek_mainmenu.h:11
+#: tithek_mainmenu.h:10
 msgid "Atemio TitanNit zap Menu"
 msgstr ""
 
-#: tithek_mainmenu.h:12
+#: tithek_mainmenu.h:11
 msgid "Atemio Tuner configuration Sat"
 msgstr "Impostazione Tuner"
 
-#: tithek_mainmenu.h:13
+#: tithek_mainmenu.h:12
 msgid "Atemio WLAN configuration"
 msgstr "LNB configurazioni"
 
@@ -1906,7 +1905,7 @@ msgstr "Annula"
 msgid "Cat-Catch"
 msgstr ""
 
-#: tithek_mainmenu.h:15
+#: tithek_mainmenu.h:14
 msgid "Category"
 msgstr ""
 
@@ -3614,7 +3613,7 @@ msgstr ""
 msgid "Fav"
 msgstr "Favoriti"
 
-#: tithek_mainmenu.h:16
+#: tithek_mainmenu.h:15
 msgid "Favoriten"
 msgstr ""
 
@@ -4578,19 +4577,19 @@ msgstr ""
 msgid "How many days"
 msgstr ""
 
-#: tithek_mainmenu.h:17
+#: tithek_mainmenu.h:16
 msgid "HowTo Feedadresse Eingeben"
 msgstr ""
 
-#: tithek_mainmenu.h:18
+#: tithek_mainmenu.h:17
 msgid "HowTo Picons Einrichten"
 msgstr ""
 
-#: tithek_mainmenu.h:19
+#: tithek_mainmenu.h:18
 msgid "HowTo Secret"
 msgstr ""
 
-#: tithek_mainmenu.h:20
+#: tithek_mainmenu.h:19
 msgid "HowTo Sky V13 Einrichten"
 msgstr ""
 
@@ -4930,7 +4929,7 @@ msgstr ""
 msgid "Internet Browser Plugin not installed !"
 msgstr ""
 
-#: tithek_mainmenu.h:21
+#: tithek_mainmenu.h:20
 msgid "Internet Radio"
 msgstr "Internet Browser"
 
@@ -5062,7 +5061,7 @@ msgstr ""
 msgid "Keys Updated !"
 msgstr "Updated !"
 
-#: tithek_mainmenu.h:22
+#: tithek_mainmenu.h:21
 msgid "KinoX"
 msgstr ""
 
@@ -5563,23 +5562,23 @@ msgstr ""
 msgid "MediaDB scan finished"
 msgstr ""
 
-#: tithek_mainmenu.h:23
+#: tithek_mainmenu.h:22
 msgid "Mediacenter AudioPlayer Playlisten Preview"
 msgstr ""
 
-#: tithek_mainmenu.h:24
+#: tithek_mainmenu.h:23
 msgid "Mediacenter AudioPlayer Screensaver Preview"
 msgstr ""
 
-#: tithek_mainmenu.h:25
+#: tithek_mainmenu.h:24
 msgid "Mediacenter Mediathek Kinox Preview"
 msgstr ""
 
-#: tithek_mainmenu.h:26
+#: tithek_mainmenu.h:25
 msgid "Mediacenter Mediathek Myvideo/Rtl2/InternetTv/Radio Preview"
 msgstr ""
 
-#: tithek_mainmenu.h:27
+#: tithek_mainmenu.h:26
 msgid "Mediacenter VideoPlayer Preview"
 msgstr ""
 
@@ -5855,7 +5854,7 @@ msgstr "Modalitï¿½ spostamento"
 msgid "Moven"
 msgstr "Muovere"
 
-#: tithek_mainmenu.h:28
+#: tithek_mainmenu.h:27
 msgid "Movie4k"
 msgstr "Moviepath"
 
@@ -5936,7 +5935,7 @@ msgstr ""
 msgid "My Video"
 msgstr ""
 
-#: tithek_mainmenu.h:29
+#: tithek_mainmenu.h:28
 msgid "MyVideo"
 msgstr "My Video"
 
@@ -5956,7 +5955,7 @@ msgstr "Avanti"
 msgid "NONE"
 msgstr "Nessuno"
 
-#: tithek_mainmenu.h:31
+#: tithek_mainmenu.h:30
 msgid "NTV-Now"
 msgstr ""
 
@@ -6023,7 +6022,7 @@ msgstr ""
 msgid "Networkfile libsmbclient 3.0.28b"
 msgstr ""
 
-#: tithek_mainmenu.h:30
+#: tithek_mainmenu.h:29
 msgid "Netzkino"
 msgstr ""
 
@@ -7196,11 +7195,11 @@ msgstr ""
 msgid "RS232"
 msgstr ""
 
-#: tithek_mainmenu.h:34
+#: tithek_mainmenu.h:33
 msgid "RTL-Now"
 msgstr ""
 
-#: tithek_mainmenu.h:32
+#: tithek_mainmenu.h:31
 msgid "RTL2-Now"
 msgstr ""
 
@@ -7676,7 +7675,7 @@ msgstr ""
 msgid "Rotor Settings"
 msgstr ""
 
-#: tithek_mainmenu.h:33
+#: tithek_mainmenu.h:32
 msgid "RtlNitro-Now"
 msgstr ""
 
@@ -8203,41 +8202,41 @@ msgstr ""
 #: rtl2now.h:505 rtl2now.h:507 rtl2now.h:569 rtl2now.h:571
 #: skin_default_skin.xml.h:622 solarmovie.h:122 solarmovie.h:124
 #: solarmovie.h:235 solarmovie.h:237 tectime.h:13 tectime.h:15
-#: tithek_mainmenu.h:35 tmdb.h:898 tvtoast.h:837 tvtoast.h:839 xvideos.h:56
+#: tithek_mainmenu.h:34 tmdb.h:898 tvtoast.h:837 tvtoast.h:839 xvideos.h:56
 #: xvideos.h:58 youtube.h:240 youtube.h:242 youtube.h:339 youtube.h:341
 #: zdf.h:147 zdf.h:149
 msgid "Search"
 msgstr "Cerca"
 
-#: tithek_mainmenu.h:36
+#: tithek_mainmenu.h:35
 msgid "Search (10)"
 msgstr "Cerca"
 
-#: tithek_mainmenu.h:37
+#: tithek_mainmenu.h:36
 msgid "Search (20)"
 msgstr "Cerca"
 
-#: tithek_mainmenu.h:38
+#: tithek_mainmenu.h:37
 msgid "Search (25)"
 msgstr "Cerca"
 
-#: tithek_mainmenu.h:39
+#: tithek_mainmenu.h:38
 msgid "Search (50)"
 msgstr "Cerca"
 
-#: tithek_mainmenu.h:41
+#: tithek_mainmenu.h:40
 msgid "Search (local)"
 msgstr "Cerca"
 
-#: tithek_mainmenu.h:40
+#: tithek_mainmenu.h:39
 msgid "Search Cast"
 msgstr "search east"
 
-#: tithek_mainmenu.h:42
+#: tithek_mainmenu.h:41
 msgid "Search Movie"
 msgstr "Search on MyVideo"
 
-#: tithek_mainmenu.h:43
+#: tithek_mainmenu.h:42
 msgid "Search Serie"
 msgstr "Cerca"
 
@@ -8821,7 +8820,7 @@ msgstr ""
 msgid "Softcam selection:"
 msgstr "Seleziona Softcam:"
 
-#: tithek_mainmenu.h:44
+#: tithek_mainmenu.h:43
 msgid "Solarmovie"
 msgstr ""
 
@@ -9139,7 +9138,7 @@ msgstr ""
 msgid "Sunday"
 msgstr "Domenica"
 
-#: tithek_mainmenu.h:45
+#: tithek_mainmenu.h:44
 msgid "SuperRTL-Now"
 msgstr ""
 
@@ -9545,7 +9544,7 @@ msgstr ""
 msgid "Time to wait after seek for fill buffer"
 msgstr ""
 
-#: tithek_mainmenu.h:46
+#: tithek_mainmenu.h:45
 msgid "TimeTv"
 msgstr "Registrazione"
 
@@ -9658,7 +9657,7 @@ msgstr ""
 msgid "Tint"
 msgstr ""
 
-#: tithek_mainmenu.h:47
+#: tithek_mainmenu.h:46
 msgid "Tips und Tricks"
 msgstr ""
 
@@ -10248,7 +10247,7 @@ msgstr "Impostazioni VIDEO"
 msgid "VLC Player"
 msgstr ""
 
-#: tithek_mainmenu.h:48
+#: tithek_mainmenu.h:47
 msgid "VOX-Now"
 msgstr ""
 
@@ -10654,11 +10653,11 @@ msgstr ""
 msgid "XPicons LightTransparent (small - Astra 19.2E)"
 msgstr ""
 
-#: tithek_mainmenu.h:49
+#: tithek_mainmenu.h:48
 msgid "XXX-Beeg"
 msgstr ""
 
-#: tithek_mainmenu.h:50
+#: tithek_mainmenu.h:49
 msgid "XXX-XVIDEOS"
 msgstr "VIDEO"
 
@@ -10708,7 +10707,7 @@ msgid ""
 "Stop the box??? "
 msgstr ""
 
-#: tithek_mainmenu.h:51
+#: tithek_mainmenu.h:50
 msgid "Youtube"
 msgstr ""
 
@@ -10716,7 +10715,7 @@ msgstr ""
 msgid "Z"
 msgstr ""
 
-#: tithek_mainmenu.h:52
+#: tithek_mainmenu.h:51
 msgid "ZDF"
 msgstr ""
 
