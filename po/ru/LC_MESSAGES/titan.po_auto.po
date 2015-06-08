@@ -2155,7 +2155,7 @@ msgstr "Выберите способ сброса настроек из спи�
 msgid "Choose your Shares from the following list"
 msgstr "Выберите для изменения, добавления новой сетевой папки"
 
-#: ard.h:102 tvtoast.h:808 youtube.h:191 zdf.h:112
+#: ard.h:102 tvtoast.h:808 youtube.h:204 zdf.h:112
 msgid "Choose your Streaming Format from the following list"
 msgstr "Выберите нужный формат потока из списка"
 
@@ -3221,7 +3221,7 @@ msgstr "Ошибка. Нельзя установить маркер на это
 #: skins_stopifnotused_skin.xml.h:3 skins_sudoku_skin.xml.h:7
 #: skins_tiwakeup_skin.xml.h:1 skins_wins3_skin.xml.h:1 sock.h:954
 #: softcam.h:411 softcam.h:474 softcam.h:475 solarmovie.h:35 solarmovie.h:47
-#: solarmovie.h:320 spinner.h:18 stopifnotused.c:31 streamcloud.h:31
+#: solarmovie.h:348 spinner.h:18 stopifnotused.c:31 streamcloud.h:31
 #: streamcloud.h:74 streamcloud.h:80 streamcloud.h:90 streamcloud.h:103
 #: streamcloud.h:134 streamcloud.h:193 stream.h:33 system_backup_restore.h:31
 #: system_backup_restore.h:40 system_backup_restore.h:43
@@ -3244,7 +3244,7 @@ msgstr "Ошибка. Нельзя установить маркер на это
 #: vidstream.h:98 vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:79
 #: vidto.h:94 vidto.h:128 vidto.h:174 vidto.h:180 vodlocker.h:30
 #: vodlocker.h:74 vodlocker.h:80 vodlocker.h:86 xupnpd.h:60 xupnpd.h:71
-#: xupnpd.h:73 xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:215
+#: xupnpd.h:73 xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:228
 #: zapback.c:79 zdf.h:29
 msgid "EXIT"
 msgstr "Выход"
@@ -3369,7 +3369,7 @@ msgstr ""
 msgid "EpgChannels: "
 msgstr "EPG каналов "
 
-#: kinox.h:300 movie4k.h:859 movie4k.h:1107 solarmovie.h:551
+#: kinox.h:300 movie4k.h:859 movie4k.h:1107 solarmovie.h:579
 msgid "Episode"
 msgstr "Эпизод"
 
@@ -5762,7 +5762,7 @@ msgstr ""
 #: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 security.h:1894 service.h:738
 #: service.h:983 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:317
 #: skinadjust.h:720 skinselector.h:231 sock.h:954 softcam.h:411 softcam.h:474
-#: softcam.h:475 solarmovie.h:35 solarmovie.h:47 solarmovie.h:320 spinner.h:18
+#: softcam.h:475 solarmovie.h:35 solarmovie.h:47 solarmovie.h:348 spinner.h:18
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:80
 #: streamcloud.h:90 streamcloud.h:103 streamcloud.h:134 streamcloud.h:193
 #: stream.h:33 system_backup_restore.h:40 system_backup_restore.h:43
@@ -5782,7 +5782,7 @@ msgstr ""
 #: vidstream.h:167 vidto.h:31 vidto.h:67 vidto.h:73 vidto.h:79 vidto.h:94
 #: vidto.h:128 vidto.h:174 vidto.h:180 vodlocker.h:30 vodlocker.h:74
 #: vodlocker.h:80 vodlocker.h:86 webif_boxcontrol.h:2 xupnpd.h:60 xupnpd.h:71
-#: xupnpd.h:73 xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:215
+#: xupnpd.h:73 xvidstage.h:54 xvidstage.h:100 xvidstage.h:177 youtube.h:228
 #: zapback.c:79 zdf.h:29
 msgid "Message"
 msgstr "Сообщение"
@@ -6346,7 +6346,7 @@ msgstr ""
 #: skins_optimize_skin.xml.h:2 skins_rgui_skin.xml.h:2
 #: skins_sudoku_skin.xml.h:13 skins_tiwakeup_skin.xml.h:2
 #: skins_wins3_skin.xml.h:3 sock.h:954 softcam.h:411 softcam.h:474
-#: softcam.h:475 solarmovie.h:35 solarmovie.h:47 solarmovie.h:320 spinner.h:18
+#: softcam.h:475 solarmovie.h:35 solarmovie.h:47 solarmovie.h:348 spinner.h:18
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:80
 #: streamcloud.h:90 streamcloud.h:103 streamcloud.h:134 streamcloud.h:193
 #: stream.h:33 system_backup_restore.h:31 system_backup_restore.h:40
@@ -6377,7 +6377,7 @@ msgstr ""
 #: webif_rc_virtual.atemio6000.h:20 webif_rc_virtual.atemio6100.h:20
 #: webif_rc_virtual.atemio6200.h:20 webif_rc_virtual.atemio-nemesis.h:20
 #: webif_rc_virtual.h:20 xupnpd.h:60 xupnpd.h:71 xupnpd.h:73 xvidstage.h:54
-#: xvidstage.h:100 xvidstage.h:177 youtube.h:215 zapback.c:79 zdf.h:29
+#: xvidstage.h:100 xvidstage.h:177 youtube.h:228 zapback.c:79 zdf.h:29
 msgid "OK"
 msgstr "ОК"
 
@@ -8277,9 +8277,9 @@ msgstr "Скрипт не имеет выхода или запущен в фо�
 #: rtl2now.h:315 rtl2now.h:377 rtl2now.h:379 rtl2now.h:441 rtl2now.h:443
 #: rtl2now.h:505 rtl2now.h:507 rtl2now.h:569 rtl2now.h:571
 #: skin_default_skin.xml.h:622 solarmovie.h:122 solarmovie.h:124
-#: solarmovie.h:235 solarmovie.h:237 tectime.h:13 tectime.h:15
+#: solarmovie.h:249 solarmovie.h:251 tectime.h:13 tectime.h:15
 #: tithek_mainmenu.h:34 tmdb.h:898 tvtoast.h:837 tvtoast.h:839 xvideos.h:56
-#: xvideos.h:58 youtube.h:240 youtube.h:242 youtube.h:339 youtube.h:341
+#: xvideos.h:58 youtube.h:253 youtube.h:255 youtube.h:352 youtube.h:354
 #: zdf.h:147 zdf.h:149
 msgid "Search"
 msgstr "Поиск"
@@ -8432,7 +8432,7 @@ msgstr ""
 msgid "Search only aktual epg ?"
 msgstr "Обновить данные EPG до актуальных?"
 
-#: kinox.h:296 movie4k.h:855 movie4k.h:987 movie4k.h:1103 solarmovie.h:547
+#: kinox.h:296 movie4k.h:855 movie4k.h:987 movie4k.h:1103 solarmovie.h:575
 msgid "Season"
 msgstr "Сезон"
 
@@ -9126,7 +9126,7 @@ msgstr "Стрим-конфиг (iOS)"
 msgid "Stream Link"
 msgstr ""
 
-#: ard.h:102 tvtoast.h:808 youtube.h:191 zdf.h:112
+#: ard.h:102 tvtoast.h:808 youtube.h:204 zdf.h:112
 msgid "Stream Menu"
 msgstr "Меню потока"
 
@@ -9549,7 +9549,7 @@ msgstr ""
 msgid "This direct link will be available for your IP next 8 hours"
 msgstr "Эта прямая ссылка будет доступна для Вашего IP на 8 часов"
 
-#: solarmovie.h:320
+#: solarmovie.h:348
 msgid "This file doesn't exist, or has been removed"
 msgstr "ОШИБКА: Этот файл не существует или был удален"
 
@@ -13070,7 +13070,7 @@ msgstr "Universal"
 #: transponder.h:122 transponder.h:158 transponder.h:194 transponder.h:227
 #: transponder.h:259 transponder.h:295 transponder.h:330 transponder.h:348
 #: transponder.h:364 transponder.h:418 transponder.h:451 transponder.h:480
-#: transponder.h:493 transponder.h:504 transponder.h:574 youtube.h:167
+#: transponder.h:493 transponder.h:504 transponder.h:574 youtube.h:180
 #: zdf.h:86
 msgid "unknown"
 msgstr "Неизвестно"
