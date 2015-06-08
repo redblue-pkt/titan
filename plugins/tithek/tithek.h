@@ -224,8 +224,8 @@ int addtithekcontent(struct tithek* node, char *line, int len, int count, int pa
 		skip = 1;
 	else if(titheksolarmovie == 1 && node->flag == 9996 && sos == 0)
 	{
-		cmd = ostrcat(cmd, "ww", 1, 0);
-		cmd = ostrcat(cmd, "w.sola", 1, 0);
+		cmd = ostrcat(cmd, "cinema", 1, 0);
+		cmd = ostrcat(cmd, ".sola", 1, 0);
 		cmd = ostrcat(cmd, "rmovi", 1, 0);
 		cmd = ostrcat(cmd, "e.", 1, 0);
 		cmd = ostrcat(cmd, "is", 1, 0);
