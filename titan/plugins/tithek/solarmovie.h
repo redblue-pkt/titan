@@ -147,7 +147,21 @@ int solarmovie_search(struct skin* grid, struct skin* listbox, struct skin* coun
 		else
 			path = ostrcat("tv/search/", search, 0, 0);
 
-		tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
+// ssl workaround
+		unlink("/tmp/.solar.cache");
+		char* cmd = NULL;
+		cmd = ostrcat("wget --no-check-certificate \"http://", ip, 0, 0);
+		cmd = ostrcat(cmd, "/", 1, 0);
+		cmd = ostrcat(cmd, path, 1, 0);
+		cmd = ostrcat(cmd, "\" -O /tmp/.solar.cache", 1, 0);
+		debug(99, "cmd: %s", cmd);
+		system(cmd);
+		free(cmd), cmd = NULL;
+		tmpstr = command("cat /tmp/.solar.cache");
+		debug(99, "tmpstr: %s", tmpstr);
+// ssl workaround end
+
+//		tmpstr = gethttp(ip, path, 80, NULL, NULL, 10000, NULL, 0);
 		titheklog(debuglevel, "/tmp/solarmovie_tmpstr", NULL, NULL, NULL, tmpstr);
 
 		while(ostrstr(tmpstr, "<div class=\"typicalGrey coverGroup\">") != NULL)
@@ -313,7 +327,21 @@ int solarmovie_hoster(struct skin* grid, struct skin* listbox, struct skin* coun
 		tmppath = pos + 1;
 	}
 
-	tmpstr = gethttp(tmphost, tmppath, 80, NULL, NULL, 10000, NULL, 0);
+// ssl workaround
+	unlink("/tmp/.solar.cache");
+	char* cmd = NULL;
+	cmd = ostrcat("wget --no-check-certificate http://", tmphost, 0, 0);
+	cmd = ostrcat(cmd, "/", 1, 0);
+	cmd = ostrcat(cmd, tmppath, 1, 0);
+	cmd = ostrcat(cmd, " -O /tmp/.solar.cache", 1, 0);
+	debug(99, "cmd: %s", cmd);
+	system(cmd);
+	free(cmd), cmd = NULL;
+	tmpstr = command("cat /tmp/.solar.cache");
+	debug(99, "tmpstr: %s", tmpstr);
+// ssl workaround end
+
+//	tmpstr = gethttp(tmphost, tmppath, 80, NULL, NULL, 10000, NULL, 0);
 	
 	if(tmpstr == NULL)
 	{
