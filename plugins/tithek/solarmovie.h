@@ -26,7 +26,20 @@ char* solarmovie(char* link)
 	send = ostrcat(send, "\r\nUser-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.99 Safari/535.1\r\nConnection: close\r\nAccept-Encoding: gzip\r\n\r\n", 1, 0);
 	debug(99, "send: %s", send);
 
-	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 0);
+// ssl workaround
+	unlink("/tmp/.solar.cache");
+	char* cmd = NULL;
+	cmd = ostrcat("wget --no-check-certificate \"http://", tmphost, 0, 0);
+	cmd = ostrcat(cmd, "/", 1, 0);
+	cmd = ostrcat(cmd, tmppath, 1, 0);
+	cmd = ostrcat(cmd, "\" -O /tmp/.solar.cache", 1, 0);
+	debug(99, "cmd: %s", cmd);
+	system(cmd);
+	free(cmd), cmd = NULL;
+	tmpstr = command("cat /tmp/.solar.cache");
+	debug(99, "tmpstr: %s", tmpstr);
+// ssl workaround end
+//	tmpstr = gethttpreal(tmphost, tmppath, 80, NULL, NULL, NULL, 0, send, NULL, 5000, 0);
 	debug(99, "tmpstr: %s", tmpstr);
 	free(send); send = NULL;
 
