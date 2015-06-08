@@ -3201,8 +3201,8 @@ msgstr "Lỗi… không thể thiết lập nhà sản xuất trong file này"
 #: skins_panel_skin.xml.h:10 skins_rgui_skin.xml.h:1
 #: skins_stopifnotused_skin.xml.h:3 skins_sudoku_skin.xml.h:7
 #: skins_tiwakeup_skin.xml.h:1 skins_wins3_skin.xml.h:1 sock.h:954
-#: softcam.h:411 softcam.h:474 softcam.h:475 solarmovie.h:35 solarmovie.h:47
-#: solarmovie.h:348 spinner.h:18 stopifnotused.c:31 streamcloud.h:31
+#: softcam.h:411 softcam.h:474 softcam.h:475 solarmovie.h:48 solarmovie.h:60
+#: solarmovie.h:361 spinner.h:18 stopifnotused.c:31 streamcloud.h:31
 #: streamcloud.h:74 streamcloud.h:80 streamcloud.h:90 streamcloud.h:103
 #: streamcloud.h:134 streamcloud.h:193 stream.h:33 system_backup_restore.h:31
 #: system_backup_restore.h:40 system_backup_restore.h:43
@@ -3348,7 +3348,7 @@ msgstr ""
 msgid "EpgChannels: "
 msgstr "lịch chương trình kênh: "
 
-#: kinox.h:300 movie4k.h:859 movie4k.h:1107 solarmovie.h:579
+#: kinox.h:300 movie4k.h:859 movie4k.h:1107 solarmovie.h:592
 msgid "Episode"
 msgstr ""
 
@@ -5717,7 +5717,7 @@ msgstr ""
 #: scan.h:1992 scan.h:2358 scart.h:12 scart.h:25 security.h:1894 service.h:738
 #: service.h:983 shared.h:29 shared.h:65 shared.h:82 skinadjust.h:317
 #: skinadjust.h:720 skinselector.h:231 sock.h:954 softcam.h:411 softcam.h:474
-#: softcam.h:475 solarmovie.h:35 solarmovie.h:47 solarmovie.h:348 spinner.h:18
+#: softcam.h:475 solarmovie.h:48 solarmovie.h:60 solarmovie.h:361 spinner.h:18
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:80
 #: streamcloud.h:90 streamcloud.h:103 streamcloud.h:134 streamcloud.h:193
 #: stream.h:33 system_backup_restore.h:40 system_backup_restore.h:43
@@ -6303,7 +6303,7 @@ msgstr "E"
 #: skins_optimize_skin.xml.h:2 skins_rgui_skin.xml.h:2
 #: skins_sudoku_skin.xml.h:13 skins_tiwakeup_skin.xml.h:2
 #: skins_wins3_skin.xml.h:3 sock.h:954 softcam.h:411 softcam.h:474
-#: softcam.h:475 solarmovie.h:35 solarmovie.h:47 solarmovie.h:348 spinner.h:18
+#: softcam.h:475 solarmovie.h:48 solarmovie.h:60 solarmovie.h:361 spinner.h:18
 #: stopifnotused.c:31 streamcloud.h:31 streamcloud.h:74 streamcloud.h:80
 #: streamcloud.h:90 streamcloud.h:103 streamcloud.h:134 streamcloud.h:193
 #: stream.h:33 system_backup_restore.h:31 system_backup_restore.h:40
@@ -8222,8 +8222,8 @@ msgstr "Không có đầu ra."
 #: netzkino.h:13 netzkino.h:15 rtl2now.h:249 rtl2now.h:251 rtl2now.h:313
 #: rtl2now.h:315 rtl2now.h:377 rtl2now.h:379 rtl2now.h:441 rtl2now.h:443
 #: rtl2now.h:505 rtl2now.h:507 rtl2now.h:569 rtl2now.h:571
-#: skin_default_skin.xml.h:622 solarmovie.h:122 solarmovie.h:124
-#: solarmovie.h:249 solarmovie.h:251 tectime.h:13 tectime.h:15
+#: skin_default_skin.xml.h:622 solarmovie.h:135 solarmovie.h:137
+#: solarmovie.h:262 solarmovie.h:264 tectime.h:13 tectime.h:15
 #: tithek_mainmenu.h:34 tmdb.h:898 tvtoast.h:837 tvtoast.h:839 xvideos.h:56
 #: xvideos.h:58 youtube.h:253 youtube.h:255 youtube.h:352 youtube.h:354
 #: zdf.h:147 zdf.h:149
@@ -8378,7 +8378,7 @@ msgstr ""
 msgid "Search only aktual epg ?"
 msgstr ""
 
-#: kinox.h:296 movie4k.h:855 movie4k.h:987 movie4k.h:1103 solarmovie.h:575
+#: kinox.h:296 movie4k.h:855 movie4k.h:987 movie4k.h:1103 solarmovie.h:588
 msgid "Season"
 msgstr ""
 
@@ -9458,7 +9458,7 @@ msgstr ""
 #: movreel.h:137 movshare.h:157 played.h:84 played.h:101 played.h:113
 #: played.h:171 primeshare.h:73 primeshare.h:124 promptfile.h:94
 #: promptfile.h:136 putlocker.h:79 putlocker.h:142 putlocker.h:151
-#: putlocker.h:225 shared.h:82 solarmovie.h:35 solarmovie.h:46
+#: putlocker.h:225 shared.h:82 solarmovie.h:48 solarmovie.h:59
 #: streamcloud.h:90 streamcloud.h:103 streamcloud.h:134 streamcloud.h:193
 #: vidbull.h:67 vidstream.h:86 vidstream.h:97 vidstream.h:167 vidto.h:67
 #: vidto.h:94 vidto.h:128 vidto.h:174 vodlocker.h:74 xvidstage.h:100
@@ -9493,7 +9493,7 @@ msgstr ""
 msgid "This direct link will be available for your IP next 8 hours"
 msgstr ""
 
-#: solarmovie.h:348
+#: solarmovie.h:361
 msgid "This file doesn't exist, or has been removed"
 msgstr "File này không tồn tại hoặc đã bị xóa"
 
