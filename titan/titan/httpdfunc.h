@@ -2345,9 +2345,18 @@ char* webdelfile(char* param, char* link, char* dellink, char* path, char* mask,
 	if(param1 == NULL || param2 == NULL) return NULL;
 
 	tmpparam = createpath(param, param2);
+printf("#############################################\n");
+printf("tmpparam: %s\n",tmpparam);
+printf("param: %s\n",param);
+printf("param2: %s\n",param2);
+printf("path: %s\n",path);
+printf("dellink: %s\n",dellink);
+printf("link: %s\n",link);
+printf("flag: %d\n",flag);
 
 	if(checkbit(flag, 0) == 1)
 	{
+printf("1111111111\n");
 		if(tmpparam != NULL && ostrstr(tmpparam, path) == tmpparam)
 			del = 1;
 	}
@@ -2356,19 +2365,26 @@ char* webdelfile(char* param, char* link, char* dellink, char* path, char* mask,
 
 	if(del == 1)
 	{
+printf("2222222222\n");
+
 		char* epgfilename = NULL;
 
 		unlink(tmpparam);
 
 		if(cmpfilenameext(tmpparam, ".ts") == 0)
 		{
+printf("3333333333\n");
+
 			epgfilename = changefilenameext(tmpparam, ".epg");
 			unlink(epgfilename);
+printf("remove epgfilename: %s\n",epgfilename);
 			free(epgfilename); epgfilename = NULL;
 			epgfilename = changefilenameext(tmpparam, ".se");
+printf("remove epgfilename: %s\n",epgfilename);
 			unlink(epgfilename);
 			free(epgfilename); epgfilename = NULL;
 			epgfilename = changefilenameext(tmpparam, ".ma");
+printf("remove epgfilename: %s\n",epgfilename);
 			unlink(epgfilename);
 			free(epgfilename); epgfilename = NULL;
 		}
