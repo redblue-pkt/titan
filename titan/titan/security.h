@@ -511,7 +511,7 @@ char* getcpuid()
 
 			int check = 0;
 
-			if(checkbox("ATEMIO-NEMESIS") == 1 && checkrealbox("INI-8000AM") == 1 && checkchipset("BCM7424") == 1 && ostrcmp(mac1, "001EA0") == 0)
+			if(checkbox("ATEMIO-NEMESIS") == 1 && checkrealbox("INI-8000AM") == 1 && checkchipset("BCM7424") == 1 && (ostrcmp(mac1, "001EA0") == 0 || ostrcmp(mac1, "001AB0") == 0))
 				check = 1;
 			else if(checkbox("ATEMIO5200") == 1 && checkrealbox("INI-1000AM") == 1 && checkchipset("BCM7358") == 1 && ostrcmp(mac1, "001EA0") == 0)
 				check = 1;
